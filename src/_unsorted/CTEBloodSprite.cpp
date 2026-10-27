@@ -57,11 +57,10 @@ void CTEBloodSprite::vfunc3(const Vector &origin, const QAngle &angles)
 #include "CTEBloodSprite.h"
 #include "IVEngineServerFull.h"
 
-extern IVEngineServerFull *g_1070b22c;
 
 void CTEBloodSprite::vfunc4(int a, int b)
 {
-	g_1070b22c->PlaybackTempEntity(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
+	engine->vfunc103(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
 }
 // END FUNCTION
 

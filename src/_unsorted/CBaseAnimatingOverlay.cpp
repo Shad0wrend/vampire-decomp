@@ -80,10 +80,8 @@ float CBaseAnimatingOverlay::vfunc250(float a)
 // FUNCTION: 0x10098eb0 size=0x11d
 #include "CBaseAnimating.h"
 #include "CBaseAnimatingOverlay.h"
-#include "CUnknown1070b22c.h"
 #include "Quaternion.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 void sub_100c32e0(void *pHdr, void *pPos, void *pQ, float *pPose, int mask);
 void sub_100c2ce0(void *pHdr, void *pPos, void *pQ, float *pCtl, int mask);
 
@@ -92,7 +90,7 @@ void CBaseAnimatingOverlay::vfunc255(void *pPos, void *pQ, int mask)
 	Quaternion q2[350];
 	Vector pos2[350];
 	CBaseAnimating *pAnim = (CBaseAnimating *)this;
-	void *pHdr = g_1070b22c->vfunc18(((CBaseEntity *)this)->vfunc8());
+	void *pHdr = engine->vfunc18(((CBaseEntity *)this)->vfunc8());
 	if (pHdr) {
 		pAnim->sub_1008e770(pPos, pQ, *(int *)((char *)this + 0x6f0), *(int *)((char *)this + 0x6f8), (float *)((char *)this + 0x690), mask);
 		for (int i = 0; i < 4; i++) {

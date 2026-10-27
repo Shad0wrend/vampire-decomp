@@ -100,11 +100,9 @@ void CGeneric_NPC::vfunc103()
 #include "CBaseEntity.h"
 #include "CEntitySoundOriginView.h"
 #include "CPASAttenuationFilter.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b244.h"
 #include "CUnknown1070b248.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b244 *g_1070b244;
 extern CUnknown1070b248 *g_1070b248;
 extern const char *g_10629a1c[];
@@ -115,7 +113,7 @@ void CGeneric_NPC::vfunc495()
 	CPASAttenuationFilter filter((CEntitySoundOriginView *)this, ATTN_NONE);
 	filter.MakeReliable();
 	int edict = ((CBaseEntity *)this)->m_pEdict2e0;
-	int entindex = g_1070b22c->vfunc35(edict);
+	int entindex = engine->vfunc35(edict);
 	g_1070b248->vfunc3(&filter, entindex, 2, g_10629a1c[g_1070b244->vfunc2(0, 0)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 }
 // END FUNCTION
@@ -125,11 +123,9 @@ void CGeneric_NPC::vfunc495()
 #include "CBaseEntity.h"
 #include "CEntitySoundOriginView.h"
 #include "CPASAttenuationFilter.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b244.h"
 #include "CUnknown1070b248.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b244 *g_1070b244;
 extern CUnknown1070b248 *g_1070b248;
 extern const char *g_10629a18[];
@@ -140,7 +136,7 @@ void CGeneric_NPC::vfunc489()
 	CPASAttenuationFilter filter((CEntitySoundOriginView *)this, ATTN_NONE);
 	filter.MakeReliable();
 	int edict = ((CBaseEntity *)this)->m_pEdict2e0;
-	int entindex = g_1070b22c->vfunc35(edict);
+	int entindex = engine->vfunc35(edict);
 	g_1070b248->vfunc3(&filter, entindex, 2, g_10629a18[g_1070b244->vfunc2(0, 0)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 }
 // END FUNCTION
@@ -150,11 +146,9 @@ void CGeneric_NPC::vfunc489()
 #include "CBaseEntity.h"
 #include "CEntitySoundOriginView.h"
 #include "CPASAttenuationFilter.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b244.h"
 #include "CUnknown1070b248.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b244 *g_1070b244;
 extern CUnknown1070b248 *g_1070b248;
 extern const char *g_10629a20[];
@@ -165,7 +159,7 @@ void CGeneric_NPC::vfunc488()
 	CPASAttenuationFilter filter((CEntitySoundOriginView *)this, ATTN_NONE);
 	filter.MakeReliable();
 	int edict = ((CBaseEntity *)this)->m_pEdict2e0;
-	int entindex = g_1070b22c->vfunc35(edict);
+	int entindex = engine->vfunc35(edict);
 	g_1070b248->vfunc3(&filter, entindex, 2, g_10629a20[g_1070b244->vfunc2(0, 0)], 0.5f, 0.8f, 0, 100, 0, 0, 1, 0);
 }
 // END FUNCTION
@@ -175,11 +169,9 @@ void CGeneric_NPC::vfunc488()
 #include "CBaseEntity.h"
 #include "CEntitySoundOriginView.h"
 #include "CPASAttenuationFilter.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b244.h"
 #include "CUnknown1070b248.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b244 *g_1070b244;
 extern CUnknown1070b248 *g_1070b248;
 extern const char *g_10629a28[];
@@ -190,7 +182,7 @@ void CGeneric_NPC::vfunc491()
 	CPASAttenuationFilter filter((CEntitySoundOriginView *)this, ATTN_NONE);
 	filter.MakeReliable();
 	int edict = ((CBaseEntity *)this)->m_pEdict2e0;
-	int entindex = g_1070b22c->vfunc35(edict);
+	int entindex = engine->vfunc35(edict);
 	g_1070b248->vfunc3(&filter, entindex, 2, g_10629a28[g_1070b244->vfunc2(0, 3)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 }
 // END FUNCTION

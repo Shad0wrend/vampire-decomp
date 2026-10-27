@@ -760,9 +760,7 @@ void CBaseEntity::vfunc125()
 // FUNCTION: 0x100a02b0 size=0x115
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
 void sub_101434b0(int entIndex, int line, const char *pszText, int duration, int r, int g, int b, int a);
 
@@ -773,10 +771,10 @@ int CBaseEntity::vfunc124()
 	if (m_pad0224[0] & 1) {
 		char szBuf[0x200];
 		int pEdict = m_pEdict2e0;
-		int nIndex = g_1070b22c->vfunc35(pEdict);
+		int nIndex = engine->vfunc35(pEdict);
 		Q_snprintf(szBuf, sizeof(szBuf), "(%d) Name: %s (%s)", nIndex, sub_100ab4f0(), sub_1009f200());
 		pEdict = m_pEdict2e0;
-		sub_101434b0(g_1070b22c->vfunc35(pEdict), 1, szBuf, 0, 255, 255, 255, 255);
+		sub_101434b0(engine->vfunc35(pEdict), 1, szBuf, 0, 255, 255, 255, 255);
 		nText = 2;
 	}
 	return nText;
@@ -1997,12 +1995,10 @@ void CBaseEntity::vfunc119()
 
 // FUNCTION: 0x100ad460 size=0xbb
 #include "CBaseEntity.h"
-#include "CUnknown1070b22c.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
 extern char g_106b8540[];
-extern CUnknown1070b22c *g_1070b22c;
 extern void (__cdecl *g_109f3628)(const char *, ...);
 void sub_101cf4a0(CBaseEntity *pEnt, const char *pszModel);
 
@@ -2013,8 +2009,8 @@ void CBaseEntity::vfunc105(const char *pszModel)
 	g_109f3620[*g_109f3680].b = name;
 	g_109f3620[*g_109f3680].c = g_106b8540;
 	(*g_109f3680)++;
-	int idx = g_1070b22c->vfunc20(pszModel);
-	if (g_1070b22c->vfunc21(idx) != 1)
+	int idx = engine->vfunc20(pszModel);
+	if (engine->vfunc21(idx) != 1)
 		g_109f3628("Setting CBaseEntity to non-brush model %s\n", pszModel);
 	sub_101cf4a0(this, pszModel);
 	*((char *)this + 0x1b1) = 1;
@@ -2793,7 +2789,6 @@ void CBaseEntity::vfunc225()
 
 // FUNCTION: 0x10267260 size=0xba
 #include "CPASFilter.h"
-#include "CUnknown1070b22c.h"
 
 #define PV(n) virtual void v##n();
 #define PV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
@@ -2814,7 +2809,6 @@ struct CEntView184
 };
 
 extern CEngineEffectX *g_10540528;
-extern CUnknown1070b22c *g_1070b22c;
 
 void CEntView184::sub_10267260(const float *pOrigin, const void *pOther, int mode)
 {
@@ -2822,7 +2816,7 @@ void CEntView184::sub_10267260(const float *pOrigin, const void *pOther, int mod
 	switch (mode) {
 	case 1:
 		int edict = m_pEdict2e0;
-		g_10540528->vfunc39(&filter, 0, pOrigin, (const float *)((const char *)pOther + 0xc), g_1070b22c->vfunc35(edict));
+		g_10540528->vfunc39(&filter, 0, pOrigin, (const float *)((const char *)pOther + 0xc), engine->vfunc35(edict));
 		break;
 	}
 }

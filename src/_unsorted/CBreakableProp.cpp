@@ -29,11 +29,9 @@ CBreakableProp *CBreakableProp::vfunc5(unsigned int flags)
 
 // FUNCTION: 0x1018f280 size=0x85
 #include "CBreakableProp.h"
-#include "CUnknown1070b22c.h"
 
 struct CListNode100cd940;
 int __fastcall sub_100cd940(CListNode100cd940 *p);
-extern CUnknown1070b22c *g_1070b22c;
 extern void (__cdecl *g_109f3658)(int level, const char *fmt, ...);
 
 void CBreakableProp::vfunc265()
@@ -44,7 +42,7 @@ void CBreakableProp::vfunc265()
 			*(int *)((char *)this + 0x210) = 0;
 			warn(2, "\n**** HACK DESTRUCTABLE PROP HEALTH HACK ****\n");
 			int edict = *(int *)((char *)this + 0x2e0);
-			int idx = g_1070b22c->vfunc35(edict);
+			int idx = engine->vfunc35(edict);
 			warn(2, "\nSetting entity %-4d's health to 0,  (%s, %s)\n", idx, sub_100ab4f0(), sub_1009f200());
 			warn(2, "\n**** HACK DESTRUCTABLE PROP HEALTH HACK ****\n\n");
 		}
@@ -141,9 +139,7 @@ void CBreakableProp::vfunc230(int a, int b)
 
 // FUNCTION: 0x1018fec0 size=0x77
 #include "CBreakableProp.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern int (__cdecl *g_109f388c)(char *buffer, int count, const char *format, ...);
 void __cdecl sub_101434b0(int entIndex, int lineOffset, const char *text, int duration, int r, int g, int b, int a);
 
@@ -154,7 +150,7 @@ int CBreakableProp::vfunc124()
 		char text[32];
 		g_109f388c(text, 32, "Health: %d", m_iHealth);
 		int edict = m_pEdict;
-		sub_101434b0(g_1070b22c->vfunc35(edict), lineOffset, text, 0, 255, 255, 255, 255);
+		sub_101434b0(engine->vfunc35(edict), lineOffset, text, 0, 255, 255, 255, 255);
 		lineOffset++;
 	}
 	return lineOffset;

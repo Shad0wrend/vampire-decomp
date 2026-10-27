@@ -170,26 +170,22 @@ CBaseEntity *CMultiplayRules::vfunc20(CBaseEntity *pPlayer, CBaseEntity *pCurren
 // FUNCTION: 0x10141580 size=0xb4
 #include "CMultiplayRules.h"
 #include "CSingleUserRecipientFilter.h"
-#include "IVEngineServer.h"
 
-extern IVEngineServer *g_1070b22c;
 extern int g_10726038;
 
 void CMultiplayRules::vfunc29(void *pPlayer)
 {
 	CSingleUserRecipientFilter filter(pPlayer);
 	filter.sub_1019cf50();
-	g_1070b22c->vfunc65(&filter, g_10726038);
-	g_1070b22c->vfunc67(0);
-	g_1070b22c->vfunc66();
+	engine->vfunc65(&filter, g_10726038);
+	engine->vfunc67(0);
+	engine->vfunc66();
 }
 // END FUNCTION
 
 // FUNCTION: 0x10141820 size=0xd6
 #include "ScopeTrace.h"
-#include "IVEngineServer.h"
 
-extern IVEngineServer *g_1070b22c;
 void sub_101c0b80(const char *pszTarget, void *pActivator, void *pCaller, int useType, int value);
 void sub_101d10e0(const char *pszFormat, const char *pszName, int nUserId);
 
@@ -236,7 +232,7 @@ void CMultiplayRules::vfunc28(void *pEdict)
 		int nIndex = pPlayer->m_nEdictIndex;
 		if (pszNet)
 			pszName = pszNet;
-		sub_101d10e0("\"%s<%i>\" disconnected\n", pszName, g_1070b22c->vfunc34(nIndex));
+		sub_101d10e0("\"%s<%i>\" disconnected\n", pszName, engine->vfunc34(nIndex));
 		((CBasePlayer *)pPlayer)->vfunc442(1);
 	}
 	pPlayer->m_bFlag22dc = 0;
@@ -411,9 +407,7 @@ char CMultiplayRules::vfunc74()
 // FUNCTION: 0x10142410 size=0xe7
 #include "CMultiplayRules.h"
 #include "CReliableBroadcastFilter.h"
-#include "IVEngineServer.h"
 
-extern IVEngineServer *g_1070b22c;
 extern char g_1070ba2c;
 
 // TARGET: CMultiplayRules::vfunc80
@@ -421,8 +415,8 @@ void CMultiplayRules::vfunc80()
 {
 	if (!g_1070ba2c) {
 		CReliableBroadcastFilter filter;
-		g_1070b22c->vfunc65(&filter, 0x1a);
-		g_1070b22c->vfunc66();
+		engine->vfunc65(&filter, 0x1a);
+		engine->vfunc66();
 		*(float *)&m_n08 = gpGlobals->curtime + 6.0f;
 		g_1070ba2c = 1;
 		m_b0c = 0;

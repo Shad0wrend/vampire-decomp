@@ -4,11 +4,9 @@
 // FUNCTION: 0x10051d50 size=0xe2
 #include "CAuspexAura.h"
 #include "CGlobalEntityList.h"
-#include "IVEngineServer.h"
 #include "ScopeTrace.h"
 extern char g_1053ea8c[];
 extern CGlobalEntityList *g_10566458;
-extern IVEngineServer *g_1070b22c;
 struct EntWithPlayer { char pad[0xa8]; void *m_pPlayer; };
 void CAuspexAura::vfunc243(CBaseEntity *pEnt, int a, int b)
 {
@@ -28,7 +26,7 @@ void CAuspexAura::vfunc243(CBaseEntity *pEnt, int a, int b)
             pTarget = 0;
         }
         if (pData && pTarget && ((EntWithPlayer *)pTarget)->m_pPlayer) {
-            int idx = g_1070b22c->vfunc35(*(int *)((char *)pTarget + 0x2e0)) - 1;
+            int idx = engine->vfunc35(*(int *)((char *)pTarget + 0x2e0)) - 1;
             if (idx >= 0 && (unsigned int)idx < 0x20)
                 pData[idx + 0x14e4]++;
         }
@@ -39,11 +37,9 @@ void CAuspexAura::vfunc243(CBaseEntity *pEnt, int a, int b)
 // FUNCTION: 0x10051e80 size=0x14c
 #include "CAuspexAura.h"
 #include "CGlobalEntityList.h"
-#include "CUnknown1070b22c.h"
 #include "ScopeTrace.h"
 
 extern CGlobalEntityList *g_10566458;
-extern CUnknown1070b22c *g_1070b22c;
 extern int vt_1044bf04[];	// CAuspexAura::vftable
 void sub_100aa7b0(void *p);
 
@@ -78,7 +74,7 @@ CAuspexAura *CAuspexAura::vfunc5(unsigned int flags)
 			char *pTarget = Resolve(m_hTarget4b8);
 			if (pPlayer && pTarget && *(int *)(pTarget + 0xa8))
 			{
-				int j = g_1070b22c->vfunc35(*(int *)(pTarget + 0x2e0)) - 1;
+				int j = engine->vfunc35(*(int *)(pTarget + 0x2e0)) - 1;
 				if (j >= 0 && (unsigned int)j < 0x20)
 					pPlayer[0x14e4 + j]++;
 			}

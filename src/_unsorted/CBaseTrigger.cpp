@@ -15,9 +15,7 @@ datamap_t * CBaseTrigger::vfunc82()
 // FUNCTION: 0x101c4f40 size=0xff
 #include "CBaseTrigger.h"
 #include "ScopeTrace.h"
-#include "IVEngineServer.h"
 
-extern IVEngineServer *g_1070b22c;
 extern "C" __declspec(dllimport) char *Q_strncpy(char *dest, const char *src, int maxLen);
 void sub_101434b0(int entIndex, int line, const char *text, int a, int r, int g, int b, int alpha);
 
@@ -36,7 +34,7 @@ int CBaseTrigger::vfunc124()
 		else
 			Q_strncpy(text, "State: Disabled", 255);
 		int edict = m_pEdict2e0;
-		sub_101434b0(g_1070b22c->vfunc35(edict), line, text, 0, 255, 255, 255, 255);
+		sub_101434b0(engine->vfunc35(edict), line, text, 0, 255, 255, 255, 255);
 		line++;
 	}
 	return line;

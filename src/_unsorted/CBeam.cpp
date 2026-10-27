@@ -101,8 +101,6 @@ void CBeam::vfunc104()
 // FUNCTION: 0x100bc130 size=0x93
 #include "CBeam.h"
 #include "CBaseEntity.h"
-#include "CUnknown1070b22c.h"
-extern CUnknown1070b22c *g_1070b22c;
 
 struct CCheckTransmitInfo_t { char pad[0x10]; unsigned char *m_pPVS; };
 
@@ -111,7 +109,7 @@ void CBeam::vfunc87(void *pCheckTransmitInfo)
 {
     CCheckTransmitInfo_t *pInfo = (CCheckTransmitInfo_t *)pCheckTransmitInfo;
     int edict = m_pEdict2e0;
-    int idx = g_1070b22c->vfunc35(edict);
+    int idx = engine->vfunc35(edict);
     if (!(pInfo->m_pPVS[idx >> 3] & (1 << (idx & 7)))) {
         CBaseEntity::vfunc87(pInfo);
         EHANDLE *p = (EHANDLE *)&m_hEndEntity;
@@ -125,8 +123,6 @@ void CBeam::vfunc87(void *pCheckTransmitInfo)
 
 // FUNCTION: 0x100bc200 size=0x128
 #include "CBeam.h"
-#include "CUnknown1070b22c.h"
-extern CUnknown1070b22c *g_1070b22c;
 extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
 void sub_101434b0(int index, int line, const char *text, int a, int r, int g, int b, int al);
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
@@ -145,11 +141,11 @@ int CBeam::vfunc124()
         BeamEntView *pEnt = (BeamEntView *)this;
         Q_snprintf(tempstr, sizeof(tempstr), "start: (%.2f,%.2f,%.2f)", pEnt->GetAbsOrigin()[0], pEnt->GetAbsOrigin()[1], pEnt->GetAbsOrigin()[2]);
         int edict = m_pEdict2e0;
-        sub_101434b0(g_1070b22c->vfunc35(edict), offset, tempstr, 0, 255, 255, 255, 255);
+        sub_101434b0(engine->vfunc35(edict), offset, tempstr, 0, 255, 255, 255, 255);
         offset++;
         Q_snprintf(tempstr, sizeof(tempstr), "end  : (%.2f,%.2f,%.2f)", m_vecEndPos[0], m_vecEndPos[1], m_vecEndPos[2]);
         edict = m_pEdict2e0;
-        sub_101434b0(g_1070b22c->vfunc35(edict), offset, tempstr, 0, 255, 255, 255, 255);
+        sub_101434b0(engine->vfunc35(edict), offset, tempstr, 0, 255, 255, 255, 255);
         offset++;
     }
     return offset;

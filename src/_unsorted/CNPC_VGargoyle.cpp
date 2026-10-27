@@ -15,9 +15,7 @@ int CNPC_VGargoyle::vfunc546(int x)
 
 // FUNCTION: 0x10378470 size=0x102
 #include "CNPC_VGargoyle.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 
 struct CSoundPrecacher
 {
@@ -32,15 +30,15 @@ void sub_101d0ec0(const char *pszName);
 void CNPC_VGargoyle::vfunc104()
 {
 	sub_10384670();
-	g_1070b22c->vfunc13("models/character/monster/gargoyle/gargoyle_gibbs/garg_gibbs.mdl", 1);
-	g_1070b22c->vfunc13("models/character/monster/gargoyle/gargoyle_gibbs/gargoyle_head.mdl", 1);
-	g_1070b22c->vfunc13("models/character/monster/gargoyle/gargoyle_gibbs/gargoyle_L_foot.mdl", 1);
-	g_1070b22c->vfunc13("models/character/monster/gargoyle/gargoyle_gibbs/gargoyle_L_hand.mdl", 1);
-	g_1070b22c->vfunc13("models/character/monster/gargoyle/gargoyle_gibbs/gargoyle_L_torso.mdl", 1);
-	g_1070b22c->vfunc13("models/character/monster/gargoyle/gargoyle_gibbs/gargoyle_pelvis.mdl", 1);
-	g_1070b22c->vfunc13("models/character/monster/gargoyle/gargoyle_gibbs/gargoyle_R_foot.mdl", 1);
-	g_1070b22c->vfunc13("models/character/monster/gargoyle/gargoyle_gibbs/gargoyle_R_hand.mdl", 1);
-	g_1070b22c->vfunc13("models/character/monster/gargoyle/gargoyle_gibbs/gargoyle_R_torso.mdl", 1);
+	engine->vfunc13("models/character/monster/gargoyle/gargoyle_gibbs/garg_gibbs.mdl", 1);
+	engine->vfunc13("models/character/monster/gargoyle/gargoyle_gibbs/gargoyle_head.mdl", 1);
+	engine->vfunc13("models/character/monster/gargoyle/gargoyle_gibbs/gargoyle_L_foot.mdl", 1);
+	engine->vfunc13("models/character/monster/gargoyle/gargoyle_gibbs/gargoyle_L_hand.mdl", 1);
+	engine->vfunc13("models/character/monster/gargoyle/gargoyle_gibbs/gargoyle_L_torso.mdl", 1);
+	engine->vfunc13("models/character/monster/gargoyle/gargoyle_gibbs/gargoyle_pelvis.mdl", 1);
+	engine->vfunc13("models/character/monster/gargoyle/gargoyle_gibbs/gargoyle_R_foot.mdl", 1);
+	engine->vfunc13("models/character/monster/gargoyle/gargoyle_gibbs/gargoyle_R_hand.mdl", 1);
+	engine->vfunc13("models/character/monster/gargoyle/gargoyle_gibbs/gargoyle_R_torso.mdl", 1);
 	unsigned int i;
 	for (i = 0; i < 4; i++)
 		g_1070b248->PrecacheSound(g_10639480[i], 0);
@@ -77,10 +75,8 @@ void CNPC_VGargoyle::vfunc420()
 #include "CEntityVSlots.h"
 #include "CEntitySoundOriginView.h"
 #include "CPASAttenuationFilter.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b248.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b248 *g_1070b248;
 void sub_101cdba0(const float *center, float amplitude, float frequency, float duration, float radius, int eCommand, bool bAirShake);
 
@@ -104,7 +100,7 @@ void CNPC_VGargoyle::vfunc259(void *pEvent)
 		CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
 		filter.MakeReliable();
 		int edict = ((S103786c0View *)this)->m_pEdict2e0;
-		g_1070b248->vfunc3(&filter, g_1070b22c->vfunc35(edict), 4, "character/monster/gargoyle/roar2.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+		g_1070b248->vfunc3(&filter, engine->vfunc35(edict), 4, "character/monster/gargoyle/roar2.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 		break;
 	}
 	case 0x802:
@@ -250,11 +246,9 @@ void CNPC_VGargoyle::vfunc601(int unused)
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 #include "CNPC_VGargoyle.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b244.h"
 #include "CUnknown1070b248.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b244 *g_1070b244;
 extern CUnknown1070b248 *g_1070b248;
 extern const char *g_10639480[];
@@ -264,7 +258,7 @@ void CNPC_VGargoyle::vfunc617()
 	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
 	filter.MakeReliable();
 	int edict = *(int *)((char *)this + 0x2e0);
-	int idx = g_1070b22c->vfunc35(edict);
+	int idx = engine->vfunc35(edict);
 	g_1070b248->vfunc3(&filter, idx, 4, g_10639480[g_1070b244->vfunc2(0, 3)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 }
 // END FUNCTION
@@ -273,11 +267,9 @@ void CNPC_VGargoyle::vfunc617()
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 #include "CNPC_VGargoyle.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b244.h"
 #include "CUnknown1070b248.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b244 *g_1070b244;
 extern CUnknown1070b248 *g_1070b248;
 extern const char *g_10639490[];
@@ -287,7 +279,7 @@ void CNPC_VGargoyle::vfunc618()
 	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
 	filter.MakeReliable();
 	int edict = *(int *)((char *)this + 0x2e0);
-	int idx = g_1070b22c->vfunc35(edict);
+	int idx = engine->vfunc35(edict);
 	g_1070b248->vfunc3(&filter, idx, 4, g_10639490[g_1070b244->vfunc2(0, 2)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 }
 // END FUNCTION

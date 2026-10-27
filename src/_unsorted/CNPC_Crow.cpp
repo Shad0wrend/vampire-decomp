@@ -127,8 +127,6 @@ int CNPC_Crow::vfunc438()
 
 // FUNCTION: 0x10358f90 size=0x103
 #include "CNPC_Crow.h"
-#include "CUnknown1070b22c.h"
-extern CUnknown1070b22c *g_1070b22c;
 extern "C" __declspec(dllimport) int __cdecl Q_snprintf(char *, int, const char *, ...);
 extern char g_10628c84[];
 extern char g_10628c68[];
@@ -140,12 +138,12 @@ int CNPC_Crow::vfunc124()
 	if (*(unsigned char *)((char *)this + 0x224) & 1) {
 		Q_snprintf(buf, 512, g_10628c84, *(int *)((char *)this + 0x5f50));
 		int edict = *(int *)((char *)this + 0x2e0);
-		sub_101434b0(g_1070b22c->vfunc35(edict), line, buf, 0, 255, 255, 255, 255);
+		sub_101434b0(engine->vfunc35(edict), line, buf, 0, 255, 255, 255, 255);
 		line++;
 		if (((CAI_BaseNPC *)this)->vfunc167()) {
 			Q_snprintf(buf, 512, g_10628c68, ((CBaseEntity *)((CAI_BaseNPC *)this)->vfunc167())->sub_1009f200(), (double)*(float *)((char *)this + 0x5f4c));
 			int edict2 = *(int *)((char *)this + 0x2e0);
-			sub_101434b0(g_1070b22c->vfunc35(edict2), line, buf, 0, 255, 255, 255, 255);
+			sub_101434b0(engine->vfunc35(edict2), line, buf, 0, 255, 255, 255, 255);
 			line++;
 		}
 	}

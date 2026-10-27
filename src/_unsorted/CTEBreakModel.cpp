@@ -16,27 +16,18 @@ CTEBreakModel *CTEBreakModel::vfunc2(unsigned int flags)
 
 // FUNCTION: 0x1005e720 size=0x13
 #include "CTEBreakModel.h"
-struct IEnginePrecache {
-	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
-	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
-	virtual void v10(); virtual void v11(); virtual void v12();
-	virtual int PrecacheModel(const char *name, int preload);
-};
-extern IEnginePrecache *g_1070b22c;
 
 void CTEBreakModel::vfunc5()
 {
-	g_1070b22c->PrecacheModel("models/gibs/hgibs.mdl", 0);
+	engine->vfunc13("models/gibs/hgibs.mdl", 0);
 }
 // END FUNCTION
 
 // FUNCTION: 0x1005e750 size=0x17b
 #include "CTEBreakModel.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b244.h"
 #include "CBroadcastRecipientFilter.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b244 *g_1070b244;
 void sub_10139610(const QAngle &angles, Vector *forward, Vector *right, Vector *up);
 void sub_10005ab5(const Vector &start, float scale, const Vector &dir, Vector &dest);
@@ -45,7 +36,7 @@ void sub_10005ab5(const Vector &start, float scale, const Vector &dir, Vector &d
 void CTEBreakModel::vfunc3(const Vector &origin, const QAngle &angles)
 {
 	Vector forward, right;
-	m_nField34 = g_1070b22c->vfunc13("models/gibs/hgibs.mdl", 0);
+	m_nField34 = engine->vfunc13("models/gibs/hgibs.mdl", 0);
 	Origin() = origin;
 	m_angRotation[0] = 16.0f;
 	m_angRotation[1] = 16.0f;

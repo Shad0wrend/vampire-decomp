@@ -954,7 +954,6 @@ void CAI_BaseNPCTroika::vfunc506()
 
 // FUNCTION: 0x10294f40 size=0x12e
 #include "CAI_BaseNPCTroika.h"
-#include "CUnknown1070b22c.h"
 #include "StatDefault.h"
 
 extern "C" int __cdecl _strcmpi(const char *, const char *);
@@ -978,7 +977,6 @@ struct StatOwner {
 	StatDefault *sub_1006cff0(int id);
 };
 extern StatOwner g_106c7c34;
-extern CUnknown1070b22c *g_1070b22c;
 
 static inline const char *NameOf(SndEntry *&e)
 {
@@ -1003,7 +1001,7 @@ void CAI_BaseNPCTroika::vfunc507()
 	g_1073dc28.sub_100119fa(this, id, 2, 1.0f, pitch);
 	static int statId = g_106c7c34.sub_1006cf30("Float_Sound_Info");
 	static int bonus = g_106c7c34.sub_1006cff0(statId)->sub_1006cb60(1);
-	*(float *)((char *)this + 0x10ec) = g_1070b22c->vfunc119(0) + bonus;
+	*(float *)((char *)this + 0x10ec) = engine->vfunc119(0) + bonus;
 }
 // END FUNCTION
 

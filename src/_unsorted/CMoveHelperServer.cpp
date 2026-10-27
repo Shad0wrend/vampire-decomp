@@ -191,13 +191,11 @@ bool CMoveHelperServer::vfunc2(const void *pTrace, const float *pVelocity)
 #include "CBaseEntity.h"
 #include "CGameRules.h"
 #include "CGlobalEntityList.h"
-#include "CUnknown1070b22c.h"
 #include "CVDmg_t.h"
 #include "CTakeDamageInfo.h"
 #include "CMoveHelperServer.h"
 
 extern CGameRules *g_1070ba0c;
-extern CUnknown1070b22c *g_1070b22c;
 
 struct S1013f7d0Edict
 {
@@ -207,7 +205,7 @@ struct S1013f7d0Edict
 
 static inline CBaseEntity *GetWorldEntity()
 {
-	S1013f7d0Edict *pEdict = (S1013f7d0Edict *)g_1070b22c->vfunc38(0);
+	S1013f7d0Edict *pEdict = (S1013f7d0Edict *)engine->vfunc38(0);
 	if (pEdict && pEdict->m_pEntity)
 		return pEdict->m_pEntity->vfunc4();
 	return 0;
@@ -223,7 +221,7 @@ bool CMoveHelperServer::vfunc7()
 	else
 		dmg.sub_101fa8d0(1, 0x20, nFall);
 	int edict = m_pHost->m_pEdict2e0;
-	dmg.sub_101fb200(g_1070b22c->vfunc35(edict), 0);
+	dmg.sub_101fb200(engine->vfunc35(edict), 0);
 	float flDamage = (float)dmg.sub_101faa70();
 	if (flDamage > 0.0f) {
 		CTakeDamageInfo info;
@@ -236,11 +234,9 @@ bool CMoveHelperServer::vfunc7()
 
 // FUNCTION: 0x1013f950 size=0x131
 #include "CMoveHelperServer.h"
-#include "CUnknown1070b22c.h"
 #include "ScopeTrace.h"
 #include "ehandle.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 
 struct EdictUnk_t {
 	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
@@ -255,14 +251,14 @@ static inline void *InstanceOf(EdictView_t *pent)
 {
 	ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
 	if (!pent)
-		pent = (EdictView_t *)g_1070b22c->vfunc38(0);
+		pent = (EdictView_t *)engine->vfunc38(0);
 	return (pent && pent->m_pUnk) ? pent->m_pUnk->GetBaseEntity() : 0;
 }
 
 static inline void *InstanceOfIndex(int n)
 {
 	ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
-	return InstanceOf((EdictView_t *)g_1070b22c->vfunc38(n));
+	return InstanceOf((EdictView_t *)engine->vfunc38(n));
 }
 
 // TARGET: CMoveHelperServer::vfunc10

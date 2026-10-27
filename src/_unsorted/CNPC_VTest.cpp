@@ -67,11 +67,9 @@ void CNPC_VTest::vfunc104()
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 #include "CNPC_VTest.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b244.h"
 #include "CUnknown1070b248.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b244 *g_1070b244;
 extern CUnknown1070b248 *g_1070b248;
 extern const char *g_10652188[];
@@ -81,7 +79,7 @@ void CNPC_VTest::vfunc488()
 	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
 	filter.MakeReliable();
 	int edict = *(int *)((char *)this + 0x2e0);
-	int idx = g_1070b22c->vfunc35(edict);
+	int idx = engine->vfunc35(edict);
 	g_1070b248->vfunc3(&filter, idx, 2, g_10652188[g_1070b244->vfunc2(0, 0)], 0.5f, 0.8f, 0, 100, 0, 0, 1, 0);
 }
 // END FUNCTION
@@ -90,11 +88,9 @@ void CNPC_VTest::vfunc488()
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 #include "CNPC_VTest.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b244.h"
 #include "CUnknown1070b248.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b244 *g_1070b244;
 extern CUnknown1070b248 *g_1070b248;
 extern const char *g_1065218c[];
@@ -104,7 +100,7 @@ void CNPC_VTest::vfunc489()
 	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
 	filter.MakeReliable();
 	int edict = *(int *)((char *)this + 0x2e0);
-	int idx = g_1070b22c->vfunc35(edict);
+	int idx = engine->vfunc35(edict);
 	g_1070b248->vfunc3(&filter, idx, 2, g_1065218c[g_1070b244->vfunc2(0, 0)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 }
 // END FUNCTION
@@ -174,11 +170,9 @@ void CNPC_VTest::vfunc490()
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 #include "CNPC_VTest.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b244.h"
 #include "CUnknown1070b248.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b244 *g_1070b244;
 extern CUnknown1070b248 *g_1070b248;
 extern const char *g_10652194[];
@@ -188,7 +182,7 @@ void CNPC_VTest::vfunc491()
 	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
 	filter.MakeReliable();
 	int edict = *(int *)((char *)this + 0x2e0);
-	int idx = g_1070b22c->vfunc35(edict);
+	int idx = engine->vfunc35(edict);
 	g_1070b248->vfunc3(&filter, idx, 2, g_10652194[g_1070b244->vfunc2(0, 3)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 }
 // END FUNCTION
@@ -197,11 +191,9 @@ void CNPC_VTest::vfunc491()
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 #include "CNPC_VTest.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b244.h"
 #include "CUnknown1070b248.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b244 *g_1070b244;
 extern CUnknown1070b248 *g_1070b248;
 extern const char *g_106521a4[];
@@ -211,7 +203,7 @@ void CNPC_VTest::vfunc492()
 	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
 	filter.MakeReliable();
 	int edict = *(int *)((char *)this + 0x2e0);
-	int idx = g_1070b22c->vfunc35(edict);
+	int idx = engine->vfunc35(edict);
 	g_1070b248->vfunc3(&filter, idx, 2, g_106521a4[g_1070b244->vfunc2(0, 0)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 }
 // END FUNCTION
@@ -220,11 +212,9 @@ void CNPC_VTest::vfunc492()
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 #include "CNPC_VTest.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b244.h"
 #include "CUnknown1070b248.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b244 *g_1070b244;
 extern CUnknown1070b248 *g_1070b248;
 extern const char *g_106521a8[];
@@ -234,7 +224,7 @@ void CNPC_VTest::vfunc493()
 	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
 	filter.MakeReliable();
 	int edict = *(int *)((char *)this + 0x2e0);
-	int idx = g_1070b22c->vfunc35(edict);
+	int idx = engine->vfunc35(edict);
 	g_1070b248->vfunc3(&filter, idx, 2, g_106521a8[g_1070b244->vfunc2(0, 0)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 }
 // END FUNCTION
@@ -243,11 +233,9 @@ void CNPC_VTest::vfunc493()
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 #include "CNPC_VTest.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b244.h"
 #include "CUnknown1070b248.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b244 *g_1070b244;
 extern CUnknown1070b248 *g_1070b248;
 extern const char *g_106521ac[];
@@ -257,7 +245,7 @@ void CNPC_VTest::vfunc494()
 	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
 	filter.MakeReliable();
 	int edict = *(int *)((char *)this + 0x2e0);
-	int idx = g_1070b22c->vfunc35(edict);
+	int idx = engine->vfunc35(edict);
 	g_1070b248->vfunc3(&filter, idx, 2, g_106521ac[g_1070b244->vfunc2(0, 0)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 }
 // END FUNCTION
@@ -266,11 +254,9 @@ void CNPC_VTest::vfunc494()
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 #include "CNPC_VTest.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b244.h"
 #include "CUnknown1070b248.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b244 *g_1070b244;
 extern CUnknown1070b248 *g_1070b248;
 extern const char *g_106521b0[];
@@ -280,7 +266,7 @@ void CNPC_VTest::vfunc495()
 	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
 	filter.MakeReliable();
 	int edict = *(int *)((char *)this + 0x2e0);
-	int idx = g_1070b22c->vfunc35(edict);
+	int idx = engine->vfunc35(edict);
 	g_1070b248->vfunc3(&filter, idx, 2, g_106521b0[g_1070b244->vfunc2(0, 0)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 }
 // END FUNCTION

@@ -51,13 +51,6 @@ struct SabbatView
 	virtual void SetModelName(string_t name);
 };
 
-struct IVModelInfoX
-{
-	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
-	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
-	virtual void v10(); virtual void v11(); virtual void v12();
-	virtual int PrecacheModel(const char *name, int preload);
-};
 struct IEngineSoundX
 {
 	virtual int PrecacheSound(const char *name, int preload);
@@ -65,7 +58,6 @@ struct IEngineSoundX
 struct G1074f028 { void sub_10207e60(void *ent); };
 
 extern G1074f028 g_1074f028;
-extern IVModelInfoX *g_1070b22c;
 extern IEngineSoundX *g_1070b248;
 extern const char *g_1062a000;
 extern const char *g_1062a004;
@@ -83,7 +75,7 @@ void CGenericSabbat_NPC::vfunc104()
 		s.pszValue = *g_1062a000 ? g_1062a000 : 0;
 		v->SetModelName(s);
 	}
-	g_1070b22c->PrecacheModel(v->GetModelName().ToCStr(), 0);
+	engine->vfunc13(v->GetModelName().ToCStr(), 0);
 	g_1070b248->PrecacheSound(g_1062a004, 0);
 	g_1070b248->PrecacheSound(g_1062a008, 0);
 	g_1070b248->PrecacheSound(g_1062a00c, 0);
@@ -144,11 +136,9 @@ void CGenericSabbat_NPC::vfunc103()
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 #include "CGenericSabbat_NPC.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b244.h"
 #include "CUnknown1070b248.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b244 *g_1070b244;
 extern CUnknown1070b248 *g_1070b248;
 extern const char *g_1062a008[];
@@ -158,7 +148,7 @@ void CGenericSabbat_NPC::vfunc495()
 	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
 	filter.MakeReliable();
 	int edict = *(int *)((char *)this + 0x2e0);
-	int idx = g_1070b22c->vfunc35(edict);
+	int idx = engine->vfunc35(edict);
 	g_1070b248->vfunc3(&filter, idx, 2, g_1062a008[g_1070b244->vfunc2(0, 0)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 }
 // END FUNCTION
@@ -167,11 +157,9 @@ void CGenericSabbat_NPC::vfunc495()
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 #include "CGenericSabbat_NPC.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b244.h"
 #include "CUnknown1070b248.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b244 *g_1070b244;
 extern CUnknown1070b248 *g_1070b248;
 extern const char *g_1062a004[];
@@ -181,7 +169,7 @@ void CGenericSabbat_NPC::vfunc489()
 	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
 	filter.MakeReliable();
 	int edict = *(int *)((char *)this + 0x2e0);
-	int idx = g_1070b22c->vfunc35(edict);
+	int idx = engine->vfunc35(edict);
 	g_1070b248->vfunc3(&filter, idx, 2, g_1062a004[g_1070b244->vfunc2(0, 0)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 }
 // END FUNCTION
@@ -190,11 +178,9 @@ void CGenericSabbat_NPC::vfunc489()
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 #include "CGenericSabbat_NPC.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b244.h"
 #include "CUnknown1070b248.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b244 *g_1070b244;
 extern CUnknown1070b248 *g_1070b248;
 extern const char *g_1062a00c[];
@@ -204,7 +190,7 @@ void CGenericSabbat_NPC::vfunc488()
 	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
 	filter.MakeReliable();
 	int edict = *(int *)((char *)this + 0x2e0);
-	int idx = g_1070b22c->vfunc35(edict);
+	int idx = engine->vfunc35(edict);
 	g_1070b248->vfunc3(&filter, idx, 2, g_1062a00c[g_1070b244->vfunc2(0, 0)], 0.5f, 0.8f, 0, 100, 0, 0, 1, 0);
 }
 // END FUNCTION
@@ -213,11 +199,9 @@ void CGenericSabbat_NPC::vfunc488()
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 #include "CGenericSabbat_NPC.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b244.h"
 #include "CUnknown1070b248.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b244 *g_1070b244;
 extern CUnknown1070b248 *g_1070b248;
 extern const char *g_1062a014[];
@@ -227,7 +211,7 @@ void CGenericSabbat_NPC::vfunc491()
 	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
 	filter.MakeReliable();
 	int edict = *(int *)((char *)this + 0x2e0);
-	int idx = g_1070b22c->vfunc35(edict);
+	int idx = engine->vfunc35(edict);
 	g_1070b248->vfunc3(&filter, idx, 2, g_1062a014[g_1070b244->vfunc2(0, 3)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 }
 // END FUNCTION

@@ -15,8 +15,6 @@ datamap_t * CPointTeleport::vfunc82()
 // FUNCTION: 0x1018da40 size=0x154
 #include "CPointTeleport.h"
 #include "CEHandleGet.h"
-#include "CUnknown1070b22c.h"
-extern CUnknown1070b22c *g_1070b22c;
 __declspec(dllimport) void Warning(const char *fmt, ...);
 void sub_101cd940(CBaseEntity *p);
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
@@ -59,7 +57,7 @@ void CPointTeleport::vfunc113()
         }
         char *p = pTarget->m_p0a8;
         if (p)
-            *(float *)(p + 0x1f7c) = g_1070b22c->vfunc119(0) + 0.5;
+            *(float *)(p + 0x1f7c) = engine->vfunc119(0) + 0.5;
     } else if (!self->m_target20c) {
         Warning("ERROR: (%s) given no target.  Deleting.\n", ((CBaseEntity *)this)->sub_100ab4f0());
         sub_101cd940(this);

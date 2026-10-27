@@ -32,7 +32,6 @@ CBatSwarm *CBatSwarm::vfunc5(unsigned int flags)
 #include "CBaseEntity.h"
 #include "IVEngineServerFull.h"
 
-extern IVEngineServerFull *g_1070b22c;
 extern char g_106b8540[];
 
 void CBatSwarm::vfunc104()
@@ -41,7 +40,7 @@ void CBatSwarm::vfunc104()
 	const char *name = *((CBaseEntity *)this)->vfunc9(&unused);
 	if (!name)
 		name = g_106b8540;
-	g_1070b22c->PrecacheModel(name, 0);
+	engine->vfunc13(name, 0);
 }
 // END FUNCTION
 

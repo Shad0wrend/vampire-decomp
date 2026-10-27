@@ -44,11 +44,10 @@ void CTEBeamLaser::vfunc3(int a, int b)
 #include "CTEBeamLaser.h"
 #include "IVEngineServerFull.h"
 
-extern IVEngineServerFull *g_1070b22c;
 
 void CTEBeamLaser::vfunc4(int a, int b)
 {
-	g_1070b22c->PlaybackTempEntity(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
+	engine->vfunc103(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
 }
 // END FUNCTION
 

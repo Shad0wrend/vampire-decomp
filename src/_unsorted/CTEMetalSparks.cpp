@@ -58,11 +58,10 @@ void CTEMetalSparks::vfunc3(const Vector &origin, const QAngle &angles)
 #include "CTEMetalSparks.h"
 #include "IVEngineServerFull.h"
 
-extern IVEngineServerFull *g_1070b22c;
 
 void CTEMetalSparks::sub_10059fe0(int a, int b)
 {
-	g_1070b22c->PlaybackTempEntity(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
+	engine->vfunc103(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
 }
 // END FUNCTION
 

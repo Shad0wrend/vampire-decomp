@@ -22,7 +22,6 @@ void CBaseGrenade::vfunc144(int unused)
 #include "CBaseGrenade.h"
 #include "CRecipientFilter.h"
 #include "CPASAttenuationFilter.h"
-#include "CUnknown1070b22c.h"
 #include "ScopeTrace.h"
 
 class S_SoundSystem
@@ -54,7 +53,6 @@ public:
 };
 
 extern S_SoundSystem *g_1070b248;
-extern CUnknown1070b22c *g_1070b22c;
 extern char vt_104470dc[];
 extern char vt_104470b0[];
 
@@ -91,7 +89,7 @@ void CBaseGrenade::vfunc408()
 	else
 		pszSample = S_STRING(pView->m_pszSample);
 	int edict = m_pEdict2e0;
-	g_1070b248->slot3((CRecipientFilter *)&filter, g_1070b22c->vfunc35(edict), 2, pszSample, 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+	g_1070b248->slot3((CRecipientFilter *)&filter, engine->vfunc35(edict), 2, pszSample, 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 }
 // END FUNCTION
 

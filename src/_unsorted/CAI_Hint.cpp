@@ -11,10 +11,8 @@ void CAI_Hint::vfunc119()
 
 // FUNCTION: 0x102d1600 size=0x104
 #include "CAI_Hint.h"
-#include "CUnknown1070b22c.h"
 __declspec(dllimport) int __cdecl Q_snprintf(char *, int, const char *, ...);
 extern float g_104454c4;
-extern CUnknown1070b22c *g_1070b22c;
 void sub_101434b0(int, int, const char *, int, int, int, int, int);
 int sub_100a02b0();
 struct SHintView {
@@ -25,7 +23,7 @@ struct SHintView {
 };
 inline int ENTINDEX(int pEdict)
 {
-    return g_1070b22c->vfunc35(pEdict);
+    return engine->vfunc35(pEdict);
 }
 int CAI_Hint::vfunc124()
 {

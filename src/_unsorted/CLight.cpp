@@ -53,10 +53,8 @@ bool CLight::vfunc110(const char *szKeyName, const char *szValue)
 
 // FUNCTION: 0x10130460 size=0xd4
 #include "CLight.h"
-#include "CUnknown1070b22c.h"
 #include "ScopeTrace.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern float g_10453b74;
 extern char g_10540a3c[];
 extern char g_105758c4[];
@@ -77,14 +75,14 @@ void CLight::vfunc103()
 	int style = m_iStyle;
 	if (style >= 32) {
 		if (*((unsigned char *)this + 0x204) & 1) {
-			g_1070b22c->vfunc62(style, g_10540a3c);
+			engine->vfunc62(style, g_10540a3c);
 			m_pattern = *g_10540a3c ? g_10540a3c : 0;
 			return;
 		}
 		if (m_pattern) {
-			g_1070b22c->vfunc62(style, Str(&m_pattern));
+			engine->vfunc62(style, Str(&m_pattern));
 		} else {
-			g_1070b22c->vfunc62(style, g_105758c4);
+			engine->vfunc62(style, g_105758c4);
 			m_pattern = *g_105758c4 ? g_105758c4 : 0;
 		}
 	}

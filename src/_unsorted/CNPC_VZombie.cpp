@@ -26,9 +26,7 @@ int CNPC_VZombie::vfunc546(int x)
 
 // FUNCTION: 0x103df120 size=0x35
 #include "CNPC_VZombie.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 void sub_1000bcb7();
 void sub_101d0ec0(const char *pszName);
 
@@ -36,8 +34,8 @@ void sub_101d0ec0(const char *pszName);
 void CNPC_VZombie::vfunc104()
 {
 	sub_1000bcb7();
-	g_1070b22c->vfunc17((int)"zombie_headshot_death_emitter", 0);
-	g_1070b22c->vfunc17((int)"zombie_headshot_dmg_emitter", 0);
+	engine->vfunc17((const char *)"zombie_headshot_death_emitter", 0);
+	engine->vfunc17((const char *)"zombie_headshot_dmg_emitter", 0);
 	sub_101d0ec0("item_w_zombie_fists");
 }
 // END FUNCTION
@@ -142,7 +140,6 @@ void CNPC_VZombie::vfunc141(CUnknown101c2a50 *pInfo, int b, char *pTrace)
 // FUNCTION: 0x103e0e80 size=0xe0
 #include "CBaseEntity.h"
 #include "CNPC_VZombie.h"
-#include "CUnknown1070b22c.h"
 
 #define SV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
@@ -170,7 +167,6 @@ struct CNPC_VZombieSlots
 	virtual CConditionNames *vfunc580();
 };
 
-extern CUnknown1070b22c *g_1070b22c;
 __declspec(dllimport) int Q_snprintf(char *buf, int n, const char *fmt, ...);
 void sub_101434b0(int index, int line, const char *text, int a, int r, int g, int b, int al);
 
@@ -188,7 +184,7 @@ int CNPC_VZombie::vfunc124()
                 const char *name = ((CNPC_VZombieSlots *)this)->vfunc458(nameIndex);
                 Q_snprintf(buf, 512, "Cond: %s\n", name);
                 int ed = m_pEdict2e0;
-                sub_101434b0(g_1070b22c->vfunc35(ed), line, buf, 0, 255, 255, 255, 255);
+                sub_101434b0(engine->vfunc35(ed), line, buf, 0, 255, 255, 255, 255);
                 line++;
             }
         }

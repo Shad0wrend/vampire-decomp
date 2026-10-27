@@ -41,13 +41,11 @@ CNPC_VSheriffMan *CNPC_VSheriffMan::vfunc5(unsigned int flags)
 
 // FUNCTION: 0x103ae540 size=0xb2
 #include "CNPC_VSheriffMan.h"
-#include "CUnknown1070b22c.h"
 
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
 extern char g_106b8540[];
-extern CUnknown1070b22c *g_1070b22c;
 void sub_10006c3a(const char *pszWeapon);
 
 void CNPC_VSheriffMan::vfunc104()
@@ -57,10 +55,10 @@ void CNPC_VSheriffMan::vfunc104()
 	g_109f3620[*g_109f3680].c = g_106b8540;
 	(*g_109f3680)++;
 	sub_100013f7();
-	g_1070b22c->vfunc13("models/character/monster/manbat/manbat.mdl", 1);
-	g_1070b22c->vfunc17((int)"sheriff_landblast_emitter", 1);
-	g_1070b22c->vfunc17((int)"sheriff_teleport_emitter", 1);
-	g_1070b22c->vfunc17((int)"sheriff_teleport_emitter", 1);
+	engine->vfunc13("models/character/monster/manbat/manbat.mdl", 1);
+	engine->vfunc17((const char *)"sheriff_landblast_emitter", 1);
+	engine->vfunc17((const char *)"sheriff_teleport_emitter", 1);
+	engine->vfunc17((const char *)"sheriff_teleport_emitter", 1);
 	sub_10006c3a("item_w_sheriff_sword");
 	(*g_109f3680)--;
 }

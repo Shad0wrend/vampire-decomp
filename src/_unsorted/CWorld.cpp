@@ -24,11 +24,9 @@ void CWorld::vfunc130(int a)
 #include "CWorld.h"
 #include "CCollisionProperty.h"
 #include "CServerNetworkProperty.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown101466e0.h"
 #include "ScopeTrace.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 void sub_104121d0();
 void sub_1028d770();
 
@@ -37,7 +35,7 @@ CWorld::CWorld() : CBaseEntity(0)
 {
     m_flags268 |= 0x400;
     m_bColdWorld = 0;
-    ((CServerNetworkProperty *)((char *)this + 0x2d4))->sub_101ab5c0(g_1070b22c->vfunc38(0));
+    ((CServerNetworkProperty *)((char *)this + 0x2d4))->sub_101ab5c0(engine->vfunc38(0));
     *(float *)((char *)this + 0x17c) = gpGlobals->curtime + 0.05;
     sub_104121d0();
     ((CUnknown101466e0 *)((char *)this + 0x1b0))->sub_101466e0(1);

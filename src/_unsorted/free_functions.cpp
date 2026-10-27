@@ -6870,9 +6870,7 @@ bool sub_1004feb0(CBaseEntity *pEnt, CBaseEntity *pOther)
 // FUNCTION: 0x1004ff40 size=0x10d
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern "C" void *__cdecl __RTDynamicCast(void *pObject, long lDelta, void *pSrcType, void *pTargetType, int isReference);
 extern char g_10538764[];	// RTTI type descriptor of CBaseEntity
 extern char g_1053dd50[];	// RTTI type descriptor of CSimplePhysicsProp
@@ -6911,7 +6909,7 @@ CBaseEntity *sub_1004ff40(CBreakableSlots *pBreakable)
 {
 	CBreakableSlots *pNew;
 	int nModelIndex = pBreakable->vfunc8();
-	if (g_1070b22c->vfunc21(nModelIndex) == 1) {
+	if (engine->vfunc21(nModelIndex) == 1) {
 		pNew = (CBreakableSlots *)sub_10136580(g_1053dcd4);
 	} else {
 		pNew = (CBreakableSlots *)sub_10136580(g_1053dd78);
@@ -7070,16 +7068,7 @@ extern ScopeTraceEntry_t *g_109f3620;
 extern int *g_109f3680;
 extern char g_106b8540[];
 
-struct IEngineServerSlots
-{
-	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
-	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
-	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
-	virtual void v15(); virtual void v16();
-	virtual int PrecacheModel(const char *pszName, int bPreload);	// slot 17
-};
 
-extern IEngineServerSlots *g_1070b22c;
 
 CDisciplineParticle *CDisciplineParticle::sub_10050b90(CDisciplineParticleParams *pParams, int a2, int a3, int a10, int a11)
 {
@@ -7088,7 +7077,7 @@ CDisciplineParticle *CDisciplineParticle::sub_10050b90(CDisciplineParticleParams
 	g_109f3620[*g_109f3680].m_pszExtra = g_106b8540;
 	(*g_109f3680)++;
 	CDisciplineParticle *pParticle = sub_10050e70(pParams->m_pszClassname, a2, a3, pParams->m_n04, pParams->m_n08, pParams->m_n0c,
-		g_1070b22c->PrecacheModel(pParams->m_pszModel, 0), pParams->m_n14, pParams->m_n18, a10, a11, pParams->m_n20);
+		engine->vfunc17(pParams->m_pszModel, 0), pParams->m_n14, pParams->m_n18, a10, a11, pParams->m_n20);
 	(*g_109f3680)--;
 	return pParticle;
 }
@@ -7098,16 +7087,14 @@ CDisciplineParticle *CDisciplineParticle::sub_10050b90(CDisciplineParticleParams
 #include "ScopeTrace.h"
 #include "CDisciplineParticle.h"
 #include "CUnknown100eb420.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 
 CDisciplineParticle *CDisciplineParticle::sub_10050c70(CDisciplineParticleParams *pParams, int a2, int a3, int a10, int a11)
 {
 	ScopeTrace trace("CDisciplineParticle::Create", g_106b8540);
 	if (((CUnknown100eb420 *)pParams)->sub_100eb420()) {
 		return sub_10050e70(pParams->m_pszClassname ? pParams->m_pszClassname : g_106b8540, a2, a3, pParams->m_n04, pParams->m_n08, pParams->m_n0c,
-			g_1070b22c->vfunc17((int)(pParams->m_pszModel ? pParams->m_pszModel : g_106b8540), 0), pParams->m_n14,
+			engine->vfunc17((const char *)(pParams->m_pszModel ? pParams->m_pszModel : g_106b8540), 0), pParams->m_n14,
 			(int)(pParams->m_n18 ? (const char *)pParams->m_n18 : g_106b8540), a10, a11, pParams->m_n20);
 	}
 	return 0;
@@ -7141,10 +7128,8 @@ CDisciplineParticle *CDisciplineParticle::sub_10050d90(int a1, int a2, int a3, i
 #include "CBaseEntity.h"
 #include "CBaseViewModel.h"
 #include "CEntityVSlots.h"
-#include "CUnknown1070b22c.h"
 #include "ScopeTrace.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern float g_1070d1b0[3];
 extern float g_1070d9d0[3];
 CEntityVSlots *sub_100a9ab0(const char *pszClassname, const float *pOrigin, const float *pAngles, CEntityVSlots *pOwner);
@@ -7175,7 +7160,7 @@ CDisciplineParticle *CDisciplineParticle::sub_10050e70(const char *pszClassname,
 	pParticle->m_n4ac = a5;
 	pParticle->m_n4b0 = a6;
 	pParticle->m_nModelIndex = modelIndex;
-	const char *pszName = g_1070b22c->vfunc28(modelIndex);
+	const char *pszName = engine->vfunc28(modelIndex);
 	pParticle->m_pszModelName = *pszName ? pszName : 0;
 	pParticle->m_b4b4 = 0;
 	pParticle->m_n4bc = a11;
@@ -7244,12 +7229,10 @@ void sub_10054360(S10054360Particle *pParticle)
 // END FUNCTION
 
 // FUNCTION: 0x10054400 size=0xbf
-#include "CUnknown1070b22c.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
 extern char g_106b8540[];
-extern CUnknown1070b22c *g_1070b22c;
 struct DiscParticle { int m_data[9]; };
 extern DiscParticle g_1053e3e8[3];
 extern DiscParticle g_1053e458[3];
@@ -7271,7 +7254,7 @@ void sub_10054400()
 	for (int k = 0; k < 5; k++)
 		sub_10054360(&g_1053e4c8[k]);
 	sub_10054360(&g_1053e57c);
-	g_1070b22c->vfunc17((int)g_1053ed24, 1);
+	engine->vfunc17((const char *)g_1053ed24, 1);
 	(*g_109f3680)--;
 }
 // END FUNCTION
@@ -17060,7 +17043,6 @@ void sub_10085180()
 // FUNCTION: 0x10085480 size=0x116
 #include "CBaseEntity.h"
 #include "CEHandleGet.h"
-#include "CUnknown1070b22c.h"
 
 struct S10085480Ent
 {
@@ -17068,7 +17050,6 @@ struct S10085480Ent
 	void *m_p94;
 };
 
-extern CUnknown1070b22c *g_1070b22c;
 extern unsigned int g_10925444;
 void *sub_101193b0();
 CBaseEntity *sub_100d2070(void *pPlayer, const char *pszName, void *pStart);
@@ -17083,7 +17064,7 @@ static inline CBaseEntity *FindByName(void *pPlayer, const char *pszName)
 void sub_10085480()
 {
 	void *pPlayer = sub_101193b0();
-	CBaseEntity *pEnt = FindByName(pPlayer, g_1070b22c->vfunc84(1));
+	CBaseEntity *pEnt = FindByName(pPlayer, engine->vfunc84(1));
 	if (pEnt && ((S10085480Ent *)pEnt)->m_p94) {
 		unsigned int hOld = g_10925444;
 		g_10925444 = *pEnt->vfunc1();
@@ -17180,10 +17161,8 @@ int sub_100859c0()
 // END FUNCTION
 
 // FUNCTION: 0x10085a80 size=0x8f
-#include "IVEngineServer.h"
 #include <string.h>
 
-extern IVEngineServer *g_1070b22c;
 extern char g_106c9208[];
 extern int g_109340d8;
 extern int g_10552810;
@@ -17199,7 +17178,7 @@ int sub_10119390();
 // TARGET: sub_10085a80
 void sub_10085a80()
 {
-	Q_strncpy(g_106c9208, (const char *)g_1070b22c->vfunc84(1), 0x100);
+	Q_strncpy(g_106c9208, (const char *)engine->vfunc84(1), 0x100);
 	for (int i = 0; i < 22; i++) {
 		if (!Q_strnicmp(g_106c9208, sub_102d6230(i), strlen(g_106c9208))) {
 			g_109340d8 = i;
@@ -17212,8 +17191,6 @@ void sub_10085a80()
 // END FUNCTION
 
 // FUNCTION: 0x10085bd0 size=0x77
-#include "CUnknown1070b22c.h"
-extern CUnknown1070b22c *g_1070b22c;
 extern "C" int __cdecl atoi(const char *);
 unsigned int sub_102f7c00(int name, unsigned int flag, char value);
 int sub_10119390();
@@ -17222,7 +17199,7 @@ extern char g_1054970c[];
 
 void sub_10085bd0()
 {
-	int v = atoi(g_1070b22c->vfunc84(1));
+	int v = atoi(engine->vfunc84(1));
 	if (v == 0) {
 		sub_102f7c00((int)g_1054970c, 1, 1);
 	} else {
@@ -17269,14 +17246,12 @@ void sub_10086e50()
 #include "CAI_BaseNPCTroika.h"
 #include "CBasePlayer.h"
 #include "CGlobalEntityList.h"
-#include "IVEngineServer.h"
 
 extern "C" int _strcmpi(const char *, const char *);
 extern "C" void *__RTDynamicCast(void *pObject, long lVfDelta, void *pSrcType, void *pDestType, int isReference);
 extern char g_10538764[];	// type descriptor of CBaseEntity
 extern char g_1054abdc[];	// type descriptor of CAI_BaseNPC
 extern char g_106b8540[];
-extern IVEngineServer *g_1070b22c;
 extern CGlobalEntityList g_106eb5d8;
 CBasePlayer *sub_101193b0();
 CAI_BaseNPCTroika *sub_10172710(CBasePlayer *pPlayer);
@@ -17295,7 +17270,7 @@ inline CAI_BaseNPCTroika *FindNPC(CBaseEntity *pEnt)
 // TARGET: sub_10086fb0
 void sub_10086fb0()
 {
-	const char *pszArg = (const char *)g_1070b22c->vfunc84(1);
+	const char *pszArg = (const char *)engine->vfunc84(1);
 	if (_strcmpi(pszArg, g_106b8540) == 0) {
 		bool bFound = false;
 		for (CAI_BaseNPCTroika *pNPC = FindNPC(g_106eb5d8.sub_100f7060(0)); pNPC; pNPC = FindNPC(g_106eb5d8.sub_100f7060((CBaseEntity *)pNPC))) {
@@ -17331,7 +17306,6 @@ int sub_10087550()
 
 // FUNCTION: 0x10087fb0 size=0x12a
 #include "CBaseEntity.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1028fb70.h"
 #include <stdlib.h>
 
@@ -17341,7 +17315,6 @@ struct S10087fb0Ent
 	CUnknown1028fb70 *m_pNPC;
 };
 
-extern CUnknown1070b22c *g_1070b22c;
 void *sub_101193b0();
 CBaseEntity *sub_100d2070(void *pPlayer, const char *pszName, void *pStart);
 __declspec(dllimport) void DevMsg(const char *fmt, ...);
@@ -17350,9 +17323,9 @@ __declspec(dllimport) void DevMsg(const char *fmt, ...);
 void sub_10087fb0()
 {
 	void *pPlayer = sub_101193b0();
-	const char *pszName = g_1070b22c->vfunc84(2);
+	const char *pszName = engine->vfunc84(2);
 	CBaseEntity *pEnt = sub_100d2070(pPlayer, pszName, 0);
-	float flLevel = (float)(atoi(g_1070b22c->vfunc84(1)) > 10 ? 10 : (atoi(g_1070b22c->vfunc84(1)) < 1 ? 1 : atoi(g_1070b22c->vfunc84(1))));
+	float flLevel = (float)(atoi(engine->vfunc84(1)) > 10 ? 10 : (atoi(engine->vfunc84(1)) < 1 ? 1 : atoi(engine->vfunc84(1))));
 	while (pEnt) {
 		CUnknown1028fb70 *pNPC = ((S10087fb0Ent *)pEnt)->m_pNPC;
 		if (pNPC) {
@@ -17369,7 +17342,6 @@ void sub_10087fb0()
 
 // FUNCTION: 0x100881c0 size=0xe5
 #include "CUnknown1028fb70.h"
-#include "CUnknown1070b22c.h"
 
 extern "C" double atof(const char *);
 __declspec(dllimport) void DevMsg(const char *, ...);
@@ -17379,7 +17351,6 @@ struct VisionEntView_t {
 	CUnknown1028fb70 *pNPC;
 };
 
-extern CUnknown1070b22c *g_1070b22c;
 extern double g_1044fab0;
 void *sub_101193b0();
 VisionEntView_t *sub_100d2070(void *pPlayer, const char *pszName, VisionEntView_t *pStart);
@@ -17387,9 +17358,9 @@ VisionEntView_t *sub_100d2070(void *pPlayer, const char *pszName, VisionEntView_
 void sub_100881c0()
 {
 	void *pPlayer = sub_101193b0();
-	const char *pszName = g_1070b22c->vfunc84(2);
+	const char *pszName = engine->vfunc84(2);
 	VisionEntView_t *pEnt = sub_100d2070(pPlayer, pszName, 0);
-	float flDist = (atof(g_1070b22c->vfunc84(1)) > g_1044fab0) ? atof(g_1070b22c->vfunc84(1)) : g_1044fab0;
+	float flDist = (atof(engine->vfunc84(1)) > g_1044fab0) ? atof(engine->vfunc84(1)) : g_1044fab0;
 	while (pEnt) {
 		CUnknown1028fb70 *pNPC = pEnt->pNPC;
 		if (pNPC) {
@@ -17404,7 +17375,6 @@ void sub_100881c0()
 
 // FUNCTION: 0x10088380 size=0xe5
 #include "CUnknown1028fb70.h"
-#include "CUnknown1070b22c.h"
 
 extern "C" double atof(const char *);
 __declspec(dllimport) void DevMsg(const char *, ...);
@@ -17414,7 +17384,6 @@ struct VisionEntView_t {
 	CUnknown1028fb70 *pNPC;
 };
 
-extern CUnknown1070b22c *g_1070b22c;
 extern double g_1044fab0;
 void *sub_101193b0();
 VisionEntView_t *sub_100d2070(void *pPlayer, const char *pszName, VisionEntView_t *pStart);
@@ -17422,9 +17391,9 @@ VisionEntView_t *sub_100d2070(void *pPlayer, const char *pszName, VisionEntView_
 void sub_10088380()
 {
 	void *pPlayer = sub_101193b0();
-	const char *pszName = g_1070b22c->vfunc84(2);
+	const char *pszName = engine->vfunc84(2);
 	VisionEntView_t *pEnt = sub_100d2070(pPlayer, pszName, 0);
-	float flScalar = (atof(g_1070b22c->vfunc84(1)) > g_1044fab0) ? atof(g_1070b22c->vfunc84(1)) : g_1044fab0;
+	float flScalar = (atof(engine->vfunc84(1)) > g_1044fab0) ? atof(engine->vfunc84(1)) : g_1044fab0;
 	while (pEnt) {
 		CUnknown1028fb70 *pNPC = pEnt->pNPC;
 		if (pNPC) {
@@ -17603,9 +17572,7 @@ void sub_100892e0()
 
 // FUNCTION: 0x10089430 size=0x64
 #include "CBaseCombatCharacter.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 CBaseCombatCharacter *sub_101cd9e0(int a);
 void sub_10342470();
 
@@ -17625,7 +17592,7 @@ struct CCmdChar {
 
 void sub_10089430()
 {
-	const char *pszArg = g_1070b22c->vfunc84(1);
+	const char *pszArg = engine->vfunc84(1);
 	CBaseCombatCharacter *pPlayer = sub_101cd9e0(1);
 	CCmdChar *p = (CCmdChar *)pPlayer->sub_10341c30((void *)sub_10342470, 0x44000000, 0.7f, 0, 0, 0x46004003);
 	if (pszArg && p && p->m_pAI && p->m_pAI->m_pTarget)
@@ -17701,7 +17668,6 @@ void sub_10089550()
 // FUNCTION: 0x100896c0 size=0xcb
 #include "CBaseAnimating.h"
 #include "CEHandleGet.h"
-#include "CUnknown1070b22c.h"
 
 extern "C" int atoi(const char *);
 
@@ -17732,7 +17698,6 @@ struct DlgEntView_t {
 };
 
 
-extern CUnknown1070b22c *g_1070b22c;
 extern DlgGlobal_t g_10924980;
 DlgPlayerView_t *sub_101193b0();
 DlgEntView_t *sub_10172710(DlgPlayerView_t *pPlayer);
@@ -17742,7 +17707,7 @@ void sub_100896c0()
 	DlgEntView_t *pEnt = (DlgEntView_t *)EHandle_Get(sub_101193b0()->hPartner);
 	if (!pEnt)
 		pEnt = sub_10172710(sub_101193b0());
-	int nIndex = atoi(g_1070b22c->vfunc84(1));
+	int nIndex = atoi(engine->vfunc84(1));
 	if (pEnt) {
 		DlgNPC_t *pNPC = pEnt->pNPC;
 		if (pNPC) {
@@ -17767,9 +17732,7 @@ void sub_100896c0()
 
 // FUNCTION: 0x10089860 size=0x87
 #include "CEHandleGet.h"
-#include "IVEngineServer.h"
 
-extern IVEngineServer *g_1070b22c;
 
 struct COverlayObj
 {
@@ -17796,7 +17759,7 @@ void sub_10089860()
 	CPickEntity *pEnt = (CPickEntity *)EHandle_Get(sub_101193b0()->m_hDialogPartner);
 	if (!pEnt)
 		pEnt = sub_10172710(sub_101193b0());
-	const char *pszText = (const char *)g_1070b22c->vfunc84(1);
+	const char *pszText = (const char *)engine->vfunc84(1);
 	if (pEnt && pEnt->m_pOverlay)
 		pEnt->m_pOverlay->sub_101067e0(pszText, 0.25f, 0.25f, 1.0f, 0, 10.0f);
 }
@@ -17843,8 +17806,6 @@ void sub_10089ac0()
 
 // FUNCTION: 0x10089c60 size=0x105
 #include "CBaseAnimating.h"
-#include "CUnknown1070b22c.h"
-extern CUnknown1070b22c *g_1070b22c;
 struct CTrailHelper : CBaseAnimating { const char *sub_1000b5cd(); };
 int sub_101193b0();
 char *sub_100d2070(int a, int b, char *c);
@@ -17854,9 +17815,9 @@ __declspec(dllimport) void DevMsg(const char *fmt, ...);
 void sub_10089c60()
 {
     int a = sub_101193b0();
-    int b = (int)g_1070b22c->vfunc84(2);
+    int b = (int)engine->vfunc84(2);
     char *p = sub_100d2070(a, b, 0);
-    float f = (atof(g_1070b22c->vfunc84(1)) > 10.0) ? 10.0 : (atof(g_1070b22c->vfunc84(1)) < 0.0) ? 0.0 : atof(g_1070b22c->vfunc84(1));
+    float f = (atof(engine->vfunc84(1)) > 10.0) ? 10.0 : (atof(engine->vfunc84(1)) < 0.0) ? 0.0 : atof(engine->vfunc84(1));
     while (p) {
         CTrailHelper *e = *(CTrailHelper **)(p + 0x98);
         if (e) {
@@ -17869,7 +17830,6 @@ void sub_10089c60()
 // END FUNCTION
 
 // FUNCTION: 0x10089e50 size=0xa3
-#include "CUnknown1070b22c.h"
 #include "CAI_BaseNPCTroika.h"
 struct ShowRelNPC : CAI_BaseNPCTroika
 {
@@ -17884,14 +17844,13 @@ struct ShowRelEnt
 
 void *sub_10008d8c();
 ShowRelEnt *sub_10008e36(void *pClass, const char *pszName, ShowRelEnt *pStart);
-extern CUnknown1070b22c *g_1070b22c;
 __declspec(dllimport) void DevMsg(const char *pszFormat, ...);
 
 // TARGET: sub_10089e50
 void sub_10089e50()
 {
 	void *pClass = sub_10008d8c();
-	const char *pszName = g_1070b22c->vfunc84(1);
+	const char *pszName = engine->vfunc84(1);
 	ShowRelEnt *pEnt;
 	for (pEnt = sub_10008e36(pClass, pszName, 0); pEnt; pEnt = sub_10008e36(pClass, pszName, pEnt)) {
 		ShowRelNPC *pNPC = (ShowRelNPC *)pEnt->m_pNPC;
@@ -17909,9 +17868,7 @@ void sub_10089e50()
 
 // FUNCTION: 0x1008a520 size=0xdf
 #include <stdlib.h>
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 __declspec(dllimport) void __cdecl DevMsg(const char *pszFormat, ...);
 
 struct CEnemiesView
@@ -17954,10 +17911,10 @@ CKnowledgeEntView *sub_100d2070(int a, const char *pszName, CKnowledgeEntView *p
 void sub_1008a520()
 {
 	int nList = sub_101193b0();
-	const char *pszName = (const char *)g_1070b22c->vfunc84(1);
+	const char *pszName = (const char *)engine->vfunc84(1);
 	CKnowledgeEntView *pEnt = sub_100d2070(nList, pszName, 0);
 	float flDuration = g_10739d08.sub_101e8c30();
-	const char *pszArg = (const char *)g_1070b22c->vfunc84(2);
+	const char *pszArg = (const char *)engine->vfunc84(2);
 	if (pszArg && *pszArg)
 		flDuration = (float)atof(pszArg);
 	for (; pEnt; pEnt = sub_100d2070(nList, pszName, pEnt))
@@ -17974,10 +17931,6 @@ void sub_1008a520()
 // END FUNCTION
 
 // FUNCTION: 0x1008a6d0 size=0x64
-#include "CUnknown1070b22c.h"
-
-extern CUnknown1070b22c *g_1070b22c;
-
 void *sub_101193b0();
 void *sub_100d2070(void *pList, const char *pszName, void *pStart);
 
@@ -18001,7 +17954,7 @@ void sub_1008a6d0()
 {
 	float vOut[7];
 	void *pList = sub_101193b0();
-	const char *pszName = g_1070b22c->vfunc84(1);
+	const char *pszName = engine->vfunc84(1);
 	for (CFoundEntity *pEnt = (CFoundEntity *)sub_100d2070(pList, pszName, 0); pEnt; pEnt = (CFoundEntity *)sub_100d2070(pList, pszName, pEnt)) {
 		if (pEnt->m_pObject)
 			pEnt->m_pObject->slot246(0, vOut, 0);
@@ -20357,12 +20310,10 @@ float CBaseAnimating::sub_10095d80(int iController)
 
 // FUNCTION: 0x100963d0 size=0x8e
 #include "CBaseAnimating.h"
-#include "CUnknown1070b22c.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
 extern char g_106b8540[];
-extern CUnknown1070b22c *g_1070b22c;
 
 void CBaseAnimating::sub_100963d0()
 {
@@ -20371,7 +20322,7 @@ void CBaseAnimating::sub_100963d0()
 	g_109f3620[*g_109f3680].b = name;
 	g_109f3620[*g_109f3680].c = g_106b8540;
 	(*g_109f3680)++;
-	*(int *)((char *)this + 0x710) = g_1070b22c->vfunc120();
+	*(int *)((char *)this + 0x710) = engine->vfunc120();
 	*((char *)this + 0x1b1) = 1;
 	(*g_109f3680)--;
 }
@@ -21413,9 +21364,7 @@ int sub_1009a500()
 
 // FUNCTION: 0x1009ab70 size=0xa1
 #include "CBaseEntity.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 bool __fastcall sub_1000c9eb(unsigned int *p);
 unsigned int __fastcall sub_1000fd71(unsigned int *p);
 
@@ -21432,7 +21381,7 @@ void *sub_1009ab70(CBaseEntity *pEnt, void *pRet, unsigned int *pBits)
 				if (pOther && *(int *)((char *)pOther + 0xa8)) {
 					unsigned int idx = sub_1000fd71(pNet);
 					int edict = pOther->m_pEdict2e0;
-					unsigned int entIndex = g_1070b22c->vfunc35(edict) - 1;
+					unsigned int entIndex = engine->vfunc35(edict) - 1;
 					if (idx == entIndex) {
 						pBits[0] = 0;
 						pBits[entIndex >> 5] |= 1 << (entIndex & 0x1f);
@@ -22525,8 +22474,6 @@ bool CBaseEntity::sub_100a52a0()
 // END FUNCTION
 
 // FUNCTION: 0x100a53d0 size=0x92
-#include "CUnknown1070b22c.h"
-
 struct ScopeEntry {
 	const char *fn;
 	const char *name;
@@ -22534,7 +22481,6 @@ struct ScopeEntry {
 };
 extern ScopeEntry *g_109f3620;
 extern int *g_109f3680;
-extern CUnknown1070b22c *g_1070b22c;
 
 void CBaseEntity::sub_100a53d0(int a)
 {
@@ -22552,7 +22498,7 @@ void CBaseEntity::sub_100a53d0(int a)
 	(*g_109f3680)++;
 	int edict = *(int *)((char *)this + 0x2e0);
 	if (edict)
-		g_1070b22c->vfunc122(edict, a);
+		engine->vfunc122(edict, a);
 	(*g_109f3680)--;
 }
 // END FUNCTION
@@ -22689,9 +22635,7 @@ void *CBaseEntity::sub_100a5bb0()
 // FUNCTION: 0x100a5d80 size=0xe0
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern int g_1070d9d0[3];
 int sub_1002dfe0(int a, int b);
 int sub_10428eb0(char *pHeader);
@@ -22702,8 +22646,8 @@ int sub_100a5d80(CBaseEntity *pEntity, int a2, int a3, int a4, int a5)
 	ScopeTrace trace("PhysModelCreateBox", g_106b8540);
 	int modelIndex = pEntity->vfunc8();
 	char *pszSurface = "flesh";
-	if (modelIndex && g_1070b22c->vfunc21(modelIndex) == 3)
-		pszSurface = (char *)sub_10428eb0((char *)g_1070b22c->vfunc18(modelIndex));
+	if (modelIndex && engine->vfunc21(modelIndex) == 3)
+		pszSurface = (char *)sub_10428eb0((char *)engine->vfunc18(modelIndex));
 	int pObject = sub_1002dfe0(a2, a3);
 	if (!pObject)
 		return 0;
@@ -23337,15 +23281,9 @@ int sub_100aa720(int a)
 
 // FUNCTION: 0x100aa7b0 size=0x69
 struct SScope { const char *a; const char *b; const char *c; };
-struct SMem { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
- virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
- virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
- virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
- virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(); virtual void v46(void *p); };
 extern "C" __declspec(dllimport) SScope g_ScopeTraceStack[];
 extern "C" __declspec(dllimport) int g_ScopeTraceStackDepth;
 extern char g_106b8540[];
-extern SMem *g_1070b22c;
 // TARGET: sub_100aa7b0
 void sub_100aa7b0(void *p)
 {
@@ -23353,7 +23291,7 @@ void sub_100aa7b0(void *p)
     g_ScopeTraceStack[g_ScopeTraceStackDepth].b = g_106b8540;
     g_ScopeTraceStack[g_ScopeTraceStackDepth].c = g_106b8540;
     g_ScopeTraceStackDepth++;
-    g_1070b22c->v46(p);
+    engine->vfunc46(p);
     g_ScopeTraceStackDepth--;
 }
 // END FUNCTION
@@ -23862,14 +23800,6 @@ extern ScopeTrace *g_109f3620;
 extern int *g_109f3680;
 extern char g_106b8540[];
 
-struct IModelSink {
-    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
-    virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
-    virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
-    virtual void v12();
-    virtual int PrecacheModel(const char *s, int n);
-};
-extern IModelSink *g_1070b22c;
 
 struct CScopeGuard {
     CScopeGuard(const char *name, const char *ent)
@@ -23892,7 +23822,7 @@ int CBaseEntity::sub_100adfd0(const char *name)
     } else
         n = "NULL ENTITY";
     CScopeGuard guard("CBaseEntity::PrecacheModel", n);
-    return g_1070b22c->PrecacheModel(name, 0);
+    return engine->vfunc13(name, 0);
 }
 // END FUNCTION
 
@@ -24345,8 +24275,6 @@ void sub_100b0ad0()
 // END FUNCTION
 
 // FUNCTION: 0x100b0c00 size=0x106
-#include "CUnknown1070b22c.h"
-
 struct ScopeEntry_t { const char *m_pszName; const char *m_pszEnt; const char *m_pszExtra; };
 extern ScopeEntry_t *g_109f3620;
 extern int *g_109f3680;
@@ -24354,7 +24282,6 @@ extern char g_106b8540[];
 extern void (*g_109f3630)(const char *, ...);
 extern char g_10920534;
 extern char g_10920535;
-extern CUnknown1070b22c *g_1070b22c;
 
 void sub_100b0c00()
 {
@@ -24370,8 +24297,8 @@ void sub_100b0c00()
         return;
     }
     char buf[64] = { g_106b8540[0] };
-    if (g_1070b22c->vfunc85() >= 1) {
-        const char *arg = g_1070b22c->vfunc84(1);
+    if (engine->vfunc85() >= 1) {
+        const char *arg = engine->vfunc84(1);
         if (*arg == 'v' || *arg == 'V') {
             g_10920535 = 1;
             int i = 0;
@@ -29133,9 +29060,7 @@ void CUnknown100cc130::sub_100cc130(inputdata_t *pData)
 
 // FUNCTION: 0x100cc360 size=0x9e
 #include "CCameraTrack.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 
 #define TRACK_FLOAT(off) ((float *)((char *)this + (off)))
 
@@ -29145,7 +29070,7 @@ void CCameraTrack::sub_100cc360()
 	float flZero = 0;
 	char bSecond = sub_100cc430(TRACK_FLOAT(0x4bc), TRACK_FLOAT(0x4c0), TRACK_FLOAT(0x4c4), TRACK_FLOAT(0x4c8), &flZero, &flZero, 1, 0);
 	if (bFirst || bSecond)
-		sub_100ac610((float)g_1070b22c->vfunc119(0), 0);
+		sub_100ac610((float)engine->vfunc119(0), 0);
 }
 // END FUNCTION
 
@@ -30034,9 +29959,6 @@ void sub_100d2290(const char *pszTarget)
 // END FUNCTION
 
 // FUNCTION: 0x100d23a0 size=0xc5
-#include "CUnknown1070b22c.h"
-
-extern CUnknown1070b22c *g_1070b22c;
 extern "C" double __cdecl atof(const char *);
 void sub_101450e0(float *pMins, float *pMaxs, int a, int b);
 
@@ -30044,12 +29966,12 @@ void sub_100d23a0()
 {
 	float a[3];
 	float b[3];
-	a[0] = (float)atof(g_1070b22c->vfunc84(1));
-	a[1] = (float)atof(g_1070b22c->vfunc84(2));
-	a[2] = (float)atof(g_1070b22c->vfunc84(3));
-	b[0] = (float)atof(g_1070b22c->vfunc84(4));
-	b[1] = (float)atof(g_1070b22c->vfunc84(5));
-	b[2] = (float)atof(g_1070b22c->vfunc84(6));
+	a[0] = (float)atof(engine->vfunc84(1));
+	a[1] = (float)atof(engine->vfunc84(2));
+	a[2] = (float)atof(engine->vfunc84(3));
+	b[0] = (float)atof(engine->vfunc84(4));
+	b[1] = (float)atof(engine->vfunc84(5));
+	b[2] = (float)atof(engine->vfunc84(6));
 	sub_101450e0(a, b, 1, 1);
 }
 // END FUNCTION
@@ -30189,10 +30111,8 @@ int sub_100d2c30(const char *pszInput, char *pszOut)
 
 // FUNCTION: 0x100d2d80 size=0x7b
 #include <stdlib.h>
-#include "CUnknown1070b22c.h"
 struct CFovPlayerData { char pad[0x1e78]; int m_iFOV; };
 struct CFovLocalPlayer { char pad[0xa8]; CFovPlayerData *m_pData; };
-extern CUnknown1070b22c *g_1070b22c;
 extern int g_10752e9c;
 CFovLocalPlayer *sub_101193b0();
 char *sub_101cf720(const char *fmt, ...);
@@ -30203,8 +30123,8 @@ void sub_100d2d80()
 	if (pLocal) {
 		CFovPlayerData *pData = pLocal->m_pData;
 		if (pData && g_10752e9c) {
-			if (g_1070b22c->vfunc85() > 1) {
-				pData->m_iFOV = atoi(g_1070b22c->vfunc84(1));
+			if (engine->vfunc85() > 1) {
+				pData->m_iFOV = atoi(engine->vfunc84(1));
 			} else {
 				sub_101ce620(pData, 2, sub_101cf720("\"fov\" is \"%d\"\n", pData->m_iFOV), 0, 0, 0, 0);
 			}
@@ -30215,7 +30135,6 @@ void sub_100d2d80()
 
 // FUNCTION: 0x100d2eb0 size=0x104
 #include "CBaseEntity.h"
-#include "CUnknown1070b22c.h"
 #include <string.h>
 
 struct S100d2eb0Owner
@@ -30224,7 +30143,6 @@ struct S100d2eb0Owner
 	CBaseEntity *m_pEnt;
 };
 
-extern CUnknown1070b22c *g_1070b22c;
 extern char g_106e7c00[256];
 S100d2eb0Owner *sub_101193b0();
 void sub_101cf390(CBaseEntity *pEnt, const float *mins, const float *maxs);
@@ -30240,10 +30158,10 @@ void sub_100d2eb0()
 	CBaseEntity *pEnt = pOwner->m_pEnt;
 	if (!pEnt)
 		return;
-	if (g_1070b22c->vfunc85() != 2)
+	if (engine->vfunc85() != 2)
 		return;
 	Q_strncpy(g_106e7c00, "models/", 256);
-	strcat(g_106e7c00, g_1070b22c->vfunc84(1));
+	strcat(g_106e7c00, engine->vfunc84(1));
 	strcat(g_106e7c00, ".mdl");
 	pEnt->vfunc105(g_106e7c00);
 	Vector mins, maxs;
@@ -30394,11 +30312,9 @@ void sub_100d3bc0()
 
 // FUNCTION: 0x100d3d20 size=0xa6
 #include "CVStatList_t.h"
-#include "CUnknown1070b22c.h"
 
 extern char *sub_10008d8c();
 extern int sub_10431447(const char *);
-extern CUnknown1070b22c *g_1070b22c;
 
 void sub_100d3d20()
 {
@@ -30408,7 +30324,7 @@ void sub_100d3d20()
 	void *pChar = *(void **)(p + 0xa8);
 	if (!pChar)
 		return;
-	int value = sub_10431447(g_1070b22c->vfunc84(1));
+	int value = sub_10431447(engine->vfunc84(1));
 	CVStatListSet::Of(pChar)->Find(0)->sub_102008e0(0x22, value);
 }
 // END FUNCTION
@@ -30493,9 +30409,7 @@ void sub_100d46c0(CVStatList_t *pList, int nMinValue, int nArg)
 // FUNCTION: 0x100d4e50 size=0xdf
 #include <stdio.h>
 #include "CVFeat_t.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern const char *g_10739d18;
 extern char g_106b8540[];
 extern "C" __declspec(dllimport) void Msg(const char *pMsg, ...);
@@ -30509,7 +30423,7 @@ EntView100d4e50 *sub_100db920(void *pPlayer, const char *pszName);
 
 void sub_100d4e50()
 {
-	const char *pszName = g_1070b22c->vfunc84(1);
+	const char *pszName = engine->vfunc84(1);
 	EntView100d4e50 *pEnt = sub_100db920(sub_101193b0(), pszName);
 	if (pEnt && pEnt->m_pCharacter) {
 		void *pCharacter = pEnt->m_pCharacter;
@@ -30526,8 +30440,6 @@ void sub_100d4e50()
 #include "CBasePlayer.h"
 #include "COutputEvent.h"
 #include "ScopeTrace.h"
-#include "CUnknown1070b22c.h"
-extern CUnknown1070b22c *g_1070b22c;
 
 struct CLocalPlayerHostX {
 	char m_pad[0xa8];
@@ -30563,12 +30475,12 @@ void sub_100d5000()
 		return;
 	CBasePlayer *pPlayer = pLocal->m_pPlayer;
 	int iEdictIndex = pPlayer->m_nUseEdictIndex1EB8;
-	CEdictX *pEdict = (CEdictX *)g_1070b22c->vfunc38(iEdictIndex);
+	CEdictX *pEdict = (CEdictX *)engine->vfunc38(iEdictIndex);
 	CNotifyEntityX *pEnt;
 	{
 		ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
 		if (!pEdict)
-			pEdict = (CEdictX *)g_1070b22c->vfunc38(0);
+			pEdict = (CEdictX *)engine->vfunc38(0);
 		if (pEdict && pEdict->m_pUnk)
 			pEnt = (CNotifyEntityX *)pEdict->m_pUnk->GetBaseEntity();
 		else
@@ -30583,9 +30495,7 @@ void sub_100d5000()
 
 // FUNCTION: 0x100d51b0 size=0xd2
 #include <stdlib.h>
-#include "IVEngineServer.h"
 
-extern IVEngineServer *g_1070b22c;
 CBaseEntity *sub_101193b0();
 void sub_100d5360();
 
@@ -30598,8 +30508,8 @@ void sub_100d51b0()
 			if (!pChar->sub_10337f30())
 				sub_100d5360();
 			int nValue = 12;
-			if (g_1070b22c->vfunc85() == 2)
-				nValue = atoi((const char *)g_1070b22c->vfunc84(1));
+			if (engine->vfunc85() == 2)
+				nValue = atoi((const char *)engine->vfunc84(1));
 			CVStatListSet::Of(pChar)->Find(0)->sub_102008e0(12, nValue);
 		}
 	}
@@ -30680,9 +30590,7 @@ void sub_100d5510()
 // FUNCTION: 0x100d56b0 size=0xdf
 #include <stdio.h>
 #include "CVFeat_t.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern const char *g_10739d18;
 extern char g_106b8540[];
 extern "C" __declspec(dllimport) void Msg(const char *pMsg, ...);
@@ -30696,7 +30604,7 @@ EntView100d56b0 *sub_100db920(void *pPlayer, const char *pszName);
 
 void sub_100d56b0()
 {
-	const char *pszName = g_1070b22c->vfunc84(1);
+	const char *pszName = engine->vfunc84(1);
 	EntView100d56b0 *pEnt = sub_100db920(sub_101193b0(), pszName);
 	if (pEnt && pEnt->m_pCharacter) {
 		void *pCharacter = pEnt->m_pCharacter;
@@ -30710,10 +30618,8 @@ void sub_100d56b0()
 // END FUNCTION
 
 // FUNCTION: 0x100d5be0 size=0x77
-#include "IVEngineServer.h"
 #include "CEntityVSlots.h"
 extern "C" int __cdecl atoi(const char *);
-extern IVEngineServer *g_1070b22c;
 extern char g_106b8540[];
 struct S100d5be0Player { char m_pad[0xa8]; CBaseCombatCharacter *m_pChar; };
 struct S100d5be0Weapon { char m_pad[0x11c]; const char *m_pszClassname; };
@@ -30727,8 +30633,8 @@ void sub_100d5be0()
     S100d5be0Player *pPlayer = sub_101193b0();
     if (pPlayer) {
         CBaseCombatCharacter *pChar = pPlayer->m_pChar;
-        if (pChar && g_1070b22c->vfunc85() == 2) {
-            int index = atoi((const char *)g_1070b22c->vfunc84(1));
+        if (pChar && engine->vfunc85() == 2) {
+            int index = atoi((const char *)engine->vfunc84(1));
             if (pChar->sub_1032e8b0(index)) {
                 S100d5be0Weapon *pWeapon = (S100d5be0Weapon *)pChar->sub_1032e8b0(index);
                 ((CEntityVSlots *)pChar)->slot457(StringOrEmpty(&pWeapon->m_pszClassname), 0);
@@ -30740,7 +30646,6 @@ void sub_100d5be0()
 
 // FUNCTION: 0x100d5d10 size=0x6b
 #include "CBaseCombatCharacter.h"
-#include "CUnknown1070b22c.h"
 
 #define S1(p, n) virtual void p##n();
 #define S10(p) S1(p,0) S1(p,1) S1(p,2) S1(p,3) S1(p,4) S1(p,5) S1(p,6) S1(p,7) S1(p,8) S1(p,9)
@@ -30760,7 +30665,6 @@ struct LocalPlayerEnt {
 
 extern "C" int __cdecl atoi(const char *);
 LocalPlayerEnt *sub_101193b0();
-extern CUnknown1070b22c *g_1070b22c;
 
 // TARGET: sub_100d5d10
 void sub_100d5d10()
@@ -30771,8 +30675,8 @@ void sub_100d5d10()
     CBaseCombatCharacter *pChar = pPlayer->m_pChar;
     if (!pChar)
         return;
-    if (g_1070b22c->vfunc85() == 2) {
-        int index = atoi(g_1070b22c->vfunc84(1));
+    if (engine->vfunc85() == 2) {
+        int index = atoi(engine->vfunc84(1));
         if (pChar->sub_1032e8b0(index))
             ((Slots385 *)pChar)->f385(pChar->sub_1032e8b0(index), 0, 0);
     }
@@ -30951,7 +30855,6 @@ int sub_100d6560(const char *pszIn, char *pszOut)
 // FUNCTION: 0x100d6680 size=0xc2
 #include "CBaseCombatCharacter.h"
 #include "CStatDefault3List.h"
-#include "CUnknown1070b22c.h"
 
 extern "C" int __cdecl sprintf(char *, const char *, ...);
 
@@ -30960,7 +30863,6 @@ struct CmdClientView_t {
 	CBaseCombatCharacter *pChar;
 };
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CStatDefault3List g_10738d10;
 CmdClientView_t *sub_101193b0();
 void sub_101ce620(void *pPlayer, int nType, const char *pszText, const char *p1, const char *p2, const char *p3, const char *p4);
@@ -30972,7 +30874,7 @@ void sub_100d6680()
 	if (pClient && pClient->pChar) {
 		CBaseCombatCharacter *pChar = pClient->pChar;
 		int nCurrent = pChar->sub_10337860();
-		if (g_1070b22c->vfunc85() == 1) {
+		if (engine->vfunc85() == 1) {
 			for (int i = 0; i < g_10738d10.m_count; i++) {
 				if (nCurrent != i)
 					sprintf(szBuf, "(%d): %s\n", i, g_10738d10.sub_101d5e00(i));
@@ -31136,10 +31038,8 @@ void sub_100d7400()
 // END FUNCTION
 
 // FUNCTION: 0x100d7c40 size=0xea
-#include "CUnknown1070b22c.h"
 #include "ScopeTrace.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern "C" int atoi(const char *);
 __declspec(dllimport) void DevMsg(const char *pszFormat, ...);
 
@@ -31176,18 +31076,18 @@ void sub_100d7c40()
 	if (pEnt) {
 		CMPEquipPlayer *pPlayer = pEnt->m_pPlayer;
 		if (pPlayer) {
-			int nArgs = g_1070b22c->vfunc85();
+			int nArgs = engine->vfunc85();
 			if (nArgs > 1) {
-				pPlayer->m_nFirst = atoi(g_1070b22c->vfunc84(1));
+				pPlayer->m_nFirst = atoi(engine->vfunc84(1));
 				int i;
 				for (i = 2; i < nArgs; i++)
-					pPlayer->m_nRest[i - 2] = atoi(g_1070b22c->vfunc84(i));
+					pPlayer->m_nRest[i - 2] = atoi(engine->vfunc84(i));
 				i -= 2;
 				for (; i < 11; i++)
 					pPlayer->m_nRest[i] = -1;
 				const char *pszName = pPlayer->m_pszName ? pPlayer->m_pszName : g_106b8540;
 				int edict = pPlayer->m_nEdict;
-				DevMsg("\nMP_Equip ( APPLY ): %d: %s\n", g_1070b22c->vfunc35(edict), pszName);
+				DevMsg("\nMP_Equip ( APPLY ): %d: %s\n", engine->vfunc35(edict), pszName);
 				pPlayer->m_sub.sub_1017aa40(pPlayer);
 			}
 		}
@@ -31438,8 +31338,6 @@ void sub_100d9e10()
 // FUNCTION: 0x100d9ec0 size=0xb8
 #include "CTakeDamageInfo.h"
 #include "CVDmg_t.h"
-#include "CUnknown1070b22c.h"
-extern CUnknown1070b22c *g_1070b22c;
 extern "C" int __cdecl atoi(const char *);
 struct CCmdClient_t { char m_pad0000[0xa8]; CVDmgSource_t *m_pEnt; };
 CCmdClient_t *sub_10008d8c();
@@ -31453,8 +31351,8 @@ void sub_100d9ec0()
 	if (pClient) {
 		CVDmgSource_t *pEnt = pClient->m_pEnt;
 		if (pEnt) {
-			if (g_1070b22c->vfunc85() == 2) {
-				int nDamage = atoi(g_1070b22c->vfunc84(1));
+			if (engine->vfunc85() == 2) {
+				int nDamage = atoi(engine->vfunc84(1));
 				sub_101c2c30();
 				CVDmg_t vdmg;
 				vdmg.sub_101fa960(pEnt);
@@ -31475,7 +31373,6 @@ void sub_100d9ec0()
 #include "CVStatList_t.h"
 #include "CUnknown10203240.h"
 #include "ConVar.h"
-#include "IVEngineServer.h"
 
 struct PlayerView { char m_pad[0xa8]; void *m_pCharacter; };
 struct StatOwner { void sub_10207c70(void *pCharacter, int a); };
@@ -31489,7 +31386,6 @@ struct FlagInterface
 	virtual bool vfunc21();
 };
 extern "C" int atoi(const char *);
-extern IVEngineServer *g_1070b22c;
 extern FlagInterface *g_1070ba0c;
 extern CUnknown10203240 g_1074e968;
 extern StatOwner g_1074f028;
@@ -31505,9 +31401,9 @@ void sub_100da040()
 	void *pCharacter = pPlayer->m_pCharacter;
 	if (!pCharacter)
 		return;
-	if (g_1070b22c->vfunc85() < 2)
+	if (engine->vfunc85() < 2)
 		return;
-	const char *pszArg = (const char *)g_1070b22c->vfunc84(1);
+	const char *pszArg = (const char *)engine->vfunc84(1);
 	int nGender = g_1074e968.sub_10203240("Gender")->sub_10202a50(pszArg);
 	if (nGender == -1)
 		nGender = atoi(pszArg);
@@ -31576,10 +31472,8 @@ void sub_100dac20()
 // FUNCTION: 0x100dad50 size=0xa3
 #include "CBaseCombatCharacter.h"
 #include "CEntityVSlots.h"
-#include "CUnknown1070b22c.h"
 
 extern "C" int atoi(const char *);
-extern CUnknown1070b22c *g_1070b22c;
 void *sub_101193b0();
 void sub_101cd940(void *pEntity);
 
@@ -31590,9 +31484,9 @@ void sub_100dad50()
 	if (pPlayer) {
 		CBaseCombatCharacter *pChar = *(CBaseCombatCharacter **)((char *)pPlayer + 0xa8);
 		if (pChar) {
-			if (g_1070b22c->vfunc85() == 3) {
-				int a = atoi(g_1070b22c->vfunc84(1));
-				int b = atoi(g_1070b22c->vfunc84(2));
+			if (engine->vfunc85() == 3) {
+				int a = atoi(engine->vfunc84(1));
+				int b = atoi(engine->vfunc84(2));
 				pChar->sub_103387a0(a);
 				pChar->vfunc111();
 				CEntityVSlots *pWeapon = (CEntityVSlots *)pChar->sub_1032e8b0(b);
@@ -31634,9 +31528,7 @@ void sub_100daec0()
 // FUNCTION: 0x100db0b0 size=0xc3
 #include "CBaseAnimating.h"
 #include "ConVar.h"
-#include "IVEngineServer.h"
 
-extern IVEngineServer *g_1070b22c;
 extern char g_106b8540[];
 extern void (__cdecl *g_109f3630)(const char *fmt, ...);	// DevMsg
 
@@ -31665,10 +31557,10 @@ void sub_100db0b0()
 		void *pObject = pPlayer->m_pObject;
 		if (pObject) {
 			CBaseAnimating *pAnimating;
-			if (!g_1070b22c->vfunc85())
+			if (!engine->vfunc85())
 				pAnimating = sub_100db920(pObject, g_106b8540);
 			else
-				pAnimating = sub_100db920(pObject, (const char *)g_1070b22c->vfunc84(1));
+				pAnimating = sub_100db920(pObject, (const char *)engine->vfunc84(1));
 			if (pAnimating) {
 				static ConVar *s_pVar = g_1070b234->FindVar("debug_dump_anim_seq_list");
 				if (s_pVar) {
@@ -32579,18 +32471,7 @@ struct S24c {
 	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
 	virtual void f4(int a, unsigned short b); virtual void f5(unsigned short a);
 };
-struct S22c {
-	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
-	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
-	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
-	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
-	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
-	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
-	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
-	virtual int f35(int a);
-};
 extern S24c *g_1070b24c;
-extern S22c *g_1070b22c;
 
 static inline unsigned char bit(unsigned int v, int n)
 {
@@ -32603,7 +32484,7 @@ void CUnknown100dda50::sub_100ddc40()
 	if (id != 0xffff) {
 		g_1070b24c->f5(id);
 		int p = m_pOwner->m_unk2e0;
-		if (p != 0 && g_1070b22c->f35(p) != 0) {
+		if (p != 0 && engine->vfunc35(p) != 0) {
 			bool b = (m_unk40 != 0 && !(m_flags44 & 4)) || bit(m_flags44, 3);
 			if (!b && !bit(m_pOwner->m_flags268, 18))
 				return;
@@ -33082,20 +32963,18 @@ void CDialog::sub_100e0a40(const char *pszSound)
 #include "ScopeTrace.h"
 #include "CEHandleGet.h"
 #include "CReliableSingleUserRecipientFilter.h"
-#include "CUnknown1070b22c.h"
 
 extern int g_1072608c;
-extern CUnknown1070b22c *g_1070b22c;
 
 void CDialog::sub_100e0f90(unsigned char value)
 {
 	ScopeTrace trace("CDialog::SetDialogWindowActive", g_106b8540);
 	CGlobalEntityList_Ent *pPlayer = EHandle_Get(m_hNPC);
 	CReliableSingleUserRecipientFilter filter(pPlayer);
-	g_1070b22c->vfunc65(&filter, g_1072608c);
-	g_1070b22c->vfunc67(8);
-	g_1070b22c->vfunc67(value);
-	g_1070b22c->vfunc66();
+	engine->vfunc65(&filter, g_1072608c);
+	engine->vfunc67(8);
+	engine->vfunc67(value);
+	engine->vfunc66();
 }
 // END FUNCTION
 
@@ -33104,20 +32983,18 @@ void CDialog::sub_100e0f90(unsigned char value)
 #include "ScopeTrace.h"
 #include "CEHandleGet.h"
 #include "CReliableSingleUserRecipientFilter.h"
-#include "CUnknown1070b22c.h"
 
 extern int g_1072608c;
-extern CUnknown1070b22c *g_1070b22c;
 
 void CDialog::sub_100e1220(unsigned char value)
 {
 	ScopeTrace trace("CDialog::ShowHistoryWindow", g_106b8540);
 	CGlobalEntityList_Ent *pPlayer = EHandle_Get(m_hNPC);
 	CReliableSingleUserRecipientFilter filter(pPlayer);
-	g_1070b22c->vfunc65(&filter, g_1072608c);
-	g_1070b22c->vfunc67(6);
-	g_1070b22c->vfunc67(value);
-	g_1070b22c->vfunc66();
+	engine->vfunc65(&filter, g_1072608c);
+	engine->vfunc67(6);
+	engine->vfunc67(value);
+	engine->vfunc66();
 }
 // END FUNCTION
 
@@ -33126,20 +33003,18 @@ void CDialog::sub_100e1220(unsigned char value)
 #include "ScopeTrace.h"
 #include "CEHandleGet.h"
 #include "CReliableSingleUserRecipientFilter.h"
-#include "CUnknown1070b22c.h"
 
 extern int g_1072608c;
-extern CUnknown1070b22c *g_1070b22c;
 
 void CDialog::sub_100e13d0(unsigned char value)
 {
 	ScopeTrace trace("CDialog::ShowPlayerChoices", g_106b8540);
 	CGlobalEntityList_Ent *pPlayer = EHandle_Get(m_hNPC);
 	CReliableSingleUserRecipientFilter filter(pPlayer);
-	g_1070b22c->vfunc65(&filter, g_1072608c);
-	g_1070b22c->vfunc67(7);
-	g_1070b22c->vfunc67(value);
-	g_1070b22c->vfunc66();
+	engine->vfunc65(&filter, g_1072608c);
+	engine->vfunc67(7);
+	engine->vfunc67(value);
+	engine->vfunc66();
 }
 // END FUNCTION
 
@@ -33551,10 +33426,8 @@ void CDialog::sub_100e5c70()
 #include "ScopeTrace.h"
 #include "CEHandleGet.h"
 #include "CReliableSingleUserRecipientFilter.h"
-#include "CUnknown1070b22c.h"
 
 extern int g_1072608c;
-extern CUnknown1070b22c *g_1070b22c;
 
 void CDialog::sub_100e5d00(int nIndex, char *pszText)
 {
@@ -33569,11 +33442,11 @@ void CDialog::sub_100e5d00(int nIndex, char *pszText)
 		}
 		CGlobalEntityList_Ent *pPlayer = EHandle_Get(m_hNPC);
 		CReliableSingleUserRecipientFilter filter(pPlayer);
-		g_1070b22c->vfunc65(&filter, g_1072608c);
-		g_1070b22c->vfunc67(1);
-		g_1070b22c->vfunc67(nIndex);
-		g_1070b22c->vfunc78(pszText);
-		g_1070b22c->vfunc66();
+		engine->vfunc65(&filter, g_1072608c);
+		engine->vfunc67(1);
+		engine->vfunc67(nIndex);
+		engine->vfunc78(pszText);
+		engine->vfunc66();
 		if (len > 100) {
 			pszText[100] = saved;
 			pszText += 100;
@@ -36712,9 +36585,7 @@ int CUnknown100fae70::sub_100fae70()
 
 // FUNCTION: 0x100fafa0 size=0x11d
 #include "CBaseAnimating.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern int g_10538764;
 extern int g_1053dd10;
 extern "C" int _strcmpi(const char *, const char *);
@@ -36735,9 +36606,9 @@ int sub_100fafa0(CBaseEntity *pEnt, int type, const char *name)
 	}
 	else if (type > i)
 	{
-		if (g_1070b22c->vfunc21(pEnt->vfunc8()) == 3)
+		if (engine->vfunc21(pEnt->vfunc8()) == 3)
 		{
-			int hdr = (int)g_1070b22c->vfunc18(pEnt->vfunc8());
+			int hdr = (int)engine->vfunc18(pEnt->vfunc8());
 			if (hdr && *(int *)(hdr + 0xf0) > i)
 			{
 				int offset = 0;
@@ -36764,10 +36635,8 @@ int sub_100fafa0(CBaseEntity *pEnt, int type, const char *name)
 #include "CEnvParticle.h"
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
-#include "CUnknown1070b22c.h"
 
 extern CGlobalEntityList *g_10566458;
-extern CUnknown1070b22c *g_1070b22c;
 extern char g_106b8540[];
 
 struct CHandleX {
@@ -36819,9 +36688,9 @@ void CEnvParticle::sub_100fb1f0(CBaseEntity *pEnt, int nType, int nAttachment)
     *(int *)((char *)this + 0x460) = nAttachment;
     if (nAttachment > 0 && *(int *)((char *)this + 0x458) > 0) {
         CBaseEntity *pAim = ((CHandleX *)((char *)this + 0x37c))->Get();
-        if (g_1070b22c->vfunc21(pAim->vfunc8()) == 3) {
+        if (engine->vfunc21(pAim->vfunc8()) == 3) {
             pAim = ((CHandleX *)((char *)this + 0x37c))->Get();
-            SStudioHdr *pHdr = (SStudioHdr *)g_1070b22c->vfunc18(pAim->vfunc8());
+            SStudioHdr *pHdr = (SStudioHdr *)engine->vfunc18(pAim->vfunc8());
             if (pHdr && nAttachment < pHdr->m_nAttachments) {
                 SStudioAttachment *pAtt = (SStudioAttachment *)((char *)pHdr + pHdr->m_nAttachmentIndex) + nAttachment;
                 *(int *)((char *)this + 0x45c) = *sub_1042bff0(&pEnt, (char *)pAtt + pAtt->m_nNameIndex);
@@ -37022,9 +36891,7 @@ void CUnknown100fbc50::sub_100fbc50()
 // FUNCTION: 0x100fbc90 size=0x8a
 #include "CEntityVSlots.h"
 #include "CEnvParticle.h"
-#include "CUnknown1070b22c.h"
 struct CParticleString { int m_i; };
-extern CUnknown1070b22c *g_1070b22c;
 extern float g_104454c4;
 CEntityVSlots *sub_100a9ab0(const char *pszClass, const float *pOrigin, const float *pAngles, CEntityVSlots *pOwner);
 CParticleString *sub_1042bff0(CParticleString *pScratch, const char *psz);
@@ -37040,7 +36907,7 @@ CEntityVSlots *sub_100fbc90(const char *pszEffect, const float *pOrigin, const f
 	CEntityVSlots *pEnt = sub_100a9ab0("env_particle", pOrigin, pAngles, 0);
 	if (pEnt) {
 		CParticleString scratch;
-		g_1070b22c->vfunc17((int)pszEffect, 1);
+		engine->vfunc17((const char *)pszEffect, 1);
 		((CEnvParticle *)pEnt)->m_iszParticleName = sub_1042bff0(&scratch, pszEffect)->m_i;
 		sub_101d1280(pEnt);
 		if (flLifetime > g_104454c4) {
@@ -38051,8 +37918,6 @@ void CUnknown10103170::sub_10103170(void *pInfo)
 // END FUNCTION
 
 // FUNCTION: 0x10103370 size=0xba
-#include "CUnknown1070b22c.h"
-
 #define PV(n) virtual void v##n();
 #define PV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
 
@@ -38066,7 +37931,6 @@ struct CCmdPlayerX
 };
 
 extern "C" double __cdecl atof(const char *);
-extern CUnknown1070b22c *g_1070b22c;
 extern float g_10569fc4;
 extern float g_10569fc8;
 extern float g_10569fcc;
@@ -38079,10 +37943,10 @@ void sub_10103370()
 {
 	CCmdPlayerX *pPlayer = sub_101193b0();
 	if (pPlayer) {
-		if (g_1070b22c->vfunc85() == 4) {
-			g_10569fc4 = (float)atof(g_1070b22c->vfunc84(1));
-			g_10569fc8 = (float)atof(g_1070b22c->vfunc84(2));
-			g_10569fcc = (float)atof(g_1070b22c->vfunc84(3));
+		if (engine->vfunc85() == 4) {
+			g_10569fc4 = (float)atof(engine->vfunc84(1));
+			g_10569fc8 = (float)atof(engine->vfunc84(2));
+			g_10569fcc = (float)atof(engine->vfunc84(3));
 		}
 	}
 	float vTemp[3];
@@ -38091,10 +37955,7 @@ void sub_10103370()
 // END FUNCTION
 
 // FUNCTION: 0x101034f0 size=0xb2
-#include "CUnknown1070b22c.h"
-
 extern "C" double __cdecl atof(const char *);
-extern CUnknown1070b22c *g_1070b22c;
 extern float g_1070917c;
 extern float g_10709180;
 extern float g_10709184;
@@ -38108,10 +37969,10 @@ void sub_101034f0()
 	void *pPlayer = sub_101193b0();
 	int nMode = 6;
 	if (pPlayer) {
-		if (g_1070b22c->vfunc85() == 4) {
-			g_1070917c = (float)atof(g_1070b22c->vfunc84(1));
-			g_10709180 = (float)atof(g_1070b22c->vfunc84(2));
-			g_10709184 = (float)atof(g_1070b22c->vfunc84(3));
+		if (engine->vfunc85() == 4) {
+			g_1070917c = (float)atof(engine->vfunc84(1));
+			g_10709180 = (float)atof(engine->vfunc84(2));
+			g_10709184 = (float)atof(engine->vfunc84(3));
 			nMode = 5;
 		}
 		sub_101cde40(pPlayer, g_1070917c, g_10709180, g_10709184, g_10709188, nMode);
@@ -39713,9 +39574,7 @@ int CUnknown1010c490::sub_1010c490(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x1010c5d0 size=0x2e
-#include "CUnknown1070b22c.h"
 // TARGET: sub_1010c5d0
-extern CUnknown1070b22c *g_1070b22c;
 
 struct CUnknown1010c5d0
 {
@@ -39728,7 +39587,7 @@ struct CUnknown1010c5d0
 
 bool CUnknown1010c5d0::sub_1010c5d0()
 {
-    g_1070b22c->vfunc102(m_nPortalKey, m_nOpen);
+    engine->vfunc102(m_nPortalKey, m_nOpen);
     return m_nOpen != 0;
 }
 // END FUNCTION
@@ -40323,9 +40182,7 @@ void CBreakableSurface::sub_101128d0(const Vector &vecPos, float *pX, float *pY)
 // FUNCTION: 0x10112a10 size=0x124
 #include "CBreakableSurface.h"
 #include "CEntityMessageFilter.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 
 void CBreakableSurface::sub_10112a10()
 {
@@ -40336,11 +40193,11 @@ void CBreakableSurface::sub_10112a10()
 	}
 	CEntityMessageFilter filter;
 	int edict = m_pEdict2e0;
-	filter.sub_1019d2f0(g_1070b22c->vfunc35(edict));
+	filter.sub_1019d2f0(engine->vfunc35(edict));
 	filter.sub_1019cf50();
-	g_1070b22c->vfunc65(&filter, 0);
-	g_1070b22c->vfunc67(1);
-	g_1070b22c->vfunc66();
+	engine->vfunc65(&filter, 0);
+	engine->vfunc67(1);
+	engine->vfunc66();
 	m_nPanes4cc = m_nCols49c * m_nRows4a0;
 }
 // END FUNCTION
@@ -40608,10 +40465,8 @@ void sub_10115660(SMonHandle h)
 // TARGET: ?sub_10115980@@YAXPAUSHandleOwner@@@Z
 #include "CUnknown101151a0.h"
 #include "CUnknown1018c4d0.h"
-#include "CUnknown1070b22c.h"
 #include "CGlobalEntityList.h"
 extern CGlobalEntityList *g_10566458;
-extern CUnknown1070b22c *g_1070b22c;
 extern unsigned int *g_1070a870;
 extern int g_1070a87c;
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
@@ -40660,7 +40515,7 @@ void sub_10115980(SHandleOwner *pOwner)
 			if ((char)((CUnknown101151a0Unit *)pEnt)->sub_101151a0() || (pEnt->vfunc241() && sub_101d1a90(pOwner->m_bHasArg ? pOwner->m_pArg : 0, pEnt))) {
 				CUnknown101151a0 *pLinked = pEnt->sub_10115180();
 				if (pLinked) {
-					g_1070b22c->vfunc101(pLinked->vfunc217());
+					engine->vfunc101(pLinked->vfunc217());
 					((CUnknown1018c4d0 *)pLinked)->sub_1018c4d0(1);
 				}
 			}
@@ -41775,11 +41630,9 @@ int CGameMovement::sub_10124120(Vector &in, Vector &normal, Vector &out, float o
 #include "CGlobalEntityList.h"
 #include "CTraceFilterSimple.h"
 #include "CUnknown1070b254.h"
-#include "IVEngineServer.h"
 #include "Ray_t.h"
 
 extern CUnknown1070b254 *g_1070b254;
-extern IVEngineServer *g_1070b22c;
 void sub_10146570(const float *pStart, const float *pEnd, int r, int g, int b, int noDepth, float flDuration);
 
 struct CMoveFlagsView
@@ -41867,7 +41720,7 @@ void CGameMovement::sub_10124ba0()
 		if (!g_1070b754->vfunc1() && g_1070b754->m_nValue)
 		{
 			int nEdict = ((CStuckEntView *)tr.m_pEnt)->m_nEdict;
-			if (g_1070b22c->vfunc35(nEdict))
+			if (engine->vfunc35(nEdict))
 			{
 				sub_10124630(tr.m_pEnt);
 				return;
@@ -41876,7 +41729,7 @@ void CGameMovement::sub_10124ba0()
 		else
 		{
 			int nEdict = ((CStuckEntView *)tr.m_pEnt)->m_nEdict;
-			if (g_1070b22c->vfunc35(nEdict))
+			if (engine->vfunc35(nEdict))
 			{
 				if (((CStuckEntView *)tr.m_pEnt)->vfunc211() & 0x40)
 					sub_10124630(tr.m_pEnt);
@@ -42069,13 +41922,11 @@ float CGameMovement::sub_101282b0()
 // FUNCTION: 0x101297a0 size=0x21
 // TARGET: sub_101297a0
 #include "CBaseEntity.h"
-#include "CUnknown1070b22c.h"
-extern CUnknown1070b22c *g_1070b22c;
 int __fastcall sub_101297a0(char *p)
 {
     CBaseEntity *pEnt = *(CBaseEntity **)(p + 0x4c);
     if (pEnt != 0) {
-        return g_1070b22c->vfunc35(pEnt->m_pEdict2e0);
+        return engine->vfunc35(pEnt->m_pEdict2e0);
     }
     return -1;
 }
@@ -42742,20 +42593,18 @@ int CUnknown1012d5c0::sub_1012d5c0()
 // FUNCTION: 0x1012d5e0 size=0xf9
 #include "CUnknown1012d740.h"
 #include "CReliableBroadcastFilter.h"
-#include "IVEngineServer.h"
 
-extern IVEngineServer *g_1070b22c;
 extern int g_10726080;
 
 void CUnknown1012d740::sub_1012d5e0(int nState)
 {
 	m_nState488 = nState;
 	CReliableBroadcastFilter filter;
-	g_1070b22c->vfunc65(&filter, g_10726080);
-	g_1070b22c->vfunc71(nState);
+	engine->vfunc65(&filter, g_10726080);
+	engine->vfunc71(nState);
 	int edict = m_pEdict2e0;
-	g_1070b22c->vfunc71(g_1070b22c->vfunc35(edict));
-	g_1070b22c->vfunc66();
+	engine->vfunc71(engine->vfunc35(edict));
+	engine->vfunc66();
 }
 // END FUNCTION
 
@@ -43196,14 +43045,12 @@ int sub_10130150()
 
 // FUNCTION: 0x10130690 size=0x2d
 #include "CLight.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 
 // TARGET: CLight::sub_10130690
 void CLight::sub_10130690()
 {
-	g_1070b22c->vfunc62(m_iStyle, "a");
+	engine->vfunc62(m_iStyle, "a");
 	m_flags204 |= 1;
 }
 // END FUNCTION
@@ -47187,17 +47034,15 @@ void sub_101434b0(int entIndex, int lineOffset, const char *pszText, int duratio
 
 // FUNCTION: 0x10143630 size=0xa3
 #include "CBroadcastRecipientFilter.h"
-#include "IVEngineServer.h"
 #include "Vector.h"
 
-extern IVEngineServer *g_1070b22c;
 
 void sub_10143630(const Vector *pVec)
 {
 	CBroadcastRecipientFilter filter;
-	g_1070b22c->vfunc65(&filter, 0x32);
-	g_1070b22c->vfunc75((int)pVec);
-	g_1070b22c->vfunc66();
+	engine->vfunc65(&filter, 0x32);
+	engine->vfunc75((int)pVec);
+	engine->vfunc66();
 }
 // END FUNCTION
 
@@ -47472,9 +47317,7 @@ int CUnknown1014c0f0::sub_1014c0f0()
 // FUNCTION: 0x1014c130 size=0x121
 #include "CWeaponGravityGun.h"
 #include "CBaseEntity.h"
-#include "IVEngineServer.h"
 
-extern IVEngineServer *g_1070b22c;
 
 struct ISoundView
 {
@@ -47493,22 +47336,22 @@ void CWeaponGravityGun::sub_1014c130()
         switch (m_nSoundState) {
         case 1: {
             CBaseEntity *pOwner = (CBaseEntity *)sub_102521f0();
-            int index = g_1070b22c->vfunc35(pOwner->m_pEdict2e0);
+            int index = engine->vfunc35(pOwner->m_pEdict2e0);
             g_1070b248->StopSound(index, 6, g_1057b88c);
             pOwner = (CBaseEntity *)sub_102521f0();
-            index = g_1070b22c->vfunc35(pOwner->m_pEdict2e0);
+            index = engine->vfunc35(pOwner->m_pEdict2e0);
             g_1070b248->StopSound(index, 6, g_1057b888);
             pOwner = (CBaseEntity *)sub_102521f0();
-            index = g_1070b22c->vfunc35(pOwner->m_pEdict2e0);
+            index = engine->vfunc35(pOwner->m_pEdict2e0);
             g_1070b248->StopSound(index, 6, g_1057b890);
             pOwner = (CBaseEntity *)sub_102521f0();
-            index = g_1070b22c->vfunc35(pOwner->m_pEdict2e0);
+            index = engine->vfunc35(pOwner->m_pEdict2e0);
             g_1070b248->StopSound(index, 6, g_1057b894);
             break;
         }
         case 0: {
             CBaseEntity *pOwner = (CBaseEntity *)sub_102521f0();
-            int index = g_1070b22c->vfunc35(pOwner->m_pEdict2e0);
+            int index = engine->vfunc35(pOwner->m_pEdict2e0);
             g_1070b248->StopSound(index, 6, g_1057b88c);
             break;
         }
@@ -49689,9 +49532,6 @@ void CBaseEntity::sub_1016e500(int solid)
 // END FUNCTION
 
 // FUNCTION: 0x1016e650 size=0x16d
-#include "CUnknown1070b22c.h"
-
-extern CUnknown1070b22c *g_1070b22c;
 extern int g_10726030;
 extern int g_10726048;
 extern int g_1072604c;
@@ -49710,20 +49550,20 @@ extern int g_1072609c;
 // TARGET: sub_1016e650
 void sub_1016e650()
 {
-    g_10726030 = g_1070b22c->vfunc82("HudText", -1);
-    g_10726048 = g_1070b22c->vfunc82("SayText", -1);
-    g_1072604c = g_1070b22c->vfunc82("TextMsg", -1);
-    g_10726014 = g_1070b22c->vfunc82("ResetHUD", 1);
-    g_10726018 = g_1070b22c->vfunc82("InitHUD", 0);
-    g_1072601c = g_1070b22c->vfunc82("GameTitle", 1);
-    g_10726034 = g_1070b22c->vfunc82("DeathMsg", -1);
-    g_10726038 = g_1070b22c->vfunc82("GameMode", 1);
-    g_1072603c = g_1070b22c->vfunc82("MOTD", -1);
-    g_10726040 = g_1070b22c->vfunc82("ItemPickup", -1);
-    g_10726050 = g_1070b22c->vfunc82("ShowMenu", -1);
-    g_1072600c = g_1070b22c->vfunc82("ScreenShake", -1);
-    g_10726010 = g_1070b22c->vfunc82("ScreenFade", 10);
-    g_1072609c = g_1070b22c->vfunc82("TeamChange", 1);
+    g_10726030 = engine->vfunc82("HudText", -1);
+    g_10726048 = engine->vfunc82("SayText", -1);
+    g_1072604c = engine->vfunc82("TextMsg", -1);
+    g_10726014 = engine->vfunc82("ResetHUD", 1);
+    g_10726018 = engine->vfunc82("InitHUD", 0);
+    g_1072601c = engine->vfunc82("GameTitle", 1);
+    g_10726034 = engine->vfunc82("DeathMsg", -1);
+    g_10726038 = engine->vfunc82("GameMode", 1);
+    g_1072603c = engine->vfunc82("MOTD", -1);
+    g_10726040 = engine->vfunc82("ItemPickup", -1);
+    g_10726050 = engine->vfunc82("ShowMenu", -1);
+    g_1072600c = engine->vfunc82("ScreenShake", -1);
+    g_10726010 = engine->vfunc82("ScreenFade", 10);
+    g_1072609c = engine->vfunc82("TeamChange", 1);
 }
 // END FUNCTION
 
@@ -50338,7 +50178,6 @@ bool __fastcall sub_10175180(Holder *self)
 
 // FUNCTION: 0x10175290 size=0x9c
 #include "CBasePlayer.h"
-#include "CUnknown1070b22c.h"
 
 struct EntBase {
 	char m_pad0000[0x45c];
@@ -50349,7 +50188,6 @@ struct EntInfo {
 	int m_serial;
 	int m_unused;
 };
-extern CUnknown1070b22c *g_1070b22c;
 extern char *g_10566458;
 
 static inline EntBase *GetEnt(unsigned int h)
@@ -50364,7 +50202,7 @@ static inline EntBase *GetEnt(unsigned int h)
 
 int CBasePlayer::sub_10175290()
 {
-	int now = g_1070b22c->vfunc120();
+	int now = engine->vfunc120();
 	if (m_n1E0C + 5 < now)
 		m_n1E08 = -1;
 	if (m_n1E08 > 0)
@@ -50394,15 +50232,13 @@ void CAI_BaseNPC::sub_10175360(CBaseEntity *pEnt)
 
 // FUNCTION: 0x101753a0 size=0x25
 #include "CTriggerEnvAudio.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 
 // TARGET: CTriggerEnvAudio::sub_101753a0
 void CTriggerEnvAudio::sub_101753a0(int value)
 {
     *(int *)((char *)this + 0x1e08) = value;
-    *(int *)((char *)this + 0x1e0c) = g_1070b22c->vfunc120();
+    *(int *)((char *)this + 0x1e0c) = engine->vfunc120();
 }
 // END FUNCTION
 
@@ -50417,9 +50253,7 @@ int CUnknown101753e0::sub_101753e0()
 // FUNCTION: 0x10175400 size=0x169
 #include "CBasePlayer.h"
 #include "CSingleUserRecipientFilter.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern int g_1072607c;
 struct CFadeTimer { float sub_101e8bb0(); };
 extern CFadeTimer g_10739d08;
@@ -50442,12 +50276,12 @@ void CBasePlayer::sub_10175400(char bFade)
 	} else {
 		nFlags = 0x82;
 	}
-	g_1070b22c->vfunc65(&filter, g_1072607c);
-	g_1070b22c->vfunc67(nFlags);
-	g_1070b22c->vfunc67(nAmount);
-	g_1070b22c->vfunc67(0);
-	g_1070b22c->vfunc67(0);
-	g_1070b22c->vfunc66();
+	engine->vfunc65(&filter, g_1072607c);
+	engine->vfunc67(nFlags);
+	engine->vfunc67(nAmount);
+	engine->vfunc67(0);
+	engine->vfunc67(0);
+	engine->vfunc66();
 }
 // END FUNCTION
 
@@ -50765,11 +50599,9 @@ void CBasePlayerUnit::sub_1017c600(CBaseEntity *pEnt, char bLoot, int a, int b, 
 // FUNCTION: 0x1017c6d0 size=0x10c
 #include "CBasePlayer.h"
 #include "CBaseEntity.h"
-#include "IVEngineServer.h"
 #include "ScopeTrace.h"
 #include "CVariantCopy.h"
 
-extern IVEngineServer *g_1070b22c;
 extern char g_10543c6c[];
 extern char g_10555f7c[];
 
@@ -50779,12 +50611,12 @@ struct EdictX { char pad[0x40]; EdictUnknown *m_pUnk; };
 void CBasePlayer::sub_1017c6d0()
 {
     if (m_nUseEdictIndex1EB8 != 0 && m_bNotifyUse1EC0 != 0) {
-        EdictX *pEdict = (EdictX *)g_1070b22c->vfunc38(m_nUseEdictIndex1EB8);
+        EdictX *pEdict = (EdictX *)engine->vfunc38(m_nUseEdictIndex1EB8);
         CBaseEntity *pEnt;
         {
             ScopeTrace trace(g_10543c6c, g_106b8540);
             if (pEdict == 0)
-                pEdict = (EdictX *)g_1070b22c->vfunc38(0);
+                pEdict = (EdictX *)engine->vfunc38(0);
             if (pEdict && pEdict->m_pUnk)
                 pEnt = pEdict->m_pUnk->vfunc4();
             else
@@ -50848,9 +50680,7 @@ int CUnknown1017cb80::sub_1017cb80(const char *name)
 // FUNCTION: 0x1017cef0 size=0x79
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
-#include "IVEngineServer.h"
 
-extern IVEngineServer *g_1070b22c;
 void sub_10014614(CBaseEntity *pEnt);
 
 inline bool BitSet(unsigned int v, int n)
@@ -50863,7 +50693,7 @@ void CBasePlayer::sub_1017cef0(CBaseEntity *pEnt)
 	CBaseEntity *pOld = sub_1000306c();
 	if (pEnt) {
 		int edict = pEnt->m_pEdict2e0;
-		int index = g_1070b22c->vfunc35(edict);
+		int index = engine->vfunc35(edict);
 		*(int *)((char *)this + 0x1ec4) = index;
 		*(unsigned int *)((char *)this + 0x19b4) = *pEnt->vfunc1();
 	} else {
@@ -51620,7 +51450,6 @@ void sub_101802e0()
 // END FUNCTION
 
 // FUNCTION: 0x101807d0 size=0x123
-#include "CUnknown1070b22c.h"
 #include "CEntityVSlots.h"
 
 extern "C" double atof(const char *);
@@ -51649,16 +51478,15 @@ struct EntQuery_t {
 	EntQuery_t *sub_1000bc30(const Vector *pCenter, float flRadius, int a, int b);
 };
 
-extern CUnknown1070b22c *g_1070b22c;
 HurtEntity_t *sub_101193b0();
 int __fastcall sub_101ccd40(int *pQuery);
 
 void sub_101807d0()
 {
 	HurtEntity_t *pPlayer = sub_101193b0();
-	float flA = (float)atof(g_1070b22c->vfunc84(1));
-	float flB = (float)atof(g_1070b22c->vfunc84(2));
-	int nMode = atoi(g_1070b22c->vfunc84(3));
+	float flA = (float)atof(engine->vfunc84(1));
+	float flB = (float)atof(engine->vfunc84(2));
+	int nMode = atoi(engine->vfunc84(3));
 	if (pPlayer && flA > 0.0f && flB > 0.0f && nMode >= 0 && nMode < 3) {
 		EntQuery_t query;
 		query.sub_1000bc30(pPlayer->slot220(), 4096.0f, 0, 0);
@@ -51706,10 +51534,8 @@ void sub_10180af0()
 
 // FUNCTION: 0x10180d10 size=0x9a
 #include "CGlobalEntityList.h"
-#include "CUnknown1070b22c.h"
 #include <string.h>
 extern CGlobalEntityList g_106eb5d8;
-extern CUnknown1070b22c *g_1070b22c;
 extern char g_106b8540[];
 __declspec(dllimport) void DevMsg(const char *pMsg, ...);
 __declspec(dllimport) void DevWarning(const char *pMsg, ...);
@@ -51718,7 +51544,7 @@ void sub_101cd940(CBaseEntity *pEnt);
 void sub_10180d10()
 {
     CBaseEntity *pEnt = g_106eb5d8.sub_100f7060(0);
-    const char *pszClass = g_1070b22c->vfunc84(1);
+    const char *pszClass = engine->vfunc84(1);
     int nRemoved = 0;
     if (pszClass && strlen(pszClass) != 0) {
         for (; pEnt; pEnt = g_106eb5d8.sub_100f7060(pEnt)) {
@@ -51739,8 +51565,6 @@ void sub_10180d10()
 
 // FUNCTION: 0x10180e70 size=0xf8
 #include "CGlobalEntityList.h"
-#include "CUnknown1070b22c.h"
-extern CUnknown1070b22c *g_1070b22c;
 extern CGlobalEntityList g_106eb5d8;
 extern char g_106b8540[];
 extern void (*g_109f3630)(const char *, ...);
@@ -51775,7 +51599,7 @@ struct SNamedEnt
 void sub_10180e70()
 {
 	SNamedEnt *pEnt = (SNamedEnt *)g_106eb5d8.sub_100f7060(0);
-	const char *pszName = g_1070b22c->vfunc84(1);
+	const char *pszName = engine->vfunc84(1);
 	int nRemoved = 0;
 	if (pszName && strlen(pszName)) {
 		while (pEnt) {
@@ -52201,24 +52025,22 @@ void CBasePlayer::sub_10183330()
 
 // FUNCTION: 0x10183470 size=0xe1
 #include "CSingleUserRecipientFilter.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern int g_10726098;
 void *sub_101cda50();
 
 void sub_10183470()
 {
-	if (g_1070b22c->vfunc85() == 2)
+	if (engine->vfunc85() == 2)
 	{
 		void *pPlayer = sub_101cda50();
 		if (pPlayer)
 		{
 			CSingleUserRecipientFilter filter(pPlayer);
 			filter.sub_1019cf50();
-			g_1070b22c->vfunc65(&filter, g_10726098);
-			g_1070b22c->vfunc78(g_1070b22c->vfunc84(1));
-			g_1070b22c->vfunc66();
+			engine->vfunc65(&filter, g_10726098);
+			engine->vfunc78(engine->vfunc84(1));
+			engine->vfunc66();
 		}
 	}
 }
@@ -53001,14 +52823,12 @@ void *sub_101878d0(SEdict *pent)
 
 // FUNCTION: 0x10187ef0 size=0x86
 #include "CLagCompensationManager.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 
 void CLagCompensationManager::sub_10187ef0()
 {
 	CUtlVector<CLagCompensationRecord> *v = (CUtlVector<CLagCompensationRecord> *)&m_pRecords;
-	float t0 = g_1070b22c->vfunc119(1) - 1.0; float cutoff = (float)(t0);
+	float t0 = engine->vfunc119(1) - 1.0; float cutoff = (float)(t0);
 	for (int i = v->Count() - 1; i >= 0; --i) {
 		if (!(m_pRecords[i].m_flSimulationTime >= cutoff))
 			v->Remove(i);
@@ -54478,7 +54298,6 @@ bool sub_101918e0(char **pa, char **pb)
 // FUNCTION: 0x10191cc0 size=0x16c
 #include "utlvector.h"
 #include "CBreakParser.h"
-#include "CUnknown1070b22c.h"
 
 struct CBreakModelRec {
 	char pad0[0xc];
@@ -54509,13 +54328,12 @@ struct CKeyParserFactoryView {
 	virtual void Destroy(CKeyParserView *p);
 };
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CKeyParserFactoryView *g_1072393c;
 extern "C" int __cdecl _strcmpi(const char *, const char *);
 
 void sub_10191cc0(CUtlVector<CBreakModelRec> *pList, int modelIndex)
 {
-	void *pVCollide = g_1070b22c->vfunc58(modelIndex);
+	void *pVCollide = engine->vfunc58(modelIndex);
 	if (pVCollide) {
 		CKeyParserView *pParse = g_1072393c->Create(((void **)pVCollide)[2]);
 		while (!pParse->Finished()) {
@@ -55824,7 +55642,6 @@ PyObj *sub_101976b0(PyObj *self, PyObj *args)
 
 // FUNCTION: 0x101977a0 size=0xc7
 #include "CBaseEntity.h"
-#include "CUnknown1070b22c.h"
 
 #define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
@@ -55853,7 +55670,6 @@ struct CTmp12
 	int m_c;
 };
 
-extern CUnknown1070b22c *g_1070b22c;
 CModelNameEnt *sub_10196780(PyObject *obj);
 void __cdecl sub_10203ed0(CTmp12 *pOut, const char *psz);
 
@@ -55869,7 +55685,7 @@ PyObject *sub_101977a0(PyObject *self, CTmp12 a)
 	}
 	CModelNameEnt *pEnt = sub_10196780(obj);
 	if (pEnt && str) {
-		if (g_1070b22c->vfunc13(str, 0) > 1) {
+		if (engine->vfunc13(str, 0) > 1) {
 			sub_10203ed0(&a, str);
 			pEnt->v105(a.m_psz ? a.m_psz : "");
 		}
@@ -57236,25 +57052,12 @@ void CRecipientFilter::sub_1019cf00()
 
 // FUNCTION: 0x1019d130 size=0x6c
 #include "CUnknown1019d130.h"
-struct IObj {
-    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
-    virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
-    virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
-    virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
-    virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
-    virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
-    virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
-    virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
-    virtual void v32(); virtual void v33(); virtual void v34();
-    virtual int v35(int);
-};
-extern IObj *g_1070b22c;
 void sub_10430fa0(void *, const void *, unsigned);
 
 void CUnknown1019d130::sub_1019d130(CBaseEntity *pEnt)
 {
     int h = *(int *)((char *)pEnt + 0x2e0);
-    int v = g_1070b22c->v35(h);
+    int v = engine->vfunc35(h);
     int n = m_Size;
     int i = 0;
     for (; i < n; i++) {
@@ -57594,12 +57397,10 @@ int __stdcall sub_1019ee20(int a0)
 // FUNCTION: 0x1019ee40 size=0x113
 #include "CBaseEntity.h"
 #include "CRopeKeyframe.h"
-#include "IVEngineServer.h"
 #include "ScopeTrace.h"
 
 extern "C" int _strcmpi(const char *, const char *);
 extern "C" void *__RTDynamicCast(void *inptr, long VfDelta, void *SrcType, void *TargetType, int isReference);
-extern IVEngineServer *g_1070b22c;
 extern char g_10543c6c[];
 extern char g_10538764[];
 extern char g_1059290c[];
@@ -57612,7 +57413,7 @@ bool CRopeKeyframe::sub_1019ee40()
 {
     sub_1019f1f0(false);
     for (int i = 1; i < gpGlobals->m_nEdicts; i++) {
-        EdictView *pEdict = (EdictView *)g_1070b22c->vfunc38(i);
+        EdictView *pEdict = (EdictView *)engine->vfunc38(i);
         if (pEdict && !pEdict->m_bFree) {
             CBaseEntity *pEnt;
             {
@@ -57943,7 +57744,6 @@ int __stdcall sub_101a2020(int a0)
 
 // FUNCTION: 0x101a2820 size=0x198
 #include "CRestore.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b248.h"
 
 struct RestoreFieldView
@@ -57954,7 +57754,6 @@ struct RestoreFieldView
 	short fieldSize;
 };
 __declspec(dllimport) void Warning(const char *pMsg, ...);
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b248 *g_1070b248;
 
 void CRestore::sub_101a2820(unsigned short *pSize, int *pValues, void *pBase, typedescription_t *pField)
@@ -57977,7 +57776,7 @@ void CRestore::sub_101a2820(unsigned short *pSize, int *pValues, void *pBase, ty
 			for (int i = 0; i < n; i++) {
 				if (pValues[i]) {
 					if (pF->fieldType == 0x10)
-						g_1070b22c->vfunc13((const char *)pValues[i], 0);
+						engine->vfunc13((const char *)pValues[i], 0);
 					else if (pF->fieldType == 0x11)
 						g_1070b248->vfunc0((const char *)pValues[i], 0);
 				}
@@ -59222,16 +59021,14 @@ bool CUnknown101ab800::sub_101ab800(int a, const unsigned char *pvs, int unused)
 
 // FUNCTION: 0x101ab8f0 size=0x96
 #include "CUnknown101ab800.h"
-#include "CUnknown1070b22c.h"
-extern CUnknown1070b22c *g_1070b22c;
 bool CUnknown101ab800::sub_101ab8f0(int a, const unsigned char *pvs, int unused, int pos)
 {
     if (vfunc2() & 0x10000) {
         vfunc3(vfunc2() & ~0x10000);
-        g_1070b22c->vfunc121(m_nValue0c, &m_nClusters);
+        engine->vfunc121(m_nValue0c, &m_nClusters);
     }
-    if (!g_1070b22c->vfunc105(pos, m_nValue80)) {
-        if (!m_nValue84 || !g_1070b22c->vfunc105(pos, m_nValue84))
+    if (!engine->vfunc105(pos, m_nValue80)) {
+        if (!m_nValue84 || !engine->vfunc105(pos, m_nValue84))
             return false;
     }
     return sub_101ab800(a, pvs, unused);
@@ -59286,7 +59083,6 @@ void sub_101af030()
 // FUNCTION: 0x101af0d0 size=0x18a
 #include "CUnknown1070b244.h"
 #include "CUnknown1070b248.h"
-#include "CUnknown1070b22c.h"
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 
@@ -59316,7 +59112,6 @@ struct SndTimeView
 extern SndTimeView *g_1070ac84;
 extern CUnknown1070b244 *g_1070b244;
 extern CUnknown1070b248 *g_1070b248;
-extern CUnknown1070b22c *g_1070b22c;
 
 void sub_101af0d0(SndSrcView *pSrc, const char *pszSample)
 {
@@ -59336,7 +59131,7 @@ void sub_101af0d0(SndSrcView *pSrc, const char *pszSample)
 			pEnt = 0;
 		CPASAttenuationFilter filter(pEnt);
 		filter.MakeReliable();
-		g_1070b248->vfunc3((CRecipientFilter *)&filter, g_1070b22c->vfunc35((int)pSrc), 6, pszSample, vol, 0.8f, 0, pitch, 0, 0, 1, 0);
+		g_1070b248->vfunc3((CRecipientFilter *)&filter, engine->vfunc35((int)pSrc), 6, pszSample, vol, 0.8f, 0, pitch, 0, 0, 1, 0);
 	}
 }
 // END FUNCTION
@@ -59461,9 +59256,7 @@ int sub_101b0ab0(const char *partial, char (*commands)[64])
 #include "CBaseEntity.h"
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
-#include "IVEngineServer.h"
 
-extern IVEngineServer *g_1070b22c;
 void sub_101b0dc0(CRecipientFilter *pFilter, int nEntIndex, int a, int b, int c, int d);
 
 struct CBaseEntityUnit101b0c10 : public CBaseEntity
@@ -59476,22 +59269,20 @@ void CBaseEntityUnit101b0c10::sub_101b0c10(int a)
 {
 	CPASAttenuationFilter filter((CEntitySoundOriginView *)this, a);
 	int edict = m_pEdict2e0;
-	sub_101b0dc0(&filter, g_1070b22c->vfunc35(edict), a, 0, 0, 0);
+	sub_101b0dc0(&filter, engine->vfunc35(edict), a, 0, 0, 0);
 }
 // END FUNCTION
 
 // FUNCTION: 0x101b0d80 size=0x26
 // TARGET: CUnknown101b0d80::sub_101b0d80
 #include "CUnknown101b0d80.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 void sub_101b1040(int b, int a);
 
 void CUnknown101b0d80::sub_101b0d80(int a)
 {
 	int nEdict = m_n2e0;
-	sub_101b1040(g_1070b22c->vfunc35(nEdict), a);
+	sub_101b1040(engine->vfunc35(nEdict), a);
 }
 // END FUNCTION
 
@@ -61064,20 +60855,9 @@ struct ScopeEntry {
     const char *b;
     const char *c;
 };
-struct IStringTable {
-    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
-    virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
-    virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
-    virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
-    virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
-    virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
-    virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
-    virtual int v35(int a);
-};
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
 extern char g_106b8540[];
-extern IStringTable *g_1070b22c;
 
 int sub_101bb220(int a)
 {
@@ -61085,7 +60865,7 @@ int sub_101bb220(int a)
     g_109f3620[*g_109f3680].b = g_106b8540;
     g_109f3620[*g_109f3680].c = g_106b8540;
     (*g_109f3680)++;
-    int r = g_1070b22c->v35(a) - 1;
+    int r = engine->vfunc35(a) - 1;
     (*g_109f3680)--;
     return r;
 }
@@ -61246,9 +61026,7 @@ float CUnknown101bbcd0::sub_101bbcd0()
 // FUNCTION: 0x101bbd10 size=0x9e
 #include "CUnknown101bbd10.h"
 #include "CGlobalEntityList.h"
-#include "CUnknown1070b22c.h"
 extern CGlobalEntityList *g_10566458;
-extern CUnknown1070b22c *g_1070b22c;
 extern char g_106b8540[];
 void sub_101b1880(int index, int value, const char *pszName);
 
@@ -61269,7 +61047,7 @@ void CUnknown101bbd10::sub_101bbd10()
                     e = (s2->m_Serial == (int)(h2 >> 13)) ? (CBaseEntity *)s2->m_pEntity : 0;
                 }
                 int edict = e->m_pEdict2e0;
-                int idx = g_1070b22c->vfunc35(edict);
+                int idx = engine->vfunc35(edict);
                 if (idx >= 0) {
                     const char *name = m_pszName;
                     if (name == 0)
@@ -61342,12 +61120,10 @@ void CUnknown101bc140::sub_101bc020()
 
 // FUNCTION: 0x101bc140 size=0xd5
 #include "CUnknown101bc140.h"
-#include "IVEngineServer.h"
 
 struct EntInfo { CBaseEntity *m_pEntity; int m_serial; int m_unused; };
 struct EntInfoList { int m_unused; EntInfo m_entries[1]; };
 extern EntInfoList *g_10566458;
-extern IVEngineServer *g_1070b22c;
 extern char g_106b8540[];
 
 struct CSoundEHandle
@@ -61378,7 +61154,7 @@ void CUnknown101bc140::sub_101bc140()
 	int nEntIndex;
 	if (((CSoundEHandle *)&m_hEntity)->Get()) {
 		int nEdict = ((CSoundEHandle *)&m_hEntity)->Get()->m_pEdict2e0;
-		nEntIndex = g_1070b22c->vfunc35(nEdict);
+		nEntIndex = engine->vfunc35(nEdict);
 	} else {
 		nEntIndex = -1;
 	}
@@ -63401,15 +63177,13 @@ int *sub_101c72f0()
 
 // FUNCTION: 0x101c75a0 size=0xbb
 #include "CReliableBroadcastFilter.h"
-#include "IVEngineServer.h"
 
-extern IVEngineServer *g_1070b22c;
 
 void sub_101c75a0()
 {
 	CReliableBroadcastFilter filter;
-	g_1070b22c->vfunc65(&filter, 0x1a);
-	g_1070b22c->vfunc66();
+	engine->vfunc65(&filter, 0x1a);
+	engine->vfunc66();
 }
 // END FUNCTION
 
@@ -64280,10 +64054,8 @@ void __fastcall sub_101cc810(void **p) { ((Fn *)*p)[246](p); }
 
 // FUNCTION: 0x101cc950 size=0x3e
 #include "CFlaggedEntitiesEnum.h"
-#include "CUnknown1070b22c.h"
 
 extern int vt_10482f48[];
-extern CUnknown1070b22c *g_1070b22c;
 
 // TARGET: CFlaggedEntitiesEnum::sub_101cc950
 CFlaggedEntitiesEnum *CFlaggedEntitiesEnum::sub_101cc950(CBaseEntity **pList, int nMaxList, unsigned int nFlagMask)
@@ -64293,7 +64065,7 @@ CFlaggedEntitiesEnum *CFlaggedEntitiesEnum::sub_101cc950(CBaseEntity **pList, in
     m_nMaxList = nMaxList;
     m_nFlagMask = nFlagMask;
     m_nCount = 0;
-    *(int *)((char *)this + 0x14) = (int)g_1070b22c->vfunc38(0);
+    *(int *)((char *)this + 0x14) = (int)engine->vfunc38(0);
     return this;
 }
 // END FUNCTION
@@ -64301,10 +64073,8 @@ CFlaggedEntitiesEnum *CFlaggedEntitiesEnum::sub_101cc950(CBaseEntity **pList, in
 // FUNCTION: 0x101ccb60 size=0x3e
 #include "vampire.h"
 #include "CEdtEntitiesEnum.h"
-#include "CUnknown1070b22c.h"
 
 extern int vt_10482f54[];
-extern CUnknown1070b22c *g_1070b22c;
 
 // TARGET: CEdtEntitiesEnum::sub_101ccb60
 CEdtEntitiesEnum *CEdtEntitiesEnum::sub_101ccb60(CBaseEntity **pList, int nMaxList, unsigned int nFlagMask)
@@ -64314,7 +64084,7 @@ CEdtEntitiesEnum *CEdtEntitiesEnum::sub_101ccb60(CBaseEntity **pList, int nMaxLi
     *(int *)((char *)this + 8) = nMaxList;
     m_nMask = nFlagMask;
     *(int *)((char *)this + 0x10) = 0;
-    *(int *)((char *)this + 0x14) = (int)g_1070b22c->vfunc38(0);
+    *(int *)((char *)this + 0x14) = (int)engine->vfunc38(0);
     return this;
 }
 // END FUNCTION
@@ -64405,9 +64175,6 @@ int sub_101cd340(CBaseEntity *p)
 // END FUNCTION
 
 // FUNCTION: 0x101cdac0 size=0xa7
-#include "CUnknown1070b22c.h"
-
-extern CUnknown1070b22c *g_1070b22c;
 extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
 int sub_100104d8(const char *pszName);
 
@@ -64418,10 +64185,10 @@ void sub_101cdac0(int entindex, int pos, const char *pszSample, int volume, int 
 		if (index >= 0) {
 			char szName[32];
 			Q_snprintf(szName, sizeof(szName), "!%d", index);
-			g_1070b22c->vfunc49(entindex, pos, szName, volume, soundlevel, flags | 0x80, pitch);
+			engine->vfunc49(entindex, pos, szName, volume, soundlevel, flags | 0x80, pitch);
 		}
 	} else {
-		g_1070b22c->vfunc49(entindex, pos, pszSample, volume, soundlevel, flags | 0x80, pitch);
+		engine->vfunc49(entindex, pos, pszSample, volume, soundlevel, flags | 0x80, pitch);
 	}
 }
 // END FUNCTION
@@ -64474,10 +64241,8 @@ int sub_101ce020(float a, float b)
 
 // FUNCTION: 0x101ce060 size=0x14c
 #include "CSingleUserRecipientFilter.h"
-#include "IVEngineServer.h"
 #include "CEntityVSlots.h"
 
-extern IVEngineServer *g_1070b22c;
 extern int g_10726010;
 
 struct CMsgShortsBytes
@@ -64496,15 +64261,15 @@ void sub_101ce060(const CMsgShortsBytes *pMsg, CEntityVSlots *pPlayer)
 	if (pPlayer && pPlayer->slot162()) {
 		CSingleUserRecipientFilter filter(pPlayer);
 		filter.sub_1019cf50();
-		g_1070b22c->vfunc65(&filter, g_10726010);
-		g_1070b22c->vfunc70(pMsg->w0);
-		g_1070b22c->vfunc70(pMsg->w2);
-		g_1070b22c->vfunc70(pMsg->s4);
-		g_1070b22c->vfunc67(pMsg->b6);
-		g_1070b22c->vfunc67(pMsg->b7);
-		g_1070b22c->vfunc67(pMsg->b8);
-		g_1070b22c->vfunc67(pMsg->b9);
-		g_1070b22c->vfunc66();
+		engine->vfunc65(&filter, g_10726010);
+		engine->vfunc70(pMsg->w0);
+		engine->vfunc70(pMsg->w2);
+		engine->vfunc70(pMsg->s4);
+		engine->vfunc67(pMsg->b6);
+		engine->vfunc67(pMsg->b7);
+		engine->vfunc67(pMsg->b8);
+		engine->vfunc67(pMsg->b9);
+		engine->vfunc66();
 	}
 }
 // END FUNCTION
@@ -64546,56 +64311,52 @@ void sub_101ce2e0(PlayerSlots162 *pPlayer, int a, int b)
 
 // FUNCTION: 0x101ce440 size=0x17c
 #include "CReliableBroadcastFilter.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern int g_1072604c;
 
 void sub_101ce440(int a, const char *s1, const char *s2, const char *s3, const char *s4, const char *s5)
 {
     CReliableBroadcastFilter filter;
-    g_1070b22c->vfunc65(&filter, g_1072604c);
-    g_1070b22c->vfunc67(a);
-    g_1070b22c->vfunc78(s1);
-    if (s2) g_1070b22c->vfunc78(s2); else g_1070b22c->vfunc78("");
-    if (s3) g_1070b22c->vfunc78(s3); else g_1070b22c->vfunc78("");
-    if (s4) g_1070b22c->vfunc78(s4); else g_1070b22c->vfunc78("");
-    if (s5) g_1070b22c->vfunc78(s5); else g_1070b22c->vfunc78("");
-    g_1070b22c->vfunc66();
+    engine->vfunc65(&filter, g_1072604c);
+    engine->vfunc67(a);
+    engine->vfunc78(s1);
+    if (s2) engine->vfunc78(s2); else engine->vfunc78("");
+    if (s3) engine->vfunc78(s3); else engine->vfunc78("");
+    if (s4) engine->vfunc78(s4); else engine->vfunc78("");
+    if (s5) engine->vfunc78(s5); else engine->vfunc78("");
+    engine->vfunc66();
 }
 // END FUNCTION
 
 // FUNCTION: 0x101ce620 size=0x169
 #include "ScopeTrace.h"
 #include "CSingleUserRecipientFilter.h"
-#include "CUnknown1070b22c.h"
-extern CUnknown1070b22c *g_1070b22c;
 extern int g_1072604c;
 void sub_101ce620(void *pPlayer, int value, const char *s1, const char *s2, const char *s3, const char *s4, const char *s5)
 {
     if (pPlayer) {
         CSingleUserRecipientFilter filter(pPlayer);
         filter.sub_1019cf50();
-        g_1070b22c->vfunc65(&filter, g_1072604c);
-        g_1070b22c->vfunc67(value);
-        g_1070b22c->vfunc78(s1);
+        engine->vfunc65(&filter, g_1072604c);
+        engine->vfunc67(value);
+        engine->vfunc78(s1);
         if (s2)
-            g_1070b22c->vfunc78(s2);
+            engine->vfunc78(s2);
         else
-            g_1070b22c->vfunc78(g_106b8540);
+            engine->vfunc78(g_106b8540);
         if (s3)
-            g_1070b22c->vfunc78(s3);
+            engine->vfunc78(s3);
         else
-            g_1070b22c->vfunc78(g_106b8540);
+            engine->vfunc78(g_106b8540);
         if (s4)
-            g_1070b22c->vfunc78(s4);
+            engine->vfunc78(s4);
         else
-            g_1070b22c->vfunc78(g_106b8540);
+            engine->vfunc78(g_106b8540);
         if (s5)
-            g_1070b22c->vfunc78(s5);
+            engine->vfunc78(s5);
         else
-            g_1070b22c->vfunc78(g_106b8540);
-        g_1070b22c->vfunc66();
+            engine->vfunc78(g_106b8540);
+        engine->vfunc66();
     }
 }
 // END FUNCTION
@@ -64694,9 +64455,7 @@ void sub_101ceb70(int a)
 
 // FUNCTION: 0x101cebc0 size=0xef
 #include "CSingleUserRecipientFilter.h"
-#include "IVEngineServer.h"
 
-extern IVEngineServer *g_1070b22c;
 extern int g_10726084;
 
 struct CMsgPlayerView
@@ -64711,11 +64470,11 @@ void sub_101cebc0(CMsgPlayerView *pPlayer, int nValue1, int nValue2)
 	if (pPlayer && !pPlayer->m_bFlag1e00) {
 		CSingleUserRecipientFilter filter(pPlayer);
 		filter.sub_1019cf50();
-		g_1070b22c->vfunc65(&filter, g_10726084);
-		g_1070b22c->vfunc67(0);
-		g_1070b22c->vfunc67(nValue1);
-		g_1070b22c->vfunc71(nValue2);
-		g_1070b22c->vfunc66();
+		engine->vfunc65(&filter, g_10726084);
+		engine->vfunc67(0);
+		engine->vfunc67(nValue1);
+		engine->vfunc71(nValue2);
+		engine->vfunc66();
 	}
 }
 // END FUNCTION
@@ -64783,7 +64542,6 @@ void sub_101ceef0(float size, Vector position, Vector xvec, Vector yvec, Vector 
 #include "CUnknown101cf0a0.h"
 #include "ScopeTrace.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern const char *g_105a0120;
 extern int g_105a0124;
 void sub_10139500(const Vector *pStart, float flScale, const Vector *pDir, Vector *pOut);
@@ -64793,7 +64551,7 @@ inline CBaseEntity *Instance(CUnknown1070b22c_Edict *pEdict)
 	ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
 	CBaseEntity *pEntity;
 	if (!pEdict)
-		pEdict = (CUnknown1070b22c_Edict *)g_1070b22c->vfunc38(0);
+		pEdict = (CUnknown1070b22c_Edict *)engine->vfunc38(0);
 	if (pEdict && pEdict->m_pUnknown)
 		pEntity = pEdict->m_pUnknown->GetBaseEntity();
 	else
@@ -65543,13 +65301,11 @@ unsigned sub_101d13a0(TEnt *ent)
 
 // FUNCTION: 0x101d1460 size=0x9d
 #include "CBaseEntity.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown101d1460.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
 extern char g_106b8540[];
-extern CUnknown1070b22c *g_1070b22c;
 
 struct SNetworkable {
 	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3();
@@ -65569,7 +65325,7 @@ void CUnknown101d1460::sub_101d1460(int edict)
     g_109f3620[*g_109f3680].c = g_106b8540;
     (*g_109f3680)++;
     if (!pEdict)
-        pEdict = (SEdict *)g_1070b22c->vfunc38((int)pEdict);
+        pEdict = (SEdict *)engine->vfunc38((int)pEdict);
     if (pEdict && pEdict->m_pNetworkable)
         pEnt = pEdict->m_pNetworkable->vfunc4();
     else
@@ -65734,8 +65490,6 @@ CUnknown1070b22c_Edict *sub_101d1800(ViewerEntity *pViewer)
 // END FUNCTION
 
 // FUNCTION: 0x101d20a0 size=0x112
-#include "CUnknown1070b22c.h"
-extern CUnknown1070b22c *g_1070b22c;
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
@@ -65762,13 +65516,13 @@ void sub_101d20a0(EntV *a, EntV *b)
         s_last.x = v[0];
         s_last.y = v[1];
         s_last.z = v[2];
-        int cluster = g_1070b22c->vfunc30(v);
+        int cluster = engine->vfunc30(v);
         if (cluster != g_105a0130) {
             g_105a0130 = cluster;
-            g_1070b22c->vfunc31(cluster, 0x2000, g_10733928);
+            engine->vfunc31(cluster, 0x2000, g_10733928);
         }
     }
-    g_1070b22c->vfunc32(b->GetOrigin(), g_10733928);
+    engine->vfunc32(b->GetOrigin(), g_10733928);
 }
 // END FUNCTION
 
@@ -67491,9 +67245,7 @@ int __fastcall sub_101d7780(CUnknownList101d7780 *p, void *unused, int arg)
 // FUNCTION: 0x101d77d0 size=0x128
 #include "CVStatList_t.h"
 #include "CUnknown101d7460.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown101d7460 g_10738cf0;
 extern char g_106b8540[];
 extern "C" __declspec(dllimport) void __cdecl DevMsg(int level, const char *fmt, ...);
@@ -67519,11 +67271,11 @@ void sub_101d77d0()
 	void *pChar = pPlayer->m_pChar;
 	if (!pChar)
 		return;
-	int argc = g_1070b22c->vfunc85();
+	int argc = engine->vfunc85();
 	if (argc > 1) {
 		int i = 1;
 		do {
-			int val = atoi(g_1070b22c->vfunc84(i));
+			int val = atoi(engine->vfunc84(i));
 			CVStatListSet::Of(pChar)->Find(0)->sub_102008e0(0x21, val);
 			const char *name = ((CPlayerTemplateListX *)&g_10738cf0)->sub_101d71a0(val)->m_Name.Get();
 			if (!name)
@@ -68561,13 +68313,11 @@ bool CUnknown101dbe30::sub_101dbe30(void *pKeys)
 #include "CBaseEntity.h"
 #include "CEntitySoundOriginView.h"
 #include "CPASAttenuationFilter.h"
-#include "IVEngineServer.h"
 #include "CUnknown1070b248.h"
 
 extern "C" __declspec(dllimport) void __cdecl DevMsg(int level, const char *fmt, ...);
 struct CSoundOwnerView { int m_pad; const char *m_pszName; };
 extern CSoundOwnerView *g_10739a74;
-extern IVEngineServer *g_1070b22c;
 extern CUnknown1070b248 *g_1070b248;
 
 // TARGET: CUnknown101dbe30::sub_101dbed0
@@ -68582,7 +68332,7 @@ void CUnknown101dbe30::sub_101dbed0(CBaseEntity *pEntity)
 		CPASAttenuationFilter filter((CEntitySoundOriginView *)pEntity, 0.8f);
 		pszSound = m_field0000 ? (const char *)m_field0000 : "";
 		int edict = pEntity->m_pEdict2e0;
-		int entindex = g_1070b22c->vfunc35(edict);
+		int entindex = engine->vfunc35(edict);
 		g_1070b248->vfunc3(&filter, entindex, m_field0004, pszSound, 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 	}
 }
@@ -72706,10 +72456,8 @@ void CThinkUnit::sub_101ee5a0()
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 #include "CUnknown1070b248.h"
-#include "CUnknown1070b22c.h"
 
 extern CUnknown1070b248 *g_1070b248;
-extern CUnknown1070b22c *g_1070b22c;
 extern char g_106b8540[];
 
 void CVampireProjectile::sub_101ef3d0()
@@ -72720,7 +72468,7 @@ void CVampireProjectile::sub_101ef3d0()
 	if (!pszSound)
 		pszSound = g_106b8540;
 	int edict = m_pEdict2e0;
-	g_1070b248->vfunc3(&filter, g_1070b22c->vfunc35(edict), 4, pszSound, 1.0f, ATTN_NORM, 0, 100, 0, 0, 1, 0);
+	g_1070b248->vfunc3(&filter, engine->vfunc35(edict), 4, pszSound, 1.0f, ATTN_NORM, 0, 100, 0, 0, 1, 0);
 }
 // END FUNCTION
 
@@ -74137,11 +73885,9 @@ bool CUnknown101f5150::sub_101f5150(const char *pszName)
 // FUNCTION: 0x101f5950 size=0x198
 #include "CVSoundActivityTable_t.h"
 #include "CPASAttenuationFilter.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b248.h"
 #include "ScopeTrace.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b248 *g_1070b248;
 extern void (__cdecl *g_109f3650)(int level, const char *pszFormat, ...);
 
@@ -74165,7 +73911,7 @@ void CVActivitySound::sub_101f5950(int hControl, int nSound, int nMode, float fl
 		g_1070b248->vfunc0(pszSample, 0);
 		CPASAttenuationFilter filter(pEnt);
 		CVSoundEdict *pEdict = pEnt->m_pEdict;
-		g_1070b248->vfunc3(&filter, g_1070b22c->vfunc35((int)pEdict), nMode, pszSample, flVolume, flPitch, 0, 100, 0, 0, 1, 0);
+		g_1070b248->vfunc3(&filter, engine->vfunc35((int)pEdict), nMode, pszSample, flVolume, flPitch, 0, 100, 0, 0, 1, 0);
 	}
 }
 // END FUNCTION
@@ -74173,12 +73919,10 @@ void CVActivitySound::sub_101f5950(int hControl, int nSound, int nMode, float fl
 // FUNCTION: 0x101f5b60 size=0x187
 #include "CPASAttenuationFilter.h"
 #include "CUnknown1070b248.h"
-#include "CUnknown1070b22c.h"
 #include "CVSoundActivityTable_t.h"
 
 extern char g_106b8540[];
 extern CUnknown1070b248 *g_1070b248;
-extern CUnknown1070b22c *g_1070b22c;
 extern "C" __declspec(dllimport) void DevMsg(int nLevel, const char *pszFormat, ...);
 
 void CVActivitySound::sub_101f5b60(int hControl, int nMode, int nChannel)
@@ -74198,7 +73942,7 @@ void CVActivitySound::sub_101f5b60(int hControl, int nMode, int nChannel)
 		g_1070b248->vfunc0(pszSample, 0);
 		CPASAttenuationFilter filter(pEnt);
 		CVSoundEdict *pEdict = pEnt->m_pEdict;
-		g_1070b248->vfunc3(&filter, g_1070b22c->vfunc35((int)pEdict), nChannel, pszSample, 1.0f, 0.8f, 4, 100, 0, 0, 1, 0);
+		g_1070b248->vfunc3(&filter, engine->vfunc35((int)pEdict), nChannel, pszSample, 1.0f, 0.8f, 4, 100, 0, 0, 1, 0);
 	}
 }
 // END FUNCTION
@@ -75424,7 +75168,6 @@ void CUnknown101f9670::sub_101f9690()
 
 // FUNCTION: 0x101f96b0 size=0x12e
 #include "CUnknown101f0e50.h"
-#include "CUnknown1070b22c.h"
 #include "CSingleUserRecipientFilter.h"
 
 extern "C" __declspec(dllimport) void DevMsg(int level, const char *fmt, ...);
@@ -75433,7 +75176,6 @@ struct CPlayerA8 {
     char m_pad[0xa8];
     void *m_p;
 };
-extern CUnknown1070b22c *g_1070b22c;
 extern int g_10726078;
 
 namespace block_101f96b0 {
@@ -75474,10 +75216,10 @@ void CTraitEffectList::sub_101f96b0(CTraitOwnerX *pPlayer, int id)
     if (p) {
         CSingleUserRecipientFilter filter(p);
         filter.MakeReliable();
-        g_1070b22c->vfunc65(&filter, g_10726078);
-        g_1070b22c->vfunc67(1);
-        g_1070b22c->vfunc67(id);
-        g_1070b22c->vfunc66();
+        engine->vfunc65(&filter, g_10726078);
+        engine->vfunc67(1);
+        engine->vfunc67(id);
+        engine->vfunc66();
     }
 }
 // END FUNCTION
@@ -75486,9 +75228,7 @@ void CTraitEffectList::sub_101f96b0(CTraitOwnerX *pPlayer, int id)
 #include "CUnknown101f9c70.h"
 #include "CUnknown101f0e50.h"
 #include "CSingleUserRecipientFilter.h"
-#include "IVEngineServer.h"
 
-extern IVEngineServer *g_1070b22c;
 extern CUnknown101f0e50 g_1074df78;
 extern int g_10726078;
 struct TraitOwnerPlayerView { char m_pad[0xa8]; void *m_pPlayer; };
@@ -75521,10 +75261,10 @@ void CUnknown101f9c70::sub_101f9830(CTraitOwnerX *pOwner, int id)
 			if (pPlayer) {
 				CSingleUserRecipientFilter filter(pPlayer);
 				filter.sub_1019cf50();
-				g_1070b22c->vfunc65(&filter, g_10726078);
-				g_1070b22c->vfunc67(0);
-				g_1070b22c->vfunc67(id);
-				g_1070b22c->vfunc66();
+				engine->vfunc65(&filter, g_10726078);
+				engine->vfunc67(0);
+				engine->vfunc67(id);
+				engine->vfunc66();
 			}
 			return;
 		}
@@ -75737,8 +75477,6 @@ void __fastcall sub_101fa8d0(CVDmg_t *self, int, int a, int b, int c)
 // FUNCTION: 0x101fa960 size=0xc7
 #include "CVDmg_t.h"
 #include "ScopeTrace.h"
-#include "CUnknown1070b22c.h"
-extern CUnknown1070b22c *g_1070b22c;
 
 void CVDmg_t::sub_101fa960(CVDmgSource_t *pSource)
 {
@@ -75746,7 +75484,7 @@ void CVDmg_t::sub_101fa960(CVDmgSource_t *pSource)
 	if (pSource) {
 		if (!m_block14.sub_10204250())
 			m_field04 -= m_block14.sub_10204900(pSource->m_pCharacter);
-		m_field34 = g_1070b22c->vfunc35(pSource->m_pEdict);
+		m_field34 = engine->vfunc35(pSource->m_pEdict);
 	} else {
 		m_field34 = 0;
 	}
@@ -80128,12 +79866,10 @@ char CUnknown10206a80::sub_10206a80()
 #include "CBaseCombatCharacter.h"
 #include "CUnknown101ecae0.h"
 #include "CUnknown101ecb10.h"
-#include "CUnknown1070b22c.h"
 #include "ScopeTrace.h"
 
 extern int g_10738d14;
 extern char g_1073a354[];
-extern CUnknown1070b22c *g_1070b22c;
 
 static inline void S_strcpy(char *dest, const char *src)
 {
@@ -80203,11 +79939,11 @@ void CUnknown10206c70::sub_10206aa0(int nTemplate, CBaseCombatCharacter *pChar)
 			else
 				S_strcpyIdx(szBuf, "item_w_lt_cloth");
 			int edict = pC->m_pEdict;
-			((CUnknown101ecae0 *)g_1073a354)->sub_101ecae0(g_1070b22c->vfunc35(edict));
+			((CUnknown101ecae0 *)g_1073a354)->sub_101ecae0(engine->vfunc35(edict));
 			((S_Applier *)this)->sub_10207680(nOld, pChar);
 			((S_Applier *)this)->sub_10206da0(nTemplate, pChar);
 			edict = pC->m_pEdict;
-			((CUnknown101ecb10 *)g_1073a354)->sub_101ecb10(g_1070b22c->vfunc35(edict));
+			((CUnknown101ecb10 *)g_1073a354)->sub_101ecb10(engine->vfunc35(edict));
 			if (pC->m_pObj)
 				pC->sub_1015f9e0();
 		}
@@ -80270,7 +80006,6 @@ int sub_10207c20()
 #include "CBaseCombatCharacter.h"
 #include "CGlobalEntityList.h"
 #include "CEHandleGet.h"
-#include "IVEngineServer.h"
 
 #define PV(n) virtual void v##n();
 #define PV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
@@ -80326,7 +80061,6 @@ CHideBarterUtilPlayer *sub_101cda50();
 extern CHideBarterSndTable g_1074b308;
 extern int g_1074f03c;
 extern int g_1074f034;
-extern IVEngineServer *g_1070b22c;
 
 // TARGET: CUnknown10208c90::sub_10208c90
 void CUnknown10208c90::sub_10208c90(inputdata_t *pInput)
@@ -80350,7 +80084,7 @@ void CUnknown10208c90::sub_10208c90(inputdata_t *pInput)
 			g_1074b308.sub_101f5950(this, g_1074f034, 2, 1.0f, 1.25f);
 	} else {
 		CHideBarterUtilPlayer *pPlayer = sub_101cda50();
-		g_1070b22c->vfunc61(pPlayer->m_pEdict, "hidebarter\n");
+		engine->vfunc61(pPlayer->m_pEdict, "hidebarter\n");
 		p->m_hTarget = (CBaseEntity *)0;
 		p->v407();
 		((CHideBarterNpc *)this)->sub_100a5030(pObj);
@@ -81156,10 +80890,8 @@ void CUnknown1020e060::sub_1020e080(int unused)
 
 // FUNCTION: 0x1020e3c0 size=0xee
 #include "CReliableSingleUserRecipientFilter.h"
-#include "IVEngineServer.h"
 struct S1020e3c0Arg { struct S1020e3c0Ent *pEnt; };
 struct S1020e3c0Ent { char pad[0xa8]; void *pPlayer; };
-extern IVEngineServer *g_1070b22c;
 extern int g_10726070;
 
 void __stdcall sub_1020e3c0(S1020e3c0Arg *p)
@@ -81169,9 +80901,9 @@ void __stdcall sub_1020e3c0(S1020e3c0Arg *p)
         void *pPlayer = pEnt->pPlayer;
         if (pPlayer) {
             CReliableSingleUserRecipientFilter filter(pPlayer);
-            g_1070b22c->vfunc65(&filter, g_10726070);
-            g_1070b22c->vfunc67(0);
-            g_1070b22c->vfunc66();
+            engine->vfunc65(&filter, g_10726070);
+            engine->vfunc67(0);
+            engine->vfunc66();
         }
     }
 }
@@ -81596,9 +81328,7 @@ int *sub_10210fe0()
 #include "CTriggerBombSite.h"
 #include "CRecipientFilter.h"
 #include "CPASAttenuationFilter.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern int g_1072607c;
 extern char vt_104540e8[];
 extern char vt_10454688[];
@@ -81621,12 +81351,12 @@ void CTriggerBombSite::sub_10211550(CBombState state, CBombState newState)
 	((CRecipientFilter *)&filter)->sub_1019d040(*(void **)&state);
 	filter.m_vptr = vt_10454688;
 	((CRecipientFilter *)&filter)->sub_1019cf50();
-	g_1070b22c->vfunc65((CRecipientFilter *)&filter, g_1072607c);
-	g_1070b22c->vfunc67((unsigned char)newState.m_c);
-	g_1070b22c->vfunc67(m_nProgress);
-	g_1070b22c->vfunc67(0);
-	g_1070b22c->vfunc67(0);
-	g_1070b22c->vfunc66();
+	engine->vfunc65((CRecipientFilter *)&filter, g_1072607c);
+	engine->vfunc67((unsigned char)newState.m_c);
+	engine->vfunc67(m_nProgress);
+	engine->vfunc67(0);
+	engine->vfunc67(0);
+	engine->vfunc66();
 }
 // END FUNCTION
 
@@ -81743,8 +81473,6 @@ int *sub_10211970()
 // FUNCTION: 0x102120c0 size=0xf7
 #include "CPropSign.h"
 #include "CSingleUserRecipientFilter.h"
-#include "IVEngineServer.h"
-extern IVEngineServer *g_1070b22c;
 extern int g_10726088;
 
 // TARGET: CPropSign::sub_102120c0
@@ -81753,12 +81481,12 @@ void CPropSign::sub_102120c0(CBaseEntity *pPlayer)
     if (pPlayer != 0) {
         CSingleUserRecipientFilter filter(pPlayer);
         filter.MakeReliable();
-        g_1070b22c->vfunc65(&filter, g_10726088);
-        g_1070b22c->vfunc67(0);
-        g_1070b22c->vfunc72(0.5f);
+        engine->vfunc65(&filter, g_10726088);
+        engine->vfunc67(0);
+        engine->vfunc72(0.5f);
         int edict = *(int *)((char *)this + 0x2e0);
-        g_1070b22c->vfunc71(g_1070b22c->vfunc35(edict));
-        g_1070b22c->vfunc66();
+        engine->vfunc71(engine->vfunc35(edict));
+        engine->vfunc66();
     }
 }
 // END FUNCTION
@@ -81842,9 +81570,7 @@ void CPropHaunted::sub_10213ef0(int index, void *pEvent, CBaseEntity *pOther)
 #include "CEntitySoundOriginView.h"
 #include "CPASAttenuationFilter.h"
 #include "CUnknown1070b248.h"
-#include "CUnknown1070b22c.h"
 extern CUnknown1070b248 *g_1070b248;
-extern CUnknown1070b22c *g_1070b22c;
 extern char g_106b8540[];
 
 void CPropHaunted::sub_10214080(const char *pszSound)
@@ -81854,7 +81580,7 @@ void CPropHaunted::sub_10214080(const char *pszSound)
     if (*pszSound) {
         CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
         int edict = m_pEdict2e0;
-        g_1070b248->vfunc2(&filter, g_1070b22c->vfunc35(edict), 4, pszSound, 1.0f, 75, 0, 100, 0, 0, 1, 0);
+        g_1070b248->vfunc2(&filter, engine->vfunc35(edict), 4, pszSound, 1.0f, 75, 0, 100, 0, 0, 1, 0);
     }
 }
 // END FUNCTION
@@ -82357,7 +82083,6 @@ int CBaseTerminal::sub_10218710(int a)
 #include "CBaseTerminal.h"
 #include "CEHandleGet.h"
 #include "CReliableSingleUserRecipientFilter.h"
-#include "CUnknown1070b22c.h"
 
 struct CTerminalUserView
 {
@@ -82365,7 +82090,6 @@ struct CTerminalUserView
 	void *m_pPlayer;
 };
 
-extern CUnknown1070b22c *g_1070b22c;
 extern int g_10726070;
 
 void CBaseTerminal::sub_10218820(int a, int b)
@@ -82375,10 +82099,10 @@ void CBaseTerminal::sub_10218820(int a, int b)
 	{
 		CReliableSingleUserRecipientFilter filter(pUser->m_pPlayer);
 		int msg = g_10726070;
-		g_1070b22c->vfunc65(&filter, msg);
-		g_1070b22c->vfunc67(a);
-		g_1070b22c->vfunc67(b);
-		g_1070b22c->vfunc66();
+		engine->vfunc65(&filter, msg);
+		engine->vfunc67(a);
+		engine->vfunc67(b);
+		engine->vfunc66();
 	}
 }
 // END FUNCTION
@@ -82387,18 +82111,16 @@ void CBaseTerminal::sub_10218820(int a, int b)
 #include "CBaseEntity.h"
 #include "CPropHacking.h"
 #include "CEntityMessageFilter.h"
-#include "CUnknown1070b22c.h"
 #include "ScopeTrace.h"
 #include <string.h>
 
-extern CUnknown1070b22c *g_1070b22c;
 
 // TARGET: CPropHacking::sub_102189e0
 void CPropHacking::sub_102189e0(const char *pszText)
 {
 	CEntityMessageFilter filter;
 	int pEdict = m_pEdict2e0;
-	filter.sub_1019d2f0(g_1070b22c->vfunc35(pEdict));
+	filter.sub_1019d2f0(engine->vfunc35(pEdict));
 	filter.sub_1019cf50();
 	int nChunk;
 	int nLength = strlen(pszText);
@@ -82407,10 +82129,10 @@ void CPropHacking::sub_102189e0(const char *pszText)
 		nChunk = (nLength - nOffset > 250) ? 250 : nLength - nOffset;
 		memcpy(szChunk, pszText + nOffset, nChunk);
 		szChunk[nChunk] = 0;
-		g_1070b22c->vfunc65(&filter, 0);
-		g_1070b22c->vfunc67(2);
-		g_1070b22c->vfunc78(szChunk);
-		g_1070b22c->vfunc66();
+		engine->vfunc65(&filter, 0);
+		engine->vfunc67(2);
+		engine->vfunc78(szChunk);
+		engine->vfunc66();
 	}
 }
 // END FUNCTION
@@ -82418,115 +82140,103 @@ void CPropHacking::sub_102189e0(const char *pszText)
 // FUNCTION: 0x10218b90 size=0xc5
 #include "CUnknown10217f50.h"
 #include "CEntityMessageFilter.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 
 // TARGET: CUnknown10217f50::sub_10218b90
 void CUnknown10217f50::sub_10218b90()
 {
 	CEntityMessageFilter filter;
 	int nEdict = *(int *)((char *)this + 0x2e0);
-	filter.sub_1019d2f0(g_1070b22c->vfunc35(nEdict));
+	filter.sub_1019d2f0(engine->vfunc35(nEdict));
 	filter.sub_1019cf50();
-	g_1070b22c->vfunc65(&filter, 0);
-	g_1070b22c->vfunc67(6);
-	g_1070b22c->vfunc66();
+	engine->vfunc65(&filter, 0);
+	engine->vfunc67(6);
+	engine->vfunc66();
 }
 // END FUNCTION
 
 // FUNCTION: 0x10218ca0 size=0xc5
 #include "CUnknown10217f50.h"
 #include "CEntityMessageFilter.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 
 void CUnknown10217f50::sub_10218ca0()
 {
 	CEntityMessageFilter filter;
 	int nEdict = *(int *)((char *)this + 0x2e0);
-	filter.sub_1019d2f0(g_1070b22c->vfunc35(nEdict));
+	filter.sub_1019d2f0(engine->vfunc35(nEdict));
 	filter.sub_1019cf50();
-	g_1070b22c->vfunc65(&filter, 0);
-	g_1070b22c->vfunc67(5);
-	g_1070b22c->vfunc66();
+	engine->vfunc65(&filter, 0);
+	engine->vfunc67(5);
+	engine->vfunc66();
 }
 // END FUNCTION
 
 // FUNCTION: 0x10218db0 size=0xc5
 #include "CUnknown10217f50.h"
 #include "CEntityMessageFilter.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 
 // TARGET: CUnknown10217f50::sub_10218db0
 void CUnknown10217f50::sub_10218db0()
 {
 	CEntityMessageFilter filter;
 	int nEdict = *(int *)((char *)this + 0x2e0);
-	filter.sub_1019d2f0(g_1070b22c->vfunc35(nEdict));
+	filter.sub_1019d2f0(engine->vfunc35(nEdict));
 	filter.sub_1019cf50();
-	g_1070b22c->vfunc65(&filter, 0);
-	g_1070b22c->vfunc67(4);
-	g_1070b22c->vfunc66();
+	engine->vfunc65(&filter, 0);
+	engine->vfunc67(4);
+	engine->vfunc66();
 }
 // END FUNCTION
 
 // FUNCTION: 0x10218ec0 size=0xed
 #include "CUnknown10217f50.h"
 #include "CEntityMessageFilter.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 
 // TARGET: CUnknown10217f50::sub_10218ec0
 void CUnknown10217f50::sub_10218ec0(int a, int b)
 {
 	CEntityMessageFilter filter;
 	int nEdict = *(int *)((char *)this + 0x2e0);
-	filter.sub_1019d2f0(g_1070b22c->vfunc35(nEdict));
+	filter.sub_1019d2f0(engine->vfunc35(nEdict));
 	filter.sub_1019cf50();
-	g_1070b22c->vfunc65(&filter, 0);
-	g_1070b22c->vfunc67(7);
-	g_1070b22c->vfunc67(a);
-	g_1070b22c->vfunc67(b);
-	g_1070b22c->vfunc66();
+	engine->vfunc65(&filter, 0);
+	engine->vfunc67(7);
+	engine->vfunc67(a);
+	engine->vfunc67(b);
+	engine->vfunc66();
 }
 // END FUNCTION
 
 // FUNCTION: 0x10218ff0 size=0xed
 #include "CPropHacking.h"
 #include "CEntityMessageFilter.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 
 void CPropHacking::sub_10218ff0(int a, int b)
 {
 	CEntityMessageFilter filter;
 	int pEdict = m_pEdict2e0;
-	filter.sub_1019d2f0(g_1070b22c->vfunc35(pEdict));
+	filter.sub_1019d2f0(engine->vfunc35(pEdict));
 	filter.sub_1019cf50();
-	g_1070b22c->vfunc65(&filter, 0);
-	g_1070b22c->vfunc67(1);
-	g_1070b22c->vfunc69(a);
-	g_1070b22c->vfunc69(b);
-	g_1070b22c->vfunc66();
+	engine->vfunc65(&filter, 0);
+	engine->vfunc67(1);
+	engine->vfunc69(a);
+	engine->vfunc69(b);
+	engine->vfunc66();
 }
 // END FUNCTION
 
 // FUNCTION: 0x10219120 size=0xd9
 #include "CUnknown10219120.h"
 #include "CEntityMessageFilter.h"
-#include "IVEngineServer.h"
 
-extern IVEngineServer *g_1070b22c;
 
 static inline int IndexOfEdict(int pEdict)
 {
-	return g_1070b22c->vfunc35(pEdict);
+	return engine->vfunc35(pEdict);
 }
 
 // TARGET: CUnknown10219120::sub_10219120
@@ -82535,9 +82245,9 @@ void CUnknown10219120::sub_10219120()
 	CEntityMessageFilter filter;
 	filter.sub_1019d2f0(IndexOfEdict(m_pEdict2e0));
 	filter.sub_1019cf50();
-	g_1070b22c->vfunc65(&filter, 0);
-	g_1070b22c->vfunc67(3);
-	g_1070b22c->vfunc66();
+	engine->vfunc65(&filter, 0);
+	engine->vfunc67(3);
+	engine->vfunc66();
 	m_flags81c &= 0xfffffffa;
 }
 // END FUNCTION
@@ -82545,21 +82255,19 @@ void CUnknown10219120::sub_10219120()
 // FUNCTION: 0x102192a0 size=0xdb
 #include "CUnknown10217f50.h"
 #include "CEntityMessageFilter.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 
 // TARGET: CUnknown10217f50::sub_102192a0
 void CUnknown10217f50::sub_102192a0(char value)
 {
 	CEntityMessageFilter filter;
 	int nEdict = *(int *)((char *)this + 0x2e0);
-	filter.sub_1019d2f0(g_1070b22c->vfunc35(nEdict));
+	filter.sub_1019d2f0(engine->vfunc35(nEdict));
 	filter.sub_1019cf50();
-	g_1070b22c->vfunc65(&filter, 0);
-	g_1070b22c->vfunc67(9);
-	g_1070b22c->vfunc68(value);
-	g_1070b22c->vfunc66();
+	engine->vfunc65(&filter, 0);
+	engine->vfunc67(9);
+	engine->vfunc68(value);
+	engine->vfunc66();
 }
 // END FUNCTION
 
@@ -83284,9 +82992,7 @@ void __fastcall sub_1021e6c0(Mem *self, int, int num)
 #include "CBaseEntity.h"
 #include "CUnknown101ecae0.h"
 #include "CUnknown101ecb10.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown101ecae0 g_1073a354;
 
 struct RecordX { char pad[0x18]; int m_field18; };
@@ -83302,10 +83008,10 @@ struct CUnknown1021e750 {
 void CUnknown1021e750::sub_1021e750(int key, CBaseEntity *pEnt)
 {
 	int edict1 = pEnt->m_pEdict2e0;
-	g_1073a354.sub_101ecae0(g_1070b22c->vfunc35(edict1));
+	g_1073a354.sub_101ecae0(engine->vfunc35(edict1));
 	g_1074df78.sub_100066cc(pEnt, g_1073a28c.sub_10009f66(key)->m_field18);
 	int edict = pEnt->m_pEdict2e0;
-	((CUnknown101ecb10 *)&g_1073a354)->sub_101ecb10(g_1070b22c->vfunc35(edict));
+	((CUnknown101ecb10 *)&g_1073a354)->sub_101ecb10(engine->vfunc35(edict));
 }
 // END FUNCTION
 
@@ -83386,10 +83092,8 @@ void CUnknown1021eaf0::sub_1021eaf0()
 // FUNCTION: 0x1021fb50 size=0xff
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
-#include "CUnknown1070b22c.h"
 #include "CBaseCombatCharacter.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 
 struct CEquipUnknown {
 	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3();
@@ -83413,12 +83117,12 @@ struct CEquipList {
 
 void sub_1021fb50(CEquipList *pList, int index)
 {
-	CEquipEdict *pEdict = (CEquipEdict *)g_1070b22c->vfunc38(index);
+	CEquipEdict *pEdict = (CEquipEdict *)engine->vfunc38(index);
 	CBaseEntity *pEnt;
 	{
 		ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
 		if (!pEdict)
-			pEdict = (CEquipEdict *)g_1070b22c->vfunc38(0);
+			pEdict = (CEquipEdict *)engine->vfunc38(0);
 		pEnt = (pEdict && pEdict->m_pUnk) ? pEdict->m_pUnk->GetBaseEntity() : 0;
 	}
 	if (pEnt) {
@@ -84988,10 +84692,8 @@ void CUnknown10227f60::sub_10227f60()
 // FUNCTION: 0x10228220 size=0x75
 #include "CUnknown10228020.h"
 #include "CUnknown10248a50.h"
-#include "CUnknown1070b22c.h"
 #include "CKeyValuesX.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 void sub_10002095(const char **pOut, const char *pszString);
 
 char CUnknown10228020::sub_10228220(CUnknown10248a50 *pData)
@@ -85002,7 +84704,7 @@ char CUnknown10228020::sub_10228220(CUnknown10248a50 *pData)
 			for (CKeyValuesX *p = pKey->sub_10004c8c(); p; p = p->sub_1000fa65()) {
 				const char *psz;
 				sub_10002095(&psz, p->sub_10248cd0(0, ""));
-				g_1070b22c->vfunc13(psz ? psz : "", 0);
+				engine->vfunc13(psz ? psz : "", 0);
 			}
 			return 1;
 		}
@@ -85849,9 +85551,7 @@ void __fastcall sub_1022d410(Mem256 *self, int, int num)
 
 // FUNCTION: 0x1022d780 size=0xe0
 #include "ScopeTrace.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 
 #define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
@@ -85874,12 +85574,12 @@ struct CItemEdict { char m_pad[0x40]; CItemUnknown *m_pUnk; };
 
 void sub_1022d780(int index, int arg2)
 {
-	CItemEdict *pEdict = (CItemEdict *)g_1070b22c->vfunc38(index);
+	CItemEdict *pEdict = (CItemEdict *)engine->vfunc38(index);
 	CItemEnt *pEnt;
 	{
 		ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
 		if (pEdict == 0)
-			pEdict = (CItemEdict *)g_1070b22c->vfunc38(0);
+			pEdict = (CItemEdict *)engine->vfunc38(0);
 		if (pEdict && pEdict->m_pUnk)
 			pEnt = pEdict->m_pUnk->vfunc4();
 		else
@@ -85905,7 +85605,6 @@ void sub_1022d780(int index, int arg2)
 #include "CBaseCombatWeapon.h"
 #include "CGlobalEntityList.h"
 #include "CVDmg_t.h"
-#include "IVEngineServer.h"
 #include "ScopeTrace.h"
 
 #define GR(n) virtual void gr##n();
@@ -85919,17 +85618,16 @@ struct EdictView {
 	CGlobalEntityList_Ent *m_pUnknown;
 };
 
-extern IVEngineServer *g_1070b22c;
 extern GameRulesView *g_1070ba0c;
 
 void sub_1022d8a0(int index, const char *pszName)
 {
-	EdictView *pEdict = (EdictView *)g_1070b22c->vfunc38(index);
+	EdictView *pEdict = (EdictView *)engine->vfunc38(index);
 	CVDmgSource_t *pEntity;
 	{
 		ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
 		if (!pEdict)
-			pEdict = (EdictView *)g_1070b22c->vfunc38(0);
+			pEdict = (EdictView *)engine->vfunc38(0);
 		if (pEdict && pEdict->m_pUnknown)
 			pEntity = (CVDmgSource_t *)pEdict->m_pUnknown->vfunc4();
 		else
@@ -86444,8 +86142,6 @@ bool CPair10232c70::sub_10232c70(int *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x10232cb0 size=0x9d
-#include "CUnknown1070b22c.h"
-extern CUnknown1070b22c *g_1070b22c;
 extern char g_106b8540[];
 extern void (__cdecl *g_109f3628)(const char *fmt);
 int sub_100f4190(const char *pszName, int version, int a);
@@ -86460,12 +86156,12 @@ bool sub_10232cb0()
     if (r == 1) {
         g_109f3628("\nAborting map_edit\nWorldcraft not running...\n\n");
         sub_101ce440(4, "Worldcraft not running...", 0, 0, 0, 0);
-        g_1070b22c->vfunc59("disconnect\n");
+        engine->vfunc59("disconnect\n");
         return false;
     }
     g_109f3628("\nAborting map_edit\nWC/Engine map versions different...\n\n");
     sub_101ce440(4, "WC/Engine map versions different...", 0, 0, 0, 0);
-    g_1070b22c->vfunc59("disconnect\n");
+    engine->vfunc59("disconnect\n");
     return false;
 }
 // END FUNCTION
@@ -86641,9 +86337,7 @@ void sub_10233ba0()
 
 // FUNCTION: 0x10233c80 size=0x3e
 #include "vampire.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern int g_10552810;
 extern char g_109340dd;
 int sub_1000f0fb();
@@ -86654,7 +86348,7 @@ void sub_10003c56(int a);
 // TARGET: sub_10233c80
 void sub_10233c80()
 {
-    if (g_1070b22c->a12())
+    if (engine->vfunc12())
     {
         g_10552810 = sub_1000f0fb();
         if (g_109340dd)
@@ -86668,32 +86362,26 @@ void sub_10233c80()
 // END FUNCTION
 
 // FUNCTION: 0x10233ee0 size=0x2b
-#include "CUnknown1070b22c.h"
-
-extern CUnknown1070b22c *g_1070b22c;
 extern unsigned char g_109340dc;
 extern float g_106102fc;
 
 // TARGET: sub_10233ee0
 void sub_10233ee0()
 {
-    if (g_1070b22c->a12() != 0 && g_109340dc != 0) {
+    if (engine->vfunc12() != 0 && g_109340dc != 0) {
         g_106102fc = g_106102fc + 10.0;
     }
 }
 // END FUNCTION
 
 // FUNCTION: 0x10233fb0 size=0x2b
-#include "CUnknown1070b22c.h"
-
-extern CUnknown1070b22c *g_1070b22c;
 extern unsigned char g_109340dc;
 extern float g_106102fc;
 
 // TARGET: sub_10233fb0
 void sub_10233fb0()
 {
-	int iVar1 = g_1070b22c->a12();
+	int iVar1 = engine->vfunc12();
 	if (iVar1 != 0 && g_109340dc != 0) {
 		g_106102fc = g_106102fc - 10.0;
 	}
@@ -86702,16 +86390,14 @@ void sub_10233fb0()
 
 // FUNCTION: 0x10234080 size=0x3d
 #include "vampire.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern char g_109340dd;
 extern char *g_10934088;
 
 // TARGET: sub_10234080
 void sub_10234080()
 {
-    if (g_1070b22c->a12())
+    if (engine->vfunc12())
     {
         if (g_109340dd)
         {
@@ -87826,7 +87512,6 @@ bool CUnknown102391c0::sub_102391c0()
 // END FUNCTION
 
 // FUNCTION: 0x102399b0 size=0xd4
-#include "IVEngineServer.h"
 #define KV(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define KV100(p) KV(p##0) KV(p##1) KV(p##2) KV(p##3) KV(p##4) KV(p##5) KV(p##6) KV(p##7) KV(p##8) KV(p##9)
@@ -87837,7 +87522,6 @@ struct ViewKickTarget
     virtual void a165(); virtual void a166(); virtual void a167(); virtual void a168();
     virtual void vfunc169(float *pKick);
 };
-extern IVEngineServer *g_1070b22c;
 extern "C" double __cdecl atof(const char *);
 extern void (*g_109f3628)(const char *fmt, ...);
 extern char g_105c20f4[];
@@ -87850,13 +87534,13 @@ void sub_102399b0()
         kick[0] = -2.0f;
         kick[1] = -0.5f;
         kick[2] = 0.0f;
-        switch (g_1070b22c->vfunc85()) {
+        switch (engine->vfunc85()) {
         case 4:
-            kick[2] = (float)atof((const char *)g_1070b22c->vfunc84(3));
+            kick[2] = (float)atof((const char *)engine->vfunc84(3));
         case 3:
-            kick[1] = (float)atof((const char *)g_1070b22c->vfunc84(2));
+            kick[1] = (float)atof((const char *)engine->vfunc84(2));
         case 2:
-            kick[0] = (float)atof((const char *)g_1070b22c->vfunc84(1));
+            kick[0] = (float)atof((const char *)engine->vfunc84(1));
         case 1:
             pTarget->vfunc169(kick);
             return;
@@ -87868,8 +87552,6 @@ void sub_102399b0()
 // END FUNCTION
 
 // FUNCTION: 0x10239b60 size=0x11c
-#include "CUnknown1070b22c.h"
-extern CUnknown1070b22c *g_1070b22c;
 extern "C" __declspec(dllimport) void __cdecl Msg(const char *, ...);
 extern "C" int __cdecl atoi(const char *);
 extern "C" double __cdecl atof(const char *);
@@ -87893,15 +87575,15 @@ void sub_10239b60()
 	int nFlags = 0;
 	SShakePlayer *pPlayer = sub_101193b0();
 	if (pPlayer) {
-		switch (g_1070b22c->vfunc85()) {
+		switch (engine->vfunc85()) {
 		case 5:
-			nFlags = atoi(g_1070b22c->vfunc84(4));
+			nFlags = atoi(engine->vfunc84(4));
 		case 4:
-			flDuration = (float)atof(g_1070b22c->vfunc84(3));
+			flDuration = (float)atof(engine->vfunc84(3));
 		case 3:
-			flFrequency = (float)atof(g_1070b22c->vfunc84(2));
+			flFrequency = (float)atof(engine->vfunc84(2));
 		case 2:
-			flAmplitude = (float)atof(g_1070b22c->vfunc84(1));
+			flAmplitude = (float)atof(engine->vfunc84(1));
 		case 1:
 			sub_101cdba0(pPlayer->vfunc192(), flAmplitude, flFrequency, flDuration, 1.0f, nFlags, 1);
 			return;
@@ -91586,15 +91268,13 @@ void sub_1024eda0()
 #include "CEntityVSlots.h"
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b244.h"
 #include "CUnknown1070b248.h"
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b244 *g_1070b244;
 extern CUnknown1070b248 *g_1070b248;
 static __inline int ENTINDEX(int pEdict)
 {
-	return g_1070b22c->vfunc35(pEdict);
+	return engine->vfunc35(pEdict);
 }
 struct CPhysObjV { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual char v4(); };
 struct CDropEntityUnit : CBaseEntity { void sub_1024fc20(); void sub_1024fe00(); };
@@ -92570,14 +92250,12 @@ int *sub_102567b0()
 
 // FUNCTION: 0x10256890 size=0x6b
 #include "CBaseCombatWeapon.h"
-#include "CUnknown1070b22c.h"
 
 struct OwnerEnt {
     char m_pad0000[0xa8];
     CBaseEntity *m_pPlayer;
 };
 
-extern CUnknown1070b22c *g_1070b22c;
 
 // TARGET: sub_10256890
 CBaseCombatWeapon *sub_10256890(int unused, CBaseCombatWeapon *pWeapon, unsigned int *pBits)
@@ -92585,7 +92263,7 @@ CBaseCombatWeapon *sub_10256890(int unused, CBaseCombatWeapon *pWeapon, unsigned
     if (pWeapon && pWeapon->sub_102521f0()) {
         OwnerEnt *pOwner = (OwnerEnt *)pWeapon->sub_102521f0();
         if (pOwner && pOwner->m_pPlayer) {
-            unsigned int index = g_1070b22c->vfunc35(pOwner->m_pPlayer->m_pEdict2e0) - 1;
+            unsigned int index = engine->vfunc35(pOwner->m_pPlayer->m_pEdict2e0) - 1;
             pBits[0] = 0;
             pBits[index >> 5] |= 1 << (index & 0x1f);
             return pWeapon;
@@ -92728,7 +92406,6 @@ int CWeaponRanged::sub_10257280(void *pFrom, void *pTo, int a)
 
 // FUNCTION: 0x10257640 size=0x12c
 #include "CWeaponRanged.h"
-#include "CUnknown1070b22c.h"
 #include "CGlobalEntityList.h"
 #include "ScopeTrace.h"
 
@@ -92761,14 +92438,13 @@ struct S_Weapon
 	int m_n868;
 };
 
-extern CUnknown1070b22c *g_1070b22c;
 S_Chr *sub_101193b0();
 
 static inline S_Ent *S_Instance(S_Edict *pEdict)
 {
 	ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
 	if (!pEdict)
-		pEdict = (S_Edict *)g_1070b22c->vfunc38(0);
+		pEdict = (S_Edict *)engine->vfunc38(0);
 	return (pEdict && pEdict->m_pUnknown) ? (S_Ent *)pEdict->m_pUnknown->vfunc4() : 0;
 }
 
@@ -92781,7 +92457,7 @@ void CWeaponRanged::sub_10257640()
 		if (pOwner->m_pObj != 0) {
 			pPlayer = pOwner;
 			int nIndex = pOwner->m_nUseIndex;
-			S_Ent *pEnt = S_Instance((S_Edict *)g_1070b22c->vfunc38(nIndex));
+			S_Ent *pEnt = S_Instance((S_Edict *)engine->vfunc38(nIndex));
 			if (pEnt == 0)
 				return;
 			pTarget = pEnt->m_pChar;
@@ -92795,7 +92471,7 @@ void CWeaponRanged::sub_10257640()
 			if (pPlayer == 0)
 				return;
 			int edict = pOwner->m_pEdict;
-			if (g_1070b22c->vfunc35(edict) != pPlayer->m_nUseIndex)
+			if (engine->vfunc35(edict) != pPlayer->m_nUseIndex)
 				return;
 			pTarget = pOwner;
 		}
@@ -99027,9 +98703,7 @@ void CAI_BaseNPCTroika::sub_102c0360()
 
 // FUNCTION: 0x102c0bb0 size=0xb8
 #include "CAI_BaseNPCTroika.h"
-#include "IVEngineServer.h"
 
-extern IVEngineServer *g_1070b22c;
 
 struct CGlobalNpcHook	// the object at 0x1070b248
 {
@@ -99086,7 +98760,7 @@ void CAI_BaseNPCTroika::sub_102c0bb0()
 {
 	CTroikaLookView *p = (CTroikaLookView *)this;
 	int nEdict = p->m_pEdict;
-	g_1070b248->slot6(g_1070b22c->vfunc35(nEdict), 5);
+	g_1070b248->slot6(engine->vfunc35(nEdict), 5);
 	p->slot275();
 	p->sub_101063a0();
 	p->sub_102c0ca0();
@@ -103384,10 +103058,8 @@ void CUnknown102dca60::sub_102dc490()
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 #include "CUnknown1070b248.h"
-#include "CUnknown1070b22c.h"
 
 extern CUnknown1070b248 *g_1070b248;
-extern CUnknown1070b22c *g_1070b22c;
 int sub_10228350(int);
 
 struct CSoundEntityView : CEntitySoundOriginView
@@ -103404,7 +103076,7 @@ void CUnknown102dca60::sub_102dc520()
 	soundlevel_t soundlevel = (soundlevel_t)sub_10228350(pEnt->m_nSoundLevel);
 	CPASAttenuationFilter filter(pEnt, soundlevel);
 	int edict = pEnt->m_pEdict2e0;
-	g_1070b248->vfunc11(&filter, g_1070b22c->vfunc35(edict), 2, 0, 0, 4, 100, 0, 0, 0, 0);
+	g_1070b248->vfunc11(&filter, engine->vfunc35(edict), 2, 0, 0, 4, 100, 0, 0, 0, 0);
 }
 // END FUNCTION
 
@@ -107025,14 +106697,10 @@ bool sub_102f67a0(const char *mapname)
 // END FUNCTION
 
 // FUNCTION: 0x102f6cd0 size=0x27
-#include "IVEngineServer.h"
-
-extern IVEngineServer *g_1070b22c;
-
 // TARGET: sub_102f6cd0
 void __fastcall sub_102f6cd0(char *pThis)
 {
-	if (g_1070b22c->vfunc12() == 0) {
+	if (engine->vfunc12() == 0) {
 		operator delete(*(void **)(pThis + 0xc));
 		*(void **)(pThis + 0xc) = 0;
 	}
@@ -107116,14 +106784,7 @@ struct SHudTextParms
 	int channel;
 };
 
-struct SEngineEdit
-{
-	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5();
-	virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9(); virtual void s10(); virtual void s11();
-	virtual int IsEditing();
-};
 
-extern SEngineEdit *g_1070b22c;
 extern int g_109340d8;
 extern char g_109340dc;
 extern char g_109340dd;
@@ -107157,7 +106818,7 @@ void CUnknown102f7ca0::sub_102f7ca0()
 	params.holdTime = 1.0f;
 	Q_snprintf(szHull, 0x32, "  %s", sub_102d6230(g_109340d8));
 	Q_snprintf(szText, 255, "Displaying:\n%s\n\n", szHull);
-	if (g_1070b22c->IsEditing()) {
+	if (engine->vfunc12()) {
 		Q_snprintf(szLinks, 0x32, "  %s (l)", g_109340dd ? "Links" : "Nodes");
 		Q_snprintf(szMode, 0x32, "  %s (m)", g_109340dc ? "Air" : "Ground");
 		Q_snprintf(szEdit, 255, "Editing:\n%s\n%s", szMode, szLinks);
@@ -111603,12 +111264,10 @@ bool CUnknown10324ad0::sub_10324ad0()
 // FUNCTION: 0x10324ba0 size=0xa8
 #include "CBaseCombatCharacter.h"
 #include "CUnknown10324ad0.h"
-#include "CUnknown1070b22c.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
 extern char g_106b8540[];
-extern CUnknown1070b22c *g_1070b22c;
 
 void CBaseCombatCharacter::sub_10324ba0()
 {
@@ -111619,7 +111278,7 @@ void CBaseCombatCharacter::sub_10324ba0()
 	(*g_109f3680)++;
 	if (((CUnknown10324ad0 *)this)->sub_10324ad0()) {
 		double start = sub_10324c80(-1);
-		*(float *)((char *)this + 0xa84) = (float)(g_1070b22c->vfunc119(0) + start);
+		*(float *)((char *)this + 0xa84) = (float)(engine->vfunc119(0) + start);
 	}
 	(*g_109f3680)--;
 }
@@ -113342,10 +113001,8 @@ void *CBaseCombatCharacter::sub_10335950(const char *pszClassname)
 
 // FUNCTION: 0x10335a70 size=0xc7
 #include "CBaseCombatCharacter.h"
-#include "CUnknown1070b22c.h"
 #include "ScopeTrace.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 
 class CUnknown1073a300
 {
@@ -113362,8 +113019,8 @@ bool CBaseCombatCharacter::sub_10335a70(CBaseEntity *pOther)
 	{
 		int edictOther = pOther->m_pEdict2e0;
 		int edictThis = m_pEdict2e0;
-		int a = g_1070b22c->vfunc35(edictThis);
-		int b = g_1070b22c->vfunc35(edictOther);
+		int a = engine->vfunc35(edictThis);
+		int b = engine->vfunc35(edictOther);
 		return g_1073a300.sub_101ed0f0(a, b);
 	}
 	return false;
@@ -114879,12 +114536,10 @@ void CBaseCombatCharacter::sub_1033df80()
 #include "CBaseCombatCharacter.h"
 #include "CEntitySoundOriginView.h"
 #include "CPASAttenuationFilter.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b248.h"
 #include "CUnknown1074e098.h"
 #include "ScopeTrace.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b248 *g_1070b248;
 extern CUnknown1074e098 g_1074e098;
 
@@ -114908,7 +114563,7 @@ void CBaseCombatCharacter::sub_1033e0a0(int nDiscipline, int unused1, CBaseEntit
 	g_1070b248->vfunc0(pszSound, 0);
 	if (*pszSound && *pszSound != ' ') {
 		int edict = m_pEdict2e0;
-		g_1070b248->vfunc3(&filter, g_1070b22c->vfunc35(edict), 3, pszSound, 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+		g_1070b248->vfunc3(&filter, engine->vfunc35(edict), 3, pszSound, 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 	}
 }
 // END FUNCTION
@@ -115258,10 +114913,8 @@ void CBaseCombatCharacter::sub_10340d70(inputdata_t *pInput)
 
 // FUNCTION: 0x10340e50 size=0x172
 #include "CBaseCombatCharacter.h"
-#include "CUnknown1070b22c.h"
 #include "ScopeTrace.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern char g_10623504[];
 extern char g_10543c6c[];
 extern char g_10538764[];	// RTTI type descriptor of CBaseEntity
@@ -115289,12 +114942,12 @@ void CBaseCombatCharacter::sub_10340e50(int amount)
 	if (pPlayer && amount) {
 		int iContainer = *(int *)(pPlayer + 0x1eb8);
 		if (iContainer) {
-			CEdictView *pEdict = (CEdictView *)g_1070b22c->vfunc38(iContainer);
+			CEdictView *pEdict = (CEdictView *)engine->vfunc38(iContainer);
 			CBaseEntity *pEntity;
 			{
 				ScopeTrace instanceTrace(g_10543c6c, g_106b8540);
 				if (!pEdict)
-					pEdict = (CEdictView *)g_1070b22c->vfunc38(0);
+					pEdict = (CEdictView *)engine->vfunc38(0);
 				if (pEdict && pEdict->m_pUnknown)
 					pEntity = ((CServerUnknownView *)pEdict->m_pUnknown)->GetBaseEntity();
 				else
@@ -117401,17 +117054,14 @@ int CUnknown10351510::sub_10351510()
 // END FUNCTION
 
 // FUNCTION: 0x10352e90 size=0x25
-#include "CUnknown1070b22c.h"
-
-extern CUnknown1070b22c *g_1070b22c;
 extern char g_1056ece0[];
 extern char g_105730d0[];
 
 // TARGET: sub_10352e90
 void sub_10352e90()
 {
-    g_1070b22c->vfunc13(g_1056ece0, 0);
-    g_1070b22c->vfunc13(g_105730d0, 0);
+    engine->vfunc13(g_1056ece0, 0);
+    engine->vfunc13(g_105730d0, 0);
 }
 // END FUNCTION
 
@@ -121626,11 +121276,9 @@ char CUnknown1039ab10::sub_1039ab10()
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 #include "CNPC_VMingXiao.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b244.h"
 #include "CUnknown1070b248.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b244 *g_1070b244;
 extern CUnknown1070b248 *g_1070b248;
 extern const char *g_1064339c[];
@@ -121640,7 +121288,7 @@ void CNPC_VMingXiao::sub_1039ab30()
 	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
 	filter.MakeReliable();
 	int edict = *(int *)((char *)this + 0x2e0);
-	int idx = g_1070b22c->vfunc35(edict);
+	int idx = engine->vfunc35(edict);
 	g_1070b248->vfunc3(&filter, idx, 4, g_1064339c[g_1070b244->vfunc2(0, 0)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 }
 // END FUNCTION
@@ -121649,11 +121297,9 @@ void CNPC_VMingXiao::sub_1039ab30()
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 #include "CNPC_VMingXiao.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b244.h"
 #include "CUnknown1070b248.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b244 *g_1070b244;
 extern CUnknown1070b248 *g_1070b248;
 extern const char *g_1064339c[];
@@ -121663,7 +121309,7 @@ void CNPC_VMingXiao::sub_1039aca0()
 	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
 	filter.MakeReliable();
 	int edict = *(int *)((char *)this + 0x2e0);
-	int idx = g_1070b22c->vfunc35(edict);
+	int idx = engine->vfunc35(edict);
 	g_1070b248->vfunc3(&filter, idx, 4, g_1064339c[g_1070b244->vfunc2(0, 0)], 1.0f, 0.8f, 4, 100, 0, 0, 1, 0);
 }
 // END FUNCTION
@@ -121783,11 +121429,9 @@ void CUnknown1039ef90::sub_1039ef90(const int *pSrc)
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 #include "CNPC_VMingXiaoTentacle.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b244.h"
 #include "CUnknown1070b248.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b244 *g_1070b244;
 extern CUnknown1070b248 *g_1070b248;
 extern const char *g_106477c8[];
@@ -121797,7 +121441,7 @@ void CNPC_VMingXiaoTentacle::sub_1039f030()
 	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
 	filter.MakeReliable();
 	int edict = *(int *)((char *)this + 0x2e0);
-	int idx = g_1070b22c->vfunc35(edict);
+	int idx = engine->vfunc35(edict);
 	g_1070b248->vfunc3(&filter, idx, 4, g_106477c8[g_1070b244->vfunc2(0, 0)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 }
 // END FUNCTION
@@ -121806,11 +121450,9 @@ void CNPC_VMingXiaoTentacle::sub_1039f030()
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 #include "CNPC_VMingXiaoTentacle.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b244.h"
 #include "CUnknown1070b248.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b244 *g_1070b244;
 extern CUnknown1070b248 *g_1070b248;
 extern const char *g_106477cc[];
@@ -121820,7 +121462,7 @@ void CNPC_VMingXiaoTentacle::sub_1039f1a0()
 	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
 	filter.MakeReliable();
 	int edict = *(int *)((char *)this + 0x2e0);
-	int idx = g_1070b22c->vfunc35(edict);
+	int idx = engine->vfunc35(edict);
 	g_1070b248->vfunc3(&filter, idx, 2, g_106477cc[g_1070b244->vfunc2(0, 0)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 }
 // END FUNCTION
@@ -121829,11 +121471,9 @@ void CNPC_VMingXiaoTentacle::sub_1039f1a0()
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 #include "CNPC_VMingXiaoTentacle.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b244.h"
 #include "CUnknown1070b248.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b244 *g_1070b244;
 extern CUnknown1070b248 *g_1070b248;
 extern const char *g_106477cc[];
@@ -121843,7 +121483,7 @@ void CNPC_VMingXiaoTentacle::sub_1039f310()
 	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
 	filter.MakeReliable();
 	int edict = *(int *)((char *)this + 0x2e0);
-	int idx = g_1070b22c->vfunc35(edict);
+	int idx = engine->vfunc35(edict);
 	g_1070b248->vfunc3(&filter, idx, 2, g_106477cc[g_1070b244->vfunc2(0, 0)], 1.0f, 0.8f, 4, 100, 0, 0, 1, 0);
 }
 // END FUNCTION
@@ -121914,9 +121554,7 @@ void CNPC_VNewscaster::sub_103a0d50()
 
 // FUNCTION: 0x103a0eb0 size=0xfc
 #include "CUnknown103a0eb0.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 void sub_101434b0(int nEntity, int nLine, const char *pszText, int nDuration, int r, int g, int b, int a);
 
 int CUnknown103a0eb0::sub_103a0eb0(int nLine, CUnknown103a0eb0Info *pInfo, char bHighlight)
@@ -121934,13 +121572,13 @@ int CUnknown103a0eb0::sub_103a0eb0(int nLine, CUnknown103a0eb0Info *pInfo, char 
 		a = 0x96;
 	}
 	int nEntry = pInfo->m_nEntry;
-	int nEntity = g_1070b22c->vfunc35(GetEdict());
+	int nEntity = engine->vfunc35(GetEdict());
 	sub_101434b0(nEntity, nLine, pInfo->m_pszHeader, 0, r, g, b, a);
 	nLine++;
-	nEntity = g_1070b22c->vfunc35(GetEdict());
+	nEntity = engine->vfunc35(GetEdict());
 	sub_101434b0(nEntity, nLine, pInfo->m_Entries[nEntry].m_pszSecond, 0, r, g, b, a);
 	nLine++;
-	nEntity = g_1070b22c->vfunc35(GetEdict());
+	nEntity = engine->vfunc35(GetEdict());
 	sub_101434b0(nEntity, nLine, pInfo->m_Entries[nEntry].m_pszFirst, 0, r, g, b, a);
 	return nLine + 1;
 }
@@ -124088,8 +123726,6 @@ char sub_103c8e20()
 
 // FUNCTION: 0x103c9cf0 size=0x159
 #include "ScopeTrace.h"
-#include "CUnknown1070b22c.h"
-extern CUnknown1070b22c *g_1070b22c;
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
@@ -124117,13 +123753,13 @@ char sub_103c9cf0(EntV *pEnt, Vector vecPoint)
         s_last.x = v[0];
         s_last.y = v[1];
         s_last.z = v[2];
-        int cluster = g_1070b22c->vfunc30(v);
+        int cluster = engine->vfunc30(v);
         if (cluster != g_1065f798) {
             g_1065f798 = cluster;
-            g_1070b22c->vfunc31(cluster, 0x2000, g_1093d738);
+            engine->vfunc31(cluster, 0x2000, g_1093d738);
         }
     }
-    return g_1070b22c->vfunc32(&vecPoint.x, g_1093d738);
+    return engine->vfunc32(&vecPoint.x, g_1093d738);
 }
 // END FUNCTION
 
@@ -125442,10 +125078,8 @@ void CNPC_VWerewolf::sub_103d9f90()
 // FUNCTION: 0x103da0a0 size=0x132
 #include "CNPC_VWerewolf.h"
 #include "CWerewolfEnemySlots.h"
-#include "CUnknown1070b22c.h"
 #include "ScopeTrace.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 
 // TARGET: sub_103da0a0
 char __fastcall sub_103da0a0(CNPC_VWerewolf *pThis)
@@ -125453,9 +125087,9 @@ char __fastcall sub_103da0a0(CNPC_VWerewolf *pThis)
 	ScopeTrace trace("CNPC_VWerewolf::IsEnemyUnreachable", pThis ? (pThis->m_name26c ? pThis->m_name26c : g_106b8540) : g_105387dc);
 	char *p = (char *)pThis;
 	CWerewolfEnemySlots *pSlots = (CWerewolfEnemySlots *)pThis;
-	if (*(int *)(p + 0x66a4) != g_1070b22c->vfunc120())
+	if (*(int *)(p + 0x66a4) != engine->vfunc120())
 	{
-		*(int *)(p + 0x66a4) = g_1070b22c->vfunc120();
+		*(int *)(p + 0x66a4) = engine->vfunc120();
 		void *pEnemy = pSlots->slot167();
 		if (!pEnemy || pSlots->slot530(pEnemy))
 			p[0x66a1] = 1;
@@ -126177,7 +125811,6 @@ float sub_103e1680()
 #include "CBaseEntity.h"
 #include "CGameTrace.h"
 #include "CTraceFilterNoCharacterCollide.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b254.h"
 #include "CUnknown10738964.h"
 #include "Ray_t.h"
@@ -126185,7 +125818,6 @@ float sub_103e1680()
 
 extern CUnknown1070b254 *g_1070b254;
 extern CUnknown10738964 *g_10738964;
-extern CUnknown1070b22c *g_1070b22c;
 
 void sub_10146570(const float *pStart, const float *pEnd, int a, int b, int c, int d, int e);
 
@@ -126208,7 +125840,7 @@ int sub_103e17b0(Vector vStart, Vector vEnd, Vector *pEndPos, CBaseEntity **ppEn
 	pNormal->z = tr.m_planeNormal[2];
 	*ppEnt = tr.m_pEnt;
 	*pSurfaceProps = tr.m_surfaceProps;
-	return (g_1070b22c->vfunc35(tr.m_pEnt->m_pEdict2e0) != 0) + 2;
+	return (engine->vfunc35(tr.m_pEnt->m_pEdict2e0) != 0) + 2;
 }
 // END FUNCTION
 
@@ -126408,16 +126040,14 @@ int sub_103e2840()
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 #include "CUnknown1070b248.h"
-#include "CUnknown1070b22c.h"
 
 extern CUnknown1070b248 *g_1070b248;
-extern CUnknown1070b22c *g_1070b22c;
 
 void CWeaponRanged_FlameThrower::sub_103e2d10(const char *pszSample, int channel)
 {
 	CPASAttenuationFilter filter((CEntitySoundOriginView *)this, ATTN_NONE);
 	int edict = ((CBaseEntity *)this)->m_pEdict2e0;
-	g_1070b248->vfunc2(&filter, g_1070b22c->vfunc35(edict), channel, pszSample, 1.0f, 100, 128, 100, 0, 0, 1, 0);
+	g_1070b248->vfunc2(&filter, engine->vfunc35(edict), channel, pszSample, 1.0f, 100, 128, 100, 0, 0, 1, 0);
 }
 // END FUNCTION
 
@@ -126473,12 +126103,10 @@ bool CWeaponRanged_FlameThrower::sub_103e3490(CBaseEntity *pEnt)
 // FUNCTION: 0x103e3d80 size=0x8f
 #include "CBaseAnimating.h"
 #include "CWeaponRanged_FlameThrower.h"
-#include "CUnknown1070b22c.h"
-extern CUnknown1070b22c *g_1070b22c;
 
 void CWeaponRanged_FlameThrower::sub_103e3d80(float *pOrigin, float *pAngles)
 {
-	int stamp = g_1070b22c->vfunc120();
+	int stamp = engine->vfunc120();
 	if (stamp != m_nMuzzleStamp) {
 		int attachment = ((CBaseAnimating *)this)->sub_10092d50((int)"muzzle");
 		((CBaseAnimating *)this)->sub_10092ef0(attachment, m_vMuzzleOrigin, m_vMuzzleAngles);
@@ -127357,10 +126985,8 @@ extern "C" GP *item_w_sledgehammer()
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 #include "CUnknown1070b248.h"
-#include "CUnknown1070b22c.h"
 
 extern CUnknown1070b248 *g_1070b248;
-extern CUnknown1070b22c *g_1070b22c;
 extern char g_1067c294[];
 
 struct CTorchSoundView : CEntitySoundOriginView
@@ -127374,7 +127000,7 @@ void CWeaponMelee_Torch::sub_103e7680()
 	CTorchSoundView *pThis = (CTorchSoundView *)this;
 	CPASAttenuationFilter filter(pThis, ATTN_NONE);
 	int edict = pThis->m_pEdict2e0;
-	g_1070b248->vfunc2(&filter, g_1070b22c->vfunc35(edict), 4, g_1067c294, 1.0f, 0x4b, 8, 100, 0, 0, 1, 0);
+	g_1070b248->vfunc2(&filter, engine->vfunc35(edict), 4, g_1067c294, 1.0f, 0x4b, 8, 100, 0, 0, 1, 0);
 }
 // END FUNCTION
 
@@ -128374,7 +128000,6 @@ bool CWeaponThrown_Grenade_Frag::sub_103ee660()
 #include "CWeaponThrown_Grenade_Frag.h"
 #include "CRecipientFilter.h"
 #include "CPASAttenuationFilter.h"
-#include "CUnknown1070b22c.h"
 
 class S_SoundSystem
 {
@@ -128406,7 +128031,6 @@ public:
 };
 
 extern S_SoundSystem *g_1070b248;
-extern CUnknown1070b22c *g_1070b22c;
 extern char vt_104470dc[];
 extern char vt_104470b0[];
 
@@ -128432,7 +128056,7 @@ void CWeaponThrown_Grenade_Frag::sub_103ee6f0()
 	filter.m_vptr = vt_104470b0;
 	((CRecipientFilter *)&filter)->sub_1019d4b0(*pEnt->slot222(&pos), 0.8f);
 	int edict = ((S_EntView *)this)->m_pEdict;
-	g_1070b248->slot3((CRecipientFilter *)&filter, g_1070b22c->vfunc35(edict), 1, "weapons/ranged/grenade_pineapple/tic.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+	g_1070b248->slot3((CRecipientFilter *)&filter, engine->vfunc35(edict), 1, "weapons/ranged/grenade_pineapple/tic.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 	sub_103ee660();
 	m_flNextThink17c = gpGlobals->curtime + 1.0f;
 }
@@ -134319,11 +133943,9 @@ void CKeyringUnit::sub_10407c40(const char *pszName, const char *pszDesc)
 // FUNCTION: 0x10407e90 size=0x161
 #include "CItemGKeyring.h"
 #include "CEntityMessageFilter.h"
-#include "CUnknown1070b22c.h"
 #include <string.h>
 
 extern "C" __declspec(dllimport) int __cdecl Q_strnicmp(const char *pStr1, const char *pStr2, int nChars);
-extern CUnknown1070b22c *g_1070b22c;
 
 struct CKeyringRecord
 {
@@ -134343,12 +133965,12 @@ void CItemGKeyring::sub_10407e90(CBaseEntity *pEnt)
 			rnKeys--;
 			CEntityMessageFilter filter;
 			int pEdict = m_pEdict2e0;
-			filter.sub_1019d2f0(g_1070b22c->vfunc35(pEdict));
+			filter.sub_1019d2f0(engine->vfunc35(pEdict));
 			filter.sub_1019cf50();
-			g_1070b22c->vfunc65(&filter, 0);
-			g_1070b22c->vfunc67(0x7b);
-			g_1070b22c->vfunc67(nIndex);
-			g_1070b22c->vfunc66();
+			engine->vfunc65(&filter, 0);
+			engine->vfunc67(0x7b);
+			engine->vfunc67(nIndex);
+			engine->vfunc66();
 			return;
 		}
 	}
@@ -134358,9 +133980,7 @@ void CItemGKeyring::sub_10407e90(CBaseEntity *pEnt)
 // FUNCTION: 0x10408060 size=0x102
 #include "CBaseEntity.h"
 #include "CEntityMessageFilter.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 
 struct CKeyringUnit : CBaseEntity
 {
@@ -134373,14 +133993,14 @@ void CKeyringUnit::sub_10408060(int index)
 {
 	CEntityMessageFilter filter;
 	int pEdict = m_pEdict2e0;
-	filter.sub_1019d2f0(g_1070b22c->vfunc35(pEdict));
+	filter.sub_1019d2f0(engine->vfunc35(pEdict));
 	filter.sub_1019cf50();
-	g_1070b22c->vfunc65(&filter, 0);
-	g_1070b22c->vfunc67(0x7a);
+	engine->vfunc65(&filter, 0);
+	engine->vfunc67(0x7a);
 	char *pRecord = m_pRecords + index * 0xc0;
-	g_1070b22c->vfunc78(pRecord);
-	g_1070b22c->vfunc78(pRecord + 0x60);
-	g_1070b22c->vfunc66();
+	engine->vfunc78(pRecord);
+	engine->vfunc78(pRecord + 0x60);
+	engine->vfunc66();
 }
 // END FUNCTION
 
@@ -136110,9 +135730,7 @@ char CWeaponMelee::sub_10411160(CBaseEntity *pTarget, char bFlag)
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 #include "CSoundControllerImp.h"
-#include "CUnknown1070b22c.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 CSoundControllerImp *sub_10004746();
 
 CUnknown101bc140 *CWeaponPhysCannon::sub_104112d0()
@@ -136120,7 +135738,7 @@ CUnknown101bc140 *CWeaponPhysCannon::sub_104112d0()
 	if (!m_pHoldSound) {
 		CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
 		int edict = ((CBaseEntity *)this)->m_pEdict2e0;
-		m_pHoldSound = sub_10004746()->vfunc7(&filter, g_1070b22c->vfunc35(edict), 6, "Weapon_PhysCannon.HoldSound", 0.8f);
+		m_pHoldSound = sub_10004746()->vfunc7(&filter, engine->vfunc35(edict), 6, "Weapon_PhysCannon.HoldSound", 0.8f);
 	}
 	return m_pHoldSound;
 }

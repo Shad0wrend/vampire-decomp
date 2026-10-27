@@ -22,17 +22,6 @@ unsigned int CCopyRecipientFilter::vfunc7()
 // FUNCTION: 0x101bd010 size=0xaf
 #include "CRecipientFilter.h"
 
-struct EngineServer_t {
-	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4();
-	virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9();
-	virtual void a10(); virtual void a11(); virtual void a12(); virtual void a13(); virtual void a14();
-	virtual void a15(); virtual void a16(); virtual void a17(); virtual void a18(); virtual void a19();
-	virtual void a20(); virtual void a21(); virtual void a22(); virtual void a23(); virtual void a24();
-	virtual void a25(); virtual void a26(); virtual void a27(); virtual void a28(); virtual void a29();
-	virtual void a30(); virtual void a31(); virtual void a32(); virtual void a33(); virtual void a34();
-	virtual int GetPlayerUserId(int edict);
-};
-extern EngineServer_t *g_1070b22c;
 
 struct PlayerEdict_t {
 	char m_pad0000[0x2e0];
@@ -73,7 +62,7 @@ struct CRecipientIntVecView
 bool CRecipientFilter::sub_101bd010(void *pPlayer)
 {
 	int edict = ((PlayerEdict_t *)pPlayer)->m_edict;
-	int idx = g_1070b22c->GetPlayerUserId(edict);
+	int idx = engine->vfunc35(edict);
 	if (idx < 0)
 		return false;
 	if (m_Recipients.Find(idx) != -1)

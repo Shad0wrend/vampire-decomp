@@ -48,11 +48,9 @@ void CNPCMaker_Zombie::vfunc103()
 
 // FUNCTION: 0x1034cde0 size=0xc7
 #include "CNPCMaker_Zombie.h"
-#include "CUnknown1070b22c.h"
 #include "CEntityVSlots.h"
 
 extern "C" __declspec(dllimport) void __cdecl Warning(const char *fmt, ...);
-extern CUnknown1070b22c *g_1070b22c;
 extern char g_106b8540[];
 void sub_101d0ec0(const char *pszClassname);
 void sub_101cd940(CBaseEntity *pEnt);
@@ -65,7 +63,7 @@ void CNPCMaker_Zombie::vfunc104()
 	if (!pszModel)
 		pszModel = g_106b8540;
 	if (*pszModel) {
-		g_1070b22c->vfunc13(pszModel, 0);
+		engine->vfunc13(pszModel, 0);
 		*(int *)((char *)this + 0x1a98) = 0;
 		*(int *)((char *)this + 0x5dec) = 0;
 		sub_1027bb50();

@@ -3,10 +3,8 @@
 
 // FUNCTION: 0x100f46e0 size=0x39
 #include "CGibShooter.h"
-#include "CUnknown1070b22c.h"
 
 extern int g_1070ba34;
-extern CUnknown1070b22c *g_1070b22c;
 extern char g_10566034[];
 extern char g_10541fc4[];
 
@@ -14,9 +12,9 @@ extern char g_10541fc4[];
 void CGibShooter::vfunc104()
 {
     if (g_1070ba34 == 1) {
-        m_nGibModel45c = g_1070b22c->vfunc13(g_10566034, 0);
+        m_nGibModel45c = engine->vfunc13(g_10566034, 0);
     } else {
-        m_nGibModel45c = g_1070b22c->vfunc13(g_10541fc4, 0);
+        m_nGibModel45c = engine->vfunc13(g_10541fc4, 0);
     }
 }
 // END FUNCTION
@@ -35,10 +33,8 @@ void CGibShooter::sub_100f4730(int a, int b, int c, int d)
 // FUNCTION: 0x100f47b0 size=0xf2
 #include "CBaseEntity.h"
 #include "CGibShooter.h"
-#include "CUnknown1070b22c.h"
 #include "ScopeTrace.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 
 struct CCollisionObj { void sub_1000428c(int solid); };
 
@@ -74,7 +70,7 @@ void CGibShooter::vfunc103()
 	if (f->m_f468 == 0.0f)
 		*(int *)&f->m_f468 = 0x41c80000;
 	f->m_n454 = f->m_n450;
-	f->m_n470 = g_1070b22c->vfunc26(f->m_n45c);
+	f->m_n470 = engine->vfunc26(f->m_n45c);
 	sub_100b3b00();
 }
 // END FUNCTION

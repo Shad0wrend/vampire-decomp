@@ -45,11 +45,9 @@ void CNPCMaker_Fleshpile::vfunc103()
 
 // FUNCTION: 0x1034c180 size=0xa9
 #include "CNPCMaker_Fleshpile.h"
-#include "CUnknown1070b22c.h"
 #include "CEntityVSlots.h"
 
 extern "C" __declspec(dllimport) void __cdecl Warning(const char *fmt, ...);
-extern CUnknown1070b22c *g_1070b22c;
 extern char g_106b8540[];
 void sub_101d0ec0(const char *pszClassname);
 void sub_101cd940(CBaseEntity *pEnt);
@@ -62,7 +60,7 @@ void CNPCMaker_Fleshpile::vfunc104()
 	if (!pszModel)
 		pszModel = g_106b8540;
 	if (*pszModel) {
-		g_1070b22c->vfunc13(pszModel, 0);
+		engine->vfunc13(pszModel, 0);
 		sub_1027bb50();
 		const char *pszTemplate = *(const char **)((char *)this + 0x665c);
 		if (!pszTemplate)

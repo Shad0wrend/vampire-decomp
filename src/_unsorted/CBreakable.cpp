@@ -3,9 +3,7 @@
 
 // FUNCTION: 0x1010d8c0 size=0xa0
 #include "CBreakable.h"
-#include "IVEngineServer.h"
 
-extern IVEngineServer *g_1070b22c;
 extern char g_106b8540[];
 
 void CBreakable::vfunc104()
@@ -43,7 +41,7 @@ void CBreakable::vfunc104()
 		if (pGibName == 0)
 			pGibName = g_106b8540;
 	}
-	m_nGibModelIndex = g_1070b22c->vfunc13(pGibName, 0);
+	m_nGibModelIndex = engine->vfunc13(pGibName, 0);
 }
 // END FUNCTION
 

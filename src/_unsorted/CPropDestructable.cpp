@@ -43,10 +43,8 @@ void CPropDestructable::vfunc103()
 
 // FUNCTION: 0x10193b90 size=0x3b
 #include "CPropDestructable.h"
-#include "CUnknown1070b22c.h"
 
 void sub_1000978c();
-extern CUnknown1070b22c *g_1070b22c;
 
 // TARGET: ?vfunc104@CPropDestructable@@UAEXXZ
 void CPropDestructable::vfunc104()
@@ -59,7 +57,7 @@ void CPropDestructable::vfunc104()
             if (*p == 0) {
                 return;
             }
-            g_1070b22c->vfunc13((const char *)*p, 0);
+            engine->vfunc13((const char *)*p, 0);
             i = i + 1;
             p = p + 1;
         } while (i < 8);

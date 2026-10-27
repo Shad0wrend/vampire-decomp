@@ -35,17 +35,8 @@ int CNPC_VHengeyokai::vfunc546(int x)
 struct EngPrecache {
 	virtual void v0(const char *name, int a);
 };
-struct EngPrecacheB {
-	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
-	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
-	virtual void v10(); virtual void v11(); virtual void v12();
-	virtual void v13(const char *name, int a);
-	virtual void v14(); virtual void v15(); virtual void v16();
-	virtual void v17(const char *name, int a);
-};
 
 extern EngPrecache *g_1070b248;
-extern EngPrecacheB *g_1070b22c;
 extern const char *g_1063bd94[4];
 extern const char *g_1063bda4[3];
 void sub_101d0ec0(const char *name);
@@ -57,8 +48,8 @@ void CNPC_VHengeyokai::vfunc104()
 		g_1070b248->v0(g_1063bd94[i], 0);
 	for (unsigned j = 0; j < 3; j++)
 		g_1070b248->v0(g_1063bda4[j], 0);
-	g_1070b22c->v13("models/character/monster/Hengeyokai/hengeyokai.mdl", 0);
-	g_1070b22c->v17("Hengeyokai_freeze_emitter", 0);
+	engine->vfunc13("models/character/monster/Hengeyokai/hengeyokai.mdl", 0);
+	engine->vfunc17("Hengeyokai_freeze_emitter", 0);
 	sub_101d0ec0("item_w_hengeyokai_fist");
 }
 // END FUNCTION
@@ -312,11 +303,9 @@ void CNPC_VHengeyokai::vfunc601(int unused)
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 #include "CNPC_VHengeyokai.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b244.h"
 #include "CUnknown1070b248.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b244 *g_1070b244;
 extern CUnknown1070b248 *g_1070b248;
 extern const char *g_1063bd94[];
@@ -326,7 +315,7 @@ void CNPC_VHengeyokai::vfunc617()
 	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
 	filter.MakeReliable();
 	int edict = *(int *)((char *)this + 0x2e0);
-	int idx = g_1070b22c->vfunc35(edict);
+	int idx = engine->vfunc35(edict);
 	g_1070b248->vfunc3(&filter, idx, 4, g_1063bd94[g_1070b244->vfunc2(0, 3)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 }
 // END FUNCTION
@@ -335,11 +324,9 @@ void CNPC_VHengeyokai::vfunc617()
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 #include "CNPC_VHengeyokai.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b244.h"
 #include "CUnknown1070b248.h"
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b244 *g_1070b244;
 extern CUnknown1070b248 *g_1070b248;
 extern const char *g_1063bda4[];
@@ -349,7 +336,7 @@ void CNPC_VHengeyokai::vfunc618()
 	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
 	filter.MakeReliable();
 	int edict = *(int *)((char *)this + 0x2e0);
-	int idx = g_1070b22c->vfunc35(edict);
+	int idx = engine->vfunc35(edict);
 	g_1070b248->vfunc3(&filter, idx, 4, g_1063bda4[g_1070b244->vfunc2(0, 2)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 }
 // END FUNCTION
@@ -396,10 +383,8 @@ void CNPC_VHengeyokai::vfunc435(int arg)
 
 // FUNCTION: 0x10383560 size=0x6a
 #include "CNPC_VHengeyokai.h"
-#include "CUnknown1070b22c.h"
 
 extern char g_106b8540[];
-extern CUnknown1070b22c *g_1070b22c;
 void __cdecl sub_1000ae7f(int idx, int line, const char *text, float duration, int r, int g, int b, int a);
 
 struct HenViewX {
@@ -417,7 +402,7 @@ int CNPC_VHengeyokai::vfunc124()
 		if (!name)
 			name = g_106b8540;
 		int edict = *(int *)((char *)this + 0x2e0);
-		sub_1000ae7f(g_1070b22c->vfunc35(edict), line, name, 0.0f, 255, 255, 255, 255);
+		sub_1000ae7f(engine->vfunc35(edict), line, name, 0.0f, 255, 255, 255, 255);
 		line++;
 	}
 	return line;

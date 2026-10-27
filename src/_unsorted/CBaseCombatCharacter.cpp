@@ -1723,13 +1723,11 @@ void *CBaseCombatCharacter::vfunc309()
 
 // FUNCTION: 0x10337ca0 size=0xa6
 #include "CBaseCombatCharacter.h"
-#include "CUnknown1070b22c.h"
 #include "CVStatListManager_t.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
 extern char g_106b8540[];
-extern CUnknown1070b22c *g_1070b22c;
 
 void CBaseCombatCharacter::vfunc111()
 {
@@ -1739,7 +1737,7 @@ void CBaseCombatCharacter::vfunc111()
     g_109f3620[*g_109f3680].c = g_106b8540;
     (*g_109f3680)++;
     int edict = m_pEdict2e0;
-    int index = g_1070b22c->vfunc35(edict);
+    int index = engine->vfunc35(edict);
     ((CVStatListManager_t *)((char *)this + 0x13a8))->sub_10201fa0(index);
     *(unsigned int *)((char *)this + 0x13cc) = (unsigned char)sub_10336920();
     (*g_109f3680)--;
@@ -2197,18 +2195,16 @@ bool CBaseCombatCharacter::vfunc68(CBaseEntity *pOther)
 
 // FUNCTION: 0x103407b0 size=0xec
 #include "CBaseCombatCharacter.h"
-#include "CUnknown1070b22c.h"
 #include "ScopeTrace.h"
 
 
-extern CUnknown1070b22c *g_1070b22c;
 
 char CBaseCombatCharacter::vfunc86(int a, int b, int c, int d, int e)
 {
 	ScopeTrace t("CBaseCombatCharacter::ShouldTransmit", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
 	if (m_flForceTransmitTime > gpGlobals->curtime)
 		return 1;
-	int idx = g_1070b22c->vfunc35(b) - 1;
+	int idx = engine->vfunc35(b) - 1;
 	if (*((char *)this + 0x14e4 + idx))
 		return 1;
 	return sub_100ab020(a, b, c, d, e);

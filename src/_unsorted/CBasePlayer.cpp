@@ -823,7 +823,6 @@ void CPlayerAccum_1016aa00::sub_1016aa00(int a, char b)
 // FUNCTION: 0x1016aa50 size=0x7a
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
-#include "IVEngineServer.h"
 
 #define SV(n) virtual void v##n();
 #define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
@@ -842,14 +841,13 @@ struct SRules {
 };
 
 
-extern IVEngineServer *g_1070b22c;
 extern SRules *g_1070ba0c;
 SPlayerSlots *sub_1000ac8b(int index);
 
 void CBasePlayer::vfunc149(int a, int b)
 {
 	int edict = m_n02E0;
-	int me = g_1070b22c->vfunc35(edict);
+	int me = engine->vfunc35(edict);
 	for (int i = 1; i <= gpGlobals->maxClients; i++) {
 		SPlayerSlots *pOther = sub_1000ac8b(i);
 		if (pOther && i != me && g_1070ba0c->v64(this, pOther) == 1)
@@ -988,7 +986,6 @@ void CBasePlayer::vfunc436()
 // FUNCTION: 0x1016e820 size=0x175
 #include "CBasePlayer.h"
 #include "CEntityVSlots.h"
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b248.h"
 
 #define PV1(n) virtual void v##n();
@@ -1009,7 +1006,6 @@ struct CPlayerUnit : CBasePlayer
 	const char *sub_1000b5cd();	// CBaseEntity::GetDebugName (stub 0x1000b5cd)
 };
 
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b248 *g_1070b248;
 extern char g_10580ae8;
 __declspec(dllimport) void DevMsg(const char *pszFormat, ...);
@@ -1022,9 +1018,9 @@ void CBasePlayer::vfunc104()
 {
 	*(int *)((char *)this + 0xe98) = 0;
 	*(int *)((char *)this + 0x2294) = -1;
-	*(int *)((char *)this + 0x1c44) = g_1070b22c->vfunc13("materials/sprites/glowa.vmt", 0);
-	*(int *)((char *)this + 0x1c48) = g_1070b22c->vfunc13("materials/sprites/Spread_Indicator_L.vmt", 0);
-	*(int *)((char *)this + 0x1c4c) = g_1070b22c->vfunc13("materials/sprites/Spread_Indicator_R.vmt", 0);
+	*(int *)((char *)this + 0x1c44) = engine->vfunc13("materials/sprites/glowa.vmt", 0);
+	*(int *)((char *)this + 0x1c48) = engine->vfunc13("materials/sprites/Spread_Indicator_L.vmt", 0);
+	*(int *)((char *)this + 0x1c4c) = engine->vfunc13("materials/sprites/Spread_Indicator_R.vmt", 0);
 	g_1070b248->vfunc0("weapons/misc/ammo_pickup.wav", 0);
 	g_1070b248->vfunc0("environmental/fire/fire_hit.wav", 0);
 	g_1070b248->vfunc0("interface/final_death.wav", 0);
@@ -1106,16 +1102,14 @@ void CBasePlayer::sub_101710b0(const Vector *pImpulse)
 
 // FUNCTION: 0x10173ed0 size=0x87
 #include "CBasePlayer.h"
-#include "CUnknown1070b22c.h"
-extern CUnknown1070b22c *g_1070b22c;
 extern "C" int __cdecl _strcmpi(const char *, const char *);
 extern "C" int __cdecl atoi(const char *);
 
 bool CBasePlayer::vfunc452(const char *pszKey)
 {
-	if (_strcmpi(pszKey, "vehicleRole") == 0 && g_1070b22c->vfunc85() == 2) {
+	if (_strcmpi(pszKey, "vehicleRole") == 0 && engine->vfunc85() == 2) {
 		if (m_b20F4) {
-			int role = atoi(g_1070b22c->vfunc84(1));
+			int role = atoi(engine->vfunc84(1));
 			CBasePlayerVehicle *pVehicle = m_pVehicle;
 			if (pVehicle && pVehicle->vfunc2(role) == 0) {
 				sub_101713c0();

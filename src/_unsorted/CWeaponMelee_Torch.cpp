@@ -2,17 +2,15 @@
 #include "vampire.h"
 
 // FUNCTION: 0x103e74d0 size=0x29
-#include "CUnknown1070b22c.h"
 #include "CUnknown1070b248.h"
 #include "CBaseCombatWeapon.h"
 #include "CWeaponMelee_Torch.h"
-extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b248 *g_1070b248;
 // TARGET: CWeaponMelee_Torch::vfunc104
 void CWeaponMelee_Torch::vfunc104()
 {
     ((CBaseCombatWeapon *)this)->CBaseCombatWeapon::vfunc104();
-    g_1070b22c->vfunc17((int)"TorchWeaponEmitter", 0);
+    engine->vfunc17((const char *)"TorchWeaponEmitter", 0);
     g_1070b248->vfunc0("Weapons/Melee/Torch/Fire_Loop.wav", 0);
 }
 // END FUNCTION

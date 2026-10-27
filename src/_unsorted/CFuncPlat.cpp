@@ -34,9 +34,7 @@ void CFuncPlat::vfunc103()
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 #include "CUnknown1070b248.h"
-#include "IVEngineServer.h"
 
-extern IVEngineServer *g_1070b22c;
 extern CUnknown1070b248 *g_1070b248;
 extern char g_106b8540[];
 void sub_10004232();
@@ -49,7 +47,7 @@ void CFuncPlat::vfunc243()
 		CPASAttenuationFilter filter((CEntitySoundOriginView *)this, 0.8f);
 		filter.MakeReliable();
 		const char *pszSound = m_pszStartSound ? m_pszStartSound : g_106b8540;
-		int entindex = g_1070b22c->vfunc35((int)m_pEdict);
+		int entindex = engine->vfunc35((int)m_pEdict);
 		g_1070b248->vfunc3(&filter, entindex, 6, pszSound, m_flVolume, 0.8f, 0, 100, 0, 0, 1, 0);
 	}
 	m_nToggleState = 3;
@@ -64,9 +62,7 @@ void CFuncPlat::vfunc243()
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 #include "CUnknown1070b248.h"
-#include "IVEngineServer.h"
 
-extern IVEngineServer *g_1070b22c;
 extern CUnknown1070b248 *g_1070b248;
 extern char g_106b8540[];
 void sub_10015a14();
@@ -79,7 +75,7 @@ void CFuncPlat::vfunc242()
 		CPASAttenuationFilter filter((CEntitySoundOriginView *)this, 0.8f);
 		filter.MakeReliable();
 		const char *pszSound = m_pszStartSound ? m_pszStartSound : g_106b8540;
-		int entindex = g_1070b22c->vfunc35((int)m_pEdict);
+		int entindex = engine->vfunc35((int)m_pEdict);
 		g_1070b248->vfunc3(&filter, entindex, 6, pszSound, m_flVolume, 0.8f, 0, 100, 0, 0, 1, 0);
 	}
 	m_nToggleState = 2;

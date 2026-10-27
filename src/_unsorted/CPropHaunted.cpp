@@ -80,8 +80,6 @@ void CPropHaunted::vfunc180()
 
 // FUNCTION: 0x10213c60 size=0xeb
 #include "CPropHaunted.h"
-#include "CUnknown1070b22c.h"
-extern CUnknown1070b22c *g_1070b22c;
 struct CPrecacheSounds { virtual void vfunc0(const char *name, int preload); };
 extern CPrecacheSounds *g_1070b248;
 extern char g_106b8540[];
@@ -94,13 +92,13 @@ void CPropHaunted::vfunc104()
 	if (!p) p = g_106b8540;
 	if (*p) {
 		sub_10014e93(p, buf, 260);
-		g_1070b22c->vfunc17((int)buf, 1);
+		engine->vfunc17((const char *)buf, 1);
 	}
 	p = *(const char **)((char *)this + 0x7c0);
 	if (!p) p = g_106b8540;
 	if (*p) {
 		sub_10014e93(p, buf, 260);
-		g_1070b22c->vfunc17((int)buf, 1);
+		engine->vfunc17((const char *)buf, 1);
 	}
 	p = *(const char **)((char *)this + 0x7c4);
 	if (!p) p = g_106b8540;

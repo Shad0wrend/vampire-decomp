@@ -57,11 +57,9 @@ void __fastcall sub_1019e590(char *pThis)
 
 // FUNCTION: 0x1019f570 size=0x95
 #include "CRopeKeyframe.h"
-#include "IVEngineServer.h"
 
 extern char *(__cdecl *g_109f384c)(const char *, const char *);
 extern int (__cdecl *g_109f388c)(char *, int, const char *, ...);
-extern IVEngineServer *g_1070b22c;
 extern char g_106b8540[];
 int *sub_10002095(int *pTmp, const char *pStr);
 
@@ -82,6 +80,6 @@ void CRopeKeyframe::vfunc104()
 	name = *(const char **)((char *)this + 0x488);
 	if (!name)
 		name = g_106b8540;
-	*(int *)((char *)this + 0x46c) = g_1070b22c->vfunc13(name, 0);
+	*(int *)((char *)this + 0x46c) = engine->vfunc13(name, 0);
 }
 // END FUNCTION
