@@ -47180,6 +47180,14 @@ void __fastcall sub_1015ef40(char *p)
 void __fastcall sub_1015ef60(char *p) { p[0x19f7] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x1015ef80 size=0x7
+struct CUnknown1015ef80 { char sub_1015ef80(); };
+char CUnknown1015ef80::sub_1015ef80()
+{
+    return *(char *)((char *)this + 0x1a14);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015f100 size=0x3a
 #include "inputdata_t.h"
 extern char g_106b8540[];
