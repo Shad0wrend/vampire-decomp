@@ -109237,6 +109237,24 @@ void CBaseCombatCharacter::sub_10339560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103395f0 size=0x199
+#include "CBaseCombatCharacter.h"
+#include "CVStatList_t.h"
+#include "CEHandleGet.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+bool CBaseCombatCharacter::sub_103395f0()
+{
+	ScopeTrace trace("CBaseCombatCharacter::CanFeed", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (sub_10337f30()) {
+		if (!m_h149c.Get() || (CVStatListSet::Of(m_h149c.Get())->Find(0)->sub_102012d0(0xc) && ((CEntityVSlots *)m_h149c.Get())->slot158()))
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10339930 size=0x106
 #include "ScopeTrace.h"
 #include "CBaseCombatCharacter.h"
