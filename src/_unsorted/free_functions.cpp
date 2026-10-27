@@ -46665,6 +46665,16 @@ void CPhysicsAnimlink::sub_1014f210(CBaseAnimating *pAnimating, int nBone, void 
 }
 // END FUNCTION
 
+// FUNCTION: 0x10150e10 size=0x8
+namespace lifted {
+int sub_10001fa0();
+}
+int __stdcall sub_10150e10(int a0)
+{
+    return lifted::sub_10001fa0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10150e50 size=0x12
 struct CVirtSlots2 {
     virtual void vfunc0();
