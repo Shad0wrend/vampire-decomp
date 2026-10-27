@@ -74,4 +74,5 @@ public:
 	virtual int vfunc120();
 	virtual void vfunc121(int a, int *b);
 	virtual void vfunc122(int edict, int a);
+	virtual void vfunc123(float flVolume);
 };
