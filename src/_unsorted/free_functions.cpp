@@ -6687,6 +6687,14 @@ void Ray_t::sub_1004f7a0(const float *pStart, const float *pEnd)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004f860 size=0x3
+struct CUnknown1004f860 { void * sub_1004f860(); };
+void * CUnknown1004f860::sub_1004f860()
+{
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004feb0 size=0x70
 #define SV(n) virtual void v##n();
 #define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
