@@ -24560,6 +24560,13 @@ int CUnknown100b7c80::sub_100b7c80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7ca0 size=0x5
+char __stdcall sub_100b7ca0(int a0, int a1, int a2, int a3, int a4)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7cc0 size=0x33
 // TARGET: sub_100b7cc0
 struct CVirtBox_100b7cc0 {
