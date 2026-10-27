@@ -82,4 +82,5 @@
 	void sub_1009be00(int a, char *text, Vector v);	// DumpVector with the vector given by value (as the game's callers pass it)
 	void sub_1009bd10(int a, char *text, Vector v);	// DumpQangle with the angles given by value
 	void sub_1009c000(int a, char *text, EHANDLE h);	// DumpEhandle with the handle given by value
+	void vfunc216(const Vector &absOrigin);	// slot 216 "CBaseEntity::SetAbsOrigin" (plain member): scope trace (entity name), slot 98, sub_100b5340(0x10800, 0), sub_100b52a0(), clears bit 11 of +0x268, stores the origin at +0x404 and as column 3 of the matrix at +0x130, then the local origin at +0x41c (the origin itself, or transformed into the move parent's space) and the byte at +0x1b1 when it changed
 	void vfunc225();	// slot 225 (plain member): unless the physics object at +0x36c is null, calls sub_1002ee60(this), sub_10158520(object, this) and clears +0x36c
