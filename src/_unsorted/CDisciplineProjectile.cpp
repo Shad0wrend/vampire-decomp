@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101d9d90 size=0x6
+#include "CDisciplineProjectile.h"
+namespace lifted {
+extern char g_105a1b3c;
+}
+datamap_t * CDisciplineProjectile::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_105a1b3c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d9f30 size=0x1e
 #include "CDisciplineProjectile.h"
 
