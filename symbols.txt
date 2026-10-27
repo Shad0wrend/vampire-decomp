@@ -668,6 +668,7 @@
 0x10002e73 func   ?vfunc5@CNPC_VSabbatGunman@@QAEPAV1@I@Z CNPC_VSabbatGunman::vfunc5
 0x10002e78 func   ?vfunc5@CFuncElevator@@UAEPAV1@I@Z CFuncElevator::vfunc5
 0x10002e82 func   ?sub_1042fe60@@YAXXZ sub_1042fe60
+0x10002e8c func   ?sub_10271f30@@YGXH@Z sub_10271f30
 0x10002ea5 func   ?sub_1013fcb0@CUtlVector96@@QAEXHH@Z CUtlVector96::sub_1013fcb0
 0x10002eaf func   ?sub_1018c4f0@@YGXH@Z sub_1018c4f0
 0x10002ec8 func   ?ShiftElementsRight@?$CUtlVector@HV?$CUtlMemory@H@@@@QAEXHH@Z CUtlVector<int,CUtlMemory<int> >::ShiftElementsRight

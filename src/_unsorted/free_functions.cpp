@@ -91036,6 +91036,12 @@ void __fastcall sub_10271b10(CAI_BaseNPC *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10271f30 size=0x3
+void __stdcall sub_10271f30(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10271ff0 size=0xf7
 #include "CAI_BaseNPC.h"
 #include "CBaseAnimating.h"
