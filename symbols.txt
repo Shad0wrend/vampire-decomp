@@ -2603,6 +2603,7 @@
 0x10007e73 func   ?sub_103411c0@CBaseCombatCharacter@@QAEXHH@Z CBaseCombatCharacter::sub_103411c0
 0x10007e78 func   ?sub_10160560@CBasePlayer@@QAEXXZ CBasePlayer::sub_10160560
 0x10007e7d func   ?vfunc2@CTETextMessage@@UAEPAV1@I@Z CTETextMessage::vfunc2
+0x10007e82 func   ?sub_100bdc00@@YGHH@Z sub_100bdc00
 0x10007e87 func   ?vfunc433@CNPC_VScurrying@@QAEXXZ CNPC_VScurrying::vfunc433
 0x10007e8c func   ?vfunc5@CBaseAnimatingOverlay@@QAEPAV1@I@Z CBaseAnimatingOverlay::vfunc5
 0x10007e9b func   ?sub_10196f30@@YAPAXPAX0@Z sub_10196f30

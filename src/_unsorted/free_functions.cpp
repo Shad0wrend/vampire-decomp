@@ -26558,6 +26558,16 @@ void bf_write::sub_100bd840(float f)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bdc00 size=0xf
+namespace lifted {
+int __stdcall sub_10001ef1(int, int);
+}
+int __stdcall sub_100bdc00(int a0)
+{
+    return lifted::sub_10001ef1(a0, 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bdc20 size=0xad
 #include "bf_write.h"
 
