@@ -6701,6 +6701,7 @@
 0x10013237 func   ?sub_102aa860@@YIXPAVCAI_BaseNPCTroika@@HPAUCTaskPath_102aa860@@@Z sub_102aa860
 0x10013241 func   ?vfunc113@CPhysForce@@UAEXXZ CPhysForce::vfunc113
 0x10013246 func   ?sub_1009bd10@CBaseEntity@@QAEXHHMMM@Z CBaseEntity::sub_1009bd10
+0x1001325a func   ?vfunc30@CBaseEntity@@UAEMXZ CBaseEntity::vfunc30
 0x10013264 func   ?sub_1035bf90@@YGXH@Z sub_1035bf90
 0x10013273 func   ?sub_100fea60@CUnknown100fea60@@QAEXPAVCBaseEntity@@@Z CUnknown100fea60::sub_100fea60
 0x1001327d func   ?sub_10160ec0@@YI_NPAUPlayerView@@@Z sub_10160ec0
