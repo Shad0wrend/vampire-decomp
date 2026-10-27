@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103ddde0 size=0x6
+#include "CNPC_VZombie.h"
+namespace lifted {
+extern char g_10664090;
+}
+datamap_t * CNPC_VZombie::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_10664090);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103de4d0 size=0x1d
 #include "CNPC_VZombie.h"
 struct A { int sub_10012300(int); };
