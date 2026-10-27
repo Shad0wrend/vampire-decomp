@@ -348,6 +348,16 @@ char * CBaseCombatWeapon::vfunc273()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10251e20 size=0xb
+namespace lifted {
+int sub_10010ea6();
+}
+int CBaseCombatWeapon::vfunc344()
+{
+    return (lifted::sub_10010ea6()) + 0x2408;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10251e40 size=0x27
 struct CWeaponOwner;
 CWeaponOwner *sub_102517b0();
