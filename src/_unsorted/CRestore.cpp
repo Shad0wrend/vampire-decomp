@@ -25,6 +25,17 @@ CRestore::CRestore(void *pData) : m_pData(pData), m_pData2(pData ? (char *)pData
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a1360 size=0x13
+#include "CRestore.h"
+namespace lifted {
+int __stdcall sub_10004f70(int, int, int);
+}
+int CRestore::vfunc2(CBaseEntity * a0, int a1)
+{
+    return lifted::sub_10004f70(*(int *)&a0, a1, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a1400 size=0x68
 extern "C" __declspec(dllimport) void Plat_Free(void *);
 extern int g_104626bc[];
