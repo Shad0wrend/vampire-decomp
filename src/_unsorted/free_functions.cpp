@@ -8427,6 +8427,19 @@ CTEBeamRingPoint *CTEBeamRingPoint::sub_1005cbc0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005cc30 size=0xb
+namespace lifted {
+extern char g_1044dcac;
+int sub_1000d08f();
+}
+struct CUnknown1005cc30 { int sub_1005cc30(); };
+int CUnknown1005cc30::sub_1005cc30()
+{
+    *(int *)this = (int)&lifted::g_1044dcac;
+    return lifted::sub_1000d08f();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005cf30 size=0xe5
 #include "SendProp.h"
 
