@@ -71,6 +71,25 @@ void CTriggerHurt::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c6410 size=0xfb
+#include "CTriggerHurt.h"
+#include "utlvector.h"
+
+extern double g_10449270;
+
+void CTriggerHurt::vfunc176(CBaseEntity *pOther)
+{
+	if (sub_101c5460(pOther)) {
+		EHANDLE hOther;
+		hOther = pOther;
+		CUtlVector<EHANDLE> *pList = (CUtlVector<EHANDLE> *)&m_i5f4;
+		if (pList->Find(hOther) < 0)
+			sub_101c5f40(pOther, (float)(m_flDamage * g_10449270));
+	}
+	sub_101c55d0(pOther);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c6630 size=0x22
 // TARGET: CTriggerHurt::vfunc175
 #include "CTriggerHurt.h"
