@@ -19,7 +19,7 @@ public:
 	virtual bool vfunc7(); // "CMoveHelperServer::PlayerFallingDamage": hurts the host by the game rules' fall damage (slot 30 of the rules); always true
 	virtual void vfunc8();
 	virtual void vfunc9();
-	virtual void vfunc10();
+	virtual bool vfunc10(const unsigned int *pHandle); // "CMoveHelperServer::IsWorldEntity": whether the entity handle resolves to the world entity (CBaseEntity::Instance of edict 0)
 	virtual void vfunc11();
 	virtual void vfunc12();
 	virtual float vfunc13(int param);
