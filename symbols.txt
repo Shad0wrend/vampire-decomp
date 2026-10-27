@@ -2935,6 +2935,7 @@
 0x100094cb func   ?vfunc5@CVampireProjectile@@QAEPAV1@I@Z CVampireProjectile::vfunc5
 0x100094d0 func   ?NewNode@?$CUtlRBTree@HG@@QAEGXZ CUtlRBTree<int,unsigned short>::NewNode
 0x100094d5 func   ?vfunc103@CNPC_VAsianVampire@@QAEXXZ CNPC_VAsianVampire::vfunc103
+0x100094da func   ?sub_102063e0@@YAXXZ sub_102063e0
 0x100094df func   ?sub_103dc8a0@@YADXZ sub_103dc8a0
 0x100094e4 func   _item_p_occult_thaum_damage item_p_occult_thaum_damage
 0x100094e9 func   ?vfunc0@CVFeatList_t@@UAEMH@Z CVFeatList_t::vfunc0
