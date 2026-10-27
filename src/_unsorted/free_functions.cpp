@@ -103920,6 +103920,17 @@ char CUnknown102ee270::sub_102ee270()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ee2a0 size=0x8
+namespace lifted {
+struct C100117c0 { int sub_100117c0(); };
+}
+struct CUnknown102ee2a0 { int sub_102ee2a0(); };
+int CUnknown102ee2a0::sub_102ee2a0()
+{
+    return ((lifted::C100117c0 *)(*(int *)((char *)this + 0x30)))->sub_100117c0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ee2e0 size=0x7
 struct CUnknown102ee2e0 { char sub_102ee2e0(); };
 char CUnknown102ee2e0::sub_102ee2e0()
