@@ -127,7 +127,7 @@ public:
 	virtual void slot306(int a, int b);	// NPC: takes two arguments (the scripted-sequence cleanup passes its argument and 0)
 	EVS(307)
 	virtual char slot308();	// NPC: a boolean answer in al (CNPC_VYukie::vfunc602)
-	EVS(309)
+	virtual CEntityVSlots *slot309();	// NPC: the entity it is bound to (0 when none)
 	virtual void slot310(int a);	// NPC: takes one argument (the navigator hands it a task / state id, 0x33 / 0x34)
 	EVS(311) EVS(312) EVS(313) EVS(314) EVS(315)
 	virtual void slot316(CEntityVSlots *pAttacker, unsigned char a, unsigned char b);	// character: told about an incoming melee attack (attacker, dodge flag, block flag)
