@@ -58986,6 +58986,14 @@ unsigned int CAmbientGeneric::sub_101ac2f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ac670 size=0xf
+struct CUnknown101ac670 { int sub_101ac670(int); };
+int CUnknown101ac670::sub_101ac670(int a0)
+{
+    return (*(int *)((char *)this + 0x4e0)) | a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101af030 size=0x26
 #include "CUnknown1070b22c.h"
 
