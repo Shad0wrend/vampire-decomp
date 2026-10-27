@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101404f0 size=0x6
+namespace lifted {
+extern char g_1057a3fc;
+}
+datamap_t * CBaseMoveBehavior::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1057a3fc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140750 size=0xe
 bool CBaseMoveBehavior::vfunc153()
 {
