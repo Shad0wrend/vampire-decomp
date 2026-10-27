@@ -27207,6 +27207,12 @@ extern "C" CBaseEntity *momentary_rot_button()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ca610 size=0x1
+void sub_100ca610()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ca630 size=0xa9
 #include "CMomentaryRotButton.h"
 
