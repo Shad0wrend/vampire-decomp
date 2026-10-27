@@ -15,6 +15,7 @@ public:
 	ESO_SLOTS10(a10) ESO_SLOTS10(a11) ESO_SLOTS10(a12) ESO_SLOTS10(a13) ESO_SLOTS10(a14)
 	ESO_SLOTS10(a15) ESO_SLOTS10(a16) ESO_SLOTS10(a17) ESO_SLOTS10(a18) ESO_SLOTS10(a19)
 	ESO_SLOTS10(a20) ESO_SLOTS10(a21)
-	virtual void a220(); virtual void a221();
+	virtual const float *GetOrigin();	// slot 220
+	virtual void a221();
 	virtual Vector GetSoundEmissionOrigin();	// slot 222
 };
