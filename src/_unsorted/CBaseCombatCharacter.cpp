@@ -738,6 +738,47 @@ int CBaseCombatCharacter::vfunc376(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032af40 size=0x1b7
+#include "ScopeTrace.h"
+#include "CCollisionProperty.h"
+#include "CBaseCombatCharacter.h"
+#include "CBCCSlotViews.h"
+
+struct CvarInner402 { virtual void v0(); virtual char vfunc1(); char pad[0x28]; int m_nValue; };
+struct CvarEntry402 { int pad; CvarInner402 *m_pInner; };
+struct CvarSys402 { virtual void v0(); virtual void v1(); virtual CvarEntry402 *FindVar(const char *name); };
+extern CvarSys402 *g_1070b234;
+
+char CBaseCombatCharacter::vfunc402()
+{
+	CCombatCharGibSlotView *pView = (CCombatCharGibSlotView *)this;
+	ScopeTrace trace("CBaseCombatCharacter::Event_Gibbed", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	bool bGib = false;
+	if (pView->vfunc396()) {
+		CvarEntry402 *pVar = g_1070b234->FindVar("violence_hgibs");
+		if (pVar && (pVar->m_pInner->vfunc1() || !pVar->m_pInner->m_nValue))
+			bGib = true;
+	} else if (pView->vfunc397()) {
+		CvarEntry402 *pVar = g_1070b234->FindVar("violence_agibs");
+		if (pVar && (pVar->m_pInner->vfunc1() || !pVar->m_pInner->m_nValue))
+			bGib = true;
+	}
+	m_nTakeDamage = 0;
+	{
+		ScopeTrace trace2("CBaseEntity::AddSolidFlags", m_name26c ? m_name26c : g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->AddSolidFlags(4);
+	}
+	m_field200 = 2;
+	sub_100b3b00();
+	if (bGib) {
+		pView->vfunc395();
+		return 0;
+	}
+	vfunc66();
+	return pView->vfunc394();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032bdf0 size=0x6f
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
