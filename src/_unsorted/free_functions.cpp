@@ -259,6 +259,16 @@ void CUnk10028a60::sub_10028a60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10028b60 size=0x8
+namespace lifted {
+int sub_10011f59();
+}
+int __stdcall sub_10028b60(int a0)
+{
+    return lifted::sub_10011f59();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100290c0 size=0x2b
 #include "CUnknown100290c0.h"
 
