@@ -4655,6 +4655,7 @@
 0x1000d18e func   ?sub_10097b00@CUtlMemory60@@QAEPAU1@HH@Z CUtlMemory60::sub_10097b00
 0x1000d193 func   ?sub_10073900@CUnknown10073900@@QAEHXZ CUnknown10073900::sub_10073900
 0x1000d198 func   ?sub_10239f30@@YGXPAX@Z sub_10239f30
+0x1000d19d func   ?sub_10205900@CUnknown10205900@@QAEHXZ CUnknown10205900::sub_10205900
 0x1000d1a2 func   ?sub_10405540@@YAHXZ sub_10405540
 0x1000d1a7 func   ?vfunc620@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::vfunc620
 0x1000d1c0 func   ?vfunc545@CAI_BaseNPC@@UAE_NXZ CAI_BaseNPC::vfunc545
