@@ -113061,6 +113061,12 @@ void __stdcall sub_1035b0e0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035b180 size=0x3
+void __stdcall sub_1035b180(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035b1c0 size=0x8
 struct CUnknown1035b1c0 { int sub_1035b1c0(int, int, int, int); };
 int CUnknown1035b1c0::sub_1035b1c0(int, int, int, int) { return 1; }
