@@ -1577,6 +1577,7 @@
 0x100052ef func   ?sub_10227210@CUnknown10227210@@QAEXH@Z CUnknown10227210::sub_10227210
 0x100052f4 func   ?sub_100989f0@@YIPAUCOverlayView@@PAU1@@Z sub_100989f0
 0x100052fe func   ?sub_100be6b0@bf_read@@QAEIH_N@Z bf_read::sub_100be6b0
+0x10005303 func   ?vfunc0@CTESprite@@UAEPAUServerClass@@XZ CTESprite::vfunc0
 0x10005308 func   ?vfunc5@CLogicSquadCondition@@QAEPAV1@I@Z CLogicSquadCondition::vfunc5
 0x1000530d func   ?sub_103cc450@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103cc450
 0x10005312 func   ?sub_101c4640@CUnknown101c4640@@QAEPAXXZ CUnknown101c4640::sub_101c4640

@@ -82,3 +82,13 @@ void CTESprite::vfunc3(const Vector &origin, const QAngle &angles)
 	vfunc4((int)&filter, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10068010 size=0x6
+namespace lifted {
+extern char g_106c59cc;
+}
+ServerClass * CTESprite::vfunc0()
+{
+    return (ServerClass *)((int)&lifted::g_106c59cc);
+}
+// END FUNCTION
