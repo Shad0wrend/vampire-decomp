@@ -68128,6 +68128,12 @@ void sub_101e94b0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e94d0 size=0x3
+void __stdcall sub_101e94d0(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e9640 size=0x96
 #include "CUnknown101e98c0.h"
 
