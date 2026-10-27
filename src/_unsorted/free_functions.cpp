@@ -115034,6 +115034,16 @@ int *sub_1034d490()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034d570 size=0x8
+namespace lifted {
+int sub_10012be3();
+}
+int __stdcall sub_1034d570(int a0)
+{
+    return lifted::sub_10012be3();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034d590 size=0x8
 struct CUnknown1034d590 { void sub_1000a1b4(); void sub_1034d590(int); };
 void CUnknown1034d590::sub_1034d590(int) { sub_1000a1b4(); }
