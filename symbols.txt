@@ -1695,6 +1695,7 @@
 0x10005c54 func   ?vfunc44@CMultiplayRules@@UAEXPAVCBaseEntity@@PAUCMPDamageInfo@@@Z CMultiplayRules::vfunc44
 0x10005c59 func   ?sub_101b0c10@CBaseEntityUnit101b0c10@@QAEXH@Z CBaseEntityUnit101b0c10::sub_101b0c10
 0x10005c63 func   ?vfunc113@CTriggerProximity@@UAEXXZ CTriggerProximity::vfunc113
+0x10005c72 func   ?vfunc0@CTEMuzzleFlash@@UAEPAUServerClass@@XZ CTEMuzzleFlash::vfunc0
 0x10005c7c func   ?sub_10378ec0@CNPC_VGargoyle@@QAE_NXZ CNPC_VGargoyle::sub_10378ec0
 0x10005c8b func   _npc_VGargoyle npc_VGargoyle
 0x10005c9f func   ?sub_101f6e20@CVTraitEffect_t@@QAEXPAVCVModInfo_t@@PAH@Z CVTraitEffect_t::sub_101f6e20

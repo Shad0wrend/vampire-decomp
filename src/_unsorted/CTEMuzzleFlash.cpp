@@ -13,3 +13,14 @@ CTEMuzzleFlash *CTEMuzzleFlash::vfunc2(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10065fa0 size=0x6
+#include "CTEMuzzleFlash.h"
+namespace lifted {
+extern char g_106c4c54;
+}
+ServerClass * CTEMuzzleFlash::vfunc0()
+{
+    return (ServerClass *)((int)&lifted::g_106c4c54);
+}
+// END FUNCTION
