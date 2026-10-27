@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1036a1b0 size=0x6
+#include "CNPC_VChangBros.h"
+namespace lifted {
+extern char g_1093a888;
+}
+CAI_CondOwner * CNPC_VChangBros::vfunc580()
+{
+    return (CAI_CondOwner *)((int)&lifted::g_1093a888);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036a3f0 size=0x1d
 #include "CNPC_VChangBros.h"
 struct A { int sub_10012300(int); };
