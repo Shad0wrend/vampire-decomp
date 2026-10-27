@@ -94655,6 +94655,12 @@ void CUnknown102bf7e0::sub_102bf7e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102bfdf0 size=0x3
+void __stdcall sub_102bfdf0(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x102bfe10 size=0xca
 #include "CAI_BaseNPCTroika.h"
 
