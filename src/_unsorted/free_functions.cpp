@@ -136023,6 +136023,19 @@ int CAI_BaseNPCTroika::sub_1042b110()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042b160 size=0xb
+namespace lifted {
+extern char g_10515ac4;
+int sub_100078c4();
+}
+struct CUnknown1042b160 { int sub_1042b160(); };
+int CUnknown1042b160::sub_1042b160()
+{
+    *(int *)this = (int)&lifted::g_10515ac4;
+    return lifted::sub_100078c4();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042b470 size=0x72
 #include "SendProp.h"
 
