@@ -1209,6 +1209,7 @@
 0x1000434a func   ?vfunc77@CFuncMonitor@@QAEXXZ CFuncMonitor::vfunc77
 0x1000434f func   ?sub_103662d0@CUnknown103662d0@@QAEXHM@Z CUnknown103662d0::sub_103662d0
 0x10004354 func   ?vfunc496@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc496
+0x1000436d func   ?vfunc74@CMultiplayRules@@UAEDXZ CMultiplayRules::vfunc74
 0x10004372 func   ?vfunc269@CInstancedSceneEntity@@QAEHH@Z CInstancedSceneEntity::vfunc269
 0x10004377 func   ?sub_103c76b0@CUnknown103c76b0@@QAEXXZ CUnknown103c76b0::sub_103c76b0
 0x10004381 func   ?vfunc546@CNPC_VBach@@QAEHH@Z CNPC_VBach::vfunc546

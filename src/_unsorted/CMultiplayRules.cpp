@@ -401,6 +401,13 @@ int CMultiplayRules::vfunc62(int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101423f0 size=0x3
+char CMultiplayRules::vfunc74()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10142410 size=0xe7
 #include "CMultiplayRules.h"
 #include "CReliableBroadcastFilter.h"
