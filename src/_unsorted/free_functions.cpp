@@ -59808,6 +59808,13 @@ void sub_101c2c60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2fe0 size=0x3
+int sub_101c2fe0()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c30c0 size=0x98
 #include "SendProp.h"
 
