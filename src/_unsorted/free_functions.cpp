@@ -104688,6 +104688,14 @@ void CUnknown1030be80::sub_1030be80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030bea0 size=0x5
+struct CUnknown1030bea0 { void sub_1030bea0(); };
+void CUnknown1030bea0::sub_1030bea0()
+{
+    *(char *)((char *)this + 0x10) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030bec0 size=0x69
 extern int g_1070d1b0, g_1070d1b4, g_1070d1b8;
 
