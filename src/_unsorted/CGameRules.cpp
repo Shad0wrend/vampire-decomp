@@ -172,6 +172,13 @@ const char *CGameRules::vfunc70(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10129660 size=0x5
+bool CGameRules::vfunc73(CBaseEntity * a0)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10129680 size=0x1
 void CGameRules::vfunc75()
 {
