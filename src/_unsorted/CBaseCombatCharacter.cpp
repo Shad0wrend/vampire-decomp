@@ -1425,6 +1425,53 @@ void CUnknown10332fc0::sub_10332ef0(void *pSpeaker, int nDelta, int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10333700 size=0x15a
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+extern char g_106b8540[];
+extern char g_105387dc[];
+#define SL5(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4();
+#define SL10(p) SL5(p##a) SL5(p##b)
+#define SL50(p) SL10(p##a) SL10(p##b) SL10(p##c) SL10(p##d) SL10(p##e)
+struct TargetL {
+    SL50(t0) SL50(t1) SL10(t2) SL10(t3) SL10(t4) SL5(t5)
+    virtual void u0(); virtual void u1(); virtual void u2();
+    virtual int v138();
+};
+struct RelRec { EHANDLE handle; int cls; int pad; int priority; };
+struct RelHolder {
+    char pad[0x1598];
+    RelRec **m_pTable;
+    int m_nCap;
+    int m_nCount;
+};
+
+int CBaseCombatCharacter::sub_10333700(CBaseEntity *pTarget)
+{
+    const char *ent;
+    if (this) {
+        ent = *(const char **)((char *)this + 0x26c);
+        if (!ent) ent = g_106b8540;
+    } else {
+        ent = g_105387dc;
+    }
+    ScopeTrace trace("CBaseCombatCharacter::IRelationPriority", ent, g_106b8540);
+    if (!pTarget)
+        return 0;
+    RelHolder *self = (RelHolder *)this;
+    int i;
+    for (i = 0; i < self->m_nCount; i++) {
+        if (pTarget == self->m_pTable[i]->handle.Get())
+            return self->m_pTable[i]->priority;
+    }
+    for (i = 0; i < self->m_nCount; i++) {
+        if (((TargetL *)pTarget)->v138() == self->m_pTable[i]->cls)
+            return self->m_pTable[i]->priority;
+    }
+    return 5;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10334a50 size=0x86
 #include "CBaseCombatCharacter.h"
 #include "CBaseEntitySlots.h"
