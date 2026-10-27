@@ -4463,6 +4463,7 @@
 0x1000c5bd func   ?sub_103ce9b0@@YIHPAUWWRangeView@@HPAX@Z sub_103ce9b0
 0x1000c5c7 func   ?sub_10179160@@YAHHHH@Z sub_10179160
 0x1000c5cc func   ?sub_10246160@ConVar@@QAEXH@Z ConVar::sub_10246160
+0x1000c5e5 func   ?vfunc82@CPlayerEvents@@UAEPAUdatamap_t@@XZ CPlayerEvents::vfunc82
 0x1000c603 func   ?sub_101681a0@@YI_NPAUHolder@@@Z sub_101681a0
 0x1000c608 func   ?vfunc300@CWeaponMelee_FireAxe@@QAEXXZ CWeaponMelee_FireAxe::vfunc300
 0x1000c60d func   ?vfunc390@CNPC_VGargoyle@@QAEHPAX@Z CNPC_VGargoyle::vfunc390
