@@ -86528,6 +86528,14 @@ int CUnknown102477e0::sub_102477e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10247800 size=0x4
+struct CUnknown10247800 { char * sub_10247800(); };
+char * CUnknown10247800::sub_10247800()
+{
+    return (char *)this + 0x18;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10247860 size=0x33
 struct CAccum64View {
     char pad0[8];
