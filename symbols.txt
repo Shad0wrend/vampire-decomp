@@ -730,6 +730,7 @@
 0x10002f63 func   ?sub_102fa510@CAI_Node@@QAEXXZ CAI_Node::sub_102fa510
 0x10002f6d func   ?sub_10408060@CKeyringUnit@@QAEXH@Z CKeyringUnit::sub_10408060
 0x10002f95 func   ?sub_101fc950@TStat@@QAEXHH@Z TStat::sub_101fc950
+0x10002fa4 func   ?sub_10067080@CUnknown10067080@@QAEHXZ CUnknown10067080::sub_10067080
 0x10002fc7 func   ?vfunc226@CPhysBox@@QAEXH@Z CPhysBox::vfunc226
 0x10002fcc func   ?sub_101e8e80@CUnknown101e8e80@@QAEHXZ CUnknown101e8e80::sub_101e8e80
 0x10002fd6 func   _info_node_sabbat_dive info_node_sabbat_dive
