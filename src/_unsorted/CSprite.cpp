@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1042e0f0 size=0x6
+#include "CSprite.h"
+namespace lifted {
+extern char g_106aeaf8;
+}
+datamap_t * CSprite::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_106aeaf8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042e8c0 size=0xe5
 #include "CEHandleGet.h"
 #include "CUnknown1042e8c0.h"
