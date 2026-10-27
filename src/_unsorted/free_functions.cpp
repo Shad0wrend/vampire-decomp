@@ -42520,6 +42520,18 @@ int CUnknown1012d5a0::sub_1012d5a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012d5c0 size=0xf
+namespace lifted {
+int __stdcall sub_10015366(int);
+}
+struct CUnknown1012d5c0 { int sub_1012d5c0(); };
+int CUnknown1012d5c0::sub_1012d5c0()
+{
+    *(char *)((char *)this + 0x478) = 0;
+    return lifted::sub_10015366(2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012d5e0 size=0xf9
 #include "CUnknown1012d740.h"
 #include "CReliableBroadcastFilter.h"

@@ -1405,6 +1405,7 @@
 0x10004c4b func   ?sub_101e7d50@CUnknown101e7d50@@QAEMXZ CUnknown101e7d50::sub_101e7d50
 0x10004c55 func   ?sub_101da9b0@CBitfieldSet@@QAEXI@Z CBitfieldSet::sub_101da9b0
 0x10004c5f func   ?sub_100c83a0@CMem4c_t@@QAEXH@Z CMem4c_t::sub_100c83a0
+0x10004c78 func   ?sub_1012d5c0@CUnknown1012d5c0@@QAEHXZ CUnknown1012d5c0::sub_1012d5c0
 0x10004c7d func   ?vfunc246@CBaseDoor@@UAEXHPAHH@Z CBaseDoor::vfunc246
 0x10004c87 func   ?sub_1007b9e0@@YIXPAUCNameOwnerView@@@Z sub_1007b9e0
 0x10004c8c func   ?sub_10248a10@CUnknown10248a10@@QAEHXZ CUnknown10248a10::sub_10248a10
