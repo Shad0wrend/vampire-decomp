@@ -56552,6 +56552,13 @@ void *sub_101ab220(void *pSelf, int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ab2f0 size=0x3
+int sub_101ab2f0()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab310 size=0x31
 void sub_10246300();
 int sub_10246510(int a, int b, int c, int d, int e, int f, int g, int h, void *pFunc);
