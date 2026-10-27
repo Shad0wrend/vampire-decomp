@@ -123456,6 +123456,14 @@ char sub_103de420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e0960 size=0x7
+struct CUnknown103e0960 { int sub_103e0960(); };
+int CUnknown103e0960::sub_103e0960()
+{
+    return *(int *)((char *)this + 0x6678);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e0cd0 size=0x107
 extern "C" int _strcmpi(const char *, const char *);
 extern void (*g_109f366c)(const char *, ...);
