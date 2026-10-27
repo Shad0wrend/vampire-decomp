@@ -44830,6 +44830,17 @@ skipwhite:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136e50 size=0x18
+namespace lifted {
+int sub_10004638(int, int, int);
+}
+struct CUnknown10136e50 { int sub_10136e50(int, int); };
+int CUnknown10136e50::sub_10136e50(int a0, int a1)
+{
+    return lifted::sub_10004638(*(int *)this, a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136e80 size=0xa
 namespace lifted {
 int sub_100025c2();
