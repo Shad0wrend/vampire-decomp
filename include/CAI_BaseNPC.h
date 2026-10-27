@@ -146,7 +146,8 @@ public:
 	virtual bool vfunc530(CBaseEntity *pEnt);	// slot 530: walks the 20 byte records of the list at +0x5d48 (count +0x5d54; handle, expiry time, position) from the back: stale handles are dropped (the last record moved over them), the record of pEnt is kept (true) while its expiry is not passed and pEnt is within 120 units of the stored position, else dropped (false); false when pEnt has no record
 	CAI_NPC_V(531) CAI_NPC_V(532)
 	virtual Vector vfunc533(int a, int b);	// slot 533 (ret 0xc: hidden result pointer, two arguments): a position vector for an activity (the Troika override moves it to the hint node's position while the NPC works at a hint)
-	CAI_NPC_V(534) CAI_NPC_V(535) CAI_NPC_V(536) CAI_NPC_V(537) CAI_NPC_V(538) CAI_NPC_V(539)
+	virtual CBaseEntity *vfunc534();	// slot 534: the nearest visible entity within 1024 units that has an AI or is flagged as a character, found again at most every 1..5 seconds (time at +0x5d6c) and remembered by handle (+0xe64); returns the remembered entity
+	CAI_NPC_V(535) CAI_NPC_V(536) CAI_NPC_V(537) CAI_NPC_V(538) CAI_NPC_V(539)
 	CAI_NPC_V(540)
 	virtual CUnknown102e0150 *vfunc541();	// the NPC's memory list (the same object type as CUnknown102dfc10: nodes at +0xc linked through +0x38)
 	virtual void vfunc542();
