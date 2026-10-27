@@ -83480,6 +83480,14 @@ void CUnknown10229550::sub_10229550(CUnknown10229550Item *pItem, float flScale)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102296c0 size=0x7
+struct CUnknown102296c0 { int sub_102296c0(); };
+int CUnknown102296c0::sub_102296c0()
+{
+    return *(int *)((char *)this + 0x194);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102296e0 size=0x3e
 // TARGET: sub_102296e0
 char __fastcall sub_102296e0(char *self, void *unused, int a, int b)
