@@ -58793,6 +58793,56 @@ void CStealthKillRules::sub_101bedb0(CSKRKeyValues *pKeys, const char *pszName, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bf060 size=0x192
+#include "CStealthKillRules.h"
+#include "CVFeat_t.h"
+#include "CUnknown1006cf30.h"
+#include "StatDefault.h"
+#include "ScopeTrace.h"
+
+#define SKR_V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SKR_V100(p) SKR_V10(p##0) SKR_V10(p##1) SKR_V10(p##2) SKR_V10(p##3) SKR_V10(p##4) \
+	SKR_V10(p##5) SKR_V10(p##6) SKR_V10(p##7) SKR_V10(p##8) SKR_V10(p##9)
+
+struct S101bf060Object
+{
+	SKR_V100(a0) SKR_V100(a1) SKR_V100(a2) SKR_V100(a3)
+	SKR_V10(b0) SKR_V10(b1) SKR_V10(b2) SKR_V10(b3) SKR_V10(b4) SKR_V10(b5) SKR_V10(b6)
+	virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4(); virtual void c5();
+	virtual float vfunc476();
+};
+
+struct S101bf060Entity
+{
+	char m_pad0000[0x98];
+	S101bf060Object *m_p98;
+};
+
+struct StatOwner : public CUnknown1006cf30
+{
+	StatDefault *sub_1006cff0(int id);
+};
+
+extern StatOwner g_106c7c34;
+
+// TARGET: CStealthKillRules::sub_101bf060
+float CStealthKillRules::sub_101bf060(CBaseEntity *pListener, CBaseEntity *pTarget)
+{
+	ScopeTrace trace("CStealthKillRules::GetDeafZoneMinDepth", g_106b8540);
+	S101bf060Object *pObj = ((S101bf060Entity *)pTarget)->m_p98;
+	static int s_nHearing = g_106c7c34.sub_1006cf30("Inspection_Hearing_Scalars");
+	StatDefault *pStat = g_106c7c34.sub_1006cff0(s_nHearing);
+	int nDepth = CVFeatSet::Find(1)->sub_101e56e0(pListener);
+	float flScalar;
+	if (pObj)
+		flScalar = pObj->vfunc476();
+	else
+		flScalar = pStat->sub_1006caa0(CVFeatSet::Find(3)->sub_101e56e0(pTarget));
+	return sub_101bef50(nDepth, flScalar);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bf6a0 size=0x15b
 #include "CUtlRBTree12.h"
 
