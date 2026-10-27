@@ -34,8 +34,21 @@ public:
 	static CDisciplineParticle *sub_10050b90(CDisciplineParticleParams *pParams, int a2, int a3, int a10, int a11);	// "CDisciplineParticle::Create" overload taking a parameter block: scope trace, precaches the model name of the block (engine slot 17) and forwards everything to the full version
 	static CDisciplineParticle *sub_10050c70(CDisciplineParticleParams *pParams, int a2, int a3, int a10, int a11);	// "CDisciplineParticle::Create" overload that returns null unless the block has a model name; null strings become ""
 
-	char m_pad004[0x4b0];
+	char m_pad004[0x44c];
+	const char *m_pszModelName;	// 0x450
+	int m_nModelIndex;	// 0x454
+	char m_pad458[0x4a1 - 0x458];
+	char m_b4a1;	// 0x4a1
+	char m_pad4a2[2];
+	int m_n4a4;	// 0x4a4
+	int m_n4a8;	// 0x4a8
+	int m_n4ac;	// 0x4ac
+	int m_n4b0;	// 0x4b0
 	char m_b4b4;	// 0x4b4
 	char m_pad4b5[3];
 	EHANDLE m_hUser;	// 0x4b8
+	int m_n4bc;	// 0x4bc
+	int m_n4c0;	// 0x4c0
+	char m_b4c4;	// 0x4c4
+	char m_b4c5;	// 0x4c5
 };
