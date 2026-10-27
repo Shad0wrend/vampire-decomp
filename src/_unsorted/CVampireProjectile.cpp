@@ -60,6 +60,12 @@ bool CVampireProjectile::vfunc265()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101eec10 size=0x1
+void CVampireProjectile::vfunc269()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101efa30 size=0x120
 #include "CVampireProjectile.h"
 #include "CEntityVSlots.h"
