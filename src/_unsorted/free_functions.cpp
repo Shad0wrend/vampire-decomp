@@ -63723,6 +63723,16 @@ void sub_101cf4a0(CModelEntX *pEntity, const char *pszModelName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cf600 size=0x9
+namespace lifted {
+struct C1001514a { int sub_1001514a(); };
+}
+int sub_101cf600(int a0)
+{
+    return ((lifted::C1001514a *)a0)->sub_1001514a();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cf620 size=0xd
 extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
 
