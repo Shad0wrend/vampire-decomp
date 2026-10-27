@@ -22,6 +22,9 @@ public:
 	bool sub_1009e430(const char *szKeyName, const char *szValue);	// CBaseEntity::vfunc110 (stub 0x1000fc86), called directly
 	void sub_10101a90(void *pTrace);	// "CEnvLaser::UpdateEndPos"-like: stores the trace's end position (+0xc) as the beam end (+0x4d8), moves the end sprite (+0x4f8) there and, once 0.1 s have passed since the time at +0x454, relinks the beam (sub_100bbef0 with the trace, sub_100bbe70 between its end entity position and the end)
 	float *sub_100bb270();	// CBeam::sub_100bb270 (stub 0x1001471d), called directly
+	class CEntityVSlots *sub_100bbdf0(const char *pszName);	// CBeam: the entity behind a name (stub 0x10006faf)
+	float *sub_100bb440();	// CBeam: the beam's start position (stub 0x10005c45)
+	void sub_10101b30();	// the laser's think: traces from its origin to the end entity / end position, draws the trace in debug mode, updates the end sprite
 	void sub_100bbe70(float *pStart, const float *pEnd);	// stub 0x10004b3d
 	void sub_100bbef0(void *pTrace);	// stub 0x1001326e
 
