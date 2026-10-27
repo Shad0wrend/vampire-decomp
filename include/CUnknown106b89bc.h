@@ -13,6 +13,7 @@ class CBaseEntity;
 class CUnknown106b89bc
 {
 public:
+	CUnknown106b89bc();	// constructor (0x100d1230, stub 0x10015979), run by CPhysicsHook::vfunc2
 	int m_nCount;	// 0x00
 	CUnknown106b89bcNode *m_pHead;	// 0x04
 
