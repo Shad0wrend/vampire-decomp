@@ -38781,6 +38781,16 @@ void CUnknown1010c190::sub_1010c190()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010c1e0 size=0x8
+namespace lifted {
+int sub_1000472d();
+}
+int __stdcall sub_1010c1e0(int a0)
+{
+    return lifted::sub_1000472d();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010c5d0 size=0x2e
 #include "CUnknown1070b22c.h"
 // TARGET: sub_1010c5d0
