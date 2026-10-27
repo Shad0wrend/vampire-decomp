@@ -11,6 +11,7 @@
 	char sub_10338cb0();	// "CBaseCombatCharacter::IncBloodPool": scope trace (entity name), hands 0xc to the active stat list (sub_10200d60), then slot 111; returns the worker's flag byte
 	char sub_10338950();	// "CBaseCombatCharacter::IsBloodPoolFull": scope trace (entity name), whether the upper limit of stat 0xc of the active stat list equals its value (sub_10010609)
 	char sub_103300c0();	// "CBaseCombatCharacter::...": whether the value of stat 7 (kindred) or 0xd (others) of the stat list with id 3 (the shared default list when absent) is positive
+	bool sub_10146b20(CBaseCombatCharacter *pOther);	// true for a null-safe "may affect" test: false for null; true when this fails sub_10146a80; true when pOther's stat list with id 3 has stat 0xe or 1 positive; else with the clan record of pOther (global 0x10738d10) flagged (+0x97) and a range (+0xac) set, whether the distance between the two origins is within the range
 	char sub_10339930();	// "CBaseCombatCharacter::ResistsFeeding": scope trace (entity name), true when the stat record of this character resists, or misc flag 0x40000 is set, or the NPC at +0x98 (state 2, slot 167 object with a field at +0xa8) is in combat with the player; else false (with a console message when the dev convar allows)
 
 	// The active stat list: the first stat list with a zero field at +0x10, else the shared default list. It is the
