@@ -1,6 +1,27 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1023d930 size=0x196
+#include "CWorldEvents.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+extern "C" __declspec(dllimport) void __cdecl Error(const char *pszFormat, ...);
+extern CWorldEvents *g_107532ec;
+
+CWorldEvents::CWorldEvents() : CBaseEntity(0)
+{
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", m_name26c ? m_name26c : g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(0);
+	}
+	vfunc93(0, 0);
+	if (g_107532ec)
+		Error("More than one worldevents entity on the map!");
+	g_107532ec = this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023db40 size=0x1e
 #include "CWorldEvents.h"
 
