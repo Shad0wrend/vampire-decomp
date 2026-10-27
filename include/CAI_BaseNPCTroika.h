@@ -207,7 +207,8 @@ public:
 	unsigned int m_h6088;
 	unsigned int m_h608c;
 	float m_v6090[3];
-	char m_pad609c[0x6268 - 0x609c];
+	char m_pad609c[0x6264 - 0x609c];
+	float m_f6264;
 	float m_f6268;	// 0x6268
 	char m_pad626c[0x630c - 0x626c];
 	char *m_p630c;	// 0x630c: an object with a flag dword at +0x64
