@@ -212,7 +212,8 @@ public:
 	float m_f6268;	// 0x6268
 	char m_pad626c[0x628c - 0x626c];
 	EHANDLE m_h628c;
-	char m_pad6290[0x630c - 0x6290];
+	Vector m_vec6290;
+	char m_pad629c[0x630c - 0x629c];
 	char *m_p630c;	// 0x630c: an object with a flag dword at +0x64
 	char m_pad6310[0x6318 - 0x6310];
 	float m_f6318;	// 0x6318
