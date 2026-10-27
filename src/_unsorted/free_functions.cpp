@@ -104050,6 +104050,16 @@ void CUnknown102ee120::sub_102ee1c0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ee200 size=0xa
+namespace lifted {
+int __stdcall sub_1000b2ee(int, int);
+}
+int sub_102ee200()
+{
+    return lifted::sub_1000b2ee(0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ee250 size=0xd
 __declspec(naked) void CUnknown102ee120::sub_102ee250(int value)
 {
