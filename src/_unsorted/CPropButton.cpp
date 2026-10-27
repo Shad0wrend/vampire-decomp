@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10214dd0 size=0x6
+#include "CPropButton.h"
+namespace lifted {
+extern char g_105ac050;
+}
+datamap_t * CPropButton::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_105ac050);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10215620 size=0xe5
 #include "CPropButton.h"
 #include "CUnknown1073dc28.h"
