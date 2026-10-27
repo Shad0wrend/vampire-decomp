@@ -69570,6 +69570,14 @@ float CUnknown101e8e20::sub_101e8e20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e8e60 size=0x7
+struct CUnknown101e8e60 { int sub_101e8e60(); };
+int CUnknown101e8e60::sub_101e8e60()
+{
+    return *(int *)((char *)this + 0x35c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e8f20 size=0x86
 #include "CUnknown101e8f20.h"
 #include "CBaseCombatCharacter.h"
