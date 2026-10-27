@@ -32,7 +32,7 @@ public:
 	void sub_10005880();	// CBaseEntity::vfunc123 (stub 0x10005880), called directly
 	void vfunc113();	// slot 113 (called directly): the base's slot 113, then looks up the two named entities' physics objects (sub_1004d6a0), orders the end points by their distance to the first object and creates the spring (slot 11 of the physics environment); with no object, or the same one twice, prints \"ERROR: Can't init spring from %s to %s\" and removes the entity
 	void sub_10001226();	// CBaseEntity::vfunc113 (stub 0x10001226), called directly
-	const char *sub_100ab4f0(const char *pszFirst, ...);	// stub 0x1000b5cd: variadic (the caller pops), the text of the two names for a warning
+	const char *sub_100ab4f0();	// stub 0x1000b5cd: the entity's name text for a warning
 
 	char m_pad0004[0x224 - 4];
 	unsigned char m_fTextOverlayFlags;	// 0x224: bit 0 = text overlay shown, bit 2 = geometry overlay shown
