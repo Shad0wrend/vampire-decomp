@@ -41516,6 +41516,13 @@ float sub_1012f800(float a0)
 float sub_1012f850(float x) { return x * x; }
 // END FUNCTION
 
+// FUNCTION: 0x1012f870 size=0x6
+int sub_1012f870()
+{
+    return 3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012f890 size=0x34
 extern const char *g_105751a0;
 extern void *g_105751a4;
