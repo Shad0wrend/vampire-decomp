@@ -65,3 +65,13 @@ void CTEMetalSparks::sub_10059fe0(int a, int b)
 	g_1070b22c->PlaybackTempEntity(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005a0a0 size=0x6
+namespace lifted {
+extern char g_106beaa8;
+}
+ServerClass * CTEMetalSparks::vfunc0()
+{
+    return (ServerClass *)((int)&lifted::g_106beaa8);
+}
+// END FUNCTION
