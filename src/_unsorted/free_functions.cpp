@@ -82962,6 +82962,56 @@ void sub_10217ac0(CPropHacking *self, const char *fmt, ...)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10217b30 size=0x1b6
+#include "CUnknown10217f50.h"
+#include "COutputEvent.h"
+#include "CVFeat_t.h"
+#include "CVSoundActivityTable_t.h"
+#include <string.h>
+
+extern CVActivitySound g_1074b330;
+extern int g_1074f760;
+__declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+char sub_10217200(char bDigits);
+
+#define TV1(p) virtual void p();
+#define TV10(p) TV1(p##0) TV1(p##1) TV1(p##2) TV1(p##3) TV1(p##4) TV1(p##5) TV1(p##6) TV1(p##7) TV1(p##8) TV1(p##9)
+#define TV100(p) TV10(p##0) TV10(p##1) TV10(p##2) TV10(p##3) TV10(p##4) TV10(p##5) TV10(p##6) TV10(p##7) TV10(p##8) TV10(p##9)
+struct CTerminalSlots
+{
+	TV100(a) TV100(b)
+	TV10(c0) TV10(c1) TV10(c2) TV10(c3) TV10(c4) TV10(c5)
+	TV1(c60) TV1(c61) TV1(c62) TV1(c63) TV1(c64) TV1(c65) TV1(c66)
+	virtual int *slot267(int *pOut, CBaseEntity *pPlayer);
+	TV1(d0) TV1(d1) TV1(d2) TV1(d3) TV1(d4) TV1(d5)
+	virtual const char *slot274();
+};
+
+void CUnknown10217f50::sub_10217b30()
+{
+	((COutputEvent *)m_Output7dc)->sub_100cd660(m_hUser.Get(), this, 0.0f);
+	{
+		int outcome;
+		((CTerminalSlots *)this)->slot267(&outcome, m_hUser.Get());
+	}
+	const char *pszName = ((CTerminalSlots *)this)->slot274();
+	if (m_n780 >= 3) {
+		Q_strncpy((char *)&m_quad, pszName, 16);
+	} else {
+		int len = strlen(pszName);
+		bool bDigits = (m_flags081c & 2) == 2;
+		for (int i = 0; i < len; i++) {
+			((char *)&m_quad)[i] = sub_10217200(bDigits);
+			sub_102192a0(sub_10217200(bDigits));
+		}
+	}
+	g_1074b330.sub_101f5950((int)this, g_1074f760, 2, 1.0f, 1.25f);
+	CBaseEntity *pUser = m_hUser.Get();
+	int nValue = CVFeatSet::Find(2)->sub_101e56e0(pUser);
+	sub_10218820(5, nValue);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10218080 size=0xa
 void __fastcall sub_10218080(char *self, int, int)
 {
