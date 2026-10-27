@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100bf920 size=0x6
+#include "CFuncRotating.h"
+namespace lifted {
+extern char g_1055b4c0;
+}
+datamap_t * CFuncRotating::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1055b4c0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bf9b0 size=0xbd
 #include "CFuncRotating.h"
 #include <string.h>
