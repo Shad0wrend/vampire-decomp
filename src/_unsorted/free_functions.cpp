@@ -53283,6 +53283,16 @@ void COrnamentProp::sub_10191170(CBaseEntity *pParent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10191200 size=0x8
+namespace lifted {
+int sub_1000787e();
+}
+int __stdcall sub_10191200(int a0)
+{
+    return lifted::sub_1000787e();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101916f0 size=0x12
 struct CVirtSlots2 {
     virtual void vfunc0();
