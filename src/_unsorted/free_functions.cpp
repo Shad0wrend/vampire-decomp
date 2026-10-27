@@ -104098,6 +104098,16 @@ int sub_102f9950()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f9970 size=0x6
+namespace lifted {
+extern char g_1093412c;
+}
+char sub_102f9970()
+{
+    return lifted::g_1093412c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f9990 size=0x8
 extern char g_1093412c;
 void sub_102f9990() { g_1093412c = 0; }
