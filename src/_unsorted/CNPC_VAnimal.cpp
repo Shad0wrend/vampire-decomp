@@ -55,3 +55,35 @@ void CAnimalUnit::sub_1035f5c0(CEntityVSlots *pEnt, Vector *pVec, int a, int b)
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x1035fd40 size=0xd2
+#include "CNPC_VAnimal.h"
+#include "CCineNPC.h"
+#include "CEHandleGet.h"
+#include "CEntityVSlots.h"
+
+struct CNPCStateView {
+	char m_pad0000[0x5cc0];
+	int m_nState;	// 0x5cc0
+	int m_nIdealState;	// 0x5cc4
+	char m_pad5cc8[0x5d74 - 0x5cc8];
+	unsigned int m_h5d74;	// 0x5d74
+};
+
+int CNPC_VAnimal::vfunc482(char bDisregardState, int interruptLevel)
+{
+	CNPCStateView *pView = (CNPCStateView *)this;
+	int result = 1;
+	if (EHandle_Get(pView->m_h5d74)) {
+		CCineNPC *pCine = (CCineNPC *)EHandle_Get(pView->m_h5d74);
+		if (!pCine->sub_101a8ac0())
+			return 0;
+		result = 2;
+	}
+	if (!((CEntityVSlots *)this)->slot158())
+		return 0;
+	if (!bDisregardState && pView->m_nState != 0 && pView->m_nState != 1 && pView->m_nIdealState != 1 && (pView->m_nState != 3 || interruptLevel < 1))
+		return (pView->m_nState == 4) ? result : 0;
+	return result;
+}
+// END FUNCTION
