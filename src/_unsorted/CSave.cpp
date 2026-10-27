@@ -285,3 +285,16 @@ void CSave::vfunc27(const Vector *pValues, int count)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x101a1080 size=0x81
+#include "CSave.h"
+
+void CSave::vfunc36(const void *pData, int count)
+{
+    int buf[256];
+    const EHANDLE *pHandles = (const EHANDLE *)pData;
+    for (int i = 0; i < count; i++)
+        buf[i] = sub_101a08f0(((EHANDLE *)&pHandles[i])->Get());
+    vfunc10(buf, count);
+}
+// END FUNCTION
