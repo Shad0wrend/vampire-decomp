@@ -686,6 +686,61 @@ char CBasePlayer::vfunc421(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10168700 size=0x19e
+#include "CBasePlayer.h"
+#include "CBaseCombatCharacter.h"
+#include "CEHandleGet.h"
+#include "CEntityVSlots.h"
+#include "CUnknown10739d08.h"
+
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+extern "C" __declspec(dllimport) void Msg(const char *pszFormat, ...);
+char *sub_101d3730(const char *pszFormat, ...);
+
+struct CDevFlagObj
+{
+	virtual void v0();
+	virtual char vfunc1();
+	char m_pad0004[0x28];
+	int m_n2c;
+};
+extern CDevFlagObj *g_10937034;
+
+struct CUnknown101e8bb0 { float sub_101e8bb0(); };
+struct CUnknown101e8b50 { float sub_101e8b50(); };
+extern CUnknown101e8bb0 g_10739d08;
+
+char CBasePlayer::vfunc425(CBaseEntity *pTarget)
+{
+	char szBuf[256];
+	if (EHandle_Get(m_h1538) && m_n153C != -1)
+		return 0;
+	if (pTarget) {
+		if (!g_10937034->vfunc1() && g_10937034->m_n2c) {
+			sprintf(szBuf, "%s BeFedOnByZombie found victim %s", ((CBaseCombatCharacter *)this)->sub_100ab4f0(), pTarget->sub_100ab4f0());
+			((CBaseCombatCharacter *)this)->sub_103221b0(szBuf);
+			Msg("Attempting Feed...\n");
+		}
+		if (sub_10328df0(pTarget, 8)) {
+			if (sub_1032e7b0())
+				((CEntityVSlots *)sub_1032e7b0())->slot66();
+			m_b14A8 = 1;
+			m_b1475 = 1;
+			m_f1478 = g_10739d08.sub_101e8bb0() + gpGlobals->curtime;
+			m_f147C = ((CUnknown101e8b50 *)&g_10739d08)->sub_101e8b50() + gpGlobals->curtime;
+			goto done;
+		}
+		if (!g_10937034->vfunc1() && g_10937034->m_n2c)
+			((CBaseCombatCharacter *)this)->sub_103221b0(sub_101d3730("%s StartGrappleAttack failed", ((CBaseCombatCharacter *)this)->sub_100ab4f0()));
+	}
+	if (!g_10937034->vfunc1() && g_10937034->m_n2c)
+		((CBaseCombatCharacter *)this)->sub_103221b0(sub_101d3730("%s BeFedOnByZombie failed", ((CBaseCombatCharacter *)this)->sub_100ab4f0()));
+	return 0;
+done:
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10168e10 size=0x32
 #include "CBasePlayer.h"
 
