@@ -99486,6 +99486,21 @@ void __fastcall sub_102e8a80(int *self, int, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e9a00 size=0x6b
+#include "CUnknown102e9a00.h"
+#include "CBaseEntity.h"
+
+bool CUnknown102e9a00::sub_102e9a00(void *pEntity)
+{
+    for (int i = 0; i < m_nCount; i++) {
+        EHANDLE &h = *(EHANDLE *)&m_pElems[i].m_hEntity;
+        if (h && pEntity == h.Get())
+            return true;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e9a90 size=0x112
 #include "CUtlVector280.h"
 #include "utlvector.h"
