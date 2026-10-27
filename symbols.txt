@@ -3941,6 +3941,7 @@
 0x1000b285 func   ?sub_1027a6c0@CAI_BaseNPC@@QAEHXZ CAI_BaseNPC::sub_1027a6c0
 0x1000b28f func   ?vfunc127@CNPC_VVampireBoss@@QAEHH@Z CNPC_VVampireBoss::vfunc127
 0x1000b29e func   ?sub_10370630@@YAXXZ sub_10370630
+0x1000b2a3 func   ?vfunc82@CEnvWind@@UAEPAUdatamap_t@@XZ CEnvWind::vfunc82
 0x1000b2a8 func   ?sub_102bf050@@YAXXZ sub_102bf050
 0x1000b2b7 func   ?sub_1006aa90@CUnknown1006aa90@@QAEHXZ CUnknown1006aa90::sub_1006aa90
 0x1000b2bc func   ?vfunc113@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::vfunc113
