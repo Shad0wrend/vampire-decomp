@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10104290 size=0x6
+#include "CParamsExplosion.h"
+namespace lifted {
+extern char g_1056ab10;
+}
+datamap_t * CParamsExplosion::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1056ab10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10104370 size=0x1e
 #include "CParamsExplosion.h"
 
