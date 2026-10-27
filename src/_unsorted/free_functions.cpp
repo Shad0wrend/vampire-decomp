@@ -70114,6 +70114,12 @@ int CUnknown101f1a30::sub_101f1a30(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f1b30 size=0x3
+void __stdcall sub_101f1b30(int a0, int a1)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f1be0 size=0x6c
 #include "CUnknown10227c90.h"
 #include "CUnknown101f0e50.h"
