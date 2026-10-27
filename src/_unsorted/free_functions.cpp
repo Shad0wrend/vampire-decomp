@@ -12116,6 +12116,14 @@ void CFlexAnimationTrack::sub_10074820(int nList)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10074980 size=0x4
+struct CUnknown10074980 { int sub_10074980(); };
+int CUnknown10074980::sub_10074980()
+{
+    return *(int *)((char *)this + 0x4c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10074a30 size=0xa
 void CUnknown10074a30::sub_10074a30(char value)
 {
