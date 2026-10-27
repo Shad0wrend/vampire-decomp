@@ -8277,6 +8277,19 @@ void sub_1005be30(int pFilter, int delay, int nStartEntity, int nEndEntity, int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005bf80 size=0xb
+namespace lifted {
+extern char g_1044dc64;
+int sub_1000d08f();
+}
+struct CUnknown1005bf80 { int sub_1005bf80(); };
+int CUnknown1005bf80::sub_1005bf80()
+{
+    *(int *)this = (int)&lifted::g_1044dc64;
+    return lifted::sub_1000d08f();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005c310 size=0xc3
 #include "SendProp.h"
 
