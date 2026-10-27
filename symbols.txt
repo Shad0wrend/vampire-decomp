@@ -6637,6 +6637,7 @@
 0x10013368 func   ?sub_103394a0@CBaseCombatCharacter@@QAEXDHH@Z CBaseCombatCharacter::sub_103394a0
 0x1001336d func   ?sub_1022b4d0@S1022b4d0@@QAEXAAUinputdata_t@@@Z S1022b4d0::sub_1022b4d0
 0x1001338b func   ?sub_100ee810@CBaseDoor@@QAEXXZ CBaseDoor::sub_100ee810
+0x1001339f func   ?sub_1002f0e0@@YGDH@Z sub_1002f0e0
 0x100133b8 func   ?sub_1006e6a0@CBaseCineCam@@QAE_NHHHHH@Z CBaseCineCam::sub_1006e6a0
 0x100133c2 func   ?sub_10245720@@YAXI@Z sub_10245720
 0x100133d1 func   ?sub_102ce550@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_102ce550

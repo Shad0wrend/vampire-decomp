@@ -1148,6 +1148,13 @@ void sub_1002ee60(void *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002f0e0 size=0x5
+char __stdcall sub_1002f0e0(int a0)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002f100 size=0x6a
 #include "CBaseEntity.h"
 #include "Vector.h"
