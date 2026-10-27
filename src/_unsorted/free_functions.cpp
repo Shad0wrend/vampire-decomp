@@ -29100,6 +29100,17 @@ void CEventQueue::sub_100cf080()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cf680 size=0xa
+namespace lifted {
+extern char g_106e7050;
+struct C10005fc9 { int sub_10005fc9(); };
+}
+int sub_100cf680()
+{
+    return ((lifted::C10005fc9 *)((int)&lifted::g_106e7050))->sub_10005fc9();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cfd00 size=0x77
 struct SaveX {
     virtual void v0();
