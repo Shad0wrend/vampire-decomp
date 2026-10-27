@@ -35,6 +35,7 @@ public:
 	void sub_10011928(int *pTask);	// CNPC_VHuman::vfunc444 (stub 0x10011928), called directly
 	void sub_102ae750(int schedule, int a);	// stub 0x1000198d, starts the schedule (the source line stamp is written by the caller)
 	void vfunc259(void *pEvent);	// slot 259 "HandleAnimEvent" override: event 2 plays the roar2 sound (reliably, from the NPC's edict, to the players that can hear it), events 0x802 / 0x803 shake the screen around the NPC and then slot 617, event 1 does nothing, anything else CNPC_VHuman::vfunc259
+	char vfunc69(CBaseEntity *pOther);	// slot 69 (plain member): true for an entity with bits 1, 2 or 4 of its byte at +0x4c set or whose class name is "prop_dynamic", "func_brush" or "func_door_rotating" (ClassMatches inlined three times); else CAI_BaseNPCTroika::sub_1029b180(pOther)
 	void sub_100076bc(void *pEvent);	// CNPC_VHuman::vfunc259 (stub 0x100076bc), called directly
 	void vfunc617();	// slot 617 (plain member): emits one of the 0x10639480 sounds (random 3..0, channel 4, volume 1.0, attenuation 0.8) from the NPC's edict to the players that can hear its position, reliably (a PAS attenuation filter built inline)
 	void vfunc618();	// slot 618 (plain member): emits one of the 0x10639490 sounds (random 0..2, channel 4, volume 1.0, attenuation 0.8) from the NPC's edict to the players that can hear its position, reliably (a PAS attenuation filter built inline)
