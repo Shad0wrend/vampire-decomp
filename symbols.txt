@@ -1556,6 +1556,7 @@
 0x10005673 func   ?sub_10362540@CNPC_VAsianVampire@@QAEXXZ CNPC_VAsianVampire::sub_10362540
 0x10005682 func   ?sub_103e6500@@YAHXZ sub_103e6500
 0x1000568c func   ?sub_102e0090@CUnknown102e0090@@QAEHPAX@Z CUnknown102e0090::sub_102e0090
+0x10005696 func   ?sub_100b7c80@CUnknown100b7c80@@QAEHXZ CUnknown100b7c80::sub_100b7c80
 0x100056c3 func   ?sub_100660a0@@YAHXZ sub_100660a0
 0x100056cd func   ?vfunc5@CWeaponIArmor_Lt_Leather@@QAEPAV1@I@Z CWeaponIArmor_Lt_Leather::vfunc5
 0x100056e1 func   ?vfunc8@CGameMovement@@UAEXXZ CGameMovement::vfunc8

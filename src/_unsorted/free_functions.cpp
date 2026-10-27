@@ -24545,6 +24545,14 @@ void CUnknown100b7c60::sub_100b7c60(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7c80 size=0x4
+struct CUnknown100b7c80 { int sub_100b7c80(); };
+int CUnknown100b7c80::sub_100b7c80()
+{
+    return *(int *)((char *)this + 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7cc0 size=0x33
 // TARGET: sub_100b7cc0
 struct CVirtBox_100b7cc0 {
