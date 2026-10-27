@@ -68,6 +68,7 @@ public:
 	CBaseGrenade *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_1000a67d();	// as in CPhysForce (transplant)
 	CBaseGrenade *sub_1042b2b0();	// as in CKeepUpright (transplant)
+	void sub_1042ab80(CBaseEntity *pEnt);	// not in this class's vtable (the class is not known): unless pEnt is the entity behind the handle at +0x19b0, a grenade with flag bit 0 gets its velocity (+0x3bc) scaled by 0.95f (sub_100b2e30) with the bit-12 position refresh around it, any other calls slot 408
 
 	char m_pad19b0[0x19b0 - sizeof(CBaseEntity)];
 	unsigned int m_hHeld19b0;	// 0x19b0: handle of the entity the grenade is checked against (slot 407)
