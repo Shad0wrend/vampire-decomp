@@ -69640,6 +69640,14 @@ int CUnknown101e9040::sub_101e9040()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e9060 size=0x7
+struct CUnknown101e9060 { int sub_101e9060(); };
+int CUnknown101e9060::sub_101e9060()
+{
+    return *(int *)((char *)this + 0x39c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e9170 size=0xd9
 #include "CVStatList_t.h"
 #include "CUnknown101e9170.h"
