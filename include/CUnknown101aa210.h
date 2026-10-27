@@ -17,7 +17,9 @@ public:
 	U101AA_V10(c0) U101AA_V10(c1)
 	virtual float *vfunc220(int a, int b, int c);	// slot 220: the position used as the centre of the sphere query (three stack arguments: the value at +0x458, 0x2000, 0)
 
-	char m_pad0004[0x454 - 4];
+	char m_pad0004[0x204 - 4];
+	unsigned int m_flags204;	// 0x204
+	char m_pad0208[0x454 - 0x208];
 	const char *m_pszName454;	// 0x454: the name of the NPC wanted
 	int m_n458;	// 0x458
 
