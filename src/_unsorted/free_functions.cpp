@@ -104391,6 +104391,14 @@ void CUnknown1030ba50::sub_1030ba50(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030ba70 size=0x4
+struct CUnknown1030ba70 { int sub_1030ba70(); };
+int CUnknown1030ba70::sub_1030ba70()
+{
+    return *(int *)((char *)this + 0x5c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030ba90 size=0x71
 #include "CHolderInner24.h"
 #include "CUnknown10936c84.h"
