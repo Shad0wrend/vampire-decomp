@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10384060 size=0x6
+#include "CNPC_VHuman.h"
+namespace lifted {
+extern char g_1093b3e0;
+}
+CAI_CondOwner * CNPC_VHuman::vfunc580()
+{
+    return (CAI_CondOwner *)((int)&lifted::g_1093b3e0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10384690 size=0x39
 #include "CNPC_VHuman.h"
 

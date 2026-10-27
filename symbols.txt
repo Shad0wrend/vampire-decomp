@@ -2317,6 +2317,7 @@
 0x10006fff func   ?vfunc82@CNPC_VGhoulCroucher@@UAEPAUdatamap_t@@XZ CNPC_VGhoulCroucher::vfunc82
 0x10007013 func   ?sub_101971b0@@YAPAUPyObj@@PAXPAU1@@Z sub_101971b0
 0x10007018 func   ?vfunc5@CDisciplineProjectile@@QAEPAV1@I@Z CDisciplineProjectile::vfunc5
+0x1000701d func   ?vfunc580@CNPC_VHuman@@UAEPAUCAI_CondOwner@@XZ CNPC_VHuman::vfunc580
 0x10007027 func   ?vfunc546@CNPC_VStalker@@QAEHH@Z CNPC_VStalker::vfunc546
 0x1000702c func   ?sub_1030d650@@YGHPBD@Z sub_1030d650
 0x10007036 func   _item_g_stake item_g_stake
