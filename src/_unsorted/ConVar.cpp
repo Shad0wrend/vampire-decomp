@@ -14,6 +14,14 @@ ConVar *ConVar::vfunc0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10245cb0 size=0x3
+#include "ConVar.h"
+char ConVar::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10245cf0 size=0x6e
 #include "ConVar.h"
 extern "C" double atof(const char *);
