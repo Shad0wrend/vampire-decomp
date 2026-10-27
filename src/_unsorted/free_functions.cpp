@@ -50132,6 +50132,14 @@ int CUnknown1017f770::sub_1017f770()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017f790 size=0x7
+struct CUnknown1017f790 { float sub_1017f790(); };
+float CUnknown1017f790::sub_1017f790()
+{
+    return *(float *)((char *)this + 0x1cf8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017f980 size=0x27
 // TARGET: CUnknown1017f980::sub_1017f980
 #include "CUnknown1017f980.h"
