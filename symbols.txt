@@ -6472,6 +6472,7 @@
 0x10011996 func   ?sub_10138760@@YAXPAHH0@Z sub_10138760
 0x100119a0 func   ?vfunc123@CPhysicsSpring@@QAEXXZ CPhysicsSpring::vfunc123
 0x100119a5 func   ?sub_10026f20@CBaseEntityX@@QAEHXZ CBaseEntityX::sub_10026f20
+0x100119aa func   ?vfunc82@CLogicLineToEntity@@UAEPAUdatamap_t@@XZ CLogicLineToEntity::vfunc82
 0x100119b4 func   ?sub_101d07f0@@YAXPAVVector@@PBV1@1@Z sub_101d07f0
 0x100119c8 func   ?vfunc245@CFuncPlat@@UAEXXZ CFuncPlat::vfunc245
 0x100119cd func   ?sub_100cf680@@YAHXZ sub_100cf680

@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101319e0 size=0x6
+#include "CLogicLineToEntity.h"
+namespace lifted {
+extern char g_105760fc;
+}
+datamap_t * CLogicLineToEntity::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_105760fc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10131ac0 size=0x151
 #include "CLogicLineToEntity.h"
 #include "CGlobalEntityList.h"
