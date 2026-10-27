@@ -96197,6 +96197,14 @@ float __fastcall sub_102a9e60(CSlots *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a9e80 size=0x7
+struct CUnknown102a9e80 { char sub_102a9e80(); };
+char CUnknown102a9e80::sub_102a9e80()
+{
+    return *(char *)((char *)this + 0x570);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a9ea0 size=0xa
 struct CUnknown102a9ea0 { int a[1]; int sub_102a9ea0(int i); };
 // TARGET: CUnknown102a9ea0::sub_102a9ea0
