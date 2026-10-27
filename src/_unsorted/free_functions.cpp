@@ -79948,6 +79948,20 @@ void sub_102063e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10206400 size=0x20
+struct CUnknown10206400 { void * sub_10206400(int); };
+void * CUnknown10206400::sub_10206400(int a0)
+{
+    *(int *)this = 1;
+    *(int *)((char *)this + 0x18) = 0;
+    *(int *)((char *)this + 0x1c) = a0;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102064b0 size=0x18f
 #include "CUnknown102064b0.h"
 
