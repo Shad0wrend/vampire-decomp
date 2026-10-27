@@ -120459,6 +120459,65 @@ int CUnknown10382d20::sub_10382d20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10382d40 size=0x1a2
+#include "CNPC_VHengeyokai.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "CUnknown1070b244.h"
+#include "CUnknown102e0150.h"
+
+extern CUnknown1070b244 *g_1070b244;
+
+int CNPC_VHengeyokai::sub_10382d40()
+{
+	CEntityVSlots *pThis = (CEntityVSlots *)this;
+	CEntityVSlots *pEnemy = (CEntityVSlots *)pThis->slot167();
+	char bBlocked;
+	if (pEnemy)
+		bBlocked = pThis->slot530(pEnemy);
+	else
+		bBlocked = 1;
+	sub_10269aa0(9);
+	if (!bBlocked)
+	{
+		if (!m_b667c)
+		{
+			if (g_1070b244->vfunc2(0, 99) >= 0x50)
+				goto fail;
+		}
+		else
+		{
+			if (g_1070b244->vfunc2(0, 99) >= 0x28)
+				goto fail;
+		}
+	}
+	if (!sub_10381cd0())
+	{
+fail:
+		m_n6678 = 2;
+		m_b667c = 0;
+		return 0;
+	}
+	CEntityVSlots *pTarget = (CEntityVSlots *)EHandle_Get(m_h6664);
+	const Vector *pMyOrigin = pThis->slot220();
+	Vector vecToTarget = *pTarget->slot220() - *pMyOrigin;
+	if (!bBlocked && pEnemy)
+	{
+		Vector vecLastKnown;
+		pThis->slot541()->sub_102dfed0(&vecLastKnown, (CBaseEntity *)pEnemy);
+		if (!(vecToTarget.LengthSqr() < (vecLastKnown - *pThis->slot220()).LengthSqr()))
+		{
+			m_h6664 = 0xffffffff;
+			sub_102c43b0(0);
+			return 0;
+		}
+	}
+	sub_10381ba0(1);
+	m_b667c = 1;
+	return 0x16b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10382f60 size=0xee
 #include "CNPC_VHengeyokai.h"
 #include "CUnknown1070b244.h"
