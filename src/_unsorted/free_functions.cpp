@@ -100694,6 +100694,111 @@ int CUnknown10290700::sub_10290700()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10290fc0 size=0x1e2
+#include "CAI_BaseNPCTroika.h"
+#include "CVProfile.h"
+#include "globalvars.h"
+
+__declspec(dllimport) void vtune(bool bEnable);
+
+struct VPCycle
+{
+	unsigned __int64 m_Int64;
+	VPCycle() { m_Int64 = 0; }
+	void Sample()
+	{
+		unsigned long *pSample = (unsigned long *)this;
+		__asm {
+			mov ecx, pSample
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+	void End()
+	{
+		VPCycle cycle;
+		cycle.Sample();
+		m_Int64 = cycle.m_Int64 - m_Int64;
+	}
+	void Add(const VPCycle &other)
+	{
+		m_Int64 += other.m_Int64;
+	}
+};
+
+struct VPNode
+{
+	const char *m_pszName;
+	char m_pad4[4];
+	VPCycle m_CurFrameTime;
+	int m_nRecursions;
+	int m_nCurFrameCalls;
+	VPCycle m_TotalTime;
+	char m_pad20[0x48 - 0x20];
+	VPNode *m_pParent;
+	char m_pad4c[0x54 - 0x4c];
+	int m_nGroup;
+};
+
+struct VPProf
+{
+	char m_bVTune;
+	char m_pad1[3];
+	int m_nVTuneGroup;
+	int m_GroupStack[1024];
+	int m_nGroupDepth;
+	int m_enabled;
+	char m_bAtRoot;
+	char m_pad1011[3];
+	VPNode *m_pCurNode;
+	VPNode *m_pRoot;
+};
+
+bool CAI_BaseNPCTroika::sub_10290fc0(float *pOut)
+{
+	VPProf *pProf = (VPProf *)g_109f3648;
+	if (pProf->m_enabled || !pProf->m_bAtRoot) {
+		if (pProf->m_pCurNode->m_pszName != "CAI_BaseNPCTroika_CalcNextMoveThink")
+			pProf->m_pCurNode = (VPNode *)((CVProfNode *)pProf->m_pCurNode)->GetSubNode("CAI_BaseNPCTroika_CalcNextMoveThink", 0, "Unaccounted");
+		VPNode *pNode = pProf->m_pCurNode;
+		pNode->m_nCurFrameCalls++;
+		if (pNode->m_nRecursions++ == 0) {
+			pNode->m_CurFrameTime.Sample();
+			VPProf *pP = (VPProf *)g_109f3648;
+			int nGroup = pNode->m_nGroup;
+			pP->m_GroupStack[pP->m_nGroupDepth++] = nGroup;
+			if (pP->m_GroupStack[pP->m_nGroupDepth - 2] != nGroup && pP->m_bVTune && nGroup == pP->m_nVTuneGroup)
+				vtune(true);
+		}
+		pProf->m_bAtRoot = false;
+	}
+
+	*pOut = m_f624c - m_f625c;
+	m_f625c = m_f624c;
+	m_f624c = gpGlobals->curtime + 0.001f;
+
+	pProf = (VPProf *)g_109f3648;
+	if (!pProf->m_bAtRoot || pProf->m_enabled) {
+		VPNode *pNode = pProf->m_pCurNode;
+		if (--pNode->m_nRecursions == 0 && pNode->m_nCurFrameCalls != 0) {
+			pNode->m_CurFrameTime.End();
+			pNode->m_TotalTime.Add(pNode->m_CurFrameTime);
+			VPProf *pP = (VPProf *)g_109f3648;
+			pP->m_nGroupDepth--;
+			int nTop = pP->m_GroupStack[pP->m_nGroupDepth];
+			int nPrev = pP->m_GroupStack[pP->m_nGroupDepth + 1];
+			if (nTop != nPrev && pP->m_bVTune && nPrev == pP->m_nVTuneGroup)
+				vtune(false);
+		}
+		if (pNode->m_nRecursions == 0)
+			pProf->m_pCurNode = pProf->m_pCurNode->m_pParent;
+		pProf->m_bAtRoot = (pProf->m_pCurNode == pProf->m_pRoot);
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10293d70 size=0x10
 void __fastcall sub_10293d70(int *p)
 {
