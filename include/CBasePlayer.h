@@ -7,6 +7,8 @@
 #pragma once
 
 #include "Vector.h"
+#include "utlvector.h"
+#include "CGlobalEmailRec.h"
 
 class CBaseEntity;
 class CBaseCombatWeapon;
