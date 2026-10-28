@@ -13,3 +13,14 @@ CTEBSPDecal *CTEBSPDecal::vfunc2(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005f1c0 size=0x39
+#include "CTEBSPDecal.h"
+#include "IVEngineServerFull.h"
+
+
+void CTEBSPDecal::vfunc4(int a, int b)
+{
+	engine->vfunc103(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
+}
+// END FUNCTION
