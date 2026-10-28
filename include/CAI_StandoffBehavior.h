@@ -18,6 +18,8 @@ struct CAI_StandoffBehaviorOuter
 	float m_unk5de4;
 
 	int sub_102cc1f0(int a);	// stub 0x10014f6a: the NPC's activity answer for a (compared with the field at +0x5c38)
+	int sub_1008dd30(int a, int b);	// CBaseAnimating::sub_1008dd30 (stub 0x10004ec1), called directly
+	void *sub_1032e7b0();	// CBaseCombatCharacter::GetActiveWeapon (stub 0x10007e19), called directly
 	void sub_10269f30(int a);	// stub 0x1000c39c: the NPC's call with a (the standoff's 0x54 notice)
 };
 
