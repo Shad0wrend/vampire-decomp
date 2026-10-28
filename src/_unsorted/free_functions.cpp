@@ -21627,6 +21627,53 @@ bool CBaseAnimating::sub_10097200(const char *name, int *pSet, int *pHitbox)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10097480 size=0x1de
+#include "CBaseAnimating.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+struct matrix3x4_view
+{
+	float m[3][4];
+};
+
+struct HitboxView	// mstudiobbox_t, 0x20 bytes
+{
+	int bone;
+	int group;
+	Vector bbmin;
+	Vector bbmax;
+};
+
+void sub_100087ba(const Vector &in, const matrix3x4_view &m, Vector &out);
+
+// TARGET: CBaseAnimating::sub_10097480
+int CBaseAnimating::sub_10097480(int *pList, int listMax, const Vector &vecDir, float flMinDot)
+{
+	ScopeTrace trace("CBaseAnimating::GetHitboxesFrontside", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	int nCount = 0;
+	char *pHdr = (char *)sub_100952d0(-1);
+	if (pHdr) {
+		char *pSet = pHdr + *(int *)(pHdr + 0x104) + *(int *)((char *)this + 0x680) * 12;
+		if (pSet) {
+			for (int i = 0; i < *(int *)(pSet + 4); i++) {
+				HitboxView *pBox = (HitboxView *)(pSet + *(int *)(pSet + 8)) + i;
+				matrix3x4_view bone;
+				((CEntityVSlots *)this)->slot256(pBox->bone, &bone.m[0][0]);
+				Vector vecCenter = (pBox->bbmax + pBox->bbmin) * 0.5f;
+				Vector vecWorld;
+				sub_100087ba(vecCenter, bone, vecWorld);
+				if (vecWorld.Dot(vecDir) >= flMinDot) {
+					if (nCount < listMax)
+						pList[nCount++] = i;
+				}
+			}
+		}
+	}
+	return nCount;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100976e0 size=0xca
 #include "CBaseAnimating.h"
 

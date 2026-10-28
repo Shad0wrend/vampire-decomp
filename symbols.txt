@@ -2204,6 +2204,7 @@
 0x100068d9 func   ?sub_101d2ce0@@YAMABVVector@@@Z sub_101d2ce0
 0x100068e8 func   ?sub_10290200@CAI_BaseNPCTroika@@QAE_NH@Z CAI_BaseNPCTroika::sub_10290200
 0x100068f2 func   ?sub_10035fd0@CPhysicsPushedEntities@@QAEXPAH@Z CPhysicsPushedEntities::sub_10035fd0
+0x100068f7 func   ?sub_10097480@CBaseAnimating@@QAEHPAHHABVVector@@M@Z CBaseAnimating::sub_10097480
 0x10006901 func   ?vfunc5@CWeaponRanged_Smg_Uzi@@QAEPAV1@I@Z CWeaponRanged_Smg_Uzi::vfunc5
 0x10006906 func   ?sub_101f25a0@@YIHPAD@Z sub_101f25a0
 0x1000693d func   ?sub_102ee600@CUnknown102ee600@@QAEHXZ CUnknown102ee600::sub_102ee600
