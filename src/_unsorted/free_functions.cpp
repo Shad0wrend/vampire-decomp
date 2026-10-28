@@ -114086,6 +114086,39 @@ int sub_1030c390()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030c3f0 size=0x55
+struct CUnknownObj1024a1e0;
+void __fastcall sub_1024a1e0(CUnknownObj1024a1e0 **p);
+struct CIdList
+{
+	void *m_pTree;
+	int m_nLimit;
+	void sub_102e9fb0();
+};
+extern CIdList g_109203cc;
+extern CIdList g_109203d4;
+extern CIdList g_109203dc;
+extern CIdList g_10936c74;
+extern CUnknownObj1024a1e0 **g_1090fbe0;
+extern int g_1090fbe4;
+
+void sub_1030c3f0()
+{
+	g_109203cc.sub_102e9fb0();
+	g_109203d4.sub_102e9fb0();
+	g_109203dc.sub_102e9fb0();
+	g_10936c74.sub_102e9fb0();
+	CUnknownObj1024a1e0 **p = g_1090fbe0;
+	if (p != 0)
+	{
+		sub_1024a1e0(p);
+		delete p;
+	}
+	g_1090fbe0 = 0;
+	g_1090fbe4 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030c560 size=0x35
 // TARGET: CUnknown1030c560::sub_1030c560
 extern void (*g_109f366c)(const char *pszFormat, ...);
