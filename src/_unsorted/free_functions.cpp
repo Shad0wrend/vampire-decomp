@@ -107407,6 +107407,63 @@ void __fastcall sub_102e8a80(int *self, int, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e96e0 size=0x1c0
+extern float g_1060f358[14];
+extern char g_1060f398[7][20];
+extern float g_104454c0;
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" double __cdecl atof(const char *);
+__declspec(dllimport) void DevMsg(const char *, ...);
+
+void sub_102e96e0()
+{
+	const char *pszName = engine->vfunc84(1);
+	int iIndex = 0;
+	float flA = 0;
+	volatile float flB = 0;
+	float flC;
+	if (pszName && *pszName) {
+		for (int i = 0; i < 7; i++) {
+			if (!_strcmpi(pszName, g_1060f398[i])) {
+				iIndex = i;
+				break;
+			}
+		}
+		const char *pszArg2 = engine->vfunc84(2);
+		if (pszArg2 && *pszArg2) {
+			flA = (float)atof(pszArg2);
+		} else {
+			switch (iIndex) {
+			case 0: flA = 0.2f; break;
+			case 1: case 2: case 3: flA = 0; break;
+			case 4: flA = -1.2f; break;
+			case 5: flA = -1.0f; break;
+			case 6: flA = -0.6f; break;
+			}
+		}
+		const char *pszArg3 = engine->vfunc84(3);
+		if (pszArg3 && *pszArg3) {
+			flC = (float)atof(pszArg3);
+		} else {
+			switch (iIndex) {
+			case 0: flC = g_104454c0; break;
+			case 1: case 2: case 3: flC = -0.25f; break;
+			case 4: flC = -1.2f; break;
+			case 5: flC = -1.0f; break;
+			case 6: flC = -0.6f; break;
+			default: flC = flB; break;
+			}
+		}
+		g_1060f358[iIndex * 2] = flA;
+		g_1060f358[iIndex * 2 + 1] = flC;
+	}
+	DevMsg("\n");
+	for (int j = 0; j < 7; j++)
+		DevMsg("%-15s { %05.2f, %05.2f },\n", g_1060f398[j], g_1060f358[j * 2], g_1060f358[j * 2 + 1]);
+	DevMsg("\n");
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e9a00 size=0x6b
 #include "CUnknown102e9a00.h"
 #include "CBaseEntity.h"
