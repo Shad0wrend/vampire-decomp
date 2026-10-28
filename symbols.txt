@@ -6962,6 +6962,7 @@
 0x10011fc2 func   ?sub_101e8480@CUnknown101e8480@@QAEXPAVCBaseCombatCharacter@@@Z CUnknown101e8480::sub_101e8480
 0x10011fc7 func   ?vfunc5@COccultPassiveDurations@@QAEPAV1@I@Z COccultPassiveDurations::vfunc5
 0x10011fd6 func   ?vfunc2@CSoundSchemeManager@@UAEXXZ CSoundSchemeManager::vfunc2
+0x10011fdb func   ?sub_1021fe50@@YAPAVCBaseCombatWeapon@@PAVCBaseCombatCharacter@@PBDD@Z sub_1021fe50
 0x10011fe5 func   ?sub_102c6b80@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_102c6b80
 0x10011fea func   ?vfunc39@CTriggerElectricBugaloo@@QAEXPAX@Z CTriggerElectricBugaloo::vfunc39
 0x10011fef func   ?sub_103dc090@CUtlVectorHintData@@QAEHHPBVCHintData_WW@@@Z CUtlVectorHintData::sub_103dc090

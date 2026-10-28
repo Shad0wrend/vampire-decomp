@@ -87538,6 +87538,37 @@ void sub_1021fb50(CEquipList *pList, int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021fe50 size=0x61
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+#define CV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define CV100(p) CV10(p##0) CV10(p##1) CV10(p##2) CV10(p##3) CV10(p##4) CV10(p##5) CV10(p##6) CV10(p##7) CV10(p##8) CV10(p##9)
+struct CCharSlotView
+{
+	CV100(a) CV100(b) CV100(c)
+	CV10(d0) CV10(d1) CV10(d2) CV10(d3) CV10(d4) CV10(d5) CV10(d6) CV10(d7)
+	virtual void e0(); virtual void e1(); virtual void e2();
+	virtual void GiveWeapon(CBaseCombatWeapon *pWeapon, char bNoSwitch);
+	virtual void e4(); virtual void e5(); virtual void e6(); virtual void e7();
+	virtual void SwitchTo(CBaseCombatWeapon *pWeapon, int a);
+};
+CBaseCombatWeapon *sub_1021fe50(CBaseCombatCharacter *pChar, const char *pszName, char bNoSwitch)
+{
+	CBaseCombatWeapon *pWeapon = (CBaseCombatWeapon *)pChar->sub_1032e120(pszName);
+	if (pWeapon) {
+		pWeapon->sub_10258620(0);
+		if (pChar->sub_10334c20(pWeapon)) {
+			((CCharSlotView *)pChar)->GiveWeapon(pWeapon, bNoSwitch);
+			if (!bNoSwitch)
+				((CCharSlotView *)pChar)->SwitchTo(pWeapon, 0);
+		} else {
+			pWeapon->sub_1024f7b0();
+		}
+	}
+	return pWeapon;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10220e10 size=0x83
 #include "QuestJournal.h"
 
