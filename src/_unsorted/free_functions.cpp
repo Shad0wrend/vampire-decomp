@@ -51541,6 +51541,22 @@ CBaseEntity *CBasePlayer::sub_10161ed0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10161f10 size=0x63
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+void sub_101c0b10();
+// TARGET: CBasePlayer::sub_10161f10
+void CBasePlayer::sub_10161f10()
+{
+    CBaseEntity *pEnt = m_hPlaceholder1da4.Get();
+    if (pEnt) {
+        pEnt->sub_100ac4e0((int)sub_101c0b10, 0, 0);
+        pEnt->m_flNextThink = gpGlobals->curtime + 0.01f;
+        m_hPlaceholder1da4 = EHANDLE();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10164040 size=0x135
 #include "CBasePlayer.h"
 
