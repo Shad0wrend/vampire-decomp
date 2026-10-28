@@ -127445,6 +127445,64 @@ void CNPC_VWerewolf::sub_103cade0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103cc0d0 size=0x1c1
+#include "CNPC_VWerewolf.h"
+#include "ScopeTrace.h"
+#include "globalvars.h"
+#include "CDevFlagObj.h"
+#include "Vector.h"
+
+#define WV1(n) virtual void v##n();
+#define WV10(p) WV1(p##0) WV1(p##1) WV1(p##2) WV1(p##3) WV1(p##4) WV1(p##5) WV1(p##6) WV1(p##7) WV1(p##8) WV1(p##9)
+#define WV100(p) WV10(p##0) WV10(p##1) WV10(p##2) WV10(p##3) WV10(p##4) WV10(p##5) WV10(p##6) WV10(p##7) WV10(p##8) WV10(p##9)
+
+struct CWerewolfSlots
+{
+	WV100(a) WV10(b0) WV10(b1) WV10(b2) WV10(b3) WV10(b4) WV10(b5) WV1(b60) WV1(b61) WV1(b62)
+	virtual bool vfunc163();
+	WV1(c4) WV1(c5) WV1(c6) WV1(c7) WV1(c8) WV1(c9)
+	WV10(d17) WV10(d18) WV10(d19) WV100(e2) WV100(e3) WV100(e4) WV100(e5)
+	WV10(f60) WV1(f610) WV1(f611) WV1(f612) WV1(f613) WV1(f614) WV1(f615) WV1(f616)
+	virtual bool vfunc617(Vector a, bool b, int c, Vector d);
+};
+
+extern Vector g_1070d1b0;
+extern CDevFlagObj *g_10924a6c;
+extern float g_104454c4;
+struct CWerewolfModeObj
+{
+	virtual void vfunc0();
+	virtual char vfunc1();
+	char m_pad0004[0x24];
+	float m_f28;
+};
+extern CWerewolfModeObj *g_1093d414;
+extern char g_105387dc[];
+
+void CNPC_VWerewolf::sub_103cc0d0()
+{
+	ScopeTrace trace("CNPC_VWerewolf::UpdateConditionCanTeleport", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	sub_10015839(0x77);
+	if (((CWerewolfSlots *)this)->vfunc163()) {
+		Vector vecPos;
+		char angles[12];
+		bool bNear = m_f6264 < 800.0f;
+		sub_10092610("Bip01", (CNPC_VWerewolfVec3 *)&vecPos, angles);
+		if (((CWerewolfSlots *)this)->vfunc163()) {
+			Vector vecGlobal = g_1070d1b0;
+			if (((CWerewolfSlots *)this)->vfunc617(vecPos, bNear, 1, vecGlobal))
+				m_flTeleport66ec = gpGlobals->curtime;
+		}
+		float flSince = (g_104454c4 > gpGlobals->curtime - m_flTeleport66ec) ? 0.0f : gpGlobals->curtime - m_flTeleport66ec;
+		float flThreshold = g_1093d414->vfunc1() ? g_104454c4 : g_1093d414->m_f28;
+		if (flSince > flThreshold && m_f66d0 + m_f66cc + 100.0f < m_f6264) {
+			g_10924a6c->vfunc1();
+			sub_10269a20(0x77);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103cc320 size=0xef
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
