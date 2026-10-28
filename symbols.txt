@@ -7065,6 +7065,7 @@
 0x10012643 func   ?sub_10279040@@YAHXZ sub_10279040
 0x10012648 func   ?vfunc10@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHMHMHHHHH@Z CTempEntsSystem::vfunc10
 0x1001264d func   ?sub_103ff1d0@@YAHXZ sub_103ff1d0
+0x10012652 func   ?vfunc440@CNPC_VCop@@QAEHH@Z CNPC_VCop::vfunc440
 0x10012675 func   ?sub_100b7a40@@YIXPAH@Z sub_100b7a40
 0x1001267a func   ?sub_100694a0@CUnknown100694a0@@QAEHXZ CUnknown100694a0::sub_100694a0
 0x10012698 func   ?sub_10190440@@YAHXZ sub_10190440

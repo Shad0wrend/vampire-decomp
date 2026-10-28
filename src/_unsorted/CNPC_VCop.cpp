@@ -115,6 +115,56 @@ void CNPC_VCop::vfunc442(int *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10372150 size=0x1d9
+#include "CNPC_VCop.h"
+
+// TARGET: CNPC_VCop::vfunc440
+int CNPC_VCop::vfunc440(int arg)
+{
+	switch (arg) {
+	case 0x103:
+		return 0x15a;
+	case 0x6b:
+		return (m_flags14bc & 0x80000) == 0x80000 ? 0x132 : 0x15b;
+	case 0x94:
+		return 0x15c;
+	case 0x96:
+		return 0x15d;
+	case 0x89:
+		return 0x15e;
+	case 0xaa:
+		return 0x160;
+	case 0xab:
+		return 0x161;
+	case 0xac:
+		return 0x162;
+	case 0xad:
+		return 0x163;
+	case 0xae:
+		return 0x164;
+	case 0xaf:
+		return 0x165;
+	case 0xb0:
+		return 0x166;
+	case 0xb1:
+		return 0x167;
+	case 0xb2:
+		return 0x168;
+	case 0xb3:
+		return 0x169;
+	case 0xb4:
+		return 0x16a;
+	case 0xb5:
+		return 0x16b;
+	case 0xb6:
+		return 0x16c;
+	case 0xb7:
+		return 0x16d;
+	}
+	return CNPC_VHumanCombatant::vfunc440(arg);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10372b70 size=0xaa
 #include "CNPC_VCop.h"
 extern unsigned int g_1093ac3c;
