@@ -4778,6 +4778,7 @@
 0x1000cee6 func   ?vfunc82@CHudCounter@@UAEPAUdatamap_t@@XZ CHudCounter::vfunc82
 0x1000cef0 func   ?sub_1005ac10@CTEBeamEntPoint@@QAEPAV1@H@Z CTEBeamEntPoint::sub_1005ac10
 0x1000ceff func   _npc_VProneDialog npc_VProneDialog
+0x1000cf13 func   ?sub_1005b6c0@@YAHXZ sub_1005b6c0
 0x1000cf18 func   ?sub_101dbdf0@@YAXXZ sub_101dbdf0
 0x1000cf1d func   ?sub_102e8a80@@YIXPAHHH@Z sub_102e8a80
 0x1000cf2c func   ?sub_10078880@@YIXPAD@Z sub_10078880

@@ -8309,6 +8309,37 @@ int CUnknown1005b3d0::sub_1005b3d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005b6c0 size=0xaf
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+void sub_10009539();
+
+extern SendTable g_106bf7f4;
+extern SendTable *g_105409b0;
+
+// TARGET: sub_1005b6c0
+int sub_1005b6c0()
+{
+	static const char *pTableName = "DT_TEBeamEnts";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_105409b0, (void *)sub_10009539),
+		sub_10007bfd("m_nStartEntity", 0x44, 4, 0x18, 1, 0, 0),
+		sub_10007bfd("m_nEndEntity", 0x48, 4, 0x18, 1, 0, 0),
+	};
+	g_106bf7f4.sub_1000e8fe(props + 1, 3, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005b850 size=0xc0
 struct CBeamEntsData	// the global CTEBeamEnts object at 0x106bf7a0 (members as set by the helper)
 {
