@@ -26,6 +26,8 @@ public:
 
 	char m_pad0004[0x17c - 4];
 	float m_f17c;	// 0x17c: the next think time
-	char m_pad0180[0x910 - 0x180];
+	char m_pad0180[0x754 - 0x180];
+	const char *m_pszName754;	// 0x754: the model name the discipline names itself with (null: empty)
+	char m_pad0758[0x910 - 0x758];
 	int m_nStatType;	// 0x910: the stat list type the discipline drains
 };
