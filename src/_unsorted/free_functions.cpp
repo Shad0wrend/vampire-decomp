@@ -57959,6 +57959,23 @@ Vector *sub_101960f0(Vector *ret, PyObject *obj)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10196230 size=0x48
+struct PyObj { int a, b, c; void *items[3]; };
+extern PyObj *(__cdecl *g_109f379c)(int);
+extern void *(__cdecl *g_109f378c)(double);
+PyObj *sub_10196230(float x, float y, float z)
+{
+    PyObj *t = g_109f379c(3);
+    if (t) {
+        void *(__cdecl *f)(double) = g_109f378c;
+        t->items[0] = f(x);
+        t->items[1] = f(y);
+        t->items[2] = f(z);
+    }
+    return t;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10196780 size=0xa0
 struct PyObj { int refcnt; void *type; int pad; void *dict; };
 extern "C" {
