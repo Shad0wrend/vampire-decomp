@@ -116041,6 +116041,80 @@ void CBaseCombatCharacter::sub_10334b10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10334c20 size=0x1c4
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+#include "ScopeTrace.h"
+
+void sub_101cebc0(int a, int b, int c);
+
+struct CInvObjView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual const char *vfunc5();
+};
+
+struct CInvUnknownView
+{
+	virtual void v0(); virtual void v1(); virtual void v2();
+	virtual CInvObjView *vfunc3();
+};
+
+struct CInvEdictView
+{
+	char m_pad0000[0x40];
+	CInvUnknownView *m_pUnknown;
+};
+
+struct CInvOwnerView
+{
+	char m_pad0000[0x4fea8];
+	int m_nLimit;
+};
+
+struct CInvWeaponView : public CBaseCombatWeapon
+{
+	char m_pad08d0[0x8d0 - sizeof(CBaseCombatWeapon)];
+	int m_n08d0;
+};
+
+bool CBaseCombatCharacter::sub_10334c20(CBaseCombatWeapon *pWeapon)
+{
+	ScopeTrace trace("CBaseCombatCharacter::Inventory_Can_Insert", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (pWeapon) {
+		int nSection = pWeapon->sub_10255cf0();
+		int nBase = 0;
+		for (int i = 0; i < nSection; i++)
+			nBase += vfunc298(i);
+		CInvEdictView *pEdict = (CInvEdictView *)pWeapon->m_pHolder;
+		const char *pszClass;
+		if (!pEdict->m_pUnknown)
+			pszClass = g_106b8540;
+		else
+			pszClass = pEdict->m_pUnknown->vfunc3()->vfunc5();
+		CBaseCombatWeapon *pOwned = (CBaseCombatWeapon *)sub_1032d890(pszClass, pWeapon->vfunc296());
+		if (pOwned) {
+			if (pOwned->vfunc371() && pOwned->sub_102517b0()) {
+				if (((CInvWeaponView *)pOwned)->m_n08d0 < ((CInvOwnerView *)pOwned->sub_102517b0())->m_nLimit)
+					return true;
+				return false;
+			}
+			if (pOwned->m_nAmmoType >= 0) {
+				if (pOwned->sub_102525e0(this))
+					return false;
+				return true;
+			}
+		}
+		for (int j = 0; j < vfunc298(nSection); j++, nBase++) {
+			if (!sub_1032e8b0(nBase))
+				return true;
+		}
+		sub_101cebc0(*(int *)((char *)this + 0xa8), 6, 0);
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103352b0 size=0x15e
 #include "inputdata_t.h"
 #include "CBaseCombatCharacter.h"
