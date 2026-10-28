@@ -100927,6 +100927,26 @@ bool CUnknown10280d10::sub_10280d10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10280d30 size=0x51
+#include "CAI_BaseNPC.h"
+struct CNpcSched5c { char pad[0x98]; CAI_BaseNPC *m_p98; char pad2[0x5c38 - 0x9c]; int m_n5c38, m_n5c3c, m_n5c40, m_n5c44, m_n5c48, m_n5c4c; };
+void CAI_BaseNPC::sub_10280d30()
+{
+    CNpcSched5c *p = (CNpcSched5c *)this;
+    CAI_BaseNPC *pObj = p->m_p98;
+    p->m_n5c48 = 0;
+    p->m_n5c4c = 0;
+    p->m_n5c44 = 0;
+    p->m_n5c3c = 0;
+    p->m_n5c38 = 0;
+    p->m_n5c40 = 0;
+    if (pObj) {
+        *(unsigned int *)((char *)pObj + 0x14b8) &= ~8u;
+        pObj->vfunc435((void *)p->m_n5c38);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10280e50 size=0xba
 #include "CAI_BaseNPC.h"
 #include "CUnknown102ee270.h"
