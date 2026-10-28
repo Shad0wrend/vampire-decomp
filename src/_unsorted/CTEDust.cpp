@@ -26,6 +26,17 @@ CTEDust *CTEDust::vfunc2(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101140a0 size=0x39
+#include "CTEDust.h"
+#include "IVEngineServerFull.h"
+
+
+void CTEDust::vfunc4(int a, int b)
+{
+	engine->vfunc103(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10114160 size=0x6
 #include "CTEDust.h"
 namespace lifted {

@@ -3417,6 +3417,7 @@
 0x1000993f func   ?vfunc2@CTEEnergySplash@@UAEPAV1@I@Z CTEEnergySplash::vfunc2
 0x1000994e func   ?sub_1025b800@@YAHXZ sub_1025b800
 0x10009953 func   ?sub_103bfc20@CNPC_VTzimisce@@QAEDPAVCBaseEntity@@0@Z CNPC_VTzimisce::sub_103bfc20
+0x10009958 func   ?vfunc4@CTEDust@@QAEXHH@Z CTEDust::vfunc4
 0x10009962 func   ?sub_103166b0@@YIPAVCGlobalEntityList_Ent@@PAD@Z sub_103166b0
 0x10009971 func   ?sub_10235a20@@YAHXZ sub_10235a20
 0x10009976 func   ?sub_10232480@CUnknown10232480@@QAEXXZ CUnknown10232480::sub_10232480
