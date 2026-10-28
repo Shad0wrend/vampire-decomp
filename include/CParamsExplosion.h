@@ -26,4 +26,5 @@ public:
 	char m_szSound511[0x80];	// 0x511
 public:
     virtual datamap_t * vfunc82();
+    void vfunc103();	// as in CPhysConstraint (transplant)
 };

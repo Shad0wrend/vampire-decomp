@@ -6,7 +6,7 @@ class CTETParticle
 public:
 	CTETParticle *sub_10069430(int a);	// constructor (0x10069430): the temp entity base constructor (sub_10015334), then the vtable and the zeroed fields and the flag byte at +0x24
 
-	virtual void vfunc0();
+	virtual ServerClass * vfunc0();
 	virtual void vfunc1();
 	virtual CTETParticle *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3(const float *pOrigin, const float *pAngles);	// "CTETParticle::Test": stores the origin and the direction, looks up the "impact_test" resource (flag byte at +0x24), then creates the temp entity for a broadcast filter (slot 4)

@@ -4,7 +4,7 @@
 class CTEDecal
 {
 public:
-	virtual void vfunc0();
+	virtual ServerClass * vfunc0();
 	virtual void vfunc1();
 	virtual CTEDecal *vfunc2(unsigned int flags);	// scalar deleting destructor
 
@@ -19,4 +19,5 @@ public:
 	int m_f28;
 	int m_f2c;
 	char m_f30;
+	void vfunc4(int a, int b);	// as in CTEMetalSparks (transplant)
 };

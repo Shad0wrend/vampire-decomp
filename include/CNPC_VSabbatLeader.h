@@ -112,4 +112,5 @@ public:
 	void sub_103aad40();	// "CNPC_VSabbatLeader::SetJumpVelocityTowardPlayer": scope trace, with the player entity (handle at +0x628c) live, the jump velocity toward a point 25 units short of the player on the horizontal line between the two
 	void sub_10009a57(Vector *pVelocity, const Vector *pStart, const Vector *pEnd);	// CAI_BaseNPCTroika member (stub 0x10009a57, body 0x102c4cc0): fills the x / y of pVelocity (z in) for a ballistic jump from pStart to pEnd
 	void sub_1000489a(const Vector *pVelocity);	// CBaseEntity::sub_100b2770 (stub 0x1000489a): sets the velocity
+	void vfunc621();	// as in CNPC_VSabbatLeader (transplant)
 };

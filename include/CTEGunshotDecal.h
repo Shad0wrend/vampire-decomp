@@ -6,7 +6,7 @@
 class CTEGunshotDecal
 {
 public:
-	virtual void vfunc0();
+	virtual ServerClass * vfunc0();
 	virtual void vfunc1();
 	virtual CTEGunshotDecal *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3();

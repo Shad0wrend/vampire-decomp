@@ -4,11 +4,11 @@
 class CTEBeamRing
 {
 public:
-	virtual void vfunc0();
+	virtual ServerClass * vfunc0();
 	virtual void vfunc1();
 	virtual CTEBeamRing *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3(int a, int b);	// resets the fields to their defaults (both arguments unused) and sends the effect to every player
-	virtual void vfunc4(int filter, int delay);	// "CTEBeamRing::Create"-like: sends the effect described by the fields below
+	virtual void vfunc4(int a, int b);	// "CTEBeamRing::Create"-like: sends the effect described by the fields below
 
 	void sub_10002667();	// destructor body
 

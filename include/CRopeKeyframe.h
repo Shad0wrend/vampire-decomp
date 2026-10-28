@@ -51,4 +51,5 @@ public:
 	short m_iEndAttachment;	// 0x049a
 public:
     virtual datamap_t * vfunc82();
+    void vfunc103();	// as in CFlameCluster (transplant)
 };

@@ -26,4 +26,6 @@ public:
 public:
     virtual datamap_t * vfunc82();
     virtual void vfunc129();
+    void vfunc103();	// as in CPhysConstraint (transplant)
+    void vfunc104();	// as in CPhysConstraint (transplant)
 };

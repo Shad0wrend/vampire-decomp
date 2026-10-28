@@ -45,4 +45,5 @@ public:
 			++m_iCurBit;
 		}
 	}
+	bf_write *sub_100bdf50(const char *pDebugName, void *pData, int nBytes, int nBits);	// provisional, like sub_100bc490 (transplant)
 };

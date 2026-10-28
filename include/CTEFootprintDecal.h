@@ -11,7 +11,7 @@ struct CTEFootprintVec3
 class CTEFootprintDecal
 {
 public:
-	virtual void vfunc0();
+	virtual ServerClass * vfunc0();
 	virtual void vfunc1();
 	virtual CTEFootprintDecal *vfunc2(unsigned int flags);	// scalar deleting destructor
 
@@ -24,4 +24,5 @@ public:
 
 	void sub_100059d4();	// destructor body
 	void sub_10062ee0(CUnknown1019d130 *filter, float delay);	// "Create": sends the decal to the recipients (stub 0x1000a11e)
+	void vfunc4(int a, int b);	// as in CTEMetalSparks (transplant)
 };

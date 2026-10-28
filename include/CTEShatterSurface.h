@@ -22,4 +22,5 @@ public:
 	unsigned char m_rgba[6];	// 0x004c, all 0xff
 public:
     virtual ServerClass * vfunc0();
+    void vfunc4(int a, int b);	// as in CTEMetalSparks (transplant)
 };

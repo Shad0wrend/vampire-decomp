@@ -12,4 +12,5 @@ public:
 
 	void sub_1000df12();	// destructor body
 	CTEMuzzleFlash *sub_10065e20(const char *name);	// constructor body: base constructor, vtable, fields 0x0c..0x28; returns this
+	void vfunc4(int a, int b);	// as in CTEMetalSparks (transplant)
 };

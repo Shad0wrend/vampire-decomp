@@ -56,7 +56,7 @@ public:
 	int sub_100060aa(int a, int b, int c);
 	int sub_10005d12(int a);
 	bool sub_10092ef0(int attachment, float *pOrigin, float *pAngles);	// "CBaseAnimating::GetAttachment" (stub 0x10005d12): scope trace (entity name), slot 262 fills a 3x4 matrix for the attachment; true after converting it to the origin (sub_10137ed0, stub 0x10012756) and the angles (sub_10138720(matrix, 3, pAngles), stub 0x10011342), else false
-	void sub_10093cb0(int a);	// "CBaseAnimating::GetBodygroupName": scope trace, then a studio helper on GetModelPtr(-1)
+	int sub_10093cb0(int a);	// "CBaseAnimating::GetBodygroupName": scope trace, then a studio helper on GetModelPtr(-1)
 	void sub_10090bc0(unsigned int flags);	// "CBaseAnimating::AddEffectsForNextSequence": scope trace, ors flags into the dword at +0x5b0
 	void sub_10090890(float delay);	// "CBaseAnimating :: MarkEffectStartTime": scope trace, stores delay + curtime at +0x5a4
 	void sub_1008d520(inputdata_t *inputdata);	// "CBaseAnimating::InputFadeToSkin": scope trace, then sub_1008d6d0(skin)

@@ -26,4 +26,5 @@ public:
 	char sub_100b39c0();	// the object check of vfunc68 (stub 0x10012887), called directly on this
 public:
     virtual datamap_t * vfunc82();
+    void vfunc230(int a, int b);	// as in CBreakable (transplant)
 };

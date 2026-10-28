@@ -19,4 +19,5 @@ public:
 	Vector m_vec0020;
 public:
     virtual ServerClass * vfunc0();
+    void vfunc4(int a, int b);	// as in CTEMetalSparks (transplant)
 };

@@ -13,4 +13,6 @@ public:
 	void sub_103e2000(CBaseEntity *pEntity, int index);	// burns pEntity: a CVDmg_t record and a damage info (type 8, 1.0f) from the owner, applied to pEntity
 	void vfunc103();	// as in CPhysConstraint (transplant)
 	void vfunc104();	// as in CPhysConstraint (transplant)
+	CFlameCluster *vfunc5(unsigned int flags);	// as in CNPC_VMingXiao (transplant)
+	void sub_1009df20();	// as in CNPC_VMingXiao (transplant)
 };

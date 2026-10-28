@@ -21,4 +21,5 @@ public:
 	char m_pad0451[3];
 	float m_flRadius;	// 0x454
 	float m_flDamage;	// 0x458
+	void sub_101306f0();	// provisional, like vfunc103 (transplant)
 };

@@ -39,4 +39,5 @@ public:
 public:
     virtual CAI_CondOwner * vfunc580();
     virtual const char * vfunc451();
+    int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 };
