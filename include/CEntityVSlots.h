@@ -199,7 +199,11 @@ public:
 	EVS10(47) EVS(480) EVS(481) EVS(482)
 	virtual char slot483(char a);	// NPC: a boolean answer in al, takes one flag (0x101aa130 passes bit 2 of its spawn flags)
 	EVS(484) EVS(485) EVS(486) EVS(487) EVS(488) EVS(489) EVS10(49)
-	EVS10(50) EVS10(51) EVS10(52)
+	EVS10(50) EVS(510) EVS(511) EVS(512)
+	virtual int slot513();	// NPC: "CapabilitiesGet", the capability bits
+	EVS(514) EVS(515) EVS(516) EVS(517) EVS(518) EVS(519)
+	EVS(520) virtual char slot521(const float *pStart, const float *pEnd, const float *pApex);	// NPC: "IsJumpLegal" (a boolean answer in al)
+	EVS(522) EVS(523) EVS(524) EVS(525) EVS(526) EVS(527) EVS(528) EVS(529)
 	virtual char slot530(CEntityVSlots *pEnemy);	// NPC: a boolean answer in al about an entity (the Hengeyokai's fish check)
 	EVS(531)
 	virtual void slot532(int a);	// NPC: takes one argument (CAI_BaseNPCTroika::vfunc532, the door nudge passes 2)
