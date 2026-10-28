@@ -6592,6 +6592,7 @@
 0x100115db func   ?sub_103bf560@CUnknown103bf560@@QAEHXZ CUnknown103bf560::sub_103bf560
 0x100115e0 func   ?sub_100adf10@CBaseEntity@@QAEXPBM0@Z CBaseEntity::sub_100adf10
 0x100115ea func   ?vfunc427@CAI_BaseHumanoid@@QAEPAVCAI_HumanoidMotor@@XZ CAI_BaseHumanoid::vfunc427
+0x10011608 func   ?vfunc42@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHH@Z CTempEntsSystem::vfunc42
 0x10011617 func   ?CopyConstruct@@YAXPAV?$CHandle@VCBaseEntity@@@@ABV1@@Z CopyConstruct
 0x10011617 func   ?sub_10085070@@YAXPAHPBH@Z sub_10085070
 0x10011621 func   ?sub_1013d450@@YAMMMM@Z sub_1013d450
