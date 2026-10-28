@@ -211,7 +211,9 @@ public:
 
 	char m_pad0004[0x8c];
 	float m_flForceTransmitTime;	// 0x0090
-	char m_pad0094[0xb4 - 0x94];
+	char m_pad0094[0x9c - 0x94];
+	void *m_p9c;	// 0x009c: the owning object (the character behind a hand / weapon)
+	char m_pad00a0[0xb4 - 0xa0];
 	int m_nVSoundGroup;	// 0x00b4
 	int m_nVSoundGroupFemale;	// 0x00b8
 	int m_nVSoundTableIdx;	// 0x00bc
