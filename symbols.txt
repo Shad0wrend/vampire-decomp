@@ -2892,6 +2892,7 @@
 0x100083a0 func   ?sub_10041b40@@YA_NPAH0@Z sub_10041b40
 0x100083a5 func   ?sub_101da8d0@@YGHH@Z sub_101da8d0
 0x100083aa func   ?sub_101caea0@CUnk101caea0@@QAEXPBUCVariantArg101caea0@@@Z CUnk101caea0::sub_101caea0
+0x100083af func   ?vfunc23@CServerGameDLL@@UAEXHH@Z CServerGameDLL::vfunc23
 0x100083b9 func   ?sub_100a5ad0@CBaseEntity@@QAE_NXZ CBaseEntity::sub_100a5ad0
 0x100083c3 func   ?sub_10200a70@CVStatList_t@@QAEXHH@Z CVStatList_t::sub_10200a70
 0x100083cd func   ?sub_1013d6c0@@YAXABVVector@@0MAAV1@@Z sub_1013d6c0

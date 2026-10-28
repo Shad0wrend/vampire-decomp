@@ -231,3 +231,112 @@ void CServerGameDLL::vfunc20(void *pData)
 	g_10592db0->vf6(&restore);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1011b9f0 size=0x1cb
+#include "CServerGameDLL.h"
+#include "CVProfile.h"
+#include "globalvars.h"
+
+struct SVCycle
+{
+	unsigned long m_lo;
+	unsigned long m_hi;
+
+	void Sample()
+	{
+		__asm {
+			mov ecx, this
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+};
+
+struct SVCycle64
+{
+	unsigned __int64 m_Int64;
+
+	void End()
+	{
+		SVCycle now;
+		now.m_lo = 0;
+		now.m_hi = 0;
+		now.Sample();
+		m_Int64 = *(unsigned __int64 *)&now - m_Int64;
+	}
+};
+
+struct SVNode
+{
+	const char *m_pszName;	// 0x00
+	char m_pad0004[4];
+	SVCycle64 m_CurFrameTime;	// 0x08
+	int m_nRecursions;	// 0x10
+	int m_nCurFrameCalls;	// 0x14
+	unsigned __int64 m_TotalTime;	// 0x18
+	char m_pad0020[0x48 - 0x20];
+	SVNode *m_pParent;	// 0x48
+	char m_pad004c[0x54 - 0x4c];
+	int m_nBudgetGroup;	// 0x54
+};
+
+struct SVProf
+{
+	char m_bVTune;	// 0x00
+	char m_pad0001[3];
+	int m_nVTuneGroup;	// 0x04
+	int m_aGroupStack[1024];	// 0x08
+	int m_nGroupStackDepth;	// 0x1008
+	int m_enabled;	// 0x100c
+	char m_bAtRoot;	// 0x1010
+	char m_pad1011[3];
+	SVNode *m_pCurNode;	// 0x1014
+	SVNode *m_pRoot;	// 0x1018
+};
+
+__declspec(dllimport) void vtune(bool bEnable);
+int sub_101c7f80(void *pList, int nSize, int a, int b);
+
+void CServerGameDLL::vfunc23(int a, int b)
+{
+	SVProf *pProf = (SVProf *)g_109f3648;
+	if (pProf->m_enabled || !pProf->m_bAtRoot) {
+		if (pProf->m_pCurNode->m_pszName != "CServerGameDLL::BuildAdjacentMapList")
+			pProf->m_pCurNode = (SVNode *)((CVProfNode *)pProf->m_pCurNode)->GetSubNode("CServerGameDLL::BuildAdjacentMapList", 0, "Unaccounted");
+		SVNode *pNode = pProf->m_pCurNode;
+		pNode->m_nCurFrameCalls++;
+		int nPrev = pNode->m_nRecursions;
+		pNode->m_nRecursions = nPrev + 1;
+		if (nPrev == 0) {
+			((SVCycle *)&pNode->m_CurFrameTime)->Sample();
+			SVProf *p = (SVProf *)g_109f3648;
+			int iGroup = pNode->m_nBudgetGroup;
+			p->m_aGroupStack[p->m_nGroupStackDepth] = iGroup;
+			p->m_nGroupStackDepth++;
+			if (p->m_aGroupStack[p->m_nGroupStackDepth - 2] != iGroup && p->m_bVTune && iGroup == p->m_nVTuneGroup)
+				vtune(true);
+		}
+		pProf->m_bAtRoot = 0;
+	}
+	char *pGlobal = *(char **)((char *)gpGlobals + 0x20);
+	if (pGlobal)
+		*(int *)(pGlobal + 0x18) = sub_101c7f80(pGlobal + 0x1c, 0x3c, a, b);
+	pProf = (SVProf *)g_109f3648;
+	if (!pProf->m_bAtRoot || pProf->m_enabled) {
+		SVNode *pNode = pProf->m_pCurNode;
+		if (--pNode->m_nRecursions == 0 && pNode->m_nCurFrameCalls != 0) {
+			pNode->m_CurFrameTime.End();
+			pNode->m_TotalTime += pNode->m_CurFrameTime.m_Int64;
+			SVProf *p = (SVProf *)g_109f3648;
+			p->m_nGroupStackDepth--;
+			int iGroup = p->m_aGroupStack[p->m_nGroupStackDepth + 1];
+			if (p->m_aGroupStack[p->m_nGroupStackDepth] != iGroup && p->m_bVTune && iGroup == p->m_nVTuneGroup)
+				vtune(false);
+		}
+		if (pNode->m_nRecursions == 0)
+			pProf->m_pCurNode = pProf->m_pCurNode->m_pParent;
+		pProf->m_bAtRoot = (pProf->m_pCurNode == pProf->m_pRoot);
+	}
+}
+// END FUNCTION
