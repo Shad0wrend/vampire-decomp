@@ -57159,6 +57159,28 @@ int sub_10190d80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101910c0 size=0x43
+#include "COrnamentProp.h"
+#include "inputdata_t.h"
+extern char g_106b8540[];
+struct COrnamentPropUnit : COrnamentProp {
+    void sub_101910c0(inputdata_t *pInput);
+};
+void COrnamentPropUnit::sub_101910c0(inputdata_t *pInput)
+{
+    variant_t *v = &pInput->value;
+    const char *psz;
+    if (v->fieldType == 2) {
+        psz = v->iszValue;
+        if (!psz)
+            psz = g_106b8540;
+    } else {
+        psz = v->sub_10008805();
+    }
+    sub_10191130(psz, (CBaseEntity *)pInput->pActivator);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10191130 size=0x27
 #include "COrnamentProp.h"
 #include "CGlobalEntityList.h"
