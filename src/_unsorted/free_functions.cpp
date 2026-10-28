@@ -53413,6 +53413,22 @@ void CBasePlayer::sub_1017c1d0(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017c580 size=0x53
+struct CUnitP3 : CBasePlayer {
+    void sub_1017c580();
+};
+void CUnitP3::sub_1017c580()
+{
+    for (int i = m_SimulationList.m_Size - 1; i >= 0; i--) {
+        EHANDLE h = ((EHANDLE *)m_SimulationList.m_pMemory)[i];
+        CBaseEntity *pEnt = h.Get();
+        if (pEnt)
+            pEnt->sub_100b3ee0();
+    }
+    m_SimulationList.m_Size = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017c600 size=0x77
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
