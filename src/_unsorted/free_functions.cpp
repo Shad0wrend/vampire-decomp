@@ -38169,6 +38169,21 @@ CBaseEntity *CGlobalEntityList::sub_100f8370(CBaseEntity *pCurrent, unsigned int
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f83b0 size=0x50
+struct CEnt { char pad[0x2e0]; int m_n2e0; };
+struct CFinder { CEnt *sub_100f7060(CEnt *p); CEnt *sub_100f83b0(CEnt *p, int n); };
+CEnt *CFinder::sub_100f83b0(CEnt *p, int n)
+{
+    CEnt *e = sub_100f7060(p);
+    while (e) {
+        if (engine->vfunc35(e->m_n2e0) == n)
+            return e;
+        e = sub_100f7060(e);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f8490 size=0xbf
 #include "CGlobalEntityList.h"
 #include "Vector.h"
