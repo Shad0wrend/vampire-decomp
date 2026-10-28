@@ -42,3 +42,14 @@ void CTEBeamRingPoint::vfunc3(const float *pCenter, int unused)
 	vfunc4((int)&filter, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005cd70 size=0x39
+#include "CTEBeamRingPoint.h"
+#include "IVEngineServerFull.h"
+
+
+void CTEBeamRingPoint::vfunc4(int a, int b)
+{
+	engine->vfunc103(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
+}
+// END FUNCTION
