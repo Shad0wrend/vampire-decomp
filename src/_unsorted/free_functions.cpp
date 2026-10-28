@@ -114286,6 +114286,15 @@ void CUnknown10311a20::sub_10311a20(int key, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10311b90 size=0x19
+#include "CAI_Expresser.h"
+
+int CAI_Expresser::sub_10311b90()
+{
+	return enginerandom->vfunc2(0, 3) + m_Tail.m_n50;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103121a0 size=0x67
 #include "CAI_Expresser.h"
 
