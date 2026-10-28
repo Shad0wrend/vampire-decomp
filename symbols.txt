@@ -2060,6 +2060,7 @@
 0x10006460 func   ?sub_10081e00@@YIXPADPAXH@Z sub_10081e00
 0x1000646a func   ?sub_102cea20@CUtlRBTree12@@QAEXG@Z CUtlRBTree12::sub_102cea20
 0x1000646f func   ?Grow@?$CUtlMemory@UCGlobalEmailRec@@@@QAEXH@Z CUtlMemory<CGlobalEmailRec>::Grow
+0x1000646f func   ?Grow@?$CUtlMemory@UGLOBAL_EMAIL@@@@QAEXH@Z CUtlMemory<GLOBAL_EMAIL>::Grow
 0x1000646f func   ?sub_10185a30@CUnknown10185a30@@QAEXH@Z CUnknown10185a30::sub_10185a30
 0x10006474 func   ?vfunc5@COccultHealRate@@QAEPAV1@I@Z COccultHealRate::vfunc5
 0x1000647e func   ?vfunc376@CBaseCombatCharacter@@QAEHH@Z CBaseCombatCharacter::vfunc376
