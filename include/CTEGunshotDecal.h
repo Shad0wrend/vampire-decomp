@@ -2,8 +2,9 @@
 #pragma once
 
 #include "Vector.h"
+#include "CBaseTempEntity.h"
 
-class CTEGunshotDecal
+class CTEGunshotDecal : public CBaseTempEntityHead
 {
 public:
 	virtual ServerClass * vfunc0();
