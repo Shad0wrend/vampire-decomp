@@ -108,7 +108,9 @@ public:
 	int m_n6368;
 	char m_pad636c[0x641c - 0x636c];
 	int m_n641c;
-	char m_pad6420[0x665c - 0x6420];
+	char m_pad6420[0x6554 - 0x6420];
+	EHANDLE m_h6554;	// 0x6554: the entity whose VCD is playing
+	char m_pad6558[0x665c - 0x6558];
 	CNewscasterList m_listA;	// 0x665c
 	CNewscasterList m_listB;	// 0x6670
 	int m_nCursorA;	// 0x6684
