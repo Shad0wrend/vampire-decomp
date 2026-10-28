@@ -36667,6 +36667,25 @@ void CBaseDoor::sub_100ee810()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100eec70 size=0x56
+#include "CBaseDoor.h"
+#include "CUnknown100eef10.h"
+
+struct CDoorLockView { char sub_10224100(); };
+
+char CBaseDoor::sub_100eec70(void *pActivatorOwner)
+{
+	if (((CUnknown100eef10 *)this)->sub_100eef10())
+		return 1;
+	if ((*(unsigned int *)((char *)this + 0x204) & 0x200) && pActivatorOwner && *(int *)((char *)pActivatorOwner + 0x94))
+		return 1;
+	CBaseEntity *pLock = sub_10008cba((int)pActivatorOwner);
+	if (pLock)
+		return ((CDoorLockView *)pLock)->sub_10224100();
+	return *((char *)this + 0x55c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eecf0 size=0xa2
 #include "CBaseDoor.h"
 extern "C" int __cdecl _strcmpi(const char *, const char *);
