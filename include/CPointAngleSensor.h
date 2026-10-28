@@ -9,6 +9,7 @@ class CPointAngleSensor : public CBaseEntity
 public:
 	virtual int vfunc126(int a);	// brackets the base implementation with enter/leave calls on the member at +0x464
 	virtual int vfunc127(int a);	// base implementation, then a call on the member at +0x464 with mode 3
+	virtual bool vfunc110(const char *szKeyName, const char *szValue);	// slot 110 "KeyValue": "tolerance" is the cosine of the angle in degrees (+0x460), else CBaseEntity::vfunc110
 	virtual void vfunc113();	// slot 113 "CPointAngleSensor::Activate": CBaseEntity::vfunc113, then resolves the target entity (name at +0x20c, handle at +0x454) and the look-at entity (name at +0x450, handle at +0x458) by name when their handles do not resolve
 	virtual void vfunc134();	// slot 134 "CPointAngleSensor::Think": with both entities live, tests whether the target faces the look-at entity; once it has done so for the duration (+0x45c, counted from the stamp at +0x464) fires OnFacingLookat once (flag +0x468); stops facing: clears the flag and the stamp; always re-arms the next think (+0x17c) with the current time
 	CPointAngleSensor *vfunc5(unsigned int flags);	// as in CBaseCineCam (transplant)
