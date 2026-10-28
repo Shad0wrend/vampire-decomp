@@ -115792,6 +115792,53 @@ Vector *sub_1032b960()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032be80 size=0x1db
+#include "CBaseCombatCharacter.h"
+#include "CBaseAnimating.h"
+#include "CCollisionProperty.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+struct Obj
+{
+	void sub_102ca6c0(CBaseEntity *pOwner, CBaseEntity *pCorpse);
+};
+extern Obj *g_109253f8;
+
+struct CFlagsUnit
+{
+	void sub_100dc580(int flags);
+};
+
+CEntityVSlots *sub_100a9ab0(const char *pszClassname, const float *vecOrigin, const float *vecAngles, CEntityVSlots *pOwner);
+
+CBaseEntity *CBaseCombatCharacter::sub_1032be80()
+{
+	ScopeTrace trace("CBaseCombatCharacter::SpawnStaticCorpse", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CEntityVSlots *pSlots = (CEntityVSlots *)this;
+	CBaseEntity *pCorpse = (CBaseEntity *)sub_100a9ab0("prop_base", (const float *)pSlots->slot217(), (const float *)pSlots->slot219(), 0);
+	if (pCorpse) {
+		((CBaseAnimating *)pCorpse)->sub_10097310((CBaseAnimating *)this);
+		pCorpse->vfunc103();
+		((CBaseAnimating *)pCorpse)->sub_10097310((CBaseAnimating *)this);
+		pCorpse->sub_100a9470(0);
+		{
+			ScopeTrace traceSolid("CBaseEntity::SetSolid", pCorpse->m_name26c ? pCorpse->m_name26c : g_106b8540);
+			((CCollisionProperty *)((char *)pCorpse + 0x270))->sub_100dc480(0);
+		}
+		{
+			ScopeTrace traceFlags("CBaseEntity::SetSolidFlags", pCorpse->m_name26c ? pCorpse->m_name26c : g_106b8540);
+			((CFlagsUnit *)((char *)pCorpse + 0x270))->sub_100dc580(0);
+		}
+		*(unsigned int *)((char *)pCorpse + 0x19c) = *(unsigned int *)((char *)this + 0x19c) | 0xb0;
+		pCorpse->sub_1009d1e0();
+		if (g_109253f8)
+			g_109253f8->sub_102ca6c0(this, pCorpse);
+	}
+	return pCorpse;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032d890 size=0xd5
 #include "CBaseCombatCharacter.h"
 extern "C" int _strcmpi(const char *, const char *);
