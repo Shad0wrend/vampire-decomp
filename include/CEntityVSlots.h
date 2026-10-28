@@ -186,7 +186,8 @@ public:
 	EVS(449)
 	EVS(450) EVS(451)
 	virtual char slot452();	// NPC: a boolean answer in al (false rejects the spawn: the schedules had an error)
-	EVS(453) EVS(454) EVS(455) EVS(456)
+	virtual CEntityVSlots *slot453();	// player: the spawn spot entity it selects, 0 when there is none
+	EVS(454) EVS(455) EVS(456)
 	virtual void slot457(const char *pszName, int a);	// switch to / equip the named weapon
 	EVS(458) EVS(459)
 	EVS(460) EVS(461) EVS(462) EVS(463)
