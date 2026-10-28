@@ -26,3 +26,15 @@ CParamsExplosion *CParamsExplosion::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101043a0 size=0x13
+#include "CParamsExplosion.h"
+void __fastcall sub_10001f28(CParamsExplosion *self);
+
+// TARGET: CParamsExplosion::vfunc103
+void CParamsExplosion::vfunc103()
+{
+	sub_10001f28(this);
+	vfunc104();
+}
+// END FUNCTION
