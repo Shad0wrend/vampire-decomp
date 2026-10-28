@@ -65568,6 +65568,51 @@ CUnknown101c2770 *CUnknown101c2770::sub_101c2770(CVDmg_t *pDmg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2910 size=0x50
+struct CAnimParams {
+    int m_n0; float m_f4, m_f8, m_fC; int m_pad[6];
+    int m_n28, m_n2c, m_n30, m_n34, m_n38, m_n3c, m_n40; float m_f44;
+    char m_b48, m_b49, m_b4a;
+    void sub_101c2890(int a, int b, int c, int d, int e, int f);
+    void sub_101c2910(int a, int b, const float *v1, const float *v2, int c, int d, int e, int f);
+};
+namespace block_101c2910 {
+void __fastcall sub_101c2890(CAnimParams *p, int edx, int a, int b, int c, int d, int e, int f);
+}
+void CAnimParams::sub_101c2890(int a, int b, int c, int d, int e, int f)
+{
+    m_n28 = a;
+    if (b == 0)
+        m_n2c = a;
+    else
+        m_n2c = b;
+    m_n0 = 0;
+    m_n30 = c;
+    m_n34 = c;
+    m_n38 = d;
+    m_n3c = e;
+    m_n40 = f;
+    m_f4 = 1.0f;
+    m_f8 = 1.0f;
+    m_fC = 1.0f;
+    m_f44 = 1.0f;
+    m_b48 = 0;
+    m_b49 = 0;
+    m_b4a = 0;
+}
+// TARGET: CAnimParams::sub_101c2910
+void CAnimParams::sub_101c2910(int a, int b, const float *v1, const float *v2, int c, int d, int e, int f)
+{
+    sub_101c2890(a, b, c, d, e, f);
+    m_pad[0] = ((const int *)v1)[0];
+    m_pad[1] = ((const int *)v1)[1];
+    m_pad[2] = ((const int *)v1)[2];
+    m_pad[3] = ((const int *)v2)[0];
+    m_pad[4] = ((const int *)v2)[1];
+    m_pad[5] = ((const int *)v2)[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2a10 size=0xa
 struct CUnknown101c2a10 { char p[0x40]; int a; void sub_101c2a10(int v); };
 // TARGET: CUnknown101c2a10::sub_101c2a10
