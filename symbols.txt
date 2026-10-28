@@ -6841,6 +6841,7 @@
 0x10012292 func   ?vfunc568@CAI_BaseNPC@@UAEMH@Z CAI_BaseNPC::vfunc568
 0x10012297 func   ?sub_101318c0@@YGHH@Z sub_101318c0
 0x100122a1 func   _item_k_empire_jezebel_key item_k_empire_jezebel_key
+0x100122a6 func   ?sub_1022ec20@@YAXPAVCVStatActionList_t@@HHH@Z sub_1022ec20
 0x100122ab func   ?sub_102dda40@CPairFields102dda40@@QAEHH@Z CPairFields102dda40::sub_102dda40
 0x100122b0 func   ?vfunc27@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHH@Z CTempEntsSystem::vfunc27
 0x100122b5 func   ?sub_102dbfb0@CUnknown102dca60@@QAEXXZ CUnknown102dca60::sub_102dbfb0

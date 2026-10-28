@@ -86918,6 +86918,78 @@ void sub_1022eb60(TStat *stat, const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022ec20 size=0x1bb
+#include "ScopeTrace.h"
+#include "engineserver.h"
+#include "CBaseEntity.h"
+#include "CBCCSlotViews.h"
+#include "CVStatAction_t.h"
+#include "CVStatActionList_t.h"
+
+struct Edict1022ec20
+{
+	char pad[0x40];
+	CServerUnknownSlotView *m_pUnk;
+};
+
+struct StatOwner1022ec20
+{
+	char pad[0x13a4];
+	unsigned int m_nFlags;
+};
+
+struct Ent1022ec20
+{
+	char pad[0x9c];
+	StatOwner1022ec20 *m_pOwner;
+};
+
+static inline CBaseEntity *Instance(Edict1022ec20 *pEdict)
+{
+	ScopeTrace trace("CBaseEntity::Instance", g_106b8540, g_106b8540);
+	if (!pEdict)
+		pEdict = (Edict1022ec20 *)engine->vfunc38(0);
+	return (pEdict && pEdict->m_pUnk) ? (CBaseEntity *)pEdict->m_pUnk->vfunc4() : 0;
+}
+
+static inline CBaseEntity *Instance(int iEntIndex)
+{
+	return Instance((Edict1022ec20 *)engine->vfunc38(iEntIndex));
+}
+
+void sub_1022ec20(CVStatActionList_t *pList, int iEntIndex, int a, int b)
+{
+	CBaseEntity *pEnt = Instance(iEntIndex);
+	if (!pEnt)
+		return;
+	StatOwner1022ec20 *pOwner = ((Ent1022ec20 *)pEnt)->m_pOwner;
+	if (!pOwner)
+		return;
+	CVStatAction_t **ppActions = pList->m_pActions;
+	int nActions = pList->m_nActions;
+	int i;
+	for (i = nActions - 1; i >= 0; i--) {
+		CVStatAction_t *pAction = ppActions[i];
+		int bWas = pAction->sub_101fceb0(a);
+		int bIs = pAction->sub_101fceb0(b);
+		if (bWas && !bIs)
+			pAction->sub_101fd1b0(iEntIndex, a, b);
+	}
+	for (i = 0; i < nActions; i++) {
+		CVStatAction_t *pAction = ppActions[i];
+		int bWas = pAction->sub_101fceb0(a);
+		int bIs = pAction->sub_101fceb0(b);
+		if (bWas) {
+			if (pAction->sub_101fcf50())
+				pAction->sub_101fd110(iEntIndex, a, b, 0);
+		} else if (bIs) {
+			pAction->sub_101fd110(iEntIndex, a, b, 1);
+		}
+	}
+	pOwner->m_nFlags |= 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022f4f0 size=0x6b
 #include "CUnknown101e8080.h"
 #include "CUnknown101d8a70.h"
