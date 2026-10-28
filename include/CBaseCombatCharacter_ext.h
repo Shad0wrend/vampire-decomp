@@ -32,6 +32,7 @@
 	char sub_103380d0();	// "CBaseCombatCharacter::IsBossMonster": scope trace (entity name), the byte at +0x90 of the default-stat item selected by sub_10337860()
 	bool sub_10330220();	// no scope trace: when IsKindred (sub_10337f30) the value of stat 0x19 of the first stat list with a zero field at +0x10 (default list when none) is positive, else HasMiscFlag(0x20000)
 	void sub_10324ba0();	// "CBaseCombatCharacter::BeginVampHeal_HOT": scope trace (entity name), when CanVampHeal_HOT (CUnknown10324ad0::sub_10324ad0) stores sub_10324c80(-1) + engine slot 119(0) as a float at +0xa84
+	bool sub_10334c20(CBaseCombatWeapon *pWeapon);	// "CBaseCombatCharacter::Inventory_Can_Insert": scope trace (entity name); with a weapon: whether the owned weapon of that class can take more ammo / the section has a free slot, else the "inventory full" message and false
 	void sub_10324ea0();	// "CBaseCombatCharacter::UpdateVampHeal_HOT": scope trace (entity name), when CanVampHeal_HOT and the time at +0xa84 has passed heals (cost scaled by stat 0x20) and schedules the next tick with sub_10324c80
 	double sub_10324c80(int a);	// returns a time value (called through the stub at 0x10012a17)
 	void vfunc341(int discipline, int unused);	// slot 341 "CBaseCombatCharacter::RemoveDisciplineEffects": scope trace (entity name), then the global discipline manager at 0x10739a4c RemoveEffect(this, discipline, 0); takes a second, unused stack argument
