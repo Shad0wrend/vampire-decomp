@@ -118182,6 +118182,54 @@ float __fastcall sub_10331770(CBaseCombatCharacter *pThis, int, float flDamage)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10331da0 size=0x1eb
+#include "ScopeTrace.h"
+#include "matrix3x4_t.h"
+#include "CEntityVSlots.h"
+struct CalcLookModel
+{
+	char m_pad00[0xf0];
+	int m_nBones;
+	int m_nBoneIndex;
+};
+void sub_10137fe0(const float *in1, const float *in2, float *out);
+void sub_101381b0(const float *in1, const float *in2, float *out);
+void sub_10139550(const QAngle &angles, Vector *forward);
+
+char CBaseCombatCharacter::sub_10331da0(Vector *pOrigin, Vector *pForward)
+{
+	ScopeTrace trace("CBaseCombatCharacter::CalcLookData", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CalcLookModel *pModel = (CalcLookModel *)sub_100952d0(-1);
+	if (pModel && m_nHeadBone1080 < pModel->m_nBones && m_nHeadBone1080 >= 0)
+	{
+		if (engine->vfunc120() != m_nHeadTime108c)
+		{
+			m_nHeadTime108c = engine->vfunc120();
+			float mat[12];
+			Vector tmp;
+			char *pBone = (char *)pModel + pModel->m_nBoneIndex + m_nHeadBone1080 * 0xa0;
+			vfunc256(m_nHeadBone1080, mat);
+			sub_10137fe0(&((float *)this)[0x184 / 4], (float *)(pBone + 0x58), &tmp.x);
+			sub_10137fe0(&tmp.x, mat, &m_vecHeadPos1090.x);
+			sub_101381b0(&m_vecHeadAxis1074.x, mat, &m_vecHeadDir109c.x);
+		}
+		if (pOrigin)
+			*pOrigin = m_vecHeadPos1090;
+		if (pForward)
+			*pForward = m_vecHeadDir109c;
+		return 1;
+	}
+	if (pOrigin)
+	{
+		Vector tmp;
+		*pOrigin = *((CEntityVSlots *)this)->slot193(&tmp);
+	}
+	if (pForward)
+		sub_10139550(((CEntityVSlots *)this)->slot367(), pForward);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103322e0 size=0xbd
 #include "ScopeTrace.h"
 #include "CBaseCombatCharacter.h"
