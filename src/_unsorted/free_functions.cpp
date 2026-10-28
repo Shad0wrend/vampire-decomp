@@ -78406,6 +78406,60 @@ int CVStatSubCost_t::sub_101fbc40(int level, bool bForce)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fbd30 size=0x1cb
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "ScopeTrace.h"
+#include "CVStatCost_t.h"
+#include "StatOwner2.h"
+#include "CUnknown10202ba0.h"
+
+extern StatOwner2 g_1074e968;
+extern char g_1074e148[];
+
+const char *CVStatSubCost_t::sub_101fbd30()
+{
+	ScopeTrace trace("CVStatSubCost_t::ToStr", g_106b8540);
+	switch (m_nType) {
+	case 9998:
+	{
+		int nOffset = 0;
+		for (int i = 0; i < m_nCount; i++) {
+			char *pDest = g_1074e148 + nOffset;
+			if (i < m_nCount - 1)
+				sprintf(pDest, "%d, ", m_pTable[i]);
+			else
+				sprintf(pDest, "%d", m_pTable[i]);
+			nOffset += strlen(pDest);
+		}
+		break;
+	}
+	case 9999:
+	{
+		int nIndex = g_1074e968.sub_10203020("CostStrings");
+		if (nIndex != -1) {
+			const char *pszName = ((CUnknown10202ba0 *)g_1074e968.sub_10203190(nIndex))->sub_10202a10(3);
+			if (m_nAdd == 0)
+				sprintf(g_1074e148, "%s * %d", pszName, m_nBase);
+			else if (m_nAdd > 0)
+				sprintf(g_1074e148, "( %s * %d ) + %d", pszName, m_nBase, m_nAdd);
+			else
+				sprintf(g_1074e148, "( %s * %d ) - %d", pszName, m_nBase, abs(m_nAdd));
+		}
+		break;
+	}
+	case 10000:
+		g_1074e148[0] = 0;
+		break;
+	default:
+		sprintf(g_1074e148, "%d", m_nType);
+		break;
+	}
+	return g_1074e148;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fbf80 size=0x2a
 #include "CUnknown101fbf80.h"
 
