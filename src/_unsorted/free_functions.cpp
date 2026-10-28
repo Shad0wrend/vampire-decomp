@@ -10100,6 +10100,42 @@ int CUnknown100640b0::sub_100640b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10064560 size=0x1e0
+#include "SendTable.h"
+
+SendProp sub_10246af0(const char *pszVarName, int offset, int sizeofVar, int nBits, int flags, int a6, void *pProxyFn);
+SendProp sub_10246dc0(const char *pszVarName, int offset, void *pTableRef, void *pProxyFn);
+SendProp sub_10246700(const char *pszVarName, int offset, int sizeofVar, int nBits, int flags, float fLowValue, float fHighValue, void *pProxyFn);
+void sub_102464d0();
+void sub_10003012();
+
+extern SendTable g_106c4258;
+extern void *g_1053dfa8;
+extern const char *g_10543b2c;
+
+int sub_10064560()
+{
+	static SendProp aProps[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246dc0("baseclass", 0, g_1053dfa8, sub_102464d0),
+		sub_10246700("m_vecOrigin", 0xc, 0xc, -1, 2, 0.0f, -121121.121121f, sub_10003012),
+		sub_10246700("m_vecStart", 0x18, 0xc, -1, 2, 0.0f, -121121.121121f, sub_10003012),
+		sub_10246af0("m_nEntity", 0x24, 4, 0xb, 1, 0, 0),
+		sub_10246af0("m_nHitbox", 0x28, 4, 0xb, 1, 0, 0),
+		sub_10246af0("m_nIndex", 0x2c, 4, 9, 1, 0, 0),
+		sub_10246af0("m_nDecalNumber", 0x30, 4, 8, 1, 0, 0),
+		sub_10246af0("m_chMaterialType", 0x34, 1, 8, 1, 0, 0),
+		sub_10246af0("m_iScale", 0x38, 4, 9, 1, 0, 0),
+		sub_10246af0("m_iImpactWeaponID", 0x3c, 4, 7, 1, 0, 0),
+		sub_10246af0("m_iImpactGrp", 0x40, 4, 4, 0, 0, 0),
+		sub_10246af0("m_iImpactType", 0x44, 4, 4, 1, 0, 0),
+		sub_10246af0("m_iFlags", 0x48, 4, 4, 1, 0, 0),
+	};
+	g_106c4258.sub_10247240(&aProps[1], sizeof(aProps) / sizeof(aProps[0]) - 1, g_10543b2c);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10064aa0 size=0xb
 namespace lifted {
 extern char g_1044df44;
