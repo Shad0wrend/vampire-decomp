@@ -82410,6 +82410,50 @@ void sub_1020a5c0(ArgX *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020a7d0 size=0x1bf
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_105aa150[2];
+extern int g_105a1668;
+void sub_100017d0();
+
+int *sub_1020a7d0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 4, "m_nSkillDifficulty", {0x77c, 0}, 1, 6, "difficulty" },
+        { 4, "m_vSkillType", {0x784, 0}, 1, 6, "skilltype" },
+        { 15, "m_flLastAttempt", {0x788, 0}, 1, 2 },
+        { 4, "m_nSkillAttempts", {0x78c, 0}, 1, 2 },
+        { 4, "m_nLastSkillLevel", {0x790, 0}, 1, 2 },
+        { 9, "m_LastRoll", {0x780, 0}, 1, 2, 0, 0, 0, (datamap_t *)&g_105a1668 },
+        { 4, "InputResetDifficulty", {0, 0}, 1, 8, "ResetDifficulty", 0, (void *)sub_100017d0 },
+        { 10, "m_OnSkillSuccess", {0x794, 0}, 1, 0x16, "OnSkillSuccess", g_1055dc70 },
+        { 10, "m_OnSkillFail", {0x7ac, 0}, 1, 0x16, "OnSkillFail", g_1055dc70 },
+        { 10, "m_OnSkillBotch", {0x7c4, 0}, 1, 0x16, "OnSkillBotch", g_1055dc70 },
+        { 10, "m_OnSkillAttemptBegin", {0x7dc, 0}, 1, 0x16, "OnSkillAttemptBegin", g_1055dc70 },
+        { 10, "m_OnSkillAttemptCycle", {0x7f4, 0}, 1, 0x16, "OnSkillAttemptCycle", g_1055dc70 },
+    };
+    g_105aa150[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_105aa150[0] = (int)&dataDesc[1];
+    return g_105aa150;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020aa70 size=0x64
 #include "CBaseVampireSkillEntity.h"
 

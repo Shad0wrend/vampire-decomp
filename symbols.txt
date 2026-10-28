@@ -2958,6 +2958,7 @@
 0x1000867a func   ?sub_10114f20@@YAHXZ sub_10114f20
 0x1000867f func   ?vfunc408@CBaseGrenade@@UAEXXZ CBaseGrenade::vfunc408
 0x10008684 func   ?vfunc5@CFuncAreaPortalBase@@QAEPAV1@I@Z CFuncAreaPortalBase::vfunc5
+0x10008689 func   ?sub_1020a7d0@@YAPAHXZ sub_1020a7d0
 0x1000868e func   ?sub_1007ecf0@CUnknown1007ecf0@@QAEXD@Z CUnknown1007ecf0::sub_1007ecf0
 0x10008693 func   ?sub_100becc0@bf_read@@QAEXAAVVector@@@Z bf_read::sub_100becc0
 0x10008698 func   _item_w_chang_claw item_w_chang_claw
