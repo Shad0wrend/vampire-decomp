@@ -51939,6 +51939,46 @@ void CUnknown10171f10::sub_10171f10(int unk4)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10172410 size=0x1dc
+#include "CBasePlayer.h"
+#include "QAngle.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738964.h"
+
+void sub_10139610(const QAngle &angles, Vector *forward, Vector *right, Vector *up);
+void sub_10015df2(const Vector &start, const Vector &end, int r, int g, int b, bool test, float duration);
+extern CUnknown1070b254 *g_1070b254;
+extern CUnknown10738964 *g_10738964;
+
+inline void UTIL_TraceLine(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, CBasePlayer *pIgnore, int collisionGroup, CGameTrace *ptr)
+{
+	Ray_t ray;
+	ray.Init(vecAbsStart, vecAbsEnd);
+	CTraceFilterSimple traceFilter(pIgnore, collisionGroup);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10015df2(*(Vector *)ptr->m_startpos, *(Vector *)ptr->m_endpos, 255, 0, 0, true, -1.0f);
+}
+
+// TARGET: sub_10172410
+CBaseEntity *sub_10172410(CBasePlayer *pPlayer)
+{
+	if (pPlayer) {
+		Vector forward;
+		sub_10139610(*(QAngle *)&pPlayer->m_vec206c, &forward, 0, 0);
+		Vector vecAim = forward * 16384.0f;
+		CGameTrace tr;
+		UTIL_TraceLine(pPlayer->vfunc193(), pPlayer->vfunc193() + vecAim, 0x200400b, pPlayer, 0, &tr);
+		if (tr.m_fraction != 1.0 && tr.m_pEnt)
+			return tr.m_pEnt;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10172670 size=0x74
 #include "CEntityVSlots.h"
 
