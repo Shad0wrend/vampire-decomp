@@ -19729,6 +19729,20 @@ bool CBaseAnimating::sub_10092460(int sequence, int node)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10092550 size=0x8d
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+
+int sub_1000dce7(void *pStudio, int group);
+
+// TARGET: CBaseAnimating::sub_10092550
+int CBaseAnimating::sub_10092550(int group)
+{
+	ScopeTrace trace("CBaseAnimating::LookupBone", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	return sub_1000dce7(sub_100952d0(-1), group);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10092610 size=0x93
 #include "CBaseAnimating.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
