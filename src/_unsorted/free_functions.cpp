@@ -95015,6 +95015,27 @@ void CUnknown102491e0::sub_102491e0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10249220 size=0x5b
+extern int (__cdecl *g_109f388c)(char *, int, const char *, ...);
+extern "C" int atoi(const char *);
+struct SNode { char pad[0x10]; SNode *m_pNext; const char *sub_102480b0(); };
+struct SList { char pad[0x14]; SNode *m_pHead; void sub_10248870(const char *); void sub_10249220(); };
+
+// TARGET: SList::sub_10249220
+void SList::sub_10249220()
+{
+    int n = 1;
+    for (SNode *p = m_pHead; p; p = p->m_pNext) {
+        int v = atoi(p->sub_102480b0());
+        if (n <= v)
+            n = v + 1;
+    }
+    char buf[12];
+    g_109f388c(buf, sizeof(buf), "%d", n);
+    sub_10248870(buf);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10249390 size=0xe
 namespace lifted {
 struct C10013403 { int sub_10013403(int); };
