@@ -37,7 +37,7 @@ public:
 	virtual int vfunc253(int a, int b, int c);
 	virtual int vfunc254(int a, int b, int c);
 	// Placeholder slots 255..373.
-	virtual void c255(); virtual void c256(); virtual void c257(); virtual void c258(); virtual void c259();
+	virtual void c255(); virtual void vfunc256(int nBone, float *pMatrix); virtual void c257(); virtual void c258(); virtual void c259();
 	CBCC_SLOTS10(c26) CBCC_SLOTS10(c27)
 	virtual void c280(); virtual void c281(); virtual void c282(); virtual void c283();
 	virtual void vfunc284();	// "CBaseCombatCharacter::AddSceneEx...": scope trace (entity name), runs every queued scene item of the vector at +0xa58 (0x1c byte elements, count at +0xa64): a type 10 item whose object is set goes to slot 289, then the item is marked handled (byte +8)
