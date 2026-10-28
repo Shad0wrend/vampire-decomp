@@ -102,7 +102,9 @@ public:
 	const char *m_name26c;
 	char pad270[0x5d34 - 0x270];
 	CNPC_VWerewolfHelper5d34 *m_pHelper5d34;	// 0x5d34
-	char pad5d38[0x665c - 0x5d38];
+	char pad5d38[0x6264 - 0x5d38];
+	float m_f6264;	// 0x6264
+	char pad6268[0x665c - 0x6268];
 	CNPC_VWerewolfTimerVec m_Timers;	// 0x665c
 	int m_nCacheTick;	// 0x6670: engine tick of the cached vector
 	CNPC_VWerewolfVec3 m_vCache;	// 0x6674: cached vector
