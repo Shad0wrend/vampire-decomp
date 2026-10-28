@@ -111831,6 +111831,70 @@ CBitString *CBitString::sub_102fe9a0(int nBits)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ff960 size=0x1e1
+#include "CAI_Pathfinder.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CEntityVSlots.h"
+#include "CPairFields102dda40.h"
+
+struct CPFOuter : CEntityVSlots
+{
+	char m_pad[0x5d34 - 4];
+	CAI_Pathfinder *m_pPathfinder;
+	char sub_1027db30(int nNode);
+};
+extern int g_106c994c;
+
+inline CPFOuter *GetOuter(CAI_Pathfinder *p)
+{
+	return (CPFOuter *)p->m_pOuter;
+}
+
+inline CAI_PathfinderNode *GetNode(CAI_Pathfinder *p, int id)
+{
+	CAI_PathfinderNetwork *pNet = GetOuter(p)->m_pPathfinder->m_pNetwork;
+	if (id >= 0 && id < pNet->m_nNodes)
+		return pNet->m_ppNodes[id];
+	g_106c994c++;
+	return 0;
+}
+
+bool CAI_Pathfinder::sub_102ff960(CPairFields102dda40 *pLink, int startID)
+{
+	if (pLink->m_LinkInfo & 0x1000)
+		return false;
+	int hull = m_unk08;
+	int linkMoveTypes = GetOuter(this)->slot513() & pLink->m_iAcceptedMoveTypes[hull];
+	if (!linkMoveTypes)
+		return false;
+	int endID = pLink->sub_102dda40(startID);
+	if (GetOuter(this)->sub_1027db30(endID))
+		return false;
+	if (linkMoveTypes == 2) {
+		float v1[3], v2[3], v3[3];
+		int h1 = m_unk08;
+		CAI_PathfinderNode *pEnd1 = GetNode(this, endID);
+		int h2 = m_unk08;
+		CAI_PathfinderNode *pEnd2 = GetNode(this, endID);
+		int h3 = m_unk08;
+		CAI_PathfinderNode *pStart = GetNode(this, startID);
+		if (!GetOuter(this)->slot521(
+				pStart->sub_102fb0d0(v1, h3),
+				pEnd2->sub_102fb0d0(v2, h2),
+				pEnd1->sub_102fb0d0(v3, h1)))
+			return false;
+	}
+	if (pLink->m_LinkInfo & 1) {
+		if (sub_102fce80(linkMoveTypes, (CAI_PathfinderLink *)pLink)) {
+			if (pLink->m_hDynamicLink.Get())
+				((CAI_BaseNPCTroika *)GetOuter(this))->sub_1027de00(pLink->m_hDynamicLink.Get());
+			return false;
+		}
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10300010 size=0x6d
 #include "Vector.h"
 
