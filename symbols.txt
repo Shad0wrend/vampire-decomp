@@ -3039,6 +3039,7 @@
 0x10008a35 func   ?sub_10328380@CBaseCombatCharacter@@QAEHHHPAV1@H@Z CBaseCombatCharacter::sub_10328380
 0x10008a3a func   ?sub_1021b410@CPropHacking@@QAEXXZ CPropHacking::sub_1021b410
 0x10008a49 func   ?sub_10078dd0@CUtlVector140@@QAEXH@Z CUtlVector140::sub_10078dd0
+0x10008a53 func   ?sub_1005c950@@YAHXZ sub_1005c950
 0x10008a58 func   ?vfunc5@COccultDodge@@QAEPAV1@I@Z COccultDodge::vfunc5
 0x10008a5d func   ?sub_102d4140@CUnknown102d4140@@QAEHH@Z CUnknown102d4140::sub_102d4140
 0x10008a67 func   ?sub_101ce7f0@@YAXHPAVCBaseEntity@@@Z sub_101ce7f0
