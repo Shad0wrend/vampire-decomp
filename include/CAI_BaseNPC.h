@@ -247,6 +247,8 @@ public:
 	void sub_10274ca0();	// eye offset setup: the model's eye position (via sub_100952d0(-1)) into the vector at +0x5d60; when it is still zero warns "has no eye offset in .qc" and uses (collision maxs + mins) * 0.75; then stores it as the view offset (sub_1009f380)
 	void *sub_100952d0(int a);	// CBaseAnimating::GetModelPtr (stub 0x10013d8b), called directly
 	const char *sub_1009f200();	// CBaseEntity::GetDebugName (stub 0x1000ea11), called directly
+	void sub_100b3640(int a);	// CBaseEntity member (stub 0x1001457e), called directly by vfunc422 with 1
+	int sub_100ac4e0(int a, int b, const char *pszContext);	// CBaseEntity::sub_100ac4e0 (ThinkSet, stub 0x10007fe5), called directly
 	void sub_1009f380(const Vector *pVec);	// CBaseEntity view offset setter (+0x184 vector), called directly
 	int *sub_1028a150();	// stub 0x10005f1a: the 8 byte record of the current task (index +0x5c40 in the list at +0x5c38), 0 when there is none
 	void sub_1027c1f0();	// ends a scripted/forced movement phase: while the schedule at +0x5c38 is the one of type 0x3a (sub_102cc1f0): asks the dev flag object (global 0x10924a6c slot 1), sub_10269a20(0x76), clears the activity at +0xfec, move type 4 (slot 93), +0x3ec = 1.0f; otherwise sub_10269a20(0x75), move type 0, +0x3ec = 0, origin and velocity reset to zero vectors
