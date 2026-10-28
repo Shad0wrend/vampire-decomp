@@ -60884,6 +60884,19 @@ bool CUnknown101a1860::sub_101a1860(CUnknown101a1860_Record *pRecord)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a1f00 size=0x47
+#include "CRestore.h"
+struct CRestoreDesc { int m_n0, m_n4, m_n8; CRestoreDesc *m_pParent; };
+int CRestore::sub_101a1f00(int a, int b, CRestoreDesc *p)
+{
+    if (p->m_pParent) {
+        if (!sub_10004f70(a, b, p->m_pParent))
+            return 0;
+    }
+    vfunc3(p->m_n8, a, b, p->m_n0, p->m_n4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a1f70 size=0xc
 int CUnknown101a1f70::sub_101a1f70()
 {
