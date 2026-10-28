@@ -43,8 +43,11 @@ public:
 	virtual void *vfunc47(int num, int size);	// SaveAllocMemory: num * size bytes of save memory
 	virtual void vfunc48();
 	virtual void vfunc49(int entindex, int pos, const char *pszSample, int volume, int soundlevel, int flags, int pitch);	// EmitAmbientSound
-	virtual void vfunc50(); virtual void vfunc51(); virtual void vfunc52(); virtual void vfunc53(); virtual void vfunc54();
-	virtual void vfunc55(); virtual void vfunc56(); virtual void vfunc57();
+	virtual void vfunc50();
+	virtual int vfunc51(int nGroup, char *pszBuffer, int nBufferSize);	// SentenceGroupPick: picks a sentence of the group, its name into the buffer; negative when none
+	virtual void vfunc52(); virtual void vfunc53(); virtual void vfunc54();
+	virtual int vfunc55(const char *pszGroupName);	// SentenceGroupIndexFromName: negative for an unknown group
+	virtual void vfunc56(); virtual void vfunc57();
 	virtual void *vfunc58(int modelIndex);	// GetVCollide: a model's collision data (0 when none)
 	virtual void vfunc59(const char *pszCommand);	// ServerCommand
 	virtual void vfunc60();	// ServerExecute
