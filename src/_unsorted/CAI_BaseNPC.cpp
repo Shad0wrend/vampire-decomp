@@ -730,6 +730,83 @@ char __fastcall sub_10273720(void *pSelf)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10273ad0 size=0x1d8
+#include "CAI_BaseNPC.h"
+#include "CAI_MoveProbe.h"
+#include "CEntityVSlots.h"
+#include "CGlobalEntityList.h"
+#include "TestBit.h"
+#include "engineiface.h"
+#include "globalvars.h"
+
+__declspec(dllimport) void Warning(const char *pMsg, ...);
+extern CGlobalEntityList g_106eb5d8;
+extern char g_106b8540[];
+void sub_1000f4e8();
+
+struct CAINpcView
+{
+	char m_pad0000[0x17c];
+	float m_flNextThink;	// 0x17c
+	char m_pad0180[0x204 - 0x180];
+	unsigned int m_flags204;
+	char m_pad0208[0x20c - 0x208];
+	const char *m_pszTarget20c;
+	char m_pad0210[0x1b4c - 0x210];
+	char m_b1b4c;
+	char m_pad1b4d[0x5bb8 - 0x1b4d];
+	char m_b5bb8;
+	char m_pad5bb9[0x5d40 - 0x5bb9];
+	CAI_MoveProbe *m_pMoveProbe;
+	char m_pad5d44[0x5d7c - 0x5d44];
+	int m_n5d7c;
+	int m_n5d80;
+	char m_pad5d84[0x5de8 - 0x5d84];
+	CBaseEntity *m_pTarget5de8;
+};
+
+void CAI_BaseNPC::vfunc422()
+{
+	CAINpcView *pNpc = (CAINpcView *)this;
+	CEntityVSlots *pSlots = (CEntityVSlots *)this;
+	pNpc->m_b5bb8 = 0;
+	pNpc->m_b1b4c = 0;
+	if (pSlots->slot94() != 5 && pSlots->slot94() != 6 && !(vfunc513() & 4) && !TestBit(pNpc->m_flags204, 2)) {
+		Vector vecPos = *pSlots->slot220();
+		CAI_MoveProbe *pProbe = pNpc->m_pMoveProbe;
+		if (!pProbe->sub_102e7880(&vecPos.x, 0x202400b, 0, -256.0f, (float *)&vecPos, 0))
+			Warning("NPC %s stuck in wall--level design error\n", sub_1009f200());
+		pSlots->slot62(&vecPos.x);
+	} else {
+		sub_100b3640(1);
+	}
+	if (pNpc->m_pszTarget20c) {
+		pNpc->m_pTarget5de8 = g_106eb5d8.sub_100f7770(0, pNpc->m_pszTarget20c, 0, 0);
+		if (!pNpc->m_pTarget5de8) {
+			Warning("ReadyNPC()--%s couldn't find target %s", sub_1009f200(), pNpc->m_pszTarget20c ? pNpc->m_pszTarget20c : g_106b8540);
+		} else {
+			sub_1026e340(1);
+			sub_10280de0(3);
+		}
+	}
+	vfunc545();
+	if (gpGlobals->curtime > 1.0) {
+		sub_100ac4e0((int)sub_1000f4e8, 0, 0);
+		pNpc->m_flNextThink = gpGlobals->curtime;
+	} else {
+		sub_100ac4e0((int)sub_1000f4e8, 0, 0);
+		pNpc->m_flNextThink = enginerandom->vfunc1(0.1f, 0.4f) + gpGlobals->curtime;
+	}
+	pNpc->m_n5d7c = -1;
+	pNpc->m_n5d80 = 0;
+	if (TestBit(pNpc->m_flags204, 7)) {
+		sub_1026e340(1);
+		pSlots->slot310(1);
+		sub_10280de0(0x2d);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10273d30 size=0x7c
 #include "CBaseEntity.h"
 #include "CAI_BaseNPC.h"
