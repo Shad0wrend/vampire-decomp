@@ -30,7 +30,9 @@ public:
 	void sub_10273e80(int a);	// CAI_BaseNPC member (stub 0x1000ac68), called directly
 	void vfunc618();	// slot 618 (plain member): plays one of the 0x1065d6a0 sounds (channel 4, volume 1.0, attenuation 0.8) from the edict at +0x2e0 to the players that can hear it, reliably (PAS attenuation filter inline)
 
-	char pad4[0xfe0 - 4];
+	char pad4[0x2e0 - 4];
+	int m_pEdict2e0;	// +0x2e0
+	char pad2e4[0xfe0 - 0x2e4];
 	char m_b0fe0;	// +0xfe0
 	char pad0fe1[0x10e4 - 0xfe1];
 	const char *m_pszName10e4;	// +0x10e4: the model-related name, null when its string is empty
