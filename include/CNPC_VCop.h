@@ -34,9 +34,19 @@ public:
 
 	char m_pad03e0[0x14bc - 0x3e0];
 	unsigned int m_flags14bc;	// 0x14bc
-	char m_pad14c0[0x628c - 0x14c0];
+	char m_pad14c0[0x1b2c - 0x14c0];
+	int m_n1b2c;	// 0x1b2c
+	const char *m_pszFile1b30;	// 0x1b30: source file of the last schedule pick
+	int m_nLine1b34;	// 0x1b34: its line
+	char m_pad1b38[0x5cc0 - 0x1b38];
+	int m_n5cc0;	// 0x5cc0: the NPC state
+	char m_pad5cc4[0x628c - 0x5cc4];
 	unsigned int m_h628c;	// 0x628c
-	char m_pad6290[0x6668 - 0x6290];
+	char m_pad6290[0x6590 - 0x6290];
+	void *m_p6590;	// 0x6590
+	char m_pad6594[0x65f4 - 0x6594];
+	char m_b65f4;	// 0x65f4
+	char m_pad65f5[0x6668 - 0x65f5];
 	unsigned int m_d6668;	// 0x6668
 	char m_pad666c[0x6671 - 0x666c];
 	char m_b6671;	// 0x6671
