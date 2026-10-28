@@ -170,7 +170,9 @@ public:
 #include "CBaseCombatCharacter_ext.h"
 #include "CBaseCombatCharacter_ext2.h"
 
-	char m_pad03e0[0xff8 - 0x3e0];
+	char m_pad03e0[0xa84 - 0x3e0];
+	float m_flNextVampHeal;	// 0xa84: the time of the next vampire heal-over-time tick
+	char m_pad0a88[0xff8 - 0xa88];
 	EHANDLE m_hFireEmitters[18];	// 0xff8: the body fire emitters, one per hit box
 	char m_pad1040[0x1064 - 0x1040];
 	float m_flPoseValue[2];	// 0x1064: last pose parameter values set through slot 346
