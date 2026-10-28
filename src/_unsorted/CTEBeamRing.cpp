@@ -38,3 +38,14 @@ void CTEBeamRing::vfunc3(int a, int b)
 	vfunc4((int)&filter, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005c790 size=0x39
+#include "CTEBeamRing.h"
+#include "IVEngineServerFull.h"
+
+
+void CTEBeamRing::vfunc4(int a, int b)
+{
+	engine->vfunc103(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
+}
+// END FUNCTION
