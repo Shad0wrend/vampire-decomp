@@ -242,9 +242,12 @@ public:
 	char m_pad6496[0x64bc - 0x6496];
 	int m_n64bc;
 	char m_b64c0;
-	char m_pad64c1[0x64cc - 0x64c1];
+	char m_pad64c1[0x64c8 - 0x64c1];
+	int m_n64c8;	// 0x64c8: the table index (stance) the NPC is in
 	float m_f64cc;
-	char m_pad64d0[0x6550 - 0x64d0];
+	char m_pad64d0[0x64e4 - 0x64d0];
+	float m_f64e4;	// 0x64e4: curtime of the last stance change
+	char m_pad64e8[0x6550 - 0x64e8];
 	float m_f6550;	// 0x6550: the volume of the sound sub_102c2680 plays
 	unsigned int m_h6554;
 	char m_pad6558[0x65a0 - 0x6558];
