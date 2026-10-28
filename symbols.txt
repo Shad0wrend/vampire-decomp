@@ -5783,6 +5783,7 @@
 0x1000f560 func   ?sub_10321ec0@@YAXXZ sub_10321ec0
 0x1000f579 func   ?sub_1025e120@CUnknown1025e120@@QAEPADXZ CUnknown1025e120::sub_1025e120
 0x1000f57e func   ?sub_10258af0@CUnknown10258af0@@QAEXXZ CUnknown10258af0::sub_10258af0
+0x1000f583 func   ?vfunc5@CFlameCluster@@QAEPAV1@I@Z CFlameCluster::vfunc5
 0x1000f588 func   ?sub_1003c450@@YIXPAPAX@Z sub_1003c450
 0x1000f58d func   ?sub_100f9860@UtlVec8@@QAEXHH@Z UtlVec8::sub_100f9860
 0x1000f592 func   ?sub_103e1930@@YG_NPAHH@Z sub_103e1930
