@@ -26682,6 +26682,25 @@ extern "C" CBaseEntity *funCBaseFlex()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b58d0 size=0x50
+#include "CBaseFlex.h"
+struct CBaseFlexBaseView { void sub_100989f0(); };
+extern char vt_10450abc[];
+
+CBaseFlex *CBaseFlex::sub_100b58d0()
+{
+	((CBaseFlexBaseView *)this)->sub_100989f0();
+	m_pItems = 0;
+	m_nItemsAlloc = 0;
+	m_nItemsGrow = 0;
+	m_nItems = 0;
+	int *p = (int *)((char *)this + 0xa68);
+	p[0] = 0; p[1] = 0; p[2] = 0; p[3] = 0; p[4] = 0; p[5] = 0;
+	*(void **)this = vt_10450abc;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b5970 size=0xd7
 #include "CBaseFlex.h"
 #include "utlvector.h"
