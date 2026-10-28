@@ -68452,6 +68452,17 @@ void sub_101d0410(int a, int b, const char *str)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d04d0 size=0x4a
+void sub_101d0410(const Vector &a, Vector &out, int c);
+void sub_101d04d0(const Vector &vecStart, Vector &vecDir, int c)
+{
+    Vector vecEnd;
+    sub_101d0410(vecStart, vecEnd, c);
+    vecDir = vecEnd - vecStart;
+    VectorNormalize(vecDir);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d0570 size=0x86
 extern "C" int __cdecl atoi(const char *);
 extern "C" __declspec(dllimport) char *Q_strncpy(char *, const char *, int);
