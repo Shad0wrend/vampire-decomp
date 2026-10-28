@@ -2700,6 +2700,7 @@
 0x10007bd5 func   ?sub_101e8e00@CUnknown101e8e00@@QAEMXZ CUnknown101e8e00::sub_101e8e00
 0x10007be9 func   _func_areaportalwindow func_areaportalwindow
 0x10007bee func   ?sub_1042b110@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::sub_1042b110
+0x10007bf3 func   ?sub_1006c530@CUtlBuffer@@QAEXPBDPAD@Z CUtlBuffer::sub_1006c530
 0x10007bf8 func   ?vfunc2@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHH@Z CTempEntsSystem::vfunc2
 0x10007bfd func   ?sub_10246af0@@YA?AVSendProp@@PBDHHHHHPAX@Z sub_10246af0
 0x10007c07 func   _item_w_crossbow item_w_crossbow

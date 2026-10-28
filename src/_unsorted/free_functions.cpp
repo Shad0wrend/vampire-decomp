@@ -11659,6 +11659,19 @@ void CUnit1006c4f0::sub_1006c4f0(const char *pString)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006c530 size=0x43
+#include "CUtlBuffer.h"
+extern "C" int __cdecl vsprintf(char *, const char *, char *);
+void CUtlBuffer::sub_1006c530(const char *pFmt, char *list)
+{
+	char temp[2048];
+	int len = vsprintf(temp, pFmt, list);
+	if (!(m_nFlags & 1))
+		len++;
+	sub_1006c4a0(temp, len);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006c6a0 size=0x37
 struct CUnknown1006c6a0
 {
