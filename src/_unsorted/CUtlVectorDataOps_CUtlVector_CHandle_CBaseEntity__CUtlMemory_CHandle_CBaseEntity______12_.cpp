@@ -62,3 +62,18 @@ void CUtlVectorDataOps<HandleVec, 12>::vfunc0(void *fieldInfo, void *pSave)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x101cc740 size=0x10
+#include "CUtlVectorDataOps.h"
+struct thinkfunc_t;
+
+struct VecHead { int m_a, m_b, m_c, m_size; };
+
+// TARGET: CUtlVectorDataOps<CUtlVector<CHandle<CBaseEntity>,CUtlMemory<CHandle<CBaseEntity> > >,12>::vfunc3
+template<> int CUtlVectorDataOps<CUtlVector<CHandle<CBaseEntity>,CUtlMemory<CHandle<CBaseEntity> > >,12>::vfunc3(void *pFieldData)
+{
+	VecHead *pVec = *(VecHead **)pFieldData;
+	pVec->m_size = 0;
+	return (int)pVec;
+}
+// END FUNCTION
