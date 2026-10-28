@@ -56,7 +56,8 @@ public:
 	virtual void vfunc26(int a, int b);	// the standoff's start: with the int at +0x20 above 0 the parameter block's range is set (-1.0f at +0x58, 5.0f at +0x5c, 0 at +0x60); then flag byte +0x4c is set when the int at +0x20 is 2
 
 	CAI_StandoffBehaviorOuter *m_pOuter;
-	char pad0008[0x1a - 8];
+	char pad0008[0x19 - 8];
+	char m_b19;	// 0x19: set while the standoff is active
 	char m_unk1a;
 	char pad001b;
 	int m_nState1c;
