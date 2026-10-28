@@ -35,6 +35,7 @@ public:
 	void sub_10214300();	// a think function: while the physics object (+0x36c) moves faster than the gate convar at 0x1074f0c4 allows (0 while it is flagged) the next think is 0.05 seconds ahead; once it is slower the think is cleared and the prop disarms (byte +0x7b8)
 	int sub_1008f7b0(const char *label);	// CBaseAnimating::LookupSequence (stub 0x1000e057), called directly
 	void sub_10260a50(int nSequence);	// CBaseAnimating::ResetSequence (stub 0x1000d0b2), called directly
+	void sub_10214200(const char *pszSound);	// stops the sound (null = the empty string, nothing when empty) on channel 4 of the prop's engine index
 	void sub_10214080(const char *pszSound);	// stub 0x10002603: emits the sound (null = the empty string) from the prop to everyone who can hear it (CPASAttenuationFilter), channel 4, 75 dB
 	void sub_10214080(int a);	// the caller of the activation passes the string at +0x7cc as an int
 	CEnvParticle *sub_10214cc0(int a);	// stub 0x10009f0c: the ghost particle entity for the value at +0x7c0, null when there is none
