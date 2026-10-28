@@ -22,7 +22,7 @@ public:
 	virtual void vfunc6(CServerGameClients_Edict *pEdict, int clientIndex);	// "ClientSettingsChanged": logs a name change of the player entity of the edict and stores the new name
 	virtual void vfunc7(int edictA, int edictB, int c);	// takes two edicts (edict +0x40 is the networkable, slot 4 gives the entity); a position from entity A's slot 193 (else B's, after its slot 430) is passed to every entity in the global list at 0x10709680
 	virtual void vfunc8();
-	virtual void vfunc9();
+	virtual void vfunc9(CServerGameClients_Edict *pEdict, int a);	// passes the dword at +0xa8 of the edict's entity (slot 4 of the unknown at +0x40; 0 without one) and a on to sub_100d1f70
 	virtual void vfunc10();
 	virtual void vfunc11();
 	virtual void *vfunc12(void *pEdict);	// scope trace "CBaseEntity::Instance", returns the entity (edict's unknown at +0x40, slot 4) + 0x2068, or null
