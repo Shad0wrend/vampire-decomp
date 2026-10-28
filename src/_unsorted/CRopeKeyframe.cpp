@@ -55,6 +55,48 @@ void __fastcall sub_1019e590(char *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019f2b0 size=0x1c6
+#include "CRopeKeyframe.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" int __cdecl atoi(const char *);
+
+bool CRopeKeyframe::vfunc110(const char *szKeyName, const char *szValue)
+{
+	if (_strcmpi(szKeyName, "Breakable") == 0) {
+		if (atoi(szValue) == 1)
+			m_nRopeFlags |= 0x10;
+	} else if (_strcmpi(szKeyName, "Collide") == 0) {
+		if (atoi(szValue) == 1)
+			m_nRopeFlags |= 4;
+	} else if (_strcmpi(szKeyName, "Barbed") == 0) {
+		if (atoi(szValue) == 1)
+			m_nRopeFlags |= 2;
+	} else if (_strcmpi(szKeyName, "Dangling") == 0) {
+		if (atoi(szValue) == 1)
+			m_n478 &= ~2;
+		return true;
+	} else if (_strcmpi(szKeyName, "Type") == 0) {
+		int iType = atoi(szValue);
+		if (iType == 0)
+			m_nSegments = 10;
+		else if (iType == 1)
+			m_nSegments = 4;
+		else
+			m_nSegments = 2;
+	} else if (_strcmpi(szKeyName, "RopeShader") == 0) {
+		int iShader = atoi(szValue);
+		if (iShader == 0)
+			sub_1019f640("cable/cable.vmt");
+		else if (iShader == 1)
+			sub_1019f640("cable/rope.vmt");
+		else
+			sub_1019f640("cable/chain.vmt");
+	}
+	return CBaseEntity::vfunc110(szKeyName, szValue);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019f540 size=0x13
 #include "CRopeKeyframe.h"
 void __fastcall sub_1000350d(CRopeKeyframe *self);

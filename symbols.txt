@@ -216,6 +216,7 @@
 0x10001898 func   ?sub_100ba120@CUnknown100ba120@@QAEXD@Z CUnknown100ba120::sub_100ba120
 0x1000189d func   ?vfunc5@CScriptedSentence@@QAEPAV1@I@Z CScriptedSentence::vfunc5
 0x100018b1 func   ??_GCRelieableBroadcastRecipientFilter@@UAEPAXI@Z ??_GCRelieableBroadcastRecipientFilter@@UAEPAXI@Z
+0x100018bb func   ?vfunc110@CRopeKeyframe@@UAE_NPBD0@Z CRopeKeyframe::vfunc110
 0x100018c5 func   ?sub_100846c0@CSceneEntity@@QAEXPAX@Z CSceneEntity::sub_100846c0
 0x100018cf func   ?vfunc124@CBaseEntity@@UAEHXZ CBaseEntity::vfunc124
 0x100018d9 func   ?sub_100ed5a0@@YAHXZ sub_100ed5a0
