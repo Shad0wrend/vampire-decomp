@@ -248,7 +248,9 @@ public:
 	float m_f64cc;
 	char m_pad64d0[0x64e4 - 0x64d0];
 	float m_f64e4;	// 0x64e4: curtime of the last stance change
-	char m_pad64e8[0x6550 - 0x64e8];
+	char m_pad64e8[0x654c - 0x64e8];
+	char m_b654c;
+	char m_pad654d[3];
 	float m_f6550;	// 0x6550: the volume of the sound sub_102c2680 plays
 	unsigned int m_h6554;
 	char m_pad6558[0x65a0 - 0x6558];
