@@ -3473,6 +3473,7 @@
 0x10009908 func   ?sub_10324ea0@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_10324ea0
 0x1000990d func   ?vfunc287@CBaseFlex@@QAEXPAUCBaseFlexItemObject@@@Z CBaseFlex::vfunc287
 0x10009912 func   ?sub_102781e0@@YIXPAXHH@Z sub_102781e0
+0x10009917 func   ?sub_101ccaf0@@YAHPAPAVCBaseEntity@@HPBM1IH@Z sub_101ccaf0
 0x10009926 func   ?vfunc5@CSceneEntity@@UAEPAV1@I@Z CSceneEntity::vfunc5
 0x1000992b func   ?sub_1042fd40@@YAII@Z sub_1042fd40
 0x10009935 func   ?sub_1003d130@CBaseEntity@@QAEXH@Z CBaseEntity::sub_1003d130

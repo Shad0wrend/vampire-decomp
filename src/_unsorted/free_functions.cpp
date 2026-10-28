@@ -67537,6 +67537,26 @@ CFlaggedEntitiesEnum *CFlaggedEntitiesEnum::sub_101cc950(CBaseEntity **pList, in
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ccaf0 size=0x46
+#include "CFlaggedEntitiesEnum.h"
+struct CSpatialPartition101ccaf0 {
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+    virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+    virtual void v12();
+    virtual void vfunc13(int listMask, const float *mins, const float *maxs, int coarse, void *pEnum, int a6);
+};
+extern CSpatialPartition101ccaf0 *g_1070b24c;
+// TARGET: sub_101ccaf0
+int sub_101ccaf0(CBaseEntity **pList, int nMax, const float *mins, const float *maxs, unsigned int mask, int a6)
+{
+    char buf[0x18];
+    CFlaggedEntitiesEnum *e = (CFlaggedEntitiesEnum *)buf;
+    e->sub_101cc950(pList, nMax, mask);
+    g_1070b24c->vfunc13(0x10, mins, maxs, 0, e, a6);
+    return e->m_nCount;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ccb60 size=0x3e
 #include "vampire.h"
 #include "CEdtEntitiesEnum.h"
