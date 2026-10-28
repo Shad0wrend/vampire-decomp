@@ -17,6 +17,7 @@ public:
 	bool vfunc110(const char *szKeyName, const char *szValue);	// slot 110 "CFuncRotating::KeyValue": "fanfriction" (percent) and "Volume" (tenths, clamped to 0..1), else CBaseEntity::vfunc110
 	void vfunc178(CBaseEntity *pOther);	// slot 178 "CFuncRotating::Blocked": a damage info object (this as attacker and inflictor, +0x464 as the damage, bits 1, the last three arguments 0, 0, -1) handed to the entity pOther (CBaseEntity::sub_100a1250)
 	bool sub_100c0760(float flStep);	// slows the rotation down: the speed at +0x164 loses (+0x460 * fan friction * a constant), clamped at 0; when that is not above |flStep| the speed becomes flStep (true), else the reduced value (negated for a negative speed) (false); either way handed to sub_100c0420
+	void sub_100c01d0();	// "CFuncRotating::RampPitchVol": the volume (|speed +0x164| / max speed +0x460 times +0x458, clamped to 0..1) and the pitch (30 + 70 * that fraction, clamped to 0..255, 99 for 100) of the running noise (+0x468), sent as a reliable change message to the players that hear it
 	void sub_100c0420(float flSpeed);	// stub 0x10002a59: applies the new speed
 
 	char m_pad03e0[0x450 - sizeof(CBaseEntity)];
