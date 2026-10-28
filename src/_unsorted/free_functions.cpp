@@ -74684,6 +74684,34 @@ int __fastcall sub_101f25d0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f2600 size=0x2c
+extern int g_1073d2b0;
+extern char g_1073ca80[32][64];
+extern char g_1073aa40[];
+
+// TARGET: sub_101f2600
+void sub_101f2600(void)
+{
+	char *pDst;
+	char *pSrc;
+	char c;
+
+	if (g_1073d2b0 < 0x20)
+	{
+		pSrc = g_1073aa40;
+		pDst = g_1073ca80[g_1073d2b0];
+		g_1073d2b0 = g_1073d2b0 + 1;
+		do
+		{
+			c = *pSrc;
+			pSrc++;
+			*pDst = c;
+			pDst++;
+		} while (c != 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f27b0 size=0x29
 struct CVBaseView101f27b0 {
     virtual void vfunc0();

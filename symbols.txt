@@ -4572,6 +4572,7 @@
 0x1000c649 func   ?sub_100b7cc0@CVirtList_100b7cc0@@QAEXPAH@Z CVirtList_100b7cc0::sub_100b7cc0
 0x1000c64e func   ?sub_100e7f70@@YA_NPADHPBD1@Z sub_100e7f70
 0x1000c653 func   ?sub_103e6ba0@@YAHXZ sub_103e6ba0
+0x1000c671 func   ?sub_101f2600@@YAXXZ sub_101f2600
 0x1000c676 func   ?sub_100e1580@CUnknown100e1580View@@QAEHPAU1@@Z CUnknown100e1580View::sub_100e1580
 0x1000c67b func   ?vfunc5@CItemGStake@@QAEPAV1@I@Z CItemGStake::vfunc5
 0x1000c680 func   ?sub_103e7920@CWeaponMelee_TorchX@@QAEXH@Z CWeaponMelee_TorchX::sub_103e7920
