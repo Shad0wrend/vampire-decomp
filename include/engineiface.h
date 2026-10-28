@@ -27,6 +27,7 @@ public:
 	virtual void vfunc8(); virtual void vfunc9(); virtual void vfunc10();
 	virtual void vfunc11(const CRecipientFilter *pFilter, int entindex, int a, float b, int c, int d, int e,
 	                     const float *f, int g, int h, int i);
+	virtual float vfunc12(const char *pszSample);	// GetSoundDuration: the length of a sample in seconds (returned in ST0)
 };
 extern IEngineSound *g_1070b248;
 
