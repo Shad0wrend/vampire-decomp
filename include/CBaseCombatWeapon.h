@@ -75,7 +75,7 @@ public:
 	virtual void vfunc284(void *a, void *b, void *c, int d, int e);
 	virtual void *vfunc285();	// CWeaponGravityGun: the entity of the held-object handle at +0x918, else sub_1014a1b0
 	CBCW_V(286) CBCW_V(287) CBCW_V(288) CBCW_V(289)
-	CBCW_V(290) CBCW_V(291) CBCW_V(292) CBCW_V(293) CBCW_V(294) CBCW_V(295) CBCW_V(296)
+	CBCW_V(290) CBCW_V(291) CBCW_V(292) CBCW_V(293) CBCW_V(294) CBCW_V(295) virtual int vfunc296();
 	virtual void vfunc297(int value);
 	CBCW_V(298) virtual void vfunc299(const float *pVelocity);	// "CBaseCombatWeapon::Drop"-like: the owner gives the weapon up; the weapon becomes a physics-less dropped item (move type 6) that gets pVelocity
 	CBCW_V(300) CBCW_V(301) CBCW_V(302)
