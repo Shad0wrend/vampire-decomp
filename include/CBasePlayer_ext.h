@@ -77,4 +77,5 @@
 	bool sub_10330020(int a, int b);	// CBaseCombatCharacter::vfunc334 (stub 0x10005b5a), called directly
 	char sub_10335a70(CBaseCombatWeapon *pWeapon);	// CBaseCombatCharacter member (stub 0x10003d9b), called directly by vfunc457
 	void sub_10183330();	// hands the classname and slot 296 value of the entity behind the handle at +0x1dfc to slot 457, then clears the handle
+	bool sub_10165790(CBaseEntity *pEntity);	// called by slots 426 / 427 with the grapple target (the handle at +0x1538): traces the entity's hull from its origin 100 units back along its facing; true when the way is blocked
 	char vfunc321(int unused);	// slot 321 (plain member): re-arms the random view punch timer (+0x1da8) when it is due, then punches the view by a random angle scaled by the player and punch convars (slot 169)
