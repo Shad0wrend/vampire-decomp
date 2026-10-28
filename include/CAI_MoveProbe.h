@@ -28,6 +28,7 @@ public:
 	void sub_102e6be0(const float *vecStart, const float *vecEnd, const CBaseEntity *pTarget, AIMoveTrace_t *pTrace, int unused);	// "CAI_MoveProbe::FlyMoveLimit"-like (stub 0x10009f5c is its helper, not this): hull trace (profiled as CAI_MoveProbe_TraceHull, filtered by CTraceFilterNav) of the owner's collision bounds from start to end; when it hit something that is not pTarget, fills the trace record (hit entity, zero obstruction vector, status of the helper sub_102e2d70, the unused fraction of the way as a distance, at least 0.001)
 
 	void sub_102a99e0(const Vector &vecStart, const float *vecEnd, const float *vecMins, const float *vecMaxs, unsigned int collisionMask, struct CGameTrace *pTrace, int a6, char bGround);	// the profiled hull trace (CAI_MoveProbe_TraceHull) of the owner's navigation filter (the ground one when bGround) from vecStart to vecEnd; draws the trace when the debug convar asks
+	char sub_102e7ba0(const float *vecStart, unsigned int collisionMask, float *pOut);	// \"CAI_MoveProbe::IterativeFloorPoint\": the ground probe (sub_102e7880) 720 units down with the owner's step height as the way up, profiled (inlined VPROF scope with the cycle counter)
 	char sub_102e7880(const float *vecStart, unsigned int collisionMask, float flUp, float flDown, float *pOut, void *pExtra);	// the ground probe (stub 0x10005d44): true when it found ground below vecStart (the found position in pOut)
 
 	int m_pad08;
