@@ -2964,6 +2964,7 @@
 0x10008698 func   _item_w_chang_claw item_w_chang_claw
 0x1000869d func   _npc_VBach npc_VBach
 0x100086a2 func   ?sub_10112390@@YGXHHHH@Z sub_10112390
+0x100086a7 func   ?sub_10249710@CUnknown102496a0@@QAEXPAUCRopeNode@@HPAVCBaseRopePhysics@@MM@Z CUnknown102496a0::sub_10249710
 0x100086c0 func   ?sub_102e0150@CUnknown102e0150@@QAEMPAX@Z CUnknown102e0150::sub_102e0150
 0x100086c5 func   ?sub_102d00e0@@YGXPAVS102d4390@@PBMM@Z sub_102d00e0
 0x100086cf func   ?vfunc4@CTEBSPDecal@@QAEXHH@Z CTEBSPDecal::vfunc4
