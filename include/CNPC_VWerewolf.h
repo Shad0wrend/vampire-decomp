@@ -121,7 +121,10 @@ public:
 	CNPC_VWerewolfHint66b0 *m_pHint66bc;	// 0x66bc: the move hint
 	char pad66c0[0x66c8 - 0x66c0];
 	char m_b66c8;	// 0x66c8
-	char pad66c9[0x66dc - 0x66c9];
+	char pad66c9[0x66cc - 0x66c9];
+	float m_f66cc;	// 0x66cc
+	float m_f66d0;	// 0x66d0
+	char pad66d4[0x66dc - 0x66d4];
 	CNPC_VWerewolfVec3 m_vSnap66dc;	// 0x66dc: set from the global vector at 0x1070d1b0 by SnapToAnimationPoint
 	unsigned int m_nFlags66e8;	// 0x66e8: attack state bits (4 and 0x100 make GatherAttackConditions compare heights)
 	char pad66ec[0x66f8 - 0x66ec];
