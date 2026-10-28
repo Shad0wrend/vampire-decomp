@@ -116215,6 +116215,51 @@ int CUnknown10332fc0::sub_10332fc0(void *pSpeaker)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103330f0 size=0x1cd
+#include "CBaseCombatCharacter.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+struct SRelRecord
+{
+	EHANDLE m_hEntity;	// 0x00
+	int m_n04;
+	int m_n08;
+	int m_nPriority;	// 0x0c
+	int m_nModifier;	// 0x10
+};
+
+struct SRelView
+{
+	char m_pad0000[0x1598];
+	SRelRecord **m_ppRecords;	// 0x1598
+	int m_nAlloc;	// 0x159c
+	int m_nUsed;	// 0x15a0
+};
+
+void CBaseCombatCharacter::sub_103330f0(CBaseEntity *pEntity, int nModifier)
+{
+	ScopeTrace trace("CBaseCombatCharacter::SetDialogReactionModifier", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	SRelView *v = (SRelView *)this;
+	for (int i = 0; i < v->m_nUsed; i++) {
+		if (v->m_ppRecords[i]->m_hEntity.Get() == pEntity) {
+			v->m_ppRecords[i]->m_nModifier = nModifier;
+			return;
+		}
+	}
+	if (v->m_nUsed == v->m_nAlloc && !sub_10332930())
+		return;
+	v->m_ppRecords[v->m_nUsed] = new SRelRecord;
+	v->m_ppRecords[v->m_nUsed]->m_n04 = 0;
+	SRelRecord *pRec = v->m_ppRecords[v->m_nUsed];
+	pRec->m_hEntity = pEntity;
+	v->m_ppRecords[v->m_nUsed]->m_n08 = 4;
+	v->m_ppRecords[v->m_nUsed]->m_nModifier = ((CEntityVSlots *)this)->slot404(pEntity);
+	v->m_ppRecords[v->m_nUsed]->m_nPriority = ((CEntityVSlots *)this)->slot405(pEntity);
+	v->m_nUsed++;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103343f0 size=0xc9
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
