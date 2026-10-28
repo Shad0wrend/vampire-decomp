@@ -7,5 +7,3 @@ struct GLOBAL_EMAIL
 	char m_szName[0x40];
 	int m_Data[0x80];
 };
-
-typedef GLOBAL_EMAIL CGlobalEmailRec;
