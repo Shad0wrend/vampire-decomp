@@ -45317,6 +45317,18 @@ int sub_10130150()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101301f0 size=0x44
+struct MoveInterp_t { void (__cdecl *pfn)(float, int); int m_a, m_b, m_c; };
+extern MoveInterp_t g_105751c8[];
+bool sub_101301f0(float flFrac, int index, int arg)
+{
+	if (flFrac < 0.0f || flFrac > 1.0f)
+		return false;
+	g_105751c8[index].pfn(flFrac, arg);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130690 size=0x2d
 #include "CLight.h"
 
