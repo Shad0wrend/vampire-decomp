@@ -19,6 +19,20 @@ void CServerGameClients::vfunc1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011d3e0 size=0x42
+#include "CServerGameClients.h"
+#include "CGlobalEntityList.h"
+struct CSGC_EntView { char m_pad[0xa8]; int m_n0a8; };
+void sub_100d1f70(int a, int b);
+void CServerGameClients::vfunc9(CServerGameClients_Edict *pEdict, int a)
+{
+	CSGC_EntView *pEnt = 0;
+	if (pEdict && pEdict->m_pUnk)
+		pEnt = (CSGC_EntView *)pEdict->m_pUnk->vfunc4();
+	sub_100d1f70(!pEnt ? 0 : pEnt->m_n0a8, a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011d490 size=0xc
 extern int g_1070b25c;
 void __fastcall sub_1011d490(void *, int, int value)

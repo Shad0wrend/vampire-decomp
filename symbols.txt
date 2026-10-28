@@ -52,6 +52,7 @@
 0x1000122b func   ?sub_102e3290@CTraceFilterNavGround102e3290@@QAEPAU1@HH@Z CTraceFilterNavGround102e3290::sub_102e3290
 0x10001235 func   ?vfunc342@CBaseCombatWeapon@@UAEHH@Z CBaseCombatWeapon::vfunc342
 0x10001244 func   ?sub_101363b0@CLogicRelay@@QAEPAV1@XZ CLogicRelay::sub_101363b0
+0x10001249 func   ?vfunc9@CServerGameClients@@UAEXPAUCServerGameClients_Edict@@H@Z CServerGameClients::vfunc9
 0x10001267 func   ?vfunc134@CPhysMotor@@UAEXXZ CPhysMotor::vfunc134
 0x1000126c func   ?sub_101b2b30@CSoundEmitterSystemBase@@QAEXPBDPAVUtlMem2@@@Z CSoundEmitterSystemBase::sub_101b2b30
 0x1000127b func   ?sub_100c8a00@@YIXPADHH@Z sub_100c8a00
