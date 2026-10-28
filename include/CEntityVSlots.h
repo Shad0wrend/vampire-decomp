@@ -208,7 +208,8 @@ public:
 	virtual char slot566(void *pHint);	// NPC: whether it accepts the hint (CNPC_VWerewolf::IsValidTeleportHint asks it)
 	EVS(567) EVS(568) EVS(569)
 	EVS10(57)
-	EVS(580) EVS(581) EVS(582) EVS(583)
+	virtual CUnknown10359c50 *slot580();	// NPC: the id space that translates a global condition / schedule id to the local one
+	EVS(581) EVS(582) EVS(583)
 	virtual char slot584(CEntityVSlots *pNpc, const char *pszSequence, char bLoop);	// scripted sequence: starts the sequence on the NPC (CCineNPC::vfunc584)
 	EVS(585) EVS(586) EVS(587) EVS(588) EVS(589)
 	EVS(590) EVS(591) EVS(592) EVS(593) EVS(594) EVS(595) EVS(596) EVS(597)
