@@ -7,6 +7,8 @@ struct CUnknown101b9140Elem
 {
 	unsigned short m_w;
 	int m_d;
+
+	CUnknown101b9140Elem &operator=(const CUnknown101b9140Elem &o) { m_w = o.m_w; m_d = o.m_d; return *this; }
 };
 
 class CUnknown101b9140 : public CUnknown101b6630
