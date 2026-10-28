@@ -115491,6 +115491,52 @@ bool CBaseCombatCharacter::sub_10332930()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10332ca0 size=0x1c3
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+
+struct CBCCRelationship	// one record of the relationship table (0x14 bytes)
+{
+	EHANDLE m_hEntity;	// 0x00
+	int m_nClass;	// 0x04
+	int m_nDisposition;	// 0x08
+	int m_nPriority;	// 0x0c
+	int m_n10;	// 0x10
+};
+
+struct CBCCRelationView
+{
+	char m_pad0000[0x1598];
+	CBCCRelationship **m_ppRelationships;	// 0x1598
+	int m_nAllocated;	// 0x159c
+	int m_nUsed;	// 0x15a0
+};
+
+void CBaseCombatCharacter::sub_10332ca0(CBaseEntity *pEntity, int disposition, int priority)
+{
+	ScopeTrace trace("CBaseCombatCharacter::AddEntityRelationship", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CBCCRelationView *p = (CBCCRelationView *)this;
+	for (int i = 0; i < p->m_nUsed; i++) {
+		if (p->m_ppRelationships[i]->m_hEntity.Get() == pEntity) {
+			p->m_ppRelationships[i]->m_nDisposition = disposition;
+			p->m_ppRelationships[i]->m_nPriority = priority;
+			return;
+		}
+	}
+	if (p->m_nUsed == p->m_nAllocated) {
+		if (!sub_10332930())
+			return;
+	}
+	p->m_ppRelationships[p->m_nUsed] = new CBCCRelationship;
+	p->m_ppRelationships[p->m_nUsed]->m_nClass = 0;
+	p->m_ppRelationships[p->m_nUsed]->m_hEntity = pEntity;
+	p->m_ppRelationships[p->m_nUsed]->m_nDisposition = disposition;
+	p->m_ppRelationships[p->m_nUsed]->m_n10 = 0;
+	p->m_ppRelationships[p->m_nUsed]->m_nPriority = priority;
+	p->m_nUsed++;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10332fc0 size=0xe7
 #include "CUnknown10332fc0.h"
 
