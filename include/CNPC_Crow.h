@@ -4,6 +4,7 @@
 #include "Vector.h"
 
 class CBaseEntity;
+class CAI_Motor;
 
 class CNPC_Crow
 {
