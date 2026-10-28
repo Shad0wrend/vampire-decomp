@@ -43,6 +43,7 @@ public:
 	CVStatInfo_t *sub_101fdaf0();	// "CVStatInfo_t::CVStatInfo_t": constructs the five records, the cost and the list, then scope trace and the plain fields
 	int sub_101fed90(int level);	// "CVStatInfo_t::Get_Duration_Initial": scope trace, duration of the level (clamped to 5), 0 without a table
 	int sub_101fee50(int level);	// "CVStatInfo_t::Get_Duration_Add": same shape, the second dword of the level entry
+	char sub_101fdf40();	// a flag of the stat record (called through the stub at 0x1000308f), picks the one-name form of the detailed dump
 	bool sub_101fead0();	// "CVStatInfo_t::IsPassive": scope trace, bit 2 of the flags, false when the global at 0x1074e6b4 is set up for it
 	bool sub_101fec30();	// "CVStatInfo_t::IsRenewable": same shape, bit 3 of the flags, global at 0x1074e77c
 	int sub_101ff270(int arg);	// "CVStatInfo_t::Default": scope trace, then evaluates the fifth value record (+0x9c) for arg
