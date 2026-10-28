@@ -44060,6 +44060,25 @@ void CLight::sub_10130690()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101306f0 size=0x13
+#include "CEnvFireSource.h"
+
+struct CEnvFireSourceStubs {
+    void sub_10014556();
+    void sub_100012cb();
+};
+
+// TARGET: CEnvFireSource::sub_101306f0
+void CEnvFireSource::sub_101306f0()
+{
+    if (m_flags204 & 1) {
+        ((CEnvFireSourceStubs *)this)->sub_10014556();
+    } else {
+        ((CEnvFireSourceStubs *)this)->sub_100012cb();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130720 size=0x8
 namespace lifted {
 int sub_10014556();
