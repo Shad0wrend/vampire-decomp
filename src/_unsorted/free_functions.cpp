@@ -88546,6 +88546,38 @@ void sub_1022d8a0(int index, const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022d9d0 size=0x1d2
+#include "CBaseCombatCharacter.h"
+#include "CVStatList_t.h"
+
+struct CMsgPlayerView;
+void sub_101cebc0(CMsgPlayerView *pView, int a, int b);
+
+// TARGET: sub_1022d9d0
+void sub_1022d9d0(CBaseCombatCharacter *pChar, int nTarget)
+{
+	if (!pChar)
+		return;
+	int nStep = 1;
+	if (pChar->sub_1033c900(0x1000))
+		nStep = 2;
+	int nCur = CVStatListSet::Of(pChar)->Find(0)->sub_102012d0(0x1b);
+	if (nTarget < 7) {
+		if (nTarget < nCur) {
+			if (nTarget > nCur - nStep)
+				nStep = nCur - nTarget;
+			CVStatListSet::Of(pChar)->Find(0)->sub_10201100(0x1b, nStep);
+			sub_101cebc0(*(CMsgPlayerView **)((char *)pChar + 0xa8), 0xc, 0);
+		}
+	} else if (nTarget > nCur) {
+		if (nTarget < nCur + nStep)
+			nStep = nTarget - nCur;
+		CVStatListSet::Of(pChar)->Find(0)->sub_10201100(0x1b, nStep);
+		sub_101cebc0(*(CMsgPlayerView **)((char *)pChar + 0xa8), 0xd, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022ea40 size=0x1
 void sub_1022ea40()
 {
