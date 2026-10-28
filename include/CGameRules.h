@@ -61,7 +61,7 @@ public:
 	virtual void vfunc36();
 	virtual void vfunc37();
 	virtual float vfunc38(int a);
-	virtual void vfunc39();
+	virtual CBaseEntity *vfunc39(CBaseEntity *pPlayer);	// \"GetPlayerSpawnSpot\": puts the player on the spawn spot it selects (the origin one unit up, the spot's angles; the middle of the world model's bounds and zero angles without a spot), clears its velocity and the two vectors at +0x1efc / +0x1f08, sets +0x207c to 1 and returns the spot
 	virtual void vfunc40();
 	virtual void vfunc41();
 	virtual void vfunc42();
