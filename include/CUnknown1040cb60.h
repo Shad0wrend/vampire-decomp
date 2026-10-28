@@ -32,6 +32,6 @@ public:
 	void sub_1040bfc0(const float *a, const float *b);	// stores the two vectors at +4 / +0x10 and the frame counter at +0x34; when the entity behind m_hEntity has a physics object (+0x36c) calls its slot 2, else releases (sub_1040cb60)
 	Vector *sub_1040c430(Vector *pOut, const Vector *pIn, CBaseEntity *pEnt);	// writes pIn transformed by the entity's matrix to pOut and returns pOut: the rotation of its slot 194 angles (x cleared) when the flag at +0x45 is set, else its absolute matrix at +0x130
 	float sub_1040c080();	// the blend of the distance to the carried object's physics position into m_f3c over m_f38
-	char sub_1040f940(float flValue, void *pPlayer);	// stub 0x1000aba5: true when the grab keeps holding with that value (called by sub_10410620)
+	char sub_1040f940(void *pPlayer, float flValue);	// stub 0x1000aba5: true when the grab keeps holding with that value (called by sub_10410620)
 	void sub_1040c5d0(CBaseEntity *pPlayer, CBaseEntity *pObject, int nPhysics);	// starts carrying pObject for the player (stub 0x1000f3d5)
 };
