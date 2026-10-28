@@ -90665,6 +90665,20 @@ void __fastcall sub_10232520(int *self, int, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10232570 size=0x47
+extern unsigned int g_10751648[];
+extern unsigned int g_107516c8[];
+extern unsigned int g_107516d0[];
+
+void __stdcall sub_10232570(int pEdict)
+{
+    int idx = engine->vfunc35(pEdict) - 1;
+    g_107516c8[idx >> 5] |= 1 << (idx & 0x1f);
+    g_10751648[idx] = 0;
+    g_107516d0[idx] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102325e0 size=0x1d3
 #include "CVoiceGameMgr.h"
 #include "CBaseEntity.h"
