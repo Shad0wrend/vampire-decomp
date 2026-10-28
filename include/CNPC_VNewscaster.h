@@ -22,6 +22,8 @@ struct CNewscasterList	// a CUtlVector<CNewscasterEntry>
 	int m_size;
 	CNewscasterEntry *m_pElements;
 
+	CNewscasterEntry &Element(int i) { return m_pMemory[i]; }
+
 	void RemoveFirst()	// CUtlVector::Remove(0): shifts the tail down and shrinks the size
 	{
 		int n = m_size - 1;
