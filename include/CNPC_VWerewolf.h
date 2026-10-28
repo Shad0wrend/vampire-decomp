@@ -246,6 +246,7 @@ public:
 	bool sub_103d8300(CAI_Hint *pHint);	// "CNPC_VWerewolf::IsValidTeleportHint": scope trace (entity name), false for no hint, when the attack state bit 4 of +0x66e8 is set, for a locked hint (CAI_Hint::sub_102d14c0), when slot 566 refuses the hint, for the hint types 0x3aa3..0x3aa8, for a hint of kind 1 at +0x470 while bit 6 of +0x66e8 is set, or when the hint's end entity (sub_103d6390) is unselectable (CBaseEntity::sub_100b5190); else true
 	void sub_103cc450();	// "CNPC_VWerewolf::UpdateConditionShouldBreakHint": scope trace (entity name), SetCondition(0x7b); the break hint handle at +0x66c4 is dropped unless bit 1 of the attack state (+0x66e8) is set; with a valid break hint (sub_103d8550) and HasPath from this entity's origin (slot 217) to the hint's ground point it signals the object behind the global 0x10924a6c (slot 1) and sets condition 0x7b again (sub_10269a20)
 	void vfunc448(int failcode);	// slot 448 "CNPC_VWerewolf::TaskFail": scope trace (entity name); for the three schedules 0x160..0x162 warns about the failed task and the hints, then clears move / teleport hints and resets state
+	int *sub_1028a150();	// CAI_BaseNPC::sub_1028a150 (the current task record of the current schedule or null), called directly
 	void *sub_102cc1f0(int type);	// CAI_BaseNPC::GetScheduleOfType (stub 0x10014f6a), called directly
 	void sub_1029adb0(int failcode);	// CAI_BaseNPCTroika::vfunc448 (stub 0x100054bb), called directly
 	void sub_103cb920(int a);	// stub 0x1000... member, called directly
