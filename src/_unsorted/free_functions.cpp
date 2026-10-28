@@ -35502,6 +35502,56 @@ void CBaseDoor::sub_100f0860()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f0c00 size=0x1ba
+#include "ScopeTrace.h"
+#include "CBaseDoor.h"
+#include "CCollisionProperty.h"
+#include "CGlobalEntityList.h"
+#include "CEHandleGet.h"
+#include "CEntityVSlots.h"
+#include "CAI_BaseNPCTroika.h"
+
+extern CGlobalEntityList g_106eb5d8;
+bool sub_10240250(const Vector &a, const Vector &b, const Vector &c, const Vector &d);
+
+struct CDoorBlockerEnt
+{
+	char m_pad[0x94];
+	CAI_BaseNPCTroika *m_pAI;
+};
+
+char CBaseDoor::sub_100f0c00(char bCheckLinked)
+{
+	ScopeTrace trace("CBaseDoor::IsCloseBlocked", g_106b8540, g_106b8540);
+	Vector mins, maxs;
+	vfunc245(&mins, &maxs);
+	if (bCheckLinked && EHandle_Get(m_hLinked630)) {
+		CBaseDoor *pLinked = (CBaseDoor *)EHandle_Get(m_hLinked630);
+		if (pLinked->sub_100084f9(0))
+			return 1;
+	}
+	for (CBaseEntity *pEnt = g_106eb5d8.sub_100f7060(0); pEnt; pEnt = g_106eb5d8.sub_100f7060(pEnt)) {
+		if (pEnt->sub_100b5190())
+			continue;
+		if (!(pEnt->sub_100b3700() & 0x80) && !(pEnt->sub_100b3700() & 0x2000))
+			continue;
+		if (!((CEntityVSlots *)pEnt)->slot158())
+			continue;
+		Vector otherMins, otherMaxs;
+		((CCollisionProperty *)((char *)pEnt + 0x270))->vfunc15(&otherMins, &otherMaxs);
+		if (sub_10240250(mins, maxs, otherMins, otherMaxs)) {
+			CAI_BaseNPCTroika *pAI = ((CDoorBlockerEnt *)pEnt)->m_pAI;
+			if (pAI) {
+				sub_100f0e90(0x80);
+				pAI->sub_1027dfb0(this);
+			}
+			return 1;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0e70 size=0xb
 void __fastcall sub_100f0e70(char *self)
 {
