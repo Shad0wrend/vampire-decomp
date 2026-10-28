@@ -39,6 +39,7 @@ public:
 	void sub_1026dc00(unsigned int flags);	// stub 0x10012855, called directly by Spawn with 0x200000
 	void sub_103c4ef0();	// CNPC_VVampire::vfunc103 (stub 0x10014876), called directly
 	void sub_1035e950();	// stub 0x1000a6f0, called by Spawn last
+	CBaseEntity *sub_1035ddd0();	// "CNPC_VAndreiBlood::SelectTeleportNode": scope trace (no entity name), without a live enemy (handle +0x628c) null; otherwise walks the global list of teleport nodes (type 17000 / 0x4269) and picks, by a coin flip, the nearest or the farthest of those that are far enough from the enemy and pass PositionClearForTeleport; stores its origin at +0x66c0 and returns it
 	bool sub_1035e030(const Vector *pPos, float flMinDistance);	// "CNPC_VAndreiBlood::PositionClearForTeleport": scope trace (no entity name), false when pPos is closer than flMinDistance to this NPC (slot 217 origin) or closer than 100.0f to the saved position at +0x66c0, else true
 
 	char m_pad65c0[0x6664 - 0x65c0];
