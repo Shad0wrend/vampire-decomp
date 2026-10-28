@@ -21,7 +21,7 @@ public:
 
 	char m_pad03e0[0x450 - sizeof(CBaseEntity)];
 	float m_flFanFriction;	// 0x450
-	char m_pad0454[4];
+	float m_flAttenuation;	// 0x454
 	float m_flVolume;	// 0x458
 	char m_pad045c[0x460 - 0x45c];
 	float m_f460;	// 0x460
