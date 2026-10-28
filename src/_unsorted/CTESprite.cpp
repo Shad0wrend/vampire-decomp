@@ -80,6 +80,17 @@ void CTESprite::vfunc3(const Vector &origin, const QAngle &angles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10067f50 size=0x39
+#include "CTEMetalSparks.h"
+#include "IVEngineServerFull.h"
+
+
+void CTESprite::vfunc4(int a, int b)
+{
+	engine->vfunc103(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10068010 size=0x6
 namespace lifted {
 extern char g_106c59cc;

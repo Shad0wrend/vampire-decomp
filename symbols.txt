@@ -4104,6 +4104,7 @@
 0x1000b50f func   ?sub_101daea0@@YAXXZ sub_101daea0
 0x1000b51e func   ?sub_102cce60@CAI_DynamicLink@@QAEPAV1@XZ CAI_DynamicLink::sub_102cce60
 0x1000b523 func   ?sub_100b4710@CUnknown100b4710@@QAEHXZ CUnknown100b4710::sub_100b4710
+0x1000b52d func   ?vfunc4@CTESprite@@UAEXHH@Z CTESprite::vfunc4
 0x1000b532 func   ?sub_1004b990@CMem16b_t@@QAEXH@Z CMem16b_t::sub_1004b990
 0x1000b537 func   ?sub_10348720@@YAXXZ sub_10348720
 0x1000b541 func   ?sub_101dfa00@CUnknown101dff00@@QAE_NHPAXPBD@Z CUnknown101dff00::sub_101dfa00
