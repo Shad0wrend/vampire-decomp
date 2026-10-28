@@ -189,6 +189,26 @@ void CNPC_VGhoulCroucher::vfunc431()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037b500 size=0x45
+#include "CNPC_VGhoulCroucher.h"
+struct CGhoulEntView
+{
+	char m_pad00[0xa8];
+	void *m_pObj;	// 0xa8
+};
+
+// TARGET: CNPC_VGhoulCroucher::vfunc379
+char CNPC_VGhoulCroucher::vfunc379(void *pEnt, int b, int c, int d, int e, float f, float g)
+{
+	CGhoulEntView *p = (CGhoulEntView *)pEnt;
+	if (m_b6665 && p && p->m_pObj) {
+		sub_1037c090(p->m_pObj, 10.0f);
+		return 0;
+	}
+	return sub_1000f2b3(pEnt, b, c, d, e, f, g);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037b570 size=0x120
 #include "CNPC_VGhoulCroucher.h"
 #include "ScopeTrace.h"
