@@ -2,6 +2,7 @@
 #pragma once
 
 #include "CRestore.h"
+#include "CSave.h"
 #include "CVariantCopy.h"
 
 #include "SaveRestoreFieldInfo_t.h"
