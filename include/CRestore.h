@@ -58,6 +58,8 @@ public:
 
 	int sub_101a1f00(int a, int b, struct CRestoreDesc *p);	// walks the chain of descriptions (p->m_pParent at +0xc, parents first) and calls slot 3 with the five dwords of each; stub 0x10004f70
 
+	int sub_10004f70(int a, int b, struct CRestoreDesc *p);	// the jump stub of sub_101a1f00, used by its recursive call
+
 	// Slots 4..28 (slot 7 and slot 16 are the plain members below).
 	virtual void vfunc4(void *pBaseData, typedescription_t *pFields, int fieldCount);	// "CRestore::EmptyFields": clears every readable field (custom ops Empty, embedded tables recursively, else zero fill)
 	virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9();
