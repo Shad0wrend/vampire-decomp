@@ -43,6 +43,17 @@ CTEShatterSurface *CTEShatterSurface::vfunc2(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10063340 size=0x39
+#include "CTEShatterSurface.h"
+#include "IVEngineServerFull.h"
+
+
+void CTEShatterSurface::vfunc4(int a, int b)
+{
+	engine->vfunc103(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10063400 size=0x6
 #include "CTEShatterSurface.h"
 namespace lifted {
