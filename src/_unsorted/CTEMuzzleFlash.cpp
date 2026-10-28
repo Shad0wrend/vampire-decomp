@@ -14,6 +14,17 @@ CTEMuzzleFlash *CTEMuzzleFlash::vfunc2(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10065ee0 size=0x39
+#include "CTEMuzzleFlash.h"
+#include "IVEngineServerFull.h"
+
+
+void CTEMuzzleFlash::vfunc4(int a, int b)
+{
+	engine->vfunc103(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10065fa0 size=0x6
 #include "CTEMuzzleFlash.h"
 namespace lifted {
