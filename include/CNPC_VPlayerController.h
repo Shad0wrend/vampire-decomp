@@ -11,6 +11,7 @@ public:
 	void vfunc246();	// override: CBaseAnimating::vfunc246 (stub 0x1000ede0), then slot 246 of the player object at +0xa8 of the owner (slot 97), warning when there is none
 	void sub_1000cefa(int a, int b, int c, int d, int e);	// CBaseAnimating::vfunc245 (jump stub)
 	int vfunc404(void *pEnt);	// slot 404 (classification of pEnt): 0 for null, 3 for the entity of the handle at +0x60ac, 1 when pEnt's object at +0x9c has its byte at +0x1480 set and sub_100b5190 is clear there, else 4
+	void vfunc300(struct CPlayerCtrlEnt *pEnt, int b, int c);	// slot 300 "Event_TookLife": when the owner (slot 97) has the player object at +0xa8, hands it the message "CNPC_VPlayerController::Event_TookLife %s" (the name of pEnt or UNKNOWN) with 4 and -1.0f
 	void vfunc420();	// slot 420 (reset): base slot 420 (sub_1000c531), then the same counter/limit reset as CNPC_VNewscaster::vfunc420 (scrambled sub_10009408(0) at +0x6364), then slot 416(1), slot 97() -> +0x60ac and clearing of the flags
 	void sub_1000c531();	// CAI_BaseNPCTroika::vfunc420, called directly
 	void sub_103a4580();	// the same function as vfunc420 (stub 0x100155aa), as the subclasses call it directly
