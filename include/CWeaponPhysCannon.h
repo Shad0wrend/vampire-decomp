@@ -20,7 +20,8 @@ public:
 	void sub_10410bf0(Vector *pPos, float flValue);	// stub 0x1000776b
 	void sub_104106a0(int unused, char bFlag);	// drops the carried object: while the grab byte at +0x911 is set, remembers the owner's player entity and the entity of the grab handle (+0xab8), releases the grab (sub_1040cb60), tells the entity about the owner (sub_100a8340 with 10.0f) and hands (entity, owner, 2 or 3 by bFlag) to sub_101895d0; clears the byte
 	int sub_1040e9c0();	// stub 0x10003355: the state of the grab
-	void sub_10410620();	// stub 0x10011c84, tail called by slot 318 while the grab byte is set
+	void sub_10410620();	// stub 0x10011c84, tail called by slot 318 while the grab byte is set: lets go of the grab unless the owner's player (+0xa8 of the owner) has a low flag count (+0x3e0 below 2) and the grab keeps holding (sub_1040f940 with 12, or 18 when sub_1040d930 holds)
+	struct CPhysCannonOwner *sub_102521f0();	// the owner (stub 0x10014fab)
 	bool sub_1040e880(CBaseEntity *pEnt);	// tries to pick pEnt up: false while already holding; the owner's pick-up strength (tuning block 0x10739d08) must reach the mass of pEnt's physics object (else sound 0x2f and slot 456 of the owner), then the melee check sub_10411160, then the grab starts (sub_1040dde0, sub_1040c5d0) and the next time (+0x734) is pushed out 0.5s
 	void sub_1040dde0(CBaseEntity *pEnt, void *pPlayer, int a);	// stub 0x10007adb, called when picking an object up
 	CUnknown101bc140 *sub_104112d0();	// the hold sound, created on the first call and cached in +0x968
