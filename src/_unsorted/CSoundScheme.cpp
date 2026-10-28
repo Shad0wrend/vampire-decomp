@@ -27,6 +27,18 @@ CSoundScheme *CSoundScheme::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022a2d0 size=0x13
+#include "CSoundScheme.h"
+void __fastcall sub_10001f28(CSoundScheme *self);
+
+// TARGET: CSoundScheme::vfunc103
+void CSoundScheme::vfunc103()
+{
+	sub_10001f28(this);
+	vfunc104();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022a300 size=0x33
 #include "CSoundScheme.h"
 
