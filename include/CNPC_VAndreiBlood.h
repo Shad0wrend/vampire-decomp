@@ -53,7 +53,7 @@ public:
 	char m_b66d4;
 	char m_pad66d5[3];
 	int m_n66d8;
-	char m_pad66dc[4];
+	int m_n66dc;	// 0x66dc: the number of hits before the combat ends
 	unsigned int m_h66e0;
 	unsigned int m_h66e4;
 public:
