@@ -59760,6 +59760,24 @@ int sub_1019bde0(char c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019be10 size=0x44
+struct PyType { int a[6]; void (__cdecl *dealloc)(struct PyObj *); };
+struct PyObj { int refcnt; PyType *type; };
+extern PyObj *(__cdecl *g_109f3744)(const char *);
+int __cdecl sub_1019bf10(PyObj *, int, int);
+int sub_1019be10(const char *name, int a, int b)
+{
+    int r = -1;
+    PyObj *m = g_109f3744(name);
+    if (m) {
+        r = sub_1019bf10(m, a, b);
+        if (--m->refcnt == 0)
+            m->type->dealloc(m);
+    }
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019be80 size=0x67
 struct PyObj;
 struct PyType { char pad[0x18]; void (*dealloc)(PyObj*); };
