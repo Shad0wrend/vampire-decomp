@@ -36,6 +36,65 @@ float *CBasePlayer::vfunc194()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7fe0 size=0x1bf
+#include "CBasePlayer.h"
+#include "CBaseCombatWeapon.h"
+#include "CEHandleGet.h"
+#include <string.h>
+
+extern char g_106b8540[];
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+struct CWeaponNameView
+{
+	char m_pad0000[0x11c];
+	const char *m_pszName11c;
+};
+
+void CBasePlayer::vfunc457(const char *pszName, int a)
+{
+	if (!pszName)
+		return;
+	if (EHandle_Get(m_h1538) && m_n153C != -1)
+		return;
+	for (int i = 0; i < 0xe0; i++) {
+		CBaseCombatWeapon *pWeapon = (CBaseCombatWeapon *)sub_1032e8b0(i);
+		if (!pWeapon)
+			continue;
+		const char *pszClass = ((CWeaponNameView *)pWeapon)->m_pszName11c ? ((CWeaponNameView *)pWeapon)->m_pszName11c : g_106b8540;
+		if (_strcmpi(pszClass, pszName) != 0)
+			continue;
+		if (pWeapon->vfunc296() != a)
+			continue;
+		if (!_strcmpi((char *)pWeapon->sub_102517b0() + 0x2450, "bloodpack")) {
+			pWeapon->vfunc315();
+			return;
+		}
+		if (!sub_10335a70(pWeapon))
+			return;
+		if (pWeapon == sub_1032e7b0())
+			return;
+		if ((CBaseEntity *)pWeapon == m_hEnt10DC.Get())
+			return;
+		if (pWeapon->sub_10256200()) {
+			if (sub_1032e7b0()) {
+				if (!((CBaseCombatWeapon *)sub_1032e7b0())->vfunc313())
+					return;
+				((CBaseCombatWeapon *)sub_1032e7b0())->vfunc316((int)pWeapon);
+			}
+			sub_10177120();
+			if (sub_1032e7b0())
+				vfunc443(((CBaseCombatWeapon *)sub_1032e7b0())->vfunc317());
+		} else {
+			m_hEnt10E0 = m_hEnt10DC;
+		}
+		vfunc388((CBaseEntity *)pWeapon, 0);
+		sub_10182e00((CBaseCombatWeapon *)sub_1032e7b0());
+		return;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015dc60 size=0x2d
 #include "CBasePlayer.h"
 
