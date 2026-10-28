@@ -14,6 +14,7 @@ class CVProfNode
 {
 public:
 	__declspec(dllimport) bool ExitScope();	// true when the node was left for good (the caller then steps to the parent)
+	__declspec(dllimport) CVProfNode *GetSubNode(const char *pszName, int detailLevel, const char *pBudgetGroupName);	// the child scope of that name (made when missing); VPROF_ENTER_SCOPE inlines the name test around it
 
 	char m_pad0000[8];
 	CUnknownCycle100335e0 m_CurFrameTime;	// 0x08
