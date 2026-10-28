@@ -13,7 +13,8 @@ public:
 	CDW_PAD100(b)
 	CDW_PAD100(c)
 	CDW_PAD10(d0)
-	CDW_PAD1(d10) CDW_PAD1(d11) CDW_PAD1(d12) CDW_PAD1(d13) CDW_PAD1(d14) CDW_PAD1(d15)
+	CDW_PAD1(d10) CDW_PAD1(d11) CDW_PAD1(d12) CDW_PAD1(d13) CDW_PAD1(d14)
+	virtual bool vfunc315();	// slot 315 \"can use\": the owner's stat list of type 3 must have the discipline's stat (+0x910) at 1 or more; names the weapon's model on the owner (and its player object), then asks the weapon's cost slots (344, 343, 342) and CBaseCombatWeapon::sub_10253b70
 	virtual char vfunc316(int a);
 	CDW_PAD1(d17) CDW_PAD1(d18) CDW_PAD1(d19) CDW_PAD1(d20) CDW_PAD1(d21) CDW_PAD1(d22) CDW_PAD1(d23) CDW_PAD1(d24) CDW_PAD1(d25)
 	virtual void vfunc326();
