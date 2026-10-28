@@ -49226,6 +49226,23 @@ bool __stdcall sub_1013eb90(CBaseEntity *ent, unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013f210 size=0x4b
+struct SCopy {
+    int a, b, c, d;
+    char e, f;
+    char g[2];
+    SCopy &sub_1013f210(const SCopy &o);
+};
+SCopy &SCopy::sub_1013f210(const SCopy &o)
+{
+    a = o.a; b = o.b; c = o.c; d = o.d;
+    e = o.e; f = o.f;
+    for (unsigned i = 0; i < 2; i++)
+        g[i] = o.g[i];
+    return *this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013fcb0 size=0x42
 #include "CUtlVector96.h"
 extern "C" void *memmove(void *, const void *, unsigned int);

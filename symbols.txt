@@ -7533,6 +7533,7 @@
 0x100137c8 func   ?sub_101f1d80@@YGHHH@Z sub_101f1d80
 0x100137cd func   ?vfunc82@CNPC_VCop@@UAEPAUdatamap_t@@XZ CNPC_VCop::vfunc82
 0x100137d2 func   ?sub_100efbf0@CBaseDoor@@QAEXD@Z CBaseDoor::sub_100efbf0
+0x100137d7 func   ?sub_1013f210@SCopy@@QAEAAU1@ABU1@@Z SCopy::sub_1013f210
 0x100137e1 func   ?vfunc103@CSkyCamera@@UAEXXZ CSkyCamera::vfunc103
 0x100137e6 func   ??1CUnknown100eb490@@QAE@XZ CUnknown100eb490::~CUnknown100eb490
 0x100137eb func   ?vfunc5@CItemContainer@@QAEPAV1@I@Z CItemContainer::vfunc5
