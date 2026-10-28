@@ -132498,6 +132498,35 @@ int sub_103e1bb0(int *p, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e1c00 size=0x59
+extern "C" __declspec(dllimport) void Msg(const char *pszFormat, ...);
+
+struct CFlameEntry
+{
+	int m_nActive;	// 0x0
+	float m_flTime;	// 0x4
+};
+
+// TARGET: sub_103e1c00
+int sub_103e1c00(char *pList)
+{
+	int nBest = -1;
+	int nBestOff = -0x3c;
+	int i = 0;
+	for (int off = 0; off < 3000; off += 0x3c, i++) {
+		CFlameEntry *p = (CFlameEntry *)(off + pList);
+		if (!p->m_nActive)
+			return i;
+		if (nBest == -1 || p->m_flTime > ((CFlameEntry *)(nBestOff + pList))->m_flTime) {
+			nBest = i;
+			nBestOff = off;
+		}
+	}
+	Msg("Warning: SERVER flamethrower list Overflow!!!!\n");
+	return nBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e1d20 size=0x43
 #include "CFlameCluster.h"
 void *sub_100aa720(int size);
