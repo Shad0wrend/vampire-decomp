@@ -3741,6 +3741,7 @@
 0x1000a40c func   ?sub_101fb180@@YAXH@Z sub_101fb180
 0x1000a411 func   ?vfunc562@CAI_BaseNPC@@UAEDHHD@Z CAI_BaseNPC::vfunc562
 0x1000a416 func   ?sub_10199990@@YAHHH@Z sub_10199990
+0x1000a41b func   ?sub_101ff850@CVStatInfoList_t@@QAEXXZ CVStatInfoList_t::sub_101ff850
 0x1000a420 func   ?sub_1003ef00@@YIHPAVCBaseEntity@@HABVVector@@1AAV2@M@Z sub_1003ef00
 0x1000a457 func   _func_rotating func_rotating
 0x1000a45c func   ?sub_101d4cf0@@YADXZ sub_101d4cf0

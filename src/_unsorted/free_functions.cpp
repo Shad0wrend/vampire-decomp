@@ -79640,6 +79640,66 @@ void CVStatInfoList_t::sub_101ff3e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ff850 size=0x1cc
+#include <stdio.h>
+#include "ScopeTrace.h"
+#include "CVStatInfoList_t.h"
+#include "CUnknown101dc5a0.h"
+
+extern "C" __declspec(dllimport) void Msg(const char *pMsg, ...);
+
+struct SKVReleasable	// the part of the file object that deletes it (slot 1)
+{
+	virtual void a0();
+	virtual void Release();
+};
+
+struct SKVFile	// the opened data file (the IKeyValues part): vtable at +0, vbtable at +4
+{
+	virtual void a0();
+	virtual void a1();
+	virtual CUnknown101dc5a0Keys *vfunc2(const char *pszName);
+	int *m_pVbTable;	// 0x04
+};
+
+SKVFile *sub_101f2e20(const char *pszFile, void *pFileSystem);
+int sub_10202760(int nTable);
+extern void *g_1070b238;
+
+void CVStatInfoList_t::sub_101ff850()
+{
+	ScopeTrace trace("CVStatInfoList_t::PostCache", g_106b8540);
+	char szFile[128];
+	sprintf(szFile, "%s%s.txt", "vdata\\system\\", "stats");
+	SKVFile *pFile = sub_101f2e20(szFile, g_1070b238);
+	if (pFile) {
+		CUnknown101dc5a0Keys *pRoot = pFile->vfunc2(m_szName);
+		if (pRoot) {
+			if (m_nStats > 0) {
+				CVDmgBlock16_t block;
+				CUnknown101dc5a0Keys *pKV = pRoot->vfunc2("Stat");
+				for (int i = 0; i < m_nStats; i++) {
+					block.sub_102042a0(sub_10202760(m_field2c), i);
+					m_pStats[i].sub_101fe6a0((CVStatKV *)pKV, &block);
+					pKV = pKV->vfunc3();
+				}
+				m_cost.sub_101fc220((CVStatKV *)pRoot);
+				pKV = pRoot->vfunc2("Stat");
+				for (int j = 0; j < m_nStats; j++) {
+					m_pStats[j].sub_101fe8b0((CVStatKV *)pKV, this);
+					pKV = pKV->vfunc3();
+				}
+			}
+		} else {
+			Msg("Unable to open Stat data file for: %s\n", m_szName);
+		}
+		((SKVReleasable *)((char *)pFile + 4 + pFile->m_pVbTable[1]))->Release();
+	} else {
+		Msg("Unable to load Stat data for: %s\n", szFile);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ffaa0 size=0xb8
 #include "CVStatInfoList_t.h"
 
