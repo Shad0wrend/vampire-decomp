@@ -85055,6 +85055,22 @@ void CPropHaunted::sub_10214080(const char *pszSound)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10214200 size=0x41
+#include "CPropHaunted.h"
+
+extern char g_106b8540[];
+
+void CPropHaunted::sub_10214200(const char *pszSound)
+{
+	if (!pszSound)
+		pszSound = g_106b8540;
+	if (*pszSound) {
+		int edict = m_pEdict2e0;
+		enginesound->vfunc7(engine->vfunc35(edict), 4, pszSound);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10214300 size=0xb0
 #include "CPropHaunted.h"
 #include "IPhysicsObject.h"
