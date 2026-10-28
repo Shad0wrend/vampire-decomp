@@ -28,6 +28,7 @@ public:
 	void sub_102aacf0(int *pEvent);	// CAI_BaseNPCTroika::vfunc444 (stub 0x10015c2b), called directly
 	bool sub_10280a50();	// CAI_BaseNPC::AutoMovement (stub 0x1000cf6d), called directly
 	void sub_10273e80(int a);	// CAI_BaseNPC member (stub 0x1000ac68), called directly
+	void vfunc619(char bRight);	// slot 619 (plain member): a footstep (the left or right foot table at 0x1065d680 / 0x1065d688, random of two) and a breath (table 0x1065d690, random of four) from the edict at +0x2e0, channel 4, volume 1.0, attenuation 0.8, to the players that can hear it, reliably
 	void vfunc618();	// slot 618 (plain member): plays one of the 0x1065d6a0 sounds (channel 4, volume 1.0, attenuation 0.8) from the edict at +0x2e0 to the players that can hear it, reliably (PAS attenuation filter inline)
 
 	char pad4[0x2e0 - 4];
