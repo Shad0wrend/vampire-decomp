@@ -3,7 +3,18 @@
 
 struct CVStatSubCost_t
 {
-	char m_data[0x14];	// dword fields: limit (10000 when null) at +0, 1 at +4, 0 at +8 / +0xc, heap pointer at +0x10
+	union
+	{
+		char m_data[0x14];	// dword fields: limit (10000 when null) at +0, 1 at +4, 0 at +8 / +0xc, heap pointer at +0x10
+		struct
+		{
+			int m_nType;	// 0x00: 9998 table, 9999 current rating * base + add, 10000 null, else the plain cost
+			int m_nBase;	// 0x04
+			int m_nAdd;	// 0x08
+			int m_nCount;	// 0x0c: the table's size
+			int *m_pTable;	// 0x10: the table (heap)
+		};
+	};
 
 	bool sub_101fb8f0();
 	void sub_101fb830();	// "CVStatSubCost_t::Null": scope trace, resets the fields and frees the heap pointer
