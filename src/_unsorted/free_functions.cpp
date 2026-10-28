@@ -29431,6 +29431,35 @@ int *sub_100cb670()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cc090 size=0x3d
+void *sub_1000ac8b(int);
+
+struct CUnk100cc0e0Ent {
+    void sub_100051d2(void *pOwner, int flag);
+};
+
+struct CUnk100cc090 {
+    void sub_100cc090(int unused);
+};
+
+void CUnk100cc090::sub_100cc090(int unused)
+{
+    int i;
+    void *pEnt;
+
+    i = 1;
+    if (gpGlobals->maxClients >= 1) {
+        do {
+            pEnt = sub_1000ac8b(i);
+            if (pEnt != 0) {
+                ((CUnk100cc0e0Ent *)pEnt)->sub_100051d2(this, 0);
+            }
+            i++;
+        } while (i <= gpGlobals->maxClients);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cc0e0 size=0x3d
 void *sub_1000ac8b(int);
 
