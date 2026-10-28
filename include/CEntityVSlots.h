@@ -139,7 +139,11 @@ public:
 	EVS(333) EVS(334) EVS(335) EVS(336)
 	virtual int slot337();	// the hull bits the entity uses ("GetUsedHullBits"-like)
 	EVS(338) EVS(339)
-	EVS(340) EVS(341) EVS(342) EVS(343) EVS(344) EVS(345)
+	EVS(340) EVS(341)
+	virtual int slot342(int a, int b);	// discipline weapon: chained cost lookup, last link (a, previous result)
+	virtual int slot343(int a, int b);	// discipline weapon: chained cost lookup, middle link (a, previous result)
+	virtual int slot344();	// discipline weapon: chained cost lookup, first link
+	EVS(345)
 	virtual unsigned char slot346();	// weapon: a flag byte (bit 3 = may be held twice)
 	EVS(347) virtual const char *slot348();	// weapon: its class name
 	EVS(349)
