@@ -92158,6 +92158,20 @@ unsigned short CUtlRBTree16::sub_1024a310()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024a900 size=0x57
+#include "CUtlRBTree16.h"
+
+struct CUtlRBTree16Unit : CUtlRBTree16At<0x1088ae24>
+{
+    const Links_t *sub_1024a900(unsigned short i) const;
+};
+
+const CUtlRBTree16::Links_t *CUtlRBTree16Unit::sub_1024a900(unsigned short i) const
+{
+    return &Links(i);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024a980 size=0xb9
 #include "CUtlRBTree16.h"
 
