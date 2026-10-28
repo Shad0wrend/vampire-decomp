@@ -41627,6 +41627,35 @@ int *sub_1010be40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010bf20 size=0x61
+void *sub_1000db89(int);
+void __fastcall sub_10002ddd(void *);
+extern int vt_1045dafc;
+extern char g_1056da84[];
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+struct GP {
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	virtual void k0(); virtual void k1(); virtual void k2(); virtual void k3(); virtual void k4(); virtual void k5();
+	virtual void name(const char *s);
+	void sub_100090fc(char b);
+};
+// TARGET: env_firesensor
+extern "C" GP *env_firesensor()
+{
+	GP *p = (GP *)sub_1000db89(0x494);
+	if (p) {
+		p->sub_100090fc(0);
+		sub_10002ddd((char *)p + 0x464);
+		sub_10002ddd((char *)p + 0x47c);
+		*(int **)p = &vt_1045dafc;
+	} else {
+		p = 0;
+	}
+	p->name(g_1056da84);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010c150 size=0x2f
 #include "CEnvFireSensor.h"
 // TARGET: sub_1010c150
