@@ -31,7 +31,9 @@ public:
 	void sub_10273790(const char *pszText, int a);	// CAI_BaseNPC member (stub 0x1000421e): prints / records a debug note
 	void vfunc180();	// slot 180: clears the two per-NPC counter flags at +0x6671 / +0x6672 (decrementing the globals 0x1093acac / 0x1093acb0 for each one that was set), then CAI_BaseNPCTroika::vfunc180
 
-	char m_pad03e0[0x628c - 0x3e0];
+	char m_pad03e0[0x14bc - 0x3e0];
+	unsigned int m_flags14bc;	// 0x14bc
+	char m_pad14c0[0x628c - 0x14c0];
 	unsigned int m_h628c;	// 0x628c
 	char m_pad6290[0x6668 - 0x6290];
 	unsigned int m_d6668;	// 0x6668
