@@ -116160,6 +116160,30 @@ char __stdcall sub_10316420(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10316440 size=0x5c
+struct CListNode {
+    CListNode *next;
+};
+void __fastcall sub_100bf6a0(void *);
+void __fastcall sub_102e0730(void *);
+extern CListNode *g_10936c68;
+void __fastcall sub_10316440(CListNode *p)
+{
+    if (g_10936c68 == p) {
+        g_10936c68 = g_10936c68->next;
+    } else {
+        for (CListNode *q = g_10936c68; q; q = q->next) {
+            if (q->next == p) {
+                q->next = q->next->next;
+                break;
+            }
+        }
+    }
+    sub_100bf6a0((char *)p + 0x64);
+    sub_102e0730((char *)p + 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10316560 size=0x6f
 #include "CUnknown103164c0.h"
 

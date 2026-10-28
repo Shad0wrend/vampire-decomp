@@ -2809,6 +2809,7 @@
 0x10007f27 func   ?sub_1018e9f0@@YAHPAVCBaseEntity@@PAPAVCActivityCopyProp@@H@Z sub_1018e9f0
 0x10007f40 func   ?sub_101e98c0@CUnknown101e98c0@@QAEXXZ CUnknown101e98c0::sub_101e98c0
 0x10007f45 func   ?vfunc103@CWindowPane@@UAEXXZ CWindowPane::vfunc103
+0x10007f4a func   ?sub_10316440@@YIXPAUCListNode@@@Z sub_10316440
 0x10007f4f func   ?sub_10319f30@CUnknown10319f30@@QAE_NH@Z CUnknown10319f30::sub_10319f30
 0x10007f54 func   ?vfunc134@CEnvFireSensor@@QAEXXZ CEnvFireSensor::vfunc134
 0x10007f81 func   ?sub_1005d2a0@CUnknown1005d2a0@@QAEHXZ CUnknown1005d2a0::sub_1005d2a0
