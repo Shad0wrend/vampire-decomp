@@ -80,6 +80,13 @@ struct CNPC_VWerewolfHelper5d34
 	CNPC_VWerewolfNodeNet *m_pNet;	// 0x2c
 };
 
+// The current schedule at +0x5c38 (class not known yet): only its id.
+struct CNPC_VWerewolfSchedule
+{
+	char m_pad00[0x40];
+	int m_id40;	// 0x40
+};
+
 // The hint object at +0x66b0 (class not known yet).
 struct CNPC_VWerewolfHint66b0
 {
