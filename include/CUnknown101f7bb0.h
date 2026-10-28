@@ -5,6 +5,15 @@
 class CUnknown101f7bb0
 {
 public:
+	int m_pad0000[3];
+	int m_iInternalName;	// 0x0c: pooled string id of the General key "InternalName"
+	int m_iName;	// 0x10: pooled string id of the General key "Name"
+	char m_pad0014[0x1c - 0x14];
+	int m_aiModifierName[11];	// 0x1c: pooled string ids of the "ModifierNames" entries 0..10
+	int m_anModifierNameLen[11];	// 0x48: their lengths
+
 	bool sub_101f7bb0(void *pData);	// parses one trait effect category of the data file: InternalName picks the id (registered on a miss), every TraitEffectGroup key is handed to a fresh item; false (with a Msg) for no data or when no item could be made
 	bool sub_101f7db0(const char *pszFile);	// opens the data file and parses every "TraitEffectCategory" key of it with sub_101f7bb0; false (with a Msg) when the file is missing or a category does not parse
+	void sub_101f7a90();	// resets the loader (stub 0x10009624)
+	void sub_101f7f70();	// loads the General data (vdata\system\traiteffect.txt: InternalName, Name, the 11 ModifierNames), then every vdata\system\TraitEffects*.txt file with sub_101f7db0; Msg for each file that does not open
 };
