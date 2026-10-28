@@ -16,7 +16,10 @@ public:
 	int m_pad0000;
 	int m_nType;	// 0x04, -1 = none
 	int m_nArg;	// 0x08
-	char m_pad000c[0x18 - 0x0c];
+	char m_bNoFlags0c;	// 0x0c
+	char m_pad000d[3];
+	int m_n10;
+	int m_n14;
 	int m_nIndent;	// 0x18
 	int m_a1c[0x40];	// 0x1c
 	int m_a11c[0x40];	// 0x11c
