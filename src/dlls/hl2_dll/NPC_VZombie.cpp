@@ -64,3 +64,78 @@ void CNPC_VZombie::sub_103e05e0(int nSound)
 	g_10540528->v2(&filter, 0, &vecOrigin.x, &vecAngles.x, nSound);
 }
 // END FUNCTION
+
+// FUNCTION: 0x103e06d0 size=0x1eb
+#include "CNPC_VZombie.h"
+#include "CVStatList_t.h"
+#include "CVDmg_t.h"
+#include "CAI_BaseNPCTroika.h"
+
+struct CVZombie5c38
+{
+	char m_pad00[0x1c];
+	int m_n1c;	// 0x1c
+};
+
+struct CZombieDmgInfo
+{
+	CVDmg_t *m_pDmg;	// 0x0
+	char m_pad04[0x30 - 4];
+	float m_flDamage;	// 0x30
+};
+
+struct CZombieGlobal
+{
+	virtual void vfunc0();
+	virtual char vfunc1();
+	char m_pad04[0x2c - 4];
+	int m_n2c;	// 0x2c
+};
+
+extern CZombieGlobal *g_1094049c;
+
+// TARGET: CNPC_VZombie::vfunc142
+int CNPC_VZombie::vfunc142(CZombieDmgInfo *pInfo)
+{
+	int nStatA = CVStatListSet::Of(this)->Find(0)->sub_102012d0(0xf);
+	int nStatB = CVStatListSet::Of(this)->Find(0)->sub_102012d0(0x11);
+	float flDamage;
+	if (pInfo->m_pDmg)
+		flDamage = (float)pInfo->m_pDmg->sub_101faa70();
+	else
+		flDamage = pInfo->m_flDamage;
+	int nBase;
+	if (g_1094049c->vfunc1())
+		nBase = 0;
+	else
+		nBase = g_1094049c->m_n2c;
+	if ((float)(nBase - nStatA + nStatB) < flDamage)
+		m_b66e0 = 1;
+	int r = sub_10004647(pInfo);
+	int node = -1;
+	if (m_p5c38)
+		node = m_p5c38->m_n1c;
+	bool bOther = true;
+	if (r && node != -1) {
+		CAI_CondOwner *pOwner = ((CAI_CondOwner *(__fastcall *)(CNPC_VZombie *))(*(void ***)this)[580])(this);
+		if (pOwner->sub_102ea280(node) != 0x161) {
+			m_nLine1b34 = 0x469;
+			m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VZombie.cpp";
+			sub_102ae750(0x164, 0);
+			bOther = false;
+		}
+	}
+	if (bOther && !m_b6675) {
+		m_nLine1b34 = 0x46e;
+		m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VZombie.cpp";
+		sub_102ae750(0x162, 1);
+	}
+	if (m_b66e1) {
+		if (r)
+			sub_103e05e0((int)"zombie_headshot_dmg_emitter");
+		else
+			sub_103e05e0((int)"zombie_headshot_death_emitter");
+	}
+	return r;
+}
+// END FUNCTION
