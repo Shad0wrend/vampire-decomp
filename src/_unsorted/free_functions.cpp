@@ -34475,6 +34475,49 @@ void CDialog::sub_100e7890(CDialogEntry_t *pDest, const CDialogEntry_t *pSource)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e79f0 size=0x1be
+#include "CDialog.h"
+#include "ScopeTrace.h"
+#include <string.h>
+
+struct CDialogHost106e861c {
+	virtual char vfunc0();
+	virtual char vfunc1();
+	char m_pad0004[0x2c - 4];
+	int m_n2c;
+};
+extern CDialogHost106e861c *g_106e861c;
+extern int (__cdecl *g_109f3888)(const char *, char *, int);
+extern char *(__cdecl *g_109f386c)(const char *, const char *);
+__declspec(dllimport) char *Q_strncpy(char *, const char *, int);
+char *sub_101d3730(const char *, ...);
+
+int CDialog::sub_100e79f0(int pszText, int nKey, int nSize)
+{
+	ScopeTrace trace("CDialog::str_dup", g_106b8540);
+	if (!pszText)
+		return 0;
+	char buf[0x800];
+	memset(buf, 0, sizeof(buf));
+	g_109f3888((const char *)pszText, buf, 0x800);
+	if (strlen(buf) == 0)
+		return 0;
+	if (!g_106e861c->vfunc1() && g_106e861c->m_n2c && nKey > 0) {
+		char *(__cdecl *stristr)(const char *, const char *) = g_109f386c;
+		if (!stristr(buf, "Starting Condition") && !stristr(buf, "Auto-End") && !stristr(buf, "Auto-Link")) {
+			if (nSize == -1)
+				Q_strncpy(buf, sub_101d3730("(%d) %s", nKey, buf), 0x800);
+			else
+				Q_strncpy(buf, sub_101d3730("(%d) %s  (%d)", nKey, buf, nSize), 0x800);
+		}
+	}
+	int len = strlen(buf) + 1;
+	char *p = (char *)operator new(len);
+	Q_strncpy(p, buf, len);
+	return (int)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e7c20 size=0xbd
 struct TraceEntry { const char *a, *b, *c; };
 extern int *g_109f3680;
