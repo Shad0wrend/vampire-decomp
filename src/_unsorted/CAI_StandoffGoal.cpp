@@ -106,6 +106,22 @@ void CAI_StandoffGoal::vfunc241(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c88c0 size=0x86
+#include "CAI_StandoffGoal.h"
+#include "utlvector.h"
+
+void sub_100aa7b0(void *pEntity);
+
+CAI_StandoffGoal *CAI_StandoffGoal::vfunc5(unsigned int flags)
+{
+	((CUtlVector<int> *)((char *)this + 0x468))->~CUtlVector<int>();
+	sub_1009df20();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c8980 size=0x6
 #include "CAI_StandoffGoal.h"
 namespace lifted {
