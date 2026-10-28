@@ -1338,6 +1338,23 @@ char CAI_BaseNPCTroika::vfunc590()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029fdb0 size=0x5e
+#include "CAI_BaseNPCTroika.h"
+#include "globalvars.h"
+struct CTroikaOther { int sub_10349830(); };
+extern float g_1049a1bc, g_1049a1b8;
+bool CAI_BaseNPCTroika::vfunc319(int a, CBaseEntity *pOther, int c)
+{
+    sub_10272650(((CBaseCombatCharacter *)this)->sub_10345f10());
+    float f = 0;
+    if (pOther && ((CTroikaOther *)pOther)->sub_10349830() == 2)
+        f = 1.0f;
+    float flDelay = (g_1049a1bc - g_1049a1b8) * f + g_1049a1b8;
+    *(float *)((char *)this + 0x1564) = flDelay + gpGlobals->curtime;
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ad110 size=0x20
 #include "CAI_BaseNPCTroika.h"
 void CAI_BaseNPCTroika::vfunc616()
