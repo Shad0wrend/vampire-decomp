@@ -1342,6 +1342,7 @@
 0x100046fb func   ?sub_1018c4d0@CUnknown1018c4d0@@QAEXD@Z CUnknown1018c4d0::sub_1018c4d0
 0x1000470a func   ?sub_1016b440@@YAXXZ sub_1016b440
 0x10004719 func   ?vfunc130@CPropSwitch@@UAEXH@Z CPropSwitch::vfunc130
+0x10004728 func   ?sub_1016eec0@CBasePlayer@@QAEXPBDPAHH@Z CBasePlayer::sub_1016eec0
 0x1000472d func   ?sub_1010c150@CEnvFireSensor@@QAEXXZ CEnvFireSensor::sub_1010c150
 0x10004746 func   ?sub_101bdb50@@YAHXZ sub_101bdb50
 0x1000474b func   ?sub_1042fbf0@@YAII@Z sub_1042fbf0

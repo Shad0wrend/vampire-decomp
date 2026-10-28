@@ -50339,6 +50339,44 @@ void sub_1016ebb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016eec0 size=0x1ba
+#include "CBasePlayer.h"
+#include "ScopeTrace.h"
+
+extern "C" unsigned int strlen(const char *);
+extern "C" void *memset(void *, int, unsigned int);
+#pragma intrinsic(strlen, memset, memcpy)
+
+extern int (__cdecl *g_109f3854)(const char *, const char *, int);
+extern char *(__cdecl *g_109f3890)(char *, const char *, int);
+
+#define EMAIL_MAX(a, b) ((a) > (b) ? (a) : (b))
+#define PLAYER_NAME(p) (*(const char **)((char *)(p) + 0x26c))
+
+static inline void CopyDwords(int *pDest, const int *pSrc, int nDwords)
+{
+	memcpy(pDest, pSrc, nDwords * 4);
+}
+
+void CBasePlayer::sub_1016eec0(const char *pszName, int *pOut, int nDwords)
+{
+	ScopeTrace trace("CBasePlayer::RetrieveGlobalEmailFlags", this ? (PLAYER_NAME(this) ? PLAYER_NAME(this) : g_106b8540) : g_105387dc);
+	int len = strlen(pszName);
+	int i = 0;
+	for (; i < m_GlobalEmail.Count(); i++) {
+		if (g_109f3854(pszName, m_GlobalEmail[i].m_szName, EMAIL_MAX(len, (int)strlen(m_GlobalEmail[i].m_szName))) == 0)
+			break;
+	}
+	if (i == m_GlobalEmail.Count()) {
+		GLOBAL_EMAIL rec;
+		memset(&rec, 0, sizeof(rec));
+		g_109f3890(rec.m_szName, pszName, 0x40);
+		i = m_GlobalEmail.AddToTail(rec);
+	}
+	CopyDwords(pOut, m_GlobalEmail[i].m_Data, nDwords);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016fed0 size=0x15b
 #include "ConVar.h"
 #include "CChangeLevel.h"
