@@ -28,7 +28,7 @@ public:
 	void sub_10200be0(int stat, int value);	// "CVStatList_t::Set": scope trace, stores value (clamped to sub_10200b10(stat)) in the base value array behind m_field08 when the stat is valid
 	void sub_10200a70(int stat, int source);	// "CVStatList_t::SetBaseToStatValue": scope trace, sets the stat to the value of the stat `source` (sub_10010609)
 	void sub_102009b0(int stat);	// "CVStatList_t::SetBaseToDefault": scope trace, when the stat is valid sets it to the default value of its info record (the +0x0 object's entity value as argument)
-	const char *sub_10201a40(int stat, int arg);	// the text line of the stat for the dump (stub 0x10009214)
+	const char *sub_10201a40(int stat, char bTimed);	// "CVStatList_t::ToDetailedStr" (stub 0x10009214): scope trace, formats the stat's name, value and base value names into the buffer at 0x1074e548 and returns it; with bTimed appends the seconds left of the owner's timer
 	const char *sub_102013a0(int stat);	// "CVStatList_t::GetBaseValueName": scope trace, the name of the entry the base value of the stat selects in the stat's table (info object at +0xc), "" when the stat is invalid
 	const char *sub_10201470(int stat);	// "CVStatList_t::GetValueName": like sub_102013a0 but selects by the full stat value sub_10010609
 	bool sub_10200ea0(int stat);	// "CVStatList_t::DecBase": scope trace, when the stat is valid and its base value is above the stat's minimum (value record of the info object at +0xc, evaluated for the owner entity of the object at +0) lowers it by one, tells the info's action list (+0x10c) about the change and returns true; else false (stub 0x1000ffb0 etc.)
