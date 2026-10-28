@@ -6651,6 +6651,24 @@ void sub_10047160(E8 *dst, const E8 *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10047190 size=0x42
+struct S47190Arr { int v[6]; };
+struct S47190 {
+    int a, b, c, d, e;
+    S47190Arr arr;
+    int f, g;
+    S47190 &sub_10047190(const S47190 &o);
+};
+// TARGET: S47190::sub_10047190
+S47190 &S47190::sub_10047190(const S47190 &o)
+{
+    a = o.a; b = o.b; c = o.c; d = o.d; e = o.e;
+    arr = o.arr;
+    f = o.f; g = o.g;
+    return *this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100473c0 size=0x381
 #include "CUtlRBTree16.h"
 

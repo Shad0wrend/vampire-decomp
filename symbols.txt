@@ -1542,6 +1542,7 @@
 0x10004e4e func   ?vfunc4@CAutoGameSystem@@UAEXXZ CAutoGameSystem::vfunc4
 0x10004e53 func   ?vfunc24@CNPC_VGhoulCroucher@@QAEXPAX@Z CNPC_VGhoulCroucher::vfunc24
 0x10004e62 func   ?vfunc141@CNPC_VWerewolf@@QAEXPAUCUnknown101c2a50@@HH@Z CNPC_VWerewolf::vfunc141
+0x10004e67 func   ?sub_10047190@S47190@@QAEAAU1@ABU1@@Z S47190::sub_10047190
 0x10004e6c func   ?vfunc103@CBaseViewModel@@UAEXXZ CBaseViewModel::vfunc103
 0x10004e7b func   ?sub_100c6370@@YAHPAUS100c6370@@PBD@Z sub_100c6370
 0x10004e80 func   ?sub_101fb680@CVDmg_t@@QAEPADXZ CVDmg_t::sub_101fb680
