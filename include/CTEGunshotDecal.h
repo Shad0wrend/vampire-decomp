@@ -12,6 +12,8 @@ public:
 	virtual void vfunc3();
 	virtual void vfunc4(int a, int b);	// slot 4 (jump stub 0x100022de): called directly on the global object
 
+	CTEGunshotDecal(const char *name);	// 0x10064010
+
 	void sub_1001520d();	// destructor body
 
 	char m_pad0004[8];
