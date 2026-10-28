@@ -134186,6 +134186,44 @@ extern "C" GP *item_w_avamp_blade()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e9d80 size=0x55
+#define SLOTS4(a) virtual void a##_0(); virtual void a##_1(); virtual void a##_2(); virtual void a##_3();
+#define SLOTS16(a) SLOTS4(a##a) SLOTS4(a##b) SLOTS4(a##c) SLOTS4(a##d)
+#define SLOTS64(a) SLOTS16(a##a) SLOTS16(a##b) SLOTS16(a##c) SLOTS16(a##d)
+
+struct CMeleeOwner
+{
+	char m_pad0000[0x1c58];
+	unsigned int m_hTarget1c58;	// 0x1c58
+	char m_pad1c5c[4];
+	unsigned int m_hTarget1c60;	// 0x1c60
+};
+
+struct CMeleeTarget
+{
+	virtual void vfunc0();
+	virtual unsigned int *vfunc1();	// GetRefEHandle
+	SLOTS64(p) SLOTS64(q) SLOTS64(r) SLOTS64(s) SLOTS64(t)	// slots 2..321
+	virtual void vfunc322(CMeleeOwner *pOwner);
+	char m_pad0004[0x1482 - 4];
+	char m_b1482;	// 0x1482
+};
+
+// TARGET: sub_103e9d80
+void __stdcall sub_103e9d80(CMeleeOwner *pOwner, CMeleeTarget *pTarget, int c)
+{
+	if (pOwner) {
+		if (pTarget->m_b1482) {
+			pOwner->m_hTarget1c58 = 0xffffffff;
+			return;
+		}
+		pOwner->m_hTarget1c58 = *pTarget->vfunc1();
+		pOwner->m_hTarget1c60 = *pTarget->vfunc1();
+		pTarget->vfunc322(pOwner);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103eb0b0 size=0x72
 #include "SendProp.h"
 
