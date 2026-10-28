@@ -113890,6 +113890,35 @@ void CBaseCombatCharacter::sub_10324ba0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10324ea0 size=0x1be
+#include "CBaseCombatCharacter.h"
+#include "CVStatList_t.h"
+#include "CUnknown10324ad0.h"
+#include "CUnknown10739d08.h"
+#include "CUnknown1033c340.h"
+#include "ScopeTrace.h"
+
+extern CUnknown10739d08 g_10739d08;
+
+void CBaseCombatCharacter::sub_10324ea0()
+{
+	ScopeTrace trace("CBaseCombatCharacter::UpdateVampHeal_HOT", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (((CUnknown10324ad0 *)this)->sub_10324ad0()) {
+		double dNext = m_flNextVampHeal;
+		if (engine->vfunc119(0) > dNext) {
+			int nBase = CVStatListSet::Of(this)->Find(0)->sub_102012d0(0xf);
+			if (nBase > 0) {
+				int nScale = CVStatListSet::Of(this)->Find(0)->sub_102012d0(0x11);
+				int nCost = g_10739d08.sub_101e9170(this, nBase, nScale);
+				((CUnknown1033c340 *)this)->sub_1033c340(nCost);
+			}
+			float flDelay = sub_10324c80(nBase);
+			m_flNextVampHeal = engine->vfunc119(0) + flDelay;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10325940 size=0xb8
 #include "inputdata_t.h"
 

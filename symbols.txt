@@ -3423,6 +3423,7 @@
 0x100098e5 func   ??0CTEMetalSparks@@QAE@PBD@Z CTEMetalSparks::CTEMetalSparks
 0x100098f9 func   ?vfunc2@CTEMuzzleFlash@@UAEPAV1@I@Z CTEMuzzleFlash::vfunc2
 0x100098fe func   ?sub_102433a0@@YAXABVVector@@00HHPAV1@@Z sub_102433a0
+0x10009908 func   ?sub_10324ea0@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_10324ea0
 0x1000990d func   ?vfunc287@CBaseFlex@@QAEXPAUCBaseFlexItemObject@@@Z CBaseFlex::vfunc287
 0x10009912 func   ?sub_102781e0@@YIXPAXHH@Z sub_102781e0
 0x10009926 func   ?vfunc5@CSceneEntity@@UAEPAV1@I@Z CSceneEntity::vfunc5
