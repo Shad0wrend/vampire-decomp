@@ -131928,6 +131928,37 @@ extern "C" CItemGWarrLedger1* item_p_research_lg_firearms()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f9480 size=0xb5
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+void sub_10009539();
+
+extern SendTable g_1094857c;
+extern SendTable *g_105c5bc0;
+
+// TARGET: sub_103f9480
+int sub_103f9480()
+{
+	static const char *pTableName = "DT_OccultRegen";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_105c5bc0, (void *)sub_10009539),
+		sub_10007bfd("m_iRechargeKillCounter", 0x914, 4, 0x4, 1, 0, 0),
+		sub_10007bfd("m_iStolenBloodCount", 0x918, 4, 0x4, 1, 0, 0),
+	};
+	g_1094857c.sub_1000e8fe(props + 1, 3, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f95a0 size=0x43
 #include "COccultRegen.h"
 void *sub_100aa720(int size);
