@@ -2670,6 +2670,70 @@ void CBaseEntity::sub_10033aa0(float *a, float *b, float *c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10033b80 size=0x1d1
+#include "type_info.h"
+#include "ScopeTrace.h"
+#include "ConVar.h"
+#include "CUnknown100a8220.h"
+
+__declspec(dllimport) void Warning(const char *pMsg, ...);
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+extern ConVar *g_106bd86c;
+extern float g_106bcb58;
+extern type_info g_1053a9b8;
+
+#define SV1(p) virtual void p();
+#define SV10(p) SV1(p##0) SV1(p##1) SV1(p##2) SV1(p##3) SV1(p##4) SV1(p##5) SV1(p##6) SV1(p##7) SV1(p##8) SV1(p##9)
+#define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
+
+class SThinkOwnerView	// the object at +0x94: a flag at +0x5c38, slot 582 reports a slow think
+{
+public:
+	SV100(sa) SV100(sb) SV100(sc) SV100(sd) SV100(se) SV10(sf0) SV10(sf1) SV10(sf2) SV10(sf3) SV10(sf4) SV10(sf5) SV10(sf6) SV10(sf7) SV1(sg0) SV1(sg1)
+	virtual void vfunc582(float flTime);
+	char m_pad0004[0x5c38 - 4];
+	int m_n5c38;
+};
+
+void CBaseEntity::sub_10033b80(void (CBaseEntity::*pfnThink)())
+{
+	ScopeTrace trace("CBaseEntity::PhysicsDispatchThink", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	float flThinkLimit;
+	if (g_106bd86c->vfunc1())
+		flThinkLimit = 0.0f;
+	else
+		flThinkLimit = g_106bd86c->m_fValue;
+	float flThinkStart = 0.0f;
+	if (((CUnknown100a8220 *)this)->sub_100a8220()) {
+		const char *pszName = m_classname11c;
+		if (!pszName)
+			pszName = g_106b8540;
+		Warning("Dormant entity %s is thinking!!\n", pszName);
+	}
+	if (flThinkLimit != 0.0f)
+		flThinkStart = engine->vfunc87();
+	if (pfnThink)
+		(this->*pfnThink)();
+	if (flThinkLimit != 0.0f) {
+		float flTime = (engine->vfunc87() - flThinkStart) * 1000.0f;
+		if (flTime > flThinkLimit) {
+			SThinkOwnerView *pOwner = *(SThinkOwnerView **)((char *)this + 0x94);
+			if (pOwner && pOwner->m_n5c38) {
+				pOwner->vfunc582(flTime);
+				return;
+			}
+			if (gpGlobals->curtime >= g_106bcb58) {
+				const char *pszName = m_classname11c;
+				if (!pszName)
+					pszName = g_106b8540;
+				DevMsg("%s(%s) thinking for %.02f ms!!!\n", pszName, g_1053a9b8.raw_name(), flTime);
+				g_106bcb58 = gpGlobals->curtime + 1.0f;
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10033de0 size=0x122
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
