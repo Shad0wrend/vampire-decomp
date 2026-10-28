@@ -11740,6 +11740,30 @@ void CUnk_1006ca50::sub_1006ca50(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006caa0 size=0x47
+struct SCurve6caa0 {
+    int pad[3];
+    unsigned char flags;
+    int count;
+    float *data;
+    float sub_1006caa0(int i);
+};
+// TARGET: SCurve6caa0::sub_1006caa0
+float SCurve6caa0::sub_1006caa0(int i)
+{
+    if (flags & 1) {
+        if (i < 0)
+            i = 0;
+        else if (i >= count)
+            i = count - 1;
+        return data[i];
+    }
+    if (i >= 0 && i < count)
+        return data[i];
+    return 3.4028235e38f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006cb10 size=0x31
 #include "CUnknown10204e90.h"
 #include "CUnknown10204c60.h"
