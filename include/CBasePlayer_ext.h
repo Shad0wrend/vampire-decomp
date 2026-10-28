@@ -69,5 +69,6 @@
 	void sub_10170cf0(unsigned int flags, char bSet);	// sets (bSet) or clears the bits of the flag word at +0x20f0
 	Vector vfunc197(const Vector &posSrc, char bRandom, char bAddViewOffset);	// slot 197 "BodyTarget" (plain member, hidden return, ret 0x10): with bRandom the view offset (+0x184) scaled by RandomFloat(0.5, 1.0) added to the origin (slot 220); else with bAddViewOffset the unscaled view offset added to the origin; else the centre (slot 192)
 	bool sub_10330020(int a, int b);	// CBaseCombatCharacter::vfunc334 (stub 0x10005b5a), called directly
+	char sub_10335a70(CBaseCombatWeapon *pWeapon);	// CBaseCombatCharacter member (stub 0x10003d9b), called directly by vfunc457
 	void sub_10183330();	// hands the classname and slot 296 value of the entity behind the handle at +0x1dfc to slot 457, then clears the handle
 	char vfunc321(int unused);	// slot 321 (plain member): re-arms the random view punch timer (+0x1da8) when it is due, then punches the view by a random angle scaled by the player and punch convars (slot 169)
