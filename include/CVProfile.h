@@ -35,6 +35,7 @@ class CVProfile
 public:
 	__declspec(dllimport) void EnterScope(const char *pszName, int detailLevel, const char *pBudgetGroupName, bool bAssertAccounted);
 	__declspec(dllimport) void PopGroup();
+	__declspec(dllimport) void PushGroup(int nGroupID);
 
 	char m_pad0000[0x100c];
 	int m_enabled;	// 0x100c
