@@ -13,3 +13,14 @@ CTEPlayerDecal *CTEPlayerDecal::vfunc2(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10066660 size=0x39
+#include "CTEPlayerDecal.h"
+#include "IVEngineServerFull.h"
+
+
+void CTEPlayerDecal::vfunc4(int a, int b)
+{
+	engine->vfunc103(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
+}
+// END FUNCTION
