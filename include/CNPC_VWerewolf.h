@@ -112,7 +112,11 @@ public:
 	unsigned int m_hRotDoor1;	// 0x6684: entity handle of the func_movelinear "rotdoor1"
 	unsigned int m_hRotDoor2;	// 0x6688: entity handle of the func_movelinear "rotdoor2"
 	CNPC_VWerewolfIntVec m_History;	// 0x668c
-	char pad66a0[0x66a8 - 0x66a0];
+	char pad66a0;
+	char m_b66a1;	// 0x66a1
+	char pad66a2[2];
+	int m_n66a4;	// 0x66a4
+
 	char m_b66a8;	// 0x66a8
 	char m_b66a9;	// 0x66a9
 	char pad66aa[0x66b0 - 0x66aa];
