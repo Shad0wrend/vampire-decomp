@@ -154,6 +154,25 @@ void CPhysBox::vfunc226(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004e8d0 size=0x26
+#include "CPhysBox.h"
+
+void sub_10006d61();
+
+// TARGET: CPhysBox::vfunc230
+void CPhysBox::vfunc230(int a, int b)
+{
+    void (CPhysBox::*pBase)(int, int);
+    *(void **)&pBase = (void *)sub_10006d61;
+    (this->*pBase)(a, b);
+
+    void (CPhysBox::*pSlot75)(int, int);
+    void **vt = *(void ***)this;
+    *(void **)&pSlot75 = vt[0x12c / 4];
+    (this->*pSlot75)(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004e910 size=0x16
 #include "CPhysBox.h"
 
