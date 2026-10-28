@@ -1502,6 +1502,28 @@ void CBasePlayer::vfunc383(CBaseEntity *pWeapon, char bNoSwitch)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10178400 size=0x42
+void sub_101cd940(CBaseEntity *);
+void sub_100828d0();
+namespace block_10178400 {
+void __fastcall sub_1015ef60(char *p) { p[0x19f7] = 0; }
+}
+struct CUnitP2 : CBasePlayer {
+    void sub_10107050(int);
+    void sub_10178400();
+};
+void CUnitP2::sub_10178400()
+{
+    sub_101cd940(sub_1000306c());
+    sub_1017cef0(0);
+    block_10178400::sub_1015ef60((char *)this);
+    if (*((char *)this + 0x1e01))
+        vfunc456();
+    sub_10107050(0);
+    sub_100828d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10178660 size=0xf6
 #include "CBasePlayer.h"
 #include "CEntityVSlots.h"
