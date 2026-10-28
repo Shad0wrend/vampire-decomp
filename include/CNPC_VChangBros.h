@@ -21,6 +21,7 @@ public:
 	void sub_1036c810(int a, int b);	// "CNPC_VChangBros::PrintTask": scope trace, then Msg("%s: [%s]:%s\n", a, classname, vfunc449(b))
 	void *sub_1036d100();	// "CNPC_VChangBros::SelectUnitedNode": scope trace, walks the global entity list (type 18000 at +0x5dc, next at +0x5d8) for the first, or the second when the mode at +0x66b8 is 1
 	bool sub_1036d270(float *pOut);	// "CNPC_VChangBros::GetTeleportPosition": scope trace, copies the vector at +0x66bc to pOut when it is recent enough (time at +0x66c8)
+	CBaseEntity *sub_1036dd20();	// "CNPC_VChangBros::SpawnEnergyBall": scope trace (no entity name), creates an "item_w_chang_energy_ball" in front of / beside / above the origin (40 forward, -10 right, 50 up) and, with a live enemy (handle +0x628c), hands it slot 372(this, 800.0f, enemy); returns it
 	float sub_1036dc60();	// "CNPC_VChangBros::GetFacingTimeTo": scope trace, 21.0f when the int at +0x5bb0 is positive or the object at +0x5da4 is set and its count (0x10013426) is below 2, else 7.0f
 	CNPC_VChangBros *sub_1036e2f0();	// "CNPC_VChangBros::GetOtherBrother": scope trace, the first other Chang brother in the squad at +0x5da4 (null while the int at +0x5bb0 is positive or without a squad)
 	void sub_1036e400();	// "CNPC_VChangBros::StoreArenaCenter": scope trace, stores the origin of the first type 0x4651 entity at +0x66dc and sets the flag at +0x66e8
