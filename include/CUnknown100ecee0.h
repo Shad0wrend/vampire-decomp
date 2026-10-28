@@ -66,6 +66,7 @@ public:
 	int sub_100ec530(const char *pszName, int bFlag);	// stub 0x10007fa9: the index of the named entry, -1 when unknown
 	int sub_100eccf0(int index);	// stub 0x10015145: an int of the entry (the default entry when out of range)
 	float sub_100ecdf0(int index, int a);	// stub 0x1000704a: a float of the entry
+	void sub_100ecfc0(CTableNpc_t *pNpc, int nOld, int nNew);	// stub 0x1000c3fb: stance change of the NPC from nOld to nNew
 	int sub_100ec360(int index, void *pNpc);	// stub 0x10006d3e: an int of the entry for the NPC
 	int sub_100ec2e0(int index, void *pNpc);	// stub 0x1000509c: an int of the entry for the NPC
 	float sub_100ec3d0(int index);	// stub 0x10013cc3: a float of the entry
