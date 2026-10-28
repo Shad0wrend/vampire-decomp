@@ -108413,6 +108413,109 @@ void CUnknown102e37b0::sub_102e37b0(const float *pStart, const float *pEnd, unsi
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e7ba0 size=0x1dd
+#include "CAI_MoveProbe.h"
+#include "CVProfile.h"
+
+__declspec(dllimport) void vtune(bool bEnable);
+
+struct COwner;
+float __fastcall sub_102e7e00(COwner *pOwner);
+
+struct CCycleView
+{
+	unsigned __int64 m_Int64;
+
+	CCycleView &operator+=(const CCycleView &rhs)
+	{
+		m_Int64 += rhs.m_Int64;
+		return *this;
+	}
+};
+
+struct CVNodeView
+{
+	const char *m_pszName;	// 0x00
+	char m_pad0004[4];
+	CCycleView m_CurFrameTime;	// 0x08
+	int m_nRecursions;	// 0x10
+	int m_nCurFrameCalls;	// 0x14
+	CCycleView m_TotalTime;	// 0x18
+	char m_pad0020[0x48 - 0x20];
+	CVNodeView *m_pParent;	// 0x48
+	char m_pad004c[0x54 - 0x4c];
+	int m_nBudgetGroupID;	// 0x54
+};
+
+struct CVProfView
+{
+	bool m_bVTuneGroupEnabled;	// 0x00
+	char m_pad0001[3];
+	int m_nVTuneGroupID;	// 0x04
+	int m_GroupIDStack[1024];	// 0x08
+	int m_nGroupIDStackPtr;	// 0x1008
+	int m_enabled;	// 0x100c
+	bool m_bAtRoot;	// 0x1010
+	char m_pad1011[3];
+	CVNodeView *m_pCurNode;	// 0x1014
+	CVNodeView *m_pRoot;	// 0x1018
+};
+
+char CAI_MoveProbe::sub_102e7ba0(const float *vecStart, unsigned int collisionMask, float *pOut)
+{
+	CVProfView *pProf = (CVProfView *)g_109f3648;
+	if (pProf->m_enabled || !pProf->m_bAtRoot) {
+		if (pProf->m_pCurNode->m_pszName != "CAI_MoveProbe_IterativeFloorPoint")
+			pProf->m_pCurNode = (CVNodeView *)((CVProfNode *)pProf->m_pCurNode)->GetSubNode("CAI_MoveProbe_IterativeFloorPoint", 0, "Unaccounted");
+		CVNodeView *pNode = pProf->m_pCurNode;
+		pNode->m_nCurFrameCalls++;
+		if (pNode->m_nRecursions++ == 0) {
+			unsigned long *pSamplev = (unsigned long *)&pNode->m_CurFrameTime;
+			__asm {
+				mov ecx, pSamplev
+				rdtsc
+				mov [ecx], eax
+				mov [ecx+4], edx
+			}
+			CVProfView *pCur = (CVProfView *)g_109f3648;
+			int nGroup = pNode->m_nBudgetGroupID;
+			pCur->m_GroupIDStack[pCur->m_nGroupIDStackPtr] = nGroup;
+			pCur->m_nGroupIDStackPtr++;
+			if (pCur->m_GroupIDStack[pCur->m_nGroupIDStackPtr - 2] != nGroup && pCur->m_bVTuneGroupEnabled && nGroup == pCur->m_nVTuneGroupID)
+				vtune(true);
+		}
+		pProf->m_bAtRoot = false;
+	}
+	char bResult = sub_102e7880(vecStart, collisionMask, sub_102e7e00((COwner *)this), -720.0f, pOut, 0);
+	CVProfView *pEnd = (CVProfView *)g_109f3648;
+	if (!pEnd->m_bAtRoot || pEnd->m_enabled) {
+		CVNodeView *pNode = pEnd->m_pCurNode;
+		if (--pNode->m_nRecursions == 0 && pNode->m_nCurFrameCalls != 0) {
+			CCycleView cnt;
+			cnt.m_Int64 = 0;
+			unsigned long *pSamplev = (unsigned long *)&cnt;
+			__asm {
+				mov ecx, pSamplev
+				rdtsc
+				mov [ecx], eax
+				mov [ecx+4], edx
+			}
+			pNode->m_CurFrameTime.m_Int64 = cnt.m_Int64 - pNode->m_CurFrameTime.m_Int64;
+			pNode->m_TotalTime += pNode->m_CurFrameTime;
+			CVProfView *pCur = (CVProfView *)g_109f3648;
+			pCur->m_nGroupIDStackPtr--;
+			int nPopped = pCur->m_GroupIDStack[pCur->m_nGroupIDStackPtr + 1];
+			if (pCur->m_GroupIDStack[pCur->m_nGroupIDStackPtr] != nPopped && pCur->m_bVTuneGroupEnabled && nPopped == pCur->m_nVTuneGroupID)
+				vtune(false);
+		}
+		if (pNode->m_nRecursions == 0)
+			pEnd->m_pCurNode = pEnd->m_pCurNode->m_pParent;
+		pEnd->m_bAtRoot = (pEnd->m_pCurNode == pEnd->m_pRoot);
+	}
+	return bResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e7e00 size=0xb
 #define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define H(p) T(p##0) T(p##1) T(p##2) T(p##3) T(p##4) T(p##5) T(p##6) T(p##7) T(p##8) T(p##9)
