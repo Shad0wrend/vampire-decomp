@@ -26,7 +26,8 @@ public:
     Vector m_vecAxis;    // 0x4ac
     Vector m_vecCorner;    // 0x4b8
     char m_b4c4;
-    char m_pad04c5[0x4cc - 0x4c5];
+    char m_pad04c5[3];
+    int m_nSurfaceType4c8;    // 0x4c8: 1 = glass (tinted, force reversed and shortened)
     int m_nPanes4cc;    // 0x4cc
     float m_aflPanes[16][16];    // 0x4d0: the pane grid, 0x40 bytes per row
     char m_pad08d0[0x904 - 0x8d0];
