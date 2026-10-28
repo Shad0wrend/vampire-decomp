@@ -40090,6 +40090,29 @@ void sub_101034f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10103790 size=0x42
+#include "ehandle.h"
+#include "CBaseEntity.h"
+int sub_101cd9e0(int a);
+
+struct CHandleHolderView
+{
+	char m_pad0000[0x10c];
+	EHANDLE m_h10c;
+};
+
+int __fastcall sub_10103790(CHandleHolderView *pThis)
+{
+	CBaseEntity *pEnt = pThis->m_h10c.Get();
+	if (pEnt) {
+		int v = *(int *)((char *)pEnt + 0xa8);
+		if (v)
+			return v;
+	}
+	return sub_101cd9e0(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10103c80 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
