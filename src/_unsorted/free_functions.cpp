@@ -12615,6 +12615,62 @@ void CUnknown10072f10::sub_10072f10(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10073090 size=0x13b
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+
+struct S100732f0 {
+	int *m_pMemory;
+	int m_alloc;
+	int m_grow;
+	void sub_100732f0(int num);
+};
+
+struct V5 : S100732f0 {
+	int m_size;
+	int *m_pElements;
+	void Remove(int elem)
+	{
+		int n = m_size - elem - 1;
+		if (n > 0)
+			memmove(&m_pMemory[elem], &m_pMemory[elem + 1], n * 4);
+		--m_size;
+	}
+	void InsertBefore(int elem, int src)
+	{
+		if (m_size + 1 > m_alloc)
+			sub_100732f0(m_size + 1 - m_alloc);
+		m_size += 1;
+		m_pElements = m_pMemory;
+		int n = m_size - elem - 1;
+		if (n > 0)
+			memmove(&m_pMemory[elem + 1], &m_pMemory[elem], n * 4);
+		int *p = &m_pMemory[elem];
+		if (p)
+			*p = src;
+	}
+};
+
+struct CUnk10073090 {
+	char pad[0x164];
+	V5 v;
+	void sub_10073090(int i, int j);
+};
+
+void CUnk10073090::sub_10073090(int i, int j)
+{
+	int *pa = &v.m_pMemory[i];
+	int *pb = &v.m_pMemory[j];
+	int a = *pa;
+	int b = *pb;
+	if (a && b) {
+		v.Remove(i);
+		v.InsertBefore(i, b);
+		v.Remove(j);
+		v.InsertBefore(j, a);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10073220 size=0x2a
 struct S10073220 {
 	char m_pad[0x164];
