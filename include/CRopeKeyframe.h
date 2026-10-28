@@ -26,6 +26,7 @@ public:
 	void vfunc113();	// slot 113 "CRopeKeyframe::Activate" (plain member): base activate (sub_100a0bc0); for a rope made from the map file loads the cable material, finds the entity named at +0x458, ties the rope end to it (SetEndPoint) and the start to the rope itself, then Spawn
 	void sub_100a0bc0();	// CBaseEntity::vfunc113 (stub 0x10001226), called directly
 	void sub_1019ebc0(int a, int b, CRopeKeyframe *pStop, int x, int y, int z);	// sends the rope message (user message 0 to every player but the one of this entity: the three dwords x, y, z) and passes the same arguments on to the rope behind the end point handle (+0x494) unless it is pStop
+	void sub_1019ed90(struct RopeArg *p);	// passes the rope message arguments of p (two dwords, and the vector at +8 when its type at +0x18 is 3 or 14, else g_1070d1b0) on to sub_1019ebc0 with this as the stop rope
 	void sub_1000a84e(int a, int b, CRopeKeyframe *pStop, int x, int y, int z);	// the jump stub of sub_1019ebc0, used by its recursive call
 
 	char m_padRope03e0[0x454 - 0x3e0];
