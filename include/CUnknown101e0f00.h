@@ -6,6 +6,8 @@
 
 class CBasePlayer;
 struct S1033d380;
+struct CVFeatKV;
+class CUnknown101e0f00;
 
 struct CUnknown101e0f00SrcA	// an element of the first list of a source description
 {
