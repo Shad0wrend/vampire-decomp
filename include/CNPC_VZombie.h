@@ -63,7 +63,9 @@ public:
 	float m_flPlayerDist6264;	// 0x6264: the distance to the player
 	char m_pad6268[0x628c - 0x6268];
 	unsigned int m_hEnemy628c;	// 0x628c: entity handle of the target
-	char m_pad6290[0x6678 - 0x6290];
+	char m_pad6290[0x6675 - 0x6290];
+	char m_b6675;	// 0x6675
+	char m_pad6676[0x6678 - 0x6676];
 	int m_nMode6678;	// 0x6678
 	char m_pad667c[0x66d8 - 0x667c];
 	float m_flNextLunge66d8;	// 0x66d8
