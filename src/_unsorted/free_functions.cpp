@@ -51011,6 +51011,26 @@ char CUnknown1015ef80::sub_1015ef80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015f090 size=0x4f
+struct CUnk101c26d0 {
+    int m_n0; char pad[0x48];
+    CUnk101c26d0 *sub_101c26d0(int a, int b, int c, int d, int e, int f, int g);
+};
+struct CUnitP : CBasePlayer {
+    void sub_1015f090(char c);
+};
+void CUnitP::sub_1015f090(char c)
+{
+    if (*(int *)((char *)this + 0x210) > 0) {
+        CUnk101c26d0 u;
+        *((char *)this + 0x1ca0) = c;
+        u.sub_101c26d0((int)this, (int)this, 0, 0, 0, 0, -1);
+        *(int *)((char *)this + 0x210) = 0;
+        vfunc144(&u);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015f100 size=0x3a
 #include "inputdata_t.h"
 extern char g_106b8540[];
