@@ -30709,6 +30709,52 @@ int sub_100cffa0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d0a00 size=0x1c4
+#include "CVariantCopy.h"
+#include "CEHandleGet.h"
+
+extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+__declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+extern "C" char *_itoa(int value, char *pBuffer, int radix);
+extern char g_106e7000[0x50];
+
+const char *CVariantCopy::sub_100d0a00() const
+{
+	switch (m_fieldType) {
+	case 2:
+		return iszVal ? iszVal : "";
+	case 5:
+		if (!m_value)
+			Q_strncpy(g_106e7000, "false", 0x50);
+		else
+			Q_strncpy(g_106e7000, "true", 0x50);
+		return g_106e7000;
+	case 4:
+		return _itoa(m_value, g_106e7000, 10);
+	case 1:
+		Q_snprintf(g_106e7000, 0x50, "%g", flVal);
+		return g_106e7000;
+	case 8:
+		Q_snprintf(g_106e7000, 0x50, "%d %d %d %d", rgba[0], rgba[1], rgba[2], rgba[3]);
+		return g_106e7000;
+	case 3:
+		Q_snprintf(g_106e7000, 0x50, "[%g %g %g]", vecVal[0], vecVal[1], vecVal[2]);
+		return g_106e7000;
+	case 0:
+		g_106e7000[0] = 0;
+		return g_106e7000;
+	case 12:
+		if (EHandle_Get(m_hEntity) != 0)
+			Q_snprintf(g_106e7000, 0x50, "%s", ((CBaseEntity *)EHandle_Get(m_hEntity))->sub_1000b5cd());
+		else
+			Q_snprintf(g_106e7000, 0x50, "(null entity)");
+		return g_106e7000;
+	default:
+		return "No conversion to string";
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d1250 size=0x27
 struct SListNode_t {
     int unk0;
