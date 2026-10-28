@@ -77093,6 +77093,68 @@ bool CUnknown101f7bb0::sub_101f7db0(const char *pszFile)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f7f70 size=0x1c7
+#include "CUnknown101f7bb0.h"
+#include "CVFeat_t.h"
+#include "IFileSystemFind.h"
+
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+extern "C" unsigned int __cdecl strlen(const char *);
+extern "C" __declspec(dllimport) void Msg(const char *, ...);
+extern IFileSystemFind *g_1070b238;
+extern char g_106b8540[];
+extern char g_105a5de0[];
+CVFeatKV *sub_101f2e20(const char *pszFile, IFileSystemFind *pFileSystem);
+int *sub_102038e0(int *pOut, CVFeatKV *pKV, const char *pszKey);
+int *sub_10203920(int *pOut, CVFeatKV *pKV);
+int *sub_10203ed0(int *pOut, const char *psz);
+
+void CUnknown101f7bb0::sub_101f7f70()
+{
+	char szList[260];
+	char szBuf[128];
+	int hFind;
+	int iTemp;
+	sub_101f7a90();
+	sprintf(szBuf, "%s%s.txt", "vdata\\system\\", "traiteffect");
+	CVFeatKV *pKV = sub_101f2e20(szBuf, g_1070b238);
+	if (pKV) {
+		CVFeatKV *pGeneral = pKV->FindKey("General");
+		if (pGeneral) {
+			m_iInternalName = *sub_102038e0(&iTemp, pGeneral, "InternalName");
+			m_iName = *sub_10203920(&iTemp, pGeneral);
+			CVFeatKV *pNames = pGeneral->FindKey("ModifierNames");
+			if (pNames) {
+				for (int i = 0; i < 11; i++) {
+					sprintf(szBuf, g_105a5de0, i);
+					const char *pszName = pNames->GetString(szBuf, g_106b8540);
+					m_aiModifierName[i] = *sub_10203ed0(&iTemp, pszName);
+					m_anModifierNameLen[i] = strlen(pszName);
+				}
+			} else {
+				Msg("Unable to open TraitEffect data file for: %s\n", szBuf);
+			}
+			int nFiles = 0;
+			if (g_1070b238->vfunc22("vdata\\system\\TraitEffects*.txt", &hFind)) {
+				do {
+					nFiles++;
+				} while (g_1070b238->vfunc23(hFind));
+				g_1070b238->vfunc25(hFind);
+				if (nFiles > 0) {
+					for (int j = 0; j < nFiles; j++) {
+						sprintf(szList, "%sTraitEffects%03d.txt", "vdata\\system\\", j);
+						if (!sub_101f7db0(szList))
+							Msg("Unable to open Trait Effect List data file for: %s\n", szList);
+					}
+				}
+			}
+		}
+	} else {
+		Msg("Unable to load TraitEffect data for: %s\n", szBuf);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f81c0 size=0x9f
 #include <stdio.h>
 #include "FileSystemViews.h"
