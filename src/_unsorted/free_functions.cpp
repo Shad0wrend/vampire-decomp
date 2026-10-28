@@ -51200,6 +51200,55 @@ done:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10165790 size=0x1e2
+#include "CBasePlayer.h"
+#include "CEntityVSlots.h"
+#include "CTraceFilterSimpleTwoEnt.h"
+#include "CGameTrace.h"
+#include "Ray_t.h"
+#include "ScopeTrace.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738964.h"
+#include "QAngle.h"
+
+struct IHullBounds
+{
+	virtual void v0();
+	virtual const float *vfunc1();
+	virtual const float *vfunc2();
+};
+
+extern CUnknown1070b254 *g_1070b254;
+extern CUnknown10738964 *g_10738964;
+void sub_10139550(const QAngle &angles, Vector *forward);
+void sub_10146570(const float *pStart, const float *pEnd, int r, int g, int b, int c, float duration);
+
+int CBasePlayer::sub_10165790(CBaseEntity *pEntity)
+{
+	CEntityVSlots *pEnt = (CEntityVSlots *)pEntity;
+	Vector vecOrigin = *pEnt->slot220();
+	Vector vecForward;
+	sub_10139550(*(QAngle *)pEnt->slot221(), &vecForward);
+	Vector vecEnd = vecOrigin - vecForward * 100.0f;
+	CTraceFilterSimpleTwoEnt filter(this, pEntity, 0);
+	IHullBounds *pBounds = (IHullBounds *)((char *)pEntity + 0x270);
+	const float *pMins = pBounds->vfunc1();
+	const float *pMaxs = pBounds->vfunc2();
+	CGameTrace trace;
+	{
+		ScopeTrace scope("UTIL_TraceHull", g_106b8540);
+		Ray_t ray;
+		ray.sub_1006dec0(vecOrigin, (const float *)&vecEnd, pMins, pMaxs, 1, 0);
+		g_1070b254->vfunc4(&ray, 0x202400b, (CTraceFilterNoCharacterCollide *)&filter, &trace);
+		if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+			sub_10146570(trace.m_startpos, trace.m_endpos, 255, 255, 0, 1, -1.0f);
+	}
+	if (trace.m_fraction < 1.0f || trace.m_allsolid || trace.m_startsolid)
+		return 1;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101664d0 size=0x13
 struct CVirtSlots94 {
     virtual void vfunc0();

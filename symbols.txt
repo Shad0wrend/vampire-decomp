@@ -7680,6 +7680,7 @@
 0x10013e0d func   ?sub_1010b470@CFire@@QAEXXZ CFire::sub_1010b470
 0x10013e12 func   ?Base@?$CUtlMemory@H@@QAEPAHXZ CUtlMemory<int>::Base
 0x10013e17 func   ?sub_10192a30@@YAPAHXZ sub_10192a30
+0x10013e1c func   ?sub_10165790@CBasePlayer@@QAEHPAVCBaseEntity@@@Z CBasePlayer::sub_10165790
 0x10013e21 func   ?vfunc173@CLight@@QAEXHHHH@Z CLight::vfunc173
 0x10013e26 func   ?vfunc5@CItemGKeyring@@QAEPAV1@I@Z CItemGKeyring::vfunc5
 0x10013e30 func   ?sub_104114d0@@YA_NPAVCBaseEntity@@PAX@Z sub_104114d0
