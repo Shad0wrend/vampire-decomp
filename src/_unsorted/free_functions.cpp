@@ -115713,6 +115713,20 @@ bool CUtlRBTree16::sub_10315080(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x10315790 size=0x45
+struct Node { Node *next; const char *name; };
+extern Node *g_10936c68;
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+Node *sub_10315790(const char *name)
+{
+    for (Node *p = g_10936c68; p; p = p->next) {
+        if (!_strcmpi(name ? name : "", p->name ? p->name : ""))
+            return p;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10315800 size=0xb7
 #include "CBaseEntity.h"
 #include "CUnknown103164c0.h"
