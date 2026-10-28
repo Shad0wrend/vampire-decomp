@@ -98373,6 +98373,52 @@ void CAI_BaseNPCTroika::sub_10297940(const float *pPosition)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10297a20 size=0x1bb
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_Motor.h"
+
+void CAI_BaseNPCTroika::sub_10297a20()
+{
+	float flDelta = (*(CAI_Motor **)((char *)this + 0x5d44))->sub_102e1f90();
+	if (flDelta < -140.0f || flDelta > 140.0f) {
+		if (sub_10295460(0x10ff, 0) != -1) {
+			*(int *)((char *)this + 0x63e4) = 8;
+			unsigned short nTurn = (unsigned short)(int)((flDelta + 180.0f) * 182.04445f);
+			*(float *)((char *)this + 0x63e8) = (float)(int)nTurn * 0.005493164f;
+			sub_10272650(0x10ff);
+			return;
+		}
+	}
+	if (flDelta <= -40.0f) {
+		if (sub_10295460(0x10fd, 0) != -1) {
+			*(int *)((char *)this + 0x63e4) = 6;
+			unsigned short nTurn = (unsigned short)(int)((flDelta + 107.0f) * 182.04445f);
+			*(float *)((char *)this + 0x63e8) = (float)(int)nTurn * 0.005493164f;
+			sub_10272650(0x10fd);
+			return;
+		}
+	}
+	if (flDelta >= 40.0f) {
+		if (sub_10295460(0x10fa, 0) != -1) {
+			*(int *)((char *)this + 0x63e4) = 3;
+			unsigned short nTurn = (unsigned short)(int)((flDelta - 93.0f) * 182.04445f);
+			*(float *)((char *)this + 0x63e8) = (float)(int)nTurn * 0.005493164f;
+			sub_10272650(0x10fa);
+			return;
+		}
+	}
+	if (sub_10295460(0x10f8, 0) != -1) {
+		*(int *)((char *)this + 0x63e4) = 1;
+		*(float *)((char *)this + 0x63e8) = flDelta;
+		sub_10272650(0x10f8);
+		return;
+	}
+	*(float *)((char *)this + 0x63e8) = flDelta;
+	*(int *)((char *)this + 0x63e4) = 0;
+	sub_10272650(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10298910 size=0x9f
 extern "C" int atoi(const char *);
 

@@ -1263,6 +1263,7 @@
 0x100043a4 func   ?Grow@?$CUtlMemory@VCEntHandle@@@@QAEXH@Z CUtlMemory<CEntHandle>::Grow
 0x100043a4 func   ?sub_101e4a00@UtlMem4@@QAEXH@Z UtlMem4::sub_101e4a00
 0x100043a9 func   ?sub_101388e0@@YAXABVVector@@AAUmatrix3x4_t@@@Z sub_101388e0
+0x100043ae func   ?sub_10297a20@CAI_BaseNPCTroika@@QAEXXZ CAI_BaseNPCTroika::sub_10297a20
 0x100043b8 func   ?sub_1034a230@CUnknown1034a230@@QAEXXZ CUnknown1034a230::sub_1034a230
 0x100043bd func   ?sub_101cc810@@YIXPAPAX@Z sub_101cc810
 0x100043c2 func   ?sub_101993c0@@YAPAHPAXPAUPyObj@@@Z sub_101993c0
