@@ -1417,6 +1417,53 @@ bool CBaseEntity::vfunc140(CBaseEntity *pAttacker)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a8990 size=0x1d8
+#include "ScopeTrace.h"
+#include "CCollisionProperty.h"
+
+struct SHiddenEntityView	// the members the unhide path restores
+{
+	char m_pad0000[0xe4];
+	int m_pfnStoredThink;	// 0xe4
+	int m_nStoredSolid;	// 0xe8
+	int m_nStoredMoveType;	// 0xec
+	int m_nStoredMoveCollide;	// 0xf0
+	char m_bHidden;	// 0xf4
+	char m_pad00f5;
+	unsigned short m_nStoredSolidFlags;	// 0xf6
+	unsigned int m_nStoredEffects;	// 0xf8
+};
+
+static inline void SetSolid(CBaseEntity *pEntity, int nSolid)
+{
+	ScopeTrace trace("CBaseEntity::SetSolid", pEntity ? (pEntity->m_name26c ? pEntity->m_name26c : g_106b8540) : g_105387dc);
+	((CCollisionProperty *)((char *)pEntity + 0x270))->sub_100dc480(nSolid);
+}
+
+static inline void SetSolidFlags(CBaseEntity *pEntity, int nFlags)
+{
+	ScopeTrace trace("CBaseEntity::SetSolidFlags", pEntity ? (pEntity->m_name26c ? pEntity->m_name26c : g_106b8540) : g_105387dc);
+	((CCollisionProperty *)((char *)pEntity + 0x270))->sub_100dc580(nFlags);
+}
+
+void CBaseEntity::vfunc78()
+{
+	ScopeTrace trace("CBaseEntity::ScriptUnhide", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	SHiddenEntityView *p = (SHiddenEntityView *)this;
+	if (p->m_bHidden) {
+		sub_100ac4e0(p->m_pfnStoredThink, 0, 0);
+		m_flNextThink = gpGlobals->curtime;
+		SetSolid(this, p->m_nStoredSolid);
+		vfunc93(p->m_nStoredMoveType, p->m_nStoredMoveCollide);
+		SetSolidFlags(this, p->m_nStoredSolidFlags);
+		m_nEffectFlags = p->m_nStoredEffects;
+		sub_100b3b00();
+		sub_1009d1e0();
+		p->m_bHidden = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9800 size=0xc0
 #include "CBaseEntity.h"
 #include "CBCCSlotViews.h"
