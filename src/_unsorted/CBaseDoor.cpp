@@ -250,6 +250,29 @@ void CBaseDoor::vfunc246(int a, int* b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f0f50 size=0x1d8
+#include "CBaseDoor.h"
+#include "CBaseToggle.h"
+#include "CEHandleGet.h"
+
+extern int g_106eb3e8;
+
+void CBaseDoor::vfunc244(char bChain)
+{
+	if (bChain && EHandle_Get(m_hLinked630)) {
+		CBaseEntity *pOldActivator = (CBaseEntity *)EHandle_Get(*(unsigned int *)&((CBaseDoor *)EHandle_Get(m_hLinked630))->m_hActivator53c);
+		((CBaseDoor *)EHandle_Get(m_hLinked630))->m_hActivator53c = m_hActivator53c;
+		((CBaseDoor *)EHandle_Get(m_hLinked630))->vfunc244(0);
+		((CBaseDoor *)EHandle_Get(m_hLinked630))->m_hActivator53c = pOldActivator;
+	}
+	sub_100ee4e0(g_106eb3e8, 0);
+	m_nState4f8 = 3;
+	m_pfn0114 = (void (CBaseEntity::*)())&CBaseDoor::sub_100f11b0;
+	((CBaseToggle *)this)->sub_101c1520(&m_vecPosition508, m_flSpeed164);
+	m_items564[6].sub_100cd660(m_hActivator53c.Get(), this, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f1340 size=0x107
 #include "CEHandleGet.h"
 #include "ScopeTrace.h"
