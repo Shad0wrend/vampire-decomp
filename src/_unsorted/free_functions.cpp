@@ -109198,6 +109198,32 @@ float CUnknown102e0150::sub_102e0150(void *pEnemy)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e0210 size=0x58
+#include "CUnknown102e0150.h"
+#include "CAI_MemoryListSaveRestoreOps.h"
+#include "ehandle.h"
+struct CMemNodeView
+{
+	char m_pad0000[0x24];
+	EHANDLE m_hEnemy;	// 0x24
+	char m_pad0028[0x35 - 0x28];
+	char m_b35;	// 0x35
+	char m_pad0036[2];
+	CMemNodeView *m_pNext;	// 0x38
+};
+
+char CUnknown102e0150::sub_102e0210(int pEnemy)
+{
+	for (CMemNodeView *pNode = (CMemNodeView *)m_pHead; pNode; pNode = pNode->m_pNext)
+	{
+		CBaseEntity *pEnt = pNode->m_hEnemy.Get();
+		if (pEnt && pEnemy == (int)pEnt)
+			return pNode->m_b35;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e0290 size=0x173
 #include "CUnknown102e0150.h"
 #include "CBaseEntity.h"
