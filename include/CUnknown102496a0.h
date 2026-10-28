@@ -1,6 +1,9 @@
-// CUnknown102496a0: object initialised with a fixed 1/30 s interval; real name not yet known.
+// CUnknown102496a0: object initialised with a fixed 1/30 s interval; real name not yet known (Source's CSimplePhysics,
+// the fixed-timestep verlet integrator of the rope).
 // 0x18 bytes; its constructor is sub_102496a0 (stub 0x10013dcc).
 #pragma once
+
+#include "CBaseRopePhysics.h"
 
 class CUnknown102496a0
 {
@@ -8,6 +11,11 @@ public:
 	CUnknown102496a0();
 	CUnknown102496a0 *sub_102496a0();
 	void sub_10013403(float interval);
+	void sub_10249710(CRopeNode *pNodes, int nNodes, CBaseRopePhysics *pHelper, float dt, float flDamp);	// "CSimplePhysics::Simulate": advances the predicted time by dt, runs the missing fixed steps (verlet with the helper's forces and constraints), then interpolates every node's predicted position
 
-	char m_pad0000[0x18];
+	double m_flPredictedTime;	// 0x00
+	int m_iCurTimeStep;	// 0x08
+	float m_flTimeStep;	// 0x0c
+	float m_flTimeStepSq;	// 0x10
+	char m_pad0014[4];
 };
