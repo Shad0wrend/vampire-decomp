@@ -200,7 +200,12 @@ public:
 	bool sub_103395f0();	// "CBaseCombatCharacter::CanFeed": scope trace (entity name); needs sub_10337f30, then true without a live target (handle +0x149c), else true when the target's stat list 0 gives a non-zero bounded stat 12 and the target's slot 158 holds
 	char m_pad148c[0x149c - 0x148c];
 	EHANDLE m_h149c;	// 0x149c: the feeding target
-	char m_pad14a0[0x1568 - 0x14a0];
+	char m_pad14a0[0x14d8 - 0x14a0];
+	unsigned int m_nObfuscateMask14d8;	// 0x14d8: the obfuscate bits (one per level) the character has
+	char m_bObfuscateReady14dc;	// 0x14dc
+	char m_pad14dd[3];
+	float m_flObfuscateTime14e0;	// 0x14e0
+	char m_pad14e4[0x1568 - 0x14e4];
 	int m_field1568;	// 0x1568
 	char m_pad156c[0x1574 - 0x156c];
 	int m_field1574;
