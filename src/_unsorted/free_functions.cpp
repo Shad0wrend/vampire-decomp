@@ -41450,6 +41450,18 @@ void CFire::sub_1010b470()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010b530 size=0x4b
+#include "CFire.h"
+void CFire::sub_1010b530(float flTime)
+{
+	void (CFire::*pfn)() = &CFire::sub_1010b470;
+	sub_1010b7d0(0, *(int *)&flTime);
+	sub_100ac4e0(*(int *)&pfn, 0, 0);
+	*(float *)((char *)this + 0x48c) = flTime + gpGlobals->curtime;
+	m_flNextThink = gpGlobals->curtime + 0.1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010b5c0 size=0x193
 #include "CBaseEntity.h"
 #include "CFire.h"
