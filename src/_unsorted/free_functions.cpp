@@ -31265,6 +31265,74 @@ void CEventQueue::sub_100cf080()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cf420 size=0x1e0
+#include "CEventQueue.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CVStatList_t.h"
+
+struct EQBlock
+{
+	int a, b, c, d;
+	EQBlock *sub_10230ed0();
+	void sub_10230f90(const void *pSrc);
+	const char *sub_102043a0();
+};
+struct EQCharacter : CEntityVSlots
+{
+	char m_pad[0x10d8 - 4];
+	int m_n10d8;
+	char m_pad2[0x13a8 - 0x10dc];
+	CVStatListSet m_Set;
+};
+extern void (*g_109f364c)(const char *, ...);
+const char *__fastcall sub_100ab4f0(void *p);
+void sub_10230910(EQBlock *p, void *pChar, int a, int b);
+
+void CEventQueue::sub_100cf420(CBaseEntity *pPlayer)
+{
+	CEventQueue *pQueue = this;
+	EHANDLE hPlayer = pPlayer;
+	CEQEvent *pEvent = m_pHead;
+	if (pEvent && pPlayer) {
+		EQCharacter *pChar = *(EQCharacter **)((char *)pPlayer + 0x9c);
+		if (pChar) {
+			CVStatList_t *pList = pChar->m_Set.Find(3);
+			pChar->m_n10d8 = pList->sub_102012d0(0xb);
+			do {
+				if (pEvent->m_n34 == 2 && *(int *)pEvent->m_block40 == 3) {
+					CBaseEntity *pWanted = hPlayer.Get();
+					CBaseEntity *pTarget = ((EHANDLE *)&pEvent->m_hTarget)->Get();
+					if (pTarget == pWanted) {
+						EQBlock block;
+						block.sub_10230ed0();
+						block.sub_10230f90(pEvent->m_block40);
+						if (!pChar->slot296(block.b)) {
+							sub_10230910(&block, pChar, pEvent->m_n30 == 4 ? pEvent->m_n20 : 0, 0);
+							CEQEvent *pPrev = (CEQEvent *)pQueue;
+							do {
+								if (pPrev->m_pNext == pEvent) {
+									pPrev->m_pNext = pEvent->m_pNext;
+									delete pEvent;
+									break;
+								}
+								pPrev = pPrev->m_pNext;
+							} while (pPrev);
+							pEvent = pQueue->m_pHead;
+							continue;
+						} else {
+							g_109f364c("%s cannot remove discipline: %s\n", sub_100ab4f0(pChar), block.sub_102043a0());
+						}
+					}
+				}
+				pEvent = pEvent->m_pNext;
+			} while (pEvent);
+			pChar->m_n10d8 = -1;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cf680 size=0xa
 namespace lifted {
 extern char g_106e7050;
