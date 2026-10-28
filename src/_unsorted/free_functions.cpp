@@ -27662,6 +27662,47 @@ void CBitString::sub_100bf5b0(int numDwords)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c01d0 size=0x1c5
+#include "CFuncRotating.h"
+#include "CPASAttenuationFilter.h"
+#include "ScopeTrace.h"
+#include "engineserver.h"
+#include "engineiface.h"
+#include <math.h>
+
+#define RV1(n) virtual void v##n();
+#define RV10(p) RV1(p##0) RV1(p##1) RV1(p##2) RV1(p##3) RV1(p##4) RV1(p##5) RV1(p##6) RV1(p##7) RV1(p##8) RV1(p##9)
+#define RV100(p) RV10(p##0) RV10(p##1) RV10(p##2) RV10(p##3) RV10(p##4) RV10(p##5) RV10(p##6) RV10(p##7) RV10(p##8) RV10(p##9)
+
+struct CFuncRotatingSlots
+{
+	RV100(a) RV100(b) RV10(c) RV1(d0) RV1(d1) RV1(d2) RV1(d3) RV1(d4) RV1(d5) RV1(d6)
+	virtual float *vfunc217();
+};
+
+extern float g_104454c4;
+
+void CFuncRotating::sub_100c01d0()
+{
+	float fpct = fabs(m_flSpeed164) / m_f460;
+	float fvol = (fpct * m_flVolume > 1.0f) ? 1.0f : ((fpct * m_flVolume < g_104454c4) ? 0.0f : fpct * m_flVolume);
+	float fpitch = 30.0f + 70.0f * fpct;
+	fpitch = (fpitch > 255.0f) ? 255.0f : ((fpitch < g_104454c4) ? g_104454c4 : fpitch);
+	int pitch = (int)fpitch;
+	if (pitch == 100)
+		pitch = 99;
+	const char *pszNoise = m_pszNoiseRunning ? m_pszNoiseRunning : g_106b8540;
+	if (*pszNoise) {
+		float flAtten = m_flAttenuation;
+		CPASAttenuationFilter filter(*(Vector *)((CFuncRotatingSlots *)this)->vfunc217(), flAtten);
+		filter.MakeReliable();
+		const char *pszName = m_pszNoiseRunning ? m_pszNoiseRunning : g_106b8540;
+		int nIndex = engine->vfunc35(m_pEdict2e0);
+		enginesound->vfunc3(&filter, nIndex, 6, pszName, fvol, m_flAttenuation, 3, pitch, 0, 0, 1, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c0690 size=0x9a
 #include "CFloatPair3f4.h"
 #include <math.h>
