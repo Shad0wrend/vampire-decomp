@@ -31,6 +31,18 @@ public:
 	int m_nState5cc0;	// +0x5cc0
 	char m_pad5cc4[0x628c - 0x5cc4];
 	unsigned int m_h628c;	// +0x628c: entity handle
+	char m_pad6290[0x6348 - 0x6290];
+	int m_n6348;	// +0x6348: thresholds the player's stats (sub_1017de60 / sub_1017ddd0 / sub_1017dd80) are held against
+	int m_n634c;
+	int m_n6350;
+	int m_n6354;
+	int m_n6358;
+	char m_pad635c[0x6660 - 0x635c];
+	char m_b6660;	// +0x6660
+	void vfunc453();	// slot 453 (plain member): the base work, then by state (+0x5cc0): 1 sets condition 0x27 and goes on as state 3; 3 sets conditions 0x1e..0x22 when the player behind the handle at +0x628c reaches a threshold, else clears 0x6f; 0xb sets conditions 0x5a / 0x6f when it does (or when the byte at +0x6660 is set), else clears them
+	void sub_10280fb0();	// CAI_BaseNPC::vfunc453 (stub 0x1000611d), called directly
+	void sub_10269eb0(int condition);	// SetCondition (stub 0x100123f5), called directly
+	void sub_10269f30(int condition);	// ClearCondition (stub 0x1000c39c), called directly
 public:
     virtual datamap_t * vfunc82();
 };
