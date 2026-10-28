@@ -27,6 +27,7 @@ struct CAI_PathfinderOverlay
 };
 
 struct CAI_PathfinderLink;
+struct CPairFields102dda40;
 
 // A node of the AI network as the pathfinder reads it.
 struct CAI_PathfinderNode
