@@ -24,3 +24,25 @@ void CUnknown103830e0::sub_103830e0()
 	((CBaseAnimating *)this)->sub_1008d6d0(1);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10383170 size=0x34
+extern char g_1063f48c[];
+
+struct CMingXiaoView {
+    char pad0[0x1b30];
+    const char *m_psz1b30;
+    int m_n1b34;
+    void sub_10013cf5(int a, int b, int c);
+    void sub_1000198d(int a, int b);
+    void sub_10383170(int unused);
+};
+
+// TARGET: CMingXiaoView::sub_10383170
+void CMingXiaoView::sub_10383170(int unused)
+{
+    sub_10013cf5(1, 1, 10);
+    m_psz1b30 = g_1063f48c;
+    m_n1b34 = 0x99e;
+    sub_1000198d(0x170, 0);
+}
+// END FUNCTION
