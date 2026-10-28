@@ -34,5 +34,6 @@ public:
 	float sub_101e8ab0();	// a zombie tuning distance (stub 0x10014bf0): the upper bound of that range
 	int sub_101e8b30();	// a zombie tuning percentage (stub 0x100136e7): the chance the zombie lunges (rolled against 0..99)
 	float sub_101e8c10();	// a zombie tuning delay (stub 0x1000f85d): seconds until the zombie may lunge again
+	int sub_101e9170(CBaseCombatCharacter *pChar, int a, int b);	// the cost scaled by the character's stat 0x20 (stub 0x1000b55a), see CUnknown101e9170
 	int sub_101e9000();	// a tuning value as an int (stub 0x1000d008): scales the damage-to-time ratio in CAI_BaseNPC::sub_10182a90
 };
