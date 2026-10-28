@@ -32506,6 +32506,23 @@ void sub_100d56b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d5ae0 size=0x48
+#include "engineserver.h"
+#include "CBaseCombatCharacter.h"
+void *sub_101193b0(...);
+void *sub_100db920(...);
+
+void sub_100d5ae0()
+{
+	char *pPlayer = (char *)sub_101193b0();
+	if (pPlayer && *(int *)(pPlayer + 0xa8)) {
+		char *pOther = (char *)sub_100db920(sub_101193b0(engine->vfunc84(1)));
+		if (pOther && *(CBaseCombatCharacter **)(pOther + 0x9c))
+			(*(CBaseCombatCharacter **)(pOther + 0x9c))->sub_10336170();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d5be0 size=0x77
 #include "CEntityVSlots.h"
 extern "C" int __cdecl atoi(const char *);
