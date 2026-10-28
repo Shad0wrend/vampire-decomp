@@ -55,7 +55,11 @@ public:
 
 	char m_pad0004[0x164 - 4];
 	float m_flSpeed;	// 0x164
-	char m_pad0168[0x4a4 - 0x168];
+	char m_pad0168[0x224 - 0x168];
+	unsigned char m_bDebugOverlays224;	// 0x224: bit 0 = text overlay
+	char m_pad0225[0x2e0 - 0x225];
+	int m_pEdict2e0;	// 0x2e0
+	char m_pad02e4[0x4a4 - 0x2e4];
 	COutputEvent m_Output4a4;	// 0x4a4
 	COutputEvent m_Output4bc;	// 0x4bc
 	char m_pad04d4[0x508 - 0x4d4];
