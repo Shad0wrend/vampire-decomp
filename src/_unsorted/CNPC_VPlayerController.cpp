@@ -49,6 +49,45 @@ int CNPC_VPlayerController::vfunc404(void *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a4950 size=0x4c
+#include "CNPC_VPlayerController.h"
+
+struct CPlayerCtrlEnt
+{
+	const char *sub_1000b5cd();	// GetDebugName (stub 0x1000b5cd)
+};
+
+struct CPlayerCtrlPlayer
+{
+	void sub_1000fa33(int a, float f, const char *pszText);	// stub 0x1000fa33
+};
+
+struct CPlayerCtrlOwner
+{
+	char m_pad00[0xa8];
+	CPlayerCtrlPlayer *m_pPlayer;	// 0xa8
+};
+
+const char *sub_100067f3(const char *pszFormat, ...);	// stub of 0x101d3730, __cdecl
+
+// TARGET: CNPC_VPlayerController::vfunc300
+void CNPC_VPlayerController::vfunc300(CPlayerCtrlEnt *pEnt, int b, int c)
+{
+	CPlayerCtrlOwner *pOwner = ((CPlayerCtrlOwner *(__fastcall *)(CNPC_VPlayerController *))(*(void ***)this)[97])(this);
+	if (!pOwner)
+		return;
+	CPlayerCtrlPlayer *pPlayer = pOwner->m_pPlayer;
+	if (pPlayer) {
+		const char *pszName;
+		if (pEnt)
+			pszName = pEnt->sub_1000b5cd();
+		else
+			pszName = "UNKNOWN";
+		pPlayer->sub_1000fa33(4, -1.0f, sub_100067f3("CNPC_VPlayerController::Event_TookLife %s", pszName));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a49c0 size=0x71
 #include "CNPC_VPlayerController.h"
 
