@@ -162,5 +162,6 @@ public:
 	char sub_10256220();	// provisional, like vfunc304 (transplant)
 	char sub_10256250();	// provisional, like vfunc304 (transplant)
 	char sub_10257200();	// provisional, like vfunc304 (transplant)
+	void sub_10258620(int a);	// stub 0x1000519b
 	char sub_10256200();	// stub 0x1000911a: asked by CBasePlayer::vfunc457 of the weapon it picks up
 };
