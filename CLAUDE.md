@@ -338,3 +338,18 @@ vfunc65 UserMessageBegin(filter, type) / vfunc66 MessageEnd / vfunc67-72, 78 mes
 vfunc85 Cmd_Argc. Write `engine->vfunc84(1)`, not `extern SomeView *g_1070b22c;` with a struct of your own, and do
 not include CUnknown1070b22c.h or IVEngineServer.h in new code. A slot still declared `void vfuncN()`: give it its
 type in engineserver.h with edit_context (it lives in `namespace EngineGlobals`).
+
+## Sound system and random stream (enginesound, enginerandom): use engineiface.h
+
+`include/engineiface.h` (in the prelude) declares the engine's sound system at g_1070b248 as `enginesound` and its
+random stream at g_1070b244 as `enginerandom`. Slot N sits at +N*4 of the vtable:
+- `enginerandom->vfunc1(lo, hi)` is RandomFloat;
+- `enginerandom->vfunc2(lo, hi)` is RandomInt;
+- `enginesound->vfunc0(name, preload)` is PrecacheSound;
+- `vfunc2` and `vfunc3` are the two EmitSound forms;
+- `vfunc4` is EmitSentenceByIndex;
+- `vfunc7` is StopSound.
+
+Write `enginerandom->vfunc2(0, 3)`, not `extern SomeView *g_1070b244;` with a struct of your own, and do not include
+CUnknown1070b244.h or CUnknown1070b248.h in new code. A slot still declared `void vfuncN()`: give it its type in
+engineiface.h with edit_context (it lives in `namespace EngineGlobals`).
