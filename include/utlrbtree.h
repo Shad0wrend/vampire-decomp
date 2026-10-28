@@ -708,12 +708,15 @@ inline bool CUtlRBTree<T, I>::Remove(T const &search)
 template <class T, class I>
 inline void CUtlRBTree<T, I>::RemoveAll()
 {
-	// put every node on the free list, in order
+	// destruct every node in the tree, in order, then put every node on the free list
+	I node = FirstInorder();
+	while (node != InvalidIndex()) {
+		Destruct(&Element(node));
+		node = NextInorder(node);
+	}
 	I prev = InvalidIndex();
 	for (int i = (int)m_TotalElements; --i >= 0; ) {
 		I idx = (I)i;
-		if (IsValidIndex(idx))
-			Destruct(&Element(idx));
 		SetRightChild(idx, prev);
 		SetLeftChild(idx, idx);
 		prev = idx;
