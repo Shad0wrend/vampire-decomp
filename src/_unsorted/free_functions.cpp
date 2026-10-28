@@ -29773,6 +29773,21 @@ float sub_100c7a10(SObj *p, SObj *q, float t)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c7b70 size=0x49
+int sub_100c7560(int a, char *b, char **c);
+
+int sub_100c7b70(int a, char *pHdr, int x, int y)
+{
+	char *pRec = (char *)sub_100c7560(a, pHdr, &pHdr);
+	if (!pRec)
+		return 0;
+	char *p = pHdr + *(int *)(pHdr + 0x10c) + *(short *)(pRec + 0x38 + (x * 16 + y) * 2) * 0x48;
+	if (!p)
+		return 0;
+	return *(int *)(p + 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c81b0 size=0x8e
 #include "CUnknown100c81b0.h"
 
