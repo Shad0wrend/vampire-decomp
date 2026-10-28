@@ -123,7 +123,8 @@ public:
 	CNPC_VWerewolfHint66b0 *m_pHint66b0;	// 0x66b0
 	char pad66b4[0x66bc - 0x66b4];
 	CNPC_VWerewolfHint66b0 *m_pHint66bc;	// 0x66bc: the move hint
-	char pad66c0[0x66c8 - 0x66c0];
+	char pad66c0[4];
+	CNPC_VWerewolfHint66b0 *m_pHint66c4;	// 0x66c4: the break hint
 	char m_b66c8;	// 0x66c8
 	char pad66c9[0x66cc - 0x66c9];
 	float m_f66cc;	// 0x66cc
