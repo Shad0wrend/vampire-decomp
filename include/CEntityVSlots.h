@@ -106,7 +106,8 @@ public:
 	EVS(245) EVS(246) EVS(247) EVS(248) EVS(249)
 	EVS(250)
 	virtual char slot251();	// NPC: a boolean answer in al
-	EVS(252) EVS(253) EVS(254) EVS(255) EVS(256) EVS(257) EVS(258)
+	EVS(252) EVS(253) EVS(254) EVS(255) virtual void slot256(int bone, float *pMatrix);	// animating: the bone's 3x4 matrix
+	EVS(257) EVS(258)
 	virtual void slot259(void *pEvent);	// "HandleAnimEvent"
 	virtual void slot260(int index, float value);	// "SetPoseParameter" by index
 	virtual float slot261(const char *pszName, float flValue);	// "SetPoseParameter" by name (the animating entity's slot; the float result is left on the FPU stack)
