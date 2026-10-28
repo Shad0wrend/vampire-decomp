@@ -20,7 +20,7 @@ struct MovedEntity_t
 struct PusherInfo_t
 {
 	CBaseEntity *m_pEntity;	// 0x00
-	float m_vecStartAbsOrigin[3];	// 0x04
+	Vector m_vecStartAbsOrigin;	// 0x04
 };
 
 struct CPusherVec
