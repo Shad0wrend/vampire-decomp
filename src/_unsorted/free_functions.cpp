@@ -122973,6 +122973,15 @@ void CNPC_VAndreiBlood::sub_1035e5f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035e950 size=0x1a
+#include "CNPC_VAndreiBlood.h"
+
+void CNPC_VAndreiBlood::sub_1035e950()
+{
+	m_n66dc = enginerandom->vfunc2(2, 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035eaa0 size=0x43
 #include "CNPC_VAnimal.h"
 void *sub_100aa720(int size);
