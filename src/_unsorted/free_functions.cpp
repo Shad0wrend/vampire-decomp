@@ -84724,6 +84724,33 @@ void CUnknown1021e750::sub_1021e750(int key, CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021e7e0 size=0x67
+#include "CBaseEntity.h"
+#include "CUnknown101ecae0.h"
+#include "CUnknown101ecb10.h"
+
+extern CUnknown101ecae0 g_1073a354;
+
+struct RecordX { char pad[0x18]; int m_field18; };
+struct TableX { RecordX *sub_10009f66(int key); };
+struct SinkX { void sub_1000914c(CBaseEntity *pEnt, int value); };
+extern TableX g_1073a28c;
+extern SinkX g_1074df78;
+
+struct CUnknown1021e7e0 {
+	void sub_1021e7e0(int key, CBaseEntity *pEnt);
+};
+
+void CUnknown1021e7e0::sub_1021e7e0(int key, CBaseEntity *pEnt)
+{
+	int edict1 = pEnt->m_pEdict2e0;
+	g_1073a354.sub_101ecae0(engine->vfunc35(edict1));
+	g_1074df78.sub_1000914c(pEnt, g_1073a28c.sub_10009f66(key)->m_field18);
+	int edict = pEnt->m_pEdict2e0;
+	((CUnknown101ecb10 *)&g_1073a354)->sub_101ecb10(engine->vfunc35(edict));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021e8e0 size=0xa2
 #include <string.h>
 #include "CUnknown1021e8e0.h"
