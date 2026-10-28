@@ -51873,6 +51873,18 @@ bool CBaseCombatCharacter::sub_101671a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10167240 size=0x63
+char CBaseCombatCharacter::sub_10167240()
+{
+	if (sub_10146a80())
+		return 1;
+	if (m_hTarget1538.Get() && m_nTarget153c != -1 && m_nTargetMode1540 == 3)
+		return 1;
+	unsigned char b = sub_100b3700();
+	return (b & 2) == 2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101672d0 size=0x3a
 #include "CUnknown101800e0.h"
 
