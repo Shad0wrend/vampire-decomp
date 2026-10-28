@@ -102,6 +102,7 @@ public:
 	void vfunc213(const float *size);	// "CBaseEntity::SetSize": scope trace, copies the three floats to +0x38c
 	float *vfunc214();	// "CBaseEntity::GetSize": returns &field at +0x38c
 	float *vfunc217();	// "CBaseEntity::GetAbsOrigin": scope trace (entity name), calls slot 98 when bit 11 of +0x268 is set, returns &field at +0x404
+	void vfunc218(const float *absAngles);	// "CBaseEntity::SetAbsAngles": scope trace (entity name), CalcAbsolutePosition (slot 98), InvalidatePhysicsRecursive(0x800, 0x3000), clears the dirty transform flag (bit 11 of +0x268), stores the angles at +0x410, rebuilds the coordinate frame (+0x130) from them and the origin (+0x404), and stores the angles relative to the move parent (handle +0x25c) in +0x428 (flagging the network state change at +0x1b1) when they changed
 	float *vfunc219();	// "CBaseEntity::GetAbsAngles": scope trace (entity name), calls slot 98 when bit 11 of +0x268 is set, returns &field at +0x410
 	float *vfunc220();	// "CBaseEntity::GetOrigin": returns &field at +0x41c
 	float *vfunc221();	// "CBaseEntity::GetAngles": returns &field at +0x428
