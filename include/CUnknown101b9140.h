@@ -9,7 +9,7 @@ struct CUnknown101b9140Elem
 	int m_d;
 };
 
-class CUnknown101b9140 : public CMem8_t
+class CUnknown101b9140 : public CUnknown101b6630
 {
 public:
 	int m_Size;	// 0x0c
