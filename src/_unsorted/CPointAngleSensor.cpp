@@ -12,6 +12,23 @@ datamap_t * CPointAngleSensor::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018cd60 size=0x4e
+#include "CPointAngleSensor.h"
+#include <string.h>
+#include <stdlib.h>
+#include <math.h>
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern const float g_1044eb08;
+bool CPointAngleSensor::vfunc110(const char *szKeyName, const char *szValue)
+{
+    if (!_strcmpi(szKeyName, "tolerance")) {
+        m_flDotTolerance = cos(atof(szValue) * g_1044eb08);
+        return true;
+    }
+    return CBaseEntity::sub_1009e430(szKeyName, szValue);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018cdf0 size=0xe2
 #include "CPointAngleSensor.h"
 

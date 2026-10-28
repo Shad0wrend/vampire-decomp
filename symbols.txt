@@ -3899,6 +3899,7 @@
 0x1000a8f8 func   ?vfunc103@CLogicCaseToggle@@QAEXXZ CLogicCaseToggle::vfunc103
 0x1000a902 func   ?sub_10403a60@@YAHXZ sub_10403a60
 0x1000a907 func   ?sub_100b0720@@YAXXZ sub_100b0720
+0x1000a911 func   ?vfunc110@CPointAngleSensor@@UAE_NPBD0@Z CPointAngleSensor::vfunc110
 0x1000a92a func   ?sub_10297430@CAI_BaseNPCTroika@@QAE_NPAV1@@Z CAI_BaseNPCTroika::sub_10297430
 0x1000a934 func   ?vfunc103@CScriptedTarget@@UAEXXZ CScriptedTarget::vfunc103
 0x1000a943 func   ?vfunc5@CItemGGarysCD@@QAEPAV1@I@Z CItemGGarysCD::vfunc5
