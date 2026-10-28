@@ -89,7 +89,7 @@ public:
 	virtual void vfunc310(float time);	// "SetNextAttack"-like: stores time at +0x894 of this weapon (just this one without an owner), of the owner's active weapon and of the weapon behind the owner's handle at +0x1c64
 	virtual float vfunc311();	// the weapon's next-attack time (as read by sub_10254b00)
 	virtual char vfunc312();	// asked by sub_10253b70 (whether the weapon may be used)
-	CBCW_V(313) CBCW_V(314)
+	virtual char vfunc313(); CBCW_V(314)
 	virtual bool vfunc315();
 	virtual char vfunc316(int a);	// slot 316: clears the byte at +0x898, slot 307(0xde) when a is set, arms the owner's timer at +0x1564 (curtime + the active weapon's sequence duration) and starts slot 333 with 0x12 (owner AI object) or 0x13
 	CBCW_V(317) CBCW_V(318) CBCW_V(319)
