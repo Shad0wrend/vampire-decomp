@@ -4,6 +4,7 @@
 #include "CRestore.h"
 
 struct SaveRestoreFieldInfo_t;
+class CSave;
 
 // A node of the AI memory list: the entity handle at +0x24, the next node at +0x38.
 struct CAI_MemoryNode
