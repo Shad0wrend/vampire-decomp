@@ -1505,6 +1505,7 @@
 0x10004d4f func   ?vfunc113@CPointAngleSensor@@UAEXXZ CPointAngleSensor::vfunc113
 0x10004d59 func   ?sub_100db0b0@@YAXXZ sub_100db0b0
 0x10004d5e func   ?vfunc144@CNPC_VHengeyokai@@QAEXH@Z CNPC_VHengeyokai::vfunc144
+0x10004d68 func   ?vfunc298@CGargoyleTalisman@@QAEXHH@Z CGargoyleTalisman::vfunc298
 0x10004d86 func   ?sub_10032d20@UtlVec32@@QAEXHH@Z UtlVec32::sub_10032d20
 0x10004d8b func   ?vfunc2@CPyObjStrSaveRestoreDataOps@@UAEHPAPAPAX@Z CPyObjStrSaveRestoreDataOps::vfunc2
 0x10004d90 func   ?sub_1022c180@@YIHPADHH@Z sub_1022c180
