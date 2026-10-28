@@ -51323,6 +51323,19 @@ char __stdcall sub_101611e0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101613b0 size=0x51
+#include "CBasePlayerUnit326.h"
+struct CBasePlayerUnit326View { char pad[0xff0]; int m_nState; };
+char CBasePlayerUnit326::sub_101613b0()
+{
+    switch (((CBasePlayerUnit326View *)this)->m_nState) {
+    case 0x28: case 0x29: case 0x2a: case 0x2c: case 0x2f: case 0x4c:
+        return 1;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101618a0 size=0x2d
 #include "CBasePlayer.h"
 
