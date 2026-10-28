@@ -14237,6 +14237,53 @@ int CUnknown10076710::sub_10076710()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10076730 size=0x1e0
+#include <string.h>
+
+int sub_10076730(const char *pszName)
+{
+	if (!_strcmpi(pszName, "section"))
+		return 1;
+	if (!_strcmpi(pszName, "expression"))
+		return 2;
+	if (!_strcmpi(pszName, "speak"))
+		return 5;
+	if (!_strcmpi(pszName, "lookat"))
+		return 3;
+	if (!_strcmpi(pszName, "moveto"))
+		return 4;
+	if (!_strcmpi(pszName, "gesture"))
+		return 6;
+	if (!_strcmpi(pszName, "face"))
+		return 8;
+	if (!_strcmpi(pszName, "firetrigger"))
+		return 9;
+	if (!_strcmpi(pszName, "sequence"))
+		return 7;
+	if (!_strcmpi(pszName, "flexanimation"))
+		return 10;
+	if (!_strcmpi(pszName, "subscene"))
+		return 11;
+	if (!_strcmpi(pszName, "loop"))
+		return 12;
+	if (!_strcmpi(pszName, "silence"))
+		return 13;
+	if (!_strcmpi(pszName, "loud"))
+		return 14;
+	if (!_strcmpi(pszName, "python"))
+		return 15;
+	if (!_strcmpi(pszName, "cameramove"))
+		return 16;
+	if (!_strcmpi(pszName, "camerashot"))
+		return 17;
+	if (!_strcmpi(pszName, "camerarestore"))
+		return 18;
+	if (!_strcmpi(pszName, "bodysound"))
+		return 19;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10076990 size=0xd8
 // TARGET: sub_10076990
 const char *sub_10076990(int type)
