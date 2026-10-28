@@ -128921,6 +128921,44 @@ void *CNPC_VWerewolf::sub_103d7620(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d8300 size=0x1c9
+#include "CNPC_VWerewolf.h"
+#include "CAI_Hint.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+bool CNPC_VWerewolf::sub_103d8300(CAI_Hint *pHint)
+{
+	ScopeTrace trace("CNPC_VWerewolf::IsValidTeleportHint", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!pHint)
+		return false;
+	if ((m_nFlags66e8 & 4) == 4)
+		return false;
+	if (pHint->sub_102d14c0())
+		return false;
+	if (!((CEntityVSlots *)this)->slot566(pHint))
+		return false;
+	int nType = *(int *)((char *)pHint + 0x5dc);
+	if (nType == 0x3aa3)
+		return false;
+	if (nType == 0x3aa4)
+		return false;
+	if (nType == 0x3aa5)
+		return false;
+	if (nType == 0x3aa6)
+		return false;
+	if (nType == 0x3aa7)
+		return false;
+	if (nType == 0x3aa8)
+		return false;
+	if (*(int *)((char *)pHint + 0x470) == 1 && (m_nFlags66e8 & 0x40) == 0x40)
+		return false;
+	if (sub_103d6390(pHint)->sub_100b5190())
+		return false;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d8550 size=0xc1
 #include "CNPC_VWerewolf.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
