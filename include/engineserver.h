@@ -68,7 +68,7 @@ public:
 	virtual void vfunc83();
 	virtual const char *vfunc84(int index);	// Cmd_Argv
 	virtual int vfunc85();	// Cmd_Argc
-	virtual void vfunc86(); virtual void vfunc87(); virtual void vfunc88(); virtual void vfunc89(); virtual void vfunc90();
+	virtual void vfunc86(); virtual float vfunc87();	/* Time: the engine time in seconds (returned in ST0) */ virtual void vfunc88(); virtual void vfunc89(); virtual void vfunc90();
 	virtual void vfunc91(); virtual void vfunc92(); virtual void vfunc93(); virtual void vfunc94(); virtual void vfunc95();
 	virtual void vfunc96(); virtual void vfunc97();
 	virtual int vfunc98(int a, void *b);
