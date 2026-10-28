@@ -26,6 +26,7 @@ public:
 	int m_f18;
 
 	CUnknown101f0e50 *sub_101f0e50();	// zeroes the fields above and returns this
+	int sub_101f19c0(const char *pszName);	// the index of the entry named pszName, -1 when there is none (stub 0x10010861)
 	bool sub_101f18f0(int index);	// "IsValidIndex": index is not -1 and below the count at +0x4
 	bool sub_101f82d0(int index);	// provisional, like sub_101f18f0 (transplant)
 	bool sub_101f11f0(void *pData);	// parses one reaction category of the data file: its InternalName picks the entry of the pointer array (+0x8, count +0x4) and every ReactionGroup key is handed to that entry (sub_101f0bc0); false (with a Msg) for no data or a missing entry
