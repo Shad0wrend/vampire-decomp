@@ -1664,6 +1664,7 @@
 0x10005349 func   ?sub_10401cd0@@YAHXZ sub_10401cd0
 0x10005358 func   ??1CUnknown101b4680@@QAE@XZ CUnknown101b4680::~CUnknown101b4680
 0x10005367 func   ?vfunc5@CNPC_VStalker@@QAEPAV1@I@Z CNPC_VStalker::vfunc5
+0x1000536c func   ?vfunc390@CNPC_VSheriffMan@@QAEHPBX@Z CNPC_VSheriffMan::vfunc390
 0x10005371 func   ?sub_1019ee40@CRopeKeyframe@@QAE_NXZ CRopeKeyframe::sub_1019ee40
 0x1000537b func   ?vfunc265@CVampireProjectile@@UAE_NXZ CVampireProjectile::vfunc265
 0x10005385 func   ?sub_102116c0@CTriggerBombSite@@QAEXUCBombState@@@Z CTriggerBombSite::sub_102116c0

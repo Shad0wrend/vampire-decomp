@@ -258,3 +258,55 @@ int CNPC_VSheriffMan::vfunc440(int a)
 	return r;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103b0e90 size=0x1d7
+#include "CNPC_VSheriffMan.h"
+#include "ScopeTrace.h"
+#include "CVDmg_t.h"
+#include "CVStatList_t.h"
+
+class SBossGlobalView
+{
+public:
+	virtual void v0();
+	virtual void vfunc1();
+};
+extern SBossGlobalView *g_10924a6c;
+
+struct SDamageInfoView	// the 0x4c byte damage record
+{
+	CVDmg_t *m_pVDmg;	// 0x00
+	char m_pad0004[0x30 - 4];
+	float m_flDamage;	// 0x30
+	char m_pad0034[0x4c - 0x34];
+};
+
+int CNPC_VSheriffMan::vfunc390(const void *pInfo)
+{
+	ScopeTrace trace("CNPC_VSheriffMan::OnTakeDamage_Alive", g_106b8540);
+	SDamageInfoView info = *(const SDamageInfoView *)pInfo;
+	float flDamage;
+	if (info.m_pVDmg)
+		flDamage = (float)info.m_pVDmg->sub_101faa70();
+	else
+		flDamage = info.m_flDamage;
+	int nMax = CVStatListSet::Of(this)->Find(0)->sub_102012d0(0x11);
+	int nCur = CVStatListSet::Of(this)->Find(0)->sub_102012d0(0xf);
+	if ((float)nCur + flDamage >= nMax) {
+		*(int *)((char *)this + 0x1fc) = 0;
+		g_10924a6c->vfunc1();
+		sub_10269a20(0x79);
+		m_b66e5 = 1;
+	} else {
+		if (!m_b66e4)
+			goto skip;
+	}
+	info.m_flDamage = 0;
+	if (info.m_pVDmg) {
+		*(int *)((char *)info.m_pVDmg + 4) = 0;
+		*(int *)((char *)info.m_pVDmg + 0xc) = 0;
+	}
+skip:
+	return sub_10385a50(&info);
+}
+// END FUNCTION
