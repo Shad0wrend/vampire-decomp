@@ -1996,6 +1996,22 @@ void CAI_BaseNPCTroika::vfunc333(float flInterval)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c04b0 size=0x4e
+#include "CEHandleGet.h"
+// TARGET: CAI_BaseNPCTroika::vfunc612
+int CAI_BaseNPCTroika::vfunc612()
+{
+	int r = 0x80;
+	CGlobalEntityList_Ent *pEnt = EHandle_Get(m_hfe8);
+	if (pEnt) {
+		r = 0x280;
+		if (!m_b654c)
+			r = 0x680;
+	}
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c0b60 size=0x3c
 #include "CEHandleGet.h"
 
