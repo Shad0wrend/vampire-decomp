@@ -61170,6 +61170,46 @@ int CUnknown101ad440::sub_101ad440(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aeb60 size=0x1d2
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+
+extern int g_1072bc10;
+__declspec(dllimport) void Warning(const char *, ...);
+int sub_101af070(const char *pszName);
+
+struct SPlayEdictUnknown
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual CEntitySoundOriginView *vfunc4();
+};
+
+struct SPlayEdict
+{
+	char m_pad0000[0x40];
+	SPlayEdictUnknown *m_pUnknown;
+};
+
+int sub_101aeb60(SPlayEdict *pEdict, const char *pszGroup, float flVolume, int iSoundlevel, int iFlags, int iPitch)
+{
+	if (g_1072bc10) {
+		char szName[64];
+		szName[0] = 0;
+		int nGroup = engine->vfunc55(pszGroup);
+		if (nGroup < 0) {
+			Warning("No such sentence group %s\n", pszGroup);
+		} else if (engine->vfunc51(nGroup, szName, sizeof(szName)) >= 0 && szName[0]) {
+			int iSentence = sub_101af070(szName);
+			CEntitySoundOriginView *pEntity = (pEdict && pEdict->m_pUnknown) ? pEdict->m_pUnknown->vfunc4() : 0;
+			CPASAttenuationFilter filter(pEntity, (soundlevel_t)iSoundlevel);
+			enginesound->vfunc4(&filter, engine->vfunc35((int)pEdict), 2, iSentence, flVolume, iSoundlevel, iFlags, iPitch, 0, 0, 1, 0);
+			return iSentence;
+		}
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101af030 size=0x26
 #include "CUnknown1070b22c.h"
 
