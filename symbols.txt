@@ -9878,6 +9878,7 @@
 0x109f3798 data   __imp__PyInt_FromLong _imp__PyInt_FromLong
 0x109f37a0 data   __imp__PyArg_ParseTuple _imp__PyArg_ParseTuple
 0x109f37b4 data   __imp__PyErr_SetString _imp__PyErr_SetString
+0x109f37b8 data   __imp__PyRun_ConsoleString _imp__PyRun_ConsoleString
 0x109f37c8 data   __imp__PyString_FromString _imp__PyString_FromString
 0x109f37d0 data   __imp_?PyString_Type@@3PADA _imp_?PyString_Type
 0x109f3870 data   __imp_?Q_strnicmp@@YAHPBD0H@Z _imp_?Q_strnicmp
