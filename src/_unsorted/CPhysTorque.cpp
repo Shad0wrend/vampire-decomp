@@ -1,6 +1,22 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10028260 size=0x5f
+#include "CPhysTorque.h"
+#include "CPointEntity.h"
+void sub_101cf680(Vector *, float);
+
+void CPhysTorque::sub_10028260()
+{
+	m_fFlags204 = (m_fFlags204 & ~2) | 0x14;
+	Vector *pOrigin = ((Vector *(__fastcall *)(CPhysTorque *))(*(void ***)this)[217])(this);
+	m_vecAxis -= *pOrigin;
+	VectorNormalize(m_vecAxis);
+	sub_101cf680(&m_vecAxis, 0.01f);
+	((CPointEntity *)this)->sub_101c0820();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10029b80 size=0x1e
 #include "CPhysTorque.h"
 

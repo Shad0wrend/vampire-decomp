@@ -3498,6 +3498,7 @@
 0x10009a66 func   ?sub_101dfb80@CUnknown101dfb80@@QAEXHPAVCBaseEntity@@H@Z CUnknown101dfb80::sub_101dfb80
 0x10009a75 func   ?sub_102a15c0@@YI_NPAUN@@@Z sub_102a15c0
 0x10009a7f func   ?sub_1004e910@CPhysBox@@QAEXH@Z CPhysBox::sub_1004e910
+0x10009a84 func   ?sub_10028260@CPhysTorque@@QAEXXZ CPhysTorque::sub_10028260
 0x10009a8e func   ?vfunc546@CNPC_VFrenzyShadow@@QAEHH@Z CNPC_VFrenzyShadow::vfunc546
 0x10009a98 func   ?sub_101d2460@@YAXPBMHHH@Z sub_101d2460
 0x10009aa2 func   ?sub_103708e0@CNPC_VCop@@QAEPAV1@XZ CNPC_VCop::sub_103708e0
