@@ -20579,6 +20579,41 @@ float CBaseAnimating::sub_100949e0(float flInterval)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10094b70 size=0x1c9
+#include "CBaseAnimating.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+extern float g_104454c4;
+void sub_100c5d10(void *pStudioHdr, int nSequence, float flCycleFrom, float flCycleTo, const float *pPoseParams, Vector *pDeltaPos, Vector *pDeltaAngles);
+void sub_1013a7e0(const Vector *pIn, float flYaw, Vector *pOut);
+
+float CBaseAnimating::sub_10094b70(float flInterval, char *pbLooped, float *pvecDelta, float *pvecAngles)
+{
+	ScopeTrace trace("CBaseAnimating::GetIntervalMovement", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	void *pStudioHdr = sub_100952d0(-1);
+	if (!pStudioHdr)
+		return g_104454c4;
+	flInterval = sub_10091230(*(int *)((char *)this + 0x6f0)) * *(float *)((char *)this + 0x6f4) * flInterval + *(float *)((char *)this + 0x6f8);
+	if (!*((char *)this + 0x65d) && flInterval > 1.0) {
+		flInterval = 1.0f;
+		*pbLooped = 1;
+	} else {
+		*pbLooped = 0;
+	}
+	Vector deltaPos;
+	Vector deltaAngles;
+	sub_100c5d10(pStudioHdr, *(int *)((char *)this + 0x6f0), *(float *)((char *)this + 0x6f8), flInterval, (float *)((char *)this + 0x690), &deltaPos, &deltaAngles);
+	sub_1013a7e0(&deltaPos, ((CEntityVSlots *)this)->slot221()->y, &deltaPos);
+	*(Vector *)pvecDelta = deltaPos + *((CEntityVSlots *)this)->slot220();
+	pvecAngles[0] = 0;
+	pvecAngles[1] = 0;
+	pvecAngles[2] = 0;
+	pvecAngles[1] = deltaAngles.y + ((CEntityVSlots *)this)->slot221()->y;
+	return FastSqrt(deltaPos.y * deltaPos.y + deltaPos.x * deltaPos.x + deltaPos.z * deltaPos.z);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10094dc0 size=0xb2
 #include "CBaseAnimating.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
