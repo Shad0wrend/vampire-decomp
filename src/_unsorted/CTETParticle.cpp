@@ -42,3 +42,14 @@ void CTETParticle::vfunc3(const float *pOrigin, const float *pAngles)
 	vfunc4((int)&filter, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x100695e0 size=0x39
+#include "CTETParticle.h"
+#include "IVEngineServerFull.h"
+
+
+void CTETParticle::vfunc4(int a, int b)
+{
+	engine->vfunc103(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
+}
+// END FUNCTION
