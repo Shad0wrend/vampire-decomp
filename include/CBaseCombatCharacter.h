@@ -210,7 +210,11 @@ public:
 	char m_bObfuscateReady14dc;	// 0x14dc
 	char m_pad14dd[3];
 	float m_flObfuscateTime14e0;	// 0x14e0
-	char m_pad14e4[0x1568 - 0x14e4];
+	char m_pad14e4[0x1538 - 0x14e4];
+	EHANDLE m_hTarget1538;	// 0x1538
+	int m_nTarget153c;	// 0x153c
+	int m_nTargetMode1540;	// 0x1540
+	char m_pad1544[0x1568 - 0x1544];
 	int m_field1568;	// 0x1568
 	char m_pad156c[0x1574 - 0x156c];
 	int m_field1574;
