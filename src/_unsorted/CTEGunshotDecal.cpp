@@ -1,6 +1,25 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10064010 size=0x48
+#include "CTEGunshotDecal.h"
+CTEGunshotDecal::CTEGunshotDecal(const char *name) : CBaseTempEntityHead(name)
+{
+    m_vecOrigin.x = 0;
+    m_vecOrigin.y = 0;
+    m_vecOrigin.z = 0;
+    m_f24 = 0;
+    m_f2c = 0;
+    m_f3c = 0;
+    m_f44 = 0;
+    m_f40 = 0;
+    m_f48 = 0;
+    m_f30 = -1;
+    m_f34 = 0x43;
+    m_f38 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10064080 size=0x1e
 #include "CTEGunshotDecal.h"
 
