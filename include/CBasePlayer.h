@@ -196,7 +196,9 @@ public:
 	int m_nRangeEnd1B78;	// 0x1B78: high half of that value, minus one
 	char m_pad1B7C[0x1cd8 - 0x1b7c];	// 0x1B7C .. 0x1CD7
 	unsigned int m_nCriminalLevelEnc;	// 0x1CD8, scrambled by the xor/and/add mask chain
-	char m_pad1CDC[0x1da8 - 0x1cdc];	// 0x1CDC .. 0x1DA7
+	char m_pad1CDC[0x1da4 - 0x1cdc];	// 0x1CDC .. 0x1DA3
+	EHANDLE m_hPlaceholder1da4;
+
 	float m_f1DA8;	// 0x1DA8: when the next random view punch is due
 	char m_pad1DAC[0x1dfc - 0x1dac];	// 0x1DAC .. 0x1DFB
 	EHANDLE m_hEnt1DFC;	// 0x1DFC: entity handle, cleared by sub_10183330
