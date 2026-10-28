@@ -243,6 +243,17 @@ void CAI_BaseNPC::vfunc538()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026cdc0 size=0x47
+#include "CAI_BaseNPC.h"
+struct CAI_Container5bd8 { void sub_100cd660(CBaseEntity *pEnt, CAI_BaseNPC *pOwner, int a); };
+bool CAI_BaseNPC::vfunc379(CBaseEntity *pEnt, int b, int c, int d, int e, int f, int g)
+{
+    sub_1026d130();
+    ((CAI_Container5bd8 *)((char *)this + 0x5bd8))->sub_100cd660(pEnt, this, 0);
+    return sub_10329760(pEnt, b, c, d, e, f, g);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026ce30 size=0x64
 #include "CAI_BaseNPC.h"
 #include "CCineNPC.h"
