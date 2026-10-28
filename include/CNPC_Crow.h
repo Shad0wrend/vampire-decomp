@@ -23,10 +23,16 @@ public:
 	float m_f1574;	// 0x1574
 	char pad1578[0x5cc0 - 0x1578];
 	int m_n5cc0;	// 0x5cc0: schedule state
-	char pad5cc4[0x5f48 - 0x5cc4];
+	char pad5cc4[0x5d44 - 0x5cc4];
+	CAI_Motor *m_pMotor5d44;	// 0x5d44
+	char pad5d48[0x5ddc - 0x5d48];
+	CBaseEntity *m_pTarget5ddc;	// 0x5ddc
+	char pad5de0[0x5f48 - 0x5de0];
 	float m_f5f48;	// 0x5f48: next think time
 	char pad5f4c[0x5f50 - 0x5f4c];
 	int m_n5f50;	// 0x5f50: morale
+	char pad5f54[0x5f54 - 0x5f54 + 4];
+	char m_b5f54;	// 0x5f54 (overlaps pad)
 
 	// Slot 546.
 	int vfunc546(int arg);
