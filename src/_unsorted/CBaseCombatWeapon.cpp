@@ -589,6 +589,26 @@ void CBaseCombatWeapon::vfunc338(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10253210 size=0x50
+#include "CBaseCombatWeapon.h"
+struct SPlayerView20a8 { char pad[0x20a8]; bool m_b20a8; };
+CBaseEntity *__fastcall sub_1032e7b0(CBaseEntity *);
+
+int CBaseCombatWeapon::vfunc301(CBaseEntity *pPlayer)
+{
+    if ((CBaseCombatWeapon *)sub_1032e7b0(pPlayer) == this) {
+        if (((SPlayerView20a8 *)pPlayer)->m_b20a8) {
+            *(int *)((char *)this + 0x8b0) = 0x40;
+            return 1;
+        }
+        *(int *)((char *)this + 0x8b0) = 2;
+        return 1;
+    }
+    *(int *)((char *)this + 0x8b0) = 1;
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10253280 size=0xd
 struct WeaponField890 { char pad[0x890]; int m; };
 void CBaseCombatWeapon::vfunc306(int value)
