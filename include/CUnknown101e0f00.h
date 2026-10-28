@@ -84,6 +84,7 @@ struct CUnknown101e0f00Entry	// one targeted discipline
 	char m_srcHit[0x1c];	// 0xc0: a CUnknown101e0f00Src
 	char m_tail[4];	// 0xdc: a CUnknown101e0f00Tail
 
+	bool sub_101e06a0(CVFeatKV *pKV, CUnknown101e0f00 *pLoader);	// loads the entry from its "DisciplineTgt" key (the loader hands itself as the second argument)
 	void sub_101e0a00();	// Debug_Display of the entry (stub 0x100100fa)
 	CUnknown101e0f00Entry *sub_101e0520(int id);	// the constructor body (stub of 0x101e0520): constructs the sub objects, stores the id and its bit mask (a DevMsg "Overflowed targeted discipline" and mask 0 from id 30 up)
 	int sub_101e0650(void *pChar);	// stub 0x1000da7b: the cost of the entry for the character (the character's stat 8 / 2 for the dword at +0x10, plus the dword at +0x20)
