@@ -48483,6 +48483,55 @@ void sub_10143630(const Vector *pVec)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10143920 size=0x1c8
+#include "ScopeTrace.h"
+#include "CSingleUserRecipientFilter.h"
+
+struct SServerUnknownView	// the IServerUnknown behind an edict (+0x40); slot 4 gives the entity
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual CBaseEntity *vfunc4();
+};
+
+struct SEdictView
+{
+	char m_pad0000[0x40];
+	SServerUnknownView *m_pUnknown;	// 0x40
+};
+
+// CBaseEntity::Instance( edict_t * ): the entity of an edict (the edict of index 0 when none is given)
+static inline CBaseEntity *Instance(SEdictView *pEdict)
+{
+	ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+	CBaseEntity *pEntity;
+	if (!pEdict)
+		pEdict = (SEdictView *)engine->vfunc38(0);
+	if (pEdict && pEdict->m_pUnknown)
+		pEntity = pEdict->m_pUnknown->vfunc4();
+	else
+		pEntity = 0;
+	return pEntity;
+}
+
+void sub_10143920(float f1, float f2, const char *psz, int n1, int n2, int n3, int n4, float f3)
+{
+	CBaseEntity *pPlayer = Instance((SEdictView *)engine->vfunc38(1));
+	if (pPlayer) {
+		CSingleUserRecipientFilter filter(pPlayer);
+		engine->vfunc65(&filter, 0x34);
+		engine->vfunc72(f1);
+		engine->vfunc72(f2);
+		engine->vfunc72(f3);
+		engine->vfunc69(n1);
+		engine->vfunc69(n2);
+		engine->vfunc69(n3);
+		engine->vfunc69(n4);
+		engine->vfunc78(psz);
+		engine->vfunc66();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10143d80 size=0x16b
 #include "Vector.h"
 
