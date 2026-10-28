@@ -118939,6 +118939,28 @@ int sub_10353100()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10355c70 size=0x93
+#include "SendTable.h"
+
+SendProp sub_10246af0(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int extra, void *proxy);
+SendProp sub_10246dc0(const char *pVarName, int offset, int pTable, void *proxy);
+void sub_10009539();
+extern int g_1054d524;
+extern const char *g_10627738;
+extern SendTable g_10939058;
+
+int sub_10355c70()
+{
+	static SendProp s_Props[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246dc0("baseclass", 0, g_1054d524, (void *)sub_10009539),
+		sub_10246af0("m_nReferencePlayer", 0x730, 4, 10, 1, 0, 0),
+	};
+	g_10939058.sub_10247240(&s_Props[1], 2, g_10627738);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10355d70 size=0x49
 void *sub_1000db89(int);
 struct GP;
