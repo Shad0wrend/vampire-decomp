@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+struct CFireIntPair { int a; int b; };	// two dwords passed by value
+
 class CFire : public CBaseEntity
 {
 public:
