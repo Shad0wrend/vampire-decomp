@@ -160,7 +160,10 @@ public:
 	unsigned int m_hDialogPartnerFE8;	// 0x0FE8: entity handle
 	char m_pad0FEC[0x1040 - 0xfec];	// 0x0FEC .. 0x103F
 	unsigned int m_hUseEnt1040;	// 0x1040: entity handle
-	char m_pad1044[0x1475 - 0x1044];	// 0x1044 .. 0x1474
+	char m_pad1044[0x10dc - 0x1044];
+	EHANDLE m_hEnt10DC;	// 0x10DC: entity handle
+	EHANDLE m_hEnt10E0;	// 0x10E0: entity handle
+	char m_pad10E4[0x1475 - 0x10e4];
 	char m_b1475;
 	char m_pad1476[0x1478 - 0x1476];
 	float m_f1478;	// 0x1478: the time the fade of the feeding started / ends
