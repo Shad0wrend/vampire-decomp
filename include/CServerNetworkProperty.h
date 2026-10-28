@@ -11,7 +11,7 @@ public:
 	virtual void vfunc4();
 	virtual void vfunc5();
 	virtual void vfunc6();
-	virtual void vfunc7();
+	virtual int vfunc7();	// refreshes the edict state when flagged changed (0x10000), returns the edict pointer at +0x80
 	virtual void vfunc8();
 	virtual void vfunc9();
 	virtual void vfunc10();
