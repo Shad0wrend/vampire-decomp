@@ -65,6 +65,7 @@
 	void sub_10336170();	// "CBaseCombatCharacter::Inventory_Dump"-like: scope trace (entity name), prints "Printing inventory for %s", every held weapon slot 0..0xdf, the active weapon, the active armor and the hands with Msg
 	void *sub_10341510();	// the active armor (stub 0x100082e7)
 	void *sub_1032e7b0();	// "CBaseCombatCharacter::GetActiveWeapon": scope trace (entity name), the entity behind the handle at +0x19a4 when it resolves, else null (stub 0x10007e19)
+	bool sub_10345ab0(CBaseEntity *pOther);	// "CBaseCombatCharacter::WasMeleeBlocked": scope trace (entity name), pOther a melee-holding character in front of this one (direction from slot 219 angles, normalised difference of the origins) that has the object at +0xa8 or a melee record
 	bool sub_10345d00();	// "CBaseCombatCharacter::IsHoldingMeleeWeapon": scope trace (entity name), true when the active weapon exists and its flags (weapon slot 360) have bit 15 or 16 set
 	virtual void vfunc111();	// slot 111 "CBaseCombatCharacter::MemberSync...": scope trace (entity name), updates the stat list manager at +0x13a8 with the edict index (engine slot 35 of the edict at +0x2e0), then stores IsMale() (zero-extended) at +0x13cc
 	void sub_103419c0(inputdata_t *data);	// "CBaseCombatCharacter::InputChang...": scope trace (entity name), then calls sub_1000b6a9(this, +-1) |integer value| times (sign of the value) when the input's type is 4
