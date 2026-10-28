@@ -60440,6 +60440,21 @@ void CRopeKeyframe::sub_1019ebc0(int a, int b, CRopeKeyframe *pStop, int x, int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019ed90 size=0x63
+#include "CRopeKeyframe.h"
+struct RopeArg { int a, b; Vector v; int pad; int type; };
+extern Vector g_1070d1b0;
+void CRopeKeyframe::sub_1019ed90(RopeArg *p)
+{
+    Vector v;
+    if (p->type == 3 || p->type == 14)
+        v = p->v;
+    else
+        v = g_1070d1b0;
+    sub_1000a84e(p->a, p->b, this, ((int *)&v)[0], ((int *)&v)[1], ((int *)&v)[2]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019ee20 size=0x8
 namespace lifted {
 int sub_10005371();
