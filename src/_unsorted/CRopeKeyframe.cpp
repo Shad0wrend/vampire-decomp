@@ -55,6 +55,18 @@ void __fastcall sub_1019e590(char *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019f540 size=0x13
+#include "CRopeKeyframe.h"
+void __fastcall sub_1000350d(CRopeKeyframe *self);
+
+// TARGET: CRopeKeyframe::vfunc103
+void CRopeKeyframe::vfunc103()
+{
+	sub_1000350d(this);
+	vfunc104();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019f570 size=0x95
 #include "CRopeKeyframe.h"
 
