@@ -8,7 +8,8 @@ struct CVFeatKV	// a KeyValues-like object (slot 10 = GetInt, slot 13 = GetStrin
 	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
 	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
 	virtual int GetInt(const char *pszKey, int nDefault);
-	virtual void v11(); virtual void v12();
+	virtual float GetFloat(const char *pszKey, float flDefault);
+	virtual char GetBool(const char *pszKey, int nDefault);
 	virtual const char *GetString(const char *pszKey, const char *pszDefault);
 };
 
