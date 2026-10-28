@@ -30,7 +30,8 @@ public:
 	char m_pad045e[2];
 	float m_flField460;	// 0x460: a time (0 = none)
 	float m_flRadius464;	// 0x464: the distance within which the player triggers the entity
-	char m_pad0468[0x484 - 0x468];
+	float m_flLoudness468;	// 0x468: turned into the sound level
+	char m_pad046c[0x484 - 0x46c];
 	COutputEvent m_OnPick;	// 0x484
 	char m_pad049c[0x4b4 - 0x49c];
 	COutputEvent m_OutA;	// 0x4b4: fired with the player as activator when it comes close
