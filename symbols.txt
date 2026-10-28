@@ -1357,6 +1357,7 @@
 0x100045fc func   ?sub_103dbeb0@UtlVec8@@QAEPAU1@HH@Z UtlVec8::sub_103dbeb0
 0x10004601 func   ?CopyConstruct@@YAXPAVCBaseHandle@@ABV1@@Z CopyConstruct
 0x10004601 func   ?sub_102ce9f0@@YAXPAHPBH@Z sub_102ce9f0
+0x10004606 func   ?vfunc292@CNPC_VGargoyle@@QAEXPAUCGargoyleDmgInfo@@HH@Z CNPC_VGargoyle::vfunc292
 0x10004615 func   ?sub_101e9020@CUnknown101e9020@@QAEMXZ CUnknown101e9020::sub_101e9020
 0x10004624 func   ?sub_1011e010@@YAXPAVVector@@00@Z sub_1011e010
 0x10004633 func   ?vfunc82@CTriggerBrush@@UAEPAUdatamap_t@@XZ CTriggerBrush::vfunc82

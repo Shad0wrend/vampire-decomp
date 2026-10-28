@@ -163,6 +163,37 @@ int CNPC_VGargoyle::vfunc390(void *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10378cb0 size=0x5c
+#include "CVDmg_t.h"
+struct CGargoyleDmgInfo
+{
+	CVDmg_t *m_pDmg;	// 0x0
+	char m_pad04[0x30 - 4];
+	float m_flDamage;	// 0x30
+	char m_pad34[4];
+	unsigned int m_nFlags;	// 0x38
+};
+
+// TARGET: CNPC_VGargoyle::vfunc292
+void CNPC_VGargoyle::vfunc292(CGargoyleDmgInfo *pInfo, int b, int c)
+{
+	unsigned int flags;
+	if (pInfo->m_pDmg)
+		flags = pInfo->m_pDmg->m_field10 | pInfo->m_nFlags;
+	else
+		flags = pInfo->m_nFlags;
+	if (!(flags & 0x4000002)) {
+		float dmg;
+		if (pInfo->m_pDmg)
+			dmg = (float)pInfo->m_pDmg->sub_101faa70();
+		else
+			dmg = pInfo->m_flDamage;
+		if (dmg != 0.0f)
+			sub_10015843(pInfo, b, c);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10378d30 size=0x3e
 #include "vampire.h"
 #include "CAI_BaseNPCTroika.h"
