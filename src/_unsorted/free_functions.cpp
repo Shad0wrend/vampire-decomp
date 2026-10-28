@@ -11215,6 +11215,42 @@ void sub_1006b5e0(int a, int b, int *v, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006b7a0 size=0x1da
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_10247240(SendProp *pProps, int nProps, const char *pName);	// SendTable::Construct (stub 0x1000e8fe)
+};
+
+SendProp sub_10246af0(const char *name, int offset, int size, int bits, int flags, int extra, void *proxy);
+SendProp sub_10246510(const char *name, int offset, int size, int bits, int flags, float low, float high, void *proxy);
+void sub_10006aeb();
+extern SendTable g_106c7b10;
+extern const char *g_10545fc4;
+
+// TARGET: sub_1006b7a0
+int sub_1006b7a0()
+{
+	static SendProp g_SendProps[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246af0("m_clrRender.r", 0x1a0, 1, 8, 1, 0, 0),
+		sub_10246af0("m_clrRender.g", 0x1a1, 1, 8, 1, 0, 0),
+		sub_10246af0("m_clrRender.b", 0x1a2, 1, 8, 1, 0, 0),
+		sub_10246af0("m_clrRender.a", 0x1a3, 1, 8, 1, 0, 0),
+		sub_10246510("m_vecAbsOrigin[0]", 0x404, 4, 0x13, 0, -16384.0f, 16384.0f, (void *)sub_10006aeb),
+		sub_10246510("m_vecAbsOrigin[1]", 0x408, 4, 0x13, 0, -16384.0f, 16384.0f, (void *)sub_10006aeb),
+		sub_10246510("m_vecAbsOrigin[2]", 0x40c, 4, 0x13, 0, -16384.0f, 16384.0f, (void *)sub_10006aeb),
+		sub_10246510("m_angAbsRotation[0]", 0x410, 4, 0x13, 0, -16384.0f, 16384.0f, (void *)sub_10006aeb),
+		sub_10246510("m_angAbsRotation[1]", 0x414, 4, 0x13, 0, -16384.0f, 16384.0f, (void *)sub_10006aeb),
+		sub_10246510("m_angAbsRotation[2]", 0x418, 4, 0x13, 0, -16384.0f, 16384.0f, (void *)sub_10006aeb),
+	};
+	g_106c7b10.sub_10247240(g_SendProps + 1, 10, g_10545fc4);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006bb80 size=0xe6
 #include <math.h>
 #include "CBaseEntity.h"
