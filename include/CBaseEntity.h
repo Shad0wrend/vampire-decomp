@@ -60,7 +60,7 @@ public:
 	virtual void vfunc74(); virtual void vfunc75(); virtual void vfunc76(); virtual void vfunc77(); virtual void vfunc78();
 	virtual void vfunc79(); virtual void vfunc80(); virtual void vfunc81(); virtual datamap_t *vfunc82(); virtual int vfunc83();	// slot 82 "GetDataDescMap": the entity class's datamap
 	virtual void vfunc84(int flags); virtual char *vfunc85(); virtual void vfunc86(); virtual void vfunc87(void *pCheckTransmitInfo); virtual void vfunc88();	// slot 87 "CBaseEntity::SetTransmit"-like: takes the transmit info (bit vector pointer at +0x10)
-	virtual void vfunc89(); virtual void vfunc90(); virtual void vfunc91(); virtual void vfunc92();
+	virtual void vfunc89(); virtual void vfunc90(); virtual void vfunc91(); virtual int vfunc92();
 	virtual void vfunc93(int moveType, int moveCollide);	// "CBaseEntity::SetMoveType": scope trace (entity name), on change stores both at +0x35c/+0x360 and calls slot 25 of the object at +0x36c
 	virtual int vfunc94(); virtual void vfunc95();
 	virtual int vfunc96();	// "CBaseEntity::GetAimEntEdict": scope trace (entity name), resolves the handle at +0x37c and returns that entity's edict at +0x2e0 (0 when it does not resolve)
