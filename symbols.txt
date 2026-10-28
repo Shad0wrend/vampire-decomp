@@ -4777,6 +4777,7 @@
 0x1000ca9f func   ?vfunc80@CMultiplayRules@@UAEXXZ CMultiplayRules::vfunc80
 0x1000caae func   ?sub_1033e2b0@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_1033e2b0
 0x1000cab3 func   _events_player events_player
+0x1000cab8 func   ?sub_101f02b0@CHolder101f02b0@@QAE_NPAUCSource101f02b0@@@Z CHolder101f02b0::sub_101f02b0
 0x1000cacc func   ?sub_10203bb0@@YAXXZ sub_10203bb0
 0x1000cad1 func   ?vfunc284@CBaseCombatCharacter@@UAEXXZ CBaseCombatCharacter::vfunc284
 0x1000cad6 func   ?sub_100cdf10@CEventQueue@@QAEXPAVCBaseEntity@@PBDUCVariantCopy@@M00HH@Z CEventQueue::sub_100cdf10
