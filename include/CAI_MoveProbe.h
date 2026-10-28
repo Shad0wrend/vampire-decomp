@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CAI_Component.h"
+#include "Vector.h"
 
 class CBaseEntity;
 
