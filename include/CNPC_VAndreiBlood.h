@@ -10,6 +10,7 @@ public:
 	virtual void vfunc103();	// slot 103 "CNPC_VAndreiBlood::Spawn": scope trace (no entity name), sub_1026dc00(0x200000), the CNPC_VVampire version (sub_103c4ef0), clears the fields +0x66b8 .. +0x66ce, stamps curtime at +0x66d0, sets the byte at +0x66d4, clears +0x66d8, then sub_1035e950()
 	virtual void vfunc104();
 	virtual void vfunc113();	// slot 113 "CNPC_VAndreiBlood::Activate": scope trace (no entity name), the Troika version, then the state at +0x5cc0 / +0x5cc4 = 2, the source file / line markers at +0x1b30 / +0x1b34 and sub_102ae750(0x6b, 0)
+	int vfunc390(void *pInfo);	// slot 390 "CNPC_VAndreiBlood::OnTakeDamage_Alive": scope trace (no entity name), copies the damage info (0x4c bytes); the damage is the VDmg record's GetDmg or the float at +0x30; with the combat byte at +0x66cc counts the hit (+0x66d8) and, when stat 0xf + damage reaches stat 0x11 of the character's default list, sets the byte at +0x66cd; then (unless that test failed) zeroes the copy's damage and its VDmg record's fields +4 / +0xc; CNPC_VHuman::vfunc390 on the copy
 	void vfunc431();	// slot 431 "CNPC_VAndreiBlood::NPCThink": scope trace, the CNPC_VVampireBoss version (0x100052d6), trace depth back
 	void vfunc619(int arg);	// slot 619, not modelled as virtual yet
 	void sub_1000c27a(int arg);
