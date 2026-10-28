@@ -63257,6 +63257,32 @@ float __stdcall sub_101b4900(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b4c20 size=0x48
+extern char g_106b8540[];
+struct CIdxEntry { char pad[0x18]; int m_nIndex; char pad2[0xe8 - 0x1c]; };
+struct CIdxData { char pad[0x82]; };
+struct CIdxTable {
+    char pad0[0x54];
+    CIdxEntry *m_pEntries;
+    char pad1[0x64 - 0x58];
+    int m_nEntries;
+    char pad2[0x9c - 0x68];
+    CIdxData *m_pData;
+    char pad3[0xa8 - 0xa0];
+    int m_nData;
+    char *sub_101b4c20(int i);
+};
+char *CIdxTable::sub_101b4c20(int i)
+{
+    if (i >= 0 && i < m_nEntries) {
+        int j = m_pEntries[i].m_nIndex;
+        if (j >= 0 && j < m_nData)
+            return m_pData[j].pad + 2;
+    }
+    return g_106b8540;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b50f0 size=0x70
 #include "CSoundEmitterSystemBase.h"
 
