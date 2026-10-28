@@ -10,7 +10,9 @@ struct CAI_StandoffBehaviorOuter
 	int m_unk1fc;
 	char pad1[0x5c38 - 0x200];
 	int m_unk5c38;
-	char pad1b[0x5ddc - 0x5c3c];
+	char pad1c[0x5cc0 - 0x5c3c];
+	int m_n5cc0;	// 0x5cc0: the NPC's state
+	char pad1b[0x5ddc - 0x5cc4];
 	CAI_Hint *m_pHintNode;	// 0x5ddc: the hint node the NPC has locked
 	char pad2[4];
 	float m_unk5de4;
