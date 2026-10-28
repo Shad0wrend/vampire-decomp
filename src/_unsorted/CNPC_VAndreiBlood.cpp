@@ -200,6 +200,48 @@ void CNPC_VAndreiBlood::vfunc619(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035e6d0 size=0x1c4
+#include "CNPC_VAndreiBlood.h"
+#include "ScopeTrace.h"
+#include "CVDmg_t.h"
+#include "CVStatList_t.h"
+
+struct CAndreiDamageInfo
+{
+	CVDmg_t *m_pDmg;
+	char m_pad0004[0x30 - 4];
+	float m_flDamage;
+	char m_pad0034[0x4c - 0x34];
+};
+
+int CNPC_VAndreiBlood::vfunc390(void *pInfo)
+{
+	ScopeTrace trace("CNPC_VAndreiBlood::OnTakeDamage_Alive", g_106b8540);
+	CAndreiDamageInfo info = *(CAndreiDamageInfo *)pInfo;
+	float flDamage;
+	if (info.m_pDmg)
+		flDamage = (float)info.m_pDmg->sub_101faa70();
+	else
+		flDamage = info.m_flDamage;
+	int nMax = CVStatListSet::Of(this)->Find(0)->sub_102012d0(0x11);
+	int nCur = CVStatListSet::Of(this)->Find(0)->sub_102012d0(0xf);
+	if (m_b66cc) {
+		m_n66d8++;
+		if ((float)nCur + flDamage >= (float)nMax)
+			m_b66cd = 1;
+		else
+			goto skip;
+	}
+	info.m_flDamage = 0;
+	if (info.m_pDmg) {
+		info.m_pDmg->m_field04 = 0;
+		info.m_pDmg->m_field0c = 0;
+	}
+skip:
+	return sub_10001b45(&info);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035e980 size=0xab
 #include "CNPC_VAndreiBlood.h"
 #include "CEHandleGet.h"
