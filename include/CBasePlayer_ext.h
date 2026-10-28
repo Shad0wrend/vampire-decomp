@@ -1,3 +1,8 @@
+	void sub_1017cc20(const char *pszQuest, int nStep);	// "SetQuest" (the Python SetQuest(name, step) call): the global journal's quest of that name, when it has that step: stamps the quest's order number (+0xc) when it has none, makes step - 1 current (+0x10), and when sub_10182420 allows runs the completion state: money (sub_10340e50), a hud message, a Python snippet in __main__ (PyRun_ConsoleString), sub_1017c900(1), sub_10182260, and the view message (sub_101cebc0(this, 7, 0)) for a state of kind 2
+	char sub_10182420(int iQuest, int iStep);	// stub 0x1001140f: whether the quest step may be completed now
+	void sub_1015f630(const char *pszText);	// stub 0x100153c5: shows the completion text
+	void sub_1017c900(int a);	// stub 0x100050ec
+	void sub_10182260(const char *pszQuest, int iQuest, int iStep, int iOrder);	// stub 0x1000b195: tells the quest log about the step
 	void sub_1017d6d0(float flMinimum);	// extends the running fade: the longest fade time of the entities at +0x19c0 / +0x19cc (slot 53) and flMinimum becomes the new duration (negative = fading out) when the current one is not running out
 	int vfunc126(int a);	// slot 126 (plain member): the three save-state arrays (+0x1ce0 / +0x1ce4 / +0x1cf8) are prepared, the flag bytes at +0x1dc0 / +0x1dc8 and the timer at +0x1564 updated, the field at +0x1e24 created when empty, then CBaseCombatCharacter::vfunc126(a), the arrays handed back and a final cleanup of a
 	int sub_10348980(int a);	// CBaseCombatCharacter::vfunc126 (stub 0x1000e534), called directly
