@@ -55,6 +55,12 @@ public:
 	void sub_10218b90();	// stub 0x100068c0
 	void sub_10218ca0();	// stub 0x100156c7
 	void sub_10219120();	// stub 0x1000aa1f, tail called by the screen refresh
+	bool sub_1021b9c0(int a, const char *pszCommand);	// the command letters / numbers of AcceptCmd (vfunc273)
+	void sub_1021bc90(int a);	// stub 0x10015569
+	void sub_1021bc60();	// stub 0x1001497a
+	void sub_1021bbf0(int a);	// stub 0x100056a5
+	void sub_1021bfd0();	// stub 0x1000b7b2
+	void sub_1021bc20x();	// stub 0x10001424
 	void sub_1021c040();	// stub 0x10014f5b / 0x1021c040: tail of the sub_1021c000 and sub_1021b9c0 paths (the screen refresh), called with this
 	void sub_1021c000();	// stub-less member: m_n0a0c = min(m_n0a04 / 10, m_n0a0c + 1), then sub_1021c040()
 
