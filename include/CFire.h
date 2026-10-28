@@ -19,6 +19,7 @@ public:
 	CFire *sub_10109990();	// as in CKeepUpright (transplant)
 	void vfunc180();
 	void sub_1010b3c0();
+	void sub_1010b530(float flTime);	// sets the burn update (sub_1010b7d0 with 0 and the time), installs the think sub_1010b470, burn-out time (+0x48c) = time + curtime, next think = curtime + 0.1
 	void sub_1010b7d0(int a, int b);	// "forward to slot 242 of the smoke entity (handle +0x450)"; near miss, see notes
 	void sub_1010b5c0(float flHeat, char bInstant);	// adds heat to the fire (stub 0x10008a03)
 	void sub_1010a370(int a, float b);	// creates the \"firesmoke\" entity of this fire (called with the field at +0x458 and a size float; the fields at +0x450 / +0x458 are modelled by the views of the sources)
