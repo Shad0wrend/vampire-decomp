@@ -21,9 +21,9 @@ struct Ray_t
 		m_Delta[1] = end.y - start.y;
 		m_Delta[2] = end.z - start.z;
 		m_IsSwept = (m_Delta[0] * m_Delta[0] + m_Delta[1] * m_Delta[1] + m_Delta[2] * m_Delta[2]) != 0;
-		m_Extents[0] = m_Extents[1] = m_Extents[2] = 0.0f;
-		m_IsRay = true;
 		m_StartOffset[0] = m_StartOffset[1] = m_StartOffset[2] = 0.0f;
+		m_IsRay = true;
+		m_Extents[0] = m_Extents[1] = m_Extents[2] = 0.0f;
 		m_Start[0] = start.x;
 		m_Start[1] = start.y;
 		m_Start[2] = start.z;
