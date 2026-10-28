@@ -8013,6 +8013,38 @@ void sub_10057ac0(void *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057cf0 size=0x1c3
+#include "SendTable.h"
+
+SendProp sub_10246af0(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int a, void *varProxy);
+SendProp sub_10246dc0(const char *pVarName, int offset, int a, void *varProxy);
+SendProp sub_10246510(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLowValue, float fHighValue, int varProxy);
+void sub_10246300();
+void sub_102464d0();
+extern SendTable g_106be544;
+extern int g_106ad4e0;
+extern const char *g_1053ff34;
+
+int sub_10057cf0()
+{
+	static SendProp s_props[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246dc0("baseclass", 0, g_106ad4e0, sub_102464d0),
+		sub_10246510("m_SpreadSpeed", 0x450, 4, 0, 4, 0.0f, -121121.125f, (int)sub_10246300),
+		sub_10246510("m_Speed", 0x454, 4, 0, 4, 0.0f, -121121.125f, (int)sub_10246300),
+		sub_10246510("m_StartSize", 0x458, 4, 0, 4, 0.0f, -121121.125f, (int)sub_10246300),
+		sub_10246510("m_EndSize", 0x45c, 4, 0, 4, 0.0f, -121121.125f, (int)sub_10246300),
+		sub_10246510("m_Rate", 0x460, 4, 0, 4, 0.0f, -121121.125f, (int)sub_10246300),
+		sub_10246510("m_JetLength", 0x464, 4, 0, 4, 0.0f, -121121.125f, (int)sub_10246300),
+		sub_10246af0("m_bEmit", 0x468, 4, 1, 1, 0, 0),
+		sub_10246af0("m_bFaceLeft", 0x46c, 1, 1, 1, 0, 0),
+		sub_10246af0("m_nType", 0x470, 4, 0x20, 1, 0, 0),
+	};
+	g_106be544.sub_10247240(&s_props[1], 10, g_1053ff34);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057f70 size=0x49
 void *sub_1000db89(int);
 struct GP;
