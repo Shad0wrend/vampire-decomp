@@ -2383,6 +2383,64 @@ float *CBaseEntity::vfunc214()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b1ac0 size=0x1c8
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+#include "TestBit.h"
+
+extern CGlobalEntityList *g_10566458;
+extern Vector g_1070d9d0;
+void sub_10139b90(const float *pAngles, float *pMatrix);
+void sub_10138760(const float *pVec, int nColumn, float *pMatrix);
+void sub_10138df0(const float *pA, const float *pB, float *pOut);
+void sub_10138600(const float *pSrc, float *pDst);
+void sub_10138720(const float *pMatrix, int nColumn, float *pVecOut);
+void sub_10137ed0(const float *pMatrix, float *pAnglesOut);
+
+struct CCalcAbsView
+{
+	char m_pad0000[0x130];
+	float m_Frame[12];	// 0x130
+	char m_pad0160[0x25c - 0x160];
+	unsigned int m_hMoveParent;	// 0x25c
+	char m_pad0260[0x268 - 0x260];
+	unsigned int m_iEFlags;	// 0x268
+	char m_pad026c[0x404 - 0x26c];
+	Vector m_vecAbsOrigin;	// 0x404
+	Vector m_angAbsRotation;	// 0x410
+	Vector m_vecOrigin;	// 0x41c
+	Vector m_angRotation;	// 0x428
+};
+
+void CBaseEntity::vfunc98()
+{
+	ScopeTrace trace("CBaseEntity::CalcAbsolutePosition", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CCalcAbsView *v = (CCalcAbsView *)this;
+	if (TestBit(v->m_iEFlags, 11)) {
+		v->m_iEFlags &= ~0x800;
+		sub_10139b90(&v->m_angRotation.x, v->m_Frame);
+		sub_10138760(&v->m_vecOrigin.x, 3, v->m_Frame);
+		CBaseEntity *pMoveParent = g_10566458->sub_100290c0(&v->m_hMoveParent);
+		if (!pMoveParent) {
+			v->m_vecAbsOrigin = v->m_vecOrigin;
+			v->m_angAbsRotation = v->m_angRotation;
+			return;
+		}
+		float tmpMatrix[12];
+		float scratchSpace[12];
+		sub_10138df0(sub_100b2150(scratchSpace), v->m_Frame, tmpMatrix);
+		sub_10138600(tmpMatrix, v->m_Frame);
+		sub_10138720(v->m_Frame, 3, &v->m_vecAbsOrigin.x);
+		if (v->m_angRotation == g_1070d9d0)
+			v->m_angAbsRotation = *(Vector *)((CEntityVSlots *)pMoveParent)->slot219();
+		else
+			sub_10137ed0(v->m_Frame, &v->m_angAbsRotation.x);
+		m_bChanged1b1 = 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b2300 size=0x194
 #include "CBaseEntity.h"
 #include "CEHandleGet.h"

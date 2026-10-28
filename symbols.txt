@@ -5023,6 +5023,7 @@
 0x1000d5da func   ?vfunc82@CSun@@UAEPAUdatamap_t@@XZ CSun::vfunc82
 0x1000d5ee func   ??0CBaseEntity@@QAE@XZ CBaseEntity::CBaseEntity
 0x1000d5ee func   ??0CBaseToggle@@QAE@XZ CBaseToggle::CBaseToggle
+0x1000d5f8 func   ?vfunc98@CBaseEntity@@UAEXXZ CBaseEntity::vfunc98
 0x1000d607 func   ?sub_100977f0@CBaseAnimating@@QAEXH@Z CBaseAnimating::sub_100977f0
 0x1000d616 func   ?sub_102a98e0@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_102a98e0
 0x1000d639 func   ?sub_102f95d0@CUnknown102f95d0@@QAEXH@Z CUnknown102f95d0::sub_102f95d0
