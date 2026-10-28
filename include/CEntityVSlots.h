@@ -165,7 +165,8 @@ public:
 	EVS10(39)
 	EVS(400) EVS(401) EVS(402) EVS(403)
 	virtual int slot404(void *pEntity);	// NPC: takes an entity, answers an int (1 = acceptable)
-	EVS(405) EVS(406) EVS(407) EVS(408) EVS(409)
+	virtual int slot405(void *pEntity);	// NPC: IRelationPriority of the entity
+	EVS(406) EVS(407) EVS(408) EVS(409)
 	EVS10(41)
 	EVS(420) EVS(421) EVS(422) EVS(423) EVS(424) EVS(425)
 	virtual char slot426();	// player: a boolean answer in al (picks the walking / running activity variant)
