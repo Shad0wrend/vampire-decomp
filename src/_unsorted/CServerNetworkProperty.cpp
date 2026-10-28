@@ -7,6 +7,20 @@ struct CUnknown10146790 { char a; char b; char c; void sub_10146790(); };
 void CServerNetworkProperty::vfunc11() { ((CUnknown10146790*)m_unk10)->sub_10146790(); }
 // END FUNCTION
 
+// FUNCTION: 0x101ab4b0 size=0x41
+#include "CServerNetworkProperty.h"
+struct CNetPropView { virtual void s0(); virtual void s1(); virtual int GetFlags(); virtual void SetFlags(int f); };
+int CServerNetworkProperty::vfunc7()
+{
+    CNetPropView *v = (CNetPropView *)this;
+    if (v->GetFlags() & 0x10000) {
+        v->SetFlags(v->GetFlags() & ~0x10000);
+        engine->vfunc121(*(int *)((char *)this + 0xc), (int *)((char *)this + 0x18));
+    }
+    return *(int *)((char *)this + 0x80);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab520 size=0x1e
 #include "CServerNetworkProperty.h"
 

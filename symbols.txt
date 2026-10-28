@@ -3885,6 +3885,7 @@
 0x1000a82b func   ?sub_1024e8f0@@YAXPAMPBM@Z sub_1024e8f0
 0x1000a830 func   ?sub_101f9690@CUnknown101f9670@@QAEXXZ CUnknown101f9670::sub_101f9690
 0x1000a835 func   ?vfunc104@CInspectionBrush@@QAEXXZ CInspectionBrush::vfunc104
+0x1000a83a func   ?vfunc7@CServerNetworkProperty@@UAEHXZ CServerNetworkProperty::vfunc7
 0x1000a83f func   ?sub_1009ef50@CBaseEntity@@QAEXH@Z CBaseEntity::sub_1009ef50
 0x1000a844 func   ?sub_10400cb0@@YAHXZ sub_10400cb0
 0x1000a84e func   ?sub_1019ebc0@CRopeKeyframe@@QAEXHHPAV1@HHH@Z CRopeKeyframe::sub_1019ebc0
