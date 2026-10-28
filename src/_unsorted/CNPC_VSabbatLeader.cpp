@@ -426,6 +426,30 @@ void CNPC_VSabbatLeader::vfunc620()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103aa7a0 size=0x15c
+#include "CNPC_VSabbatLeader.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "ScopeTrace.h"
+#include "CUnknown1070b244.h"
+#include "CUnknown1070b248.h"
+
+extern CUnknown1070b244 *g_1070b244;
+extern CUnknown1070b248 *g_1070b248;
+extern const char *g_1064c49c[];
+
+// TARGET: CNPC_VSabbatLeader::vfunc621
+void CNPC_VSabbatLeader::vfunc621()
+{
+	ScopeTrace trace("CNPC_VSabbatLeader::AttackSound", g_106b8540);
+	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+	filter.MakeReliable();
+	int edict = m_nEdict2e0;
+	int index = engine->vfunc35(edict);
+	g_1070b248->vfunc3(&filter, index, 4, g_1064c49c[g_1070b244->vfunc2(0, 2)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ab270 size=0x79
 #include "CNPC_VSabbatLeader.h"
 struct ScopeEnt { const char *name; const char *file; const char *file2; };
