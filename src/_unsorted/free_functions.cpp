@@ -89279,6 +89279,52 @@ void __fastcall sub_10232520(int *self, int, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102325e0 size=0x1d3
+#include "CVoiceGameMgr.h"
+#include "CBaseEntity.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" int __cdecl atoi(const char *);
+extern "C" int __cdecl sscanf(const char *, const char *, ...);
+extern unsigned long g_10751530[];
+extern unsigned long g_10751538[];
+extern unsigned long g_107516c8[];
+void sub_10232840(const char *pszFormat, ...);
+
+bool CVoiceGameMgr::sub_102325e0(CBaseEntity *pPlayer, const char *cmd)
+{
+	int nEdict = pPlayer->m_pEdict2e0;
+	int iPlayer = engine->vfunc35(nEdict) - 1;
+	if (iPlayer < 0 || iPlayer >= m_nMaxPlayers) {
+		sub_10232840("CVoiceGameMgr::ClientCommand: cmd %s from invalid client (%d)\n", cmd, iPlayer);
+		return true;
+	}
+	bool bBan = _strcmpi(cmd, "vban") == 0;
+	if (bBan && engine->vfunc85() >= 2) {
+		for (int i = 1; i < engine->vfunc85(); i++) {
+			unsigned long mask = 0;
+			sscanf(engine->vfunc84(i), "%x", &mask);
+			if (i <= 1) {
+				sub_10232840("CVoiceGameMgr::ClientCommand: vban (0x%x) from %d\n", mask, iPlayer);
+				g_10751538[iPlayer + i - 1] = mask;
+			} else {
+				sub_10232840("CVoiceGameMgr::ClientCommand: invalid index (%d)\n", i);
+			}
+		}
+		return true;
+	} else if (_strcmpi(cmd, "VModEnable") == 0 && engine->vfunc85() >= 2) {
+		sub_10232840("CVoiceGameMgr::ClientCommand: VModEnable (%d)\n", !!atoi(engine->vfunc84(1)));
+		if (atoi(engine->vfunc84(1)))
+			g_10751530[iPlayer >> 5] |= 1 << (iPlayer & 0x1f);
+		else
+			g_10751530[iPlayer >> 5] &= ~(1 << (iPlayer & 0x1f));
+		g_107516c8[iPlayer >> 5] &= ~(1 << (iPlayer & 0x1f));
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10232c70 size=0x2c
 struct CPair10232c70 {
     int m_v[2];
