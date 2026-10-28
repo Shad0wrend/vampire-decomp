@@ -13,3 +13,14 @@ CTEFootprintDecal *CTEFootprintDecal::vfunc2(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10062ee0 size=0x39
+#include "CTEFootprintDecal.h"
+#include "IVEngineServerFull.h"
+
+
+void CTEFootprintDecal::vfunc4(int a, int b)
+{
+	engine->vfunc103(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
+}
+// END FUNCTION

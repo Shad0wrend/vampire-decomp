@@ -3626,6 +3626,7 @@
 0x1000a0f6 func   ?sub_10428ed0@@YAXPADHPBM@Z sub_10428ed0
 0x1000a0fb func   ?sub_100d7210@@YAXXZ sub_100d7210
 0x1000a114 func   ?vfunc5@CWeaponMelee_Claws_Ghoul@@QAEPAV1@I@Z CWeaponMelee_Claws_Ghoul::vfunc5
+0x1000a11e func   ?vfunc4@CTEFootprintDecal@@QAEXHH@Z CTEFootprintDecal::vfunc4
 0x1000a123 func   ?sub_10148780@CUnknown10148780@@QAEHXZ CUnknown10148780::sub_10148780
 0x1000a128 func   ?vfunc42@CTriggerElectricBugaloo@@QAEXPAX@Z CTriggerElectricBugaloo::vfunc42
 0x1000a12d func   _item_g_driver_license_gimble item_g_driver_license_gimble
