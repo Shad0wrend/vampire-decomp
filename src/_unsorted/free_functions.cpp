@@ -19499,6 +19499,68 @@ clear:
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008eec0 size=0x1dd
+#include "CBaseAnimating.h"
+#include "CEntityVSlots.h"
+#include "matrix3x4_t.h"
+#include "QAngle.h"
+#include "ScopeTrace.h"
+
+extern Vector g_1070d1b0;
+void sub_10137fe0(const Vector &in, const matrix3x4_t &m, Vector &out);
+void sub_101381b0(const Vector &in, const matrix3x4_t &m, Vector &out);
+void sub_10139970(const Vector &forward, QAngle &angles);
+__declspec(dllimport) void DevWarning(const char *fmt, ...);
+
+void CBaseAnimating::sub_1008eec0(const char *pszBoneName, char bMatchOrigin, char bMatchAngles)
+{
+	ScopeTrace trace("CBaseAnimating::MatchOriginAnglesToAnimation", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!pszBoneName)
+		return;
+	int iBone = sub_10092550((int)pszBoneName);
+	if (iBone >= 0)
+	{
+		char *pHdr = (char *)sub_100952d0(-1);
+		char *pBone = pHdr + *(int *)(pHdr + 0xf4) + iBone * 0xa0;
+		matrix3x4_t localMat;
+		((CEntityVSlots *)this)->slot256(iBone, &localMat.m_flMatVal[0][0]);
+		const matrix3x4_t *pBoneMat = (const matrix3x4_t *)(pBone + 0x58);
+		Vector out1, out2, outA, outB;
+		Vector vec;
+		QAngle ang;
+		sub_10137fe0(g_1070d1b0, *pBoneMat, out1);
+		sub_10137fe0(out1, localMat, out2);
+		vec.x = 0;
+		vec.y = -1.0f;
+		vec.z = 0;
+		sub_101381b0(vec, *pBoneMat, outA);
+		sub_101381b0(outA, localMat, outB);
+		sub_10139970(outB, ang);
+		if (bMatchAngles)
+		{
+			int pitch = *(int *)((char *)this + 0x428);
+			int roll = *(int *)((char *)this + 0x430);
+			float yaw = ang.y;
+			((CEntityVSlots *)this)->slot65(pitch, yaw, roll);
+		}
+		if (bMatchOrigin)
+		{
+			((CEntityVSlots *)this)->slot62(&out2.x);
+			((CEntityVSlots *)this)->slot216(&out2);
+		}
+		m_nEffectFlags |= 0x10;
+	}
+	else
+	{
+		int tmp;
+		const char *pszModel = *vfunc9(&tmp);
+		if (!pszModel)
+			pszModel = g_106b8540;
+		DevWarning("%s could not find bone %s in model: %s\n", sub_1000b5cd(), pszBoneName, pszModel);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008f540 size=0x82
 #include "CBaseAnimating.h"
 
