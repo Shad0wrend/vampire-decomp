@@ -60243,6 +60243,17 @@ int CUnknown101ad3e0::sub_101ad3e0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ad410 size=0x17
+namespace lifted {
+struct C100131e2 { int sub_100131e2(int, int, int, int); };
+}
+struct CUnknown101ad410 { int sub_101ad410(int); };
+int CUnknown101ad410::sub_101ad410(int a0)
+{
+    return ((lifted::C100131e2 *)this)->sub_100131e2(*(int *)((char *)a0), *(int *)((char *)a0 + 4), 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ad440 size=0x17
 namespace lifted {
 struct C100131e2 { int sub_100131e2(int, int, int, int); };
