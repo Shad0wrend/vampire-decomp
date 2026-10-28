@@ -6275,6 +6275,28 @@ unsigned short CUtlRBTree36::sub_10045de0(const int *pKey)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10045fe0 size=0x45
+struct S10045fe0 {
+    char *m_pMemory;
+    int m_nAllocationCount;
+    int m_nGrowSize;
+    int m_Size;
+    char *m_pElements;
+    S10045fe0 *sub_10045fe0(int growSize, int initSize);
+};
+S10045fe0 *S10045fe0::sub_10045fe0(int growSize, int initSize)
+{
+    m_pMemory = 0;
+    m_nAllocationCount = initSize;
+    m_nGrowSize = growSize;
+    if (initSize)
+        m_pMemory = (char *)_imp__Plat_Alloc(initSize * 0x38);
+    m_Size = 0;
+    m_pElements = m_pMemory;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10046050 size=0x1d0
 struct Vec { int x, y, z; void sub_1003e4b0(const Vec &o); };
 struct Box {
