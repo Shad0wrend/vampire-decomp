@@ -119,7 +119,7 @@ public:
 	virtual int vfunc367(int a, float b, float c);	// CWeaponMelee: forwards to sub_103ea7e0 with the constant 0x4b
 	CBCW_V(368) CBCW_V(369)
 	virtual void vfunc370(int *event, CBaseCombatWeapon *other);
-	virtual void vfunc371();
+	virtual char vfunc371();	// slot 371: a boolean answer in al (asked by Inventory_Can_Insert of the weapon already owned)
 	CBaseCombatWeapon();	// 0x10250ac0 (stub 0x10011b8f): the weapon base constructor, run first by the derived weapons' constructors
 	void sub_102507b0();
 	void sub_10250c50();	// the destructor body (called by vfunc5): vtable, releases the object at +0x8dc through the global at 0x10723940 (slot 23), sub_10250560(this), destroys the two lists at +0x8f8 / +0x8e0 (sub_100cd2d0) and the three 0x44 byte CVDmg_t records at +0x77c (sub_101fa680, last first), then the CBaseAnimating destructor body
