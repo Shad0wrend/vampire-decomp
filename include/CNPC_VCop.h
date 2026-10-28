@@ -7,6 +7,7 @@ struct CNPC_VCopPlayer	// the object behind +0xa8 of an entity (the controlling 
 {
 	char sub_1017f8d0();	// stub 0x1000ae3e
 	int sub_1017f770();	// stub 0x10007ee6
+	void sub_1017e6f0(int a);	// stub 0x1000c838
 };
 
 struct CNPC_VCopTarget	// an entity as vfunc404 sees it
