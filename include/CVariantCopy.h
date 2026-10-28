@@ -4,13 +4,19 @@
 
 struct CVariantCopy
 {
-	int m_value;	// 0x00
-	int m_pad04;
-	int m_pad08;
+	union
+	{
+		int m_value;	// 0x00
+		float flVal;
+		const char *iszVal;
+		unsigned char rgba[4];
+		float vecVal[3];
+	};
 	unsigned int m_hEntity;	// 0x0c
 	int m_fieldType;	// 0x10
 
 	CVariantCopy() { m_value = 0; m_hEntity = 0xffffffff; m_fieldType = 0; }
 	CVariantCopy(const CVariantCopy &other);
 	void sub_1000b320(int fieldType, void *pData);	// "variant_t::Set": stores the value of the given field type read from pData
+	const char *sub_100d0a00() const;	// "variant_t::ToString": the value as text in a shared 0x50 byte buffer (void: "", float "%g", string, vector "[%g %g %g]", int, bool "true" / "false", color32 "%d %d %d %d", entity: its debug name or "(null entity)")
 };
