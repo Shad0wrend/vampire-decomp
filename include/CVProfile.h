@@ -16,7 +16,10 @@ public:
 	__declspec(dllimport) bool ExitScope();	// true when the node was left for good (the caller then steps to the parent)
 	__declspec(dllimport) CVProfNode *GetSubNode(const char *pszName, int detailLevel, const char *pBudgetGroupName);	// the child scope of that name (made when missing); VPROF_ENTER_SCOPE inlines the name test around it
 
-	char m_pad0000[8];
+	__declspec(dllimport) void EnterScope();	// VPROF_ENTER_SCOPE's second half: counts the call and starts the timer
+
+	const char *m_pszName;	// 0x00: the scope name (VPROF_ENTER_SCOPE compares it by address)
+	char m_pad0004[4];
 	CUnknownCycle100335e0 m_CurFrameTime;	// 0x08
 	int m_nRecursions;	// 0x10
 	int m_nCurFrameCalls;	// 0x14
