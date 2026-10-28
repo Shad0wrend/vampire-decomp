@@ -16,7 +16,7 @@ public:
 	virtual void vfunc5();
 	virtual void vfunc6(const char *value);	// "ConVar::SetValue( string )"-like: unless the parent (+0x4) answers slot 1 true, slot 7(value) on this and on the parent (when it is another convar)
 	virtual void vfunc7(const char *value);
-	virtual void vfunc8();
+	virtual void vfunc8(float fNewValue);	// "ConVar::SetValue( float )": slot 10 clamps the value, stores it and its int, then (unless flag 0x1000) formats it with "%f" and calls slot 11
 	virtual void vfunc9(int nValue);	// slot 9 (0x24): takes the integer value; called by ConVar::SetValue( int ) on this and on the parent (the flagged convar)
 	virtual bool vfunc10(float *value);
 	virtual void vfunc11(const char *value);	// "ConVar::ChangeStringValue": copies the old string to the stack when a change callback is set, stores the new string, calls the callback with the old one
