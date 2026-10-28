@@ -70039,6 +70039,43 @@ CRecListUnit *CRecListUnit::sub_101dcb80(const CRecListUnit *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dcc80 size=0xe6
+#include "CUnknown101dcc80.h"
+
+CUnknown101dcc80Record *CUnknown101dcc80::sub_101dcc80()
+{
+	if (m_nAllocated == m_nCount) {
+		m_nAllocated++;
+		if (m_ppRecords) {
+			CUnknown101dcc80Record **p = new CUnknown101dcc80Record *[m_nAllocated];
+			int i = 0;
+			if (m_nCount > 0) {
+				do {
+					p[i] = m_ppRecords[i];
+					i++;
+				} while (i < m_nCount);
+			}
+			for (; i < m_nAllocated; i++)
+				p[i] = 0;
+			delete m_ppRecords;
+			m_ppRecords = p;
+		} else {
+			m_ppRecords = new CUnknown101dcc80Record *[m_nAllocated];
+			for (int i = 0; i < m_nAllocated; i++)
+				m_ppRecords[i] = 0;
+		}
+		m_nCount++;
+	} else {
+		m_nCount++;
+	}
+	if (m_ppRecords[m_nCount - 1] == 0) {
+		CUnknown101dcc80Record *p = new CUnknown101dcc80Record;
+		m_ppRecords[m_nCount - 1] = p ? p->sub_101dc850() : 0;
+	}
+	return m_ppRecords[m_nCount - 1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dce30 size=0xac
 #include "CUnknown101dce30.h"
 
