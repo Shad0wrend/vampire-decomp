@@ -202,7 +202,7 @@ public:
 	int m_n1E08;
 	int m_n1E0C;
 	char m_pad1E10[0x18];	// 0x1E10 .. 0x1E27
-	CUtlVector<CGlobalEmailRec> m_GlobalEmail;	// 0x1E28: the global email flag records (0x240 bytes each)
+	CUtlVector<GLOBAL_EMAIL> m_GlobalEmail;	// 0x1E28: the global email flag records (0x240 bytes each)
 	char m_pad1E3C[0x38];	// 0x1E3C .. 0x1E73
 	unsigned int m_flags1E74;
 	char m_pad1E78[0x40];	// 0x1E78 .. 0x1EB7
