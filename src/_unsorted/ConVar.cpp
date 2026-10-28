@@ -72,6 +72,23 @@ void ConVar::vfunc11(const char *tempVal)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10245ed0 size=0x5f
+#include "ConVar.h"
+extern int (__cdecl *g_109f388c)(char *, int, const char *, ...);
+
+void ConVar::vfunc8(float fNewValue)
+{
+    vfunc10(&fNewValue);
+    m_fValue = fNewValue;
+    m_nValue = (int)fNewValue;
+    if (!(m_nFlags & 0x1000)) {
+        char tempVal[32];
+        g_109f388c(tempVal, sizeof(tempVal), "%f", fNewValue);
+        vfunc11(tempVal);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10245f50 size=0x68
 extern int (*g_109f388c)(char *, int, const char *, ...);
 struct SConVar {
