@@ -469,6 +469,7 @@
 0x100022ed func   ?sub_100799b0@SceneView@@QAEXXZ SceneView::sub_100799b0
 0x100022f7 func   ?Grow@?$CUtlMemory@UElem280_t@@@@QAEXH@Z CUtlMemory<Elem280_t>::Grow
 0x100022f7 func   ?sub_102e9e50@@YIXPAUMem@@HH@Z sub_102e9e50
+0x100022fc func   ?sub_101832b0@CUnitP4@@QAE_NXZ CUnitP4::sub_101832b0
 0x10002306 func   ?vfunc416@CAI_BaseNPC@@UAEXD@Z CAI_BaseNPC::vfunc416
 0x10002310 func   ?sub_10139610@@YAXABVQAngle@@PAVVector@@11@Z sub_10139610
 0x10002324 func   ?sub_103dbd50@@YAXXZ sub_103dbd50

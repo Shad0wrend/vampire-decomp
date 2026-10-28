@@ -54913,6 +54913,25 @@ void CUnknown10183100::sub_10183100(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101832b0 size=0x60
+struct CUnitP4 : CBasePlayer {
+    bool sub_101832b0();
+};
+bool CUnitP4::sub_101832b0()
+{
+    if (!m_hEnt1DFC.Get()) {
+        CBaseEntity *pWeapon = (CBaseEntity *)sub_1032e7b0();
+        if (pWeapon) {
+            m_hEnt1DFC = pWeapon;
+            return true;
+        }
+        m_hEnt1DFC = (CBaseEntity *)0;
+        return true;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10183330 size=0xbe
 extern char g_106b8540[];
 
