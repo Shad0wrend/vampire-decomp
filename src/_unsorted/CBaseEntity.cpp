@@ -2491,6 +2491,69 @@ void CBaseEntity::vfunc216(const Vector &absOrigin)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b2510 size=0x1d3
+#include "ScopeTrace.h"
+#include "TestBit.h"
+#include "matrix3x4_t.h"
+
+void sub_10139b90(const float *pAngles, matrix3x4_t &mat);
+void sub_10138760(const float *pVec, int nColumn, matrix3x4_t &mat);
+void sub_10138630(const matrix3x4_t &in, matrix3x4_t &out);
+void sub_10138df0(const matrix3x4_t &a, const matrix3x4_t &b, matrix3x4_t &out);
+void sub_10137ed0(const matrix3x4_t &mat, float *pAngles);
+
+struct SAbsAnglesView	// the transform members of an entity
+{
+	char m_pad0000[0x130];
+	matrix3x4_t m_matFrame;	// 0x130
+	char m_pad0160[0x1b1 - 0x160];
+	char m_bChanged1b1;	// 0x1b1
+	char m_pad01b2[0x25c - 0x1b2];
+	EHANDLE m_hMoveParent;	// 0x25c
+	char m_pad0260[8];
+	unsigned int m_fEFlags268;	// 0x268
+	char m_pad026c[0x404 - 0x26c];
+	Vector m_vecAbsOrigin;	// 0x404
+	float m_angAbsRotation[3];	// 0x410
+	char m_pad041c[0x428 - 0x41c];
+	float m_angRotation[3];	// 0x428
+};
+
+void CBaseEntity::vfunc218(const float *absAngles)
+{
+	ScopeTrace trace("CBaseEntity::SetAbsAngles", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	SAbsAnglesView *p = (SAbsAnglesView *)this;
+	((CBaseEntity *)this)->vfunc98();
+	sub_100b5340(0x800, 0x3000);
+	p->m_fEFlags268 &= ~0x800;
+	p->m_angAbsRotation[0] = absAngles[0];
+	p->m_angAbsRotation[1] = absAngles[1];
+	p->m_angAbsRotation[2] = absAngles[2];
+	sub_10139b90(absAngles, p->m_matFrame);
+	sub_10138760(&p->m_vecAbsOrigin.x, 3, p->m_matFrame);
+	float angNew[3];
+	SAbsAnglesView *pParent = (SAbsAnglesView *)p->m_hMoveParent.Get();
+	if (!pParent) {
+		angNew[0] = absAngles[0];
+		angNew[1] = absAngles[1];
+		angNew[2] = absAngles[2];
+	} else {
+		if (TestBit(pParent->m_fEFlags268, 11))
+			((CBaseEntity *)pParent)->vfunc98();
+		matrix3x4_t matInv, matLocal;
+		sub_10138630(pParent->m_matFrame, matInv);
+		sub_10138df0(matInv, p->m_matFrame, matLocal);
+		sub_10137ed0(matLocal, angNew);
+	}
+	if (angNew[0] != p->m_angRotation[0] || angNew[1] != p->m_angRotation[1] || angNew[2] != p->m_angRotation[2]) {
+		p->m_angRotation[0] = angNew[0];
+		p->m_angRotation[1] = angNew[1];
+		p->m_angRotation[2] = angNew[2];
+		p->m_bChanged1b1 = 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b2be0 size=0xdd
 #include "ScopeTrace.h"
 
