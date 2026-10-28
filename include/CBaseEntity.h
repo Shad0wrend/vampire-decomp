@@ -199,6 +199,7 @@ public:
 	void sub_100b3b90(unsigned int flags);	// "CBaseEntity::ToggleFlag": scope trace, xors the bits into the flags at +0x434
 	void sub_100b3c50(unsigned int flags);	// "CBaseEntity::ToggleFlag2": scope trace, xors the bits into the flags at +0x438
 	void sub_100b3b00();
+	bool sub_100b5110();
 	int sub_100b3d10();	// "CBaseEntity::GetEdict" scope; returns the field at +0x2e0
 	void sub_100b40f0(int a);
 	void sub_100bb790(const char *model, int value);	// subclass init (class not known yet; declared here): clears the colour bytes at +0x1a0, sets the model through slot 212, precaches it and sets the model index
