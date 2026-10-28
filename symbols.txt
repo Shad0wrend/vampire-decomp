@@ -1466,6 +1466,7 @@
 0x10004b1a func   ?vfunc127@CNPC_VAndreiBlood@@QAEHH@Z CNPC_VAndreiBlood::vfunc127
 0x10004b29 func   ?sub_101bc140@CUnknown101bc140@@QAEXXZ CUnknown101bc140::sub_101bc140
 0x10004b33 func   ?sub_100d27b0@@YAXXZ sub_100d27b0
+0x10004b3d func   ?sub_100bbe70@CBeam@@QAEXHH@Z CBeam::sub_100bbe70
 0x10004b51 func   ?sub_1013e400@@YGHH@Z sub_1013e400
 0x10004b60 func   ?vfunc274@CPropHacking@@QAEPAXXZ CPropHacking::vfunc274
 0x10004b65 func   ?vfunc3@CRestore@@UAEXHHHHH@Z CRestore::vfunc3

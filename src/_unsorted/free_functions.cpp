@@ -27630,6 +27630,40 @@ void CBeam::sub_100bbbf0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bbe70 size=0x51
+#include "CBeam.h"
+
+struct CBeamEffectsView
+{
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual void vfunc2();
+	virtual void vfunc3(int a, int b, int c, int d);
+};
+extern CBeamEffectsView *g_10566258;
+
+struct CBeamFlags
+{
+	unsigned int low : 4;
+	unsigned int bStart : 1;
+	unsigned int bEnd : 1;
+	unsigned int bHigh : 26;
+	bool Start() const { return bStart; }
+	bool End() const { return bEnd; }
+};
+
+void CBeam::sub_100bbe70(int a, int b)
+{
+	CBeamFlags *f = (CBeamFlags *)((char *)this + 0x204);
+	if (*(unsigned int *)f & 0x30) {
+		if (f->Start())
+			g_10566258->vfunc3(a, 1, 1, 0);
+		if (f->End())
+			g_10566258->vfunc3(b, 1, 1, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bc0f0 size=0x23
 #include "CUnknown100bc0f0.h"
 
