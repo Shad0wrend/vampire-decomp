@@ -209,6 +209,8 @@ public:
 	void sub_10252470(CBaseEntity *pEnt);	// provisional, like sub_10270aa0 (transplant)
 	void sub_10279b70(CBaseEntity *pEnt);	// provisional, like sub_10270aa0 (transplant)
 	void sub_10279cc0(CBaseEntity *pEnt);	// provisional, like sub_10270aa0 (transplant)
+	void sub_1026d130();	// stub 0x100050d3, run first by vfunc379
+	bool sub_10329760(CBaseEntity *pEnt, int b, int c, int d, int e, int f, int g);	// CBaseCombatCharacter::vfunc379 (stub 0x100152da), called directly
 	void sub_10005d94();	// CBaseCombatCharacter::vfunc380 (stub 0x10005d94), called directly
 	void sub_10007ea0();	// tail-called by vfunc380 (0x10007ea0)
 	void sub_10357110(CBaseEntity *pEnt);	// provisional, like sub_10270aa0 (transplant)
