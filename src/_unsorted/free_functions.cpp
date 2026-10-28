@@ -63231,6 +63231,38 @@ float CStealthKillRules::sub_101bf060(CBaseEntity *pListener, CBaseEntity *pTarg
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bf270 size=0x1c2
+#include "CStealthKillRules.h"
+#include "ScopeTrace.h"
+
+extern CStealthKillRules g_1072c540;
+extern "C" char *__cdecl strcat(char *, const char *);
+char *sub_101d3730(const char *pszFormat, ...);
+extern "C" __declspec(dllimport) void Msg(const char *, ...);
+__declspec(dllimport) int Q_snprintf(char *, int, const char *, ...);
+
+void sub_101bf270()
+{
+	ScopeTrace trace("CStealthKillRules::DebugDumpTable", g_106b8540, g_106b8540);
+	g_1072c540.sub_101be020();
+	Msg("Printing values for the minimum deaf distance.\nIf the player's origin gets closer to the NPC's than this, he will be heard.\n");
+	char szLine[256];
+	Q_snprintf(szLine, 256, "Sneaking    : ");
+	for (int i = 1; i <= 10; i++)
+		strcat(szLine, sub_101d3730("%6d  | ", i));
+	strcat(szLine, "\n");
+	Msg(szLine);
+	for (int iStep = 0; iStep <= 60; iStep++) {
+		float flHearing = iStep * 0.05;
+		Q_snprintf(szLine, 256, "hearing %4.2f: ", flHearing);
+		for (int j = 1; j <= 10; j++)
+			strcat(szLine, sub_101d3730("%-6.1f | ", g_1072c540.sub_101bef50(j, flHearing)));
+		strcat(szLine, "\n");
+		Msg(szLine);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bf6a0 size=0x15b
 #include "CUtlRBTree12.h"
 

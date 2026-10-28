@@ -2903,6 +2903,7 @@
 0x1000844f func   ?sub_101bd0f0@SFilter@@QAEPAU1@E@Z SFilter::sub_101bd0f0
 0x10008454 func   ?vfunc448@CBasePlayer@@UAEXXZ CBasePlayer::vfunc448
 0x1000845e func   ?vfunc113@CWorldEvents@@UAEXXZ CWorldEvents::vfunc113
+0x10008463 func   ?sub_101bf270@@YAXXZ sub_101bf270
 0x10008472 func   ?sub_10288650@CUnknown10288650@@QAEHXZ CUnknown10288650::sub_10288650
 0x1000847c func   ?sub_10136ea0@CUnknown10136ea0@@QAEHXZ CUnknown10136ea0::sub_10136ea0
 0x1000849a func   ?sub_10201190@CVStatList_t@@QAEHH@Z CVStatList_t::sub_10201190
