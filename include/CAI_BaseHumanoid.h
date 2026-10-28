@@ -21,6 +21,10 @@ public:
 	int m_pad5f98;
 	const char *m_pSceneName;	// 0x5f9c
 	unsigned int m_hScene;	// 0x5fa0
+	char pad3[0x5fe0 - 0x5fa4];
+	int m_nPose5fe0[3];	// 0x5fe0: pose parameter indices reset by sub_1025efc0
+
+	void sub_1025efc0();	// resets the three pose parameters (slot 346(index, 0, 0)), runs CBaseAnimating::sub_100955c0 and clears bits 0 and 1 of +0x5f4c
 
 	bool vfunc586();
 	float vfunc516();
