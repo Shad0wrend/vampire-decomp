@@ -185,7 +185,11 @@ public:
 	Vector m_vecHeadAxis1074;	// 0x1074: the head bone's axis (0, -1, 0) rotated by the bone's pose-to-bone matrix
 	int m_nHeadBone1080;	// 0x1080: the Bip01_Head bone index
 	int m_nStealthModifier;	// 0x1084
-	char m_pad1088[0x10d4 - 0x1088];
+	char m_pad1088[0x108c - 0x1088];
+	int m_nHeadTime108c;	// 0x108c: the engine time stamp (engine slot 120) of the last head matrix update
+	Vector m_vecHeadPos1090;	// 0x1090: the head bone position (CalcLookData)
+	Vector m_vecHeadDir109c;	// 0x109c: the head direction (CalcLookData)
+	char m_pad10a8[0x10d4 - 0x10a8];
 	char m_b10d4;	// camera target flag
 	char m_pad10d5[0x13a0 - 0x10d5];
 	int m_field13a0;
