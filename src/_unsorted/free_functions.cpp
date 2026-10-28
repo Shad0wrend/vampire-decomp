@@ -74274,6 +74274,21 @@ float CUnknown101e7db0::sub_101e7db0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e7dd0 size=0x41
+struct CGravityVar101e7dd0 { virtual void v0(); virtual bool IsZero(); char pad[0x28 - 4]; float m_flValue; };
+extern CGravityVar101e7dd0 *g_109ef2d4;
+struct CRules101e7dd0 { char pad[0x3e0]; float m_f3e0; float m_f3e4; float sub_101e7dd0(float a); };
+float CRules101e7dd0::sub_101e7dd0(float a)
+{
+    float g;
+    if (g_109ef2d4->IsZero())
+        g = 0.0f;
+    else
+        g = g_109ef2d4->m_flValue;
+    return (a * a / (g + g) - m_f3e0) / m_f3e4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e7e40 size=0x7
 struct CUnknown101e7e40 { float sub_101e7e40(); };
 float CUnknown101e7e40::sub_101e7e40()
