@@ -92480,6 +92480,26 @@ void sub_1023b3a0(CStateHolder *pHolder)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023b500 size=0x41
+struct SInner { virtual void v0(); virtual char vfunc1(); char pad[0x28]; int m_f2c; };
+struct SArg { int m_f0; SInner *m_pInner; };
+struct SObj { char pad[0x4a0]; bool m_b4a0; };
+SObj *sub_1023bd00();
+
+void __cdecl sub_1023b500(SArg *p)
+{
+    SObj *pObj = sub_1023bd00();
+    if (pObj) {
+        int v;
+        if (p->m_pInner->vfunc1())
+            v = 0;
+        else
+            v = p->m_pInner->m_f2c;
+        pObj->m_b4a0 = v != 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023bb60 size=0xa
 namespace lifted {
 int sub_10004836();
