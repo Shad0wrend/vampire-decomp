@@ -1,6 +1,71 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100d0c90 size=0x1e4
+#include "CVariantSaveDataOps.h"
+
+struct CVariantSaveTD { int fieldType; const char *fieldName; };
+struct CVariantSaveV3 { int x, y, z; };
+extern int g_1055debc[];
+extern int g_1055dee8[];
+extern int g_1055df14[];
+extern int g_1055df40[];
+extern int g_1055df6c[];
+extern int g_1055df98[];
+extern int g_1055dfc4[];
+extern int g_1055dff0[];
+extern CVariantSaveV3 g_1070d1b0;
+__declspec(dllimport) void Warning(const char *fmt, ...);
+
+void CVariantSaveDataOps::vfunc0(SaveRestoreFieldInfo_t *fieldInfo, CSave *pSave)
+{
+	CVariantCopy *pVar = (CVariantCopy *)fieldInfo->pField;
+	int type = pVar->m_fieldType;
+	pSave->vfunc10(&type, 1);
+	switch (pVar->m_fieldType) {
+	case 5:
+		pSave->vfunc3((int)((CVariantSaveTD *)fieldInfo->pTypeDesc)->fieldName, (int)pVar, 0, (int)g_1055debc, 1);
+		break;
+	case 4:
+		pSave->vfunc3((int)((CVariantSaveTD *)fieldInfo->pTypeDesc)->fieldName, (int)pVar, 0, (int)g_1055dee8, 1);
+		break;
+	case 1:
+		pSave->vfunc3((int)((CVariantSaveTD *)fieldInfo->pTypeDesc)->fieldName, (int)pVar, 0, (int)g_1055df14, 1);
+		break;
+	case 0xc:
+		pSave->vfunc3((int)((CVariantSaveTD *)fieldInfo->pTypeDesc)->fieldName, (int)pVar, 0, (int)g_1055df40, 1);
+		break;
+	case 2:
+		pSave->vfunc3((int)((CVariantSaveTD *)fieldInfo->pTypeDesc)->fieldName, (int)pVar, 0, (int)g_1055df6c, 1);
+		break;
+	case 8:
+		pSave->vfunc3((int)((CVariantSaveTD *)fieldInfo->pTypeDesc)->fieldName, (int)pVar, 0, (int)g_1055df98, 1);
+		break;
+	case 3: {
+		CVariantSaveV3 vec;
+		if (pVar->m_fieldType == 3 || pVar->m_fieldType == 0xe)
+			vec = *(CVariantSaveV3 *)pVar;
+		else
+			vec = g_1070d1b0;
+		pSave->vfunc3((int)((CVariantSaveTD *)fieldInfo->pTypeDesc)->fieldName, (int)&vec, 0, (int)g_1055dfc4, 1);
+		break;
+	}
+	case 0xe: {
+		CVariantSaveV3 vec;
+		if (pVar->m_fieldType == 3 || pVar->m_fieldType == 0xe)
+			vec = *(CVariantSaveV3 *)pVar;
+		else
+			vec = g_1070d1b0;
+		pSave->vfunc3((int)((CVariantSaveTD *)fieldInfo->pTypeDesc)->fieldName, (int)&vec, 0, (int)g_1055dff0, 1);
+		break;
+	}
+	default:
+		Warning("Bad type %d in saved variant_t\n", pVar->m_fieldType);
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d0f00 size=0x190
 #include "CVariantSaveDataOps.h"
 
