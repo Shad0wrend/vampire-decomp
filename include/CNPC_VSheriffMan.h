@@ -46,6 +46,9 @@ public:
 	void vfunc103();	// "CNPC_VSheriffMan::Spawn": scope trace around sub_10012855(0x201000) and the base spawn
 	void vfunc104();	// "CNPC_VSheriffMan::Precache": scope trace, the base precache, then the sheriff models / emitters / sword weapon
 	void sub_100013f7();	// CNPC_VHuman::vfunc104 (Precache), called directly
+	int vfunc390(const void *pInfo);	// slot 390 "CNPC_VSheriffMan::OnTakeDamage_Alive": scope trace (no entity name), copies the damage info (0x4c bytes); when the damage (the VDmg record's GetDmg, else the float at +0x30) plus stat 0xf reaches stat 0x11 of the default stat list the take-damage mode is cleared, the global 0x10924a6c is touched, condition 0x79 is set and the byte +0x66e5 raised; then (also while the byte +0x66e4 is set) the copy's damage and its VDmg record's fields +4 / +0xc are zeroed; ends with CNPC_VHuman::vfunc390 on the copy
+	int sub_10385a50(const void *pInfo);	// CNPC_VHuman::vfunc390 (stub 0x10001b45), called directly
+	void sub_10269a20(int condition);	// CAI_BaseNPC member (stub 0x100041b0): sets the condition
 	void vfunc431();	// "CNPC_VSheriffMan::NPCThink": scope trace around the base think, then schedules the next think
 	void sub_100052d6();	// CNPC_VVampireBoss::vfunc431, called directly
 	int vfunc461();	// "CNPC_VSheriffMan::SelectIdealSchedule": scope trace, sets the ideal state to 0x21, then the base implementation
