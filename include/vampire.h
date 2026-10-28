@@ -4,6 +4,7 @@
 #include "ehandle.h"
 #include "globalvars.h"
 #include "engineserver.h"
+#include "engineiface.h"
 #include "CBaseEntity.h"
 #include "CAI_BaseNPC.h"
 #include "CAI_Hint.h"
