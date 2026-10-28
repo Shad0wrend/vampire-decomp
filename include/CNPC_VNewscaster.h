@@ -81,7 +81,9 @@ public:
 	char m_bFlags224;	// 0x224: bit 0 asks for the extra overlay lines
 	char m_pad0225[0x26c - 0x225];
 	const char *m_name26c;	// 0x26c: the entity name
-	char m_pad0270[0x1480 - 0x270];
+	char m_pad0270[0x2e0 - 0x270];
+	int m_pEdict2e0;	// 0x2e0
+	char m_pad02e4[0x1480 - 0x2e4];
 	char m_bFlag1480;
 	char m_pad1481[0x5b84 - 0x1481];
 	int m_n5b84;
