@@ -47,6 +47,7 @@ struct CUnknown101e0f00Fx	// the object the tail's callback worker hands back
 
 struct CUnknown101e0f00Tail	// the object at +0xdc of an entry
 {
+	void sub_101e0310();	// the constructor body (stub 0x1000e124)
 	void sub_101e04a0();	// Debug_Display (stub 0x10006a23)
 	CUnknown101e0f00Fx *sub_101e0410(int a, int b, int c, int d);	// callback worker taking four values (stub 0x10015da2)
 };
