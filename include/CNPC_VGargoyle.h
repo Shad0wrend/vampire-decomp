@@ -38,6 +38,11 @@ public:
 	char vfunc69(CBaseEntity *pOther);	// slot 69 (plain member): true for an entity with bits 1, 2 or 4 of its byte at +0x4c set or whose class name is "prop_dynamic", "func_brush" or "func_door_rotating" (ClassMatches inlined three times); else CAI_BaseNPCTroika::sub_1029b180(pOther)
 	void sub_100076bc(void *pEvent);	// CNPC_VHuman::vfunc259 (stub 0x100076bc), called directly
 	void vfunc617();	// slot 617 (plain member): emits one of the 0x10639480 sounds (random 3..0, channel 4, volume 1.0, attenuation 0.8) from the NPC's edict to the players that can hear its position, reliably (a PAS attenuation filter built inline)
+	void vfunc432(int a);	// slot 432 override: asks the worker behind the stub 0x10006ae6 for an object and a kind; kind 1 runs sub_1000d3cd(obj), any other kind sub_100027a7(obj); then CNPC_VHuman::vfunc432(a)
+	void *sub_10006ae6(int *pKind);	// stub of 0x103796a0
+	void sub_1000d3cd(void *pObj);	// stub of 0x10379e80
+	void sub_100027a7(void *pObj);	// stub of 0x10379b40
+	void sub_1000698d(int a);	// CNPC_VHuman::vfunc432 (stub 0x1000698d), called directly
 	void vfunc618();	// slot 618 (plain member): emits one of the 0x10639490 sounds (random 0..2, channel 4, volume 1.0, attenuation 0.8) from the NPC's edict to the players that can hear its position, reliably (a PAS attenuation filter built inline)
 	void vfunc433();	// slot 433 override: CAI_BaseNPCTroika::vfunc433, then raises the conditions 0xf, 0xc, 0xd and, with an enemy (slot 167) within 50 units in the plane, 0x5f and 0xe
 	void sub_102b27f0();	// CAI_BaseNPCTroika::vfunc433 (stub 0x10013f2f), called directly
