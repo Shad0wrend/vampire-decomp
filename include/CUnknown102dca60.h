@@ -20,7 +20,12 @@ class CUnknown102dca60
 public:
 	char m_pad0000[0x17c];
 	float m_flNextThink;	// 0x17c
-	char m_pad0180[0x45d - 0x180];
+	char m_pad0180[0x2e0 - 0x180];
+	int m_pEdict2e0;	// 0x2e0
+	char m_pad02e4[0x454 - 0x2e4];
+	const char *m_pszSample454;	// 0x454: the sample played when the flag is clear
+	const char *m_pszSample458;	// 0x458: the sample played with the flag set
+	char m_pad045c;
 	char m_bField45d;	// 0x45d
 	char m_pad045e[2];
 	float m_flField460;	// 0x460: a time (0 = none)
