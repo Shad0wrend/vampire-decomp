@@ -62,6 +62,9 @@ public:
 	void sub_10077650();	// resets the event data (stub 0x10007f0e), run first by the destructor
 	float sub_10075e70();	// returns the float at +0x184 (stub 0x100154e7)
 	float sub_10075f10();	// the event's end time (stub 0x10003fc6)
+	int sub_10076690();	// returns the dword at +0x2b4 (the scene object, stub 0x10001b5e)
+	int sub_100766d0();	// returns the dword at +0x2b8 (stub 0x100088d2)
+	char *sub_10075c00();	// returns &m_b04, the event's name (stub 0x1000b0e1)
 	char sub_10075f30();	// whether the event has an end time (stub 0x1000695b)
 	int sub_10075b70();	// returns the type at +0x00 (stub 0x100029c8)
 	void sub_10077860();	// stub 0x10001596, run on every event by CUnknown1007ce20::sub_1007cfc0 first
