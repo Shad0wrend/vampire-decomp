@@ -119015,6 +119015,51 @@ char *CBaseCombatCharacter::sub_10345980(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10345ab0 size=0x1c8
+#include "ScopeTrace.h"
+#include "Vector.h"
+void sub_10139550(const float *ang, Vector *out);
+char __fastcall sub_1000ebb5(void *p);
+char __fastcall sub_1000f786(void *p);
+char __fastcall sub_100040ed(void *p);
+typedef char (__fastcall *PFN_B)(void *);
+typedef float *(__fastcall *PFN_F)(void *);
+extern float g_1049e024;
+extern float g_104454c4;
+
+// TARGET: CBaseCombatCharacter::sub_10345ab0
+bool CBaseCombatCharacter::sub_10345ab0(CBaseEntity *pOther)
+{
+	ScopeTrace trace("CBaseCombatCharacter::WasMeleeBlocked", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (pOther && ((PFN_B)(*(void ***)pOther)[324])(pOther) && ((CBaseCombatCharacter *)pOther)->sub_10345d00())
+	{
+		Vector fwd;
+		sub_10139550(((PFN_F)(*(void ***)pOther)[219])(pOther), &fwd);
+		const Vector *a = (const Vector *)((PFN_F)(*(void ***)pOther)[217])(pOther);
+		const Vector *b = (const Vector *)((PFN_F)(*(void ***)this)[217])(this);
+		Vector dir = *b - *a;
+		if (!(VectorNormalize(dir) > g_1049e024) || !(dir.x * fwd.x + dir.y * fwd.y + dir.z * fwd.z <= g_104454c4))
+		{
+			if (*(void **)((char *)pOther + 0xa8))
+			{
+				if (sub_1000ebb5(*(void **)((char *)pOther + 0xa8)))
+					return true;
+				return false;
+			}
+			char *p = sub_10345980(pOther);
+			if (p)
+			{
+				if (sub_1000f786(p))
+					return true;
+				if (sub_100040ed(p))
+					return true;
+			}
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10345d00 size=0xa1
 #include "CBaseCombatCharacter.h"
 #include "CBaseCombatWeapon.h"
