@@ -57639,6 +57639,33 @@ void CPropDestructable::sub_10193ea0(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10194160 size=0x4c
+#include "CAI_BaseNPC.h"
+#include "inputdata_t.h"
+extern char g_106b8540[];
+struct CNPCUnit : CAI_BaseNPC {
+    int sub_1008f7b0(const char *);
+    void sub_10194160(inputdata_t *pInput);
+};
+void CNPCUnit::sub_10194160(inputdata_t *pInput)
+{
+    variant_t *v = &pInput->value;
+    const char *psz;
+    if (v->fieldType == 2) {
+        psz = v->iszValue;
+        if (!psz)
+            psz = g_106b8540;
+    } else {
+        psz = v->sub_10008805();
+    }
+    int n = sub_1008f7b0(psz);
+    if (n >= 0) {
+        sub_100b3640(0x40000);
+        sub_10260a50(n);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10194270 size=0x49
 void *sub_1000db89(int);
 struct GP;
