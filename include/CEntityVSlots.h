@@ -32,7 +32,7 @@ public:
 	virtual void slot65(int pitch, float yaw, int roll);	// "SetLocalAngles" (the angles by value; the callers copy pitch and roll as raw dwords)
 	EVS(66) EVS(67) EVS(68) EVS(69)
 	EVS10(7)
-	EVS(80) EVS(81) EVS(82) EVS(83) EVS(84) EVS(85)
+	EVS(80) EVS(81) EVS(82) EVS(83) EVS(84) virtual int slot85();	// the entity's edict / entity index the sound calls name it by (asked of the speaking NPC)
 	virtual char slot86(int a, int b, int c, int d, int e);	// takes five arguments, a boolean answer in al (CBaseEntity::vfunc86)
 	EVS(87) EVS(88) EVS(89)
 	EVS(90) virtual char slot91(int a, int b);	/* a boolean answer in al, takes two arguments (the trace's collision group test, passed (group, -1)) */ EVS(92)
