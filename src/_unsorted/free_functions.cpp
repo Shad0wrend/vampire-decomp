@@ -41149,6 +41149,20 @@ bool sub_10109550(Vector *pOrigin, float flHeat, int a, int b, unsigned int nFla
 }
 // END FUNCTION
 
+// FUNCTION: 0x10109770 size=0x4e
+#include "CBaseEntity.h"
+#include "CFire.h"
+int sub_10108f60(CFire **ppFires, int nMax, int a, float *pOrigin, float flRadius);
+
+void sub_10109770(float *pOrigin, float flRadius, float flHeat)
+{
+	CFire *pFires[32];
+	int n = sub_10108f60(pFires, 32, 0, pOrigin, flRadius);
+	for (int i = 0; i < n; i++)
+		pFires[i]->sub_1010b5c0(flHeat, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109840 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
