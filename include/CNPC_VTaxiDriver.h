@@ -15,7 +15,7 @@ public:
 	void sub_1000c531();	// CAI_BaseNPC::vfunc420 (stub 0x1000c531), called directly
 	void sub_10002554(int a);	// CAI_BaseNPC::sub_1026e340 (stub 0x10002554), called directly
 
-	char m_pad0004[0x1b3c - 4];
+	char m_pad0000[0x1b3c];
 	const char *m_pszFile1b3c;	// 0x1b3c
 	int m_nLine1b40;	// 0x1b40
 	char m_pad1b44[0x5cc4 - 0x1b44];
