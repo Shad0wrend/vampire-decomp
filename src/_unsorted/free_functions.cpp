@@ -97382,6 +97382,27 @@ struct CUnknown10258870 {
 void CUnknown10258870::sub_10258870() { slot305(); }
 // END FUNCTION
 
+// FUNCTION: 0x10258880 size=0x53
+#include "CThrownGrenade.h"
+extern void (__cdecl *g_109f3628)(const char *fmt, ...);
+CBaseEntity *sub_10136580(const char *name);
+void sub_101cd940(CBaseEntity *p);
+
+void sub_10258880(const char *pszName)
+{
+	CBaseEntity *pEnt = sub_10136580(pszName);
+	if (!pEnt)
+	{
+		g_109f3628("NULL Ent in UTIL_PrecacheOtherGrenade\n");
+		return;
+	}
+	CThrownGrenade *pGrenade = dynamic_cast<CThrownGrenade *>(pEnt);
+	if (pGrenade)
+		pGrenade->vfunc104();
+	sub_101cd940(pEnt);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10258af0 size=0x8
 #define V5(n) virtual void a##n(); virtual void b##n(); virtual void c##n(); virtual void d##n(); virtual void e##n();
 #define V25(n) V5(n##0) V5(n##1) V5(n##2) V5(n##3) V5(n##4)
