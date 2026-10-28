@@ -104076,6 +104076,26 @@ char CAI_BaseNPCTroika::sub_102c1170()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c1230 size=0x46
+#include "CUnknown100ecee0.h"
+extern int (__cdecl *g_109f3868)(int lo, int hi);
+extern CUnknown100ecee0 g_10924980;
+
+int CAI_BaseNPCTroika::sub_102c1230()
+{
+	int (__cdecl *pfnRandom)(int, int) = g_109f3868;
+	int nNew;
+	do
+	{
+		nNew = pfnRandom(0, 2);
+	} while (nNew == m_n64c8);
+	int r = g_10924980.sub_100ecfc0((CTableNpc_t *)this, m_n64c8, nNew);
+	m_n64c8 = nNew;
+	m_f64e4 = gpGlobals->curtime;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c24a0 size=0x17e
 #include "CGlobalEntityList.h"
 #include "inputdata_t.h"
