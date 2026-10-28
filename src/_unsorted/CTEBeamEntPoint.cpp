@@ -14,6 +14,17 @@ CTEBeamEntPoint *CTEBeamEntPoint::vfunc2(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005ae30 size=0x39
+#include "CTEBeamEntPoint.h"
+#include "IVEngineServerFull.h"
+
+
+void CTEBeamEntPoint::vfunc4(int a, int b)
+{
+	engine->vfunc103(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005aef0 size=0x6
 #include "CTEBeamEntPoint.h"
 namespace lifted {
