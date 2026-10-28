@@ -62,7 +62,7 @@ public:
 	Vector m_vecPosition508;	// +0x508: one end position of the door
 	Vector m_vecPosition514;	// +0x514: the other end position
 	char m_pad0520[0x53c - 0x520];
-	unsigned int m_hActivator53c;	// +0x53c: entity handle of the activator
+	EHANDLE m_hActivator53c;	// +0x53c: entity handle of the activator
 	char m_pad0540[0x564 - 0x540];
 	CDoorEventList m_items564[8];	// +0x564 .. +0x60c (the lists at +0x5dc / +0x60c are two of them)
 	char m_pad0624[0x628 - 0x624];
