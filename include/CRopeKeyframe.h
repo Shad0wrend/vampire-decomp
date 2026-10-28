@@ -8,6 +8,7 @@ public:
 	CRopeKeyframe *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
 	CRopeKeyframe *sub_1019dc80();	// as in CKeepUpright (transplant)
+	virtual bool vfunc110(const char *szKeyName, const char *szValue);	// slot 110 "CRopeKeyframe::KeyValue": the Breakable / Collide / Barbed keys set the rope flag bits 0x10 / 4 / 2 for a value of 1, Dangling 1 clears bit 1 of +0x478 (and answers true), Type picks the segment count (0 -> 10, 1 -> 4, else 2), RopeShader the cable material; everything else (and the flag keys) go on to CBaseEntity::KeyValue
 	virtual void vfunc104();	// slot 104 "Precache": appends ".vmt" to the material name at +0x488 when it lacks it, then precaches it (index at +0x46c)
 	bool sub_1019ee40();	// switches this rope's state off (sub_1019f1f0(false)), then switches it on (sub_1019f1f0(true)) for every other rope entity of the same name; returns true
 	void sub_1019f1f0(int nBit);	// clears bit nBit (1 << nBit) of the flags at +0x478 and sets the byte at +0x1b1 (worker, called through the stub at 0x10001da7)
