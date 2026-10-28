@@ -38,6 +38,8 @@ public:
 	void vfunc24(void *pVictim);	// slot 24 "CNPC_VGhoulCroucher::OnVictimHitByMe": scope trace (entity name), when the burning variant byte (+0x6665) is set and the victim has the dword at +0xa8 calls sub_1037c090(that dword, 10.0f), then CAI_BaseNPCTroika::vfunc24(pVictim); declared as a plain member
 	void sub_1037c090(void *pObject, float flValue);	// stub 0x10008855, called directly
 	void sub_10006136(void *pVictim);	// CAI_BaseNPCTroika::vfunc24 (stub 0x10006136), called directly
+	char vfunc379(void *pEnt, int b, int c, int d, int e, int f, int g);	// slot 379 override: as the burning variant (+0x6665) with an entity that has the dword at +0xa8, sub_1037c090(that dword, 10.0f) and false; else CAI_BaseNPCTroika::vfunc379
+	char sub_1000f2b3(void *pEnt, int b, int c, int d, int e, int f, int g);	// CAI_BaseNPCTroika::vfunc379 (stub 0x1000f2b3), tail called
 	void vfunc174(CBaseEntity *pOther);	// slot 174 "CNPC_VGhoulCroucher::StartTouch": scope trace (entity name), CBaseEntity::vfunc174(pOther); when pOther has the dword at +0xa8 or +0x94 sub_1037b6e0(pOther); then, as the burning variant (+0x6665) touching a character (+0xa8) and when the time at +0x666c has passed, pushes it ahead by a constant and calls sub_1037c090(that dword, 5.0f); declared as a plain member
 	void sub_100a49d0(CBaseEntity *pOther);	// CBaseEntity::vfunc174 (stub 0x10009caf), called directly
 	void vfunc420();	// slot 420 "CNPC_VWerewolf::NPCInit"-named: scope trace (entity name), the CNPC_VHumanCombatant version, Inventory_Destroy, gives the claws (item_w_claws_ghoul, stalker byte +0x6664 clear: item_w_knife), misc flag 0x10, and for the burning variant (+0x6665) spawns the fire emitter and stores its handle at +0x6670; then sub_10332aa0(1, 1, 10)
