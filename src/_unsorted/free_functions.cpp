@@ -111685,6 +111685,20 @@ unsigned short CUtlRBTree16::sub_103134b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10313aa0 size=0x57
+#include "CUtlRBTree16.h"
+
+struct CUtlRBTree16Unit : CUtlRBTree16At<0x10936c54>
+{
+    const Links_t *sub_10313aa0(unsigned short i) const;
+};
+
+const CUtlRBTree16::Links_t *CUtlRBTree16Unit::sub_10313aa0(unsigned short i) const
+{
+    return &Links(i);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10313f70 size=0x67
 struct Mem16 { void *m_pMemory; int m_nAllocationCount; int m_nGrowSize; };
 extern void *(*g_109f3638)(void *, int);
