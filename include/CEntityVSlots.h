@@ -28,7 +28,8 @@ public:
 	virtual void slot62(const float *pOrigin);	// "SetAbsOrigin"-like
 	EVS(63)
 	virtual void slot64(const float *pAngles);	// "SetAbsAngles"-like
-	EVS(65) EVS(66) EVS(67) EVS(68) EVS(69)
+	virtual void slot65(Vector angles);	// "SetLocalAngles" (the angles by value)
+	EVS(66) EVS(67) EVS(68) EVS(69)
 	EVS10(7)
 	EVS(80) EVS(81) EVS(82) EVS(83) EVS(84) EVS(85)
 	virtual char slot86(int a, int b, int c, int d, int e);	// takes five arguments, a boolean answer in al (CBaseEntity::vfunc86)
