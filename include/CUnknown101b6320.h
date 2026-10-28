@@ -23,6 +23,8 @@ struct CUnknown101b6320Params
 	char m_szChannel[0x20];	// 0x69
 	char m_szSoundLevel[0x20];	// 0x89
 	char m_szPitch[0x20];	// 0xa9
+
+	CUnknown101b6320Params *sub_101b5b70(const CUnknown101b6320Params &other);	// copy constructor: clears the two vectors, copies the scalars, then both vectors element by element and the four strings
 };
 
 class CUnknown101b6320
