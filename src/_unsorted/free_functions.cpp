@@ -16040,6 +16040,33 @@ void List1007e320::sub_1007e320(Elem1007e320 *pElem)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007e410 size=0xbe
+#include "CUnknown1007e320.h"
+#include "utlvector.h"
+
+struct Elem1007e410 {
+    char pad0[0x84];
+    CUtlVector<int> m_V;
+};
+
+struct List1007e410 {
+    char pad0[0x28];
+    CUtlVector<Elem1007e410 *> m_list;
+
+    void sub_1007e410(Elem1007e410 *pElem);
+};
+
+void List1007e410::sub_1007e410(Elem1007e410 *pElem)
+{
+    for (int i = m_list.Count() - 1; i >= 0; i--) {
+        if (m_list[i] == pElem)
+            m_list.Remove(i);
+    }
+    if (pElem)
+        delete pElem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007e580 size=0x8
 void __fastcall sub_1007e580(int *p) { p[0x5c / 4] = 0; }
 // END FUNCTION
