@@ -71210,6 +71210,21 @@ CUnknown101d86d0 *CUnknown101d86d0::sub_101d86d0(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d8820 size=0x46
+#include "CUnknown101d8a70.h"
+#include "CVDmg_t.h"
+void __fastcall sub_10205380(CVDmgBlock16_t *p);
+CUnknown101d8a70 *CUnknown101d8a70::sub_101d8820(int owner, CBaseCombatWeapon *pWeapon, void *pRecord, int n)
+{
+    sub_10205380((CVDmgBlock16_t *)((char *)this + 0x1c));
+    CVDmgBlock16_t *pBlock = (CVDmgBlock16_t *)pRecord;
+    int v = pBlock->sub_10204900((void *)owner);
+    int f = pBlock->sub_10204ad0((void *)owner);
+    sub_101d88b0(owner, pWeapon, pRecord, v, n, f);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d8890 size=0xa
 extern int g_1073938c;
 // TARGET: sub_101d8890
