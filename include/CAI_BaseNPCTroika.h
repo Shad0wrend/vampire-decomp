@@ -83,6 +83,7 @@ public:
 	void vfunc506();
 	void vfunc507();	// slot 507: plays the "Float" sound (pitch from the value at +0x128), then stamps the float at +0x10ec with the engine time plus the "Float Sound Info" stat
 	void vfunc616();	// slot 616: base call with 0x30, then stamps curtime + 15 at +0x65bc
+	int vfunc612();	// slot 612 (declared as a plain member): 0x80 by default; with the dialog partner (handle at +0xfe8) alive 0x280 when the byte at +0x654c is set, else 0x680
 	int vfunc611();	// slot 611: picks one of the table values (index at +0x64c8) for the NPC through CUnknown100ecee0::sub_100ecee0, with random switches (flags at +0x64e0 / +0x64e1, time at +0x64e4); falls back to the dword at +0x6f0 for -1
 	int sub_102c1230();	// called through the stub at 0x1000d4cc by vfunc611
 	int vfunc609(char bForce);	// slot 609 (declared as a plain member): the target at +0x6444 when slot 566 still accepts it; unless bForce, 0 while curtime is before the time at +0x6440; else re-arms that time (random 2.0 .. 2.5 seconds ahead) and starts the free function sub_102d2980(this, 8, 0x10, range, 0, 0) (stub 0x1000a1e1) with the range 1024.0f or the float at +0x8c0 of the active weapon
