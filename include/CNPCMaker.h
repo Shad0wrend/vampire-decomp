@@ -12,6 +12,7 @@ public:
 	char sub_1034b430();	// stub 0x10001afa
 	void sub_1034cf20(int a, char bNotify);	// stores a at +0x76d0 and, with bNotify, walks the entities named like the string at +0x66bc and hands a to the one (sub_103e0980) whose owner handle (+0x254 of the object at +0x98) resolves to this
 	void sub_1034bbf0();	// schedules the next think: the spawn delay (+0x6664) after slot 617(0) or when the live count (+0x66b0) reached the limit (+0x66b4), else 1..2 seconds
+	char vfunc618(char bForce);	// slot 618 "CanSpawn": true when forced; false at the live limit, while the global at 0x106c8a41 is set, when the player (sub_101cda50) is excluded by the flags at +0x66c1 / +0x66c5 or nearer than the distance at +0x66c8; else true when the box around the maker holds no entity (mask 0x2080)
 
 	char m_pad03e0[0x6664 - 0x3e0];
 	float m_flSpawnDelay;	// 0x6664
@@ -21,9 +22,13 @@ public:
 	int m_n66b8;	// 0x66b8
 	char m_pad66bc[4];
 	char m_b66c0;	// 0x66c0
-	char m_pad66c1;
+	char m_b66c1;	// 0x66c1
 	char m_b66c2;	// 0x66c2
 	char m_b66c3;	// 0x66c3
+	char m_pad66c4;
+	char m_b66c5;	// 0x66c5
+	char m_pad66c6[2];
+	int m_n66c8;	// 0x66c8: minimum distance of the player (0 = none)
 public:
     virtual void vfunc113();
     virtual void vfunc123();
