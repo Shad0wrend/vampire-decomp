@@ -100657,6 +100657,53 @@ void CAI_BaseNPCTroika::sub_1029ea40(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029eb30 size=0x1d5
+#include "CAI_BaseNPCTroika.h"
+#include "inputdata_t.h"
+#include "CVariantCopy.h"
+#include <string.h>
+#include <stdlib.h>
+
+__declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+__declspec(dllimport) void DevMsg(int level, const char *pMsg, ...);
+extern char g_106b8540[];
+int sub_103079c0(const char *pszName);
+
+#define INPUT_STRING(v) ((v)->fieldType == 2 ? ((v)->iszValue ? (v)->iszValue : g_106b8540) : (v)->sub_10008805())
+
+void CAI_BaseNPCTroika::sub_1029eb30(inputdata_t *pInput)
+{
+	if (m_n5cc0 == 7)
+		return;
+	variant_t *pValue = &pInput->value;
+	char szBuf[256];
+	Q_strncpy(szBuf, INPUT_STRING(pValue), 256);
+	char *pszRepeat = strtok(szBuf, ", ");
+	char *pszType = strtok(0, ", ");
+	char *pszSched = strtok(0, ", ");
+	if (!pszRepeat || !pszType) {
+		DevMsg(1, "ERROR: %s - Argument to InputSetupPatrolType(%s) is in the wrong format.\nShould be 'RepeatCount PathType Schedule'\n", sub_1000b5cd(), INPUT_STRING(pValue));
+		return;
+	}
+	int nRepeat = atoi(pszRepeat);
+	if (nRepeat < 0) {
+		DevMsg(1, "ERROR: %s - Could not get repeat type %s (in InputSetupPatrolType (%s))\n", sub_1000b5cd(), pszType, INPUT_STRING(pValue));
+		return;
+	}
+	int nType = sub_103079c0(pszType);
+	if (nType == -1) {
+		DevMsg(1, "ERROR: %s - Could not get repeat type %s (in InputSetupPatrolType (%s))\n", sub_1000b5cd(), pszType, INPUT_STRING(pValue));
+		return;
+	}
+	int nSched = sub_1029f370(pszSched);
+	if (nSched == 0) {
+		DevMsg(1, "ERROR: %s - Could not find schedule '%s' (in InputSetupPatrolType (%s))\n", sub_1000b5cd(), pszSched, INPUT_STRING(pValue));
+		return;
+	}
+	sub_1029f460((char *)this + 0x658c, nRepeat, nType, nSched, 0, 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029ed90 size=0x16c
 #include "CAI_BaseNPCTroika.h"
 #include "inputdata_t.h"
