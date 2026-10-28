@@ -665,6 +665,7 @@
 0x10002a6d func   ?sub_1006edb0@CUnknown1006edb0@@QAEHXZ CUnknown1006edb0::sub_1006edb0
 0x10002a72 func   ?sub_102013a0@CVStatList_t@@QAEPBDH@Z CVStatList_t::sub_102013a0
 0x10002a86 func   ?Links@?$CUtlRBTree@UCExpresserTreeEntry@@G@@QBEABULinks_t@1@G@Z CUtlRBTree<CExpresserTreeEntry,unsigned short>::Links
+0x10002a8b func   ?vfunc6@CAI_Motor@@UAEXPAVVector@@@Z CAI_Motor::vfunc6
 0x10002a90 func   ?sub_1017f170@CBasePlayer@@QAEXPAX@Z CBasePlayer::sub_1017f170
 0x10002aa9 func   ?vfunc223@CPhysicsProp@@QAE_NXZ CPhysicsProp::vfunc223
 0x10002ab3 func   ?vfunc0@CTEBreakModel@@UAEPAUServerClass@@XZ CTEBreakModel::vfunc0
