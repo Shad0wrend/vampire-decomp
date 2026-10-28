@@ -70,6 +70,8 @@ public:
 	char m_pad667c[0x66d8 - 0x667c];
 	float m_flNextLunge66d8;	// 0x66d8
 	float m_flMaxDist66dc;	// 0x66dc
+	char m_b66e0;	// 0x66e0: set when the hit is stronger than the zombie's two stats allow
+	char m_b66e1;	// 0x66e1: the head-hit flag
 public:
     virtual datamap_t * vfunc82();
 };
