@@ -79760,6 +79760,32 @@ const char *CUnknown10202ba0::sub_10202a10(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10202a50 size=0x41
+extern "C" int _strcmpi(const char *a, const char *b);
+
+struct CUnknown10202a50 {
+    char m_pad0000[0xc];
+    int m_nCount;
+    const char *sub_10010c8f(int index);
+    int sub_10202a50(const char *name);
+};
+
+// TARGET: sub_10202a50
+int CUnknown10202a50::sub_10202a50(const char *name)
+{
+    int i = 0;
+    if (m_nCount > 0) {
+        do {
+            if (_strcmpi(sub_10010c8f(i), name) == 0) {
+                return i;
+            }
+            i++;
+        } while (i < m_nCount);
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10202ac0 size=0x3f
 #include "vampire.h"
 
