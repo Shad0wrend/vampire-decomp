@@ -91,6 +91,13 @@ bool CUnknownNPC101a6ce0::sub_101a6ce0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026a8a0 size=0x16
+float CAI_BaseNPC::vfunc471()
+{
+	return enginerandom->vfunc1(0.2f, 0.9f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026a8f0 size=0x8
 // TARGET: CAI_BaseNPC::vfunc567
 int CAI_BaseNPC::vfunc567(int unused)
