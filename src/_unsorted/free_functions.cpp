@@ -26573,6 +26573,29 @@ extern int g_106cff54;
 void sub_100b4e80(int v) { g_106cff54 = v; }
 // END FUNCTION
 
+// FUNCTION: 0x100b5110 size=0x5b
+struct SPhysLike5110 {
+    virtual void v0();
+    virtual void v1();
+    virtual int Slot2(int);
+    virtual void v3();
+    virtual void v4();
+    virtual void v5();
+    virtual int Slot6(int);
+};
+extern SPhysLike5110 *g_1070b250;
+// TARGET: CBaseEntity::sub_100b5110
+bool CBaseEntity::sub_100b5110()
+{
+    if (vfunc92() == 1)
+        return true;
+    int h = g_1070b250->Slot2(vfunc8());
+    if (vfunc92() == 6 && g_1070b250->Slot6(h) == 1)
+        return true;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b5190 size=0x7
 struct CUnknown100b5190 { char sub_100b5190(); };
 char CUnknown100b5190::sub_100b5190()
