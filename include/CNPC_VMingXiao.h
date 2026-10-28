@@ -89,7 +89,9 @@ public:
 	char m_b1482;	// +0x1482
 	char m_pad1483[0x1574 - 0x1483];
 	float m_f1574;	// +0x1574
-	char m_pad1578[0x6290 - 0x1578];
+	char m_pad1578[0x6264 - 0x1578];
+	float m_f6264;	// +0x6264
+	char m_pad6268[0x6290 - 0x6268];
 	Vector m_vecAxis6290;	// +0x6290
 	Vector m_vecExtent629c;	// +0x629c
 	char m_pad62a8[0x6670 - 0x62a8];
