@@ -28,7 +28,7 @@ public:
 	virtual void slot62(const float *pOrigin);	// "SetAbsOrigin"-like
 	EVS(63)
 	virtual void slot64(const float *pAngles);	// "SetAbsAngles"-like
-	virtual void slot65(Vector angles);	// "SetLocalAngles" (the angles by value)
+	virtual void slot65(int pitch, float yaw, int roll);	// "SetLocalAngles" (the angles by value; the callers copy pitch and roll as raw dwords)
 	EVS(66) EVS(67) EVS(68) EVS(69)
 	EVS10(7)
 	EVS(80) EVS(81) EVS(82) EVS(83) EVS(84) EVS(85)
