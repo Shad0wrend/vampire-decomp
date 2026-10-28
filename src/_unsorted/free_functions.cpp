@@ -87297,6 +87297,18 @@ void sub_1022ea60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022ea80 size=0x12
+void sub_10006014(void *p);
+
+// TARGET: sub_1022ea80
+void sub_1022ea80(void *p)
+{
+    if (p) {
+        sub_10006014(p);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022eb60 size=0x82
 struct TStat { void sub_101fc950(int a, int b); };
 
