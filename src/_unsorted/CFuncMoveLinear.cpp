@@ -90,6 +90,35 @@ void CFuncMoveLinear::vfunc173(void *pActivator, void *pCaller, int useType, flo
 }
 // END FUNCTION
 
+// FUNCTION: 0x101174f0 size=0x1c4
+#include "CFuncMoveLinear.h"
+#include "CEntityVSlots.h"
+
+__declspec(dllimport) int Q_snprintf(char *, int, const char *, ...);
+void sub_101434b0(int entindex, int line, const char *text, int duration, int r, int g, int b, int a);
+
+int CFuncMoveLinear::vfunc124()
+{
+	int text_offset = sub_100a02b0();
+	if (m_bDebugOverlays224 & 1) {
+		char tempstr[512];
+		float flTravelDist = (m_vecPosition1 - m_vecPosition2).Length();
+		float flCurDist = (m_vecPosition1 - *((CEntityVSlots *)this)->slot220()).Length();
+		float flRatio = 1.0f / flTravelDist;
+		Q_snprintf(tempstr, sizeof(tempstr), "Current Pos: %3.3f", flRatio * flCurDist);
+		int nEdict = m_pEdict2e0;
+		sub_101434b0(engine->vfunc35(nEdict), text_offset, tempstr, 0, 255, 255, 255, 255);
+		text_offset++;
+		double flTargetDist = (m_vecPosition1 - m_vecFinalDest).Length();
+		Q_snprintf(tempstr, sizeof(tempstr), "Target Pos: %3.3f", flRatio * flTargetDist);
+		nEdict = m_pEdict2e0;
+		sub_101434b0(engine->vfunc35(nEdict), text_offset, tempstr, 0, 255, 255, 255, 255);
+		text_offset++;
+	}
+	return text_offset;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10117740 size=0x78
 #include "CFuncMoveLinear.h"
 void sub_100aa7b0(void *p);
