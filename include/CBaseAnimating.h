@@ -93,6 +93,9 @@ public:
 	float sub_10094dc0(float flCycle);	// "CBaseAnimating::GetMovementFrame...": scope trace (entity name), without a studio header the file-scope zero, else the studio helper's value for (GetModelPtr(-1), the sequence at +0x6f0, the pose parameters at +0x690, flCycle)
 	int sub_1008f6c0(int activity);	// "CBaseAnimating::LookupActivity": scope trace (entity name), the first non-negative result of the studio helper sub_10428360(GetModelPtr(i), activity) for i = -1, 0, 1; else -1
 
+	void sub_1008b800(int index, float flDelay, float flDuration, const Vector *pForce, int nForceBone);	// \"CBaseAnimating::TriggerClientRagdoll\"-like worker (ret 0x14)
+	bool sub_10090180(const Vector *pForce, int nForceBone, bool bKeepSolid);	// \"CBaseAnimating::BecomeClientRagdoll\": scope trace (entity name), true when the model type of slot 8() is valid
+
 	// Slot 249, called directly so far; declared as a plain member.
 	float vfunc249();	// "CBaseAnimating::GetIdealAccel": slot 248 + constant
 	int vfunc252(int a, int b, int c);	// "CBaseAnimating::SelectWeightedSequenceForStat": scope trace, then sub_1008dc40(a, -1)
