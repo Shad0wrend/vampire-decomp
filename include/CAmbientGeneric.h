@@ -27,7 +27,11 @@ public:
 	const char *volatile m_pszSoundFile;	// 0x4c0 (volatile: the game's code reads it again for the null check)
 	const char *m_pszSoundEntName;	// 0x4c4: name of the entity the sound is attached to
 	unsigned int m_hSoundEnt;	// 0x4c8: entity handle of the entity the sound is attached to
-	char pad04cc[0x4e0 - 0x4cc];
+	char pad04cc[0x4dc - 0x4cc];
+	char m_b04dc;
+	char m_b04dd;
+	char m_b04de;
+	char m_b04df;
 	int m_n04e0;
 
 	unsigned int sub_101ac2f0();
