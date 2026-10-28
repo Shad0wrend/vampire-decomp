@@ -68,6 +68,7 @@ public:
 	void sub_100561a0(int elem);	// "CUtlRBTree::RotateRight"
 	const Links_t &sub_1007fc70(int i) const;	// "CUtlRBTree::Links" of another instance (sentinel 0x106c85b4, stub 0x10003bca)
 	void sub_1007fd70(int elem);	// "CUtlRBTree::RotateLeft" of that instance
+	void sub_1007ffc0(int elem);	// "CUtlRBTree::RotateRight" of that instance
 };
 
 // The game has one CUtlRBTree<T, I> per element type T; CUtlRBTree24 stands for every instance with 24-byte nodes.
