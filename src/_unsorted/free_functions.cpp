@@ -106168,6 +106168,53 @@ void CUnknown102dca60::sub_102dc520()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dc6a0 size=0x1c8
+#include <string.h>
+#include "ScopeTrace.h"
+#include "CUnknown102dca60.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+
+__declspec(dllimport) void Warning(const char *pMsg, ...);
+int sub_10228350(float flLoudness);
+
+static inline const char *STRING(const char *psz)
+{
+	if (!psz)
+		return g_106b8540;
+	return psz;
+}
+
+void CUnknown102dca60::sub_102dc6a0(char bFlag)
+{
+	sub_102dc520();
+	const char *pszSample;
+	if (bFlag)
+		pszSample = STRING(m_pszSample458);
+	else
+		pszSample = STRING(m_pszSample454);
+	if (strlen(pszSample) != 0) {
+		int nFlags = 0x80;
+		if (!bFlag)
+			nFlags = 0x180;
+		if (!m_bField515)
+			nFlags |= 0x200;
+		int nLevel = sub_10228350(m_flLoudness468);
+		CPASAttenuationFilter filter((CEntitySoundOriginView *)this, (soundlevel_t)nLevel);
+		int edict = m_pEdict2e0;
+		enginesound->vfunc2(&filter, engine->vfunc35(edict), 2, pszSample, 1.0f, nLevel, nFlags, 100, 0, 0, 1, 0);
+	} else {
+		Warning("%s could not play sound file\n", ((CBaseEntity *)this)->sub_1000b5cd());
+	}
+	if (bFlag) {
+		m_flField460 = enginesound->vfunc12(STRING(m_pszSample458)) + gpGlobals->curtime;
+		m_bField45d = 0;
+	} else {
+		m_flField460 = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dca60 size=0x15e
 #include "CUnknown102dca60.h"
 #include "CGlobalEntityList.h"
