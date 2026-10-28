@@ -247,6 +247,8 @@ public:
 	void sub_10274ca0();	// eye offset setup: the model's eye position (via sub_100952d0(-1)) into the vector at +0x5d60; when it is still zero warns "has no eye offset in .qc" and uses (collision maxs + mins) * 0.75; then stores it as the view offset (sub_1009f380)
 	void *sub_100952d0(int a);	// CBaseAnimating::GetModelPtr (stub 0x10013d8b), called directly
 	const char *sub_1009f200();	// CBaseEntity::GetDebugName (stub 0x1000ea11), called directly
+	int sub_102814d0();	// \"CAI_BaseNPC::SelectSchedule\" worker: refreshes the cached interrupt conditions when their time has passed, runs slot 433 unless the byte at +0x5ca4 is set, then (profiled as CAI_BaseNPC_SelectSchedule) picks the schedule (sub_1028a260), stores its local id (the global id through slot 580 when it is below 1000000000 or -1) at +0x5c3c and answers sub_102cc1f0 of it
+	int sub_1028a260();	// stub 0x10008f80: the schedule pick of the NPC, called directly by sub_102814d0
 	void sub_100b3640(int a);	// CBaseEntity member (stub 0x1001457e), called directly by vfunc422 with 1
 	int sub_100ac4e0(int a, int b, const char *pszContext);	// CBaseEntity::sub_100ac4e0 (ThinkSet, stub 0x10007fe5), called directly
 	void sub_1009f380(const Vector *pVec);	// CBaseEntity view offset setter (+0x184 vector), called directly
