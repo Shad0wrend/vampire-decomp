@@ -40,5 +40,6 @@ public:
 	void sub_1025c9d0(const void *insert, unsigned short &parent, bool &leftchild);	// "CUtlRBTree::FindInsertionPoint": walks down from the root with the less function, remembering the last node and the side
 	unsigned short sub_1025c800(unsigned short parent, bool leftchild);	// "CUtlRBTree::InsertAt": NewNode (free list head, else the memory grows by one node and the next unused index is taken), constructs the element, links it below parent (the root when parent is InvalidIndex()), InsertRebalance, ++m_NumElements; returns the node index
 	Links_t &sub_1025cb70(unsigned short i);	// "CUtlRBTree::Links" (out of line, with the sentinel static; stub 0x10007fdb)
+	void sub_1025d4b0(unsigned short elem);	// "CUtlRBTree::RotateLeft"
 	void sub_1025cbf0(unsigned short i);	// "CUtlRBTree::InsertRebalance" (stub 0x1000cc9d)
 };
