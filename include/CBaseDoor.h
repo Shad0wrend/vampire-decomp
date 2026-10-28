@@ -19,7 +19,8 @@ public:
 	DOOR_SLOTS10(dsf) DOOR_SLOTS10(dsg) DOOR_SLOTS10(dsh) DOOR_SLOTS10(dsi) DOOR_SLOTS10(dsj)	// slots 184..233
 	virtual void dsk0(); virtual void dsk1(); virtual void dsk2(); virtual void dsk3(); virtual void dsk4();	// slots 234..245
 	virtual void dsk5(); virtual void dsk6(); virtual void dsk7(); virtual void dsk8(); virtual void dsk9();
-	virtual void dsl0(); virtual void vfunc245(Vector *pMins, Vector *pMaxs);	// slot 245: the world bounds of the door's collision box moved to its open position: the absolute origin moved against the move direction (+0x190) by the door's extent along it (|(size - 2) * dir| summed over the axes) minus the lip (+0x504), plus the collision mins / maxs (slots 1 / 2 of the property at +0x270); the two results go to pMins / pMaxs
+	virtual void vfunc244(char bChain);	// slot 244: opens the door: with bChain and a linked door (handle +0x630) the linked door opens too, taking over this door's activator for the duration; then state 3, the arrival think sub_100f11b0 and a LinearMove to the open position (+0x508) at the entity's speed; fires the output at +0x5f4 with the activator
+	virtual void vfunc245(Vector *pMins, Vector *pMaxs);	// slot 245: the world bounds of the door's collision box moved to its open position: the absolute origin moved against the move direction (+0x190) by the door's extent along it (|(size - 2) * dir| summed over the axes) minus the lip (+0x504), plus the collision mins / maxs (slots 1 / 2 of the property at +0x270); the two results go to pMins / pMaxs
 	virtual void vfunc246(int a, int* b, int c);	// slot 246: called with the NPC that wants to use the door, a 16 byte result record and a flag byte; the record's last dword is an activity to start
 	void vfunc71();
 	void vfunc104();	// slot 104: calls slot 71, then sub_100eecf0
