@@ -122252,6 +122252,41 @@ void CAI_BaseNPC::sub_10357110(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10357be0 size=0x1e1
+#include "CEntityVSlots.h"
+#include "CAI_Motor.h"
+#include "CNPC_Crow.h"
+
+float sub_101d2c70(const Vector &v);
+float sub_101d2ce0(const Vector &v);
+extern Vector g_1070d1b0;
+
+void CNPC_Crow::sub_10357be0(float flSpeed)
+{
+	if (flSpeed > 1.0)
+		flSpeed = 1.0f;
+	if (m_pTarget5ddc) {
+		Vector vecTarget = *((CEntityVSlots *)m_pTarget5ddc)->slot220();
+		Vector dir = vecTarget - *((CEntityVSlots *)this)->slot220();
+		if (FastSqrt(dir.x * dir.x + (dir.y * dir.y + dir.z * dir.z)) < flSpeed * 170.0f)
+			m_b5f54 = 1;
+		VectorNormalize(dir);
+		Vector out;
+		if (sub_10357e50(dir, 170.0f, &out))
+			dir = out;
+		sub_100b2770(dir * 170.0f);
+		CAI_Motor *pMotor = m_pMotor5d44;
+		pMotor->sub_102e1c10(sub_101d2c70(dir), -2.0f);
+		Vector ang = *((CEntityVSlots *)this)->slot221();
+		ang.x = sub_101d2ce0(dir);
+		((CEntityVSlots *)this)->slot64(&ang.x);
+	} else {
+		((CEntityVSlots *)this)->slot220();
+		sub_100b2770(g_1070d1b0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103580d0 size=0xaf
 #include "CNPC_Crow.h"
 

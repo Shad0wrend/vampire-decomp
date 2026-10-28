@@ -4203,6 +4203,7 @@
 0x1000b5f5 func   _item_g_idol_dragon item_g_idol_dragon
 0x1000b5ff func   ?sub_1005be30@@YAXHHHHHHHHHHHHHHHHHH@Z sub_1005be30
 0x1000b609 func   ?sub_100d94a0@@YA_NPAVCBaseCombatCharacter@@H@Z sub_100d94a0
+0x1000b61d func   ?sub_10357be0@CNPC_Crow@@QAEXM@Z CNPC_Crow::sub_10357be0
 0x1000b627 func   _func_wall func_wall
 0x1000b636 func   ?sub_1012c840@@YAXPAUCChildView@@@Z sub_1012c840
 0x1000b63b func   ?sub_102d3ea0@@YAXXZ sub_102d3ea0
