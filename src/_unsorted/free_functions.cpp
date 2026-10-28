@@ -1058,6 +1058,136 @@ void *sub_1002e140(void *pBuffer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002e580 size=0x1de
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+#include "engineserver.h"
+#include <string.h>
+
+struct SVCollide
+{
+	int m_n0;
+	void **m_ppSolids;
+	const char *m_pKeyText;
+};
+
+struct SObjectParams
+{
+	void *massCenterOverride;
+	float mass;
+	float inertia;
+	float damping;
+	float rotdamping;
+	float rotInertiaLimit;
+	const char *pName;
+	void *pGameData;
+	float volume;
+	float dragCoefficient;
+	float m_f28;
+	char enableCollisions;
+};
+
+struct SSolid
+{
+	int index;
+	char name[512];
+	char parent[512];
+	char surfaceprop[512];
+	float massCenterOverride[3];
+	SObjectParams params;
+};
+
+struct ISolidParser
+{
+	virtual void s0();
+	virtual const char *GetCurrentBlockName();
+	virtual char Finished();
+	virtual void ParseSolid(SSolid *pSolid, void *pSetup);
+	virtual void s4();
+	virtual void s5();
+	virtual void s6();
+	virtual void s7();
+	virtual void s8();
+	virtual void SkipBlock();
+};
+
+struct IKeyParserFactory
+{
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4();
+	virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9();
+	virtual void s10(); virtual void s11(); virtual void s12(); virtual void s13(); virtual void s14();
+	virtual void s15(); virtual void s16(); virtual void s17(); virtual void s18(); virtual void s19();
+	virtual void s20(); virtual void s21(); virtual void s22(); virtual void s23(); virtual void s24();
+	virtual void s25();
+	virtual ISolidParser *Create(const char *pKeyText);
+	virtual void Destroy(ISolidParser *pParser);
+};
+
+struct IPhysEnvCreate
+{
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3();
+	virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7();
+	virtual void *CreatePolyObjectStatic(void *pSolid, int surfaceIndex, const Vector *origin, const Vector *angles, SObjectParams *pParams);
+};
+
+struct ISurfacePropsIndex
+{
+	virtual void s0(); virtual void s1(); virtual void s2();
+	virtual int GetSurfaceIndex(const char *pName);
+};
+
+struct IPhysCreateNotify
+{
+	virtual void s0(); virtual void s1();
+	virtual void OnCreate(void *pObject, int a);
+};
+
+extern IKeyParserFactory *g_1072393c;
+extern IPhysEnvCreate *g_10723940;
+extern ISurfacePropsIndex *g_10723944;
+extern IPhysCreateNotify *g_1053c5e0;
+extern SObjectParams g_1046ecb4;
+extern char g_107238e0[];
+
+void *sub_1002e580(CBaseEntity *pEntity, int modelIndex, const Vector *origin, const Vector *angles)
+{
+	ScopeTrace trace("PhysModelCreateUnmoveable", g_106b8540, g_106b8540);
+	SVCollide *pCollide = (SVCollide *)engine->vfunc58(modelIndex);
+	if (!pCollide || !pCollide->m_ppSolids)
+		return 0;
+	int tmp;
+	SSolid solid;
+	memset(&solid, 0, sizeof(solid));
+	solid.params = g_1046ecb4;
+	ISolidParser *pParse = g_1072393c->Create(pCollide->m_pKeyText);
+	while (!pParse->Finished())
+	{
+		const char *pBlock = pParse->GetCurrentBlockName();
+		if (!_strcmpi(pBlock, "solid"))
+		{
+			pParse->ParseSolid(&solid, g_107238e0);
+			break;
+		}
+		pParse->SkipBlock();
+	}
+	g_1072393c->Destroy(pParse);
+	int surfaceIndex = -1;
+	solid.params.enableCollisions = 1;
+	solid.params.mass = 1.0f;
+	if (solid.surfaceprop[0])
+		surfaceIndex = g_10723944->GetSurfaceIndex(solid.surfaceprop);
+	solid.params.pGameData = pEntity;
+	const char *pszName = *pEntity->vfunc9(&tmp);
+	solid.params.pName = pszName;
+	if (!pszName)
+		solid.params.pName = g_106b8540;
+	void *pObject = g_10723940->CreatePolyObjectStatic(pCollide->m_ppSolids[0], surfaceIndex, origin, angles, &solid.params);
+	if (pObject)
+		g_1053c5e0->OnCreate(pObject, modelIndex);
+	return pObject;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002e7e0 size=0x13d
 #include "ScopeTrace.h"
 
