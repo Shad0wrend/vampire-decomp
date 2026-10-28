@@ -7682,6 +7682,7 @@
 0x10014308 func   ?sub_101c4dd0@CBaseTrigger@@QAEXXZ CBaseTrigger::sub_101c4dd0
 0x10014312 func   ?vfunc3@CTEFogRipple@@UAEXPBVVector@@0@Z CTEFogRipple::vfunc3
 0x10014317 func   ?sub_10155300@CUnknown10155300@@QAEHXZ CUnknown10155300::sub_10155300
+0x1001431c func   ?sub_101f8410@CUnknown101f8410@@QAEHPBD@Z CUnknown101f8410::sub_101f8410
 0x10014326 func   ?sub_101a7540@CUnit101a7540@@QAEHXZ CUnit101a7540::sub_101a7540
 0x10014330 func   ?sub_101eda00@@YAXXZ sub_101eda00
 0x10014335 func   ?sub_101e8b10@CUnknown101e8b10@@QAEMXZ CUnknown101e8b10::sub_101e8b10
