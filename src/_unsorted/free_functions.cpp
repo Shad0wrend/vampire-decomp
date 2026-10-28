@@ -62736,6 +62736,20 @@ const char *sub_101b2200(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2250 size=0x57
+extern char g_1072c2c8[];
+const char *sub_101b22d0(int);
+extern "C" __declspec(dllimport) int Q_snprintf(char *, int, const char *, ...);
+struct CRangeView { char pad[0x14]; float m_flA; float m_flB; const char *sub_101b2250(); };
+const char *CRangeView::sub_101b2250()
+{
+    if (m_flB == 0.0f)
+        return sub_101b22d0((int)m_flA);
+    Q_snprintf(g_1072c2c8, 0x40, "%i, %i", (int)m_flA, (int)(m_flB + m_flA));
+    return g_1072c2c8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2320 size=0x65
 #include "CUnknown101b2570.h"
 
