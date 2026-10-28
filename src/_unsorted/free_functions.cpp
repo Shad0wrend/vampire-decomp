@@ -47897,6 +47897,45 @@ extern "C" CBaseEntity *trigger_brush()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013e590 size=0x1c1
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_10579bc8[2];
+void sub_10002a09();
+void sub_10011ce8();
+
+int *sub_1013e590()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 4, "m_iInputFilter", {0x498, 0}, 1, 6, "InputFilter" },
+        { 4, "m_iDontMessageParent", {0x49c, 0}, 1, 6, "DontMessageParent" },
+        { 10, "m_OnStartTouch", {0x450, 0}, 1, 0x16, "OnStartTouch", g_1055dc70 },
+        { 10, "m_OnEndTouch", {0x468, 0}, 1, 0x16, "OnEndTouch", g_1055dc70 },
+        { 10, "m_OnUse", {0x480, 0}, 1, 0x16, "OnUse", g_1055dc70 },
+        { 0, "InputDisable", {0, 0}, 1, 0x8, "Disable", 0, (void *)sub_10002a09 },
+        { 0, "InputEnable", {0, 0}, 1, 0x8, "Enable", 0, (void *)sub_10011ce8 },
+    };
+    g_10579bc8[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_10579bc8[0] = (int)&dataDesc[1];
+    return g_10579bc8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013e7e0 size=0xd
 #include "CUnknown1013e7e0.h"
 // TARGET: CUnknown1013e7e0::sub_1013e7e0
