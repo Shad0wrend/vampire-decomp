@@ -44,7 +44,9 @@ public:
 
 	char m_pad03e0[0x77c - 0x3e0];
 	float m_flTime77c;	// 0x77c: the next spin time
-	char m_pad0780[0x78c - 0x780];
+	float m_flStart780;	// 0x780: the time the spin sound started
+	float m_flDuration784;	// 0x784: its length
+	char m_pad0788[0x78c - 0x788];
 	float m_flMin78c;	// 0x78c: the shortest wait between spins
 	float m_flMax790;	// 0x790: the longest wait between spins
 	float m_flDamage794;	// 0x794: the damage the impact does
