@@ -3268,6 +3268,7 @@
 0x100092d7 func   ?sub_10057850@SaveList@@QAEHPAUIVisitor@@@Z SaveList::sub_10057850
 0x100092dc func   ?sub_101b2490@CUnknown101b2570@@QAEXPBD@Z CUnknown101b2570::sub_101b2490
 0x100092e1 func   ?sub_101f76e0@CDebugListEntry@@QAEXXZ CDebugListEntry::sub_101f76e0
+0x100092e6 func   ?vfunc1@CSafeDiscSaveRestoreOps_4@@QAEXPAPAHPAUCSafeDiscReader@@@Z CSafeDiscSaveRestoreOps_4::vfunc1
 0x100092fa func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@HV?$CUtlMemory@H@@@@$03@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<int,CUtlMemory<int> >,4>::vfunc3
 0x10009309 func   ?sub_101b0110@CSoundEmitterSystem@@QAEPAV1@E@Z CSoundEmitterSystem::sub_101b0110
 0x1000931d func   ?sub_101e8ea0@CUnknown101e8ea0@@QAEHXZ CUnknown101e8ea0::sub_101e8ea0
