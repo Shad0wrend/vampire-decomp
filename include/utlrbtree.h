@@ -717,8 +717,6 @@ inline void CUtlRBTree<T, I>::RemoveAll()
 	I prev = InvalidIndex();
 	for (int i = (int)m_TotalElements; --i >= 0; ) {
 		I idx = (I)i;
-		if (IsValidIndex(idx)) {
-		}
 		SetRightChild(idx, prev);
 		SetLeftChild(idx, idx);
 		prev = idx;
