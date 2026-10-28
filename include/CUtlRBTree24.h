@@ -65,6 +65,8 @@ public:
 	int sub_10055050();	// "CUtlRBTree::NewNode": takes the first free node (or grows the node memory by one and uses the next unused one) and returns its index
 	void sub_1007f250(const void *pInsert, int *pParent, bool *pLeftChild);	// "CUtlRBTree::FindInsertionPosition": walks down from the root with the less function, stores the last visited node in *pParent and whether the new element goes to its left in *pLeftChild
 	void sub_10055f50(int elem);	// "CUtlRBTree::RotateLeft"
+	const Links_t &sub_1007fc70(int i) const;	// "CUtlRBTree::Links" of another instance (sentinel 0x106c85b4, stub 0x10003bca)
+	void sub_1007fd70(int elem);	// "CUtlRBTree::RotateLeft" of that instance
 };
 
 // The game has one CUtlRBTree<T, I> per element type T; CUtlRBTree24 stands for every instance with 24-byte nodes.
