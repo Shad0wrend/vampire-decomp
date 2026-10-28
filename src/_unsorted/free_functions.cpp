@@ -98242,6 +98242,27 @@ void CAI_BaseHumanoid::sub_1025e7b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025efc0 size=0x5f
+#include "CBaseAnimating.h"
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+struct CPoseSlots
+{
+	V100(a0) V100(a1) V100(a2) V10(b0) V10(b1) V10(b2) V10(b3)
+	virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4(); virtual void c5();
+	virtual float vfunc346(int iParameter, float flValue, char bClamp);
+};
+void CAI_BaseHumanoid::sub_1025efc0()
+{
+	CPoseSlots *p = (CPoseSlots *)this;
+	p->vfunc346(m_nPose5fe0[0], 0, 0);
+	p->vfunc346(m_nPose5fe0[1], 0, 0);
+	p->vfunc346(m_nPose5fe0[2], 0, 0);
+	((CBaseAnimating *)this)->sub_100955c0();
+	m_flags5f4c &= ~3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10260750 size=0xb
 void __fastcall sub_10260750(char *self)
 {
