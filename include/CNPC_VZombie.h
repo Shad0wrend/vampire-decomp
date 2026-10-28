@@ -54,7 +54,10 @@ public:
 	int m_nState0fec;	// 0xfec: the activity the zombie is in
 	char m_pad0ff0[0x1480 - 0xff0];
 	char m_b1480;	// 0x1480
-	char m_pad1481[0x5c38 - 0x1481];
+	char m_pad1481[0x1b30 - 0x1481];
+	const char *m_pszFile1b30;	// 0x1b30: source file of the last schedule start
+	int m_nLine1b34;	// 0x1b34: its line
+	char m_pad1b38[0x5c38 - 0x1b38];
 	struct CVZombie5c38 *m_p5c38;	// 0x5c38
 	char m_pad5c3c[0x6264 - 0x5c3c];
 	float m_flPlayerDist6264;	// 0x6264: the distance to the player
