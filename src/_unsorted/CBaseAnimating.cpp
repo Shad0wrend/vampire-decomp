@@ -112,6 +112,55 @@ void CBaseAnimating::vfunc130(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008e0a0 size=0x1ee
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+#include "ehandle.h"
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+void sub_100c7be0(void *, void *, char *, void *, char *);
+__declspec(dllimport) char *Q_strncpy(char *, const char *, int);
+
+struct CAnimExtraView
+{
+	char m_pad0000[0x26c];
+	char *m_name26c;
+	char m_pad0270[0x5b8 - 0x270];
+	EHANDLE m_hExtra;	// 0x5b8
+	int m_n5bc;
+	int m_n5c0;
+	char m_vecs[0x28];	// 0x5c4
+	char m_name1[0x28];	// 0x5ec
+	char m_name2[0x28];	// 0x614
+};
+
+void CBaseAnimating::sub_1008e0a0(CBaseEntity *pModel, const char *pszA, const char *pszB, int n1, int n2)
+{
+	CAnimExtraView *f = (CAnimExtraView *)this;
+	ScopeTrace trace("CBaseAnimating::AddExtraAnimationModels", this ? (f->m_name26c ? f->m_name26c : g_106b8540) : g_105387dc);
+	if (n1 < 0)
+		n1 = 0;
+	if (n2 < 0)
+		n2 = 0;
+	if (pModel && (n1 || n2)) {
+		if (!pszA)
+			pszA = g_106b8540;
+		if (!pszB)
+			pszB = g_106b8540;
+		if (f->m_hExtra.Get() == pModel && !_strcmpi(pszA, f->m_name1) && !_strcmpi(pszB, f->m_name2) && f->m_n5bc == n1 && f->m_n5c0 == n2)
+			return;
+		f->m_hExtra = pModel;
+		f->m_n5c0 = n2;
+		f->m_n5bc = n1;
+		Q_strncpy(f->m_name1, pszA ? pszA : g_106b8540, 0x28);
+		Q_strncpy(f->m_name2, pszB ? pszB : g_106b8540, 0x28);
+		for (int i = 0; i < 2; i++)
+			sub_100c7be0(f->m_vecs + i * 0x14, sub_100952d0(i), f->m_name1, sub_100952d0(-1), f->m_name2);
+	} else {
+		((void (__fastcall *)(CBaseAnimating *))(*(void ***)this)[246])(this);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008e310 size=0x11e
 #include <string.h>
 #include "ScopeTrace.h"
