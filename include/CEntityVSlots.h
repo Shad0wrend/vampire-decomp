@@ -116,7 +116,8 @@ public:
 	virtual int slot268(void *pPlayer);	// vampire skill entity: the value the keyring hud message sends for the player
 	EVS(269)
 	virtual void slot270(void *pTrace, int a);	// weapon: takes a trace result and a flag (the dog's bite shot)
-	EVS(271) EVS(272) EVS(273)
+	EVS(271) virtual const char *slot272();	// weapon: a model name (female variant)
+	virtual const char *slot273();	// weapon: a model name (male variant)
 	virtual const char *slot274();	// terminal: the name of the current screen / script
 	EVS(275) EVS(276) EVS(277) EVS(278) EVS(279)
 	EVS(280) EVS(281) EVS(282) EVS(283) EVS(284)
