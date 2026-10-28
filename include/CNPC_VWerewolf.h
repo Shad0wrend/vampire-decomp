@@ -107,7 +107,9 @@ public:
 
 	char pad04[0x268];
 	const char *m_name26c;
-	char pad270[0x5d34 - 0x270];
+	char pad270[0x5c38 - 0x270];
+	CNPC_VWerewolfSchedule *m_pSchedule5c38;	// 0x5c38
+	char pad5c3c[0x5d34 - 0x5c3c];
 	CNPC_VWerewolfHelper5d34 *m_pHelper5d34;	// 0x5d34
 	char pad5d38[0x6264 - 0x5d38];
 	float m_f6264;	// 0x6264
