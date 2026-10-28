@@ -34,6 +34,9 @@ public:
 	int m_n5f50;	// 0x5f50: morale
 	char m_b5f54;	// 0x5f54
 
+	void sub_10357be0(float flSpeed);	// steers toward the target at +0x5ddc: velocity 170.0f * speed along the direction, yaw / pitch from it
+	bool sub_10357e50(const Vector &dir, float flDist, Vector *pOut);	// stub 0x1000b334, called directly
+
 	// Slot 546.
 	int vfunc546(int arg);
 	CNPC_Crow *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
