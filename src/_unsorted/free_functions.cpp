@@ -50668,6 +50668,20 @@ void CRagdollPropSpecial::sub_10157ca0(CBaseEntity *pOwner)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10157d30 size=0x48
+struct CUnitEnt : CBaseEntity {
+    char pad[0x1050 - sizeof(CBaseEntity)];
+    EHANDLE m_h1050;
+    void sub_10157930(CBaseEntity *p);
+    void sub_10157d30();
+};
+void CUnitEnt::sub_10157d30()
+{
+    sub_10157930(m_h1050.Get());
+    sub_100ac4e0(0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10158550 size=0x1
 void sub_10158550()
 {
