@@ -31,8 +31,7 @@ public:
 	float m_f5f48;	// 0x5f48: next think time
 	char pad5f4c[0x5f50 - 0x5f4c];
 	int m_n5f50;	// 0x5f50: morale
-	char pad5f54[0x5f54 - 0x5f54 + 4];
-	char m_b5f54;	// 0x5f54 (overlaps pad)
+	char m_b5f54;	// 0x5f54
 
 	// Slot 546.
 	int vfunc546(int arg);
