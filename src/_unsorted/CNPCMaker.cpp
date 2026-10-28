@@ -50,6 +50,65 @@ void CNPCMaker::vfunc113()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034b580 size=0x1c0
+#include "CNPCMaker.h"
+#include "CEntityVSlots.h"
+#include "Vector.h"
+
+extern char g_106c8a41;
+CBaseEntity *sub_1000ab23();
+char sub_10015960(CBaseEntity *a, CNPCMaker *b);
+int sub_10003f35(CBaseEntity **list, int max, const Vector &mins, const Vector &maxs, int flags, int a);
+
+inline Vector Widen(const Vector &v, float d)
+{
+	Vector res;
+	res.x = v.x - d;
+	res.y = v.y - d;
+	res.z = v.z;
+	return res;
+}
+
+inline Vector Widen2(const Vector &v, float d)
+{
+	Vector res;
+	res.x = v.x + d;
+	res.y = v.y + d;
+	res.z = v.z;
+	return res;
+}
+
+// TARGET: CNPCMaker::vfunc618
+char CNPCMaker::vfunc618(char bForce)
+{
+	if (bForce)
+		return 1;
+	if (m_n66b4 > 0 && m_n66b0 >= m_n66b4)
+		return 0;
+	if (g_106c8a41)
+		return 0;
+	CBaseEntity *pPlayer = sub_1000ab23();
+	if (pPlayer) {
+		if (m_b66c1 && sub_10015960(pPlayer, this))
+			return 0;
+		if (m_b66c5 && ((CEntityVSlots *)pPlayer)->slot363(this))
+			return 0;
+		if (m_n66c8 > 0) {
+			Vector *a = ((CEntityVSlots *)pPlayer)->slot217();
+			Vector *b = ((CEntityVSlots *)this)->slot217();
+			if ((int)(*b - *a).Length() < m_n66c8)
+				return 0;
+		}
+	}
+	CEntityVSlots *me = (CEntityVSlots *)this;
+	Vector mins = Widen(*me->slot217(), 34.0f);
+	Vector maxs = Widen2(*me->slot217(), 34.0f);
+	maxs.z = me->slot217()->z;
+	CBaseEntity *list[2];
+	return sub_10003f35(list, 2, mins, maxs, 0x2080, 0) == 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034bc90 size=0x74
 #include "CNPCMaker.h"
 #define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
