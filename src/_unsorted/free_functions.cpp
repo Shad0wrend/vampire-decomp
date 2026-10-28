@@ -48541,6 +48541,63 @@ char CBaseCombatCharacter::sub_10146d50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10147710 size=0x1c4
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntityUnit100fbaf0.h"
+#include "CUnknown101e8fe0.h"
+
+extern unsigned int g_1046bae4[];
+extern float g_1070d1b0[3];
+extern float g_1070d9d0[3];
+extern CUnknown101e8fe0 g_10739d08;
+CBaseEntity *sub_100fbc90(const char *pszName, const float *pOrigin, const float *pAngles, float flTime);
+void sub_101cebc0(void *pPlayer, int a, int b);
+
+#define SV1(p) virtual void p();
+#define SV10(p) SV1(p##0) SV1(p##1) SV1(p##2) SV1(p##3) SV1(p##4) SV1(p##5) SV1(p##6) SV1(p##7) SV1(p##8) SV1(p##9)
+#define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
+
+struct SEmitterView	// slot 243 attaches the emitter to a parent bone
+{
+	SV100(sa) SV100(sb) SV10(sc0) SV10(sc1) SV10(sc2) SV10(sc3) SV1(sd0) SV1(sd1) SV1(sd2)
+	virtual void vfunc243(CBaseEntity *pParent, int a, const char *pszAttachment);
+};
+
+void CBaseCombatCharacter::sub_10147710(int disciplineLevel)
+{
+	int nLevel;
+	if (disciplineLevel == -1)
+		nLevel = CVStatListSet::Of(this)->Find(3)->sub_102012d0(8);
+	else
+		nLevel = disciplineLevel;
+	unsigned int nMask = g_1046bae4[nLevel] & m_nObfuscateMask14d8;
+	if (nMask) {
+		if (m_bObfuscateReady14dc || disciplineLevel != -1) {
+			CBaseEntity *pEmitter = sub_100fbc90("D_ObfuscateBroke_Emitter", g_1070d1b0, g_1070d9d0, -1.0f);
+			if (pEmitter) {
+				((SEmitterView *)pEmitter)->vfunc243(this, 1, "Bip01 Spine");
+				((CBaseEntityUnit100fbaf0 *)pEmitter)->sub_100fbaf0(10.0f);
+			}
+			if (nMask & 0x180)
+				sub_1033c6b0(0x100000);
+			int nBit = 0;
+			for (unsigned int nTest = 1; !(nMask & nTest); nTest *= 2)
+				nBit++;
+			void *pPlayer = *(void **)((char *)this + 0xa8);
+			if (pPlayer)
+				sub_101cebc0(pPlayer, nBit + 0x1e, 0);
+			m_flObfuscateTime14e0 = engine->vfunc119(0) + g_10739d08.sub_101e8fe0();
+		}
+		m_bObfuscateReady14dc = 0;
+		return;
+	}
+	if (m_flObfuscateTime14e0 == 0.0 || m_flObfuscateTime14e0 < engine->vfunc119(0)) {
+		m_bObfuscateReady14dc = 1;
+		m_flObfuscateTime14e0 = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10147960 size=0x9b
 extern char g_106b8540[];
 void sub_10050d90(CBaseCombatCharacter *pThis, int arg, float a, float b, float c, const char *pszSound, int d, const char *pszEmpty, int e, int f);
