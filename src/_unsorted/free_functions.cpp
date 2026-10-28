@@ -9979,6 +9979,28 @@ int CUnknown100659e0::sub_100659e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10065c80 size=0x90
+#include "SendTable.h"
+
+SendProp sub_10246af0(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int extra, void *proxy);
+SendProp sub_10246dc0(const char *pVarName, int offset, int pTable, void *proxy);
+void sub_10009539();
+extern int g_1053dfa8;
+extern const char *g_1054422c;
+extern SendTable g_106c4978;
+
+int sub_10065c80()
+{
+	static SendProp s_Props[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246dc0("baseclass", 0, g_1053dfa8, (void *)sub_10009539),
+		sub_10246af0("m_nPlayer", 0xc, 4, 5, 1, 0, 0),
+	};
+	g_106c4978.sub_10247240(&s_Props[1], 2, g_1054422c);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10065df0 size=0x1e
 namespace lifted {
 extern char g_106c4994;

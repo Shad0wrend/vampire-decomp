@@ -2947,6 +2947,7 @@
 0x100086c0 func   ?sub_102e0150@CUnknown102e0150@@QAEMPAX@Z CUnknown102e0150::sub_102e0150
 0x100086c5 func   ?sub_102d00e0@@YGXPAVS102d4390@@PBMM@Z sub_102d00e0
 0x100086d4 func   ?sub_1003c950@@YIXPAUSys@@@Z sub_1003c950
+0x100086de func   ?sub_10065c80@@YAHXZ sub_10065c80
 0x100086e3 func   _game_text game_text
 0x100086e8 func   ?sub_10191200@@YGHH@Z sub_10191200
 0x100086ed func   _npc_VTest npc_VTest
