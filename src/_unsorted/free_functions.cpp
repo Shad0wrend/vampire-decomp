@@ -49023,6 +49023,40 @@ int CUnknown1013dc40::sub_1013dc40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013dc60 size=0x53
+struct Pool {
+    unsigned int m_size;
+    int m_f4;
+    int m_mode;
+    int m_f0c[4];
+    void *m_pFree;
+    int m_nUsed;
+    int m_nPeak;
+    unsigned int pad;
+    unsigned int *sub_1013dc60(unsigned int n);
+};
+void __fastcall sub_1013dbb0(Pool *p);
+// TARGET: Pool::sub_1013dc60
+unsigned int *Pool::sub_1013dc60(unsigned int n)
+{
+    if (n > m_size)
+        return 0;
+    unsigned int *p = (unsigned int *)m_pFree;
+    if (!p) {
+        if (!m_mode)
+            return 0;
+        sub_1013dbb0(this);
+        p = (unsigned int *)m_pFree;
+        if (!p)
+            return 0;
+    }
+    m_nUsed++;
+    m_nPeak = m_nPeak > m_nUsed ? m_nPeak : m_nUsed;
+    m_pFree = (void *)*p;
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013dd10 size=0x5
 char __stdcall sub_1013dd10(int a0)
 {
