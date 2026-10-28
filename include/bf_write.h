@@ -45,5 +45,26 @@ public:
 			++m_iCurBit;
 		}
 	}
+	void WriteUBitLongInline(unsigned int curData, int numbits)	// the unchecked WriteUBitLong body, as inlined by WriteSBitLong
+	{
+		if (m_iCurBit + numbits > m_nDataBits) {
+			m_iCurBit = m_nDataBits;
+			m_bOverflow = true;
+		} else {
+			int iCurBitMasked = m_iCurBit & 31;
+			int iDWord = m_iCurBit >> 5;
+			unsigned long *pOut = m_pData + iDWord;
+			*pOut &= g_106d1990[iCurBitMasked][numbits];
+			m_pData[iDWord] |= curData << iCurBitMasked;
+			int nBitsWritten = 32 - iCurBitMasked;
+			if (nBitsWritten < numbits) {
+				iCurBitMasked = (m_iCurBit + nBitsWritten) & 31;
+				pOut = m_pData + iDWord + 1;
+				*pOut &= g_106d1990[iCurBitMasked][numbits - nBitsWritten];
+				m_pData[iDWord + 1] |= (curData >> nBitsWritten) << iCurBitMasked;
+			}
+			m_iCurBit += numbits;
+		}
+	}
 	bf_write *sub_100bdf50(const char *pDebugName, void *pData, int nBytes, int nBits);	// provisional, like sub_100bc490 (transplant)
 };
