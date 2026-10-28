@@ -43,6 +43,8 @@ public:
 	void sub_1000d3cd(void *pObj);	// stub of 0x10379e80
 	void sub_100027a7(void *pObj);	// stub of 0x10379b40
 	void sub_1000698d(int a);	// CNPC_VHuman::vfunc432 (stub 0x1000698d), called directly
+	void vfunc292(struct CGargoyleDmgInfo *pInfo, int b, int c);	// slot 292 override: unless the info's damage record (+0x0) / flags (+0x38) say bit 1 or bit 26, and its damage (the record's GetDmg, else the float at +0x30) is not zero, CBaseCombatCharacter::vfunc292(pInfo, b, c)
+	void sub_10015843(struct CGargoyleDmgInfo *pInfo, int b, int c);	// CBaseCombatCharacter::vfunc292 (stub 0x10015843), called directly
 	void vfunc618();	// slot 618 (plain member): emits one of the 0x10639490 sounds (random 0..2, channel 4, volume 1.0, attenuation 0.8) from the NPC's edict to the players that can hear its position, reliably (a PAS attenuation filter built inline)
 	void vfunc433();	// slot 433 override: CAI_BaseNPCTroika::vfunc433, then raises the conditions 0xf, 0xc, 0xd and, with an enemy (slot 167) within 50 units in the plane, 0x5f and 0xe
 	void sub_102b27f0();	// CAI_BaseNPCTroika::vfunc433 (stub 0x10013f2f), called directly
