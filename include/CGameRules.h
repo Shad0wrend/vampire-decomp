@@ -98,7 +98,7 @@ public:
 	virtual bool vfunc73(CBaseEntity *pPlayer);	// slot 73 (multiplayer rules: whether the player's movement counts, see CMultiplayRules)
 	virtual char vfunc74();	// asked by Spawn of the NPCs: false removes the NPC again (the rule set does not allow it)
 	virtual void vfunc75();
-	virtual void vfunc76();
+	virtual float vfunc76(const Vector &vecStart, const Vector &vecEnd, const Vector &vecMins, const Vector &vecMaxs, unsigned int fMask, CBaseEntity *pPassEnt, int collisionGroup, int unused, CGameTrace *pTrace);	// slot 76: a hull trace from vecStart to vecEnd through the engine trace object (the trace filter ignores pPassEnt); when the debug switch of the global at 0x10738964 is on draws the traced line; always answers 1.0f; this is unused
 	virtual void vfunc77();
 	virtual float vfunc78(int a, int b, int c, int d, int e);	// 0x10129700: passes the five arguments on to sub_10009863 and answers the constant at 0x104454c0
 	virtual void vfunc79();
