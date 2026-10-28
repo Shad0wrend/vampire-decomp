@@ -15933,6 +15933,58 @@ int __stdcall sub_1007d2b0(float a, float b, float c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007d5a0 size=0x1cc
+#include "CUnknown10075aa0.h"
+#include <string.h>
+
+struct S10073220
+{
+	int sub_10073220(int a);
+};
+
+struct EntryView
+{
+	int m_pad0;
+	CUnknown10075aa0 *m_pEvent;
+};
+
+// TARGET: sub_1007d5a0
+bool sub_1007d5a0(EntryView *a, EntryView *b)
+{
+	CUnknown10075aa0 *e1 = a->m_pEvent;
+	CUnknown10075aa0 *e2 = b->m_pEvent;
+	if (e1->sub_10075e70() < e2->sub_10075e70())
+		return true;
+	if (e1->sub_10075e70() > e2->sub_10075e70())
+		return false;
+	if (e1->sub_10075f30() && e2->sub_10075f30())
+	{
+		if (e1->sub_10075f10() > e2->sub_10075f10())
+			return true;
+		if (e1->sub_10075f10() < e2->sub_10075f10())
+			return false;
+	}
+	S10073220 *t1 = (S10073220 *)e1->sub_10076690();
+	S10073220 *t2 = (S10073220 *)e2->sub_10076690();
+	if (t1 && t2 && t1 == t2)
+	{
+		int s1 = e1->sub_100766d0();
+		int s2 = e2->sub_100766d0();
+		if (s1 && s2 && s1 == s2)
+		{
+			int i1 = t1->sub_10073220(s1);
+			int i2 = t2->sub_10073220(s2);
+			return i1 < i2;
+		}
+		return strcmp(e1->sub_10075c00(), e2->sub_10075c00()) == -1;
+	}
+	else
+	{
+		return strcmp(e1->sub_10075c00(), e2->sub_10075c00()) == -1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007dfa0 size=0x4
 struct CUnknown1007dfa0 { float sub_1007dfa0(); };
 float CUnknown1007dfa0::sub_1007dfa0()
