@@ -19,7 +19,7 @@ public:
 	virtual void vfunc3();
 	virtual int vfunc4(const Vector &vecGoal, float flYaw);	// a step toward vecGoal: 0 (speed cleared, ideal yaw flYaw set) when the goal is not closer than a hundredth of the speed, else 1 and the speed is reduced by the distance still to go
 	virtual void vfunc5();
-	virtual void vfunc6();
+	virtual void vfunc6(Vector *pDirection);	// faces the direction: resets the facing queue (sub_102e2690), slot 208(0) and slot 310(0x2c) of the owner, then the ideal yaw of the direction (yaw speed -1)
 	virtual void vfunc7();
 	virtual void vfunc8();
 	virtual void vfunc9();
