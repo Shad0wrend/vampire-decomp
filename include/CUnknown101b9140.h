@@ -1,7 +1,7 @@
 // CUnknown101b9140: CUtlVector of 8-byte elements {word, dword} (default 0xffff / 0); real name not yet known.
 #pragma once
 
-#include "CMem8_t.h"
+#include "CUnknown101b6630.h"
 
 struct CUnknown101b9140Elem
 {
