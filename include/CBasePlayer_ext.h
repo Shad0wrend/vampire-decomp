@@ -1,3 +1,4 @@
+	void sub_1017d6d0(float flMinimum);	// extends the running fade: the longest fade time of the entities at +0x19c0 / +0x19cc (slot 53) and flMinimum becomes the new duration (negative = fading out) when the current one is not running out
 	int vfunc126(int a);	// slot 126 (plain member): the three save-state arrays (+0x1ce0 / +0x1ce4 / +0x1cf8) are prepared, the flag bytes at +0x1dc0 / +0x1dc8 and the timer at +0x1564 updated, the field at +0x1e24 created when empty, then CBaseCombatCharacter::vfunc126(a), the arrays handed back and a final cleanup of a
 	int sub_10348980(int a);	// CBaseCombatCharacter::vfunc126 (stub 0x1000e534), called directly
 	void sub_1016fa90();	// stub 0x10008e77, run when the field at +0x1e24 had to be created
