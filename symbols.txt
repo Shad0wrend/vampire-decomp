@@ -1061,6 +1061,7 @@
 0x10003b39 func   ?sub_102eccc0@CUnknown102eccc0@@QAEHXZ CUnknown102eccc0::sub_102eccc0
 0x10003b4d func   ?sub_100ba0c0@CBatSwarm@@QAE_NPAX@Z CBatSwarm::sub_100ba0c0
 0x10003b57 func   ?sub_10376b70@CNPC_VFrenzyShadow@@QAEDH@Z CNPC_VFrenzyShadow::sub_10376b70
+0x10003b5c func   ?sub_100c9e10@@YAPAHXZ sub_100c9e10
 0x10003b6b func   ?sub_101fd940@CVStatActionList_t@@QAEXPAXHH@Z CVStatActionList_t::sub_101fd940
 0x10003b70 func   ?sub_103aaa80@CNPC_VSabbatLeader@@QAEXXZ CNPC_VSabbatLeader::sub_103aaa80
 0x10003b7a func   ?sub_102f9970@@YADXZ sub_102f9970

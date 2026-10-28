@@ -29300,6 +29300,60 @@ extern "C" GP *func_rot_button()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c9e10 size=0x1bf
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1055c264[2];
+void sub_100032fb();
+void sub_1001028f();
+void sub_10009fa2();
+void sub_1000a033();
+void sub_1000c658();
+
+int *sub_100c9e10()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 4, "m_lastUsed", {0x5d4, 0}, 1, 2 },
+        { 4, "m_direction", {0x5d8, 0}, 1, 6, "StartDirection" },
+        { 1, "m_returnSpeed", {0x5dc, 0}, 1, 6, "returnspeed" },
+        { 3, "m_start", {0x5e0, 0}, 1, 2 },
+        { 3, "m_end", {0x5ec, 0}, 1, 2 },
+        { 4, "m_sounds", {0x5f8, 0}, 1, 6, "sounds" },
+        { 1, "m_IdealYaw", {0x5fc, 0}, 1, 2 },
+        { 1, "m_flStartPosition", {0x600, 0}, 1, 6, "StartPosition" },
+        { 1, "m_flTimeDelta", {0x604, 0}, 1, 2 },
+        { 0, "CMomentaryRotButtonUseMoveDone", {0, 0}, 1, 0x20, 0, 0, (void *)sub_100032fb },
+        { 0, "CMomentaryRotButtonReturnMoveDone", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1001028f },
+        { 0, "CMomentaryRotButtonSetPositionMoveDone", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10009fa2 },
+        { 0, "CMomentaryRotButtonUpdateThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000a033 },
+        { 1, "InputSetPosition", {0, 0}, 1, 8, "SetPosition", 0, (void *)sub_1000c658 },
+        { 10, "m_Position", {0x55c, 0}, 1, 0x16, "Position", g_1055dc70 },
+        { 10, "m_OnPressed", {0x574, 0}, 1, 0x16, "OnPressed", g_1055dc70 },
+        { 10, "m_OnUnpressed", {0x58c, 0}, 1, 0x16, "OnUnpressed", g_1055dc70 },
+        { 10, "m_OnFullyClosed", {0x5bc, 0}, 1, 0x16, "OnFullyClosed", g_1055dc70 },
+        { 10, "m_OnFullyOpen", {0x5a4, 0}, 1, 0x16, "OnFullyOpen", g_1055dc70 },
+    };
+    g_1055c264[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1055c264[0] = (int)&dataDesc[1];
+    return g_1055c264;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ca040 size=0x80
 #include "CBaseEntity.h"
 
