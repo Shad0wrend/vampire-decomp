@@ -1,6 +1,25 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x102df010 size=0x59
+#include "CAI_MemoryListSaveRestoreOps.h"
+#include "SaveRestoreFieldInfo_t.h"
+#include "CSave.h"
+extern char g_1060de84[];
+
+void CAI_MemoryListSaveRestoreOps::vfunc0(SaveRestoreFieldInfo_t *fieldInfo, CSave *pSave)
+{
+	int nNodes = 0;
+	CAI_MemoryNode *pNode;
+	CAI_MemoryNode *pHead = *(CAI_MemoryNode **)fieldInfo->pField;
+	for (pNode = pHead; pNode; pNode = pNode->m_pNext)
+		nNodes++;
+	pSave->vfunc10(&nNodes, 1);
+	for (pNode = pHead; pNode; pNode = pNode->m_pNext)
+		pSave->vfunc2(pNode, g_1060de84);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102df090 size=0x7b
 #include "CAI_MemoryListSaveRestoreOps.h"
 #include "CAI_InterestingPlaceMarkersSaveRestoreOps.h"
