@@ -62,3 +62,20 @@ void CTriggerBrush::vfunc103()
 		m_nEffectFlags |= 0x40;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1013eb10 size=0x57
+#include "CTriggerBrush.h"
+struct CTriggerBrushSub480 { void sub_100cd660(CBaseEntity *a, CBaseEntity *b, int c); };
+struct CTriggerBrushView { char pad[0x480]; CTriggerBrushSub480 m_Sub480; char pad2[0x18 - 1]; int m_n498; int m_n49c; };
+bool __stdcall sub_1013eb90(CBaseEntity *a, int b);
+// TARGET: CTriggerBrush::vfunc173
+void CTriggerBrush::vfunc173(CBaseEntity *a, CBaseEntity *b, int c, int d)
+{
+    CTriggerBrushView *v = (CTriggerBrushView *)this;
+    if (sub_1013eb90(a, v->m_n498) && !(v->m_n498 & 0x10)) {
+        v->m_Sub480.sub_100cd660(a, this, 0);
+        if (v->m_n49c == 0)
+            CBaseEntity::vfunc173(a, b, c, d);
+    }
+}
+// END FUNCTION
