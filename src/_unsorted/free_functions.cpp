@@ -3226,6 +3226,50 @@ void * CUnknown10037950::sub_10037950()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100379e0 size=0x1bc
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+#include "CPhysicsPushedEntities.h"
+#include "CUtlVector16.h"
+#include "CVProfile.h"
+#include "CEntityVSlots.h"
+#include "utlvector.h"
+
+struct MoveHierarchyEnt100379e0
+{
+	char m_pad[0x260];
+	EHANDLE m_hMoveChild;
+	EHANDLE m_hMovePeer;
+};
+
+static inline CBaseEntity *FirstMoveChild(CBaseEntity *pEnt)
+{
+	return ((MoveHierarchyEnt100379e0 *)pEnt)->m_hMoveChild.Get();
+}
+
+static inline CBaseEntity *NextMovePeer(CBaseEntity *pEnt)
+{
+	return ((MoveHierarchyEnt100379e0 *)pEnt)->m_hMovePeer.Get();
+}
+
+void CPhysicsPushedEntities::sub_100379e0(CBaseEntity *pParent)
+{
+	ScopeTrace trace("CPhysicsPushedEntities::SetupAllInHierarchy", g_106b8540, g_106b8540);
+	if (!pParent)
+		return;
+	g_109f3648->EnterScope("CPhysicsPushedEntities::SetupAllInHierarchy", 0, "Unaccounted", false);
+	CUtlVector<PusherInfo_t> &pushers = *(CUtlVector<PusherInfo_t> *)&m_rgPusher;
+	int i = pushers.Count();
+	((CUtlVector16 *)&m_rgPusher)->sub_1003c220(1);
+	((CUtlVector16 *)&m_rgPusher)->sub_10014f8d(i, 1);
+	pushers[i].m_pEntity = pParent;
+	pushers[i].m_vecStartAbsOrigin = *((CEntityVSlots *)pParent)->slot217();
+	for (CBaseEntity *pChild = FirstMoveChild(pParent); pChild; pChild = NextMovePeer(pChild))
+		sub_1000497b(pChild);
+	g_109f3648->ExitScopeInlined();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003b850 size=0x36
 #include "Vector.h"
 
