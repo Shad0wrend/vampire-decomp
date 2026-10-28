@@ -42,7 +42,9 @@ public:
 	float m_flNextTime;	// 0x508
 	float m_flMinDelay;	// 0x50c
 	float m_flMaxDelay;	// 0x510
-	char m_pad0514[0x518 - 0x514];
+	char m_pad0514;
+	char m_bField515;	// 0x515: when clear the sample is played with flag 0x200
+	char m_pad0516[2];
 	unsigned int *m_pTargets;	// 0x518: the handle vector (memory)
 	int m_nAlloc;	// 0x51c
 	int m_nGrow;	// 0x520
