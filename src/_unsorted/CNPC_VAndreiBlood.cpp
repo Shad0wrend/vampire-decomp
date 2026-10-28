@@ -164,6 +164,59 @@ void CNPC_VAndreiBlood::vfunc433()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035d8b0 size=0x1cc
+#include "CNPC_VAndreiBlood.h"
+#include "ScopeTrace.h"
+
+void CNPC_VAndreiBlood::vfunc444(const void *pTask)
+{
+	ScopeTrace trace("CNPC_VAndreiBlood::RunTask", g_106b8540);
+	switch (*(const int *)pTask) {
+	case 0x150:
+		sub_1035e5f0();
+		return;
+	case 0x151:
+		if (*(float *)((char *)this + 0x6f8) >= 0.5f)
+			*(int *)((char *)this + 0x1fc) = 0;
+		if (vfunc251()) {
+			sub_10273e80(0);
+			return;
+		}
+		break;
+	case 0x152:
+		if (m_b66ce) {
+			vfunc67();
+			m_b66ce = 0;
+			*(int *)((char *)this + 0x1fc) = 2;
+			m_n66d8 = 0;
+			m_b66d4 = 0;
+		}
+		sub_1035e5f0();
+		if (vfunc251()) {
+			sub_10273e80(0);
+			return;
+		}
+		break;
+	case 0x154:
+		if (vfunc251()) {
+			m_b66d4 = 1;
+			sub_10273e80(0);
+			return;
+		}
+		break;
+	case 0x156:
+		if (m_b66d4 || m_n66d8 >= m_n66dc || gpGlobals->curtime - m_f66d0 >= 5.0f) {
+			sub_10273e80(0);
+			return;
+		}
+		break;
+	default:
+		sub_103c5f40(pTask);
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035db20 size=0x5a
 #include "ScopeTrace.h"
 #include "CNPC_VAndreiBlood.h"
