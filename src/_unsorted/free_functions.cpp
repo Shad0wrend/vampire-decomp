@@ -20233,6 +20233,20 @@ int CBaseAnimating::sub_10093be0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10093cb0 size=0x8d
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+
+int sub_10006564(void *pStudio, int group);
+
+// TARGET: CBaseAnimating::sub_10093cb0
+int CBaseAnimating::sub_10093cb0(int group)
+{
+	ScopeTrace trace("CBaseAnimating::GetBodygroupName", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	return sub_10006564(sub_100952d0(-1), group);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10093d70 size=0x8d
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"

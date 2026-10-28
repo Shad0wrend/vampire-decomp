@@ -5419,6 +5419,7 @@
 0x1000e6ce func   ?vfunc327@CDisciplineWeapon@@UAEXXZ CDisciplineWeapon::vfunc327
 0x1000e6e7 func   ?sub_102e1e20@CAI_Motor@@QAEXH@Z CAI_Motor::sub_102e1e20
 0x1000e700 func   ?sub_1005cae0@@YAXHHHHHHHHHHHHHHHHH@Z sub_1005cae0
+0x1000e70a func   ?sub_10093cb0@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_10093cb0
 0x1000e70f func   _speaker speaker
 0x1000e714 func   ?sub_103e8f30@@YAHXZ sub_103e8f30
 0x1000e719 func   ?sub_1027ef20@CUnknown1027ef20@@QAEXPBD@Z CUnknown1027ef20::sub_1027ef20
