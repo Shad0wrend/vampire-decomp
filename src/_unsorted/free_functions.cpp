@@ -97804,6 +97804,76 @@ void CUnknown1027ef20::sub_1027ef20(const char *text)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027efb0 size=0x1bd
+__declspec(dllimport) void DevMsg(const char *, ...);
+extern int g_1090fd68;
+extern int g_109203e4;
+
+struct CTraceDumpNPC {
+	virtual void vfunc0();
+	char m_pad0004[0x1b4e - 4];
+	char m_szBuf[0x5b50 - 0x1b4e];
+	int m_nLen;
+	char m_bWrapped;
+	const char *sub_100ab4f0();
+};
+
+void __fastcall sub_1027efb0(CTraceDumpNPC *p)
+{
+	DevMsg("\n");
+	DevMsg("********************************************\n");
+	DevMsg("** BEGIN BUFFER DUMP FOR %s\n", p->sub_100ab4f0());
+	DevMsg("\n");
+	g_1090fd68 = 0;
+	g_109203e4 = 0;
+	if (p->m_bWrapped) {
+		int pos = p->m_nLen + 1;
+		int start = pos;
+		while (pos < 0x4000) {
+			char c = p->m_szBuf[pos];
+			if (!c)
+				break;
+			if (pos - start >= 0x200) {
+				g_1090fd68++;
+				g_109203e4 += pos - start + 1;
+				p->m_szBuf[pos] = 0;
+				DevMsg(&p->m_szBuf[start]);
+				p->m_szBuf[pos] = c;
+				start = pos;
+			}
+			pos++;
+		}
+		g_1090fd68++;
+		g_109203e4 += pos - start + 1;
+		DevMsg(&p->m_szBuf[start]);
+	}
+	int pos = 0;
+	int start = 0;
+	while (pos < p->m_nLen) {
+		char c = p->m_szBuf[pos];
+		if (!c)
+			break;
+		if (pos - start >= 0x200) {
+			g_1090fd68++;
+			g_109203e4 += pos - start + 1;
+			p->m_szBuf[pos] = 0;
+			DevMsg(&p->m_szBuf[start]);
+			p->m_szBuf[pos] = c;
+			start = pos;
+		}
+		pos++;
+	}
+	g_1090fd68++;
+	g_109203e4 += pos - start + 1;
+	p->m_szBuf[p->m_nLen] = 0;
+	DevMsg(&p->m_szBuf[start]);
+	DevMsg("\n");
+	DevMsg("** END BUFFER DUMP FOR %s\n", p->sub_100ab4f0());
+	DevMsg("********************************************\n");
+	DevMsg("\n");
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027f1e0 size=0x6c
 const char * __stdcall sub_1027f1e0(int state)
 {
