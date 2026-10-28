@@ -16737,6 +16737,38 @@ void UtlMem6::sub_1007fce0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007fd70 size=0x1cd
+#include "CUtlRBTree24.h"
+#include "utlrbtree.h"
+struct CRBEntry8 {
+    int a;
+    int b;
+};
+
+void CUtlRBTree24::sub_1007fd70(int elem)
+{
+	const CUtlRBTree<CRBEntry8, int> *tree = (const CUtlRBTree<CRBEntry8, int> *)this;
+	int rightchild = sub_1007fc70(elem).m_Right;
+	SetRightChild(elem, sub_1007fc70(rightchild).m_Left);
+	if (sub_1007fc70(rightchild).m_Left != InvalidIndex())
+		SetParent(sub_1007fc70(rightchild).m_Left, elem);
+
+	if (rightchild != InvalidIndex())
+		SetParent(rightchild, tree->Links(elem).m_Parent);
+	if (elem != m_Root) {
+		if (tree->Links(sub_1007fc70(elem).m_Parent).m_Left == elem)
+			SetLeftChild(tree->Links(elem).m_Parent, rightchild);
+		else
+			SetRightChild(tree->Links(elem).m_Parent, rightchild);
+	} else
+		m_Root = rightchild;
+
+	SetLeftChild(rightchild, elem);
+	if (elem != InvalidIndex())
+		SetParent(elem, rightchild);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10080750 size=0xa
 void CUnknown10080750::sub_10080750(int value)
 {
