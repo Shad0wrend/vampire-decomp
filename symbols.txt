@@ -9208,6 +9208,7 @@
 0x100156db func   ?vfunc96@CBaseEntity@@UAEHXZ CBaseEntity::vfunc96
 0x100156e5 func   ?sub_103dc3c0@UtlMem@@QAEXXZ UtlMem::sub_103dc3c0
 0x100156ea func   ?sub_101dfe20@CUnknown101dfe20@@QAEHHHH@Z CUnknown101dfe20::sub_101dfe20
+0x100156ef func   ?vfunc554@CAI_BaseNPC@@UAEHMM@Z CAI_BaseNPC::vfunc554
 0x100156f4 func   ?vfunc2@CTETParticleAttached@@UAEPAV1@I@Z CTETParticleAttached::vfunc2
 0x100156f9 func   ?vfunc5@CWeaponMelee_Fists@@QAEPAV1@I@Z CWeaponMelee_Fists::vfunc5
 0x10015703 func   ?vfunc104@CBaseButton@@UAEXXZ CBaseButton::vfunc104

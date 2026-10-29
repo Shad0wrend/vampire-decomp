@@ -343,6 +343,21 @@ int CAI_BaseNPC::vfunc553(float a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026d920 size=0x52
+#include "CAI_BaseNPC.h"
+// TARGET: CAI_BaseNPC::vfunc554
+int CAI_BaseNPC::vfunc554(float a, float b)
+{
+	if (b < 64.0f)
+		return 8;
+	if (b > 512.0f)
+		return 0x60;
+	if (a < 0.5)
+		return 0x61;
+	return 0x50;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026d9a0 size=0xb7
 #include "CBaseEntity.h"
 
