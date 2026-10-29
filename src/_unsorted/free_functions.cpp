@@ -115965,6 +115965,28 @@ bool CAI_BaseNPC::sub_102d1350(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d14c0 size=0x56
+struct CNpcView14c0 {
+	char m_pad0000[0x5e0];
+	EHANDLE m_h5e0;
+	char m_pad5e4[4];
+	int m_n5e8;
+	float m_f5ec;
+};
+
+bool CAI_BaseNPCTroika::sub_102d14c0()
+{
+	CNpcView14c0 *p = (CNpcView14c0 *)this;
+	if (p->m_n5e8)
+		return true;
+	if (gpGlobals->curtime < p->m_f5ec)
+		return true;
+	if (p->m_h5e0.Get())
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d1540 size=0x8b
 #include "CAI_BaseNPCTroika.h"
 
