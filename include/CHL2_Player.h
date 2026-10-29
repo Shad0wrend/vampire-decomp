@@ -42,7 +42,11 @@ public:
 	CHL2_V10(pb5)	// slots 150..159
 	virtual void pb60(); virtual void pb61(); virtual void pb62(); virtual void pb63(); virtual void pb64(); virtual void pb65(); virtual void pb66(); virtual void pb67(); virtual void pb68();	// slots 160..168
 	virtual void vfunc169(const Vector *pPunch);	// slot 169: takes the pointer of a view punch angle
-	CHL2_V10(pb7) CHL2_V10(pb8) CHL2_V10(pb9)	// slots 170..199
+	CHL2_V10(pb7) CHL2_V10(pb8)	// slots 170..189
+	virtual void pb90(); virtual void pb91(); virtual void pb92(); virtual void pb93(); virtual void pb94(); virtual void pb95();	// slots 190..195
+	virtual Vector vfunc196();	// slot 196: the camera position record of the viewed entity (+0x5ec) when that entity qualifies, else the base's
+	virtual void pb97(); virtual void pb98(); virtual void pb99();	// slots 197..199
+	Vector sub_100b4c00();	// CBaseEntity::vfunc196, called directly (stub 0x1000a961)
 	CHL2_V10(pc0) CHL2_V10(pc1) CHL2_V10(pc2) CHL2_V10(pc3) CHL2_V10(pc4) CHL2_V10(pc5) CHL2_V10(pc6)	// slots 200..269
 	virtual void pc70(); virtual void pc71(); virtual void pc72(); virtual void pc73(); virtual void pc74(); virtual void pc75(); virtual void pc76();	// slots 270..276
 	virtual void vfunc277(const Vector *pVec);	// slot 277: takes the pointer of a vector (the camera offset record at +0xe50 for slot 333)
