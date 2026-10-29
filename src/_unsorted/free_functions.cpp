@@ -82873,6 +82873,25 @@ void CUnknown10202fd0::sub_10202fd0(CSlotIter *pObj)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102030a0 size=0x41
+#include "CUnknown10202ba0.h"
+extern char g_106b8540[];
+struct CTableList {
+	int m_pad0;
+	int m_pad4;
+	int m_nCount;
+	CUnknown10202ba0 **m_ppTables;
+	const char *sub_102030a0(int key, int index);
+};
+const char *CTableList::sub_102030a0(int key, int index)
+{
+	for (int i = 0; i < m_nCount; i++)
+		if (m_ppTables[i]->m_pad0000 == key)
+			return m_ppTables[i]->sub_10202a10(index);
+	return g_106b8540;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10203110 size=0x28
 struct CUnknown10203110 {
     char pad_0000[8];
