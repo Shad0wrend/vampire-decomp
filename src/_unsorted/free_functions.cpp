@@ -84569,6 +84569,16 @@ char CUnknown10205e60::sub_10205e60(void *pCharacter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10205f40 size=0x14
+struct CUnknown10205f40 { void * sub_10205f40(int); };
+void * CUnknown10205f40::sub_10205f40(int a0)
+{
+    *(int *)((char *)this + 4) = *(int *)((char *)a0);
+    *(int *)((char *)this + 8) = *(int *)((char *)a0 + 4);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10206140 size=0x3a
 #include "CUnknown101d7520.h"
 #include "CUnknown10205e60.h"
