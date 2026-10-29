@@ -743,6 +743,15 @@ char CBaseCombatWeapon::vfunc316(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10254380 size=0x47
+#include "CBaseCombatWeapon.h"
+const Vector &CBaseCombatWeapon::vfunc331()
+{
+    static Vector s_vec(0.02618f, 0.02618f, 0.02618f);
+    return s_vec;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10254410 size=0x29
 void __fastcall sub_1033d940(int p, float f);
 // TARGET: CBaseCombatWeapon::vfunc332

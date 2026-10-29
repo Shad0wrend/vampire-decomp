@@ -6450,6 +6450,7 @@
 0x1000fc59 func   ?vfunc0@CTEFootprintDecal@@UAEPAUServerClass@@XZ CTEFootprintDecal::vfunc0
 0x1000fc5e func   ?vfunc109@CBaseEntity@@UAE_NPBDM@Z CBaseEntity::vfunc109
 0x1000fc63 func   ?sub_101f24c0@CUnknown101f24c0@@QAEHXZ CUnknown101f24c0::sub_101f24c0
+0x1000fc68 func   ?vfunc331@CBaseCombatWeapon@@UAEABVVector@@XZ CBaseCombatWeapon::vfunc331
 0x1000fc6d func   ?sub_100d1250@@YIXPAUSListOwner_t@@@Z sub_100d1250
 0x1000fc77 func   ?sub_101ff300@CVStatInfoList_t@@QAEPAV1@PBDHH@Z CVStatInfoList_t::sub_101ff300
 0x1000fc81 func   ?sub_100cdda0@CEventQueue@@QAEXXZ CEventQueue::sub_100cdda0
