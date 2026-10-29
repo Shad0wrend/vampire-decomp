@@ -63133,6 +63133,19 @@ void CRopeKeyframe::sub_1019f1f0(int nBit)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a0320 size=0x47
+#include "CSave.h"
+struct CSaveDesc { int m_n0, m_n4, m_n8; CSaveDesc *m_pParent; };
+int CSave::sub_101a0320(int a, int b, CSaveDesc *p)
+{
+    if (p->m_pParent) {
+        if (!sub_10008d4b(a, b, p->m_pParent))
+            return 0;
+    }
+    return vfunc3(p->m_n8, a, b, p->m_n0, p->m_n4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a0530 size=0x2d
 struct CUnk101a0530 {
     void sub_1000643d(int a, int b);
