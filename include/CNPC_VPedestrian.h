@@ -14,6 +14,11 @@ public:
 	void vfunc301(int a, int b);	// scope trace aside: stores the collision bounds (mins / maxs of the object at +0x270) at +0x6660 / +0x666c, runs CAI_BaseNPCTroika::vfunc301(a, b), clears the think function and makes the entity non-solid
 	void sub_10293a60(int a, int b);	// CAI_BaseNPCTroika::vfunc301 (stub 0x10005c90), called directly
 
+	// Slot 27, declared as a plain member.
+	void vfunc27(int arg);	// CAI_BaseNPCTroika::vfunc27, slot 596 (arg), stamps the source file / line at +0x1b3c / +0x1b40, +0x5cc4 = 8, sub_102ae7f0(0x15a)
+	void sub_10005e43(int arg);	// CAI_BaseNPCTroika::vfunc27 (stub 0x10005e43), called directly
+	void sub_102ae7f0(int state);	// stub 0x10001041, called directly
+
 	// Slot 404: a pedestrian-owned entity whose character has flag 0x20000 gives 2; else the base's slot 404 (stub 0x10001adc).
 	int vfunc404(CBaseEntity *pEntity);
 
