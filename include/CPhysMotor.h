@@ -28,6 +28,8 @@ public:
 	virtual const Vector *vfunc220();	// slot 220 (+0x370): a pointer to a Vector (the entity's origin)
 
 	void sub_10013b33();	// destructor body
+	void sub_10028aa0(inputdata_t *pInput);	// input handler (SetSpeed-like): when the input's float differs from the target (+0x460) stores it there, runs sub_10028b20 and sub_10028a60
+	void sub_10028b20();	// stub 0x100135e8
 	void sub_100ac610(float time, const char *szContext);	// CBaseEntity::SetNextThink (stub 0x1000326f)
 
 	char m_pad0004[0x460 - 4];
