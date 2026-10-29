@@ -33122,6 +33122,27 @@ void sub_100d8040()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d8120 size=0x41
+#include "engineserver.h"
+using namespace EngineGlobals;
+
+struct CPlayerSub { void sub_10170ad0(const char *pszArg); };
+struct CPlayerView { char m_pad[0xa8]; CPlayerSub *m_pSub; };
+CPlayerView *sub_101193b0();
+
+void sub_100d8120()
+{
+    CPlayerView *pPlayer = sub_101193b0();
+    if (pPlayer) {
+        CPlayerSub *pSub = pPlayer->m_pSub;
+        if (pSub) {
+            if (engine->vfunc85() > 1)
+                pSub->sub_10170ad0((const char *)engine->vfunc84(1));
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d94a0 size=0x118
 #include "CBaseCombatCharacter.h"
 #include "CVStatList_t.h"
