@@ -14710,6 +14710,24 @@ float CUnknown10075f10::sub_10075f10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10075f60 size=0x4a
+struct CRampView
+{
+	char m_pad0000[0x184];
+	float m_flStart;
+	float m_flEnd;
+};
+float __fastcall sub_10075f60(CRampView *p, int unused, float flTime)
+{
+	float f = (flTime - p->m_flStart) / (p->m_flEnd - p->m_flStart);
+	if (f < 0.0f)
+		return 0.0f;
+	if (f > 1.0f)
+		return 1.0f;
+	return f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10076670 size=0xd
 void CUnknown10076670::sub_10076670(int value)
 {
