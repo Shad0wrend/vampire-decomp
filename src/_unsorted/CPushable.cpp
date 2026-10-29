@@ -60,6 +60,29 @@ void CPushable::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010f3d0 size=0x43
+#include "CPushable.h"
+#include "CBaseEntity.h"
+struct CPushablePhysObj
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(int a); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(void *a, void *b);
+};
+bool CPushable::vfunc223()
+{
+	((CBaseEntity *)this)->sub_100a5ea0(6, 0, 0, 0);
+	CPushablePhysObj *pObj = (CPushablePhysObj *)m_pObj36c;
+	if (pObj)
+	{
+		pObj->v11(m_field49c);
+		pObj->v17(&m_field4a0, &m_field4a4);
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f4c0 size=0x9
 int CPushable::vfunc35(int a) { return m_field4a8; }
 // END FUNCTION
