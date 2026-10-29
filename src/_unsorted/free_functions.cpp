@@ -28651,6 +28651,29 @@ bool CUnknown100bde40::sub_100bde40(const void *pData, int nBytes)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bde70 size=0x45
+struct CStrParser {
+	char m_pad[0x10];
+	char m_bFailed;
+	void sub_10007e82(int c);
+	bool sub_100bde70(const char *s);
+};
+bool CStrParser::sub_100bde70(const char *s)
+{
+	if (s) {
+		char c;
+		do {
+			sub_10007e82(*s);
+			c = *s;
+			s++;
+		} while (c != 0);
+	} else {
+		sub_10007e82(0);
+	}
+	return m_bFailed == 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bdee0 size=0x1e
 struct CUnknown100bdee0 { void * sub_100bdee0(); };
 void * CUnknown100bdee0::sub_100bdee0()
