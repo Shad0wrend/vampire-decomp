@@ -38,6 +38,23 @@ void CBaseFlex::sub_100b5b00(const float *v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b5ba0 size=0x58
+#include "CBaseFlex.h"
+// TARGET: CBaseFlex::vfunc279
+void CBaseFlex::vfunc279(int nController, float flValue)
+{
+	if (nController >= 0 && nController < sub_10094520()) {
+		CFlexStudioHdr *pHdr = sub_100952d0(-1);
+		if (pHdr) {
+			CFlexControllerDesc *pDesc = pHdr->GetController(nController);
+			if (pDesc->m_flMax != pDesc->m_flMin)
+				flValue = (flValue - pDesc->m_flMin) / (pDesc->m_flMax - pDesc->m_flMin);
+			m_flFlexWeight[nController] = flValue;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b5c50 size=0x69
 #include "CBaseFlex.h"
 #include "CBaseAnimating.h"
