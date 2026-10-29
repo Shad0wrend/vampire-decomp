@@ -28555,6 +28555,21 @@ bool CUnknown100bde40::sub_100bde40(const void *pData, int nBytes)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bdee0 size=0x1e
+struct CUnknown100bdee0 { void * sub_100bdee0(); };
+void * CUnknown100bdee0::sub_100bdee0()
+{
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = -1;
+    *(int *)((char *)this + 0xc) = 0;
+    *(char *)((char *)this + 0x10) = 0;
+    *(char *)((char *)this + 0x11) = 1;
+    *(int *)((char *)this + 0x14) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bdf10 size=0x25
 #include "bf_write.h"
 
