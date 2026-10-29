@@ -101024,6 +101024,38 @@ void sub_10258880(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10258a80 size=0x43
+#include "CBaseEntity.h"
+void sub_1000f57e();
+struct CSlot62View {
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4();
+	virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9();
+	virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4();
+	virtual void b5(); virtual void b6(); virtual void b7(); virtual void b8(); virtual void b9();
+	virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4();
+	virtual void c5(); virtual void c6(); virtual void c7(); virtual void c8(); virtual void c9();
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4();
+	virtual void d5(); virtual void d6(); virtual void d7(); virtual void d8(); virtual void d9();
+	virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4();
+	virtual void e5(); virtual void e6(); virtual void e7(); virtual void e8(); virtual void e9();
+	virtual void f0(); virtual void f1(); virtual void f2(); virtual void f3(); virtual void f4();
+	virtual void f5(); virtual void f6(); virtual void f7(); virtual void f8(); virtual void f9();
+	virtual void g0(); virtual void g1();
+	virtual void SetLocalOrigin(const float *pOrigin);
+};
+struct CUnknown10258a80 : CBaseEntity {
+	void sub_10258a80(Vector vecOrigin, Vector vecAngles, float flNextThink);
+};
+void CUnknown10258a80::sub_10258a80(Vector vecOrigin, Vector vecAngles, float flNextThink)
+{
+	((CSlot62View *)this)->SetLocalOrigin(&vecOrigin.x);
+	sub_100b2e30(&vecAngles.x);
+	sub_100b3b00();
+	sub_100ac4e0((int)sub_1000f57e, 0, 0);
+	m_flNextThink = flNextThink;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10258af0 size=0x8
 #define V5(n) virtual void a##n(); virtual void b##n(); virtual void c##n(); virtual void d##n(); virtual void e##n();
 #define V25(n) V5(n##0) V5(n##1) V5(n##2) V5(n##3) V5(n##4)
