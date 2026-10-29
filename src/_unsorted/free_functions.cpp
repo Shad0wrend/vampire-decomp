@@ -17062,6 +17062,20 @@ void CChoreoScene1007e220::sub_1007e220(CChoreoSceneActor1007e970 *pActor)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007e290 size=0x4c
+#include "CChoreoScene1007e220.h"
+
+void CChoreoScene1007e220::sub_1007e290(CChoreoSceneChannel1007e970 *pChannel)
+{
+	for (int i = 0; i < pChannel->sub_10073540(); i++) {
+		CChoreoSceneEvent1007e970 *pEvent = pChannel->sub_10073560(i);
+		pChannel->sub_100736b0(pEvent);
+		sub_1007e300(pEvent);
+	}
+	sub_1007e410(pChannel);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007e320 size=0xbe
 #include "CUnknown1007e320.h"
 #include "utlvector.h"
