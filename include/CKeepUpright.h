@@ -29,7 +29,7 @@ public:
 	char m_pad0454[0x46c - 0x454];
 	void *m_pController;        // 0x46c IPhysicsMotionController*
 	const char *m_nameAttach;   // 0x470
-	unsigned int m_attachedObject; // 0x474 EHANDLE
+	volatile unsigned int m_attachedObject; // 0x474 EHANDLE
 	float m_flAngularLimit;     // 0x478
 public:
     virtual datamap_t * vfunc82();
