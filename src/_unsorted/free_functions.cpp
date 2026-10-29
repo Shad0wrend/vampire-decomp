@@ -106905,6 +106905,21 @@ void CUnknown102b5dc0::sub_102ae8c0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ae8e0 size=0x2d
+namespace lifted {
+int sub_10006a8c();
+}
+struct CUnknown102ae8e0 { int sub_102ae8e0(int); };
+int CUnknown102ae8e0::sub_102ae8e0(int a0)
+{
+    *(int *)((char *)this + 0x5dd0) = *(int *)((char *)a0);
+    *(int *)((char *)this + 0x5dd4) = *(int *)((char *)a0 + 4);
+    *(int *)((char *)this + 0x5dd8) = *(int *)((char *)a0 + 8);
+    *(char *)((char *)this + 0x63e0) = 1;
+    return lifted::sub_10006a8c();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b11c0 size=0xe1
 #include "CAI_BaseNPCTroika.h"
 

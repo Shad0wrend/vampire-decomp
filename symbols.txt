@@ -3903,6 +3903,7 @@
 0x1000a132 func   ?sub_100d9820@@YAXXZ sub_100d9820
 0x1000a137 func   ?vfunc438@CNPC_VCamera@@QAEHXZ CNPC_VCamera::vfunc438
 0x1000a14b func   ?sub_10170d60@CBasePlayer@@QAEXXZ CBasePlayer::sub_10170d60
+0x1000a155 func   ?sub_102ae8e0@CUnknown102ae8e0@@QAEHH@Z CUnknown102ae8e0::sub_102ae8e0
 0x1000a15a func   ?sub_101ecde0@ItemLoader@@QAE_NXZ ItemLoader::sub_101ecde0
 0x1000a169 func   ?vfunc5@CBaseVampireSkillEntity@@QAEPAV1@I@Z CBaseVampireSkillEntity::vfunc5
 0x1000a16e func   ?sub_10030910@CCollisionEvent@@QAEXXZ CCollisionEvent::sub_10030910
