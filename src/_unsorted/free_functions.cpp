@@ -5888,6 +5888,20 @@ int sub_10043940()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100439b0 size=0x1a
+namespace lifted {
+extern int g_1053c410;
+extern int g_1053c414;
+extern char g_1053c454;
+}
+int sub_100439b0()
+{
+    lifted::g_1053c414 = 9;
+    lifted::g_1053c410 = (int)&lifted::g_1053c454;
+    return (int)&lifted::g_1053c410;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10044a70 size=0x3
 void __stdcall sub_10044a70(int a0)
 {
