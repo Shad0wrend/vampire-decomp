@@ -122658,6 +122658,22 @@ CUnknown102fc5d0 *CUnknown102fc5d0::sub_102fc5d0(int a, int b, const float *pVec
 }
 // END FUNCTION
 
+// FUNCTION: 0x102fc910 size=0x54
+#include "CBitString.h"
+
+// TARGET: CBitString::sub_102fc910
+CBitString *CBitString::sub_102fc910(int nBits)
+{
+	m_nBits = nBits;
+	m_pData = 0;
+	m_nDwords = (nBits + 31) / 32;
+	sub_100bf5b0(m_nDwords);
+	if (m_pData)
+		memset(m_pData, 0, m_nDwords * 4);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102fca10 size=0x1a
 namespace lifted {
 extern int g_106111b8;
