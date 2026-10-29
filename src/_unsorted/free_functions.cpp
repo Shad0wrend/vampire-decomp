@@ -98588,6 +98588,17 @@ int sub_1025d730(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025d760 size=0x11
+namespace lifted {
+extern int g_1090fbe0;
+struct C1000cc2a { int sub_1000cc2a(int); };
+}
+int sub_1025d760(int a0)
+{
+    return ((lifted::C1000cc2a *)lifted::g_1090fbe0)->sub_1000cc2a(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025d800 size=0x1
 void sub_1025d800()
 {
