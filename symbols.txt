@@ -7745,6 +7745,7 @@
 0x1001361f func   ?sub_10116ff0@CFuncMoveLinear@@QAEXAAUinputdata_t@@@Z CFuncMoveLinear::sub_10116ff0
 0x10013624 func   ?sub_10361990@CNPC_VAsianVampire@@QAEXPAVCBaseEntity@@@Z CNPC_VAsianVampire::sub_10361990
 0x10013629 func   ?sub_101cc950@CFlaggedEntitiesEnum@@QAEPAV1@PAPAVCBaseEntity@@HI@Z CFlaggedEntitiesEnum::sub_101cc950
+0x10013633 func   ?sub_10158e20@@YAHXZ sub_10158e20
 0x10013638 func   ?vfunc307@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::vfunc307
 0x1001363d func   _infodecal infodecal
 0x1001364c func   _keyframe_track keyframe_track

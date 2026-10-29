@@ -52391,6 +52391,20 @@ typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_10158da0(void **p) { ((Fn *)*p)[245](p); }
 // END FUNCTION
 
+// FUNCTION: 0x10158e20 size=0x1a
+namespace lifted {
+extern int g_10580538;
+extern int g_1058053c;
+extern char g_1058057c;
+}
+int sub_10158e20()
+{
+    lifted::g_1058053c = 5;
+    lifted::g_10580538 = (int)&lifted::g_1058057c;
+    return (int)&lifted::g_10580538;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10158e50 size=0x49
 void *sub_1000db89(int);
 struct GP;
