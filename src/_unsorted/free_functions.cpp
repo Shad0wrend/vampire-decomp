@@ -40209,6 +40209,22 @@ CEntityVSlots *sub_100fbc90(const char *pszEffect, const float *pOrigin, const f
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fbd50 size=0x49
+#include "CEntityVSlots.h"
+CEntityVSlots *sub_100a9ab0(const char *name, const float *origin, const float *angles, CEntityVSlots *owner);
+void sub_101d1280(CEntityVSlots *p);
+CBaseEntity *sub_100fbd50(CBaseEntity *pEnt)
+{
+    CEntityVSlots *pSlots = (CEntityVSlots *)pEnt;
+    CEntityVSlots *pNode = sub_100a9ab0("inspection_node", (float *)pSlots->slot217(), (float *)pSlots->slot219(), 0);
+    if (pNode) {
+        ((CBaseEntity *)pNode)->sub_100a0670(pEnt, 0);
+        sub_101d1280(pNode);
+    }
+    return (CBaseEntity *)pNode;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fbef0 size=0x49
 void *sub_1000db89(int);
 struct GP;
