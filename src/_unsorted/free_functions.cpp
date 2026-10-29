@@ -81100,6 +81100,26 @@ struct CUnknown101f2cd0 { int p[6]; int a; void sub_101f2cd0(int v); };
 void CUnknown101f2cd0::sub_101f2cd0(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x101f2d70 size=0x49
+#include "VKeyValues.h"
+#include <string.h>
+
+VKeyValues *VKeyValues::sub_101f2d70(const char *pszName)
+{
+	VKeyValues *p;
+	for (p = m_pChild1c; p; p = p->m_pNext18) {
+		if (!_strcmpi(p->NameOf()->vfunc0(), pszName))
+			return p;
+	}
+	if (m_pParent20) {
+		VKeyValues *pFound = m_pParent20->sub_100122c4(pszName);
+		if (pFound)
+			return pFound;
+	}
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2f30 size=0x23
 extern int g_1073aa80;
 int sub_10004273(int a, void *b, int c);
