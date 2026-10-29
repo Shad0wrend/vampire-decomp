@@ -4634,6 +4634,7 @@
 0x1000c3e2 func   ?vfunc82@CNPC_VBach@@UAEPAUdatamap_t@@XZ CNPC_VBach::vfunc82
 0x1000c3f1 func   ?sub_10271ff0@CAI_BaseNPC@@QAEHHPAH@Z CAI_BaseNPC::sub_10271ff0
 0x1000c3f6 func   ?sub_101c0b80@@YAXPBDPAVCBaseEntity@@1HM@Z sub_101c0b80
+0x1000c3fb func   ?sub_100ecfc0@CLookupTable@@QAEHPAUCLookupObjView@@HH@Z CLookupTable::sub_100ecfc0
 0x1000c400 func   ?vfunc5@CWeaponRanged_Smg_Mac10@@QAEPAV1@I@Z CWeaponRanged_Smg_Mac10::vfunc5
 0x1000c40a func   ?sub_100859c0@@YAHXZ sub_100859c0
 0x1000c414 func   ?sub_10074f70@CUnknown10074f70@@QAEXPAVCUnknown10074f70_Actor@@@Z CUnknown10074f70::sub_10074f70

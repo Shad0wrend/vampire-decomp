@@ -36509,6 +36509,27 @@ CTableRecord44_t *CUnknown100ecee0::sub_100ecee0(CTableNpc_t *pNpc, int *pOutA, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ecfc0 size=0x42
+struct CLookupObjView {
+	char m_pad0[0x64d4];
+	int m_n64d4;
+	char m_pad64d8[0x64e8 - 0x64d8];
+	int m_n64e8;
+};
+struct CLookupTable {
+	char m_pad0[0x1c];
+	int *m_pTable1c;
+	char m_pad20[0x30 - 0x20];
+	int *m_pTable30;
+	int sub_100ecfc0(CLookupObjView *pObj, int b, int c);
+};
+int CLookupTable::sub_100ecfc0(CLookupObjView *pObj, int b, int c)
+{
+	int i = m_pTable30[1 + pObj->m_n64e8 * 0x41 + pObj->m_n64d4];
+	return m_pTable1c[8 + b * 3 + i * 0x11 + c];
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ed2c0 size=0x3
 void __stdcall sub_100ed2c0(int a0, int a1)
 {
