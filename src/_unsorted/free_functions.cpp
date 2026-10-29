@@ -88651,6 +88651,20 @@ extern "C" CBaseEntity *game_sign()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10212500 size=0x1a
+namespace lifted {
+extern int g_105ab98c;
+extern int g_105ab990;
+extern char g_105ab9d4;
+}
+int sub_10212500()
+{
+    lifted::g_105ab990 = 7;
+    lifted::g_105ab98c = (int)&lifted::g_105ab9d4;
+    return (int)&lifted::g_105ab98c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10212fd0 size=0x43
 #include "CPropHaunted.h"
 void *sub_100aa720(int size);
