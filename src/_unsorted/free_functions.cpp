@@ -98577,6 +98577,17 @@ bool CUtlRBTreeBig::sub_1025d3a0(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025d730 size=0x11
+namespace lifted {
+extern int g_1090fbe0;
+struct C100093c7 { int sub_100093c7(int); };
+}
+int sub_1025d730(int a0)
+{
+    return ((lifted::C100093c7 *)lifted::g_1090fbe0)->sub_100093c7(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025d800 size=0x1
 void sub_1025d800()
 {
