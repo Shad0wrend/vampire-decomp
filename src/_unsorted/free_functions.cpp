@@ -95192,6 +95192,24 @@ void S1022b4d0::sub_1022b4d0(inputdata_t &in)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022b520 size=0x4d
+#include "CBaseEntity.h"
+#include "CSoundScheme.h"
+#include "CUnknown10229550.h"
+extern CUnknown10229550 g_10750d78;
+// TARGET: CSoundScheme::sub_1022b520
+void CSoundScheme::sub_1022b520(float flDelay)
+{
+	if (flDelay < 0.5f)
+		flDelay = 0.5f;
+	if (*((char *)this + 0x455)) {
+		g_10750d78.sub_102293f0(flDelay);
+		sub_100ac4e0(0, 0, 0);
+		*((char *)this + 0x455) = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022b590 size=0x92
 #include "CSoundScheme.h"
 #include "CAI_BaseNPC.h"
