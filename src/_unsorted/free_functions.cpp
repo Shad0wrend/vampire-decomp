@@ -105972,6 +105972,26 @@ void sub_102ccb80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ccc10 size=0x42
+#include "CAI_DynamicLink.h"
+#include "CAI_NodeGraph.h"
+#include "CAI_Navigator.h"
+extern CAI_NodeGraph *g_1093407c;
+extern int g_106c994c;
+bool CAI_DynamicLink::sub_102ccc10()
+{
+	CAI_NavProvider *pNode;
+	if (m_nSrcID >= 0 && m_nSrcID < g_1093407c->m_nNodes)
+		pNode = (CAI_NavProvider *)g_1093407c->m_ppNodes[m_nSrcID];
+	else
+	{
+		g_106c994c++;
+		pNode = 0;
+	}
+	return pNode->sub_102f9400(m_nDestID) != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ccce0 size=0xe2
 #include "CAI_DynamicLink.h"
 struct SLink { int pad0; int src; int dest; char pad[0x58]; unsigned int flags; };

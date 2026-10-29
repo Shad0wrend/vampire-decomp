@@ -6944,6 +6944,7 @@
 0x10011ce3 func   _item_w_mingxiao_tentacle item_w_mingxiao_tentacle
 0x10011ce8 func   ?sub_1013e7e0@CUnknown1013e7e0@@QAEXH@Z CUnknown1013e7e0::sub_1013e7e0
 0x10011cf7 func   ?vfunc465@CNPC_VWerewolf@@QAEXPBD@Z CNPC_VWerewolf::vfunc465
+0x10011d06 func   ?sub_102ccc10@CAI_DynamicLink@@QAE_NXZ CAI_DynamicLink::sub_102ccc10
 0x10011d10 func   ?vfunc619@CNPC_VTzimisceHeadClaw@@UAEXD@Z CNPC_VTzimisceHeadClaw::vfunc619
 0x10011d15 func   ?sub_1030b6b0@CUnknown1030b610@@QAE?AVVector@@XZ CUnknown1030b610::sub_1030b6b0
 0x10011d1a func   ?sub_102c3470@CUnk102c3470@@QAEXPBUCVariantArg102c3470@@@Z CUnk102c3470::sub_102c3470
