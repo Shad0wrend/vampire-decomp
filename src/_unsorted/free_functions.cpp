@@ -139144,6 +139144,27 @@ CNPC_VZombie *CNPC_VZombie::sub_103de220()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103de330 size=0x49
+#include "CNPC_VZombie.h"
+extern int vt_104d1d3c[];
+extern int vt_104d1d10[];
+void __fastcall sub_1001182e(CNPC_VZombie *p);
+void __fastcall sub_1000e55c(void *p);
+void __fastcall sub_10001528(void *p);
+void __fastcall sub_10002ddd(void *p);
+CNPC_VZombie *CNPC_VZombie::sub_103de330(int nMode)
+{
+	sub_1001182e(this);
+	sub_1000e55c((char *)this + 0x6674);
+	sub_10001528((char *)this + 0x668c);
+	sub_10002ddd((char *)this + 0x66e8);
+	*(int **)this = vt_104d1d3c;
+	m_nMode6678 = nMode;
+	*(int **)((char *)this + 0x19b0) = vt_104d1d10;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103de420 size=0x33
 void sub_10001564();
 void sub_100059c0();

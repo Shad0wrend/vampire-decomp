@@ -4223,6 +4223,7 @@
 0x1000a9c0 func   _camera_keyframe camera_keyframe
 0x1000a9c5 func   _item_g_idol_crane item_g_idol_crane
 0x1000a9ca func   ?sub_1010dc50@CBreakable@@QAEXAAUinputdata_t@@@Z CBreakable::sub_1010dc50
+0x1000a9cf func   ?sub_103de330@CNPC_VZombie@@QAEPAV1@H@Z CNPC_VZombie::sub_103de330
 0x1000a9d9 func   ?sub_101f9ff0@CUnknown101f9c70@@QAEXHHHH@Z CUnknown101f9c70::sub_101f9ff0
 0x1000a9f7 func   ?sub_10197510@@YAPAHHH@Z sub_10197510
 0x1000a9fc func   ?sub_1005bf80@CUnknown1005bf80@@QAEHXZ CUnknown1005bf80::sub_1005bf80
