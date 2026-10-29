@@ -46540,6 +46540,45 @@ int sub_1012d290()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012d3d0 size=0x49
+#include "CHudTimer.h"
+#include "CPointEntity.h"
+#include "COutputEvent.h"
+
+extern int g_1044b584;	// CPointEntity vftable
+extern int g_1046358c;	// CHudTimer vftable
+
+struct CHudTimerView
+{
+	void *m_pVtable;
+	char m_pad0004[0x450 - 4];
+	COutputEvent m_Output450;
+	int m_n468;
+	char m_pad46c[4];
+	char m_b470;
+	char m_pad471[7];
+	char m_b478;
+	char m_pad479[7];
+	int m_n480;
+	int m_n484;
+	int m_n488;
+};
+
+CHudTimer *CHudTimer::sub_1012d3d0()
+{
+	CHudTimerView *p = (CHudTimerView *)this;
+	((CPointEntity *)this)->sub_1009d980(0);
+	*(void *volatile *)&p->m_pVtable = &g_1044b584;
+	p->m_Output450.sub_100cd2a0();
+	*(void *volatile *)&p->m_pVtable = &g_1046358c;
+	p->m_n480 = p->m_n468;
+	p->m_b470 = 1;
+	p->m_b478 = 0;
+	p->m_n488 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012d480 size=0x14
 void __stdcall sub_1000de81(int);
 struct S { char pad[0x468]; int a; char pad2[0x14]; int b; };
