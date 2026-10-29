@@ -69301,6 +69301,20 @@ int sub_101c9990()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c9b30 size=0x1a
+namespace lifted {
+extern int g_1059e0e4;
+extern int g_1059e0e8;
+extern char g_1059e12c;
+}
+int sub_101c9b30()
+{
+    lifted::g_1059e0e8 = 5;
+    lifted::g_1059e0e4 = (int)&lifted::g_1059e12c;
+    return (int)&lifted::g_1059e0e4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c9b60 size=0xe9
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
