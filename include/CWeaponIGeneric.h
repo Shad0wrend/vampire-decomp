@@ -3,6 +3,7 @@
 // (the same slot indices as CBaseCombatWeapon), the ones the code calls are typed.
 #pragma once
 
+#include "Vector.h"
 #include "CWeaponIArmor.h"	// CWeaponIArmorOwner / CWeaponIArmorTarget: the owner and the object kicked by slot 339
 
 #define WIG_V1(p) virtual void p();
