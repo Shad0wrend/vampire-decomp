@@ -1,13 +1,21 @@
-// CLogicAuto: logic_auto entity. Declared flat (bases not recovered); only the members the matched functions touch.
+// CLogicAuto: logic_auto entity (fires its output when the map spawns).
 #pragma once
 
-class CLogicAuto
+#include "CBaseEntity.h"
+#include "COutputEvent.h"
+
+void *sub_100aa720(unsigned int size);
+
+#define m_flTime m_flNextThink	// the name the first matched functions of this class used for CBaseEntity's +0x17c
+
+class CLogicAuto : public CBaseEntity
 {
 public:
-	char m_pad0000[0x17c];
-	float m_flTime;	// 0x17c
-	char m_pad0180[0x204 - 0x180];
-	unsigned int m_flags204;	// 0x204
+	char m_padAuto[0x450 - 0x3e0];
+	COutputEvent m_OnMapSpawn;	// 0x450
+
+	CLogicAuto() : CBaseEntity(0) {}
+	void *operator new(unsigned int size) { return sub_100aa720(size); }
 
 	void vfunc130(int a);	// slot 130 "OnRestore": CBaseEntity::vfunc130(a), then schedules the next think 0.2s ahead (when a is set, or bit 1 of the flags at +0x204)
 	void sub_10130d10();
