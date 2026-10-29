@@ -11,10 +11,11 @@ class CUnknown101b2570
 {
 public:
 	int m_nChannel;	// 0x0000: the channel id (sub_101b24d0 of the channel name)
-	char m_pad0004[0xc - 0x4];
+	SFloatPair m_volume;	// 0x0004
 	SFloatPair m_pitch;	// 0x000c
 	SFloatPair m_soundlevel;	// 0x0014
-	char m_pad001c[0x69 - 0x1c];
+	char m_pad001c[0x49 - 0x1c];
+	char m_szVolume[0x20];	// 0x0049: the volume text (VOL_NORM or a number pair)
 	char m_szChannel[0x20];	// 0x0069: the channel name (copied with 32 bytes, see sub_101b2490)
 	char m_szSoundLevel[0x20];	// 0x0089
 	char m_szPitch[0x20];	// 0x00a9
