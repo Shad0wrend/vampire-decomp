@@ -18571,6 +18571,19 @@ void sub_10088b30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10088be0 size=0x43
+extern char g_10924fb9;
+extern char g_10924fba;
+extern char g_106b8540[];
+extern char g_1054c1c8[];
+extern void (*g_109f3630)(const char *, ...);
+void sub_10088be0()
+{
+	g_10924fb9 = !g_10924fb9;
+	g_109f3630("Npc%s ignoring player.  Npc%s ignoring all senses\n", g_10924fb9 ? "" : " not", g_10924fba ? "" : " not");
+}
+// END FUNCTION
+
 // FUNCTION: 0x10088ce0 size=0x42
 extern void (__cdecl *g_109f3630)(const char *, ...);
 extern char g_10924fba;
