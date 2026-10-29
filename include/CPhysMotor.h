@@ -20,6 +20,10 @@ public:
 	virtual void s130(); virtual void s131(); virtual void s132(); virtual void s133();
 	virtual void vfunc134();	// slot 134: moves the current speed (+0x478) towards the target (+0x460) by the rate (+0x464) times the time since the last update (+0x468), and schedules the next think when it has not arrived
 
+	virtual void s135(); virtual void s136(); virtual void s137(); virtual void s138(); virtual void s139();
+	CPM_V10(sc0) CPM_V10(sc1) CPM_V10(sc2) CPM_V10(sc3) CPM_V10(sc4) CPM_V10(sc5) CPM_V10(sc6) CPM_V10(sc7)
+	virtual const Vector *vfunc220();	// slot 220 (+0x370): a pointer to a Vector (the entity's origin)
+
 	void sub_10013b33();	// destructor body
 	void sub_100ac610(float time, const char *szContext);	// CBaseEntity::SetNextThink (stub 0x1000326f)
 
