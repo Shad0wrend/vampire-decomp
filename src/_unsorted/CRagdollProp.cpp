@@ -113,6 +113,18 @@ void CRagdollProp::vfunc268(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10155a70 size=0x47
+#include "CRagdollProp.h"
+
+void CRagdollProp::vfunc141(int a, int b, void *pInfo)
+{
+	short nBody = *(short *)((char *)pInfo + 0x48);
+	if (nBody >= 0 && nBody < m_nBodies730)
+		sub_100a68f0(m_Bodies[nBody].m_pObject);
+	CBaseEntity::vfunc141(a, b, pInfo);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155ae0 size=0xf1
 #include "CRagdollProp.h"
 #include <string.h>

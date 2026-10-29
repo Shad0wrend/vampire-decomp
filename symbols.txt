@@ -3406,6 +3406,7 @@
 0x10008cd8 func   ?sub_100de610@@YGXH@Z sub_100de610
 0x10008cdd func   ?sub_103705e0@@YAXPAD@Z sub_103705e0
 0x10008ce7 func   ?sub_10402a40@@YAHXZ sub_10402a40
+0x10008cec func   ?vfunc141@CRagdollProp@@UAEXHHPAX@Z CRagdollProp::vfunc141
 0x10008cfb func   ?sub_101611e0@@YGDH@Z sub_101611e0
 0x10008d0f func   ?sub_1014f210@CPhysicsAnimlink@@QAEXPAVCBaseAnimating@@HPAXHH@Z CPhysicsAnimlink::sub_1014f210
 0x10008d14 func   _info_landmark info_landmark
