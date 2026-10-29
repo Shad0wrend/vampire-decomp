@@ -8016,6 +8016,7 @@
 0x100138f9 func   ?sub_102231c0@@YAPAHXZ sub_102231c0
 0x10013908 func   ?sub_100c65b0@@YAMXZ sub_100c65b0
 0x1001390d func   ?vfunc0@CChoreoQueueItem@@QAEPAV1@I@Z CChoreoQueueItem::vfunc0
+0x10013912 func   ?vfunc133@CBaseToggle@@UAEXXZ CBaseToggle::vfunc133
 0x10013917 func   _info_hint info_hint
 0x10013921 func   ?vfunc103@CPhysBox@@UAEXXZ CPhysBox::vfunc103
 0x1001392b func   ?sub_101d8230@CUnknown101d8230@@QAEPAXXZ CUnknown101d8230::sub_101d8230

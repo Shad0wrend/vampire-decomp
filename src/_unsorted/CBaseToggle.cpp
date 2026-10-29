@@ -98,6 +98,33 @@ bool CBaseToggle::vfunc110(const char *szKeyName, const char *szValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c1720 size=0x44
+#include "CBaseToggle.h"
+struct CToggleView558 : CBaseToggle
+{
+	char m_pad04a4[0x558 - 0x4a4];
+	int m_nMove558;
+	void sub_101c1790();	// stub 0x10007cc0
+	void sub_101c19e0();	// stub 0x10007725
+};
+void CBaseToggle::vfunc133()
+{
+	CToggleView558 *t = (CToggleView558 *)this;
+	m_i498 = m_nToggleState;
+	switch (t->m_nMove558) {
+	case 1:
+		t->sub_101c1790();
+		break;
+	case 2:
+		t->sub_101c19e0();
+		break;
+	}
+	t->m_nMove558 = 0;
+	if (m_pfn0114)
+		(this->*m_pfn0114)();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c1cb0 size=0xc9
 #include "CBaseToggle.h"
 
