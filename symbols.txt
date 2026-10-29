@@ -4225,6 +4225,7 @@
 0x1000a9d9 func   ?sub_101f9ff0@CUnknown101f9c70@@QAEXHHHH@Z CUnknown101f9c70::sub_101f9ff0
 0x1000a9f7 func   ?sub_10197510@@YAPAHHH@Z sub_10197510
 0x1000a9fc func   ?sub_1005bf80@CUnknown1005bf80@@QAEHXZ CUnknown1005bf80::sub_1005bf80
+0x1000aa01 func   ?sub_102c4310@CAI_BaseNPCTroika@@QAEXHHHHH@Z CAI_BaseNPCTroika::sub_102c4310
 0x1000aa06 func   ?sub_1011e8f0@@YAXPAURay_t@@IPAXHPAUCGameTrace@@@Z sub_1011e8f0
 0x1000aa0b func   ?sub_1023bd00@@YAHXZ sub_1023bd00
 0x1000aa1f func   ?sub_10219120@CUnknown10219120@@QAEXXZ CUnknown10219120::sub_10219120

@@ -109527,6 +109527,14 @@ void CAI_BaseNPCTroika::sub_102c42a0(int a, CBaseAnimating *pEnt, int pszBone, i
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c4310 size=0x49
+void sub_101d26b0(Vector pos, int a, int b, int c, int d, int e);
+void CAI_BaseNPCTroika::sub_102c4310(int a, int b, int c, int d, int e)
+{
+	sub_101d26b0(vfunc192(), a, b, c, d, e);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c43b0 size=0x29
 void *__fastcall sub_1008bf00(void *p);
 
