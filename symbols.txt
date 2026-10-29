@@ -2255,6 +2255,7 @@
 0x100066a4 func   ?vfunc103@CEnvBeam@@UAEXXZ CEnvBeam::vfunc103
 0x100066b3 func   ?sub_104037b0@@YAHXZ sub_104037b0
 0x100066b8 func   ?vfunc552@CAI_BaseNPC@@UAEIXZ CAI_BaseNPC::vfunc552
+0x100066bd func   ?sub_1018b760@@YAHXZ sub_1018b760
 0x100066c7 func   ?sub_102180a0@@YIXPADHH@Z sub_102180a0
 0x100066ea func   ??0CEntryX@@QAE@H@Z CEntryX::CEntryX
 0x100066ef func   ?sub_1016b460@CUnknown1016b460@@QAEXHHH@Z CUnknown1016b460::sub_1016b460
