@@ -43,3 +43,14 @@ void CTEGunshotDecal::vfunc4(int a, int b)
 	engine->vfunc103(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10064460 size=0x6
+#include "CTEGunshotDecal.h"
+namespace lifted {
+extern char g_106c4274;
+}
+ServerClass * CTEGunshotDecal::vfunc0()
+{
+    return (ServerClass *)((int)&lifted::g_106c4274);
+}
+// END FUNCTION

@@ -7115,6 +7115,7 @@
 0x1001230f func   ?vfunc546@CNPC_VHunter@@QAEHH@Z CNPC_VHunter::vfunc546
 0x1001231e func   ?vfunc5@CPointAngleSensor@@QAEPAV1@I@Z CPointAngleSensor::vfunc5
 0x10012341 func   ?vfunc5@CTestTraceline@@UAEPAV1@I@Z CTestTraceline::vfunc5
+0x10012346 func   ?vfunc0@CTEGunshotDecal@@UAEPAUServerClass@@XZ CTEGunshotDecal::vfunc0
 0x1001235a func   ?sub_10252450@CUnknown10252450@@QAEMH@Z CUnknown10252450::sub_10252450
 0x10012369 func   ?vfunc490@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc490
 0x1001236e func   ?sub_100dcea0@CCollisionPropertyUnit@@QAEHPBM@Z CCollisionPropertyUnit::sub_100dcea0
