@@ -27,6 +27,7 @@
 	void sub_1016b270();	// the discipline effect tick (called by slot 436): every 2 seconds, for each of the eight effect bits 0x8000 << i set in the mask at +0xe98: heals 10 per tick (TakeHealth, slot 143) towards the target of the effects 2 (counters +0x228c / +0x2290) and 4 (+0x2284 / +0x2288), and counts the per-bit byte at +0xe9c + i down, clearing the bit when it reaches zero
 	void sub_1015ef40();	// stub 0x10011f68 (function 0x1015ef40): sets the byte at +0x19f7
 	void sub_1015ef60();	// stub 0x1000336e (function 0x1015ef60), run by the use-entity hooks of the props
+	void sub_10167fd0();	// stub 0x10014a6a (function 0x10167fd0), called directly
 	void sub_10178590(Vector vecPos);	// stub 0x1000c79d (function 0x10178590): takes a position by value
 	void sub_101815b0(unsigned int flags);	// stub 0x10008562 (function 0x101815b0): clears the flag bits in the word at +0x1d60
 	CBaseEntity *sub_10161d20();	// resolves the placeholder entity of the handle at +0x1da4 (looked up through the "npc_VPlaceholder" object's link when stale) and, when found, places it at the player: origin / angles, owner, model name, sub_101d1280, the sub-object at +0x270 (slots 1 / 2) handed to sub_10011432, sub_10008c5b, flag bits 0x60 at +0x19c, slot 614; returns it
