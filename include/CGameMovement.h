@@ -29,6 +29,10 @@ public:
 	virtual void vfunc18();	// slot 18: sub_101252e0, then slot 17 (bit 1 of the player's +0x24 set) or clears bit 1 of the player's +0x28; adds the move data's vector (+0x3b0) to the player's velocity (+0x40), runs slot 19(0, 0) and subtracts it again
 	virtual void slot19(int a, int b);
 	virtual char vfunc20(); virtual char vfunc21(void *pTrace);	// slot 21: true when the trace's flags (+0x30) have 0x20000000, else when the surface property record (global 0x1071a278 slot 9, then slot 5 with the short at +0x40) has its byte at +0x72 set
+	virtual void slot22();
+	virtual void slot23();
+	virtual void slot24();
+	virtual void vfunc25();	// slot 25: once (flag byte +0xdc), when the flags of the move data (+8) have bit 1, scales the three floats at +0x2c of the player (+4) by a third
 	void sub_100102f3();	// as in CDataObjectAccessSystem (transplant)
 	float *vfunc3(char flag, int unused);	// as in CGameMovement (transplant)
 	float *vfunc4(char flag, int unused);	// as in CGameMovement (transplant)
