@@ -19031,6 +19031,29 @@ void sub_10085d00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10085e00 size=0x4d
+struct S10085e00 { int m_pad; int m_id; };
+void sub_102f7c00(const char *name, int a, int b);
+int sub_101193b0();
+S10085e00 *sub_101727a0(int a, int b);
+int sub_10119390();
+extern int g_106102f8;
+extern int g_10552810;
+// TARGET: sub_10085e00
+void sub_10085e00()
+{
+	sub_102f7c00("BigNet", 0x20, 0);
+	S10085e00 *p = sub_101727a0(sub_101193b0(), 0);
+	if (p) {
+		g_106102f8 = p->m_id;
+		g_10552810 = sub_10119390();
+		return;
+	}
+	g_106102f8 = -1;
+	g_10552810 = sub_10119390();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10086e50 size=0x9b
 #include "CGlobalEntityList.h"
 extern CGlobalEntityList g_106eb5d8;
