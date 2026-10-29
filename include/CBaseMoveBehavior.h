@@ -12,7 +12,9 @@ public:
 	char m_pad0004b[0x480 - sizeof(CBaseEntity)];
 	int m_unk480;	// +0x480: the entry sub_101402b0 returns for index 1
 	int m_unk484;	// +0x484: the entry sub_101402b0 returns for index -1
-	char m_pad0488[0x4a0 - 0x488];
+	char m_pad0488[0x494 - 0x488];
+	float m_fl494;	// +0x494: keyframe time
+	char m_pad0498[0x4a0 - 0x498];
 	CBaseMoveBehavior *m_p4a0;	// +0x4a0: another move behavior (the one whose +0x480 / +0x484 entries are read through sub_101402b0)
 	int m_p4a4;	// +0x4a4
 	char m_pad04a8[0x4b4 - 0x4a8];
