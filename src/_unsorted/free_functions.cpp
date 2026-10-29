@@ -108566,6 +108566,32 @@ void CAI_BaseNPCTroika::sub_102989e0(const char *str)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10299ce0 size=0x4d
+struct IGlobalObj109253f8 { virtual void v0(); virtual void v1(void *p); };
+extern IGlobalObj109253f8 *g_109253f8;
+extern char g_1092053c[];
+struct CObj10299ce0 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(const char *s, int a, int b);
+	virtual void v16();
+	virtual void v17(char *out, int a, int b);
+};
+void sub_10370850(CObj10299ce0 *p);
+int sub_10299ce0(CObj10299ce0 *p)
+{
+	char flag;
+	p->v17(&flag, 1, 0);
+	if (flag && g_109253f8)
+		g_109253f8->v1(p);
+	sub_10370850(p);
+	p->v15(g_1092053c, 1, 0);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029a930 size=0xa7
 #include "CAI_BaseNPCTroika.h"
 #include "CUnknown103164c0.h"
