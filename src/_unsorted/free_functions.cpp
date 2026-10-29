@@ -145263,6 +145263,20 @@ extern "C" CItemGWarrLedger1* item_g_sewerbook_1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10407700 size=0x1a
+namespace lifted {
+extern int g_1067f95c;
+extern int g_1067f960;
+extern char g_1067f9a4;
+}
+int sub_10407700()
+{
+    lifted::g_1067f960 = 2;
+    lifted::g_1067f95c = (int)&lifted::g_1067f9a4;
+    return (int)&lifted::g_1067f95c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104079a0 size=0x72
 #include "SendProp.h"
 
