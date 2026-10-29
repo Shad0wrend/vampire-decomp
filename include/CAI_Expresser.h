@@ -73,6 +73,7 @@ public:
 		m_Tree.m_pfn2c = (void *)sub_1000feb1;
 	}
 
+	virtual ~CAI_Expresser();	// slot 0 (0x10312e80 is its scalar deleting form)
 	void sub_103121a0(float a, float b);	// (0x103121a0)
 	bool sub_10311ee0(int a, int b);	// asks the outer NPC (slot 540, with a) for a delay and, when it is positive, hands it on with b to sub_103121a0
 	void sub_10312b50();	// the per-think step of a running sentence: with a sentence number (+0x64) set, a finished one (sub_10312230) asks the sink (slot 0) and, when it answers, ends it (sub_10312c20(0)); a running one with the flag (+0x68) asks slot 1 and ends it (sub_10312c50); otherwise the next sentence of the series (name + number) is started (sub_10311f50) and, when it cannot be, the state is cleared (sub_10312b20)
