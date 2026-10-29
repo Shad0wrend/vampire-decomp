@@ -12266,6 +12266,20 @@ int sub_1006d2f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006d560 size=0x1a
+namespace lifted {
+extern int g_105463a8;
+extern int g_105463ac;
+extern char g_105463ec;
+}
+int sub_1006d560()
+{
+    lifted::g_105463ac = 0xe;
+    lifted::g_105463a8 = (int)&lifted::g_105463ec;
+    return (int)&lifted::g_105463a8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006d9d0 size=0xfb
 struct EntInfo { void *pEnt; unsigned int serial; int pad; };
 struct EntTable { int pad; EntInfo info[1]; };
