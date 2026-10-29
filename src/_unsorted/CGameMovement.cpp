@@ -97,6 +97,20 @@ float *CGameMovement::vfunc4(char flag, int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011e3c0 size=0x4f
+#include "CGameMovement.h"
+#include "globalvars.h"
+char CGameMovement::vfunc15(void *pSurface, float volume)
+{
+	if (gpGlobals->maxClients > 1 && m_field10 == 0) {
+		Vector *vel = (Vector *)((char *)m_pPlayer + 0x40);
+		if (vel->Length2D() <= 195.0f)
+			return 0;
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011e430 size=0xee
 #include "CGameMovement.h"
 

@@ -7554,6 +7554,7 @@
 0x10011e55 func   ?sub_10257280@CWeaponRanged@@QAEHPAX0H@Z CWeaponRanged::sub_10257280
 0x10011e5f func   ?sub_1042d720@@YIIPAI@Z sub_1042d720
 0x10011e69 func   ?sub_102296c0@CUnknown102296c0@@QAEHXZ CUnknown102296c0::sub_102296c0
+0x10011e73 func   ?vfunc15@CGameMovement@@UAEDPAXM@Z CGameMovement::vfunc15
 0x10011e78 func   ?sub_102699e0@@YAXVVector@@HM@Z sub_102699e0
 0x10011e8c func   ?sub_101dc810@CUnknown101dc810@@QAEXH@Z CUnknown101dc810::sub_101dc810
 0x10011ea0 func   ?sub_1009fa60@CBaseEntity@@QAEXXZ CBaseEntity::sub_1009fa60
