@@ -6142,6 +6142,7 @@
 0x1000f7c7 func   ?sub_10311710@CUnknown10311a20@@QAE_NPBUCUnknown10311a20_Record@@@Z CUnknown10311a20::sub_10311710
 0x1000f7f4 func   _item_i_written item_i_written
 0x1000f7f9 func   ?sub_103d0780@@YIHPAD@Z sub_103d0780
+0x1000f803 func   ?sub_1018b680@@YAHXZ sub_1018b680
 0x1000f808 func   ?sub_10060f20@@YAHXZ sub_10060f20
 0x1000f817 func   ?sub_10136e50@CUnknown10136e50@@QAEHHH@Z CUnknown10136e50::sub_10136e50
 0x1000f826 func   ?sub_102dad60@CUnknown102db470Node@@QAE_NPAVCUnknown102db470@@PAM1@Z CUnknown102db470Node::sub_102dad60
