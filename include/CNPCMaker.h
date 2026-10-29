@@ -29,7 +29,10 @@ public:
 	char m_b66c5;	// 0x66c5
 	char m_pad66c6[2];
 	int m_n66c8;	// 0x66c8: minimum distance of the player (0 = none)
+	char m_szMapData[0x1000];	// 0x66cc: the map data text up to the closing brace
+	char *m_pMapData;	// 0x76cc: m_szMapData, null when empty
 public:
+	virtual void vfunc107(class CUnknown10136ec0 *pMapData);	// slot 107: keeps the map data text (up to '}') in +0x66cc, then CBaseEntity::vfunc107
     virtual void vfunc113();
     virtual void vfunc123();
     virtual datamap_t * vfunc82();
