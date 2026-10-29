@@ -12,6 +12,20 @@ datamap_t * CTriggerDisciplineContext::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10210dc0 size=0x4c
+#include "CTriggerDisciplineContext.h"
+struct CDisciplineChar { char pad[0xeac]; unsigned int m_nDisciplineFlags; };
+void CTriggerDisciplineContext::vfunc174(CBaseEntity *pEnt)
+{
+    if (!m_bDisabled55c && m_nDiscipline598 >= 0 && pEnt) {
+        CDisciplineChar *pChar = (CDisciplineChar *)pEnt->m_p9c;
+        if (pChar)
+            pChar->m_nDisciplineFlags |= 1 << m_nDiscipline598;
+    }
+    sub_101c5590(pEnt);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10210e50 size=0x44
 #include "CTriggerDisciplineContext.h"
 struct SDiscView598 { char pad[0x598]; int m598; };
