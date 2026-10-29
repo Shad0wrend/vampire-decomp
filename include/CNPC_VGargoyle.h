@@ -59,6 +59,7 @@ public:
 	char m_pad14bc[0x5d44 - 0x14bc];
 	void *m_pObj5d44;	// 0x5d44
 	char m_pad5d48[0x5d8c - 0x5d48];
+	// (m_n5cc0 is declared below via a union-free pad split)
 	unsigned int m_nFlags5d8c;	// 0x5d8c
 	char m_pad5d90[0x667c - 0x5d90];
 	int m_hPillar;	// 0x667c
