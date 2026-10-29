@@ -33,6 +33,23 @@ int CNPC_VMingXiao::vfunc461()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10395c70 size=0x4f
+#include "CNPC_VMingXiao.h"
+#include "CAI_BaseNPCTroika.h"
+void CNPC_VMingXiao::sub_10395c70()
+{
+	*(const char **)((char *)this + 0x1b30) = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiao.cpp";
+	*(int *)((char *)this + 0x1b34) = 0x916;
+	if (sub_10398870())
+		((CAI_BaseNPCTroika *)this)->sub_102ae750(0x16e, 1);
+	else
+		((CAI_BaseNPCTroika *)this)->sub_102ae750(0x16d, 1);
+	*(int *)((char *)this + 0x200) = 1;
+	*((char *)this + 0x6744) = 1;
+	*((char *)this + 0x63d8) = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10396dc0 size=0x97
 #include "CNPC_VMingXiao.h"
 #include "CGlobalEntityList.h"
