@@ -10,13 +10,14 @@ struct CTraitStatBlock;
 class CVTraitEffectGroup_t
 {
 public:
-	char m_pad0000[8];
+	CVTraitEffectGroup_t(int nUnk);	// constructor (0x101f7310): stores nUnk at +4, vptr, +0xc = -1, +0x10 / +0x14 = 0
+	virtual CVTraitEffectGroup_t *vfunc0(unsigned int flags);	// slot 0: scalar deleting destructor
+	int m_n0004;	// 0x04
 	const char *m_pszName;	// 0x08
 	int m_nId;	// 0x0c: -1 for an empty group
 	int m_nEffects;	// 0x10: the number of "TraitEffect" sub keys
 	CVTraitEffect_t *m_pEffects;	// 0x14: m_nEffects effects of 0x44 bytes
 
-	CVTraitEffectGroup_t *vfunc0(unsigned int flags);
 	void sub_1000a38f();
 	void sub_101f73f0(CVStatKV *pKV);	// counts the "TraitEffect" sub keys of pKV, allocates that many effects and loads each from its key
 	void sub_101f7690(int a, CVModInfo_t *pInfo, int c);	// hands (a, pInfo, c) to every effect (stub 0x10015609)
