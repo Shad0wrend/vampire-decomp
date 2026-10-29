@@ -7593,6 +7593,20 @@ void sub_10050a40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10050ae0 size=0x1a
+namespace lifted {
+extern int g_1053e1d0;
+extern int g_1053e1d4;
+extern char g_1053e214;
+}
+int sub_10050ae0()
+{
+    lifted::g_1053e1d4 = 9;
+    lifted::g_1053e1d0 = (int)&lifted::g_1053e214;
+    return (int)&lifted::g_1053e1d0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050b90 size=0xa9
 #include "CDisciplineParticle.h"
 
