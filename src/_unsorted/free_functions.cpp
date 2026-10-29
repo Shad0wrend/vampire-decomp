@@ -68896,6 +68896,35 @@ bool S101b9920::sub_101b9920()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b99d0 size=0x54
+#include "CBaseEntity.h"
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct SEntSlots {
+	V10(a0) V10(a1) V10(a2) V10(a3) V10(a4) V10(a5) V10(a6) V10(a7) V10(a8) V10(a9)
+	V10(b0) V10(b1) V10(b2) V10(b3) V10(b4) V10(b5) V10(b6) V10(b7) V10(b8) V10(b9)
+	V10(c0)
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4(); virtual void d5(); virtual void d6();
+	virtual const Vector *slot217();
+};
+struct S101b9920 {
+    CHandle<SEntSlots> m0;
+    int m4;
+    char pad8[0x18];
+    Vector m20;
+    const Vector *sub_101b99d0();
+};
+// TARGET: S101b9920::sub_101b99d0
+const Vector *S101b9920::sub_101b99d0()
+{
+    if (m4 == 0x10 || m4 == 0x400) {
+        if (m0.Get())
+            return m0->slot217();
+    }
+    return &m20;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ba630 size=0x1a
 namespace lifted {
 extern int g_10599c80;

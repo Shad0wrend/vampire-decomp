@@ -274,6 +274,7 @@
 0x1000199c func   _info_constraint_anchor info_constraint_anchor
 0x100019a1 func   _npc_VNewscaster npc_VNewscaster
 0x100019a6 func   ?vfunc103@CPropButton@@UAEXXZ CPropButton::vfunc103
+0x100019ab func   ?sub_101b99d0@S101b9920@@QAEPBVVector@@XZ S101b9920::sub_101b99d0
 0x100019b5 func   ?sub_1006c4a0@CUtlBuffer@@QAEXPBXH@Z CUtlBuffer::sub_1006c4a0
 0x100019bf func   ?sub_100d2a60@@YAXXZ sub_100d2a60
 0x100019c4 func   ?vfunc259@CNPC_VHengeyokai@@QAEXPAUCNPC_VHengeyokaiEvent@@@Z CNPC_VHengeyokai::vfunc259
