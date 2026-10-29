@@ -82,4 +82,6 @@
 	void sub_102c2b20(inputdata_t *pInput);	// "SetInvestigateModeCombat" input handler: an integer 0..6 goes to +0x633c, else DevMsg
 	virtual void vfunc448(int a);	// slot 448 "TaskFail" override: clears the follow/hint state (times at +0x6240.., hint handle +0x643c, vector +0x65d0), ClearHintNode(5.0f), then CAI_BaseNPC::vfunc448(a)
 	int sub_102ad260();	// SelectIdealState helper: with condition 0x21 set stamps the source file / line 0x4468 (+0x1b3c / +0x1b40), sets the ideal state +0x5cc4 to 8 (flag 0x100 of +0x14b8 unless the state is already 8) and returns 8; else 0
+	void *sub_1032e7b0();	// CBaseCombatCharacter::GetActiveWeapon (stub 0x10007e19), called directly
+	bool sub_10278c60();	// CAI_BaseNPC::vfunc575 (stub 0x1000c135), tail called by vfunc575
 	void sub_102bf770();	// alternate action end (stub-less, called by slot 531 / 442): when the ideal activity (+0xff0) is the navigator's task id (+0x5d34) the NPC's sub_1027a6c0 result becomes the ideal activity (sub_10272650); clears the byte at +0x1a40, lets the navigator finish (sub_102ee2a0) and clears +0x63ec
