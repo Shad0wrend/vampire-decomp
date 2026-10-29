@@ -17161,6 +17161,21 @@ void CUnknown1007d190::sub_1007d190()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007d230 size=0x51
+#include "CUnknown1007ce20.h"
+char CUnknown1007ce20::sub_1007d230(float a, float b)
+{
+    for (int i = 0; i < m_vec64.m_size; i++) {
+        CUnknown10075aa0 *p = (CUnknown10075aa0 *)m_vec64.m_pMemory[i];
+        if (p) {
+            if (!sub_1007d2b0(p->sub_10075e70(), a, b))
+                return 1;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007d2b0 size=0x35
 // TARGET: sub_1007d2b0
 int __stdcall sub_1007d2b0(float a, float b, float c)
