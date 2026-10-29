@@ -65,7 +65,7 @@ public:
 	VT_SLOTS10(t27)
 	void *sub_103c0160(int *pKind);	// stub 0x10009b5b
 	void sub_103c0860(void *pObj);	// stub 0x1000f4de
-	void sub_103c05e0(void *pObj);	// stub 0x10009e26
+	void sub_103c05e0(int nObj);	// stub 0x10009e26
 	void sub_1028fcc0(int a);	// CAI_BaseNPCTroika::vfunc432 (stub 0x1000704f), called directly
 	virtual void vfunc448(int a);	// slot 448: with the state (+0x5cc0) 2 and condition 0x5c clears bit 31 of +0x5d8c; when the 10381be0 check holds remembers the target handle (+0x6670) in the timed list (sub_103bf200) and runs sub_103be050(0); when the other check fails runs sub_102c43b0(0.75f) and clears the target handle; clears +0x66b8, then CAI_BaseNPCTroika::vfunc448(a)
 	virtual void t281(); virtual void t282(); virtual void t283(); virtual void t284(); virtual void t285(); virtual void t286(); virtual void t287(); virtual void t288(); virtual void t289();
