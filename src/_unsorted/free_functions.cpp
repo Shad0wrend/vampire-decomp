@@ -117282,6 +117282,17 @@ void CUnknown10316890::sub_10316ab0(int arg, Vector a, Vector b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10316e60 size=0x10
+namespace lifted {
+extern char g_10936c74;
+struct C10001f05 { int sub_10001f05(int); };
+}
+int sub_10316e60(int a0)
+{
+    return ((lifted::C10001f05 *)((int)&lifted::g_10936c74))->sub_10001f05(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10316e80 size=0x29
 extern char g_10936c74[];
 extern char g_1061514c[];
