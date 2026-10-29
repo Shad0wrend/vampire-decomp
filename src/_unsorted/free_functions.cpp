@@ -120452,6 +120452,20 @@ void sub_10321ec0(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10322180 size=0x1a
+namespace lifted {
+extern int g_10619d5c;
+extern int g_10619d60;
+extern char g_10619da4;
+}
+int sub_10322180()
+{
+    lifted::g_10619d60 = 4;
+    lifted::g_10619d5c = (int)&lifted::g_10619da4;
+    return (int)&lifted::g_10619d5c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103221b0 size=0xc6
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
