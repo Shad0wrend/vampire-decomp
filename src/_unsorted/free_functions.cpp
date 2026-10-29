@@ -152372,6 +152372,31 @@ void CKeyringUnit::sub_10407c40(const char *pszName, const char *pszDesc)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10407e10 size=0x55
+#include "CItemGKeyring.h"
+
+__declspec(dllimport) int Q_strnicmp(const char *, const char *, int);
+
+struct CItemGKeyringView
+{
+	char m_pad0000[0x914];
+	char *m_pKeys;
+	char m_pad0918[0x920 - 0x918];
+	int m_nKeys;
+};
+
+int CItemGKeyring::sub_10407e10(const char *pszKey)
+{
+	CItemGKeyringView *v = (CItemGKeyringView *)this;
+	for (int i = 0; i < v->m_nKeys; i++)
+	{
+		if (Q_strnicmp(v->m_pKeys + i * 0xc0, pszKey, 0x60) == 0)
+			return i;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10407e90 size=0x161
 #include "CItemGKeyring.h"
 #include "CEntityMessageFilter.h"

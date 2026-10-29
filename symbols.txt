@@ -1101,6 +1101,7 @@
 0x100036c5 func   ?sub_103dd140@@YADXZ sub_103dd140
 0x100036d4 func   ?vfunc197@CBaseEntity@@QAEHHHHH@Z CBaseEntity::vfunc197
 0x100036d9 func   _trigger_look trigger_look
+0x100036ed func   ?sub_10407e10@CItemGKeyring@@QAEHPBD@Z CItemGKeyring::sub_10407e10
 0x100036f2 func   ?sub_1008cfc0@CBaseAnimating@@QAEXHPAX@Z CBaseAnimating::sub_1008cfc0
 0x100036fc func   ?sub_103021b0@@YAXABVVector@@0IPAVCTraceFilterNoCharacterCollide@@PAUCGameTrace@@@Z sub_103021b0
 0x10003701 func   ?sub_101026c0@CUnk101026c0@@QAEXH@Z CUnk101026c0::sub_101026c0
