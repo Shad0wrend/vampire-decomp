@@ -37,6 +37,8 @@ public:
 	void sub_10292de0();	// CAI_BaseNPCTroika::vfunc431 (stub 0x10002a7c), called directly by the think
 	char sub_10331da0(Vector *pOrigin, Vector *pDir);	// "CBaseCombatCharacter::CalcLookData"-like (stub 0x10014eb6, ret 8): the look origin and direction of the character, true when they come from the model's data
 	void sub_103e05e0(int nSound);	// emits the sound nSound from the look origin, in the look direction (as angles), to the players that can hear it (a PAS filter)
+	int vfunc440(int nSchedule);	// slot 440: maps the failed schedules 0x156 / 0x157 to 0x15e / 0x15f and 0x5b (DevMsg) to 0x165, else CNPC_VAnimal::vfunc440
+	int sub_10012283(int nSchedule);	// CNPC_VAnimal::vfunc440 (stub 0x10012283), tail called
 	void vfunc444(int *pTask);	// slot 444 "CNPC_VZombie::RunTask"-like (plain member): task handler of the zombie, unknown tasks go to CNPC_VAnimal::vfunc444
 	void sub_10273e80(char bForce);	// CAI_BaseNPC member (stub 0x1000ac68), called directly
 	void sub_103e0980(int a);	// hands the zombie the maker's value (CNPCMaker_Zombie::vfunc617), stub 0x1001128e
