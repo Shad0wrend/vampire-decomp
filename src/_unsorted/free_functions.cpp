@@ -48687,6 +48687,28 @@ int sub_10130150()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130170 size=0x58
+struct Entry { const char *name; void *func; int a; int b; };
+extern Entry g_105751c4[];
+namespace block_10130170 { int sub_10130150() { return 1; } }
+using namespace block_10130170;
+
+// TARGET: sub_10130170
+char sub_10130170(int index, const char **pName, int *pA, int *pB)
+{
+	if (index >= 0 && index < sub_10130150() && g_105751c4[index].name && g_105751c4[index].func) {
+		if (pName)
+			*pName = g_105751c4[index].name;
+		if (pA)
+			*pA = g_105751c4[index].a;
+		if (pB)
+			*pB = g_105751c4[index].b;
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101301f0 size=0x44
 struct MoveInterp_t { void (__cdecl *pfn)(float, int); int m_a, m_b, m_c; };
 extern MoveInterp_t g_105751c8[];
