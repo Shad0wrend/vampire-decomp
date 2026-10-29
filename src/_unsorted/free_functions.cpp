@@ -27926,6 +27926,23 @@ int sub_100bac20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bafc0 size=0x45
+#include "CBeam.h"
+#define V1(a) virtual void a();
+#define V10(p) V1(p##0) V1(p##1) V1(p##2) V1(p##3) V1(p##4) V1(p##5) V1(p##6) V1(p##7) V1(p##8) V1(p##9)
+#define V100(p) V10(p##a) V10(p##b) V10(p##c) V10(p##d) V10(p##e) V10(p##f) V10(p##g) V10(p##h) V10(p##i) V10(p##j)
+struct CBeamSlot202View {
+	V100(q) V100(r)
+	V1(s0) V1(s1)
+	virtual void SetOwner(CBaseEntity *pOwner);
+};
+void CBeam::sub_100bafc0(CBaseEntity *pEnt)
+{
+	((EHANDLE &)m_hEndEntity) = pEnt;
+	((CBeamSlot202View *)this)->SetOwner(pEnt);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bb0b0 size=0x9e
 #include "CBeam.h"
 extern CGlobalEntityList *g_10566458;
