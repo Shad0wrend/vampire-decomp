@@ -18996,6 +18996,31 @@ int sub_10087550()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10087de0 size=0x4c
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList g_106eb5d8;
+
+struct CVCameraFlagsView
+{
+	char m_pad0000[0x224];
+	unsigned int m_fFlags224;
+};
+
+void sub_10087de0()
+{
+	CBaseEntity *pEnt = g_106eb5d8.sub_100f7380(0, "npc_VCamera");
+	while (pEnt) {
+		CVCameraFlagsView *p = (CVCameraFlagsView *)pEnt;
+		if (p->m_fFlags224 & 0x400000)
+			p->m_fFlags224 &= ~0x400000;
+		else
+			p->m_fFlags224 |= 0x400000;
+		pEnt = g_106eb5d8.sub_100f7380(pEnt, "npc_VCamera");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10087fb0 size=0x12a
 #include "CBaseEntity.h"
 #include "CUnknown1028fb70.h"
