@@ -15,6 +15,7 @@ public:
 	virtual int vfunc124();	// "CBeam::DrawDebugTextOverlays": the base lines, then (text overlay bit 0 of the byte at +0x224) the "start:" and "end  :" lines
 	Vector *vfunc215();	// slot 215 "CBeam::WorldSpaceCenter"-like: half the sum of the start (sub_100bb440) and end (sub_100bb270) positions, in a temporary vector
 	void sub_1000cb8a();
+	void sub_100bc080(inputdata_t &data);	// "CBeam::InputWidth"-like: the width (+0x4b8) and the end width (+0x4bc) from the input's float
 	CBeam *sub_100bac50();	// as in CKeepUpright (transplant)
 	float *sub_100bb440();	// start position getter (stub 0x10005c45)
 	float *sub_100bb270();	// "CBeam::GetEndPos"-like: when the beam end is an entity (type 2 in the low nibble of +0x464, handle at +0x468) with a valid edict, tail calls slot 217 of that entity (via CBaseEntity::Instance), else of this
