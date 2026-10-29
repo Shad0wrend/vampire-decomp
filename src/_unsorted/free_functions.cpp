@@ -107035,6 +107035,14 @@ bool CAI_BaseNPCTroika::sub_10297430(CAI_BaseNPCTroika *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102974f0 size=0x49
+#include "CEHandleGet.h"
+void CAI_BaseNPCTroika::sub_102974f0(CAI_BaseNPCTroika *pOther)
+{
+	sub_10296c40(pOther, (CBaseEntity *)EHandle_Get(m_h6448), *(int *)((char *)pOther + 0x458), 1.1f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10297940 size=0xb0
 #include "CAI_BaseNPCTroika.h"
 #include "CAI_Motor.h"

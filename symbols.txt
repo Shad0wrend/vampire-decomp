@@ -6287,6 +6287,7 @@
 0x1000f4c0 func   ?sub_10088be0@@YAXXZ sub_10088be0
 0x1000f4c5 func   ?sub_101e4a90@CUnknown101e4a90@@QAEXXZ CUnknown101e4a90::sub_101e4a90
 0x1000f4ca func   ?vfunc62@CMultiplayRules@@UAEHH@Z CMultiplayRules::vfunc62
+0x1000f4cf func   ?sub_102974f0@CAI_BaseNPCTroika@@QAEXPAV1@@Z CAI_BaseNPCTroika::sub_102974f0
 0x1000f4d4 func   ?sub_101dc880@@YAXXZ sub_101dc880
 0x1000f4de func   ?sub_103c0860@@YIXPAUE@@HH@Z sub_103c0860
 0x1000f4e3 func   ?sub_10041fe0@UtlHash8@@QAEIPAX@Z UtlHash8::sub_10041fe0
