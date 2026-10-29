@@ -112275,6 +112275,23 @@ void CUnknown102b5dc0::sub_102ae7f0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ae840 size=0x54
+#include "CAI_BaseNPCTroika.h"
+
+void CAI_BaseNPCTroika::sub_102ae840(int a, char b)
+{
+	if (m_n5cc0 != 7 && m_n5cc4 != 7)
+	{
+		if (vfunc158() || b)
+		{
+			*(int *)((char *)this + 0x65cc) = a;
+			*((char *)this + 0x1b28) = 1;
+			m_flags14bc |= 0x82000000;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ae8c0 size=0xd
 void CUnknown102b5dc0::sub_102ae8c0(int value)
 {

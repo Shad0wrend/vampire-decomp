@@ -3211,6 +3211,7 @@
 0x10008233 func   ?vfunc273@CBaseAnimatingOverlay@@QAEXHDH@Z CBaseAnimatingOverlay::vfunc273
 0x1000823d func   ??0CAI_InterestTarget@@QAE@XZ CAI_InterestTarget::CAI_InterestTarget
 0x1000823d func   ?sub_102d9150@CUnknown102d9150@@QAEPAV1@XZ CUnknown102d9150::sub_102d9150
+0x10008242 func   ?sub_102ae840@CAI_BaseNPCTroika@@QAEXHD@Z CAI_BaseNPCTroika::sub_102ae840
 0x1000824c func   ?vfunc5@CItemGWarrens4Passkey@@QAEPAV1@I@Z CItemGWarrens4Passkey::vfunc5
 0x10008265 func   ?sub_1030f780@@YAHXZ sub_1030f780
 0x1000826a func   ?sub_100295d0@CUnknown100295d0@@QAEXH@Z CUnknown100295d0::sub_100295d0
