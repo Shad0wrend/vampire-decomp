@@ -29,5 +29,6 @@ public:
 	bool sub_10280a50();	// "CAI_BaseNPC::AutoMovement" (stub 0x1000cf6d), called directly
 	void sub_10289ee0(int activity);	// CAI_BaseNPC activity setter (stub 0x10014524), called directly
 	void sub_10273e80(char flag);	// CAI_BaseNPC::sub_10273e80 (stub 0x1000ac68), called directly
+	virtual void vfunc444(int *pTask);	// slot 444 "RunTask": tasks 2 / 0x67 in state 3 queue a look at slot 217 of the local player (weight -2.0f), then CNPC_VAnimal::sub_1035f940
 	int vfunc440(int activity);	// slot 440: 0x6b gives 0x164, 0x156 gives 0x161, 0x157 gives 0x162, else CNPC_VAnimal::vfunc440 (tail called)
 };
