@@ -1434,6 +1434,24 @@ float CAI_BaseNPC::vfunc516()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10288710 size=0x4e
+#include "CAI_BaseNPCTroika.h"
+#include "CUnknown102e83e0.h"
+void __fastcall sub_102e8250(float *pThis);
+void CAI_BaseNPC::vfunc445()
+{
+	CAI_BaseNPCTroika *pNPC = (CAI_BaseNPCTroika *)this;
+	if (vfunc529()) {
+		if (pNPC->vfunc575()) {
+			vfunc419();
+			((CUnknown102e83e0 *)((char *)this + 0x5cf4))->sub_102e8270(*(int *)&pNPC->m_f5bbc, *(int *)&pNPC->m_f5bc0);
+		} else {
+			sub_102e8250((float *)((char *)this + 0x5cf4));
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10289d10 size=0x167
 #include "CAI_BaseNPC.h"
 #include "CAI_Motor.h"

@@ -1268,6 +1268,7 @@
 0x10003e27 func   ?vfunc193@CAI_BaseHumanoid@@QAE?AVVector@@XZ CAI_BaseHumanoid::vfunc193
 0x10003e2c func   ?sub_101784c0@CBasePlayer@@QAEXPAVCBaseEntity@@@Z CBasePlayer::sub_101784c0
 0x10003e36 func   ?sub_10132b50@CUnit10132b50@@QAEXH@Z CUnit10132b50::sub_10132b50
+0x10003e45 func   ?vfunc445@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc445
 0x10003e4f func   ?sub_100be590@bf_read@@QAEHH@Z bf_read::sub_100be590
 0x10003e59 func   ?sub_100792a0@CUnknown100792a0@@QAEHXZ CUnknown100792a0::sub_100792a0
 0x10003e6d func   ?sub_101d8250@@YIXPAH@Z sub_101d8250
