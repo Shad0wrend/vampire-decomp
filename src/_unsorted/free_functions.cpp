@@ -142768,6 +142768,22 @@ int sub_103f90c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f9160 size=0x47
+#include "CBaseEntity.h"
+#include "COccultRegen.h"
+#include "CUnknown10739d08.h"
+extern CUnknown10739d08 g_10739d08;
+void COccultRegen::sub_103f9160(int a)
+{
+	if (--m_nTimer914 <= 0) {
+		m_nTimer914 = g_10739d08.sub_101e9040();
+		int level = m_nLevel918;
+		if (level < g_10739d08.sub_101e9060())
+			m_nLevel918 = level + 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f9480 size=0xb5
 #include "SendProp.h"
 
