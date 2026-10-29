@@ -44,7 +44,8 @@ public:
 	float m_flRange4fc;	// 0x4fc
 	char m_pad0500[0x53c - 0x500];
 	unsigned int m_hEntity53c;	// 0x53c: entity handle (the output's activator)
-	char m_pad0540[0x574 - 0x540];
+	char m_pad0540[0x55c - 0x540];
+	COutputFloat m_Position55c;	// 0x55c: the current position fraction
 	COutputEvent m_Output574;	// 0x574
 	COutputEvent m_Output58c;	// 0x58c
 	COutputEvent m_Output5a4;	// 0x5a4: fired when the button reaches its start
