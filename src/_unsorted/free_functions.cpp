@@ -63139,6 +63139,17 @@ char *sub_101b1d60(char *name, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b1dd0 size=0x15
+namespace lifted {
+extern char g_1072be18;
+struct C10005830 { int sub_10005830(int, int); };
+}
+int sub_101b1dd0(int a0, int a1)
+{
+    return ((lifted::C10005830 *)((int)&lifted::g_1072be18))->sub_10005830(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b1fb0 size=0x8e
 #include "CSoundEmitterSystemBase.h"
 
