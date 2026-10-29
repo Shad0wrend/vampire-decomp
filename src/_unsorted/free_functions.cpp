@@ -125802,6 +125802,18 @@ void CAI_Expresser::sub_103121a0(float a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10312260 size=0x56
+#include "CUnknown10311a20.h"
+struct Rec8 { int a0, a6, a1, a2, a7, a3, a4, a5; };
+void __fastcall sub_10312260(char *pThis, int edx, int a0, int a1, int a2, int a3, int a4, int a5, int a6, int a7)
+{
+	Rec8 r;
+	r.a0 = a0; r.a6 = a6; r.a1 = a1; r.a2 = a2;
+	r.a7 = a7; r.a3 = a3; r.a4 = a4; r.a5 = a5;
+	((CUnknown10311a20 *)(pThis + 0x30))->sub_10311710((const CUnknown10311a20_Record *)&r);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103122e0 size=0x27
 namespace lifted {
 extern int g_1049dfe8;
