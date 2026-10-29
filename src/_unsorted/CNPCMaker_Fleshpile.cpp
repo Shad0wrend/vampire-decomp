@@ -75,6 +75,25 @@ void CNPCMaker_Fleshpile::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034c260 size=0x44
+#include "CNPCMaker_Fleshpile.h"
+#include "CNPC_VAndreiBlood.h"
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList g_106eb5d8;
+extern CNPC_VAndreiBlood *g_10938040;
+extern char g_10538764[];
+extern char g_10625234[];
+extern "C" void *__cdecl __RTDynamicCast(void *, long, void *, void *, int);
+// TARGET: CNPCMaker_Fleshpile::vfunc130
+void CNPCMaker_Fleshpile::vfunc130(int a)
+{
+	CBaseEntity *pEnt = g_106eb5d8.sub_100f7380(0, "npc_VAndreiBlood");
+	if (pEnt)
+		g_10938040 = (CNPC_VAndreiBlood *)__RTDynamicCast(pEnt, 0, g_10538764, g_10625234, 0);
+	sub_102998c0(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034c8e0 size=0x7a
 #include "CNPCMaker_Fleshpile.h"
 
