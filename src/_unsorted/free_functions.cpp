@@ -53904,6 +53904,21 @@ int CUnknown1014eba0::sub_1014eba0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014ebd0 size=0x57
+#include "CPhysicsAnimlink.h"
+#include "CUnknown100f6d80.h"
+extern CUnknown100f6d80 g_106eb5d8;
+
+void CPhysicsAnimlinkPair::sub_1014ebd0(int n, CBaseEntity *pFirst, CBaseEntity *pSecond)
+{
+	m_n4 = n;
+	m_hFirst = pFirst;
+	m_hSecond = pSecond;
+	if (pFirst)
+		g_106eb5d8.sub_100f6d80((int)this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014ed40 size=0x43
 #include "CPhysicsAnimlink.h"
 void *sub_100aa720(int size);
