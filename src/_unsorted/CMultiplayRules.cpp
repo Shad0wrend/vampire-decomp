@@ -352,6 +352,27 @@ void CMultiplayRules::vfunc44(CBaseEntity *pVictim, CMPDamageInfo *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10142010 size=0x49
+#include "ConVar.h"
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct CSlot346View
+{
+	S10(q0) S10(q1) S10(q2) S10(q3) S10(q4) S10(q5) S10(q6) S10(q7) S10(q8) S10(q9)
+	S10(q10) S10(q11) S10(q12) S10(q13) S10(q14) S10(q15) S10(q16) S10(q17) S10(q18) S10(q19)
+	S10(q20) S10(q21) S10(q22) S10(q23) S10(q24) S10(q25) S10(q26) S10(q27) S10(q28) S10(q29)
+	S10(q30) S10(q31) S10(q32) S10(q33)
+	virtual void r0(); virtual void r1(); virtual void r2(); virtual void r3(); virtual void r4(); virtual void r5();
+	virtual unsigned int vfunc346();
+};
+extern ConVar *g_1070adec;
+float CMultiplayRules::vfunc49(CBaseEntity *pPlayer)
+{
+	if (!g_1070adec->vfunc1() && g_1070adec->m_nValue > 0 && (((CSlot346View *)pPlayer)->vfunc346() & 8) == 0)
+		return gpGlobals->curtime;
+	return gpGlobals->curtime + 20.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101420f0 size=0x29
 #include "CBaseEntity.h"
 Vector CMultiplayRules::vfunc51(CBaseEntity *pEnt)

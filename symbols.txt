@@ -2173,6 +2173,7 @@
 0x1000604b func   _prop_physics_contested prop_physics_contested
 0x1000605f func   ?vfunc113@CNPC_VAndreiBlood@@UAEXXZ CNPC_VAndreiBlood::vfunc113
 0x10006064 func   ?sub_1015ae10@@YAHXZ sub_1015ae10
+0x1000606e func   ?vfunc49@CMultiplayRules@@UAEMPAVCBaseEntity@@@Z CMultiplayRules::vfunc49
 0x10006078 func   ?sub_103d4a20@CWerewolfUnit103d4a20@@QAEXXZ CWerewolfUnit103d4a20::sub_103d4a20
 0x1000607d func   ?sub_101387a0@@YAHPBM0@Z sub_101387a0
 0x10006087 func   ?sub_1022d0d0@CUtlVector72@@QAEXH@Z CUtlVector72::sub_1022d0d0
