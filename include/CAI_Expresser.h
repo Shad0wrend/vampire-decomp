@@ -35,6 +35,7 @@ struct CAI_ExpresserSub	// 0x1c byte member at +0x30
 {
 	char m_pad[0x1c];
 	CAI_ExpresserSub *sub_10311490();	// constructor body (out of line)
+	void sub_10311500();	// destructor body (out of line)
 	CAI_ExpresserSub() { sub_10311490(); }
 };
 
