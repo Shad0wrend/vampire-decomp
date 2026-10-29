@@ -66771,6 +66771,20 @@ void sub_101c4880(int *pObj, int nParam, int *pPair)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c48c0 size=0x19
+namespace lifted {
+extern int g_1072cefc;
+}
+struct CUnknown101c48c0 { void * sub_101c48c0(int); };
+void * CUnknown101c48c0::sub_101c48c0(int a0)
+{
+    *(int *)((char *)this + 4) = a0;
+    *(int *)this = lifted::g_1072cefc;
+    lifted::g_1072cefc = (int)this;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c49e0 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
