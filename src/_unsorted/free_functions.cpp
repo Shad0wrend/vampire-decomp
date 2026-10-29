@@ -101566,6 +101566,26 @@ void __fastcall sub_1028d610(CAI_BaseNPCTroika *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028d770 size=0x41
+#include "engineserver.h"
+using namespace EngineGlobals;
+
+void sub_102dd740(const char *pszName);
+void sub_102ca030();
+void sub_102bf050();
+void sub_1025d880();
+
+void sub_1028d770()
+{
+    sub_102dd740("InterestingPlaceTypeList");
+    sub_102ca030();
+    sub_102bf050();
+    sub_1025d880();
+    engine->vfunc17("Dialog_Domination_Victim_Emitter", 0);
+    engine->vfunc17("Dialog_Dementation_Victim_Emitter", 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028d7e0 size=0x1
 void sub_1028d7e0()
 {
