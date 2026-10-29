@@ -46340,6 +46340,20 @@ void CUnknown1012e6a0::sub_1012e6a0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012e790 size=0x1a
+namespace lifted {
+extern int g_105748e0;
+extern int g_105748e4;
+extern char g_10574924;
+}
+int sub_1012e790()
+{
+    lifted::g_105748e4 = 0xd;
+    lifted::g_105748e0 = (int)&lifted::g_10574924;
+    return (int)&lifted::g_105748e0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012e930 size=0x192
 #include "SendProp.h"
 

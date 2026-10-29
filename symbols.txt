@@ -5921,6 +5921,7 @@
 0x1000eff7 func   ?sub_10057550@CUnknown10057550@@QAEHXZ CUnknown10057550::sub_10057550
 0x1000f001 func   ?sub_102c8c40@UtlMem@@QAEXXZ UtlMem::sub_102c8c40
 0x1000f006 func   ?vfunc546@CNPC_VYukie@@QAEHH@Z CNPC_VYukie::vfunc546
+0x1000f00b func   ?sub_1012e790@@YAHXZ sub_1012e790
 0x1000f010 func   ?sub_100eef50@CBaseDoor@@QAEXPAVCBaseEntity@@0HM@Z CBaseDoor::sub_100eef50
 0x1000f015 func   ?vfunc103@CPropSwitch@@UAEXXZ CPropSwitch::vfunc103
 0x1000f01a func   ?vfunc20@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHH@Z CTempEntsSystem::vfunc20
