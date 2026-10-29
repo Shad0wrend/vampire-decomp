@@ -9077,6 +9077,7 @@
 0x1001501e func   ?vfunc82@CNPC_VPlaceholder@@UAEPAUdatamap_t@@XZ CNPC_VPlaceholder::vfunc82
 0x10015023 func   ?sub_10349650@CUnknown10349590@@QAE_NXZ CUnknown10349590::sub_10349650
 0x10015028 func   ?vfunc56@CGameRules@@UAEXXZ CGameRules::vfunc56
+0x1001503c func   ?sub_1029f780@CAI_BaseNPCTroika@@QAEHH@Z CAI_BaseNPCTroika::sub_1029f780
 0x1001504b func   ?sub_1023ffa0@@YAHPBVVector@@00MM@Z sub_1023ffa0
 0x10015050 func   ?sub_10366290@@YIXPAX@Z sub_10366290
 0x1001505a func   ?vfunc433@CNPC_VSabbatLeader@@QAEXXZ CNPC_VSabbatLeader::vfunc433

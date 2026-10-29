@@ -111403,6 +111403,34 @@ int CLazyTroikaView::sub_1029f730(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029f780 size=0x55
+#include "CAI_BaseNPCTroika.h"
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList g_106eb5d8;
+extern char g_106b8540[];
+
+struct S1029f780Rec { char pad[0x468]; const char *m_pszName; };
+struct S1029f780Ent { char pad[0xb0]; int m_nB0; };
+
+// TARGET: CAI_BaseNPCTroika::sub_1029f780
+int CAI_BaseNPCTroika::sub_1029f780(int a)
+{
+	if (!m_n6300) {
+		S1029f780Rec *pRec = (S1029f780Rec *)sub_1029f730(a);
+		if (pRec) {
+			const char *name = pRec->m_pszName;
+			if (!name)
+				name = g_106b8540;
+			S1029f780Ent *pEnt = (S1029f780Ent *)g_106eb5d8.sub_100f7770(0, name, 0, 0);
+			if (pEnt)
+				m_n6300 = pEnt->m_nB0;
+		}
+		return m_n6300;
+	}
+	return m_n6300;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a0b90 size=0x1b
 struct CUnknown102a0b90 { int sub_102a0b90(int); };
 int CUnknown102a0b90::sub_102a0b90(int a0)
