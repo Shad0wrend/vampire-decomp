@@ -84024,6 +84024,26 @@ bool CUnknown101f3d80::sub_101f3810()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f3d00 size=0x54
+#include "CUnknown101f3d80.h"
+#include "CUnknown101f4370.h"
+
+struct CUnit101f4530 { int sub_101f4530(int a, int b); };
+struct CUnk101f4330 { void sub_101f4330(int a, int b); };
+
+void CUnknown101f3d80::sub_101f3d00(int a, int b)
+{
+	int idx;
+	((CUnknown101f4370 *)m_n04)->sub_101f4370((const char *)b, &idx, &b);
+	if (idx != -1)
+	{
+		int n = ((CUnit101f4530 *)m_n04)->sub_101f4530(idx, b);
+		((CUnk101f4330 *)m_n04)->sub_101f4330(idx, b);
+		*((char *)*(int *)((char *)this + 0x14) + n) = 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f3d80 size=0x93
 #include "CUnknown101f3d80.h"
 void CUnknown101f3d80::sub_101f3d80(int a, int b)
