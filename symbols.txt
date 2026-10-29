@@ -2463,6 +2463,7 @@
 0x1000677b func   ?sub_10316ab0@CUnknown10316890@@QAEXHVVector@@0@Z CUnknown10316890::sub_10316ab0
 0x10006785 func   ?vfunc309@CBaseCombatCharacter@@QAEPAXXZ CBaseCombatCharacter::vfunc309
 0x10006794 func   ?sub_102cc6a0@@YAXXZ sub_102cc6a0
+0x1000679e func   ?sub_100bba10@CBeam@@QAEXPAVCBaseEntity@@0@Z CBeam::sub_100bba10
 0x100067ad func   ?sub_102e5d00@@YAMPAM@Z sub_102e5d00
 0x100067b2 func   ?vfunc5@CPlatTrigger@@QAEPAV1@I@Z CPlatTrigger::vfunc5
 0x100067c6 func   _item_g_drugs_drug_box item_g_drugs_drug_box
