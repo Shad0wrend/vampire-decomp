@@ -29,7 +29,9 @@ public:
 	virtual int vfunc127(CRestore *pRestore);	// "CAI_BaseNPC::Restore": reads the data description block at +0x19b4, CBaseCombatCharacter::vfunc127, fixes up the arrays at +0x5b8c (4) and +0x5db4 (3), the object at +0x5d44 (when set) and the member at +0x5cf4; returns the base result
 	CAI_NPC_V(128) CAI_NPC_V(129)
 	CAI_NPC_V10(13)
-	CAI_NPC_V(140) CAI_NPC_V(141) CAI_NPC_V(142) CAI_NPC_V(143)
+	CAI_NPC_V(140) CAI_NPC_V(141)
+	virtual int vfunc142(int a);	// slot 142 (ret 4: one argument, answers in eax)
+	CAI_NPC_V(143)
 	virtual void vfunc144(int a);
 	CAI_NPC_V(145) CAI_NPC_V(146) CAI_NPC_V(147) CAI_NPC_V(148) CAI_NPC_V(149)
 	CAI_NPC_V(150) CAI_NPC_V(151) CAI_NPC_V(152) CAI_NPC_V(153) CAI_NPC_V(154) CAI_NPC_V(155) CAI_NPC_V(156) CAI_NPC_V(157)
