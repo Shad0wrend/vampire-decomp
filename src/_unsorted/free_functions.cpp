@@ -40237,6 +40237,15 @@ void CUnk101026c0::sub_101026c0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10102700 size=0x14
+struct CUnknown10102700 { void sub_10102700(int); };
+void CUnknown10102700::sub_10102700(int a0)
+{
+    *(char *)((char *)this + 0x450) = 1;
+    *(int *)((char *)this + 0x17c) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10102730 size=0x10d
 #include "CEnvMicrophone.h"
 #include "CSound.h"
