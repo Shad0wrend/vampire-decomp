@@ -29354,6 +29354,19 @@ void CFloatPair3f4::sub_100c08d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c0900 size=0x49
+#include "CFuncRotating.h"
+
+float CFuncRotating::sub_100c0900(float flSpeed)
+{
+	if (m_vecMovedir[0] != 0.0f)
+		return flSpeed * m_vecMovedir[0];
+	if (m_vecMovedir[1] != 0.0f)
+		return flSpeed * m_vecMovedir[1];
+	return flSpeed * m_vecMovedir[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c0970 size=0x109
 #include "CFloatPair3f4.h"
 #include <math.h>
