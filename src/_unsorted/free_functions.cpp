@@ -52102,6 +52102,17 @@ void sub_1013ca00(const Vector &a, const Vector &b, const Vector &c, Vector &out
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013cb00 size=0x54
+void sub_1013ca00(const Vector &p, const Vector &a, const Vector &b, Vector &out, float *pT);
+// TARGET: sub_1013cb00
+float __cdecl sub_1013cb00(const Vector &p, const Vector &a, const Vector &b, float *pT)
+{
+	Vector vClosest;
+	sub_1013ca00(p, a, b, vClosest, pT);
+	return (p - vClosest).LengthSqr();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013cb80 size=0x85
 #include "Vector.h"
 float sub_1013c940(const Vector &a, const Vector &b, const Vector &c, Vector &out);
