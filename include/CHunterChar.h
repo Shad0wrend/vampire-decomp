@@ -6,6 +6,7 @@ class CHunterChar
 public:
 	virtual void vfunc0();
 	virtual unsigned int *vfunc1();
+	void sub_1017fa70();	// called when the last hold is gone
 	void sub_1017f830();	// one hold less: when the count at +0x1d14 reaches 0 calls sub_1017fa70, then logs "OnHunterPursuitStart" with the count when the convar g_107258dc is on
 
 	char m_pad0004[0x1d14 - 4];
