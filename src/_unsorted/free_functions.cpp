@@ -51264,6 +51264,32 @@ Vector Vector::sub_10146190(const Vector &v) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146500 size=0x44
+struct S146500 {
+	char pad[0xc];
+	int a0c;
+	char pad2[8];
+	int a18;
+	int a1c;
+	int a20;
+	char a24;
+	char a25;
+};
+extern int g_1057ae40;
+extern S146500 *g_1071a2b8[20];
+void sub_10142e90(S146500 *, int *, int, int, int, char, int);
+void sub_10146500()
+{
+	if (g_1057ae40 != -1) {
+		for (int *pp = (int *)g_1071a2b8; (int)pp < (int)(g_1071a2b8 + 20); pp++) {
+			S146500 *p = (S146500 *)*pp;
+			if (p->a25)
+				sub_10142e90(p, &p->a0c, p->a18, p->a1c, p->a20, p->a24, 0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146640 size=0x15
 struct CUnknown10146640 { void * sub_10146640(); };
 void * CUnknown10146640::sub_10146640()
