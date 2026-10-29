@@ -29857,6 +29857,20 @@ void bf_read::sub_100bf1c0(int iStart, int nBits)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bf350 size=0x53
+__declspec(dllimport) void Msg(const char *fmt, ...);
+extern char g_105461f0[];
+extern char g_10547e40[];
+void sub_100bf350(unsigned int *p, int n)
+{
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < 32; j++)
+            Msg(g_105461f0, (p[i] & (1 << j)) != 0);
+    }
+    Msg(g_10547e40);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bf3d0 size=0x40
 extern char g_1055b374[];
 extern char g_10547e40[];
