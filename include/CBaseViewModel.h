@@ -2,9 +2,23 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+struct CViewModelPlayer	// the object at +0xa8 of the viewmodel's owner entity (the controlling player)
+{
+	char m_pad00[0x2e0];
+	int m_pEdict2e0;	// 0x2e0
+};
+
+struct CViewModelOwner	// the viewmodel's owner entity, as far as the transmit test looks
+{
+	char m_pad00[0xa8];
+	CViewModelPlayer *m_pPlayer;	// 0xa8
+};
+
 class CBaseViewModel : public CBaseEntity
 {
 public:
+	bool vfunc86(int a, int b, int c, int d, int e);	// slot 86 (ShouldTransmit-like): false with bit 6 of +0x19c; true when the owner entity's player (+0xa8) has the edict b
+
 	CBaseViewModel *vfunc5(unsigned int flags);
 	void sub_10007126();
 	CBaseEntity *vfunc267();	// as in CBasePlayer (transplant)
