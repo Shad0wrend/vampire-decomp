@@ -108053,6 +108053,24 @@ int CAI_BaseNPCTroika::sub_102c1230()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c2430 size=0x43
+#include "CAI_BaseNPCTroika.h"
+#include "globalvars.h"
+
+struct TroikaField65dc { char pad[0x65dc]; float m; };
+
+char CAI_BaseNPCTroika::sub_102c2430()
+{
+	if (sub_102c1170())
+		return 1;
+	if (m_n5d70 >= 4 && m_n5d70 <= 6)
+		return 1;
+	if (gpGlobals->curtime <= ((TroikaField65dc *)this)->m)
+		return 1;
+	return m_b63f0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c24a0 size=0x17e
 #include "CGlobalEntityList.h"
 #include "inputdata_t.h"
