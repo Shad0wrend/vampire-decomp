@@ -130935,6 +130935,20 @@ char sub_10387800()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10387f30 size=0x1a
+namespace lifted {
+extern int g_1063fe80;
+extern int g_1063fe84;
+extern char g_1063fec4;
+}
+int sub_10387f30()
+{
+    lifted::g_1063fe84 = 1;
+    lifted::g_1063fe80 = (int)&lifted::g_1063fec4;
+    return (int)&lifted::g_1063fe80;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10387f60 size=0x43
 #include "CNPC_VHunter.h"
 void *sub_100aa720(int size);
