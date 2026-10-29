@@ -148936,6 +148936,25 @@ void __stdcall sub_1040e1c0(CBaseEntity *pEnt, const Vector *pDir, float flScale
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040e5b0 size=0x48
+struct CEntA { virtual bool vfunc0(); virtual bool vfunc1(); char m_pad[0x24]; float m_f28; };
+struct CEntB { virtual bool vfunc0(); virtual bool vfunc1(); char m_pad[0x24]; float m_f28; };
+extern CEntA *g_1094ac3c;
+extern CEntB *g_1094ad14;
+char sub_1040d930();
+float sub_1040e5b0()
+{
+    if (!sub_1040d930()) {
+        if (g_1094ad14->vfunc1())
+            return 0.0f;
+        return g_1094ad14->m_f28;
+    }
+    if (g_1094ac3c->vfunc1())
+        return 0.0f;
+    return g_1094ac3c->m_f28;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040e880 size=0xfe
 #include "CWeaponPhysCannon.h"
 #include "CWeaponMelee.h"
