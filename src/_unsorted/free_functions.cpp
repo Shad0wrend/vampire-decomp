@@ -139709,6 +139709,20 @@ extern "C" CBaseEntity *vampireprojectile_mingxiaospit()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f17a0 size=0x1a
+namespace lifted {
+extern int g_1067e1c8;
+extern int g_1067e1cc;
+extern char g_1067e20c;
+}
+int sub_103f17a0()
+{
+    lifted::g_1067e1cc = 3;
+    lifted::g_1067e1c8 = (int)&lifted::g_1067e20c;
+    return (int)&lifted::g_1067e1c8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f2de0 size=0x72
 #include "SendProp.h"
 
