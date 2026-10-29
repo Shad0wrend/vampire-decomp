@@ -69133,6 +69133,20 @@ int sub_101c7fa0(void *pObj)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c8820 size=0x1a
+namespace lifted {
+extern int g_1059de58;
+extern int g_1059de5c;
+extern char g_1059de9c;
+}
+int sub_101c8820()
+{
+    lifted::g_1059de5c = 6;
+    lifted::g_1059de58 = (int)&lifted::g_1059de9c;
+    return (int)&lifted::g_1059de58;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c8850 size=0x43
 #include "CTriggerPush.h"
 void *sub_100aa720(int size);
