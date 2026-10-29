@@ -26,7 +26,9 @@ struct StatDefault3
 	float m_bc[3];	// 0xbc.. 1.0f
 	int pad_c8;
 	int m_cc;	// 0xcc
-	int m_d0[4];	// 0xd0..0xdc
+	int m_d0[2];	// 0xd0..0xd7
+	int *m_pd8;	// 0xd8: array of 17 ints
+	int m_dc;	// 0xdc
 	StatDefault3(int);
 	~StatDefault3();
 	int sub_101d4d80();	// stub 0x100054ca
