@@ -35946,6 +35946,26 @@ void CUnknown100dda50::sub_100ddc40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ddd20 size=0x4f
+#include "CCollisionProperty.h"
+#include "CUnknown100dbc60.h"
+#include "engineserver.h"
+extern CUnknown100dbc60 g_106e8144;
+struct S100ddd20Ent : CBaseEntity {
+	bool IsFlag(int bit) { return ((m_flags268 >> bit) & 1) != 0; }
+	void AddFlag(unsigned int f) { m_flags268 |= f; }
+	int GetEdict() { return m_pEdict2e0; }
+};
+void CCollisionProperty::sub_100ddd20()
+{
+	S100ddd20Ent *p = (S100ddd20Ent *)m_pOuter;
+	if (engine->vfunc35(((S100ddd20Ent *)m_pOuter)->GetEdict()) && !((S100ddd20Ent *)m_pOuter)->IsFlag(15)) {
+		((S100ddd20Ent *)m_pOuter)->AddFlag(0x8000);
+		g_106e8144.sub_100dbc60(m_pOuter);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ddd90 size=0x143
 #include "CCollisionProperty.h"
 #include "TestBit.h"
