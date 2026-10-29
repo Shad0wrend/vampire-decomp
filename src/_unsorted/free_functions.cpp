@@ -31014,6 +31014,17 @@ void CUnknown100cdba0::sub_100cdba0(CUnknown100cdba0Data data, int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cdc60 size=0x10
+namespace lifted {
+extern char g_106e6fc8;
+struct C1000bbd6 { int sub_1000bbd6(int); };
+}
+int sub_100cdc60(int a0)
+{
+    return ((lifted::C1000bbd6 *)((int)&lifted::g_106e6fc8))->sub_1000bbd6(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cdda0 size=0x38
 // TARGET: CEventQueue::sub_100cdda0
 #include "CEventQueue.h"
