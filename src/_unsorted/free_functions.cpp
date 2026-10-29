@@ -77579,6 +77579,37 @@ CUnknown101db5f0* CUnknown101db5f0::sub_101db5f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101db630 size=0x55
+#include "CStatDefault60List.h"
+
+class IKVNodeView
+{
+public:
+	virtual void v0();
+	virtual void v1();
+	virtual IKVNodeView *vfunc2(const char *pszName);
+	virtual IKVNodeView *vfunc3();
+};
+
+// TARGET: CStatDefault60List::sub_101db630
+char CStatDefault60List::sub_101db630(IKVNodeView *pKV, void *pFilter)
+{
+	sub_101db7e0();
+	if (pKV) {
+		IKVNodeView *pNode = pKV->vfunc2("Affects_Table");
+		while (pNode) {
+			StatDefault60 *pItem = sub_101db6b0();
+			if (pItem) {
+				pItem->sub_101db0d0(pNode, pFilter);
+				pNode = pNode->vfunc3();
+			}
+		}
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101db6b0 size=0xeb
 #include "CStatDefault60List.h"
 
