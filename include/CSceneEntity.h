@@ -123,7 +123,9 @@ public:
 	unsigned int m_hPlayer10c;	// 0x10c: entity handle of the scene's player
 	char m_pad0110[0x17c - 0x110];
 	float m_flNextThink;	// 0x17c
-	char m_pad0180[0x498 - 0x180];
+	char m_pad0180[0x450 - 0x180];
+	const char *m_pszSceneFile450;	// 0x450: the scene file name (null when unset)
+	char m_pad0454[0x498 - 0x454];
 	char m_bPlaying498;	// 0x498
 	char m_bPlaying499;	// 0x499
 	char m_pad049a[2];
