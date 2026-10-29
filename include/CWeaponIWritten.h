@@ -7,6 +7,7 @@
 class CWeaponIWritten : public CBaseEntity
 {
 public:
+	virtual bool vfunc315();	// slot 315 (this class does not model its vtable): as CWeaponIArmor::vfunc315
 	CWeaponIWritten *vfunc5(unsigned int flags);
 	void sub_10013a57();
 	CWeaponIWritten *sub_1040b270();	// as in CKeepUpright (transplant)
