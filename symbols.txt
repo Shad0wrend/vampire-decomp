@@ -1052,6 +1052,7 @@
 0x10003927 func   ?sub_10198150@@YAPAXPAX0@Z sub_10198150
 0x1000392c func   ?sub_101727a0@@YAXPAUCPlayerVecSlotsX@@H@Z sub_101727a0
 0x10003931 func   ?sub_10050d90@CDisciplineParticle@@SAPAV1@HHHHHHHHHH@Z CDisciplineParticle::sub_10050d90
+0x10003936 func   ?sub_101ddbe0@CUnknown101ddbe0@@QAEPAXXZ CUnknown101ddbe0::sub_101ddbe0
 0x1000393b func   ?sub_102e9a90@CUtlVector280@@QAEHHPBX@Z CUtlVector280::sub_102e9a90
 0x10003940 func   ?vfunc408@CNPC_VMingXiaoTentacle@@QAEPAXH@Z CNPC_VMingXiaoTentacle::vfunc408
 0x10003959 func   ?sub_102cdcf0@@YGXH@Z sub_102cdcf0

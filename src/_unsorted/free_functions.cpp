@@ -73065,6 +73065,17 @@ void Range::sub_101ddb40(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ddbe0 size=0x17
+struct CUnknown101ddbe0 { void * sub_101ddbe0(); };
+void * CUnknown101ddbe0::sub_101ddbe0()
+{
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = 1;
+    *(int *)((char *)this + 8) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ddc10 size=0x1
 void sub_101ddc10()
 {
