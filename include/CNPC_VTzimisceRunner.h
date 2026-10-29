@@ -19,6 +19,8 @@ public:
 	int sub_10295750(int act);	// CAI_BaseNPCTroika::vfunc310, called directly
 	void vfunc104();	// "CNPC_VTzimisceRunner::Precache": the base precache, then every footstep / breath / exertion sound of the runner and the claw weapon
 	void sub_100097b4();	// CAI_BaseNPCTroika::vfunc104 (Precache), called directly
+	void vfunc130(int a);	// slot 130: the Troika version (sub_102998c0), then the size (50, 50, 82) and RemoveFlag2(4) as at spawn
+	void sub_102998c0(int a);	// CAI_BaseNPCTroika::vfunc130 (stub 0x10002b99), called directly
 	void vfunc103();	// slot 103 "Spawn" (plain member): the name pointers (null when empty), the fields at +0x6420.., the Troika spawn, solid flag 0x4000000, the runner bytes, flag 0x80 at +0x5b84, the size (50, 50, 82) and RemoveFlag2(4)
 	void sub_10298d30();	// CAI_BaseNPCTroika::vfunc103 (stub 0x1000303a), called directly
 	void sub_10012855(int flags);	// sets the solid flags, called directly
