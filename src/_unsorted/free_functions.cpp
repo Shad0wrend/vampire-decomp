@@ -58273,6 +58273,20 @@ void CPointAngleSensor::sub_1018d210(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018d430 size=0x1a
+namespace lifted {
+extern int g_1058c6f0;
+extern int g_1058c6f4;
+extern char g_1058c734;
+}
+int sub_1018d430()
+{
+    lifted::g_1058c6f4 = 0xb;
+    lifted::g_1058c6f0 = (int)&lifted::g_1058c734;
+    return (int)&lifted::g_1058c6f0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018d7f0 size=0x37
 #include "CBaseEntity.h"
 

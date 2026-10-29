@@ -6487,6 +6487,7 @@
 0x10010532 func   _trigger_teleport trigger_teleport
 0x10010537 func   ?sub_10328af0@CBaseCombatCharacter@@QAEHPAV1@HH@Z CBaseCombatCharacter::sub_10328af0
 0x1001053c func   ?sub_102241f0@CItemContainerLock@@QAEXPAUinputdata_t@@@Z CItemContainerLock::sub_102241f0
+0x10010541 func   ?sub_1018d430@@YAHXZ sub_1018d430
 0x10010555 func   ?sub_101cd880@CTracePassFilterX@@QAE_NPAXH@Z CTracePassFilterX::sub_101cd880
 0x1001055a func   ?vfunc3@CCollisionEvent@@UAEXPAX00@Z CCollisionEvent::vfunc3
 0x10010573 func   ?sub_10204270@CUnknown10204270@@QAEXXZ CUnknown10204270::sub_10204270
