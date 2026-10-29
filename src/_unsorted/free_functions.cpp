@@ -145738,6 +145738,16 @@ void CUnknown1042e8c0::sub_1042ee50(float frames)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042eee0 size=0x17
+struct CUnknown1042eee0 { int sub_1042eee0(int, int); };
+int CUnknown1042eee0::sub_1042eee0(int a0, int a1)
+{
+    *(int *)((char *)this + 0x464) = a0;
+    *(int *)((char *)this + 0x468) = a1;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042f080 size=0x8
 namespace lifted {
 int sub_10010dde();
