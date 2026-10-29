@@ -31,6 +31,7 @@ struct StatDefault3
 	int m_dc;	// 0xdc
 	StatDefault3(int);
 	~StatDefault3();
+	int sub_101d4f60(int n);	// stub 0x1000295a: index of the n-th used slot
 	int sub_101d4d80();	// stub 0x100054ca
 	void sub_101d3a10();	// stub 0x10012a12: resets the item before it is loaded from a data node
 	void sub_101d4520(void *pNode, CStatDefault3List *pList);	// stub 0x1000a32b: loads the item from a "ClanData" node
