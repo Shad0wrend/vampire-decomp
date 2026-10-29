@@ -204,6 +204,7 @@
 0x1000173a func   _filter_activator_feat filter_activator_feat
 0x1000173f func   ?sub_1042bfd0@@YAHXZ sub_1042bfd0
 0x10001744 func   ?vfunc5@CItemGIdolCat@@QAEPAV1@I@Z CItemGIdolCat::vfunc5
+0x1000174e func   ?sub_10267370@@YAXHH@Z sub_10267370
 0x10001753 func   _filter_activator_mass filter_activator_mass
 0x10001758 func   ?sub_103d3a40@CBaseEntity@@QAE_NPBD@Z CBaseEntity::sub_103d3a40
 0x10001762 func   ?sub_100aeb50@@YAXXZ sub_100aeb50

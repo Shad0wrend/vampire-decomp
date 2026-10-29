@@ -107193,6 +107193,23 @@ void sub_10267350()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10267370 size=0x54
+extern "C" __declspec(dllimport) void Error(const char *, ...);
+extern int g_1092030c[2][5];
+extern int g_10920544[];
+
+void sub_10267370(int pEntity, int nList)
+{
+	if (nList < 0 || nList > 1)
+		Error("Invalid dodge list number.");
+	int n = g_10920544[nList];
+	if (n >= 5)
+		Error("Too many entities in dodge list.");
+	g_1092030c[nList][n++] = pEntity;
+	g_10920544[nList] = n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102673f0 size=0x48
 extern int g_1092030c[2][5];
 extern int g_10920544[2];
