@@ -15,6 +15,25 @@ int sub_10025ed0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10025f00 size=0x51
+#include "CPhysForce.h"
+void CPhysForceMotion::sub_10025f00(const CPhysForceVec3 *pStart, const CPhysForceVec3 *pEnd)
+{
+	m_vStart.x = pStart->x;
+	m_vStart.y = pStart->y;
+	m_vStart.z = pStart->z;
+	m_vEnd.x = pEnd->x;
+	m_vEnd.y = pEnd->y;
+	m_vEnd.z = pEnd->z;
+	m_vStart2.x = pStart->x;
+	m_vStart2.y = pStart->y;
+	m_vStart2.z = pStart->z;
+	m_vEnd2.x = pEnd->x;
+	m_vEnd2.y = pEnd->y;
+	m_vEnd2.z = pEnd->z;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027850 size=0x8
 namespace lifted {
 int sub_1000b5d2();
