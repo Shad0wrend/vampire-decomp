@@ -59463,6 +59463,24 @@ Vector sub_101898f0(CBaseEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10189a10 size=0x51
+#include "CRagdollProp.h"
+#include "IPlayerPickupVPhysics.h"
+extern char g_10538764[];
+extern char g_10589544[];
+extern "C" void *__cdecl __RTDynamicCast(void *, long, void *, void *, int);
+char sub_10189a10(CBaseEntity *pEnt)
+{
+	IPlayerPickupVPhysics *pPickup = (IPlayerPickupVPhysics *)__RTDynamicCast(pEnt, 0, g_10538764, g_10589544, 0);
+	if (pPickup)
+		return pPickup->vfunc7();
+	CRagdollProp *pRagdoll = dynamic_cast<CRagdollProp *>(pEnt);
+	if (pRagdoll)
+		return pRagdoll->vfunc276();
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018a030 size=0x1a
 namespace lifted {
 extern int g_105896c0;
