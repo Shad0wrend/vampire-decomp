@@ -78831,6 +78831,20 @@ extern "C" CBaseEntity *vampireprojectile()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ee2b0 size=0x1a
+namespace lifted {
+extern int g_105a4c58;
+extern int g_105a4c5c;
+extern char g_105a4c9c;
+}
+int sub_101ee2b0()
+{
+    lifted::g_105a4c5c = 0x26;
+    lifted::g_105a4c58 = (int)&lifted::g_105a4c9c;
+    return (int)&lifted::g_105a4c58;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ee5a0 size=0x11f
 #include "CGlobalEntityList.h"
 #include "CEntityVSlots.h"
