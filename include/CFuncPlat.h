@@ -52,7 +52,9 @@ public:
 	char m_pad04fc[0x508 - 0x4fc];
 	Vector m_vecPosition508;	// 0x508
 	Vector m_vecPosition514;	// 0x514
-	char m_pad0520[0x55c - 0x520];
+	char m_pad0520[0x54c - 0x520];
+	float m_flRotation;	// 0x54c
+	char m_pad0550[0x55c - 0x550];
 	const char *m_pszStartSound;	// 0x55c
 	const char *m_pszArriveSound;	// 0x560
 	float m_flVolume;	// 0x564
