@@ -14,4 +14,5 @@ public:
 
 	char m_pad000[0x2e4];
 	CUtlVector<int> m_aVectors[2];	// 0x2e4
+	CUtlVector<class CUnknown10077430Track *> m_Tracks;	// 0x30c: the flex animation tracks
 };
