@@ -107547,6 +107547,23 @@ void CAI_BaseNPCTroika::sub_102c2ab0(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c2b20 size=0x42
+#include "CAI_BaseNPCTroika.h"
+#include "inputdata_t.h"
+__declspec(dllimport) void DevMsg(const char *, ...);
+static inline bool IsInt(const variant_t &v) { return v.fieldType == 4; }
+static inline int GetInt(const variant_t &v) { return IsInt(v) ? v.iValue : 0; }
+void CAI_BaseNPCTroika::sub_102c2b20(inputdata_t *pInput)
+{
+	int mode = GetInt(pInput->value);
+	if (IsInt(pInput->value) && mode >= 0 && mode <= 6) {
+		m_n633c = mode;
+		return;
+	}
+	DevMsg("SetInvestigateModeCombat requires integer from %d to %d\n", 0, 6);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c3350 size=0x3a
 #include "inputdata_t.h"
 extern char g_106b8540[];
