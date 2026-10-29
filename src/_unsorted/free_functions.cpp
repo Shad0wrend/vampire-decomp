@@ -8591,6 +8591,20 @@ extern "C" GP *env_steamjet()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100580b0 size=0x1a
+namespace lifted {
+extern int g_1053ff38;
+extern int g_1053ff3c;
+extern char g_1053ff7c;
+}
+int sub_100580b0()
+{
+    lifted::g_1053ff3c = 0xd;
+    lifted::g_1053ff38 = (int)&lifted::g_1053ff7c;
+    return (int)&lifted::g_1053ff38;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10058200 size=0xd
 // TARGET: CUnknown10058200::sub_10058200
 void CUnknown10058200::sub_10058200(int unused)
