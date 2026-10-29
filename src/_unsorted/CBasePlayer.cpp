@@ -1625,3 +1625,15 @@ void CBasePlayer::vfunc468()
     sub_1017b6f0(stand, "player_stand", crouch, "player_crouch");
 }
 // END FUNCTION
+
+// FUNCTION: 0x10182fc0 size=0x52
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+void CBasePlayer::vfunc24(CBaseEntity *pOther)
+{
+	if (pOther) {
+		m_hEnt1C60 = (CBaseEntity *)pOther->m_p9c;
+		m_f1DD8 = gpGlobals->curtime;
+	}
+}
+// END FUNCTION
