@@ -18133,6 +18133,25 @@ struct CUnknown10083960 { int p; int a; void sub_10083960(int v); };
 void CUnknown10083960::sub_10083960(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x10083a60 size=0x49
+#include "CSceneEntity.h"
+struct SceneView { char m_pad[4]; void sub_100799b0(); };
+// TARGET: CSceneEntity::sub_10083a60
+void CSceneEntity::sub_10083a60()
+{
+    if (m_pScene4bc) {
+        sub_10084170(m_pScene4bc);
+        sub_100845a0(m_pScene4bc);
+    }
+    SceneView *pScene = (SceneView *)m_pScene4bc;
+    if (pScene) {
+        pScene->sub_100799b0();
+        delete pScene;
+    }
+    m_pScene4bc = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10084170 size=0xb8
 #include "CSceneEntity.h"
 #include "CUnknown1007a2c0.h"
