@@ -809,6 +809,20 @@ extern "C" GP *phys_slideconstraint()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002bd90 size=0x1a
+namespace lifted {
+extern int g_10538ea8;
+extern int g_10538eac;
+extern char g_10538eec;
+}
+int sub_1002bd90()
+{
+    lifted::g_10538eac = 2;
+    lifted::g_10538ea8 = (int)&lifted::g_10538eec;
+    return (int)&lifted::g_10538ea8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002c120 size=0x49
 void *sub_1000db89(int);
 struct GP;
