@@ -108529,6 +108529,22 @@ void CAI_BaseNPCTroika::sub_102b2730()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b3d90 size=0x49
+struct CAI_Timer2c
+{
+	int a, b, c, d, e;
+	char f;
+	int g, h, i, j, k;
+	CAI_Timer2c &sub_102b3d90(const CAI_Timer2c &p);
+};
+CAI_Timer2c &CAI_Timer2c::sub_102b3d90(const CAI_Timer2c &p)
+{
+	a = p.a; b = p.b; c = p.c; d = p.d; e = p.e; f = p.f;
+	g = p.g; h = p.h; i = p.i; j = p.j; k = p.k;
+	return *this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b5bb0 size=0x11
 namespace lifted {
 extern char g_1070d1b0;
