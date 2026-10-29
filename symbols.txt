@@ -5799,6 +5799,7 @@
 0x1000e19c func   ?sub_10196a40@@YAPAUSPyObject@@PAU1@0@Z sub_10196a40
 0x1000e1a1 func   ?sub_1019a920@@YGDH@Z sub_1019a920
 0x1000e1a6 func   ?sub_101fead0@CVStatInfo_t@@QAE_NXZ CVStatInfo_t::sub_101fead0
+0x1000e1ab func   ?sub_10027fe0@CUnknown101d1460@@QAEXPAMPBM@Z CUnknown101d1460::sub_10027fe0
 0x1000e1b0 func   ?solverfunc4@IPhysicsCollisionSolver@@UAEXPAX0@Z IPhysicsCollisionSolver::solverfunc4
 0x1000e1b5 func   ?sub_1024d2f0@@YA_NPBMPAM@Z sub_1024d2f0
 0x1000e1bf func   ?sub_10070690@@YAPAVCBaseCineCam@@PAX@Z sub_10070690
