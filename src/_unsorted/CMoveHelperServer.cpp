@@ -187,6 +187,22 @@ bool CMoveHelperServer::vfunc2(const void *pTrace, const float *pVelocity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013f760 size=0x4c
+#include <stdarg.h>
+
+extern int (__cdecl *g_109f387c)(char *pDest, int maxLen, const char *pFormat, va_list params);
+
+void CMoveHelperServer::vfunc4(int idx, const char *pszFormat, ...)
+{
+	va_list marker;
+	char msg[0x2000];
+	va_start(marker, pszFormat);
+	g_109f387c(msg, 0x2000, pszFormat, marker);
+	va_end(marker);
+	engine->vfunc81(idx, msg);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013f7d0 size=0x10f
 #include "CBaseEntity.h"
 #include "CGameRules.h"

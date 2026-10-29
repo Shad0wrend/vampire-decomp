@@ -834,6 +834,7 @@
 0x10002e78 func   ?vfunc5@CFuncElevator@@UAEPAV1@I@Z CFuncElevator::vfunc5
 0x10002e82 func   ?sub_1042fe60@@YAXXZ sub_1042fe60
 0x10002e8c func   ?sub_10271f30@@YGXH@Z sub_10271f30
+0x10002e91 func   ?vfunc4@CMoveHelperServer@@UAAXHPBDZZ CMoveHelperServer::vfunc4
 0x10002ea5 func   ?sub_1013fcb0@CUtlVector96@@QAEXHH@Z CUtlVector96::sub_1013fcb0
 0x10002eaf func   ?sub_1018c4f0@@YGXH@Z sub_1018c4f0
 0x10002eb4 func   ?sub_101841c0@CUnknown101841c0@@QAEPAXH@Z CUnknown101841c0::sub_101841c0
