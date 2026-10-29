@@ -82061,6 +82061,25 @@ void CVampireProjectile::sub_101ef3d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ef880 size=0x52
+struct STarget {
+	char pad0[0x8a8];
+	EHANDLE m_hEnt;
+	char m_bFlag;
+	char pad8ad[3];
+	int m_nValue;
+
+	void sub_101ef880(CBaseEntity *pEnt, char bFlag, int nValue);
+};
+
+void STarget::sub_101ef880(CBaseEntity *pEnt, char bFlag, int nValue)
+{
+	m_hEnt = pEnt;
+	m_bFlag = bFlag;
+	m_nValue = nValue;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ef900 size=0xe7
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
