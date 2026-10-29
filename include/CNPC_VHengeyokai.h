@@ -75,7 +75,9 @@ public:
 	char m_pad5d90[0x6664 - 0x5d90];
 	unsigned int m_h6664;	// 0x6664: entity handle (the target of the bone attack)
 	int m_n6668;	// 0x6668: index of the bone name used by the attack
-	char m_pad666c[0x6678 - 0x666c];
+	char m_pad666c[0x6670 - 0x666c];
+	float m_fl6670;	// 0x6670
+	char m_pad6674[0x6678 - 0x6674];
 	int m_n6678;	// 0x6678
 	char m_b667c;	// 0x667c: set while the target is carried / claimed
 	char m_pad667d[0x6684 - 0x667d];
