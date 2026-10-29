@@ -26,6 +26,23 @@ void CRagdollProp::vfunc130(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10155050 size=0x57
+#include "CRagdollProp.h"
+struct IPhysicsEnv { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(int pObject); };
+extern IPhysicsEnv *g_1053c5e0;
+void sub_1019c950(int *pCount);
+void CRagdollProp::vfunc180()
+{
+    for (int i = 0; i < m_nBodies730; i++) {
+        if (m_Bodies[i].m_pObject)
+            g_1053c5e0->v3(m_Bodies[i].m_pObject);
+    }
+    sub_100a6490(0);
+    sub_1019c950(&m_nBodies730);
+    CBaseEntity::vfunc180();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155210 size=0x7a
 #include "CRagdollProp.h"
 #include <stdlib.h>
