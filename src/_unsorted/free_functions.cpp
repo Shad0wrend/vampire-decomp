@@ -106634,6 +106634,20 @@ bool CAI_BaseNPCTroika::sub_10290200(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102902e0 size=0x49
+bool CAI_BaseNPCTroika::sub_102902e0(int unused)
+{
+	sub_102727d0();
+	if (gpGlobals->curtime >= m_f6450) {
+		vfunc448(14);
+		m_h5d24 = 0xffffffff;
+		m_b5d30 = 0;
+		m_n644c = 0;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10290660 size=0x23
 // TARGET: sub_10290660
 int __stdcall sub_10290660(float a)
