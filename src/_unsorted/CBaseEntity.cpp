@@ -2894,6 +2894,13 @@ bool CBaseEntity::vfunc158()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b4ef0 size=0x7
+int CBaseEntity::vfunc83()
+{
+    return *(int *)((char *)this + 0x268);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4f10 size=0xd
 void CBaseEntity::vfunc84(int flags)
 {
