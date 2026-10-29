@@ -117046,6 +117046,29 @@ int CUnknown102e0630::sub_102e0630(void *enemy)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e0770 size=0x4f
+struct CNode102e0770 {
+	char m_pad00[0x24];
+	EHANDLE m_hEnt;	// 0x24
+	char m_pad28[0x10];
+	CNode102e0770 *m_pNext;	// 0x38
+};
+struct CList102e0770 {
+	char m_pad00[0xc];
+	CNode102e0770 *m_pFirst;	// 0xc
+};
+
+CNode102e0770 * __fastcall sub_102e0770(CList102e0770 *list, int edx, CBaseEntity *pEnt)
+{
+	for (CNode102e0770 *n = list->m_pFirst; n; n = n->m_pNext) {
+		CBaseEntity *e = n->m_hEnt.Get();
+		if (e && pEnt == e)
+			return n;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e0860 size=0x80
 #include "CUtlVectorDataOps.h"
 struct CAI_InterestTarget;
