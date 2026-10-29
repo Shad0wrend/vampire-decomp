@@ -1437,6 +1437,39 @@ bool CBasePlayer::vfunc382(CBaseCombatWeapon *pWeapon)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10177760 size=0x55
+struct CEntView443 {
+	CBP_V1(a0)
+	virtual unsigned int *vfunc1();
+	CBP_V100(b) CBP_V100(c) CBP_V10(d0) CBP_V10(d1) CBP_V10(d2) CBP_V10(d3) CBP_V10(d4) CBP_V10(d5)
+	CBP_V1(e0) CBP_V1(e1) CBP_V1(e2) CBP_V1(e3) CBP_V1(e4) CBP_V1(e5)
+	virtual char vfunc268();
+};
+int __fastcall sub_10010ea6(void *p);
+
+inline void SetH443(unsigned int &h, CEntView443 *p)
+{
+	if (p)
+		h = *p->vfunc1();
+	else
+		h = 0xffffffff;
+}
+
+// TARGET: CBasePlayer::vfunc443
+void CBasePlayer::vfunc443(int a)
+{
+	CEntView443 *pEnt = (CEntView443 *)a;
+	if (pEnt) {
+		char *p = (char *)sub_10010ea6(pEnt);
+		if ((*(unsigned int *)(p + 0x242c) & 1) == 1)
+			return;
+		if (pEnt->vfunc268())
+			return;
+	}
+	SetH443(m_hEnt0EA4, pEnt);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101777e0 size=0xd1
 #include <string.h>
 #include "CBaseCombatCharacter.h"
