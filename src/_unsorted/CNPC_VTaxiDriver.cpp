@@ -46,6 +46,24 @@ void CNPC_VTaxiDriver::vfunc442(const int *pTask)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b38a0 size=0x50
+#include "CNPC_VTaxiDriver.h"
+#include "CEntityVSlots.h"
+void CNPC_VTaxiDriver::vfunc444(const int *pTask)
+{
+	if (*pTask != 0xb9) {
+		sub_10384ab0(pTask);
+		return;
+	}
+	if (sub_100125bc() == -1) {
+		sub_1000ac68(0);
+		sub_10269b50(0x6f);
+		m_b6660 = 0;
+		((CEntityVSlots *)this)->slot310(1);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b3970 size=0x1e
 #include "CNPC_VTaxiDriver.h"
 
