@@ -70309,6 +70309,24 @@ void sub_101c7b80(const char *pszMap, const char *pszLandmark)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c7d90 size=0x4b
+#include "CChangeLevel.h"
+extern char g_1072cf78[];
+extern char g_1072cf44[];
+__declspec(dllimport) void DevMsg(const char *, ...);
+// TARGET: CChangeLevel::sub_101c7d90
+void CChangeLevel::sub_101c7d90(CBaseEntity *pPlayer)
+{
+    if (*(int *)((char *)pPlayer + 0xa8)) {
+        if (pPlayer->vfunc94() == 9) {
+            DevMsg("In level transition: %s %s\n", g_1072cf78, g_1072cf44);
+            return;
+        }
+        sub_101c7890(pPlayer);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c7fa0 size=0x3c
 typedef unsigned int (__fastcall *FlagSlotFn)(void *);
 typedef int (__fastcall *IntSlotFn)(void *);
