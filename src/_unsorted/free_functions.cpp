@@ -77203,6 +77203,27 @@ void CUnknown101e0f00::sub_101e3a30(S1033d380 *pObj, int id)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e3c80 size=0x47
+#include "CUnknown101e3af0.h"
+#include "S1033d380.h"
+namespace block_101e3c80 {
+struct CDiscUnit : CUnknown101e3af0 { unsigned int sub_101e1870(unsigned int id); };
+unsigned int CDiscUnit::sub_101e1870(unsigned int id) { return id | 0x80000000; }
+}
+using namespace block_101e3c80;
+void CUnknown101e3af0::sub_101e3c80(CBaseCombatCharacter *pCharacter, int flags)
+{
+    S1033d380 *pChar = (S1033d380 *)pCharacter;
+    CDiscUnit *pThis = (CDiscUnit *)this;
+    unsigned int mask = 1;
+    for (int i = 30; i > 0; i--) {
+        if (pChar->m_nDisciplineMask & mask)
+            sub_101e3af0(pCharacter, pThis->sub_101e1870(mask), flags);
+        mask <<= 1;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e3cf0 size=0x59
 struct CUnknown101e3cfEnt {
     char m_pad0000[0x31];
