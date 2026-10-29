@@ -23,7 +23,7 @@ public:
 	virtual void slot12();
 	virtual void slot13();
 	virtual int vfunc14(int type);	// slot 14: maps type 0 to 0x14, 1 to 0x1a, 2 to 0xd and any other to 1
-	virtual void slot15();
+	virtual char vfunc15(void *pSurface, float volume);	// slot 15: in multiplayer with m_field10 clear, true only when the player's horizontal speed is above 195.0f
 	virtual void slot16();
 	virtual void slot17();	// called by vfunc18 when bit 1 of the player's +0x24 is set
 	virtual void vfunc18();	// slot 18: sub_101252e0, then slot 17 (bit 1 of the player's +0x24 set) or clears bit 1 of the player's +0x28; adds the move data's vector (+0x3b0) to the player's velocity (+0x40), runs slot 19(0, 0) and subtracts it again
