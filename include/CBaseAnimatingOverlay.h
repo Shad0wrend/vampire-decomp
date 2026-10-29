@@ -24,6 +24,7 @@ public:
 	CBaseAnimatingOverlay *vfunc5(unsigned int flags);
 	void sub_10004c3c();
 	void vfunc268(int index, int a, int sequence, char flag);	// slot 268: initialises the 0x30 byte animation overlay record [index] (array at +0x738) with the sequence, the weights and fade times; clears the fade weights again when the sequence's flag bit 1 is set
+	void vfunc273(int a, char bAdd, int b);	// slot 273 (plain member): the layer slot 271(a) finds gets its dword at +8 cleared; with none and bAdd set, AddGesture(a, b)
 	int vfunc272();	// slot 272: the first free overlay layer among the first four (its weight at +0x10 is 0), slot 267 is asked first for the start index; -1 when none
 	bool sub_100992d0(int index, float flDivisor, int nValue);	// the layer [index] (-1 = none): its rate at +0xc = sub_10091080(its sequence) / flDivisor, its dword at +0x14 = nValue; true when the layer exists
 	void sub_10099320(int a, float b, int c);	// 0x10099320: r = slot 271(a); sub_100992d0(r, b, c) (the layer's rate and value)
