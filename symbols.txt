@@ -5823,6 +5823,7 @@
 0x1000edf9 func   ?sub_1013b090@@YAXHPAHPAD@Z sub_1013b090
 0x1000ee0d func   ?vfunc0@CSingleplayRules@@UAEPAVCGameRules@@I@Z CSingleplayRules::vfunc0
 0x1000ee26 func   ?vfunc2@CTEKillPlayerAttachments@@UAEPAV1@I@Z CTEKillPlayerAttachments::vfunc2
+0x1000ee2b func   ?sub_10230cd0@CUnknown10230cd0@@QAEPAXH@Z CUnknown10230cd0::sub_10230cd0
 0x1000ee3a func   ?vfunc3@CBaseTempEntity@@UAEXABVVector@@ABVQAngle@@@Z CBaseTempEntity::vfunc3
 0x1000ee58 func   ?sub_1030bc40@CUnknown1030bc40@@QAEHXZ CUnknown1030bc40::sub_1030bc40
 0x1000ee5d func   ?vfunc425@CAI_BaseNPC@@UAEPAVCAI_Senses@@XZ CAI_BaseNPC::vfunc425
