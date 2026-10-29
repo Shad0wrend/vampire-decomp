@@ -52507,6 +52507,25 @@ int CUnknown10155300::sub_10155300()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10155380 size=0x47
+#include "CRagdollProp.h"
+#include "CAI_BaseNPC.h"
+#include "CBaseAnimating.h"
+#include "globalvars.h"
+
+void CRagdollProp::sub_10155380()
+{
+	*(float *)((char *)this + 0x174) = gpGlobals->curtime;
+	*(int *)((char *)this + 0x6f4) = 0;
+	*(int *)((char *)this + 0x6f8) = 0;
+	int seq = ((CBaseAnimating *)this)->sub_1008dc40(0x21, -1);
+	if (seq < 0)
+		((CAI_BaseNPC *)this)->sub_10260a50(0);
+	else
+		((CAI_BaseNPC *)this)->sub_10260a50(seq);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155460 size=0x2b
 #include "CBaseAnimating.h"
 
