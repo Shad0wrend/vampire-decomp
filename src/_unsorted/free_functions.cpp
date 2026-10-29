@@ -11697,6 +11697,20 @@ int sub_1006b7a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006bb00 size=0x1a
+namespace lifted {
+extern int g_10545fc8;
+extern int g_10545fcc;
+extern char g_1054600c;
+}
+int sub_1006bb00()
+{
+    lifted::g_10545fcc = 1;
+    lifted::g_10545fc8 = (int)&lifted::g_1054600c;
+    return (int)&lifted::g_10545fc8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006bb80 size=0xe6
 #include <math.h>
 #include "CBaseEntity.h"
