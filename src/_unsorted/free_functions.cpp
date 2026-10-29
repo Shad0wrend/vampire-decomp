@@ -52638,6 +52638,31 @@ void CPhysicsCannister::sub_10150f50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101510c0 size=0x4b
+#include "CPhysicsCannister.h"
+#include "CEventQueue.h"
+extern CEventQueue g_106e7050;
+extern char g_1055ed5c[];
+
+struct SCannisterTarget {
+    char m_pad[0x460];
+    int m_n460;
+    int m_pad464;
+    int m_n468;
+};
+
+// TARGET: CPhysicsCannister::sub_101510c0
+void CPhysicsCannister::sub_101510c0()
+{
+    char *p = (char *)this;
+    g_106e7050.sub_100ce040(*(CBaseEntity **)(p + 0x19e0), g_1055ed5c, 5.0f, 0, 0, 0);
+    (*(SCannisterTarget **)(p + 0x19e0))->m_n468 = 0;
+    (*(SCannisterTarget **)(p + 0x19e0))->m_n460 = 0;
+    *(int *)(p + 0x19e0) = 0;
+    *(int *)(p + 0x17c) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10151ae0 size=0x6b
 #include "matrix3x4_t.h"
 #include <math.h>
