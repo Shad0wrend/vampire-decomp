@@ -40927,6 +40927,20 @@ bool CEnvMicrophone::sub_10102730(CSound *pSound, float *pLevel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10102a70 size=0x1a
+namespace lifted {
+extern int g_10569db0;
+extern int g_10569db4;
+extern char g_10569df4;
+}
+int sub_10102a70()
+{
+    lifted::g_10569db4 = 1;
+    lifted::g_10569db0 = (int)&lifted::g_10569df4;
+    return (int)&lifted::g_10569db0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10102aa0 size=0x55
 void *sub_1000db89(int);
 extern int vt_10459f58;
