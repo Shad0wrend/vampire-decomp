@@ -12,6 +12,7 @@ class CStatusFlagList
 {
 public:
 	unsigned int sub_101e1610(int nKey);	// the OR of the flags of every entry whose key is nKey (0 when none)
+	unsigned int sub_101e1520(int nKey, int nSkip);	// the flags of the entry nSkip places after the first entry with key nKey (0 when none)
 	char m_pad0000[0x4];
 	int m_nCount;	// +0x4
 	CStatusFlagEntry **m_ppEntries;	// +0x8
