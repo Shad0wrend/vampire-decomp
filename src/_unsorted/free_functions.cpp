@@ -129804,6 +129804,21 @@ bool sub_103ad0f0(CBaseCombatCharacter *pChar)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ad5a0 size=0x12
+namespace lifted {
+extern char g_104c5500;
+extern char g_104c552c;
+int sub_10012d73();
+}
+struct CUnknown103ad5a0 { int sub_103ad5a0(); };
+int CUnknown103ad5a0::sub_103ad5a0()
+{
+    *(int *)this = (int)&lifted::g_104c552c;
+    *(int *)((char *)this + 0x10) = (int)&lifted::g_104c5500;
+    return lifted::sub_10012d73();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ad710 size=0x53
 void *sub_1000db89(int);
 struct GP;
