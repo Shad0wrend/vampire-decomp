@@ -12250,6 +12250,18 @@ int CUnknown1006edb0::sub_1006edb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006ede0 size=0x12
+namespace lifted {
+extern char g_106c8298;
+struct C10006a28 { int sub_10006a28(int); };
+}
+struct CUnknown1006ede0 { int sub_1006ede0(); };
+int CUnknown1006ede0::sub_1006ede0()
+{
+    return ((lifted::C10006a28 *)((int)&lifted::g_106c8298))->sub_10006a28(*(int *)((char *)this + 0x630));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006ee10 size=0x7b
 struct CUnk1006ee10Rec {
     char pad0[0x24];
