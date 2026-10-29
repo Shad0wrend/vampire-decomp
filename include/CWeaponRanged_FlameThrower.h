@@ -37,7 +37,8 @@ public:
 	char m_b1519;
 	char m_pad151a[2];
 	int m_n151c;
-	int m_n1520;
+	char m_b1520;
+	char m_pad1521[3];
 	float m_f1524;	// curtime stamp
 	float m_f1528;	// curtime stamp
 	int m_n152c;
