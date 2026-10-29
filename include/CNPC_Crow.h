@@ -37,6 +37,8 @@ public:
 	void sub_10357be0(float flSpeed);	// steers toward the target at +0x5ddc: velocity 170.0f * speed along the direction, yaw / pitch from it
 	bool sub_10357e50(const Vector &dir, float flDist, Vector *pOut);	// stub 0x1000b334, called directly
 
+	Vector vfunc192();	// slot 192: the origin (slot 220) raised by 6.0f, returned by value (hidden result pointer)
+
 	// Slot 546.
 	int vfunc546(int arg);
 	CNPC_Crow *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
