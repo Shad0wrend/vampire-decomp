@@ -87976,6 +87976,20 @@ void CUnknown1020e060::sub_1020e080(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020e260 size=0x1a
+namespace lifted {
+extern int g_105aab6c;
+extern int g_105aab70;
+extern char g_105aabb4;
+}
+int sub_1020e260()
+{
+    lifted::g_105aab70 = 0xd;
+    lifted::g_105aab6c = (int)&lifted::g_105aabb4;
+    return (int)&lifted::g_105aab6c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020e3c0 size=0xee
 #include "CReliableSingleUserRecipientFilter.h"
 struct S1020e3c0Arg { struct S1020e3c0Ent *pEnt; };
