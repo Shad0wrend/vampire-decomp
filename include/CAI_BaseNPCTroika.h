@@ -255,7 +255,9 @@ public:
 	char m_pad631c[0x6338 - 0x631c];
 	int m_n6338;	// 0x6338: the investigate mode (0..6)
 	int m_n633c;	// 0x633c: the combat investigate mode (0..6)
-	char m_pad6340[0x63d8 - 0x6340];
+	char m_pad6340[0x63b8 - 0x6340];
+	float m_f63b8;
+	char m_pad63bc[0x63d8 - 0x63bc];
 	char m_b63d8;
 	char m_pad63d9;
 	char m_b63da;
