@@ -102737,6 +102737,19 @@ void CAI_BaseNPCTroika::sub_10295ab0(float flDelay)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10296820 size=0x12
+namespace lifted {
+extern char g_1049ae1c;
+}
+struct CUnknown10296820 { void * sub_10296820(int); };
+void * CUnknown10296820::sub_10296820(int a0)
+{
+    *(int *)this = (int)&lifted::g_1049ae1c;
+    *(int *)((char *)this + 4) = a0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10297430 size=0x82
 #include "CAI_BaseNPCTroika.h"
 
