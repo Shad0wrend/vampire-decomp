@@ -41333,6 +41333,20 @@ char * CUnknown10104510::sub_10104510()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10104590 size=0x1a
+namespace lifted {
+extern int g_1056aec4;
+extern int g_1056aec8;
+extern char g_1056af0c;
+}
+int sub_10104590()
+{
+    lifted::g_1056aec8 = 2;
+    lifted::g_1056aec4 = (int)&lifted::g_1056af0c;
+    return (int)&lifted::g_1056aec4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10104630 size=0x8
 void sub_1000c586();
 void __stdcall sub_10104630(int) { sub_1000c586(); }
