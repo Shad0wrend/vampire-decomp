@@ -10174,6 +10174,21 @@ int sub_100622d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10062490 size=0x46
+#include "CTEFizz.h"
+#include "CBaseEntity.h"
+extern CTEFizz g_106c2d1c;
+void sub_10062490(CRecipientFilter &filter, float delay, CBaseEntity *pEntity, int a4, int a5)
+{
+	int nEdict = pEntity->m_pEdict2e0;
+	int nIndex = engine->vfunc35(nEdict);
+	g_106c2d1c.m_nCurrent = nIndex;
+	g_106c2d1c.m_nModelIndex = a4;
+	g_106c2d1c.m_nDensity = a5;
+	g_106c2d1c.vfunc4(filter, delay);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10062570 size=0xb
 namespace lifted {
 extern char g_1044de90;
