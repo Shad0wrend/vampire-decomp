@@ -122002,6 +122002,27 @@ int CUnknown10310440::sub_10310440(int *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10310480 size=0x4c
+int sub_101bb150(int);
+int __stdcall sub_10310480(int *p)
+{
+    int h = *p;
+    if (h == 0)
+        return 0;
+    if (h == -1) {
+        *p = 0;
+        return 0;
+    }
+    h = *(int *)(sub_101bb150(h) + 0x1c);
+    if (h == -1) {
+        *p = 0;
+        return 0;
+    }
+    *p = h;
+    return sub_101bb150(h);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103104f0 size=0xad
 #include "CAI_Senses.h"
 #include "CEntityVSlots.h"
