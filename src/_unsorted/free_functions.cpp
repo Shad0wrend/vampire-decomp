@@ -53247,6 +53247,22 @@ void CUnknown1014cad0::sub_1014cad0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014d090 size=0x52
+#include "CBaseEntity.h"
+extern int g_10723938;
+struct SSlot { EHANDLE m_h; int pad[4]; };
+struct SHolder { char pad[0x9e0]; SSlot m_slot[1]; int sub_1014d090(int i); };
+int SHolder::sub_1014d090(int i)
+{
+	if (i < 0)
+		return 0;
+	CBaseEntity *p = m_slot[i].m_h.Get();
+	if (p)
+		return p->m_obj36c;
+	return g_10723938;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014eb40 size=0x19
 namespace lifted {
 extern char g_1046d080;
