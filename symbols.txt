@@ -3684,6 +3684,7 @@
 0x10009895 func   ?vfunc104@CNPC_VSheriffMan@@QAEXXZ CNPC_VSheriffMan::vfunc104
 0x1000989a func   ?vfunc8@CEffectsServer@@UAEXPBMH@Z CEffectsServer::vfunc8
 0x100098b3 func   ?sub_10199100@@YAPAUPyObject@@PAU1@0@Z sub_10199100
+0x100098b8 func   ?vfunc4@CTEFizz@@UAEXAAVCRecipientFilter@@M@Z CTEFizz::vfunc4
 0x100098d1 func   ?vfunc173@CFuncMoveLinear@@QAEXPAX0HM@Z CFuncMoveLinear::vfunc173
 0x100098d6 func   ?sub_100a6bb0@@YIHPADHH@Z sub_100a6bb0
 0x100098e0 func   _point_hurt point_hurt
