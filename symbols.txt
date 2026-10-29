@@ -3292,6 +3292,7 @@
 0x10008d23 func   ?sub_101d91c0@CUnknown101d91c0@@QAEPAXXZ CUnknown101d91c0::sub_101d91c0
 0x10008d28 func   ?sub_1033f3f0@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_1033f3f0
 0x10008d32 func   ?vfunc5@CItemGHattersScreenplay@@QAEPAV1@I@Z CItemGHattersScreenplay::vfunc5
+0x10008d37 func   ?sub_101a2c00@@YAHXZ sub_101a2c00
 0x10008d50 func   ?sub_102c9da0@CUnknown102ca630Rec@@QAEXPAU1@@Z CUnknown102ca630Rec::sub_102c9da0
 0x10008d5a func   ?sub_1011a430@@YAXXZ sub_1011a430
 0x10008d64 func   ?sub_10094b70@CBaseAnimating@@QAEMMPADPAM1@Z CBaseAnimating::sub_10094b70

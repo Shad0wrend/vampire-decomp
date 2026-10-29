@@ -62951,6 +62951,20 @@ void CRestore::sub_101a2820(unsigned short *pSize, int *pValues, void *pBase, ty
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a2c00 size=0x1a
+namespace lifted {
+extern int g_10592b18;
+extern int g_10592b1c;
+extern char g_10592b5c;
+}
+int sub_101a2c00()
+{
+    lifted::g_10592b1c = 9;
+    lifted::g_10592b18 = (int)&lifted::g_10592b5c;
+    return (int)&lifted::g_10592b18;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2d50 size=0xbd
 #include "CEntitySaveRestoreBlockHandler.h"
 #include "CGlobalEntityList.h"
