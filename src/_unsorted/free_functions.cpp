@@ -68872,6 +68872,20 @@ extern "C" CBaseEntity *trigger_look()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c6c20 size=0x1a
+namespace lifted {
+extern int g_1059db68;
+extern int g_1059db6c;
+extern char g_1059dbac;
+}
+int sub_101c6c20()
+{
+    lifted::g_1059db6c = 5;
+    lifted::g_1059db68 = (int)&lifted::g_1059dbac;
+    return (int)&lifted::g_1059db68;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c71f0 size=0x7a
 void *sub_1000db89(int);
 struct GP;
