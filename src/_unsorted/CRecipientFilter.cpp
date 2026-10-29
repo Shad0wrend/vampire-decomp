@@ -78,6 +78,20 @@ void CRecipientFilter::AddAllPlayers()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019d210 size=0x4e
+#include "CRecipientFilter.h"
+void CRecipientFilter::AddRecipientsByPVS(const Vector &origin)
+{
+	if (gpGlobals->maxClients == 1) {
+		AddAllPlayers();
+	} else {
+		int playerbits = 0;
+		engine->vfunc64(0, &origin.x, &playerbits);
+		sub_1019d1c0(playerbits);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019d320 size=0x8
 #include "CRecipientFilter.h"
 
