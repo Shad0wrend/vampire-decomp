@@ -76303,6 +76303,25 @@ void sub_101eda00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101eda20 size=0x42
+#include "CUnknown101ed9e0.h"
+struct IObj102038e0;
+int sub_102038e0(int, IObj102038e0 *, int);
+int *sub_1000c162(int *, IObj102038e0 *);
+bool CUnknown101ed9e0::sub_101eda20(void *pNode)
+{
+	IObj102038e0 *p = (IObj102038e0 *)pNode;
+	if (p)
+	{
+		int tmp;
+		m_unk4 = *(int *)sub_102038e0((int)&tmp, p, (int)"InternalName");
+		m_unk8 = *sub_1000c162(&tmp, p);
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101eda90 size=0x36
 int sub_10431c2f(char *buffer, const char *format, ...);
 void sub_10203dd0(const char *pszText);
