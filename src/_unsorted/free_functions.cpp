@@ -124053,6 +124053,34 @@ void sub_1030c3f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030c4e0 size=0x54
+struct CTimerX { char data[0x18]; bool sub_102ea0e0(void *pOwner, int bOn); };
+extern CTimerX g_1090ff08;
+extern CTimerX g_1090ff20;
+extern CTimerX g_1090ff38;
+extern char g_109203cc[];
+extern char g_109203d4[];
+extern char g_109203dc[];
+void sub_102cadd0();
+void sub_102c8ce0();
+void sub_10316ff0();
+void sub_1025d790();
+void sub_10316e80();
+
+void sub_1030c4e0()
+{
+	if (g_1090ff08.sub_102ea0e0(g_109203cc, 0)) {
+		if (g_1090ff20.sub_102ea0e0(g_109203d4, 0))
+			g_1090ff38.sub_102ea0e0(g_109203dc, 0);
+	}
+	sub_102cadd0();
+	sub_102c8ce0();
+	sub_10316ff0();
+	sub_1025d790();
+	sub_10316e80();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030c560 size=0x35
 // TARGET: CUnknown1030c560::sub_1030c560
 extern void (*g_109f366c)(const char *pszFormat, ...);

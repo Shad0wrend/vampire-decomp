@@ -4905,6 +4905,7 @@
 0x1000bd39 func   ?vfunc1@CVFeatList_t@@UAEMH@Z CVFeatList_t::vfunc1
 0x1000bd43 func   ?sub_10245660@@YAPAUCUnk10245660Node@@PBD@Z sub_10245660
 0x1000bd48 func   ?sub_10390040@@YIXPAD@Z sub_10390040
+0x1000bd4d func   ?sub_1030c4e0@@YAXXZ sub_1030c4e0
 0x1000bd52 func   ?sub_10107ec0@@YAHXZ sub_10107ec0
 0x1000bd66 func   ?sub_102f6690@@YAXXZ sub_102f6690
 0x1000bd6b func   ?vfunc103@CEnvSoundscape@@QAEXXZ CEnvSoundscape::vfunc103
