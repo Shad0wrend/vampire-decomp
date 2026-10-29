@@ -105703,6 +105703,19 @@ void CUtlVector4::sub_10265310(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102653f0 size=0x51
+void __fastcall sub_102653f0(CUtlVector<int> *v, int unused, int x)
+{
+	int elem = v->Find(x);
+	if (elem != -1) {
+		if (v->m_Size > 0) {
+			memmove(&v->Element(elem), &v->Element(v->m_Size - 1), sizeof(int));
+			--v->m_Size;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10265680 size=0x124
 #include "CBCCSlotViews.h"
 __declspec(dllimport) void DevMsg(const char *fmt, ...);
