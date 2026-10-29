@@ -86246,6 +86246,25 @@ void __stdcall sub_101f9af0(CBaseCombatCharacter *pChar, const char *pszClassnam
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f9b70 size=0x55
+#include "CUnknown101f9b70.h"
+#include "CUnknown101f0e50.h"
+#include "CVTraitEffectGroup_t.h"
+extern CUnknown101f0e50 g_1074df78;
+
+// TARGET: CUnknown101f9b70::sub_101f9b70
+int CUnknown101f9b70::sub_101f9b70(int index)
+{
+	if (g_1074df78.sub_101f8300(index)) {
+		for (int i = 0; i < m_count; i++) {
+			if (g_1074df78.sub_101f8480(m_ids[i])->m_nId == index)
+				return m_ids[i];
+		}
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f9c70 size=0xb6
 #include "CUnknown101f9c70.h"
 struct TraceEnt { const char *a; const void *b; const void *c; };
