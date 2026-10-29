@@ -47010,6 +47010,22 @@ void __fastcall sub_1012d4b0(S *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012d4e0 size=0x4d
+#include "CUnknown1012cf50.h"
+#include "CUnknown1012d740.h"
+void sub_1000b7d0();
+// TARGET: CUnknown1012cf50::sub_1012d4e0
+void CUnknown1012cf50::sub_1012d4e0(int nState)
+{
+	CUnknown1012d740 *p = (CUnknown1012d740 *)this;
+	*((char *)p + 0x470) = 0;
+	p->sub_100ac4e0((int)sub_1000b7d0, 0, 0);
+	p->m_flNextThink = gpGlobals->curtime + 0.01;
+	p->m_flLastTime = gpGlobals->curtime;
+	p->sub_1012d5e0(nState | 0x20);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012d550 size=0x38
 // TARGET: CUnknown1012d740::sub_1012d550
 #include "CBreakableProp.h"
