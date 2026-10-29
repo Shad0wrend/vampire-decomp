@@ -93959,6 +93959,27 @@ void CUnknown10227250::sub_10227250(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102272b0 size=0x4c
+#include "CBasePlayer.h"
+#include <string.h>
+extern char g_106b8540[];
+CBasePlayer *sub_101cd9e0(int index);
+void __stdcall sub_102272b0(int unused)
+{
+    CBasePlayer *pPlayer = sub_101cd9e0(1);
+    if (pPlayer) {
+        CBaseEntity *pEnt = (CBaseEntity *)pPlayer->sub_101618a0();
+        if (pEnt) {
+            const char *name = pEnt->m_classname11c;
+            if (!name)
+                name = g_106b8540;
+            if (!_strcmpi(name, "npc_VPlayerController"))
+                pPlayer->sub_101618e0(1, 1);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10227320 size=0x3a
 #include "inputdata_t.h"
 extern char g_106b8540[];
