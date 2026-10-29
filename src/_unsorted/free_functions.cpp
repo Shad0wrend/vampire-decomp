@@ -130999,6 +130999,19 @@ void melee_dice_roll_result::sub_10349710(int a, int nRolls, int *pDice)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10349830 size=0x51
+extern float g_10739f98;
+extern float g_10739f9c;
+struct SRange { int m0; int m4; int m8; int mc; int sub_10349830(); };
+int SRange::sub_10349830()
+{
+	float f = (float)(int)(float)(m4 - mc - m8);
+	if (f <= g_10739f98) return 2;
+	if (f <= g_10739f9c) return 1;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103498b0 size=0x85
 #include "CUnknown103498b0.h"
 
