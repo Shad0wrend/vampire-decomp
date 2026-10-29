@@ -22,9 +22,12 @@ public:
 	unsigned int m_flags;	// 0x0c: bit 0 = disabled
 	int m_pad0010;
 	int m_iName;	// 0x14
-	char m_pad0018[0x24 - 0x18];
+	char m_pad0018[0x20 - 0x18];
+	char *m_p20;	// 0x20: a table freed by the destructor
 	int m_nEffects;	// 0x24
 	CVDmgBlock16_t *m_pEffects;	// 0x28: m_nEffects blocks of 16 bytes (kind, stat, ?, multiplier)
+	int m_pad002c;
+	char *m_p30;	// 0x30: a table freed by the destructor
 
 	CVFeat_t(int a);	// 0x101e4f30: the default feat (id a at +0 and +0x10, +0x18 = 10, the rest cleared)
 	~CVFeat_t();	// 0x101e4f70 (stub 0x10014c72): frees the tables at +0x20 / +0x28 / +0x30; the exit destroy of the static default feat (0x100dba10, stub 0x1001509b) runs it
