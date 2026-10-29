@@ -19,6 +19,9 @@ public:
 	virtual void vfunc3();
 	virtual void vfunc4();
 	virtual float vfunc5(int level);	// the tuning value for a stat level
+	char m_pad4[0x3ac];
+	float m_f3b0;
+	float sub_101e90f0(CBaseCombatCharacter *pChar);	// base delay of the vampire heal over time, modified by the character's trait list (stub 0x1000951b)
 
 	float sub_101e7d90();	// returns the float at +0x3c8 (stub 0x10006f0f)
 	float sub_101e7d70();	// a tuning delay as a float (stub 0x10007e0f): the time between the random view punches of the player
