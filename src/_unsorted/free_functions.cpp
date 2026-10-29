@@ -304,6 +304,19 @@ void CUnknown101d1460::sub_10028060(float *pOut, const float *pIn)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100280e0 size=0x51
+#include "CUnknown101d1460.h"
+void CUnknown101d1460::sub_100280e0(float *pOut, const float *pIn)
+{
+	float z = m_m[10] * pIn[2] + m_m[2] * pIn[0] + m_m[6] * pIn[1];
+	float y = m_m[9] * pIn[2] + m_m[1] * pIn[0] + m_m[5] * pIn[1];
+	float x = m_m[8] * pIn[2] + m_m[4] * pIn[1] + pIn[0] * m_m[0];
+	pOut[0] = x;
+	pOut[1] = y;
+	pOut[2] = z;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100281c0 size=0x1a
 namespace lifted {
 extern int g_10537098;
