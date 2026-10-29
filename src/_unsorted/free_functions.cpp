@@ -66028,6 +66028,24 @@ const char *CUnknown101b2570::sub_101b2320()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2420 size=0x4b
+#include "CUnknown101b2570.h"
+SFloatPair sub_1012f640(const char *psz);
+extern "C" __declspec(dllimport) int Q_strcasecmp(const char *, const char *);
+__declspec(dllimport) char *Q_strncpy(char *, const char *, int);
+// TARGET: CUnknown101b2570::sub_101b2420
+void CUnknown101b2570::sub_101b2420(const char *volume)
+{
+    if (Q_strcasecmp(volume, "VOL_NORM") == 0) {
+        m_volume.a = 1.0f;
+        m_volume.b = 0.0f;
+    } else {
+        m_volume = sub_1012f640(volume);
+    }
+    Q_strncpy(m_szVolume, volume, 0x20);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2490 size=0x25
 #include "CUnknown101b2570.h"
 
