@@ -81,6 +81,20 @@ bool CPropSign::vfunc34(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10211e00 size=0x50
+#include "CBasePlayer.h"
+struct CBasePlayerView208c { char pad[0x208c]; int m_n208c; };
+
+void CPropSign::vfunc41(CBasePlayer *pPlayer)
+{
+	if (((CBasePlayerView208c *)pPlayer)->m_n208c) {
+		pPlayer->sub_10167fd0();
+		return;
+	}
+	pPlayer->sub_10178590(((CBasePlayer *)this)->vfunc192());
+}
+// END FUNCTION
+
 // FUNCTION: 0x10211e70 size=0x72
 #include "CPropSign.h"
 #include "CBasePlayer.h"
