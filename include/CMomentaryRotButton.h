@@ -2,6 +2,7 @@
 #pragma once
 
 #include "COutputEvent.h"
+#include "COutputFloat.h"
 #include "Vector.h"
 
 class CMomentaryRotButton
