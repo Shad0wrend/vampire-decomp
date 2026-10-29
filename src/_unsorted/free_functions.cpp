@@ -31080,6 +31080,22 @@ int sub_100c5600(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c56a0 size=0x58
+void sub_100c5400(int a, int b, int c, float **ppOut, float *pWeights);
+float sub_100c56a0(int a, int b, int c)
+{
+	float *ptrs[4];
+	float weights[4];
+	sub_100c5400(a, b, c, ptrs, weights);
+	float sum = 0.0f;
+	for (int i = 0; i < 4; i++) {
+		if (weights[i] > 0.0f)
+			sum += ptrs[i][1] * weights[i];
+	}
+	return sum;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c5720 size=0x8a
 #include "vampire.h"
 struct mstudioanimdesc_t {
