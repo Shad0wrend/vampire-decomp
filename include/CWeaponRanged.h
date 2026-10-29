@@ -34,7 +34,9 @@ public:
     CWR_V(308) CWR_V(309)
     CWR_V(310) CWR_V(311) CWR_V(312) CWR_V(313) CWR_V(314)
     virtual bool vfunc315();    // slot 315: sets the owner's model name (male / female variant), then asks slots 344 / 343 / 342 for the shot parameters and starts the shot; true when it started
-    CWR_V(316) CWR_V(317) CWR_V(318) CWR_V(319)
+    virtual void vfunc316(int a);   // 0x10239d10: when the owner's character is set and the counter at +0x914 is not negative, clears its flag (sub_10174550(1)) and its +0x1e78 and resets the counter to -1, then CBaseCombatWeapon::vfunc316
+    void sub_10253ca0(int a);       // CBaseCombatWeapon::vfunc316, called directly (stub 0x1001428b)
+    CWR_V(317) CWR_V(318) CWR_V(319)
     CWR_V(320) CWR_V(321) CWR_V(322) CWR_V(323) CWR_V(324) CWR_V(325) CWR_V(326) CWR_V(327)
     virtual int vfunc328();     // 0x10239210: 0xe0 or 0xbc plus a 0x1f / 0xfc mask on sub_102391c0 (the caller's flag), the 0xe0 form when the state at +0x86c is 1
     CWR_V(329)
