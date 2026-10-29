@@ -107695,6 +107695,36 @@ void __stdcall sub_1029f5d0(SNPCTroikaRef_t *pRef)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029f6c0 size=0x4a
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_TroikaLink.h"
+
+extern int g_106c994c;
+
+// TARGET: CAI_BaseNPCTroika::sub_1029f6c0
+int CAI_BaseNPCTroika::sub_1029f6c0(void *pArg)
+{
+	CTroikaPickHolder *pHolder = (CTroikaPickHolder *)pArg;
+	if (!pHolder)
+		return 0;
+	CTroikaPick *pPick = pHolder->m_pPick;
+	if (!pPick)
+		return 0;
+	int iNode = pPick->m_aNodes[pPick->m_iCur];
+	if (iNode == -1)
+		return 0;
+	CTroikaNodeObjNet *pNet = (CTroikaNodeObjNet *)((CTroikaNav *)m_p5d34)->m_pNet;
+	if (iNode >= 0 && iNode < pNet->m_nNodes) {
+		CTroikaNodeObj *pObj = pNet->m_ppNodes[iNode];
+		if (pObj)
+			return pObj->m_nValue;
+	} else {
+		g_106c994c++;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029f730 size=0x33
 struct CLazyTroikaView {
     char pad0[0x659c];
