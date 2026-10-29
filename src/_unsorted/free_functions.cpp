@@ -83394,6 +83394,17 @@ void *sub_10203440(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10203480 size=0x10
+namespace lifted {
+extern char g_10738d10;
+struct C1000297d { int sub_1000297d(int); };
+}
+int sub_10203480(int a0)
+{
+    return ((lifted::C1000297d *)((int)&lifted::g_10738d10))->sub_1000297d(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102034a0 size=0x76
 #include "CUnknown101ec4f0.h"
 extern char g_106b8540[];
