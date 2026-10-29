@@ -67097,6 +67097,20 @@ void CUtlVector130::sub_101b7170(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b7240 size=0x4b
+#include "CUtlVector130.h"
+
+extern "C" void *memmove(void *, const void *, unsigned int);
+
+// TARGET: CUtlVector130::sub_101b7240
+void CUtlVector130::sub_101b7240(int elem, int num)
+{
+	int numToMove = m_size - elem - num;
+	if ((numToMove > 0) && (num > 0))
+		memmove(m_pMemory + (elem + num) * 130, m_pMemory + elem * 130, numToMove * 130);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b72e0 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
