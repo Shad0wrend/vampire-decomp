@@ -3,11 +3,15 @@
 // real name not yet known.
 #pragma once
 
+#include "CUnknown101e01e0.h"
+
 class CUnknown101e0940
 {
 public:
 	int m_pad0000;
 	const char *m_pszName;	// 0x04
+	char m_pad0008[0xdc - 8];
+	CUnknown101e01e0 m_Table;	// 0xdc
 
 	int sub_101e0940(const char *name);
 };
