@@ -2133,6 +2133,7 @@
 0x10005f24 func   ?sub_103122e0@CUnknown103122e0@@QAEHHH@Z CUnknown103122e0::sub_103122e0
 0x10005f29 func   ?sub_101b0d80@CUnknown101b0d80@@QAEXH@Z CUnknown101b0d80::sub_101b0d80
 0x10005f33 func   ?sub_103e7640@@YIDPAXHH@Z sub_103e7640
+0x10005f38 func   ?vfunc104@CEnvShooter@@QAEXXZ CEnvShooter::vfunc104
 0x10005f47 func   ?sub_10094370@CFakeEnt@@QAEHH@Z CFakeEnt::sub_10094370
 0x10005f4c func   _info_node_shoot_at info_node_shoot_at
 0x10005f51 func   ?sub_10060be0@CUnknown10060be0@@QAEHXZ CUnknown10060be0::sub_10060be0
