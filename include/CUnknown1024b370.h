@@ -32,6 +32,8 @@ public:
 	int m_n24;	// 0x24
 	void *m_p28;	// 0x28
 
+	void sub_1024b940();	// DevMsg("%4d - %s\n") for every symbol: its index and its string
+	int sub_1024b9c0();	// the node count (m_s12, stub 0x10004aca)
 	void sub_1024b880();	// "RemoveAll" of the node list: re-links every node into the free list (sub_1024bf80 per node, highest first), resets the heads, then frees every string of m_mem1 and clears +0x24
 	void sub_1024b370();	// resets: base reset, clears +0x24, purges m_mem1, caches its pointer at +0x28, purges it again and m_mem0
 	CUnknown1024b370Symbol sub_1024b5e0(const char *pString);	// string table lookup/insert: the 16 bit symbol of pString (0xffff for null)
