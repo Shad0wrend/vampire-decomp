@@ -10,6 +10,12 @@ public:
 	virtual void vfunc0();
 };
 
+class CEnvLaserSprite
+{
+public:
+	void sub_1042ef70();	// stub 0x1000c3ce, called directly when the laser is switched off
+};
+
 class CEnvLaser : public CBeamHead
 {
 public:
