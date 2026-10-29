@@ -6828,6 +6828,7 @@
 0x100106a9 func   ?vfunc36@CSave@@UAEXPBXH@Z CSave::vfunc36
 0x100106ae func   ?sub_101ed9e0@CUnknown101ed9e0@@QAEPAV1@H@Z CUnknown101ed9e0::sub_101ed9e0
 0x100106b3 func   ?sub_101300e0@@YAHXZ sub_101300e0
+0x100106b8 func   ?sub_10203780@@YAPBDH@Z sub_10203780
 0x100106d1 func   ??0CAI_Navigator@@QAE@H@Z CAI_Navigator::CAI_Navigator
 0x100106ea func   ?vfunc3@CTESpriteSpray@@UAEXPBVVector@@0@Z CTESpriteSpray::vfunc3
 0x10010712 func   ?vfunc495@CNPC_VTest@@QAEXXZ CNPC_VTest::vfunc495
