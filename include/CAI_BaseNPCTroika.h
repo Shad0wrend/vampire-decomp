@@ -266,6 +266,7 @@ public:
 	void sub_102a9800(unsigned int flags);	// provisional, like sub_102a97a0 (transplant)
 	int sub_10252240();	// provisional, like vfunc293 (transplant)
 	int sub_1042b110();	// provisional, like vfunc293 (transplant)
+	void sub_10329560();	// CBaseCombatCharacter member (stub 0x1000acc2), called directly
 	void sub_101815b0(unsigned int flags);	// provisional, like sub_102a97d0 (transplant)
 	void sub_102a9830(unsigned int flags);	// provisional, like sub_102a97d0 (transplant)
 	void sub_102a98e0(unsigned int flags);	// provisional, like sub_102a97d0 (transplant)
