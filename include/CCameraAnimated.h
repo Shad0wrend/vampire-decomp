@@ -22,5 +22,7 @@ public:
 	CCameraAnimated *vfunc5(unsigned char flags); // scalar deleting destructor
 	void vfunc104(); // slot 104: precaches the model
 	void vfunc103();	// slot 103 "Spawn"-like: sets the model from the model name (slots 104, 105) or, without one, warns "missing modelname" with the origin and removes the entity
+	void vfunc259(void *pEvent);	// slot 259 \"HandleAnimEvent\" override: event 0x3eb with a number 1..8 in its options fires the output of that number (the array at +0x730); anything else CBaseAnimating::vfunc259
+	void sub_10091da0(void *pEvent);	// CBaseAnimating::vfunc259 (stub 0x10003f99), called directly
 	const char *sub_1000b5cd();	// CBaseEntity::GetDebugName (stub 0x1000b5cd)
 };
