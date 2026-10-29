@@ -64,6 +64,7 @@ public:
     virtual void vfunc271(int a, int b);
     virtual void vfunc272(); virtual void vfunc273(); virtual void vfunc274();
     virtual Vector vfunc275();	// slot 275: a random vector, every component rand() * (1200 / 32767) - 600 (hidden result pointer)
+    virtual char vfunc276();
     bool vfunc32(int a);	// slot 32 override (CBaseEntity::vfunc32): false when the flags at +0x204 have bit 5, else whether this is the entity sub_104115b0(a, 0) returns
     void *sub_100952d0(int a);	// CBaseAnimating::sub_100952d0 (GetModelPtr-like), called directly
     CRagdollProp *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
