@@ -24,6 +24,8 @@ class CRagdollProp : public CBaseEntity
 public:
     virtual void vfunc103();	// slot 103 "CRagdollProp::Spawn": slot 104, the model (slot 9 / 105), the bone setup (CBaseAnimating::vfunc257 with mask 0xfffc) handed to the ragdoll initialiser sub_101554a0, clears the fields at +0xd54 / +0xd60, +0xd64 = -1, a zero float at +0xdc becomes 0.1f, marks the collision property at +0x270 dirty and sets or clears flag bit 2 of +0x438 by bit 5 of +0x204
     virtual void vfunc104();	// slot 104: the model name (slot 9) or the default one when it is empty, handed to CBaseEntity::sub_100adfd0
+    virtual void vfunc130(int a);	// slot 130: CBaseAnimating::vfunc130(a), then the body array is reset (first body = the physics object at +0x36c, no link) and sub_1019bf80 runs on the count at +0x730
+    void sub_1008df10(int a);	// CBaseAnimating::vfunc130 (stub 0x10009e6c), called directly
     virtual void vfunc134();
     virtual void vfunc135(); virtual void vfunc136(); virtual void vfunc137(); virtual void vfunc138(); virtual void vfunc139();
     virtual void vfunc140(); virtual void vfunc141(int a, int b, void *pInfo);	// slot 141 (TraceAttack): swaps the physics object of the body the info's short at +0x48 names (when it is inside the body count) with sub_100a68f0, then the base implementation
