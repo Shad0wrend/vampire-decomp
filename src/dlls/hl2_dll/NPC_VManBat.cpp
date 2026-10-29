@@ -21,3 +21,16 @@ void CUnknown1038fa50::sub_1038fa50(int unused)
 	((CAI_BaseNPCTroika *)this)->sub_102ae750(0x15b, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1038fa90 size=0x49
+#include "CNPC_VManBat.h"
+#include "inputdata_t.h"
+void CNPC_VManBat::sub_1038fa90(inputdata_t *pInput)
+{
+	m_n6698 = pInput->value.fieldType == 4 ? pInput->value.iValue : 0;
+	*(const char **)((char *)this + 0x1b30) = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VManBat.cpp";
+	*(int *)((char *)this + 0x1b34) = 0x7e4;
+	sub_1038c170(1);
+	sub_102ae750(0x160, 0);
+}
+// END FUNCTION
