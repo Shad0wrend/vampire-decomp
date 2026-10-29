@@ -6,7 +6,7 @@
 class CRagdollPropAttached : public CRagdollProp
 {
 public:
-    CRagdollProp *vfunc5(unsigned int flags);\t// scalar deleting destructor: releases the physics object at +0x1060
+    CRagdollProp *vfunc5(unsigned int flags);	// scalar deleting destructor: releases the physics object at +0x1060
     char m_pad_attached[0x1060 - sizeof(CRagdollProp)];
     void *m_pPhysObj1060;
 };
