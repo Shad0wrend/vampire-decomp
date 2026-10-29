@@ -111,6 +111,6 @@ public:
 	void sub_1030fe50();	// stub 0x10003305, run before the count
 	void sub_1030fe70(int count, CAI_SensesVec *pVec);	// stub 0x100136a6, hands the count to the vector
 	char sub_1030ffa0(void *pEnt);	// stub 0x1000ae6b
-	char sub_1030faa0(void *pEnt);	// stub 0x10002bdf
+	bool sub_1030faa0(void *pEnt);	// stub 0x10002bdf
 	char sub_1030fc50(void *pEnt);	// stub 0x10013859
 };
