@@ -50510,6 +50510,15 @@ void sub_10137ed0(const matrix3x4_t &matrix, QAngle &angles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10138460 size=0x53
+void sub_10138460(const float *in1, const float in2[3][4], float *out)
+{
+    out[0] = in1[0] * in2[0][0] + in1[1] * in2[1][0] + in1[2] * in2[2][0];
+    out[1] = in1[0] * in2[0][1] + in1[1] * in2[1][1] + in1[2] * in2[2][1];
+    out[2] = in1[0] * in2[0][2] + in1[1] * in2[1][2] + in1[2] * in2[2][2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101384e0 size=0x71
 #include "QAngle.h"
 #include "matrix3x4_t.h"
