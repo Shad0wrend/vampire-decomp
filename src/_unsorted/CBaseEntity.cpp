@@ -132,6 +132,20 @@ void CBaseEntity::sub_10026c70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026e70 size=0x4c
+extern Vector g_1070d1b0;
+inline int VecNe(const Vector &a, const Vector &b)
+{
+    if (b.x == a.x && b.y == a.y && b.z == a.z)
+        return 0;
+    return 1;
+}
+int CBaseEntity::vfunc153()
+{
+    return VecNe(*(Vector *)m_vel3d4, g_1070d1b0) & 0xff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026f20 size=0x21
 bool __fastcall sub_100117d9(void *p);
 
