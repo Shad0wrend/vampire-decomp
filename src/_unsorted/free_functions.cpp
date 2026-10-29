@@ -110871,6 +110871,14 @@ bool CAI_BaseNPCTroika::sub_10290fc0(float *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10291ea0 size=0x57
+void sub_10143920(float x, float y, const char *s, int a, int b, int c, int d, float f);
+void sub_10291ea0(const float *pos, const char *s, int a, int b, int c, int d, float f)
+{
+    sub_10143920(pos[0] * 0.005f + 0.5f, pos[1] * 0.005f + 0.5f, s, a, b, c, d, f + f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10293d70 size=0x10
 void __fastcall sub_10293d70(int *p)
 {
