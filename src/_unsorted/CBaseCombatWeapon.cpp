@@ -907,6 +907,28 @@ int CBaseCombatWeapon::vfunc35(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102578c0 size=0x50
+#include "CBaseCombatWeapon.h"
+#include "CEHandleGet.h"
+
+#define V(n) virtual void v##n();
+#define V10(p) V(p##0) V(p##1) V(p##2) V(p##3) V(p##4) V(p##5) V(p##6) V(p##7) V(p##8) V(p##9)
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+struct CSlot382View {
+    V100(0) V100(1) V100(2)
+    V10(30) V10(31) V10(32) V10(33) V10(34) V10(35) V10(36) V10(37)
+    V(380) V(381)
+    virtual char vfunc382(CBaseCombatWeapon *pWeapon);
+};
+
+int CBaseCombatWeapon::vfunc34(CBaseEntity *pOther)
+{
+    if (!EHandle_Get(m_hOwner) && ((CSlot382View *)pOther)->vfunc382(this))
+        return 7;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10257930 size=0x3d
 #include "CEHandleGet.h"
 unsigned int __fastcall sub_10006703(CBaseCombatWeapon *p);
