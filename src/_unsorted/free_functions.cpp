@@ -446,6 +446,25 @@ int CUnknown10028b80::sub_10028b80(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10028ca0 size=0x54
+#include "CBaseEntity.h"
+#include "CPhysMotor.h"
+#include "globalvars.h"
+struct SMotorObj { virtual void v0(); virtual void v1(); virtual void v2(); };
+// TARGET: CPhysMotor::sub_10028ca0
+void CPhysMotor::sub_10028ca0()
+{
+    CBaseEntity *pEnt = m_h454.Get();
+    if (pEnt) {
+        SMotorObj *pObj = (SMotorObj *)pEnt->m_obj36c;
+        if (pObj) {
+            pObj->v2();
+            sub_100ac610(gpGlobals->curtime, 0);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100290c0 size=0x2b
 #include "CUnknown100290c0.h"
 
