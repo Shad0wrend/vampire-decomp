@@ -8339,6 +8339,7 @@
 0x1001393a func   ?sub_1034b500@S@@QAEXH@Z S::sub_1034b500
 0x1001393f func   _info_null info_null
 0x10013949 func   ?sub_101900a0@@YAPAHXZ sub_101900a0
+0x10013958 func   ?sub_10247cf0@CUnknown10248a50@@QAEXPBD@Z CUnknown10248a50::sub_10247cf0
 0x1001395d func   ?sub_10146190@Vector@@QBE?AV1@ABV1@@Z Vector::sub_10146190
 0x10013962 func   ?vfunc34@CPropModelState@@QAEHPAVCBaseEntity@@@Z CPropModelState::vfunc34
 0x10013967 func   ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z sub_100b4c30

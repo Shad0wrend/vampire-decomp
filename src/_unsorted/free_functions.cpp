@@ -101321,6 +101321,26 @@ CUnk10247c50 *CUnk10247c50::sub_10247c50(int a, int b, int c, int d, int e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10247cf0 size=0x51
+#include "CUnknown10248a50.h"
+#include <string.h>
+extern char g_10753f68;
+void CUnknown10248a50::sub_10247cf0(const char *pszName)
+{
+    if (pszName) {
+        m_pszName = new char[strlen(pszName) + 1];
+        strcpy(m_pszName, pszName);
+    } else {
+        m_pszName = 0;
+    }
+    m_pSub = 0;
+    m_pPeer = 0;
+    m_pszString = 0;
+    *(int *)&m_pad0018 = 0;
+    g_10753f68 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10247e20 size=0x5
 struct CUnknown10247e20 { void * sub_10247e20(int); };
 void * CUnknown10247e20::sub_10247e20(int a0)
