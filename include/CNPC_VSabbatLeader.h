@@ -41,7 +41,11 @@ public:
 	int m_nState5cc4;	// +0x5cc4
 	char pad5cc8[0x628c - 0x5cc8];
 	unsigned int m_hPlayer;	// +0x628c: entity handle of the tracked player
-	char pad6290[0x66b8 - 0x6290];
+	char pad6290[0x6680 - 0x6290];
+	const char *m_pMonsterModelName;	// +0x6680
+	char pad6684[0x6694 - 0x6684];
+	const char *m_pDefaultNPCName;	// +0x6694
+	char pad6698[0x66b8 - 0x6698];
 	char m_b66b8;	// +0x66b8
 	char pad66b9[0x66bc - 0x66b9];
 	int m_nFailureCount;	// +0x66bc: counts the task failures of types 0xc..0xf
