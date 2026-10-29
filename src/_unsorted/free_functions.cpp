@@ -98663,6 +98663,21 @@ void sub_10237ce0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10237e90 size=0x50
+extern int g_10751a54;
+extern int g_105bf968;
+extern int g_105bf918[];
+int sub_10412520(const char *);
+
+void sub_10237e90()
+{
+	if (engine->vfunc85() >= 2 && g_10751a54 < g_105bf968) {
+		g_105bf918[g_10751a54] = sub_10412520(engine->vfunc84(1));
+		g_10751a54++;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10237f90 size=0x38
 // TARGET: sub_10237f90
 extern int g_10751a54;
