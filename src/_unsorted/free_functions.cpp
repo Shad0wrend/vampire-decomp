@@ -45414,6 +45414,20 @@ int __fastcall sub_101297a0(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10129840 size=0x1a
+namespace lifted {
+extern int g_10572f18;
+extern int g_10572f1c;
+extern char g_10572f5c;
+}
+int sub_10129840()
+{
+    lifted::g_10572f1c = 3;
+    lifted::g_10572f18 = (int)&lifted::g_10572f5c;
+    return (int)&lifted::g_10572f18;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10129870 size=0xb5
 #include "CBaseEntity.h"
 #include "TestBit.h"
