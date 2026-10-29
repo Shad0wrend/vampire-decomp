@@ -42717,6 +42717,20 @@ void CFire::sub_1010b840(float flTime)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010bbb0 size=0x1a
+namespace lifted {
+extern int g_1056d0b4;
+extern int g_1056d0b8;
+extern char g_1056d0fc;
+}
+int sub_1010bbb0()
+{
+    lifted::g_1056d0b8 = 4;
+    lifted::g_1056d0b4 = (int)&lifted::g_1056d0fc;
+    return (int)&lifted::g_1056d0b4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010bda0 size=0x8
 namespace lifted {
 int sub_10003e9f();

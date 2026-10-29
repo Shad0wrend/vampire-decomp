@@ -7484,6 +7484,7 @@
 0x10012c97 func   ?vfunc444@CNPC_VSheriffMan@@QAEXPAH@Z CNPC_VSheriffMan::vfunc444
 0x10012ca6 func   ?vfunc242@CPlayerResource@@QAEXXZ CPlayerResource::vfunc242
 0x10012cb5 func   ?sub_100bc560@CUnknown100bc560@@QAEXXZ CUnknown100bc560::sub_100bc560
+0x10012cba func   ?sub_1010bbb0@@YAHXZ sub_1010bbb0
 0x10012cbf func   ?sub_100f0300@@YIXPAD@Z sub_100f0300
 0x10012cc4 func   ?sub_1027fae0@UtlVec8@@QAEXH@Z UtlVec8::sub_1027fae0
 0x10012cc9 func   ?sub_103f4fe0@CItemContainerLock@@QAEXH@Z CItemContainerLock::sub_103f4fe0
