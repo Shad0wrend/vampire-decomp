@@ -15580,6 +15580,29 @@ void CUnknown10077430::sub_10077650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10077690 size=0x56
+#include "CUnknown10077430.h"
+#include "CUnknown10074050.h"
+
+extern "C" int _strcmpi(const char *, const char *);
+
+struct CUnknown10077430Find : CUnknown10077430
+{
+	void *sub_10077690(const char *pszName);
+};
+
+void *CUnknown10077430Find::sub_10077690(const char *pszName)
+{
+	for (int i = 0; i < sub_10077430(); i++)
+	{
+		CUnknown10074050 *pTrack = (CUnknown10074050 *)sub_10077450(i);
+		if (pTrack && _strcmpi(pTrack->sub_10074050(), pszName) == 0)
+			return pTrack;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10077710 size=0x7
 struct CUnknown10077710 { char sub_10077710(); };
 char CUnknown10077710::sub_10077710()
