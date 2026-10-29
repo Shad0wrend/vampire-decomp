@@ -149431,6 +149431,25 @@ void *__cdecl sub_10427a30(int *pHdr)
 }
 // END FUNCTION
 
+// FUNCTION: 0x104280f0 size=0x47
+int sub_104280f0(int n, int *values, int *weights)
+{
+	if (n < 1)
+		return -1;
+	if (n == 1)
+		return *values;
+	int best = 0;
+	int bestVal = 0x80000000;
+	for (int i = 0; i < n; i++) {
+		if (weights[i] > bestVal) {
+			bestVal = weights[i];
+			best = i;
+		}
+	}
+	return values[best];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10428160 size=0x6e
 int sub_10008ef9(int, int, char *, char *, int, int, int, int);
 int sub_1000e66f(int, char *, char *);
