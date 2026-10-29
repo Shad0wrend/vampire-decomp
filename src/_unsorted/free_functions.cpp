@@ -32069,6 +32069,16 @@ char *CUnknown100cd640::sub_100cd640()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd660 size=0x4f
+#include "COutputEvent.h"
+void COutputEvent::sub_100cd660(void *pActivator, void *pCaller, float flDelay)
+{
+	CVariantCopy value;
+	value.sub_1000b320(0, 0);
+	sub_100cd300(value, pActivator, pCaller, flDelay);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cd6d0 size=0x39
 void *sub_1000ffec(int nSize);
 
