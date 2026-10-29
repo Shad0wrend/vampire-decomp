@@ -16,6 +16,19 @@ CWeaponIWritten *CWeaponIWritten::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040b450 size=0x4e
+#include "CWeaponIWritten.h"
+extern char g_106b8540[];
+
+bool CWeaponIWritten::vfunc315()
+{
+	CWeaponIArmor *pThis = (CWeaponIArmor *)this;
+	const char *pszName = *(const char **)((char *)this + 0x754);
+	pThis->vfunc105(pszName ? pszName : g_106b8540);
+	return pThis->sub_10253b70(pThis->vfunc342(0), pThis->vfunc343(), 0xb4, pThis->vfunc344());
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040b4f0 size=0x65
 #include "CWeaponIWritten.h"
 
