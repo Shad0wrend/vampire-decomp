@@ -48005,6 +48005,20 @@ void sub_1013a030(V3 *mins, V3 *maxs)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013a070 size=0x41
+void sub_1013a070(const float *v, float *mins, float *maxs)
+{
+	for (int i = 0; i < 3; i++)
+	{
+		float f = v[i];
+		if (f < mins[i])
+			mins[i] = f;
+		if (maxs[i] < f)
+			maxs[i] = f;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013a0e0 size=0x33
 // TARGET: sub_1013a0e0
 #include <math.h>
