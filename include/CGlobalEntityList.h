@@ -34,10 +34,16 @@ struct CGlobalEntityList_Node
 	unsigned short m_Next;
 };
 
+class IEntityListener
+{
+public:
+	virtual void OnEntityCreated(CBaseEntity *pEntity);
+};
+
 class CGlobalEntityList
 {
 public:
-	virtual void vfunc0(int a, int b);
+	virtual void vfunc0(CGlobalEntityList_Ent *pEnt, unsigned int handle);
 	virtual void vfunc1(int a, int b);
 	CGlobalEntityList_Slot m_Slots[0x2000];	// 0x0004
 	CGlobalEntityList_Node *m_pNodes;	// 0x18004
