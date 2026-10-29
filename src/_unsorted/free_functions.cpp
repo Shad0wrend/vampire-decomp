@@ -16322,6 +16322,21 @@ CChoreoSceneActor1007e970 *CChoreoScene1007e970::sub_1007a170(const char *pszNam
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007a1e0 size=0x4c
+#include "CChoreoScene1007a1e0.h"
+#include <string.h>
+
+CChoreoSceneItem1007a1e0 *CChoreoScene1007a1e0::sub_1007a1e0(const char *pszName)
+{
+	for (int i = 0; i < m_nItems; i++) {
+		CChoreoSceneItem1007a1e0 *pItem = m_ppItems[i];
+		if (pItem && !strcmpi(pItem->sub_10073520(), pszName))
+			return pItem;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007a250 size=0x4
 struct CUnknown1007a250 { int sub_1007a250(); };
 int CUnknown1007a250::sub_1007a250()
