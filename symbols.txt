@@ -2341,6 +2341,7 @@
 0x100067e4 func   ?sub_1025efc0@CAI_BaseHumanoid@@QAEXXZ CAI_BaseHumanoid::sub_1025efc0
 0x100067e9 func   ?sub_101807d0@@YAXXZ sub_101807d0
 0x100067ee func   ?sub_100b05f0@@YAXXZ sub_100b05f0
+0x100067f3 func   ?sub_101d3730@@YAPADPBDZZ sub_101d3730
 0x100067f8 func   _trigger_environmental_audio trigger_environmental_audio
 0x100067fd func   ?sub_10054ad0@CUtlRBTreeInsert24@@QAEXPBXPAHPA_N@Z CUtlRBTreeInsert24::sub_10054ad0
 0x10006807 func   ?sub_1015f100@S@@QAEXPAUinputdata_t@@@Z S::sub_1015f100

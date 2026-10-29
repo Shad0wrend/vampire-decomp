@@ -72588,6 +72588,22 @@ void sub_101d3510(const Vector &start, const Vector &end, const Vector &mins, co
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d3730 size=0x46
+#include <stdarg.h>
+extern int (__cdecl *g_109f387c)(char *pDest, int maxLen, const char *pFormat, va_list params);
+extern char g_10737960[4][1024];
+extern int g_107389a4;
+char *sub_101d3730(const char *format, ...)
+{
+	va_list argptr;
+	g_107389a4 = (g_107389a4 + 1) % 4;
+	va_start(argptr, format);
+	g_109f387c(g_10737960[g_107389a4], sizeof(g_10737960[0]), format, argptr);
+	va_end(argptr);
+	return g_10737960[g_107389a4];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d4ca0 size=0x3d
 #include <string.h>
 
