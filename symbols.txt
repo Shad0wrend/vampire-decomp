@@ -3585,6 +3585,7 @@
 0x1000983b func   ?sub_10146b20@CBaseCombatCharacter@@QAE_NPAV1@@Z CBaseCombatCharacter::sub_10146b20
 0x10009840 func   ?sub_102c0b60@@YI_NPAX@Z sub_102c0b60
 0x1000984a func   ?sub_101f66c0@@YAXXZ sub_101f66c0
+0x10009859 func   ?sub_101a4760@@YAHXZ sub_101a4760
 0x10009881 func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@UEXPERIENCE_ENTRY@@V?$CUtlMemory@UEXPERIENCE_ENTRY@@@@@@$08@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<EXPERIENCE_ENTRY,CUtlMemory<EXPERIENCE_ENTRY> >,9>::vfunc3
 0x10009886 func   ?sub_103adc00@@YADXZ sub_103adc00
 0x1000988b func   ?sub_102f28a0@CUnknown102ee270@@QAEXXZ CUnknown102ee270::sub_102f28a0

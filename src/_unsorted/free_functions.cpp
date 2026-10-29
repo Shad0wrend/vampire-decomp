@@ -63065,6 +63065,20 @@ int sub_101a3b00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a4760 size=0x1a
+namespace lifted {
+extern int g_10592ce8;
+extern int g_10592cec;
+extern char g_10592d2c;
+}
+int sub_101a4760()
+{
+    lifted::g_10592cec = 3;
+    lifted::g_10592ce8 = (int)&lifted::g_10592d2c;
+    return (int)&lifted::g_10592ce8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a55a0 size=0xaa
 #include "CUtlVector4.h"
 
