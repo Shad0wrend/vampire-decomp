@@ -1,6 +1,27 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x102110e0 size=0x52
+#include "CCameraTrack.h"
+#include "CTriggerBombSite.h"
+
+struct CTriggerView { bool sub_101c5460(void *pOther); };
+struct CHandleView { virtual void vfunc0(); virtual unsigned int *GetRefEHandle(); };
+
+void CTriggerBombSite::vfunc174(void *pOther)
+{
+	if (((CTriggerView *)this)->sub_101c5460(pOther))
+		((CCameraTrackMember *)((char *)this + 0x568))->sub_10010794((CCameraTrack *)pOther, (CCameraTrack *)this, 0);
+	char *pPlayer = *(char **)((char *)pOther + 0xa8);
+	if (pPlayer) {
+		if (this)
+			*(unsigned int *)(pPlayer + 0x1cb8) = *((CHandleView *)this)->GetRefEHandle();
+		else
+			*(unsigned int *)(pPlayer + 0x1cb8) = 0xffffffff;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10211160 size=0x6c
 #include "CTriggerBombSite.h"
 #include "CGlobalEntityList.h"

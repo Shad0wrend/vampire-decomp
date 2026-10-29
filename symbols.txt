@@ -9350,6 +9350,7 @@
 0x10015bcc func   ?sub_103239a0@CBaseCombatCharacter@@QAEFPBD@Z CBaseCombatCharacter::sub_103239a0
 0x10015bd1 func   ?vfunc360@CBasePlayer@@QAE_NXZ CBasePlayer::vfunc360
 0x10015bd6 func   ?vfunc2@CTEBSPDecal@@UAEPAV1@I@Z CTEBSPDecal::vfunc2
+0x10015bdb func   ?vfunc174@CTriggerBombSite@@QAEXPAX@Z CTriggerBombSite::vfunc174
 0x10015be5 func   ?sub_101e3f50@CStatusFlagList@@QAE_NPAUCStatusTarget@@@Z CStatusFlagList::sub_101e3f50
 0x10015bea func   ?sub_101cf680@@YAXAAVVector@@M@Z sub_101cf680
 0x10015bf4 func   ?sub_10055520@CUtlRBTree24@@QBEABULinks_t@1@H@Z CUtlRBTree24::sub_10055520
