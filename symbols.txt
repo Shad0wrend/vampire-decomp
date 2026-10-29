@@ -7777,6 +7777,7 @@
 0x10012d23 func   ?sub_101fde60@CVStatInfo_t@@QAEHPBD@Z CVStatInfo_t::sub_101fde60
 0x10012d28 func   ?vfunc17@CAI_BaseNPCTroika@@QAEXPBDH@Z CAI_BaseNPCTroika::vfunc17
 0x10012d2d func   _item_k_kiki_key item_k_kiki_key
+0x10012d32 func   ?vfunc296@CBaseCombatCharacter@@UAEDH@Z CBaseCombatCharacter::vfunc296
 0x10012d3c func   ?sub_103566a0@CNPC_Bullseye@@QAEPAV1@XZ CNPC_Bullseye::sub_103566a0
 0x10012d55 func   ?sub_101f4b20@CUnknown101f4b20@@QAEXXZ CUnknown101f4b20::sub_101f4b20
 0x10012d5a func   ?sub_102009b0@CVStatList_t@@QAEXH@Z CVStatList_t::sub_102009b0

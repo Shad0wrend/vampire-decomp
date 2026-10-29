@@ -2651,3 +2651,13 @@ int __fastcall sub_10348b00(char *self, int, int a)
     return 0x8a;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10348ba0 size=0x47
+#include "CBaseCombatCharacter.h"
+char CBaseCombatCharacter::vfunc296(int a)
+{
+	if (m_nTarget153c != -1 && m_hTarget1538.Get() && a == 0xb)
+		return 1;
+	return 0;
+}
+// END FUNCTION
