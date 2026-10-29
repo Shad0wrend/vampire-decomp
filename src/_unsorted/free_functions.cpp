@@ -79144,6 +79144,19 @@ void CVTraitEffectGroup_t::sub_101f77f0(void *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f7910 size=0x13
+struct CUnknown101f7910 { void * sub_101f7910(); };
+void * CUnknown101f7910::sub_101f7910()
+{
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 0x18) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f7960 size=0xeb
 #include "CUnknown101f7960.h"
 
