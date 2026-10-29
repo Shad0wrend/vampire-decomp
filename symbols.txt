@@ -3999,6 +3999,7 @@
 0x1000a70e func   ?vfunc266@CSceneEntity@@UAEXHPBD@Z CSceneEntity::vfunc266
 0x1000a718 func   ?sub_1011a620@@YAXXZ sub_1011a620
 0x1000a740 func   ?vfunc82@CSoundScheme@@UAEPAUdatamap_t@@XZ CSoundScheme::vfunc82
+0x1000a745 func   ?sub_101ba630@@YAHXZ sub_101ba630
 0x1000a74a func   ?vfunc104@CNPC_VTzimisceHeadClaw@@QAEXXZ CNPC_VTzimisceHeadClaw::vfunc104
 0x1000a74f func   ?vfunc323@CBaseCombatCharacter@@UAEHPBVVector@@@Z CBaseCombatCharacter::vfunc323
 0x1000a75e func   _item_g_brotherhood_flyer item_g_brotherhood_flyer

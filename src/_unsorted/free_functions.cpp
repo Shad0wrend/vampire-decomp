@@ -66207,6 +66207,20 @@ void __fastcall sub_101b98d0(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ba630 size=0x1a
+namespace lifted {
+extern int g_10599c80;
+extern int g_10599c84;
+extern char g_10599cc4;
+}
+int sub_101ba630()
+{
+    lifted::g_10599c84 = 8;
+    lifted::g_10599c80 = (int)&lifted::g_10599cc4;
+    return (int)&lifted::g_10599c80;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ba9d0 size=0x123
 #include "CSoundEnt.h"
 #include "CGlobalEntityList.h"
