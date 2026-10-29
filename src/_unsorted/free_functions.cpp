@@ -72478,6 +72478,17 @@ void CUnknown101dbc60::sub_101dbc60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dbdc0 size=0x16
+struct CUnknown101dbdc0 { void * sub_101dbdc0(int); };
+void * CUnknown101dbdc0::sub_101dbdc0(int a0)
+{
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = 3;
+    *(char *)((char *)this + 8) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dbdf0 size=0x1
 void sub_101dbdf0()
 {
