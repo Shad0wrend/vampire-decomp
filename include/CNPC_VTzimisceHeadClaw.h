@@ -49,6 +49,7 @@ public:
 	int sub_102af660();	// CAI_BaseNPCTroika::vfunc438 (stub 0x10015596), called directly
 	virtual void vfunc619(char bFlag);	// slot 619 (the position here is not its real slot): emits the footstep-like sound of the claw through a reliable CPASAttenuationFilter, the sample set picked by the flag
 	virtual void vfunc310(int a);	// slot 310 "CNPC_VTzimisceHeadClaw::vfunc310": a 9 with the NPC's slot 167 value answers 0x1136 to the Troika base, else the argument goes on to the Troika base
+	bool vfunc600(void *pEntity);	// slot 600 (plain member, ret 4): touches the global at 0x10924edc (slot 1), then toggles the byte at +0x6078 on the result of the behaviour object at +0x65e8 (sub_1025dca0(this, 0))
 	void vfunc618();	// slot 618 (plain member): plays one of the 0x1065ca78 sounds (channel 4, volume 1.0, attenuation 0.8) from the edict at +0x2e0 to the players that can hear it, reliably (PAS attenuation filter inline)
 	void vfunc601(int a);	// slot 601 (0x103c1ad0): the state flag at +0x6078 cleared, the object at +0x65e8 handed this (sub_1025ddd0) after the vtable call of g_10924edc slot 1; takes one argument
 	CNPC_VTzimisceHeadClaw *vfunc5(unsigned int flags);	// slot 5 (scalar deleting destructor, plain member): the vector at +0x665c goes, then the Troika base's destructor body (sub_1028d610), then the delete when bit 0 of flags is set
