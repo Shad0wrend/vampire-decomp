@@ -89291,6 +89291,25 @@ void CSecCamera::sub_1020c890()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020cbf0 size=0x4a
+#include "CSecCamera.h"
+
+__declspec(dllimport) void __cdecl DevMsg(const char *pMsg, ...);
+
+void CSecCamera::sub_1020cbf0(const char *pszSequence)
+{
+	int nSequence = sub_1008f7b0(pszSequence);
+	if (nSequence > -1) {
+		m_nSequence6f0 = nSequence;
+		sub_10090950();
+		sub_100963d0();
+		return;
+	}
+	DevMsg("Security Camera no sequence named:%s\n", pszSequence);
+	m_nSequence6f0 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020d0e0 size=0x43
 #include "CPropSwitch.h"
 void *sub_100aa720(int size);
