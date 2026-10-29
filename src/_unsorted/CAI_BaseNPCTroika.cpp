@@ -2004,6 +2004,18 @@ void CAI_BaseNPCTroika::vfunc144(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102bf4a0 size=0x50
+#include "CBaseCombatWeapon.h"
+bool CAI_BaseNPCTroika::vfunc575()
+{
+	if (vfunc167() && (m_flags14bc & 0x400) == 0x400 && sub_1032e7b0()) {
+		if (((CBaseCombatWeapon *)sub_1032e7b0())->vfunc360() & 0x6000)
+			return sub_10278c60();
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102bf6e0 size=0x68
 #include "CAI_BaseNPCTroika.h"
 
