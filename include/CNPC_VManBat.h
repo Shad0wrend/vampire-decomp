@@ -27,6 +27,10 @@ public:
 	unsigned int m_h66a4;	// entity handle released by vfunc144
 	char m_pad66a8[0x66b0 - 0x66a8];
 	char m_b66b0;	// set once the minions have been told about the target
+	char m_pad66b1[7];
+	char m_b66b8;
+	void vfunc420();	// slot 420 (plain member): stamps +0x6678 / +0x667c with curtime + 2.3 / 0.1, clears the bytes +0x66b0 / +0x66b8, CAI_BaseNPC::vfunc420, then sets the global 0x109340d8 to 0x14
+	void sub_1029a0b0();	// CAI_BaseNPC::vfunc420 (stub 0x1000c531), called directly
 
 	bool sub_1038f290();
 	CNPC_VManBat *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
