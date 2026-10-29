@@ -10,7 +10,7 @@ class CNotifyList
 {
 public:
 	virtual void *vfunc0(CBaseEntity *pNotify, CBaseEntity *pWatched);	// "AddEntity": flags pWatched (bit 6 of +0x268), appends the (pNotify, pWatched) pair and returns it
-	virtual void vfunc1();
+	virtual void vfunc1(CBaseEntity *pNotify, CBaseEntity *pWatched);	// "RemoveListener": removes every pair equal to (pNotify, pWatched) by copying the last pair over it
 	virtual void vfunc2(CBaseEntity *pEntity, const char *pszEvent);	// "ReportNamedEvent": for every pair registered for pEntity (only when bit 6 of its flags at +0x268 is set) calls the listener's AcceptInput(pszEvent, pEntity, pEntity, an empty variant, 0)
 	virtual void vfunc3(CBaseEntity *pEntity, int a, int b);	// for every pair registered for pEntity (only when bit 6 of its flags at +0x268 is set) calls slot 183 of the listener with (pEntity, a, b)
 	virtual void vfunc4(CBaseEntity *pEntity);	// "RemoveEntity": removes every pair that names pEntity (by copying the last pair over it)
