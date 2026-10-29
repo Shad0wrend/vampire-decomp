@@ -81057,6 +81057,23 @@ void CDiscValues_101e9080::sub_101e9080(int *pA, int *pB, int *pC, int *pD)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e90f0 size=0x54
+#include "CUnknown10739d08.h"
+#include "CUnknown101f9c70.h"
+#include "CBaseCombatCharacter.h"
+
+float CUnknown10739d08::sub_101e90f0(CBaseCombatCharacter *pChar)
+{
+	int nPercent;
+	float flBase = m_f3b0;
+	nPercent = 100;
+	((CUnknown101f9c70 *)((char *)pChar + 0x13dc))->sub_101f9ff0(10, 0, 0x20, (int)&nPercent);
+	if (nPercent != 100)
+		return nPercent * flBase * 0.01f;
+	return flBase;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e9170 size=0xd9
 #include "CVStatList_t.h"
 #include "CUnknown101e9170.h"
