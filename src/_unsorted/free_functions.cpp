@@ -15590,6 +15590,27 @@ int CUnknown10078630::sub_10078630()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100787f0 size=0x4f
+#include <string.h>
+struct CRampView10078540 { char pad0[0x19c]; char *m_pSamples; char pad1a0[8]; int m_nSamples; };
+namespace block_100787f0 {
+struct CUnknown10078540Unit : CUnknown10078540 { int sub_10078630(); };
+int CUnknown10078540Unit::sub_10078630() { return ((CRampView10078540 *)this)->m_nSamples; }
+}
+using namespace block_100787f0;
+// TARGET: CUnknown10078540::sub_100787f0
+void CUnknown10078540::sub_100787f0(int index)
+{
+	CRampView10078540 *p = (CRampView10078540 *)this;
+	if (index >= 0 && index < ((CUnknown10078540Unit *)this)->sub_10078630()) {
+		int nMove = p->m_nSamples - index - 1;
+		if (nMove > 0)
+			memmove(p->m_pSamples + index * 12, p->m_pSamples + (index + 1) * 12, nMove * 12);
+		--p->m_nSamples;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10078860 size=0xb
 void __fastcall sub_10078860(char *self)
 {
