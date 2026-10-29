@@ -41039,6 +41039,24 @@ void CUnk101019d0::sub_101019d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10101a20 size=0x47
+#include "CEnvLaser.h"
+#include "CBaseEntity.h"
+#include "globalvars.h"
+
+void sub_10003a49();
+
+void CEnvLaser::sub_10101a20()
+{
+	m_nEffectFlags &= ~0x40;
+	if (m_pSprite4f8)
+		m_pSprite4f8->sub_1042ef70();
+	m_flLastUpdate454 = gpGlobals->curtime;
+	((CBaseEntity *)this)->sub_100ac4e0((int)sub_10003a49, 0, 0);
+	sub_10101b30();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10101a90 size=0x78
 #include "CEnvLaser.h"
 #include "Vector.h"
