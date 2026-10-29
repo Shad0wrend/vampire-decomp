@@ -30,6 +30,7 @@ public:
 	float *sub_100bb270();	// CBeam::sub_100bb270 (stub 0x1001471d), called directly
 	class CEntityVSlots *sub_100bbdf0(const char *pszName);	// CBeam: the entity behind a name (stub 0x10006faf)
 	float *sub_100bb440();	// CBeam: the beam's start position (stub 0x10005c45)
+	void sub_10101a20();	// turns the laser off: clears bit 6 of the effect flags, switches the end sprite off, stamps +0x454 and sets the think to sub_10101b30
 	void sub_10101b30();	// the laser's think: traces from its origin to the end entity / end position, draws the trace in debug mode, updates the end sprite
 	void sub_100bbe70(float *pStart, const float *pEnd);	// stub 0x10004b3d
 	void sub_100bbef0(void *pTrace);	// stub 0x1001326e
