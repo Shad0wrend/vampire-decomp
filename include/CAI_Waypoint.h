@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CUnknown10936c84.h"
+#include "Vector.h"
 
 extern CUnknown10936c84 g_10936c84;
 
@@ -25,11 +26,16 @@ public:
 		}
 	}
 
-	char m_pad0000[0x10];
+	float m_vecPos[3];	// 0x00
+	int m_n0c;	// 0x0c
 	int m_iNodeID;	// 0x10: the network node the waypoint stands on
-	char m_pad0014[0x28 - 0x14];
+	int m_n14;	// 0x14
+	int m_n18;	// 0x18
+	int m_n1c;	// 0x1c
+	int m_n20;	// 0x20
+	int m_n24;	// 0x24
 	unsigned int m_fWaypointFlags;	// 0x28
-	char m_pad002c[4];
+	int m_n2c;	// 0x2c
 	CAI_Waypoint *m_pNext;	// 0x30
 	CAI_Waypoint *m_pPrev;	// 0x34
 };
