@@ -72921,6 +72921,29 @@ void sub_101cde40(void *pPlayer, float a, float b, float c, float d, int nByte)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cdfa0 size=0x53
+struct SPacked {
+	short m_s0;
+	short m_s2;
+	short m_s4;
+	unsigned char m_b6, m_b7, m_b8, m_b9;
+};
+
+short sub_101ce020(float value, float scale);
+
+void sub_101cdfa0(SPacked *out, const unsigned char *col, float a, float b, short c)
+{
+	out->m_s0 = sub_101ce020(a, 4096.0f);
+	out->m_s2 = sub_101ce020(b, 4096.0f);
+	out->m_b6 = col[0];
+	out->m_b7 = col[1];
+	out->m_b8 = col[2];
+	unsigned char t = col[3];
+	out->m_s4 = c;
+	out->m_b9 = t;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ce020 size=0x21
 // TARGET: sub_101ce020
 int sub_101ce020(float a, float b)
