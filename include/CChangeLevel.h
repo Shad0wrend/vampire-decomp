@@ -14,6 +14,7 @@ public:
 
 	const char *sub_1000b5cd();	// stub 0x1000b5cd: CBaseEntity::GetDebugName
 	void sub_101c7890(CBaseEntity *pPlayer);	// stub 0x1000faba: the level change itself, for the player that triggered it
+	void sub_101c7d90(CBaseEntity *pPlayer);	// changes the level for a player with an object at +0xa8, unless its slot 94 answers 9 (DevMsg \"In level transition: %s %s\")
 	void sub_101c77d0(inputdata_t *pInput);	// "CChangeLevel::InputChangeLevel": changes the level for the player behind the activator (the activator's object at +0xa8, or that of the entity its handle at +0x8c names); warns "recieved ChangeNow input from non-player activator" when there is none
 	void sub_101c5080();	// CBaseTrigger::Spawn (stub 0x1000dfd0), called directly
 	void sub_1000da12(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value);	// the use function (UseChangeLevel), only its address is known
