@@ -23092,6 +23092,17 @@ void CAnimationLayerAdvance::sub_10098cd0(int unused, void *pListener, void *pEn
 }
 // END FUNCTION
 
+// FUNCTION: 0x10099140 size=0x4e
+#include "CBaseAnimatingOverlay.h"
+int CBaseAnimatingOverlay::sub_10099140(int sequence, float flDivisor, int b)
+{
+	int i = sub_100990f0(sequence, b);
+	if (i >= 0 && flDivisor > 0.0f)
+		m_Layers[i].m_f0c = sub_10091080(sequence) / flDivisor;
+	return i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100991b0 size=0x72
 #include "CBaseAnimatingOverlay.h"
 
