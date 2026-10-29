@@ -1,3 +1,4 @@
+	virtual CBaseEntity *vfunc168();	// slot 168 override: the slot 167 object, else (bit 6 of +0x5b64 set) the entity of the handle at +0x1a94
 	virtual bool vfunc319(int a, CBaseEntity *pOther, int c);	// slot 319 override: the timer at +0x1564 = curtime + 0.5 (+ 1.0 when pOther answers sub_10349830 with 2)
 	virtual bool vfunc510();	// slot 510 override: false while sub_102c1170 holds, with a live entity at +0x1538 and a value at +0x153c, or while sub_10341aa0 / flag 0x20000 of +0x14b8 holds; with states +0x5cc0 / +0x5cc4 both 1 and the entity of the handle at +0x628c without a dialog partner, CAI_BaseNPC::vfunc510 while the float at +0x6264 is below the "Float Sound Info" stat
 	virtual int vfunc35(int a);	// slot 35 (claimed, not matched): false while sub_102c1170 holds; else a virtual call of slot 295 (vfunc295) with a, and when that holds answers 14 + (the bool of Ent::sub_10336920), else 0
