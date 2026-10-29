@@ -114750,6 +114750,18 @@ bool CAI_Navigator::sub_102ed9c0(int a1, int a2, int a3, int a4, int a5, int a6,
 }
 // END FUNCTION
 
+// FUNCTION: 0x102edaa0 size=0x30
+namespace lifted {
+extern char g_1070d1b0;
+struct C10015901 { int sub_10015901(int, int, int, int, int, int, int, int); };
+}
+struct CUnknown102edaa0 { int sub_102edaa0(int, int, int, int, int, int, int); };
+int CUnknown102edaa0::sub_102edaa0(int a0, int a1, int a2, int a3, int a4, int a5, int a6)
+{
+    return ((lifted::C10015901 *)this)->sub_10015901(a0, a1, a2, a3, a4, (int)&lifted::g_1070d1b0, a5, a6);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102edae0 size=0x92
 #include "CUnknown103008f0.h"
 
