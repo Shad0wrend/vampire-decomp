@@ -7892,6 +7892,7 @@
 0x1001427c func   ?sub_1012ca50@@YA_NPAUEnt@@0@Z sub_1012ca50
 0x10014281 func   ?sub_1009b640@CBaseEntity@@QAEXHHH@Z CBaseEntity::sub_1009b640
 0x1001428b func   ?vfunc316@CBaseCombatWeapon@@UAEDH@Z CBaseCombatWeapon::vfunc316
+0x10014295 func   ?vfunc246@CSceneEntity@@UAEXXZ CSceneEntity::vfunc246
 0x1001429a func   ?sub_101f7f70@CUnknown101f7bb0@@QAEXXZ CUnknown101f7bb0::sub_101f7f70
 0x1001429f func   ?vfunc82@CNPC_VGuard1@@UAEPAUdatamap_t@@XZ CNPC_VGuard1::vfunc82
 0x100142a4 func   ?sub_101e1250@CUnknown101e0f00@@QAEHHH@Z CUnknown101e0f00::sub_101e1250

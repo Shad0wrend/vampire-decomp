@@ -411,6 +411,18 @@ void CSceneEntity::vfunc245()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10082c20 size=0x42
+#include "CSceneEntity.h"
+extern char g_106b8540[];
+extern void (*g_109f3628)(const char *, ...);
+void CSceneEntity::vfunc246()
+{
+	vfunc245();
+	g_109f3628("Reloading %s from disk\n", m_pszSceneFile450 ? m_pszSceneFile450 : g_106b8540);
+	sub_10083a30(m_pszSceneFile450 ? m_pszSceneFile450 : g_106b8540);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10083700 size=0x120
 #include "CSceneEntity.h"
 #include "CUnknown1007ce20.h"
