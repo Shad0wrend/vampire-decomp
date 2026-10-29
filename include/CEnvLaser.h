@@ -30,7 +30,11 @@ public:
 
 	char m_pad0004[0x17c - 4];
 	float m_flLastThink17c;	// 0x17c: the time of the last update
-	char m_pad0180[0x4b8 - 0x180];
+	char m_pad0180[0x19c - 0x180];
+	unsigned int m_nEffectFlags;	// 0x19c
+	char m_pad01a0[0x454 - 0x1a0];
+	float m_flLastUpdate454;	// 0x454
+	char m_pad0458[0x4b8 - 0x458];
 	float m_flWidth;	// 0x4b8
 	char m_pad04bc[0x4c8 - 0x4bc];
 	float m_flNoiseAmplitude;	// 0x4c8
