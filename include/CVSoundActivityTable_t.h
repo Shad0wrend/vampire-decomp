@@ -60,6 +60,7 @@ class CVSoundActivityTable_t
 public:
 	CVSoundActivityRecord_t m_Records[0x118d];
 
+	void sub_101f61b0();	// debug dump: "SoundActivityTable", then per activity the sound objects of its rows
 	void sub_101f6130(CBaseCombatCharacter *pCharacter, int nActivity);	// starts the sounds of one activity (mode 2) for the character's sound control object (+0x9c)
 	void sub_101f6010(CBaseCombatCharacter *pCharacter, int nNewActivity, int nOldActivity);	// "CVSoundActivityTable_t::Play": stops the sounds of the old activity and starts those of the new one for the character's sound control object (+0x9c)
 };
