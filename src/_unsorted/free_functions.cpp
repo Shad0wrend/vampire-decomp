@@ -77898,6 +77898,23 @@ int CUnknown101db210Sub::sub_101db870(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101db8e0 size=0x57
+#include "CUnknown101dbc60.h"
+#include "CUnknown101db210.h"
+
+extern int (*g_109f388c)(char *pDest, int maxLen, const char *pFormat, ...);
+extern void (*g_109f3628)(const char *pMsg, ...);
+
+void CUnknown101dbc60Tail::sub_101db8e0()
+{
+	char buf[512];
+	g_109f388c(buf, 512, "[[Affects_Table_List]]:\n");
+	g_109f3628("%s", buf);
+	for (int i = 0; i < m_nCount; i++)
+		m_ppTables[i]->sub_101db560();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101db9a0 size=0x8
 void __fastcall sub_100107d5(char *p);
 void __fastcall sub_101db9a0(char *p) { sub_100107d5(p + 0x24); }
