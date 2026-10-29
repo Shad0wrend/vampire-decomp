@@ -9144,6 +9144,7 @@
 0x10430a85 func   ___RTtypeid __RTtypeid
 0x10430b4b func   ??0bad_alloc@std@@QAE@PBD@Z std::bad_alloc::bad_alloc
 0x10430b4b func   ??0bad_typeid@@QAE@PBD@Z bad_typeid::bad_typeid
+0x10430b64 func   __RTDynamicCast _RTDynamicCast
 0x10430b64 func   ___RTDynamicCast __RTDynamicCast
 0x10430c7b func   ??0bad_cast@@QAE@ABQBD@Z bad_cast::bad_cast
 0x10430fa0 func   _memmove memmove
