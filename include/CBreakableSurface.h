@@ -21,7 +21,10 @@ public:
 
     char m_pad03e0[0x454 - 0x3e0];
     int m_n454;
-    char m_pad0458[0x49c - 0x458];
+    unsigned int m_hEnt458;
+    char m_pad045c[0x46c - 0x45c];
+    COutputEvent m_Out46c;
+    COutputEvent m_Out484;
     int m_nCols49c;    // 0x49c: the number of rows of the pane grid
     int m_nRows4a0;    // 0x4a0: the number of cells of a row
     float m_flWidth;    // 0x4a4
