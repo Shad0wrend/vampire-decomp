@@ -68871,6 +68871,31 @@ void __fastcall sub_101b98d0(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b9920 size=0x54
+struct S101b9920 {
+    int m0;
+    int m4;
+    bool sub_101b9920();
+};
+// TARGET: S101b9920::sub_101b9920
+bool S101b9920::sub_101b9920()
+{
+    switch (m4) {
+    case 1:
+    case 2:
+    case 4:
+    case 8:
+    case 0x10:
+    case 0x100:
+    case 0x200:
+    case 0x400:
+    case 0x800:
+        return true;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ba630 size=0x1a
 namespace lifted {
 extern int g_10599c80;
