@@ -30,6 +30,7 @@ public:
 	float m_f98;	// 0x98
 	int m_n9c;	// 0x9c
 
+	char sub_1007d230(float a, float b);	// whether some type 1 event's time (+0x184) is not outside the range [a, b]; stops at the first (returns 1)
 	float sub_1007ce20();	// the lowest time over the events (starting from 0.0f); type 5 events count with m_f98 subtracted
 	float sub_1007ceb0();	// the highest time over the events (starting from 0.0f): the end time when the event has one, else the start time (+ m_f98 for type 5); the types 0xd / 0xe only count when both their times are below m_f80
 	void sub_1007cfc0(char bUseStart, int a, int b);	// sorts the events into the two lists (type 1 events to +0x64, the timed ones to +0x3c), then caches the start / end times (+0x8c / +0x90; +0x7c is the end time, or the start time with bUseStart), the event count (+0x94) and the two arguments (+0x84 / +0x88)
