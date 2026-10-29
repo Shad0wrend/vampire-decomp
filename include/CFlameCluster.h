@@ -13,6 +13,14 @@ public:
 	unsigned int m_hOwner;	// 0x484
 	char m_b488;	// 0x488
 
+	CFlameCluster() : CBaseEntity(0)
+	{
+		for (int i = 0; i < 5; i++) m_aList450[i] = 0;
+		m_hOwner = -1;
+		m_b488 = 0;
+		for (int j = 0; j < 7; j++) m_aBurn464[j] = 0;
+	}
+
 	CFlameCluster *sub_103e1e20();
 	void sub_103e2000(CBaseEntity *pEntity, int index);	// burns pEntity: a CVDmg_t record and a damage info (type 8, 1.0f) from the owner, applied to pEntity
 	void vfunc103();	// as in CPhysConstraint (transplant)
