@@ -39,6 +39,21 @@ const char *CPropKeypad::sub_1021dc20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021dc40 size=0x56
+#include "CPropKeypad.h"
+#include "COutputEvent.h"
+#include "CEHandleGet.h"
+
+// TARGET: CPropKeypad::vfunc275
+void CPropKeypad::vfunc275()
+{
+	((COutputEvent *)((char *)this + 0x888))->sub_100cd660(EHandle_Get(m_hActivator), this, 0);
+	m_bFlag8b8 = 1;
+	m_bFlag8b9 = 0;
+	sub_1021df90();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021dcc0 size=0xa7
 #include "CPropKeypad.h"
 #include "COutputEvent.h"
