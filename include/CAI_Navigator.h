@@ -38,7 +38,9 @@ struct CAI_NavEntry	// 0x68+ byte record found by id
 
 struct CAI_NavProvider	// owner of the records: 0x78 count, 0x7c pointer array
 {
-	char m_pad00[0x78];
+	char m_pad00[4];
+	int m_nStartId;	// 0x04
+	char m_pad08[0x78 - 8];
 	int m_nEntries;	// 0x78
 	CAI_NavEntry **m_ppEntries;	// 0x7c
 
