@@ -130829,6 +130829,20 @@ char sub_10384150()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10386a00 size=0x1a
+namespace lifted {
+extern int g_1063f8a0;
+extern int g_1063f8a4;
+extern char g_1093b4e0;
+}
+int sub_10386a00()
+{
+    lifted::g_1063f8a4 = 1;
+    lifted::g_1063f8a0 = (int)&lifted::g_1093b4e0;
+    return (int)&lifted::g_1063f8a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10386a30 size=0x43
 #include "CNPC_VHumanCombatant.h"
 void *sub_100aa720(int size);
