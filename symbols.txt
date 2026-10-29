@@ -5553,6 +5553,7 @@
 0x1000e07f func   _env_physimpact env_physimpact
 0x1000e08e func   ?vfunc532@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::vfunc532
 0x1000e093 func   ?vfunc30@CMultiplayRules@@UAEMH@Z CMultiplayRules::vfunc30
+0x1000e0ac func   ?sub_1022bc00@@YAHXZ sub_1022bc00
 0x1000e0b6 func   ?sub_10430100@@YAXXZ sub_10430100
 0x1000e0bb func   ?sub_101f2360@CUnknown101f2360@@QAEXPAPBDPAX@Z CUnknown101f2360::sub_101f2360
 0x1000e0c0 func   _item_g_hatters_screenplay item_g_hatters_screenplay

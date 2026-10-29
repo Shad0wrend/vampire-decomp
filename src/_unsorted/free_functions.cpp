@@ -92622,6 +92622,20 @@ extern "C" CBaseEntity *prop_radio()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022bc00 size=0x1a
+namespace lifted {
+extern int g_105b41b0;
+extern int g_105b41b4;
+extern char g_105b41f4;
+}
+int sub_1022bc00()
+{
+    lifted::g_105b41b4 = 6;
+    lifted::g_105b41b0 = (int)&lifted::g_105b41f4;
+    return (int)&lifted::g_105b41b0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022c750 size=0xc7
 #include "CPropRadio.h"
 #include "ScopeTrace.h"
