@@ -3,6 +3,7 @@
 #pragma once
 #include "CBaseEntity.h"
 #include "Vector.h"
+#include "COutputEvent.h"
 
 class CBreakableSurface : public CBaseEntity
 {
