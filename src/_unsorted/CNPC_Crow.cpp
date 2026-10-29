@@ -101,6 +101,30 @@ void CNPC_Crow::vfunc481(CBaseEntity *pEnemy)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10357760 size=0x45
+#include "CNPC_Crow.h"
+
+#define HS(n) virtual void n();
+#define HS10(p) HS(p##0) HS(p##1) HS(p##2) HS(p##3) HS(p##4) HS(p##5) HS(p##6) HS(p##7) HS(p##8) HS(p##9)
+
+struct CCrowSlots
+{
+	HS10(a0) HS10(a1) HS10(a2) HS10(a3) HS10(a4) HS10(a5) HS10(a6) HS10(a7) HS10(a8) HS10(a9)
+	HS10(b0) HS10(b1) HS10(b2) HS10(b3) HS10(b4) HS10(b5) HS10(b6) HS10(b7) HS10(b8) HS10(b9)
+	HS10(c0) HS10(c1)
+	virtual float *slot220();
+};
+
+Vector CNPC_Crow::vfunc192()
+{
+	CCrowSlots *p = (CCrowSlots *)this;
+	float *py = p->slot220();
+	float *px = p->slot220();
+	float *pz = p->slot220();
+	return Vector(px[0], py[1], pz[2] + 6.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10357b30 size=0x28
 #include "CNPC_Crow.h"
 #include "CUnknown1070b244.h"
