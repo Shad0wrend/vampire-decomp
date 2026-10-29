@@ -73876,6 +73876,19 @@ int CUnknown101d9640::sub_101d9640(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d96a0 size=0x1d
+namespace lifted {
+extern char g_1074e968;
+struct C10006aa0 { int sub_10006aa0(int, int); };
+struct C10010c8f { int sub_10010c8f(); };
+}
+struct CUnknown101d96a0 { int sub_101d96a0(int); };
+int CUnknown101d96a0::sub_101d96a0(int a0)
+{
+    return ((lifted::C10010c8f *)(((lifted::C10006aa0 *)((int)&lifted::g_1074e968))->sub_10006aa0(*(int *)((char *)this + 0x14), a0)))->sub_10010c8f();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d9800 size=0x27
 #include "CUnknown10739194.h"
 
