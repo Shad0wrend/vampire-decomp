@@ -66491,6 +66491,20 @@ int sub_101bb500()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bb620 size=0x1a
+namespace lifted {
+extern int g_1059a620;
+extern int g_1059a624;
+extern char g_1059a664;
+}
+int sub_101bb620()
+{
+    lifted::g_1059a624 = 4;
+    lifted::g_1059a620 = (int)&lifted::g_1059a664;
+    return (int)&lifted::g_1059a620;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bb650 size=0x75
 extern "C" double fabs(double);
 extern float g_104454c4;
