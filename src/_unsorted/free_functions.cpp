@@ -39876,6 +39876,20 @@ extern "C" GP *inspection_node()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fbfc0 size=0x1a
+namespace lifted {
+extern int g_10566e3c;
+extern int g_10566e40;
+extern char g_10566e84;
+}
+int sub_100fbfc0()
+{
+    lifted::g_10566e40 = 2;
+    lifted::g_10566e3c = (int)&lifted::g_10566e84;
+    return (int)&lifted::g_10566e3c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fc490 size=0x49
 void *sub_1000db89(int);
 struct GP;
