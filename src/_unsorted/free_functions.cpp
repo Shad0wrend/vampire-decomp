@@ -59731,6 +59731,24 @@ CBreakableProp *CBreakableProp::sub_1018f1c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018f620 size=0x4b
+#include "CBreakableProp.h"
+#include "CBaseEntity.h"
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+struct SBreakableSlots {
+    V100(a0) V100(a1) V10(a20) V10(a21) V10(a22) V10(a23) V10(a24) V10(a25)
+    virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4(); virtual void b5();
+    virtual void vfunc266(CBaseEntity *pActivator);
+};
+// TARGET: CBreakableProp::sub_1018f620
+void CBreakableProp::sub_1018f620()
+{
+    ((SBreakableSlots *)this)->vfunc266(m_hAttacker768.Get());
+    sub_10007fe5(0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018f690 size=0x43
 #include "CBreakableProp.h"
 __declspec(dllimport) void DevWarning(const char *, ...);
