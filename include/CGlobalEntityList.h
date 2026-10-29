@@ -48,6 +48,10 @@ public:
 	int m_n1803c;
 	int m_iNumEnts;	// 0x18040
 	char m_b18044;
+	char m_pad18045[3];
+	class IEntityListener **m_ppListeners;	// 0x18048
+	char m_pad1804c[0x18054 - 0x1804c];
+	int m_nListeners;	// 0x18054
 
 	CBaseEntity *sub_100f7060(CBaseEntity *pCurrent);	// "CGlobalEntityList::NextEnt": the first entity's slot-4 result when pCurrent is null, else the first non-null slot-4 result after pCurrent in the list
 	CBaseEntity *sub_100f7770(CBaseEntity *pStart, const char *szName, CBaseEntity *pSearching, CBaseEntity *pActivator);	// "CGlobalEntityList::FindEntityByName" (called through the stub at 0x1000b4b5)
