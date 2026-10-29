@@ -42,7 +42,7 @@ public:
     virtual void vfunc185(); virtual void vfunc186(); virtual void vfunc187(); virtual void vfunc188(); virtual void vfunc189();
     virtual void vfunc190(); virtual void vfunc191(); virtual void vfunc192(); virtual void vfunc193(); virtual void vfunc194x();
     virtual void vfunc195x(); virtual void vfunc196(); virtual void vfunc197(); virtual void vfunc198(); virtual void vfunc199();
-    virtual void vfunc200(); virtual void vfunc201(); virtual void vfunc202(); virtual void vfunc203(); virtual void vfunc204();
+    virtual void vfunc200(); virtual void vfunc201(); virtual void vfunc202(CBaseEntity *pOwner); virtual void vfunc203(); virtual void vfunc204();
     virtual void vfunc205(); virtual void vfunc206(); virtual void vfunc207(); virtual void vfunc208(); virtual void vfunc209();
     virtual void vfunc210(); virtual void vfunc211(); virtual void vfunc212(); virtual void vfunc213(); virtual void vfunc214();
     virtual void vfunc215(); virtual void vfunc216(float *p); virtual void vfunc217(); virtual void vfunc218(); virtual void vfunc219();
