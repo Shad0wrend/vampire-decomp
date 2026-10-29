@@ -52633,6 +52633,25 @@ void CUnitEnt::sub_10157d30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101584b0 size=0x46
+#include <string.h>
+struct CBlock { int d[12]; };
+struct CObj {
+	char pad[0x404];
+	char m_szName[0x20c];
+	CBlock m_Block;	// 0x610
+};
+extern CBlock g_1046ecb4;
+// TARGET: sub_101584b0
+void sub_101584b0(CObj *p)
+{
+	p->m_Block = g_1046ecb4;
+	p->m_Block.d[1] = 0x42aa0000;
+	p->m_Block.d[2] = 0x6753c21c;
+	strcpy(p->m_szName, "default");
+}
+// END FUNCTION
+
 // FUNCTION: 0x10158550 size=0x1
 void sub_10158550()
 {
