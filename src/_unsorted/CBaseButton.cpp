@@ -1,6 +1,15 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100c86d0 size=0x4f
+#include "CBaseButton.h"
+CBaseButton::CBaseButton()
+{
+	m_n5c8 = 12;
+	m_n5cc = 12;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c8760 size=0x62
 #include "CBaseButton.h"
 
