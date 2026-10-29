@@ -16,7 +16,9 @@ public:
 	// slots 6..9, 10..129, 130..133
 	virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9();
 	CPM_V10(sa0) CPM_V10(sa1) CPM_V10(sa2) CPM_V10(sa3) CPM_V10(sa4) CPM_V10(sa5)
-	CPM_V10(sa6) CPM_V10(sa7) CPM_V10(sa8) CPM_V10(sa9) CPM_V10(sb0) CPM_V10(sb1)
+	CPM_V10(sa6) CPM_V10(sa7) CPM_V10(sa8) virtual void sa90(); virtual void sa91(); virtual void sa92(); virtual void vfunc103(); virtual void sa94();
+	virtual void sa95(); virtual void sa96(); virtual void sa97(); virtual void sa98(); virtual void sa99();
+	CPM_V10(sb0) CPM_V10(sb1)
 	virtual void s130(); virtual void s131(); virtual void s132(); virtual void s133();
 	virtual void vfunc134();	// slot 134: moves the current speed (+0x478) towards the target (+0x460) by the rate (+0x464) times the time since the last update (+0x468), and schedules the next think when it has not arrived
 
