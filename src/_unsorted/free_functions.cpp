@@ -93515,6 +93515,18 @@ void sub_10230320()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102304b0 size=0x1e
+namespace lifted {
+extern char g_106c7c34;
+struct C100038be { int sub_100038be(int, int); };
+struct C1000d102 { int sub_1000d102(); };
+}
+int __stdcall sub_102304b0(int a0, int a1)
+{
+    return ((lifted::C1000d102 *)(((lifted::C100038be *)((int)&lifted::g_106c7c34))->sub_100038be(a0, a1)))->sub_1000d102();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102304e0 size=0x89
 #include "CUnknown102304e0.h"
 #include "CUnknown10204c60.h"

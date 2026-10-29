@@ -4038,6 +4038,7 @@
 0x1000a664 func   ?sub_10247520@@YAHPBD@Z sub_10247520
 0x1000a67d func   ?sub_1042b160@CUnknown1042b160@@QAEHXZ CUnknown1042b160::sub_1042b160
 0x1000a682 func   ?sub_101f95f0@@YAXH@Z sub_101f95f0
+0x1000a687 func   ?sub_102304b0@@YGHHH@Z sub_102304b0
 0x1000a68c func   ?sub_103d4690@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103d4690
 0x1000a696 func   ?sub_100f83b0@CFinder@@QAEPAUCEnt@@PAU2@H@Z CFinder::sub_100f83b0
 0x1000a69b func   ?sub_100f7890@CGlobalEntityList@@QAEPAVCBaseEntity@@PAV2@PBD@Z CGlobalEntityList::sub_100f7890
