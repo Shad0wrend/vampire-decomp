@@ -28,4 +28,6 @@ public:
 	void sub_102c1400(); // stub 0x100125bc
 	void sub_10272650(int a); // CAI_BaseNPC member (stub 0x100097d2): sets the ideal activity
 	int sub_1008dc40(int a, int b); // CBaseAnimating::SelectWeightedSequence (stub 0x100125c1), called directly
+	char m_pad03e0[0xfe8 - 0x3e0];
+	CHandle<CPayphoneNPC> m_hFollow;	// 0x0fe8
 };
