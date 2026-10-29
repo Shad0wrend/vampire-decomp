@@ -108337,6 +108337,21 @@ void CAI_BaseNPCTroikaUnit::sub_102bf5d0(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102bf770 size=0x47
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_Navigator.h"
+void CAI_BaseNPCTroika::sub_102bf770()
+{
+    CAI_Navigator *pNav = (CAI_Navigator *)m_p5d34;
+    int nActivity = *(int *)((char *)this + 0xff0);
+    if (nActivity == pNav->sub_102ee3f0())
+        sub_10272650(sub_1027a6c0());
+    *((char *)this + 0x1a40) = 0;
+    ((CAI_Navigator *)m_p5d34)->sub_102ee2a0();
+    *(int *)((char *)this + 0x63ec) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102bf7e0 size=0x26
 // TARGET: CUnknown102bf7e0::sub_102bf7e0
 #include "CUnknown102bf7e0.h"
