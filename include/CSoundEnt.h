@@ -36,6 +36,8 @@ public:
 	void sub_101bb350();	// CBaseEntity::Think-like base (stub 0x1001138d), tail called
 	int vfunc127(int a);	// slot 127 "CSoundEnt::vfunc127": CBaseEntity::vfunc127 (sub_1000961a) with a, then sub_1000a493 on each of the 0x40 pool entries; returns the base's result
 	int sub_1000961a(int a);	// CBaseEntity::vfunc127 (stub 0x1000961a), called directly
+	int vfunc126(int a);	// slot 126: constructs the 0x40 pool entries (sub_101b9840), CBaseEntity::vfunc126 (sub_100a9f70) with a, then sub_1000a493 on each of the 0x40 entries; returns the base's result
+	int sub_100a9f70(int a);	// CBaseEntity::vfunc126 (stub 0x100065d2), called directly
 
 	char m_pad0004[0x17c - 4];
 	float m_flNextThink;	// 0x17c
