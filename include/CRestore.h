@@ -77,7 +77,7 @@ public:
 	virtual void s23(); virtual void vfunc24(float *pValues, int count, int nBytesAvailable);	// slot 24: slot 18 into pValues, then adds the float at m_pData2 + 0x12e8 to each value read (in place)
 	virtual int vfunc25(Vector *pValues, int count, int nBytesAvailable);	// slot 25 "CRestore::ReadPosition": slot 22, then adds the landmark offset of the save data (+0x12dc when the flag at +0x12c4 is set, else the zero vector at 0x1070d1b0) to every vector read
 	virtual void s26();
-	virtual void vfunc27(void *pBase, int *pValues, int count, int nBytesAvailable);	// slot 27: used by ReadField for field type 0x13
+	virtual int vfunc27(void *pBase, int *pValues, int count, int nBytesAvailable);	// slot 27: used by ReadField for field type 0x13
 
 	virtual int vfunc28(CBaseEntity **pValues, int count, int nBytesAvailable);	// "CRestore::ReadEntityPtr": reads entity indexes (slot 15) and maps each to the entity (sub_101a2390), zero-filling the rest
 	virtual int vfunc29(int *pValues, int count, int nBytesAvailable);	// "CRestore::ReadEdictPtr": like slot 28 but stores the edict (+0x2e0) of each entity (0 when it does not resolve); reads through slot 15 into a 256 dword buffer, zero-filling up to the third argument
