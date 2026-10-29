@@ -11126,6 +11126,20 @@ int sub_100673c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100675b0 size=0x4f
+#include "CTESmoke.h"
+extern CTESmoke g_106c5160;
+
+void sub_100675b0(void *pFilter, int delay, const Vector *pOrigin, int nModelIndex, float flScale, int nFrameRate)
+{
+	g_106c5160.m_vecOrigin = *pOrigin;
+	g_106c5160.m_nModelIndex = nModelIndex;
+	g_106c5160.m_fScale = flScale;
+	g_106c5160.m_nFrameRate = nFrameRate;
+	g_106c5160.vfunc4(pFilter, delay);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10067690 size=0xb
 namespace lifted {
 extern char g_1044e064;
