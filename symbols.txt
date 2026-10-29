@@ -2048,6 +2048,7 @@
 0x10005a2e func   ?sub_10135070@CUnknown10135070@@QAEXHD@Z CUnknown10135070::sub_10135070
 0x10005a33 func   ?sub_103f30f0@@YAHXZ sub_103f30f0
 0x10005a3d func   ?vfunc5@CLogicNPCCondition@@QAEPAV1@I@Z CLogicNPCCondition::vfunc5
+0x10005a47 func   ?vfunc180@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc180
 0x10005a4c func   ?vfunc11@CMoveHelperServer@@UAEXXZ CMoveHelperServer::vfunc11
 0x10005a65 func   ?sub_10249390@CUnknown10249390@@QAEHXZ CUnknown10249390::sub_10249390
 0x10005a6a func   ?sub_10293d70@@YIXPAH@Z sub_10293d70

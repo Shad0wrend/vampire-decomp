@@ -1251,6 +1251,26 @@ CAI_BaseNPC *CAI_BaseNPC::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027ca30 size=0x50
+#include "CUnknown10315ec0.h"
+#include "CUnknown103158f0.h"
+struct CHint5ddc { void sub_102d1420(int a); };
+struct CBaseCombatCharacterView { void sub_1000b0c8(); };
+void CAI_BaseNPC::vfunc180()
+{
+	if (*(CUnknown10315ec0 **)((char *)this + 0x5da4)) {
+		if ((*(CUnknown10315ec0 **)((char *)this + 0x5da4))->sub_10315ec0((CUnknown10315ec0Ent *)this))
+			(*(CUnknown103158f0 **)((char *)this + 0x5da4))->sub_103158f0((CBaseEntity *)this);
+	}
+	if (*(CHint5ddc **)((char *)this + 0x5ddc)) {
+		(*(CHint5ddc **)((char *)this + 0x5ddc))->sub_102d1420(0);
+		*(int *)((char *)this + 0x5ddc) = 0;
+	}
+	vfunc511();
+	((CBaseCombatCharacterView *)this)->sub_1000b0c8();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027caa0 size=0x2c
 #include "vampire.h"
 #include "CUnknown1070b248.h"
