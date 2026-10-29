@@ -13,6 +13,6 @@ public:
 
 	char m_pad0000[0x484];
 	int m_nFilterType;	// 0x484
-	char m_pad0488[0x49c - 0x488];
+	const char *m_pszFilterName[5];	// 0x488: the names of the five filters
 	unsigned int m_hFilter[5];	// 0x49c
 };
