@@ -209,7 +209,8 @@ public:
 	float m_f5bbc;
 	float m_f5bc0;
 	char m_b5bc4;
-	char m_pad5bc5[0x5cc0 - 0x5bc5];
+	char m_b5bc5;
+	char m_pad5bc6[0x5cc0 - 0x5bc6];
 	int m_n5cc0;
 	int m_n5cc4;
 	char m_pad5cc8[0x5cdc - 0x5cc8];
