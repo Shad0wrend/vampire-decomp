@@ -13841,6 +13841,20 @@ struct CUnknown10073f40 { char p[0x4c]; int a; void sub_10073f40(int v); };
 void CUnknown10073f40::sub_10073f40(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x10073f90 size=0x45
+#include "utlvector.h"
+struct Elem12 { int a, b, c; };
+struct VecHolder {
+    char pad[0x14];
+    CUtlVector<Elem12> m_Lists[1];
+    void sub_10073f90(int elem, int list);
+};
+void VecHolder::sub_10073f90(int elem, int list)
+{
+    m_Lists[list].Remove(elem);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10074050 size=0xd
 extern char g_106b8540[];
 

@@ -8499,6 +8499,7 @@
 0x10014a65 func   ?sub_1012d4b0@@YIXPAUS@@@Z sub_1012d4b0
 0x10014a6a func   ?sub_10167fd0@CPlayerUnit@@QAEXXZ CPlayerUnit::sub_10167fd0
 0x10014a6f func   ?sub_10325940@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10325940
+0x10014a74 func   ?sub_10073f90@VecHolder@@QAEXHH@Z VecHolder::sub_10073f90
 0x10014a79 func   ?sub_103d1ca0@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103d1ca0
 0x10014a7e func   ?vfunc113@CLogicNPCCondition@@QAEXXZ CLogicNPCCondition::vfunc113
 0x10014a83 func   ?sub_102702b0@CUnknown102702b0@@QAEHXZ CUnknown102702b0::sub_102702b0
