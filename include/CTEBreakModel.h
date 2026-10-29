@@ -10,6 +10,7 @@ public:
 	virtual void vfunc3(const Vector &origin, const QAngle &angles);	// "Test": a break model at the origin with random velocity, created for everybody
 	virtual void slot4(void *pFilter, int delay);	// slot 4 "Create" (the virtual call; vfunc4 below is the direct call of its body)
 
+	CTEBreakModel(const char *name);	// 0x1005e660
 	void sub_1000f53d();	// destructor body
 	void vfunc5();	// as in CFireSmoke (transplant)
 	void vfunc4(void *pFilter, int delay);	// slot 4 "Create": sends the effect to the recipients of the filter (called directly by the TE_BreakModel wrapper)
