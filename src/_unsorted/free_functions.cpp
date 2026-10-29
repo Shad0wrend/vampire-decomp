@@ -91842,6 +91842,19 @@ void CPropButton::sub_10215960(inputdata_t *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10215ad0 size=0x48
+#include "CPropButton.h"
+#include "CUnknown1073dc00.h"
+extern CUnknown1073dc00 g_1073dc00;
+extern int g_1074f144;
+void CPropButton::sub_10215ad0(int index, void *pActivator)
+{
+	m_OnPosition[index].sub_100cd660(pActivator, this, 0);
+	m_nCurrent670 = index;
+	g_1073dc00.sub_101f5950(this, g_1074f144, 2, 1.0f, 1.25f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10215bd0 size=0x43
 #include "CPropModelState.h"
 void *sub_100aa720(int size);
