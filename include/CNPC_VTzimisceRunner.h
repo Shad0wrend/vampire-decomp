@@ -45,7 +45,9 @@ public:
 	CAI_Motor *m_pMotor;	// +0x5d44
 	char pad5d48[0x5db4 - 0x5d48];
 	float m_flTime5db4;	// +0x5db4
-	char pad5db8[0x6078 - 0x5db8];
+	char pad5db8[0x5f2c - 0x5db8];
+	char m_b5f2c;	// +0x5f2c
+	char pad5f2d[0x6078 - 0x5f2d];
 	char m_b6078;	// +0x6078
 	char pad6079[0x63ac - 0x6079];
 	const char *m_pszName63ac;	// +0x63ac
