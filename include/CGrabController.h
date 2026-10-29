@@ -25,7 +25,7 @@ public:
 	float m_f28;
 	float m_f2c;
 	float m_f30;
-	char m_pad0034[4];
+	float m_f34;
 	float m_f38;
 	float m_f3c;
 	char m_pad0040[5];		// 0x0040 .. 0x0044
