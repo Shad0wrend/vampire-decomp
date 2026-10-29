@@ -19,6 +19,7 @@ public:
 	virtual void vfunc327();	// slot 327: once the time at +0x734 has passed, with an owner character that has a player object (+0xa8): a held object with the player flag 0x800 is dropped (sub_104106a0(1, 0), slot 307(0xbc)), else by the state sub_1040e9c0() the next time is pushed out (0: slot 307(0xbc), 0.5s, the player's bits at +0x2088 are or-ed into +0x91c; 1: 0.1s; 2: 0.01s)
 	void sub_10410bf0(Vector *pPos, float flValue);	// stub 0x1000776b
 	void sub_104106a0(int unused, char bFlag);	// drops the carried object: while the grab byte at +0x911 is set, remembers the owner's player entity and the entity of the grab handle (+0xab8), releases the grab (sub_1040cb60), tells the entity about the owner (sub_100a8340 with 10.0f) and hands (entity, owner, 2 or 3 by bFlag) to sub_101895d0; clears the byte
+	bool sub_1040dbd0(CBaseEntity *pEnt);	// true (after dropping it, sub_1040dbb0) when pEnt is the entity of the grab handle (+0xab8)
 	int sub_1040e9c0();	// stub 0x10003355: the state of the grab
 	void sub_10410620();	// stub 0x10011c84, tail called by slot 318 while the grab byte is set: lets go of the grab unless the owner's player (+0xa8 of the owner) has a low flag count (+0x3e0 below 2) and the grab keeps holding (sub_1040f940 with 12, or 18 when sub_1040d930 holds)
 	struct CPhysCannonOwner *sub_102521f0();	// the owner (stub 0x10014fab)
