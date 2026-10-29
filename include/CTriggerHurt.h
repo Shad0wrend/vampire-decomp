@@ -18,6 +18,7 @@ public:
 	virtual void vfunc103();	// slot 103 (Spawn): CBaseEntity::vfunc103, sub_101c5080, the think function 0x1000cc89, then the push vector (+0x5b4) = the unit vector from the origin (slot 217) to the target position (+0x5a8) scaled by the speed (+0x5a4)
 	void sub_101c5080();	// stub 0x1000dfd0, called directly by vfunc103
 	void sub_101c63d0();	// 0x101c63d0: resets the hurt timer (the trigger's base init, then clears +0x17c)
+	void sub_101c6670(int a);	// enables the trigger and hurts everything touching it at once when it is not disabled (byte +0x55c) ... else (disabled) re-enables, sets the think function 0x101c63d0 and the next think to curtime + 0.1f
 	void sub_101c6390();	// 0x101c6390: when sub_101c6550(3.0f) hurt anything, the next think time (+0x17c) is curtime + 3.0f
 
 	float m_flDamage;	// 0x598
