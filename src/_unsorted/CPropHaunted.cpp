@@ -123,3 +123,16 @@ void CPropHaunted::vfunc174(CBaseEntity *pOther)
         CBaseEntity::vfunc174(pOther);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10214010 size=0x44
+#include "CPropHaunted.h"
+void CPropHaunted::vfunc266(CBaseEntity *pOther)
+{
+	if (m_iHealth > 0) {
+		sub_100ac4e0(0, 0, 0);
+		sub_10214200((const char *)m_iszSound7cc);
+		sub_10214080(*(int *)((char *)this + 0x7c8));
+		sub_1018fb90(pOther);
+	}
+}
+// END FUNCTION
