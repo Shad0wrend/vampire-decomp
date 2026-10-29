@@ -85406,6 +85406,18 @@ CUnknown102029c0 *CUnknown10202d10::sub_10202d10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10202ec0 size=0x1c
+namespace lifted {
+extern char g_105a8a10;
+struct C10009d95 { int sub_10009d95(int, int, int, int); };
+}
+struct CUnknown10202ec0 { int sub_10202ec0(int, int, int); };
+int CUnknown10202ec0::sub_10202ec0(int a0, int a1, int a2)
+{
+    return ((lifted::C10009d95 *)this)->sub_10009d95(a0, a1, (int)&lifted::g_105a8a10, a2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10202fd0 size=0x3f
 struct CSlotIter
 {

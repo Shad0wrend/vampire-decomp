@@ -6307,6 +6307,7 @@
 0x1000fad3 func   ?sub_102a9570@@YIMPAVVector@@H0@Z sub_102a9570
 0x1000fae2 func   ?sub_102ee430@CAI_Navigator@@QAEHXZ CAI_Navigator::sub_102ee430
 0x1000fae7 func   ?sub_1008d0f0@CBaseAnimating@@QAEXM@Z CBaseAnimating::sub_1008d0f0
+0x1000fb00 func   ?sub_10202ec0@CUnknown10202ec0@@QAEHHHH@Z CUnknown10202ec0::sub_10202ec0
 0x1000fb0a func   ?sub_102e2660@CUnknown102e2660@@QAEHH@Z CUnknown102e2660::sub_102e2660
 0x1000fb19 func   ?sub_1016aa00@CPlayerAccum_1016aa00@@QAEXHD@Z CPlayerAccum_1016aa00::sub_1016aa00
 0x1000fb1e func   _trigger_transition trigger_transition
