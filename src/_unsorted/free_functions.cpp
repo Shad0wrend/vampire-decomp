@@ -40886,6 +40886,31 @@ void CUnit100fb980::sub_100fb980(float flRate)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fba40 size=0x52
+#include "engineserver.h"
+
+extern "C" __declspec(dllimport) void Warning(const char *fmt, ...);
+
+struct CUnknown100fba40 {
+    char m_pad[0x490];
+    float m_flRampTime;
+    int m_nRampTick;
+
+    const char *sub_100ab4f0();
+    void sub_100fba40(float flRampTime);
+};
+
+void CUnknown100fba40::sub_100fba40(float flRampTime)
+{
+    if (flRampTime < 0.0f) {
+        Warning("%s ramp time set to %.2f, must be >=0\n", sub_100ab4f0(), flRampTime);
+        flRampTime = 0.0f;
+    }
+    m_flRampTime = flRampTime;
+    m_nRampTick = engine->vfunc120();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fbaf0 size=0x3a
 #include "CBaseEntity.h"
 
