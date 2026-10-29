@@ -73612,6 +73612,23 @@ int CUnknown101d5bd0::sub_101e1440(const char *name, int start)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e1520 size=0x42
+#include "CStatusFlagList.h"
+unsigned int CStatusFlagList::sub_101e1520(int nKey, int nSkip)
+{
+	for (int i = 0; i < m_nCount; i++)
+	{
+		if (m_ppEntries[i]->m_nKey == nKey)
+		{
+			if (i + nSkip < m_nCount)
+				return m_ppEntries[i + nSkip]->m_nFlags;
+			return 0;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e1610 size=0x27
 // TARGET: CStatusFlagList::sub_101e1610
 #include "CStatusFlagList.h"
