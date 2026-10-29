@@ -16,6 +16,9 @@ public:
 		m_vecOrigin.z = 0;
 	}
 
+	virtual ServerClass *vfunc0();
+	virtual void vfunc1();
+
 	char m_pad0004[8];
 	Vector m_vecOrigin;	// 0x0c
 };
