@@ -123318,6 +123318,29 @@ bool CStepWalker::sub_10307b80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10307d30 size=0x54
+struct SPatrolPathX { char data[0x114]; };
+extern SPatrolPathX g_10934158[32];
+extern char g_109363d8[32];
+extern int g_109363f8;
+extern "C" __declspec(dllimport) void Error(const char *, ...);
+
+SPatrolPathX *sub_10307d30()
+{
+	int i = g_109363f8;
+	while (i < 32) {
+		if (!g_109363d8[i]) {
+			g_109363d8[i] = 1;
+			g_109363f8++;
+			return &g_10934158[i];
+		}
+		i++;
+	}
+	Error("Patrol path pool is dry.  It will store up to %d paths.  Change PATROL_PATH_POOL_MAX_PATHS to increase this amount.\n", 32);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10307e00 size=0x11
 extern unsigned int g_109363d8[8];
 
