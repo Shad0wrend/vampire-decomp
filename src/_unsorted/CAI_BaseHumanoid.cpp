@@ -77,6 +77,26 @@ char CAI_BaseHumanoid::vfunc588(const Vector &vecPos)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025f040 size=0x44
+#include "CAI_BaseHumanoid.h"
+#define HV1(p) virtual void p();
+#define HV10(p) HV1(p##0) HV1(p##1) HV1(p##2) HV1(p##3) HV1(p##4) HV1(p##5) HV1(p##6) HV1(p##7) HV1(p##8) HV1(p##9)
+#define HV100(p) HV10(p##0) HV10(p##1) HV10(p##2) HV10(p##3) HV10(p##4) HV10(p##5) HV10(p##6) HV10(p##7) HV10(p##8) HV10(p##9)
+struct CHumanoidSlots373	// vtable view of CAI_BaseHumanoid up to slot 373
+{
+	HV100(ha) HV100(hb) HV100(hc) HV10(hd0) HV10(hd1) HV10(hd2) HV10(hd3) HV10(hd4) HV10(hd5) HV10(hd6)
+	HV1(he0) HV1(he1) HV1(he2)
+	virtual Vector vfunc373();
+};
+Vector CAI_BaseHumanoid::vfunc372()
+{
+	Vector v = ((CHumanoidSlots373 *)this)->vfunc373();
+	v.z = 0;
+	VectorNormalize(v);
+	return v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025f0b0 size=0x28
 #include "CAI_BaseHumanoid.h"
 
