@@ -55452,6 +55452,21 @@ bool __fastcall sub_10175180(Holder *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10175220 size=0x49
+#include "CBasePlayer.h"
+
+int CBasePlayer::sub_10175220()
+{
+	if (sub_10175180())
+		return 0x8c;
+	if (m_b2454 & 1)
+		return 0x10;
+	if (sub_10146a80())
+		return 0x28;
+	return (m_n03E0 < 3) ? 0 : 0xf;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10175290 size=0x9c
 #include "CBasePlayer.h"
 
