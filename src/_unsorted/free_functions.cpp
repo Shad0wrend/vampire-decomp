@@ -40079,6 +40079,20 @@ extern "C" GP *inspection_brush()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fd0d0 size=0x1a
+namespace lifted {
+extern int g_10567028;
+extern int g_1056702c;
+extern char g_1056706c;
+}
+int sub_100fd0d0()
+{
+    lifted::g_1056702c = 2;
+    lifted::g_10567028 = (int)&lifted::g_1056706c;
+    return (int)&lifted::g_10567028;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fd270 size=0x1b3
 #include "CInspectionBrush.h"
 #include "CEntityVSlots.h"
