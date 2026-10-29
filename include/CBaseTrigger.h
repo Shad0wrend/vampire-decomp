@@ -21,7 +21,8 @@ public:
 
 	char m_pad04a4[0x55c - 0x4a4];
 	char m_bDisabled;	// 0x55c
-	char m_pad055d[0x564 - 0x55d];
+	char m_pad055d[0x560 - 0x55d];
+	const char *m_iFilterName;	// 0x560: the name of the filter entity
 	int m_i564;
 	COutputEvent m_out568;
 	COutputEvent m_out580;
