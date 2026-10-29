@@ -131449,6 +131449,23 @@ struct CUnknown1034d590 { void sub_1000a1b4(); void sub_1034d590(int); };
 void CUnknown1034d590::sub_1034d590(int) { sub_1000a1b4(); }
 // END FUNCTION
 
+// FUNCTION: 0x1034d5b0 size=0x50
+#include "CScriptedTarget.h"
+#include "CEntityVSlots.h"
+void sub_1000eae3();
+
+void CScriptedTarget::sub_1034d5b0()
+{
+	float *pOrigin = &((CEntityVSlots *)this)->slot217()->x;
+	m_vecOrigin5f44[0] = pOrigin[0];
+	m_vecOrigin5f44[1] = pOrigin[1];
+	m_vecOrigin5f44[2] = pOrigin[2];
+	sub_100ac4e0((int)sub_1000eae3, 0, 0);
+	m_n5f50 = 0;
+	m_flNextThink = gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034d620 size=0x8c
 #include "CUnknown1034d620.h"
 
