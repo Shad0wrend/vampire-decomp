@@ -11,3 +11,21 @@ datamap_t * COrnamentProp::vfunc82()
     return (datamap_t *)((int)&lifted::g_1058d75c);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10190f20 size=0x51
+#include "COrnamentProp.h"
+extern char g_106b8540[];
+__declspec(dllimport) char *Q_strncpy(char *, const char *, int);
+void __fastcall sub_10009cc3(COrnamentProp *p);
+struct COrnamentPropView { char pad[0x7e0]; char m_szBuf[0x104]; };
+void COrnamentProp::vfunc103()
+{
+    int dummy;
+    const char *p = *vfunc9(&dummy);
+    if (!p) p = g_106b8540;
+    Q_strncpy(((COrnamentPropView *)this)->m_szBuf, p, 0x104);
+    sub_10009cc3(this);
+    vfunc122("prop_dynamic_ornament");
+    sub_10190fa0();
+}
+// END FUNCTION
