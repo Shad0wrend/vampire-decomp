@@ -18,6 +18,7 @@ public:
 	int m_nEffects;	// 0x10: the number of "TraitEffect" sub keys
 	CVTraitEffect_t *m_pEffects;	// 0x14: m_nEffects effects of 0x44 bytes
 
+	CVTraitEffect_t *sub_101f7500(int i);	// the i-th effect, or a shared default effect (guarded static) when out of range
 	void sub_1000a38f();
 	void sub_101f73f0(CVStatKV *pKV);	// counts the "TraitEffect" sub keys of pKV, allocates that many effects and loads each from its key
 	void sub_101f7690(int a, CVModInfo_t *pInfo, int c);	// hands (a, pInfo, c) to every effect (stub 0x10015609)
