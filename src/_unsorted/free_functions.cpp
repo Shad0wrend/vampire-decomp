@@ -112506,6 +112506,31 @@ void __fastcall sub_102f6cd0(char *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f6d10 size=0x41
+#include "CAI_Network.h"
+extern void (__cdecl *g_109f3630)(const char *, ...);
+
+int CAI_Network::sub_102f6d10(int wcId)
+{
+    int *pTable = (int *)m_nNumNodes;
+    if (!pTable) {
+        g_109f3630("ERROR: Trying to get WC ID with no table!\n");
+        return -1;
+    }
+    int i = 0;
+    if (0 < *m_pCount14) {
+        int *p = pTable;
+        do {
+            if (*p == wcId)
+                return i;
+            i++;
+            p++;
+        } while (i < *m_pCount14);
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f7970 size=0x79
 #include "CUnknown102f7970.h"
 
