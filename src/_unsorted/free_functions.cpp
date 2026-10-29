@@ -84218,6 +84218,16 @@ int CVDmgBlock16_t::sub_10205840()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102058e0 size=0x10
+struct CUnknown102058e0 { int sub_102058e0(int); };
+int CUnknown102058e0::sub_102058e0(int a0)
+{
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10205900 size=0xe
 namespace lifted {
 struct C1000f650 { int sub_1000f650(); };
