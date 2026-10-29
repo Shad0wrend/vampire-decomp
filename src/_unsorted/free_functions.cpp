@@ -132890,6 +132890,31 @@ int sub_103707e0(CSave *pSave)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10370850 size=0x4c
+extern char g_1093ac3c[], g_1093aca8[], g_1093acac[], g_1093acb0[];
+struct CPrecacheView {
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+    virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+    virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+    virtual void v12(); virtual void v13(); virtual void v14();
+    virtual void v15(const char *, int, int);
+    virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+    virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+    virtual void v24(const char *, int, int);
+    virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28();
+    virtual void v29();
+    virtual void v30(const char *, int, int);
+};
+int sub_10370850(CPrecacheView *p)
+{
+    p->v30(g_1093ac3c, 1, 0);
+    p->v24(g_1093aca8, 1, 0);
+    p->v15(g_1093acac, 1, 0);
+    p->v15(g_1093acb0, 1, 0);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103708c0 size=0x1
 void sub_103708c0()
 {
