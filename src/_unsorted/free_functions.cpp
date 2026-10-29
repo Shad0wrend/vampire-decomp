@@ -36984,6 +36984,33 @@ const char *CDialog::sub_100e1ad0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e3100 size=0x53
+extern "C" unsigned int strlen(const char *);
+struct IFileSysView3 {
+    virtual void v0();
+    virtual void v1();
+    virtual void v2();
+    virtual void vfunc3(const char *p, int n, int x);
+    virtual void v4();
+    virtual void v5();
+    virtual void v6();
+    virtual void v7();
+    virtual void v8();
+    virtual bool vfunc9(const char *p, int x);
+};
+extern IFileSysView3 *g_1070b238;
+extern char g_1053e080[];
+const char *sub_101d3730(const char *fmt, ...);
+bool sub_100e3100(const char *name, int a)
+{
+    if (g_1070b238->vfunc9(name, 0))
+        return false;
+    const char *s = sub_101d3730(g_1053e080, name);
+    g_1070b238->vfunc3(s, strlen(s), a);
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e3400 size=0x98
 #include <string.h>
 #include "CUnknown100e3400.h"

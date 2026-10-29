@@ -8444,6 +8444,7 @@
 0x10013b79 func   ?sub_100a9470@CBaseEntity@@QAEXD@Z CBaseEntity::sub_100a9470
 0x10013b88 func   ?sub_101b26c0@CSoundEmitterSystemBase@@QAEPAV1@XZ CSoundEmitterSystemBase::sub_101b26c0
 0x10013b92 func   ?sub_10068110@@YAHXZ sub_10068110
+0x10013b9c func   ?sub_100e3100@@YA_NPBDH@Z sub_100e3100
 0x10013ba1 func   ?sub_100bb870@CBeam@@QAEXHPBM@Z CBeam::sub_100bb870
 0x10013ba6 func   ??0CVStatList_t@@QAE@H@Z CVStatList_t::CVStatList_t
 0x10013bab func   ?vfunc429@CAI_BaseHumanoid@@QAEPAVCAI_Navigator@@XZ CAI_BaseHumanoid::vfunc429
