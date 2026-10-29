@@ -7531,6 +7531,7 @@
 0x10012378 func   ?vfunc42@CItemContainerLock@@QAEXPAVCBasePlayer@@@Z CItemContainerLock::vfunc42
 0x1001237d func   ?sub_102042d0@CUnknown102042d0@@QAEHHH@Z CUnknown102042d0::sub_102042d0
 0x10012382 func   ?vfunc10@CMoveHelperServer@@UAE_NPBI@Z CMoveHelperServer::vfunc10
+0x10012387 func   ?sub_102d1180@CAI_VecView@@QAEXPAXPAVVector@@@Z CAI_VecView::sub_102d1180
 0x1001238c func   ?vfunc82@CFuncAreaPortalWindow@@UAEPAUdatamap_t@@XZ CFuncAreaPortalWindow::vfunc82
 0x10012391 func   ?sub_10239e70@CWeaponRanged@@QAEXXZ CWeaponRanged::sub_10239e70
 0x10012396 func   ?sub_10201470@CVStatList_t@@QAEPBDH@Z CVStatList_t::sub_10201470

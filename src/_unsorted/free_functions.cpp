@@ -111302,6 +111302,24 @@ void CUnknown102d0b20::sub_102d0b20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d1180 size=0x48
+#include "CUnknown102f46d0.h"
+class CBaseEntity;
+extern CUnknown102f46d0 *g_1093407c;
+struct CAI_VecView : CAI_BaseNPC {
+    char m_pad[0x5e4 - sizeof(CAI_BaseNPC)];
+    int m_n5e4;
+    void sub_102d1180(void *pObj, Vector *pOut);
+};
+void CAI_VecView::sub_102d1180(void *pObj, Vector *pOut)
+{
+    if (m_n5e4 != -1)
+        *pOut = g_1093407c->sub_102f46d0(pObj, m_n5e4);
+    else
+        *pOut = *(const Vector *)vfunc217();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d1220 size=0x90
 #include "CUnknown102d1220.h"
 
