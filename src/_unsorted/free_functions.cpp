@@ -95000,6 +95000,40 @@ char __fastcall sub_102296e0(char *self, void *unused, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10229730 size=0x4d
+struct Elem32 { int a0, a4, a8, ac, key, a14, slot, a1c; };
+struct CListZ {
+	char pad[0x188];
+	Elem32 *m_pData;
+	int m_alloc;
+	int m_grow;
+	int m_size;
+	int sub_10229730(int key);
+};
+int CListZ::sub_10229730(int key)
+{
+	int n = 1;
+	do {
+		int i = 0;
+		if (0 < m_size) {
+			Elem32 *p = m_pData;
+			do {
+				if (p->key == key && p->slot == n)
+					goto next;
+				i++;
+				p++;
+			} while (i < m_size);
+		}
+		break;
+next:
+		n++;
+	} while (n < 7);
+	if (n < 1 || n > 7)
+		n = -1;
+	return n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10229ff0 size=0x43
 #include "CSoundScheme.h"
 void *sub_100aa720(int size);
