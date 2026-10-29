@@ -91468,6 +91468,20 @@ extern "C" GP *func_keyframed_mover()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102240d0 size=0x1a
+namespace lifted {
+extern int g_105b21e8;
+extern int g_105b21ec;
+extern char g_105b222c;
+}
+int sub_102240d0()
+{
+    lifted::g_105b21ec = 9;
+    lifted::g_105b21e8 = (int)&lifted::g_105b222c;
+    return (int)&lifted::g_105b21e8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10224150 size=0xb
 #define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define H(p) T(p##0) T(p##1) T(p##2) T(p##3) T(p##4) T(p##5) T(p##6) T(p##7) T(p##8) T(p##9)
