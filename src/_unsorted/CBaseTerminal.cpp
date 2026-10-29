@@ -105,6 +105,23 @@ void CBaseTerminal::vfunc41(void *pArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10218690 size=0x55
+#include "CBaseTerminal.h"
+#include "CEHandleGet.h"
+
+// TARGET: CBaseTerminal::vfunc34
+int CBaseTerminal::vfunc34(int a)
+{
+	if (m_b080c) {
+		if (EHandle_Get(m_hUser))
+			return 0;
+		if ((char)sub_10218710(a))
+			return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10219f10 size=0x6d
 #include "CBaseTerminal.h"
 
