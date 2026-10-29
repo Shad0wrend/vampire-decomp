@@ -45,7 +45,10 @@ public:
 	CHL2_V10(pb5)	// slots 150..159
 	virtual void pb60(); virtual void pb61(); virtual void pb62(); virtual void pb63(); virtual void pb64(); virtual void pb65(); virtual void pb66(); virtual void pb67(); virtual void pb68();	// slots 160..168
 	virtual void vfunc169(const Vector *pPunch);	// slot 169: takes the pointer of a view punch angle
-	CHL2_V10(pb7) CHL2_V10(pb8)	// slots 170..189
+	virtual void pb70(); virtual void pb71(); virtual void pb72(); virtual void pb73(); virtual void pb74();	// slots 170..174
+	virtual void vfunc175(CBaseEntity *pEnt);	// slot 175: flags the byte at +0x2128 when pEnt (not the slot 209 entity) is a type 7 / 6 entity whose object at +0x36c answers slot 1 false
+	virtual void pb76(); virtual void pb77(); virtual void pb78(); virtual void pb79();	// slots 176..179
+	CHL2_V10(pb8)	// slots 180..189
 	virtual void pb90(); virtual void pb91(); virtual void pb92(); virtual void pb93(); virtual void pb94(); virtual void pb95();	// slots 190..195
 	virtual Vector vfunc196();	// slot 196: the camera position record of the viewed entity (+0x5ec) when that entity qualifies, else the base's
 	virtual void pb97(); virtual void pb98(); virtual void pb99();	// slots 197..199
