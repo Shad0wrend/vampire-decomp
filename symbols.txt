@@ -2864,6 +2864,7 @@
 0x10007aef func   ?sub_101e7fb0@CUnknown101e7fb0@@QAEHPAVCBaseCombatCharacter@@0@Z CUnknown101e7fb0::sub_101e7fb0
 0x10007af4 func   ?sub_1019c9f0@@YAHPAHH0@Z sub_1019c9f0
 0x10007b03 func   ?sub_1028e360@CAI_BaseNPCTroika@@QAE_NXZ CAI_BaseNPCTroika::sub_1028e360
+0x10007b08 func   ?vfunc10@ConVar@@UAE_NPAM@Z ConVar::vfunc10
 0x10007b0d func   ?sub_102f9990@@YAXXZ sub_102f9990
 0x10007b17 func   ?sub_101bdf40@UtlVec8@@QAEXHH@Z UtlVec8::sub_101bdf40
 0x10007b1c func   ?vfunc533@CAI_BaseNPCTroika@@UAE?AVVector@@HH@Z CAI_BaseNPCTroika::vfunc533
