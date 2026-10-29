@@ -103822,6 +103822,29 @@ void CFloatPair1027cda0::sub_1027cda0(float f, bool b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027d030 size=0x43
+#include "CAI_BaseNPC.h"
+#include "inputdata_t.h"
+extern char g_106b8540[];
+struct CAI_BaseNPCUnit : CAI_BaseNPC {
+	void sub_1027d030(inputdata_t *pInput);
+	void sub_10273790(const char *pszCommand, CBaseEntity *pActivator);
+};
+void CAI_BaseNPCUnit::sub_1027d030(inputdata_t *pInput)
+{
+	variant_t *v = &pInput->value;
+	const char *psz;
+	if (v->fieldType == 2) {
+		psz = v->iszValue;
+		if (!psz)
+			psz = g_106b8540;
+	} else {
+		psz = v->sub_10008805();
+	}
+	sub_10273790(psz, (CBaseEntity *)pInput->pActivator);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027d8d0 size=0x90
 #include "CAI_BaseNPC.h"
 #include "CBaseEntity.h"
