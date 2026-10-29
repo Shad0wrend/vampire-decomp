@@ -46259,6 +46259,20 @@ void CPropClockHand::sub_1012dbd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012dfb0 size=0x1a
+namespace lifted {
+extern int g_10574318;
+extern int g_1057431c;
+extern char g_1057435c;
+}
+int sub_1012dfb0()
+{
+    lifted::g_1057431c = 9;
+    lifted::g_10574318 = (int)&lifted::g_1057435c;
+    return (int)&lifted::g_10574318;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012e150 size=0x129
 #include "SendProp.h"
 
