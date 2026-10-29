@@ -112464,6 +112464,20 @@ int sub_102df1b0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102df280 size=0x1a
+namespace lifted {
+extern int g_1060dde8;
+extern int g_1060ddec;
+extern char g_1060de2c;
+}
+int sub_102df280()
+{
+    lifted::g_1060ddec = 2;
+    lifted::g_1060dde8 = (int)&lifted::g_1060de2c;
+    return (int)&lifted::g_1060dde8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dfaa0 size=0x114
 #include "CUnknown102dfaa0.h"
 #include "CGlobalEntityList.h"
