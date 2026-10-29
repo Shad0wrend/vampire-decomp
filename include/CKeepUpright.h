@@ -14,7 +14,6 @@ public:
 	{
 		m_motionEvent = &g_104462b4;
 		m_flAngularLimit = 15.0f;
-		*(volatile unsigned int *)&m_attachedObject = -1;
 	}
 
 	void vfunc113();
