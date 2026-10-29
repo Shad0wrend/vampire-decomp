@@ -4908,6 +4908,7 @@
 0x1000c95f func   ?sub_102a0eb0@@YIXPAD@Z sub_102a0eb0
 0x1000c96e func   ?sub_100991b0@CBaseAnimatingOverlay@@QAEHHH@Z CBaseAnimatingOverlay::sub_100991b0
 0x1000c978 func   ?sub_101719d0@CBloodSplat@@QAEXPAVCBaseEntity@@@Z CBloodSplat::sub_101719d0
+0x1000c991 func   ?sub_1015ada0@@YAHXZ sub_1015ada0
 0x1000c996 func   ?vfunc5@CBaseMoveBehavior@@QAEPAV1@I@Z CBaseMoveBehavior::vfunc5
 0x1000c99b func   ?vfunc223@CFuncRotating@@QAE_NXZ CFuncRotating::vfunc223
 0x1000c9a0 func   _info_node_kick_at info_node_kick_at
