@@ -76557,6 +76557,36 @@ int SNamedList::sub_101d9700(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d9780 size=0x52
+#include <string.h>
+#include "CUnknown101d7520.h"
+struct SStr {
+	const char *m_p;
+	const char *Get() const { return m_p ? m_p : g_106b8540; }
+};
+struct SNamedRec {
+	int m_n0;
+	SStr m_Name;
+	char pad8[0x19c - 8];
+};
+struct SNamedList {
+	int m_nCount;
+	char pad4[8];
+	SNamedRec *m_pRecs;
+
+	int sub_101d9780(const char *pszName);
+};
+
+int SNamedList::sub_101d9780(const char *pszName)
+{
+	for (int i = 0; i < m_nCount; i++) {
+		if (!_strcmpi(m_pRecs[i].m_Name.Get(), pszName))
+			return i;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d9800 size=0x27
 #include "CUnknown10739194.h"
 
