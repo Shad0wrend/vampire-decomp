@@ -16132,6 +16132,17 @@ void sub_1007bf70(void *p, int n, int v, int a4)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007bfc0 size=0x17
+namespace lifted {
+extern char g_10547dd4;
+int sub_10008c2e(int, int, int);
+}
+int __stdcall sub_1007bfc0(int a0)
+{
+    return lifted::sub_10008c2e(a0, 0, (int)&lifted::g_10547dd4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007c1c0 size=0x84
 #include "CUnknown10078540.h"
 #include "CFlexAnimationTrack.h"
