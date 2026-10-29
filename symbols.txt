@@ -3227,6 +3227,7 @@
 0x10008530 func   ?vfunc5@CWeaponMelee_Sledgehammer@@QAEPAV1@I@Z CWeaponMelee_Sledgehammer::vfunc5
 0x10008535 func   ?sub_10042c10@CMem8c_t@@QAEHHHPBUE8@@@Z CMem8c_t::sub_10042c10
 0x1000853a func   ?vfunc8@IGameSystem@@QAEPAV1@I@Z IGameSystem::vfunc8
+0x1000853f func   ?sub_1042c5d0@@YAXPBD@Z sub_1042c5d0
 0x10008544 func   ?vfunc451@CAI_BaseNPCTroika@@UAEPBDXZ CAI_BaseNPCTroika::vfunc451
 0x10008549 func   ?sub_1013db40@@YIXPAH@Z sub_1013db40
 0x10008553 func   ?sub_103d0e70@@YG_NPAX@Z sub_103d0e70
