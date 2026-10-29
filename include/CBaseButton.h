@@ -143,4 +143,7 @@ public:
 	int m_n5c0;	// 0x5c0
 	char m_b5c4;	// 0x5c4
 	char m_b5c5;	// 0x5c5
+	char m_pad05c6[0x5c8 - 0x5c6];
+	int m_n5c8;	// 0x5c8
+	int m_n5cc;	// 0x5cc
 };
