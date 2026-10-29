@@ -398,6 +398,32 @@ void CUnk10028a60::sub_10028a60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10028aa0 size=0x51
+#include "CPhysMotor.h"
+#include "inputdata_t.h"
+
+struct CUnk10028a60
+{
+	void sub_10028a60();	// stub 0x1000d959
+};
+
+static inline float VariantFloat(const variant_t &v)
+{
+	if (v.fieldType == 1)
+		return v.flValue;
+	return 0.0f;
+}
+
+void CPhysMotor::sub_10028aa0(inputdata_t *pInput)
+{
+	if (VariantFloat(pInput->value) != m_flTarget460) {
+		m_flTarget460 = VariantFloat(pInput->value);
+		sub_10028b20();
+		((CUnk10028a60 *)this)->sub_10028a60();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10028b60 size=0x8
 namespace lifted {
 int sub_10011f59();
