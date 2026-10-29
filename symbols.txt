@@ -3906,6 +3906,7 @@
 0x1000a52e func   ?sub_1027ee90@@YAXXZ sub_1027ee90
 0x1000a538 func   ?sub_1036cab0@CChangBrosUnit@@QAE_NXZ CChangBrosUnit::sub_1036cab0
 0x1000a53d func   ?sub_10030d50@CCollisionEvent@@QAEXXZ CCollisionEvent::sub_10030d50
+0x1000a547 func   ?sub_102c71a0@CUnknown102c71a0@@QAEPAXH@Z CUnknown102c71a0::sub_102c71a0
 0x1000a54c func   ?sub_1021d890@CPropKeypad@@QAEPAV1@XZ CPropKeypad::sub_1021d890
 0x1000a551 func   ?sub_102017b0@CVStatList_t@@QAE_NHH@Z CVStatList_t::sub_102017b0
 0x1000a565 func   ?vfunc420@CNPC_VAsianVampire@@QAEXXZ CNPC_VAsianVampire::vfunc420
