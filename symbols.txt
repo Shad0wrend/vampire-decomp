@@ -7498,6 +7498,7 @@
 0x1001259e func   ?vfunc395@CBaseCombatCharacter@@UAEXXZ CBaseCombatCharacter::vfunc395
 0x100125a8 func   ?sub_10303f80@CUnknown10303f80@@QAEHHHHHHHHHH@Z CUnknown10303f80::sub_10303f80
 0x100125c1 func   ?sub_1008dc40@CBaseAnimating@@QAEHHH@Z CBaseAnimating::sub_1008dc40
+0x100125c6 func   ?vfunc600@CNPC_VTzimisceHeadClaw@@QAE_NPAX@Z CNPC_VTzimisceHeadClaw::vfunc600
 0x100125cb func   ?vfunc8@CNavPropertyDatabase@@QAEPAV1@I@Z CNavPropertyDatabase::vfunc8
 0x100125d0 func   ?vfunc82@CMathColorBlend@@UAEPAUdatamap_t@@XZ CMathColorBlend::vfunc82
 0x100125da func   ?sub_101d7c50@@YIXPAH@Z sub_101d7c50
