@@ -55381,6 +55381,17 @@ void __fastcall sub_10182d70(void *self, int unusedEdx, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10182da0 size=0x16
+namespace lifted {
+int sub_10001654(int, int, int);
+}
+struct CUnknown10182da0 { int sub_10182da0(int, int); };
+int CUnknown10182da0::sub_10182da0(int a0, int a1)
+{
+    return lifted::sub_10001654((int)this, a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10183100 size=0xd
 #include "CUnknown10183100.h"
 
