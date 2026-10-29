@@ -128664,6 +128664,20 @@ char sub_10366d60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10367330 size=0x1a
+namespace lifted {
+extern int g_1062ef0c;
+extern int g_1062ef10;
+extern char g_1093a6e8;
+}
+int sub_10367330()
+{
+    lifted::g_1062ef10 = 1;
+    lifted::g_1062ef0c = (int)&lifted::g_1093a6e8;
+    return (int)&lifted::g_1062ef0c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103677c0 size=0x43
 #include "CNPC_VBrujah.h"
 void *sub_100aa720(int size);
