@@ -136346,6 +136346,22 @@ void CNPC_VTzimisce::sub_103b9f50(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b9f90 size=0x4a
+#include "CNPC_VTzimisce.h"
+#include "CBaseCombatCharacter.h"
+
+extern const char *g_10653120[];
+
+// TARGET: CNPC_VTzimisce::sub_103b9f90
+void CNPC_VTzimisce::sub_103b9f90(int a, float b)
+{
+	double f = b - 0.3;
+	if (!(f > 0.0))
+		f = 0.0;
+	((CBaseCombatCharacter *)this)->sub_10106580(g_10653120[a], 0, 0.15f, (float)f, 0.15f, 1.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103be090 size=0xc
 bool CUnknown10381be0::sub_103be090()
 {
