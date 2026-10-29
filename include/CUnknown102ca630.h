@@ -17,10 +17,10 @@ struct CUnknown102ca630EntInfo
 struct CUnknown102ca630Rec
 {
 	int m_nType;	// 0x00: 2 = a supernatural act level, else a criminal one
-	char m_pad0004[4];
+	int m_n0004;
 	float m_vecPos[3];	// 0x08
 	int m_nLevel;	// 0x14: the act level
-	char m_pad0018[4];
+	int m_n0018;
 	unsigned int m_hOwner;	// 0x1c
 	unsigned int m_hEnt;	// 0x20: the offender
 	char m_pad0024[4];
