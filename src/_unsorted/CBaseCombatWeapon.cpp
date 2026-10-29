@@ -16,6 +16,13 @@ void CBaseCombatWeapon::vfunc297(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10149dc0 size=0x3
+char CBaseCombatWeapon::vfunc313()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10149e60 size=0x9
 extern float g_104454c4;
 float CBaseCombatWeapon::vfunc337(int a, int b) { return g_104454c4; }
