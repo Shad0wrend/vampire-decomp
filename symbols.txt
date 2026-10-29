@@ -8398,6 +8398,7 @@
 0x1001540b func   ?sub_10194e40@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_10194e40
 0x10015415 func   ?sub_10092190@CBaseAnimating@@QAEMH@Z CBaseAnimating::sub_10092190
 0x1001541a func   ?vfunc264@CBaseAnimating@@QAEXXZ CBaseAnimating::vfunc264
+0x1001541f func   ?sub_10316fd0@@YAHH@Z sub_10316fd0
 0x10015424 func   ?sub_10157d30@CUnitEnt@@QAEXXZ CUnitEnt::sub_10157d30
 0x10015433 func   ?vfunc4@CTEBeamRing@@UAEXHH@Z CTEBeamRing::vfunc4
 0x1001543d func   ?vfunc5@CRevertSaved@@QAEPAV1@I@Z CRevertSaved::vfunc5
