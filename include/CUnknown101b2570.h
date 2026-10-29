@@ -21,6 +21,7 @@ public:
 	char m_szPitch[0x20];	// 0x00a9
 
 	void sub_101b2490(const char *channel);	// "channel": m_nChannel = sub_101b24d0(channel) (the channel id), then the name is copied into m_szChannel (32 bytes)
+	void sub_101b2420(const char *volume);	// parses \"VOL_NORM\" (1.0, 0) or a number pair into m_volume, and keeps the text
 	void sub_101b2570(const char *pitch);	// parses "PITCH_NORM" / "PITCH_LOW" / "PITCH_HIGH" or a number pair, and keeps the text
 	void sub_101b2630(const char *soundlevel);	// parses "SNDLVL_..." (through sub_101b49f0) or a number pair into m_soundlevel, and keeps the text
 	const char *sub_101b2320();	// the pitch as text: the name of the constant for a pitch without a spread (PITCH_NORM ... through sub_101b23b0(float)), else "%i, %i" of (int)a and (int)(a + b) in a global buffer
