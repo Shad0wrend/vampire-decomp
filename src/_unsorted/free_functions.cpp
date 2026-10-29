@@ -35298,6 +35298,30 @@ void sub_100daec0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dafa0 size=0x54
+#include "CUnknown101f5d80.h"
+#include "CVSoundActivityTable_t.h"
+struct OwnerX { char pad[0xa8]; void *p; };
+OwnerX *sub_101193b0();
+void sub_10203dd0(const char *text);
+extern CUnknown101f5d80 g_1073dc28;
+extern CUnknown101f5d80 g_1073dbd4;
+extern CVSoundActivityTable_t g_1073dd58;
+
+void sub_100dafa0()
+{
+	OwnerX *o = sub_101193b0();
+	if (o && o->p) {
+		sub_10203dd0("\n\n----------------------------------------------------------\n\n");
+		sub_10203dd0("\t\t[Sound Information]:\n");
+		g_1073dc28.sub_101f5d80();
+		g_1073dbd4.sub_101f5d80();
+		g_1073dd58.sub_101f61b0();
+		sub_10203dd0("\n\n----------------------------------------------------------\n\n");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100db0b0 size=0xc3
 #include "CBaseAnimating.h"
 #include "ConVar.h"
