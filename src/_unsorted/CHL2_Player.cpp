@@ -140,6 +140,26 @@ void CHL2_Player::vfunc333(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103512a0 size=0x51
+struct SSub36c {
+	virtual void v0();
+	virtual bool vfunc1();
+};
+
+// TARGET: CHL2_Player::vfunc175
+void CHL2_Player::vfunc175(CBaseEntity *pEnt)
+{
+	CHL2_Player *pOther = (CHL2_Player *)pEnt;
+	if (pEnt != vfunc209()) {
+		if (pOther->vfunc94() == 7 && pOther->vfunc92() == 6) {
+			SSub36c *p = *(SSub36c **)((char *)pEnt + 0x36c);
+			if (p && !p->vfunc1())
+				*((char *)this + 0x2128) = 1;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10351390 size=0x73
 #include "CHL2_Player.h"
 #include "CBasePlayer.h"
