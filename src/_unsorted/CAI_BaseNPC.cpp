@@ -200,6 +200,19 @@ CBaseEntity *CAI_BaseNPC::vfunc534()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026b480 size=0x4f
+#include "CAI_BaseNPC.h"
+void sub_10139970(const Vector *in, Vector *out);
+
+void CAI_BaseNPC::vfunc539(const Vector *pDir)
+{
+    Vector ang;
+    sub_10139970(pDir, &ang);
+    vfunc345("aim_pitch", ang.x, 0);
+    vfunc345("aim_yaw", ang.y, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026b4f0 size=0x6c
 #include "CAI_BaseNPC.h"
 
