@@ -4,9 +4,16 @@
 
 #include "CBaseEntity.h"
 
+struct CPayphoneNPC	// the NPC the phone follows (handle at +0xfe8)
+{
+	char m_pad0000[0xff0];
+	int m_nActivityff0;	// 0x0ff0
+};
+
 class CPayphone : public CBaseEntity
 {
 public:
+	int vfunc611();	// slot 611: the sequence selected for the followed NPC's activity (+0xff0), or for activity 1 without one; 0 when none
 	CPayphone *vfunc5(unsigned int flags);
 	bool vfunc45(CBaseEntity *pOther, int a, int b, int c, int d, int e, int f, int g); // slot 45: true when pOther is within the Manhattan distance of the position (slot 193) and the collision bounds (+0x270) of both are equal
 	void sub_100123af();
