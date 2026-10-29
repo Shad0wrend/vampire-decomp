@@ -101868,6 +101868,19 @@ bool sub_10240670(const Vector &a, const Vector &b, BoxObj *obj, float margin)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10240ac0 size=0x57
+struct RayView10240ac0 { Vector m_vecStart; Vector m_vecDelta; };
+struct PlaneView10240ac0 { Vector m_vecNormal; float m_flDist; };
+
+float sub_10240ac0(const RayView10240ac0 *pRay, const PlaneView10240ac0 *pPlane)
+{
+	float denom = DotProduct(pRay->m_vecDelta, pPlane->m_vecNormal);
+	if (denom == 0.0f)
+		return 0.0f;
+	return (1.0f / denom) * (pPlane->m_flDist - DotProduct(pRay->m_vecStart, pPlane->m_vecNormal));
+}
+// END FUNCTION
+
 // FUNCTION: 0x102414f0 size=0xe7
 #include "Vector.h"
 
