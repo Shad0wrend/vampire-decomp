@@ -44773,6 +44773,16 @@ void sub_1011e010(Vector *a, Vector *b, Vector *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011e060 size=0x43
+#include "Vector.h"
+Vector Vector::sub_1011e060(const Vector &v) const
+{
+	Vector res;
+	VectorAdd(*this, v, res);
+	return res;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011e200 size=0x7
 namespace lifted {
 extern char g_104628f8;
