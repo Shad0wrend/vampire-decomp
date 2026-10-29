@@ -141102,6 +141102,20 @@ extern "C" CItemGWarrLedger1* item_p_research_lg_firearms()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f90c0 size=0x1a
+namespace lifted {
+extern int g_1067f3b0;
+extern int g_1067f3b4;
+extern char g_1067f3f4;
+}
+int sub_103f90c0()
+{
+    lifted::g_1067f3b4 = 2;
+    lifted::g_1067f3b0 = (int)&lifted::g_1067f3f4;
+    return (int)&lifted::g_1067f3b0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f9480 size=0xb5
 #include "SendProp.h"
 
