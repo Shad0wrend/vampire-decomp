@@ -17,6 +17,7 @@ public:
 	virtual void b05(); virtual void b06(); virtual void b07();
 	virtual void vfunc202(CBaseEntity *pOwner);	// SetOwnerEntity
 
+	virtual void vfunc103();	// "COrnamentProp::Spawn": stores the parent name (slot 9) in the buffer at +0x7e0, CDynamicProp::vfunc103, classname "prop_dynamic_ornament", then sub_10190fa0
 	void sub_10190fa0();	// detaches the prop: clears the aim entity, the owner and the parent, adds solid flag 4 (inlined AddSolidFlags with scope trace), then slot 93(0, 0), slot 66() and sub_100b3b00()
 	void sub_10191130(const char *szName, CBaseEntity *pSearching);	// finds the entity by name (CGlobalEntityList::FindEntityByName from the list at 0x106eb5d8, no start entity, no activator) and attaches the prop to it (sub_10191170)
 	void sub_10191170(CBaseEntity *pParent);	// attaches the prop to the entity pParent (stub 0x10004fbb), called by the creation helper: slot 67(), SetAimEnt, SetParent, SetOwnerEntity, slot 93(0xb, 0), sub_100b3b00(); without a parent warns "%s could not find entity to attach to, deleting..." and removes itself
