@@ -23678,6 +23678,16 @@ int CBaseEntity::sub_100a1250(const void *pDamageInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a19c0 size=0x43
+#include "Vector.h"
+Vector Vector::sub_100a19c0(float fl) const
+{
+	Vector res;
+	VectorMultiply(*this, fl, res);
+	return res;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a4930 size=0x7a
 #include "CBaseEntity.h"
 
