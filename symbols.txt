@@ -7077,6 +7077,7 @@
 0x100112ca func   ?vfunc461@CNPC_VHumanCombatant@@QAEHXZ CNPC_VHumanCombatant::vfunc461
 0x100112cf func   ?sub_1034d590@CUnknown1034d590@@QAEXH@Z CUnknown1034d590::sub_1034d590
 0x100112d9 func   ?sub_10334c20@CBaseCombatCharacter@@QAE_NPAVCBaseCombatWeapon@@@Z CBaseCombatCharacter::sub_10334c20
+0x100112e3 func   ?sub_102673f0@@YAHHH@Z sub_102673f0
 0x100112ed func   ?vfunc77@CNPC_VGhoulCroucher@@UAEXXZ CNPC_VGhoulCroucher::vfunc77
 0x100112f2 func   ?vfunc103@CNPCMaker@@UAEXXZ CNPCMaker::vfunc103
 0x100112f7 func   ?sub_1027cda0@CFloatPair1027cda0@@QAEXM_N@Z CFloatPair1027cda0::sub_1027cda0

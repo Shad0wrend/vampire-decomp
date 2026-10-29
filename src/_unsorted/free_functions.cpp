@@ -103415,6 +103415,23 @@ void sub_10267350()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102673f0 size=0x48
+extern int g_1092030c[2][5];
+extern int g_10920544[2];
+extern void (*g_109f366c)(const char *fmt, ...);
+int sub_102673f0(int id, int list)
+{
+    if (list < 0 || list > 1)
+        g_109f366c("Invalid dodge list number.");
+    int n = g_10920544[list];
+    for (int i = 0; i < n; i++) {
+        if (g_1092030c[list][i] == id)
+            return i;
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102695d0 size=0xd2
 #include "ScopeTrace.h"
 
