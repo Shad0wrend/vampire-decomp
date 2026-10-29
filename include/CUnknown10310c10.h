@@ -2,6 +2,8 @@
 // the NPCs it makes at +0x28 (-1 for none); real name not yet known.
 #pragma once
 
+#include "Vector.h"
+
 class CUnknown10310c10
 {
 public:
