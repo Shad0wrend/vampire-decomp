@@ -37626,6 +37626,17 @@ void sub_100f4410(const char *name, int id, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f4460 size=0x13
+namespace lifted {
+extern char g_10565690;
+int sub_1000e354(int, int);
+}
+int sub_100f4460(int a0)
+{
+    return lifted::sub_1000e354((int)&lifted::g_10565690, a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f4490 size=0xf0
 extern "C" {
 __declspec(dllimport) void *__stdcall FindWindowA(const char *, const char *);
