@@ -84924,6 +84924,23 @@ int CVStatCost_t::sub_101fc410(int level, bool bFirst)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fc4d0 size=0x4c
+struct S5_101fc4d0 { int v[5]; };
+struct T_101fc4d0 : S5_101fc4d0 {
+	char sub_101fbf80(S5_101fc4d0 s);
+};
+struct C101fc4d0 {
+	S5_101fc4d0 m_a;
+	S5_101fc4d0 m_b;
+	char sub_101fc4d0(T_101fc4d0 a, T_101fc4d0 b);
+};
+// TARGET: C101fc4d0::sub_101fc4d0
+char C101fc4d0::sub_101fc4d0(T_101fc4d0 a, T_101fc4d0 b)
+{
+	return a.sub_101fbf80(m_a) && b.sub_101fbf80(m_b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fc5b0 size=0xb3
 #include "CVStatCost_t.h"
 #include <stdio.h>
