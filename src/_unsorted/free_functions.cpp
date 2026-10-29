@@ -57629,6 +57629,29 @@ void CLagCompensationManager::sub_10187ef0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10188280 size=0x31
+struct CUnknown10188280 { void * sub_10188280(); };
+void * CUnknown10188280::sub_10188280()
+{
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = 0;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 0x18) = 0;
+    *(int *)((char *)this + 0x1c) = 0;
+    *(int *)((char *)this + 0x20) = 0;
+    *(int *)((char *)this + 0x24) = 0;
+    *(int *)((char *)this + 0x28) = 0;
+    *(int *)((char *)this + 0x2c) = 0;
+    *(int *)((char *)this + 0x30) = 0;
+    *(int *)((char *)this + 0x34) = 0;
+    *(int *)((char *)this + 0x38) = 0;
+    *(char *)this = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10188d60 size=0x2e
 // TARGET: sub_10188d60
 void sub_10188d60(float t, const float *a, const float *b, float *out) {
