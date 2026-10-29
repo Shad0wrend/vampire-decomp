@@ -54,6 +54,7 @@ public:
 	void sub_100f0e90(int flags);	// CAI_BaseNPCTroika::sub_100f0e90 (stub 0x100080df), called directly on the door
 	void sub_100f0e30(float flTime);	// the timer at +0x640: keeps the larger of it and flTime (stub 0x10009363)
 	char sub_100084f9(char bCheckLinked);	// the stub at 0x100084f9 for sub_100f0c00, called directly (the recursive call goes through it)
+	void sub_100f09d0();	// retry think: while sub_100f0c00(1) holds installs the think stub 0x1000abf0 and tries again in 0.5 s, else clears the think and runs slot 244(1)
 	char sub_100f0c00(char bCheckLinked);	// "CBaseDoor::IsCloseBlocked": scope trace (empty names), the door's open-position bounds (slot 245) against the linked door's (handle at +0x630, asked without the linked check), else against the bounds of every solid pushable entity (flags bit 7 or 13, slot 158) of the world; a blocker with an AI object (+0x94) gets this door marked (sub_100f0e90(0x80), sub_1027dfb0)
 
 	char m_pad03e0[0x4a4 - 0x3e0];
