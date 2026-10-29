@@ -45,6 +45,7 @@ public:
     int m_pEdict;    // 0x2e0
     char m_pad02e4[0x368 - 0x2e4];
     int m_nCollisionGroup;    // 0x368
-    char m_pad036c[0x770 - 0x36c];
+    char m_pad036c[0x76c - 0x36c];
+    int m_nBreakMode;    // 0x76c: 0, 1 or 2 (anything else warns and becomes 2)
     float m_flFadeTime770;    // 0x770
 };
