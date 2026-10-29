@@ -52348,6 +52348,20 @@ int sub_10158c40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10158ca0 size=0x1a
+namespace lifted {
+extern int g_10580418;
+extern int g_1058041c;
+extern char g_1058045c;
+}
+int sub_10158ca0()
+{
+    lifted::g_1058041c = 5;
+    lifted::g_10580418 = (int)&lifted::g_1058045c;
+    return (int)&lifted::g_10580418;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10158d40 size=0x1
 void sub_10158d40()
 {
