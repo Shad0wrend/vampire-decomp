@@ -37941,6 +37941,20 @@ int CBaseDoor::sub_100f12a0(CBaseDoor **ppDoors, int maxDoors)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f18d0 size=0x1a
+namespace lifted {
+extern int g_10564ae4;
+extern int g_10564ae8;
+extern char g_10564b2c;
+}
+int sub_100f18d0()
+{
+    lifted::g_10564ae8 = 0xc;
+    lifted::g_10564ae4 = (int)&lifted::g_10564b2c;
+    return (int)&lifted::g_10564ae4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f1900 size=0x49
 void *sub_1000db89(int);
 struct GP;
