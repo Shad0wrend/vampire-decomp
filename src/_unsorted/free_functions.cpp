@@ -97181,6 +97181,26 @@ void sub_1023e4b0(CBaseEntity *pEnt, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023e6b0 size=0x47
+struct N { int a; int b; N *next; };
+extern N *g_10752ce0[25];
+extern int g_10752d60[25];
+extern int g_10753230[25];
+void operator delete(void *);
+void sub_1023e6b0()
+{
+    for (int i = 0; i < 25; i++) {
+        while (g_10752ce0[i]) {
+            N *p = g_10752ce0[i];
+            g_10752ce0[i] = p->next;
+            delete p;
+        }
+        g_10752d60[i] = 0;
+        g_10753230[i] = -1;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023ea20 size=0xc3
 struct CQueuedNode
 {
