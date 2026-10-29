@@ -2746,6 +2746,7 @@
 0x10007879 func   ?vfunc11@CAI_Motor@@UAEMH@Z CAI_Motor::vfunc11
 0x10007892 func   ?vfunc328@CWeaponIThrown@@QAEHXZ CWeaponIThrown::vfunc328
 0x10007897 func   ?sub_103c49d0@@YADXZ sub_103c49d0
+0x100078a1 func   ?sub_1027bc30@@YAHXZ sub_1027bc30
 0x100078a6 func   _vgui_screen vgui_screen
 0x100078b0 func   ?sub_102ee2a0@CUnknown102ee2a0@@QAEHXZ CUnknown102ee2a0::sub_102ee2a0
 0x100078bf func   ?vfunc82@CHudTimer@@UAEPAUdatamap_t@@XZ CHudTimer::vfunc82
