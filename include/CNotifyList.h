@@ -13,7 +13,7 @@ public:
 	virtual void vfunc1();
 	virtual void vfunc2(CBaseEntity *pEntity, const char *pszEvent);	// "ReportNamedEvent": for every pair registered for pEntity (only when bit 6 of its flags at +0x268 is set) calls the listener's AcceptInput(pszEvent, pEntity, pEntity, an empty variant, 0)
 	virtual void vfunc3();
-	virtual void vfunc4();
+	virtual void vfunc4(CBaseEntity *pEntity);	// "RemoveEntity": removes every pair that names pEntity (by copying the last pair over it)
 
 	void *m_pEntityListenerVtbl;	// 0x04
 	CUnknown100f97b0 m_pairs;	// 0x08: memory of the pairs
