@@ -12304,6 +12304,33 @@ void CUnknown1006c7d0::sub_1006c7d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006c9d0 size=0x53
+struct CFloatTable1006c9d0 {
+	char m_pad[0xc];
+	unsigned char m_flags;	// 0xc: bit 0 = clamp to the ends
+	char m_pad0d[3];
+	int m_count;	// 0x10
+	float *m_pData;	// 0x14
+
+	int sub_1006c9d0(int index);
+};
+
+int CFloatTable1006c9d0::sub_1006c9d0(int index)
+{
+	if (m_flags & 1)
+	{
+		if (index < 0)
+			index = 0;
+		else if (index >= m_count)
+			index = m_count - 1;
+		return (int)m_pData[index];
+	}
+	if (index >= 0 && index < m_count)
+		return (int)m_pData[index];
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006ca50 size=0x31
 #include "CUnknown10204e90.h"
 #include "CUnknown10204c60.h"
