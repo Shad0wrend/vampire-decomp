@@ -76961,6 +76961,33 @@ void * CUnknown101dc1c0::sub_101dc1c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dc1f0 size=0x50
+struct CPtrList101dc1f0 {
+	int m_n0;
+	int m_n4;
+	int m_nCount;	// 0x8
+	int **m_ppData;	// 0xc: array of owned pointers
+
+	void sub_101dc1f0();
+};
+
+// TARGET: CPtrList101dc1f0::sub_101dc1f0
+void CPtrList101dc1f0::sub_101dc1f0()
+{
+	if (m_ppData) {
+		for (int i = 0; i < m_nCount; i++) {
+			if (m_ppData[i])
+				delete m_ppData[i];
+			m_ppData[i] = 0;
+		}
+		delete m_ppData;
+		m_ppData = 0;
+	}
+	m_nCount = 0;
+	m_n4 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dc260 size=0x150
 void *operator new(unsigned int);
 void operator delete(void *);
