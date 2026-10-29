@@ -27847,6 +27847,20 @@ void CUnknown100b99b0::sub_100b99b0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b99d0 size=0x47
+#include "CBatSwarm.h"
+
+bool CBatSwarm::sub_100b99d0()
+{
+	for (int i = 0; i < 32; i++)
+	{
+		if (((m_mask734 & m_mask730) & (1 << i)) && m_nBat[i] < m_nLimit740)
+			return false;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ba030 size=0x27
 int __fastcall sub_100ba030(int *p)
 {
