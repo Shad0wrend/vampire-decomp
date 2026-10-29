@@ -9,9 +9,18 @@
 
 class CBaseEntity;
 
-class CBaseButton
+// Stand-in for the CBaseToggle / CBaseEntity base chain: owns the vptr, its constructor is CBaseEntity's (0x1000d5ee).
+class CBaseButtonBase
 {
 public:
+	CBaseButtonBase();
+	virtual void vfunc0();
+};
+
+class CBaseButton : public CBaseButtonBase
+{
+public:
+	CBaseButton();
 	virtual void vfunc0();
 	virtual void vfunc1();
 	virtual void vfunc2();
