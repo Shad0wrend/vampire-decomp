@@ -52481,6 +52481,20 @@ extern "C" GP *func_platrot()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015a110 size=0x1a
+namespace lifted {
+extern int g_10580658;
+extern int g_1058065c;
+extern char g_1058069c;
+}
+int sub_1015a110()
+{
+    lifted::g_1058065c = 2;
+    lifted::g_10580658 = (int)&lifted::g_1058069c;
+    return (int)&lifted::g_10580658;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015a140 size=0x103
 #include "CFuncPlatRot.h"
 #include "CEntityVSlots.h"

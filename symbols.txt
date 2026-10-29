@@ -4892,6 +4892,7 @@
 0x1000c8dd func   _item_p_occult_regen item_p_occult_regen
 0x1000c8e7 func   ?vfunc5@CPhysSaveRestoreBlockHandler@@QAEXXZ CPhysSaveRestoreBlockHandler::vfunc5
 0x1000c8ec func   ?sub_103079c0@@YAHPBD@Z sub_103079c0
+0x1000c8f6 func   ?sub_1015a110@@YAHXZ sub_1015a110
 0x1000c8fb func   ?vfunc82@CParamsExplosion@@UAEPAUdatamap_t@@XZ CParamsExplosion::vfunc82
 0x1000c90a func   ?vfunc438@CNPC_VMoleman@@QAEHXZ CNPC_VMoleman::vfunc438
 0x1000c90f func   ?sub_10316890@CUnknown10316890@@QAEXHVVector@@0@Z CUnknown10316890::sub_10316890
