@@ -5,7 +5,6 @@
 class ConCommandBase
 {
 public:
-	ConCommandBase();	// stub 0x10007f3b -> 0x102454e0
 	ConCommandBase *vfunc0(unsigned int flags);
 	void vfunc2(const char *pszName, const char *pszHelp, int nFlags);	// slot 2: the base part of a command's constructor (name, help text, flags)
 	ConCommandBase *sub_10245540(const char *pszName, const char *pszHelp, int nFlags);	// the constructor of a command with a name, help text and flags (stub 0x10245540): stores ConCommandBase::vftable, then vfunc2
