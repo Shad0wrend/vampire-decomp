@@ -2979,6 +2979,28 @@ void CBaseEntity::vfunc225()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b50a0 size=0x4c
+#define R10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CEntSlot211View
+{
+	R10(a) R10(b) R10(c) R10(d) R10(e) R10(f) R10(g) R10(h) R10(i) R10(j)
+	R10(k) R10(l) R10(m) R10(n) R10(o) R10(p) R10(q) R10(r) R10(s) R10(t)
+	R10(u)
+	virtual void v0();
+	virtual unsigned int GetFlags211();
+};
+
+bool CBaseEntity::vfunc164()
+{
+	if (((CEntSlot211View *)this)->GetFlags211() & 0x10)
+		return false;
+	if (vfunc92() == 1 || vfunc92() == 6 || vfunc92() == 2)
+		return true;
+	return sub_100b5110();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10267260 size=0xba
 #include "CPASFilter.h"
 

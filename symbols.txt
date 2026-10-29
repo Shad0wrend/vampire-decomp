@@ -5445,6 +5445,7 @@
 0x1000d46d func   ?sub_103a5da0@@YADXZ sub_103a5da0
 0x1000d486 func   ?sub_100b1d10@CBaseEntity@@QAEXXZ CBaseEntity::sub_100b1d10
 0x1000d490 func   ?vfunc9@CAI_Navigator@@UAEXHM@Z CAI_Navigator::vfunc9
+0x1000d495 func   ?vfunc164@CBaseEntity@@QAE_NXZ CBaseEntity::vfunc164
 0x1000d49a func   ?sub_104126a0@@YA_NH@Z sub_104126a0
 0x1000d49f func   ?sub_10288540@CUnknown10288540@@QAEPAU1@XZ CUnknown10288540::sub_10288540
 0x1000d4ae func   ?vfunc513@CAI_BaseNPC@@UAEIXZ CAI_BaseNPC::vfunc513
