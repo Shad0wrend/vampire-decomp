@@ -84258,6 +84258,16 @@ int CUnknown10205030::sub_10205240(CBaseCombatCharacter *pCharacter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10205400 size=0x13
+struct CUnknown10205400 { void * sub_10205400(int); };
+void * CUnknown10205400::sub_10205400(int a0)
+{
+    *(int *)this = *(int *)((char *)a0);
+    *(int *)((char *)this + 4) = *(int *)((char *)a0 + 4);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102056d0 size=0x9
 struct CUnknown102056d0 { int m_val; CUnknown102056d0 *sub_102056d0(); };
 CUnknown102056d0 *CUnknown102056d0::sub_102056d0() { m_val = -1; return this; }
