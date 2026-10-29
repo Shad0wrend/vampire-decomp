@@ -85,4 +85,5 @@
 	void sub_1009c000(int a, char *text, EHANDLE h);	// DumpEhandle with the handle given by value
 	void vfunc216(const Vector &absOrigin);	// slot 216 "CBaseEntity::SetAbsOrigin" (plain member): scope trace (entity name), slot 98, sub_100b5340(0x10800, 0), sub_100b52a0(), clears bit 11 of +0x268, stores the origin at +0x404 and as column 3 of the matrix at +0x130, then the local origin at +0x41c (the origin itself, or transformed into the move parent's space) and the byte at +0x1b1 when it changed
 	void sub_10257560(CBaseEntity *pOther, int a, int b);	// passes the engine indexes (slot 35) of pOther's and this entity's edicts (+0x2e0) to sub_101eddf0 (stub 0x100079f5); a and b unused
+	bool vfunc164();	// slot 164: false when the flags from slot 211 have bit 4; true when slot 92 returns 1, 6 or 2; else sub_100b5110()
 	void vfunc225();	// slot 225 (plain member): unless the physics object at +0x36c is null, calls sub_1002ee60(this), sub_10158520(object, this) and clears +0x36c
