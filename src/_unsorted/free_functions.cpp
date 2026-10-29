@@ -12882,6 +12882,21 @@ int CUnknown1006eeb0::sub_1006eeb0(int which)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006f010 size=0x50
+#include "CBaseCineCam.h"
+
+struct CUnk1006ee10 { unsigned int sub_1006ee10(int a); };
+struct CCineCam1006f080 { Vector sub_1006f080(int index); };
+
+// TARGET: CBaseCineCam::sub_1006f010
+Vector CBaseCineCam::sub_1006f010(int index)
+{
+	if (((CUnk1006ee10 *)this)->sub_1006ee10(0) & 0x2000)
+		return *(Vector *)((char *)this + 0x598 + index * 12);
+	return ((CCineCam1006f080 *)this)->sub_1006f080(index);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006f670 size=0x10a
 #include "CBaseCineCam.h"
 
