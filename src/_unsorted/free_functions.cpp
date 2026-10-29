@@ -62996,6 +62996,17 @@ void sub_101b1880(int a, int b, const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b19e0 size=0x10
+namespace lifted {
+extern char g_1072be18;
+struct C10001780 { int sub_10001780(int); };
+}
+int sub_101b19e0(int a0)
+{
+    return ((lifted::C10001780 *)((int)&lifted::g_1072be18))->sub_10001780(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b1d60 size=0x42
 struct SSoundCache { char *sub_101b40a0(char *name, int a); };
 extern SSoundCache g_1072be18;
