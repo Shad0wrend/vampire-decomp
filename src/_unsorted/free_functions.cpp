@@ -82898,6 +82898,37 @@ void CUnknown101f1c70::sub_101f1c70(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f1d00 size=0x52
+struct SEntry {
+	int m_n0;
+	int m_n4;
+	int m_nKey;
+};
+struct SManager {
+	bool sub_101f1920(int key);
+	SEntry *sub_101f1aa0(int id);
+};
+extern SManager g_1073a9a0;
+
+struct SIdList {
+	int m_nCount;
+	int *m_pIds;
+
+	int sub_101f1d00(int key);
+};
+
+int SIdList::sub_101f1d00(int key)
+{
+	if (g_1073a9a0.sub_101f1920(key)) {
+		for (int i = 0; i < m_nCount; i++) {
+			if (g_1073a9a0.sub_101f1aa0(m_pIds[i])->m_nKey == key)
+				return m_pIds[i];
+		}
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f1d80 size=0x5
 int __stdcall sub_101f1d80(int a0, int a1)
 {
