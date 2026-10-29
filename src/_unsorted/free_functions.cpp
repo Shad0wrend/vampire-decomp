@@ -43499,6 +43499,20 @@ extern "C" CBaseEntity *func_breakable_surf()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010fae0 size=0x1a
+namespace lifted {
+extern int g_1056f0fc;
+extern int g_1056f100;
+extern char g_1056f144;
+}
+int sub_1010fae0()
+{
+    lifted::g_1056f100 = 0x13;
+    lifted::g_1056f0fc = (int)&lifted::g_1056f144;
+    return (int)&lifted::g_1056f0fc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010fc80 size=0x192
 #include "SendProp.h"
 

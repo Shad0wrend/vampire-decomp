@@ -60,6 +60,7 @@
 0x1000127b func   ?sub_100c8a00@@YIXPADHH@Z sub_100c8a00
 0x10001280 func   ?vfunc573@CAI_BaseNPC@@QAEDPBVVector@@PBMD@Z CAI_BaseNPC::vfunc573
 0x10001285 func   _npc_VVentrue npc_VVentrue
+0x1000128f func   ?sub_1010fae0@@YAHXZ sub_1010fae0
 0x10001299 func   ?sub_103f8830@@YAHXZ sub_103f8830
 0x1000129e func   ?sub_102f99b0@@YAXXZ sub_102f99b0
 0x100012a8 func   ?sub_102f6d10@CAI_Network@@QAEHH@Z CAI_Network::sub_102f6d10
