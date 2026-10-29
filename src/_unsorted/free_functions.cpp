@@ -89461,6 +89461,40 @@ void CUnknown10202fd0::sub_10202fd0(CSlotIter *pObj)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10203020 size=0x53
+#include <string.h>
+extern char g_106b8540[];
+
+struct SNamedEntry10203020 {
+	int m_id;
+	const char *m_pszName;
+};
+
+struct CNamedList10203020 {
+	int m_pad0;
+	int m_pad4;
+	int m_count;	// 0x8
+	SNamedEntry10203020 **m_ppEntries;	// 0xc
+
+	int sub_10203020(const char *pszName);
+};
+
+inline const char *NameOf(const char *const *pp)
+{
+	return *pp ? *pp : g_106b8540;
+}
+
+int CNamedList10203020::sub_10203020(const char *pszName)
+{
+	for (int i = 0; i < m_count; i++)
+	{
+		if (!_strcmpi(NameOf(&m_ppEntries[i]->m_pszName), pszName))
+			return m_ppEntries[i]->m_id;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102030a0 size=0x41
 #include "CUnknown10202ba0.h"
 extern char g_106b8540[];
