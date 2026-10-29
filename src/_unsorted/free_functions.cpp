@@ -71579,6 +71579,22 @@ void sub_101d0ec0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d1070 size=0x45
+#include <time.h>
+__declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+long sub_101d1070(char *pDest, int maxLen)
+{
+	time_t t;
+	_tzset();
+	time(&t);
+	localtime(&t);
+	char *s = ctime(&t);
+	if (pDest)
+		Q_strncpy(pDest, s, maxLen);
+	return t;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d10e0 size=0x29
 #include <stdarg.h>
 
