@@ -131131,6 +131131,20 @@ char sub_10389ea0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1038ace0 size=0x1a
+namespace lifted {
+extern int g_10640d40;
+extern int g_10640d44;
+extern char g_10640d84;
+}
+int sub_1038ace0()
+{
+    lifted::g_10640d44 = 0x12;
+    lifted::g_10640d40 = (int)&lifted::g_10640d84;
+    return (int)&lifted::g_10640d40;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1038c170 size=0xa5
 #include "CNPC_VManBat.h"
 #include "CBaseEntity.h"
