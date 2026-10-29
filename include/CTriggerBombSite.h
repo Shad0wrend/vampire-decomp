@@ -22,6 +22,7 @@ public:
 	void vfunc41(CBombState state);	// slot 41: the bomb progress (0..100, a sixth of the time since +0x598 in percent) is stored at +0x59c; a full bar runs sub_102116c0 first, then the update sub_10211550 with 0x62 (0x21 while still running)
 	void vfunc42(CBasePlayer *pPlayer);	// slot 42 (plain member): CBaseEntity::vfunc42, clears the player's byte at +0x19f7 (sub_1015ef60) and flag bit 1 (sub_101815b0(1)), then the update sub_10211550 for the player with 0x22 (0x62 once the bar is full)
 	void sub_100a5030(CBasePlayer *pPlayer);	// CBaseEntity::vfunc42 (stub 0x10010e60), called directly
+	void vfunc174(void *pOther);	// slot 174 (StartTouch): trigger list at +0x568 handles it, then stores this entity's handle into the player's bomb site handle (+0x1cb8)
 	void vfunc176(void *pOther);	// slot 176 (EndTouch): lets the toucher's trigger list at +0x568 handle it, then clears the player's bomb site handle (+0x1cb8) when it resolves to this entity
 	void sub_10211870(void *pSender, void *pParam);	// called through the stub at 0x1000d913 with the owner object and the argument by CUnknown103f6a20::sub_103f6a20
 	void sub_102116c0(CBombState state);	// stub 0x10005385
