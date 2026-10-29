@@ -13121,6 +13121,20 @@ int *__fastcall sub_100727c0(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100729e0 size=0x44
+#include "utlvector.h"
+struct SVecHolder {
+    CUtlVector<int> m_List;
+    char pad[0x118 - sizeof(CUtlVector<int>)];
+    char m_bFlag;
+};
+void __fastcall sub_100729e0(SVecHolder *p)
+{
+    p->m_bFlag = 0;
+    p->m_List.Purge();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10072ba0 size=0x3a
 struct S10072d60 {
     void sub_10072d60(int a);
