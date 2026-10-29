@@ -15333,6 +15333,19 @@ void __fastcall sub_100791a0(Mem4 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10079230 size=0x10
+namespace lifted {
+extern char g_1044f038;
+}
+struct CUnknown10079230 { void * sub_10079230(); };
+void * CUnknown10079230::sub_10079230()
+{
+    *(int *)this = (int)&lifted::g_1044f038;
+    *(int *)((char *)this + 8) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10079280 size=0x7
 namespace lifted {
 extern char g_1044f038;
