@@ -95731,6 +95731,23 @@ void __stdcall sub_10230700(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10230880 size=0x4c
+#include "CNameSymbolTable.h"
+#include <string.h>
+extern char g_107510c0[];
+__declspec(dllimport) char *Q_strncpy(char *dest, const char *src, int maxLen);
+unsigned short CNameSymbolTable::sub_10230880(const char *pName)
+{
+    unsigned short sym = 0xffff;
+    if (pName && *pName) {
+        Q_strncpy(g_107510c0, pName, 0x80);
+        _strlwr(g_107510c0);
+        sym = m_Symbols.sub_1024b5e0(g_107510c0).m_Id;
+    }
+    return sym;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102308f0 size=0x8
 namespace lifted {
 struct C100026ee { int sub_100026ee(); };
