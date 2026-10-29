@@ -108891,6 +108891,20 @@ void sub_102cc6a0()
 void __fastcall sub_102cc7e0(int *p) { p[16] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x102cc8d0 size=0x1a
+namespace lifted {
+extern int g_10608f58;
+extern int g_10608f5c;
+extern char g_10608f9c;
+}
+int sub_102cc8d0()
+{
+    lifted::g_10608f5c = 5;
+    lifted::g_10608f58 = (int)&lifted::g_10608f9c;
+    return (int)&lifted::g_10608f58;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cc900 size=0xbc
 #include "CAI_DynamicLink.h"
 #include "CAI_Network.h"
