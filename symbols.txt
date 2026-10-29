@@ -3951,6 +3951,7 @@
 0x10009c64 func   ?sub_101af880@@YIXPAUEntNextThink@@HPAX1HM@Z sub_101af880
 0x10009c69 func   ?sub_10065250@@YAHXZ sub_10065250
 0x10009c6e func   ?vfunc0@CGrabController@@UAEHPAXPAVIPhysicsObject@@MPAM2@Z CGrabController::vfunc0
+0x10009c73 func   ?sub_101cf930@@YA_NPBDPAVCBaseEntity@@@Z sub_101cf930
 0x10009c78 func   ?vfunc82@CMultiSource@@UAEPAUdatamap_t@@XZ CMultiSource::vfunc82
 0x10009c7d func   ?sub_1029f460@CAI_BaseNPCTroika@@QAEXPAXHHHPAHD@Z CAI_BaseNPCTroika::sub_1029f460
 0x10009c8c func   ?LookupEntity@EHandleEntityList@@QBEPAVIHandleEntity@@ABVCBaseHandle@@@Z EHandleEntityList::LookupEntity

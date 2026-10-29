@@ -73546,6 +73546,37 @@ char *sub_101cf720(const char *format, ...)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cf930 size=0x53
+#include "CGlobalEntityList.h"
+#include "CBaseEntity.h"
+extern CGlobalEntityList g_106eb5d8;
+__declspec(dllimport) void Warning(const char *, ...);
+
+#define P10(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
+struct CMasterSlotView
+{
+	P10(a0) P10(a1) P10(a2) P10(a3) P10(a4) P10(a5) P10(a6) P10(a7) P10(a8) P10(a9)
+	P10(b0)
+	virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4(); virtual void c5(); virtual void c6();
+	virtual char vfunc117();
+	P10(d0) P10(d1)
+	virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4(); virtual void e5(); virtual void e6(); virtual void e7(); virtual void e8();
+	virtual bool vfunc147(CBaseEntity *pActivator);
+};
+
+// TARGET: sub_101cf930
+bool __cdecl sub_101cf930(const char *pszMaster, CBaseEntity *pActivator)
+{
+	if (pszMaster) {
+		CMasterSlotView *pMaster = (CMasterSlotView *)g_106eb5d8.sub_100f7770(0, pszMaster, pActivator, 0);
+		if (pMaster && (pMaster->vfunc117() & 0x80))
+			return pMaster->vfunc147(pActivator);
+		Warning("Master was null or not a master!\n");
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cf9b0 size=0x6f
 struct IInner {
     virtual void v0();
