@@ -76588,6 +76588,28 @@ void S101db7e0::sub_101db7e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101db870 size=0x4f
+#include "CUnknown101db210.h"
+
+struct CUnknown101db410 { char sub_101db410(int a, int b); };
+
+struct CUnknown101db210SubView {
+    int m_n00;
+    int m_nCount;
+    CUnknown101db210 **m_pList;
+};
+
+int CUnknown101db210Sub::sub_101db870(int a, int b)
+{
+    CUnknown101db210SubView *p = (CUnknown101db210SubView *)this;
+    for (int i = 0; i < p->m_nCount; i++) {
+        if (((CUnknown101db410 *)p->m_pList[i])->sub_101db410(a, b))
+            return p->m_pList[i]->sub_101db430(a, b);
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101db9a0 size=0x8
 void __fastcall sub_100107d5(char *p);
 void __fastcall sub_101db9a0(char *p) { sub_100107d5(p + 0x24); }
