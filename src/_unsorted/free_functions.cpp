@@ -38147,6 +38147,25 @@ void CBaseDoor::sub_100f0860()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f09d0 size=0x4a
+#include "CBaseDoor.h"
+#include "globalvars.h"
+
+void sub_1000abf0();
+
+void CBaseDoor::sub_100f09d0()
+{
+	if (!sub_100f0c00(1))
+	{
+		sub_100ac4e0(0, 0, 0);
+		vfunc244(1);
+		return;
+	}
+	sub_100ac4e0((int)sub_1000abf0, 0, 0);
+	m_flNextThink = gpGlobals->curtime + 0.5;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0c00 size=0x1ba
 #include "ScopeTrace.h"
 #include "CBaseDoor.h"

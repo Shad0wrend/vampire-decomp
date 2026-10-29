@@ -4277,6 +4277,7 @@
 0x1000abd2 func   ?sub_103abad0@@YAHXZ sub_103abad0
 0x1000abd7 func   ?vfunc3@CTEBeamLaser@@UAEXHH@Z CTEBeamLaser::vfunc3
 0x1000abe1 func   ?sub_10247820@CUnknown10247820@@QAEPADXZ CUnknown10247820::sub_10247820
+0x1000abf0 func   ?sub_100f09d0@CBaseDoor@@QAEXXZ CBaseDoor::sub_100f09d0
 0x1000abfa func   ?vfunc339@CWeaponIArmor@@UAEXXZ CWeaponIArmor::vfunc339
 0x1000abff func   ?sub_10245540@ConCommandBase@@QAEPAV1@PBD0H@Z ConCommandBase::sub_10245540
 0x1000ac22 func   ?vfunc590@CAI_BaseNPCTroika@@UAEDXZ CAI_BaseNPCTroika::vfunc590
