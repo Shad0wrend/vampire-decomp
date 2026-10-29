@@ -7,6 +7,7 @@
 class CBreakableSurface : public CBaseEntity
 {
 public:
+    CBreakableSurface() : CBaseEntity(0) { m_hEnt458 = 0xffffffff; }
     CBreakableSurface *vfunc5(unsigned int flags);
     void vfunc103();    // slot 103 (Spawn): CBreakable::vfunc103, then rejects the surface (Warning + remove) when its face check (+0x904) found several faces (1) or a face that is not a quad (2), else sets collision group 4 and clears the byte at +0x4c4 and the dword at +0x454; finally sets flag 0x20000000 and SetOccludesSound(1)
     virtual void vfunc130(int a);    // slot 130: CBaseEntity::vfunc130(a), then with the byte at +0x4c4 set: sub_100ac4e0(0x100154ec, 0, 0) and the dword at +0x17c = the global at 0x1070b228's +0xc
