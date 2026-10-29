@@ -91,6 +91,28 @@ void CRagdollProp::vfunc271(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101558b0 size=0x45
+#include "CRagdollProp.h"
+
+struct CRagdollPropHandleView
+{
+	char m_pad[0xd5c];
+	EHANDLE m_hd5c;
+};
+
+void CRagdollProp::vfunc268(CBaseEntity *pEnt)
+{
+	CRagdollPropHandleView *pView = (CRagdollPropHandleView *)this;
+	if (pEnt) {
+		pView->m_hd5c = pEnt;
+		m_nTakeDamage = pEnt->m_nTakeDamage;
+	} else {
+		pView->m_hd5c = (CBaseEntity *)0;
+		m_nTakeDamage = 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155ae0 size=0xf1
 #include "CRagdollProp.h"
 #include <string.h>
