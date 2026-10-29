@@ -57716,6 +57716,20 @@ int sub_1018b680()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018b6f0 size=0x1a
+namespace lifted {
+extern int g_10589cbc;
+extern int g_10589cc0;
+extern char g_1058a3d4;
+}
+int sub_1018b6f0()
+{
+    lifted::g_10589cc0 = 4;
+    lifted::g_10589cbc = (int)&lifted::g_1058a3d4;
+    return (int)&lifted::g_10589cbc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018b790 size=0x3f
 #include "vampire.h"
 
