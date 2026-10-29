@@ -84,7 +84,8 @@ public:
 	virtual void vfunc104();
 	virtual int vfunc105(int a, int b);
 	virtual void vfunc106(); virtual void vfunc107(); virtual void vfunc108(); virtual void vfunc109(); virtual void vfunc110();
-	virtual void vfunc111(); virtual void vfunc112();
+	virtual int vfunc111(const float *pOrigin);	// the area (cluster) of a position
+	virtual void vfunc112();
 	virtual char vfunc113(const float *pViewOrigin, int portalKey, float *pPlane);	// GetAreaPortalPlane
 	virtual void vfunc114(); virtual void vfunc115(); virtual void vfunc116(); virtual void vfunc117(); virtual void vfunc118();
 	virtual double vfunc119(int flag);	// a time value (returned in ST0)
