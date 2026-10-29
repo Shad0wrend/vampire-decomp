@@ -16,6 +16,8 @@ struct CChoreoSceneChannel1007e970
 	CChoreoSceneEvent1007e970 *sub_10073560(int index);	// the event with that index (stub 0x10006c3f)
 };
 
+struct CChoreoSceneChannel1007e970;
+
 struct CChoreoSceneActor1007e970
 {
 	const char *sub_10072d90();	// the actor's name (stub 0x10008a99, this + 0x14)
