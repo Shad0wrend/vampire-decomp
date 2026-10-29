@@ -39,6 +39,7 @@ public:
 	void sub_10218ff0(int a, int b);	// sends the user message 0 with the byte 1 and the two values to every player but the one of this entity (a reliable entity message filter)
 	const char *sub_10219400(int index);	// stub 0x1000bde8: the screen text number index
 	void sub_1021b410();	// prints the current screen line (user name from the handle at +0x8c) and the selected record, then clears bit 1 of +0x81c and sub_10219120
+	void sub_1021ac30();	// starts a new page, then prints each line of the global table at 0x105af7c8 (up to its empty string) followed by a newline
 	void sub_10218db0();	// stub 0x10005812: starts a new page, run first by sub_1021c260
 	void sub_10219240();	// stub 0x1000f196: ends the page, run last by sub_1021c260
 	void sub_10219270();	// stub 0x100150f0: ends the page of the command screens, run last by sub_1021c3c0
