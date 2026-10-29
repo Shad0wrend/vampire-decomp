@@ -59686,6 +59686,24 @@ int sub_1018d430()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018d780 size=0x4e
+#include "CBaseEntity.h"
+#include "inputdata_t.h"
+void sub_100058c6();
+struct CUnit1018d780 : public CBaseEntity
+{
+	char m_pad43c[0x464 - sizeof(CBaseEntity)];
+	EHANDLE m_h464;
+	void sub_1018d780(inputdata_t *pInput);
+};
+void CUnit1018d780::sub_1018d780(inputdata_t *pInput)
+{
+	sub_100ac4e0((int)sub_100058c6, 0, 0);
+	m_flNextThink = gpGlobals->curtime + 0.1f;
+	m_h464 = (CBaseEntity *)pInput->pActivator;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018d7f0 size=0x37
 #include "CBaseEntity.h"
 
