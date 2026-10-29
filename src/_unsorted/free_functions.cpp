@@ -27342,6 +27342,16 @@ int CUnknown100ba070::sub_100ba070()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ba090 size=0x13
+struct CUnknown100ba090 { int sub_100ba090(int); };
+int CUnknown100ba090::sub_100ba090(int a0)
+{
+    *(int *)((char *)this + 0x734) = a0;
+    *(int *)((char *)this + 0x730) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ba120 size=0xd
 // TARGET: CUnknown100ba120::sub_100ba120
 void CUnknown100ba120::sub_100ba120(char value)
