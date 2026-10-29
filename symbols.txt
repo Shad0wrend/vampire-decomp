@@ -80,6 +80,7 @@
 0x10001348 func   ?vfunc35@CPropButton@@QAEHH@Z CPropButton::vfunc35
 0x1000134d func   ?sub_101d2850@@YAJPBDH@Z sub_101d2850
 0x10001352 func   ?vfunc1@CSafeDiscSaveRestoreOps_6@@QAEXPAPAHPAUCSafeDiscReader@@@Z CSafeDiscSaveRestoreOps_6::vfunc1
+0x10001357 func   ?vfunc53@CBaseEntity@@UAEMXZ CBaseEntity::vfunc53
 0x1000135c func   ?vfunc363@CWeaponIArmor@@UAEHXZ CWeaponIArmor::vfunc363
 0x1000136b func   ?sub_103ab110@CNPC_VSabbatLeader@@QAEXPBDPAVCEntityVSlots@@@Z CNPC_VSabbatLeader::sub_103ab110
 0x10001384 func   ?sub_103dc400@CMem4b_t@@QAEXH@Z CMem4b_t::sub_103dc400
