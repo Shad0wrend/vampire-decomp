@@ -1,6 +1,27 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10107a30 size=0x45
+#include "CFilterMultiple.h"
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList g_106eb5d8;
+
+void CFilterMultiple::vfunc113()
+{
+	for (int i = 0; i < 5; i++) {
+		if (m_pszFilterName[i]) {
+			CBaseEntity *pEnt = g_106eb5d8.sub_100f7770(0, m_pszFilterName[i], 0, 0);
+			if (pEnt)
+				m_hFilter[i] = *pEnt->vfunc1();
+			else
+				m_hFilter[i] = (unsigned int)-1;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107aa0 size=0xbf
 #include "CFilterMultiple.h"
 
