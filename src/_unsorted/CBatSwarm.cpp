@@ -135,6 +135,20 @@ void CBatSwarm::vfunc141(int *pRef, int unused, void *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b9f80 size=0x52
+#include "CBatSwarm.h"
+#include "CEntityVSlots.h"
+extern float g_1070d9d0[3];
+CEntityVSlots *sub_100fbc90(const char *name, const float *org, const float *ang, float life);
+void CBatSwarm::vfunc265(int iBat)
+{
+	unsigned int mask = ~(1 << iBat);
+	m_mask730 &= mask;
+	m_mask734 &= mask;
+	sub_100fbc90("Impact_Flesh_Emitter", &m_vecPos[iBat].x, g_1070d9d0, 2.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ba0c0 size=0x1c
 #include "CBatSwarm.h"
 
