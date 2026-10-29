@@ -12,6 +12,26 @@ datamap_t * CBaseTrigger::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c4d60 size=0x4b
+#include "CBaseTrigger.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList g_106eb5d8;
+
+// TARGET: CBaseTrigger::vfunc113
+void CBaseTrigger::vfunc113()
+{
+	if (m_iFilterName) {
+		CBaseEntity *pFilter = g_106eb5d8.sub_100f7770(0, m_iFilterName, 0, 0);
+		if (pFilter)
+			m_i564 = *pFilter->vfunc1();
+		else
+			m_i564 = -1;
+	}
+	CBaseEntity::vfunc113();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c4f40 size=0xff
 #include "CBaseTrigger.h"
 #include "ScopeTrace.h"
