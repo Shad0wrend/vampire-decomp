@@ -97365,6 +97365,27 @@ CWeaponRollValue CBaseCombatWeapon::sub_102563f0(CUnknown101d8a70 *pRecordOut, i
 }
 // END FUNCTION
 
+// FUNCTION: 0x102564f0 size=0x42
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList g_106eb5d8;
+struct SubObj { virtual void v(); char pad[0x8b0 - 4]; int m8b0; };
+struct SubObjA { virtual void v(); };
+struct EntA { char pad[0xa0]; void *p; };
+struct Obj359 { int m8b0; };
+class CSub { public: virtual void vf0(); };
+void sub_102564f0()
+{
+    CBaseEntity *pEnt = g_106eb5d8.sub_100f7060(0);
+    while (pEnt) {
+        struct V { int *vt; } ;
+        char *p = *(char **)((char *)pEnt + 0xa0);
+        if (p && *(int *)(p + 0x8b0) == 0)
+            (*(void (__fastcall **)(void *))(*(int *)p + 0x59c))(p);
+        pEnt = g_106eb5d8.sub_100f7060(pEnt);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102567b0 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;

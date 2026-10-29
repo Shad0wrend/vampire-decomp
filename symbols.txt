@@ -5417,6 +5417,7 @@
 0x1000e188 func   ?sub_10042900@UtlMem@@QAEXXZ UtlMem::sub_10042900
 0x1000e18d func   ?sub_101e9950@CUnknown101e9950@@QAEPAUS101e9570@@XZ CUnknown101e9950::sub_101e9950
 0x1000e192 func   ?vfunc5@CWeaponMelee_SeveredArm@@QAEPAV1@I@Z CWeaponMelee_SeveredArm::vfunc5
+0x1000e197 func   ?sub_102564f0@@YAXXZ sub_102564f0
 0x1000e19c func   ?sub_10196a40@@YAPAUSPyObject@@PAU1@0@Z sub_10196a40
 0x1000e1a1 func   ?sub_1019a920@@YGDH@Z sub_1019a920
 0x1000e1a6 func   ?sub_101fead0@CVStatInfo_t@@QAE_NXZ CVStatInfo_t::sub_101fead0
