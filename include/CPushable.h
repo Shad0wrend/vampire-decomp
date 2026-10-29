@@ -14,6 +14,12 @@ public:
 	virtual void vfunc30(); virtual void vfunc31(); virtual void vfunc32(); virtual void vfunc33(); virtual void vfunc34();
 	virtual int vfunc35(int a);
 	void vfunc103();	// slot 103 "CPushable::Spawn", declared as a plain member: CBreakable::vfunc103 for flag bit 7 of the spawn flags, else sets bit 13 of the flags at +0x4c, Precache (slot 104), SetSolid(6) (inlined scope trace), SetMoveType(8, 0), SetModel(the model name from slot 9) and slot 223
-	char m_pad[0x4a8 - 4];
+	bool vfunc223();	// slot 223 (plain member): VPhysicsInitNormal(6, 0, 0, 0), then hands the physics object at +0x36c the values at +0x49c and +0x4a0 / +0x4a4
+	char m_pad[0x36c - 4];
+	void *m_pObj36c;	// 0x36c: physics object
+	char m_pad0370[0x49c - 0x370];
+	int m_field49c;
+	int m_field4a0;
+	int m_field4a4;
 	int m_field4a8;
 };
