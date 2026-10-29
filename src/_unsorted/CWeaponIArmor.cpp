@@ -28,6 +28,18 @@ int CWeaponIArmor::vfunc328()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f4090 size=0x4e
+#include "CWeaponIArmor.h"
+extern char g_106b8540[];
+
+bool CWeaponIArmor::vfunc315()
+{
+	const char *pszName = *(const char **)((char *)this + 0x754);
+	vfunc105(pszName ? pszName : g_106b8540);
+	return sub_10253b70(vfunc342(0), vfunc343(), 0xb4, vfunc344());
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f4130 size=0x65
 #include "CWeaponIWritten.h"
 

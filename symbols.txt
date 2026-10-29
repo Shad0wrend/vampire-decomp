@@ -9107,6 +9107,7 @@
 0x1001574e func   ?sub_1021e870@@YGPAHPAHPBD@Z sub_1021e870
 0x10015753 func   ?sub_102c5310@CAI_BaseNPCTroika@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPCTroika::sub_102c5310
 0x10015758 func   ?sub_10184360@@YIXPAH@Z sub_10184360
+0x1001575d func   ?vfunc315@CWeaponIArmor@@UAE_NXZ CWeaponIArmor::vfunc315
 0x10015762 func   ?vfunc319@CWeaponThrown_Grenade_Frag@@QAEXXZ CWeaponThrown_Grenade_Frag::vfunc319
 0x10015767 func   ?sub_100a9ab0@@YAPAVCEntityVSlots@@PBDPBM1PAV1@@Z sub_100a9ab0
 0x1001576c func   ?vfunc104@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc104
