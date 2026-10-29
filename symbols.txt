@@ -7187,6 +7187,7 @@
 0x10012369 func   ?vfunc490@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc490
 0x1001236e func   ?sub_100dcea0@CCollisionPropertyUnit@@QAEHPBM@Z CCollisionPropertyUnit::sub_100dcea0
 0x10012378 func   ?vfunc42@CItemContainerLock@@QAEXPAVCBasePlayer@@@Z CItemContainerLock::vfunc42
+0x1001237d func   ?sub_102042d0@CUnknown102042d0@@QAEHHH@Z CUnknown102042d0::sub_102042d0
 0x10012382 func   ?vfunc10@CMoveHelperServer@@UAE_NPBI@Z CMoveHelperServer::vfunc10
 0x1001238c func   ?vfunc82@CFuncAreaPortalWindow@@UAEPAUdatamap_t@@XZ CFuncAreaPortalWindow::vfunc82
 0x10012391 func   ?sub_10239e70@CWeaponRanged@@QAEXXZ CWeaponRanged::sub_10239e70
