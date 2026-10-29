@@ -51776,6 +51776,20 @@ void SOwner::sub_1014f380()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014f640 size=0x1a
+namespace lifted {
+extern int g_1057c7f0;
+extern int g_1057c7f4;
+extern char g_1057c834;
+}
+int sub_1014f640()
+{
+    lifted::g_1057c7f4 = 3;
+    lifted::g_1057c7f0 = (int)&lifted::g_1057c834;
+    return (int)&lifted::g_1057c7f0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10150e10 size=0x8
 namespace lifted {
 int sub_10001fa0();
