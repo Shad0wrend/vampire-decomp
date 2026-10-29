@@ -68,7 +68,9 @@ public:
     void sub_10014317();	// as in CPhysForce (transplant)
     char m_pad03e0[0x730 - 0x3e0];
     int m_nBodies730;	// 0x730: the number of ragdoll bodies
-    char m_pad0734[0x744 - 0x734];
+    char m_pad0734[0x738 - 0x734];
+    int m_n738, m_n73c, m_n740;	// 0x738: cleared with the body array
+    
     CRagdollPropSlot m_Bodies[1];	// 0x744: the bodies (0x18 bytes each)
     void sub_10155380();	// ragdoll init: stamps +0x174 with curtime, clears +0x6f4 / +0x6f8 and resets the sequence to the first one CBaseAnimating::sub_1008dc40(0x21, -1) selects (0 when none)
     void sub_101563b0(int index, int unused);	// stores the origin/angles of body `index` at +0x2a0 / +0x2fa (dwords); index 0 also calls slot 216 and PhysicsTouchTriggers
