@@ -259,6 +259,24 @@ void CNPC_VGargoyle::vfunc435(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10379060 size=0x4d
+namespace block_10379060 {
+struct CNPC_VGargoyleUnit : CNPC_VGargoyle { bool sub_10379040(); };
+bool CNPC_VGargoyleUnit::sub_10379040() { return (m_nFlags14b8 >> 4) & 1; }
+}
+using namespace block_10379060;
+// TARGET: CNPC_VGargoyle::vfunc448
+void CNPC_VGargoyle::vfunc448(int a)
+{
+	if (m_nState5cc0 == 2 && sub_10269d30(0x5c))
+		m_nFlags5d8c &= 0x7fffffff;
+	if (((CNPC_VGargoyleUnit *)this)->sub_10379040())
+		sub_10379000(0);
+	m_n6680 = 0;
+	sub_1029adb0(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10379f50 size=0xe
 struct CUnk10924edc
 {
