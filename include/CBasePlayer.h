@@ -200,7 +200,12 @@ public:
 	EHANDLE m_hEnt1C60;	// 0x1C60: entity handle (the slot 167 object)
 	char m_pad1C64[0x1cd8 - 0x1c64];	// 0x1C64 .. 0x1CD7
 	unsigned int m_nCriminalLevelEnc;	// 0x1CD8, scrambled by the xor/and/add mask chain
-	char m_pad1CDC[0x1da4 - 0x1cdc];	// 0x1CDC .. 0x1DA3
+	char m_pad1CDC[4];	// 0x1CDC .. 0x1CDF
+	union {
+		int m_n1CE0;
+		float m_f1CE0;	// 0x1CE0: time the criminal level lapses (-1.0f bits = none)
+	};
+	char m_pad1CE4[0x1da4 - 0x1ce4];	// 0x1CE4 .. 0x1DA3
 	EHANDLE m_hPlaceholder1da4;
 
 	float m_f1DA8;	// 0x1DA8: when the next random view punch is due
