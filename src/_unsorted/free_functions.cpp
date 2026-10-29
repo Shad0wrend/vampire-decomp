@@ -7532,6 +7532,23 @@ void * CUnknown1004f860::sub_1004f860()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004f880 size=0x53
+#include "CSimplePhysicsBrush.h"
+
+void *sub_100aa720(unsigned int size);
+inline void *operator new(unsigned int, void *p) { return p; }
+extern const char g_1053dcd4[];
+
+// TARGET: simple_physics_brush
+extern "C" CSimplePhysicsBrush *simple_physics_brush()
+{
+	void *mem = sub_100aa720(0x450);
+	CSimplePhysicsBrush *p = mem ? new(mem) CSimplePhysicsBrush : 0;
+	p->vfunc106(g_1053dcd4);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004fb30 size=0x51
 #include "CBaseAnimating.h"
 void *sub_100aa720(unsigned int);
