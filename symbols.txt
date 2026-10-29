@@ -8360,6 +8360,7 @@
 0x1001487b func   ?sub_10248d90@CKeyValuesX@@QAEHPBDPAPBDHH@Z CKeyValuesX::sub_10248d90
 0x1001488a func   ?sub_100ba1b0@@YA_NPAVCBaseEntity@@@Z sub_100ba1b0
 0x1001488f func   ?sub_100a8bf0@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100a8bf0
+0x100148a3 func   ?sub_103a4fc0@@YAHXZ sub_103a4fc0
 0x100148a8 func   _npc_VPlayerController npc_VPlayerController
 0x100148c1 func   ?vfunc5@CItemGMercurioJournal@@QAEPAV1@I@Z CItemGMercurioJournal::vfunc5
 0x100148c6 func   ?vfunc600@CNPC_VYukie@@QAEDH@Z CNPC_VYukie::vfunc600

@@ -132670,6 +132670,20 @@ extern "C" GP *npc_VProneDialog()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a4fc0 size=0x1a
+namespace lifted {
+extern int g_1064c118;
+extern int g_1064c11c;
+extern char g_1093c234;
+}
+int sub_103a4fc0()
+{
+    lifted::g_1064c11c = 1;
+    lifted::g_1064c118 = (int)&lifted::g_1093c234;
+    return (int)&lifted::g_1064c118;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a4ff0 size=0x43
 #include "CNPC_VSabbatGunman.h"
 void *sub_100aa720(int size);
