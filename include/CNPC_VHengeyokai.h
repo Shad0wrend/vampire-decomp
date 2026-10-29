@@ -91,6 +91,8 @@ public:
 	char sub_1029b180(void *pOther);	// CAI_BaseNPCTroika::vfunc69
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	void vfunc104();	// Precache: base, the stock model/sound names, the model, the freeze emitter and the fist weapon
+	void vfunc103();	// slot 103 \"Spawn\"-like (plain member): CNPC_VVampire::vfunc103, the attack extents (50, 50, 100), then sub_100b3900(4) and sub_100b3840(0x20)
+	void sub_10014876();	// CNPC_VVampire::vfunc103 (stub 0x10014876), called directly
 	void sub_100013f7();	// CNPC_VHuman::vfunc104 (jump stub)
 	int sub_10001b45(CNPC_VHengeyokaiInfo *pInfo);	// CNPC_VHuman::vfunc390, called directly
 	void sub_103830e0();	// called through the stub at 0x10004a0c
