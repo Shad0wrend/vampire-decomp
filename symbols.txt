@@ -2779,6 +2779,7 @@
 0x1000781f func   ?sub_10314000@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_10314000
 0x10007824 func   _item_p_occult_dexterity item_p_occult_dexterity
 0x10007829 func   ?sub_1027efb0@@YIXPAUCTraceDumpNPC@@@Z sub_1027efb0
+0x1000783d func   ?vfunc176@CTriggerDisciplineContext@@QAEXPAVCBaseEntity@@@Z CTriggerDisciplineContext::vfunc176
 0x1000784c func   ?vfunc5@CEffectsServer@@UAEXPBMHHH@Z CEffectsServer::vfunc5
 0x1000785b func   ?sub_1025d820@CUnknown1025d820@@QAEPAU1@XZ CUnknown1025d820::sub_1025d820
 0x10007860 func   ?sub_10428280@@YAHHHHHH@Z sub_10428280
