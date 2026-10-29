@@ -129739,6 +129739,20 @@ extern "C" GP *npc_VFrenzyShadow()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103752e0 size=0x1a
+namespace lifted {
+extern int g_10637aa8;
+extern int g_10637aac;
+extern char g_10637aec;
+}
+int sub_103752e0()
+{
+    lifted::g_10637aac = 2;
+    lifted::g_10637aa8 = (int)&lifted::g_10637aec;
+    return (int)&lifted::g_10637aa8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10375390 size=0x33
 void sub_10007897();
 void sub_10014669();

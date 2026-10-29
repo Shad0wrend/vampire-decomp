@@ -1926,6 +1926,7 @@
 0x10005934 func   ?vfunc124@CFuncMoveLinear@@UAEHXZ CFuncMoveLinear::vfunc124
 0x10005939 func   ?sub_100ae320@@YAXXZ sub_100ae320
 0x10005948 func   ?sub_100938a0@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_100938a0
+0x10005952 func   ?sub_103752e0@@YAHXZ sub_103752e0
 0x1000595c func   ?vfunc99@CPhysicsCannister@@QAE_NPBMHH@Z CPhysicsCannister::vfunc99
 0x10005966 func   ?vfunc272@CBaseCombatWeapon@@UAEPADXZ CBaseCombatWeapon::vfunc272
 0x10005975 func   ?vfunc320@CNPC_VGargoyle@@QAE_NHH@Z CNPC_VGargoyle::vfunc320
