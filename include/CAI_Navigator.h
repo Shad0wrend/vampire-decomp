@@ -174,6 +174,7 @@ public:
 	Vector *sub_102ee140();	// stub 0x100071fd: the position the route is heading for
 	void sub_102ee220(const Vector *pPosition);	// stub 0x1000481d: hands the navigator a position to head for
 	void sub_102f0400();	// stub 0x10006744, run when the motor reports 1
+	void sub_102ee2a0();	// stub 0x100078b0, run by the alternate action end
 	int sub_102ee3f0();	// stub 0x10011f77: the owner's task id for the finished move
 	float sub_102f1cf0();	// the distance from the owner's origin (slot 220) to the route's goal position: 2D while the flag at +0x18 is clear, else 3D
 	bool sub_102f05d0(const Vector *pTarget);	// true while the float at +0x3c is set; else asks the owner (slot 368) about the flat direction to pTarget and fails when it points away (dot with the answer's x / y at most the threshold 0x1049d984)
