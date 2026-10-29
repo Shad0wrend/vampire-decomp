@@ -149030,6 +149030,21 @@ void __cdecl sub_1042c740(void (__fastcall *pfn)(void *))
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042d570 size=0x20
+namespace lifted {
+extern int g_109ef58c;
+}
+struct CUnknown1042d570 { void * sub_1042d570(int, int); };
+void * CUnknown1042d570::sub_1042d570(int a0, int a1)
+{
+    *(int *)this = a0;
+    *(int *)((char *)this + 4) = a1;
+    *(int *)((char *)this + 8) = lifted::g_109ef58c;
+    lifted::g_109ef58c = (int)this;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042d650 size=0x9
 struct CUnknown1042d650 { int a; CUnknown1042d650* sub_1042d650(); };
 // TARGET: CUnknown1042d650::sub_1042d650
