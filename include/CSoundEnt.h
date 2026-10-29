@@ -23,6 +23,7 @@ public:
 	CSoundEnt *vfunc5(unsigned int flags);
 	virtual void vfunc103();	// "CSoundEnt::Spawn": SetSolid(0) (inlined), CBaseEntity::sub_100b3b00, InitSoundList, then the first think a second from now
 	void sub_1000cb8a();
+	int sub_101bab50();	// "CSoundEnt::IAllocSound": pops the first sound of the free list (+0x450) onto the active list (+0x454) and returns its index; -1 with a message when the free list is empty
 	void sub_101baf80();	// "CSoundEnt::Initialize" (stub 0x10004985)
 	static CSound *sub_101bb150(int index);	// "CSoundEnt::SoundPointerForIndex": scope trace, the sound at +0x464 + index * 0x2c of the global sound entity (null, with a message, when out of range)
 	static int sub_101bb0f0();	// "CSoundEnt::ActiveList" (stub 0x10012120): the index of the first active sound, -1 without the global sound entity
