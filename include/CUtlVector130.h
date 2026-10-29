@@ -10,5 +10,6 @@ public:
 	int m_size;
 	char *m_pElements;
 
+	void sub_101b7240(int elem, int num);	// "CUtlVector::ShiftElementsRight": moves the elements from elem up by num (memmove of size - elem - num elements)
 	void sub_101b7170(int num);	// "CUtlVector::GrowVector": grows the allocation to hold num more elements (initial allocation 1)
 };
