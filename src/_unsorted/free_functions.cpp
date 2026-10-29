@@ -45994,6 +45994,15 @@ int CUnknown10131750::sub_10131750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10131770 size=0x15
+struct CUnknown10131770 { void sub_10131770(); };
+void CUnknown10131770::sub_10131770()
+{
+    *(int *)((char *)this + 0x498) = 1;
+    *(int *)((char *)this + 0x17c) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101317d0 size=0x64
 struct COutputX {
     char m_pad[0x18];
