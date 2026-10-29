@@ -23,7 +23,7 @@ public:
 
     char m_pad03e0[0x454 - 0x3e0];
     int m_n454;
-    unsigned int m_hEnt458;
+    EHANDLE m_hEnt458;
     char m_pad045c[0x46c - 0x45c];
     COutputEvent m_Out46c;
     COutputEvent m_Out484;
