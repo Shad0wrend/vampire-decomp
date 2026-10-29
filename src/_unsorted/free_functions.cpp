@@ -132458,6 +132458,20 @@ char sub_103a1590()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a1c80 size=0x1a
+namespace lifted {
+extern int g_1064b0b0;
+extern int g_1064b0b4;
+extern char g_1064b0f4;
+}
+int sub_103a1c80()
+{
+    lifted::g_1064b0b4 = 4;
+    lifted::g_1064b0b0 = (int)&lifted::g_1064b0f4;
+    return (int)&lifted::g_1064b0b0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a1cb0 size=0x43
 #include "CNPC_VPedestrian.h"
 void *sub_100aa720(int size);
