@@ -14,6 +14,7 @@ struct CChoreoSceneChannel1007e970
 {
 	int sub_10073540();	// the number of events (stub 0x10001a87)
 	CChoreoSceneEvent1007e970 *sub_10073560(int index);	// the event with that index (stub 0x10006c3f)
+	void sub_100736b0(CChoreoSceneEvent1007e970 *pEvent);	// removes an event from the channel's list (stub 0x1000e241)
 };
 
 struct CChoreoSceneChannel1007e970;
