@@ -131,7 +131,7 @@ public:
 	EVS(297) EVS(298) EVS(299)
 	EVS(300) EVS(301) EVS(302) EVS(303) EVS(304) EVS(305)
 	virtual void slot306(int a, int b);	// NPC: takes two arguments (the scripted-sequence cleanup passes its argument and 0)
-	EVS(307)
+	virtual void slot307(int a);	// weapon: takes one argument (the flamethrower passes 0xc4)
 	virtual char slot308();	// NPC: a boolean answer in al (CNPC_VYukie::vfunc602)
 	virtual CEntityVSlots *slot309();	// NPC: the entity it is bound to (0 when none)
 	virtual void slot310(int a);	// NPC: takes one argument (the navigator hands it a task / state id, 0x33 / 0x34)
