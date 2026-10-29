@@ -105867,6 +105867,17 @@ void CUnk102c5730::sub_102c5730(void *pObj)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c6290 size=0x19
+struct CUnknown102c6290 { void * sub_102c6290(int); };
+void * CUnknown102c6290::sub_102c6290(int a0)
+{
+    *(char *)this = *(char *)((char *)a0);
+    *(char *)((char *)this + 1) = *(char *)((char *)a0 + 1);
+    *(int *)((char *)this + 4) = *(int *)((char *)a0 + 4);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c62f0 size=0x24
 unsigned int __stdcall sub_102c62f0(unsigned int x)
 {
