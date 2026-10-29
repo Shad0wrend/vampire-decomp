@@ -9,6 +9,7 @@ public:
 	void sub_10004c3c();
 	void sub_1012dbd0();	// updates the hand's angle once per engine tick: the time (since spawn, or the two floats of the source entity at +0x750), scaled by the mode, makes the angle of the axis, wrapped to 0..360, and SetAbsAngles (slot 218)
 	CPropClockHand *sub_1012d950();	// as in CKeepUpright (transplant)
+	CPropClockHand();	// 0x1012d950: base constructor, then the plain fields
 	virtual void vfunc103();	// "Spawn": solid 0 (scope traced SetSolid), adds flag 0x40000, base prop spawn, remembers the angles (slot 219) at +0x730 and the spawn time at +0x764
 	virtual int vfunc124();	// slot 124 "CPropClockHand::DrawDebugTextOverlays": base lines, then (when bit 0 of the byte at +0x224 is set) "ang: %.2f" of the angle component selected by +0x74c as one overlay line
 	void sub_10011793();	// CBaseProp::vfunc103 (jump stub)
