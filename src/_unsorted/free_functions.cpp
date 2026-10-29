@@ -83614,6 +83614,29 @@ int CUnknown101f8410::sub_101f8410(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f8480 size=0x4c
+#include "CUnknown101f0e50.h"
+#include "CVTraitEffectGroup_t.h"
+namespace block_101f8480 {
+struct CUnknown101f0e50U : CUnknown101f0e50 {
+	bool sub_101f82d0(int index);
+};
+bool CUnknown101f0e50U::sub_101f82d0(int index)
+{
+	return index != -1 && index < m_f04;
+}
+}
+using namespace block_101f8480;
+// TARGET: CUnknown101f0e50::sub_101f8480
+CVTraitEffectGroup_t *CUnknown101f0e50::sub_101f8480(int index)
+{
+	if (((CUnknown101f0e50U *)this)->sub_101f82d0(index))
+		return ((CVTraitEffectGroup_t **)m_f08)[index];
+	static CVTraitEffectGroup_t s_default(-1);
+	return &s_default;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f8510 size=0xc6
 #include "CUnknown101f0e50.h"
 extern char g_106b8540[];
