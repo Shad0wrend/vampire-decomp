@@ -14,3 +14,17 @@ void __fastcall sub_100b7bc0(int *self, int, int *src)
 	self[3] = *src;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100b7d10 size=0x47
+#include "CBaseNetworkable.h"
+
+void CBaseNetworkable::vfunc6(CBaseNetworkableBits_t *pBits)
+{
+	int i = sub_100b7de0();
+	if (!(pBits->m_pBits[i >> 3] & (1 << (i & 7))))
+	{
+		i = sub_100b7de0();
+		pBits->m_pBits[i >> 3] |= (1 << (i & 7));
+	}
+}
+// END FUNCTION
