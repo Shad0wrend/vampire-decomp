@@ -12,6 +12,22 @@ datamap_t * CVGuiScreen::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10231ca0 size=0x51
+#include "CVGuiScreen.h"
+#include <string.h>
+bool CVGuiScreen::vfunc110(const char *key, const char *value)
+{
+    char *p = strchr(key, '#');
+    if (p)
+        *p = 0;
+    if (!strcmpi(key, "panelname")) {
+        sub_10231f40(value);
+        return true;
+    }
+    return CBaseEntity::vfunc110(key, value);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10231d20 size=0x9f
 #include "CVGuiScreen.h"
 #include "CUnknown101466e0.h"
