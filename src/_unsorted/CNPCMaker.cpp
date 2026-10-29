@@ -50,6 +50,26 @@ void CNPCMaker::vfunc113()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034b3c0 size=0x4c
+#include "CNPCMaker.h"
+#include "CUnknown10136ec0.h"
+// TARGET: CNPCMaker::vfunc107
+void CNPCMaker::vfunc107(CEntityMapData *pMapData)
+{
+	const char *pSrc = (const char *)((CUnknown10136ec0 *)pMapData)->sub_10136ec0();
+	char *pDst = m_szMapData;
+	char c = *pSrc;
+	while (c != 0 && c != '}') {
+		pSrc++;
+		*pDst++ = c;
+		c = *pSrc;
+	}
+	*pDst = '}';
+	m_pMapData = m_szMapData[0] ? m_szMapData : 0;
+	CBaseEntity::vfunc107(pMapData);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034b580 size=0x1c0
 #include "CNPCMaker.h"
 #include "CEntityVSlots.h"
