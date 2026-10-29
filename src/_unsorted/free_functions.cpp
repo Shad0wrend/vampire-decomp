@@ -42313,6 +42313,20 @@ extern "C" GP *window_pane()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010f9f0 size=0x6b
+#include "CBreakableSurface.h"
+void *sub_100aa720(unsigned int);
+inline void *operator new(unsigned int n) { return sub_100aa720(n); }
+
+// TARGET: func_breakable_surf
+extern "C" CBaseEntity *func_breakable_surf()
+{
+    CBreakableSurface *p = new CBreakableSurface;
+    p->vfunc106("func_breakable_surf");
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010fc80 size=0x192
 #include "SendProp.h"
 
