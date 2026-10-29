@@ -55,7 +55,7 @@ public:
 	virtual float vfunc30(int a);
 	virtual void vfunc31();
 	virtual void vfunc32();
-	virtual void vfunc33();
+	virtual void vfunc33(void *pInfo, void *a, float flDamage, int b, int c);
 	virtual void vfunc34();
 	virtual void vfunc35(CBaseEntity *pPlayer);	// "EquipPlayer"-like: gives the player its starting items
 	virtual void vfunc36();
