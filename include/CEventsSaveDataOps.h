@@ -2,6 +2,7 @@
 #pragma once
 
 class CRestore;
+class CSave;
 
 class CEventsSaveDataOps
 {
