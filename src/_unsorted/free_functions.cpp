@@ -76235,6 +76235,26 @@ int CDiscTable_101e1720::sub_101e1720(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e1770 size=0x43
+__declspec(dllimport) void DevMsg(const char *, ...);
+struct CDiscTable_101e1770 {
+    int sub_10007df1(int key);
+    int sub_10010ba4(int key);
+    int sub_101e1770(int key);
+};
+int CDiscTable_101e1770::sub_101e1770(int key)
+{
+    int idx = sub_10007df1(key);
+    if (idx != -1) {
+        if (sub_10010ba4(key))
+            idx += 0x1e;
+        return idx;
+    }
+    DevMsg("ERROR: DiscFlag Lookup Failed!\n");
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e17e0 size=0x5
 int __stdcall sub_101e17e0(int a0)
 {
