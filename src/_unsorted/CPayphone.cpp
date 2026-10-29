@@ -100,6 +100,24 @@ void CPayphone::vfunc431()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aad20 size=0x4d
+#include "CPayphone.h"
+int CPayphone::vfunc611()
+{
+    int seq;
+    CPayphoneNPC *pNPC = m_hFollow.Get();
+    if (pNPC != 0) {
+        int activity = pNPC->m_nActivityff0;
+        seq = sub_1008dc40(activity, -1);
+    } else {
+        seq = sub_1008dc40(1, -1);
+    }
+    if (seq < 0)
+        seq = 0;
+    return seq;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aaee0 size=0x77
 #include "CPayphone.h"
 
