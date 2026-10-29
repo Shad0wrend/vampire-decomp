@@ -6,7 +6,9 @@
 
 class CBaseEntity;
 
-class CMoveHelperServer
+#include "IMoveHelperServer.h"
+
+class CMoveHelperServer : public IMoveHelperServer
 {
 public:
 	virtual void vfunc0();
