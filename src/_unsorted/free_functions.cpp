@@ -148639,6 +148639,22 @@ CBaseEntity *CUnknown10411630::sub_10411630(float arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10411e80 size=0x46
+#include "ConVar.h"
+extern ConVar *g_109d302c;
+extern ConVar g_109d3028;
+void sub_10411f90();
+// TARGET: sub_10411e80
+void sub_10411e80()
+{
+	int n = g_109d302c->vfunc1() ? 0 : g_109d302c->m_nValue;
+	g_109d3028.sub_10246160(1);
+	sub_10411f90();
+	bool b = n != 0;
+	g_109d3028.sub_10246160(b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10411f90 size=0x147
 __declspec(dllimport) void DevMsg(const char *fmt, ...);
 
