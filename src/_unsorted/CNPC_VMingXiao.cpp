@@ -340,6 +340,22 @@ float CNPC_VMingXiao::vfunc603(float *pCurrent, float *pTarget)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10395f80 size=0x51
+#include "CNPC_VMingXiao.h"
+void sub_1009d940(float *p, int mode);
+void sub_1009d960(float *p, int mode);
+int CNPC_VMingXiao::vfunc126(int a)
+{
+	int i;
+	for (i = 0; i < 6; i++)
+		sub_1009d940(&m_flSlotTimeB[i], 4);
+	int r = sub_102993c0(a);
+	for (i = 0; i < 6; i++)
+		sub_1009d960(&m_flSlotTimeB[i], 4);
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10396000 size=0x35
 struct CUnknownTroikaBase
 {
