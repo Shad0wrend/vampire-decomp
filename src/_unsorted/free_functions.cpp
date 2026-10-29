@@ -128051,6 +128051,20 @@ extern "C" CBaseEntity *npc_VAnimal()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035eb70 size=0x1a
+namespace lifted {
+extern int g_1062b528;
+extern int g_1062b52c;
+extern char g_1062b56c;
+}
+int sub_1035eb70()
+{
+    lifted::g_1062b52c = 5;
+    lifted::g_1062b528 = (int)&lifted::g_1062b56c;
+    return (int)&lifted::g_1062b528;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035ed00 size=0x33
 void sub_10014d7b();
 void sub_1000a4f7();
