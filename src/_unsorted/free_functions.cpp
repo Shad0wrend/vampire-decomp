@@ -133517,6 +133517,30 @@ void CNPC_VBach::sub_10365860(const char *pszTarget, float flSpeed)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10366120 size=0x50
+#include "CNPC_VVampireBoss.h"
+#include "inputdata_t.h"
+
+void CNPC_VVampireBoss::sub_10366120(inputdata_t *pInput)
+{
+    int *pMorph = (int *)&m_MorphModelName;
+    int v;
+    if (pInput->value.fieldType == 4)
+        v = pInput->value.iValue;
+    else
+        v = 0;
+    if (v == 8) {
+        if (!*((char *)this + 0x66a1))
+            *pMorph = 8;
+    } else if (v == 10) {
+        if (*((char *)this + 0x66a1))
+            *pMorph = 10;
+    } else {
+        *pMorph = v;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10366190 size=0x26
 #include "inputdata_t.h"
 #include "CNPC_VVampireBoss.h"
