@@ -536,6 +536,22 @@ int CAI_BaseNPCTroika::sub_102ad260()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ad2d0 size=0x4c
+#include "CAI_BaseNPCTroika.h"
+int CAI_BaseNPCTroika::sub_102ad2d0()
+{
+    if (sub_10269d30(0x1f)) {
+        if (m_n5cc0 != 8)
+            m_flags14b8 |= 0x100;
+        m_pszFile1b3c = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+        m_nLine1b40 = 0x447d;
+        m_n5cc4 = 8;
+        return 8;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b4fe0 size=0x91
 #include "CAI_BaseNPCTroika.h"
 #include "CUnknown102dfaa0.h"
