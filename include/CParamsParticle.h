@@ -6,6 +6,7 @@ class CParamsParticle
 {
 public:
 	CParamsParticle *vfunc5(unsigned int flags);
+	void vfunc104();	// slot 104 (plain member here): copies the particle name and precaches it with the engine
 	void sub_1000cb8a();
 
 	char m_pad0000[0x450];
