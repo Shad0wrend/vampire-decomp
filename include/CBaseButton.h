@@ -133,7 +133,8 @@ public:
 	Vector m_vec52c;	// 0x52c
 	char m_pad0538[0x53c - 0x538];
 	unsigned int m_hActivator53c;	// 0x53c: entity handle of the activator
-	char m_pad0540[0x55d - 0x540];
+	char m_pad0540[0x55c - 0x540];
+	char m_b55c;	// 0x55c
 	char m_b55d;	// 0x55d
 	char m_pad055e[0x560 - 0x55e];
 	COutputEvent m_Output560;	// 0x560
