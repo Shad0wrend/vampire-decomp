@@ -73624,6 +73624,23 @@ bool sub_101d2300(CEntityVSlots *pEnt, CEntityVSlots *pTarget)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d23f0 size=0x4f
+struct CUnk106eb5d8 { void *sub_100f7770(int a, const char *b, int c, int d); };
+extern CUnk106eb5d8 g_106eb5d8;
+extern char g_106b8540[];
+char sub_101d2300(int a, void *b);
+extern "C" __declspec(dllimport) void DevMsg(int level, const char *fmt, ...);
+
+void sub_101d23f0(int a, const char *name)
+{
+    const char *p = name ? name : g_106b8540;
+    void *e = g_106eb5d8.sub_100f7770(0, p, 0, 0);
+    if (!sub_101d2300(a, e)) {
+        DevMsg(1, "Unable to point at entity %s\n", name ? name : g_106b8540);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d2460 size=0x9a
 #include "CRecipientFilter.h"
 

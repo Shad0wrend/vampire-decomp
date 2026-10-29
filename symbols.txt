@@ -6311,6 +6311,7 @@
 0x1000f17d func   _item_g_vv_photo item_g_vv_photo
 0x1000f182 func   _info_player_deathmatch info_player_deathmatch
 0x1000f187 func   ?sub_101a8c30@CCineNPC@@QAEXXZ CCineNPC::sub_101a8c30
+0x1000f19b func   ?sub_101d23f0@@YAXHPBD@Z sub_101d23f0
 0x1000f1aa func   _item_p_research_lg_computers item_p_research_lg_computers
 0x1000f1b9 func   ?sub_101859a0@S101859a0@@QAEXH@Z S101859a0::sub_101859a0
 0x1000f1c8 func   ?sub_100d1d50@@YAXXZ sub_100d1d50
