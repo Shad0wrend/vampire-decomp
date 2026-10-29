@@ -96732,6 +96732,17 @@ void sub_1024dfb0(float *m)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024e000 size=0x14
+namespace lifted {
+extern char g_1070d1b0;
+struct C10005a51 { int sub_10005a51(int, int); };
+}
+int sub_1024e000(int a0, int a1)
+{
+    return ((lifted::C10005a51 *)a1)->sub_10005a51((int)&lifted::g_1070d1b0, a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024e030 size=0xc4
 #include <math.h>
 struct mat34_1024e030 { float m[3][4]; float *operator[](int i) { return m[i]; } const float *operator[](int i) const { return m[i]; } };

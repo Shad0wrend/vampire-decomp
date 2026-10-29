@@ -7957,6 +7957,7 @@
 0x100141aa func   ?sub_10046b40@@YA_NPBI0@Z sub_10046b40
 0x100141af func   ?vfunc14@CGameRules@@UAEXXZ CGameRules::vfunc14
 0x100141b4 func   ?sub_103134b0@CUtlRBTree16@@QAEGXZ CUtlRBTree16::sub_103134b0
+0x100141b9 func   ?sub_1024e000@@YAHHH@Z sub_1024e000
 0x100141c8 func   ??_GCReliableSingleUserRecipientFilter@@UAEPAXI@Z ??_GCReliableSingleUserRecipientFilter@@UAEPAXI@Z
 0x100141cd func   ?sub_1006a7b0@@YAHXZ sub_1006a7b0
 0x100141d2 func   ?sub_1005dfe0@CUnknown1005dfe0@@QAEHXZ CUnknown1005dfe0::sub_1005dfe0
