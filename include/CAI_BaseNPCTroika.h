@@ -212,7 +212,9 @@ public:
 	char m_pad5bc5[0x5cc0 - 0x5bc5];
 	int m_n5cc0;
 	int m_n5cc4;
-	char m_pad5cc8[0x5d24 - 0x5cc8];
+	char m_pad5cc8[0x5cdc - 0x5cc8];
+	struct CAI_SensesView *m_pSenses5cdc;	// 0x5cdc: the senses component (a float at +0x10)
+	char m_pad5ce0[0x5d24 - 0x5ce0];
 	unsigned int m_h5d24;
 	char m_pad5d28[0x5d30 - 0x5d28];
 	char m_b5d30;
