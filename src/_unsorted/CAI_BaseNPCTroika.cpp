@@ -46,6 +46,24 @@ void CAI_BaseNPCTroika::vfunc180()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028d860 size=0x50
+#define V100(p) CAI_NPC_V10(p##0) CAI_NPC_V10(p##1) CAI_NPC_V10(p##2) CAI_NPC_V10(p##3) CAI_NPC_V10(p##4) CAI_NPC_V10(p##5) CAI_NPC_V10(p##6) CAI_NPC_V10(p##7) CAI_NPC_V10(p##8) CAI_NPC_V10(p##9)
+struct CTroikaSlot614 {
+	V100(0) V100(1) V100(2) V100(3) V100(4) V100(5)
+	CAI_NPC_V10(60) CAI_NPC_V(610) CAI_NPC_V(611) CAI_NPC_V(612) CAI_NPC_V(613)
+	virtual void vfunc614();
+};
+void CAI_BaseNPCTroika::sub_1028d860(const Vector *pPos)
+{
+	const Vector *pOrigin = (const Vector *)vfunc217();
+	float dx = pPos->x - pOrigin->x;
+	float dy = pPos->y - pOrigin->y;
+	float dz = pPos->z - pOrigin->z;
+	if (dx * dx + dy * dy + dz * dz <= 4194304.0f)
+		((CTroikaSlot614 *)this)->vfunc614();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028de90 size=0x7d
 #include "CAI_BaseNPCTroika.h"
 extern char g_10920534;
