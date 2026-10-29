@@ -6,8 +6,12 @@
 class CFlameCluster : public CBaseEntity
 {
 public:
-	char m_pad_cluster[0x484 - sizeof(CBaseEntity)];
+	char m_pad_cluster[0x450 - sizeof(CBaseEntity)];
+	int m_aList450[5];	// 0x450: the burn list (a vector, zeroed)
+	int m_aBurn464[7];	// 0x464
+	int m_n480;	// 0x480
 	unsigned int m_hOwner;	// 0x484
+	char m_b488;	// 0x488
 
 	CFlameCluster *sub_103e1e20();
 	void sub_103e2000(CBaseEntity *pEntity, int index);	// burns pEntity: a CVDmg_t record and a damage info (type 8, 1.0f) from the owner, applied to pEntity
