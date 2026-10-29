@@ -47,7 +47,8 @@ public:
     virtual void vfunc258(); virtual void vfunc259();
     virtual void vfunc260(); virtual void vfunc261(); virtual void vfunc262(); virtual void vfunc263(); virtual void vfunc264();
     virtual int vfunc265(const char *pszBone);	// slot 265: the dword at +0x744 + 0x18 * i of the first ragdoll element i (index table at +0xa08, count at +0x730) that belongs to the studio bone named pszBone or to its nearest parent bone; the first element's dword when nothing matches
-    virtual void vfunc266(); virtual void vfunc267(); virtual void vfunc268(); virtual void vfunc269();
+    virtual void vfunc266(); virtual void vfunc267(); virtual void vfunc268(CBaseEntity *pEnt);	// slot 268: remembers pEnt's handle at +0xd5c and takes its take-damage mode (+0x1fc); without an entity the handle is -1 and the mode 1
+    virtual void vfunc269();
     virtual void vfunc270(int a, int b);
     virtual void vfunc271(int a, int b);
     virtual void vfunc272(); virtual void vfunc273(); virtual void vfunc274();
