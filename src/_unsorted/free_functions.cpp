@@ -43844,6 +43844,20 @@ int sub_10114f20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10115080 size=0x1a
+namespace lifted {
+extern int g_10570580;
+extern int g_10570584;
+extern char g_105705c4;
+}
+int sub_10115080()
+{
+    lifted::g_10570584 = 1;
+    lifted::g_10570580 = (int)&lifted::g_105705c4;
+    return (int)&lifted::g_10570580;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101150f0 size=0x66
 #include "CFuncMonitor.h"
 #include "CPointCamera.h"
