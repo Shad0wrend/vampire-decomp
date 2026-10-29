@@ -22,6 +22,7 @@ public:
 	bool sub_1006db10();	// stub 0x10011734: whether the shot just set up is usable
 	bool sub_1006e4c0(const char *pszPrefix, int unused);	// "CBaseCineCam::FindBestShot": state 1, sets up every shot "<prefix>_<n>" (n = 1, 2, ... while the handle at +0x630 stays set) and collects the usable ones; none -> false, else a random one of them is set up again ("CBaseCineCam::FindBestShot chose %s") -> true; takes a second, unused stack argument
 	Vector sub_1006f670();	// the position the shot looks at: the middle of the two shot positions (flags 4 and 8 of sub_1006edb0), or the one that is set, else the zero vector (returned by value)
+	void sub_1006ed40(Vector *pFirst, Vector *pSecond);	// copies the two shot positions to the non-null outputs
 	int sub_1006edb0();	// stub 0x10002a6d: the shot flags (bit 2 = first position, bit 3 = second)
 	Vector sub_1006f010(int index);	// stub 0x10011ebe: the position of shot `index` (2 or 3), returned by value
 
