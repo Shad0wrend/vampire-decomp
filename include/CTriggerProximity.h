@@ -55,6 +55,7 @@ public:
 	}
 
 	virtual void vfunc113();	// "CTriggerProximity::Activate": the base activation, finds the measure target by name (stores its handle, -1 when none) and warns "TriggerProximity - Missing measure target or measure target with no origin!" unless it resolves to a live entity with an edict
+	void vfunc174(CBaseEntity *pOther);	// slot 174 "CTriggerProximity::StartTouch": the base trigger's StartTouch, and when the entity passes the trigger filters counts it in (+0x5a4) and schedules the think (stub 0x1000ffbf) stamped with the current time
 	void vfunc176(CBaseEntity *pOther);	// slot 176 \"CTriggerProximity::EndTouch\": the base trigger's EndTouch, and when the entity passed the trigger filters counts it out; at zero calls sub_100ac4e0(0, 0, 0) and clears the next think time
 	void sub_100ac4e0(int a, int b, int c);	// CBaseEntity worker (stub 0x10007fe5), called directly
 	void vfunc103();	// slot 103: sets the distance to 32 while it is 0, then sub_101c5080() and the free function sub_101cf600(this)
