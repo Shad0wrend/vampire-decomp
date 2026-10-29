@@ -101584,6 +101584,16 @@ struct CUnknown1027fbf0 { int a; CUnknown1027fbf0* sub_1027fbf0(); };
 CUnknown1027fbf0* CUnknown1027fbf0::sub_1027fbf0() { a = -1; return this; }
 // END FUNCTION
 
+// FUNCTION: 0x1027fc10 size=0x13
+struct CUnknown1027fc10 { void * sub_1027fc10(int); };
+void * CUnknown1027fc10::sub_1027fc10(int a0)
+{
+    *(int *)this = *(int *)((char *)a0);
+    *(int *)((char *)this + 4) = *(int *)((char *)a0 + 4);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027fc40 size=0x8
 #define V5(n) virtual void a##n(); virtual void b##n(); virtual void c##n(); virtual void d##n(); virtual void e##n();
 #define V25(n) V5(n##0) V5(n##1) V5(n##2) V5(n##3) V5(n##4)
