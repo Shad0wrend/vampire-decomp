@@ -55392,6 +55392,17 @@ int CUnknown10182da0::sub_10182da0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10182dd0 size=0x16
+namespace lifted {
+int sub_100021fd(int, int, int);
+}
+struct CUnknown10182dd0 { int sub_10182dd0(int, int); };
+int CUnknown10182dd0::sub_10182dd0(int a0, int a1)
+{
+    return lifted::sub_100021fd((int)this, a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10183100 size=0xd
 #include "CUnknown10183100.h"
 
