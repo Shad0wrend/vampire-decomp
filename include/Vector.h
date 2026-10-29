@@ -76,6 +76,7 @@ public:
 	Vector sub_100a19c0(float fl) const;	// operator*(float), where the game did not inline it
 	Vector sub_1011e060(const Vector &v) const;	// operator+, where the game did not inline it
 	Vector sub_1026b7a0(const Vector &v) const;	// operator+, a second out-of-line copy
+	Vector sub_10146190(const Vector &v) const;	// operator-, where the game did not inline it
 	bool sub_1003b850(const Vector &v) const;	// operator==, where the game did not inline it
 };
 
