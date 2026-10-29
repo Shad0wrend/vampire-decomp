@@ -10,6 +10,7 @@ class CBaseEntity;
 class CFireSphere
 {
 public:
+	CFireSphere(int *pList, int nCapacity, char bCheckVisible, const Vector *pCenter, float flRadius);	// 0x10108d90
 	virtual int vfunc0(CBaseEntity *pHandleEntity);	// "EnumElement": the entity behind the handle when it is an env_fire (and, with the visibility flag at +0x20 set, passes sub_1010a8d0) within the sphere (centre +0x04, squared radius +0x10) goes into the list (sub_10108e00); 1 when it was added, else 0
 
 	Vector m_vecCenter;	// 0x04
