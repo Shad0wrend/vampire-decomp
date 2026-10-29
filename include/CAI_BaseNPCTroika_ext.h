@@ -1,4 +1,4 @@
-	bool vfunc342(CBaseEntity *pEnt);	// slot 342 (plain member): false while the byte at +0x63d8 is set; false when slot 293's entity is pEnt and sub_1033c900(0x40000) fails; else CBaseCombatCharacter::vfunc342
+	bool vfunc342(int pEnt);	// slot 342 (plain member; pEnt is an entity pointer): false while the byte at +0x63d8 is set; false when slot 293's entity is pEnt and sub_1033c900(0x40000) fails; else CBaseCombatCharacter::vfunc342
 	virtual CBaseEntity *vfunc168();	// slot 168 override: the slot 167 object, else (bit 6 of +0x5b64 set) the entity of the handle at +0x1a94
 	virtual bool vfunc319(int a, CBaseEntity *pOther, int c);	// slot 319 override: the timer at +0x1564 = curtime + 0.5 (+ 1.0 when pOther answers sub_10349830 with 2)
 	virtual bool vfunc510();	// slot 510 override: false while sub_102c1170 holds, with a live entity at +0x1538 and a value at +0x153c, or while sub_10341aa0 / flag 0x20000 of +0x14b8 holds; with states +0x5cc0 / +0x5cc4 both 1 and the entity of the handle at +0x628c without a dialog partner, CAI_BaseNPC::vfunc510 while the float at +0x6264 is below the "Float Sound Info" stat
