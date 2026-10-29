@@ -12,6 +12,16 @@ datamap_t * CTriggerPlayerActivityLevel::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102107c0 size=0x45
+#include "CTriggerPlayerActivityLevel.h"
+CTriggerPlayerActivityLevel::CTriggerPlayerActivityLevel()
+{
+	m_nLevelA = -1;
+	m_nLevelB = -1;
+	m_nLevelC = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102108e0 size=0x9a
 #include "CTriggerPlayerActivityLevel.h"
 
