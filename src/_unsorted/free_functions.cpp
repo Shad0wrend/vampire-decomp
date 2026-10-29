@@ -79176,6 +79176,22 @@ void S101e0310::sub_101e0310()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e04a0 size=0x57
+#include "CUnknown101dff00.h"
+
+extern int (*g_109f388c)(char *pDest, int maxLen, const char *pFormat, ...);
+extern void (*g_109f3628)(const char *pMsg, ...);
+
+void CUnknown101dff00List::sub_101e04a0()
+{
+	char buf[512];
+	g_109f388c(buf, 512, "[[Hit_Group_List]]:\n");
+	g_109f3628("%s", buf);
+	for (int i = 0; i < m_nCount; i++)
+		m_ppGroups[i]->sub_101dff00();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e0520 size=0x8b
 #include "CUnknown101e0f00.h"
 #include "CUnknown101e0040.h"
