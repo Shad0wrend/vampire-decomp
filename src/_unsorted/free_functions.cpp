@@ -115200,6 +115200,15 @@ char CAI_Senses::sub_1030fa00(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030faa0 size=0x42
+#include "CAI_Senses.h"
+#include "CAI_BaseNPC.h"
+bool CAI_Senses::sub_1030faa0(void *pEnt)
+{
+	return ((CAI_BaseNPC *)m_pOuter)->vfunc363((CBaseEntity *)pEnt) && ((CAI_BaseNPC *)m_pOuter)->vfunc201((CBaseEntity *)pEnt, 0x2804091, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030fb10 size=0x3b
 #include "S1030fc90.h"
 
