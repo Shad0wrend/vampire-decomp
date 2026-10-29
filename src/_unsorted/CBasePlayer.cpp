@@ -478,6 +478,19 @@ void CBasePlayer::vfunc448()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10162260 size=0x4d
+#include "CBasePlayer.h"
+struct CPlayerViewOffsetView {
+	char m_pad[0x184];
+	Vector m_vecViewOffset;
+};
+// TARGET: CBasePlayer::vfunc389
+Vector CBasePlayer::vfunc389(const Vector &vecPos)
+{
+	return ((CPlayerViewOffsetView *)this)->m_vecViewOffset + vecPos;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10163630 size=0xd9
 #include "CBasePlayer.h"
 #define GV(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
