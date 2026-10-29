@@ -17250,6 +17250,19 @@ void CUtlRBTree24::sub_1007ffc0(int elem)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10080730 size=0x10
+namespace lifted {
+extern char g_1044f044;
+}
+struct CUnknown10080730 { void * sub_10080730(); };
+void * CUnknown10080730::sub_10080730()
+{
+    *(int *)this = (int)&lifted::g_1044f044;
+    *(int *)((char *)this + 4) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10080750 size=0xa
 void CUnknown10080750::sub_10080750(int value)
 {
