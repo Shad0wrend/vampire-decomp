@@ -69755,6 +69755,21 @@ char CUnknown101c2b30::sub_101c2b30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2bc0 size=0x4e
+struct CAnimParams {
+	char pad[0x4c];
+	EHANDLE m_hEnt;
+	void sub_101c2910(int a, int b, const float *v1, const float *v2, int c, int d, int e, int f);
+	void sub_101c2bc0(CBaseEntity *pEnt, int a, int b, const float *v, int c, int d, int e);
+};
+extern float g_1070d1b0[3];
+void CAnimParams::sub_101c2bc0(CBaseEntity *pEnt, int a, int b, const float *v, int c, int d, int e)
+{
+	m_hEnt = pEnt;
+	sub_101c2910(a, b, v, g_1070d1b0, c, d, e, -1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2c30 size=0x1c
 namespace lifted {
 extern char g_1070d1b0;
