@@ -53,3 +53,14 @@ void CTETParticle::vfunc4(int a, int b)
 	engine->vfunc103(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
 }
 // END FUNCTION
+
+// FUNCTION: 0x100696a0 size=0x6
+#include "CTETParticle.h"
+namespace lifted {
+extern char g_106c6db4;
+}
+ServerClass * CTETParticle::vfunc0()
+{
+    return (ServerClass *)((int)&lifted::g_106c6db4);
+}
+// END FUNCTION
