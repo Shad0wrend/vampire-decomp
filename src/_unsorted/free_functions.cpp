@@ -113747,6 +113747,20 @@ void CUnknown102e12c0::sub_102e7e60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e8220 size=0x1a
+namespace lifted {
+extern int g_1060ee50;
+extern int g_1060ee54;
+extern char g_1060ee94;
+}
+int sub_102e8220()
+{
+    lifted::g_1060ee54 = 8;
+    lifted::g_1060ee50 = (int)&lifted::g_1060ee94;
+    return (int)&lifted::g_1060ee50;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e8250 size=0x8
 void __fastcall sub_102e8250(float *p) { p[6] = 3.402823466e+38f; }
 // END FUNCTION
