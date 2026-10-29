@@ -84,4 +84,5 @@
 	int sub_102ad260();	// SelectIdealState helper: with condition 0x21 set stamps the source file / line 0x4468 (+0x1b3c / +0x1b40), sets the ideal state +0x5cc4 to 8 (flag 0x100 of +0x14b8 unless the state is already 8) and returns 8; else 0
 	void *sub_1032e7b0();	// CBaseCombatCharacter::GetActiveWeapon (stub 0x10007e19), called directly
 	bool sub_10278c60();	// CAI_BaseNPC::vfunc575 (stub 0x1000c135), tail called by vfunc575
+	void sub_1028d860(const Vector *pPos);	// the slot 583 body (the slot is declared without its argument; CCineNPC's override has none): slot 614 when pPos is within 2048 units of the slot 217 origin
 	void sub_102bf770();	// alternate action end (stub-less, called by slot 531 / 442): when the ideal activity (+0xff0) is the navigator's task id (+0x5d34) the NPC's sub_1027a6c0 result becomes the ideal activity (sub_10272650); clears the byte at +0x1a40, lets the navigator finish (sub_102ee2a0) and clears +0x63ec
