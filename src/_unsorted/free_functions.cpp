@@ -7248,6 +7248,25 @@ bool CUtlRBTree36::sub_1004c4c0(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004d060 size=0x4d
+#include "CPhysicsSpring.h"
+struct CPointEntityBaseView { void sub_100090fc(int a); };
+extern int g_104494ec;	// CPhysicsSpring vftable
+// TARGET: CPhysicsSpring::sub_1004d060
+CPhysicsSpring *CPhysicsSpring::sub_1004d060()
+{
+	((CPointEntityBaseView *)this)->sub_100090fc(0);
+	*(void **)this = &g_104494ec;
+	m_pSpring = 0;
+	m_flSpringConstant = 150.0f;
+	m_flLength = 0;
+	m_flDamping = 2.0f;
+	m_flRelativeDamping = 0.01f;
+	m_bStartEndFixed = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004d100 size=0x27
 #include "CPhysicsSpring.h"
 
