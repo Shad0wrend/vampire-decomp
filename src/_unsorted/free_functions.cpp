@@ -88167,6 +88167,17 @@ CVDmgBlock16_t *CVStatInfoList_t::sub_10200260(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10200370 size=0x53
+#include "CVStatInfoList_t.h"
+CVStatInfo_t *CVStatInfoList_t::sub_10200370(int idx)
+{
+	if (idx >= 0 && idx < m_nStats)
+		return &m_pStats[idx];
+	static CVStatInfo_t s_default;
+	return &s_default;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10200410 size=0x189
 #include <stdio.h>
 #include "CVStatInfoList_t.h"
