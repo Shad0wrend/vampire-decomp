@@ -9,6 +9,7 @@ class CWeaponThrown_Chang_Energy_Ball
 public:
 	CWeaponThrown_Chang_Energy_Ball *vfunc5(unsigned int flags);
 	void sub_10013a57();
+	void sub_103efdd0(CBaseEntity *pEnt);
 	void vfunc103();	// slot 103 "...::Restore-like": CBaseCombatWeapon::vfunc103 (stub 0x100047be), then the energy ball's timers and sound fields at +0x910 / +0x91c / +0x928 / +0x938 / +0x93c from the global at 0x1070b228
 	void sub_100047be();	// CBaseCombatWeapon::vfunc103 (stub 0x100047be), called directly
 	void vfunc104();	// "...::Precache": precaches the grenade particle systems, the tic sound and the relief models, then CBaseCombatWeapon::Precache
