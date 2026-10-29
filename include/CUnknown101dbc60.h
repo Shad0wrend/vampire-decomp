@@ -6,8 +6,15 @@
 
 class IKVNodeView;
 
+class CUnknown101db210;
+
 struct CUnknown101dbc60Tail	// the object at +0x24
 {
+	int m_n00;
+	int m_nCount;	// 0x4: number of affects tables
+	CUnknown101db210 **m_ppTables;	// 0x8
+	void sub_101db8e0();	// Debug_Display: prints "[[Affects_Table_List]]:" and then every table
+
 	void sub_10004b1f();	// debug display (stub 0x10004b1f)
 	void sub_101db630(IKVNodeView *pKV, void *pFilter);	// loads the tail from the node (stub 0x1000394a)
 };
