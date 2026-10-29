@@ -140520,6 +140520,24 @@ int sub_103e1c00(char *pList)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e1c80 size=0x4c
+struct Node60 { int d[8]; int m_n20; int m_n24; int e[5]; };
+int sub_103e1c00(Node60 *);
+void sub_103e1c80(Node60 *list, Node60 *src, int parent)
+{
+    int idx = sub_103e1c00(list);
+    Node60 *n = &list[idx];
+    *n = *src;
+    n->m_n20 = -1;
+    if (parent != -1) {
+        n->m_n24 = parent;
+        list[parent].m_n20 = idx;
+    } else {
+        n->m_n24 = -1;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e1d20 size=0x43
 #include "CFlameCluster.h"
 void *sub_100aa720(int size);
