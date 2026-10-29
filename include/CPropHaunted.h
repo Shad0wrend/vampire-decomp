@@ -38,6 +38,7 @@ public:
 	int sub_1008f7b0(const char *label);	// CBaseAnimating::LookupSequence (stub 0x1000e057), called directly
 	void sub_10260a50(int nSequence);	// CBaseAnimating::ResetSequence (stub 0x1000d0b2), called directly
 	void sub_10214480();	// the spin think: once the sound has run its time stops it and clears the think; otherwise (slot 250 with 0) fades the sound volume out over its length through the engine sound system (slot 11, channel 4, 75 dB) to everyone who can hear the prop and thinks again 0.05 s ahead
+	void sub_1018fb90(CBaseEntity *pOther);	// CBreakableProp::vfunc266 (stub 0x10015208), called directly
 	void sub_10214200(const char *pszSound);	// stops the sound (null = the empty string, nothing when empty) on channel 4 of the prop's engine index
 	void sub_10214080(const char *pszSound);	// stub 0x10002603: emits the sound (null = the empty string) from the prop to everyone who can hear it (CPASAttenuationFilter), channel 4, 75 dB
 	void sub_10214080(int a);	// the caller of the activation passes the string at +0x7cc as an int
