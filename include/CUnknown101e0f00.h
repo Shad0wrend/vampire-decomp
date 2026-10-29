@@ -104,6 +104,7 @@ public:
 	int sub_101e12a0(int id);	// the index of the entry of the discipline id, -1 when none (stub 0x10007df1)
 	CUnknown101e0f00Entry *sub_101e11c0(int index);	// the entry with that index (stub 0x100123d7)
 	void sub_101e3910(int a, int b, int c, int d);	// "CallbackHit": looks the entry of discipline c up, logs "Discipline<%s> CallbackHit", runs the entry's tail callback worker with (d, a, b, c | 0x80000000) while the global current entry (0x10739a74) points at the entry
+	void sub_101e3ee0(S1033d380 *pObj);	// runs the "InterruptSchedule" callback for every active discipline (bit of the mask at +0xeb4) whose entry has the byte at +0x34 set
 	void sub_101e3a30(S1033d380 *pObj, int id);	// "InterruptSchedule" callback: looks the entry of discipline id up, logs "Discipline<%s> InterruptSchedule", runs the entry's tail callback worker with the character's two lookups while the global current entry (0x10739a74) points at the entry
 	void sub_101e3850(int a, int b, int id, int d);	// "Hit" callback: looks the entry of discipline id up, logs "Discipline<%s> Hit", notes the hit on the entry's hit source (a, id), runs the entry's tail callback worker with (d, a, b, id | 0x80000000) while the global current entry (0x10739a74) points at the entry
 	unsigned int sub_101e1870(unsigned int id);	// id | 0x80000000, called with this in ecx (the game's member form of the free function)
