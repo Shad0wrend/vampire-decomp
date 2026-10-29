@@ -20,7 +20,9 @@ public:
 	int m_nTick748;	// 0x748: the engine tick of the last update
 	int m_iAxis;	// 0x74c
 	EHANDLE m_hSource750;	// 0x750: the entity whose two time floats (+0x468, +0x480) drive the hand; none = time since spawn
-	char m_pad754[0x75c - 0x754];
+	int m_n754;	// 0x754
+	char m_b758;	// 0x758
+	char m_pad759[0x75c - 0x759];
 	int m_nMode75c;	// 0x75c: 1 = minutes, 2 = hours
 	int m_nDivisor760;	// 0x760
 	float m_flSpawnTime;	// 0x764
