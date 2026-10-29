@@ -21,4 +21,6 @@ public:
 	EHANDLE m_h914;
 	char m_pad0918[4];
 	char m_b91c;	// 0x91c: done flag
+	char m_pad091d[0x924 - 0x91d];
+	EHANDLE m_h924;	// 0x924: the entity whose think is set
 };
