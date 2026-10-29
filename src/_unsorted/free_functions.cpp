@@ -7999,6 +7999,15 @@ int sub_10056660()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10056a30 size=0x11
+struct CUnknown10056a30 { void sub_10056a30(int); };
+void CUnknown10056a30::sub_10056a30(int a0)
+{
+    *(char *)((char *)this + 0x451) = 3;
+    *(char *)((char *)this + 0x453) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10056a60 size=0x14
 #include "CUnknown10056a00.h"
 
