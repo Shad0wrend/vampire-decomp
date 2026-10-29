@@ -1,0 +1,27 @@
+// CBaseNetworkable: the networkable part of an entity (vptr, IServerNetworkable vptr, edict at +8). Only what decompiled code needs.
+#pragma once
+
+#include "engineserver.h"
+
+// The bit vector handed to vfunc6: its bytes at +0x10.
+struct CBaseNetworkableBits_t
+{
+	char m_pad0000[0x10];
+	unsigned char *m_pBits;	// 0x10
+};
+
+class CBaseNetworkable
+{
+public:
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual void vfunc2();
+	virtual void vfunc3();
+	virtual void vfunc4();
+	virtual void vfunc5();
+	virtual void vfunc6(CBaseNetworkableBits_t *pBits);	// sets the bit of this edict's index
+	int m_pad04;
+	int m_pEdict;	// 0x8
+
+	int sub_100b7de0();	// the engine's index of the edict
+};
