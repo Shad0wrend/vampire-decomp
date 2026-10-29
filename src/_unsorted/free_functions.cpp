@@ -77825,6 +77825,34 @@ int CUnknown101e0f00::sub_101e1250(int key, int offset)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e12f0 size=0x4d
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+struct CNamePtr {
+	const char *m_p;
+	const char *Get() { return m_p ? m_p : ""; }
+};
+struct CNamedEntryX {
+	int m_unk0;
+	int m_unk4;
+	CNamePtr m_Name;
+};
+struct CNamedListX {
+	int m_unk0;
+	int m_count;
+	CNamedEntryX **m_pData;
+	int sub_101e12f0(const char *name);
+};
+// TARGET: CNamedListX::sub_101e12f0
+int CNamedListX::sub_101e12f0(const char *name)
+{
+	for (int i = 0; i < m_count; i++) {
+		if (_strcmpi(m_pData[i]->m_Name.Get(), name) == 0)
+			return i;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e1360 size=0xa8
 extern "C" char *_strlwr(char *);
 extern "C" char *strstr(const char *, const char *);
