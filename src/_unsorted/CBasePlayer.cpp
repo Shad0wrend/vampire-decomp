@@ -694,6 +694,15 @@ void CBasePlayer::vfunc426()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10165a70 size=0x47
+#include "CBasePlayer.h"
+#include "CEHandleGet.h"
+void CBasePlayer::vfunc427()
+{
+	sub_10165790(m_n153C != -1 ? (CBaseEntity *)EHandle_Get(m_h1538) : 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10165d90 size=0x13d
 #include "CBasePlayer.h"
 #include "CBaseCombatCharacter.h"
