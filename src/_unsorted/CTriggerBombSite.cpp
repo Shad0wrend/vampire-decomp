@@ -36,6 +36,15 @@ void CTriggerBombSite::vfunc176(void *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10211210 size=0x50
+#include "CTriggerBombSite.h"
+int CTriggerBombSite::vfunc35(CBasePlayer *pPlayer)
+{
+	EHANDLE &h = *(EHANDLE *)((char *)pPlayer + 0x1cb8);
+	return (h.Get() == (CBaseEntity *)this) ? 0x11 : 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10211280 size=0xd1
 #include "CTriggerBombSite.h"
 
