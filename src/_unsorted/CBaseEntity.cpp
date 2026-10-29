@@ -2827,6 +2827,17 @@ int CBaseEntity::sub_100b3d10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b4b40 size=0x55
+#include "CBaseEntity.h"
+#include "CEntitySoundOriginView.h"
+
+// TARGET: CBaseEntity::vfunc193
+Vector CBaseEntity::vfunc193()
+{
+	return *(const Vector *)((CEntitySoundOriginView *)this)->GetAbsOrigin() + m_vecViewOffset;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4bc0 size=0x8
 #include "CBaseEntity.h"
 
