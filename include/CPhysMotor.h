@@ -35,4 +35,6 @@ public:
 	float m_flLastTime468;	// 0x0468
 	char m_pad046c[0x478 - 0x46c];
 	float m_flCurrent478;	// 0x0478
+	char m_pad047c[4];
+	Vector m_vec480;	// 0x0480
 };
