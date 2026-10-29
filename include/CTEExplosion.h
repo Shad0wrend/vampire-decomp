@@ -23,6 +23,7 @@ public:
 	int m_nField38;	// 0x38
 	int m_nField3c;	// 0x3c
 
+	CTEExplosion *sub_10061820(const char *pName);	// constructor
 	void sub_1000e90d();	// destructor body
 	void vfunc4(void *pFilter, int delay);	// slot 4 "Create"-like worker (stub 0x100051a0), called directly
 };
