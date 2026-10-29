@@ -17630,6 +17630,26 @@ void List1007e410::sub_1007e410(Elem1007e410 *pElem)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007e500 size=0x57
+#include "CUnknown1007ce20.h"
+#include "utlvector.h"
+void operator delete(void *);
+typedef CUtlVector<CUnknown10075aa0 *> EventVec;
+struct CUnknown1007ce20Unit : CUnknown1007ce20 { void sub_1007e500(CUnknown10075aa0 *pEvent); };
+void CUnknown1007ce20Unit::sub_1007e500(CUnknown10075aa0 *pEvent)
+{
+	EventVec *v = (EventVec *)this;
+	for (int i = v->Count() - 1; i >= 0; i--) {
+		if ((*v)[i] == pEvent)
+			v->Remove(i);
+	}
+	if (pEvent) {
+		pEvent->sub_10075350();
+		delete pEvent;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007e580 size=0x8
 void __fastcall sub_1007e580(int *p) { p[0x5c / 4] = 0; }
 // END FUNCTION
