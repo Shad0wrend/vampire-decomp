@@ -70938,6 +70938,21 @@ void sub_101ce2e0(PlayerSlots162 *pPlayer, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ce3d0 size=0x42
+#include "globalvars.h"
+class CBaseEntity;
+CBaseEntity *sub_101cd9e0(int index);
+void sub_101ce2e0(CBaseEntity *pEnt, int a, int b);
+void sub_101ce3d0(int a, int b)
+{
+    for (int i = 1; i <= gpGlobals->maxClients; i++) {
+        CBaseEntity *pPlayer = sub_101cd9e0(i);
+        if (pPlayer)
+            sub_101ce2e0(pPlayer, a, b);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ce440 size=0x17c
 #include "CReliableBroadcastFilter.h"
 

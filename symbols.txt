@@ -662,6 +662,7 @@
 0x1000285b func   ?sub_101fd250@CVStatAction_t@@QAEPBDXZ CVStatAction_t::sub_101fd250
 0x10002860 func   ?sub_101f9a80@@YGXPAVCBasePlayer@@PBD@Z sub_101f9a80
 0x10002865 func   ?sub_103fa0d0@@YAHXZ sub_103fa0d0
+0x1000286f func   ?sub_101ce3d0@@YAXHH@Z sub_101ce3d0
 0x10002874 func   ?sub_100a8fc0@CBaseEntity@@QAEXD@Z CBaseEntity::sub_100a8fc0
 0x10002883 func   ?sub_100fe1e0@CUnknown100fde30@@QAEXM@Z CUnknown100fde30::sub_100fe1e0
 0x10002888 func   ??0CDialogDependency@@QAE@XZ CDialogDependency::CDialogDependency
