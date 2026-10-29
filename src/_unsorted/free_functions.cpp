@@ -58918,6 +58918,19 @@ int *sub_1018f000()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018f690 size=0x43
+#include "CBreakableProp.h"
+__declspec(dllimport) void DevWarning(const char *, ...);
+void CBreakableProp::sub_1018f690(int mode)
+{
+	if (mode < 0 || mode > 2) {
+		DevWarning("Invalid collision type %d set on : %s\n", mode, sub_100ab4f0());
+		mode = 2;
+	}
+	m_nBreakMode = mode;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018f700 size=0xd
 void CUnknown1018f700::sub_1018f700(char value)
 {

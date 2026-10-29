@@ -7465,6 +7465,7 @@
 0x100124b8 func   ?sub_10248430@CUnknown10248a50@@QAE_NHPBDH@Z CUnknown10248a50::sub_10248430
 0x100124bd func   ?sub_101cf250@@YAXPAMH@Z sub_101cf250
 0x100124c7 func   _item_g_badlucktalisman item_g_badlucktalisman
+0x100124d1 func   ?sub_1018f690@CBreakableProp@@QAEXH@Z CBreakableProp::sub_1018f690
 0x100124d6 func   ?vfunc35@CMultiplayRules@@UAEXPAVCBaseEntity@@@Z CMultiplayRules::vfunc35
 0x100124e0 func   ?vfunc244@CFuncPlatRot@@QAEXXZ CFuncPlatRot::vfunc244
 0x100124ea func   ?sub_103be090@CUnknown10381be0@@QAE_NXZ CUnknown10381be0::sub_103be090
