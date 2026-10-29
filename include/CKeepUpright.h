@@ -10,7 +10,7 @@ extern int g_104462b4;	// CKeepUpright's IMotionEvent vftable
 class CKeepUpright : public CBaseEntity
 {
 public:
-	CKeepUpright() : CBaseEntity(0), m_flAngularLimit((*(void *volatile *)&m_motionEvent = &g_10446750, *(volatile unsigned int *)&m_attachedObject = -1, 0.0f))
+	CKeepUpright() : CBaseEntity(0), m_attachedObject(-1), m_flAngularLimit((*(void *volatile *)&m_motionEvent = &g_10446750, 0.0f))
 	{
 		m_motionEvent = &g_104462b4;
 		m_flAngularLimit = 15.0f;
