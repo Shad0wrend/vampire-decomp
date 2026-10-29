@@ -135,7 +135,7 @@ public:
 	virtual void vfunc205(); virtual void vfunc206(); virtual void vfunc207(); virtual void vfunc208(); virtual void vfunc209();
 	virtual void vfunc210(); virtual void vfunc211(); virtual void vfunc212(); virtual void vfunc213(); virtual void vfunc214();
 	virtual void vfunc215(); virtual void vfunc216(); virtual void vfunc217(); virtual void vfunc218(); virtual void vfunc219();
-	virtual const float *vfunc220();	// the origin (a pointer to 3 floats)
+	virtual const Vector *vfunc220();	// the origin
 	void sub_1000cb8a();	// as in CLogicalEntity (transplant)
 
 	char m_pad4[0x450];
