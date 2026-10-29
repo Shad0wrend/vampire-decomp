@@ -76,7 +76,8 @@ public:
 	virtual void vfunc91(); virtual void vfunc92(); virtual void vfunc93(); virtual void vfunc94(); virtual void vfunc95();
 	virtual void vfunc96(); virtual void vfunc97();
 	virtual int vfunc98(int a, void *b);
-	virtual void vfunc99(); virtual void vfunc100();
+	virtual void *vfunc99(const char *pszName, int a, int b);
+	virtual void vfunc100();
 	virtual void vfunc101(int index);
 	virtual void vfunc102(int portalKey, int bOpen);	// SetAreaPortalState
 	virtual void vfunc103(int a, int b, const void *c, void *d, int e);
