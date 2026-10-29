@@ -32,7 +32,9 @@ public:
 	CAI_NPC_V(140) CAI_NPC_V(141) CAI_NPC_V(142) CAI_NPC_V(143)
 	virtual void vfunc144(int a);
 	CAI_NPC_V(145) CAI_NPC_V(146) CAI_NPC_V(147) CAI_NPC_V(148) CAI_NPC_V(149)
-	CAI_NPC_V10(15)
+	CAI_NPC_V(150) CAI_NPC_V(151) CAI_NPC_V(152) CAI_NPC_V(153) CAI_NPC_V(154) CAI_NPC_V(155) CAI_NPC_V(156) CAI_NPC_V(157)
+	virtual bool vfunc158();	// asked by the Troika schedule code ("slot 158 holds")
+	CAI_NPC_V(159)
 	CAI_NPC_V(160) CAI_NPC_V(161) CAI_NPC_V(162) CAI_NPC_V(163) CAI_NPC_V(164) CAI_NPC_V(165) CAI_NPC_V(166)
 	virtual int vfunc167();	// the NPC's squad/classification id (compared between a squad member and its leader)
 	virtual CBaseEntity *vfunc168();	// the entity the NPC is after (its enemy); 0 when none
