@@ -143030,6 +143030,26 @@ void CWeaponRanged_FlameThrower::sub_103e3d80(float *pOrigin, float *pAngles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e3e40 size=0x52
+#include <string.h>
+struct SElem1c { char m_pad[0x1c]; };
+struct SElemVec1c {
+	SElem1c *m_pMem;
+	int m_nAlloc;
+	int m_nGrow;
+	int m_nSize;
+
+	void sub_103e3e40(int from, int num);
+};
+
+void SElemVec1c::sub_103e3e40(int from, int num)
+{
+	int numToMove = m_nSize - from - num;
+	if (numToMove > 0 && num > 0)
+		memmove(&m_pMem[from], &m_pMem[from + num], numToMove * sizeof(SElem1c));
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e3ec0 size=0x76
 struct Elem1c { char d[0x1c]; };
 extern void *(*g_109f3638)(void *, int);
