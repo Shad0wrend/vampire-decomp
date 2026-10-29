@@ -88651,6 +88651,28 @@ CUnknown102029c0 *CUnknown10203240::sub_10203240(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10203320 size=0x50
+#include "CUnknown10202ba0.h"
+extern "C" int sprintf(char *, const char *, ...);
+void sub_10203dd0(const char *);
+
+struct CDumpTable10203320 {
+	int m_n0;
+	int m_n4;
+	int m_nCount;	// 0x8
+	CUnknown10202ba0 **m_ppItems;	// 0xc
+};
+
+void __fastcall sub_10203320(CDumpTable10203320 *pTable)
+{
+	char buf[128];
+	sprintf(buf, "\n   %s:\n\n", "Strings");
+	sub_10203dd0(buf);
+	for (int i = 0; i < pTable->m_nCount; i++)
+		pTable->m_ppItems[i]->sub_10202ba0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102033e0 size=0x22
 // TARGET: sub_102033e0
 #include "CUnit101d5e00.h"
