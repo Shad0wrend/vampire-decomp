@@ -82,6 +82,32 @@ int CWeaponMelee_TzimisceMelee::vfunc367(int a, float b, float c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e8be0 size=0x4a
+#include "CWeaponMelee_TzimisceMelee.h"
+
+struct S103e8be0 { char pad[0xa8]; int m_field; };
+
+// TARGET: CWeaponMelee_TzimisceMelee::vfunc370
+void CWeaponMelee_TzimisceMelee::vfunc370(int *event, CBaseCombatWeapon *other)
+{
+	switch (*event) {
+	case 0xbbb:
+		break;
+	case 0xbe5:
+		if (!((S103e8be0 *)other)->m_field)
+			sub_103e8c50();
+		break;
+	case 0xbe6:
+		if (!((S103e8be0 *)other)->m_field)
+			sub_103e8c90();
+		break;
+	default:
+		CWeaponMelee::vfunc370(event, other);
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e8cd0 size=0xbf
 #include "CWeaponMelee_TzimisceMelee.h"
 #include "CUnknown1070b244.h"
