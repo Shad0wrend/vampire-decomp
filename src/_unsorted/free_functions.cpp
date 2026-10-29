@@ -24047,6 +24047,20 @@ Vector Vector::sub_100a19c0(float fl) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2260 size=0x1a
+namespace lifted {
+extern int g_10552d50;
+extern int g_10552d54;
+extern char g_10552d94;
+}
+int sub_100a2260()
+{
+    lifted::g_10552d54 = 3;
+    lifted::g_10552d50 = (int)&lifted::g_10552d94;
+    return (int)&lifted::g_10552d50;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a4930 size=0x7a
 #include "CBaseEntity.h"
 
