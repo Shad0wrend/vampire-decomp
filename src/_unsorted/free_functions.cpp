@@ -1,6 +1,20 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10025ed0 size=0x1a
+namespace lifted {
+extern int g_10536d08;
+extern int g_10536d0c;
+extern char g_10536d4c;
+}
+int sub_10025ed0()
+{
+    lifted::g_10536d0c = 5;
+    lifted::g_10536d08 = (int)&lifted::g_10536d4c;
+    return (int)&lifted::g_10536d08;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027850 size=0x8
 namespace lifted {
 int sub_1000b5d2();
