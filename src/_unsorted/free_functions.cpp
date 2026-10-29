@@ -93129,6 +93129,22 @@ void CUnknown1021e7e0::sub_1021e7e0(int key, CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021e870 size=0x41
+#include <string.h>
+char *sub_10203d60(const char *);
+void sub_1042bff0(int *, const char *);
+int *__stdcall sub_1021e870(int *out, const char *name)
+{
+	char *low = sub_10203d60(name);
+	if (strstr(low, "item_")) {
+		sub_1042bff0(out, low);
+		return out;
+	}
+	*out = 0;
+	return out;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021e8e0 size=0xa2
 #include <string.h>
 #include "CUnknown1021e8e0.h"
