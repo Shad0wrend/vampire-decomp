@@ -108867,6 +108867,20 @@ void sub_102cc540()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cc640 size=0x1a
+namespace lifted {
+extern int g_10608a8c;
+extern int g_10608a90;
+extern char g_10608ad4;
+}
+int sub_102cc640()
+{
+    lifted::g_10608a90 = 9;
+    lifted::g_10608a8c = (int)&lifted::g_10608ad4;
+    return (int)&lifted::g_10608a8c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cc6a0 size=0x1
 void sub_102cc6a0()
 {
