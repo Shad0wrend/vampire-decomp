@@ -373,6 +373,34 @@ float CMultiplayRules::vfunc49(CBaseEntity *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10142080 size=0x4f
+#include "CMultiplayRules.h"
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "globalvars.h"
+#define V4(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3();
+#define V16(p) V4(p##a) V4(p##b) V4(p##c) V4(p##d)
+struct S10142080Slots {
+	V16(a) V16(b) V16(c) V16(d) V16(e) V16(f) V16(g) V16(h) V16(i) V16(j) V16(k) V16(l) V16(m) V16(n) V16(o) V16(p) V16(q) V16(r) V16(s) V16(t) V16(u)
+	virtual void s336(); virtual void s337(); virtual void s338(); virtual void s339(); virtual void s340();
+	virtual void s341(); virtual void s342(); virtual void s343(); virtual void s344(); virtual void s345();
+	virtual unsigned int vfunc346();
+};
+struct S10142080Rules {
+	V16(a) V16(b) V16(c)
+	virtual void s48();
+	virtual float vfunc49(CBaseEntity *pPlayer);
+};
+extern CGlobalEntityList g_106eb5d8;
+float CMultiplayRules::vfunc50(CBaseEntity *pPlayer)
+{
+	if (pPlayer && (((S10142080Slots *)pPlayer)->vfunc346() & 8)
+		&& g_106eb5d8.sub_100f7040() >= gpGlobals->m_nEdicts - 100)
+		return ((S10142080Rules *)this)->vfunc49(pPlayer);
+	return 0.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101420f0 size=0x29
 #include "CBaseEntity.h"
 Vector CMultiplayRules::vfunc51(CBaseEntity *pEnt)
