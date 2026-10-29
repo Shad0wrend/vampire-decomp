@@ -53,4 +53,5 @@ public:
 	const char *m_pszEndName;	// 0x46c
 	Vector m_vecStart;	// 0x470
 	Vector m_vecEnd;	// 0x47c
+	int m_nLastFrame488;	// 0x488: engine counter value of the last call of vfunc182
 };
