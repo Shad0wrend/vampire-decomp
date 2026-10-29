@@ -22,6 +22,27 @@ CTriggerPlayerActivityLevel::CTriggerPlayerActivityLevel()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10210830 size=0x4c
+struct V10210830 {
+	void *sub_10210830(unsigned int flags);
+};
+void __fastcall sub_100cd2d0(void *p);
+void __fastcall sub_1009df20(void *p);
+void sub_100aa7b0(void *p);
+// TARGET: V10210830::sub_10210830
+void *V10210830::sub_10210830(unsigned int flags)
+{
+	sub_100cd2d0((char *)this + 0x580);
+	sub_100cd2d0((char *)this + 0x568);
+	sub_100cd2d0((char *)this + 0x4bc);
+	sub_100cd2d0((char *)this + 0x4a4);
+	sub_1009df20(this);
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102108e0 size=0x9a
 #include "CTriggerPlayerActivityLevel.h"
 
