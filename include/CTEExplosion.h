@@ -5,7 +5,22 @@
 #include "Vector.h"
 #include "CBaseTempEntity.h"
 
-class CTEExplosion : public CBaseTempEntityHead
+// CTEParticleSystem: the part between CBaseTempEntity and CTEExplosion (the origin, zeroed by its constructor)
+class CTEParticleSystemHead : public CBaseTempEntityHead
+{
+public:
+	CTEParticleSystemHead(const char *pName) : CBaseTempEntityHead(pName)
+	{
+		m_vecOrigin.x = 0;
+		m_vecOrigin.y = 0;
+		m_vecOrigin.z = 0;
+	}
+
+	char m_pad0004[8];
+	Vector m_vecOrigin;	// 0x0c
+};
+
+class CTEExplosion : public CTEParticleSystemHead
 {
 public:
 	CTEExplosion(const char *pName);	// 0x10061820
@@ -14,8 +29,6 @@ public:
 	virtual CTEExplosion *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3(const Vector *pOrigin, const Vector *pAngles);	// slot 3 "Test": the fireball model, scale 0.5, frame rate 15, no flags; the position is the origin raised by a constant and moved 50 units forward (flattened direction); then the effect is created for every player (slot 4)
 
-	char m_pad0004[8];
-	Vector m_vecOrigin;	// 0x0c
 	int m_nField18;	// 0x18
 	int m_nField1c;	// 0x1c
 	int m_nField20;	// 0x20
