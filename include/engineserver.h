@@ -67,7 +67,7 @@ public:
 	virtual void vfunc75(int value);
 	virtual void vfunc76(); virtual void vfunc77();
 	virtual void vfunc78(const char *pszValue);	// message write: a string
-	virtual void vfunc79(); virtual void vfunc80(); virtual void vfunc81();
+	virtual void vfunc79(); virtual void vfunc80(); virtual void vfunc81(int idx, const char *pszFormat, ...);	/* Con_NPrintf (variadic: cdecl, the caller pushes this and pops all) */
 	virtual int vfunc82(const char *pszName, int size);	// registers a user message by name and size, returns its id
 	virtual void vfunc83();
 	virtual const char *vfunc84(int index);	// Cmd_Argv
