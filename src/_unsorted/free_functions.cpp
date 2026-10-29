@@ -117467,6 +117467,17 @@ CAI_Waypoint *CAI_Pathfinder::sub_10303cd0(const float *vecStart, const float *v
 }
 // END FUNCTION
 
+// FUNCTION: 0x10303f80 size=0x37
+namespace lifted {
+struct C100104ba { int sub_100104ba(int, int, int, int, int, int, int, int, int, int); };
+}
+struct CUnknown10303f80 { int sub_10303f80(int, int, int, int, int, int, int, int, int); };
+int CUnknown10303f80::sub_10303f80(int a0, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+{
+    return ((lifted::C100104ba *)this)->sub_100104ba(2, a0, a1, a2, a3, a4, a5, a6, a7, a8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10304020 size=0xc6
 #include "CAI_Pathfinder.h"
 #include "CAI_Waypoint.h"
