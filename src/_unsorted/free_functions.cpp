@@ -60262,6 +60262,28 @@ void CUnknown1018d7f0::sub_1018d7f0(CBaseEntity **ppEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018d840 size=0x52
+struct SInputActivator {
+	CBaseEntity *pActivator;
+};
+struct SThinkView {
+	char pad0[0x118];
+	int m_pfnThink;
+	char pad11c[0x464 - 0x11c];
+	EHANDLE m_hActivator;
+};
+void sub_100058c6();
+
+void __fastcall sub_1018d840(SThinkView *p, int unused, SInputActivator *pData)
+{
+	p->m_hActivator = pData->pActivator;
+	if (p->m_pfnThink == (int)sub_100058c6)
+		((CBaseEntity *)p)->sub_100ac4e0(0, 0, 0);
+	else
+		((CBaseEntity *)p)->sub_100ac4e0((int)sub_100058c6, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018da10 size=0x1a
 namespace lifted {
 extern int g_1058cbf8;
