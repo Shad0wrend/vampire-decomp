@@ -105718,6 +105718,11 @@ char CAI_BaseNPCTroika::sub_1028a190()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028ac10 size=0x47
+#include "ehandle.h"
+static bool (CHandle<CBaseEntity>::*s_ne)(CBaseEntity *) const = &CHandle<CBaseEntity>::operator!=;
+// END FUNCTION
+
 // FUNCTION: 0x1028ac80 size=0x26
 #include "CBaseHandle.h"
 
