@@ -154794,6 +154794,30 @@ int CTable::sub_10427520(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10427620 size=0x55
+#include "CGameRulesSlotTable.h"
+
+extern float g_104454c4;
+
+int CGameRulesSlotTable::sub_10427620(int index)
+{
+	if (index >= 1 && index < m_nCount)
+	{
+		int *p = (int *)this;
+		if (p[index * 9 + 6] != -1)
+			return p[index * 9 + 6];
+		CGameRulesSlotHolder *pHolder = (CGameRulesSlotHolder *)p[index * 9 + 9];
+		if (pHolder)
+		{
+			if (pHolder->m_pInner->vfunc1())
+				return (int)g_104454c4;
+			return (int)pHolder->m_pInner->m_fValue28;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10427700 size=0x69
 #include "CUnknown10427700.h"
 #include <string.h>
