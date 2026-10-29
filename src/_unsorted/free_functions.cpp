@@ -93584,6 +93584,20 @@ int CVDmgBlock16_t::sub_10230fc0(void *pCharacter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10231260 size=0x1a
+namespace lifted {
+extern int g_105b5960;
+extern int g_105b5964;
+extern char g_105b59a4;
+}
+int sub_10231260()
+{
+    lifted::g_105b5964 = 2;
+    lifted::g_105b5960 = (int)&lifted::g_105b59a4;
+    return (int)&lifted::g_105b5960;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10231290 size=0x40
 #include "vampire.h"
 #include "CTriggerElectricBugaloo.h"
