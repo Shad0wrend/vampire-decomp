@@ -15,6 +15,7 @@ public:
 	void sub_100579f0();	// frees every record, then sub_10057680 (stub 0x100087ce)
 	void sub_10057740(const char *pszName, const char *pszMap, int nState);	// adds a record in front of the list (stub 0x10009066)
 	int sub_100578e0(CRestore *pRestore);	// restores the list: the count from the "GLOBAL" block, then one "GENT" block per record
+	int sub_10057820(const char *pszName);	// stub 0x100020bd: the state (+0x60) of the record of that name, 0 when there is none
 	char *sub_100576a0(const char *pszName);	// finds the record whose name (+0) equals pszName (case-insensitive), null when none; null for a null name
 	void sub_100579b0(const char *pszName, const char *pszValue);	// finds the record of pszName and copies pszValue (or the default string at 0x106b8540 when null) into its 0x20 byte value at +0x40
 };
