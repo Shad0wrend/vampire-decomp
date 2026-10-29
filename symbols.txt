@@ -4306,6 +4306,7 @@
 0x1000a7a9 func   ?vfunc82@CBaseCombatCharacter@@UAEPAUdatamap_t@@XZ CBaseCombatCharacter::vfunc82
 0x1000a7b3 func   ?sub_10400f60@@YAHXZ sub_10400f60
 0x1000a7b8 func   ?sub_10054360@@YAXPAUS10054360Particle@@@Z sub_10054360
+0x1000a7bd func   ?sub_1030b7e0@CUnknown1030bc20@@QAEPAXXZ CUnknown1030bc20::sub_1030b7e0
 0x1000a7c7 func   ?sub_10095cb0@CBaseAnimating@@QAEMHM@Z CBaseAnimating::sub_10095cb0
 0x1000a7d1 func   ?sub_10341b60@CBaseCombatCharacter@@QAEXD@Z CBaseCombatCharacter::sub_10341b60
 0x1000a7d6 func   ?sub_103b7040@@YADXZ sub_103b7040

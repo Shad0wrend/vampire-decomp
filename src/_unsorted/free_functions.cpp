@@ -124024,6 +124024,23 @@ CUnknown1030bc20_Record *CUnknown1030bc20::sub_1030b7c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030b7e0 size=0x55
+#include "CUnknown1030bc20.h"
+struct SZero3 {
+    float x, y, z;
+    SZero3() { x = 0.0f; y = 0.0f; z = 0.0f; }
+    ~SZero3() {}
+};
+extern char g_10936afc[];
+void *CUnknown1030bc20::sub_1030b7e0()
+{
+    if (m_unk24 && m_unk24->m_unk30)
+        return m_unk24->m_unk30;
+    static SZero3 s_zero;
+    return g_10936afc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030b880 size=0x7
 struct CUnknown1030b880 { float sub_1030b880(); };
 float CUnknown1030b880::sub_1030b880()
