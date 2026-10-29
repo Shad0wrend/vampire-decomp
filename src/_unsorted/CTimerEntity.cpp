@@ -1,6 +1,22 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10131600 size=0x55
+#include "CTimerEntity.h"
+extern float g_10465b1c;
+
+// TARGET: CTimerEntity::vfunc103
+void CTimerEntity::vfunc103()
+{
+	if (m_n4a4 == 0 && m_fInterval < g_10465b1c)
+		m_fInterval = g_10465b1c;
+	if (m_n498 == 0 && (m_fInterval > 0.0f || m_n4a4 != 0))
+		sub_10131750();
+	else
+		sub_10131770();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10131680 size=0x23
 struct CTimerEntityCallee {
     void sub_10010794(void *a, void *b, int c);
