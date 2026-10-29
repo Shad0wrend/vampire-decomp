@@ -18,7 +18,7 @@ public:
 	char pad5cc4[0x63ac - 0x5cc4];
 	const char *m_pszName63ac;	// +0x63ac
 	char pad63b0[0x6420 - 0x63b0];
-	int m_n6420;	// +0x6420 .. +0x642c cleared at spawn
+	int m_n6420;	// (the byte at +0x6078 and the behaviour object at +0x65e8 are reached through vfunc600 only)	// +0x6420 .. +0x642c cleared at spawn
 	int m_n6424;
 	int m_n6428;
 	int m_n642c;
