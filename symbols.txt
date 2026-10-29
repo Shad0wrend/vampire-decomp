@@ -1160,6 +1160,7 @@
 0x10003dfa func   ??0CTEShatterSurface@@QAE@PBD@Z CTEShatterSurface::CTEShatterSurface
 0x10003dff func   ?vfunc519@CAI_BaseNPC@@UAEXHMMM@Z CAI_BaseNPC::vfunc519
 0x10003e18 func   ?sub_100cd6d0@CUnknown100cd6d0@@QAEXPAX@Z CUnknown100cd6d0::sub_100cd6d0
+0x10003e1d func   ?vfunc0@CTEImpact@@UAEPAUServerClass@@XZ CTEImpact::vfunc0
 0x10003e22 func   ?vfunc8@CAI_RatLocalNavigator@@QAEPAVCAI_PlaneSolver@@XZ CAI_RatLocalNavigator::vfunc8
 0x10003e27 func   ?vfunc193@CAI_BaseHumanoid@@QAE?AVVector@@XZ CAI_BaseHumanoid::vfunc193
 0x10003e2c func   ?sub_101784c0@CBasePlayer@@QAEXPAVCBaseEntity@@@Z CBasePlayer::sub_101784c0

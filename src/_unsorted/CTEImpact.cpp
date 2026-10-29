@@ -24,3 +24,14 @@ void CTEImpact::vfunc4(int a, int b)
 	engine->vfunc103(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10065150 size=0x6
+#include "CTEImpact.h"
+namespace lifted {
+extern char g_106c4514;
+}
+ServerClass * CTEImpact::vfunc0()
+{
+    return (ServerClass *)((int)&lifted::g_106c4514);
+}
+// END FUNCTION
