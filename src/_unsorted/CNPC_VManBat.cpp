@@ -66,6 +66,21 @@ void CNPC_VManBat::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1038b070 size=0x47
+#include "CNPC_VManBat.h"
+#include "globalvars.h"
+extern int g_109340d8;
+void CNPC_VManBat::vfunc420()
+{
+    m_f6678 = gpGlobals->curtime + 2.3;
+    m_f667c = gpGlobals->curtime + 0.1;
+    m_b66b0 = 0;
+    m_b66b8 = 0;
+    sub_1029a0b0();
+    g_109340d8 = 0x14;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1038e880 size=0x2f
 #include "CNPC_VManBat.h"
 #include "CNPC_VHuman.h"
