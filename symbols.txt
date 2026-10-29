@@ -3819,6 +3819,7 @@
 0x10009bba func   ?sub_10204300@CUnknown10204300@@QAEHHH@Z CUnknown10204300::sub_10204300
 0x10009bd8 func   ?sub_10094eb0@CBaseAnimating@@QAE_NH@Z CBaseAnimating::sub_10094eb0
 0x10009bdd func   ?sub_10036e50@CPhysicsPushedEntities@@QAEPAVCBaseEntity@@XZ CPhysicsPushedEntities::sub_10036e50
+0x10009be2 func   ?sub_101f2740@VKeyValuesInterface@@QAEHPBDH@Z VKeyValuesInterface::sub_101f2740
 0x10009be7 func   ?sub_1039aaf0@CUnknown1039aaf0@@QAEXD@Z CUnknown1039aaf0::sub_1039aaf0
 0x10009bec func   ?sub_101d2d80@@YAMPBUmatrix3x4_t@@PBVVector@@@Z sub_101d2d80
 0x10009bf6 func   ??0CSave@@QAE@PAX@Z CSave::CSave
