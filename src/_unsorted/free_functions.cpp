@@ -726,6 +726,29 @@ void __fastcall sub_1002b360(S1002b360 *self, int unused, SInfo1002b360 *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002b450 size=0x47
+#include "CGlobalEntityList.h"
+#include "CPhysConstraintSystem.h"
+extern char g_106b8540[];
+extern CGlobalEntityList g_106eb5d8;
+extern char g_10538764[];
+extern char g_105393a8[];
+extern "C" void *__cdecl __RTDynamicCast(void *, long, void *, void *, int);
+// TARGET: sub_1002b450
+CPhysConstraintSystem *sub_1002b450(const char *pszName)
+{
+	if (!pszName)
+		pszName = g_106b8540;
+	CBaseEntity *pEnt = g_106eb5d8.sub_100f7770(0, pszName, 0, 0);
+	if (pEnt) {
+		CPhysConstraintSystem *pSys = (CPhysConstraintSystem *)__RTDynamicCast(pEnt, 0, g_10538764, g_105393a8, 0);
+		if (pSys)
+			return (CPhysConstraintSystem *)pSys->m_pSystem;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002b760 size=0x1a
 namespace lifted {
 extern int g_10538ddc;
