@@ -6829,6 +6829,33 @@ unsigned short CUtlRBTreeFind16::sub_10046750(const void *search)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100468b0 size=0x54
+extern void *(*g_109f3634)(int);
+struct S100468b0 {
+    int m0;
+    void *mem;
+    int alloc;
+    int grow;
+    unsigned short root, numElems, firstFree, total;
+    S100468b0 *sub_100468b0(int growSize, int initSize, int lessfunc);
+};
+// TARGET: S100468b0::sub_100468b0
+S100468b0 *S100468b0::sub_100468b0(int growSize, int initSize, int lessfunc)
+{
+    m0 = lessfunc;
+    mem = 0;
+    alloc = initSize;
+    grow = growSize;
+    if (initSize)
+        mem = g_109f3634(initSize * 0x24);
+    root = 0xffff;
+    numElems = 0;
+    firstFree = 0xffff;
+    total = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10046930 size=0x109
 #include "CUtlRBTree36.h"
 #include "utlrbtree.h"
