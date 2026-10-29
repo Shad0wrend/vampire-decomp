@@ -121172,6 +121172,22 @@ int sub_1030d390(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030d480 size=0x4c
+#include <string.h>
+
+extern void (__cdecl *g_109f366c)(const char *pszFormat, ...);
+
+int __stdcall sub_1030d480(const char *pszName)
+{
+	if (!strcmpi(pszName, "DEFAULT"))
+		return 0;
+	if (!strcmpi(pszName, "SHOOT_AT_HINT"))
+		return 1;
+	g_109f366c("Schedule has invalid shoot target override (STO:) ID '%s'\n", pszName);
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030d4f0 size=0x10e
 extern "C" int _strcmpi(const char *, const char *);
 extern void (*g_109f366c)(const char *, ...);
