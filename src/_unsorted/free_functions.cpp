@@ -144063,6 +144063,25 @@ CUnknown103f04f0* CUnknown103f04f0::sub_103f04f0(const CUnknown103f04f0& other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f0590 size=0x46
+#include "CWeaponThrown_Chang_Energy_Ball.h"
+#include "CBaseEntity.h"
+#define V4(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3();
+#define V16(p) V4(p##a) V4(p##b) V4(p##c) V4(p##d)
+struct S103f0590Slots {
+	V16(a) V16(b) V16(c) V16(d) V16(e) V16(f) V16(g) V16(h) V16(i) V16(j) V16(k) V16(l) V16(m) V16(n) V16(o)
+	virtual void s240(); virtual void s241(); virtual void vfunc242();
+};
+void CWeaponThrown_Chang_Energy_Ball::sub_103f0590()
+{
+	CBaseEntity *pEnt = m_h924.Get();
+	if (pEnt) {
+		((S103f0590Slots *)pEnt)->vfunc242();
+		pEnt->sub_100fbbb0(0.1f);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f0740 size=0x1a
 namespace lifted {
 extern int g_1067d498;
