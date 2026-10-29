@@ -72516,6 +72516,28 @@ char sub_101d4cf0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d4d10 size=0x45
+struct CIndexTables {
+	char m_pad[0xd0];
+	int *m_pTable0;
+	int *m_pTable1;
+	int *m_pTable2;
+	int sub_101d4d10(int type, int index);
+};
+int CIndexTables::sub_101d4d10(int type, int index)
+{
+	switch (type) {
+	case 0:
+		return m_pTable0[index];
+	case 1:
+		return m_pTable1[index];
+	case 2:
+		return m_pTable2[index];
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d4e30 size=0x2b
 #include "CBaseEntity.h"
 
