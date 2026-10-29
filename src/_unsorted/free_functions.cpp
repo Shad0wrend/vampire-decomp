@@ -34677,6 +34677,24 @@ void sub_100d9820()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d9b80 size=0x4f
+#include "engineserver.h"
+#include "CUnknown101e0f00.h"
+struct S100d9b80Ent { char pad[0xa8]; void *m_pPlayer; };
+S100d9b80Ent *sub_101193b0();
+extern CUnknown101e0f00 g_10739a4c;
+void sub_100d9b80()
+{
+	S100d9b80Ent *pEnt = sub_101193b0();
+	if (pEnt && pEnt->m_pPlayer) {
+		if (engine->vfunc85() == 1)
+			g_10739a4c.sub_101e4380(0);
+		else
+			g_10739a4c.sub_101e4380((const char *)engine->vfunc84(1));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d9c50 size=0x9d
 #include <string.h>
 #include "CUnknown101d5bd0.h"
