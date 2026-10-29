@@ -71,6 +71,24 @@ void CWeaponRanged_FlameThrower::vfunc265()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e2ec0 size=0x4d
+#include "CWeaponRanged_FlameThrower.h"
+#include "globalvars.h"
+void __fastcall sub_102382f0(CWeaponRanged_FlameThrower *p);
+void CWeaponRanged_FlameThrower::vfunc326()
+{
+    if (*(int *)((char *)this + 0x74c) > 0) {
+        if (!m_b1519) {
+            sub_103e2d10("Weapons/Ranged/Flamethrower/Activate.wav", 1);
+            *(float *)&m_n151c = gpGlobals->curtime + 0.75f;
+        }
+        m_b1519 = 1;
+    }
+    *((char *)this + 0x1520) = 1;
+    sub_102382f0(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e31c0 size=0x24
 void __fastcall sub_1000c59f(void *pSelf);
 void __fastcall sub_100138bd(void *pSelf);
