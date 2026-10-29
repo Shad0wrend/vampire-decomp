@@ -50851,6 +50851,20 @@ int CBaseMoveBehavior::sub_101402f0(int nIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140550 size=0x1a
+namespace lifted {
+extern int g_1057a3fc;
+extern int g_1057a400;
+extern char g_1057a444;
+}
+int sub_10140550()
+{
+    lifted::g_1057a400 = 0xb;
+    lifted::g_1057a3fc = (int)&lifted::g_1057a444;
+    return (int)&lifted::g_1057a3fc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140710 size=0x27
 // TARGET: CBaseMoveBehavior::sub_10140710
 #include "CBaseMoveBehavior.h"
