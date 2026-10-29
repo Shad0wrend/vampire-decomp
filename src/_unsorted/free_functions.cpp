@@ -92356,6 +92356,26 @@ extern "C" CBaseEntity *prop_model_state()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10216360 size=0x51
+#include "CPropModelState.h"
+extern int vt_1047332c[];
+extern int vt_10489c2c[];
+void __fastcall sub_100103fc(CPropModelState *p);
+void __fastcall sub_1000bed8(CPropModelState *p);
+CPropModelState *CPropModelState::sub_10216360()
+{
+    sub_100103fc(this);
+    *(int **)this = vt_1047332c;
+    m_OnPressed.sub_100cd2a0();
+    m_OnLocked.sub_100cd2a0();
+    for (int i = 0; i < 8; i++)
+        m_OnState[i].sub_100cd2a0();
+    *(int **)this = vt_10489c2c;
+    sub_1000bed8(this);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10216830 size=0xa
 void __fastcall sub_10216830(char *self, int, int)
 {
