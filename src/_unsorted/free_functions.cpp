@@ -50803,6 +50803,17 @@ float __cdecl sub_1013d600(float a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013d650 size=0x49
+float sub_1013d650(float angle)
+{
+	while (angle > 180.0f)
+		angle -= 360.0f;
+	while (angle <= -180.0f)
+		angle += 360.0f;
+	return angle;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d6c0 size=0xa8
 extern float g_104454c4;
 
