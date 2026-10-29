@@ -60467,6 +60467,15 @@ extern "C" CBaseEntity *keyframe_rope()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019ddc0 size=0x42
+#include "CRopeKeyframe.h"
+void CRopeKeyframe::sub_1019ddc0(CBaseEntity *pEnt, int iAttachment)
+{
+	*(EHANDLE *)&m_hStartPoint = pEnt;
+	m_iStartAttachment = iAttachment;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019dea0 size=0x2c
 struct CUnit1019dea0 {
     char pad[0x1b1];
