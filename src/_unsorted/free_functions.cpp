@@ -38683,6 +38683,20 @@ void CBaseDoor::sub_100efbf0(char bOpen)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f00a0 size=0x52
+#include "CBaseDoor.h"
+#include "inputdata_t.h"
+
+void CBaseDoor::sub_100f00a0(inputdata_t *pInput)
+{
+    if (m_nState4f8 != 1) {
+        m_hActivator53c = (CBaseEntity *)pInput->pActivator;
+        m_items564[6].sub_100cd660((CBaseEntity *)pInput->pActivator, this, 0);
+        vfunc244(1);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0120 size=0x3a
 #include "CUnknown100f0120.h"
 #include "CBaseEntity.h"
