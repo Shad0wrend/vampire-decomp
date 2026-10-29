@@ -132835,6 +132835,21 @@ void CNPC_VMingXiao::sub_10397e00(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10397e90 size=0x45
+#include "CNPC_VMingXiao.h"
+#include "CNPC_VMingXiaoTentacle.h"
+#include "CEHandleGet.h"
+
+void CNPC_VMingXiao::sub_10397e90()
+{
+	for (int i = 0; i < 6; i++) {
+		CNPC_VMingXiaoTentacle *pTentacle = (CNPC_VMingXiaoTentacle *)EHandle_Get(*(unsigned int *)&m_hSlotOld[i]);
+		if (pTentacle)
+			pTentacle->sub_1039ea60();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10397f70 size=0x6f
 #include "CUnknown10739d08.h"
 
