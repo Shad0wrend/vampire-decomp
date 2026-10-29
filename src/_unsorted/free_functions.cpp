@@ -106787,6 +106787,25 @@ void __fastcall sub_102697b0(DeathThinkView *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10269960 size=0x52
+#include "CBaseEntity.h"
+#include "globalvars.h"
+
+void sub_101c0b10();
+
+void CBaseEntity::sub_10269960()
+{
+	if (m_bAlpha1a3 > 7) {
+		m_bAlpha1a3 -= 7;
+		m_flNextThink = gpGlobals->curtime + 0.1;
+	} else {
+		m_bAlpha1a3 = 0;
+		m_flNextThink = gpGlobals->curtime + 0.2;
+		sub_100ac4e0((int)sub_101c0b10, 0, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102699e0 size=0x22
 #include "Vector.h"
 

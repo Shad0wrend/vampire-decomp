@@ -9090,6 +9090,7 @@
 0x1001528a func   ?sub_102c6a50@UtlVec8@@QAEHHPBUUtlVec8Elem@@@Z UtlVec8::sub_102c6a50
 0x10015299 func   ?sub_102370b0@@YAHXZ sub_102370b0
 0x100152ad func   ?sub_100b5970@CBaseFlex@@QAEXXZ CBaseFlex::sub_100b5970
+0x100152b2 func   ?sub_10269960@CBaseEntity@@QAEXXZ CBaseEntity::sub_10269960
 0x100152b7 func   ?sub_10251790@@YAMXZ sub_10251790
 0x100152c1 func   _prop_physics prop_physics
 0x100152e4 func   ?sub_100bd620@bf_write@@QAEXABVVector@@@Z bf_write::sub_100bd620
