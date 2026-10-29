@@ -16691,6 +16691,22 @@ void __fastcall sub_1007b9e0(CNameOwnerView *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007ba30 size=0x4f
+#include <stdlib.h>
+#include "CUnknown1007b7b0.h"
+void CUnknown1007b7b0::sub_1007ba30()
+{
+	m_pReader->vfunc1(1);
+	int n = atoi(m_pReader->vfunc0());
+	m_nFps130 = n;
+	if (n > 240)
+		n = 240;
+	else if (n < 10)
+		n = 10;
+	m_nFps130 = n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007bb30 size=0x67
 #include "CUnknown1007bb30.h"
 extern void (__cdecl *g_109f3890)(char *, const char *, int);
