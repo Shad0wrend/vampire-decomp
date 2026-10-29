@@ -33588,6 +33588,29 @@ extern char g_106e7e91;
 void sub_100db3f0() { g_106e7e91 = 1; }
 // END FUNCTION
 
+// FUNCTION: 0x100db5c0 size=0x41
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseEntity.h"
+
+struct CPlayerView { char m_pad[0xa8]; CAI_BaseNPCTroika *m_pChar; };
+CPlayerView *sub_101193b0();
+
+void sub_100db5c0()
+{
+    CPlayerView *pPlayer = sub_101193b0();
+    if (pPlayer) {
+        CAI_BaseNPCTroika *pChar = pPlayer->m_pChar;
+        if (pChar) {
+            pChar->sub_10329560();
+            pChar->sub_101815b0(1);
+            CBaseEntity *pEnt = (CBaseEntity *)pChar;
+            if (!pEnt->vfunc94())
+                pEnt->vfunc93(3, 0);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100db6c0 size=0x33
 void *sub_10008d8c();
 
