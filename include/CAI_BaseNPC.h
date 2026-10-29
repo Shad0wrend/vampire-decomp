@@ -70,7 +70,10 @@ public:
 	CAI_NPC_V(310)
 	virtual void vfunc311(int a, int b, int c);	// when c >= 0: stores the activity-like triple a (+0xfec/+0xff0, slot 465(a) first when it changes), b (+0x5cd0/+0x5cd4/+0xff4) and c (+0x5ccc, sub_10260a50(c)), then clears +0x6f8 and +0x170
 	CAI_NPC_V(312) CAI_NPC_V(313) CAI_NPC_V(314) CAI_NPC_V(315) CAI_NPC_V(316) virtual bool vfunc317(int unused); CAI_NPC_V(318) virtual bool vfunc319(int a, CBaseEntity *pOther, int c);	// slot 319 (ret 0xc: three arguments, true): the Troika override re-arms the timer at +0x1564
-	CAI_NPC_V10(32) CAI_NPC_V10(33) CAI_NPC_V10(34)
+	CAI_NPC_V10(32) CAI_NPC_V10(33)
+	CAI_NPC_V(340) CAI_NPC_V(341) CAI_NPC_V(342) CAI_NPC_V(343) CAI_NPC_V(344)
+	virtual float vfunc345(const char *pszName, float flValue, int a);	// slot 345 (+0x564, ret 0xc): sets a pose parameter by name, returns a float
+	CAI_NPC_V(346) CAI_NPC_V(347) CAI_NPC_V(348) CAI_NPC_V(349)
 	CAI_NPC_V(350) CAI_NPC_V(351) CAI_NPC_V(352) CAI_NPC_V(353) CAI_NPC_V(354) CAI_NPC_V(355) CAI_NPC_V(356) CAI_NPC_V(357) CAI_NPC_V(358)
 	virtual int vfunc359(CBaseEntity *pEnt);	// "GetCombatState"-like (see the Troika override)
 	CAI_NPC_V(360) CAI_NPC_V(361) CAI_NPC_V(362)
