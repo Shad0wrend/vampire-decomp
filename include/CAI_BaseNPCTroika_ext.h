@@ -69,4 +69,5 @@
 	bool sub_10005bfa(CBaseEntity *pEnt, int b, int c, int d, int e, int f, int g);	// CAI_BaseNPC::vfunc379 (stub 0x10005bfa), called directly
 	void sub_10280d30();	// stub 0x10006a8c, run at the end of vfunc379
 	void sub_102c2ab0(inputdata_t *pInput);	// "SetInvestigateMode" input handler: an integer 0..6 goes to +0x6338, else DevMsg
+	void sub_102c2b20(inputdata_t *pInput);	// "SetInvestigateModeCombat" input handler: an integer 0..6 goes to +0x633c, else DevMsg
 	virtual void vfunc448(int a);	// slot 448 "TaskFail" override: clears the follow/hint state (times at +0x6240.., hint handle +0x643c, vector +0x65d0), ClearHintNode(5.0f), then CAI_BaseNPC::vfunc448(a)
