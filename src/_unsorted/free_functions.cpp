@@ -31767,6 +31767,17 @@ const char *CVariantCopy::sub_100d0a00() const
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d11f0 size=0x10
+namespace lifted {
+extern char g_106e6f9c;
+struct C1000bbd6 { int sub_1000bbd6(int); };
+}
+int sub_100d11f0(int a0)
+{
+    return ((lifted::C1000bbd6 *)((int)&lifted::g_106e6f9c))->sub_1000bbd6(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d1250 size=0x27
 struct SListNode_t {
     int unk0;

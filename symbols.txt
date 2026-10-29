@@ -2824,6 +2824,7 @@
 0x10007e8c func   ?vfunc5@CBaseAnimatingOverlay@@QAEPAV1@I@Z CBaseAnimatingOverlay::vfunc5
 0x10007e9b func   ?sub_10196f30@@YAPAXPAX0@Z sub_10196f30
 0x10007ea5 func   ?vfunc345@CBaseCombatCharacter@@QAEXPBDHH@Z CBaseCombatCharacter::vfunc345
+0x10007eaa func   ?sub_100d11f0@@YAHH@Z sub_100d11f0
 0x10007eaf func   ?vfunc5@CWeaponList@@UAEXXZ CWeaponList::vfunc5
 0x10007eb9 func   ?sub_1016af80@CBasePlayer@@QAEXPAX0@Z CBasePlayer::sub_1016af80
 0x10007ec8 func   ?sub_10079100@@YIXPAUMem@@HH@Z sub_10079100
