@@ -136808,6 +136808,20 @@ extern "C" CBaseEntity *npc_VWolfMorph()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dc7f0 size=0x1a
+namespace lifted {
+extern int g_10663b38;
+extern int g_10663b3c;
+extern char g_10663b7c;
+}
+int sub_103dc7f0()
+{
+    lifted::g_10663b3c = 2;
+    lifted::g_10663b38 = (int)&lifted::g_10663b7c;
+    return (int)&lifted::g_10663b38;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dc8a0 size=0x33
 void sub_10007897();
 void sub_10007af9();
