@@ -139476,6 +139476,20 @@ extern "C" GP *item_w_grenade_frag()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ef640 size=0x1a
+namespace lifted {
+extern int g_1067d234;
+extern int g_1067d238;
+extern char g_1067d27c;
+}
+int sub_103ef640()
+{
+    lifted::g_1067d238 = 0xc;
+    lifted::g_1067d234 = (int)&lifted::g_1067d27c;
+    return (int)&lifted::g_1067d234;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f00c0 size=0xbf
 #include "CWeaponThrown_Chang_Energy_Ball.h"
 
