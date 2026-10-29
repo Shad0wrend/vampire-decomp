@@ -108715,6 +108715,15 @@ const char* CAI_BaseNPCTroika::sub_102c36b0(int schedule)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c42a0 size=0x44
+#include "CAI_BaseNPCTroika.h"
+void sub_101d2640(Vector vecOrigin, int a, CBaseAnimating *pEnt, int pszBone, int b);
+void CAI_BaseNPCTroika::sub_102c42a0(int a, CBaseAnimating *pEnt, int pszBone, int b)
+{
+	sub_101d2640(vfunc192(), a, pEnt, pszBone, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c43b0 size=0x29
 void *__fastcall sub_1008bf00(void *p);
 
