@@ -31673,6 +31673,20 @@ float CMomentaryRotButton::sub_100ca630(float *pAngles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ca9d0 size=0x46
+#include "CMomentaryRotButton.h"
+void CMomentaryRotButton::sub_100ca9d0()
+{
+	if (m_flTarget5fc == 1.0) {
+		m_Output5bc.sub_100cd660(this, this, 0);
+		return;
+	}
+	if (m_flTarget5fc == 0.0) {
+		m_Output5a4.sub_100cd660(this, this, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100caa40 size=0x126
 #include "Vector.h"
 #include "CEntityVSlots.h"
