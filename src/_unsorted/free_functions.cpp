@@ -88330,6 +88330,20 @@ extern "C" CBaseEntity *trigger_player_activity_level()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10210790 size=0x1a
+namespace lifted {
+extern int g_105ab5dc;
+extern int g_105ab5e0;
+extern char g_105ab624;
+}
+int sub_10210790()
+{
+    lifted::g_105ab5e0 = 6;
+    lifted::g_105ab5dc = (int)&lifted::g_105ab624;
+    return (int)&lifted::g_105ab5dc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10210be0 size=0x43
 #include "CTriggerDisciplineContext.h"
 void *sub_100aa720(int size);
