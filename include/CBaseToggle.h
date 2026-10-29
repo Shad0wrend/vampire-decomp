@@ -18,6 +18,7 @@ public:
 	void sub_101c1bc0(int state);	// "CBaseToggle::SetToggleState": state 0 / 1 move the entity to position 1 / 2 (sub_101c1520 with the speed at +0x480), 2 / 3 turn it to angle 1 / 2 (sub_101c17e0 with the speed at +0x490); the state is stored at +0x494
 	void sub_101c1520(Vector *pPosition, float flSpeed);	// "CBaseToggle::LinearMove", stub 0x10008076, called directly
 	void sub_101c17e0(Vector *pAngles, int speed);	// stub 0x1000dab2, called directly
+	void vfunc133();	// slot 133: ends the running move (linear / angular by the state at +0x558), then calls the think function at +0x114
 	void sub_10013728(Vector *pVelocity);	// stub 0x10013728: sets the local velocity
 
 	char m_pad03e0[0x3f4 - sizeof(CBaseEntity)];
