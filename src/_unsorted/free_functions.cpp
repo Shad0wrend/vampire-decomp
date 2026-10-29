@@ -93663,6 +93663,20 @@ int sub_10231970()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10231c70 size=0x1a
+namespace lifted {
+extern int g_105b5c40;
+extern int g_105b5c44;
+extern char g_105b5c84;
+}
+int sub_10231c70()
+{
+    lifted::g_105b5c44 = 6;
+    lifted::g_105b5c40 = (int)&lifted::g_105b5c84;
+    return (int)&lifted::g_105b5c40;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10231e60 size=0xa
 unsigned int __fastcall sub_10231e60(char *self)
 {
