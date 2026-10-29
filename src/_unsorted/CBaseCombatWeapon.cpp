@@ -885,6 +885,25 @@ unsigned int CBaseCombatWeapon::vfunc117()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10257980 size=0x41
+#include "CBaseCombatWeapon.h"
+struct CWeaponUserView {
+	char m_pad[0xa8];
+	CBaseEntity *m_pAI;
+};
+struct CWeaponAIView {
+	char sub_10173f90(CBaseCombatWeapon *pWeapon, int a, int b, int c);
+};
+void CBaseCombatWeapon::vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, int value)
+{
+	if (!sub_10252240() && pActivator) {
+		CWeaponAIView *pAI = (CWeaponAIView *)((CWeaponUserView *)pActivator)->m_pAI;
+		if (pAI && pAI->sub_10173f90(this, 1, 1, 1))
+			vfunc341((CBaseEntity *)pAI);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10258320 size=0x82
 struct CRollTable {
 	virtual void vfunc0();
