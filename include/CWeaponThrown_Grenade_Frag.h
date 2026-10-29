@@ -35,5 +35,7 @@ public:
 	void sub_103ed200();	// stub 0x1000d5f3
 	void sub_103ed830(void *pObject);	// stub 0x1000c734
 	void sub_100ac4e0(void *pFunc, int a, int b);	// CBaseEntity::ThinkSet (stub 0x10007fe5)
+	void vfunc319();	// slot 319: tells the owner's object (slot 112 with 0 and the value at +0x92c; slot 410 when the state at +0x920 is set), then the base CWeaponIThrown::vfunc319
+	void sub_103ed1e0();	// CWeaponIThrown::vfunc319 (stub 0x1000e485)
 	void sub_103ee6f0();	// the fuse tick sound: plays the tick sample ("weapons/ranged/grenade_pineapple/tic.wav", channel 1) from the weapon for everybody who hears it, runs the fuse step (sub_103ee660) and schedules the next think one second ahead
 };
