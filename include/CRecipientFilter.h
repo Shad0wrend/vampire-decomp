@@ -52,6 +52,7 @@ public:
 	void sub_1019ce00();	// the constructor body (stub 0x100035d5)
 	void sub_1019cff0();	// AddAllPlayers (stub 0x1000d9f9)
 	void sub_1019d280(const float *pOrigin);	// AddRecipientsByPAS (stub 0x10004caa)
+	void sub_1019d1c0(unsigned int bits);	// adds every player whose bit (client index - 1) is set (stub 0x1000d52b)
 	void sub_1019d210(const float *pOrigin);	// AddRecipientsByPVS (stub 0x100043db)
 	void sub_1019cf50();	// MakeReliable (stub 0x1001186f)
 	void sub_1019d3d0();	// UsePredictionRules (stub 0x10005ce0)
