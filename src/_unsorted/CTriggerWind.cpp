@@ -28,6 +28,28 @@ void CTriggerWind::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101caab0 size=0x4b
+#include "CTriggerWind.h"
+#include "CBaseEntity.h"
+
+struct S101caab0_Wind
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3(int pObject);
+};
+
+struct S101caab0_Ent { char pad[0xa8]; int m_field; };
+
+// TARGET: CTriggerWind::vfunc176
+void CTriggerWind::vfunc176(CBaseEntity *pOther)
+{
+	if (m_n05dc && pOther->vfunc94() == 7 && !((S101caab0_Ent *)pOther)->m_field && pOther->m_obj36c)
+		((S101caab0_Wind *)m_n05dc)->v3(pOther->m_obj36c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cab20 size=0x26
 #include "CTriggerWind.h"
 
