@@ -19,9 +19,10 @@ public:
 	char m_pad0000[0x450];
 	Vector m_vOrigin;	// 0x450
 	Vector m_vAngles;	// 0x45c
-	char m_pad0468[0x47c - 0x468];
+	char m_pad0468[0x478 - 0x468];
+	const char *m_pszNextKey;	// 0x478: the name of the next key frame
 	float m_flNextTime;	// 0x47c
 	CPathKeyFrame *m_pNext;	// 0x480
-	char m_pad0484[4];
+	CPathKeyFrame *m_pPrev;	// 0x484
 	float m_flSpeed;	// 0x488
 };
