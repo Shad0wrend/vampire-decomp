@@ -148,6 +148,28 @@ int CBaseAnimatingOverlay::vfunc272()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100994c0 size=0x54
+#include "CBaseAnimatingOverlay.h"
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct SOverlaySlots {
+	V10(a0) V10(a1) V10(a2) V10(a3) V10(a4) V10(a5) V10(a6) V10(a7) V10(a8) V10(a9)
+	V10(b0) V10(b1) V10(b2) V10(b3) V10(b4) V10(b5) V10(b6) V10(b7) V10(b8) V10(b9)
+	V10(c0) V10(c1) V10(c2) V10(c3) V10(c4) V10(c5)
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4(); virtual void d5(); virtual void d6();
+	virtual int slot267();
+};
+// TARGET: CBaseAnimatingOverlay::vfunc271
+int CBaseAnimatingOverlay::vfunc271(int a)
+{
+	for (int i = ((SOverlaySlots *)this)->slot267(); i < 4; i++) {
+		if (m_Layers[i].m_f10 != 0.0f && m_Layers[i].m_n20 != -1 && m_Layers[i].m_n20 == a)
+			return i;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10099570 size=0x46
 #include "CBaseAnimatingOverlay.h"
 #define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
