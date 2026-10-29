@@ -3125,6 +3125,7 @@
 0x10007f81 func   ?sub_1005d2a0@CUnknown1005d2a0@@QAEHXZ CUnknown1005d2a0::sub_1005d2a0
 0x10007f86 func   ?sub_102c29a0@CTroikaInputUnit@@QAEXPAUinputdata_t@@@Z CTroikaInputUnit::sub_102c29a0
 0x10007f90 func   ?sub_100bdf10@bf_write@@QAEPAV1@PAXHH@Z bf_write::sub_100bdf10
+0x10007f95 func   ?vfunc103@CMathRemap@@UAEXXZ CMathRemap::vfunc103
 0x10007f9f func   ?sub_103b4f30@CNPC_VTestUnit@@QAEHXZ CNPC_VTestUnit::sub_103b4f30
 0x10007fa4 func   ?vfunc5@CSoundEnt@@QAEPAV1@I@Z CSoundEnt::vfunc5
 0x10007fae func   ?sub_10032180@@YAXPAUImpactEvent_t@@H@Z sub_10032180
