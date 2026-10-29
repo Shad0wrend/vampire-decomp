@@ -11,7 +11,8 @@ public:
     virtual datamap_t * vfunc82();
     char m_pad0004[0x450 - sizeof(CBaseEntity)];
     COutputEvent m_Output450;
-    char m_pad0468[0x498 - 0x468];
+    COutputEvent m_Output468;
+    char m_pad0480[0x498 - 0x480];
     unsigned int m_nFilter498;
     int m_n49c;
     void vfunc174(CBaseEntity *pOther);
