@@ -191,7 +191,9 @@ public:
 	char m_b1590;
 	char m_pad1591[0x5b84 - 0x1591];
 	unsigned int m_flags5b84;	// 0x5b84: bit 1 keeps the NPC from carrying on (slot 602)
-	char m_pad5b88[0x5bc4 - 0x5b88];
+	char m_pad5b88[0x5bbc - 0x5b88];
+	float m_f5bbc;
+	float m_f5bc0;
 	char m_b5bc4;
 	char m_pad5bc5[0x5cc0 - 0x5bc5];
 	int m_n5cc0;
