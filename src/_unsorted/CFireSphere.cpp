@@ -1,6 +1,20 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10108d90 size=0x47
+#include "CFireSphere.h"
+
+CFireSphere::CFireSphere(int *pList, int nCapacity, char bCheckVisible, const Vector *pCenter, float flRadius)
+{
+	m_pList = pList;
+	m_nListCapacity = nCapacity;
+	m_bCheckVisible = bCheckVisible;
+	m_nListCount = 0;
+	m_vecCenter = *pCenter;
+	m_flRadiusSqr = flRadius * flRadius;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10108e40 size=0xe0
 #include "CFireSphere.h"
 #include "CUnknown10108e00.h"
