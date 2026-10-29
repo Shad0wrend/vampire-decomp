@@ -83910,6 +83910,16 @@ int sub_10204100(CBaseCombatCharacter *pChar, int index, char bIncludeZero)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10204270 size=0x15
+struct CUnknown10204270 { void sub_10204270(); };
+void CUnknown10204270::sub_10204270()
+{
+    *(int *)this = -1;
+    *(int *)((char *)this + 4) = -1;
+    *(int *)((char *)this + 0xc) = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102043a0 size=0x148
 #include "CVDmg_t.h"
 #include "CVStatInfoList_t.h"
