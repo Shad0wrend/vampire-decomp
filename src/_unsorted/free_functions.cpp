@@ -79976,6 +79976,33 @@ int CUnk101e9f40::sub_101e9f40(void *pParam)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e9fd0 size=0x4d
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+struct CNamePtr {
+	const char *m_p;
+	const char *Get() { return m_p ? m_p : ""; }
+};
+struct CNamedEntry9fd0 {
+	int m_unk0;
+	CNamePtr m_Name;
+};
+struct CNamedList9fd0 {
+	int m_unk0;
+	int m_count;
+	CNamedEntry9fd0 **m_pData;
+	int sub_101e9fd0(const char *name);
+};
+// TARGET: CNamedList9fd0::sub_101e9fd0
+int CNamedList9fd0::sub_101e9fd0(const char *name)
+{
+	for (int i = 0; i < m_count; i++) {
+		if (_strcmpi(m_pData[i]->m_Name.Get(), name) == 0)
+			return i;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101eaa40 size=0xa
 extern int g_1073a38c;
 
