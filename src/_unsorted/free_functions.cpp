@@ -83734,6 +83734,19 @@ void CVSoundActivityTable_t::sub_101f6010(CBaseCombatCharacter *pCharacter, int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f6130 size=0x51
+#include "CVSoundActivityTable_t.h"
+#include "CBaseCombatCharacter.h"
+void CVSoundActivityTable_t::sub_101f6130(CBaseCombatCharacter *pCharacter, int nActivity)
+{
+    if (nActivity != -1 && pCharacter->m_p9c) {
+        CVSoundActivityRecord_t *r = &m_Records[nActivity];
+        for (int i = 0; i < r->m_nSounds; i++)
+            r->m_pSounds[i]->sub_101f5b60((int)pCharacter->m_p9c, r->m_pIds[i], 2);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f61b0 size=0x15f
 #include <stdio.h>
 #include "CUnknown101f4c80.h"
