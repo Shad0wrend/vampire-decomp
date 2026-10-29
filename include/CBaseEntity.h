@@ -234,7 +234,9 @@ public:
 	int m_n16c;
 	char m_pad0170[0x17c - 0x170];
 	float m_flNextThink;	// 0x017c
-	char m_pad0180[0x190 - 0x180];
+	char m_pad0180[4];
+	Vector m_vecViewOffset;	// 0x0184
+
 	float m_vecMovedir[3];	// 0x0190: the direction set by SetMovedir
 	unsigned int m_nEffectFlags;	// 0x019c: bit 4 / bit 6 are set by the scene and beam code
 	char m_pad01a0[3];
