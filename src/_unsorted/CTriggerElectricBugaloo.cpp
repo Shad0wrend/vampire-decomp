@@ -20,6 +20,27 @@ void *CTriggerElectricBugaloo::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10231370 size=0x52
+#include "CCameraTrack.h"
+#include "CTriggerElectricBugaloo.h"
+
+struct CTriggerView { bool sub_101c5460(void *pOther); };
+struct CHandleView { virtual void vfunc0(); virtual unsigned int *GetRefEHandle(); };
+
+void CTriggerElectricBugaloo::vfunc174(void *pOther)
+{
+	if (((CTriggerView *)this)->sub_101c5460(pOther))
+		((CCameraTrackMember *)((char *)this + 0x568))->sub_10010794((CCameraTrack *)pOther, (CCameraTrack *)this, 0);
+	char *pPlayer = *(char **)((char *)pOther + 0xa8);
+	if (pPlayer) {
+		if (this)
+			*(unsigned int *)(pPlayer + 0x1cbc) = *((CHandleView *)this)->GetRefEHandle();
+		else
+			*(unsigned int *)(pPlayer + 0x1cbc) = 0xffffffff;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102313f0 size=0x6c
 #include "CCameraTrack.h"
 #include "CTriggerElectricBugaloo.h"
