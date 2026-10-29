@@ -1,3 +1,4 @@
+	void vfunc56(CBaseEntity *pEnt, int b, int c, int d, int e, int f, int g, int h);	// slot 56 (plain member, eight stack arguments, only the first used): for a live entity (take-damage field +0x200 set) that is the entity of the handle at +0x1a94, resets the target (CAI_BaseNPC::sub_10279b70(0))
 	virtual void vfunc422();	// slot 422 override: CAI_BaseNPC::vfunc422, think function stub, follower types from the names at +0x6478 / +0x6480
 	bool vfunc326(CBaseEntity *pEnt, int b);	// slot 326 (plain member): CBaseCombatCharacter::vfunc326 must accept, then true when the NPC's value at +0x6064 is not above the limit of the global 0x109245e4 (0 when its slot 1 holds, else its field +0x2c) or pEnt's byte at +0xba is 2
 	char sub_1000e494(CBaseEntity *pEnt, int b);	// CBaseCombatCharacter::vfunc326 (stub 0x1000e494), called directly
