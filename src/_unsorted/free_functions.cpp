@@ -16307,6 +16307,21 @@ CUnknown1007a060Elem *CUnknown1007a060::sub_1007a060()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007a170 size=0x4c
+#include "CChoreoScene1007e970.h"
+#include <string.h>
+
+CChoreoSceneActor1007e970 *CChoreoScene1007e970::sub_1007a170(const char *pszName)
+{
+	for (int i = 0; i < m_nActors; i++) {
+		CChoreoSceneActor1007e970 *pActor = m_ppActors[i];
+		if (pActor && !strcmpi(pActor->sub_10072d90(), pszName))
+			return pActor;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007a250 size=0x4
 struct CUnknown1007a250 { int sub_1007a250(); };
 int CUnknown1007a250::sub_1007a250()
