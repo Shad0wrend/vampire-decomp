@@ -48267,6 +48267,37 @@ extern "C" GP *light_environment()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130c90 size=0x52
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_10575a68[2];
+
+int *sub_10130c90()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 10, "m_OnMapLoad", {0x450, 0}, 1, 0x16, "OnMapLoad", g_1055dc70 },
+    };
+    g_10575a68[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_10575a68[0] = (int)&dataDesc[1];
+    return g_10575a68;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10131260 size=0x67
 #include "CUnknown10131260.h"
 #include "CEventQueue.h"
