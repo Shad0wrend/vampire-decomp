@@ -112941,6 +112941,27 @@ void CUnknown102f95d0::sub_102f95d0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f96e0 size=0x41
+#include "CPairFields102dda40.h"
+struct CAINodeView {
+	int m_pad0;
+	int m_iID;	// 0x04
+	char m_pad8[0x78 - 8];
+	int m_nLinks;	// 0x78
+	CPairFields102dda40 **m_ppLinks;	// 0x7c
+	CPairFields102dda40 *sub_102f96e0(int destID);
+};
+CPairFields102dda40 *CAINodeView::sub_102f96e0(int destID)
+{
+	for (int i = 0; i < m_nLinks; i++) {
+		CPairFields102dda40 **pp = m_ppLinks;
+		if (pp[i]->sub_102dda40(m_iID) == destID)
+			return (&m_ppLinks[0])[i];
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f9780 size=0x27
 struct CUnknown102f9780View {
     char m_pad0000[0x78];
