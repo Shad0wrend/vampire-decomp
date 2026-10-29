@@ -14,6 +14,11 @@ class CUnknown1007bb30Dest	// the receiver of the copied text
 {
 public:
 	void sub_10002eb9(const char *a, const char *b);
+	void sub_10072db0(const char *a, const char *b);	// copies both strings (empty when null) into the 0x28 byte buffers at +0x114 and +0x13c
+
+	char m_pad0000[0x114];
+	char m_szFirst114[0x28];
+	char m_szSecond13c[0x28];
 };
 
 class CUnknown1007bb30
