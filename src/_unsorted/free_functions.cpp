@@ -103299,6 +103299,17 @@ bool __fastcall sub_102a1620(N *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a18a0 size=0x42
+struct CAI_FloatParam { int m_n0; float m_flValue; };
+void CAI_BaseNPCTroika::sub_102a18a0(const CAI_FloatParam *pParam)
+{
+	if (pParam->m_flValue > 0.0f)
+		m_f5db4 = gpGlobals->curtime + pParam->m_flValue;
+	else
+		m_f5db4 = gpGlobals->curtime + 1000.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a9540 size=0x13
 struct CVector2Dot {
     float m_x;
