@@ -38,11 +38,15 @@ public:
 	int m_n1b2c;	// 0x1b2c
 	const char *m_pszFile1b30;	// 0x1b30: source file of the last schedule pick
 	int m_nLine1b34;	// 0x1b34
-	char m_pad1b38[0x5b78 - 0x1b38];
+	char m_pad1b38[0x1b3c - 0x1b38];
+	const char *m_pszFile1b3c;	// 0x1b3c: source file of the last state change
+	int m_nLine1b40;	// 0x1b40
+	char m_pad1b44[0x5b78 - 0x1b44];
 	unsigned int m_h5b78;	// 0x5b78: entity handle
 	char m_pad5b7c[0x5cc0 - 0x5b7c];
 	int m_n5cc0;	// 0x5cc0: NPC state
-	char m_pad5cc4[0x60d0 - 0x5cc4];
+	int m_n5cc4;	// 0x5cc4
+	char m_pad5cc8[0x60d0 - 0x5cc8];
 	Vector m_vec60d0;	// 0x60d0
 	char m_pad60dc[0x6160 - 0x60dc];
 	unsigned int m_h6160;	// 0x6160: entity handle
