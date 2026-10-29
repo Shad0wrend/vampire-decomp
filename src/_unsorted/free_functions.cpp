@@ -19700,6 +19700,34 @@ void sub_10088ce0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10088de0 size=0x53
+#include "CBaseCombatCharacter.h"
+#include "engineserver.h"
+
+struct SExprOwner98 {
+	char m_pad[0x98];
+	CBaseCombatCharacter *m_pCharacter;
+};
+struct SExprOwner94 {
+	char m_pad[0x94];
+	SExprOwner98 *m_pOwner;
+};
+
+int sub_101193b0();
+SExprOwner94 *sub_10172710(int a);
+
+// TARGET: sub_10088de0
+void sub_10088de0()
+{
+	SExprOwner94 *pEnt = sub_10172710(sub_101193b0());
+	if (pEnt && pEnt->m_pOwner)
+	{
+		CBaseCombatCharacter *pChar = pEnt->m_pOwner->m_pCharacter;
+		pChar->sub_10106580((const char *)engine->vfunc84(1), 0, 5.0f, 99999.0f, 5.0f, 1.0f);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10088fc0 size=0xa3
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
