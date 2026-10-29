@@ -130213,6 +130213,20 @@ void CNPC_VGhoulCroucher::sub_1037c090(void *pObject, float flValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037c580 size=0x1a
+namespace lifted {
+extern int g_1063b590;
+extern int g_1063b594;
+extern char g_1063b5d4;
+}
+int sub_1037c580()
+{
+    lifted::g_1063b594 = 1;
+    lifted::g_1063b590 = (int)&lifted::g_1063b5d4;
+    return (int)&lifted::g_1063b590;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037c5b0 size=0x43
 #include "CNPC_VGuard1.h"
 void *sub_100aa720(int size);
