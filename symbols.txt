@@ -744,6 +744,7 @@
 0x10002c0c func   ?sub_10092550@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_10092550
 0x10002c20 func   ?vfunc272@CVampireProjectile@@UAEXPBVVector@@0PAVCBaseEntity@@HMPBD2@Z CVampireProjectile::vfunc272
 0x10002c2a func   ?sub_100785d0@CUnknown100785d0@@QAEHXZ CUnknown100785d0::sub_100785d0
+0x10002c48 func   ?sub_101bb500@@YAHXZ sub_101bb500
 0x10002c52 func   ?vfunc472@CHL2_Player@@UAEXXZ CHL2_Player::vfunc472
 0x10002c5c func   ?vfunc1@?$CUtlVectorDataOps@V?$CUtlVector@UDisciplineSrc@@V?$CUtlMemory@UDisciplineSrc@@@@@@$08@@UAEXPAX0@Z CUtlVectorDataOps<CUtlVector<DisciplineSrc,CUtlMemory<DisciplineSrc> >,9>::vfunc1
 0x10002c61 func   ?vfunc35@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHH@Z CTempEntsSystem::vfunc35

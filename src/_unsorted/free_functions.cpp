@@ -66477,6 +66477,20 @@ CSound *CSoundEnt::sub_101bb370(int iType, const Vector *pOrigin)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bb500 size=0x1a
+namespace lifted {
+extern int g_10599f48;
+extern int g_10599f4c;
+extern char g_10599f8c;
+}
+int sub_101bb500()
+{
+    lifted::g_10599f4c = 2;
+    lifted::g_10599f48 = (int)&lifted::g_10599f8c;
+    return (int)&lifted::g_10599f48;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bb650 size=0x75
 extern "C" double fabs(double);
 extern float g_104454c4;
