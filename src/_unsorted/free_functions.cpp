@@ -96847,6 +96847,24 @@ void sub_102454a0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102454e0 size=0x1d
+namespace lifted {
+extern char g_1049745c;
+}
+struct CUnknown102454e0 { void * sub_102454e0(); };
+void * CUnknown102454e0::sub_102454e0()
+{
+    *(int *)this = (int)&lifted::g_1049745c;
+    *(int *)((char *)this + 4) = 0;
+    *(char *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 0x18) = 0;
+    *(int *)((char *)this + 8) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10245540 size=0x25
 #include "ConCommandBase.h"
 
