@@ -15,7 +15,7 @@ public:
 	virtual void vfunc1();
 	virtual bool vfunc2(const void *pTrace, const float *pVelocity); // "CMoveHelperServer::AddToTouched": false for a trace without entity, the host (+0x4) or an entity already touched; else appends the trace and the impact velocity to the touch list at +0x8
 	virtual void vfunc3();
-	virtual void vfunc4();
+	virtual void vfunc4(int idx, const char *pszFormat, ...); // "CMoveHelperServer::Con_NPrintf": formats into a 0x2000 byte buffer and hands it to the engine's Con_NPrintf (slot 81)
 	virtual void vfunc5(const float *pOrigin, int channel, const char *pszSample, float flVolume, int soundlevel, int fFlags, int pitch); // "CMoveHelperServer::StartSound": emits the sound at the origin for the players that can hear it (a PAS filter, with the prediction rules unless the global flag at +0x14 is 1)
 	virtual void vfunc6();
 	virtual bool vfunc7(); // "CMoveHelperServer::PlayerFallingDamage": hurts the host by the game rules' fall damage (slot 30 of the rules); always true
