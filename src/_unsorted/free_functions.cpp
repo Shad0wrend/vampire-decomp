@@ -112311,6 +112311,28 @@ char CUnknown102f3000::sub_102f3000()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f30f0 size=0x42
+#include "CAI_NodeGraph.h"
+CAI_NodeGraph *CAI_NodeGraph::sub_102f30f0()
+{
+	m_Counts.m_pMemory = 0;
+	m_Counts.m_allocationCount = 0;
+	m_Counts.m_growSize = 0;
+	m_Counts.m_size = 0;
+	m_Counts.m_pElements = 0;
+	m_nNodes = 0;
+	m_ppNodes = 0;
+	m_n1e8 = 0;
+	float *p = (float *)this + 5;
+	for (int i = 20; i != 0; i--)
+	{
+		*p = -10.0f;
+		p += 6;
+	}
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f3770 size=0x1e
 int sub_102f3770(const float *a, const float *b)
 {
