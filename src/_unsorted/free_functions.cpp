@@ -91249,6 +91249,16 @@ void * CUnknown10230f60::sub_10230f60(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10230f90 size=0x13
+struct CUnknown10230f90 { void * sub_10230f90(int); };
+void * CUnknown10230f90::sub_10230f90(int a0)
+{
+    *(int *)this = *(int *)((char *)a0);
+    *(int *)((char *)this + 4) = *(int *)((char *)a0 + 4);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10230fc0 size=0x166
 #include "CVDmg_t.h"
 #include "CVStatList_t.h"

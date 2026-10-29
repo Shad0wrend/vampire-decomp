@@ -8105,6 +8105,7 @@
 0x1001477c func   ?sub_100bf180@bf_read@@QAE_NH@Z bf_read::sub_100bf180
 0x10014786 func   ?vfunc124@CHudEntity@@QAEHXZ CHudEntity::vfunc124
 0x1001478b func   ?sub_10202350@@YAPBDHH@Z sub_10202350
+0x10014790 func   ?sub_10230f90@CUnknown10230f90@@QAEPAXH@Z CUnknown10230f90::sub_10230f90
 0x10014795 func   ?vfunc5@CWeaponMelee_MingXiaoMelee@@UAEPAVCBaseCombatWeapon@@I@Z CWeaponMelee_MingXiaoMelee::vfunc5
 0x100147a4 func   ?sub_102ee660@CUnknown102ee660@@QAEHXZ CUnknown102ee660::sub_102ee660
 0x100147a9 func   ?vfunc82@CTriggerCheckVolume@@UAEPAUdatamap_t@@XZ CTriggerCheckVolume::vfunc82
