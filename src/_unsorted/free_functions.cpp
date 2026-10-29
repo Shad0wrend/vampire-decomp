@@ -58312,6 +58312,20 @@ void CUnknown1018d7f0::sub_1018d7f0(CBaseEntity **ppEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018da10 size=0x1a
+namespace lifted {
+extern int g_1058cbf8;
+extern int g_1058cbfc;
+extern char g_1058cc3c;
+}
+int sub_1018da10()
+{
+    lifted::g_1058cbfc = 3;
+    lifted::g_1058cbf8 = (int)&lifted::g_1058cc3c;
+    return (int)&lifted::g_1058cbf8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018df00 size=0x49
 void *sub_1000db89(int);
 struct GP;
