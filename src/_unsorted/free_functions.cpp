@@ -69850,6 +69850,20 @@ extern "C" GP *trigger_environmental_audio()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cbcc0 size=0x1a
+namespace lifted {
+extern int g_1059e8e8;
+extern int g_1059e8ec;
+extern char g_1072d024;
+}
+int sub_101cbcc0()
+{
+    lifted::g_1059e8ec = 1;
+    lifted::g_1059e8e8 = (int)&lifted::g_1072d024;
+    return (int)&lifted::g_1059e8e8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cbcf0 size=0x69
 void *sub_1000db89(int);
 struct GP;

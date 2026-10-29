@@ -2197,6 +2197,7 @@
 0x10006410 func   ?vfunc82@CBatSwarm_Teleport@@UAEPAUdatamap_t@@XZ CBatSwarm_Teleport::vfunc82
 0x10006415 func   ?vfunc453@CNPC_VTzimisceHeadClaw@@QAEXXZ CNPC_VTzimisceHeadClaw::vfunc453
 0x1000641a func   ?vfunc620@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc620
+0x1000641f func   ?sub_101cbcc0@@YAHXZ sub_101cbcc0
 0x1000642e func   ?vfunc9@CCollisionEvent@@UAEXPAX0@Z CCollisionEvent::vfunc9
 0x10006438 func   ?sub_102a9ea0@CUnknown102a9ea0@@QAEHH@Z CUnknown102a9ea0::sub_102a9ea0
 0x10006447 func   ?sub_10078c90@CUtlVector136@@QAEXH@Z CUtlVector136::sub_10078c90
