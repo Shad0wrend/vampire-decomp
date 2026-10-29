@@ -134331,6 +134331,20 @@ char sub_103c29b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c4840 size=0x1a
+namespace lifted {
+extern int g_1065e070;
+extern int g_1065e074;
+extern char g_1093d2bc;
+}
+int sub_103c4840()
+{
+    lifted::g_1065e074 = 1;
+    lifted::g_1065e070 = (int)&lifted::g_1093d2bc;
+    return (int)&lifted::g_1065e070;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c4870 size=0x43
 #include "CNPC_VVampire.h"
 void *sub_100aa720(int size);
