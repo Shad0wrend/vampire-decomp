@@ -62881,6 +62881,18 @@ void sub_101b1880(int a, int b, const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b1d60 size=0x42
+struct SSoundCache { char *sub_101b40a0(char *name, int a); };
+extern SSoundCache g_1072be18;
+__declspec(dllimport) const char *Q_stristr(const char *, const char *);
+char *sub_101b1d60(char *name, int a)
+{
+    if (Q_stristr(name, ".wav") || Q_stristr(name, ".mp3"))
+        return name;
+    return g_1072be18.sub_101b40a0(name, a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b1fb0 size=0x8e
 #include "CSoundEmitterSystemBase.h"
 
