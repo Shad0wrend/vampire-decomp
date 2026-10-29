@@ -82778,6 +82778,39 @@ void __stdcall sub_101f2ae0(void* p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f2c60 size=0x50
+struct VB { virtual void f0(); virtual void f1(); };
+struct VNode : virtual VB { int a; };
+struct CKV {
+	int pad0[3];
+	char *m_pName;
+	int m_n10;
+	char *m_pStr;
+	VNode *m_pNext;
+	VNode *m_pChild;
+	int m_n20;
+	void sub_101f2c60();
+};
+void sub_101f2fc0(void *);
+extern char g_1073aa40;
+void CKV::sub_101f2c60()
+{
+	VNode *p = m_pChild;
+	while (p) {
+		VNode *n = *(VNode **)((char *)p + 0x18);
+		p->f1();
+		p = n;
+	}
+	m_pChild = 0;
+	sub_101f2fc0(m_pStr);
+	sub_101f2fc0(m_pName);
+	m_n10 = 0;
+	g_1073aa40 = 0;
+	m_pNext = 0;
+	m_n20 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2cd0 size=0xa
 struct CUnknown101f2cd0 { int p[6]; int a; void sub_101f2cd0(int v); };
 // TARGET: CUnknown101f2cd0::sub_101f2cd0
