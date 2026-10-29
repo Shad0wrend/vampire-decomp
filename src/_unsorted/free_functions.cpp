@@ -34011,6 +34011,30 @@ void sub_100d30a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d3160 size=0x57
+#include "CBasePlayer.h"
+#include <string.h>
+CBasePlayer *sub_101193b0();
+typedef const char *(__fastcall *PFN_GetName)(void *pThis);
+void sub_100d3160()
+{
+    CBasePlayer *pPlayer = sub_101193b0();
+    if (pPlayer) {
+        CBasePlayer *pChar = *(CBasePlayer **)((char *)pPlayer + 0xa8);
+        if (pChar) {
+            void *pWeapon = pChar->sub_1032e7b0();
+            if (pWeapon) {
+                const char *pszName = (*(PFN_GetName **)pWeapon)[348](pWeapon);
+                if (!_strcmpi(pszName, "weapon_physcannon"))
+                    pChar->vfunc456();
+                else
+                    pChar->vfunc457("weapon_physcannon", 0);
+            }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d38d0 size=0xa9
 #define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
