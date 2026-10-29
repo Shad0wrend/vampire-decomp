@@ -83363,6 +83363,17 @@ char *__cdecl sub_102033e0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10203420 size=0x10
+namespace lifted {
+extern char g_10738d10;
+struct C1000297d { int sub_1000297d(int); };
+}
+int sub_10203420(int a0)
+{
+    return ((lifted::C1000297d *)((int)&lifted::g_10738d10))->sub_1000297d(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10203440 size=0x22
 struct CUnit101d5e40
 {
