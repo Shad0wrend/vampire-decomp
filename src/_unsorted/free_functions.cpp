@@ -144851,6 +144851,23 @@ CUnknown103f04f0* CUnknown103f04f0::sub_103f04f0(const CUnknown103f04f0& other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f0510 size=0x51
+#include "CBaseEntity.h"
+#include "CWeaponThrown_Chang_Energy_Ball.h"
+#include "CEntityVSlots.h"
+extern float g_1070d1b0[3];
+extern float g_1070d9d0[3];
+CEntityVSlots *sub_100fbc90(const char *name, const float *org, const float *ang, float life);
+struct CEntityVSlotsX : CEntityVSlots { void sub_100faf60(void *pParent); };
+void CWeaponThrown_Chang_Energy_Ball::sub_103f0510()
+{
+	CEntityVSlots *pEmitter = sub_100fbc90("chang_projectile_emitter", g_1070d1b0, g_1070d9d0, -1.0f);
+	if (pEmitter)
+		((CEntityVSlotsX *)pEmitter)->sub_100faf60(this);
+	m_h924 = (CBaseEntity *)pEmitter;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f0590 size=0x46
 #include "CWeaponThrown_Chang_Energy_Ball.h"
 #include "CBaseEntity.h"
