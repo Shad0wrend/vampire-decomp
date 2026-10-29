@@ -35,7 +35,7 @@ public:
 	// slots 316..320
 	virtual void vfunc321Slot();
 	// slots 322..341
-	WIG_V10(wj0) WIG_V1(wj10) WIG_V1(wj11) WIG_V1(wj12) WIG_V1(wj13) WIG_V1(wj14) WIG_V1(wj15) WIG_V1(wj16)	// slots 322..338
+	WIG_V1(wj0) WIG_V1(wj1) WIG_V1(wj2) WIG_V1(wj3) WIG_V1(wj4) WIG_V1(wj5) WIG_V1(wj6) WIG_V1(wj7) WIG_V1(wj8) virtual const Vector &vfunc331(); WIG_V1(wj10) WIG_V1(wj11) WIG_V1(wj12) WIG_V1(wj13) WIG_V1(wj14) WIG_V1(wj15) WIG_V1(wj16)	// slots 322..338
 	virtual void vfunc339();	// kicks the owner's target with a random vector
 	WIG_V1(wj17) WIG_V1(wj18)	// slots 340, 341
 	virtual int vfunc342(int a);
