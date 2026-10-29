@@ -34,7 +34,9 @@ public:
 	CHL2_V10(pa0) CHL2_V10(pa1) CHL2_V10(pa2)	// slots 0..29
 	virtual void pa30(); virtual void vfunc31(int pDump);	// slot 31 "Dump": dumps the suit power fields, then the player base's Dump
 	virtual void pa32(); virtual void pa33(); virtual void pa34(); virtual void pa35(); virtual void pa36(); virtual void pa37(); virtual void pa38(); virtual void pa39();
-	CHL2_V10(pa4) CHL2_V10(pa5) CHL2_V10(pa6) CHL2_V10(pa7) CHL2_V10(pa8) CHL2_V10(pa9)	// slots 40..99
+	CHL2_V10(pa4) CHL2_V10(pa5) CHL2_V10(pa6) CHL2_V10(pa7) CHL2_V10(pa8)	// slots 40..89
+	virtual void pa90(); virtual void pa91(); virtual int vfunc92(); virtual void pa93(); virtual int vfunc94();	// slots 90..94
+	virtual void pa95(); virtual void pa96(); virtual void pa97(); virtual void pa98(); virtual void pa99();	// slots 95..99
 	virtual void pb00(); virtual void pb01(); virtual void pb02();	// slots 100..102
 	virtual void vfunc103();	// slot 103 "CHL2_Player::Spawn": clears the byte at +0x2544, slot 408 / 407 around the flag tests of CUnknown1015ef20 (bit 5 of +0x19c follows them), the player base (sub_1016d260), then CBasePlayer::vfunc103 when slot 406 says so
 	virtual void pb04(); virtual void pb05(); virtual void pb06(); virtual void pb07(); virtual void pb08(); virtual void pb09();	// slots 104..109
