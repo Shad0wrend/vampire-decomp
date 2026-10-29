@@ -68,4 +68,5 @@
 	virtual bool vfunc379(CBaseEntity *pEnt, int b, int c, int d, int e, int f, int g);	// slot 379 override: first damages pEnt with each of the NPC's damage records (random damage type 4 / 5) and answers false when there were any; else CAI_BaseNPC::vfunc379, then (when it accepts) ends the scripted sequence (sub_102c0bb0 after sub_102c1170, CCineNPC::sub_101a8c30 of the handle at +0x5d74, SetState) and sub_10280d30
 	bool sub_10005bfa(CBaseEntity *pEnt, int b, int c, int d, int e, int f, int g);	// CAI_BaseNPC::vfunc379 (stub 0x10005bfa), called directly
 	void sub_10280d30();	// stub 0x10006a8c, run at the end of vfunc379
+	void sub_102c2ab0(inputdata_t *pInput);	// "SetInvestigateMode" input handler: an integer 0..6 goes to +0x6338, else DevMsg
 	virtual void vfunc448(int a);	// slot 448 "TaskFail" override: clears the follow/hint state (times at +0x6240.., hint handle +0x643c, vector +0x65d0), ClearHintNode(5.0f), then CAI_BaseNPC::vfunc448(a)
