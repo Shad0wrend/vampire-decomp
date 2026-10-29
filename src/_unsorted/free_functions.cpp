@@ -54132,6 +54132,20 @@ done:
 }
 // END FUNCTION
 
+// FUNCTION: 0x101641d0 size=0x4a
+// TARGET: CBasePlayer::sub_101641d0
+void CBasePlayer::sub_101641d0(int type)
+{
+    char *p = (char *)this;
+    if (p[0x1cb0] && type == 0xc) {
+        int a, b;
+        sub_10164040(0xc, &a, &b);
+        sub_101644f0(a, b, 1);
+        *(int *)(p + 0x1cb4) = 0xc;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10165790 size=0x1e2
 #include "CBasePlayer.h"
 #include "CEntityVSlots.h"
