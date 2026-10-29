@@ -43425,6 +43425,20 @@ void CBreakable::sub_1010e620()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010f100 size=0x1a
+namespace lifted {
+extern int g_1056e868;
+extern int g_1056e86c;
+extern char g_1056e8ac;
+}
+int sub_1010f100()
+{
+    lifted::g_1056e86c = 4;
+    lifted::g_1056e868 = (int)&lifted::g_1056e8ac;
+    return (int)&lifted::g_1056e868;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f4e0 size=0x8
 typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_1010f4e0(void **p) { ((Fn *)*p)[241](p); }
