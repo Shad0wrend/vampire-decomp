@@ -29254,6 +29254,21 @@ void CBeam::sub_100bba10(CBaseEntity *pStart, CBaseEntity *pEnd)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bba90 size=0x58
+#include "CBeam.h"
+// TARGET: CBeam::sub_100bba90
+void CBeam::sub_100bba90(CBaseEntity *pStart, CBaseEntity *pEnd)
+{
+	m_nNumBeamEnts = 2;
+	m_nBeamType = (m_nBeamType & 0xff0) | 5;
+	sub_100bafc0(pStart);
+	sub_100bb030(pEnd);
+	m_nAttach[1] = 0;
+	m_nAttach[m_nNumBeamEnts] = 0;
+	sub_100bbbf0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bbb10 size=0xa9
 #include "CBeam.h"
 extern void (__cdecl *g_109f3628)(const char *, ...);
