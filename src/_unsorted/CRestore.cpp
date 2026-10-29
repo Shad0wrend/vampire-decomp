@@ -372,3 +372,20 @@ int CRestore::vfunc25(Vector *pValues, int count, int nBytesAvailable)
 	return nRead;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101a2b50 size=0x41
+#include "CRestore.h"
+int sub_1019f7d0(void *, const char *);
+void __stdcall sub_101a2020(int);
+int CRestore::vfunc27(void *pBase, int *pValues, int count, int nBytesAvailable)
+{
+	const char *p = (const char *)sub_101a1f70();
+	sub_101a2020(nBytesAvailable);
+	if (*p == 0) {
+		*pValues = 0;
+		return 0;
+	}
+	*pValues = sub_1019f7d0(pBase, p);
+	return 0;
+}
+// END FUNCTION

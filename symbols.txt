@@ -537,6 +537,7 @@
 0x10002554 func   ?sub_1026e340@CAI_BaseNPC@@QAEXH@Z CAI_BaseNPC::sub_1026e340
 0x1000255e func   ?sub_10206c70@CUnknown10206c70@@QAEXHPAVCBaseCombatCharacter@@@Z CUnknown10206c70::sub_10206c70
 0x10002577 func   ?vfunc588@CAI_BaseHumanoid@@QAEDABVVector@@@Z CAI_BaseHumanoid::vfunc588
+0x1000257c func   ?vfunc27@CRestore@@UAEHPAXPAHHH@Z CRestore::vfunc27
 0x10002586 func   ?sub_1009b700@CBaseEntity@@QAEXHHPBD@Z CBaseEntity::sub_1009b700
 0x1000258b func   ?vfunc546@CNPC_VManBat@@QAEHH@Z CNPC_VManBat::vfunc546
 0x1000259a func   ?sub_103343f0@CBaseCombatCharacter@@QAEHHPBD@Z CBaseCombatCharacter::sub_103343f0
