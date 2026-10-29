@@ -95523,6 +95523,20 @@ extern "C" CBaseEntity *worldspawn()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023af10 size=0x1a
+namespace lifted {
+extern int g_105c2660;
+extern int g_105c2664;
+extern char g_105c26a4;
+}
+int sub_1023af10()
+{
+    lifted::g_105c2664 = 0x15;
+    lifted::g_105c2660 = (int)&lifted::g_105c26a4;
+    return (int)&lifted::g_105c2660;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023b0b0 size=0x1a2
 #include "SendProp.h"
 
