@@ -148905,6 +148905,20 @@ int sub_1042df50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042e150 size=0x1a
+namespace lifted {
+extern int g_106aeaf8;
+extern int g_106aeafc;
+extern char g_106aeb3c;
+}
+int sub_1042e150()
+{
+    lifted::g_106aeafc = 0x12;
+    lifted::g_106aeaf8 = (int)&lifted::g_106aeb3c;
+    return (int)&lifted::g_106aeaf8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042e310 size=0x198
 #include "SendTable.h"
 #include "SendProp.h"
