@@ -39343,6 +39343,22 @@ void CRotDoor::sub_100f3dd0(const float *pDir)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f3ea0 size=0x53
+#include <math.h>
+extern float g_104546c4;
+float __stdcall sub_100f3ea0(float a, float b, float c)
+{
+    float dc = (float)fabs(a - c);
+    float db = (float)fabs(a - b);
+    float d = dc - db;
+    if (d > g_104546c4)
+        return c;
+    if (d < -g_104546c4)
+        return b;
+    return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f4140 size=0x3e
 extern "C" __declspec(dllimport) int Q_snprintf(char *buf, int size, const char *fmt, ...);
 void __cdecl sub_100f4490(char *cmd, int a);
