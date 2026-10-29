@@ -163,3 +163,20 @@ void CSaveRestoreBlockSet::vfunc9(void *pHandler)
 		*p = pHandler;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101a5100 size=0x53
+#include <string.h>
+#include "utlvector.h"
+
+struct SBlockSetView {
+	char m_pad[0x24];
+	CUtlVector<int> m_List;
+
+	void sub_101a5100(int elem);
+};
+
+void SBlockSetView::sub_101a5100(int elem)
+{
+	m_List.FindAndRemove(elem);
+}
+// END FUNCTION
