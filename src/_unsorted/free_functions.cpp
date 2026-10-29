@@ -48603,6 +48603,22 @@ int sub_10130330()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130610 size=0x57
+#include "CLight.h"
+#include <string.h>
+void CLight::sub_10130610()
+{
+	const char *pszPattern = m_pattern;
+	if (!pszPattern)
+		pszPattern = "";
+	if (pszPattern[0] == 'a' || strlen(pszPattern) <= 1)
+		engine->vfunc62(m_iStyle, "m");
+	else
+		engine->vfunc62(m_iStyle, pszPattern);
+	m_flags204 &= ~1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130690 size=0x2d
 #include "CLight.h"
 
