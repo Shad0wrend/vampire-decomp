@@ -61,3 +61,18 @@ int CNPC_VPedestrian::vfunc438()
 	return sub_10015ad2();
 }
 // END FUNCTION
+
+// FUNCTION: 0x103a3850 size=0x48
+#include "CNPC_VPedestrian.h"
+#include "CAI_BaseNPCTroika.h"
+// TARGET: CNPC_VPedestrian::vfunc27
+void CNPC_VPedestrian::vfunc27(int arg)
+{
+    sub_10005e43(arg);
+    ((CAI_BaseNPCTroika *)this)->vfunc596(arg);
+    m_pszFile1b3c = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VPedestrian.cpp";
+    m_nLine1b40 = 0x405;
+    m_n5cc4 = 8;
+    sub_102ae7f0(0x15a);
+}
+// END FUNCTION
