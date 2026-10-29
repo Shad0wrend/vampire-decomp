@@ -14,5 +14,6 @@ public:
     char m_pad0468[0x498 - 0x468];
     unsigned int m_nFilter498;
     int m_n49c;
+    void vfunc174(CBaseEntity *pOther);
     void vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, int value);
 };
