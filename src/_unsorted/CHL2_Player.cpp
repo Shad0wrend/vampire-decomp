@@ -51,6 +51,19 @@ CHL2_Player *CHL2_Player::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034f970 size=0x4a
+// TARGET: CHL2_Player::vfunc144
+void CHL2_Player::vfunc144(int a)
+{
+    sub_10163af0(a);
+    vfunc407();
+    *(unsigned int *)((char *)this + 0x19c) |= 0x20;
+    ((CBaseEntity *)this)->vfunc66();
+    sub_103373e0();
+    *(unsigned int *)((char *)this + 0x1ed8) |= 0x400;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034fd90 size=0x39
 // TARGET: CHL2_Player::sub_1034fd90
 #include "CHL2_Player.h"
