@@ -143363,6 +143363,31 @@ CUnknown10412470Ent *sub_10412470(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x104124b0 size=0x42
+struct CActivityEntry { int m_nActivity; short m_nIndex; char m_bShared; };
+struct ActEntry;
+CActivityEntry *sub_10412420(const char *);
+ActEntry *sub_10412260(const char *, int, bool);
+extern int g_109d3080;
+extern "C" __declspec(dllimport) void __cdecl Warning(const char *, ...);
+// TARGET: sub_104124b0
+int sub_104124b0(const char *pszActivityName)
+{
+	CActivityEntry *pEntry = sub_10412420(pszActivityName);
+	if (pEntry)
+	{
+		if (!pEntry->m_bShared)
+		{
+			Warning("***\nShared<->Private Activity collision!\n***\n");
+			return -1;
+		}
+	}
+	else
+		pEntry = (CActivityEntry *)sub_10412260(pszActivityName, g_109d3080 + 1, true);
+	return pEntry->m_nActivity;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10412550 size=0x24
 extern int g_1094afe0;
 unsigned short *sub_10412470(int a);
