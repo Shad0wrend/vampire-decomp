@@ -116641,6 +116641,20 @@ CUnknown102fc5d0 *CUnknown102fc5d0::sub_102fc5d0(int a, int b, const float *pVec
 }
 // END FUNCTION
 
+// FUNCTION: 0x102fca10 size=0x1a
+namespace lifted {
+extern int g_106111b8;
+extern int g_106111bc;
+extern char g_106111fc;
+}
+int sub_102fca10()
+{
+    lifted::g_106111bc = 1;
+    lifted::g_106111b8 = (int)&lifted::g_106111fc;
+    return (int)&lifted::g_106111b8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102fce80 size=0x10d
 #include "CAI_Pathfinder.h"
 struct CAI_PathfinderLink
