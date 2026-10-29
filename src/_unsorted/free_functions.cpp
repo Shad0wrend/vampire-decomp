@@ -27097,6 +27097,26 @@ UtlMem *UtlMem::sub_100b4650(int growSize, int allocationCount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b46a0 size=0x4c
+#include "CUtlLinkedList12.h"
+
+void CUtlLinkedList12::sub_100b46a0()
+{
+	if (m_NumAlloced == 0)
+		return;
+	int prev = -1;
+	for (int i = m_NumAlloced - 1; i >= 0; i--) {
+		m_pMemory[i].m_Next = prev;
+		m_pMemory[i].m_Previous = i;
+		prev = i;
+	}
+	m_FirstFree = 0;
+	m_Head = -1;
+	m_Tail = -1;
+	m_ElementCount = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4710 size=0x15
 struct CUnknown100b4710 { int sub_100b4710(); };
 int CUnknown100b4710::sub_100b4710()
