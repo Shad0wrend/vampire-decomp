@@ -244,7 +244,9 @@ public:
 	unsigned int m_h6448;
 	int m_n644c;
 	float m_f6450;
-	char m_pad6454[0x6495 - 0x6454];
+	char m_pad6454[0x6478 - 0x6454];
+	const char *m_psz6478;
+	char m_pad647c[0x6495 - 0x647c];
 	char m_b6495;
 	char m_pad6496[0x64bc - 0x6496];
 	int m_n64bc;
