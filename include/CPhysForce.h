@@ -3,10 +3,7 @@
 
 #include "CBaseEntity.h"
 
-struct CPhysForceVec3
-{
-	float x, y, z;
-};
+typedef Vector CPhysForceVec3;
 
 // The motion record embedded at +0x464 (class not known): two points, each stored twice.
 struct CPhysForceMotion
