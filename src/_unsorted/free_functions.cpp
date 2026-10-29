@@ -103076,6 +103076,24 @@ int sub_1025d760(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025d790 size=0x4b
+int sub_10412140();
+char sub_10412160(int index, int *pA, int *pB);
+void sub_1025d700(int b, int a);
+void sub_1025d800();
+
+// TARGET: sub_1025d790
+void sub_1025d790()
+{
+	for (int i = 0; i < sub_10412140(); i++) {
+		int a, b;
+		if (sub_10412160(i, &a, &b))
+			sub_1025d700(b, a);
+	}
+	sub_1025d800();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025d800 size=0x1
 void sub_1025d800()
 {
