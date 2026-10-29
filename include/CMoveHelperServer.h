@@ -28,7 +28,11 @@ public:
 	virtual void vfunc16(const float *pOrigin, const char *pszSound); // "CMoveHelperServer::StartSound": emits the sound at the origin for the host alone (a single user filter, with the prediction rules unless the global flag at +0x14 is 1)
 
 	CBaseEntity *m_pHost; // 0x04
-	char m_pad08[0xc];
-	int m_nTouchCount;
+	void *m_pTouchList; // 0x08
+	int m_nTouchAlloc; // 0x0c
+	int m_n10; // 0x10
+	int m_nTouchCount; // 0x14
+	void *m_pTouchListDbg; // 0x18
+	CMoveHelperServer();
 	void sub_1000185c(); // as in CDataObjectAccessSystem (transplant)
 };
