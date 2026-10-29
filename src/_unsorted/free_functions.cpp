@@ -72158,6 +72158,19 @@ void sub_101d2560(Vector vecOrigin, int a3, const char *a4, const char *a5, int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d2640 size=0x46
+#include "Vector.h"
+#include "CBaseAnimating.h"
+void sub_101d26b0(Vector vecOrigin, int a, int b, int c, int d, int e);
+void sub_101d2640(Vector vecOrigin, int a, CBaseAnimating *pEnt, int pszBone, int b)
+{
+	if (pEnt) {
+		int bone = pEnt->sub_10092550(pszBone);
+		sub_101d26b0(vecOrigin, a, (int)pEnt, 2, bone, b);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d26b0 size=0x9b
 #include "CRestore.h"
 #include "Vector.h"
