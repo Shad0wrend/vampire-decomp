@@ -94840,6 +94840,24 @@ void sub_1022d9d0(CBaseCombatCharacter *pChar, int nTarget)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022e9d0 size=0x4b
+#include <stdlib.h>
+class CBasePlayer;
+CBasePlayer *sub_101193b0();
+void sub_1022dea0(CBasePlayer *pPlayer, int n);
+// TARGET: sub_1022e9d0
+void sub_1022e9d0()
+{
+    CBasePlayer *pPlayer = sub_101193b0();
+    if (pPlayer) {
+        int n = 1;
+        if (engine->vfunc85() >= n)
+            n = atoi(engine->vfunc84(n));
+        sub_1022dea0(pPlayer, n);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022ea40 size=0x1
 void sub_1022ea40()
 {
