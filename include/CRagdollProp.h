@@ -57,6 +57,7 @@ public:
     void *sub_100952d0(int a);	// CBaseAnimating::sub_100952d0 (GetModelPtr-like), called directly
     CRagdollProp *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
     void sub_10014317();	// as in CPhysForce (transplant)
+    void sub_10155380();	// ragdoll init: stamps +0x174 with curtime, clears +0x6f4 / +0x6f8 and resets the sequence to the first one CBaseAnimating::sub_1008dc40(0x21, -1) selects (0 when none)
     void sub_101563b0(int index, int unused);	// stores the origin/angles of body `index` at +0x2a0 / +0x2fa (dwords); index 0 also calls slot 216 and PhysicsTouchTriggers
     CRagdollProp *sub_101550d0();	// as in CKeepUpright (transplant)
     void sub_100ada20(const float *pPosition, const float *pAngles, const float *pVelocity);	// CBaseEntity::Teleport (slot 181, stub 0x10012cf1), called directly
