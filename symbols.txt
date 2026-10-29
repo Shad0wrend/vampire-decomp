@@ -1685,6 +1685,7 @@
 0x10005056 func   ?sub_101ca510@CTriggerUnit101ca510@@QAEXPAVCBaseEntity@@@Z CTriggerUnit101ca510::sub_101ca510
 0x1000506f func   ?vfunc546@CNPC_VSabbatLeader@@QAEHH@Z CNPC_VSabbatLeader::vfunc546
 0x10005074 func   ?vfunc5@CSun@@QAEPAV1@I@Z CSun::vfunc5
+0x10005083 func   ?sub_102c89e0@@YAHXZ sub_102c89e0
 0x10005088 func   ?sub_103ca390@CHintData_WW@@QAEXH@Z CHintData_WW::sub_103ca390
 0x1000508d func   ?sub_10430410@@YAII@Z sub_10430410
 0x10005092 func   ?sub_104106a0@CWeaponPhysCannon@@QAEXHD@Z CWeaponPhysCannon::sub_104106a0

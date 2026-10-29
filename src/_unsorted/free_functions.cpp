@@ -108408,6 +108408,20 @@ char sub_102c7eb0() {
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c89e0 size=0x1a
+namespace lifted {
+extern int g_1060190c;
+extern int g_10601910;
+extern char g_10601954;
+}
+int sub_102c89e0()
+{
+    lifted::g_10601910 = 9;
+    lifted::g_1060190c = (int)&lifted::g_10601954;
+    return (int)&lifted::g_1060190c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c8c00 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);
