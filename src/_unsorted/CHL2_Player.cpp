@@ -51,6 +51,17 @@ CHL2_Player *CHL2_Player::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034f7f0 size=0x4f
+// TARGET: CHL2_Player::vfunc31
+void CHL2_Player::vfunc31(int pDump)
+{
+	sub_1009ba60(pDump, "m_HL2Local.m_flSuitPower", *(int *)&m_u2464);
+	sub_1009b980(pDump, "m_bitsActiveDevices", m_n252c);
+	sub_1009ba60(pDump, "m_flSuitPowerLoad", *(int *)&m_f2530);
+	sub_1015e140(pDump);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034f970 size=0x4a
 // TARGET: CHL2_Player::vfunc144
 void CHL2_Player::vfunc144(int a)
