@@ -2282,6 +2282,20 @@ done:
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c4a60 size=0x4d
+// TARGET: CAI_BaseNPCTroika::vfunc342
+char CAI_BaseNPCTroika::vfunc342(int pEnt)
+{
+	if (m_b63d8)
+		return 0;
+	int p = (int)vfunc293();
+	CBaseCombatCharacter *pBase = (CBaseCombatCharacter *)this;
+	if (p && p == pEnt && !pBase->sub_1033c900(0x40000))
+		return 0;
+	return pBase->CBaseCombatCharacter::vfunc342(pEnt);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c5470 size=0x38
 #include "CAI_BaseNPCTroika.h"
 
