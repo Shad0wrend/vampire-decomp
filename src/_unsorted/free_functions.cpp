@@ -104901,6 +104901,21 @@ void sub_1025d940()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025da20 size=0x50
+#include "utlvector.h"
+struct CList1025da20 {
+	int m_n0;
+	CUtlVector<int> m_List;
+	void sub_1025da20();
+	~CList1025da20();
+};
+void CList1025da20::sub_1025da20()
+{
+	m_List.RemoveAll();
+	m_List.~CUtlVector<int>();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025da90 size=0x82
 struct HandleEntry_t
 {
