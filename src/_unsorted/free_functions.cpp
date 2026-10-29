@@ -71255,6 +71255,22 @@ void CUnknown101d82d0::sub_101d83a0(const char *pszList)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d8470 size=0x41
+#include "CUnknown101d7ec0.h"
+struct CCheckList {
+	int m_nCount;
+	CUnknown101d7ec0_Check *m_pChecks;
+	bool sub_101d8470(CBaseCombatCharacter *pChar);
+};
+bool CCheckList::sub_101d8470(CBaseCombatCharacter *pChar)
+{
+	for (int i = 0; i < m_nCount; i++)
+		if (g_10739140.sub_101d7fb0(pChar, &m_pChecks[i]))
+			return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d84e0 size=0x77
 #include <stdio.h>
 #include <string.h>
