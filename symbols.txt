@@ -3862,6 +3862,7 @@
 0x10009d81 func   ?sub_1042d670@@YAXXZ sub_1042d670
 0x10009d86 func   ?vfunc241@CFuncPlat@@UAEEXZ CFuncPlat::vfunc241
 0x10009d8b func   ?sub_101f0b50@CUnknown101f0b50@@QAEPAXH@Z CUnknown101f0b50::sub_101f0b50
+0x10009d95 func   ?sub_10202e50@CUnknown10202d10@@QAEHHPBDHD@Z CUnknown10202d10::sub_10202e50
 0x10009d9a func   ?sub_1005d830@@YAXPAXMHPAVVector@@@Z sub_1005d830
 0x10009d9f func   ?sub_10187ef0@CLagCompensationManager@@QAEXXZ CLagCompensationManager::sub_10187ef0
 0x10009da4 func   ?sub_101e05e0@CUnknown101e05e0@@QAEXXZ CUnknown101e05e0::sub_101e05e0

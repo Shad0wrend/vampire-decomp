@@ -86431,6 +86431,27 @@ CUnknown102029c0 *CUnknown10202d10::sub_10202d10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10202e50 size=0x48
+#include "CUnknown10202d10.h"
+#include "CUnknown10202b10.h"
+
+const char **sub_10203ed0(const char **ppDest, const char *pszSrc);
+
+// TARGET: CUnknown10202d10::sub_10202e50
+int CUnknown10202d10::sub_10202e50(int a, const char *pszName, int c, char d)
+{
+	CUnknown102029c0 *pRecord = sub_10202d10();
+	if (pRecord)
+	{
+		*(const char **)((char *)pRecord + 4) = *sub_10203ed0(&pszName, pszName);
+		((CUnknown10202b10 *)pRecord)->sub_10202b10(a, c);
+		*((char *)pRecord + 0x14) = d;
+		return pRecord->m_id;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10202ec0 size=0x1c
 namespace lifted {
 extern char g_105a8a10;
