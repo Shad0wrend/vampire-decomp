@@ -111262,6 +111262,24 @@ void CUnknown102d09b0::sub_102d09b0(CBaseEntity *pOther, int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d0ab0 size=0x48
+extern void (*g_109f3890)(char *dst, const char *src, int n);
+struct CAI_FailView {
+    char m_pad[0x478];
+    char m_szFail[0x80];
+    float m_flFailTime;
+    void sub_102d0ab0(const char *pszMsg);
+};
+void CAI_FailView::sub_102d0ab0(const char *pszMsg)
+{
+    if (pszMsg)
+        g_109f3890(m_szFail, pszMsg, 0x80);
+    else
+        g_109f3890(m_szFail, "Unknown failure", 0x80);
+    m_flFailTime = gpGlobals->curtime + 10.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d0b20 size=0x24
 extern char g_106b8540[];
 
