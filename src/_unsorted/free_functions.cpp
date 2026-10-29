@@ -47648,6 +47648,20 @@ extern "C" CBaseEntity *logic_case_toggle()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101345f0 size=0x1a
+namespace lifted {
+extern int g_10576f80;
+extern int g_10576f84;
+extern char g_10576fc4;
+}
+int sub_101345f0()
+{
+    lifted::g_10576f84 = 3;
+    lifted::g_10576f80 = (int)&lifted::g_10576fc4;
+    return (int)&lifted::g_10576f80;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101346e0 size=0x7f
 #include "CUnknown101346e0.h"
 
