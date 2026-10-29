@@ -39890,6 +39890,26 @@ void CBaseEntityUnit100fbaf0::sub_100fbaf0(float flTime)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fbb40 size=0x44
+#include "CBaseEntity.h"
+#include "globalvars.h"
+void sub_100fbc50();
+struct CThinkView : CBaseEntity {
+    char pad[0x498 - sizeof(CBaseEntity)];
+    int m_i498;
+    void sub_100fbb40(float flDelay, int nValue);
+};
+// TARGET: CThinkView::sub_100fbb40
+void CThinkView::sub_100fbb40(float flDelay, int nValue)
+{
+    if (flDelay >= 0.0f) {
+        sub_100ac4e0((int)sub_100fbc50, 0, 0);
+        m_flNextThink = flDelay + gpGlobals->curtime;
+        m_i498 = nValue;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fbc20 size=0x19
 #include "CBaseEntity.h"
 
