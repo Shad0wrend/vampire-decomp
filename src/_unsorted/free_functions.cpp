@@ -112858,6 +112858,24 @@ void CAI_BaseNPCTroika::sub_102c2b20(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c32d0 size=0x52
+#include "inputdata_t.h"
+#include "CUnknown101e0f00.h"
+#include "CUnknown101e3af0.h"
+extern CUnknown101e0f00 g_10739a4c;
+void CAI_BaseNPCTroika::sub_102c32d0(inputdata_t *data)
+{
+    char bOn = (data->value.fieldType == 5) ? (char)data->value.iValue : 0;
+    unsigned int id = g_10739a4c.sub_101e1590("Thaumaturgy_Bloodshield");
+    if (bOn) {
+        g_10739a4c.sub_101e3380(this, this, id);
+        return;
+    }
+    id = g_10739a4c.sub_101e1870(id);
+    ((CUnknown101e3af0 *)&g_10739a4c)->sub_101e3af0((CBaseCombatCharacter *)this, id, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c3350 size=0x3a
 #include "inputdata_t.h"
 extern char g_106b8540[];
