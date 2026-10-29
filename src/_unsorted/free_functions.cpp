@@ -102968,6 +102968,22 @@ void CUnk10265a90::sub_10265a90(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10266710 size=0x46
+#include "CVDmg_t.h"
+#include "CGameRules.h"
+struct SDmgInfo { CVDmg_t *m_pDmg; char m_pad04[0x2c]; float m_flDamage; };
+extern CGameRules *g_1070ba0c;
+void __stdcall sub_10266710(SDmgInfo *pInfo, void *a, int b)
+{
+	float f;
+	if (pInfo->m_pDmg)
+		f = (float)pInfo->m_pDmg->sub_101faa70();
+	else
+		f = pInfo->m_flDamage;
+	g_1070ba0c->vfunc33(pInfo, a, f * 2.5, b, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10266b10 size=0x116
 #include "Vector.h"
 #include "CEntityVSlots.h"
