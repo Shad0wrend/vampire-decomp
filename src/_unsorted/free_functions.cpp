@@ -69554,6 +69554,20 @@ extern "C" CBaseEntity *trigger_wind()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ca950 size=0x1a
+namespace lifted {
+extern int g_1059e370;
+extern int g_1059e374;
+extern char g_1059e3b4;
+}
+int sub_101ca950()
+{
+    lifted::g_1059e374 = 0xd;
+    lifted::g_1059e370 = (int)&lifted::g_1059e3b4;
+    return (int)&lifted::g_1059e370;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101caea0 size=0x2c
 struct CVariantArg101caea0
 {
