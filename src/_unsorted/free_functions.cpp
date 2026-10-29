@@ -57850,6 +57850,19 @@ void __stdcall sub_1017e840(int level)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017e900 size=0x53
+#include "globalvars.h"
+void CBasePlayer::sub_1017e900(int a, int b)
+{
+    if (a == 300) {
+        sub_1017e150(1, -1.0f, "LockPick");
+        return;
+    }
+    if (m_n1CE0 != 0xbf800000 && m_f1CE0 < gpGlobals->curtime)
+        sub_1017e150(0, -1.0f, "Clear");
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017e980 size=0x33
 extern char g_105882e0[];
 
