@@ -1949,6 +1949,22 @@ int CAI_BaseNPCTroika::vfunc609(char bForce)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102bed30 size=0x42
+#include "CAI_BaseNPCTroika.h"
+#include "COutputEvent.h"
+int CAI_BaseNPCTroika::vfunc142(int a)
+{
+	if (m_b63d8) {
+		if (m_f5d98 != gpGlobals->curtime) {
+			m_f5d98 = gpGlobals->curtime;
+			((COutputEvent *)((char *)this + 0x5e0c))->sub_100cd660(this, this, 0.0f);
+		}
+		return 0;
+	}
+	return CAI_BaseNPC::vfunc142(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102bf340 size=0x105
 #include "CAI_BaseNPCTroika.h"
 #include "CAI_CsActList.h"
