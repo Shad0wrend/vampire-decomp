@@ -147,6 +147,18 @@ void CRotDoor::vfunc248()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f2640 size=0x43
+#include "CRotDoor.h"
+void CRotDoor::vfunc156(int bFirst)
+{
+	if (bFirst == 0)
+		vfunc64(&m_angRotation52c.x);
+	else
+		vfunc64(&m_angRotation520.x);
+	sub_100b3b00();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f2a00 size=0x16f
 #include "CRotDoor.h"
 #include "CEntityVSlots.h"
