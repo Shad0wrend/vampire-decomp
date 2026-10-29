@@ -17,7 +17,8 @@ struct CSquadName	// the name argument of the squad's name setter: one pointer, 
 class CUnknown103164c0
 {
 public:
-	char m_pad00[8];
+	CUnknown103164c0 *m_pNext;	// 0x00
+	const char *m_pszName;	// 0x04
 	CUnknown102e06f0 m_base;	// 0x08
 	unsigned int m_hMembers[16];	// 0x1c
 	int m_nMembers;	// 0x5c
