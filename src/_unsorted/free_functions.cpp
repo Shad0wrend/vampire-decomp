@@ -140584,6 +140584,15 @@ int sub_103ef640()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103efdd0 size=0x45
+#include "CWeaponThrown_Chang_Energy_Ball.h"
+void CWeaponThrown_Chang_Energy_Ball::sub_103efdd0(CBaseEntity *pEnt)
+{
+	if (m_h914.Get() != pEnt)
+		sub_103f00c0((int)pEnt);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f00c0 size=0xbf
 #include "CWeaponThrown_Chang_Energy_Ball.h"
 
