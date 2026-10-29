@@ -69402,6 +69402,26 @@ int CTriggerHurt::sub_101c6550(float flDamage)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c6670 size=0x48
+#include "CTriggerHurt.h"
+#include "globalvars.h"
+
+void sub_100064b0();
+
+// TARGET: CTriggerHurt::sub_101c6670
+void CTriggerHurt::sub_101c6670(int a)
+{
+	if (!m_bDisabled)
+	{
+		sub_101c6550(1.0f);
+		return;
+	}
+	sub_101c4bf0();
+	sub_100ac4e0((int)sub_100064b0, 0, 0);
+	m_flNextThink = gpGlobals->curtime + 0.1f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c66e0 size=0x7a
 void *sub_1000db89(int);
 struct GP;
