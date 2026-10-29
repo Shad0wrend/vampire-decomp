@@ -101418,6 +101418,20 @@ void __fastcall sub_1025e140(Mem4 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025e4b0 size=0x1a
+namespace lifted {
+extern int g_105c8b78;
+extern int g_105c8b7c;
+extern char g_105c8bbc;
+}
+int sub_1025e4b0()
+{
+    lifted::g_105c8b7c = 2;
+    lifted::g_105c8b78 = (int)&lifted::g_105c8bbc;
+    return (int)&lifted::g_105c8b78;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025e7b0 size=0xe1
 #include "CAI_BaseHumanoid.h"
 #include "QAngle.h"
