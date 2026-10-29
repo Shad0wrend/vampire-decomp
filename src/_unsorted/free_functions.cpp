@@ -32528,6 +32528,37 @@ void CUnknown100cd6d0::sub_100cd6d0(void *pOwner)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd760 size=0x56
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055e01c;
+extern int g_1055dc00[2];
+
+int *sub_100cd760()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 10, "m_Value", {0, 0}, 1, 2, 0, g_1055e01c, (void *)0 },
+    };
+    g_1055dc00[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1055dc00[0] = (int)&dataDesc[1];
+    return g_1055dc00;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cd7e0 size=0x69
 extern int g_1055dc00, g_1055dc04, g_1055da88, g_1055da8c;
 
