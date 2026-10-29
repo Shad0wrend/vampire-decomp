@@ -139624,6 +139624,20 @@ CUnknown103f04f0* CUnknown103f04f0::sub_103f04f0(const CUnknown103f04f0& other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f0740 size=0x1a
+namespace lifted {
+extern int g_1067d498;
+extern int g_1067d49c;
+extern char g_1067d4dc;
+}
+int sub_103f0740()
+{
+    lifted::g_1067d49c = 0xa;
+    lifted::g_1067d498 = (int)&lifted::g_1067d4dc;
+    return (int)&lifted::g_1067d498;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f10c0 size=0x3
 void __stdcall sub_103f10c0(int a0)
 {
