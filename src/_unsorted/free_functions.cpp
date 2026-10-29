@@ -52435,6 +52435,37 @@ int sub_10140550()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140690 size=0x52
+#include "CBaseMoveBehavior.h"
+struct CMoveClockView : CBaseEntity {
+	char m_pad[0x3f4 - sizeof(CBaseEntity)];
+	float m_f3f4;
+};
+namespace block_10140690 {
+	struct CMoveUnit : CBaseMoveBehavior {
+		int sub_101402f0(int nIndex);
+	};
+	int CMoveUnit::sub_101402f0(int nIndex)
+	{
+		if (nIndex == 1)
+			return m_unk484;
+		if (nIndex == -1)
+			return m_unk480;
+		return (int)this;
+	}
+}
+using namespace block_10140690;
+// TARGET: CBaseMoveBehavior::sub_10140690
+bool CBaseMoveBehavior::sub_10140690()
+{
+	if (!m_p4a0)
+		return true;
+	if (m_fl494 != 0.0f && m_fl494 >= ((CMoveClockView *)this)->m_f3f4 && !((CMoveUnit *)m_p4a0)->sub_101402f0(1) && !m_p4a4)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140710 size=0x27
 // TARGET: CBaseMoveBehavior::sub_10140710
 #include "CBaseMoveBehavior.h"

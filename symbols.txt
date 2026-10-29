@@ -960,6 +960,7 @@
 0x1000326a func   ?sub_1022d780@@YAXHH@Z sub_1022d780
 0x1000326f func   ?sub_100ac610@@YIXPAVCBaseEntity@@HMPBD@Z sub_100ac610
 0x10003274 func   ?vfunc375@CAI_BaseNPC@@UAEHH@Z CAI_BaseNPC::vfunc375
+0x1000327e func   ?sub_10140690@CBaseMoveBehavior@@QAE_NXZ CBaseMoveBehavior::sub_10140690
 0x10003288 func   ?vfunc0@CTraceFilterNav@@QAE_NPAXH@Z CTraceFilterNav::vfunc0
 0x1000328d func   ?sub_101dfe50@CUnknown101dfe50@@QAEHHHH@Z CUnknown101dfe50::sub_101dfe50
 0x10003292 func   ?vfunc220@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc220
