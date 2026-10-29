@@ -2,6 +2,8 @@
 #pragma once
 #include "CNPC_VBaseBoss.h"
 
+class CUnknown1025ddd0;
+
 class CNPC_VTzimisceHeadClaw : public CNPC_VBaseBoss
 {
 public:
