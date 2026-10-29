@@ -67346,6 +67346,20 @@ bool CUtlRBTree12::sub_101c02d0(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c09d0 size=0x1a
+namespace lifted {
+extern int g_1059b680;
+extern int g_1059b684;
+extern char g_1059b6c4;
+}
+int sub_101c09d0()
+{
+    lifted::g_1059b684 = 1;
+    lifted::g_1059b680 = (int)&lifted::g_1059b6c4;
+    return (int)&lifted::g_1059b680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0b10 size=0x32
 #include "CBaseEntity.h"
 
