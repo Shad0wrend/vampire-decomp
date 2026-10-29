@@ -132120,6 +132120,20 @@ UtlMem *UtlMem::sub_1039ae10(int growSize, int allocationCount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039af00 size=0x1a
+namespace lifted {
+extern int g_106474f0;
+extern int g_106474f4;
+extern char g_10647534;
+}
+int sub_1039af00()
+{
+    lifted::g_106474f4 = 0xf;
+    lifted::g_106474f0 = (int)&lifted::g_10647534;
+    return (int)&lifted::g_106474f0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039b180 size=0x33
 void sub_10014d7b();
 void sub_10010451();
