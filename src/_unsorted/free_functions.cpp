@@ -28433,6 +28433,32 @@ float *CBeam::sub_100bb270()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bb720 size=0x4c
+struct CFoo { void sub_100b4ad0(int *p); };
+CBaseEntity *sub_100b3db0(const char *classname, const char *module, int line);
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct CBeamSlots
+{
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	V10(k) V10(l) V10(m) V10(n) V10(o) V10(p) V10(q) V10(r) V10(s) V10(t)
+	virtual void z0(); virtual void z1();
+	virtual void SetOwner(CBaseEntity *pOwner);
+};
+
+CBaseEntity *sub_100bb720(const char *module, int line, int unused, const char *model, int value, CBaseEntity *pOwner)
+{
+	CBaseEntity *pBeam = sub_100b3db0("beam", module, line);
+	if (pBeam)
+	{
+		pBeam->sub_100bb790(model, value);
+		((CBeamSlots *)pBeam)->SetOwner(pOwner);
+		((CFoo *)pBeam)->sub_100b4ad0((int *)pOwner);
+	}
+	return pBeam;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bb870 size=0x6b
 #include "CBeam.h"
 
