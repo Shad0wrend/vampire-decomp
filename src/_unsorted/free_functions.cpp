@@ -108839,6 +108839,20 @@ int sub_102cadb0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cc4f0 size=0x1a
+namespace lifted {
+extern int g_106089f0;
+extern int g_106089f4;
+extern char g_10608a34;
+}
+int sub_102cc4f0()
+{
+    lifted::g_106089f4 = 2;
+    lifted::g_106089f0 = (int)&lifted::g_10608a34;
+    return (int)&lifted::g_106089f0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cc520 size=0x9
 CUnknown102cc520 *CUnknown102cc520::sub_102cc520()
 {
