@@ -914,6 +914,7 @@
 0x10003297 func   ?sub_101aa0e0@@YIXPAUCThinkOwnerView@@@Z sub_101aa0e0
 0x100032a6 func   ?sub_10205ac0@CParsedValue@@QAEXPAXPBD@Z CParsedValue::sub_10205ac0
 0x100032b5 func   ?vfunc5@CItemGPishaBook@@QAEPAV1@I@Z CItemGPishaBook::vfunc5
+0x100032ba func   ?sub_1030b3c0@@YAHXZ sub_1030b3c0
 0x100032bf func   ?sub_1017e760@CBasePlayer@@QAEXH@Z CBasePlayer::sub_1017e760
 0x100032d3 func   ?sub_1023af10@@YAHXZ sub_1023af10
 0x100032dd func   ?sub_10071840@CUnk10071840@@QAEXXZ CUnk10071840::sub_10071840

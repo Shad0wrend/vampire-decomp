@@ -117542,6 +117542,20 @@ void CUnknown1030b2f0::sub_1030b2f0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030b3c0 size=0x1a
+namespace lifted {
+extern int g_10612050;
+extern int g_10612054;
+extern char g_10612094;
+}
+int sub_1030b3c0()
+{
+    lifted::g_10612054 = 0x17;
+    lifted::g_10612050 = (int)&lifted::g_10612094;
+    return (int)&lifted::g_10612050;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030b4d0 size=0x33
 struct CUnknown10319fe0 { void sub_10319fe0(int a); int sub_100118e7(); };
 struct CUnk_1030b4d0 { void sub_1030b4d0(int a, char b); void sub_1000ad3a(int a); };
