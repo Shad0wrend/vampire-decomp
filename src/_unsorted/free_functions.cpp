@@ -67008,6 +67008,24 @@ float __stdcall sub_101b4900(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b49f0 size=0x4d
+struct SSoundLevelEntry { int level; const char *name; };
+extern SSoundLevelEntry g_10598cd0[30];
+extern "C" __declspec(dllimport) int Q_strcasecmp(const char *s1, const char *s2);
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+int sub_101b49f0(const char *pName)
+{
+    if (pName) {
+        for (SSoundLevelEntry *p = g_10598cd0; (int)p < (int)(g_10598cd0 + 30); p++) {
+            if (!Q_strcasecmp(pName, p->name))
+                return p->level;
+        }
+        DevMsg("CSoundEmitterSystem:  Unknown sound level %s\n", pName);
+    }
+    return 0x4b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b4a60 size=0x10
 namespace lifted {
 int sub_1000e79b(int);
