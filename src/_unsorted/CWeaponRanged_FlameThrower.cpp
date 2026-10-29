@@ -118,3 +118,19 @@ void __fastcall sub_103e3200(void *pSelf)
     sub_100138bd(pSelf);
 }
 // END FUNCTION
+
+// FUNCTION: 0x103e3240 size=0x50
+#include "CWeaponRanged_FlameThrower.h"
+#include "CEntityVSlots.h"
+void CWeaponRanged_FlameThrower::vfunc291()
+{
+	if (m_b1520) {
+		if (m_b1519)
+			sub_103e2d10("Weapons/Ranged/Flamethrower/Deactivate.wav", 1);
+		sub_103e2d10("Weapons/Ranged/Flamethrower/Empty.wav", 4);
+	}
+	m_b1520 = 0;
+	m_b1519 = 0;
+	((CEntityVSlots *)this)->slot307(0xc4);
+}
+// END FUNCTION
