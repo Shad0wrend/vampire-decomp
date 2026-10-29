@@ -115605,6 +115605,21 @@ int sub_102f3770(const float *a, const float *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f37d0 size=0x1d
+namespace lifted {
+extern char g_1049da30;
+}
+struct CUnknown102f37d0 { void * sub_102f37d0(int, int); };
+void * CUnknown102f37d0::sub_102f37d0(int a0, int a1)
+{
+    *(int *)this = (int)&lifted::g_1049da30;
+    *(int *)((char *)this + 4) = a0;
+    *(int *)((char *)this + 8) = a1;
+    *(char *)((char *)this + 0xc) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f3900 size=0x76
 #include "CUnknown102f3900.h"
 
