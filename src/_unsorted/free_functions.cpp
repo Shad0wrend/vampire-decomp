@@ -117177,6 +117177,20 @@ void __fastcall sub_10307890(CUnknown10307890 *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10307990 size=0x1a
+namespace lifted {
+extern int g_106117c0;
+extern int g_106117c4;
+extern char g_10611804;
+}
+int sub_10307990()
+{
+    lifted::g_106117c4 = 6;
+    lifted::g_106117c0 = (int)&lifted::g_10611804;
+    return (int)&lifted::g_106117c0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103079c0 size=0xa8
 extern "C" int _strcmpi(const char *, const char *);
 extern "C" char *strcat(char *, const char *);
