@@ -9,6 +9,20 @@ void CLogicAuto::sub_10130d10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130d40 size=0x4e
+#include "CLogicAuto.h"
+#include "CBaseEntity.h"
+void CLogicAuto::vfunc130(int a)
+{
+	((CBaseEntity *)this)->CBaseEntity::vfunc130(a);
+	if ((char)a) {
+		m_flTime = gpGlobals->curtime + 0.2;
+	} else if (m_flags204 & 2) {
+		m_flTime = gpGlobals->curtime + 0.2;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130db0 size=0x27
 #include "CLogicAuto.h"
 
