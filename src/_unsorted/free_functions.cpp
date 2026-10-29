@@ -120057,6 +120057,22 @@ void * CUnknown102e4f20::sub_102e4f20(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e5d00 size=0x57
+float sub_102e5d00(float *v)
+{
+    float len = FastSqrt(v[1] * v[1] + v[0] * v[0]);
+    if (len != 0.0f) {
+        float inv = 1.0f / len;
+        v[0] = inv * v[0];
+        v[1] = inv * v[1];
+        return len;
+    }
+    v[1] = 0.0f;
+    v[0] = 0.0f;
+    return len;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e7ba0 size=0x1dd
 #include "CAI_MoveProbe.h"
 #include "CVProfile.h"
