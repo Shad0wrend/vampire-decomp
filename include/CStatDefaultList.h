@@ -10,5 +10,6 @@ public:
 	int m_count;
 	StatDefault **m_pItems;
 
+	bool sub_1006cec0(CVTraitKV *pKV, const CVTraitDependency *pDefaultDependency);	// loads one record per child of the "Table" key
 	StatDefault *sub_1006cd90();	// grows by one slot and returns the (lazily created) item
 };
