@@ -88,4 +88,5 @@
 	int sub_10165790(CBaseEntity *pEntity);	// called by slots 426 / 427 with the grapple target (the handle at +0x1538): traces the entity's hull from its origin 100 units back along its facing; true when the way is blocked
 	void vfunc426();	// slot 426 (plain member): sub_10165790 on the grapple target (handle +0x1538, when +0x153c is set), else on null
 	void sub_10161f10();	// ends the placeholder: the entity of the handle at +0x1da4 gets its think function reset (sub_100ac4e0) and the next think in 0.01 s, then the handle is cleared
+	Vector vfunc389(const Vector &vecPos);	// slot 389 (plain member, hidden return, ret 8): the view offset (+0x184) plus vecPos
 	char vfunc321(int unused);	// slot 321 (plain member): re-arms the random view punch timer (+0x1da8) when it is due, then punches the view by a random angle scaled by the player and punch convars (slot 169)
