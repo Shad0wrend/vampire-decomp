@@ -72482,6 +72482,18 @@ void CUnknown101dbe30::sub_101dbed0(CBaseEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dc1c0 size=0x14
+struct CUnknown101dc1c0 { void * sub_101dc1c0(); };
+void * CUnknown101dc1c0::sub_101dc1c0()
+{
+    *(int *)this = 1;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = 0;
+    *(int *)((char *)this + 0xc) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dc260 size=0x150
 void *operator new(unsigned int);
 void operator delete(void *);
