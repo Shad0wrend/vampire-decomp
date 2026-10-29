@@ -117528,6 +117528,17 @@ void sub_10307e00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10308150 size=0x21
+namespace lifted {
+struct C10003ddc { int sub_10003ddc(int, int, int, int, int); };
+}
+struct CUnknown10308150 { int sub_10308150(int, int, int, int); };
+int CUnknown10308150::sub_10308150(int a0, int a1, int a2, int a3)
+{
+    return ((lifted::C10003ddc *)this)->sub_10003ddc(a0, a1, a2, 0x202400b, a3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10308190 size=0xd8
 #include "CUnknown1030a6e0.h"
 #include "CEntityVSlots.h"
