@@ -32,8 +32,8 @@ public:
 	int m_n14;	// 0x14
 	int m_n18;	// 0x18
 	int m_n1c;	// 0x1c
-	int m_n20;	// 0x20
-	int m_n24;	// 0x24
+	EHANDLE m_hEnt20;	// 0x20
+	EHANDLE m_hEnt24;	// 0x24
 	unsigned int m_fWaypointFlags;	// 0x28
 	int m_n2c;	// 0x2c
 	CAI_Waypoint *m_pNext;	// 0x30
