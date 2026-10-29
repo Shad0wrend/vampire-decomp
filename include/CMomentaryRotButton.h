@@ -53,4 +53,6 @@ public:
 	float m_flReturnDelay5dc;	// 0x5dc
 	Vector m_vecStart5e0;	// 0x5e0: the start angles
 	Vector m_vecEnd5ec;	// 0x5ec: the end angles
+	char m_pad05f8[0x5fc - 0x5f8];
+	float m_flTarget5fc;	// 0x5fc: the target fraction
 };
