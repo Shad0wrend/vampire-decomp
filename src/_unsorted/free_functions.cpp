@@ -97426,6 +97426,22 @@ void CBaseEntity::sub_10257560(CBaseEntity *pOther, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102575d0 size=0x41
+#include "engineserver.h"
+using namespace EngineGlobals;
+
+int sub_101ede10(int a, int b);
+
+void CBaseEntity::sub_102575d0(CBaseEntity *pOther, int a, int b)
+{
+    int edictThis = m_pEdict2e0;
+    int edictOther = pOther->m_pEdict2e0;
+    int iOther = engine->vfunc35(edictOther);
+    int iThis = engine->vfunc35(edictThis);
+    sub_101ede10(iOther, iThis);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10257640 size=0x12c
 #include "CWeaponRanged.h"
 #include "CGlobalEntityList.h"
