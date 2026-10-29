@@ -126860,6 +126860,20 @@ CBaseEntity *CUnknown1034d620::sub_1034db70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034e4f0 size=0x1a
+namespace lifted {
+extern int g_10625e58;
+extern int g_10625e5c;
+extern char g_10625e9c;
+}
+int sub_1034e4f0()
+{
+    lifted::g_10625e5c = 6;
+    lifted::g_10625e58 = (int)&lifted::g_10625e9c;
+    return (int)&lifted::g_10625e58;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034e520 size=0xbb
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
