@@ -10,6 +10,8 @@ struct CPhysForceMotion
 {
 	void sub_10025f00(const CPhysForceVec3 *pStart, const CPhysForceVec3 *pEnd);	// stub 0x10015398: copies pStart / pEnd into the two start / end pairs (+8..+0x34)
 
+	void sub_10025f80(float flScale);	// start = start2 * flScale, end = end2 * flScale
+
 	char m_pad0000[8];
 	CPhysForceVec3 m_vStart;	// 0x08
 	CPhysForceVec3 m_vEnd;	// 0x14
