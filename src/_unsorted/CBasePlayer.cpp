@@ -679,6 +679,21 @@ char CBasePlayer::vfunc418(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10165a00 size=0x47
+#include "CBasePlayer.h"
+#include "CEHandleGet.h"
+// TARGET: CBasePlayer::vfunc426
+void CBasePlayer::vfunc426()
+{
+	CBaseEntity *p = 0;
+	if (m_n153C != -1)
+		p = (CBaseEntity *)EHandle_Get(m_h1538);
+	else
+		p = 0;
+	sub_10165790(p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10165d90 size=0x13d
 #include "CBasePlayer.h"
 #include "CBaseCombatCharacter.h"
