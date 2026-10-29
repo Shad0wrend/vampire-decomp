@@ -7207,6 +7207,7 @@
 0x10011ddd func   ?vfunc104@CActivityCopyProp@@UAEXXZ CActivityCopyProp::vfunc104
 0x10011de2 func   ?sub_100fcd30@@YAHXZ sub_100fcd30
 0x10011df1 func   ?sub_1008a7c0@@YAHXZ sub_1008a7c0
+0x10011e00 func   ?sub_10367fc0@@YAHXZ sub_10367fc0
 0x10011e05 func   ?sub_101d7c10@CUnknown101d7c10@@QAEPAXXZ CUnknown101d7c10::sub_101d7c10
 0x10011e0a func   ?vfunc5@CItemGAstrolite@@QAEPAV1@I@Z CItemGAstrolite::vfunc5
 0x10011e0f func   ?sub_101f6c50@CUnknown101f6c50@@QAEXPAUCTraitStatBlock@@@Z CUnknown101f6c50::sub_101f6c50
