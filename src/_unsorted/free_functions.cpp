@@ -132723,6 +132723,20 @@ char sub_103a5190()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a5bb0 size=0x1a
+namespace lifted {
+extern int g_1064c4a8;
+extern int g_1064c4ac;
+extern char g_1064c4ec;
+}
+int sub_103a5bb0()
+{
+    lifted::g_1064c4ac = 0x10;
+    lifted::g_1064c4a8 = (int)&lifted::g_1064c4ec;
+    return (int)&lifted::g_1064c4a8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a5be0 size=0x72
 #include "CNPC_VSabbatLeader.h"
 extern void *vt_104a7b94[];
