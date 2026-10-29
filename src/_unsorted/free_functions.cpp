@@ -104281,6 +104281,30 @@ float sub_1027dbf0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027dc10 size=0x45
+struct CPEnt { char pad[0x60]; struct CEnt60 *p60; };
+struct CEnt60 { char pad[0xa4]; void *pA4; };
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+#define V100(n) V10(n##0) V10(n##1) V10(n##2) V10(n##3) V10(n##4) V10(n##5) V10(n##6) V10(n##7) V10(n##8) V10(n##9)
+struct CObj {
+	V100(a) V100(b) V100(c) V100(d) V100(e)
+	V10(f0) V10(f1) V10(f2)
+	virtual void g0();
+	virtual bool Slot531(CPEnt *pEnt, void *p, int a, int b);
+};
+struct CSub { char pad[4]; bool sub_1027dc10(CPEnt *pEnt, int a, int b); };
+// TARGET: CSub::sub_1027dc10
+bool CSub::sub_1027dc10(CPEnt *pEnt, int a, int b)
+{
+	if (pEnt->p60 && pEnt->p60->pA4) {
+		CObj *p = (CObj *)((char *)this - 0x19b0);
+		if (p->Slot531(pEnt, pEnt->p60->pA4, a, b))
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027dd10 size=0xb3
 #include "CGlobalEntityList.h"
 
