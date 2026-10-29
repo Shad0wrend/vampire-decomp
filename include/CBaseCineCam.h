@@ -38,7 +38,10 @@ public:
 	const char *m_psz5dc;
 	const char *m_psz5e0;
 	const char *m_psz5e4;
-	char m_pad05e8[0x610 - 0x5e8];
+	char m_pad05e8[4];
+	Vector m_vecShot5ec;	// 0x05ec: the first shot position
+	char m_pad05f8[0x604 - 0x5f8];
+	Vector m_vecShot604;	// 0x0604: the second shot position
 	unsigned int m_hShot610[4];	// 0x0610: entity handles, one per flag bit
 	char m_pad0620[0x630 - 0x620];
 	unsigned int m_hShot630;	// 0x0630
