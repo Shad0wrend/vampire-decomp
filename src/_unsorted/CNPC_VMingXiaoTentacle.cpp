@@ -84,6 +84,23 @@ void CTentacleUnit::sub_1039e800(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039e900 size=0x41
+#include "CNPC_VMingXiaoTentacle.h"
+#include "CNPC_VMingXiao.h"
+void CNPC_VMingXiaoTentacle::vfunc144(int a)
+{
+	if (m_b6699) {
+		CNPC_VMingXiao *pOwner = (CNPC_VMingXiao *)sub_1039ede0();
+		if (pOwner)
+			pOwner->sub_103979d0(this);
+		sub_102bf340(a);
+		return;
+	}
+	m_nTakeDamage = 1;
+	sub_1039e970();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039eb50 size=0x2a
 #include "CNPC_VMingXiaoTentacle.h"
 #include "CAI_BaseNPCTroika.h"
