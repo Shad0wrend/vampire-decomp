@@ -12545,6 +12545,39 @@ bool CStatDefaultList::sub_1006cec0(CVTraitKV *pKV, const CVTraitDependency *pDe
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006cf30 size=0x53
+#include <string.h>
+extern char g_106b8540[];
+
+struct SNamedEntry1006cf30 {
+	int m_id;
+	const char *m_pszName;
+};
+
+struct CNamedList1006cf30 {
+	int m_pad0;
+	int m_count;	// 0x4
+	SNamedEntry1006cf30 **m_ppEntries;	// 0x8
+
+	int sub_1006cf30(const char *pszName);
+};
+
+inline const char *NameOf(const char *const *pp)
+{
+	return *pp ? *pp : g_106b8540;
+}
+
+int CNamedList1006cf30::sub_1006cf30(const char *pszName)
+{
+	for (int i = 0; i < m_count; i++)
+	{
+		if (!_strcmpi(NameOf(&m_ppEntries[i]->m_pszName), pszName))
+			return m_ppEntries[i]->m_id;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006cfb0 size=0x2e
 // TARGET: sub_1006cfb0
 
