@@ -3947,6 +3947,7 @@
 0x1000a416 func   ?sub_10199990@@YAHHH@Z sub_10199990
 0x1000a41b func   ?sub_101ff850@CVStatInfoList_t@@QAEXXZ CVStatInfoList_t::sub_101ff850
 0x1000a420 func   ?sub_1003ef00@@YIHPAVCBaseEntity@@HABVVector@@1AAV2@M@Z sub_1003ef00
+0x1000a439 func   ?sub_103604b0@@YAHXZ sub_103604b0
 0x1000a43e func   ?sub_10178400@CUnitP2@@QAEXXZ CUnitP2::sub_10178400
 0x1000a457 func   _func_rotating func_rotating
 0x1000a45c func   ?sub_101d4cf0@@YADXZ sub_101d4cf0
