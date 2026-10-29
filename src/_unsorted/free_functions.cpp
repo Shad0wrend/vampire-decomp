@@ -151931,6 +151931,19 @@ float CUnknown1040cb60::sub_1040c080()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040c3b0 size=0x51
+#include "CEntityVSlots.h"
+float sub_1040c3b0(CEntityVSlots *pEnt)
+{
+	CEntityVSlots *list[32];
+	float flTotal = 0;
+	int n = pEnt->slot233(list, 32);
+	for (int i = 0; i < n; i++)
+		flTotal += list[i]->slot12();
+	return flTotal;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040c430 size=0xa0
 #include "CUnknown1040cb60.h"
 #include "CBaseEntity.h"
