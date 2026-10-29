@@ -77746,6 +77746,31 @@ void sub_101dda50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dda70 size=0x52
+#include <stdlib.h>
+#include <string.h>
+struct SRange {
+	int m_nMin;
+	int m_nMax;
+
+	void sub_101dda70(const char *psz);
+};
+
+void SRange::sub_101dda70(const char *psz)
+{
+	if (psz && *psz) {
+		m_nMin = atoi(psz);
+		if (m_nMin == -1)
+			m_nMin = 99999;
+		const char *pDash = strchr(psz, '-');
+		if (pDash)
+			m_nMax = atoi(pDash + 1);
+		else
+			m_nMax = m_nMin;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ddaf0 size=0x3a
 #include "CUnknown1070b244.h"
 
