@@ -94007,6 +94007,18 @@ int CUnknown10246270::sub_10246270()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10246290 size=0x41
+#include <math.h>
+void sub_10246290(int unused, float *in, float *out)
+{
+	float x = *in;
+	if (x > 0.0f)
+		*out = (float)fmod(x, 360.0);
+	else
+		*out = (float)fmod(x, 360.0) + 360.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10246300 size=0xd
 void sub_10246300(int unused, int *src, int *dst)
 {
