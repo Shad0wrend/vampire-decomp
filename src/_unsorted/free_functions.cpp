@@ -102758,6 +102758,16 @@ CBaseEntity *CAI_BaseNPC::sub_1026a930()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026b7a0 size=0x43
+#include "Vector.h"
+Vector Vector::sub_1026b7a0(const Vector &v) const
+{
+	Vector res;
+	VectorAdd(*this, v, res);
+	return res;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026c3d0 size=0x11f
 #include "CAI_BaseNPC.h"
 
