@@ -64298,6 +64298,20 @@ int sub_101abbc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ac200 size=0x1a
+namespace lifted {
+extern int g_105969a4;
+extern int g_105969a8;
+extern char g_105969ec;
+}
+int sub_101ac200()
+{
+    lifted::g_105969a8 = 0x16;
+    lifted::g_105969a4 = (int)&lifted::g_105969ec;
+    return (int)&lifted::g_105969a4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ac2f0 size=0xa
 unsigned int CAmbientGeneric::sub_101ac2f0()
 {
