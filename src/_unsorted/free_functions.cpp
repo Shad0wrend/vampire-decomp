@@ -51199,6 +51199,16 @@ float sub_10146150(const Vector *v) {
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146190 size=0x43
+#include "Vector.h"
+Vector Vector::sub_10146190(const Vector &v) const
+{
+	Vector res;
+	VectorSubtract(*this, v, res);
+	return res;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146640 size=0x15
 struct CUnknown10146640 { void * sub_10146640(); };
 void * CUnknown10146640::sub_10146640()
