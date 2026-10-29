@@ -93625,6 +93625,18 @@ int CUnknown102305d0::sub_102305d0(int id, void *pCharacter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102306d0 size=0x1e
+namespace lifted {
+extern char g_106c7c34;
+struct C100038be { int sub_100038be(int, int); };
+struct C10015500 { int sub_10015500(); };
+}
+int __stdcall sub_102306d0(int a0, int a1)
+{
+    return ((lifted::C10015500 *)(((lifted::C100038be *)((int)&lifted::g_106c7c34))->sub_100038be(a0, a1)))->sub_10015500();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10230700 size=0x1e
 #include "StatDefault.h"
 
