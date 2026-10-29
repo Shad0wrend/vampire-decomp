@@ -13,4 +13,5 @@ public:
 	void sub_1000cb8a();	// as in CLogicalEntity (transplant)
 public:
     virtual datamap_t * vfunc82();
+    virtual void vfunc174(CBaseEntity *pOther);
 };
