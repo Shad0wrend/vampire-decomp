@@ -10,7 +10,7 @@ struct CAmmoDefType
 class CAmmoDef
 {
 public:
-	int Index(const char *psz);	// "CAmmoDef::Index": the index of the ammo type of that name (case-insensitive, records 1 and up), -1 when unknown or null (stub 0x1000df3f)
+	int sub_104274b0(const char *psz);	// probably "CAmmoDef::Index": the index of the ammo type of that name (case-insensitive, records 1 and up), -1 when unknown or null (stub 0x1000df3f)
 
 	int m_nAmmoIndex;	// 0x00: the number of ammo types
 	CAmmoDefType m_AmmoType[1];	// 0x04
