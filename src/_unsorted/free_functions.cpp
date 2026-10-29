@@ -114315,6 +114315,20 @@ bool CUtlRBTree12::sub_102ec3b0(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x102eca20 size=0x1a
+namespace lifted {
+extern int g_1060fac8;
+extern int g_1060facc;
+extern char g_1060fb0c;
+}
+int sub_102eca20()
+{
+    lifted::g_1060facc = 0xa;
+    lifted::g_1060fac8 = (int)&lifted::g_1060fb0c;
+    return (int)&lifted::g_1060fac8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ecbe0 size=0xd
 bool sub_102ecbe0(int a)
 {
