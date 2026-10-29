@@ -148282,6 +148282,20 @@ const char *sub_10429240(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x104292c0 size=0x1a
+namespace lifted {
+extern int g_106acc78;
+extern int g_106acc7c;
+extern char g_106accbc;
+}
+int sub_104292c0()
+{
+    lifted::g_106acc7c = 0xf;
+    lifted::g_106acc78 = (int)&lifted::g_106accbc;
+    return (int)&lifted::g_106acc78;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10429460 size=0x15c
 #include "SendProp.h"
 
