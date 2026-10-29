@@ -11,6 +11,21 @@ datamap_t * CRagdollProp::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10154fa0 size=0x4a
+void __cdecl sub_1019bf80(void *p);
+
+void CRagdollProp::vfunc130(int a)
+{
+	sub_1008df10(a);
+	m_Bodies[0].m_pObject = m_obj36c;
+	m_Bodies[0].m_n08 = -1;
+	m_n738 = 0;
+	m_n73c = 0;
+	m_n740 = 0;
+	sub_1019bf80(&m_nBodies730);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155210 size=0x7a
 #include "CRagdollProp.h"
 #include <stdlib.h>
