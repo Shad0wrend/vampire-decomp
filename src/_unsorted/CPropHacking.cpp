@@ -27,6 +27,35 @@ CPropHacking *CPropHacking::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021a200 size=0x4c
+struct V1021a200 {
+	char m_pad[0x784];
+	int m_n784;
+	char m_pad788[0x900 - 0x788];
+	const char *m_psz900;
+	char m_pad904[0x9ec - 0x904];
+	char m_b9ec;
+	void sub_1021a200();
+	char sub_1021cba0(const char *s);
+	const char *sub_100ab4f0();
+};
+void __fastcall sub_1000978c(V1021a200 *p);
+extern const char g_106b8540[];
+__declspec(dllimport) void Warning(const char *fmt, ...);
+// TARGET: V1021a200::sub_1021a200
+void V1021a200::sub_1021a200()
+{
+	sub_1000978c(this);
+	const char *p = m_psz900;
+	if (!p)
+		p = g_106b8540;
+	if (!sub_1021cba0(p))
+		Warning("Could not load data for %s!!\n", sub_100ab4f0());
+	m_n784 = 2;
+	m_b9ec = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021a5b0 size=0xc2
 #include "CPropHacking.h"
 #include "CBasePlayer.h"
