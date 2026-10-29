@@ -35,6 +35,7 @@ class CAI_BaseNPCTroika : public CAI_BaseNPC
 public:
 	virtual int vfunc127(CRestore *pRestore);	// "CAI_BaseNPCTroika::Restore": CAI_BaseNPC::vfunc127, a flag byte (slot 17 of the restore) that gates two ints (slot 15), then the float fix-ups of the fields at +0x607c .. +0x657c and the nine 0x2c byte timers at +0x60b0 .. +0x6210
 	virtual int vfunc293();	// the dword at +0x9c of the entity the handle at +0x647c resolves to (0 when stale)
+	virtual int vfunc142(int a);	// slot 142 override: with the byte at +0x63d8 set fires the output at +0x5e0c (this, this, 0 delay) once per time stamp (+0x5d98) and answers 0, else CAI_BaseNPC::vfunc142
 	virtual void vfunc416(char value);
 	virtual float vfunc418(float a);	// float lookup: -1000005 -> +0x6484, -1000006 -> +0x6488, -1000007 -> +0x648c, -1000008 -> 10.0f, else CAI_BaseNPC::vfunc418(a)
 	virtual bool vfunc468(CBaseEntity *pEnt);	// see CAI_BaseNPC
