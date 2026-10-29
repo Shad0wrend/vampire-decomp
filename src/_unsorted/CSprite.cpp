@@ -12,6 +12,21 @@ datamap_t * CSprite::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042e850 size=0x43
+#include "CSprite.h"
+#include "engineserver.h"
+extern void (*g_109f3628)(const char *fmt, ...);
+void sub_101cf4a0(CSprite *p, const char *name);
+// TARGET: CSprite::vfunc105
+void CSprite::vfunc105(const char *name)
+{
+    int idx = engine->vfunc20(name);
+    if (engine->vfunc21(idx) != 2)
+        g_109f3628("Setting CSprite to non-sprite model %s\n", name);
+    sub_101cf4a0(this, name);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042e8c0 size=0xe5
 #include "CEHandleGet.h"
 #include "CUnknown1042e8c0.h"

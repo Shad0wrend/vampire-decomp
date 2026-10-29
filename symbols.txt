@@ -5796,6 +5796,7 @@
 0x1000e651 func   ?sub_10326d40@@YI_NPADHHHH@Z sub_10326d40
 0x1000e65b func   ?sub_10078520@CUnknown10078520@@QAEHXZ CUnknown10078520::sub_10078520
 0x1000e697 func   ?sub_10397b40@CNPC_VMingXiao@@QAE_NPAX@Z CNPC_VMingXiao::sub_10397b40
+0x1000e6a1 func   ?vfunc105@CSprite@@UAEXPBD@Z CSprite::vfunc105
 0x1000e6a6 func   ?sub_101a8ac0@CCineNPC@@QAEDXZ CCineNPC::sub_101a8ac0
 0x1000e6ba func   ?sub_101e8de0@CUnknown101e8de0@@QAEHXZ CUnknown101e8de0::sub_101e8de0
 0x1000e6c9 func   ?sub_100dbf50@@YAHXZ sub_100dbf50
