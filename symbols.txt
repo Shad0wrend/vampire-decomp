@@ -2540,6 +2540,7 @@
 0x10006b8b func   ?vfunc82@CLogicRelay@@UAEPAUdatamap_t@@XZ CLogicRelay::vfunc82
 0x10006b90 func   ?vfunc82@CNPC_VZombie@@UAEPAUdatamap_t@@XZ CNPC_VZombie::vfunc82
 0x10006b95 func   ?sub_100422e0@UtlVec8@@QAEHHPBUUtlVec8Elem@@@Z UtlVec8::sub_100422e0
+0x10006b9a func   ?sub_1011cc10@SInit@@QAEXXZ SInit::sub_1011cc10
 0x10006b9f func   ?sub_103f7630@@YAHXZ sub_103f7630
 0x10006ba9 func   ?sub_1020aea0@CUnknown1020aea0@@QAEMPAX@Z CUnknown1020aea0::sub_1020aea0
 0x10006bbd func   ?vfunc176@CSmallHullTrigger@@QAEXPAVCBaseEntity@@@Z CSmallHullTrigger::vfunc176
