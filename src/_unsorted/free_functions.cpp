@@ -93570,6 +93570,18 @@ int CUnknown102304e0::sub_102304e0(int id, void *pCharacter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102305a0 size=0x1e
+namespace lifted {
+extern char g_106c7c34;
+struct C100038be { int sub_100038be(int, int); };
+struct C1000c874 { int sub_1000c874(); };
+}
+int __stdcall sub_102305a0(int a0, int a1)
+{
+    return ((lifted::C1000c874 *)(((lifted::C100038be *)((int)&lifted::g_106c7c34))->sub_100038be(a0, a1)))->sub_1000c874();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102305d0 size=0x89
 #include "CUnknown102305d0.h"
 #include "CUnknown10204c60.h"
