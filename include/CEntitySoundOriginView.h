@@ -17,7 +17,10 @@ public:
 	virtual void a190(); virtual void a191();
 	virtual Vector WorldSpaceCenter();	// slot 192
 	virtual void a193(); virtual void a194(); virtual void a195(); virtual void a196(); virtual void a197(); virtual void a198(); virtual void a199();
-	ESO_SLOTS10(a20) ESO_SLOTS10(a21)
+	ESO_SLOTS10(a20)
+	virtual void a210(); virtual void a211(); virtual void a212(); virtual void a213(); virtual void a214(); virtual void a215(); virtual void a216();
+	virtual const float *GetAbsOrigin();	// slot 217
+	virtual void a218(); virtual void a219();
 	virtual const float *GetOrigin();	// slot 220
 	virtual void a221();
 	virtual Vector GetSoundEmissionOrigin();	// slot 222
