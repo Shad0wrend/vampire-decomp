@@ -73664,6 +73664,20 @@ char *CUnk101d84e0::sub_101d84e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d8640 size=0x1a
+namespace lifted {
+extern int g_105a1668;
+extern int g_105a166c;
+extern char g_105a16ac;
+}
+int sub_101d8640()
+{
+    lifted::g_105a166c = 1;
+    lifted::g_105a1668 = (int)&lifted::g_105a16ac;
+    return (int)&lifted::g_105a1668;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d8670 size=0xe
 namespace lifted {
 extern char g_10739194;
