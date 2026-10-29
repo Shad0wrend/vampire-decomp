@@ -8110,6 +8110,7 @@
 0x1001421d func   ?vfunc5@CPushable@@UAEPAV1@I@Z CPushable::vfunc5
 0x10014222 func   ?vfunc156@CRotDoor@@QAEXH@Z CRotDoor::vfunc156
 0x1001422c func   ?vfunc5@CItemGLillyPhoto@@QAEPAV1@I@Z CItemGLillyPhoto::vfunc5
+0x10014236 func   ?sub_101ba6c0@@YAHXZ sub_101ba6c0
 0x1001424f func   ?vfunc431@CNPC_VNewscaster@@QAEXXZ CNPC_VNewscaster::vfunc431
 0x10014254 func   ?vfunc257@CRagdollProp@@UAEXPAXH@Z CRagdollProp::vfunc257
 0x10014259 func   ?vfunc130@CWorld@@UAEXH@Z CWorld::vfunc130

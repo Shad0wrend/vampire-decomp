@@ -66221,6 +66221,20 @@ int sub_101ba630()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ba6c0 size=0x1a
+namespace lifted {
+extern int g_10599e24;
+extern int g_10599e28;
+extern char g_10599e6c;
+}
+int sub_101ba6c0()
+{
+    lifted::g_10599e28 = 5;
+    lifted::g_10599e24 = (int)&lifted::g_10599e6c;
+    return (int)&lifted::g_10599e24;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ba9d0 size=0x123
 #include "CSoundEnt.h"
 #include "CGlobalEntityList.h"
