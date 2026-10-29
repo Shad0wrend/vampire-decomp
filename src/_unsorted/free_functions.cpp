@@ -69760,6 +69760,20 @@ extern "C" GP *trigger_checkvolume()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cb920 size=0x1a
+namespace lifted {
+extern int g_1059e804;
+extern int g_1059e808;
+extern char g_1059e84c;
+}
+int sub_101cb920()
+{
+    lifted::g_1059e808 = 1;
+    lifted::g_1059e804 = (int)&lifted::g_1059e84c;
+    return (int)&lifted::g_1059e804;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cb950 size=0x69
 void *sub_1000db89(int);
 struct GP;
