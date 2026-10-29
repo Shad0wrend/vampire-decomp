@@ -127019,6 +127019,17 @@ bool CUnknown10319f30::sub_10319f30(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10319f70 size=0x47
+#include "CUnknown10319f70.h"
+#include "CAI_Waypoint.h"
+
+// TARGET: CUnknown10319f70::sub_10319f70
+void CUnknown10319f70::sub_10319f70(int a, int b, int c)
+{
+	sub_10319f30(new CAI_Waypoint((const float *)a, 0, b, c, -1));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10319fe0 size=0x9
 struct CUnknown10319fe0 { int a; void sub_10319fe0(int v); };
 // TARGET: CUnknown10319fe0::sub_10319fe0
