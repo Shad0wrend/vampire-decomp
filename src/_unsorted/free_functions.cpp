@@ -34577,6 +34577,26 @@ void sub_100d56b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d5920 size=0x4a
+#include "CUnknown1017ce70.h"
+
+struct PlayerView { char m_pad0000[0xa8]; CUnknown1017ce70 *m_pa8; };
+PlayerView *sub_101193b0();
+extern "C" int atoi(const char *);
+
+void sub_100d5920()
+{
+	PlayerView *pPlayer = sub_101193b0();
+	if (pPlayer) {
+		CUnknown1017ce70 *pObj = pPlayer->m_pa8;
+		if (pObj) {
+			if (engine->vfunc85() == 2)
+				pObj->sub_1017ce70(atoi(engine->vfunc84(1)));
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d5ae0 size=0x48
 #include "engineserver.h"
 #include "CBaseCombatCharacter.h"
