@@ -37562,6 +37562,17 @@ extern "C" GP *func_door_rotating()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f2f90 size=0x19
+struct CUnknown100f2f90 { void * sub_100f2f90(int, int, int); };
+void * CUnknown100f2f90::sub_100f2f90(int a0, int a1, int a2)
+{
+    *(int *)this = a0;
+    *(int *)((char *)this + 4) = a1;
+    *(int *)((char *)this + 8) = a2;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f3390 size=0x195
 #include "CRotDoor.h"
 #include "CEntitySoundOriginView.h"
