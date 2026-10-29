@@ -134229,6 +134229,20 @@ void __fastcall sub_103c0860(E *e, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c0b30 size=0x1a
+namespace lifted {
+extern int g_1065ca84;
+extern int g_1065ca88;
+extern char g_1065cacc;
+}
+int sub_103c0b30()
+{
+    lifted::g_1065ca88 = 2;
+    lifted::g_1065ca84 = (int)&lifted::g_1065cacc;
+    return (int)&lifted::g_1065ca84;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c0be0 size=0x33
 void sub_10014d7b();
 void sub_1000b3bb();
