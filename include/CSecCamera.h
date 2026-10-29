@@ -24,7 +24,9 @@ public:
 	void vfunc133();	// slot 133: the think timer and the sound: sub_1020c890, sub_10007725, then the global 0x1070b228's +0xc as the next state time at +0x7a0, then sub_1020c3d0
 	void sub_10007725();	// the member called by vfunc133 after sub_1020c890 (stub 0x10007725)
 
-	char m_pad03e0[0x77c - 0x3e0];
+	char m_pad03e0[0x6f0 - 0x3e0];
+	int m_nSequence6f0;	// 0x6f0: the current sequence
+	char m_pad06f4[0x77c - 0x6f4];
 	char m_b77c;	// 0x77c
 	char m_pad77d[0x780 - 0x77d];
 	float m_flF780;	// 0x780: divisor of the sweep length
