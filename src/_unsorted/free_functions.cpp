@@ -87728,6 +87728,30 @@ found:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10203710 size=0x48
+#include "CUnknown10203240.h"
+#include "CUnknown10202ba0.h"
+struct S10203710Entry { int m_pad0; int m_pad4; const char *m_pText; };
+struct T10203710 { S10203710Entry *sub_10009f66(int i); };
+extern T10203710 g_1073a28c;
+extern int g_1073a290;
+extern CUnknown10203240 g_1074e968;
+extern char g_106b8540[];
+// TARGET: sub_10203710
+const char *sub_10203710(int index)
+{
+	if (index >= 0) {
+		if (index < g_1073a290) {
+			const char **pp = &g_1073a28c.sub_10009f66(index)->m_pText;
+			if (*pp)
+				return *pp;
+		}
+	} else if (index == -1)
+		return ((CUnknown10202ba0 *)g_1074e968.sub_10203240("MiscStrs"))->sub_10202a10(0);
+	return g_106b8540;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102038e0 size=0x2c
 struct IObj102038e0 {
     virtual void vfunc0();
