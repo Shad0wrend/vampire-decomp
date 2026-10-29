@@ -39052,6 +39052,16 @@ void __stdcall sub_100f7f20(CBaseEntity *pStart, const char *szName, CBaseEntity
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f7f70 size=0x45
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList g_106eb5d8;
+void __stdcall sub_100f7f70(CBaseEntity *pStart, const char *szName, const Vector *pCenter, float flRadius, CBaseEntity *pSearching, CBaseEntity *pActivator)
+{
+	if (!g_106eb5d8.sub_100f7c30(pStart, szName, pCenter, flRadius, pSearching, pActivator))
+		g_106eb5d8.sub_100f7e30(pStart, szName, pCenter, flRadius);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f7fe0 size=0x3d
 struct CUnknownGlobal100f7fe0
 {
