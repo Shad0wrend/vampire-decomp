@@ -289,6 +289,7 @@ public:
 	int m_nDamageRecords;	// 0x65b4
 	char m_pad65b8[0x65bc - 0x65b8];
 	float m_f65bc;
+	void sub_102bf560(CBaseEntity *pEnt);	// stores the handle of the entity the lookup sub_102707d0 gives at +0x65c0 and curtime + 5.0f at +0x65c4 unless the byte at +0x65f5 is set
 	void sub_100f0e90(unsigned int flags);	// provisional, like sub_102a97a0 (transplant)
 	void sub_10181580(unsigned int flags);	// provisional, like sub_102a97a0 (transplant)
 	void sub_102a9800(unsigned int flags);	// provisional, like sub_102a97a0 (transplant)
