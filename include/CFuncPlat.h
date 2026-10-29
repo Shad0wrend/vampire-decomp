@@ -33,6 +33,7 @@ public:
 	virtual void vfunc245();	// "HitBottom"-like: stops the sound at +0x55c, plays the one at +0x560 (channel 1) and sets the toggle state (+0x4f8) to 1
 
 	void sub_1015a3c0(const Vector &vecDestAngles, float flTime);	// "AngularMove"-like (called by slots 242 / 243 of the rotating platform): the angular velocity that turns the angles to vecDestAngles in flTime seconds (the plain difference with a move-done time one second ahead when flTime is below 0.1)
+	bool sub_10007428(const char *pszKey, const char *pszValue);	// CBaseToggle::vfunc110 (stub 0x10007428), called directly
 	void sub_100b2f50(const Vector &vecAngVelocity);	// CBaseEntity::SetLocalAngularVelocity (stub 0x10006a5f), called directly
 
 	char m_pad[0x114 - 4];
