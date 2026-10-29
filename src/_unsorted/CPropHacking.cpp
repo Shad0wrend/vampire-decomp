@@ -152,6 +152,25 @@ void CPropHacking::vfunc272()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021cae0 size=0x53
+#include "CPropHacking.h"
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+int CPropHacking::vfunc268(int a)
+{
+	int idx = m_n09e0;
+	if (idx == -2)
+		return sub_1020b1c0(a);
+	if (idx >= 0 && idx < m_nCounts0998) {
+		int value = *(int *)((char *)&m_pRecords09a0[idx] + 0x40);
+		if (value <= 0)
+			return sub_1020b1c0(a);
+		return value;
+	}
+	DevMsg("%s has invalid difficulty for subdir: %d\n", sub_100ab4f0(), idx);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021cb60 size=0x27
 #include "CPropHacking.h"
 

@@ -9103,6 +9103,7 @@
 0x10015262 func   ?vfunc39@CBaseEntity@@UAEXPAV1@@Z CBaseEntity::vfunc39
 0x1001526c func   ?sub_1006a370@@YAXPAVCUnknown1019d130@@HPAUTERecipientX@@HDPBD@Z sub_1006a370
 0x10015271 func   ?vfunc420@CNPC_VGargoyle@@QAEXXZ CNPC_VGargoyle::vfunc420
+0x10015276 func   ?vfunc268@CPropHacking@@QAEHH@Z CPropHacking::vfunc268
 0x1001527b func   ?sub_10066ae0@CUnknown10066ae0@@QAEHXZ CUnknown10066ae0::sub_10066ae0
 0x10015280 func   ?sub_103be130@CUnknown10381be0@@QAE_NXZ CUnknown10381be0::sub_103be130
 0x1001528a func   ?sub_102c6a50@UtlVec8@@QAEHHPBUUtlVec8Elem@@@Z UtlVec8::sub_102c6a50
