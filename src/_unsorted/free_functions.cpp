@@ -140200,6 +140200,20 @@ extern "C" CBaseEntity *item_w_unarmed()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f5750 size=0x1a
+namespace lifted {
+extern int g_1067f184;
+extern int g_1067f188;
+extern char g_1067f1cc;
+}
+int sub_103f5750()
+{
+    lifted::g_1067f188 = 2;
+    lifted::g_1067f184 = (int)&lifted::g_1067f1cc;
+    return (int)&lifted::g_1067f184;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f5800 size=0x7
 struct CUnknown103f5800 { int sub_103f5800(); };
 int CUnknown103f5800::sub_103f5800()
