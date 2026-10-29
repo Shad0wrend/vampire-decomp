@@ -47660,6 +47660,23 @@ int __stdcall sub_101318c0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101318e0 size=0x4a
+#include "CTimerEntity.h"
+
+extern float g_104454c4;
+
+void CTimerEntity::sub_101318e0(inputdata_t *pInput)
+{
+	float f = pInput->value.fieldType == 1 ? pInput->value.flValue : g_104454c4;
+	if (f < 0.01f)
+		f = 0.01f;
+	if (f != m_fInterval) {
+		m_fInterval = f;
+		sub_101316e0();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10131950 size=0x6b
 #include "CBaseEntity.h"
 
