@@ -59151,6 +59151,20 @@ int __stdcall sub_10191200(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10191420 size=0x1a
+namespace lifted {
+extern int g_1058d864;
+extern int g_1058d868;
+extern char g_1058d8ac;
+}
+int sub_10191420()
+{
+    lifted::g_1058d868 = 6;
+    lifted::g_1058d864 = (int)&lifted::g_1058d8ac;
+    return (int)&lifted::g_1058d864;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101916f0 size=0x12
 struct CVirtSlots2 {
     virtual void vfunc0();

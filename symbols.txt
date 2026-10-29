@@ -4485,6 +4485,7 @@
 0x1000b9f1 func   _item_k_shrekhub_four_key item_k_shrekhub_four_key
 0x1000ba0a func   ?sub_101eaaa0@@YAXH@Z sub_101eaaa0
 0x1000ba14 func   ?vfunc438@CNPC_VGuard1@@QAEHXZ CNPC_VGuard1::vfunc438
+0x1000ba1e func   ?sub_10191420@@YAHXZ sub_10191420
 0x1000ba28 func   ?sub_10272940@CAI_BaseNPC@@QAEXPBD@Z CAI_BaseNPC::sub_10272940
 0x1000ba37 func   ?sub_102f9780@CUnknown102f9780View@@QAEHH@Z CUnknown102f9780View::sub_102f9780
 0x1000ba3c func   ?sub_101348a0@CLogicCaseToggle@@QAEXPAUinputdata_t@@@Z CLogicCaseToggle::sub_101348a0
