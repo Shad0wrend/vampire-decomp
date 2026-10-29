@@ -63,6 +63,7 @@ public:
 	CUnknown1025ddd0 *m_pBehaviour65e8;	// +0x65e8
 	char pad65ec[0x6672 - 0x65ec];
 	char m_b6672;	// +0x6672
-	char pad6673[0x6678 - 0x6673];
+	char pad6673[1];
+	float m_f6674;	// +0x6674: an engine time
 	int m_h6678;	// +0x6678: entity handle, -1 at spawn
 };
