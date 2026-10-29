@@ -117749,6 +117749,26 @@ int CUnknown102ee660::sub_102ee660()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ee9c0 size=0x4c
+extern int g_106c994c;
+
+Vector *CAI_Navigator::sub_102ee9c0(Vector *pOut, int index)
+{
+	CAI_NavProvider *pNode;
+	int hull = m_i08;
+	CAI_NavProviderList *pList = m_pProviders;
+	if (index >= 0 && index < pList->m_nCount)
+		pNode = pList->m_ppItems[index];
+	else
+	{
+		g_106c994c++;
+		pNode = 0;
+	}
+	pNode->sub_102fb0d0(pOut, hull);
+	return pOut;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102eeb70 size=0x1a
 namespace lifted {
 struct C1000b550 { int sub_1000b550(); };
