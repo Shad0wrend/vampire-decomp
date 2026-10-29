@@ -16,5 +16,6 @@ public:
 	void sub_10078540(int value);
 	void sub_10078580(int value);
 	int sub_10078630();	// the number of ramp samples (stub 0x10010f82)
+	void sub_100787f0(int index);	// removes the ramp sample `index` (ignored when out of range): the tail moves down, the count goes down by one
 	CExpressionSampleStub *sub_10078650(int index);	// the ramp sample `index` (stub 0x1000b62c)
 };
