@@ -53,7 +53,9 @@ public:
 	virtual Vector vfunc196();	// slot 196: the camera position record of the viewed entity (+0x5ec) when that entity qualifies, else the base's
 	virtual void pb97(); virtual void pb98(); virtual void pb99();	// slots 197..199
 	Vector sub_100b4c00();	// CBaseEntity::vfunc196, called directly (stub 0x1000a961)
-	CHL2_V10(pc0) CHL2_V10(pc1) CHL2_V10(pc2) CHL2_V10(pc3) CHL2_V10(pc4) CHL2_V10(pc5) CHL2_V10(pc6)	// slots 200..269
+	virtual void pc00(); virtual void pc01(); virtual void pc02(); virtual void pc03(); virtual void pc04(); virtual void pc05(); virtual void pc06(); virtual void pc07(); virtual void pc08();	// slots 200..208
+	virtual CBaseEntity *vfunc209();	// slot 209: the ground / move parent entity
+	CHL2_V10(pc1) CHL2_V10(pc2) CHL2_V10(pc3) CHL2_V10(pc4) CHL2_V10(pc5) CHL2_V10(pc6)	// slots 200..269
 	virtual void pc70(); virtual void pc71(); virtual void pc72(); virtual void pc73(); virtual void pc74(); virtual void pc75(); virtual void pc76();	// slots 270..276
 	virtual void vfunc277(const Vector *pVec);	// slot 277: takes the pointer of a vector (the camera offset record at +0xe50 for slot 333)
 	virtual void pc78(); virtual void pc79();	// slots 278..279
