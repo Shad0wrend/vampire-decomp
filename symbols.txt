@@ -284,6 +284,7 @@
 0x10001a5a func   ?sub_101c02d0@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_101c02d0
 0x10001a5f func   ?vfunc5@CAI_BaseHumanoid@@QAEPAV1@I@Z CAI_BaseHumanoid::vfunc5
 0x10001a6e func   ?sub_101c2c30@@YAHXZ sub_101c2c30
+0x10001a7d func   ?sub_10193940@CPropDestructable@@QAEPAV1@XZ CPropDestructable::sub_10193940
 0x10001a82 func   ?sub_10142aa0@@YAXHHHHHHHH@Z sub_10142aa0
 0x10001a87 func   ?sub_10073540@CUnknown10073540@@QAEHXZ CUnknown10073540::sub_10073540
 0x10001a8c func   ?sub_101d2560@@YAXVVector@@HPBD1H@Z sub_101d2560

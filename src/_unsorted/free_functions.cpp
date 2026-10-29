@@ -60361,6 +60361,38 @@ extern "C" CBaseEntity *prop_destructable()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10193940 size=0x47
+#include "CPropDestructable.h"
+#include "CBreakableProp.h"
+#include "COutputEvent.h"
+
+extern int g_10476094;	// CPropDestructable vftable
+
+struct CPropDestructableCtorView
+{
+	void *m_pVtable;
+	char m_pad0004[0x791 - 4];
+	char m_b791;
+	char m_pad792[0x7b4 - 0x792];
+	COutputEvent m_Outputs7b4[8];
+	COutputEvent m_Output874;
+	void sub_1008b490();
+};
+
+CPropDestructable *CPropDestructable::sub_10193940()
+{
+	CPropDestructableCtorView *p = (CPropDestructableCtorView *)this;
+	((CBreakableProp *)this)->sub_1018f1c0();
+	for (int i = 0; i < 8; i++)
+		p->m_Outputs7b4[i].sub_100cd2a0();
+	p->m_Output874.sub_100cd2a0();
+	*(void *volatile *)&p->m_pVtable = &g_10476094;
+	p->sub_1008b490();
+	p->m_b791 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10193ea0 size=0xc6
 #include "CPropDestructable.h"
 #include "inputdata_t.h"
