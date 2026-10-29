@@ -47279,6 +47279,20 @@ void CMathColorBlend::sub_10132680(inputdata_t &inputdata)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101328e0 size=0x1a
+namespace lifted {
+extern int g_1057643c;
+extern int g_10576440;
+extern char g_10576484;
+}
+int sub_101328e0()
+{
+    lifted::g_10576440 = 6;
+    lifted::g_1057643c = (int)&lifted::g_10576484;
+    return (int)&lifted::g_1057643c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10132b50 size=0x6d
 struct CGlobals1070b228 { char pad[0x24]; int m_n24; };
 extern CGlobals1070b228 *g_1070b228;

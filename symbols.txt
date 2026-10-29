@@ -39,6 +39,7 @@
 0x10001172 func   ?sub_10106490@@YIXPAD@Z sub_10106490
 0x10001177 func   ?sub_101852b0@UtlMem@@QAEXXZ UtlMem::sub_101852b0
 0x10001195 func   ?sub_104301a0@@YAXXZ sub_104301a0
+0x1000119f func   ?sub_101328e0@@YAHXZ sub_101328e0
 0x100011a4 func   ?sub_101e9040@CUnknown101e9040@@QAEHXZ CUnknown101e9040::sub_101e9040
 0x100011b3 func   ?sub_10137c30@@YAXXZ sub_10137c30
 0x100011c7 func   ?vfunc103@CPhysicsSpring@@QAEXXZ CPhysicsSpring::vfunc103
