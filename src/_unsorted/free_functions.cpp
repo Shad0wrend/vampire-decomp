@@ -78153,6 +78153,21 @@ void CUnknown101e0f00::sub_101e2da0(void *pChar, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e3310 size=0x41
+#include "CNamedListX.h"
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+// TARGET: CNamedListX::sub_101e3310
+void CNamedListX::sub_101e3310(int a, const char *name)
+{
+	int i = sub_101e12f0(name);
+	if (i == -1) {
+		DevMsg("ERROR: ActivateEffect_Trigger Failed: Couldn't match: %s!\n", name);
+		return;
+	}
+	sub_101e2f50(a, m_pData[i], 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e3380 size=0x2a
 void __stdcall sub_1000dba2(int a, int b);
 
