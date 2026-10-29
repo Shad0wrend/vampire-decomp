@@ -93860,6 +93860,17 @@ void CVGuiScreen::sub_10231f40(const char *pszPanelName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10231fb0 size=0x1e
+struct CUnknown10231fb0 { int sub_10231fb0(int, int); };
+int CUnknown10231fb0::sub_10231fb0(int a0, int a1)
+{
+    *(int *)((char *)this + 0x450) = a0;
+    *(int *)((char *)this + 0x454) = a1;
+    *(char *)((char *)this + 0x1b1) = 1;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10232090 size=0x12
 void sub_10014614(void *p);
 
