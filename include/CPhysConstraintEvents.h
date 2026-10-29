@@ -1,4 +1,4 @@
-// CPhysConstraintEvents: the physics constraint event sink; ConstraintBroken fires the "ConstraintBroken" input on the constraint's game entity.
+// CPhysConstraintEvents: the physics constraint event sink; slot 0 (ConstraintBroken) fires the "ConstraintBroken" input on the constraint's game entity.
 #pragma once
 
 #include "CBaseEntity.h"
@@ -17,11 +17,11 @@ public:
 class IPhysicsConstraintEvent
 {
 public:
-	virtual void ConstraintBroken(IPhysicsConstraint *pConstraint);
+	virtual void vfunc0(IPhysicsConstraint *pConstraint);
 };
 
 class CPhysConstraintEvents : public IPhysicsConstraintEvent
 {
 public:
-	virtual void ConstraintBroken(IPhysicsConstraint *pConstraint);	// slot 0 (0x1000a9e8 stub)
+	virtual void vfunc0(IPhysicsConstraint *pConstraint);	// ConstraintBroken
 };
