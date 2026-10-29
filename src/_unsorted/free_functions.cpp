@@ -42195,6 +42195,20 @@ int sub_10108060()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101082a0 size=0x1a
+namespace lifted {
+extern int g_1056c580;
+extern int g_1056c584;
+extern char g_1056c5c4;
+}
+int sub_101082a0()
+{
+    lifted::g_1056c584 = 1;
+    lifted::g_1056c580 = (int)&lifted::g_1056c5c4;
+    return (int)&lifted::g_1056c580;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10108e00 size=0x27
 #include "CUnknown10108e00.h"
 
