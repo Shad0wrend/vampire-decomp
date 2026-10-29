@@ -21,6 +21,22 @@ void CEnvWind::vfunc113()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fe9e0 size=0x52
+#include "CBaseAnimating.h"
+#include "CEnvWind.h"
+// TARGET: CEnvWind::vfunc174
+void CEnvWind::vfunc174(CBaseEntity *pOther)
+{
+	CBaseEntity::vfunc174(pOther);
+	CBaseAnimating *pAnimating = dynamic_cast<CBaseAnimating *>(pOther);
+	if (pAnimating)
+	{
+		const int *p = (const int *)((char *)this + 0x450);
+		pAnimating->sub_1008e480(this, p[0], p[1], p[2], p[3]);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fea60 size=0x36
 #include "CBaseAnimating.h"
 

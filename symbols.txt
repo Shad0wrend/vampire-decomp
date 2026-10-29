@@ -6087,6 +6087,7 @@
 0x1000e8a9 func   _ambient_generic ambient_generic
 0x1000e8b3 func   ?sub_1020b040@CUnknown1020aea0@@QAEMPAX@Z CUnknown1020aea0::sub_1020b040
 0x1000e8b8 func   ?sub_100732b0@CUnknown100732b0@@QAEXD@Z CUnknown100732b0::sub_100732b0
+0x1000e8bd func   ?vfunc174@CEnvWind@@UAEXPAVCBaseEntity@@@Z CEnvWind::vfunc174
 0x1000e8c2 func   ?sub_100856b0@@YAHXZ sub_100856b0
 0x1000e8c7 func   ?sub_101fd430@TList@@QAEPAU1@XZ TList::sub_101fd430
 0x1000e8cc func   ?vfunc5@CActivityCopyProp@@QAEPAV1@I@Z CActivityCopyProp::vfunc5
