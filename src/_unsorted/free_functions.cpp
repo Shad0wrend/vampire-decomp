@@ -118915,6 +118915,29 @@ int sub_102df2f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dfa20 size=0x57
+struct SListNode {
+    char m_pad0000[0x24];
+    EHANDLE m_hEnt;
+    char m_pad0028[0x38 - 0x28];
+    SListNode *m_pNext;
+};
+struct SListOwner {
+    char m_pad0000[0xc];
+    SListNode *m_pHead;
+    bool sub_102dfa20(CBaseEntity *pEnt);
+};
+bool SListOwner::sub_102dfa20(CBaseEntity *pEnt)
+{
+    for (SListNode *p = m_pHead; p; p = p->m_pNext) {
+        CBaseEntity *pNode = p->m_hEnt.Get();
+        if (pNode && pEnt == pNode)
+            return true;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dfaa0 size=0x114
 #include "CUnknown102dfaa0.h"
 #include "CGlobalEntityList.h"
