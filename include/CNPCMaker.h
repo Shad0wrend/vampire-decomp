@@ -32,7 +32,7 @@ public:
 	char m_szMapData[0x1000];	// 0x66cc: the map data text up to the closing brace
 	char *m_pMapData;	// 0x76cc: m_szMapData, null when empty
 public:
-	virtual void vfunc107(class CUnknown10136ec0 *pMapData);	// slot 107: keeps the map data text (up to '}') in +0x66cc, then CBaseEntity::vfunc107
+	virtual void vfunc107(class CEntityMapData *pMapData);	// slot 107: keeps the map data text (up to '}') in +0x66cc, then CBaseEntity::vfunc107
     virtual void vfunc113();
     virtual void vfunc123();
     virtual datamap_t * vfunc82();
