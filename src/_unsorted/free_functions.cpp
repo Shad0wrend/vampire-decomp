@@ -127428,6 +127428,20 @@ void CAI_BaseNPC::sub_10357110(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10357410 size=0x1a
+namespace lifted {
+extern int g_10628928;
+extern int g_1062892c;
+extern char g_1062896c;
+}
+int sub_10357410()
+{
+    lifted::g_1062892c = 5;
+    lifted::g_10628928 = (int)&lifted::g_1062896c;
+    return (int)&lifted::g_10628928;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10357be0 size=0x1e1
 #include "CEntityVSlots.h"
 #include "CAI_Motor.h"

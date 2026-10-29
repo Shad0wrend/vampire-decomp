@@ -1542,6 +1542,7 @@
 0x10004a9d func   ?sub_10213ef0@CPropHaunted@@QAEXHPAXPAVCBaseEntity@@@Z CPropHaunted::sub_10213ef0
 0x10004aa7 func   ?sub_102241b0@@YIXPAH@Z sub_102241b0
 0x10004aac func   _player_pickup player_pickup
+0x10004ab1 func   ?sub_10357410@@YAHXZ sub_10357410
 0x10004ab6 func   ?sub_101e4150@CUnknown101e4150@@QAEXPAUCUnknown101e4150Char@@@Z CUnknown101e4150::sub_101e4150
 0x10004abb func   ?vfunc5@CBreakable@@QAEPAV1@I@Z CBreakable::vfunc5
 0x10004ac0 func   _item_g_guy_magazine item_g_guy_magazine
