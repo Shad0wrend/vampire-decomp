@@ -78370,6 +78370,21 @@ void CUnknown101e0f00::sub_101e3a30(S1033d380 *pObj, int id)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e3c10 size=0x42
+#include "CNamedListX.h"
+extern void (__cdecl *g_109f3630)(const char *, ...);
+struct CNamedListXRem : CNamedListX { void sub_101e3be0(int a, int b); void sub_101e3c10(int a, const char *name); };
+void CNamedListXRem::sub_101e3c10(int a, const char *name)
+{
+    int i = sub_101e12f0(name);
+    if (i != -1) {
+        sub_101e3be0(a, *(int *)((char *)m_pData[i] + 0xc));
+        return;
+    }
+    g_109f3630("ERROR: RemoveTgtEffect Failed -- FX: %s!\n", name);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e3c80 size=0x47
 #include "CUnknown101e3af0.h"
 #include "S1033d380.h"
