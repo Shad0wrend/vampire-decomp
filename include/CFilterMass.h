@@ -6,4 +6,8 @@ class CFilterMass
 {
 public:
 	CFilterMass *vfunc5(unsigned int flags);
+	bool vfunc241(void *pEntity);	// passes when the physics object (+0x36c) of pEntity is heavier than m_flMass; warns when it has none
+
+	char m_pad0000[0x484];
+	float m_flMass;	// 0x484
 };
