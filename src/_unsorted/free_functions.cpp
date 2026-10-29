@@ -117694,6 +117694,21 @@ void CUnknown1030a6e0::sub_10309f60(const Vector *pPos, float flUnused, Vector *
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030a610 size=0x21
+struct CUnknown1030a610 { void * sub_1030a610(); };
+void * CUnknown1030a610::sub_1030a610()
+{
+    *(int *)this = 7;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = 0;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = -1;
+    *(int *)((char *)this + 0x14) = 0;
+    *(char *)((char *)this + 0x18) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030a650 size=0x6d
 #include "CAI_Navigator.h"
 
