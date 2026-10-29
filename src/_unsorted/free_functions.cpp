@@ -33470,6 +33470,28 @@ void sub_100d27b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d2880 size=0x52
+struct CPlayerObj { char m_pad[0x224]; unsigned int m_flags; };
+struct CPlayerEnt { char m_pad[0xa8]; CPlayerObj *m_pObj; };
+CPlayerEnt *sub_101193b0();
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+
+void sub_100d2880()
+{
+    CPlayerEnt *pPlayer = sub_101193b0();
+    if (pPlayer && pPlayer->m_pObj) {
+        CPlayerObj *p = pPlayer->m_pObj;
+        if (p->m_flags & 0x2000000) {
+            p->m_flags &= 0xfdffffff;
+            Msg("Buddha Mode off...\n");
+        } else {
+            p->m_flags |= 0x2000000;
+            Msg("Buddha Mode on...\n");
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d2990 size=0x25
 char *sub_10008d8c(void);
 void sub_100111f8(int, int);
