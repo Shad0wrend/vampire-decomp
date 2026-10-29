@@ -108411,6 +108411,18 @@ void __fastcall sub_102ae310(Holder *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ae780 size=0x49
+void CAI_BaseNPCTroika::sub_102ae780(int a, char b)
+{
+	if (m_n5cc0 != 7 && m_n5cc4 != 7) {
+		if (vfunc158() || b) {
+			sub_102ae490(a, b);
+			sub_10280e50((void *)a);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ae7f0 size=0xd
 void CUnknown102b5dc0::sub_102ae7f0(int value)
 {
