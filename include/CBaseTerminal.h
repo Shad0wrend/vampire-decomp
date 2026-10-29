@@ -6,7 +6,9 @@ class CBaseTerminal
 public:
 	char m_pad0[0x8c];
 	unsigned int m_hUser;	// 0x8c: handle of the entity using the terminal
-	char m_pad0090[0x82c - 0x90];
+	char m_pad0090[0x80c - 0x90];
+	char m_b080c;	// 0x80c: the terminal is usable
+	char m_pad080d[0x82c - 0x80d];
 	char m_b082c;	// 0x82c: set while a screen is shown (the user is turned towards it)
 	void sub_10217d60();	// stub 0x1001131a, run by vfunc41 while the byte at +0x82c is set
 	void vfunc39(void *pPlayer);	// slot 39 (CBaseEntity::vfunc39 signature): the stub 0x1000f515 takes the one pointer argument
