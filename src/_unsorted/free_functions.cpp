@@ -139274,6 +139274,20 @@ int sub_103ee100()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ee230 size=0x1a
+namespace lifted {
+extern int g_1067caec;
+extern int g_1067caf0;
+extern char g_1067cb34;
+}
+int sub_103ee230()
+{
+    lifted::g_1067caf0 = 9;
+    lifted::g_1067caec = (int)&lifted::g_1067cb34;
+    return (int)&lifted::g_1067caec;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ee660 size=0x70
 #include "CWeaponThrown_Grenade_Frag.h"
 
