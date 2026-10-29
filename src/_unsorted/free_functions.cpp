@@ -41288,6 +41288,20 @@ extern "C" CBaseEntity *params_explosion()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101042f0 size=0x1a
+namespace lifted {
+extern int g_1056ab10;
+extern int g_1056ab14;
+extern char g_1056ab54;
+}
+int sub_101042f0()
+{
+    lifted::g_1056ab14 = 0x14;
+    lifted::g_1056ab10 = (int)&lifted::g_1056ab54;
+    return (int)&lifted::g_1056ab10;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10104320 size=0x36
 #include <string.h>
 #include "CParamsExplosion.h"
