@@ -64372,6 +64372,20 @@ int CUnknown101ad440::sub_101ad440(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ae390 size=0x1a
+namespace lifted {
+extern int g_10596db4;
+extern int g_10596db8;
+extern char g_10596dfc;
+}
+int sub_101ae390()
+{
+    lifted::g_10596db8 = 5;
+    lifted::g_10596db4 = (int)&lifted::g_10596dfc;
+    return (int)&lifted::g_10596db4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aeb60 size=0x1d2
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
