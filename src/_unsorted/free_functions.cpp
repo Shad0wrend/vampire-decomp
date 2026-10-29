@@ -41104,6 +41104,20 @@ void sub_101034f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10103740 size=0x1a
+namespace lifted {
+extern int g_10569fd4;
+extern int g_10569fd8;
+extern char g_1056a01c;
+}
+int sub_10103740()
+{
+    lifted::g_10569fd8 = 6;
+    lifted::g_10569fd4 = (int)&lifted::g_1056a01c;
+    return (int)&lifted::g_10569fd4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10103790 size=0x42
 #include "ehandle.h"
 #include "CBaseEntity.h"
