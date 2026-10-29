@@ -6748,6 +6748,7 @@
 0x10010686 func   ?sub_102d0b20@CUnknown102d0b20@@QAEXXZ CUnknown102d0b20::sub_102d0b20
 0x10010690 func   ?vfunc622@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc622
 0x1001069a func   ?sub_101a1520@CSave@@QAEXPBGPAX1PAUtypedescription_t@@@Z CSave::sub_101a1520
+0x1001069f func   ?sub_1030f5f0@@YGHPBD@Z sub_1030f5f0
 0x100106a4 func   ?sub_10209e30@CItemContainerAnimated@@QAEXPBD@Z CItemContainerAnimated::sub_10209e30
 0x100106a9 func   ?vfunc36@CSave@@UAEXPBXH@Z CSave::vfunc36
 0x100106ae func   ?sub_101ed9e0@CUnknown101ed9e0@@QAEPAV1@H@Z CUnknown101ed9e0::sub_101ed9e0

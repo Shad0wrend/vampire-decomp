@@ -119993,6 +119993,21 @@ void CUnknown1030f480::sub_1030f480()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030f5f0 size=0x48
+#include <string.h>
+extern int (*g_109f3870)(const char *a, const char *b, int n);
+extern const char *g_10612b30[2];
+int __stdcall sub_1030f5f0(const char *name)
+{
+    int (*pfn)(const char *, const char *, int) = g_109f3870;
+    for (int i = 0; i < 2; i++) {
+        if (pfn(g_10612b30[i], name, strlen(name)) == 0)
+            return i;
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030f660 size=0x8
 extern char g_106b8540;
 char * __stdcall sub_1030f660(int) { return &g_106b8540; }
