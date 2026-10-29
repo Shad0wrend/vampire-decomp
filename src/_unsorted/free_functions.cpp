@@ -72772,6 +72772,16 @@ void CUnknown101dd910::sub_101dd910()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dda30 size=0x10
+struct CUnknown101dda30 { void * sub_101dda30(); };
+void * CUnknown101dda30::sub_101dda30()
+{
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dda50 size=0x1
 void sub_101dda50()
 {
