@@ -108303,6 +108303,24 @@ void CUnk102c43f0::sub_102c43f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c4470 size=0x43
+extern const char g_106b8540[];
+bool CAI_BaseNPCTroika::sub_102c4470(CBaseEntity *pEnt)
+{
+	const char *name;
+	if (*(int *)((char *)pEnt + 0xa8))
+		name = "!player";
+	else {
+		name = pEnt->m_name26c;
+		if (!name)
+			name = g_106b8540;
+	}
+	bool r = sub_102c44e0(name);
+	m_psz6478 = *name ? name : 0;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c44e0 size=0x107
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
