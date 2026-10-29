@@ -30828,6 +30828,37 @@ int sub_100c6370(S100c6370 *o, const char *needle)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c6520 size=0x50
+extern "C" int _strcmpi(const char *, const char *);
+
+struct CSeqHdr100c6520 {
+	char m_pad00[0xf0];
+	int m_nSeq;	// 0xf0
+	int m_nSeqIndex;	// 0xf4: offset of the 0xa0 byte sequence records
+};
+
+struct CSeqDesc100c6520 {
+	int m_nLabelIndex;	// 0x00: offset of the name from this record
+	char m_pad04[0xa0 - 4];
+};
+
+int sub_100c6520(CSeqHdr100c6520 *pHdr, const char *pszName)
+{
+	int nSeq = pHdr->m_nSeq;
+	if (nSeq > 0) {
+		CSeqDesc100c6520 *pBase = (CSeqDesc100c6520 *)((char *)pHdr + pHdr->m_nSeqIndex);
+		if (nSeq > 0) {
+			for (int i = 0; i < nSeq; i++) {
+				CSeqDesc100c6520 *pSeq = &pBase[i];
+				if (!_strcmpi(pszName, (char *)pSeq + pSeq->m_nLabelIndex))
+					return i;
+			}
+		}
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c6590 size=0xd
 int sub_100c6590(int p)
 {
