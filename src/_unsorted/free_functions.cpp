@@ -137441,6 +137441,19 @@ void CNPC_VMingXiao::sub_10397930(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103979d0 size=0x52
+#include "CNPC_VMingXiao.h"
+#include "CNPC_VMingXiaoTentacle.h"
+void CNPC_VMingXiao::sub_103979d0(CNPC_VMingXiaoTentacle *pTentacle)
+{
+	if (pTentacle) {
+		int index = pTentacle->m_nSlotIndex6660;
+		if (((EHANDLE *)&m_hSlotOld[index])->Get() == (CBaseEntity *)pTentacle)
+			sub_10397930(index);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10397a50 size=0xb9
 #include "CNPC_VMingXiao.h"
 #include "CUnknown10739d08.h"
