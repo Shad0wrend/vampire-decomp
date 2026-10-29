@@ -144126,6 +144126,24 @@ void CWeaponUnit::sub_103ed920()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103edf20 size=0x50
+class CBaseEntity;
+void sub_101cd970(CBaseEntity *pEnt);
+void sub_101cd940(void *pEnt);
+
+struct CHolder103edf20
+{
+	char m_pad0000[0x914];
+	EHANDLE m_h0914;
+};
+
+void __fastcall sub_103edf20(CHolder103edf20 *p)
+{
+	sub_101cd970(p->m_h0914.Get());
+	sub_101cd940(p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ee000 size=0x6
 namespace lifted {
 extern char g_10942ee4;
