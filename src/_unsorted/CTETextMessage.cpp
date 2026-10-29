@@ -1,6 +1,31 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10068b50 size=0x57
+#include <string.h>
+#include "CTETextMessage.h"
+CTETextMessage::CTETextMessage(const char *name) : CBaseTempEntityHead(name)
+{
+	m_n0c = 0;
+	m_f10 = 0;
+	m_f14 = 0;
+	m_n18 = 0;
+	m_n28 = 0;
+	m_n24 = 0;
+	m_n20 = 0;
+	m_n1c = 0;
+	m_n38 = 0;
+	m_n34 = 0;
+	m_n30 = 0;
+	m_n2c = 0;
+	m_f3c = 0;
+	m_f40 = 0;
+	m_f44 = 0;
+	m_f48 = 0;
+	memset(m_szText, 0, sizeof(m_szText));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10068bd0 size=0x1e
 #include "CTETextMessage.h"
 
