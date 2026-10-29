@@ -97414,6 +97414,18 @@ int CWeaponRanged::sub_10257280(void *pFrom, void *pTo, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10257560 size=0x41
+void sub_101eddf0(int, int);
+void CBaseEntity::sub_10257560(CBaseEntity *pOther, int a, int b)
+{
+	int iThis = m_pEdict2e0;
+	int iOther = pOther->m_pEdict2e0;
+	iOther = engine->vfunc35(iOther);
+	iThis = engine->vfunc35(iThis);
+	sub_101eddf0(iOther, iThis);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10257640 size=0x12c
 #include "CWeaponRanged.h"
 #include "CGlobalEntityList.h"
