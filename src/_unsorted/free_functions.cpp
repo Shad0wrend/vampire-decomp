@@ -27762,6 +27762,28 @@ void sub_100b68d0(int unused, TSet *s)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b6f10 size=0x4d
+#include "CUnknown100b6f10.h"
+// TARGET: CUnknown100b6f10::sub_100b6f10
+S100b6f10Node *CUnknown100b6f10::sub_100b6f10(int node)
+{
+	S100b6f10Node *pNode = (S100b6f10Node *)((char *)this + m_nNodeTable + node * 0x18);
+	while (pNode->m_nType == 1) {
+		int index = pNode->m_nCurrent;
+		if (index < 0 || index >= pNode->m_nCount)
+			break;
+		int *pEntry = (int *)((char *)pNode + pNode->m_nListOffset + index * 8);
+		if (!pEntry)
+			break;
+		int next = *pEntry;
+		if (next == -1)
+			break;
+		pNode = (S100b6f10Node *)((char *)this + m_nNodeTable + next * 0x18);
+	}
+	return pNode;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7130 size=0x67
 struct Mem4 { void *m_pMemory; int m_nAllocationCount; int m_nGrowSize; };
 extern void *(*g_109f3638)(void *, int);
