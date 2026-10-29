@@ -9609,6 +9609,27 @@ int sub_1005f380()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005f550 size=0x46
+namespace lifted {
+extern char g_106c144c;
+extern int g_106c1458;
+extern int g_106c145c;
+extern int g_106c1460;
+extern int g_106c1464;
+extern int g_106c1468;
+struct C100086cf { int sub_100086cf(int, int); };
+}
+int sub_1005f550(int a0, int a1, int a2, int a3, int a4)
+{
+    lifted::g_106c1458 = *(int *)((char *)a2);
+    lifted::g_106c145c = *(int *)((char *)a2 + 4);
+    lifted::g_106c1460 = *(int *)((char *)a2 + 8);
+    lifted::g_106c1464 = a3;
+    lifted::g_106c1468 = a4;
+    return ((lifted::C100086cf *)((int)&lifted::g_106c144c))->sub_100086cf(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005f640 size=0xb
 namespace lifted {
 extern char g_1044dd90;
