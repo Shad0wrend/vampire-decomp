@@ -21,3 +21,23 @@ void CBreakModelsPrecached::vfunc5()
 	tree->m_NumElements = 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101919e0 size=0x45
+#include "CBreakModelsPrecached.h"
+#include "utlmemory.h"
+struct CBaseGameSystemView { void sub_1042c2c0(); };
+void *CBreakModelsPrecached::vfunc8(unsigned int flags)
+{
+	if (m_Tree.m_unkC != -1) {
+		if (m_Tree.m_pElements) {
+			Plat_Free(m_Tree.m_pElements);
+			m_Tree.m_pElements = 0;
+		}
+		m_Tree.m_unk8 = 0;
+	}
+	((CBaseGameSystemView *)this)->sub_1042c2c0();
+	if (flags & 1)
+		delete this;
+	return this;
+}
+// END FUNCTION
