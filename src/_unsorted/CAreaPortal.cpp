@@ -44,3 +44,18 @@ void CUnit1010c520::sub_1010c520(int a, int b, int c, int d)
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x1010c560 size=0x4c
+#include <string.h>
+#include <stdlib.h>
+
+bool CAreaPortal::vfunc110(const char *key, const char *value)
+{
+	if (!strcmpi(key, "StartOpen"))
+	{
+		m_bStartOpen = atoi(value) != 0;
+		return true;
+	}
+	return sub_1009e430(key, value);
+}
+// END FUNCTION
