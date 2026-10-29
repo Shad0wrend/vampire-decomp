@@ -7374,6 +7374,7 @@
 0x10011bcb func   ?sub_1028d770@@YAXXZ sub_1028d770
 0x10011bd0 func   ?sub_100b79c0@@YIPADPAD@Z sub_100b79c0
 0x10011bd5 func   ?sub_101e0520@CUnknown101e0f00Entry@@QAEPAU1@H@Z CUnknown101e0f00Entry::sub_101e0520
+0x10011be9 func   ?sub_1006cec0@CStatDefaultList@@QAE_NPAUCVTraitKV@@PBUCVTraitDependency@@@Z CStatDefaultList::sub_1006cec0
 0x10011bf3 func   ?vfunc4@CTETParticleAttached@@QAEXHH@Z CTETParticleAttached::vfunc4
 0x10011bf8 func   ?vfunc5@CItemGHorrorTape_1@@QAEPAV1@I@Z CItemGHorrorTape_1::vfunc5
 0x10011bfd func   ?vfunc363@CWeaponMelee_MingXiaoMelee@@UAEHXZ CWeaponMelee_MingXiaoMelee::vfunc363
