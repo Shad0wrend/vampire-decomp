@@ -124112,6 +124112,22 @@ void sub_1030c3f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030c470 size=0x4e
+struct SA { void sub_102e9fb0(); };
+struct SB { int m; SB *sub_1024a230(); };
+extern SA g_109203cc, g_109203d4, g_109203dc, g_10936c74;
+extern SB *g_1090fbe0;
+void sub_1030c470()
+{
+    g_109203cc.sub_102e9fb0();
+    g_109203d4.sub_102e9fb0();
+    g_109203dc.sub_102e9fb0();
+    g_10936c74.sub_102e9fb0();
+    SB *p = new SB;
+    g_1090fbe0 = p ? p->sub_1024a230() : 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030c4e0 size=0x54
 struct CTimerX { char data[0x18]; bool sub_102ea0e0(void *pOwner, int bOn); };
 extern CTimerX g_1090ff08;
