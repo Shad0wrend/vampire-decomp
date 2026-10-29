@@ -319,6 +319,22 @@ void CSave::vfunc27(const Vector *pValues, int count)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a0d30 size=0x4c
+#include "CSave.h"
+#include <string.h>
+const char *sub_1019f760(void *pMap, int pFunc);
+__declspec(dllimport) void Warning(const char *fmt, ...);
+void CSave::vfunc31(void *pBase, const char *pszName, void *pData, int count)
+{
+    const char *pName = sub_1019f760(pBase, *(int *)pData);
+    if (pName) {
+        sub_101a05b0((int)pszName, strlen(pName) + 1, (int)pName);
+        return;
+    }
+    Warning("Invalid function pointer in entity!");
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a0fc0 size=0x89
 #include "CSave.h"
 

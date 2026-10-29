@@ -3375,6 +3375,7 @@
 0x10008a5d func   ?sub_102d4140@CUnknown102d4140@@QAEHH@Z CUnknown102d4140::sub_102d4140
 0x10008a67 func   ?sub_101ce7f0@@YAXHPAVCBaseEntity@@@Z sub_101ce7f0
 0x10008a6c func   ?sub_101cb920@@YAHXZ sub_101cb920
+0x10008a71 func   ?vfunc31@CSave@@UAEXPAXPBD0H@Z CSave::vfunc31
 0x10008a76 func   ?vfunc5@COccultLockpicking@@QAEPAV1@I@Z COccultLockpicking::vfunc5
 0x10008a80 func   ?vfunc242@CEnvParticle@@QAEXXZ CEnvParticle::vfunc242
 0x10008a85 func   _item_g_eyes item_g_eyes
