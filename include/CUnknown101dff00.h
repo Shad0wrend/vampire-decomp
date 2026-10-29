@@ -28,6 +28,17 @@ public:
 	int sub_101f83a0(const char *pszEffect);	// stub 0x1000ee67: the id of the named trait effect
 };
 
+class CUnknown101dff00;
+
+struct CUnknown101dff00List	// the list of hit groups: count at +4, pointer array at +8
+{
+	int m_n00;
+	int m_nCount;	// 0x4
+	class CUnknown101dff00 **m_ppGroups;	// 0x8
+
+	void sub_101e04a0();	// Debug_Display: prints "[[Hit_Group_List]]:" and then every hit group
+};
+
 class CUnknown101dff00
 {
 public:
