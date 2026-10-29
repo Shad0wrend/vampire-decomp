@@ -116370,6 +116370,19 @@ void __fastcall sub_102f8ef0(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f8fc0 size=0x23
+struct CUnknown102f8fc0 { void * sub_102f8fc0(int, int); };
+void * CUnknown102f8fc0::sub_102f8fc0(int a0, int a1)
+{
+    *(int *)this = a0;
+    *(int *)((char *)this + 4) = a1;
+    *(int *)((char *)this + 8) = -1;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = a0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f9000 size=0x2e
 #include "UtlVec8.h"
 
