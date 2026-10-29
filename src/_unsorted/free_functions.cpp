@@ -132549,6 +132549,20 @@ extern "C" CBaseEntity *npc_VPlaceholder()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a3af0 size=0x1a
+namespace lifted {
+extern int g_1064b9a8;
+extern int g_1064b9ac;
+extern char g_1093c0a4;
+}
+int sub_103a3af0()
+{
+    lifted::g_1064b9ac = 1;
+    lifted::g_1064b9a8 = (int)&lifted::g_1093c0a4;
+    return (int)&lifted::g_1064b9a8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a3ba0 size=0x33
 void sub_10014d7b();
 void sub_10003f26();
