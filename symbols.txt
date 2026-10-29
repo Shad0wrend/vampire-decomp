@@ -7144,6 +7144,7 @@
 0x100120cb func   ?sub_103ba640@CNPC_VTzimisce@@QAEXPAXPAVVector@@PAH2@Z CNPC_VTzimisce::sub_103ba640
 0x100120df func   ?vfunc32@CPhysicsProp@@UAE_NH@Z CPhysicsProp::vfunc32
 0x100120e9 func   ?sub_1013d0e0@@YAXMMMH_N000@Z sub_1013d0e0
+0x100120fd func   ?sub_10383e20@CUnknown10383e20@@QAEPAXH@Z CUnknown10383e20::sub_10383e20
 0x10012102 func   ?sub_10412590@@YAXHH@Z sub_10412590
 0x10012125 func   ?sub_10088a80@@YAXXZ sub_10088a80
 0x1001212f func   ?sub_10076ad0@CUnknown10077730@@QAEXD@Z CUnknown10077730::sub_10076ad0

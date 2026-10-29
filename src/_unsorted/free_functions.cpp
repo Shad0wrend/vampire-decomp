@@ -128203,6 +128203,17 @@ void * CUnknown10383df0::sub_10383df0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10383e20 size=0x19
+struct CUnknown10383e20 { void * sub_10383e20(int); };
+void * CUnknown10383e20::sub_10383e20(int a0)
+{
+    *(int *)((char *)this + 4) = *(int *)((char *)a0 + 4);
+    *(char *)((char *)this + 1) = *(char *)((char *)a0 + 1);
+    *(char *)this = *(char *)((char *)a0);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10383e50 size=0x24
 unsigned int __stdcall sub_10383e50(unsigned int x)
 {
