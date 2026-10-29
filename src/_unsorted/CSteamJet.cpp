@@ -1,6 +1,24 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100580e0 size=0x41
+#include "CSteamJet.h"
+#include <string.h>
+
+extern char g_106b8540[];
+
+void CSteamJet::vfunc103()
+{
+	const char *pszName = m_pszClassname11c;
+	if (!pszName)
+		pszName = g_106b8540;
+	if (strcmpi(pszName, "env_steamjet") == 0)
+		m_bIsSteamJet46c = true;
+	if (m_bFlag46d)
+		m_nFlag468 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10058240 size=0x1e
 #include "CSteamJet.h"
 
