@@ -8140,6 +8140,20 @@ void CUtlRBTree24::sub_100561a0(int elem)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100564c0 size=0x1a
+namespace lifted {
+extern int g_1053f0b0;
+extern int g_1053f0b4;
+extern char g_1053f0f4;
+}
+int sub_100564c0()
+{
+    lifted::g_1053f0b4 = 0xd;
+    lifted::g_1053f0b0 = (int)&lifted::g_1053f0f4;
+    return (int)&lifted::g_1053f0b0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10056660 size=0x192
 #include "SendProp.h"
 
