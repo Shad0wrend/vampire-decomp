@@ -5421,6 +5421,7 @@
 0x1000e1ce func   ?sub_10202ac0@CUnknown10202ac0@@QAE_NPAH@Z CUnknown10202ac0::sub_10202ac0
 0x1000e1d8 func   ?sub_103c3e10@TzimisceView@@QAEHH@Z TzimisceView::sub_103c3e10
 0x1000e1dd func   ?sub_10202270@@YAPBDH@Z sub_10202270
+0x1000e1e2 func   ?sub_100df0b0@@YAHPBD@Z sub_100df0b0
 0x1000e1fb func   ?sub_100966a0@CBaseAnimating@@QAEHXZ CBaseAnimating::sub_100966a0
 0x1000e214 func   _func_platrot func_platrot
 0x1000e219 func   ??0StatDefault@@QAE@H@Z StatDefault::StatDefault

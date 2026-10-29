@@ -34886,6 +34886,21 @@ bool __cdecl sub_100df070(CUnknown100df070 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df0b0 size=0x42
+#include <string.h>
+int sub_100df0b0(const char *s)
+{
+    int n = 0;
+    int len = strlen(s);
+    for (int i = 0; i < len; i++) {
+        unsigned char c = s[i];
+        if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= 0xc0 && c <= 0xff))
+            n++;
+    }
+    return n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df7b0 size=0x72
 struct ICommandLine {
     virtual void v0();
