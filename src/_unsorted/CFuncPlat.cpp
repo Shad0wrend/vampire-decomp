@@ -1,6 +1,20 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10158cd0 size=0x46
+#include "CFuncPlat.h"
+extern "C" int __cdecl strcmpi(const char *, const char *);
+extern "C" double __cdecl atof(const char *);
+bool CFuncPlat::vfunc110(const char *pszKey, const char *pszValue)
+{
+	if (!strcmpi(pszKey, "rotation")) {
+		m_flRotation = (float)atof(pszValue);
+		return true;
+	}
+	return sub_10007428(pszKey, pszValue);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10158ee0 size=0x9
 unsigned char CFuncPlat::vfunc241() { unsigned char r = m_spawnflags; r &= 1; return r; }
 // END FUNCTION
