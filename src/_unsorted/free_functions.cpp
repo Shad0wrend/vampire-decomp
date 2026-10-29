@@ -28919,6 +28919,20 @@ void CBitString::sub_100bf5b0(int numDwords)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bf980 size=0x1a
+namespace lifted {
+extern int g_1055b4c0;
+extern int g_1055b4c4;
+extern char g_1055b504;
+}
+int sub_100bf980()
+{
+    lifted::g_1055b4c4 = 0x15;
+    lifted::g_1055b4c0 = (int)&lifted::g_1055b504;
+    return (int)&lifted::g_1055b4c0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c01d0 size=0x1c5
 #include "CFuncRotating.h"
 #include "CPASAttenuationFilter.h"
