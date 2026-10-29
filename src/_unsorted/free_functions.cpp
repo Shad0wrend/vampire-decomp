@@ -52159,6 +52159,35 @@ int *sub_1014ee10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014eef0 size=0x48
+#include "CPhysicsAnimlink.h"
+#include "CConstraintAnchor.h"
+
+struct CBlock64_t
+{
+	float m[16];
+	CBlock64_t *sub_1024cef0(const CBlock64_t *p);
+};
+struct CUnknown1014eb40
+{
+	void *sub_1014eb40();
+};
+CBlock64_t *sub_1024c630(CBlock64_t *p);
+extern void *vt_1046d094[];
+
+// TARGET: CPhysicsAnimlink::sub_1014eef0
+CPhysicsAnimlink *CPhysicsAnimlink::sub_1014eef0()
+{
+	CBlock64_t mat;
+	((CConstraintAnchorBase *)this)->CConstraintAnchorBase::CConstraintAnchorBase(0);
+	*(int *)((char *)this + 0x478) = -1;
+	((CUnknown1014eb40 *)((char *)this + 0x4c8))->sub_1014eb40();
+	*(void ***)this = vt_1046d094;
+	((CBlock64_t *)((char *)this + 0x480))->sub_1024cef0(sub_1024c630(&mat));
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014f210 size=0x111
 #include "CBaseAnimating.h"
 #include "CPhysicsAnimlink.h"
