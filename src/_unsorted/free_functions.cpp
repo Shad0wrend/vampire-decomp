@@ -126629,6 +126629,18 @@ void sub_10370560(CVirtObj_10370560 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103705b0 size=0x15
+namespace lifted {
+extern int g_1093ac3c;
+extern int g_1093aca8;
+}
+void sub_103705b0()
+{
+    lifted::g_1093aca8 = 0;
+    lifted::g_1093ac3c = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103705e0 size=0x3f
 struct CUnknownEntList103705e0 {
     char *sub_10015b95(char *pPrev, int flags);
