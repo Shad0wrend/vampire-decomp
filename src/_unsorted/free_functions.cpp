@@ -27472,6 +27472,20 @@ void CUnknown100b7e10::sub_100b7e10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b8270 size=0x1a
+namespace lifted {
+extern int g_1055a118;
+extern int g_1055a11c;
+extern char g_1055a15c;
+}
+int sub_100b8270()
+{
+    lifted::g_1055a11c = 4;
+    lifted::g_1055a118 = (int)&lifted::g_1055a15c;
+    return (int)&lifted::g_1055a118;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b8520 size=0x117
 #include "SendProp.h"
 
