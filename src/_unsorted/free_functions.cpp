@@ -46179,6 +46179,20 @@ void CUnknown1012d740::sub_1012d740()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012d8b0 size=0x1a
+namespace lifted {
+extern int g_10573c40;
+extern int g_10573c44;
+extern char g_10573c84;
+}
+int sub_1012d8b0()
+{
+    lifted::g_10573c44 = 7;
+    lifted::g_10573c40 = (int)&lifted::g_10573c84;
+    return (int)&lifted::g_10573c40;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012d8e0 size=0x43
 #include "CPropClockHand.h"
 void *sub_100aa720(int size);
