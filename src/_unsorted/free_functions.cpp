@@ -58024,6 +58024,24 @@ int CUnknown1017cb80::sub_1017cb80(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017ce70 size=0x58
+#include "CUnknown1017ce70.h"
+#include "QuestJournal.h"
+
+struct QuestRecordView { int m_a, m_b, m_nId; };
+extern QuestJournal g_1074f8f8;
+
+void CUnknown1017ce70::sub_1017ce70(int nId)
+{
+	m_nId = nId;
+	for (int i = 0; i < m_nEntries; i++) {
+		CUnknown1017ce70Entry *pEntry = (CUnknown1017ce70Entry *)((char *)m_pEntries + i * 0x40);
+		if (((QuestRecordView *)g_1074f8f8.sub_10221b10(pEntry->m_nQuest30))->m_nId == nId)
+			pEntry->m_bActive3c = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017cef0 size=0x79
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
