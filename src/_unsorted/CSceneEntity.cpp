@@ -375,6 +375,22 @@ void CSceneEntity::vfunc242()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10082b00 size=0x56
+#include "CSceneEntity.h"
+#include "globalvars.h"
+void __fastcall sub_1007e580(int *p);
+void CSceneEntity::vfunc244()
+{
+	if (m_bPlaying498 && m_bPlaying499) {
+		sub_1007e580((int *)m_pScene4bc);
+		sub_100843d0(m_pScene4bc);
+		m_bPlaying499 = 0;
+		m_f4a4 = gpGlobals->curtime;
+		m_flNextThink = gpGlobals->curtime;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10082b80 size=0x7f
 #include "CSceneEntity.h"
 #include "CGlobalEntityList.h"
