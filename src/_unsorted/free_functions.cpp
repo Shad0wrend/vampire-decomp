@@ -73891,6 +73891,20 @@ extern "C" CBaseEntity *vdisciplineprojectile()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d9df0 size=0x1a
+namespace lifted {
+extern int g_105a1b3c;
+extern int g_105a1b40;
+extern char g_105a1b84;
+}
+int sub_101d9df0()
+{
+    lifted::g_105a1b40 = 2;
+    lifted::g_105a1b3c = (int)&lifted::g_105a1b84;
+    return (int)&lifted::g_105a1b3c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d9f60 size=0xb
 namespace lifted {
 extern char g_10483004;
