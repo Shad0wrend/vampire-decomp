@@ -89628,6 +89628,16 @@ void __fastcall sub_10227b20(Mem4 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10227bb0 size=0x10
+struct CUnknown10227bb0 { void * sub_10227bb0(); };
+void * CUnknown10227bb0::sub_10227bb0()
+{
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10227c00 size=0x6c
 #include "CUnknown10227c90.h"
 #include "CUnknown101f0e50.h"
