@@ -5,5 +5,8 @@
 class CUnknown101f9b70
 {
 public:
+	int m_count;	// 0x00
+	int m_ids[1];	// 0x04: m_count trait ids, inline
+
 	int sub_101f9b70(int index);	// called through the stub at 0x1000264e
 };
