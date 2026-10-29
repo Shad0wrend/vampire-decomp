@@ -139,7 +139,7 @@ public:
 	void sub_1000cb8a();	// as in CLogicalEntity (transplant)
 
 	char m_pad4[0x450];
-	float m_vecOrigin454[3];
+	Vector m_vecOrigin454;
 	int m_nArea460;
 	char m_pad464[0x20];
 	CSkyCamera *m_pNext484;
