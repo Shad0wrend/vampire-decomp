@@ -75623,6 +75623,21 @@ StatDefault3 *CStatDefault3List::sub_101d5e80(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d5f10 size=0x55
+#include "CStatDefault3List.h"
+#include "CBaseCombatCharacter.h"
+
+// TARGET: CStatDefault3List::sub_101d5f10
+StatDefault3 *CStatDefault3List::sub_101d5f10(CBaseCombatCharacter *pChar)
+{
+	int index = pChar->sub_10337860();
+	if (index >= 0 && index < m_count)
+		return m_pItems[index];
+	static StatDefault3 s_default(-1);
+	return &s_default;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d5fb0 size=0x23
 void __fastcall sub_100135a7(void *pObj);
 
