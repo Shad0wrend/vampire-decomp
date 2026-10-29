@@ -21,6 +21,7 @@ public:
 	void sub_1000cb8a();	// destructor body (the CBaseToggle/CBaseEntity part)
 	void sub_10010c35();	// stub of 0x10223470
 	CKeyframeX *sub_10015217();	// stub of 0x10223700
+	CKeyframeX *sub_10223700();	// the keyframe of the handle at +0x56c (dynamic_cast to CMoverKeyFrame)
 	CKeyframeX *sub_10223690();	// the keyframe the mover currently works with (stub 0x100079d7)
 	void sub_1000b94c(int n);	// stub of 0x10223a30
 	const char *sub_100ab4f0();	// the entity's name text for messages (stub 0x1000b5cd)
