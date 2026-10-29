@@ -133636,6 +133636,20 @@ char sub_103b1d10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b22e0 size=0x1a
+namespace lifted {
+extern int g_1065194c;
+extern int g_10651950;
+extern char g_1093c698;
+}
+int sub_103b22e0()
+{
+    lifted::g_10651950 = 1;
+    lifted::g_1065194c = (int)&lifted::g_1093c698;
+    return (int)&lifted::g_1065194c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b2800 size=0x43
 #include "CNPC_VStalker.h"
 void *sub_100aa720(int size);
