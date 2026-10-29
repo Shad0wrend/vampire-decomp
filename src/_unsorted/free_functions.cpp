@@ -104930,6 +104930,17 @@ void CUnknown1028fb70::sub_1028fb70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028fc90 size=0x1c
+struct CUnknown1028fc90 { int sub_1028fc90(); };
+int CUnknown1028fc90::sub_1028fc90()
+{
+    *(int *)((char *)this + 0x63cc) = 0;
+    *(int *)((char *)this + 0x63c4) = 0x3f800000;
+    *(int *)((char *)this + 0x63c8) = 0x3f800000;
+    return 0x3f800000;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10290200 size=0xad
 #include "CAI_BaseNPCTroika.h"
 #include "CGlobalEntityList.h"
