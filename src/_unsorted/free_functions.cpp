@@ -108485,6 +108485,20 @@ int sub_102c8cc0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c9cf0 size=0x1a
+namespace lifted {
+extern int g_10602f58;
+extern int g_10602f5c;
+extern char g_10602f9c;
+}
+int sub_102c9cf0()
+{
+    lifted::g_10602f5c = 8;
+    lifted::g_10602f58 = (int)&lifted::g_10602f9c;
+    return (int)&lifted::g_10602f58;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c9d20 size=0x15
 int *__fastcall sub_102c9d20(int *p)
 {
