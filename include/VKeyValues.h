@@ -10,9 +10,21 @@ struct VKeyValuesCacheable	// the IKeyCacheable part: slot 2 is the scalar delet
 	virtual void vfunc2(int bDelete);
 };
 
+struct VKeyValuesInterface	// the IKeyValues part: slot 0 is the key's name
+{
+	virtual const char *vfunc0();
+};
+
 struct VKeyValues
 {
 	int *m_pVbTable;	// 0x00
+	char m_pad0004[0x18 - 4];
+	VKeyValues *m_pNext18;	// 0x18: the next key of the same level
+	VKeyValues *m_pChild1c;	// 0x1c: the first sub key
+	VKeyValues *m_pParent20;	// 0x20: the key searched next when no sub key has the name
+
+	VKeyValues *sub_101f2d70(const char *pszName);	// finds the sub key of that name (case-insensitive, by the IKeyValues name), then asks +0x20; 0 when none (stub 0x100122c4)
+	VKeyValuesInterface *NameOf() { return (VKeyValuesInterface *)((char *)this + m_pVbTable[2]); }
 
 	VKeyValues *sub_101f1f50(const char *pszName, int bMostDerived);	// the constructor (stub 0x100056a0)
 	char sub_101f2180(const char *pszName, int pathID);	// opens and parses the file (stub 0x10001cdf)
