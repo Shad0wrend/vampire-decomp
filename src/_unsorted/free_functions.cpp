@@ -30794,6 +30794,17 @@ CEventAction *CEventAction::sub_100ccf90(const char *pszTargetName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd220 size=0x10
+namespace lifted {
+extern char g_106e6fc8;
+struct C1000bbd6 { int sub_1000bbd6(int); };
+}
+int sub_100cd220(int a0)
+{
+    return ((lifted::C1000bbd6 *)((int)&lifted::g_106e6fc8))->sub_1000bbd6(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cd260 size=0x24
 // TARGET: sub_100cd260
 float __fastcall sub_100cd260(char *pThis)

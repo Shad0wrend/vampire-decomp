@@ -6215,6 +6215,7 @@
 0x1000ffd8 func   ?vfunc493@CNPC_VTest@@QAEXXZ CNPC_VTest::vfunc493
 0x1000ffdd func   _item_container_lock item_container_lock
 0x1000ffe2 func   ?sub_100f9790@CUtlVectorBase@@QAEXXZ CUtlVectorBase::sub_100f9790
+0x1000ffec func   ?sub_100cd220@@YAHH@Z sub_100cd220
 0x1000fff1 func   ?vfunc103@CSoundScheme@@UAEXXZ CSoundScheme::vfunc103
 0x1000fffb func   ?sub_10045a90@CUnknown10045a90@@QAEPAXXZ CUnknown10045a90::sub_10045a90
 0x1001000a func   ?vfunc113@CFire@@UAEXXZ CFire::vfunc113
