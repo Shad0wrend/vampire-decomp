@@ -11008,6 +11008,30 @@ int sub_10066820()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10066a00 size=0x4f
+#include "CTEPlayerDecal.h"
+struct CTEPlayerDecalData : CTEPlayerDecal
+{
+	int m_i04, m_i08;
+	int m_n0c;	// 0x0c
+	int m_vec[3];	// 0x10
+	int m_n1c;
+	int m_n20;
+};
+extern CTEPlayerDecalData g_106c4d08;
+
+void sub_10066a00(int a, int b, int *pVec, int c, int d, int e)
+{
+	g_106c4d08.m_vec[0] = pVec[0];
+	g_106c4d08.m_vec[1] = pVec[1];
+	g_106c4d08.m_vec[2] = pVec[2];
+	g_106c4d08.m_n0c = c;
+	g_106c4d08.m_n1c = d;
+	g_106c4d08.m_n20 = e;
+	g_106c4d08.vfunc4(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10066ae0 size=0xb
 namespace lifted {
 extern char g_1044e01c;
