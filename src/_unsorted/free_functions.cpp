@@ -92920,6 +92920,26 @@ void CPropHacking::sub_1021a740()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021ac30 size=0x50
+#include "CPropHacking.h"
+#include <string.h>
+extern const char *g_105af7c8[];
+void sub_10217ac0(CPropHacking *pTerminal, const char *pszFormat, ...);
+
+void CPropHacking::sub_1021ac30()
+{
+	sub_10218db0();
+	if (strlen(g_105af7c8[0]) != 0) {
+		const char **pp = g_105af7c8;
+		do {
+			sub_10217ac0(this, *pp);
+			sub_10217ac0(this, "\n");
+			pp++;
+		} while (strlen(*pp) != 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021b030 size=0xcd
 #include "CPropHacking.h"
 #include "CUnknown10217f50.h"
