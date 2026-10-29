@@ -13,6 +13,8 @@ struct VKeyValuesCacheable	// the IKeyCacheable part: slot 2 is the scalar delet
 struct VKeyValuesInterface	// the IKeyValues part: slot 0 is the key's name
 {
 	virtual const char *vfunc0();
+
+	int sub_101f2740(const char *pszName, int nDefault);	// "GetInt" of the IKeyValues part (this - 0x30 is the VKeyValues): the named sub key's value as an int (atoi of the string, ftol of the float), nDefault when there is none
 };
 
 struct VKeyValues
