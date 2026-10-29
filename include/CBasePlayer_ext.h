@@ -47,6 +47,8 @@
 	int sub_1017f770();	// stub 0x10007ee6
 	int sub_1017f8b0();	// stub 0x100063f7
 	char sub_10175180();	// stub 0x1000a6fa
+	int sub_10175220();	// the value slot 444 hands on: 0x8c while sub_10175180 holds, 0x10 with bit 0 of the byte at +0x2454, 0x28 when sub_10146a80 holds, else 0xf below move type 3 (+0x3e0) and 0 otherwise
+	char sub_10146a80();	// CBaseCombatCharacter member (stub 0x1000e971), called directly
 	char vfunc379(int a, int b, int c, int d, int e, int f, int g);	// slot 379 (plain member): CBaseCombatCharacter::vfunc379 and, when it succeeds, sub_10181580(1)
 	char sub_10329760(int a, int b, int c, int d, int e, int f, int g);	// CBaseCombatCharacter::vfunc379 (stub 0x100152da), called directly
 	char sub_10334c20(CBaseCombatWeapon *pWeapon);	// CBaseCombatCharacter member (stub 0x100112d9), called directly
