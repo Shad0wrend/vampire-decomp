@@ -54511,6 +54511,38 @@ void CBasePlayer::sub_10161f10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101622d0 size=0x4e
+#include "CBaseEntity.h"
+CBaseEntity *sub_101cd9e0(int index);
+struct S101622d0_Target
+{
+	virtual void vfunc0();
+	virtual bool vfunc1();
+	char m_pad04[0x2c - 4];
+	int m_n2c;
+};
+struct S101622d0_Arg
+{
+	int m_n00;
+	S101622d0_Target *m_pTarget;
+};
+struct S101622d0_Player
+{
+	char m_pad[0x224];
+	unsigned int m_nFlags224;
+};
+void sub_101622d0(S101622d0_Arg *pArg)
+{
+	S101622d0_Player *pPlayer = (S101622d0_Player *)sub_101cd9e0(1);
+	if (pPlayer) {
+		if (!pArg->m_pTarget->vfunc1() && pArg->m_pTarget->m_n2c)
+			pPlayer->m_nFlags224 |= 2;
+		else
+			pPlayer->m_nFlags224 &= ~2;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10164040 size=0x135
 #include "CBasePlayer.h"
 
