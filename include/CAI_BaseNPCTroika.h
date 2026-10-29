@@ -194,7 +194,10 @@ public:
 	int m_n153c;
 	char m_pad1540[0x1590 - 0x1540];
 	char m_b1590;
-	char m_pad1591[0x5b84 - 0x1591];
+	char m_pad1591[0x1b3c - 0x1591];
+	const char *m_pszFile1b3c;	// 0x1b3c: source file stamp of the last ideal state change
+	int m_nLine1b40;	// 0x1b40: its line
+	char m_pad1b44[0x5b84 - 0x1b44];
 	unsigned int m_flags5b84;	// 0x5b84: bit 1 keeps the NPC from carrying on (slot 602)
 	char m_pad5b88[0x5bbc - 0x5b88];
 	float m_f5bbc;
