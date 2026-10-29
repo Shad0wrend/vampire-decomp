@@ -150721,6 +150721,25 @@ extern "C" CBaseEntity *grenade()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10429f80 size=0x49
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct CSlot220View
+{
+	S10(q0) S10(q1) S10(q2) S10(q3) S10(q4) S10(q5) S10(q6) S10(q7) S10(q8) S10(q9)
+	S10(q10) S10(q11) S10(q12) S10(q13) S10(q14) S10(q15) S10(q16) S10(q17) S10(q18) S10(q19)
+	S10(q20) S10(q21)
+	virtual float *vfunc220();
+};
+void sub_101babc0(int a, float *pOrigin, int b, float c, int d);
+void sub_1000f57e();
+void __fastcall sub_10429f80(CBaseEntity *pEnt)
+{
+	sub_101babc0(8, ((CSlot220View *)pEnt)->vfunc220(), 0x190, 0.3f, 0);
+	pEnt->sub_100ac4e0((int)sub_1000f57e, 0, 0);
+	pEnt->m_flNextThink = gpGlobals->curtime + 1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042a540 size=0x194
 #include "CBaseGrenade.h"
 #include "TestBit.h"
