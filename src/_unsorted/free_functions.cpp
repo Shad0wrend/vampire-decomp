@@ -6878,6 +6878,33 @@ unsigned short CUtlRBTree36::sub_10046930(const void *search) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x10046a90 size=0x55
+struct SPhysRecordX
+{
+	int m_n[13];
+	SPhysRecordX *sub_10046a90(const SPhysRecordX *pOther);
+};
+
+// TARGET: SPhysRecordX::sub_10046a90
+SPhysRecordX *SPhysRecordX::sub_10046a90(const SPhysRecordX *pOther)
+{
+	m_n[0] = pOther->m_n[0];
+	m_n[1] = pOther->m_n[1];
+	m_n[2] = pOther->m_n[2];
+	m_n[3] = pOther->m_n[3];
+	m_n[4] = pOther->m_n[4];
+	m_n[5] = pOther->m_n[5];
+	m_n[6] = pOther->m_n[6];
+	m_n[7] = pOther->m_n[7];
+	m_n[8] = pOther->m_n[8];
+	m_n[9] = pOther->m_n[9];
+	m_n[10] = pOther->m_n[10];
+	m_n[11] = pOther->m_n[11];
+	m_n[12] = pOther->m_n[12];
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10046b10 size=0x13
 bool sub_10046b10(const unsigned int *a, const unsigned int *b)
 {
