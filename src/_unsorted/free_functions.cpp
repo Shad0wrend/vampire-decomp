@@ -69457,6 +69457,20 @@ extern "C" GP *trigger_fog()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ca4b0 size=0x1a
+namespace lifted {
+extern int g_1059e2fc;
+extern int g_1059e300;
+extern char g_1059e344;
+}
+int sub_101ca4b0()
+{
+    lifted::g_1059e300 = 1;
+    lifted::g_1059e2fc = (int)&lifted::g_1059e344;
+    return (int)&lifted::g_1059e2fc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ca510 size=0x14e
 #include "CBaseTrigger.h"
 #include "CEntityVSlots.h"
