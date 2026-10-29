@@ -117,3 +117,37 @@ void CMultiSource::vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int u
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x10133160 size=0x54
+#include "CMultiSource.h"
+#include "CUnknown10057680.h"
+extern CUnknown10057680 g_106be530;
+
+// TARGET: CMultiSource::vfunc147
+unsigned char CMultiSource::vfunc147(CBaseEntity *pActivator)
+{
+	int i = 0;
+	if (!(m_flags204 & 1)) {
+		int n = m_nMembers;
+		if (n > 0) {
+			int *p = m_aMemberTriggered;
+			do {
+				if (!*p)
+					break;
+				i++;
+				p++;
+			} while (i < n);
+		}
+		if (i == n) {
+			if (m_pszGlobalState) {
+				i = g_106be530.sub_10057820(m_pszGlobalState);
+				if (i != 1)
+					goto fail;
+			}
+			return 1;
+		}
+	}
+fail:
+	return i & 0xffffff00;
+}
+// END FUNCTION
