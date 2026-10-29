@@ -1,6 +1,28 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101a9d60 size=0x4c
+#include <string.h>
+#include <stdlib.h>
+#include "CBaseEntity.h"
+#include "CScriptedSentence.h"
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+struct CScriptedSentenceView : CBaseEntity {
+	char m_pad[0x46c - sizeof(CBaseEntity)];
+	float m_flAttenuation;
+};
+// TARGET: CScriptedSentence::vfunc110
+bool CScriptedSentence::vfunc110(const char *key, const char *value)
+{
+	CScriptedSentenceView *p = (CScriptedSentenceView *)this;
+	if (!_strcmpi(key, "volume")) {
+		p->m_flAttenuation = atof(value) * 0.1;
+		return true;
+	}
+	return p->CBaseEntity::vfunc110(key, value);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a9e20 size=0x122
 #include "CBaseEntity.h"
 #include "CScriptedSentence.h"
