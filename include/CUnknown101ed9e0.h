@@ -5,7 +5,9 @@ class CUnknown101ed9e0
 {
 public:
 	int m_unk0;
+	int m_unk4;	// InternalName
+	int m_unk8;
 
 	CUnknown101ed9e0 *sub_101ed9e0(int value);
-	void sub_101eda20(void *pNode);	// stub 0x1000887d: reads the record from a data node
+	bool sub_101eda20(void *pNode);	// stub 0x1000887d: reads the record from a data node; false when there is none
 };
