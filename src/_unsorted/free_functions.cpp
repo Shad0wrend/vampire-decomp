@@ -95490,6 +95490,20 @@ int CUnknown1023a250::sub_1023a250()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023a6b0 size=0x1a
+namespace lifted {
+extern int g_105c2580;
+extern int g_105c2584;
+extern char g_105c25c4;
+}
+int sub_1023a6b0()
+{
+    lifted::g_105c2584 = 3;
+    lifted::g_105c2580 = (int)&lifted::g_105c25c4;
+    return (int)&lifted::g_105c2580;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023ae40 size=0x43
 #include "CWorld.h"
 void *sub_100aa720(int size);
