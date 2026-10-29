@@ -42759,6 +42759,40 @@ void CFire::sub_1010a7f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010b3c0 size=0x45
+#include "CBaseEntity.h"
+#include "CFire.h"
+
+#define HS(n) virtual void n();
+#define HS10(p) HS(p##0) HS(p##1) HS(p##2) HS(p##3) HS(p##4) HS(p##5) HS(p##6) HS(p##7) HS(p##8) HS(p##9)
+
+struct CFireEntitySlots
+{
+	HS10(a0) HS10(a1) HS10(a2) HS10(a3) HS10(a4) HS10(a5) HS10(a6) HS10(a7) HS10(a8) HS10(a9)
+	HS10(b0) HS10(b1) HS10(b2) HS10(b3) HS10(b4) HS10(b5) HS10(b6) HS10(b7) HS10(b8) HS10(b9)
+	HS10(c0) HS10(c1) HS10(c2) HS10(c3)
+	HS(i0) HS(i1) HS(i2)
+	virtual void slot243(int a);
+};
+
+struct CFireSmokeView
+{
+	char m_pad[0x450];
+	EHANDLE m_hSmoke;
+};
+
+void sub_101cd940(CBaseEntity *pEnt);
+
+void CFire::sub_1010b3c0()
+{
+	CFireEntitySlots *pSmoke = (CFireEntitySlots *)((CFireSmokeView *)this)->m_hSmoke.Get();
+	if (pSmoke) {
+		pSmoke->slot243(0);
+		sub_101cd940((CBaseEntity *)pSmoke);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010b470 size=0x82
 #include "CBaseEntity.h"
 #include "CFire.h"
