@@ -1839,6 +1839,7 @@
 0x100055c4 func   ?vfunc103@CPhysForce@@UAEXXZ CPhysForce::vfunc103
 0x100055c9 func   _info_node_bach_teleport_1 info_node_bach_teleport_1
 0x100055d8 func   _info_node_bach_teleport_2 info_node_bach_teleport_2
+0x100055dd func   ?sub_1036a290@@YAHXZ sub_1036a290
 0x100055e2 func   _info_node_bach_teleport_3 info_node_bach_teleport_3
 0x100055e7 func   ?sub_101ecb10@CUnknown101ecb10@@QAEXH@Z CUnknown101ecb10::sub_101ecb10
 0x100055ec func   _info_node_bach_teleport_4 info_node_bach_teleport_4

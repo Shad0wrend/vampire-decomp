@@ -128826,6 +128826,20 @@ CBaseEntity *CNPC_VCameraSecurity::sub_10369e70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036a290 size=0x1a
+namespace lifted {
+extern int g_1062fbc0;
+extern int g_1062fbc4;
+extern char g_1062fc04;
+}
+int sub_1036a290()
+{
+    lifted::g_1062fbc4 = 0xc;
+    lifted::g_1062fbc0 = (int)&lifted::g_1062fc04;
+    return (int)&lifted::g_1062fbc0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036a340 size=0x33
 void sub_1000831e();
 void sub_1000fad8();
