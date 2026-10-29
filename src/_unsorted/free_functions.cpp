@@ -714,6 +714,20 @@ void __fastcall sub_1002b360(S1002b360 *self, int unused, SInfo1002b360 *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002b760 size=0x1a
+namespace lifted {
+extern int g_10538ddc;
+extern int g_10538de0;
+extern char g_10538e24;
+}
+int sub_1002b760()
+{
+    lifted::g_10538de0 = 3;
+    lifted::g_10538ddc = (int)&lifted::g_10538e24;
+    return (int)&lifted::g_10538ddc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002b790 size=0x49
 void *sub_1000db89(int);
 struct GP;
