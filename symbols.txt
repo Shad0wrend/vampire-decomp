@@ -6786,6 +6786,7 @@
 0x10010a78 func   ?sub_1013ab70@@YAXHHHH@Z sub_1013ab70
 0x10010a7d func   ?sub_10345ab0@CBaseCombatCharacter@@QAE_NPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_10345ab0
 0x10010a87 func   ?vfunc103@CNPCMaker_Zombie@@UAEXXZ CNPCMaker_Zombie::vfunc103
+0x10010a91 func   ?vfunc103@CNPC_VPlayerController@@QAEXXZ CNPC_VPlayerController::vfunc103
 0x10010a9b func   ?sub_101bd940@@YIXPAD@Z sub_101bd940
 0x10010aaa func   ?sub_100b7130@@YIXPAUMem4@@HH@Z sub_100b7130
 0x10010aaf func   _tectonic tectonic

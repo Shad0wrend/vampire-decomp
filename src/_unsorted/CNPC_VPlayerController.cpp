@@ -16,6 +16,28 @@ CNPC_VPlayerController *CNPC_VPlayerController::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a4510 size=0x45
+#include "CNPC_VPlayerController.h"
+
+struct CPlayerControllerView
+{
+	char m_pad[0x63f0];
+	char m_b63f0;
+};
+
+const char **sub_1042bff0(const char **pOut, const char *psz);
+
+void CNPC_VPlayerController::vfunc103()
+{
+	sub_103c4ef0();
+	sub_10332aa0(1, 3, 0);
+	((CPlayerControllerView *)this)->m_b63f0 = 1;
+	const char *pszName;
+	sub_100a0420(*sub_1042bff0(&pszName, "playercontroller"));
+	sub_100b3840(0x10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a48b0 size=0x74
 #include "CNPC_VPlayerController.h"
 #include "CGlobalEntityList.h"
