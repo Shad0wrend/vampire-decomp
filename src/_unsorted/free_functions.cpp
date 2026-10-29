@@ -127100,6 +127100,20 @@ void __stdcall sub_1034e7e0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034f300 size=0x1a
+namespace lifted {
+extern int g_106266e4;
+extern int g_106266e8;
+extern char g_1062672c;
+}
+int sub_1034f300()
+{
+    lifted::g_106266e8 = 0xb;
+    lifted::g_106266e4 = (int)&lifted::g_1062672c;
+    return (int)&lifted::g_106266e4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034f6f0 size=0x93
 #include "SendProp.h"
 

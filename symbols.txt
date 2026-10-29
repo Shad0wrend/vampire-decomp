@@ -6052,6 +6052,7 @@
 0x1000f231 func   ?sub_101bbcb0@CUnknown101bbcb0@@QAEMXZ CUnknown101bbcb0::sub_101bbcb0
 0x1000f236 func   ?sub_1006a470@CUnknown1006a470@@QAEHXZ CUnknown1006a470::sub_1006a470
 0x1000f24f func   ?sub_100949e0@CBaseAnimating@@QAEMM@Z CBaseAnimating::sub_100949e0
+0x1000f254 func   ?sub_1034f300@@YAHXZ sub_1034f300
 0x1000f25e func   ?sub_1030bec0@TObj@@QAEPAU1@XZ TObj::sub_1030bec0
 0x1000f263 func   ?sub_10092610@CBaseAnimating@@QAEXHHH@Z CBaseAnimating::sub_10092610
 0x1000f272 func   ?sub_1030d4f0@@YGHPBD@Z sub_1030d4f0
