@@ -2104,6 +2104,7 @@
 0x10005f10 func   ?sub_100cd260@@YIMPAD@Z sub_100cd260
 0x10005f1a func   ?sub_1028a150@@YIHPAD@Z sub_1028a150
 0x10005f1f func   ?sub_1006ac90@@YAHXZ sub_1006ac90
+0x10005f24 func   ?sub_103122e0@CUnknown103122e0@@QAEHHH@Z CUnknown103122e0::sub_103122e0
 0x10005f29 func   ?sub_101b0d80@CUnknown101b0d80@@QAEXH@Z CUnknown101b0d80::sub_101b0d80
 0x10005f33 func   ?sub_103e7640@@YIDPAXHH@Z sub_103e7640
 0x10005f47 func   ?sub_10094370@CFakeEnt@@QAEHH@Z CFakeEnt::sub_10094370

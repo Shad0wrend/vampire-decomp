@@ -119476,6 +119476,19 @@ void CAI_Expresser::sub_103121a0(float a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103122e0 size=0x27
+namespace lifted {
+extern int g_1049dfe8;
+extern int g_1049dfec;
+struct C10015d25 { int sub_10015d25(int, int, int, int, int, int, int, int); };
+}
+struct CUnknown103122e0 { int sub_103122e0(int, int); };
+int CUnknown103122e0::sub_103122e0(int a0, int a1)
+{
+    return ((lifted::C10015d25 *)this)->sub_10015d25(a0, lifted::g_1049dfe8, lifted::g_1049dfec, 0, 0x64, 0, a1, 0x50);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10312320 size=0x8
 struct CSub10002397 { void sub_10002397(); };
 struct CUnknown10312320 { char pad[0x30]; CSub10002397 m_Sub; void sub_10312320(); };
