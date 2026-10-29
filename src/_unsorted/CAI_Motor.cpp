@@ -100,6 +100,32 @@ int CAI_Motor::vfunc4(const Vector &vecGoal, float flYaw)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e1110 size=0x41
+#include "CAI_Motor.h"
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+
+struct CMotorOwnerView {
+    V100(a) V100(b) V100(c) V10(d)
+    virtual void s310(int a);
+    char m_pad[0x3ec - 4];
+    float m_f3ec;
+};
+struct CUnknown102ee3f0 { int sub_102ee3f0(); };
+extern Vector g_1070d1b0;
+
+void CAI_Motor::vfunc5()
+{
+    CUnknown102ee3f0 *pOwner = (CUnknown102ee3f0 *)sub_102e2610();
+    int n = pOwner->sub_102ee3f0();
+    ((CMotorOwnerView *)m_pOuter)->s310(n);
+    sub_102e2840(4, 0);
+    sub_102e2690(&g_1070d1b0);
+    ((CMotorOwnerView *)m_pOuter)->m_f3ec = 1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e1180 size=0x42
 #include "CAI_Motor.h"
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
