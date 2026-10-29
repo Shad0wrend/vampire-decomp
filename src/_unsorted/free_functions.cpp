@@ -98946,6 +98946,20 @@ bool CUtlRBTree16::sub_1024a980(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024aed0 size=0x43
+#include "CUnknown1024b2d0.h"
+extern CUnknown1024b2d0 *g_1088ae3c;
+extern char g_1088ae40;
+void sub_1024aed0()
+{
+	if (!g_1088ae40) {
+		CUnknown1024b2d0 *p = (CUnknown1024b2d0 *)operator new(0x2c);
+		g_1088ae3c = p ? p->sub_1024b2d0(0, 0x20, 0) : 0;
+		g_1088ae40 = 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024afe0 size=0xb
 void sub_100139d5();
 extern int g_1088ae3c;
