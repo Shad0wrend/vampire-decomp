@@ -3160,6 +3160,7 @@
 0x100089f4 func   _func_breakable func_breakable
 0x100089f9 func   ?sub_102cc540@@YAXXZ sub_102cc540
 0x10008a03 func   ?sub_1010b5c0@CFire@@QAEXMD@Z CFire::sub_1010b5c0
+0x10008a21 func   ?sub_100de7d0@CUnknown100de7d0@@QAEPAXXZ CUnknown100de7d0::sub_100de7d0
 0x10008a26 func   ?sub_10404520@@YAHXZ sub_10404520
 0x10008a2b func   ?sub_10309120@@YGXMMHPAM0@Z sub_10309120
 0x10008a35 func   ?sub_10328380@CBaseCombatCharacter@@QAEHHHPAV1@H@Z CBaseCombatCharacter::sub_10328380

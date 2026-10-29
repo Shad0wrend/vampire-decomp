@@ -34772,6 +34772,17 @@ void sub_100055b5();
 void __stdcall sub_100de610(int) { sub_100055b5(); }
 // END FUNCTION
 
+// FUNCTION: 0x100de7d0 size=0x14
+struct CUnknown100de7d0 { void * sub_100de7d0(); };
+void * CUnknown100de7d0::sub_100de7d0()
+{
+    *(int *)((char *)this + 4) = -1;
+    *(int *)this = 0x3f800000;
+    *(char *)((char *)this + 8) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100de930 size=0x10e
 #include "CUnknown100de930.h"
 #include "CGlobalEntityList.h"
