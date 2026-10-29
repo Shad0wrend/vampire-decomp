@@ -18,6 +18,13 @@ bool CBaseEntity::vfunc32(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026690 size=0x4
+int CBaseEntity::vfunc33()
+{
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100266b0 size=0x5
 int CBaseEntity::vfunc34(int a0)
 {
