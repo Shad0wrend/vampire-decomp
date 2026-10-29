@@ -84136,6 +84136,17 @@ int CUnknown10204300::sub_10204300(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10204330 size=0x19
+struct CUnknown10204330 { void * sub_10204330(int); };
+void * CUnknown10204330::sub_10204330(int a0)
+{
+    *(int *)this = *(int *)((char *)a0);
+    *(int *)((char *)this + 4) = *(int *)((char *)a0 + 4);
+    *(int *)((char *)this + 0xc) = *(int *)((char *)a0 + 0xc);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102043a0 size=0x148
 #include "CVDmg_t.h"
 #include "CVStatInfoList_t.h"
