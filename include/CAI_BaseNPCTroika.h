@@ -126,6 +126,7 @@ public:
 	int sub_10295590(int activity);	// slot 375 base implementation (NPC_TranslateActivity), called directly
 	void sub_1028e8b0(CBaseEntity *pEnt, int a);	// runs sub_1028e940(a) when pEnt is null-safe related to this NPC: this NPC has no slot 167 value, or pEnt is that value, or the object at pEnt+0x98 has the same slot 167 value
 	void sub_1028e940(int a);
+	int sub_102ad2d0();	// when condition 0x1f holds: sets bit 8 of +0x14b8 (unless the state +0x5cc0 is already 8), stamps the source file / line 0x447d and sets the ideal state +0x5cc4 to 8; returns 8, else 0
 	char sub_10337f30();	// CBaseCombatCharacter member (the stub at 0x10006b04), called directly
 	char sub_1033e2b0();	// CBaseCombatCharacter::IsBusyWithDiscipline (the stub at 0x1000caae), called directly
 	char sub_10281430();	// true when the NPC may skip its pending request: not dead / mid-switch (state +0x5cc4 is not 7, nor 4 with +0x5cc0 not 4), and either the one-shot byte at +0x1b28 was set (cleared here), condition 0x5d is not set, bit 29 of +0x5c7c is set with a target at +0x5c38, or state +0x5cc0 is 2 without a slot 167 value
