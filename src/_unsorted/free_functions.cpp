@@ -120595,6 +120595,31 @@ CAI_NodeGraph *CAI_NodeGraph::sub_102f30f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f31f0 size=0x52
+struct SItem { void sub_102fc6b0(); };
+struct SPtrList
+{
+	int m_n;
+	SItem **m_p;
+	void sub_102f31f0();
+};
+void SPtrList::sub_102f31f0()
+{
+	if (m_p) {
+		for (int i = 0; i < m_n; i++) {
+			SItem *p = m_p[i];
+			if (p) {
+				p->sub_102fc6b0();
+				delete p;
+			}
+		}
+	}
+	delete m_p;
+	m_p = 0;
+	m_n = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f3770 size=0x1e
 int sub_102f3770(const float *a, const float *b)
 {
