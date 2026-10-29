@@ -9,6 +9,8 @@ class CNPC_VMingXiaoTentacle;
 class CNPC_VMingXiao : public CBaseEntity
 {
 public:
+	virtual int vfunc126(int a);	// slot 126: the six floats at +0x66f4 are checked around the Troika base (sub_101cf250 mode 4 before, sub_101cf2f0 after)
+	int sub_102993c0(int a);	// CAI_BaseNPCTroika::vfunc126 (stub 0x100025cc), called directly
 	virtual void vfunc104();	// Precache: the Troika base, the eleven Ming Xiao particle emitters, the move sound list, then the weapons item_w_mingxiao_melee / _tentacle / _spit
 	virtual void vfunc123();	// DrawDebugTextOverlays-like: with bit 29 of the overlay flags (+0x224) set, dispatches four red markers (sub_10144a30) along x = 100, 150, 200, 300 at the entity's origin (slot 220); then the Troika base
 	virtual void vfunc144(int a);	// slot 144 "Event_Killed"-like: while the byte at +0x6744 is clear sets +0x200 = 1 and runs sub_10395c70; else tells the owner entity (handle +0x6670) sub_10397a50(this), runs sub_10397e90 / sub_10397f00 when the global 0x1093b9b4 is not (slot 1) and has +0x2c set and sub_10398870 is clear; then the Troika base
