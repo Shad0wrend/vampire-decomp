@@ -4,6 +4,16 @@
 
 class CBaseAnimating;
 
+struct CPhysicsAnimlinkPair	// the object embedded at +0x4c8 of a CPhysicsAnimlink
+{
+	int m_n0;
+	int m_n4;
+	int m_hFirst;	// 0x8: handle of the first entity (-1 for none)
+	int m_hSecond;	// 0xc: handle of the second entity (-1 for none)
+
+	void sub_1014ebd0(int n, CBaseEntity *pFirst, CBaseEntity *pSecond);	// stores n and the two entities' handles, registers the link with the global at 0x106eb5d8 when pFirst is set
+};
+
 class CPhysicsAnimlink : public CBaseEntity
 {
 public:
