@@ -126677,6 +126677,17 @@ void sub_10370630()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10370650 size=0x15
+namespace lifted {
+extern char g_10631cd0;
+int sub_1000a236(int, int, int);
+}
+int sub_10370650(int a0)
+{
+    return lifted::sub_1000a236(a0, 0, (int)&lifted::g_10631cd0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103706b0 size=0xe9
 #include "CEntityVSlots.h"
 #include "CEHandleGet.h"
