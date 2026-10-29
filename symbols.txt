@@ -3393,6 +3393,7 @@
 0x10008e7c func   ?sub_101e8da0@CUnknown101e8da0@@QAEPADXZ CUnknown101e8da0::sub_101e8da0
 0x10008e8b func   ?vfunc1@PyServerSystem@@UAEXXZ PyServerSystem::vfunc1
 0x10008e90 func   ?sub_100fc7a0@@YAHXZ sub_100fc7a0
+0x10008e95 func   ?sub_10352e20@@YAHPAUS10352e20@@PBD@Z sub_10352e20
 0x10008e9f func   ?vfunc207@CBaseEntity@@QAE_NXZ CBaseEntity::vfunc207
 0x10008ea4 func   _info_node_manbat_fly_to_point info_node_manbat_fly_to_point
 0x10008ebd func   ?vfunc274@CPropDoorknobElectronic@@QAEXXZ CPropDoorknobElectronic::vfunc274

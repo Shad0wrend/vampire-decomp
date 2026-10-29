@@ -127841,6 +127841,27 @@ int CUnknown10351510::sub_10351510()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10352e20 size=0x43
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+struct S10352e20
+{
+	char m_pad[0x40];
+	int m_n40;
+	char m_b44;
+};
+extern char g_106b8540[];
+int sub_10172670(int a, const char *b);
+int sub_10352e20(S10352e20 *p, const char *name)
+{
+	if (_strcmpi(name, g_106b8540) == 0)
+	{
+		int h = p->m_b44 ? p->m_n40 : 0;
+		return sub_10172670(h, name);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10352e90 size=0x25
 extern char g_1056ece0[];
 extern char g_105730d0[];
