@@ -8491,6 +8491,7 @@
 0x100143ad func   _func_button func_button
 0x100143c6 func   ?sub_1029ea40@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_1029ea40
 0x100143d5 func   ?vfunc438@CNPC_VAsianVampire@@QAEHXZ CNPC_VAsianVampire::vfunc438
+0x100143da func   ?sub_101a01f0@CSave@@QAEHPBXPAUtypedescription_t@@H@Z CSave::sub_101a01f0
 0x100143df func   ?sub_10072e20@CUnknown10072e20@@QAEPADXZ CUnknown10072e20::sub_10072e20
 0x100143f3 func   ?sub_102bfdf0@@YGXH@Z sub_102bfdf0
 0x10014402 func   _env_particle env_particle

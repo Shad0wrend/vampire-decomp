@@ -63747,6 +63747,36 @@ void CRopeKeyframe::sub_1019f1f0(int nBit)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a01f0 size=0x4c
+#include "CSave.h"
+
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+	int fieldType;
+	const char *fieldName;
+	int fieldOffset[2];
+	unsigned short fieldSize;
+	short flags;
+	const char *externalName;
+	ISaveRestoreOps *pSaveRestoreOps;
+	void *inputFunc;
+	datamap_t *td;
+	int fieldSizeInBytes;
+	int unk;
+};
+
+int CSave::sub_101a01f0(const void *pBaseData, typedescription_t *pFields, int nFields)
+{
+	int nNonEmpty = 0;
+	for (int i = 0; i < nFields; i++) {
+		if (sub_1019fe10((char *)pBaseData + pFields[i].fieldOffset[0], &pFields[i]))
+			nNonEmpty++;
+	}
+	return nNonEmpty;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a0320 size=0x47
 #include "CSave.h"
 struct CSaveDesc { int m_n0, m_n4, m_n8; CSaveDesc *m_pParent; };
