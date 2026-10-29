@@ -148036,6 +148036,26 @@ int sub_10412140()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10412160 size=0x43
+struct S8 { int a; unsigned short b; char c; char d; };
+extern S8 *g_109d3010;
+extern int g_109d301c;
+struct CUnknown10249fc0 { int sub_10249fc0(unsigned short x); };
+extern CUnknown10249fc0 g_1094afe0;
+bool sub_10412160(int idx, int *out1, int *out2)
+{
+    if (idx >= 0 && idx < g_109d301c) {
+        S8 *p = &g_109d3010[idx];
+        if (!p->c) {
+            *out1 = p->a;
+            *out2 = g_1094afe0.sub_10249fc0(p->b);
+            return true;
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104121d0 size=0xb
 extern int g_109d3080;
 void sub_104121d0()
