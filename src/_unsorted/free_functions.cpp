@@ -15386,6 +15386,14 @@ void CUnknown100779b0::sub_100779b0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10077a50 size=0x4e
+#include "CUnknown10077430.h"
+void CUnknown10077430::sub_10077a50(int index)
+{
+	m_aVectors[index].Purge();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10077ac0 size=0x11
 struct CTableFields10077ac0 {
     char pad0[0x2f0];
