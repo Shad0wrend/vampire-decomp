@@ -52195,6 +52195,20 @@ CRagdollProp *sub_10157260(CRagdollProp *pAnimating, const Vector &vecForce, int
 }
 // END FUNCTION
 
+// FUNCTION: 0x10157610 size=0x1a
+namespace lifted {
+extern int g_1057e9ac;
+extern int g_1057e9b0;
+extern char g_1057e9f4;
+}
+int sub_10157610()
+{
+    lifted::g_1057e9b0 = 4;
+    lifted::g_1057e9ac = (int)&lifted::g_1057e9f4;
+    return (int)&lifted::g_1057e9ac;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10157890 size=0xd
 #include "CUnknown101578b0.h"
 
