@@ -18,7 +18,8 @@ public:
     virtual void vfunc104();	// slot 104: the model name (slot 9) or the default one when it is empty, handed to CBaseEntity::sub_100adfd0
     virtual void vfunc134();
     virtual void vfunc135(); virtual void vfunc136(); virtual void vfunc137(); virtual void vfunc138(); virtual void vfunc139();
-    virtual void vfunc140(); virtual void vfunc141(); virtual void vfunc142(const CRagdollPropDamageInfo *pInfo); virtual void vfunc143(); virtual void vfunc144();	// slot 142 "CRagdollProp::OnTakeDamage"-like: forwards a copy of the info with bit 23 of the damage type added to the entity of the handle at +0xd5c when it is live, else the base implementation
+    virtual void vfunc140(); virtual void vfunc141(int a, int b, void *pInfo);	// slot 141 (TraceAttack): swaps the physics object of the body the info's short at +0x48 names (when it is inside the body count) with sub_100a68f0, then the base implementation
+    virtual void vfunc142(const CRagdollPropDamageInfo *pInfo); virtual void vfunc143(); virtual void vfunc144();	// slot 142 "CRagdollProp::OnTakeDamage"-like: forwards a copy of the info with bit 23 of the damage type added to the entity of the handle at +0xd5c when it is live, else the base implementation
     virtual void vfunc145(); virtual void vfunc146(); virtual void vfunc147(); virtual void vfunc148(); virtual void vfunc149();
     virtual void vfunc150(); virtual void vfunc151(); virtual void vfunc152(); virtual void vfunc153(); virtual void vfunc154();
     virtual void vfunc155(); virtual void vfunc156(); virtual void vfunc157(); virtual void vfunc158x(); virtual void vfunc159();
