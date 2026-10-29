@@ -40969,6 +40969,20 @@ extern "C" GP *env_shake()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10102c50 size=0x1a
+namespace lifted {
+extern int g_10569e20;
+extern int g_10569e24;
+extern char g_10569e64;
+}
+int sub_10102c50()
+{
+    lifted::g_10569e24 = 8;
+    lifted::g_10569e20 = (int)&lifted::g_10569e64;
+    return (int)&lifted::g_10569e20;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101030e0 size=0xd
 void CUnknown101030e0::sub_101030e0(int mode)
 {
