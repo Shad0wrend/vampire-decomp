@@ -91,6 +91,20 @@ void CBaseTerminal::vfunc42(void *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102182b0 size=0x4b
+#include "CBaseTerminal.h"
+#include "CBasePlayer.h"
+#include "CEntityVSlots.h"
+
+// TARGET: CBaseTerminal::vfunc41
+void CBaseTerminal::vfunc41(void *pArg)
+{
+	((CBasePlayer *)pArg)->sub_10178590(((CEntityVSlots *)this)->slot192());
+	if (m_b082c)
+		sub_10217d60();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10219f10 size=0x6d
 #include "CBaseTerminal.h"
 
