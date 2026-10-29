@@ -49,3 +49,14 @@ void CTEBeamRing::vfunc4(int a, int b)
 	engine->vfunc103(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005c850 size=0x6
+#include "CTEBeamRing.h"
+namespace lifted {
+extern char g_106bfec0;
+}
+ServerClass * CTEBeamRing::vfunc0()
+{
+    return (ServerClass *)((int)&lifted::g_106bfec0);
+}
+// END FUNCTION
