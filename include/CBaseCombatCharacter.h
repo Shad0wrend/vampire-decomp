@@ -45,7 +45,7 @@ public:
 	virtual void vfunc289(CBaseFlexItem *pItem);	// slot 289: starts a queued scene item
 	virtual void c290(); virtual void c291();
 	virtual void vfunc292(int unused1, const Vector *pDirection, int unused2);	// slot 292 "CBaseCombatCharacter::DamageFlinch": scope trace (entity name); picks one of two flinch gestures at random (0x73 / 0x74) and plays it through slot 265 with 0.1 / 0.3 and a "hit_yaw" of the angle toward the damage direction (when it points anywhere) plus a random -30..30 degrees
-	virtual void c293(); virtual void c294(); virtual void c295x(); virtual void c296(); virtual void c297();
+	virtual void c293(); virtual void c294(); virtual void c295x(); virtual bool vfunc296(int a); virtual void c297();
 	virtual int vfunc298(int nSection);	// slot 298: the number of weapon slots of inventory section nSection
 	virtual void c299();
 	CBCC_SLOTS10(c30) CBCC_SLOTS10(c31)
