@@ -38,7 +38,7 @@ public:
 	CHL2_V10(pb1) CHL2_V10(pb2) CHL2_V10(pb3)	// slots 110..139
 	virtual void pb40(); virtual void pb41();	// slots 140, 141
 	virtual int vfunc142(const CTakeDamageInfo *pInfo);	// slot 142 "OnTakeDamage": a damage above zero (the CVDmg_t's GetDmg when the record has one, else the plain damage at +0x30) stamps the time at +0x253c and punches the view by a random angle scaled by the damage (and a convar), then the player base
-	virtual void pb43(); virtual void pb44(); virtual void pb45(); virtual void pb46(); virtual void pb47(); virtual void pb48(); virtual void pb49();	// slots 143..149
+	virtual void pb43(); virtual void vfunc144(int a); virtual void pb45(); virtual void pb46(); virtual void pb47(); virtual void pb48(); virtual void pb49();	// slots 143..149
 	CHL2_V10(pb5)	// slots 150..159
 	virtual void pb60(); virtual void pb61(); virtual void pb62(); virtual void pb63(); virtual void pb64(); virtual void pb65(); virtual void pb66(); virtual void pb67(); virtual void pb68();	// slots 160..168
 	virtual void vfunc169(const Vector *pPunch);	// slot 169: takes the pointer of a view punch angle
