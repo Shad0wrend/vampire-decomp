@@ -149974,6 +149974,21 @@ void S104273f0::sub_104273f0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x104274b0 size=0x49
+#include "CAmmoDef.h"
+#include <string.h>
+int CAmmoDef::sub_104274b0(const char *psz)
+{
+	if (!psz)
+		return -1;
+	for (int i = 1; i < m_nAmmoIndex; i++) {
+		if (!strcmpi(psz, m_AmmoType[i].pszName))
+			return i;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10427700 size=0x69
 #include "CUnknown10427700.h"
 #include <string.h>
