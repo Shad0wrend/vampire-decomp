@@ -33329,6 +33329,23 @@ void sub_100d1d50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d1ff0 size=0x52
+#include "CBaseEntity.h"
+struct SOverlayView { char pad[0x224]; unsigned int flags; };
+CBaseEntity *sub_100d2070(int a, const char *name, CBaseEntity *pStart);
+void sub_100d1ff0(int a, const char *name, unsigned int bit)
+{
+	SOverlayView *p = (SOverlayView *)sub_100d2070(a, name, 0);
+	while (p) {
+		if (bit & p->flags)
+			p->flags &= ~bit;
+		else
+			p->flags |= bit;
+		p = (SOverlayView *)sub_100d2070(a, name, (CBaseEntity *)p);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d2070 size=0x1a1
 #include <string.h>
 #include "CBaseEntity.h"
