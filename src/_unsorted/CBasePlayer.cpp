@@ -828,6 +828,18 @@ bool CBasePlayer::sub_10168e10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101695f0 size=0x46
+#include "CBasePlayer.h"
+char CBasePlayer::vfunc379(int a, int b, int c, int d, int e, int f, int g)
+{
+	if (sub_10329760(a, b, c, d, e, f, g)) {
+		sub_10181580(1);
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016a870 size=0xf1
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
