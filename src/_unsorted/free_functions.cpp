@@ -110590,6 +110590,17 @@ int CUnknown102e2630::sub_102e2630(int activity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e2660 size=0x12
+namespace lifted {
+struct C100083eb { int sub_100083eb(int, int); };
+}
+struct CUnknown102e2660 { int sub_102e2660(int); };
+int CUnknown102e2660::sub_102e2660(int a0)
+{
+    return ((lifted::C100083eb *)(*(int *)((char *)this + 4)))->sub_100083eb(a0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e2690 size=0x8
 namespace lifted {
 struct C1000489a { int sub_1000489a(); };
