@@ -76,6 +76,19 @@ void CTriggerBrush::vfunc174(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013eaa0 size=0x48
+#include "CTriggerBrush.h"
+bool __stdcall sub_1013eb90(CBaseEntity *pOther, unsigned int filter);
+void CTriggerBrush::vfunc176(CBaseEntity *pOther)
+{
+	if (sub_1013eb90(pOther, m_nFilter498) && !(m_nFilter498 & 8)) {
+		m_Output468.sub_100cd660(pOther, this, 0);
+		if (m_n49c == 0)
+			CBaseEntity::vfunc176(pOther);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013eb10 size=0x57
 #include "CTriggerBrush.h"
 struct CTriggerBrushSub480 { void sub_100cd660(CBaseEntity *a, CBaseEntity *b, int c); };

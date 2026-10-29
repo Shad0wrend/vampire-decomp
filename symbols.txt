@@ -6147,6 +6147,7 @@
 0x1000ec0f func   ?sub_101a2d50@CEntitySaveRestoreBlockHandler@@QAEPAVCBaseEntity@@PBD0@Z CEntitySaveRestoreBlockHandler::sub_101a2d50
 0x1000ec14 func   ?sub_10236d70@@YAHXZ sub_10236d70
 0x1000ec1e func   ?sub_101eab60@@YAXH@Z sub_101eab60
+0x1000ec23 func   ?vfunc176@CTriggerBrush@@QAEXPAVCBaseEntity@@@Z CTriggerBrush::vfunc176
 0x1000ec28 func   ?sub_10122590@CGameMovement@@QAEXXZ CGameMovement::sub_10122590
 0x1000ec2d func   ?vfunc310@CNPC_VTzimisceRunner@@QAEHH@Z CNPC_VTzimisceRunner::vfunc310
 0x1000ec3c func   ?sub_100436c0@CUtlMemory20@@QAEXH@Z CUtlMemory20::sub_100436c0
