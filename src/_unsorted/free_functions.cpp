@@ -53330,6 +53330,23 @@ float CUnknown10160680::sub_10160680()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10160dc0 size=0x45
+#include "CBaseAnimating.h"
+struct CSeqRangeEnt { char pad[0x2f0]; float m_flStart; float m_flEnd; };
+struct CAnimRangeView : CBaseAnimating {
+	char m_pad[0x6f0 - sizeof(CBaseAnimating)];
+	int m_nSequence;
+	char m_pad2[4];
+	float m_flCycle;
+	char sub_10160dc0();
+};
+char CAnimRangeView::sub_10160dc0()
+{
+	CSeqRangeEnt *p = (CSeqRangeEnt *)sub_1008d990(m_nSequence);
+	return p && m_flCycle >= p->m_flStart && m_flCycle <= p->m_flEnd;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160ec0 size=0x79
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
