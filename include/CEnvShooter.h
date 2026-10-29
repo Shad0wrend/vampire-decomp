@@ -11,6 +11,7 @@ class CEnvShooter
 {
 public:
 	CEnvShooter *vfunc5(unsigned int flags);
+	void vfunc104();	// slot 104: CGibShooter::vfunc104, then the model of slot 212(+0x480) and the precached model name of slot 9 into +0x45c
 	void sub_1000cb8a();
 
 	// Slot 241, declared as a plain member.
