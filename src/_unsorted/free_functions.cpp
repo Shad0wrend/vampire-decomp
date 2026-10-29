@@ -66920,6 +66920,27 @@ void CUnknown101bc750::sub_101bc750(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bcef0 size=0x2a
+namespace lifted {
+extern char g_1047bd24;
+}
+struct CUnknown101bcef0 { void * sub_101bcef0(); };
+void * CUnknown101bcef0::sub_101bcef0()
+{
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = 0;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 0x18) = 0;
+    *(int *)this = (int)&lifted::g_1047bd24;
+    *(char *)((char *)this + 0x1c) = 0;
+    *(int *)((char *)this + 0x20) = -1;
+    *(char *)((char *)this + 0x24) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bd940 size=0x9
 struct S { virtual void v0(); virtual void v1(); };
 // TARGET: sub_101bd940
