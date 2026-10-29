@@ -1,6 +1,19 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1026d7b0 size=0x21
+namespace lifted {
+extern char g_105cb988;
+}
+struct CUnknown1026d7b0 { void sub_1026d7b0(int, int, int, int); };
+void CUnknown1026d7b0::sub_1026d7b0(int a0, int a1, int a2, int a3)
+{
+    *(int *)((char *)this + 0x1b3c) = (int)&lifted::g_105cb988;
+    *(int *)((char *)this + 0x1b40) = 0xffc;
+    *(int *)((char *)this + 0x5cc4) = 3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026f4d0 size=0x86
 #include "CAI_BaseNPC.h"
 
