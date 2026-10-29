@@ -45328,6 +45328,21 @@ float sub_1012f700(CUnknown1012f700 *pRange)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012f790 size=0x41
+extern char *g_1057519c;
+
+struct Slot16 { int a, b, c, d; };
+
+bool sub_1012f790(int index, const Slot16 *pValue)
+{
+	if (index > 3 || index < -3)
+		return false;
+	Slot16 *pDst = (Slot16 *)(g_1057519c + index * 0x1c + 0xc);
+	*pDst = *pValue;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012f800 size=0x5
 float sub_1012f800(float a0)
 {
