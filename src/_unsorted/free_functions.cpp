@@ -130997,6 +130997,33 @@ void sub_10352e90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10352f00 size=0x4d
+struct SRules { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+    virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+    virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+    virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+    virtual void v16(); };
+struct SHost { virtual bool v0(); virtual bool v1(); char pad[0x2c - 4]; int m_n2c; };
+extern SRules *g_1070ba0c;
+extern SHost *g_1070ac3c;
+extern bool g_1070ba2c;
+extern int g_1070ba38;
+void sub_10352f00()
+{
+    if (g_1070ba0c)
+        g_1070ba0c->v16();
+    if (!g_1070ba2c) {
+        int n;
+        if (g_1070ac3c->v1())
+            n = 0;
+        else
+            n = g_1070ac3c->m_n2c;
+        gpGlobals->m_b32 = n != 0;
+        g_1070ba38++;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10353100 size=0x6
 namespace lifted {
 extern char g_10938628;
