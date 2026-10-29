@@ -38170,6 +38170,20 @@ int sub_100f4490(const char *cmd, bool report)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f4620 size=0x1a
+namespace lifted {
+extern int g_10565940;
+extern int g_10565944;
+extern char g_10565984;
+}
+int sub_100f4620()
+{
+    lifted::g_10565944 = 0xc;
+    lifted::g_10565940 = (int)&lifted::g_10565984;
+    return (int)&lifted::g_10565940;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f52e0 size=0x9b
 #include "SendProp.h"
 

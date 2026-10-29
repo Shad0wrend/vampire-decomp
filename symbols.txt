@@ -2714,6 +2714,7 @@
 0x100078b0 func   ?sub_102ee2a0@CUnknown102ee2a0@@QAEHXZ CUnknown102ee2a0::sub_102ee2a0
 0x100078bf func   ?vfunc82@CHudTimer@@UAEPAUdatamap_t@@XZ CHudTimer::vfunc82
 0x100078c9 func   ?vfunc618@CNPC_VGargoyle@@QAEXXZ CNPC_VGargoyle::vfunc618
+0x100078d3 func   ?sub_100f4620@@YAHXZ sub_100f4620
 0x100078d8 func   ?sub_100dd1b0@CCollisionProperty@@QAEMABVVector@@@Z CCollisionProperty::sub_100dd1b0
 0x100078dd func   ?vfunc5@CPointTarget@@QAEPAV1@I@Z CPointTarget::vfunc5
 0x100078e2 func   ?sub_10106e20@@YIMPAVCBaseEntity@@HMPAUExprCurve@@@Z sub_10106e20
