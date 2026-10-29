@@ -32,6 +32,7 @@ public:
 	Vector vfunc193();	// returns the vector at +0x5f50 (hidden result pointer), after sub_10010be5()
 	Vector vfunc373();	// returns the vector at +0x5f5c (hidden result pointer), after sub_10010be5()
 	Vector vfunc370();	// slot 370: the facing vector of slot 371 with its vertical part dropped, normalised
+	Vector vfunc372();	// slot 372: the horizontal part of the vector slot 373 gives (z cleared), normalised
 	Vector vfunc371();	// returns the facing vector at +0x5f68 (hidden result pointer), after sub_10010be5()
 	void sub_10010be5();
 	void sub_1025e7b0();	// the function behind the stub sub_10010be5: recomputes the cached eye position (+0x5f50) and facing vector (+0x5f68) when bit 1 of +0x5f4c is clear, and the normalised direction (+0x5f5c) from the eye to the point of slot 278 when bit 0 is clear
