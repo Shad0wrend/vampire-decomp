@@ -1436,6 +1436,7 @@
 0x1000465b func   ?sub_10139b00@@YAXPBVVector@@H@Z sub_10139b00
 0x10004660 func   ?vfunc113@CFuncParticle@@QAEXXZ CFuncParticle::vfunc113
 0x1000466a func   ?vfunc5@CNPC_VTzimisceHeadClaw@@QAEPAV1@I@Z CNPC_VTzimisceHeadClaw::vfunc5
+0x10004674 func   ?sub_1036eb90@@YAHXZ sub_1036eb90
 0x10004683 func   ?sub_1021bec0@CUnknown1021bec0@@QAE_NPBD@Z CUnknown1021bec0::sub_1021bec0
 0x1000468d func   ?vfunc78@CBaseEntity@@UAEXXZ CBaseEntity::vfunc78
 0x10004692 func   ?vfunc385@CBasePlayer@@QAEXPAVCBaseEntity@@HD@Z CBasePlayer::vfunc385

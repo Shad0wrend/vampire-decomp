@@ -129286,6 +129286,20 @@ void CNPC_VChangBros::sub_1036e8c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036eb90 size=0x1a
+namespace lifted {
+extern int g_1062fe20;
+extern int g_1062fe24;
+extern char g_1093aa8c;
+}
+int sub_1036eb90()
+{
+    lifted::g_1062fe24 = 1;
+    lifted::g_1062fe20 = (int)&lifted::g_1093aa8c;
+    return (int)&lifted::g_1062fe20;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036ec40 size=0x33
 void sub_1000c9b9();
 void sub_100055fb();
