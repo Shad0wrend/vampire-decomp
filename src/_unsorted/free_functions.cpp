@@ -64722,6 +64722,28 @@ void CCineNPC::sub_101a8460(CBaseAnimating *pNpc)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a8930 size=0x4b
+#include "CCineNPC.h"
+#include "CEHandleGet.h"
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct SSlot158 {
+    V10(a0) V10(a1) V10(a2) V10(a3) V10(a4) V10(a5) V10(a6) V10(a7) V10(a8) V10(a9)
+    V10(b0) V10(b1) V10(b2) V10(b3) V10(b4)
+    virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4(); virtual void c5(); virtual void c6(); virtual void c7();
+    virtual char vfunc158();
+};
+// TARGET: CCineNPC::sub_101a8930
+char CCineNPC::sub_101a8930()
+{
+    if (m_b5f90) {
+        SSlot158 *p = (SSlot158 *)EHandle_Get(m_hTarget5ce4);
+        if (p && p->vfunc158())
+            return 1;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a8ac0 size=0x116
 #include "CBaseEntity.h"
 #include "CCineNPC.h"

@@ -5042,6 +5042,7 @@
 0x1000c6bc func   ?sub_100d5ae0@@YAXXZ sub_100d5ae0
 0x1000c6c1 func   ?sub_101eff70@@YIXPAUProjView@@@Z sub_101eff70
 0x1000c6c6 func   ?vfunc104@CBatSwarm@@UAEXXZ CBatSwarm::vfunc104
+0x1000c6da func   ?sub_101a8930@CCineNPC@@QAEDXZ CCineNPC::sub_101a8930
 0x1000c6df func   ?sub_103f6d30@@YAHXZ sub_103f6d30
 0x1000c6e9 func   ?vfunc269@CDisciplineProjectile@@QAEXXZ CDisciplineProjectile::vfunc269
 0x1000c6ee func   ?sub_1016fed0@CBasePlayer@@QAEXXZ CBasePlayer::sub_1016fed0
