@@ -12502,6 +12502,27 @@ StatDefault *StatOwner::sub_1006cff0(int id)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006d0a0 size=0x50
+extern "C" int sprintf(char *, const char *, ...);
+void sub_10203dd0(const char *);
+
+struct Dump { void sub_1006cc20(); };
+struct CDumpTable1006d0a0 {
+	int m_n0;
+	int m_nCount;	// 0x4
+	Dump **m_ppItems;	// 0x8
+};
+
+void __fastcall sub_1006d0a0(CDumpTable1006d0a0 *pTable)
+{
+	char buf[128];
+	sprintf(buf, "\n   %s:\n\n", "Tables");
+	sub_10203dd0(buf);
+	for (int i = 0; i < pTable->m_nCount; i++)
+		pTable->m_ppItems[i]->sub_1006cc20();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006d2f0 size=0x175
 #include "SendProp.h"
 
