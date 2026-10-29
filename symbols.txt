@@ -5975,6 +5975,7 @@
 0x1000eab6 func   ?sub_100dac20@@YAXXZ sub_100dac20
 0x1000eabb func   ?vfunc5@CItemGGiovanniInvitationVictor@@QAEPAV1@I@Z CItemGGiovanniInvitationVictor::vfunc5
 0x1000eade func   _logic_branch logic_branch
+0x1000eae8 func   ?sub_10245bd0@ConVar@@QAEPAV1@PBD0H0_NM1MP6AXPAV1@0@Z@Z ConVar::sub_10245bd0
 0x1000eaf2 func   ?vfunc5@CBatSwarm@@QAEPAV1@I@Z CBatSwarm::vfunc5
 0x1000eaf7 func   ?vfunc104@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc104
 0x1000eafc func   ?sub_10295590@CAI_BaseNPCTroika@@QAEHH@Z CAI_BaseNPCTroika::sub_10295590

@@ -98186,6 +98186,21 @@ int sub_10245980()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10245bd0 size=0x48
+#include "ConVar.h"
+
+extern void *vt_104974a0[];
+
+// TARGET: ConVar::sub_10245bd0
+ConVar *ConVar::sub_10245bd0(const char *pName, const char *pDefaultValue, int flags, const char *pHelpString, bool bMin, float fMin, bool bMax, float fMax, void (*pCallback)(ConVar *, const char *))
+{
+	sub_10007f3b();
+	*(void ***)this = vt_104974a0;
+	ConVar::vfunc12(pName, pDefaultValue, flags, pHelpString, bMin, fMin, bMax, fMax, pCallback);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102461b0 size=0xd
 void CUnknown102461b0::sub_102461b0()
 {
