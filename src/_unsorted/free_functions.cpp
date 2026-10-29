@@ -48434,6 +48434,23 @@ int sub_10136860(int *pA, int *pB)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101368a0 size=0x43
+#include "CUnknown100a8220.h"
+struct ParentEntityView;
+int __cdecl sub_10136910(ParentEntityView *p);
+struct DepthEntry { CUnknown100a8220 *pEnt; int nDepth; };
+void sub_101368a0(int n, DepthEntry *p)
+{
+	for (int i = 0; i < n; i++) {
+		CUnknown100a8220 *pEnt = p[i].pEnt;
+		if (pEnt && !pEnt->sub_100a8220())
+			p[i].nDepth = sub_10136910((ParentEntityView *)pEnt);
+		else
+			p[i].nDepth = 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136910 size=0xd2
 #include "CGlobalEntityList.h"
 #include <string.h>
