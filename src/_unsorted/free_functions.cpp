@@ -38342,6 +38342,27 @@ float SHolder::sub_100ecdf0(int idx, bool bSecond)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ece60 size=0x53
+struct SEntry100ece60 { char pad[0x258]; int a; int b; char pad2[0x264 - 0x260]; };
+struct CTable100ece60 {
+    int m0;
+    int m4;
+    SEntry100ece60 *m8;
+    int mc, m10;
+    int m14;
+    void sub_100ece60(int idx, int *pa, int *pb);
+};
+void CTable100ece60::sub_100ece60(int idx, int *pa, int *pb)
+{
+    if (idx < 0 || idx > m14)
+        idx = m4;
+    if (pa)
+        *pa = m8[idx].a;
+    if (pb)
+        *pb = m8[idx].b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ecee0 size=0xa9
 #include "CUnknown100ecee0.h"
 
