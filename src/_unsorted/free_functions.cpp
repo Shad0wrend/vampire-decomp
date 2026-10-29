@@ -92070,6 +92070,18 @@ CKeyframeX *CBaseKeyframedMover::sub_10223690()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10223700 size=0x46
+#include "CBaseKeyframedMover.h"
+#include "CMoverKeyFrame.h"
+#include "CEHandleGet.h"
+
+CKeyframeX *CBaseKeyframedMover::sub_10223700()
+{
+	CBaseEntity *pEnt = (CBaseEntity *)EHandle_Get(m_hKeyframe);
+	return (CKeyframeX *)dynamic_cast<CMoverKeyFrame *>(pEnt);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10223770 size=0x3d
 #include "vampire.h"
 #include "CBaseToggle.h"
