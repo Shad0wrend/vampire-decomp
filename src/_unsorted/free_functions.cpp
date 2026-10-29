@@ -7288,6 +7288,20 @@ int *sub_1004dee0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004eab0 size=0x1a
+namespace lifted {
+extern int g_1053d12c;
+extern int g_1053d130;
+extern char g_1053d174;
+}
+int sub_1004eab0()
+{
+    lifted::g_1053d130 = 4;
+    lifted::g_1053d12c = (int)&lifted::g_1053d174;
+    return (int)&lifted::g_1053d12c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004f7a0 size=0x8f
 #include "Ray_t.h"
 
