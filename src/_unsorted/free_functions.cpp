@@ -130882,6 +130882,20 @@ char sub_10386bd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10387630 size=0x1a
+namespace lifted {
+extern int g_1063fb78;
+extern int g_1063fb7c;
+extern char g_1093b598;
+}
+int sub_10387630()
+{
+    lifted::g_1063fb7c = 1;
+    lifted::g_1063fb78 = (int)&lifted::g_1093b598;
+    return (int)&lifted::g_1063fb78;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10387660 size=0x43
 #include "CNPC_VHumanCombatPatrol.h"
 void *sub_100aa720(int size);
