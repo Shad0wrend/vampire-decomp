@@ -58082,6 +58082,20 @@ void sub_1018c6e0(SHandleHolder *holder)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018c800 size=0x1a
+namespace lifted {
+extern int g_1058be60;
+extern int g_1058be64;
+extern char g_1058bea4;
+}
+int sub_1018c800()
+{
+    lifted::g_1058be64 = 4;
+    lifted::g_1058be60 = (int)&lifted::g_1058bea4;
+    return (int)&lifted::g_1058be60;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018c9a0 size=0xea
 #include "SendProp.h"
 
