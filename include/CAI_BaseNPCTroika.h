@@ -110,6 +110,7 @@ public:
 	void sub_10011dc4();	// base-class slot 516 implementation, called directly
 	void sub_102a97a0(unsigned int flags);	// ORs flags into the dword at +0x14b8
 	void sub_102a97d0(unsigned int flags);	// clears flags in the dword at +0x14b8
+	void sub_102c32d0(inputdata_t *data);	// input handler: with a boolean input (type 5) true activates the "Thaumaturgy_Bloodshield" discipline effect on this NPC (sub_101e3380), else removes it (sub_101e3af0)
 	void sub_102c2a30(inputdata_t *data);	// input handler: stores the input's byte (0 unless its type is 5) at +0x63d8
 	void sub_102c24a0(inputdata_t *data);	// input handler: when the input holds an entity handle (type 12) that resolves, copies that entity's absolute origin and angles onto this one (slots 216 / 218), then sub_100b3b00, slot 614 and ForceTransmit
 	bool sub_102d1540(void *pOther);	// slot 527 helper: true when pOther is the entity of the handle at +0x5e0, or that handle is stale and its timer (+0x5ec) has run out
