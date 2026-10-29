@@ -80,7 +80,8 @@ public:
 	char m_pad6674[0x6678 - 0x6674];
 	int m_n6678;	// 0x6678
 	char m_b667c;	// 0x667c: set while the target is carried / claimed
-	char m_pad667d[0x6684 - 0x667d];
+	char m_pad667d[0x6680 - 0x667d];
+	int m_n6680;	// 0x6680
 	Vector m_vecBonePos;	// 0x6684: position of the chosen bone
 	char m_pad6690[0x6694 - 0x6690];
 	char m_b6694;	// 0x6694
