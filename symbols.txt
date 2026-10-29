@@ -1178,6 +1178,7 @@
 0x10003bed func   ?sub_1008bd30@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_1008bd30
 0x10003bf2 func   ?sub_10030ae0@CCollisionEvent@@QAEXXZ CCollisionEvent::sub_10030ae0
 0x10003bf7 func   ?vfunc103@CPropDoorknob@@UAEXXZ CPropDoorknob::vfunc103
+0x10003c01 func   ?vfunc1@CNodeNPCFilter@@UAEMPAUCNodeNPCFilterNode@@@Z CNodeNPCFilter::vfunc1
 0x10003c10 func   ?sub_10078b90@UtlMem@@QAEXXZ UtlMem::sub_10078b90
 0x10003c15 func   ?sub_101e8bf0@CUnknown101e8bf0@@QAEMXZ CUnknown101e8bf0::sub_101e8bf0
 0x10003c1a func   ?vfunc68@CBaseAnimating@@QAE_NPAVCBaseEntity@@@Z CBaseAnimating::vfunc68
