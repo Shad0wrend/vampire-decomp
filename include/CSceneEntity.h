@@ -100,6 +100,7 @@ public:
 	void sub_1000cb8a();	// the base class destructor body, tail called by sub_100809f0
 	void sub_100809f0();	// the destructor body (called by vfunc5): vtable, vfunc245 while the byte at +0x498 is set, destroys the seven outputs at +0x4cc..+0x55c (sub_100cd2d0, last first), then the base destructor body
 	void sub_10082b80();	// slot 245 (function 0x10082b80, stub 0x1000b97e), called directly by the destructor body while the scene plays
+	void sub_100839c0(const char *pszScene);	// loads the named scene (engine slot 99(name, 2, 0)) and, when found, hands it to the global loader at 0x106c8618 and builds the scene object into the sub-object at +0x4c0
 	void sub_10083a60();	// releases the scene object at +0x4bc: finishes it (sub_10084170, sub_100845a0), destroys and frees it, clears the pointer
 	void sub_10083a30(const char *pszScene);	// stub 0x100106f9, called directly by vfunc104 with the scene file name at +0x450 ("" when unset)
 	void sub_10080cb0(int a);	// stub 0x1001163f, called directly by vfunc104 with the dword at +0x4bc
