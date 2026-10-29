@@ -99954,6 +99954,17 @@ void sub_1024c630(float *m)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024c680 size=0x47
+#include "VMatrix.h"
+void sub_1024c680(VMatrix &dst, const Vector &t)
+{
+    dst.Init(1.0f, 0.0f, 0.0f, t.x,
+             0.0f, 1.0f, 0.0f, t.y,
+             0.0f, 0.0f, 1.0f, t.z,
+             0.0f, 0.0f, 0.0f, 1.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024c6f0 size=0x46
 #include "VMatrix.h"
 void sub_1024c6f0(VMatrix &dst, const Vector &scale)
