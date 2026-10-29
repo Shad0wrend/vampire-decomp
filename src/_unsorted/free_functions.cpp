@@ -77172,6 +77172,30 @@ void CUnknown101e3df0::sub_101e3df0(CUnknown101e3cfObj *obj)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e3ee0 size=0x46
+#include "CUnknown101e0f00.h"
+#include "S1033d380.h"
+namespace block_101e3ee0 {
+struct CUnit : CUnknown101e0f00 {
+	unsigned int sub_101e1870(unsigned int id);
+};
+unsigned int CUnit::sub_101e1870(unsigned int id)
+{
+	return id | 0x80000000;
+}
+}
+using namespace block_101e3ee0;
+void CUnknown101e0f00::sub_101e3ee0(S1033d380 *pObj)
+{
+	unsigned int nMask = 1;
+	for (int i = 0; i < 30; i++, nMask <<= 1) {
+		CUnknown101e0f00Entry *pEntry = (CUnknown101e0f00Entry *)m_ppEntries[i];
+		if ((pObj->m_nDisciplineMask & nMask) && pEntry->m_b34)
+			sub_101e3a30(pObj, ((CUnit *)this)->sub_101e1870(nMask));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e3f50 size=0x75
 struct CStatusTarget {
 	char m_pad0000[0xeb4];
