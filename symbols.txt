@@ -4280,6 +4280,7 @@
 0x1000b56e func   ?sub_1013eee0@@YGPBDI@Z sub_1013eee0
 0x1000b57d func   ?sub_101bedb0@CStealthKillRules@@QAEXPAUCSKRKeyValues@@PBDPAM@Z CStealthKillRules::sub_101bedb0
 0x1000b587 func   ?sub_10352e90@@YAXXZ sub_10352e90
+0x1000b591 func   ?sub_10205920@CUnknown10205920@@QAEHH@Z CUnknown10205920::sub_10205920
 0x1000b596 func   ?sub_100e13d0@CDialog@@QAEXE@Z CDialog::sub_100e13d0
 0x1000b59b func   ?vfunc82@CNPC_VLasombra@@UAEPAUdatamap_t@@XZ CNPC_VLasombra::vfunc82
 0x1000b5a5 func   ?sub_1030bea0@CUnknown1030bea0@@QAEXXZ CUnknown1030bea0::sub_1030bea0

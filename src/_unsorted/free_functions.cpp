@@ -84240,6 +84240,16 @@ int CUnknown10205900::sub_10205900()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10205920 size=0x10
+struct CUnknown10205920 { int sub_10205920(int); };
+int CUnknown10205920::sub_10205920(int a0)
+{
+    *(int *)this = 2;
+    *(int *)((char *)this + 4) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10205ac0 size=0xab
 #include "CVDmg_t.h"
 
