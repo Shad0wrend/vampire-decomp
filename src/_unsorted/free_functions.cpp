@@ -77687,6 +77687,21 @@ int CUnknown101e9060::sub_101e9060()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e9080 size=0x43
+struct CDiscValues_101e9080 {
+    char pad[0x3a0];
+    int m_a, m_b, m_c, m_d;
+    void sub_101e9080(int *pA, int *pB, int *pC, int *pD);
+};
+void CDiscValues_101e9080::sub_101e9080(int *pA, int *pB, int *pC, int *pD)
+{
+    if (pA) *pA = m_a;
+    if (pB) *pB = m_b;
+    if (pC) *pC = m_c;
+    if (pD) *pD = m_d;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e9170 size=0xd9
 #include "CVStatList_t.h"
 #include "CUnknown101e9170.h"

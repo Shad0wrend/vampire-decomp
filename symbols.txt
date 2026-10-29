@@ -3495,6 +3495,7 @@
 0x10009246 func   ?sub_100c3090@@YAXXZ sub_100c3090
 0x10009264 func   ?vfunc305@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc305
 0x1000926e func   ?vfunc5@CItemGGargoyleBook@@QAEPAV1@I@Z CItemGGargoyleBook::vfunc5
+0x10009273 func   ?sub_101e9080@CDiscValues_101e9080@@QAEXPAH000@Z CDiscValues_101e9080::sub_101e9080
 0x10009278 func   ?sub_100dad50@@YAXXZ sub_100dad50
 0x10009282 func   ?vfunc259@CNPC_VMingXiao@@UAEXPAH@Z CNPC_VMingXiao::vfunc259
 0x10009287 func   ?vfunc546@CNPC_VZombie@@QAEHH@Z CNPC_VZombie::vfunc546
