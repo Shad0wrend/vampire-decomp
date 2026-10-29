@@ -136,6 +136,7 @@ public:
 	void sub_1028fc90();	// stub 0x1000ccd4, called directly by RunAI
 	void sub_1026f110(int a);	// CAI_BaseNPC::vfunc432 (stub 0x1000a529), called directly by RunAI
 	bool sub_10297430(CAI_BaseNPCTroika *pOther);	// "CAI_BaseNPCTroika::...": false unless the entity of the handle at +0x6448 resolves to a live entity, else sub_10296c40(pOther, that entity, the dword at pOther+0x458, 0.731f) != 0
+	void sub_102974f0(CAI_BaseNPCTroika *pOther);
 	char sub_10296c40(CAI_BaseNPCTroika *pOther, CBaseEntity *pEnt, int a, float f);
 	int sub_10295460(int a, int b);	// called through the stub at 0x10009c14
 	void sub_10272650(int activity);	// CAI_BaseNPC member (stub 0x100097d2): the ideal activity: 0 goes to slot 310, else stores it at +0xff0 and hands it to the activity worker (called directly)
