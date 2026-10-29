@@ -38329,6 +38329,20 @@ void CUnknown100f5600::sub_100f5620()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f5770 size=0x1a
+namespace lifted {
+extern int g_10565c44;
+extern int g_10565c48;
+extern char g_10565c8c;
+}
+int sub_100f5770()
+{
+    lifted::g_10565c48 = 4;
+    lifted::g_10565c44 = (int)&lifted::g_10565c8c;
+    return (int)&lifted::g_10565c44;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f5bd0 size=0x6
 namespace lifted {
 extern char g_106eb584;
