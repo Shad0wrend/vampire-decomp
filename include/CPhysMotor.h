@@ -32,7 +32,10 @@ public:
 	void sub_10028b20();	// stub 0x100135e8
 	void sub_100ac610(float time, const char *szContext);	// CBaseEntity::SetNextThink (stub 0x1000326f)
 
-	char m_pad0004[0x460 - 4];
+	void sub_10028ca0();
+	char m_pad0004[0x454 - 4];
+	EHANDLE m_h454;
+	char m_pad0458[0x460 - 0x458];
 	float m_flTarget460;	// 0x0460
 	float m_flRate464;	// 0x0464
 	float m_flLastTime468;	// 0x0468
