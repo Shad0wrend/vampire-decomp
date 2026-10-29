@@ -72182,6 +72182,34 @@ int sub_101c9990()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c99c0 size=0x55
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList g_106eb5d8;
+extern char g_106b8540[];
+
+struct S101c99c0Obj { char pad[0x5de8]; int m_n5de8; };
+struct S101c99c0Ent { char pad[0x94]; S101c99c0Obj *m_pObj; char pad2[0x20c - 0x98]; const char *m_pName; char pad3[0x450 - 0x210]; int m_n450; };
+
+// TARGET: sub_101c99c0
+void __fastcall sub_101c99c0(S101c99c0Ent *pThis, int unused, int **pArg)
+{
+	S101c99c0Ent *pEnt = 0;
+	for (;;) {
+		const char *name = pThis->m_pName;
+		CBaseEntity *pSearching = (CBaseEntity *)*pArg;
+		if (!name)
+			name = g_106b8540;
+		pEnt = (S101c99c0Ent *)g_106eb5d8.sub_100f7770((CBaseEntity *)pEnt, name, pSearching, 0);
+		if (!pEnt)
+			break;
+		*(int *)((char *)pEnt + 0x20c) = pThis->m_n450;
+		S101c99c0Obj *o = pEnt->m_pObj;
+		if (o)
+			o->m_n5de8 = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c9b30 size=0x1a
 namespace lifted {
 extern int g_1059e0e4;
