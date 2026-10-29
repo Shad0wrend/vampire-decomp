@@ -183,6 +183,19 @@ void CNPC_VTzimisceRunner::vfunc130(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c3d10 size=0x47
+#include "CNPC_VTzimisceRunner.h"
+#include "engineserver.h"
+void CNPC_VTzimisceRunner::vfunc336()
+{
+    if (m_f6674 != engine->vfunc119(0)) {
+        sub_10273070(1);
+        m_b6672 = 0;
+        m_b5f2c = 1;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c3d80 size=0x6e
 #include "CNPC_VTzimisceRunner.h"
 int CNPC_VTzimisceRunner::vfunc310(int act)
