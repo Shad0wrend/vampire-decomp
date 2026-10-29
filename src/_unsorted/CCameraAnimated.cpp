@@ -37,3 +37,27 @@ void CCameraAnimated::vfunc104()
 	engine->vfunc13(name, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10071900 size=0x46
+#include <stdlib.h>
+#include "CCameraAnimated.h"
+#include "COutputEvent.h"
+
+struct CCameraAnimEvent
+{
+	int m_nEvent;
+	const char *m_pszOptions;
+};
+
+void CCameraAnimated::vfunc259(void *pEvent)
+{
+	CCameraAnimEvent *pAnimEvent = (CCameraAnimEvent *)pEvent;
+	if (pAnimEvent->m_nEvent != 0x3eb) {
+		sub_10091da0(pEvent);
+		return;
+	}
+	int nOutput = atoi(pAnimEvent->m_pszOptions) - 1;
+	if (nOutput >= 0 && nOutput < 8)
+		((COutputEvent *)&m_items730[nOutput])->sub_100cd660(this, this, 0);
+}
+// END FUNCTION
