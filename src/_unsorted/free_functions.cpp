@@ -139636,6 +139636,22 @@ void CWeaponMelee_Torch::sub_103e77f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e78b0 size=0x46
+#include "CWeaponMelee_Torch.h"
+struct CTorchEmitterView { char pad[0x910]; EHANDLE m_hEmitter; };
+void sub_101cd940(CBaseEntity *);
+// TARGET: CWeaponMelee_Torch::sub_103e78b0
+void CWeaponMelee_Torch::sub_103e78b0()
+{
+	CTorchEmitterView *p = (CTorchEmitterView *)this;
+	CBaseEntity *pEnt = p->m_hEmitter.Get();
+	if (pEnt) {
+		sub_101cd940(pEnt);
+		p->m_hEmitter = (CBaseEntity *)0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e7b10 size=0x72
 #include "SendProp.h"
 
