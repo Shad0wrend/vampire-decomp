@@ -18151,6 +18151,25 @@ struct CUnknown10083960 { int p; int a; void sub_10083960(int v); };
 void CUnknown10083960::sub_10083960(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x100839c0 size=0x4a
+#include "CSceneEntity.h"
+struct CUnknown10083960
+{
+	void sub_10083960(void *pData);
+};
+extern CUnknown10083960 g_106c8618;
+void sub_10081190();
+void *sub_10079400(int a, int b, int c);
+void *CSceneEntity::sub_100839c0(const char *pszScene)
+{
+	void *p = engine->vfunc99(pszScene, 2, 0);
+	if (!p)
+		return 0;
+	g_106c8618.sub_10083960(p);
+	return sub_10079400((int)((char *)this + 0x4c0), (int)&g_106c8618, (int)sub_10081190);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10083a60 size=0x49
 #include "CSceneEntity.h"
 struct SceneView { char m_pad[4]; void sub_100799b0(); };
