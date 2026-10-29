@@ -83948,6 +83948,19 @@ bool CUnknown101f0e50::sub_101f82d0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f8330 size=0x4d
+#include "CNamedListX.h"
+struct CNamedListXB : CNamedListX { int sub_101f8330(const char *name); };
+int CNamedListXB::sub_101f8330(const char *name)
+{
+	for (int i = 0; i < m_count; i++) {
+		if (_strcmpi(m_pData[i]->m_Name.Get(), name) == 0)
+			return i;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f8410 size=0x41
 extern "C" int _strcmpi(const char *a, const char *b);
 
