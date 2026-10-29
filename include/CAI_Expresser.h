@@ -73,7 +73,7 @@ public:
 	}
 
 	void sub_103121a0(float a, float b);	// (0x103121a0)
-	bool sub_10311ee0(int a, float b);	// asks the outer NPC (slot 540, with a) for a delay and, when it is positive, hands it on with b to sub_103121a0
+	bool sub_10311ee0(int a, int b);	// asks the outer NPC (slot 540, with a) for a delay and, when it is positive, hands it on with b to sub_103121a0
 	void sub_10312b50();	// the per-think step of a running sentence: with a sentence number (+0x64) set, a finished one (sub_10312230) asks the sink (slot 0) and, when it answers, ends it (sub_10312c20(0)); a running one with the flag (+0x68) asks slot 1 and ends it (sub_10312c50); otherwise the next sentence of the series (name + number) is started (sub_10311f50) and, when it cannot be, the state is cleared (sub_10312b20)
 	bool sub_10312230();	// whether the time at +0x4c lies in the future (stub 0x10006767)
 	void sub_10312c50();	// stub 0x1000be51
