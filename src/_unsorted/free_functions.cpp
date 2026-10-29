@@ -79275,6 +79275,43 @@ void CUnknown101e0f00::sub_101e3910(int a, int b, int c, int d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e39b0 size=0x52
+#include "CUnknown101d7520.h"
+extern void (*g_109f3650)(int level, const char *fmt, ...);
+struct SDiscSub {
+	void sub_101dd090(int a, int b);
+};
+struct SDisc {
+	int m_n0;
+	const char *m_pszName;
+	char pad8[0x88 - 8];
+	SDiscSub m_Sub88;
+};
+extern SDisc *g_10739a74;
+
+struct SDiscList {
+	char pad0[8];
+	SDisc **m_ppDiscs;
+
+	int sub_101e12a0(int a);
+	void sub_101e39b0(int a, int b, int c);
+};
+
+void SDiscList::sub_101e39b0(int a, int b, int c)
+{
+	int idx = sub_101e12a0(c);
+	if (idx != -1) {
+		SDisc *p = m_ppDiscs[idx];
+		g_10739a74 = p;
+		const char *name = p->m_pszName;
+		if (!name)
+			name = g_106b8540;
+		g_109f3650(3, "Discipline<%s> InterruptProjectile\n", name);
+		p->m_Sub88.sub_101dd090(a, c);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e3a30 size=0x85
 #include "CUnknown101e0f00.h"
 #include "S1033d380.h"
