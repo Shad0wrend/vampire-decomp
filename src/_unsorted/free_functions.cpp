@@ -40346,6 +40346,20 @@ int sub_100fe580(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fe610 size=0x1a
+namespace lifted {
+extern int g_105680f8;
+extern int g_105680fc;
+extern char g_1056813c;
+}
+int sub_100fe610()
+{
+    lifted::g_105680fc = 4;
+    lifted::g_105680f8 = (int)&lifted::g_1056813c;
+    return (int)&lifted::g_105680f8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100feae0 size=0x43
 #include "CEnvBeam.h"
 void *sub_100aa720(int size);
