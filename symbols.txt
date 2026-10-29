@@ -8146,6 +8146,7 @@
 0x1001352a func   ?sub_101ec690@CUnknown101ec690@@QAEXH@Z CUnknown101ec690::sub_101ec690
 0x1001352f func   ?sub_100fbc50@CUnknown100fbc50@@QAEXXZ CUnknown100fbc50::sub_100fbc50
 0x10013534 func   ?vfunc130@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc130
+0x1001353e func   ?sub_10203d60@@YAPADPBD@Z sub_10203d60
 0x10013543 func   ?sub_102c2430@CAI_BaseNPCTroika@@QAEDXZ CAI_BaseNPCTroika::sub_102c2430
 0x10013548 func   ?sub_1002b760@@YAHXZ sub_1002b760
 0x1001354d func   ?sub_10224950@CItemContainerLock@@QAEXPAVCBaseEntity@@@Z CItemContainerLock::sub_10224950
