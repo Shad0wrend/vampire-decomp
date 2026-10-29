@@ -40750,6 +40750,22 @@ void CThinkView::sub_100fbb40(float flDelay, int nValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fbbb0 size=0x4f
+#include "CBaseEntity.h"
+#include "globalvars.h"
+void sub_101c0b10();
+void CBaseEntity::sub_100fbbb0(float time)
+{
+	if (time >= 0.0f) {
+		sub_100ac4e0((int)sub_101c0b10, 0, 0);
+		m_flNextThink = time + gpGlobals->curtime;
+	} else {
+		sub_100ac4e0(0, 0, 0);
+		m_flNextThink = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fbc20 size=0x19
 #include "CBaseEntity.h"
 
