@@ -151103,6 +151103,36 @@ Vector *CCollisionProperty::sub_104103c0(const Vector &in, Vector *pResult)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10410490 size=0x4d
+#define V1(a) virtual void a();
+#define V10(p) V1(p##0) V1(p##1) V1(p##2) V1(p##3) V1(p##4) V1(p##5) V1(p##6) V1(p##7) V1(p##8) V1(p##9)
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+struct SOwner2 {
+    V100(a) V100(b) V100(c) V100(d)
+    V1(e0) V1(e1) V1(e2) V1(e3)
+    virtual int v404(int);
+};
+struct SEnt {
+    char pad0[0x94];
+    SOwner2 *m_p94;
+    char pad98[0x11c - 0x98];
+    const char *m_psz11c;
+};
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern char g_106b8540[];
+bool sub_10410490(SEnt *pEnt, int a)
+{
+    if (!pEnt->m_p94)
+        return false;
+    if (pEnt->m_p94->v404(a) == 1)
+        return false;
+    const char *s = pEnt->m_psz11c;
+    if (!s)
+        s = g_106b8540;
+    return _strcmpi(s, "npc_turret_floor") == 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104106a0 size=0x95
 #include "CWeaponPhysCannon.h"
 #include "CGlobalEntityList.h"
