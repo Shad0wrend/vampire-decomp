@@ -3,6 +3,7 @@
 #pragma once
 
 class CBaseEntity;
+class CBasePlayer;
 
 struct CBombState	// four bytes passed by value, the first one is the state
 {
