@@ -118715,6 +118715,24 @@ struct CUnknown10307b40 { int a; void sub_10307b40(int v); };
 void CUnknown10307b40::sub_10307b40(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x10307b80 size=0x47
+#include "CStepWalker.h"
+bool CStepWalker::sub_10307b80()
+{
+	m_nPos += g_1049df28[m_nState].m_nStep;
+	if (m_nPos < 0 || m_nPos >= m_nCount) {
+		if (m_nRepeats > 0) {
+			m_nRepeats--;
+			m_nState = g_1049df28[m_nState].m_nNextState;
+			m_nPos = sub_10307c20();
+		} else {
+			return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10307e00 size=0x11
 extern unsigned int g_109363d8[8];
 

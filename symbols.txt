@@ -4520,6 +4520,7 @@
 0x1000b636 func   ?sub_1012c840@@YAXPAUCChildView@@@Z sub_1012c840
 0x1000b63b func   ?sub_102d3ea0@@YAXXZ sub_102d3ea0
 0x1000b645 func   ?vfunc187@CBaseCombatWeapon@@UAEPAVCBaseEntity@@XZ CBaseCombatWeapon::vfunc187
+0x1000b64f func   ?sub_10307b80@CStepWalker@@QAE_NXZ CStepWalker::sub_10307b80
 0x1000b654 func   ?sub_10290660@@YGHM@Z sub_10290660
 0x1000b659 func   ?sub_10233a10@@YAXH@Z sub_10233a10
 0x1000b672 func   ?sub_1033c9c0@@YIHPAD@Z sub_1033c9c0
