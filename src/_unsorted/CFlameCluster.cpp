@@ -28,3 +28,14 @@ void CFlameCluster::vfunc103()
 	vfunc104();
 }
 // END FUNCTION
+
+// FUNCTION: 0x103e1f90 size=0x49
+#include "CFlameCluster.h"
+void CFlameCluster::vfunc104()
+{
+	engine->vfunc17("flamethrower_hit_flame-emitter", 0);
+	engine->vfunc17("flamethrower_hit_none-emitter", 0);
+	engine->vfunc17("flamethrower_hit_steam-emitter", 0);
+	engine->vfunc17("flamethrower_hit_glow-emitter", 0);
+}
+// END FUNCTION
