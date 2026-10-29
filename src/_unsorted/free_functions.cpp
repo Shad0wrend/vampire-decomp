@@ -115633,6 +115633,34 @@ void __fastcall sub_102dc3e0(CBaseEntity *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dc420 size=0x45
+#include "CUnknown102dc2c0.h"
+#include "CUnknown102dca60.h"
+#include "CBaseEntity.h"
+#include "globalvars.h"
+
+struct CDc420View
+{
+	char m_pad0000[0x17c];
+	float m_flNextThink;	// 0x17c
+	char m_pad0180[0x45d - 0x180];
+	char m_bField45d;	// 0x45d
+	char m_pad045e[0x46c - 0x45e];
+	COutputEvent m_Output;	// 0x46c
+};
+
+void sub_100122b5();
+
+void CUnknown102dc2c0::sub_102dc420()
+{
+	CDc420View *pView = (CDc420View *)this;
+	((CUnknown102dca60 *)this)->sub_102dc6a0(pView->m_bField45d);
+	((CBaseEntity *)this)->sub_100ac4e0((int)sub_100122b5, 0, 0);
+	pView->m_flNextThink = gpGlobals->curtime + 0.0001;
+	pView->m_Output.sub_100cd660(this, this, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dc490 size=0x6e
 #include "CUnknown102dca60.h"
 #include "CUnknown102dc2c0.h"
