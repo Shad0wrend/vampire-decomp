@@ -27,7 +27,9 @@ public:
 	int m_n6428;
 	int m_n642c;
 	int m_n6430;	// +0x6430: 100 at spawn
-	char pad6434[0x6678 - 0x6434];
+	char pad6434[0x65e8 - 0x6434];
+	CUnknown1025ddd0 *m_pBehaviour65e8;	// +0x65e8
+	char pad65ec[0x6678 - 0x65ec];
 	int m_iField6678;
 
 	virtual void vfunc420();
