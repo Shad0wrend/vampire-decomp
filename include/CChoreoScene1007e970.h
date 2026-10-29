@@ -18,6 +18,7 @@ struct CChoreoSceneChannel1007e970
 
 struct CChoreoSceneActor1007e970
 {
+	const char *sub_10072d90();	// the actor's name (stub 0x10008a99, this + 0x14)
 	int sub_10072eb0();	// the number of channels (stub 0x1000ba96)
 	CChoreoSceneChannel1007e970 *sub_10072ed0(int index);	// the channel with that index (stub 0x10008d55)
 };
