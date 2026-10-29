@@ -109749,6 +109749,32 @@ int sub_102cadb0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cc1f0 size=0x44
+#include "CAI_BaseNPC.h"
+#define HV1(p) virtual void p();
+#define HV10(p) HV1(p##0) HV1(p##1) HV1(p##2) HV1(p##3) HV1(p##4) HV1(p##5) HV1(p##6) HV1(p##7) HV1(p##8) HV1(p##9)
+#define HV100(p) HV10(p##0) HV10(p##1) HV10(p##2) HV10(p##3) HV10(p##4) HV10(p##5) HV10(p##6) HV10(p##7) HV10(p##8) HV10(p##9)
+struct CNpcSlots446	// vtable view of CAI_BaseNPC up to slot 446
+{
+	HV100(ha) HV100(hb) HV100(hc) HV100(hd) HV10(he0) HV10(he1) HV10(he2) HV10(he3)
+	virtual int vfunc440(int schedule);
+	HV1(hf1) HV1(hf2) HV1(hf3) HV1(hf4) HV1(hf5)
+	virtual int vfunc446(int condition);
+};
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+int CAI_BaseNPC::sub_102cc1f0(int type)
+{
+	CNpcSlots446 *p = (CNpcSlots446 *)this;
+	int sched = p->vfunc440(type);
+	int r = p->vfunc446(sched);
+	if (!r) {
+		DevMsg("GetScheduleOfType(): No CASE for Schedule Type %d!\n", sched);
+		r = p->vfunc446(1);
+	}
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cc4f0 size=0x1a
 namespace lifted {
 extern int g_106089f0;
