@@ -40379,6 +40379,20 @@ extern "C" CBaseEntity *env_beam()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100febb0 size=0x1a
+namespace lifted {
+extern int g_10568420;
+extern int g_10568424;
+extern char g_10568464;
+}
+int sub_100febb0()
+{
+    lifted::g_10568424 = 0x13;
+    lifted::g_10568420 = (int)&lifted::g_10568464;
+    return (int)&lifted::g_10568420;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100feea0 size=0x12
 void sub_10014d03();
 
