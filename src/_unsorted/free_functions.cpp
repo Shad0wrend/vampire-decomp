@@ -118798,6 +118798,26 @@ void __fastcall sub_102f5090(int *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f5120 size=0x4c
+void sub_101ce440(int a, const char *s1, const char *s2, const char *s3, const char *s4, const char *s5);
+void sub_1000993a();
+
+struct CNodeGraphEntity : CBaseEntity
+{
+	void sub_102f5120();
+};
+
+void CNodeGraphEntity::sub_102f5120()
+{
+	if (*(int *)&m_pfnThink != (int)sub_1000993a)
+	{
+		sub_101ce440(4, "Doing partial rebuild of Node Graph...", 0, 0, 0, 0);
+		sub_100ac4e0((int)sub_1000993a, 0, 0);
+		m_flNextThink = gpGlobals->curtime + 0.01;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f5b30 size=0x7b
 #include <string.h>
 
