@@ -109688,6 +109688,17 @@ void UtlMem::sub_102def00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102df1b0 size=0x10
+namespace lifted {
+extern char g_10933dac;
+struct C1000330f { int sub_1000330f(int); };
+}
+int sub_102df1b0(int a0)
+{
+    return ((lifted::C1000330f *)((int)&lifted::g_10933dac))->sub_1000330f(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dfaa0 size=0x114
 #include "CUnknown102dfaa0.h"
 #include "CGlobalEntityList.h"
