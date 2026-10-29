@@ -71477,6 +71477,16 @@ const char *CUnknown101d82d0_Elem::sub_101d8190()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d8230 size=0x10
+struct CUnknown101d8230 { void * sub_101d8230(); };
+void * CUnknown101d8230::sub_101d8230()
+{
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d8250 size=0x25
 // TARGET: sub_101d8250
 void __fastcall sub_101d8250(int *pThis)
