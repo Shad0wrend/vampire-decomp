@@ -86519,6 +86519,17 @@ void CTriggerBombSite::sub_102116c0(CBombState state)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10211870 size=0x16
+namespace lifted {
+struct C10010794 { int sub_10010794(int, int, int); };
+}
+struct CUnknown10211870 { int sub_10211870(int, int); };
+int CUnknown10211870::sub_10211870(int a0, int a1)
+{
+    return ((lifted::C10010794 *)(this + 0x5b8))->sub_10010794(a1, (int)this, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10211970 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
