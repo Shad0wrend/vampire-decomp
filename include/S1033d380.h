@@ -3,7 +3,9 @@
 
 struct S1033d380
 {
-	char m_pad0000[0xfb4];
+	char m_pad0000[0xeb4];
+	unsigned int m_nDisciplineMask;	// 0xeb4: bit i = targeted discipline i is active
+	char m_pad0eb8[0xfb4 - 0xeb8];
 	int *m_pRecords;	// 0xfb4
 	char m_pad0fb8[0xfc0 - 0xfb8];
 	int m_nRecords;	// 0xfc0
