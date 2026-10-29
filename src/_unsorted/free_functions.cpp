@@ -27108,6 +27108,20 @@ int sub_100b5620()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b5810 size=0x1a
+namespace lifted {
+extern int g_10559360;
+extern int g_10559364;
+extern char g_105593a4;
+}
+int sub_100b5810()
+{
+    lifted::g_10559364 = 3;
+    lifted::g_10559360 = (int)&lifted::g_105593a4;
+    return (int)&lifted::g_10559360;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b5840 size=0x43
 #include "CBaseFlex.h"
 void *sub_100aa720(int size);
