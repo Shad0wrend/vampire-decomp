@@ -888,6 +888,25 @@ void CBaseCombatWeapon::vfunc288()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10257850 size=0x50
+#include "CEHandleGet.h"
+#define V100(p) CBCW_V10(p##0) CBCW_V10(p##1) CBCW_V10(p##2) CBCW_V10(p##3) CBCW_V10(p##4) CBCW_V10(p##5) CBCW_V10(p##6) CBCW_V10(p##7) CBCW_V10(p##8) CBCW_V10(p##9)
+struct CPlayerView382 {
+	V100(0) V100(1) V100(2)
+	CBCW_V10(30) CBCW_V10(31) CBCW_V10(32) CBCW_V10(33) CBCW_V10(34) CBCW_V10(35) CBCW_V10(36) CBCW_V10(37)
+	CBCW_V(380) CBCW_V(381)
+	virtual bool vfunc382(CBaseCombatWeapon *pWeapon);
+};
+int CBaseCombatWeapon::vfunc35(CBaseEntity *pOther)
+{
+	if (!EHandle_Get(m_hOwner)) {
+		if (((CPlayerView382 *)pOther)->vfunc382(this))
+			return 0x49;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10257930 size=0x3d
 #include "CEHandleGet.h"
 unsigned int __fastcall sub_10006703(CBaseCombatWeapon *p);
