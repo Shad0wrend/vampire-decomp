@@ -73,6 +73,7 @@ public:
 	Vector &sub_1011d2e0(const Vector &v);	// provisional, like sub_1003e4b0 (transplant)
 	Vector &sub_100f2f90(vec_t X, vec_t Y, vec_t Z);	// constructor, where the game did not inline it
 	Vector sub_100a19c0(float fl) const;	// operator*(float), where the game did not inline it
+	Vector sub_1011e060(const Vector &v) const;	// operator+, where the game did not inline it
 	bool sub_1003b850(const Vector &v) const;	// operator==, where the game did not inline it
 };
 
