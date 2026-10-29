@@ -35,6 +35,7 @@ public:
 	CBaseDoor *sub_100ee2b0();	// "CBaseDoor::CBaseDoor" body: base constructor, the eight output members (+0x564 .. +0x60c), the doorknob / linked handles to -1, the vtable, +0x64c = 10, +0x650 = 3, the self pointer at +0xa4, bytes +0x654 = 1 / +0x624 = 0; returns this
 	int sub_100f12a0(CBaseDoor **ppDoors, int maxDoors);	// the other doors that share this door's name (a door pair), up to maxDoors
 	void sub_100efbf0(char bOpen);	// "UpdateAreaPortals": for every func_areaportal whose slot 161 accepts the door's name (+0x26c) calls its Use(this, this, bOpen, 0)
+	void sub_100f00a0(inputdata_t *pInput);	// door input: unless the door is at rest open (state 1) remembers the activator's handle at +0x53c, fires the output at +0x5f4 and runs slot 244(1)
 	void sub_100f0210(inputdata_t *pInput);	// door use input: unless the lock check refuses the activator, remembers its handle at +0x53c and starts the movement through slot 243 / 244 according to the door state at +0x4f8
 	char sub_100eec70(void *pActivatorOwner);
 	char sub_100027d4(void *pActivatorOwner);	// the lock check (the stub at 0x100027d4 for 0x100eec70), called directly
