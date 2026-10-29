@@ -96918,6 +96918,16 @@ int __stdcall sub_1023e270(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023e2d0 size=0x46
+#include "inputdata_t.h"
+#include "engineserver.h"
+char *sub_101d3730(const char *pszFormat, ...);
+void __stdcall sub_1023e2d0(inputdata_t *pInput)
+{
+	engine->vfunc7(sub_101d3730("credits %s", pInput->value.String()));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023e4b0 size=0x184
 #include "CGlobalEntityList.h"
 
