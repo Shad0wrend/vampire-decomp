@@ -147,3 +147,26 @@ int CBaseAnimatingOverlay::vfunc272()
 	return -1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10099570 size=0x46
+#include "CBaseAnimatingOverlay.h"
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+#define V100(n) V10(n##0) V10(n##1) V10(n##2) V10(n##3) V10(n##4) V10(n##5) V10(n##6) V10(n##7) V10(n##8) V10(n##9)
+struct COverlayView {
+	V100(a) V100(b)
+	V10(c0) V10(c1) V10(c2) V10(c3) V10(c4) V10(c5) V10(c6)
+	virtual void d0();
+	virtual int Slot271(int a);
+};
+// TARGET: CBaseAnimatingOverlay::vfunc273
+void CBaseAnimatingOverlay::vfunc273(int a, char b, int c)
+{
+	int i = ((COverlayView *)this)->Slot271(a);
+	if (i == -1) {
+		if (b)
+			sub_100991b0(a, c);
+	} else {
+		m_Layers[i].m_n08 = 0;
+	}
+}
+// END FUNCTION
