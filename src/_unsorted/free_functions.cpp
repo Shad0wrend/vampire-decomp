@@ -58353,6 +58353,20 @@ extern "C" GP *prop_base()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018e170 size=0x1a
+namespace lifted {
+extern int g_1058d008;
+extern int g_1058d00c;
+extern char g_1058d04c;
+}
+int sub_1018e170()
+{
+    lifted::g_1058d00c = 8;
+    lifted::g_1058d008 = (int)&lifted::g_1058d04c;
+    return (int)&lifted::g_1058d008;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018e1c0 size=0x38
 #include "CActivityCopyProp.h"
 

@@ -6491,6 +6491,7 @@
 0x10010541 func   ?sub_1018d430@@YAHXZ sub_1018d430
 0x10010555 func   ?sub_101cd880@CTracePassFilterX@@QAE_NPAXH@Z CTracePassFilterX::sub_101cd880
 0x1001055a func   ?vfunc3@CCollisionEvent@@UAEXPAX00@Z CCollisionEvent::vfunc3
+0x1001055f func   ?sub_1018e170@@YAHXZ sub_1018e170
 0x10010573 func   ?sub_10204270@CUnknown10204270@@QAEXXZ CUnknown10204270::sub_10204270
 0x1001057d func   ?sub_102ccce0@CAI_DynamicLink@@QAEXXZ CAI_DynamicLink::sub_102ccce0
 0x10010582 func   ?vfunc2@CPositionInterpolator_CatmullRom@@QAEXHPBVVector@@@Z CPositionInterpolator_CatmullRom::vfunc2
