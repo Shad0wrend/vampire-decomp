@@ -51649,6 +51649,25 @@ void CPathKeyFrame::sub_10140070()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140200 size=0x4c
+#include "CPathKeyFrame.h"
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList g_106eb5d8;
+extern char g_106b8540[];
+extern char g_10538764[];	// the type descriptor of CBaseEntity
+extern char g_1057a890[];	// the type descriptor of CPathKeyFrame
+extern "C" void *__cdecl __RTDynamicCast(void *pObject, long nVfDelta, void *pSrcType, void *pTargetType, int bIsReference);
+
+void CPathKeyFrame::sub_10140200()
+{
+	m_pNext = (CPathKeyFrame *)__RTDynamicCast(g_106eb5d8.sub_100f7770(0, m_pszNextKey ? m_pszNextKey : g_106b8540, 0, 0), 0, g_10538764, g_1057a890, 0);
+	if (m_pNext)
+		m_pNext->m_pPrev = this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140270 size=0x2d
 #include "CPathKeyFrame.h"
 
