@@ -220,6 +220,20 @@ extern "C" GP *phys_thruster()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10027c80 size=0x1a
+namespace lifted {
+extern int g_10537024;
+extern int g_10537028;
+extern char g_1053706c;
+}
+int sub_10027c80()
+{
+    lifted::g_10537028 = 1;
+    lifted::g_10537024 = (int)&lifted::g_1053706c;
+    return (int)&lifted::g_10537024;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100281f0 size=0x49
 void *sub_1000db89(int);
 struct GP;
