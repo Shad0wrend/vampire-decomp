@@ -88,6 +88,31 @@ Vector CAI_BaseHumanoid::vfunc373()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025f0f0 size=0x44
+#include "CAI_BaseHumanoid.h"
+
+#define HS(n) virtual void n();
+#define HS10(p) HS(p##0) HS(p##1) HS(p##2) HS(p##3) HS(p##4) HS(p##5) HS(p##6) HS(p##7) HS(p##8) HS(p##9)
+
+struct CHumanoidSlots
+{
+	HS10(a0) HS10(a1) HS10(a2) HS10(a3) HS10(a4) HS10(a5) HS10(a6) HS10(a7) HS10(a8) HS10(a9)
+	HS10(b0) HS10(b1) HS10(b2) HS10(b3) HS10(b4) HS10(b5) HS10(b6) HS10(b7) HS10(b8) HS10(b9)
+	HS10(c0) HS10(c1) HS10(c2) HS10(c3) HS10(c4) HS10(c5) HS10(c6) HS10(c7) HS10(c8) HS10(c9)
+	HS10(d0) HS10(d1) HS10(d2) HS10(d3) HS10(d4) HS10(d5) HS10(d6)
+	HS(e0)
+	virtual Vector slot371();
+};
+
+Vector CAI_BaseHumanoid::vfunc370()
+{
+	Vector dir = ((CHumanoidSlots *)this)->slot371();
+	dir.z = 0;
+	VectorNormalize(dir);
+	return dir;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025f160 size=0x28
 #include "CAI_BaseHumanoid.h"
 
