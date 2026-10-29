@@ -47429,6 +47429,26 @@ extern "C" CBaseEntity *prop_clockhand()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012d950 size=0x50
+#include "CPropClockHand.h"
+#include "CBaseAnimating.h"
+extern char vt_10463a1c[];
+CPropClockHand *CPropClockHand::sub_1012d950()
+{
+	((CBaseAnimating *)this)->sub_1008b230();
+	*(volatile int *)&m_hSource750 = -1;
+	*(void *volatile *)this = vt_10463a1c;
+	*(volatile int *)&m_iAxis = 2;
+	*(volatile int *)&m_nTick748 = 0;
+	*(volatile int *)&m_nMode75c = 0;
+	*(volatile int *)&m_nDivisor760 = 0x3c;
+	*(volatile int *)&m_hSource750 = -1;
+	*(volatile int *)&m_n754 = 0;
+	m_b758 = 1;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012dbd0 size=0x1a6
 #include "CBaseEntity.h"
 #include "CPropClockHand.h"
