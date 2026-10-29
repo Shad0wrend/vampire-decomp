@@ -49,6 +49,10 @@ public:
 	void vfunc433();	// slot 433 override: CAI_BaseNPCTroika::vfunc433, then raises the conditions 0xf, 0xc, 0xd and, with an enemy (slot 167) within 50 units in the plane, 0x5f and 0xe
 	void sub_102b27f0();	// CAI_BaseNPCTroika::vfunc433 (stub 0x10013f2f), called directly
 	void sub_10269b50(int a);	// stub 0x10015839, called with a condition number
+	void vfunc448(int a);	// slot 448 override: with the state at +0x5cc0 equal to 2 and sub_10269d30(0x5c) true clears bit 31 of +0x5d8c; runs sub_10379000(0) when sub_10379040() is true; clears the counter at +0x6680; then CAI_BaseNPCTroika::vfunc448
+	char sub_10269d30(int a);	// stub 0x1001482b, answers in al
+	char sub_10379040();	// stub 0x10014777, answers in al
+	void sub_1029adb0(int a);	// CAI_BaseNPCTroika::vfunc448 (stub 0x100054bb), called directly
 
 	char m_pad0004[0x14b8 - 4];
 	unsigned int m_nFlags14b8;	// 0x14b8
