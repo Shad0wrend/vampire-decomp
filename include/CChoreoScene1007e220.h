@@ -8,5 +8,7 @@ class CChoreoScene1007e220
 public:
 	void sub_1007e220(CChoreoSceneActor1007e970 *pActor);	// unregisters every channel of the actor, then the actor itself
 	void sub_1007e290(CChoreoSceneChannel1007e970 *pChannel);	// stub 0x100125a3 of 0x1007e290: unregisters one channel's events (here only called with a channel)
+	void sub_1007e300(CChoreoSceneEvent1007e970 *pEvent);	// stub 0x100125a3: unregisters one event
+	void sub_1007e410(CChoreoSceneChannel1007e970 *pChannel);	// removes the channel from the list and deletes it (matched as List1007e410::sub_1007e410)
 	void sub_1007e320(CChoreoSceneActor1007e970 *pActor);	// removes the actor from the list and deletes it (matched as List1007e320::sub_1007e320)
 };
