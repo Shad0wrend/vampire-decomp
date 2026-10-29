@@ -11999,6 +11999,28 @@ CInitView *CInitView::sub_1006bd90(int a, int b, unsigned char bFlag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006bde0 size=0x4f
+#include "CUtlBuffer.h"
+void CUtlBuffer::sub_1006bde0(char *pBuffer, int nSize, bool bText)
+{
+	if (m_nGrow != -1) {
+		if (m_pBuffer) {
+			Plat_Free(m_pBuffer);
+			m_pBuffer = 0;
+		}
+		m_nSize = 0;
+	}
+	m_pBuffer = pBuffer;
+	m_nSize = nSize;
+	m_nGrow = -1;
+	m_nGet = 0;
+	m_nPut = 0;
+	m_nFlags = 0;
+	if (bText)
+		m_nFlags = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006be50 size=0x3b
 extern void *(*g_109f3638)(void *, int);
 extern void *(*g_109f3634)(int);
