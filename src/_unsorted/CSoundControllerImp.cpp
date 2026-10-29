@@ -1,6 +1,22 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101bc870 size=0x48
+#include "CSoundControllerImp.h"
+#include "CUnknown101bbd10.h"
+#include "utlvector.h"
+
+// TARGET: CSoundControllerImp::vfunc0
+void CSoundControllerImp::vfunc0()
+{
+	CUtlVector<CUnknown101bbd10 *> *pSounds = (CUtlVector<CUnknown101bbd10 *> *)&m_Sounds;
+	for (int i = pSounds->Count() - 1; i >= 0; i--)
+		(*pSounds)[i]->sub_101bbd10();
+	pSounds->Purge();
+	*(int *)((char *)this + 0x2c) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bd180 size=0x28
 #include "CSoundControllerImp.h"
 #include "CUnknown101bbd10.h"
