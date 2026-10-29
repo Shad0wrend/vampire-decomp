@@ -113,5 +113,15 @@ public:
 	virtual void vfunc102();
 	virtual void vfunc103();
 	virtual void vfunc104();
+	virtual void vfunc105();
+	virtual void vfunc106();
+	virtual void vfunc107();
+	virtual void vfunc108();
+	virtual void vfunc109();
+	virtual bool vfunc110(const char *key, const char *value);	// "KeyValue": StartOpen goes to +0x458, the rest to CBaseEntity::vfunc110
 	void sub_100156b8();	// as in CPhysForce (transplant)
+	bool sub_1009e430(const char *key, const char *value);	// CBaseEntity::vfunc110 (stub 0x1000fc86), called directly
+
+	char m_pad0004[0x458 - 4];
+	int m_bStartOpen;	// 0x458
 };
