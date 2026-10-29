@@ -139193,6 +139193,20 @@ extern "C" CBaseEntity *item_w_mingxiao_tentacle()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ed0e0 size=0x1a
+namespace lifted {
+extern int g_1067c9e8;
+extern int g_1067c9ec;
+extern char g_1067ca2c;
+}
+int sub_103ed0e0()
+{
+    lifted::g_1067c9ec = 4;
+    lifted::g_1067c9e8 = (int)&lifted::g_1067ca2c;
+    return (int)&lifted::g_1067c9e8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ed920 size=0x68
 struct OwnerX { char pad[0xa8]; void *p; };
 void sub_1000d5f3();
