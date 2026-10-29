@@ -153183,6 +153183,23 @@ void CUnknown1042e8c0::sub_1042eca0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042ed40 size=0x4d
+#include "CBaseEntity.h"
+#include "globalvars.h"
+void sub_1042edb0();
+struct CUnit1042ed40 : CBaseEntity {
+    void sub_1042ed40(int a, float b);
+};
+void CUnit1042ed40::sub_1042ed40(int a, float b)
+{
+    *(int *)((char *)this + 0x164) = a;
+    *(int *)((char *)this + 0x210) = (int)b;
+    sub_100ac4e0((int)sub_1042edb0, 0, 0);
+    m_flNextThink = gpGlobals->curtime;
+    *(float *)((char *)this + 0x474) = gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042edb0 size=0x7c
 #include "CBaseEntity.h"
 
