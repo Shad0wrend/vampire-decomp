@@ -31025,6 +31025,17 @@ int sub_100cdc60(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cdc80 size=0x10
+namespace lifted {
+extern char g_106e6fc8;
+struct C1000330f { int sub_1000330f(int); };
+}
+int sub_100cdc80(int a0)
+{
+    return ((lifted::C1000330f *)((int)&lifted::g_106e6fc8))->sub_1000330f(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cdda0 size=0x38
 // TARGET: CEventQueue::sub_100cdda0
 #include "CEventQueue.h"
