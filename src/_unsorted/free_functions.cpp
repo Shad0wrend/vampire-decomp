@@ -113021,6 +113021,32 @@ CAI_DynamicLink *CAI_DynamicLink::sub_102cce60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ccee0 size=0x4f
+#include "CAI_DynamicLink.h"
+extern int vt_1049b4f4[];
+extern CAI_DynamicLink *g_1092541c;
+void __fastcall sub_1009df20(CAI_DynamicLink *p);
+
+// TARGET: CAI_DynamicLink::sub_102ccee0
+void CAI_DynamicLink::sub_102ccee0()
+{
+	*(int **)this = vt_1049b4f4;
+	if (g_1092541c == this) {
+		g_1092541c = g_1092541c->m_pNext;
+	} else {
+		CAI_DynamicLink *p = g_1092541c;
+		while (p) {
+			if (p->m_pNext == this) {
+				p->m_pNext = p->m_pNext->m_pNext;
+				break;
+			}
+			p = p->m_pNext;
+		}
+	}
+	sub_1009df20(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ccf50 size=0x6
 namespace lifted {
 extern char g_106093e8;
