@@ -8315,6 +8315,7 @@
 0x10014fce func   ?sub_1013e3a0@@YIXPAXHH@Z sub_1013e3a0
 0x10014fd8 func   ?sub_100db5c0@@YAXXZ sub_100db5c0
 0x10014fe2 func   ?vfunc130@CAI_Hint@@UAEXH@Z CAI_Hint::vfunc130
+0x10014fe7 func   ?sub_10232420@CUnknown10232420@@QAEPAXXZ CUnknown10232420::sub_10232420
 0x10014ff6 func   ?sub_10298910@CAI_BaseNPCTroika@@QAEXPBD@Z CAI_BaseNPCTroika::sub_10298910
 0x10015000 func   ?sub_103345d0@CZeroFields103345d0@@QAEXXZ CZeroFields103345d0::sub_103345d0
 0x1001500a func   ?sub_10310130@CAI_Senses@@QAEHH@Z CAI_Senses::sub_10310130
