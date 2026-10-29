@@ -15569,6 +15569,20 @@ CFlexTrack *CFlexTrackParent::sub_10077490(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100775d0 size=0x58
+#include "CUnknown10077430.h"
+class CUnknown10077430Track { public: virtual ~CUnknown10077430Track(); };
+// TARGET: CUnknown10077430::sub_100775d0
+void CUnknown10077430::sub_100775d0(int index)
+{
+	CUnknown10077430Track *pTrack = (CUnknown10077430Track *)sub_10077450(index);
+	if (pTrack) {
+		m_Tracks.Remove(index);
+		delete pTrack;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10077650 size=0x22
 // TARGET: CUnknown10077430::sub_10077650
 #include "CUnknown10077430.h"
