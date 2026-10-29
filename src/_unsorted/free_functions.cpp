@@ -149900,6 +149900,23 @@ int sub_10428ad0(CStudioHdr *pStudioHdr, int iFrom, int iTo, int *pDirection)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10428ce0 size=0x47
+struct SeqHdr { char pad[0x140]; int count; int tableOffset; };
+struct SeqRec { int a; int n; int divisor; int d; };
+int sub_10428ce0(SeqHdr *hdr, int value, int index)
+{
+	if (!hdr)
+		return 0;
+	if (index > hdr->count)
+		return 0;
+	SeqRec *rec = (SeqRec *)((char *)hdr + hdr->tableOffset + index * 16);
+	int n = rec->n;
+	if (n <= 1)
+		return 0;
+	return (value / rec->divisor) % n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10428e20 size=0x2c
 struct CTable10428e20 {
     char pad[0x140];
