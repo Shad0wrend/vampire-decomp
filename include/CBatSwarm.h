@@ -31,6 +31,7 @@ public:
 	void vfunc101(Vector *pMins, Vector *pMaxs);	// slot 101: bounds of the active bats
 	bool sub_100b99d0();	// true when no active bat is below the limit at +0x740
 	void sub_100b8b50();	// per-think movement: steps the active bats (mask at +0x734) in up to 10 sub-steps of the time since the last think (+0x178) with sub_100b8d50
+	void vfunc265(int iBat);	// slot 265: clears the bat from both active masks (+0x730 / +0x734) and spawns an "Impact_Flesh_Emitter" at its position
 	void sub_100b8d50(int iBat, float flStep);	// moves one bat (stub 0x10007405), called directly
 public:
     virtual datamap_t * vfunc82();
