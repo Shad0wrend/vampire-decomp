@@ -34,6 +34,15 @@ void CPhysForceMotion::sub_10025f00(const CPhysForceVec3 *pStart, const CPhysFor
 }
 // END FUNCTION
 
+// FUNCTION: 0x10025f80 size=0x59
+#include "CPhysForce.h"
+void CPhysForceMotion::sub_10025f80(float flScale)
+{
+	m_vStart = m_vStart2 * flScale;
+	m_vEnd = m_vEnd2 * flScale;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027850 size=0x8
 namespace lifted {
 int sub_1000b5d2();
