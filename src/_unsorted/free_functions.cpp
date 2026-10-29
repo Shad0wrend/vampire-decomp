@@ -120763,6 +120763,20 @@ void CAI_Node::sub_102fa510()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102fb470 size=0x4f
+extern int g_10610bec;
+extern int g_10610bf0;
+extern "C" int atoi(const char *);
+extern void (*g_109f3630)(const char *, ...);
+
+void sub_102fb470()
+{
+	g_10610bec = atoi((const char *)engine->vfunc84(1));
+	g_10610bf0 = atoi((const char *)engine->vfunc84(2));
+	g_109f3630("ai_debug_node_connect: debugging enbabled for %d <--> %d\n", g_10610bec, g_10610bf0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102fc540 size=0x6b
 #include <stdarg.h>
 #include <stdio.h>
