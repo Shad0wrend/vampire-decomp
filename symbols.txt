@@ -425,6 +425,7 @@
 0x100020f9 func   ?NewNode@?$CUtlRBTree@UCRBTree36Entry_1004c5b0@@G@@QAEGXZ CUtlRBTree<CRBTree36Entry_1004c5b0,unsigned short>::NewNode
 0x10002103 func   ?vfunc173@CStripWeapons@@QAEXPAX0HM@Z CStripWeapons::vfunc173
 0x10002108 func   ?vfunc103@CPathKeyFrame@@QAEXXZ CPathKeyFrame::vfunc103
+0x1000210d func   ?sub_101b4c00@@YGHH@Z sub_101b4c00
 0x10002112 func   ?vfunc5@CHL2_Player@@QAEPAV1@I@Z CHL2_Player::vfunc5
 0x10002117 func   ?sub_100dbd70@CUnknown100dbd70@@QAEXXZ CUnknown100dbd70::sub_100dbd70
 0x1000211c func   _sheriff_teleport_bats sheriff_teleport_bats

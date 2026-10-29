@@ -63661,6 +63661,16 @@ int __stdcall sub_101b4a60(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b4c00 size=0x10
+namespace lifted {
+int sub_101b24d0(int);
+}
+int __stdcall sub_101b4c00(int a0)
+{
+    return lifted::sub_101b24d0(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b4c20 size=0x48
 extern char g_106b8540[];
 struct CIdxEntry { char pad[0x18]; int m_nIndex; char pad2[0xe8 - 0x1c]; };
