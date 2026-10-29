@@ -7323,6 +7323,27 @@ int *sub_1004dee0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004e0a0 size=0x48
+#include "CPhysBox.h"
+#include "COutputEvent.h"
+#include "CConstraintAnchor.h"
+
+extern void *vt_1044997c[];
+
+// TARGET: CPhysBox::sub_1004e0a0
+CPhysBox *CPhysBox::sub_1004e0a0()
+{
+	((CConstraintAnchorBase *)this)->CConstraintAnchorBase::CConstraintAnchorBase(0);
+	((COutputEvent *)((char *)this + 0x468))->sub_100cd2a0();
+	((COutputEvent *)((char *)this + 0x480))->sub_100cd2a0();
+	((COutputEvent *)((char *)this + 0x498))->sub_100cd2a0();
+	((COutputEvent *)((char *)this + 0x4b0))->sub_100cd2a0();
+	*(void ***)this = vt_1044997c;
+	*(unsigned int *)((char *)this + 0x4c) |= 8;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004eab0 size=0x1a
 namespace lifted {
 extern int g_1053d12c;
