@@ -52538,6 +52538,20 @@ void CFuncPlat::sub_1015a3c0(const Vector &vecDestAngles, float flTime)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015acc0 size=0x1a
+namespace lifted {
+extern int g_10580aec;
+extern int g_10580af0;
+extern char g_10580b34;
+}
+int sub_1015acc0()
+{
+    lifted::g_10580af0 = 3;
+    lifted::g_10580aec = (int)&lifted::g_10580b34;
+    return (int)&lifted::g_10580aec;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015d680 size=0x37
 #include "CBasePlayer.h"
 #include "CEHandleGet.h"
