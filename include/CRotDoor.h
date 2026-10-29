@@ -10,6 +10,7 @@ public:
 	bool vfunc223();	// "CBaseEntity::IsSolidFlagSet" (slot 223): scope trace, reports when bit 2 of the byte at +0x2b4 is clear, returns true
 	void sub_100a6150(int a, int b, int c);	// reports a message
 	void vfunc156(int bFirst);	// slot 156 (plain member): turns the door to the angles at +0x520 (nonzero) or +0x52c (zero) through slot 64, then sub_100b3b00
+	float vfunc247();	// slot 247 (plain member): the distance from the current angles (slot 221) to the target angles at +0x674, over the speed at +0x164 (the time the turn takes)
 	void vfunc248();	// slot 248 (plain member): when the angles (slot 221) equal the ones at +0x520 within 0.001f the door state at +0x4f8 becomes 1, else when they equal the ones at +0x52c it becomes 0; either way slot 249 follows
 	void vfunc250();	// "CRotDoor::Spawn"-like: unless bit 5 of the flags at +0x204 is set, moves the door to its closed or open position (slot 64) by bit 0, installs the touch function and updates the area portals
 	void sub_100efae0(CBaseEntity *pOther);	// the door's touch function (called through the stub at 0x10012837)
