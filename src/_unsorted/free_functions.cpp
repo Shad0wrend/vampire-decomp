@@ -110950,6 +110950,20 @@ void CAI_BaseNPCTroika::sub_1029a930(const char *pszSquad)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029c970 size=0x53
+#include "CAI_BaseNPCTroika.h"
+#include "globalvars.h"
+float CAI_BaseNPCTroika::sub_1029c970()
+{
+	float f = m_f63b8;
+	if (gpGlobals->curtime < *(float *)((char *)this + 0x6604) || (m_n5cc0 == 2 && !m_b5bc5))
+		f = m_pSenses5cdc->m_f10;
+	if (0.0f > f)
+		f = 0.0f;
+	return f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029c9f0 size=0x2a
 struct CUnk1029c9f0
 {
