@@ -155607,6 +155607,24 @@ void sub_10428690(CStudioHdrRaw *pStudioHdr, int iSequence, float *pPoseParamete
 }
 // END FUNCTION
 
+// FUNCTION: 0x10428750 size=0x57
+extern __declspec(dllimport) void __cdecl DevMsg(const char *, ...);
+int *sub_100c7480(int a, int b);
+const char *sub_10428750(int pStudioHdr, int iSequence)
+{
+    int *seqdesc = sub_100c7480(pStudioHdr, iSequence);
+    if (!seqdesc) {
+        if (pStudioHdr) {
+            DevMsg("Bad sequence %d in GetSequenceName() for model '%s'!\n", iSequence, (char *)pStudioHdr + 0xc);
+            return "Unknown";
+        }
+        DevMsg("Null model in GetSequenceName() for sequence %d\n", iSequence);
+        return "Unknown";
+    }
+    return (const char *)seqdesc + seqdesc[0];
+}
+// END FUNCTION
+
 // FUNCTION: 0x104287d0 size=0x58
 extern __declspec(dllimport) void __cdecl DevMsg(const char *, ...);
 int *sub_100c7480(int a, int b);
