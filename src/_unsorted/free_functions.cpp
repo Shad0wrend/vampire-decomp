@@ -89769,6 +89769,32 @@ found:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10203660 size=0x53
+#include <string.h>
+extern char g_106b8540[];
+struct SNamedEntry10203660 {
+	int m_id;
+	const char *m_pszName;
+};
+extern int g_1073a314;
+extern SNamedEntry10203660 **g_1073a318;
+
+inline const char *NameOf(const char *const *pp)
+{
+	return *pp ? *pp : g_106b8540;
+}
+
+int sub_10203660(const char *pszName)
+{
+	for (int i = 0; i < g_1073a314; i++)
+	{
+		if (!_strcmpi(NameOf(&g_1073a318[i]->m_pszName), pszName))
+			return g_1073a318[i]->m_id;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10203710 size=0x48
 #include "CUnknown10203240.h"
 #include "CUnknown10202ba0.h"
