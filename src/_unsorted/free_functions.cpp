@@ -106003,6 +106003,26 @@ void CUtlVector56::sub_102641b0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10264280 size=0x52
+#include <string.h>
+struct SElem { char m_pad[0x38]; };
+struct SElemVec {
+	SElem *m_pMem;
+	int m_nAlloc;
+	int m_nGrow;
+	int m_nSize;
+
+	void sub_10264280(int from, int num);
+};
+
+void SElemVec::sub_10264280(int from, int num)
+{
+	int numToMove = m_nSize - from - num;
+	if (numToMove > 0 && num > 0)
+		memmove(&m_pMem[from + num], &m_pMem[from], numToMove * sizeof(SElem));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10264300 size=0x18
 struct CBlock4k
 {
