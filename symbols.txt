@@ -1586,6 +1586,7 @@
 0x100049b2 func   ?sub_10084b40@@YAMPAVCBaseEntity@@PBDPAI@Z sub_10084b40
 0x100049b7 func   ?sub_102f2fc0@CUnknown102f2fc0@@QAEMXZ CUnknown102f2fc0::sub_102f2fc0
 0x100049c1 func   ?sub_100b7c00@@YAHXZ sub_100b7c00
+0x100049c6 func   ?vfunc4@CTESmoke@@UAEXPAXH@Z CTESmoke::vfunc4
 0x100049d0 func   ?sub_10245580@CUnknown10245580@@QAEXXZ CUnknown10245580::sub_10245580
 0x100049da func   ?vfunc6@CCollisionEvent@@UAEXPAX0@Z CCollisionEvent::vfunc6
 0x100049e9 func   ?sub_10157890@CUnknown101578b0@@QAEXD@Z CUnknown101578b0::sub_10157890
