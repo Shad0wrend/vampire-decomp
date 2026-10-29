@@ -118264,6 +118264,20 @@ Helper1030f680 *Helper1030f680::sub_1030f680(const char *s, int v1, int v2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030f780 size=0x1a
+namespace lifted {
+extern int g_106145f8;
+extern int g_106145fc;
+extern char g_1061463c;
+}
+int sub_1030f780()
+{
+    lifted::g_106145fc = 2;
+    lifted::g_106145f8 = (int)&lifted::g_1061463c;
+    return (int)&lifted::g_106145f8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030f7b0 size=0x132
 #include "CUnknown1030f940.h"
 #include "CBaseEntity.h"
