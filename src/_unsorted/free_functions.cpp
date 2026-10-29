@@ -43246,6 +43246,30 @@ int *sub_10107760()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10107860 size=0x51
+#include "CBaseFilter.h"
+#include "COutputEvent.h"
+#include "inputdata_t.h"
+#define FV(n) virtual void vfunc##n();
+#define FV10(p) FV(p##0) FV(p##1) FV(p##2) FV(p##3) FV(p##4) FV(p##5) FV(p##6) FV(p##7) FV(p##8) FV(p##9)
+#define FV100(p) FV10(p##0) FV10(p##1) FV10(p##2) FV10(p##3) FV10(p##4) FV10(p##5) FV10(p##6) FV10(p##7) FV10(p##8) FV10(p##9)
+struct CFilterSlot241 {
+	FV100(0) FV100(1) FV10(20) FV10(21) FV10(22) FV10(23)
+	FV(240)
+	virtual char vfunc241(void *pEnt);
+};
+void CBaseFilter::sub_10107860(inputdata_t *pInput)
+{
+	char bPass = ((CFilterSlot241 *)this)->vfunc241(pInput->pActivator);
+	if (m_bNegated)
+		bPass = !bPass;
+	if (bPass)
+		((COutputEvent *)m_OnPass)->sub_100cd660(pInput->pActivator, this, 0);
+	else
+		((COutputEvent *)m_OnFail)->sub_100cd660(pInput->pActivator, this, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101078e0 size=0x88
 #include "CBaseEntity.h"
 
