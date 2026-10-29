@@ -54,6 +54,20 @@ void CNPC_VHengeyokai::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037fa00 size=0x46
+#include "CBaseEntity.h"
+#include "CNPC_VHengeyokai.h"
+void CNPC_VHengeyokai::vfunc103()
+{
+	CBaseEntity *pEnt = (CBaseEntity *)this;
+	sub_10014876();
+	Vector vecExtents(50.0f, 50.0f, 100.0f);
+	pEnt->sub_1009b060(vecExtents);
+	pEnt->sub_100b3900(4);
+	pEnt->sub_100b3840(0x20);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037fb60 size=0xf3
 #include "CNPC_VHengeyokai.h"
 #include "CEHandleGet.h"
