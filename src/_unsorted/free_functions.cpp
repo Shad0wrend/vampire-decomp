@@ -18618,6 +18618,27 @@ void sub_10085180()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10085260 size=0x4a
+extern void (*g_109f3630)(const char *pszFormat, ...);
+int sub_102f7c00(const char *pszName, int a, int b);
+int sub_10119390();
+extern int g_10552810;
+
+void sub_10085260()
+{
+	if (sub_102f7c00("BigNet", 0x80, 0))
+	{
+		g_109f3630("Showing AI Hints\n");
+		g_10552810 = sub_10119390();
+	}
+	else
+	{
+		g_109f3630("Hiding AI Hints\n");
+		g_10552810 = sub_10119390();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10085480 size=0x116
 #include "CBaseEntity.h"
 #include "CEHandleGet.h"
