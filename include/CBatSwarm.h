@@ -12,8 +12,12 @@ public:
 	unsigned int m_mask734;
 	float m_flSpeed738;
 	char m_bSlow73c;
-	char m_pad073d[0x8d8 - 0x73d];
+	char m_pad073d[0x740 - 0x73d];
+	int m_nLimit740;
+	char m_pad0744[0x8d8 - 0x744];
 	Vector m_vecPos[32];	// 0x8d8
+	char m_pad0a58[0xbf8 - 0xa58];
+	int m_nBat[32];	// 0xbf8
 
 	// Slot 141, called directly so far; declared as a plain member.
 	void vfunc141(int *pRef, int unused, void *pInfo);
