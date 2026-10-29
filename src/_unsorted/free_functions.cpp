@@ -126570,6 +126570,20 @@ extern "C" CBaseEntity *npc_maker_zombie()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034ca50 size=0x1a
+namespace lifted {
+extern int g_106253e8;
+extern int g_106253ec;
+extern char g_1062542c;
+}
+int sub_1034ca50()
+{
+    lifted::g_106253ec = 4;
+    lifted::g_106253e8 = (int)&lifted::g_1062542c;
+    return (int)&lifted::g_106253e8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034cf20 size=0xb0
 #include "CNPCMaker.h"
 #include "CGlobalEntityList.h"
