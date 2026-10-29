@@ -83,6 +83,22 @@ void S10027890::sub_10027890(inputdata_t &in)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100278e0 size=0x52
+#include "CPhysForce.h"
+#include "globalvars.h"
+void sub_10001a9b();
+void CPhysForce::sub_100278e0()
+{
+	if (m_pController == 0) {
+		sub_10027960();
+		if (m_flTimeout != 0.0f) {
+			sub_100ac610(gpGlobals->curtime + m_flTimeout, 0);
+			sub_100ac4e0((int)sub_10001a9b, 0, 0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027960 size=0xd0
 // TARGET: CPhysForce::sub_10027960
 #include "CPhysForce.h"
