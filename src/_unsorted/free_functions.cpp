@@ -79868,6 +79868,23 @@ void CUnknown101e3df0::sub_101e3df0(CUnknown101e3cfObj *obj)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e3e70 size=0x4e
+#include "CUnknown101e0f00.h"
+#include "S1033d380.h"
+void CUnknown101e0f00::sub_101e3e70(S1033d380 *pObj, const char *pszName)
+{
+    unsigned int id = sub_101e1590(pszName);
+    if (id) {
+        unsigned int mask = sub_101e1870(id);
+        if (pObj->m_nDisciplineMask & mask) {
+            int a = pObj->sub_1033d380(mask);
+            int d = pObj->sub_1033d410(mask);
+            sub_101e3910(a, (int)pObj, mask, d);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e3ee0 size=0x46
 #include "CUnknown101e0f00.h"
 #include "S1033d380.h"
