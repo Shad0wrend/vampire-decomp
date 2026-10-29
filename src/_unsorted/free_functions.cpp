@@ -125976,6 +125976,28 @@ void CUnknown10312580::sub_10312930(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10312aa0 size=0x56
+#include "CGlobalEntityList.h"
+#include "CAI_Expresser.h"
+__declspec(dllimport) void Warning(const char *fmt, ...);
+__declspec(dllimport) char *Q_strncpy(char *dest, const char *src, int maxLen);
+void __fastcall sub_10312b20(char *p);
+void CAI_Expresser::sub_10312aa0(const char *pszName, CGlobalEntityList_Ent *pListener)
+{
+	if (pListener) {
+		m_Tail.m_n6c = *pListener->v1();
+		char *pName = m_Tail.m_pad54;
+		Q_strncpy(pName, pszName, 16);
+		*pName = '@';
+		m_Tail.m_b68 = 0;
+		m_Tail.m_n64 = 0;
+	} else {
+		Warning("NULL Listener in BeginMonolog()!\n");
+		sub_10312b20((char *)this);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10312b20 size=0x12
 void __fastcall sub_10312b20(char *p)
 {
