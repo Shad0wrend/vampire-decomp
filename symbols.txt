@@ -4445,6 +4445,7 @@
 0x1000b861 func   ?sub_1042eb80@@YAPAVCSprite@@HHHH_N@Z sub_1042eb80
 0x1000b866 func   ?sub_103fb5d0@@YAHXZ sub_103fb5d0
 0x1000b86b func   ?sub_101b5270@CUnknown101b5270@@QAEHXZ CUnknown101b5270::sub_101b5270
+0x1000b870 func   ?sub_101abae0@@YAHXZ sub_101abae0
 0x1000b875 func   ?sub_100955c0@CBaseAnimating@@QAEHXZ CBaseAnimating::sub_100955c0
 0x1000b87a func   ?vfunc326@CBasePlayer@@UAE_NHPAVCBaseEntity@@@Z CBasePlayer::vfunc326
 0x1000b87f func   _prop_model_state prop_model_state
