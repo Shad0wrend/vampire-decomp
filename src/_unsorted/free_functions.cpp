@@ -51530,6 +51530,24 @@ float sub_1013a4c0(float f)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013a540 size=0x58
+extern float g_1070d1c0[];
+float sub_1013a540(float f)
+{
+	if (f < 0.0f)
+		return 0.0f;
+	if (f > 1.0f)
+		return 1.0f;
+	f = f * 255.0f;
+	int i;
+	__asm {
+		fld f
+		fistp i
+	}
+	return g_1070d1c0[i];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013a5c0 size=0x25
 extern float g_1070d9e0[256];
 
