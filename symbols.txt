@@ -5601,6 +5601,7 @@
 0x1000e039 func   ?sub_101eaa80@@YAXH@Z sub_101eaa80
 0x1000e052 func   ?vfunc2@CAI_ExpresserSink@@UAEXXZ CAI_ExpresserSink::vfunc2
 0x1000e057 func   ?sub_1008f7b0@CBaseAnimating@@QAEHPBD@Z CBaseAnimating::sub_1008f7b0
+0x1000e05c func   ?sub_10029130@CUnknown10029130@@QAEHHHH@Z CUnknown10029130::sub_10029130
 0x1000e061 func   ?vfunc39@CTriggerBombSite@@QAEXPAVCBaseEntity@@@Z CTriggerBombSite::vfunc39
 0x1000e066 func   ?sub_1042fbc0@@YAXXZ sub_1042fbc0
 0x1000e06b func   ?sub_1039f030@CNPC_VMingXiaoTentacle@@QAEXXZ CNPC_VMingXiaoTentacle::sub_1039f030

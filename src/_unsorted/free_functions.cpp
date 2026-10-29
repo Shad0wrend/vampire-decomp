@@ -373,6 +373,18 @@ void CUnknown10029100::sub_10029100()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10029130 size=0x1e
+struct CUnknown10029130 { int sub_10029130(int, int, int); };
+int CUnknown10029130::sub_10029130(int a0, int a1, int a2)
+{
+    *(int *)this = a0;
+    *(int *)((char *)this + 4) = a1;
+    *(int *)((char *)this + 8) = 0;
+    *(int *)((char *)this + 0xc) = a2;
+    return a2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10029200 size=0x43
 #include "CKeepUpright.h"
 void *sub_100aa720(int size);
