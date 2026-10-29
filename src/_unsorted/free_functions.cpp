@@ -48543,6 +48543,38 @@ int __stdcall sub_10130760(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130780 size=0x55
+#include "inputdata_t.h"
+#include "engineserver.h"
+extern char g_106b8540[];
+
+struct CLightStyleX
+{
+	char m_pad0000[0x204];
+	unsigned int m_flags204;
+	char m_pad0208[0x450 - 0x208];
+	int m_iStyle;	// 0x450
+	const char *m_pszPattern;	// 0x454
+	void sub_10130780(inputdata_t *pInput);
+};
+
+// TARGET: CLightStyleX::sub_10130780
+void CLightStyleX::sub_10130780(inputdata_t *pInput)
+{
+	variant_t *pv = &pInput->value;
+	if (pv->fieldType != 2) {
+		pInput = 0;
+		pv = (variant_t *)&pInput;
+	}
+	const char *psz = pv->iszValue;
+	m_pszPattern = psz;
+	if (!psz)
+		psz = g_106b8540;
+	engine->vfunc62(m_iStyle, psz);
+	m_flags204 &= 0xfffffffe;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101308d0 size=0x99
 #include "CLight.h"
 
