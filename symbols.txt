@@ -5866,6 +5866,7 @@
 0x1000e246 func   ?sub_1013d3a0@@YADXZ sub_1013d3a0
 0x1000e24b func   ?sub_100be040@CUnknown100be040@@QAEXH@Z CUnknown100be040::sub_100be040
 0x1000e250 func   _item_g_vampyr_apocrypha item_g_vampyr_apocrypha
+0x1000e255 func   ?sub_101cd970@@YAXPAUCEntRemoveView@@@Z sub_101cd970
 0x1000e25f func   ?vfunc511@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc511
 0x1000e264 func   ?sub_10134780@CUnknown101346e0@@QAEXPAUinputdata_t@@@Z CUnknown101346e0::sub_10134780
 0x1000e26e func   ?sub_102eeb70@CUnknown102eeb70@@QAEHXZ CUnknown102eeb70::sub_102eeb70
