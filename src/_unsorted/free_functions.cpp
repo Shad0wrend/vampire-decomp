@@ -46435,6 +46435,21 @@ int sub_1012e930()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012ee40 size=0x1f
+namespace lifted {
+extern int g_1070c4ac;
+extern int g_1070c4b0;
+extern int g_1070c4b4;
+}
+int sub_1012ee40(int a0)
+{
+    *(int *)((char *)a0) = lifted::g_1070c4ac;
+    *(int *)((char *)a0 + 4) = lifted::g_1070c4b0;
+    *(int *)((char *)a0 + 8) = lifted::g_1070c4b4;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012ee70 size=0x7c
 #include "InterfaceReg.h"
 
