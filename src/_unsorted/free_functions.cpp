@@ -234,6 +234,20 @@ int sub_10027c80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100281c0 size=0x1a
+namespace lifted {
+extern int g_10537098;
+extern int g_1053709c;
+extern char g_105370dc;
+}
+int sub_100281c0()
+{
+    lifted::g_1053709c = 1;
+    lifted::g_10537098 = (int)&lifted::g_105370dc;
+    return (int)&lifted::g_10537098;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100281f0 size=0x49
 void *sub_1000db89(int);
 struct GP;
