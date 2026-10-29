@@ -109561,6 +109561,40 @@ void CAI_BaseNPCTroika::sub_102989e0(const char *str)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10299c60 size=0x51
+struct SObj {
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void vfunc10(const char *p, int a);
+	virtual void v11();
+	virtual void vfunc12(bool *p, int a);
+};
+struct SHook {
+	virtual void vfunc0(SObj *p);
+};
+extern SHook *g_109253f8;
+void sub_103707e0(SObj *p);
+
+int sub_10299c60(SObj *p)
+{
+	bool b = g_109253f8 != 0;
+	p->vfunc12(&b, 1);
+	if (g_109253f8)
+		g_109253f8->vfunc0(p);
+	sub_103707e0(p);
+	p->vfunc10("", 1);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10299ce0 size=0x4d
 struct IGlobalObj109253f8 { virtual void v0(); virtual void v1(void *p); };
 extern IGlobalObj109253f8 *g_109253f8;
