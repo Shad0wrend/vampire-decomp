@@ -63837,6 +63837,27 @@ void CCineNPC::sub_101a8070()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a8130 size=0x44
+#include "CGlobalEntityList.h"
+#include "CBaseEntity.h"
+#include "CCineNPC.h"
+extern CGlobalEntityList g_106eb5d8;
+extern "C" void *_RTDynamicCast(void *p, long delta, void *pSrc, void *pDst, int bRef);
+extern char g_10538764[];
+extern char g_105947c8[];
+struct SCineScriptName { char pad[0x5f5c]; const char *m5f5c; };
+struct SCineEntNpc { char pad[0x94]; void *m94; };
+CCineNPC *CCineNPC::sub_101a8130()
+{
+	if (((SCineScriptName *)this)->m5f5c) {
+		CBaseEntity *pEnt = g_106eb5d8.sub_100f7770(0, ((SCineScriptName *)this)->m5f5c, 0, 0);
+		if (pEnt && ((SCineEntNpc *)pEnt)->m94)
+			return (CCineNPC *)_RTDynamicCast(pEnt, 0, g_10538764, g_105947c8, 0);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a81a0 size=0xe7
 #include "CCineNPC.h"
 #include "CEHandleGet.h"
