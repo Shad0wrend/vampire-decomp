@@ -142755,6 +142755,23 @@ void CPlayerPickupController::sub_1040d0a0(char bThrow)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040d4b0 size=0x42
+#include "CPlayerPickupController.h"
+#include "CEntitySoundOriginView.h"
+extern const float g_1070d9d0[3];
+CBaseEntity *sub_100a99d0(const char *, const float *, const float *, CBaseEntity *);
+// TARGET: sub_1040d4b0
+void sub_1040d4b0(CBaseCombatCharacter *pPlayer, CBaseEntity *pEnt)
+{
+	if (pEnt->m_obj36c)
+	{
+		CPlayerPickupController *pPickup = (CPlayerPickupController *)sub_100a99d0("player_pickup", ((CEntitySoundOriginView *)pEnt)->GetAbsOrigin(), g_1070d9d0, (CBaseEntity *)pPlayer);
+		if (pPickup)
+			pPickup->sub_1040cfd0(pPlayer, pEnt);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040d930 size=0x3
 char sub_1040d930()
 {
