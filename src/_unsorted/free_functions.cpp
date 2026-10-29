@@ -105326,6 +105326,24 @@ void sub_102c9d50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c9da0 size=0x41
+#include "CUnknown102ca630.h"
+
+void CUnknown102ca630Rec::sub_102c9da0(CUnknown102ca630Rec *pOther)
+{
+    m_nType = pOther->m_nType;
+    m_n0004 = pOther->m_n0004;
+    m_vecPos[0] = pOther->m_vecPos[0];
+    m_vecPos[1] = pOther->m_vecPos[1];
+    m_vecPos[2] = pOther->m_vecPos[2];
+    m_nLevel = pOther->m_nLevel;
+    m_n0018 = pOther->m_n0018;
+    m_hOwner = pOther->m_hOwner;
+    m_hEnt = pOther->m_hEnt;
+    m_b0024 = pOther->m_b0024;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c9e10 size=0x1a7
 #include "CAI_DebugRecord.h"
 #include "CBaseEntity.h"
