@@ -27701,6 +27701,17 @@ void CBeam::sub_100bbe70(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bc080 size=0x41
+#include "CBeam.h"
+#include "inputdata_t.h"
+
+void CBeam::sub_100bc080(inputdata_t &data)
+{
+    m_fWidth = data.value.fieldType == 1 ? data.value.flValue : 0.0f;
+    m_fEndWidth = data.value.fieldType == 1 ? data.value.flValue : 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bc0f0 size=0x23
 #include "CUnknown100bc0f0.h"
 

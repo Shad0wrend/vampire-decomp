@@ -3475,6 +3475,7 @@
 0x100097ff func   ?sub_101f4530@CUnit101f4530@@QAEHHH@Z CUnit101f4530::sub_101f4530
 0x10009804 func   ?sub_104001f0@@YAHXZ sub_104001f0
 0x10009822 func   ?sub_1028e870@CUnknown1028e870@@QAEHXZ CUnknown1028e870::sub_1028e870
+0x10009831 func   ?sub_100bc080@CBeam@@QAEXAAUinputdata_t@@@Z CBeam::sub_100bc080
 0x10009836 func   ?sub_10326360@CBaseCombatCharacter@@QAE_NVVector@@MM@Z CBaseCombatCharacter::sub_10326360
 0x1000983b func   ?sub_10146b20@CBaseCombatCharacter@@QAE_NPAV1@@Z CBaseCombatCharacter::sub_10146b20
 0x10009840 func   ?sub_102c0b60@@YI_NPAX@Z sub_102c0b60
