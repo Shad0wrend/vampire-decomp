@@ -34,6 +34,43 @@ void CGrenadeUnit103ee260::sub_103ee260()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ee410 size=0x47
+#include "CWeaponThrown_Grenade_Frag.h"
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+
+struct CGrenadeOwnerView
+{
+	S100(a)
+	S10(b0)
+	virtual void b10(); virtual void b11();
+	virtual void vfunc112(int a, int b);
+	S100(c)
+	S100(d)
+	S10(f0) S10(f1) S10(f2) S10(f3) S10(f4) S10(f5) S10(f6) S10(f7) S10(f8)
+	virtual void g0(); virtual void g1(); virtual void g2(); virtual void g3(); virtual void g4();
+	virtual void g5(); virtual void g6();
+	virtual void vfunc410();
+};
+
+// TARGET: CWeaponThrown_Grenade_Frag::vfunc319
+void CWeaponThrown_Grenade_Frag::vfunc319()
+{
+	char *pEntity = (char *)sub_102521f0();
+	if (pEntity) {
+		CGrenadeOwnerView *p = *(CGrenadeOwnerView **)(pEntity + 0xa8);
+		if (p) {
+			p->vfunc112(0, *(int *)((char *)this + 0x92c));
+			if (*(int *)((char *)this + 0x920))
+				p->vfunc410();
+		}
+	}
+	sub_103ed1e0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ee510 size=0xdb
 #include "CBaseEntity.h"
 void sub_1000dcd8();
