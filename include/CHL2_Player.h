@@ -105,6 +105,8 @@ public:
 	float m_flLastDamageTime;	// 0x253c: when the player last took damage
 	CHL2_Player *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_100140f1();	// as in CPhysForce (transplant)
+	void sub_10163af0(int a);	// CBasePlayer::vfunc144 (stub 0x1000aea2), called directly
+	void sub_103373e0();	// stub 0x100084d1, called directly by vfunc144
 	void sub_1016d260();	// the player base's slot 103 (stub 0x10002f9f), called directly
 	bool sub_1015ef80();	// stub 0x100157a3, called directly by Spawn
 	void *sub_1032e7b0();	// CBaseCombatCharacter::GetActiveWeapon (stub 0x10007e19), called directly
