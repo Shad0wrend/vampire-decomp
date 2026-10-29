@@ -8259,6 +8259,7 @@
 0x100146c8 func   ?sub_10126380@@YGMMM@Z sub_10126380
 0x100146cd func   ?sub_100c5600@@YAHHHH@Z sub_100c5600
 0x100146d7 func   ?sub_102e0730@CUnknown102e0730@@QAEXXZ CUnknown102e0730::sub_102e0730
+0x100146dc func   ?sub_10210cb0@@YAHXZ sub_10210cb0
 0x100146e6 func   ?sub_1024a310@CUtlRBTree16@@QAEGXZ CUtlRBTree16::sub_1024a310
 0x100146eb func   ?vfunc0@CTEShatterSurface@@UAEPAUServerClass@@XZ CTEShatterSurface::vfunc0
 0x100146fa func   ?sub_10357110@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_10357110

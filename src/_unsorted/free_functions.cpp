@@ -88363,6 +88363,20 @@ extern "C" CBaseEntity *trigger_discipline_context()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10210cb0 size=0x1a
+namespace lifted {
+extern int g_105ab72c;
+extern int g_105ab730;
+extern char g_105ab774;
+}
+int sub_10210cb0()
+{
+    lifted::g_105ab730 = 1;
+    lifted::g_105ab72c = (int)&lifted::g_105ab774;
+    return (int)&lifted::g_105ab72c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10210ec0 size=0x85
 #include "CBaseEntity.h"
 
