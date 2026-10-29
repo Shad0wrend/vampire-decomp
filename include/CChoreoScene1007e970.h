@@ -31,5 +31,6 @@ public:
 	char m_pad0018[0x20 - 0x18];
 	int m_nActors;	// 0x20
 
+	CChoreoSceneActor1007e970 *sub_1007a170(const char *pszName);	// the actor with that name (case-insensitive), 0 when none
 	int sub_1007e970(const char *pszText, int a);	// the first speech event (type 5) of any actor / channel whose text contains pszText and which passes the follow-up check with a: its check result; 0 when there is none
 };
