@@ -90,4 +90,5 @@
 	bool sub_10278c60();	// CAI_BaseNPC::vfunc575 (stub 0x1000c135), tail called by vfunc575
 	void sub_1028d860(const Vector *pPos);	// the slot 583 body (the slot is declared without its argument; CCineNPC's override has none): slot 614 when pPos is within 2048 units of the slot 217 origin
 	void sub_102ae840(int a, char b);	// unless a state (+0x5cc0 / +0x5cc4) is 7: when slot 158 holds or b is set, stores a at +0x65cc, sets the one-shot byte at +0x1b28 and bits 0x82000000 of +0x14bc
+	bool sub_102d14c0();	// true when the dword at +0x5e8 is set, curtime is before the time at +0x5ec, or the entity of the handle at +0x5e0 is gone
 	void sub_102bf770();	// alternate action end (stub-less, called by slot 531 / 442): when the ideal activity (+0xff0) is the navigator's task id (+0x5d34) the NPC's sub_1027a6c0 result becomes the ideal activity (sub_10272650); clears the byte at +0x1a40, lets the navigator finish (sub_102ee2a0) and clears +0x63ec
