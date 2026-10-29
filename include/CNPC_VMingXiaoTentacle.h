@@ -17,6 +17,7 @@ public:
 	void *sub_1027ede0(int condition);	// CAI_BaseNPC::vfunc408 (stub 0x10011590), called directly
 	int vfunc461();	// "CNPC_VMingXiaoTentacle::SelectIdealState": picks the ideal state (1, 2 or 7) and its schedule from slot 167
 	void sub_1039ea60();	// stub 0x10007266, run by the NPC's Event_Killed on every tentacle
+	void sub_10395ce0();	// stub 0x1000d9fe, run on every live tentacle of the new-slot handles (+0x668c)
 	void sub_1039ef90(float *pPos);	// called through the stub at 0x1000d1f2: scope work, then copies the three floats of pPos to +0x668c
 	void vfunc104();	// "CNPC_VMingXiaoTentacle::Precache": default model when none is set, base Precache, then the baby / transformation models (handles at +0x6664..+0x666c), three particle emitters and two sounds
 	void vfunc103();	// "CNPC_VMingXiaoTentacle::Spawn": solid flags 0x4000000 / 0x200000, the base spawn, 0x80000 flag, clears the tentacle state, arms the timer at +0x6684 (curtime + const), removes flag2 4
