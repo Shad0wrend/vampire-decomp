@@ -24,4 +24,5 @@ public:
 	COutputEvent m_OutValue;	// 0x460
 public:
     virtual datamap_t * vfunc82();
+    virtual void vfunc103();
 };
