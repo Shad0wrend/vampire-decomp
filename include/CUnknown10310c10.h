@@ -12,5 +12,6 @@ public:
 
 	void sub_10310bc0();	// stub 0x10006267: run first by the maker
 	char sub_10310d70(void *pSpawnPoint, void *pNpc, float *pOutOrigin);	// stub 0x1000affb: places the new NPC, its origin goes to pOutOrigin; false when it cannot be placed
+	void *sub_10310cf0(Vector vecOrigin);	// like sub_10310c10 without the placing and the state: asks the factory for an NPC (DevMsg "Failed to spawn with NPCMaker( %s )" when it makes none), sets its origin (slot 62) to the vector and returns it; null when there is no factory
 	void *sub_10310c10(void *pSpawnPoint, int hIdeal);	// \"MakeNPC\"-like (ret 8): asks the factory for an NPC (DevMsg \"Failed to spawn with NPCMaker( %s )\" when it makes none), places it (removing it again when that fails), sets its origin (slot 62) and, with a second argument, the state (1 when the byte at +0x65f6 is set, else 3) and sub_102ae8e0(arg); returns the NPC or null
 };
