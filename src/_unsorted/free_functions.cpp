@@ -153957,6 +153957,17 @@ float CUnknown1040cce0::sub_1040cce0(void *pWeapon)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040cdb0 size=0x56
+#include "CPlayerPickupController.h"
+// TARGET: _player_pickup
+extern "C" CBaseEntity *player_pickup()
+{
+	CPlayerPickupController *p = new CPlayerPickupController;
+	p->vfunc106("player_pickup");
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040cef0 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
