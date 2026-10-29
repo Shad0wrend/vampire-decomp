@@ -15,7 +15,9 @@ public:
 	unsigned int m_nFlags5b84;	// +0x5b84
 	char pad5b88[0x5cc0 - 0x5b88];
 	int m_nState5cc0;	// +0x5cc0: the NPC state, 2 while a schedule is running
-	char pad5cc4[0x63ac - 0x5cc4];
+	char pad5cc4[0x6078 - 0x5cc4];
+	char m_b6078;	// +0x6078
+	char pad6079[0x63ac - 0x6079];
 	const char *m_pszName63ac;	// +0x63ac
 	char pad63b0[0x6420 - 0x63b0];
 	int m_n6420;	// (the byte at +0x6078 and the behaviour object at +0x65e8 are reached through vfunc600 only)	// +0x6420 .. +0x642c cleared at spawn
