@@ -2632,6 +2632,7 @@
 0x100075cc func   ?Links@?$CUtlRBTree@UCRBTree12Entry_1024c1d0@@G@@QBEABULinks_t@1@G@Z CUtlRBTree<CRBTree12Entry_1024c1d0,unsigned short>::Links
 0x100075d1 func   ?vfunc82@CEntityFlame@@UAEPAUdatamap_t@@XZ CEntityFlame::vfunc82
 0x100075db func   ?vfunc420@CNPC_VPlaceholder@@QAEXXZ CNPC_VPlaceholder::vfunc420
+0x100075e0 func   ?sub_10383df0@CUnknown10383df0@@QAEPAXH@Z CUnknown10383df0::sub_10383df0
 0x100075e5 func   ?sub_1008f540@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_1008f540
 0x100075ef func   ?sub_101c31f0@@YAXEPAH0GHE@Z sub_101c31f0
 0x100075fe func   ?sub_101b7df0@CUnknown101b9140@@QAEHHPBUCUnknown101b9140Elem@@@Z CUnknown101b9140::sub_101b7df0
