@@ -40,6 +40,8 @@ public:
 	void sub_1039f030();	// sound emitter of the same shape as sub_1039f1a0
 	void sub_1039f1a0();	// plays one of the 0x106477cc sounds (channel 2, volume 1.0, attenuation 0.8) from the edict at +0x2e0 to the players that can hear it, reliably (PAS attenuation filter inline)
 	char vfunc166(CBaseEntity *pEnt);	// slot 166: false for the player (sub_1039ede0) or a null entity; else true unless the entity's slot 164 answers false
+	void vfunc144(int a);	// slot 144 "Event_Killed"-like: while the byte at +0x6699 is clear sets +0x200 = 1 and starts the state schedule (sub_1039e970); else tells the player-side owner (sub_1039ede0) to free this tentacle's slot (sub_103979d0), then the Troika base
+	void sub_102bf340(int a);	// CAI_BaseNPCTroika::vfunc144 (stub 0x1000a62d), called directly
 	void *sub_1039ede0();	// CBasePlayer::sub_1039ede0 (stub 0x1001105e), called directly: the player entity
 
 	char m_pad0004[0x200 - 4];
