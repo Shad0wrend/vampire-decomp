@@ -7532,6 +7532,28 @@ void * CUnknown1004f860::sub_1004f860()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004fb30 size=0x51
+#include "CBaseAnimating.h"
+void *sub_100aa720(unsigned int);
+void __fastcall sub_100103fc(void *p);
+extern int g_1044abf4[];
+struct ESP { unsigned int pad[0x13]; unsigned int m_f; };
+extern "C" CBaseAnimating *simple_physics_prop()
+{
+    CBaseAnimating *p = (CBaseAnimating *)sub_100aa720(0x730);
+    if (p) {
+        sub_100103fc(p);
+        unsigned int f = ((ESP *)p)->m_f;
+        *(int **)p = g_1044abf4;
+        ((ESP *)p)->m_f = f | 0x10;
+    } else {
+        p = 0;
+    }
+    ((CBaseEntity *)p)->vfunc106("simple_physics_prop");
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004feb0 size=0x70
 #define SV(n) virtual void v##n();
 #define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
