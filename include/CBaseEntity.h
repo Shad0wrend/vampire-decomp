@@ -219,7 +219,11 @@ public:
 	int m_nVSoundGroup;	// 0x00b4
 	int m_nVSoundGroupFemale;	// 0x00b8
 	int m_nVSoundTableIdx;	// 0x00bc
-	char m_pad00c0[0x114 - 0xc0];
+	char m_pad00c0[0xd0 - 0xc0];
+	EHANDLE m_hD0;	// 0x00d0
+	int m_nD4;	// 0x00d4
+	float m_flD8;	// 0x00d8
+	char m_pad00dc[0x114 - 0xdc];
 	void (CBaseEntity::*m_pfn0114)();
 	void (CBaseEntity::*m_pfnThink)();
 	const char *m_classname11c;
