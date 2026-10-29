@@ -35196,6 +35196,20 @@ void sub_100055b5();
 void __stdcall sub_100de610(int) { sub_100055b5(); }
 // END FUNCTION
 
+// FUNCTION: 0x100de690 size=0x1a
+namespace lifted {
+extern int g_10561290;
+extern int g_10561294;
+extern char g_105612d4;
+}
+int sub_100de690()
+{
+    lifted::g_10561294 = 6;
+    lifted::g_10561290 = (int)&lifted::g_105612d4;
+    return (int)&lifted::g_10561290;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100de7d0 size=0x14
 struct CUnknown100de7d0 { void * sub_100de7d0(); };
 void * CUnknown100de7d0::sub_100de7d0()
