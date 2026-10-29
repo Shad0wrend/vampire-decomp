@@ -25010,6 +25010,15 @@ void CUnknown100a8340::sub_100a8340(CBaseEntity *pEnt, float flTime)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a8390 size=0x4e
+void CBaseEntity::sub_100a8390(CBaseEntity *pEnt, float flDelay)
+{
+	m_hD0 = pEnt;
+	m_nD4 = engine->vfunc120();
+	m_flD8 = gpGlobals->curtime + flDelay;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a8bf0 size=0x7c
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
