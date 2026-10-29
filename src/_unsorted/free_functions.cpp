@@ -801,6 +801,17 @@ void * CUnknown1002c900::sub_1002c900()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002c920 size=0x17
+struct CUnknown1002c920 { int sub_1002c920(int, int, int); };
+int CUnknown1002c920::sub_1002c920(int a0, int a1, int a2)
+{
+    *(int *)this = a0;
+    *(int *)((char *)this + 4) = a1;
+    *(int *)((char *)this + 8) = a2;
+    return a2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002cbd0 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);
