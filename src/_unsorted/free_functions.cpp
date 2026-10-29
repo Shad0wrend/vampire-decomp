@@ -93370,6 +93370,27 @@ extern "C" CBaseEntity *prop_button()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102154f0 size=0x54
+#include "CPropButton.h"
+#include "CBaseAnimating.h"
+
+extern int g_1047332c;
+extern int g_10489724;
+
+CPropButton *CPropButton::sub_102154f0()
+{
+	((CBaseAnimating *)this)->sub_1008b230();
+	*(int **)this = &g_1047332c;
+	m_OnPressed.sub_100cd2a0();
+	m_OnLocked.sub_100cd2a0();
+	for (int i = 0; i < 8; i++)
+		m_OnPosition[i].sub_100cd2a0();
+	*(int **)this = &g_10489724;
+	*(int *)((char *)this + 0x734) = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102158f0 size=0xa
 void __fastcall sub_102158f0(char *self, int, int)
 {
