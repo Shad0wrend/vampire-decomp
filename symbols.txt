@@ -4952,6 +4952,7 @@
 0x1000c059 func   ?sub_101fa180@CUnknown101fa0e0@@QAEXPAX@Z CUnknown101fa0e0::sub_101fa180
 0x1000c063 func   ?vfunc435@CNPC_VHengeyokai@@UAEXH@Z CNPC_VHengeyokai::vfunc435
 0x1000c068 func   ?sub_10116e80@CFuncMoveLinear@@QAEXM@Z CFuncMoveLinear::sub_10116e80
+0x1000c06d func   ?vfunc0@CEventsSaveDataOps@@QAEXPAXPAVCSave@@@Z CEventsSaveDataOps::vfunc0
 0x1000c072 func   _item_g_mercurio_journal item_g_mercurio_journal
 0x1000c07c func   ?sub_1017d900@CBasePlayer@@QAEMXZ CBasePlayer::sub_1017d900
 0x1000c090 func   ?vfunc241@CFilterInventory@@QAE_NPAVCBaseEntity@@@Z CFilterInventory::vfunc241
