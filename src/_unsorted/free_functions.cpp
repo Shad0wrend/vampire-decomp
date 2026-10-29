@@ -43749,6 +43749,20 @@ int sub_10114260()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101145a0 size=0x1a
+namespace lifted {
+extern int g_1056fd24;
+extern int g_1056fd28;
+extern char g_1056fd6c;
+}
+int sub_101145a0()
+{
+    lifted::g_1056fd28 = 3;
+    lifted::g_1056fd24 = (int)&lifted::g_1056fd6c;
+    return (int)&lifted::g_1056fd24;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10114820 size=0x9b
 #include "SendProp.h"
 
