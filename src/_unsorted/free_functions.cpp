@@ -115737,6 +115737,20 @@ extern "C" CBaseEntity *ai_network()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f4fb0 size=0x1a
+namespace lifted {
+extern int g_10610258;
+extern int g_1061025c;
+extern char g_1061029c;
+}
+int sub_102f4fb0()
+{
+    lifted::g_1061025c = 2;
+    lifted::g_10610258 = (int)&lifted::g_1061029c;
+    return (int)&lifted::g_10610258;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f5090 size=0x38
 extern int vt_1049da64[];
 void __fastcall sub_1000be15(void *p);
