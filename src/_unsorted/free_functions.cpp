@@ -42891,6 +42891,20 @@ int __stdcall sub_1010c200(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010c370 size=0x1a
+namespace lifted {
+extern int g_1056dbe0;
+extern int g_1056dbe4;
+extern char g_1056dc24;
+}
+int sub_1010c370()
+{
+    lifted::g_1056dbe4 = 7;
+    lifted::g_1056dbe0 = (int)&lifted::g_1056dc24;
+    return (int)&lifted::g_1056dbe0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010c460 size=0x12
 namespace lifted {
 int sub_10011c25();
