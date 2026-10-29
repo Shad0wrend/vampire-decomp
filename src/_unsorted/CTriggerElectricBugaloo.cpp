@@ -63,6 +63,18 @@ void CTriggerElectricBugaloo::vfunc176(void *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102314a0 size=0x53
+#include "CTriggerElectricBugaloo.h"
+#include "CBaseCombatCharacter.h"
+int CTriggerElectricBugaloo::vfunc35(void *pOther)
+{
+	CBaseCombatCharacter *pChar = (CBaseCombatCharacter *)pOther;
+	if ((void *)((EHANDLE *)((char *)pChar + 0x1cbc))->Get() == (void *)this)
+		return pChar->sub_10336920() ? 0x3e : 0x3f;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10231520 size=0xd1
 #include "CTriggerElectricBugaloo.h"
 
