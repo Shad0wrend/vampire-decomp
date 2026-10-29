@@ -8341,6 +8341,7 @@
 0x10013665 func   ?vfunc251@CSceneEntity@@UAEDMHPAUCSceneEvent@@@Z CSceneEntity::vfunc251
 0x1001366f func   ?sub_101c09d0@@YAHXZ sub_101c09d0
 0x10013679 func   ?sub_10230220@@YADXZ sub_10230220
+0x1001367e func   ?vfunc438@CBasePlayer@@UAEXMH@Z CBasePlayer::vfunc438
 0x10013683 func   ?sub_1017d020@CPlayerDialogUnit@@QAEXPBD@Z CPlayerDialogUnit::sub_1017d020
 0x10013688 func   ?sub_101fa810@CVDmg_t@@QAEXXZ CVDmg_t::sub_101fa810
 0x1001368d func   ?sub_102e0770@@YIPAUCNode102e0770@@PAUCList102e0770@@HPAVCBaseEntity@@@Z sub_102e0770

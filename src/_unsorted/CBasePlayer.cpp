@@ -491,6 +491,19 @@ Vector CBasePlayer::vfunc389(const Vector &vecPos)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10162fa0 size=0x55
+#include "CBasePlayer.h"
+void sub_102699e0(Vector vecPos, int n, float f);
+void CBasePlayer::vfunc438(float flArg, int flags)
+{
+    if (flags & 4) {
+        Vector v;
+        const Vector &pos = *(const Vector *)&vfunc193();
+        sub_102699e0(pos, vfunc145(), flArg);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10163630 size=0xd9
 #include "CBasePlayer.h"
 #define GV(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
