@@ -133023,6 +133023,20 @@ extern "C" CBaseEntity *npc_VScurrying()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103abad0 size=0x1a
+namespace lifted {
+extern int g_1064f480;
+extern int g_1064f484;
+extern char g_1064f4c4;
+}
+int sub_103abad0()
+{
+    lifted::g_1064f484 = 5;
+    lifted::g_1064f480 = (int)&lifted::g_1064f4c4;
+    return (int)&lifted::g_1064f480;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103abb00 size=0x78
 #include "CNPC_VScurrying.h"
 extern void *vt_104c4944[];
