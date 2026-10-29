@@ -144,3 +144,20 @@ void CWorld::vfunc113()
 	g_109247e4 = -1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1023c6f0 size=0x47
+#include "CWorld.h"
+#include "globalvars.h"
+struct ConVarFlag { virtual void v0(); virtual char v1(); char pad[0x28]; int m_n2c; };
+extern ConVarFlag *g_107536ac;
+void sub_1023c450();
+void sub_1023ea20();
+void CWorld::vfunc134()
+{
+    if (!g_107536ac->v1() && g_107536ac->m_n2c)
+        sub_1023c450();
+    sub_1023ca30();
+    sub_1023ea20();
+    m_flNextThink = gpGlobals->curtime + 0.05;
+}
+// END FUNCTION

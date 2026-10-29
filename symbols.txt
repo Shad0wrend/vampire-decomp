@@ -3222,6 +3222,7 @@
 0x100086e3 func   _game_text game_text
 0x100086e8 func   ?sub_10191200@@YGHH@Z sub_10191200
 0x100086ed func   _npc_VTest npc_VTest
+0x100086f2 func   ?vfunc134@CWorld@@UAEXXZ CWorld::vfunc134
 0x100086f7 func   ?sub_101fec30@CVStatInfo_t@@QAE_NXZ CVStatInfo_t::sub_101fec30
 0x100086fc func   ?vfunc367@CBasePlayer@@QAEPAMPAM@Z CBasePlayer::vfunc367
 0x10008701 func   ?sub_102d9eb0@@YAXXZ sub_102d9eb0
