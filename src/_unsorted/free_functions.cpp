@@ -73034,6 +73034,21 @@ void sub_101d2ab0(Vector *pOut, int a, int b, float flMin, float flMax)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d2c70 size=0x4b
+#include "Vector.h"
+#include <math.h>
+// TARGET: sub_101d2c70
+float __cdecl sub_101d2c70(const Vector *v)
+{
+    if (v->y == 0 && v->x == 0)
+        return 0;
+    float yaw = (float)atan2(v->y, v->x) * 57.29578f;
+    if (yaw < 0)
+        yaw += 360;
+    return yaw;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d2ce0 size=0x75
 #include "Vector.h"
 #include <math.h>
