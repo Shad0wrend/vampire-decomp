@@ -81729,6 +81729,33 @@ int CNamedList1950::sub_101f1950(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f19c0 size=0x4d
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+struct CNamePtr {
+	const char *m_p;
+	const char *Get() { return m_p ? m_p : ""; }
+};
+struct CNamedEntry19c0 {
+	int m_unk0;
+	CNamePtr m_Name;
+};
+struct CNamedList19c0 {
+	int m_unk0;
+	int m_count;
+	CNamedEntry19c0 **m_pData;
+	int sub_101f19c0(const char *name);
+};
+// TARGET: CNamedList19c0::sub_101f19c0
+int CNamedList19c0::sub_101f19c0(const char *name)
+{
+	for (int i = 0; i < m_count; i++) {
+		if (_strcmpi(m_pData[i]->m_Name.Get(), name) == 0)
+			return i;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f1a30 size=0x41
 extern "C" int _strcmpi(const char *a, const char *b);
 
