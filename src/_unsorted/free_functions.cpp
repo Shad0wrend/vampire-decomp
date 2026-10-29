@@ -145748,6 +145748,16 @@ int CUnknown1042eee0::sub_1042eee0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042ef10 size=0x17
+struct CUnknown1042ef10 { int sub_1042ef10(int, int); };
+int CUnknown1042ef10::sub_1042ef10(int a0, int a1)
+{
+    *(int *)((char *)this + 0x46c) = a0;
+    *(int *)((char *)this + 0x470) = a1;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042f080 size=0x8
 namespace lifted {
 int sub_10010dde();

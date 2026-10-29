@@ -703,6 +703,7 @@
 0x10002b30 func   ?vfunc5@CElderVitaePack@@QAEPAV1@I@Z CElderVitaePack::vfunc5
 0x10002b3f func   ?sub_10134a80@@YAPAHXZ sub_10134a80
 0x10002b49 func   ?sub_101f4570@TSeg@@QAEXHPAH0@Z TSeg::sub_101f4570
+0x10002b4e func   ?sub_1042ef10@CUnknown1042ef10@@QAEHHH@Z CUnknown1042ef10::sub_1042ef10
 0x10002b58 func   ?sub_103c6830@CNPC_VVampireBossUnit@@QAEMXZ CNPC_VVampireBossUnit::sub_103c6830
 0x10002b5d func   ?sub_101e8c50@CUnknown101e8c50@@QAEMXZ CUnknown101e8c50::sub_101e8c50
 0x10002b62 func   ?vfunc30@CRestore@@UAEHPAIHH@Z CRestore::vfunc30
