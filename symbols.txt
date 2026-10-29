@@ -581,6 +581,7 @@
 0x1000268a func   ?sub_100926e0@CBaseAnimating@@QAEXHHH@Z CBaseAnimating::sub_100926e0
 0x1000269e func   _info_node_chang_teleport info_node_chang_teleport
 0x100026a3 func   ?sub_10200ea0@CVStatList_t@@QAE_NH@Z CVStatList_t::sub_10200ea0
+0x100026a8 func   ?sub_10146640@CUnknown10146640@@QAEPAXXZ CUnknown10146640::sub_10146640
 0x100026ad func   ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z CBaseEntity::vfunc173
 0x100026c1 func   ?sub_10124ba0@CGameMovement@@QAEXXZ CGameMovement::sub_10124ba0
 0x100026cb func   ?sub_10206a80@CUnknown10206a80@@QAEDXZ CUnknown10206a80::sub_10206a80

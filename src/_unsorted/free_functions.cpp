@@ -49980,6 +49980,19 @@ float sub_10146150(const Vector *v) {
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146640 size=0x15
+struct CUnknown10146640 { void * sub_10146640(); };
+void * CUnknown10146640::sub_10146640()
+{
+    *(char *)((char *)this + 2) = 0;
+    *(char *)((char *)this + 1) = 0;
+    *(char *)this = 0;
+    *(short *)((char *)this + 4) = 0;
+    *(short *)((char *)this + 6) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101466e0 size=0xe
 #include "CUnknown101466e0.h"
 // TARGET: CUnknown101466e0::sub_101466e0
