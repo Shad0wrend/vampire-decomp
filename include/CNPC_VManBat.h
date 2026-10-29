@@ -15,7 +15,9 @@ public:
 	char m_pad6290[0x6670 - 0x6290];
 	unsigned int m_n6670;
 	int m_n6674;
-	char m_pad6678[0x6684 - 0x6678];
+	float m_f6678;	// 0x6678
+	float m_f667c;	// 0x667c
+	char m_pad6680[4];
 	float m_f6684;
 	char m_pad6688[0x668c - 0x6688];
 	unsigned int m_h668c;	// entity handle of the ragdoll the bat holds (released by sub_1038f660)
