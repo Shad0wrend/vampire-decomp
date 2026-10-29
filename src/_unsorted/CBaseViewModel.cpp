@@ -12,6 +12,20 @@ datamap_t * CBaseViewModel::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b82a0 size=0x58
+#include "CBaseViewModel.h"
+// TARGET: CBaseViewModel::vfunc86
+bool CBaseViewModel::vfunc86(int a, int b, int c, int d, int e)
+{
+	if (!(m_nEffectFlags & 0x40)) {
+		CViewModelOwner *pOwner = (CViewModelOwner *)m_hOwner734.Get();
+		if (pOwner && pOwner->m_pPlayer && pOwner->m_pPlayer->m_pEdict2e0 == b)
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042b7f0 size=0x2d
 #include "CBaseViewModel.h"
 
