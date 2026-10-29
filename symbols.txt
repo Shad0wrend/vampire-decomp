@@ -4593,6 +4593,7 @@
 0x1000c216 func   ?vfunc113@CNPCMaker@@UAEXXZ CNPCMaker::vfunc113
 0x1000c21b func   ?sub_10147710@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_10147710
 0x1000c220 func   ?vfunc340@CBaseCombatCharacter@@QAEXHHH@Z CBaseCombatCharacter::vfunc340
+0x1000c225 func   ?sub_10217200@@YAHD@Z sub_10217200
 0x1000c22a func   ?sub_10130720@@YGHH@Z sub_10130720
 0x1000c23e func   ?sub_101cf720@@YAPADPBDZZ sub_101cf720
 0x1000c248 func   ?sub_1021e6c0@@YIXPAUMem@@HH@Z sub_1021e6c0

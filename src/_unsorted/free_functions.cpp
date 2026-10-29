@@ -86565,6 +86565,18 @@ struct CUnknown10217160 {
 void CUnknown10217160::sub_10217160() { slot265(); }
 // END FUNCTION
 
+// FUNCTION: 0x10217200 size=0x42
+extern "C" __declspec(dllimport) int RandomInt(int lo, int hi);
+int sub_10217200(char bDigit)
+{
+	if (bDigit)
+		return RandomInt('0', '9');
+	if (RandomInt(1, 2) == 1)
+		return RandomInt('A', 'Z');
+	return RandomInt('a', 'z');
+}
+// END FUNCTION
+
 // FUNCTION: 0x102173e0 size=0x172
 #include "SendProp.h"
 
