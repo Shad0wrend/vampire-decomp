@@ -6,6 +6,8 @@
 #include "CUnknown1040cb60.h"
 #include "CBaseCombatCharacter.h"
 
+void *sub_100aa720(unsigned int size);
+
 class CPlayerPickupController : public CBaseEntity
 {
 public:
