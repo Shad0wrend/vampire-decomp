@@ -245,7 +245,9 @@ public:
 	float m_f22B0;
 	char m_pad22B4[0x23bc - 0x22b4];	// 0x22B4 .. 0x23BB
 	CBasePlayerHandleVec m_SimulationList;	// 0x23BC (count at +0x23C8)
-	char m_pad23D0[0x245c - 0x23d0];	// 0x23D0 .. 0x245B
+	char m_pad23D0[0x2454 - 0x23d0];	// 0x23D0 .. 0x2453
+	unsigned char m_b2454;	// 0x2454
+	char m_pad2455[0x245c - 0x2455];	// 0x2455 .. 0x245B
 	void *m_pInventory;	// 0x245C: the 5-dword inventory object (created by sub_101835e0)
 
 	float sub_1017d900();	// fade progress 0..1 of the timer at +0x19b8 / +0x19bc (needs a live entity at +0x19c0 or +0x19cc), resets the fade fields when it has ended
