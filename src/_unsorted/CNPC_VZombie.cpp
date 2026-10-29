@@ -40,6 +40,26 @@ void CNPC_VZombie::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103df580 size=0x44
+#include "CBaseEntity.h"
+#include "CNPC_VZombie.h"
+extern void (*g_109f3630)(const char *fmt, ...);
+// TARGET: CNPC_VZombie::vfunc440
+int CNPC_VZombie::vfunc440(int nSchedule)
+{
+	switch (nSchedule) {
+	case 0x5b:
+		g_109f3630("npc_zombie: encountered schedule:[investigate unknown] ...ignoring!\n");
+		return 0x165;
+	case 0x156:
+		return 0x15e;
+	case 0x157:
+		return 0x15f;
+	}
+	return sub_10012283(nSchedule);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103df850 size=0x16c
 #include "CNPC_VZombie.h"
 #include "CEHandleGet.h"
