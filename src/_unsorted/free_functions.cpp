@@ -69242,6 +69242,20 @@ extern "C" CBaseEntity *trigger_teleport()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c91b0 size=0x1a
+namespace lifted {
+extern int g_1059dfa4;
+extern int g_1059dfa8;
+extern char g_1059dfec;
+}
+int sub_101c91b0()
+{
+    lifted::g_1059dfa8 = 2;
+    lifted::g_1059dfa4 = (int)&lifted::g_1059dfec;
+    return (int)&lifted::g_1059dfa4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c9740 size=0x69
 void *sub_1000db89(int);
 struct GP;
