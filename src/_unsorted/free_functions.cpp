@@ -69440,6 +69440,15 @@ void sub_101bf270()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bf550 size=0x51
+#include <string.h>
+#pragma intrinsic(strcmp)
+bool sub_101bf550(const char **a, const char **b)
+{
+    return strcmp(*a, *b) < 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bf6a0 size=0x15b
 #include "CUtlRBTree12.h"
 
