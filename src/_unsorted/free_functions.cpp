@@ -70779,6 +70779,30 @@ int sub_101cd340(CBaseEntity *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cd9e0 size=0x47
+#include "globalvars.h"
+#include "engineserver.h"
+class CBaseEntity;
+struct CUnkUnit { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual CBaseEntity *v4(); };
+struct CUnkEdict { char pad[0x40]; CUnkUnit *m_pUnk; char pad2[8]; char m_bFree; };
+inline CBaseEntity *GetContaining(CUnkEdict *pent)
+{
+    if (pent && pent->m_pUnk)
+        return pent->m_pUnk->v4();
+    return 0;
+}
+CBaseEntity *sub_101cd9e0(int index)
+{
+    CBaseEntity *pEnt = 0;
+    if (index > 0 && index <= gpGlobals->maxClients) {
+        CUnkEdict *pEdict = (CUnkEdict *)engine->vfunc38(index);
+        if (pEdict && !pEdict->m_bFree)
+            pEnt = GetContaining(pEdict);
+    }
+    return pEnt;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cdac0 size=0xa7
 extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
 int sub_100104d8(const char *pszName);

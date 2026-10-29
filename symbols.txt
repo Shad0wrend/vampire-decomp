@@ -4256,6 +4256,7 @@
 0x1000ac72 func   ?sub_1005b1e0@@YAXHHHPAUTEVec3@@H0HHHHHHHHHHHHHH@Z sub_1005b1e0
 0x1000ac77 func   ?sub_102454a0@@YAXH@Z sub_102454a0
 0x1000ac86 func   ?sub_10132680@CMathColorBlend@@QAEXAAUinputdata_t@@@Z CMathColorBlend::sub_10132680
+0x1000ac8b func   ?sub_101cd9e0@@YAPAVCBaseEntity@@H@Z sub_101cd9e0
 0x1000ac95 func   _keyframe_rope keyframe_rope
 0x1000ac9a func   ??0CGameRulesSub@@QAE@XZ CGameRulesSub::CGameRulesSub
 0x1000ac9f func   ?vfunc1@CAI_InterestingPlaceMarkersSaveRestoreOps@@UAEXPAUSaveRestoreFieldInfo_t@@PAX@Z CAI_InterestingPlaceMarkersSaveRestoreOps::vfunc1
