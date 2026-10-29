@@ -59,7 +59,14 @@ public:
 	virtual void t250(); virtual void t251();
 	virtual void vfunc420();	// slot 420: base boss reset, then the state flag at +0x6689, the timers at +0x66ac / +0x66b0 (curtime + 3), the target handle at +0x6670 = -1
 	virtual void t253(); virtual void t254(); virtual void t255(); virtual void t256(); virtual void t257(); virtual void t258(); virtual void t259();
-	VT_SLOTS10(t26) VT_SLOTS10(t27)
+	virtual void t260(); virtual void t261(); virtual void t262(); virtual void t263();
+	virtual void vfunc432(int a);	// slot 432: asks sub_103c0160 for an object and its kind; kind 1 goes to sub_103c0860, others to sub_103c05e0; then CAI_BaseNPCTroika::vfunc432(a)
+	virtual void t265(); virtual void t266(); virtual void t267(); virtual void t268(); virtual void t269();
+	VT_SLOTS10(t27)
+	void *sub_103c0160(int *pKind);	// stub 0x10009b5b
+	void sub_103c0860(void *pObj);	// stub 0x1000f4de
+	void sub_103c05e0(void *pObj);	// stub 0x10009e26
+	void sub_1028fcc0(int a);	// CAI_BaseNPCTroika::vfunc432 (stub 0x1000704f), called directly
 	virtual void vfunc448(int a);	// slot 448: with the state (+0x5cc0) 2 and condition 0x5c clears bit 31 of +0x5d8c; when the 10381be0 check holds remembers the target handle (+0x6670) in the timed list (sub_103bf200) and runs sub_103be050(0); when the other check fails runs sub_102c43b0(0.75f) and clears the target handle; clears +0x66b8, then CAI_BaseNPCTroika::vfunc448(a)
 	virtual void t281(); virtual void t282(); virtual void t283(); virtual void t284(); virtual void t285(); virtual void t286(); virtual void t287(); virtual void t288(); virtual void t289();
 	VT_SLOTS10(t29)
