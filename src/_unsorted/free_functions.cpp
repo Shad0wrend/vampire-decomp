@@ -50765,6 +50765,20 @@ void sub_1013fdf0(float *v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013ff70 size=0x1a
+namespace lifted {
+extern int g_1057a308;
+extern int g_1057a30c;
+extern char g_1057a34c;
+}
+int sub_1013ff70()
+{
+    lifted::g_1057a30c = 4;
+    lifted::g_1057a308 = (int)&lifted::g_1057a34c;
+    return (int)&lifted::g_1057a308;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140070 size=0x137
 #include "CPathKeyFrame.h"
 #include <stdlib.h>
