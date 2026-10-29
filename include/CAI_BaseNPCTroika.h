@@ -6,6 +6,7 @@
 #include "CAI_BaseNPC.h"
 
 struct inputdata_t;
+struct CAI_ArcRecord;
 class CAI_MoveProbe;
 class CAI_BaseNPCTroika;
 
