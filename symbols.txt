@@ -8067,6 +8067,7 @@
 0x10014024 func   ?sub_101e7e80@CUnknown101e7e80@@QAEMXZ CUnknown101e7e80::sub_101e7e80
 0x10014029 func   ?sub_10032d70@UtlMem@@QAEXXZ UtlMem::sub_10032d70
 0x1001402e func   ?sub_102ee1c0@CUnknown102ee120@@QAEXH@Z CUnknown102ee120::sub_102ee1c0
+0x10014038 func   ?sub_101c9990@@YAHXZ sub_101c9990
 0x10014042 func   ?sub_10115660@@YAXUSMonHandle@@@Z sub_10115660
 0x10014047 func   ?vfunc5@CVFeatList_t@@UAEMH@Z CVFeatList_t::vfunc5
 0x1001404c func   ?vfunc5@CFilterName@@QAEPAV1@I@Z CFilterName::vfunc5

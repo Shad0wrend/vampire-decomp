@@ -69287,6 +69287,20 @@ extern "C" GP *trigger_autosave()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c9990 size=0x1a
+namespace lifted {
+extern int g_1059e044;
+extern int g_1059e048;
+extern char g_1059e08c;
+}
+int sub_101c9990()
+{
+    lifted::g_1059e048 = 2;
+    lifted::g_1059e044 = (int)&lifted::g_1059e08c;
+    return (int)&lifted::g_1059e044;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c9b60 size=0xe9
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
