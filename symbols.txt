@@ -9194,6 +9194,7 @@
 0x10136860 func   ?sub_10136860@@YAHPAH0@Z sub_10136860
 0x101368a0 func   ?sub_101368a0@@YAXHPAUDepthEntry@@@Z sub_101368a0
 0x10136910 func   ?sub_10136910@@YAHPAUParentEntityView@@@Z sub_10136910
+0x1013fe30 func   ?sub_1013fe30@@YAMM@Z sub_1013fe30
 0x10151ae0 func   ?sub_10151ae0@@YAHABUmatrix3x4_t@@ABVVector@@@Z sub_10151ae0
 0x1016af30 func   ?sub_1016af30@@YAMHPAUCSumElem_1016af30@@@Z sub_1016af30
 0x10183470 func   ?sub_10183470@@YAXXZ sub_10183470

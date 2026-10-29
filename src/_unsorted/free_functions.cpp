@@ -51320,6 +51320,17 @@ void sub_1013fdf0(float *v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013fe30 size=0x49
+float sub_1013fe30(float a)
+{
+    while (a < 0.0f)
+        a += 360.0f;
+    while (a > 360.0f)
+        a -= 360.0f;
+    return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013ff70 size=0x1a
 namespace lifted {
 extern int g_1057a308;
