@@ -45921,6 +45921,20 @@ int sub_1012cdd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012cee0 size=0x1a
+namespace lifted {
+extern int g_1057370c;
+extern int g_10573710;
+extern char g_10573754;
+}
+int sub_1012cee0()
+{
+    lifted::g_10573710 = 1;
+    lifted::g_1057370c = (int)&lifted::g_10573754;
+    return (int)&lifted::g_1057370c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012cf10 size=0x9
 CUnknown1012cf10 *CUnknown1012cf10::sub_1012cf10()
 {
