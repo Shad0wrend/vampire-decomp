@@ -66761,6 +66761,20 @@ void CUnknown101bc140::sub_101bc140()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bc4d0 size=0x1a
+namespace lifted {
+extern int g_1059aa0c;
+extern int g_1059aa10;
+extern char g_1059aa54;
+}
+int sub_101bc4d0()
+{
+    lifted::g_1059aa10 = 4;
+    lifted::g_1059aa0c = (int)&lifted::g_1059aa54;
+    return (int)&lifted::g_1059aa0c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bc500 size=0x24
 // TARGET: sub_101bc500
 int sub_101bc500(char **pa, char **pb)

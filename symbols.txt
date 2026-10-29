@@ -6224,6 +6224,7 @@
 0x1000fa79 func   _item_w_tzimisce3_claw item_w_tzimisce3_claw
 0x1000fa7e func   ?sub_102ee590@A@@QAEXPAH@Z A::sub_102ee590
 0x1000fa83 func   ?sub_102c6f70@@YIXPAUBehaviorStub@@@Z sub_102c6f70
+0x1000fa97 func   ?sub_101bc4d0@@YAHXZ sub_101bc4d0
 0x1000faa1 func   ??0CUtlBuffer@@QAE@HHH@Z CUtlBuffer::CUtlBuffer
 0x1000faab func   ?sub_103a6f70@TLeader@@QAEXHH@Z TLeader::sub_103a6f70
 0x1000fabf func   ?vfunc2@CSave@@UAEXPAXPBD@Z CSave::vfunc2
