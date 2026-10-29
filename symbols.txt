@@ -4910,6 +4910,7 @@
 0x1000c95a func   ??0CCollisionEventRecord12@@QAE@XZ CCollisionEventRecord12::CCollisionEventRecord12
 0x1000c95f func   ?sub_102a0eb0@@YIXPAD@Z sub_102a0eb0
 0x1000c96e func   ?sub_100991b0@CBaseAnimatingOverlay@@QAEHHH@Z CBaseAnimatingOverlay::sub_100991b0
+0x1000c973 func   ?sub_1018a5b0@@YAHXZ sub_1018a5b0
 0x1000c978 func   ?sub_101719d0@CBloodSplat@@QAEXPAVCBaseEntity@@@Z CBloodSplat::sub_101719d0
 0x1000c991 func   ?sub_1015ada0@@YAHXZ sub_1015ada0
 0x1000c996 func   ?vfunc5@CBaseMoveBehavior@@QAEPAV1@I@Z CBaseMoveBehavior::vfunc5
