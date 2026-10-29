@@ -77281,6 +77281,37 @@ void sub_101e0630()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e08d0 size=0x4c
+#include "CUnknown101e0f00.h"
+#include "S101df260.h"
+struct TailList101e08d0 {
+	int m_n0;
+	int m_nCount;
+	S101df260 **m_pp;
+	S101df260 *sub_101e0410(int i);
+};
+struct EntryView101e08d0 {
+	char m_pad[0x34];
+	char m_b34;
+	char m_pad35[0xdc - 0x35];
+	TailList101e08d0 m_tail;
+	char sub_101e08d0(int a, int b);
+};
+// TARGET: EntryView101e08d0::sub_101e08d0
+char EntryView101e08d0::sub_101e08d0(int a, int b)
+{
+	char *p;
+	for (int i = 0; i < m_tail.m_nCount; i++) {
+		p = &m_tail.sub_101e0410(i)->m_items[4].m_b00;
+		if (*p) {
+			m_b34 = 1;
+			return 1;
+		}
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e09c0 size=0x21
 extern char g_106b8540[];
 
