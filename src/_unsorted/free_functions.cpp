@@ -92399,6 +92399,20 @@ extern "C" CBaseEntity *ambient_soundscheme()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022a0c0 size=0x1a
+namespace lifted {
+extern int g_105b4090;
+extern int g_105b4094;
+extern char g_105b40d4;
+}
+int sub_1022a0c0()
+{
+    lifted::g_105b4094 = 5;
+    lifted::g_105b4090 = (int)&lifted::g_105b40d4;
+    return (int)&lifted::g_105b4090;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022a0f0 size=0xa7
 #include "CSoundScheme.h"
 #include <string.h>

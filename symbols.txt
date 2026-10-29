@@ -7889,6 +7889,7 @@
 0x10013917 func   _info_hint info_hint
 0x10013921 func   ?vfunc103@CPhysBox@@UAEXXZ CPhysBox::vfunc103
 0x1001392b func   ?sub_101d8230@CUnknown101d8230@@QAEPAXXZ CUnknown101d8230::sub_101d8230
+0x10013935 func   ?sub_1022a0c0@@YAHXZ sub_1022a0c0
 0x1001393a func   ?sub_1034b500@S@@QAEXH@Z S::sub_1034b500
 0x1001393f func   _info_null info_null
 0x10013949 func   ?sub_101900a0@@YAPAHXZ sub_101900a0
