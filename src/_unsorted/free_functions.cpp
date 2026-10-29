@@ -22364,6 +22364,20 @@ void CBaseTransmitProxy::sub_10097bd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10097d40 size=0x1a
+namespace lifted {
+extern int g_105509f8;
+extern int g_105509fc;
+extern char g_10550a3c;
+}
+int sub_10097d40()
+{
+    lifted::g_105509fc = 0x46;
+    lifted::g_105509f8 = (int)&lifted::g_10550a3c;
+    return (int)&lifted::g_105509f8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10097e50 size=0xea
 #include "SendProp.h"
 
