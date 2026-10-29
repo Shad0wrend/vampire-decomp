@@ -1062,6 +1062,7 @@
 0x10003841 func   ?vfunc103@CNPC_Crow@@QAEXXZ CNPC_Crow::vfunc103
 0x10003850 func   ?vfunc500@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc500
 0x10003855 func   ?vfunc29@CSave@@UAEXPBDPAXH@Z CSave::vfunc29
+0x1000385f func   ?sub_103b27d0@@YAHXZ sub_103b27d0
 0x10003864 func   ?sub_103eeee0@@YAHXZ sub_103eeee0
 0x10003873 func   ?sub_1036f390@@YAHXZ sub_1036f390
 0x10003878 func   ?vfunc458@CBasePlayer@@UAEXXZ CBasePlayer::vfunc458
