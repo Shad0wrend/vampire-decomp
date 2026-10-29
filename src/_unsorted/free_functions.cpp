@@ -57674,6 +57674,20 @@ Vector sub_101898f0(CBaseEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018a030 size=0x1a
+namespace lifted {
+extern int g_105896c0;
+extern int g_105896c4;
+extern char g_10589704;
+}
+int sub_1018a030()
+{
+    lifted::g_105896c4 = 1;
+    lifted::g_105896c0 = (int)&lifted::g_10589704;
+    return (int)&lifted::g_105896c0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018b790 size=0x3f
 #include "vampire.h"
 
