@@ -27821,6 +27821,20 @@ int sub_100ba470()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bac20 size=0x1a
+namespace lifted {
+extern int g_1055a97c;
+extern int g_1055a980;
+extern char g_1055a9c4;
+}
+int sub_100bac20()
+{
+    lifted::g_1055a980 = 0x15;
+    lifted::g_1055a97c = (int)&lifted::g_1055a9c4;
+    return (int)&lifted::g_1055a97c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bb0b0 size=0x9e
 #include "CBeam.h"
 extern CGlobalEntityList *g_10566458;
