@@ -4120,6 +4120,7 @@
 0x1000a880 func   ?sub_101ef3d0@CVampireProjectile@@QAEXXZ CVampireProjectile::sub_101ef3d0
 0x1000a885 func   ?sub_101f6370@CUnknown101f6370@@QAEPAXXZ CUnknown101f6370::sub_101f6370
 0x1000a88a func   ?vfunc50@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::vfunc50
+0x1000a894 func   ?vfunc130@CNPC_VTzimisceRunner@@QAEXH@Z CNPC_VTzimisceRunner::vfunc130
 0x1000a899 func   _npc_VSabbatGunman npc_VSabbatGunman
 0x1000a89e func   ?sub_10185880@@YIXPAUMem@@HH@Z sub_10185880
 0x1000a8a8 func   ?sub_10316720@CSquadUnit10316720@@QAEXH@Z CSquadUnit10316720::sub_10316720

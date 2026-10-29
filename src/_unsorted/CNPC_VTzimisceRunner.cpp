@@ -168,6 +168,21 @@ void CNPC_VTzimisceRunner::vfunc601(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c3c40 size=0x44
+#include "CNPC_VTzimisceRunner.h"
+// TARGET: CNPC_VTzimisceRunner::vfunc130
+void CNPC_VTzimisceRunner::vfunc130(int a)
+{
+	sub_102998c0(a);
+	float size[3];
+	size[0] = 50.0f;
+	size[1] = 50.0f;
+	size[2] = 82.0f;
+	sub_1009b060(size);
+	sub_100b3900(4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c3d80 size=0x6e
 #include "CNPC_VTzimisceRunner.h"
 int CNPC_VTzimisceRunner::vfunc310(int act)
