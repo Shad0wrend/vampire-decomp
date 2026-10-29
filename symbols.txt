@@ -2764,6 +2764,7 @@
 0x10007bf8 func   ?vfunc2@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHH@Z CTempEntsSystem::vfunc2
 0x10007bfd func   ?sub_10246af0@@YA?AVSendProp@@PBDHHHHHPAX@Z sub_10246af0
 0x10007c07 func   _item_w_crossbow item_w_crossbow
+0x10007c11 func   ?sub_1014eba0@CUnknown1014eba0@@QAEHXZ CUnknown1014eba0::sub_1014eba0
 0x10007c16 func   ?sub_1007ce20@CUnknown1007ce20@@QAEMXZ CUnknown1007ce20::sub_1007ce20
 0x10007c20 func   ?vfunc5@CItemGWatchFancy@@QAEPAV1@I@Z CItemGWatchFancy::vfunc5
 0x10007c25 func   ?vfunc103@CFuncMoveLinear@@UAEXXZ CFuncMoveLinear::vfunc103

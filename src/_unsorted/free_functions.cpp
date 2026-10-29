@@ -50422,6 +50422,20 @@ void CUnknown1014cad0::sub_1014cad0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014eba0 size=0x12
+namespace lifted {
+extern char g_1046d080;
+extern char g_106eb5d8;
+struct C10011de7 { int sub_10011de7(int); };
+}
+struct CUnknown1014eba0 { int sub_1014eba0(); };
+int CUnknown1014eba0::sub_1014eba0()
+{
+    *(int *)this = (int)&lifted::g_1046d080;
+    return ((lifted::C10011de7 *)((int)&lifted::g_106eb5d8))->sub_10011de7((int)this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014ed40 size=0x43
 #include "CPhysicsAnimlink.h"
 void *sub_100aa720(int size);
