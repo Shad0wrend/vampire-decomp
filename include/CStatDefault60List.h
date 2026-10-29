@@ -2,6 +2,8 @@
 #pragma once
 #include "StatDefault60.h"
 
+class IKVNodeView;
+
 class CStatDefault60List
 {
 public:
@@ -10,4 +12,6 @@ public:
 	StatDefault60 **m_pItems;
 
 	StatDefault60 *sub_101db6b0();	// grows by one slot and returns the (lazily created) item
+	void sub_101db7e0();	// frees every item and the array (stub 0x10010d7f)
+	char sub_101db630(IKVNodeView *pKV, void *pFilter);	// loads the items from the "Affects_Table" children of the node
 };
