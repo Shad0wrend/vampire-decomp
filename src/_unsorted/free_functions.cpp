@@ -71292,6 +71292,16 @@ void sub_101d7bf0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d7c10 size=0x10
+struct CUnknown101d7c10 { void * sub_101d7c10(); };
+void * CUnknown101d7c10::sub_101d7c10()
+{
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d7c50 size=0x25
 // TARGET: sub_101d7c50
 void __fastcall sub_101d7c50(int *pThis)
