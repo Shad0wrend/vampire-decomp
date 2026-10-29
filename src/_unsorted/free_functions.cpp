@@ -48709,6 +48709,17 @@ extern "C" GP *light_environment()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130b90 size=0x56
+#include "CLogicAuto.h"
+// TARGET: _logic_auto
+extern "C" CBaseEntity *logic_auto()
+{
+    CLogicAuto *p = new CLogicAuto;
+    p->vfunc106("logic_auto");
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130c90 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
