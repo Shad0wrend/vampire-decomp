@@ -10,5 +10,5 @@ public:
 
 	CUnknown101f35c0 *sub_101f35c0();	// constructor (stub 0x1000238d)
 	void sub_101f3690(int a, CUnknown101f3d80 *pOwner, int b, int c);	// stub 0x1000364d
-	void sub_101f37a0();	// stub 0x100045f2
+	bool sub_101f37a0();	// stub 0x100045f2
 };
