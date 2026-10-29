@@ -1480,6 +1480,7 @@
 0x100048ef func   ?vfunc103@CTriggerMultiple@@UAEXXZ CTriggerMultiple::vfunc103
 0x100048f4 func   ?GetPercentage@CUnknown10076da0TimingTag@@QBEMXZ CUnknown10076da0TimingTag::GetPercentage
 0x10004903 func   _vdisciplineprojectile vdisciplineprojectile
+0x1000490d func   ?sub_1015ad30@@YAHXZ sub_1015ad30
 0x10004912 func   ?sub_10200410@CVStatInfoList_t@@QAEXXZ CVStatInfoList_t::sub_10200410
 0x10004917 func   ?vfunc28@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHH@Z CTempEntsSystem::vfunc28
 0x10004926 func   ?vfunc376@CNPC_VMingXiao@@QAEHH@Z CNPC_VMingXiao::vfunc376

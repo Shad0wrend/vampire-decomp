@@ -52552,6 +52552,20 @@ int sub_1015acc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015ad30 size=0x1a
+namespace lifted {
+extern int g_10580bb8;
+extern int g_10580bbc;
+extern char g_10580bfc;
+}
+int sub_1015ad30()
+{
+    lifted::g_10580bbc = 5;
+    lifted::g_10580bb8 = (int)&lifted::g_10580bfc;
+    return (int)&lifted::g_10580bb8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015d680 size=0x37
 #include "CBasePlayer.h"
 #include "CEHandleGet.h"
