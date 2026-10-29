@@ -1,6 +1,23 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100fce00 size=0x41
+#include "CParamsParticle.h"
+
+extern char g_106b8540[];
+void sub_101cf7c0(const char *src, char *dst, int size);
+
+void CParamsParticle::vfunc104()
+{
+	char szName[260];
+	const char *pszName = m_pszParticleName;
+	if (!pszName)
+		pszName = g_106b8540;
+	sub_101cf7c0(pszName, szName, sizeof(szName));
+	engine->vfunc17(szName, 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fd530 size=0x1e
 #include "CParamsParticle.h"
 
