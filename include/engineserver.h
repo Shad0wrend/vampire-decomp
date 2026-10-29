@@ -54,7 +54,8 @@ public:
 	virtual void vfunc60();	// ServerExecute
 	virtual void vfunc61(void *pEdict, const char *pszFormat, ...);	// ClientCommand (variadic: cdecl, the caller pushes this and pops all)
 	virtual void vfunc62(int style, const char *pszPattern);	// LightStyle
-	virtual void vfunc63(); virtual void vfunc64();
+	virtual void vfunc63();
+	virtual void vfunc64(int bUsePAS, const float *pOrigin, int *pPlayerBits);	// Message_DetermineMulticastRecipients: the players that see / hear the origin as a bit mask
 	virtual void vfunc65(CRecipientFilter *pFilter, int msgType);	// UserMessageBegin
 	virtual void vfunc66();	// MessageEnd
 	virtual void vfunc67(int value);	// message write: a byte
