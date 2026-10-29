@@ -4087,6 +4087,7 @@
 0x1000a3df func   ?sub_101ec7c0@CUnknown101ec7c0@@QAE_NXZ CUnknown101ec7c0::sub_101ec7c0
 0x1000a3e4 func   ?sub_10403250@@YAHXZ sub_10403250
 0x1000a3e9 func   ?sub_10402fa0@@YAHXZ sub_10402fa0
+0x1000a3ee func   ?sub_102cc6c0@CAI_KeyedList@block_102cc6c0@@QAEXHM@Z block_102cc6c0::CAI_KeyedList::sub_102cc6c0
 0x1000a3f3 func   ??0CRestore@@QAE@PAX@Z CRestore::CRestore
 0x1000a402 func   ?sub_100aacd0@@YIHPAD@Z sub_100aacd0
 0x1000a40c func   ?sub_101fb180@@YAXH@Z sub_101fb180

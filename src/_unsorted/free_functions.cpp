@@ -111739,6 +111739,63 @@ void sub_102cc6a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cc6c0 size=0x4c
+namespace block_102cc6c0 {
+
+struct CAI_KeyedEntry
+{
+	int m_nKey;
+	float m_flTime;
+	void sub_102cc560(float flDelay);
+	void sub_102cc590(float flDelay);
+};
+
+void CAI_KeyedEntry::sub_102cc560(float flDelay)
+{
+	m_flTime = flDelay + gpGlobals->curtime;
+}
+
+void CAI_KeyedEntry::sub_102cc590(float flDelay)
+{
+	float t = flDelay + gpGlobals->curtime;
+	if (t < m_flTime)
+		m_flTime = t;
+}
+
+struct CAI_KeyedList
+{
+	CAI_KeyedEntry m_Entries[8];
+	int m_nCount;	// 0x40
+	void sub_102cc6c0(int key, float a);
+};
+
+}
+using namespace block_102cc6c0;
+
+void CAI_KeyedList::sub_102cc6c0(int key, float a)
+{
+	int n = m_nCount;
+	if (n < 8)
+	{
+		if (n != 0)
+		{
+			for (CAI_KeyedEntry *p = m_Entries; p < m_Entries + n; p++)
+			{
+				if (p->m_nKey == key)
+				{
+					p->sub_102cc590(a);
+					return;
+				}
+			}
+		}
+		CAI_KeyedEntry *pNew = &m_Entries[n];
+		pNew->m_nKey = key;
+		pNew->sub_102cc560(a);
+		m_nCount++;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cc7e0 size=0x8
 void __fastcall sub_102cc7e0(int *p) { p[16] = 0; }
 // END FUNCTION
