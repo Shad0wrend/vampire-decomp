@@ -30433,6 +30433,19 @@ char *sub_100c1870(SStudioHdr *hdr, int seq, SStudioHdr **ppOut, int count, int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c1e20 size=0x57
+struct SBone160 { char m_pad[0xa0]; };
+struct SBoneOwner { char m_pad0[0x58]; };
+void sub_10138630(void *pSrc, void *pOut);
+void sub_10138df0(void *pDst, void *pIn, int a);
+void sub_100c1e20(char *pOwner, int iSrc, int iDst, int a)
+{
+	char tmp[0x30];
+	sub_10138630(pOwner + iSrc * 0xa0 + *(int *)(pOwner + 0xf4) + 0x58, tmp);
+	sub_10138df0(pOwner + iDst * 0xa0 + *(int *)(pOwner + 0xf4) + 0x58, tmp, a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c2bd0 size=0xc7
 void sub_100c1f40(int a1, void *pB, void *pA, int a4, int a5, int a6, int a7);
 void sub_100c13a0(int a1, int a3, int a2, int a4, void *pA, void *pB, float flWeight, int a7, int a9, int a10);
