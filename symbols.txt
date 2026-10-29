@@ -4462,6 +4462,7 @@
 0x1000bd0c func   ?sub_1012cfb0@@YGHH@Z sub_1012cfb0
 0x1000bd16 func   ?sub_1028fb70@CUnknown1028fb70@@QAEXXZ CUnknown1028fb70::sub_1028fb70
 0x1000bd20 func   ?sub_10134310@CLogicCase@@QAEXPAUinputdata_t@@@Z CLogicCase::sub_10134310
+0x1000bd2f func   ?sub_102c2ab0@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_102c2ab0
 0x1000bd34 func   ?vfunc5@CResearchBook_HG_MELEE@@QAEPAV1@I@Z CResearchBook_HG_MELEE::vfunc5
 0x1000bd39 func   ?vfunc1@CVFeatList_t@@UAEMH@Z CVFeatList_t::vfunc1
 0x1000bd43 func   ?sub_10245660@@YAPAUCUnk10245660Node@@PBD@Z sub_10245660
