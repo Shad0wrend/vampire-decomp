@@ -73563,6 +73563,19 @@ char *CUnk101e09c0::sub_101e09c0(void *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e0be0 size=0x14
+struct CUnknown101e0be0 { void * sub_101e0be0(); };
+void * CUnknown101e0be0::sub_101e0be0()
+{
+    *(int *)((char *)this + 8) = 0;
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = 0;
+    *(char *)((char *)this + 0x18) = 1;
+    *(int *)((char *)this + 0x14) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e0c30 size=0xee
 #include "CUnknown101e0c30.h"
 
