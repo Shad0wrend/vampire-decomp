@@ -32,7 +32,7 @@ public:
 	virtual void vfunc30(); virtual void vfunc31(); virtual bool vfunc32(void *pEntity); virtual void vfunc33(); virtual bool vfunc34(int a);
 	virtual int vfunc35(int a);
 	virtual void vfunc36(); virtual void vfunc37(); virtual void vfunc38(); virtual void vfunc39(); virtual void vfunc40();
-	virtual void vfunc41();
+	virtual void vfunc41(CBasePlayer *pPlayer);
 	virtual void vfunc42(CBasePlayer *pPlayer);	// slot 42 override: CBaseEntity::vfunc42, registers the player with the user list at +0x74c, sub_102120c0, then slot 192 (the center) is handed to the player (sub_10178590), sub_1015ef40 / sub_1015ef60 and clears flag bit 1 (sub_101815b0(1)) of the player
 	void sub_100a5030(CBasePlayer *pPlayer);	// CBaseEntity::vfunc42 (stub 0x10010e60), called directly
 	char m_pad0004[0x8c - 4];
