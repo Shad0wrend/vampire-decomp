@@ -1709,6 +1709,7 @@
 0x10005092 func   ?sub_104106a0@CWeaponPhysCannon@@QAEXHD@Z CWeaponPhysCannon::sub_104106a0
 0x100050a1 func   ?sub_103d6520@CNPC_VWerewolf@@QAEPAXPAX@Z CNPC_VWerewolf::sub_103d6520
 0x100050b5 func   ?vfunc47@CMultiplayRules@@UAEDPAVCBaseEntity@@0@Z CMultiplayRules::vfunc47
+0x100050ba func   ?sub_1040bea0@@YAHXZ sub_1040bea0
 0x100050c4 func   ?sub_101cfe10@@YAXPAXHH@Z sub_101cfe10
 0x100050dd func   ?vfunc104@CInspectionNode@@QAEXXZ CInspectionNode::vfunc104
 0x100050e2 func   _item_p_research_mg_brawl item_p_research_mg_brawl
