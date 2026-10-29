@@ -27259,6 +27259,22 @@ void CBaseFlex::sub_100b5970()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b5d10 size=0x46
+#include "CBaseFlex.h"
+#include "CBaseAnimating.h"
+extern "C" int __cdecl strcmpi(const char *, const char *);
+// TARGET: CBaseFlex::sub_100b5d10
+int CBaseFlex::sub_100b5d10(const char *pszName)
+{
+	CBaseAnimating *pAnim = (CBaseAnimating *)this;
+	for (int i = 0; i < pAnim->sub_10094520(); i++) {
+		if (!strcmpi(pAnim->sub_100946b0(i), pszName))
+			return i;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b6510 size=0x7f
 extern "C" unsigned strlen(const char *);
 extern void (*g_109f3890)(char *dest, const char *src, int count);
