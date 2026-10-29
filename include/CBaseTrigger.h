@@ -10,6 +10,7 @@ class CBaseTrigger : public CBaseToggle
 public:
 	CBaseTrigger() : m_i564(-1) {}	// inlined into the constructors of every trigger class (the game's allocation size is 0x598)
 	void vfunc243(unsigned int flag);
+	virtual void vfunc113();	// slot 113 (Activate): looks the filter entity (name at +0x560) up and keeps its handle at +0x564 (-1 when not found), then CBaseEntity::vfunc113
 	virtual int vfunc124();	// slot 124 (debug text overlays): adds the line "State: Enabled" / "State: Disabled" when the debug bit 0 of the byte at +0x224 is set; returns the next free line
 	void vfunc174(CBaseEntity *pOther);	// slot 174 "CBaseTrigger::StartTouch"-like: when PassesTriggerFilters(pOther) the output at +0x568 fires (activator pOther) through stub 0x10010794
 	void vfunc176(CBaseEntity *pOther);	// "CBaseTrigger::EndTouch" (the base's slot 176, called directly by the trigger classes): the entity's EndTouch
