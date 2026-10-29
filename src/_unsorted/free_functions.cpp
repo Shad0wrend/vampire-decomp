@@ -113865,6 +113865,16 @@ extern char g_1093412c;
 void sub_102f99b0() { g_1093412c = 1; }
 // END FUNCTION
 
+// FUNCTION: 0x102f9c70 size=0x13
+namespace lifted {
+int sub_1000d7e7(int, int);
+}
+int sub_102f9c70(int a0)
+{
+    return lifted::sub_1000d7e7(a0, 0x43c00000);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102fa510 size=0xd1
 #include "CAI_Node.h"
 #include "CAI_Network.h"
