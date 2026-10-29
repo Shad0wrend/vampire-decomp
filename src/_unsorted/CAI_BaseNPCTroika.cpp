@@ -1805,6 +1805,16 @@ bool CAI_BaseNPCTroikaUnit54::sub_102b50b0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b5120 size=0x53
+void CAI_BaseNPCTroika::vfunc56(CBaseEntity *pEnt, int b, int c, int d, int e, int f, int g, int h)
+{
+    if (pEnt && pEnt->m_field200) {
+        if (pEnt == ((EHANDLE *)((char *)this + 0x1a94))->Get())
+            sub_10279b70(0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b5360 size=0x4b
 CBaseEntity *CAI_BaseNPCTroika::vfunc168()
 {
