@@ -51885,6 +51885,17 @@ void sub_1013cb80(const Vector &a, const Vector &b, const Vector &c, Vector &out
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013ccc0 size=0x54
+void sub_1013cb80(const Vector &p, const Vector &a, const Vector &b, Vector &out, int flags);
+// TARGET: sub_1013ccc0
+float __cdecl sub_1013ccc0(const Vector &p, const Vector &a, const Vector &b, int flags)
+{
+    Vector vClosest;
+    sub_1013cb80(p, a, b, vClosest, flags);
+    return (p - vClosest).LengthSqr();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013cf40 size=0x79
 float sub_10007090(const float *a, const float *b, const float *c, float *dir);
 
