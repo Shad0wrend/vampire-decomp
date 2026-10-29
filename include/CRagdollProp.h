@@ -14,7 +14,9 @@ struct CRagdollPropDamageInfo	// a CTakeDamageInfo (0x4c bytes), copied by value
 struct CRagdollPropSlot	// 0x18 byte element of the body array at +0x744
 {
     int m_pObject;	// the body's physics object
-    char m_pad04[0x14];
+    char m_pad04[4];
+    int m_n08;	// 0x08: -1 after a (re)initialisation
+    char m_pad0c[0xc];
 };
 
 class CRagdollProp : public CBaseEntity
