@@ -145747,6 +145747,29 @@ void COccultRegen::sub_103f9160(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f91d0 size=0x4f
+#include "COccultRegen.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseCombatCharacter.h"
+#include "CUnknown1033c340.h"
+
+struct CBloodAmountUnit { int sub_101e9290(void *pChar, int n); };
+extern CBloodAmountUnit g_10739d08;
+
+// TARGET: COccultRegen::sub_103f91d0
+void COccultRegen::sub_103f91d0()
+{
+	CBaseCombatCharacter *pChar = (CBaseCombatCharacter *)((CAI_BaseNPCTroika *)this)->sub_10252240();
+	if (pChar && m_nLevel918) {
+		do {
+			pChar->sub_10338cb0();
+			m_nLevel918--;
+			((CUnknown1033c340 *)pChar)->sub_1033c340(g_10739d08.sub_101e9290(pChar, 1));
+		} while (m_nLevel918);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f9480 size=0xb5
 #include "SendProp.h"
 
