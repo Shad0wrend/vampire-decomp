@@ -24,3 +24,14 @@ void CTEDecal::vfunc4(int a, int b)
 	engine->vfunc103(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10060780 size=0x6
+#include "CTEDecal.h"
+namespace lifted {
+extern char g_106c1c58;
+}
+ServerClass * CTEDecal::vfunc0()
+{
+    return (ServerClass *)((int)&lifted::g_106c1c58);
+}
+// END FUNCTION
