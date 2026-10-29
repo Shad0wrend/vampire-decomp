@@ -81830,6 +81830,31 @@ void __fastcall sub_10001807(char *p);
 void __fastcall sub_101f3070(char *p) { sub_10001807(p - *(int *)(p - 4)); }
 // END FUNCTION
 
+// FUNCTION: 0x101f35e0 size=0x4c
+struct N101f35e0 {
+	char m_pad[0x14];
+	char *m_p14;
+	char m_pad18[4];
+	int m_n1c;
+	N101f35e0 **m_pp20;
+	void sub_101f35e0();
+};
+void __fastcall sub_10001c3f(N101f35e0 *p);
+// TARGET: N101f35e0::sub_101f35e0
+void N101f35e0::sub_101f35e0()
+{
+	delete m_p14;
+	for (int i = 0; i < m_n1c; i++) {
+		N101f35e0 *p = m_pp20[i];
+		if (p) {
+			sub_10001c3f(p);
+			delete p;
+		}
+	}
+	delete m_pp20;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f3650 size=0x21
 // TARGET: sub_101f3650
 void __fastcall sub_101f3650(int *p)
