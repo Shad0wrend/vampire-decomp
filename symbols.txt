@@ -822,6 +822,7 @@
 0x10002ea5 func   ?sub_1013fcb0@CUtlVector96@@QAEXHH@Z CUtlVector96::sub_1013fcb0
 0x10002eaf func   ?sub_1018c4f0@@YGXH@Z sub_1018c4f0
 0x10002eb4 func   ?sub_101841c0@CUnknown101841c0@@QAEPAXH@Z CUnknown101841c0::sub_101841c0
+0x10002eb9 func   ?sub_10072db0@CUnknown1007bb30Dest@@QAEXPBD0@Z CUnknown1007bb30Dest::sub_10072db0
 0x10002ec8 func   ?ShiftElementsRight@?$CUtlVector@HV?$CUtlMemory@H@@@@QAEXHH@Z CUtlVector<int,CUtlMemory<int> >::ShiftElementsRight
 0x10002ec8 func   ?sub_10071ba0@UtlVec8@@QAEXHH@Z UtlVec8::sub_10071ba0
 0x10002ed2 func   ?sub_102d9ed0@CUnknown102d9ed0@@QAEXPBVVector@@0@Z CUnknown102d9ed0::sub_102d9ed0

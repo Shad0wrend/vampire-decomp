@@ -13296,6 +13296,21 @@ char * CUnknown10072d90::sub_10072d90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10072db0 size=0x46
+#include "CUnknown1007bb30.h"
+__declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+extern char g_106b8540[];
+void CUnknown1007bb30Dest::sub_10072db0(const char *a, const char *b)
+{
+	if (!a)
+		a = g_106b8540;
+	if (!b)
+		b = g_106b8540;
+	Q_strncpy(m_szFirst114, a, 0x28);
+	Q_strncpy(m_szSecond13c, b, 0x28);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10072e20 size=0x7
 struct CUnknown10072e20 { char * sub_10072e20(); };
 char * CUnknown10072e20::sub_10072e20()
