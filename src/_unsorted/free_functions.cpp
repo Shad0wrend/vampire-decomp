@@ -48797,6 +48797,19 @@ eof:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10137220 size=0x43
+#include <math.h>
+float Vector::sub_10137220()
+{
+	float radius = (float)sqrt(x * x + y * y + z * z);
+	float iradius = 1.0f / (radius + 1.192092896e-07f);
+	x *= iradius;
+	y *= iradius;
+	z *= iradius;
+	return radius;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10137290 size=0x41
 #include "Vector.h"
 #include <math.h>
