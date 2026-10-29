@@ -21,6 +21,7 @@ public:
 			Plat_Free(m_pBuffer);
 	}
 
+	void sub_1006bde0(char *pBuffer, int nSize, bool bText);	// frees an owned buffer, then wraps the external one (grow -1), cursors cleared, text flag set from bText
 	void sub_1006bf40();	// skips the white space at the read cursor of a text buffer (stub 0x1000c35b)
 	void sub_1006bfb0(char *pString);	// reads one string: to the terminating null of a binary buffer, or to the next white space of a text buffer
 	int sub_1006c210(const char *pFmt, char *list);	// \"CUtlBuffer::VaScanf\": text buffers only; matches pFmt (space = skip white space, %c %d %i %x %u %f %s) against the data and stores through the va_list, returns the number of conversions
