@@ -113476,6 +113476,20 @@ void CUtlVector36::sub_102e2b60(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e2d40 size=0x1a
+namespace lifted {
+extern int g_1060e900;
+extern int g_1060e904;
+extern char g_10933f14;
+}
+int sub_102e2d40()
+{
+    lifted::g_1060e904 = 1;
+    lifted::g_1060e900 = (int)&lifted::g_10933f14;
+    return (int)&lifted::g_1060e900;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e30d0 size=0x28
 #include "CTraceFilterNav.h"
 
