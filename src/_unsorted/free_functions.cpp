@@ -39743,6 +39743,25 @@ CEnt *CFinder::sub_100f83b0(CEnt *p, int n)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f8420 size=0x4d
+#include "CGlobalEntityList.h"
+#include "CAI_BaseNPCTroika.h"
+struct S100f8420Ent { char m_pad[0x98]; CAI_BaseNPCTroika *m_pNpc98; };
+struct S100f8420Npc { char m_pad[0x1480]; char m_b1480; };
+// TARGET: CGlobalEntityList::sub_100f8420
+CBaseEntity *CGlobalEntityList::sub_100f8420(CBaseEntity *pCurrent)
+{
+	CBaseEntity *pEnt = sub_100f7060(pCurrent);
+	while (pEnt) {
+		CAI_BaseNPCTroika *pNpc = ((S100f8420Ent *)pEnt)->m_pNpc98;
+		if (pNpc && ((S100f8420Npc *)pNpc)->m_b1480 && !pNpc->sub_100b5190())
+			return pEnt;
+		pEnt = sub_100f7060(pEnt);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f8490 size=0xbf
 #include "CGlobalEntityList.h"
 #include "Vector.h"
