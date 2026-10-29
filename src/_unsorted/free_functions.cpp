@@ -85888,6 +85888,28 @@ void __stdcall sub_101f9a80(CBasePlayer *pChar, const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f9af0 size=0x53
+#include "CBaseCombatCharacter.h"
+#include "CGameRules.h"
+extern CGameRules *g_1070ba0c;
+void __fastcall sub_1024f7b0(void *pWeapon);
+void __stdcall sub_101f9af0(CBaseCombatCharacter *pChar, const char *pszClassname)
+{
+	if (pChar) {
+		void *pWeapon = pChar->sub_10335950(pszClassname);
+		if (pWeapon) {
+			bool bActive = false;
+			if (pChar->sub_1032e7b0() == pWeapon)
+				bActive = true;
+			pChar->sub_10335470(pWeapon);
+			sub_1024f7b0(pWeapon);
+			if (bActive)
+				g_1070ba0c->vfunc20(pChar, 0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f9c70 size=0xb6
 #include "CUnknown101f9c70.h"
 struct TraceEnt { const char *a; const void *b; const void *c; };
