@@ -43471,6 +43471,20 @@ extern "C" GP *window_pane()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010f5c0 size=0x1a
+namespace lifted {
+extern int g_1056f060;
+extern int g_1056f064;
+extern char g_1056f0a4;
+}
+int sub_1010f5c0()
+{
+    lifted::g_1056f064 = 2;
+    lifted::g_1056f060 = (int)&lifted::g_1056f0a4;
+    return (int)&lifted::g_1056f060;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f9f0 size=0x6b
 #include "CBreakableSurface.h"
 void *sub_100aa720(unsigned int);
