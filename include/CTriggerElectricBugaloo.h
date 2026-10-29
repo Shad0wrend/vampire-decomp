@@ -4,6 +4,7 @@
 class CTriggerElectricBugaloo
 {
 public:
+    void *vfunc5(unsigned int flags);    // slot 5: scalar deleting destructor (member dtors at +0x580/+0x568/+0x4bc/+0x4a4, base dtor, delete when flags & 1)
     bool vfunc32(void *pOther);    // slot 32: same as CTriggerBombSite::vfunc32, with the player's back-pointer handle at +0x1cbc
     void vfunc39(void *pOther);    // slot 39: CBaseEntity::vfunc39 (stub 0x10015262) on pOther's entity, then CAI_BaseNPCTroika::sub_10181580(1) on it after the entity's own sub_10011f68, then the global at 0x1070b228's word at +0xc is stored at +0x598
     void sub_100a4fe0(void *pOther);    // CBaseEntity::vfunc39 (stub 0x10015262), called directly
