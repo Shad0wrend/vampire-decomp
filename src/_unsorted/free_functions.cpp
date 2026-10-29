@@ -134297,6 +134297,20 @@ CNPC_VTzimisceHeadClaw *CNPC_VTzimisceHeadClaw::sub_103c1220()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c2900 size=0x1a
+namespace lifted {
+extern int g_1065d6ac;
+extern int g_1065d6b0;
+extern char g_1065d6f4;
+}
+int sub_103c2900()
+{
+    lifted::g_1065d6b0 = 2;
+    lifted::g_1065d6ac = (int)&lifted::g_1065d6f4;
+    return (int)&lifted::g_1065d6ac;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c29b0 size=0x33
 void sub_10014d7b();
 void sub_1000dfbc();
