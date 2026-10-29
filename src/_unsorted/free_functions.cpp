@@ -82324,6 +82324,30 @@ bool CUnknown101f27b0::sub_101f27b0(int a, bool b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f2830 size=0x4e
+#include <stdlib.h>
+#include "VKeyValues.h"
+// TARGET: VKeyValuesInterface::sub_101f2830
+float VKeyValuesInterface::sub_101f2830(const char *pszName, float flDefault)
+{
+	VKeyValues *pKey = (VKeyValues *)((char *)this - 0x30);
+	if (pszName)
+		pKey = pKey->sub_100122c4(pszName);
+	if (pKey) {
+		switch (pKey->m_nType10) {
+		case 1:
+			return (float)atof(pKey->m_pszValue0c);
+		case 2:
+			return (float)pKey->m_nValue08;
+		case 3:
+			return *(float *)&pKey->m_nValue08;
+		}
+		return 0.0f;
+	}
+	return flDefault;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2ae0 size=0xe
 void sub_101f3030(void* p);
 
