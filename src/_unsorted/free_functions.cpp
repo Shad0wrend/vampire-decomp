@@ -106133,6 +106133,17 @@ int CUnknown102cabd0::sub_102cabd0(CUnknown1028ebc0 *pNPC, void **pOut, int nMax
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cadb0 size=0x10
+namespace lifted {
+extern char g_109203cc;
+struct C10001f05 { int sub_10001f05(int); };
+}
+int sub_102cadb0(int a0)
+{
+    return ((lifted::C10001f05 *)((int)&lifted::g_109203cc))->sub_10001f05(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cc520 size=0x9
 CUnknown102cc520 *CUnknown102cc520::sub_102cc520()
 {
