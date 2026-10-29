@@ -1338,6 +1338,29 @@ char CAI_BaseNPCTroika::vfunc590()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029fb70 size=0x44
+#include "CAI_BaseNPCTroika.h"
+
+struct CUnknown10924a6c
+{
+	virtual void vfunc0();
+	virtual void vfunc1();
+};
+extern CUnknown10924a6c *g_10924a6c;
+
+bool CAI_BaseNPCTroika::vfunc317(int unused)
+{
+	g_10924a6c->vfunc1();
+	sub_100041b0(10);
+	if (sub_10269c70(12)) {
+		g_10924a6c->vfunc1();
+		sub_100041b0(12);
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029fdb0 size=0x5e
 #include "CAI_BaseNPCTroika.h"
 #include "globalvars.h"
