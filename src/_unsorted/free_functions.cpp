@@ -106966,6 +106966,27 @@ int CUnknown102a0b90::sub_102a0b90(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a0cb0 size=0x46
+#include "CAI_BaseNPCTroika.h"
+struct CDevFlagObj102a0cb0 {
+	virtual void v0();
+	virtual void vfunc1();
+};
+extern CDevFlagObj102a0cb0 *g_10924a6c;
+
+bool CAI_BaseNPCTroika::sub_102a0cb0(CAI_BaseNPCTroika *pOther)
+{
+	if (pOther && pOther != this) {
+		g_10924a6c->vfunc1();
+		sub_10269a20(0x10);
+		g_10924a6c->vfunc1();
+		pOther->sub_10269a20(0x10);
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a0eb0 size=0xb
 void __fastcall sub_100037e2(void *);
 void __fastcall sub_102a0eb0(char *self)
