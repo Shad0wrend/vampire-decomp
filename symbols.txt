@@ -4283,6 +4283,7 @@
 0x1000b5c3 func   ?ShiftElementsRight@?$CUtlVector@UGLOBAL_EMAIL@@V?$CUtlMemory@UGLOBAL_EMAIL@@@@@@QAEXHH@Z CUtlVector<GLOBAL_EMAIL,CUtlMemory<GLOBAL_EMAIL> >::ShiftElementsRight
 0x1000b5d7 func   ?sub_101c2a70@CUnknown101c2a90@@QAEMXZ CUnknown101c2a90::sub_101c2a70
 0x1000b5e1 func   ?sub_100be020@CUnknown100be020@@QAEHXZ CUnknown100be020::sub_100be020
+0x1000b5e6 func   ?sub_101b4a60@@YGHH@Z sub_101b4a60
 0x1000b5eb func   ?sub_1011a540@@YADXZ sub_1011a540
 0x1000b5f0 func   ?vfunc4@CCollisionProperty@@UAEXXZ CCollisionProperty::vfunc4
 0x1000b5f5 func   _item_g_idol_dragon item_g_idol_dragon
