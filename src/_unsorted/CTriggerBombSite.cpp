@@ -103,6 +103,25 @@ void CTriggerBombSite::vfunc39(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10211410 size=0x46
+#include "CTriggerBombSite.h"
+#include "CBasePlayer.h"
+typedef void (CTriggerBombSite::*PFN_Update)(CBasePlayer *pPlayer, CBombState newState);
+
+void CTriggerBombSite::vfunc42(CBasePlayer *pPlayer)
+{
+	pPlayer->sub_1015ef60();
+	pPlayer->sub_101815b0(1);
+	sub_100a5030(pPlayer);
+	CBombState state;
+	state.m_c = 0x22;
+	if (m_nProgress >= 100)
+		state.m_c = 0x62;
+	PFN_Update pfn = (PFN_Update)&CTriggerBombSite::sub_10211550;
+	(this->*pfn)(pPlayer, state);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10216f70 size=0x62
 #include "CTriggerBombSite.h"
 

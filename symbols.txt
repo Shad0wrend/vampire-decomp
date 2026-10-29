@@ -3978,6 +3978,7 @@
 0x1000a27c func   ?sub_10335de0@CBaseCombatCharacter@@QAEXPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_10335de0
 0x1000a281 func   ?sub_1021e3e0@@YAXPAUCBlock4k@@PBU1@@Z sub_1021e3e0
 0x1000a286 func   ?sub_101fb470@CVDmg_t@@QAEPADXZ CVDmg_t::sub_101fb470
+0x1000a28b func   ?vfunc42@CTriggerBombSite@@QAEXPAVCBasePlayer@@@Z CTriggerBombSite::vfunc42
 0x1000a290 func   ?vfunc2@CTEBeamRingPoint@@UAEPAV1@I@Z CTEBeamRingPoint::vfunc2
 0x1000a295 func   ?vfunc438@CNPC_VPedestrian@@QAEHXZ CNPC_VPedestrian::vfunc438
 0x1000a29a func   ?sub_10427790@CUnknown10427700@@QAEXPBDHH000@Z CUnknown10427700::sub_10427790
