@@ -76846,6 +76846,27 @@ CRecListUnit *CRecListUnit::sub_101dcb80(const CRecListUnit *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dcc10 size=0x4e
+#include "CUnknown101dcc80.h"
+struct CItemVec {
+	int m_nGrow;
+	int m_nAlloc;
+	int m_nCount;
+	void **m_pData;
+	void sub_101dc410(const CItemVec *pOther);
+};
+struct CRecListUnit : CUnknown101dcc80 {
+	CItemVec m_Items;	// 0x0c
+	void sub_101dcc10(const CRecListUnit *pOther);
+};
+void CRecListUnit::sub_101dcc10(const CRecListUnit *pOther)
+{
+	m_Items.sub_101dc410(&pOther->m_Items);
+	for (int i = 0; i < pOther->m_nCount; i++)
+		*sub_101dcc80() = *pOther->m_ppRecords[i];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dcc80 size=0xe6
 #include "CUnknown101dcc80.h"
 
