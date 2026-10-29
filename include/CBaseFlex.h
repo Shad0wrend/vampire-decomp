@@ -57,7 +57,6 @@ class CBaseFlex : public CBaseEntity
 public:
 	int sub_10094520();	// CBaseAnimating member (stub 0x10012530): the number of flex controllers
 	CFlexStudioHdr *sub_100952d0(int a);	// CBaseAnimating member (stub 0x10013d8b): the model's studio header
-	void vfunc279_Set(int nController, float flValue);
 	void vfunc105(const char *pszModel);	// slot 105 override: CBaseAnimating::vfunc105(pszModel), then slot 279(i, 0) once for each flex controller (sub_10094520 counts them, re-read after each call)
 	void vfunc279(int nController, int nValue);	// slot 279 (CBaseAnimating's flex controller setter, called through the vtable)
 	int sub_100b5d10(const char *pszName);	// "CBaseFlex::FindFlexController": the index of the flex controller whose name equals pszName (case-insensitive), 0 when none
