@@ -81,7 +81,7 @@ public:
 	bool sub_10312230();	// whether the time at +0x4c lies in the future (stub 0x10006767)
 	void sub_10312c50();	// stub 0x1000be51
 	void sub_10312c20(int a);	// stub 0x10004502
-	void sub_10312aa0(const char *pszName, int a);	// stub 0x10008b1b: the '~' sentence names (scripted speech) are handed to it
+	void sub_10312aa0(const char *pszName, CGlobalEntityList_Ent *pListener);	// stub 0x10008b1b: the '~' sentence names (scripted speech) are handed to it
 	int sub_10311b90();	// the sound level of a sentence: the base level (+0x50) plus a random 0..3
 	int sub_10311f50(const char *pszName, float flDelay, float flVolume, int nSoundLevel, int b);	// starts the named sentence, -1 when it cannot (stub 0x10005745)
 };
