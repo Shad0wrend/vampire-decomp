@@ -39993,6 +39993,20 @@ int sub_100fca30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fcd30 size=0x1a
+namespace lifted {
+extern int g_10566f60;
+extern int g_10566f64;
+extern char g_10566fa4;
+}
+int sub_100fcd30()
+{
+    lifted::g_10566f64 = 3;
+    lifted::g_10566f60 = (int)&lifted::g_10566fa4;
+    return (int)&lifted::g_10566f60;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fce70 size=0x133
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
