@@ -40,6 +40,32 @@ CBeam *CBeam::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100badb0 size=0x53
+#include "CBeam.h"
+
+struct CModelInfoBeam {
+	virtual void s0(); virtual void s1();
+	virtual const void *GetModel(int modelindex);
+	virtual void s3(); virtual void s4(); virtual void s5();
+	virtual int GetModelType(const void *model);
+	virtual void s7(); virtual void s8(); virtual void s9(); virtual void s10(); virtual void s11();
+	virtual int GetModelIndex(const char *name);
+};
+extern CModelInfoBeam *g_1070b250;
+extern void (*g_109f3628)(const char *, ...);
+void sub_101cf4a0(CBaseEntity *pEnt, const char *pszName);
+
+// TARGET: CBeam::vfunc105
+void CBeam::vfunc105(const char *pszModelName)
+{
+	int index = g_1070b250->GetModelIndex(pszModelName);
+	const void *pModel = g_1070b250->GetModel(index);
+	if (pModel && g_1070b250->GetModelType(pModel) != 2)
+		g_109f3628("Setting CBeam to non-sprite model %s\n", pszModelName);
+	sub_101cf4a0(this, pszModelName);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bae30 size=0x97
 #include "CBeam.h"
 #include "CCollisionProperty.h"
