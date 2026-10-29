@@ -275,6 +275,20 @@ extern "C" GP *phys_torque()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100283c0 size=0x1a
+namespace lifted {
+extern int g_10537108;
+extern int g_1053710c;
+extern char g_1053714c;
+}
+int sub_100283c0()
+{
+    lifted::g_1053710c = 8;
+    lifted::g_10537108 = (int)&lifted::g_1053714c;
+    return (int)&lifted::g_10537108;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10028a60 size=0x28
 #include <math.h>
 
