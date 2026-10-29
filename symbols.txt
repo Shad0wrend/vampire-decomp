@@ -6165,6 +6165,7 @@
 0x1000ff1f func   ?CopyConstruct@@YAXPAPAUCRandomSpawnFactory@@ABQAU1@@Z CopyConstruct
 0x1000ff1f func   ?sub_101c4460@@YAXPAHPBH@Z sub_101c4460
 0x1000ff24 func   ?sub_10231f40@CVGuiScreen@@QAEXPBD@Z CVGuiScreen::sub_10231f40
+0x1000ff3d func   ?sub_100d7b30@@YAXXZ sub_100d7b30
 0x1000ff4c func   ?sub_100e9ff0@CDialogDependency@@QAE_NHH@Z CDialogDependency::sub_100e9ff0
 0x1000ff51 func   ?Grow@?$CUtlMemory@H@@QAEXH@Z CUtlMemory<int>::Grow
 0x1000ff51 func   ?sub_100eb280@UtlMem2@@QAEXH@Z UtlMem2::sub_100eb280

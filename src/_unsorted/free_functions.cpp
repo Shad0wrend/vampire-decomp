@@ -33003,6 +33003,21 @@ void sub_100d7400()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d7b30 size=0x42
+struct SView { char pad[0xa8]; int m_a8; };
+struct SObj { void sub_1021ebc0(const char *s); };
+extern SObj g_1074f898;
+SView *sub_101193b0();
+void sub_100d7b30()
+{
+    SView *p = sub_101193b0();
+    if (p && p->m_a8) {
+        if (engine->vfunc85() == 2)
+            g_1074f898.sub_1021ebc0((const char *)engine->vfunc84(1));
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d7c40 size=0xea
 #include "ScopeTrace.h"
 
