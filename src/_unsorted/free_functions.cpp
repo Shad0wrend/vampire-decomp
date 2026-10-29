@@ -127462,6 +127462,17 @@ void CAI_BaseNPC::sub_10357110(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10357150 size=0x1b
+namespace lifted {
+struct C10010794 { int sub_10010794(int, int, int); };
+}
+struct CUnknown10357150 { int sub_10357150(int); };
+int CUnknown10357150::sub_10357150(int a0)
+{
+    return ((lifted::C10010794 *)(this + 0x5f48))->sub_10010794(*(int *)((char *)a0), *(int *)((char *)a0 + 4), 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10357410 size=0x1a
 namespace lifted {
 extern int g_10628928;
