@@ -9088,6 +9088,7 @@
 0x1043e780 func   ?_strcmpi@@YAHPBD0@Z _strcmpi
 0x1043e780 func   __strcmpi _strcmpi
 0x1043e780 func   __stricmp _stricmp
+0x1043e780 func   _strcmpi strcmpi
 0x1043e80c func   __itoa _itoa
 0x1043e895 func   __ltoa _ltoa
 0x1043e8bf func   __ultoa _ultoa
