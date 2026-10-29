@@ -128751,6 +128751,20 @@ char sub_103684a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10369d50 size=0x1a
+namespace lifted {
+extern int g_1062f928;
+extern int g_1062f92c;
+extern char g_1062f96c;
+}
+int sub_10369d50()
+{
+    lifted::g_1062f92c = 1;
+    lifted::g_1062f928 = (int)&lifted::g_1062f96c;
+    return (int)&lifted::g_1062f928;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10369d80 size=0x43
 #include "CNPC_VCameraSecurity.h"
 void *sub_100aa720(int size);
