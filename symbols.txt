@@ -3184,6 +3184,7 @@
 0x100084bd func   ?vfunc619@CNPC_VAndreiBlood@@QAEXH@Z CNPC_VAndreiBlood::vfunc619
 0x100084d6 func   ?vfunc326@CWeaponThrown_Grenade_Frag@@QAEXXZ CWeaponThrown_Grenade_Frag::vfunc326
 0x100084db func   ?sub_102ef0e0@@YIDPAXHPAUInfo102ef0e0@@MPAH@Z sub_102ef0e0
+0x100084e0 func   ?sub_101b2100@@YIPBDPAUSRange101b2100@@@Z sub_101b2100
 0x100084ea func   ?sub_10236400@@YAHXZ sub_10236400
 0x100084f4 func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@UUnreachableEnt_t@@V?$CUtlMemory@UUnreachableEnt_t@@@@@@$08@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<UnreachableEnt_t,CUtlMemory<UnreachableEnt_t> >,9>::vfunc3
 0x100084f9 func   ?sub_100f0c00@CBaseDoor@@QAEDD@Z CBaseDoor::sub_100f0c00
