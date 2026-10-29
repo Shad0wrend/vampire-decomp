@@ -92755,6 +92755,18 @@ void sub_10237f90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10238320 size=0x12
+namespace lifted {
+extern int g_1088aee4;
+int __stdcall sub_10010ab9(int);
+}
+int sub_10238320()
+{
+    lifted::g_1088aee4 = 0;
+    return lifted::sub_10010ab9(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10238380 size=0x12
 extern int g_1088aee4;
 void __stdcall sub_102383b0(int a);

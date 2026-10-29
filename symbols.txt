@@ -1467,6 +1467,7 @@
 0x1000498f func   ?sub_101d4ca0@@YAXPAIPBD@Z sub_101d4ca0
 0x10004994 func   ?sub_102cadb0@@YAHH@Z sub_102cadb0
 0x100049a3 func   ?vfunc440@CNPC_VSheriffMan@@QAEHH@Z CNPC_VSheriffMan::vfunc440
+0x100049ad func   ?sub_10238320@@YAHXZ sub_10238320
 0x100049b2 func   ?sub_10084b40@@YAMPAVCBaseEntity@@PBDPAI@Z sub_10084b40
 0x100049b7 func   ?sub_102f2fc0@CUnknown102f2fc0@@QAEMXZ CUnknown102f2fc0::sub_102f2fc0
 0x100049c1 func   ?sub_100b7c00@@YAHXZ sub_100b7c00
