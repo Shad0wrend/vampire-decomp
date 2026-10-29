@@ -126537,6 +126537,20 @@ extern "C" CBaseEntity *npc_maker_fleshpile()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034be20 size=0x1a
+namespace lifted {
+extern int g_106250f0;
+extern int g_106250f4;
+extern char g_10625134;
+}
+int sub_1034be20()
+{
+    lifted::g_106250f4 = 1;
+    lifted::g_106250f0 = (int)&lifted::g_10625134;
+    return (int)&lifted::g_106250f0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034c980 size=0x43
 #include "CNPCMaker_Zombie.h"
 void *sub_100aa720(int size);
