@@ -44624,6 +44624,16 @@ void __stdcall sub_10112390(int a0, int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101123b0 size=0x4f
+#include "CBreakableSurface.h"
+bool CBreakableSurface::sub_101123b0(int nCol, int nRow)
+{
+	if (nCol >= 0 && nCol < m_nCols49c && nRow >= 0 && nRow < m_nRows4a0)
+		return m_aflPanes[nCol][nRow] == -1.0f;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10112420 size=0x36
 struct CUnknown10112420
 {
