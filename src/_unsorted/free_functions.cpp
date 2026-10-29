@@ -113689,6 +113689,18 @@ void S::sub_102c33a0(inputdata_t *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c33f0 size=0x57
+#include "CAI_BaseNPCTroika.h"
+#include "inputdata_t.h"
+void CAI_BaseNPCTroika::sub_102c33f0(inputdata_t *pInput)
+{
+    const char *psz = pInput->value.String();
+    if (psz && *psz != '-')
+        sub_102ae7f0(sub_102c47e0(psz, ""));
+    m_flags14bc |= 0x82000000;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c3470 size=0x2b
 struct CVariantArg102c3470
 {
