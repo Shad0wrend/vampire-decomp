@@ -31171,6 +31171,20 @@ void CCameraTrack::sub_100cc360()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ccf60 size=0x1a
+namespace lifted {
+extern int g_1055da88;
+extern int g_1055da8c;
+extern char g_1055dacc;
+}
+int sub_100ccf60()
+{
+    lifted::g_1055da8c = 7;
+    lifted::g_1055da88 = (int)&lifted::g_1055dacc;
+    return (int)&lifted::g_1055da88;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ccf90 size=0x186
 #include "CEventAction.h"
 
