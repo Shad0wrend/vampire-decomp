@@ -66592,6 +66592,20 @@ int *sub_101bb7e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bb960 size=0x1a
+namespace lifted {
+extern int g_1059a7b4;
+extern int g_1059a7b8;
+extern char g_1059a7fc;
+}
+int sub_101bb960()
+{
+    lifted::g_1059a7b8 = 0xc;
+    lifted::g_1059a7b4 = (int)&lifted::g_1059a7fc;
+    return (int)&lifted::g_1059a7b4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bbcb0 size=0x3
 struct CUnknown101bbcb0 { float sub_101bbcb0(); };
 float CUnknown101bbcb0::sub_101bbcb0()
