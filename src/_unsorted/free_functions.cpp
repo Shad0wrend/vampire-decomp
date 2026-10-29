@@ -145302,6 +145302,21 @@ int sub_1042c0a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042c260 size=0x17
+namespace lifted {
+extern char g_10516c64;
+extern int g_109eed68;
+}
+struct CUnknown1042c260 { void * sub_1042c260(); };
+void * CUnknown1042c260::sub_1042c260()
+{
+    *(int *)this = (int)&lifted::g_10516c64;
+    *(int *)((char *)this + 4) = lifted::g_109eed68;
+    lifted::g_109eed68 = (int)this;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042c310 size=0xcb
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 extern void *(__cdecl *g_109f3634)(int);
