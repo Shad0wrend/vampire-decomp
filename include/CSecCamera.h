@@ -20,7 +20,6 @@ public:
 	int sub_1008f7b0(const char *pszSequence);	// CBaseAnimating::LookupSequence (stub 0x1000e057), called directly
 	void sub_10090950();	// CBaseAnimating member (stub 0x100117b1), called directly
 	void sub_100963d0();	// CBaseAnimating member (stub 0x100024b9), called directly
-	int m_nSequence6f0Dummy() const { return 0; }
 	void vfunc113();	// slot 113: CBreakableProp::vfunc113 (0x10004dbd), then the think (sub_1020c2a0) set +0.0 s later, the nothing-else timer at +0x7a0 (1020c250)
 	void vfunc133();	// slot 133: the think timer and the sound: sub_1020c890, sub_10007725, then the global 0x1070b228's +0xc as the next state time at +0x7a0, then sub_1020c3d0
 	void sub_10007725();	// the member called by vfunc133 after sub_1020c890 (stub 0x10007725)
