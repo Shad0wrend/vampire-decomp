@@ -27,7 +27,7 @@ public:
 	int m_nFeatBonus;	// 0x10: the value of the feat the block names (kind 4) for the first participant, 0 otherwise
 	int m_iFirst;	// 0x14: engine index of the first participant (0 for none)
 	int m_iSecond;	// 0x18: engine index of the second participant (0 for none)
-	CUnknown101d88b0_Block m_block;	// 0x1c
+	CVDmgBlock16_t m_block;	// 0x1c
 	int m_field2c;	// 0x2c
 	int m_field30;	// 0x30
 	int m_field34;	// 0x34
