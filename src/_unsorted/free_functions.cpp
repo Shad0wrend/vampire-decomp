@@ -151790,6 +151790,19 @@ void CUnknown10427700::sub_10427790(const char *name, int a, int b, const char *
 }
 // END FUNCTION
 
+// FUNCTION: 0x104278d0 size=0x4d
+#include "CUnknown10427700.h"
+void CUnknown10427700::sub_104278d0(const char *name, int a, int b, int plrDmg, int npcDmg, int maxCarry)
+{
+    if (sub_10427700(name, a, b)) {
+        m_entries[m_nEntries].m_plrDmg = plrDmg;
+        m_entries[m_nEntries].m_npcDmg = npcDmg;
+        m_entries[m_nEntries].m_maxCarry = maxCarry;
+        m_nEntries++;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10427a30 size=0x22
 // TARGET: sub_10427a30
 extern "C" void __declspec(dllimport) Msg(const char *pszFormat, ...);
