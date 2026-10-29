@@ -1106,6 +1106,7 @@
 0x1000380a func   ?sub_102dcd30@CUtlVector4@@QAEHHPBH@Z CUtlVector4::sub_102dcd30
 0x10003814 func   ?sub_10239d80@CWeaponRanged@@QAEXXZ CWeaponRanged::sub_10239d80
 0x1000382d func   ?vfunc341@CItemKeyGeneric@@QAEXPAVCBaseCombatCharacter@@@Z CItemKeyGeneric::vfunc341
+0x10003832 func   ?vfunc25@CGameMovement@@UAEXXZ CGameMovement::vfunc25
 0x10003837 func   ?sub_1010e620@CBreakable@@QAEXXZ CBreakable::sub_1010e620
 0x10003841 func   ?vfunc103@CNPC_Crow@@QAEXXZ CNPC_Crow::vfunc103
 0x10003850 func   ?vfunc500@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc500

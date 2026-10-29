@@ -436,3 +436,20 @@ float CGameMovement::vfunc6(const QAngle &angles, const Vector &vec, float scale
 	return s * scale;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10126f60 size=0x4f
+#include "CGameMovement.h"
+#include "CBaseEntity.h"
+struct S10126f60Move { char pad[0x2c]; float x, y, z; };
+void CGameMovement::vfunc25()
+{
+	if (!m_bDc) {
+		if (((CBaseEntity *)m_pMove)->sub_100b3700() & 2) {
+			((S10126f60Move *)m_pPlayer)->x *= 0.33333334f;
+			((S10126f60Move *)m_pPlayer)->y *= 0.33333334f;
+			((S10126f60Move *)m_pPlayer)->z *= 0.33333334f;
+			m_bDc = 1;
+		}
+	}
+}
+// END FUNCTION
