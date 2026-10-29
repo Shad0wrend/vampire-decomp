@@ -12,6 +12,20 @@ datamap_t * CSun::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c24b0 size=0x57
+#include "CSun.h"
+#include "CUnknown101466e0.h"
+
+CSun::CSun() : CBaseEntity(0)
+{
+	m_vecDir.Init(0.0f, 0.0f, 1.0f);
+	CUnknown101466e0 *p = (CUnknown101466e0 *)((char *)this + 0x1b0);
+	p->sub_101466e0(1);
+	*(int *)((char *)this + 0x468) = 1;
+	*(unsigned int *)((char *)this + 0x268) |= 0x80;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2530 size=0x1e
 #include "CSun.h"
 
