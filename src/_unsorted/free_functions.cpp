@@ -67766,6 +67766,20 @@ extern "C" CBaseEntity *env_sun()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2480 size=0x1a
+namespace lifted {
+extern int g_1059c5b0;
+extern int g_1059c5b4;
+extern char g_1059c5f4;
+}
+int sub_101c2480()
+{
+    lifted::g_1059c5b4 = 8;
+    lifted::g_1059c5b0 = (int)&lifted::g_1059c5f4;
+    return (int)&lifted::g_1059c5b0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2690 size=0x22
 // TARGET: CUnknown101c2770::sub_101c2690
 #include "CUnknown101c2770.h"
