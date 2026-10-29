@@ -9306,6 +9306,7 @@
 0x10015b4f func   ?sub_102e9a00@CUnknown102e9a00@@QAE_NPAX@Z CUnknown102e9a00::sub_102e9a00
 0x10015b54 func   ?sub_102c68e0@CUnknown102c68e0@@QAEPAHH@Z CUnknown102c68e0::sub_102c68e0
 0x10015b59 func   ?sub_100ecc10@CUnknown100ecc10@@QAEPADH@Z CUnknown100ecc10::sub_100ecc10
+0x10015b63 func   ?EnsureCapacity@?$CUtlMemory@UElem118@@@@QAEXH@Z CUtlMemory<Elem118>::EnsureCapacity
 0x10015b68 func   ?sub_101c0b10@@YIXPAVCBaseEntity@@@Z sub_101c0b10
 0x10015b6d func   ?vfunc0@CTETParticleAttached@@UAEPAUServerClass@@XZ CTETParticleAttached::vfunc0
 0x10015b72 func   ?sub_102c6a00@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_102c6a00
