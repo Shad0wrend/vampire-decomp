@@ -59037,6 +59037,20 @@ extern "C" GP *prop_dynamic_ornament()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10190be0 size=0x1a
+namespace lifted {
+extern int g_1058d75c;
+extern int g_1058d760;
+extern char g_1058d7a4;
+}
+int sub_10190be0()
+{
+    lifted::g_1058d760 = 4;
+    lifted::g_1058d75c = (int)&lifted::g_1058d7a4;
+    return (int)&lifted::g_1058d75c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10190d80 size=0x72
 #include "SendProp.h"
 
