@@ -2302,3 +2302,18 @@ int CAI_BaseNPCTroika::vfunc293()
 	return ent == 0 ? 0 : ent->field9c;
 }
 // END FUNCTION
+
+// FUNCTION: 0x102c5500 size=0x45
+#include "CAI_BaseNPCTroika.h"
+void CAI_BaseNPCTroika::vfunc419()
+{
+	int pWeapon = sub_10007e19();
+	if (pWeapon) {
+		m_f5bbc = sub_1000cabd(pWeapon);
+		m_f5bc0 = sub_10014655(pWeapon);
+	} else {
+		m_f5bbc = 0.3f;
+		m_f5bc0 = 0.5f;
+	}
+}
+// END FUNCTION
