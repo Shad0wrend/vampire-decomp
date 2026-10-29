@@ -112843,6 +112843,21 @@ void CMem4_t::sub_102f9330(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f9400 size=0x41
+#include "CAI_Navigator.h"
+#include "CPairFields102dda40.h"
+
+CAI_NavEntry *CAI_NavProvider::sub_102f9400(int id)
+{
+    for (int i = 0; i < m_nEntries; i++) {
+        CPairFields102dda40 **ppRec = (CPairFields102dda40 **)m_ppEntries;
+        if (ppRec[i]->sub_102dda40(m_nStartId) == id)
+            return m_ppEntries[i];
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f9470 size=0x24
 // TARGET: sub_102f9470
 void __fastcall sub_102f9470(void *pSelf, int unused, int bit)
