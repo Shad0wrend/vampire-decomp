@@ -43628,6 +43628,20 @@ void CBreakableSurface::sub_10112a10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10113b00 size=0x1a
+namespace lifted {
+extern int g_1056fac0;
+extern int g_1056fac4;
+extern char g_1056fb04;
+}
+int sub_10113b00()
+{
+    lifted::g_1056fac4 = 0xc;
+    lifted::g_1056fac0 = (int)&lifted::g_1056fb04;
+    return (int)&lifted::g_1056fac0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10113b30 size=0x43
 #include "CFunc_DustMotes.h"
 void *sub_100aa720(int size);
