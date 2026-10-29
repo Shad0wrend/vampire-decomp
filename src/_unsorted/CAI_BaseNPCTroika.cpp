@@ -1736,6 +1736,16 @@ bool CAI_BaseNPCTroikaUnit54::sub_102b50b0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b5360 size=0x4b
+CBaseEntity *CAI_BaseNPCTroika::vfunc168()
+{
+	CBaseEntity *pEnt = (CBaseEntity *)vfunc167();
+	if (!pEnt && ((char)(*(unsigned int *)((char *)this + 0x5b64) >> 6) & 1))
+		pEnt = ((EHANDLE *)((char *)this + 0x1a94))->Get();
+	return pEnt;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b57c0 size=0x8d
 #include "CAI_BaseNPCTroika.h"
 #include "CBaseCombatWeapon.h"
