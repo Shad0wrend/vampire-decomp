@@ -60,6 +60,19 @@ void CNPC_VSabbatLeader::vfunc420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a6e80 size=0x47
+#include "CNPC_VSabbatLeader.h"
+int CNPC_VSabbatLeader::vfunc127(int a)
+{
+    int result = sub_1000b28f(a);
+    m_pMonsterModelName = "models/character/monster/Andrei/andrei.mdl";
+    m_pDefaultNPCName = "npc_VSabbatLeader";
+    sub_10010fd7(0, "Andrei_powerup_emitter");
+    sub_10010fd7(1, "Andrei_powerup_emitter");
+    return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a6ef0 size=0x5e
 #include "CNPC_VSabbatLeader.h"
 struct SScope { const char *a; const char *b; const char *c; };
