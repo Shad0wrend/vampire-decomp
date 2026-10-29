@@ -119715,6 +119715,24 @@ int sub_102fca10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102fca40 size=0x4c
+int sub_102fca40(int flag)
+{
+	switch (flag)
+	{
+	case 1:
+		return 0;
+	case 4:
+		return 2;
+	case 8:
+		return 3;
+	case 2:
+		return 1;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102fce80 size=0x10d
 #include "CAI_Pathfinder.h"
 struct CAI_PathfinderLink
