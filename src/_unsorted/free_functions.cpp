@@ -155926,6 +155926,17 @@ void sub_1042c310(int src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042c420 size=0x55
+#include "utlvector.h"
+
+extern CUtlVector<void *> g_109eed50;
+
+void sub_1042c420(void *pSystem)
+{
+	g_109eed50.FindAndRemove(pSystem);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042c4a0 size=0xb
 extern int g_109eed5c;
 void sub_1042c4a0(void)
