@@ -50,3 +50,17 @@ void CTriggerProximity::vfunc113()
 		g_109f362c("TriggerProximity - Missing measure target or measure target with no origin!\n");
 }
 // END FUNCTION
+
+// FUNCTION: 0x101ca050 size=0x45
+#include "CTriggerProximity.h"
+void CTriggerProximity::vfunc176(CBaseEntity *pOther)
+{
+	CBaseTrigger::vfunc176(pOther);
+	if (sub_101c5460(pOther)) {
+		if (--m_i05a4 == 0) {
+			sub_100ac4e0(0, 0, 0);
+			m_flNextThink = 0;
+		}
+	}
+}
+// END FUNCTION
