@@ -1,6 +1,28 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1005e660 size=0x45
+#include "CTEBreakModel.h"
+// TARGET: CTEBreakModel::CTEBreakModel
+CTEBreakModel::CTEBreakModel(const char *name) : CBaseTempEntityHead(name)
+{
+	m_vecOrigin[0] = 0;
+	m_vecOrigin[1] = 0;
+	m_vecOrigin[2] = 0;
+	m_angRotation[0] = 0;
+	m_angRotation[1] = 0;
+	m_angRotation[2] = 0;
+	m_vecSize[0] = 0;
+	m_vecSize[1] = 0;
+	m_vecSize[2] = 0;
+	m_nField34 = 0;
+	m_nField30 = 0;
+	m_nField38 = 0;
+	m_nField3c = 0;
+	m_nField40 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005e6d0 size=0x1e
 #include "CTEBreakModel.h"
 
