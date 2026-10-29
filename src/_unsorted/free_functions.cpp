@@ -119629,6 +119629,20 @@ int __stdcall sub_1030d710(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030d7e0 size=0x47
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern void (__cdecl *g_109f366c)(const char *, ...);
+int __stdcall sub_1030d7e0(const char *pszName)
+{
+	if (_strcmpi(pszName, "NONE") != 0) {
+		if (_strcmpi(pszName, "DELAY_INTERRUPTS") == 0)
+			return 1;
+		g_109f366c("Schedule has invalid schedule flag: '%s'\n", pszName);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030f220 size=0xa7
 #include "CUnknown1030f480.h"
 extern int (__cdecl *g_109f388c)(char *buf, int count, const char *fmt, ...);
