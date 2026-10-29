@@ -106293,6 +106293,21 @@ const char *sub_1027e660(int n)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027e760 size=0x4c
+// TARGET: sub_1027e760
+const char *sub_1027e760(int n)
+{
+	switch (n) {
+	case -1: return "None";
+	case 0: return "Ground";
+	case 1: return "Jump";
+	case 2: return "Fly";
+	case 3: return "Climb";
+	}
+	return "**UNKNOWN**";
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027ee90 size=0x6c
 #include "CUnknown1027ef20.h"
 
