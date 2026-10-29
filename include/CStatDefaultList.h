@@ -1,6 +1,7 @@
 // CStatDefaultList: lazily grown array of StatDefault pointers (name provisional).
 #pragma once
 #include "StatDefault.h"
+#include "CUnknown1006c810.h"
 
 class CStatDefaultList
 {
