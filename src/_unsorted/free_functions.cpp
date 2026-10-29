@@ -111416,6 +111416,19 @@ void CAI_BaseNPCTroika::sub_102c4ad0(CEntityVSlots *pTarget, float flHeight, flo
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c4c50 size=0x4e
+#include <math.h>
+struct SGravVar109ef2d4 { virtual void vfunc0(); virtual char vfunc1(); char m_pad04[0x28 - 4]; float m_f28; };
+struct CAI_ArcRecord { char m_pad00[8]; float m_f08; };
+extern SGravVar109ef2d4 *g_109ef2d4;
+void CAI_BaseNPCTroika::sub_102c4c50(CAI_ArcRecord *pRec, float flTime, int a, int b)
+{
+	float fGravity = g_109ef2d4->vfunc1() ? 0.0f : g_109ef2d4->m_f28;
+	pRec->m_f08 = sqrt(2 * (fGravity * *(float *)((char *)this + 0x3ec) * flTime));
+	sub_102c4cc0(pRec, a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c54c0 size=0x2b
 #include "CUnknown1070b244.h"
 
