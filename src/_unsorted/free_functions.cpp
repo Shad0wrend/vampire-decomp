@@ -71483,6 +71483,17 @@ void sub_101d79e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d7bc0 size=0x17
+struct CUnknown101d7bc0 { void * sub_101d7bc0(); };
+void * CUnknown101d7bc0::sub_101d7bc0()
+{
+    *(int *)this = -1;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = -1;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d7bf0 size=0x1
 void sub_101d7bf0()
 {
