@@ -62170,6 +62170,20 @@ extern "C" CBaseEntity *keyframe_rope()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019dc50 size=0x1a
+namespace lifted {
+extern int g_10592258;
+extern int g_1059225c;
+extern char g_1059229c;
+}
+int sub_1019dc50()
+{
+    lifted::g_1059225c = 0x14;
+    lifted::g_10592258 = (int)&lifted::g_1059229c;
+    return (int)&lifted::g_10592258;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019ddc0 size=0x42
 #include "CRopeKeyframe.h"
 void CRopeKeyframe::sub_1019ddc0(CBaseEntity *pEnt, int iAttachment)

@@ -4925,6 +4925,7 @@
 0x1000c9be func   ?vfunc1@CEffectsServer@@UAEXHHHHEEHEEEEEEEEE@Z CEffectsServer::vfunc1
 0x1000c9dc func   ?sub_103ad6d0@CNPC_VRatX@@QAE_NH@Z CNPC_VRatX::sub_103ad6d0
 0x1000c9e1 func   ?vfunc5@CWeaponRanged_Rifle_SteyrAug@@QAEPAV1@I@Z CWeaponRanged_Rifle_SteyrAug::vfunc5
+0x1000c9e6 func   ?sub_1019dc50@@YAHXZ sub_1019dc50
 0x1000c9f0 func   ??1CEntryX@@QAE@XZ CEntryX::~CEntryX
 0x1000c9ff func   ?sub_1033f1a0@CBaseCombatCharacter@@QAE_NH@Z CBaseCombatCharacter::sub_1033f1a0
 0x1000ca04 func   ?vfunc5@CWeaponMelee_Claws_Protean4@@QAEPAV1@I@Z CWeaponMelee_Claws_Protean4::vfunc5
