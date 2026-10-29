@@ -56,6 +56,8 @@ public:
 	float m_fieldA8;
 	int m_nCachedContents;	// 0xac: the cached point contents (-9999 when none)
 	Vector m_vecCachedPoint;	// 0xb0: the point the cached contents belong to
+	char m_pad00bc[0xdc - 0xbc];
+	char m_bDc;	// 0xdc: set once the +0x2c vector was scaled down
 
 	float sub_10128270();	// compares the float at the player's +0xb4 with the global time (+0xc of 0x1070b228) minus the player's +0xb8, returns one of two constants (0x104454c0 / 0x104454c4)
 	float sub_101282b0();	// movement speed scale: 0.8 * a tuning value chosen by the player's state at +0xc0 (0 for other states)
