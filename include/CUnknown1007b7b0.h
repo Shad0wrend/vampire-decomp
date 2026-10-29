@@ -10,6 +10,8 @@ class CUnknown1007b7b0
 public:
 	char m_pad0000[0xa8];
 	CUnknown1007bb30Reader *m_pReader;	// 0xa8
+	char m_pad00ac[0x130 - 0xac];
+	int m_nFps130;	// 0x130: the frames per second, 10..240
 
 	CUnknown1007a060Elem *sub_1007b7b0();	// parses one "{ ... }" record: new record, its name, then a loop over "channel", "faceposermodel", "bonerename" and "active" entries until "}"; returns the record
 	void sub_1007bbc0(CUnknown1007a060Elem *pElem);	// "channel" entry (stub 0x10002a68)
