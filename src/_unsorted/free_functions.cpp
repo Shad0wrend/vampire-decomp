@@ -82698,6 +82698,23 @@ void __stdcall sub_101f9a40(CBaseEntity *p, int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f9a80 size=0x46
+#include "CBasePlayer.h"
+void __fastcall sub_1024f7b0(void *pWeapon);
+void __stdcall sub_101f9a80(CBasePlayer *pChar, const char *pszName)
+{
+	if (pChar) {
+		CBaseCombatWeapon *pWeapon = (CBaseCombatWeapon *)pChar->sub_1032e120(pszName);
+		if (pWeapon) {
+			if (pChar->sub_10334c20(pWeapon))
+				pChar->vfunc383((CBaseEntity *)pWeapon, 0);
+			else
+				sub_1024f7b0(pWeapon);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f9c70 size=0xb6
 #include "CUnknown101f9c70.h"
 struct TraceEnt { const char *a; const void *b; const void *c; };
