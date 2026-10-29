@@ -118080,6 +118080,26 @@ char CUnknown102ee2e0::sub_102ee2e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ee380 size=0x4d
+struct CAI_PathfinderView { void sub_102fdcc0(int a, int b); };
+namespace block_102ee380 {
+struct CAI_NavigatorUnit : CAI_Navigator { int sub_102ecc00(); };
+int CAI_NavigatorUnit::sub_102ecc00() { return *(int *)(m_pOuter + 0x5d3c); }
+}
+using namespace block_102ee380;
+// TARGET: CAI_Navigator::sub_102ee380
+void CAI_Navigator::sub_102ee380(int a, int b)
+{
+	CAI_NavigatorUnit *u = (CAI_NavigatorUnit *)this;
+	m_i08 = *(int *)(m_pOuter + 0x156c);
+	m_i0c = *(int *)((char *)gpGlobals + 4);
+	int *p = (int *)u->sub_102ecc00();
+	p[2] = *(int *)(p[1] + 0x156c);
+	p[3] = *(int *)((char *)gpGlobals + 4);
+	((CAI_PathfinderView *)u->sub_102ecc00())->sub_102fdcc0(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ee3f0 size=0x7
 struct CUnknown102ee3f0 { int sub_102ee3f0(); };
 int CUnknown102ee3f0::sub_102ee3f0()
