@@ -13042,6 +13042,27 @@ Vector CBaseCineCam::sub_1006f670()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006f7d0 size=0x53
+void sub_1006e850();
+struct CEnt1006f7d0 : CBaseEntity {
+	char m_pad0004[0x55c - sizeof(CBaseEntity)];
+	float m_flTime55c;
+
+	bool sub_1006f7d0();
+};
+
+bool CEnt1006f7d0::sub_1006f7d0()
+{
+	m_flNextThink = gpGlobals->curtime + 0.04166f;
+	if (m_flTime55c > 0.0f && m_flTime55c < gpGlobals->curtime)
+	{
+		sub_100ac4e0((int)sub_1006e850, 0, 0);
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006fde0 size=0x1
 void sub_1006fde0()
 {
