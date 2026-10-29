@@ -122511,6 +122511,23 @@ void __fastcall sub_10323630(CBaseCombatCharacter *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10323930 size=0x48
+short __fastcall sub_10323a70(char *p);
+struct CBCCView {
+    bool sub_10323930(CBCCView *pOther);
+};
+bool CBCCView::sub_10323930(CBCCView *pOther)
+{
+    if (sub_10323a70((char *)this) != -1 && pOther) {
+        if (sub_10323a70((char *)pOther) != -1) {
+            if (sub_10323a70((char *)pOther) == sub_10323a70((char *)this))
+                return true;
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103239a0 size=0x99
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
