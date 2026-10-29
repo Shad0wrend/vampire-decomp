@@ -18,7 +18,7 @@ public:
 	void sub_100a0130();	// CBaseEntity::vfunc123, called directly (stub 0x10005880)
 	CFire *sub_10109990();	// as in CKeepUpright (transplant)
 	void vfunc180();
-	void sub_1010b3c0();
+	void sub_1010b3c0();	// removes the smoke entity of the handle at +0x450 (slot 243(0), then UTIL_Remove)
 	void sub_1010b530(float flTime);	// sets the burn update (sub_1010b7d0 with 0 and the time), installs the think sub_1010b470, burn-out time (+0x48c) = time + curtime, next think = curtime + 0.1
 	void sub_1010b7d0(int a, int b);	// "forward to slot 242 of the smoke entity (handle +0x450)"; near miss, see notes
 	void sub_1010b5c0(float flHeat, char bInstant);	// adds heat to the fire (stub 0x10008a03)
