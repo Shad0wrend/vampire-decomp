@@ -4,7 +4,7 @@
 class CUnknown10136ec0
 {
 public:
-	const char *sub_10136ec0();	// the first dword (stub 0x1000b780)
+	int sub_10136ec0();	// the first dword (stub 0x1000b780)
 
 	const char *m_pData;	// 0x00
 };
