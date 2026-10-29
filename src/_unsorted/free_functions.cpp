@@ -118705,6 +118705,16 @@ bool S1030fc90::sub_1030fb10(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030fb60 size=0x1f
+struct CUnknown1030fb60 { int sub_1030fb60(int); };
+int CUnknown1030fb60::sub_1030fb60(int a0)
+{
+    *(int *)((char *)a0 + 0x1f8) = *(int *)((char *)(*(int *)((char *)this + 4)) + 0x1f8);
+    *(int *)((char *)(*(int *)((char *)this + 4)) + 0x1f8) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030fb90 size=0x85
 #include "CUnknown1030fb90.h"
 
