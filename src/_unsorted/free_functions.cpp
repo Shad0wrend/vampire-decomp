@@ -51603,6 +51603,18 @@ void sub_1013bef0(const Vector &p1, const Vector &p2, const Vector &d1, const Ve
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013bfd0 size=0x53
+float sub_1013bfd0(float p1, float p2, float d1, float d2, float t)
+{
+    float t2 = t * t;
+    float t3 = t * t2;
+    float r = (2.0f * t3 - 3.0f * t2 + 1.0f) * p1 + (3.0f * t2 - 2.0f * t3) * p2;
+    r += (t3 - 2.0f * t2 + t) * d1;
+    r += (t3 - t2) * d2;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013c050 size=0x2a
 void sub_1013bef0(int a, int b, void *pOut, void *pOut2, int c, int d);
 

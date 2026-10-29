@@ -3731,6 +3731,7 @@
 0x10009507 func   ?sub_102508f0@CUnknown102508f0@@QAEPAUCUnknown102508f0_Elem@@H@Z CUnknown102508f0::sub_102508f0
 0x1000950c func   ?sub_101a05f0@CSave@@QAEXPBXH@Z CSave::sub_101a05f0
 0x10009539 func   ?sub_102464d0@@YAHHH@Z sub_102464d0
+0x10009548 func   ?sub_1013bfd0@@YAMMMMMM@Z sub_1013bfd0
 0x1000954d func   _phys_torque phys_torque
 0x10009552 func   ?sub_101671a0@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_101671a0
 0x10009557 func   ?sub_101c6670@CTriggerHurt@@QAEXH@Z CTriggerHurt::sub_101c6670
