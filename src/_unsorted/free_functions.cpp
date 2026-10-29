@@ -54340,6 +54340,26 @@ void CBasePlayer::sub_1016fed0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10170750 size=0x44
+extern int sub_1023bd00();
+struct S1023bd00 { char pad[0x49c]; int m49c; };
+void CBasePlayer::sub_10170750()
+{
+	S1023bd00 *p = (S1023bd00 *)sub_1023bd00();
+	if (p) {
+		if (p->m49c == 2) {
+			sub_101816c0("item_w_unarmed");
+			sub_10147a60();
+			return;
+		}
+		if (p->m49c == 1) {
+			sub_10147a30(3);
+			sub_10147a30(0xb);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10170cb0 size=0x27
 // TARGET: CUnknown10170cb0::sub_10170cb0
 #include "CUnknown10170cb0.h"
