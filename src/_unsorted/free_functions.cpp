@@ -16610,6 +16610,44 @@ void SDumpOutput::sub_10079d40(int nIndent, CDumpActor10079d40 *pActor)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10079de0 size=0x58
+struct CDumpItem10079ca0;
+struct CDumpActor10079d40;
+
+struct CDumpEvent10079de0 {
+	int sub_10076690();
+};
+
+struct SDumpOutput {
+	void sub_10079b90(int nIndent, CDumpItem10079ca0 *pItem);
+	void sub_10079d40(int nIndent, CDumpActor10079d40 *pActor);
+	void sub_10079de0();
+
+	CDumpEvent10079de0 **m_ppEvents;	// 0x00
+	int m_pad04[2];
+	int m_nEvents;	// 0x0c
+	int m_pad10;
+	CDumpActor10079d40 **m_ppActors;	// 0x14
+	int m_pad18[2];
+	int m_nActors;	// 0x20
+};
+
+// TARGET: SDumpOutput::sub_10079de0
+void SDumpOutput::sub_10079de0()
+{
+	for (int i = 0; i < m_nEvents; i++) {
+		CDumpEvent10079de0 *pEvent = m_ppEvents[i];
+		if (!pEvent->sub_10076690())
+			sub_10079b90(0, (CDumpItem10079ca0 *)pEvent);
+	}
+	for (int j = 0; j < m_nActors; j++) {
+		CDumpActor10079d40 *pActor = m_ppActors[j];
+		if (pActor)
+			sub_10079d40(0, pActor);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10079e60 size=0xc0
 #include "CUnknown10075aa0.h"
 extern "C" {
