@@ -36250,6 +36250,17 @@ void CUnknown100ea1e0::sub_100ea1e0(char flag, char *pOut1, char *pOut2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100eb000 size=0x19
+struct CUnknown100eb000 { void * sub_100eb000(int); };
+void * CUnknown100eb000::sub_100eb000(int a0)
+{
+    *(char *)this = *(char *)((char *)a0);
+    *(char *)((char *)this + 1) = *(char *)((char *)a0 + 1);
+    *(int *)((char *)this + 4) = *(int *)((char *)a0 + 4);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eb060 size=0x24
 unsigned int __stdcall sub_100eb060(unsigned int x)
 {
