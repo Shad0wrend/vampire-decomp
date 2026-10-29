@@ -105526,6 +105526,20 @@ void __fastcall sub_1027d9b0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027db80 size=0x4b
+#include "CAI_BaseNPC.h"
+
+float sub_101d2c70(const Vector *pDir);
+
+// TARGET: CAI_BaseNPC::sub_1027db80
+float CAI_BaseNPC::sub_1027db80(const Vector *pDir)
+{
+	if (pDir->x == 0.0f && pDir->y == 0.0f && pDir->z == 0.0f)
+		return vfunc221()[1];
+	return sub_101d2c70(pDir);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027dbf0 size=0x7
 namespace lifted {
 extern float g_104492dc;

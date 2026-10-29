@@ -1806,6 +1806,7 @@
 0x100052b3 func   ?vfunc82@CNPC_VHumanCombatPatrol@@UAEPAUdatamap_t@@XZ CNPC_VHumanCombatPatrol::vfunc82
 0x100052b8 func   ?sub_100f8030@CGlobalEntityList@@QAEPAVCBaseEntity@@PBVVector@@0MPBD@Z CGlobalEntityList::sub_100f8030
 0x100052c2 func   ?sub_103d0bf0@@YIPAXPAUHolder@@@Z sub_103d0bf0
+0x100052c7 func   ?sub_1027db80@CAI_BaseNPC@@QAEMPBVVector@@@Z CAI_BaseNPC::sub_1027db80
 0x100052d6 func   ?vfunc431@CNPC_VVampireBoss@@QAEXXZ CNPC_VVampireBoss::vfunc431
 0x100052e0 func   ??0CGrabController@@QAE@XZ CGrabController::CGrabController
 0x100052e5 func   ?sub_1027e660@@YAPBDH@Z sub_1027e660
