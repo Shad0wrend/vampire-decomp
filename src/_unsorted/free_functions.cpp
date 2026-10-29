@@ -136269,6 +136269,20 @@ char __fastcall sub_103da0a0(CNPC_VWerewolf *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103da440 size=0x1a
+namespace lifted {
+extern int g_1065f7ac;
+extern int g_1065f7b0;
+extern char g_1065f7f4;
+}
+int sub_103da440()
+{
+    lifted::g_1065f7b0 = 2;
+    lifted::g_1065f7ac = (int)&lifted::g_1065f7f4;
+    return (int)&lifted::g_1065f7ac;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103da470 size=0x96
 #include "CBaseEntity.h"
 
