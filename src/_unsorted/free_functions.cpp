@@ -64501,6 +64501,20 @@ void sub_101af0d0(SndSrcView *pSrc, const char *pszSample)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101af3f0 size=0x1a
+namespace lifted {
+extern int g_10596ed8;
+extern int g_10596edc;
+extern char g_10596f1c;
+}
+int sub_101af3f0()
+{
+    lifted::g_10596edc = 8;
+    lifted::g_10596ed8 = (int)&lifted::g_10596f1c;
+    return (int)&lifted::g_10596ed8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101af880 size=0x86
 struct EntNextThink { char pad[0x17c]; float m_flNextThink; };
 

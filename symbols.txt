@@ -341,6 +341,7 @@
 0x10001cda func   ?sub_101dba50@@YAPBDH@Z sub_101dba50
 0x10001ce4 func   ?sub_1023cde0@@YAXPAUSWorldInfo@@@Z sub_1023cde0
 0x10001cee func   ?vfunc457@CBasePlayer@@UAEXPBDH@Z CBasePlayer::vfunc457
+0x10001cf8 func   ?sub_101af3f0@@YAHXZ sub_101af3f0
 0x10001d02 func   ?sub_102c65d0@CUtlVector4@@QAEHPBH@Z CUtlVector4::sub_102c65d0
 0x10001d11 func   ?sub_102e2020@CAI_Motor@@QAEXPBMH@Z CAI_Motor::sub_102e2020
 0x10001d16 func   ??1CMeasureSectionInstance@@QAE@XZ CMeasureSectionInstance::~CMeasureSectionInstance
