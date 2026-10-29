@@ -6707,6 +6707,7 @@
 0x1000fe89 func   ?vfunc103@CPlayerResource@@QAEXXZ CPlayerResource::vfunc103
 0x1000fe93 func   ?vfunc546@CNPC_VMingXiaoTentacle@@QAEHH@Z CNPC_VMingXiaoTentacle::vfunc546
 0x1000feac func   ?vfunc5@CPlayerResource@@QAEPAV1@I@Z CPlayerResource::vfunc5
+0x1000feb1 func   ?sub_10312e00@@YA_NPAPBD0@Z sub_10312e00
 0x1000feb6 func   ?vfunc82@CSecCamera@@UAEPAUdatamap_t@@XZ CSecCamera::vfunc82
 0x1000febb func   _item_w_occultblade item_w_occultblade
 0x1000fec0 func   ?sub_102480b0@CUnknown102480b0@@QAEHXZ CUnknown102480b0::sub_102480b0

@@ -124289,6 +124289,15 @@ void __fastcall sub_10312c80(CAI_ExpressiveNPCDtorView *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10312e00 size=0x51
+#include <string.h>
+#pragma intrinsic(strcmp)
+bool sub_10312e00(const char **a, const char **b)
+{
+    return strcmp(*a, *b) < 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10312f70 size=0x30
 #include "CUtlMemory16.h"
 
