@@ -63975,6 +63975,38 @@ void CRopeKeyframe::sub_1019f1f0(int nBit)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019f760 size=0x4d
+struct SFuncField {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    void *pSaveRestoreOps;
+    int inputFunc;
+    void *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+struct SFuncMap {
+    SFuncField *dataDesc;
+    int dataNumFields;
+    const char *dataClassName;
+    SFuncMap *baseMap;
+};
+const char *sub_1019f760(SFuncMap *pMap, int pFunc)
+{
+    for (; pMap; pMap = pMap->baseMap) {
+        for (int i = 0; i < pMap->dataNumFields; i++) {
+            if ((pMap->dataDesc[i].flags & 0x20) && pMap->dataDesc[i].inputFunc == pFunc)
+                return pMap->dataDesc[i].fieldName;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a01f0 size=0x4c
 #include "CSave.h"
 
