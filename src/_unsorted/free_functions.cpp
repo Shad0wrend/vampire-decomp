@@ -28228,6 +28228,21 @@ void sub_100bc3a0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bc460 size=0x1e
+struct CUnknown100bc460 { void * sub_100bc460(); };
+void * CUnknown100bc460::sub_100bc460()
+{
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = -1;
+    *(int *)((char *)this + 0xc) = 0;
+    *(char *)((char *)this + 0x10) = 0;
+    *(char *)((char *)this + 0x11) = 1;
+    *(int *)((char *)this + 0x14) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bc490 size=0x2c
 #include "bf_write.h"
 
