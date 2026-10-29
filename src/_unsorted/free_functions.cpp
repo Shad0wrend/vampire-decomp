@@ -84662,6 +84662,27 @@ void CUnknown10208e50::sub_10208e50(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10208f30 size=0x42
+#include "inputdata_t.h"
+class CBaseCombatCharacter;
+class CBaseCombatWeapon;
+extern char g_106b8540[];
+CBaseCombatWeapon *sub_1021fe50(CBaseCombatCharacter *pChar, const char *name, char bSwitch);
+struct SGiver { void sub_10208f30(inputdata_t *pInput); };
+inline const char *VariantString(variant_t *v)
+{
+	if (v->fieldType == 2) {
+		const char *s = v->iszValue;
+		return s ? s : g_106b8540;
+	}
+	return v->sub_10008805();
+}
+void SGiver::sub_10208f30(inputdata_t *pInput)
+{
+	sub_1021fe50((CBaseCombatCharacter *)this, VariantString(&pInput->value), 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10208fa0 size=0x8
 namespace lifted {
 int sub_1000289c();

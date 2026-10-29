@@ -5683,6 +5683,7 @@
 0x1000ebec func   ?sub_10053e20@@YIXPAVCBaseEntity@@HMMH@Z sub_10053e20
 0x1000ebf6 func   ?sub_1024d670@VMatrix@@QBE?AVVector@@XZ VMatrix::sub_1024d670
 0x1000ebfb func   ?vfunc1@?$CUtlVectorDataOps@V?$CUtlVector@UASSIGNED_QUEST@@V?$CUtlMemory@UASSIGNED_QUEST@@@@@@$08@@UAEXPAX0@Z CUtlVectorDataOps<CUtlVector<ASSIGNED_QUEST,CUtlMemory<ASSIGNED_QUEST> >,9>::vfunc1
+0x1000ec00 func   ?sub_10208f30@SGiver@@QAEXPAUinputdata_t@@@Z SGiver::sub_10208f30
 0x1000ec05 func   ??1CUnknown101ec4f0@@QAE@XZ CUnknown101ec4f0::~CUnknown101ec4f0
 0x1000ec0a func   ?vfunc5@CWeaponMelee_ChangClaw@@QAEPAV1@I@Z CWeaponMelee_ChangClaw::vfunc5
 0x1000ec0f func   ?sub_101a2d50@CEntitySaveRestoreBlockHandler@@QAEPAVCBaseEntity@@PBD0@Z CEntitySaveRestoreBlockHandler::sub_101a2d50
