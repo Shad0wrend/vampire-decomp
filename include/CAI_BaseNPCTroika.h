@@ -206,7 +206,9 @@ public:
 	CAI_MoveProbe *m_pMoveProbe5d40;
 	char m_pad5d44[0x5d74 - 0x5d44];
 	unsigned int m_h5d74;
-	char m_pad5d78[0x6010 - 0x5d78];
+	char m_pad5d78[0x5db4 - 0x5d78];
+	float m_f5db4;	// 0x5db4: a time (curtime + the parameter's value, or + 1000.0f for a non-positive one)
+	char m_pad5db8[0x6010 - 0x5db8];
 	unsigned int m_h6010;
 	char m_pad6014[0x6074 - 0x6014];
 	float m_f6074;	// 0x6074: the next time slot 600 may ask again
