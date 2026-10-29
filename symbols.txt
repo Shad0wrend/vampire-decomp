@@ -4056,6 +4056,7 @@
 0x1000a3a3 func   ?vfunc82@CPropRadio@@UAEPAUdatamap_t@@XZ CPropRadio::vfunc82
 0x1000a3ad func   ?sub_10252800@@YAXPAVCBaseAnimating@@M@Z sub_10252800
 0x1000a3b7 func   ?sub_100fdd50@UtlMem7@@QAEXH@Z UtlMem7::sub_100fdd50
+0x1000a3bc func   ?sub_1013aeb0@@YAXABVQuaternion@@0AAV1@@Z sub_1013aeb0
 0x1000a3c6 func   ?sub_101eab00@@YAXH@Z sub_101eab00
 0x1000a3d0 func   ?sub_10341030@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_10341030
 0x1000a3df func   ?sub_101ec7c0@CUnknown101ec7c0@@QAE_NXZ CUnknown101ec7c0::sub_101ec7c0
