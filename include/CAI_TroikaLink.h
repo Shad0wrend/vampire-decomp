@@ -26,6 +26,31 @@ struct CTroikaNav	// the navigator object at +0x5d34 of the NPC
 	CTroikaNodeNet *m_pNet;	// 0x2c
 };
 
+struct CTroikaPick	// a record with a current index (+0x10) into a list of node indices (+0x14..)
+{
+	char m_pad0000[0x10];
+	int m_iCur;	// 0x10
+	int m_aNodes[1];	// 0x14
+};
+
+struct CTroikaPickHolder
+{
+	char m_pad0000[4];
+	CTroikaPick *m_pPick;	// 0x04
+};
+
+struct CTroikaNodeObj
+{
+	char m_pad0000[0xa0];
+	int m_nValue;	// 0xa0
+};
+
+struct CTroikaNodeObjNet	// count at +0, object pointers at +4
+{
+	int m_nNodes;
+	CTroikaNodeObj **m_ppNodes;
+};
+
 struct CTroikaLinkRef
 {
 	char m_pad0000[0x10];
