@@ -63783,6 +63783,20 @@ extern "C" GP *aiscripted_sequence()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a9680 size=0x1a
+namespace lifted {
+extern int g_10593c9c;
+extern int g_10593ca0;
+extern char g_10593ce4;
+}
+int sub_101a9680()
+{
+    lifted::g_10593ca0 = 4;
+    lifted::g_10593c9c = (int)&lifted::g_10593ce4;
+    return (int)&lifted::g_10593c9c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a96b0 size=0x53
 void *sub_1000db89(int);
 struct GP;
