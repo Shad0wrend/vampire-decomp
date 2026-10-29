@@ -138218,6 +138218,20 @@ extern "C" GP *item_w_sledgehammer()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e7470 size=0x1a
+namespace lifted {
+extern int g_10672070;
+extern int g_10672074;
+extern char g_106720b4;
+}
+int sub_103e7470()
+{
+    lifted::g_10672074 = 2;
+    lifted::g_10672070 = (int)&lifted::g_106720b4;
+    return (int)&lifted::g_10672070;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e7680 size=0xff
 #include "CWeaponMelee_Torch.h"
 #include "CPASAttenuationFilter.h"

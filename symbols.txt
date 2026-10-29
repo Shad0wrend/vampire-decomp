@@ -529,6 +529,7 @@
 0x100023ce func   ?sub_10087550@@YAHXZ sub_10087550
 0x100023dd func   ?vfunc420@CNPC_VBaseBoss@@UAEXXZ CNPC_VBaseBoss::vfunc420
 0x100023e7 func   ?sub_10175290@CBasePlayer@@QAEHXZ CBasePlayer::sub_10175290
+0x100023ec func   ?sub_103e7470@@YAHXZ sub_103e7470
 0x100023f1 func   ?vfunc612@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::vfunc612
 0x100023fb func   ?vfunc0@CTEDust@@UAEPAUServerClass@@XZ CTEDust::vfunc0
 0x1000240a func   _item_k_carson_apartment_key item_k_carson_apartment_key
