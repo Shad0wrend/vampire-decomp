@@ -70,7 +70,7 @@ class CBasePlayer
 {
 public:
 	// slots 0..63
-	CBP_V10(sa0) CBP_V10(sa1) CBP_V10(sa2) CBP_V10(sa3) CBP_V10(sa4) CBP_V10(sa5) CBP_V1(sa6) CBP_V1(sa7) CBP_V1(sa8) CBP_V1(sa9)
+	CBP_V10(sa0) CBP_V10(sa1) CBP_V1(sa20) CBP_V1(sa21) CBP_V1(sa22) CBP_V1(sa23) virtual void vfunc24(CBaseEntity *pOther); CBP_V1(sa25) CBP_V1(sa26) CBP_V1(sa27) CBP_V1(sa28) CBP_V1(sa29) CBP_V10(sa3) CBP_V10(sa4) CBP_V10(sa5) CBP_V1(sa6) CBP_V1(sa7) CBP_V1(sa8) CBP_V1(sa9)
 	virtual void vfunc64(float *pVec);
 	// slots 65..220
 	CBP_V10(sb0) CBP_V10(sb1) CBP_V10(sb2) CBP_V10(sb3) CBP_V10(sb4) CBP_V10(sb5) CBP_V10(sb6)
