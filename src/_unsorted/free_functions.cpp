@@ -50575,6 +50575,24 @@ void sub_1013b4d0(const Vector &a, const Vector &b, const Vector &c, int d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013b5a0 size=0x4c
+void sub_1013b0d0(const float *q, float *mat);
+void sub_10137ed0(const float *mat, float *angles);
+
+void sub_1013b5a0(const float *q, float *angles)
+{
+	float mat[12];
+	sub_1013b0d0(q, mat);
+	sub_10137ed0(mat, angles);
+	float a = angles[1] * 0.017453292f;
+	float b = angles[0] * 0.017453292f;
+	float c = angles[2] * 0.017453292f;
+	angles[0] = c;
+	angles[1] = b;
+	angles[2] = a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013bb40 size=0x17c
 void sub_1000cfb3(const Vector &p1, const Vector &p2, const Vector &p3, const Vector &p4, float t, Vector &output);
 

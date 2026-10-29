@@ -4111,6 +4111,7 @@
 0x1000a501 func   ?vfunc0@CTEUserTracer@@UAEPAUServerClass@@XZ CTEUserTracer::vfunc0
 0x1000a50b func   ?sub_102b8c40@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::sub_102b8c40
 0x1000a510 func   ?sub_102008b0@CVStatList_t@@QAEDH@Z CVStatList_t::sub_102008b0
+0x1000a515 func   ?sub_1013b5a0@@YAXPBMPAM@Z sub_1013b5a0
 0x1000a51a func   ?sub_100420a0@UtlHash8@@QAEPAV1@HHHP6A_NPAX0@ZP6AI0@Z@Z UtlHash8::sub_100420a0
 0x1000a51f func   ?sub_10398630@CUnknown10398630@@QAEXHH@Z CUnknown10398630::sub_10398630
 0x1000a524 func   ?sub_103388e0@@YAHXZ sub_103388e0
