@@ -51658,6 +51658,17 @@ float sub_1013a870(float a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013a8c0 size=0x58
+float sub_1013a870(float a, float b);
+
+float sub_1013a8c0(float x, float g)
+{
+	if (x < 0.5)
+		return sub_1013a870(x + x, 1.0f - g) * 0.5f;
+	return 1.0f - sub_1013a870(2.0f - (x + x), 1.0f - g) * 0.5f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013a9f0 size=0x82
 #include "Quaternion.h"
 
