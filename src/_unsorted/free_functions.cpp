@@ -12568,6 +12568,18 @@ void CUnknown1006ed20::sub_1006ed20(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006ed40 size=0x47
+#include "CBaseCineCam.h"
+// TARGET: CBaseCineCam::sub_1006ed40
+void CBaseCineCam::sub_1006ed40(Vector *pFirst, Vector *pSecond)
+{
+	if (pFirst)
+		*pFirst = m_vecShot5ec;
+	if (pSecond)
+		*pSecond = m_vecShot604;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006edb0 size=0x15
 namespace lifted {
 extern char g_106c8298;
