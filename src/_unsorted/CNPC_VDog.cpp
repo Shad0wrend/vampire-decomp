@@ -273,3 +273,25 @@ void CNPC_VDog::vfunc442(int *pTask)
         sub_10273e80(0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10374a20 size=0x52
+#include "CNPC_VDog.h"
+#include "CAI_Motor.h"
+struct CDogLocalPlayer { char pad[4]; };
+CBaseEntity *sub_101cda50();
+void CNPC_VDog::vfunc444(int *pTask)
+{
+	switch (*pTask) {
+	case 2:
+	case 0x67:
+		if (*(int *)((char *)this + 0x5cc0) == 3) {
+			CBaseEntity *pPlayer = sub_101cda50();
+			if (pPlayer) {
+				CAI_Motor *pMotor = *(CAI_Motor **)((char *)this + 0x5d44);
+				pMotor->sub_102e20b0((const float *)((int (__fastcall *)(CBaseEntity *))(*(void ***)pPlayer)[217])(pPlayer), -2.0f);
+			}
+		}
+	}
+	sub_1035f940(pTask);
+}
+// END FUNCTION
