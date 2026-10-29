@@ -18,7 +18,11 @@ public:
 	CTW_V(120) CTW_V(121) CTW_V(122) CTW_V(123)
 	virtual int vfunc124();	// slot 124 "CTriggerWind::DrawDebugTextOverlays": the base overlays (sub_101c4f40), then with the text bit (bit 0 of the debug overlays at +0x224) "Dir: %i (%i)" and "Speed: %i (%i)" lines; returns the next line
 	CTW_V(125) CTW_V(126) CTW_V(127) CTW_V(128) CTW_V(129)
-	CTW_V10(13) CTW_V10(14) CTW_V10(15) CTW_V10(16) CTW_V10(17) CTW_V10(18) CTW_V10(19)
+	CTW_V10(13) CTW_V10(14) CTW_V10(15) CTW_V10(16)
+	CTW_V(170) CTW_V(171) CTW_V(172) CTW_V(173) CTW_V(174) CTW_V(175)
+	virtual void vfunc176(CBaseEntity *pOther);	// slot 176 \"EndTouch\": hands the touching entity's physics object (+0x36c) to the wind object at +0x5dc (slot 3) when it is a movable physics entity (slot 94 is 7, no object at +0xa8)
+	CTW_V(177) CTW_V(178) CTW_V(179)
+	CTW_V10(18) CTW_V10(19)
 	CTW_V10(20) CTW_V10(21)
 	CTW_V(220)
 	virtual float *vfunc221();	// "GetAngles"
