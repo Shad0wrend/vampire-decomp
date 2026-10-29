@@ -5,7 +5,7 @@
 
 struct CVTraitKV	// a KeyValues-like object (slot 10 = GetInt, slot 11 = GetFloat, slot 13 = GetString)
 {
-	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v0(); virtual void v1(); virtual CVTraitKV *FindKey(const char *pszName); virtual CVTraitKV *GetNextKey(); virtual void v4();
 	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
 	virtual int GetInt(const char *pszKey, int nDefault);
 	virtual float GetFloat(const char *pszKey, float flDefault);
