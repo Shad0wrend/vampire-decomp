@@ -91573,6 +91573,22 @@ int sub_10207c20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10207df0 size=0x4c
+#include "CStatDefault3List.h"
+#include "CBaseCombatCharacter.h"
+extern CStatDefault3List g_10738d10;
+
+// TARGET: sub_10207df0
+bool __stdcall sub_10207df0(CBaseCombatCharacter *pChar)
+{
+	if (g_10738d10.sub_101d5f10(pChar)->m_98[0])
+		return true;
+	if (pChar->sub_10337f30() && !g_10738d10.sub_101d5f10(pChar)->m_98[5])
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10208c90 size=0x15c
 #include "CUnknown10208c90.h"
 #include "CBaseCombatCharacter.h"
