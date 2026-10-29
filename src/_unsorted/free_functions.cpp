@@ -146512,6 +146512,20 @@ extern "C" CBaseEntity *item_i_written()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040be30 size=0x1a
+namespace lifted {
+extern int g_1068351c;
+extern int g_10683520;
+extern char g_10683564;
+}
+int sub_1040be30()
+{
+    lifted::g_10683520 = 8;
+    lifted::g_1068351c = (int)&lifted::g_10683564;
+    return (int)&lifted::g_1068351c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040bf70 size=0xb
 namespace lifted {
 extern char g_10514edc;
