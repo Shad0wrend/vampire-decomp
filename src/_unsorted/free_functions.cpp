@@ -62347,6 +62347,18 @@ unsigned int CAmbientGeneric::sub_101ac2f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ac570 size=0x41
+#include <math.h>
+extern float g_10462950;
+int sub_101ac570(float x, bool b)
+{
+	int r = 0;
+	if (x > 0.0f && !b)
+		r = (int)(20.0 * log10(x * 0.027777777777777776) + g_10462950);
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ac670 size=0xf
 struct CUnknown101ac670 { int sub_101ac670(int); };
 int CUnknown101ac670::sub_101ac670(int a0)
