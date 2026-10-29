@@ -10,6 +10,11 @@ public:
 	void vfunc176(CBaseEntity *pEnt);	// slot 176 (EndTouch): drops this trigger's discipline bit (index at +0x598) from the flag word at +0xeac of the object at pEnt+0x9c, then CBaseTrigger::vfunc176
 	void sub_101c55d0(CBaseEntity *pEnt);	// CBaseTrigger::vfunc176 (stub 0x1001346c), called directly
 	void sub_101c5590(CBaseEntity *pEnt);	// CBaseTrigger::vfunc174 (stub 0x10008ef4), called directly
+	void vfunc174(CBaseEntity *pEnt);	// StartTouch: sets this trigger's discipline bit (index at +0x598) in the flag word at +0xeac of the object at pEnt+0x9c, then CBaseTrigger::vfunc174
+	char m_pad03e0[0x55c - 0x3e0];
+	char m_bDisabled55c;
+	char m_pad55d[0x598 - 0x55d];
+	int m_nDiscipline598;
 public:
     virtual datamap_t * vfunc82();
 };
