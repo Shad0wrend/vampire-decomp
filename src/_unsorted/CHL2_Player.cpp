@@ -101,6 +101,20 @@ Vector CHL2_Player::vfunc371()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034fe70 size=0x4e
+#include "CHL2_Player.h"
+#include "CUnknown1006e890.h"
+struct Holder;
+void *__fastcall sub_1017cf90(Holder *);
+Vector CHL2_Player::vfunc196()
+{
+	char *pEnt = (char *)sub_1017cf90((Holder *)this);
+	if (pEnt && ((CUnknown1006e890 *)pEnt)->sub_1006e890())
+		return *(Vector *)(pEnt + 0x5ec);
+	return sub_100b4c00();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10350270 size=0x9f
 #include "CHL2_Player.h"
 
