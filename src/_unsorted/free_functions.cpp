@@ -89194,6 +89194,20 @@ int sub_102173e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10217650 size=0x1a
+namespace lifted {
+extern int g_105af268;
+extern int g_105af26c;
+extern char g_105af2ac;
+}
+int sub_10217650()
+{
+    lifted::g_105af26c = 0xa;
+    lifted::g_105af268 = (int)&lifted::g_105af2ac;
+    return (int)&lifted::g_105af268;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10217ac0 size=0x3c
 #include "CPropHacking.h"
 #include <stdarg.h>
