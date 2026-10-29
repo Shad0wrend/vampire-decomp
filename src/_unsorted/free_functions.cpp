@@ -75733,6 +75733,34 @@ void CUnknown101dbe30::sub_101dbed0(CBaseEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dc150 size=0x4a
+#include "CUnknown101dbe30.h"
+
+extern "C" __declspec(dllimport) int __cdecl Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+extern "C" __declspec(dllimport) void __cdecl Msg(const char *pMsg, ...);
+
+namespace block_101dc150 {
+struct CSoundFXUnit : CUnknown101dbe30 {
+	bool sub_101dbe10();
+};
+bool CSoundFXUnit::sub_101dbe10()
+{
+	return m_field0000 != 0;
+}
+}
+using namespace block_101dc150;
+
+void CUnknown101dbe30::sub_101dc150()
+{
+	char msg[512];
+	if (((CSoundFXUnit *)this)->sub_101dbe10()) {
+		const char *pszName = (const char *)m_field0000;
+		Q_snprintf(msg, sizeof(msg), "   SoundFX: %s\n", pszName ? pszName : "");
+		Msg("%s", msg);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dc1c0 size=0x14
 struct CUnknown101dc1c0 { void * sub_101dc1c0(); };
 void * CUnknown101dc1c0::sub_101dc1c0()

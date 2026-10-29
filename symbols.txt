@@ -2556,6 +2556,7 @@
 0x10006ebf func   ?vfunc456@CAI_BaseNPC@@UAEPAPAVCAI_BehaviorBase@@XZ CAI_BaseNPC::vfunc456
 0x10006ec4 func   ?sub_10071220@CCameraAnimatedUnit@@QAEPAU1@XZ CCameraAnimatedUnit::sub_10071220
 0x10006ec9 func   ?sub_10036d40@CPhysicsPushedEntities@@QAEXDH@Z CPhysicsPushedEntities::sub_10036d40
+0x10006ece func   ?sub_101dc150@CUnknown101dbe30@@QAEXXZ CUnknown101dbe30::sub_101dc150
 0x10006ed3 func   ?sub_1012f850@@YAMM@Z sub_1012f850
 0x10006ed8 func   ?vfunc5@CAI_ChangeHintGroup@@QAEPAV1@I@Z CAI_ChangeHintGroup::vfunc5
 0x10006edd func   ?sub_103ca1a0@CHintData_WW@@QAEXH@Z CHintData_WW::sub_103ca1a0
