@@ -82082,6 +82082,24 @@ int __fastcall sub_101f0910(CUnknownStat101f0910 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f0a60 size=0x51
+#include "CUnknown101f0960.h"
+extern char g_106b8540[];
+struct KVView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12();
+	virtual const char *GetString(const char *name, const char *def);
+};
+void CUnknown101f0960::sub_101f0a60(void *pKeyValues)
+{
+	KVView *kv = (KVView *)pKeyValues;
+	m_sub08.sub_101d83a0(kv->GetString("Targets", g_106b8540));
+	kv->GetString("WhoModifies", g_106b8540);
+	sub_101f0990(kv->GetString("Modifier", g_106b8540));
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f0b50 size=0x1a
 struct CUnknown101f0b50 { void * sub_101f0b50(int); };
 void * CUnknown101f0b50::sub_101f0b50(int a0)
