@@ -255,7 +255,9 @@ public:
 	char m_pad626c[0x628c - 0x626c];
 	EHANDLE m_h628c;
 	Vector m_vec6290;
-	char m_pad629c[0x630c - 0x629c];
+	char m_pad629c[0x6300 - 0x629c];
+	int m_n6300;	// 0x6300: cached value (lazily looked up by sub_1029f780)
+	char m_pad6304[0x630c - 0x6304];
 	char *m_p630c;	// 0x630c: an object with a flag dword at +0x64
 	char m_pad6310[0x6318 - 0x6310];
 	float m_f6318;	// 0x6318
