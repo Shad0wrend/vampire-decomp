@@ -99245,6 +99245,23 @@ void sub_10248a70(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10248af0 size=0x48
+#include "CUnknown10248a50.h"
+#include <string.h>
+
+extern char g_10753f68[];
+
+// TARGET: CUnknown10248a50::sub_10248af0
+CUnknown10248a50 *CUnknown10248a50::sub_10248af0(const char *pszKeyName)
+{
+	CUnknown10248a50 *pKey = sub_10248a10();
+	strcpy(g_10753f68, pszKeyName);
+	while (pKey && strcmpi(pszKeyName, pKey->m_pszName))
+		pKey = pKey->sub_10248a30();
+	return pKey;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10248b60 size=0x3d
 #include <string.h>
 
