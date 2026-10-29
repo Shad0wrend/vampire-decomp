@@ -5874,6 +5874,20 @@ void CUtlMemory20::sub_10043870(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10043940 size=0x1a
+namespace lifted {
+extern int g_1053c344;
+extern int g_1053c348;
+extern char g_1053c38c;
+}
+int sub_10043940()
+{
+    lifted::g_1053c348 = 2;
+    lifted::g_1053c344 = (int)&lifted::g_1053c38c;
+    return (int)&lifted::g_1053c344;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10044a70 size=0x3
 void __stdcall sub_10044a70(int a0)
 {

@@ -2870,6 +2870,7 @@
 0x10007ee6 func   ?sub_1017f770@CUnknown1017f770@@QAEHXZ CUnknown1017f770::sub_1017f770
 0x10007eff func   _func_monitor func_monitor
 0x10007f0e func   ?sub_10077650@CUnknown10077430@@QAEXXZ CUnknown10077430::sub_10077650
+0x10007f13 func   ?sub_10043940@@YAHXZ sub_10043940
 0x10007f18 func   ??0CUnknown102029c0@@QAE@H@Z CUnknown102029c0::CUnknown102029c0
 0x10007f1d func   ?sub_1037bb20@@YI_NPAD@Z sub_1037bb20
 0x10007f22 func   ?sub_101800e0@CUnknown101800e0@@QAEMH@Z CUnknown101800e0::sub_101800e0
