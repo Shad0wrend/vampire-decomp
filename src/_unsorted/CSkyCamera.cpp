@@ -9,6 +9,18 @@ void CSkyCamera::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018a600 size=0x4a
+extern CSkyCamera *g_1072a498;
+
+void CSkyCamera::vfunc104()
+{
+	m_vecOrigin454 = *vfunc220();
+	m_nArea460 = engine->vfunc111(&m_vecOrigin454.x);
+	m_pNext484 = g_1072a498;
+	g_1072a498 = this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018bef0 size=0x1e
 #include "CSkyCamera.h"
 
