@@ -90991,6 +90991,29 @@ char *QuestJournal::sub_10221e50(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102221d0 size=0x2d
+namespace lifted {
+extern char g_105b1534;
+extern int g_1074f924;
+extern int g_1074f928;
+extern int g_1074f92c;
+}
+struct CUnknown102221d0 { void * sub_102221d0(); };
+void * CUnknown102221d0::sub_102221d0()
+{
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = 0;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(char *)((char *)this + 0x14) = 0;
+    lifted::g_1074f924 = (int)&lifted::g_105b1534;
+    lifted::g_1074f928 = (int)&lifted::g_105b1534;
+    lifted::g_1074f92c = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10222210 size=0xb5
 #include "CExperienceTable.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
