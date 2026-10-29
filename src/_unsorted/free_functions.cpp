@@ -37182,6 +37182,27 @@ void CUnknown100ecd30::sub_100ecd30(int index, int *pA, int *pB, int *pC, int *p
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ecdf0 size=0x44
+struct SElem { char pad0[0x23c]; float a; char pad1[0x260 - 0x240]; float b; char pad2[0x264 - 0x264 + 0]; };
+struct SHolder {
+    int m_0;
+    int m_nDefault;
+    SElem *m_pElems;
+    int m_c, m_10;
+    int m_nMax;
+    float sub_100ecdf0(int idx, bool bSecond);
+};
+// TARGET: SHolder::sub_100ecdf0
+float SHolder::sub_100ecdf0(int idx, bool bSecond)
+{
+    if (idx < 0 || idx > m_nMax)
+        idx = m_nDefault;
+    if (bSecond)
+        return *(float *)((char *)&m_pElems[idx] + 0x260 - 0x0);
+    return m_pElems[idx].a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ecee0 size=0xa9
 #include "CUnknown100ecee0.h"
 
