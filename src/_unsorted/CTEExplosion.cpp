@@ -49,3 +49,14 @@ void CTEExplosion::vfunc3(const Vector *pOrigin, const Vector *pAngles)
 	((CTEExplosionSlots *)this)->v4(&filter, 0.0f);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10061b00 size=0x6
+#include "CTEExplosion.h"
+namespace lifted {
+extern char g_106c2a40;
+}
+ServerClass * CTEExplosion::vfunc0()
+{
+    return (ServerClass *)((int)&lifted::g_106c2a40);
+}
+// END FUNCTION
