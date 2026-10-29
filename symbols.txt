@@ -5007,6 +5007,7 @@
 0x1000d05d func   ?sub_1019d450@CUnknown1019d450@@QAEDXZ CUnknown1019d450::sub_1019d450
 0x1000d062 func   ?sub_101a4cb0@BlockSetView@@QAEXPAUSaveView@@@Z BlockSetView::sub_101a4cb0
 0x1000d06c func   ?sub_10073a30@CUnknown10073a30@@QAEXD@Z CUnknown10073a30::sub_10073a30
+0x1000d071 func   ?sub_10205940@CUnknown10205940@@QAEHH@Z CUnknown10205940::sub_10205940
 0x1000d076 func   ?NewNode@?$CUtlRBTree@UCRBEntry24@@H@@QAEHXZ CUtlRBTree<CRBEntry24,int>::NewNode
 0x1000d085 func   ?vfunc502@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc502
 0x1000d08a func   ?sub_1009b2c0@CBaseEntity@@QAEXHH@Z CBaseEntity::sub_1009b2c0
