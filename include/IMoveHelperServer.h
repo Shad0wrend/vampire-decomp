@@ -6,5 +6,6 @@
 class IMoveHelperServer
 {
 public:
-	virtual void vfunc0() = 0;
+	IMoveHelperServer() {}
+	virtual void vfunc0() {}
 };
