@@ -1,13 +1,15 @@
-// CTETextMessage: text message temp entity. Declared flat (bases not recovered).
+// CTETextMessage: text message temp entity (derived from the CBaseTempEntity head at +0x0).
 #pragma once
+
+#include "CBaseTempEntity.h"
 
 class CRecipientFilter;
 
-class CTETextMessage
+class CTETextMessage : public CBaseTempEntityHead
 {
 public:
-	virtual void vfunc0();
-	virtual void vfunc1();
+	CTETextMessage(const char *name);	// 0x10068b50
+
 	virtual CTETextMessage *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3(const float *pOrigin, const float *pAngles);	// "Test": fills in default message fields and the text "Testing CTETextMessage", then sends it to everybody through slot 4
 	virtual void vfunc4(CRecipientFilter *pFilter, float flDelay);	// sends the message
