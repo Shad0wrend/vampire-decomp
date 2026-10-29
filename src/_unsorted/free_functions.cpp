@@ -122470,6 +122470,18 @@ void CUnknown1030b950::sub_1030b950(const float *pAdd)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030b990 size=0x51
+struct SDelta { char pad[0x34]; Vector a; char pad2[0xc]; Vector b; };
+Vector * __fastcall sub_1030b990(SDelta *p)
+{
+	static Vector s_vec;
+	s_vec.x = p->b.x - p->a.x;
+	s_vec.y = p->b.y - p->a.y;
+	s_vec.z = p->b.z - p->a.z;
+	return &s_vec;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030ba30 size=0x4
 struct CUnknown1030ba30 { char * sub_1030ba30(); };
 char * CUnknown1030ba30::sub_1030ba30()
