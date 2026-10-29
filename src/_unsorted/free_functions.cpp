@@ -28871,6 +28871,16 @@ void CBeam::sub_100bafc0(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bb030 size=0x56
+#include "CBeam.h"
+void CBeam::sub_100bb030(CBaseEntity *pEnt)
+{
+	EHANDLE *pSlot = (EHANDLE *)((char *)this + 0x464) + m_nNumBeamEnts;
+	*pSlot = pEnt;
+	*(EHANDLE *)((char *)this + 0x4e4) = pEnt;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bb0b0 size=0x9e
 #include "CBeam.h"
 extern CGlobalEntityList *g_10566458;
