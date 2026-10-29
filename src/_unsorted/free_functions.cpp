@@ -112699,6 +112699,24 @@ SVec3 *CUnknown102d8a90::sub_102d8a90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d8b50 size=0x48
+struct CAI_MotorTimerView {
+    int m_n0;
+    EHANDLE m_h4;
+    char m_pad8[0x10];
+    float m_f18;
+    bool sub_102d8b50();
+};
+bool CAI_MotorTimerView::sub_102d8b50()
+{
+    if (m_f18 < gpGlobals->curtime)
+        return false;
+    if (m_n0 == 0 && !m_h4.Get())
+        return false;
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d8bc0 size=0xe7
 #include "CUnknown102d8bc0.h"
 #include <math.h>
