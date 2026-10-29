@@ -130795,6 +130795,20 @@ unsigned int __stdcall sub_10383e50(unsigned int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10383f70 size=0x1a
+namespace lifted {
+extern int g_1063f610;
+extern int g_1063f614;
+extern char g_1093b428;
+}
+int sub_10383f70()
+{
+    lifted::g_1063f614 = 1;
+    lifted::g_1063f610 = (int)&lifted::g_1093b428;
+    return (int)&lifted::g_1063f610;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10384150 size=0x33
 void sub_10014d7b();
 void sub_10011559();
