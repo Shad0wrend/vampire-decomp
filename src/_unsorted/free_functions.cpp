@@ -79221,6 +79221,18 @@ int __fastcall sub_101f0910(CUnknownStat101f0910 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f0b50 size=0x1a
+struct CUnknown101f0b50 { void * sub_101f0b50(int); };
+void * CUnknown101f0b50::sub_101f0b50(int a0)
+{
+    *(int *)this = a0;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 8) = -1;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f0b80 size=0x2a
 #include "CUnknown101f0b80.h"
 
