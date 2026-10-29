@@ -107269,6 +107269,24 @@ const char *sub_1027e760(int n)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027ee20 size=0x4f
+struct SEntry { unsigned int h; char text[512]; };
+extern SEntry g_1090ff60[];
+extern int g_10920538;
+__declspec(dllimport) char *Q_strncpy(char *, const char *, int);
+struct CHandleSrc { virtual void vfunc0(); virtual unsigned int *vfunc1(); };
+
+void sub_1027ee20(CHandleSrc *pEnt, const char *pText)
+{
+    if (pEnt && pText) {
+        SEntry *e = &g_1090ff60[g_10920538];
+        e->h = *pEnt->vfunc1();
+        Q_strncpy(e->text, pText, 512);
+        g_10920538++;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027ee90 size=0x6c
 #include "CUnknown1027ef20.h"
 
