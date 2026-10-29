@@ -154727,6 +154727,22 @@ int sub_10428ad0(CStudioHdr *pStudioHdr, int iFrom, int iTo, int *pDirection)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10428c60 size=0x53
+struct SeqHdr { char pad[0x140]; int m140; int m144; };
+// TARGET: sub_10428c60
+void __cdecl sub_10428c60(SeqHdr *p, int *pv, int a, int b)
+{
+    if (p && a <= p->m140) {
+        int *e = (int *)((char *)p + p->m144 + a * 16);
+        int n = e[1];
+        if (b < n) {
+            int d = e[2];
+            *pv = (b - (*pv / d) % n) * d + *pv;
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10428ce0 size=0x47
 struct SeqHdr { char pad[0x140]; int count; int tableOffset; };
 struct SeqRec { int a; int n; int divisor; int d; };
