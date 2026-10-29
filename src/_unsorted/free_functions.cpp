@@ -110961,6 +110961,16 @@ void CUnknown102e37b0::sub_102e37b0(const float *pStart, const float *pEnd, unsi
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e4f20 size=0x13
+struct CUnknown102e4f20 { void * sub_102e4f20(int); };
+void * CUnknown102e4f20::sub_102e4f20(int a0)
+{
+    *(int *)this = *(int *)((char *)a0);
+    *(int *)((char *)this + 4) = *(int *)((char *)a0 + 4);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e7ba0 size=0x1dd
 #include "CAI_MoveProbe.h"
 #include "CVProfile.h"

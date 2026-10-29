@@ -4513,6 +4513,7 @@
 0x1000bd70 func   ?sub_10032720@@YAXPAVCBaseEntity@@PAUCPhysDamageInfo@@@Z sub_10032720
 0x1000bd7a func   ?sub_100766f0@CUnknown100766f0@@QAEXH@Z CUnknown100766f0::sub_100766f0
 0x1000bd7f func   ??0CTraceFilterSimple@@QAE@PAXH@Z CTraceFilterSimple::CTraceFilterSimple
+0x1000bd84 func   ?sub_102e4f20@CUnknown102e4f20@@QAEPAXH@Z CUnknown102e4f20::sub_102e4f20
 0x1000bd89 func   ?sub_100e7630@CDialog@@QAEXPAX@Z CDialog::sub_100e7630
 0x1000bd93 func   ?sub_10117310@CMoverUnit@@QAEXH@Z CMoverUnit::sub_10117310
 0x1000bd9d func   ?sub_1030c560@CUnknown1030c560@@QAE_NXZ CUnknown1030c560::sub_1030c560
