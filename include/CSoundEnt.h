@@ -14,6 +14,7 @@ struct CSoundEntSlot	// one 0x2c byte entry of the sound pool at +0x464
 	int m_iNext;	// 0x18
 	char m_pad001c[0x2c - 0x1c];
 
+	void sub_101b9840();	// the entry's constructor (stub 0x10008d46), run for every pool entry by CSoundEnt::vfunc126
 	void sub_1000a493();	// stub 0x1000a493, called for every pool entry by CSoundEnt::vfunc127
 };
 
