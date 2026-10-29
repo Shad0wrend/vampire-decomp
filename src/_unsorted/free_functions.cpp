@@ -149367,6 +149367,19 @@ void sub_104121d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x104121f0 size=0x48
+#include "utlvector.h"
+struct CTreeHolder1024a120;
+void __fastcall sub_1024a120(CTreeHolder1024a120 *p);
+extern CTreeHolder1024a120 g_1094afe0;
+extern CUtlVector<int> g_109d3010;
+void sub_104121f0()
+{
+    sub_1024a120(&g_1094afe0);
+    g_109d3010.Purge();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10412260 size=0xf4
 #include "UtlVec8.h"
 
