@@ -27486,6 +27486,20 @@ int sub_100b8270()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b8380 size=0x1a
+namespace lifted {
+extern int g_1055a430;
+extern int g_1055a434;
+extern char g_1055a474;
+}
+int sub_100b8380()
+{
+    lifted::g_1055a434 = 7;
+    lifted::g_1055a430 = (int)&lifted::g_1055a474;
+    return (int)&lifted::g_1055a430;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b8520 size=0x117
 #include "SendProp.h"
 
