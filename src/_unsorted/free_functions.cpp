@@ -53432,6 +53432,37 @@ char CBaseCombatCharacter::sub_10146d50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10147690 size=0x56
+#include "CBaseCombatCharacter.h"
+#include "CDevFlagObj.h"
+extern CDevFlagObj *g_10924a6c;
+struct SNpcObj98 {
+    bool sub_10269c70(int condition);
+    void sub_10269a20(int condition);
+};
+struct SOtherView {
+    char m_pad0000[0x98];
+    SNpcObj98 *m_p98;
+    void *m_p9c;
+};
+void CBaseCombatCharacter::sub_10147690(CBaseEntity *pOther)
+{
+    SOtherView *pView = (SOtherView *)pOther;
+    if (pView->m_p9c) {
+        sub_1033c6b0(0x100);
+        if (*(int *)((char *)this + 0xa8)) {
+            SNpcObj98 *pNpc = pView->m_p98;
+            if (pNpc) {
+                if (pNpc->sub_10269c70(0x38)) {
+                    g_10924a6c->vfunc1();
+                    pNpc->sub_10269a20(0x38);
+                }
+            }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10147710 size=0x1c4
 #include "CBaseCombatCharacter.h"
 #include "CBaseEntityUnit100fbaf0.h"
