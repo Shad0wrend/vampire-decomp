@@ -129393,6 +129393,20 @@ char sub_1036fc00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103704c0 size=0x1a
+namespace lifted {
+extern int g_10631a88;
+extern int g_10631a8c;
+extern char g_10631acc;
+}
+int sub_103704c0()
+{
+    lifted::g_10631a8c = 5;
+    lifted::g_10631a88 = (int)&lifted::g_10631acc;
+    return (int)&lifted::g_10631a88;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103704f0 size=0x43
 #include "CNPC_VCop.h"
 void *sub_100aa720(int size);
