@@ -685,6 +685,7 @@
 0x1000293c func   ?vfunc113@CPointTeleport@@UAEXXZ CPointTeleport::vfunc113
 0x10002946 func   ?sub_100826b0@@YAXPAVCSceneEntity@@@Z sub_100826b0
 0x10002950 func   ?sub_10256890@@YAPAVCBaseCombatWeapon@@HPAV1@PAI@Z sub_10256890
+0x1000295a func   ?sub_101d4f60@StatDefault3@@QAEHH@Z StatDefault3::sub_101d4f60
 0x1000295f func   ?sub_100cfac0@@YAHXZ sub_100cfac0
 0x10002969 func   ?vfunc103@CPhysConstraintSystem@@QAEXXZ CPhysConstraintSystem::vfunc103
 0x10002982 func   ?sub_10319fe0@CUnknown10319fe0@@QAEXH@Z CUnknown10319fe0::sub_10319fe0

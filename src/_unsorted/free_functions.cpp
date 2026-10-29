@@ -72830,6 +72830,28 @@ void CUnknown101d4f20::sub_101d4f40(CUnknown101d4f20_Value *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d4f60 size=0x47
+#include "StatDefault3.h"
+int StatDefault3::sub_101d4f60(int n)
+{
+    int *p = m_pd8;
+    int count = 0;
+    if (p[2] > 0) {
+        count = 1;
+        if (n == 0)
+            return 2;
+    }
+    for (int i = 0; i < 17; i++, p++) {
+        if (i != 2 && *p > 0) {
+            if (count == n)
+                return i;
+            count++;
+        }
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d54f0 size=0xd
 // TARGET: CUnknown101d54f0::sub_101d54f0
 CUnknown101d54f0 *CUnknown101d54f0::sub_101d54f0()
