@@ -4,9 +4,21 @@
 
 #include "CBaseEntity.h"
 
+extern int g_10446750;	// IMotionEvent vftable
+extern int g_104462b4;	// CKeepUpright's IMotionEvent vftable
+
 class CKeepUpright : public CBaseEntity
 {
 public:
+	CKeepUpright() : CBaseEntity(0)
+	{
+		m_motionEvent = &g_10446750;
+		m_attachedObject = -1;
+		m_motionEvent = &g_104462b4;
+		m_flAngularLimit = 15.0f;
+		m_attachedObject = -1;
+	}
+
 	void vfunc113();
 	CKeepUpright *vfunc5(unsigned int flags);	// scalar deleting destructor, declared as a plain member
 	void sub_100057c2();	// destructor body
@@ -18,6 +30,7 @@ public:
 	void *m_pController;        // 0x46c IPhysicsMotionController*
 	const char *m_nameAttach;   // 0x470
 	unsigned int m_attachedObject; // 0x474 EHANDLE
+	float m_flAngularLimit;     // 0x478
 public:
     virtual datamap_t * vfunc82();
 };
