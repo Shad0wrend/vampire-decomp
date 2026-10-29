@@ -97418,6 +97418,18 @@ void CUnknown10232480::sub_10232480()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102324a0 size=0x51
+#include "CVoiceGameMgr.h"
+char CVoiceGameMgr::sub_102324a0(void *pHelper, int maxClients)
+{
+    m_pHelper = pHelper;
+    m_nMaxPlayers = maxClients > 32 ? 32 : maxClients;
+    m_msgVoiceMask = engine->vfunc82("VoiceMask", 9);
+    m_msgReqState = engine->vfunc82("ReqState", 0);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10232520 size=0xa
 void __fastcall sub_10232520(int *self, int, int value)
 {
