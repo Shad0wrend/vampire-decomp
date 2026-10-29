@@ -480,6 +480,7 @@
 0x100021e4 func   ?vfunc407@CBasePlayer@@UAEXXZ CBasePlayer::vfunc407
 0x100021e9 func   ?sub_10069a80@CUnknown10069a80@@QAEHXZ CUnknown10069a80::sub_10069a80
 0x100021ee func   ?vfunc32@CPropSign@@UAE_NPAX@Z CPropSign::vfunc32
+0x100021f8 func   ?vfunc174@CTriggerProximity@@QAEXPAVCBaseEntity@@@Z CTriggerProximity::vfunc174
 0x100021fd func   ?sub_10204100@@YAHPAVCBaseCombatCharacter@@HD@Z sub_10204100
 0x10002202 func   ?sub_1024b830@CUnknown1024b2d0@@QAEPBDUCUnknown1024b2d0Id@@@Z CUnknown1024b2d0::sub_1024b830
 0x1000220c func   ?sub_103fe460@@YAHXZ sub_103fe460

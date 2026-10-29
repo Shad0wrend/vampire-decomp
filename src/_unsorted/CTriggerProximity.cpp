@@ -51,6 +51,22 @@ void CTriggerProximity::vfunc113()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c9fe0 size=0x4a
+#include "CTriggerProximity.h"
+
+void sub_1000ffbf();
+
+void CTriggerProximity::vfunc174(CBaseEntity *pOther)
+{
+	CBaseTrigger::vfunc174(pOther);
+	if (sub_101c5460(pOther)) {
+		m_i05a4++;
+		sub_100ac4e0((int)sub_1000ffbf, 0, 0);
+		m_flNextThink = gpGlobals->curtime;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ca050 size=0x45
 #include "CTriggerProximity.h"
 void CTriggerProximity::vfunc176(CBaseEntity *pOther)
