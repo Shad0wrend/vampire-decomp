@@ -1412,6 +1412,41 @@ bool CAI_BaseNPCTroika::vfunc319(int a, CBaseEntity *pOther, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029fec0 size=0x51
+#include "CAI_BaseNPCTroika.h"
+
+struct CUnk109245e4 {
+    virtual void vfunc0();
+    virtual char vfunc1();
+    char m_pad[0x2c - 4];
+    int m_n2c;
+};
+extern CUnk109245e4 *g_109245e4;
+
+struct CArg326 {
+    char m_pad[0xba];
+    char m_b;
+};
+struct CTroika326View {
+    char m_pad[0x6064];
+    int m_n6064;
+};
+
+bool CAI_BaseNPCTroika::vfunc326(CBaseEntity *pEnt, int b)
+{
+    if (sub_1000e494(pEnt, b)) {
+        int n;
+        if (g_109245e4->vfunc1())
+            n = 0;
+        else
+            n = g_109245e4->m_n2c;
+        if (((CTroika326View *)this)->m_n6064 <= n || ((CArg326 *)pEnt)->m_b == 2)
+            return true;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ad110 size=0x20
 #include "CAI_BaseNPCTroika.h"
 void CAI_BaseNPCTroika::vfunc616()
