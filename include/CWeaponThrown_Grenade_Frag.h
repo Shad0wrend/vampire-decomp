@@ -18,7 +18,9 @@ public:
 	bool m_bFlag918;
 	char pad_919[3];
 	float m_flTimer91c;
-	char pad_920[0x930 - 0x920];
+	int m_nState920;
+	char pad_924[0x92c - 0x924];
+	int m_n92c;
 	char m_bFinished930;
 	CWeaponThrown_Grenade_Frag *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_10013a57();	// as in CPhysForce (transplant)
