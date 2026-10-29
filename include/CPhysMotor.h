@@ -1,5 +1,6 @@
 // CPhysMotor: physics motor entity. Declared flat (bases not recovered); only the vtable head is modelled.
 #pragma once
+#include "Vector.h"
 
 #define CPM_V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
