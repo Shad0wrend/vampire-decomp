@@ -92,6 +92,19 @@ void CRecipientFilter::AddRecipientsByPVS(const Vector &origin)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019d280 size=0x4e
+void CRecipientFilter::AddRecipientsByPAS(const Vector &origin)
+{
+	if (gpGlobals->maxClients == 1) {
+		AddAllPlayers();
+		return;
+	}
+	int playerbits = 0;
+	engine->vfunc64(1, &origin.x, &playerbits);
+	sub_1019d1c0(playerbits);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019d320 size=0x8
 #include "CRecipientFilter.h"
 
