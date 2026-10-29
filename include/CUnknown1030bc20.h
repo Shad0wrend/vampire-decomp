@@ -5,6 +5,8 @@ struct CUnknown1030bc20_Record
 {
 	char pad0[0x28];
 	int m_unk28;
+	int m_unk2c;
+	void *m_unk30;
 };
 
 class CUnknown1030bc20
