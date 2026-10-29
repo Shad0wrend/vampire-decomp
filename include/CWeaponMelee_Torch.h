@@ -10,6 +10,7 @@ public:
 	void sub_10010230();
 	void sub_10013a57();
 	void sub_103e7580();
+	void sub_103e78b0();	// destroys the emitter whose handle is at +0x910
 	void sub_103e77f0(); // \"CWeaponMelee_Torch::CreateEmitter\"-like: when the emitter handle at +0x910 no longer resolves, creates a \"TorchWeaponEmitter\" particle entity at slot 217(slot 219(-1.0)), attaches it to this weapon and stores its handle at +0x910
 	void sub_103e7680(); // emits the \"Fire_Loop\" sample on channel 4 from the weapon to a CPASAttenuationFilter(this, ATTN_NONE)
 };
