@@ -1187,6 +1187,22 @@ int CAI_BaseNPCTroika::vfunc127(CRestore *pRestore)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029a8b0 size=0x51
+extern char g_106b8540[];
+void sub_1000f4e8();
+float __fastcall sub_10293a80(CAI_BaseNPCTroika *p);
+
+// TARGET: CAI_BaseNPCTroika::vfunc422
+void CAI_BaseNPCTroika::vfunc422()
+{
+	CAI_BaseNPC::vfunc422();
+	sub_100ac4e0((int)sub_1000f4e8, 0, 0);
+	sub_102c44e0(m_psz6478 ? m_psz6478 : g_106b8540);
+	sub_102c4680(*(const char **)((char *)this + 0x6480) ? *(const char **)((char *)this + 0x6480) : g_106b8540);
+	sub_10293a80(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029afc0 size=0x15f
 #include "CAI_BaseNPCTroika.h"
 #include "CBaseAnimating.h"
