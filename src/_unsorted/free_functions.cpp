@@ -70896,6 +70896,18 @@ void CUnknown101d7520Entry::sub_101d6af0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d6bd0 size=0x14
+struct CUnknown101d6bd0 { void * sub_101d6bd0(); };
+void * CUnknown101d6bd0::sub_101d6bd0()
+{
+    *(int *)((char *)this + 0x14) = -1;
+    *(int *)((char *)this + 8) = 0;
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d6c20 size=0xeb
 #include "CStatList56.h"
 
