@@ -64,6 +64,10 @@ public:
     void *sub_100952d0(int a);	// CBaseAnimating::sub_100952d0 (GetModelPtr-like), called directly
     CRagdollProp *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
     void sub_10014317();	// as in CPhysForce (transplant)
+    char m_pad03e0[0x730 - 0x3e0];
+    int m_nBodies730;	// 0x730: the number of ragdoll bodies
+    char m_pad0734[0x744 - 0x734];
+    CRagdollPropSlot m_Bodies[1];	// 0x744: the bodies (0x18 bytes each)
     void sub_10155380();	// ragdoll init: stamps +0x174 with curtime, clears +0x6f4 / +0x6f8 and resets the sequence to the first one CBaseAnimating::sub_1008dc40(0x21, -1) selects (0 when none)
     void sub_101563b0(int index, int unused);	// stores the origin/angles of body `index` at +0x2a0 / +0x2fa (dwords); index 0 also calls slot 216 and PhysicsTouchTriggers
     CRagdollProp *sub_101550d0();	// as in CKeepUpright (transplant)
