@@ -78760,6 +78760,25 @@ char EntryView101e08d0::sub_101e08d0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e0940 size=0x53
+#include "CUnknown101e0940.h"
+extern IKVNodeView *g_10739a78;
+extern int g_10739a80;
+int CUnknown101e0940::sub_101e0940(const char *name)
+{
+    int idx = m_Table.sub_101e03a0(name);
+    if (idx == -1) {
+        if (g_10739a78) {
+            g_10739a80 = 0;
+            if (m_Table.sub_1000c315(g_10739a78, name, &idx))
+                return idx;
+        }
+        idx = -1;
+    }
+    return idx;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e09c0 size=0x21
 extern char g_106b8540[];
 
