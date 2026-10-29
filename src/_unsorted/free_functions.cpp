@@ -63260,6 +63260,37 @@ PyObj* sub_1019be80(const char* module, const char* name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019bf10 size=0x4e
+struct PyTypeObj
+{
+	char m_pad00[0x18];
+	void (__cdecl *tp_dealloc)(struct PyObj *);
+};
+struct PyObj
+{
+	int ob_refcnt;
+	PyTypeObj *ob_type;
+};
+extern "C" {
+__declspec(dllimport) PyObj *PyModule_GetDict(PyObj *module);
+__declspec(dllimport) int PyDict_SetItemString(PyObj *dict, const char *key, PyObj *item);
+}
+int sub_1019bf10(PyObj *pModule, PyObj *pItem, const char *pszName)
+{
+	int result = -1;
+	if (pModule) {
+		PyObj *pDict = PyModule_GetDict(pModule);
+		if (pDict) {
+			pDict->ob_refcnt++;
+			result = PyDict_SetItemString(pDict, pszName, pItem);
+			if (--pDict->ob_refcnt == 0)
+				pDict->ob_type->tp_dealloc(pDict);
+		}
+	}
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019bf80 size=0x39
 void sub_10158c00(int a, int b);
 
