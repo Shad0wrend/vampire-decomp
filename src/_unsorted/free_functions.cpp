@@ -55050,6 +55050,18 @@ void CBasePlayer::sub_101784c0(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10178550 size=0x2b
+struct CUnknown10178550 { int sub_10178550(int, int, int); };
+int CUnknown10178550::sub_10178550(int a0, int a1, int a2)
+{
+    *(int *)((char *)this + 0x206c) = a0;
+    *(int *)((char *)this + 0x2070) = a1;
+    *(int *)((char *)this + 0x2074) = a2;
+    *(int *)((char *)this + 0x207c) = 1;
+    return a2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10178590 size=0x91
 #include "CEntityVSlots.h"
 #include "QAngle.h"
