@@ -17,4 +17,5 @@ public:
 
 	int sub_1030bc20();
 	CUnknown1030bc20_Record *sub_1030b7c0();
+	void *sub_1030b7e0();	// the pointer at +0x30 of the record, else a default object (a guarded static is initialised on the way)
 };
