@@ -3995,6 +3995,7 @@
 0x10009e71 func   ?sub_103dc7f0@@YAHXZ sub_103dc7f0
 0x10009e76 func   ?sub_100dfaf0@@YAXEPBDZZ sub_100dfaf0
 0x10009e7b func   ?vfunc0@CAI_ProxyMovementSink@@QAEMXZ CAI_ProxyMovementSink::vfunc0
+0x10009e80 func   ?ShiftElementsRight@?$CUtlVector@UPQ_Elem@@V?$CUtlMemory@UPQ_Elem@@@@@@QAEXHH@Z CUtlVector<PQ_Elem,CUtlMemory<PQ_Elem> >::ShiftElementsRight
 0x10009e85 func   ?vfunc480@CHL2_Player@@UAEMXZ CHL2_Player::vfunc480
 0x10009e8a func   ?vfunc326@CWeaponHolyLight@@QAEXXZ CWeaponHolyLight::vfunc326
 0x10009e94 func   ?vfunc154@CBreakable@@QAEHHH@Z CBreakable::vfunc154
