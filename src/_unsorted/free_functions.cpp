@@ -59530,6 +59530,43 @@ int *sub_1018f000()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018f1c0 size=0x49
+#include "CBreakableProp.h"
+#include "CBaseAnimating.h"
+#include "COutputEvent.h"
+
+extern int g_1047332c;	// CBaseProp vftable
+extern int g_10473d2c;	// CBreakableProp vftable
+
+struct CBreakablePropView
+{
+	void *m_pVtable;
+	char m_pad0004[0x730 - 4];
+	COutputEvent m_Output730;
+	COutputEvent m_Output748;
+	int m_n760;
+	int m_n764;
+	int m_h768;
+	int m_nBreakMode;
+	char m_pad770[8];
+	char m_b778;
+};
+
+CBreakableProp *CBreakableProp::sub_1018f1c0()
+{
+	CBreakablePropView *p = (CBreakablePropView *)this;
+	((CBaseAnimating *)this)->sub_1008b230();
+	*(void *volatile *)&p->m_pVtable = &g_1047332c;
+	p->m_Output730.sub_100cd2a0();
+	p->m_Output748.sub_100cd2a0();
+	p->m_h768 = -1;
+	*(void *volatile *)&p->m_pVtable = &g_10473d2c;
+	p->m_nBreakMode = 2;
+	p->m_b778 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018f690 size=0x43
 #include "CBreakableProp.h"
 __declspec(dllimport) void DevWarning(const char *, ...);
