@@ -380,6 +380,26 @@ void CWeaponRanged::vfunc320()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10239d10 size=0x4e
+#include "CWeaponRanged.h"
+#include "CFlagSet10174550.h"
+struct CRangedCharView : CFlagSet10174550 { char m_pad[0x1e78 - 1]; int m_n1e78; };
+struct CRangedOwnerView { char m_pad[0xa8]; CRangedCharView *m_pChar; };
+void CWeaponRanged::vfunc316(int a)
+{
+	CRangedOwnerView *pOwner = (CRangedOwnerView *)sub_102521f0();
+	if (pOwner) {
+		CRangedCharView *pChar = pOwner->m_pChar;
+		if (pChar && *(int *)((char *)this + 0x914) > -1) {
+			pChar->sub_10174550(true);
+			pChar->m_n1e78 = 0;
+			*(int *)((char *)this + 0x914) = -1;
+		}
+	}
+	sub_10253ca0(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a210 size=0x2c
 #include "CWeaponRanged.h"
 
