@@ -67015,6 +67015,27 @@ void CSoundEnt::sub_101ba9d0(int iSound, int iPrevious)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bab50 size=0x48
+#include "CSoundEnt.h"
+
+extern void (__cdecl *g_109f3630)(const char *fmt, ...);
+
+// TARGET: CSoundEnt::sub_101bab50
+int CSoundEnt::sub_101bab50()
+{
+	if (m_iFreeSound == -1)
+	{
+		g_109f3630("Free Sound List is empty!\n");
+		return -1;
+	}
+	int iNewSound = m_iFreeSound;
+	m_iFreeSound = m_SoundPool[iNewSound].m_iNext;
+	m_SoundPool[iNewSound].m_iNext = m_iActiveSound;
+	m_iActiveSound = iNewSound;
+	return iNewSound;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101baf80 size=0xbd
 #include "CSoundEnt.h"
 
