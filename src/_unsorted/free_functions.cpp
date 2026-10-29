@@ -110718,6 +110718,25 @@ void sub_102bf050()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102bf560 size=0x4f
+struct CHandleSrc { virtual void vfunc0(); virtual unsigned int *vfunc1(); };
+CHandleSrc * __stdcall sub_102707d0(CBaseEntity *);
+struct TroikaView { char pad[0x65c0]; unsigned int h65c0; float f65c4; char pad2[0x65f5 - 0x65c8]; char b65f5; };
+
+void CAI_BaseNPCTroika::sub_102bf560(CBaseEntity *pEnt)
+{
+    TroikaView *p = (TroikaView *)this;
+    if (!p->b65f5) {
+        CHandleSrc *e = sub_102707d0(pEnt);
+        if (e)
+            p->h65c0 = *e->vfunc1();
+        else
+            p->h65c0 = 0xffffffff;
+        p->f65c4 = gpGlobals->curtime + 5.0f;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102bf5d0 size=0xc4
 #include "CAI_BaseNPCTroika.h"
 #include "CEntityVSlots.h"
