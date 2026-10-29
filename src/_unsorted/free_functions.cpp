@@ -27442,6 +27442,36 @@ void *CUnknown100b7a90::sub_100b7a90(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7ad0 size=0x45
+struct HArg { int v; HArg(const HArg &o) { v = o.v; } };
+struct CListObj { void sub_100f9f90(HArg a); };
+extern CListObj g_106eb5d8;
+extern void *vt_104514cc[];
+extern void *vt_10451518[];
+extern void *vt_10451544[];
+extern int *(__fastcall *g_1045151c)(void *);
+void __fastcall sub_100b7da0(void *p);
+
+struct CNetBase { void **vptr; };
+struct CNetSub : CNetBase {
+    void sub_100b7ad0();
+};
+struct CNetFull { void **vptr0; };
+struct CNetFull2 : CNetFull, CNetSub {};
+
+void CNetSub::sub_100b7ad0()
+{
+    vptr = vt_104514cc;
+    void **full = (void **)((char *)this - 4);
+    *full = vt_10451518;
+    HArg h = *(HArg *)g_1045151c(full);
+    g_106eb5d8.sub_100f9f90(h);
+    sub_100b7da0(full);
+    CNetBase *p = (CNetFull2 *)((char *)this - 4);
+    p->vptr = vt_10451544;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7c00 size=0x3
 int sub_100b7c00()
 {
