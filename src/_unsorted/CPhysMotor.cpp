@@ -16,6 +16,18 @@ CPhysMotor *CPhysMotor::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10028c30 size=0x47
+#include "CPhysMotor.h"
+void sub_101cf680(Vector *v, float f);
+// TARGET: CPhysMotor::vfunc103
+void CPhysMotor::vfunc103()
+{
+	m_vec480 -= *vfunc220();
+	VectorNormalize(m_vec480);
+	sub_101cf680(&m_vec480, 0.01f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10029160 size=0x7a
 #include "CPhysMotor.h"
 
