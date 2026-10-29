@@ -42614,6 +42614,28 @@ bool CUnknown10108e00::sub_10108e00(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10108f60 size=0x49
+#include "CFireSphere.h"
+
+struct CFireSpherePartition
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12();
+	virtual void vfunc13(int mask, const Vector *pOrigin, float flRadius, int bCoarse, CFireSphere *pIterator, int unused);
+};
+
+extern CFireSpherePartition *g_1070b24c;
+
+// TARGET: sub_10108f60
+int sub_10108f60(int *pList, int nCapacity, char bCheckVisible, const Vector *pCenter, float flRadius)
+{
+	CFireSphere sphere(pList, nCapacity, bCheckVisible, pCenter, flRadius);
+	g_1070b24c->vfunc13(0x10, pCenter, flRadius, 0, &sphere, 0);
+	return sphere.m_nListCount;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10108fd0 size=0x21
 // TARGET: sub_10108fd0
 int __cdecl sub_10108f60(int *pA, int b, int c, int d, int e);
