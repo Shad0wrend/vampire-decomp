@@ -31778,6 +31778,17 @@ int sub_100d11f0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d1210 size=0x10
+namespace lifted {
+extern char g_106e6f9c;
+struct C1000330f { int sub_1000330f(int); };
+}
+int sub_100d1210(int a0)
+{
+    return ((lifted::C1000330f *)((int)&lifted::g_106e6f9c))->sub_1000330f(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d1250 size=0x27
 struct SListNode_t {
     int unk0;
