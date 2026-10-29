@@ -125259,6 +125259,44 @@ void *CUnknown10310c10::sub_10310c10(void *pSpawnPoint, int hIdeal)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10310cf0 size=0x54
+#include "CUnknown10310c10.h"
+__declspec(dllimport) void DevMsg(const char *, ...);
+
+#define P10(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
+#define P100(x) P10(x##0) P10(x##1) P10(x##2) P10(x##3) P10(x##4) P10(x##5) P10(x##6) P10(x##7) P10(x##8) P10(x##9)
+
+struct CMakerNpcView
+{
+	P10(a0) P10(a1) P10(a2) P10(a3) P10(a4) P10(a5)
+	virtual void b0(); virtual void b1();
+	virtual void vfunc62(const float *pOrigin);
+};
+
+struct CMakerFactoryView
+{
+	P100(c0) P100(c1) P100(c2) P100(c3) P100(c4) P100(c5)
+	P10(d0)
+	virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4(); virtual void e5(); virtual void e6();
+	virtual CMakerNpcView *vfunc617(int a);
+};
+
+// TARGET: CUnknown10310c10::sub_10310cf0
+void *CUnknown10310c10::sub_10310cf0(Vector vecOrigin)
+{
+	sub_10310bc0();
+	if (m_pFactory == (void *)-1)
+		return 0;
+	CMakerNpcView *pNpc = ((CMakerFactoryView *)m_pFactory)->vfunc617(1);
+	if (!pNpc) {
+		DevMsg("Failed to spawn with NPCMaker( %s )\n", (const char *)this);
+		return 0;
+	}
+	pNpc->vfunc62(&vecOrigin.x);
+	return pNpc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10311710 size=0x16e
 #include "CUnknown10311a20.h"
 #include "CUtlMemory16.h"
