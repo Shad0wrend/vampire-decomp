@@ -5061,6 +5061,7 @@
 0x1000cfa9 func   ?vfunc226@CBaseEntity@@QAEXH@Z CBaseEntity::vfunc226
 0x1000cfbd func   ??1CBaseGameSystem@@UAE@XZ CBaseGameSystem::~CBaseGameSystem
 0x1000cfc2 func   ?vfunc482@CNPC_VTzimisce@@UAEHDH@Z CNPC_VTzimisce::vfunc482
+0x1000cfc7 func   ?sub_10130330@@YAHXZ sub_10130330
 0x1000cfcc func   ?sub_1007e5f0@CUnknown1007ec20@@QAEXXZ CUnknown1007ec20::sub_1007e5f0
 0x1000cfd1 func   ?sub_101c0240@S101c0240@@QAEXH@Z S101c0240::sub_101c0240
 0x1000cfd6 func   ?sub_100727c0@@YIPAHPAH@Z sub_100727c0

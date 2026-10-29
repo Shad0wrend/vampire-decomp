@@ -46722,6 +46722,20 @@ bool sub_101301f0(float flFrac, int index, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130330 size=0x1a
+namespace lifted {
+extern int g_105754f8;
+extern int g_105754fc;
+extern char g_1057553c;
+}
+int sub_10130330()
+{
+    lifted::g_105754fc = 0xb;
+    lifted::g_105754f8 = (int)&lifted::g_1057553c;
+    return (int)&lifted::g_105754f8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130690 size=0x2d
 #include "CLight.h"
 
