@@ -50562,6 +50562,21 @@ void CUnknown1014cad0::sub_1014cad0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014eb40 size=0x19
+namespace lifted {
+extern char g_1046d080;
+}
+struct CUnknown1014eb40 { void * sub_1014eb40(); };
+void * CUnknown1014eb40::sub_1014eb40()
+{
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = -1;
+    *(int *)((char *)this + 0xc) = -1;
+    *(int *)this = (int)&lifted::g_1046d080;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014eba0 size=0x12
 namespace lifted {
 extern char g_1046d080;
