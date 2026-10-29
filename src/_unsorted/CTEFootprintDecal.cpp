@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10062b30 size=0x6
+#include "CTEFootprintDecal.h"
+namespace lifted {
+extern char g_106c2ffc;
+}
+ServerClass * CTEFootprintDecal::vfunc0()
+{
+    return (ServerClass *)((int)&lifted::g_106c2ffc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10062e90 size=0x1e
 #include "CTEFootprintDecal.h"
 
