@@ -10,6 +10,12 @@ struct CAI_ArcRecord;
 class CAI_MoveProbe;
 class CAI_BaseNPCTroika;
 
+struct CAI_SensesView	// the component at +0x5cdc of an NPC
+{
+	char m_pad0000[0x10];
+	float m_f10;	// 0x10
+};
+
 struct CAI_CondTable
 {
 	int sub_102ea2d0(int condition);	// translates a symbolic condition id (below 1000000000) to the id of the condition bit (stub 0x10012300)
