@@ -55669,6 +55669,17 @@ StatDefault2 *StatOwner2::sub_10183910(int id)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101841c0 size=0x19
+struct CUnknown101841c0 { void * sub_101841c0(int); };
+void * CUnknown101841c0::sub_101841c0(int a0)
+{
+    *(char *)this = *(char *)((char *)a0);
+    *(char *)((char *)this + 1) = *(char *)((char *)a0 + 1);
+    *(int *)((char *)this + 4) = *(int *)((char *)a0 + 4);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10184220 size=0x24
 unsigned int __stdcall sub_10184220(unsigned int x)
 {
