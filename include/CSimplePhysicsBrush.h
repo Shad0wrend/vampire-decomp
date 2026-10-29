@@ -43,7 +43,7 @@ public:
 class CSimplePhysicsBrush : public CSimplePhysicsBrushBase
 {
 public:
-	CSimplePhysicsBrush() : CSimplePhysicsBrushBase(0) {}
+	CSimplePhysicsBrush() : CSimplePhysicsBrushBase(0) { m_nFlags4c |= 8; }
 
 	virtual void vfunc0();
 	virtual void vfunc1();
