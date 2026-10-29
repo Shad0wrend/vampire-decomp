@@ -91,3 +91,28 @@ void CUnknown10225af0::sub_10225af0()
 	((CBaseVampireSkillEntity *)this)->sub_102256f0(pszDoorName);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10225b40 size=0x57
+#include "CBaseAnimating.h"
+#include "CPropDoorknob.h"
+
+void CPropDoorknob::vfunc273()
+{
+	CBaseAnimating *pAnim = (CBaseAnimating *)this;
+	int iSequence;
+	if (sub_10224100())
+		iSequence = pAnim->sub_1008f7b0("handle_locked");
+	else
+		iSequence = pAnim->sub_1008f7b0("handle_unlocked");
+	if (iSequence > -1) {
+		if (*(int *)((char *)this + 0x6f0) != iSequence) {
+			*(int *)((char *)this + 0x6f8) = 0;
+			*(int *)((char *)this + 0x6f0) = iSequence;
+			pAnim->sub_10090950();
+			pAnim->sub_100963d0();
+		}
+	} else {
+		*(int *)((char *)this + 0x6f0) = 0;
+	}
+}
+// END FUNCTION

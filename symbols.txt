@@ -2632,6 +2632,7 @@
 0x10006de8 func   ?sub_10029100@CUnknown10029100@@QAEXXZ CUnknown10029100::sub_10029100
 0x10006ded func   ?sub_10281430@CAI_BaseNPCTroika@@QAEDXZ CAI_BaseNPCTroika::sub_10281430
 0x10006df2 func   ?sub_10202fd0@CUnknown10202fd0@@QAEXPAUCSlotIter@@@Z CUnknown10202fd0::sub_10202fd0
+0x10006df7 func   ?vfunc273@CPropDoorknob@@QAEXXZ CPropDoorknob::vfunc273
 0x10006e10 func   ?sub_1040aff0@CUtlVector192@@QAEXH@Z CUtlVector192::sub_1040aff0
 0x10006e15 func   ?sub_101faa70@CVDmg_t@@QAEHXZ CVDmg_t::sub_101faa70
 0x10006e1f func   ?sub_10402cf0@@YAHXZ sub_10402cf0
