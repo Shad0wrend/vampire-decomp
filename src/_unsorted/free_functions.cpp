@@ -42139,6 +42139,20 @@ extern "C" CBaseEntity *filter_multi()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10107a00 size=0x1a
+namespace lifted {
+extern int g_1056c2dc;
+extern int g_1056c2e0;
+extern char g_1056c324;
+}
+int sub_10107a00()
+{
+    lifted::g_1056c2e0 = 6;
+    lifted::g_1056c2dc = (int)&lifted::g_1056c324;
+    return (int)&lifted::g_1056c2dc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10108e00 size=0x27
 #include "CUnknown10108e00.h"
 
