@@ -12,7 +12,7 @@ public:
 	CAI_Node **m_ppNodes;	// 0x04
 	char m_pad0008[0x1e8 - 8];
 	int m_n1e8;	// 0x1e8
-	void sub_102f30f0();	// the constructor body: every field cleared, the float at the start of each of 20 six dword records from +0x14 set to -10.0f
+	CAI_NodeGraph *sub_102f30f0();	// the constructor body: every field cleared, the float at the start of each of 20 six dword records from +0x14 set to -10.0f
 	CUtlVector4 m_Counts;	// 0x1ec
 
 	void sub_102f4e00();	// prepares the graph after loading: every node's check (sub_102fa510) and second pass (sub_102fac00), the global pass sub_102cc9f0, +0x78 of every node cleared, every node's last pass (sub_102fb4e0), the global pass sub_102f99b0, then sub_102f49c0 on the graph
