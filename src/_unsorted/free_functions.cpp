@@ -96663,6 +96663,31 @@ void CPropRadio::sub_1022c920(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022ce80 size=0x52
+struct SEnt {
+	char m_pad[0x224];
+	unsigned int m_nFlags;
+};
+struct SFinder {
+	SEnt *sub_100f7380(SEnt *pStart, const char *name);
+};
+extern SFinder g_106eb5d8;
+extern char g_10750d80;
+
+void sub_1022ce80()
+{
+	SEnt *p = g_106eb5d8.sub_100f7380(0, "ambient_soundscheme");
+	while (p) {
+		if (p->m_nFlags & 1)
+			p->m_nFlags &= ~1;
+		else
+			p->m_nFlags |= 1;
+		p = g_106eb5d8.sub_100f7380(p, "ambient_soundscheme");
+	}
+	g_10750d80 = !g_10750d80;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022cf90 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);
