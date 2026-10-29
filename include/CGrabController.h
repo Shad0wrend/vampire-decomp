@@ -16,7 +16,7 @@ class CGrabController
 public:
 	CGrabController();
 
-	virtual void vfunc0();
+	virtual int vfunc0(void *pController, class CPhysObjectView *pObject, float flDeltaTime, float *pLinear, float *pAngular);	// IMotionEvent::Simulate
 
 	char m_pad0004[0x18];		// 0x0004 .. 0x001B
 	float m_f1c;
