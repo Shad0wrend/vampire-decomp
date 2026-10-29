@@ -105793,6 +105793,17 @@ void sub_102c8ca0(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c8cc0 size=0x10
+namespace lifted {
+extern char g_109203dc;
+struct C10001f05 { int sub_10001f05(int); };
+}
+int sub_102c8cc0(int a0)
+{
+    return ((lifted::C10001f05 *)((int)&lifted::g_109203dc))->sub_10001f05(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c9d20 size=0x15
 int *__fastcall sub_102c9d20(int *p)
 {
