@@ -203,6 +203,20 @@ void CRotDoorUnit::sub_100f2a00(Vector *pMins, Vector *pMaxs)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f2fc0 size=0x50
+#include "CRotDoor.h"
+#include "CEntityVSlots.h"
+
+// TARGET: CRotDoor::vfunc247
+float CRotDoor::vfunc247()
+{
+	Vector *pAngles = ((CEntityVSlots *)this)->slot221();
+	Vector d;
+	d = m_angTarget674 - *pAngles;
+	return FastSqrt(d.x * d.x + (d.y * d.y + d.z * d.z)) / m_flSpeed164;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f4080 size=0x8e
 #include "CRotDoor.h"
 
