@@ -31831,6 +31831,17 @@ void CMomentaryRotButton::sub_100cacb0(float flAngle, bool bFlag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cae20 size=0x50
+#include "CMomentaryRotButton.h"
+
+// TARGET: CMomentaryRotButton::sub_100cae20
+void CMomentaryRotButton::sub_100cae20(float flValue, void *pActivator)
+{
+	if (m_Position55c.Get() != flValue)
+		m_Position55c.Set(flValue, pActivator, this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cae90 size=0xda
 #include "CMomentaryRotButton.h"
 #include "CEntityVSlots.h"
