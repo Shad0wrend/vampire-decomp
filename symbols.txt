@@ -6030,6 +6030,7 @@
 0x1000eafc func   ?sub_10295590@CAI_BaseNPCTroika@@QAEHH@Z CAI_BaseNPCTroika::sub_10295590
 0x1000eb01 func   ?sub_10400750@@YAHXZ sub_10400750
 0x1000eb06 func   ?sub_104004a0@@YAHXZ sub_104004a0
+0x1000eb0b func   ?sub_1007e220@CChoreoScene1007e220@@QAEXPAUCChoreoSceneActor1007e970@@@Z CChoreoScene1007e220::sub_1007e220
 0x1000eb15 func   ?sub_1033cb00@@YAHPBD@Z sub_1033cb00
 0x1000eb1a func   ?sub_100ae150@CBaseEntity@@QAEXXZ CBaseEntity::sub_100ae150
 0x1000eb24 func   ?vfunc546@CNPC_VHengeyokai@@QAEHH@Z CNPC_VHengeyokai::vfunc546

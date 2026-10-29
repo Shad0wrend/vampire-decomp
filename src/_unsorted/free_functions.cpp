@@ -17048,6 +17048,20 @@ void CUnk1007e090::sub_1007e090(int i, int j)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007e220 size=0x4c
+#include "CChoreoScene1007e220.h"
+
+void CChoreoScene1007e220::sub_1007e220(CChoreoSceneActor1007e970 *pActor)
+{
+	for (int i = 0; i < pActor->sub_10072eb0(); i++) {
+		CChoreoSceneChannel1007e970 *pChannel = pActor->sub_10072ed0(i);
+		pActor->sub_10073020(pChannel);
+		sub_1007e290(pChannel);
+	}
+	sub_1007e320(pActor);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007e320 size=0xbe
 #include "CUnknown1007e320.h"
 #include "utlvector.h"
