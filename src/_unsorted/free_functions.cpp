@@ -54998,6 +54998,20 @@ void CBasePlayer::sub_10178590(Vector vecPos)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10179000 size=0x1a
+namespace lifted {
+extern int g_105836dc;
+extern int g_105836e0;
+extern char g_10583724;
+}
+int sub_10179000()
+{
+    lifted::g_105836e0 = 7;
+    lifted::g_105836dc = (int)&lifted::g_10583724;
+    return (int)&lifted::g_105836dc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10179160 size=0x13
 int sub_10179160(int a0, int a1, int a2)
 {
