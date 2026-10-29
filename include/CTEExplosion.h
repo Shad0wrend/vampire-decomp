@@ -3,11 +3,13 @@
 #pragma once
 
 #include "Vector.h"
+#include "CBaseTempEntity.h"
 
-class CTEExplosion
+class CTEExplosion : public CBaseTempEntityHead
 {
 public:
-	virtual void vfunc0();
+	CTEExplosion(const char *pName);	// 0x10061820
+	virtual ServerClass *vfunc0();
 	virtual void vfunc1();
 	virtual CTEExplosion *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3(const Vector *pOrigin, const Vector *pAngles);	// slot 3 "Test": the fireball model, scale 0.5, frame rate 15, no flags; the position is the origin raised by a constant and moved 50 units forward (flattened direction); then the effect is created for every player (slot 4)
@@ -23,8 +25,6 @@ public:
 	int m_nField38;	// 0x38
 	int m_nField3c;	// 0x3c
 
-	CTEExplosion *sub_10061820(const char *pName);	// constructor
-	void sub_10015334(const char *pName);	// base (CBaseTempEntityHead) constructor
 	void sub_1000e90d();	// destructor body
 	void vfunc4(void *pFilter, int delay);	// slot 4 "Create"-like worker (stub 0x100051a0), called directly
 };
