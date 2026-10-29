@@ -70576,6 +70576,25 @@ CEdtEntitiesEnum *CEdtEntitiesEnum::sub_101ccb60(CBaseEntity **pList, int nMaxLi
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ccc80 size=0x46
+#include "CEdtEntitiesEnum.h"
+struct CSpatialPartition101ccc80 {
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+    virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+    virtual void vfunc12(int listMask, const float *mins, const float *maxs, int coarse, void *pEnum, int a6);
+};
+extern CSpatialPartition101ccc80 *g_1070b24c;
+// TARGET: sub_101ccc80
+int sub_101ccc80(CBaseEntity **pList, int nMax, const float *mins, const float *maxs, unsigned int mask, int a6)
+{
+    char buf[0x18];
+    CEdtEntitiesEnum *e = (CEdtEntitiesEnum *)buf;
+    e->sub_101ccb60(pList, nMax, mask);
+    g_1070b24c->vfunc12(0x10, mins, maxs, 0, e, a6);
+    return e->m_nCount;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cccf0 size=0x37
 int sub_10009917(char *pBuf, int nSize, int a, int b, int c, int d);
 
