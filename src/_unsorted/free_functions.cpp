@@ -53959,6 +53959,30 @@ bool CUnk101672d0::sub_101672d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10167370 size=0x45
+#include "CBaseEntity.h"
+struct CTargetFinder { CBaseEntity *sub_101be1f0(void *pAsker); };
+extern CTargetFinder g_1072c540;
+struct CPlayerTargetView {
+	char m_pad[0x1c58];
+	unsigned int m_h1c58;
+	char m_pad2[4];
+	unsigned int m_h1c60;
+	char sub_10167370();
+	char sub_10328df0(CBaseEntity *pEnt, int mode);
+};
+char CPlayerTargetView::sub_10167370()
+{
+	CBaseEntity *pEnt = g_1072c540.sub_101be1f0(this);
+	if (pEnt) {
+		m_h1c58 = *pEnt->vfunc1();
+		m_h1c60 = *pEnt->vfunc1();
+		return sub_10328df0(pEnt, 3);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10167fd0 size=0x16a
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
