@@ -52193,6 +52193,29 @@ void * CUnknown10146640::sub_10146640()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146670 size=0x4d
+__declspec(dllimport) void Warning(const char *fmt, ...);
+struct CNetStateUnit {
+	char m_pad0[2];
+	char m_bChanged;
+	char m_pad3;
+	short m_nInterval;
+	short m_nCount;
+	void sub_10146670(float flInterval);
+};
+// TARGET: CNetStateUnit::sub_10146670
+void CNetStateUnit::sub_10146670(float flInterval)
+{
+	if (flInterval > 5.0) {
+		Warning("Value passed to NetworkStateSetUpdateInterval (%.2f) too large.\n", flInterval);
+		flInterval = 5.0f;
+	}
+	m_nInterval = (short)(flInterval * 13107.0);
+	m_nCount = 0;
+	m_bChanged = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101466e0 size=0xe
 #include "CUnknown101466e0.h"
 // TARGET: CUnknown101466e0::sub_101466e0
