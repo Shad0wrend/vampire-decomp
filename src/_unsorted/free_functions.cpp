@@ -118038,6 +118038,35 @@ void UtlMem::sub_102def00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102df130 size=0x53
+struct CUnknown1013dc40 { int sub_1013dc40(); };
+struct Node {
+    Vector a;
+    Vector b;
+    int pad18[3];
+    int m24;
+    int pad28;
+    int m2c;
+    int m30;
+    int pad34;
+    int m38;
+};
+extern Vector g_1070d1b0;
+extern CUnknown1013dc40 g_10933dac;
+// TARGET: sub_102df130
+Node *sub_102df130()
+{
+    Node *p = (Node *)g_10933dac.sub_1013dc40();
+    p->m24 = -1;
+    p->a = g_1070d1b0;
+    p->b = g_1070d1b0;
+    p->m2c = -1;
+    p->m30 = -1;
+    p->m38 = 0;
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102df1b0 size=0x10
 namespace lifted {
 extern char g_10933dac;
