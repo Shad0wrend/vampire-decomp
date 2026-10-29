@@ -11542,6 +11542,20 @@ void CUtlMemUnit1006be50::sub_1006be50(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006bf40 size=0x41
+#include "CUnknown1006bea0.h"
+#include <ctype.h>
+
+void CUnknown1006bea0::sub_1006bf40()
+{
+    if ((m_flags15 & 1) && !m_flags) {
+        int size = m_size;
+        while (m_pos < size && isspace(m_pData[m_pos]))
+            m_pos++;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006c0a0 size=0xa1
 #include "CUnknown1006bea0.h"
 
