@@ -123243,6 +123243,29 @@ CUnknown103164c0 *CUnknown103164c0::sub_10316560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103165f0 size=0x4c
+#include "CUnknown103164c0.h"
+extern CUnknown103164c0 *g_10936c68;
+void CUnknown103164c0::sub_103165f0(const char *pszName)
+{
+    m_pszName = pszName;
+    for (int i = 0; i < 16; i++)
+        m_hMembers[i] = 0xffffffff;
+    *(int *)m_pad60 = 0;
+    if (pszName) {
+        m_pNext = g_10936c68;
+        g_10936c68 = this;
+    } else {
+        m_pNext = 0;
+    }
+    *((char *)this + 0x10) = 1;
+    *(CUnknown103164c0 **)((char *)this + 0xc) = this;
+    m_nMembers = 0;
+    m_n70 = -1;
+    *(int *)((char *)this + 0x74) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10316660 size=0x34
 #include "CUnknown10316660.h"
 
