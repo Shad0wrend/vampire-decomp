@@ -54716,6 +54716,42 @@ int sub_10156810()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10156a00 size=0x58
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern int g_1057e860[2];
+ISaveRestoreOps *sub_10045d90(int);
+
+int *sub_10156a00()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 4, "m_boneIndexAttached", {0x103c, 0}, 1, 2 },
+        { 4, "m_ragdollAttachedObjectIndex", {0x1040, 0}, 1, 2 },
+        { 3, "m_attachmentPointBoneSpace", {0x1044, 0}, 1, 2 },
+        { 3, "m_attachmentPointRagdollSpace", {0x1050, 0}, 1, 2 },
+        { 5, "m_bShouldDetach", {0x105c, 0}, 1, 2 },
+        { 10, "m_pAttachConstraint", {0x1060, 0}, 1, 2, 0, sub_10045d90(5), (void *)0 },
+    };
+    g_1057e860[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1057e860[0] = (int)&dataDesc[1];
+    return g_1057e860;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10156d30 size=0x8
 void __fastcall sub_10156d30(char *p) { p[0x105c] = 1; }
 // END FUNCTION
