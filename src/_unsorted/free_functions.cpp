@@ -128739,6 +128739,17 @@ void CNPC_VManBat::sub_1038fd40()
 void __fastcall sub_10390040(char *p) { p[0x66b8] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x10390860 size=0x19
+struct CUnknown10390860 { void * sub_10390860(int); };
+void * CUnknown10390860::sub_10390860(int a0)
+{
+    *(char *)this = *(char *)((char *)a0);
+    *(char *)((char *)this + 1) = *(char *)((char *)a0 + 1);
+    *(int *)((char *)this + 4) = *(int *)((char *)a0 + 4);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103908c0 size=0x24
 unsigned int __stdcall sub_103908c0(unsigned int x)
 {

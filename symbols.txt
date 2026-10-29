@@ -7894,6 +7894,7 @@
 0x10013df4 func   ?sub_10064ca0@@YAHXZ sub_10064ca0
 0x10013df9 func   ?vfunc316@CBasePlayer@@UAEXPAVCGlobalEntityList_Ent@@HH@Z CBasePlayer::vfunc316
 0x10013dfe func   ?sub_1017e840@@YGXH@Z sub_1017e840
+0x10013e03 func   ?sub_10390860@CUnknown10390860@@QAEPAXH@Z CUnknown10390860::sub_10390860
 0x10013e0d func   ?sub_1010b470@CFire@@QAEXXZ CFire::sub_1010b470
 0x10013e12 func   ?Base@?$CUtlMemory@H@@QAEPAHXZ CUtlMemory<int>::Base
 0x10013e17 func   ?sub_10192a30@@YAPAHXZ sub_10192a30
