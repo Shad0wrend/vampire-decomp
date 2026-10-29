@@ -66,6 +66,17 @@ void CPhysicsProp::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101914a0 size=0x44
+#include "CPhysicsProp.h"
+bool CPhysicsProp::vfunc68(void *pOther)
+{
+	if ((*(int *)((char *)pOther + 0x9c) && (*(unsigned char *)((char *)this + 0x204) & 4)) ||
+		(*(int *)((char *)pOther + 0xa8) && (sub_100b39c0() & 1)))
+		return true;
+	return sub_1008bfe0(pOther);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10191510 size=0x17a
 #include "CPhysicsProp.h"
 #include "CCollisionProperty.h"
