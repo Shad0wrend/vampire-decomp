@@ -89714,6 +89714,32 @@ const char *sub_102034a0(int id)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10203540 size=0x53
+#include <string.h>
+extern char g_106b8540[];
+struct SNamedEntry10203540 {
+	int m_id;
+	const char *m_pszName;
+};
+extern int g_1073a368;
+extern SNamedEntry10203540 **g_1073a36c;
+
+inline const char *NameOf(const char *const *pp)
+{
+	return *pp ? *pp : g_106b8540;
+}
+
+int sub_10203540(const char *pszName)
+{
+	for (int i = 0; i < g_1073a368; i++)
+	{
+		if (!_strcmpi(NameOf(&g_1073a36c[i]->m_pszName), pszName))
+			return g_1073a36c[i]->m_id;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102035c0 size=0x76
 #include "CUnknown109f08c0.h"
 

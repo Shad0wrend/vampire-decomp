@@ -3340,6 +3340,7 @@
 0x10008724 func   ?sub_100fca30@@YAHXZ sub_100fca30
 0x1000873d func   ?vfunc71@CPropSwitch@@UAEXXZ CPropSwitch::vfunc71
 0x10008742 func   ?vfunc281@CBaseFlex@@QAEMH@Z CBaseFlex::vfunc281
+0x10008747 func   ?sub_10203540@@YAHPBD@Z sub_10203540
 0x1000874c func   ?vfunc103@CEnvSpark@@UAEXXZ CEnvSpark::vfunc103
 0x10008751 func   _item_container_one_item_filtered item_container_one_item_filtered
 0x1000877e func   ?sub_10396000@CUnknown10396000@@QAEHH@Z CUnknown10396000::sub_10396000
