@@ -133583,6 +133583,20 @@ extern "C" CBaseEntity *sheriff_teleport_bats()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b1aa0 size=0x1a
+namespace lifted {
+extern int g_1065071c;
+extern int g_10650720;
+extern char g_1093c5d4;
+}
+int sub_103b1aa0()
+{
+    lifted::g_10650720 = 1;
+    lifted::g_1065071c = (int)&lifted::g_1093c5d4;
+    return (int)&lifted::g_1065071c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b1b70 size=0x43
 #include "CNPC_VSheriffSwarm.h"
 void *sub_100aa720(int size);
