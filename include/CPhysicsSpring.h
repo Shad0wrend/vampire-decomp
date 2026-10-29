@@ -21,6 +21,7 @@ public:
 	virtual void vfunc4();
 	virtual CPhysicsSpring *vfunc5(unsigned int flags);	// scalar deleting destructor
 
+	CPhysicsSpring *sub_1004d060();	// constructor body (phys_spring): base constructor (stub 0x100090fc), vtable, spring constant 150.0f, length 0, damping 2.0f, relative damping 0.01f
 	void sub_10013840();	// destructor body
 	void sub_1004d100();	// destructor body (the function behind the stub above)
 	void sub_1004d140(inputdata_t *inputdata);	// input: spring constant
