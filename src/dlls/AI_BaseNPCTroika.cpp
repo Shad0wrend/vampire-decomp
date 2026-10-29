@@ -519,6 +519,23 @@ void __fastcall sub_102aa860(CAI_BaseNPCTroika *pThis, int, CTaskPath_102aa860 *
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ad260 size=0x4c
+#include "CAI_BaseNPCTroika.h"
+// TARGET: CAI_BaseNPCTroika::sub_102ad260
+int CAI_BaseNPCTroika::sub_102ad260()
+{
+	if (sub_10269d30(0x21)) {
+		if (m_n5cc0 != 8)
+			m_flags14b8 |= 0x100;
+		*(const char **)((char *)this + 0x1b3c) = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+		*(int *)((char *)this + 0x1b40) = 0x4468;
+		m_n5cc4 = 8;
+		return 8;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b4fe0 size=0x91
 #include "CAI_BaseNPCTroika.h"
 #include "CUnknown102dfaa0.h"

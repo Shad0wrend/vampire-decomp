@@ -8085,6 +8085,7 @@
 0x100134b7 func   ?vfunc82@CPhysBox@@UAEPAUdatamap_t@@XZ CPhysBox::vfunc82
 0x100134c1 func   ?sub_100dea90@CUnknown100dea90@@QAEXH@Z CUnknown100dea90::sub_100dea90
 0x100134c6 func   ?sub_10045fe0@S10045fe0@@QAEPAU1@HH@Z S10045fe0::sub_10045fe0
+0x100134cb func   ?sub_102ad260@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::sub_102ad260
 0x100134d0 func   ?sub_1042ffb0@@YAXXZ sub_1042ffb0
 0x100134d5 func   ?sub_103ddaa0@@YG_NPAD@Z sub_103ddaa0
 0x100134da func   ?sub_103da0a0@@YIDPAVCNPC_VWerewolf@@@Z sub_103da0a0
