@@ -131426,6 +131426,20 @@ unsigned int __stdcall sub_103908c0(unsigned int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10390e40 size=0x1a
+namespace lifted {
+extern int g_10642e88;
+extern int g_10642e8c;
+extern char g_10642ecc;
+}
+int sub_10390e40()
+{
+    lifted::g_10642e8c = 0x1c;
+    lifted::g_10642e88 = (int)&lifted::g_10642ecc;
+    return (int)&lifted::g_10642e88;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10390e70 size=0x43
 #include "CNPC_VMingXiao.h"
 void *sub_100aa720(int size);
