@@ -103305,6 +103305,20 @@ int __fastcall sub_1027a780(void *pSelf)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027ba80 size=0x1a
+namespace lifted {
+extern int g_105c982c;
+extern int g_105c9830;
+extern char g_105caa2c;
+}
+int sub_1027ba80()
+{
+    lifted::g_105c9830 = 5;
+    lifted::g_105c982c = (int)&lifted::g_105caa2c;
+    return (int)&lifted::g_105c982c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027c2c0 size=0x3
 char sub_1027c2c0()
 {

@@ -8138,6 +8138,7 @@
 0x100141e6 func   ?vfunc241@CAI_GoalEntity@@QAEXH@Z CAI_GoalEntity::vfunc241
 0x100141fa func   ?vfunc9@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc9
 0x100141ff func   ?vfunc5@CAmbientGeneric@@QAEPAV1@I@Z CAmbientGeneric::vfunc5
+0x1001420e func   ?sub_1027ba80@@YAHXZ sub_1027ba80
 0x10014218 func   ?vfunc30@CSave@@UAEXPBDABVVector@@@Z CSave::vfunc30
 0x1001421d func   ?vfunc5@CPushable@@UAEPAV1@I@Z CPushable::vfunc5
 0x10014222 func   ?vfunc156@CRotDoor@@QAEXH@Z CRotDoor::vfunc156
