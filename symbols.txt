@@ -3556,6 +3556,7 @@
 0x100099df func   ?sub_100d2eb0@@YAXXZ sub_100d2eb0
 0x100099f3 func   ?RemoveAll@?$CUtlVector@V?$CUtlVector@UStepSimulationData@@V?$CUtlMemory@UStepSimulationData@@@@@@V?$CUtlMemory@V?$CUtlVector@UStepSimulationData@@V?$CUtlMemory@UStepSimulationData@@@@@@@@@@QAEXXZ CUtlVector<CUtlVector<StepSimulationData,CUtlMemory<StepSimulationData> >,CUtlMemory<CUtlVector<StepSimulationData,CUtlMemory<StepSimulationData> > > >::RemoveAll
 0x100099f8 func   ?sub_100d13d0@CUnknown106b89bc@@QAEXPAVCBaseEntity@@@Z CUnknown106b89bc::sub_100d13d0
+0x100099fd func   ?sub_101f1b90@CUnknown101f1b90@@QAEPAXXZ CUnknown101f1b90::sub_101f1b90
 0x10009a0c func   ?sub_101317d0@CToggleRelayUnit@@QAEXXZ CToggleRelayUnit::sub_101317d0
 0x10009a16 func   ?sub_10248850@CUnknown10248850@@QAEXH@Z CUnknown10248850::sub_10248850
 0x10009a1b func   ?sub_1007ccc0@CChoreoSaverView@@QAEXPAXHPAUCChoreoActorView@@@Z CChoreoSaverView::sub_1007ccc0

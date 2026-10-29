@@ -77425,6 +77425,16 @@ int __stdcall sub_101f1b70(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f1b90 size=0x10
+struct CUnknown101f1b90 { void * sub_101f1b90(); };
+void * CUnknown101f1b90::sub_101f1b90()
+{
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f1be0 size=0x6c
 #include "CUnknown10227c90.h"
 #include "CUnknown101f0e50.h"
