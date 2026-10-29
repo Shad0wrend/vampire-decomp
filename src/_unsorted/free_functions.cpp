@@ -64228,6 +64228,20 @@ bool CUnknown101ab800::sub_101ab8f0(int a, const unsigned char *pvs, int unused,
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aba00 size=0x1a
+namespace lifted {
+extern int g_10595820;
+extern int g_10595824;
+extern char g_10595864;
+}
+int sub_101aba00()
+{
+    lifted::g_10595824 = 1;
+    lifted::g_10595820 = (int)&lifted::g_10595864;
+    return (int)&lifted::g_10595820;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ac2f0 size=0xa
 unsigned int CAmbientGeneric::sub_101ac2f0()
 {
