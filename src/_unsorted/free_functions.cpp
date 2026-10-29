@@ -131185,6 +131185,22 @@ void sub_103706b0(CWitnessPlayer *pPlayer, char bFlag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103707e0 size=0x47
+#include "CSave.h"
+extern int g_1093ac3c;
+extern float g_1093aca8;
+extern int g_1093acac;
+extern int g_1093acb0;
+int sub_103707e0(CSave *pSave)
+{
+    pSave->vfunc36(&g_1093ac3c, 1);
+    pSave->vfunc25(&g_1093aca8, 1);
+    pSave->vfunc10(&g_1093acac, 1);
+    pSave->vfunc10(&g_1093acb0, 1);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103708c0 size=0x1
 void sub_103708c0()
 {
