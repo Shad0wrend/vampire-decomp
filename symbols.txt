@@ -344,6 +344,7 @@
 0x10001d70 func   ?sub_1039e800@CTentacleUnit@@QAEXH@Z CTentacleUnit::sub_1039e800
 0x10001d7a func   ?sub_10249220@SList@@QAEXXZ SList::sub_10249220
 0x10001d7f func   ?sub_1007f540@UtlMem@@QAEXXZ UtlMem::sub_1007f540
+0x10001d8e func   ?sub_10147a30@CUnknown10147a30@@QAEHH@Z CUnknown10147a30::sub_10147a30
 0x10001d98 func   ?sub_102ee270@CUnknown102ee270@@QAEDXZ CUnknown102ee270::sub_102ee270
 0x10001d9d func   ?sub_103f4bf0@@YAHXZ sub_103f4bf0
 0x10001da7 func   ?sub_1019f1f0@CRopeKeyframe@@QAEXH@Z CRopeKeyframe::sub_1019f1f0

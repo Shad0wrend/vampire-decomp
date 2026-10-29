@@ -50104,6 +50104,18 @@ void CBaseCombatCharacter::sub_10147960(int level, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10147a30 size=0x13
+namespace lifted {
+extern char g_106e7050;
+struct C10015b45 { int sub_10015b45(int, int); };
+}
+struct CUnknown10147a30 { int sub_10147a30(int); };
+int CUnknown10147a30::sub_10147a30(int a0)
+{
+    return ((lifted::C10015b45 *)((int)&lifted::g_106e7050))->sub_10015b45((int)this, a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10147c10 size=0xa6
 struct ISaveRestoreOps;
 struct datamap_t;
