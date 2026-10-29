@@ -52328,6 +52328,26 @@ void sub_10142af0(int a, int b, int c, int d, int e, int f, int g, int h, int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10142e20 size=0x50
+struct CColView10142e20	// the collision property at +0x270 as its slot users see it
+{
+	virtual void s0();
+	virtual float *s1();	// OBBMins
+	virtual float *s2();	// OBBMaxs
+	virtual void s3(); virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7();
+	virtual float *s8();	// collision origin
+	virtual float *s9(int a);	// collision angles
+};
+
+void sub_10142b80(float *pOrigin, float *pMins, float *pMaxs, float *pAngles, int r, int g, int b, int a, int duration);
+
+void sub_10142e20(CBaseEntity *pEntity, int r, int g, int b, int a, int duration)
+{
+	CColView10142e20 *pCol = (CColView10142e20 *)((char *)pEntity + 0x270);
+	sub_10142b80(pCol->s8(), pCol->s1(), pCol->s2(), pCol->s9(0), r, g, b, a, duration);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101434b0 size=0x128
 #include "CBroadcastRecipientFilter.h"
 #include "CUnknown1070b22c.h"
