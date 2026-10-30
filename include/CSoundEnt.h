@@ -50,4 +50,7 @@ public:
 	CSoundEntSlot m_SoundPool[1];	// 0x464
 public:
 	virtual void vfunc104();
+public:
+	virtual int vfunc82();
+	virtual int vfunc117();
 };
