@@ -96,3 +96,10 @@ void CTraitDependencyDataDescSaveDataOps::vfunc1(CTraitDependencyField *pField, 
 	d->m_extra = r->ReadInt();
 }
 // END FUNCTION
+
+// FUNCTION: 0x10205690 size=0x3
+#include "CTraitDependencyDataDescSaveDataOps.h"
+void CTraitDependencyDataDescSaveDataOps::vfunc3(int a0)
+{
+}
+// END FUNCTION

@@ -7983,6 +7983,7 @@
 0x100120e9 func   ?sub_1013d0e0@@YAXMMMH_N000@Z sub_1013d0e0
 0x100120fd func   ?sub_10383e20@CUnknown10383e20@@QAEPAXH@Z CUnknown10383e20::sub_10383e20
 0x10012102 func   ?sub_10412590@@YAXHH@Z sub_10412590
+0x1001211b func   ?vfunc3@CTraitDependencyDataDescSaveDataOps@@UAEXH@Z CTraitDependencyDataDescSaveDataOps::vfunc3
 0x10012125 func   ?sub_10088a80@@YAXXZ sub_10088a80
 0x1001212f func   ?sub_10076ad0@CUnknown10077730@@QAEXD@Z CUnknown10077730::sub_10076ad0
 0x10012134 func   ?sub_1022d050@UtlMem@@QAEXXZ UtlMem::sub_1022d050
