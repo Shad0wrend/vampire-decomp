@@ -5833,6 +5833,7 @@
 0x1000dada func   ?sub_1023e4b0@@YAXPAVCBaseEntity@@H@Z sub_1023e4b0
 0x1000dae4 func   ?vfunc40@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHH@Z CTempEntsSystem::vfunc40
 0x1000dafd func   ?sub_10108e00@CUnknown10108e00@@QAE_NH@Z CUnknown10108e00::sub_10108e00
+0x1000db07 func   ?vfunc500@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc500
 0x1000db16 func   _item_p_occult_experience item_p_occult_experience
 0x1000db1b func   ?vfunc69@CNPC_VTzimisce@@QAEDPAX@Z CNPC_VTzimisce::vfunc69
 0x1000db34 func   ?sub_102f9330@CMem4_t@@QAEXH@Z CMem4_t::sub_102f9330
