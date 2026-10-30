@@ -58587,6 +58587,34 @@ int sub_10179000()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101790b0 size=0x5e
+#include "CBaseEntity.h"
+#include "globalvars.h"
+
+void sub_101ceb70(const char *p);
+extern float g_104454c4;
+
+struct SView179 {
+	char pad[0x450];
+	const char *m_psz450;
+	float m_f454;
+	float m_f458;
+};
+void __fastcall sub_1000e32c(SView179 *p);
+
+void __fastcall sub_101790b0(SView179 *p)
+{
+	sub_101ceb70(p->m_psz450 ? p->m_psz450 : "");
+	float fDelay = p->m_f458 - p->m_f454;
+	if (fDelay > g_104454c4) {
+		*(float *)((char *)p + 0x17c) = fDelay + gpGlobals->curtime;
+		((CBaseEntity *)p)->sub_100ac4e0((int)sub_1000e32c, 0, 0);
+		return;
+	}
+	sub_1000e32c(p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10179160 size=0x13
 int sub_10179160(int a0, int a1, int a2)
 {
