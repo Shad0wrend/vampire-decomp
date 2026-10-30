@@ -38,3 +38,11 @@ void CTEEnergySplash::vfunc3(const Vector *pOrigin, const Vector *pAngles)
 	vfunc4(&filter, 0.0f);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10061500 size=0x3
+#include "CTEEnergySplash.h"
+int CTEEnergySplash::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
