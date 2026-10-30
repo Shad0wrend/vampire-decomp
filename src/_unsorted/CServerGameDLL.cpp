@@ -144,6 +144,16 @@ void CServerGameDLL::vfunc11()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011aea0 size=0x10
+namespace lifted {
+int sub_10004afc(int);
+}
+int CServerGameDLL::vfunc12(int a0)
+{
+    return lifted::sub_10004afc(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011aec0 size=0x85
 #include "CServerGameDLL.h"
 #include "CSave.h"
