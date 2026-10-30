@@ -152,6 +152,7 @@ public:
 	bool sub_102f0fe0(char *pbDone);	// stub 0x100042b4
 	bool sub_102f13a0(char *pbDone);	// stub 0x100029fa
 	void sub_102ee380(int a, int b);	// stamps this and the pathfinder, then hands (a, b) to the pathfinder's sub_102fdcc0
+	void sub_102ee300(int a, int b, int c, int d, int e);	// as sub_102ee380, handing five arguments to the pathfinder's sub_10300140
 	int sub_102ecc00();	// the dword at +0x5d3c of the owner (stub 0x10013011)
 	void sub_102ee6a0();	// stub 0x10012963
 	CBaseEntity *sub_102ee160();	// stub 0x10015906: the entity the navigator is after, compared with the one the entity list gives for the NPC's handle at +0x5ce0
