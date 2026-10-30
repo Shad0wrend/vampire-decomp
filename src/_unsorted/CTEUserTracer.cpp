@@ -14,6 +14,13 @@ CTEUserTracer *CTEUserTracer::vfunc2(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006aab0 size=0x3
+#include "CTEUserTracer.h"
+void CTEUserTracer::vfunc3(int a0, int a1)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006aad0 size=0x39
 #include "CTEUserTracer.h"
 #include "IVEngineServerFull.h"
