@@ -109,6 +109,17 @@ int CNPC_VScurrying::vfunc440(int act)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ac4e0 size=0xb
+#include "CNPC_VScurrying.h"
+namespace lifted {
+int sub_1000be92();
+}
+int CNPC_VScurrying::vfunc337()
+{
+    return (lifted::sub_1000be92()) | 0x80000;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ac500 size=0xcb
 #include "CNPC_VScurrying.h"
 #include "CEHandleGet.h"

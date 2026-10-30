@@ -1448,6 +1448,7 @@
 0x10003fb2 func   ?sub_100dbbe0@@YI_NPAD@Z sub_100dbbe0
 0x10003fbc func   ?sub_103e61c0@@YAHXZ sub_103e61c0
 0x10003fc6 func   ?sub_10075f10@CUnknown10075f10@@QAEMXZ CUnknown10075f10::sub_10075f10
+0x10003fd5 func   ?vfunc337@CNPC_VScurrying@@UAEHXZ CNPC_VScurrying::vfunc337
 0x10003fda func   ?sub_101aba00@@YAHXZ sub_101aba00
 0x10003fdf func   ?vfunc5@CPhysicsAnimlink@@QAEPAV1@I@Z CPhysicsAnimlink::vfunc5
 0x10003fe9 func   ?sub_1012f030@@YAPAXPBD@Z sub_1012f030
