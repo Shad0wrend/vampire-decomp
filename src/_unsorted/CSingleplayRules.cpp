@@ -166,6 +166,12 @@ int CSingleplayRules::vfunc48(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ac040 size=0x3
+void CSingleplayRules::vfunc54(int a0, int a1, int a2)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ac080 size=0x8
 // TARGET: CSingleplayRules::vfunc61
 int CSingleplayRules::vfunc61(int index)
