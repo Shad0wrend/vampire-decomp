@@ -7070,6 +7070,7 @@
 0x1000f515 func   ?vfunc39@CBaseTerminal@@QAEXPAX@Z CBaseTerminal::vfunc39
 0x1000f51a func   ?sub_101e0c30@CUnknown101e0c30@@QAEPAUS101e0520@@XZ CUnknown101e0c30::sub_101e0c30
 0x1000f51f func   _item_k_empire_mafia_key item_k_empire_mafia_key
+0x1000f529 func   ?vfunc249@CRotDoor@@UAEHXZ CRotDoor::vfunc249
 0x1000f53d func   ?sub_1005e700@CUnknown1005e700@@QAEHXZ CUnknown1005e700::sub_1005e700
 0x1000f54c func   ?sub_101e3310@CNamedListX@@QAEXHPBD@Z CNamedListX::sub_101e3310
 0x1000f551 func   ?sub_10179000@@YAHXZ sub_10179000

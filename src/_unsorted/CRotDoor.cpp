@@ -20,6 +20,16 @@ bool CRotDoor::vfunc241()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f1990 size=0xf
+#include "CRotDoor.h"
+int CRotDoor::vfunc249()
+{
+    *(int *)((char *)this + 0x708) = 0;
+    *(int *)((char *)this + 0x70c) = 0;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f21d0 size=0x81
 #include "CBaseEntity.h"
 #include "CRotDoor.h"
