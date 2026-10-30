@@ -31,6 +31,14 @@ int CWeaponIArmor_Hvy_Cloth::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f3520 size=0x6
+#include "CWeaponIArmor_Hvy_Cloth.h"
+int CWeaponIArmor_Hvy_Cloth::vfunc363()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f41f0 size=0x1e
 #include "CWeaponIArmor_Hvy_Cloth.h"
 

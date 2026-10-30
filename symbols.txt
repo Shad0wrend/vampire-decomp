@@ -2666,6 +2666,7 @@
 0x100068b1 func   ?vfunc80@CBaseEntity@@UAEHXZ CBaseEntity::vfunc80
 0x100068bb func   ?sub_102eca20@@YAHXZ sub_102eca20
 0x100068c0 func   ?sub_10218b90@CUnknown10217f50@@QAEXXZ CUnknown10217f50::sub_10218b90
+0x100068c5 func   ?vfunc363@CWeaponIArmor_Hvy_Cloth@@UAEHXZ CWeaponIArmor_Hvy_Cloth::vfunc363
 0x100068d9 func   ?sub_101d2ce0@@YAMABVVector@@@Z sub_101d2ce0
 0x100068e3 func   ?vfunc81@CBaseViewModel@@UAEHXZ CBaseViewModel::vfunc81
 0x100068e8 func   ?sub_10290200@CAI_BaseNPCTroika@@QAE_NH@Z CAI_BaseNPCTroika::sub_10290200
