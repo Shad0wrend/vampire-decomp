@@ -145,6 +145,16 @@ datamap_t * CBaseCombatCharacter::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10321670 size=0x6
+namespace lifted {
+extern char g_10619d10;
+}
+int CBaseCombatCharacter::vfunc79()
+{
+    return (int)&lifted::g_10619d10;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10321980 size=0x3
 int CBaseCombatCharacter::vfunc81()
 {
