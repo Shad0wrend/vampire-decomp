@@ -59,3 +59,10 @@ bool CAreaPortal::vfunc110(const char *key, const char *value)
 	return sub_1009e430(key, value);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1010c610 size=0x5
+bool CAreaPortal::vfunc86(int a0, int a1, int a2, int a3, int a4)
+{
+    return 0;
+}
+// END FUNCTION

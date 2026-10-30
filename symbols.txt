@@ -1416,6 +1416,7 @@
 0x1000406b func   ?sub_100e1220@CDialog@@QAEXE@Z CDialog::sub_100e1220
 0x10004070 func   ?sub_103e4d10@@YAHXZ sub_103e4d10
 0x10004075 func   ?sub_101c1e50@@YADPAUEntVT101c1e50@@0@Z sub_101c1e50
+0x1000407a func   ?vfunc86@CAreaPortal@@UAE_NHHHHH@Z CAreaPortal::vfunc86
 0x1000407f func   ?vfunc22@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHH@Z CTempEntsSystem::vfunc22
 0x10004084 func   ?sub_1035ac30@@YADXZ sub_1035ac30
 0x1000408e func   ?sub_10196230@@YAPAUPyObj@@MMM@Z sub_10196230
