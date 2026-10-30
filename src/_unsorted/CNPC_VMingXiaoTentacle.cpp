@@ -244,3 +244,10 @@ void *CNPC_VMingXiaoTentacle::vfunc408(int condition)
     return sub_1027ede0(condition);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1039ed30 size=0x6
+int CNPC_VMingXiaoTentacle::vfunc409()
+{
+    return 0x7a;
+}
+// END FUNCTION
