@@ -338,7 +338,11 @@ void CNPC_VGargoyle::vfunc435(int a)
 // FUNCTION: 0x10379060 size=0x4d
 namespace block_10379060 {
 struct CNPC_VGargoyleUnit : CNPC_VGargoyle { bool sub_10379040(); };
-bool CNPC_VGargoyleUnit::sub_10379040() { return (m_nFlags14b8 >> 4) & 1; }
+bool CNPC_VGargoyleUnit::sub_10379040()
+{
+	bool r = (m_nFlags14b8 >> 4) & 1;
+	return r;
+}
 }
 using namespace block_10379060;
 // TARGET: CNPC_VGargoyle::vfunc448
