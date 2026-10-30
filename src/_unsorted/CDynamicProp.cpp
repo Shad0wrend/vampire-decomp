@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10190360 size=0x3
+int CDynamicProp::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10190560 size=0x57
 void sub_100aa7b0(void *);
 CDynamicProp *CDynamicProp::vfunc5(unsigned int flags)
