@@ -12,6 +12,17 @@ datamap_t * CBaseAnimating::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008a9f0 size=0x6
+#include "CBaseAnimating.h"
+namespace lifted {
+extern char g_106ccf4c;
+}
+int CBaseAnimating::vfunc80()
+{
+    return (int)&lifted::g_106ccf4c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008aa10 size=0x3
 #include "CBaseAnimating.h"
 int CBaseAnimating::vfunc81()
