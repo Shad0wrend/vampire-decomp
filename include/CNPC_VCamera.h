@@ -89,4 +89,8 @@ public:
 	virtual int vfunc482(int, int);
 public:
 	virtual int vfunc82();
+public:
+	virtual int vfunc451();
+	virtual bool vfunc452();
+	virtual int vfunc580();
 };
