@@ -133045,6 +133045,39 @@ void CBaseCombatCharacter::sub_1033f4c0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033f6d0 size=0x5a
+#include "CStatDefault3List.h"
+
+extern CStatDefault3List g_10738d10;
+
+class SList2
+{
+public:
+	void sub_10227a30(int a, int b);
+};
+extern SList2 g_10750cb4;
+
+struct CTraitTableX
+{
+	void sub_101f9a40(CBaseEntity *pEnt, int nValue);
+};
+extern CTraitTableX g_1074df78;
+
+void CBaseCombatCharacter::sub_1033f6d0()
+{
+	m_flag1474 = 0;
+	m_field146c = 0;
+	StatDefault3 *pStat = g_10738d10.sub_101d5e80(sub_10337860());
+	g_1074df78.sub_101f9a40(this, *(int *)((char *)pStat + 0x88));
+	CBaseEntity *pPlayer = *(CBaseEntity **)((char *)this + 0xa8);
+	if (pPlayer)
+	{
+		((CBasePlayer *)pPlayer)->sub_101618e0(0, 0);
+		g_10750cb4.sub_10227a30((int)pPlayer, 1);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10340180 size=0x17e
 struct TraceEntry { const char *a, *b, *c; };
 extern int *g_109f3680;
