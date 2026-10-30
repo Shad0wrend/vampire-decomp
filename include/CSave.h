@@ -75,6 +75,7 @@ public:
 	int sub_101a0320(int a, int b, struct CSaveDesc *p);	// walks the chain of descriptions (p->m_pParent at +0xc, parents first) and calls slot 3 with the five dwords of each; stub 0x10008d4b
 	int sub_10008d4b(int a, int b, struct CSaveDesc *p);	// the jump stub of sub_101a0320, used by its recursive call
 
+	unsigned __int64 sub_101a0980(int index, unsigned __int64 flags);	// ORs flags into the entity table entry (0x30 bytes, flags at +0x20); returns the new flags, 0 when out of range
 	int sub_101a08f0(void *pEntity);	// index of the entity in the table, or -1
 	int sub_101a0830(CSaveEdict *pEdict);	// "CSave::EntityIndex" (edict): -1 for null, else sub_101a08f0 of the entity of the edict (CBaseEntity::Instance scope trace around slot 4 of the object at edict+0x40)
 	void sub_101a05b0(int a, int bytes, int b);
