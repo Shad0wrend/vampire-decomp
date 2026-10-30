@@ -23,6 +23,17 @@ int CNPC_VScurrying::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103abbc0 size=0x6
+#include "CNPC_VScurrying.h"
+namespace lifted {
+extern int g_1064f5a8;
+}
+int CNPC_VScurrying::vfunc451()
+{
+    return lifted::g_1064f5a8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103abbe0 size=0x1e
 #include "CNPC_VScurrying.h"
 
