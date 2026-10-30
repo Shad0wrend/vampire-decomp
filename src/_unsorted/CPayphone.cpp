@@ -51,6 +51,14 @@ void CPayphone::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aabd0 size=0x3
+#include "CPayphone.h"
+int CPayphone::vfunc138()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aabf0 size=0xcd
 #include "CPayphone.h"
 
