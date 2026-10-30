@@ -9064,6 +9064,7 @@
 0x10013f57 func   ?sub_10072d20@CUnk10072d20@@QAEXXZ CUnk10072d20::sub_10072d20
 0x10013f61 func   ?sub_103b9f90@CNPC_VTzimisce@@QAEXHM@Z CNPC_VTzimisce::sub_103b9f90
 0x10013f66 func   ?sub_103b5bc0@@YADXZ sub_103b5bc0
+0x10013f70 func   ?vfunc82@CPhysPulley@@UAEHXZ CPhysPulley::vfunc82
 0x10013f7f func   ?sub_103300c0@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_103300c0
 0x10013f89 func   ?sub_1005b850@@YAXHHHHHHHHHHHHHHHHHH@Z sub_1005b850
 0x10013f8e func   ?sub_10229090@@YGXPAUCSoundFadeItem@@M@Z sub_10229090
