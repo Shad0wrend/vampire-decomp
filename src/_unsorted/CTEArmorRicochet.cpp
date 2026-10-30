@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1005a430 size=0x3
+#include "CTEArmorRicochet.h"
+int CTEArmorRicochet::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005a630 size=0x1e
 #include "CTEArmorRicochet.h"
 
