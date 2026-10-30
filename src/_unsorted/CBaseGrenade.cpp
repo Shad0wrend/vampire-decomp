@@ -11,6 +11,13 @@ datamap_t * CBaseGrenade::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10429380 size=0x3
+int CBaseGrenade::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10429f20 size=0xb
 void CBaseGrenade::vfunc144(int unused)
 {
