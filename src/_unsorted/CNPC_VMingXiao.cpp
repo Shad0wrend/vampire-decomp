@@ -250,6 +250,13 @@ const char *CNPC_VMingXiao::vfunc408(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10395290 size=0x1
+#include "CNPC_VMingXiao.h"
+void CNPC_VMingXiao::vfunc434()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10395ae0 size=0x75
 #include "CNPC_VMingXiao.h"
 
