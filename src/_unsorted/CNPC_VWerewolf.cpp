@@ -13,6 +13,13 @@ int CNPC_VWerewolf::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ca690 size=0x5
+bool CNPC_VWerewolf::vfunc618(int a0, int a1, int a2, int a3)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ca6b0 size=0x3
 bool CNPC_VWerewolf::vfunc615()
 {
