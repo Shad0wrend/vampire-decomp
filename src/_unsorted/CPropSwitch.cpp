@@ -196,3 +196,11 @@ void CPropSwitch::vfunc130(int a)
     ((CBaseAnimating *)this)->CBaseAnimating::vfunc130(a);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1020e150 size=0x6
+#include "CPropSwitch.h"
+int CPropSwitch::vfunc117()
+{
+    return 8;
+}
+// END FUNCTION
