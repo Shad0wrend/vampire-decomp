@@ -167,6 +167,7 @@ public:
 	void sub_100a7d00(int info, int a, int b);	// "CBaseEntity::DispatchTraceAttack": scope trace (entity name), when slot 140(info->field 0x2c) is true calls slot 141(info, a, b)
 	void sub_100a8bf0(int a);	// "CBaseEntity::InputScriptHide": calls vfunc77
 	void sub_100a8c90(int a);	// "CBaseEntity::InputScriptUnhide": calls vfunc78
+	CBaseEntity *sub_100a82c0();	// the entity of the handle at +0xd0; the handle and its time (+0xd8) are cleared once curtime has passed that time
 	void sub_100a8390(CBaseEntity *pEnt, float flDelay);	// stores pEnt's handle at +0xd0 (-1 for null), engine slot 120() at +0xd4 and curtime + flDelay at +0xd8
 	void sub_100a8d30(CBaseEntity *pEnt);	// "CBaseEntity::SetSoundOverrideEnt": stores pEnt's handle at +0x100 (-1 for null)
 	void sub_100a8fc0(char value);	// "CBaseEntity::SetFakeSilence": scope trace (entity name), stores the byte at +0x104, then sub_1009d1e0()
