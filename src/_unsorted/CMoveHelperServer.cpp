@@ -254,6 +254,12 @@ bool CMoveHelperServer::vfunc7()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013f930 size=0x3
+void CMoveHelperServer::vfunc8(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013f950 size=0x131
 #include "CMoveHelperServer.h"
 #include "ScopeTrace.h"
