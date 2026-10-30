@@ -9,6 +9,14 @@ bool CNPC_VTzimisce::vfunc325()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b6db0 size=0x3
+#include "CNPC_VTzimisce.h"
+bool CNPC_VTzimisce::vfunc324()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b6e90 size=0xe1
 #include "CNPC_VNewscaster.h"
 #include "CNPC_VTzimisce.h"
