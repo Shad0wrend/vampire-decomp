@@ -8255,6 +8255,7 @@
 0x100126e3 func   ?sub_1002ab80@TFilterX@@QAEPAU1@E@Z TFilterX::sub_1002ab80
 0x100126ed func   ?sub_10259de0@@YAPAXG@Z sub_10259de0
 0x100126f7 func   ?sub_102c5730@CUnk102c5730@@QAEXPAX@Z CUnk102c5730::sub_102c5730
+0x10012701 func   ?vfunc142@CFire@@UAEHH@Z CFire::vfunc142
 0x1001271a func   ?vfunc16@CMultiplayRules@@UAEXXZ CMultiplayRules::vfunc16
 0x10012729 func   ?sub_1022d410@@YIXPAUMem256@@HH@Z sub_1022d410
 0x10012751 func   ?sub_100d51b0@@YAXXZ sub_100d51b0

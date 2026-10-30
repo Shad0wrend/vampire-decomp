@@ -165,3 +165,11 @@ void CFire::vfunc113()
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x1010b5a0 size=0x5
+#include "CFire.h"
+int CFire::vfunc142(int a0)
+{
+    return 0;
+}
+// END FUNCTION
