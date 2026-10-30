@@ -327,6 +327,17 @@ int TzimisceView::sub_103c3e10(int activity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c3fd0 size=0x8
+#include "CNPC_VTzimisceRunner.h"
+namespace lifted {
+int __stdcall sub_10014524(int);
+}
+int CNPC_VTzimisceRunner::vfunc588()
+{
+    return lifted::sub_10014524(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c3ff0 size=0x120
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
