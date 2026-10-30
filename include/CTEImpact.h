@@ -5,7 +5,7 @@ class CTEImpact
 {
 public:
 	virtual ServerClass * vfunc0();
-	virtual void vfunc1();
+	virtual int vfunc1();
 	virtual CTEImpact *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3();
 	virtual void vfunc4(int a, int b);

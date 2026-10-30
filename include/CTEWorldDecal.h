@@ -5,7 +5,7 @@ class CTEWorldDecal
 {
 public:
 	virtual ServerClass * vfunc0();
-	virtual void vfunc1();
+	virtual int vfunc1();
 	virtual CTEWorldDecal *vfunc2(unsigned int flags);	// scalar deleting destructor
 
 	void sub_1000e9df();	// destructor body

@@ -5,7 +5,7 @@ class CTEUserTracer
 {
 public:
 	virtual ServerClass * vfunc0();
-	virtual void vfunc1();
+	virtual int vfunc1();
 	virtual CTEUserTracer *vfunc2(unsigned int flags);	// scalar deleting destructor
 
 	CTEUserTracer *sub_1006aa10(const char *name);	// the constructor body (CBaseTempEntityHead with the name, the vptr, the cleared fields); returns this
@@ -20,4 +20,6 @@ public:
 	char m_pad29[3];
 	int m_nField2c;	// 0x2c
 	void vfunc4(int a, int b);	// as in CTEMetalSparks (transplant)
+public:
+	virtual void vfunc3(int, int);
 };

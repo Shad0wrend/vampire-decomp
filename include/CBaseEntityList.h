@@ -54,7 +54,7 @@ struct CBaseEntityListEntry	// a slot of the entity table (CEntInfo)
 class CBaseEntityList
 {
 public:
-	virtual void vfunc0();
+	virtual void vfunc0(int, int);
 	virtual void vfunc1();
 
 	CBaseEntityListEntry m_EntPtrArray[0x2000];	// 0x0004

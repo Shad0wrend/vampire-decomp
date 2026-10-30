@@ -7,7 +7,7 @@ class CTEFizz
 {
 public:
 	virtual void vfunc0();
-	virtual void vfunc1();
+	virtual int vfunc1();
 	virtual CTEFizz *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3(const float *pOrigin, const float *pAngles);	// "CTEFizz::Test": precaches the bubble sprite (+0x10), density 200 (+0x14), current 1 (+0xc), then Create to every player
 	virtual void vfunc4(CRecipientFilter &filter, float delay);	// "CTEFizz::Create"

@@ -15,10 +15,10 @@ class CBaseNetworkable
 public:
 	virtual void vfunc0();
 	virtual void vfunc1();
-	virtual void vfunc2();
+	virtual int vfunc2();
 	virtual void vfunc3();
-	virtual void vfunc4();
-	virtual void vfunc5();
+	virtual int vfunc4();
+	virtual int vfunc5();
 	virtual void vfunc6(CBaseNetworkableBits_t *pBits);	// sets the bit of this edict's index
 	int m_pad04;
 	int m_pEdict;	// 0x8

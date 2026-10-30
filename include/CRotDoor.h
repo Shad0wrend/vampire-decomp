@@ -49,4 +49,6 @@ public:
 	Vector m_vecCenter6d4;	// +0x6d4
 public:
     virtual datamap_t * vfunc82();
+public:
+	virtual bool vfunc241();
 };

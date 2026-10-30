@@ -9,7 +9,7 @@ class CTEInspectionFX
 {
 public:
 	virtual void vfunc0();
-	virtual void vfunc1();
+	virtual int vfunc1();
 	virtual CTEInspectionFX *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3(const float *pOrigin, const float *pAngles);	// "CTEInspectionFX::Create": the origin lifted by 24 units and moved 100 units along the (flattened) forward direction of pAngles, then slot 4 to every player
 	virtual void vfunc4(CRecipientFilter *pFilter, float flDelay);	// "Create(filter, delay)": sends the effect

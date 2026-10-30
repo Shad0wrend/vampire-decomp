@@ -10,7 +10,7 @@ class CTEDynamicLight
 {
 public:
 	virtual void vfunc0();
-	virtual void vfunc1();
+	virtual int vfunc1();
 	virtual CTEDynamicLight *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3(const Vector &origin, const QAngle &angles);	// "Test": a yellow light of radius 200 for 2 seconds at the origin (raised, then 50 units along the flat direction of the angles), created for everybody
 	virtual void vfunc4(CRecipientFilter &filter, float delay);	// "Create" (stub 0x1001229c)

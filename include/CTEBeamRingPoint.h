@@ -5,7 +5,7 @@ class CTEBeamRingPoint
 {
 public:
 	virtual ServerClass * vfunc0();
-	virtual void vfunc1();
+	virtual int vfunc1();
 	virtual CTEBeamRingPoint *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3(const float *pCenter, int unused);	// "CTEBeamRingPoint::Test": fills the fields with test values around pCenter and fires it to a broadcast recipient filter (the second stack argument is unused)
 	virtual void vfunc4(int a, int b);	// "Create": fires the temp entity with the fields below to the recipient filter

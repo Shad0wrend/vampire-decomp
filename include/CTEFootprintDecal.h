@@ -12,7 +12,7 @@ class CTEFootprintDecal
 {
 public:
 	virtual ServerClass * vfunc0();
-	virtual void vfunc1();
+	virtual int vfunc1();
 	virtual CTEFootprintDecal *vfunc2(unsigned int flags);	// scalar deleting destructor
 
 	char m_pad0004[8];

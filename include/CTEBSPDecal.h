@@ -5,7 +5,7 @@ class CTEBSPDecal
 {
 public:
 	virtual ServerClass * vfunc0();
-	virtual void vfunc1();
+	virtual int vfunc1();
 	virtual CTEBSPDecal *vfunc2(unsigned int flags);	// scalar deleting destructor
 
 	void sub_100035df();	// destructor body

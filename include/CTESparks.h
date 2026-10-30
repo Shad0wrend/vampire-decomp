@@ -10,7 +10,7 @@ class CTESparks
 {
 public:
 	virtual void vfunc0();
-	virtual void vfunc1();
+	virtual int vfunc1();
 	virtual CTESparks *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3(const float *pOrigin, const float *pAngles);	// "CTESparks::Create": the origin lifted by 24 units and moved 100 units along the (flattened) forward direction of pAngles, then slot 4 to every player
 	virtual void vfunc4(CRecipientFilter *pFilter, float flDelay);	// slot 4: sends the temp entity to the recipients

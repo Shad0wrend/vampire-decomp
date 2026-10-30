@@ -5,7 +5,7 @@ class CTETParticleHUD
 {
 public:
 	virtual ServerClass * vfunc0();
-	virtual void vfunc1();
+	virtual int vfunc1();
 	virtual CTETParticleHUD *vfunc2(unsigned int flags);	// scalar deleting destructor
 
 	void sub_10006a5a();	// destructor body
@@ -13,4 +13,6 @@ public:
 	void vfunc4(int a, int b);	// as in CTEMetalSparks (transplant)
 public:
 	virtual void vfunc5();
+public:
+	virtual void vfunc3(int, int);
 };

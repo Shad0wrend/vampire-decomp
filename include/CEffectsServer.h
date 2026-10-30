@@ -18,7 +18,7 @@ public:
 	virtual void vfunc7(const float *pOrigin, int a, int b);	// slot 7: as slot 6 with two more values, forwarded to slot 31 of the temp entity system as (filter, 0, pOrigin, a, b)
 	virtual void vfunc8(const float *pOrigin, int a);	// slot 8: as slot 6, forwarded to slot 5 of the temp entity system
 	virtual float vfunc9();
-	virtual void vfunc10();
+	virtual bool vfunc10();
 	void sub_1000168b();	// as in CDataObjectAccessSystem (transplant)
 
 	void *m_pNext;	// 0x04: the link of the global list at 0x10939fdc (the constructor pushes this)

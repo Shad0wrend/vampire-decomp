@@ -147,4 +147,6 @@ public:
 	char m_pad05c6[0x5c8 - 0x5c6];
 	int m_n5c8;	// 0x5c8
 	int m_n5cc;	// 0x5cc
+public:
+	virtual bool vfunc128();
 };

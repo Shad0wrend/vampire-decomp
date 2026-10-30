@@ -20,7 +20,7 @@ public:
 	virtual float *vfunc10();	// CollisionToWorldTransform: the matrix3x4_t (12 floats) of the collision space
 	virtual void vfunc11();
 	virtual void vfunc12();
-	virtual void vfunc13();
+	virtual int vfunc13();
 	virtual int vfunc14();
 	virtual void vfunc15(Vector *pMins, Vector *pMaxs);	// WorldSpaceSurroundingBounds
 	virtual void vfunc16();

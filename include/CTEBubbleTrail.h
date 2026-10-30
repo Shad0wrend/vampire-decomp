@@ -10,7 +10,7 @@ class CTEBubbleTrail
 {
 public:
 	virtual void vfunc0();
-	virtual void vfunc1();
+	virtual int vfunc1();
 	virtual CTEBubbleTrail *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3(const Vector &origin, const QAngle &angles);	// "CTEBubbleTrail::Test": like CTEBubbles::Test with 20 bubbles, height 128 and speed 8.0
 	virtual void vfunc4(CRecipientFilter &filter, float delay);	// "Create"

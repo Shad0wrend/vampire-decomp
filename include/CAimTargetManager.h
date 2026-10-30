@@ -6,7 +6,7 @@ class CBaseEntity;
 class CAimTargetManager
 {
 public:
-	virtual void vfunc0();
+	virtual void vfunc0(int);
 	virtual void vfunc1(CBaseEntity *pEntity);	// entity deleted: remove it from the target list
 
 	CBaseEntity **m_pTargets;	// +4
