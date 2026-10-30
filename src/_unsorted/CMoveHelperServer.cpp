@@ -187,6 +187,12 @@ bool CMoveHelperServer::vfunc2(const void *pTrace, const float *pVelocity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013f720 size=0x3
+void CMoveHelperServer::vfunc6(int a0, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013f760 size=0x4c
 #include <stdarg.h>
 
