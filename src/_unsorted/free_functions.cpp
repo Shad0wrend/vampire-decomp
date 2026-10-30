@@ -54152,6 +54152,31 @@ void sub_10143d80(const Vector &position, float size, int r, int g, int b, int n
 }
 // END FUNCTION
 
+// FUNCTION: 0x10145060 size=0x5e
+struct SPoolItem { char pad[0x24]; char b24; char b25; char pad2[2]; };
+extern int g_1057ae40;
+extern SPoolItem *g_1071a2b8[20];
+
+SPoolItem *sub_10145060()
+{
+	if (g_1057ae40 == -1) {
+		for (int i = 0; i < 20; i++) {
+			g_1071a2b8[i] = new SPoolItem;
+			g_1071a2b8[i]->b24 = 1;
+			g_1071a2b8[i]->b25 = 0;
+		}
+		g_1057ae40 = 0;
+	}
+	g_1057ae40++;
+	int r = g_1057ae40 - 1;
+	if (g_1057ae40 == 20) {
+		g_1057ae40 = 0;
+		r = 19;
+	}
+	return g_1071a2b8[r];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146150 size=0x2e
 // TARGET: sub_10146150
 #include "Vector.h"
