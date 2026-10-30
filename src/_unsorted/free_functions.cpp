@@ -372,6 +372,34 @@ int sub_100283c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100289e0 size=0x5f
+extern int vt_104462a8[];
+extern int vt_10445e1c[];
+void *sub_100aa720(int size);
+#define V1(n) virtual void v##n##0(); virtual void v##n##1(); virtual void v##n##2(); virtual void v##n##3(); virtual void v##n##4(); virtual void v##n##5(); virtual void v##n##6(); virtual void v##n##7(); virtual void v##n##8(); virtual void v##n##9();
+struct CPhysMotorFactoryView {
+	V1(0) V1(1) V1(2) V1(3) V1(4) V1(5) V1(6) V1(7) V1(8) V1(9)
+	virtual void v100(); virtual void v101(); virtual void v102(); virtual void v103(); virtual void v104(); virtual void v105();
+	virtual void PostConstructor(const char *name);
+	void sub_100090fc(char bAddAsDefault);
+	CPhysMotorFactoryView *Construct()
+	{
+		sub_100090fc(0);
+		*(int *)((char *)this + 0x454) = -1;
+		*(int *)((char *)this + 0x474) = (int)vt_104462a8;
+		*(int *)this = (int)vt_10445e1c;
+		return this;
+	}
+};
+extern "C" void *phys_motor()
+{
+	CPhysMotorFactoryView *m = (CPhysMotorFactoryView *)sub_100aa720(0x4a0);
+	CPhysMotorFactoryView *p = m ? m->Construct() : 0;
+	p->PostConstructor("phys_motor");
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10028a60 size=0x28
 #include <math.h>
 
