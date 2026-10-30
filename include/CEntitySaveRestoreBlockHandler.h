@@ -17,4 +17,6 @@ public:
 	virtual void vfunc6(void *pRestore);	// "ReadRestoreHeaders": reads the entity table ("ETABLE" records) into the save info
 
 	CBaseEntity *sub_101a2d50(const char *pszClassname, const char *pszGlobalname);	// "FindGlobalEntity" (called by the restore code with its own this; this is not used): the first entity of the global entity list whose global name (+0x120) equals pszGlobalname (case-insensitive, null counts as empty); when its classname (+0x11c) differs from pszClassname warns "Global entity found %s, wrong class %s [expects class %s]" and returns null
+public:
+	virtual void vfunc8();
 };

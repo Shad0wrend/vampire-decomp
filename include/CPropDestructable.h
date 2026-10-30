@@ -45,4 +45,6 @@ public:
     int m_hModels794[8];    // 0x794: the model names' indices of the stages, zero ends the list
 public:
     virtual datamap_t * vfunc82();
+public:
+    virtual void vfunc265();
 };
