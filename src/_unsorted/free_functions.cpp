@@ -103995,6 +103995,27 @@ CLinkNode1c *CLinkList::sub_10248870(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10248900 size=0x59
+#include "CKeyValuesX.h"
+extern "C" int __cdecl strcmpi(const char *, const char *);
+CKeyValuesX *CKeyValuesX::sub_10248900(const char *pszName, char bCreate)
+{
+	CKeyValuesX *pKey;
+	for (pKey = m_pSub; pKey; pKey = pKey->m_pPeer) {
+		if (!strcmpi(pKey->sub_102480b0(), pszName))
+			return pKey;
+	}
+	if (m_pBase18) {
+		CKeyValuesX *pFound = m_pBase18->sub_1000b58c(pszName, 0);
+		if (pFound)
+			return pFound;
+	}
+	if (bCreate)
+		pKey = sub_10248870(pszName);
+	return pKey;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10248980 size=0x9
 struct CUnknown10248980 { int p[5]; int a; char sub_10248980(); };
 // TARGET: CUnknown10248980::sub_10248980
