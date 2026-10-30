@@ -61,6 +61,14 @@ int CNPC_VGuard1::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037cdd0 size=0x6
+#include "CNPC_VGuard1.h"
+int CNPC_VGuard1::vfunc138()
+{
+    return 7;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037d130 size=0xcb
 #include "CNPC_VGuard1.h"
 #include "CGlobalEntityList.h"
