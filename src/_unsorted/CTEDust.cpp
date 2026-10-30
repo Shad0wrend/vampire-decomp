@@ -13,6 +13,13 @@ CTEDust::CTEDust(const char *name) : CBaseTempEntityHead(name), m_n000c(0), m_n0
 }
 // END FUNCTION
 
+// FUNCTION: 0x10114030 size=0x3
+#include "CTEDust.h"
+void CTEDust::vfunc3(int a0, int a1)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10114050 size=0x1e
 #include "CTEDust.h"
 

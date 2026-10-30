@@ -622,6 +622,7 @@
 0x10002568 func   ?sub_100bafc0@CBeam@@QAEXPAVCBaseEntity@@@Z CBeam::sub_100bafc0
 0x10002577 func   ?vfunc588@CAI_BaseHumanoid@@QAEDABVVector@@@Z CAI_BaseHumanoid::vfunc588
 0x1000257c func   ?vfunc27@CRestore@@UAEHPAXPAHHH@Z CRestore::vfunc27
+0x10002581 func   ?vfunc3@CTEDust@@UAEXHH@Z CTEDust::vfunc3
 0x10002586 func   ?sub_1009b700@CBaseEntity@@QAEXHHPBD@Z CBaseEntity::sub_1009b700
 0x1000258b func   ?vfunc546@CNPC_VManBat@@QAEHH@Z CNPC_VManBat::vfunc546
 0x1000259a func   ?sub_103343f0@CBaseCombatCharacter@@QAEHHPBD@Z CBaseCombatCharacter::sub_103343f0
