@@ -610,3 +610,10 @@ char CNPC_VTzimisce::vfunc69(void *pOther)
 	return sub_1029b180(pOther);
 }
 // END FUNCTION
+
+// FUNCTION: 0x103bfa30 size=0x3
+#include "CNPC_VTzimisce.h"
+void CNPC_VTzimisce::vfunc228(int a0, int a1)
+{
+}
+// END FUNCTION
