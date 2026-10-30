@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10114720 size=0x6
+#include "CFunc_LOD.h"
+namespace lifted {
+extern char g_1070a7d4;
+}
+int CFunc_LOD::vfunc80()
+{
+    return (int)&lifted::g_1070a7d4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10114740 size=0x3
 #include "CFunc_LOD.h"
 int CFunc_LOD::vfunc81()
