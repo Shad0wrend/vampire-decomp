@@ -23,7 +23,8 @@ public:
 
 	char m_padKU[0x450 - sizeof(CBaseEntity)];
 	void *m_motionEvent;        // 0x450 IMotionEvent sub-object (vtable)
-	char m_pad0454[0x46c - 0x454];
+	float m_vecUp454[3];        // 0x454 filled by GetVectors
+	float m_vecAxis460[3];      // 0x460
 	void *m_pController;        // 0x46c IPhysicsMotionController*
 	const char *m_nameAttach;   // 0x470
 	unsigned int m_attachedObject; // 0x474 EHANDLE
