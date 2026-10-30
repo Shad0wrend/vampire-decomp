@@ -25621,6 +25621,19 @@ unsigned int CUnknown100a8220::sub_100a8220()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a8240 size=0x59
+#include "CUnknown100a8340.h"
+#include "globalvars.h"
+CBaseEntity *CUnknown100a8340::sub_100a8240()
+{
+	if (gpGlobals->curtime > m_flCC) {
+		m_hC8 = EHANDLE();
+		m_flCC = 0;
+	}
+	return m_hC8.Get();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a82c0 size=0x59
 CBaseEntity *CBaseEntity::sub_100a82c0()
 {
