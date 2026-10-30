@@ -9,6 +9,17 @@ bool CFuncMoveLinear::vfunc128()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10115cc0 size=0x6
+#include "CFuncMoveLinear.h"
+namespace lifted {
+extern char g_10570868;
+}
+int CFuncMoveLinear::vfunc82()
+{
+    return (int)&lifted::g_10570868;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101163f0 size=0x92
 #include "CFuncMoveLinear.h"
 
