@@ -156273,6 +156273,22 @@ int sub_10428ce0(SeqHdr *hdr, int value, int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10428da0 size=0x58
+struct CStudioNamedView { char m_pad[0x140]; int m_nCount; int m_nIndex; };
+extern "C" __declspec(dllimport) int Q_strcasecmp(const char *a, const char *b);
+int sub_10428da0(CStudioNamedView *p, const char *name)
+{
+	if (p) {
+		for (int i = 0; i < p->m_nCount; i++) {
+			int *rec = (int *)((char *)p + p->m_nIndex + i * 16);
+			if (!Q_strcasecmp(name, (char *)rec + *rec))
+				return i;
+		}
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10428e20 size=0x2c
 struct CTable10428e20 {
     char pad[0x140];
