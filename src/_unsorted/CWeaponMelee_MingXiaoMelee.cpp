@@ -20,6 +20,14 @@ int CWeaponMelee_MingXiaoMelee::vfunc363()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ec300 size=0x4
+#include "CWeaponMelee_MingXiaoMelee.h"
+int CWeaponMelee_MingXiaoMelee::vfunc373()
+{
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ec320 size=0x1e
 #include "CWeaponMelee_MingXiaoMelee.h"
 
