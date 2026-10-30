@@ -2322,6 +2322,7 @@
 0x10006028 func   ?vfunc327@CWeaponPhysCannon@@UAEXXZ CWeaponPhysCannon::vfunc327
 0x1000602d func   ?sub_10270ae0@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_10270ae0
 0x10006032 func   ?sub_101f1050@CUnknown101f1050@@QAEPAHXZ CUnknown101f1050::sub_101f1050
+0x10006037 func   ?vfunc615@CPayphone@@UAE_NXZ CPayphone::vfunc615
 0x1000603c func   ?sub_1003c0e0@CUtlVector4@@QAEHHPBH@Z CUtlVector4::sub_1003c0e0
 0x1000604b func   _prop_physics_contested prop_physics_contested
 0x1000605f func   ?vfunc113@CNPC_VAndreiBlood@@UAEXXZ CNPC_VAndreiBlood::vfunc113
