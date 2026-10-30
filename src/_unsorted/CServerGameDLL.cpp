@@ -98,6 +98,16 @@ void sub_1011adc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011ae10 size=0x6
+namespace lifted {
+extern int g_1072bbd8;
+}
+int CServerGameDLL::vfunc9()
+{
+    return lifted::g_1072bbd8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011ae50 size=0x3e
 #include "CServerGameDLL.h"
 

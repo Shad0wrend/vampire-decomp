@@ -8523,6 +8523,7 @@
 0x10012bd9 func   ?sub_101d8670@CUnknown101d8670@@QAEHXZ CUnknown101d8670::sub_101d8670
 0x10012be3 func   ?sub_1034d5b0@CScriptedTarget@@QAEXXZ CScriptedTarget::sub_1034d5b0
 0x10012be8 func   ?sub_1016bb50@CBasePlayerUnit@@QAEHXZ CBasePlayerUnit::sub_1016bb50
+0x10012bed func   ?vfunc9@CServerGameDLL@@UAEHXZ CServerGameDLL::vfunc9
 0x10012bf2 func   ?sub_10091c80@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_10091c80
 0x10012bf7 func   ?sub_1019d3b0@CUnknown1019d3b0@@QAEXXZ CUnknown1019d3b0::sub_1019d3b0
 0x10012bfc func   ?vfunc19@CMultiplayRules@@UAEDPAVCBaseEntity@@0@Z CMultiplayRules::vfunc19
