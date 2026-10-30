@@ -24,6 +24,17 @@ int CNPC_VGhoulCroucher::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037afb0 size=0x6
+#include "CNPC_VGhoulCroucher.h"
+namespace lifted {
+extern char g_1093b0f8;
+}
+int CNPC_VGhoulCroucher::vfunc580()
+{
+    return (int)&lifted::g_1093b0f8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037aff0 size=0x36
 #include "CNPC_VGhoulCroucher.h"
 
