@@ -138,3 +138,14 @@ void CNPC_VScurrying::vfunc433()
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x103aca60 size=0x7
+#include "CNPC_VScurrying.h"
+namespace lifted {
+extern float g_104454c4;
+}
+float CNPC_VScurrying::vfunc471()
+{
+    return lifted::g_104454c4;
+}
+// END FUNCTION
