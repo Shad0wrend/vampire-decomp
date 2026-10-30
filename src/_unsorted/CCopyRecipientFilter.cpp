@@ -5,6 +5,13 @@
 unsigned int CCopyRecipientFilter::vfunc1() { return m_flags >> 1 & 1; }
 // END FUNCTION
 
+// FUNCTION: 0x101bcf50 size=0x4
+int CCopyRecipientFilter::vfunc2()
+{
+    return *(int *)((char *)this + 0x14);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bcf70 size=0xd
 int CCopyRecipientFilter::vfunc3(int index)
 {
