@@ -122836,6 +122836,22 @@ void SPtrList::sub_102f31f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f3270 size=0x59
+struct CBitVecView { int pad[2]; unsigned int *m_pBits; };
+int sub_102f3270(CBitVecView *pMask, const float *pValues, int count)
+{
+	float best = 3.4028235e38f;
+	int idx = -1;
+	for (int i = 0; i < count; i++) {
+		if ((pMask->m_pBits[i >> 5] & (1 << (i & 0x1f))) && pValues[i] < best) {
+			best = pValues[i];
+			idx = i;
+		}
+	}
+	return idx;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f3770 size=0x1e
 int sub_102f3770(const float *a, const float *b)
 {
