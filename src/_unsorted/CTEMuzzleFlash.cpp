@@ -42,3 +42,11 @@ ServerClass * CTEMuzzleFlash::vfunc0()
     return (ServerClass *)((int)&lifted::g_106c4c54);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10065fc0 size=0x3
+#include "CTEMuzzleFlash.h"
+int CTEMuzzleFlash::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
