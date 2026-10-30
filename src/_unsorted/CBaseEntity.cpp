@@ -164,6 +164,16 @@ float CBaseEntity::vfunc49()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100268d0 size=0x7
+namespace lifted {
+extern float g_104454c4;
+}
+float CBaseEntity::vfunc52()
+{
+    return lifted::g_104454c4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100268f0 size=0x7
 namespace lifted {
 extern float g_104454c4;
