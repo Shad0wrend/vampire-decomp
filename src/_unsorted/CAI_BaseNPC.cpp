@@ -1009,6 +1009,15 @@ float CAI_BaseNPC::vfunc515(const Vector *pTarget)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10274db0 size=0x5c
+Vector CAI_BaseNPC::vfunc533(int a, int b)
+{
+	if ((vfunc513() & 0x8000000) && (a == 0x57 || a == 8))
+		return Vector(0, 0, 24.0f);
+	return *(Vector *)((char *)this + 0x5d60);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10278090 size=0xc7
 #include "CAI_BaseNPC.h"
 #include "CCineNPC.h"
