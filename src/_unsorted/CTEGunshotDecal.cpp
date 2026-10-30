@@ -33,6 +33,13 @@ CTEGunshotDecal *CTEGunshotDecal::vfunc2(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100640d0 size=0x1
+#include "CTEGunshotDecal.h"
+void CTEGunshotDecal::vfunc5()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100643a0 size=0x39
 #include "CTEGunshotDecal.h"
 #include "IVEngineServerFull.h"
