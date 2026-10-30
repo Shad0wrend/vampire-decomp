@@ -85553,6 +85553,46 @@ struct CUnknown101f2cd0 { int p[6]; int a; void sub_101f2cd0(int v); };
 void CUnknown101f2cd0::sub_101f2cd0(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x101f2cf0 size=0x5d
+#include "CUnknown101f2360.h"
+struct CVPool
+{
+	void *sub_1013dc60(int nSize);
+};
+extern CVPool g_1073d280;
+struct CVNodeCtor : CUnknown101f2360
+{
+	CUnknown101f2360 *sub_101f1f50(const char *pszName, int a);
+};
+namespace block_101f2cf0 {
+struct CLinkUnit : CUnknown101f2360
+{
+	void sub_101f2cd0(CUnknown101f2360 *p);
+};
+void CLinkUnit::sub_101f2cd0(CUnknown101f2360 *p) { m_pNext = p; }
+}
+using namespace block_101f2cf0;
+
+// TARGET: CUnknown101f2360::sub_101f2cf0
+CUnknown101f2360 *CUnknown101f2360::sub_101f2cf0(const char *pszName)
+{
+	void *pMem = g_1073d280.sub_1013dc60(0x38);
+	CUnknown101f2360 *pNode = pMem ? ((CVNodeCtor *)pMem)->sub_101f1f50(pszName, 1) : 0;
+	CUnknown101f2360 *pChild = m_pChild;
+	if (!pChild)
+	{
+		m_pChild = pNode;
+		pNode->m_pNext = 0;
+		return pNode;
+	}
+	while (pChild->m_pNext)
+		pChild = pChild->m_pNext;
+	((CLinkUnit *)pChild)->sub_101f2cd0(pNode);
+	pNode->m_pNext = 0;
+	return pNode;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2d70 size=0x49
 #include "VKeyValues.h"
 #include <string.h>
