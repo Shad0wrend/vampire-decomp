@@ -2277,6 +2277,7 @@
 0x10005b1e func   ?sub_10428310@@YAXPAUCEyePosSource@@PAH@Z sub_10428310
 0x10005b23 func   ?sub_101f2ae0@@YGXPAX@Z sub_101f2ae0
 0x10005b28 func   ?sub_101e34c0@CUnknown101e0f00@@QAEXPAX0HH@Z CUnknown101e0f00::sub_101e34c0
+0x10005b2d func   ?vfunc461@CNPC_VHengeyokai@@UAEHXZ CNPC_VHengeyokai::vfunc461
 0x10005b32 func   _dynamic_prop dynamic_prop
 0x10005b37 func   ?vfunc5@CCorpse@@QAEPAV1@I@Z CCorpse::vfunc5
 0x10005b3c func   ?sub_100ca630@CMomentaryRotButton@@QAEMPAM@Z CMomentaryRotButton::sub_100ca630

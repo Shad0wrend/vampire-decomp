@@ -215,6 +215,18 @@ int CNPC_VHengeyokai::vfunc440(int task)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10380100 size=0xf
+#include "CNPC_VHengeyokai.h"
+namespace lifted {
+int sub_10011225();
+}
+int CNPC_VHengeyokai::vfunc461()
+{
+    *(int *)((char *)this + 0x1b38) = 0x13;
+    return lifted::sub_10011225();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103801d0 size=0x9a
 #include "CNPC_VHengeyokai.h"
 extern "C" unsigned int __cdecl strlen(const char *);
