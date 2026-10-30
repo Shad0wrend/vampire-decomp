@@ -284,6 +284,13 @@ void CNPC_VGargoyle::vfunc448(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10379470 size=0x3
+bool CNPC_VGargoyle::vfunc70()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10379f50 size=0xe
 struct CUnk10924edc
 {

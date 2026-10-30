@@ -3838,6 +3838,7 @@
 0x10009390 func   ?sub_102c6290@CUnknown102c6290@@QAEPAXH@Z CUnknown102c6290::sub_102c6290
 0x1000939a func   _security_camera security_camera
 0x1000939f func   _npc_VHuman npc_VHuman
+0x100093a4 func   ?vfunc70@CNPC_VGargoyle@@UAE_NXZ CNPC_VGargoyle::vfunc70
 0x100093a9 func   ?vfunc217@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc217
 0x100093b3 func   ?sub_10077490@CFlexTrackParent@@QAEPAUCFlexTrack@@PBD@Z CFlexTrackParent::sub_10077490
 0x100093b8 func   ?sub_102f1500@CUnknown102ee120_y@@QAEHPAUHelperParams102f1500@@@Z CUnknown102ee120_y::sub_102f1500
