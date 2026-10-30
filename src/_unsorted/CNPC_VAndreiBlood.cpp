@@ -217,6 +217,14 @@ void CNPC_VAndreiBlood::vfunc444(const void *pTask)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035db00 size=0x5
+#include "CNPC_VAndreiBlood.h"
+bool CNPC_VAndreiBlood::vfunc566(int a0)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035db20 size=0x5a
 #include "ScopeTrace.h"
 #include "CNPC_VAndreiBlood.h"
