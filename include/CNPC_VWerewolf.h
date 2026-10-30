@@ -264,4 +264,8 @@ public:
 	virtual void vfunc316(int, int, int);
 	virtual bool vfunc328();
 	virtual bool vfunc615();
+public:
+	virtual bool vfunc318(int, int, int);
+	virtual bool vfunc319(int, int, int);
+	virtual bool vfunc618(int, int, int, int);
 };

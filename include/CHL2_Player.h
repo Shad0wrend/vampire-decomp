@@ -135,4 +135,7 @@ public:
 	virtual void vfunc484();
 public:
 	virtual int vfunc81();
+public:
+	virtual bool vfunc366(int, int, int);
+	virtual bool vfunc485(int);
 };

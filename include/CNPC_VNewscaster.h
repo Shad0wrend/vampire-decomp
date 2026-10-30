@@ -133,4 +133,13 @@ public:
 	virtual void vfunc497();
 public:
 	virtual int vfunc473();
+public:
+	virtual bool vfunc72(int);
+	virtual bool vfunc362(int);
+	virtual bool vfunc363(int);
+	virtual bool vfunc364(int);
+	virtual bool vfunc365(int);
+	virtual bool vfunc377(int, int);
+	virtual bool vfunc378(int, int);
+	virtual bool vfunc587(int);
 };

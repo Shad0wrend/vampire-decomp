@@ -134,4 +134,6 @@ public:
 	virtual void vfunc434();
 public:
 	virtual bool vfunc602();
+public:
+	virtual bool vfunc366(int, int, int);
 };

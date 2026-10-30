@@ -73,4 +73,6 @@ public:
 public:
 	virtual bool vfunc70();
 	virtual bool vfunc602();
+public:
+	virtual bool vfunc366(int, int, int);
 };

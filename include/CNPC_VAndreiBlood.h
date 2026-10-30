@@ -62,4 +62,6 @@ public:
 public:
     virtual CAI_CondOwner * vfunc580();
     virtual const char * vfunc451();
+public:
+	virtual bool vfunc566(int);
 };

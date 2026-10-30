@@ -19,4 +19,15 @@ public:
 	virtual bool vfunc590();
 public:
 	virtual void vfunc330(int, int);
+public:
+	virtual bool vfunc317(int);
+	virtual bool vfunc318(int, int, int);
+	virtual bool vfunc319(int, int, int);
+	virtual bool vfunc320(int, int);
+	virtual bool vfunc362(int);
+	virtual bool vfunc363(int);
+	virtual bool vfunc364(int);
+	virtual bool vfunc365(int);
+	virtual bool vfunc378(int, int);
+	virtual bool vfunc587(int);
 };

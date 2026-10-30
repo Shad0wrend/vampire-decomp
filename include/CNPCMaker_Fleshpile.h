@@ -20,4 +20,9 @@ public:
 public:
 	virtual void vfunc619(int);
 	virtual void vfunc620(int);
+public:
+	virtual bool vfunc362(int);
+	virtual bool vfunc363(int);
+	virtual bool vfunc364(int);
+	virtual bool vfunc365(int);
 };

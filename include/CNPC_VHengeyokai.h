@@ -145,4 +145,7 @@ public:
 	virtual bool vfunc70();
 	virtual bool vfunc602();
 	virtual bool vfunc615();
+public:
+	virtual bool vfunc74(int);
+	virtual bool vfunc378(int, int);
 };
