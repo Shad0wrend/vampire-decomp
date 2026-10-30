@@ -49,3 +49,11 @@ void CTraitEffectsListSaveDataOps::vfunc3(int a0)
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x1022d670 size=0x5
+#include "CTraitEffectsListSaveDataOps.h"
+bool CTraitEffectsListSaveDataOps::vfunc4(int a0, int a1)
+{
+    return 1;
+}
+// END FUNCTION
