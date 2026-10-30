@@ -2,9 +2,15 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+#include "ehandle.h"
+
 class CWeaponMelee_Torch
 {
 public:
+	char m_pad0000[0x910];
+	EHANDLE m_hEmitter910;	// 0x910: the "TorchWeaponEmitter" particle entity
+	void vfunc130(void *pArg);	// slot 130: plays the fire loop while the emitter lives, then the base weapon's slot 130
+	void sub_10258440(void *pArg);	// CBaseCombatWeapon::vfunc130 (stub 0x10013593), called directly
 	CWeaponMelee_Torch *vfunc5(unsigned int flags);
 	void vfunc104();	// slot 104: the base weapon's slot 104, then the \"TorchWeaponEmitter\" and \"Fire_Loop\" sounds
 	void sub_10010230();
