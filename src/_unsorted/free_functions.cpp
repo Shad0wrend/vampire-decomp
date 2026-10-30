@@ -11874,6 +11874,18 @@ int sub_1006a7b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006a990 size=0x59
+#include "CTETracer.h"
+extern CTETracer g_106c6f48;
+void sub_1006a990(void *pFilter, int delay, const Vector *pStart, const Vector *pEnd, int n)
+{
+	g_106c6f48.m_vecStart = *pStart;
+	g_106c6f48.m_vecEnd = *pEnd;
+	g_106c6f48.m_n24 = n;
+	g_106c6f48.vfunc4(pFilter, delay);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006aa10 size=0x33
 #include "CTEUserTracer.h"
 
