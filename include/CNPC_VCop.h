@@ -58,4 +58,7 @@ public:
 	char m_b6672;	// 0x6672
 public:
     virtual datamap_t * vfunc82();
+public:
+	virtual int vfunc451();
+	virtual int vfunc580();
 };
