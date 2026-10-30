@@ -19,6 +19,13 @@ void CServerGameClients::vfunc1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011c040 size=0x3
+#include "CServerGameClients.h"
+void CServerGameClients::vfunc2(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011d3e0 size=0x42
 #include "CServerGameClients.h"
 #include "CGlobalEntityList.h"
