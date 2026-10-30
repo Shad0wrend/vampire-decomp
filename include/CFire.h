@@ -32,5 +32,13 @@ public:
 public:
     virtual datamap_t * vfunc82();
 public:
+	virtual void vfunc134();
+	virtual void vfunc135();
+	virtual void vfunc136();
+	virtual void vfunc137();
+	virtual void vfunc138();
+	virtual void vfunc139();
+	virtual void vfunc140_slot();
+	virtual void vfunc141();
 	virtual int vfunc142(int);
 };
