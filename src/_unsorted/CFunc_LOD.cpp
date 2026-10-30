@@ -76,6 +76,18 @@ void CFunc_LOD::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10114bb0 size=0x8
+#include "CFunc_LOD.h"
+namespace lifted {
+int sub_10007284();
+}
+bool CFunc_LOD::vfunc223()
+{
+    lifted::sub_10007284();
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10114bf0 size=0xcd
 #include "CFunc_LOD.h"
 #include "CBaseEntity.h"
