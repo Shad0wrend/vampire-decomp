@@ -3,6 +3,12 @@
 #pragma once
 #include "CBaseEntity.h"
 
+struct CRevertSavedFade	// fade duration and hold time, handed by value to the screen fade helper
+{
+	float m_flFadeTime;
+	float m_flFadeHold;
+};
+
 class CRevertSaved : public CBaseEntity
 {
 public:
@@ -13,6 +19,5 @@ public:
 	char m_pad03e0[0x454 - 0x3e0];
 	float m_flReload;	// 0x454
 	char m_pad0458[4];
-	float m_flFadeTime;	// 0x45c
-	float m_flFadeHold;	// 0x460
+	CRevertSavedFade m_fade;	// 0x45c
 };
