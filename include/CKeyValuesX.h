@@ -43,5 +43,6 @@ public:
 	float sub_10248c60(const char *pszKey, float flDefault);	// "GetFloat" (stub 0x10009a9d)
 	int sub_10248c20(const char *pszKey, int nDefault);	// typed int lookup (stub 0x10014b...): the sub key of that name when it has the value type 3 its value at +8, 0 for another type, nDefault when there is no such key
 	CKeyValuesX *sub_10248900(const char *pszName, char bCreate);	// the FindKey worker (stub 0x1000b58c): the sub key of that name, created through sub_10248870 when bCreate is set, else 0
+	void sub_102490e0(const char *pszName, const char *pszValue);	// "SetString": finds or creates the sub key and stores a copy of the string, type 0
 	void sub_10248690(const char *pszFile, IKeyValuesFileView *pFileSystem, const char *pszPathID);	// "SaveToFile": writes the tree as text into the file
 };
