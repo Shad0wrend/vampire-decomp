@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103c0ad0 size=0x6
+#include "CNPC_VTzimisceHeadClaw.h"
+namespace lifted {
+extern char g_1065ca84;
+}
+int CNPC_VTzimisceHeadClaw::vfunc82()
+{
+    return (int)&lifted::g_1065ca84;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c0c90 size=0x1d
 #include "CNPC_VTzimisceHeadClaw.h"
 struct A { int sub_10012300(int); };
