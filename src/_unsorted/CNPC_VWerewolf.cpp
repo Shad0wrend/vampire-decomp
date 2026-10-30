@@ -160,6 +160,13 @@ bool CNPC_VWerewolf::vfunc600(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103cb900 size=0x5
+int CNPC_VWerewolf::vfunc619(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103cc9b0 size=0x9b
 #include "CNPC_VWerewolf.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
