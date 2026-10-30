@@ -49,3 +49,11 @@ ServerClass * CTETParticleAttached::vfunc0()
     return (ServerClass *)((int)&lifted::g_106c6798);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10069bc0 size=0x3
+#include "CTETParticleAttached.h"
+int CTETParticleAttached::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION

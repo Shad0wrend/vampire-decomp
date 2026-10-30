@@ -38,6 +38,7 @@
 0x10001154 func   ?sub_102dca60@CUnknown102dca60@@QAEXXZ CUnknown102dca60::sub_102dca60
 0x10001159 func   ?sub_101f7640@CVTraitEffectGroup_t@@QAEXPAVCVModInfo_t@@PAX@Z CVTraitEffectGroup_t::sub_101f7640
 0x1000115e func   ?sub_101abbc0@@YAHXZ sub_101abbc0
+0x10001163 func   ?vfunc1@CTETParticleAttached@@UAEHXZ CTETParticleAttached::vfunc1
 0x10001168 func   ?vfunc104@CNPC_VNewscaster@@QAEXXZ CNPC_VNewscaster::vfunc104
 0x1000116d func   ?sub_10073290@CUnknown10073290@@QAEPADXZ CUnknown10073290::sub_10073290
 0x10001172 func   ?sub_10106490@@YIXPAD@Z sub_10106490
