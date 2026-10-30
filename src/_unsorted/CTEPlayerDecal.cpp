@@ -35,3 +35,11 @@ ServerClass * CTEPlayerDecal::vfunc0()
     return (ServerClass *)((int)&lifted::g_106c4f2c);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10066740 size=0x3
+#include "CTEPlayerDecal.h"
+int CTEPlayerDecal::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
