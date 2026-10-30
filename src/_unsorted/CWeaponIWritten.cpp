@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1040b2e0 size=0x6
+#include "CWeaponIWritten.h"
+int CWeaponIWritten::vfunc360()
+{
+    return 0x2000;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040b300 size=0x1e
 #include "CWeaponIWritten.h"
 
