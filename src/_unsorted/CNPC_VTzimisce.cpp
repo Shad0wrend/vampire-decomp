@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103b6b60 size=0x6
+#include "CNPC_VTzimisce.h"
+namespace lifted {
+extern char g_10653130;
+}
+int CNPC_VTzimisce::vfunc82()
+{
+    return (int)&lifted::g_10653130;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b6d90 size=0x3
 #include "CNPC_VTzimisce.h"
 bool CNPC_VTzimisce::vfunc325()
