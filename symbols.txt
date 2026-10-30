@@ -8846,6 +8846,7 @@
 0x10013237 func   ?sub_102aa860@@YIXPAVCAI_BaseNPCTroika@@HPAUCTaskPath_102aa860@@@Z sub_102aa860
 0x10013241 func   ?vfunc113@CPhysForce@@UAEXXZ CPhysForce::vfunc113
 0x10013246 func   ?sub_1009bd10@CBaseEntity@@QAEXHHMMM@Z CBaseEntity::sub_1009bd10
+0x10013255 func   ?vfunc451@CNPC_VZombie@@UAEHXZ CNPC_VZombie::vfunc451
 0x1001325a func   ?vfunc30@CBaseEntity@@UAEMXZ CBaseEntity::vfunc30
 0x10013264 func   ?sub_1035bf90@@YGXH@Z sub_1035bf90
 0x10013269 func   ?sub_10311b90@CAI_Expresser@@QAEHXZ CAI_Expresser::sub_10311b90

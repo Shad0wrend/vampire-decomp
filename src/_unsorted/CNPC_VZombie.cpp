@@ -23,6 +23,17 @@ int CNPC_VZombie::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103de2d0 size=0x6
+#include "CNPC_VZombie.h"
+namespace lifted {
+extern int g_10664268;
+}
+int CNPC_VZombie::vfunc451()
+{
+    return lifted::g_10664268;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103de4d0 size=0x1d
 #include "CNPC_VZombie.h"
 struct A { int sub_10012300(int); };
