@@ -225,6 +225,14 @@ void CNPC_VChangBros::vfunc433()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036c6a0 size=0x5
+#include "CNPC_VChangBros.h"
+bool CNPC_VChangBros::vfunc566(int a0)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036c6c0 size=0x72
 #include "CNPC_VChangBros.h"
 
