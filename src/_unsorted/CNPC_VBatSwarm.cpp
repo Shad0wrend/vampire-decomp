@@ -68,3 +68,11 @@ int CNPC_VBatSwarm::vfunc473()
     return 0x17;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10367400 size=0x6
+#include "CNPC_VBatSwarm.h"
+int CNPC_VBatSwarm::vfunc138()
+{
+    return 0x20;
+}
+// END FUNCTION
