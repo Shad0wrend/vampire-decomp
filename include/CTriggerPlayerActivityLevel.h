@@ -18,4 +18,5 @@ public:
 	int m_nLevelC;	// 0x5a0
 public:
     virtual datamap_t * vfunc82();
+    virtual void vfunc103();    // slot 103: its own (0x102108a0)
 };
