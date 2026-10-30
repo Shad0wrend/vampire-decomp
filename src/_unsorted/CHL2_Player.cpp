@@ -34,6 +34,13 @@ float CHL2_Player::vfunc29()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034f3b0 size=0x7
+float CHL2_Player::vfunc30()
+{
+    return *(float *)((char *)this + 0x1c78);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034f3d0 size=0xd
 struct HL2PlayerField2464 { char pad[0x2464]; int m; };
 void CHL2_Player::vfunc475(int value)
