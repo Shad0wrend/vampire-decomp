@@ -4313,6 +4313,7 @@
 0x1000a47a func   ?sub_102c62c0@CUnknown102c62c0@@QAEPAXH@Z CUnknown102c62c0::sub_102c62c0
 0x1000a47f func   ?sub_1018c2b0@CPointCamera@@QAEXXZ CPointCamera::sub_1018c2b0
 0x1000a484 func   ?sub_1042df50@@YAHXZ sub_1042df50
+0x1000a489 func   ?vfunc81@CBreakableSurface@@UAEHXZ CBreakableSurface::vfunc81
 0x1000a48e func   ?sub_10210fe0@@YAPAHXZ sub_10210fe0
 0x1000a49d func   ?sub_101e4220@CUnknown101e0f00@@QAEXPAVCBasePlayer@@@Z CUnknown101e0f00::sub_101e4220
 0x1000a4a2 func   ?vfunc173@CPropSwitch@@UAEXPAVCBaseEntity@@0HM@Z CPropSwitch::vfunc173
