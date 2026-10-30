@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100bf900 size=0x3
+#include "CFuncRotating.h"
+bool CFuncRotating::vfunc128()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bf920 size=0x6
 #include "CFuncRotating.h"
 namespace lifted {
