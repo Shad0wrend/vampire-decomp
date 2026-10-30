@@ -36,6 +36,14 @@ int CRestore::vfunc2(CBaseEntity * a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a13e0 size=0x4
+#include "CRestore.h"
+int CRestore::vfunc33()
+{
+    return *(int *)((char *)this + 0x1c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a1400 size=0x68
 extern "C" __declspec(dllimport) void Plat_Free(void *);
 extern int g_104626bc[];

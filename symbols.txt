@@ -5612,6 +5612,7 @@
 0x1000cdf1 func   ?sub_1008fbe0@CBaseAnimating@@QAEMH@Z CBaseAnimating::sub_1008fbe0
 0x1000cdfb func   ?sub_1029f120@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_1029f120
 0x1000ce00 func   _item_container item_container
+0x1000ce05 func   ?vfunc33@CRestore@@UAEHXZ CRestore::vfunc33
 0x1000ce0a func   ?vfunc5@COccultObfuscate@@QAEPAV1@I@Z COccultObfuscate::vfunc5
 0x1000ce0f func   ?sub_10155460@CUnit10155460@@QAEXH@Z CUnit10155460::sub_10155460
 0x1000ce14 func   ?sub_101d0310@@YAXPAMHPBD@Z sub_101d0310
