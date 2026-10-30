@@ -21,6 +21,13 @@ void CTETParticleAttached::vfunc5()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10069ac0 size=0x3
+#include "CTETParticleAttached.h"
+void CTETParticleAttached::vfunc3(int a0, int a1)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10069ae0 size=0x39
 #include "CTETParticleAttached.h"
 #include "IVEngineServerFull.h"
