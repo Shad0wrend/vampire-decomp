@@ -1307,6 +1307,7 @@
 0x10003c2e func   ?sub_101fda10@CVStatActionList_t@@QAEXXZ CVStatActionList_t::sub_101fda10
 0x10003c3d func   ?sub_1018beb0@@YAHHHPAIH@Z sub_1018beb0
 0x10003c42 func   ?sub_103dc220@UtlMem@@QAEXXZ UtlMem::sub_103dc220
+0x10003c4c func   ?vfunc378@CNPC_VPlaceholder@@UAE_NHH@Z CNPC_VPlaceholder::vfunc378
 0x10003c5b func   ?sub_101984c0@@YAPAUPyObj@@PAU1@0@Z sub_101984c0
 0x10003c60 func   ?vfunc103@CBreakableSurface@@UAEXXZ CBreakableSurface::vfunc103
 0x10003c65 func   ?sub_1023f060@@YAXPAI@Z sub_1023f060
