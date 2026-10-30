@@ -1,6 +1,12 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10026530 size=0x3
+void CBaseEntity::vfunc21(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026650 size=0x7
 namespace lifted {
 extern float g_104454c4;
