@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1019d7f0 size=0x3
+#include "CRopeKeyframe.h"
+int CRopeKeyframe::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019dbf0 size=0x6
 #include "CRopeKeyframe.h"
 namespace lifted {
