@@ -173,6 +173,13 @@ void CNPC_VTzimisce::vfunc493()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b9620 size=0x1
+#include "CNPC_VTzimisce.h"
+void CNPC_VTzimisce::vfunc494()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b96a0 size=0x120
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
