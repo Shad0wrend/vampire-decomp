@@ -28,6 +28,17 @@ bool CNPC_VHengeyokai::vfunc378(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037e830 size=0x6
+#include "CNPC_VHengeyokai.h"
+namespace lifted {
+extern char g_1093b328;
+}
+int CNPC_VHengeyokai::vfunc580()
+{
+    return (int)&lifted::g_1093b328;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037e870 size=0x86
 #include "CNPC_VHengeyokai.h"
 #include "utlvector.h"
