@@ -34,3 +34,11 @@ void CTEInspectionFX::vfunc3(const float *pOrigin, const float *pAngles)
 	vfunc4(&filter, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10065700 size=0x3
+#include "CTEInspectionFX.h"
+int CTEInspectionFX::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
