@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1006d1f0 size=0x6
+namespace lifted {
+extern char g_106c816c;
+}
+int CBaseCineCam::vfunc80()
+{
+    return (int)&lifted::g_106c816c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006d210 size=0x3
 int CBaseCineCam::vfunc81()
 {
