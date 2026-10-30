@@ -7485,6 +7485,7 @@
 0x1001026c func   ?vfunc1@CTETracer@@UAEHXZ CTETracer::vfunc1
 0x10010271 func   ?sub_10182da0@CUnknown10182da0@@QAEHHH@Z CUnknown10182da0::sub_10182da0
 0x10010276 func   ?sub_101d5c40@List@@QAEHPBD@Z List::sub_101d5c40
+0x10010280 func   ?vfunc476@CHL2_Player@@UAEHXZ CHL2_Player::vfunc476
 0x10010285 func   ?sub_1007d2b0@@YGHMMM@Z sub_1007d2b0
 0x1001028a func   ?sub_10096600@@YIHPAD@Z sub_10096600
 0x1001028f func   ?sub_100cafb0@CMomentaryRotButton@@QAEXXZ CMomentaryRotButton::sub_100cafb0

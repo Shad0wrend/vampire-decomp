@@ -317,6 +317,16 @@ void CHL2_Player::vfunc472()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10352960 size=0x19
+int CHL2_Player::vfunc476()
+{
+    *(int *)((char *)this + 0x2464) = 0x42c80000;
+    *(int *)((char *)this + 0x252c) = 0;
+    *(int *)((char *)this + 0x2530) = 0;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10352990 size=0x31
 #include "CHL2_Player.h"
 
