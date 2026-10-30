@@ -61,6 +61,14 @@ int CNPC_VPedestrian::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a28f0 size=0x6
+#include "CNPC_VPedestrian.h"
+int CNPC_VPedestrian::vfunc473()
+{
+    return 0x81d;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a2c30 size=0x18f
 #include "CNPC_VPedestrian.h"
 #include "CAI_BaseNPCTroika.h"
