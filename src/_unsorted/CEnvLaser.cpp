@@ -35,6 +35,24 @@ CEnvLaser *CEnvLaser::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10101760 size=0x59
+#include "CEnvLaser.h"
+static inline const char *SafeString(const char *const &psz)
+{
+	return psz ? psz : "";
+}
+void CEnvLaser::vfunc104()
+{
+	int dummy;
+	const char *pszModel = *vfunc9(&dummy);
+	if (!pszModel)
+		pszModel = "";
+	vfunc10(engine->vfunc13(pszModel, 0));
+	if (m_pszTexture4fc)
+		engine->vfunc13(SafeString(m_pszTexture4fc), 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101017e0 size=0xe8
 #include "CEnvLaser.h"
 extern "C" int __cdecl _strcmpi(const char *, const char *);

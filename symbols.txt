@@ -7751,6 +7751,7 @@
 0x10010a87 func   ?vfunc103@CNPCMaker_Zombie@@UAEXXZ CNPCMaker_Zombie::vfunc103
 0x10010a91 func   ?vfunc103@CNPC_VPlayerController@@QAEXXZ CNPC_VPlayerController::vfunc103
 0x10010a9b func   ?sub_101bd940@@YIXPAD@Z sub_101bd940
+0x10010aa5 func   ?vfunc104@CEnvLaser@@QAEXXZ CEnvLaser::vfunc104
 0x10010aaa func   ?sub_100b7130@@YIXPAUMem4@@HH@Z sub_100b7130
 0x10010aaf func   _tectonic tectonic
 0x10010ab4 func   ?sub_100d5000@@YAXXZ sub_100d5000
