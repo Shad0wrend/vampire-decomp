@@ -14,6 +14,13 @@ CTEImpact *CTEImpact::vfunc2(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10065050 size=0x1
+#include "CTEImpact.h"
+void CTEImpact::vfunc5()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10065090 size=0x39
 #include "CTEImpact.h"
 #include "IVEngineServerFull.h"

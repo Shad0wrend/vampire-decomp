@@ -3761,6 +3761,7 @@
 0x10009426 func   ?sub_101a0530@CUnk101a0530@@QAEXHH@Z CUnk101a0530::sub_101a0530
 0x1000942b func   _debug_entity debug_entity
 0x10009435 func   ?sub_1009a0c0@@YAXPAUTEnt@@HPAH@Z sub_1009a0c0
+0x1000943a func   ?vfunc5@CTEImpact@@UAEXXZ CTEImpact::vfunc5
 0x1000943f func   ?sub_103f5220@@YAHXZ sub_103f5220
 0x10009453 func   ?sub_102f94b0@CBitOwner102f94b0@@QAE_NH@Z CBitOwner102f94b0::sub_102f94b0
 0x10009458 func   ?sub_1009af40@CBaseEntity@@QAEXPBM@Z CBaseEntity::sub_1009af40
