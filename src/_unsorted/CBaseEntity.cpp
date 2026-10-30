@@ -514,6 +514,16 @@ int CBaseEntity::vfunc237()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009a660 size=0x6
+namespace lifted {
+extern char g_106cfe10;
+}
+int CBaseEntity::vfunc80()
+{
+    return (int)&lifted::g_106cfe10;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009a680 size=0x3
 int CBaseEntity::vfunc81()
 {
