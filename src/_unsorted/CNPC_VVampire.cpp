@@ -12,6 +12,17 @@ int CNPC_VVampire::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10375100 size=0x6
+#include "CNPC_VVampire.h"
+namespace lifted {
+extern int g_1065e090;
+}
+int CNPC_VVampire::vfunc451()
+{
+    return lifted::g_1065e090;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c47e0 size=0x6
 #include "CNPC_VVampire.h"
 namespace lifted {
