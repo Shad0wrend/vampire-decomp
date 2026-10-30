@@ -58,6 +58,17 @@ int CNPC_VTzimisce::vfunc244()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b6e30 size=0x7
+#include "CNPC_VTzimisce.h"
+namespace lifted {
+extern float g_104563b0;
+}
+float CNPC_VTzimisce::vfunc550()
+{
+    return lifted::g_104563b0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b6e50 size=0x6
 #include "CNPC_VTzimisce.h"
 namespace lifted {
