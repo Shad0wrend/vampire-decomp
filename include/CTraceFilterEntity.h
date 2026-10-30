@@ -10,5 +10,6 @@ public:
 	void *m_pRootParent;	// +0xc
 
 	CTraceFilterEntity(void *pPassEnt, int collisionGroup);
+	virtual bool vfunc0(void *pHandleEntity, int contentsMask);	// ShouldHitEntity: its own (0x101ccfe0)
 	void *sub_101cd070(void *pEnt);	// follows the parent handles (+0x25c) of pEnt up to the root entity
 };
