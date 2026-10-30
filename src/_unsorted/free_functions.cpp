@@ -15243,6 +15243,31 @@ float CUnknown10075e70::sub_10075e70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10075e90 size=0x5b
+class CUnknown10075e90
+{
+public:
+	char m_pad0000[0x184];
+	float m_fMin184;
+	float m_fValue188;
+	void sub_10075e90(float flValue);
+	void sub_100773f0();
+};
+
+void CUnknown10075e90::sub_10075e90(float flValue)
+{
+	bool bChanged = m_fValue188 != flValue;
+	m_fValue188 = flValue;
+	if (flValue != -1.0f)
+	{
+		if (flValue < m_fMin184)
+			m_fValue188 = m_fMin184;
+		if (bChanged)
+			sub_100773f0();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10075f10 size=0x7
 struct CUnknown10075f10 { float sub_10075f10(); };
 float CUnknown10075f10::sub_10075f10()
