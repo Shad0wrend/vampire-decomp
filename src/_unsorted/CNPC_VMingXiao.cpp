@@ -12,6 +12,17 @@ datamap_t * CNPC_VMingXiao::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10391070 size=0x6
+#include "CNPC_VMingXiao.h"
+namespace lifted {
+extern char g_1093b918;
+}
+int CNPC_VMingXiao::vfunc580()
+{
+    return (int)&lifted::g_1093b918;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103910b0 size=0x86
 #include "CNPC_VMingXiao.h"
 #include "utlvector.h"
