@@ -9,6 +9,17 @@ int CSoundEnt::vfunc117()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ba660 size=0x6
+#include "CSoundEnt.h"
+namespace lifted {
+extern char g_10599e24;
+}
+int CSoundEnt::vfunc82()
+{
+    return (int)&lifted::g_10599e24;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ba6f0 size=0xa5
 #include "CSoundEnt.h"
 #include "CBaseEntity.h"

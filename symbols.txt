@@ -8055,6 +8055,7 @@
 0x10011b8f func   ??0CBaseCombatWeapon@@QAE@XZ CBaseCombatWeapon::CBaseCombatWeapon
 0x10011b8f func   ??0CWeaponRangedBase@@QAE@XZ CWeaponRangedBase::CWeaponRangedBase
 0x10011b9e func   ?sub_1022f580@@YAHPAVCBaseCombatCharacter@@HEH@Z sub_1022f580
+0x10011ba3 func   ?vfunc82@CSoundEnt@@UAEHXZ CSoundEnt::vfunc82
 0x10011ba8 func   ?sub_101391c0@@YAIPAM@Z sub_101391c0
 0x10011bb7 func   ?sub_1006e890@CUnknown1006e890@@QAE_NXZ CUnknown1006e890::sub_1006e890
 0x10011bbc func   ?sub_10032b70@UtlMem@@QAEXXZ UtlMem::sub_10032b70
