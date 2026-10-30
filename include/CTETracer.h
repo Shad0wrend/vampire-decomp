@@ -15,6 +15,7 @@ public:
 	char m_pad0004[8];
 	Vector m_vecStart;	// 0x0c
 	Vector m_vecEnd;	// 0x18
+	int m_n24;	// 0x24
 
 	void sub_1000f236();	// destructor body
 };
