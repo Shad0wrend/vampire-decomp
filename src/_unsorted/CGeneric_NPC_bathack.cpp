@@ -13,6 +13,17 @@ int CGeneric_NPC_bathack::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035ad50 size=0x8
+#include "CGeneric_NPC_bathack.h"
+namespace lifted {
+int sub_10006703();
+}
+int CGeneric_NPC_bathack::vfunc117()
+{
+    return (lifted::sub_10006703()) | 8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035ad70 size=0x6
 #include "CGeneric_NPC_bathack.h"
 namespace lifted {
