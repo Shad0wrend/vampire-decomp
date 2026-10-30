@@ -34,3 +34,11 @@ void CTETracer::vfunc3(const Vector *pOrigin, const Vector *pAngles)
 	vfunc4(&filter, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1006a6d0 size=0x3
+#include "CTETracer.h"
+int CTETracer::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
