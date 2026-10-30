@@ -13,4 +13,7 @@ public:
 	void sub_10295a60(int a);	// CAI_BaseNPCTroika::vfunc465 (stub 0x100088aa), called directly
 public:
     virtual datamap_t * vfunc82();
+public:
+	virtual int vfunc451();
+	virtual int vfunc580();
 };
