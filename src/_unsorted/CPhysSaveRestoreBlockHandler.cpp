@@ -21,10 +21,11 @@ void CSaveBlockFields10043c40::sub_10043c40(int a)
 #include "CSave.h"
 
 extern char g_1053c340[];
+extern char g_1053c344[];  // a datamap_t the game's initializer fills in, not a string
 
 void CPhysSaveRestoreBlockHandler::vfunc3(CSave *pSave) {
     pSave->vfunc8(g_1053c340, 1);
-    pSave->vfunc2(m_data98, "");
+    pSave->vfunc2(m_data98, g_1053c344);
 }
 // END FUNCTION
 
