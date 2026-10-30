@@ -11734,6 +11734,28 @@ int sub_10069ca0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10069e80 size=0x5d
+#include "CTETParticleAttached.h"
+
+extern CTETParticleAttached g_106c6dd0;
+
+struct CTEEntView
+{
+	char m_pad0000[0x2e0];
+	void *m_pEdict;	// 0x2e0
+};
+
+void sub_10069e80(int a, int b, CTEEntView *pEnt, int c, int d, const char *pszName)
+{
+	void *pEdict = pEnt->m_pEdict;
+	g_106c6dd0.m_nEntIndex = engine->vfunc35((int)pEdict);
+	g_106c6dd0.m_nParticle = engine->vfunc17(pszName, 0);
+	g_106c6dd0.m_n14 = c;
+	g_106c6dd0.m_n18 = d;
+	g_106c6dd0.vfunc4(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10069f00 size=0x2b
 #include "CTETParticleHUD.h"
 

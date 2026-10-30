@@ -7444,6 +7444,7 @@
 0x1000fe7f func   ?sub_101ab720@@YIXPAXH0@Z sub_101ab720
 0x1000fe84 func   ?vfunc32@CItemContainerLock@@QAE_NH@Z CItemContainerLock::vfunc32
 0x1000fe89 func   ?vfunc103@CPlayerResource@@QAEXXZ CPlayerResource::vfunc103
+0x1000fe8e func   ?sub_10069e80@@YAXHHPAUCTEEntView@@HHPBD@Z sub_10069e80
 0x1000fe93 func   ?vfunc546@CNPC_VMingXiaoTentacle@@QAEHH@Z CNPC_VMingXiaoTentacle::vfunc546
 0x1000feac func   ?vfunc5@CPlayerResource@@QAEPAV1@I@Z CPlayerResource::vfunc5
 0x1000feb1 func   ?sub_10312e00@@YA_NPAPBD0@Z sub_10312e00
