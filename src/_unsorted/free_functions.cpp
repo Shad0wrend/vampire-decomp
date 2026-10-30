@@ -103090,6 +103090,18 @@ float sub_10240b40(const SVec3 *pOrigin, const SVec3 *pDir, const SPlane1024 *pP
 }
 // END FUNCTION
 
+// FUNCTION: 0x10240bc0 size=0x5b
+struct SVec3 { float x, y, z; };
+
+float sub_10240bc0(const SVec3 *pOrigin, const SVec3 *pDir, const SVec3 *pNormal, float flDist)
+{
+	float denom = pDir->z * pNormal->z + pDir->y * pNormal->y + pDir->x * pNormal->x;
+	if (denom == 0.0f)
+		return 0.0f;
+	return (1.0f / denom) * (flDist - (pOrigin->z * pNormal->z + pOrigin->y * pNormal->y + pOrigin->x * pNormal->x));
+}
+// END FUNCTION
+
 // FUNCTION: 0x102414f0 size=0xe7
 #include "Vector.h"
 

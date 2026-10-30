@@ -7176,6 +7176,7 @@
 0x1000f614 func   ?vfunc82@COccultRegen@@UAEPAUdatamap_t@@XZ COccultRegen::vfunc82
 0x1000f619 func   ?sub_100c45c0@@YAPAHPADH@Z sub_100c45c0
 0x1000f61e func   ?vfunc587@CNPCMaker@@UAE_NH@Z CNPCMaker::vfunc587
+0x1000f623 func   ?sub_10240bc0@@YAMPBUSVec3@@00M@Z sub_10240bc0
 0x1000f628 func   ?sub_1011a560@@YADXZ sub_1011a560
 0x1000f632 func   ?vfunc82@CKeepUpright@@UAEPAUdatamap_t@@XZ CKeepUpright::vfunc82
 0x1000f63c func   ?vfunc5@CAISound@@QAEPAV1@I@Z CAISound::vfunc5
