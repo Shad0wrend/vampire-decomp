@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1039c480 size=0x6
+int CNPC_VMingXiaoTentacle::vfunc337()
+{
+    return 0x38000;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039e890 size=0x3d
 #include "vampire.h"
 #include "CAI_BaseNPCTroika.h"
