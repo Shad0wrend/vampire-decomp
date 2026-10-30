@@ -12,6 +12,14 @@ datamap_t * CRotDoor::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f1970 size=0x3
+#include "CRotDoor.h"
+bool CRotDoor::vfunc241()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f21d0 size=0x81
 #include "CBaseEntity.h"
 #include "CRotDoor.h"

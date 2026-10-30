@@ -667,6 +667,7 @@
 0x10002707 func   ?sub_100c0970@CFloatPair3f4@@QAEXM@Z CFloatPair3f4::sub_100c0970
 0x10002716 func   ?sub_100df010@@YA_NPAUS100df010@@@Z sub_100df010
 0x10002725 func   ?sub_1018da10@@YAHXZ sub_1018da10
+0x1000272a func   ?vfunc241@CRotDoor@@UAE_NXZ CRotDoor::vfunc241
 0x1000272f func   ?vfunc0@CPredictableList@@UAEPAVCGlobalEntityList_Ent@@H@Z CPredictableList::vfunc0
 0x10002734 func   ??0CUnknown101f0960@@QAE@XZ CUnknown101f0960::CUnknown101f0960
 0x10002739 func   ?sub_100791a0@@YIXPAUMem4@@HH@Z sub_100791a0
