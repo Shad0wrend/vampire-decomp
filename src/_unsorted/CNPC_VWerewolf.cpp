@@ -64,6 +64,16 @@ bool CNPC_VWerewolf::vfunc328()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ca750 size=0x6
+namespace lifted {
+extern char g_1093f9e8;
+}
+int CNPC_VWerewolf::vfunc580()
+{
+    return (int)&lifted::g_1093f9e8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ca790 size=0x1e
 #include "CNPC_VWerewolf.h"
 
