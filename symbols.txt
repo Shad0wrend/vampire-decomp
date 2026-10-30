@@ -7936,6 +7936,7 @@
 0x10012431 func   ?sub_103b1510@CNPC_VSheriffMan@@QAEXXZ CNPC_VSheriffMan::sub_103b1510
 0x10012436 func   ?sub_10050b90@CDisciplineParticle@@SAPAV1@PAUCDisciplineParticleParams@@HHHH@Z CDisciplineParticle::sub_10050b90
 0x10012440 func   ?sub_103d4760@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103d4760
+0x10012445 func   ?vfunc493@CNPC_VNewscaster@@UAEXXZ CNPC_VNewscaster::vfunc493
 0x1001244a func   ?sub_10406560@@YAHXZ sub_10406560
 0x1001244f func   ?sub_1017e900@CBasePlayer@@QAEXHH@Z CBasePlayer::sub_1017e900
 0x10012454 func   ?vfunc82@CRagdollPropSpecial@@UAEPAUdatamap_t@@XZ CRagdollPropSpecial::vfunc82
