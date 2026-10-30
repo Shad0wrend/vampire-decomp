@@ -5,9 +5,6 @@
 class CTEExplosiveGunshotDecal
 {
 public:
-	virtual int vfunc0();
-	virtual int vfunc1();
-	virtual CTEExplosiveGunshotDecal *vfunc2(unsigned int flags);	// scalar deleting destructor
 
 	char m_pad0004[8];
 	float m_vecA[3];	// 0x0c
@@ -26,5 +23,10 @@ public:
 	void sub_10010f0a();	// destructor body
 	void vfunc4(void *pFilter, int delay);	// slot 4 "Create"-like worker (stub 0x10004197), called directly
 public:
+	virtual int vfunc0();
+	virtual int vfunc1();
+	virtual CTEExplosiveGunshotDecal *vfunc2(unsigned int flags);	// scalar deleting destructor
+	virtual void vfunc3();
+	virtual void vfunc4_slot();
 	virtual void vfunc5();
 };
