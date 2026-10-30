@@ -25,6 +25,17 @@ datamap_t * CHudCounter::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012e050 size=0x6
+#include "CHudCounter.h"
+namespace lifted {
+extern char g_1070bfa4;
+}
+int CHudCounter::vfunc80()
+{
+    return (int)&lifted::g_1070bfa4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012e070 size=0x3
 #include "CHudCounter.h"
 int CHudCounter::vfunc81()
