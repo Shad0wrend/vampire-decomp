@@ -4219,6 +4219,7 @@
 0x1000a2f9 func   ?sub_1020e020@CUnknown1020e020@@QAEDXZ CUnknown1020e020::sub_1020e020
 0x1000a303 func   ?sub_100b7bc0@@YIXPAHH0@Z sub_100b7bc0
 0x1000a308 func   ?vfunc5@CItemGWirelessCamera1@@QAEPAV1@I@Z CItemGWirelessCamera1::vfunc5
+0x1000a30d func   ?vfunc496@CNPC_VNewscaster@@UAEXXZ CNPC_VNewscaster::vfunc496
 0x1000a317 func   ?sub_101ceef0@@YAXMVVector@@000M@Z sub_101ceef0
 0x1000a326 func   ?vfunc82@CWindowPane@@UAEPAUdatamap_t@@XZ CWindowPane::vfunc82
 0x1000a335 func   ?sub_10429240@@YAPBDH@Z sub_10429240
