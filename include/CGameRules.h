@@ -47,7 +47,7 @@ public:
 	virtual bool vfunc22();
 	virtual bool vfunc23();
 	virtual bool vfunc24();
-	virtual void vfunc25();
+	virtual int vfunc25();
 	virtual bool vfunc26(int, int, int, int);
 	virtual void vfunc27();
 	virtual void vfunc28(void *pEdict);	// "ClientDisconnected": the edict of the leaving player
@@ -88,7 +88,7 @@ public:
 	virtual const char *vfunc63(int index);
 	virtual int vfunc64(int, int);
 	virtual void vfunc65();
-	virtual void vfunc66();
+	virtual int vfunc66(int);
 	virtual const char *vfunc67(int index);
 	virtual bool vfunc68(int);
 	virtual void vfunc69(int, int, int, int);
