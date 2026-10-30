@@ -9181,6 +9181,7 @@
 0x100141dc func   ?sub_10088730@@YAXXZ sub_10088730
 0x100141e1 func   ?sub_101b6550@UtlVec8@@QAEXPBUSElem8@@H@Z UtlVec8::sub_101b6550
 0x100141e6 func   ?vfunc241@CAI_GoalEntity@@QAEXH@Z CAI_GoalEntity::vfunc241
+0x100141f0 func   ?vfunc82@CMomentaryRotButton@@UAEHXZ CMomentaryRotButton::vfunc82
 0x100141fa func   ?vfunc9@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc9
 0x100141ff func   ?vfunc5@CAmbientGeneric@@QAEPAV1@I@Z CAmbientGeneric::vfunc5
 0x1001420e func   ?sub_1027ba80@@YAHXZ sub_1027ba80

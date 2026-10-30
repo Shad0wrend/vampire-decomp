@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100c9db0 size=0x6
+#include "CMomentaryRotButton.h"
+namespace lifted {
+extern char g_1055c264;
+}
+int CMomentaryRotButton::vfunc82()
+{
+    return (int)&lifted::g_1055c264;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cabc0 size=0xbb
 #include "CMomentaryRotButton.h"
 #include "CBaseEntity.h"
