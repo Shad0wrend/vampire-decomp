@@ -56,6 +56,14 @@ void V1021a200::sub_1021a200()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021a590 size=0x6
+#include "CPropHacking.h"
+int CPropHacking::vfunc33()
+{
+    return 0x12e;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021a5b0 size=0xc2
 #include "CPropHacking.h"
 #include "CBasePlayer.h"
