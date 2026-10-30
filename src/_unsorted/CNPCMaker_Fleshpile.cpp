@@ -12,6 +12,13 @@ datamap_t * CNPCMaker_Fleshpile::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034bf70 size=0x3
+#include "CNPCMaker_Fleshpile.h"
+void CNPCMaker_Fleshpile::vfunc619(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034c020 size=0x105
 #include "CNPCMaker_Fleshpile.h"
 #include "CCollisionProperty.h"
