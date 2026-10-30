@@ -445,6 +445,14 @@ void CNPC_VTzimisce::vfunc487()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ba000 size=0x6
+#include "CNPC_VTzimisce.h"
+int CNPC_VTzimisce::vfunc473()
+{
+    return 0x17;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ba020 size=0x199
 #include <math.h>
 #include "CNPC_VTzimisce.h"

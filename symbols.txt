@@ -6103,6 +6103,7 @@
 0x1000d7c9 func   ?sub_102f1860@CUnknown102f1860@@QAEMHABVVector@@0@Z CUnknown102f1860::sub_102f1860
 0x1000d7ce func   ?sub_1019dea0@CUnit1019dea0@@QAEX_N@Z CUnit1019dea0::sub_1019dea0
 0x1000d7dd func   ?vfunc361@CBaseCombatWeapon@@QAEHH@Z CBaseCombatWeapon::vfunc361
+0x1000d7e2 func   ?vfunc473@CNPC_VTzimisce@@UAEHXZ CNPC_VTzimisce::vfunc473
 0x1000d7f1 func   ?vfunc69@CGameRules@@UAEXHHHH@Z CGameRules::vfunc69
 0x1000d7f6 func   ?vfunc495@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc495
 0x1000d800 func   ?sub_101d9f60@CUnknown101d9f60@@QAEHXZ CUnknown101d9f60::sub_101d9f60
