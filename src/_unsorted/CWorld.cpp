@@ -74,6 +74,12 @@ void CWorld::vfunc230(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023b9e0 size=0x3
+void CWorld::vfunc231(int a0, int a1, int a2, int a3)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023ba00 size=0x1e
 #include "CWorld.h"
 
