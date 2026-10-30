@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103b1c20 size=0x6
+#include "CNPC_VSheriffSwarm.h"
+namespace lifted {
+extern char g_1093c638;
+}
+int CNPC_VSheriffSwarm::vfunc580()
+{
+    return (int)&lifted::g_1093c638;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b1c60 size=0x1e
 #include "CNPC_VSheriffSwarm.h"
 
