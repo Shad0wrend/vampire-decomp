@@ -5884,6 +5884,7 @@
 0x1000d404 func   ?sub_1007e970@CChoreoScene1007e970@@QAEHPBDH@Z CChoreoScene1007e970::sub_1007e970
 0x1000d413 func   ?sub_10382aa0@CNPC_VHengeyokai@@QAE_NH@Z CNPC_VHengeyokai::sub_10382aa0
 0x1000d418 func   _trigger_discipline_context trigger_discipline_context
+0x1000d41d func   ?vfunc82@CDisciplineParticle@@UAEHXZ CDisciplineParticle::vfunc82
 0x1000d431 func   ?sub_1033b980@CUnknown1033b980@@QAEMXZ CUnknown1033b980::sub_1033b980
 0x1000d445 func   _item_w_avamp_blade item_w_avamp_blade
 0x1000d44a func   ?sub_101e94d0@@YGXH@Z sub_101e94d0

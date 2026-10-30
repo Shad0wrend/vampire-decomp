@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10050a80 size=0x6
+#include "CDisciplineParticle.h"
+namespace lifted {
+extern char g_1053e1d0;
+}
+int CDisciplineParticle::vfunc82()
+{
+    return (int)&lifted::g_1053e1d0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10051ad0 size=0x1e
 #include "CDisciplineParticle.h"
 
