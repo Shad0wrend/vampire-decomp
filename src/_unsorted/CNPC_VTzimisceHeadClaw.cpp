@@ -40,6 +40,17 @@ bool CNPC_VTzimisceHeadClaw::vfunc324()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c1300 size=0x6
+#include "CNPC_VTzimisceHeadClaw.h"
+namespace lifted {
+extern char g_1093d160;
+}
+int CNPC_VTzimisceHeadClaw::vfunc580()
+{
+    return (int)&lifted::g_1093d160;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c1340 size=0x86
 #include "CNPC_VTzimisceHeadClaw.h"
 #include "utlvector.h"
