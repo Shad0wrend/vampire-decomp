@@ -23,6 +23,28 @@ void CTriggerWWZone::vfunc113()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103da5e0 size=0x5a
+#include "CTriggerWWZone.h"
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList g_106eb5d8;
+extern char g_106b8540[];
+void CTriggerWWZone::vfunc251()
+{
+	if (!m_n5ac) {
+		sub_103da730();
+		sub_103daa30();
+	}
+	const char *pszName = m_pszName5b0;
+	if (!pszName)
+		pszName = g_106b8540;
+	CBaseEntity *pEnt = g_106eb5d8.sub_100f7770(0, pszName, 0, 0);
+	if (pEnt)
+		m_h5b4 = *(unsigned int *)pEnt->vfunc1();
+	else
+		m_h5b4 = 0xffffffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103da660 size=0x9b
 #include "ScopeTrace.h"
 #include "CBaseTrigger.h"
