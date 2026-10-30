@@ -38,3 +38,11 @@ void CTEFizz::vfunc5()
 	engine->vfunc13("sprites/bubble.vmt", 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x100621f0 size=0x3
+#include "CTEFizz.h"
+int CTEFizz::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
