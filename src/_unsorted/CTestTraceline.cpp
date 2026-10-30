@@ -20,6 +20,17 @@ int CTestTraceline::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006baa0 size=0x6
+#include "CTestTraceline.h"
+namespace lifted {
+extern char g_10545fc8;
+}
+int CTestTraceline::vfunc82()
+{
+    return (int)&lifted::g_10545fc8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006bb30 size=0x3d
 #include "vampire.h"
 #include "CTestTraceline.h"
