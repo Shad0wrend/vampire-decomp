@@ -12,6 +12,17 @@ int CNPC_VBatSwarm::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10366c90 size=0x6
+#include "CNPC_VBatSwarm.h"
+namespace lifted {
+extern int g_1062ef08;
+}
+int CNPC_VBatSwarm::vfunc451()
+{
+    return lifted::g_1062ef08;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10366cb0 size=0x1e
 #include "CNPC_VBatSwarm.h"
 
