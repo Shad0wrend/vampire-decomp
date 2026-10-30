@@ -35,3 +35,11 @@ ServerClass * CTEBSPDecal::vfunc0()
     return (ServerClass *)((int)&lifted::g_106c128c);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005f2a0 size=0x3
+#include "CTEBSPDecal.h"
+int CTEBSPDecal::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
