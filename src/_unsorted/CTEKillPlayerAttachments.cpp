@@ -43,3 +43,11 @@ void CTEKillPlayerAttachments::vfunc3(const float *pos, const float *ang)
 	pFilter->m_vec.~CRestoreVec();
 }
 // END FUNCTION
+
+// FUNCTION: 0x10065ba0 size=0x3
+#include "CTEKillPlayerAttachments.h"
+int CTEKillPlayerAttachments::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
