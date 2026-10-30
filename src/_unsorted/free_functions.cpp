@@ -79937,6 +79937,27 @@ int CUnknown101dfe50::sub_101dfe50(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dfe80 size=0x5a
+#include "CUnknown101e0f00.h"
+#include "S1033d380.h"
+class CBaseEntity;
+struct CTraitView { void sub_1000914c(CBaseEntity *pEnt, int n); };
+extern CTraitView g_1074df78;
+struct CFxSubA { void sub_101def10(int a, S1033d380 *b, int c); };
+struct CFxSubB { void sub_101de660(int a, S1033d380 *b, int c, int d); };
+
+void CUnknown101e0f00Fx::sub_101dfe80(S1033d380 *pChar, int id, char bFlag)
+{
+	g_1074df78.sub_1000914c((CBaseEntity *)pChar, m_n36c);
+	int n = pChar->sub_1033d380(id);
+	((CFxSubA *)((char *)this + 8))->sub_101def10(n, pChar, id);
+	if (!bFlag)
+		((CFxSubB *)((char *)this + 0xb4))->sub_101de660(n, pChar, id, 0);
+	else
+		((CFxSubB *)((char *)this + 0x20c))->sub_101de660(n, pChar, id, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dff00 size=0xf7
 #include "CUnknown101dff00.h"
 extern "C" __declspec(dllimport) int __cdecl Q_snprintf(char *, int, const char *, ...);

@@ -4068,6 +4068,7 @@
 0x1000934f func   ?vfunc29@CRestore@@UAEHPAHHH@Z CRestore::vfunc29
 0x10009354 func   ?vfunc7@CMoveHelperServer@@UAE_NXZ CMoveHelperServer::vfunc7
 0x1000936d func   ?vfunc249@CSceneEntity@@UAEXMHPAUCSceneEvent@@@Z CSceneEntity::vfunc249
+0x10009372 func   ?sub_101dfe80@CUnknown101e0f00Fx@@QAEXPAUS1033d380@@HD@Z CUnknown101e0f00Fx::sub_101dfe80
 0x10009381 func   _camera_track camera_track
 0x1000938b func   ?sub_101f6c30@CUnknown101f6c30@@QAE_NXZ CUnknown101f6c30::sub_101f6c30
 0x10009390 func   ?sub_102c6290@CUnknown102c6290@@QAEPAXH@Z CUnknown102c6290::sub_102c6290
