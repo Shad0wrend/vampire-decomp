@@ -12,6 +12,7 @@ public:
 	CPropClockHand();	// 0x1012d950: base constructor, then the plain fields
 	virtual void vfunc103();	// "Spawn": solid 0 (scope traced SetSolid), adds flag 0x40000, base prop spawn, remembers the angles (slot 219) at +0x730 and the spawn time at +0x764
 	virtual int vfunc124();	// slot 124 "CPropClockHand::DrawDebugTextOverlays": base lines, then (when bit 0 of the byte at +0x224 is set) "ang: %.2f" of the angle component selected by +0x74c as one overlay line
+	virtual void vfunc113();	// slot 113: the base class work, then looks the entity named by the string at +0x754 up (FindEntityByName) and remembers its handle (+0x750) when it is a CHudTimer, else -1
 	void sub_10011793();	// CBaseProp::vfunc103 (jump stub)
 	int sub_10096100();	// CBaseAnimating::vfunc124 (stub 0x10007d97), called directly
 
