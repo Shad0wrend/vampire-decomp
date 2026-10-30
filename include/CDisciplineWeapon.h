@@ -34,4 +34,6 @@ public:
 	int m_nStatType;	// 0x910: the stat list type the discipline drains
 public:
 	virtual bool vfunc281();
+public:
+	virtual int vfunc82();
 };
