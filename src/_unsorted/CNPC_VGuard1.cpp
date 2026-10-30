@@ -12,6 +12,17 @@ datamap_t * CNPC_VGuard1::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037c660 size=0x6
+#include "CNPC_VGuard1.h"
+namespace lifted {
+extern char g_1093b168;
+}
+int CNPC_VGuard1::vfunc580()
+{
+    return (int)&lifted::g_1093b168;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037c6a0 size=0x1e
 #include "CNPC_VGuard1.h"
 
