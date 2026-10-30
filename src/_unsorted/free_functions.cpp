@@ -83631,6 +83631,21 @@ void CThinkUnit::sub_101ee5a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ee7d0 size=0x59
+#include "CDisciplineProjectile.h"
+void CDisciplineProjectile::sub_101ee7d0()
+{
+	CBaseEntity *pEnt = m_h8b8.Get();
+	if (pEnt) {
+		if (!m_b8b4)
+			pEnt->sub_100fbbb0(10.0f);
+		else
+			pEnt->sub_100ae150();
+	}
+	sub_100ae150();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ef3d0 size=0x119
 #include "CVampireProjectile.h"
 #include "CPASAttenuationFilter.h"
