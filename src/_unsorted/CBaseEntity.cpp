@@ -558,6 +558,13 @@ void CBaseEntity::vfunc13(const char *classname)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009af00 size=0x4
+char * CBaseEntity::vfunc14()
+{
+    return (char *)this + 0x24;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009af40 size=0xc0
 #include "ScopeTrace.h"
 #include "CCollisionProperty.h"
