@@ -23,4 +23,5 @@ public:
 public:
     virtual datamap_t * vfunc82();
     virtual int vfunc117();
+    virtual void vfunc103();    // slot 103: its own, 0x10130d10 (= sub_10130d10)
 };
