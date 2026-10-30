@@ -3516,6 +3516,7 @@
 0x100089a9 func   ?sub_101f75a0@CVTraitEffectGroup_t@@QAEXPAUCTraitStatBlock@@@Z CVTraitEffectGroup_t::sub_101f75a0
 0x100089ae func   ?sub_103b0c70@CNPC_VSheriffMan@@QAE_NPBVVector@@M@Z CNPC_VSheriffMan::sub_103b0c70
 0x100089b3 func   ?sub_10383f70@@YAHXZ sub_10383f70
+0x100089bd func   ?vfunc241@CEnvWind@@UAEXHHHHH@Z CEnvWind::vfunc241
 0x100089c2 func   ?sub_10201e70@CVStatListManager_t@@QAEXHH@Z CVStatListManager_t::sub_10201e70
 0x100089cc func   ?sub_10365860@CNPC_VBach@@QAEXPBDM@Z CNPC_VBach::sub_10365860
 0x100089d1 func   ?vfunc5@CAI_DynamicLink@@QAEPAV1@I@Z CAI_DynamicLink::vfunc5

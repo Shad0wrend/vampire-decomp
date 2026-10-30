@@ -21,6 +21,13 @@ void CEnvWind::vfunc113()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fe700 size=0x3
+#include "CEnvWind.h"
+void CEnvWind::vfunc241(int a0, int a1, int a2, int a3, int a4)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fe9e0 size=0x52
 #include "CBaseAnimating.h"
 #include "CEnvWind.h"
