@@ -21,6 +21,14 @@ bool CNPC_VTzimisceHeadClaw::vfunc325()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c12e0 size=0x3
+#include "CNPC_VTzimisceHeadClaw.h"
+bool CNPC_VTzimisceHeadClaw::vfunc324()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c1340 size=0x86
 #include "CNPC_VTzimisceHeadClaw.h"
 #include "utlvector.h"
