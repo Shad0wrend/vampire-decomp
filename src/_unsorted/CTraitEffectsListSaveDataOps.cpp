@@ -34,3 +34,10 @@ void CTraitEffectsListSaveDataOps::vfunc0(CTraitEffectsListField *pField, CSave 
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x1022d650 size=0x3
+#include "CTraitEffectsListSaveDataOps.h"
+void CTraitEffectsListSaveDataOps::vfunc3(int a0)
+{
+}
+// END FUNCTION
