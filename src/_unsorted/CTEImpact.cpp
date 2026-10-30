@@ -42,3 +42,11 @@ ServerClass * CTEImpact::vfunc0()
     return (ServerClass *)((int)&lifted::g_106c4514);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10065170 size=0x3
+#include "CTEImpact.h"
+int CTEImpact::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
