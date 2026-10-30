@@ -444,6 +444,14 @@ void CBaseEntityX::sub_10027370(Vector &out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10027450 size=0xf
+int CBaseEntity::vfunc0(int a0)
+{
+    *(int *)((char *)this + 0x448) = *(int *)((char *)a0);
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027490 size=0xa
 #include "CBaseEntity.h"
 // TARGET: CBaseEntity::vfunc116
