@@ -31,6 +31,17 @@ datamap_t * CBaseFlex::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b58b0 size=0x6
+#include "CBaseFlex.h"
+namespace lifted {
+extern char g_105594ac;
+}
+int CBaseFlex::vfunc79()
+{
+    return (int)&lifted::g_105594ac;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b5940 size=0x1e
 #include "CBaseFlex.h"
 
