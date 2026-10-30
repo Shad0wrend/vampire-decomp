@@ -109,6 +109,13 @@ L:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10129240 size=0x3
+int CGameRules::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10129260 size=0x1
 void CGameRules::vfunc2()
 {
