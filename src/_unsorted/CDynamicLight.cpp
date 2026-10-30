@@ -12,6 +12,17 @@ int CDynamicLight::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10056560 size=0x6
+#include "CDynamicLight.h"
+namespace lifted {
+extern char g_106be148;
+}
+int CDynamicLight::vfunc80()
+{
+    return (int)&lifted::g_106be148;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10056580 size=0x3
 #include "CDynamicLight.h"
 int CDynamicLight::vfunc81()

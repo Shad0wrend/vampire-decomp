@@ -4256,6 +4256,7 @@
 0x10009e85 func   ?vfunc480@CHL2_Player@@UAEMXZ CHL2_Player::vfunc480
 0x10009e8a func   ?vfunc326@CWeaponHolyLight@@QAEXXZ CWeaponHolyLight::vfunc326
 0x10009e94 func   ?vfunc154@CBreakable@@QAEHHH@Z CBreakable::vfunc154
+0x10009e99 func   ?vfunc80@CDynamicLight@@UAEHXZ CDynamicLight::vfunc80
 0x10009ea8 func   ?sub_1027da90@@YI_NPADHH@Z sub_1027da90
 0x10009ead func   ?sub_1020e260@@YAHXZ sub_1020e260
 0x10009eb7 func   _prop_padlock prop_padlock
