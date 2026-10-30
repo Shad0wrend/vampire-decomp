@@ -78418,7 +78418,8 @@ struct CSoundFXUnit : CUnknown101dbe30 {
 };
 bool CSoundFXUnit::sub_101dbe10()
 {
-	return m_field0000 != 0;
+	bool r = m_field0000 != 0;
+	return r;
 }
 }
 using namespace block_101dc150;
