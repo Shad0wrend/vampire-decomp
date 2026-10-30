@@ -8781,6 +8781,7 @@
 0x100128a5 func   ?sub_100b2010@CBaseEntity@@QAEXPBMPAM@Z CBaseEntity::sub_100b2010
 0x100128aa func   ?sub_1033d700@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_1033d700
 0x100128b4 func   ?vfunc471@CNPC_VScurrying@@UAEMXZ CNPC_VScurrying::vfunc471
+0x100128b9 func   ?vfunc142@CItemContainer@@QAEHPAUCItemDamageInfo@@@Z CItemContainer::vfunc142
 0x100128cd func   ?sub_1009d6a0@CBaseEntity@@QAEHXZ CBaseEntity::sub_1009d6a0
 0x100128dc func   ?sub_1005aff0@@YAHXZ sub_1005aff0
 0x100128eb func   ?sub_10349710@melee_dice_roll_result@@QAEXHHPAH@Z melee_dice_roll_result::sub_10349710

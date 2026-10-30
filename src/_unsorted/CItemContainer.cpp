@@ -170,3 +170,24 @@ void CItemContainer::vfunc71()
 	g_1074f040 = g_1074b308.Lookup("locked");
 }
 // END FUNCTION
+
+// FUNCTION: 0x10209c50 size=0x5f
+#include "CItemContainer.h"
+#include "CVDmg_t.h"
+int CItemContainer::vfunc142(CItemDamageInfo *pInfo)
+{
+    if (m_nTakeDamage1fc) {
+        float flDamage;
+        if (pInfo->m_pDmg)
+            flDamage = (float)pInfo->m_pDmg->sub_101faa70();
+        else
+            flDamage = pInfo->m_flDamage;
+        m_iHealth = (int)(m_iHealth - flDamage);
+        if (m_iHealth <= 0) {
+            sub_10209b20(pInfo->m_pAttacker);
+            return 0;
+        }
+    }
+    return 1;
+}
+// END FUNCTION
