@@ -35,3 +35,11 @@ CTEBaseBeam *CTEBaseBeam::vfunc2(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005a860 size=0x3
+#include "CTEBaseBeam.h"
+int CTEBaseBeam::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
