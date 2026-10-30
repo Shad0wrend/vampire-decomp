@@ -4236,6 +4236,7 @@
 0x100097d7 func   ?sub_1023ed10@@YAXHD@Z sub_1023ed10
 0x100097dc func   ?vfunc103@CPhysicsCannister@@QAEXXZ CPhysicsCannister::vfunc103
 0x100097e1 func   ?sub_1030c600@@YGHPBD@Z sub_1030c600
+0x100097e6 func   ?sub_1013d580@@YAMMM@Z sub_1013d580
 0x100097eb func   ?sub_10397f00@CNPC_VMingXiao@@QAEXXZ CNPC_VMingXiao::sub_10397f00
 0x100097ff func   ?sub_101f4530@CUnit101f4530@@QAEHHH@Z CUnit101f4530::sub_101f4530
 0x10009804 func   ?sub_104001f0@@YAHXZ sub_104001f0
