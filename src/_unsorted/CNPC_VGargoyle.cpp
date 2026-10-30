@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10377ae0 size=0x3
+bool CNPC_VGargoyle::vfunc615()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10377cd0 size=0x1d
 #include "CNPC_VGargoyle.h"
 struct A { int sub_10012300(int); };
