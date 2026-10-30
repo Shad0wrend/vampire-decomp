@@ -110146,6 +110146,26 @@ CBaseEntity *CAI_BaseNPC::sub_102729d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10273180 size=0x5c
+#include "CAI_BaseNPC.h"
+
+int sub_102d6160(int hull);
+int sub_102d6140(int hull);
+void sub_101cf390(CAI_BaseNPC *pNPC, int a, int b);
+
+bool CAI_BaseNPC::sub_10273180(char bForce)
+{
+	char *pThis = (char *)this;
+	if (!pThis[0x5f2d] || bForce) {
+		sub_101cf390(this, sub_102d6140(*(int *)(pThis + 0x1568)), sub_102d6160(*(int *)(pThis + 0x1568)));
+		pThis[0x5f2d] = 1;
+		if (*(int *)(pThis + 0x36c))
+			sub_10272f40();
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10273e80 size=0x24
 #include "CAI_BaseNPC.h"
 
