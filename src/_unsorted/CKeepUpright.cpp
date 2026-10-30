@@ -26,6 +26,26 @@ CKeepUpright *CKeepUpright::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10029700 size=0x5c
+#include "CKeepUpright.h"
+struct CBaseEntityVectorsUnit
+{
+	void sub_100ad320(float *pForward, float *pRight, float *pUp);
+};
+void CKeepUpright::vfunc103()
+{
+	m_vecAxis460[0] = 0;
+	m_vecAxis460[1] = 0;
+	m_vecAxis460[2] = 1.0f;
+	((CBaseEntityVectorsUnit *)this)->sub_100ad320(0, 0, m_vecUp454);
+	vfunc93(0, 0);
+	if (*(unsigned char *)((char *)this + 0x204) & 1)
+		*((char *)this + 0x47c) = 0;
+	else
+		*((char *)this + 0x47c) = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10029780 size=0xdc
 struct Handle_10029780
 {
