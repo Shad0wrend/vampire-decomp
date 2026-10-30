@@ -1279,6 +1279,7 @@
 0x10003adf func   ?sub_100de690@@YAHXZ sub_100de690
 0x10003ae4 func   ?sub_103e7e80@@YAHXZ sub_103e7e80
 0x10003ae9 func   ?sub_100735a0@CUnknown100735a0@@QAEXH@Z CUnknown100735a0::sub_100735a0
+0x10003aee func   ?vfunc25@CGameRules@@UAEHXZ CGameRules::vfunc25
 0x10003af3 func   ?vfunc13@CServerNetworkProperty@@UAEHXZ CServerNetworkProperty::vfunc13
 0x10003b02 func   ?sub_1003cb00@CBaseEntity@@QAE_NH@Z CBaseEntity::sub_1003cb00
 0x10003b07 func   ?sub_101713c0@CBasePlayer@@QAEXXZ CBasePlayer::sub_101713c0

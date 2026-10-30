@@ -201,6 +201,16 @@ bool CGameRules::vfunc23()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10129420 size=0x6
+namespace lifted {
+extern char g_10572c30;
+}
+int CGameRules::vfunc25()
+{
+    return (int)&lifted::g_10572c30;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10129440 size=0x3
 void CGameRules::vfunc29(void * a0)
 {
