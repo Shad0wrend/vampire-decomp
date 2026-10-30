@@ -9,7 +9,10 @@ public:
 	char m_pad0090[0x80c - 0x90];
 	char m_b080c;	// 0x80c: the terminal is usable
 	char m_pad080d[0x82c - 0x80d];
-	char m_b082c;	// 0x82c: set while a screen is shown (the user is turned towards it)
+	union {
+		char m_b082c;	// 0x82c: set while a screen is shown (the user is turned towards it)
+		int m_n082c[4];	// 0x82c: four dwords cleared together on use
+	};
 	void sub_10217d60();	// stub 0x1001131a, run by vfunc41 while the byte at +0x82c is set
 	void vfunc39(void *pPlayer);	// slot 39 (CBaseEntity::vfunc39 signature): the stub 0x1000f515 takes the one pointer argument
 	void vfunc41(void *pArg);	// slot 41: the stub 0x1000f321 takes the one pointer argument
