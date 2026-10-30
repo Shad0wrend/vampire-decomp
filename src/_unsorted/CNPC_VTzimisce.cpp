@@ -391,6 +391,14 @@ void CNPC_VTzimisce::vfunc627()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b9ef0 size=0x3
+#include "CNPC_VTzimisce.h"
+bool CNPC_VTzimisce::vfunc509()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b9f10 size=0x29
 #include "CNPC_VTzimisce.h"
 #include "CUnknown1070b244.h"
