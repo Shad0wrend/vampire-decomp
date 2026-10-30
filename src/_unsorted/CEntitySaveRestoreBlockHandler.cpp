@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101a3780 size=0x6
+#include "CEntitySaveRestoreBlockHandler.h"
+namespace lifted {
+extern char g_1059317c;
+}
+int CEntitySaveRestoreBlockHandler::vfunc0()
+{
+    return (int)&lifted::g_1059317c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a37c0 size=0x123
 #include "CEntitySaveRestoreBlockHandler.h"
 #include "CGlobalEntityList.h"
