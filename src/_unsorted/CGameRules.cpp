@@ -271,6 +271,13 @@ int CGameRules::vfunc58(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10129580 size=0x6
+int CGameRules::vfunc66(int a0)
+{
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101295a0 size=0x8
 #include "CGameRules.h"
 
