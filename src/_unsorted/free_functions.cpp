@@ -123151,6 +123151,27 @@ void CUnknown102f09a0::sub_102f09a0(CAI_Waypoint *pWaypoint, const float *pPosit
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f0e00 size=0x5d
+#include "CAI_Navigator.h"
+struct CAI_NavigatorView : CAI_Navigator
+{
+	char sub_102f0ab0(const float *pf, CAI_NavWaypoint *a, CAI_NavWaypoint *b, float flDiff, int c, int *pOut, char *pbDone);
+};
+
+// TARGET: CAI_Navigator::sub_102f0e00
+bool CAI_Navigator::sub_102f0e00(const float *pfThreshold, char *pbDone)
+{
+	CAI_NavWaypoint *pWp = m_p30->m_pWaypoint.m_p;
+	int pOut;
+	float flDiff = *pfThreshold - sub_102f1cf0();
+	pOut = 0;
+	if (flDiff < 0.1)
+		return false;
+	char c = ((CAI_NavigatorView *)this)->sub_102f0ab0(pfThreshold, pWp, pWp, flDiff, 1, &pOut, pbDone);
+	return c ? true : false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f0e80 size=0x104
 #include "CAI_Navigator.h"
 #include "CHolderInner24.h"
