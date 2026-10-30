@@ -44,4 +44,6 @@ public:
 	unsigned char m_flag80c;	// 0x80c: set while the elevator is moving
 public:
 	virtual void vfunc178(int);
+public:
+	virtual int vfunc82();
 };
