@@ -1202,6 +1202,18 @@ int CAI_BaseNPCTroika::vfunc127(CRestore *pRestore)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029a070 size=0x30
+int CAI_BaseNPCTroika::vfunc593()
+{
+    *(int *)((char *)this + 0x655c) = 0x3dcccccd;
+    *(int *)((char *)this + 0x6560) = 0x3f800000;
+    *(int *)((char *)this + 0x6564) = 0x42480000;
+    *(int *)((char *)this + 0x6568) = 0x42480000;
+    *(int *)((char *)this + 0x656c) = 0x3c23d70a;
+    return 0x42480000;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029a8b0 size=0x51
 extern char g_106b8540[];
 void sub_1000f4e8();
