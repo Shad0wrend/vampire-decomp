@@ -19,6 +19,13 @@ void CNPCMaker::vfunc619(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034af50 size=0x3
+#include "CNPCMaker.h"
+void CNPCMaker::vfunc620(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034afe0 size=0x105
 #include "CNPCMaker.h"
 #include "CCollisionProperty.h"

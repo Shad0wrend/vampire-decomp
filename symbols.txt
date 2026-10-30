@@ -773,6 +773,7 @@
 0x10002a4a func   ?sub_1006cc20@Dump@@QAEXXZ Dump::sub_1006cc20
 0x10002a4f func   ?sub_103bc820@CNPC_VTzimisce@@QAEHXZ CNPC_VTzimisce::sub_103bc820
 0x10002a5e func   ?sub_10045de0@CUtlRBTree36@@QAEGPBH@Z CUtlRBTree36::sub_10045de0
+0x10002a63 func   ?vfunc620@CNPCMaker@@UAEXH@Z CNPCMaker::vfunc620
 0x10002a6d func   ?sub_1006edb0@CUnknown1006edb0@@QAEHXZ CUnknown1006edb0::sub_1006edb0
 0x10002a72 func   ?sub_102013a0@CVStatList_t@@QAEPBDH@Z CVStatList_t::sub_102013a0
 0x10002a77 func   ?sub_10080730@CUnknown10080730@@QAEPAXXZ CUnknown10080730::sub_10080730
