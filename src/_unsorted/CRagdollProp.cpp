@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10152300 size=0x6
+namespace lifted {
+extern char g_10723498;
+}
+int CRagdollProp::vfunc80()
+{
+    return (int)&lifted::g_10723498;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10152320 size=0x3
 int CRagdollProp::vfunc81()
 {
