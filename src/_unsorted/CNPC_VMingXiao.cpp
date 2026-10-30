@@ -324,6 +324,14 @@ Vector CNPC_VMingXiao::vfunc574(const Vector &vecPos, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10395e50 size=0x3
+#include "CNPC_VMingXiao.h"
+bool CNPC_VMingXiao::vfunc602()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10395e70 size=0xcd
 #include "CNPC_VMingXiao.h"
 #include "CUnknown1070b244.h"

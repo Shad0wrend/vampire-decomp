@@ -2598,6 +2598,7 @@
 0x100069f6 func   ?vfunc68@CPhysicsProp@@UAE_NPAX@Z CPhysicsProp::vfunc68
 0x10006a00 func   ?sub_101a81a0@CCineNPC@@QAEXXZ CCineNPC::sub_101a81a0
 0x10006a05 func   ?sub_10067b70@@YAXPAVCUnknown1019d130@@MPBVVector@@HH1@Z sub_10067b70
+0x10006a0f func   ?vfunc602@CNPC_VMingXiao@@UAE_NXZ CNPC_VMingXiao::vfunc602
 0x10006a19 func   ?vfunc32@CPhysicsPropContested@@UAE_NH@Z CPhysicsPropContested::vfunc32
 0x10006a1e func   ?sub_10361730@CNPC_VAsianVampire@@QAEPAXXZ CNPC_VAsianVampire::sub_10361730
 0x10006a23 func   ?sub_101e04a0@CUnknown101dff00List@@QAEXXZ CUnknown101dff00List::sub_101e04a0
