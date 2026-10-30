@@ -800,6 +800,16 @@ void CBaseEntity::vfunc71()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009e100 size=0x6
+namespace lifted {
+extern char g_10552d34;
+}
+int CBaseEntity::vfunc79()
+{
+    return (int)&lifted::g_10552d34;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009e120 size=0x105
 #include "ScopeTrace.h"
 #include "CUnknown1070b22c.h"
