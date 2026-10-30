@@ -3103,6 +3103,7 @@
 0x1000745f func   _item_k_sarcophagus_key item_k_sarcophagus_key
 0x10007469 func   ?sub_101b3730@CUnknown101b3730@@QAEPAXH@Z CUnknown101b3730::sub_101b3730
 0x1000746e func   ?sub_10092460@CBaseAnimating@@QAE_NHH@Z CBaseAnimating::sub_10092460
+0x10007478 func   ?sub_100f6ce0@@YAXXZ sub_100f6ce0
 0x10007482 func   ?sub_101a2a80@@YIXPAHHH@Z sub_101a2a80
 0x10007487 func   ?sub_102016a0@CVStatList_t@@QAEXH@Z CVStatList_t::sub_102016a0
 0x1000748c func   ?vfunc103@CBaseToggle@@UAEXXZ CBaseToggle::vfunc103

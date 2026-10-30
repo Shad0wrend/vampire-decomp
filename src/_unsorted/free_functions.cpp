@@ -40625,6 +40625,34 @@ void __stdcall sub_100f6bb0(SEntityObject *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f6ce0 size=0x5e
+struct IPhysEnvLike { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13();
+	virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21();
+	virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37();
+	virtual void v38(); virtual void v39(); virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45();
+	virtual void v46(); };
+struct IListener { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); };
+extern IPhysEnvLike *g_10723940;
+extern IListener **g_10703668;
+extern int g_10703674;
+extern char g_107036ac, g_10735d38;
+
+void sub_100f6ce0()
+{
+	g_107036ac = 1;
+	if (g_10723940)
+		g_10723940->v46();
+	g_10735d38 = 1;
+	for (int i = 0; i < g_10703674; i++)
+		g_10703668[i]->v6();
+	g_10735d38 = 0;
+	g_10703674 = 0;
+	g_107036ac = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f6d80 size=0x84
 #include "CUnknown100f6d80.h"
 
