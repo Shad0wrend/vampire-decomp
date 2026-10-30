@@ -99,6 +99,25 @@ void CAI_BaseNPCTroika::vfunc17(const char *pszFormat, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028dfb0 size=0x58
+extern char g_10920534;
+extern "C" __declspec(dllimport) char *Q_strncpy(char *dest, const char *src, int maxLen);
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+void sub_1027ee20(void *pNpc, char *msg);
+void CAI_BaseNPCTroika::vfunc19(const char *pszMsg)
+{
+	if (pszMsg) {
+		if (g_10920534) {
+			char buf[512];
+			Q_strncpy(buf, pszMsg, 512);
+			sub_1027ee20(this, buf);
+			return;
+		}
+		DevMsg(pszMsg);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028ef20 size=0x76
 #include "CAI_BaseNPCTroika.h"
 char CAI_BaseNPCTroika::vfunc587(int unused)
