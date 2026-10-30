@@ -16,5 +16,5 @@ public:
 	virtual void vfunc0();
 	virtual void vfunc1();
 	virtual void vfunc2(CServerGameEntsEdict *pFirst, CServerGameEntsEdict *pSecond);	// resolves both edicts to their entities and hands them, with a freshly cleared 0x54 byte record, to CBaseEntity::sub_1003e2e0
-	virtual void vfunc3();
+	virtual int vfunc3(int);
 };
