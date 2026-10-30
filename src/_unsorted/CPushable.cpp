@@ -8,6 +8,13 @@ bool CPushable::vfunc73(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010f1d0 size=0x5
+bool CPushable::vfunc74(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f1f0 size=0x36
 #include "CPushable.h"
 
