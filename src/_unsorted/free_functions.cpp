@@ -105895,6 +105895,24 @@ extern char g_105c5338;
 void sub_1024b070() { g_105c5338 = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x1024b090 size=0x5e
+#include <string.h>
+struct CVNameId
+{
+	unsigned short m_nId;
+	const char *sub_1024b040();
+	bool sub_1024b090(const char *pszName);
+};
+
+// TARGET: CVNameId::sub_1024b090
+bool CVNameId::sub_1024b090(const char *pszName)
+{
+	if (m_nId == 0xffff)
+		return false;
+	return strcmp(sub_1024b040(), pszName) == 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024b150 size=0xae
 extern "C" int strcmp(const char *, const char *);
 struct Pool { char pad[0x18]; char **blocks; };
