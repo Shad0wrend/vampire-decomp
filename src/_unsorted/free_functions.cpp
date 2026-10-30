@@ -101029,6 +101029,25 @@ bool CVoiceGameMgr::sub_102325e0(CBaseEntity *pPlayer, const char *cmd)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10232840 size=0x5f
+#include <stdarg.h>
+#include <stdio.h>
+struct CUnknown10751604 { virtual void v0(); virtual bool vfunc1(); char pad[0x28]; int m_n2c; };
+extern CUnknown10751604 *g_10751604;
+extern void (*g_109f3628)(const char *, ...);
+extern char g_105490b0[];
+void sub_10232840(const char *fmt, ...)
+{
+	char buf[0x1000];
+	if (!g_10751604->vfunc1() && g_10751604->m_n2c) {
+		va_list ap;
+		va_start(ap, fmt);
+		_vsnprintf(buf, 0x1000, fmt, ap);
+		g_109f3628(g_105490b0, buf);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10232c70 size=0x2c
 struct CPair10232c70 {
     int m_v[2];
