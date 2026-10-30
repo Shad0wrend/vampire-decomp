@@ -33,6 +33,13 @@ CGameMovement::CGameMovement()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011e1b0 size=0x3
+#include "CGameMovement.h"
+void CGameMovement::vfunc13(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011e1d0 size=0x1e
 #include "CGameMovement.h"
 
