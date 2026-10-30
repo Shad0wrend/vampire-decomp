@@ -40,3 +40,11 @@ void CTEGlowSprite::vfunc3(const Vector &origin, const QAngle &angles)
 	vfunc4(filter, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10063c90 size=0x3
+#include "CTEGlowSprite.h"
+int CTEGlowSprite::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
