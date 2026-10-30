@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10375240 size=0x6
+namespace lifted {
+extern char g_1093ae48;
+}
+int CNPC_VFrenzyShadow::vfunc580()
+{
+    return (int)&lifted::g_1093ae48;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10375440 size=0x1d
 #include "CNPC_VFrenzyShadow.h"
 struct A { int sub_10012300(int); };
