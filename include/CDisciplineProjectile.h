@@ -14,7 +14,10 @@ public:
 
 	char m_pad03e0[0x888 - 0x3e0];
 	Vector m_vecStart888;	// 0x888
-	char m_pad0894[0x8bc - 0x894];
+	char m_pad0894[0x8b4 - 0x894];
+	char m_b8b4;	// 0x8b4
+	char m_pad08b5[3];
+	EHANDLE m_h8b8;	// 0x8b8
 	int m_nDisc8bc;	// 0x8bc: the discipline id
 public:
     virtual datamap_t * vfunc82();
