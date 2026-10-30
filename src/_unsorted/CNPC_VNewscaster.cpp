@@ -29,6 +29,13 @@ void CNPC_VNewscaster::vfunc491()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a0070 size=0x1
+#include "CNPC_VNewscaster.h"
+void CNPC_VNewscaster::vfunc492()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a01b0 size=0x8
 #include "CNPC_VNewscaster.h"
 
