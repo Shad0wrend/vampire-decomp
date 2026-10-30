@@ -64,3 +64,11 @@ ServerClass * CTETParticle::vfunc0()
     return (ServerClass *)((int)&lifted::g_106c6db4);
 }
 // END FUNCTION
+
+// FUNCTION: 0x100696c0 size=0x3
+#include "CTETParticle.h"
+int CTETParticle::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
