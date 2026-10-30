@@ -15,4 +15,6 @@ public:
 	CWeaponIArmorOwner *sub_102521f0();	// the weapon's owner (stub 0x10014fab)
 public:
 	virtual void vfunc291();
+public:
+	virtual bool vfunc325();
 };
