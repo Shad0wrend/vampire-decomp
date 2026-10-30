@@ -24,4 +24,6 @@ public:
 	bool sub_1040d440(void *pEntity);	// whether the carried object's handle (+0x59c) resolves to pEntity (stub 0x10002360)
 public:
     virtual datamap_t * vfunc82();
+public:
+	virtual void vfunc229(int);
 };
