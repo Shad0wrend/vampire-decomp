@@ -64,6 +64,17 @@ bool CNPC_VTzimisceRunner::vfunc329()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c30e0 size=0x6
+#include "CNPC_VTzimisceRunner.h"
+namespace lifted {
+extern char g_1093d1d8;
+}
+int CNPC_VTzimisceRunner::vfunc580()
+{
+    return (int)&lifted::g_1093d1d8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c3120 size=0x86
 #include "CNPC_VTzimisceRunner.h"
 #include "utlvector.h"
