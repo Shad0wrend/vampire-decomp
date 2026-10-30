@@ -70,6 +70,14 @@ int CNPC_VZombie::vfunc473()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103df280 size=0x6
+#include "CNPC_VZombie.h"
+int CNPC_VZombie::vfunc138()
+{
+    return 0xe;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103df580 size=0x44
 #include "CBaseEntity.h"
 #include "CNPC_VZombie.h"
