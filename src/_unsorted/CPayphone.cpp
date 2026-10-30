@@ -57,6 +57,14 @@ bool CPayphone::vfunc617()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aa930 size=0x5
+#include "CPayphone.h"
+bool CPayphone::vfunc72(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aa9c0 size=0x165
 #include "CBaseEntity.h"
 #include "CPayphone.h"
