@@ -8709,6 +8709,7 @@
 0x10013151 func   ?vfunc420@CNPC_VFrenzyShadow@@QAEXXZ CNPC_VFrenzyShadow::vfunc420
 0x10013156 func   ?sub_101b68f0@CUtlRBTreeFind232@@QAEHPBX@Z CUtlRBTreeFind232::sub_101b68f0
 0x1001315b func   ?sub_10077290@CUnknown10077290@@QAEXPBD@Z CUnknown10077290::sub_10077290
+0x10013160 func   ?vfunc80@CVampireProjectile@@UAEHXZ CVampireProjectile::vfunc80
 0x10013165 func   ?sub_10411440@CPhysCannonUnit10411440@@QAEXXZ CPhysCannonUnit10411440::sub_10411440
 0x1001316a func   ?sub_100fbb40@CThinkView@@QAEXMH@Z CThinkView::sub_100fbb40
 0x1001316f func   ?sub_103ccb50@@YI_NPAVCBaseEntity@@@Z sub_103ccb50

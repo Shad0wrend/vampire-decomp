@@ -37,6 +37,16 @@ void CVampireProjectile::vfunc134()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101edee0 size=0x6
+namespace lifted {
+extern char g_1073a6ac;
+}
+int CVampireProjectile::vfunc80()
+{
+    return (int)&lifted::g_1073a6ac;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101edf00 size=0x3
 int CVampireProjectile::vfunc81()
 {
