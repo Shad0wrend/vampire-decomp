@@ -379,6 +379,17 @@ void CSave::vfunc32(const int *pHandles, int count)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a0f40 size=0x59
+#include "CSave.h"
+void CSave::vfunc34(CSaveEdict *const *pEdicts, int count)
+{
+	int indices[256];
+	for (int i = 0; i < count; i++)
+		indices[i] = sub_101a0830(pEdicts[i]);
+	vfunc10(indices, count);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a0fc0 size=0x89
 #include "CSave.h"
 
