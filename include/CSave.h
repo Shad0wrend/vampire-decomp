@@ -40,7 +40,7 @@ public:
 	virtual void vfunc8(const char *pszName, int value);	// slot 8: writes a named value (the physics save block handler writes its flag 1 under the global name at 0x1053c340)
 	virtual void vfunc9(const char *pszName, void *pData, int count);	// writes count ints (called by vfunc37 with the entity indices)
 	virtual bool vfunc10(const void *pData, int nBytes);	// WriteInt
-	virtual void vfunc11();
+	virtual int vfunc11(int, int, int);
 	virtual void vfunc12(const void *pData, int count);
 	virtual void vfunc13();
 	virtual bool vfunc14(const void *pData, int nBytes);

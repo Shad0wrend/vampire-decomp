@@ -8,7 +8,7 @@ public:
 	virtual void vfunc0(); virtual void vfunc1(); virtual bool vfunc2(); virtual void vfunc3();
 	virtual void vfunc4(int a, int b, int c);	// the level shutdown/frame step with three (unused) stack arguments: warns when the delete queue is not empty, runs slot 113 on every entity whose flag bit 1 (+0x268) is clear, clears the game's pending lists and, unless the cheat convar allows it, resets the convar at 0x106bd868 to 0
 	virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual int vfunc9();
-	virtual void vfunc10(); virtual void vfunc11(); virtual void vfunc12();
+	virtual void vfunc10(); virtual void vfunc11(); virtual int vfunc12(int);
 	virtual void vfunc13(void *pData, int a, int b, int c, int d, int e);	// builds a CSave on pData and runs its slot 3 (a..e)
 	virtual void vfunc14(void *pData, int a, int b, int c, int d, int e);	// builds a CRestore on pData and runs its slot 3 (a..e)
 	virtual int vfunc15(int); virtual int vfunc16(int); virtual void vfunc17(); virtual void vfunc18(); virtual void vfunc19(void *pArg);

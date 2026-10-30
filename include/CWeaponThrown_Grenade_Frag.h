@@ -50,4 +50,6 @@ public:
 	virtual int vfunc290();
 	virtual int vfunc362();
 	virtual int vfunc363();
+public:
+	virtual int vfunc315();
 };

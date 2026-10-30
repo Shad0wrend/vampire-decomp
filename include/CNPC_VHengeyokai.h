@@ -156,4 +156,6 @@ public:
 	virtual bool vfunc452();
 	virtual int vfunc473();
 	virtual int vfunc580();
+public:
+	virtual int vfunc461();
 };

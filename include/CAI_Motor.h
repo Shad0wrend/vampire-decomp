@@ -23,7 +23,7 @@ public:
 	virtual void vfunc7();
 	virtual void vfunc8();
 	virtual void vfunc9();
-	virtual void vfunc10();
+	virtual int vfunc10();
 	virtual float vfunc11(int a);
 	virtual void vfunc12();
 	virtual void vfunc13();

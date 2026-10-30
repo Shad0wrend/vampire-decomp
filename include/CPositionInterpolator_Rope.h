@@ -65,7 +65,7 @@ class CRopeDelegate
 {
 public:
 	CRopeDelegate() {}
-	virtual void vfunc0();
+	virtual int vfunc0(int, int, int);
 	virtual void vfunc1(int *pOut, int count);	// slot 1: copies the first two of the delegate's 9-dword records (at +4..+0x18) to pOut and the last one to pOut + (count * 9 - 9) dwords; does nothing for count < 2
 };
 

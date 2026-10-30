@@ -55,4 +55,7 @@ public:
 public:
 	virtual float vfunc48();
 	virtual float vfunc49();
+public:
+	virtual int vfunc50(int);
+	virtual int vfunc51(int, int);
 };

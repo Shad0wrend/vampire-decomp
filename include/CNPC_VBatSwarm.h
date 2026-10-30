@@ -24,4 +24,7 @@ public:
 public:
 	virtual int vfunc438();
 	virtual int vfunc461();
+public:
+	virtual int vfunc553(int, int);
+	virtual int vfunc554(int, int);
 };

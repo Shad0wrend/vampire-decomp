@@ -108,4 +108,6 @@ public:
 public:
 	virtual bool vfunc32();
 	virtual int vfunc33();
+public:
+	virtual int vfunc23(int);
 };

@@ -56,8 +56,8 @@ public:
 	virtual CUnknown101bc140 *vfunc7(void *pFilter, unsigned int nEntIndex, int nChannel, const char *pszSample, float flAttenuation);	// "SoundCreate" with an attenuation: like slot 6 with the sound level 50 + 20 / flAttenuation (0 for an attenuation of 0); the entity index argument is turned into an entity handle in place
 	virtual CUnknown101bc140 *vfunc8(void *pFilter, int nEntIndex, const char *pszSample);	// "SoundCreate": a new sound (0x6c bytes from the sound pool) set up for the filter, the entity of that index, channel 0, the sample and sound level 0x4b
 	virtual void vfunc9(void *pSound);	// "SoundDestroy": stops the sound (slot 5), tears down its recipient vector (+0x4c), resets its recipient filter vtable (+0x44) and hands it back to the sound pool
-	virtual void vfunc10();
-	virtual void vfunc11();
+	virtual int vfunc10(int, int, int);
+	virtual int vfunc11(int, int, int);
 	virtual void vfunc12();
 	virtual int vfunc13(int);
 	virtual int vfunc14(int);
