@@ -23724,6 +23724,17 @@ int CBaseAnimatingOverlay::sub_100991b0(int activity, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10099250 size=0x59
+#include "CBaseAnimatingOverlay.h"
+int CBaseAnimatingOverlay::sub_10099250(int activity, float flDivisor, int b)
+{
+	int layer = sub_100991b0(activity, b);
+	if (layer >= 0 && flDivisor > 0.0f)
+		m_Layers[layer].m_f0c = sub_10091080(m_Layers[layer].m_nSequence) / flDivisor;
+	return layer;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10099320 size=0x28
 #include "CBaseAnimatingOverlay.h"
 #define VS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
