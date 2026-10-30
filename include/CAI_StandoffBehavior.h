@@ -51,9 +51,9 @@ public:
 	virtual void vfunc2();
 	virtual int vfunc3();	// whether the standoff may carry on: while active (+0x19) the NPC must have bit 27 of its slot 513 flags, know sequence 8, be in state 2 and hold a weapon; otherwise the active byte is cleared
 	virtual void vfunc4();
-	virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
+	virtual void vfunc5(); virtual int vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
 	virtual void vfunc10(); virtual void vfunc11(); virtual void vfunc12(); virtual void vfunc13(); virtual void vfunc14();
-	virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17(); virtual void vfunc18(); virtual void vfunc19();
+	virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17(); virtual void vfunc18(); virtual int vfunc19();
 	virtual void vfunc20(); virtual void vfunc21();
 	virtual int vfunc22(int a);	// picks the activity to use for the requested one (weapon activity translation of the standoff states)
 	virtual void vfunc23(); virtual void vfunc24(); virtual void vfunc25();
@@ -87,4 +87,6 @@ public:
 	void sub_102c7360(char a);	// stores the byte at +0x19 when it changes, then runs sub_102c6ff0 (stub 0x1000d3be)
 	void sub_102c73b0(const CStandoffParams *p);	// copies the block to +0x20 and sets +0x3c = -1, +0x40 = p->m_flMin, +0x44 = p->m_flMax (stub 0x10010b54)
 	void sub_102c6db0();	// the base behaviour's vfunc10, called directly (stub 0x1000192e)
+public:
+	virtual bool vfunc28();
 };

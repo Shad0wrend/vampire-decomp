@@ -6,7 +6,7 @@ class CSave;
 class CAI_SaveRestoreBlockHandler
 {
 public:
-	virtual void vfunc0();
+	virtual int vfunc0();
 	virtual void vfunc1();
 	virtual void vfunc2(CSave *pSave);	// "Save": writes the AI node name list and the NPC list (count, then per NPC its handle and name)
 	virtual void vfunc3();

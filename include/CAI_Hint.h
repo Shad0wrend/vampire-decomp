@@ -99,7 +99,7 @@ public:
 	virtual void vfunc79();
 	virtual void vfunc80();
 	virtual void vfunc81();
-	virtual void vfunc82();
+	virtual int vfunc82();
 	virtual void vfunc83();
 	virtual void vfunc84();
 	virtual void vfunc85();
