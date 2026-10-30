@@ -10,6 +10,16 @@ struct CItemContainerHandle
 	unsigned int m_Index;
 };
 
+class CVDmg_t;
+
+struct CItemDamageInfo	// the damage info of slot 142 (OnTakeDamage)
+{
+	CVDmg_t *m_pDmg;	// 0x00: the damage record, or null
+	char pad04[0x2c - 4];
+	CBaseEntity *m_pAttacker;	// 0x2c
+	float m_flDamage;	// 0x30: used without a damage record
+};
+
 class CItemContainer
 {
 public:
