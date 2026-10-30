@@ -157275,6 +157275,31 @@ char CWeaponMelee::sub_10411160(CBaseEntity *pTarget, char bFlag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10411250 size=0x5e
+struct CGlobal1094accc {
+	virtual void v0();
+	virtual char v1();
+	char pad[0x28 - 4];
+	float m_f28;
+};
+extern CGlobal1094accc *g_1094accc;
+struct CObj10411250 {
+	char pad[0x9b4];
+	float m_f9b4;
+};
+float __fastcall sub_10411250(CObj10411250 *p)
+{
+	float v = p->m_f9b4;
+	float d = g_1094accc->v1() ? 0.0f : g_1094accc->m_f28;
+	float r = v / d;
+	if (r > 1.0f)
+		return 1.0f;
+	if (r < 0.0f)
+		return 0.0f;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104112d0 size=0x11d
 #include "CWeaponPhysCannon.h"
 #include "CPASAttenuationFilter.h"
