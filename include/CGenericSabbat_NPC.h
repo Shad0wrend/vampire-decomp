@@ -25,4 +25,6 @@ public:
 	virtual void vfunc434();
 public:
 	virtual int vfunc580();
+public:
+	virtual int vfunc432(int);
 };

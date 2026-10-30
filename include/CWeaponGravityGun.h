@@ -17,4 +17,6 @@ public:
 
 	char m_pad898[0x928 - 0x898];
 	int m_nSoundState;	// 0x928
+public:
+	virtual int vfunc298(int, int);
 };

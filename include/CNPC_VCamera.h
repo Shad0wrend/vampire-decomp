@@ -98,4 +98,6 @@ public:
 public:
 	virtual int vfunc375(int);
 	virtual int vfunc376(int);
+public:
+	virtual int vfunc432(int);
 };
