@@ -220,7 +220,9 @@ public:
 	int m_nVSoundGroup;	// 0x00b4
 	int m_nVSoundGroupFemale;	// 0x00b8
 	int m_nVSoundTableIdx;	// 0x00bc
-	char m_pad00c0[0xd0 - 0xc0];
+	char m_pad00c0[0xc8 - 0xc0];
+	EHANDLE m_hC8;	// 0x00c8
+	float m_flCC;	// 0x00cc: the time the handle at +0xc8 expires
 	EHANDLE m_hD0;	// 0x00d0
 	int m_nD4;	// 0x00d4
 	float m_flD8;	// 0x00d8
