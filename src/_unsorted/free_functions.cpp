@@ -33941,6 +33941,24 @@ int sub_100cf680()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cf730 size=0x5f
+#include "CEventQueue.h"
+__declspec(dllimport) void __cdecl DevMsg(const char *pszFormat, ...);
+void CEventQueue::sub_100cf730()
+{
+	int nEvents = 0;
+	for (CEQEvent *p = m_pHead; p; p = p->m_pNext)
+		nEvents++;
+	DevMsg("\nEventQueue Dump: (CurTime: %f) (TotalEvents: %d)\n\n", gpGlobals->curtime, nEvents);
+	int i = 0;
+	for (CEQEvent *q = m_pHead; q; q = q->m_pNext) {
+		DevMsg("%d: ", i);
+		sub_100cf7b0(q);
+		i++;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cfac0 size=0xa
 namespace lifted {
 extern char g_106e7050;
