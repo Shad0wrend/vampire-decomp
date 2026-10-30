@@ -1496,6 +1496,7 @@
 0x100043ea func   ?vfunc103@CNPC_VHengeyokai@@QAEXXZ CNPC_VHengeyokai::vfunc103
 0x100043ef func   ?sub_100a9800@@YIDPAVCBaseEntity@@@Z sub_100a9800
 0x100043f9 func   ?vfunc12@CGameRules@@UAEXXZ CGameRules::vfunc12
+0x1000440d func   ?vfunc241@CBaseDoor@@UAE_NXZ CBaseDoor::vfunc241
 0x10004417 func   ?vfunc2@CTEUserTracer@@UAEPAV1@I@Z CTEUserTracer::vfunc2
 0x1000441c func   ?vfunc82@CTriggerTeleport@@UAEPAUdatamap_t@@XZ CTriggerTeleport::vfunc82
 0x10004421 func   ?sub_100ba090@CUnknown100ba090@@QAEHH@Z CUnknown100ba090::sub_100ba090
