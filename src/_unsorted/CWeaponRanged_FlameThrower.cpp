@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103e29d0 size=0x6
+#include "CWeaponRanged_FlameThrower.h"
+namespace lifted {
+extern char g_10665e00;
+}
+int CWeaponRanged_FlameThrower::vfunc362()
+{
+    return (int)&lifted::g_10665e00;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e2ad0 size=0x8c
 #include "CWeaponRanged_FlameThrower.h"
 
