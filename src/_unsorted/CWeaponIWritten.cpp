@@ -16,6 +16,13 @@ CWeaponIWritten *CWeaponIWritten::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040b370 size=0x1
+#include "CWeaponIWritten.h"
+void CWeaponIWritten::vfunc291()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040b450 size=0x4e
 #include "CWeaponIWritten.h"
 extern char g_106b8540[];
