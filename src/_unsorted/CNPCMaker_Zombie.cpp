@@ -19,6 +19,13 @@ void CNPCMaker_Zombie::vfunc619(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034cbd0 size=0x3
+#include "CNPCMaker_Zombie.h"
+void CNPCMaker_Zombie::vfunc620(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034cc60 size=0x127
 #include "CNPCMaker_Zombie.h"
 #include "CCollisionProperty.h"
