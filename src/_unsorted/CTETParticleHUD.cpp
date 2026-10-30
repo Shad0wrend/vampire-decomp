@@ -21,6 +21,13 @@ void CTETParticleHUD::vfunc5()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10069fb0 size=0x3
+#include "CTETParticleHUD.h"
+void CTETParticleHUD::vfunc3(int a0, int a1)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10069fd0 size=0x39
 #include "CTETParticleHUD.h"
 #include "IVEngineServerFull.h"
