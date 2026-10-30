@@ -11,4 +11,10 @@ public:
 	CNPC_VSheriffSwarm *sub_103b1be0();	// as in CKeepUpright (transplant)
 public:
     virtual datamap_t * vfunc82();
+public:
+	virtual int vfunc138();
+	virtual int vfunc451();
+	virtual bool vfunc452();
+	virtual int vfunc473();
+	virtual int vfunc580();
 };
