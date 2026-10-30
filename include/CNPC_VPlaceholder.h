@@ -30,4 +30,8 @@ public:
 	virtual bool vfunc365(int);
 	virtual bool vfunc378(int, int);
 	virtual bool vfunc587(int);
+public:
+	virtual int vfunc451();
+	virtual bool vfunc452();
+	virtual int vfunc580();
 };
