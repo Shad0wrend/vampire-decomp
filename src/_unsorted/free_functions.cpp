@@ -113531,6 +113531,7 @@ struct SHook {
 	virtual void vfunc0(SObj *p);
 };
 extern SHook *g_109253f8;
+extern char g_1092053c[];  // a global built at run time, not a string
 void sub_103707e0(SObj *p);
 
 int sub_10299c60(SObj *p)
@@ -113540,7 +113541,7 @@ int sub_10299c60(SObj *p)
 	if (g_109253f8)
 		g_109253f8->vfunc0(p);
 	sub_103707e0(p);
-	p->vfunc10("", 1);
+	p->vfunc10(g_1092053c, 1);
 	return 1;
 }
 // END FUNCTION
