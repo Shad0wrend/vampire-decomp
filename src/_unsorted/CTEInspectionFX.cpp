@@ -35,6 +35,17 @@ void CTEInspectionFX::vfunc3(const float *pOrigin, const float *pAngles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100656e0 size=0x6
+#include "CTEInspectionFX.h"
+namespace lifted {
+extern char g_106c4744;
+}
+int CTEInspectionFX::vfunc0()
+{
+    return (int)&lifted::g_106c4744;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10065700 size=0x3
 #include "CTEInspectionFX.h"
 int CTEInspectionFX::vfunc1()
