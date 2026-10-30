@@ -62,6 +62,12 @@ int CNPC_VMingXiaoTentacle::vfunc437()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039e7e0 size=0x1
+void CNPC_VMingXiaoTentacle::vfunc434()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039e800 size=0x1d
 #include "CNPC_VMingXiaoTentacle.h"
 
