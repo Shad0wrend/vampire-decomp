@@ -39,6 +39,17 @@ void CTEEnergySplash::vfunc3(const Vector *pOrigin, const Vector *pAngles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100614e0 size=0x6
+#include "CTEEnergySplash.h"
+namespace lifted {
+extern char g_106c2494;
+}
+int CTEEnergySplash::vfunc0()
+{
+    return (int)&lifted::g_106c2494;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10061500 size=0x3
 #include "CTEEnergySplash.h"
 int CTEEnergySplash::vfunc1()
