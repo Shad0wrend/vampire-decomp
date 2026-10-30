@@ -51,6 +51,14 @@ int CNPC_VWolfMorph::vfunc546(int x)
 int CNPC_VWolfMorph::vfunc375(int unused) { return 0x1145; }
 // END FUNCTION
 
+// FUNCTION: 0x103dce50 size=0x6
+#include "CNPC_VWolfMorph.h"
+int CNPC_VWolfMorph::vfunc138()
+{
+    return 2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dceb0 size=0x31
 #include <string.h>
 #include "CNPC_VWolfMorph.h"
