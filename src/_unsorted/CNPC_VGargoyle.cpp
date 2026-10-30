@@ -35,6 +35,16 @@ int CNPC_VGargoyle::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10377b40 size=0x6
+namespace lifted {
+extern int g_106395c8;
+}
+int CNPC_VGargoyle::vfunc451()
+{
+    return lifted::g_106395c8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10377cd0 size=0x1d
 #include "CNPC_VGargoyle.h"
 struct A { int sub_10012300(int); };
