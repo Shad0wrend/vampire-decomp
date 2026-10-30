@@ -346,6 +346,16 @@ int CWeaponThrown_Grenade_Frag::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ef510 size=0x6
+namespace lifted {
+extern char g_1067ccd0;
+}
+int CWeaponThrown_Grenade_Frag::vfunc362()
+{
+    return (int)&lifted::g_1067ccd0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f13b0 size=0x1e
 #include "CWeaponThrown_Grenade_Frag.h"
 
