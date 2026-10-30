@@ -12,6 +12,17 @@ datamap_t * CEntityFlame::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f51e0 size=0x6
+#include "CEntityFlame.h"
+namespace lifted {
+extern char g_106eb41c;
+}
+int CEntityFlame::vfunc80()
+{
+    return (int)&lifted::g_106eb41c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f5200 size=0x3
 #include "CEntityFlame.h"
 int CEntityFlame::vfunc81()
