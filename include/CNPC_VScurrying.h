@@ -52,4 +52,6 @@ public:
 	virtual int vfunc580();
 public:
 	virtual int vfunc138();
+public:
+	virtual float vfunc471();
 };

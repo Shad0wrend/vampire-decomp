@@ -95,4 +95,7 @@ public:
 	virtual int vfunc580();
 public:
 	virtual int vfunc337();
+public:
+	virtual int vfunc375(int);
+	virtual int vfunc376(int);
 };

@@ -144,4 +144,7 @@ public:
 	virtual int vfunc409();
 	virtual bool vfunc452();
 	virtual int vfunc473();
+public:
+	virtual float vfunc522();
+	virtual float vfunc523();
 };

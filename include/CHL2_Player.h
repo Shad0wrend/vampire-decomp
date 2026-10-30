@@ -145,4 +145,6 @@ public:
 	virtual float vfunc28();
 	virtual float vfunc29();
 	virtual float vfunc30();
+public:
+	virtual float vfunc482();
 };

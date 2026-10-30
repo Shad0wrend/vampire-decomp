@@ -20,4 +20,7 @@ public:
 public:
 	virtual int vfunc80();
 	virtual int vfunc82();
+public:
+	virtual int vfunc117();
+	virtual bool vfunc223();
 };

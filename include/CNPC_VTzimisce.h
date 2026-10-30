@@ -168,4 +168,8 @@ public:
 	virtual bool vfunc452();
 	virtual int vfunc473();
 	virtual int vfunc580();
+public:
+	virtual float vfunc522();
+	virtual float vfunc523();
+	virtual float vfunc550();
 };

@@ -15,4 +15,6 @@ public:
 	void sub_1004eae0();	// slot 103: slot 93(0, 0), SetSolid(SOLID_NONE) on the collision property at +0x270 (scope trace "CBaseEntity::SetSolid"), then slot 212(0)
 public:
 	virtual int vfunc82();
+public:
+	virtual int vfunc117();
 };

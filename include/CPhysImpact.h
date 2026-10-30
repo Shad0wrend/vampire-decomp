@@ -37,4 +37,6 @@ public:
 	void sub_1000cb8a();	// destructor body
 public:
 	virtual int vfunc82();
+public:
+	virtual int vfunc117();
 };

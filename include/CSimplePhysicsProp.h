@@ -26,4 +26,6 @@ public:
 	void sub_10004c3c();	// destructor body
 	void sub_10011793();	// CBaseProp::vfunc103 (jump stub)
 	void sub_100b3900(unsigned int flags);	// "CBaseEntity::RemoveFlag2"
+public:
+	virtual int vfunc117();
 };
