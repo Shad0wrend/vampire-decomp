@@ -1095,6 +1095,7 @@
 0x10003440 func   ?sub_102056d0@CUnknown102056d0@@QAEPAU1@XZ CUnknown102056d0::sub_102056d0
 0x10003445 func   ?sub_10137220@Vector@@QAEMXZ Vector::sub_10137220
 0x1000344f func   ?vfunc34@CBaseTerminal@@QAEHH@Z CBaseTerminal::vfunc34
+0x10003454 func   ?vfunc82@CNPC_VWerewolf@@UAEHXZ CNPC_VWerewolf::vfunc82
 0x10003459 func   ?vfunc104@CHudEntity@@QAEXXZ CHudEntity::vfunc104
 0x1000345e func   ?sub_1035aaa0@@YAXXZ sub_1035aaa0
 0x10003463 func   ?sub_100b6510@@YAXPBDPAD@Z sub_100b6510
