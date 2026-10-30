@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10057c10 size=0x3
+#include "CSteamJet.h"
+int CSteamJet::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100580e0 size=0x41
 #include "CSteamJet.h"
 #include <string.h>
