@@ -7,6 +7,11 @@ public:
 
 	void sub_100021e9();	// destructor body
 	void vfunc4(int a, int b);	// as in CTEMetalSparks (transplant)
+	char m_pad0004[0xc - 4];
+	int m_nEntIndex;	// 0x0c: engine index of the entity the particles attach to
+	int m_nParticle;	// 0x10: the precached particle system
+	int m_n14;	// 0x14
+	int m_n18;	// 0x18
 public:
 	virtual ServerClass * vfunc0();
 	virtual int vfunc1();
