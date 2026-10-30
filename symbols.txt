@@ -3776,6 +3776,7 @@
 0x10008f35 func   ?sub_100bde70@CStrParser@@QAE_NPBD@Z CStrParser::sub_100bde70
 0x10008f3f func   ?sub_100bba90@CBeam@@QAEXPAVCBaseEntity@@0@Z CBeam::sub_100bba90
 0x10008f44 func   ?sub_10142e20@@YAXPAVCBaseEntity@@HHHHH@Z sub_10142e20
+0x10008f49 func   ?vfunc72@CNPC_VPlaceholder@@UAE_NH@Z CNPC_VPlaceholder::vfunc72
 0x10008f62 func   ?sub_101f9830@CUnknown101f9c70@@QAEXPAVCTraitOwnerX@@H@Z CUnknown101f9c70::sub_101f9830
 0x10008f67 func   _info_node_climb info_node_climb
 0x10008f71 func   ?vfunc5@CWeaponMelee_ZombieFists@@QAEPAV1@I@Z CWeaponMelee_ZombieFists::vfunc5
