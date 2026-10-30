@@ -40,3 +40,11 @@ void CTEDynamicLight::vfunc3(const Vector &origin, const QAngle &angles)
 	vfunc4(filter, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10060e40 size=0x3
+#include "CTEDynamicLight.h"
+int CTEDynamicLight::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
