@@ -105394,6 +105394,25 @@ int CKeyValuesX::sub_10248d90(const char *name, const char **names, int count, i
 }
 // END FUNCTION
 
+// FUNCTION: 0x102490e0 size=0x5e
+#include "CKeyValuesX.h"
+#include <string.h>
+
+// TARGET: CKeyValuesX::sub_102490e0
+void CKeyValuesX::sub_102490e0(const char *pszName, const char *pszValue)
+{
+	CKeyValuesX *pKey = sub_10248900(pszName, 1);
+	if (pKey)
+	{
+		delete [] (char *)pKey->m_sValue;
+		int len = strlen(pszValue);
+		pKey->m_sValue = new char[len + 1];
+		memcpy((char *)pKey->m_sValue, pszValue, len + 1);
+		pKey->m_iDataType = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10249160 size=0x25
 struct CUnknown10249160 {
     char m_pad0000[0xc];
