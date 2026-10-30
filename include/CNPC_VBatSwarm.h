@@ -10,6 +10,13 @@ public:
 	int vfunc546(int arg); // as in CNPC_Crow (transplant)
 	int vfunc609(int arg); // slot 609: when the state at +0x5cc0 is 4 or 12 it tail-calls CAI_BaseNPCTroika::vfunc609 (stub 0x100075ae) with the same argument; else clears +0x6444 and answers 0
 	CNPC_VBatSwarm *sub_10366c30(); // as in CKeepUpright (transplant)
+	bool sub_10367680(int a, int b);	// asks sub_1000633e (cdecl, this + both arguments + 5000.0f, 0, 0) for the hint node into +0x5ddc; found: sub_1000ac68(0), true; else records its source line and fails the task with slot 448(4)
+	void sub_1000ac68(int a);	// stub of CAI_BaseNPC::sub_10273e80, called directly
+	char m_padBS[0x1b44 - sizeof(CBaseEntity)];
+	const char *m_pszFailFile;	// 0x1b44
+	int m_nFailLine;	// 0x1b48
+	char m_padBS2[0x5ddc - 0x1b4c];
+	void *m_pHint5ddc;	// 0x5ddc
 public:
     virtual datamap_t * vfunc82();
 public:
