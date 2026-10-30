@@ -61,6 +61,13 @@ CWorld::CWorld() : CBaseEntity(0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023b9a0 size=0x3
+int CWorld::vfunc131()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023ba00 size=0x1e
 #include "CWorld.h"
 
