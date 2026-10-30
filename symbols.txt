@@ -9915,6 +9915,7 @@
 0x10015127 func   ?sub_1025cb30@@YAXPAG0@Z sub_1025cb30
 0x1001512c func   ?sub_102f0e80@CAI_Navigator@@QAE_NPAD@Z CAI_Navigator::sub_102f0e80
 0x10015131 func   ?sub_100ecb40@CThreeVecs@@QAEXXZ CThreeVecs::sub_100ecb40
+0x10015136 func   ?sub_10123bf0@@YAPADH@Z sub_10123bf0
 0x1001513b func   ?sub_101c2ab0@CUnknown101c2ab0@@QAEDXZ CUnknown101c2ab0::sub_101c2ab0
 0x10015140 func   ?sub_100fef30@@YGHH@Z sub_100fef30
 0x10015145 func   ?sub_100eccf0@CIndexedTableView@@QAEHH@Z CIndexedTableView::sub_100eccf0

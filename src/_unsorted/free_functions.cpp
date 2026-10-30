@@ -47080,6 +47080,26 @@ void CGameMovement::sub_10122590()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10123bf0 size=0x59
+extern char g_1070b5e4[];
+__declspec(dllimport) char *Q_strncpy(char *dest, const char *src, int maxLen);
+char *sub_10123bf0(int axis)
+{
+	switch (axis) {
+	case 0:
+		Q_strncpy(g_1070b5e4, "X", 32);
+		break;
+	case 1:
+		Q_strncpy(g_1070b5e4, "Y", 32);
+		break;
+	default:
+		Q_strncpy(g_1070b5e4, "Z", 32);
+		break;
+	}
+	return g_1070b5e4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10123c70 size=0x150
 #include "CGameMovement.h"
 
