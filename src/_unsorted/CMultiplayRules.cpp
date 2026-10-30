@@ -450,6 +450,12 @@ char CMultiplayRules::vfunc47(CBaseEntity *pPlayer, CBaseEntity *pItem)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10142200 size=0x3
+void CMultiplayRules::vfunc54(int a0, int a1, int a2)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10142280 size=0x8
 // TARGET: CMultiplayRules::vfunc61
 int CMultiplayRules::vfunc61(int index)
