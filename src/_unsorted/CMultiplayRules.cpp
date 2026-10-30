@@ -473,6 +473,13 @@ int CMultiplayRules::vfunc62(int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101423d0 size=0x3
+bool CMultiplayRules::vfunc18()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101423f0 size=0x3
 char CMultiplayRules::vfunc74()
 {
