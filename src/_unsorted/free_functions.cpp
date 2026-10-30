@@ -45470,8 +45470,6 @@ int sub_1010f5c0()
 
 // FUNCTION: 0x1010f9f0 size=0x6b
 #include "CBreakableSurface.h"
-void *sub_100aa720(unsigned int);
-inline void *operator new(unsigned int n) { return sub_100aa720(n); }
 
 // TARGET: func_breakable_surf
 extern "C" CBaseEntity *func_breakable_surf()
