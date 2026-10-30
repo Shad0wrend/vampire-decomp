@@ -4935,6 +4935,7 @@
 0x1000b4e2 func   ?sub_10378f80@CNPC_VGargoyle@@QAEHXZ CNPC_VGargoyle::sub_10378f80
 0x1000b4e7 func   ?vfunc440@CNPC_VAsianVampire@@QAEHH@Z CNPC_VAsianVampire::vfunc440
 0x1000b4ec func   ?sub_1025b5b0@@YAHXZ sub_1025b5b0
+0x1000b4f1 func   ?vfunc82@CBaseButton@@UAEHXZ CBaseButton::vfunc82
 0x1000b4f6 func   ?sub_1008d990@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_1008d990
 0x1000b4fb func   ?vfunc5@CItemGBertramsCD@@QAEPAV1@I@Z CItemGBertramsCD::vfunc5
 0x1000b50f func   ?sub_101daea0@@YAXXZ sub_101daea0

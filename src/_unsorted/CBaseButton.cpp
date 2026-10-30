@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100c8430 size=0x6
+namespace lifted {
+extern char g_1055beb0;
+}
+int CBaseButton::vfunc82()
+{
+    return (int)&lifted::g_1055beb0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c86d0 size=0x4f
 #include "CBaseButton.h"
 CBaseButton::CBaseButton()
