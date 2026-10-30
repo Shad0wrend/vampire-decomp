@@ -22,6 +22,9 @@ public:
 	char m_pad08[0x10 - 0x08];
 	CKeyValuesX *m_pPeer;	// 0x10: the next key of the same level
 	CKeyValuesX *m_pSub;	// 0x14: the first sub key
+	CKeyValuesX *m_pBase18;	// 0x18: the key searched next when no sub key has the name
+	CKeyValuesX *sub_1000b58c(const char *pszName, int bCreate);	// the stub of sub_10248900 (the recursion goes through it)
+	CKeyValuesX *sub_10248870(const char *pszName);	// creates a sub key of that name at the end of the list (stub 0x10004eee)
 
 	const char *sub_10248cd0(const char *pszKey, const char *pszDefault);	// "GetString" (called through the stub 0x1000ed95)
 	CKeyValuesX *sub_1001569a(const char *pszName, int bCreate);	// stub 0x1001569a: finds the sub key of that name
