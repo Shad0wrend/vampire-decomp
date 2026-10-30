@@ -39,6 +39,17 @@ int CNPC_VHengeyokai::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037e850 size=0x6
+#include "CNPC_VHengeyokai.h"
+namespace lifted {
+extern int g_1063c038;
+}
+int CNPC_VHengeyokai::vfunc451()
+{
+    return lifted::g_1063c038;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037e870 size=0x86
 #include "CNPC_VHengeyokai.h"
 #include "utlvector.h"
