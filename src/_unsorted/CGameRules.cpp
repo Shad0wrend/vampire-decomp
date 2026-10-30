@@ -207,6 +207,13 @@ void CGameRules::vfunc29(void * a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10129460 size=0x5
+bool CGameRules::vfunc31(int a0, int a1)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101294c0 size=0x3
 bool CGameRules::vfunc40()
 {
