@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10028160 size=0x6
+#include "CPhysTorque.h"
+namespace lifted {
+extern char g_10537098;
+}
+int CPhysTorque::vfunc82()
+{
+    return (int)&lifted::g_10537098;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10028260 size=0x5f
 #include "CPhysTorque.h"
 #include "CPointEntity.h"
