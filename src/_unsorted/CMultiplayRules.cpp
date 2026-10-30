@@ -487,6 +487,16 @@ float CMultiplayRules::vfunc59()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10142260 size=0x7
+namespace lifted {
+extern float g_104492a8;
+}
+float CMultiplayRules::vfunc60()
+{
+    return lifted::g_104492a8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10142280 size=0x8
 // TARGET: CMultiplayRules::vfunc61
 int CMultiplayRules::vfunc61(int index)
