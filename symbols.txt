@@ -3809,6 +3809,7 @@
 0x10008fd0 func   ?vfunc268@CWeaponLockpick@@UAE_NXZ CWeaponLockpick::vfunc268
 0x10008fd5 func   ?sub_1030f680@Helper1030f680@@QAEPAU1@PBDHH@Z Helper1030f680::sub_1030f680
 0x10008fda func   ?sub_101be710@CStealthKillRules@@QAE_NPAVCBaseEntity@@0@Z CStealthKillRules::sub_101be710
+0x10008fdf func   ?vfunc0@CTEGlowSprite@@UAEHXZ CTEGlowSprite::vfunc0
 0x10008fe4 func   ?sub_10041980@@YIPAUHashHolder@@PAU1@HE@Z sub_10041980
 0x10008fe9 func   ?sub_1013d400@@YAMMMM@Z sub_1013d400
 0x10008fee func   ?vfunc5@CWeaponIWritten@@QAEPAV1@I@Z CWeaponIWritten::vfunc5

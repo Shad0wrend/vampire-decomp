@@ -41,6 +41,17 @@ void CTEGlowSprite::vfunc3(const Vector &origin, const QAngle &angles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10063c70 size=0x6
+#include "CTEGlowSprite.h"
+namespace lifted {
+extern char g_106c3c8c;
+}
+int CTEGlowSprite::vfunc0()
+{
+    return (int)&lifted::g_106c3c8c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10063c90 size=0x3
 #include "CTEGlowSprite.h"
 int CTEGlowSprite::vfunc1()
