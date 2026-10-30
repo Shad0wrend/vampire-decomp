@@ -10,6 +10,13 @@ CBaseButton::CBaseButton()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c8740 size=0x3
+bool CBaseButton::vfunc128()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c8760 size=0x62
 #include "CBaseButton.h"
 
