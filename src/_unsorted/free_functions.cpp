@@ -104174,6 +104174,30 @@ int CKeyValuesX::sub_10248c20(const char *pszKey, int nDefault)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10248c60 size=0x4f
+#include "CKeyValuesX.h"
+extern "C" double __cdecl atof(const char *);
+float CKeyValuesX::sub_10248c60(const char *pszKey, float flDefault)
+{
+	CKeyValuesX *pKey = this;
+	if (pszKey)
+		pKey = sub_1000b58c(pszKey, 0);
+	if (pKey) {
+		switch (pKey->m_iDataType) {
+		case 0:
+			return (float)atof(pKey->m_sValue);
+		case 1:
+			return (float)pKey->m_nValue;
+		case 2:
+			return pKey->m_flValue;
+		default:
+			return 0.0f;
+		}
+	}
+	return flDefault;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10248cd0 size=0x8b
 extern int (*g_109f388c)(char *buffer, int count, const char *format, ...);
 
