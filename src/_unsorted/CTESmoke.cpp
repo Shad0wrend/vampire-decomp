@@ -37,3 +37,11 @@ void CTESmoke::vfunc3(const Vector *pOrigin, const Vector *pAngles)
 	vfunc4(&filter, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x100672e0 size=0x3
+#include "CTESmoke.h"
+int CTESmoke::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION

@@ -5083,6 +5083,7 @@
 0x1000bf96 func   ?vfunc82@CNPC_VMingXiao@@UAEPAUdatamap_t@@XZ CNPC_VMingXiao::vfunc82
 0x1000bf9b func   ?vfunc495@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc495
 0x1000bfa0 func   ?sub_1033b7c0@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_1033b7c0
+0x1000bfaf func   ?vfunc1@CTESmoke@@UAEHXZ CTESmoke::vfunc1
 0x1000bfb9 func   ?vfunc619@CNPC_VSabbatLeader@@QAEXH@Z CNPC_VSabbatLeader::vfunc619
 0x1000bfbe func   ?sub_101ab2f0@@YAHXZ sub_101ab2f0
 0x1000bfc3 func   _info_node_cover_med info_node_cover_med
