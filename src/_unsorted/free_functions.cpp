@@ -109457,6 +109457,23 @@ bool CAI_BaseNPC::sub_1026fb40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026ff00 size=0x5b
+#include "Vector.h"
+class CBaseEntity;
+struct CUnitHelper
+{
+	char pad0000[0x184];
+	Vector m_vecOrigin184;
+	bool sub_1026ff80(CBaseEntity *pEntity, const float *pFrom, const float *pTo);
+	void sub_1026ff00(const Vector *pOffset, const float *pTo);
+};
+void CUnitHelper::sub_1026ff00(const Vector *pOffset, const float *pTo)
+{
+	Vector vecSum = m_vecOrigin184 + *pOffset;
+	sub_1026ff80((CBaseEntity *)this, &vecSum.x, pTo);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026ff80 size=0x18b
 #include "CTraceFilterSimple.h"
 #include "CGameTrace.h"
