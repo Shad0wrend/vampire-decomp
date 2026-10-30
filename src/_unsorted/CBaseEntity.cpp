@@ -124,6 +124,13 @@ float CBaseEntity::vfunc53()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026910 size=0x5
+bool CBaseEntity::vfunc54(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026930 size=0x3
 void CBaseEntity::vfunc55(int a0, int a1, int a2, int a3, int a4, int a5, int a6)
 {
