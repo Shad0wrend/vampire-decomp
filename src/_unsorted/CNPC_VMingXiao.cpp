@@ -133,6 +133,17 @@ int CNPC_VMingXiao::vfunc138()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10392a50 size=0xb
+#include "CNPC_VMingXiao.h"
+namespace lifted {
+int sub_1000be92();
+}
+int CNPC_VMingXiao::vfunc337()
+{
+    return (lifted::sub_1000be92()) | 0x38000;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10392a70 size=0x16d
 #include "CNPC_VMingXiao.h"
 
