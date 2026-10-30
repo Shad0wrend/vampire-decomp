@@ -11,6 +11,13 @@ datamap_t * CWorld::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023afd0 size=0x3
+int CWorld::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023b620 size=0xd
 void CWorld::vfunc130(int a)
 {
