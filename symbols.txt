@@ -3568,6 +3568,7 @@
 0x10008701 func   ?sub_102d9eb0@@YAXXZ sub_102d9eb0
 0x1000870b func   ?sub_101d70d0@CUnknown101d7380@@QAE_NPBDPAH@Z CUnknown101d7380::sub_101d70d0
 0x10008710 func   ?sub_100e8ef0@CDialogDependency@@QAEXH@Z CDialogDependency::sub_100e8ef0
+0x10008715 func   ?vfunc451@CGeneric_NPC_bathack@@UAEHXZ CGeneric_NPC_bathack::vfunc451
 0x1000871a func   ?sub_100bf3d0@@YAXPAPAXHPAX@Z sub_100bf3d0
 0x10008724 func   ?sub_100fca30@@YAHXZ sub_100fca30
 0x1000873d func   ?vfunc71@CPropSwitch@@UAEXXZ CPropSwitch::vfunc71
