@@ -12,6 +12,14 @@ ServerClass * CTEFootprintDecal::vfunc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10062b50 size=0x3
+#include "CTEFootprintDecal.h"
+int CTEFootprintDecal::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10062e90 size=0x1e
 #include "CTEFootprintDecal.h"
 
