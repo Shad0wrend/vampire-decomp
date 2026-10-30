@@ -10,6 +10,13 @@ public:
 	CAI_NetworkManager *sub_102f4fe0();	// as in CKeepUpright (transplant)
 	virtual void vfunc103();	// slot 103: scope traced SetSolid(0) inlined, then slot 93(0, 0)
 	void sub_102f5bd0();	// stub 0x1000fede: loads the node graph of the current map (called by InitializeAINetworks when the map has one)
+
+	char m_padNM[0x450 - sizeof(CBaseEntity)];
+	char m_b450;	// 0x450
+	void *m_pNetwork;	// 0x454: the 0x18 byte network object (sub_102f8e30)
+	char m_Graph[0x200];	// 0x458: the CAI_NodeGraph
+	char m_b658;	// 0x658
+	char m_b659;	// 0x659
 public:
     virtual datamap_t * vfunc82();
 };
