@@ -14,6 +14,13 @@ CTETParticleAttached *CTETParticleAttached::vfunc2(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10069aa0 size=0x1
+#include "CTETParticleAttached.h"
+void CTETParticleAttached::vfunc5()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10069ae0 size=0x39
 #include "CTETParticleAttached.h"
 #include "IVEngineServerFull.h"
