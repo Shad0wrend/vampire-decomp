@@ -350,6 +350,7 @@
 0x10001c49 func   ?vfunc297@CBaseCombatWeapon@@UAEXH@Z CBaseCombatWeapon::vfunc297
 0x10001c4e func   ?sub_1005d690@@YAHXZ sub_1005d690
 0x10001c53 func   ?sub_10033b80@CBaseEntity@@QAEXP81@AEXXZ@Z CBaseEntity::sub_10033b80
+0x10001c58 func   ?vfunc115@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc115
 0x10001c5d func   ?sub_10043320@@YIXPAUMem8@@HH@Z sub_10043320
 0x10001c67 func   ?sub_101e1970@@YGHH@Z sub_101e1970
 0x10001c71 func   ?sub_102d6210@@YAHH@Z sub_102d6210
