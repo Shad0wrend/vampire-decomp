@@ -96,6 +96,13 @@ void CGeneric_NPC_bathack::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035afe0 size=0x1
+#include "CGeneric_NPC_bathack.h"
+void CGeneric_NPC_bathack::vfunc495()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035b080 size=0x2a
 #include "CGeneric_NPC_bathack.h"
 extern const float g_1044f00c;
