@@ -94,7 +94,7 @@ public:
 	virtual void vfunc83();
 	virtual void vfunc84();
 	virtual void vfunc85();
-	virtual void vfunc86();
+	virtual bool vfunc86(int, int, int, int, int);
 	virtual void vfunc87();
 	virtual void vfunc88();
 	virtual void vfunc89();

@@ -53,10 +53,10 @@ public:
 	virtual void vfunc28(void *pEdict);	// "ClientDisconnected": the edict of the leaving player
 	virtual void vfunc29(void *pPlayer);	// sends a user message (no payload byte) to the player
 	virtual float vfunc30(int a);
-	virtual void vfunc31();
-	virtual void vfunc32();
+	virtual bool vfunc31(int, int);
+	virtual bool vfunc32(int, int);
 	virtual void vfunc33(void *pInfo, void *a, float flDamage, int b, int c);
-	virtual void vfunc34();
+	virtual bool vfunc34(int);
 	virtual void vfunc35(CBaseEntity *pPlayer);	// "EquipPlayer"-like: gives the player its starting items
 	virtual void vfunc36();
 	virtual void vfunc37();
@@ -68,7 +68,7 @@ public:
 	virtual int vfunc43(int a, int b);
 	virtual void vfunc44(CBaseEntity *pVictim, CMPDamageInfo *pInfo);	// "PlayerKilled"
 	virtual void vfunc45(CBaseEntity *pVictim, CMPDamageInfo *pInfo);	// "DeathNotice"
-	virtual void vfunc46();
+	virtual int vfunc46(int);
 	virtual char vfunc47(CBaseEntity *pPlayer, CBaseEntity *pItem);	// "CanHavePlayerItem"
 	virtual int vfunc48(int index);
 	virtual float vfunc49(int a);

@@ -31,4 +31,6 @@ public:
 	void sub_1010b840(float flTime);	// the fire's burn update (only while the byte at +0x490 is set): burn-out time (+0x464) = curtime + 0.5, heat (+0x46c) falls by flTime, the heat level (+0x470) rises by a convar rate times flTime up to a convar limit, the float at +0x480 follows 0.3125 x the float at +0x478 (sub_1013d400, frametime x 2); once the heat is used up it is zeroed and, if it was still positive before, the fire is put out (sub_1010b9d0)
 public:
     virtual datamap_t * vfunc82();
+public:
+	virtual int vfunc142(int);
 };

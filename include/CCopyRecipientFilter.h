@@ -10,8 +10,8 @@ public:
 	virtual int vfunc2();
 	virtual int vfunc3(int index);
 	virtual bool vfunc4();
-	virtual void vfunc5();
-	virtual void vfunc6();
+	virtual int vfunc5();
+	virtual bool vfunc6();
 	virtual unsigned int vfunc7();
 	virtual void vfunc8();
 	unsigned int m_flags;

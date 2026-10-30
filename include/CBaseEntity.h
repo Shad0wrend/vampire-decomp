@@ -48,16 +48,16 @@ public:
 	virtual void vfunc19(); virtual void vfunc20(); virtual void vfunc21(int); virtual void vfunc22(int); virtual void vfunc23(int);
 	virtual void vfunc24(); virtual void vfunc25(int); virtual void vfunc26(int); virtual void vfunc27(); virtual void vfunc28();
 	virtual void vfunc29(); virtual float vfunc30(); virtual void vfunc31(int pDump);	/* slot 31 "Dump": takes the dump context handed to the DumpXxx helpers */ virtual bool vfunc32(int a); virtual int vfunc33();
-	virtual int vfunc34(int a); virtual int vfunc35(int a); virtual int vfunc36(); virtual void vfunc37(); virtual void vfunc38();
+	virtual int vfunc34(int a); virtual int vfunc35(int a); virtual int vfunc36(); virtual void vfunc37(); virtual void * vfunc38(int);
 	virtual void vfunc39(CBaseEntity *pOther); virtual void vfunc40(int); virtual void vfunc41(); virtual void vfunc42(); virtual void vfunc43(int);
-	virtual void vfunc44(); virtual bool vfunc45(void *pPassEnt, Vector vecStart, Vector vecEnd, unsigned int fMask); virtual void vfunc46(); virtual void vfunc47(); virtual void vfunc48();
+	virtual bool vfunc44(int); virtual bool vfunc45(void *pPassEnt, Vector vecStart, Vector vecEnd, unsigned int fMask); virtual void vfunc46(); virtual void vfunc47(); virtual void vfunc48();
 	virtual void vfunc49(); virtual void vfunc50(); virtual void vfunc51(); virtual void vfunc52(); virtual float vfunc53();
-	virtual void vfunc54(); virtual void vfunc55(int, int, int, int, int, int, int); virtual void vfunc56(int, int, int, int, int, int, int, int); virtual void vfunc57(int, int, int, int, int, int, int); virtual void vfunc58(int);
+	virtual bool vfunc54(int); virtual void vfunc55(int, int, int, int, int, int, int); virtual void vfunc56(int, int, int, int, int, int, int, int); virtual void vfunc57(int, int, int, int, int, int, int); virtual void vfunc58(int);
 	virtual void vfunc59(int); virtual void vfunc60(int); virtual void vfunc61(int); virtual void vfunc62(); virtual void vfunc63();
 	virtual void vfunc64(const float *angles);	// "CBaseEntity::SetAngles": scope trace (entity name), when the three floats differ from the ones at +0x428 runs three helpers (0x800, 0x3000), stores them and sets the byte at +0x1b1
 	virtual void vfunc65(); virtual void vfunc66(); virtual void vfunc67(); virtual void vfunc68();
-	virtual void vfunc69(); virtual bool vfunc70(); virtual void vfunc71(); virtual void vfunc72(); virtual void vfunc73();
-	virtual void vfunc74(); virtual void vfunc75(); virtual void vfunc76(); virtual void vfunc77(); virtual void vfunc78();
+	virtual void vfunc69(); virtual bool vfunc70(); virtual void vfunc71(); virtual bool vfunc72(int); virtual void vfunc73();
+	virtual bool vfunc74(int); virtual void vfunc75(); virtual void vfunc76(); virtual void vfunc77(); virtual void vfunc78();
 	virtual void vfunc79(); virtual void vfunc80(); virtual int vfunc81(); virtual datamap_t *vfunc82(); virtual int vfunc83();	// slot 82 "GetDataDescMap": the entity class's datamap
 	virtual void vfunc84(int flags); virtual char *vfunc85(); virtual void vfunc86(); virtual void vfunc87(void *pCheckTransmitInfo); virtual void vfunc88();	// slot 87 "CBaseEntity::SetTransmit"-like: takes the transmit info (bit vector pointer at +0x10)
 	virtual void vfunc89(); virtual void vfunc90(); virtual char vfunc91(void *pPassEnt, int contentsMask);	/* slot 91: collision test against the pass entity: false for collision group 1 unless the mask has bit 26 */ virtual int vfunc92();

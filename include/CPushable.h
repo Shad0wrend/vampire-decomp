@@ -22,4 +22,7 @@ public:
 	int m_field4a0;
 	int m_field4a4;
 	int m_field4a8;
+public:
+	virtual bool vfunc73(int);
+	virtual bool vfunc74(int);
 };
