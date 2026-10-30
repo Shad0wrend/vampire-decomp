@@ -51,6 +51,13 @@ CHL2_Player *CHL2_Player::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034f610 size=0x3
+int CHL2_Player::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034f7f0 size=0x4f
 // TARGET: CHL2_Player::vfunc31
 void CHL2_Player::vfunc31(int pDump)
