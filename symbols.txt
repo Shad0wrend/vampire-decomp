@@ -2761,6 +2761,7 @@
 0x10006b63 func   ?sub_103e5a70@@YAHXZ sub_103e5a70
 0x10006b68 func   ?vfunc2@CTEGunshotDecal@@UAEPAV1@I@Z CTEGunshotDecal::vfunc2
 0x10006b72 func   _npc_VChangBrosClaw npc_VChangBrosClaw
+0x10006b77 func   ?vfunc271@CVampireProjectile@@UAEMXZ CVampireProjectile::vfunc271
 0x10006b7c func   ?sub_100cd640@CUnknown100cd640@@QAEPADXZ CUnknown100cd640::sub_100cd640
 0x10006b81 func   ?vfunc468@CHL2_Player@@UAEXXZ CHL2_Player::vfunc468
 0x10006b86 func   ?vfunc2@CPhysObjSaveRestoreOps@@UAE_NPAUCPhysObjSaveRestoreOps_Arg@@@Z CPhysObjSaveRestoreOps::vfunc2

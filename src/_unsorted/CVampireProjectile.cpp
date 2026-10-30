@@ -8,6 +8,16 @@ bool CVampireProjectile::vfunc270()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d9e70 size=0x7
+namespace lifted {
+extern float g_1046bac0;
+}
+float CVampireProjectile::vfunc271()
+{
+    return lifted::g_1046bac0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d9e90 size=0x7e
 #include "CVampireProjectile.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
