@@ -60,3 +60,11 @@ datamap_t * CNPC_VBatSwarm::vfunc82()
     return (datamap_t *)((int)&lifted::g_1062ef0c);
 }
 // END FUNCTION
+
+// FUNCTION: 0x103673e0 size=0x6
+#include "CNPC_VBatSwarm.h"
+int CNPC_VBatSwarm::vfunc473()
+{
+    return 0x17;
+}
+// END FUNCTION
