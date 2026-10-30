@@ -31,6 +31,14 @@ int CWeaponLockpick::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f4ce0 size=0x6
+#include "CWeaponLockpick.h"
+int CWeaponLockpick::vfunc363()
+{
+    return 0x12;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f4d70 size=0x3
 #include "CWeaponLockpick.h"
 bool CWeaponLockpick::vfunc268()

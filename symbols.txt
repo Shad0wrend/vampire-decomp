@@ -9952,6 +9952,7 @@
 0x10015618 func   ?vfunc82@CDisciplineProjectile@@UAEPAUdatamap_t@@XZ CDisciplineProjectile::vfunc82
 0x1001561d func   ?vfunc67@CBaseEntity@@UAEXXZ CBaseEntity::vfunc67
 0x10015645 func   ?sub_10031520@CCollisionEvent@@QAEXXZ CCollisionEvent::sub_10031520
+0x1001564a func   ?vfunc363@CWeaponLockpick@@UAEHXZ CWeaponLockpick::vfunc363
 0x1001564f func   ?sub_101e9290@CBloodAmountUnit@@QAEHPAXH@Z CBloodAmountUnit::sub_101e9290
 0x10015654 func   ?sub_101c4580@@YI_NPAXHPAUIFile101c4580@@PBD@Z sub_101c4580
 0x10015659 func   ?sub_101d4d10@CIndexTables@@QAEHHH@Z CIndexTables::sub_101d4d10
