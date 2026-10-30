@@ -102881,6 +102881,19 @@ float sub_10240ac0(const RayView10240ac0 *pRay, const PlaneView10240ac0 *pPlane)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10240b40 size=0x5a
+struct SVec3 { float x, y, z; };
+struct SPlane1024 { float nx, ny, nz, d; };
+
+float sub_10240b40(const SVec3 *pOrigin, const SVec3 *pDir, const SPlane1024 *pPlane)
+{
+	float denom = pDir->z * pPlane->nz + pDir->y * pPlane->ny + pDir->x * pPlane->nx;
+	if (denom == 0.0f)
+		return 0.0f;
+	return (1.0f / denom) * (pPlane->d - (pOrigin->z * pPlane->nz + pOrigin->y * pPlane->ny + pOrigin->x * pPlane->nx));
+}
+// END FUNCTION
+
 // FUNCTION: 0x102414f0 size=0xe7
 #include "Vector.h"
 
