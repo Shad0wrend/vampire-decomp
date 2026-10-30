@@ -155,6 +155,16 @@ int CBaseCombatCharacter::vfunc79()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10321960 size=0x6
+namespace lifted {
+extern char g_10936d54;
+}
+int CBaseCombatCharacter::vfunc80()
+{
+    return (int)&lifted::g_10936d54;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10321980 size=0x3
 int CBaseCombatCharacter::vfunc81()
 {
