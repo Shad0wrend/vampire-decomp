@@ -26,3 +26,11 @@ COccultRegen *COccultRegen::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103f93a0 size=0x3
+#include "COccultRegen.h"
+int COccultRegen::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
