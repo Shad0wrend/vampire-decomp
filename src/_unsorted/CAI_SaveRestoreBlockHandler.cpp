@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1030bfb0 size=0x6
+#include "CAI_SaveRestoreBlockHandler.h"
+namespace lifted {
+extern char g_106129e0;
+}
+int CAI_SaveRestoreBlockHandler::vfunc0()
+{
+    return (int)&lifted::g_106129e0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030bfd0 size=0x163
 #include "CAI_SaveRestoreBlockHandler.h"
 #include "CUnknown102652d0.h"
