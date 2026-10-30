@@ -92,7 +92,7 @@ public:
 	virtual void vfunc260(int unused, void *pEvent, const char *pszSound, int a4, int a5);	// slot 260: for the actor of the scene event (pointer at +0x98 of pEvent): builds "sound/<name>.mp3" and "*<name>" sound names, makes the actor's entity of this scene's player (sub_10081890) its target, and hands "*<name>" to the actor's sub_102c0520(name, a5, byte at this+0x57f)
 	SCENE_V(261) SCENE_V(262)
 	virtual void vfunc263(int b, CSceneEventActorEnt *pActor, CSceneEvent *pEvent);	// slot 263: the finish handler of a type 7 event
-	SCENE_V(264)
+	virtual void vfunc264(CUnknown1007ed10 *pEvent1, int unused, CSceneEvent *pEvent);	// slot 264
 	virtual void vfunc265(void *pTarget, void *pEvent);	// slot 265: the speed event: the text parameter of pEvent as a float; pTarget's own start time (+0x78) is set to it, and the running remainder at +0x49c is the old remainder minus the event's elapsed time since +0x4a0, at least 0; +0x4a0 remembers the new value
 	virtual void vfunc266(int unused, const char *pszArgs);	// parses "automate <Cancel|Resume> <seconds>" arguments into the automation fields
 	virtual CSceneEventActorEnt *vfunc267(const char *pszName);	// slot 267: the actor entity of that name, null when there is none (called by slot 251)
