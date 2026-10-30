@@ -32,6 +32,13 @@ int CNPC_VPlaceholder::vfunc138()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a4140 size=0x3
+#include "CNPC_VPlaceholder.h"
+void CNPC_VPlaceholder::vfunc316(int a0, int a1, int a2)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a4320 size=0x1e
 #include "CNPC_VPlaceholder.h"
 

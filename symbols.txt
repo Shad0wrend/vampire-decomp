@@ -2531,6 +2531,7 @@
 0x10006776 func   ?sub_102ea5e0@@YGXH@Z sub_102ea5e0
 0x1000677b func   ?sub_10316ab0@CUnknown10316890@@QAEXHVVector@@0@Z CUnknown10316890::sub_10316ab0
 0x10006785 func   ?vfunc309@CBaseCombatCharacter@@QAEPAXXZ CBaseCombatCharacter::vfunc309
+0x1000678f func   ?vfunc316@CNPC_VPlaceholder@@UAEXHHH@Z CNPC_VPlaceholder::vfunc316
 0x10006794 func   ?sub_102cc6a0@@YAXXZ sub_102cc6a0
 0x1000679e func   ?sub_100bba10@CBeam@@QAEXPAVCBaseEntity@@0@Z CBeam::sub_100bba10
 0x100067ad func   ?sub_102e5d00@@YAMPAM@Z sub_102e5d00
