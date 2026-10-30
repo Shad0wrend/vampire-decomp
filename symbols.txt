@@ -8160,6 +8160,7 @@
 0x100123a5 func   ?sub_1017f2a0@CBasePlayer@@QAEXHPAVCBaseEntity@@PBVVector@@@Z CBasePlayer::sub_1017f2a0
 0x100123aa func   ?sub_1017c830@CBasePlayer@@QAEXXZ CBasePlayer::sub_1017c830
 0x100123af func   ?sub_1028d610@@YIXPAVCAI_BaseNPCTroika@@@Z sub_1028d610
+0x100123b4 func   ?vfunc46@CGameRules@@UAEHH@Z CGameRules::vfunc46
 0x100123b9 func   ?sub_101dc410@CItemVec@@QAEXPBU1@@Z CItemVec::sub_101dc410
 0x100123be func   ?vfunc82@CMoverKeyFrame@@UAEPAUdatamap_t@@XZ CMoverKeyFrame::vfunc82
 0x100123c3 func   ?sub_100dc770@CCollisionProperty@@QAEXPBM0@Z CCollisionProperty::sub_100dc770
