@@ -21,6 +21,16 @@ float CNPC_VMingXiaoTentacle::vfunc522()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039b070 size=0x7
+namespace lifted {
+extern float g_104492a8;
+}
+float CNPC_VMingXiaoTentacle::vfunc523()
+{
+    return lifted::g_104492a8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039b090 size=0x6
 namespace lifted {
 extern char g_1093bd38;
