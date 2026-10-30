@@ -62,6 +62,14 @@ void CNPC_VZombie::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103df260 size=0x6
+#include "CNPC_VZombie.h"
+int CNPC_VZombie::vfunc473()
+{
+    return 0x17;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103df580 size=0x44
 #include "CBaseEntity.h"
 #include "CNPC_VZombie.h"
