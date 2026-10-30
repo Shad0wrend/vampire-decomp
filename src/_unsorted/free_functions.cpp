@@ -51531,6 +51531,24 @@ QAngle sub_101384e0(const QAngle &a, const QAngle &b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10138580 size=0x5c
+struct QAngleView { float x, y, z; };
+struct matrix3x4View { float m[3][4]; };
+void sub_10139b90(const QAngleView &a, matrix3x4View &out);
+void sub_10138df0(const QAngleView &a, const matrix3x4View &b, matrix3x4View &out);
+void sub_10137ed0(const matrix3x4View &m, QAngleView &out);
+
+QAngleView sub_10138580(const QAngleView &a, const QAngleView &b)
+{
+	matrix3x4View m0, m1;
+	QAngleView res;
+	sub_10139b90(a, m0);
+	sub_10138df0(b, m0, m1);
+	sub_10137ed0(m1, res);
+	return res;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10138630 size=0xb2
 #include "matrix3x4_t.h"
 
