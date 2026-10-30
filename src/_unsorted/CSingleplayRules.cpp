@@ -119,6 +119,13 @@ void CSingleplayRules::vfunc35(CBaseEntity * a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101abee0 size=0x5
+bool CSingleplayRules::vfunc37(int a0)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101abf00 size=0xb
 float CSingleplayRules::vfunc38(int a)
 {
