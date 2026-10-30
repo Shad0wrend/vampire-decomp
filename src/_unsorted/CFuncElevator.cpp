@@ -56,6 +56,13 @@ void CFuncElevator::vfunc133()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020f750 size=0x3
+#include "CFuncElevator.h"
+void CFuncElevator::vfunc178(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10216e30 size=0xcd
 #include "CFuncElevator.h"
 
