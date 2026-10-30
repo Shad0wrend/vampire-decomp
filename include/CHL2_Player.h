@@ -133,4 +133,6 @@ public:
 	int sub_10163020(const CTakeDamageInfo *pInfo);	// CBasePlayer::vfunc142 (stub 0x10014425), called directly
 public:
 	virtual void vfunc484();
+public:
+	virtual int vfunc81();
 };

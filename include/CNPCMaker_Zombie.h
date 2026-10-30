@@ -38,4 +38,7 @@ public:
 	float m_flRange;	// 0x76d8
 public:
     virtual datamap_t * vfunc82();
+public:
+	virtual void vfunc619(int);
+	virtual void vfunc620(int);
 };

@@ -17,4 +17,7 @@ public:
 	const char *sub_100ab4f0();	// the entity's name text for messages (stub 0x1000b5cd)
 public:
     virtual datamap_t * vfunc82();
+public:
+	virtual void vfunc619(int);
+	virtual void vfunc620(int);
 };
