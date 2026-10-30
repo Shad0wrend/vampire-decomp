@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1002bd30 size=0x6
+#include "CPhysSlideConstraint.h"
+namespace lifted {
+extern char g_10538ea8;
+}
+int CPhysSlideConstraint::vfunc82()
+{
+    return (int)&lifted::g_10538ea8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002cb40 size=0x1e
 #include "CPhysSlideConstraint.h"
 
