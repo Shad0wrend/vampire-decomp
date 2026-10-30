@@ -11,6 +11,9 @@ public:
 	virtual void vfunc103();	// slot 103: scope traced SetSolid(0) inlined, then slot 93(0, 0)
 	void sub_102f5bd0();	// stub 0x1000fede: loads the node graph of the current map (called by InitializeAINetworks when the map has one)
 
+	void sub_102f6610();	// rebuilds the node graph (sub_102f4e00 on the graph at +0x458), writes it once, tells the engine ai_node_graph_built and logs DevMsg
+	void sub_102f51d0();	// stub 0x10007437: writes the node graph file of the map
+
 	char m_padNM[0x450 - sizeof(CBaseEntity)];
 	char m_b450;	// 0x450
 	void *m_pNetwork;	// 0x454: the 0x18 byte network object (sub_102f8e30)
