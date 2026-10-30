@@ -9530,6 +9530,7 @@
 0x10014d3a func   ?sub_102f6cd0@@YIXPAD@Z sub_102f6cd0
 0x10014d44 func   ?vfunc620@CNPCMaker_Zombie@@UAEXH@Z CNPCMaker_Zombie::vfunc620
 0x10014d49 func   ?sub_100fa600@S100fa600@@QAEXH@Z S100fa600::sub_100fa600
+0x10014d4e func   ?vfunc82@CSkyCamera@@UAEHXZ CSkyCamera::vfunc82
 0x10014d53 func   ?sub_1013aab0@@YAXHHHH@Z sub_1013aab0
 0x10014d58 func   ?sub_100cc360@CCameraTrack@@QAEXXZ CCameraTrack::sub_100cc360
 0x10014d5d func   ?sub_102158f0@@YIXPADHH@Z sub_102158f0

@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1018a550 size=0x6
+namespace lifted {
+extern char g_10589ad0;
+}
+int CSkyCamera::vfunc82()
+{
+    return (int)&lifted::g_10589ad0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018a5e0 size=0x8
 // TARGET: CSkyCamera::vfunc103
 void CSkyCamera::vfunc103()
