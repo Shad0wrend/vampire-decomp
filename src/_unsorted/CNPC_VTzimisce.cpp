@@ -96,6 +96,13 @@ void CNPC_VTzimisce::vfunc488()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b9360 size=0x1
+#include "CNPC_VTzimisce.h"
+void CNPC_VTzimisce::vfunc489()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b9380 size=0x8f
 #include "CNPC_VTzimisce.h"
 extern CNPC_VTzimisceConVar *g_1093cf94;
