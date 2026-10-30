@@ -3239,6 +3239,7 @@
 0x10007ca7 func   ?sub_101c1b60@CUnknown101c1b60@@QAEXH@Z CUnknown101c1b60::sub_101c1b60
 0x10007cac func   ?sub_101e0630@@YAXXZ sub_101e0630
 0x10007cb1 func   ?sub_101c1a30@@YAMEPAM@Z sub_101c1a30
+0x10007cb6 func   ?vfunc80@CRopeKeyframe@@UAEHXZ CRopeKeyframe::vfunc80
 0x10007cbb func   ?sub_103aabc0@CNPC_VSabbatLeader@@QAE_NXZ CNPC_VSabbatLeader::sub_103aabc0
 0x10007cc0 func   ?sub_101c1790@CUnk101c1790@@QAEXXZ CUnk101c1790::sub_101c1790
 0x10007cca func   ?sub_102d3e60@CUnknown102d3e60@@QAEHXZ CUnknown102d3e60::sub_102d3e60
