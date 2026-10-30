@@ -20,6 +20,17 @@ int CWeaponMelee_MingXiaoTentacle::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ec7c0 size=0x6
+#include "CWeaponMelee_MingXiaoTentacle.h"
+namespace lifted {
+extern char g_1067811c;
+}
+int CWeaponMelee_MingXiaoTentacle::vfunc362()
+{
+    return (int)&lifted::g_1067811c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ec8c0 size=0x4
 #include "CWeaponMelee_MingXiaoTentacle.h"
 int CWeaponMelee_MingXiaoTentacle::vfunc373()

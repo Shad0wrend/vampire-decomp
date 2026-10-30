@@ -6548,6 +6548,7 @@
 0x1000e64c func   ?sub_1029f6c0@CAI_BaseNPCTroika@@QAEHPAX@Z CAI_BaseNPCTroika::sub_1029f6c0
 0x1000e651 func   ?sub_10326d40@@YI_NPADHHHH@Z sub_10326d40
 0x1000e65b func   ?sub_10078520@CUnknown10078520@@QAEHXZ CUnknown10078520::sub_10078520
+0x1000e683 func   ?vfunc362@CWeaponMelee_MingXiaoTentacle@@UAEHXZ CWeaponMelee_MingXiaoTentacle::vfunc362
 0x1000e697 func   ?sub_10397b40@CNPC_VMingXiao@@QAE_NPAX@Z CNPC_VMingXiao::sub_10397b40
 0x1000e6a1 func   ?vfunc105@CSprite@@UAEXPBD@Z CSprite::vfunc105
 0x1000e6a6 func   ?sub_101a8ac0@CCineNPC@@QAEDXZ CCineNPC::sub_101a8ac0
