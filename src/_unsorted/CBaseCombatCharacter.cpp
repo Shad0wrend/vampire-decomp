@@ -138,6 +138,13 @@ datamap_t * CBaseCombatCharacter::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10321980 size=0x3
+int CBaseCombatCharacter::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10323a90 size=0x96
 #include "CBaseCombatCharacter.h"
 #include "CBaseAnimating.h"

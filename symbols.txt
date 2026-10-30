@@ -8228,6 +8228,7 @@
 0x10012918 func   ?vfunc546@CGenericSabbat_NPC@@QAEHH@Z CGenericSabbat_NPC::vfunc546
 0x1001291d func   ?sub_1009bc30@CBaseEntity@@QAEXHPADH@Z CBaseEntity::sub_1009bc30
 0x10012936 func   ?vfunc461@CNPC_VAsianVampire@@QAEHXZ CNPC_VAsianVampire::vfunc461
+0x1001293b func   ?vfunc81@CBaseCombatCharacter@@UAEHXZ CBaseCombatCharacter::vfunc81
 0x10012940 func   ?vfunc0@CEffectsServer@@UAEPAV1@I@Z CEffectsServer::vfunc0
 0x10012945 func   ?sub_10214300@CPropHaunted@@QAEXXZ CPropHaunted::sub_10214300
 0x1001294a func   ?sub_10068870@@YAHXZ sub_10068870
