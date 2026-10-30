@@ -29,6 +29,7 @@ public:
 	int vfunc272();	// slot 272: the first free overlay layer among the first four (its weight at +0x10 is 0), slot 267 is asked first for the start index; -1 when none
 	bool sub_100992d0(int index, float flDivisor, int nValue);	// the layer [index] (-1 = none): its rate at +0xc = sub_10091080(its sequence) / flDivisor, its dword at +0x14 = nValue; true when the layer exists
 	int sub_10099140(int sequence, float flDivisor, int b);	// AddGestureSequence(sequence, b); with a layer and flDivisor > 0 its rate at +0xc = sequence duration / flDivisor; returns the layer or -1
+	int sub_10099250(int activity, float flDivisor, int b);	// AddGesture(activity, b); with a layer and flDivisor > 0 its rate at +0xc = sequence duration / flDivisor; returns the layer or -1
 	void sub_10099320(int a, float b, int c);	// 0x10099320: r = slot 271(a); sub_100992d0(r, b, c) (the layer's rate and value)
 	float sub_10091080(int sequence);	// CBaseAnimating::sub_10091080 (stub 0x10009813), called directly: the cycle rate of the sequence
 	char *sub_1008d990(int sequence);	// CBaseAnimating::sub_1008d990 (stub 0x1000b4f6): the sequence description, 0 when invalid
