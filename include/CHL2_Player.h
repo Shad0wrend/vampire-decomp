@@ -31,10 +31,13 @@ class CHL2_Player : public CHL2_PlayerBase
 public:
 	CHL2_Player();
 
-	CHL2_V10(pa0) CHL2_V10(pa1) CHL2_V10(pa2)	// slots 0..29
-	virtual void pa30(); virtual void vfunc31(int pDump);	// slot 31 "Dump": dumps the suit power fields, then the player base's Dump
+	CHL2_V10(pa0) CHL2_V10(pa1)	// slots 0..19
+	virtual void pa20(); virtual void pa21(); virtual void pa22(); virtual void pa23(); virtual void pa24(); virtual void pa25(); virtual void pa26(); virtual void pa27();	// slots 20..27
+	virtual float vfunc28(); virtual float vfunc29();	// slots 28, 29
+	virtual float vfunc30(); virtual void vfunc31(int pDump);	// slot 31 "Dump": dumps the suit power fields, then the player base's Dump
 	virtual void pa32(); virtual void pa33(); virtual void pa34(); virtual void pa35(); virtual void pa36(); virtual void pa37(); virtual void pa38(); virtual void pa39();
-	CHL2_V10(pa4) CHL2_V10(pa5) CHL2_V10(pa6) CHL2_V10(pa7) CHL2_V10(pa8)	// slots 40..89
+	CHL2_V10(pa4) CHL2_V10(pa5) CHL2_V10(pa6) CHL2_V10(pa7)	// slots 40..79
+	virtual int vfunc80(); virtual int vfunc81(); virtual int vfunc82(); virtual void pa83(); virtual void pa84(); virtual void pa85(); virtual void pa86(); virtual void pa87(); virtual void pa88(); virtual void pa89();	// slots 80..89
 	virtual void pa90(); virtual void pa91(); virtual int vfunc92(); virtual void pa93(); virtual int vfunc94();	// slots 90..94
 	virtual void pa95(); virtual void pa96(); virtual void pa97(); virtual void pa98(); virtual void pa99();	// slots 95..99
 	virtual void pb00(); virtual void pb01(); virtual void pb02();	// slots 100..102
@@ -67,7 +70,7 @@ public:
 	virtual void vfunc333(int unused);	// slot 333: the camera offset: (the second vector of the viewpoint query) * 300.0f + the first one, kept at +0xe44 and copied to +0xe50, then slot 277(+0xe50)
 	virtual void pd34(); virtual void pd35(); virtual void pd36(); virtual void pd37(); virtual void pd38(); virtual void pd39();	// slots 334..339
 	CHL2_V10(pd4) CHL2_V10(pd5)	// slots 340..359
-	virtual void pd60(); virtual void pd61(); virtual void pd62(); virtual void pd63(); virtual void pd64(); virtual void pd65(); virtual void pd66();	// slots 360..366
+	virtual void pd60(); virtual void pd61(); virtual void pd62(); virtual void pd63(); virtual void pd64(); virtual void pd65(); virtual bool vfunc366(int, int, int);	// slots 360..366
 	virtual Vector vfunc367();	// slot 367: returns a vector by value (hidden result pointer; its y is the base of the angle vfunc371 builds)
 	virtual void pd68(); virtual void pd69();	// slots 368..369
 	virtual void pd70();	// slot 370
@@ -102,6 +105,10 @@ public:
 	virtual bool vfunc479();
 	virtual float vfunc480();
 	virtual float vfunc481();
+	virtual float vfunc482();
+	virtual int vfunc483();
+	virtual void vfunc484();
+	virtual bool vfunc485(int);
 
 	void sub_1009ba60(int a, char *text, int value);	// CBaseEntity::sub_1009ba60 (stub 0x1000d454), called directly
 	void sub_1009b980(int a, char *text, int value);	// CBaseEntity::DumpInt (stub 0x1000b776), called directly
@@ -131,22 +138,4 @@ public:
 	int sub_10334180(int count, int ammoIndex, int unused);	// CBaseCombatCharacter::GiveAmmo by index (slot 374 of the base, stub 0x10009543), called directly
 	char sub_10334860(void *pCurrent);	// CBaseCombatCharacter::SwitchToNextBestWeapon (stub 0x100138d6), called directly
 	int sub_10163020(const CTakeDamageInfo *pInfo);	// CBasePlayer::vfunc142 (stub 0x10014425), called directly
-public:
-	virtual void vfunc484();
-public:
-	virtual int vfunc81();
-public:
-	virtual bool vfunc366(int, int, int);
-	virtual bool vfunc485(int);
-public:
-	virtual int vfunc80();
-	virtual int vfunc82();
-public:
-	virtual float vfunc28();
-	virtual float vfunc29();
-	virtual float vfunc30();
-public:
-	virtual float vfunc482();
-public:
-	virtual int vfunc483();
 };
