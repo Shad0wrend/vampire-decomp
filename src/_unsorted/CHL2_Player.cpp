@@ -339,6 +339,12 @@ int CHL2_Player::vfunc142(const CTakeDamageInfo *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10352c90 size=0x1
+void CHL2_Player::vfunc484()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10352cd0 size=0x77
 #include "CHL2_Player.h"
 
