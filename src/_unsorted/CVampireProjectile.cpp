@@ -37,6 +37,13 @@ void CVampireProjectile::vfunc134()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101edf00 size=0x3
+int CVampireProjectile::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ee250 size=0x6
 namespace lifted {
 extern char g_105a4c58;
