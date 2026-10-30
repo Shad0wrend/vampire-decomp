@@ -11829,6 +11829,7 @@
 0x10579660 data   ?pfSqrt@@3P6AMM@ZA pfSqrt
 0x1057966c data   ?pfVectorNormalize@@3P6IMAAVVector@@@ZA pfVectorNormalize
 0x1057c684 data   ??_R0?AVCRagdollProp@@@8 ??_R0?AVCRagdollProp@@@8
+0x10589544 data   ??_R0?AVIPlayerPickupVPhysics@@@8 ??_R0?AVIPlayerPickupVPhysics@@@8
 0x105b1f14 data   ??_R0?AVCMoverKeyFrame@@@8 ??_R0?AVCMoverKeyFrame@@@8
 0x105c72fc data   ??_R0?AVCThrownGrenade@@@8 ??_R0?AVCThrownGrenade@@@8
 0x105cbcd4 data   ??_R0?AVCBaseGrenade@@@8 ??_R0?AVCBaseGrenade@@@8
