@@ -25,6 +25,12 @@ void CBaseEntity::vfunc25(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100265d0 size=0x3
+void CBaseEntity::vfunc26(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026650 size=0x7
 namespace lifted {
 extern float g_104454c4;
