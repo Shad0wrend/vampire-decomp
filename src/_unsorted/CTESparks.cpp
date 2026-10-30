@@ -34,3 +34,11 @@ void CTESparks::vfunc3(const float *pOrigin, const float *pAngles)
 	vfunc4(&filter, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x100678c0 size=0x3
+#include "CTESparks.h"
+int CTESparks::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
