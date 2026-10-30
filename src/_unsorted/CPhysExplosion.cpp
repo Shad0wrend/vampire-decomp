@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1004ea50 size=0x6
+#include "CPhysExplosion.h"
+namespace lifted {
+extern char g_1053d12c;
+}
+int CPhysExplosion::vfunc82()
+{
+    return (int)&lifted::g_1053d12c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050550 size=0x1e
 #include "CPhysExplosion.h"
 
