@@ -209,6 +209,13 @@ int CSingleplayRules::vfunc62(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ac0c0 size=0x5
+int CSingleplayRules::vfunc64(int a0, int a1)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ac110 size=0x3
 char CSingleplayRules::vfunc74()
 {
