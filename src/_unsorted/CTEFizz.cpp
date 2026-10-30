@@ -39,6 +39,17 @@ void CTEFizz::vfunc5()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100621d0 size=0x6
+#include "CTEFizz.h"
+namespace lifted {
+extern char g_106c2b40;
+}
+int CTEFizz::vfunc0()
+{
+    return (int)&lifted::g_106c2b40;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100621f0 size=0x3
 #include "CTEFizz.h"
 int CTEFizz::vfunc1()
