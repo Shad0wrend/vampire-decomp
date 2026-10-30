@@ -10044,6 +10044,7 @@
 0x100152b2 func   ?sub_10269960@CBaseEntity@@QAEXXZ CBaseEntity::sub_10269960
 0x100152b7 func   ?sub_10251790@@YAMXZ sub_10251790
 0x100152c1 func   _prop_physics prop_physics
+0x100152c6 func   ?vfunc264@CSceneEntity@@UAEXPAVCUnknown1007ed10@@HPAUCSceneEvent@@@Z CSceneEntity::vfunc264
 0x100152e4 func   ?sub_100bd620@bf_write@@QAEXABVVector@@@Z bf_write::sub_100bd620
 0x100152e9 func   ?sub_1009b440@CBaseEntity@@QAEXPBD@Z CBaseEntity::sub_1009b440
 0x100152f3 func   ?sub_10027890@S10027890@@QAEXAAUinputdata_t@@@Z S10027890::sub_10027890

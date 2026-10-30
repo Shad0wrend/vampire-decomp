@@ -439,6 +439,32 @@ void CSceneEntity::vfunc246()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10082e60 size=0x5c
+#include "CSceneEntity.h"
+#include "CUnknown1007ce20.h"
+#include "CUnknown1007ecf0.h"
+#include "CUnknown100766f0.h"
+class CUnknown1007ed10
+{
+public:
+	char sub_1007ed10();
+};
+void CSceneEntity::vfunc264(CUnknown1007ed10 *pEvent1, int unused, CSceneEvent *pEvent)
+{
+	if (!pEvent1->sub_1007ed10()) {
+		CUnknown1007ce20 *pScene = pEvent->sub_10076710();
+		if (!pScene) {
+			pScene = (CUnknown1007ce20 *)sub_100839c0(pEvent->sub_10075c50());
+			((CUnknown1007ecf0 *)pScene)->sub_1007ecf0(1);
+			((CUnknown100766f0 *)pEvent)->sub_100766f0((int)pScene);
+			if (!pScene)
+				return;
+		}
+		pScene->sub_1007cfc0(1, 0, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10083700 size=0x120
 #include "CSceneEntity.h"
 #include "CUnknown1007ce20.h"
