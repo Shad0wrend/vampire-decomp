@@ -54776,6 +54776,30 @@ int *sub_10156a00()
 void __fastcall sub_10156d30(char *p) { p[0x105c] = 1; }
 // END FUNCTION
 
+// FUNCTION: 0x10156d90 size=0x57
+#include "CRagdollPropAttached.h"
+class IPhysEnvX {
+public:
+    virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4();
+    virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
+    virtual void vfunc10(); virtual void vfunc11(); virtual void vfunc12(); virtual void vfunc13(); virtual void vfunc14();
+    virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17(); virtual void vfunc18(); virtual void vfunc19();
+    virtual void vfunc20(); virtual void vfunc21(); virtual void vfunc22(); virtual void vfunc23(void *p);
+};
+extern IPhysEnvX *g_10723940;
+extern float g_1070d9d0[3];
+void CRagdollPropAttached::sub_10156d90()
+{
+    vfunc202(0);
+    vfunc218(g_1070d9d0);
+    vfunc93(7, 0);
+    g_10723940->vfunc23(m_pPhysObj1060);
+    m_pPhysObj1060 = 0;
+    sub_100aaa40(1);
+    sub_10155a30();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10157260 size=0xc0
 #include "CRagdollProp.h"
 #include "CEntityVSlots.h"

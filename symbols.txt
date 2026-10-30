@@ -2806,6 +2806,7 @@
 0x10006c03 func   ?sub_100b0850@@YAXXZ sub_100b0850
 0x10006c08 func   ?sub_100a8d30@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::sub_100a8d30
 0x10006c17 func   ?vfunc104@CNPC_VChangBros@@UAEXXZ CNPC_VChangBros::vfunc104
+0x10006c2b func   ?sub_10156d90@CRagdollPropAttached@@QAEXXZ CRagdollPropAttached::sub_10156d90
 0x10006c3a func   ?sub_101d0ec0@@YAXPBD@Z sub_101d0ec0
 0x10006c44 func   ?vfunc80@CItemGKeyring@@UAEHXZ CItemGKeyring::vfunc80
 0x10006c49 func   ?sub_1033d970@@YAHXZ sub_1033d970
