@@ -12,6 +12,17 @@ datamap_t * CNPC_VHumanCombatPatrol::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10387710 size=0x6
+#include "CNPC_VHumanCombatPatrol.h"
+namespace lifted {
+extern char g_1093b538;
+}
+int CNPC_VHumanCombatPatrol::vfunc580()
+{
+    return (int)&lifted::g_1093b538;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10387750 size=0x1e
 #include "CNPC_VHumanCombatPatrol.h"
 
