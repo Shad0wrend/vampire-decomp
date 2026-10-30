@@ -206,6 +206,13 @@ void CNPC_VCamera::vfunc463(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10368ec0 size=0x3
+#include "CNPC_VCamera.h"
+void CNPC_VCamera::vfunc259(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10368f20 size=0x10
 #include "CNPC_VCamera.h"
 int CNPC_VCamera::sub_10368f20()
