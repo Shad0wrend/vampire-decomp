@@ -188,6 +188,18 @@ CBaseEntity *CMultiplayRules::vfunc20(CBaseEntity *pPlayer, CBaseEntity *pCurren
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141550 size=0x16
+namespace lifted {
+int __stdcall sub_100052ea(int);
+struct C10008954 { int sub_10008954(); };
+}
+bool CMultiplayRules::vfunc26(int a0, int a1, int a2, int a3)
+{
+    ((lifted::C10008954 *)(lifted::sub_100052ea(a0)))->sub_10008954();
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141580 size=0xb4
 #include "CMultiplayRules.h"
 #include "CSingleUserRecipientFilter.h"
