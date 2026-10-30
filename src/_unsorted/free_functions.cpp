@@ -74241,6 +74241,23 @@ void sub_101ce060(const CMsgShortsBytes *pMsg, CEntityVSlots *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ce210 size=0x5a
+struct CShakeLocal { int a, b, c; };
+void sub_101cdfa0(CShakeLocal *out, int a, int b, int c, int d);
+void *sub_101cd9e0(int index);
+void sub_101ce060(CShakeLocal *p, void *pPlayer);
+
+void sub_101ce210(int a, int b, int c, int d)
+{
+	CShakeLocal local;
+	sub_101cdfa0(&local, a, b, c, d);
+	for (int i = 1; i <= gpGlobals->maxClients; i++) {
+		void *pPlayer = sub_101cd9e0(i);
+		sub_101ce060(&local, pPlayer);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ce2e0 size=0xb4
 #include "CSingleUserRecipientFilter.h"
 #include "CEntityVSlots.h"
