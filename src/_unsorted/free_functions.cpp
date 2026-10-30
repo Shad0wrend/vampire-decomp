@@ -139841,6 +139841,28 @@ char sub_10388ed0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103893f0 size=0x5b
+#include "CAI_BaseNPCTroika.h"
+#include "globalvars.h"
+struct SArg389 { char pad[8]; float m_flTime; char pad2[0x18 - 0xc]; int m_nType; };
+struct CNpc389 : CAI_BaseNPCTroika
+{
+	void sub_103893f0(SArg389 *pArg);
+};
+struct CDevFlag389 { virtual void vfunc0(); virtual void vfunc1(); };
+extern CDevFlag389 *g_10924a6c;
+void CNpc389::sub_103893f0(SArg389 *pArg)
+{
+	float flTime = (pArg->m_nType == 1) ? pArg->m_flTime : 0.0f;
+	*(float *)((char *)this + 0x6664) = flTime + gpGlobals->curtime;
+	if (flTime > 0.0f) {
+		sub_10295ab0(1.0f);
+		g_10924a6c->vfunc1();
+		sub_10269a20(0x29);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103894b0 size=0x43
 #include "CNPC_VMalkavian.h"
 void *sub_100aa720(int size);
