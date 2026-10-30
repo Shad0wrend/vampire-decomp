@@ -56,6 +56,7 @@ public:
     int *sub_102517e0();    // CBaseCombatWeapon::sub_102517e0: the weapon's current roll slot record (stub 0x10003d91)
     void sub_10253ea0();    // CBaseCombatWeapon::vfunc319, called directly (stub 0x10009048)
     char sub_10253b70(int a);   // stub 0x1000c37e
+    void sub_1023a2a0();    // finds the first empty entry of the owner's list (entries at +0x4fe70, count at +0x4fe84) and stores its index at +0x914 (0 when there is none)
     void sub_10239d80();    // "CWeaponRanged::...": steps the counter at +0x914 through the owner's list (count at +0x4fe84, entries at +0x4fe70) and, for the character object at +0xa8 of the owner entity, sets the flag byte (CFlagSet10174550) and starts slot 333 (4 when the entry is empty, else 9); stores the entry at +0x1e78 of the character (stub 0x10003814)
     void sub_10254250();    // CBaseCombatWeapon::vfunc320, called directly (stub 0x1000668b)
     void sub_10239e70();    // uses up one shot: slot 307(0xb9), sub_10239f30(the owner's character), and unless a tuning flag holds lowers the clip of the current roll slot; an empty clip tells the owner's character slot 385(this, 0, 0) and removes the weapon
