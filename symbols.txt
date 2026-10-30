@@ -8444,6 +8444,7 @@
 0x1001349e func   ?sub_1042da60@CUnknown1042da60@@QAEHXZ CUnknown1042da60::sub_1042da60
 0x100134a8 func   ?vfunc1@CTEArmorRicochet@@UAEHXZ CTEArmorRicochet::vfunc1
 0x100134ad func   ?sub_1028d800@@YAHXZ sub_1028d800
+0x100134b2 func   ?vfunc1@CTEGunshotDecal@@UAEHXZ CTEGunshotDecal::vfunc1
 0x100134b7 func   ?vfunc82@CPhysBox@@UAEPAUdatamap_t@@XZ CPhysBox::vfunc82
 0x100134c1 func   ?sub_100dea90@CUnknown100dea90@@QAEXH@Z CUnknown100dea90::sub_100dea90
 0x100134c6 func   ?sub_10045fe0@S10045fe0@@QAEPAU1@HH@Z S10045fe0::sub_10045fe0
