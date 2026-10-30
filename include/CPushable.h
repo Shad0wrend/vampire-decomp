@@ -2,21 +2,22 @@
 // primary vtable slots up to the ones we need are placeholders that keep the slot numbers right.
 #pragma once
 
+#include "COutputEvent.h"
+
 class CPushable
 {
 public:
-	    
-	    
-	    
-	    
-	    
-	    
-	    
+	CPushable();	// 0x1010f130: the CBaseEntity constructor body, the handle at +0x458 = -1, the two outputs, the vftable and the push defaults
+	void sub_1009d980(char bAddAsDefault);	// "CBaseEntity::CBaseEntity" body (stub 0x100090fc), called first by the constructor
 	void vfunc103();	// slot 103 "CPushable::Spawn", declared as a plain member: CBreakable::vfunc103 for flag bit 7 of the spawn flags, else sets bit 13 of the flags at +0x4c, Precache (slot 104), SetSolid(6) (inlined scope trace), SetMoveType(8, 0), SetModel(the model name from slot 9) and slot 223
 	bool vfunc223();	// slot 223 (plain member): VPhysicsInitNormal(6, 0, 0, 0), then hands the physics object at +0x36c the values at +0x49c and +0x4a0 / +0x4a4
 	char m_pad[0x36c - 4];
 	void *m_pObj36c;	// 0x36c: physics object
-	char m_pad0370[0x49c - 0x370];
+	char m_pad0370[0x458 - 0x370];
+	int m_n458;	// 0x458: a handle, -1 when unset
+	char m_pad045c[0x46c - 0x45c];
+	COutputEvent m_Out46c;	// 0x46c
+	COutputEvent m_Out484;	// 0x484
 	int m_field49c;
 	int m_field4a0;
 	int m_field4a4;
