@@ -2221,6 +2221,7 @@
 0x10005ccc func   _item_k_tutorial_chopshop_stairs_key item_k_tutorial_chopshop_stairs_key
 0x10005ce0 func   ?UsePredictionRules@CRecipientFilter@@QAEXXZ CRecipientFilter::UsePredictionRules
 0x10005cef func   ?sub_10185910@@YIXPAUMem16@@HH@Z sub_10185910
+0x10005cf9 func   ?vfunc10@CGameRules@@UAEXHH@Z CGameRules::vfunc10
 0x10005cfe func   _func_rot_button func_rot_button
 0x10005d03 func   ?vfunc2@CRestore@@UAEHPAVCBaseEntity@@H@Z CRestore::vfunc2
 0x10005d0d func   ?sub_100b46a0@CUtlLinkedList12@@QAEXXZ CUtlLinkedList12::sub_100b46a0
