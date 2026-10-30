@@ -12,6 +12,17 @@ datamap_t * CNPC_VCop::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10370930 size=0x6
+#include "CNPC_VCop.h"
+namespace lifted {
+extern char g_1093ac60;
+}
+int CNPC_VCop::vfunc580()
+{
+    return (int)&lifted::g_1093ac60;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10370970 size=0x1e
 #include "CNPC_VCop.h"
 
