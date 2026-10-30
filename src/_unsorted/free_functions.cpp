@@ -83262,6 +83262,34 @@ void sub_101eabb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101eabd0 size=0x5c
+#include "CEntryY.h"
+
+struct IObj102038e0;
+struct DataNodeY
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual int GetInt(const char *pszName, int nDefault);
+};
+int sub_102038e0(int, IObj102038e0 *, int);
+int *sub_10203920(int *pOut, DataNodeY *pNode);
+
+bool CEntryY::sub_101eabd0(void *pData)
+{
+	DataNodeY *pNode = (DataNodeY *)pData;
+	int tmp;
+	if (pNode) {
+		m_pad = *(int *)sub_102038e0((int)&tmp, (IObj102038e0 *)pNode, (int)"InternalName");
+		m_name = (const char *)*sub_10203920(&tmp, pNode);
+		if (pNode->GetInt("IsDisplayed", 0))
+			m_unk0c |= 1;
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101eac50 size=0xa3
 #include "CUnknown101eac50.h"
 extern "C" int sprintf(char *, const char *, ...);
