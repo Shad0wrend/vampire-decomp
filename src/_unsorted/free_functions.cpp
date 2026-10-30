@@ -122657,6 +122657,27 @@ char CUnknown102ee2e0::sub_102ee2e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ee300 size=0x5c
+#include "CAI_Navigator.h"
+#include "CAI_Pathfinder.h"
+
+namespace block_102ee300 {
+	struct CNavUnit : CAI_Navigator { int sub_102ecc00(); };
+	int CNavUnit::sub_102ecc00() { return *(int *)(*(int *)((char *)this + 4) + 0x5d3c); }
+}
+using namespace block_102ee300;
+
+void CAI_Navigator::sub_102ee300(int a, int b, int c, int d, int e)
+{
+	m_i08 = *(int *)(m_pOuter + 0x156c);
+	m_i0c = gpGlobals->framecount;
+	CAI_Pathfinder *p = (CAI_Pathfinder *)((CNavUnit *)this)->sub_102ecc00();
+	p->m_unk08 = *(int *)((char *)p->m_pOuter + 0x156c);
+	p->m_unk0c = gpGlobals->framecount;
+	((CAI_Pathfinder *)((CNavUnit *)this)->sub_102ecc00())->sub_10300140(a, b, c, d, e);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ee380 size=0x4d
 struct CAI_PathfinderView { void sub_102fdcc0(int a, int b); };
 namespace block_102ee380 {
