@@ -1,6 +1,28 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101bc7f0 size=0x5f
+#include "CSoundControllerImp.h"
+#include "CUnknown101bc750.h"
+#define V4(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3();
+struct CSoundTimeView { V4(a) V4(b) virtual void h8(); virtual float vfunc9(); };
+extern CSoundTimeView *g_10566258;
+struct Pool { unsigned int *sub_1013dc60(unsigned int nSize); };
+extern Pool g_1072c4b0;
+struct CSoundCommand
+{
+    void *m_pSound; float m_flTime; float m_flDuration; int m_nCommand; float m_flAmplitude; int m_pad;
+    CSoundCommand(void *pSound, float flTime, int command, float duration, float amplitude)
+        : m_pSound(pSound), m_flTime(flTime), m_flDuration(duration), m_nCommand(command), m_flAmplitude(amplitude) {}
+    void *operator new(unsigned int n) { return g_1072c4b0.sub_1013dc60(n); }
+};
+void CSoundControllerImp::vfunc3(void *pSound, float executeDeltaTime, int command, float duration, float amplitude)
+{
+    CSoundCommand *pCmd = new CSoundCommand(pSound, g_10566258->vfunc9() + executeDeltaTime, command, duration, amplitude);
+    ((CUnknown101bc750 *)this)->sub_101bc750((int)pCmd);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bc870 size=0x48
 #include "CSoundControllerImp.h"
 #include "CUnknown101bbd10.h"
