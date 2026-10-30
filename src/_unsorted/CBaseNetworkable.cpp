@@ -39,6 +39,14 @@ void __fastcall sub_100b7bc0(int *self, int, int *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7be0 size=0x4
+#include "CBaseNetworkable.h"
+char * CBaseNetworkable::vfunc1()
+{
+    return (char *)this + 0xc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7d10 size=0x47
 #include "CBaseNetworkable.h"
 
