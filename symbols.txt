@@ -2527,6 +2527,7 @@
 0x10006488 func   ??0ConVar@@QAE@PBD0H@Z ConVar::ConVar
 0x1000648d func   ??1SendProp@@QAE@XZ SendProp::~SendProp
 0x1000648d func   ??1SendProp@@UAE@XZ SendProp::~SendProp
+0x10006492 func   ?vfunc580@CNPC_VBatSwarm@@UAEHXZ CNPC_VBatSwarm::vfunc580
 0x10006497 func   ?vfunc489@CGeneric_NPC@@UAEXXZ CGeneric_NPC::vfunc489
 0x1000649c func   ?vfunc546@CNPC_VMalkavian@@QAEHH@Z CNPC_VMalkavian::vfunc546
 0x100064a1 func   ?sub_1042fdb0@@YAXXZ sub_1042fdb0
