@@ -4882,6 +4882,7 @@
 0x1000b1a9 func   ?vfunc4@CAI_Navigator@@UAEXH@Z CAI_Navigator::vfunc4
 0x1000b1ae func   ?vfunc6@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHHHHHHHHHHHH@Z CTempEntsSystem::vfunc6
 0x1000b1c2 func   ?sub_1013a9f0@@YAXABVQuaternion@@0AAV1@@Z sub_1013a9f0
+0x1000b1cc func   ?vfunc25@CHalfLife2@@UAEHXZ CHalfLife2::vfunc25
 0x1000b1d1 func   ?vfunc1@ConVar@@UAEDXZ ConVar::vfunc1
 0x1000b1d6 func   ?sub_10279260@@YIXPAVCBaseEntity@@@Z sub_10279260
 0x1000b1ef func   ?sub_100809f0@CSceneEntity@@QAEXXZ CSceneEntity::sub_100809f0

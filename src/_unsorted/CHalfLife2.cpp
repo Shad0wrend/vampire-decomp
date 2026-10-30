@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10355770 size=0x6
+#include "CHalfLife2.h"
+namespace lifted {
+extern char g_10572c30;
+}
+int CHalfLife2::vfunc25()
+{
+    return (int)&lifted::g_10572c30;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10355790 size=0x24
 #include "CHalfLife2.h"
 
