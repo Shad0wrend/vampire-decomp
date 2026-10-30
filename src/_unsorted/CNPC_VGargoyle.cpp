@@ -195,6 +195,17 @@ int CNPC_VGargoyle::vfunc440(int schedule)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10378b60 size=0xf
+namespace lifted {
+int sub_10011225();
+}
+int CNPC_VGargoyle::vfunc461()
+{
+    *(int *)((char *)this + 0x1b38) = 0x11;
+    return lifted::sub_10011225();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10378c10 size=0x7c
 #include "CNPC_VGargoyle.h"
 #include "CGlobalEntityList.h"

@@ -4581,6 +4581,7 @@
 0x1000a4b1 func   ?sub_101f0290@@YAXXZ sub_101f0290
 0x1000a4bb func   ?sub_10231ed0@CUnknown10231ed0@@QAEIXZ CUnknown10231ed0::sub_10231ed0
 0x1000a4c0 func   ?sub_103a0eb0@CUnknown103a0eb0@@QAEHHPAUCUnknown103a0eb0Info@@D@Z CUnknown103a0eb0::sub_103a0eb0
+0x1000a4c5 func   ?vfunc461@CNPC_VGargoyle@@UAEHXZ CNPC_VGargoyle::vfunc461
 0x1000a4ca func   ?vfunc86@CInspectionNode@@QAEDHPAXHHH@Z CInspectionNode::vfunc86
 0x1000a4cf func   ?sub_10405d50@@YAHXZ sub_10405d50
 0x1000a4d4 func   ?vfunc218@CBaseEntity@@QAEXPBM@Z CBaseEntity::vfunc218
