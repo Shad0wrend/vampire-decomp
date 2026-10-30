@@ -42,3 +42,11 @@ ServerClass * CTEUserTracer::vfunc0()
     return (ServerClass *)((int)&lifted::g_106c720c);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1006abb0 size=0x3
+#include "CTEUserTracer.h"
+int CTEUserTracer::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
