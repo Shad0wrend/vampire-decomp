@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1010cd50 size=0x3
+#include "CFuncAreaPortalWindow.h"
+int CFuncAreaPortalWindow::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010cfc0 size=0x6
 #include "CFuncAreaPortalWindow.h"
 namespace lifted {
