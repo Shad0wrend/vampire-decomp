@@ -18,5 +18,6 @@ public:
 	int m_nGrow;	// 0x02d8
 	int m_nEntries;	// 0x02dc
 
+	CUnknown10077290Entry *sub_10077370(const char *name);	// finds the first entry whose name equals `name`, or 0
 	void sub_10077290(const char *name);	// removes the first entry whose name equals `name` (case-insensitive)
 };
