@@ -8992,6 +8992,7 @@
 0x100148c1 func   ?vfunc5@CItemGMercurioJournal@@QAEPAV1@I@Z CItemGMercurioJournal::vfunc5
 0x100148c6 func   ?vfunc600@CNPC_VYukie@@QAEDH@Z CNPC_VYukie::vfunc600
 0x100148da func   ?sub_100746e0@CFlexAnimationTrack@@QAEXMMH@Z CFlexAnimationTrack::sub_100746e0
+0x100148df func   ?vfunc23@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc23
 0x100148fd func   ?vfunc5@CWeaponRanged_Pistol_Thirtyeight@@QAEPAV1@I@Z CWeaponRanged_Pistol_Thirtyeight::vfunc5
 0x10014902 func   ?vfunc126@CSoundEnt@@QAEHH@Z CSoundEnt::vfunc126
 0x1001490c func   ?sub_10202460@@YAPBDPAUCVDmgBlock16_t@@H@Z sub_10202460
