@@ -17,4 +17,7 @@ public:
 	virtual bool vfunc110(const char *key, const char *value);	// "CFunc_LOD::KeyValue": "Solid" with a non-zero value adds solid flag 4 (inlined AddSolidFlags), else CBaseEntity::KeyValue
 public:
 	virtual int vfunc81();
+public:
+	virtual int vfunc80();
+	virtual int vfunc82();
 };

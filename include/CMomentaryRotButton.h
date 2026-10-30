@@ -57,4 +57,6 @@ public:
 	Vector m_vecEnd5ec;	// 0x5ec: the end angles
 	char m_pad05f8[0x5fc - 0x5f8];
 	float m_flTarget5fc;	// 0x5fc: the target fraction
+public:
+	virtual int vfunc82();
 };

@@ -149,4 +149,6 @@ public:
 	int m_n5cc;	// 0x5cc
 public:
 	virtual bool vfunc128();
+public:
+	virtual int vfunc82();
 };

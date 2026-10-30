@@ -50,4 +50,6 @@ public:
 	float m_flStartTime;	// 0x04d4
 	unsigned int m_hHandle;	// 0x04d8
 	char m_bStarted;	// 0x04dc
+public:
+	virtual int vfunc82();
 };

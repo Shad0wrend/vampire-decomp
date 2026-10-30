@@ -25,4 +25,6 @@ public:
 public:
 	virtual bool vfunc73(int);
 	virtual bool vfunc74(int);
+public:
+	virtual int vfunc82();
 };

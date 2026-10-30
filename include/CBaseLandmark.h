@@ -23,4 +23,6 @@ public:
 	COutputEvent m_Output4c8;
 	COutputEvent m_Output4e0;
 	COutputEvent m_Output4f8;
+public:
+	virtual int vfunc82();
 };

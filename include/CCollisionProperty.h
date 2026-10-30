@@ -25,7 +25,7 @@ public:
 	virtual void vfunc15(Vector *pMins, Vector *pMaxs);	// WorldSpaceSurroundingBounds
 	virtual void vfunc16();
 	virtual void vfunc17();
-	virtual void vfunc18();
+	virtual int vfunc18();
 };
 
 class CCollisionProperty : public ICollideable
