@@ -40146,6 +40146,17 @@ void sub_100f4190(const char *name, int id, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f41e0 size=0x5c
+extern "C" __declspec(dllimport) int __cdecl Q_snprintf(char *, int, const char *, ...);
+void sub_100f4490(char *pszCommand, int a);
+void sub_100f41e0(int pszClassname, float x, float y, float z, int a)
+{
+	char szCommand[260];
+	Q_snprintf(szCommand, sizeof(szCommand), "entity_create %s %g %g %g", pszClassname, (double)x, (double)y, (double)z);
+	sub_100f4490(szCommand, a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f4260 size=0x64
 extern int (*g_109f388c)(char *, int, const char *, ...);
 extern char g_10565604[];
