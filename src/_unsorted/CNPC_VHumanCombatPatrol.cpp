@@ -23,6 +23,17 @@ int CNPC_VHumanCombatPatrol::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10387730 size=0x6
+#include "CNPC_VHumanCombatPatrol.h"
+namespace lifted {
+extern int g_1063fb98;
+}
+int CNPC_VHumanCombatPatrol::vfunc451()
+{
+    return lifted::g_1063fb98;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10387750 size=0x1e
 #include "CNPC_VHumanCombatPatrol.h"
 
