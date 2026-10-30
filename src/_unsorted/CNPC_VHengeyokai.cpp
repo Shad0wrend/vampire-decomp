@@ -9,6 +9,14 @@ bool CNPC_VHengeyokai::vfunc615()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037e810 size=0x5
+#include "CNPC_VHengeyokai.h"
+bool CNPC_VHengeyokai::vfunc378(int a0, int a1)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037e870 size=0x86
 #include "CNPC_VHengeyokai.h"
 #include "utlvector.h"
