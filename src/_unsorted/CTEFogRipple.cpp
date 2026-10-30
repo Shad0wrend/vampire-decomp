@@ -37,6 +37,17 @@ void CTEFogRipple::vfunc3(const Vector *pOrigin, const Vector *pAngles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10062790 size=0x6
+#include "CTEFogRipple.h"
+namespace lifted {
+extern char g_106c2dc4;
+}
+int CTEFogRipple::vfunc0()
+{
+    return (int)&lifted::g_106c2dc4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100627b0 size=0x3
 #include "CTEFogRipple.h"
 int CTEFogRipple::vfunc1()
