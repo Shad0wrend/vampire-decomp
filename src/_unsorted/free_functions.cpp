@@ -40958,6 +40958,22 @@ CBaseEntity * __stdcall sub_100f8580(const Vector *pPos, float flRadius)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f8700 size=0x59
+void CGlobalEntityList::sub_100f8700(unsigned int hEnt)
+{
+	if (hEnt != 0xffffffff) {
+		CGlobalEntityList_Slot *pSlot = &m_Slots[hEnt & 0x1fff];
+		if (pSlot->m_Serial == (int)(hEnt >> 13) && pSlot->m_pEntity) {
+			CBaseEntity *pEnt = pSlot->m_pEntity->vfunc4();
+			if (pEnt) {
+				for (int i = m_nListeners - 1; i >= 0; i--)
+					m_ppListeners[i]->OnEntityDeleted(pEnt);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f8960 size=0x21
 struct CUnknown100f6d80X
 {
