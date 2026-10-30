@@ -270,6 +270,13 @@ const char *CGameRules::vfunc67(int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101295c0 size=0x5
+bool CGameRules::vfunc68(int a0)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101295e0 size=0x3
 void CGameRules::vfunc69(int a0, int a1, int a2, int a3)
 {
