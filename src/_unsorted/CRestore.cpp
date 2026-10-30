@@ -247,6 +247,18 @@ void CRestore::vfunc21(char *pDest, int n, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a22f0 size=0x14
+#include "CRestore.h"
+namespace lifted {
+int __stdcall sub_1000fe9d(int, int);
+}
+int CRestore::vfunc23(int a0)
+{
+    lifted::sub_1000fe9d(a0, 0xc);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2460 size=0x96
 #include "CRestore.h"
 #include <string.h>
