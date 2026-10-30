@@ -38,6 +38,17 @@ void CTESmoke::vfunc3(const Vector *pOrigin, const Vector *pAngles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100672c0 size=0x6
+#include "CTESmoke.h"
+namespace lifted {
+extern char g_106c53a4;
+}
+int CTESmoke::vfunc0()
+{
+    return (int)&lifted::g_106c53a4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100672e0 size=0x3
 #include "CTESmoke.h"
 int CTESmoke::vfunc1()
