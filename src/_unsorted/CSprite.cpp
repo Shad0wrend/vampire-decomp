@@ -12,6 +12,17 @@ datamap_t * CSprite::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042e180 size=0x6
+#include "CSprite.h"
+namespace lifted {
+extern char g_106af03c;
+}
+int CSprite::vfunc79()
+{
+    return (int)&lifted::g_106af03c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042e230 size=0x3
 #include "CSprite.h"
 int CSprite::vfunc81()
