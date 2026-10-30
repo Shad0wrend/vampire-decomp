@@ -21,6 +21,7 @@ public:
     void sub_1018f750(inputdata_t *pInput);    // "CBreakableProp::InputAddHealth": the integer value of the input is added to the health, set into the OnHealthChanged output at +0x748 which is fired (activator, this); a health of 0 or less runs slot 266 with the activator
     void sub_1018f890(inputdata_t *pInput);    // "CBreakableProp::InputBreak"-like: the input's float (0 when it is not a float or negative) goes on to sub_1018f9f0 (tail jump through the stub 0x10002d1f)
     void sub_10002d1f(float flDelay);    // stub of 0x1018f9f0: full alpha, no render fx, next think curtime + flDelay, random value at +0x770, flag 0x40000, think function
+    void sub_1001457e(int flags);    // stub of CBaseEntity::sub_100b3640
     void sub_100124d1(int mode);    // stub of 0x1018f690: called on a freshly created gib prop with the break mode (0 / 1 / other)
     void sub_1018f690(int mode);    // sets the break mode (+0x76c); DevWarning "Invalid collision type %d set on : %s" and 2 outside 0..2
     void sub_1018fa70();    // the fade-out think the break input installs: collision group 1 when none, render fx 2, the alpha at +0x1a3 approaches 0 by 255 / the fade time (+0x770) per second of the time since +0x178; removed once it reaches 0, else thinks again in 0.05 seconds
