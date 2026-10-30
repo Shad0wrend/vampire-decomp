@@ -20,6 +20,17 @@ int CFunc_LOD::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10114990 size=0x6
+#include "CFunc_LOD.h"
+namespace lifted {
+extern char g_105702e8;
+}
+int CFunc_LOD::vfunc82()
+{
+    return (int)&lifted::g_105702e8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10114a20 size=0x14
 #include "CFunc_LOD.h"
 
