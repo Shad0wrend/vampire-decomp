@@ -3949,6 +3949,7 @@
 0x1000926e func   ?vfunc5@CItemGGargoyleBook@@QAEPAV1@I@Z CItemGGargoyleBook::vfunc5
 0x10009273 func   ?sub_101e9080@CDiscValues_101e9080@@QAEXPAH000@Z CDiscValues_101e9080::sub_101e9080
 0x10009278 func   ?sub_100dad50@@YAXXZ sub_100dad50
+0x1000927d func   ?vfunc451@CNPC_VMingXiaoTentacle@@UAEHXZ CNPC_VMingXiaoTentacle::vfunc451
 0x10009282 func   ?vfunc259@CNPC_VMingXiao@@UAEXPAH@Z CNPC_VMingXiao::vfunc259
 0x10009287 func   ?vfunc546@CNPC_VZombie@@QAEHH@Z CNPC_VZombie::vfunc546
 0x1000929b func   ?sub_10046b70@@YA_NPBI0@Z sub_10046b70

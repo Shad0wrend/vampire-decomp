@@ -21,6 +21,16 @@ int CNPC_VMingXiaoTentacle::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039b0b0 size=0x6
+namespace lifted {
+extern int g_106477d8;
+}
+int CNPC_VMingXiaoTentacle::vfunc451()
+{
+    return lifted::g_106477d8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039b0d0 size=0x1e
 #include "CNPC_VMingXiaoTentacle.h"
 
