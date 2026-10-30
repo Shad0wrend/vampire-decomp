@@ -12,6 +12,17 @@ int CDisciplineParticle::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10051630 size=0x8
+#include "CDisciplineParticle.h"
+namespace lifted {
+int sub_10001109();
+}
+int CDisciplineParticle::vfunc117()
+{
+    return (lifted::sub_10001109()) | 2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10051ad0 size=0x1e
 #include "CDisciplineParticle.h"
 
