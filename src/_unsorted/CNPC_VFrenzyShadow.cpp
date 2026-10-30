@@ -76,6 +76,13 @@ void CNPC_VFrenzyShadow::vfunc601(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10376bf0 size=0x3
+bool CNPC_VFrenzyShadow::vfunc602()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10376f20 size=0x1e
 #include "CNPC_VFrenzyShadow.h"
 

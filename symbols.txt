@@ -9691,6 +9691,7 @@
 0x10015a78 func   ?sub_10076710@CUnknown10076710@@QAEHXZ CUnknown10076710::sub_10076710
 0x10015a82 func   ?vfunc5@CBloodPack@@QAEPAV1@I@Z CBloodPack::vfunc5
 0x10015a91 func   ?vfunc403@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc403
+0x10015a96 func   ?vfunc602@CNPC_VFrenzyShadow@@UAE_NXZ CNPC_VFrenzyShadow::vfunc602
 0x10015a9b func   _info_intermission info_intermission
 0x10015aa0 func   ?vfunc5@CAreaPortal@@UAEPAV1@I@Z CAreaPortal::vfunc5
 0x10015aaa func   ?sub_103bde40@CNPC_VTzimisce@@QAEHH@Z CNPC_VTzimisce::sub_103bde40
