@@ -35,6 +35,13 @@ int CNPC_VWolfMorph::vfunc438()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dcf00 size=0x1
+#include "CNPC_VWolfMorph.h"
+void CNPC_VWolfMorph::vfunc588()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dcf20 size=0x1e
 #include "CNPC_VWolfMorph.h"
 
