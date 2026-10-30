@@ -64,3 +64,11 @@ ServerClass * CTEShatterSurface::vfunc0()
     return (ServerClass *)((int)&lifted::g_106c3858);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10063420 size=0x3
+#include "CTEShatterSurface.h"
+int CTEShatterSurface::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
