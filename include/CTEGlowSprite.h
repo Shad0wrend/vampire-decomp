@@ -10,7 +10,7 @@ class CTEGlowSprite
 {
 public:
 	CTEGlowSprite *sub_100639b0(int a);	// constructor (0x100639b0): the temp entity base constructor (sub_10015334), then the vtable and the zeroed fields
-	virtual void vfunc0();
+	virtual int vfunc0();
 	virtual int vfunc1();
 	virtual CTEGlowSprite *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3(const Vector &origin, const QAngle &angles);	// "Test": a glow sprite (scale 0.8, brightness 200, 2 seconds) raised 24 units above the origin, then 50 units along the flat direction of the angles and 25 units against the right vector, created for everybody

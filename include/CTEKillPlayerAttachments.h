@@ -4,7 +4,7 @@
 class CTEKillPlayerAttachments
 {
 public:
-	virtual void vfunc0();
+	virtual int vfunc0();
 	virtual int vfunc1();
 	virtual CTEKillPlayerAttachments *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3(const float *pos, const float *ang);	// "Test": broadcasts the effect to every client (sets the flag at +0xc, then slot 4)

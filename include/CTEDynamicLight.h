@@ -9,7 +9,7 @@ class CRecipientFilter;
 class CTEDynamicLight
 {
 public:
-	virtual void vfunc0();
+	virtual int vfunc0();
 	virtual int vfunc1();
 	virtual CTEDynamicLight *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3(const Vector &origin, const QAngle &angles);	// "Test": a yellow light of radius 200 for 2 seconds at the origin (raised, then 50 units along the flat direction of the angles), created for everybody

@@ -9,7 +9,7 @@ class CRecipientFilter;
 class CTEBubbles
 {
 public:
-	virtual void vfunc0();
+	virtual int vfunc0();
 	virtual int vfunc1();
 	virtual CTEBubbles *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3(const Vector &origin, const QAngle &angles);	// "CTEBubbles::Test": the box at the origin lifted 24 units and moved 100 units along the flat facing, 256 units wide, 50 bubbles, height 256, speed 2.0, sent to every player

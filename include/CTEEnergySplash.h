@@ -8,7 +8,7 @@ class CRecipientFilter;
 class CTEEnergySplash
 {
 public:
-	virtual void vfunc0();
+	virtual int vfunc0();
 	virtual int vfunc1();
 	virtual CTEEnergySplash *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3(const Vector *pOrigin, const Vector *pAngles);	// slot 3 "Test": the position is the origin raised by a constant, the direction comes from the angles (AngleVectors), flattened and normalised; the position is then moved 100 units along it and the effect is created for every player (slot 4)

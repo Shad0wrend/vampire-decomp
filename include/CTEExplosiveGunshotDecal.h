@@ -5,7 +5,7 @@
 class CTEExplosiveGunshotDecal
 {
 public:
-	virtual void vfunc0();
+	virtual int vfunc0();
 	virtual int vfunc1();
 	virtual CTEExplosiveGunshotDecal *vfunc2(unsigned int flags);	// scalar deleting destructor
 
