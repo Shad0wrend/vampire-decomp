@@ -32,6 +32,14 @@ CWeaponMelee_TzimisceMelee::CWeaponMelee_TzimisceMelee()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e8a80 size=0x4
+#include "CWeaponMelee_TzimisceMelee.h"
+int CWeaponMelee_TzimisceMelee::vfunc373()
+{
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e8aa0 size=0x1e
 #include "CWeaponMelee_TzimisceMelee.h"
 
