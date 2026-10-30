@@ -3778,6 +3778,7 @@
 0x10008c38 func   ?vfunc1@CPredictableList@@UAEHXZ CPredictableList::vfunc1
 0x10008c3d func   ?sub_10134420@CUnknown101346e0@@QAEXPAUinputdata_t@@@Z CUnknown101346e0::sub_10134420
 0x10008c42 func   _info_target info_target
+0x10008c47 func   ?vfunc80@CItemGWarrLedger1@@UAEHXZ CItemGWarrLedger1::vfunc80
 0x10008c4c func   ?vfunc5@CFilterMultiple@@QAEPAV1@I@Z CFilterMultiple::vfunc5
 0x10008c5b func   ?sub_101cf600@@YAHH@Z sub_101cf600
 0x10008c60 func   ?vfunc113@CFilterMultiple@@QAEXXZ CFilterMultiple::vfunc113
