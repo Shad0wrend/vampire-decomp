@@ -53,4 +53,7 @@ public:
 	int m_n155c;
 	int m_n1560;
 	int m_n1564;
+public:
+	virtual int vfunc362();
+	virtual int vfunc363();
 };
