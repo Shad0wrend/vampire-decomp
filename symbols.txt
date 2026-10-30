@@ -6400,6 +6400,7 @@
 0x1000eea8 func   ?sub_102cd4a0@CAI_GoalEntity@@QAEXXZ CAI_GoalEntity::sub_102cd4a0
 0x1000eead func   ?sub_101f8330@CNamedListXB@@QAEHPBD@Z CNamedListXB::sub_101f8330
 0x1000eebc func   ?vfunc1@CVariantSaveDataOps@@UAEXPAUSaveRestoreFieldInfo_t@@PAVCRestore@@@Z CVariantSaveDataOps::vfunc1
+0x1000eec1 func   ?vfunc507@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc507
 0x1000eecb func   ?sub_10185f90@@YGXPAVCBasePlayer@@N@Z sub_10185f90
 0x1000eed0 func   ?sub_1007dfc0@CUnknown1007dfc0@@QAEXH@Z CUnknown1007dfc0::sub_1007dfc0
 0x1000eedf func   ?sub_10102c50@@YAHXZ sub_10102c50
