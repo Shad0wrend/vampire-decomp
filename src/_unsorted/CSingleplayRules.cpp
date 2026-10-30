@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101abc20 size=0x3
+bool CSingleplayRules::vfunc18()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101abc40 size=0x8
 extern char g_106b8540[];
 
