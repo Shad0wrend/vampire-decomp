@@ -104132,6 +104132,28 @@ char *__fastcall sub_10248b60(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10248bb0 size=0x4a
+#include "CKeyValuesX.h"
+extern "C" int __cdecl atoi(const char *);
+int CKeyValuesX::sub_10248bb0(const char *pszKey, int nDefault)
+{
+	CKeyValuesX *pKey = this;
+	if (pszKey)
+		pKey = sub_1000b58c(pszKey, 0);
+	if (pKey) {
+		switch (pKey->m_iDataType) {
+		case 0:
+			return atoi(pKey->m_sValue);
+		case 2:
+			return (int)pKey->m_flValue;
+		default:
+			return pKey->m_nValue;
+		}
+	}
+	return nDefault;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10248c20 size=0x2e
 #include "CKeyValuesX.h"
 
