@@ -329,6 +329,14 @@ void CNPC_VHengeyokai::vfunc601(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103817d0 size=0x3
+#include "CNPC_VHengeyokai.h"
+bool CNPC_VHengeyokai::vfunc602()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103817f0 size=0x120
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
