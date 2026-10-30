@@ -79,6 +79,43 @@ void CItemContainer::vfunc350(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10209710 size=0x5d
+#include "CItemContainer.h"
+#include "engineserver.h"
+#define V4(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3();
+struct CICView
+{
+	V4(a) V4(b) 
+	virtual const char **vfunc8(); 
+	virtual const char **vfunc9(void *pOut);
+	V4(c) V4(d) V4(e) V4(f) V4(g) V4(h) V4(i) V4(j) V4(k) V4(l) V4(m) V4(n) V4(o) V4(p)
+	V4(q) 
+	virtual void x0();
+	virtual void vfunc71();
+};
+struct CICBase
+{
+	void sub_10340360();
+};
+
+// TARGET: CItemContainer::vfunc104
+void CItemContainer::vfunc104()
+{
+	((CICBase *)this)->sub_10340360();
+	void *pTmp;
+	const char *psz = *((CICView *)this)->vfunc9(&pTmp);
+	if (!psz)
+		psz = "";
+	engine->vfunc13(psz, 0);
+	const char *pszBreak = m_pszBreakModel1a30;
+	if (!pszBreak)
+		pszBreak = "";
+	if (*pszBreak)
+		engine->vfunc13(pszBreak, 0);
+	((CICView *)this)->vfunc71();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10209790 size=0x18b
 #include "CItemContainer.h"
 
