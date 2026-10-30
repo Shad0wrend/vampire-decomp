@@ -9,6 +9,13 @@ public:
 	void sub_100123af();
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	CNPC_VSheriffSwarm *sub_103b1be0();	// as in CKeepUpright (transplant)
+	bool sub_103b2630(int a, int b);	// asks sub_1000633e (cdecl, this + both arguments + 5000.0f, 0, 0) for the hint node into +0x5ddc; found: sub_1000ac68(0), true; else records its source line and fails the task with slot 448(4)
+	void sub_1000ac68(int a);	// stub of CAI_BaseNPC::sub_10273e80, called directly
+	char m_padSS[0x1b44 - sizeof(CBaseEntity)];
+	const char *m_pszFailFile;	// 0x1b44
+	int m_nFailLine;	// 0x1b48
+	char m_padSS2[0x5ddc - 0x1b4c];
+	void *m_pHint5ddc;	// 0x5ddc
 public:
     virtual datamap_t * vfunc82();
 public:
