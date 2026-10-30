@@ -11,6 +11,16 @@ datamap_t * CBaseGrenade::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10429360 size=0x6
+namespace lifted {
+extern char g_109ee728;
+}
+int CBaseGrenade::vfunc80()
+{
+    return (int)&lifted::g_109ee728;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10429380 size=0x3
 int CBaseGrenade::vfunc81()
 {
