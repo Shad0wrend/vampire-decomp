@@ -12,6 +12,41 @@ int CDecal::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023a750 size=0x5b
+#include "CDecal.h"
+#include "CBaseEntity.h"
+extern struct CGlobalVarsView { char pad[0x30]; char m_b30; } *g_1070b228;
+void sub_1000572c();
+void sub_1000c888();
+void sub_10014614(void *);
+struct CDecalView
+{
+	void *vptr;
+	char pad0004[0x1f0 - 4];
+	void *m_pfnUse;
+	char pad01f4[0x204 - 0x1f4];
+	unsigned int m_nFlags;
+	char pad0208[0x26c - 0x208];
+	const char *m_pszName;
+	char pad0270[0x450 - 0x270];
+	int m_nTexture;
+};
+void CDecal::vfunc103()
+{
+	CDecalView *p = (CDecalView *)this;
+	if (p->m_nTexture >= 0 && (!g_1070b228->m_b30 || !(p->m_nFlags & 0x800))) {
+		if (p->m_pszName == 0) {
+			sub_1023aa30();
+			return;
+		}
+		((CBaseEntity *)this)->sub_100ac4e0((int)sub_1000572c, 0, 0);
+		p->m_pfnUse = (void *)sub_1000c888;
+		return;
+	}
+	sub_10014614(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023adb0 size=0x65
 #include "CDecal.h"
 #include "CBaseEntity.h"
