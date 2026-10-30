@@ -11,6 +11,16 @@ int CDynamicProp::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10190340 size=0x6
+namespace lifted {
+extern char g_1072b040;
+}
+int CDynamicProp::vfunc80()
+{
+    return (int)&lifted::g_1072b040;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10190360 size=0x3
 int CDynamicProp::vfunc81()
 {
