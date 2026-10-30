@@ -20,6 +20,17 @@ bool CGameSign::vfunc32(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102125e0 size=0x7
+#include "CGameSign.h"
+namespace lifted {
+extern float g_1044e674;
+}
+float CGameSign::vfunc37()
+{
+    return lifted::g_1044e674;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10212600 size=0x5
 #include "CGameSign.h"
 bool CGameSign::vfunc44(int a0)
