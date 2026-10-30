@@ -51,4 +51,6 @@ public:
 	int sub_10252240();	// provisional, like CAI_BaseNPCTroika::sub_10252240
 	char sub_10253b70(int a, int b, int c, int d);
 	CWeaponIArmorOwner *sub_102521f0();	// the weapon's owner (stub 0x10014fab)
+public:
+	virtual void vfunc291();
 };

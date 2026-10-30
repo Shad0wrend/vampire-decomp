@@ -8,7 +8,7 @@ class CTEBaseBeam : public CBaseTempEntityHead
 public:
 	CTEBaseBeam(const char *name);	// 0x1005a710: base constructor, vtable, fields 0x0c..0x40 cleared
 	virtual ServerClass *vfunc0();
-	virtual void vfunc1();
+	virtual int vfunc1();
 	virtual CTEBaseBeam *vfunc2(unsigned int flags);	// scalar deleting destructor
 
 	void sub_1000d08f();	// destructor body

@@ -37,7 +37,7 @@ public:
 	virtual unsigned int *vfunc1();	// "GetRefEHandle": pointer to the entity's handle
 	virtual void vfunc2();
 	virtual void vfunc3();
-	virtual void vfunc4();
+	virtual void * vfunc4();
 	virtual void vfunc5(int a);	// slot 5: called with 1 by the entity removal (UTIL_Remove)
 	virtual void vfunc6(bool check);	// "CBaseEntity::SetCheckUntouch": scope trace (entity name); when check is set increments the dword at +0x1ac and, unless bit 0 of the byte at +0x26b is set, sets bit 24 of +0x268 and calls sub_100f8e20(this); else clears bit 24 of +0x268
 	virtual void vfunc7();
@@ -45,20 +45,20 @@ public:
 	virtual const char **vfunc9(int *pOut); virtual void vfunc10(int index); virtual void vfunc11(const char *name);	// slot 11 "CBaseEntity::DebugSetEntityName": scope trace (entity name), copies name (31 chars) to +4 and to the buffer slot 85 returns
 	virtual void vfunc12(); virtual void vfunc13(const char *classname);
 	virtual void vfunc14(); virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17(int a, int b); virtual void vfunc18();
-	virtual void vfunc19(); virtual void vfunc20(); virtual void vfunc21(); virtual void vfunc22(); virtual void vfunc23();
-	virtual void vfunc24(); virtual void vfunc25(); virtual void vfunc26(); virtual void vfunc27(); virtual void vfunc28();
+	virtual void vfunc19(); virtual void vfunc20(); virtual void vfunc21(int); virtual void vfunc22(int); virtual void vfunc23(int);
+	virtual void vfunc24(); virtual void vfunc25(int); virtual void vfunc26(int); virtual void vfunc27(); virtual void vfunc28();
 	virtual void vfunc29(); virtual float vfunc30(); virtual void vfunc31(int pDump);	/* slot 31 "Dump": takes the dump context handed to the DumpXxx helpers */ virtual bool vfunc32(int a); virtual int vfunc33();
-	virtual int vfunc34(int a); virtual int vfunc35(int a); virtual void vfunc36(); virtual void vfunc37(); virtual void vfunc38();
-	virtual void vfunc39(CBaseEntity *pOther); virtual void vfunc40(); virtual void vfunc41(); virtual void vfunc42(); virtual void vfunc43();
+	virtual int vfunc34(int a); virtual int vfunc35(int a); virtual int vfunc36(); virtual void vfunc37(); virtual void vfunc38();
+	virtual void vfunc39(CBaseEntity *pOther); virtual void vfunc40(int); virtual void vfunc41(); virtual void vfunc42(); virtual void vfunc43(int);
 	virtual void vfunc44(); virtual bool vfunc45(void *pPassEnt, Vector vecStart, Vector vecEnd, unsigned int fMask); virtual void vfunc46(); virtual void vfunc47(); virtual void vfunc48();
 	virtual void vfunc49(); virtual void vfunc50(); virtual void vfunc51(); virtual void vfunc52(); virtual float vfunc53();
-	virtual void vfunc54(); virtual void vfunc55(); virtual void vfunc56(); virtual void vfunc57(); virtual void vfunc58();
-	virtual void vfunc59(); virtual void vfunc60(); virtual void vfunc61(); virtual void vfunc62(); virtual void vfunc63();
+	virtual void vfunc54(); virtual void vfunc55(int, int, int, int, int, int, int); virtual void vfunc56(int, int, int, int, int, int, int, int); virtual void vfunc57(int, int, int, int, int, int, int); virtual void vfunc58(int);
+	virtual void vfunc59(int); virtual void vfunc60(int); virtual void vfunc61(int); virtual void vfunc62(); virtual void vfunc63();
 	virtual void vfunc64(const float *angles);	// "CBaseEntity::SetAngles": scope trace (entity name), when the three floats differ from the ones at +0x428 runs three helpers (0x800, 0x3000), stores them and sets the byte at +0x1b1
 	virtual void vfunc65(); virtual void vfunc66(); virtual void vfunc67(); virtual void vfunc68();
 	virtual void vfunc69(); virtual bool vfunc70(); virtual void vfunc71(); virtual void vfunc72(); virtual void vfunc73();
 	virtual void vfunc74(); virtual void vfunc75(); virtual void vfunc76(); virtual void vfunc77(); virtual void vfunc78();
-	virtual void vfunc79(); virtual void vfunc80(); virtual void vfunc81(); virtual datamap_t *vfunc82(); virtual int vfunc83();	// slot 82 "GetDataDescMap": the entity class's datamap
+	virtual void vfunc79(); virtual void vfunc80(); virtual int vfunc81(); virtual datamap_t *vfunc82(); virtual int vfunc83();	// slot 82 "GetDataDescMap": the entity class's datamap
 	virtual void vfunc84(int flags); virtual char *vfunc85(); virtual void vfunc86(); virtual void vfunc87(void *pCheckTransmitInfo); virtual void vfunc88();	// slot 87 "CBaseEntity::SetTransmit"-like: takes the transmit info (bit vector pointer at +0x10)
 	virtual void vfunc89(); virtual void vfunc90(); virtual char vfunc91(void *pPassEnt, int contentsMask);	/* slot 91: collision test against the pass entity: false for collision group 1 unless the mask has bit 26 */ virtual int vfunc92();
 	virtual void vfunc93(int moveType, int moveCollide);	// "CBaseEntity::SetMoveType": scope trace (entity name), on change stores both at +0x35c/+0x360 and calls slot 25 of the object at +0x36c
@@ -70,8 +70,8 @@ public:
 	virtual void vfunc106(const char *classname); virtual void vfunc107(CEntityMapData *pMapData);	// slot 107 "CBaseEntity::ParseMapData": scope trace (entity name), feeds every key / value pair of the map data to slot 110 (KeyValue)
 	virtual bool vfunc108(const char *key, float x, float y, float z);	// "CBaseEntity::KeyValue" (vector): scope trace (entity name), formats the three floats with "%f %f %f" into a 256 byte buffer and returns slot 110(key, buffer)
 	virtual bool vfunc109(const char *key, float value);	// "CBaseEntity::KeyValue" (float): scope trace (entity name), formats the float with "%f" into a 256 byte buffer and returns slot 110(key, buffer)
-	virtual bool vfunc110(const char *key, const char *value); virtual void vfunc111(); virtual void vfunc112(); virtual void vfunc113();
-	virtual void vfunc114(); virtual void vfunc115();
+	virtual bool vfunc110(const char *key, const char *value); virtual void vfunc111(); virtual void vfunc112(int, int); virtual void vfunc113();
+	virtual void vfunc114(); virtual void vfunc115(int);
 	virtual int vfunc116();
 	virtual void vfunc117(); virtual void vfunc118(const char *pszInputName, CBaseEntity *pActivator, CBaseEntity *pCaller, CVariantCopy value, int outputID);	// slot 118 "CBaseEntity::AcceptInput" (variant passed by value) 
 	virtual void vfunc119();

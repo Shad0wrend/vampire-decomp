@@ -21,4 +21,6 @@ public:
 	void vfunc103();	// slot 103 (plain member here): marks the jet when classname is env_steamjet
 
 	void sub_1000cb8a();	// destructor body
+public:
+	virtual int vfunc81();
 };

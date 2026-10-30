@@ -7,7 +7,7 @@ class CTEMuzzleFlash : public CBaseTempEntityHead
 {
 public:
 	virtual ServerClass *vfunc0();
-	virtual void vfunc1();
+	virtual int vfunc1();
 	virtual CTEMuzzleFlash *vfunc2(unsigned int flags);	// scalar deleting destructor
 
 	void sub_1000df12();	// destructor body

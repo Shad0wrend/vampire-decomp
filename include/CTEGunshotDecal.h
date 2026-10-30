@@ -8,7 +8,7 @@ class CTEGunshotDecal : public CBaseTempEntityHead
 {
 public:
 	virtual ServerClass * vfunc0();
-	virtual void vfunc1();
+	virtual int vfunc1();
 	virtual CTEGunshotDecal *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3();
 	virtual void vfunc4(int a, int b);	// slot 4 (jump stub 0x100022de): called directly on the global object

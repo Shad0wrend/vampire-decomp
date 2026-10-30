@@ -15,14 +15,14 @@ public:
 	CBaseTempEntityHead(const char *name);	// 0x100507e0
 
 	virtual ServerClass *vfunc0();	// GetServerClass
-	virtual void vfunc1();
+	virtual int vfunc1();
 };
 
 class CBaseTempEntity
 {
 public:
 	virtual ServerClass *vfunc0();	// GetServerClass
-	virtual void vfunc1();
+	virtual int vfunc1();
 	virtual CBaseTempEntity *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3(const Vector &origin, const QAngle &angles);	// "Test": prints the name (+4), then creates the temp entity for every player (slot 4) with a position 20 units in front
 	virtual void vfunc4(CRecipientFilter &filter, float delay);	// "Create"

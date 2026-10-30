@@ -7,7 +7,7 @@ class CTEBeamEnts
 {
 public:
 	virtual void vfunc0();
-	virtual void vfunc1();
+	virtual int vfunc1();
 	virtual CTEBeamEnts *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3(const float *pOrigin, const float *pAngles);	// "Test": sets up default beam values, then sends it to everybody through slot 4
 	virtual void vfunc4(CRecipientFilter *pFilter, float flDelay);	// sends the message

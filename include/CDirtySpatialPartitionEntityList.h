@@ -17,7 +17,7 @@ public:
 class CAutoGameSystem
 {
 public:
-	virtual void vfunc0();
+	virtual bool vfunc0();
 	virtual void vfunc1();
 	virtual void vfunc2();
 	virtual void vfunc3();
@@ -34,7 +34,7 @@ public:
 class CDirtySpatialPartitionEntityList : public CAutoGameSystem, public IPartitionQueryCallback
 {
 public:
-	virtual void vfunc0();
+	virtual bool vfunc0();
 	virtual void vfunc1();
 	virtual void vfunc5();
 	virtual void vfunc8();

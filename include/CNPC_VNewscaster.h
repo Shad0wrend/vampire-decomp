@@ -122,4 +122,13 @@ public:
 public:
 	virtual void vfunc488();
 	virtual void vfunc489();
+public:
+	virtual void vfunc490();
+	virtual void vfunc491();
+	virtual void vfunc492();
+	virtual void vfunc493();
+	virtual void vfunc494();
+	virtual void vfunc495();
+	virtual void vfunc496();
+	virtual void vfunc497();
 };

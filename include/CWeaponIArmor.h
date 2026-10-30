@@ -32,4 +32,7 @@ public:
     virtual CWeaponActivityRecord * vfunc362();
     virtual int vfunc363();
     virtual int vfunc328();
+public:
+	virtual void vfunc291();
+	virtual void vfunc326();
 };

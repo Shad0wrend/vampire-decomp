@@ -14,4 +14,6 @@ public:
 
 	char m_pad0004[0x5c38 - 4];
 	void *m_p5c38;	// 0x5c38: the object of the current schedule
+public:
+	virtual void vfunc588();
 };
