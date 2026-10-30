@@ -23,6 +23,17 @@ int CNPC_VWolfMorph::vfunc451()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dc790 size=0x6
+#include "CNPC_VWolfMorph.h"
+namespace lifted {
+extern char g_10663b38;
+}
+int CNPC_VWolfMorph::vfunc82()
+{
+    return (int)&lifted::g_10663b38;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dc950 size=0x1d
 #include "CNPC_VWolfMorph.h"
 struct A { int sub_10012300(int); };
