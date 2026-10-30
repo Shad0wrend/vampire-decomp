@@ -7848,6 +7848,7 @@
 0x10011036 func   ?sub_10045360@CUnknown10045360@@QAEXXZ CUnknown10045360::sub_10045360
 0x1001103b func   _item_w_hengeyokai_fist item_w_hengeyokai_fist
 0x10011040 func   ?sub_103b30c0@@YADXZ sub_103b30c0
+0x10011045 func   ?vfunc60@CGameRules@@UAEMXZ CGameRules::vfunc60
 0x1001104a func   ?sub_100c7a10@@YAMPAUSObj@@0M@Z sub_100c7a10
 0x10011054 func   ?sub_101e7c50@CUnknown101e7c50@@QAEPAUCVDmgBlock16_t@@PBD@Z CUnknown101e7c50::sub_101e7c50
 0x10011059 func   ?vfunc326@CWeaponRanged_FlameThrower@@UAEXXZ CWeaponRanged_FlameThrower::vfunc326

@@ -271,6 +271,16 @@ int CGameRules::vfunc58(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10129560 size=0x7
+namespace lifted {
+extern float g_104454c4;
+}
+float CGameRules::vfunc60()
+{
+    return lifted::g_104454c4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10129580 size=0x6
 int CGameRules::vfunc66(int a0)
 {
