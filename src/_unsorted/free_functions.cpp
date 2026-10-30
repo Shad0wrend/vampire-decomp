@@ -63015,6 +63015,41 @@ int __stdcall sub_10191200(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10191220 size=0x5e
+#include "CBaseEntity.h"
+#include "CBreakableProp.h"
+#include "CUnknown101466e0.h"
+
+void *sub_100aa720(unsigned int size);
+extern char vt_10474c44[];
+
+struct SPhysProp {
+	void *vt;
+	char pad[0x48];
+	unsigned int m_flags4c;
+	char pad2[0x1b0 - 0x50];
+	CUnknown101466e0 m_b1b0;
+	char pad3[0x78c - 0x1b1];
+
+	SPhysProp()
+	{
+		((CBreakableProp *)this)->sub_1018f1c0();
+		vt = vt_10474c44;
+		m_b1b0.sub_101466e0(1);
+		m_flags4c |= 4;
+	}
+	void *operator new(unsigned int n) { return sub_100aa720(n); }
+};
+
+// TARGET: _physics_prop
+extern "C" CBaseEntity *physics_prop()
+{
+	SPhysProp *p = new SPhysProp;
+	((CBaseEntity *)p)->vfunc106("physics_prop");
+	return (CBaseEntity *)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10191420 size=0x1a
 namespace lifted {
 extern int g_1058d864;
