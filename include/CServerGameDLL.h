@@ -5,7 +5,7 @@
 class CServerGameDLL
 {
 public:
-	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3();
+	virtual void vfunc0(); virtual void vfunc1(); virtual bool vfunc2(); virtual void vfunc3();
 	virtual void vfunc4(int a, int b, int c);	// the level shutdown/frame step with three (unused) stack arguments: warns when the delete queue is not empty, runs slot 113 on every entity whose flag bit 1 (+0x268) is clear, clears the game's pending lists and, unless the cheat convar allows it, resets the convar at 0x106bd868 to 0
 	virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual int vfunc9();
 	virtual void vfunc10(); virtual void vfunc11(); virtual void vfunc12();
