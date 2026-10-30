@@ -5386,6 +5386,7 @@
 0x1000c4a0 func   ?vfunc82@CNPC_VVampire@@UAEPAUdatamap_t@@XZ CNPC_VVampire::vfunc82
 0x1000c4be func   _npc_payphone npc_payphone
 0x1000c4c3 func   ?sub_1024c630@@YAXPAM@Z sub_1024c630
+0x1000c4c8 func   ?vfunc587@CNPC_VNewscaster@@UAE_NH@Z CNPC_VNewscaster::vfunc587
 0x1000c4cd func   ?sub_102641b0@CUtlVector56@@QAEXH@Z CUtlVector56::sub_102641b0
 0x1000c4d2 func   ?vfunc433@CNPC_VFrenzyShadow@@QAEXXZ CNPC_VFrenzyShadow::vfunc433
 0x1000c4d7 func   ?sub_10109a20@CFire@@QAEXPAVCBaseEntity@@@Z CFire::sub_10109a20
