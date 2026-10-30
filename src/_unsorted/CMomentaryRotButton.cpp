@@ -12,6 +12,18 @@ int CMomentaryRotButton::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ca5f0 size=0xe
+#include "CMomentaryRotButton.h"
+namespace lifted {
+int __stdcall sub_10004b92(int, int, int);
+}
+bool CMomentaryRotButton::vfunc223()
+{
+    lifted::sub_10004b92(0, 0, 0);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cabc0 size=0xbb
 #include "CMomentaryRotButton.h"
 #include "CBaseEntity.h"

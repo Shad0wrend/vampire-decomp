@@ -8000,6 +8000,7 @@
 0x10011428 func   ?vfunc2@CTEWorldDecal@@UAEPAV1@I@Z CTEWorldDecal::vfunc2
 0x1001142d func   ?vfunc336@CNPC_VTzimisceRunner@@QAEXXZ CNPC_VTzimisceRunner::vfunc336
 0x1001143c func   ?sub_101042f0@@YAHXZ sub_101042f0
+0x10011441 func   ?vfunc223@CMomentaryRotButton@@UAE_NXZ CMomentaryRotButton::vfunc223
 0x10011446 func   ?vfunc82@CPhysConvert@@UAEPAUdatamap_t@@XZ CPhysConvert::vfunc82
 0x1001144b func   ?vfunc5@CStripWeapons@@QAEPAV1@I@Z CStripWeapons::vfunc5
 0x10011450 func   ?sub_100602e0@@YAXHHPBH0HHHH@Z sub_100602e0
