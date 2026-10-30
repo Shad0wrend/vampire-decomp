@@ -6063,6 +6063,7 @@
 0x1000e1e2 func   ?sub_100df0b0@@YAHPBD@Z sub_100df0b0
 0x1000e1ec func   ?sub_10370680@@YAHH@Z sub_10370680
 0x1000e1fb func   ?sub_100966a0@CBaseAnimating@@QAEHXZ CBaseAnimating::sub_100966a0
+0x1000e200 func   ?vfunc57@CBaseEntity@@UAEXHHHHHHH@Z CBaseEntity::vfunc57
 0x1000e214 func   _func_platrot func_platrot
 0x1000e219 func   ??0StatDefault@@QAE@H@Z StatDefault::StatDefault
 0x1000e21e func   ?vfunc174@CNPC_VGhoulCroucher@@QAEXPAVCBaseEntity@@@Z CNPC_VGhoulCroucher::vfunc174
