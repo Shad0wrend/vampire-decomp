@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100286c0 size=0x6
+#include "CPhysMotor.h"
+namespace lifted {
+extern char g_105372ac;
+}
+int CPhysMotor::vfunc82()
+{
+    return (int)&lifted::g_105372ac;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10028c00 size=0x1e
 #include "CPhysMotor.h"
 
