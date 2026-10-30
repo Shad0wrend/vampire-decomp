@@ -61,6 +61,14 @@ int CNPC_VHunter::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10388820 size=0x6
+#include "CNPC_VHunter.h"
+int CNPC_VHunter::vfunc138()
+{
+    return 7;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10388a40 size=0x40
 #include "vampire.h"
 #include "CNPC_VHunter.h"

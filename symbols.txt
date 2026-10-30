@@ -8750,6 +8750,7 @@
 0x10013089 func   _item_g_wireless_camera_4 item_g_wireless_camera_4
 0x1001308e func   ?sub_10205100@CUnknown10204e90@@QAEHPAX@Z CUnknown10204e90::sub_10205100
 0x10013093 func   ?sub_102902e0@CAI_BaseNPCTroika@@QAE_NH@Z CAI_BaseNPCTroika::sub_102902e0
+0x1001309d func   ?vfunc138@CNPC_VHunter@@UAEHXZ CNPC_VHunter::vfunc138
 0x100130a2 func   ?sub_1042f080@@YGHH@Z sub_1042f080
 0x100130a7 func   ?sub_101b2f60@CSoundEmitterSystemBase@@QAEHPBD@Z CSoundEmitterSystemBase::sub_101b2f60
 0x100130ac func   ?sub_100c0ad0@CFloatPair3f4@@QAEXHHHH@Z CFloatPair3f4::sub_100c0ad0
