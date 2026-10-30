@@ -157,4 +157,8 @@ public:
 	virtual int vfunc244();
 	virtual bool vfunc324();
 	virtual bool vfunc325();
+public:
+	virtual bool vfunc70();
+	virtual void vfunc228(int, int);
+	virtual bool vfunc509();
 };

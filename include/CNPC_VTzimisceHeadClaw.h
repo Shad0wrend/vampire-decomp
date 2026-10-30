@@ -58,4 +58,8 @@ public:
 	void vfunc601(int a);	// slot 601 (0x103c1ad0): the state flag at +0x6078 cleared, the object at +0x65e8 handed this (sub_1025ddd0) after the vtable call of g_10924edc slot 1; takes one argument
 	CNPC_VTzimisceHeadClaw *vfunc5(unsigned int flags);	// slot 5 (scalar deleting destructor, plain member): the vector at +0x665c goes, then the Troika base's destructor body (sub_1028d610), then the delete when bit 0 of flags is set
 	void sub_1028d610();	// CAI_BaseNPCTroika destructor body (stub 0x100123af), called directly
+public:
+	virtual bool vfunc70();
+	virtual bool vfunc324();
+	virtual bool vfunc325();
 };
