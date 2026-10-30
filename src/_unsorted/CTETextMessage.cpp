@@ -68,3 +68,11 @@ void CTETextMessage::vfunc3(const float *pOrigin, const float *pAngles)
     vfunc4(&filter, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10068e30 size=0x3
+#include "CTETextMessage.h"
+int CTETextMessage::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
