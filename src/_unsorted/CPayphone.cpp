@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101aa850 size=0x5
+#include "CPayphone.h"
+bool CPayphone::vfunc363(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aa8f0 size=0x3
 #include "CPayphone.h"
 bool CPayphone::vfunc615()
