@@ -5550,6 +5550,7 @@
 0x1000c1cb func   ?sub_100ce630@CUnknown100ce630@@QAE_NM@Z CUnknown100ce630::sub_100ce630
 0x1000c1d0 func   ?vfunc597@CAI_BaseNPCTroika@@UAEHHH@Z CAI_BaseNPCTroika::vfunc597
 0x1000c1da func   ?sub_1007dfe0@CUnknown1007dfe0@@QAEXH@Z CUnknown1007dfe0::sub_1007dfe0
+0x1000c1df func   ?vfunc266@CRagdollProp@@UAEXHH@Z CRagdollProp::vfunc266
 0x1000c1e9 func   ?sub_101f0d40@CUnknown101f0d40@@QAEXPAH@Z CUnknown101f0d40::sub_101f0d40
 0x1000c1ee func   ?sub_10430470@@YAII@Z sub_10430470
 0x1000c1f3 func   ?sub_104301d0@@YAII@Z sub_104301d0

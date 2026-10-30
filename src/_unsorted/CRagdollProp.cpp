@@ -383,6 +383,36 @@ int CRagdollProp::vfunc233(int *pOut, int nMax)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101574b0 size=0x5d
+#include "CRagdollProp.h"
+
+struct CRagdollPropBodyObj	// the body's physics object (only the slots used)
+{
+	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4();
+	virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
+	virtual void vfunc10(); virtual void vfunc11(); virtual void vfunc12(); virtual void vfunc13(); virtual void vfunc14();
+	virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17(); virtual void vfunc18(); virtual void vfunc19();
+	virtual void vfunc20(); virtual void vfunc21(); virtual void vfunc22(); virtual void vfunc23(); virtual void vfunc24();
+	virtual void vfunc25(); virtual void vfunc26(); virtual void vfunc27(); virtual void vfunc28(); virtual void vfunc29();
+	virtual void vfunc30(); virtual void vfunc31(); virtual void vfunc32(); virtual void vfunc33(); virtual void vfunc34();
+	virtual void vfunc35(); virtual void vfunc36(); virtual void vfunc37(); virtual void vfunc38();
+	virtual void vfunc39(int a, float *pVec);
+	virtual void vfunc40(float *pVec1, float *pVec2);
+};
+
+void CRagdollProp::vfunc266(int a, int unused)
+{
+	for (int i = 0; i < m_nBodies730; i++)
+	{
+		CRagdollPropBodyObj *pObj = (CRagdollPropBodyObj *)m_Bodies[i].m_pObject;
+		float vecA[3];
+		float vecB[3];
+		pObj->vfunc40(vecA, vecB);
+		pObj->vfunc39(a, vecB);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10158080 size=0x2e
 #include "CRagdollProp.h"
 // TARGET: CRagdollProp::vfunc32
