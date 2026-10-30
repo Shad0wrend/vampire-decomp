@@ -7,12 +7,7 @@
 #include "CAI_InterestTarget.h"
 
 // TARGET: CUtlVector<CAI_InterestTarget,CUtlMemory<CAI_InterestTarget> >::ShiftElementsLeft
-void CUtlVector<CAI_InterestTarget, CUtlMemory<CAI_InterestTarget> >::ShiftElementsLeft(int elem, int num)
-{
-    int numToMove = m_Size - elem - num;
-    if (numToMove > 0 && num > 0)
-    {
-        memmove(&Element(elem), &Element(elem + num), numToMove * sizeof(CAI_InterestTarget));
-    }
-}
+// the inline template member, instantiated alone (a COMDAT like the copy CAI_Motor::vfunc15's Remove emits)
+static void (CUtlVector<CAI_InterestTarget, CUtlMemory<CAI_InterestTarget> >::*s_ShiftElementsLeft)(int, int) =
+    &CUtlVector<CAI_InterestTarget, CUtlMemory<CAI_InterestTarget> >::ShiftElementsLeft;
 // END FUNCTION
