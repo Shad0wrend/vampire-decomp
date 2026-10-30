@@ -76,6 +76,14 @@ int CWeaponIGeneric::vfunc328()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f4880 size=0x6
+#include "CWeaponIGeneric.h"
+int CWeaponIGeneric::vfunc329()
+{
+    return 0xbc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f48a0 size=0x70
 #include "CWeaponIGeneric.h"
 struct IRandom { virtual void v0(); virtual void v1(); virtual int RandomInt(int lo, int hi); };
