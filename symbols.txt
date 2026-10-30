@@ -556,6 +556,7 @@
 0x100022fc func   ?sub_101832b0@CUnitP4@@QAE_NXZ CUnitP4::sub_101832b0
 0x10002306 func   ?vfunc416@CAI_BaseNPC@@UAEXD@Z CAI_BaseNPC::vfunc416
 0x10002310 func   ?sub_10139610@@YAXABVQAngle@@PAVVector@@11@Z sub_10139610
+0x1000231a func   ?vfunc38@CBaseEntity@@UAEPAXH@Z CBaseEntity::vfunc38
 0x1000231f func   ?vfunc588@CNPC_VWolfMorph@@UAEXXZ CNPC_VWolfMorph::vfunc588
 0x10002324 func   ?sub_103dbd50@@YAXXZ sub_103dbd50
 0x10002329 func   ?sub_10138ff0@@YAXNNPAH0@Z sub_10138ff0
