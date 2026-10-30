@@ -12,6 +12,17 @@ datamap_t * CNPC_VSabbatGunman::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a50a0 size=0x6
+#include "CNPC_VSabbatGunman.h"
+namespace lifted {
+extern char g_1093c190;
+}
+int CNPC_VSabbatGunman::vfunc580()
+{
+    return (int)&lifted::g_1093c190;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a50e0 size=0x1e
 #include "CNPC_VSabbatGunman.h"
 
