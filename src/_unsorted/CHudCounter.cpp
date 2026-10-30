@@ -25,6 +25,14 @@ datamap_t * CHudCounter::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012e070 size=0x3
+#include "CHudCounter.h"
+int CHudCounter::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012e4c0 size=0x1e
 #include "CHudCounter.h"
 
