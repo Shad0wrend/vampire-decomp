@@ -1220,6 +1220,24 @@ bool CAI_BaseNPC::vfunc510()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027a5c0 size=0x58
+struct SSquad60 { char pad[0x60]; float m_flTime; };
+static inline bool Bit1(unsigned int v) { return ((v >> 1) & 1) != 0; }
+bool CAI_BaseNPC::vfunc486()
+{
+	char *p = (char *)this;
+	if (gpGlobals->curtime <= *(float *)(p + 0x5ce8))
+		return false;
+	if (*(int *)(p + 0x5bb0) <= 0 && *(SSquad60 **)(p + 0x5da4)) {
+		if (gpGlobals->curtime <= (*(SSquad60 **)(p + 0x5da4))->m_flTime)
+			return false;
+	}
+	if (Bit1(*(unsigned int *)(p + 0x204)) && *(int *)(p + 0x5cc0) != 2)
+		return false;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027c160 size=0x65
 #include "CAI_BaseNPC.h"
 #include "CRestore.h"
