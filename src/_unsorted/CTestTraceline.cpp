@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1006b6c0 size=0x3
+#include "CTestTraceline.h"
+int CTestTraceline::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006bb30 size=0x3d
 #include "vampire.h"
 #include "CTestTraceline.h"
