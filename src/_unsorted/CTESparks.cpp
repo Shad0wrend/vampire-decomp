@@ -35,6 +35,17 @@ void CTESparks::vfunc3(const float *pOrigin, const float *pAngles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100678a0 size=0x6
+#include "CTESparks.h"
+namespace lifted {
+extern char g_106c55fc;
+}
+int CTESparks::vfunc0()
+{
+    return (int)&lifted::g_106c55fc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100678c0 size=0x3
 #include "CTESparks.h"
 int CTESparks::vfunc1()
