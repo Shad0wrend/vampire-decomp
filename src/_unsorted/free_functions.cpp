@@ -125655,6 +125655,17 @@ void CUtlVector280::sub_1030b100(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030b1d0 size=0x5b
+#include "CUtlVector280.h"
+extern "C" void *memmove(void *, const void *, unsigned int);
+void CUtlVector280::sub_1030b1d0(int elem, int num)
+{
+	int numToMove = m_size - elem - num;
+	if (numToMove > 0 && num > 0)
+		memmove(m_pMemory + (elem + num) * 0x118, m_pMemory + elem * 0x118, numToMove * 0x118);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030b250 size=0x40
 struct CUnknownBody1030b250 {
     int d[64];
