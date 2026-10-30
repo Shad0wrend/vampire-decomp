@@ -12,6 +12,17 @@ datamap_t * CMultiSource::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10132ec0 size=0x8
+#include "CMultiSource.h"
+namespace lifted {
+int sub_1000f7e5();
+}
+int CMultiSource::vfunc117()
+{
+    return (lifted::sub_1000f7e5()) | 0x80;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10132ee0 size=0x8d
 #include "CMultiSource.h"
 
