@@ -1368,6 +1368,7 @@
 0x10003c1a func   ?vfunc68@CBaseAnimating@@QAE_NPAVCBaseEntity@@@Z CBaseAnimating::vfunc68
 0x10003c29 func   ?vfunc420@CNPC_VTzimisceHeadClaw@@UAEXXZ CNPC_VTzimisceHeadClaw::vfunc420
 0x10003c2e func   ?sub_101fda10@CVStatActionList_t@@QAEXXZ CVStatActionList_t::sub_101fda10
+0x10003c38 func   ?vfunc183@CPhysConstraint@@QAEXHHPAPAUCPhysConstraintInfo@@@Z CPhysConstraint::vfunc183
 0x10003c3d func   ?sub_1018beb0@@YAHHHPAIH@Z sub_1018beb0
 0x10003c42 func   ?sub_103dc220@UtlMem@@QAEXXZ UtlMem::sub_103dc220
 0x10003c47 func   ?vfunc80@CWeaponThrown_Grenade_Frag@@UAEHXZ CWeaponThrown_Grenade_Frag::vfunc80

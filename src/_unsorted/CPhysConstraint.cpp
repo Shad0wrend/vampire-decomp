@@ -38,3 +38,31 @@ void CPhysConstraint::vfunc103()
 	vfunc104();
 }
 // END FUNCTION
+
+// FUNCTION: 0x1002b680 size=0x5d
+#include "CPhysConstraint.h"
+#include "Vector.h"
+
+struct EntView;
+struct PhysObjView;
+class QAngle;
+
+struct CPhysConstraintInfo
+{
+	char m_pad00[0xc];
+	Vector m_vecPos;	// 0x0c
+	bool m_bFlag;	// 0x18
+};
+
+void sub_1002a210(EntView *pEnt, PhysObjView *pObj1, PhysObjView *pObj2, const QAngle *pAngles, const Vector *pPos, bool bFlag);
+
+void CPhysConstraint::vfunc183(int a, int b, CPhysConstraintInfo **ppInfo)
+{
+	if (b == 0 && gpGlobals->m_n18 != m_n46c)
+	{
+		m_n46c = gpGlobals->m_n18;
+		CPhysConstraintInfo *pInfo = *ppInfo;
+		sub_1002a210((EntView *)a, m_pConstraint450->vfunc5(), m_pConstraint450->vfunc6(), (const QAngle *)pInfo, &pInfo->m_vecPos, pInfo->m_bFlag);
+	}
+}
+// END FUNCTION
