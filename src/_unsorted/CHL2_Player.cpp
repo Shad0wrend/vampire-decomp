@@ -61,6 +61,16 @@ CHL2_Player *CHL2_Player::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034f5f0 size=0x6
+namespace lifted {
+extern char g_109383e4;
+}
+int CHL2_Player::vfunc80()
+{
+    return (int)&lifted::g_109383e4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034f610 size=0x3
 int CHL2_Player::vfunc81()
 {
