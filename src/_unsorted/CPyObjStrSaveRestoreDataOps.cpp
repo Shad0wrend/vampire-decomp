@@ -87,3 +87,11 @@ int CPyObjStrSaveRestoreDataOps::vfunc2(void ***ppField)
 	return 1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100d0190 size=0x5
+#include "CPyObjStrSaveRestoreDataOps.h"
+bool CPyObjStrSaveRestoreDataOps::vfunc4(int a0, int a1)
+{
+    return 0;
+}
+// END FUNCTION

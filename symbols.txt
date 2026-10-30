@@ -1054,6 +1054,7 @@
 0x100033aa func   ?sub_10060880@@YAHXZ sub_10060880
 0x100033af func   ?sub_102c9e10@CAI_DebugRecord@@QAEXE@Z CAI_DebugRecord::sub_102c9e10
 0x100033b4 func   ?vfunc11@CGameRules@@UAEXXZ CGameRules::vfunc11
+0x100033b9 func   ?vfunc4@CPyObjStrSaveRestoreDataOps@@UAE_NHH@Z CPyObjStrSaveRestoreDataOps::vfunc4
 0x100033be func   ?vfunc259@CCameraAnimated@@QAEXPAX@Z CCameraAnimated::vfunc259
 0x100033cd func   ?vfunc416@CAI_BaseNPCTroika@@UAEXD@Z CAI_BaseNPCTroika::vfunc416
 0x100033d2 func   ?sub_10325f00@@YI_NPAVCBaseEntity@@@Z sub_10325f00
