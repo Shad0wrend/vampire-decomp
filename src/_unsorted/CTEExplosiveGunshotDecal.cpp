@@ -21,6 +21,17 @@ void CTEExplosiveGunshotDecal::vfunc5()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10064ba0 size=0x6
+#include "CTEExplosiveGunshotDecal.h"
+namespace lifted {
+extern char g_106c41c8;
+}
+int CTEExplosiveGunshotDecal::vfunc0()
+{
+    return (int)&lifted::g_106c41c8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10064bc0 size=0x3
 #include "CTEExplosiveGunshotDecal.h"
 int CTEExplosiveGunshotDecal::vfunc1()
