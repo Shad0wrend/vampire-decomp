@@ -203,6 +203,17 @@ void CGameMovement::vfunc16(void *pSurface, float volume, char bForce)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011ef00 size=0x7
+#include "CGameMovement.h"
+namespace lifted {
+extern float g_104454c0;
+}
+float CGameMovement::vfunc23()
+{
+    return lifted::g_104454c0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011f520 size=0xe6
 #include "CGameMovement.h"
 
