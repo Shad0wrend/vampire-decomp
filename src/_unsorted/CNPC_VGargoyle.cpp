@@ -128,6 +128,13 @@ int CNPC_VGargoyle::vfunc138()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10378680 size=0x6
+int CNPC_VGargoyle::vfunc337()
+{
+    return 0x4000;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103786c0 size=0x195
 #include "CNPC_VGargoyle.h"
 #include "CEntityVSlots.h"
