@@ -62,7 +62,7 @@ public:
     virtual bool vfunc269(int, int);
     virtual void vfunc270(int a, int b);
     virtual void vfunc271(int a, int b);
-    virtual bool vfunc272(int); virtual void vfunc273(); virtual bool vfunc274(int);
+    virtual bool vfunc272(int); virtual int vfunc273(); virtual bool vfunc274(int);
     virtual Vector vfunc275();	// slot 275: a random vector, every component rand() * (1200 / 32767) - 600 (hidden result pointer)
     virtual char vfunc276();
     bool vfunc32(int a);	// slot 32 override (CBaseEntity::vfunc32): false when the flags at +0x204 have bit 5, else whether this is the entity sub_104115b0(a, 0) returns
