@@ -3714,6 +3714,7 @@
 0x10008ba7 func   ?sub_1017ff40@CUnknown1017fd60@@QAEXPAVCBaseEntity@@H@Z CUnknown1017fd60::sub_1017ff40
 0x10008bac func   ?sub_100729e0@@YIXPAUSVecHolder@@@Z sub_100729e0
 0x10008bb1 func   ?sub_102456d0@@YAHH@Z sub_102456d0
+0x10008bb6 func   ?vfunc580@CGeneric_NPC_bathack@@UAEHXZ CGeneric_NPC_bathack::vfunc580
 0x10008bbb func   ?vfunc41@CHalfLife2@@UAE_NHH@Z CHalfLife2::vfunc41
 0x10008bca func   ?sub_102bec60@@YAHPAH0@Z sub_102bec60
 0x10008bcf func   ?sub_100f6ae0@@YAHXZ sub_100f6ae0
