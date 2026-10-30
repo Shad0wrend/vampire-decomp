@@ -1569,6 +1569,7 @@
 0x10004435 func   ?sub_10335780@CBaseCombatCharacter@@QAEXPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_10335780
 0x1000443f func   ?sub_1019b9d0@@YAPAHPAH@Z sub_1019b9d0
 0x10004449 func   ?sub_101878d0@@YAPAXPAUSEdict@@@Z sub_101878d0
+0x1000444e func   ?vfunc138@CNPC_VScurrying@@UAEHXZ CNPC_VScurrying::vfunc138
 0x10004453 func   ?sub_102cc900@@YAXXZ sub_102cc900
 0x10004458 func   ?sub_101fa8d0@@YIXPAUCVDmg_t@@HHHH@Z sub_101fa8d0
 0x1000445d func   ?vfunc5@CTriggerWWZone@@QAEPAV1@E@Z CTriggerWWZone::vfunc5

@@ -77,6 +77,14 @@ void CNPC_VScurrying::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ac470 size=0x6
+#include "CNPC_VScurrying.h"
+int CNPC_VScurrying::vfunc138()
+{
+    return 0xc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ac490 size=0x36
 #include "CNPC_VScurrying.h"
 
