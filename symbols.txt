@@ -7658,6 +7658,7 @@
 0x1001158b func   ?vfunc404@CNPC_VCop@@QAEHPAUCNPC_VCopTarget@@@Z CNPC_VCop::vfunc404
 0x10011595 func   ?vfunc253@CBaseCombatCharacter@@UAEHHHH@Z CBaseCombatCharacter::vfunc253
 0x100115a4 func   ?sub_10085e00@@YAXXZ sub_10085e00
+0x100115ae func   ?vfunc508@CNPC_VCamera@@UAEXH@Z CNPC_VCamera::vfunc508
 0x100115b8 func   ?sub_103cc890@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103cc890
 0x100115bd func   ?sub_103b6bc0@@YAHXZ sub_103b6bc0
 0x100115c2 func   ?vfunc546@CNPC_VGargoyle@@QAEHH@Z CNPC_VGargoyle::vfunc546
