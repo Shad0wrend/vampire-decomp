@@ -42,7 +42,8 @@ public:
 	Vector m_vecMins;	// 0x04
 	Vector m_vecMaxs;	// 0x10
 	unsigned char m_nSurroundType;	// 0x1c: how the surrounding box is computed (4 = the game code of the outer entity)
-	char m_1d[0x24 - 0x1d];
+	char m_1d[0x20 - 0x1d];
+	float m_flTriggerBloat;	// 0x20: the amount the trigger bounds grow by (set with flag 0x100 of the solid flags)
 	Vector m_vecSpecifiedSurroundingMins;	// 0x24
 	Vector m_vecSpecifiedSurroundingMaxs;	// 0x30
 	// The entity the collision property belongs to; several slots just forward to it.
