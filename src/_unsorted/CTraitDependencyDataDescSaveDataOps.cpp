@@ -111,3 +111,11 @@ void CTraitDependencyDataDescSaveDataOps::vfunc3(int a0)
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x102056b0 size=0x5
+#include "CTraitDependencyDataDescSaveDataOps.h"
+bool CTraitDependencyDataDescSaveDataOps::vfunc4(int a0, int a1)
+{
+    return 1;
+}
+// END FUNCTION
