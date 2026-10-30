@@ -29,7 +29,7 @@ public:
 	virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17(); virtual void vfunc18(); virtual void vfunc19();
 	virtual void vfunc20(); virtual void vfunc21(); virtual void vfunc22(); virtual void vfunc23(); virtual void vfunc24();
 	virtual void vfunc25(); virtual void vfunc26(); virtual void vfunc27(); virtual void vfunc28(); virtual void vfunc29();
-	virtual void vfunc30(); virtual void vfunc31(); virtual bool vfunc32(void *pEntity); virtual void vfunc33(); virtual bool vfunc34(int a);
+	virtual void vfunc30(); virtual void vfunc31(); virtual bool vfunc32(void *pEntity); virtual int vfunc33(); virtual bool vfunc34(int a);
 	virtual int vfunc35(int a);
 	virtual void vfunc36(); virtual void vfunc37(); virtual void vfunc38(); virtual void vfunc39(); virtual void vfunc40();
 	virtual void vfunc41(CBasePlayer *pPlayer);
@@ -53,4 +53,6 @@ public:
 	void sub_102120c0(CBaseEntity *pPlayer);	// sends the user message 0x10726088 to pPlayer (when set): a zero value, the float 0.5f and the engine index of this entity (edict at +0x2e0)
 	void sub_10211f10(CBaseEntity *pPlayer);	// like sub_102120c0 with the value 1, followed by the sign's flag byte (+0x76c) and its text (the string at +0x764, else the one at +0x730, else ""); first runs sub_10212200
 	void sub_10212200();	// stub 0x10014074, run before the sign text is sent to a player
+public:
+	virtual int vfunc82();
 };
