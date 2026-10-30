@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100ba390 size=0x3
+#include "CBeam.h"
+int CBeam::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100babc0 size=0x6
 #include "CBeam.h"
 namespace lifted {
