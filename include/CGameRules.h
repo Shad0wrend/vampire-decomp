@@ -59,7 +59,7 @@ public:
 	virtual bool vfunc34(int);
 	virtual void vfunc35(CBaseEntity *pPlayer);	// "EquipPlayer"-like: gives the player its starting items
 	virtual void vfunc36();
-	virtual void vfunc37();
+	virtual bool vfunc37(int);
 	virtual float vfunc38(int a);
 	virtual CBaseEntity *vfunc39(CBaseEntity *pPlayer);	// \"GetPlayerSpawnSpot\": puts the player on the spawn spot it selects (the origin one unit up, the spot's angles; the middle of the world model's bounds and zero angles without a spot), clears its velocity and the two vectors at +0x1efc / +0x1f08, sets +0x207c to 1 and returns the spot
 	virtual bool vfunc40();
@@ -80,7 +80,7 @@ public:
 	virtual void *vfunc55(int a);	// slot 55: the object of the index a (its sub_1000df3f gives the limit, see vfunc52)
 	virtual void vfunc56();	// creates the 0x484 byte object at +4 (CGameRulesSub), null when the allocation fails
 	virtual void vfunc57();
-	virtual void vfunc58();
+	virtual int vfunc58(int);
 	virtual void vfunc59();
 	virtual void vfunc60();
 	virtual int vfunc61(int index);
@@ -90,7 +90,7 @@ public:
 	virtual void vfunc65();
 	virtual void vfunc66();
 	virtual const char *vfunc67(int index);
-	virtual void vfunc68();
+	virtual bool vfunc68(int);
 	virtual void vfunc69(int, int, int, int);
 	virtual const char *vfunc70(int index);
 	virtual void vfunc71(int);
