@@ -235,6 +235,12 @@ const char *CGameRules::vfunc67(int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101295e0 size=0x3
+void CGameRules::vfunc69(int a0, int a1, int a2, int a3)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10129600 size=0x8
 extern char g_106b8540[];
 
