@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x102c72f0 size=0x6
+#include "CAI_StandoffBehavior.h"
+namespace lifted {
+extern char g_10925398;
+}
+int CAI_StandoffBehavior::vfunc6()
+{
+    return (int)&lifted::g_10925398;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c73f0 size=0x1
 #include "CAI_StandoffBehavior.h"
 void CAI_StandoffBehavior::vfunc8()
