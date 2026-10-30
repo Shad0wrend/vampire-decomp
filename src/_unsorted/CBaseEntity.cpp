@@ -146,6 +146,12 @@ void CBaseEntity::vfunc60(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100269f0 size=0x3
+void CBaseEntity::vfunc61(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026b30 size=0x1
 void CBaseEntity::vfunc76()
 {
