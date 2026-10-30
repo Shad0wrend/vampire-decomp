@@ -13308,6 +13308,28 @@ CBaseEntity *sub_10070470(const char *pszShot, void *pTarget0, void *pTarget1, v
 }
 // END FUNCTION
 
+// FUNCTION: 0x10070550 size=0x5c
+#include "CBaseCineCam.h"
+extern char g_1070d1b0[];
+extern char g_1070d9d0[];
+CBaseCineCam *sub_100a99d0(const char *pszClass, void *a, void *b, int c);
+void sub_101cd940(void *pEnt);
+CBaseCineCam *sub_10070550(const char *pszPrefix, int nUnused)
+{
+	CBaseCineCam *pCam = sub_100a99d0("camera_cinematic", g_1070d1b0, g_1070d9d0, 0);
+	if (pCam) {
+		*(unsigned int *)((char *)pCam + 0x204) |= 4;
+		if (pCam->sub_1006e4c0(pszPrefix, nUnused))
+			pCam->sub_1006e8e0();
+		else {
+			sub_101cd940(pCam);
+			return 0;
+		}
+	}
+	return pCam;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100705d0 size=0x85
 #include "CBaseCineCam.h"
 #include "CBaseEntity.h"
