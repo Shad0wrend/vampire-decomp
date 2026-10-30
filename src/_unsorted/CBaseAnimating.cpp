@@ -745,3 +745,14 @@ void CBaseAnimating::vfunc264()
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x10097ae0 size=0x6
+#include "CBaseAnimating.h"
+namespace lifted {
+extern char g_1054d900;
+}
+int CBaseAnimating::vfunc79()
+{
+    return (int)&lifted::g_1054d900;
+}
+// END FUNCTION
