@@ -20,6 +20,14 @@ bool CGameSign::vfunc32(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10212600 size=0x5
+#include "CGameSign.h"
+bool CGameSign::vfunc44(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10212620 size=0x1e
 #include "CGameSign.h"
 
