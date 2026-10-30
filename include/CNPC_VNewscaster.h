@@ -119,4 +119,7 @@ public:
 	int m_nCursorB;	// 0x6688
 	int m_bPickA;	// 0x668c
 	char m_bFlag6690;
+public:
+	virtual void vfunc488();
+	virtual void vfunc489();
 };

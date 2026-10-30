@@ -68,4 +68,6 @@ public:
 	char m_pad6689[0x6698 - 0x6689];
 	char m_b6698;	// 0x6698
 	char m_b6699;	// 0x6699
+public:
+	virtual void vfunc434();
 };

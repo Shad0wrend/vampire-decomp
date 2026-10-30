@@ -51,4 +51,25 @@ public:
 	const char *sub_1000b5cd();	// CBaseEntity::GetDebugName (stub 0x1000b5cd), called directly
 public:
 	virtual void vfunc488();
+public:
+	virtual void vfunc434();
+	virtual void vfunc489();
+	virtual void vfunc490();
+	virtual void vfunc491();
+	virtual void vfunc492();
+	virtual void vfunc493();
+	virtual void vfunc494();
+	virtual void vfunc495();
+	virtual void vfunc496();
+	virtual void vfunc497();
+	virtual void vfunc498();
+	virtual void vfunc499();
+	virtual void vfunc500();
+	virtual void vfunc501();
+	virtual void vfunc502();
+	virtual void vfunc503();
+	virtual void vfunc504();
+	virtual void vfunc505();
+	virtual void vfunc506();
+	virtual void vfunc507();
 };
