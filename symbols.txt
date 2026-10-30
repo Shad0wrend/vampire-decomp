@@ -2468,6 +2468,7 @@
 0x100063b6 func   ?vfunc463@CAI_BaseNPCTroika@@UAEXHH@Z CAI_BaseNPCTroika::vfunc463
 0x100063bb func   ?sub_1017e560@CBasePlayer@@QAEXPAUinputdata_t@@@Z CBasePlayer::sub_1017e560
 0x100063c5 func   ?sub_1042b9c0@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_1042b9c0
+0x100063ca func   ?vfunc82@CPhysHinge@@UAEHXZ CPhysHinge::vfunc82
 0x100063cf func   ?sub_10331770@@YIMPAVCBaseCombatCharacter@@HM@Z sub_10331770
 0x100063d4 func   ?vfunc316@CNPC_VWerewolf@@UAEXHHH@Z CNPC_VWerewolf::vfunc316
 0x100063d9 func   ?vfunc4@CCollisionEvent@@UAEXPAX00@Z CCollisionEvent::vfunc4
