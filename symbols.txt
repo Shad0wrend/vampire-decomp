@@ -9621,6 +9621,7 @@
 0x1001495c func   ?vfunc2@CTraitDependencyDataDescSaveDataOps@@UAE_NH@Z CTraitDependencyDataDescSaveDataOps::vfunc2
 0x10014966 func   _item_a_lt_cloth item_a_lt_cloth
 0x1001496b func   ?sub_101e09c0@CUnk101e09c0@@QAEPADPAX@Z CUnk101e09c0::sub_101e09c0
+0x10014970 func   ?vfunc117@CPropButton@@UAEHXZ CPropButton::vfunc117
 0x1001497f func   ?vfunc103@CTimerEntity@@QAEXXZ CTimerEntity::vfunc103
 0x1001498e func   ?vfunc2@CPositionInterpolator_Linear@@QAEXHPBVVector@@@Z CPositionInterpolator_Linear::vfunc2
 0x10014993 func   ?vfunc321@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc321

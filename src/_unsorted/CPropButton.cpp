@@ -78,6 +78,17 @@ void CPropButton::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102158d0 size=0x8
+#include "CPropButton.h"
+namespace lifted {
+int sub_10006703();
+}
+int CPropButton::vfunc117()
+{
+    return (lifted::sub_10006703()) | 8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10215a30 size=0x7f
 #include "CPropButton.h"
 #include "CUnknown1073dc00.h"
