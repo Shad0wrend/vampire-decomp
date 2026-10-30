@@ -1059,6 +1059,7 @@
 0x10003292 func   ?vfunc220@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc220
 0x10003297 func   ?sub_101aa0e0@@YIXPAUCThinkOwnerView@@@Z sub_101aa0e0
 0x1000329c func   ?sub_102c33f0@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_102c33f0
+0x100032a1 func   ?vfunc315@CWeaponThrown_Grenade_Frag@@UAEHXZ CWeaponThrown_Grenade_Frag::vfunc315
 0x100032a6 func   ?sub_10205ac0@CParsedValue@@QAEXPAXPBD@Z CParsedValue::sub_10205ac0
 0x100032ab func   ?sub_101e08d0@EntryView101e08d0@@QAEDHH@Z EntryView101e08d0::sub_101e08d0
 0x100032b5 func   ?vfunc5@CItemGPishaBook@@QAEPAV1@I@Z CItemGPishaBook::vfunc5

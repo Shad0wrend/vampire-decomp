@@ -81,6 +81,17 @@ void CWeaponThrown_Grenade_Frag::vfunc319()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ee4f0 size=0xf
+namespace lifted {
+int sub_10007cf2();
+}
+int CWeaponThrown_Grenade_Frag::vfunc315()
+{
+    *(int *)((char *)this + 0x920) = 0;
+    return lifted::sub_10007cf2();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ee510 size=0xdb
 #include "CBaseEntity.h"
 void sub_1000dcd8();
