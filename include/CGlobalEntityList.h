@@ -38,6 +38,7 @@ class IEntityListener
 {
 public:
 	virtual void OnEntityCreated(CBaseEntity *pEntity);
+	virtual void OnEntityDeleted(CBaseEntity *pEntity);
 };
 
 class CGlobalEntityList
