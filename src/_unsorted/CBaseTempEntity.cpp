@@ -11,6 +11,13 @@ ServerClass * CBaseTempEntity::vfunc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10050640 size=0x3
+int CBaseTempEntity::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050810 size=0x1e
 #include "CBaseTempEntity.h"
 
