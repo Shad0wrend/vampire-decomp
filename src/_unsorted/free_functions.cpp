@@ -13364,6 +13364,45 @@ CBaseCineCam *sub_10070690(void *pOwner)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10070990 size=0x59
+namespace block_10070990 {
+void __fastcall sub_1006e0e0(char *p)
+{
+	for (int i = 0; i < 4; i++) {
+		((int *)(p + 0x610))[i] = -1;
+		((int *)(p + 0x620))[i] = -1;
+	}
+	*(int *)(p + 0x630) = -1;
+	*(int *)(p + 0x638) = 0;
+}
+}
+using namespace block_10070990;
+void __fastcall sub_1015ef60(char *p);
+void sub_101cd940(void *p);
+struct CBasePlayerV { void sub_1017cef0(int a); };
+struct CNPCV { void sub_101815b0(int a); };
+struct CEnt10070990 {
+	char m_pad[0x204];
+	unsigned int m_nFlags204;
+	int sub_100ac4e0(int a, int b, const char *c);
+	void sub_10070990(CBasePlayerV *pPlayer);
+};
+void CEnt10070990::sub_10070990(CBasePlayerV *pPlayer)
+{
+	sub_1006e0e0((char *)this);
+	sub_100ac4e0(0, 0, 0);
+	if (pPlayer) {
+		pPlayer->sub_1017cef0(0);
+		sub_1015ef60((char *)pPlayer);
+		((CNPCV *)pPlayer)->sub_101815b0(1);
+		((CNPCV *)pPlayer)->sub_101815b0(8);
+	}
+	unsigned char f = m_nFlags204 >> 2;
+	if (f & 1)
+		sub_101cd940(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10071100 size=0xbd
 #include "SendProp.h"
 
