@@ -26,6 +26,7 @@ public:
 	int m_n81c;	// 0x81c: slot 35 answer while the keyring check fails
 	int m_n820;	// 0x820: slot 35 answer while the keyring check passes
 
+	Vector vfunc193();	// slot 193 "EyePosition": the "camera_position" attachment's origin when the model has one, else slot 192 (WorldSpaceCenter); returned by value
 	void vfunc275();
 	void vfunc103();	// base vfunc103, then sets bit 0x40 in the flags at +0x19c
 	CItemContainerLock *vfunc5(unsigned int flags);	// as in CMomentaryRotButton (transplant)
