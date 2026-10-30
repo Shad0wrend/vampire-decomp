@@ -8,6 +8,13 @@ int CServerNetworkProperty::vfunc12()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ab430 size=0x4
+int CServerNetworkProperty::vfunc13()
+{
+    return *(int *)((char *)this + 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab470 size=0x8
 struct CUnknown10146790 { char a; char b; char c; void sub_10146790(); };
 // TARGET: CServerNetworkProperty::vfunc11
