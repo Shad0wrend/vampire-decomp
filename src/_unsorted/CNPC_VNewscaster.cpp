@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1039fff0 size=0x1
+#include "CNPC_VNewscaster.h"
+void CNPC_VNewscaster::vfunc488()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a01b0 size=0x8
 #include "CNPC_VNewscaster.h"
 
