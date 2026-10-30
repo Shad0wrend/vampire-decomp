@@ -55,6 +55,13 @@ CServerNetworkProperty *CServerNetworkProperty::vfunc14(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ab650 size=0x4
+int CServerNetworkProperty::vfunc0()
+{
+    return *(int *)((char *)this + 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab690 size=0xb
 #define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 struct CSlots
