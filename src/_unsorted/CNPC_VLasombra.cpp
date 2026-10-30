@@ -12,6 +12,17 @@ datamap_t * CNPC_VLasombra::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10388de0 size=0x6
+#include "CNPC_VLasombra.h"
+namespace lifted {
+extern char g_1093b698;
+}
+int CNPC_VLasombra::vfunc580()
+{
+    return (int)&lifted::g_1093b698;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10388e20 size=0x1e
 #include "CNPC_VLasombra.h"
 
