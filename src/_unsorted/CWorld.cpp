@@ -68,6 +68,12 @@ int CWorld::vfunc131()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023b9c0 size=0x3
+void CWorld::vfunc230(int a0, int a1)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023ba00 size=0x1e
 #include "CWorld.h"
 
