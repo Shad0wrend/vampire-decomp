@@ -6905,6 +6905,7 @@
 0x10010140 func   ?sub_1024a980@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_1024a980
 0x10010145 func   ?sub_10206a60@CUnknown10206a60@@QAEPAXXZ CUnknown10206a60::sub_10206a60
 0x1001014a func   ?sub_10334790@CBaseCombatCharacter@@QAEHPBD@Z CBaseCombatCharacter::sub_10334790
+0x1001014f func   ?vfunc265@CPropHaunted@@UAEXXZ CPropHaunted::vfunc265
 0x1001015e func   ?vfunc130@CFuncElevator@@QAEXH@Z CFuncElevator::vfunc130
 0x10010163 func   ?sub_1007ee00@@YIXPAH@Z sub_1007ee00
 0x10010177 func   ?sub_103048d0@CAI_Pathfinder@@QAE_NHPBM0@Z CAI_Pathfinder::sub_103048d0

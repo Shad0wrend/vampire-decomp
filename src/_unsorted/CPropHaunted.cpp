@@ -12,6 +12,13 @@ datamap_t * CPropHaunted::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10213b50 size=0x1
+#include "CPropHaunted.h"
+void CPropHaunted::vfunc265()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10213b70 size=0xb3
 #include "CPropHaunted.h"
 #include "CGlobalEntityList.h"
