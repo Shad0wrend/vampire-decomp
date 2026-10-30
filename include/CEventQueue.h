@@ -53,6 +53,8 @@ public:
 	int m_nEvents;	// 0x50
 	int m_n54;	// 0x54: cleared together with the head by sub_100cdda0
 
+	void sub_100cf730();	// \"CEventQueue::Dump\": DevMsg \"EventQueue Dump: (CurTime: %f) (TotalEvents: %d)\", then \"%d: \" and sub_100cf7b0(event) for each queued event
+	void sub_100cf7b0(CEQEvent *pEvent);	// prints one queued event (stub 0x10007351)
 	void sub_100cdda0();	// empties the queue (stub 0x1000fc81)
 	void sub_100ce1c0(CEQEvent *pEvent);	// adds an event (stub 0x1001253f)
 	int sub_100cfda0(IEQRestore *pRestore);	// restores the queue: empties it, reads the "EventQueue" table and then one "PEvent" record per queued event; 0 when a read fails
