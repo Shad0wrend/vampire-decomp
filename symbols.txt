@@ -2706,6 +2706,7 @@
 0x10006a5f func   ?sub_100b2f50@CBaseEntity@@QAEXPBM@Z CBaseEntity::sub_100b2f50
 0x10006a64 func   ?vfunc300@CNPC_VPlayerController@@QAEXPAUCPlayerCtrlEnt@@HH@Z CNPC_VPlayerController::vfunc300
 0x10006a6e func   ?vfunc492@CNPC_VNewscaster@@UAEXXZ CNPC_VNewscaster::vfunc492
+0x10006a73 func   ?vfunc451@CNPC_VTzimisceHeadClaw@@UAEHXZ CNPC_VTzimisceHeadClaw::vfunc451
 0x10006a78 func   ?sub_102729d0@CAI_BaseNPC@@QAEPAVCBaseEntity@@XZ CAI_BaseNPC::sub_102729d0
 0x10006a7d func   _func_lod func_lod
 0x10006a82 func   ?sub_100fdce0@CUnknown100fdce0@@QAEXH@Z CUnknown100fdce0::sub_100fdce0

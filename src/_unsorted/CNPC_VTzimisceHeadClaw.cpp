@@ -51,6 +51,17 @@ int CNPC_VTzimisceHeadClaw::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c1320 size=0x6
+#include "CNPC_VTzimisceHeadClaw.h"
+namespace lifted {
+extern int g_1065cb2c;
+}
+int CNPC_VTzimisceHeadClaw::vfunc451()
+{
+    return lifted::g_1065cb2c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c1340 size=0x86
 #include "CNPC_VTzimisceHeadClaw.h"
 #include "utlvector.h"
