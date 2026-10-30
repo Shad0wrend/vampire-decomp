@@ -44,8 +44,7 @@ public:
     int m_nStageHealth78c;    // 0x78c
     char m_pad0790[0x794 - 0x790];
     int m_hModels794[8];    // 0x794: the model names' indices of the stages, zero ends the list
-    COutputEvent m_Outputs7b4[8];    // 0x7b4: one output per stage
-    COutputEvent m_Output874;    // 0x874: fired when the last stage is reached
+    COutputEvent m_Outputs7b4[9];    // 0x7b4: one output per stage, the last (0x874) is fired when the last stage is reached
 
     CBaseEntity *vfunc5(unsigned int flags);    // the scalar deleting destructor: destroys the outputs, the base destructor body (sub_1008b3c0), then frees when bit 0 of flags is set
     void sub_1008b3c0();    // CBaseAnimating destructor body (stub 0x10004c3c), called directly
