@@ -359,6 +359,13 @@ void CHL2_Player::vfunc484()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10352cb0 size=0x5
+bool CHL2_Player::vfunc485(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10352cd0 size=0x77
 #include "CHL2_Player.h"
 
