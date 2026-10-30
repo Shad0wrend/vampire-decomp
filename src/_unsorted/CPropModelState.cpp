@@ -43,6 +43,17 @@ void CPropModelState::vfunc71()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10216810 size=0x8
+#include "CPropModelState.h"
+namespace lifted {
+int sub_10006703();
+}
+int CPropModelState::vfunc117()
+{
+    return (lifted::sub_10006703()) | 8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10216970 size=0x7f
 #include "CPropModelState.h"
 #include "CUnknown1073dc00.h"
