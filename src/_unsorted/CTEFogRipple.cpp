@@ -36,3 +36,11 @@ void CTEFogRipple::vfunc3(const Vector *pOrigin, const Vector *pAngles)
 	vfunc4(&filter, 0.0f);
 }
 // END FUNCTION
+
+// FUNCTION: 0x100627b0 size=0x3
+#include "CTEFogRipple.h"
+int CTEFogRipple::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
