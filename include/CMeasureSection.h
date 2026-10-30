@@ -5,7 +5,8 @@
 class CMeasureSection
 {
 public:
-	CMeasureSection *vfunc0(unsigned int flags);
+	char m_pad04[4];
+	virtual CMeasureSection *vfunc0(unsigned int flags);
 	void sub_1000881e();
 	CMeasureSection *sub_10247690(int nName);	// constructor: clears the fields and links the section into the global list (head 0x10753734, count 0x10753738)
 
