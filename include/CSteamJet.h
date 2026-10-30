@@ -12,6 +12,7 @@ public:
 	bool m_bIsSteamJet46c;	// +0x46c: set when the classname is env_steamjet
 	bool m_bFlag46d;	// +0x46d
 
+	void vfunc173(void *pActivator, void *pCaller, int useType, float value);	// slot 173 "Use" (plain member): type 0 = off, 1 = on, 2 = on when the value is non-zero, 3 = toggle
 	void vfunc103();	// slot 103 (plain member here): marks the jet when classname is env_steamjet
 
 	void sub_1000cb8a();	// destructor body
