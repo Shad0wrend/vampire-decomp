@@ -39400,6 +39400,28 @@ CBaseDoor *CBaseDoor::sub_100ee2b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ee4e0 size=0x5e
+#include "CBaseDoor.h"
+#include "CVSoundActivityTable_t.h"
+
+extern CVActivitySound g_1074b308;
+extern int g_106eb3e8;
+
+// TARGET: CBaseDoor::sub_100ee4e0
+void CBaseDoor::sub_100ee4e0(int a, char b)
+{
+	if (m_flags204 & 0x1000)
+		return;
+	int nMode = 3;
+	if (a == g_106eb3e8)
+		nMode = 4;
+	if (b)
+		g_1074b308.sub_101f5950((int)this, a, nMode, 0.2f, 2.0f);
+	else
+		g_1074b308.sub_101f5950((int)this, a, nMode, 0.85f, 2.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ee630 size=0xd8
 #include "CBaseEntity.h"
 #include "CBaseDoor.h"
