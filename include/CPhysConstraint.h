@@ -51,4 +51,6 @@ public:
 	CPhysConstraintObj *m_pConstraint450;	// 0x450: the physics constraint object
 	char m_pad0454[0x45c - 0x454];
 	const char *m_psz45c;	// 0x045c: a name passed to the sound system's slot 0 by vfunc104 (the empty string when it is null)
+	char m_pad0460[0x46c - 0x460];
+	int m_n46c;	// 0x46c: the engine counter (gpGlobals +0x18) seen last by vfunc183
 };
