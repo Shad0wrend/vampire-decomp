@@ -23,6 +23,17 @@ int CNPC_VPedestrian::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a1e20 size=0x6
+#include "CNPC_VPedestrian.h"
+namespace lifted {
+extern int g_1064b1ac;
+}
+int CNPC_VPedestrian::vfunc451()
+{
+    return lifted::g_1064b1ac;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a1e40 size=0x1e
 #include "CNPC_VPedestrian.h"
 
