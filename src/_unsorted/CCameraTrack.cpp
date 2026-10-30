@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100cb980 size=0x6
+#include "CCameraTrack.h"
+namespace lifted {
+extern char g_1055d0bc;
+}
+int CCameraTrack::vfunc82()
+{
+    return (int)&lifted::g_1055d0bc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cbf30 size=0x23
 #include "CCameraTrack.h"
 
