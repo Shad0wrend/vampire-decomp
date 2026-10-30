@@ -24,6 +24,8 @@ public:
 	CPropHacking *vfunc5(unsigned int flags);
 	void sub_1000befb();
 	CPropHacking *sub_10219d40();	// as in CKeepUpright (transplant)
+	virtual void vfunc113();	// slot 113 "CPropHacking::vfunc113": CBreakableProp::vfunc113, a new screen page (sub_1021b140(0)), the think function sub_1021a740 and its first think after a random second; the line delay at +0x9e4 is at least 2.0f
+	void sub_1018f3e0();	// CBreakableProp::vfunc113 (stub 0x10004dbd), called directly
 	void vfunc272();	// slot 272: clears the counter of every screen (the array at +0x98c, count at +0x998) and the dword at +0xc28, then CBaseVampireSkillEntity::vfunc272
 	void *vfunc274();	// slot 274: the record of the selected screen (+0x9e0; -2 gives the field at +0x944) as the pointer to its text (+0x30 into the record of the array at +0x9a0, 0xd4 bytes each)
 	int vfunc268(int a);	// slot 268: the value (+0x40) of the selected record (+0x9e0) when it is positive; DevMsg "%s has invalid difficulty for subdir: %d" and 0 for an index out of range; else CBaseVampireSkillEntity::vfunc268 (also for -2)
