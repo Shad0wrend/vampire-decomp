@@ -144,3 +144,10 @@ bool __stdcall sub_100d1100(CVSDOps *p)
     return true;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100d1140 size=0x3
+#include "CVariantSaveDataOps.h"
+void CVariantSaveDataOps::vfunc3(int a0)
+{
+}
+// END FUNCTION
