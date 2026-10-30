@@ -58231,6 +58231,28 @@ void sub_101727a0(CPlayerVecSlotsX *pPlayer, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10172830 size=0x5f
+#define V4(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3();
+#define V16(a) V4(a##a) V4(a##b) V4(a##c) V4(a##d)
+#define V64(a) V16(a##a) V16(a##b) V16(a##c) V16(a##d)
+struct CEntView {
+ V64(p) V64(q) V64(r) virtual void f192();
+ virtual Vector vfunc193();
+ char pad[0x206c - 4];
+ int m206c;
+};
+void sub_10139610(int *, Vector *, int, int);
+int sub_102f72c0(Vector *, Vector *, float);
+int sub_10172830(CEntView *p)
+{
+    Vector a;
+    sub_10139610(&p->m206c, &a, 0, 0);
+    Vector b;
+    b = p->vfunc193();
+    return sub_102f72c0(&b, &a, 0.9f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10174550 size=0x12
 struct CFlagSet10174550 {
     char pad0[0x1f14];
