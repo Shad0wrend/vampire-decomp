@@ -69,6 +69,17 @@ datamap_t * CPointCamera::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018c8a0 size=0x6
+#include "CPointCamera.h"
+namespace lifted {
+extern char g_1072af84;
+}
+int CPointCamera::vfunc80()
+{
+    return (int)&lifted::g_1072af84;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018c8c0 size=0x3
 #include "CPointCamera.h"
 int CPointCamera::vfunc81()
