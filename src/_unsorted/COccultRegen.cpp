@@ -27,6 +27,17 @@ COccultRegen *COccultRegen::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f9380 size=0x6
+#include "COccultRegen.h"
+namespace lifted {
+extern char g_10945730;
+}
+int COccultRegen::vfunc80()
+{
+    return (int)&lifted::g_10945730;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f93a0 size=0x3
 #include "COccultRegen.h"
 int COccultRegen::vfunc81()
