@@ -18,6 +18,13 @@ bool CBaseDoor::vfunc241()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ee3e0 size=0x3
+bool CBaseDoor::vfunc128()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ee400 size=0x1
 void CBaseDoor::vfunc249()
 {
