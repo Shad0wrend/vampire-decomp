@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100b77a0 size=0x3
+#include "CBaseNetworkable.h"
+int CBaseNetworkable::vfunc5()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b79c0 size=0xb
 char * __fastcall sub_100b79c0(char *self)
 {
