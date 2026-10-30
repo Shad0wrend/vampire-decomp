@@ -356,6 +356,13 @@ int CWeaponThrown_Grenade_Frag::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ef530 size=0x6
+int CWeaponThrown_Grenade_Frag::vfunc363()
+{
+    return 0x73;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f13b0 size=0x1e
 #include "CWeaponThrown_Grenade_Frag.h"
 
