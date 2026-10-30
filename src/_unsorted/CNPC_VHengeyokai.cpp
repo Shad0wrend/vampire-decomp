@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1037e7f0 size=0x3
+#include "CNPC_VHengeyokai.h"
+bool CNPC_VHengeyokai::vfunc615()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037e870 size=0x86
 #include "CNPC_VHengeyokai.h"
 #include "utlvector.h"
