@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10231890 size=0x3
+#include "CVGuiScreen.h"
+int CVGuiScreen::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10231c10 size=0x6
 #include "CVGuiScreen.h"
 namespace lifted {
