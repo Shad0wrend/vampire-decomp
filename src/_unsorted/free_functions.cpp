@@ -75593,6 +75593,22 @@ void CUnknown101d1460::sub_101d1530(CBaseEntity *pEnt, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d15f0 size=0x5b
+#include "CBaseEntity.h"
+#include "CUnknown101d1460.h"
+float *sub_1024c630(float *pMatrix);
+void CUnknown101d1460::sub_101d15f0(CBaseEntity *pEnt)
+{
+	if (pEnt && pEnt->m_pEdict2e0) {
+		sub_1024ddf0(((const float *(__fastcall *)(CBaseEntity *))(*(void ***)pEnt)[220])(pEnt),
+			((const float *(__fastcall *)(CBaseEntity *))(*(void ***)pEnt)[221])(pEnt));
+		return;
+	}
+	float identity[16];
+	sub_1024cef0((const CUnknown101d1460 *)sub_1024c630(identity));
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d1670 size=0x34
 extern "C" unsigned int __cdecl strlen(const char *);
 #pragma intrinsic(strlen)
