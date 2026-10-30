@@ -41,4 +41,7 @@ public:
 	char m_pad0004[0x72c];
 	float m_f730;	// 0x730
 	float m_f734;	// 0x734
+public:
+	virtual int vfunc81();
+	virtual bool vfunc268();
 };
