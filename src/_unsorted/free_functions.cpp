@@ -105362,6 +105362,33 @@ void sub_1024eaa0(void *pMat, const Vector *a, const Vector *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024ec80 size=0x59
+#include "VMatrix.h"
+#include <math.h>
+void sub_1024ec80(VMatrix &dst, float angle)
+{
+	angle = angle * 0.017453292519943295;
+	float sinA = sin(angle);
+	float cosA = cos(angle);
+	dst[0][0] = cosA;
+	dst[0][1] = -sinA;
+	dst[0][2] = 0;
+	dst[0][3] = 0;
+	dst[1][0] = sinA;
+	dst[1][1] = cosA;
+	dst[1][2] = 0;
+	dst[1][3] = 0;
+	dst[2][0] = 0;
+	dst[2][1] = 0;
+	dst[2][2] = 1;
+	dst[2][3] = 0;
+	dst[3][0] = 0;
+	dst[3][1] = 0;
+	dst[3][2] = 0;
+	dst[3][3] = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024ed00 size=0x46
 #include "VMatrix.h"
 void sub_1024ed00(VMatrix &dst, float x, float y, float z)
