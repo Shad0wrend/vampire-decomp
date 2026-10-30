@@ -32,6 +32,18 @@ void CSimplePhysicsBrush::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004fa10 size=0xc
+#include "CSimplePhysicsBrush.h"
+namespace lifted {
+int sub_1000cfa9();
+}
+int CSimplePhysicsBrush::vfunc226()
+{
+    *(char *)((char *)this + 0x1b1) = 1;
+    return lifted::sub_1000cfa9();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004fb00 size=0x1e
 #include "CSimplePhysicsBrush.h"
 
