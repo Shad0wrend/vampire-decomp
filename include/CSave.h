@@ -63,7 +63,7 @@ public:
 	virtual void vfunc31(void *pBase, const char *pszName, void *pData, int count);	// slot used by WriteField for field type 0x13
 	virtual void vfunc32(const int *pHandles, int count);	// converts count entities to table indices (sub_101a08f0) on the stack, writes them through slot 10
 	virtual void vfunc33(const char *pszName, void *pData, int count);	// slot used by WriteField for field type 0xb
-	virtual void vfunc34();
+	virtual void vfunc34(CSaveEdict *const *pEdicts, int count);	// converts count edicts to table indices (sub_101a0830) on the stack, writes them through slot 10
 	virtual void vfunc35(const char *pszName, void *pData, int count);	// slot used by WriteField for field type 0xd
 	virtual void vfunc36(const void *pData, int count);	// WriteEHandle
 	virtual void vfunc37(const char *pszName, void *pData, int count);	// slot used by WriteField for field type 0xc: converts the entity handles to entity table indices (sub_101a08f0) and writes them through slot 9
