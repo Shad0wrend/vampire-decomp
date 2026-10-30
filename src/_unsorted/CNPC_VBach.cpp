@@ -167,6 +167,18 @@ int CNPC_VBach::vfunc438()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10363b40 size=0xf
+#include "CNPC_VBach.h"
+namespace lifted {
+int sub_10011225();
+}
+int CNPC_VBach::vfunc461()
+{
+    *(int *)((char *)this + 0x1b38) = 0xe;
+    return lifted::sub_10011225();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10363b60 size=0xba
 #include "CBaseEntity.h"
 #include "CNPC_VBach.h"
