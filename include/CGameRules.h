@@ -86,7 +86,7 @@ public:
 	virtual int vfunc61(int index);
 	virtual int vfunc62(int index);
 	virtual const char *vfunc63(int index);
-	virtual void vfunc64();
+	virtual int vfunc64(int, int);
 	virtual void vfunc65();
 	virtual void vfunc66();
 	virtual const char *vfunc67(int index);
