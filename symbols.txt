@@ -2549,6 +2549,7 @@
 0x10006677 func   ?sub_101ce440@@YAXHPBD0000@Z sub_101ce440
 0x1000667c func   ?sub_102cff50@CUnk102cff50@@QAEPAU1@XZ CUnk102cff50::sub_102cff50
 0x10006681 func   ?sub_10430020@@YAII@Z sub_10430020
+0x1000669a func   ?vfunc82@CPhysConstraintSystem@@UAEHXZ CPhysConstraintSystem::vfunc82
 0x100066a4 func   ?vfunc103@CEnvBeam@@UAEXXZ CEnvBeam::vfunc103
 0x100066b3 func   ?sub_104037b0@@YAHXZ sub_104037b0
 0x100066b8 func   ?vfunc552@CAI_BaseNPC@@UAEIXZ CAI_BaseNPC::vfunc552
