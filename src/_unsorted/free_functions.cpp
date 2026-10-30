@@ -53752,6 +53752,34 @@ bool __stdcall sub_1013eb90(CBaseEntity *ent, unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013ee40 size=0x5f
+extern int g_1071a278;
+extern void *vt_1046af0c[];
+extern void *vt_1046afbc[];
+void CMoveHelperServer::sub_1000185c()
+{
+    *(void ***)this = vt_1046af0c;
+    g_1071a278 = 0;
+    m_nTouchCount = 0;
+    if (m_n10 != -1) {
+        if (m_pTouchList) {
+            Plat_Free(m_pTouchList);
+            m_pTouchList = 0;
+        }
+        m_nTouchAlloc = 0;
+    }
+    m_pTouchListDbg = m_pTouchList;
+    if (m_n10 != -1) {
+        if (m_pTouchList) {
+            Plat_Free(m_pTouchList);
+            m_pTouchList = 0;
+        }
+        m_nTouchAlloc = 0;
+    }
+    *(void ***)this = vt_1046afbc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013f210 size=0x4b
 struct SCopy {
     int a, b, c, d;
