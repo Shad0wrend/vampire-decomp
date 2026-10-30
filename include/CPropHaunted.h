@@ -63,4 +63,6 @@ public:
 	char m_sub07ec[4];	// 0x7ec: a CPropHauntedSub
 public:
     virtual datamap_t * vfunc82();
+public:
+	virtual void vfunc265();
 };

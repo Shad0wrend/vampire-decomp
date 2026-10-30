@@ -21,4 +21,6 @@ public:
 public:
     virtual CAI_CondOwner * vfunc580();
     virtual const char * vfunc451();
+public:
+	virtual void vfunc434();
 };

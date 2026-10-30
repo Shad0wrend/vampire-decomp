@@ -48,4 +48,6 @@ public:
 	char m_bShowReport;	// 0x45c
 	char m_pad045d[0x464 - 0x45d];
 	CSoundEntSlot m_SoundPool[1];	// 0x464
+public:
+	virtual void vfunc104();
 };

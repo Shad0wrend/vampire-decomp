@@ -21,4 +21,6 @@ public:
 	void vfunc491();	// slot 491 (plain member): same shape as vfunc495, sounds at 0x1062a014 (random 0..3)
 public:
     virtual const char * vfunc451();
+public:
+	virtual void vfunc434();
 };

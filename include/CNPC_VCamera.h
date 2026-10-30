@@ -49,4 +49,6 @@ public:
 	char sub_1026c3d0();	// stub 0x100155d7, called directly
 	void vfunc104();	// slot 104 "CNPC_VCamera::Spawn"-like (plain member): an empty model name becomes models/null.mdl, the model is precached and its index set, the NPC is removed again (Msg) when slot 452 refuses it; else, with the node graph ready, checks that the hull bits (slot 337) the NPC uses were initialized (DevMsg block otherwise), or registers them when it is not
 	const char *sub_1000b5cd();	// CBaseEntity::GetDebugName (stub 0x1000b5cd), called directly
+public:
+	virtual void vfunc488();
 };
