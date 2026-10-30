@@ -6251,6 +6251,7 @@
 0x1000e543 func   ?sub_101e1a20@@YGHH@Z sub_101e1a20
 0x1000e552 func   ?sub_1035e5f0@CNPC_VAndreiBlood@@QAEXXZ CNPC_VAndreiBlood::sub_1035e5f0
 0x1000e561 func   ?sub_101db560@CUnknown101db210@@QAEXXZ CUnknown101db210::sub_101db560
+0x1000e566 func   ?vfunc81@CWeaponRanged_Rifle_Remington@@UAEHXZ CWeaponRanged_Rifle_Remington::vfunc81
 0x1000e56b func   ?sub_102ce100@@YA_NPBI0@Z sub_102ce100
 0x1000e570 func   _env_laser env_laser
 0x1000e575 func   ?sub_10071100@@YAHXZ sub_10071100
