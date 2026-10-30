@@ -124621,6 +124621,38 @@ int CUnknown103061e0::sub_103061e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10306200 size=0x59
+struct CSlotEntry {
+	char pad0[0xc];
+	float m_vec[3];
+	int m_n18;
+	int m_n1c;
+	int m_n20;
+	char m_b24;
+	char m_b25;
+};
+void sub_10142e90(CSlotEntry *p, float *v, int a, int b, int c, char d, int e);
+struct CSlotList {
+	CSlotEntry **m_ppEntries;
+	void sub_10306520();
+	void sub_10306200(int flags);
+};
+void CSlotList::sub_10306200(int flags)
+{
+	if (m_ppEntries) {
+		if (flags & 0x8000) {
+			for (int i = 0; i < 50; i++) {
+				CSlotEntry *p = m_ppEntries[i];
+				if (p->m_b25)
+					sub_10142e90(p, p->m_vec, p->m_n18, p->m_n1c, p->m_n20, p->m_b24, 0);
+			}
+		} else {
+			sub_10306520();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103065d0 size=0xe5
 #include "CUnknown103065d0.h"
 
