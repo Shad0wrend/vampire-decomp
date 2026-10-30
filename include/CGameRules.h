@@ -82,7 +82,7 @@ public:
 	virtual void vfunc57();
 	virtual int vfunc58(int);
 	virtual void vfunc59();
-	virtual void vfunc60();
+	virtual float vfunc60();
 	virtual int vfunc61(int index);
 	virtual int vfunc62(int index);
 	virtual const char *vfunc63(int index);

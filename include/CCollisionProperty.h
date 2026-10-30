@@ -19,7 +19,7 @@ public:
 	virtual float *vfunc9(int a);	// GetCollisionAngles: pointer to the three floats of the world angles (takes one stack argument, 0 at the known call)
 	virtual float *vfunc10();	// CollisionToWorldTransform: the matrix3x4_t (12 floats) of the collision space
 	virtual int vfunc11();
-	virtual void vfunc12();
+	virtual short vfunc12();
 	virtual int vfunc13();
 	virtual int vfunc14();
 	virtual void vfunc15(Vector *pMins, Vector *pMaxs);	// WorldSpaceSurroundingBounds

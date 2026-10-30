@@ -84,4 +84,6 @@ public:
 	void sub_10124630(void *pEnt);	// stub 0x10005e93: the stuck entity handler
 public:
 	virtual void vfunc13(int);
+public:
+	virtual float vfunc23();
 };

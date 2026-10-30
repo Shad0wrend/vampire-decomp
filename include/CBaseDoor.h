@@ -83,4 +83,6 @@ public:
 	virtual void vfunc249();
 public:
 	virtual bool vfunc241();
+public:
+	virtual float vfunc247();
 };

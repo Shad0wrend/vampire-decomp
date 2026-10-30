@@ -52,4 +52,7 @@ public:
 	char m_bStarted;	// 0x04dc
 public:
 	virtual int vfunc82();
+public:
+	virtual float vfunc48();
+	virtual float vfunc49();
 };
