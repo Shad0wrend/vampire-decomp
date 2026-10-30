@@ -77487,6 +77487,28 @@ void CUnknown101d7520::sub_101d7520(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d7660 size=0x5a
+#include "CUnknown101d76e0.h"
+#include "CBaseEntity.h"
+
+int CUnknown101d76e0::sub_101d7660(void *pEnt)
+{
+	CBaseEntity *pEntity = (CBaseEntity *)pEnt;
+	if (pEntity)
+		m_hEntity = *pEntity->vfunc1();
+	else
+		m_hEntity = 0xffffffff;
+	for (int i = 0; i < m_nItems; i++) {
+		if (m_ppItems[i]->sub_101d6a50(pEnt)) {
+			m_iMatch = i;
+			return i;
+		}
+	}
+	m_iMatch = -1;
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d76e0 size=0x80
 #include "CUnknown101d76e0.h"
 #include "CGlobalEntityList.h"

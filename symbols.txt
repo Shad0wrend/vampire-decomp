@@ -675,6 +675,7 @@
 0x100025c7 func   ?sub_1039b180@@YADXZ sub_1039b180
 0x100025d1 func   ?vfunc252@CBaseCombatCharacter@@UAEHHHH@Z CBaseCombatCharacter::vfunc252
 0x100025d6 func   ?vfunc618@CNPC_VTzimisceRunner@@QAEXXZ CNPC_VTzimisceRunner::vfunc618
+0x100025db func   ?sub_101d7660@CUnknown101d76e0@@QAEHPAX@Z CUnknown101d76e0::sub_101d7660
 0x100025e0 func   ?sub_10168e10@CBasePlayer@@QAE_NXZ CBasePlayer::sub_10168e10
 0x100025e5 func   ?vfunc4@CTEGlowSprite@@UAEXAAVCRecipientFilter@@M@Z CTEGlowSprite::vfunc4
 0x100025ea func   _item_k_ash_cell_key item_k_ash_cell_key
