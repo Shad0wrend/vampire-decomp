@@ -48,7 +48,7 @@ public:
 	char m_pad0208[0x2e0 - 0x208];
 	void *m_pEdict2e0;	// 0x2e0: the edict (IndexOfEdict takes it)
 	char m_pad02e4[0x450 - 0x2e4];
-	void *m_pConstraint450;	// 0x450: the physics constraint object
+	CPhysConstraintObj *m_pConstraint450;	// 0x450: the physics constraint object
 	char m_pad0454[0x45c - 0x454];
 	const char *m_psz45c;	// 0x045c: a name passed to the sound system's slot 0 by vfunc104 (the empty string when it is null)
 };
