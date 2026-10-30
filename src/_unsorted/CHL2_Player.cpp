@@ -67,6 +67,13 @@ float CHL2_Player::vfunc481()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034f470 size=0x7
+float CHL2_Player::vfunc482()
+{
+    return *(float *)((char *)this + 0x253c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034f4b0 size=0x1e
 #include "CHL2_Player.h"
 
