@@ -41266,6 +41266,30 @@ void __fastcall sub_100f8960(int p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f89a0 size=0x57
+#include "utlvector.h"
+
+struct SBlockSetView {
+	char m_pad[0x18048];
+	CUtlVector<int> m_List;
+	void sub_100f6e40(int elem);
+};
+extern SBlockSetView g_106eb5d8;
+
+struct CListEntryBaseA { int m_n0; };
+struct CListEntryBaseB { int m_n4; };
+struct CListEntryView : CListEntryBaseA, CListEntryBaseB {
+	CUtlVector<int> m_Vec;
+	void sub_100f89a0();
+};
+
+void CListEntryView::sub_100f89a0()
+{
+	g_106eb5d8.sub_100f6e40((int)(CListEntryBaseB *)this);
+	m_Vec.Purge();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f8a20 size=0x3
 void __stdcall sub_100f8a20(int a0)
 {
