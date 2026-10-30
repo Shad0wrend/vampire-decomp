@@ -128,6 +128,13 @@ bool CBaseCombatCharacter::vfunc347(int event, char *pszName, float *pA, float *
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015dc20 size=0x5
+bool CBaseCombatCharacter::vfunc72(int a0)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1031a5a0 size=0x6
 namespace lifted {
 extern char g_1061664c;
