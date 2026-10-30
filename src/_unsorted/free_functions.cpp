@@ -71211,6 +71211,26 @@ float __cdecl sub_101c1a30(unsigned char flags, float *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c1a70 size=0x59
+#include "CBaseEntity.h"
+void CBaseEntity::sub_101c1a70()
+{
+	if (m_flags204 & 0x40) {
+		m_vecMovedir[0] = 0;
+		m_vecMovedir[1] = 0;
+		m_vecMovedir[2] = 1.0f;
+	} else if (m_flags204 & 0x80) {
+		m_vecMovedir[0] = 1.0f;
+		m_vecMovedir[1] = 0;
+		m_vecMovedir[2] = 0;
+	} else {
+		m_vecMovedir[0] = 0;
+		m_vecMovedir[1] = 1.0f;
+		m_vecMovedir[2] = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c1af0 size=0x37
 // TARGET: sub_101c1af0
 float sub_101c1af0(unsigned char flags, const float *pA, const float *pB)
