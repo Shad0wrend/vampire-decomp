@@ -31,6 +31,14 @@ int CWeaponMelee_MingXiaoTentacle::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ec7e0 size=0x6
+#include "CWeaponMelee_MingXiaoTentacle.h"
+int CWeaponMelee_MingXiaoTentacle::vfunc363()
+{
+    return 3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ec8c0 size=0x4
 #include "CWeaponMelee_MingXiaoTentacle.h"
 int CWeaponMelee_MingXiaoTentacle::vfunc373()
