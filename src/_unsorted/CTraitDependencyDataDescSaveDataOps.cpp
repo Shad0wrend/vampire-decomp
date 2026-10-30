@@ -97,6 +97,14 @@ void CTraitDependencyDataDescSaveDataOps::vfunc1(CTraitDependencyField *pField, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x10205670 size=0x5
+#include "CTraitDependencyDataDescSaveDataOps.h"
+bool CTraitDependencyDataDescSaveDataOps::vfunc2(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10205690 size=0x3
 #include "CTraitDependencyDataDescSaveDataOps.h"
 void CTraitDependencyDataDescSaveDataOps::vfunc3(int a0)
