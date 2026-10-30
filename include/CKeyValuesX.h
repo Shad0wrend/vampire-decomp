@@ -19,7 +19,11 @@ class CKeyValuesX
 public:
 	int m_iKeyName;	// 0x00: symbol of the key name
 	const char *m_sValue;	// 0x04: the string value, null for a node with sub keys
-	char m_pad08[0x10 - 0x08];
+	union {
+		int m_nValue;	// 0x08: the int value
+		float m_flValue;	// 0x08: the float value (type 2)
+	};
+	int m_iDataType;	// 0x0c: 0 string, 2 float, else int
 	CKeyValuesX *m_pPeer;	// 0x10: the next key of the same level
 	CKeyValuesX *m_pSub;	// 0x14: the first sub key
 	CKeyValuesX *m_pBase18;	// 0x18: the key searched next when no sub key has the name
