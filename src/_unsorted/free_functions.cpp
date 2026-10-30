@@ -54529,6 +54529,38 @@ int SHolder::sub_1014d090(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014e3f0 size=0x5b
+struct matrix3x4_t;
+class CBaseEntity;
+void sub_10138630(const matrix3x4_t &in, matrix3x4_t &out);
+void sub_10138df0(const matrix3x4_t &in1, const matrix3x4_t &in2, matrix3x4_t &out);
+
+struct matrix3x4_t
+{
+	float m_flMatVal[3][4];
+};
+
+struct CEntityMatrixView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37();
+	virtual void GetMatrix(matrix3x4_t *pOut);
+};
+
+void sub_1014e3f0(CEntityMatrixView *pFrom, CEntityMatrixView *pTo, matrix3x4_t *pOut)
+{
+	matrix3x4_t matTo;
+	matrix3x4_t matFrom;
+	matrix3x4_t matInverse;
+	pFrom->GetMatrix(&matFrom);
+	sub_10138630(matFrom, matInverse);
+	pTo->GetMatrix(&matTo);
+	sub_10138df0(matInverse, matTo, *pOut);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014eb40 size=0x19
 namespace lifted {
 extern char g_1046d080;
