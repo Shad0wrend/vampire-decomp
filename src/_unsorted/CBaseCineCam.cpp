@@ -18,6 +18,16 @@ int CBaseCineCam::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006d500 size=0x6
+namespace lifted {
+extern char g_105463a8;
+}
+int CBaseCineCam::vfunc82()
+{
+    return (int)&lifted::g_105463a8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006d910 size=0x21
 #include "CBaseCineCam.h"
 
