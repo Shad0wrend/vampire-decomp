@@ -4646,6 +4646,7 @@
 0x1000afa6 func   ??0CSAct@@QAE@XZ CSAct::CSAct
 0x1000afa6 func   ?sub_102c9d20@@YIPAHPAH@Z sub_102c9d20
 0x1000afb0 func   ?sub_100659e0@CUnknown100659e0@@QAEHXZ CUnknown100659e0::sub_100659e0
+0x1000afb5 func   ?vfunc23@CGameRules@@UAE_NXZ CGameRules::vfunc23
 0x1000afc4 func   ?vfunc28@CSave@@UAEXABVVector@@@Z CSave::vfunc28
 0x1000afc9 func   ?sub_101072b0@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_101072b0
 0x1000afd3 func   ?sub_102ecce0@@YIXPAUCOwner@@@Z sub_102ecce0
