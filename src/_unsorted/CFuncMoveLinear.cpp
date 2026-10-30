@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10115be0 size=0x3
+#include "CFuncMoveLinear.h"
+bool CFuncMoveLinear::vfunc128()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101163f0 size=0x92
 #include "CFuncMoveLinear.h"
 

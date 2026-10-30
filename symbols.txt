@@ -6141,6 +6141,7 @@
 0x1000e296 func   _func_physbox func_physbox
 0x1000e2a5 func   ?sub_1006e770@CBaseCineCam@@QAEXXZ CBaseCineCam::sub_1006e770
 0x1000e2af func   ?sub_1015ff40@CBasePlayer@@QAE_NXZ CBasePlayer::sub_1015ff40
+0x1000e2b4 func   ?vfunc128@CFuncMoveLinear@@UAE_NXZ CFuncMoveLinear::vfunc128
 0x1000e2b9 func   ?sub_10382b30@CNPC_VHengeyokai@@QAEHH@Z CNPC_VHengeyokai::sub_10382b30
 0x1000e2be func   ?vfunc418@CAI_BaseNPC@@UAEMM@Z CAI_BaseNPC::vfunc418
 0x1000e2c3 func   ?vfunc103@CCineAISchedule@@QAEXXZ CCineAISchedule::vfunc103
