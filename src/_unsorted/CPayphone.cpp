@@ -205,6 +205,14 @@ void CPayphone::vfunc286(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aae20 size=0x6
+#include "CPayphone.h"
+int CPayphone::vfunc359(int a0)
+{
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aaee0 size=0x77
 #include "CPayphone.h"
 
