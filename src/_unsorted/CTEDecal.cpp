@@ -35,3 +35,11 @@ ServerClass * CTEDecal::vfunc0()
     return (ServerClass *)((int)&lifted::g_106c1c58);
 }
 // END FUNCTION
+
+// FUNCTION: 0x100607a0 size=0x3
+#include "CTEDecal.h"
+int CTEDecal::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
