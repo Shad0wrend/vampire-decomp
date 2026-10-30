@@ -81,6 +81,16 @@ bool CRagdollProp::vfunc272(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101551d0 size=0x6
+namespace lifted {
+extern char g_1070d9d0;
+}
+int CRagdollProp::vfunc273()
+{
+    return (int)&lifted::g_1070d9d0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101551f0 size=0x5
 bool CRagdollProp::vfunc274(int a0)
 {
