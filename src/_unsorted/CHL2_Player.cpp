@@ -74,6 +74,16 @@ float CHL2_Player::vfunc482()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034f490 size=0xb
+namespace lifted {
+int sub_10008b84();
+}
+int CHL2_Player::vfunc483()
+{
+    return ((unsigned)(lifted::sub_10008b84()) >> 1) & 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034f4b0 size=0x1e
 #include "CHL2_Player.h"
 
