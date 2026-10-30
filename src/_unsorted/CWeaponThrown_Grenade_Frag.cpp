@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103ee1d0 size=0x6
+namespace lifted {
+extern char g_1067caec;
+}
+int CWeaponThrown_Grenade_Frag::vfunc82()
+{
+    return (int)&lifted::g_1067caec;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ee260 size=0x2c
 #define S10(b) virtual void s##b##0(); virtual void s##b##1(); virtual void s##b##2(); virtual void s##b##3(); virtual void s##b##4(); virtual void s##b##5(); virtual void s##b##6(); virtual void s##b##7(); virtual void s##b##8(); virtual void s##b##9();
 
