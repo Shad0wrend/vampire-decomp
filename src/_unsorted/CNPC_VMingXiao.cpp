@@ -12,6 +12,17 @@ datamap_t * CNPC_VMingXiao::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10391030 size=0x7
+#include "CNPC_VMingXiao.h"
+namespace lifted {
+extern float g_104492a8;
+}
+float CNPC_VMingXiao::vfunc522()
+{
+    return lifted::g_104492a8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10391070 size=0x6
 #include "CNPC_VMingXiao.h"
 namespace lifted {
