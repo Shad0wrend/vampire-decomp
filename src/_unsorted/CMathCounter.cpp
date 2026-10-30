@@ -11,3 +11,20 @@ int CMathCounter::vfunc82()
     return (int)&lifted::g_105766dc;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101335c0 size=0x5e
+#include "CMathCounter.h"
+#include <stdlib.h>
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+bool CMathCounter::vfunc110(const char *pszKey, const char *pszValue)
+{
+	if (!_strcmpi(pszKey, "startvalue")) {
+		float f = (float)atoi(pszValue);
+		m_OutValue.sub_100d0390(1, &f);
+		return true;
+	}
+	return sub_1009e430(pszKey, pszValue);
+}
+// END FUNCTION
