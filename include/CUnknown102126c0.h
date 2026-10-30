@@ -8,4 +8,5 @@ class CUnknown102126c0
 {
 public:
 	void sub_102126c0(inputdata_t *pInput);	// input handler: the activator's player object (the local player without one) releases its current target (+0x1040 handle) when it has one, and when it has none lets sub_10167d70(this) take over
+	void sub_10212790(inputdata_t *pInput);	// input handler: the same player object, sub_10167fd0 when its target (+0x1040 handle) is this entity
 };
