@@ -193,6 +193,16 @@ void CMoveHelperServer::vfunc6(int a0, int a1, int a2, int a3, int a4, int a5, i
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013f740 size=0x6
+namespace lifted {
+extern int g_10723944;
+}
+int CMoveHelperServer::vfunc9()
+{
+    return lifted::g_10723944;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013f760 size=0x4c
 #include <stdarg.h>
 
