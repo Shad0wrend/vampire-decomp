@@ -21,6 +21,14 @@ CRagdollProp *CRagdollPropAttached::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10156730 size=0x3
+#include "CRagdollPropAttached.h"
+int CRagdollPropAttached::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10156d50 size=0x29
 struct CUnit10156d50 {
     void sub_10156d50(int a);
