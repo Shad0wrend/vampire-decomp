@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10057130 size=0x6
+namespace lifted {
+extern char g_106be494;
+}
+int CFireSmoke::vfunc80()
+{
+    return (int)&lifted::g_106be494;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057150 size=0x3
 int CFireSmoke::vfunc81()
 {
