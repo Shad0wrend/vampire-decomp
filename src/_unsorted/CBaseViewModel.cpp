@@ -143,6 +143,17 @@ void CBaseViewModel::vfunc265(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042bbc0 size=0x6
+#include "CBaseViewModel.h"
+namespace lifted {
+extern char g_109ee958;
+}
+int CBaseViewModel::vfunc80()
+{
+    return (int)&lifted::g_109ee958;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042bbe0 size=0x3
 #include "CBaseViewModel.h"
 int CBaseViewModel::vfunc81()
