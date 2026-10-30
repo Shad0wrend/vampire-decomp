@@ -17,6 +17,7 @@ public:
 	}
 
 	void vfunc113();
+	void vfunc103();	// slot 103 "Spawn": axis (0, 0, 1), GetVectors into +0x454, slot 93(0, 0), flag +0x47c from bit 0 of +0x204
 	CKeepUpright *vfunc5(unsigned int flags);	// scalar deleting destructor, declared as a plain member
 	void sub_100057c2();	// destructor body
 	CKeepUpright *sub_10029610();	// constructor
