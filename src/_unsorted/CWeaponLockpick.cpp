@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103f4b10 size=0x3
+#include "CWeaponLockpick.h"
+int CWeaponLockpick::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f4e70 size=0x97
 #include "CWeaponLockpick.h"
 #include "CBaseCombatCharacter.h"
