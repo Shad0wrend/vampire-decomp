@@ -4894,6 +4894,7 @@
 0x1000aef2 func   ?vfunc5@CNPC_VTest@@QAEPAV1@I@Z CNPC_VTest::vfunc5
 0x1000af0b func   ?vfunc3@CVariantSaveDataOps@@UAEXH@Z CVariantSaveDataOps::vfunc3
 0x1000af10 func   ??0CTEBreakModel@@QAE@PBD@Z CTEBreakModel::CTEBreakModel
+0x1000af1a func   ?vfunc13@CSoundControllerImp@@UAEHH@Z CSoundControllerImp::vfunc13
 0x1000af1f func   _point_explosion point_explosion
 0x1000af24 func   _env_steamjet env_steamjet
 0x1000af2e func   ?vfunc5@CCollisionProperty@@UAEXXZ CCollisionProperty::vfunc5
