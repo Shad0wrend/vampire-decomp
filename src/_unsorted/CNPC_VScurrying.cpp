@@ -12,6 +12,17 @@ datamap_t * CNPC_VScurrying::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103abba0 size=0x6
+#include "CNPC_VScurrying.h"
+namespace lifted {
+extern char g_1093c490;
+}
+int CNPC_VScurrying::vfunc580()
+{
+    return (int)&lifted::g_1093c490;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103abbe0 size=0x1e
 #include "CNPC_VScurrying.h"
 
