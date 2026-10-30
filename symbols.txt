@@ -7962,6 +7962,7 @@
 0x100111da func   ?sub_100c9250@CBaseButton@@QAEXPAVCBaseEntity@@0HM@Z CBaseButton::sub_100c9250
 0x100111e4 func   ?sub_102489c0@CNamedNode_102489c0@@QAEPAU1@XZ CNamedNode_102489c0::sub_102489c0
 0x100111e9 func   ?vfunc6@CAutoGameSystem@@UAEXXZ CAutoGameSystem::vfunc6
+0x100111ee func   ?vfunc4@CTEEnergySplash@@UAEXPAVCRecipientFilter@@M@Z CTEEnergySplash::vfunc4
 0x100111f3 func   ?vfunc149@CBasePlayer@@QAEXHH@Z CBasePlayer::vfunc149
 0x10011202 func   ??0CWorldEvents@@QAE@XZ CWorldEvents::CWorldEvents
 0x10011207 func   ?vfunc103@CFuncAreaPortalWindow@@UAEXXZ CFuncAreaPortalWindow::vfunc103
