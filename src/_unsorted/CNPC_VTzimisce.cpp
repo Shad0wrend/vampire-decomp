@@ -54,6 +54,14 @@ int CNPC_VTzimisce::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b9020 size=0x3
+#include "CNPC_VTzimisce.h"
+bool CNPC_VTzimisce::vfunc70()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b9060 size=0x84
 #include "CNPC_VTzimisce.h"
 
