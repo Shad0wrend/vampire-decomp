@@ -3543,6 +3543,7 @@
 0x10008472 func   ?sub_10288650@CUnknown10288650@@QAEHXZ CUnknown10288650::sub_10288650
 0x1000847c func   ?sub_10136ea0@CUnknown10136ea0@@QAEHXZ CUnknown10136ea0::sub_10136ea0
 0x10008490 func   ?vfunc0@CTEExplosion@@UAEPAUServerClass@@XZ CTEExplosion::vfunc0
+0x10008495 func   ?vfunc550@CNPC_VPedestrian@@UAEMXZ CNPC_VPedestrian::vfunc550
 0x1000849a func   ?sub_10201190@CVStatList_t@@QAEHH@Z CVStatList_t::sub_10201190
 0x1000849f func   ?sub_1040d950@@YAXXZ sub_1040d950
 0x100084a4 func   ?vfunc5@CNPC_VGuard1@@QAEPAV1@I@Z CNPC_VGuard1::vfunc5

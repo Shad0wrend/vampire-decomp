@@ -12,6 +12,17 @@ datamap_t * CNPC_VPedestrian::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a1de0 size=0x7
+#include "CNPC_VPedestrian.h"
+namespace lifted {
+extern float g_104563b0;
+}
+float CNPC_VPedestrian::vfunc550()
+{
+    return lifted::g_104563b0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a1e00 size=0x6
 #include "CNPC_VPedestrian.h"
 namespace lifted {
