@@ -3390,6 +3390,7 @@
 0x10008346 func   ?sub_10264370@Mem38@@QAEXH@Z Mem38::sub_10264370
 0x1000834b func   ?sub_100e76d0@@YGPAXPAXHH@Z sub_100e76d0
 0x10008350 func   ?sub_10264330@UtlMem@@QAEXXZ UtlMem::sub_10264330
+0x10008373 func   ?vfunc363@CNPCMaker_Zombie@@UAE_NH@Z CNPCMaker_Zombie::vfunc363
 0x1000837d func   ?sub_1008fab0@CBaseAnimating@@QAEMH@Z CBaseAnimating::sub_1008fab0
 0x10008382 func   ?vfunc103@CItemContainerLock@@QAEXXZ CItemContainerLock::vfunc103
 0x10008387 func   ?sub_1019a980@@YAXXZ sub_1019a980
