@@ -470,6 +470,13 @@ void CMultiplayRules::vfunc54(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10142220 size=0x5
+bool CMultiplayRules::vfunc17(int a0)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10142280 size=0x8
 // TARGET: CMultiplayRules::vfunc61
 int CMultiplayRules::vfunc61(int index)
