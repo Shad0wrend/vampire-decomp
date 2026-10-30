@@ -73,3 +73,10 @@ ServerClass * CTEBloodSprite::vfunc0()
     return (ServerClass *)((int)&lifted::g_106c0890);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005dbe0 size=0x3
+int CTEBloodSprite::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
