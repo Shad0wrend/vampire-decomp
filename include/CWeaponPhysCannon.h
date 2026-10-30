@@ -46,4 +46,11 @@ public:
 	CUnknown1040cb60 m_grab;	// 0x96c: the grab controller, its entity handle is at +0xab8
 public:
     virtual char vfunc312();
+    virtual CBaseCombatWeapon *vfunc5(unsigned int flags);    // its own (0x1040daa0)
+    virtual void vfunc103();    // its own (0x1040db00)
+    virtual void vfunc104();    // its own (0x1040dae0)
+    virtual void vfunc299(const float *pVelocity);    // its own (0x1040dc40)
+    virtual char vfunc313();    // its own (0x1040dc70)
+    virtual bool vfunc315();    // its own (0x1040db90)
+    virtual char vfunc316(int a);    // its own (0x1040dc90)
 };
