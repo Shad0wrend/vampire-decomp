@@ -4616,6 +4616,7 @@
 0x1000ad12 func   ?sub_100c8a20@CBaseButton@@QAEXPAVCBaseEntity@@@Z CBaseButton::sub_100c8a20
 0x1000ad21 func   ?sub_100c8350@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_100c8350
 0x1000ad26 func   ?sub_100c2f30@@YAXAAVVector@@0ABUmatrix3x4_t@@1M@Z sub_100c2f30
+0x1000ad2b func   ?vfunc325@CNPC_VTzimisceHeadClaw@@UAE_NXZ CNPC_VTzimisceHeadClaw::vfunc325
 0x1000ad35 func   ?vfunc103@CConstraintAnchor@@UAEXXZ CConstraintAnchor::vfunc103
 0x1000ad3a func   ?sub_1030b8a0@CUnknown1030b8a0@@QAEXPAM@Z CUnknown1030b8a0::sub_1030b8a0
 0x1000ad44 func   ?sub_1012f2b0@@YAHPBD@Z sub_1012f2b0
