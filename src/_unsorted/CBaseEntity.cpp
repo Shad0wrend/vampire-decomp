@@ -180,6 +180,13 @@ bool CBaseEntity::vfunc72(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026b10 size=0x5
+bool CBaseEntity::vfunc74(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026b30 size=0x1
 void CBaseEntity::vfunc76()
 {
