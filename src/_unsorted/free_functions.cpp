@@ -86464,7 +86464,9 @@ struct CUnknown101f0e50U : CUnknown101f0e50 {
 };
 bool CUnknown101f0e50U::sub_101f82d0(int index)
 {
-	return index != -1 && index < m_f04;
+	if (index != -1 && index < m_f04)
+		return true;
+	return false;
 }
 }
 using namespace block_101f8480;
