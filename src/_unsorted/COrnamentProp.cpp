@@ -12,6 +12,17 @@ datamap_t * COrnamentProp::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10190c80 size=0x6
+#include "COrnamentProp.h"
+namespace lifted {
+extern char g_1072b068;
+}
+int COrnamentProp::vfunc80()
+{
+    return (int)&lifted::g_1072b068;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10190ca0 size=0x3
 #include "COrnamentProp.h"
 int COrnamentProp::vfunc81()
