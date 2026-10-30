@@ -153,4 +153,8 @@ public:
 	virtual void vfunc495();
 	virtual void vfunc496();
 	virtual void vfunc497();
+public:
+	virtual int vfunc244();
+	virtual bool vfunc324();
+	virtual bool vfunc325();
 };
