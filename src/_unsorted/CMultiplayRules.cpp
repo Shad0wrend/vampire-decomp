@@ -94,6 +94,13 @@ void CMultiplayRules::vfunc16()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101412e0 size=0x3
+bool CMultiplayRules::vfunc21()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141320 size=0x11
 extern char *g_1070b228;
 

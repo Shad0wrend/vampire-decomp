@@ -1184,6 +1184,7 @@
 0x100038a0 func   ?sub_103eb3c0@@YAHXZ sub_103eb3c0
 0x100038a5 func   ?sub_1006af40@CTEWorldDecal@@QAEPAV1@H@Z CTEWorldDecal::sub_1006af40
 0x100038af func   ?sub_101b2b10@@YAHXZ sub_101b2b10
+0x100038b4 func   ?vfunc21@CMultiplayRules@@UAE_NXZ CMultiplayRules::vfunc21
 0x100038b9 func   ?sub_100eb3b0@@YIXPAH@Z sub_100eb3b0
 0x100038be func   ?sub_1006cff0@StatOwner@@QAEPAUStatDefault@@H@Z StatOwner::sub_1006cff0
 0x100038c3 func   ?sub_102deea0@@YIXPAH@Z sub_102deea0
