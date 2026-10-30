@@ -18,6 +18,16 @@ int CFireSmoke::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100573e0 size=0x6
+namespace lifted {
+extern char g_1053f8b8;
+}
+int CFireSmoke::vfunc82()
+{
+    return (int)&lifted::g_1053f8b8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100574e0 size=0x1e
 #include "CFireSmoke.h"
 
