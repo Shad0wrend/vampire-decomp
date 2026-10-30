@@ -29345,6 +29345,25 @@ float *CBeam::sub_100bb270()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bb6b0 size=0x4e
+#include "CBeam.h"
+
+__declspec(dllimport) void __cdecl Warning(const char *fmt, ...);
+void *sub_10136580(const char *name);
+extern "C" void *__cdecl __RTDynamicCast(void *inptr, long VfDelta, void *SrcType, void *TargetType, int isReference);
+extern char g_10538764[];
+extern char g_1055b054[];
+
+CBeam *sub_100bb6b0(const char *a, int b)
+{
+	CBeam *pBeam = (CBeam *)__RTDynamicCast(sub_10136580("beam"), 0, g_10538764, g_1055b054, 0);
+	if (!pBeam)
+		Warning("classname %s used to create wrong class type\n");
+	pBeam->sub_100bb790(a, b);
+	return pBeam;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bb720 size=0x4c
 struct CFoo { void sub_100b4ad0(int *p); };
 CBaseEntity *sub_100b3db0(const char *classname, const char *module, int line);
