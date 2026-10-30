@@ -81,7 +81,7 @@ public:
 	virtual void vfunc56();	// creates the 0x484 byte object at +4 (CGameRulesSub), null when the allocation fails
 	virtual void vfunc57();
 	virtual int vfunc58(int);
-	virtual void vfunc59();
+	virtual float vfunc59();
 	virtual float vfunc60();
 	virtual int vfunc61(int index);
 	virtual int vfunc62(int index);
