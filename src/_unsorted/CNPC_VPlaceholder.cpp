@@ -47,6 +47,14 @@ void CNPC_VPlaceholder::vfunc316(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a4160 size=0x5
+#include "CNPC_VPlaceholder.h"
+bool CNPC_VPlaceholder::vfunc317(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a41e0 size=0x3
 #include "CNPC_VPlaceholder.h"
 bool CNPC_VPlaceholder::vfunc590()
