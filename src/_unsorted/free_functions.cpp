@@ -59324,6 +59324,22 @@ void sub_101807d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101809e0 size=0x5a
+#include <stdlib.h>
+
+void *sub_101193b0();
+void sub_101cebc0(void *p, int a, int b);
+
+void sub_101809e0()
+{
+	void *pPlayer = sub_101193b0();
+	char a = atoi(engine->vfunc84(1));
+	int b = atoi(engine->vfunc84(2));
+	if (pPlayer)
+		sub_101cebc0(pPlayer, (unsigned char)a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10180af0 size=0x139
 #include <string.h>
 #include "CGlobalEntityList.h"
