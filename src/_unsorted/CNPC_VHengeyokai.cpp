@@ -295,6 +295,14 @@ void CNPC_VHengeyokai::vfunc448(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10380f70 size=0x3
+#include "CNPC_VHengeyokai.h"
+bool CNPC_VHengeyokai::vfunc70()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10380f90 size=0x18
 #include "CNPC_VHengeyokai.h"
 
