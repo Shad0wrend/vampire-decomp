@@ -333,7 +333,7 @@ public:
 	virtual void vfunc445();
 	virtual void vfunc446();
 	virtual void vfunc447();
-	virtual void vfunc448();
+	virtual void vfunc448(int code);	// TaskFail
 	virtual void vfunc449();
 	virtual void vfunc450();
 	virtual int vfunc451();
