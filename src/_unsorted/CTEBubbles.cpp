@@ -55,3 +55,11 @@ void CTEBubbles::vfunc3(const Vector &origin, const QAngle &angles)
 	vfunc4(filter, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005f8c0 size=0x3
+#include "CTEBubbles.h"
+int CTEBubbles::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
