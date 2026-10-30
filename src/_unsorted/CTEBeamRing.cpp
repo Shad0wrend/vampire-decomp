@@ -60,3 +60,11 @@ ServerClass * CTEBeamRing::vfunc0()
     return (ServerClass *)((int)&lifted::g_106bfec0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005c870 size=0x3
+#include "CTEBeamRing.h"
+int CTEBeamRing::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
