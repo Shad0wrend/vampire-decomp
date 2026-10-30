@@ -12,6 +12,17 @@ datamap_t * CNPC_VHunter::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10388060 size=0x6
+#include "CNPC_VHunter.h"
+namespace lifted {
+extern char g_1093b608;
+}
+int CNPC_VHunter::vfunc580()
+{
+    return (int)&lifted::g_1093b608;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103880a0 size=0x1e
 #include "CNPC_VHunter.h"
 
