@@ -50,6 +50,14 @@ int CNPC_VDog::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10374080 size=0x6
+#include "CNPC_VDog.h"
+int CNPC_VDog::vfunc138()
+{
+    return 0xb;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10374130 size=0xed
 #include <math.h>
 #include "CNPC_VDog.h"
