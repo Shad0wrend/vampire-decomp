@@ -12,6 +12,17 @@ datamap_t * CNPC_VZombie::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103de2b0 size=0x6
+#include "CNPC_VZombie.h"
+namespace lifted {
+extern char g_10940398;
+}
+int CNPC_VZombie::vfunc580()
+{
+    return (int)&lifted::g_10940398;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103de4d0 size=0x1d
 #include "CNPC_VZombie.h"
 struct A { int sub_10012300(int); };
