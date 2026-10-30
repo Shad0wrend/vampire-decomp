@@ -23,6 +23,17 @@ int CSprite::vfunc79()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042e210 size=0x6
+#include "CSprite.h"
+namespace lifted {
+extern char g_109f02a8;
+}
+int CSprite::vfunc80()
+{
+    return (int)&lifted::g_109f02a8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042e230 size=0x3
 #include "CSprite.h"
 int CSprite::vfunc81()

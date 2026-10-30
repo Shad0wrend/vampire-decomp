@@ -10209,6 +10209,7 @@
 0x10015ded func   ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z CBaseCombatWeapon::vfunc35
 0x10015dfc func   ??0CUnknown101f4c80@@QAE@H@Z CUnknown101f4c80::CUnknown101f4c80
 0x10015dfc func   ?sub_101f4c80@CUnknown101f4c80@@QAEPAU1@H@Z CUnknown101f4c80::sub_101f4c80
+0x10015e29 func   ?vfunc80@CSprite@@UAEHXZ CSprite::vfunc80
 0x10015e2e func   ?vfunc5@COccultStrength@@QAEPAV1@I@Z COccultStrength::vfunc5
 0x10015e33 func   ??0CAI_RatPlaneSolver@@QAE@H@Z CAI_RatPlaneSolver::CAI_RatPlaneSolver
 0x10015e38 func   ?sub_101dc790@CUnknown101dc790@@QAEXH@Z CUnknown101dc790::sub_101dc790
