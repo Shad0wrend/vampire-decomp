@@ -2318,6 +2318,7 @@
 0x10005c13 func   ?ShiftElementsRight@?$CUtlVector@UCUnknown10076da0TimingTag@@VCUnknown10076da0TagMemory@@@@QAEXHH@Z CUtlVector<CUnknown10076da0TimingTag,CUnknown10076da0TagMemory>::ShiftElementsRight
 0x10005c2c func   ?vfunc489@CNPC_VTest@@QAEXXZ CNPC_VTest::vfunc489
 0x10005c3b func   ?sub_102deec0@UtlMem@@QAEXXZ UtlMem::sub_102deec0
+0x10005c40 func   ?sub_101b78f0@CUtlRBTree232@@QAEAAULinks_t@1@H@Z CUtlRBTree232::sub_101b78f0
 0x10005c4a func   ?sub_1018d840@@YIXPAUSThinkView@@HPAUSInputActivator@@@Z sub_1018d840
 0x10005c4f func   _prop_base prop_base
 0x10005c54 func   ?vfunc44@CMultiplayRules@@UAEXPAVCBaseEntity@@PAUCMPDamageInfo@@@Z CMultiplayRules::vfunc44

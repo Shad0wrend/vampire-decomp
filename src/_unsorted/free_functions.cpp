@@ -69281,6 +69281,15 @@ int CUnknown101b7430::sub_101b7430()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b78f0 size=0x58
+#include "CUtlRBTree232.h"
+CUtlRBTree232::Links_t &CUtlRBTree232::sub_101b78f0(int i)
+{
+	const CUtlRBTree232At<0x1072c414> *tree = (const CUtlRBTree232At<0x1072c414> *)this;
+	return (Links_t &)tree->Links(i);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b7df0 size=0xcf
 #include "CUnknown101b9140.h"
 
