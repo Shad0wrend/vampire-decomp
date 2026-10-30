@@ -18,6 +18,7 @@ public:
     virtual void vfunc130(int a);
     void sub_1023ca30();    // stub 0x10011e82    // slot 134: its own (0x1023c6f0)
     virtual void vfunc103();    // slot 103: its own (0x1023bba0)
+    virtual void vfunc104();    // slot 104: its own (0x1023c020)
     virtual int vfunc126(int a);    // slot 126: its own (0x1023b5e0)
     virtual int vfunc127(int a);    // slot 127: its own (0x1023b600)
     CWorld *vfunc5(unsigned int flags);    // as in CPhysForce (transplant)
