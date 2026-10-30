@@ -9,6 +9,7 @@ class CVampireProjectile_MingXiaoSpit : public CVampireProjectile
 public:
 	CVampireProjectile_MingXiaoSpit *vfunc5(unsigned int flags);
 	void sub_1000a21d();
+	~CVampireProjectile_MingXiaoSpit();	// 0x103f1840: ends the slow effect on the target's character and drops the handle
 	CVampireProjectile_MingXiaoSpit *sub_103f17d0();	// as in CKeepUpright (transplant)
 	void vfunc134();	// slot 134 "CVampireProjectile_MingXiaoSpit::Think": once curtime reached the expiry time at +0x8c0 clears it (FLT_MAX), ends the slow effect (sub_103327f0(500.0f)) on the character behind the entity of the handle at +0x8bc (when it has one at +0x9c), drops the handle and removes itself; then runs the inlined CBaseEntity::Think (scope trace and the think function pointer at +0x118)
 	virtual void vfunc266(CBaseEntity *pOther);	// slot 266: once per spit, slows the character of pOther (+0x9c) for a while (emitters at the player and its HUD) and plays the impact emitter; then CVampireProjectile::vfunc266
