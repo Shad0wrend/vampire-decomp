@@ -472,6 +472,13 @@ int CBaseEntity::vfunc237()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009a680 size=0x3
+int CBaseEntity::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009ac80 size=0xb4
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
