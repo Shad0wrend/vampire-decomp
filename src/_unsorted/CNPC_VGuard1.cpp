@@ -23,6 +23,17 @@ int CNPC_VGuard1::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037c680 size=0x6
+#include "CNPC_VGuard1.h"
+namespace lifted {
+extern int g_1063b608;
+}
+int CNPC_VGuard1::vfunc451()
+{
+    return lifted::g_1063b608;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037c6a0 size=0x1e
 #include "CNPC_VGuard1.h"
 
