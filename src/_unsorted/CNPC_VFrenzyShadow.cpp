@@ -33,6 +33,12 @@ void CNPC_VFrenzyShadow::vfunc433()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10376b50 size=0x3
+void CNPC_VFrenzyShadow::vfunc144(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10376b70 size=0x1a
 #include "CNPC_VFrenzyShadow.h"
 struct S10924edc { virtual void a(); virtual void b(); };
