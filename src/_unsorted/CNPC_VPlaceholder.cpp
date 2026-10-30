@@ -142,6 +142,17 @@ bool CNPC_VPlaceholder::vfunc364(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a42e0 size=0x6
+#include "CNPC_VPlaceholder.h"
+namespace lifted {
+extern char g_1093c040;
+}
+int CNPC_VPlaceholder::vfunc580()
+{
+    return (int)&lifted::g_1093c040;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a4320 size=0x1e
 #include "CNPC_VPlaceholder.h"
 
