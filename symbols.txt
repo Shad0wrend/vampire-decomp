@@ -10046,6 +10046,7 @@
 0x1001541a func   ?vfunc264@CBaseAnimating@@QAEXXZ CBaseAnimating::vfunc264
 0x1001541f func   ?sub_10316fd0@@YAHH@Z sub_10316fd0
 0x10015424 func   ?sub_10157d30@CUnitEnt@@QAEXXZ CUnitEnt::sub_10157d30
+0x1001542e func   ?sub_102c9c30@@YAXXZ sub_102c9c30
 0x10015433 func   ?vfunc4@CTEBeamRing@@UAEXHH@Z CTEBeamRing::vfunc4
 0x1001543d func   ?vfunc5@CRevertSaved@@QAEPAV1@I@Z CRevertSaved::vfunc5
 0x1001544c func   ?sub_100de930@CUnknown100de930@@QAEXXZ CUnknown100de930::sub_100de930

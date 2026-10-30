@@ -115735,6 +115735,32 @@ int sub_102c8cc0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c9c30 size=0x5a
+struct CConditionIdList { const char *sub_102ea020(int id); };
+extern CConditionIdList g_109203dc;
+const char *sub_1027e7f0(int condition);
+__declspec(dllimport) void __cdecl DevMsg(const char *, ...);
+extern void (__cdecl *g_109f366c)(const char *, ...);
+static inline int GlobalConditionId(int c)
+{
+	return c != -1 ? c + 1000000000 : -1;
+}
+void sub_102c9c30()
+{
+	int i = 0;
+	bool bMissing = false;
+	do {
+		if (!g_109203dc.sub_102ea020(GlobalConditionId(i))) {
+			DevMsg("\n\n\nCondition #%d (%s) was not added to the string registry.\n\n\n", i, sub_1027e7f0(i));
+			bMissing = true;
+		}
+		i++;
+	} while (i < 0x77);
+	if (bMissing)
+		g_109f366c("You gonna die, beyotch!");
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c9cf0 size=0x1a
 namespace lifted {
 extern int g_10602f58;
