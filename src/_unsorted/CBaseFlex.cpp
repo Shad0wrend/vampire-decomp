@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100b5540 size=0x3
+#include "CBaseFlex.h"
+int CBaseFlex::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b57b0 size=0x6
 #include "CBaseFlex.h"
 namespace lifted {
