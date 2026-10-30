@@ -482,6 +482,13 @@ int CBaseEntity::sub_10027570()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10027610 size=0x7
+char * CBaseEntity::vfunc2()
+{
+    return (char *)this + 0x270;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027650 size=0x3
 void * CBaseEntity::vfunc4()
 {
