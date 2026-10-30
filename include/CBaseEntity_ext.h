@@ -89,4 +89,5 @@
 	void sub_10257560(CBaseEntity *pOther, int a, int b);	// passes the engine indexes (slot 35) of pOther's and this entity's edicts (+0x2e0) to sub_101eddf0 (stub 0x100079f5); a and b unused
 	bool vfunc164();	// slot 164: false when the flags from slot 211 have bit 4; true when slot 92 returns 1, 6 or 2; else sub_100b5110()
 	void sub_10269960();	// fade step: while the alpha byte (+0x1a3) is above 7 subtracts 7 and thinks again in 0.1s, else clears it, thinks in 0.2s and sets the think function to sub_101c0b10
+	void sub_101c1a70();	// sets the movement direction at +0x190 from the flags at +0x204: bit 6 = (0, 0, 1), bit 7 = (1, 0, 0), else (0, 1, 0)
 	void vfunc225();	// slot 225 (plain member): unless the physics object at +0x36c is null, calls sub_1002ee60(this), sub_10158520(object, this) and clears +0x36c
