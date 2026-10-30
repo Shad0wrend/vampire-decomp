@@ -23,6 +23,17 @@ int CNPC_VStalker::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b28d0 size=0x6
+#include "CNPC_VStalker.h"
+namespace lifted {
+extern int g_10651d00;
+}
+int CNPC_VStalker::vfunc451()
+{
+    return lifted::g_10651d00;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b28f0 size=0x1e
 #include "CNPC_VStalker.h"
 
