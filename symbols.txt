@@ -9319,6 +9319,7 @@
 0x100141f0 func   ?vfunc82@CMomentaryRotButton@@UAEHXZ CMomentaryRotButton::vfunc82
 0x100141fa func   ?vfunc9@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc9
 0x100141ff func   ?vfunc5@CAmbientGeneric@@QAEPAV1@I@Z CAmbientGeneric::vfunc5
+0x10014209 func   ?vfunc580@CNPC_VTzimisce@@UAEHXZ CNPC_VTzimisce::vfunc580
 0x1001420e func   ?sub_1027ba80@@YAHXZ sub_1027ba80
 0x10014218 func   ?vfunc30@CSave@@UAEXPBDABVVector@@@Z CSave::vfunc30
 0x1001421d func   ?vfunc5@CPushable@@UAEPAV1@I@Z CPushable::vfunc5

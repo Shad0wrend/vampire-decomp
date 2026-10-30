@@ -36,6 +36,17 @@ int CNPC_VTzimisce::vfunc244()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b6e50 size=0x6
+#include "CNPC_VTzimisce.h"
+namespace lifted {
+extern char g_1093ce70;
+}
+int CNPC_VTzimisce::vfunc580()
+{
+    return (int)&lifted::g_1093ce70;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b6e90 size=0xe1
 #include "CNPC_VNewscaster.h"
 #include "CNPC_VTzimisce.h"
