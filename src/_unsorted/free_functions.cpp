@@ -28493,6 +28493,21 @@ int sub_100b7780()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7880 size=0x59
+#include "SendProp.h"
+struct CUnknown10247240 { void sub_10247240(int a, int b, int c); };
+SendProp sub_10246af0(const char *name, int a, int b, int c, int d, int e, void *f);
+extern CUnknown10247240 g_106d0694;
+extern int g_106d070c;
+extern int g_10559d74;
+int sub_100b7880()
+{
+	static SendProp s_dummy = sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0);
+	g_106d0694.sub_10247240((int)&g_106d070c, 0, g_10559d74);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7a00 size=0x4
 struct CUnknown100b7a00 { char * sub_100b7a00(); };
 char * CUnknown100b7a00::sub_100b7a00()
