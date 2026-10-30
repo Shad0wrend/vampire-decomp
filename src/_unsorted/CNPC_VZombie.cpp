@@ -123,6 +123,14 @@ void CNPC_VZombie::vfunc431()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e03b0 size=0x5
+#include "CNPC_VZombie.h"
+bool CNPC_VZombie::vfunc566(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e0430 size=0xc3
 #include "CNPC_VZombie.h"
 #include "CUnknown101c2a50.h"

@@ -2664,6 +2664,7 @@
 0x10006aa0 func   ?sub_10203190@StatOwner2@@QAEPAVCUnknown102029c0@@H@Z StatOwner2::sub_10203190
 0x10006aaa func   ?sub_101584b0@@YAXPAUCObj@@@Z sub_101584b0
 0x10006aaf func   ?vfunc2@CTESprite@@UAEPAV1@I@Z CTESprite::vfunc2
+0x10006ab4 func   ?vfunc566@CNPC_VZombie@@UAE_NH@Z CNPC_VZombie::vfunc566
 0x10006ab9 func   ?vfunc0@CNavPropertyDatabase@@QAE_NXZ CNavPropertyDatabase::vfunc0
 0x10006abe func   ?sub_101d08e0@@YAMABVVector@@MM@Z sub_101d08e0
 0x10006ac3 func   ?sub_101816c0@CBasePlayer@@QAEXPBD@Z CBasePlayer::sub_101816c0
