@@ -14,6 +14,13 @@ CTETParticleHUD *CTETParticleHUD::vfunc2(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10069f90 size=0x1
+#include "CTETParticleHUD.h"
+void CTETParticleHUD::vfunc5()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10069fd0 size=0x39
 #include "CTETParticleHUD.h"
 #include "IVEngineServerFull.h"
