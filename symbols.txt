@@ -5974,6 +5974,7 @@
 0x1000d463 func   ?sub_10076fc0@CUnknown10076fc0@@QAEPADXZ CUnknown10076fc0::sub_10076fc0
 0x1000d468 func   ?vfunc84@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc84
 0x1000d46d func   ?sub_103a5da0@@YADXZ sub_103a5da0
+0x1000d472 func   ?vfunc82@CNPC_VFrenzyShadow@@UAEHXZ CNPC_VFrenzyShadow::vfunc82
 0x1000d486 func   ?sub_100b1d10@CBaseEntity@@QAEXXZ CBaseEntity::sub_100b1d10
 0x1000d490 func   ?vfunc9@CAI_Navigator@@UAEXHM@Z CAI_Navigator::vfunc9
 0x1000d495 func   ?vfunc164@CBaseEntity@@QAE_NXZ CBaseEntity::vfunc164
