@@ -234,6 +234,13 @@ float CGenericSabbat_NPC::vfunc516()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035bfb0 size=0x1
+#include "CGenericSabbat_NPC.h"
+void CGenericSabbat_NPC::vfunc434()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035c010 size=0x1a
 #include "CGenericSabbat_NPC.h"
 

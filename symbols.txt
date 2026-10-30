@@ -1598,6 +1598,7 @@
 0x1000483b func   ?sub_101db870@CUnknown101db210Sub@@QAEHHH@Z CUnknown101db210Sub::sub_101db870
 0x1000484a func   ?sub_1024ed00@@YAXAAVVMatrix@@MMM@Z sub_1024ed00
 0x10004854 func   ?vfunc5@CItemContainerAnimated@@QAEPAV1@I@Z CItemContainerAnimated::vfunc5
+0x1000485e func   ?vfunc434@CGenericSabbat_NPC@@UAEXXZ CGenericSabbat_NPC::vfunc434
 0x10004868 func   ?vfunc5@CLogicPythonCheck@@QAEPAV1@I@Z CLogicPythonCheck::vfunc5
 0x10004872 func   ?sub_1042d570@CUnknown1042d570@@QAEPAXHH@Z CUnknown1042d570::sub_1042d570
 0x1000487c func   ?vfunc627@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc627
