@@ -201,3 +201,12 @@ int CNPC_VPlaceholder::vfunc437()
     return 0x157;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103a4410 size=0x10
+#include "CNPC_VPlaceholder.h"
+int CNPC_VPlaceholder::vfunc438()
+{
+    *(int *)((char *)this + 0x1b2c) = 0x1e;
+    return 0x157;
+}
+// END FUNCTION
