@@ -8271,6 +8271,7 @@
 0x10012904 func   ?vfunc5@CWeaponRanged_Tzimisce2Head@@QAEPAV1@I@Z CWeaponRanged_Tzimisce2Head::vfunc5
 0x10012918 func   ?vfunc546@CGenericSabbat_NPC@@QAEHH@Z CGenericSabbat_NPC::vfunc546
 0x1001291d func   ?sub_1009bc30@CBaseEntity@@QAEXHPADH@Z CBaseEntity::sub_1009bc30
+0x1001292c func   ?vfunc615@CNPC_VWerewolf@@UAE_NXZ CNPC_VWerewolf::vfunc615
 0x10012936 func   ?vfunc461@CNPC_VAsianVampire@@QAEHXZ CNPC_VAsianVampire::vfunc461
 0x1001293b func   ?vfunc81@CBaseCombatCharacter@@UAEHXZ CBaseCombatCharacter::vfunc81
 0x10012940 func   ?vfunc0@CEffectsServer@@UAEPAV1@I@Z CEffectsServer::vfunc0

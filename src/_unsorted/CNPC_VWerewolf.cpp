@@ -13,6 +13,13 @@ int CNPC_VWerewolf::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ca6b0 size=0x3
+bool CNPC_VWerewolf::vfunc615()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ca790 size=0x1e
 #include "CNPC_VWerewolf.h"
 
