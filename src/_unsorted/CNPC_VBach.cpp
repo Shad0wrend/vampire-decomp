@@ -124,6 +124,14 @@ int CNPC_VBach::vfunc473()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10363990 size=0x6
+#include "CNPC_VBach.h"
+int CNPC_VBach::vfunc138()
+{
+    return 0x19;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103639b0 size=0x2e
 // TARGET: sub_103639b0
 
