@@ -380,6 +380,13 @@ int CBaseEntity::sub_10027570()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10027650 size=0x3
+void * CBaseEntity::vfunc4()
+{
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10039ff0 size=0x71
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
