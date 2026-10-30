@@ -79694,6 +79694,25 @@ CUnknown101dcc80Record *CUnknown101dcc80::sub_101dcc80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dcdb0 size=0x5d
+#include "CUnknown101dcdb0.h"
+
+void CUnknown101dcdb0::sub_101dcdb0()
+{
+	if (m_ppItems) {
+		for (int i = 0; i < m_nCount; i++) {
+			if (m_ppItems[i])
+				delete m_ppItems[i];
+			m_ppItems[i] = 0;
+		}
+		delete m_ppItems;
+		m_ppItems = 0;
+	}
+	m_nCount = 0;
+	m_nGrow = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dce30 size=0xac
 #include "CUnknown101dce30.h"
 
