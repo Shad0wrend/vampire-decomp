@@ -22,4 +22,6 @@ public:
 	int m_dir[3];	// 0x0018
 public:
     virtual ServerClass * vfunc0();
+public:
+    virtual int vfunc1();
 };

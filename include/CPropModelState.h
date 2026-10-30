@@ -33,4 +33,6 @@ public:
 	COutputEvent m_OnState[8];	// 0x790: fired when the state is set
 public:
     virtual datamap_t * vfunc82();
+public:
+    virtual int vfunc117();
 };

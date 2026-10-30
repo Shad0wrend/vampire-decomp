@@ -15,4 +15,7 @@ public:
 	int m_nLevel918;	// 0x918
 public:
     virtual datamap_t * vfunc82();
+public:
+    virtual int vfunc81();
+    virtual int vfunc80();
 };

@@ -29,4 +29,6 @@ public:
 	COutputEvent m_OnPosition[8];	// 0x774: one output per position
 public:
     virtual datamap_t * vfunc82();
+public:
+    virtual int vfunc117();
 };

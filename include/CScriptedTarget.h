@@ -14,4 +14,6 @@ public:
 	int m_n5f50;	// 0x5f50
 public:
     virtual datamap_t * vfunc82();
+public:
+    virtual int vfunc117();
 };

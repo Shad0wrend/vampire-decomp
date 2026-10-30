@@ -45,4 +45,8 @@ public:
 	virtual bool vfunc365(int);
 public:
 	virtual int vfunc359(int);
+public:
+    virtual bool vfunc72(int);
+    virtual float vfunc37();
+    virtual int vfunc117();
 };

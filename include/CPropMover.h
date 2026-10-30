@@ -8,4 +8,6 @@ public:
 	CPropMover *vfunc5(unsigned int flags);
 	void sub_10004c3c();
 	CPropMover *sub_10192870();	// as in CKeepUpright (transplant)
+public:
+    virtual int vfunc117();
 };

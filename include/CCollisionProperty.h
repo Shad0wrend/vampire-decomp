@@ -84,4 +84,10 @@ public:
     virtual float * vfunc1();
     virtual float * vfunc2();
     virtual void vfunc7();
+public:
+    virtual int vfunc13();
+    virtual int vfunc0();
+    virtual int vfunc11();
+    virtual int vfunc18();
+    virtual short vfunc12();
 };

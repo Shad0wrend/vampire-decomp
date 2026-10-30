@@ -8,4 +8,7 @@ public:
 	CWeaponRanged_Rifle_Remington *vfunc5(unsigned int flags);
 	void sub_10013a57();
 	CWeaponRanged_Rifle_Remington *sub_10236070();	// as in CKeepUpright (transplant)
+public:
+    virtual int vfunc81();
+    virtual int vfunc80();
 };

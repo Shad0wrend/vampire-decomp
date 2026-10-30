@@ -26,4 +26,7 @@ public:
 public:
     virtual bool vfunc32(int);
     virtual datamap_t * vfunc82();
+public:
+    virtual bool vfunc44(int);
+    virtual float vfunc37();
 };

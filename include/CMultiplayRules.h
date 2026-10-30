@@ -49,4 +49,17 @@ public:
 	void sub_101427f0(int nEdict);	// stub 0x1000d2d8: tells the rules about the new player's edict index
 public:
     virtual char vfunc74();
+public:
+    virtual bool vfunc72();
+    virtual bool vfunc21();
+    virtual bool vfunc22();
+    virtual void vfunc54(int, int, int);
+    virtual bool vfunc18();
+    virtual bool vfunc31(int, int);
+    virtual bool vfunc37(int);
+    virtual bool vfunc17(int);
+    virtual int vfunc64(int, int);
+    virtual float vfunc59();
+    virtual float vfunc60();
+    virtual bool vfunc26(int, int, int, int);
 };

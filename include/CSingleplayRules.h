@@ -26,4 +26,15 @@ public:
     virtual void vfunc45(CBaseEntity *, CMPDamageInfo *);
     virtual char vfunc74();
     virtual char vfunc19(CBaseEntity *, CBaseEntity *);
+public:
+    virtual bool vfunc18();
+    virtual bool vfunc21();
+    virtual bool vfunc22();
+    virtual bool vfunc24();
+    virtual void vfunc54(int, int, int);
+    virtual bool vfunc26(int, int, int, int);
+    virtual bool vfunc37(int);
+    virtual bool vfunc17(int);
+    virtual int vfunc64(int, int);
+    virtual float vfunc59();
 };

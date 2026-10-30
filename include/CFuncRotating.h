@@ -30,4 +30,7 @@ public:
 	const char *m_pszNoiseRunning;	// 0x468
 public:
     virtual datamap_t * vfunc82();
+public:
+    virtual bool vfunc128();
+    virtual int vfunc117();
 };

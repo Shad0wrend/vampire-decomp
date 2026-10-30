@@ -31,4 +31,6 @@ public:
 	Vector m_vecEnd;	// 0x50
 public:
     virtual ServerClass * vfunc0();
+public:
+    virtual int vfunc1();
 };

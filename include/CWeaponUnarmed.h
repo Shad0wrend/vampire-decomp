@@ -8,4 +8,7 @@ public:
 	CWeaponUnarmed *vfunc5(unsigned int flags);
 	void sub_10013a57();
 	CWeaponUnarmed *sub_103f53f0();	// as in CKeepUpright (transplant)
+public:
+    virtual int vfunc81();
+    virtual int vfunc80();
 };

@@ -35,4 +35,7 @@ public:
 	float m_f44;
 	float m_f48;
 	char m_szText[0x80];	// 0x4c
+public:
+    virtual int vfunc1();
+    virtual ServerClass * vfunc0();
 };

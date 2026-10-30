@@ -230,4 +230,9 @@ public:
 	void sub_100078c4();	// as in CPhysForce (transplant)
 public:
     virtual datamap_t * vfunc82();
+public:
+    virtual int vfunc81();
+    virtual bool vfunc72(int);
+    virtual int vfunc79();
+    virtual int vfunc80();
 };

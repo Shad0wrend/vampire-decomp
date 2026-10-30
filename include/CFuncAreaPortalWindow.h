@@ -17,4 +17,7 @@ public:
 	int m_nFadeValue;	// 0x468
 public:
     virtual datamap_t * vfunc82();
+public:
+    virtual int vfunc81();
+    virtual int vfunc80();
 };

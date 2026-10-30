@@ -24,4 +24,6 @@ public:
 	float m_flLife73c;	// 0x73c
 public:
     virtual datamap_t * vfunc82();
+public:
+    virtual int vfunc117();
 };

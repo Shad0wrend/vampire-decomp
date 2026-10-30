@@ -10,4 +10,7 @@ public:
 	CEntityFlame *sub_100f5450();	// as in CKeepUpright (transplant)
 public:
     virtual datamap_t * vfunc82();
+public:
+    virtual int vfunc81();
+    virtual int vfunc80();
 };

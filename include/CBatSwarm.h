@@ -35,4 +35,7 @@ public:
 	void sub_100b8d50(int iBat, float flStep);	// moves one bat (stub 0x10007405), called directly
 public:
     virtual datamap_t * vfunc82();
+public:
+    virtual int vfunc81();
+    virtual int vfunc80();
 };

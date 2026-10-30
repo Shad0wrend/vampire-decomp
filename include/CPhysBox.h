@@ -27,4 +27,9 @@ public:
 public:
     virtual datamap_t * vfunc82();
     void vfunc230(int a, int b);	// as in CBreakable (transplant)
+public:
+    virtual int vfunc81();
+    virtual int vfunc80();
+    virtual int vfunc117();
+    virtual int vfunc42(int);
 };

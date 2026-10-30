@@ -45,4 +45,8 @@ public:
     virtual void vfunc230(int, int);
 public:
     virtual void vfunc231(int, int, int, int);
+public:
+    virtual int vfunc81();
+    virtual int vfunc131();
+    virtual int vfunc80();
 };

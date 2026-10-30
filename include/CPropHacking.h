@@ -108,4 +108,7 @@ public:
 	char m_b0c2c;	// 0xc2c
 public:
     virtual datamap_t * vfunc82();
+public:
+    virtual int vfunc33();
+    virtual int vfunc117();
 };

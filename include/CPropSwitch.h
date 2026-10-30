@@ -27,4 +27,6 @@ public:
 	virtual void vfunc71();	// slot 71 "GetVSoundTable": looks the sound set named by the string at +0xc0 up in the sound table (0x1073dc00) into +0xb4, clears +0xbc and caches the ids of the sounds "on" / "off" in 0x1074f13c / 0x1074f140
 public:
     virtual datamap_t * vfunc82();
+public:
+    virtual int vfunc117();
 };

@@ -48,4 +48,7 @@ public:
 	float m_vecEndPos[3];	// 0x4d8
 public:
     virtual datamap_t * vfunc82();
+public:
+    virtual int vfunc81();
+    virtual int vfunc80();
 };

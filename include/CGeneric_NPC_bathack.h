@@ -28,4 +28,6 @@ public:
 	virtual int vfunc138();
 public:
 	virtual int vfunc432(int);
+public:
+    virtual int vfunc117();
 };

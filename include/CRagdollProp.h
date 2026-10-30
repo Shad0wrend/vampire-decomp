@@ -85,4 +85,9 @@ public:
 public:
     virtual datamap_t * vfunc82();
     virtual void vfunc39(CBaseEntity *);
+public:
+    virtual int vfunc81();
+    virtual bool vfunc128();
+    virtual int vfunc80();
+    virtual int vfunc42(int);
 };

@@ -22,4 +22,6 @@ public:
     void vfunc4(int a, int b);	// as in CTEMetalSparks (transplant)
 public:
 	virtual void vfunc3(int, int);
+public:
+    virtual int vfunc1();
 };

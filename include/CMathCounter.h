@@ -15,4 +15,6 @@ public:
 	float m_flMax;	// 0x454
 	char m_pad0458[4];
 	variant_t m_OutValue;	// 0x45c
+public:
+    virtual int vfunc82();
 };

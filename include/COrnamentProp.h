@@ -24,4 +24,7 @@ public:
 	void sub_100a0670(CBaseEntity *pParent, int iAttachment);	// "CBaseEntity::SetParent" (stub 0x10005650)
 public:
     virtual datamap_t * vfunc82();
+public:
+    virtual int vfunc81();
+    virtual int vfunc80();
 };

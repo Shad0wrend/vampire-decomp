@@ -78,4 +78,9 @@ public:
 	unsigned int m_hHeld19b0;	// 0x19b0: handle of the entity the grenade is checked against (slot 407)
 public:
     virtual datamap_t * vfunc82();
+public:
+    virtual int vfunc81();
+    virtual bool vfunc72(int);
+    virtual int vfunc80();
+    virtual int vfunc79();
 };

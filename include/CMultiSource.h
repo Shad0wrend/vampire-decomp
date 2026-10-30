@@ -19,4 +19,6 @@ public:
 	const char *m_pszGlobalState;	// 0x56c
 public:
     virtual datamap_t * vfunc82();
+public:
+    virtual int vfunc117();
 };

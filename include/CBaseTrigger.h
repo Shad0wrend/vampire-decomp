@@ -29,4 +29,6 @@ public:
 	COutputEvent m_out580;
 public:
     virtual datamap_t * vfunc82();
+public:
+    virtual int vfunc117();
 };

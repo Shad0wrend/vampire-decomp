@@ -18,4 +18,7 @@ public:
 	int m_nDisc8bc;	// 0x8bc: the discipline id
 public:
     virtual datamap_t * vfunc82();
+public:
+    virtual int vfunc81();
+    virtual int vfunc80();
 };

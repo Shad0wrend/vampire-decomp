@@ -20,4 +20,6 @@ public:
 	COutputEvent m_OnTrigger;	// 0x454
 public:
     virtual datamap_t * vfunc82();
+public:
+    virtual int vfunc117();
 };

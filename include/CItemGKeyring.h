@@ -13,4 +13,7 @@ public:
 public:
     virtual datamap_t * vfunc82();
     virtual void vfunc130(int);
+public:
+    virtual int vfunc81();
+    virtual int vfunc80();
 };

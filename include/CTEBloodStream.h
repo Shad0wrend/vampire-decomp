@@ -29,4 +29,6 @@ public:
 	Vector &Direction() { return *(Vector *)m_vecDirection; }
 public:
     virtual ServerClass * vfunc0();
+public:
+    virtual int vfunc1();
 };

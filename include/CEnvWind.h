@@ -17,4 +17,6 @@ public:
 public:
 	virtual void vfunc141(int, int, int);
 	virtual void vfunc241(int, int, int, int, int);
+public:
+    virtual int vfunc117();
 };

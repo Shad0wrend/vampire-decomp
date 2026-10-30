@@ -14,4 +14,7 @@ public:
 	virtual bool vfunc86(int unused, int edict, int c, int d, int e);	// slot 86: false when the index at +0x450 is negative, else true when the engine's IndexOfEdict(edict) (slot 35 of the global at 0x1070b22c) equals it
 public:
     virtual datamap_t * vfunc82();
+public:
+    virtual int vfunc81();
+    virtual int vfunc80();
 };

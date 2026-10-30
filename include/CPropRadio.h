@@ -32,4 +32,6 @@ public:
 	int m_nCurrentShow;	// 0x74c: index of the selected record, -1 when none
 public:
     virtual datamap_t * vfunc82();
+public:
+    virtual int vfunc117();
 };

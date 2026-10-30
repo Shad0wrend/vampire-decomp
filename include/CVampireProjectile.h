@@ -49,4 +49,7 @@ public:
 	void sub_101ef3d0();	// emits the sound named at +0x880 ("" when null) through a PAS attenuation filter
 public:
     virtual datamap_t * vfunc82();
+public:
+    virtual int vfunc81();
+    virtual int vfunc80();
 };

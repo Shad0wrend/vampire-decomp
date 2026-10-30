@@ -31,4 +31,9 @@ public:
 	EHANDLE m_hOwner734;	// 0x734
     virtual void vfunc104();
     virtual datamap_t * vfunc82();
+public:
+    virtual int vfunc81();
+    virtual int vfunc80();
+    virtual int vfunc79();
+    virtual int vfunc117();
 };

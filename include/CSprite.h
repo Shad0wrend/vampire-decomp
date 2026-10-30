@@ -17,4 +17,8 @@ public:
 	void sub_1042e9f0(int a, int b);	// "CSprite::SpriteInit" (stub 0x10008481): sets the sprite model and origin
 public:
     virtual datamap_t * vfunc82();
+public:
+    virtual int vfunc81();
+    virtual int vfunc79();
+    virtual int vfunc80();
 };

@@ -19,4 +19,7 @@ public:
 	virtual int vfunc362();
 public:
 	virtual int vfunc363();
+public:
+    virtual int vfunc81();
+    virtual int vfunc80();
 };

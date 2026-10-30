@@ -55,4 +55,8 @@ public:
 public:
     virtual datamap_t * vfunc82();
     void vfunc103();	// as in CFlameCluster (transplant)
+public:
+    virtual int vfunc81();
+    virtual int vfunc80();
+    virtual int vfunc117();
 };

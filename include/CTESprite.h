@@ -23,4 +23,6 @@ public:
 	Vector &Origin() { return *(Vector *)m_c; }
 public:
     virtual ServerClass * vfunc0();
+public:
+    virtual int vfunc1();
 };
