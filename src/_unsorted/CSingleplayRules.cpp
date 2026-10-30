@@ -100,6 +100,13 @@ CBaseEntity *CSingleplayRules::vfunc20(CBaseEntity *pPlayer, CBaseEntity *pCurre
 }
 // END FUNCTION
 
+// FUNCTION: 0x101abe10 size=0x5
+bool CSingleplayRules::vfunc26(int a0, int a1, int a2, int a3)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101abe50 size=0x3
 void CSingleplayRules::vfunc28(void * a0)
 {
