@@ -61,7 +61,7 @@ public:
 	virtual void vfunc29(const char *pszName, void *pData, int count);	// slot used by WriteField for field type 0xe
 	virtual void vfunc30(const char *pszName, const Vector &value);	// named version of vfunc28: the same landmark relative vector, written through slot 22 under pszName
 	virtual void vfunc31(void *pBase, const char *pszName, void *pData, int count);	// slot used by WriteField for field type 0x13
-	virtual void vfunc32();
+	virtual void vfunc32(const int *pHandles, int count);	// converts count entities to table indices (sub_101a08f0) on the stack, writes them through slot 10
 	virtual void vfunc33(const char *pszName, void *pData, int count);	// slot used by WriteField for field type 0xb
 	virtual void vfunc34();
 	virtual void vfunc35(const char *pszName, void *pData, int count);	// slot used by WriteField for field type 0xd
