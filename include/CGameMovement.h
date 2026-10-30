@@ -21,7 +21,7 @@ public:
 	virtual void vfunc10(Vector &wishdir, float wishspeed, float accel);	// slot 10 "Accelerate": when slot 9 allows, adds up to min(frametime * surface friction (+0xa0) * wishspeed * accel, wishspeed - velocity . wishdir) along wishdir to the velocity (the vector at +0x40 of the object at +0x4); nothing when the velocity already reaches wishspeed
 	virtual void slot11();
 	virtual void slot12();
-	virtual void slot13();
+	virtual void vfunc13(int);
 	virtual int vfunc14(int type);	// slot 14: maps type 0 to 0x14, 1 to 0x1a, 2 to 0xd and any other to 1
 	virtual char vfunc15(void *pSurface, float volume);	// slot 15: in multiplayer with m_field10 clear, true only when the player's horizontal speed is above 195.0f
 	virtual void slot16();
@@ -30,7 +30,7 @@ public:
 	virtual void slot19(int a, int b);
 	virtual char vfunc20(); virtual char vfunc21(void *pTrace);	// slot 21: true when the trace's flags (+0x30) have 0x20000000, else when the surface property record (global 0x1071a278 slot 9, then slot 5 with the short at +0x40) has its byte at +0x72 set
 	virtual void slot22();
-	virtual void slot23();
+	virtual float vfunc23();
 	virtual void slot24();
 	virtual void vfunc25();	// slot 25: once (flag byte +0xdc), when the flags of the move data (+8) have bit 1, scales the three floats at +0x2c of the player (+4) by a third
 	void sub_100102f3();	// as in CDataObjectAccessSystem (transplant)
@@ -82,8 +82,4 @@ public:
 	float *sub_1011e310();	// stub 0x10009bbf: the hull mins for the player's stance
 	void sub_10124ba0();	// a zero length hull trace at the player's origin (ducked hull, pass entity the move data, group from its +0x368): the line is drawn by the movement debug convar, and for a start solid hit on an entity the engine knows (slot 35 of the engine) sub_10124630 handles it (with the second convar set at once, else only when the entity's flags (slot 211) have bit 6)
 	void sub_10124630(void *pEnt);	// stub 0x10005e93: the stuck entity handler
-public:
-	virtual void vfunc13(int);
-public:
-	virtual float vfunc23();
 };
