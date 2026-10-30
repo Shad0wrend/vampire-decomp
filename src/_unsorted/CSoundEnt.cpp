@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101b97e0 size=0x6
+#include "CSoundEnt.h"
+int CSoundEnt::vfunc117()
+{
+    return -2147483648;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ba6f0 size=0xa5
 #include "CSoundEnt.h"
 #include "CBaseEntity.h"
