@@ -330,6 +330,13 @@ void CMultiplayRules::vfunc35(CBaseEntity *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141a70 size=0x5
+bool CMultiplayRules::vfunc37(int a0)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141a90 size=0xb
 float CMultiplayRules::vfunc38(int a)
 {

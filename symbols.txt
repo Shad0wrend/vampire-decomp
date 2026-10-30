@@ -1203,6 +1203,7 @@
 0x100038b9 func   ?sub_100eb3b0@@YIXPAH@Z sub_100eb3b0
 0x100038be func   ?sub_1006cff0@StatOwner@@QAEPAUStatDefault@@H@Z StatOwner::sub_1006cff0
 0x100038c3 func   ?sub_102deea0@@YIXPAH@Z sub_102deea0
+0x100038d2 func   ?vfunc37@CMultiplayRules@@UAE_NH@Z CMultiplayRules::vfunc37
 0x100038d7 func   ?sub_1007f250@CUtlRBTree24@@QAEXPBXPAHPA_N@Z CUtlRBTree24::sub_1007f250
 0x100038dc func   ?vfunc175@CTriggerElectricBugaloo@@QAEXPAX@Z CTriggerElectricBugaloo::vfunc175
 0x100038eb func   ?sub_100603f0@CUnknown100603f0@@QAEHXZ CUnknown100603f0::sub_100603f0
