@@ -69,6 +69,17 @@ void CTETextMessage::vfunc3(const float *pOrigin, const float *pAngles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10068e10 size=0x6
+#include "CTETextMessage.h"
+namespace lifted {
+extern char g_106c65ac;
+}
+ServerClass * CTETextMessage::vfunc0()
+{
+    return (ServerClass *)((int)&lifted::g_106c65ac);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10068e30 size=0x3
 #include "CTETextMessage.h"
 int CTETextMessage::vfunc1()
