@@ -12,6 +12,14 @@ datamap_t * COrnamentProp::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10190ca0 size=0x3
+#include "COrnamentProp.h"
+int COrnamentProp::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10190f20 size=0x51
 #include "COrnamentProp.h"
 extern char g_106b8540[];
