@@ -149,3 +149,15 @@ void CRelationshipSaveDataOps::vfunc3(void *pField)
 	(*g_109f3680)--;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10349510 size=0x5d
+#include "CRelationshipSaveDataOps.h"
+#include "ScopeTrace.h"
+
+// TARGET: CRelationshipSaveDataOps::vfunc4
+bool CRelationshipSaveDataOps::vfunc4(void *fieldInfo, void *pRestore)
+{
+	ScopeTrace trace("CRelationshipSaveDataOps::Parse", g_106b8540);
+	return false;
+}
+// END FUNCTION
