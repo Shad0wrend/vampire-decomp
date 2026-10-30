@@ -30,4 +30,6 @@ public:
 	int sub_1008dc40(int a, int b); // CBaseAnimating::SelectWeightedSequence (stub 0x100125c1), called directly
 	char m_pad03e0[0xfe8 - 0x3e0];
 	CHandle<CPayphoneNPC> m_hFollow;	// 0x0fe8
+public:
+	virtual bool vfunc615();
 };
