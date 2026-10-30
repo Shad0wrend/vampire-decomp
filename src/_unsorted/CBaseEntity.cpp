@@ -3013,6 +3013,13 @@ int CBaseEntity::sub_100b3d10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b4320 size=0x6
+int CBaseEntity::vfunc117()
+{
+    return 2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4b40 size=0x55
 #include "CBaseEntity.h"
 #include "CEntitySoundOriginView.h"
