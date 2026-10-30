@@ -305,6 +305,13 @@ void CNPC_VGargoyle::vfunc601(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10379f70 size=0x3
+bool CNPC_VGargoyle::vfunc602()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10379f90 size=0x120
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
