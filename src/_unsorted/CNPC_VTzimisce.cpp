@@ -523,6 +523,13 @@ int CNPC_VTzimisce::sub_103bde40(int activity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103bdf60 size=0x1
+#include "CNPC_VTzimisce.h"
+void CNPC_VTzimisce::vfunc434()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x103bf580 size=0x70
 #include "CNPC_VTzimisce.h"
 
