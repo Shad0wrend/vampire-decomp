@@ -12,6 +12,26 @@ datamap_t * CPropModelState::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10216460 size=0x5e
+#include "CPropModelState.h"
+extern char g_106b8540[];
+void CPropModelState::vfunc104()
+{
+	vfunc71();
+	sub_1018e0d0();
+	m_pfnUse = (void (CBaseEntity::*)(CBaseEntity *, CBaseEntity *, int, float))&CPropModelState::sub_10217160;
+	for (int i = 0; i < 8; i++) {
+		if (!m_pStateModels[i])
+			return;
+		m_nStates++;
+		const char *pName = m_pStateModels[i];
+		if (!pName)
+			pName = g_106b8540;
+		engine->vfunc13(pName, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102164e0 size=0xe5
 #include "CPropModelState.h"
 #include "CBaseButton.h"
