@@ -13,6 +13,17 @@ int CGenericSabbat_NPC::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035b560 size=0x6
+#include "CGenericSabbat_NPC.h"
+namespace lifted {
+extern char g_1093a3b0;
+}
+int CGenericSabbat_NPC::vfunc580()
+{
+    return (int)&lifted::g_1093a3b0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035b580 size=0x6
 #include "CGenericSabbat_NPC.h"
 namespace lifted {
