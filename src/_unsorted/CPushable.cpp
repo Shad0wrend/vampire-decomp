@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1010f0a0 size=0x6
+namespace lifted {
+extern char g_1056e868;
+}
+int CPushable::vfunc82()
+{
+    return (int)&lifted::g_1056e868;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f1b0 size=0x5
 bool CPushable::vfunc73(int a0)
 {
