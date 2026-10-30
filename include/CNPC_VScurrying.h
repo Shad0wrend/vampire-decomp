@@ -46,4 +46,8 @@ public:
 	float m_flDelay669c;	// 0x669c
 public:
     virtual datamap_t * vfunc82();
+public:
+	virtual int vfunc451();
+	virtual bool vfunc452();
+	virtual int vfunc580();
 };
