@@ -295,3 +295,10 @@ void CEffectsServer::vfunc8(const float *pOrigin, int a)
 // FUNCTION: 0x100f6710 size=0x9
 float CEffectsServer::vfunc9() { return gpGlobals->curtime; }
 // END FUNCTION
+
+// FUNCTION: 0x100f6730 size=0x3
+bool CEffectsServer::vfunc10()
+{
+    return 1;
+}
+// END FUNCTION
