@@ -17276,6 +17276,51 @@ bool CUnknown1007b7b0::sub_1007bd70(CUnknown1007bb30Reader *pReader)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007bef0 size=0x5b
+class CUnknown10075f30
+{
+public:
+	bool sub_10075f30();
+};
+class CUnknown10075f10
+{
+public:
+	float sub_10075f10();
+};
+class CUnknown10075e70
+{
+public:
+	float sub_10075e70();
+};
+
+class CUnknown1007bef0
+{
+public:
+	CUnknown10075e70 **m_ppItems;	// 0x00
+	int m_nAlloc;
+	int m_nGrow;
+	int m_nCount;	// 0x0c
+	float sub_1007bef0();
+};
+
+float CUnknown1007bef0::sub_1007bef0()
+{
+	float flMax = 0;
+	for (int i = 0; i < m_nCount; i++)
+	{
+		CUnknown10075e70 *pItem = m_ppItems[i];
+		float fl;
+		if (((CUnknown10075f30 *)pItem)->sub_10075f30())
+			fl = ((CUnknown10075f10 *)pItem)->sub_10075f10();
+		else
+			fl = pItem->sub_10075e70();
+		if (fl > flMax)
+			flMax = fl;
+	}
+	return flMax;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007bf70 size=0x33
 extern int g_10547ad4;
 void sub_10007f04(void *p, void *s);
