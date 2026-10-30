@@ -94,7 +94,7 @@ public:
 	virtual void vfunc190();
 	virtual void vfunc191();
 	virtual void vfunc192();
-	virtual void vfunc193();
+	virtual Vector vfunc193();	// slot 193 (world space centre): the position of the bone "Phone_bone_01", else the base's
 	virtual void vfunc194_slot();
 	virtual void vfunc195_slot();
 	virtual void vfunc196_slot();
