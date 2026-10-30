@@ -2170,6 +2170,7 @@
 0x100058a3 func   ?sub_101d5660@S101d5660@@QAEXXZ S101d5660::sub_101d5660
 0x100058b2 func   ?vfunc75@CMultiplayRules@@UAEXXZ CMultiplayRules::vfunc75
 0x100058c1 func   ?sub_10412260@@YAPAUActEntry@@PBDH_N@Z sub_10412260
+0x100058cb func   ?vfunc580@CNPC_VBach@@UAEHXZ CNPC_VBach::vfunc580
 0x100058d5 func   ?sub_10114080@CUnknown10114080@@QAEHXZ CUnknown10114080::sub_10114080
 0x100058e9 func   ?vfunc5@CPointEntity@@UAEPAV1@I@Z CPointEntity::vfunc5
 0x100058f3 func   ?sub_10085830@@YAXXZ sub_10085830
