@@ -76497,6 +76497,25 @@ long sub_101d2850(const char *code, int start)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d2960 size=0x5e
+#include <string.h>
+
+void sub_1023f040(unsigned int *pCRC);
+void sub_1023f060(unsigned int *pCRC);
+void sub_1023f0c0(unsigned int *pCRC, const void *pBuf, int len);
+
+unsigned int sub_101d2960(int a, const char *psz, int c)
+{
+	unsigned int crc;
+	sub_1023f040(&crc);
+	sub_1023f0c0(&crc, &a, 4);
+	sub_1023f0c0(&crc, psz, strlen(psz));
+	sub_1023f0c0(&crc, &c, 4);
+	sub_1023f060(&crc);
+	return crc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d2a20 size=0x70
 #include "Vector.h"
 int sub_10002b2b(int a, int b);
