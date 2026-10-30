@@ -5262,6 +5262,7 @@
 0x1000c202 func   ?sub_100ed6c0@@YIXPAXHH@Z sub_100ed6c0
 0x1000c207 func   ?sub_1042ff30@@YAII@Z sub_1042ff30
 0x1000c20c func   ?sub_10082e40@CUnknown10082e40@@QAE_NXZ CUnknown10082e40::sub_10082e40
+0x1000c211 func   ?vfunc72@CBaseEntity@@UAE_NH@Z CBaseEntity::vfunc72
 0x1000c216 func   ?vfunc113@CNPCMaker@@UAEXXZ CNPCMaker::vfunc113
 0x1000c21b func   ?sub_10147710@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_10147710
 0x1000c220 func   ?vfunc340@CBaseCombatCharacter@@QAEXHHH@Z CBaseCombatCharacter::vfunc340
