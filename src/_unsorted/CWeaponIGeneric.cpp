@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103f4320 size=0x6
+#include "CWeaponIGeneric.h"
+int CWeaponIGeneric::vfunc360()
+{
+    return 0x2000;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f4340 size=0x47
 #include "CWeaponIGeneric.h"
 const Vector &CWeaponIGeneric::vfunc331()
