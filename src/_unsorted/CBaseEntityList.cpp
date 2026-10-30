@@ -59,3 +59,10 @@ CBaseEntityList::CBaseEntityList()
 	memset(m_EntPtrArray, 0, sizeof(m_EntPtrArray));
 }
 // END FUNCTION
+
+// FUNCTION: 0x100fa360 size=0x3
+#include "CBaseEntityList.h"
+void CBaseEntityList::vfunc0(int a0, int a1)
+{
+}
+// END FUNCTION
