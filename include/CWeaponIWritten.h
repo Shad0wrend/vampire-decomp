@@ -20,4 +20,6 @@ public:
 public:
 	virtual int vfunc328();
 	virtual int vfunc360();
+public:
+	virtual int vfunc329();
 };
