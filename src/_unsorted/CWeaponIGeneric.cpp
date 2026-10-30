@@ -92,6 +92,14 @@ void CWeaponIGeneric::vfunc321()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f4930 size=0x3
+#include "CWeaponIGeneric.h"
+bool CWeaponIGeneric::vfunc325()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f4950 size=0x75
 #include "CWeaponIGeneric.h"
 struct Ent { bool sub_10336920(); };
