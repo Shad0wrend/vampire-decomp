@@ -27,6 +27,13 @@ void CWeaponIArmor::vfunc291()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f3fe0 size=0x1
+#include "CWeaponIArmor.h"
+void CWeaponIArmor::vfunc326()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f4000 size=0x6
 #include "CWeaponIArmor.h"
 int CWeaponIArmor::vfunc328()
