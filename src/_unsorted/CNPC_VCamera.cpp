@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10367f60 size=0x6
+#include "CNPC_VCamera.h"
+namespace lifted {
+extern char g_1062f650;
+}
+int CNPC_VCamera::vfunc82()
+{
+    return (int)&lifted::g_1062f650;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103680b0 size=0x1
 #include "CNPC_VCamera.h"
 void CNPC_VCamera::vfunc488()
