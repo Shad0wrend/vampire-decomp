@@ -270,6 +270,16 @@ void CBaseDoor::vfunc246(int a, int* b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f0f10 size=0x7
+namespace lifted {
+extern float g_104454c4;
+}
+float CBaseDoor::vfunc247()
+{
+    return lifted::g_104454c4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0f50 size=0x1d8
 #include "CBaseDoor.h"
 #include "CBaseToggle.h"
