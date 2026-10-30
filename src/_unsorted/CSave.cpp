@@ -133,6 +133,17 @@ void CSave::vfunc7(int a, int b, int count)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019fc80 size=0x17
+#include "CSave.h"
+namespace lifted {
+struct C10006be5 { int sub_10006be5(int, int, int); };
+}
+int CSave::vfunc11(int a0, int a1, int a2)
+{
+    return ((lifted::C10006be5 *)this)->sub_10006be5(a0, a2, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a0260 size=0x8a
 #include "CSave.h"
 
