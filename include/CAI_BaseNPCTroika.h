@@ -102,6 +102,7 @@ public:
 	char sub_100b5190();	// the stub at 0x10014da8, called directly by slot 294
 
 	void vfunc17(const char *pszFormat, int arg);	// slot 17 (declared as a plain member: the base's slot 17 is a placeholder): formats the message with sub_10004011 into a 512 byte buffer; with the debug flag at 0x10920534 set, passes a copy of the format to sub_1027ee20, else DevMsg's the formatted text
+	void vfunc19(const char *pszMsg);	// slot 19 (plain member): with the debug flag at 0x10920534 set passes a copy (512 bytes) of the message to sub_1027ee20, else DevMsg's it; nothing for null
 	void sub_10004011(const char *pszFormat, int arg, char *pOut, int nOut);	// message formatter (stub of 0x1028d990), called directly
 
 	void sub_102950c0();	// plays the "Alarmed_Loop" sound
