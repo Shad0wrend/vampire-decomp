@@ -22,6 +22,20 @@ void __fastcall sub_102241b0(int *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102243c0 size=0x5b
+#include "CBaseAnimating.h"
+#include "CItemContainerLock.h"
+#include "CEntitySoundOriginView.h"
+Vector CItemContainerLock::vfunc193()
+{
+	Vector vecOrigin;
+	Vector vecAngles;
+	if ((char)((CBaseAnimating *)this)->sub_10092e20((int)"camera_position", (int)&vecOrigin, (int)&vecAngles))
+		return vecOrigin;
+	return ((CEntitySoundOriginView *)this)->WorldSpaceCenter();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10224ae0 size=0x154
 #include "CEHandleGet.h"
 #include "CItemContainer.h"
