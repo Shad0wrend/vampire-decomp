@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1004dc10 size=0x3
+#include "CPhysBox.h"
+int CPhysBox::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004de80 size=0x6
 #include "CPhysBox.h"
 namespace lifted {
