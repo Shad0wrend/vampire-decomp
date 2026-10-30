@@ -70695,10 +70695,12 @@ void S101c0240::sub_101c0240(int num)
 
 // FUNCTION: 0x101c02d0 size=0xbd
 #include "CUtlRBTree12.h"
+#include "utlrbtree.h"
+struct CRBTree12Entry_101c03c0 { char data[4]; };	// the tree of sentinel 0x1072c7dc (RotateLeft 0x101c03c0)
 
 bool CUtlRBTree12::sub_101c02d0(unsigned short i) const
 {
-	const CUtlRBTree12At<0x1072c7dc> *tree = (const CUtlRBTree12At<0x1072c7dc> *)this;
+	const CUtlRBTree<CRBTree12Entry_101c03c0, unsigned short> *tree = (const CUtlRBTree<CRBTree12Entry_101c03c0, unsigned short> *)this;
 	unsigned short parent = tree->Links(i).m_Parent;
 	return tree->Links(parent).m_Left == i;
 }
