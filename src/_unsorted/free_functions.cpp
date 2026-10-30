@@ -15502,6 +15502,30 @@ void CUnknown10076da0::sub_10076da0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10076e70 size=0x5a
+#include <string.h>
+struct CUnknown100738a0 {
+	const char *sub_100738a0();
+};
+struct CChoreoEvent10076e70 {
+	char m_pad0000[0x2bc];
+	char *m_pElems;	// 0x2bc: elements of 0x88 bytes
+	char m_pad02c0[0x2c8 - 0x2c0];
+	int m_nElems;	// 0x2c8
+	CUnknown100738a0 *sub_10076e70(const char *pszName);
+};
+
+CUnknown100738a0 *CChoreoEvent10076e70::sub_10076e70(const char *pszName)
+{
+	for (int i = 0; i < m_nElems; i++) {
+		CUnknown100738a0 *p = (CUnknown100738a0 *)(m_pElems + i * 0x88);
+		if (p && strcmpi(p->sub_100738a0(), pszName) == 0)
+			return p;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10076ef0 size=0x7
 struct CUnknown10076ef0 { char sub_10076ef0(); };
 char CUnknown10076ef0::sub_10076ef0()
