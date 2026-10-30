@@ -20,6 +20,17 @@ int CWeaponLockpick::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f4cc0 size=0x6
+#include "CWeaponLockpick.h"
+namespace lifted {
+extern char g_1067eeb0;
+}
+int CWeaponLockpick::vfunc362()
+{
+    return (int)&lifted::g_1067eeb0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f4d70 size=0x3
 #include "CWeaponLockpick.h"
 bool CWeaponLockpick::vfunc268()
