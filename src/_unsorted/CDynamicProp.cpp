@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10190040 size=0x6
+namespace lifted {
+extern char g_1058d4f8;
+}
+int CDynamicProp::vfunc82()
+{
+    return (int)&lifted::g_1058d4f8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10190360 size=0x3
 int CDynamicProp::vfunc81()
 {
