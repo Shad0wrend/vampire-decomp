@@ -20,6 +20,14 @@ bool CNPCMaker::vfunc363(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034ae70 size=0x5
+#include "CNPCMaker.h"
+bool CNPCMaker::vfunc362(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034af30 size=0x3
 #include "CNPCMaker.h"
 void CNPCMaker::vfunc619(int a0)
