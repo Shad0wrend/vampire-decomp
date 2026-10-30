@@ -426,6 +426,7 @@
 0x10001e47 func   ?sub_104292c0@@YAHXZ sub_104292c0
 0x10001e5b func   _info_node_sabbat_bottom info_node_sabbat_bottom
 0x10001e60 func   ?sub_1021ac30@CPropHacking@@QAEXXZ CPropHacking::sub_1021ac30
+0x10001e6a func   ?vfunc473@CNPC_VBach@@UAEHXZ CNPC_VBach::vfunc473
 0x10001e6f func   ?vfunc5@CRagdollPropSpecial@@QAEPAV1@I@Z CRagdollPropSpecial::vfunc5
 0x10001e74 func   ?sub_101d1070@@YAJPADH@Z sub_101d1070
 0x10001e7e func   ?sub_10077a50@CUnknown10077430@@QAEXH@Z CUnknown10077430::sub_10077a50
