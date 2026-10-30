@@ -996,6 +996,7 @@
 0x100031ac func   ?sub_102f05b0@CUnknown102f05b0@@QAEHXZ CUnknown102f05b0::sub_102f05b0
 0x100031b1 func   ?vfunc2@CTEDust@@QAEPAV1@I@Z CTEDust::vfunc2
 0x100031b6 func   ?sub_1033ca60@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_1033ca60
+0x100031bb func   ?vfunc365@CNPC_VNewscaster@@UAE_NH@Z CNPC_VNewscaster::vfunc365
 0x100031ca func   _trigger_hurt trigger_hurt
 0x100031cf func   ?sub_101ed0f0@CUnk101ed0f0@@QAE_NHH@Z CUnk101ed0f0::sub_101ed0f0
 0x100031d9 func   ?vfunc489@CGenericSabbat_NPC@@UAEXXZ CGenericSabbat_NPC::vfunc489
