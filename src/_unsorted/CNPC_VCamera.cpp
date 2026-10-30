@@ -57,6 +57,13 @@ void CNPC_VCamera::vfunc495()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103681b0 size=0x1
+#include "CNPC_VCamera.h"
+void CNPC_VCamera::vfunc496()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x103683f0 size=0x1e
 #include "CNPC_VCamera.h"
 
