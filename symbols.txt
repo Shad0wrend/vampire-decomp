@@ -9442,6 +9442,7 @@
 0x10013f6b func   ?vfunc82@CAreaPortal@@UAEHXZ CAreaPortal::vfunc82
 0x10013f70 func   ?vfunc82@CPhysPulley@@UAEHXZ CPhysPulley::vfunc82
 0x10013f7f func   ?sub_103300c0@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_103300c0
+0x10013f84 func   ?sub_101e4300@CUnknown101e0f00@@QAEXHPADPAHPAIPAM1@Z CUnknown101e0f00::sub_101e4300
 0x10013f89 func   ?sub_1005b850@@YAXHHHHHHHHHHHHHHHHHH@Z sub_1005b850
 0x10013f8e func   ?sub_10229090@@YGXPAUCSoundFadeItem@@M@Z sub_10229090
 0x10013f93 func   ?vfunc521@CAI_TestHull@@QAEXHHH@Z CAI_TestHull::vfunc521
