@@ -127057,6 +127057,20 @@ bool CUnknown10315ec0::sub_10315ec0(CUnknown10315ec0Ent *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10315f60 size=0x58
+#include "CEHandleGet.h"
+struct CSquadNpcView { char m_pad[0x5bb0]; int m_nCount; };
+struct CSquadView { char m_pad[0x1c]; unsigned int m_hMember; };
+char __fastcall sub_10315f60(CSquadView *pSquad, int unused, CSquadNpcView *pNpc)
+{
+	if (!pNpc)
+		return 0;
+	if (pNpc->m_nCount > 0)
+		return 0;
+	return EHandle_Get(pSquad->m_hMember) == (void *)pNpc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10315fe0 size=0x8d
 #include "CUnknown10315fe0.h"
 
