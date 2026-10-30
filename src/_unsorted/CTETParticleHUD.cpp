@@ -49,3 +49,11 @@ ServerClass * CTETParticleHUD::vfunc0()
     return (ServerClass *)((int)&lifted::g_106c6760);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1006a0b0 size=0x3
+#include "CTETParticleHUD.h"
+int CTETParticleHUD::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
