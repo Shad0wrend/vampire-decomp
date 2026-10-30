@@ -19,6 +19,14 @@ CGameRules *CHalfLife2::vfunc0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103557d0 size=0x5
+#include "CHalfLife2.h"
+bool CHalfLife2::vfunc41(int a0, int a1)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103557f0 size=0x3
 #include "CHalfLife2.h"
 void CHalfLife2::vfunc35(int a0)
