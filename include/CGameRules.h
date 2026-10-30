@@ -48,7 +48,7 @@ public:
 	virtual bool vfunc23();
 	virtual bool vfunc24();
 	virtual void vfunc25();
-	virtual void vfunc26();
+	virtual bool vfunc26(int, int, int, int);
 	virtual void vfunc27();
 	virtual void vfunc28(void *pEdict);	// "ClientDisconnected": the edict of the leaving player
 	virtual void vfunc29(void *pPlayer);	// sends a user message (no payload byte) to the player

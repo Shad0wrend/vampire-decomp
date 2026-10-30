@@ -59,10 +59,10 @@ public:
     virtual void vfunc260(); virtual void vfunc261(); virtual void vfunc262(); virtual void vfunc263(); virtual void vfunc264();
     virtual int vfunc265(const char *pszBone);	// slot 265: the dword at +0x744 + 0x18 * i of the first ragdoll element i (index table at +0xa08, count at +0x730) that belongs to the studio bone named pszBone or to its nearest parent bone; the first element's dword when nothing matches
     virtual void vfunc266(); virtual bool vfunc267(); virtual void vfunc268(CBaseEntity *pEnt);	// slot 268: remembers pEnt's handle at +0xd5c and takes its take-damage mode (+0x1fc); without an entity the handle is -1 and the mode 1
-    virtual void vfunc269();
+    virtual bool vfunc269(int, int);
     virtual void vfunc270(int a, int b);
     virtual void vfunc271(int a, int b);
-    virtual void vfunc272(); virtual void vfunc273(); virtual void vfunc274();
+    virtual bool vfunc272(int); virtual void vfunc273(); virtual bool vfunc274(int);
     virtual Vector vfunc275();	// slot 275: a random vector, every component rand() * (1200 / 32767) - 600 (hidden result pointer)
     virtual char vfunc276();
     bool vfunc32(int a);	// slot 32 override (CBaseEntity::vfunc32): false when the flags at +0x204 have bit 5, else whether this is the entity sub_104115b0(a, 0) returns

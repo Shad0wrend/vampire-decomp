@@ -37,4 +37,10 @@ public:
 	virtual void vfunc286(int, int);
 	virtual bool vfunc613();
 	virtual bool vfunc617();
+public:
+	virtual bool vfunc294(int);
+	virtual bool vfunc362(int);
+	virtual bool vfunc363(int);
+	virtual bool vfunc364(int);
+	virtual bool vfunc365(int);
 };
