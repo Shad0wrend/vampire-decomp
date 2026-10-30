@@ -55,4 +55,7 @@ public:
 	float *sub_1030be50(float *out);	// provisional, like vfunc193 (transplant)
 public:
 	virtual int vfunc81();
+public:
+	virtual int vfunc80();
+	virtual int vfunc82();
 };
