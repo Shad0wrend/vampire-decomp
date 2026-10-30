@@ -136944,6 +136944,36 @@ int CUnknown10357180::sub_10357180(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103572d0 size=0x5e
+#include "CNPC_Crow.h"
+extern int vt_104a426c[];
+extern int vt_104a4240[];
+void *sub_100aa720(int size);
+void __fastcall sub_10006659(void *p);
+void __fastcall sub_1001223d(void *p);
+#define V1(n) virtual void v##n##0(); virtual void v##n##1(); virtual void v##n##2(); virtual void v##n##3(); virtual void v##n##4(); virtual void v##n##5(); virtual void v##n##6(); virtual void v##n##7(); virtual void v##n##8(); virtual void v##n##9();
+struct CCrowFactoryView {
+	V1(0) V1(1) V1(2) V1(3) V1(4) V1(5) V1(6) V1(7) V1(8) V1(9)
+	virtual void v100(); virtual void v101(); virtual void v102(); virtual void v103(); virtual void v104(); virtual void v105();
+	virtual void PostConstructor(const char *name);
+	CCrowFactoryView *Construct()
+	{
+		sub_10006659(this);
+		sub_1001223d((char *)this + 0x5f44);
+		*(int *)this = (int)vt_104a426c;
+		*(int *)((char *)this + 0x19b0) = (int)vt_104a4240;
+		return this;
+	}
+};
+extern "C" CNPC_Crow *npc_crow()
+{
+	CCrowFactoryView *m = (CCrowFactoryView *)sub_100aa720(0x5f5c);
+	CCrowFactoryView *p = m ? m->Construct() : 0;
+	p->PostConstructor("npc_crow");
+	return (CNPC_Crow *)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10357410 size=0x1a
 namespace lifted {
 extern int g_10628928;
