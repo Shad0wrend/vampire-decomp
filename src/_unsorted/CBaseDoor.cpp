@@ -11,6 +11,12 @@ datamap_t * CBaseDoor::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ee400 size=0x1
+void CBaseDoor::vfunc249()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ee420 size=0x8e
 #include "CBaseDoor.h"
 
