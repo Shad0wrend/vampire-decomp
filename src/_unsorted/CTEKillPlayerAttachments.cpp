@@ -44,6 +44,17 @@ void CTEKillPlayerAttachments::vfunc3(const float *pos, const float *ang)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10065b80 size=0x6
+#include "CTEKillPlayerAttachments.h"
+namespace lifted {
+extern char g_106c49a8;
+}
+int CTEKillPlayerAttachments::vfunc0()
+{
+    return (int)&lifted::g_106c49a8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10065ba0 size=0x3
 #include "CTEKillPlayerAttachments.h"
 int CTEKillPlayerAttachments::vfunc1()
