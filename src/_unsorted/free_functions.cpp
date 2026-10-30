@@ -20021,6 +20021,28 @@ void sub_10088540()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10088620 size=0x5c
+#include "CBaseEntity.h"
+__declspec(dllimport) void __cdecl DevMsg(const char *, ...);
+CBaseEntity *sub_101193b0();
+int sub_101bb310(int a);
+void sub_101bb2e0(int a);
+extern unsigned int g_1072c440;
+void sub_10088620()
+{
+	CBaseEntity *pPlayer = sub_101193b0();
+	if (sub_101bb310(2)) {
+		DevMsg("SoundShow enabled (Ent mode)\n");
+		sub_101bb2e0(1);
+		if (pPlayer)
+			g_1072c440 = *pPlayer->vfunc1();
+		else
+			g_1072c440 = 0xffffffff;
+	} else
+		DevMsg("SoundShow disabled\n");
+}
+// END FUNCTION
+
 // FUNCTION: 0x10088730 size=0x2a
 int sub_10012a08(int a);
 extern void (*g_109f3630)(const char *fmt, ...);
