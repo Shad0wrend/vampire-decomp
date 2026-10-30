@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10056460 size=0x6
+#include "CDynamicLight.h"
+namespace lifted {
+extern char g_1053f0b0;
+}
+int CDynamicLight::vfunc82()
+{
+    return (int)&lifted::g_1053f0b0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10056580 size=0x3
 #include "CDynamicLight.h"
 int CDynamicLight::vfunc81()

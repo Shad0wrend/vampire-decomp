@@ -9101,6 +9101,7 @@
 0x10014051 func   ?sub_10150e10@@YGHH@Z sub_10150e10
 0x10014079 func   ?sub_100be4b0@bf_read@@QAEIH@Z bf_read::sub_100be4b0
 0x1001407e func   _item_g_drugs_pill_bottle item_g_drugs_pill_bottle
+0x10014083 func   ?vfunc82@CDynamicLight@@UAEHXZ CDynamicLight::vfunc82
 0x10014088 func   ?vfunc492@CNPC_VTest@@QAEXXZ CNPC_VTest::vfunc492
 0x10014092 func   ?sub_100ddd90@CCollisionProperty@@QAEXXZ CCollisionProperty::sub_100ddd90
 0x100140ab func   ?vfunc546@CNPC_VWerewolf@@QAEHH@Z CNPC_VWerewolf::vfunc546
