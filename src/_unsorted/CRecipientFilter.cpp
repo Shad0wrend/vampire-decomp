@@ -113,3 +113,34 @@ char CRecipientFilter::vfunc4()
 	return m_1c == 1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1019d3d0 size=0x5c
+#include "CRecipientFilter.h"
+#include "CUnknown1019d130.h"
+
+struct CRecipientFilterSlotsView {
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual int GetRecipientCount();
+	virtual int GetRecipientIndex(int slot);
+};
+extern int g_1072b40c;
+extern CBaseEntity *g_1072b408;
+CBaseEntity *sub_101cd9e0(int);
+
+void CRecipientFilter::UsePredictionRules()
+{
+	if (m_bUsingPredictionRules)
+		return;
+	m_bUsingPredictionRules = true;
+	CRecipientFilterSlotsView *v = (CRecipientFilterSlotsView *)this;
+	int count = v->GetRecipientCount();
+	if (count) {
+		for (int i = count - 1; i >= 0; i--) {
+			CBaseEntity *p = sub_101cd9e0(v->GetRecipientIndex(i));
+			if (p && (g_1072b40c > 0 ? 0 : g_1072b408) == p)
+				((CUnknown1019d130 *)this)->sub_1019d130(p);
+		}
+	}
+}
+// END FUNCTION
