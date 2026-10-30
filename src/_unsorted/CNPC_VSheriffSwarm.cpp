@@ -12,6 +12,17 @@ int CNPC_VSheriffSwarm::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b1c40 size=0x6
+#include "CNPC_VSheriffSwarm.h"
+namespace lifted {
+extern int g_10651948;
+}
+int CNPC_VSheriffSwarm::vfunc451()
+{
+    return lifted::g_10651948;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b1c60 size=0x1e
 #include "CNPC_VSheriffSwarm.h"
 
