@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101ab410 size=0x3
+int CServerNetworkProperty::vfunc12()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab470 size=0x8
 struct CUnknown10146790 { char a; char b; char c; void sub_10146790(); };
 // TARGET: CServerNetworkProperty::vfunc11
