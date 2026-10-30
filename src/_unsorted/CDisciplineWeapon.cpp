@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103f1ce0 size=0x3
+#include "CDisciplineWeapon.h"
+bool CDisciplineWeapon::vfunc281()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f1d00 size=0x1e
 #include "CDisciplineWeapon.h"
 
