@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x102d0370 size=0x6
+namespace lifted {
+extern char g_106099f0;
+}
+int CAI_Hint::vfunc82()
+{
+    return (int)&lifted::g_106099f0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d08c0 size=0x8
 // TARGET: CAI_Hint::vfunc119
 void CAI_Hint::vfunc119()
