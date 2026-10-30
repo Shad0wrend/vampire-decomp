@@ -20,4 +20,5 @@ public:
 	char m_pad0004[8];
 	Vector m_vecPos;	// 0x0c
 	Vector m_vecDir;	// 0x18
+	char m_b24;	// 0x24
 };
