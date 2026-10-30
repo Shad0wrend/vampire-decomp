@@ -12,6 +12,17 @@ int CAI_StandoffBehavior::vfunc6()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c7310 size=0x6
+#include "CAI_StandoffBehavior.h"
+namespace lifted {
+extern int g_1060187c;
+}
+int CAI_StandoffBehavior::vfunc19()
+{
+    return lifted::g_1060187c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c73f0 size=0x1
 #include "CAI_StandoffBehavior.h"
 void CAI_StandoffBehavior::vfunc8()
