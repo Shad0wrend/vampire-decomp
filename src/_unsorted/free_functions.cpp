@@ -124025,6 +124025,26 @@ void CUnknown102f65d0::sub_102f65d0(const char *pszText)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f6610 size=0x5c
+#include "CAI_NodeGraph.h"
+#include "CAI_NetworkManager.h"
+
+extern char g_1093408c;
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+
+void CAI_NetworkManager::sub_102f6610()
+{
+	((CAI_NodeGraph *)m_Graph)->sub_102f4e00();
+	if (!g_1093408c)
+	{
+		sub_102f51d0();
+		g_1093408c = 1;
+	}
+	engine->vfunc7("ai_node_graph_built");
+	DevMsg("AI Node Graph Rebuilt for map: %s [%d]\n", gpGlobals->mapname ? gpGlobals->mapname : "", gpGlobals->mapversion);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f6690 size=0xce
 #include "CAI_NetworkManager.h"
 

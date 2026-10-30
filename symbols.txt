@@ -6249,6 +6249,7 @@
 0x1000d7e2 func   ?vfunc473@CNPC_VTzimisce@@UAEHXZ CNPC_VTzimisce::vfunc473
 0x1000d7f1 func   ?vfunc69@CGameRules@@UAEXHHHH@Z CGameRules::vfunc69
 0x1000d7f6 func   ?vfunc495@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc495
+0x1000d7fb func   ?sub_102f6610@CAI_NetworkManager@@QAEXXZ CAI_NetworkManager::sub_102f6610
 0x1000d800 func   ?sub_101d9f60@CUnknown101d9f60@@QAEHXZ CUnknown101d9f60::sub_101d9f60
 0x1000d805 func   ?sub_10104590@@YAHXZ sub_10104590
 0x1000d80a func   ?vfunc376@CWeaponThrown_Grenade_Frag@@QAEHH@Z CWeaponThrown_Grenade_Frag::vfunc376
