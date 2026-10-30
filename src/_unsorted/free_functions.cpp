@@ -102499,6 +102499,27 @@ int CUnknown1023a250::sub_1023a250()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023a2a0 size=0x5e
+#include "CWeaponRanged.h"
+struct COwnerView { char pad[0x4fe70]; int m_aEntries[5]; int m_nEntries; };
+void CWeaponRanged::sub_1023a2a0()
+{
+	if (sub_102517b0()) {
+		int i = 0;
+		if (((COwnerView *)sub_102517b0())->m_nEntries > 0) {
+			do {
+				if (((COwnerView *)sub_102517b0())->m_aEntries[i] == 0) {
+					*(int *)((char *)this + 0x914) = i;
+					return;
+				}
+				i++;
+			} while (i < ((COwnerView *)sub_102517b0())->m_nEntries);
+		}
+	}
+	*(int *)((char *)this + 0x914) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a6b0 size=0x1a
 namespace lifted {
 extern int g_105c2580;
