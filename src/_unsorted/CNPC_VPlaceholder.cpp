@@ -110,6 +110,14 @@ bool CNPC_VPlaceholder::vfunc72(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a4260 size=0x5
+#include "CNPC_VPlaceholder.h"
+bool CNPC_VPlaceholder::vfunc363(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a4320 size=0x1e
 #include "CNPC_VPlaceholder.h"
 
