@@ -34660,6 +34660,24 @@ void sub_100d3160()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d3860 size=0x41
+struct Vec3;
+#define V4(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3();
+#define V16(a) V4(a##a) V4(a##b) V4(a##c) V4(a##d)
+#define V64(a) V16(a##a) V16(a##b) V16(a##c) V16(a##d)
+struct COriginEnt {
+ V64(p) V64(q) V64(r) V4(s) V4(t) V4(u) V4(v) V4(w4) V4(x)
+ virtual void f216(); virtual Vec3 *vfunc217(); };
+struct trace_buf { char pad[0x37]; char b; char pad2[0x1c]; };
+void sub_101cd110(COriginEnt *, Vec3 *, Vec3 *, int, trace_buf *);
+int sub_100d3860(COriginEnt *p)
+{
+    trace_buf tr;
+    sub_101cd110(p, p->vfunc217(), p->vfunc217(), 0x201400b, &tr);
+    return tr.b == 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d38d0 size=0xa9
 #define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
