@@ -67,7 +67,7 @@ public:
 	virtual void vfunc35(const char *pszName, void *pData, int count);	// slot used by WriteField for field type 0xd
 	virtual void vfunc36(const void *pData, int count);	// WriteEHandle
 	virtual void vfunc37(const char *pszName, void *pData, int count);	// slot used by WriteField for field type 0xc: converts the entity handles to entity table indices (sub_101a08f0) and writes them through slot 9
-	virtual void vfunc38();
+	virtual int vfunc38();
 	virtual void vfunc39();
 
 	CSave(void *pData);	// stub 0x10009bf6

@@ -7,7 +7,7 @@
 class ICollideable
 {
 public:
-	virtual void vfunc0();
+	virtual int vfunc0();
 	virtual float *vfunc1();	// OBBMins: pointer to the three floats of the local mins
 	virtual float *vfunc2();	// OBBMaxs: pointer to the three floats of the local maxs
 	virtual void vfunc3(Vector *pMins, Vector *pMaxs);	// WorldSpaceTriggerBounds
@@ -18,7 +18,7 @@ public:
 	virtual void vfunc8();	// GetCollisionOrigin: returns the pointer to the three floats of the world origin (declared void: vfunc8 is matched that way)
 	virtual float *vfunc9(int a);	// GetCollisionAngles: pointer to the three floats of the world angles (takes one stack argument, 0 at the known call)
 	virtual float *vfunc10();	// CollisionToWorldTransform: the matrix3x4_t (12 floats) of the collision space
-	virtual void vfunc11();
+	virtual int vfunc11();
 	virtual void vfunc12();
 	virtual int vfunc13();
 	virtual int vfunc14();

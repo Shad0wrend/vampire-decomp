@@ -4,11 +4,11 @@ struct CUnknown10146790;
 
 class CServerNetworkProperty {
 public:
-	virtual void vfunc0();
+	virtual int vfunc0();
 	virtual void vfunc1();
 	virtual void vfunc2();
 	virtual void vfunc3();
-	virtual void vfunc4();
+	virtual int vfunc4();
 	virtual void vfunc5();
 	virtual void vfunc6();
 	virtual int vfunc7();	// refreshes the edict state when flagged changed (0x10000), returns the edict pointer at +0x80
@@ -17,7 +17,7 @@ public:
 	virtual void vfunc10();
 	virtual void vfunc11();
 	virtual int vfunc12();
-	virtual void vfunc13();
+	virtual int vfunc13();
 	virtual CServerNetworkProperty *vfunc14(unsigned int flags);
 	void *m_pOuter;
 	char m_pad8[8];

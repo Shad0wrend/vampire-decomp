@@ -7,9 +7,9 @@ class CCopyRecipientFilter
 public:
 	virtual void vfunc0();
 	virtual unsigned int vfunc1();
-	virtual void vfunc2();
+	virtual int vfunc2();
 	virtual int vfunc3(int index);
-	virtual void vfunc4();
+	virtual bool vfunc4();
 	virtual void vfunc5();
 	virtual void vfunc6();
 	virtual unsigned int vfunc7();

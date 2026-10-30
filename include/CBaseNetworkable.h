@@ -14,7 +14,7 @@ class CBaseNetworkable
 {
 public:
 	virtual void vfunc0();
-	virtual void vfunc1();
+	virtual char * vfunc1();
 	virtual int vfunc2();
 	virtual void vfunc3();
 	virtual int vfunc4();

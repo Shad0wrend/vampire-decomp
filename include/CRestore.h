@@ -105,4 +105,7 @@ public:
 	char *m_pData2;	// 0x001c: m_pData + 0x18, or null
 	int m_field20;
 	bool m_bField24;
+public:
+	virtual bool vfunc32();
+	virtual int vfunc33();
 };
