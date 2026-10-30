@@ -78,6 +78,17 @@ int CSoundControllerImp::vfunc13(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bd630 size=0xc
+#include "CSoundControllerImp.h"
+namespace lifted {
+struct C10008ddc { int sub_10008ddc(); };
+}
+int CSoundControllerImp::vfunc14(int a0)
+{
+    return ((lifted::C10008ddc *)a0)->sub_10008ddc();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bd650 size=0x11
 struct S { void sub_10005cdb(int); };
 void __stdcall sub_101bd650(S *p, int a)
