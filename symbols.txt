@@ -3019,6 +3019,7 @@
 0x100073bf func   ?sub_10247b80@@YAXXZ sub_10247b80
 0x100073c4 func   ?sub_1025b5d0@@YAHI@Z sub_1025b5d0
 0x100073c9 func   ?sub_10100f90@CEnvShake@@QAEXAAUinputdata_t@@@Z CEnvShake::sub_10100f90
+0x100073ce func   ?vfunc28@CBaseEntity@@UAEMXZ CBaseEntity::vfunc28
 0x100073d3 func   ?sub_102ca760@@YIXPAD@Z sub_102ca760
 0x100073d8 func   ?sub_1027d030@CAI_BaseNPCUnit@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCUnit::sub_1027d030
 0x100073dd func   ?vfunc80@CBaseAnimating@@UAEHXZ CBaseAnimating::vfunc80
