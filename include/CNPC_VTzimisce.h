@@ -161,4 +161,11 @@ public:
 	virtual bool vfunc70();
 	virtual void vfunc228(int, int);
 	virtual bool vfunc509();
+public:
+	virtual int vfunc82();
+	virtual int vfunc138();
+	virtual int vfunc451();
+	virtual bool vfunc452();
+	virtual int vfunc473();
+	virtual int vfunc580();
 };
