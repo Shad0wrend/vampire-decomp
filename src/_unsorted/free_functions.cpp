@@ -31327,6 +31327,36 @@ void sub_100c4600(int *pTable, char *pSrc)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c4640 size=0x5e
+struct SPoolEntry100c { char pad[0x38]; };
+extern SPoolEntry100c g_106d3e10[512];
+extern int g_106dbe80[0xb0];
+extern char g_106e39c4;
+extern int g_106e39c0;
+extern SPoolEntry100c *g_106e39bc;
+extern int g_106dae0c;
+char sub_100c4640()
+{
+	if (g_106e39c4 == 0) {
+		for (int i = 0; i < 0x1c00; i++)
+			((int *)g_106d3e10)[i] = 0;
+		for (int j = 0; j < 0xb0; j++)
+			g_106dbe80[j] = 0;
+		g_106e39c4 = 1;
+		g_106e39c0 = 0;
+		g_106e39bc = g_106d3e10;
+		int *p = (int *)g_106d3e10 + 0xd;
+		do {
+			*p = (int)(p + 1);
+			p += 0xe;
+		} while ((int)p < (int)g_106d3e10 + 0x7034);
+		g_106dae0c = 0;
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c46c0 size=0xc2
 struct CacheEntry {
 	int m_a;
