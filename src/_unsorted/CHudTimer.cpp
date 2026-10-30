@@ -12,6 +12,17 @@ datamap_t * CHudTimer::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012d190 size=0x6
+#include "CHudTimer.h"
+namespace lifted {
+extern char g_1070bce4;
+}
+int CHudTimer::vfunc80()
+{
+    return (int)&lifted::g_1070bce4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012d1b0 size=0x3
 #include "CHudTimer.h"
 int CHudTimer::vfunc81()
