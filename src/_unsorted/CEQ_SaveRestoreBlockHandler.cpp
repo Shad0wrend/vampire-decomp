@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100cfec0 size=0x6
+#include "CEQ_SaveRestoreBlockHandler.h"
+namespace lifted {
+extern char g_1055e5bc;
+}
+int CEQ_SaveRestoreBlockHandler::vfunc0()
+{
+    return (int)&lifted::g_1055e5bc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cfee0 size=0xa
 #include "CEQ_SaveRestoreBlockHandler.h"
 namespace lifted {
