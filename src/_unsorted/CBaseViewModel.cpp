@@ -142,3 +142,11 @@ void CBaseViewModel::vfunc265(int value)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x1042bbe0 size=0x3
+#include "CBaseViewModel.h"
+int CBaseViewModel::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
