@@ -35,3 +35,11 @@ ServerClass * CTEWorldDecal::vfunc0()
     return (ServerClass *)((int)&lifted::g_106c7500);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1006b360 size=0x3
+#include "CTEWorldDecal.h"
+int CTEWorldDecal::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
