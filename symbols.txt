@@ -504,6 +504,7 @@
 0x10002072 func   ?sub_100f7330@CUnk_100f7330@@QAE_NH@Z CUnk_100f7330::sub_100f7330
 0x10002077 func   ?sub_103000a0@@YGXABVVector@@0MMAAV1@@Z sub_103000a0
 0x1000207c func   ?sub_101711e0@CBasePlayer@@QAEXM@Z CBasePlayer::sub_101711e0
+0x10002086 func   ?sub_100fdb80@@YAXPAXD@Z sub_100fdb80
 0x10002090 func   ?sub_101c2720@CSubHost@@QAEPAU1@HHHHHHH@Z CSubHost::sub_101c2720
 0x1000209a func   ?sub_100437e0@CUnknown100437e0@@QAEXH@Z CUnknown100437e0::sub_100437e0
 0x1000209f func   ?sub_1009f3c0@CBaseEntity@@QAEXPBDH@Z CBaseEntity::sub_1009f3c0

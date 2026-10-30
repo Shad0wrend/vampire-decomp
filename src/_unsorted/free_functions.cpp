@@ -42124,6 +42124,18 @@ int *sub_100fd680()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fdb80 size=0x59
+#include "CEnvPlayerSurfaceTrigger.h"
+#include "utlvector.h"
+extern CUtlVector<EHANDLE> g_1070906c;
+void sub_100fdb80(void *pActivator, char material)
+{
+	int n = g_1070906c.Count();
+	for (int i = 0; i < n; i++)
+		((CEnvPlayerSurfaceTrigger *)g_1070906c[i].Get())->sub_100fdc00(pActivator, material);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fdcc0 size=0xa
 void __fastcall sub_100fdcc0(char *self, int, int)
 {
