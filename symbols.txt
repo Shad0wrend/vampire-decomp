@@ -372,6 +372,7 @@
 0x10001cb7 func   ?vfunc496@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc496
 0x10001cbc func   ?vfunc24@CNPC_VGargoyle@@QAEXPAVCBaseEntity@@@Z CNPC_VGargoyle::vfunc24
 0x10001ccb func   ?vfunc104@CBaseGrenade@@UAEXXZ CBaseGrenade::vfunc104
+0x10001cd5 func   ?vfunc613@CPayphone@@UAE_NXZ CPayphone::vfunc613
 0x10001cda func   ?sub_101dba50@@YAPBDH@Z sub_101dba50
 0x10001ce4 func   ?sub_1023cde0@@YAXPAUSWorldInfo@@@Z sub_1023cde0
 0x10001cee func   ?vfunc457@CBasePlayer@@UAEXPBDH@Z CBasePlayer::vfunc457

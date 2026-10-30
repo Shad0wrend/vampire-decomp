@@ -124,6 +124,14 @@ void CPayphone::vfunc431()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aad00 size=0x3
+#include "CPayphone.h"
+bool CPayphone::vfunc613()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aad20 size=0x4d
 #include "CPayphone.h"
 int CPayphone::vfunc611()
