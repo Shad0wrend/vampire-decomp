@@ -51,6 +51,7 @@ public:
 	char m_pad04d4[0x4f4 - 0x4d4];
 	const char *m_pszEndEntity4f4;	// 0x4f4: name of the end entity (null when unset)
 	class CEnvLaserSprite *m_pSprite4f8;	// 0x4f8: the end sprite
+	const char *m_pszTexture4fc;	// 0x4fc: the sprite texture name (null when unset)
 public:
 	virtual void vfunc1();
 	virtual void vfunc2();
