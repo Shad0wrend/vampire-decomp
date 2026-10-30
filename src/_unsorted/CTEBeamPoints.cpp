@@ -71,3 +71,11 @@ ServerClass * CTEBeamPoints::vfunc0()
     return (ServerClass *)((int)&lifted::g_106bfaec);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005c230 size=0x3
+#include "CTEBeamPoints.h"
+int CTEBeamPoints::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION

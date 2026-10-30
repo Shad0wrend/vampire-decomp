@@ -2872,6 +2872,7 @@
 0x10007482 func   ?sub_101a2a80@@YIXPAHHH@Z sub_101a2a80
 0x10007487 func   ?sub_102016a0@CVStatList_t@@QAEXH@Z CVStatList_t::sub_102016a0
 0x1000748c func   ?vfunc103@CBaseToggle@@UAEXXZ CBaseToggle::vfunc103
+0x10007496 func   ?vfunc1@CTEBeamPoints@@UAEHXZ CTEBeamPoints::vfunc1
 0x100074a0 func   ?sub_10041e80@UtlHash8@@QAEIPAX@Z UtlHash8::sub_10041e80
 0x100074b9 func   ?sub_10234400@@YAHXZ sub_10234400
 0x100074c3 func   _activity_copy_prop activity_copy_prop
