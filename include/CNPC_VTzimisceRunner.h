@@ -68,4 +68,11 @@ public:
 	char pad6673[1];
 	float m_f6674;	// +0x6674: an engine time
 	int m_h6678;	// +0x6678: entity handle, -1 at spawn
+public:
+	virtual bool vfunc70();
+	virtual bool vfunc324();
+	virtual bool vfunc325();
+	virtual bool vfunc329();
+	virtual bool vfunc399();
+	virtual bool vfunc400();
 };
