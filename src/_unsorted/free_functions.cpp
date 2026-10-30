@@ -10308,6 +10308,18 @@ int sub_100615e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100617a0 size=0x59
+#include "CTEEnergySplash.h"
+extern CTEEnergySplash g_106c2620;
+void sub_100617a0(CRecipientFilter *pFilter, float flDelay, const Vector *pPos, const Vector *pDir, char bFlag)
+{
+	g_106c2620.m_vecPos = *pPos;
+	g_106c2620.m_vecDir = *pDir;
+	g_106c2620.m_b24 = bFlag;
+	g_106c2620.CTEEnergySplash::vfunc4(pFilter, flDelay);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100618c0 size=0xb
 namespace lifted {
 extern char g_1044de48;
