@@ -194,6 +194,17 @@ int CNPC_VCamera::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103683d0 size=0x6
+#include "CNPC_VCamera.h"
+namespace lifted {
+extern int g_1062f670;
+}
+int CNPC_VCamera::vfunc451()
+{
+    return lifted::g_1062f670;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103683f0 size=0x1e
 #include "CNPC_VCamera.h"
 
