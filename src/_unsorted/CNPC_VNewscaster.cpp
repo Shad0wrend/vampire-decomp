@@ -8,6 +8,13 @@ void CNPC_VNewscaster::vfunc488()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a0010 size=0x1
+#include "CNPC_VNewscaster.h"
+void CNPC_VNewscaster::vfunc489()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a01b0 size=0x8
 #include "CNPC_VNewscaster.h"
 
