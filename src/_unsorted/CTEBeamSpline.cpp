@@ -48,6 +48,17 @@ void CTEBeamSpline::vfunc3(const Vector &current_origin, const Vector &current_a
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005d590 size=0x6
+#include "CTEBeamSpline.h"
+namespace lifted {
+extern char g_106c0428;
+}
+int CTEBeamSpline::vfunc0()
+{
+    return (int)&lifted::g_106c0428;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005d5b0 size=0x3
 #include "CTEBeamSpline.h"
 int CTEBeamSpline::vfunc1()
