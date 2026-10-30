@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100dbe00 size=0x6
+namespace lifted {
+extern char g_10560c20;
+}
+int CCollisionProperty::vfunc18()
+{
+    return (int)&lifted::g_10560c20;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dc1c0 size=0x1
 void CCollisionProperty::vfunc17()
 {
