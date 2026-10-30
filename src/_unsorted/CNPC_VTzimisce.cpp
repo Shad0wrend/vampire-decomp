@@ -505,6 +505,14 @@ float CNPC_VTzimisce::vfunc516()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ba230 size=0x6
+#include "CNPC_VTzimisce.h"
+int CNPC_VTzimisce::vfunc138()
+{
+    return 0x1a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ba640 size=0xf9
 #include "CNPC_VTzimisce.h"
 #include "CUnknown1027d990.h"
