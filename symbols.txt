@@ -4029,6 +4029,7 @@
 0x100095d4 func   ?vfunc40@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc40
 0x100095d9 func   ?sub_1005a6a0@@YAXHHPBH0@Z sub_1005a6a0
 0x100095de func   ?sub_10032880@@YAXXZ sub_10032880
+0x100095e3 func   ?vfunc138@CNPC_VCop@@UAEHXZ CNPC_VCop::vfunc138
 0x100095e8 func   ?vfunc38@CSingleplayRules@@UAEMH@Z CSingleplayRules::vfunc38
 0x100095f2 func   ?sub_1002b360@@YIXPAUS1002b360@@HPAUSInfo1002b360@@@Z sub_1002b360
 0x100095f7 func   ?sub_10300e60@CUnknown10300e60@@QAE_NVVector@@000@Z CUnknown10300e60::sub_10300e60

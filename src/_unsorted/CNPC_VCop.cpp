@@ -95,6 +95,14 @@ void CNPC_VCop::vfunc180()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10371b50 size=0x6
+#include "CNPC_VCop.h"
+int CNPC_VCop::vfunc138()
+{
+    return 7;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10371b70 size=0x65
 #include "CGlobalEntityList.h"
 #include "CAI_BaseNPC.h"
