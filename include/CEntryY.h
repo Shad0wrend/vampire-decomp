@@ -12,6 +12,7 @@ public:
 	const char *m_name;
 	int m_unk0c;
 	CEntryY(int key);	// 0x101eab80 (stub 0x100090ac)
+	bool sub_101eabd0(void *pNode);	// stub 0x100010be: reads the record from an "InventorySection" data node (InternalName, the next dword, the IsDisplayed flag in bit 0 of +0xc); false when there is none
 	~CEntryY() {}	// the destroy function behind the atexit stub 0x1000eb33 is a bare `ret`
 };
 
