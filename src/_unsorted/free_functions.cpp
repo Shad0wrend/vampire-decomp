@@ -70635,11 +70635,13 @@ bool sub_101bf550(const char **a, const char **b)
 
 // FUNCTION: 0x101bf6a0 size=0x15b
 #include "CUtlRBTree12.h"
+#include "utlrbtree.h"
+struct CRBTree12Entry_101c03c0 { char data[4]; };	// the tree of sentinel 0x1072c7dc (RotateLeft 0x101c03c0)
 
 // TARGET: CUtlRBTree12::sub_101bf6a0
 int CUtlRBTree12::sub_101bf6a0(int key)
 {
-	const CUtlRBTree12At<0x1072c7dc> *tree = (const CUtlRBTree12At<0x1072c7dc> *)this;
+	const CUtlRBTree<CRBTree12Entry_101c03c0, unsigned short> *tree = (const CUtlRBTree<CRBTree12Entry_101c03c0, unsigned short> *)this;
 	unsigned short cur = m_Root;
 	while (cur != InvalidIndex())
 	{
