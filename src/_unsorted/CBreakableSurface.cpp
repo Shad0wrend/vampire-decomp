@@ -12,6 +12,17 @@ datamap_t * CBreakableSurface::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010fb80 size=0x6
+#include "CBreakableSurface.h"
+namespace lifted {
+extern char g_1070998c;
+}
+int CBreakableSurface::vfunc80()
+{
+    return (int)&lifted::g_1070998c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010fba0 size=0x3
 #include "CBreakableSurface.h"
 int CBreakableSurface::vfunc81()
