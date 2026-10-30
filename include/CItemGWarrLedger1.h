@@ -19,4 +19,6 @@ public:
 	void sub_10013a57();	// as in CPhysForce (transplant)
 public:
 	virtual int vfunc81();
+public:
+	virtual int vfunc80();
 };
