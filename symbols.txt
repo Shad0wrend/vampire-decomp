@@ -6435,6 +6435,7 @@
 0x1000e8c2 func   ?sub_100856b0@@YAHXZ sub_100856b0
 0x1000e8c7 func   ?sub_101fd430@TList@@QAEPAU1@XZ TList::sub_101fd430
 0x1000e8cc func   ?vfunc5@CActivityCopyProp@@QAEPAV1@I@Z CActivityCopyProp::vfunc5
+0x1000e8d1 func   ?vfunc364@CNPCMaker_Fleshpile@@UAE_NH@Z CNPCMaker_Fleshpile::vfunc364
 0x1000e8d6 func   ??0CVStatAction_t@@QAE@HH@Z CVStatAction_t::CVStatAction_t
 0x1000e8db func   ?sub_101e3df0@CUnknown101e3df0@@QAEXPAUCUnknown101e3cfObj@@@Z CUnknown101e3df0::sub_101e3df0
 0x1000e8e0 func   ?vfunc0@CLocalDLLChain@@UAEXPAVCLocalDLLChainVisitor@@@Z CLocalDLLChain::vfunc0
