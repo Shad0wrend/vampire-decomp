@@ -13174,6 +13174,27 @@ bool CEnt1006f7d0::sub_1006f7d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006f870 size=0x59
+struct CEnt1006f7d0 { bool sub_1006f7d0(); };
+struct CUnknown1006ede0 { int sub_1006ede0(); };
+struct CEnt1006f870 {
+	char m_pad[0x610];
+	EHANDLE m_h610;
+	char m_pad2[0x634 - 0x614];
+	int m_n634;
+	void sub_1006e8b0(int a);
+	void sub_1006f870();
+};
+// TARGET: CEnt1006f870::sub_1006f870
+void CEnt1006f870::sub_1006f870()
+{
+	if (!m_h610.Get())
+		sub_1006e8b0(0);
+	if (!((CEnt1006f7d0 *)this)->sub_1006f7d0())
+		m_n634 = *(int *)(((CUnknown1006ede0 *)this)->sub_1006ede0() + 0x100);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006fde0 size=0x1
 void sub_1006fde0()
 {
