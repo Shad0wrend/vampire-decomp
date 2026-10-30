@@ -12,6 +12,13 @@ datamap_t * CPhysForce::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10027670 size=0x1
+#include "CPhysForce.h"
+void CPhysForce::vfunc242()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027690 size=0x1e
 #include "CPhysForce.h"
 
