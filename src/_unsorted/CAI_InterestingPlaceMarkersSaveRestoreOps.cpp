@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100ded70 size=0x3
+#include "CAI_InterestingPlaceMarkersSaveRestoreOps.h"
+void CAI_InterestingPlaceMarkersSaveRestoreOps::vfunc3(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d9240 size=0xa6
 #include "CAI_InterestingPlaceMarkersSaveRestoreOps.h"
 #include "CSave.h"
