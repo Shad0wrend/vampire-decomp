@@ -8,7 +8,8 @@ public:
 	unsigned int m_hUser;	// 0x8c: handle of the entity using the terminal
 	char m_pad0090[0x80c - 0x90];
 	char m_b080c;	// 0x80c: the terminal is usable
-	char m_pad080d[0x82c - 0x80d];
+	char m_b080d;	// 0x80d: the terminal is in use
+	char m_pad080e[0x82c - 0x80e];
 	union {
 		char m_b082c;	// 0x82c: set while a screen is shown (the user is turned towards it)
 		int m_n082c[4];	// 0x82c: four dwords cleared together on use
