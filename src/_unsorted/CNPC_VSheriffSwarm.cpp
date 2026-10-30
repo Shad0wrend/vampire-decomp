@@ -76,3 +76,15 @@ int CNPC_VSheriffSwarm::vfunc138()
     return 0x1f;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103b2410 size=0xf
+#include "CNPC_VSheriffSwarm.h"
+namespace lifted {
+int sub_10015ad2();
+}
+int CNPC_VSheriffSwarm::vfunc438()
+{
+    *(int *)((char *)this + 0x1b2c) = 0x22;
+    return lifted::sub_10015ad2();
+}
+// END FUNCTION
