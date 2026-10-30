@@ -8068,6 +8068,7 @@
 0x100114aa func   ?sub_102e7e40@@YIXPAUCOwner@@@Z sub_102e7e40
 0x100114b9 func   ?sub_10185450@UtlMem@@QAEXXZ UtlMem::sub_10185450
 0x100114be func   ?sub_1006e0e0@@YIXPAD@Z sub_1006e0e0
+0x100114cd func   ?sub_101d6890@CPartListUnit3@@QAEXXZ CPartListUnit3::sub_101d6890
 0x100114d2 func   ?vfunc337@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::vfunc337
 0x100114dc func   ?vfunc5@CEnvLight@@QAEPAV1@I@Z CEnvLight::vfunc5
 0x100114e6 func   ?sub_100ae450@@YAXXZ sub_100ae450

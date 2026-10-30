@@ -76822,6 +76822,38 @@ S101d61e0 *CUnknown101d6750::sub_101d6750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d6890 size=0x59
+struct CPartListUnit2 {
+    void sub_101d6220();
+};
+struct CPartListUnit3 {
+    char m_pad0000[4];
+    int m_n4;	// 0x4
+    int m_nItems;	// 0x8
+    CPartListUnit2 **m_ppItems;	// 0xc
+    void sub_101d6890();
+};
+
+// TARGET: CPartListUnit3::sub_101d6890
+void CPartListUnit3::sub_101d6890()
+{
+    if (m_ppItems) {
+        for (int i = 0; i < m_nItems; i++) {
+            CPartListUnit2 *p = m_ppItems[i];
+            if (p) {
+                p->sub_101d6220();
+                delete p;
+            }
+            m_ppItems[i] = 0;
+        }
+        delete m_ppItems;
+        m_ppItems = 0;
+    }
+    m_nItems = 0;
+    m_n4 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d6a30 size=0x5
 char __stdcall sub_101d6a30(int a0, int a1)
 {
