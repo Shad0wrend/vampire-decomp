@@ -46,6 +46,29 @@ CVampireProjectile_MingXiaoSpit *CVampireProjectile_MingXiaoSpit::vfunc5(unsigne
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f1840 size=0x5d
+#include "CVampireProjectile_MingXiaoSpit.h"
+#include "CBaseCombatCharacter.h"
+#include "CEHandleGet.h"
+
+struct CVSpitEnt
+{
+	char m_pad[0x9c];
+	CBaseCombatCharacter *m_pChar;
+};
+
+// TARGET: CVampireProjectile_MingXiaoSpit::~CVampireProjectile_MingXiaoSpit
+CVampireProjectile_MingXiaoSpit::~CVampireProjectile_MingXiaoSpit()
+{
+	CVSpitEnt *pEnt = (CVSpitEnt *)EHandle_Get(m_hTarget);
+	if (pEnt && pEnt->m_pChar)
+	{
+		pEnt->m_pChar->sub_103327f0(500.0f);
+		m_hTarget = -1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f18e0 size=0x19
 #include "CVampireProjectile_MingXiaoSpit.h"
 namespace lifted {
