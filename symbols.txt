@@ -7368,6 +7368,7 @@
 0x10011068 func   ?sub_1036e580@CNPC_VChangBros@@QAEHH@Z CNPC_VChangBros::sub_1036e580
 0x10011077 func   ?sub_100d2290@@YAXPBD@Z sub_100d2290
 0x10011090 func   ?sub_102f7c00@@YAIHID@Z sub_102f7c00
+0x1001109a func   ?vfunc490@CNPC_VNewscaster@@UAEXXZ CNPC_VNewscaster::vfunc490
 0x1001109f func   ?sub_100ece60@CTable100ece60@@QAEXHPAH0@Z CTable100ece60::sub_100ece60
 0x100110a4 func   ?sub_101c3bb0@@YA?AUVec3@@XZ sub_101c3bb0
 0x100110a9 func   ?sub_101cf620@@YAXXZ sub_101cf620
