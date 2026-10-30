@@ -180,6 +180,13 @@ int CSingleplayRules::vfunc48(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ac020 size=0x5
+bool CSingleplayRules::vfunc17(int a0)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ac040 size=0x3
 void CSingleplayRules::vfunc54(int a0, int a1, int a2)
 {
