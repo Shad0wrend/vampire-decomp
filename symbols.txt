@@ -3773,6 +3773,7 @@
 0x10008f99 func   ?vfunc1@CSafeDiscSaveRestoreOps_3@@QAEXPAPAHPAUCSafeDiscReader@@@Z CSafeDiscSaveRestoreOps_3::vfunc1
 0x10008fa3 func   ?sub_10370a20@@YADXZ sub_10370a20
 0x10008fa8 func   ?vfunc73@CBaseCombatCharacter@@QAE_NPAVCBaseEntity@@@Z CBaseCombatCharacter::vfunc73
+0x10008fad func   ?vfunc364@CNPCMaker_Zombie@@UAE_NH@Z CNPCMaker_Zombie::vfunc364
 0x10008fb2 func   ?sub_10337300@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10337300
 0x10008fb7 func   ?sub_1024cef0@CBlock64_t@@QAEPAU1@PBU1@@Z CBlock64_t::sub_1024cef0
 0x10008fc6 func   ?vfunc41@CPropSign@@UAEXPAVCBasePlayer@@@Z CPropSign::vfunc41

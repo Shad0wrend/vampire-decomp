@@ -36,6 +36,14 @@ bool CNPCMaker_Zombie::vfunc365(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034cb90 size=0x5
+#include "CNPCMaker_Zombie.h"
+bool CNPCMaker_Zombie::vfunc364(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034cbb0 size=0x3
 #include "CNPCMaker_Zombie.h"
 void CNPCMaker_Zombie::vfunc619(int a0)
