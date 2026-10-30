@@ -91,3 +91,11 @@ ServerClass * CTEBreakModel::vfunc0()
     return (ServerClass *)((int)&lifted::g_106c1144);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005ea10 size=0x3
+#include "CTEBreakModel.h"
+int CTEBreakModel::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
