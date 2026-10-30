@@ -142,3 +142,14 @@ int CBaseButton::vfunc142(void *pInfo)
 	return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100c9170 size=0xe
+namespace lifted {
+int __stdcall sub_10004b92(int, int, int);
+}
+bool CBaseButton::vfunc223()
+{
+    lifted::sub_10004b92(0, 0, 0);
+    return 1;
+}
+// END FUNCTION
