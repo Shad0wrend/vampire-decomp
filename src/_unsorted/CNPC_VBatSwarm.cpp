@@ -88,3 +88,15 @@ int CNPC_VBatSwarm::vfunc438()
     return lifted::sub_10015ad2();
 }
 // END FUNCTION
+
+// FUNCTION: 0x103674a0 size=0xf
+#include "CNPC_VBatSwarm.h"
+namespace lifted {
+int sub_10011225();
+}
+int CNPC_VBatSwarm::vfunc461()
+{
+    *(int *)((char *)this + 0x1b38) = 7;
+    return lifted::sub_10011225();
+}
+// END FUNCTION
