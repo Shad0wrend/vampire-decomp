@@ -9806,6 +9806,7 @@
 0x10014a29 func   ?sub_1003e2e0@CBaseEntity@@QAEXPAV1@PAX@Z CBaseEntity::sub_1003e2e0
 0x10014a2e func   ?vfunc617@CNPC_VWerewolf@@QAE_NUCNPC_VWerewolfVec3@@HH0@Z CNPC_VWerewolf::vfunc617
 0x10014a33 func   ?sub_1020ac00@CUnknown1020ac00@@QAEXH@Z CUnknown1020ac00::sub_1020ac00
+0x10014a3d func   ?sub_101a2390@CRestore@@QAEPAVCBaseEntity@@H@Z CRestore::sub_101a2390
 0x10014a42 func   ?vfunc433@CNPC_VHengeyokai@@QAEXXZ CNPC_VHengeyokai::vfunc433
 0x10014a56 func   ?vfunc179@CBaseDoor@@UAEXXZ CBaseDoor::vfunc179
 0x10014a5b func   ?sub_101f1a30@CUnknown101f1a30@@QAEHPBD@Z CUnknown101f1a30::sub_101f1a30

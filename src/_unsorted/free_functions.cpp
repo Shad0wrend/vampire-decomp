@@ -67019,6 +67019,41 @@ int __stdcall sub_101a2020(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a2390 size=0x5e
+#include "CRestore.h"
+#include "CBaseEntity.h"
+
+struct SSaveEntRec2390 {
+	int m_id;
+	char pad[0xc];
+	EHANDLE m_hEnt;
+	char pad2[0x30 - 0x14];
+};
+struct SSaveData2390 {
+	char pad[0x1318];
+	int m_nEnts;
+	SSaveEntRec2390 *m_pEnts;
+};
+
+CBaseEntity *CRestore::sub_101a2390(int index)
+{
+	SSaveData2390 *pData = (SSaveData2390 *)m_pData2;
+	if (pData && index >= 0) {
+		int i = 0;
+		if (pData->m_nEnts > 0) {
+			SSaveEntRec2390 *p = pData->m_pEnts;
+			do {
+				if (p->m_id == index)
+					return p->m_hEnt.Get();
+				i++;
+				p++;
+			} while (i < pData->m_nEnts);
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2820 size=0x198
 #include "CRestore.h"
 #include "CUnknown1070b248.h"
