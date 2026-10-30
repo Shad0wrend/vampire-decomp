@@ -13,3 +13,10 @@ CTEExplosiveGunshotDecal *CTEExplosiveGunshotDecal::vfunc2(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10064ac0 size=0x1
+#include "CTEExplosiveGunshotDecal.h"
+void CTEExplosiveGunshotDecal::vfunc5()
+{
+}
+// END FUNCTION

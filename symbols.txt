@@ -3688,6 +3688,7 @@
 0x1000917e func   ?sub_100ee2b0@CBaseDoor@@QAEPAV1@XZ CBaseDoor::sub_100ee2b0
 0x10009188 func   ?sub_100f71c0@@YGXPAUEntSlots_t@@II@Z sub_100f71c0
 0x10009192 func   ?sub_101d5fb0@@YIXPAX@Z sub_101d5fb0
+0x1000919c func   ?vfunc5@CTEExplosiveGunshotDecal@@UAEXXZ CTEExplosiveGunshotDecal::vfunc5
 0x100091a6 func   ?sub_10322800@CBaseCombatCharacter@@QAEXIH@Z CBaseCombatCharacter::sub_10322800
 0x100091ab func   _logic_timer logic_timer
 0x100091b0 func   ?vfunc78@CNPC_VGhoulCroucher@@UAEXXZ CNPC_VGhoulCroucher::vfunc78
