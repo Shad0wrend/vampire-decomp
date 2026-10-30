@@ -4081,6 +4081,7 @@
 0x10009edf func   ?sub_1006c4f0@CUnit1006c4f0@@QAEXPBD@Z CUnit1006c4f0::sub_1006c4f0
 0x10009ee9 func   ?sub_10203660@@YAHPBD@Z sub_10203660
 0x10009ef8 func   _prop_hacking prop_hacking
+0x10009efd func   ?vfunc5@CBaseTempEntity@@UAEXXZ CBaseTempEntity::vfunc5
 0x10009f02 func   ?vfunc370@CBaseCombatWeapon@@UAEXPAHPAV1@@Z CBaseCombatWeapon::vfunc370
 0x10009f07 func   ?sub_100f9820@UtlMem@@QAEXXZ UtlMem::sub_100f9820
 0x10009f16 func   ?sub_10077820@CUnknown10077820@@QAEDPAUCUnknownSlot3Obj@@HH@Z CUnknown10077820::sub_10077820

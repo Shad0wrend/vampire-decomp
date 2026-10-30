@@ -24,6 +24,12 @@ CBaseTempEntity *CBaseTempEntity::vfunc2(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100508a0 size=0x1
+void CBaseTempEntity::vfunc5()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100508c0 size=0xbd
 #include "CBaseTempEntity.h"
 #include "CBroadcastRecipientFilter.h"
