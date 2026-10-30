@@ -4133,6 +4133,7 @@
 0x10009be7 func   ?sub_1039aaf0@CUnknown1039aaf0@@QAEXD@Z CUnknown1039aaf0::sub_1039aaf0
 0x10009bec func   ?sub_101d2d80@@YAMPBUmatrix3x4_t@@PBVVector@@@Z sub_101d2d80
 0x10009bf6 func   ??0CSave@@QAE@PAX@Z CSave::CSave
+0x10009bfb func   ?vfunc363@CNPCMaker@@UAE_NH@Z CNPCMaker::vfunc363
 0x10009c00 func   ?sub_101e0d60@CUnknown101d5bd0@@QAEXXZ CUnknown101d5bd0::sub_101e0d60
 0x10009c05 func   ?vfunc5@CItemGSewerBook1@@QAEPAV1@I@Z CItemGSewerBook1::vfunc5
 0x10009c0a func   ?vfunc81@CDynamicProp@@UAEHXZ CDynamicProp::vfunc81
