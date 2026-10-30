@@ -56,6 +56,17 @@ void CTEBubbleTrail::vfunc3(const Vector &origin, const QAngle &angles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005ff80 size=0x6
+#include "CTEBubbleTrail.h"
+namespace lifted {
+extern char g_106c1ba0;
+}
+int CTEBubbleTrail::vfunc0()
+{
+    return (int)&lifted::g_106c1ba0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005ffa0 size=0x3
 #include "CTEBubbleTrail.h"
 int CTEBubbleTrail::vfunc1()
