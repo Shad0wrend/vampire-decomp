@@ -12,4 +12,10 @@ public:
 	CNPC_VBatSwarm *sub_10366c30(); // as in CKeepUpright (transplant)
 public:
     virtual datamap_t * vfunc82();
+public:
+	virtual int vfunc138();
+	virtual int vfunc451();
+	virtual bool vfunc452();
+	virtual int vfunc473();
+	virtual int vfunc580();
 };
