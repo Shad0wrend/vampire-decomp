@@ -59,4 +59,6 @@ public:
 	float m_flTarget5fc;	// 0x5fc: the target fraction
 public:
 	virtual int vfunc82();
+public:
+	virtual bool vfunc223();
 };

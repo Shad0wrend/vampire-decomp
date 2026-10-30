@@ -37,6 +37,6 @@ public:
 	virtual void vfunc0(CVTSDependencyField *pField, CSave *pSave);	// "Save": a flag byte, then the record's string length and string
 	virtual void vfunc1(CVTSDependencyField *pField, CVTSDependencyRestore *pRestore);	// "Restore": a flag byte, then the record's string (or the reset record when the flag is clear)
 	virtual void vfunc2();
-	virtual void vfunc3();
+	virtual int vfunc3(int);
 	virtual bool vfunc4(int, int);
 };

@@ -82,4 +82,6 @@ public:
 	virtual int vfunc580();
 public:
 	virtual int vfunc588();
+public:
+	virtual int vfunc320(int, int);
 };

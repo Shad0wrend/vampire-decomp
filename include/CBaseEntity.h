@@ -49,7 +49,7 @@ public:
 	virtual void vfunc24(); virtual void vfunc25(int); virtual void vfunc26(int); virtual void vfunc27(); virtual float vfunc28();
 	virtual float vfunc29(); virtual float vfunc30(); virtual void vfunc31(int pDump);	/* slot 31 "Dump": takes the dump context handed to the DumpXxx helpers */ virtual bool vfunc32(int a); virtual int vfunc33();
 	virtual int vfunc34(int a); virtual int vfunc35(int a); virtual int vfunc36(); virtual float vfunc37(); virtual void * vfunc38(int);
-	virtual void vfunc39(CBaseEntity *pOther); virtual void vfunc40(int); virtual void vfunc41(); virtual void vfunc42(); virtual void vfunc43(int);
+	virtual void vfunc39(CBaseEntity *pOther); virtual void vfunc40(int); virtual void vfunc41(); virtual int vfunc42(int); virtual void vfunc43(int);
 	virtual bool vfunc44(int); virtual bool vfunc45(void *pPassEnt, Vector vecStart, Vector vecEnd, unsigned int fMask); virtual void vfunc46(); virtual void vfunc47(); virtual float vfunc48();
 	virtual float vfunc49(); virtual void vfunc50(); virtual void vfunc51(); virtual float vfunc52(); virtual float vfunc53();
 	virtual bool vfunc54(int); virtual void vfunc55(int, int, int, int, int, int, int); virtual void vfunc56(int, int, int, int, int, int, int, int); virtual void vfunc57(int, int, int, int, int, int, int); virtual void vfunc58(int);
