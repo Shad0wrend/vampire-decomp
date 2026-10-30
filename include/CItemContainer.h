@@ -16,7 +16,9 @@ public:
 	char pad0[0x1fc];
 	int m_nTakeDamage1fc;	// 0x1fc
 	int m_nField200;	// 0x200: 2 once the container is broken
-	char pad204[0x19e0 - 0x204];
+	char pad204[0x210 - 0x204];
+	int m_iHealth;	// 0x210
+	char pad214[0x19e0 - 0x214];
 	COutputEvent m_Output19e0;	// 0x19e0: the break output
 	char pad19f8[0x1a28 - 0x19f8];
 	CItemContainerHandle m_hUser;	// EHANDLE at +0x1a28 (the entity using the container)
