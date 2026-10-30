@@ -283,6 +283,14 @@ void CNPC_VMingXiao::vfunc390(CTakeDamageInfo *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10395b80 size=0x5
+#include "CNPC_VMingXiao.h"
+bool CNPC_VMingXiao::vfunc366(int a0, int a1, int a2)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10395ba0 size=0x9c
 #include "CNPC_VMingXiao.h"
 #include "CEHandleGet.h"
