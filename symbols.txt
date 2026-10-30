@@ -3775,6 +3775,7 @@
 0x10008c6a func   ?sub_101c4bf0@CBaseTrigger@@QAEXXZ CBaseTrigger::sub_101c4bf0
 0x10008c6f func   ?sub_101e8dc0@CUnknown101e8dc0@@QAEHXZ CUnknown101e8dc0::sub_101e8dc0
 0x10008c74 func   ?vfunc5@CItemGGhostPendant@@QAEPAV1@I@Z CItemGGhostPendant::vfunc5
+0x10008c79 func   ?vfunc80@CWeaponMelee_MingXiaoTentacle@@UAEHXZ CWeaponMelee_MingXiaoTentacle::vfunc80
 0x10008c83 func   ?sub_102522e0@CUnknown102522e0@@QAEHXZ CUnknown102522e0::sub_102522e0
 0x10008c88 func   ?sub_100bde40@CUnknown100bde40@@QAE_NPBXH@Z CUnknown100bde40::sub_100bde40
 0x10008c8d func   ?sub_10345890@@YAXPBM0MPAM@Z sub_10345890
