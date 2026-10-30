@@ -14,6 +14,13 @@ CTEMuzzleFlash *CTEMuzzleFlash::vfunc2(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10065ec0 size=0x3
+#include "CTEMuzzleFlash.h"
+void CTEMuzzleFlash::vfunc3(int a0, int a1)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10065ee0 size=0x39
 #include "CTEMuzzleFlash.h"
 #include "IVEngineServerFull.h"
