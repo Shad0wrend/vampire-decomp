@@ -60,3 +60,11 @@ ServerClass * CTEExplosion::vfunc0()
     return (ServerClass *)((int)&lifted::g_106c2a40);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10061b20 size=0x3
+#include "CTEExplosion.h"
+int CTEExplosion::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
