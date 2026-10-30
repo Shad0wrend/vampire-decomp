@@ -11,6 +11,16 @@ int CNPC_VFrenzyShadow::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10375260 size=0x6
+namespace lifted {
+extern int g_10637b4c;
+}
+int CNPC_VFrenzyShadow::vfunc451()
+{
+    return lifted::g_10637b4c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10375440 size=0x1d
 #include "CNPC_VFrenzyShadow.h"
 struct A { int sub_10012300(int); };
