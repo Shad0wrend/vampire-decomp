@@ -59032,6 +59032,37 @@ void CUnknown1017f980::sub_1017f980()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017f9c0 size=0x59
+#include "COutputEvent.h"
+#include "globalvars.h"
+int sub_1023dcd0();
+struct CCopTimerView {
+	virtual bool vfunc0();
+	virtual bool vfunc1();
+	char m_pad04[0x28 - 4];
+	float m_f28;
+};
+extern CCopTimerView *g_10725f74;
+struct CNPC_VCopUnit {
+	char m_pad0000[0x1d18];
+	char m_b1d18;
+	float m_f1d1c;
+	void sub_1017f900();
+	void sub_1017f9c0();
+};
+void CNPC_VCopUnit::sub_1017f9c0()
+{
+	char *pObj = (char *)sub_1023dcd0();
+	if (pObj)
+		((COutputEvent *)(pObj + 0x498))->sub_100cd660(this, this, 0);
+	float flDelay = g_10725f74->vfunc1() ? 0.0f : g_10725f74->m_f28;
+	float flTime = flDelay + gpGlobals->curtime;
+	m_b1d18 = 1;
+	m_f1d1c = flTime;
+	sub_1017f900();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017faa0 size=0x65
 struct CMsgPlayerView;
 struct CPlayerLookup { char pad[0x49c]; int m_nState; };
