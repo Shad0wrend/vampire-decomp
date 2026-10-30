@@ -20,6 +20,17 @@ int CWeaponIArmor_Hvy_Cloth::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f3500 size=0x6
+#include "CWeaponIArmor_Hvy_Cloth.h"
+namespace lifted {
+extern char g_1067ea48;
+}
+int CWeaponIArmor_Hvy_Cloth::vfunc362()
+{
+    return (int)&lifted::g_1067ea48;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f41f0 size=0x1e
 #include "CWeaponIArmor_Hvy_Cloth.h"
 
