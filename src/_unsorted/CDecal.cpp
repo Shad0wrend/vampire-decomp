@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1023a650 size=0x6
+#include "CDecal.h"
+namespace lifted {
+extern char g_105c2580;
+}
+int CDecal::vfunc82()
+{
+    return (int)&lifted::g_105c2580;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023adb0 size=0x65
 #include "CDecal.h"
 #include "CBaseEntity.h"

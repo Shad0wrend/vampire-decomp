@@ -8689,6 +8689,7 @@
 0x1001306b func   ?sub_10256220@CBaseCombatWeapon@@QAEDXZ CBaseCombatWeapon::sub_10256220
 0x10013070 func   ?sub_1017c6d0@CBasePlayer@@QAEXXZ CBasePlayer::sub_1017c6d0
 0x10013075 func   _item_g_wireless_camera_2 item_g_wireless_camera_2
+0x1001307a func   ?vfunc82@CDecal@@UAEHXZ CDecal::vfunc82
 0x1001307f func   _item_g_wireless_camera_3 item_g_wireless_camera_3
 0x10013084 func   ?sub_102ff960@CAI_Pathfinder@@QAE_NPAUCPairFields102dda40@@H@Z CAI_Pathfinder::sub_102ff960
 0x10013089 func   _item_g_wireless_camera_4 item_g_wireless_camera_4
