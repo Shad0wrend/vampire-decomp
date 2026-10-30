@@ -45,4 +45,9 @@ public:
 	void sub_10269f30(int condition);	// ClearCondition (stub 0x1000c39c), called directly
 public:
     virtual datamap_t * vfunc82();
+public:
+	virtual int vfunc138();
+	virtual int vfunc451();
+	virtual bool vfunc452();
+	virtual int vfunc580();
 };

@@ -37,4 +37,9 @@ public:
 	unsigned int m_hHold6664;	// 0x6664: entity handle of the enemy character the hunter holds
 public:
     virtual datamap_t * vfunc82();
+public:
+	virtual int vfunc138();
+	virtual int vfunc451();
+	virtual bool vfunc452();
+	virtual int vfunc580();
 };

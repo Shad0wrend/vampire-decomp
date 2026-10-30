@@ -11,4 +11,8 @@ public:
 	CNPC_VLasombra *sub_10388da0();	// as in CKeepUpright (transplant)
 public:
     virtual datamap_t * vfunc82();
+public:
+	virtual int vfunc451();
+	virtual bool vfunc452();
+	virtual int vfunc580();
 };

@@ -20,4 +20,8 @@ public:
 	char sub_10014df8(int condition);	// "HasCondition" (stub 0x10014df8 for 0x10269aa0), called directly
 public:
     virtual datamap_t * vfunc82();
+public:
+	virtual int vfunc451();
+	virtual bool vfunc452();
+	virtual int vfunc580();
 };
