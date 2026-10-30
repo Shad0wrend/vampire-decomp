@@ -58,6 +58,26 @@ void CPropClockHand::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012db00 size=0x5a
+#include "CPropClockHand.h"
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList g_106eb5d8;
+extern char g_10538764[];
+extern char g_1057416c[];
+extern "C" void *__RTDynamicCast(void *, long, void *, void *, int);
+void CPropClockHand::vfunc113()
+{
+	CBaseEntity::vfunc113();
+	if (m_n754) {
+		CBaseEntity *pTimer = (CBaseEntity *)__RTDynamicCast(g_106eb5d8.sub_100f7770(0, (const char *)m_n754, 0, this), 0, g_10538764, g_1057416c, 0);
+		if (pTimer)
+			*(unsigned int *)&m_hSource750 = *pTimer->vfunc1();
+		else
+			*(unsigned int *)&m_hSource750 = 0xffffffff;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012ddf0 size=0x75
 #include "CBaseEntity.h"
 #include "CPropClockHand.h"
