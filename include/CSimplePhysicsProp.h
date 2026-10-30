@@ -28,4 +28,6 @@ public:
 	void sub_100b3900(unsigned int flags);	// "CBaseEntity::RemoveFlag2"
 public:
 	virtual int vfunc117();
+public:
+	virtual int vfunc226();
 };
