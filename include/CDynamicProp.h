@@ -39,4 +39,6 @@ public:
 	int m_n07d8;	// 0x7d8
 public:
 	virtual int vfunc81();
+public:
+	virtual int vfunc82();
 };
