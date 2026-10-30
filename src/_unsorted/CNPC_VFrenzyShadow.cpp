@@ -43,6 +43,13 @@ int CNPC_VFrenzyShadow::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10375d70 size=0x6
+int CNPC_VFrenzyShadow::vfunc138()
+{
+    return 3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10375ed0 size=0x32
 #include "CNPC_VFrenzyShadow.h"
 #include "CAI_BaseNPCTroika.h"

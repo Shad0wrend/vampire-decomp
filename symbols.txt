@@ -560,6 +560,7 @@
 0x100022e3 func   ?vfunc364@CNPC_VPlaceholder@@UAE_NH@Z CNPC_VPlaceholder::vfunc364
 0x100022e8 func   ?sub_10156d30@@YIXPAD@Z sub_10156d30
 0x100022ed func   ?sub_100799b0@SceneView@@QAEXXZ SceneView::sub_100799b0
+0x100022f2 func   ?vfunc138@CNPC_VFrenzyShadow@@UAEHXZ CNPC_VFrenzyShadow::vfunc138
 0x100022f7 func   ?Grow@?$CUtlMemory@UElem280_t@@@@QAEXH@Z CUtlMemory<Elem280_t>::Grow
 0x100022f7 func   ?sub_102e9e50@@YIXPAUMem@@HH@Z sub_102e9e50
 0x100022fc func   ?sub_101832b0@CUnitP4@@QAE_NXZ CUnitP4::sub_101832b0
