@@ -23,6 +23,17 @@ int CNPC_VCop::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10370950 size=0x6
+#include "CNPC_VCop.h"
+namespace lifted {
+extern int g_10631bb0;
+}
+int CNPC_VCop::vfunc451()
+{
+    return lifted::g_10631bb0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10370970 size=0x1e
 #include "CNPC_VCop.h"
 
