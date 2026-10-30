@@ -93849,6 +93849,29 @@ bool CUnit10210250::sub_10210180(CEntityVSlots *pA, CEntityVSlots *pB)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102101d0 size=0x59
+#include "CEntityVSlots.h"
+#include "CBaseCombatCharacter.h"
+struct CUnit10210250
+{
+	bool sub_10210250(CEntityVSlots *pA, CEntityVSlots *pB);
+	bool sub_102102e0(CEntityVSlots *pA, CEntityVSlots *pB);
+	bool sub_102101d0(CEntityVSlots *pA, CEntityVSlots *pB);
+};
+bool CUnit10210250::sub_102101d0(CEntityVSlots *pA, CEntityVSlots *pB)
+{
+	if (!sub_10210250(pA, pB))
+		return false;
+	if (!pA->slot363(pB))
+		return false;
+	if (!((CBaseCombatCharacter *)pB)->sub_10146b20((CBaseCombatCharacter *)pA))
+		return false;
+	if (sub_102102e0(pA, pB))
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10210250 size=0x70
 #include "CEntityVSlots.h"
 #include <math.h>
