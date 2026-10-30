@@ -7745,6 +7745,7 @@
 0x10011608 func   ?vfunc42@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHH@Z CTempEntsSystem::vfunc42
 0x10011617 func   ?CopyConstruct@@YAXPAV?$CHandle@VCBaseEntity@@@@ABV1@@Z CopyConstruct
 0x10011617 func   ?sub_10085070@@YAXPAHPBH@Z sub_10085070
+0x1001161c func   ?vfunc73@CPushable@@UAE_NH@Z CPushable::vfunc73
 0x10011621 func   ?sub_1013d450@@YAMMMM@Z sub_1013d450
 0x10011630 func   ?sub_10130170@@YADHPAPBDPAH1@Z sub_10130170
 0x10011635 func   ?sub_1042ea40@@YAPAVCSprite@@PBDABVVector@@_N@Z sub_1042ea40

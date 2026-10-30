@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1010f1b0 size=0x5
+bool CPushable::vfunc73(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f1f0 size=0x36
 #include "CPushable.h"
 
