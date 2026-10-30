@@ -9,6 +9,14 @@ int CBaseNetworkable::vfunc5()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b79a0 size=0x3
+#include "CBaseNetworkable.h"
+int CBaseNetworkable::vfunc2()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b79c0 size=0xb
 char * __fastcall sub_100b79c0(char *self)
 {

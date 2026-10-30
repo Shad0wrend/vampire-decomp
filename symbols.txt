@@ -2196,6 +2196,7 @@
 0x10005c59 func   ?sub_101b0c10@CBaseEntityUnit101b0c10@@QAEXH@Z CBaseEntityUnit101b0c10::sub_101b0c10
 0x10005c63 func   ?vfunc113@CTriggerProximity@@UAEXXZ CTriggerProximity::vfunc113
 0x10005c68 func   ?vfunc3@CTEBeamSpline@@UAEXABVVector@@0@Z CTEBeamSpline::vfunc3
+0x10005c6d func   ?vfunc2@CBaseNetworkable@@UAEHXZ CBaseNetworkable::vfunc2
 0x10005c72 func   ?vfunc0@CTEMuzzleFlash@@UAEPAUServerClass@@XZ CTEMuzzleFlash::vfunc0
 0x10005c7c func   ?sub_10378ec0@CNPC_VGargoyle@@QAE_NXZ CNPC_VGargoyle::sub_10378ec0
 0x10005c8b func   _npc_VGargoyle npc_VGargoyle
