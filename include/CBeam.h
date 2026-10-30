@@ -23,6 +23,7 @@ public:
 	void sub_100bb870(int a, const float *pPos);	// "CBeam::PointsInit"-like: clears the type bits above 0xff0, two beam ents, slot 62(a), end position = pPos, clears the attachment entries, then sub_100bbbf0
 	void sub_100bb900(int a, const float *pPos);	// same as sub_100bb870 but sets the low type bits to 3
 	void sub_100bbe70(int a, int b);
+	void sub_100bb990(const float *pPos, CBaseEntity *pEnt);	// "CBeam::PointEntInit"-like: type bits = 1 (above 0xff0 kept), count 2, slot 62(pPos), the entity handed to sub_100bb030, attachments 1 and [count] cleared, then sub_100bbbf0
 	void sub_100bba90(CBaseEntity *pStart, CBaseEntity *pEnd);	// as sub_100bba10 with the type bits = 5
 	void sub_100bba10(CBaseEntity *pStart, CBaseEntity *pEnd);	// \"CBeam::EntsInit\"-like: two beam ents (count 2, type bits = 2), the entities handed to sub_100bafc0 / sub_100bb030, attachments 1 and 2 cleared, then sub_100bbbf0
 	void sub_100bbbf0();	// called through the stub at 0x10013c8c
