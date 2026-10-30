@@ -23,6 +23,17 @@ int CNPC_VMingXiao::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10391090 size=0x6
+#include "CNPC_VMingXiao.h"
+namespace lifted {
+extern int g_106433a8;
+}
+int CNPC_VMingXiao::vfunc451()
+{
+    return lifted::g_106433a8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103910b0 size=0x86
 #include "CNPC_VMingXiao.h"
 #include "utlvector.h"
