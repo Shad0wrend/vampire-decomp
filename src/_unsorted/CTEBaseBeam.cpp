@@ -36,6 +36,17 @@ CTEBaseBeam *CTEBaseBeam::vfunc2(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005a840 size=0x6
+#include "CTEBaseBeam.h"
+namespace lifted {
+extern char g_106becec;
+}
+ServerClass * CTEBaseBeam::vfunc0()
+{
+    return (ServerClass *)((int)&lifted::g_106becec);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005a860 size=0x3
 #include "CTEBaseBeam.h"
 int CTEBaseBeam::vfunc1()
