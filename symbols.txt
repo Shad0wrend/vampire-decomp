@@ -7987,6 +7987,7 @@
 0x1001221a func   ?sub_1015ef20@CUnknown1015ef20@@QAE_NXZ CUnknown1015ef20::sub_1015ef20
 0x10012224 func   ?vfunc71@CPropModelState@@UAEXXZ CPropModelState::vfunc71
 0x10012229 func   ?vfunc14@CServerGameDLL@@UAEXPAXHHHHH@Z CServerGameDLL::vfunc14
+0x1001222e func   ?vfunc72@CMultiplayRules@@UAE_NXZ CMultiplayRules::vfunc72
 0x10012233 func   ?vfunc19@CServerGameDLL@@UAEXPAX@Z CServerGameDLL::vfunc19
 0x10012238 func   ?vfunc3@CTEInspectionFX@@UAEXPBM0@Z CTEInspectionFX::vfunc3
 0x10012242 func   ?vfunc125@CBaseEntity@@UAEXXZ CBaseEntity::vfunc125
