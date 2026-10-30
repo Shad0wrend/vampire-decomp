@@ -142,4 +142,6 @@ public:
 	virtual bool vfunc377(int, int);
 	virtual bool vfunc378(int, int);
 	virtual bool vfunc587(int);
+public:
+	virtual int vfunc138();
 };
