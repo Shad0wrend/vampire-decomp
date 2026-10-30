@@ -25,6 +25,9 @@ public:
 	int vfunc438();	// slot 438 "SelectSchedule": at state 2 the weapon's type flags (slot 360) pick slot 604 (0x18000 bits) or slot 605, a non-zero answer is the schedule, else CNPC_VHuman::vfunc438
 	int sub_10015ad2();	// CNPC_VHuman::vfunc438 (stub 0x10015ad2), tail called
 	int vfunc461();	// slot 461 "SelectIdealState": at state 1 a pending 0x4c..0x4e condition (without the byte at +0x65f6) switches to state 3; condition 0x3e reports the entity of the handle at +0x628c to slot 597 on the map la_empire_2 and switches to state 0xb; otherwise CNPC_VHuman::vfunc461
+	void vfunc453();	// slot 453: CAI_BaseNPCTroika::vfunc453, then (slot 158 holds, state slot 464 is 1, flag bit 7 of +0x4c clear or byte +0x65f4 clear) sets condition 0x3e
+	void sub_102ad140();	// CAI_BaseNPCTroika::vfunc453 (stub 0x10011b35), called directly
+	void sub_10269eb0(int condition);	// CAI_BaseNPC SetCondition (stub 0x100123f5), called directly
 public:
     virtual datamap_t * vfunc82();
 };
