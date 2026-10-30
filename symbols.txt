@@ -6378,6 +6378,7 @@
 0x1000e949 func   ?vfunc82@CPropHaunted@@UAEPAUdatamap_t@@XZ CPropHaunted::vfunc82
 0x1000e94e func   ?vfunc491@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc491
 0x1000e953 func   ?sub_10073940@@YIMPAX@Z sub_10073940
+0x1000e95d func   ?vfunc325@CNPC_VTzimisce@@UAE_NXZ CNPC_VTzimisce::vfunc325
 0x1000e962 func   ?vfunc546@CNPC_VVampire@@QAEHH@Z CNPC_VVampire::vfunc546
 0x1000e96c func   ?sub_1042e8c0@CUnknown1042e8c0@@QAEXXZ CUnknown1042e8c0::sub_1042e8c0
 0x1000e971 func   ?sub_10146a80@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10146a80

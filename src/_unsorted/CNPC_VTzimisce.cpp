@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103b6d90 size=0x3
+#include "CNPC_VTzimisce.h"
+bool CNPC_VTzimisce::vfunc325()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b6e90 size=0xe1
 #include "CNPC_VNewscaster.h"
 #include "CNPC_VTzimisce.h"
