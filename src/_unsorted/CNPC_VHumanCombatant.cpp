@@ -105,3 +105,20 @@ int CNPC_VHumanCombatant::vfunc438()
 	return sub_10015ad2();
 }
 // END FUNCTION
+
+// FUNCTION: 0x10387520 size=0x44
+#include "CNPC_VCop.h"
+struct FlagView { char pad[0x4c]; unsigned int m_flags; char pad2[0x65f4 - 0x50]; char m_b65f4; };
+static inline bool HasBit7(unsigned int f) { return ((f >> 7) & 1) != 0; }
+void CNPC_VHumanCombatant::vfunc453()
+{
+	sub_102ad140();
+	if (((char (__fastcall *)(void *))(*(void ***)this)[158])(this)) {
+		if (((int (__fastcall *)(void *))(*(void ***)this)[464])(this) == 1) {
+			FlagView *v = (FlagView *)this;
+			if (!HasBit7(v->m_flags) || !v->m_b65f4)
+				sub_10269eb0(0x3e);
+		}
+	}
+}
+// END FUNCTION
