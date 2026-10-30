@@ -488,3 +488,10 @@ int CNPC_VGargoyle::vfunc359(int index)
 	return 1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1037a610 size=0x5
+bool CNPC_VGargoyle::vfunc74(int a0)
+{
+    return 0;
+}
+// END FUNCTION
