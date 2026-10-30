@@ -2992,6 +2992,7 @@
 0x1000768f func   ?vfunc596@CAI_BaseNPCTroika@@UAEXH@Z CAI_BaseNPCTroika::vfunc596
 0x100076a3 func   ?sub_100a98f0@CBaseEntity@@QAEHHH@Z CBaseEntity::sub_100a98f0
 0x100076b2 func   ?vfunc104@CBaseDoor@@UAEXXZ CBaseDoor::vfunc104
+0x100076c6 func   ?vfunc70@CNPC_VTzimisceHeadClaw@@UAE_NXZ CNPC_VTzimisceHeadClaw::vfunc70
 0x100076d0 func   ?sub_102a95c0@CUnknown102a95c0@@QAEPAXXZ CUnknown102a95c0::sub_102a95c0
 0x100076d5 func   ?sub_10075ce0@CUnknown10077730@@QAEXD@Z CUnknown10077730::sub_10075ce0
 0x100076e9 func   ?vfunc5@CNPC_VMoleman@@QAEPAV1@I@Z CNPC_VMoleman::vfunc5

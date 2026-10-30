@@ -77,6 +77,14 @@ void CNPC_VTzimisceHeadClaw::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c1520 size=0x3
+#include "CNPC_VTzimisceHeadClaw.h"
+bool CNPC_VTzimisceHeadClaw::vfunc70()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c1540 size=0x95
 #include "CNPC_VTzimisceHeadClaw.h"
 
