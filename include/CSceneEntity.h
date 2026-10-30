@@ -9,6 +9,7 @@
 
 class CBaseEntity;
 class CUnknown1007ce20;
+class CUnknown1007ed10;
 
 class CSceneOutputList	// the output at +0x4fc (an event list); only the add call is known
 {
