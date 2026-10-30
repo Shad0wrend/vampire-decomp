@@ -64,3 +64,11 @@ ServerClass * CTEBeamRingPoint::vfunc0()
     return (ServerClass *)((int)&lifted::g_106c0178);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005ce50 size=0x3
+#include "CTEBeamRingPoint.h"
+int CTEBeamRingPoint::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
