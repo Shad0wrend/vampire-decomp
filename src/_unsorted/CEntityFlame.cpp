@@ -12,6 +12,14 @@ datamap_t * CEntityFlame::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f5200 size=0x3
+#include "CEntityFlame.h"
+int CEntityFlame::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f5490 size=0x1e
 #include "CEntityFlame.h"
 
