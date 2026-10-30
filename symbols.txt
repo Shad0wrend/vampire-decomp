@@ -1833,6 +1833,7 @@
 0x10005042 func   ?sub_102b5be0@@YADXZ sub_102b5be0
 0x1000504c func   ??0CBaseEntityList@@QAE@XZ CBaseEntityList::CBaseEntityList
 0x10005056 func   ?sub_101ca510@CTriggerUnit101ca510@@QAEXPAVCBaseEntity@@@Z CTriggerUnit101ca510::sub_101ca510
+0x10005060 func   ?vfunc490@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc490
 0x1000506f func   ?vfunc546@CNPC_VSabbatLeader@@QAEHH@Z CNPC_VSabbatLeader::vfunc546
 0x10005074 func   ?vfunc5@CSun@@QAEPAV1@I@Z CSun::vfunc5
 0x10005083 func   ?sub_102c89e0@@YAHXZ sub_102c89e0
