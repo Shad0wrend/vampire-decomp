@@ -39,6 +39,14 @@ int CWeaponIWritten::vfunc328()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040b3e0 size=0x6
+#include "CWeaponIWritten.h"
+int CWeaponIWritten::vfunc329()
+{
+    return 0xbc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040b430 size=0x3
 #include "CWeaponIWritten.h"
 bool CWeaponIWritten::vfunc325()
