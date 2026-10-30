@@ -11,6 +11,7 @@ public:
 	int m_nSuppressCount;			// 0x0010
 
 	void vfunc2(CUnknown1019d130 *filter, int a, int b, int c, int d);	// slot 2
+	void vfunc29(CUnknown1019d130 *filter, int a, int b);	// slot 29
 	void vfunc16(CUnknown1019d130 *filter, int a, int b, int c, int d);	// slot 16
 	void vfunc28(CUnknown1019d130 *filter, int a, int b, int c, int d);	// slot 28
 	void vfunc31(CUnknown1019d130 *filter, int a, int b, int c, int d);	// slot 31
