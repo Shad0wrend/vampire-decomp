@@ -18323,14 +18323,14 @@ void CUtlRBTree24::sub_1007fd70(int elem)
 // FUNCTION: 0x1007ffc0 size=0x1d0
 #include "CUtlRBTree24.h"
 #include "utlrbtree.h"
-struct CRBEntry8 {
+struct CRBEntry24 {
     int a;
     int b;
 };
 
 void CUtlRBTree24::sub_1007ffc0(int elem)
 {
-	const CUtlRBTree<CRBEntry8, int> *tree = (const CUtlRBTree<CRBEntry8, int> *)this;
+	const CUtlRBTree<CRBEntry24, int> *tree = (const CUtlRBTree<CRBEntry24, int> *)this;
 	int leftchild = sub_1007fc70(elem).m_Left;
 	SetLeftChild(elem, sub_1007fc70(leftchild).m_Right);
 	if (sub_1007fc70(leftchild).m_Right != InvalidIndex())
