@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1040ce70 size=0x3
+#include "CPlayerPickupController.h"
+void CPlayerPickupController::vfunc229(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040ce90 size=0x6
 #include "CPlayerPickupController.h"
 namespace lifted {
