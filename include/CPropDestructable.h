@@ -33,7 +33,8 @@ public:
     void sub_10193ea0(inputdata_t *pInput);    // an input handler that takes an integer off the stage health: when the integer exceeds the stage health (+0x78c) the health is lowered by the excess, the OnHealthChanged output (+0x748) fires with the new health, and at 0 or less the prop takes a damage record (attacker = the input's caller, damage = the integer) through slot 144
     void vfunc113();    // slot 113 (the base CBreakableProp::vfunc113 via stub 0x10004dbd, then the stage index of the last model: +0x77c = the count of the non-zero entries of +0x794, then sub_10193cc0(the stage counter +0x784, 0))
 
-    char m_pad03e0[0x748 - 0x3e0];
+    char m_pad03e0[0x730 - 0x3e0];
+    COutputEvent m_Output730;    // 0x730
     COutputEvent m_OnHealthChanged748;    // 0x748
     char m_pad0760[0x77c - 0x760];
     int m_n77c;    // 0x77c: the stage count / index of the last model entry
