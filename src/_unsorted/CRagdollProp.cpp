@@ -111,6 +111,13 @@ void CRagdollProp::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10155360 size=0x3
+bool CRagdollProp::vfunc128()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101553f0 size=0x3b
 #include "CRagdollProp.h"
 #include "IPhysicsObject.h"

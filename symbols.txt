@@ -8401,6 +8401,7 @@
 0x10013039 func   ?sub_102a0cb0@CAI_BaseNPCTroika@@QAE_NPAV1@@Z CAI_BaseNPCTroika::sub_102a0cb0
 0x1001303e func   ?sub_101ab1e0@@YAXHPAEPAI@Z sub_101ab1e0
 0x1001304d func   ?vfunc0@CAI_Motor@@UAEPAV1@I@Z CAI_Motor::vfunc0
+0x10013052 func   ?vfunc128@CRagdollProp@@UAE_NXZ CRagdollProp::vfunc128
 0x1001305c func   _item_g_wireless_camera_1 item_g_wireless_camera_1
 0x10013066 func   ?sub_101f7cc0@CUnknown101f7cc0@@QAE_NPAX@Z CUnknown101f7cc0::sub_101f7cc0
 0x1001306b func   ?sub_10256220@CBaseCombatWeapon@@QAEDXZ CBaseCombatWeapon::sub_10256220
