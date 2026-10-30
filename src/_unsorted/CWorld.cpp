@@ -11,6 +11,16 @@ datamap_t * CWorld::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023afb0 size=0x6
+namespace lifted {
+extern char g_10752d44;
+}
+int CWorld::vfunc80()
+{
+    return (int)&lifted::g_10752d44;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023afd0 size=0x3
 int CWorld::vfunc81()
 {
