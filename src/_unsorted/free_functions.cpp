@@ -116104,6 +116104,36 @@ int CUnknown102cabd0::sub_102cabd0(CUnknown1028ebc0 *pNPC, void **pOut, int nMax
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cac90 size=0x5a
+#include "CAI_DebugRecord.h"
+#include "ConVar.h"
+extern ConVar *g_107258dc;
+struct CAI_DebugRecordList
+{
+	int m_n0;
+	CAI_DebugRecord m_Records[64];
+	int m_nRecords;	// 0xa04
+	int m_nFlags;	// 0xa08
+	void sub_102cac90();
+};
+void CAI_DebugRecordList::sub_102cac90()
+{
+	int flags = m_nFlags;
+	if (flags == 0) {
+		if (g_107258dc->vfunc1())
+			return;
+		if (!g_107258dc->m_nValue)
+			return;
+		flags = 3;
+	} else if (flags <= 0)
+		return;
+	CAI_DebugRecord *p = m_Records;
+	CAI_DebugRecord *pEnd = p + m_nRecords;
+	for (; p < pEnd; p++)
+		p->sub_102c9e10(flags);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cadb0 size=0x10
 namespace lifted {
 extern char g_109203cc;
