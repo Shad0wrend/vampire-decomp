@@ -12,6 +12,17 @@ datamap_t * CNPC_VStalker::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b28b0 size=0x6
+#include "CNPC_VStalker.h"
+namespace lifted {
+extern char g_1093c6f0;
+}
+int CNPC_VStalker::vfunc580()
+{
+    return (int)&lifted::g_1093c6f0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b28f0 size=0x1e
 #include "CNPC_VStalker.h"
 
