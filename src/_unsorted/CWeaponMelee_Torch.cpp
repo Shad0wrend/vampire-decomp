@@ -15,6 +15,17 @@ void CWeaponMelee_Torch::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e75d0 size=0x46
+#include "CWeaponMelee_Torch.h"
+
+void CWeaponMelee_Torch::vfunc130(void *pArg)
+{
+	if (m_hEmitter910.Get())
+		sub_103e7680();
+	sub_10258440(pArg);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e7640 size=0x24
 void __fastcall sub_10008512(void *pSelf);
 
