@@ -12,6 +12,14 @@ datamap_t * CHudTimer::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012d1b0 size=0x3
+#include "CHudTimer.h"
+int CHudTimer::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012d720 size=0x10
 #include "CHudTimer.h"
 

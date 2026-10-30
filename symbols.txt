@@ -6617,6 +6617,7 @@
 0x1000f26d func   ?sub_103efdd0@CWeaponThrown_Chang_Energy_Ball@@QAEXPAVCBaseEntity@@@Z CWeaponThrown_Chang_Energy_Ball::sub_103efdd0
 0x1000f272 func   ?sub_1030d4f0@@YGHPBD@Z sub_1030d4f0
 0x1000f277 func   ?vfunc57@CGameRules@@UAEXXZ CGameRules::vfunc57
+0x1000f286 func   ?vfunc81@CHudTimer@@UAEHXZ CHudTimer::vfunc81
 0x1000f28b func   ?sub_100298a0@@YAPAVCKeepUpright@@PAX0PAVCBaseEntity@@HD@Z sub_100298a0
 0x1000f295 func   ?sub_10233c80@@YAXXZ sub_10233c80
 0x1000f29f func   ?sub_1042fe30@@YAII@Z sub_1042fe30
