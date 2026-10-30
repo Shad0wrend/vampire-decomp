@@ -2776,6 +2776,7 @@
 0x10006c08 func   ?sub_100a8d30@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::sub_100a8d30
 0x10006c17 func   ?vfunc104@CNPC_VChangBros@@UAEXXZ CNPC_VChangBros::vfunc104
 0x10006c3a func   ?sub_101d0ec0@@YAXPBD@Z sub_101d0ec0
+0x10006c44 func   ?vfunc80@CItemGKeyring@@UAEHXZ CItemGKeyring::vfunc80
 0x10006c49 func   ?sub_1033d970@@YAHXZ sub_1033d970
 0x10006c4e func   ?vfunc0@CTraceFilterManBatNoIBeamEntity@@UAE_NPAXH@Z CTraceFilterManBatNoIBeamEntity::vfunc0
 0x10006c58 func   ?vfunc1@CAI_RatPlaneSolver@@QAEPAV1@I@Z CAI_RatPlaneSolver::vfunc1
