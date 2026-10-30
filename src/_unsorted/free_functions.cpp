@@ -124376,6 +124376,40 @@ void CUnknown102f7970::sub_102f7970()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f7a10 size=0x5d
+struct CVNetState
+{
+	void sub_102f7a90();
+};
+struct CVNetOwner
+{
+	char m_pad[0x454];
+	CVNetState *m_pState;
+};
+extern CVNetOwner *g_10934088;
+extern int g_109340d8;
+int sub_102f9950();
+unsigned int __cdecl sub_102d6210(int n);
+
+// TARGET: sub_102f7a10
+void sub_102f7a10()
+{
+	int nMask = sub_102f9950();
+	if (nMask > 0)
+	{
+		do
+		{
+			g_109340d8++;
+			if (g_109340d8 == 0x16)
+				g_109340d8 = 0;
+		} while (!(nMask & sub_102d6210(g_109340d8)));
+	}
+	else
+		g_109340d8++;
+	g_10934088->m_pState->sub_102f7a90();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f7c00 size=0x72
 struct CUnk102f7c00State {
     char pad[8];
