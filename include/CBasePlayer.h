@@ -177,7 +177,10 @@ public:
 	float m_f148C;	// 0x148C
 	char m_pad1490[0x14a8 - 0x1490];	// 0x1490 .. 0x14A7
 	char m_b14A8;
-	char m_pad14A9[0x1538 - 0x14a9];	// 0x14A9 .. 0x1537
+	char m_pad14A9[0x14b0 - 0x14a9];	// 0x14A9 .. 0x14AF
+	int m_n14B0;	// 0x14B0
+	int m_n14B4;	// 0x14B4
+	char m_pad14B8[0x1538 - 0x14b8];	// 0x14B8 .. 0x1537
 	unsigned int m_h1538;	// entity handle
 	int m_n153C;
 	char m_pad1540[0x1c];	// 0x1540 .. 0x155B
