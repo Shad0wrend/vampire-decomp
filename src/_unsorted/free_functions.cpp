@@ -68038,6 +68038,30 @@ bool CUnk101afc50::sub_101afc50(CUnk101afc50Table *pTable)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101afdc0 size=0x42
+#include "CKeyValuesX.h"
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+
+class CUnknown101afba0
+{
+public:
+	char m_pad0000[0xfc];
+	float m_flPlayerRunSpeed;	// 0xfc
+	bool sub_101afdc0(CKeyValuesX *pKeys);
+};
+
+bool CUnknown101afba0::sub_101afdc0(CKeyValuesX *pKeys)
+{
+	m_flPlayerRunSpeed = pKeys->sub_10248c60("PLAYER_RUN_SPEED", -1.0f);
+	if (m_flPlayerRunSpeed == -1.0f)
+	{
+		Msg("Sound volume table has no setting for 'PLAYER_RUN_SPEED'.\n");
+		return false;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b0ab0 size=0xdc
 #include <string.h>
 #include "CSoundEmitterSystemBase.h"
