@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101d9e50 size=0x3
+bool CVampireProjectile::vfunc270()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d9e90 size=0x7e
 #include "CVampireProjectile.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
