@@ -13,4 +13,5 @@ public:
 	int m_i14;
 	int m_i18;
 	int m_i1c;
+	virtual bool vfunc0(void *pHandleEntity, int contentsMask);	// ShouldHitEntity: its own (0x101d33e0)
 };
