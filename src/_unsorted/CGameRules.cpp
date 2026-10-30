@@ -140,6 +140,12 @@ void CGameRules::vfunc5(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101292e0 size=0x3
+void CGameRules::vfunc6(int a0, int a1, int a2)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10129380 size=0x1
 void CGameRules::vfunc11()
 {
