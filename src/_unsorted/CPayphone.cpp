@@ -17,6 +17,14 @@ bool CPayphone::vfunc362(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aa890 size=0x5
+#include "CPayphone.h"
+bool CPayphone::vfunc365(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aa8f0 size=0x3
 #include "CPayphone.h"
 bool CPayphone::vfunc615()
