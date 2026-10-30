@@ -5975,6 +5975,7 @@
 0x1000d19d func   ?sub_10205900@CUnknown10205900@@QAEHXZ CUnknown10205900::sub_10205900
 0x1000d1a2 func   ?sub_10405540@@YAHXZ sub_10405540
 0x1000d1a7 func   ?vfunc620@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::vfunc620
+0x1000d1b6 func   ?vfunc2@CServerGameDLL@@UAE_NXZ CServerGameDLL::vfunc2
 0x1000d1c0 func   ?vfunc545@CAI_BaseNPC@@UAE_NXZ CAI_BaseNPC::vfunc545
 0x1000d1c5 func   ?sub_1013bb40@@YAXABVVector@@000MAAV1@@Z sub_1013bb40
 0x1000d1ca func   ?sub_103217d0@@YAHXZ sub_103217d0

@@ -37,6 +37,17 @@ void CServerGameDLL::vfunc8()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011a3f0 size=0x8
+namespace lifted {
+int sub_1000da08();
+}
+bool CServerGameDLL::vfunc2()
+{
+    lifted::sub_1000da08();
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011aaf0 size=0x91
 #include "CServerGameDLL.h"
 #include "CGlobalEntityList.h"
