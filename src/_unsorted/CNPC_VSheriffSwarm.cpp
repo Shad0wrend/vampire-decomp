@@ -88,3 +88,15 @@ int CNPC_VSheriffSwarm::vfunc438()
     return lifted::sub_10015ad2();
 }
 // END FUNCTION
+
+// FUNCTION: 0x103b2450 size=0xf
+#include "CNPC_VSheriffSwarm.h"
+namespace lifted {
+int sub_10011225();
+}
+int CNPC_VSheriffSwarm::vfunc461()
+{
+    *(int *)((char *)this + 0x1b38) = 0x22;
+    return lifted::sub_10011225();
+}
+// END FUNCTION
