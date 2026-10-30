@@ -2122,6 +2122,7 @@
 0x10005862 func   ?vfunc602@CNPC_VGargoyle@@UAE_NXZ CNPC_VGargoyle::vfunc602
 0x10005867 func   ?vfunc82@CNPC_VPedestrian@@UAEPAUdatamap_t@@XZ CNPC_VPedestrian::vfunc82
 0x1000586c func   ?sub_1002fb00@CCollisionEventSolver@@QAEHPAX0PAVCBaseEntity@@1M@Z CCollisionEventSolver::sub_1002fb00
+0x10005871 func   ?vfunc145@CBaseGrenade@@UAEHXZ CBaseGrenade::vfunc145
 0x10005876 func   ?sub_102e8250@@YIXPAM@Z sub_102e8250
 0x1000587b func   ?vfunc14@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHH@Z CTempEntsSystem::vfunc14
 0x10005885 func   ?sub_10099ca0@@YAXPAUAnimEnt@@HPAI@Z sub_10099ca0

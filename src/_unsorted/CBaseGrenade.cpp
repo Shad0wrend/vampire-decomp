@@ -125,6 +125,13 @@ void CBaseGrenade::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042b180 size=0x4
+int CBaseGrenade::vfunc145()
+{
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042b240 size=0xd
 struct GrenadeField19c0 { char pad[0x19c0]; int m; };
 void CBaseGrenade::vfunc191(int value)
