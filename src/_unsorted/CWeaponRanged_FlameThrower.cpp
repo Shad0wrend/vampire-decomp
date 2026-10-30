@@ -12,6 +12,14 @@ int CWeaponRanged_FlameThrower::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e29f0 size=0x6
+#include "CWeaponRanged_FlameThrower.h"
+int CWeaponRanged_FlameThrower::vfunc363()
+{
+    return 0x6b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e2ad0 size=0x8c
 #include "CWeaponRanged_FlameThrower.h"
 
