@@ -87,3 +87,10 @@ const char *CHalfLife2::vfunc58(int classify)
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x10356250 size=0x3
+#include "CHalfLife2.h"
+void CHalfLife2::vfunc36(int a0)
+{
+}
+// END FUNCTION
