@@ -23,4 +23,6 @@ public:
     virtual const char * vfunc451();
 public:
 	virtual void vfunc434();
+public:
+	virtual int vfunc580();
 };
