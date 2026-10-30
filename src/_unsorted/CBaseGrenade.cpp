@@ -28,6 +28,16 @@ int CBaseGrenade::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x104296c0 size=0x6
+namespace lifted {
+extern char g_106ad03c;
+}
+int CBaseGrenade::vfunc79()
+{
+    return (int)&lifted::g_106ad03c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10429f20 size=0xb
 void CBaseGrenade::vfunc144(int unused)
 {
