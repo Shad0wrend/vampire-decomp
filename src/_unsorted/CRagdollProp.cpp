@@ -50,6 +50,13 @@ void CRagdollProp::vfunc180()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10155170 size=0x3
+bool CRagdollProp::vfunc267()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155210 size=0x7a
 #include "CRagdollProp.h"
 #include <stdlib.h>
