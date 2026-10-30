@@ -155,6 +155,18 @@ void CUnknown103639b0::sub_103639b0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10363a10 size=0xf
+#include "CNPC_VBach.h"
+namespace lifted {
+int sub_10015ad2();
+}
+int CNPC_VBach::vfunc438()
+{
+    *(int *)((char *)this + 0x1b2c) = 0xe;
+    return lifted::sub_10015ad2();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10363b60 size=0xba
 #include "CBaseEntity.h"
 #include "CNPC_VBach.h"
