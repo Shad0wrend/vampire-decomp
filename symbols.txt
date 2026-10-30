@@ -7435,6 +7435,7 @@
 0x10010a32 func   ?sub_103e2000@CFlameCluster@@QAEXPAVCBaseEntity@@H@Z CFlameCluster::sub_103e2000
 0x10010a37 func   ?sub_10203480@@YAHH@Z sub_10203480
 0x10010a3c func   ?sub_100417c0@@YIPAUHashHolder@@PAU1@HE@Z sub_100417c0
+0x10010a4b func   ?vfunc366@CHL2_Player@@UAE_NHHH@Z CHL2_Player::vfunc366
 0x10010a5a func   ??0CAI_PlaneSolver@@QAE@H@Z CAI_PlaneSolver::CAI_PlaneSolver
 0x10010a69 func   ?sub_10334940@@YAMPBMHM@Z sub_10334940
 0x10010a6e func   ?sub_10337bd0@CBaseCombatCharacter@@QAEHH@Z CBaseCombatCharacter::sub_10337bd0

@@ -147,6 +147,13 @@ void CHL2_Player::vfunc333(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10351070 size=0x5
+bool CHL2_Player::vfunc366(int a0, int a1, int a2)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103512a0 size=0x51
 struct SSub36c {
 	virtual void v0();
