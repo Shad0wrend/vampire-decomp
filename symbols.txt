@@ -3987,6 +3987,7 @@
 0x100097a5 func   ?sub_10360560@@YADXZ sub_10360560
 0x100097aa func   ?sub_101ecb90@CUnknown109f08c0@@QAEDPAVIKVNodeView@@@Z CUnknown109f08c0::sub_101ecb90
 0x100097b9 func   _trigger_werewolf_zone trigger_werewolf_zone
+0x100097be func   ?vfunc38@CSave@@UAEHXZ CSave::vfunc38
 0x100097c3 func   _hud_image hud_image
 0x100097cd func   ?sub_1018e790@@YAXPAVCBaseEntity@@PBD@Z sub_1018e790
 0x100097d7 func   ?sub_1023ed10@@YAXHD@Z sub_1023ed10

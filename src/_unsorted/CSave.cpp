@@ -22,6 +22,14 @@ void CSave::vfunc2(void * a0, const char * a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019f960 size=0x4
+#include "CSave.h"
+int CSave::vfunc38()
+{
+    return *(int *)((char *)this + 0x1c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019f980 size=0x68
 extern "C" __declspec(dllimport) void Plat_Free(void *);
 extern int g_104625f4[];
