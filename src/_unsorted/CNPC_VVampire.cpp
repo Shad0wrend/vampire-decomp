@@ -60,3 +60,11 @@ int CNPC_VVampire::vfunc546(int x)
     return g_10936c74.sub_1000aed4(g_1093d2a4.sub_10012300(x));
 }
 // END FUNCTION
+
+// FUNCTION: 0x103c4f20 size=0x6
+#include "CNPC_VVampire.h"
+int CNPC_VVampire::vfunc138()
+{
+    return 0xf;
+}
+// END FUNCTION

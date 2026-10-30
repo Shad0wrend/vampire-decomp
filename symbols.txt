@@ -8321,6 +8321,7 @@
 0x10012161 func   ?vfunc31@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc31
 0x1001216b func   ?vfunc108@CBaseEntity@@UAE_NPBDMMM@Z CBaseEntity::vfunc108
 0x10012170 func   ?vfunc5@CPhysicsCannister@@QAEPAV1@I@Z CPhysicsCannister::vfunc5
+0x10012175 func   ?vfunc138@CNPC_VVampire@@UAEHXZ CNPC_VVampire::vfunc138
 0x1001217f func   ?vfunc362@CBaseCombatCharacter@@QAEDPBM@Z CBaseCombatCharacter::vfunc362
 0x10012184 func   ?vfunc262@CBaseAnimating@@QAE_NHPAM@Z CBaseAnimating::vfunc262
 0x10012189 func   ?sub_10313aa0@CUtlRBTree16Unit@@QBEPBULinks_t@CUtlRBTree16@@G@Z CUtlRBTree16Unit::sub_10313aa0
