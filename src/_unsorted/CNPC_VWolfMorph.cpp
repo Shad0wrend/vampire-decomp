@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103dc750 size=0x6
+#include "CNPC_VWolfMorph.h"
+namespace lifted {
+extern char g_109402a8;
+}
+int CNPC_VWolfMorph::vfunc580()
+{
+    return (int)&lifted::g_109402a8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dc950 size=0x1d
 #include "CNPC_VWolfMorph.h"
 struct A { int sub_10012300(int); };
