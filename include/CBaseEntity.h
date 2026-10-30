@@ -33,7 +33,7 @@ public:
 
 	// The head of the (269 slot) virtual table; declare further slots as code needs them,
 	// keeping the slot numbers right.
-	virtual void vfunc0();
+	virtual int vfunc0(int);
 	virtual unsigned int *vfunc1();	// "GetRefEHandle": pointer to the entity's handle
 	virtual char * vfunc2();
 	virtual char * vfunc3();
