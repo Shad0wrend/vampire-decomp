@@ -18690,6 +18690,25 @@ void CSceneEntity::sub_10080b00(CSceneEvent *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10081190 size=0x5b
+#include <stdarg.h>
+#include "ConVar.h"
+extern ConVar *g_106c85d4;
+__declspec(dllimport) void __cdecl Msg(const char *, ...);
+extern "C" __declspec(dllimport) int __cdecl Q_vsnprintf(char *, int, const char *, va_list);
+void sub_10081190(const char *pszFormat, ...)
+{
+	char szBuf[0x2000];
+	va_list marker;
+	if (!g_106c85d4->vfunc1() && g_106c85d4->m_nValue) {
+		va_start(marker, pszFormat);
+		Q_vsnprintf(szBuf, sizeof(szBuf), pszFormat, marker);
+		va_end(marker);
+		Msg(szBuf);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10081890 size=0x2d
 #include "CBasePlayer.h"
 
