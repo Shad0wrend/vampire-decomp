@@ -189,7 +189,7 @@ public:
 	void sub_10270aa0(CBaseEntity *pEnt);	// stores pEnt's entity handle at +0x5d90 (-1 for null)
 	void sub_10269a20(int a);	// stub 0x100041b0, run by TaskFail with 0x5c
 	bool sub_10273180(char bForce);	// sets the hull size from the hull (+0x1568) when the byte +0x5f2d is clear or bForce, sets the byte, then runs sub_10272f40 with a navigator at +0x36c; always true
-	void sub_10272f40_base();	// placeholder removed below
+	void sub_10272f40();	// the navigator hand-over after the hull is set (stub 0x100081c0)
 	void sub_10269b50(int condition);	// "CAI_BaseNPC::SetCondition"-like (called through the stub at 0x10015839)
 	bool sub_10269aa0(int condition);	// "CAI_BaseNPC::HasCondition" (stub 0x10014df8): translates ids below 1000000000 first, then tests the condition bit in the array at +0x5c5c
 	void sub_10269bd0(int *pConditions, int nConditions);	// "CAI_BaseNPC::ClearConditions": clears the condition bits (array at +0x5c5c) of each id, translating ids below 1000000000 first through slot 580
