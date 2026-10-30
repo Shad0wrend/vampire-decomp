@@ -29389,6 +29389,28 @@ void CBeam::sub_100bb900(int a, const float *pPos)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bb990 size=0x59
+#include "CBeam.h"
+#define SV(n) virtual void s##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+struct CSlot62View
+{
+	SV10(0) SV10(1) SV10(2) SV10(3) SV10(4) SV10(5)
+	SV(60) SV(61)
+	virtual void SetLocalOrigin(const float *pPos);
+};
+void CBeam::sub_100bb990(const float *pPos, CBaseEntity *pEnt)
+{
+	m_nNumBeamEnts = 2;
+	m_nBeamType = (m_nBeamType & 0xff0) | 1;
+	((CSlot62View *)this)->SetLocalOrigin(pPos);
+	sub_100bb030(pEnt);
+	m_nAttach[1] = 0;
+	m_nAttach[m_nNumBeamEnts] = 0;
+	sub_100bbbf0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bba10 size=0x58
 #include "CBeam.h"
 // TARGET: CBeam::sub_100bba10

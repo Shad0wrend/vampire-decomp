@@ -328,6 +328,7 @@
 0x10001a91 func   ?vfunc9@CSaveRestoreBlockSet@@QAEXPAX@Z CSaveRestoreBlockSet::vfunc9
 0x10001a9b func   ?sub_10027a70@CUnknown10027a70@@QAEXXZ CUnknown10027a70::sub_10027a70
 0x10001aa0 func   ?vfunc291@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc291
+0x10001aa5 func   ?sub_100bb990@CBeam@@QAEXPBMPAVCBaseEntity@@@Z CBeam::sub_100bb990
 0x10001aaa func   ?sub_10428360@@YAHPADPBD@Z sub_10428360
 0x10001aaf func   ?vfunc117@CDisciplineParticle@@UAEHXZ CDisciplineParticle::vfunc117
 0x10001ab4 func   ?vfunc110@CEnvLaser@@QAE_NPBD0@Z CEnvLaser::vfunc110
