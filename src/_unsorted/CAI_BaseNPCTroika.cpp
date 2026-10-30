@@ -1796,6 +1796,16 @@ Vector CAI_BaseNPCTroika::vfunc533(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b4fb0 size=0x14
+namespace lifted {
+struct C10005849 { int sub_10005849(int, int, int); };
+}
+int CAI_BaseNPCTroika::vfunc597(int a0, int a1)
+{
+    return ((lifted::C10005849 *)this)->sub_10005849(a0, 1, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b50b0 size=0x3b
 #include "CAI_BaseNPCTroika.h"
 
