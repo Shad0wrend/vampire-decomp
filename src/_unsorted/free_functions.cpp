@@ -66930,6 +66930,21 @@ int CSave::sub_101a0830(CSaveEdict *pEdict)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a0980 size=0x5f
+#include "CSave.h"
+struct CSaveEntry { char pad[0x20]; unsigned __int64 m_nFlags; char pad2[8]; };
+struct CSaveBlock { char pad[0x1318]; int m_nEntities; CSaveEntry *m_pEntries; };
+unsigned __int64 CSave::sub_101a0980(int index, unsigned __int64 flags)
+{
+    CSaveBlock *pBlock = (CSaveBlock *)m_pEntityBlock;
+    if (pBlock && index >= 0 && index <= pBlock->m_nEntities) {
+        pBlock->m_pEntries[index].m_nFlags |= flags;
+        return ((CSaveBlock *)m_pEntityBlock)->m_pEntries[index].m_nFlags;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a1140 size=0x110
 #include "CSave.h"
 
