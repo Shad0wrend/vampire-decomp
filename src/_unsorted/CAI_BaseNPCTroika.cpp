@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101aa5d0 size=0xf
+int CAI_BaseNPCTroika::vfunc586(int a0)
+{
+    *(int *)((char *)a0) = *(int *)((char *)this + 0x6088);
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aa690 size=0x3
 bool CAI_BaseNPCTroika::vfunc591()
 {
