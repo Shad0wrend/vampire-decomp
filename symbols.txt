@@ -3149,6 +3149,7 @@
 0x10007c16 func   ?sub_1007ce20@CUnknown1007ce20@@QAEMXZ CUnknown1007ce20::sub_1007ce20
 0x10007c20 func   ?vfunc5@CItemGWatchFancy@@QAEPAV1@I@Z CItemGWatchFancy::vfunc5
 0x10007c25 func   ?vfunc103@CFuncMoveLinear@@UAEXXZ CFuncMoveLinear::vfunc103
+0x10007c2a func   ?vfunc81@CItemGKeyring@@UAEHXZ CItemGKeyring::vfunc81
 0x10007c2f func   _item_w_baseball_bat item_w_baseball_bat
 0x10007c34 func   ?sub_1005a330@@YAXHHPBH0@Z sub_1005a330
 0x10007c3e func   ?vfunc459@CBasePlayer@@UAEPAVCBaseEntity@@PBDH@Z CBasePlayer::vfunc459

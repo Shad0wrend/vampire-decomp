@@ -12,6 +12,14 @@ datamap_t * CItemGKeyring::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x104078c0 size=0x3
+#include "CItemGKeyring.h"
+int CItemGKeyring::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10407b80 size=0x86
 #include "CItemGKeyring.h"
 #include "utlvector.h"
