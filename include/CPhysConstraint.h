@@ -1,6 +1,13 @@
 // CPhysConstraint: physics constraint entity. Declared flat (bases not recovered); only the vtable head is modelled.
 #pragma once
 
+struct CPhysConstraintObj	// the physics constraint object at +0x450 (only the slots used)
+{
+	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4();
+	virtual int vfunc5(int a);
+	virtual int vfunc6(void *pA, void *pB, char c);
+};
+
 class CPhysConstraint
 {
 public:
