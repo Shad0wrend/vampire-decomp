@@ -66466,6 +66466,15 @@ void sub_101a7170(CCineNPC *pScript)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a7230 size=0x58
+#include "CEHandleGet.h"
+void CCineNPC::sub_101a7230(int slot)
+{
+	if (slot >= 1 && slot <= 8)
+		m_slots[slot - 1].sub_100cd660((CBaseEntity *)EHandle_Get(m_h010c), this, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a7390 size=0x11e
 #include "CCineNPC.h"
 #include "CEHandleGet.h"
