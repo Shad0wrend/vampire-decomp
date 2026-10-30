@@ -38,6 +38,7 @@ public:
 	virtual void vfunc95(); virtual void vfunc96(); virtual void vfunc97(); virtual void vfunc98(); virtual void vfunc99();
 	virtual void vfunc100(); virtual void vfunc101(); virtual void vfunc102(); virtual void vfunc103(); virtual void vfunc104();
 
+	void vfunc183(int a, int b, int **ppInfo);	// slot 183 (plain member): when b is 0 and the engine's frame counter at +0x18 changed since the last time (+0x46c), hands a and the constraint object's answer (slots 6 and 5 with the info record's fields) to sub_1002a210
 	void sub_100121ac();	// destructor body
 	void sub_1002a960(int unused);	// break: releases the two attached objects, plays the break sound, fires the output (+0x470) and removes the entity
 	void sub_1002af90(int unused);	// re-enables collisions of the two attached physics objects (clears bit 1 of their game flags), and with spawnflag bit 0 (dword at +0x204) calls sub_1001474a(first, second); the constraint is the object at +0x450
