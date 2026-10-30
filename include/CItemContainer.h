@@ -47,5 +47,6 @@ public:
 	void sub_1000e020(CBaseEntity *pEnt, int flag);
 	CItemContainer *sub_102087e0();	// constructor body: base constructor (stub 0x100046c9), the three embedded lists at +0x19b0 / +0x19c8 / +0x19e0, the vftable, the open flag (+0x1480), the lock and user handles (-1)
 	void sub_100046c9();	// base class constructor body (stub 0x100046c9)
+	int vfunc142(CItemDamageInfo *pInfo);	// slot 142 \"OnTakeDamage\": subtracts the damage from the health (+0x210); breaks the container (attacker as activator) when it reaches 0 and returns 0, else 1; 1 when it takes no damage
 	void sub_10209b20(CBaseEntity *pActivator);	// breaks the container (called by the damage slot 142): unless it is already broken switches to the break model (slot 105, slot 225, a vphysics object and its slot 24), removes flag 0x20000000, marks it broken (+0x200 = 2, +0x1fc = 0), removes the lock entity and fires the break output at +0x19e0; \"Broken container ... invalid break model\" warning for a container without one
 };
