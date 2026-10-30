@@ -40180,6 +40180,17 @@ void sub_100f42f0(const char *name, int id, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f4340 size=0x5c
+extern "C" __declspec(dllimport) int __cdecl Q_snprintf(char *, int, const char *, ...);
+void sub_100f4490(char *pszCommand, int a);
+void sub_100f4340(int pszClassname, float x, float y, float z, int a)
+{
+	char szCommand[260];
+	Q_snprintf(szCommand, sizeof(szCommand), "entity_delete %s %g %g %g", pszClassname, (double)x, (double)y, (double)z);
+	sub_100f4490(szCommand, a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f43c0 size=0x39
 extern void *g_109f388c;
 void sub_1000e354(const char *buf, int p);
