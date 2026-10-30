@@ -23,7 +23,11 @@ public:
 	void sub_1000cb8a();	// base class destructor body (stub 0x1000cb8a)
 	void sub_103cecd0(CBaseEntity *pEnt);	// stores pEnt at +0x66c4, and clears it again unless pEnt's dword at +0x5dc is 0x3aa3
 
-	char m_pad05a8[0x66c4 - 0x5a8];
+	char m_pad05a8[0x5ac - 0x5a8];
+	int m_n5ac;	// 0x5ac: non-zero once the zone has been set up
+	const char *m_pszName5b0;	// 0x5b0: the name of the entity the zone looks up
+	unsigned int m_h5b4;	// 0x5b4: its handle, -1 when not found
+	char m_pad05b8[0x66c4 - 0x5b8];
 	CBaseEntity *m_pEnt66c4;	// 0x66c4
 public:
     virtual datamap_t * vfunc82();
