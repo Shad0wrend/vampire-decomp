@@ -13,3 +13,10 @@ void CDebugSaveRestoreOps::vfunc0(int a0, int a1)
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x100dedb0 size=0x3
+#include "CDebugSaveRestoreOps.h"
+void CDebugSaveRestoreOps::vfunc1(int a0, int a1)
+{
+}
+// END FUNCTION
