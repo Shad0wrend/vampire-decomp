@@ -9373,6 +9373,7 @@
 0x10013c0f func   ?sub_10189870@@YADPAVCBaseEntity@@H@Z sub_10189870
 0x10013c19 func   ?sub_1027dd10@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_1027dd10
 0x10013c1e func   ?vfunc1@CTEFizz@@UAEHXZ CTEFizz::vfunc1
+0x10013c23 func   ?sub_101c2890@CTakeDamageInfo@@QAEXPAX0MHHH@Z CTakeDamageInfo::sub_101c2890
 0x10013c28 func   ?sub_100fa690@@YIXPAUCSlots@@HH@Z sub_100fa690
 0x10013c32 func   ?sub_10266b10@CAI_BaseNPC@@QAEDHHM@Z CAI_BaseNPC::sub_10266b10
 0x10013c46 func   ?vfunc0@CTEWorldDecal@@UAEPAUServerClass@@XZ CTEWorldDecal::vfunc0

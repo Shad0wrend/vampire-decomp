@@ -72316,6 +72316,32 @@ CUnknown101c2770 *CUnknown101c2770::sub_101c2770(CVDmg_t *pDmg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2890 size=0x5e
+#include "CTakeDamageInfo.h"
+
+void CTakeDamageInfo::sub_101c2890(void *pAttacker, void *pInflictor, float flDamage, int a, int b, int c)
+{
+	m_pAttacker = (CTakeDamageAttacker *)pAttacker;
+	if (pInflictor)
+		m_pInflictor = pInflictor;
+	else
+		m_pInflictor = pAttacker;
+	m_nZero00 = 0;
+	m_flDamage = flDamage;
+	m_flDamage34 = flDamage;
+	m_n38 = a;
+	m_n3c = b;
+	m_bitsDamageType = c;
+	m_fl04 = 1.0f;
+	m_fl08 = 1.0f;
+	m_fl0c = 1.0f;
+	m_fl44 = 1.0f;
+	m_b48 = 0;
+	m_b49 = 0;
+	m_b4a = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2910 size=0x50
 struct CAnimParams {
     int m_n0; float m_f4, m_f8, m_fC; int m_pad[6];
