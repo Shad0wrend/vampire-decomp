@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10211910 size=0x6
+namespace lifted {
+extern char g_105ab83c;
+}
+int CPropSign::vfunc82()
+{
+    return (int)&lifted::g_105ab83c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10211ac0 size=0x1e
 #include "CPropSign.h"
 
