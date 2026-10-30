@@ -100,3 +100,10 @@ ServerClass * CTESprite::vfunc0()
     return (ServerClass *)((int)&lifted::g_106c59cc);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10068030 size=0x3
+int CTESprite::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION

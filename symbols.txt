@@ -1363,6 +1363,7 @@
 0x10003f99 func   ?vfunc259@CBaseAnimating@@QAEXPAX@Z CBaseAnimating::vfunc259
 0x10003f9e func   ?vfunc5@CResearchBook_HG_DODGE@@QAEPAV1@I@Z CResearchBook_HG_DODGE::vfunc5
 0x10003fa3 func   ?vfunc438@CNPC_VGargoyle@@QAEHXZ CNPC_VGargoyle::vfunc438
+0x10003fa8 func   ?vfunc1@CTESprite@@UAEHXZ CTESprite::vfunc1
 0x10003fb2 func   ?sub_100dbbe0@@YI_NPAD@Z sub_100dbbe0
 0x10003fbc func   ?sub_103e61c0@@YAHXZ sub_103e61c0
 0x10003fc6 func   ?sub_10075f10@CUnknown10075f10@@QAEMXZ CUnknown10075f10::sub_10075f10
