@@ -109,6 +109,28 @@ void CAI_BaseNPCTroika::vfunc584(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028de10 size=0x5e
+#include "CAI_BaseNPCTroika.h"
+#include "CUnknown1027ef20.h"
+extern char g_10920534;
+__declspec(dllimport) void DevMsg(const char *pszFormat, ...);
+struct CTroikaMsgView : CAI_BaseNPCTroika
+{
+	void sub_1028d990(int a, int b, char *pBuf, int nSize);
+};
+
+// TARGET: CAI_BaseNPCTroika::vfunc18
+void CAI_BaseNPCTroika::vfunc18(int a, int b)
+{
+	char szBuf[512];
+	((CTroikaMsgView *)this)->sub_1028d990(a, b, szBuf, sizeof(szBuf));
+	if (g_10920534)
+		((CUnknown1027ef20 *)this)->sub_1027ef20(szBuf);
+	else
+		DevMsg(szBuf);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028de90 size=0x7d
 #include "CAI_BaseNPCTroika.h"
 extern char g_10920534;
