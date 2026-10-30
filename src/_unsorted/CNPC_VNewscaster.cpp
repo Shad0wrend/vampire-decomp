@@ -80,6 +80,14 @@ int CNPC_VNewscaster::vfunc404(int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a01f0 size=0x3
+#include "CNPC_VNewscaster.h"
+int CNPC_VNewscaster::vfunc473()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a0270 size=0xe1
 #include "CNPC_VNewscaster.h"
 
