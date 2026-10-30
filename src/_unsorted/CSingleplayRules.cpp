@@ -48,6 +48,13 @@ bool CSingleplayRules::vfunc21()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101abce0 size=0x3
+bool CSingleplayRules::vfunc22()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101abd20 size=0x5
 char CSingleplayRules::vfunc19(CBaseEntity * a0, CBaseEntity * a1)
 {
