@@ -20,6 +20,12 @@ bool CNPC_VWerewolf::vfunc615()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ca6d0 size=0x3
+void CNPC_VWerewolf::vfunc316(int a0, int a1, int a2)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ca790 size=0x1e
 #include "CNPC_VWerewolf.h"
 
