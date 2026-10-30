@@ -8928,6 +8928,7 @@
 0x10013660 func   ?vfunc244@CAI_StandoffGoal@@QAEXPAVCAI_BaseNPC@@@Z CAI_StandoffGoal::vfunc244
 0x10013665 func   ?vfunc251@CSceneEntity@@UAEDMHPAUCSceneEvent@@@Z CSceneEntity::vfunc251
 0x1001366f func   ?sub_101c09d0@@YAHXZ sub_101c09d0
+0x10013674 func   ?vfunc138@CNPC_VMingXiaoTentacle@@UAEHXZ CNPC_VMingXiaoTentacle::vfunc138
 0x10013679 func   ?sub_10230220@@YADXZ sub_10230220
 0x1001367e func   ?vfunc438@CBasePlayer@@UAEXMH@Z CBasePlayer::vfunc438
 0x10013683 func   ?sub_1017d020@CPlayerDialogUnit@@QAEXPBD@Z CPlayerDialogUnit::sub_1017d020
