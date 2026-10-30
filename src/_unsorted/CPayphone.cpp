@@ -224,6 +224,19 @@ float CPayphone::vfunc37()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aae60 size=0x5f
+#include "CPayphone.h"
+Vector CPayphone::vfunc193()
+{
+    int bone = sub_10002c0c("Phone_bone_01");
+    if (bone == -1)
+        return CBaseEntity::vfunc193();
+    Vector origin, angles;
+    sub_1000268a(bone, &origin, &angles);
+    return origin;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aaee0 size=0x77
 #include "CPayphone.h"
 
