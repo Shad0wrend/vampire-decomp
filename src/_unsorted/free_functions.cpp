@@ -70788,6 +70788,21 @@ void CStealthKillRules::sub_101bedb0(CSKRKeyValues *pKeys, const char *pszName, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x101beed0 size=0x59
+float sub_101beed0(float x, float lo, float hi)
+{
+	if (x > hi) {
+		x = hi;
+		return (x - lo) / (hi - lo);
+	}
+	if (x < lo) {
+		x = lo;
+		return (x - lo) / (hi - lo);
+	}
+	return (x - lo) / (hi - lo);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bf060 size=0x192
 #include "CStealthKillRules.h"
 #include "CVFeat_t.h"
