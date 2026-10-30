@@ -100350,6 +100350,29 @@ int CUnknown10231fb0::sub_10231fb0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10232010 size=0x5d
+#include "CVGuiScreen.h"
+extern float g_1070d1b0[3];
+extern float g_1070d9d0[3];
+CBaseEntity *sub_100a99d0(const char *pszName, const float *pOrigin, const float *pAngles, CBaseEntity *pOwner);
+struct CVGuiScreenView : CVGuiScreen
+{
+	void sub_10231df0(int n);
+};
+
+// TARGET: sub_10232010
+CVGuiScreen *__cdecl sub_10232010(const char *pszPanelName, CBaseEntity *pOwner, int nIndex)
+{
+	CVGuiScreen *pScreen = (CVGuiScreen *)sub_100a99d0("vgui_screen", g_1070d1b0, g_1070d9d0, pOwner);
+	pScreen->sub_10231f40(pszPanelName);
+	pScreen->vfunc103();
+	pScreen->sub_1009ee80(pOwner);
+	pScreen->vfunc93(11, 0);
+	((CVGuiScreenView *)pScreen)->sub_10231df0(nIndex);
+	return pScreen;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10232090 size=0x12
 void sub_10014614(void *p);
 

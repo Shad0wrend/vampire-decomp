@@ -10160,6 +10160,7 @@
 0x10015613 func   ?vfunc12@ConVar@@UAEXPBD0H0_NM1MP6AXPAV1@0@Z@Z ConVar::vfunc12
 0x10015618 func   ?vfunc82@CDisciplineProjectile@@UAEPAUdatamap_t@@XZ CDisciplineProjectile::vfunc82
 0x1001561d func   ?vfunc67@CBaseEntity@@UAEXXZ CBaseEntity::vfunc67
+0x10015622 func   ?sub_10232010@@YAPAVCVGuiScreen@@PBDPAVCBaseEntity@@H@Z sub_10232010
 0x10015645 func   ?sub_10031520@CCollisionEvent@@QAEXXZ CCollisionEvent::sub_10031520
 0x1001564a func   ?vfunc363@CWeaponLockpick@@UAEHXZ CWeaponLockpick::vfunc363
 0x1001564f func   ?sub_101e9290@CBloodAmountUnit@@QAEHPAXH@Z CBloodAmountUnit::sub_101e9290
