@@ -56,6 +56,21 @@ void V1021a200::sub_1021a200()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021a270 size=0x5e
+#include "CPropHacking.h"
+extern float (__cdecl *g_109f385c)(float, float);
+void sub_10014b82();
+void CPropHacking::vfunc113()
+{
+	sub_1018f3e0();
+	sub_1021b140(0);
+	sub_100ac4e0((int)sub_10014b82, 0, 0);
+	m_flNextThink = g_109f385c(0.0f, 1.0f) + gpGlobals->curtime;
+	if (m_flDelay09e4 < 2.0)
+		m_flDelay09e4 = 2.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021a590 size=0x6
 #include "CPropHacking.h"
 int CPropHacking::vfunc33()
