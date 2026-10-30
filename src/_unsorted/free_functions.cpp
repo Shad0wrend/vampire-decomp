@@ -123505,6 +123505,28 @@ int sub_102f4fb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f4fe0 size=0x5a
+#include "CBaseEntity.h"
+#include "CAI_NodeGraph.h"
+#include "CAI_NetworkManager.h"
+struct CAI_NetworkData { CAI_NetworkData *sub_102f8e30(CAI_NetworkManager *pOwner); };	// stub 0x1000aa2e
+extern int g_1044b584;	// CPointEntity vftable
+extern int g_1049da64;	// CAI_NetworkManager vftable
+CAI_NetworkManager *CAI_NetworkManager::sub_102f4fe0()
+{
+	sub_1009d980(0);
+	*(int **)this = &g_1044b584;
+	((CAI_NodeGraph *)m_Graph)->sub_102f30f0();
+	*(int **)this = &g_1049da64;
+	void *p = operator new(0x18);
+	m_pNetwork = p ? ((CAI_NetworkData *)p)->sub_102f8e30(this) : 0;
+	m_b450 = 0;
+	m_b658 = 0;
+	m_b659 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f5090 size=0x38
 extern int vt_1049da64[];
 void __fastcall sub_1000be15(void *p);
