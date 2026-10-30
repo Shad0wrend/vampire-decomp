@@ -32,4 +32,6 @@ public:
 	const char *m_pszName754;	// 0x754: the model name the discipline names itself with (null: empty)
 	char m_pad0758[0x910 - 0x758];
 	int m_nStatType;	// 0x910: the stat list type the discipline drains
+public:
+	virtual bool vfunc281();
 };
