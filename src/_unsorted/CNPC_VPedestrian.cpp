@@ -12,6 +12,17 @@ datamap_t * CNPC_VPedestrian::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a1e00 size=0x6
+#include "CNPC_VPedestrian.h"
+namespace lifted {
+extern char g_1093bfb0;
+}
+int CNPC_VPedestrian::vfunc580()
+{
+    return (int)&lifted::g_1093bfb0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a1e40 size=0x1e
 #include "CNPC_VPedestrian.h"
 
