@@ -50796,6 +50796,29 @@ void CLogicRelay::sub_101364e0(inputdata_t *pInputData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136580 size=0x5a
+#include <windows.h>
+
+extern HMODULE g_1070ba58;
+__declspec(dllimport) void __cdecl DevWarning(const char *fmt, ...);
+
+void *sub_10136580(const char *name)
+{
+	typedef void *(__cdecl *PFN)();
+	PFN pfn = (PFN)GetProcAddress(g_1070ba58, name);
+	if (pfn)
+		return pfn();
+	DevWarning("**********\n");
+	DevWarning("**********\n");
+	DevWarning("**********\n");
+	DevWarning("Can't create entity of class %s.\n", name);
+	DevWarning("**********\n");
+	DevWarning("**********\n");
+	DevWarning("**********\n");
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136600 size=0x39
 #include "CUnknown10136600.h"
 
