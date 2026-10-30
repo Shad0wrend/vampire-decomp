@@ -78,3 +78,11 @@ ServerClass * CTEBloodStream::vfunc0()
     return (ServerClass *)((int)&lifted::g_106c0cfc);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005e250 size=0x3
+#include "CTEBloodStream.h"
+int CTEBloodStream::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
