@@ -5727,6 +5727,7 @@
 0x1000d670 func   ?vfunc5@CNPC_VCop@@QAEPAV1@I@Z CNPC_VCop::vfunc5
 0x1000d67a func   _item_g_lilly_photo item_g_lilly_photo
 0x1000d67f func   ?sub_1020c3d0@CSecCamera@@QAEXXZ CSecCamera::sub_1020c3d0
+0x1000d684 func   ?vfunc494@CNPC_VNewscaster@@UAEXXZ CNPC_VNewscaster::vfunc494
 0x1000d68e func   ?sub_101f0e50@CUnknown101f0e50@@QAEPAV1@XZ CUnknown101f0e50::sub_101f0e50
 0x1000d69d func   ?sub_102dc520@CUnknown102dca60@@QAEXXZ CUnknown102dca60::sub_102dc520
 0x1000d6a2 func   ?sub_1024e8b0@@YAXPAHHHH@Z sub_1024e8b0
