@@ -152,6 +152,16 @@ int CBaseGrenade::vfunc145()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042b1a0 size=0x7
+namespace lifted {
+extern float g_10462994;
+}
+float CBaseGrenade::vfunc409()
+{
+    return lifted::g_10462994;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042b1e0 size=0x5
 bool CBaseGrenade::vfunc72(int a0)
 {
