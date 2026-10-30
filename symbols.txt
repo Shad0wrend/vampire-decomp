@@ -6069,6 +6069,7 @@
 0x1000e38b func   ?sub_101d6a50@CUnknown101d7520Entry@@QAE_NPAX@Z CUnknown101d7520Entry::sub_101d6a50
 0x1000e390 func   ?sub_101618a0@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_101618a0
 0x1000e395 func   ?sub_1024e930@@YAXAAVVMatrix@@ABVVector@@M@Z sub_1024e930
+0x1000e39a func   ?vfunc491@CGeneric_NPC_bathack@@UAEXXZ CGeneric_NPC_bathack::vfunc491
 0x1000e39f func   ?vfunc241@CEnvParticleHUD@@QAEXXZ CEnvParticleHUD::vfunc241
 0x1000e3b8 func   ?sub_100ed370@CUnknown100ed370@@QAEXXZ CUnknown100ed370::sub_100ed370
 0x1000e3bd func   ?sub_100e1ad0@CDialog@@QAEPBDH@Z CDialog::sub_100e1ad0
