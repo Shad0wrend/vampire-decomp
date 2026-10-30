@@ -27,6 +27,7 @@ public:
 	char sub_100eef10();	// stub 0x100127ec: asked by the lock; true when the container is open (the byte at +0x1480)
 	char sub_100eedd0();	// stub 0x1000cc57: asked by the lock's slot 35 when the lock is closed (the byte at +0x1480 clear)
 	void vfunc71();
+	void vfunc104();	// base vfunc104, precaches the model name (slot 9) and the break model
 	CItemContainer *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_10005718();	// as in CPhysForce (transplant)
 	unsigned int vfunc35(int unused);	// slot 35: 0 while the handle at +0x1a28 names a live entity (the entity list entry's serial matches), else the dword at +0x1a34
