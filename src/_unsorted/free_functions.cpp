@@ -54635,6 +54635,37 @@ int sub_1014f640()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014f670 size=0x5e
+void *sub_1000db89(int);
+struct GP;
+void __fastcall sub_100046c9(GP *);
+void __fastcall sub_100cd2a0(void *);
+extern int vt_1046dcc8;
+extern int vt_1046d524;
+extern char g_1057ce08[];
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+struct GP {
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	virtual void k0(); virtual void k1(); virtual void k2(); virtual void k3(); virtual void k4(); virtual void k5();
+	virtual void name(const char *s);
+};
+// TARGET: physics_cannister
+extern "C" GP *physics_cannister()
+{
+	GP *p = (GP *)sub_1000db89(0x1a18);
+	if (p) {
+		sub_100046c9(p);
+		*(int **)((char *)p + 0x19bc) = &vt_1046dcc8;
+		sub_100cd2a0((char *)p + 0x19fc);
+		*(int **)p = &vt_1046d524;
+	} else {
+		p = 0;
+	}
+	p->name(g_1057ce08);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10150e10 size=0x8
 namespace lifted {
 int sub_10001fa0();
