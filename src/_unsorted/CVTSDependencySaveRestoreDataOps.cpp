@@ -39,3 +39,11 @@ void CVTSDependencySaveRestoreDataOps::vfunc1(CVTSDependencyField *pField, CVTSD
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x100d0370 size=0x5
+#include "CVTSDependencySaveRestoreDataOps.h"
+bool CVTSDependencySaveRestoreDataOps::vfunc4(int a0, int a1)
+{
+    return 0;
+}
+// END FUNCTION
