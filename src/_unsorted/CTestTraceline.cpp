@@ -28,6 +28,14 @@ void CTestTraceline::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006bcd0 size=0x5
+#include "CTestTraceline.h"
+bool CTestTraceline::vfunc86(int a0, int a1, int a2, int a3, int a4)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006bcf0 size=0x1e
 #include "CTestTraceline.h"
 
