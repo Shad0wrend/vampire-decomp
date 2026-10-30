@@ -8520,6 +8520,7 @@
 0x1001312e func   _logic_lineto logic_lineto
 0x1001313d func   ?sub_1021dc20@CPropKeypad@@QAEPBDXZ CPropKeypad::sub_1021dc20
 0x10013142 func   ?vfunc5@CBaseFlex@@QAEPAV1@I@Z CBaseFlex::vfunc5
+0x10013147 func   ?vfunc81@CSprite@@UAEHXZ CSprite::vfunc81
 0x10013151 func   ?vfunc420@CNPC_VFrenzyShadow@@QAEXXZ CNPC_VFrenzyShadow::vfunc420
 0x10013156 func   ?sub_101b68f0@CUtlRBTreeFind232@@QAEHPBX@Z CUtlRBTreeFind232::sub_101b68f0
 0x1001315b func   ?sub_10077290@CUnknown10077290@@QAEXPBD@Z CUnknown10077290::sub_10077290

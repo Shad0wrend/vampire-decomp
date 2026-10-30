@@ -12,6 +12,14 @@ datamap_t * CSprite::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042e230 size=0x3
+#include "CSprite.h"
+int CSprite::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042e850 size=0x43
 #include "CSprite.h"
 #include "engineserver.h"
