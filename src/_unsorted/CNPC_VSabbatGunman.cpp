@@ -23,6 +23,17 @@ int CNPC_VSabbatGunman::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a50c0 size=0x6
+#include "CNPC_VSabbatGunman.h"
+namespace lifted {
+extern int g_1064c138;
+}
+int CNPC_VSabbatGunman::vfunc451()
+{
+    return lifted::g_1064c138;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a50e0 size=0x1e
 #include "CNPC_VSabbatGunman.h"
 
