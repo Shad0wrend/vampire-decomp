@@ -94,4 +94,7 @@ public:
 	COutputEvent m_Out668c;	// +0x668c
 public:
     virtual datamap_t * vfunc82();
+public:
+	virtual bool vfunc452();
+	virtual int vfunc580();
 };
