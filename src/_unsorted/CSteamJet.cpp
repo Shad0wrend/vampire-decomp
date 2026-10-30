@@ -20,6 +20,17 @@ int CSteamJet::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10058050 size=0x6
+#include "CSteamJet.h"
+namespace lifted {
+extern char g_1053ff38;
+}
+int CSteamJet::vfunc82()
+{
+    return (int)&lifted::g_1053ff38;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100580e0 size=0x41
 #include "CSteamJet.h"
 #include <string.h>
