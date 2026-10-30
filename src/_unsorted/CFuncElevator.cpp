@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1020e870 size=0x6
+#include "CFuncElevator.h"
+namespace lifted {
+extern char g_105aadf0;
+}
+int CFuncElevator::vfunc82()
+{
+    return (int)&lifted::g_105aadf0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020f220 size=0x3b
 #include "CFuncElevator.h"
 #include "CBasePlayer.h"

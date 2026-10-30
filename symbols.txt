@@ -4826,6 +4826,7 @@
 0x1000b00f func   ?sub_1042c4e0@@YA_NXZ sub_1042c4e0
 0x1000b014 func   ?sub_10201fa0@CVStatListManager_t@@QAEDH@Z CVStatListManager_t::sub_10201fa0
 0x1000b01e func   ?sub_10400a00@@YAHXZ sub_10400a00
+0x1000b028 func   ?vfunc82@CFuncElevator@@UAEHXZ CFuncElevator::vfunc82
 0x1000b02d func   ?vfunc274@CRagdollProp@@UAE_NH@Z CRagdollProp::vfunc274
 0x1000b037 func   _npc_VHunter npc_VHunter
 0x1000b03c func   ?vfunc4@CTEDecal@@QAEXHH@Z CTEDecal::vfunc4
