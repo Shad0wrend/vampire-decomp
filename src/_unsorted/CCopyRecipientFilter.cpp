@@ -26,6 +26,13 @@ unsigned int CCopyRecipientFilter::vfunc7()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bcfd0 size=0x4
+int CCopyRecipientFilter::vfunc5()
+{
+    return *(int *)((char *)this + 0x20);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bd010 size=0xaf
 #include "CRecipientFilter.h"
 

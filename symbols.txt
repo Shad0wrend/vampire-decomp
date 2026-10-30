@@ -3693,6 +3693,7 @@
 0x10008da0 func   ?sub_103639b0@CUnknown103639b0@@QAEXHH@Z CUnknown103639b0::sub_103639b0
 0x10008daf func   ?vfunc0@CVTSDependencySaveRestoreDataOps@@UAEXPAUCVTSDependencyField@@PAVCSave@@@Z CVTSDependencySaveRestoreDataOps::vfunc0
 0x10008db9 func   ?sub_10074110@CUnknown10074110@@QAEMH@Z CUnknown10074110::sub_10074110
+0x10008dc3 func   ?vfunc5@CCopyRecipientFilter@@UAEHXZ CCopyRecipientFilter::vfunc5
 0x10008dc8 func   ?sub_10078580@CUnknown10078540@@QAEXH@Z CUnknown10078540::sub_10078580
 0x10008dcd func   ?sub_101e8410@@YGXPAHHH@Z sub_101e8410
 0x10008dd2 func   ?sub_1034a170@@YAXPAUCBlock4k@@PBU1@@Z sub_1034a170
