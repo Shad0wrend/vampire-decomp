@@ -3828,6 +3828,7 @@
 0x100095c5 func   ?sub_1033d380@S1033d380@@QAEHH@Z S1033d380::sub_1033d380
 0x100095ca func   ?sub_10108f60@@YAHPAHHDPBVVector@@M@Z sub_10108f60
 0x100095cf func   ?sub_100433b0@CUtlVector20@@QAEHHHPBX@Z CUtlVector20::sub_100433b0
+0x100095d4 func   ?vfunc40@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc40
 0x100095d9 func   ?sub_1005a6a0@@YAXHHPBH0@Z sub_1005a6a0
 0x100095de func   ?sub_10032880@@YAXXZ sub_10032880
 0x100095e8 func   ?vfunc38@CSingleplayRules@@UAEMH@Z CSingleplayRules::vfunc38
