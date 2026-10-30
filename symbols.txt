@@ -7296,6 +7296,7 @@
 0x1000fba0 func   ?sub_10190be0@@YAHXZ sub_10190be0
 0x1000fba5 func   ?sub_10146150@@YAMPBVVector@@@Z sub_10146150
 0x1000fbaa func   ?sub_10073e70@CFlexAnimationTrack@@QAEXXZ CFlexAnimationTrack::sub_10073e70
+0x1000fbaf func   ?vfunc584@CAI_BaseNPCTroika@@UAEXH@Z CAI_BaseNPCTroika::vfunc584
 0x1000fbb4 func   _point_anglesensor point_anglesensor
 0x1000fbcd func   _move_rope move_rope
 0x1000fbd2 func   ?sub_100f6ec0@CGlobalEntityList@@QAEXXZ CGlobalEntityList::sub_100f6ec0

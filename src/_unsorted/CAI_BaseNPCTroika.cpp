@@ -79,6 +79,36 @@ void CAI_BaseNPCTroika::sub_1028d860(const Vector *pPos)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028d910 size=0x58
+#define V(n) virtual void v##n();
+#define V10(p) V(p##0) V(p##1) V(p##2) V(p##3) V(p##4) V(p##5) V(p##6) V(p##7) V(p##8) V(p##9)
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+struct STroikaSlots {
+	V100(0) V100(1) V100(2) V100(3) V100(4) V100(5)
+	V10(60) V(610) V(611) V(612) V(613)
+	virtual void Slot614();
+};
+struct STroikaTimes {
+	char pad0[0x178];
+	float m_flTime178;
+	char pad1[0x6254 - 0x17c];
+	float m_flTime6254;
+	float m_flTime6258;
+	float m_flTime625c;
+	float m_flTime6260;
+};
+void CAI_BaseNPCTroika::vfunc584(int unused)
+{
+	((STroikaSlots *)this)->Slot614();
+	STroikaTimes *p = (STroikaTimes *)this;
+	p->m_flTime178 = gpGlobals->curtime;
+	p->m_flTime6254 = gpGlobals->curtime;
+	p->m_flTime6258 = gpGlobals->curtime;
+	p->m_flTime625c = gpGlobals->curtime;
+	p->m_flTime6260 = gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028de90 size=0x7d
 #include "CAI_BaseNPCTroika.h"
 extern char g_10920534;
