@@ -17,4 +17,6 @@ public:
 	virtual void vfunc36(int);
 public:
 	virtual bool vfunc41(int, int);
+public:
+	virtual int vfunc25();
 };
