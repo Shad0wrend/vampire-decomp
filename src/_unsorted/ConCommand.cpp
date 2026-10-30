@@ -14,6 +14,13 @@ ConCommand *ConCommand::vfunc0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10245940 size=0x3
+bool ConCommand::vfunc1()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10245960 size=0xa
 void ConCommand::vfunc6()
 {
