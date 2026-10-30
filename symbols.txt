@@ -4947,6 +4947,7 @@
 0x1000bc94 func   ?sub_1037aea0@CNPC_VGhoulCroucher@@QAEPAV1@XZ CNPC_VGhoulCroucher::sub_1037aea0
 0x1000bc9e func   ?sub_1030fd20@S1030fc90@@QAEPAXPAI@Z S1030fc90::sub_1030fd20
 0x1000bcad func   ?vfunc431@CNPC_VGhoulCroucher@@QAEXXZ CNPC_VGhoulCroucher::vfunc431
+0x1000bcb2 func   ?vfunc434@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc434
 0x1000bcbc func   ?vfunc349@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::vfunc349
 0x1000bcc1 func   ?sub_10164040@CBasePlayer@@QAEXHPAH0@Z CBasePlayer::sub_10164040
 0x1000bccb func   ?sub_1022a200@CSoundScheme@@QAEXXZ CSoundScheme::sub_1022a200

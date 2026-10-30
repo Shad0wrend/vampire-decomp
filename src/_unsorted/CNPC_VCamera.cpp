@@ -186,6 +186,13 @@ int CNPC_VCamera::vfunc438()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10369100 size=0x1
+#include "CNPC_VCamera.h"
+void CNPC_VCamera::vfunc434()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10369120 size=0xd2
 #include "CNPC_VCamera.h"
 #include "CEntityVSlots.h"
