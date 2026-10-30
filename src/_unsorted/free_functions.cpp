@@ -40560,6 +40560,23 @@ void CUnknown100f6d80::sub_100f6d80(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f6e40 size=0x5c
+#include <string.h>
+#include "utlvector.h"
+
+struct SBlockSetView {
+	char m_pad[0x18048];
+	CUtlVector<int> m_List;
+
+	void sub_100f6e40(int elem);
+};
+
+void SBlockSetView::sub_100f6e40(int elem)
+{
+	m_List.FindAndRemove(elem);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f6ec0 size=0x123
 #include "CGlobalEntityList.h"
 
