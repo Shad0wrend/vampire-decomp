@@ -35,8 +35,8 @@ public:
 	// keeping the slot numbers right.
 	virtual void vfunc0();
 	virtual unsigned int *vfunc1();	// "GetRefEHandle": pointer to the entity's handle
-	virtual void vfunc2();
-	virtual void vfunc3();
+	virtual char * vfunc2();
+	virtual char * vfunc3();
 	virtual void * vfunc4();
 	virtual void vfunc5(int a);	// slot 5: called with 1 by the entity removal (UTIL_Remove)
 	virtual void vfunc6(bool check);	// "CBaseEntity::SetCheckUntouch": scope trace (entity name); when check is set increments the dword at +0x1ac and, unless bit 0 of the byte at +0x26b is set, sets bit 24 of +0x268 and calls sub_100f8e20(this); else clears bit 24 of +0x268
@@ -50,8 +50,8 @@ public:
 	virtual float vfunc29(); virtual float vfunc30(); virtual void vfunc31(int pDump);	/* slot 31 "Dump": takes the dump context handed to the DumpXxx helpers */ virtual bool vfunc32(int a); virtual int vfunc33();
 	virtual int vfunc34(int a); virtual int vfunc35(int a); virtual int vfunc36(); virtual float vfunc37(); virtual void * vfunc38(int);
 	virtual void vfunc39(CBaseEntity *pOther); virtual void vfunc40(int); virtual void vfunc41(); virtual void vfunc42(); virtual void vfunc43(int);
-	virtual bool vfunc44(int); virtual bool vfunc45(void *pPassEnt, Vector vecStart, Vector vecEnd, unsigned int fMask); virtual void vfunc46(); virtual void vfunc47(); virtual void vfunc48();
-	virtual void vfunc49(); virtual void vfunc50(); virtual void vfunc51(); virtual void vfunc52(); virtual float vfunc53();
+	virtual bool vfunc44(int); virtual bool vfunc45(void *pPassEnt, Vector vecStart, Vector vecEnd, unsigned int fMask); virtual void vfunc46(); virtual void vfunc47(); virtual float vfunc48();
+	virtual float vfunc49(); virtual void vfunc50(); virtual void vfunc51(); virtual float vfunc52(); virtual float vfunc53();
 	virtual bool vfunc54(int); virtual void vfunc55(int, int, int, int, int, int, int); virtual void vfunc56(int, int, int, int, int, int, int, int); virtual void vfunc57(int, int, int, int, int, int, int); virtual void vfunc58(int);
 	virtual void vfunc59(int); virtual void vfunc60(int); virtual void vfunc61(int); virtual void vfunc62(); virtual void vfunc63();
 	virtual void vfunc64(const float *angles);	// "CBaseEntity::SetAngles": scope trace (entity name), when the three floats differ from the ones at +0x428 runs three helpers (0x800, 0x3000), stores them and sets the byte at +0x1b1

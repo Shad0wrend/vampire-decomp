@@ -83,4 +83,6 @@ public:
 	void sub_100b5970();	// the destructor body (called through stub 0x100152ad)
 public:
     virtual datamap_t * vfunc82();
+public:
+	virtual char * vfunc278();
 };
