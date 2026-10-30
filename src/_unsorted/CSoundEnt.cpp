@@ -82,6 +82,13 @@ void CSoundEnt::vfunc134()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ba9b0 size=0x1
+#include "CSoundEnt.h"
+void CSoundEnt::vfunc104()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bb580 size=0x1e
 #include "CSoundEnt.h"
 
