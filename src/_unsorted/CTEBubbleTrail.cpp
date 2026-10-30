@@ -55,3 +55,11 @@ void CTEBubbleTrail::vfunc3(const Vector &origin, const QAngle &angles)
 	vfunc4(filter, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005ffa0 size=0x3
+#include "CTEBubbleTrail.h"
+int CTEBubbleTrail::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
