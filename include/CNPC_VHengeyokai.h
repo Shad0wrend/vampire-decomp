@@ -137,6 +137,8 @@ public:
 	void vfunc420();	// slot 420: the base's vfunc420, then resets the transform state (+0x6664 handle, +0x6670 time = curtime + 3, ...)
 	void sub_1029a0b0();	// CAI_BaseNPC::vfunc420 (stub 0x1000c531), called directly
 	void sub_1028d610();	// CAI_BaseNPCTroika destructor body (stub 0x100123af), called directly
+	void vfunc292(struct CGargoyleDmgInfo *pInfo, int b, int c);	// slot 292 (plain member): passes the damage record on to CBaseCombatCharacter::vfunc292 unless its flags (record and damage block) have 0x4000002 or it deals no damage
+	void sub_10015843(struct CGargoyleDmgInfo *pInfo, int b, int c);	// CBaseCombatCharacter::vfunc292 (stub 0x10015843), called directly
 	void vfunc144(int info);	// slot 144 "Event_Killed"-like (plain member): the flag check (sub_10381c80) then sub_103828a0 when it holds, then CNPC_VVampire::vfunc144(info)
 public:
 	virtual void vfunc0();
