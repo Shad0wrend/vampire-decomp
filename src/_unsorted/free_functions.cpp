@@ -95436,6 +95436,35 @@ int sub_10212500()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10212790 size=0x5f
+#include "CUnknown102126c0.h"
+#include "inputdata_t.h"
+struct CPlayerObjView
+{
+	char m_pad0000[0x1040];
+	EHANDLE m_hTarget;	// 0x1040
+	void sub_10167fd0();	// stub 0x10014a6a
+};
+struct CActivatorView
+{
+	char m_pad0000[0xa8];
+	CPlayerObjView *m_pPlayerObj;
+};
+CPlayerObjView *__cdecl sub_101cda50();
+void CUnknown102126c0::sub_10212790(inputdata_t *pInput)
+{
+	CActivatorView *pActivator = (CActivatorView *)pInput->pActivator;
+	CPlayerObjView *pPlayer = pActivator ? pActivator->m_pPlayerObj : 0;
+	if (!pPlayer) {
+		pPlayer = sub_101cda50();
+		if (!pPlayer)
+			return;
+	}
+	if (pPlayer->m_hTarget.Get() == (CBaseEntity *)this)
+		pPlayer->sub_10167fd0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10212fd0 size=0x43
 #include "CPropHaunted.h"
 void *sub_100aa720(int size);
