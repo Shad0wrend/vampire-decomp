@@ -60,6 +60,7 @@ public:
 	char m_pad1804c[0x18054 - 0x1804c];
 	int m_nListeners;	// 0x18054
 
+	void sub_100f8700(unsigned int hEnt);	// "CGlobalEntityList::NotifyRemoveEntity"-like: resolves the handle's slot and tells every listener (OnEntityDeleted) about its entity, last listener first
 	CBaseEntity *sub_100f7060(CBaseEntity *pCurrent);	// "CGlobalEntityList::NextEnt": the first entity's slot-4 result when pCurrent is null, else the first non-null slot-4 result after pCurrent in the list
 	CBaseEntity *sub_100f7770(CBaseEntity *pStart, const char *szName, CBaseEntity *pSearching, CBaseEntity *pActivator);	// "CGlobalEntityList::FindEntityByName" (called through the stub at 0x1000b4b5)
 	CBaseEntity *sub_100f7f20(CBaseEntity *pStart, const char *szName, CBaseEntity *pSearching, CBaseEntity *pActivator);	// a name search with the same four arguments as sub_100f7770 (stub 0x1000b9b0)
