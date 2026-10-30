@@ -213,6 +213,17 @@ int CPayphone::vfunc359(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aae40 size=0x7
+#include "CPayphone.h"
+namespace lifted {
+extern float g_1047a3ac;
+}
+float CPayphone::vfunc37()
+{
+    return lifted::g_1047a3ac;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aaee0 size=0x77
 #include "CPayphone.h"
 
