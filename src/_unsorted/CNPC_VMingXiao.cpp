@@ -103,6 +103,14 @@ int CNPC_VMingXiao::vfunc473()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103929f0 size=0x6
+#include "CNPC_VMingXiao.h"
+int CNPC_VMingXiao::vfunc138()
+{
+    return 4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10392a70 size=0x16d
 #include "CNPC_VMingXiao.h"
 
