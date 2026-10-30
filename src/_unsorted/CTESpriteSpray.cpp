@@ -67,6 +67,17 @@ void CTESpriteSpray::vfunc3(const Vector *pOrigin, const Vector *pAngles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10068770 size=0x6
+#include "CTESpriteSpray.h"
+namespace lifted {
+extern char g_106c5ad0;
+}
+int CTESpriteSpray::vfunc0()
+{
+    return (int)&lifted::g_106c5ad0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10068790 size=0x3
 #include "CTESpriteSpray.h"
 int CTESpriteSpray::vfunc1()
