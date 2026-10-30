@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10130c30 size=0x6
+#include "CLogicAuto.h"
+namespace lifted {
+extern char g_10575a68;
+}
+datamap_t * CLogicAuto::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_10575a68);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130d10 size=0x15
 #include "CLogicAuto.h"
 void CLogicAuto::sub_10130d10()
