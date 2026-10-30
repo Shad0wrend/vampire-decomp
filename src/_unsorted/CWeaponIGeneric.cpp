@@ -43,6 +43,13 @@ void CWeaponIGeneric::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f44a0 size=0x1
+#include "CWeaponIGeneric.h"
+void CWeaponIGeneric::vfunc291()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f4840 size=0x23
 #include <string.h>
 #include "CWeaponIGeneric.h"
