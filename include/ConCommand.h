@@ -5,7 +5,7 @@ class ConCommand
 {
 public:
 	virtual ConCommand *vfunc0(unsigned int flags);
-	virtual void vfunc1();
+	virtual bool vfunc1();
 	virtual void vfunc2();
 	virtual void vfunc3();
 	virtual void vfunc4();
