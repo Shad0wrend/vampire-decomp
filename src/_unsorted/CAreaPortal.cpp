@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1010c310 size=0x6
+namespace lifted {
+extern char g_1056dbe0;
+}
+int CAreaPortal::vfunc82()
+{
+    return (int)&lifted::g_1056dbe0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010c3f0 size=0x1e
 #include "CAreaPortal.h"
 
