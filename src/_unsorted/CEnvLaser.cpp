@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101013f0 size=0x6
+#include "CEnvLaser.h"
+namespace lifted {
+extern char g_10569078;
+}
+int CEnvLaser::vfunc82()
+{
+    return (int)&lifted::g_10569078;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10101480 size=0x12
 #include "CEnvLaser.h"
 
