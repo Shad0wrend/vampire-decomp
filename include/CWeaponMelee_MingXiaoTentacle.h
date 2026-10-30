@@ -17,4 +17,6 @@ public:
 	virtual int vfunc373();
 public:
 	virtual int vfunc362();
+public:
+	virtual int vfunc363();
 };

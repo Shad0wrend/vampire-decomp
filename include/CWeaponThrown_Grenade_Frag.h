@@ -43,4 +43,7 @@ public:
 	void sub_103ee6f0();	// the fuse tick sound: plays the tick sample ("weapons/ranged/grenade_pineapple/tic.wav", channel 1) from the weapon for everybody who hears it, runs the fuse step (sub_103ee660) and schedules the next think one second ahead
 public:
 	virtual int vfunc81();
+public:
+	virtual int vfunc80();
+	virtual int vfunc82();
 };
