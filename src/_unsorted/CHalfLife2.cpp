@@ -19,6 +19,13 @@ CGameRules *CHalfLife2::vfunc0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10356080 size=0x1
+#include "CHalfLife2.h"
+void CHalfLife2::vfunc57()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x103560a0 size=0x134
 #include "CHalfLife2.h"
 extern char g_1062820c[];

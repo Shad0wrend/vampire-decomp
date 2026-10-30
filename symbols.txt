@@ -876,6 +876,7 @@
 0x10002ec8 func   ?ShiftElementsRight@?$CUtlVector@HV?$CUtlMemory@H@@@@QAEXHH@Z CUtlVector<int,CUtlMemory<int> >::ShiftElementsRight
 0x10002ec8 func   ?sub_10071ba0@UtlVec8@@QAEXHH@Z UtlVec8::sub_10071ba0
 0x10002ed2 func   ?sub_102d9ed0@CUnknown102d9ed0@@QAEXPBVVector@@0@Z CUnknown102d9ed0::sub_102d9ed0
+0x10002ed7 func   ?vfunc57@CHalfLife2@@UAEXXZ CHalfLife2::vfunc57
 0x10002edc func   ?sub_10150e50@CHolderPtr36c@@QAEXH@Z CHolderPtr36c::sub_10150e50
 0x10002ee6 func   ?sub_102bf560@CAI_BaseNPCTroika@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPCTroika::sub_102bf560
 0x10002ef0 func   ?vfunc325@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc325
