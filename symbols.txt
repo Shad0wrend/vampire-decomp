@@ -124,6 +124,7 @@
 0x1000141a func   ?vfunc6@CBaseNetworkable@@UAEXPAUCBaseNetworkableBits_t@@@Z CBaseNetworkable::vfunc6
 0x10001424 func   ?sub_1021bc20@@YIXPAD@Z sub_1021bc20
 0x10001429 func   ?sub_10091230@CBaseAnimating@@QAEMH@Z CBaseAnimating::sub_10091230
+0x10001433 func   ?vfunc80@CBaseFlex@@UAEHXZ CBaseFlex::vfunc80
 0x1000143d func   ?sub_10096490@CBaseAnimating@@QAEXH@Z CBaseAnimating::sub_10096490
 0x10001447 func   ?vfunc113@CPropSwitch@@UAEXXZ CPropSwitch::vfunc113
 0x10001451 func   ?vfunc2@CGameMovement@@UAEPAMDH@Z CGameMovement::vfunc2
