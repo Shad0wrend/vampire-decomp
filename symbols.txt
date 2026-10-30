@@ -6373,6 +6373,7 @@
 0x1000e5c0 func   _item_w_supershotgun item_w_supershotgun
 0x1000e5c5 func   _env_microphone env_microphone
 0x1000e5cf func   ?vfunc366@CNPC_VCamera@@UAE_NHHH@Z CNPC_VCamera::vfunc366
+0x1000e5d9 func   ?vfunc366@CNPC_VMingXiaoTentacle@@UAE_NHHH@Z CNPC_VMingXiaoTentacle::vfunc366
 0x1000e5de func   _item_w_mingxiao_spit item_w_mingxiao_spit
 0x1000e5f2 func   _item_g_bailbond_receipt item_g_bailbond_receipt
 0x1000e5f7 func   ?sub_1033e0a0@CBaseCombatCharacter@@QAEXHHPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_1033e0a0

@@ -90,6 +90,13 @@ void CTentacleUnit::sub_1039e800(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039e8e0 size=0x5
+bool CNPC_VMingXiaoTentacle::vfunc366(int a0, int a1, int a2)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039e900 size=0x41
 #include "CNPC_VMingXiaoTentacle.h"
 #include "CNPC_VMingXiao.h"
