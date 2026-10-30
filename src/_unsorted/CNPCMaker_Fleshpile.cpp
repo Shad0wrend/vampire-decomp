@@ -12,6 +12,14 @@ datamap_t * CNPCMaker_Fleshpile::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034bef0 size=0x5
+#include "CNPCMaker_Fleshpile.h"
+bool CNPCMaker_Fleshpile::vfunc363(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034bf70 size=0x3
 #include "CNPCMaker_Fleshpile.h"
 void CNPCMaker_Fleshpile::vfunc619(int a0)
