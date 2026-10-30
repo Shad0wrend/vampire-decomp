@@ -68,6 +68,14 @@ void CBaseFlex::sub_100b5b00(const float *v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b5b40 size=0x7
+#include "CBaseFlex.h"
+char * CBaseFlex::vfunc278()
+{
+    return (char *)this + 0x848;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b5ba0 size=0x58
 #include "CBaseFlex.h"
 // TARGET: CBaseFlex::vfunc279
