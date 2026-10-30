@@ -56,6 +56,17 @@ void CTEBubbles::vfunc3(const Vector &origin, const QAngle &angles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005f8a0 size=0x6
+#include "CTEBubbles.h"
+namespace lifted {
+extern char g_106c17cc;
+}
+int CTEBubbles::vfunc0()
+{
+    return (int)&lifted::g_106c17cc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005f8c0 size=0x3
 #include "CTEBubbles.h"
 int CTEBubbles::vfunc1()
