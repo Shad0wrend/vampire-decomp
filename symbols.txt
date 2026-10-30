@@ -1534,6 +1534,7 @@
 0x100041ab func   ?vfunc119@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc119
 0x100041bf func   ?sub_101d2ab0@@YAXPAVVector@@HHMM@Z sub_101d2ab0
 0x100041c4 func   ??1CUnknown101f4120@@QAE@XZ CUnknown101f4120::~CUnknown101f4120
+0x100041c9 func   ?vfunc173@CSteamJet@@QAEXPAX0HM@Z CSteamJet::vfunc173
 0x100041ce func   ?sub_101c9b60@CSquadSetter@@QAEXH@Z CSquadSetter::sub_101c9b60
 0x100041d8 func   ?sub_101a0570@@YGHPBDH@Z sub_101a0570
 0x100041dd func   ?sub_101f63b0@@YGPBDPBD@Z sub_101f63b0

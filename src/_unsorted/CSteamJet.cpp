@@ -49,6 +49,21 @@ void CSteamJet::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10058150 size=0x5e
+#include "CSteamJet.h"
+void CSteamJet::vfunc173(void *pActivator, void *pCaller, int useType, float value)
+{
+	if (useType == 0)
+		m_nFlag468 = 0;
+	else if (useType == 1)
+		m_nFlag468 = 1;
+	else if (useType == 2)
+		m_nFlag468 = (int)value != 0;
+	else if (useType == 3)
+		m_nFlag468 = m_nFlag468 == 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10058240 size=0x1e
 #include "CSteamJet.h"
 
