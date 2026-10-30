@@ -45,4 +45,9 @@ public:
 public:
     virtual int vfunc81();
     virtual int vfunc80();
+    virtual bool vfunc74(int);	// slot 74: the game's own (0x1010e600)
+    virtual void vfunc104();	// slot 104: the game's own (0x1010fec0)
+    virtual bool vfunc110(const char *key, const char *value);	// slot 110: the game's own (0x1010d590)
+    virtual void vfunc113();	// slot 113: the game's own (0x1010d8a0)
+    virtual int vfunc117();	// slot 117: the game's own (0x1010d430)
 };
