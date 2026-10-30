@@ -23,6 +23,17 @@ int CNPC_VLasombra::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10388e00 size=0x6
+#include "CNPC_VLasombra.h"
+namespace lifted {
+extern int g_106406a4;
+}
+int CNPC_VLasombra::vfunc451()
+{
+    return lifted::g_106406a4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10388e20 size=0x1e
 #include "CNPC_VLasombra.h"
 
