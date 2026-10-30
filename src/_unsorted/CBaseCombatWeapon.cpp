@@ -1004,6 +1004,29 @@ void __fastcall sub_102583e0(CBaseEntity *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10258440 size=0x5a
+#include "CBaseCombatWeapon.h"
+#include "Ent.h"
+
+struct COwnerView10258440 : Ent
+{
+	char m_pad0[0x98];
+	int m_n98;
+};
+
+void CBaseCombatWeapon::vfunc130(void *pArg)
+{
+	sub_1008df10(pArg);
+	COwnerView10258440 *pOwner = (COwnerView10258440 *)sub_102521f0();
+	if (pOwner && pOwner->m_n98) {
+		if (!pOwner->sub_10336920())
+			vfunc105(vfunc272());
+		else
+			vfunc105(vfunc273());
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10258560 size=0xe
 // TARGET: CBaseCombatWeapon::vfunc291
 void CBaseCombatWeapon::vfunc291()
