@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100b71c0 size=0x6
+#include "CBaseLandmark.h"
+namespace lifted {
+extern char g_10559828;
+}
+int CBaseLandmark::vfunc82()
+{
+    return (int)&lifted::g_10559828;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7670 size=0x78
 #include "CBaseLandmark.h"
 void sub_100aa7b0(void *p);
