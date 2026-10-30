@@ -41,6 +41,17 @@ void CTEDynamicLight::vfunc3(const Vector &origin, const QAngle &angles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10060e20 size=0x6
+#include "CTEDynamicLight.h"
+namespace lifted {
+extern char g_106c23b4;
+}
+int CTEDynamicLight::vfunc0()
+{
+    return (int)&lifted::g_106c23b4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10060e40 size=0x3
 #include "CTEDynamicLight.h"
 int CTEDynamicLight::vfunc1()
