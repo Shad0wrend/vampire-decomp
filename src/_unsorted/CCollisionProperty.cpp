@@ -7,6 +7,13 @@ void CCollisionProperty::vfunc17()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dc3a0 size=0x4
+int CCollisionProperty::vfunc0()
+{
+    return *(int *)((char *)this + 0x3c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dc3c0 size=0xa
 #include "CCollisionProperty.h"
 // TARGET: CCollisionProperty::vfunc14

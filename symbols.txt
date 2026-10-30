@@ -7879,6 +7879,7 @@
 0x10011b26 func   ?sub_103a1320@CUnknown103a1320@@QAEXH@Z CUnknown103a1320::sub_103a1320
 0x10011b35 func   ?vfunc453@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc453
 0x10011b3a func   _player_loadsaved player_loadsaved
+0x10011b3f func   ?vfunc0@CCollisionProperty@@UAEHXZ CCollisionProperty::vfunc0
 0x10011b44 func   ?vfunc252@CBaseAnimating@@QAEHHHH@Z CBaseAnimating::vfunc252
 0x10011b53 func   ?sub_1030cb00@@YGHPBD@Z sub_1030cb00
 0x10011b67 func   ?sub_10046050@PQ@@QAEXABUElem@@@Z PQ::sub_10046050
