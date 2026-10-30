@@ -24015,6 +24015,21 @@ void sub_1009a0c0(TEnt *ent, int unused, int *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009a210 size=0x59
+#include "SendProp.h"
+struct CUnknown10247240 { void sub_10247240(int a, int b, int c); };
+SendProp sub_10246af0(const char *name, int a, int b, int c, int d, int e, void *f);
+extern CUnknown10247240 g_106cf138;
+extern int g_106cff4c;
+extern int g_10552820;
+int sub_1009a210()
+{
+	static SendProp s_dummy = sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0);
+	g_106cf138.sub_10247240((int)&g_106cff4c, 0, g_10552820);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009a370 size=0x7d
 #include "SendProp.h"
 

@@ -5741,6 +5741,7 @@
 0x1000c90f func   ?sub_10316890@CUnknown10316890@@QAEXHVVector@@0@Z CUnknown10316890::sub_10316890
 0x1000c919 func   ?sub_10063880@@YAXHHPBM000MMMHEEEEEE@Z sub_10063880
 0x1000c91e func   _item_p_occult_dodge item_p_occult_dodge
+0x1000c928 func   ?sub_1009a210@@YAHXZ sub_1009a210
 0x1000c92d func   ?vfunc1@CTEInspectionFX@@UAEHXZ CTEInspectionFX::vfunc1
 0x1000c932 func   ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z CBaseEntity::vfunc231
 0x1000c93c func   ?sub_100fbaf0@CBaseEntityUnit100fbaf0@@QAEXM@Z CBaseEntityUnit100fbaf0::sub_100fbaf0
