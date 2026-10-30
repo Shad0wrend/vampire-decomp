@@ -12,6 +12,13 @@ datamap_t * CPropDestructable::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10193a30 size=0x1
+#include "CPropDestructable.h"
+void CPropDestructable::vfunc265()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10193a50 size=0xf7
 #include "CPropDestructable.h"
 #include "CBreakableProp.h"

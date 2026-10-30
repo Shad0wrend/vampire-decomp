@@ -6362,6 +6362,7 @@
 0x1000ee30 func   ?sub_101d96a0@CUnknown101d96a0@@QAEHH@Z CUnknown101d96a0::sub_101d96a0
 0x1000ee3a func   ?vfunc3@CBaseTempEntity@@UAEXABVVector@@ABVQAngle@@@Z CBaseTempEntity::vfunc3
 0x1000ee3f func   ?sub_101ca950@@YAHXZ sub_101ca950
+0x1000ee49 func   ?vfunc265@CPropDestructable@@UAEXXZ CPropDestructable::vfunc265
 0x1000ee58 func   ?sub_1030bc40@CUnknown1030bc40@@QAEHXZ CUnknown1030bc40::sub_1030bc40
 0x1000ee5d func   ?vfunc425@CAI_BaseNPC@@UAEPAVCAI_Senses@@XZ CAI_BaseNPC::vfunc425
 0x1000ee62 func   ?sub_100d8120@@YAXXZ sub_100d8120
