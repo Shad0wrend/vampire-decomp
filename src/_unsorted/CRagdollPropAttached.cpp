@@ -21,6 +21,17 @@ CRagdollProp *CRagdollPropAttached::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10156710 size=0x6
+#include "CRagdollPropAttached.h"
+namespace lifted {
+extern char g_10723278;
+}
+int CRagdollPropAttached::vfunc80()
+{
+    return (int)&lifted::g_10723278;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10156730 size=0x3
 #include "CRagdollPropAttached.h"
 int CRagdollPropAttached::vfunc81()
