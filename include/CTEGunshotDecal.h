@@ -30,4 +30,6 @@ public:
 	int m_f40;
 	int m_f44;
 	int m_f48;
+public:
+	virtual void vfunc5();
 };

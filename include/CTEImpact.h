@@ -11,4 +11,6 @@ public:
 	virtual void vfunc4(int a, int b);
 
 	void sub_1000c1a8();	// destructor body
+public:
+	virtual void vfunc5();
 };

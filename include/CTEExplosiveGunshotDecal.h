@@ -25,4 +25,6 @@ public:
 
 	void sub_10010f0a();	// destructor body
 	void vfunc4(void *pFilter, int delay);	// slot 4 "Create"-like worker (stub 0x10004197), called directly
+public:
+	virtual void vfunc5();
 };

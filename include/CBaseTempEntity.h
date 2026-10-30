@@ -30,4 +30,6 @@ public:
 	void sub_100021d0();	// destructor body
 
 	const char *m_pszName;	// 0x04
+public:
+	virtual void vfunc5();
 };

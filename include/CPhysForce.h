@@ -50,4 +50,6 @@ public:
 	CPhysForceMotion m_Motion;	// 0x464
 public:
     virtual datamap_t * vfunc82();
+public:
+	virtual void vfunc242();
 };

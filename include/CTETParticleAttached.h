@@ -10,4 +10,6 @@ public:
 
 	void sub_100021e9();	// destructor body
 	void vfunc4(int a, int b);	// as in CTEMetalSparks (transplant)
+public:
+	virtual void vfunc5();
 };
