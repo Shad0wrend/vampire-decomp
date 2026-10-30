@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1004dbf0 size=0x6
+#include "CPhysBox.h"
+namespace lifted {
+extern char g_106bdba8;
+}
+int CPhysBox::vfunc80()
+{
+    return (int)&lifted::g_106bdba8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004dc10 size=0x3
 #include "CPhysBox.h"
 int CPhysBox::vfunc81()
