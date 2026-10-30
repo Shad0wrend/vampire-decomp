@@ -1,6 +1,23 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103eb8b0 size=0x59
+#include "CWeaponMelee.h"
+#include "CWeaponMelee_Tzimisce3Claw.h"
+struct COwnerInfoView { char pad[0x5f2c]; char m_b5f2c; };
+struct COwnerView { char pad[0x94]; COwnerInfoView *m_pInfo; };
+char CWeaponMelee_Tzimisce3Claw::vfunc372(int a, int b, int c)
+{
+	CWeaponMelee *pBase = (CWeaponMelee *)this;
+	if (a == 0x4b) {
+		COwnerView *pOwner = (COwnerView *)sub_102521f0();
+		if (pOwner && pOwner->m_pInfo && !pOwner->m_pInfo->m_b5f2c)
+			return pBase->CWeaponMelee::vfunc372(0x4e, b, c);
+	}
+	return pBase->CWeaponMelee::vfunc372(a, b, c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecff0 size=0x1e
 #include "CWeaponMelee_Tzimisce3Claw.h"
 
