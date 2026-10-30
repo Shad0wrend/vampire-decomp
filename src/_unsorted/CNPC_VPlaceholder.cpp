@@ -192,3 +192,12 @@ void CNPC_VPlaceholder::vfunc420()
     sub_100ac4e0(0, 0, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x103a43f0 size=0x10
+#include "CNPC_VPlaceholder.h"
+int CNPC_VPlaceholder::vfunc437()
+{
+    *(int *)((char *)this + 0x1b2c) = 0x1e;
+    return 0x157;
+}
+// END FUNCTION
