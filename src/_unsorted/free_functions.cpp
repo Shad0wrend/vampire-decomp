@@ -125658,6 +125658,36 @@ void CSlotList::sub_10306200(int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10306550 size=0x5d
+struct CVHalveItem
+{
+	char m_pad[0x18];
+	int m_n18;
+	int m_n1c;
+	int m_n20;
+};
+struct CVHalveList
+{
+	CVHalveItem **m_ppItems;
+
+	void sub_10306550();
+};
+
+// TARGET: CVHalveList::sub_10306550
+void CVHalveList::sub_10306550()
+{
+	if (m_ppItems)
+	{
+		for (int i = 0; i < 50; i++)
+		{
+			m_ppItems[i]->m_n18 = (int)(m_ppItems[i]->m_n18 * 0.5);
+			m_ppItems[i]->m_n1c = (int)(m_ppItems[i]->m_n1c * 0.5);
+			m_ppItems[i]->m_n20 = (int)(m_ppItems[i]->m_n20 * 0.5);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103065d0 size=0xe5
 #include "CUnknown103065d0.h"
 

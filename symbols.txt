@@ -1152,6 +1152,7 @@
 0x100034cc func   ?sub_103a5bb0@@YAHXZ sub_103a5bb0
 0x100034db func   ?sub_10081e90@@YIXPAUCSlots@@HH@Z sub_10081e90
 0x100034ef func   ?sub_1006e850@@YIXPAD@Z sub_1006e850
+0x100034f4 func   ?sub_10306550@CVHalveList@@QAEXXZ CVHalveList::sub_10306550
 0x100034f9 func   ?sub_103392c0@CBaseCombatCharacter@@QAEXPAVCBaseEntity@@HH@Z CBaseCombatCharacter::sub_103392c0
 0x10003503 func   _scripted_target scripted_target
 0x1000350d func   ?vfunc103@CBaseEntity@@UAEXXZ CBaseEntity::vfunc103
