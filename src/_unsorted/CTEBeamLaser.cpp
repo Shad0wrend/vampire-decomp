@@ -61,3 +61,11 @@ ServerClass * CTEBeamLaser::vfunc0()
     return (ServerClass *)((int)&lifted::g_106bfa50);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005bbc0 size=0x3
+#include "CTEBeamLaser.h"
+int CTEBeamLaser::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
