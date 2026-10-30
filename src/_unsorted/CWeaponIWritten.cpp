@@ -23,6 +23,14 @@ void CWeaponIWritten::vfunc291()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040b430 size=0x3
+#include "CWeaponIWritten.h"
+bool CWeaponIWritten::vfunc325()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040b450 size=0x4e
 #include "CWeaponIWritten.h"
 extern char g_106b8540[];
