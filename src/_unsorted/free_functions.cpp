@@ -8079,6 +8079,16 @@ bool sub_10053df0(const unsigned int *a, const unsigned int *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100542e0 size=0x5b
+#include "ScopeTrace.h"
+
+int sub_100542e0()
+{
+	ScopeTrace trace("GetDiscParticleHdr", g_106b8540);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10054360 size=0x7c
 #include "IVEngineServer.h"
 extern IVEngineServer *g_1070b22c;

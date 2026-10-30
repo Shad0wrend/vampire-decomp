@@ -8677,6 +8677,7 @@
 0x100126f7 func   ?sub_102c5730@CUnk102c5730@@QAEXPAX@Z CUnk102c5730::sub_102c5730
 0x10012701 func   ?vfunc142@CFire@@UAEHH@Z CFire::vfunc142
 0x1001271a func   ?vfunc16@CMultiplayRules@@UAEXXZ CMultiplayRules::vfunc16
+0x10012724 func   ?sub_100542e0@@YAHXZ sub_100542e0
 0x10012729 func   ?sub_1022d410@@YIXPAUMem256@@HH@Z sub_1022d410
 0x10012751 func   ?sub_100d51b0@@YAXXZ sub_100d51b0
 0x10012756 func   ?sub_10137ed0@@YAXABUmatrix3x4_t@@AAVQAngle@@@Z sub_10137ed0
