@@ -83,6 +83,13 @@ void CNPC_VMingXiaoTentacle::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039c440 size=0x6
+int CNPC_VMingXiaoTentacle::vfunc473()
+{
+    return 0x81f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039de00 size=0xd
 struct TentacleField1b2c { char pad[0x1b2c]; int m; };
 int CNPC_VMingXiaoTentacle::vfunc437()

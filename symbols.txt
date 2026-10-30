@@ -9272,6 +9272,7 @@
 0x10014119 func   ?vfunc131@CBaseEntity@@UAEHXZ CBaseEntity::vfunc131
 0x10014123 func   ?vfunc0@CAI_CsActList@@UAEXPAUCsActSaveIface@@@Z CAI_CsActList::vfunc0
 0x10014128 func   ?sub_1007d190@CUnknown1007d190@@QAEXXZ CUnknown1007d190::sub_1007d190
+0x1001412d func   ?vfunc473@CNPC_VMingXiaoTentacle@@UAEHXZ CNPC_VMingXiaoTentacle::vfunc473
 0x10014137 func   ?sub_101e01e0@CUnknown101e01e0@@QAEPAUS101df260@@XZ CUnknown101e01e0::sub_101e01e0
 0x10014146 func   ?vfunc0@CFireSphere@@UAEHPAVCBaseEntity@@@Z CFireSphere::vfunc0
 0x10014150 func   ?sub_101eb820@CUnknown101eb820@@QAEXXZ CUnknown101eb820::sub_101eb820
