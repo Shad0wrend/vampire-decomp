@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1004ca80 size=0x6
+#include "CPhysicsSpring.h"
+namespace lifted {
+extern char g_1053cca0;
+}
+int CPhysicsSpring::vfunc82()
+{
+    return (int)&lifted::g_1053cca0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004d0d0 size=0x1e
 #include "CPhysicsSpring.h"
 
