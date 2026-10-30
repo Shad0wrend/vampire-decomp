@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103c28a0 size=0x6
+#include "CNPC_VTzimisceRunner.h"
+namespace lifted {
+extern char g_1065d6ac;
+}
+int CNPC_VTzimisceRunner::vfunc82()
+{
+    return (int)&lifted::g_1065d6ac;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c2a60 size=0x1d
 #include "CNPC_VTzimisceRunner.h"
 struct A { int sub_10012300(int); };
