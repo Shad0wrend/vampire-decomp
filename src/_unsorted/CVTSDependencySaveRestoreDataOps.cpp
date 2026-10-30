@@ -40,6 +40,17 @@ void CVTSDependencySaveRestoreDataOps::vfunc1(CVTSDependencyField *pField, CVTSD
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d0350 size=0xe
+#include "CVTSDependencySaveRestoreDataOps.h"
+namespace lifted {
+struct C10010573 { int sub_10010573(); };
+}
+int CVTSDependencySaveRestoreDataOps::vfunc3(int a0)
+{
+    return ((lifted::C10010573 *)(*(int *)((char *)a0)))->sub_10010573();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d0370 size=0x5
 #include "CVTSDependencySaveRestoreDataOps.h"
 bool CVTSDependencySaveRestoreDataOps::vfunc4(int a0, int a1)
