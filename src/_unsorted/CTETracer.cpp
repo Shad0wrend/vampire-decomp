@@ -35,6 +35,17 @@ void CTETracer::vfunc3(const Vector *pOrigin, const Vector *pAngles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006a6b0 size=0x6
+#include "CTETracer.h"
+namespace lifted {
+extern char g_106c7138;
+}
+int CTETracer::vfunc0()
+{
+    return (int)&lifted::g_106c7138;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006a6d0 size=0x3
 #include "CTETracer.h"
 int CTETracer::vfunc1()
