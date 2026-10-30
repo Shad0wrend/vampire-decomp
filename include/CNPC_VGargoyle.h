@@ -67,4 +67,8 @@ public:
 	int m_n6680;	// 0x6680: the counter the vfunc435 override lowers
 	void *m_p6684;	// 0x6684: the object that takes the Event_Killed call when set
 	int m_nVulnerable;	// 0x6688
+public:
+	virtual bool vfunc70();
+	virtual bool vfunc602();
+	virtual bool vfunc615();
 };

@@ -70,4 +70,7 @@ public:
 	char m_b6699;	// 0x6699
 public:
 	virtual void vfunc434();
+public:
+	virtual bool vfunc70();
+	virtual bool vfunc602();
 };

@@ -13,4 +13,6 @@ public:
 	virtual void vfunc57();
 public:
 	virtual void vfunc35(int);
+public:
+	virtual void vfunc36(int);
 };

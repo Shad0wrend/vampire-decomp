@@ -131,4 +131,6 @@ public:
 	virtual void vfunc495();
 	virtual void vfunc496();
 	virtual void vfunc497();
+public:
+	virtual int vfunc473();
 };

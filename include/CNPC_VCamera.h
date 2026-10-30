@@ -72,4 +72,14 @@ public:
 	virtual void vfunc505();
 	virtual void vfunc506();
 	virtual void vfunc507();
+public:
+	virtual int vfunc138();
+	virtual void vfunc259(int);
+	virtual void vfunc463(int, int);
+	virtual int vfunc473();
+	virtual void vfunc508(int);
+	virtual bool vfunc509();
+	virtual bool vfunc510();
+	virtual void vfunc563(int, int, int, int);
+	virtual bool vfunc564();
 };
