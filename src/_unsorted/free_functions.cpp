@@ -135329,6 +135329,33 @@ extern "C" GP *bodyque()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10355e00 size=0x4f
+#include "CBaseEntity.h"
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct CBodyQueView {
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	V10(k) V10(l) V10(m) V10(n) V10(o) V10(p) V10(q) V10(r) V10(s) V10(t)
+	virtual void z0(); virtual void z1();
+	virtual void SetOwnerEntity(CBodyQueView *pOwner);
+};
+
+CBodyQueView *sub_10136580(const char *name);
+extern CBodyQueView *g_10938738;
+
+void sub_10355e00()
+{
+	g_10938738 = sub_10136580("bodyque");
+	CBodyQueView *pEnt = g_10938738;
+	for (int i = 0; i < 3; i++) {
+		CBodyQueView *pNext = sub_10136580("bodyque");
+		pEnt->SetOwnerEntity(pNext);
+		pEnt = pNext;
+	}
+	pEnt->SetOwnerEntity(g_10938738);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10356040 size=0x2b
 class CUnk10938738 {
 public:
