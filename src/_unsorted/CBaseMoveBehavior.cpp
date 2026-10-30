@@ -62,6 +62,35 @@ void CBaseMoveBehavior::vfunc242()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140b50 size=0x59
+#include "CBaseMoveBehavior.h"
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+#define D5(n) virtual void d##n##a(); virtual void d##n##b(); virtual void d##n##c(); virtual void d##n##d(); virtual void d##n##e();
+#define D25(n) D5(n##0) D5(n##1) D5(n##2) D5(n##3) D5(n##4)
+#define D100(n) D25(n##0) D25(n##1) D25(n##2) D25(n##3)
+struct CMoveView : public CBaseEntity {
+	D100(x0)
+	D5(y0)
+	virtual void z0(); virtual void z1();
+	virtual bool vfunc241(int a);
+};
+// TARGET: CBaseMoveBehavior::vfunc133
+void CBaseMoveBehavior::vfunc133()
+{
+	CMoveView *p = (CMoveView *)this;
+	const char *psz = m_classname11c;
+	if (!psz)
+		psz = "";
+	if (!_strcmpi(psz, "move_keyframed")) {
+		int n = m_unk4b4;
+		if (!p->vfunc241(n))
+			p->vfunc241(-n);
+	}
+	if (m_pfn0114)
+		(this->*m_pfn0114)();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140f30 size=0x1e
 #include "CBaseMoveBehavior.h"
 
