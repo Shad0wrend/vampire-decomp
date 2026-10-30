@@ -47,3 +47,11 @@ void CTEBeamSpline::vfunc3(const Vector &current_origin, const Vector &current_a
 	vfunc4(&filter, 0.0f);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005d5b0 size=0x3
+#include "CTEBeamSpline.h"
+int CTEBeamSpline::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
