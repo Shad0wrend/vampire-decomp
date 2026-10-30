@@ -141,3 +141,10 @@ float CGeneric_NPC_bathack::vfunc516()
     return g_1047a3ac;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1035b1a0 size=0x1
+#include "CGeneric_NPC_bathack.h"
+void CGeneric_NPC_bathack::vfunc434()
+{
+}
+// END FUNCTION
