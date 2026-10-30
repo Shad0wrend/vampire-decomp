@@ -6438,6 +6438,7 @@
 0x1000efed func   ?vfunc257@CBaseAnimating@@QAEXHH@Z CBaseAnimating::vfunc257
 0x1000eff2 func   ?vfunc2@CTEBeamEnts@@UAEPAV1@I@Z CTEBeamEnts::vfunc2
 0x1000eff7 func   ?sub_10057550@CUnknown10057550@@QAEHXZ CUnknown10057550::sub_10057550
+0x1000effc func   ?vfunc504@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc504
 0x1000f001 func   ?sub_102c8c40@UtlMem@@QAEXXZ UtlMem::sub_102c8c40
 0x1000f006 func   ?vfunc546@CNPC_VYukie@@QAEHH@Z CNPC_VYukie::vfunc546
 0x1000f00b func   ?sub_1012e790@@YAHXZ sub_1012e790
