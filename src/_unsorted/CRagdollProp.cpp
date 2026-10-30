@@ -71,6 +71,13 @@ Vector CRagdollProp::vfunc275()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101552b0 size=0x3
+char CRagdollProp::vfunc276()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101552d0 size=0x1e
 #include "CRagdollProp.h"
 
