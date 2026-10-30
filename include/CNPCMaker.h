@@ -36,4 +36,7 @@ public:
     virtual void vfunc113();
     virtual void vfunc123();
     virtual datamap_t * vfunc82();
+public:
+	virtual void vfunc619(int);
+	virtual void vfunc620(int);
 };
