@@ -35,6 +35,17 @@ void CTEShowLine::vfunc3(const Vector *pOrigin, const Vector *pAngles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10066d20 size=0x6
+#include "CTEShowLine.h"
+namespace lifted {
+extern char g_106c5100;
+}
+int CTEShowLine::vfunc0()
+{
+    return (int)&lifted::g_106c5100;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10066d40 size=0x3
 #include "CTEShowLine.h"
 int CTEShowLine::vfunc1()
