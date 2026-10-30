@@ -34195,6 +34195,37 @@ void sub_100d2290(const char *pszTarget)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d2320 size=0x5b
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+extern "C" int _strcmpi(const char *, const char *);
+extern char g_106b8540[];
+
+class CEntNameView
+{
+public:
+	const char *sub_100ab4f0();
+};
+
+CEntNameView *sub_10002b8a(int pPlayer);
+void sub_10014614(CEntNameView *pEnt);
+void sub_10011077(const char *pszName);
+
+void sub_100d2320(int pPlayer, const char *pszName)
+{
+	if (_strcmpi(pszName, g_106b8540) == 0)
+	{
+		CEntNameView *pEnt = sub_10002b8a(pPlayer);
+		if (pEnt)
+		{
+			sub_10014614(pEnt);
+			Msg("killing %s\n", pEnt->sub_100ab4f0());
+			return;
+		}
+	}
+	sub_10011077(pszName);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d23a0 size=0xc5
 extern "C" double __cdecl atof(const char *);
 void sub_101450e0(float *pMins, float *pMaxs, int a, int b);
