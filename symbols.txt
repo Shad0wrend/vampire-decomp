@@ -5373,6 +5373,7 @@
 0x1000ca2c func   ?vfunc5@CAI_NetworkManager@@QAEPAV1@I@Z CAI_NetworkManager::vfunc5
 0x1000ca31 func   ?sub_101c1ba0@CUnknown101c1b60@@QAEXH@Z CUnknown101c1b60::sub_101c1ba0
 0x1000ca36 func   ?vfunc5@CFogController@@QAEPAV1@I@Z CFogController::vfunc5
+0x1000ca3b func   ?vfunc36@CBaseEntity@@UAEHXZ CBaseEntity::vfunc36
 0x1000ca40 func   ?sub_103161a0@CUnknown103160c0@@QAEXH@Z CUnknown103160c0::sub_103161a0
 0x1000ca45 func   ?sub_101af030@@YAXXZ sub_101af030
 0x1000ca4a func   ?vfunc100@CBaseAnimating@@QAE_NHHPAD@Z CBaseAnimating::vfunc100
