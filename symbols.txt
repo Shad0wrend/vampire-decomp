@@ -6131,6 +6131,7 @@
 0x1000dd14 func   ?sub_1006fe00@@YIXPAUFollowObj@@@Z sub_1006fe00
 0x1000dd19 func   ?vfunc5@CPhysTorque@@UAEPAV1@I@Z CPhysTorque::vfunc5
 0x1000dd1e func   ?sub_103e1960@@YAXPAUCLinkElem@@0@Z sub_103e1960
+0x1000dd23 func   ?vfunc157@CPlayerPickupController@@UAE_NH@Z CPlayerPickupController::vfunc157
 0x1000dd2d func   ?sub_103d9f90@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103d9f90
 0x1000dd37 func   ?sub_101d7ec0@CClanNames@@QAEHPBDPAH@Z CClanNames::sub_101d7ec0
 0x1000dd3c func   ?sub_101d16c0@@YAPADPAD0D@Z sub_101d16c0
