@@ -43870,6 +43870,22 @@ int CExpressionTable::sub_10105870(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10105950 size=0x5d
+#include "ScopeTrace.h"
+
+struct CExpressionTables
+{
+	void sub_10105170();	// prints the expression names
+};
+extern CExpressionTables g_10709200;
+
+void sub_10105950()
+{
+	ScopeTrace trace("CC_DumpExpressionTableNames", g_106b8540, g_106b8540);
+	g_10709200.sub_10105170();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10105a60 size=0xe1
 #include "CUnknown10105a60.h"
 #include "ScopeTrace.h"

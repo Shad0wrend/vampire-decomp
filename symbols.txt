@@ -532,6 +532,7 @@
 0x1000213a func   ?vfunc276@CPropKeypad@@QAEXXZ CPropKeypad::vfunc276
 0x10002144 func   ?vfunc587@CAI_BaseHumanoid@@QAEDABVVector@@@Z CAI_BaseHumanoid::vfunc587
 0x10002149 func   ?sub_101c7690@@YAPAVCBaseEntity@@PBDPAVCChangeLevel@@@Z sub_101c7690
+0x1000214e func   ?sub_10105950@@YAXXZ sub_10105950
 0x10002153 func   _item_g_car_stereo item_g_car_stereo
 0x10002176 func   ?sub_10147690@CBaseCombatCharacter@@QAEXPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_10147690
 0x10002180 func   ?sub_103629d0@CNPC_VAsianVampire@@QAE_NPBMM@Z CNPC_VAsianVampire::sub_103629d0
