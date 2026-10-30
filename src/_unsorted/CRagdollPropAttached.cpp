@@ -40,6 +40,17 @@ int CRagdollPropAttached::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101569a0 size=0x6
+#include "CRagdollPropAttached.h"
+namespace lifted {
+extern char g_1057e860;
+}
+datamap_t * CRagdollPropAttached::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1057e860);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10156d50 size=0x29
 struct CUnit10156d50 {
     void sub_10156d50(int a);
