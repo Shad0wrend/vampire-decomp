@@ -39,3 +39,11 @@ void CTEBeamEnts::vfunc3(const float *pOrigin, const float *pAngles)
     vfunc4(&filter, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005b5e0 size=0x3
+#include "CTEBeamEnts.h"
+int CTEBeamEnts::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION

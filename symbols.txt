@@ -8979,6 +8979,7 @@
 0x10014722 func   ?vfunc5@CItemGPishaFetish@@QAEPAV1@I@Z CItemGPishaFetish::vfunc5
 0x1001473b func   ?sub_101ab8f0@CUnknown101ab800@@QAE_NHPBEHH@Z CUnknown101ab800::sub_101ab8f0
 0x10014740 func   ?sub_100a4930@CBaseEntity@@QAEXXZ CBaseEntity::sub_100a4930
+0x10014745 func   ?vfunc1@CTEBeamEnts@@UAEHXZ CTEBeamEnts::vfunc1
 0x1001474a func   ?sub_10158af0@@YAXPAX0@Z sub_10158af0
 0x1001474f func   ?vfunc58@CHalfLife2@@UAEPBDH@Z CHalfLife2::vfunc58
 0x1001475e func   ?sub_101b3b90@@YGHH@Z sub_101b3b90
