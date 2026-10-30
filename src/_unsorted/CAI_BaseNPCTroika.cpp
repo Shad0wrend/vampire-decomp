@@ -129,6 +129,28 @@ void CAI_BaseNPCTroika::vfunc17(const char *pszFormat, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028df30 size=0x59
+#include "CUnknown1027ef20.h"
+extern char g_10920534;
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+extern "C" __declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+
+void CAI_BaseNPCTroika::vfunc20(const char *pszMessage)
+{
+	char szBuf[512];
+	if (pszMessage)
+	{
+		if (g_10920534)
+		{
+			Q_strncpy(szBuf, pszMessage, 512);
+			((CUnknown1027ef20 *)this)->sub_1027ef20(szBuf);
+		}
+		else
+			DevMsg(pszMessage);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028dfb0 size=0x58
 extern char g_10920534;
 extern "C" __declspec(dllimport) char *Q_strncpy(char *dest, const char *src, int maxLen);

@@ -304,6 +304,7 @@
 0x100019bf func   ?sub_100d2a60@@YAXXZ sub_100d2a60
 0x100019c4 func   ?vfunc259@CNPC_VHengeyokai@@QAEXPAUCNPC_VHengeyokaiEvent@@@Z CNPC_VHengeyokai::vfunc259
 0x100019c9 func   ?vfunc5@CPropDoorknobElectronic@@QAEPAV1@I@Z CPropDoorknobElectronic::vfunc5
+0x100019ce func   ?vfunc20@CAI_BaseNPCTroika@@QAEXPBD@Z CAI_BaseNPCTroika::vfunc20
 0x100019d8 func   ?sub_100ddf40@CUnknown100ddf40@@QAEPAHH@Z CUnknown100ddf40::sub_100ddf40
 0x100019dd func   ?sub_1005ed80@@YAXPAXHPBM11HHHHH@Z sub_1005ed80
 0x100019e7 func   ?sub_10101450@@YAHXZ sub_10101450
