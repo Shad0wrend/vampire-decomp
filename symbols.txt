@@ -6613,6 +6613,7 @@
 0x1000f065 func   ?sub_1015dc60@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_1015dc60
 0x1000f074 func   ?sub_100ce210@CEventQueue@@QAEXPAUCEQEvent@@@Z CEventQueue::sub_100ce210
 0x1000f07e func   ?sub_1029f250@CUnknown1029f250View@@QAEXH@Z CUnknown1029f250View::sub_1029f250
+0x1000f088 func   ?vfunc324@CNPC_VTzimisceRunner@@UAE_NXZ CNPC_VTzimisceRunner::vfunc324
 0x1000f08d func   ?sub_102d99b0@@YGXHH@Z sub_102d99b0
 0x1000f092 func   ?sub_10094dc0@CBaseAnimating@@QAEMM@Z CBaseAnimating::sub_10094dc0
 0x1000f097 func   ?vfunc82@CBaseEntity@@UAEPAUdatamap_t@@XZ CBaseEntity::vfunc82

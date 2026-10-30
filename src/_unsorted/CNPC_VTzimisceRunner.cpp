@@ -37,6 +37,14 @@ bool CNPC_VTzimisceRunner::vfunc325()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c30a0 size=0x3
+#include "CNPC_VTzimisceRunner.h"
+bool CNPC_VTzimisceRunner::vfunc324()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c3120 size=0x86
 #include "CNPC_VTzimisceRunner.h"
 #include "utlvector.h"
