@@ -185,6 +185,21 @@ void CBasePlayer::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015fcd0 size=0x5d
+#include "CBasePlayer.h"
+void CBasePlayer::vfunc112(int unused, int nArg)
+{
+	if (m_n14B0 == nArg && m_n14B4 != -1) {
+		if (sub_10099400(m_n14B0)) {
+			if (!sub_10099430(0))
+				sub_101644f0(-1, m_n14B4, 1);
+			else
+				sub_101644f0(-1, m_n14B0, 1);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015fe10 size=0xeb
 #include "CBasePlayer.h"
 #include "CGlobalEntityList.h"
