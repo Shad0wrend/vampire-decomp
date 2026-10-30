@@ -22,6 +22,18 @@ void CSimplePhysicsProp::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004fd90 size=0xc
+#include "CSimplePhysicsProp.h"
+namespace lifted {
+int sub_1000cfa9();
+}
+int CSimplePhysicsProp::vfunc226()
+{
+    *(char *)((char *)this + 0x1b1) = 1;
+    return lifted::sub_1000cfa9();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004fe80 size=0x1e
 #include "CSimplePhysicsProp.h"
 
