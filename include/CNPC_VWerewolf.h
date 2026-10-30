@@ -270,4 +270,9 @@ public:
 	virtual bool vfunc618(int, int, int, int);
 public:
 	virtual int vfunc619(int);
+public:
+	virtual int vfunc82();
+	virtual int vfunc451();
+	virtual bool vfunc452();
+	virtual int vfunc580();
 };

@@ -18,4 +18,7 @@ public:
 public:
 	virtual int vfunc451();
 	virtual int vfunc580();
+public:
+	virtual int vfunc138();
+	virtual bool vfunc452();
 };
