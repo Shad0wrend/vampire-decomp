@@ -125,6 +125,14 @@ int CNPC_VHengeyokai::vfunc473()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037fb00 size=0x6
+#include "CNPC_VHengeyokai.h"
+int CNPC_VHengeyokai::vfunc138()
+{
+    return 0x1d;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037fb60 size=0xf3
 #include "CNPC_VHengeyokai.h"
 #include "CEHandleGet.h"
