@@ -96594,6 +96594,23 @@ void CUnknown10217f50::sub_1021b140(const char *pszText)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021b2b0 size=0x5f
+#include "CUnknown10217f50.h"
+#include <string.h>
+void sub_10217ac0(CUnknown10217f50 *p, const char *fmt, ...);
+extern char g_10547e40[];
+void CUnknown10217f50::sub_1021b2b0()
+{
+	char line[40];
+	memset(line, 0, sizeof(line));
+	memset(line, '-', m_nLineWidth - 3);
+	line[0] = '+';
+	line[m_nLineWidth - 3] = '+';
+	::sub_10217ac0(this, line);
+	::sub_10217ac0(this, g_10547e40);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021b330 size=0xa2
 #include "CUnknown10217f50.h"
 #include <string.h>
