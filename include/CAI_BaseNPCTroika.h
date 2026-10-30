@@ -55,7 +55,7 @@ public:
 	virtual CAI_CondOwner *vfunc580();	// the object that translates condition ids (sub-object at +0x30)
 	virtual void vfunc581(); virtual void vfunc582();
 	virtual void vfunc583();	// asked after another NPC accepted the value of slot 585
-	virtual void vfunc584();
+	virtual void vfunc584(int unused);	// slot 584 (ret 4): slot 614, then stamps curtime at +0x178 and +0x6254..+0x6260
 	virtual int vfunc585(int a);	// the value offered to another NPC's slot 482
 	virtual int vfunc586(int);
 	virtual char vfunc587(int unused);	// slot 587: true when the NPC may be interrupted: not busy with sub_10337f30, no value at +0x128, no count at +0x5bb4, bit 4 of +0x5b84 clear, not busy with discipline, and either the count at +0x6354 or the one at +0x6358 is at most 2
