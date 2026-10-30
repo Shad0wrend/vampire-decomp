@@ -154700,6 +154700,53 @@ void sub_1040d4b0(CBaseCombatCharacter *pPlayer, CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040d8b0 size=0x58
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern int g_10683a78[2];
+extern int g_106836c4[2];
+ISaveRestoreOps *sub_10045d90(int);
+
+int *sub_1040d8b0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 5, "m_bOpen", {0x910, 0}, 1, 2 },
+        { 5, "m_bActive", {0x911, 0}, 1, 2 },
+        { 4, "m_nChangeState", {0x914, 0}, 1, 2 },
+        { 15, "m_flCheckSuppressTime", {0x918, 0}, 1, 2 },
+        { 15, "m_flElementDebounce", {0x924, 0}, 1, 2 },
+        { 1, "m_flElementPosition", {0x928, 0}, 1, 2 },
+        { 1, "m_flElementDestination", {0x92c, 0}, 1, 2 },
+        { 4, "m_nAttack2Debounce", {0x91c, 0}, 1, 2 },
+        { 5, "m_bIsCurrentlyUpgrading", {0x920, 0}, 1, 2 },
+        { 12, "m_hBeams", {0x930, 0}, 4, 2 },
+        { 12, "m_hGlowSprites", {0x940, 0}, 6, 2 },
+        { 12, "m_hEndSprites", {0x958, 0}, 2, 2 },
+        { 12, "m_hCenterSprite", {0x960, 0}, 1, 2 },
+        { 12, "m_hBlastSprite", {0x964, 0}, 1, 2 },
+        { 9, "m_grabController", {0x96c, 0}, 1, 2, 0, 0, 0, (datamap_t *)g_106836c4 },
+        { 10, "m_grabController.m_controller", {0xae4, 0}, 1, 2, 0, sub_10045d90(8), (void *)0 },
+    };
+    g_10683a78[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_10683a78[0] = (int)&dataDesc[1];
+    return g_10683a78;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040d930 size=0x3
 char sub_1040d930()
 {
