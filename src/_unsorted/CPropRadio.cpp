@@ -143,6 +143,14 @@ int __fastcall sub_1022c180(char *self, int, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022c660 size=0x6
+#include "CPropRadio.h"
+int CPropRadio::vfunc117()
+{
+    return 8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022c680 size=0x96
 #include "CPropRadio.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
