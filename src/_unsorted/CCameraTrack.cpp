@@ -12,6 +12,14 @@ int CCameraTrack::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cbef0 size=0x7
+#include "CCameraTrack.h"
+float CCameraTrack::vfunc48()
+{
+    return *(float *)((char *)this + 0x4f0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cbf30 size=0x23
 #include "CCameraTrack.h"
 
