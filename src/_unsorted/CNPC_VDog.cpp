@@ -12,6 +12,17 @@ int CNPC_VDog::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10373550 size=0x6
+#include "CNPC_VDog.h"
+namespace lifted {
+extern int g_106368b0;
+}
+int CNPC_VDog::vfunc451()
+{
+    return lifted::g_106368b0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10373570 size=0x1e
 #include "CNPC_VDog.h"
 
