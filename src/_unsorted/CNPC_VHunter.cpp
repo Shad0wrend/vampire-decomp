@@ -23,6 +23,17 @@ int CNPC_VHunter::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10388080 size=0x6
+#include "CNPC_VHunter.h"
+namespace lifted {
+extern int g_1063fef8;
+}
+int CNPC_VHunter::vfunc451()
+{
+    return lifted::g_1063fef8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103880a0 size=0x1e
 #include "CNPC_VHunter.h"
 
