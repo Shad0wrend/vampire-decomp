@@ -20,3 +20,11 @@ void CTEExplosiveGunshotDecal::vfunc5()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x10064bc0 size=0x3
+#include "CTEExplosiveGunshotDecal.h"
+int CTEExplosiveGunshotDecal::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
