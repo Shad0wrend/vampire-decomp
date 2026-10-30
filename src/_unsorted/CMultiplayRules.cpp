@@ -265,6 +265,13 @@ extern float g_104454c0;
 float CMultiplayRules::vfunc30(int a) { return g_104454c0; }
 // END FUNCTION
 
+// FUNCTION: 0x10141960 size=0x5
+bool CMultiplayRules::vfunc31(int a0, int a1)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141980 size=0x34
 extern unsigned char g_1070ba2c;
 
