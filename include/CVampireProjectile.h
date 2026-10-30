@@ -12,7 +12,7 @@ public:
 	virtual void vfunc117(); virtual void vfunc118(); virtual void vfunc119();
 	virtual void vfunc120(); virtual void vfunc121(); virtual void vfunc122(); virtual void vfunc123();
 	virtual void vfunc125(); virtual void vfunc126(); virtual void vfunc127(); virtual bool vfunc128(); virtual void vfunc129();
-	virtual void vfunc130(int a); virtual void vfunc131(); virtual void vfunc132(); virtual void vfunc133(); virtual void vfunc134();
+	virtual void vfunc130(int a); virtual int vfunc131(); virtual void vfunc132(); virtual void vfunc133(); virtual void vfunc134();
 	virtual void vfunc135(); virtual void vfunc136(); virtual void vfunc137(); virtual void vfunc138(); virtual void vfunc139();
 	virtual void vfunc140(); virtual void vfunc141(); virtual void vfunc142(); virtual void vfunc143(); virtual void vfunc144();
 	virtual void vfunc145(); virtual void vfunc146(); virtual void vfunc147(); virtual void vfunc148(); virtual void vfunc149();
@@ -41,7 +41,7 @@ public:
 	virtual void vfunc260(); virtual void vfunc261(); virtual void vfunc262(); virtual void vfunc263(); virtual void vfunc264();
 	virtual bool vfunc265();
 	virtual void vfunc266(CBaseEntity *pOther);
-	virtual void vfunc267(); virtual void vfunc268(); virtual void vfunc269(); virtual void vfunc270(); virtual void vfunc271();
+	virtual void vfunc267(); virtual void vfunc268(); virtual void vfunc269(); virtual bool vfunc270(); virtual void vfunc271();
 	virtual void vfunc272(const Vector *pOrigin, const Vector *pDir, CBaseEntity *pOwner, int nDamage, float flSpeed, const char *pszModel, const char *pszSound);	// slot 272 "CVampireProjectile::Launch": puts the projectile at pOrigin, stores nDamage (+0x878), flSpeed (+0x8a0), the model name (+0x87c) and the sound name (+0x880) (null when empty), turns it along pDir (VectorAngles, slot 64), hands pOwner to slot 202, runs the Spawn (slot 103), sets the velocity to pDir * flSpeed, remembers the start (+0x888) and the direction (+0x894), sequence 0 and ResetSequenceInfo
 	CVampireProjectile *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_100085d5();	// as in CPhysForce (transplant)

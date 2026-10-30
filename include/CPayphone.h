@@ -32,4 +32,9 @@ public:
 	CHandle<CPayphoneNPC> m_hFollow;	// 0x0fe8
 public:
 	virtual bool vfunc615();
+public:
+	virtual int vfunc138();
+	virtual void vfunc286(int, int);
+	virtual bool vfunc613();
+	virtual bool vfunc617();
 };

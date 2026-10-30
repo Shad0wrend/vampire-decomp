@@ -22,6 +22,6 @@ public:
 	virtual void vfunc0(CTraitDependencyField *pField, CSave *pSave);	// saves the description
 	virtual void vfunc1(CTraitDependencyField *pField, void *pRestore);	// restores the description
 	virtual void vfunc2();
-	virtual void vfunc3();
+	virtual void vfunc3(int);
 	virtual void vfunc4();
 };

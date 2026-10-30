@@ -16,7 +16,7 @@ public:
 	virtual void vfunc9();
 	virtual void vfunc10();
 	virtual void vfunc11();
-	virtual void vfunc12();
+	virtual int vfunc12();
 	virtual void vfunc13();
 	virtual CServerNetworkProperty *vfunc14(unsigned int flags);
 	void *m_pOuter;

@@ -41,4 +41,6 @@ public:
     float m_f520;    // 0x0520
 public:
     virtual datamap_t * vfunc82();
+public:
+    virtual void vfunc230(int, int);
 };

@@ -79,7 +79,7 @@ public:
 	virtual bool vfunc121(const char *szKeyName, CVariantCopy *pVariant); virtual void vfunc122(const char *classname);	// slot 121 "CBaseEntity::ReadKeyField": scope trace (entity name), walks the datamap chain (slot 82) for a key / input field of that external name (case-insensitive) and stores its value in the variant; false when not found. Slot 122 "CBaseEntity::SetClassname": scope trace (entity name), stores the pooled string at +0x11c, then slot 13(string or "")
 	virtual void vfunc123(); virtual int vfunc124();	// slot 124 "DrawDebugTextOverlays"-like: returns the next free overlay text line
 	virtual void vfunc125(); virtual int vfunc126(int a); virtual int vfunc127(int a); virtual bool vfunc128(); virtual void vfunc129();
-	virtual void vfunc130(int a); virtual void vfunc131(); virtual void vfunc132(); virtual void vfunc133();
+	virtual void vfunc130(int a); virtual int vfunc131(); virtual void vfunc132(); virtual void vfunc133();
 
 	// Slots whose callers call them directly, so far only declared as plain members.
 	bool vfunc140(CBaseEntity *pAttacker);	// "CBaseEntity::PassesDamageFilter": scope trace (entity name), true without a damage filter, else slot 241(pAttacker) of the entity behind the handle at +0x220
