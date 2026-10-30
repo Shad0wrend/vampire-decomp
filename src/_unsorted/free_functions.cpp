@@ -143378,6 +143378,35 @@ char sub_103b29a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b2ed0 size=0x5e
+extern int vt_104c8a14[];
+extern int vt_104c89e4[];
+void *sub_100aa720(int size);
+void __fastcall sub_10013926(void *p);
+void __fastcall sub_10003b2a(void *p);
+#define V1(n) virtual void v##n##0(); virtual void v##n##1(); virtual void v##n##2(); virtual void v##n##3(); virtual void v##n##4(); virtual void v##n##5(); virtual void v##n##6(); virtual void v##n##7(); virtual void v##n##8(); virtual void v##n##9();
+struct CTaxiDriverFactoryView {
+	V1(0) V1(1) V1(2) V1(3) V1(4) V1(5) V1(6) V1(7) V1(8) V1(9)
+	virtual void v100(); virtual void v101(); virtual void v102(); virtual void v103(); virtual void v104(); virtual void v105();
+	virtual void PostConstructor(const char *name);
+	CTaxiDriverFactoryView *Construct()
+	{
+		sub_10013926(this);
+		sub_10003b2a((char *)this + 0x6661);
+		*(int *)this = (int)vt_104c8a14;
+		*(int *)((char *)this + 0x19b0) = (int)vt_104c89e4;
+		return this;
+	}
+};
+extern "C" void *npc_VTaxiDriver()
+{
+	CTaxiDriverFactoryView *m = (CTaxiDriverFactoryView *)sub_100aa720(0x6664);
+	CTaxiDriverFactoryView *p = m ? m->Construct() : 0;
+	p->PostConstructor("npc_VTaxiDriver");
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b3010 size=0x1a
 namespace lifted {
 extern int g_10651ed8;
