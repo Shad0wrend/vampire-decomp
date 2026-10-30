@@ -21,7 +21,8 @@ public:
     virtual ServerClass * vfunc0();
     void vfunc4(int a, int b);	// as in CTEMetalSparks (transplant)
 public:
-	virtual void vfunc3(int, int);
-public:
     virtual int vfunc1();
+public:
+	virtual void vfunc2_slot();
+	virtual void vfunc3(int, int);
 };
