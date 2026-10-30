@@ -42,6 +42,9 @@ struct CUnknown101e0f00Src	// the 0x1c byte source descriptions at +0xa4 / +0xc0
 
 struct CUnknown101e0f00Fx	// the object the tail's callback worker hands back
 {
+	char m_pad0000[0x36c];
+	int m_n36c;	// 0x36c: handed to sub_101f9a40
+	void sub_101dfe80(S1033d380 *pChar, int id, char bFlag);	// finishes the callback of a discipline (stub 0x10009372)
 	void sub_101dfe20();	// finishes the callback (stub 0x100156ea)
 	void sub_101dfe50();	// finishes the callback of a character (stub 0x1000328d)
 	void sub_101dfc20();	// finishes the callback of a hit (stub 0x100086d9)
