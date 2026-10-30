@@ -144,6 +144,20 @@ int CSave::vfunc11(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019fd20 size=0x59
+#include "CSave.h"
+#include <string.h>
+void CSave::vfunc17(const char *pszName, void *pData, int count)
+{
+	const char **ppStrings = (const char **)pData;
+	int total = 0;
+	for (int i = 0; i < count; i++)
+		total += strlen(ppStrings[i] ? ppStrings[i] : "") + 1;
+	sub_101a05f0(pszName, total);
+	vfunc19(ppStrings, count);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a0260 size=0x8a
 #include "CSave.h"
 
