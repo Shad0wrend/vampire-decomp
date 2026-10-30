@@ -14,3 +14,11 @@ bool CTraceFilterAgainstEntityList::vfunc0(void *pEntity, int contentsMask)
 	return false;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100379c0 size=0x6
+#include "CTraceFilterAgainstEntityList.h"
+int CTraceFilterAgainstEntityList::vfunc1()
+{
+    return 2;
+}
+// END FUNCTION
