@@ -260,4 +260,8 @@ public:
 	void sub_103cc0d0();	// "CNPC_VWerewolf::UpdateConditionCanTeleport": scope trace (entity name), SetCondition(0x77); with slot 163 true: the "Bip01" attachment position, slot 617 (near when the distance at +0x6264 is under 800) stamps the time at +0x66ec; sets condition 0x77 again after the idle time passes the dev-flag threshold and the hull totals fit
 	void sub_10092610(const char *pszName, CNPC_VWerewolfVec3 *pOrigin, void *pAngles);	// CBaseAnimating member (stub 0x1000f263), called directly
 	void sub_103cc890();	// "CNPC_VWerewolf::UpdateConditionDeathTriggered": scope trace (entity name), SetCondition(0x7a); with the state +0xfec == 0x11d and the door state +0x6680 == 1 and no condition 0x7a yet: tells the slot 167 entity to sub_10265a90 and hands it to the holder at +0x6728 (sub_100cd660(ent, this, 0)), then signals the object behind the global 0x10924a6c (slot 1) and sets condition 0x7a (sub_10269a20)
+public:
+	virtual void vfunc316(int, int, int);
+	virtual bool vfunc328();
+	virtual bool vfunc615();
 };
