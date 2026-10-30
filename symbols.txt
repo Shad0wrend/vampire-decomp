@@ -2661,6 +2661,7 @@
 0x10006e29 func   ?sub_10256c20@@YAHXZ sub_10256c20
 0x10006e2e func   ?sub_103fa9d0@@YAHXZ sub_103fa9d0
 0x10006e3d func   ?vfunc82@CPhysicsProp@@UAEPAUdatamap_t@@XZ CPhysicsProp::vfunc82
+0x10006e4c func   ?vfunc499@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc499
 0x10006e5b func   _item_g_pisha_book item_g_pisha_book
 0x10006e6a func   ?sub_102c54c0@CUnk102c54c0@@QAEXXZ CUnk102c54c0::sub_102c54c0
 0x10006e74 func   ?sub_103b0ab0@CNPC_VSheriffMan@@QAEPAVCEntityVSlots@@D@Z CNPC_VSheriffMan::sub_103b0ab0
