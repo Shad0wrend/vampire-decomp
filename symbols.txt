@@ -6211,6 +6211,7 @@
 0x1000e741 func   ?sub_10099e00@@YAXPAVCEntityVSlots@@PBMPAM@Z sub_10099e00
 0x1000e746 func   ?sub_101e9c50@HOwner@@QAEXXZ HOwner::sub_101e9c50
 0x1000e74b func   ?sub_100dd450@CCollisionProperty@@QAEXPAVVector@@0@Z CCollisionProperty::sub_100dd450
+0x1000e750 func   ?vfunc81@CDynamicLight@@UAEHXZ CDynamicLight::vfunc81
 0x1000e75a func   ?vfunc403@CBasePlayer@@UAEXXZ CBasePlayer::vfunc403
 0x1000e75f func   _disc_particle disc_particle
 0x1000e76e func   ?sub_103801d0@CNPC_VHengeyokai@@QAEHPAUCNPC_VHengeyokaiInfo@@@Z CNPC_VHengeyokai::sub_103801d0
