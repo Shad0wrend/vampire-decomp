@@ -68,3 +68,14 @@ CCameraTrack *CCameraTrack::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100cc2e0 size=0x21
+#include "CCameraTrack.h"
+int CCameraTrack::vfunc50(int a0)
+{
+    *(int *)((char *)a0) = *(int *)((char *)this + 0x4e0);
+    *(int *)((char *)a0 + 4) = *(int *)((char *)this + 0x4e4);
+    *(int *)((char *)a0 + 8) = *(int *)((char *)this + 0x4e8);
+    return a0;
+}
+// END FUNCTION
