@@ -61369,6 +61369,23 @@ void sub_10189660(CBaseEntity *ent, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10189870 size=0x5e
+#include "CBaseEntity.h"
+#include "CRagdollProp.h"
+#include "IPlayerPickupVPhysics.h"
+
+char sub_10189870(CBaseEntity *pEnt, int nArg)
+{
+	IPlayerPickupVPhysics *pPickup = dynamic_cast<IPlayerPickupVPhysics *>(pEnt);
+	if (pPickup)
+		return pPickup->vfunc5(nArg);
+	CRagdollProp *pRagdoll = dynamic_cast<CRagdollProp *>(pEnt);
+	if (pRagdoll)
+		return pRagdoll->vfunc274(nArg);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101898f0 size=0xdd
 #include "CRagdollProp.h"
 #include "IPlayerPickupVPhysics.h"

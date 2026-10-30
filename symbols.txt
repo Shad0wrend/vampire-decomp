@@ -9369,6 +9369,7 @@
 0x10013bf6 func   ?sub_1005eaf0@@YAHXZ sub_1005eaf0
 0x10013bfb func   ?vfunc546@CNPC_VNosferatu@@QAEHH@Z CNPC_VNosferatu::vfunc546
 0x10013c00 func   ?sub_100aaa40@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100aaa40
+0x10013c0f func   ?sub_10189870@@YADPAVCBaseEntity@@H@Z sub_10189870
 0x10013c19 func   ?sub_1027dd10@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_1027dd10
 0x10013c1e func   ?vfunc1@CTEFizz@@UAEHXZ CTEFizz::vfunc1
 0x10013c28 func   ?sub_100fa690@@YIXPAUCSlots@@HH@Z sub_100fa690
