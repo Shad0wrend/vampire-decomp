@@ -7018,6 +7018,7 @@
 0x1000ff1f func   ?sub_101c4460@@YAXPAHPBH@Z sub_101c4460
 0x1000ff24 func   ?sub_10231f40@CVGuiScreen@@QAEXPBD@Z CVGuiScreen::sub_10231f40
 0x1000ff29 func   ?sub_1018c800@@YAHXZ sub_1018c800
+0x1000ff33 func   ?vfunc473@CNPC_VCamera@@UAEHXZ CNPC_VCamera::vfunc473
 0x1000ff3d func   ?sub_100d7b30@@YAXXZ sub_100d7b30
 0x1000ff42 func   ?vfunc1@CTEBubbles@@UAEHXZ CTEBubbles::vfunc1
 0x1000ff4c func   ?sub_100e9ff0@CDialogDependency@@QAE_NHH@Z CDialogDependency::sub_100e9ff0

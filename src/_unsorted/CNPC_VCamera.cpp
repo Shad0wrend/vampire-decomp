@@ -298,6 +298,14 @@ void CNPC_VCamera::vfunc431()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103692a0 size=0x3
+#include "CNPC_VCamera.h"
+int CNPC_VCamera::vfunc473()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10369bd0 size=0xa5
 #include "CNPC_VCamera.h"
 class CBaseEntity;
