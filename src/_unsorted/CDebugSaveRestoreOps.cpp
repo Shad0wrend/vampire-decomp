@@ -6,3 +6,10 @@
 // TARGET: CDebugSaveRestoreOps::CDebugSaveRestoreOps
 CDebugSaveRestoreOps::CDebugSaveRestoreOps() { }
 // END FUNCTION
+
+// FUNCTION: 0x100ded90 size=0x3
+#include "CDebugSaveRestoreOps.h"
+void CDebugSaveRestoreOps::vfunc0(int a0, int a1)
+{
+}
+// END FUNCTION
