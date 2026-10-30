@@ -65608,6 +65608,29 @@ void *sub_1019ba30(void *self, char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019ba60 size=0x5e
+#include <string.h>
+
+struct SPyTarget { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(const char *s, int n); };
+struct SPySelf { char pad[8]; SPyTarget *m_pTarget; };
+
+extern "C" __declspec(dllimport) int __cdecl PyArg_ParseTuple(void *args, const char *fmt, ...);
+struct SPyObj { int m_refcnt; };
+extern SPyObj *g_109f3748;
+
+SPyObj *sub_1019ba60(SPySelf *self, void *args)
+{
+	char *psz = 0;
+	if (!PyArg_ParseTuple(args, "s", &psz))
+		return 0;
+	self->m_pTarget->v16(psz, strlen(psz));
+	g_109f3748->m_refcnt++;
+	return g_109f3748;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019bb10 size=0x27
 struct CPyObjWrap {
     int ob_refcnt;
