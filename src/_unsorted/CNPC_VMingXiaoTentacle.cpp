@@ -107,6 +107,13 @@ void CNPC_VMingXiaoTentacle::vfunc144(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039eb10 size=0x3
+bool CNPC_VMingXiaoTentacle::vfunc602()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039eb50 size=0x2a
 #include "CNPC_VMingXiaoTentacle.h"
 #include "CAI_BaseNPCTroika.h"

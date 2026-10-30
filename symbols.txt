@@ -7603,6 +7603,7 @@
 0x100112f7 func   ?sub_1027cda0@CFloatPair1027cda0@@QAEXM_N@Z CFloatPair1027cda0::sub_1027cda0
 0x100112fc func   ?sub_102273b0@CUnknown102273b0@@QAEXH@Z CUnknown102273b0::sub_102273b0
 0x10011306 func   ?vfunc242@CPhysForce@@UAEXXZ CPhysForce::vfunc242
+0x10011310 func   ?vfunc602@CNPC_VMingXiaoTentacle@@UAE_NXZ CNPC_VMingXiaoTentacle::vfunc602
 0x10011315 func   ?vfunc5@CTempEntTester@@UAEPAV1@I@Z CTempEntTester::vfunc5
 0x1001131f func   _item_g_bach_journal item_g_bach_journal
 0x10011324 func   ?vfunc104@CBaseCombatCharacter@@UAEXXZ CBaseCombatCharacter::vfunc104
