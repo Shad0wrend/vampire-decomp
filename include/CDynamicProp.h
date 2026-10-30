@@ -37,4 +37,6 @@ public:
 	float m_flAnimDelayMax;	// 0x7d0
 	char m_pad07d4[0x7d8 - 0x7d4];
 	int m_n07d8;	// 0x7d8
+public:
+	virtual int vfunc81();
 };
