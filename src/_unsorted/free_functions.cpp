@@ -62879,6 +62879,22 @@ void CUnknown1018f960::sub_1018f960(inputdata_t &data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018f9f0 size=0x5f
+#include "CBreakableProp.h"
+extern float (__cdecl *g_109f385c)(float, float);
+void sub_1000a8c6();
+void CBreakableProp::sub_10002d1f(float flDelay)
+{
+    float flNext = flDelay + gpGlobals->curtime;
+    m_nRenderAlpha = 0xff;
+    m_nRenderFX = 0;
+    m_flNextThink = flNext;
+    m_flFadeTime770 = g_109f385c(1.0f, 2.0f);
+    sub_1001457e(0x40000);
+    sub_10007fe5((void *)sub_1000a8c6, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101900a0 size=0x1b7
 struct ISaveRestoreOps;
 struct datamap_t;

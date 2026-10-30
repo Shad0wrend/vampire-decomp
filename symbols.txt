@@ -913,6 +913,7 @@
 0x10002d10 func   ??1StatDefault@@QAE@XZ StatDefault::~StatDefault
 0x10002d15 func   ?vfunc25@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHHHHH@Z CTempEntsSystem::vfunc25
 0x10002d1a func   ?vfunc617@CPayphone@@UAE_NXZ CPayphone::vfunc617
+0x10002d1f func   ?sub_10002d1f@CBreakableProp@@QAEXM@Z CBreakableProp::sub_10002d1f
 0x10002d24 func   ?vfunc580@CNPC_VMingXiao@@UAEHXZ CNPC_VMingXiao::vfunc580
 0x10002d33 func   ?sub_10129870@@YIXPAUVelClampView@@@Z sub_10129870
 0x10002d38 func   ?sub_1017deb0@@YGMHM@Z sub_1017deb0
