@@ -23,16 +23,16 @@ class CGameRules
 {
 public:
 	virtual CGameRules *vfunc0(unsigned int flags);
-	virtual void vfunc1();
+	virtual int vfunc1();
 	virtual void vfunc2();
-	virtual void vfunc3();
-	virtual void vfunc4();
-	virtual void vfunc5();
-	virtual void vfunc6();
-	virtual void vfunc7();
-	virtual void vfunc8();
-	virtual void vfunc9();
-	virtual void vfunc10();
+	virtual void vfunc3(int);
+	virtual void vfunc4(int);
+	virtual void vfunc5(int, int);
+	virtual void vfunc6(int, int, int);
+	virtual void vfunc7(int);
+	virtual void vfunc8(int);
+	virtual void vfunc9(int, int);
+	virtual void vfunc10(int, int);
 	virtual void vfunc11();
 	virtual void vfunc12();
 	virtual void vfunc13();
@@ -45,7 +45,7 @@ public:
 	virtual CBaseEntity *vfunc20(CBaseEntity *pPlayer, CBaseEntity *pCurrentWeapon);	// "GetNextBestWeapon"
 	virtual void vfunc21();
 	virtual void vfunc22();
-	virtual void vfunc23();
+	virtual bool vfunc23();
 	virtual void vfunc24();
 	virtual void vfunc25();
 	virtual void vfunc26();
@@ -62,9 +62,9 @@ public:
 	virtual void vfunc37();
 	virtual float vfunc38(int a);
 	virtual CBaseEntity *vfunc39(CBaseEntity *pPlayer);	// \"GetPlayerSpawnSpot\": puts the player on the spawn spot it selects (the origin one unit up, the spot's angles; the middle of the world model's bounds and zero angles without a spot), clears its velocity and the two vectors at +0x1efc / +0x1f08, sets +0x207c to 1 and returns the spot
-	virtual void vfunc40();
+	virtual bool vfunc40();
 	virtual void vfunc41();
-	virtual void vfunc42();
+	virtual void vfunc42(int, int);
 	virtual int vfunc43(int a, int b);
 	virtual void vfunc44(CBaseEntity *pVictim, CMPDamageInfo *pInfo);	// "PlayerKilled"
 	virtual void vfunc45(CBaseEntity *pVictim, CMPDamageInfo *pInfo);	// "DeathNotice"
@@ -91,10 +91,10 @@ public:
 	virtual void vfunc66();
 	virtual const char *vfunc67(int index);
 	virtual void vfunc68();
-	virtual void vfunc69();
+	virtual void vfunc69(int, int, int, int);
 	virtual const char *vfunc70(int index);
-	virtual void vfunc71();
-	virtual void vfunc72();
+	virtual void vfunc71(int);
+	virtual bool vfunc72();
 	virtual bool vfunc73(CBaseEntity *pPlayer);	// slot 73 (multiplayer rules: whether the player's movement counts, see CMultiplayRules)
 	virtual char vfunc74();	// asked by Spawn of the NPCs: false removes the NPC again (the rule set does not allow it)
 	virtual void vfunc75();

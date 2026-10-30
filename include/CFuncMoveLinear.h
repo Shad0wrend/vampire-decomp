@@ -81,4 +81,6 @@ public:
 	COutputEvent m_Output5c0;	// 0x5c0
 	COutputEvent m_Output5d8;	// 0x5d8
 	COutputEvent m_Output5f0;	// 0x5f0
+public:
+	virtual bool vfunc128();
 };

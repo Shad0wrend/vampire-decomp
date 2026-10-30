@@ -17,7 +17,7 @@ public:
 	virtual void vfunc3();
 	virtual void vfunc4(int idx, const char *pszFormat, ...); // "CMoveHelperServer::Con_NPrintf": formats into a 0x2000 byte buffer and hands it to the engine's Con_NPrintf (slot 81)
 	virtual void vfunc5(const float *pOrigin, int channel, const char *pszSample, float flVolume, int soundlevel, int fFlags, int pitch); // "CMoveHelperServer::StartSound": emits the sound at the origin for the players that can hear it (a PAS filter, with the prediction rules unless the global flag at +0x14 is 1)
-	virtual void vfunc6();
+	virtual void vfunc6(int, int, int, int, int, int, int, int, int, int, int, int);
 	virtual bool vfunc7(); // "CMoveHelperServer::PlayerFallingDamage": hurts the host by the game rules' fall damage (slot 30 of the rules); always true
 	virtual void vfunc8();
 	virtual void vfunc9();

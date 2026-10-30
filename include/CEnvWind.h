@@ -14,4 +14,7 @@ public:
 public:
     virtual datamap_t * vfunc82();
     virtual void vfunc174(CBaseEntity *pOther);
+public:
+	virtual void vfunc141(int, int, int);
+	virtual void vfunc241(int, int, int, int, int);
 };

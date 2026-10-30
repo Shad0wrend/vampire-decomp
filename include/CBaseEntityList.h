@@ -55,7 +55,7 @@ class CBaseEntityList
 {
 public:
 	virtual void vfunc0(int, int);
-	virtual void vfunc1();
+	virtual void vfunc1(int, int);
 
 	CBaseEntityListEntry m_EntPtrArray[0x2000];	// 0x0004
 	CBaseEntityListLL m_Live;	// 0x18004

@@ -82,4 +82,6 @@ public:
 	float *sub_1011e310();	// stub 0x10009bbf: the hull mins for the player's stance
 	void sub_10124ba0();	// a zero length hull trace at the player's origin (ducked hull, pass entity the move data, group from its +0x368): the line is drawn by the movement debug convar, and for a start solid hit on an entity the engine knows (slot 35 of the engine) sub_10124630 handles it (with the second convar set at once, else only when the entity's flags (slot 211) have bit 6)
 	void sub_10124630(void *pEnt);	// stub 0x10005e93: the stuck entity handler
+public:
+	virtual void vfunc13(int);
 };
