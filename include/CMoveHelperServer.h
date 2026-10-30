@@ -19,7 +19,7 @@ public:
 	virtual void vfunc5(const float *pOrigin, int channel, const char *pszSample, float flVolume, int soundlevel, int fFlags, int pitch); // "CMoveHelperServer::StartSound": emits the sound at the origin for the players that can hear it (a PAS filter, with the prediction rules unless the global flag at +0x14 is 1)
 	virtual void vfunc6(int, int, int, int, int, int, int, int, int, int, int, int);
 	virtual bool vfunc7(); // "CMoveHelperServer::PlayerFallingDamage": hurts the host by the game rules' fall damage (slot 30 of the rules); always true
-	virtual void vfunc8();
+	virtual void vfunc8(int);
 	virtual void vfunc9();
 	virtual bool vfunc10(const unsigned int *pHandle); // "CMoveHelperServer::IsWorldEntity": whether the entity handle resolves to the world entity (CBaseEntity::Instance of edict 0)
 	virtual void vfunc11();
