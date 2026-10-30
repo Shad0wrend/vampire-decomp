@@ -21,6 +21,13 @@ struct CUnknown10146790 { char a; char b; char c; void sub_10146790(); };
 void CServerNetworkProperty::vfunc11() { ((CUnknown10146790*)m_unk10)->sub_10146790(); }
 // END FUNCTION
 
+// FUNCTION: 0x101ab490 size=0x4
+int CServerNetworkProperty::vfunc4()
+{
+    return *(int *)((char *)this + 0xc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab4b0 size=0x41
 #include "CServerNetworkProperty.h"
 struct CNetPropView { virtual void s0(); virtual void s1(); virtual int GetFlags(); virtual void SetFlags(int f); };
