@@ -78,6 +78,17 @@ int CSoundControllerImp::vfunc10(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bd5e0 size=0x16
+#include "CSoundControllerImp.h"
+namespace lifted {
+struct C100139e4 { int sub_100139e4(int, int); };
+}
+int CSoundControllerImp::vfunc11(int a0, int a1, int a2)
+{
+    return ((lifted::C100139e4 *)a0)->sub_100139e4(a1, a2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bd610 size=0xc
 #include "CSoundControllerImp.h"
 namespace lifted {
