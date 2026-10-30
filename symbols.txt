@@ -8077,6 +8077,7 @@
 0x10011473 func   ?vfunc103@CTriggerSave@@UAEXXZ CTriggerSave::vfunc103
 0x10011478 func   ?sub_101bc540@@YGXPAUCUnknown101bc540Rec@@@Z sub_101bc540
 0x1001147d func   ?sub_101f61b0@CActivityTableX@@QAEXXZ CActivityTableX::sub_101f61b0
+0x10011487 func   ?sub_10077370@CUnknown10077290@@QAEPAUCUnknown10077290Entry@@PBD@Z CUnknown10077290::sub_10077370
 0x100114aa func   ?sub_102e7e40@@YIXPAUCOwner@@@Z sub_102e7e40
 0x100114b9 func   ?sub_10185450@UtlMem@@QAEXXZ UtlMem::sub_10185450
 0x100114be func   ?sub_1006e0e0@@YIXPAD@Z sub_1006e0e0

@@ -15618,6 +15618,21 @@ void CUnknown10077290::sub_10077290(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10077370 size=0x5a
+#include "CUnknown10077290.h"
+#include <string.h>
+
+CUnknown10077290Entry *CUnknown10077290::sub_10077370(const char *name)
+{
+	for (int i = 0; i < m_nEntries; i++) {
+		CUnknown10077290Entry *pEntry = &m_pEntries[i];
+		if (pEntry && !_strcmpi(pEntry->sub_100738a0(), name))
+			return pEntry;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10077430 size=0x7
 struct CUnknown10077430 { int sub_10077430(); };
 int CUnknown10077430::sub_10077430()
