@@ -7460,6 +7460,7 @@
 0x1000ffec func   ?sub_100cd220@@YAHH@Z sub_100cd220
 0x1000fff1 func   ?vfunc103@CSoundScheme@@UAEXXZ CSoundScheme::vfunc103
 0x1000fffb func   ?sub_10045a90@CUnknown10045a90@@QAEPAXXZ CUnknown10045a90::sub_10045a90
+0x10010000 func   ?sub_10352d70@@YAXPAXPBD@Z sub_10352d70
 0x10010005 func   ?vfunc24@CBasePlayer@@UAEXPAVCBaseEntity@@@Z CBasePlayer::vfunc24
 0x1001000a func   ?vfunc113@CFire@@UAEXXZ CFire::vfunc113
 0x1001000f func   _item_k_museum_office_key item_k_museum_office_key

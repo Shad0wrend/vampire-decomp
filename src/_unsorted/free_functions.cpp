@@ -135210,6 +135210,39 @@ int CUnknown10351510::sub_10351510()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10352d70 size=0x51
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct CPlayerCreateView {
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	virtual void k0(); virtual void k1(); virtual void k2();
+	virtual void Spawn();
+	virtual void l0(); virtual void l1(); virtual void l2(); virtual void l3(); virtual void l4(); virtual void l5();
+	V10(m) V10(n) V10(o) V10(p) V10(q) V10(r) V10(s) V10(t) V10(u) V10(v)
+	V10(w) V10(x) V10(y) V10(z) V10(aa) V10(ab) V10(ac) V10(ad) V10(ae) V10(af)
+	V10(ag) V10(ah) V10(ai) V10(aj) V10(ak) V10(al) V10(am) V10(an) V10(ao) V10(ap)
+	V10(aq) V10(ar)
+	virtual void z430();
+	virtual void Slot431();
+	char m_pad[0x2078 - 4];
+	const char *m_pName;
+	void sub_101771b0(int v);
+};
+
+CPlayerCreateView *sub_10136580(const char *name);
+const char **sub_10002095(void *out, const char *s);
+extern void *g_107260a0;
+
+void sub_10352d70(void *pEdict, const char *name)
+{
+	g_107260a0 = pEdict;
+	CPlayerCreateView *pPlayer = sub_10136580("player");
+	pPlayer->sub_101771b0(-1);
+	pPlayer->Slot431();
+	pPlayer->m_pName = *sub_10002095(&pEdict, name);
+	pPlayer->Spawn();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10352e20 size=0x43
 extern "C" int __cdecl _strcmpi(const char *, const char *);
 struct S10352e20
