@@ -55,4 +55,7 @@ public:
 	virtual void vfunc291();
 public:
 	virtual bool vfunc325();
+public:
+	virtual int vfunc329();
+	virtual int vfunc360();
 };
