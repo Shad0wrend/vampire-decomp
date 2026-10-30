@@ -76,3 +76,15 @@ int CNPC_VBatSwarm::vfunc138()
     return 0x20;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10367460 size=0xf
+#include "CNPC_VBatSwarm.h"
+namespace lifted {
+int sub_10015ad2();
+}
+int CNPC_VBatSwarm::vfunc438()
+{
+    *(int *)((char *)this + 0x1b2c) = 7;
+    return lifted::sub_10015ad2();
+}
+// END FUNCTION
