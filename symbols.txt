@@ -7782,6 +7782,7 @@
 0x10011a63 func   ?sub_1021a2f0@CPropHacking@@QAEXPAVCRestore@@@Z CPropHacking::sub_1021a2f0
 0x10011a68 func   ?sub_100f4190@@YAXPBDHH@Z sub_100f4190
 0x10011a6d func   ?sub_10147c10@@YAPAHXZ sub_10147c10
+0x10011a72 func   ?vfunc24@CSingleplayRules@@UAE_NXZ CSingleplayRules::vfunc24
 0x10011a77 func   ?sub_1040bf70@CUnknown1040bf70@@QAEHXZ CUnknown1040bf70::sub_1040bf70
 0x10011a81 func   _item_k_tawni_apartment_key item_k_tawni_apartment_key
 0x10011a8b func   ?vfunc81@CBeam@@UAEHXZ CBeam::vfunc81
