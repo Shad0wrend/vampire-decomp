@@ -43,4 +43,6 @@ public:
 	float m_flCurrent478;	// 0x0478
 	char m_pad047c[4];
 	Vector m_vec480;	// 0x0480
+public:
+	virtual int vfunc82();
 };

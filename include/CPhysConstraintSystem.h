@@ -16,4 +16,6 @@ public:
 
 	char m_pad0004[0x450 - 4];
 	void *m_pSystem;	// 0x450
+public:
+	virtual int vfunc82();
 };

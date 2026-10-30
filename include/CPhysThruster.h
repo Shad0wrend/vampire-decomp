@@ -27,4 +27,6 @@ public:
 	unsigned int m_hAttached;	// 0x460: handle of the attached entity
 	char m_pad0464[0x49c - 0x464];
 	Vector m_vecOffset;	// 0x49c
+public:
+	virtual int vfunc82();
 };

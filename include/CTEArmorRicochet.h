@@ -4,7 +4,7 @@
 class CTEArmorRicochet
 {
 public:
-	virtual void vfunc0();
+	virtual int vfunc0();
 	virtual int vfunc1();
 	virtual CTEArmorRicochet *vfunc2(unsigned int flags);	// scalar deleting destructor
 

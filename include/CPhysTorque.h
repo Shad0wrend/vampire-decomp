@@ -26,4 +26,6 @@ public:
 	float m_flScale;	// 0x458
 	char m_pad045c[0x49c - 0x45c];
 	Vector m_vecAxis;	// 0x49c
+public:
+	virtual int vfunc82();
 };

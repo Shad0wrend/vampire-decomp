@@ -26,4 +26,6 @@ public:
     virtual datamap_t * vfunc82();
 public:
 	virtual void vfunc229(int);
+public:
+	virtual bool vfunc157(int);
 };

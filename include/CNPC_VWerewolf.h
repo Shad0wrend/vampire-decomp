@@ -268,4 +268,6 @@ public:
 	virtual bool vfunc318(int, int, int);
 	virtual bool vfunc319(int, int, int);
 	virtual bool vfunc618(int, int, int, int);
+public:
+	virtual int vfunc619(int);
 };

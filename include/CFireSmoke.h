@@ -15,4 +15,7 @@ public:
 	void sub_10057570();	// slot 104 (Precache): precaches the fire sprite through the engine interface
 public:
 	virtual int vfunc81();
+public:
+	virtual int vfunc80();
+	virtual int vfunc82();
 };

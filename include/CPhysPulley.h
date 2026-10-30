@@ -12,4 +12,6 @@ public:
 	virtual CPhysPulley *vfunc5(unsigned int flags);	// scalar deleting destructor
 
 	void sub_100121ac();	// destructor body
+public:
+	virtual int vfunc82();
 };

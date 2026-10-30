@@ -7,7 +7,7 @@ class CTraceFilterAgainstEntityList
 {
 public:
 	virtual bool vfunc0(void *pEntity, int contentsMask);	// ShouldHitEntity: true when pEntity is one of the list's entries (searched from the last one back), false otherwise
-	virtual void vfunc1();
+	virtual int vfunc1();
 
 	int *m_pEntities;	// 0x04
 	char m_pad0008[0x10 - 0x08];

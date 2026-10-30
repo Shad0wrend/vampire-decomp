@@ -62,4 +62,6 @@ public:
 	char m_pad046c[0x488 - 0x46c];
 	CPhysHingeParams m_hinge;	// 0x488
 	float m_flHingeFriction;	// 0x4c0
+public:
+	virtual int vfunc82();
 };

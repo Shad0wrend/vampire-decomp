@@ -52,4 +52,6 @@ public:
 	int m_n4c0;	// 0x4c0
 	char m_b4c4;	// 0x4c4
 	char m_b4c5;	// 0x4c5
+public:
+	virtual int vfunc82();
 };

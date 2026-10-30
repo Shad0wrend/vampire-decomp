@@ -35,4 +35,6 @@ public:
 	CCollisionProperty m_Collision;	// 0x0270
 
 	void sub_1000cb8a();	// destructor body
+public:
+	virtual int vfunc82();
 };

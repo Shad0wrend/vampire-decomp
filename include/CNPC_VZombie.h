@@ -79,4 +79,6 @@ public:
 	char m_b66e1;	// 0x66e1: the head-hit flag
 public:
     virtual datamap_t * vfunc82();
+public:
+	virtual bool vfunc566(int);
 };

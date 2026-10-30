@@ -17,4 +17,7 @@ public:
 	bool sub_1009e430(const char *szKeyName, const char *szValue);	// CBaseEntity::vfunc110 (stub 0x1000fc86), called directly
 public:
 	virtual int vfunc81();
+public:
+	virtual int vfunc80();
+	virtual int vfunc82();
 };
