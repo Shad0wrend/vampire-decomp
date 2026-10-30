@@ -141,4 +141,8 @@ public:
 public:
 	virtual int vfunc80();
 	virtual int vfunc82();
+public:
+	virtual float vfunc28();
+	virtual float vfunc29();
+	virtual float vfunc30();
 };
