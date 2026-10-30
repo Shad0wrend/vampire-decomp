@@ -3743,6 +3743,7 @@
 0x10008e59 func   ?sub_103bca20@CNPC_VTzimisce@@QAEHH@Z CNPC_VTzimisce::sub_103bca20
 0x10008e72 func   ?sub_10109840@@YAPAHXZ sub_10109840
 0x10008e7c func   ?sub_101e8da0@CUnknown101e8da0@@QAEPADXZ CUnknown101e8da0::sub_101e8da0
+0x10008e86 func   ?vfunc390@CNPC_VCamera@@UAEHH@Z CNPC_VCamera::vfunc390
 0x10008e8b func   ?vfunc1@PyServerSystem@@UAEXXZ PyServerSystem::vfunc1
 0x10008e90 func   ?sub_100fc7a0@@YAHXZ sub_100fc7a0
 0x10008e95 func   ?sub_10352e20@@YAHPAUS10352e20@@PBD@Z sub_10352e20
