@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10027c20 size=0x6
+#include "CPhysThruster.h"
+namespace lifted {
+extern char g_10537024;
+}
+int CPhysThruster::vfunc82()
+{
+    return (int)&lifted::g_10537024;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027cb0 size=0xe4
 #include "CPhysThruster.h"
 #include "CEHandleGet.h"
