@@ -68,3 +68,11 @@ int CNPC_VSheriffSwarm::vfunc473()
     return 0x17;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103b23b0 size=0x6
+#include "CNPC_VSheriffSwarm.h"
+int CNPC_VSheriffSwarm::vfunc138()
+{
+    return 0x1f;
+}
+// END FUNCTION
