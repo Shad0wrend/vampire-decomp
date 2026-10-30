@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1037e4f0 size=0x6
+#include "CNPC_VHengeyokai.h"
+namespace lifted {
+extern char g_1063bdb0;
+}
+int CNPC_VHengeyokai::vfunc82()
+{
+    return (int)&lifted::g_1063bdb0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037e7f0 size=0x3
 #include "CNPC_VHengeyokai.h"
 bool CNPC_VHengeyokai::vfunc615()
