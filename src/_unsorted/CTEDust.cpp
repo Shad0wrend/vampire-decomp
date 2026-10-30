@@ -54,3 +54,11 @@ ServerClass * CTEDust::vfunc0()
     return (ServerClass *)((int)&lifted::g_1070a4f4);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10114180 size=0x3
+#include "CTEDust.h"
+int CTEDust::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
