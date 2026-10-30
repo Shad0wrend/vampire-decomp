@@ -4724,6 +4724,7 @@
 0x1000b190 func   ?vfunc113@CWorld@@UAEXXZ CWorld::vfunc113
 0x1000b19f func   ?sub_100b7a00@CUnknown100b7a00@@QAEPADXZ CUnknown100b7a00::sub_100b7a00
 0x1000b1a4 func   ??0CTEBaseBeam@@QAE@PBD@Z CTEBaseBeam::CTEBaseBeam
+0x1000b1a9 func   ?vfunc4@CAI_Navigator@@UAEXH@Z CAI_Navigator::vfunc4
 0x1000b1ae func   ?vfunc6@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHHHHHHHHHHHH@Z CTempEntsSystem::vfunc6
 0x1000b1c2 func   ?sub_1013a9f0@@YAXABVQuaternion@@0AAV1@@Z sub_1013a9f0
 0x1000b1d1 func   ?vfunc1@ConVar@@UAEDXZ ConVar::vfunc1

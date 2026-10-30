@@ -28,6 +28,12 @@ void CAI_Navigator::vfunc3(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102eea30 size=0x3
+void CAI_Navigator::vfunc4(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x102eea50 size=0x1
 void CAI_Navigator::vfunc6()
 {
