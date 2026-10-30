@@ -58,7 +58,7 @@ public:
 	virtual void vfunc65(); virtual void vfunc66(); virtual void vfunc67(); virtual void vfunc68();
 	virtual void vfunc69(); virtual bool vfunc70(); virtual void vfunc71(); virtual bool vfunc72(int); virtual void vfunc73();
 	virtual bool vfunc74(int); virtual void vfunc75(); virtual void vfunc76(); virtual void vfunc77(); virtual void vfunc78();
-	virtual void vfunc79(); virtual int vfunc80(); virtual int vfunc81(); virtual datamap_t *vfunc82(); virtual int vfunc83();	// slot 82 "GetDataDescMap": the entity class's datamap
+	virtual int vfunc79(); virtual int vfunc80(); virtual int vfunc81(); virtual datamap_t *vfunc82(); virtual int vfunc83();	// slot 82 "GetDataDescMap": the entity class's datamap
 	virtual void vfunc84(int flags); virtual char *vfunc85(); virtual void vfunc86(); virtual void vfunc87(void *pCheckTransmitInfo); virtual void vfunc88();	// slot 87 "CBaseEntity::SetTransmit"-like: takes the transmit info (bit vector pointer at +0x10)
 	virtual void vfunc89(); virtual void vfunc90(); virtual char vfunc91(void *pPassEnt, int contentsMask);	/* slot 91: collision test against the pass entity: false for collision group 1 unless the mask has bit 26 */ virtual int vfunc92();
 	virtual void vfunc93(int moveType, int moveCollide);	// "CBaseEntity::SetMoveType": scope trace (entity name), on change stores both at +0x35c/+0x360 and calls slot 25 of the object at +0x36c
@@ -73,7 +73,7 @@ public:
 	virtual bool vfunc110(const char *key, const char *value); virtual void vfunc111(); virtual void vfunc112(int, int); virtual void vfunc113();
 	virtual void vfunc114(); virtual void vfunc115(int);
 	virtual int vfunc116();
-	virtual void vfunc117(); virtual void vfunc118(const char *pszInputName, CBaseEntity *pActivator, CBaseEntity *pCaller, CVariantCopy value, int outputID);	// slot 118 "CBaseEntity::AcceptInput" (variant passed by value) 
+	virtual int vfunc117(); virtual void vfunc118(const char *pszInputName, CBaseEntity *pActivator, CBaseEntity *pCaller, CVariantCopy value, int outputID);	// slot 118 "CBaseEntity::AcceptInput" (variant passed by value) 
 	virtual void vfunc119();
 	virtual void vfunc120(const char *key, float *pos, float *ang);	// "CBaseEntity::GetInputDispatchEffectPosition": scope trace (entity name), copies GetAbsOrigin() to pos and GetAbsAngles() to ang
 	virtual bool vfunc121(const char *szKeyName, CVariantCopy *pVariant); virtual void vfunc122(const char *classname);	// slot 121 "CBaseEntity::ReadKeyField": scope trace (entity name), walks the datamap chain (slot 82) for a key / input field of that external name (case-insensitive) and stores its value in the variant; false when not found. Slot 122 "CBaseEntity::SetClassname": scope trace (entity name), stores the pooled string at +0x11c, then slot 13(string or "")
