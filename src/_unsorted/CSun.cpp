@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101c2100 size=0x6
+#include "CSun.h"
+namespace lifted {
+extern char g_1072c7fc;
+}
+int CSun::vfunc80()
+{
+    return (int)&lifted::g_1072c7fc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2120 size=0x3
 #include "CSun.h"
 int CSun::vfunc81()
