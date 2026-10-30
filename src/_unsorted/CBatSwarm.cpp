@@ -12,6 +12,14 @@ datamap_t * CBatSwarm::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b8440 size=0x3
+#include "CBatSwarm.h"
+int CBatSwarm::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b8770 size=0x1e
 #include "CBatSwarm.h"
 
