@@ -67,6 +67,17 @@ void CSoundControllerImp::vfunc9(void *pSound)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bd5b0 size=0x16
+#include "CSoundControllerImp.h"
+namespace lifted {
+struct C10014713 { int sub_10014713(int, int); };
+}
+int CSoundControllerImp::vfunc10(int a0, int a1, int a2)
+{
+    return ((lifted::C10014713 *)a0)->sub_10014713(a1, a2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bd610 size=0xc
 #include "CSoundControllerImp.h"
 namespace lifted {
