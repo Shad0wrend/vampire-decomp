@@ -24,6 +24,17 @@ CDisciplineWeapon *CDisciplineWeapon::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f1d30 size=0x6
+#include "CDisciplineWeapon.h"
+namespace lifted {
+extern char g_1067e538;
+}
+int CDisciplineWeapon::vfunc82()
+{
+    return (int)&lifted::g_1067e538;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f2020 size=0x18b
 #include "CDisciplineWeapon.h"
 #include "CVStatList_t.h"
