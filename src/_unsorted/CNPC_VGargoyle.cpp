@@ -8,6 +8,13 @@ bool CNPC_VGargoyle::vfunc615()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10377b00 size=0x5
+bool CNPC_VGargoyle::vfunc378(int a0, int a1)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10377cd0 size=0x1d
 #include "CNPC_VGargoyle.h"
 struct A { int sub_10012300(int); };
