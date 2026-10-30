@@ -26,6 +26,17 @@ bool CBaseViewModel::vfunc86(int a, int b, int c, int d, int e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042b7d0 size=0xb
+#include "CBaseViewModel.h"
+namespace lifted {
+int sub_10006703();
+}
+int CBaseViewModel::vfunc117()
+{
+    return (lifted::sub_10006703()) | -2147483648;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042b7f0 size=0x2d
 #include "CBaseViewModel.h"
 
