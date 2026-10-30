@@ -84477,6 +84477,24 @@ float VKeyValuesInterface::sub_101f2830(const char *pszName, float flDefault)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f28e0 size=0x58
+#include "VKeyValues.h"
+extern "C" int __cdecl strcmpi(const char *, const char *);
+int VKeyValuesInterface::sub_101f28e0(const char *pszName, const char **ppszChoices, int nChoices, int nDefault)
+{
+    VKeyValues *pKey = (VKeyValues *)((char *)this - 0x30);
+    if (pszName)
+        pKey = pKey->sub_100122c4(pszName);
+    if (pKey) {
+        for (int i = 0; i < nChoices; i++) {
+            if (!strcmpi(pKey->m_pszValue0c, ppszChoices[i]))
+                return i;
+        }
+    }
+    return nDefault;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2ae0 size=0xe
 void sub_101f3030(void* p);
 
