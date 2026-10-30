@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1034f2a0 size=0x6
+namespace lifted {
+extern char g_106266e4;
+}
+int CHL2_Player::vfunc82()
+{
+    return (int)&lifted::g_106266e4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034f330 size=0x27
 #include "CHL2_Player.h"
 
