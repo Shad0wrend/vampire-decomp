@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x102db7f0 size=0x6
+namespace lifted {
+extern char g_1060c2c0;
+}
+int CAI_InterestingPlaceConverstation::vfunc82()
+{
+    return (int)&lifted::g_1060c2c0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dbb00 size=0x8a
 #include "CAI_InterestingPlaceConverstation.h"
 CAI_InterestingPlaceConverstation::CAI_InterestingPlaceConverstation()
