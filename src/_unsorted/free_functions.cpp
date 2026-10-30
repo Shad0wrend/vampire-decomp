@@ -147911,6 +147911,25 @@ extern "C" GP *item_w_avamp_blade()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e9b70 size=0x5c
+bool __stdcall sub_103e9b70(int act, float *pOut)
+{
+	switch (act)
+	{
+	case 0xbc:
+	case 0xc0:
+	case 0xc9:
+	case 0xcf:
+		pOut[0] = 252.0f;
+		pOut[1] = -30.0f;
+		pOut[2] = -60.0f;
+		return true;
+	default:
+		return false;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e9d80 size=0x55
 #define SLOTS4(a) virtual void a##_0(); virtual void a##_1(); virtual void a##_2(); virtual void a##_3();
 #define SLOTS16(a) SLOTS4(a##a) SLOTS4(a##b) SLOTS4(a##c) SLOTS4(a##d)
