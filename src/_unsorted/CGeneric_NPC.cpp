@@ -205,6 +205,13 @@ float CGeneric_NPC::vfunc516()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035a920 size=0x1
+#include "CGeneric_NPC.h"
+void CGeneric_NPC::vfunc434()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035a980 size=0x68
 #include "CGeneric_NPC.h"
 #include "Vector.h"
