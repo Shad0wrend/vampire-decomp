@@ -15,4 +15,7 @@ public:
 	void vfunc144(int info);	// slot 144 (Event_Killed-like): the game's CNPC_VVampire::vfunc144 (0x103c4f40, stub 0x1000b8a2)
 public:
     virtual datamap_t * vfunc82();
+public:
+	virtual int vfunc451();
+	virtual int vfunc580();
 };

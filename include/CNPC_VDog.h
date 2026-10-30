@@ -33,4 +33,8 @@ public:
 	int vfunc440(int activity);	// slot 440: 0x6b gives 0x164, 0x156 gives 0x161, 0x157 gives 0x162, else CNPC_VAnimal::vfunc440 (tail called)
 public:
 	virtual int vfunc580();
+public:
+	virtual int vfunc138();
+	virtual int vfunc451();
+	virtual bool vfunc452();
 };

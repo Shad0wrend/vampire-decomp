@@ -44,4 +44,6 @@ public:
 public:
 	virtual void vfunc144(int);
 	virtual bool vfunc602();
+public:
+	virtual int vfunc580();
 };
