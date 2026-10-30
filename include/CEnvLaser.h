@@ -59,8 +59,8 @@ public:
 	virtual void vfunc6();
 	virtual void vfunc7();
 	virtual void vfunc8();
-	virtual void vfunc9();
-	virtual void vfunc10();
+	virtual const char **vfunc9(int *pOut);	// CBaseEntity slot 9: the model name slot
+	virtual void vfunc10(int index);	// CBaseEntity slot 10: SetModelIndex
 	virtual void vfunc11();
 	virtual void vfunc12();
 	virtual void vfunc13();
