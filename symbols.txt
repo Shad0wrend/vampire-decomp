@@ -7346,6 +7346,7 @@
 0x10010f46 func   ?sub_101fb200@CVDmg_t@@QAEHHH@Z CVDmg_t::sub_101fb200
 0x10010f5a func   ?sub_1014c0f0@CUnknown1014c0f0@@QAEHXZ CUnknown1014c0f0::sub_1014c0f0
 0x10010f69 func   _gibshooter gibshooter
+0x10010f6e func   ?vfunc291@CWeaponIArmor@@UAEXXZ CWeaponIArmor::vfunc291
 0x10010f82 func   ?sub_10078630@CUnknown10078630@@QAEHXZ CUnknown10078630::sub_10078630
 0x10010f8c func   ?vfunc103@CGeneric_NPC@@UAEXXZ CGeneric_NPC::vfunc103
 0x10010f91 func   ?sub_101f95b0@@YAXH@Z sub_101f95b0
