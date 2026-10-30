@@ -111189,6 +111189,25 @@ int CUnknown10288650::sub_10288650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10288670 size=0x5a
+#include "CAI_Motor.h"
+
+void CAI_Motor::sub_10288670(float flIdealYaw)
+{
+	if (m_28)
+	{
+		if (flIdealYaw >= 180.0f)
+			flIdealYaw -= 180.0f;
+		else
+			flIdealYaw += 180.0f;
+	}
+	if (*(float *)&m_1c == 180.0f)
+		m_34 = flIdealYaw;
+	else
+		m_34 = sub_102e0a80(flIdealYaw);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102886f0 size=0xa
 struct CUnknown102886f0 { char p[0x40]; int a; void sub_102886f0(int v); };
 // TARGET: CUnknown102886f0::sub_102886f0
