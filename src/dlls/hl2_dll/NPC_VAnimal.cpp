@@ -70,3 +70,101 @@ int CNPC_VAnimal::vfunc438()
 	return pNPC->sub_102af660();
 }
 // END FUNCTION
+
+// FUNCTION: 0x1035fe80 size=0x204
+#include "CNPC_VAnimal.h"
+#include "engineiface.h"
+
+struct CVAnimalView461
+{
+	char pad0000[0x1b38];
+	int m_n1b38;
+	const char *m_pszFile1b3c;
+	int m_nLine1b40;
+	char pad1b44[0x5cc0 - 0x1b44];
+	int m_nState5cc0;
+	volatile int m_nIdeal5cc4;
+	char pad5cc8[0x65f6 - 0x5cc8];
+	char m_b65f6;
+};
+
+extern void (__cdecl *g_109f3658)(int, const char *, ...);
+
+int CNPC_VAnimal::vfunc461()
+{
+	CVAnimalView461 *p = (CVAnimalView461 *)this;
+	bool bSet = false;
+	p->m_n1b38 = 5;
+	switch (p->m_nState5cc0) {
+	case 10:
+		if (sub_10269d30(0x44)) {
+			p->m_nIdeal5cc4 = 8;
+			int ret = p->m_nIdeal5cc4;
+			p->m_pszFile1b3c = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VAnimal.cpp";
+			p->m_nLine1b40 = 0x54d;
+			return ret;
+		}
+		if (sub_10269d30(0x46)) {
+			int r = enginerandom->vfunc2(0, 99);
+			p->m_pszFile1b3c = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VAnimal.cpp";
+			if (r < 30) {
+				p->m_nIdeal5cc4 = 2;
+				int ret = p->m_nIdeal5cc4;
+				p->m_nLine1b40 = 0x555;
+				return ret;
+			}
+			p->m_nIdeal5cc4 = 8;
+			int ret2 = p->m_nIdeal5cc4;
+			p->m_nLine1b40 = 0x55a;
+			return ret2;
+		}
+		break;
+	case 8:
+		if (sub_10269d30(0x47)) {
+			p->m_pszFile1b3c = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VAnimal.cpp";
+			if (p->m_b65f6) {
+				p->m_nIdeal5cc4 = 1;
+				int ret = p->m_nIdeal5cc4;
+				p->m_nLine1b40 = 0x53c;
+				return ret;
+			}
+			p->m_nIdeal5cc4 = 3;
+			int ret2 = p->m_nIdeal5cc4;
+			p->m_nLine1b40 = 0x540;
+			return ret2;
+		}
+		break;
+	case 2:
+		if (((int (__fastcall *)(CNPC_VAnimal *))(*(void ***)this)[167])(this) == 0) {
+			if (sub_10269aa0(0x46)) {
+				bSet = true;
+				p->m_pszFile1b3c = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VAnimal.cpp";
+				if (p->m_b65f6) {
+					p->m_nLine1b40 = 0x519;
+					p->m_nIdeal5cc4 = bSet;
+				} else {
+					p->m_nLine1b40 = 0x51d;
+					p->m_nIdeal5cc4 = 3;
+				}
+			}
+			g_109f3658(2, "***Combat state with no enemy!\n");
+			if (bSet)
+				return p->m_nIdeal5cc4;
+		} else if (sub_10269d30(0x47)) {
+			p->m_pszFile1b3c = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VAnimal.cpp";
+			if (p->m_b65f6) {
+				p->m_nIdeal5cc4 = 1;
+				int ret = p->m_nIdeal5cc4;
+				p->m_nLine1b40 = 0x529;
+				return ret;
+			}
+			p->m_nIdeal5cc4 = 3;
+			int ret2 = p->m_nIdeal5cc4;
+			p->m_nLine1b40 = 0x52d;
+			return ret2;
+		}
+		break;
+	}
+	return sub_102ad660();
+}
+// END FUNCTION
