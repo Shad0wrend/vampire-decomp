@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103fb1f0 size=0x3
+#include "COccultDodge.h"
+int COccultDodge::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040a000 size=0x1e
 #include "COccultDodge.h"
 
