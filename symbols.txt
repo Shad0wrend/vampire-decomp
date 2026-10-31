@@ -11997,6 +11997,7 @@
 0x109f3628 data   ?Msg@@YAXPBDZZ Msg
 0x109f3628 data   Msg Msg
 0x109f3628 data   __imp_?Msg@@YAXPBDZZ _imp_?Msg
+0x109f362c data   ?Warning@@YAXPBDZZ Warning
 0x109f362c data   __imp_?Warning@@YAXPBDZZ _imp_?Warning
 0x109f3630 data   ?DevMsg@@YAXPBDZZ DevMsg
 0x109f3640 data   __imp_?vtune@@YAX_N@Z _imp_?vtune
