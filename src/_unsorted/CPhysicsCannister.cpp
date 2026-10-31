@@ -29,6 +29,14 @@ bool CPhysicsCannister::vfunc158()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014fb90 size=0x5
+#include "CPhysicsCannister.h"
+bool CPhysicsCannister::vfunc72(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10150380 size=0x120
 #include "CPhysicsCannister.h"
 #include "CBaseCombatCharacter.h"
