@@ -7300,6 +7300,7 @@
 0x1000f42f func   ?sub_100309a0@CCollisionEvent@@QAEMH@Z CCollisionEvent::sub_100309a0
 0x1000f434 func   ?sub_10355e00@@YAXXZ sub_10355e00
 0x1000f43e func   ?vfunc4@CTETParticle@@UAEXHH@Z CTETParticle::vfunc4
+0x1000f443 func   ?sub_102f6a50@CAI_NetworkManager@@QAEXXZ CAI_NetworkManager::sub_102f6a50
 0x1000f44d func   ?sub_1013a8c0@@YAMMM@Z sub_1013a8c0
 0x1000f457 func   ?sub_1007ed10@CUnknown1007ed10@@QAEDXZ CUnknown1007ed10::sub_1007ed10
 0x1000f45c func   ?vfunc5@CCameraAnimated@@QAEPAV1@E@Z CCameraAnimated::vfunc5

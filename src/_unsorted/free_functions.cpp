@@ -127719,6 +127719,70 @@ bool sub_102f67a0(const char *mapname)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f6a50 size=0x1f7
+#include "CBaseEntity.h"
+#include "CAI_NetworkManager.h"
+
+extern char g_1093408c;
+struct CAIGlobalTimer { char pad[0x17c]; float m_f17c; };
+extern CAIGlobalTimer *g_10934088;
+extern char g_106b8540[];
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+void sub_102cc900();
+void __fastcall sub_102f6cd0(char *p);
+void sub_1028d8d0(CAI_NetworkManager *p);
+char *sub_101d3730(const char *fmt, const char *arg);
+int sub_100f4140(const char *name, int version, int a);
+void sub_101ce440(int a, const char *msg, int b, int c, int d, int e);
+
+// TARGET: CAI_NetworkManager::sub_102f6a50
+void CAI_NetworkManager::sub_102f6a50()
+{
+	if (m_b450) {
+		sub_102f6610();
+		if (engine->vfunc12())
+			engine->vfunc59("exec map_edit.cfg\n");
+		sub_100ac4e0(0, 0, 0);
+	} else if (!g_1093408c || engine->vfunc12()) {
+		if (engine->vfunc12()) {
+			const char *mapname = gpGlobals->mapname;
+			if (!mapname)
+				mapname = g_106b8540;
+			int r = sub_100f4140(mapname, gpGlobals->mapversion, 0);
+			if (r == 1) {
+				DevMsg("\nAborting map_edit\nWorldcraft not running...\n\n");
+				sub_101ce440(4, "Worldcraft not running...", 0, 0, 0, 0);
+				engine->vfunc59("disconnect\n");
+				sub_100ac4e0(0, 0, 0);
+				return;
+			}
+			if (r == 2) {
+				DevMsg("\nAborting map_edit\nWC/Engine map versions different...\n\n");
+				sub_101ce440(4, "WC/Engine map versions different...", 0, 0, 0, 0);
+				engine->vfunc59("disconnect\n");
+				sub_100ac4e0(0, 0, 0);
+				return;
+			}
+			gpGlobals->mapversion++;
+		}
+		DevMsg("Node Graph out of Date. Rebuilding...\n");
+		sub_101ce440(4, "Node Graph out of Date. Rebuilding...", 0, 0, 0, 0);
+		m_b450 = 1;
+		g_10934088->m_f17c = gpGlobals->curtime + 1.0f;
+		return;
+	}
+	if (g_1093408c)
+		engine->vfunc7("ai_node_graph_built");
+	sub_102cc900();
+	sub_102f6cd0((char *)m_pNetwork);
+	m_b658 = 1;
+	sub_100ac4e0(0, 0, 0);
+	sub_1028d8d0(this);
+	if (m_b659)
+		engine->vfunc59(sub_101d3730("load %s;", m_sz65a));
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f6cd0 size=0x27
 // TARGET: sub_102f6cd0
 void __fastcall sub_102f6cd0(char *pThis)
