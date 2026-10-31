@@ -7600,6 +7600,7 @@
 0x1000f097 func   ?vfunc82@CBaseEntity@@UAEPAUdatamap_t@@XZ CBaseEntity::vfunc82
 0x1000f0a6 func   ??1CVStatInfo_t@@QAE@XZ CVStatInfo_t::~CVStatInfo_t
 0x1000f0ab func   ?vfunc58@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc58
+0x1000f0b0 func   ?vfunc138@CNPC_VCombatman@@UAEHXZ CNPC_VCombatman::vfunc138
 0x1000f0b5 func   ?vfunc86@CPlayerResource@@QAE_NHHHHH@Z CPlayerResource::vfunc86
 0x1000f0ba func   ?sub_102697b0@@YIXPAUDeathThinkView@@@Z sub_102697b0
 0x1000f0bf func   ?sub_10030cb0@@YGXPAX0@Z sub_10030cb0

@@ -28,6 +28,14 @@ int CNPC_VCombatman::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103701d0 size=0x6
+#include "CNPC_VCombatman.h"
+int CNPC_VCombatman::vfunc138()
+{
+    return 4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10370230 size=0x9d
 #include "CNPC_VCombatman.h"
 #define F(T, off) (*(T *)((char *)this + off))
