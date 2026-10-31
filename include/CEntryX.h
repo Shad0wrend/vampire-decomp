@@ -14,6 +14,7 @@ public:
 	int m_n54;	// 0x54
 	CEntryX(int key);	// stub 0x100066ea
 	~CEntryX();	// stub 0x1000c9f0
+	char sub_101eb6b0(void *pKV);	// stub 0x10005d4e: reads the record from a "BotchType" data node
 };
 
 extern int g_1073a2c0;	// the number of entries
