@@ -193,6 +193,16 @@ void CSave::vfunc17(const char *pszName, void *pData, int count)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019fda0 size=0x14
+#include "CSave.h"
+
+// TARGET: CSave::vfunc22
+void CSave::vfunc22(const char *pszName, const Vector &value)
+{
+	vfunc21(pszName, &value, 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a0260 size=0x8a
 #include "CSave.h"
 
