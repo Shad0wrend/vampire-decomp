@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100f46c0 size=0x5
+#include "CGibShooter.h"
+int CGibShooter::vfunc242(int a0, int a1, int a2, int a3, int a4, int a5)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f46e0 size=0x39
 #include "CGibShooter.h"
 
