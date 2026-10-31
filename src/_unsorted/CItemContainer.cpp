@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10208950 size=0x3
+#include "CItemContainer.h"
+void CItemContainer::vfunc316(int a0, int a1, int a2)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10208ad0 size=0x1e
 #include "CItemContainer.h"
 
