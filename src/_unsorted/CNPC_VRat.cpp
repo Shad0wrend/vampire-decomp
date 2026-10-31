@@ -75,6 +75,23 @@ int CNPC_VRat::vfunc370(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ad820 size=0x14
+#include "CNPC_VRat.h"
+
+// TARGET: CNPC_VRat::vfunc371
+int CNPC_VRat::vfunc371(int a)
+{
+	void **vt = *(void ***)this;
+	union {
+		void *p;
+		void (CNPC_VRat::*pm)(int);
+	} u;
+	u.p = vt[369];
+	(this->*u.pm)(a);
+	return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ad850 size=0x3
 #include "CNPC_VRat.h"
 void CNPC_VRat::vfunc316(int a0, int a1, int a2)
