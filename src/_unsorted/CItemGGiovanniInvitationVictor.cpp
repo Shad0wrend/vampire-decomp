@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10401920 size=0x6
+#include "CItemGGiovanniInvitationVictor.h"
+namespace lifted {
+extern char g_10945248;
+}
+int CItemGGiovanniInvitationVictor::vfunc80()
+{
+    return (int)&lifted::g_10945248;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10401940 size=0x3
 #include "CItemGGiovanniInvitationVictor.h"
 int CItemGGiovanniInvitationVictor::vfunc81()
