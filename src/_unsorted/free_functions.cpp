@@ -48084,6 +48084,43 @@ void CBreakableSurface::sub_10112a10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10113780 size=0x244
+#include "SendTable.h"
+SendProp sub_10246af0(const char *, int, int, int, int, int, void *);
+SendProp sub_10246510(const char *, int, int, int, int, float, float, void *);
+SendProp sub_10246dc0(const char *, int, void *, void *);
+void sub_10246300();
+void sub_102464d0();
+extern int g_106e816c;
+extern SendTable g_10709dac;
+extern const char *g_1056fabc;
+
+// TARGET: sub_10113780
+int sub_10113780()
+{
+	static SendProp props[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246af0("m_Color.r", 0x450, 1, 8, 1, 0, 0),
+		sub_10246af0("m_Color.g", 0x451, 1, 8, 1, 0, 0),
+		sub_10246af0("m_Color.b", 0x452, 1, 8, 1, 0, 0),
+		sub_10246af0("m_Color.a", 0x453, 1, 8, 1, 0, 0),
+		sub_10246af0("m_SpawnRate", 0x454, 4, 0xc, 1, 0, 0),
+		sub_10246af0("m_SpeedMax", 0x460, 4, 0xc, 1, 0, 0),
+		sub_10246510("m_flSizeMin", 0x458, 4, 0, 4, 0.0f, -121121.121094f, (void *)sub_10246300),
+		sub_10246510("m_flSizeMax", 0x45c, 4, 0, 4, 0.0f, -121121.121094f, (void *)sub_10246300),
+		sub_10246af0("m_DistMax", 0x46c, 4, 0x10, 1, 0, 0),
+		sub_10246af0("m_LifetimeMin", 0x464, 4, 4, 1, 0, 0),
+		sub_10246af0("m_LifetimeMax", 0x468, 4, 4, 1, 0, 0),
+		sub_10246af0("m_DustFlags", 0x474, 4, 3, 1, 0, 0),
+		sub_10246af0("m_iszSpriteName", 0x470, 4, 0x20, 1, 0, 0),
+		sub_10246af0("m_nModelIndex", 0x1a4, 4, 0xb, 0, 0, 0),
+		sub_10246dc0("m_Collision", 0x270, &g_106e816c, (void *)sub_102464d0),
+	};
+	g_10709dac.sub_10247240(&props[1], 0xf, g_1056fabc);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10113b00 size=0x1a
 namespace lifted {
 extern int g_1056fac0;
