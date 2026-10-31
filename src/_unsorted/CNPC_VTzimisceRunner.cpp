@@ -380,3 +380,14 @@ void CNPC_VTzimisceRunner::vfunc618()
 	g_1070b248->vfunc3(&filter, idx, 4, g_1065d6a0[g_1070b244->vfunc2(0, 2)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x103c43f0 size=0xd
+// TARGET: CNPC_VTzimisceRunner::vfunc320
+#include "CNPC_VTzimisceRunner.h"
+#include "CAI_BaseNPCTroika.h"
+
+char CNPC_VTzimisceRunner::vfunc320(int a, int b)
+{
+    return ((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc320(a, 0x79);
+}
+// END FUNCTION
