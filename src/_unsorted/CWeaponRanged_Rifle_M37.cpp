@@ -20,6 +20,17 @@ int CWeaponRanged_Rifle_M37::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102357b0 size=0x6
+#include "CWeaponRanged_Rifle_M37.h"
+namespace lifted {
+extern char g_105ba680;
+}
+int CWeaponRanged_Rifle_M37::vfunc362()
+{
+    return (int)&lifted::g_105ba680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a410 size=0x1e
 #include "CWeaponRanged_Rifle_M37.h"
 
