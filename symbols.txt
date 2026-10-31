@@ -6254,6 +6254,7 @@
 0x1000c4a0 func   ?vfunc82@CNPC_VVampire@@UAEPAUdatamap_t@@XZ CNPC_VVampire::vfunc82
 0x1000c4aa func   ?vfunc588@CNPC_VTzimisceRunner@@UAEHXZ CNPC_VTzimisceRunner::vfunc588
 0x1000c4af func   ?vfunc294@CNPC_VRat@@QAE_NH@Z CNPC_VRat::vfunc294
+0x1000c4b4 func   ?vfunc11@CAI_Navigator@@UAEXH@Z CAI_Navigator::vfunc11
 0x1000c4b9 func   ?vfunc451@CNPC_VLasombra@@UAEHXZ CNPC_VLasombra::vfunc451
 0x1000c4be func   _npc_payphone npc_payphone
 0x1000c4c3 func   ?sub_1024c630@@YAXPAM@Z sub_1024c630

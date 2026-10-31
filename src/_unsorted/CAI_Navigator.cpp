@@ -51,6 +51,17 @@ void CAI_Navigator::vfunc7()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102eeac0 size=0x10
+#include "vampire.h"
+
+// TARGET: CAI_Navigator::vfunc11
+void CAI_Navigator::vfunc11(int a)
+{
+	sub_102eeb70();
+	m_b1c = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102eeb50 size=0xd
 #include "CAI_Navigator.h"
 
