@@ -10529,6 +10529,7 @@
 0x1001385e func   ?sub_10131750@CUnknown10131750@@QAEHXZ CUnknown10131750::sub_10131750
 0x10013863 func   ?sub_101c8820@@YAHXZ sub_101c8820
 0x1001386d func   ?sub_100360a0@CPhysicsPushedEntities@@QAEXPAVCBaseEntity@@PBMPAM1@Z CPhysicsPushedEntities::sub_100360a0
+0x10013872 func   ?vfunc5@CPhysBox@@QAEPAXI@Z CPhysBox::vfunc5
 0x10013877 func   ?sub_103e5db0@@YAHXZ sub_103e5db0
 0x1001387c func   ?sub_103268e0@CBaseCombatCharacter@@QAEDPBMH@Z CBaseCombatCharacter::sub_103268e0
 0x10013881 func   ?sub_101bb650@CFloatUnit@@QAEXMM@Z CFloatUnit::sub_101bb650
