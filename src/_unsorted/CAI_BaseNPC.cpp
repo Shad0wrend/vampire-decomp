@@ -942,6 +942,19 @@ void CAI_BaseNPC::vfunc542()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10273e10 size=0x16
+extern int g_109203f0;
+
+// TARGET: sub_10273e10
+int __fastcall sub_10273e10(char *pThis)
+{
+	int r = g_109203f0;
+	if (*(int *)(pThis + 0x5bb0) > 0)
+		return r;
+	return *(int *)(pThis + 0x5d88);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10273e40 size=0x27
 // TARGET: CUnknown10273e40::sub_10273e40
 #include "CUnknown10273e40.h"

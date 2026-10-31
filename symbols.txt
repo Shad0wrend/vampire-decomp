@@ -2844,6 +2844,7 @@
 0x100061d6 func   ?sub_10428ce0@@YAHPAUSeqHdr@@HH@Z sub_10428ce0
 0x100061e5 func   ?vfunc451@CNPC_VManBat@@QAEHXZ CNPC_VManBat::vfunc451
 0x100061f4 func   ?vfunc440@CAI_BaseNPC@@QAEHH@Z CAI_BaseNPC::vfunc440
+0x100061f9 func   ?sub_10273e10@@YIHPAD@Z sub_10273e10
 0x100061fe func   ?sub_100d5510@@YAXXZ sub_100d5510
 0x10006203 func   ?sub_104275a0@CTbl@@QAEHH@Z CTbl::sub_104275a0
 0x10006208 func   ?vfunc244@CNPC_VTzimisce@@UAEHXZ CNPC_VTzimisce::vfunc244
