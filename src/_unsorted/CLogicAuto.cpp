@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10130c10 size=0x8
+#include "CLogicAuto.h"
+// TARGET: CLogicAuto::sub_10130c10
+unsigned char CLogicAuto::sub_10130c10()
+{
+    unsigned char b;
+    b = ((CBaseEntity *)this)->CBaseEntity::vfunc117();
+    b &= 0xfd;
+    return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130c30 size=0x6
 #include "CLogicAuto.h"
 namespace lifted {
