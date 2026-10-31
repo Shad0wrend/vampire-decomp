@@ -81,6 +81,14 @@ SRestore *SRestore::sub_101a1400(unsigned char flag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a1490 size=0x7
+// TARGET: sub_101a1490
+int __fastcall sub_101a1490(char *pThis)
+{
+    return *(int *)(*(int *)(pThis + 0x18) + 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a18a0 size=0xbb
 #include <string.h>
 #include "CRestore.h"

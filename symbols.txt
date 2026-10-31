@@ -6842,6 +6842,7 @@
 0x1000e453 func   ?sub_101a75c0@@YAHXZ sub_101a75c0
 0x1000e45d func   ?sub_10398d90@CUnknown10398d90@@QAEXH@Z CUnknown10398d90::sub_10398d90
 0x1000e46c func   ?sub_101809e0@@YAXXZ sub_101809e0
+0x1000e476 func   ?sub_101a1490@@YIHPAD@Z sub_101a1490
 0x1000e47b func   ?sub_100b7c40@CUnknown100b7c40@@QAEHXZ CUnknown100b7c40::sub_100b7c40
 0x1000e48a func   ?vfunc5@CWeaponMelee_Katana@@QAEPAV1@I@Z CWeaponMelee_Katana::vfunc5
 0x1000e48f func   ?sub_1017ec40@CBasePlayer@@QAEXXZ CBasePlayer::sub_1017ec40
