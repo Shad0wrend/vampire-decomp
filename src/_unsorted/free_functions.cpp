@@ -9259,6 +9259,21 @@ void sub_10057ac0(void *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057b50 size=0x1c
+extern int g_106be530;
+extern char g_10580ae8;
+void __fastcall sub_100579f0(void *p);
+struct CUnkTail { virtual void vfunc0(); };
+CUnkTail *sub_101bdb50(void);
+
+void sub_10057b50(void)
+{
+    sub_100579f0((void *)&g_106be530);
+    g_10580ae8 = 1;
+    sub_101bdb50()->vfunc0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057cf0 size=0x1c3
 #include "SendTable.h"
 
