@@ -2,6 +2,17 @@
 // Layout is declared flat (vptr and base members are padding) until the bases are recovered.
 #pragma once
 
+struct dynpitchvol_t
+{
+	int preset;
+	int pitchrun, pitchstart, spinup, spindown;
+	int volrun, volstart, fadein, fadeout;
+	int lfotype, lforate, lfomodpitch, lfomodvol;
+	int cspinup, cspincount;
+	int pitch, spinupsav, spindownsav, pitchfrac;
+	int vol, fadeinsav, fadeoutsav, volfrac, lfofrac, lfomult;
+};
+
 class CAmbientGeneric
 {
 public:
