@@ -36617,6 +36617,24 @@ void sub_100d56b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d5860 size=0x1b
+#include "CBasePlayer.h"
+
+void *sub_101193b0();
+
+// TARGET: sub_100d5860
+void sub_100d5860()
+{
+	CBasePlayer *pPlayer = (CBasePlayer *)sub_101193b0();
+	if (pPlayer) {
+		CBasePlayer *pOther = *(CBasePlayer **)((char *)pPlayer + 0xa8);
+		if (pOther) {
+			pOther->sub_1017c900(0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d5920 size=0x4a
 #include "CUnknown1017ce70.h"
 
