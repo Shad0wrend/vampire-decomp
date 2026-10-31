@@ -26,3 +26,17 @@ CPropMover *CPropMover::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101928f0 size=0x10
+#include "CPropMover.h"
+
+void __fastcall sub_10011793(void *pThis);
+void __fastcall sub_101c1cb0(void *pThis);
+
+// TARGET: CPropMover::vfunc103
+void CPropMover::vfunc103()
+{
+	sub_10011793(this);
+	sub_101c1cb0(this);
+}
+// END FUNCTION

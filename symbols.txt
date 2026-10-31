@@ -10278,6 +10278,7 @@
 0x1001319c func   ?vfunc497@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc497
 0x100131a1 func   ?vfunc461@CNPC_VTest@@QAEHXZ CNPC_VTest::vfunc461
 0x100131ab func   ?vfunc5@CFuncPlatRot@@QAEPAV1@I@Z CFuncPlatRot::vfunc5
+0x100131b0 func   ?vfunc103@CPropMover@@UAEXXZ CPropMover::vfunc103
 0x100131ba func   ??0CTEBloodSprite@@QAE@PBD@Z CTEBloodSprite::CTEBloodSprite
 0x100131bf func   ?vfunc459@CCineNPC@@QAEXXZ CCineNPC::vfunc459
 0x100131c4 func   ?sub_10220e10@QuestJournal@@QAEPAV1@XZ QuestJournal::sub_10220e10
