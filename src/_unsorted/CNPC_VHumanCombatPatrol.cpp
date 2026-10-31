@@ -49,6 +49,15 @@ CNPC_VHumanCombatPatrol *CNPC_VHumanCombatPatrol::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10387850 size=0x6
+extern unsigned char g_1063fb90;
+// TARGET: sub_10387850
+unsigned char sub_10387850()
+{
+    return g_1063fb90;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103878b0 size=0x1d
 #include "CNPC_VHumanCombatPatrol.h"
 struct A { int sub_10012300(int); };
