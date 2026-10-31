@@ -101367,6 +101367,43 @@ void sub_1022d9d0(CBaseCombatCharacter *pChar, int nTarget)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022dc30 size=0x1ed
+#include "CBaseCombatCharacter.h"
+#include "CVStatList_t.h"
+#include "CVStatInfoList_t.h"
+
+struct CMsgPlayerView;
+void sub_101cebc0(CMsgPlayerView *pPlayer, int a, int b);
+extern CVStatInfoList_t g_1074e658;
+
+void sub_1022dc30(CBaseCombatCharacter *pChar, int nAmount)
+{
+	if (!pChar)
+		return;
+	if (pChar->sub_1033c900(0x1000))
+		nAmount = nAmount * 2;
+	int nCur = CVStatListSet::Of(pChar)->Find(0)->sub_102012d0(0x1b);
+	if (nAmount < 0) {
+		if (nCur > 0) {
+			int nSub = -nAmount;
+			if (nCur + nAmount < 0)
+				nSub = nCur;
+			CVStatListSet::Of(pChar)->Find(0)->sub_10201100(0x1b, nSub);
+			sub_101cebc0(*(CMsgPlayerView **)((char *)pChar + 0xa8), 0xc, 0);
+		}
+	} else if (nAmount > 0) {
+		CVStatInfo_t &info = *g_1074e658.sub_10200370(0x1b);
+		int nMax = info.m_max0060.sub_10205840();
+		if (nCur < nMax) {
+			if (nCur + nAmount > nMax)
+				nAmount = nMax - nCur;
+			CVStatListSet::Of(pChar)->Find(0)->sub_10200fc0(0x1b, nAmount);
+			sub_101cebc0(*(CMsgPlayerView **)((char *)pChar + 0xa8), 0xd, 0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022e9d0 size=0x4b
 #include <stdlib.h>
 class CBasePlayer;
