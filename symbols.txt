@@ -2163,6 +2163,7 @@
 0x10005443 func   ?vfunc103@CSteamJet@@QAEXXZ CSteamJet::vfunc103
 0x10005448 func   _item_g_idol_elephant item_g_idol_elephant
 0x1000544d func   ?sub_100b0df0@@YAXXZ sub_100b0df0
+0x10005452 func   ?sub_101f3e50@CUnknown101f3e50@@QAEXXZ CUnknown101f3e50::sub_101f3e50
 0x10005457 func   ?sub_1035e030@CNPC_VAndreiBlood@@QAE_NPBVVector@@M@Z CNPC_VAndreiBlood::sub_1035e030
 0x10005466 func   ?vfunc591@CAI_BaseNPCTroika@@UAE_NXZ CAI_BaseNPCTroika::vfunc591
 0x10005475 func   ?sub_100f7d50@@YGPAVCBaseEntity@@PBDABVVector@@M@Z sub_100f7d50

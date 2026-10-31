@@ -88261,6 +88261,42 @@ void CUnknown101f3d80::sub_101f3d80(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f3e50 size=0x203
+#include "CUnknown101f3e50.h"
+
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+__declspec(dllimport) void DevMsg(int level, const char *pMsg, ...);
+void __fastcall sub_10005452(CUnknown101f3e50 *pFolder);	// stub of sub_101f3e50
+
+// TARGET: CUnknown101f3e50::sub_101f3e50
+void CUnknown101f3e50::sub_101f3e50()
+{
+	char buf[128];
+	sprintf(buf, "[Folder: %s]:\n", m_name.Get());
+	DevMsg(0, buf);
+	if (m_pSeg) {
+		int nIndices = m_pSeg->sub_101f4300();
+		for (int i = 0; i < nIndices; i++) {
+			if (m_pFlags[i]) {
+				int id;
+				int sub;
+				m_pSeg->sub_101f4570(i, &id, &sub);
+				if (sub == 0)
+					sprintf(buf, "\t\t   (%d): %s\n", i, m_pSeg->m_pTable->Find(id)->m_folder.Get());
+				else
+					sprintf(buf, "\t\t   (%d): %s_%d\n", i, m_pSeg->m_pTable->Find(id)->m_folder.Get(), sub);
+				DevMsg(0, buf);
+			}
+		}
+		for (int j = 0; j < m_nChildren; j++) {
+			sprintf(buf, " (Folder %d):\n", j);
+			DevMsg(0, buf);
+			sub_10005452(m_ppChildren[j]);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f4150 size=0xe
 struct CUnknown101f4150 { int sub_101f4150(); };
 int CUnknown101f4150::sub_101f4150()
