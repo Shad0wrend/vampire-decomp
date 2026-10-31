@@ -41941,6 +41941,18 @@ void sub_100f6ce0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f6d60 size=0x10
+extern int g_10703674;
+
+// TARGET: sub_100f6d60
+int sub_100f6d60()
+{
+	int nOld = g_10703674;
+	g_10703674 = 0;
+	return nOld;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f6d80 size=0x84
 #include "CUnknown100f6d80.h"
 
