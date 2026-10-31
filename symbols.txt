@@ -1305,6 +1305,7 @@
 0x10003855 func   ?vfunc29@CSave@@UAEXPBDPAXH@Z CSave::vfunc29
 0x1000385f func   ?sub_103b27d0@@YAHXZ sub_103b27d0
 0x10003864 func   ?sub_103eeee0@@YAHXZ sub_103eeee0
+0x1000386e func   ?sub_10360540@@YIPAXPAX@Z sub_10360540
 0x10003873 func   ?sub_1036f390@@YAHXZ sub_1036f390
 0x10003878 func   ?vfunc458@CBasePlayer@@UAEXXZ CBasePlayer::vfunc458
 0x10003882 func   ?sub_10060080@@YAHXZ sub_10060080

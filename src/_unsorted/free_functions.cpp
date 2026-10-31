@@ -142294,6 +142294,16 @@ int sub_103604b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10360540 size=0xc
+void __fastcall sub_10360560(void *pThis);
+
+void * __fastcall sub_10360540(void *pThis)
+{
+	sub_10360560(pThis);
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10360560 size=0x33
 void sub_1000831e();
 void sub_100136a1();
