@@ -35,6 +35,7 @@ public:
 	void sub_10273790(const char *pszText, int a);	// CAI_BaseNPC member (stub 0x1000421e): prints / records a debug note
 	int vfunc440(int arg);	// slot 440: maps a few activity / event ids to this cop's own ones (flag 0x80000 of +0x14bc picks one of two for 0x6b), else CNPC_VHumanCombatant::vfunc440
 	void vfunc596(int a);	// slot 596 (declared as a plain member): turns the entity into its NPC (sub_102707d0), makes it this cop's target (CAI_BaseNPC::sub_10279a50), hands it and its velocity pointer (+0x3d4, slot 217) to slot 544, then CAI_BaseNPCTroika::vfunc596 with the NPC
+	void vfunc463(int a, int type);	// slot 463 (plain member like the others): tells the controlling players about the pursuit state change, then CNPC_VHumanCombatant::vfunc463
 	void vfunc180();	// slot 180: clears the two per-NPC counter flags at +0x6671 / +0x6672 (decrementing the globals 0x1093acac / 0x1093acb0 for each one that was set), then CAI_BaseNPCTroika::vfunc180
 
 	char m_pad03e0[0x14bc - 0x3e0];
