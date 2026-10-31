@@ -31,6 +31,14 @@ int CWeaponRanged_Pistol_Glock::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10235150 size=0x6
+#include "CWeaponRanged_Pistol_Glock.h"
+int CWeaponRanged_Pistol_Glock::vfunc363()
+{
+    return 0xf5;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a3b0 size=0x1e
 #include "CWeaponRanged_Pistol_Glock.h"
 
