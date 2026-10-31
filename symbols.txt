@@ -10260,6 +10260,7 @@
 0x10014d80 func   ?sub_1012faf0@@YAHXZ sub_1012faf0
 0x10014d8a func   ?sub_1042ffe0@@YAII@Z sub_1042ffe0
 0x10014d99 func   ?sub_10247030@@YA?AVSendProp@@PBD0@Z sub_10247030
+0x10014d9e func   ?sub_1035b420@@YIPAXPAX@Z sub_1035b420
 0x10014da3 func   ?sub_10230320@@YAXXZ sub_10230320
 0x10014da8 func   ?sub_100b5190@CUnknown100b5190@@QAEDXZ CUnknown100b5190::sub_100b5190
 0x10014dad func   ?vfunc618@CNPCMaker_Zombie@@QAEDD@Z CNPCMaker_Zombie::vfunc618
