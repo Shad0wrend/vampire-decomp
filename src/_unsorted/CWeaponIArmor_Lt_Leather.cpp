@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103f3690 size=0x3
+#include "CWeaponIArmor_Lt_Leather.h"
+int CWeaponIArmor_Lt_Leather::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f4220 size=0x1e
 #include "CWeaponIArmor_Lt_Leather.h"
 
