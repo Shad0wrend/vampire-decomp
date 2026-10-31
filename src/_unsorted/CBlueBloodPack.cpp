@@ -44,6 +44,17 @@ char CBlueBloodPack::vfunc315()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103fc6b0 size=0x6
+#include "CBlueBloodPack.h"
+namespace lifted {
+extern char g_1094904c;
+}
+int CBlueBloodPack::vfunc80()
+{
+    return (int)&lifted::g_1094904c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103fc6d0 size=0x3
 #include "CBlueBloodPack.h"
 int CBlueBloodPack::vfunc81()

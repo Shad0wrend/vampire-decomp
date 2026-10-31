@@ -5319,6 +5319,7 @@
 0x1000ab55 func   ?sub_101eddd0@@YAXH@Z sub_101eddd0
 0x1000ab5a func   ?sub_102d8a90@CUnknown102d8a90@@QAEPAUSVec3@@XZ CUnknown102d8a90::sub_102d8a90
 0x1000ab5f func   ?sub_1006a190@@YAHXZ sub_1006a190
+0x1000ab64 func   ?vfunc80@CBlueBloodPack@@QAEHXZ CBlueBloodPack::vfunc80
 0x1000ab69 func   ?vfunc243@CAuspexAura@@QAEXPAVCBaseEntity@@HH@Z CAuspexAura::vfunc243
 0x1000ab7d func   ?vfunc580@CNPC_VGuard1@@UAEHXZ CNPC_VGuard1::vfunc580
 0x1000ab82 func   ?sub_10074610@CUnknown10074a30@@QAEMMH@Z CUnknown10074a30::sub_10074610
