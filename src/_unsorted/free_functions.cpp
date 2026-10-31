@@ -117959,6 +117959,24 @@ void __fastcall sub_10293d70(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10293dc0 size=0x15
+#include "vampire.h"
+
+struct CUnknown10293dc0
+{
+	char m_pad0000[0x639c];
+	float m_f639c;
+
+	void sub_10293dc0(float flDelay);
+};
+
+// TARGET: CUnknown10293dc0::sub_10293dc0
+void CUnknown10293dc0::sub_10293dc0(float flDelay)
+{
+	m_f639c = flDelay + gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102950c0 size=0x8a
 #include "CAI_BaseNPCTroika.h"
 
