@@ -25,6 +25,8 @@ struct CVDmgBlock16_t
 	int sub_10205840();	// the value of a block without a character (type m_a: 0 the plain number m_b, 1 the default value of the stat info record the number m_b names, 2 the value of the stat owner entry m_b, 3 zero, else -1)
 	void sub_10205400(int *pNumber);	// stub 0x10005786: sets the block from a stat info number
 	CVDmgBlock16_t *sub_102053d0(const char *pszText);	// the text form (sub_10204570) then returns this (0x102053d0)
+	CVDmgBlock16_t *sub_10310b40(const char *pszText);	// the text form (sub_10310b90) then returns this (0x10310b40)
+	void sub_10310b90(const char *pszText);	// the text copy into the block (stub 0x1000ae8e, body at 0x10310b90)
 	void sub_10204570(const char *pszText);	// stub 0x100045e3: sets the block from its text form: "<name>[ ]/<n>": the name is looked up in the stat lists (kinds 0..3), the feats (4), the reactions (5), the trait strings (8), "ObfuscateCanInc" (9, a function pointer), else a hook (global 0x1074eec4) or the empty block; a "/n" suffix makes the multiplier -n
 	void sub_10204300(int nKind, void *pFunc);	// stub 0x10009bba: stores the kind and a value (here a function pointer) and sets the multiplier to 1
 	CVDmgBlock16_t *sub_10230ed0();	// stub 0x1001067c: constructs the block (the constructor, then the reset), returns this; the construction the stat owner code of the 0x10230xxx unit uses
