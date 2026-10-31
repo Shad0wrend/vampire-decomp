@@ -68346,6 +68346,18 @@ int sub_1019b360()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019b380 size=0x16
+extern char g_1058fa08[];
+extern void *(__cdecl *g_109f371c)(void *);
+
+// TARGET: sub_1019b380
+void sub_1019b380(int a)
+{
+	int *pObj = (int *)g_109f371c(g_1058fa08);
+	pObj[2] = a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019b3d0 size=0x9c
 extern "C" int _strcmpi(const char *, const char *);
 extern "C" __declspec(dllimport) int *PyInt_FromLong(long);
