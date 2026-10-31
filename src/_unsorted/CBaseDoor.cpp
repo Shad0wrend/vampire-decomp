@@ -275,6 +275,37 @@ void CBaseDoor::vfunc248()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f05e0 size=0x1f9
+#include "CBaseDoor.h"
+#include "CBaseToggle.h"
+#include "CEHandleGet.h"
+#include "COutputEvent.h"
+extern int g_106eb3e0;
+extern int g_106eb3e8;
+struct CDoorView164 { char pad[0x164]; float m_flSpeed; };
+
+// TARGET: CBaseDoor::vfunc243
+void CBaseDoor::vfunc243(char bChain, int bLinked)
+{
+	if (bChain && EHandle_Get(m_hLinked630)) {
+		CBaseDoor *pLinked = (CBaseDoor *)EHandle_Get(m_hLinked630);
+		CBaseEntity *pActivator = (CBaseEntity *)EHandle_Get(*(unsigned int *)&pLinked->m_hActivator53c);
+		((CBaseDoor *)EHandle_Get(m_hLinked630))->m_hActivator53c = m_hActivator53c;
+		((CBaseDoor *)EHandle_Get(m_hLinked630))->vfunc243(0, 1);
+		CBaseDoor *pLinked2 = (CBaseDoor *)EHandle_Get(m_hLinked630);
+		pLinked2->m_hActivator53c = pActivator;
+	}
+	sub_100ee4e0(g_106eb3e0, 0);
+	sub_100ee4e0(g_106eb3e8, 0);
+	sub_100ee810();
+	sub_100efbf0(1);
+	m_nState4f8 = 2;
+	m_pfn0114 = (void (CBaseEntity::*)())&CBaseDoor::sub_100f0860;
+	((CBaseToggle *)this)->sub_101c1520(&m_vecPosition514, ((CDoorView164 *)this)->m_flSpeed);
+	m_items564[7].sub_100cd660((CBaseEntity *)EHandle_Get(m_hActivator53c), this, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0ef0 size=0xe
 void CBaseDoor::vfunc246(int a, int* b, int c)
 {
