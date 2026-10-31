@@ -77094,6 +77094,16 @@ int sub_101c30c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c31c0 size=0x1b
+// TARGET: sub_101c31c0
+#include "engineserver.h"
+extern int g_1059cee0;
+void sub_101c31c0()
+{
+    g_1059cee0 = engine->vfunc82("TerrainMod", -1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c31f0 size=0xe2
 #define P10(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
 struct SEngine {

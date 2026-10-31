@@ -6988,6 +6988,7 @@
 0x1000d2dd func   ?sub_101f25d0@@YIHPAD@Z sub_101f25d0
 0x1000d2e2 func   ?sub_10160680@CUnknown10160680@@QAEMXZ CUnknown10160680::sub_10160680
 0x1000d2e7 func   ?vfunc81@CItemGEDanePrintReport@@QAEHXZ CItemGEDanePrintReport::vfunc81
+0x1000d2ec func   ?sub_101c31c0@@YAXXZ sub_101c31c0
 0x1000d2f1 func   ?sub_10108500@@YAHXZ sub_10108500
 0x1000d2f6 func   ?vfunc8@CDataObjectAccessSystem@@UAEPAV1@I@Z CDataObjectAccessSystem::vfunc8
 0x1000d2fb func   ??0CHumanoidRec@@QAE@XZ CHumanoidRec::CHumanoidRec
