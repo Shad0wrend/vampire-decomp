@@ -69936,6 +69936,20 @@ void CInitPair101ab590::sub_101ab590(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ab610 size=0x30
+#include "CServerNetworkProperty.h"
+void CServerNetworkProperty::sub_101ab610()
+{
+	CBaseNetworkableEdict_t *p = m_pEdict;
+	if (p) {
+		p->m_n40 = 0;
+		p->m_b44 = 0;
+		engine->vfunc44(m_pEdict);
+		m_pEdict = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab720 size=0x23
 void __fastcall sub_10003828(void *pObj);
 void __fastcall sub_10010e74(void *pObj);
