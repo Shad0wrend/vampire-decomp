@@ -73,6 +73,8 @@ public:
 		m_Tree.m_pfn2c = (void *)sub_1000feb1;
 	}
 
+	void SetSink(CAI_ExpresserSink *pSink) { m_n10 = pSink; }
+
 	virtual ~CAI_Expresser();	// slot 0
 	CAI_Expresser *vfunc0(unsigned char flags);	// 0x10312e80: slot 0's scalar deleting form (plain member)
 	void sub_103121a0(float a, float b);	// (0x103121a0)
