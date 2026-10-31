@@ -167460,6 +167460,18 @@ int sub_104124b0(const char *pszActivityName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10412520 size=0x18
+void *sub_10412420(int h);
+
+int sub_10412520(int h)
+{
+	int *p = (int *)sub_10412420(h);
+	if (p)
+		return *p;
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10412550 size=0x24
 extern int g_1094afe0;
 unsigned short *sub_10412470(int a);
