@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x104046d0 size=0x6
+#include "CItemGWarrLedger2.h"
+namespace lifted {
+extern char g_10948430;
+}
+int CItemGWarrLedger2::vfunc80()
+{
+    return (int)&lifted::g_10948430;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104046f0 size=0x3
 #include "CItemGWarrLedger2.h"
 int CItemGWarrLedger2::vfunc81()
