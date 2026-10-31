@@ -117293,6 +117293,16 @@ void CAI_BaseNPC::sub_10273ec0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10273f90 size=0x19
+int __fastcall sub_10273f90(char *pThis)
+{
+	int state = *(int *)(pThis + 0x5c44);
+	if (state != 4 && state != 2)
+		return 1;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10274ca0 size=0xc7
 extern Vector g_1070d1b0;
 void sub_10428310(void *pStudioHdr, Vector *pOut);
