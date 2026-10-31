@@ -12,6 +12,21 @@ datamap_t * CGameSign::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10212530 size=0x63
+#include "CGameSign.h"
+extern Vector g_1070d1b0;
+// TARGET: CGameSign::CGameSign
+CGameSign::CGameSign() : CBaseEntity(0)
+{
+    m_f458 = 0.5f;
+    m_f45c = 0.5f;
+    m_pszFile450 = 0;
+    m_vecToucherPos = g_1070d1b0;
+    m_pszFile450 = 0;
+    m_b470 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102125c0 size=0x5
 #include "CGameSign.h"
 bool CGameSign::vfunc32(int a0)
