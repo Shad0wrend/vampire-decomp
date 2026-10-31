@@ -149,7 +149,10 @@ public:
 
 	char m_pad004[0x2dc];
 	CWeaponHolder_t *m_pHolder; // 0x2e0
-	char m_pad2e4[0x6f0 - 0x2e4];
+	char m_pad2e4[0x65c - 0x2e4];
+	char m_b65c;
+	char m_b65d;
+	char m_pad65e[0x6f0 - 0x65e];
 	int m_nSequence;	// 0x6f0
 	float m_flPlaybackRate;	// 0x6f4
 	int m_n06f8;	// 0x6f8
