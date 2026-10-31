@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1010bb50 size=0x6
+#include "CEnvFireSource.h"
+namespace lifted {
+extern char g_1056d0b4;
+}
+int CEnvFireSource::vfunc82()
+{
+    return (int)&lifted::g_1056d0b4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010bc50 size=0x13
 #include "CEnvFireSource.h"
 
