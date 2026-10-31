@@ -9574,6 +9574,7 @@
 0x10013836 func   ?RotateLeft@?$CUtlRBTree@UCRBTree36Entry_1004c5b0@@G@@QAEXG@Z CUtlRBTree<CRBTree36Entry_1004c5b0,unsigned short>::RotateLeft
 0x1001383b func   ?sub_10303c90@CAI_Pathfinder@@QAEPAVCAI_Waypoint@@PBM0PBVCBaseEntity@@HHHHH@Z CAI_Pathfinder::sub_10303c90
 0x10013840 func   ?sub_1004d100@CPhysicsSpring@@QAEXXZ CPhysicsSpring::sub_1004d100
+0x10013845 func   ?sub_1036ec20@@YIPAXPAX@Z sub_1036ec20
 0x1001384a func   ?vfunc202@CNodeEnt@@QAEXH@Z CNodeEnt::vfunc202
 0x1001384f func   ?vfunc546@CNPC_VScurrying@@QAEHH@Z CNPC_VScurrying::vfunc546
 0x10013854 func   ?sub_10185490@CUtlVectorBase@@QAEXXZ CUtlVectorBase::sub_10185490
