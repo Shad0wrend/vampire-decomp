@@ -7,14 +7,14 @@
 
 __declspec(dllimport) void Plat_Free(void *);
 
-// The heap vector of 4-byte-pointer-free elements: memory (pointer, allocation count, grow size), size, element pointer.
+// The heap vector: memory (pointer, allocation count, grow size), size, element pointer.
 struct CRBTree16Entry8Vec
 {
 	UtlMem m_Memory;
 	int m_Size;
 	int *m_pElements;
 
-	~CRBTree16Entry8Vec()
+	void Purge()
 	{
 		m_Size = 0;
 		m_Memory.sub_10046cd0();
@@ -37,7 +37,7 @@ struct CRBTree16Entry8
 	~CRBTree16Entry8()
 	{
 		if (m_pVec) {
-			m_pVec->~CRBTree16Entry8Vec();
+			m_pVec->Purge();
 			operator delete(m_pVec);
 		}
 	}
