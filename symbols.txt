@@ -3582,6 +3582,7 @@
 0x10008035 func   ?sub_101e94b0@@YAXH@Z sub_101e94b0
 0x1000803a func   ?sub_103fcbe0@@YAHXZ sub_103fcbe0
 0x10008044 func   ?vfunc82@CNodeEnt@@UAEPAUdatamap_t@@XZ CNodeEnt::vfunc82
+0x10008049 func   ?sub_102b9780@@YIPAXPAX@Z sub_102b9780
 0x10008053 func   ?sub_1003ff80@CUnknown1003ff80@@QAEPAXXZ CUnknown1003ff80::sub_1003ff80
 0x1000805d func   ?sub_1027f5d0@@YAPADPADPBDZZ sub_1027f5d0
 0x10008062 func   ?sub_1012cf10@CUnknown1012cf10@@QAEPAV1@XZ CUnknown1012cf10::sub_1012cf10

@@ -118470,6 +118470,15 @@ bool CAI_BaseNPCTroika::sub_102b7f40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b9780 size=0xc
+void __fastcall sub_102b97a0(void *pThis);
+void * __fastcall sub_102b9780(void *pThis)
+{
+    sub_102b97a0(pThis);
+    return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b97a0 size=0x33
 void sub_1000b15e();
 void sub_10002914();
