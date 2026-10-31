@@ -1886,6 +1886,7 @@
 0x100045ca func   ?sub_10202c40@S4@@QAEPAU1@XZ S4::sub_10202c40
 0x100045cf func   ?sub_101e1720@CDiscTable_101e1720@@QAEHH@Z CDiscTable_101e1720::sub_101e1720
 0x100045d4 func   ??4CBaseHandle@@QAEAAV0@PAVIHandleEntity@@@Z ??4CBaseHandle@@QAEAAV0@PAVIHandleEntity@@@Z
+0x100045d9 func   ?vfunc163@CAI_Hint@@UAEDXZ CAI_Hint::vfunc163
 0x100045de func   ?sub_100cffa0@@YAHXZ sub_100cffa0
 0x100045e8 func   ?sub_102a13d0@@YIHPAUN@@@Z sub_102a13d0
 0x100045ed func   ?sub_10203df0@@YAXHPBD@Z sub_10203df0

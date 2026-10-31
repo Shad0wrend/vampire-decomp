@@ -41,6 +41,18 @@ void CAI_Hint::vfunc119()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d1320 size=0x18
+// TARGET: CAI_Hint::vfunc163
+#include "CAI_Hint.h"
+char CAI_Hint::vfunc163()
+{
+    if (m_n5e8 != 0) {
+        return 0;
+    }
+    return m_n5dc == 0xd;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d1600 size=0x104
 #include "CAI_Hint.h"
 __declspec(dllimport) int __cdecl Q_snprintf(char *, int, const char *, ...);
