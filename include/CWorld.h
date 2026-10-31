@@ -124,7 +124,7 @@ public:
     virtual void vfunc209();
     virtual void vfunc210();
     virtual void vfunc211();
-    virtual void vfunc212_slot(const char *pszModel);
+    virtual void vfunc212_slot(int pszModel);
     virtual void vfunc213_slot();
     virtual void vfunc214_slot();
     virtual void vfunc215();
