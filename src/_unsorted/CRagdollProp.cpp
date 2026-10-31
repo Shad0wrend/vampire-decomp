@@ -437,3 +437,13 @@ void CRagdollProp::vfunc39(CBaseEntity * a0)
     lifted::sub_10010ec9(*(int *)&a0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10158100 size=0xe
+// TARGET: sub_10158100
+void sub_1040d9a0(int x);
+
+void __stdcall sub_10158100(int x)
+{
+    sub_1040d9a0(x);
+}
+// END FUNCTION
