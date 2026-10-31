@@ -20,6 +20,17 @@ int CWeaponMelee_FireAxe::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e5e80 size=0x6
+#include "CWeaponMelee_FireAxe.h"
+namespace lifted {
+extern char g_1066c788;
+}
+int CWeaponMelee_FireAxe::vfunc362()
+{
+    return (int)&lifted::g_1066c788;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e5f60 size=0x3f
 #include "CWeaponMelee_FireAxe.h"
 
