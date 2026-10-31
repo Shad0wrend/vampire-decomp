@@ -11005,6 +11005,7 @@
 0x1001463c func   ?vfunc5@CNPC_VMingXiao@@QAEPAV1@I@Z CNPC_VMingXiao::vfunc5
 0x1001464b func   ?sub_10324500@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_10324500
 0x10014650 func   ?vfunc2@CTEPlayerDecal@@UAEPAV1@I@Z CTEPlayerDecal::vfunc2
+0x1001465a func   ?vfunc130@CNPC_VMingXiaoTentacle@@UAEXH@Z CNPC_VMingXiaoTentacle::vfunc130
 0x1001465f func   ?vfunc79@CBaseAnimatingOverlay@@QAEHXZ CBaseAnimatingOverlay::vfunc79
 0x10014664 func   ?sub_1032f930@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_1032f930
 0x1001466e func   ?vfunc82@CBreakableProp@@QAEHXZ CBreakableProp::vfunc82

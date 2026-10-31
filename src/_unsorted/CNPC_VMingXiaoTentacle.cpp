@@ -280,3 +280,15 @@ int CNPC_VMingXiaoTentacle::vfunc409()
     return 0x7a;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1039f000 size=0x17
+#include "CNPC_VMingXiaoTentacle.h"
+extern int g_1093bd34;
+
+// TARGET: CNPC_VMingXiaoTentacle::vfunc130
+void CNPC_VMingXiaoTentacle::vfunc130(int a)
+{
+	sub_10002b99(a);
+	g_1093bd34 = -1;
+}
+// END FUNCTION
