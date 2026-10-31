@@ -142931,6 +142931,15 @@ extern "C" CBaseEntity *npc_VBrujah()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10367940 size=0xc
+void __fastcall sub_10367960(void *pThis);
+void * __fastcall sub_10367940(void *pThis)
+{
+    sub_10367960(pThis);
+    return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10367960 size=0x33
 void sub_10007897();
 void sub_1001324b();

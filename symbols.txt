@@ -2645,6 +2645,7 @@
 0x10006299 func   ?sub_1042fde0@@YAII@Z sub_1042fde0
 0x1000629e func   ?vfunc546@CNPC_VCamera@@QAEHH@Z CNPC_VCamera::vfunc546
 0x100062b7 func   ?vfunc45@CSingleplayRules@@UAEXPAVCBaseEntity@@PAUCMPDamageInfo@@@Z CSingleplayRules::vfunc45
+0x100062bc func   ?sub_10367940@@YIPAXPAX@Z sub_10367940
 0x100062cb func   ?vfunc80@CSun@@UAEHXZ CSun::vfunc80
 0x100062d0 func   ?sub_1035ac80@@YAEXZ sub_1035ac80
 0x100062d5 func   ?vfunc82@CPhysMotor@@UAEHXZ CPhysMotor::vfunc82
