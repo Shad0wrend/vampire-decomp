@@ -49,7 +49,9 @@ public:
 	CAI_Motor *m_pMotor;	// +0x5d44
 	char pad5d48[0x5db4 - 0x5d48];
 	float m_flTime5db4;	// +0x5db4
-	char pad5db8[0x5f2c - 0x5db8];
+	char pad5db8[0x5dd0 - 0x5db8];
+	float m_v5dd0[3];	// +0x5dd0: a remembered position
+	char pad5ddc[0x5f2c - 0x5ddc];
 	char m_b5f2c;	// +0x5f2c
 	char pad5f2d[0x6078 - 0x5f2d];
 	char m_b6078;	// +0x6078
