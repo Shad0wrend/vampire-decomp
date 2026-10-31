@@ -79610,6 +79610,16 @@ void sub_101cf2f0(float *pValue, int mode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cf390 size=0x1a
+void sub_101cf3c0(int a, int b, int c, int d);
+
+// TARGET: sub_101cf390
+void sub_101cf390(int a, int b, int c)
+{
+	sub_101cf3c0(a, b, c, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cf4a0 size=0xd8
 #define SV(n) virtual void s##n();
 #define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)

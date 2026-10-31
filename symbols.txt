@@ -9283,6 +9283,7 @@
 0x1001141e func   ?sub_100bf480@CBitString@@QAEXH@Z CBitString::sub_100bf480
 0x10011428 func   ?vfunc2@CTEWorldDecal@@UAEPAV1@I@Z CTEWorldDecal::vfunc2
 0x1001142d func   ?vfunc336@CNPC_VTzimisceRunner@@QAEXXZ CNPC_VTzimisceRunner::vfunc336
+0x10011432 func   ?sub_101cf390@@YAXHHH@Z sub_101cf390
 0x10011437 func   ?sub_10137040@@YANM@Z sub_10137040
 0x1001143c func   ?sub_101042f0@@YAHXZ sub_101042f0
 0x10011441 func   ?vfunc223@CMomentaryRotButton@@UAE_NXZ CMomentaryRotButton::vfunc223
