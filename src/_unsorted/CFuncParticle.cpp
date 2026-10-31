@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100fc6c0 size=0x3
+#include "CFuncParticle.h"
+int CFuncParticle::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fca60 size=0xb6
 #include "CFuncParticle.h"
 #include "CEnvParticle.h"
