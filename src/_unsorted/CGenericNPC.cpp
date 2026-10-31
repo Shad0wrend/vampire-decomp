@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1034a2d0 size=0x3
+#include "CGenericNPC.h"
+int CGenericNPC::vfunc138()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034aa40 size=0x4b
 #include "CBaseEntity.h"
 #include "CGenericNPC.h"
