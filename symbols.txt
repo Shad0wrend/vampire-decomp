@@ -2629,6 +2629,7 @@
 0x1000629e func   ?vfunc546@CNPC_VCamera@@QAEHH@Z CNPC_VCamera::vfunc546
 0x100062b7 func   ?vfunc45@CSingleplayRules@@UAEXPAVCBaseEntity@@PAUCMPDamageInfo@@@Z CSingleplayRules::vfunc45
 0x100062cb func   ?vfunc80@CSun@@UAEHXZ CSun::vfunc80
+0x100062d0 func   ?sub_1035ac80@@YAEXZ sub_1035ac80
 0x100062d5 func   ?vfunc82@CPhysMotor@@UAEHXZ CPhysMotor::vfunc82
 0x100062da func   ?sub_1018cf20@CPointAngleSensor@@QAE_NPAVCBaseEntity@@0M@Z CPointAngleSensor::sub_1018cf20
 0x100062df func   ?vfunc4@CTEBeamEntPoint@@UAEXHH@Z CTEBeamEntPoint::vfunc4

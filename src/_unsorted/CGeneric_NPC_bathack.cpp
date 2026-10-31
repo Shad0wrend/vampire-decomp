@@ -1,6 +1,12 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1035ac80 size=0x6
+// TARGET: sub_1035ac80
+extern unsigned char g_10629da0;
+unsigned char __cdecl sub_1035ac80(void) { return g_10629da0; }
+// END FUNCTION
+
 // FUNCTION: 0x1035ace0 size=0x1d
 #include "CGeneric_NPC_bathack.h"
 struct A { int sub_10012300(int); };
