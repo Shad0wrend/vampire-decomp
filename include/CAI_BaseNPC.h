@@ -57,7 +57,7 @@ public:
 	virtual float *vfunc221();	// "CBaseEntity::GetAngles": the pointer to the three angle floats at +0x428
 	CAI_NPC_V(222) CAI_NPC_V(223) CAI_NPC_V(224) CAI_NPC_V(225) CAI_NPC_V(226) CAI_NPC_V(227) CAI_NPC_V(228) CAI_NPC_V(229)
 	CAI_NPC_V10(23) CAI_NPC_V10(24)
-	CAI_NPC_V(250) virtual bool vfunc251();	// slot 251 (+0x3ec): a boolean answer in al, asked by the animal task handlers (CNPC_VAnimal::vfunc444)
+	virtual float vfunc250(int a); virtual bool vfunc251();	// slot 251 (+0x3ec): a boolean answer in al, asked by the animal task handlers (CNPC_VAnimal::vfunc444)
 	CAI_NPC_V(252) CAI_NPC_V(253) CAI_NPC_V(254) CAI_NPC_V(255) CAI_NPC_V(256) CAI_NPC_V(257) CAI_NPC_V(258) CAI_NPC_V(259)
 	CAI_NPC_V10(26) CAI_NPC_V10(27) CAI_NPC_V10(28)
 	// slots 290..409
