@@ -164,6 +164,7 @@ public:
 	void sub_100a0b20();	// "CBaseEntity::ClearParent": scope trace (entity name), then the call through the stub at 0x1000b636
 	void sub_100a53d0(int a);	// "CBaseEntity::PhysicsTouchTriggers": scope trace (entity name), then slot 122 of the global at 0x1070b22c (edict at +0x2e0, a)
 	bool sub_100a5ad0();	// "CBaseEntity::VPhysicsInitSetup": scope trace (entity name), false without the object at +0x2e0, else slot 225 and sub_100b3b00, true
+	class IPhysicsObject *sub_100a5ea0(int solidType, int nSolidFlags, int bCreateAsleep, void *pSolidParams);	// "CBaseEntity::VPhysicsInitNormal" (stub 0x1000e78c): creates the physics object for the entity and returns it
 	void sub_100a6490(int pObject);	// "CBaseEntity::VPhysicsSetObject": scope trace (entity name), warns "Overwriting physics object for ..." when replacing an existing object at +0x36c with a non-null one, stores pObject at +0x36c
 	void sub_100a7d00(int info, int a, int b);	// "CBaseEntity::DispatchTraceAttack": scope trace (entity name), when slot 140(info->field 0x2c) is true calls slot 141(info, a, b)
 	void sub_100a8bf0(int a);	// "CBaseEntity::InputScriptHide": calls vfunc77
