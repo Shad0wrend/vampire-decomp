@@ -31,6 +31,14 @@ int CWeaponRanged_MingXiao_Spit::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10237950 size=0x6
+#include "CWeaponRanged_MingXiao_Spit.h"
+int CWeaponRanged_MingXiao_Spit::vfunc363()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a590 size=0x1e
 #include "CWeaponRanged_MingXiao_Spit.h"
 
