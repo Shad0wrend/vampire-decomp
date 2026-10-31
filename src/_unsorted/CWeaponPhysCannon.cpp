@@ -22,6 +22,17 @@ char CWeaponPhysCannon::vfunc312()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040dc40 size=0x18
+#include "CWeaponPhysCannon.h"
+
+// TARGET: CWeaponPhysCannon::vfunc299
+void CWeaponPhysCannon::vfunc299(const float *pVelocity)
+{
+	sub_1040dbb0();
+	sub_1001089d(pVelocity);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040dc70 size=0xc
 char __fastcall sub_1040dc70(char *self)
 {
