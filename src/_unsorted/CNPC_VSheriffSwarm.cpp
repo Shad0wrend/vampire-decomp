@@ -38,6 +38,15 @@ CNPC_VSheriffSwarm *CNPC_VSheriffSwarm::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b1d60 size=0x6
+extern unsigned char g_10651940;
+// TARGET: sub_103b1d60
+unsigned char sub_103b1d60()
+{
+    return g_10651940;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b1dc0 size=0x1d
 #include "CNPC_VSheriffSwarm.h"
 struct A { int sub_10012300(int); };
