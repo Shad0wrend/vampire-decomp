@@ -8,6 +8,7 @@
 #include "IPhysicsCollisionSolver.h"
 
 class CBaseEntity;
+struct gamevcollisionevent_t;
 
 struct CFrictionEntry_t
 {
