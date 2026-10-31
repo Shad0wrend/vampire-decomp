@@ -220,6 +220,12 @@ CNPC_VCamera *CNPC_VCamera::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103684f0 size=0x6
+// TARGET: sub_103684f0
+extern unsigned char g_1062f668;
+unsigned char __cdecl sub_103684f0(void) { return g_1062f668; }
+// END FUNCTION
+
 // FUNCTION: 0x10368550 size=0x1d
 #include "CNPC_VCamera.h"
 struct A { int sub_10012300(int); };
