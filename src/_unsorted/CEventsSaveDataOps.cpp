@@ -53,3 +53,10 @@ void CEventsSaveDataOps::vfunc1(void *pData, CRestore *pRestore)
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x100cdb00 size=0x3
+#include "CEventsSaveDataOps.h"
+void CEventsSaveDataOps::vfunc3(int a0)
+{
+}
+// END FUNCTION
