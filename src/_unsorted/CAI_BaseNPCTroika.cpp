@@ -1161,6 +1161,16 @@ void CAI_BaseNPCTroika::vfunc563(CBaseEntity *pEnt, const void *pGoal, const voi
 }
 // END FUNCTION
 
+// FUNCTION: 0x102953a0 size=0x30
+#include "CAI_BaseNPCTroika.h"
+bool CAI_BaseNPCTroika::vfunc564()
+{
+	if ((vfunc513() & 0x8000) && sub_1032e7b0() && !*((char *)this + 0x6078))
+		return false;
+	return CAI_BaseNPC::vfunc564();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102953e0 size=0x59
 // TARGET: CAI_BaseNPCTroika::vfunc592
 bool CAI_BaseNPCTroika::vfunc592()
