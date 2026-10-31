@@ -117176,6 +117176,14 @@ char CAI_BaseNPCTroika::sub_10281430()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10288510 size=0x16
+// TARGET: sub_10288510
+bool __fastcall sub_10288510(int *pThis, int, int *pOther)
+{
+	return *pThis != *pOther;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10288540 size=0x9
 struct CUnknown10288540 { int m_p; CUnknown10288540 *sub_10288540(); };
 CUnknown10288540 *CUnknown10288540::sub_10288540() { m_p = 0; return this; }
