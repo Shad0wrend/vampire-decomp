@@ -2352,6 +2352,7 @@
 0x10005213 func   ?sub_101d4f20@CUnknown101d4f20@@QAEXPAUCUnknown101d4f20_Value@@@Z CUnknown101d4f20::sub_101d4f20
 0x10005227 func   ?sub_10087de0@@YAXXZ sub_10087de0
 0x1000522c func   ?vfunc230@CPhysBox@@QAEXHH@Z CPhysBox::vfunc230
+0x10005236 func   ?sub_103055b0@CAI_Pathfinder@@QAEPAVCAI_Waypoint@@HHHHHH@Z CAI_Pathfinder::sub_103055b0
 0x1000523b func   ?sub_101f6390@@YAXXZ sub_101f6390
 0x10005240 func   ?sub_100f55d0@CUnk100f55d0@@QAEXH@Z CUnk100f55d0::sub_100f55d0
 0x10005245 func   ?sub_10221ca0@QuestJournal@@QAEDH@Z QuestJournal::sub_10221ca0

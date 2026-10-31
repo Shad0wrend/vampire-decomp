@@ -135613,6 +135613,104 @@ bool CAI_Pathfinder::sub_103048d0(int navType, const float *vecStart, const floa
 }
 // END FUNCTION
 
+// FUNCTION: 0x103055b0 size=0x26b
+#include "CAI_Pathfinder.h"
+#include "CVProfile.h"
+
+__declspec(dllimport) void vtune(bool bEnable);
+extern float g_1070d1b0[3];
+
+struct CycleCount
+{
+	unsigned __int64 m_Int64;
+	CycleCount() { m_Int64 = 0; }
+	void Sample()
+	{
+		unsigned long *pSample = (unsigned long *)&m_Int64;
+		__asm {
+			mov ecx, pSample
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+	void End()
+	{
+		CycleCount now;
+		now.Sample();
+		m_Int64 = now.m_Int64 - m_Int64;
+	}
+	void Add(const CycleCount &other) { m_Int64 += other.m_Int64; }
+};
+
+inline void VProfEnter(const char *pszName)
+{
+	CVProfile *prof = g_109f3648;
+	if (prof->m_enabled || !prof->m_bAtRoot) {
+		if (prof->m_pCurNode->m_pszName != pszName)
+			prof->m_pCurNode = prof->m_pCurNode->GetSubNode(pszName, 0, "Unaccounted");
+		CVProfNode *node = prof->m_pCurNode;
+		node->m_nCurFrameCalls++;
+		if (node->m_nRecursions++ == 0) {
+			((CycleCount *)&node->m_CurFrameTime)->Sample();
+			g_109f3648->PushGroup(node->m_nBudgetGroupID);
+		}
+		prof->m_bAtRoot = false;
+	}
+}
+
+inline void VProfExit()
+{
+	CVProfile *prof = g_109f3648;
+	if (!prof->m_bAtRoot || prof->m_enabled) {
+		CVProfNode *node = prof->m_pCurNode;
+		if (--node->m_nRecursions == 0 && node->m_nCurFrameCalls != 0) {
+			((CycleCount *)&node->m_CurFrameTime)->End();
+			((CycleCount *)&node->m_TotalTime)->Add(*(CycleCount *)&node->m_CurFrameTime);
+			g_109f3648->PopGroup();
+		}
+		if (node->m_nRecursions == 0)
+			prof->m_pCurNode = prof->m_pCurNode->m_pParent;
+		prof->m_bAtRoot = (prof->m_pCurNode == prof->m_pRoot);
+	}
+}
+
+inline void VProfExitInlined()
+{
+	CVProfile *prof = g_109f3648;
+	if (!prof->m_bAtRoot || prof->m_enabled) {
+		CVProfNode *node = prof->m_pCurNode;
+		if (--node->m_nRecursions == 0 && node->m_nCurFrameCalls != 0) {
+			((CycleCount *)&node->m_CurFrameTime)->End();
+			((CycleCount *)&node->m_TotalTime)->Add(*(CycleCount *)&node->m_CurFrameTime);
+			CVProfile *p = g_109f3648;
+			int depth = --p->m_nGroupStackDepth;
+			int top = p->m_GroupIDStack[depth + 1];
+			if (p->m_GroupIDStack[depth] != top && p->m_bVTuneGroupsEnabled && top == p->m_nVTuneGroupID)
+				vtune(false);
+		}
+		if (node->m_nRecursions == 0)
+			prof->m_pCurNode = prof->m_pCurNode->m_pParent;
+		prof->m_bAtRoot = (prof->m_pCurNode == prof->m_pRoot);
+	}
+}
+
+// TARGET: CAI_Pathfinder::sub_103055b0
+CAI_Waypoint *CAI_Pathfinder::sub_103055b0(int a1, int a2, int a3, int a4, int a5, int a6)
+{
+	VProfEnter("CAI_Pathfinder_BuildExtrapolationNodeRoute");
+	char route[12];
+	void *pOuter = m_pOuter;
+	if (sub_10300140((int)pOuter, a2, a4, a5, (int)route)) {
+		CAI_Waypoint *pResult = sub_10304e00(a1, route, a3, 0, 0, g_1070d1b0, 0, a6);
+		VProfExit();
+		return pResult;
+	}
+	VProfExitInlined();
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103058c0 size=0xc6
 #include "CAI_Pathfinder.h"
 
