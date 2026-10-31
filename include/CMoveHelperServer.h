@@ -37,4 +37,5 @@ public:
 	void *m_pTouchListDbg; // 0x18
 	CMoveHelperServer();
 	void sub_1000185c(); // as in CDataObjectAccessSystem (transplant)
+	void sub_1013eec0(CBaseEntity *pHost); // stores the host and runs the virtual slot 1 (vfunc1)
 };
