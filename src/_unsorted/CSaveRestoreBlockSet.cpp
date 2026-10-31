@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101a4830 size=0x4
+char * CSaveRestoreBlockSet::vfunc0()
+{
+    return (char *)this + 4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a4850 size=0x61
 #include "CUnknown101a5800.h"
 struct IHandlerView {
