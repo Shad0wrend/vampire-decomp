@@ -82,6 +82,8 @@ public:
 	void sub_101b2b30(const char *pszScript, UtlMem2 *pOut);	// "GetSoundIndexesForScript"-like: clears the output vector, then appends the index of every sound record whose script file is pszScript; DevWarning "Can't PrecacheSoundScript( '%s' ), file not in manifest '%s'" when the script is unknown
 	void sub_101b5180(const char *pszSound, const char *pszScript);	// "CSoundEmitterSystemBase::MoveSound": moves the sound record to another script file of the manifest (both script flags are marked changed); DevWarning for an unknown sound or a script file that is not in the manifest
 	CSoundParametersInternal *sub_101b3730(int index);	// the sound record of the index (stub 0x100130a7 is sub_101b2f60, this one is 0x10007469), null when the index is out of range
+	char sub_101b33f0(const char *pszName, CSoundParameters &params);	// "GetParametersForSound": fills the parameters of the sound record named pszName; false (DevMsg) when it is unknown or has no wave
+	int sub_101b4170(const char *pszName);	// "LookupSoundLevel"-like: the sound level of the named sound, 75 when it cannot be resolved
 	const char *sub_101b4c90(const CSoundWaveEntry *pWave);	// the wave name of an entry: looks its symbol up in the string table at +0xb0 (stub 0x10008981)
 	int sub_101b4740(bool bVerbose);	// "CheckForMissingWavFiles": counts the sound records whose waves are not on disk ("sound/<name>" without the leading wave characters), flags them (+0x48) and DevMsg's each missing file when bVerbose
 };
