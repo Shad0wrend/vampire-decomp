@@ -221,6 +221,18 @@ void CBaseDoor::vfunc113()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100efa70 size=0x30
+#include "CBaseDoor.h"
+void sub_101cf5c0(CBaseDoor *pDoor, Vector *pPos, int a);
+void CBaseDoor::vfunc156(int bOpen)
+{
+	if (!bOpen)
+		sub_101cf5c0(this, &m_vecPosition514, 0);
+	else
+		sub_101cf5c0(this, &m_vecPosition508, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100efab0 size=0x13
 #include "CBaseDoor.h"
 #include "CBaseEntitySlots.h"
