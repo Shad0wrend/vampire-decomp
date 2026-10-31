@@ -61036,6 +61036,24 @@ void CBasePlayer::sub_10170d60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10170e80 size=0x1a
+extern void *g_109f3890;
+
+struct CUnk10170e80
+{
+	char m_pad0000[0x20a9];
+	char m_sz20a9[32];
+
+	void sub_10170e80(const char *psz);
+};
+
+// TARGET: sub_10170e80
+void CUnk10170e80::sub_10170e80(const char *psz)
+{
+	((void (*)(char *, const char *, int))g_109f3890)(m_sz20a9, psz, 0x20);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10170eb0 size=0xec
 #include "CUnknown10170eb0.h"
 
