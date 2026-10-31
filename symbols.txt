@@ -7932,6 +7932,7 @@
 0x1000f975 func   ?vfunc327@CWeaponMelee@@UAEXXZ CWeaponMelee::vfunc327
 0x1000f97f func   ?sub_1003d770@@YAXPAUCTouchSlots@@PAUCTouchLink@@@Z sub_1003d770
 0x1000f984 func   ?vfunc329@CWeaponIGeneric@@UAEHXZ CWeaponIGeneric::vfunc329
+0x1000f989 func   ?vfunc362@CWeaponMelee_Claws_Protean5@@QAEHXZ CWeaponMelee_Claws_Protean5::vfunc362
 0x1000f98e func   ?vfunc320@CNPC_VHengeyokai@@QAEDHH@Z CNPC_VHengeyokai::vfunc320
 0x1000f993 func   _phys_animlink phys_animlink
 0x1000f9a7 func   ?sub_104303d0@@YAII@Z sub_104303d0
