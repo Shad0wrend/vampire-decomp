@@ -3000,6 +3000,7 @@
 0x10006be0 func   ?sub_103fe9c0@@YAHXZ sub_103fe9c0
 0x10006be5 func   ?sub_101a05b0@CSave@@QAEXHHH@Z CSave::sub_101a05b0
 0x10006bea func   ?sub_10181040@@YAHXZ sub_10181040
+0x10006bef func   ?vfunc81@CItemGDrugsPillBottle@@QAEHXZ CItemGDrugsPillBottle::vfunc81
 0x10006bf4 func   ?sub_100c32e0@@YAXPADPAX1HH@Z sub_100c32e0
 0x10006bfe func   ?sub_10336170@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_10336170
 0x10006c03 func   ?sub_100b0850@@YAXXZ sub_100b0850
