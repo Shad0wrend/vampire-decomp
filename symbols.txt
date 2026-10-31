@@ -10424,6 +10424,7 @@
 0x10014b73 func   ?vfunc113@CCineNPC@@QAEXXZ CCineNPC::vfunc113
 0x10014b7d func   ?vfunc138@CNPC_VBatSwarm@@UAEHXZ CNPC_VBatSwarm::vfunc138
 0x10014b82 func   ?sub_1021a740@CPropHacking@@QAEXXZ CPropHacking::sub_1021a740
+0x10014b87 func   ?vfunc81@CItemGRingSilver@@QAEHXZ CItemGRingSilver::vfunc81
 0x10014b8c func   ?sub_102e1c10@CAI_Motor@@QAEXMM@Z CAI_Motor::sub_102e1c10
 0x10014b96 func   ?sub_1034e610@@YGXPAUInputLike@@@Z sub_1034e610
 0x10014b9b func   ?sub_1023bb60@@YAHXZ sub_1023bb60
