@@ -26155,6 +26155,47 @@ int sub_100a5d80(CBaseEntity *pEntity, int a2, int a3, int a4, int a5)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a5ea0 size=0x211
+#include "ScopeTrace.h"
+#include "CCollisionProperty.h"
+#include "CEntityVSlots.h"
+
+class IPhysicsObject;
+IPhysicsObject *sub_1002e3a0(CBaseEntity *pEnt, int modelIndex, Vector *origin, Vector *angles, int params);
+
+#define COLL ((CCollisionProperty *)((char *)this + 0x270))
+
+// TARGET: CBaseEntity::sub_100a5ea0
+void *CBaseEntity::sub_100a5ea0(int solidType, int solidFlags, int createAsleep, int a4)
+{
+	ScopeTrace trace("CBaseEntity::VPhysicsInitNormal", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!sub_100a5ad0())
+		return 0;
+	{
+		ScopeTrace trace2("CBaseEntity::SetSolid", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+		COLL->sub_100dc480(solidType);
+	}
+	{
+		ScopeTrace trace3("CBaseEntity::SetSolidFlags", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+		COLL->sub_100dc580(solidFlags);
+	}
+	if (solidType == 0) {
+		sub_100b3b00();
+		return 0;
+	}
+	CEntityVSlots *pSlots = (CEntityVSlots *)this;
+	IPhysicsObject *pObject = sub_1002e3a0(this, vfunc8(), pSlots->slot217(), pSlots->slot219(), a4);
+	if (pObject) {
+		sub_100a6490((int)pObject);
+		vfunc93(7, 0);
+		if (!(char)createAsleep)
+			((CCollisionProperty *)pObject)->vfunc2();
+		sub_100b3b00();
+	}
+	return pObject;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a6490 size=0xc3
 extern int *g_109f3680;
 extern const char **g_109f3620;
