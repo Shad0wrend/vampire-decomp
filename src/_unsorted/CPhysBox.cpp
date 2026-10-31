@@ -31,6 +31,19 @@ datamap_t * CPhysBox::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004e110 size=0xa
+#include "CPhysBox.h"
+// TARGET: CPhysBox::sub_1004e110
+unsigned char CPhysBox::sub_1004e110()
+{
+    unsigned char b;
+    b = ((CBaseEntity *)this)->CBaseEntity::vfunc117();
+    b &= 0xfd;
+    b |= 8;
+    return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004e1c0 size=0x1f
 #include "CPhysBox.h"
 
