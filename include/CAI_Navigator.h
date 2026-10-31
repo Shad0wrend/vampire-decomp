@@ -182,6 +182,7 @@ public:
 	int sub_102ee3f0();	// stub 0x10011f77: the owner's task id for the finished move
 	float sub_102f1cf0();	// the distance from the owner's origin (slot 220) to the route's goal position: 2D while the flag at +0x18 is clear, else 3D
 	bool sub_102f05d0(const Vector *pTarget);	// true while the float at +0x3c is set; else asks the owner (slot 368) about the flat direction to pTarget and fails when it points away (dot with the answer's x / y at most the threshold 0x1049d984)
+	bool sub_102ede30(int a, int b);	// \"CAI_Navigator::PrependLocalAvoidance\": scope \"CAI_Navigator_PrependLocalAvoidance\"; BuildTriangulationRoute from the owner's origin (slot 220) to the route's goal position and, when there is a route, hands it to the waypoint list at route+0x24 (ret 8)
 	void *sub_102ecc40();	// stub 0x10009322: the entity the navigator is after, chosen by the navigation type (the owner's focus entity for types 1, 2 and 7, else the entity of the route's handle at +0x30)
 
 	int m_i14;
