@@ -103173,6 +103173,20 @@ void sub_1022ea80(void *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022eab0 size=0xe
+// TARGET: sub_1022eab0
+struct CUnknown1022eab0
+{
+    void sub_103388e0();
+};
+
+void sub_1022eab0(CUnknown1022eab0 *p)
+{
+    if (p)
+        p->sub_103388e0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022ead0 size=0x63
 #include "CUnknown101d5bd0.h"
 #include "COutputEvent.h"
