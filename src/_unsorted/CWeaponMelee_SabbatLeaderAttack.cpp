@@ -20,6 +20,17 @@ int CWeaponMelee_SabbatLeaderAttack::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e9000 size=0x6
+#include "CWeaponMelee_SabbatLeaderAttack.h"
+namespace lifted {
+extern char g_10674b50;
+}
+int CWeaponMelee_SabbatLeaderAttack::vfunc362()
+{
+    return (int)&lifted::g_10674b50;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103eced0 size=0x1e
 #include "CWeaponMelee_SabbatLeaderAttack.h"
 
