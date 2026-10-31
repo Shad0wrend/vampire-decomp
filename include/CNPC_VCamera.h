@@ -562,7 +562,7 @@ public:
 	virtual bool vfunc510();
 	virtual void vfunc511();
 	virtual void vfunc512();
-	virtual void vfunc513();
+	virtual unsigned int vfunc513();
 	virtual void vfunc514();
 	virtual void vfunc515();
 	virtual void vfunc516();
