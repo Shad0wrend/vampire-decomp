@@ -29,11 +29,7 @@ public:
 	char pad270[0x450 - 0x270];
 	float m_flVolume0450;	// 0x450
 	int m_n0454;
-	char pad0458[0x494 - 0x458];
-	int m_n0494;
-	char pad0498[0x4a4 - 0x498];
-	int m_n04a4;
-	char pad04a8[0x4bc - 0x4a8];
+	dynpitchvol_t m_dpv;	// 0x458: the pitch / volume modulation state (0x64 bytes)
 	char m_b04bc;
 	char m_b04bd;
 	char pad04be[2];
