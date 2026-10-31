@@ -103,6 +103,13 @@ float CAI_BaseNPC::vfunc471()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026a8d0 size=0x5
+bool CAI_BaseNPC::vfunc566(CBaseEntity * a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026a8f0 size=0x8
 // TARGET: CAI_BaseNPC::vfunc567
 int CAI_BaseNPC::vfunc567(int unused)
