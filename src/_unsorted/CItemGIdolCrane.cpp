@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10405440 size=0x6
+#include "CItemGIdolCrane.h"
+namespace lifted {
+extern char g_10946980;
+}
+int CItemGIdolCrane::vfunc80()
+{
+    return (int)&lifted::g_10946980;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10405460 size=0x3
 #include "CItemGIdolCrane.h"
 int CItemGIdolCrane::vfunc81()
