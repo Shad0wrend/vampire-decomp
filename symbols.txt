@@ -3797,6 +3797,7 @@
 0x10008878 func   ?sub_10063f90@@YAXAAVCRecipientFilter@@MPBVVector@@HMMH@Z sub_10063f90
 0x1000887d func   ?sub_101eda20@CUnknown101ed9e0@@QAE_NPAX@Z CUnknown101ed9e0::sub_101eda20
 0x10008887 func   ?vfunc489@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc489
+0x1000888c func   ?RotateLeft@?$CUtlRBTree@UCSoundEmitterRecord@@H@@QAEXH@Z CUtlRBTree<CSoundEmitterRecord,int>::RotateLeft
 0x10008891 func   ?sub_1006a990@@YAXPAXHPBVVector@@1H@Z sub_1006a990
 0x10008896 func   ?sub_100b4970@UtlMem@@QAEXXZ UtlMem::sub_100b4970
 0x1000889b func   ?sub_10093ef0@CBaseAnimating@@QAEHXZ CBaseAnimating::sub_10093ef0
