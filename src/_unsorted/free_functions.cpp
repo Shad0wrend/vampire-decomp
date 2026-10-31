@@ -99705,6 +99705,39 @@ int sub_10210790()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10210ac0 size=0x30
+#include "CTriggerDisciplineContext.h"
+
+struct variant_10210ac0 {
+	int iVal;
+	int m_pad04;
+	int m_pad08;
+	int m_pad0c;
+	int fieldType;
+	int Int() const
+	{
+		if (fieldType == 4)
+			return iVal;
+		return 0;
+	}
+};
+struct InputData_10210ac0 {
+	int m_pad00;
+	int m_pad04;
+	variant_10210ac0 value;
+};
+void sub_10210bc0();
+
+void CTriggerDisciplineContext::sub_10210ac0(void *pInputData)
+{
+	InputData_10210ac0 *p = (InputData_10210ac0 *)pInputData;
+	int n = p->value.Int();
+	if (n <= 5)
+		*(int *)((char *)this + 0x598) = n;
+	sub_10210bc0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10210b00 size=0x30
 #include "CTriggerDisciplineContext.h"
 
