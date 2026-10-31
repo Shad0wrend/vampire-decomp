@@ -3385,6 +3385,7 @@
 0x1000770c func   ?vfunc561@CNPC_VWerewolf@@QAEXHH@Z CNPC_VWerewolf::vfunc561
 0x10007711 func   ?vfunc451@CNPC_VSheriffSwarm@@UAEHXZ CNPC_VSheriffSwarm::vfunc451
 0x1000771b func   ?vfunc82@CTriggerProximity@@UAEPAUdatamap_t@@XZ CTriggerProximity::vfunc82
+0x1000772a func   ?vfunc81@CItemGGuyMagazine@@QAEHXZ CItemGGuyMagazine::vfunc81
 0x1000772f func   ?sub_103d7420@CNPC_VWerewolf@@QAEXPAVCHintData_WW@@@Z CNPC_VWerewolf::sub_103d7420
 0x10007734 func   ?sub_100bc490@bf_write@@QAEPAV1@PBDPAXHH@Z bf_write::sub_100bc490
 0x10007739 func   ?vfunc363@CNPCMaker_Fleshpile@@UAE_NH@Z CNPCMaker_Fleshpile::vfunc363
