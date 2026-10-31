@@ -67,6 +67,17 @@ datamap_t * CNPC_VBatSwarm::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103673b0 size=0x14
+#include "CNPC_VBatSwarm.h"
+
+// TARGET: CNPC_VBatSwarm::vfunc420
+void CNPC_VBatSwarm::vfunc420()
+{
+	((CAI_BaseNPC *)this)->CAI_BaseNPC::vfunc420();
+	*(int *)((char *)this + 0x5de4) = 0x477fff00;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103673e0 size=0x6
 #include "CNPC_VBatSwarm.h"
 int CNPC_VBatSwarm::vfunc473()
