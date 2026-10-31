@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10404980 size=0x6
+#include "CItemGMercurioJournal.h"
+namespace lifted {
+extern char g_10949644;
+}
+int CItemGMercurioJournal::vfunc80()
+{
+    return (int)&lifted::g_10949644;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104049a0 size=0x3
 #include "CItemGMercurioJournal.h"
 int CItemGMercurioJournal::vfunc81()
