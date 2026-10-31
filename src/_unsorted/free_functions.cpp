@@ -12724,6 +12724,19 @@ void CUnknown1006c1c0::sub_1006c1c0(int op, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006c470 size=0x14
+struct CUnit1006c470
+{
+	void sub_1006c210(int a, int *b);
+};
+
+// TARGET: sub_1006c470
+void __cdecl sub_1006c470(CUnit1006c470 *pObj, int a, int b)
+{
+	pObj->sub_1006c210(a, &b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006c4a0 size=0x3e
 #include "vampire.h"
 #include "CUtlBuffer.h"
