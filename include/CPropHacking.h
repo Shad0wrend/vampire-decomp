@@ -90,7 +90,11 @@ public:
 	CPropHackingRecord *m_pRecords09a0;	// 0x9a0
 	char m_pad09a4[0x9ac - 0x9a4];
 	int m_n09ac;	// 0x9ac
-	char m_pad09b0[0x9dc - 0x9b0];
+	char m_pad09b0[4];
+	void *m_p09b4;	// 0x9b4: array of 0x2b4 byte records
+	char m_pad09b8[0x9c0 - 0x9b8];
+	int m_n09c0;	// 0x9c0: the count of the records at +0x9b4
+	char m_pad09c4[0x9dc - 0x9c4];
 	int m_n09dc;	// 0x9dc
 	int m_n09e0;	// 0x9e0
 	float m_flDelay09e4;	// 0x9e4
