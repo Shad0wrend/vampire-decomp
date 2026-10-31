@@ -89622,6 +89622,21 @@ bool CUnknown101f0e50::sub_101f18f0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f1920 size=0x18
+struct CUnk101f1920 {
+    char pad[0x14];
+    int m_14;
+    bool sub_101f1920(int index);
+};
+
+bool CUnk101f1920::sub_101f1920(int index)
+{
+    if (index != -1 && index < m_14)
+        return true;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f1950 size=0x4d
 extern "C" int __cdecl _strcmpi(const char *, const char *);
 struct CNamePtr {
