@@ -71339,6 +71339,16 @@ void sub_101af030()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101af0a0 size=0x14
+#include "vampire.h"
+
+// TARGET: sub_101af0a0
+void sub_101af0a0(int a)
+{
+	engine->vfunc55((const char *)a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101af0d0 size=0x18a
 #include "CUnknown1070b244.h"
 #include "CUnknown1070b248.h"
