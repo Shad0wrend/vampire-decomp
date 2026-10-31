@@ -1200,6 +1200,7 @@
 0x100032ec func   ?sub_101ccc80@@YAHPAPAVCBaseEntity@@HPBM1IH@Z sub_101ccc80
 0x100032f6 func   ?vfunc5@CEntityFlame@@QAEPAV1@I@Z CEntityFlame::vfunc5
 0x100032fb func   ?sub_100cae90@CMomentaryRotButton@@QAEXXZ CMomentaryRotButton::sub_100cae90
+0x10003300 func   ?vfunc80@CItemGEyes@@QAEHXZ CItemGEyes::vfunc80
 0x10003305 func   ?sub_1030fe50@CUnknown1030fe50@@QAEXXZ CUnknown1030fe50::sub_1030fe50
 0x1000330a func   ?vfunc564@CAI_BaseNPCTroika@@UAE_NXZ CAI_BaseNPCTroika::vfunc564
 0x10003319 func   ?sub_100beba0@bf_read@@QAEMXZ bf_read::sub_100beba0

@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10403960 size=0x6
+#include "CItemGEyes.h"
+namespace lifted {
+extern char g_10945ee4;
+}
+int CItemGEyes::vfunc80()
+{
+    return (int)&lifted::g_10945ee4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10403980 size=0x3
 #include "CItemGEyes.h"
 int CItemGEyes::vfunc81()
