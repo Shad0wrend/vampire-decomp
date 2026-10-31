@@ -31,6 +31,14 @@ int CWeaponRanged_Pistol_Anaconda::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102346d0 size=0x6
+#include "CWeaponRanged_Pistol_Anaconda.h"
+int CWeaponRanged_Pistol_Anaconda::vfunc363()
+{
+    return 0xf5;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a320 size=0x1e
 #include "CWeaponRanged_Pistol_Anaconda.h"
 
