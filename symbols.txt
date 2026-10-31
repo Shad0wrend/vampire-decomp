@@ -9216,6 +9216,7 @@
 0x1001111c func   ?sub_10139ac0@@YAXHHH@Z sub_10139ac0
 0x10011121 func   ?sub_101e9f10@CUnknown101e9f10@@QAEDH@Z CUnknown101e9f10::sub_101e9f10
 0x10011135 func   ?sub_10223820@CBaseKeyframedMover@@QAEXPAUinputdata_t@@@Z CBaseKeyframedMover::sub_10223820
+0x1001113a func   ?sub_102bec30@CUnk102bec30@@QAEXXZ CUnk102bec30::sub_102bec30
 0x1001113f func   ?vfunc306@CBaseCombatWeapon@@UAEXH@Z CBaseCombatWeapon::vfunc306
 0x10011144 func   ?sub_1003b850@Vector@@QBE_NABV1@@Z Vector::sub_1003b850
 0x10011149 func   ?sub_10079d40@SDumpOutput@@QAEXHPAUCDumpActor10079d40@@@Z SDumpOutput::sub_10079d40

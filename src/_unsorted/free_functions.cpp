@@ -122959,6 +122959,24 @@ int sub_102beb30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102bec30 size=0x1b
+// TARGET: sub_102bec30
+int __cdecl sub_102bec60(const void *a, const void *b);
+extern "C" void __cdecl qsort(void *base, unsigned int num, unsigned int width, int (__cdecl *compare)(const void *, const void *));
+struct CUnk102bec30 {
+    void *m_p0;
+    int m_pad4[2];
+    int m_n0c;
+    void sub_102bec30();
+};
+void CUnk102bec30::sub_102bec30()
+{
+    if (m_n0c != 0) {
+        qsort(m_p0, m_n0c, 8, sub_102bec60);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102bec60 size=0x11
 int sub_102bec60(int *a, int *b)
 {
