@@ -5375,6 +5375,7 @@
 0x1000a795 func   ?vfunc22@CSingleplayRules@@UAE_NXZ CSingleplayRules::vfunc22
 0x1000a79a func   ?sub_10102030@CMessage@@QAEXPAUinputdata_t@@@Z CMessage::sub_10102030
 0x1000a79f func   ?sub_10057510@CFireSmokeUnit10057510@@QAEXH@Z CFireSmokeUnit10057510::sub_10057510
+0x1000a7a4 func   ?vfunc5@CTriggerTeleport@@QAEPAXI@Z CTriggerTeleport::vfunc5
 0x1000a7a9 func   ?vfunc82@CBaseCombatCharacter@@UAEPAUdatamap_t@@XZ CBaseCombatCharacter::vfunc82
 0x1000a7ae func   ?vfunc362@CWeaponRanged_Smg_Mac10@@QAEHXZ CWeaponRanged_Smg_Mac10::vfunc362
 0x1000a7b3 func   ?sub_10400f60@@YAHXZ sub_10400f60
