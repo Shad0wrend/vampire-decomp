@@ -6131,6 +6131,7 @@
 0x1000caf4 func   ?sub_1002e970@@YAPAXHHHPAD@Z sub_1002e970
 0x1000cb03 func   ?sub_1019e5d0@CRopeKeyframe@@QAEXXZ CRopeKeyframe::sub_1019e5d0
 0x1000cb08 func   ?vfunc321@CWeaponPhysCannon@@UAEXXZ CWeaponPhysCannon::vfunc321
+0x1000cb12 func   ?vfunc615@CNPC_VRat@@QAE_NXZ CNPC_VRat::vfunc615
 0x1000cb17 func   ?vfunc103@CScriptedSentence@@QAEXXZ CScriptedSentence::vfunc103
 0x1000cb1c func   ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z CEntView184::sub_10267260
 0x1000cb21 func   ?vfunc5@CAI_Hint@@UAEPAV1@I@Z CAI_Hint::vfunc5

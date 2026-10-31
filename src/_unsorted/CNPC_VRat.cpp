@@ -19,6 +19,14 @@ bool CNPC_VRatX::sub_103ad6d0(int nIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ad790 size=0x3
+#include "CNPC_VRat.h"
+bool CNPC_VRat::vfunc615()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ad930 size=0x1e
 #include "CNPC_VRat.h"
 
