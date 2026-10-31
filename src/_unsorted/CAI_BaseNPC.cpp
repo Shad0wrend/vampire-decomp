@@ -1272,6 +1272,22 @@ bool CAI_BaseNPC::vfunc486()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027a640 size=0x5d
+#include "CAI_BaseNPC.h"
+#include "globalvars.h"
+#include "engineiface.h"
+// TARGET: CAI_BaseNPC::vfunc487
+void CAI_BaseNPC::vfunc487()
+{
+	*(float *)((char *)this + 0x5ce8) = enginerandom->vfunc1(1.5f, 2.0f) + gpGlobals->curtime;
+	if (*(int *)((char *)this + 0x5bb0) <= 0) {
+		char *pSquad = *(char **)((char *)this + 0x5da4);
+		if (pSquad)
+			*(float *)(pSquad + 0x60) = enginerandom->vfunc1(1.5f, 2.0f) + gpGlobals->curtime;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027c160 size=0x65
 #include "CAI_BaseNPC.h"
 #include "CRestore.h"
