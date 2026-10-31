@@ -3,10 +3,19 @@
 #pragma once
 #include "CBaseEntity.h"
 
+struct inputdata_t;
+
 class CPhysConvert : public CBaseEntity
 {
 public:
 	CPhysConvert *sub_100501f0();
+	void sub_100502b0(inputdata_t *pInput);	// "CPhysConvert::InputConvertTarget": fires the output, finds the swap entity (+0x468) and every entity named by the target (+0x20c), and replaces each one's physics with the swap entity's
 public:
     virtual datamap_t * vfunc82();
+
+	char m_pad03e0[0x450 - 0x3e0];
+	char m_OnConvert[0x18];	// 0x450: a COutputEvent
+	const char *m_swapModel468;	// 0x468: the name of the swap entity
+	char m_bFlag46c;	// 0x46c: set the collision group 1 on the new entity
+	char m_bFlag46d;	// 0x46d: add (else remove) flag2 bit 2 on the new entity
 };
