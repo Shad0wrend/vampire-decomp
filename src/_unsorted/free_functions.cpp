@@ -128399,6 +128399,17 @@ char CAI_Pathfinder::sub_102f1900(int nodeNum, unsigned int collisionMask)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f1d90 size=0x11
+#include "CAI_Navigator.h"
+
+// TARGET: sub_102f1d90
+float __fastcall sub_102f1d90(CAI_Navigator *pThis)
+{
+	CAI_NavWaypoint *pWaypoint = pThis->m_p30->m_pWaypoint.m_p;
+	return pThis->sub_102f1cf0() + *(float *)((char *)pWaypoint + 0x14);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f1dc0 size=0x180
 #include "CAI_Navigator.h"
 #include "CAI_BaseNPC.h"
