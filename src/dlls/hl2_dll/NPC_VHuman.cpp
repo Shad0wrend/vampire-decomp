@@ -1,6 +1,95 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103847f0 size=0x22f
+#include "CNPC_VHuman.h"
+#include "CAI_Motor.h"
+
+struct CEnemiesView { void sub_102dfed0(Vector *pVec, int pEnemy); };
+struct CHumanMotorView { void sub_102e0b40(); };
+struct CHumanView
+{
+	char m_pad0000[0x1568];
+	int m_n1568;
+	char m_pad156c[0x5d44 - 0x156c];
+	CAI_Motor *m_pMotor5d44;
+	char m_pad5d48[0x5d9c - 0x5d48];
+	float m_f5d9c;
+};
+struct CHumanWeaponView { char m_pad[0x8c0]; float m_f8c0; };
+struct CHumanSeqView { char m_pad[0x2d8]; int m_n2d8; };
+struct CHumanAnimView { char m_pad[0x6f0]; int m_n6f0; CHumanSeqView *sub_1008d990(int n); };
+struct CHumanEntView { char m_pad[0x9c]; CHumanAnimView *m_p9c; };
+struct CHumanMoveView { void sub_102ee1c0(float f); };
+struct CHumanBaseView { void sub_102a1910(const int *pTask); };
+
+float sub_102d61b0(int a);
+
+// TARGET: CNPC_VHuman::vfunc442
+void CNPC_VHuman::vfunc442(const int *pTask)
+{
+	CHumanView *pView = (CHumanView *)this;
+	switch (pTask[0]) {
+	case 0x9f:
+		if (sub_1032e7b0()) {
+			CHumanMoveView *pMove = (CHumanMoveView *)m_p5d34;
+			float f = sub_102d61b0(pView->m_n1568) * 2;
+			pMove->sub_102ee1c0(((CHumanWeaponView *)sub_1032e7b0())->m_f8c0 * *(const float *)&pTask[1] + f);
+			sub_10273e80(0);
+			return;
+		}
+		m_pszFile1b44 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VHuman.cpp";
+		m_nLine1b48 = 0x138;
+		vfunc448(3);
+		return;
+	case 0x89:
+		pView->m_f5d9c = gpGlobals->curtime;
+		sub_10289ee0(0x4b);
+		return;
+	case 0x8a:
+		pView->m_f5d9c = gpGlobals->curtime;
+		sub_10289ee0(0x4b);
+		return;
+	case 0x8b: {
+		int act = 0x51;
+		CHumanEntView *pEnemy = (CHumanEntView *)vfunc167();
+		if (pEnemy) {
+			CHumanAnimView *pAnim = pEnemy->m_p9c;
+			if (pAnim) {
+				Vector vec;
+				((CHumanMotorView *)pView->m_pMotor5d44)->sub_102e0b40();
+				((CEnemiesView *)vfunc541())->sub_102dfed0(&vec, vfunc167());
+				pView->m_pMotor5d44->sub_102e2020(&vec.x, 0);
+				CHumanSeqView *pSeq = pAnim->sub_1008d990(pAnim->m_n6f0);
+				if (pSeq && pSeq->m_n2d8 >= 0)
+					act = pSeq->m_n2d8;
+			}
+		}
+		sub_10289ee0(act);
+		return;
+	}
+	case 0x8e:
+		sub_10289ee0(0x52);
+		return;
+	case 0x8f:
+		sub_10289ee0(0x1156);
+		return;
+	case 0x8d:
+		sub_10289ee0(0x1154);
+		return;
+	case 0x90:
+		sub_10289ee0(0x1152);
+		return;
+	case 0x91:
+		sub_10289ee0(0x1153);
+		return;
+	default:
+		((CHumanBaseView *)this)->sub_102a1910(pTask);
+		return;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10384ee0 size=0x154
 #include "CNPC_VHuman.h"
 #include "CUnknown102e0150.h"
