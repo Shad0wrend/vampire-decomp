@@ -138052,6 +138052,29 @@ void sub_10352f00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10352f70 size=0x63
+class CBaseEntity;
+CBaseEntity *sub_100a99d0(const char *pszClass, const float *pOrigin, const float *pAngles, CBaseEntity *pOwner);
+extern float g_1070d1b0[3];
+extern float g_1070d9d0[3];
+extern CBaseEntity *g_107284bc;
+void *operator new(unsigned int);
+struct CHalfLife2Ctor { void *sub_10355740(); };
+// TARGET: sub_10352f70
+void *sub_10352f70()
+{
+    engine->vfunc59("exec game.cfg\n");
+    engine->vfunc60();
+    g_107284bc = sub_100a99d0("player_manager", g_1070d1b0, g_1070d9d0, 0);
+    if (!gpGlobals->m_b30) {
+        CHalfLife2Ctor *p = (CHalfLife2Ctor *)operator new(8);
+        if (p)
+            return p->sub_10355740();
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10353100 size=0x6
 namespace lifted {
 extern char g_10938628;
