@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1004fbf0 size=0xd
+// TARGET: CBaseToggle::vfunc109
+#include "CBaseToggle.h"
+
+bool CBaseToggle::vfunc109(const char *a, float b)
+{
+    return ((CBaseEntity *)this)->CBaseEntity::vfunc109(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0c60 size=0x6
 #include "CBaseToggle.h"
 namespace lifted {
