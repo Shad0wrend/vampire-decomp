@@ -40,6 +40,21 @@ void CServerGameClients::vfunc9(CServerGameClients_Edict *pEdict, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011d450 size=0x30
+#include "CGlobalEntityList.h"
+#include "CServerGameClients.h"
+extern CGlobalEntityList g_106eb5d8;
+struct CEntV114 { virtual void v0(); };
+void CServerGameClients::vfunc10()
+{
+	CBaseEntity *pEnt = g_106eb5d8.sub_100f7060(0);
+	while (pEnt) {
+		(*(void (__fastcall ***)(CBaseEntity *))pEnt)[114](pEnt);
+		pEnt = g_106eb5d8.sub_100f7060(pEnt);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011d490 size=0xc
 extern int g_1070b25c;
 void __fastcall sub_1011d490(void *, int, int value)
