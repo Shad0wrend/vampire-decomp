@@ -2248,6 +2248,11 @@ void CBaseEntity::vfunc93(int moveType, int moveCollide)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ab430 size=0x3
+// TARGET: sub_100ab430
+void __stdcall sub_100ab430(int, int) {}
+// END FUNCTION
+
 // FUNCTION: 0x100ab450 size=0x79
 extern char g_106b8540[];
 struct ScopeTraceEntry { const char *a; const char *b; const char *c; };
