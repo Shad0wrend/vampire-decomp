@@ -9,6 +9,14 @@ bool CItemContainer::vfunc363(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102088f0 size=0x5
+#include "CItemContainer.h"
+bool CItemContainer::vfunc362(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10208950 size=0x3
 #include "CItemContainer.h"
 void CItemContainer::vfunc316(int a0, int a1, int a2)
