@@ -125914,6 +125914,15 @@ int CUnknown102ee140::sub_102ee140()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ee160 size=0x30
+#include "CUnknown102ee120.h"
+#include "CBaseEntity.h"
+CBaseEntity *CUnknown102ee120::sub_102ee160()
+{
+	return m_unk30->m_hTarget30.Get();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ee1a0 size=0x7
 struct CUnknown102ee1a0 { float sub_102ee1a0(); };
 float CUnknown102ee1a0::sub_102ee1a0()
