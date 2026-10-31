@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10234500 size=0x3
+#include "CWeaponRanged_Pistol_Anaconda.h"
+int CWeaponRanged_Pistol_Anaconda::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a320 size=0x1e
 #include "CWeaponRanged_Pistol_Anaconda.h"
 
