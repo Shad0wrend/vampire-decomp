@@ -13,6 +13,8 @@ public:
 	void sub_10376c10();	// resets the counter at +0x6664, then for every entry of the global object list (count at 0x1093ae9c) counts the ones whose object at +0x9c answers slot 404 with 1 and calls slot 544 of this
 	int vfunc438();	// slot 438 "CNPC_VFrenzyShadow::SelectSchedule": in state 2 with at most one shadow counted (+0x6664), a squad-less target that slot 167's object accepts (slot 158) and no condition 0x59 / no flag at +0x6668 gives schedule 0x161 (stamping source line 0x133), else the base implementation
 	int sub_10015ad2();	// CNPC_VHuman::vfunc438, called directly
+	void sub_103a4700();	// CNPC_VPlayerController::vfunc431 (stub 0x10012c6f), called directly
+	void vfunc431_impl_unused();
 	char sub_10014df8(int condition);	// "HasCondition" (stub of 0x10269aa0), called directly
 	void vfunc420();	// slot 420 "CNPC_VFrenzyShadow::NPCInit": gives the NPC its \"item_w_fists\" weapon (flag 0x40 on it), the player controller reset, stamps source line 0xe4, ideal state 0xb, flag 0x5ddf at +0x5b84, the senses' byte +0x80, clears the shadow counter and the flag at +0x6668, +0x1488 = 8.0f, +0x65f7 = 1, then counts the shadows
 	char sub_10334c20(void *pWeapon);	// stub 0x100112d9: whether the NPC can take the weapon
