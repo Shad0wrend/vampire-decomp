@@ -103,6 +103,17 @@ int CBaseTerminal::vfunc274()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10217f20 size=0x11
+#include "CBaseTerminal.h"
+namespace lifted {
+int sub_10013f98(int, int);
+}
+int CBaseTerminal::vfunc278(int a0)
+{
+    return lifted::sub_10013f98((int)this, a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10218020 size=0x1
 #include "CBaseTerminal.h"
 void CBaseTerminal::vfunc275()
