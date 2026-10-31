@@ -12,6 +12,17 @@ float CAI_TestHull::vfunc522()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d72d0 size=0x7
+#include "CAI_TestHull.h"
+namespace lifted {
+extern float g_10462950;
+}
+float CAI_TestHull::vfunc523()
+{
+    return lifted::g_10462950;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d72f0 size=0x16b
 #include "ScopeTrace.h"
 #include "CCollisionProperty.h"
