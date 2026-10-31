@@ -132530,6 +132530,21 @@ void CUnknown102f7ca0::sub_102f7ca0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f8ec0 size=0x18
+// TARGET: sub_102f8ec0
+void sub_100f4460(int a);
+struct CUnk102f8ec0 {
+    char pad[0xc];
+    void *m_p0c;
+    void sub_102f8ec0();
+};
+void CUnk102f8ec0::sub_102f8ec0()
+{
+    sub_100f4460(0);
+    operator delete(m_p0c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f8ef0 size=0x8
 void __fastcall sub_102f8ef0(int *p)
 {
