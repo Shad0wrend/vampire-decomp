@@ -59,7 +59,7 @@ public:
 	virtual int vfunc585(int a);	// the value offered to another NPC's slot 482
 	virtual int vfunc586(int);
 	virtual char vfunc587(int unused);	// slot 587: true when the NPC may be interrupted: not busy with sub_10337f30, no value at +0x128, no count at +0x5bb4, bit 4 of +0x5b84 clear, not busy with discipline, and either the count at +0x6354 or the one at +0x6358 is at most 2
-	virtual void vfunc588(); virtual void vfunc589();
+	virtual void vfunc588(); virtual void vfunc589(int a, int b);
 	virtual char vfunc590();	// slot 590: true when the NPC may act and its state (+0xfec) is one of a fixed set (1, 9, 0x13, 0x30, 0x4b, 0x4d, 0x51, 0x73..0x8a, 0xcb5, 0xd25, 0x1121, 0x1157..0x1158)
 	virtual bool vfunc591(); virtual bool vfunc592(); virtual int vfunc593(); virtual void vfunc594(); virtual void vfunc595();
 	virtual void vfunc596(int a); virtual int vfunc597(int, int); virtual void vfunc598(CBaseEntity *pEnt);	// slot 598: forgets pEnt (sub_10332ca0(pEnt, 4, 0), clears the focus / target when it is pEnt, drops its record from the memory list of slot 541)
