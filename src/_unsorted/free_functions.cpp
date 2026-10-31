@@ -144645,6 +144645,24 @@ void CNPC_VGhoulCroucher::sub_1037b6e0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037b870 size=0xe
+// TARGET: sub_1037b870
+extern int g_1063abcc[];
+
+struct CUnknown1037b870
+{
+    char pad[0x6668];
+    int m_i6668;
+
+    int sub_1037b870();
+};
+
+int CUnknown1037b870::sub_1037b870()
+{
+    return g_1063abcc[m_i6668];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037bb20 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
