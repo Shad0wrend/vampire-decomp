@@ -148595,6 +148595,16 @@ extern "C" CBaseEntity *npc_VToreador()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b5400 size=0xc
+void __fastcall sub_103b5420(void *pThis);
+
+void * __fastcall sub_103b5400(void *pThis)
+{
+	sub_103b5420(pThis);
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b5420 size=0x33
 void sub_10007897();
 void sub_10009fa7();
