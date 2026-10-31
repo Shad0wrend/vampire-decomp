@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101a9620 size=0x6
+#include "CCineAISchedule.h"
+namespace lifted {
+extern char g_10593c9c;
+}
+int CCineAISchedule::vfunc82()
+{
+    return (int)&lifted::g_10593c9c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a9730 size=0x2e
 #include "CCineAISchedule.h"
 // TARGET: CCineAISchedule::vfunc103
