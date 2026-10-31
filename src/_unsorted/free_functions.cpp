@@ -46096,6 +46096,18 @@ void CBreakable::sub_1010ddc0(void *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010e530 size=0x62
+#include <stdlib.h>
+// TARGET: Vector::sub_1010e530
+void Vector::sub_1010e530(float minVal, float maxVal)
+{
+	float scale = (maxVal - minVal) * 3.051851e-5f;
+	x = rand() * scale + minVal;
+	y = rand() * scale + minVal;
+	z = rand() * scale + minVal;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010e620 size=0xef
 #include "CBreakable.h"
 #include "CCollisionProperty.h"
