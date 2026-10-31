@@ -5075,6 +5075,7 @@
 0x1000a696 func   ?sub_100f83b0@CFinder@@QAEPAUCEnt@@PAU2@H@Z CFinder::sub_100f83b0
 0x1000a69b func   ?sub_100f7890@CGlobalEntityList@@QAEPAVCBaseEntity@@PAV2@PBD@Z CGlobalEntityList::sub_100f7890
 0x1000a6aa func   ?sub_100bf740@CFuncIllusionary@@QAEEXZ CFuncIllusionary::sub_100bf740
+0x1000a6b9 func   ?vfunc138@CNPC_Crow@@QAEHXZ CNPC_Crow::vfunc138
 0x1000a6be func   ?vfunc3@CAI_Navigator@@UAEXH@Z CAI_Navigator::vfunc3
 0x1000a6c3 func   ?sub_1010a7f0@CFire@@QAEXXZ CFire::sub_1010a7f0
 0x1000a6c8 func   ?sub_1023adb0@CDecal@@QAE_NPBD0@Z CDecal::sub_1023adb0

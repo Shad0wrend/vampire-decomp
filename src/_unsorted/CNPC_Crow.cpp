@@ -86,6 +86,14 @@ void CNPC_Crow::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10357660 size=0x6
+#include "CNPC_Crow.h"
+int CNPC_Crow::vfunc138()
+{
+    return 0xa;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10357680 size=0xac
 #include "CNPC_Crow.h"
 
