@@ -80,7 +80,8 @@ public:
 	CBP_V1(sb81) CBP_V1(sb82) CBP_V1(sb83) CBP_V1(sb84) CBP_V1(sb85) CBP_V1(sb86) CBP_V1(sb87) CBP_V1(sb88) CBP_V1(sb89) CBP_V10(sb9)
 	CBP_V1(sc00) CBP_V1(sc01) CBP_V1(sc02) CBP_V1(sc03)	// slots 165..168
 	virtual void vfunc169(const Vector *pPunch);	// slot 169: takes the pointer of a view punch angle
-	CBP_V1(sc05) CBP_V1(sc06) CBP_V1(sc07) CBP_V1(sc08) CBP_V1(sc09)	// slots 170..174
+	virtual void vfunc170(const Vector *pOffset);	// slot 170: sub_100b3640(1), then sub_100b2e30 with the vector at +0x3d4 plus pOffset
+ CBP_V1(sc06) CBP_V1(sc07) CBP_V1(sc08) CBP_V1(sc09)	// slots 170..174
 	CBP_V1(sc10) CBP_V1(sc11) CBP_V1(sc12) CBP_V1(sc13) CBP_V1(sc14)	// slots 175..179
 	virtual void vfunc180();	// slot 180: view parts released from the physics environment, then CBaseCombatCharacter::vfunc180
 	CBP_V1(sc16) CBP_V1(sc17) CBP_V1(sc18) CBP_V1(sc19)	// slots 181..184
