@@ -114,6 +114,14 @@ void CNPC_VManBat::vfunc420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1038b0e0 size=0x6
+#include "CNPC_VManBat.h"
+int CNPC_VManBat::vfunc138()
+{
+    return 0x21;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1038e880 size=0x2f
 #include "CNPC_VManBat.h"
 #include "CNPC_VHuman.h"
