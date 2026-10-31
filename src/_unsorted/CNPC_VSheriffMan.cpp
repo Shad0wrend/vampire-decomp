@@ -23,6 +23,16 @@ int CNPC_VSheriffMan::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ae4b0 size=0x6
+namespace lifted {
+extern char g_1093c520;
+}
+int CNPC_VSheriffMan::vfunc580()
+{
+    return (int)&lifted::g_1093c520;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ae4f0 size=0x36
 #include "CNPC_VSheriffMan.h"
 
