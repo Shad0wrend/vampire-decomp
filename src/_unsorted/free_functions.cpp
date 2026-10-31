@@ -74002,6 +74002,19 @@ void UtlVec8::sub_101b6b10(int elem, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b6b60 size=0x19
+struct E101b6b60 { unsigned short a; unsigned short pad; int b; };
+
+// TARGET: sub_101b6b60
+void sub_101b6b60(E101b6b60 *dst, const E101b6b60 *src)
+{
+	if (dst) {
+		dst->a = src->a;
+		dst->b = src->b;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6b90 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);
