@@ -6206,6 +6206,7 @@
 0x1000cd29 func   ?sub_1034a010@@YIXPAH@Z sub_1034a010
 0x1000cd2e func   ?vfunc9@CAI_Motor@@UAEXXZ CAI_Motor::vfunc9
 0x1000cd42 func   ??1CUnknown102029c0@@QAE@XZ CUnknown102029c0::~CUnknown102029c0
+0x1000cd47 func   ?vfunc81@CWeaponMelee_FireAxe@@QAEHXZ CWeaponMelee_FireAxe::vfunc81
 0x1000cd51 func   ?sub_10041d20@UtlHash8@@QAEIPAX@Z UtlHash8::sub_10041d20
 0x1000cd56 func   ?sub_1003d640@@YAXPAVCBaseEntity@@0@Z sub_1003d640
 0x1000cd5b func   ?sub_103989b0@@YI_NPAUMingTurnView@@HABVVector@@PAH@Z sub_103989b0
