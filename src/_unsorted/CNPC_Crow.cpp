@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10357350 size=0x7
+#include "CNPC_Crow.h"
+namespace lifted {
+extern float g_1044f00c;
+}
+float CNPC_Crow::vfunc516()
+{
+    return lifted::g_1044f00c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10357370 size=0x6
 #include "CNPC_Crow.h"
 namespace lifted {
