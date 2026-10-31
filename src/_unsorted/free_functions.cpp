@@ -47507,6 +47507,20 @@ int sub_1010bbb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010bd70 size=0x19
+#include "CEnvFireSource.h"
+
+// TARGET: CEnvFireSource::sub_1010bd70
+void CEnvFireSource::sub_1010bd70()
+{
+	if (m_bEnabled)
+	{
+		m_bEnabled = 0;
+		m_flNextThink = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010bda0 size=0x8
 namespace lifted {
 int sub_10003e9f();
