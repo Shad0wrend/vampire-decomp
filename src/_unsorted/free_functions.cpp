@@ -130315,6 +130315,16 @@ int sub_102f9c70(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f9ca0 size=0x13
+float sub_102f9c70(int a);
+
+// TARGET: sub_102f9ca0
+float sub_102f9ca0(int a)
+{
+	return *(float *)(a + 8) - sub_102f9c70(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102fa510 size=0xd1
 #include "CAI_Node.h"
 #include "CAI_Network.h"
