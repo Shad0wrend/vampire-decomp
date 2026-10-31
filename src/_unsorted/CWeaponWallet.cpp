@@ -31,6 +31,14 @@ int CWeaponWallet::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f63e0 size=0x6
+#include "CWeaponWallet.h"
+int CWeaponWallet::vfunc363()
+{
+    return 0xa;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10409bb0 size=0x1e
 #include "CWeaponWallet.h"
 
