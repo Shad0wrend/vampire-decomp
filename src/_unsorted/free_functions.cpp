@@ -52916,6 +52916,15 @@ eof:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10137040 size=0x7
+// TARGET: sub_10137040
+#include <math.h>
+double sub_10137040(float x)
+{
+    return cos(x);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10137220 size=0x43
 #include <math.h>
 float Vector::sub_10137220()
