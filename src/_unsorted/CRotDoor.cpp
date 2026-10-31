@@ -235,6 +235,32 @@ float CRotDoor::vfunc247()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f35a0 size=0x22d
+#include "CRotDoor.h"
+#include "ScopeTrace.h"
+
+extern int g_106eb3e8;
+
+// TARGET: CRotDoor::vfunc244
+void CRotDoor::vfunc244(char bChain)
+{
+	ScopeTrace trace("CRotDoor::DoorGoDown", g_106b8540);
+	if (bChain) {
+		if (m_hLinked630 != 0) {
+			CBaseEntity *pOldActivator = m_hLinked630->m_hActivator53c.Get();
+			m_hLinked630->m_hActivator53c = m_hActivator53c;
+			m_hLinked630->vfunc244(0);
+			m_hLinked630->m_hActivator53c = pOldActivator;
+		}
+	}
+	sub_100ee4e0(g_106eb3e8, 0);
+	m_nState4f8 = 3;
+	m_pfn0114 = (void (CBaseEntity::*)())&CRotDoor::sub_100f11b0;
+	sub_101c17e0(&m_angRotation520, m_flSpeed164);
+	m_items564[6].sub_100cd660(m_hActivator53c.Get(), this, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f4080 size=0x8e
 #include "CRotDoor.h"
 
