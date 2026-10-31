@@ -89265,6 +89265,81 @@ void CUnknown101ed170::sub_101ed170()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ed210 size=0x260
+#include "StatDefault2.h"
+#include "CVFeat_t.h"
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+struct CKVSymbol { int m_i; CKVSymbol() {} CKVSymbol(const CKVSymbol &o) { m_i = o.m_i; } };
+CKVSymbol sub_102038e0(CVFeatKV *pKV, const char *pszName);
+CKVSymbol sub_10203920(CVFeatKV *pKV);
+
+bool StatDefault2::sub_101ed210(CVFeatKV *pKV)
+{
+	if (pKV) {
+		m_iInternalName4 = sub_102038e0(pKV, "InternalName").m_i;
+		m_iName8 = sub_10203920(pKV).m_i;
+		CVFeatKV *pEquip = pKV->FindKey("Equip");
+		if (pEquip) {
+			CVFeatKV *p;
+			for (p = pEquip->GetFirstSubKey(); p; p = p->GetNextSubKey()) {
+				if (_strcmpi(p->GetName(), "Item") != 0)
+					return false;
+				m_nFlags0c++;
+			}
+			if (m_nFlags0c > 0) {
+				m_pNames10 = new int[m_nFlags0c];
+				m_pCost14 = new int[m_nFlags0c];
+				m_pFlags18 = new int[m_nFlags0c];
+				p = pEquip->GetFirstSubKey();
+				if (p) {
+					int i = 0;
+					do {
+						CVFeatKV *pName = p->GetFirstSubKey();
+						*(int *)((char *)m_pNames10 + i) = sub_102038e0(pName, 0).m_i;
+						*(int *)((char *)m_pCost14 + i) = p->GetInt("Cost", 0);
+						*(int *)((char *)m_pFlags18 + i) = 0;
+						if (p->GetInt("StartsOn", 0))
+							*(int *)((char *)m_pFlags18 + i) |= 1;
+						i += 4;
+						p = p->GetNextSubKey();
+					} while (p);
+				}
+			}
+		}
+		pKV = pKV->FindKey("Armor");
+		if (pKV) {
+			CVFeatKV *p;
+			for (p = pKV->GetFirstSubKey(); p; p = p->GetNextSubKey()) {
+				if (_strcmpi(p->GetName(), "Item") != 0)
+					return false;
+				m_nFlags1c++;
+			}
+			if (m_nFlags1c > 0) {
+				m_pNames20 = new int[m_nFlags1c];
+				m_pCost24 = new int[m_nFlags1c];
+				m_pFlags28 = new int[m_nFlags1c];
+				p = pKV->GetFirstSubKey();
+				if (p) {
+					int i = 0;
+					do {
+						CVFeatKV *pName = p->GetFirstSubKey();
+						*(int *)((char *)m_pNames20 + i) = sub_102038e0(pName, 0).m_i;
+						*(int *)((char *)m_pCost24 + i) = p->GetInt("Cost", 0);
+						*(int *)((char *)m_pFlags28 + i) = 0;
+						if (p->GetInt("StartsOn", 0))
+							*(int *)((char *)m_pFlags28 + i) |= 1;
+						i += 4;
+						p = p->GetNextSubKey();
+					} while (p);
+				}
+			}
+		}
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ed6c0 size=0xf9
 #include "CUnknown101ed6c0.h"
 #include "CUnknown101ed170.h"
