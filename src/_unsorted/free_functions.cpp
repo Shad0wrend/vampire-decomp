@@ -107607,6 +107607,14 @@ void sub_10246430(int unused, int *src, int *dst)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10246450 size=0xf
+// TARGET: sub_10246450
+void sub_10246450(int unused, const unsigned char *pSrc, unsigned int *pDst)
+{
+	*pDst = *pSrc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10246470 size=0x10
 void sub_10246470(int unused, unsigned short *src, unsigned int *dst)
 {
