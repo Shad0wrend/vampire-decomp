@@ -80,7 +80,7 @@ public:
 	CPositionInterpolator_Rope();
 	virtual void vfunc0();
 	virtual void vfunc1();
-	virtual void vfunc2();
+	virtual void vfunc2(int index, const Vector *pPos);	// stores the end point (0 or 1) and flags the rope as changed when it moved
 	virtual void vfunc3(float t, Vector *pOut);	// when the rope changed: re-links it for the type, puts every node at the first end point, sizes the segments from the end point distance plus the slack; then the lerp of the two nodes around t
 	virtual char vfunc4(const char *pKey, const char *pValue);	// KeyValue: "Slack" (value - 100) and "Type" (0 -> 10, 1 -> 4, else 2); returns 1 when handled
 
