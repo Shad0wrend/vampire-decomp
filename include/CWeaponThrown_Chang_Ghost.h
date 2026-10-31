@@ -9,6 +9,8 @@ class CWeaponThrown_Chang_Ghost
 public:
 	CWeaponThrown_Chang_Ghost *vfunc5(unsigned int flags);
 	void sub_10013a57();
+	void vfunc104();	// slot 104 \"Precache\": the grenade emitters and the tick sound, then the weapon base
+	void sub_1001576c();	// CBaseCombatWeapon::vfunc104 (stub 0x1001576c), tail called
 	void vfunc103();	// slot 103 "CWeaponThrown_Chang_Ghost::Spawn": the weapon base spawn, SetMoveType(9, 0), inlined AddSolidFlags(4) and SetSolid(0) of the collision property at +0x270, the creation / expiry times, then the "chang_ghost_bone_tree_emitter" particle entity parented to the "Bip01 Spine" bone
 	void sub_100047be();	// CBaseCombatWeapon::vfunc103 (stub 0x100047be), called directly
 	void vfunc372(int a, const Vector *pDir);	// slot 372 (throw): solid / health set, sequence 0x22, the throw speed (global 0x104e1614) at +0x91c, the direction normalised and scaled by it when it was long enough, set as the velocity; touch and think functions installed, next think and the expiry time (+0x920) from curtime; the three random rolls (-30..30) are not used
