@@ -122523,6 +122523,21 @@ int __fastcall sub_102d40a0(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d4120 size=0x10
+extern char g_106b8540[];
+
+// TARGET: sub_102d4120
+char *__fastcall sub_102d4120(char *pThis)
+{
+	char *p = *(char **)(pThis + 0x5d4);
+	if (p == 0)
+	{
+		p = g_106b8540;
+	}
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d4140 size=0xf
 struct CUnknown102d4140 { int sub_102d4140(int); };
 int CUnknown102d4140::sub_102d4140(int a0)
