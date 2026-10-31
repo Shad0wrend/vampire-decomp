@@ -22106,6 +22106,18 @@ void CBaseAnimating::sub_10091c80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10091d10 size=0x61
+#include "CBaseAnimating.h"
+void sub_101cd940(CBaseEntity *);
+// TARGET: CBaseAnimating::sub_10091d10
+void CBaseAnimating::sub_10091d10(CBaseEntity *pEnt)
+{
+	EHANDLE &h = *(EHANDLE *)((char *)this + 0x5a8);
+	sub_101cd940(h.Get());
+	h = pEnt;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100920d0 size=0x89
 #include "CBaseAnimating.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };

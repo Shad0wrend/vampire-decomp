@@ -8547,6 +8547,7 @@
 0x10012058 func   ?vfunc5@CAuspexAura@@QAEPAV1@I@Z CAuspexAura::vfunc5
 0x1001205d func   ?sub_10381c80@@YIEPAD@Z sub_10381c80
 0x10012062 func   ?vfunc5@CFuncMonitor@@QAEPAV1@I@Z CFuncMonitor::vfunc5
+0x10012067 func   ?sub_10091d10@CBaseAnimating@@QAEXPAVCBaseEntity@@@Z CBaseAnimating::sub_10091d10
 0x1001207b func   ?sub_1010c1e0@@YGHH@Z sub_1010c1e0
 0x10012080 func   ?sub_1008d230@CBaseAnimating@@QAEXM@Z CBaseAnimating::sub_1008d230
 0x10012085 func   ?vfunc103@CNPC_VChangBros@@UAEXXZ CNPC_VChangBros::vfunc103
