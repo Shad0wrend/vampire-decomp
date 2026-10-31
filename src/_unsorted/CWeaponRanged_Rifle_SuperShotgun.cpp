@@ -31,6 +31,14 @@ int CWeaponRanged_Rifle_SuperShotgun::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10236b20 size=0x6
+#include "CWeaponRanged_Rifle_SuperShotgun.h"
+int CWeaponRanged_Rifle_SuperShotgun::vfunc363()
+{
+    return 0xf5;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a4d0 size=0x1e
 #include "CWeaponRanged_Rifle_SuperShotgun.h"
 
