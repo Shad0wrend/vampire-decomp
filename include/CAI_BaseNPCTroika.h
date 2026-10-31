@@ -315,7 +315,9 @@ public:
 	float m_f64cc;
 	char m_pad64d0[0x64e4 - 0x64d0];
 	float m_f64e4;	// 0x64e4: curtime of the last stance change
-	char m_pad64e8[0x654c - 0x64e8];
+	char m_pad64e8[0x64ec - 0x64e8];
+	char m_b64ec;	// 0x64ec: the second talking flag (sub_102c1170)
+	char m_pad64ed[0x654c - 0x64ed];
 	char m_b654c;
 	char m_pad654d[3];
 	float m_f6550;	// 0x6550: the volume of the sound sub_102c2680 plays
