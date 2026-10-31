@@ -6548,6 +6548,7 @@
 0x1000d747 func   ?sub_10348560@@YAXXZ sub_10348560
 0x1000d74c func   ?sub_101e3910@CUnknown101e0f00@@QAEXHHHH@Z CUnknown101e0f00::sub_101e3910
 0x1000d751 func   ?vfunc5@CNPC_VAnimal@@QAEPAV1@I@Z CNPC_VAnimal::vfunc5
+0x1000d756 func   ?vfunc81@CCorpse@@QAEHXZ CCorpse::vfunc81
 0x1000d75b func   ?sub_10233fb0@@YAXXZ sub_10233fb0
 0x1000d76a func   ?sub_101b6320@CUnknown101b6320@@QAEAAV1@ABV1@@Z CUnknown101b6320::sub_101b6320
 0x1000d76f func   ?sub_102400e0@@YA_NPBVVector@@00@Z sub_102400e0
