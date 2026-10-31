@@ -21,6 +21,14 @@ bool CPhysicsCannister::vfunc99(const float *pRay, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014fb70 size=0x3
+#include "CPhysicsCannister.h"
+bool CPhysicsCannister::vfunc158()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10150380 size=0x120
 #include "CPhysicsCannister.h"
 #include "CBaseCombatCharacter.h"
