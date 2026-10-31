@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10403420 size=0x3
+#include "CItemGWirelessCamera3.h"
+int CItemGWirelessCamera3::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040a8a0 size=0x1e
 #include "CItemGWirelessCamera3.h"
 
