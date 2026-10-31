@@ -58208,6 +58208,79 @@ void CBasePlayer::sub_101618e0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10161a70 size=0x216
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+__declspec(dllimport) void __cdecl Warning(const char *, ...);
+int __cdecl _strcmpi(const char *, const char *);
+
+struct CCtrlHolderView
+{
+	char m_pad[0x98];
+	CEntityVSlots *m_pEnt98;
+};
+CCtrlHolderView *sub_10136580(const char *);
+void sub_101d1280(CEntityVSlots *);
+
+struct CCtrlNpcView : CEntityVSlots
+{
+	char m_pad0[0x19c - 4];
+	unsigned int m_nEffects19c;
+	char m_pad1[0x204 - 0x1a0];
+	unsigned int m_flags204;
+	char m_pad2[0x63b4 - 0x208];
+	float m_f63b4;
+	void sub_10097310(CBasePlayer *pPlayer);
+};
+
+inline const char *ClassnameOf(CBaseEntity *p)
+{
+	return p->m_classname11c ? p->m_classname11c : g_106b8540;
+}
+
+// TARGET: CBasePlayer::sub_10161a70
+void *CBasePlayer::sub_10161a70(const char *pszClass)
+{
+	if (m_hControllerNPC1db0.Get()) {
+		if (_strcmpi(ClassnameOf((CBaseEntity *)m_hControllerNPC1db0.Get()), pszClass)) {
+			Warning("\nGetControllerNPC() asked for NPC class: %s, but already has NPC of class %s.\n Deleting old NPC, this better be OK!!\n\n", pszClass, ((CBaseEntity *)m_hControllerNPC1db0.Get())->sub_1009f200());
+			sub_101618e0(0, 0);
+		} else {
+			return m_hControllerNPC1db0.Get();
+		}
+	}
+	CCtrlHolderView *pHolder = sub_10136580(pszClass);
+	CCtrlNpcView *pNpc = 0;
+	if (pHolder)
+		pNpc = (CCtrlNpcView *)pHolder->m_pEnt98;
+	if (!pNpc) {
+		Warning("GetControllerNPC() created NULL Entity for :%s\n", pszClass);
+		m_hControllerNPC1db0.Set(0);
+	} else {
+		pNpc->m_flags204 |= 4;
+		CEntityVSlots *pThis = (CEntityVSlots *)this;
+		pNpc->slot62(&pThis->slot217()->x);
+		pNpc->slot64(&pThis->slot221()->x);
+		pNpc->slot202(pThis);
+		pNpc->sub_10097310(this);
+		pNpc->m_f63b4 = 4096.0f;
+		int tmp;
+		const char *pszModel = *pThis->slot9(&tmp);
+		if (!pszModel)
+			pszModel = g_106b8540;
+		pNpc->slot105(pszModel);
+		sub_101d1280(pNpc);
+		pNpc->m_nEffects19c |= 0x60;
+		pNpc->slot614();
+		m_hControllerNPC1db0 = (CBaseEntity *)pNpc;
+	}
+	return m_hControllerNPC1db0.Get();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10161d20 size=0x14d
 #include "CBasePlayer.h"
 #include "CEHandleGet.h"
