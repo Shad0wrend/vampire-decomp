@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101a9b70 size=0x6
+#include "CScriptedSentence.h"
+namespace lifted {
+extern char g_10593d94;
+}
+int CScriptedSentence::vfunc82()
+{
+    return (int)&lifted::g_10593d94;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a9d60 size=0x4c
 #include <string.h>
 #include <stdlib.h>
