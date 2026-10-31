@@ -19117,6 +19117,25 @@ void sub_100828d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10082d20 size=0x61
+#include "CSceneEntity.h"
+#include "CBaseEntity.h"
+#include "CUnknown1007a2c0.h"
+void CSceneEntity::sub_10082d20()
+{
+	if (m_pScene4bc) {
+		for (int i = 0; i < ((CUnknown1007a2c0 *)m_pScene4bc)->sub_1007a2a0(); i++) {
+			CSceneEventActor *pActor = (CSceneEventActor *)((CUnknown1007a2c0 *)m_pScene4bc)->sub_1007a2c0(i);
+			if (pActor) {
+				CBaseEntity *pEnt = vfunc268(pActor->sub_10008a99(), 0);
+				if (pEnt)
+					pEnt->vfunc60((int)this);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10082e40 size=0xe
 bool CUnknown10082e40::sub_10082e40()
 {
