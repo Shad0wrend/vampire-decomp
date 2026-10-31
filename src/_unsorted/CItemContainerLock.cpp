@@ -11,6 +11,16 @@ int CItemContainerLock::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10224130 size=0x8
+namespace lifted {
+int sub_10006703();
+}
+int CItemContainerLock::vfunc117()
+{
+    return (lifted::sub_10006703()) | 8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10224190 size=0xb
 void CItemContainerLock::vfunc275()
 {
