@@ -10765,6 +10765,7 @@
 0x1001415a func   ?sub_10137c70@@YAHPAVVector@@0@Z sub_10137c70
 0x10014164 func   ?vfunc367@CBaseCombatWeapon@@UAEHHMM@Z CBaseCombatWeapon::vfunc367
 0x10014169 func   ?vfunc310@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::vfunc310
+0x10014178 func   ?sub_10074a00@CUnknown10074a00@@QAEXHHH@Z CUnknown10074a00::sub_10074a00
 0x1001417d func   ?vfunc438@CNPC_VPlaceholder@@UAEHXZ CNPC_VPlaceholder::vfunc438
 0x10014182 func   ?sub_10316e60@@YAHH@Z sub_10316e60
 0x10014187 func   _logic_npc_condition logic_npc_condition

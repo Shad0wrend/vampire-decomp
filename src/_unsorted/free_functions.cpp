@@ -15305,6 +15305,20 @@ int CUnknown10074980::sub_10074980()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10074a00 size=0x17
+struct CUnknown10074a00
+{
+	void sub_10074a00(int a, int b, int idx);
+};
+
+// TARGET: CUnknown10074a00::sub_10074a00
+void CUnknown10074a00::sub_10074a00(int a, int b, int idx)
+{
+	*(int *)((char *)this + idx * 4 + 0x3c) = b;
+	*(int *)((char *)this + idx * 4 + 0x44) = a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10074a30 size=0xa
 void CUnknown10074a30::sub_10074a30(char value)
 {
