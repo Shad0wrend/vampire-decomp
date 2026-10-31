@@ -3230,6 +3230,7 @@
 0x1000709f func   ?sub_1039f6f0@@YADXZ sub_1039f6f0
 0x100070a9 func   ?sub_101b3220@CUnknown101b3220@@QAEHXZ CUnknown101b3220::sub_101b3220
 0x100070b3 func   ?sub_10107860@CBaseFilter@@QAEXPAUinputdata_t@@@Z CBaseFilter::sub_10107860
+0x100070b8 func   ?vfunc580@CNPC_VChangBrosClaw@@QAEHXZ CNPC_VChangBrosClaw::vfunc580
 0x100070bd func   ?vfunc4@PyServerSystem@@UAEXXZ PyServerSystem::vfunc4
 0x100070c2 func   ?sub_10179270@@YAHXZ sub_10179270
 0x100070c7 func   ?sub_10077ac0@CTableFields10077ac0@@QAEIH@Z CTableFields10077ac0::sub_10077ac0
