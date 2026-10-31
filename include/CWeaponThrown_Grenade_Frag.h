@@ -13,7 +13,9 @@ class CWeaponThrown_Grenade_Frag
 public:
 	char pad_04[0x17c - 4];
 	float m_flNextThink17c;
-	char pad_180[0x86c - 0x180];
+	char pad_180[0x744 - 0x180];
+	int m_nAmmoType744[2];
+	char pad_74c[0x86c - 0x74c];
 	int m_n86c;
 	char pad_870[0x918 - 0x870];
 	bool m_bFlag918;
