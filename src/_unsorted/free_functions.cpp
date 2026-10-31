@@ -115517,6 +115517,20 @@ void __fastcall sub_1026d0c0(char* p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026dc00 size=0x17
+struct CUnk1026dc00 {
+    char pad[0x5cec];
+    unsigned int m_5cec;
+    unsigned int sub_1026dc00(unsigned int flags);
+};
+
+unsigned int CUnk1026dc00::sub_1026dc00(unsigned int flags)
+{
+    m_5cec = m_5cec | flags;
+    return m_5cec;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026dc60 size=0xb
 void CUnknown1026dc60::sub_1026dc60()
 {
