@@ -149258,6 +149258,16 @@ extern "C" CBaseEntity *npc_VVampire()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c49b0 size=0xc
+void __fastcall sub_103c49d0(void *p);
+
+void *__fastcall sub_103c49b0(void *p)
+{
+    sub_103c49d0(p);
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c49d0 size=0x33
 void sub_100053cb();
 void sub_100113e2();
