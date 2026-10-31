@@ -10194,6 +10194,7 @@
 0x100151e0 func   _logic_case logic_case
 0x100151e5 func   ?sub_10250830@CUnknown10250830@@QAEXG@Z CUnknown10250830::sub_10250830
 0x100151ea func   ?vfunc32@CPropKeypad@@QAEDH@Z CPropKeypad::vfunc32
+0x100151f4 func   ?sub_1029f650@CAI_BaseNPCTroika@@QAEDPAX@Z CAI_BaseNPCTroika::sub_1029f650
 0x100151f9 func   ?sub_1032fab0@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::sub_1032fab0
 0x10015203 func   ?sub_102a9830@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_102a9830
 0x1001520d func   ?sub_100640b0@CUnknown100640b0@@QAEHXZ CUnknown100640b0::sub_100640b0

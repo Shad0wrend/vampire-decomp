@@ -115748,6 +115748,20 @@ void __stdcall sub_1029f5d0(SNPCTroikaRef_t *pRef)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029f650 size=0x44
+struct CAI_NavNodeView { char m_pad[0x46c]; int m_n46c; };
+char CAI_BaseNPCTroika::sub_1029f650(void *pHolder)
+{
+	m_b65a0 = 0;
+	CAI_NavNodeView *pNode = (CAI_NavNodeView *)sub_1029f6c0(pHolder);
+	if (pNode) {
+		if (pNode->m_n46c > enginerandom->vfunc2(0, 99))
+			m_b65a0 = 1;
+	}
+	return m_b65a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029f6c0 size=0x4a
 #include "CAI_BaseNPCTroika.h"
 #include "CAI_TroikaLink.h"
