@@ -119,7 +119,11 @@ public:
 	EHANDLE m_hEnt6684;
 	char m_posBuf2[4];
 	int m_state;
-	char m_pad6690[0x66b8 - 0x6690];
+	char m_pad6690[0x66a4 - 0x6690];
+	float m_fl66a4;	// 0x66a4
+	char m_pad66a8[0x66b4 - 0x66a8];
+	char m_b66b4;	// 0x66b4
+	char m_pad66b5[0x66b8 - 0x66b5];
 	int m_n66b8;
 
 	void sub_10298d30();	// CAI_BaseNPCTroika::vfunc103 (stub 0x1000303a), called directly by Spawn
