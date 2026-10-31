@@ -45,6 +45,7 @@ public:
 	void sub_102455c0(const char *pName, const char *pHelpString, int flags);	// ConCommandBase::Create, called directly (stub 0x1000de4f)
 	void sub_10246160(int nValue);	// slot 4's implementation as called directly with an integer ("ConVar::SetValue( int )", stub 0x1000c5cc)
 
+	const char *GetString() { if (m_pParent->vfunc1()) return ""; if (m_nFlags & 0x1000) return "FCVAR_NEVER_AS_STRING"; return m_pParent->m_pszString ? m_pParent->m_pszString : ""; }
 	int GetInt() { return m_pParent->vfunc1() ? 0 : m_pParent->m_nValue; }
 	bool GetBool() { return GetInt() != 0; }
 	float GetFloat() { return m_pParent->vfunc1() ? 0.0f : m_pParent->m_fValue; }
