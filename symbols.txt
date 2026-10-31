@@ -1933,6 +1933,7 @@
 0x10004935 func   ?sub_101d7bf0@@YAXXZ sub_101d7bf0
 0x1000493a func   ?vfunc2@CTEInspectionFX@@UAEPAV1@I@Z CTEInspectionFX::vfunc2
 0x10004949 func   ?sub_10193ea0@CPropDestructable@@QAEXPAUinputdata_t@@@Z CPropDestructable::sub_10193ea0
+0x1000494e func   ?vfunc373@CWeaponMelee_ChangClaw@@QAEHXZ CWeaponMelee_ChangClaw::vfunc373
 0x1000495d func   ?sub_10031070@CCollisionEvent@@QAEXHPAXHD00@Z CCollisionEvent::sub_10031070
 0x10004962 func   ?sub_101c4560@CUnknown101c4560@@QAEPAXXZ CUnknown101c4560::sub_101c4560
 0x10004967 func   ?vfunc103@CPhysMotor@@UAEXXZ CPhysMotor::vfunc103
