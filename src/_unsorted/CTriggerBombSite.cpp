@@ -68,6 +68,14 @@ void CTriggerBombSite::vfunc176(void *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102111f0 size=0x6
+#include "CTriggerBombSite.h"
+int CTriggerBombSite::vfunc33()
+{
+    return 0x12f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10211210 size=0x50
 #include "CTriggerBombSite.h"
 int CTriggerBombSite::vfunc35(CBasePlayer *pPlayer)
