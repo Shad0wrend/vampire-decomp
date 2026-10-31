@@ -147907,6 +147907,48 @@ void CNPC_VMingXiao::sub_10398fd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10399610 size=0x22b
+#include "CNPC_VMingXiao.h"
+#include "CEHandleGet.h"
+#include "CVProfile.h"
+#include "ScopeTrace.h"
+
+void CNPC_VMingXiao::sub_10399610()
+{
+	ScopeTrace trace("CNPC_VMingXiao::CoordinateTroops", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CVProfile *pProf = g_109f3648;
+	if (pProf->m_enabled || !pProf->m_bAtRoot) {
+		if (pProf->m_pCurNode->m_pszName != "CNPC_VMingXiao_CoordinateTroops")
+			pProf->m_pCurNode = pProf->m_pCurNode->GetSubNode("CNPC_VMingXiao_CoordinateTroops", 0, "Unaccounted");
+		CVProfNode *pNode = pProf->m_pCurNode;
+		pNode->m_nCurFrameCalls++;
+		if (pNode->m_nRecursions++ == 0) {
+			unsigned long *pSample = (unsigned long *)&pNode->m_CurFrameTime;
+			__asm {
+				mov ecx, pSample
+				rdtsc
+				mov [ecx], eax
+				mov [ecx + 4], edx
+			}
+			g_109f3648->PushGroup(pNode->m_nBudgetGroupID);
+		}
+		pProf->m_bAtRoot = false;
+	}
+	CNPC_VMingXiaoTentacle *pTentacle;
+	unsigned int *pHandle = (unsigned int *)&m_hSlotOld[m_n6740];
+	pTentacle = (CNPC_VMingXiaoTentacle *)EHandle_Get(*pHandle);
+	if (pTentacle)
+		sub_103998d0(pTentacle);
+	pHandle = (unsigned int *)&m_hSlotNew[m_n6740];
+	pTentacle = (CNPC_VMingXiaoTentacle *)EHandle_Get(*pHandle);
+	if (pTentacle)
+		sub_103999f0(pTentacle);
+	if (++m_n6740 >= 6)
+		m_n6740 = 0;
+	g_109f3648->ExitScopeInlined();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103998d0 size=0xd4
 #include "CNPC_VMingXiao.h"
 #include "CNPC_VMingXiaoTentacle.h"
