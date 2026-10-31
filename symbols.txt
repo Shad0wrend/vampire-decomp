@@ -3031,6 +3031,7 @@
 0x1000655f func   ?vfunc608@CAI_BaseNPCTroika@@UAE_NPBD@Z CAI_BaseNPCTroika::vfunc608
 0x10006569 func   ?sub_103e7b10@@YAHXZ sub_103e7b10
 0x1000656e func   ?sub_101f74e0@@YI_NPAH@Z sub_101f74e0
+0x10006573 func   ?sub_101afd90@@YGDH@Z sub_101afd90
 0x10006578 func   ?sub_1027fba0@UtlVec8@@QAEXHH@Z UtlVec8::sub_1027fba0
 0x1000657d func   ?vfunc42@CPropHacking@@QAEXPAX@Z CPropHacking::vfunc42
 0x10006582 func   ?sub_102dccc0@CUnknown102dccc0@@QAEHH@Z CUnknown102dccc0::sub_102dccc0

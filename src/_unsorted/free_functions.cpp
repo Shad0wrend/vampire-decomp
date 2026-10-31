@@ -73042,6 +73042,18 @@ bool CUnk101afc50::sub_101afc50(CUnk101afc50Table *pTable)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101afd90 size=0x1b
+// TARGET: sub_101afd90
+char __stdcall sub_101afdc0(int p);
+char __stdcall sub_101afd90(int p)
+{
+    if (p == 0) {
+        return 0;
+    }
+    return sub_101afdc0(p) != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101afdc0 size=0x42
 #include "CKeyValuesX.h"
 extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
