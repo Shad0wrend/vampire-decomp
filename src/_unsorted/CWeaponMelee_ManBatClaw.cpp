@@ -20,6 +20,17 @@ int CWeaponMelee_ManBatClaw::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ebef0 size=0x6
+#include "CWeaponMelee_ManBatClaw.h"
+namespace lifted {
+extern char g_106780b4;
+}
+int CWeaponMelee_ManBatClaw::vfunc362()
+{
+    return (int)&lifted::g_106780b4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ebfa0 size=0x4
 #include "CWeaponMelee_ManBatClaw.h"
 int CWeaponMelee_ManBatClaw::vfunc373()
