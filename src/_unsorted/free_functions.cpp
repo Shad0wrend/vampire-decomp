@@ -82569,6 +82569,14 @@ CUnknown101dd480 *CUnknown101dd480::sub_101dd480()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dd4f0 size=0x7
+// TARGET: sub_101dd4f0
+bool __fastcall sub_101dd4f0(int *pThis)
+{
+    return (*pThis != -1) ? true : false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dd910 size=0xde
 #include "CUnknown101dd910.h"
 #include "ScopeTrace.h"
