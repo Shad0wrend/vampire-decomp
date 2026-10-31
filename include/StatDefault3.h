@@ -10,10 +10,13 @@ struct StatDefault3
 	const char *m_pszName;	// 0x08
 	int pad_0c;
 	const char *m_pszDisplayName;	// 0x10
-	int pad_14[2];
+	int m_14;	// 0x14
+	int m_18;	// 0x18
 	int m_1c;	// 0x1c
 	int m_20;	// 0x20
-	int pad_24[23];
+	int pad_24[21];
+	int m_78;	// 0x78
+	int m_7c;	// 0x7c
 	int m_80;	// 0x80
 	int pad_84[2];
 	bool m_8c[12];	// 0x8c..0x97, [5] == true by default
