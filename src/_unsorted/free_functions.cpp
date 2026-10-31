@@ -2968,6 +2968,17 @@ void __fastcall sub_100335e0(CUnknownCycle100335e0 *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10033630 size=0x63
+#include "ScopeTrace.h"
+#include "CPhysicsMovedEntities.h"
+CPhysicsMovedEntities *CPhysicsMovedEntities::sub_10033630()
+{
+	ScopeTrace trace("CPhysicsMovedEntities::CPhysicsMovedEntities", g_106b8540, g_106b8540);
+	sub_100336c0();
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10033740 size=0xab
 #include "CPhysicsMovedEntities.h"
 
