@@ -49026,6 +49026,65 @@ extern "C" CBaseEntity *momentary_door()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10115d20 size=0x264
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_10570868[2];
+void sub_100118c9();
+void sub_1000713a();
+void sub_10009728();
+void sub_1000bd93();
+void sub_100012da();
+void sub_1001361f();
+void sub_1001572b();
+void sub_10007180();
+
+// TARGET: sub_10115d20
+int *sub_10115d20()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 1, "m_flStartPosition", {0x570, 0}, 1, 6, "StartPosition" },
+        { 1, "m_flMoveDistance", {0x574, 0}, 1, 6, "MoveDistance" },
+        { 1, "m_flBlockDamage", {0x56c, 0}, 1, 6, "BlockDamage" },
+        { 0x11, "m_soundStart", {0x55c, 0}, 1, 6, "startsound" },
+        { 0x11, "m_soundStop", {0x560, 0}, 1, 6, "stopsound" },
+        { 0x11, "m_soundLoop", {0x568, 0}, 1, 6, "loopsound" },
+        { 0, "InputOpen", {0, 0}, 1, 8, "Open", 0, (void *)sub_100118c9 },
+        { 0, "InputClose", {0, 0}, 1, 8, "Close", 0, (void *)sub_1000713a },
+        { 1, "InputSetPosition", {0, 0}, 1, 8, "SetPosition", 0, (void *)sub_10009728 },
+        { 0, "InputStartMoving", {0, 0}, 1, 8, "StartMoving", 0, (void *)sub_1000bd93 },
+        { 0, "InputStopMoving", {0, 0}, 1, 8, "StopMoving", 0, (void *)sub_100012da },
+        { 0, "InputToggleMovement", {0, 0}, 1, 8, "ToggleMovement", 0, (void *)sub_1001361f },
+        { 1, "InputSetSpeed", {0, 0}, 1, 8, "SetSpeed", 0, (void *)sub_1001572b },
+        { 10, "m_OutPosition", {0x578, 0}, 1, 0x16, "Position", g_1055dc70 },
+        { 10, "m_OutOnStop", {0x590, 0}, 1, 0x16, "OnStop", g_1055dc70 },
+        { 10, "m_OnReachStart", {0x5a8, 0}, 1, 0x16, "OnReachStart", g_1055dc70 },
+        { 10, "m_OnReachEnd", {0x5c0, 0}, 1, 0x16, "OnReachEnd", g_1055dc70 },
+        { 10, "m_OnMoveTowardsStart", {0x5d8, 0}, 1, 0x16, "OnMoveTowardsStart", g_1055dc70 },
+        { 10, "m_OnMoveTowardsEnd", {0x5f0, 0}, 1, 0x16, "OnMoveTowardsEnd", g_1055dc70 },
+        { 0, "CFuncMoveLinearStopSound", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10007180 },
+    };
+    g_10570868[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_10570868[0] = (int)&dataDesc[1];
+    return g_10570868;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10116e80 size=0xe4
 #include "Vector.h"
 #include "CEntityVSlots.h"
