@@ -148347,6 +148347,16 @@ extern "C" CBaseEntity *npc_VSheriffSwarm()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b1cf0 size=0xc
+void __fastcall sub_103b1d10(void *pThis);
+
+void * __fastcall sub_103b1cf0(void *pThis)
+{
+	sub_103b1d10(pThis);
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b1d10 size=0x33
 void sub_10007897();
 void sub_10004a7f();
