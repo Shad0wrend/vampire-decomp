@@ -36,3 +36,14 @@ void CTriggerCheckVolume::vfunc251(int a)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x101cb8a0 size=0x10
+#include "CTriggerCheckVolume.h"
+
+// TARGET: CTriggerCheckVolume::vfunc103
+void CTriggerCheckVolume::vfunc103()
+{
+	CBaseEntity::vfunc103();
+	sub_101c5080();
+}
+// END FUNCTION
