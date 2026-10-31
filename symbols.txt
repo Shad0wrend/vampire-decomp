@@ -1063,6 +1063,7 @@
 0x10002f81 func   ?vfunc107@CNPCMaker@@UAEXPAVCEntityMapData@@@Z CNPCMaker::vfunc107
 0x10002f90 func   ?vfunc82@CNPCMaker@@UAEPAUdatamap_t@@XZ CNPCMaker::vfunc82
 0x10002f95 func   ?sub_101fc950@TStat@@QAEXHH@Z TStat::sub_101fc950
+0x10002f9a func   ?vfunc82@CAI_ChangeTarget@@QAEHXZ CAI_ChangeTarget::vfunc82
 0x10002fa4 func   ?sub_10067080@CUnknown10067080@@QAEHXZ CUnknown10067080::sub_10067080
 0x10002fa9 func   ?sub_10369d50@@YAHXZ sub_10369d50
 0x10002fc7 func   ?vfunc226@CPhysBox@@QAEXH@Z CPhysBox::vfunc226
