@@ -62,7 +62,9 @@ struct CAI_SensesTimerB	// like CAI_SensesTimerA, but the setter starts by clear
 
 struct CAI_SenseRecord	// an entry of the sense list: a remembered entity with its position at +0x20
 {
-	char m_pad0000[0x20];
+	char m_pad0000[4];
+	int m_nType;	// 0x04: the sound type bit (1, 2, 4, 8, 0x10, 0x100 ..)
+	char m_pad0008[0x18];
 	float m_x, m_y, m_z;	// 0x20
 
 	char sub_101b9920();	// the first record filter (stub 0x10001208)
