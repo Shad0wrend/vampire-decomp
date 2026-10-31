@@ -5156,6 +5156,7 @@
 0x1000a024 func   ?vfunc178@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::vfunc178
 0x1000a02e func   ?vfunc113@CPropDestructable@@UAEXXZ CPropDestructable::vfunc113
 0x1000a033 func   ?sub_100cb110@CMomentaryRotButton@@QAEXXZ CMomentaryRotButton::sub_100cb110
+0x1000a038 func   ?vfunc14@CRestore@@UAEHXZ CRestore::vfunc14
 0x1000a03d func   ?vfunc82@CChangeLevel@@UAEPAUdatamap_t@@XZ CChangeLevel::vfunc82
 0x1000a042 func   ?sub_100a2110@S100a2110@@QAE_NPAPAUSVec@@@Z S100a2110::sub_100a2110
 0x1000a04c func   ?vfunc81@CWeaponMelee_MingXiaoTentacle@@UAEHXZ CWeaponMelee_MingXiaoTentacle::vfunc81
