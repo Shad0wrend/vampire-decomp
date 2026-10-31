@@ -8,7 +8,7 @@ public:
 	CAI_Component() : m_pOuter(0) {}
 	virtual ~CAI_Component() {}	// slot 0
 	virtual void vfunc1();
-	virtual void vfunc2();
+	virtual void vfunc2(int a);	// slot 2: forwards its argument to the owner's sub_10273e80 (0x102623c0)
 
 	void *m_pOuter;
 };
