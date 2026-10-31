@@ -31,6 +31,11 @@ void CBaseEntity::vfunc26(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100265f0 size=0x3
+// TARGET: sub_100265f0
+void __stdcall sub_100265f0(int) {}
+// END FUNCTION
+
 // FUNCTION: 0x10026610 size=0x7
 namespace lifted {
 extern float g_104454c0;
