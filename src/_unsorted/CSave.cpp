@@ -144,6 +144,21 @@ void CSave::vfunc24(const Vector &value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019fbd0 size=0x13
+#include "vampire.h"
+
+struct CUnknown1019fbd0
+{
+	void sub_101a07b0(int a, int b);
+};
+
+// TARGET: sub_1019fbd0
+void __fastcall sub_1019fbd0(void *pThis, int, int a, int b)
+{
+	((CUnknown1019fbd0 *)pThis)->sub_101a07b0(a, b * 12);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019fc20 size=0x1a
 #include "CSave.h"
 
