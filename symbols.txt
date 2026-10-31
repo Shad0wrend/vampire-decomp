@@ -9727,6 +9727,7 @@
 0x10013633 func   ?sub_10158e20@@YAHXZ sub_10158e20
 0x10013638 func   ?vfunc307@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::vfunc307
 0x1001363d func   _infodecal infodecal
+0x10013642 func   ?vfunc81@CItemGGiovanniInvitationVictor@@QAEHXZ CItemGGiovanniInvitationVictor::vfunc81
 0x1001364c func   _keyframe_track keyframe_track
 0x1001365b func   ?vfunc81@CItemMWallet@@QAEHXZ CItemMWallet::vfunc81
 0x10013660 func   ?vfunc244@CAI_StandoffGoal@@QAEXPAVCAI_BaseNPC@@@Z CAI_StandoffGoal::vfunc244
