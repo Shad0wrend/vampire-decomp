@@ -16,6 +16,20 @@ void CPositionInterpolator_Linear::vfunc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012f9b0 size=0x21
+#include "CPositionInterpolator_Linear.h"
+namespace lifted {
+extern char g_10575214;
+}
+int CPositionInterpolator_Linear::vfunc1(int a0, int a1, int a2)
+{
+    *(int *)((char *)a0) = (int)&lifted::g_10575214;
+    *(int *)((char *)a1) = 0;
+    *(int *)((char *)a2) = 1;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012f9f0 size=0x2d
 #include "CPositionInterpolator_Linear.h"
 
