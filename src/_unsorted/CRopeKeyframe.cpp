@@ -31,6 +31,18 @@ datamap_t * CRopeKeyframe::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019dd70 size=0x8
+#include "CRopeKeyframe.h"
+// TARGET: CRopeKeyframe::sub_1019dd70
+unsigned char CRopeKeyframe::sub_1019dd70()
+{
+    unsigned char b;
+    b = ((CBaseEntity *)this)->CBaseEntity::vfunc117();
+    b &= 0xfd;
+    return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019dd90 size=0x1e
 #include "CRopeKeyframe.h"
 
