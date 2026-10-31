@@ -673,7 +673,7 @@ public:
 	virtual void vfunc597();
 	virtual void vfunc598();
 	virtual char vfunc599(int unused);
-	virtual void vfunc600();
+	virtual char vfunc600(int unused);
 	virtual void vfunc601(int a);
 	virtual bool vfunc602();
 };
