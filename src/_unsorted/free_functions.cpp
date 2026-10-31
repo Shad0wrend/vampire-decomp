@@ -106571,6 +106571,23 @@ CVDmgBlock16_t *CVDmgBlock16_t::sub_10230ed0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10230f30 size=0x1a
+struct CUnk10230f30
+{
+	void sub_10205380();
+	void sub_10204570(int a);
+	CUnk10230f30 *sub_10230f30(int a);
+};
+
+// TARGET: sub_10230f30
+CUnk10230f30 *CUnk10230f30::sub_10230f30(int a)
+{
+	sub_10205380();
+	sub_10204570(a);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10230f60 size=0x13
 struct CUnknown10230f60 { void * sub_10230f60(int); };
 void * CUnknown10230f60::sub_10230f60(int a0)
