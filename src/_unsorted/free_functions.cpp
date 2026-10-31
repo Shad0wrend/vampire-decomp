@@ -147784,6 +147784,16 @@ void CWeaponRanged_FlameThrower::sub_103e2d10(const char *pszSample, int channel
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e3130 size=0x61
+#include "CWeaponRanged_FlameThrower.h"
+CBaseEntity *CWeaponRanged_FlameThrower::sub_103e3130()
+{
+	if (((EHANDLE *)&m_n1530)->Get())
+		return ((EHANDLE *)&m_n1530)->Get();
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e3490 size=0xa6
 #include "CWeaponRanged_FlameThrower.h"
 

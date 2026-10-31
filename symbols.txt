@@ -6606,6 +6606,7 @@
 0x1000e1c4 func   ?vfunc1@CRelationshipSaveDataOps@@UAEXPAX0@Z CRelationshipSaveDataOps::vfunc1
 0x1000e1c9 func   ?vfunc580@CNPC_VStalker@@UAEHXZ CNPC_VStalker::vfunc580
 0x1000e1ce func   ?sub_10202ac0@CUnknown10202ac0@@QAE_NPAH@Z CUnknown10202ac0::sub_10202ac0
+0x1000e1d3 func   ?sub_103e3130@CWeaponRanged_FlameThrower@@QAEPAVCBaseEntity@@XZ CWeaponRanged_FlameThrower::sub_103e3130
 0x1000e1d8 func   ?sub_103c3e10@TzimisceView@@QAEHH@Z TzimisceView::sub_103c3e10
 0x1000e1dd func   ?sub_10202270@@YAPBDH@Z sub_10202270
 0x1000e1e2 func   ?sub_100df0b0@@YAHPBD@Z sub_100df0b0
