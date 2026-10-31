@@ -20,6 +20,17 @@ int CWeaponMelee_Fists::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e57b0 size=0x6
+#include "CWeaponMelee_Fists.h"
+namespace lifted {
+extern char g_1066b248;
+}
+int CWeaponMelee_Fists::vfunc362()
+{
+    return (int)&lifted::g_1066b248;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecc60 size=0x1e
 #include "CWeaponMelee_Fists.h"
 

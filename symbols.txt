@@ -9288,6 +9288,7 @@
 0x100121e8 func   ?vfunc173@CSprite@@UAEXHHHH@Z CSprite::vfunc173
 0x100121f2 func   ?sub_1010b530@CFire@@QAEXM@Z CFire::sub_1010b530
 0x1001220b func   ?sub_10068380@@YAXHHPAHHHHH0D@Z sub_10068380
+0x10012210 func   ?vfunc362@CWeaponMelee_Fists@@QAEHXZ CWeaponMelee_Fists::vfunc362
 0x10012215 func   ?sub_101308d0@CLight@@QAEXXZ CLight::sub_101308d0
 0x1001221a func   ?sub_1015ef20@CUnknown1015ef20@@QAE_NXZ CUnknown1015ef20::sub_1015ef20
 0x10012224 func   ?vfunc71@CPropModelState@@UAEXXZ CPropModelState::vfunc71
