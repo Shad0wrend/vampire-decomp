@@ -76468,6 +76468,18 @@ CBaseEntity *sub_101cd9e0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cda50 size=0x30
+#include "CGameRules.h"
+extern CGameRules *g_1070ba0c;
+int sub_101cd9e0(int);
+int sub_101cda50()
+{
+	if (gpGlobals && gpGlobals->maxClients <= 1 && g_1070ba0c && !g_1070ba0c->vfunc21())
+		return sub_101cd9e0(1);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cdac0 size=0xa7
 extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
 int sub_100104d8(const char *pszName);
