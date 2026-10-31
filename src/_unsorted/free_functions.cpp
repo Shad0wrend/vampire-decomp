@@ -79780,6 +79780,15 @@ void __fastcall sub_101d5fb0(void *pSelf)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d6070 size=0xc
+void __fastcall sub_10205380(void *pThis);
+void * __fastcall sub_101d6070(void *pThis)
+{
+    sub_10205380(pThis);
+    return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d6090 size=0x1
 void sub_101d6090()
 {

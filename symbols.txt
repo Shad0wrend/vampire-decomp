@@ -4695,6 +4695,7 @@
 0x1000a1be func   ?vfunc176@CTriggerEnvAudio@@QAEXPAVCBaseEntity@@@Z CTriggerEnvAudio::vfunc176
 0x1000a1c3 func   ?vfunc81@CHL2_Player@@UAEHXZ CHL2_Player::vfunc81
 0x1000a1c8 func   ?sub_101f1d00@SIdList@@QAEHH@Z SIdList::sub_101f1d00
+0x1000a1cd func   ?sub_101d6070@@YIPAXPAX@Z sub_101d6070
 0x1000a1d2 func   ?sub_1017faa0@@YIXPAUCMsgPlayerView@@@Z sub_1017faa0
 0x1000a1d7 func   ?sub_100740f0@CUnknown100740f0@@QAEXD@Z CUnknown100740f0::sub_100740f0
 0x1000a1dc func   ?sub_10066390@CUnknown10066390@@QAEHXZ CUnknown10066390::sub_10066390
