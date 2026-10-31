@@ -127,6 +127,8 @@ public:
 	void sub_103b9f90(int a, float b);
 	void sub_103b9f50(int a);
 	void sub_102c43b0(float delay);
+	void sub_103be0b0(int a);	// stub 0x1000694c, called directly
+	void sub_103bf170();
 	void sub_103be050(int a);	// stub 0x1000f556, called directly with 0
 	void sub_1029adb0(int a);	// CAI_BaseNPCTroika::vfunc448 (stub 0x100054bb), called directly
 	void vfunc491();	// slot 491 (declared as a plain member): when slot 486 holds logs "SPI_TAKE_DAMAGE" with the three convar values (like slot 488) and runs slot 487; then sub_103b9f90(1, 1.0f)
