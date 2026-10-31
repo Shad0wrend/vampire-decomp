@@ -85441,6 +85441,29 @@ S101f0b50 *CUnknown101f0ea0::sub_101f0ea0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f0fd0 size=0x60
+#include "CReactionData.h"
+
+void CReactionData::sub_101f0fd0()
+{
+	if (m_ppEntries) {
+		for (int i = 0; i < m_nEntries; i++) {
+			delete m_ppEntries[i];
+			m_ppEntries[i] = 0;
+		}
+		delete m_ppEntries;
+		m_ppEntries = 0;
+	}
+	m_nEntries = 0;
+	m_n00 = 0;
+	if (m_p18) {
+		delete m_p18;
+		m_p18 = 0;
+	}
+	m_n14 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f1050 size=0x6b
 #include "CUnknown101f1050.h"
 
