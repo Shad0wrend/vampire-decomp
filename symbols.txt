@@ -26,6 +26,7 @@
 0x100010b9 func   ?sub_102c8cc0@@YAHH@Z sub_102c8cc0
 0x100010be func   ?sub_101eabd0@CEntryY@@QAE_NPAX@Z CEntryY::sub_101eabd0
 0x100010c3 func   ?vfunc2@CHLPlayerMove@@QAEXHHH@Z CHLPlayerMove::vfunc2
+0x100010c8 func   ?sub_101f5ed0@CUnk101f5ed0@@QAEXXZ CUnk101f5ed0::sub_101f5ed0
 0x100010cd func   ?vfunc487@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc487
 0x100010d2 func   ?sub_103c6a20@CNPC_VVampireBoss@@QAEMXZ CNPC_VVampireBoss::sub_103c6a20
 0x100010d7 func   ?sub_102d7640@@YAXXZ sub_102d7640
