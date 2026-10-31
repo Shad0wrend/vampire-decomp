@@ -20,6 +20,17 @@ int CWeaponRanged_Tzimisce2Head::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102374c0 size=0x6
+#include "CWeaponRanged_Tzimisce2Head.h"
+namespace lifted {
+extern char g_105bf8ec;
+}
+int CWeaponRanged_Tzimisce2Head::vfunc362()
+{
+    return (int)&lifted::g_105bf8ec;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a560 size=0x1e
 #include "CWeaponRanged_Tzimisce2Head.h"
 
