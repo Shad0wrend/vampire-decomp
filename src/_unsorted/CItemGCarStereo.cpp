@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103fcde0 size=0x6
+#include "CItemGCarStereo.h"
+namespace lifted {
+extern char g_10945220;
+}
+int CItemGCarStereo::vfunc80()
+{
+    return (int)&lifted::g_10945220;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103fce00 size=0x3
 #include "CItemGCarStereo.h"
 int CItemGCarStereo::vfunc81()

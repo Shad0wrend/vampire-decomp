@@ -5177,6 +5177,7 @@
 0x1000a745 func   ?sub_101ba630@@YAHXZ sub_101ba630
 0x1000a74a func   ?vfunc104@CNPC_VTzimisceHeadClaw@@QAEXXZ CNPC_VTzimisceHeadClaw::vfunc104
 0x1000a74f func   ?vfunc323@CBaseCombatCharacter@@UAEHPBVVector@@@Z CBaseCombatCharacter::vfunc323
+0x1000a754 func   ?vfunc80@CItemGCarStereo@@QAEHXZ CItemGCarStereo::vfunc80
 0x1000a75e func   _item_g_brotherhood_flyer item_g_brotherhood_flyer
 0x1000a763 func   ?vfunc546@CNPC_VAndreiBlood@@QAEHH@Z CNPC_VAndreiBlood::vfunc546
 0x1000a768 func   ?vfunc31@CBaseToggle@@UAEXH@Z CBaseToggle::vfunc31
