@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100582d0 size=0x3
+#include "CTempEntsSystem.h"
+void CTempEntsSystem::vfunc1(int a0, int a1, int a2)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100582f0 size=0x64
 #include "CTempEntsSystem.h"
 
