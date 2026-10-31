@@ -135826,6 +135826,24 @@ void CAI_Expresser::sub_10312b50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10312c20 size=0x17
+extern int g_10936c40;
+
+struct CUnk10312c20 {
+    char pad[0x64];
+    int m_64;
+    char m_68;
+    void sub_10312c20(int a);
+};
+
+void CUnk10312c20::sub_10312c20(int a)
+{
+    if (m_64 != -1)
+        m_68 = 1;
+    g_10936c40 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10312c80 size=0x35
 #include "CAI_Expresser.h"
 
