@@ -274,7 +274,9 @@ public:
 	void *m_pTimedOverlays;	// 0x0228
 	char m_pad022c[0x254 - 0x22c];
 	unsigned int m_hTouch254;	// entity handle notified by StartTouch / EndTouch
-	char m_pad0258[0x268 - 0x258];
+	char m_pad0258[0x260 - 0x258];
+	EHANDLE m_hMoveChild260;	// 0x260: the first entity parented to this one
+	EHANDLE m_hMovePeer264;	// 0x264: the next entity parented to the same parent
 	unsigned int m_flags268;
 	const char *m_name26c;
 	char m_pad0270[0x2e0 - 0x270];
