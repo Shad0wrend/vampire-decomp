@@ -50,6 +50,8 @@ public:
 	void sub_10360160(int a);	// CNPC_VAnimal::vfunc432 (stub 0x10014f92), called directly
 	void sub_102ae750(int schedule, int a);	// starts the schedule (stub 0x1000198d), called directly
 	bool sub_10269aa0(int condition);	// CAI_BaseNPC::HasCondition (stub 0x10014df8), called directly
+	bool sub_10269d30(int condition);	// CAI_BaseNPC condition test (stub 0x1001482b), called directly
+	int sub_10003daa();	// CNPC_VAnimal::vfunc461 (stub 0x10003daa), tail called
 	const char *sub_100ab4f0();	// CBaseEntity::sub_100ab4f0 (stub 0x1000b5cd): the entity's debug name
 
 	char m_pad03e0[0x5ac - sizeof(CBaseEntity)];
