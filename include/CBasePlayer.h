@@ -253,7 +253,9 @@ public:
 	char m_pad1DE0[4];	// 0x1DE0 .. 0x1DE3
 	float m_f1DE4;	// 0x1DE4
 	float m_f1DE8;	// 0x1DE8
-	char m_pad1DEC[0x1dfc - 0x1dec];	// 0x1DEC .. 0x1DFB
+	char m_pad1DEC[0x1df4 - 0x1dec];	// 0x1DEC .. 0x1DF3
+	char m_b1DF4;
+	char m_pad1DF5[0x1dfc - 0x1df5];	// 0x1DF5 .. 0x1DFB
 	EHANDLE m_hEnt1DFC;	// 0x1DFC: entity handle, cleared by sub_10183330
 	char m_pad1E00[4];	// 0x1E00 .. 0x1E03
 	unsigned int m_hEnt1E04;	// entity handle
