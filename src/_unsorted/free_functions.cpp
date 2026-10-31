@@ -126161,6 +126161,71 @@ void CUnknown102f3900::sub_102f3900(CUnknown102f3900Ent *pEnt, Vector vecA, Vect
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f39a0 size=0x1ed
+#include "CUnknown102f3900.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738964.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CGameTrace.h"
+#include "Ray_t.h"
+
+struct CUnknown102f37d0 { void *sub_102f37d0(int a, int b); };
+struct S1009f4e0 { void sub_1009f4e0(); };
+struct STraceFilterStore
+{
+	int m_pad[3];
+	char m_bHitSolid;
+};
+extern CUnknown1070b254 *g_1070b254;
+extern CUnknown10738964 *g_10738964;
+extern float g_104454c4;
+void sub_10146570(const float *pStart, const float *pEnd, int r, int g, int b, int bNoDepth, float flDuration);
+void sub_10142e90(const Vector &vecStart, const Vector &vecEnd, int r, int g, int b, int bNoDepth, float flDuration);
+void sub_10143d80(const Vector &vecOrigin, float flSize, int r, int g, int b, int bNoDepth, float flDuration);
+
+struct SRay : Ray_t
+{
+	void InitRay(const Vector &start, const Vector &end)
+	{
+		m_Delta[0] = end.x - start.x;
+		m_Delta[1] = end.y - start.y;
+		m_Delta[2] = end.z - start.z;
+		m_IsSwept = (m_Delta[0] * m_Delta[0] + m_Delta[1] * m_Delta[1] + m_Delta[2] * m_Delta[2]) != g_104454c4;
+		m_StartOffset[0] = m_StartOffset[1] = m_StartOffset[2] = 0.0f;
+		m_IsRay = true;
+		m_Extents[0] = m_Extents[1] = m_Extents[2] = 0.0f;
+		m_Start[0] = start.x;
+		m_Start[1] = start.y;
+		m_Start[2] = start.z;
+		m_b32 = 0;
+		m_n34 = 0;
+		m_b33 = 0;
+	}
+};
+
+bool CUnknown102f3900::sub_102f39a0(CUnknown102f3900Ent *pEnt, Vector vecA, Vector vecB, int nFlag)
+{
+	STraceFilterStore filter;
+	((CUnknown102f37d0 *)&filter)->sub_102f37d0((int)pEnt, 0);
+	SRay ray;
+	ray.InitRay(vecA, vecB);
+	CGameTrace tr;
+	g_1070b254->vfunc4(&ray, 0x202400b, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10146570(tr.m_startpos, tr.m_endpos, 0xff, 0, 0, 1, -1.0f);
+	*(char *)nFlag = filter.m_bHitSolid;
+	if (tr.m_fraction == 1.0)
+		return true;
+	if (pEnt && (pEnt->m_nFlags0224 & 0x800000) == 0x800000) {
+		if (tr.m_pEnt)
+			((S1009f4e0 *)tr.m_pEnt)->sub_1009f4e0();
+		sub_10142e90(vecA, vecB, 200, 0x20, 0x20, 1, 5.0f);
+		sub_10143d80(vecA, 2.0f, 0xdc, 0x32, 0x32, 1, 5.0f);
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f4520 size=0x91
 #include "CUnknown102f45f0.h"
 #include "Vector.h"

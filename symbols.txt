@@ -7844,6 +7844,7 @@
 0x100107df func   ?sub_100bd540@bf_write@@QAEXI@Z bf_write::sub_100bd540
 0x100107e9 func   ?sub_1042ed40@CUnit1042ed40@@QAEXHM@Z CUnit1042ed40::sub_1042ed40
 0x10010811 func   ?sub_10222da0@CUtlMemory24@@QAEXH@Z CUtlMemory24::sub_10222da0
+0x10010816 func   ?sub_102f39a0@CUnknown102f3900@@QAE_NPAUCUnknown102f3900Ent@@VVector@@1H@Z CUnknown102f3900::sub_102f39a0
 0x1001081b func   ?sub_10230700@@YGXHH@Z sub_10230700
 0x1001082a func   ?sub_100f52e0@@YAHXZ sub_100f52e0
 0x1001082f func   ?vfunc0@CTraitDependencyDataDescSaveDataOps@@UAEXPAUCTraitDependencyField@@PAVCSave@@@Z CTraitDependencyDataDescSaveDataOps::vfunc0
