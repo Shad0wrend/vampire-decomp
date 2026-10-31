@@ -4180,6 +4180,7 @@
 0x10008b16 func   ?sub_10199e20@@YAXXZ sub_10199e20
 0x10008b1b func   ?sub_10312aa0@CAI_Expresser@@QAEXPBDPAVCGlobalEntityList_Ent@@@Z CAI_Expresser::sub_10312aa0
 0x10008b25 func   ?sub_102ec6d0@CUtlRBTree12Unit@@QAEXG@Z CUtlRBTree12Unit::sub_102ec6d0
+0x10008b2f func   ?vfunc80@CResearchBook_LG_STEALTH@@QAEHXZ CResearchBook_LG_STEALTH::vfunc80
 0x10008b39 func   ?sub_102beae0@CUnknown102beae0@@QAEHHHH@Z CUnknown102beae0::sub_102beae0
 0x10008b3e func   ?vfunc5@CWeaponIArmor_Lt_Cloth@@QAEPAV1@I@Z CWeaponIArmor_Lt_Cloth::vfunc5
 0x10008b43 func   ?sub_1006f7d0@CEnt1006f7d0@@QAE_NXZ CEnt1006f7d0::sub_1006f7d0
