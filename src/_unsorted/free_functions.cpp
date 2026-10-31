@@ -72918,6 +72918,20 @@ CUnknown101b30d0 *CUnknown101b30d0::sub_101b30d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b31a0 size=0x17
+#include "CSoundEmitterSystemBase.h"
+
+// TARGET: CSoundEmitterSystemBase::sub_101b31a0
+char CSoundEmitterSystemBase::sub_101b31a0(int index)
+{
+	if (index >= 0 && index < m_i64)
+	{
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b3220 size=0x4
 struct CUnknown101b3220 { int sub_101b3220(); };
 int CUnknown101b3220::sub_101b3220()
