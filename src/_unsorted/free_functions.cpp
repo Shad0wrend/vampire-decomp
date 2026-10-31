@@ -82084,6 +82084,25 @@ void *CUnkDelete101d7c90::sub_101d7c90(unsigned char flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d7e90 size=0x17
+struct CUnknown101d7e90
+{
+	int m_nCount;
+
+	char sub_101d7e90(int index);
+};
+
+// TARGET: CUnknown101d7e90::sub_101d7e90
+char CUnknown101d7e90::sub_101d7e90(int index)
+{
+	if (index > -1 && index < m_nCount)
+	{
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d7ec0 size=0xb2
 #include "CUnknown101d82d0.h"
 
