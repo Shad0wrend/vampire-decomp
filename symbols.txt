@@ -1094,6 +1094,7 @@
 0x10002fa9 func   ?sub_10369d50@@YAHXZ sub_10369d50
 0x10002fc7 func   ?vfunc226@CPhysBox@@QAEXH@Z CPhysBox::vfunc226
 0x10002fcc func   ?sub_101e8e80@CUnknown101e8e80@@QAEHXZ CUnknown101e8e80::sub_101e8e80
+0x10002fd1 func   ?vfunc360@CWeaponMelee_Knife@@QAEHXZ CWeaponMelee_Knife::vfunc360
 0x10002fd6 func   _info_node_sabbat_dive info_node_sabbat_dive
 0x10002fdb func   ?sub_1009ad70@@YIPADPAD@Z sub_1009ad70
 0x10002fe0 func   ?vfunc82@CBaseFlex@@UAEPAUdatamap_t@@XZ CBaseFlex::vfunc82

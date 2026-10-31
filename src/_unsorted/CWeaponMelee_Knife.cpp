@@ -39,6 +39,17 @@ int CWeaponMelee_Knife::vfunc363()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e6680 size=0xb
+#include "CWeaponMelee_Knife.h"
+namespace lifted {
+int sub_100048fe();
+}
+int CWeaponMelee_Knife::vfunc360()
+{
+    return (lifted::sub_100048fe()) & -1073741825;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecd20 size=0x1e
 #include "CWeaponMelee_Knife.h"
 
