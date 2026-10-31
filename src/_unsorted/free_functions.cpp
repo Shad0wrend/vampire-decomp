@@ -83189,6 +83189,29 @@ CUnknown101dd480 *CUnknown101dd480::sub_101dd480()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dd4c0 size=0x14
+struct CPtrList101dc1f0
+{
+	void sub_101dc1f0();
+};
+
+struct CUnit101dd4c0
+{
+	char m_pad0000[0x10];
+	CPtrList101dc1f0 m_list10;
+
+	void sub_101dcb50();
+	void sub_101dd4c0();
+};
+
+// TARGET: CUnit101dd4c0::sub_101dd4c0
+void CUnit101dd4c0::sub_101dd4c0()
+{
+	((CUnit101dd4c0 *)((char *)this + 0x20))->sub_101dcb50();
+	m_list10.sub_101dc1f0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dd4f0 size=0x7
 // TARGET: sub_101dd4f0
 bool __fastcall sub_101dd4f0(int *pThis)
