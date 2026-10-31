@@ -18,6 +18,16 @@ int CEnvParticle::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100facc0 size=0x6
+namespace lifted {
+extern char g_105669d8;
+}
+int CEnvParticle::vfunc82()
+{
+    return (int)&lifted::g_105669d8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fae40 size=0x1e
 #include "CEnvParticle.h"
 
