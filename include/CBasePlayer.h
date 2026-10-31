@@ -66,6 +66,16 @@ struct CBasePlayerPartOwner	// the object at +0x2100; only slot 5 is typed
 
 class CGlobalEntityList_Ent;
 
+struct CBasePlayerQuestRecord	// a saved quest record (0x40 bytes)
+{
+	char m_pad00[0x30];
+	int m_nQuest30;	// the quest index
+	int m_nOrder34;
+	int m_nStep38;
+	unsigned char m_bFlag3C;
+	char m_pad3D[3];
+};
+
 class CBasePlayer
 {
 public:
