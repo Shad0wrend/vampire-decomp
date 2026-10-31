@@ -51,9 +51,11 @@ public:
 	void *m_p6590;	// 0x6590
 	char m_pad6594[0x65f4 - 0x6594];
 	char m_b65f4;	// 0x65f4
-	char m_pad65f5[0x6668 - 0x65f5];
+	char m_pad65f5[0x6664 - 0x65f5];
+	EHANDLE m_h6664;	// 0x6664: the target
 	unsigned int m_d6668;	// 0x6668
-	char m_pad666c[0x6671 - 0x666c];
+	char m_pad666c[0x6670 - 0x666c];
+	char m_b6670;	// 0x6670
 	char m_b6671;	// 0x6671
 	char m_b6672;	// 0x6672
 public:
