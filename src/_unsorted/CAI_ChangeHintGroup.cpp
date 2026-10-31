@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101c9ad0 size=0x6
+#include "CAI_ChangeHintGroup.h"
+namespace lifted {
+extern char g_1059e0e4;
+}
+int CAI_ChangeHintGroup::vfunc82()
+{
+    return (int)&lifted::g_1059e0e4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cc110 size=0x1e
 #include "CAI_ChangeHintGroup.h"
 
