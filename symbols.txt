@@ -6356,6 +6356,7 @@
 0x1000cc07 func   ?sub_10157260@@YAPAVCRagdollProp@@PAV1@ABVVector@@HHPAX2H1H1@Z sub_10157260
 0x1000cc0c func   ?sub_10140200@CPathKeyFrame@@QAEXXZ CPathKeyFrame::sub_10140200
 0x1000cc16 func   ?vfunc367@CWeaponMelee@@QAEXHHH@Z CWeaponMelee::vfunc367
+0x1000cc1b func   ?vfunc82@CNPC_VVampireBoss@@QAEHXZ CNPC_VVampireBoss::vfunc82
 0x1000cc20 func   ?vfunc82@CLogicSquadCondition@@QAEHXZ CLogicSquadCondition::vfunc82
 0x1000cc25 func   ?vfunc138@CNPC_VTremere@@UAEHXZ CNPC_VTremere::vfunc138
 0x1000cc2f func   ?sub_10073790@CUnknown10073790@@QAEHXZ CUnknown10073790::sub_10073790

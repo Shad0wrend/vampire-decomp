@@ -28,6 +28,16 @@ int CNPC_VVampireBoss::vfunc451()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c5060 size=0x6
+namespace lifted {
+extern char g_1065e418;
+}
+int CNPC_VVampireBoss::vfunc82()
+{
+    return (int)&lifted::g_1065e418;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c5270 size=0x1d
 #include "CNPC_VVampireBoss.h"
 struct A { int sub_10012300(int); };
