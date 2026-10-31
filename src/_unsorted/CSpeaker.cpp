@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101af390 size=0x6
+#include "CSpeaker.h"
+namespace lifted {
+extern char g_10596ed8;
+}
+int CSpeaker::vfunc82()
+{
+    return (int)&lifted::g_10596ed8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101af420 size=0x177
 #include "CSpeaker.h"
 #include "CCollisionProperty.h"
