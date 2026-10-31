@@ -9,6 +9,7 @@
 class CGravControllerPoint : public IMotionEvent
 {
 public:
+	CGravControllerPoint();
 	void sub_10148a20();	// \"CGravControllerPoint::DetachEntity\": re-enables the collisions between the two attached entities, wakes the held one's physics object and gives it the vector at +0x5c, forgets it, destroys the motion controller and clears the vectors at +0x10 / +0x1c
 
 	char m_pad0004[0x10 - 4];
