@@ -9134,6 +9134,19 @@ void __stdcall sub_100577d0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057820 size=0x19
+struct CNamedHeadC_100576a0;
+int __stdcall sub_100576a0(int a);
+
+int __stdcall sub_10057820(int a)
+{
+	int *p = (int *)sub_100576a0(a);
+	if (p)
+		return p[0x60 / 4];
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057850 size=0x6d
 struct IVisitor { virtual void v0(); virtual void v1(); virtual void v2(); virtual int v3(const char *name, void *data, int a, void *desc, int n); };
 extern char g_1053fdd4[];
