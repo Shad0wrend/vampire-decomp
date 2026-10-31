@@ -7019,6 +7019,7 @@
 0x1000d9ef func   ?vfunc546@CNPC_VMoleman@@QAEHH@Z CNPC_VMoleman::vfunc546
 0x1000d9f4 func   ?sub_10208fa0@@YGHH@Z sub_10208fa0
 0x1000d9f9 func   ?AddAllPlayers@CRecipientFilter@@QAEXXZ CRecipientFilter::AddAllPlayers
+0x1000d9fe func   ?sub_10395ce0@@YIXPAVCNPC_VMingXiao@@@Z sub_10395ce0
 0x1000da03 func   _item_w_steyr_aug item_w_steyr_aug
 0x1000da0d func   ?vfunc362@CWeaponRanged_Rifle_RemingtonBach@@QAEHXZ CWeaponRanged_Rifle_RemingtonBach::vfunc362
 0x1000da12 func   ?sub_101c7870@@YGHHHHH@Z sub_101c7870

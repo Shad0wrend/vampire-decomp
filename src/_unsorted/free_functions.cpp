@@ -146561,6 +146561,17 @@ int CNPC_VMingXiao::sub_10395650(int a, void *pWeapon)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10395ce0 size=0x10
+#include "CNPC_VMingXiao.h"
+
+// TARGET: sub_10395ce0
+void __fastcall sub_10395ce0(CNPC_VMingXiao *pThis)
+{
+	if (!pThis->m_bActive6744)
+		pThis->sub_10395c70();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10397380 size=0x62
 #include "CNPC_VMingXiao.h"
 #include "CNPC_VMingXiaoTentacle.h"
