@@ -435,6 +435,20 @@ Vector CNPC_VMingXiao::vfunc574(const Vector &vecPos, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10395dc0 size=0x17
+#include "CNPC_VMingXiao.h"
+struct S10924edc { virtual void a(); virtual void b(); };
+extern S10924edc *g_10924edc;
+
+// TARGET: CNPC_VMingXiao::vfunc599
+bool CNPC_VMingXiao::vfunc599(int unused)
+{
+	m_b6078 = 1;
+	g_10924edc->b();
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10395e50 size=0x3
 #include "CNPC_VMingXiao.h"
 bool CNPC_VMingXiao::vfunc602()

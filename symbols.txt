@@ -8714,6 +8714,7 @@
 0x100106d1 func   ??0CAI_Navigator@@QAE@H@Z CAI_Navigator::CAI_Navigator
 0x100106d6 func   ?vfunc509@CNPC_VCamera@@UAE_NXZ CNPC_VCamera::vfunc509
 0x100106ea func   ?vfunc3@CTESpriteSpray@@UAEXPBVVector@@0@Z CTESpriteSpray::vfunc3
+0x10010703 func   ?vfunc599@CNPC_VMingXiao@@UAE_NH@Z CNPC_VMingXiao::vfunc599
 0x1001070d func   ?sub_10063500@@YAHXZ sub_10063500
 0x10010712 func   ?vfunc495@CNPC_VTest@@QAEXXZ CNPC_VTest::vfunc495
 0x10010717 func   ?vfunc371@CNPCMaker_Fleshpile@@UAEHH@Z CNPCMaker_Fleshpile::vfunc371
