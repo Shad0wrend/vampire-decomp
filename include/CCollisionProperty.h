@@ -31,6 +31,7 @@ public:
 class CCollisionProperty : public ICollideable
 {
 public:
+	CCollisionProperty();
 	virtual void vfunc3(Vector *pMins, Vector *pMaxs);	// "CCollisionProperty::WorldSpaceTriggerBounds": the world bounds of the box (sub_100dcd90), grown by m_flTriggerBloat (half of it up in z) when bit 8 of the solid flags (slot 12) is set
 	virtual void vfunc4();
 	virtual void vfunc5();
