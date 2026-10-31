@@ -38,6 +38,11 @@ int CCopyRecipientFilter::vfunc5()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bcff0 size=0x4
+// TARGET: sub_101bcff0
+char __fastcall sub_101bcff0(void *p) { return ((unsigned char *)p)[0x24]; }
+// END FUNCTION
+
 // FUNCTION: 0x101bd010 size=0xaf
 #include "CRecipientFilter.h"
 
