@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10210f80 size=0x6
+#include "CTriggerBombSite.h"
+namespace lifted {
+extern char g_105ab7a0;
+}
+int CTriggerBombSite::vfunc82()
+{
+    return (int)&lifted::g_105ab7a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102110e0 size=0x52
 #include "CCameraTrack.h"
 #include "CTriggerBombSite.h"
