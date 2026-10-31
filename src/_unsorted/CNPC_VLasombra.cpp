@@ -49,6 +49,15 @@ CNPC_VLasombra *CNPC_VLasombra::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10388f20 size=0x6
+extern unsigned char g_1064069c;
+// TARGET: sub_10388f20
+unsigned char sub_10388f20()
+{
+    return g_1064069c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10388f80 size=0x1d
 #include "CNPC_VLasombra.h"
 struct A { int sub_10012300(int); };
