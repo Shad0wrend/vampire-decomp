@@ -57485,6 +57485,17 @@ void CUnit10155460::sub_10155460(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10155880 size=0x12
+#include "CRagdollProp.h"
+
+// TARGET: CRagdollProp::sub_10155880
+void CRagdollProp::sub_10155880()
+{
+	CBaseEntity::sub_100aaa40(1);
+	sub_10155a30();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155a30 size=0x30
 #include "CRagdollProp.h"
 struct CPhysObjView25 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
