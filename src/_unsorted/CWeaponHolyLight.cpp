@@ -59,3 +59,11 @@ void CWeaponHolyLight::vfunc326()
 	pWeapon->CDisciplineWeapon::vfunc326();
 }
 // END FUNCTION
+
+// FUNCTION: 0x103f2c50 size=0x3
+#include "CWeaponHolyLight.h"
+int CWeaponHolyLight::vfunc285()
+{
+    return 0;
+}
+// END FUNCTION
