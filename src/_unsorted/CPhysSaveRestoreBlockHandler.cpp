@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10043c20 size=0x6
+#include "CPhysSaveRestoreBlockHandler.h"
+namespace lifted {
+extern char g_10539b54;
+}
+int CPhysSaveRestoreBlockHandler::vfunc0()
+{
+    return (int)&lifted::g_10539b54;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10043c40 size=0x11
 struct CSaveBlockFields10043c40 {
     char pad[0x98];
