@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10389db0 size=0x6
+#include "CNPC_VManBat.h"
+namespace lifted {
+extern char g_1093b778;
+}
+int CNPC_VManBat::vfunc580()
+{
+    return (int)&lifted::g_1093b778;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10389df0 size=0x1e
 #include "CNPC_VManBat.h"
 
