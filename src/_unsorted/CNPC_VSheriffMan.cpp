@@ -33,6 +33,16 @@ int CNPC_VSheriffMan::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ae4d0 size=0x6
+namespace lifted {
+extern int g_10650718;
+}
+int CNPC_VSheriffMan::vfunc451()
+{
+    return lifted::g_10650718;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ae4f0 size=0x36
 #include "CNPC_VSheriffMan.h"
 
