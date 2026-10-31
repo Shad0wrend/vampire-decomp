@@ -35,6 +35,7 @@ public:
 	void vfunc103();	// base vfunc103, then sets bit 0x40 in the flags at +0x19c
 	CItemContainerLock *vfunc5(unsigned int flags);	// as in CMomentaryRotButton (transplant)
 	void vfunc113();	// slot 113 (plain member): base update, then finds the container named by the string at +0x124 and attaches this lock to it (sub_10209ac0), or warns "attached to non existent container" and removes itself
+	void vfunc39(CBasePlayer *pPlayer);	// slot 39: a player who is not accepted by sub_10224910 triggers the "Intrusion" camera record and the output at +0x7dc; else sub_10224950
 	int vfunc34(int a);	// slot 34 (plain member): 2 while the attached container answers sub_100eef10, else 3 when sub_10224100 fails, else 2 + (sub_10224910(a) != 0)
 	int vfunc35(int a);	// slot 35 (plain member): 0x3a while the attached container answers sub_100eef10, else when the lock is open (sub_10224100) the field at +0x820 / +0x81c by sub_10224910(a), else 0x3b when the container answers sub_100eedd0, else the field at +0x818
 	int vfunc33();	// slot 33 (plain member): 1 while the lock is not open (sub_10224100), else 1 when sub_10224910 accepts the user at +0x8c, 300 when it refuses
