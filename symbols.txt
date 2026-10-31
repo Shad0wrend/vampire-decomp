@@ -143,6 +143,7 @@
 0x10001429 func   ?sub_10091230@CBaseAnimating@@QAEMH@Z CBaseAnimating::sub_10091230
 0x1000142e func   ?vfunc80@CWeaponIArmor_Hvy_Cloth@@UAEHXZ CWeaponIArmor_Hvy_Cloth::vfunc80
 0x10001433 func   ?vfunc80@CBaseFlex@@UAEHXZ CBaseFlex::vfunc80
+0x10001438 func   ?vfunc80@COccultLockpicking@@QAEHXZ COccultLockpicking::vfunc80
 0x1000143d func   ?sub_10096490@CBaseAnimating@@QAEXH@Z CBaseAnimating::sub_10096490
 0x10001447 func   ?vfunc113@CPropSwitch@@UAEXXZ CPropSwitch::vfunc113
 0x10001451 func   ?vfunc2@CGameMovement@@UAEPAMDH@Z CGameMovement::vfunc2
