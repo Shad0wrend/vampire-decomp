@@ -26,6 +26,8 @@ public:
 		}
 	}
 
+	bool sub_1025de90(CBaseEntity *pEntity);	// true when no handle in the list resolves to pEntity (null counts as free)
+	bool sub_1025db50();	// size < limit
 	void sub_1025ddd0(void *pEntity);	// removes the first handle that resolves to pEntity (fast remove: the last element takes its place)
 	bool sub_1025db70(CBaseEntity *pEntity);	// adds the entity when it is not in the list yet and the list is below its limit; else sub_1025dca0(pEntity, 1) (replace the oldest member)
 	bool sub_1025dca0(CBaseEntity *pEntity, char bFlag);	// stub 0x10015564
