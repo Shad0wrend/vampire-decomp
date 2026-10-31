@@ -16194,6 +16194,22 @@ int CUnknown10076be0::sub_10076be0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10076c00 size=0x17
+struct CUnknown10076c00
+{
+	char m_pad0000[0x2bc];
+	int m_n2bc;
+
+	int sub_10076c00(int idx);
+};
+
+// TARGET: CUnknown10076c00::sub_10076c00
+int CUnknown10076c00::sub_10076c00(int idx)
+{
+	return m_n2bc + idx * 0x88;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10076c30 size=0x119
 #include "CUnknown10076da0.h"
 
