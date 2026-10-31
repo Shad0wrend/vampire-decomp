@@ -28,15 +28,13 @@ struct CNewscasterList	// a CUtlVector<CNewscasterEntry>
 	void AddToTail(const CNewscasterEntry &src)	// CUtlVector::InsertBefore(size, src)
 	{
 		int idx = m_size;
-		int next = idx + 1;
-		if (next > m_allocationCount)
-			((CUnknown103a1320 *)this)->sub_103a1320(idx - m_allocationCount + 1);
-		int newSize = m_size + 1;
+		if (m_size + 1 > m_allocationCount)
+			((CUnknown103a1320 *)this)->sub_103a1320(m_size + 1 - m_allocationCount);
+		m_size += 1;
 		m_pElements = m_pMemory;
-		m_size = newSize;
-		int n = newSize - idx - 1;
+		int n = m_size - idx - 1;
 		if (n > 0)
-			memmove(m_pMemory + next, m_pMemory + idx, n * sizeof(CNewscasterEntry));
+			memmove(m_pMemory + (idx + 1), m_pMemory + idx, n * sizeof(CNewscasterEntry));
 		CNewscasterEntry *d = m_pMemory + idx;
 		if (d)
 			*d = src;
