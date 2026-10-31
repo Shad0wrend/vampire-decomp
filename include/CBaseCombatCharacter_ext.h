@@ -1,3 +1,4 @@
+	void sub_1032ec90(int nType, int bFlag, int unused);	// "CBaseCombatCharacter::CreatePotenceHitEffect": scope trace (entity name), for a flag that is set creates the "env_particle" named by table 0x10619e50[nType] on the model's bone, a dynamic light and the hit sound (deathblow for type 4) to the players in earshot; called by vfunc142
 	bool sub_103360a0();	// "CBaseCombatCharacter::Inventory...": scope trace (entity name), true when GetWeapon(i) is null for every i in 0..0xdf
 	virtual int vfunc126(int a);	// "CBaseCombatCharacter::Save": scope trace (entity name), brackets CBaseEntity::vfunc126(a) with the helper pair on the field at +0x13d0, calling slot 111 first
 	virtual int vfunc127(int a);	// "CBaseCombatCharacter::Restore": scope trace (entity name), CBaseEntity::vfunc127(a), AddToTeam(name at +0x10ac) when non-empty, then sub_101cf2f0(this + 0x13d0, 1); returns the base result
