@@ -347,3 +347,14 @@ void CNPC_VZombieX::sub_103e1280(int a)
     ((CUnkZombie66e8 *)((char *)this + 0x66e8))->sub_10010794(a, this, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x103e12c0 size=0x16
+#include "CNPC_VZombie.h"
+#include "CPhysBox.h"
+
+// TARGET: CNPC_VZombie::vfunc25
+void CNPC_VZombie::vfunc25(int a)
+{
+	((CPhysBoxHelper498 *)((char *)this + 0x66e8))->sub_10010794(a, this, 0);
+}
+// END FUNCTION

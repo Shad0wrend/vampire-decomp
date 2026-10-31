@@ -8960,6 +8960,7 @@
 0x10010ebf func   ?sub_1032b960@@YAPAVVector@@XZ sub_1032b960
 0x10010ec4 func   ?sub_10189a10@@YADPAVCBaseEntity@@@Z sub_10189a10
 0x10010ed3 func   ?vfunc534@CAI_BaseNPC@@UAEPAVCBaseEntity@@XZ CAI_BaseNPC::vfunc534
+0x10010ed8 func   ?vfunc25@CNPC_VZombie@@UAEXH@Z CNPC_VZombie::vfunc25
 0x10010edd func   ?sub_10258b00@@YAXPAVCUnknown10258b00@@@Z sub_10258b00
 0x10010ee2 func   ?vfunc11@CServerGameDLL@@UAEXXZ CServerGameDLL::vfunc11
 0x10010ee7 func   ?vfunc4@CTEShatterSurface@@QAEXHH@Z CTEShatterSurface::vfunc4
