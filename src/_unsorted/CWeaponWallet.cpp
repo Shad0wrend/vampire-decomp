@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103f61f0 size=0x6
+#include "CWeaponWallet.h"
+namespace lifted {
+extern char g_10945b28;
+}
+int CWeaponWallet::vfunc80()
+{
+    return (int)&lifted::g_10945b28;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f6210 size=0x3
 #include "CWeaponWallet.h"
 int CWeaponWallet::vfunc81()
