@@ -8,6 +8,14 @@ void CItemContainer::vfunc316(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102089f0 size=0x3
+#include "CItemContainer.h"
+bool CItemContainer::vfunc408()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10208ad0 size=0x1e
 #include "CItemContainer.h"
 
