@@ -124808,6 +124808,36 @@ bool NodeGraph::sub_102f48b0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f4940 size=0x60
+#include "CAI_NodeGraph.h"
+struct CAI_NodeLink
+{
+	int m_n00;
+	int m_nSrc;	// 0x04
+	int m_nDest;	// 0x08
+};
+struct CAI_NodeGraphStub : CAI_NodeGraph
+{
+	void sub_10002257(CAI_Node *pNode, int nGroup);
+};
+
+void CAI_NodeGraph::sub_102f4940(CAI_Node *pNode, int nGroup)
+{
+	pNode->m_n94 = nGroup;
+	for (int i = 0; i < pNode->m_n78; i++)
+	{
+		CAI_NodeLink *pLink = pNode->m_ppLinks[i];
+		CAI_Node *pOther;
+		if (pLink->m_nDest == pNode->m_nIndex)
+			pOther = m_ppNodes[pLink->m_nSrc];
+		else
+			pOther = m_ppNodes[pLink->m_nDest];
+		if (pOther->m_n94 == 0)
+			((CAI_NodeGraphStub *)this)->sub_10002257(pOther, nGroup);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f49c0 size=0x1af
 #include "CAI_NodeGraph.h"
 #include "UtlVec8.h"
