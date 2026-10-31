@@ -3794,6 +3794,7 @@
 0x100088fa func   ?vfunc13@CBaseEntity@@UAEXPBD@Z CBaseEntity::vfunc13
 0x1000890e func   ?vfunc2@CCopyRecipientFilter@@UAEHXZ CCopyRecipientFilter::vfunc2
 0x10008913 func   ?sub_1030ba50@CUnknown1030ba50@@QAEXH@Z CUnknown1030ba50::sub_1030ba50
+0x10008918 func   ?vfunc1@CAI_NPCPatrolPathSaveRestoreOps@@UAEXPAUSaveRestoreFieldInfo_t@@PAVCRestore@@@Z CAI_NPCPatrolPathSaveRestoreOps::vfunc1
 0x1000891d func   _momentary_rot_button momentary_rot_button
 0x10008922 func   ?sub_1009d5e0@CBaseEntity@@QAEHXZ CBaseEntity::sub_1009d5e0
 0x10008936 func   ?sub_10073ae0@CUnknown10073ae0@@QAEPAXXZ CUnknown10073ae0::sub_10073ae0
