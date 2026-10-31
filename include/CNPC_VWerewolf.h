@@ -152,6 +152,9 @@ public:
 	int m_n6708;	// 0x6708
 	int m_n670c;	// 0x670c
 
+	void sub_103cc5c0();	// "CNPC_VWerewolf::UpdateConditionCanSpecialMove": scope trace (entity name); nothing while the current schedule is one of the types 0x15f / 0x15b / 0x15a / 0x160 or bit 6 of +0x19c is set; else keeps the move hint (+0x66bc) valid (clearing it when it fails the tests, condition 0x78 and a signal to the object behind 0x10924a6c when it passes) and with condition 0x59 and no hint calls sub_103d2a10 or sub_103d14f0 depending on sub_103cf5f0
+	void sub_103d2a10();	// stub 0x10012a99
+	void sub_103d14f0();	// stub 0x1000296e
 	bool sub_103d1e50();	// both doors are valid and close together (door state 2 is always true)
 	int sub_10366490(int key);
 	bool sub_10366400(int key);
