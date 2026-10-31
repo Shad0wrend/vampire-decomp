@@ -80,7 +80,7 @@ public:
 	char m_pad667d[0x6680 - 0x667d];
 	int m_n6680;	// 0x6680
 	Vector m_vecBonePos;	// 0x6684: position of the chosen bone
-	char m_pad6690[0x6694 - 0x6690];
+	unsigned int m_h6690;	// 0x6690: entity handle (the grabbed phys_animlink)
 	char m_b6694;	// 0x6694
 	char m_pad6695[0x66a4 - 0x6695];
 	CNPC_VHengeyokaiTimerVec m_Timers;	// 0x66a4
