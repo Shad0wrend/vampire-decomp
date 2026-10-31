@@ -80270,6 +80270,16 @@ void sub_101d04d0(const Vector &vecStart, Vector &vecDir, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d0540 size=0x1b
+// TARGET: sub_101d0540
+void sub_101d04d0(float *pOut, int a, int b);
+void sub_101d0540(int a, int b)
+{
+    float tmp[3];
+    sub_101d04d0(tmp, a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d0570 size=0x86
 extern "C" int __cdecl atoi(const char *);
 extern "C" __declspec(dllimport) char *Q_strncpy(char *, const char *, int);
