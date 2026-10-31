@@ -23,6 +23,17 @@ int CNPC_VChangBrosBlade::vfunc451()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036eb30 size=0x6
+#include "CNPC_VChangBrosBlade.h"
+namespace lifted {
+extern char g_1062fe20;
+}
+int CNPC_VChangBrosBlade::vfunc82()
+{
+    return (int)&lifted::g_1062fe20;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036ecf0 size=0x1d
 #include "CNPC_VChangBrosBlade.h"
 struct A { int sub_10012300(int); };
