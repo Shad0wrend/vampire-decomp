@@ -14,6 +14,14 @@ ConCommandBase *ConCommandBase::vfunc0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102455a0 size=0x3
+#include "ConCommandBase.h"
+bool ConCommandBase::vfunc1()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102455c0 size=0x4d
 #include "ConCommandBase.h"
 struct CConCmdView {
