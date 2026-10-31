@@ -28,6 +28,22 @@ CPropKeypad *CPropKeypad::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021d9d0 size=0x4f
+#include "CPropKeypad.h"
+#include "CBreakableProp.h"
+#include "globalvars.h"
+#include "engineiface.h"
+void sub_100027cf();
+void CPropKeypad::vfunc104()
+{
+	m_nKeySound828 = enginesound->vfunc0("Environmental/Electronic/pad_keystroke_1.wav", 0);
+	((CBreakableProp *)this)->vfunc104();
+	sub_1021da40();
+	((CBreakableProp *)this)->sub_10007fe5((void *)sub_100027cf, 0, 0);
+	m_flNextThink17c = gpGlobals->curtime + 1.0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021dc20 size=0x10
 #include "CPropKeypad.h"
 extern char g_106b8540[];
