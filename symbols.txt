@@ -8059,6 +8059,7 @@
 0x100105d7 func   ??1CExpressionTable@@QAE@XZ CExpressionTable::~CExpressionTable
 0x100105dc func   ?vfunc583@CAI_ExpressiveNPC@@QAEPAVCAI_Expresser@@XZ CAI_ExpressiveNPC::vfunc583
 0x100105e1 func   ?sub_1002dfe0@@YAHHH@Z sub_1002dfe0
+0x100105e6 func   ?vfunc81@CWeaponRanged_Rifle_SteyrAug@@QAEHXZ CWeaponRanged_Rifle_SteyrAug::vfunc81
 0x100105eb func   _func_pushable func_pushable
 0x100105f0 func   ?sub_10104510@CUnknown10104510@@QAEPADXZ CUnknown10104510::sub_10104510
 0x100105fa func   ?vfunc254@CBaseAnimating@@QAEHHHH@Z CBaseAnimating::vfunc254
