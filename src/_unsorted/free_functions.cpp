@@ -60210,6 +60210,38 @@ void sub_1017a290()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017a2b0 size=0x208
+#include "StatDefault2.h"
+struct StatMaskView {
+	int m_type;
+	int m_idx;
+	int m_a[11];
+	int m_pad34;
+	int m_b[11];
+	void sub_1017a2b0(int type);
+};
+// TARGET: StatMaskView::sub_1017a2b0
+void StatMaskView::sub_1017a2b0(int type)
+{
+	m_type = type;
+	m_idx = 0;
+	m_pad34 = 0;
+	for (int k = 0; k < 11; k++) {
+		m_a[k] = -1;
+		m_b[k] = -1;
+	}
+	int n = 0;
+	for (int i = 0; i < FindStatDefault2(m_type)->m_nFlags0c; i++) {
+		if (FindStatDefault2(m_type)->m_pFlags18[i] & 1)
+			m_a[n++] = i;
+	}
+	for (int j = 0; j < FindStatDefault2(m_type)->m_nFlags1c; j++) {
+		if (FindStatDefault2(m_type)->m_pFlags28[j] & 1)
+			m_idx = j;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017bf10 size=0x10d
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
