@@ -123375,6 +123375,17 @@ int __fastcall sub_102ecc20(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ecc40 size=0x60
+#include "CEHandleGet.h"
+void *CAI_Navigator::sub_102ecc40()
+{
+	int t = sub_102ee620();
+	if (t == 2 || sub_102ee620() == 1 || sub_102ee620() == 7)
+		return ((CAI_BaseNPC *)m_pOuter)->sub_102729d0();
+	return EHandle_Get((unsigned int &)m_p30->m_i30);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102eccc0 size=0x8
 namespace lifted {
 struct C100012f3 { int sub_100012f3(); };
