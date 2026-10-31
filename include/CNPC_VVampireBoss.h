@@ -26,7 +26,8 @@ public:
 	const char *m_pMonsterModelName;	// +0x6680
 	const char *m_pBodyEmitterNames[4];	// +0x6684
 	const char *m_pDefaultNPCName;	// +0x6694
-	char pad6698[0x66a0 - 0x6698];
+	float m_HealthPercentRecord; // +0x6698
+	char pad669c[0x66a0 - 0x669c];
 	unsigned int m_hParticleEmitters[4];	// +0x66a0
 
 	bool vfunc525(int unused);
