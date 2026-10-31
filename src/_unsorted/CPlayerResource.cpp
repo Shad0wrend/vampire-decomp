@@ -20,6 +20,17 @@ int CPlayerResource::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10189fd0 size=0x6
+#include "CPlayerResource.h"
+namespace lifted {
+extern char g_105896c0;
+}
+int CPlayerResource::vfunc82()
+{
+    return (int)&lifted::g_105896c0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018a0d0 size=0xdc
 #include "CBaseEntity.h"
 #include "CPlayerResource.h"

@@ -8125,6 +8125,7 @@
 0x10010212 func   ?sub_100916a0@@YIMPAD@Z sub_100916a0
 0x10010217 func   ?vfunc233@CBaseEntity@@QAEHPAHH@Z CBaseEntity::vfunc233
 0x1001021c func   ?sub_1030b880@CUnknown1030b880@@QAEMXZ CUnknown1030b880::sub_1030b880
+0x10010221 func   ?vfunc82@CPlayerResource@@QAEHXZ CPlayerResource::vfunc82
 0x10010226 func   ?sub_100697a0@@YAHXZ sub_100697a0
 0x1001022b func   ?sub_101b9880@@YIXPAH@Z sub_101b9880
 0x10010230 func   ?sub_103e78b0@CWeaponMelee_Torch@@QAEXXZ CWeaponMelee_Torch::sub_103e78b0
