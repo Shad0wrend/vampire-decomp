@@ -256,7 +256,11 @@ public:
 	unsigned int m_h6088;
 	unsigned int m_h608c;
 	float m_v6090[3];
-	char m_pad609c[0x624c - 0x609c];
+	float m_f609c;
+	float m_f60a0;
+	int m_n60a4;
+	int m_n60a8;
+	char m_pad60ac[0x624c - 0x60ac];
 	float m_f624c;	// 0x624c: the next time (curtime + const)
 	char m_pad6250[0x625c - 0x6250];
 	float m_f625c;	// 0x625c: the previous value of +0x624c
