@@ -87606,6 +87606,25 @@ void CHistoryList::sub_101e9e20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e9f10 size=0x18
+struct CUnknown101e9f10
+{
+    char pad[4];
+    int m_nCount;
+
+    char sub_101e9f10(int index);
+};
+
+char CUnknown101e9f10::sub_101e9f10(int index)
+{
+    if (index > -1 && index < m_nCount)
+    {
+        return 1;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e9f40 size=0x3d
 struct CUnk101e9f40 {
     int m_unk0;
