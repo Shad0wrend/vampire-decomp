@@ -221,7 +221,11 @@ public:
 		int m_n1CE0;
 		float m_f1CE0;	// 0x1CE0: time the criminal level lapses (-1.0f bits = none)
 	};
-	char m_pad1CE4[0x1da4 - 0x1ce4];	// 0x1CE4 .. 0x1DA3
+	char m_pad1CE4[0x1d68 - 0x1ce4];	// 0x1CE4 .. 0x1D67
+	struct CBasePlayerQuestRecord *m_pQuestRecords1D68;	// 0x1D68: the saved quest records (0x40 bytes each)
+	char m_pad1D6C[0x1d74 - 0x1d6c];
+	int m_nQuestRecords1D74;	// 0x1D74: their count
+	char m_pad1D78[0x1da4 - 0x1d78];	// 0x1D78 .. 0x1DA3
 	EHANDLE m_hPlaceholder1da4;
 
 	float m_f1DA8;	// 0x1DA8: when the next random view punch is due
