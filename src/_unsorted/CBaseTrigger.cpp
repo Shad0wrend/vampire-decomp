@@ -12,6 +12,18 @@ datamap_t * CBaseTrigger::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c4b50 size=0x8
+#include "CBaseTrigger.h"
+// TARGET: CBaseTrigger::sub_101c4b50
+unsigned char CBaseTrigger::sub_101c4b50()
+{
+    unsigned char b;
+    b = ((CBaseEntity *)this)->CBaseEntity::vfunc117();
+    b &= 0xfd;
+    return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c4d60 size=0x4b
 #include "CBaseTrigger.h"
 #include "CGlobalEntityList.h"
