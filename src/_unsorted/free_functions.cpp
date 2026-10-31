@@ -69851,6 +69851,77 @@ int sub_101ae390()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ae440 size=0x1f2
+#include "CEnvSoundscape.h"
+#include "CEntityVSlots.h"
+#include "CTraceFilterSimple.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738964.h"
+
+extern CUnknown1070b254 *g_1070b254;
+extern CUnknown10738964 *g_10738964;
+void sub_10015df2(const float *start, const float *end, int r, int g, int b, int noDepth, float dur);
+
+struct MyRay
+{
+	float m_Start[3];
+	float m_Delta[3];
+	float m_Extents[3];
+	float m_StartOffset[3];
+	bool m_IsRay;
+	bool m_IsSwept;
+	char m_b32;
+	char m_b33;
+	float m_n34;
+	void Init(const Vector &start, const Vector &end)
+	{
+		m_Delta[0] = end.x - start.x;
+		m_Delta[1] = end.y - start.y;
+		m_Delta[2] = end.z - start.z;
+		m_IsSwept = (m_Delta[0] * m_Delta[0] + m_Delta[1] * m_Delta[1] + m_Delta[2] * m_Delta[2]) != 0;
+		m_StartOffset[0] = m_StartOffset[1] = m_StartOffset[2] = 0.0f;
+		m_IsRay = true;
+		m_Extents[0] = m_Extents[1] = m_Extents[2] = 0.0f;
+		m_Start[0] = start.x;
+		m_Start[1] = start.y;
+		m_Start[2] = start.z;
+		m_b32 = 0;
+		m_n34 = 0;
+		m_b33 = 0;
+	}
+};
+
+// TARGET: CEnvSoundscape::sub_101ae440
+char CEnvSoundscape::sub_101ae440(void *pPlayer)
+{
+	Vector vecMine;
+	((CEntityVSlots *)this)->slot196(&vecMine);
+	Vector vecPlayer;
+	((CEntityVSlots *)pPlayer)->slot196(&vecPlayer);
+	float flDist = (vecPlayer - vecMine).Length();
+	if (*(float *)((char *)this + 0x450) > flDist)
+	{
+		MyRay ray;
+		ray.Init(vecMine, vecPlayer);
+		CTraceFilterSimple filter(pPlayer, 0);
+		CGameTrace tr;
+		g_1070b254->vfunc4((Ray_t *)&ray, 0x403b, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+		if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+			sub_10015df2(tr.m_startpos, tr.m_endpos, 0xff, 0, 0, 1, -1.0f);
+		if (tr.m_fraction == 1.0f && !tr.m_startsolid)
+		{
+			*(float *)((char *)this + 0x454) = flDist;
+			return 1;
+		}
+	}
+	*(int *)((char *)this + 0x454) = 0;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aeb60 size=0x1d2
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
