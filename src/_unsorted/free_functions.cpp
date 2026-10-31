@@ -78218,6 +78218,18 @@ long sub_101d2850(const char *code, int start)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d2920 size=0x30
+int sub_100b4e10(int, int);
+int sub_101d2960(int);
+extern "C" __declspec(dllimport) void __cdecl RandomSeed(int);
+extern "C" __declspec(dllimport) float __cdecl RandomFloat(float, float);
+float sub_101d2920(int a, int b, float flMin, float flMax)
+{
+	RandomSeed(sub_101d2960(sub_100b4e10(a, b)));
+	return RandomFloat(flMin, flMax);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d2960 size=0x5e
 #include <string.h>
 
