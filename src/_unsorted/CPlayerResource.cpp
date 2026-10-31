@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10189b00 size=0x6
+#include "CPlayerResource.h"
+namespace lifted {
+extern char g_10728480;
+}
+int CPlayerResource::vfunc80()
+{
+    return (int)&lifted::g_10728480;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10189b20 size=0x3
 #include "CPlayerResource.h"
 int CPlayerResource::vfunc81()
