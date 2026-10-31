@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100c9d90 size=0xe
+#include "CRotButton.h"
+namespace lifted {
+int __stdcall sub_10004b92(int, int, int);
+}
+bool CRotButton::vfunc223()
+{
+    lifted::sub_10004b92(0, 0, 0);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cb460 size=0x62
 #include "CRotButton.h"
 
