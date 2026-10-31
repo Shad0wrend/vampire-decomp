@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103fa5d0 size=0x6
+#include "COccultDexterity.h"
+namespace lifted {
+extern char g_10948400;
+}
+int COccultDexterity::vfunc80()
+{
+    return (int)&lifted::g_10948400;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103fa5f0 size=0x3
 #include "COccultDexterity.h"
 int COccultDexterity::vfunc81()

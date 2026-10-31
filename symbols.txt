@@ -8588,6 +8588,7 @@
 0x10010a82 func   ?vfunc1@CTEBeamEntPoint@@UAEHXZ CTEBeamEntPoint::vfunc1
 0x10010a87 func   ?vfunc103@CNPCMaker_Zombie@@UAEXXZ CNPCMaker_Zombie::vfunc103
 0x10010a91 func   ?vfunc103@CNPC_VPlayerController@@QAEXXZ CNPC_VPlayerController::vfunc103
+0x10010a96 func   ?vfunc80@COccultDexterity@@QAEHXZ COccultDexterity::vfunc80
 0x10010a9b func   ?sub_101bd940@@YIXPAD@Z sub_101bd940
 0x10010aa5 func   ?vfunc104@CEnvLaser@@QAEXXZ CEnvLaser::vfunc104
 0x10010aaa func   ?sub_100b7130@@YIXPAUMem4@@HH@Z sub_100b7130
