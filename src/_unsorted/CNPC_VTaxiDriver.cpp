@@ -80,6 +80,14 @@ int CNPC_VTaxiDriver::vfunc142(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b3930 size=0x5
+#include "CNPC_VTaxiDriver.h"
+int CNPC_VTaxiDriver::vfunc390(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b3950 size=0x3
 #include "CNPC_VTaxiDriver.h"
 void CNPC_VTaxiDriver::vfunc144(int a0)
