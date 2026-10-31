@@ -44416,6 +44416,20 @@ void __fastcall sub_10101940(void *, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10101970 size=0x11
+#include "vampire.h"
+
+int __fastcall sub_10009bd3();
+void __fastcall sub_101019d0();
+
+// TARGET: sub_10101970
+void __fastcall sub_10101970(void *, int, int)
+{
+	if (sub_10009bd3())
+		sub_101019d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101019d0 size=0x3a
 #include "CBaseEntity.h"
 
