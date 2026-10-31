@@ -147099,6 +147099,16 @@ extern "C" CBaseEntity *npc_VNosferatu()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a1570 size=0xc
+void __fastcall sub_103a1590(void *p);
+
+void *__fastcall sub_103a1570(void *p)
+{
+    sub_103a1590(p);
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a1590 size=0x33
 void sub_10007897();
 void sub_10010131();
