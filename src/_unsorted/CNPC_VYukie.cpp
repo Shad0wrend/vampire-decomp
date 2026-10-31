@@ -149,6 +149,23 @@ char CNPC_VYukie::vfunc600(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dd9a0 size=0x4b
+#include "CBaseEntity.h"
+#include "CNPC_VYukie.h"
+#include "globalvars.h"
+#include "engineiface.h"
+struct SYukieNotify { virtual void a0(); virtual void vfunc1(); };
+extern SYukieNotify *g_10924edc;
+// TARGET: CNPC_VYukie::vfunc601
+void CNPC_VYukie::vfunc601(int unused)
+{
+	g_10924edc->vfunc1();
+	*(char *)((char *)this + 0x6078) = 0;
+	if (((char (__fastcall *)(CNPC_VYukie *))(*(void ***)this)[308])(this))
+		*(float *)((char *)this + 0x6070) = enginerandom->vfunc1(5.0f, 10.0f) + gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dda10 size=0x67
 #include "CNPC_VYukie.h"
 #include "CEntityVSlots.h"
