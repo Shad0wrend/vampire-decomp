@@ -3041,6 +3041,7 @@
 0x100065a5 func   ?vfunc481@CNPC_Crow@@QAEXPAVCBaseEntity@@@Z CNPC_Crow::vfunc481
 0x100065aa func   ?sub_101e9880@CUnknown101e9880@@QAEPAV1@XZ CUnknown101e9880::sub_101e9880
 0x100065b4 func   ?vfunc3@CTEMetalSparks@@UAEXABVVector@@ABVQAngle@@@Z CTEMetalSparks::vfunc3
+0x100065b9 func   ?sub_101d0e90@@YADPAUCUnk101d0e90Ent@@@Z sub_101d0e90
 0x100065be func   ?sub_1042d9a0@CUnknown1042d9a0@@QAEGXZ CUnknown1042d9a0::sub_1042d9a0
 0x100065c3 func   ?sub_103f15b0@@YAHXZ sub_103f15b0
 0x100065c8 func   ?vfunc81@CWeaponMelee_WerewolfAttacks@@QAEHXZ CWeaponMelee_WerewolfAttacks::vfunc81

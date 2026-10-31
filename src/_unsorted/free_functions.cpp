@@ -80442,6 +80442,26 @@ void sub_101d0ce0(int p1, int p2, int p3, int p4, unsigned char p5, unsigned cha
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d0e90 size=0x1b
+// TARGET: sub_101d0e90
+struct CUnk101d0e90Edict {
+    char pad[0x4c];
+    char m_b4c;
+};
+struct CUnk101d0e90Ent {
+    char pad[0x2e0];
+    CUnk101d0e90Edict *m_pEdict;
+};
+char sub_101d0e90(CUnk101d0e90Ent *p)
+{
+    CUnk101d0e90Edict *e = p->m_pEdict;
+    if (e != 0 && e->m_b4c == 0) {
+        return 1;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d0ec0 size=0x3d
 #include "CBaseEntity.h"
 extern char g_105a03d0[];
