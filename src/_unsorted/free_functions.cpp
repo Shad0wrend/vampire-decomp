@@ -9321,6 +9321,47 @@ int CUnknown1005a7b0::sub_1005a7b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005a940 size=0x208
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_10006cc1(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, void *proxy);	// SendPropFloat
+void sub_10006aeb();
+
+extern SendTable g_106bed08;
+
+// TARGET: sub_1005a940
+int sub_1005a940()
+{
+	static const char *pTableName = "DT_BaseBeam";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10007bfd("m_nModelIndex", 0xc, 4, 0xb, 0, 0, 0),
+		sub_10007bfd("m_nHaloIndex", 0x10, 4, 0xb, 0, 0, 0),
+		sub_10007bfd("m_nStartFrame", 0x14, 4, 8, 1, 0, 0),
+		sub_10007bfd("m_nFrameRate", 0x18, 4, 8, 1, 0, 0),
+		sub_10006cc1("m_fLife", 0x1c, 4, 8, 0, 0.0f, 25.6f, (void *)sub_10006aeb),
+		sub_10006cc1("m_fWidth", 0x20, 4, 8, 0, 0.0f, 64.0f, (void *)sub_10006aeb),
+		sub_10006cc1("m_fEndWidth", 0x24, 4, 8, 0, 0.0f, 64.0f, (void *)sub_10006aeb),
+		sub_10007bfd("m_nFadeLength", 0x28, 4, 8, 1, 0, 0),
+		sub_10006cc1("m_fAmplitude", 0x2c, 4, 8, 0, 0.0f, 64.0f, (void *)sub_10006aeb),
+		sub_10007bfd("m_nSpeed", 0x40, 4, 8, 1, 0, 0),
+		sub_10007bfd("r", 0x30, 4, 8, 1, 0, 0),
+		sub_10007bfd("g", 0x34, 4, 8, 1, 0, 0),
+		sub_10007bfd("b", 0x38, 4, 8, 1, 0, 0),
+		sub_10007bfd("a", 0x3c, 4, 8, 1, 0, 0),
+	};
+	g_106bed08.sub_1000e8fe(props + 1, 14, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005ac10 size=0x33
 #include "CTEBeamEntPoint.h"
 
