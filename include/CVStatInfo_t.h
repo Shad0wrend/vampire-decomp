@@ -14,7 +14,10 @@ class CVStatActionList_t;
 class CVStatInfoList_t;
 struct CVStatKV	// the key/value node the stat data is loaded from; slot 13 is GetString(key, default)
 {
-	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4();
+	virtual void a0(); virtual void a1();
+	virtual CVStatKV *vfunc2(const char *pszName);	// slot 2: the sub key of that name, 0 when there is none
+	virtual CVStatKV *vfunc3();	// slot 3: the next key of the same level, 0 at the end
+	virtual void a4();
 	virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9();
 	virtual void a10(); virtual void a11(); virtual void a12();
 	virtual const char *vfunc13(const char *pszKey, const char *pszDefault);
