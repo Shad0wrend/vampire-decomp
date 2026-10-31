@@ -28,7 +28,7 @@ public:
 	EHANDLE m_h669c;	// 0x669c: entity handle removed by sub_1038f020
 	EHANDLE m_h66a0;	// 0x66a0: entity handle removed by sub_1038f020
 	unsigned int m_h66a4;	// entity handle released by vfunc144
-	unsigned int m_h66a8;	// 0x66a8: entity handle removed by sub_1038f020
+	EHANDLE m_h66a8;	// 0x66a8: entity handle removed by sub_1038f020
 	char m_pad66ac[0x66b0 - 0x66ac];
 	char m_b66b0;	// set once the minions have been told about the target
 	char m_pad66b1[7];
