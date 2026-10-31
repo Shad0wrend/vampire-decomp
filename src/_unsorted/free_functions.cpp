@@ -13550,6 +13550,24 @@ bool CUnknown1006e890::sub_1006e890()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006e8b0 size=0x15
+#include "vampire.h"
+
+struct CUnknown1006e8b0
+{
+	char m_pad0000[0x55c];
+	float m_f55c;
+
+	void sub_1006e8b0(float flDelay);
+};
+
+// TARGET: CUnknown1006e8b0::sub_1006e8b0
+void CUnknown1006e8b0::sub_1006e8b0(float flDelay)
+{
+	m_f55c = flDelay + gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006ed20 size=0xd
 void CUnknown1006ed20::sub_1006ed20(int value)
 {
