@@ -46303,6 +46303,19 @@ CFire *CFire::sub_10109990()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10109d70 size=0x12
+#include "vampire.h"
+
+void __fastcall sub_10109e90(void *pThis);
+
+// TARGET: sub_10109d70
+void __fastcall sub_10109d70(void *pThis, int, int)
+{
+	if (*((char *)pThis + 0x490))
+		sub_10109e90(pThis);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109da0 size=0xa
 void __fastcall sub_10109da0(char *self, int, int)
 {
