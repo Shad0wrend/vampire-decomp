@@ -28,6 +28,14 @@ int CNPC_VYukie::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dd650 size=0x6
+#include "CNPC_VYukie.h"
+int CNPC_VYukie::vfunc138()
+{
+    return 4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dd6b0 size=0x67
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
