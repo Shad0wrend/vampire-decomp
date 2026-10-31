@@ -60,3 +60,15 @@ void CEventsSaveDataOps::vfunc3(int a0)
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x100cdb20 size=0x15
+#include "CEventsSaveDataOps.h"
+namespace lifted {
+struct C10003e18 { int sub_10003e18(int); };
+}
+bool CEventsSaveDataOps::vfunc4(int a0, int a1)
+{
+    ((lifted::C10003e18 *)(*(int *)((char *)a0)))->sub_10003e18(a1);
+    return 1;
+}
+// END FUNCTION
