@@ -166,7 +166,7 @@ public:
 	char m_pad0088[0xa0 - 0x88];
 	float m_postVelocity[2][3];	// 0x00a0: the post velocities (slot 40 of the objects)
 	CCollisionEventRecords m_records;	// 0x00b8
-	char m_pad00d0[0xd8 - 0xd0];
+	CBaseEntity *m_pEntities[2];	// 0x00d0: the entities of the event's objects
 	CCollisionEventVec5 m_touchVec;	// 0x00d8: queued touch records of 0x24 bytes (memory +0xd8, size +0xe4)
 	CCollisionEventVec5 m_damageVec;	// 0x00ec: queued damage events (memory +0xec, size +0xf8)
 	CCollisionEventVec5 m_vec0100;	// 0x0100
