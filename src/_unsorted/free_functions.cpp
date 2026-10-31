@@ -110703,6 +110703,21 @@ int sub_1025b800()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025b820 size=0x30
+namespace block_1025b820 { int sub_1025b800() { return 9; } } using namespace block_1025b820;
+extern const char *g_105c7638[];
+const char *sub_1025b820(unsigned int flags)
+{
+	int i = 0;
+	int n = sub_1025b800();
+	for (; i < n; i++) {
+		if (flags & (1 << i))
+			return g_105c7638[i];
+	}
+	return "ERROR";
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025c670 size=0x13
 bool sub_1025c670(unsigned short *a, unsigned short *b)
 {
