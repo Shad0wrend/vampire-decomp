@@ -6251,6 +6251,7 @@
 0x1000d607 func   ?sub_100977f0@CBaseAnimating@@QAEXH@Z CBaseAnimating::sub_100977f0
 0x1000d616 func   ?sub_102a98e0@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_102a98e0
 0x1000d62f func   ?sub_103ee870@CWeaponThrown_Grenade_Frag@@QAEXXZ CWeaponThrown_Grenade_Frag::sub_103ee870
+0x1000d634 func   ?sub_1025de90@@YI_NPAUCEntHandleList_1025de90@@HPAVCBaseEntity@@@Z sub_1025de90
 0x1000d639 func   ?sub_102f95d0@CUnknown102f95d0@@QAEXH@Z CUnknown102f95d0::sub_102f95d0
 0x1000d63e func   ?vfunc103@CPhysConstraint@@UAEXXZ CPhysConstraint::vfunc103
 0x1000d643 func   ?sub_1021a200@V1021a200@@QAEXXZ V1021a200::sub_1021a200

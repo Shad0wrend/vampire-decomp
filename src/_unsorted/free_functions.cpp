@@ -109366,6 +109366,26 @@ bool CUnknown1025ddd0::sub_1025dca0(CBaseEntity *pEntity, char bFlag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025de90 size=0x61
+struct CEntHandleList_1025de90 {
+	char pad0[4];
+	EHANDLE *m_pElements;
+	char pad8[8];
+	int m_nCount;
+};
+bool __fastcall sub_1025de90(CEntHandleList_1025de90 *list, int, CBaseEntity *pEnt)
+{
+	if (pEnt) {
+		EHANDLE *p = list->m_pElements;
+		for (int i = 0; i < list->m_nCount; i++, p++) {
+			if (p->Get() == pEnt)
+				return false;
+		}
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025df20 size=0x4
 struct CUnknown1025df20 { int sub_1025df20(); };
 int CUnknown1025df20::sub_1025df20()
