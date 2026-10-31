@@ -63125,6 +63125,19 @@ int CUnknown10181620::sub_10181620(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10181650 size=0x18
+struct CUnk10181650 {
+    char pad[0x1d60];
+    unsigned int m_1d60;
+    bool sub_10181650(unsigned int flags);
+};
+
+bool CUnk10181650::sub_10181650(unsigned int flags)
+{
+    return (m_1d60 & flags) == flags;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101816c0 size=0x8f
 #include "CBasePlayer.h"
 
