@@ -81939,6 +81939,14 @@ void sub_101dbdf0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dbe10 size=0x7
+// TARGET: sub_101dbe10
+bool __fastcall sub_101dbe10(int *pThis)
+{
+    return (*pThis) ? true : false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dbe30 size=0x73
 #include "CUnknown101dbe30.h"
 
