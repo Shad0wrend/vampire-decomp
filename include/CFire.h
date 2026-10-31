@@ -8,6 +8,7 @@ class CFire : public CBaseEntity
 {
 public:
 	CFire *vfunc5(unsigned int flags);
+	virtual void vfunc104();	// slot 104 "Precache": the firesmoke / plasma particle systems by the type at +0x458, the two fire sounds
 	void vfunc103();	// slot 103 \"CFire::Spawn\": the base Spawn and Precache, the fire box (-8, -8, 0 to 8, 8, 8), the heat level from the heat (x 0.05), sub_1010a450 with the origin and the fire fields, then the removed env_fire warning: creates an env_fire entity (sub_1020a0a0), puts two red messages on it, sizes it from the fire size and runs sub_10014614
 	void sub_1010a450(const float *pOrigin, float flSize, int a, int b, unsigned int nFlags, int c);	// stub 0x10004ae3: sets the fire up from the origin and the fire fields (+0x468, +0x480, +0x45c, spawnflags, +0x458)
 	void vfunc113();	// slot 113 (0x1010a330): CBaseEntity::vfunc113, then if the flags at +0x204 have 4: the heat-fire field +0x478 is copied to +0x46c and sub_10109e90 runs (tail call)
