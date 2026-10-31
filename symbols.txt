@@ -9313,6 +9313,7 @@
 0x10013282 func   ?sub_10090e30@CBaseAnimating@@QAE_NH@Z CBaseAnimating::sub_10090e30
 0x10013287 func   ?sub_1042c780@@YIXPAX@Z sub_1042c780
 0x1001328c func   ?sub_10074b10@CFlexAnimationTrack@@QAEXH@Z CFlexAnimationTrack::sub_10074b10
+0x10013291 func   ?sub_1042c7c0@@YIXPAX@Z sub_1042c7c0
 0x10013296 func   ?vfunc279@CBaseFlex@@QAEXHM@Z CBaseFlex::vfunc279
 0x1001329b func   ??0CFlexAnimationTrack@@QAE@PAVCUnknown10075aa0@@@Z CFlexAnimationTrack::CFlexAnimationTrack
 0x100132a0 func   ?vfunc238@CBaseEntity@@QAEXHHHH@Z CBaseEntity::vfunc238
