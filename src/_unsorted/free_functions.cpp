@@ -119435,6 +119435,19 @@ void CUnknown102b5dc0::sub_102ae7f0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ae810 size=0x14
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CAI_BaseNPCTroika::sub_102ae810
+void CAI_BaseNPCTroika::sub_102ae810(void *pObj)
+{
+	if (pObj)
+	{
+		*(int *)((char *)this + 0x65c8) = *(int *)((char *)pObj + 0x1c);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ae840 size=0x54
 #include "CAI_BaseNPCTroika.h"
 
