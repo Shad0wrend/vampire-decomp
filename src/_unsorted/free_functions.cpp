@@ -106223,6 +106223,14 @@ void __stdcall sub_1023e1c0(CParam *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023e250 size=0xb
+void __cdecl sub_100826b0(int a);
+void __stdcall sub_1023e250(int a)
+{
+    sub_100826b0(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023e270 size=0x8
 namespace lifted {
 int sub_10009aac();

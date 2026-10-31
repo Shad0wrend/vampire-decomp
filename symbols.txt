@@ -7989,6 +7989,7 @@
 0x1001075d func   ?vfunc6@CEQ_SaveRestoreBlockHandler@@UAEXPAVIRestoreRead@@@Z CEQ_SaveRestoreBlockHandler::vfunc6
 0x10010762 func   ?vfunc82@CNPC_VCameraSecurity@@UAEPAUdatamap_t@@XZ CNPC_VCameraSecurity::vfunc82
 0x10010767 func   ?sub_10246410@@YAHHHH@Z sub_10246410
+0x1001076c func   ?sub_1023e250@@YGXH@Z sub_1023e250
 0x10010771 func   ?sub_102356e0@@YAHXZ sub_102356e0
 0x10010794 func   ?sub_100cd660@COutputEvent@@QAEXPAX0M@Z COutputEvent::sub_100cd660
 0x1001079e func   ?sub_101f5150@CUnknown101f5150@@QAE_NPBD@Z CUnknown101f5150::sub_101f5150
