@@ -20,6 +20,17 @@ int CWeaponRanged_Pistol_DesertEagle::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10235470 size=0x6
+#include "CWeaponRanged_Pistol_DesertEagle.h"
+namespace lifted {
+extern char g_105b9af0;
+}
+int CWeaponRanged_Pistol_DesertEagle::vfunc362()
+{
+    return (int)&lifted::g_105b9af0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a3e0 size=0x1e
 #include "CWeaponRanged_Pistol_DesertEagle.h"
 
