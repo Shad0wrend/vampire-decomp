@@ -95,4 +95,5 @@
 	bool sub_102d14c0();	// true when the dword at +0x5e8 is set, curtime is before the time at +0x5ec, or the entity of the handle at +0x5e0 is gone
 	void vfunc18(int a, int b);	// slot 18 (plain member): formats the message (a, b) into a 512 byte buffer (sub_1028d990) and hands it to CUnknown1027ef20::sub_1027ef20 with the flag byte 0x10920534 set, else DevMsg
 	void vfunc20(const char *pszMessage);	// slot 20 (plain member): with a message and the flag byte 0x10920534 set, copies it (512 bytes) and hands it to CUnknown1027ef20::sub_1027ef20; with the flag clear it goes to DevMsg
+	char sub_1027f550(CAI_BaseNPCTroika *pOther);	// false for null; with the flags of slot 513 lacking 0xd00 sets flag 8 on pOther and answers false; with pOther's time at +0x640 not past curtime sets flag 0x10 and answers false; else true
 	void sub_102bf770();	// alternate action end (stub-less, called by slot 531 / 442): when the ideal activity (+0xff0) is the navigator's task id (+0x5d34) the NPC's sub_1027a6c0 result becomes the ideal activity (sub_10272650); clears the byte at +0x1a40, lets the navigator finish (sub_102ee2a0) and clears +0x63ec
