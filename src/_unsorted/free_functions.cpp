@@ -110363,6 +110363,16 @@ bool sub_1024a2b0(unsigned short *a, unsigned short *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024a2e0 size=0x16
+struct CUnknown1024a2e0 { int sub_1024a2e0(unsigned int a); };
+
+// TARGET: CUnknown1024a2e0::sub_1024a2e0
+int CUnknown1024a2e0::sub_1024a2e0(unsigned int a)
+{
+	return (a & 0xffff) * 0x10 + 8 + *(int *)((char *)this + 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024a310 size=0x116
 #include "CUtlRBTree16.h"
 extern void *(*g_109f3638)(void *, unsigned int);

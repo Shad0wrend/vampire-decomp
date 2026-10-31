@@ -3786,6 +3786,7 @@
 0x10007cc0 func   ?sub_101c1790@CUnk101c1790@@QAEXXZ CUnk101c1790::sub_101c1790
 0x10007cca func   ?sub_102d3e60@CUnknown102d3e60@@QAEHXZ CUnknown102d3e60::sub_102d3e60
 0x10007cde func   _player player
+0x10007ce3 func   ?sub_1024a2e0@CUnknown1024a2e0@@QAEHI@Z CUnknown1024a2e0::sub_1024a2e0
 0x10007ce8 func   ?vfunc313@CBaseCombatWeapon@@UAEDXZ CBaseCombatWeapon::vfunc313
 0x10007ced func   ?vfunc433@CNPC_VGargoyle@@QAEXXZ CNPC_VGargoyle::vfunc433
 0x10007cf2 func   ?vfunc315@CBaseCombatWeapon@@UAE_NXZ CBaseCombatWeapon::vfunc315
