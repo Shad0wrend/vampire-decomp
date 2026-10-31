@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103ebd20 size=0x6
+#include "CWeaponMelee_ManBatClaw.h"
+namespace lifted {
+extern char g_10942454;
+}
+int CWeaponMelee_ManBatClaw::vfunc80()
+{
+    return (int)&lifted::g_10942454;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ebd40 size=0x3
 #include "CWeaponMelee_ManBatClaw.h"
 int CWeaponMelee_ManBatClaw::vfunc81()
