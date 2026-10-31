@@ -586,7 +586,7 @@ public:
 	virtual void vfunc541();
 	virtual void vfunc542();
 	virtual void vfunc543();
-	virtual void vfunc544();
+	virtual void vfunc544(CBaseEntity *pEnt, const void *pPos);
 	virtual void vfunc545();
 	virtual void vfunc546_slot();
 	virtual void vfunc547();
