@@ -60774,6 +60774,35 @@ int CBasePlayerUnit10182210::sub_10182210(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10182780 size=0x63
+#include "CBasePlayer.h"
+#include "engineserver.h"
+
+struct Holder;
+bool __fastcall sub_101681a0(Holder *p);
+
+struct S10182780Target {
+	char m_pad0000[0x98];
+	struct { char m_pad[0x63d8]; char m_b63d8; } *m_p98;
+	char m_pad009c[0x2e0 - 0x9c];
+	int m_pEdict2e0;
+};
+struct S10739a4c {
+	S10182780Target *sub_101e2910(CBasePlayer *pPlayer, int a, int b);
+};
+extern S10739a4c g_10739a4c;
+
+int CBasePlayer::sub_10182780()
+{
+	if (!sub_10175180() && !sub_101681a0((Holder *)this)) {
+		S10182780Target *pTarget = g_10739a4c.sub_101e2910(this, m_nRangeStart1B70, m_nRangeEnd1B78);
+		if (pTarget && (!pTarget->m_p98 || !pTarget->m_p98->m_b63d8))
+			return engine->vfunc35(pTarget->m_pEdict2e0);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10182810 size=0x80
 #include "CUnknown10182810.h"
 
