@@ -116107,6 +116107,68 @@ void __stdcall sub_1027f270(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027f290 size=0x230
+#include "CAI_BaseNPC.h"
+
+struct CNpcTypeView
+{
+	char m_pad[0x1b2c];
+	int m_nType;
+};
+
+// TARGET: CAI_BaseNPC::sub_1027f290
+const char *CAI_BaseNPC::sub_1027f290(int unused)
+{
+	switch (((CNpcTypeView *)this)->m_nType) {
+	case 0: return "NONE";
+	case 1: return "AI_BASENPC";
+	case 2: return "AI_BASENPCTROIKA";
+	case 3: return "NPC_BASEVAMPAI";
+	case 4: return "NPC_VANDREIBLOOD";
+	case 5: return "NPC_VANIMAL";
+	case 6: return "NPC_VASIANVAMPIRE";
+	case 7: return "NPC_VBATSWARM";
+	case 8: return "NPC_VBRUJAH";
+	case 9: return "NPC_VCAMERA";
+	case 10: return "NPC_VCHANGBROS";
+	case 11: return "NPC_VCOMBATMAN";
+	case 12: return "NPC_VCOP";
+	case 13: return "NPC_VDOG";
+	case 14: return "NPC_BACH";
+	case 15: return "NPC_VFRENZYSHADOW";
+	case 16: return "NPC_VGANGREL";
+	case 17: return "NPC_VGARGOYLE";
+	case 18: return "NPC_VGUARD1";
+	case 19: return "NPC_VHENGEYOKAI";
+	case 20: return "NPC_VHUMAN";
+	case 21: return "NPC_VHUMAN_COMBATANT";
+	case 22: return "NPC_VHUMAN_COMBAT_PATROL";
+	case 23: return "NPC_VHUNTER";
+	case 24: return "NPC_VMALKAVIAN";
+	case 25: return "NPC_VMING_XIAO";
+	case 26: return "NPC_VMING_XIAO_TENTACLE";
+	case 27: return "NPC_VMOLEMAN";
+	case 28: return "NPC_VNOSFERATU";
+	case 29: return "NPC_VPEDESTRIAN";
+	case 30: return "NPC_VPLACEHOLDER";
+	case 31: return "NPC_VSABBATLEADER";
+	case 32: return "NPC_VSCURRYING";
+	case 33: return "NPC_VSHERIFFMAN";
+	case 34: return "NPC_VSHERIFFSWARM";
+	case 35: return "NPC_VTEST";
+	case 36: return "NPC_VTOREADOR";
+	case 37: return "NPC_VTREMERE";
+	case 38: return "NPC_VTZIMISCE";
+	case 39: return "NPC_VVAMPIRE";
+	case 40: return "NPC_VVENTRUE";
+	case 41: return "NPC_VWEREWOLF";
+	case 42: return "NPC_VYUKIE";
+	case 43: return "NPC_VZOMBIE";
+	default: return "**UNKNOWN**";
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027f550 size=0x5f
 #include "CAI_BaseNPCTroika.h"
 #include "globalvars.h"

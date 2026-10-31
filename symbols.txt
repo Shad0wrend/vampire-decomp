@@ -10041,6 +10041,7 @@
 0x10012fa8 func   ?sub_1030b8e0@CUnknown1030b8e0@@QAEHXZ CUnknown1030b8e0::sub_1030b8e0
 0x10012fad func   ?vfunc82@CAI_InterestingPlaceConverstation@@UAEHXZ CAI_InterestingPlaceConverstation::vfunc82
 0x10012fb2 func   ?sub_102e0b60@@YIXPAD@Z sub_102e0b60
+0x10012fb7 func   ?sub_1027f290@CAI_BaseNPC@@QAEPBDH@Z CAI_BaseNPC::sub_1027f290
 0x10012fbc func   ?vfunc72@CBaseCombatCharacter@@UAE_NH@Z CBaseCombatCharacter::vfunc72
 0x10012fc6 func   ?vfunc5@CItemGIdolDragon@@QAEPAV1@I@Z CItemGIdolDragon::vfunc5
 0x10012fcb func   ?sub_10246ef0@@YA?AVSendProp@@HHPBDH@Z sub_10246ef0
