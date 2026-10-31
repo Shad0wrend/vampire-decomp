@@ -99444,6 +99444,17 @@ void __fastcall sub_10214720(void *pThis, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10214750 size=0x16
+struct CThis10214780 { void sub_10214780(); };
+
+// TARGET: sub_10214750
+void __fastcall sub_10214750(void *pThis, int, int)
+{
+	((CThis10214780 *)pThis)->sub_10214780();
+	*(int *)((char *)pThis + 0x77c) = 0x7f7fffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10214780 size=0x11f
 #include "CPropHaunted.h"
 #include "CEHandleGet.h"
