@@ -53346,6 +53346,20 @@ float sub_1013cd40(float *p, float *a, float *b, float *d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013cdd0 size=0x4b
+float sub_1013cd40(float *, float *, float *, float *);
+
+void sub_1013cdd0(float *a, float *b, float *c, float *out, float *pT)
+{
+	float d[2];
+	float t = sub_1013cd40(a, b, c, d);
+	if (pT)
+		*pT = t;
+	out[0] = d[0] * t + b[0];
+	out[1] = d[1] * t + b[1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013cf40 size=0x79
 float sub_10007090(const float *a, const float *b, const float *c, float *dir);
 
