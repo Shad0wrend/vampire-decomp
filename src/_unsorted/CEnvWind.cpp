@@ -35,6 +35,38 @@ void CEnvWind::vfunc141(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fe740 size=0x208
+#include "CEnvWind.h"
+#include "CCollisionProperty.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+
+#define ENVWIND_COL ((CCollisionProperty *)((char *)this + 0x270))
+
+void CEnvWind::vfunc103()
+{
+	CBaseEntity::vfunc103();
+	CGlobalEntityList_Ent *pTarget = EHandle_Get(m_hTouch254);
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+		ENVWIND_COL->sub_100dc480(pTarget ? 6 : 1);
+	}
+	{
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+		ENVWIND_COL->AddSolidFlags(4);
+	}
+	{
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+		ENVWIND_COL->AddSolidFlags(8);
+	}
+	vfunc93(0, 0);
+	int tmp;
+	const char *pszModel = *vfunc9(&tmp);
+	vfunc105(pszModel ? pszModel : g_106b8540);
+	m_nEffectFlags |= 0x40;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fe9e0 size=0x52
 #include "CBaseAnimating.h"
 #include "CEnvWind.h"
