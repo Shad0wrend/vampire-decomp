@@ -127689,6 +127689,19 @@ int CUnknown102ee660::sub_102ee660()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ee680 size=0xf
+struct CUnknown1030ba70
+{
+	int sub_1030ba70();
+};
+
+// TARGET: sub_102ee680
+bool __fastcall sub_102ee680(char *pThis)
+{
+	return ((CUnknown1030ba70 *)*(int *)(pThis + 0x30))->sub_1030ba70() != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ee9c0 size=0x4c
 extern int g_106c994c;
 
