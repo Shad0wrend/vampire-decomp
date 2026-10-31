@@ -28,6 +28,18 @@ int CBaseCineCam::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006d8f0 size=0x8
+#include "vampire.h"
+// TARGET: CBaseCineCam::vfunc117
+unsigned char CBaseCineCam::vfunc117()
+{
+    unsigned char b;
+    b = ((CBaseEntity *)this)->CBaseEntity::vfunc117();
+    b &= 0xfd;
+    return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006d910 size=0x21
 #include "CBaseCineCam.h"
 

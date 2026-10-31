@@ -5608,6 +5608,7 @@
 0x1000be4c func   ?sub_103d3220@CNPC_VWerewolf@@QAEHPAX@Z CNPC_VWerewolf::sub_103d3220
 0x1000be5b func   _prop_ragdoll_special prop_ragdoll_special
 0x1000be60 func   ?sub_100cacb0@CMomentaryRotButton@@QAEXM_N@Z CMomentaryRotButton::sub_100cacb0
+0x1000be65 func   ?vfunc117@CBaseCineCam@@UAEEXZ CBaseCineCam::vfunc117
 0x1000be6a func   ?sub_100bf5b0@CBitString@@QAEXH@Z CBitString::sub_100bf5b0
 0x1000be6f func   ?sub_10397a50@CNPC_VMingXiao@@QAEXPAX@Z CNPC_VMingXiao::sub_10397a50
 0x1000be79 func   ?sub_101e1010@Loader@@QAE_NPBD@Z Loader::sub_101e1010
