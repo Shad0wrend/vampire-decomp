@@ -8950,6 +8950,7 @@
 0x1001271a func   ?vfunc16@CMultiplayRules@@UAEXXZ CMultiplayRules::vfunc16
 0x10012724 func   ?sub_100542e0@@YAHXZ sub_100542e0
 0x10012729 func   ?sub_1022d410@@YIXPAUMem256@@HH@Z sub_1022d410
+0x10012733 func   ?sub_1042c790@@YIXPAX@Z sub_1042c790
 0x10012742 func   ?sub_1005a940@@YAHXZ sub_1005a940
 0x10012751 func   ?sub_100d51b0@@YAXXZ sub_100d51b0
 0x10012756 func   ?sub_10137ed0@@YAXABUmatrix3x4_t@@AAVQAngle@@@Z sub_10137ed0
