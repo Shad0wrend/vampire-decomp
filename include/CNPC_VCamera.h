@@ -64,6 +64,11 @@ public:
 	int sub_100ac4e0(int func, int thinkTime, const char *pszContext);	// CBaseEntity::ThinkSet (stub 0x10007fe5), called directly
 	void sub_1026e340(int newState);	// CAI_BaseNPC::SetState (stub 0x10002554), called directly
 	void sub_10280de0(int a);	// stub 0x1000c27a, called directly
+	void sub_1026dc00(int a);	// stub 0x10012855, called directly
+	void sub_10273070(int a);	// stub 0x1000dc29, called directly
+	void sub_1028fb70();	// stub 0x1000bd16, called directly
+	void sub_1033df80();	// stub 0x10005254, called directly
+	void sub_100b3840(int a);	// stub 0x100027bb, called directly
 public:
 	virtual void vfunc0();
 	virtual void vfunc1();
