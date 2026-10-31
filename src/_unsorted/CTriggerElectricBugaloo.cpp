@@ -74,6 +74,14 @@ void CTriggerElectricBugaloo::vfunc176(void *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10231480 size=0x6
+#include "CTriggerElectricBugaloo.h"
+int CTriggerElectricBugaloo::vfunc33()
+{
+    return 0x43;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102314a0 size=0x53
 #include "CTriggerElectricBugaloo.h"
 #include "CBaseCombatCharacter.h"

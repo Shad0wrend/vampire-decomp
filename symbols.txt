@@ -4187,6 +4187,7 @@
 0x10008d5a func   ?sub_1011a430@@YAXXZ sub_1011a430
 0x10008d64 func   ?sub_10094b70@CBaseAnimating@@QAEMMPADPAM1@Z CBaseAnimating::sub_10094b70
 0x10008d6e func   ?sub_10196c50@@YAPAUPyObj@@PAU1@0@Z sub_10196c50
+0x10008d73 func   ?vfunc33@CTriggerElectricBugaloo@@QAEHXZ CTriggerElectricBugaloo::vfunc33
 0x10008d7d func   ?sub_10323930@CBCCView@@QAE_NPAU1@@Z CBCCView::sub_10323930
 0x10008d82 func   _env_floating_camera env_floating_camera
 0x10008d91 func   ?sub_102c3350@S@@QAEXPAUinputdata_t@@@Z S::sub_102c3350
