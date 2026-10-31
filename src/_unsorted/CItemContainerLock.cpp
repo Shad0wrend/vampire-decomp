@@ -115,6 +115,26 @@ int CItemContainerLock::vfunc34(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10225070 size=0x61
+#include "CBasePlayer.h"
+#include "CBaseVampireSkillEntity.h"
+#include "CItemContainerLock.h"
+CBaseEntity *sub_10070470(const char *, void *, void *, void *, void *);
+void CItemContainerLock::vfunc39(CBasePlayer *pPlayer)
+{
+	if (sub_10224910((int)pPlayer)) {
+		sub_10224950((CBaseEntity *)pPlayer);
+		return;
+	}
+	((CBaseVampireSkillEntity *)this)->vfunc39(pPlayer);
+	CBaseEntity *p = sub_10070470("Intrusion", 0, this, this, 0);
+	*((char *)p + 0x5e8) = 0;
+	pPlayer->sub_1017cef0(p);
+	pPlayer->sub_1015ef40();
+	m_OnIntrusion.sub_100cd660(pPlayer, this, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10225140 size=0x146
 #include "CReliableSingleUserRecipientFilter.h"
 #include "CEntityVSlots.h"
