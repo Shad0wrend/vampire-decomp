@@ -1,4 +1,6 @@
 	void sub_10103800();	// sets the byte at +0x45c to 1, then sub_10103860(sub_10103790()) (stub 0x1000b663 for sub_10103860)
+	int sub_10103790();	// stub 0x100102d0, returns a value (in eax)
+	void sub_10103860(int a);	// stub 0x1000b663, one stack argument
 	void sub_1009fe40();	// "CBaseEntity::DrawTimedOverlays": scope trace (entity name); with bit 4 of the overlay flags (byte at +0x224) the text "[" + debug name + "]" as an entity text overlay, then walks the timed overlay list (+0x228; message, end time, start time, next): expired entries (or past the tenth line) are unlinked and freed, the others drawn as lines 1.. with a colour and a fade alpha
 	void sub_100b2aa0(const Vector &inVecImpulse);	// "CBaseEntity::ApplyAbsVelocityImpulse": scope trace (entity name); unless the impulse is the zero vector: runs sub_100b1d10 when bit 12 of the flags at +0x268 is set, then hands the velocity (+0x3bc) plus the impulse to sub_100b2770
 	void sub_100b2770(const Vector &vec);	// the absolute velocity setter (stub 0x1000489a), called directly
