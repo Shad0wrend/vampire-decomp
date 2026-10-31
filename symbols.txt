@@ -4395,6 +4395,7 @@
 0x10008cf6 func   ?vfunc80@COccultDodge@@QAEHXZ COccultDodge::vfunc80
 0x10008cfb func   ?sub_101611e0@@YGDH@Z sub_101611e0
 0x10008d05 func   ?vfunc80@CItemGBailbondReceipt@@QAEHXZ CItemGBailbondReceipt::vfunc80
+0x10008d0a func   ?sub_10288560@@YA_NPBD0@Z sub_10288560
 0x10008d0f func   ?sub_1014f210@CPhysicsAnimlink@@QAEXPAVCBaseAnimating@@HPAXHH@Z CPhysicsAnimlink::sub_1014f210
 0x10008d14 func   _info_landmark info_landmark
 0x10008d19 func   ?sub_10249400@CUnknown10249400@@QAEMXZ CUnknown10249400::sub_10249400

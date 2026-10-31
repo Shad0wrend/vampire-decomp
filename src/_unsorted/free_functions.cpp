@@ -118163,6 +118163,15 @@ struct CUnknown10288540 { int m_p; CUnknown10288540 *sub_10288540(); };
 CUnknown10288540 *CUnknown10288540::sub_10288540() { m_p = 0; return this; }
 // END FUNCTION
 
+// FUNCTION: 0x10288560 size=0x18
+// TARGET: sub_10288560
+#include <string.h>
+bool sub_10288560(const char *a, const char *b)
+{
+    return _stricmp(a, b) == 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10288590 size=0x23
 // TARGET: sub_10288590
 float __cdecl sub_10288590(float a)
