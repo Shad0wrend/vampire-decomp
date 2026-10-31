@@ -8558,6 +8558,7 @@
 0x100113a6 func   ?vfunc113@CBaseTrigger@@UAEXXZ CBaseTrigger::vfunc113
 0x100113b5 func   ?vfunc602@CAI_BaseNPCTroika@@UAEDXZ CAI_BaseNPCTroika::vfunc602
 0x100113ba func   ?sub_1023a2a0@CWeaponRanged@@QAEXXZ CWeaponRanged::sub_1023a2a0
+0x100113c4 func   ?vfunc81@COccultLockpicking@@QAEHXZ COccultLockpicking::vfunc81
 0x100113ce func   _trigger_electric_bugaloo trigger_electric_bugaloo
 0x100113d3 func   _npc_VChangBrosBlade npc_VChangBrosBlade
 0x100113d8 func   ?sub_1030ba70@CUnknown1030ba70@@QAEHXZ CUnknown1030ba70::sub_1030ba70
