@@ -31,3 +31,13 @@ void CServerGameEnts::vfunc2(CServerGameEntsEdict *pFirst, CServerGameEntsEdict 
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x1011beb0 size=0xe
+// TARGET: sub_1011beb0
+void sub_10136600(int x);
+
+void __stdcall sub_1011beb0(int x)
+{
+    sub_10136600(x);
+}
+// END FUNCTION

@@ -5854,6 +5854,7 @@
 0x1000c42d func   ?sub_10265680@@YAXD@Z sub_10265680
 0x1000c432 func   ?vfunc5@CNPC_Crow@@QAEPAV1@I@Z CNPC_Crow::vfunc5
 0x1000c437 func   ?vfunc130@CLogicAuto@@UAEXH@Z CLogicAuto::vfunc130
+0x1000c43c func   ?sub_1011beb0@@YGXH@Z sub_1011beb0
 0x1000c441 func   ?sub_1015f9e0@CBasePlayerUnit@@QAEXXZ CBasePlayerUnit::sub_1015f9e0
 0x1000c446 func   ?sub_100aa5c0@CBaseEntity@@QAEHPAVCRestore@@H@Z CBaseEntity::sub_100aa5c0
 0x1000c44b func   ?vfunc3@CTETracer@@UAEXPBVVector@@0@Z CTETracer::vfunc3
