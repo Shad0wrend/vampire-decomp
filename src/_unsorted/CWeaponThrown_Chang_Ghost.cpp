@@ -132,6 +132,17 @@ void CWeaponThrown_Chang_Ghost::vfunc372(int a, const Vector *pDir)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f12f0 size=0x6
+#include "CWeaponThrown_Chang_Ghost.h"
+namespace lifted {
+extern char g_1067d694;
+}
+int CWeaponThrown_Chang_Ghost::vfunc362()
+{
+    return (int)&lifted::g_1067d694;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f1410 size=0x1e
 #include "CWeaponThrown_Chang_Ghost.h"
 
