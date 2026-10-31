@@ -5155,6 +5155,7 @@
 0x1000af88 func   ?sub_10115080@@YAHXZ sub_10115080
 0x1000af92 func   ?sub_10249160@CUnknown10249160@@QAEXHH@Z CUnknown10249160::sub_10249160
 0x1000af97 func   ?vfunc8@CServerGameDLL@@UAEXXZ CServerGameDLL::vfunc8
+0x1000afa1 func   ?sub_10370a00@@YIPAXPAX@Z sub_10370a00
 0x1000afa6 func   ??0CSAct@@QAE@XZ CSAct::CSAct
 0x1000afa6 func   ?sub_102c9d20@@YIPAHPAH@Z sub_102c9d20
 0x1000afb0 func   ?sub_100659e0@CUnknown100659e0@@QAEHXZ CUnknown100659e0::sub_100659e0

@@ -143937,6 +143937,16 @@ CNPC_VCop *CNPC_VCop::sub_103708e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10370a00 size=0xc
+void __fastcall sub_10370a20(void *pThis);
+
+void * __fastcall sub_10370a00(void *pThis)
+{
+	sub_10370a20(pThis);
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10370a20 size=0x33
 void sub_1000ef84();
 void sub_1000621c();
