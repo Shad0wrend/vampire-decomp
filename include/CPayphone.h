@@ -282,7 +282,7 @@ public:
 	virtual void vfunc376();
 	virtual void vfunc377();
 	virtual void vfunc378();
-	virtual void vfunc379();
+	virtual bool vfunc379(CBaseEntity *pOther, int a, int b, int c, int d, int e, int f);	// slot 379: CAI_BaseNPC::vfunc379 (sub_1026cdc0) passed through
 	virtual void vfunc380();
 	virtual void vfunc381();
 	virtual void vfunc382();
