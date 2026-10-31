@@ -12,6 +12,17 @@ datamap_t * CTriggerDisciplineContext::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10210da0 size=0x10
+#include "CTriggerDisciplineContext.h"
+
+// TARGET: CTriggerDisciplineContext::vfunc103
+void CTriggerDisciplineContext::vfunc103()
+{
+	CBaseEntity::vfunc103();
+	sub_101c5080();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10210dc0 size=0x4c
 #include "CTriggerDisciplineContext.h"
 struct CDisciplineChar { char pad[0xeac]; unsigned int m_nDisciplineFlags; };

@@ -4771,6 +4771,7 @@
 0x10009714 func   ?vfunc3@CThinkContextsSaveDataOps@@UAEXPAX@Z CThinkContextsSaveDataOps::vfunc3
 0x10009719 func   ?vfunc0@CTraceFilterHintLOS@@UAEDPAVCBaseEntity@@H@Z CTraceFilterHintLOS::vfunc0
 0x1000971e func   ?sub_102053d0@CVDmgBlock16_t@@QAEPAU1@PBD@Z CVDmgBlock16_t::sub_102053d0
+0x10009723 func   ?vfunc103@CTriggerDisciplineContext@@UAEXXZ CTriggerDisciplineContext::vfunc103
 0x10009728 func   ?sub_101172c0@S101172c0@@QAEXAAUinputdata_t@@@Z S101172c0::sub_101172c0
 0x1000972d func   ?sub_1039aa20@CNPC_VMingXiao@@QAEXXZ CNPC_VMingXiao::sub_1039aa20
 0x10009732 func   ?sub_10330ce0@CUnknown10330ce0@@QAEXD@Z CUnknown10330ce0::sub_10330ce0
