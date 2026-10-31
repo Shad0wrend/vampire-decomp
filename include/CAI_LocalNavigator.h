@@ -19,6 +19,12 @@ struct CAI_LocalNavigatorData
 
 void __fastcall sub_102deea0(int *pVec);
 
+struct CAI_LocalNavigatorStopState	// the state object vfunc7 reads: only the float it compares against
+{
+	char m_pad00[0x28];
+	float m_flStop28;	// 0x28
+};
+
 class CAI_LocalNavigator
 {
 public:
