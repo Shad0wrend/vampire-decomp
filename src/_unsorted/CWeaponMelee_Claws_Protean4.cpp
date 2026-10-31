@@ -20,6 +20,17 @@ int CWeaponMelee_Claws_Protean4::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e50f0 size=0x6
+#include "CWeaponMelee_Claws_Protean4.h"
+namespace lifted {
+extern char g_10669d28;
+}
+int CWeaponMelee_Claws_Protean4::vfunc362()
+{
+    return (int)&lifted::g_10669d28;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecc00 size=0x1e
 #include "CWeaponMelee_Claws_Protean4.h"
 
