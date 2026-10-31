@@ -27,7 +27,7 @@ struct CSoundParametersInternal
 	CUnknown1012f700 m_volume;	// 0x04
 	CUnknown1012f700 m_pitch;	// 0x0c
 	CUnknown1012f700 m_soundlevel;	// 0x14
-	char m_bPlayToOwnerOnly;	// 0x1c
+	bool m_bPlayToOwnerOnly;	// 0x1c
 
 	char m_bPrecache1d;	// 0x1d
 	char m_pad001e[2];
