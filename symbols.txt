@@ -337,6 +337,7 @@
 0x10001aaf func   ?vfunc117@CDisciplineParticle@@UAEHXZ CDisciplineParticle::vfunc117
 0x10001ab4 func   ?vfunc110@CEnvLaser@@QAE_NPBD0@Z CEnvLaser::vfunc110
 0x10001ab9 func   ?sub_10368f20@CNPC_VCamera@@QAEHXZ CNPC_VCamera::sub_10368f20
+0x10001abe func   ?vfunc180@CBasePlayer@@UAEXXZ CBasePlayer::vfunc180
 0x10001ac8 func   ?sub_1002c920@CUnknown1002c920@@QAEHHHH@Z CUnknown1002c920::sub_1002c920
 0x10001acd func   ?sub_103b29a0@@YADXZ sub_103b29a0
 0x10001ad2 func   ?sub_1025d2b0@CUtlRBTreeBig@@QBE_NG@Z CUtlRBTreeBig::sub_1025d2b0
