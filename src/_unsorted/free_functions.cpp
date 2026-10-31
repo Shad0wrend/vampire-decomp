@@ -147394,6 +147394,16 @@ extern "C" CBaseEntity *npc_VSabbatGunman()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a5170 size=0xc
+void __fastcall sub_103a5190(void *pThis);
+
+void * __fastcall sub_103a5170(void *pThis)
+{
+	sub_103a5190(pThis);
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a5190 size=0x33
 void sub_1000ef84();
 void sub_1001492a();
