@@ -38441,6 +38441,70 @@ bool sub_100df7b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df850 size=0x205
+#include "globalvars.h"
+
+extern "C" unsigned int __cdecl strlen(const char *);
+#pragma intrinsic(strlen)
+
+class CDialogLogFS
+{
+public:
+	virtual void *Open(const char *pszName, const char *pszMode, const char *pszPathID);	// slot 0
+	virtual void v1();
+	virtual void v2();
+	virtual int Write(const void *pData, int nBytes, void *hFile);	// slot 3
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void Flush(void *hFile);	// slot 8
+};
+
+extern CDialogLogFS *g_1070b238;
+extern void *g_106ea780;
+extern void *g_106ea784;
+extern char g_106ea788;
+bool sub_100df7b0();
+void __cdecl sub_101d1070(char *pszBuf, int nSize);
+char *__cdecl sub_101d3730(const char *pszFormat, ...);
+
+void sub_100df850(const char *pszMessage)
+{
+	char szTime[128];
+	if (!sub_100df7b0())
+		return;
+	sub_101d1070(szTime, sizeof(szTime));
+	if (!g_106ea780) {
+		g_106ea780 = g_1070b238->Open("logs/dialog_history.txt", "a+", 0);
+		if (g_106ea780) {
+			const char *pszOut = sub_101d3730("\n\n\n\n\n\n\n\n|====================================================================|\n");
+			g_1070b238->Write(pszOut, strlen(pszOut), g_106ea780);
+			pszOut = sub_101d3730("Loaded map: %s version: %d\n", gpGlobals->mapname, gpGlobals->mapversion);
+			g_1070b238->Write(pszOut, strlen(pszOut), g_106ea780);
+			g_1070b238->Write(szTime, strlen(szTime), g_106ea780);
+		}
+	}
+	if (!g_106ea788 && !g_106ea784) {
+		g_106ea784 = g_1070b238->Open("logs/dialog_recent.txt", "w+", 0);
+		if (g_106ea784) {
+			const char *pszOut = sub_101d3730("Loaded map: %s version: %d\n", gpGlobals->mapname, gpGlobals->mapversion);
+			g_1070b238->Write(pszOut, strlen(pszOut), g_106ea784);
+			g_1070b238->Write(szTime, strlen(szTime), g_106ea784);
+		}
+	}
+	int nLen = strlen(pszMessage);
+	if (g_106ea780) {
+		g_1070b238->Write(pszMessage, nLen, g_106ea780);
+		g_1070b238->Flush(g_106ea780);
+	}
+	if (!g_106ea788 && g_106ea784) {
+		g_1070b238->Write(pszMessage, nLen, g_106ea784);
+		g_1070b238->Flush(g_106ea784);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dfaf0 size=0x6a
 extern char g_106ea788;
 extern char g_106e9108[];

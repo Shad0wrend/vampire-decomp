@@ -2551,6 +2551,7 @@
 0x100060a0 func   ?sub_103e6e90@@YAHXZ sub_103e6e90
 0x100060a5 func   ?sub_1019a900@@YGXHH@Z sub_1019a900
 0x100060aa func   ?sub_10092d50@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_10092d50
+0x100060af func   ?sub_100df850@@YAXPBD@Z sub_100df850
 0x100060b4 func   _item_w_claws_protean4 item_w_claws_protean4
 0x100060b9 func   _item_w_claws_protean5 item_w_claws_protean5
 0x100060be func   ?vfunc494@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc494
