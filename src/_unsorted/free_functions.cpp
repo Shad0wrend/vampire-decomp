@@ -131313,6 +131313,19 @@ void CAI_NavRoute::sub_1030bb30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030bc00 size=0xf
+// TARGET: sub_1030bc00
+int __fastcall sub_1030bc00(char *pThis)
+{
+	char *p = *(char **)(pThis + 0x24);
+	if (p == 0)
+	{
+		return -1;
+	}
+	return *(int *)(p + 0x2c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030bc20 size=0xc
 int CUnknown1030bc20::sub_1030bc20()
 {
