@@ -70,6 +70,16 @@ int CSave::vfunc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019fa60 size=0x10
+#include "CSave.h"
+
+// TARGET: CSave::vfunc8
+bool CSave::vfunc8(const void *pData, int nBytes)
+{
+	return sub_1000643d(pData, nBytes * 2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019fa80 size=0x14
 #include "CSave.h"
 
