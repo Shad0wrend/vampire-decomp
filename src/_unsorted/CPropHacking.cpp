@@ -195,6 +195,17 @@ void CPropHacking::vfunc276()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021c6a0 size=0x14
+#include "CPropHacking.h"
+
+// TARGET: CPropHacking::vfunc277
+void CPropHacking::vfunc277()
+{
+	sub_1021aca0();
+	*(int *)((char *)this + 0x9e0) = 4294967295;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021ca90 size=0x34
 #include "CPropHacking.h"
 #include "CBaseVampireSkillEntity.h"
