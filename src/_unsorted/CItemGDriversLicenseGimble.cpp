@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103ff8e0 size=0x6
+#include "CItemGDriversLicenseGimble.h"
+namespace lifted {
+extern char g_10947ad8;
+}
+int CItemGDriversLicenseGimble::vfunc80()
+{
+    return (int)&lifted::g_10947ad8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ff900 size=0x3
 #include "CItemGDriversLicenseGimble.h"
 int CItemGDriversLicenseGimble::vfunc81()
