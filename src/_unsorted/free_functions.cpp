@@ -52925,6 +52925,15 @@ double sub_10137040(float x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101371d0 size=0x7
+// TARGET: sub_101371d0
+#include <math.h>
+double sub_101371d0(float x)
+{
+    return sqrt(x);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10137220 size=0x43
 #include <math.h>
 float Vector::sub_10137220()
