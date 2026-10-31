@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10134eb0 size=0x6
+#include "CLogicBranch.h"
+namespace lifted {
+extern char g_10577244;
+}
+int CLogicBranch::vfunc82()
+{
+    return (int)&lifted::g_10577244;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136120 size=0x36
 #include "CLogicBranch.h"
 
