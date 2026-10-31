@@ -546,6 +546,30 @@ int CNPC_VTzimisce::vfunc138()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ba2c0 size=0x63
+#include "CNPC_VTzimisce.h"
+// TARGET: CNPC_VTzimisce::vfunc463
+void CNPC_VTzimisce::vfunc463(int a, int b)
+{
+    if (a != b) {
+        switch (b) {
+        case 1:
+            sub_103b9f50(0);
+            break;
+        case 2:
+        case 3:
+        case 11:
+            sub_103b9f50(1);
+            break;
+        case 7:
+            sub_103b9f50(3);
+            break;
+        }
+    }
+    sub_102ae140(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ba640 size=0xf9
 #include "CNPC_VTzimisce.h"
 #include "CUnknown1027d990.h"
