@@ -1,4 +1,5 @@
 #pragma once
+#include "CBaseNetworkable.h"
 
 struct CUnknown10146790;
 
