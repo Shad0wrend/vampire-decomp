@@ -57877,6 +57877,26 @@ int SHolder::sub_1014d090(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014d110 size=0x1a
+struct CUnk1014d110
+{
+	char m_pad0000[0x910];
+	int m_n910;
+
+	void sub_1014c130();
+	void sub_1014d140();
+	void sub_1014d110();
+};
+
+// TARGET: sub_1014d110
+void CUnk1014d110::sub_1014d110()
+{
+	m_n910 = 0;
+	sub_1014c130();
+	sub_1014d140();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014e3f0 size=0x5b
 struct matrix3x4_t;
 class CBaseEntity;
