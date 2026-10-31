@@ -20,6 +20,17 @@ int CWeaponMelee_Katana::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e6290 size=0x6
+#include "CWeaponMelee_Katana.h"
+namespace lifted {
+extern char g_1066d738;
+}
+int CWeaponMelee_Katana::vfunc362()
+{
+    return (int)&lifted::g_1066d738;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103eccf0 size=0x1e
 #include "CWeaponMelee_Katana.h"
 
