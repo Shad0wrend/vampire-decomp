@@ -71229,6 +71229,37 @@ void CUnknown101b2790::sub_101b2790()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2870 size=0x207
+#include "CSoundEmitterSystemBase.h"
+#include "CUtlRBTree232.h"
+
+typedef CUtlRBTree232At<0x1072c414> SoundTree;
+
+inline int SoundTree_NextInorder(SoundTree *tree, int i)
+{
+	if (tree->sub_101b78f0(i).m_Right != -1) {
+		i = tree->Links(i).m_Right;
+		while (tree->Links(i).m_Left != -1)
+			i = tree->Links(i).m_Left;
+		return i;
+	}
+	int parent = tree->Links(i).m_Parent;
+	while (tree->Links(tree->sub_101b78f0(i).m_Parent).m_Right == i) {
+		i = parent;
+		if (i == -1)
+			break;
+		parent = tree->Links(i).m_Parent;
+	}
+	return parent;
+}
+
+// TARGET: CSoundEmitterSystemBase::sub_101b2870
+int CSoundEmitterSystemBase::sub_101b2870(int i)
+{
+	return SoundTree_NextInorder((SoundTree *)((char *)this + 0x50), i);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2b10 size=0x4
 int sub_101b2b10()
 {

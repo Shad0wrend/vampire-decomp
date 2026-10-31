@@ -7436,6 +7436,7 @@
 0x1000f858 func   ?sub_10027960@CPhysForce@@QAEXXZ CPhysForce::sub_10027960
 0x1000f85d func   ?sub_101e8c10@CUnknown101e8c10@@QAEMXZ CUnknown101e8c10::sub_101e8c10
 0x1000f867 func   ?sub_1012ee70@InterfaceReg@@QAEPAV1@PAXPBD@Z InterfaceReg::sub_1012ee70
+0x1000f86c func   ?sub_101b2870@CSoundEmitterSystemBase@@QAEHH@Z CSoundEmitterSystemBase::sub_101b2870
 0x1000f871 func   ?vfunc580@CNPC_VPedestrian@@UAEHXZ CNPC_VPedestrian::vfunc580
 0x1000f876 func   ?sub_1020f990@CLogicVisible@@QAEPAV1@XZ CLogicVisible::sub_1020f990
 0x1000f87b func   ?vfunc130@CEnvPlayerSurfaceTrigger@@QAEXH@Z CEnvPlayerSurfaceTrigger::vfunc130
