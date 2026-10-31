@@ -7,6 +7,7 @@ class CNPC_VAnimal : public CBaseEntity
 public:
 	CNPC_VAnimal *vfunc5(unsigned int flags);
 	void sub_100123af();
+	void vfunc390(struct CVAnimalArg *pArg);	// slot 390 (plain member): flags +0x6660 when the argument's inner object (+0x2c) value at +0xa8 equals sub_101cda50(), then CAI_BaseNPCTroika::vfunc390
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	CNPC_VAnimal *sub_1035eba0();	// as in CKeepUpright (transplant)
 	virtual void vfunc259(int *pEvent);	// slot 259: the base event handler (0x1035f5a0), called by CNPC_VDog::vfunc259 for every event but 0xbb9
