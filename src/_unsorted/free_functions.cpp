@@ -11198,6 +11198,28 @@ int sub_100660a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10066290 size=0x63
+#include "CTEMuzzleFlash.h"
+#include "Vector.h"
+extern CTEMuzzleFlash g_106c4c28;
+struct CTEMuzzleFlashFields {
+	char m_pad0000[0xc];
+	Vector m_vecOrigin;	// 0x0c
+	Vector m_vecAngles;	// 0x18
+	int m_n24;	// 0x24
+	int m_n28;	// 0x28
+};
+void sub_10066290(int a, int b, const Vector *pOrigin, const Vector *pAngles, int c, int d)
+{
+	CTEMuzzleFlashFields *p = (CTEMuzzleFlashFields *)&g_106c4c28;
+	p->m_vecOrigin = *pOrigin;
+	p->m_vecAngles = *pAngles;
+	p->m_n24 = c;
+	p->m_n28 = d;
+	g_106c4c28.vfunc4(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10066390 size=0xb
 namespace lifted {
 extern char g_1044dff8;
