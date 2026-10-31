@@ -25,4 +25,7 @@ public:
     char m_pad055d[0x598 - 0x55d];
     float m_flTouchTime0598;    // 0x0598: the time of the last touch (vfunc39)
     char m_bGiven059c;    // 0x059c: set once the touching character was given its amount
+public:
+    int vfunc33();
+    int vfunc82();
 };

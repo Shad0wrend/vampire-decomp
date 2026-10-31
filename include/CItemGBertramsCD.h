@@ -7,4 +7,7 @@ class CItemGBertramsCD
 public:
 	CItemGBertramsCD *vfunc5(unsigned int flags);
 	void sub_10013a57();
+public:
+	int vfunc80();
+	int vfunc81();
 };

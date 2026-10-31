@@ -14,4 +14,6 @@ public:
 	int *volatile m_vptr;
 	volatile unsigned int m_hEnt;
 	volatile short m_sUnk;
+public:
+	bool vfunc1(int, int, int, int, int);
 };

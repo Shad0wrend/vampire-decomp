@@ -7,4 +7,17 @@ class CNPC_VRat
 public:
 	CNPC_VRat *vfunc5(unsigned int flags);
 	void sub_100123af();
+public:
+	int vfunc138();
+	bool vfunc294(int);
+	bool vfunc295(int);
+	void vfunc316(int, int, int);
+	bool vfunc317(int);
+	bool vfunc318(int, int, int);
+	bool vfunc319(int, int, int);
+	bool vfunc320(int, int);
+	void vfunc330(int, int);
+	void vfunc333(int);
+	bool vfunc590();
+	bool vfunc615();
 };

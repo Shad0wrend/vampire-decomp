@@ -7,4 +7,7 @@ class CResearchBook_MG_FIN
 public:
 	CResearchBook_MG_FIN *vfunc5(unsigned int flags);
 	void sub_10013a57();
+public:
+	int vfunc80();
+	int vfunc81();
 };

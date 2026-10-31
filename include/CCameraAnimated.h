@@ -25,4 +25,8 @@ public:
 	void vfunc259(void *pEvent);	// slot 259 \"HandleAnimEvent\" override: event 0x3eb with a number 1..8 in its options fires the output of that number (the array at +0x730); anything else CBaseAnimating::vfunc259
 	void sub_10091da0(void *pEvent);	// CBaseAnimating::vfunc259 (stub 0x10003f99), called directly
 	const char *sub_1000b5cd();	// CBaseEntity::GetDebugName (stub 0x1000b5cd)
+public:
+	int vfunc80();
+	int vfunc81();
+	int vfunc82();
 };

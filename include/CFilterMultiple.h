@@ -16,4 +16,6 @@ public:
 	int m_nFilterType;	// 0x484
 	const char *m_pszFilterName[5];	// 0x488: the names of the five filters
 	unsigned int m_hFilter[5];	// 0x49c
+public:
+	int vfunc82();
 };

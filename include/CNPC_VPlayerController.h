@@ -20,4 +20,22 @@ public:
 	void sub_100b3840(unsigned int flags);	// CBaseEntity::AddFlag2 (stub 0x100027bb), called directly
 	void sub_1000c531();	// CAI_BaseNPCTroika::vfunc420, called directly
 	void sub_103a4580();	// the same function as vfunc420 (stub 0x100155aa), as the subclasses call it directly
+public:
+	bool vfunc72(int);
+	int vfunc138();
+	bool vfunc362(int);
+	bool vfunc363(int);
+	bool vfunc364(int);
+	bool vfunc365(int);
+	int vfunc432(int);
+	void vfunc488();
+	void vfunc489();
+	void vfunc490();
+	void vfunc491();
+	void vfunc492();
+	void vfunc493();
+	void vfunc494();
+	void vfunc495();
+	void vfunc496();
+	void vfunc497();
 };

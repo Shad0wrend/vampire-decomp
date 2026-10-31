@@ -12,4 +12,8 @@ public:
 	void sub_1001484e(int a, int b, int c, float d, float e, float f);	// stub 0x1001484e, called directly (takes six stack arguments)
 	int sub_1000d8b9();	// stub 0x1000d8b9: the mask of allowed hulls
 	void sub_1000dc29(int a);	// stub 0x1000dc29
+public:
+	int vfunc117();
+	float vfunc522();
+	float vfunc523();
 };

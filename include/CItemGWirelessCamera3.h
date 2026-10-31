@@ -7,4 +7,7 @@ class CItemGWirelessCamera3
 public:
 	CItemGWirelessCamera3 *vfunc5(unsigned int flags);
 	void sub_10013a57();
+public:
+	int vfunc80();
+	int vfunc81();
 };

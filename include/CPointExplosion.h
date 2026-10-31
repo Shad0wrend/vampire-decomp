@@ -14,4 +14,6 @@ public:
 	unsigned int m_flags204;	// 0x204
 	char m_pad0208[0x450 - 0x208];
 	const char *m_name450;	// 0x450: the name of the explosion parameter entity
+public:
+	int vfunc82();
 };

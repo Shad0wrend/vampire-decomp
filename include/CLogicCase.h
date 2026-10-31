@@ -17,4 +17,7 @@ public:
 	CLogicCase *vfunc5(unsigned int flags);	// the scalar deleting destructor: the outputs (OnDefault, then the cases from the last), the base, delete with bit 0 of flags
 	void sub_1000cb8a();	// the base destructor body (stub 0x1000cb8a, function 0x1009df20)
 	void sub_10134310(inputdata_t *pInput);	// "CLogicCase::InputInValue": the value as a string (the text of a string variant, "" when unset, else the variant converted to text) against the case values (case-insensitive); the first match fires its output (activator, this); no match fires OnDefault with the input's value
+public:
+	int vfunc82();
+	void vfunc103();
 };

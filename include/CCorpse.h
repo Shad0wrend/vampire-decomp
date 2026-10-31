@@ -7,4 +7,8 @@ class CCorpse
 public:
 	CCorpse *vfunc5(unsigned int flags);
 	void sub_10004c3c();
+public:
+	int vfunc80();
+	int vfunc81();
+	int vfunc117();
 };

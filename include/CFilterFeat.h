@@ -11,4 +11,6 @@ public:
 	char m_pad0000[0x484];
 	const char *m_pszFeat;	// 0x484
 	int m_nMinCost;	// 0x488
+public:
+	int vfunc82();
 };

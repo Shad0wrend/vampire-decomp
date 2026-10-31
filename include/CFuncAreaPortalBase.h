@@ -14,4 +14,6 @@ public:
 	char m_pad0000[0x450];
 	int m_nPortalKey;	// 0x0450: the engine's area portal key (-1 for none)
 	unsigned short m_nPortalSlot;	// 0x0454: index into the global linked list at 0x10709680
+public:
+	int vfunc117();
 };

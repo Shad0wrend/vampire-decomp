@@ -7,4 +7,9 @@ class CWeaponRanged_Smg_Uzi
 public:
 	CWeaponRanged_Smg_Uzi *vfunc5(unsigned int flags);
 	void sub_10013a57();
+public:
+	int vfunc80();
+	int vfunc81();
+	int vfunc362();
+	int vfunc363();
 };

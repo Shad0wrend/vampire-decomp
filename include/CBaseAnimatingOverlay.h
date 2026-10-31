@@ -49,6 +49,12 @@ public:
 
 	char m_pad0000[0x738];
 	CAnimationLayer m_Layers[15];	// 0x738
+public:
+	int vfunc79();
+	int vfunc80();
+	int vfunc81();
+	int vfunc82();
+	int vfunc267();
 };
 
 // Callee of vfunc250: advances a layer's cycle and fade weight. The game passes the address of the layer minus 4 as this.

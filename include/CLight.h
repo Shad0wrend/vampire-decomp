@@ -32,4 +32,6 @@ public:
 	char m_cCurrent;	// 0x458
 	char m_cTarget;	// 0x459
 	float m_flFadeTime;	// 0x45c
+public:
+	int vfunc82();
 };

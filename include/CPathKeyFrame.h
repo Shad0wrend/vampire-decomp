@@ -26,4 +26,6 @@ public:
 	CPathKeyFrame *m_pNext;	// 0x480
 	CPathKeyFrame *m_pPrev;	// 0x484
 	float m_flSpeed;	// 0x488
+public:
+	int vfunc82();
 };

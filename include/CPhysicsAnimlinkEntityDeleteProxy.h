@@ -15,4 +15,6 @@ public:
 	void *m_pAnimlink;	// 0x04
 	unsigned int m_hEntityA;	// 0x08
 	unsigned int m_hEntityB;	// 0x0c
+public:
+	void vfunc0(int);
 };

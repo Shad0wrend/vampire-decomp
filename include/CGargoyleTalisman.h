@@ -12,4 +12,7 @@ public:
 	char *sub_10252240();	// CAI_BaseNPCTroika::sub_10252240 (0x100011f4), called on this: the character or 0
 	char *sub_10010ea6();	// the owner object of this (0x10010ea6)
 	void sub_10005b69();	// CBaseCombatWeapon::vfunc300 (stub 0x10005b69), called directly
+public:
+	int vfunc80();
+	int vfunc81();
 };

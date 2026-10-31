@@ -15,4 +15,7 @@ public:
 	char m_pad0000[0x5f44];
 	int m_nSink;	// 0x5f44: the CAI_ExpresserSink sub-object (secondary vtable pointer)
 	CAI_Expresser *m_pExpresser;	// 0x5f48
+public:
+	int vfunc512();
+	int vfunc584();
 };

@@ -24,4 +24,14 @@ public:
 	int sub_10218710(int a);	// called through the stub at 0x10007dba: whether the viewer (a, an entity) is looking at the screen: the direction from the "screen" attachment to "screen_axis" against the viewer's position (slot 193), above 0.7f
 	void vfunc42(void *pPlayer);	// slot 42 "CBaseTerminal::StopUse"-like: closes the terminal screen for the user (sub_10218820(2, 0)), re-enables the player's input (sub_1015ef60, sub_101815b0(1) / (8)), clears the in-use byte at +0x80d, tells the global at 0x1070b248 about the terminal's edict index, then the CBaseVampireSkillEntity version
 	void sub_10218820(int a, int b);	// sends the user message g_10726070 (a, b) reliably to the player of the entity at m_hUser
+public:
+	int vfunc80();
+	int vfunc81();
+	int vfunc82();
+	void vfunc273(int, int);
+	int vfunc274();
+	void vfunc275();
+	void vfunc276();
+	void vfunc277();
+	int vfunc278(int);
 };

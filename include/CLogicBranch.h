@@ -6,4 +6,6 @@ class CLogicBranch
 {
 public:
 	CLogicBranch *vfunc5(unsigned int flags);
+public:
+	int vfunc82();
 };

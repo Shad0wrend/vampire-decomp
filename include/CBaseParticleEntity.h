@@ -16,4 +16,8 @@ public:
 	unsigned char m_flags19c;	// 0x019c
 	char m_pad019d[0x2e0 - 0x19d];
 	CParticleEdict_t *m_pEdict2e0;	// 0x02e0
+public:
+	int vfunc79();
+	int vfunc80();
+	int vfunc81();
 };

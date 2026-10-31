@@ -17,4 +17,6 @@ public:
 	int m_nSrcID;	// 0x454
 	int m_nDestID;	// 0x458
 	int m_nLinkState;	// 0x45c
+public:
+	int vfunc82();
 };

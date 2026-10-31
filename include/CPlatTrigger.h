@@ -15,4 +15,6 @@ public:
 
 	char m_pad0000[0x450];
 	CFuncPlat *m_pPlatform;	// 0x450
+public:
+	int vfunc117();
 };

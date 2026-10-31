@@ -7,4 +7,7 @@ class CItemGWarrLedger2
 public:
 	CItemGWarrLedger2 *vfunc5(unsigned int flags);
 	void sub_10013a57();
+public:
+	int vfunc80();
+	int vfunc81();
 };

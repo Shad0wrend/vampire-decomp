@@ -7,4 +7,7 @@ class CAI_ChangeTarget
 public:
 	CAI_ChangeTarget *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
+public:
+	int vfunc82();
+	int vfunc117();
 };

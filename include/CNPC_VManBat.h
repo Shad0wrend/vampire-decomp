@@ -68,4 +68,12 @@ public:
 	void sub_1038e670();	// stub 0x100036e8
 	void sub_1038c250(CBaseEntity *pTarget);	// "launch at the target": with a target, sub_1038c170(1), the angles (slot 221) with the pitch cleared set back (slot 64), then the direction to the target (slot 220 of both) normalised and scaled by 200.0f becomes the velocity (CBaseEntity::sub_100b2770)
 	void sub_10332aa0(int a, int b, int c);	// stub 0x10013cf5, called by vfunc103 with (1, 1, 10)
+public:
+	int vfunc82();
+	int vfunc138();
+	int vfunc337();
+	int vfunc451();
+	bool vfunc452();
+	int vfunc464();
+	int vfunc580();
 };

@@ -43,4 +43,7 @@ public:
 	void vfunc180();	// slot 180: when the attached entity resolves, stops the sound on its edict (sub_101cdac0), then CBaseEntity::vfunc180
 	void vfunc113();	// slot 113: finds the attached entity (cached as a handle by name, else the ambient itself), and while playing re-emits the sound on its edict (sub_101cdac0), then schedules the next think
 	int sub_101ac670(int flags);	// flags | the dword at +0x4e0 (stub 0x1000d8e1)
+public:
+	int vfunc82();
+	bool vfunc136();
 };

@@ -7,4 +7,7 @@ class CAI_SystemHook
 public:
 	CAI_SystemHook *vfunc8(unsigned int flags);
 	void sub_1000cfbd();
+public:
+	int vfunc2();
+	int vfunc5();
 };

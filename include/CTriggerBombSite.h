@@ -35,4 +35,8 @@ public:
 	char m_pad055d[0x598 - 0x55d];
 	float m_flStartTime;	// 0x0598
 	unsigned char m_nProgress;	// 0x059c
+public:
+	int vfunc33();
+	int vfunc36();
+	int vfunc82();
 };

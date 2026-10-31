@@ -30,4 +30,9 @@ public:
 	int m_iszGibModel;	// 0x460
 	char m_pad0464[0x484 - 0x464];
 	char m_out0484[0x18];	// OnHealthChanged: a variant output (the variant value first, then the event)
+public:
+	int vfunc74(int);
+	int vfunc82();
+	int vfunc117();
+	bool vfunc223();
 };

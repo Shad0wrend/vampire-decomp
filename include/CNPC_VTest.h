@@ -19,4 +19,10 @@ public:
 	void vfunc493();	// slot 493 (plain member): like vfunc489 with the 0x106521a8 sounds
 	void vfunc494();	// slot 494 (plain member): like vfunc489 with another sound table
 	void vfunc495();	// slot 495 (plain member): like vfunc489 with the 0x106521b0 sounds
+public:
+	virtual void vfunc134();
+	virtual void vfunc135();
+	virtual void vfunc136();
+	virtual void vfunc137();
+	virtual int vfunc138();
 };

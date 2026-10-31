@@ -7,4 +7,7 @@ class CWeaponIArmor_Body_Armor
 public:
 	CWeaponIArmor_Body_Armor *vfunc5(unsigned int flags);
 	void sub_10013a57();
+public:
+	int vfunc80();
+	int vfunc81();
 };

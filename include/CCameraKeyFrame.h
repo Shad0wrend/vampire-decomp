@@ -23,4 +23,6 @@ public:
 	float m_fl470;	// 0x470
 	char m_pad0474[0x47c - 0x474];
 	char m_b47c;	// 0x47c
+public:
+	int vfunc82();
 };

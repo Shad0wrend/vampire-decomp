@@ -36,4 +36,6 @@ public:
 	char m_pad0474[4];
 	int m_n478;	// 0x478
 	int m_n47c;	// 0x47c
+public:
+	int vfunc82();
 };

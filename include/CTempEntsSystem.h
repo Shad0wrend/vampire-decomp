@@ -52,4 +52,6 @@ public:
 	void vfunc35(CUnknown1019d130 *filter, int a, int b, int c, int d, int e);	// as in CTempEntsSystem (transplant)
 	void vfunc42(CUnknown1019d130 *filter, int a, int b, int c, int d, int e);	// as in CTempEntsSystem (transplant)
 	void vfunc43(CUnknown1019d130 *filter, int a, int b, int c, int d, int e);	// as in CTempEntsSystem (transplant)
+public:
+	void vfunc1(int, int, int);
 };

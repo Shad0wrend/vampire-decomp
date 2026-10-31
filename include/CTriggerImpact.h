@@ -19,4 +19,8 @@ public:
 	float m_flMagnitude;	// 0x5b0
 	float m_flRandomness;	// 0x5b4
 	float m_f5b8;	// 0x5b8
+public:
+	int vfunc82();
+	int vfunc103();
+	void vfunc171();
 };

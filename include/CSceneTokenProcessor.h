@@ -8,4 +8,6 @@ public:
 	void *m_vfptr;	// 0x0000: ISceneTokenProcessor vtable pointer
 	int m_4;	// 0x0004
 	int m_8;	// 0x0008: the second argument of the engine call (its address is passed)
+public:
+	char * vfunc0();
 };

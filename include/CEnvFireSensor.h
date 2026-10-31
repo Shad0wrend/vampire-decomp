@@ -16,4 +16,6 @@ public:
 	unsigned char m_b451;
 	char m_pad452[0x460 - 0x452];
 	int m_field460;
+public:
+	int vfunc82();
 };

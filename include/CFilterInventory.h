@@ -15,4 +15,6 @@ public:
 	bool m_bPasses;	// 0x0488
 	unsigned int m_hLastEnt;	// 0x048c: handle of the last entity tested
 	int m_nLastFrame;	// 0x0490: slot 120 of the global at 0x1070b22c when m_hLastEnt was cached
+public:
+	int vfunc82();
 };

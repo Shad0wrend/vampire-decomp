@@ -71,4 +71,19 @@ public:
 	void sub_100aaa40(int a);	// CBaseEntity member (stub 0x10013c00), called directly
 	void sub_1026dc60();	// stub 0x1000d990, called directly
 	void sub_10332aa0(int classId, int disposition, int priority);	// "CBaseCombatCharacter::AddClassRelationship" (stub 0x10013cf5), called directly
+public:
+	int vfunc82();
+	int vfunc138();
+	bool vfunc394();
+	void vfunc434();
+	int vfunc451();
+	bool vfunc452();
+	int vfunc473();
+	int vfunc488();
+	int vfunc489();
+	int vfunc490();
+	int vfunc491();
+	int vfunc511();
+	float vfunc516();
+	int vfunc580();
 };

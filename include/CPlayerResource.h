@@ -14,4 +14,9 @@ public:
 	char m_pad0000[0x450];
 	int m_tables[12][0x21];	// +0x450: per player values (the 33 entries are the player slots plus one)
 	float m_flNextUpdate;	// +0xa80
+public:
+	int vfunc80();
+	int vfunc81();
+	int vfunc82();
+	bool vfunc86(int, int, int, int, int);
 };

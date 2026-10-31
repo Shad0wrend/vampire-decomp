@@ -25,4 +25,10 @@ public:
 	CAI_Navigator *m_pNavigator;	// +0x5d34
 	char m_pad5d38[0x62ec - 0x5d38];
 	int m_n62ec;	// +0x62ec
+public:
+	virtual void vfunc134();
+	virtual void vfunc135();
+	virtual void vfunc136();
+	virtual void vfunc137();
+	virtual int vfunc138();
 };

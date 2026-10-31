@@ -8,4 +8,6 @@ class CDebugEntity
 public:
 	CDebugEntity *vfunc5(unsigned int flags);
 	void sub_1009df20();
+public:
+	int vfunc104();
 };

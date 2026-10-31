@@ -10,4 +10,6 @@ public:
 
 	char m_pad0000[0x484];
 	float m_flMass;	// 0x484
+public:
+	int vfunc82();
 };

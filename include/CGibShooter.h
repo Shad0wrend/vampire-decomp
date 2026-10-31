@@ -27,4 +27,7 @@ public:
     void sub_100b3b00();    // CBaseEntity::sub_100b3b00 (stub 0x1001514a), called directly
     CGib *vfunc241();    // slot 241 "CGibShooter::CreateGib": with the violence_hgibs convar set to "no gibs" returns null, else creates a "gib" entity (warns when it is the wrong class), sets the gib model, +0x730 = 0xf7 and the body from the model's body list
     void sub_100f49e0(CGib *pGib, const Vector &vecShootDir);    // "CGibShooter::InitPointGib": puts the gib at the shooter's origin, gives it the velocity vecShootDir * m_flGibVelocity and a random spin (x 100..200, y 100..300), a life time of 0.95..1.05 times m_flGibLife (the gib thinks at that time when sooner than its next think), then hands it to sub_101cf600
+public:
+    int vfunc82();
+    int vfunc242(int, int, int, int, int, int);
 };

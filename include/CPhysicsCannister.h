@@ -57,4 +57,9 @@ public:
 	const char *m_pszSound19f8;	// 0x19f8: sound name stopped by slot 104
 	char m_pad19fc[0x1a14 - 0x19fc];
 	const char *m_pszExplosion1a14;	// 0x1a14: name of the explosion parameters entity
+public:
+	bool vfunc72(int);
+	int vfunc82();
+	bool vfunc158();
+	int vfunc226();
 };

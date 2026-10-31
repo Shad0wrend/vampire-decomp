@@ -25,4 +25,6 @@ public:
 	void sub_100a0130();	// CBaseEntity::vfunc123 (stub 0x10005880), called directly
 	void sub_101ae7a0();	// slot 134 (the think): finds the player's soundscape and keeps the active one, thinking every 0.25 s while a player is in it (0.5 s extra when it was already the active one and the player left), 1 s without a player
 	char sub_101ae440(void *pPlayer);	// whether the player is inside this soundscape's range (stub 0x1000a669)
+public:
+	int vfunc82();
 };

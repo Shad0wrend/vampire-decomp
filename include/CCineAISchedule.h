@@ -12,4 +12,7 @@ public:
 	char m_pad0000[0x6090];
 	int m_n6090;	// 0x6090
 	int m_n6094;	// 0x6094
+public:
+	int vfunc82();
+	bool vfunc585();
 };

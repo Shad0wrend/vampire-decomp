@@ -7,4 +7,6 @@ class CRotButton
 public:
 	CRotButton *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
+public:
+	bool vfunc223();
 };

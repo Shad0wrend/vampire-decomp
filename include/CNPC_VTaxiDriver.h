@@ -27,4 +27,16 @@ public:
 	char *m_p5cdc;	// 0x5cdc: an object with a flag byte at +0x80
 	char m_pad5ce0[0x6660 - 0x5ce0];
 	char m_b6660;	// 0x6660
+public:
+	bool vfunc72(int);
+	int vfunc82();
+	int vfunc138();
+	int vfunc142(int);
+	void vfunc144(int);
+	int vfunc390(int);
+	int vfunc432(int);
+	int vfunc438();
+	int vfunc451();
+	bool vfunc452();
+	int vfunc580();
 };

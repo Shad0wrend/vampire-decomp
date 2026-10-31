@@ -18,4 +18,10 @@ public:
 	int vfunc438();	// slot 438 (TranslateSchedule-like): see the body
 	int sub_10015ad2();	// CNPC_VHuman::vfunc438 (stub 0x10015ad2), tail called
 	char sub_1001482b(int a);	// condition test, called with 0x10 / 0x11 / 0x13
+public:
+	virtual void vfunc134();
+	virtual void vfunc135();
+	virtual void vfunc136();
+	virtual void vfunc137();
+	virtual int vfunc138();
 };

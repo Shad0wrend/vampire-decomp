@@ -28,4 +28,8 @@ public:
 	float m_flY464;	// 0x464
 	float m_flW468;	// 0x468
 	float m_flH46c;	// 0x46c
+public:
+	int vfunc80();
+	int vfunc81();
+	int vfunc82();
 };

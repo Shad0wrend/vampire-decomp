@@ -25,4 +25,6 @@ public:
 	char vfunc86(int a, CInspectionBrushEdict *pEdict, int c, int d, int e);	// slot 86 override: the CEnvParticle version, then with it true and the entity behind the edict (inlined CBaseEntity::Instance) holding an object at +0xa8, hands that object to sub_100fd270
 	void sub_100fd270(int pObject);
 	char sub_100b5190();	// stub 0x10014da8
+public:
+	int vfunc82();
 };

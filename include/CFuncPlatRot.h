@@ -24,4 +24,6 @@ public:
 	char m_pad0550[0x574 - 0x550];
 	Vector m_vecFinalAngle;	// 0x574
 	Vector m_vecStart;	// 0x580
+public:
+	int vfunc82();
 };

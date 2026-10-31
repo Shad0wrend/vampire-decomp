@@ -90,4 +90,10 @@ public:
 	void sub_103c5ac0(const CVAsianVampireTask_t *pTask);	// CNPC_VVampireBoss::vfunc442 (stub 0x1000de7c), called directly
 	void *sub_103615c0();	// stub 0x1000c61c: the hint for task 0x151
 	void *sub_10361730();	// stub 0x10006a1e: the hint for task 0x152
+public:
+	int vfunc82();
+	int vfunc451();
+	bool vfunc452();
+	bool vfunc566(int);
+	int vfunc580();
 };

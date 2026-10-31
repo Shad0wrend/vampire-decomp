@@ -11,4 +11,7 @@ public:
 	void vfunc305();
 	CBaseMoneyObject *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_10013a57();	// as in CPhysForce (transplant)
+public:
+	int vfunc82();
+	int vfunc298(int, int);
 };

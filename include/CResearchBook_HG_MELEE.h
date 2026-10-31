@@ -7,4 +7,7 @@ class CResearchBook_HG_MELEE
 public:
 	CResearchBook_HG_MELEE *vfunc5(unsigned int flags);
 	void sub_10013a57();
+public:
+	int vfunc80();
+	int vfunc81();
 };

@@ -69,4 +69,6 @@ public:
 		if (toMove > 0)
 			memmove(&m_pHandlers[elem + 1], &m_pHandlers[elem], toMove * 4);
 	}
+public:
+	char * vfunc0();
 };

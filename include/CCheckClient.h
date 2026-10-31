@@ -7,4 +7,6 @@ class CCheckClient
 public:
 	CCheckClient *vfunc8(unsigned int flags);
 	void sub_1000cfbd();
+public:
+	void vfunc2();
 };

@@ -13,4 +13,6 @@ public:
 
 	char m_pad0[4];	// 0x0: the vtable pointer
 	int m_pOwner;	// 0x4: the owning NPC
+public:
+	bool vfunc5(int, int, int, int, int);
 };

@@ -10,4 +10,6 @@ public:
 
 	char m_pad0000[0x450];
 	const char *m_pszCode;	// 0x450
+public:
+	int vfunc82();
 };
