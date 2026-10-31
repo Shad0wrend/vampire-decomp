@@ -672,6 +672,7 @@
 0x1000245a func   ?sub_101dcdb0@CUnknown101dcdb0@@QAEXXZ CUnknown101dcdb0::sub_101dcdb0
 0x1000245f func   ?vfunc105@CBaseCombatCharacter@@UAEXPBD@Z CBaseCombatCharacter::vfunc105
 0x10002464 func   ?vfunc48@CBaseEntity@@UAEMXZ CBaseEntity::vfunc48
+0x10002469 func   ?vfunc81@COccultStrength@@QAEHXZ COccultStrength::vfunc81
 0x1000246e func   ?sub_101b2070@UtlMem@@QAEXXZ UtlMem::sub_101b2070
 0x1000247d func   ?sub_10205f40@CUnknown10205f40@@QAEPAXH@Z CUnknown10205f40::sub_10205f40
 0x10002482 func   ?sub_1005a1a0@@YAHXZ sub_1005a1a0
