@@ -46630,6 +46630,28 @@ int sub_10114260()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10114440 size=0x63
+#include "CTEDust.h"
+#include "Vector.h"
+extern CTEDust g_1070a50c;
+struct CTEView {
+	char m_pad0000[0xc];
+	Vector m_vecOrigin;	// 0x0c
+	int m_n18;
+	int m_n1c;
+	Vector m_vecAngles;	// 0x20
+};
+void sub_10114440(int a, int b, const Vector *pOrigin, const Vector *pAngles, int c, int d)
+{
+	CTEView *p = (CTEView *)&g_1070a50c;
+	p->m_vecOrigin = *pOrigin;
+	p->m_vecAngles = *pAngles;
+	p->m_n18 = c;
+	p->m_n1c = d;
+	g_1070a50c.vfunc4(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101145a0 size=0x1a
 namespace lifted {
 extern int g_1056fd24;
