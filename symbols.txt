@@ -8299,6 +8299,7 @@
 0x1001173e func   ?sub_1007fce0@UtlMem6@@QAEXH@Z UtlMem6::sub_1007fce0
 0x10011748 func   ?vfunc292@CNPC_VHengeyokai@@QAEXPAUCGargoyleDmgInfo@@HH@Z CNPC_VHengeyokai::vfunc292
 0x1001174d func   ?sub_102db590@@YAHH@Z sub_102db590
+0x10011752 func   ??0CGameSign@@QAE@XZ CGameSign::CGameSign
 0x10011757 func   ?sub_1042eca0@CUnknown1042e8c0@@QAEXXZ CUnknown1042e8c0::sub_1042eca0
 0x1001175c func   ?sub_1025da90@@YIXPAUS1025da90@@@Z sub_1025da90
 0x10011761 func   ?sub_1027dbf0@@YAMXZ sub_1027dbf0
