@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10147b10 size=0x7
+#include "CPathCorner.h"
+float CPathCorner::vfunc152()
+{
+    return *(float *)((char *)this + 0x450);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10147bb0 size=0x6
 #include "CPathCorner.h"
 namespace lifted {
