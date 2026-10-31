@@ -5353,6 +5353,7 @@
 0x1000aaba func   ?sub_10252120@CBaseCombatWeapon@@QAEPADHH@Z CBaseCombatWeapon::sub_10252120
 0x1000aabf func   ?sub_101ec6c0@CUnknown101ec6c0@@QAEXH@Z CUnknown101ec6c0::sub_101ec6c0
 0x1000aac4 func   ?sub_1029fbe0@@YIXPAUThreatNpcView@@HHPAUThreatRecView@@@Z sub_1029fbe0
+0x1000aac9 func   ?vfunc6@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc6
 0x1000aace func   ?sub_1008f6c0@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_1008f6c0
 0x1000aad3 func   ?sub_103c29b0@@YADXZ sub_103c29b0
 0x1000aad8 func   ?vfunc1@ConCommandBase@@QAE_NXZ ConCommandBase::vfunc1

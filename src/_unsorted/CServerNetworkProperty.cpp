@@ -62,6 +62,30 @@ int CServerNetworkProperty::vfunc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ab670 size=0xf
+#include "CServerNetworkProperty.h"
+
+struct CNetPropSlot5View
+{
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual void vfunc2();
+	virtual void vfunc3();
+	virtual void vfunc4();
+	virtual void vfunc5(int a);
+};
+
+// TARGET: CServerNetworkProperty::vfunc6
+void CServerNetworkProperty::vfunc6()
+{
+	CNetPropSlot5View *p = *(CNetPropSlot5View **)((char *)this + 4);
+	if (p)
+	{
+		p->vfunc5(1);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab690 size=0xb
 #define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 struct CSlots
