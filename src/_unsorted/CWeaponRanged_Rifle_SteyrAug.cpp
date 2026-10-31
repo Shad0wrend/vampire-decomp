@@ -20,6 +20,17 @@ int CWeaponRanged_Rifle_SteyrAug::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102367c0 size=0x6
+#include "CWeaponRanged_Rifle_SteyrAug.h"
+namespace lifted {
+extern char g_105bcfb8;
+}
+int CWeaponRanged_Rifle_SteyrAug::vfunc362()
+{
+    return (int)&lifted::g_105bcfb8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a4a0 size=0x1e
 #include "CWeaponRanged_Rifle_SteyrAug.h"
 
