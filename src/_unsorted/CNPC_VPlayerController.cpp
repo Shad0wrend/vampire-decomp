@@ -148,6 +148,14 @@ void CNPC_VPlayerController::vfunc497()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a4890 size=0x6
+#include "CNPC_VPlayerController.h"
+int CNPC_VPlayerController::vfunc138()
+{
+    return 2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a48b0 size=0x74
 #include "CNPC_VPlayerController.h"
 #include "CGlobalEntityList.h"

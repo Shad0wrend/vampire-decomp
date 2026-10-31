@@ -9181,6 +9181,7 @@
 0x10011fc2 func   ?sub_101e8480@CUnknown101e8480@@QAEXPAVCBaseCombatCharacter@@@Z CUnknown101e8480::sub_101e8480
 0x10011fc7 func   ?vfunc5@COccultPassiveDurations@@QAEPAV1@I@Z COccultPassiveDurations::vfunc5
 0x10011fcc func   ?vfunc81@CWeaponRanged_MingXiao_Spit@@QAEHXZ CWeaponRanged_MingXiao_Spit::vfunc81
+0x10011fd1 func   ?vfunc138@CNPC_VPlayerController@@QAEHXZ CNPC_VPlayerController::vfunc138
 0x10011fd6 func   ?vfunc2@CSoundSchemeManager@@UAEXXZ CSoundSchemeManager::vfunc2
 0x10011fdb func   ?sub_1021fe50@@YAPAVCBaseCombatWeapon@@PAVCBaseCombatCharacter@@PBDD@Z sub_1021fe50
 0x10011fe0 func   ?sub_1006ed40@CBaseCineCam@@QAEXPAVVector@@0@Z CBaseCineCam::sub_1006ed40
