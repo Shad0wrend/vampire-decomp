@@ -49,7 +49,9 @@ public:
 	char m_pad0204[0x1b30 - 0x204];
 	const char *m_pszFile1b30;	// 0x1b30: source file of the last schedule selection
 	int m_nLine1b34;	// 0x1b34: its line
-	char m_pad1b38[0x63d8 - 0x1b38];
+	char m_pad1b38[0x6078 - 0x1b38];
+	char m_b6078;	// 0x6078: set to 1 by vfunc599
+	char m_pad6079[0x63d8 - 0x6079];
 	char m_b63d8;	// 0x63d8
 	char m_pad63d9[0x65c8 - 0x63d9];
 	int m_nAct65c8;	// 0x65c8
