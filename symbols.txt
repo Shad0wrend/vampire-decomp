@@ -10406,6 +10406,7 @@
 0x10014650 func   ?vfunc2@CTEPlayerDecal@@UAEPAV1@I@Z CTEPlayerDecal::vfunc2
 0x1001465f func   ?vfunc79@CBaseAnimatingOverlay@@QAEHXZ CBaseAnimatingOverlay::vfunc79
 0x10014664 func   ?sub_1032f930@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_1032f930
+0x1001466e func   ?vfunc82@CBreakableProp@@QAEHXZ CBreakableProp::vfunc82
 0x10014673 func   ?vfunc223@CPhysicsCannister@@QAEDXZ CPhysicsCannister::vfunc223
 0x10014678 func   ?vfunc5@COccultRegen@@QAEPAV1@I@Z COccultRegen::vfunc5
 0x1001467d func   ?vfunc16@CSoundControllerImp@@UAEMPAXHPAUenvelopePoint_t@@H@Z CSoundControllerImp::vfunc16
