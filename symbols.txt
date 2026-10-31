@@ -4126,6 +4126,7 @@
 0x10008e13 func   ??0CTraceFilterEntity@@QAE@PAXH@Z CTraceFilterEntity::CTraceFilterEntity
 0x10008e22 func   _item_a_hvy_leather item_a_hvy_leather
 0x10008e27 func   ?sub_1024cc10@@YA?AVVMatrix@@H@Z sub_1024cc10
+0x10008e2c func   ?vfunc81@CWeaponIArmor_Hvy_Leather@@QAEHXZ CWeaponIArmor_Hvy_Leather::vfunc81
 0x10008e31 func   ?sub_101ffdf0@CVStatInfoList_t@@QAEHPBD@Z CVStatInfoList_t::sub_101ffdf0
 0x10008e36 func   ?sub_100d2070@@YAPAVCBaseEntity@@HPBDPAV1@@Z sub_100d2070
 0x10008e3b func   ?sub_10203710@@YAPBDH@Z sub_10203710
