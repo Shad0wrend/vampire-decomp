@@ -11,6 +11,15 @@ int CNPC_VWerewolf::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c8e70 size=0x6
+extern unsigned char g_1065f78c;
+// TARGET: sub_103c8e70
+unsigned char sub_103c8e70()
+{
+    return g_1065f78c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c8ed0 size=0x1d
 #include "CNPC_VWerewolf.h"
 struct A { int sub_10012300(int); };
