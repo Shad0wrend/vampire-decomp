@@ -291,7 +291,9 @@ public:
 	const char *m_name26c;
 	char m_pad0270[0x2e0 - 0x270];
 	int m_pEdict2e0;	// 0x02e0
-	char m_pad02e4[0x364 - 0x2e4];
+	char m_pad02e4[0x35c - 0x2e4];
+	int m_nMoveType35c;	// 0x035c
+	int m_nMoveCollide360;	// 0x0360
 	unsigned int m_hOwner364;	// owner entity handle
 	int m_field368;
 	int m_obj36c;	// physics object (pointer)
