@@ -5794,6 +5794,7 @@
 0x1000c4dc func   ??0ScopeTrace@@QAE@PBD00@Z ScopeTrace::ScopeTrace
 0x1000c4e1 func   ?sub_1040e1c0@@YGXPAVCBaseEntity@@PBVVector@@M@Z sub_1040e1c0
 0x1000c4e6 func   ?sub_1020f330@CPropSwitch@@QAEXPAUinputdata_t@@@Z CPropSwitch::sub_1020f330
+0x1000c4eb func   ?sub_101a13c0@@YIDPAVCRestore@@@Z sub_101a13c0
 0x1000c4f0 func   ?sub_1027faa0@UtlMem@@QAEXXZ UtlMem::sub_1027faa0
 0x1000c4fa func   ?sub_10167240@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10167240
 0x1000c4ff func   ?vfunc176@CTriggerWind@@UAEXPAVCBaseEntity@@@Z CTriggerWind::vfunc176
