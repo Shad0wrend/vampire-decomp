@@ -146774,6 +146774,13 @@ void CNPC_VAndreiBlood::sub_1035e5f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035e920 size=0x19
+char __fastcall sub_1035e920(char *pThis)
+{
+	return *(float *)(pThis + 0x66b8) < 2.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035e950 size=0x1a
 #include "CNPC_VAndreiBlood.h"
 

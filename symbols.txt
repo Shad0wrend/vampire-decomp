@@ -7820,6 +7820,7 @@
 0x1000eb97 func   _npc_VHumanCombatant npc_VHumanCombatant
 0x1000eb9c func   ?vfunc5@CNPC_VCamera@@QAEPAV1@I@Z CNPC_VCamera::vfunc5
 0x1000eba1 func   ?sub_1020f2e0@@YIXPADHH@Z sub_1020f2e0
+0x1000eba6 func   ?sub_1035e920@@YIDPAD@Z sub_1035e920
 0x1000ebab func   ?sub_10136450@@YIXPADHH@Z sub_10136450
 0x1000ebb0 func   ?sub_10247e20@CUnknown10247e20@@QAEPAXH@Z CUnknown10247e20::sub_10247e20
 0x1000ebb5 func   ?sub_10160e90@CUnk10160e90@@QAE_NXZ CUnk10160e90::sub_10160e90
