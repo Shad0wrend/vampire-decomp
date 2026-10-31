@@ -143469,6 +143469,19 @@ void sub_10352d70(void *pEdict, const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10352df0 size=0x15
+#include "CGameRules.h"
+
+extern CGameRules *g_1070ba0c;
+
+const char *sub_10352df0()
+{
+	if (g_1070ba0c)
+		return (const char *)g_1070ba0c->vfunc25();
+	return "Vampire";
+}
+// END FUNCTION
+
 // FUNCTION: 0x10352e20 size=0x43
 extern "C" int __cdecl _strcmpi(const char *, const char *);
 struct S10352e20
