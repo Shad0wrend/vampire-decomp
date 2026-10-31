@@ -154856,6 +154856,49 @@ bool __stdcall sub_103d0e70(void *pArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d1200 size=0x245
+#include "CNPC_VWerewolf.h"
+#include "ScopeTrace.h"
+extern CNPC_VWerewolfHint66b0 *g_10925450;
+extern CNPC_VWerewolfVec3 g_1070d1b0;
+
+bool CNPC_VWerewolf::sub_103d1200()
+{
+	ScopeTrace trace("CNPC_VWerewolf::FindEgressHint", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (m_pHint66bc) {
+		CBaseEntity *pTarget = vfunc167();
+		if (pTarget) {
+			bool bPath;
+			{
+				CNPC_VWerewolfVec3 tmp;
+				bPath = (char)sub_103d0db0(*vfunc217(), *sub_103d6770(&tmp, m_pHint66bc));
+			}
+			if (bPath) {
+				CNPC_VWerewolf *pT = (CNPC_VWerewolf *)vfunc167();
+				if ((char)sub_103d0db0(sub_103d6650(m_pHint66bc), *pT->vfunc217()))
+					return true;
+			}
+		}
+		sub_103d4690();
+	}
+	for (CNPC_VWerewolfHint66b0 *pHint = g_10925450; pHint; pHint = pHint->m_pNext) {
+		if (pHint->m_nType == 0x3aa8) {
+			bool bPath;
+			{
+				CNPC_VWerewolfVec3 tmp;
+				bPath = (char)sub_103d0db0(*vfunc217(), *sub_103d6770(&tmp, pHint));
+			}
+			if (bPath) {
+				if (!vfunc617_slot(sub_103d6650(pHint), 0, 0, g_1070d1b0))
+					break;
+				sub_103d44e0(pHint, 0);
+			}
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d1ca0 size=0x81
 #include "CNPC_VWerewolf.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
