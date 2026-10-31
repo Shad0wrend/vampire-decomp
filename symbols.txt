@@ -988,6 +988,7 @@
 0x10002e8c func   ?sub_10271f30@@YGXH@Z sub_10271f30
 0x10002e91 func   ?vfunc4@CMoveHelperServer@@UAAXHPBDZZ CMoveHelperServer::vfunc4
 0x10002ea5 func   ?sub_1013fcb0@CUtlVector96@@QAEXHH@Z CUtlVector96::sub_1013fcb0
+0x10002eaa func   ?sub_103b29f0@@YAEXZ sub_103b29f0
 0x10002eaf func   ?sub_1018c4f0@@YGXH@Z sub_1018c4f0
 0x10002eb4 func   ?sub_101841c0@CUnknown101841c0@@QAEPAXH@Z CUnknown101841c0::sub_101841c0
 0x10002eb9 func   ?sub_10072db0@CUnknown1007bb30Dest@@QAEXPBD0@Z CUnknown1007bb30Dest::sub_10072db0

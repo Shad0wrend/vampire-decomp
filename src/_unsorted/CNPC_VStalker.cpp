@@ -49,6 +49,15 @@ CNPC_VStalker *CNPC_VStalker::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b29f0 size=0x6
+extern unsigned char g_10651cf8;
+// TARGET: sub_103b29f0
+unsigned char sub_103b29f0()
+{
+    return g_10651cf8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b2a50 size=0x1d
 #include "CNPC_VStalker.h"
 struct A { int sub_10012300(int); };
