@@ -6008,6 +6008,7 @@
 0x1000bd89 func   ?sub_100e7630@CDialog@@QAEXPAX@Z CDialog::sub_100e7630
 0x1000bd8e func   ?vfunc409@CNPC_VMingXiao@@UAEHXZ CNPC_VMingXiao::vfunc409
 0x1000bd93 func   ?sub_10117310@CMoverUnit@@QAEXH@Z CMoverUnit::sub_10117310
+0x1000bd98 func   ?sub_100f9f90@@YIXPAVCBaseEntityList@@HH@Z sub_100f9f90
 0x1000bd9d func   ?sub_1030c560@CUnknown1030c560@@QAE_NXZ CUnknown1030c560::sub_1030c560
 0x1000bda2 func   ?vfunc71@CItemContainer@@QAEXXZ CItemContainer::vfunc71
 0x1000bda7 func   ?sub_102db670@@YAXXZ sub_102db670

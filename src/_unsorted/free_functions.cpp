@@ -42966,6 +42966,16 @@ void CBaseEntityList::sub_100f9c40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f9f90 size=0x12
+#include "CBaseEntityList.h"
+
+// TARGET: sub_100f9f90
+void __fastcall sub_100f9f90(CBaseEntityList *pThis, int, int a)
+{
+	pThis->sub_100fa0f0(a & 0x1fff);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f9fc0 size=0xe2
 #include "CGlobalEntityList.h"
 #include "CUtlLinkedList6.h"
