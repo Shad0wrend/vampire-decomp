@@ -20,6 +20,17 @@ int CFuncMonitor::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10115020 size=0x6
+#include "CFuncMonitor.h"
+namespace lifted {
+extern char g_10570580;
+}
+int CFuncMonitor::vfunc82()
+{
+    return (int)&lifted::g_10570580;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101150b0 size=0x2a
 #include "CFuncMonitor.h"
 
