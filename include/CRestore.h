@@ -66,7 +66,7 @@ public:
 	
 	virtual void s10(); virtual void s11();
 	virtual unsigned int vfunc12(int a, int b, int c);	// slot 12: halves the count min(2*b, c) (when c is set) after 0x1000fe9d(a, n) and, when short of c, 0x1000910b(c - n)
-	virtual void s13(); virtual int vfunc14();	// slot 14: reads a count (used by the memory list restore)
+	virtual short vfunc13(); virtual int vfunc14();	// slot 14: reads a count (used by the memory list restore)
 	virtual int vfunc15(int *pValues, int count, int nBytesAvailable);	// "CRestore::ReadInt": reads up to count ints into pValues, returns the number read
 	virtual void s16();
 	virtual int vfunc17(char *pValues, int count, int nBytesAvailable);	// slot 17 ("CRestore::ReadBool"-like): reads up to count bytes into pValues; its first argument is used as an int (see sub_1000fe9d)
