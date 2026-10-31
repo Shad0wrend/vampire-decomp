@@ -12,6 +12,17 @@ int CHudEntity::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012e830 size=0x6
+#include "CHudEntity.h"
+namespace lifted {
+extern char g_1070c08c;
+}
+int CHudEntity::vfunc80()
+{
+    return (int)&lifted::g_1070c08c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012e850 size=0x3
 #include "CHudEntity.h"
 int CHudEntity::vfunc81()
