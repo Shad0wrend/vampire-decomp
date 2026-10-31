@@ -84170,6 +84170,33 @@ void CUnknown101dc810::sub_101dc810(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dc850 size=0x19
+struct CUnk101dc850Sub
+{
+	void sub_100eb400();
+};
+
+struct CUnk101dc850
+{
+	int m_n0000;	// 0x00
+	char m_pad0004;
+	char m_b0005;	// 0x05
+	char m_pad0006[2];
+	CUnk101dc850Sub m_sub0008;	// 0x08
+
+	CUnk101dc850 *sub_101dc850();
+};
+
+// TARGET: sub_101dc850
+CUnk101dc850 *CUnk101dc850::sub_101dc850()
+{
+	m_n0000 = 0;
+	m_b0005 = 1;
+	m_sub0008.sub_100eb400();
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dc880 size=0x1
 void sub_101dc880()
 {
