@@ -89109,6 +89109,16 @@ void *sub_101f2f30(int *p, int unused, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f3000 size=0x14
+#include <stdlib.h>
+
+// TARGET: sub_101f3000
+void *sub_101f3000(int nCount)
+{
+	return malloc(nCount * 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f3060 size=0x8
 void __fastcall sub_1000be01(char *p);
 void __fastcall sub_101f3060(char *p) { sub_1000be01(p - *(int *)(p - 4)); }
