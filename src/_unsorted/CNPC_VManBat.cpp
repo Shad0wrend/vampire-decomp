@@ -166,3 +166,11 @@ void CNPC_VManBat::vfunc144(int arg)
 	sub_103c4f40(arg);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1038fb00 size=0x6
+#include "CNPC_VManBat.h"
+int CNPC_VManBat::vfunc464()
+{
+    return 2;
+}
+// END FUNCTION
