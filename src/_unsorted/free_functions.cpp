@@ -109767,6 +109767,22 @@ void CUnknown10248a50::sub_10247cf0(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10247d70 size=0x17
+struct CUnk10247d70 {
+    void sub_10247d70();
+    void sub_10248090();
+};
+
+void CUnk10247d70::sub_10247d70()
+{
+    if (this)
+    {
+        sub_10248090();
+        operator delete(this);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10247e20 size=0x5
 struct CUnknown10247e20 { void * sub_10247e20(int); };
 void * CUnknown10247e20::sub_10247e20(int a0)
