@@ -99313,6 +99313,30 @@ void CSecCamera::sub_1020c3d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020c820 size=0x19
+extern char g_1070d9d0[];
+
+struct CUnknown100b2f50
+{
+	void sub_100b2f50(const char *psz);
+};
+
+struct CUnk1020c820
+{
+	char m_pad0000[0x3fc];
+	float m_fl3fc;	// 0x3fc
+
+	void sub_1020c820();
+};
+
+// TARGET: sub_1020c820
+void CUnk1020c820::sub_1020c820()
+{
+	((CUnknown100b2f50 *)this)->sub_100b2f50(g_1070d9d0);
+	m_fl3fc = -1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020c890 size=0xc3
 #include "CSecCamera.h"
 #include "CBroadcastRecipientFilter.h"
