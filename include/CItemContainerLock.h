@@ -2,6 +2,8 @@
 // Layout is declared flat (vptr and base members are padding) until the bases are recovered.
 #pragma once
 
+#include "COutputEvent.h"
+
 class CBaseEntity;
 class CBasePlayer;
 class CBaseCombatCharacter;
