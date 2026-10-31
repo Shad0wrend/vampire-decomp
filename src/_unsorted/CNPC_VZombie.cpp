@@ -34,6 +34,15 @@ int CNPC_VZombie::vfunc451()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103de470 size=0x6
+extern unsigned char g_10664260;
+// TARGET: sub_103de470
+unsigned char sub_103de470()
+{
+    return g_10664260;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103de4d0 size=0x1d
 #include "CNPC_VZombie.h"
 struct A { int sub_10012300(int); };
