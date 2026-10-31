@@ -78879,6 +78879,20 @@ char CUnknown101d7ec0::sub_101d7fb0(CBaseCombatCharacter *pChar, const CUnknown1
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d8090 size=0x61
+#include "CUnknown101d7ec0.h"
+
+CUnknown101d7ec0_Entry *CUnknown101d7ec0::sub_101d8090(int iKey)
+{
+	for (int i = 0; i < m_n0; i++) {
+		if (m_pEntries[i].m_n0 == iKey)
+			return &m_pEntries[i];
+	}
+	static CUnknown101d7ec0_DefaultEntry s_default;
+	return &s_default;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d8170 size=0x1
 void sub_101d8170()
 {
