@@ -8838,6 +8838,7 @@
 0x10010fb4 func   ?sub_10248c20@CKeyValuesX@@QAEHPBDH@Z CKeyValuesX::sub_10248c20
 0x10010fb9 func   ?sub_101bb760@@YIXPAXHM@Z sub_101bb760
 0x10010fc3 func   ?vfunc2@CBaseTempEntity@@UAEPAV1@I@Z CBaseTempEntity::vfunc2
+0x10010fcd func   ?vfunc438@CNPC_VTaxiDriver@@QAEHXZ CNPC_VTaxiDriver::vfunc438
 0x10010fd2 func   ?vfunc5@CPhysForce@@QAEPAV1@I@Z CPhysForce::vfunc5
 0x10010fd7 func   ?sub_103c6df0@CNPC_VVampireBoss@@QAEXHPBD@Z CNPC_VVampireBoss::sub_103c6df0
 0x10010fdc func   ?sub_10185750@UtlMem@@QAEXXZ UtlMem::sub_10185750

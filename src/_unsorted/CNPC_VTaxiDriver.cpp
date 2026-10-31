@@ -62,6 +62,18 @@ int CNPC_VTaxiDriver::vfunc138()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b3670 size=0xf
+#include "CNPC_VTaxiDriver.h"
+namespace lifted {
+int sub_10015ad2();
+}
+int CNPC_VTaxiDriver::vfunc438()
+{
+    *(int *)((char *)this + 0x1b2c) = 0x14;
+    return lifted::sub_10015ad2();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b36d0 size=0x167
 #include "CNPC_VTaxiDriver.h"
 #include "CNPC_VHuman.h"
