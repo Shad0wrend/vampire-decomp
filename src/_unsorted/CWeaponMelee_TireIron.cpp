@@ -31,6 +31,14 @@ int CWeaponMelee_TireIron::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e7f70 size=0x6
+#include "CWeaponMelee_TireIron.h"
+int CWeaponMelee_TireIron::vfunc363()
+{
+    return 0xde;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ece40 size=0x1e
 #include "CWeaponMelee_TireIron.h"
 
