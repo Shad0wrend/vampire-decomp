@@ -1757,6 +1757,71 @@ void CAI_BaseNPCTroika::vfunc463(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b12f0 size=0x23e
+#include "CAI_BaseNPCTroika.h"
+
+struct CTroikaHint440 { char m_pad0000[0x5dc]; int m_nType; };
+
+int CAI_BaseNPCTroika::vfunc440(int a)
+{
+	int r;
+	if ((m_flags5b84 & 0x100) == 0x100 && (r = sub_102b11c0(a)) != 0)
+		return r;
+	switch (a)
+	{
+	case 1:
+	case 0x6b:
+		return (m_flags14bc & 0x80000) != 0x80000 ? 0x6b : 0x132;
+	case 2:
+		return 0x46;
+	case 3:
+		return 0x47;
+	case 6:
+		return 0x4a;
+	case 0x15:
+		return 0xb8;
+	case 0xf:
+		return 0xb1;
+	case 0x10:
+		return 0xb7;
+	case 0x28:
+		return 0xc2;
+	case 0x25:
+		return 0xc1;
+	case 0x21:
+		return 0xed;
+	case 0x22:
+		return 0xee;
+	case 0x2f:
+		return 0xf2;
+	case 0x30:
+		return 0xf4;
+	case 0x31:
+		return 0xf6;
+	case 0x32:
+		return 0xf8;
+	case 0x33:
+		return 0xf9;
+	case 0x77:
+	{
+		CTroikaHint440 *pHint = *(CTroikaHint440 **)((char *)this + 0x5ddc);
+		if (pHint && pHint->m_nType == 0x2774)
+			return 0x78;
+		break;
+	}
+	case 0x94:
+		if (vfunc293())
+			return 0x95;
+		break;
+	case 0x96:
+		if (vfunc293())
+			return 0x97;
+		break;
+	}
+	return CAI_BaseNPC::vfunc440(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b39a0 size=0x24
 struct CAI_BaseNPCTroikaCallee {
     void sub_10007bdf(int a);
