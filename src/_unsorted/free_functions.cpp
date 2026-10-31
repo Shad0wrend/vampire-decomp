@@ -145825,6 +145825,22 @@ void *sub_10352f70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10353000 size=0x19
+struct CUnk10353000
+{
+	virtual void vfunc0(int flags);
+};
+
+void sub_10353000(CUnk10353000 **pp)
+{
+	CUnk10353000 *p = *pp;
+	if (p != 0) {
+		p->vfunc0(1);
+	}
+	*pp = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10353100 size=0x6
 namespace lifted {
 extern char g_10938628;
