@@ -12,6 +12,17 @@ datamap_t * CGib::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012b300 size=0xd
+#include "CGib.h"
+
+// TARGET: CGib::vfunc117
+int CGib::vfunc117()
+{
+	unsigned int flags = CBaseEntity::vfunc117();
+	return (flags & 0xfffffffd) | 0x80000000;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012b6b0 size=0x1e
 #include "CGib.h"
 
