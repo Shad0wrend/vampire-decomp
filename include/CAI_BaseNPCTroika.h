@@ -215,7 +215,7 @@ public:
 	int m_n06f8;
 	char m_pad06fc[0xfe8 - 0x6fc];
 	unsigned int m_hfe8;
-	char m_pad0fec[0xff0 - 0xfec];
+	int m_nState0fec;
 	int m_nActivityff0;	// 0xff0: the ideal activity
 	char m_pad0ff4[0x14b8 - 0xff4];
 	unsigned int m_flags14b8;
