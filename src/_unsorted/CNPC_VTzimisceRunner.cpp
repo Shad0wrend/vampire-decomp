@@ -12,6 +12,15 @@ int CNPC_VTzimisceRunner::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c2a00 size=0x6
+extern unsigned char g_1065d74c;
+// TARGET: sub_103c2a00
+unsigned char sub_103c2a00()
+{
+    return g_1065d74c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c2a60 size=0x1d
 #include "CNPC_VTzimisceRunner.h"
 struct A { int sub_10012300(int); };
