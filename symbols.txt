@@ -8031,6 +8031,7 @@
 0x100101bd func   ?vfunc5@CBaseToggle@@QAEPAV1@I@Z CBaseToggle::vfunc5
 0x100101c2 func   ?sub_101e8e40@@YINPAD@Z sub_101e8e40
 0x100101c7 func   ?sub_100f8580@@YGPAVCBaseEntity@@PBVVector@@M@Z sub_100f8580
+0x100101cc func   ?vfunc81@CItemGGarysTape@@QAEHXZ CItemGGarysTape::vfunc81
 0x100101d1 func   ?sub_1013db10@CUnknown1013db10@@QAEPADXZ CUnknown1013db10::sub_1013db10
 0x100101d6 func   ?sub_1019bb10@@YAPAUCPyObjWrap@@PAUCPyObjVirt@@H@Z sub_1019bb10
 0x100101e0 func   ?sub_1037a5b0@@YIXPAX@Z sub_1037a5b0
