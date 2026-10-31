@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101aa7d0 size=0x8
+#include "CPayphone.h"
+// TARGET: CPayphone::sub_101aa7d0
+unsigned char CPayphone::sub_101aa7d0()
+{
+    unsigned char b;
+    b = ((CBaseEntity *)this)->CBaseEntity::vfunc117();
+    b &= 0xfd;
+    return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aa850 size=0x5
 #include "CPayphone.h"
 bool CPayphone::vfunc363(int a0)
