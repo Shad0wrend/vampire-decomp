@@ -94843,6 +94843,20 @@ void * CUnknown10205400::sub_10205400(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10205430 size=0x30
+#include "CVDmg_t.h"
+
+bool CVDmgBlock16_t::sub_10205430(const CVDmgBlock16_t *pOther)
+{
+	if (m_a != pOther->m_a)
+		return false;
+	if (m_b != pOther->m_b)
+		return false;
+	bool bSame = (m_d == pOther->m_d);
+	return bSame;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102056d0 size=0x9
 struct CUnknown102056d0 { int m_val; CUnknown102056d0 *sub_102056d0(); };
 CUnknown102056d0 *CUnknown102056d0::sub_102056d0() { m_val = -1; return this; }
