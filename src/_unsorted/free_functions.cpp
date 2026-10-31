@@ -145492,6 +145492,16 @@ void sub_10387fd0(CUnknown10387fd0 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10388130 size=0xc
+void __fastcall sub_10388150(void *p);
+
+void *__fastcall sub_10388130(void *p)
+{
+    sub_10388150(p);
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10388150 size=0x33
 void sub_1000ef84();
 void sub_1000935e();
