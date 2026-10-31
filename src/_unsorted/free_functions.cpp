@@ -125463,6 +125463,20 @@ bool CUnknown10359c50::sub_102ea130(const char *pszSymbol, int nLocalId, const c
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ea240 size=0x30
+#include "CUnknown10359c50.h"
+bool CUnknown10359c50::sub_102ea240(int nLocalId)
+{
+	if (m_nLocalBase == 9999) {
+		m_nLocalBase = nLocalId;
+		int *pPrev = (int *)m_n10;
+		if (!pPrev || pPrev[1] == 9999 || nLocalId > pPrev[1])
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ea280 size=0x38
 // TARGET: sub_102ea280
 struct CRangeNode_102ea280 {
