@@ -151720,6 +151720,20 @@ void __stdcall sub_103e9d80(CMeleeOwner *pOwner, CMeleeTarget *pTarget, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ea4d0 size=0x28
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+char sub_103ea4d0(CBaseEntity *pSelf, CBaseEntity *pOther)
+{
+	CBaseCombatCharacter *pOwner = (CBaseCombatCharacter *)pOther->m_p9c;
+	if (!pOwner)
+		return 0;
+	if (pSelf == (CBaseEntity *)pOwner)
+		return 0;
+	return pOwner->vfunc158() != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103eb0b0 size=0x72
 #include "SendProp.h"
 
