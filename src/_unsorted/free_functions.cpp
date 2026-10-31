@@ -145637,6 +145637,16 @@ extern "C" CBaseEntity *npc_VMalkavian()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10389630 size=0xc
+void __fastcall sub_10389650(void *p);
+
+void *__fastcall sub_10389630(void *p)
+{
+    sub_10389650(p);
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10389650 size=0x33
 void sub_10007897();
 void sub_100106f4();
