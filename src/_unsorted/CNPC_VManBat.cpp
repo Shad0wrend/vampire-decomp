@@ -12,6 +12,17 @@ int CNPC_VManBat::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10389dd0 size=0x6
+#include "CNPC_VManBat.h"
+namespace lifted {
+extern int g_10640d3c;
+}
+int CNPC_VManBat::vfunc451()
+{
+    return lifted::g_10640d3c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10389df0 size=0x1e
 #include "CNPC_VManBat.h"
 
