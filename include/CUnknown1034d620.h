@@ -29,7 +29,9 @@ public:
 class CUnknown1034d620
 {
 public:
-	char pad0[0x5ce4];
+	char pad0[0x17c];
+	float m_flNextThink;	// 0x17c
+	char pad0180[0x5ce4 - 0x180];
 	unsigned int m_hEntity;	// 0x5ce4
 	char pad5ce8[0x5f50 - 0x5ce8];
 	int m_field5f50;	// 0x5f50
