@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1042b370 size=0x6
+#include "CBaseParticleEntity.h"
+namespace lifted {
+extern char g_109ee828;
+}
+int CBaseParticleEntity::vfunc80()
+{
+    return (int)&lifted::g_109ee828;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042b390 size=0x3
 #include "CBaseParticleEntity.h"
 int CBaseParticleEntity::vfunc81()
