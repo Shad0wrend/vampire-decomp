@@ -8,6 +8,8 @@ struct CUnknown102f3900Ent
 {
 	char m_pad0000[0x184];
 	Vector m_vecViewOffset;	// 0x184
+	char m_pad0190[0x224 - 0x190];
+	unsigned int m_nFlags0224;	// 0x224
 };
 
 class CUnknown102f3900
