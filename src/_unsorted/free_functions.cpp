@@ -117002,6 +117002,49 @@ int CUnknown1028fc90::sub_1028fc90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028fd80 size=0x224
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+
+bool CAI_BaseNPCTroika::sub_1028fd80(int arg)
+{
+	CBaseEntity *self = (CBaseEntity *)this;
+	ScopeTrace trace("CAI_BaseNPCTroika::RunAlternateAI", self ? (self->m_name26c ? self->m_name26c : g_106b8540) : g_105387dc);
+	CBaseEntity *pEnt = m_h1538.Get();
+	int nMode = pEnt ? m_n153c : 0;
+	if (nMode == 1) {
+		switch (m_nActivityff0) {
+		case 0xf88:
+		case 0xf91:
+		case 0xf9a:
+		case 0xfb7:
+		case 0xfc0:
+		case 0xff7:
+		case 0x1000:
+		case 0x1009:
+		case 0x1039:
+			sub_10280a50();
+		}
+		return true;
+	}
+	switch (m_n644c) {
+	case 0:
+		return false;
+	case 1:
+		return sub_10290040(arg);
+	case 2:
+		return sub_10290200(arg);
+	case 3:
+		return sub_102902e0(arg);
+	case 4:
+		return sub_10290350(arg);
+	default:
+		return false;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10290200 size=0xad
 #include "CAI_BaseNPCTroika.h"
 #include "CGlobalEntityList.h"
