@@ -163801,6 +163801,11 @@ unsigned short CUnknown1042d9a0::sub_1042d9a0()
 unsigned __fastcall sub_1042d9f0(unsigned *p) { return *p >> 28; }
 // END FUNCTION
 
+// FUNCTION: 0x1042da40 size=0x5
+// TARGET: sub_1042da40
+unsigned char __fastcall sub_1042da40(unsigned char *p) { unsigned char c = *p; c &= 1; return c; }
+// END FUNCTION
+
 // FUNCTION: 0x1042da60 size=0x3
 struct CUnknown1042da60 { int sub_1042da60(); };
 int CUnknown1042da60::sub_1042da60()
