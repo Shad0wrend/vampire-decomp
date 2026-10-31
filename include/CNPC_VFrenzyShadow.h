@@ -26,7 +26,8 @@ public:
 	int m_nSourceLine;	// 0x1b40
 	char m_pad1b44[0x5b84 - 0x1b44];
 	int m_n5b84;	// 0x5b84
-	char m_pad5b88[0x5cc4 - 0x5b88];
+	char m_pad5b88[0x5cc0 - 0x5b88];
+	int m_nState5cc0;	// 0x5cc0: the NPC state (2 = combat)
 	int m_nIdealState;	// 0x5cc4
 	char m_pad5cc8[0x5cdc - 0x5cc8];
 	void *m_pSenses;	// 0x5cdc
