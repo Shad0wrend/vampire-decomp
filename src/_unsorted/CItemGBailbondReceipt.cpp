@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103ff630 size=0x6
+#include "CItemGBailbondReceipt.h"
+namespace lifted {
+extern char g_109449ec;
+}
+int CItemGBailbondReceipt::vfunc80()
+{
+    return (int)&lifted::g_109449ec;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ff650 size=0x3
 #include "CItemGBailbondReceipt.h"
 int CItemGBailbondReceipt::vfunc81()
