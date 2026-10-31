@@ -101,4 +101,7 @@
 	virtual bool vfunc564();	// slot 564 override: false while the class flags (slot 513) have bit 15, an active weapon exists and the byte at +0x6078 is clear; else CAI_BaseNPC::vfunc564
 	bool sub_102b3270(CBaseEntity *pEnt, int a);	// stub 0x1000e5e3
 	virtual void vfunc472(CBaseEntity *pEnt);	// slot 472 override
+	virtual bool vfunc566(CBaseEntity *pHint);	// slot 566 "CAI_BaseNPCTroika::FValidateHintType": scope trace; a hint whose group mask (+0x470) meets the NPC's mask (+0x62e4) is validated by its type (+0x5dc)
+	void sub_10295ed0(CBaseEntity *pHint);	// stub 0x10006050, hint types 0x283c / 0x283d
+	void sub_102961a0(CBaseEntity *pHint);	// stub 0x100036cf, hint type 0x28a0
 	void sub_102bf770();	// alternate action end (stub-less, called by slot 531 / 442): when the ideal activity (+0xff0) is the navigator's task id (+0x5d34) the NPC's sub_1027a6c0 result becomes the ideal activity (sub_10272650); clears the byte at +0x1a40, lets the navigator finish (sub_102ee2a0) and clears +0x63ec
