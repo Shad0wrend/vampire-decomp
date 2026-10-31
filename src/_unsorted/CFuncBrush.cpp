@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10114d90 size=0x3
+#include "CFuncBrush.h"
+bool CFuncBrush::vfunc128()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013dea0 size=0x16d
 #include "CFuncBrush.h"
 #include "CCollisionProperty.h"
