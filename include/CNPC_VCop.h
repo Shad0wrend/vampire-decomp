@@ -44,9 +44,20 @@ public:
 	int m_n1b2c;	// 0x1b2c
 	const char *m_pszFile1b30;	// 0x1b30: source file of the last schedule pick
 	int m_nLine1b34;	// 0x1b34: its line
-	char m_pad1b38[0x5cc0 - 0x1b38];
+	char m_pad1b38[0x1b3c - 0x1b38];
+	const char *m_pszFile1b3c;	// 0x1b3c
+	int m_nLine1b40;	// 0x1b40
+	char m_pad1b44[0x5b7c - 0x1b44];
+	EHANDLE m_h5b7c;	// 0x5b7c
+	char m_b5b80;	// 0x5b80
+	char m_pad5b81[0x5cc0 - 0x5b81];
 	int m_n5cc0;	// 0x5cc0: the NPC state
-	char m_pad5cc4[0x628c - 0x5cc4];
+	int m_n5cc4;	// 0x5cc4: the ideal state
+	char m_pad5cc8[0x6160 - 0x5cc8];
+	EHANDLE m_h6160;	// 0x6160
+	char m_pad6164[0x618c - 0x6164];
+	EHANDLE m_h618c;	// 0x618c
+	char m_pad6190[0x628c - 0x6190];
 	unsigned int m_h628c;	// 0x628c
 	char m_pad6290[0x6590 - 0x6290];
 	void *m_p6590;	// 0x6590
