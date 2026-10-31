@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1042dda0 size=0x1b
+#include "CHangRope.h"
+int CHangRope::vfunc0(int a0, int a1, int a2)
+{
+    *(int *)((char *)a2) = 0;
+    *(int *)((char *)a2 + 4) = 0;
+    *(int *)((char *)a2 + 8) = -994344960;
+    return a2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042ddd0 size=0xdc
 #include "CHangRope.h"
 #include <math.h>
