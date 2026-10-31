@@ -9,6 +9,14 @@ int CWeaponMelee_GargoyleFist::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103eb230 size=0x4
+#include "CWeaponMelee_GargoyleFist.h"
+int CWeaponMelee_GargoyleFist::vfunc373()
+{
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecf90 size=0x1e
 #include "CWeaponMelee_GargoyleFist.h"
 
