@@ -16,5 +16,5 @@ class CUnknown102f3900
 {
 public:
 	void sub_102f3900(CUnknown102f3900Ent *pEnt, Vector vecA, Vector vecB, int nFlag);	// forwards (pEnt, vecA, vecB + the entity's view offset, nFlag) to sub_102f39a0
-	void sub_102f39a0(CUnknown102f3900Ent *pEnt, Vector vecA, Vector vecB, int nFlag);	// stub 0x10010816
+	bool sub_102f39a0(CUnknown102f3900Ent *pEnt, Vector vecA, Vector vecB, int nFlag);	// stub 0x10010816: traces from vecA to vecB past pEnt, stores whether a solid was met in the byte nFlag points to, true when the way is clear (draws debug lines otherwise)
 };
