@@ -885,7 +885,7 @@ public:
 	virtual void vfunc614();
 	virtual bool vfunc615();
 	virtual void vfunc616();
-	virtual void vfunc617_slot();
+	virtual bool vfunc617_slot(CNPC_VWerewolfVec3 a, int b, int c, CNPC_VWerewolfVec3 d);
 	virtual bool vfunc618(int, int, int, int);
 	virtual int vfunc619(int);
 };
