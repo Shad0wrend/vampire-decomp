@@ -141,3 +141,17 @@ void CLight::vfunc78()
 	sub_100a8990(this);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101306d0 size=0x10
+#include "CLight.h"
+
+void __fastcall sub_100012cb(void *pThis);
+void __fastcall sub_100acf90(void *pThis);
+
+// TARGET: CLight::vfunc119
+void CLight::vfunc119()
+{
+	sub_100012cb(this);
+	sub_100acf90(this);
+}
+// END FUNCTION
