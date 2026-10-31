@@ -60,6 +60,15 @@ CNPC_VPedestrian *CNPC_VPedestrian::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a1f40 size=0x6
+extern unsigned char g_1064b1a4;
+// TARGET: sub_103a1f40
+unsigned char sub_103a1f40()
+{
+    return g_1064b1a4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a1fa0 size=0x1d
 #include "CNPC_VPedestrian.h"
 struct A { int sub_10012300(int); };

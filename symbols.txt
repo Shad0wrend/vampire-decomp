@@ -5213,6 +5213,7 @@
 0x1000b27b func   ?vfunc104@CPropModelState@@UAEXXZ CPropModelState::vfunc104
 0x1000b280 func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@UASSIGNED_QUEST@@V?$CUtlMemory@UASSIGNED_QUEST@@@@@@$08@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<ASSIGNED_QUEST,CUtlMemory<ASSIGNED_QUEST> >,9>::vfunc3
 0x1000b285 func   ?sub_1027a6c0@CAI_BaseNPC@@QAEHXZ CAI_BaseNPC::sub_1027a6c0
+0x1000b28a func   ?sub_103a1f40@@YAEXZ sub_103a1f40
 0x1000b28f func   ?vfunc127@CNPC_VVampireBoss@@QAEHH@Z CNPC_VVampireBoss::vfunc127
 0x1000b294 func   ?vfunc81@CFuncAreaPortalWindow@@UAEHXZ CFuncAreaPortalWindow::vfunc81
 0x1000b299 func   ?vfunc110@CEnvSoundscape@@QAEDPBD0@Z CEnvSoundscape::vfunc110
