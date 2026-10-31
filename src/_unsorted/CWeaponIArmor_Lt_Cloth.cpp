@@ -31,6 +31,14 @@ int CWeaponIArmor_Lt_Cloth::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f31e0 size=0x6
+#include "CWeaponIArmor_Lt_Cloth.h"
+int CWeaponIArmor_Lt_Cloth::vfunc363()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f41c0 size=0x1e
 #include "CWeaponIArmor_Lt_Cloth.h"
 
