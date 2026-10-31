@@ -14041,6 +14041,18 @@ CBaseCineCam *sub_10070690(void *pOwner)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10070720 size=0x19
+#include "CBaseCineCam.h"
+
+void *sub_101cd9e0(int a);
+
+// TARGET: CBaseCineCam::sub_10070720
+void CBaseCineCam::sub_10070720(int unused)
+{
+	sub_10070780((class CBasePlayer *)sub_101cd9e0(1));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10070990 size=0x59
 namespace block_10070990 {
 void __fastcall sub_1006e0e0(char *p)
