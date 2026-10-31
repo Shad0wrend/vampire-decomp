@@ -7,6 +7,8 @@ struct NamedEntry101e44c0
 	const char *m_pszName;	// +4
 };
 
+class CBaseCombatCharacter;
+
 class CUnknown101e44c0
 {
 public:
