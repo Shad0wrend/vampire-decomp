@@ -80831,6 +80831,20 @@ char __stdcall sub_101d6500(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d6520 size=0x15
+#include "CUnknown101d7520.h"
+
+// TARGET: CUnknown101d7520Rule::sub_101d6520
+bool CUnknown101d7520Rule::sub_101d6520(void *pArg)
+{
+	if (m_sub.sub_10206140(pArg))
+	{
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d6550 size=0x30
 #include "CUnk101d6aa0.h"
 void CUnk101d6aa0::sub_101d6550(void *pCharacter)
