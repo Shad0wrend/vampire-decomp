@@ -106973,6 +106973,45 @@ bool CUtlRBTree16::sub_1024a980(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024aa70 size=0x1b2
+#include "CUtlRBTree16.h"
+
+struct CUtlRBTree16Unit : CUtlRBTree16At<0x1088ae24>
+{
+    const Links_t *sub_1024a900(unsigned short i) const;
+    void sub_1024aa70(unsigned short i);
+
+    unsigned short P(unsigned short i) { return sub_1024a900(i)->m_Parent; }
+    unsigned short Lc(unsigned short i) { return sub_1024a900(i)->m_Left; }
+    unsigned short Rc(unsigned short i) { return sub_1024a900(i)->m_Right; }
+    bool IsLc(unsigned short i) { return Links(P(i)).m_Left == i; }
+    void SetP(unsigned short i, unsigned short v) { m_pElements[i].m_Links.m_Parent = v; }
+    void SetL(unsigned short i, unsigned short v) { m_pElements[i].m_Links.m_Left = v; }
+    void SetR(unsigned short i, unsigned short v) { m_pElements[i].m_Links.m_Right = v; }
+};
+
+// TARGET: CUtlRBTree16Unit::sub_1024aa70
+void CUtlRBTree16Unit::sub_1024aa70(unsigned short elem)
+{
+    unsigned short rightchild = Rc(elem);
+    SetR(elem, Lc(rightchild));
+    if (Lc(rightchild) != 0xffff)
+        SetP(Lc(rightchild), elem);
+    if (rightchild != 0xffff)
+        SetP(rightchild, P(elem));
+    if (elem != m_Root) {
+        if (IsLc(elem))
+            SetL(Parent(elem), rightchild);
+        else
+            SetR(Parent(elem), rightchild);
+    } else
+        m_Root = rightchild;
+    SetL(rightchild, elem);
+    if (elem != 0xffff)
+        SetP(elem, rightchild);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024aed0 size=0x43
 #include "CUnknown1024b2d0.h"
 extern CUnknown1024b2d0 *g_1088ae3c;
