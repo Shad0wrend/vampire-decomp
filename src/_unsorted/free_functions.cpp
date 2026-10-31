@@ -78249,6 +78249,18 @@ unsigned int sub_101d2960(int a, const char *psz, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d29e0 size=0x30
+int sub_100b4e10(int, int);
+int sub_101d2960(int);
+extern "C" __declspec(dllimport) void __cdecl RandomSeed(int);
+extern "C" __declspec(dllimport) int __cdecl RandomInt(int, int);
+int sub_101d29e0(int a, int b, int nMin, int nMax)
+{
+	RandomSeed(sub_101d2960(sub_100b4e10(a, b)));
+	return RandomInt(nMin, nMax);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d2a20 size=0x70
 #include "Vector.h"
 int sub_10002b2b(int a, int b);
