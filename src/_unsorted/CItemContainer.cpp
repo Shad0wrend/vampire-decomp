@@ -297,6 +297,14 @@ void CItemContainer::vfunc71()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102099d0 size=0x5
+#include "CItemContainer.h"
+bool CItemContainer::vfunc388(int a0, int a1)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10209c50 size=0x5f
 #include "CItemContainer.h"
 #include "CVDmg_t.h"
