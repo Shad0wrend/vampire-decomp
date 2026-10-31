@@ -20,6 +20,17 @@ int CWeaponRanged_Rifle_Crossbow_Flaming::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10234df0 size=0x6
+#include "CWeaponRanged_Rifle_Crossbow_Flaming.h"
+namespace lifted {
+extern char g_105b83d0;
+}
+int CWeaponRanged_Rifle_Crossbow_Flaming::vfunc362()
+{
+    return (int)&lifted::g_105b83d0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a380 size=0x1e
 #include "CWeaponRanged_Rifle_Crossbow_Flaming.h"
 
