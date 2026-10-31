@@ -550,6 +550,20 @@ char CSceneEntity::vfunc251(float a, int b, CSceneEvent *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10083c90 size=0x30
+#include "CSceneEntity.h"
+extern "C" void *__cdecl __RTDynamicCast(void *, long, void *, void *, int);
+extern char g_10538764[];
+extern char g_1054910c[];
+CSceneEventActorEnt *CSceneEntity::vfunc267(const char *pszName)
+{
+	CBaseEntity *pEnt = vfunc268(pszName, 0);
+	if (!pEnt)
+		return 0;
+	return (CSceneEventActorEnt *)__RTDynamicCast(pEnt, 0, g_10538764, g_1054910c, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100847e0 size=0x16d
 #define NV(n) virtual void vfunc##n();
 #define NV10(p) NV(p##0) NV(p##1) NV(p##2) NV(p##3) NV(p##4) NV(p##5) NV(p##6) NV(p##7) NV(p##8) NV(p##9)
