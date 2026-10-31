@@ -399,7 +399,7 @@ public:
 	virtual void vfunc246();
 	virtual void vfunc247();
 	virtual void vfunc248();
-	virtual void vfunc249();
+	virtual char vfunc249();	// the game's slot 251
 	virtual void vfunc250();
 	virtual char vfunc251();
 	virtual void vfunc252();
