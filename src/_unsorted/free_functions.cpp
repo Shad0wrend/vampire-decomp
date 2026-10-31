@@ -145409,6 +145409,16 @@ extern "C" CBaseEntity *npc_VHumanCombatPatrol()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103877e0 size=0xc
+void __fastcall sub_10387800(void *pThis);
+
+void * __fastcall sub_103877e0(void *pThis)
+{
+	sub_10387800(pThis);
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10387800 size=0x33
 void sub_1000ef84();
 void sub_10007761();

@@ -930,6 +930,7 @@
 0x10002c84 func   ?sub_1042fc90@@YAII@Z sub_1042fc90
 0x10002c93 func   ?vfunc5@CFunc_DustMotes@@QAEPAV1@I@Z CFunc_DustMotes::vfunc5
 0x10002c98 func   ?sub_10036b10@CPhysicsPushedEntities@@QAEXXZ CPhysicsPushedEntities::sub_10036b10
+0x10002c9d func   ?sub_103877e0@@YIPAXPAX@Z sub_103877e0
 0x10002ca2 func   ?sub_10377140@@YIPAXPAX@Z sub_10377140
 0x10002ca7 func   ?sub_101c7b80@@YAXPBD0@Z sub_101c7b80
 0x10002cac func   ?vfunc601@CAI_BaseNPCTroika@@UAEXH@Z CAI_BaseNPCTroika::vfunc601
