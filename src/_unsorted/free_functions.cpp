@@ -29610,6 +29610,17 @@ void CBaseNetworkable::sub_100b7da0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7de0 size=0x13
+#include "vampire.h"
+
+// TARGET: sub_100b7de0
+int __fastcall sub_100b7de0(void *pThis)
+{
+	int nEdict = *(int *)((char *)pThis + 8);
+	return engine->vfunc35(nEdict);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7e10 size=0x5
 struct CUnknown100b7e10 { void sub_100b7e10(); };
 void CUnknown100b7e10::sub_100b7e10()
