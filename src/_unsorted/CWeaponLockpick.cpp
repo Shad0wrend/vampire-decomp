@@ -47,6 +47,28 @@ bool CWeaponLockpick::vfunc268()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f4de0 size=0x61
+#include "CWeaponLockpick.h"
+#include "CBasePlayer.h"
+#include "CBaseLockableEnt.h"
+struct CLockpickOwnerView_103f4de0
+{
+	char pad[0xa8];
+	CBasePlayer *m_pPlayer;
+};
+// TARGET: CWeaponLockpick::vfunc314
+char CWeaponLockpick::vfunc314()
+{
+	CLockpickOwnerView_103f4de0 *pOwner = (CLockpickOwnerView_103f4de0 *)sub_102521f0();
+	if (pOwner && pOwner->m_pPlayer) {
+		CBaseEntity *pUse = ((EHANDLE *)&pOwner->m_pPlayer->m_hUseEnt1040)->Get();
+		if (pUse && dynamic_cast<CBaseLockableEnt *>(pUse))
+			return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f4e70 size=0x97
 #include "CWeaponLockpick.h"
 #include "CBaseCombatCharacter.h"
