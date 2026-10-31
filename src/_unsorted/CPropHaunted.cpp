@@ -131,6 +131,27 @@ void CPropHaunted::vfunc174(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10213dd0 size=0x61
+#include "CPropHaunted.h"
+struct CServerUnknownView { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual CBaseEntity *GetBaseEntity(); };
+struct CEdictView { char pad[0x40]; CServerUnknownView *m_pUnk; };
+// TARGET: CPropHaunted::vfunc228
+void CPropHaunted::vfunc228(int index, void *pEvent)
+{
+	CBaseEntity *pOther = ((CBaseEntity **)pEvent)[0x68 / 4 + (index == 0)];
+	if (!pOther) {
+		CEdictView *pEdict = (CEdictView *)engine->vfunc38(0);
+		if (pEdict && pEdict->m_pUnk)
+			pOther = pEdict->m_pUnk->GetBaseEntity();
+		else
+			pOther = 0;
+	}
+	sub_10213ef0(index, pEvent, pOther);
+	if (*(int *)((char *)this + 0x200) != 2)
+		sub_100a65a0(index, pEvent);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10214010 size=0x44
 #include "CPropHaunted.h"
 void CPropHaunted::vfunc266(CBaseEntity *pOther)
