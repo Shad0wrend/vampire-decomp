@@ -181,3 +181,13 @@ void CPhysicsProp::vfunc39(CBaseEntity * a0)
     lifted::sub_10010ec9(*(int *)&a0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10191830 size=0xe
+// TARGET: sub_10191830
+void sub_1040d9a0(int x);
+
+void __stdcall sub_10191830(int x)
+{
+    sub_1040d9a0(x);
+}
+// END FUNCTION
