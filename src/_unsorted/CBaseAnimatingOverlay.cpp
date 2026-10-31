@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10098040 size=0x3
+#include "CBaseAnimatingOverlay.h"
+int CBaseAnimatingOverlay::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10098a60 size=0x1e
 #include "CBaseAnimatingOverlay.h"
 
