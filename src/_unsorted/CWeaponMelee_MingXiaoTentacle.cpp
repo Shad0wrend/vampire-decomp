@@ -97,6 +97,18 @@ int CWeaponMelee_MingXiaoTentacle::vfunc367(int a, float b, float c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103eca20 size=0x18
+#include "CWeaponMelee.h"
+#include "CWeaponMelee_MingXiaoTentacle.h"
+
+// TARGET: CWeaponMelee_MingXiaoTentacle::vfunc370
+void CWeaponMelee_MingXiaoTentacle::vfunc370(CWeaponMeleeEvent *pEvent, int b)
+{
+	if (pEvent->m_type != 0xbbb)
+		((CWeaponMelee *)this)->sub_103ea5b0(pEvent, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103eca50 size=0xbf
 #include "CWeaponMelee_MingXiaoTentacle.h"
 #include "CWeaponMelee_MingXiaoMelee.h"

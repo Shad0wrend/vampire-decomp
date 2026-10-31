@@ -3859,6 +3859,7 @@
 0x10007e14 func   _npc_maker_fleshpile npc_maker_fleshpile
 0x10007e19 func   ?sub_1032e7b0@@YIPAVCBaseEntity@@PAV1@@Z sub_1032e7b0
 0x10007e23 func   ?sub_101fc000@CVStatSubCost_t@@QAEXPBD@Z CVStatSubCost_t::sub_101fc000
+0x10007e28 func   ?vfunc370@CWeaponMelee_MingXiaoTentacle@@UAEXPAUCWeaponMeleeEvent@@H@Z CWeaponMelee_MingXiaoTentacle::vfunc370
 0x10007e32 func   ?sub_10216850@@YIXPADHH@Z sub_10216850
 0x10007e37 func   ?vfunc113@CItemContainerLock@@QAEXXZ CItemContainerLock::vfunc113
 0x10007e41 func   ?sub_101d0680@@YA?AVVector@@ABV1@0@Z sub_101d0680
