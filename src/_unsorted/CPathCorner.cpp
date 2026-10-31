@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10147cf0 size=0x1
+#include "CPathCorner.h"
+void CPathCorner::vfunc103()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10147e60 size=0xc3
 #include "CPathCorner.h"
 

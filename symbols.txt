@@ -374,6 +374,7 @@
 0x10001b5e func   ?sub_10076690@CUnknown10076690@@QAEHXZ CUnknown10076690::sub_10076690
 0x10001b72 func   ?sub_1042fed0@@YAII@Z sub_1042fed0
 0x10001b7c func   ?sub_101c48c0@CUnknown101c48c0@@QAEPAXH@Z CUnknown101c48c0::sub_101c48c0
+0x10001b8b func   ?vfunc103@CPathCorner@@QAEXXZ CPathCorner::vfunc103
 0x10001b95 func   ?vfunc72@CGameRules@@UAE_NXZ CGameRules::vfunc72
 0x10001b9f func   ?sub_101a5800@CUnknown101a5800@@QAEHHHPBUCVecElem40_t@@@Z CUnknown101a5800::sub_101a5800
 0x10001bae func   ?vfunc546@CNPC_VTaxiDriver@@QAEHH@Z CNPC_VTaxiDriver::vfunc546
