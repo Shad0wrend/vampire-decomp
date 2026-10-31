@@ -9,6 +9,7 @@ public:
 	virtual CMeasureSection *vfunc0(unsigned int flags);
 	void sub_1000881e();
 	CMeasureSection(int nName);	// 0x10247690: clears the fields and links the section into the global list (head 0x10753734, count 0x10753738)
+	~CMeasureSection();	// 0x10247740: unlinks the count (0x10753738) and clears the list link at +0x24
 
 	int m_n08, m_n0c, m_n10, m_n14, m_n18, m_n1c;
 	int m_n20;	// the constructor argument
