@@ -37163,6 +37163,29 @@ void sub_100d7210()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d7340 size=0x19
+struct CUnit100d7340Char
+{
+	void sub_1016cf30();
+};
+
+struct CUnit100d7340
+{
+	char m_pad0000[0xa8];
+	CUnit100d7340Char *m_pChar;	// 0xa8
+};
+
+CUnit100d7340 *sub_101193b0();
+
+// TARGET: sub_100d7340
+void sub_100d7340()
+{
+	CUnit100d7340 *p = sub_101193b0();
+	if (p && p->m_pChar)
+		p->m_pChar->sub_1016cf30();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d7400 size=0x70
 extern "C" int __cdecl sprintf(char *, const char *, ...);
 
