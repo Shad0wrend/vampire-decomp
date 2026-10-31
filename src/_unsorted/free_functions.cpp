@@ -132391,6 +132391,25 @@ bool CStepWalker::sub_10307b80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10307bf0 size=0x15
+struct CUnknown10307bf0
+{
+	char m_pad0000[0xc];
+	int m_n0c;
+	int m_a10;
+	int m_a14[16];
+
+	void sub_10307bf0(int a);
+};
+
+// TARGET: CUnknown10307bf0::sub_10307bf0
+void CUnknown10307bf0::sub_10307bf0(int a)
+{
+	m_a14[m_n0c] = a;
+	m_n0c = m_n0c + 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10307d30 size=0x54
 struct SPatrolPathX { char data[0x114]; };
 extern SPatrolPathX g_10934158[32];
