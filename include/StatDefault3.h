@@ -7,7 +7,10 @@ struct StatDefault3
 {
 	int m_0;	// 0x00
 	int m_4;	// 0x04
-	int pad_08[5];
+	const char *m_pszName;	// 0x08
+	int pad_0c;
+	const char *m_pszDisplayName;	// 0x10
+	int pad_14[2];
 	int m_1c;	// 0x1c
 	int m_20;	// 0x20
 	int pad_24[23];
