@@ -61,7 +61,9 @@ public:
 	float m_f623c;	// 0x623c
 	char m_pad6240[0x634c - 0x6240];
 	int m_n634c;	// 0x634c
-	char m_pad6350[0x6660 - 0x6350];
+	char m_pad6350[0x641c - 0x6350];
+	int m_n641c;	// 0x641c
+	char m_pad6420[0x6660 - 0x6420];
 	float m_vecMins6660[3];	// 0x6660
 	float m_vecMaxs666c[3];	// 0x666c
 	char m_b6678;	// 0x6678
