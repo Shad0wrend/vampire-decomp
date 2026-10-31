@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103f8d30 size=0x6
+#include "CResearchBook_LG_FIREARMS.h"
+namespace lifted {
+extern char g_10948418;
+}
+int CResearchBook_LG_FIREARMS::vfunc80()
+{
+    return (int)&lifted::g_10948418;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f8d50 size=0x3
 #include "CResearchBook_LG_FIREARMS.h"
 int CResearchBook_LG_FIREARMS::vfunc81()
