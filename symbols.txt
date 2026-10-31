@@ -6507,6 +6507,7 @@
 0x1000cbb2 func   ?sub_10325cb0@CBaseCombatCharacter@@QAEXPAXH@Z CBaseCombatCharacter::sub_10325cb0
 0x1000cbbc func   ?sub_1018ec20@@YAXPAVCBaseEntity@@M@Z sub_1018ec20
 0x1000cbc1 func   ?sub_103090d0@@YAMM@Z sub_103090d0
+0x1000cbc6 func   ?vfunc433@CNPC_VBach@@UAEXXZ CNPC_VBach::vfunc433
 0x1000cbcb func   ?vfunc81@CItemGHorrorTape_2@@QAEHXZ CItemGHorrorTape_2::vfunc81
 0x1000cbd0 func   _env_firesource env_firesource
 0x1000cbda func   ?sub_10046b10@@YA_NPBI0@Z sub_10046b10

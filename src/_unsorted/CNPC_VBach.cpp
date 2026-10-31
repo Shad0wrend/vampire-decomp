@@ -242,3 +242,17 @@ int __stdcall sub_10364550(float a, float b)
     return 0x50;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10365a70 size=0x10
+#include "CNPC_VBach.h"
+
+void __fastcall sub_10013f2f(void *pThis);
+void __fastcall sub_10365a90(void *pThis);
+
+// TARGET: CNPC_VBach::vfunc433
+void CNPC_VBach::vfunc433()
+{
+	sub_10013f2f(this);
+	sub_10365a90(this);
+}
+// END FUNCTION
