@@ -17,7 +17,7 @@ public:
 	virtual void a173(); virtual void a174(); virtual void a175(); virtual void a176(); virtual void a177(); virtual void a178(); virtual void a179();
 	EDV_SLOTS10(a18)
 	virtual void a190(); virtual void a191(); virtual void a192();
-	virtual float *vfunc193(float *pResult, int a, int b, int c, int d, int e);	// slot 193 (a position by value in a hidden result vector, five arguments)
+	virtual float *vfunc193(float *pResult);	// slot 193 (a position by value: the hidden result vector, which it returns)
 	virtual void a194(); virtual void a195(); virtual void a196(); virtual void a197(); virtual void a198(); virtual void a199();
 	EDV_SLOTS10(a20)
 	virtual void a210(); virtual void a211(); virtual void a212(); virtual void a213(); virtual void a214(); virtual void a215(); virtual void a216();
