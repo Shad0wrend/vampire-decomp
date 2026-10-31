@@ -59508,6 +59508,16 @@ void CBasePlayer::sub_10170cf0(unsigned int flags, char bSet)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10170d40 size=0xf
+#include "globalvars.h"
+
+// TARGET: sub_10170d40
+void __fastcall sub_10170d40(int *pThis)
+{
+	*(unsigned int *)((char *)pThis + 0x22c8) = *(unsigned int *)&gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10170d60 size=0xd1
 #include "CBasePlayer.h"
 #include "CUnknown101c26d0.h"
