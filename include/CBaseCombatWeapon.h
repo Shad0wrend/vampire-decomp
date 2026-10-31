@@ -158,7 +158,9 @@ public:
 	int m_nSequence;	// 0x6f0
 	float m_flPlaybackRate;	// 0x6f4
 	int m_n06f8;	// 0x6f8
-	char m_pad6fc[0x744 - 0x6fc];
+	char m_pad6fc[0x730 - 0x6fc];
+	float m_flTimes730[2];	// 0x730: time stamps, both set to the current time when the weapon changes hands
+	char m_pad738[0x744 - 0x738];
 	int m_nAmmoType;	// 0x744
 	char m_pad748[0x88c - 0x748];
 	unsigned int m_hOwner; // 0x88c
