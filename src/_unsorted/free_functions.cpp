@@ -60958,6 +60958,24 @@ void CUnk10170ad0::sub_10170ad0(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10170c80 size=0x1a
+extern void *g_109f3890;
+
+struct CUnk10170c80
+{
+	char m_pad0000[0x22cc];
+	char m_sz22cc[16];
+
+	void sub_10170c80(const char *psz);
+};
+
+// TARGET: sub_10170c80
+void CUnk10170c80::sub_10170c80(const char *psz)
+{
+	((void (*)(char *, const char *, int))g_109f3890)(m_sz22cc, psz, 0x10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10170cb0 size=0x27
 // TARGET: CUnknown10170cb0::sub_10170cb0
 #include "CUnknown10170cb0.h"
