@@ -9051,6 +9051,7 @@
 0x10013020 func   ?vfunc1@ConCommand@@UAE_NXZ ConCommand::vfunc1
 0x1001302a func   ?vfunc104@CBaseViewModel@@UAEXXZ CBaseViewModel::vfunc104
 0x1001302f func   ?vfunc433@CNPC_VPedestrian@@QAEXXZ CNPC_VPedestrian::vfunc433
+0x10013034 func   ?vfunc420@CNPC_VChangBrosClaw@@QAEXXZ CNPC_VChangBrosClaw::vfunc420
 0x10013039 func   ?sub_102a0cb0@CAI_BaseNPCTroika@@QAE_NPAV1@@Z CAI_BaseNPCTroika::sub_102a0cb0
 0x1001303e func   ?sub_101ab1e0@@YAXHPAEPAI@Z sub_101ab1e0
 0x10013043 func   ?vfunc319@CWeaponMelee@@UAEXXZ CWeaponMelee::vfunc319

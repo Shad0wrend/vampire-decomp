@@ -12,3 +12,24 @@ int CNPC_VChangBrosClaw::vfunc546(int x)
     return g_10936c74.sub_1000aed4(g_1093aa10.sub_10012300(x));
 }
 // END FUNCTION
+
+// FUNCTION: 0x1036f900 size=0x61
+#include "CNPC_VChangBrosClaw.h"
+#include "CUnknown1036c7f0.h"
+#include "ScopeTrace.h"
+namespace block_1036f900 {
+struct CUnknown1036c7f0Unit : CUnknown1036c7f0 { void sub_1036c7f0(int value); };
+void CUnknown1036c7f0Unit::sub_1036c7f0(int value)
+{
+	m_unk66b8 = value;
+}
+}
+using namespace block_1036f900;
+// TARGET: CNPC_VChangBrosClaw::vfunc420
+void CNPC_VChangBrosClaw::vfunc420()
+{
+	ScopeTrace trace("CNPC_VChangBrosClaw::NPCInit", g_106b8540);
+	((CUnknown1036c7f0Unit *)this)->sub_1036c7f0(1);
+	sub_10014867();
+}
+// END FUNCTION
