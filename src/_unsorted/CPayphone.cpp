@@ -205,6 +205,14 @@ void CPayphone::vfunc286(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aade0 size=0x30
+#include "CPayphone.h"
+bool CPayphone::vfunc379(CBaseEntity *pOther, int a, int b, int c, int d, int e, int f)
+{
+	return sub_1026cdc0(pOther, a, b, c, d, e, f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aae20 size=0x6
 #include "CPayphone.h"
 int CPayphone::vfunc359(int a0)
