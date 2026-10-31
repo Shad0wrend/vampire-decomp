@@ -132594,6 +132594,12 @@ extern void (*g_109f076c)(void);
 void sub_10312f30(void) { g_109f076c(); }
 // END FUNCTION
 
+// FUNCTION: 0x10312f50 size=0x6
+// TARGET: sub_10312f50
+extern void (*g_109f075c)(void);
+void sub_10312f50(void) { g_109f075c(); }
+// END FUNCTION
+
 // FUNCTION: 0x10312f70 size=0x30
 #include "CUtlMemory16.h"
 
