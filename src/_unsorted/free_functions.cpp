@@ -14053,6 +14053,23 @@ void CBaseCineCam::sub_10070720(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10070750 size=0x19
+#include "CBaseCineCam.h"
+
+struct CEnt10070990
+{
+	void sub_10070990(void *pPlayer);
+};
+
+void *sub_101cd9e0(int a);
+
+// TARGET: CBaseCineCam::sub_10070750
+void CBaseCineCam::sub_10070750(int unused)
+{
+	((CEnt10070990 *)this)->sub_10070990(sub_101cd9e0(1));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10070990 size=0x59
 namespace block_10070990 {
 void __fastcall sub_1006e0e0(char *p)

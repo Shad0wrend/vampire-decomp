@@ -6687,6 +6687,7 @@
 0x1000cc7f func   ?sub_10227410@CUnknown10227410@@QAEXH@Z CUnknown10227410::sub_10227410
 0x1000cc84 func   ?sub_10203990@@YAXXZ sub_10203990
 0x1000cc89 func   ?sub_101c6390@CTriggerHurt@@QAEXXZ CTriggerHurt::sub_101c6390
+0x1000cc8e func   ?sub_10070750@CBaseCineCam@@QAEXH@Z CBaseCineCam::sub_10070750
 0x1000cc93 func   ?sub_10161a70@CBasePlayer@@QAEPAXPBD@Z CBasePlayer::sub_10161a70
 0x1000cc98 func   ?vfunc2@CAI_InterestingPlaceMarkersSaveRestoreOps@@UAE_NH@Z CAI_InterestingPlaceMarkersSaveRestoreOps::vfunc2
 0x1000cca2 func   ?sub_10247860@CAccum64View@@QAEXPB_J@Z CAccum64View::sub_10247860
