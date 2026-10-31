@@ -34,6 +34,16 @@ int CSimplePhysicsProp::vfunc226()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004fe20 size=0xe
+// TARGET: sub_1004fe20
+void sub_1040d950(int x);
+
+void __stdcall sub_1004fe20(int x)
+{
+    sub_1040d950(x);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004fe60 size=0x8
 #include "CSimplePhysicsProp.h"
 // TARGET: CSimplePhysicsProp::vfunc117
