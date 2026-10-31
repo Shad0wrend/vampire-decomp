@@ -30840,6 +30840,16 @@ int __stdcall sub_100bde00(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bde20 size=0xf
+// TARGET: sub_100bde20
+void __stdcall sub_100bc980(void *p, int n);
+
+void __stdcall sub_100bde20(int a)
+{
+    sub_100bc980(&a, 0x20);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bde40 size=0x14
 #include "CUnknown100bde40.h"
 
