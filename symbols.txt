@@ -5554,6 +5554,7 @@
 0x1000b460 func   _item_k_museum_storage_key item_k_museum_storage_key
 0x1000b465 func   ?sub_10407580@@YAHXZ sub_10407580
 0x1000b46f func   _func_plat func_plat
+0x1000b479 func   ?vfunc363@CWeaponMelee_ZombieFists@@QAEHXZ CWeaponMelee_ZombieFists::vfunc363
 0x1000b47e func   ?vfunc110@CVGuiScreen@@UAE_NPBD0@Z CVGuiScreen::vfunc110
 0x1000b483 func   ?sub_101c4b50@CBaseTrigger@@QAEEXZ CBaseTrigger::sub_101c4b50
 0x1000b488 func   _env_global env_global
