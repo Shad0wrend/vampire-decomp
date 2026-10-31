@@ -53144,6 +53144,23 @@ double sub_10137040(float x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10137060 size=0x13
+#include "vampire.h"
+
+// TARGET: sub_10137060
+void __cdecl sub_10137060(float flAngle, float *pSin, float *pCos)
+{
+	__asm {
+		fld dword ptr [flAngle]
+		fsincos
+		mov edx, dword ptr [pCos]
+		mov eax, dword ptr [pSin]
+		fstp dword ptr [edx]
+		fstp dword ptr [eax]
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101371d0 size=0x7
 // TARGET: sub_101371d0
 #include <math.h>
