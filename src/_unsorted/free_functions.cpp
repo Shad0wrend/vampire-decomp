@@ -127372,6 +127372,29 @@ int sub_1030d390(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030d400 size=0x5f
+struct sub_Name { const char *m_name; const char *Get() const { return m_name ? m_name : ""; } };
+struct sub_Rec { int m_id; sub_Name m_n; };
+extern int g_1073dc3c;
+extern sub_Rec **g_1073dc40;
+extern "C" int _strcmpi(const char *, const char *);
+
+int __stdcall sub_1030d400(const char *name)
+{
+	for (int i = 0; i < g_1073dc3c; i++)
+	{
+		if (!_strcmpi(g_1073dc40[i]->m_n.Get(), name))
+		{
+			int id = g_1073dc40[i]->m_id;
+			if (id != -1)
+				return id;
+			return -1;
+		}
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030d480 size=0x4c
 #include <string.h>
 
