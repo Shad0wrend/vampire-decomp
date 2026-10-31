@@ -55,6 +55,14 @@ void CPropKeypad::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021dc00 size=0x6
+#include "CPropKeypad.h"
+int CPropKeypad::vfunc33()
+{
+    return 0x12d;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021dc20 size=0x10
 #include "CPropKeypad.h"
 extern char g_106b8540[];

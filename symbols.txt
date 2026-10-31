@@ -9281,6 +9281,7 @@
 0x1001247c func   ?sub_101397c0@@YAXABVQAngle@@PAVVector@@11@Z sub_101397c0
 0x10012481 func   ?sub_10202ba0@CUnknown10202ba0@@QAEXXZ CUnknown10202ba0::sub_10202ba0
 0x10012486 func   ?sub_101e86e0@S@@QAEXPAUP@@@Z S::sub_101e86e0
+0x1001249a func   ?vfunc33@CPropKeypad@@QAEHXZ CPropKeypad::vfunc33
 0x1001249f func   ?sub_102189e0@CPropHacking@@QAEXPBD@Z CPropHacking::sub_102189e0
 0x100124a4 func   _point_camera point_camera
 0x100124a9 func   ?sub_101bcef0@CUnknown101bcef0@@QAEPAXXZ CUnknown101bcef0::sub_101bcef0
