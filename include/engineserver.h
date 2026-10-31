@@ -19,7 +19,7 @@ public:
 	virtual void vfunc14(); virtual void vfunc15(); virtual void vfunc16();
 	virtual int vfunc17(const char *pszName, int bPreload);	// precaches a particle emitter / generic resource by name
 	virtual void *vfunc18(int modelIndex);	// the studio header of a model index (0 when none)
-	virtual void vfunc19();
+	virtual char *vfunc19(int modelIndex);	// the model name of a model index
 	virtual int vfunc20(const char *pszModel);	// the model index of a model name
 	virtual int vfunc21(int modelIndex);	// the type of a model index (3 = studio)
 	virtual void vfunc22(); virtual void vfunc23(); virtual void vfunc24(); virtual void vfunc25();
