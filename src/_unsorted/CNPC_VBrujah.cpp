@@ -27,3 +27,11 @@ int CNPC_VBrujah::vfunc546(int x)
     return g_10936c74.sub_1000aed4(g_1093a788.sub_10012300(x));
 }
 // END FUNCTION
+
+// FUNCTION: 0x10367f00 size=0x6
+#include "CNPC_VBrujah.h"
+int CNPC_VBrujah::vfunc138()
+{
+    return 0x10;
+}
+// END FUNCTION
