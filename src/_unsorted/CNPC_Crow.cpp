@@ -275,6 +275,14 @@ int CNPC_Crow::vfunc124()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103590f0 size=0x6
+#include "CNPC_Crow.h"
+int CNPC_Crow::vfunc473()
+{
+    return 0xf;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10359240 size=0x1d
 #include "CNPC_Crow.h"
 struct A { int sub_10012300(int); };
