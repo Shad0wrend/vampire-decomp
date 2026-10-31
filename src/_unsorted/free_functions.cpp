@@ -109283,6 +109283,14 @@ void CUnknown1024b370::sub_1024b940()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024b9c0 size=0x7
+// TARGET: sub_1024b9c0
+unsigned int __fastcall sub_1024b9c0(char *pThis)
+{
+    return *(unsigned short *)(pThis + 0x12);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024c000 size=0x34
 #include "UtlVec8.h"
 void UtlVec8::sub_1024c000(int elem, int num)
