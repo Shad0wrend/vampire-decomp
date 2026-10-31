@@ -1,14 +1,44 @@
 // CRBTree16Entry8: the 8-byte element of the CUtlRBTree<CRBTree16Entry8, unsigned short> instance whose sentinel is at
-// 0x106bdb38 (guard 0x109f0b78); real name not yet known. The second dword owns a heap CUtlVector (freed by the
+// 0x106bdb38 (guard 0x109f0b78); real name not yet known. The second dword owns a heap vector (freed by the
 // element's destructor, which RemoveAll runs for every node).
 #pragma once
 
-#include "utlvector.h"
+#include "UtlMem.h"
+
+__declspec(dllimport) void Plat_Free(void *);
+
+// The heap vector of 4-byte-pointer-free elements: memory (pointer, allocation count, grow size), size, element pointer.
+struct CRBTree16Entry8Vec
+{
+	UtlMem m_Memory;
+	int m_Size;
+	int *m_pElements;
+
+	~CRBTree16Entry8Vec()
+	{
+		m_Size = 0;
+		m_Memory.sub_10046cd0();
+		m_pElements = m_Memory.m_pMemory;
+		if (m_Memory.m_growSize != -1) {
+			if (m_Memory.m_pMemory) {
+				Plat_Free(m_Memory.m_pMemory);
+				m_Memory.m_pMemory = 0;
+			}
+			m_Memory.m_allocationCount = 0;
+		}
+	}
+};
 
 struct CRBTree16Entry8
 {
 	int m_unk0;
-	CUtlVector<int> *m_pVec;
+	CRBTree16Entry8Vec *m_pVec;
 
-	~CRBTree16Entry8() { delete m_pVec; }
+	~CRBTree16Entry8()
+	{
+		if (m_pVec) {
+			m_pVec->~CRBTree16Entry8Vec();
+			operator delete(m_pVec);
+		}
+	}
 };
