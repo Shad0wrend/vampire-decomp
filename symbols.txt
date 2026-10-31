@@ -3515,6 +3515,7 @@
 0x10007c93 func   ?vfunc74@CNPC_VGargoyle@@UAE_NH@Z CNPC_VGargoyle::vfunc74
 0x10007c98 func   ?vfunc103@CPropSign@@QAEXXZ CPropSign::vfunc103
 0x10007c9d func   ?sub_10056f80@CUnknown10056f80@@QAEHXZ CUnknown10056f80::sub_10056f80
+0x10007ca2 func   ?vfunc261@CInstancedSceneEntity@@QAEXHHHHH@Z CInstancedSceneEntity::vfunc261
 0x10007ca7 func   ?sub_101c1b60@CUnknown101c1b60@@QAEXH@Z CUnknown101c1b60::sub_101c1b60
 0x10007cac func   ?sub_101e0630@@YAXXZ sub_101e0630
 0x10007cb1 func   ?sub_101c1a30@@YAMEPAM@Z sub_101c1a30
