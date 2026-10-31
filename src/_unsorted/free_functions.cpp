@@ -96910,6 +96910,21 @@ void __cdecl sub_10203c00(const char *pszName, const char *pszKind)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10203cf0 size=0x4e
+#include <string.h>
+extern int g_1074edd8;
+extern char g_1074e9d0[2][256];
+char *sub_10203cf0(const char *p)
+{
+	g_1074edd8++;
+	if (g_1074edd8 >= 2)
+		g_1074edd8 = 0;
+	strcpy(g_1074e9d0[g_1074edd8], p);
+	_strlwr(g_1074e9d0[g_1074edd8]);
+	return g_1074e9d0[g_1074edd8];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10203d60 size=0x4e
 #include <string.h>
 extern int g_1074eddc;
