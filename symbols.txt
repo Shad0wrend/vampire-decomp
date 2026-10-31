@@ -339,6 +339,7 @@
 0x100019fb func   ?sub_100be3d0@bf_read@@QAEMH@Z bf_read::sub_100be3d0
 0x10001a00 func   ?vfunc60@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc60
 0x10001a19 func   ?vfunc103@CGenericSabbat_NPC@@UAEXXZ CGenericSabbat_NPC::vfunc103
+0x10001a1e func   ?vfunc82@CAI_DynamicLink@@QAEHXZ CAI_DynamicLink::vfunc82
 0x10001a23 func   ?sub_102cabd0@CUnknown102cabd0@@QAEHPAVCUnknown1028ebc0@@PAPAXH@Z CUnknown102cabd0::sub_102cabd0
 0x10001a28 func   ?sub_100bc510@bf_write@@QAEXPAXHHH@Z bf_write::sub_100bc510
 0x10001a32 func   ?vfunc272@CBaseVampireSkillEntity@@QAEXXZ CBaseVampireSkillEntity::vfunc272
