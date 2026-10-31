@@ -109881,6 +109881,33 @@ CWeaponRollValue CBaseCombatWeapon::sub_102563f0(CUnknown101d8a70 *pRecordOut, i
 }
 // END FUNCTION
 
+// FUNCTION: 0x102564b0 size=0x30
+#include "CBaseCombatWeapon.h"
+#define V(n) virtual void s##n();
+#define V10(p) V(p##0) V(p##1) V(p##2) V(p##3) V(p##4) V(p##5) V(p##6) V(p##7) V(p##8) V(p##9)
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+struct COwnerSlots
+{
+	V100(a) V100(b) V100(c)
+	V10(d0) V10(d1) V10(d2) V10(d3) V10(d4) V10(d5) V10(d6) V10(d7)
+	V(d80) V(d81) V(d82) V(d83) V(d84)
+	virtual void vfunc385(CBaseCombatWeapon *pWeapon, int a, int b);
+};
+struct COwnerView
+{
+	char m_pad0000[0xa8];
+	COwnerSlots *m_pObj;
+};
+void CBaseCombatWeapon::sub_102564b0()
+{
+	if (sub_102521f0()) {
+		COwnerView *pOwner = (COwnerView *)sub_102521f0();
+		if (pOwner && pOwner->m_pObj)
+			pOwner->m_pObj->vfunc385(this, 0, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102564f0 size=0x42
 #include "CGlobalEntityList.h"
 extern CGlobalEntityList g_106eb5d8;
