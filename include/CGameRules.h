@@ -104,4 +104,5 @@ public:
 	virtual void vfunc79();
 	virtual void vfunc80();
 	void sub_1000d189();	// as in CDataObjectAccessSystem (transplant)
+	void *sub_10128400();	// the object at +4, created by vfunc56 when it is still null
 };
