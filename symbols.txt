@@ -1250,6 +1250,7 @@
 0x10003616 func   ?sub_103162d0@@YAXXZ sub_103162d0
 0x1000361b func   ?sub_10081890@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_10081890
 0x10003620 func   ?sub_100b3580@CBaseEntity@@QAEXI@Z CBaseEntity::sub_100b3580
+0x10003625 func   ?vfunc104@CGravityPellet@@QAEXXZ CGravityPellet::vfunc104
 0x1000362a func   ?vfunc419@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc419
 0x1000362f func   ?sub_1006f870@CEnt1006f870@@QAEXXZ CEnt1006f870::sub_1006f870
 0x10003634 func   ?vfunc119@CTriggerWWZone@@UAEXXZ CTriggerWWZone::vfunc119

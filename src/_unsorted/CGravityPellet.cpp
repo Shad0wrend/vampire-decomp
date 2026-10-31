@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10148370 size=0x1
+#include "CGravityPellet.h"
+void CGravityPellet::vfunc104()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10148390 size=0xdc
 #include "CBaseEntity.h"
 #include "CGravityPellet.h"
