@@ -1,6 +1,8 @@
 // StatDefault: default stat object used by a stat-list lookup (name provisional).
 #pragma once
 
+#include "CVDmg_t.h"
+
 struct StatDefault
 {
 	int a[10];
