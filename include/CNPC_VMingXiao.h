@@ -388,7 +388,7 @@ public:
 	virtual void vfunc385();
 	virtual void vfunc386();
 	virtual void vfunc387();
-	virtual void vfunc388();
+	virtual void vfunc388(int a, int b);
 	virtual void vfunc389();
 	virtual void vfunc390_slot();
 	virtual void vfunc391();
