@@ -128619,6 +128619,21 @@ char __fastcall sub_102daf50(void *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102db3b0 size=0x1b
+// TARGET: sub_102db3b0
+struct CUnk102db3b0 {
+    char pad[0x590];
+    int m_n590;
+    void sub_102db3b0(int a);
+};
+void CUnk102db3b0::sub_102db3b0(int a)
+{
+    if (a == 0 || a == 1 || a == 2) {
+        m_n590 = a;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102db3e0 size=0x28
 #include "CPropHaunted.h"
 

@@ -7594,6 +7594,7 @@
 0x1000e39f func   ?vfunc241@CEnvParticleHUD@@QAEXXZ CEnvParticleHUD::vfunc241
 0x1000e3a4 func   ?vfunc4@CEventsSaveDataOps@@QAE_NHH@Z CEventsSaveDataOps::vfunc4
 0x1000e3a9 func   ?vfunc399@CNPC_VTzimisceRunner@@UAE_NXZ CNPC_VTzimisceRunner::vfunc399
+0x1000e3ae func   ?sub_102db3b0@CUnk102db3b0@@QAEXH@Z CUnk102db3b0::sub_102db3b0
 0x1000e3b8 func   ?sub_100ed370@CUnknown100ed370@@QAEXXZ CUnknown100ed370::sub_100ed370
 0x1000e3bd func   ?sub_100e1ad0@CDialog@@QAEPBDH@Z CDialog::sub_100e1ad0
 0x1000e3c2 func   ?vfunc292@CWeaponLockpick@@UAEXH@Z CWeaponLockpick::vfunc292
