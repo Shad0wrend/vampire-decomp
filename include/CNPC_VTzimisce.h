@@ -69,7 +69,10 @@ public:
 	void sub_1028fcc0(int a);	// CAI_BaseNPCTroika::vfunc432 (stub 0x1000704f), called directly
 	virtual void vfunc448(int a);	// slot 448: with the state (+0x5cc0) 2 and condition 0x5c clears bit 31 of +0x5d8c; when the 10381be0 check holds remembers the target handle (+0x6670) in the timed list (sub_103bf200) and runs sub_103be050(0); when the other check fails runs sub_102c43b0(0.75f) and clears the target handle; clears +0x66b8, then CAI_BaseNPCTroika::vfunc448(a)
 	virtual void t281(); virtual void t282(); virtual void t283(); virtual void t284(); virtual void t285(); virtual void t286(); virtual void t287(); virtual void t288(); virtual void t289();
-	VT_SLOTS10(t29)
+	virtual void t290(); virtual void t291(); virtual void t292(); virtual void t293(); virtual void t294();
+	virtual void vfunc463(int a, int b);	// slot 463: the state change handler (old state a, new state b): the new state picks an argument for sub_103b9f50 (1 -> 0, 2 / 3 / 11 -> 1, 7 -> 3) when it differs from the old one, then CAI_BaseNPCTroika::vfunc463
+	virtual void t296(); virtual void t297(); virtual void t298(); virtual void t299();
+	void sub_102ae140(int a, int b);	// CAI_BaseNPCTroika::vfunc463 (stub 0x100063b6), called directly
 	VT_SLOTS10(t30)
 	virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3();
 	virtual int vfunc482(char bDisregardState, int interruptLevel); virtual void u5(); virtual void u6(); virtual void u7();
