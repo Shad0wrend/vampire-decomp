@@ -4758,6 +4758,7 @@
 0x10009aac func   ?sub_100828d0@@YAXXZ sub_100828d0
 0x10009ab1 func   ?sub_101fc0d0@CVStatCost_t@@QAEXXZ CVStatCost_t::sub_101fc0d0
 0x10009ab6 func   ?sub_10185790@@YIXPAH@Z sub_10185790
+0x10009abb func   ?vfunc80@CItemGGarysCD@@QAEHXZ CItemGGarysCD::vfunc80
 0x10009ac5 func   ?sub_10092270@CBaseAnimating@@QAEHPBD@Z CBaseAnimating::sub_10092270
 0x10009aca func   ?vfunc265@CSceneEntity@@UAEXPAX0@Z CSceneEntity::vfunc265
 0x10009ade func   ?sub_1018c170@CPlayerLocalPredictedData@@QAEPAV1@XZ CPlayerLocalPredictedData::sub_1018c170
