@@ -49,6 +49,12 @@ CNPC_VCop *CNPC_VCop::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10370a70 size=0x6
+// TARGET: sub_10370a70
+extern unsigned char g_10631ba8;
+unsigned char __cdecl sub_10370a70(void) { return g_10631ba8; }
+// END FUNCTION
+
 // FUNCTION: 0x10370ad0 size=0x1d
 #include "CNPC_VCop.h"
 struct A { int sub_10012300(int); };
