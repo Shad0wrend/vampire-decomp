@@ -39,6 +39,14 @@ int CWeaponMelee_WerewolfAttacks::vfunc363()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e8720 size=0x6
+#include "CWeaponMelee_WerewolfAttacks.h"
+int CWeaponMelee_WerewolfAttacks::vfunc373()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecea0 size=0x1e
 #include "CWeaponMelee_WerewolfAttacks.h"
 
