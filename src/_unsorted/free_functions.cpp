@@ -153060,6 +153060,20 @@ void __fastcall sub_103c6a00(void *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c6a20 size=0x16
+struct CNPC_VVampireBossUnit
+{
+	float sub_103c6830();
+};
+
+// TARGET: sub_103c6a20
+float CNPC_VVampireBoss::sub_103c6a20()
+{
+	float flRecord = m_HealthPercentRecord;
+	return ((CNPC_VVampireBossUnit *)this)->sub_103c6830() - flRecord;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c6a50 size=0x2e
 #include "Vector.h"
 
