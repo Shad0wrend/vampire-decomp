@@ -124338,6 +124338,21 @@ void *__fastcall sub_102daea0(COwnerView *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102daf50 size=0x12
+#include "vampire.h"
+
+char __fastcall sub_102dd610(void *pThis);
+
+// TARGET: sub_102daf50
+char __fastcall sub_102daf50(void *pThis)
+{
+	void *pOther = *(void **)((char *)pThis + 0x548);
+	if (pOther)
+		return sub_102dd610(pOther);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102db3e0 size=0x28
 #include "CPropHaunted.h"
 
