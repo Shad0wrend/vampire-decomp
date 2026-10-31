@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101ac2a0 size=0x3
+bool CAmbientGeneric::vfunc136()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ac2c0 size=0x1e
 #include "CAmbientGeneric.h"
 
