@@ -9919,6 +9919,7 @@
 0x10014a33 func   ?sub_1020ac00@CUnknown1020ac00@@QAEXH@Z CUnknown1020ac00::sub_1020ac00
 0x10014a3d func   ?sub_101a2390@CRestore@@QAEPAVCBaseEntity@@H@Z CRestore::sub_101a2390
 0x10014a42 func   ?vfunc433@CNPC_VHengeyokai@@QAEXXZ CNPC_VHengeyokai::vfunc433
+0x10014a4c func   ?sub_10314c20@CUtlRBTree16Unit@@QAEXG@Z CUtlRBTree16Unit::sub_10314c20
 0x10014a56 func   ?vfunc179@CBaseDoor@@UAEXXZ CBaseDoor::vfunc179
 0x10014a5b func   ?sub_101f1a30@CUnknown101f1a30@@QAEHPBD@Z CUnknown101f1a30::sub_101f1a30
 0x10014a60 func   ?sub_10099b00@CUnknown10099b00@@QAEXPAVCBaseEntity@@@Z CUnknown10099b00::sub_10099b00
