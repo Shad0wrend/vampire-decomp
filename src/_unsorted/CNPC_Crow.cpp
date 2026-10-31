@@ -12,6 +12,17 @@ int CNPC_Crow::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10357390 size=0x6
+#include "CNPC_Crow.h"
+namespace lifted {
+extern int g_10628a50;
+}
+int CNPC_Crow::vfunc451()
+{
+    return lifted::g_10628a50;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10357440 size=0x1a6
 #include "CNPC_Crow.h"
 #include "CEntityVSlots.h"
