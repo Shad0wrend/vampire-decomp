@@ -244,6 +244,72 @@ void CBaseDoor::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100efc90 size=0x257
+#include "CBaseDoor.h"
+#include "ScopeTrace.h"
+#include "CEntityVSlots.h"
+#include "CUnknown100290c0.h"
+#include "CEHandleGet.h"
+#include "CVariantCopy.h"
+
+extern CGlobalEntityList *g_10566458;
+extern int g_106eb3e4;
+void sub_101cebc0(CBaseEntity *pPlayer, int a, int b);
+
+struct CDoorHandleView
+{
+	unsigned int m_h;
+	CBaseEntity *sub_100d15d0();
+};
+
+struct CDoorActivatorView
+{
+	char m_pad0000[0xa8];
+	CBaseCombatCharacter *m_pPlayer;
+};
+
+void CBaseDoor::vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value)
+{
+	ScopeTrace trace("CBaseDoor::Use", g_106b8540, g_106b8540);
+	CBaseCombatCharacter *pPlayer;
+	if (pActivator == 0)
+		pPlayer = (CBaseCombatCharacter *)pActivator;
+	else
+		pPlayer = ((CDoorActivatorView *)pActivator)->m_pPlayer;
+	m_hActivator53c = pActivator;
+	if (((CUnknown100290c0 *)g_10566458)->sub_100290c0(&m_hLinked638)) {
+		CVariantCopy variant;
+		((CEntityVSlots *)((CDoorHandleView *)&m_hLinked638)->sub_100d15d0())->slot118("Use", (CEntityVSlots *)pActivator, (CEntityVSlots *)this, variant, 0);
+		return;
+	}
+	if (sub_100127ec()) {
+		sub_101cebc0((CBaseEntity *)pPlayer, 0x4d, 0);
+		return;
+	}
+	if (m_nState4f8 == 3 && m_n558 == 0)
+		vfunc244(1);
+	if (m_nState4f8 == 2 && m_n558 == 0)
+		vfunc243(1, 1);
+	((CEntityVSlots *)this)->slot248();
+	if (EHandle_Get(m_hDoorknob0)) {
+		sub_100eef50(pActivator, pCaller, useType, value);
+		return;
+	}
+	if (m_nState4f8 == 1 || m_nState4f8 == 0 || (m_flags204 & 0x20)) {
+		if (m_b55c) {
+			if (pPlayer) {
+				sub_100ee4e0(g_106eb3e4, pPlayer->sub_101671a0());
+				sub_100ee560(pPlayer->sub_101671a0());
+			} else {
+				sub_100ee4e0(g_106eb3e4, 0);
+			}
+		} else {
+			vfunc242();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eff90 size=0xc7
 #include <math.h>
 #include "CEntityVSlots.h"
