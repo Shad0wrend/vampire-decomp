@@ -28,7 +28,12 @@ public:
 	int m_n5bb0;
 	char pad5bb4[0x5cc4 - 0x5bb4];
 	int m_n5cc4;
-	char pad5cc8[0x5da4 - 0x5cc8];
+	char pad5cc8[0x5d40 - 0x5cc8];
+	void *m_pMotor5d40;	// 0x5d40: the motor
+	char pad5d44[0x5d7c - 0x5d44];
+	int m_n5d7c;	// 0x5d7c
+	int m_n5d80;	// 0x5d80
+	char pad5d84[0x5da4 - 0x5d84];
 	void *m_p5da4;
 	void *m_p5da8;
 	char pad5dac[0x6244 - 0x5dac];
