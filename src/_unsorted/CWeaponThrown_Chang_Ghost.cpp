@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103f06e0 size=0x6
+#include "CWeaponThrown_Chang_Ghost.h"
+namespace lifted {
+extern char g_1067d498;
+}
+int CWeaponThrown_Chang_Ghost::vfunc82()
+{
+    return (int)&lifted::g_1067d498;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f0770 size=0x194
 #include "CWeaponThrown_Chang_Ghost.h"
 #include "CBaseEntity.h"
