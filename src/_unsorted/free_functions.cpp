@@ -48732,6 +48732,28 @@ void sub_1011e8f0(Ray_t *pRay, unsigned int fMask, void *pPassEnt, int nGroup, C
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011eee0 size=0xf
+// TARGET: sub_1011eee0
+struct CUnknown1011eee0Inner
+{
+    char pad[0x210];
+    int m_i210;
+};
+
+struct CUnknown1011eee0
+{
+    char pad[8];
+    CUnknown1011eee0Inner *m_p8;
+
+    char sub_1011eee0();
+};
+
+char CUnknown1011eee0::sub_1011eee0()
+{
+    return m_p8->m_i210 <= 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011f6e0 size=0x2e
 // TARGET: sub_1011f6e0
 
