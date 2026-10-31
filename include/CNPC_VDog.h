@@ -15,6 +15,8 @@ public:
 	CNPC_VDog *sub_103734f0();	// as in CKeepUpright (transplant)
 	virtual void vfunc259(int *pEvent);	// slot 259: the dog's bite on event 0xbb9 (the dog's shot when a weapon is active, then "Gots a doggie bite!"), else CNPC_VAnimal::vfunc259
 	virtual void vfunc432(int a);	// slot 432: for a few activities (+0xfec) asks slot 310 for state 1 or 3 (sometimes at random), then CNPC_VAnimal::vfunc432(a)
+	void vfunc103();	// slot 103: a random 0..1 second delay + curtime at +0x6674, clears +0x6688, sets three flags through sub_1026dc00 (0x4000000, 0x200000, 0x8000), then CNPC_VAnimal::vfunc103
+	void sub_1026dc00(unsigned int flags);	// CAI_BaseNPC member (stub 0x10012855), called directly
 	void sub_10374e50();	// state change helper of vfunc460: passes the entity behind the handle at +0x628c to slot 596, records the source line (0x52a) and state 2, and tells the active thing at +0x5da4 about the slot 167 value
 	void sub_10374f40();	// the dog's bite shot (called by vfunc259): with an enemy (slot 167) and an active weapon, traces from this one's origin to the enemy's origin at the same height (mask 0x202400b) and hands the trace result to the weapon's slot 270
 	CEntityVSlots *sub_1032e7b0();	// CBaseCombatCharacter::GetActiveWeapon (stub 0x10007e19), called directly
