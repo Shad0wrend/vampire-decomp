@@ -24888,6 +24888,15 @@ void *sub_1009ab70(CBaseEntity *pEnt, void *pRet, unsigned int *pBits)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009af20 size=0x7
+extern int g_106cff4c;
+// TARGET: sub_1009af20
+void sub_1009af20()
+{
+    g_106cff4c++;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009b060 size=0x11f
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
