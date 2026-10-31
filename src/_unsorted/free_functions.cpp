@@ -147777,6 +147777,16 @@ CNPC_VScurrying *CNPC_VScurrying::sub_103abb00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103abc70 size=0xc
+void __fastcall sub_103abc90(void *pThis);
+
+void * __fastcall sub_103abc70(void *pThis)
+{
+	sub_103abc90(pThis);
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103abc90 size=0x33
 void sub_10001564();
 void sub_10003792();
