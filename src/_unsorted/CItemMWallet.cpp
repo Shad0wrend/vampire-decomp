@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103f5910 size=0x3
+#include "CItemMWallet.h"
+int CItemMWallet::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10409b20 size=0x1e
 #include "CItemMWallet.h"
 
