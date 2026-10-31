@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1004fc90 size=0x3
+#include "CBaseProp.h"
+bool CBaseProp::vfunc158()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018df70 size=0x107
 #include "CBaseAnimating.h"
 #include "CBaseProp.h"
