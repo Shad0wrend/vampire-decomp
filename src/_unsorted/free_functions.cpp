@@ -45431,6 +45431,17 @@ void CThis10103f80::sub_10103f80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101041a0 size=0x16
+struct CThis10103f80 { void sub_10103f80(); };
+
+// TARGET: sub_101041a0
+void __fastcall sub_101041a0(void *pThis, int, int)
+{
+	((CThis10103f80 *)pThis)->sub_10103f80();
+	*(int *)((char *)pThis + 0x17c) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101041d0 size=0xe
 namespace lifted {
 int __stdcall sub_10007fe5(int, int, int);
