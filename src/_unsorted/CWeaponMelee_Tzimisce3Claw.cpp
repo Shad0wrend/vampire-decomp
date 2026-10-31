@@ -20,6 +20,17 @@ int CWeaponMelee_Tzimisce3Claw::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103eb7d0 size=0x6
+#include "CWeaponMelee_Tzimisce3Claw.h"
+namespace lifted {
+extern char g_10678040;
+}
+int CWeaponMelee_Tzimisce3Claw::vfunc362()
+{
+    return (int)&lifted::g_10678040;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103eb8b0 size=0x59
 #include "CWeaponMelee.h"
 #include "CWeaponMelee_Tzimisce3Claw.h"
