@@ -72601,6 +72601,24 @@ void CBaseToggle::sub_101c1bc0(int state)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c1dc0 size=0x62
+#include "CBaseToggle.h"
+void CBaseToggle::sub_101c1dc0(int a, int b, int c, int d)
+{
+	if (m_i49c == 1) {
+		if (m_i498 == 0)
+			sub_101c1bc0(1);
+		if (m_i498 == 1)
+			sub_101c1bc0(0);
+	} else if (m_i49c == 2) {
+		if (m_i498 == 2)
+			sub_101c1bc0(3);
+		if (m_i498 == 3)
+			sub_101c1bc0(2);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c1e50 size=0x175
 #include "Ray_t.h"
 #include "CGameTrace.h"
