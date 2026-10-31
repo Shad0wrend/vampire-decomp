@@ -1268,6 +1268,17 @@ void CBasePlayer::sub_101710b0(const Vector *pImpulse)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10171150 size=0x62
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+void CBasePlayer::vfunc170(const Vector *pOffset)
+{
+	((CBaseEntity *)this)->sub_100b3640(1);
+	Vector v = m_vec03D4 + *pOffset;
+	((CBaseEntity *)this)->sub_100b2e30(&v.x);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10171f50 size=0x1a9
 #include "CBasePlayer.h"
 #include "CEntityVSlots.h"
