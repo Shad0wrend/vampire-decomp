@@ -100961,6 +100961,32 @@ void sub_1022ea80(void *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022ead0 size=0x63
+#include "CUnknown101d5bd0.h"
+#include "COutputEvent.h"
+struct CUnknown10206a80 { char sub_10206a80(); };
+struct CToreadorTarget { char m_pad[0xa8]; void *m_p; };
+struct CToreadorHolder { char m_pad[0x5a0]; COutputEvent m_out; };
+extern CUnknown10206a80 g_1074f028;
+extern CUnknown101d5bd0 g_10738d10;
+int sub_1023dcd0();
+// TARGET: sub_1022ead0
+void sub_1022ead0(CToreadorTarget *pTarget)
+{
+    if (g_1074f028.sub_10206a80())
+        return;
+    static int s_idx = g_10738d10.sub_101d5bd0("Player_Toreador");
+    if (pTarget) {
+        void *p = pTarget->m_p;
+        if (p) {
+            CToreadorHolder *pHolder = (CToreadorHolder *)sub_1023dcd0();
+            if (pHolder)
+                pHolder->m_out.sub_100cd660(p, p, 0);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022eb60 size=0x82
 struct TStat { void sub_101fc950(int a, int b); };
 

@@ -5306,6 +5306,7 @@
 0x1000b87f func   _prop_model_state prop_model_state
 0x1000b884 func   ?sub_100c0690@CFloatPair3f4@@QAEXXZ CFloatPair3f4::sub_100c0690
 0x1000b88e func   ?sub_1005dcc0@@YAHXZ sub_1005dcc0
+0x1000b893 func   ?sub_1022ead0@@YAXPAUCToreadorTarget@@@Z sub_1022ead0
 0x1000b898 func   ?sub_10340bd0@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10340bd0
 0x1000b89d func   ?vfunc5@CPhysicsSpring@@UAEPAV1@I@Z CPhysicsSpring::vfunc5
 0x1000b8a2 func   ?vfunc144@CNPC_VVampire@@QAEXH@Z CNPC_VVampire::vfunc144
