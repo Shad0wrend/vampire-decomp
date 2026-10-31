@@ -53335,6 +53335,16 @@ float sub_10137300(const float *pVec)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10137390 size=0x14
+float sub_10137350(int a);
+
+// TARGET: sub_10137390
+float sub_10137390(int a)
+{
+	return 1.0f / sub_10137350(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10137480 size=0x8
 float __fastcall sub_101373c0(void *pThis);
 void __fastcall sub_10137480(void *pThis)
