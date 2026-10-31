@@ -47,6 +47,7 @@ struct CSceneEvent	// a scene event; only what the actor checks need
 	int sub_100029c8();	// the event's type (stub 0x100029c8)
 	const char *sub_10075c50();	// the event's text parameter (stub 0x10006fdc)
 	const char *sub_10075d00();	// the event's name (stub 0x10007d01)
+	float sub_10076b30();	// the event's duration (stub 0x10014835)
 	CUnknown1007ce20 *sub_10076710();	// the event's sub-scene (stub 0x10015a78), null when it has none
 };
 
