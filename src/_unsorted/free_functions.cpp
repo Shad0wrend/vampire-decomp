@@ -147181,6 +147181,16 @@ extern "C" CBaseEntity *npc_VDialogPedestrian()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a1ed0 size=0xc
+void __fastcall sub_103a1ef0(void *pThis);
+
+void * __fastcall sub_103a1ed0(void *pThis)
+{
+	sub_103a1ef0(pThis);
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a1ef0 size=0x33
 void sub_100053cb();
 void sub_1000fbf5();
