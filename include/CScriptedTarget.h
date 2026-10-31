@@ -7,7 +7,8 @@ class CScriptedTarget : public CBaseEntity
 {
 public:
 	virtual void vfunc103();	// slot 103 (Spawn): looks the global at 0x10938054 up once, SetSolid(0) (inlined scope trace), sub_100b3b00(), remembers the origin (slot 217) at +0x5f44, runs sub_1034d5b0() when the field at +0x5f50 is not set, then AddFlag2(0x10)
-	void sub_1034d5b0();	// called through the stub at 0x10012be3
+	void sub_1034d5b0();
+	unsigned char sub_1034d410();	// CScriptedTarget::vfunc117 body (CBaseEntity::vfunc117 & 0xfd)	// called through the stub at 0x10012be3
 
 	virtual int vfunc124();	// slot 124 \"DrawDebugTextOverlays\": the base overlay lines, then (text overlay bit set) the lines \"State: On / Off\", \"Next: <name of slot 172>\" and \"User: <name>\" (the user handle at +0x5ce4); returns the next free line
 
