@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10402150 size=0x3
+#include "CItemGBrotherhoodFlyer.h"
+int CItemGBrotherhoodFlyer::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040a750 size=0x1e
 #include "CItemGBrotherhoodFlyer.h"
 
