@@ -88542,6 +88542,15 @@ void __fastcall sub_10001807(char *p);
 void __fastcall sub_101f3070(char *p) { sub_10001807(p - *(int *)(p - 4)); }
 // END FUNCTION
 
+// FUNCTION: 0x101f35c0 size=0xc
+void __fastcall sub_101f3650(void *pThis);
+void * __fastcall sub_101f35c0(void *pThis)
+{
+    sub_101f3650(pThis);
+    return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f35e0 size=0x4c
 struct N101f35e0 {
 	char m_pad[0x14];
