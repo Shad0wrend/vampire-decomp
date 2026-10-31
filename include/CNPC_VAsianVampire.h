@@ -51,6 +51,8 @@ public:
 	StoredHintPos_t m_stationaryPos;	// +0x66dc: where the NPC stood when the stamp was taken
 
 	bool sub_10362670();	// "CNPC_VAsianVampire::StationaryFor...": curtime - m_flStationaryTime >= constant
+	int vfunc605(int unused);	// slot 605 "CNPC_VAsianVampire::SelectScheduleRangedCombat" (plain member): schedule pick by the conditions, stamping the source file / line at +0x1b30 / +0x1b34
+	int sub_102b8620();	// CAI_BaseNPCTroika member (stub 0x10002bf3), called directly
 	int vfunc438();	// slot 438 "CNPC_VAsianVampire::SelectSchedule"
 	int sub_10015ad2();	// CNPC_VHuman::vfunc438, called directly
 	bool sub_1000fe3e();	// stub of 0x10362730
