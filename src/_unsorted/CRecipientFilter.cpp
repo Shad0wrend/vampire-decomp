@@ -119,6 +119,11 @@ char CRecipientFilter::vfunc4()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019d340 size=0x4
+// TARGET: sub_1019d340
+int __fastcall sub_1019d340(CRecipientFilter *p) { return p->m_20; }
+// END FUNCTION
+
 // FUNCTION: 0x1019d3d0 size=0x5c
 #include "CRecipientFilter.h"
 #include "CUnknown1019d130.h"
