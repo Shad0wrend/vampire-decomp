@@ -799,6 +799,7 @@
 0x100027e3 func   ?sub_10264450@CUnknown102e12c0@@QAEXXZ CUnknown102e12c0::sub_10264450
 0x100027e8 func   ?sub_1018c6e0@@YAXPAUSHandleHolder@@@Z sub_1018c6e0
 0x100027ed func   ?sub_1025d940@@YAXXZ sub_1025d940
+0x100027f2 func   ?vfunc80@CWeaponRanged_Smg_Mac10@@QAEHXZ CWeaponRanged_Smg_Mac10::vfunc80
 0x100027f7 func   _light_dynamic light_dynamic
 0x100027fc func   ?sub_102464b0@@YAXHHPAH@Z sub_102464b0
 0x10002801 func   ?sub_102db470@@YAHPAVCUnknown102db470@@@Z sub_102db470
