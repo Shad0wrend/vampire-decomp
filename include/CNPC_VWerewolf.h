@@ -493,7 +493,7 @@ public:
 	virtual void vfunc214();
 	virtual void vfunc215();
 	virtual void vfunc216();
-	virtual void vfunc217();
+	virtual CNPC_VWerewolfVec3 *vfunc217();
 	virtual void vfunc218();
 	virtual void vfunc219();
 	virtual void vfunc220();
