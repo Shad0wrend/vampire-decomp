@@ -31172,6 +31172,20 @@ int sub_100befe0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bf000 size=0x13
+#include "vampire.h"
+
+void __stdcall sub_100be100(void *pOut, int n);
+
+// TARGET: sub_100bf000
+float __cdecl sub_100bf000()
+{
+	float f;
+	sub_100be100(&f, 0x20);
+	return f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bf030 size=0x14
 #include "CUnknown100bf030.h"
 
