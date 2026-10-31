@@ -18926,6 +18926,22 @@ void CUnknown1007e5a0::sub_1007e5a0(float value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007e5c0 size=0x1b
+struct CUnknown1007e5c0 {
+	char pad0000[0x84];
+	int m_84;
+	int m_88;
+	void sub_1007e5c0(int *pOut84, int *pOut88);
+};
+
+// TARGET: CUnknown1007e5c0::sub_1007e5c0
+void CUnknown1007e5c0::sub_1007e5c0(int *pOut84, int *pOut88)
+{
+	*pOut84 = m_84;
+	*pOut88 = m_88;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007e5f0 size=0x1af
 #include "CUnknown1007ec20.h"
 #include "CChoreoScene1007e970.h"
