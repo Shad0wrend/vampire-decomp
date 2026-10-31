@@ -63331,6 +63331,24 @@ int sub_10190440()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10190750 size=0x62
+#include "CDynamicProp.h"
+void sub_1000d2ce();
+// TARGET: CDynamicProp::sub_10190750
+void CDynamicProp::sub_10190750()
+{
+	if (m_n07d8 > -1) {
+		m_nSequence = m_n07d8;
+		sub_10090950();
+		sub_100963d0();
+		m_slotC.sub_100cd660(0, (CCineNPC *)this, 0);
+		sub_100b3640(0x40000);
+		sub_100ac4e0((void *)sub_1000d2ce, 0, 0);
+		m_flNextThink17c = gpGlobals->curtime + 0.1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10190a00 size=0xd0
 #include "CDynamicProp.h"
 #include "CBaseAnimating.h"
