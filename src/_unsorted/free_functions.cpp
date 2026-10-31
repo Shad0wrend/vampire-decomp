@@ -74818,6 +74818,56 @@ bool CBaseTrigger::sub_101c5460(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c59b0 size=0x1f5
+#include "CHandleVectorOps.h"
+
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1059d7f0[2];
+void sub_1000cc89();
+void sub_100064b0();
+void sub_10009557();
+
+// TARGET: sub_101c59b0
+int *sub_101c59b0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 0, "CTriggerHurtHurtThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000cc89 },
+        { 0, "CTriggerHurtHurtOnceThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_100064b0 },
+        { 1, "m_flDamage", {0x598, 0}, 1, 6, "damage" },
+        { 4, "m_bitsDamageInflict", {0x5a0, 0}, 1, 6, "damagetype" },
+        { 1, "m_flDamageVelMag", {0x5a4, 0}, 1, 6, "damagevelocitymag" },
+        { 3, "m_vecDamageVelPos", {0x5a8, 0}, 1, 6, "damagevelocitypos" },
+        { 4, "m_nDamageVelDir", {0x5c0, 0}, 1, 6, "damagevelocitydir" },
+        { 15, "m_flLastDmgTime", {0x59c, 0}, 1, 2 },
+        { 3, "m_vecDamageVelVect", {0x5b4, 0}, 1, 2 },
+        { 10, "m_hurtEntities", {0x5f4, 0}, 1, 2, 0, (ISaveRestoreOps *)GetHandleVectorOps(), 0 },
+        { 0, "InputHurtNow", {0, 0}, 1, 8, "HurtNow", 0, (void *)sub_10009557 },
+        { 1, "m_flDamage", {0x598, 0}, 1, 0xe, "SetDamage", 0, 0 },
+        { 10, "m_OnHurt", {0x5c4, 0}, 1, 0x16, "OnHurt", g_1055dc70 },
+        { 10, "m_OnHurtPlayer", {0x5dc, 0}, 1, 0x16, "OnHurtPlayer", g_1055dc70 },
+    };
+    g_1059d7f0[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1059d7f0[0] = (int)&dataDesc[1];
+    return g_1059d7f0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c5c30 size=0x43
 #include "CTriggerHurt.h"
 void *sub_100aa720(int size);
