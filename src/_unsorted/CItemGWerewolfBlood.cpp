@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103ffb90 size=0x6
+#include "CItemGWerewolfBlood.h"
+namespace lifted {
+extern char g_10946fa4;
+}
+int CItemGWerewolfBlood::vfunc80()
+{
+    return (int)&lifted::g_10946fa4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ffbb0 size=0x3
 #include "CItemGWerewolfBlood.h"
 int CItemGWerewolfBlood::vfunc81()
