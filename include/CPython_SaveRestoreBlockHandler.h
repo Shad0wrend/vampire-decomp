@@ -15,6 +15,19 @@ public:
 	virtual int ReadBool(char *pValue, int count, int flags);	// slot 17
 };
 
+// The save stream as the Python block handler writes it: only the slots used so far are named.
+class IWritePy
+{
+public:
+	virtual int Tell();	// slot 0: the current position
+	virtual void Seek(int nPos);	// slot 1
+	virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void WriteInt(int *pValue, int count);	// slot 10
+	virtual void v11();
+	virtual void WriteBool(char *pValue, int count);	// slot 12
+};
+
 class CPython_SaveRestoreBlockHandler
 {
 public:
