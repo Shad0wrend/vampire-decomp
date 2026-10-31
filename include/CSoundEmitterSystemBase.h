@@ -15,9 +15,20 @@ struct CSoundWaveEntry
 
 // A sound record (0xe8 bytes each, table at CSoundEmitterSystemBase +0x54, record = table + 0x1c + index * 0xe8):
 // only the wave list is declared.
+struct CUnknown1012f700	// a random interval (start, range), see sub_1012f700
+{
+	float start;
+	float range;
+};
+
 struct CSoundParametersInternal
 {
-	char m_pad0000[0x1d];
+	int m_channel;	// 0x00
+	CUnknown1012f700 m_volume;	// 0x04
+	CUnknown1012f700 m_pitch;	// 0x0c
+	CUnknown1012f700 m_soundlevel;	// 0x14
+	char m_bPlayToOwnerOnly;	// 0x1c
+
 	char m_bPrecache1d;	// 0x1d
 	char m_pad001e[2];
 	CSoundWaveEntry *m_pWaves;	// 0x20
