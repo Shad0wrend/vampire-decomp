@@ -142110,6 +142110,29 @@ bool CUnknown10349970::sub_10349970()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103499a0 size=0x15
+struct CUnknown103498b0
+{
+	int sub_103498b0();
+};
+
+struct CUnknown103499a0
+{
+	bool sub_103499a0();
+};
+
+// TARGET: CUnknown103499a0::sub_103499a0
+bool CUnknown103499a0::sub_103499a0()
+{
+	int i = ((CUnknown103498b0 *)this)->sub_103498b0();
+	if (i >= 2 && i <= 3)
+	{
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103499d0 size=0x1e
 #include "CDataObjectAccessSystem.h"
 
