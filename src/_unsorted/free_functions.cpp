@@ -148315,6 +148315,31 @@ extern "C" CBaseEntity *flame_cluster()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e1d90 size=0x63
+#include "CEntityVSlots.h"
+#include "CBaseEntity.h"
+#include "globalvars.h"
+extern Vector g_1070d9d0;
+CBaseEntity *sub_100a99d0(const char *, const float *, const float *, CBaseEntity *);
+struct CFlameClusterView : CBaseEntity
+{
+	char m_padA[0x480 - sizeof(CBaseEntity)];
+	float m_f480;
+	unsigned int m_h484;
+};
+// TARGET: sub_103e1d90
+CBaseEntity *sub_103e1d90(CEntityVSlots *pOwner)
+{
+	CFlameClusterView *p = (CFlameClusterView *)sub_100a99d0("flame_cluster", (const float *)pOwner->slot220(), &g_1070d9d0.x, 0);
+	if (p) {
+		p->m_h484 = *pOwner->slot1();
+		p->m_flNextThink = gpGlobals->curtime + 0.5;
+		p->m_f480 = gpGlobals->curtime;
+	}
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e2000 size=0x8e
 #include "CFlameCluster.h"
 #include "CVDmg_t.h"
