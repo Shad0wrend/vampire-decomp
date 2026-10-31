@@ -78818,6 +78818,16 @@ void sub_101d0310(float *pVector, int count, const char *pString)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d03e0 size=0x15
+void sub_101d0310(void *pSelf, int nType, void *pName);
+
+// TARGET: sub_101d03e0
+void sub_101d03e0(void *pSelf, void *pName)
+{
+	sub_101d0310(pSelf, 3, pName);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d0410 size=0x81
 extern char *(*g_109f3890)(char *, const char *, int);
 extern "C" char *strtok(char *, const char *);
