@@ -69,6 +69,7 @@ public:
 	void sub_1021bbf0(int a);	// stub 0x100056a5
 	void sub_1021bfd0();	// stub 0x1000b7b2
 	void sub_1021bc20x();	// stub 0x10001424
+	unsigned char sub_10219ec0();	// CPropHacking::vfunc117 body (CBaseEntity::vfunc117 & 0xfd)
 	void sub_1021c040();	// stub 0x10014f5b / 0x1021c040: tail of the sub_1021c000 and sub_1021b9c0 paths (the screen refresh), called with this
 	char sub_1021b750(int a, const char *pszName);	// looks the screen named pszName up (first in the records at +0x9a0, then through the index list of the selected record in the records at +0x9b4) and switches to it
 	void sub_1021c390(int a);	// stub 0x1000137a
