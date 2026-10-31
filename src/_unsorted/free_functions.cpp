@@ -145346,6 +145346,16 @@ extern "C" CBaseEntity *npc_VHumanCombatant()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10386bb0 size=0xc
+void __fastcall sub_10386bd0(void *p);
+
+void *__fastcall sub_10386bb0(void *p)
+{
+    sub_10386bd0(p);
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10386bd0 size=0x33
 void sub_100053cb();
 void sub_10002234();
