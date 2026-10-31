@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x102365f0 size=0x6
+#include "CWeaponRanged_Rifle_SteyrAug.h"
+namespace lifted {
+extern char g_107522a8;
+}
+int CWeaponRanged_Rifle_SteyrAug::vfunc80()
+{
+    return (int)&lifted::g_107522a8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10236610 size=0x3
 #include "CWeaponRanged_Rifle_SteyrAug.h"
 int CWeaponRanged_Rifle_SteyrAug::vfunc81()
