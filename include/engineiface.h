@@ -12,7 +12,7 @@ class IEngineSound
 {
 public:
 	virtual int vfunc0(const char *pszSample, int bPreload);	// PrecacheSound
-	virtual void vfunc1();
+	virtual float vfunc1(const char *pszSample);	// GetSoundDuration (returned in ST0)
 	virtual void vfunc2(const CRecipientFilter *pFilter, int entindex, int channel, const char *pszSample,
 	                    float flVolume, int iSoundlevel, int iFlags, int iPitch, const float *pOrigin,
 	                    const float *pDirection, int bUpdatePositions, int soundtime);	// EmitSound (sound level)
