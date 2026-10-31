@@ -13,4 +13,7 @@ public:
 	int m_i598;	// 0x598: the id of the object the trigger started
 public:
     virtual datamap_t * vfunc82();
+    void sub_101c5080();	// as in CTriggerPlayerActivityLevel (transplant)
+    void vfunc103();	// as in CTriggerPlayerActivityLevel (transplant)
+    void *vfunc5(unsigned int flags);	// as in CTriggerElectricBugaloo (transplant)
 };

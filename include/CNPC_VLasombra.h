@@ -459,4 +459,6 @@ public:
 	virtual void vfunc578();
 	virtual void vfunc579();
 	virtual int vfunc580();
+	void vfunc103();	// as in CAI_Hint (transplant)
+	void sub_103c4ef0();	// as in CAI_Hint (transplant)
 };

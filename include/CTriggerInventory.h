@@ -13,4 +13,6 @@ public:
 	COutputEvent m_out59c;	// 0x59c
 public:
     virtual datamap_t * vfunc82();
+    void sub_101c5080();	// as in CTriggerPlayerActivityLevel (transplant)
+    void vfunc103();	// as in CTriggerPlayerActivityLevel (transplant)
 };

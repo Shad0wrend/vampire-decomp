@@ -123,4 +123,5 @@ public:
 public:
     virtual int vfunc33();
     virtual int vfunc117();
+    void vfunc277();	// as in CAI_Hint (transplant)
 };

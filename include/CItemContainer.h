@@ -78,4 +78,6 @@ public:
 	bool vfunc388(int, int);
 	bool vfunc408();
 	bool vfunc409();
+	int vfunc370(int a);	// as in CNPCMaker (transplant)
+	int vfunc371(int a);	// as in CNPCMaker (transplant)
 };

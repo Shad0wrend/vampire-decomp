@@ -40,4 +40,5 @@ public:
     virtual int vfunc80();
     virtual int vfunc117();
     virtual int vfunc42(int);
+    void *vfunc5(unsigned int flags);	// as in CTriggerElectricBugaloo (transplant)
 };

@@ -9,4 +9,5 @@ public:
 	CTriggerTeleport *sub_101c91e0();
 public:
     virtual datamap_t * vfunc82();
+    void *vfunc5(unsigned int flags);	// as in CTriggerElectricBugaloo (transplant)
 };

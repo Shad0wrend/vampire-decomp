@@ -10,4 +10,5 @@ public:
 	CPropMover *sub_10192870();	// as in CKeepUpright (transplant)
 public:
     virtual int vfunc117();
+    void vfunc103();	// as in CNPC_VBach (transplant)
 };

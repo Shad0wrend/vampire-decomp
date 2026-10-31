@@ -39,4 +39,5 @@ public:
 	int vfunc33();
 	int vfunc36();
 	int vfunc82();
+	void vfunc103();	// as in CNPC_VBach (transplant)
 };

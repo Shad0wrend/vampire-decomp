@@ -34,4 +34,7 @@ public:
 	float m_flFadeTime;	// 0x45c
 public:
 	int vfunc82();
+	void vfunc77();	// as in CNPC_VBach (transplant)
+	void vfunc78();	// as in CNPC_VBach (transplant)
+	void vfunc119();	// as in CNPC_VBach (transplant)
 };

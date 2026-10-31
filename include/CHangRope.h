@@ -7,7 +7,7 @@
 class CHangRope : public CBaseRopePhysics
 {
 public:
-	virtual void vfunc0(CRopeNode *pNodes, int iNode, Vector *pAccel);
+	virtual int vfunc0(int, int, int);
 	virtual void vfunc1(CRopeNode *pNodes, int nNodes);	// ApplyConstraints: base constraints, pins the first node to the start and the last one to the end point, then nudges the slack (+0x5850) by one unit towards keeping the largest height difference to the reference (+0x5858) under the limit (+0x5854) and hands the resulting spring length to sub_102493b0
 	void sub_102493b0(float flLength);	// stub 0x100144d4, called directly
 

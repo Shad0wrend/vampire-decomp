@@ -20,4 +20,6 @@ public:
 	void vfunc333(int);
 	bool vfunc590();
 	bool vfunc615();
+	int vfunc370(int a);	// as in CNPCMaker (transplant)
+	int vfunc371(int a);	// as in CNPCMaker (transplant)
 };

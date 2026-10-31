@@ -23,4 +23,7 @@ public:
 	void vfunc274();
 	void vfunc275();	// slot 275: calls CItemContainerLock::vfunc275 (stub 0x1001469b), then clears +0x670
 	CPropDoorknobElectronic *vfunc5(unsigned int flags);	// as in CMomentaryRotButton (transplant)
+	CPropDoorknobElectronic *sub_10226200();	// as in CSecCamera (transplant)
+	void vfunc276();	// as in CAI_Hint (transplant)
+	void sub_102241b0();	// as in CAI_Hint (transplant)
 };

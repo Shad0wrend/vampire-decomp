@@ -11,4 +11,5 @@ public:
 public:
     virtual int vfunc81();
     virtual int vfunc80();
+    void vfunc319();	// as in CNPC_VBach (transplant)
 };
