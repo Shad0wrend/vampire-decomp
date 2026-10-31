@@ -27,3 +27,11 @@ int CNPC_VVentrue::vfunc546(int x)
     return g_10936c74.sub_1000aed4(g_1093d394.sub_10012300(x));
 }
 // END FUNCTION
+
+// FUNCTION: 0x103c7e40 size=0x6
+#include "CNPC_VVentrue.h"
+int CNPC_VVentrue::vfunc138()
+{
+    return 0x15;
+}
+// END FUNCTION
