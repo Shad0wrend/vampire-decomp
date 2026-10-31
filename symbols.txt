@@ -2578,6 +2578,7 @@
 0x10006230 func   ?sub_101d5b90@CStatDefault3List@@QAEXXZ CStatDefault3List::sub_101d5b90
 0x10006235 func   ?sub_10266d40@@YAXVVector@@0H@Z sub_10266d40
 0x1000623f func   ?sub_10323630@@YIXPAVCBaseCombatCharacter@@@Z sub_10323630
+0x10006244 func   ?sub_101cc3d0@V101cc3d0@@QAEPAXI@Z V101cc3d0::sub_101cc3d0
 0x10006249 func   ?sub_10349400@TOps@@QAE_NPAPAH@Z TOps::sub_10349400
 0x1000625d func   ?vfunc82@CPropSign@@UAEHXZ CPropSign::vfunc82
 0x10006262 func   ?sub_100ce6c0@CList_t@@QAE_NHHUCList_tValue@@@Z CList_t::sub_100ce6c0
