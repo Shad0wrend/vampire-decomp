@@ -53,6 +53,18 @@ void CFuncBrush::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013e070 size=0xe
+#include "CFuncBrush.h"
+namespace lifted {
+int __stdcall sub_10004b92(int, int, int);
+}
+bool CFuncBrush::vfunc223()
+{
+    lifted::sub_10004b92(0, 0, 0);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013ec30 size=0x1e
 #include "CFuncBrush.h"
 

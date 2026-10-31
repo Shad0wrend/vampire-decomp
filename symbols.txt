@@ -9011,6 +9011,7 @@
 0x100114be func   ?sub_1006e0e0@@YIXPAD@Z sub_1006e0e0
 0x100114cd func   ?sub_101d6890@CPartListUnit3@@QAEXXZ CPartListUnit3::sub_101d6890
 0x100114d2 func   ?vfunc337@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::vfunc337
+0x100114d7 func   ?vfunc223@CFuncBrush@@QAE_NXZ CFuncBrush::vfunc223
 0x100114dc func   ?vfunc5@CEnvLight@@QAEPAV1@I@Z CEnvLight::vfunc5
 0x100114e6 func   ?sub_100ae450@@YAXXZ sub_100ae450
 0x100114eb func   ?sub_1020f220@CFuncElevatorUnit1020f220@@QAEXXZ CFuncElevatorUnit1020f220::sub_1020f220
