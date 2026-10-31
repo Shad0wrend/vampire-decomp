@@ -33,5 +33,6 @@ public:
 	void sub_100e8fc0(CDialog *pDialog, CBaseEntity *pNPC, int a, int b, int c, int d);	// stub 0x100087c9: fills the record for the dialog's NPC
 	char sub_100e94e0(CBaseEntity *pNPC, CBaseEntity *pSpeaker);	// stub 0x100120f8: whether the record passes for the NPC and speaker
 	void sub_100e9290(int a, char *pszText, unsigned int *pFlags, int *pOut);	// "CDialogDependency::ParseDep": scope trace, parses the dependency text through the block at +4 (sub_102047d0), sets the indent (+0x18), the flag bits 1 / 2 / 4 of *pFlags, *pOut and the state at +0x220
+	char sub_100e9760(CBaseEntity *pNPC, CBaseEntity *pSpeaker);	// stub 0x10011978: the entity half of the test (CDialogDependency::Test calls it before / after TestPython)
 	bool sub_100e9ff0(int a, int b);	// "CDialogDependency::TestPython": scope trace, evaluates the python expression stored as a string at +0x1c through sub_100ea2d0(text, a, b, 0x102, 0); DevMsg error and false when the string is empty
 };
