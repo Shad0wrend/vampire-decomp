@@ -127311,6 +127311,21 @@ void __fastcall sub_102ecce0(COwner *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ecd00 size=0x10
+struct CUnknown102ecd00
+{
+	char pad_0000[0x4];
+	char *m_pSub4;
+	void sub_102ecd00(int a);
+};
+
+// TARGET: CUnknown102ecd00::sub_102ecd00
+void CUnknown102ecd00::sub_102ecd00(int a)
+{
+	*(int *)(m_pSub4 + 0x164) = a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ed940 size=0x60
 #include "CAI_BaseNPC.h"
 bool CAI_Navigator::sub_102ed940(float f, const Vector *pVec, int c)
