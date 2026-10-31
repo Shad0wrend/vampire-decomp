@@ -117959,6 +117959,16 @@ void __fastcall sub_10293d70(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10293d90 size=0x15
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CAI_BaseNPCTroika::sub_10293d90
+void CAI_BaseNPCTroika::sub_10293d90(float flDelay)
+{
+	*(float *)((char *)this + 0x6398) = flDelay + gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10293dc0 size=0x15
 #include "vampire.h"
 
