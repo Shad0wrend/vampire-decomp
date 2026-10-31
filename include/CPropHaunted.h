@@ -30,6 +30,8 @@ public:
 	void vfunc174(CBaseEntity *pOther);	// slot 174 (declared as a plain member): CBaseEntity::vfunc174 for the entity that hit the prop, the impact reaction sub_10213ef0 (index 0, no event) first; the reaction is skipped while the state at +0x200 is 2
 	void vfunc228(int index, void *pEvent);	// slot 228 (declared as a plain member): the impact reaction sub_10213ef0 for the entity of the event's other side (the engine entity 0 when none), then CBaseEntity::vfunc228 unless the state at +0x200 is 2
 	void sub_100a65a0(int index, void *pEvent);	// CBaseEntity::vfunc228, called directly
+	void vfunc230(int index, void *pEvent);	// slot 230 (declared as a plain member): like vfunc228, ending in CBreakableProp::vfunc230
+	void sub_1018fe80(int index, void *pEvent);	// CBreakableProp::vfunc230, called directly
 	void vfunc180();	// slot 180 (declared as a plain member): CBaseEntity::vfunc180, then for a live ghost entity (handle at +0x7d0) runs its slot 242 and schedules its next think 5.0 seconds ahead
 	void vfunc104();	// slot 104 "Precache": CBreakableProp::vfunc104, then precaches the models named at +0x7bc / +0x7c0 and the sounds named at +0x7c4, +0x7c8, +0x7cc when set
 	void sub_1000978c();	// CBreakableProp::vfunc104 (stub of 0x1018fb50), called directly
