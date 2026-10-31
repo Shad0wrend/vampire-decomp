@@ -41,6 +41,73 @@ void ZView103defc0::sub_103defc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103df5f0 size=0x1d8
+#include "CNPC_VAnimal.h"
+#include "CNPC_VZombie.h"
+
+struct CVZombieView461
+{
+	char pad0000[0x1b38];
+	int m_n1b38;
+	const char *m_pszFile1b3c;
+	int m_nLine1b40;
+	char pad1b44[0x5b80 - 0x1b44];
+	char m_b5b80;
+	char pad5b81[0x5cc0 - 0x5b81];
+	int m_nState5cc0;
+	volatile int m_nIdeal5cc4;
+};
+
+int CNPC_VZombie::vfunc461()
+{
+	CVZombieView461 *p = (CVZombieView461 *)this;
+	p->m_n1b38 = 0x2b;
+	switch (p->m_nState5cc0) {
+	case 3:
+		if (sub_10269d30(0x44)) {
+			p->m_nIdeal5cc4 = 8;
+			int ret = p->m_nIdeal5cc4;
+			p->m_pszFile1b3c = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VZombie.cpp";
+			p->m_nLine1b40 = 0x206;
+			return ret;
+		}
+		if (sub_10269d30(0x54) || sub_10269d30(0x46)) {
+			p->m_nIdeal5cc4 = 2;
+			int ret2 = p->m_nIdeal5cc4;
+			p->m_pszFile1b3c = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VZombie.cpp";
+			p->m_nLine1b40 = 0x20c;
+			return ret2;
+		}
+		if (!sub_10269d30(0x6a) && !sub_10269d30(0x6d) && !sub_10269d30(0x6f) && !sub_10269d30(0x70)) {
+			vfunc462();
+		}
+		break;
+	case 1:
+		if (sub_10269d30(0x44)) {
+			p->m_nIdeal5cc4 = 8;
+			int ret = p->m_nIdeal5cc4;
+			p->m_pszFile1b3c = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VZombie.cpp";
+			p->m_nLine1b40 = 0x1d6;
+			return ret;
+		}
+		if (sub_10269d30(0x54)) {
+			p->m_nIdeal5cc4 = 2;
+			int ret2 = p->m_nIdeal5cc4;
+			p->m_pszFile1b3c = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VZombie.cpp";
+			p->m_nLine1b40 = 0x1de;
+			return ret2;
+		}
+		if (sub_10269d30(0x4c) || sub_10269d30(0x4d)) {
+			p->m_b5b80 = 0;
+		} else if (!sub_10269d30(0x6a) && !sub_10269d30(0x6d) && !sub_10269d30(0x6e) && !sub_10269d30(0x6f) && !sub_10269d30(0x6b) && !sub_10269d30(0x70)) {
+			sub_10269d30(0x5e);
+		}
+		break;
+	}
+	return sub_10003daa();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e05e0 size=0xb6
 #include "CNPC_VZombie.h"
 #include "CPASFilter.h"
