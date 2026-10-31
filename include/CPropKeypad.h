@@ -8,7 +8,10 @@ class CPropKeypad
 public:
 	char m_pad0000[0x8c];
 	unsigned int m_hActivator;	// 0x8c
-	char m_pad0090[0x82c - 0x90];
+	char m_pad0090[0x17c - 0x90];
+	float m_flNextThink17c;	// 0x17c
+	char m_pad0180[0x828 - 0x180];
+	int m_nKeySound828;	// 0x828: the precached keystroke sound
 	char m_b082c;	// 0x82c: first byte of the four cleared dwords at +0x82c of CUnknown10217f50
 	char m_pad082d[0x840 - 0x82d];
 	char m_szTitle840[0x40];	// 0x840: the title text of the screen
