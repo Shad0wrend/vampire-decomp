@@ -12,6 +12,23 @@ datamap_t * CNPCMaker_Zombie::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034cad0 size=0x14
+#include "CNPCMaker_Zombie.h"
+
+// TARGET: CNPCMaker_Zombie::vfunc370
+int CNPCMaker_Zombie::vfunc370(int a)
+{
+	void **vt = *(void ***)this;
+	union {
+		void *p;
+		void (CNPCMaker_Zombie::*pm)(int);
+	} u;
+	u.p = vt[368];
+	(this->*u.pm)(a);
+	return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034cb30 size=0x5
 #include "CNPCMaker_Zombie.h"
 bool CNPCMaker_Zombie::vfunc363(int a0)
