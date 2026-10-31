@@ -9,6 +9,14 @@ int CGenericNPC::vfunc138()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034a6b0 size=0x3
+#include "CGenericNPC.h"
+int CGenericNPC::vfunc473()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034aa40 size=0x4b
 #include "CBaseEntity.h"
 #include "CGenericNPC.h"
