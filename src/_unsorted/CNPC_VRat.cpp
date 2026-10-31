@@ -34,6 +34,13 @@ void CNPC_VRat::vfunc333(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ad850 size=0x3
+#include "CNPC_VRat.h"
+void CNPC_VRat::vfunc316(int a0, int a1, int a2)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ad930 size=0x1e
 #include "CNPC_VRat.h"
 
