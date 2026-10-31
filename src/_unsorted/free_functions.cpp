@@ -171037,6 +171037,18 @@ void CBits1042d9c0::sub_1042d9c0(int v)
 unsigned __fastcall sub_1042d9f0(unsigned *p) { return *p >> 28; }
 // END FUNCTION
 
+// FUNCTION: 0x1042da10 size=0x1b
+// TARGET: sub_1042da10
+struct CUnk1042da10 {
+    unsigned int m_flags;
+    void sub_1042da10(char bSet);
+};
+void CUnk1042da10::sub_1042da10(char bSet)
+{
+    m_flags = ((((bSet != 0) ^ m_flags) & 1) ^ m_flags);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042da40 size=0x5
 // TARGET: sub_1042da40
 unsigned char __fastcall sub_1042da40(unsigned char *p) { unsigned char c = *p; c &= 1; return c; }
