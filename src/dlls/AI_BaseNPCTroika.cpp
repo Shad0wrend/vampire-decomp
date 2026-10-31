@@ -643,6 +643,66 @@ int CAI_BaseNPCTroika::sub_102b6fe0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b8320 size=0x259
+#include "CAI_BaseNPCTroika.h"
+#include "engineiface.h"
+
+int CAI_BaseNPCTroika::vfunc606(int unused)
+{
+	if (sub_10014df8(0x48)) {
+		if (sub_10014df8(0x59)) {
+			m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+			m_nLine1b34 = 0x5e1b;
+			return 0xaa;
+		}
+		if ((m_flags5b84 & 0x100) == 0x100) {
+			m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+			m_nLine1b34 = 0x5e20;
+			return 0xb4;
+		}
+		if ((m_flags14bc & 0x40000) == 0x40000) {
+			int r = enginerandom->vfunc2(0, 99);
+			m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+			if (r < 0x46) {
+				m_nLine1b34 = 0x5e28;
+				return 0xb6;
+			}
+			m_nLine1b34 = 0x5e2c;
+			return 0xb4;
+		}
+		if ((m_flags14b8 & 0x10000000) == 0x10000000) {
+			m_flags14b8 &= ~0x10000000;
+			int r = enginerandom->vfunc2(0, 99);
+			m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+			if (r < 0x50) {
+				m_nLine1b34 = 0x5e37;
+				return 0xb6;
+			}
+			m_nLine1b34 = 0x5e3b;
+			return 0xb4;
+		}
+		int r = enginerandom->vfunc2(0, 99);
+		char bCond = sub_10014df8(0x31);
+		m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+		if (bCond) {
+			if (m_nRoll6420 > r) { m_nLine1b34 = 0x5e46; return 0xab; }
+			if (m_nRoll6424 > r) { m_nLine1b34 = 0x5e4a; return 0xb0; }
+			if (m_nRoll6428 > r) { m_nLine1b34 = 0x5e4e; return 0xb3; }
+			if (m_nRoll642c > r) { m_nLine1b34 = 0x5e52; return 0xb2; }
+			m_nLine1b34 = 0x5e56;
+			return 0xb2;
+		}
+		if (m_nRoll6420 > r) { m_nLine1b34 = 0x5e65; return 0xaa; }
+		if (m_nRoll6424 > r) { m_nLine1b34 = 0x5e69; return 0xaf; }
+		if (m_nRoll6428 > r) { m_nLine1b34 = 0x5e6d; return 0xb5; }
+		if (m_nRoll642c > r) { m_nLine1b34 = 0x5e71; return 0xb6; }
+		m_nLine1b34 = 0x5e75;
+		return 0xb4;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b8a10 size=0x3d
 #include "CAI_BaseNPCTroika.h"
 extern char g_105da024[];
