@@ -142502,6 +142502,51 @@ bool CNPC_VHengeyokai::sub_103822a0(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10382400 size=0x1ee
+#include "CBaseEntity.h"
+#include "CEHandleGet.h"
+#include "IPhysicsObject.h"
+#include "CRagdollProp.h"
+#include "CNPC_VHengeyokai.h"
+
+void sub_101cd970(CBaseEntity *pEnt);
+
+// TARGET: CNPC_VHengeyokai::sub_10382400
+void CNPC_VHengeyokai::sub_10382400(void *pArg)
+{
+	CRagdollProp *pEnt = (CRagdollProp *)pArg;
+	if (g_10566458->sub_100290c0(&m_h6690))
+		sub_101cd970(g_10566458->sub_100290c0(&m_h6690));
+	m_h6690 = -1;
+	if (pEnt && g_10566458->sub_100290c0(&m_h6664)) {
+		Vector vecA(0, 0, 0);
+		const Vector *pOrigin = (const Vector *)pEnt->vfunc217();
+		Vector vecB;
+		vecB.x = pOrigin->x;
+		vecB.y = pOrigin->y;
+		vecB.z = pOrigin->z + 48.0f;
+		sub_102c4cc0(&vecA, ((CRagdollProp *)EHandle_Get(m_h6664))->vfunc217(), &vecB);
+		CRagdollProp *pRagdoll = dynamic_cast<CRagdollProp *>((CBaseEntity *)EHandle_Get(m_h6664));
+		if (pRagdoll) {
+			Vector vecZ(0, 0, 0);
+			pRagdoll->vfunc266((int)&vecA, (int)&vecZ);
+		} else {
+			CBaseEntity *pOwner = (CBaseEntity *)EHandle_Get(m_h6664);
+			IPhysicsObject *pPhys = (IPhysicsObject *)pOwner->m_obj36c;
+			if (pPhys) {
+				Vector vecVel, vecAng;
+				Vector vecZ(0, 0, 0);
+				pPhys->vfunc40(&vecVel.x, &vecAng.x);
+				pPhys->vfunc39(&vecA.x, &vecZ.x);
+			}
+		}
+	}
+	m_h6664 = -1;
+	sub_102c43b0(0.75f);
+	sub_10381c00(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103828a0 size=0x9c
 #include "CGlobalEntityList.h"
 extern CGlobalEntityList *g_10566458;
