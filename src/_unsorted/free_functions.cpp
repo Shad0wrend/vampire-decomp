@@ -72866,6 +72866,16 @@ void __fastcall sub_101b9840(char *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b9860 size=0xf
+void sub_101cf2f0(void *p, int n);
+
+// TARGET: sub_101b9860
+void __fastcall sub_101b9860(char *pThis)
+{
+	sub_101cf2f0(pThis + 0x10, 2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b9880 size=0x3b
 extern int g_1070d1b0;
 extern int g_1070d1b4;
