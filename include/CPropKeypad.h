@@ -32,6 +32,7 @@ public:
 	void vfunc276();	// slot 276: fires the output at +0x8a0 (activator: the entity of the handle at +0x8c), sets the byte at +0x8b9, rebuilds the screen (sub_1021df90) and stores the id of the global record named "error" in a global (-1 when there is none)
 	void sub_1021df90();	// rebuilds the keypad screen (stub 0x1001347b), called directly
 	void vfunc273(CBasePlayer *pPlayer, const char *pszCommand);	// slot 273: unless the byte at +0x82c is set: "quit" / "exit" (first 16 characters) let the player leave (sub_10167fd0), any other non-empty command goes to sub_10217f50(0, command); the screen is rebuilt after each
+	void sub_1021dbd0();
 	void sub_1021da40();	// "CPropKeypad::LoadTextStrings": sets the title to "##ERROR##", loads vdata/HackTerminals/prop_keypad.txt and takes the TitleText of the "keypad" entry whose TextID is a prefix match of the text id at +0x884; Warning "Error in CPropKeypad::LoadTextStrings for %s" when the file does not load
 public:
 	int vfunc33();
