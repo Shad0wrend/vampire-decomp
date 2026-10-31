@@ -112672,6 +112672,17 @@ void CWeaponRanged::sub_10257640()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10257820 size=0x16
+struct CUnknown102517e0 { char *sub_102517e0(); };
+
+// TARGET: sub_10257820
+bool __fastcall sub_10257820(void *pThis)
+{
+	char *p = ((CUnknown102517e0 *)pThis)->sub_102517e0();
+	return ((*(int *)(p + 0x3c0)) & 1) == 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10258270 size=0xc
 namespace lifted {
 int sub_10003d91();
