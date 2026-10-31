@@ -46,6 +46,39 @@ CBaseAnimating *CBaseAnimating::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008b530 size=0x23f
+#include "CBaseAnimating.h"
+#include "CBaseToggle.h"
+#include "ScopeTrace.h"
+
+void CBaseAnimating::vfunc31(int pDump)
+{
+	ScopeTrace trace("CBaseAnimating::Dump", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	sub_1009ba60(pDump, "m_flYawSpeed", *(int *)((char *)this + 0x560));
+	sub_1009ba60(pDump, "m_flGroundSpeedScalar", *(int *)((char *)this + 0x564));
+	sub_1009ba60(pDump, "m_flGroundSpeed", *(int *)((char *)this + 0x654));
+	sub_1009ba60(pDump, "m_flLastEventCheck", *(int *)((char *)this + 0x658));
+	sub_1009b8a0(pDump, (int)"m_fSequencePastHalf", *(char *)((char *)this + 0x568));
+	sub_1009b980(pDump, "m_nForceBone", *(int *)((char *)this + 0x660));
+	sub_1009be00(pDump, "m_vecForce", *(Vector *)((char *)this + 0x664));
+	sub_1009b980(pDump, "m_nSkin", *(int *)((char *)this + 0x670));
+	sub_1009b980(pDump, "m_nBody", *(int *)((char *)this + 0x67c));
+	sub_1009b980(pDump, "m_nHitboxSet", *(int *)((char *)this + 0x680));
+	sub_1009ba60(pDump, "m_flModelScale", *(int *)((char *)this + 0x684));
+	sub_1009b980(pDump, "m_nTopColor", *(int *)((char *)this + 0x688));
+	sub_1009b980(pDump, "m_nBottomColor", *(int *)((char *)this + 0x68c));
+	sub_1009c5f0(pDump, "m_flPoseParameter", (int *)((char *)this + 0x690), 0x18);
+	sub_1009b980(pDump, "m_nSequence", *(int *)((char *)this + 0x6f0));
+	sub_1009ba60(pDump, "m_flPlaybackRate", *(int *)((char *)this + 0x6f4));
+	sub_1009ba60(pDump, "m_flCycle", *(int *)((char *)this + 0x6f8));
+	sub_1009ba60(pDump, "m_flEffectStartTime", *(int *)((char *)this + 0x5a4));
+	sub_1009c5f0(pDump, "m_flEncodedController", (int *)((char *)this + 0x6fc), 4);
+	sub_1009b8a0(pDump, (int)"m_bClientSideAnimation", *(char *)((char *)this + 0x70c));
+	sub_1009b980(pDump, "m_nClientSideFrameReset", *(int *)((char *)this + 0x710));
+	((CBaseToggle *)this)->CBaseToggle::vfunc31(pDump);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008bfe0 size=0x86
 #include "CBaseAnimating.h"
 
