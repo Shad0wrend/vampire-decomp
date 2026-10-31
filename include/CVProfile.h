@@ -39,7 +39,11 @@ public:
 	__declspec(dllimport) void PopGroup();
 	__declspec(dllimport) void PushGroup(int nGroupID);
 
-	char m_pad0000[0x100c];
+	char m_bVTuneGroupsEnabled;	// 0x0000
+	char m_pad0001[3];
+	int m_nVTuneGroupID;	// 0x0004
+	int m_GroupIDStack[1024];	// 0x0008
+	int m_nGroupStackDepth;	// 0x1008
 	int m_enabled;	// 0x100c
 	bool m_bAtRoot;	// 0x1010
 	char m_pad1011[3];
