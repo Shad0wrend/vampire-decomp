@@ -20,6 +20,17 @@ int CWeaponIArmor_Lt_Cloth::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f31c0 size=0x6
+#include "CWeaponIArmor_Lt_Cloth.h"
+namespace lifted {
+extern char g_1067ea2c;
+}
+int CWeaponIArmor_Lt_Cloth::vfunc362()
+{
+    return (int)&lifted::g_1067ea2c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f41c0 size=0x1e
 #include "CWeaponIArmor_Lt_Cloth.h"
 
