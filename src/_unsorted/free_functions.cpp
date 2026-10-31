@@ -142739,6 +142739,21 @@ bool CUnknown10381be0::sub_10381be0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10381c00 size=0x54
+#include "CNPC_VHengeyokai.h"
+void CNPC_VHengeyokai::sub_10381c00(char bOn)
+{
+	if (bOn) {
+		m_flags14b8 |= 0x20;
+		float flDelay; flDelay = enginerandom->vfunc1(5.0f, 8.0f);
+		m_fl666c = flDelay + gpGlobals->curtime;
+		m_b667d = 0;
+	} else {
+		m_flags14b8 &= ~0x20;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10381c80 size=0xc
 unsigned char __fastcall sub_10381c80(char *self)
 {
