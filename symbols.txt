@@ -10824,6 +10824,7 @@
 0x1001583e func   ?sub_1030b1d0@CUtlVector280@@QAEXHH@Z CUtlVector280::sub_1030b1d0
 0x10015848 func   ?sub_1028e790@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_1028e790
 0x10015852 func   _item_w_flamethrower item_w_flamethrower
+0x10015857 func   ?vfunc81@CResearchBook_LG_FIREARMS@@QAEHXZ CResearchBook_LG_FIREARMS::vfunc81
 0x1001585c func   ?sub_102e7e00@@YIXPAUCOwner@@@Z sub_102e7e00
 0x10015861 func   ?vfunc0@CMeasureSectionInstance@@UAEPAV1@I@Z CMeasureSectionInstance::vfunc0
 0x10015866 func   ?vfunc193@CItemContainerLock@@QAE?AVVector@@XZ CItemContainerLock::vfunc193
