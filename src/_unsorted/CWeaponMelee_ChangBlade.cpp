@@ -20,6 +20,17 @@ int CWeaponMelee_ChangBlade::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e9680 size=0x6
+#include "CWeaponMelee_ChangBlade.h"
+namespace lifted {
+extern char g_10675b40;
+}
+int CWeaponMelee_ChangBlade::vfunc362()
+{
+    return (int)&lifted::g_10675b40;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecf30 size=0x1e
 #include "CWeaponMelee_ChangBlade.h"
 

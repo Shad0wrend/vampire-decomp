@@ -2173,6 +2173,7 @@
 0x10005038 func   ?vfunc104@CRotDoor@@UAEXXZ CRotDoor::vfunc104
 0x1000503d func   ?sub_1040c430@CUnknown1040cb60@@QAEPAVVector@@PAV2@PBV2@PAVCBaseEntity@@@Z CUnknown1040cb60::sub_1040c430
 0x10005042 func   ?sub_102b5be0@@YADXZ sub_102b5be0
+0x10005047 func   ?vfunc362@CWeaponMelee_ChangBlade@@QAEHXZ CWeaponMelee_ChangBlade::vfunc362
 0x1000504c func   ??0CBaseEntityList@@QAE@XZ CBaseEntityList::CBaseEntityList
 0x10005056 func   ?sub_101ca510@CTriggerUnit101ca510@@QAEXPAVCBaseEntity@@@Z CTriggerUnit101ca510::sub_101ca510
 0x10005060 func   ?vfunc490@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc490
