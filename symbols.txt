@@ -2534,6 +2534,7 @@
 0x10005768 func   ?sub_10078b10@@YIXPAH@Z sub_10078b10
 0x1000576d func   ?vfunc497@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc497
 0x10005772 func   ?sub_101d0410@@YAXHHPBD@Z sub_101d0410
+0x10005777 func   ?sub_101e45b0@CUnknown101e44c0@@QAEXPAVCBaseCombatCharacter@@PAH@Z CUnknown101e44c0::sub_101e45b0
 0x1000577c func   ?sub_1008eec0@CBaseAnimating@@QAEXPBDDD@Z CBaseAnimating::sub_1008eec0
 0x10005786 func   ?sub_10205400@CUnknown10205400@@QAEPAXH@Z CUnknown10205400::sub_10205400
 0x1000578b func   ?sub_10205430@CVDmgBlock16_t@@QAE_NPBU1@@Z CVDmgBlock16_t::sub_10205430

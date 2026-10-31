@@ -86947,6 +86947,73 @@ void CUnknown101e0f00::sub_101e4380(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e45b0 size=0x25e
+#include "CUnknown101e44c0.h"
+#include "CBaseCombatCharacter.h"
+#include "CVStatList_t.h"
+#include "CVStatInfoList_t.h"
+#include "CUnknown101f4c80.h"
+#include "engineserver.h"
+#include <string.h>
+
+__declspec(dllimport) int __cdecl Q_snprintf(char *, int, const char *, ...);
+extern void (__cdecl *g_109f3864)(char *, const char *);
+extern CVStatInfoList_t g_1074e098;
+void sub_101434b0(int ent, int line, const char *text, float duration, int r, int g, int b, int a);
+
+struct SDisciplineChar
+{
+	char m_pad[0xeb0];
+	unsigned int m_nFlagsSrc;	// 0xeb0
+	unsigned int m_nFlagsTgt;	// 0xeb4
+	int GetEdict() { return ((CBaseEntity *)this)->m_pEdict2e0; }
+	int entindex() { return engine->vfunc35(GetEdict()); }
+};
+
+void CUnknown101e44c0::sub_101e45b0(CBaseCombatCharacter *pChar, int *pLine)
+{
+	char buf[512];
+	SDisciplineChar *pDC = (SDisciplineChar *)pChar;
+	void (__cdecl *pfnStrcat)(char *, const char *) = g_109f3864;
+	if (pDC->m_nFlagsSrc && sub_101e44c0(buf, "DisciplineFlagsSrc:", pDC->m_nFlagsSrc)) {
+		pfnStrcat(buf, "\n");
+		int ent = pDC->entindex();
+		sub_101434b0(ent, *pLine, buf, 0, 255, 255, 255, 255);
+		(*pLine)++;
+	}
+	if (pDC->m_nFlagsTgt && sub_101e44c0(buf, "DisciplineFlagsTgt:", pDC->m_nFlagsTgt)) {
+		pfnStrcat(buf, "\n");
+		int ent = pDC->entindex();
+		sub_101434b0(ent, *pLine, buf, 0, 255, 255, 255, 255);
+		(*pLine)++;
+	}
+	bool bAny = false;
+	for (int i = 0; i < 17; i++) {
+		int n = CVStatListSet::Of(pChar)->Find(3)->sub_102012d0(i);
+		if (n > 0) {
+			if (!bAny) {
+				bAny = true;
+				int j = 0;
+				char c;
+				do {
+					c = "Disciplines:"[j];
+					buf[j] = c;
+					j++;
+				} while (c);
+			}
+			int len = strlen(buf);
+			const char *pszName = ((CUnknown101f4c80Str *)((char *)g_1074e098.sub_10200370(i) + 0x14))->Get();
+			Q_snprintf(buf + len, 512 - len, " %s(%d)", pszName, n);
+		}
+	}
+	if (bAny) {
+		int ent = pDC->entindex();
+		sub_101434b0(ent, *pLine, buf, 0, 255, 255, 255, 255);
+		(*pLine)++;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e48b0 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);
