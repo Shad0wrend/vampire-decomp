@@ -229,7 +229,8 @@ public:
 	EHANDLE m_hPlaceholder1da4;
 
 	float m_f1DA8;	// 0x1DA8: when the next random view punch is due
-	char m_pad1DAC[0x1dd8 - 0x1dac];	// 0x1DAC .. 0x1DD7
+	int m_n1DAC;	// 0x1DAC: sent with the quest journal message
+	char m_pad1DB0[0x1dd8 - 0x1db0];	// 0x1DB0 .. 0x1DD7
 	float m_f1DD8;	// 0x1DD8: curtime stamp of the last slot 24 call
 	char m_pad1DDC[0x1dfc - 0x1ddc];	// 0x1DDC .. 0x1DFB
 	EHANDLE m_hEnt1DFC;	// 0x1DFC: entity handle, cleared by sub_10183330
