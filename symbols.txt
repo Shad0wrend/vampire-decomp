@@ -6745,6 +6745,7 @@
 0x1000e4ee func   ?vfunc278@CBaseCombatWeapon@@UAEMXZ CBaseCombatWeapon::vfunc278
 0x1000e4f3 func   ?vfunc5@CPhysicsProp@@QAEPAV1@I@Z CPhysicsProp::vfunc5
 0x1000e507 func   ?vfunc546@CNPC_VSheriffSwarm@@QAEHH@Z CNPC_VSheriffSwarm::vfunc546
+0x1000e50c func   ?vfunc105@CAI_BaseHumanoid@@QAEXPAX@Z CAI_BaseHumanoid::vfunc105
 0x1000e511 func   ?sub_103d7090@CWerewolfUnit@@QAEPAUCForwardHintX@@PAU2@@Z CWerewolfUnit::sub_103d7090
 0x1000e516 func   ?sub_102f4e00@CAI_NodeGraph@@QAEXXZ CAI_NodeGraph::sub_102f4e00
 0x1000e51b func   ?vfunc362@CNPCMaker_Fleshpile@@UAE_NH@Z CNPCMaker_Fleshpile::vfunc362

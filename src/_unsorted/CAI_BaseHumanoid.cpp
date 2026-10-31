@@ -1,6 +1,39 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1025e510 size=0x1e5
+void CAI_BaseHumanoid::vfunc105(void *p)
+{
+    sub_1000245f(p);
+    m_nPose5fb8[0] = sub_10009ac5("body_trans_Y");
+    m_nPose5fb8[1] = sub_10009ac5("body_trans_X");
+    m_nPose5fb8[2] = sub_10009ac5("body_lift");
+    m_nPose5fb8[3] = sub_10009ac5("body_yaw");
+    m_nPose5fb8[4] = sub_10009ac5("body_pitch");
+    m_nPose5fb8[5] = sub_10009ac5("body_roll");
+    m_nPose5fb8[6] = sub_10009ac5("spine_yaw");
+    m_nPose5fb8[7] = sub_10009ac5("spine_pitch");
+    m_nPose5fb8[8] = sub_10009ac5("spine_roll");
+    m_nPose5fb8[9] = sub_10009ac5("neck_trans");
+    m_nPose5fe0[0] = sub_10009ac5("head_yaw");
+    m_nPose5fe0[1] = sub_10009ac5("head_pitch");
+    m_nPose5fe0[2] = sub_10009ac5("head_roll");
+    m_nPose5fec[0] = sub_1001337c("move_rightleft");
+    m_nPose5fec[1] = sub_1001337c("move_forwardback");
+    m_nPose5fec[2] = sub_1001337c("move_updown");
+    m_nPose5fec[3] = sub_1001337c("body_rightleft");
+    m_nPose5fec[4] = sub_1001337c("body_updown");
+    m_nPose5fec[5] = sub_1001337c("body_tilt");
+    m_nPose5fec[6] = sub_1001337c("chest_rightleft");
+    m_nPose5fec[7] = sub_1001337c("chest_updown");
+    m_nPose5fec[8] = sub_1001337c("chest_tilt");
+    m_nPose5fec[9] = sub_1001337c("head_forwardback");
+    m_nPose5fec[10] = sub_1001337c("head_rightleft");
+    m_nPose5fec[11] = sub_1001337c("head_updown");
+    m_nPose5fec[12] = sub_1001337c("head_tilt");
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025e780 size=0x13
 #include "CBaseFlex.h"
 
