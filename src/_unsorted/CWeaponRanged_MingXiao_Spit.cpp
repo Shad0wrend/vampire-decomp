@@ -20,6 +20,17 @@ int CWeaponRanged_MingXiao_Spit::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10237930 size=0x6
+#include "CWeaponRanged_MingXiao_Spit.h"
+namespace lifted {
+extern char g_105bf908;
+}
+int CWeaponRanged_MingXiao_Spit::vfunc362()
+{
+    return (int)&lifted::g_105bf908;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a590 size=0x1e
 #include "CWeaponRanged_MingXiao_Spit.h"
 

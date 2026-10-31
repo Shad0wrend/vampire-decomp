@@ -8716,6 +8716,7 @@
 0x100112c5 func   ?sub_103708c0@@YAXXZ sub_103708c0
 0x100112ca func   ?vfunc461@CNPC_VHumanCombatant@@QAEHXZ CNPC_VHumanCombatant::vfunc461
 0x100112cf func   ?sub_1034d590@CUnknown1034d590@@QAEXH@Z CUnknown1034d590::sub_1034d590
+0x100112d4 func   ?vfunc362@CWeaponRanged_MingXiao_Spit@@QAEHXZ CWeaponRanged_MingXiao_Spit::vfunc362
 0x100112d9 func   ?sub_10334c20@CBaseCombatCharacter@@QAE_NPAVCBaseCombatWeapon@@@Z CBaseCombatCharacter::sub_10334c20
 0x100112e3 func   ?sub_102673f0@@YAHHH@Z sub_102673f0
 0x100112ed func   ?vfunc77@CNPC_VGhoulCroucher@@UAEXXZ CNPC_VGhoulCroucher::vfunc77
