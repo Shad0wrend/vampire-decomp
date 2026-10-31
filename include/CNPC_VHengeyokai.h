@@ -109,7 +109,8 @@ public:
 	void sub_10273e80(char flag);	// CAI_BaseNPC::sub_10273e80 (stub 0x1000ac68), called directly
 	void vfunc259(CNPC_VHengeyokaiEvent *pEvent);	// slot 259 "HandleAnimEvent" (plain member): event 0x7f8 (not while the carry flag is set): sub_10382670 with the entity of the handle at +0x6664 and the bone name table entry [+0x6668]; 0x802 / 0x803 (with the byte at +0x6694): the origin (slot 220) to sub_101cdba0 with the constants 2.0, 0.2, 0.2, 1024.0, then slot 617; 0xbbd (not while carried): sub_10382400 with the slot 167 entity; else CNPC_VHuman::vfunc259
 	void sub_100076bc(CNPC_VHengeyokaiEvent *pEvent);	// CNPC_VHuman::vfunc259, called directly
-	void sub_10382670(void *pEnt, const char *pszBone);	// stub 0x100148ad
+	bool sub_10382670(void *pEnt, const char *pszBone);	// stub 0x100148ad: grabs pEnt (a ragdoll) at the bone named "Bip01 R Hand" with a new phys_animlink; false when it cannot
+	struct CHengeyokaiAnimView *sub_100952d0(int n);	// CBaseAnimating::sub_100952d0 (stub 0x10013d8b), called directly
 	void sub_10382400(void *pEnt);	// stub 0x10012319
 	void sub_102c4cc0(const Vector *pA, float *pOrigin, const Vector *pB);	// stub 0x10009a57
 	void sub_10381c00(char bOn);	// stub 0x10014899: sets / clears bit 5 of +0x14b8; setting also re-arms the timer at +0x666c (curtime + RandomFloat(8, 5))
