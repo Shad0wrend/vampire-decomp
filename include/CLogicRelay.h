@@ -10,6 +10,8 @@ class CLogicRelay : public CBaseEntity
 {
 public:
 	CLogicRelay *sub_101363b0();
+	unsigned char sub_101363f0();	// CLogicRelay::vfunc117 body (CLogicalEntity::vfunc117 at stub 0x1000f7e5, & 0xfd)
+	int sub_1000f7e5();	// CLogicalEntity::vfunc117 (stub 0x1000f7e5), called directly
 	void sub_100090fc(int flag);	// the CConstraintAnchorBase constructor body (0x100090fc), called on this
 	void sub_101364e0(inputdata_t *pInputData);	// "CLogicRelay::InputTrigger" (plain member): fires m_OnTrigger with the activator unless disabled or waiting for the refire; spawn flag 1 removes the relay, without flag 2 it waits for the refire and queues the "EnableRefire" input after the output's longest delay + 0.001
 
