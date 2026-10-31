@@ -67882,6 +67882,20 @@ void sub_10196850(PyInst *inst)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10196940 size=0x1b
+// TARGET: sub_10196940
+int sub_101cd9e0(int a);
+int sub_101966a0(int a);
+int sub_10196940()
+{
+    int r = sub_101cd9e0(1);
+    if (r) {
+        return sub_101966a0(r);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10196970 size=0x98
 #include "CGlobalEntityList.h"
 extern CGlobalEntityList g_106eb5d8;
