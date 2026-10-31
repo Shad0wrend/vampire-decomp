@@ -60940,6 +60940,24 @@ void CBasePlayer::sub_10170750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10170ad0 size=0x1a
+struct CUnk10170ad0
+{
+	char m_pad0000[0x1c54];
+	char *m_p1c54;
+
+	void sub_10170b00();
+	void sub_10170ad0(char *p);
+};
+
+// TARGET: sub_10170ad0
+void CUnk10170ad0::sub_10170ad0(char *p)
+{
+	m_p1c54 = *p ? p : 0;
+	sub_10170b00();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10170cb0 size=0x27
 // TARGET: CUnknown10170cb0::sub_10170cb0
 #include "CUnknown10170cb0.h"
