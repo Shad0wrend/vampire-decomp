@@ -168044,6 +168044,24 @@ void S104273f0::sub_104273f0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10427480 size=0x19
+struct CUnk10427480
+{
+	int m_nCount;
+
+	int *sub_10427480(int i);
+};
+
+// TARGET: sub_10427480
+int *CUnk10427480::sub_10427480(int i)
+{
+	if (i >= m_nCount) {
+		return 0;
+	}
+	return (int *)this + i * 9 + 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104274b0 size=0x49
 #include "CAmmoDef.h"
 #include <string.h>
