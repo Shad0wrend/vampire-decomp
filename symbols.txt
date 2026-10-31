@@ -9511,6 +9511,7 @@
 0x100121e3 func   _npc_VMoleman npc_VMoleman
 0x100121e8 func   ?vfunc173@CSprite@@UAEXHHHH@Z CSprite::vfunc173
 0x100121f2 func   ?sub_1010b530@CFire@@QAEXM@Z CFire::sub_1010b530
+0x100121f7 func   ?sub_100dda20@@YIXPAX@Z sub_100dda20
 0x1001220b func   ?sub_10068380@@YAXHHPAHHHHH0D@Z sub_10068380
 0x10012210 func   ?vfunc362@CWeaponMelee_Fists@@QAEHXZ CWeaponMelee_Fists::vfunc362
 0x10012215 func   ?sub_101308d0@CLight@@QAEXXZ CLight::sub_101308d0

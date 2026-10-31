@@ -38075,6 +38075,19 @@ void CUnknown100dd990::sub_100dd990(int type, const CUnknown100dd990Vec *pA, con
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dda20 size=0x12
+#include "vampire.h"
+
+void __fastcall sub_100ddd20(void *pThis);
+
+// TARGET: sub_100dda20
+void __fastcall sub_100dda20(void *pThis)
+{
+	*(unsigned int *)(*(char **)((char *)pThis + 0x3c) + 0x268) |= 0x14000;
+	sub_100ddd20(pThis);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dda50 size=0x6c
 #include "CUnknown100dda50.h"
 
