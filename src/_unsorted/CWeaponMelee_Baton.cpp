@@ -31,6 +31,14 @@ int CWeaponMelee_Baton::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e8300 size=0x6
+#include "CWeaponMelee_Baton.h"
+int CWeaponMelee_Baton::vfunc363()
+{
+    return 0xde;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ece70 size=0x1e
 #include "CWeaponMelee_Baton.h"
 
