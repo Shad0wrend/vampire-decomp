@@ -20,6 +20,17 @@ int CWeaponRanged_Pistol_Thirtyeight::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10237180 size=0x6
+#include "CWeaponRanged_Pistol_Thirtyeight.h"
+namespace lifted {
+extern char g_105bed60;
+}
+int CWeaponRanged_Pistol_Thirtyeight::vfunc362()
+{
+    return (int)&lifted::g_105bed60;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a530 size=0x1e
 #include "CWeaponRanged_Pistol_Thirtyeight.h"
 
