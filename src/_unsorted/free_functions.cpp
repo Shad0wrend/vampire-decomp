@@ -121224,6 +121224,28 @@ PatrolPlace* sub_102dd8b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dd9c0 size=0x60
+struct sub_Rec102dd9c0
+{
+	const char *m_name;
+	char pad[0x2a4 - 4];
+	const char *Name() const { return m_name ? m_name : ""; }
+};
+extern int g_10931bcc;
+extern sub_Rec102dd9c0 g_109272c8[];
+extern "C" int _strcmpi(const char *, const char *);
+
+sub_Rec102dd9c0 *sub_102dd9c0(const char *name)
+{
+	for (int i = 0; i < g_10931bcc; i++)
+	{
+		if (!_strcmpi(name, g_109272c8[i].Name()))
+			return &g_109272c8[i];
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dda40 size=0x11
 struct CPairFields102dda40 {
     int pad0;
