@@ -17,6 +17,7 @@ public:
 	int vfunc142(CBaseEntity *pEnt);	// slot 142 (plain member): CBaseEntity::vfunc227 on this with pEnt, then when pEnt's word at +0x28 is set the helper at +0x468 is given (pEnt's word at +0x2c, this, 0); always 1
 	void sub_1000850d(CBaseEntity *pEnt);	// CBaseEntity::vfunc227 (stub 0x1000850d), called directly on this
 	bool vfunc223();	// slot 223 override: warns when there is no physics object (+0x36c), otherwise wakes it / copies the origin to +0x458 and sets the flag object at +0x1b0
+	void vfunc241(int a);	// slot 241 "CPhysBox::CreateVPhysics" (plain member): SetSolid(6) and, with spawn flag bit 2, AddSolidFlags(4) (both inlined scope traces), then VPhysicsInitNormal(GetSolid(), GetSolidFlags(), true), PhysSetGameFlags(obj, 1) for material type 1, then the mass: scaled by the float at +0x454 when it is above zero, replaced by the float at +0x464 when that is above zero, clamped to 1.0 .. 1000000.0
 	void vfunc226(int a);	// slot 226 override (plain member): with the flag byte at +0x4c8 set, marks the entity changed, runs CBaseEntity::vfunc226(a) and, when bit 0 of the flags at +0x204 is set and the origin (slot 220) moved from the one at +0x458, fires the helper at +0x480 and the entity's name outputs (sub_101c0b80(name, this, this, 3, 0)), then clears the flag
 	void vfunc243(int a);	// as in CPhysBox (transplant)
 	CPhysBox *sub_1004e0a0();	// as in CKeepUpright (transplant)
