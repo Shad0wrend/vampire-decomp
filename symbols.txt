@@ -11178,6 +11178,7 @@
 0x10015c30 func   ?sub_10338cb0@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10338cb0
 0x10015c3a func   ?sub_101be0e0@CStealthKillRules@@QAEXXZ CStealthKillRules::sub_101be0e0
 0x10015c3f func   ?vfunc103@CNPC_VDog@@UAEXXZ CNPC_VDog::vfunc103
+0x10015c49 func   ?vfunc80@CWeaponRanged_Rifle_M37@@QAEHXZ CWeaponRanged_Rifle_M37::vfunc80
 0x10015c4e func   ?sub_1034d2d0@CNPCMaker_Zombie@@QAEXXZ CNPCMaker_Zombie::sub_1034d2d0
 0x10015c53 func   ?sub_1030b2a0@CUnk1030b2a0@@QAEPAU1@PBU1@@Z CUnk1030b2a0::sub_1030b2a0
 0x10015c5d func   ?sub_10255c30@CBaseCombatWeapon@@QAEXPAX@Z CBaseCombatWeapon::sub_10255c30
