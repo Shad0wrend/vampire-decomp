@@ -73896,6 +73896,14 @@ bool sub_101bf550(const char **a, const char **b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bf680 size=0x7
+// TARGET: sub_101bf680
+unsigned int __fastcall sub_101bf680(char *pThis)
+{
+    return *(unsigned short *)(pThis + 0x12);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bf6a0 size=0x15b
 #include "CUtlRBTree12.h"
 #include "utlrbtree.h"
