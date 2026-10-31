@@ -8863,6 +8863,7 @@
 0x100106b8 func   ?sub_10203780@@YAPBDH@Z sub_10203780
 0x100106d1 func   ??0CAI_Navigator@@QAE@H@Z CAI_Navigator::CAI_Navigator
 0x100106d6 func   ?vfunc509@CNPC_VCamera@@UAE_NXZ CNPC_VCamera::vfunc509
+0x100106e0 func   ?sub_100b4e30@@YAXPAX@Z sub_100b4e30
 0x100106ea func   ?vfunc3@CTESpriteSpray@@UAEXPBVVector@@0@Z CTESpriteSpray::vfunc3
 0x100106ef func   ?vfunc1@CChoreoEventCallback@@UAEXMHH@Z CChoreoEventCallback::vfunc1
 0x10010703 func   ?vfunc599@CNPC_VMingXiao@@UAE_NH@Z CNPC_VMingXiao::vfunc599

@@ -29610,6 +29610,18 @@ int sub_100b4e10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b4e30 size=0x1c
+extern unsigned int g_10552818;
+
+void sub_100b4e30(void *p)
+{
+	if (p == 0)
+		g_10552818 = 0xffffffff;
+	else
+		g_10552818 = *(unsigned int *)((char *)p + 0x48);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4e60 size=0x6
 namespace lifted {
 extern int g_106cff54;
