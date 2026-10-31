@@ -15366,6 +15366,26 @@ float CUnknown10074ab0::sub_10074ab0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10074ae0 size=0x17
+struct CUnknown10074ae0
+{
+	char m_pad0000[0x10];
+	float m_f10;
+
+	float sub_10074ae0(int a);
+};
+
+// TARGET: CUnknown10074ae0::sub_10074ae0
+float CUnknown10074ae0::sub_10074ae0(int a)
+{
+	if (a == 0)
+	{
+		return m_f10;
+	}
+	return 1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10074b10 size=0xa8
 #include "CFlexAnimationTrack.h"
 #include "CUnknown10075aa0.h"
