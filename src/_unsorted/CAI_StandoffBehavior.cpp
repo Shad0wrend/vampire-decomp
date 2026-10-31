@@ -93,3 +93,9 @@ void CAI_StandoffBehavior::vfunc26(int a, int b)
         m_unk4c = 1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x102c7ef0 size=0x6
+// TARGET: sub_102c7ef0
+extern unsigned char g_10601874;
+unsigned char __cdecl sub_102c7ef0(void) { return g_10601874; }
+// END FUNCTION

@@ -7727,6 +7727,7 @@
 0x10010046 func   ?sub_10082520@@YADPAVCBaseEntity@@PAUCSceneView82520@@@Z sub_10082520
 0x10010055 func   ?sub_10332240@@YIMPAD@Z sub_10332240
 0x10010064 func   ?vfunc625@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc625
+0x10010069 func   ?sub_102c7ef0@@YAEXZ sub_102c7ef0
 0x10010078 func   ?vfunc124@CNPC_VZombie@@UAEHXZ CNPC_VZombie::vfunc124
 0x1001007d func   ?sub_10382f60@CNPC_VHengeyokai@@QAEHXZ CNPC_VHengeyokai::sub_10382f60
 0x1001008c func   ?vfunc103@CWorld@@UAEXXZ CWorld::vfunc103
