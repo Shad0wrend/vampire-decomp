@@ -12,6 +12,23 @@ datamap_t * CNPCMaker_Fleshpile::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034be90 size=0x14
+#include "CNPCMaker_Fleshpile.h"
+
+// TARGET: CNPCMaker_Fleshpile::vfunc370
+int CNPCMaker_Fleshpile::vfunc370(int a)
+{
+	void **vt = *(void ***)this;
+	union {
+		void *p;
+		void (CNPCMaker_Fleshpile::*pm)(int);
+	} u;
+	u.p = vt[368];
+	(this->*u.pm)(a);
+	return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034bef0 size=0x5
 #include "CNPCMaker_Fleshpile.h"
 bool CNPCMaker_Fleshpile::vfunc363(int a0)
