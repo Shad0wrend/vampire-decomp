@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10231200 size=0x6
+#include "CTriggerElectricBugaloo.h"
+namespace lifted {
+extern char g_105b5960;
+}
+int CTriggerElectricBugaloo::vfunc82()
+{
+    return (int)&lifted::g_105b5960;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102312e0 size=0x4c
 #include "CTriggerElectricBugaloo.h"
 void __fastcall sub_100cd2d0(void *p);
