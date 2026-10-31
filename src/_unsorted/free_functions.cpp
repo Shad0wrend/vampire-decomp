@@ -79329,6 +79329,17 @@ char __stdcall sub_101d6500(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d6550 size=0x30
+#include "CUnk101d6aa0.h"
+void CUnk101d6aa0::sub_101d6550(void *pCharacter)
+{
+	for (int i = 0; i < m_nEntries; i++) {
+		if (!m_ppEntries[i]->sub_101d6100(pCharacter))
+			return;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d6590 size=0x96
 #include "CUnknown101d7520.h"
 

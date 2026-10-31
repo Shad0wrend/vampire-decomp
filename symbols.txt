@@ -1926,6 +1926,7 @@
 0x10004cf0 func   ?vfunc603@CNPC_VMingXiao@@QAEMPAM0@Z CNPC_VMingXiao::vfunc603
 0x10004cfa func   ?sub_104121f0@@YAXXZ sub_104121f0
 0x10004d04 func   ?sub_101b1dd0@@YAHHH@Z sub_101b1dd0
+0x10004d09 func   ?sub_101d6550@CUnk101d6aa0@@QAEXPAX@Z CUnk101d6aa0::sub_101d6550
 0x10004d18 func   ?sub_102a1470@@YIHPAUN@@@Z sub_102a1470
 0x10004d1d func   ?vfunc196@CHL2_Player@@UAE?AVVector@@XZ CHL2_Player::vfunc196
 0x10004d2c func   ?sub_1022b480@S1022b480@@QAEXAAUinputdata_t@@@Z S1022b480::sub_1022b480
