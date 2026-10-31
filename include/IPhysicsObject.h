@@ -20,7 +20,7 @@ public:
 	virtual void vfunc32(const Vector *pForce, const Vector *pWorldPosition, Vector *pCenterForce, Vector *pCenterTorque);	// slot 32 CalculateForceOffset
 	virtual void vfunc33(const Vector *pForce, const Vector *pWorldPosition, Vector *pCenterForce, Vector *pCenterTorque);	// slot 33: the same four arguments (CPhysThruster::vfunc241 asks it for the thruster's linear / angular parts)
 	virtual void vfunc34(); virtual void vfunc35(); virtual void vfunc36(); virtual void vfunc37();
-	virtual void vfunc38(); virtual void vfunc39();
+	virtual void vfunc38(); virtual void vfunc39(float *pPosition, float *pAngles);	// slot 39 GetPosition
 	virtual void vfunc40(float *pVelocity, float *pAngVelocity);	// slot 40 GetVelocity (either pointer may be null)
 	virtual void vfunc41(const Vector *pVelocity, const Vector *pAngVelocity);	// slot 41 AddVelocity
 	virtual void vfunc42();
