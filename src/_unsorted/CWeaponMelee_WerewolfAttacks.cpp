@@ -20,6 +20,17 @@ int CWeaponMelee_WerewolfAttacks::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e8640 size=0x6
+#include "CWeaponMelee_WerewolfAttacks.h"
+namespace lifted {
+extern char g_106745c0;
+}
+int CWeaponMelee_WerewolfAttacks::vfunc362()
+{
+    return (int)&lifted::g_106745c0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecea0 size=0x1e
 #include "CWeaponMelee_WerewolfAttacks.h"
 
