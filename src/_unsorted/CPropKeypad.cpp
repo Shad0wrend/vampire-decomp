@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1021d6d0 size=0x6
+#include "CPropKeypad.h"
+namespace lifted {
+extern char g_105af80c;
+}
+int CPropKeypad::vfunc82()
+{
+    return (int)&lifted::g_105af80c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021d8e0 size=0x83
 #include "CPropKeypad.h"
 
