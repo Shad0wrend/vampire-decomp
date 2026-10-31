@@ -8738,6 +8738,30 @@ void __fastcall sub_100576f0(int *param_1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057740 size=0x63
+#include <stdlib.h>
+#include "CUnknown10057680.h"
+struct GlobalEntRec_t
+{
+	char m_szName[0x40];
+	char m_szMap[0x20];
+	int m_nState;
+	GlobalEntRec_t *m_pNext;
+};
+extern char g_106b8540[];
+__declspec(dllimport) char *Q_strncpy(char *, const char *, int);
+void CUnknown10057680::sub_10057740(const char *pszName, const char *pszMap, int nState)
+{
+	GlobalEntRec_t *pNew = (GlobalEntRec_t *)calloc(0x68, 1);
+	pNew->m_pNext = (GlobalEntRec_t *)m_unk0;
+	m_unk0 = (int)pNew;
+	Q_strncpy(pNew->m_szName, pszName ? pszName : g_106b8540, 0x40);
+	Q_strncpy(pNew->m_szMap, pszMap ? pszMap : g_106b8540, 0x20);
+	pNew->m_nState = nState;
+	m_unk4++;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057850 size=0x6d
 struct IVisitor { virtual void v0(); virtual void v1(); virtual void v2(); virtual int v3(const char *name, void *data, int a, void *desc, int n); };
 extern char g_1053fdd4[];
