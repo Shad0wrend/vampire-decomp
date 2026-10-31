@@ -119,7 +119,8 @@ public:
 	char m_b6078;	// 0x6078: set in Spawn
 	char m_pad6079[0x6670 - 0x6079];
 	unsigned int m_hTarget;
-	char m_posBuf[0x10];
+	char m_posBuf[0xc];
+	int m_n6680;
 	EHANDLE m_hEnt6684;
 	char m_posBuf2[4];
 	int m_state;
