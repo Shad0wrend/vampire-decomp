@@ -133,7 +133,7 @@ public:
 	void sub_103b9f90(int a, float b);
 	void sub_103b9f50(int a);
 	void sub_102c43b0(float delay);
-	void sub_103be0b0(int a);	// stub 0x1000694c, called directly
+	void sub_103be0b0(char bOn);	// stub 0x1000694c: sets / clears bit 5 of +0x14b8; setting also re-arms the timer at +0x66a4 (curtime + RandomFloat(7.5, 10))
 	void sub_103bf170();
 	void sub_103be050(int a);	// stub 0x1000f556, called directly with 0
 	void sub_1029adb0(int a);	// CAI_BaseNPCTroika::vfunc448 (stub 0x100054bb), called directly
