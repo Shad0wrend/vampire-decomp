@@ -128829,6 +128829,34 @@ int __stdcall sub_1030c600(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030c800 size=0x1e6
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" __declspec(dllimport) void Error(const char *fmt, ...);
+
+unsigned int __stdcall sub_1030c800(const char *pszName)
+{
+	if (!_strcmpi(pszName, "PROVOKED")) return 0x1;
+	if (!_strcmpi(pszName, "INCOVER")) return 0x2;
+	if (!_strcmpi(pszName, "SUSPICIOUS")) return 0x4;
+	if (!_strcmpi(pszName, "PATH_FAILED")) return 0x20;
+	if (!_strcmpi(pszName, "FLINCHED")) return 0x40;
+	if (!_strcmpi(pszName, "TOURGUIDE")) return 0x100;
+	if (!_strcmpi(pszName, "LOCKED_HINT")) return 0x400;
+	if (!_strcmpi(pszName, "TURNING")) return 0x2000;
+	if (!_strcmpi(pszName, "TURNHACK")) return 0x4000;
+	if (!_strcmpi(pszName, "HAD_ENEMY")) return 0x8000;
+	if (!_strcmpi(pszName, "HAD_PLAYER")) return 0x10000;
+	if (!_strcmpi(pszName, "HAD_LOS")) return 0x20000;
+	if (!_strcmpi(pszName, "INVESTIGATING")) return 0x8000000;
+	if (!_strcmpi(pszName, "CUSTOM4")) return 0x10000000;
+	if (!_strcmpi(pszName, "CUSTOM3")) return 0x20000000;
+	if (!_strcmpi(pszName, "CUSTOM2")) return 0x40000000;
+	if (!_strcmpi(pszName, "CUSTOM1")) return 0x80000000;
+	Error("Schedule has invalid Memory ID '%s'\n", pszName);
+	return 0xffffffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030ca70 size=0x67
 extern "C" int _strcmpi(const char *, const char *);
 extern void (*g_109f366c)(const char *, ...);
