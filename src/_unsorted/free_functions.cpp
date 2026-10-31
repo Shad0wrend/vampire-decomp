@@ -101228,6 +101228,17 @@ CPropKeypad *CPropKeypad::sub_1021d890()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021dbd0 size=0x17
+#include "CPropKeypad.h"
+#include "CBaseEntity.h"
+
+void CPropKeypad::sub_1021dbd0()
+{
+    sub_1021df90();
+    ((CBaseEntity *)this)->sub_100ac4e0(0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021df90 size=0xdb
 #include "CPropKeypad.h"
 #include "CUnknown10217f50.h"

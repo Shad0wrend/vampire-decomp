@@ -836,6 +836,7 @@
 0x100027bb func   ?sub_100b3840@CBaseEntity@@QAEXI@Z CBaseEntity::sub_100b3840
 0x100027c0 func   ?vfunc82@CGameSign@@UAEPAUdatamap_t@@XZ CGameSign::vfunc82
 0x100027ca func   ?sub_10072e40@CUnknown10072e40@@QAEPADXZ CUnknown10072e40::sub_10072e40
+0x100027cf func   ?sub_1021dbd0@CPropKeypad@@QAEXXZ CPropKeypad::sub_1021dbd0
 0x100027d4 func   ?sub_100eec70@CBaseDoor@@QAEDPAX@Z CBaseDoor::sub_100eec70
 0x100027de func   _item_m_wallet item_m_wallet
 0x100027e3 func   ?sub_10264450@CUnknown102e12c0@@QAEXXZ CUnknown102e12c0::sub_10264450
