@@ -59,6 +59,7 @@ public:
 	bool sub_10336920();	// "CBaseCombatCharacter::IsMale" (matched under the provisional class name Ent)
 	void sub_103326b0(float amount);
 	void sub_10339560();
+	void sub_10337980(int nHistory);	// sets the character's history (-1 for none), called directly
 	int sub_10337a60();	// "CBaseCombatCharacter::GetVHistor..." getter
 	int sub_10323210();	// "CBaseCombatCharacter::GetPresenceBenefit": returns the field at +0xe80
 	int sub_103232b0();	// "CBaseCombatCharacter::GetShakyHandsPenalty": scope trace, the dword at +0xe88, or (int)(2 * slot 344) when it is zero
