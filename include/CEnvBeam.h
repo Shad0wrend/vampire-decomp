@@ -18,6 +18,7 @@ public:
 	void sub_10100b60();	// the lasting-beam tail of vfunc113, called directly (stub 0x10004ea3)
 	void sub_100ff090();	// "CEnvBeam::TriggerThink"-like: schedules the next think (the restrike time at +0x510, random in 0..restrike with spawn flag 4, from now, plus the life) when the life is set, marks the beam active, then strikes: with an end entity name (+0x4fc) through sub_100ff310, without a start name (+0x4f8) through sub_101001e0, else at the origin of the entity of that name (sub_100bbdf0) or DevMsg "env_beam: unknown entity"
 	CBaseEntity *sub_100bbdf0(const char *pszName);	// finds the entity of that name (stub 0x10006faf)
+	void sub_100ff020();	// "CEnvBeam::TurnOff"-like: clears the active flag (+0x4f4), hides a lasting beam (life 0, spawn flag 8 clear), clears the next think, then CBaseEntity::sub_100ac4e0(0, 0, 0)
 	void sub_100ff310();	// stub 0x10009877
 	void sub_101001e0();	// stub 0x100118ec
 	void sub_10100860(const float *pPos);	// stub 0x100078ab: strikes between this beam and the position
