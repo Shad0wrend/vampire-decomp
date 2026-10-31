@@ -70,4 +70,5 @@ public:
 	virtual int vfunc580();
 public:
 	virtual int vfunc451();
+	virtual char vfunc602();	// slot 602: true when the NPC may carry on (difficulty-scaled timer at +0x6268, then the behaviour object at +0x65e8 must not hold this entity)
 };
