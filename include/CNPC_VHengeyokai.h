@@ -63,7 +63,9 @@ public:
 
 	char m_pad0004[0x670 - 4];
 	int m_n670;	// 0x670: state, 1 while transformed
-	char m_pad0674[0x5cc0 - 0x674];
+	char m_pad0674[0x14b8 - 0x674];
+	unsigned int m_flags14b8;	// 0x14b8: bit 5 set while hiding
+	char m_pad14bc[0x5cc0 - 0x14bc];
 	int m_n5cc0;	// 0x5cc0: schedule state, 2 while a schedule is running
 	char m_pad5cc4[0x5d44 - 0x5cc4];
 	CAI_Motor *m_pMotor5d44;	// 0x5d44
