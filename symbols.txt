@@ -6006,6 +6006,7 @@
 0x1000c603 func   ?sub_101681a0@@YI_NPAUHolder@@@Z sub_101681a0
 0x1000c608 func   ?vfunc300@CWeaponMelee_FireAxe@@QAEXXZ CWeaponMelee_FireAxe::vfunc300
 0x1000c60d func   ?vfunc390@CNPC_VGargoyle@@QAEHPAX@Z CNPC_VGargoyle::vfunc390
+0x1000c612 func   ?vfunc81@CItemGWatchFancy@@QAEHXZ CItemGWatchFancy::vfunc81
 0x1000c617 func   ?sub_10150e30@@YGHH@Z sub_10150e30
 0x1000c61c func   ?sub_103615c0@CNPC_VAsianVampire@@QAEPAXXZ CNPC_VAsianVampire::sub_103615c0
 0x1000c626 func   ?sub_10182dd0@CUnknown10182dd0@@QAEHHH@Z CUnknown10182dd0::sub_10182dd0
