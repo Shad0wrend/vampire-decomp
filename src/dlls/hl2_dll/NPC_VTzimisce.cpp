@@ -109,6 +109,27 @@ int CNPC_VTzimisce::sub_103bca20(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103bcaf0 size=0x4c
+#include "CNPC_VTzimisce.h"
+#include "CNPC_VBach.h"
+
+struct CTzimisceTask { char pad[0x1c]; int m_nNode; };
+struct CRangeNode_102ea280 { int sub_102ea280(int a); };
+extern const char g_1065c7e0[];
+
+int CNPC_VTzimisce::sub_103bcaf0(int a)
+{
+	if (sub_10269aa0(0x5d)) {
+		*(const char **)((char *)this + 0x1b30) = g_1065c7e0;
+		*(int *)((char *)this + 0x1b34) = 0xb85;
+		return 0x170;
+	}
+	int node = m_pTask5c38->m_nNode;
+	CRangeNode_102ea280 *pRange = (CRangeNode_102ea280 *)((CNPC_VBach *)this)->vfunc580();
+	return pRange->sub_102ea280(node);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103bcb60 size=0x76
 #include "CNPC_VTzimisce.h"
 #define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
