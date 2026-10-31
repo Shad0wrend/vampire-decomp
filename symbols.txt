@@ -8385,6 +8385,7 @@
 0x1001072b func   ?vfunc4@CTEBloodSprite@@UAEXHH@Z CTEBloodSprite::vfunc4
 0x10010730 func   ?sub_103893f0@CNpc389@@QAEXPAUSArg389@@@Z CNpc389::sub_103893f0
 0x10010735 func   ?vfunc580@CNPC_VDog@@UAEHXZ CNPC_VDog::vfunc580
+0x1001073f func   ?vfunc363@CWeaponMelee_Claws_Ghoul@@QAEHXZ CWeaponMelee_Claws_Ghoul::vfunc363
 0x10010758 func   ?sub_101dddb0@CUnknown101dddb0@@QAEXXZ CUnknown101dddb0::sub_101dddb0
 0x1001075d func   ?vfunc6@CEQ_SaveRestoreBlockHandler@@UAEXPAVIRestoreRead@@@Z CEQ_SaveRestoreBlockHandler::vfunc6
 0x10010762 func   ?vfunc82@CNPC_VCameraSecurity@@UAEPAUdatamap_t@@XZ CNPC_VCameraSecurity::vfunc82
