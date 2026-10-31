@@ -16,13 +16,13 @@ struct CSoundParameters
 	CSoundParameters()
 	{
 		channel = 0;
-		soundname[0] = 0;
-		play_to_owner_only = false;
-		count = 0;
+		volume = 1.0f;
 		pitch = 100;
 		pitchlow = 100;
 		pitchhigh = 100;
-		volume = 1.0f;
 		soundlevel = 75;
+		count = 0;
+		play_to_owner_only = false;
+		soundname[0] = 0;
 	}
 };
