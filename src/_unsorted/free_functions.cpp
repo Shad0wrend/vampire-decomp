@@ -60913,6 +60913,23 @@ int CUnknown1017f8b0::sub_1017f8b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017f900 size=0x30
+struct CMsgPlayerView;
+struct COutputEvent_Unit { void sub_100cd660(void *a, void *b, float c); };
+struct CVCopLogic { char m_pad[0x4b0]; COutputEvent_Unit m_Out; };
+void sub_101cebc0(CMsgPlayerView *p, int a, int b);
+void sub_10370650(int p);
+CVCopLogic *sub_1023dcd0();
+void __fastcall sub_1017f900(void *pThis)
+{
+	sub_101cebc0((CMsgPlayerView *)pThis, 0x3b, 0);
+	sub_10370650((int)pThis);
+	CVCopLogic *p = sub_1023dcd0();
+	if (p)
+		p->m_Out.sub_100cd660(pThis, pThis, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017f980 size=0x27
 // TARGET: CUnknown1017f980::sub_1017f980
 #include "CUnknown1017f980.h"
