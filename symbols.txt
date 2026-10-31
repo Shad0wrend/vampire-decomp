@@ -9535,6 +9535,7 @@
 0x10011a8b func   ?vfunc81@CBeam@@UAEHXZ CBeam::vfunc81
 0x10011a90 func   ?vfunc337@CNPC_VHengeyokai@@UAEHXZ CNPC_VHengeyokai::vfunc337
 0x10011a9a func   ?sub_100f8e20@@YAXPAUSEntV116@@@Z sub_100f8e20
+0x10011a9f func   ?sub_10085900@@YAXXZ sub_10085900
 0x10011aa4 func   ?vfunc546@CNPC_VAnimal@@QAEHH@Z CNPC_VAnimal::vfunc546
 0x10011aa9 func   ?vfunc14@CServerNetworkProperty@@UAEPAV1@I@Z CServerNetworkProperty::vfunc14
 0x10011aae func   ?vfunc316@CWeaponGravityGun@@UAEDH@Z CWeaponGravityGun::vfunc316

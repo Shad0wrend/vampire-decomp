@@ -20720,6 +20720,18 @@ void sub_10085830()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10085900 size=0x1b
+extern unsigned int g_1092053c;
+extern void (*g_109f3630)(const char *, ...);
+
+// TARGET: sub_10085900
+void sub_10085900()
+{
+	g_109f3630("AI Resume...\n");
+	g_1092053c &= 0xfffffffd;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100859c0 size=0x18
 namespace lifted {
 extern char g_1054970c;
