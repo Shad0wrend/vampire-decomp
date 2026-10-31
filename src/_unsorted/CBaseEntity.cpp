@@ -1716,6 +1716,40 @@ bool CBaseEntity::vfunc140(CBaseEntity *pAttacker)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a8710 size=0x1fe
+#include "CCollisionProperty.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+void CBaseEntity::vfunc77()
+{
+	ScopeTrace trace("CBaseEntity::ScriptHide", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc, g_106b8540);
+	if (!m_bHidden00f4) {
+		m_pfnSavedThink00e4 = m_pfnThink;
+		sub_100ac4e0(0, 0, 0);
+		m_flNextThink = 3.402823466e+38f;
+		m_nSavedSolid00e8 = vfunc92();
+		m_nSavedMoveType00ec = m_nMoveType35c;
+		m_nSavedMoveCollide00f0 = m_nMoveCollide360;
+		m_nSavedSlot211_00f6 = ((CEntityVSlots *)this)->slot211();
+		m_nSavedEffects00f8 = m_nEffectFlags;
+		vfunc93(0, 0);
+		{
+			ScopeTrace solidTrace("CBaseEntity::SetSolid", m_name26c ? m_name26c : g_106b8540, g_106b8540);
+			((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(0);
+		}
+		{
+			ScopeTrace flagsTrace("CBaseEntity::SetSolidFlags", m_name26c ? m_name26c : g_106b8540, g_106b8540);
+			((CCollisionProperty *)((char *)this + 0x270))->sub_100dc580(4);
+		}
+		m_nEffectFlags = 0xe0;
+		sub_100b3b00();
+		sub_1009d1e0();
+		m_bHidden00f4 = 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a8990 size=0x1d8
 #include "ScopeTrace.h"
 #include "CCollisionProperty.h"
