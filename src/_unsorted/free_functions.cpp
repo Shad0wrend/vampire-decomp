@@ -120834,6 +120834,16 @@ void sub_102c9d50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c9d70 size=0x12
+#include "vampire.h"
+
+// TARGET: sub_102c9d70
+void __fastcall sub_102c9d70(void *pThis, int, float flDelay)
+{
+	*(float *)((char *)pThis + 0x18) = flDelay + gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c9da0 size=0x41
 #include "CUnknown102ca630.h"
 
