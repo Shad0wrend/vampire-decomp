@@ -2758,6 +2758,7 @@
 0x1000644c func   ?vfunc438@CNPC_VSheriffMan@@QAEHXZ CNPC_VSheriffMan::vfunc438
 0x10006451 func   ?sub_101eb030@@YAXXZ sub_101eb030
 0x10006460 func   ?sub_10081e00@@YIXPADPAXH@Z sub_10081e00
+0x10006465 func   ?vfunc81@CItemGWirelessCamera1@@QAEHXZ CItemGWirelessCamera1::vfunc81
 0x1000646a func   ?sub_102cea20@CUtlRBTree12@@QAEXG@Z CUtlRBTree12::sub_102cea20
 0x1000646f func   ?Grow@?$CUtlMemory@UCGlobalEmailRec@@@@QAEXH@Z CUtlMemory<CGlobalEmailRec>::Grow
 0x1000646f func   ?Grow@?$CUtlMemory@UGLOBAL_EMAIL@@@@QAEXH@Z CUtlMemory<GLOBAL_EMAIL>::Grow
