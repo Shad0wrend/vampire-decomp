@@ -11005,6 +11005,47 @@ void sub_10062f30(CUnknown1019d130 *filter, float delay, const CTEFootprintVec3 
 }
 // END FUNCTION
 
+// FUNCTION: 0x10063500 size=0x23d
+#include "SendProp.h"
+#include "SendTable.h"
+
+SendProp sub_10246af0(const char *name, int offset, int size, int bits, int flags, int a, void *proxy);
+SendProp sub_10246dc0(const char *name, int a, void *pTable, void *proxy);
+SendProp sub_10246700(const char *name, int offset, int size, int bits, int flags, int a, int b, void *proxy);
+SendProp sub_10246510(const char *name, int offset, int size, int a, int b, int c, int d, void *proxy);
+void sub_10246300();
+void sub_102464d0();
+void sub_10003012();
+extern void *g_1053dfa8;
+extern const char *g_1054361c;
+extern SendTable g_106c383c;
+
+// TARGET: sub_10063500
+int sub_10063500()
+{
+	static SendProp s_props[16] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246dc0("baseclass", 0, g_1053dfa8, (void *)sub_102464d0),
+		sub_10246700("m_vecOrigin", 0xc, 0xc, -1, 2, 0, 0xc7ec9090, (void *)sub_10003012),
+		sub_10246700("m_vecAngles", 0x18, 0xc, -1, 2, 0, 0xc7ec9090, (void *)sub_10003012),
+		sub_10246700("m_vecForce", 0x24, 0xc, -1, 2, 0, 0xc7ec9090, (void *)sub_10003012),
+		sub_10246700("m_vecForcePos", 0x30, 0xc, -1, 2, 0, 0xc7ec9090, (void *)sub_10003012),
+		sub_10246510("m_flWidth", 0x3c, 4, 0, 4, 0, 0xc7ec9090, (void *)sub_10246300),
+		sub_10246510("m_flHeight", 0x40, 4, 0, 4, 0, 0xc7ec9090, (void *)sub_10246300),
+		sub_10246510("m_flShardSize", 0x44, 4, 0, 4, 0, 0xc7ec9090, (void *)sub_10246300),
+		sub_10246af0("m_nSurfaceType", 0x48, 4, 2, 1, 0, 0),
+		sub_10246af0("m_uchFrontColor[0]", 0x4c, 1, 8, 1, 0, 0),
+		sub_10246af0("m_uchFrontColor[1]", 0x4d, 1, 8, 1, 0, 0),
+		sub_10246af0("m_uchFrontColor[2]", 0x4e, 1, 8, 1, 0, 0),
+		sub_10246af0("m_uchBackColor[0]", 0x4f, 1, 8, 1, 0, 0),
+		sub_10246af0("m_uchBackColor[1]", 0x50, 1, 8, 1, 0, 0),
+		sub_10246af0("m_uchBackColor[2]", 0x51, 1, 8, 1, 0, 0),
+	};
+	g_106c383c.sub_10247240(&s_props[1], 15, g_1054361c);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10063880 size=0xea
 #include "CTEShatterSurface.h"
 
