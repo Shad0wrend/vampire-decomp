@@ -3094,6 +3094,7 @@
 0x10006b59 func   ?sub_1030c3f0@@YAXXZ sub_1030c3f0
 0x10006b63 func   ?sub_103e5a70@@YAHXZ sub_103e5a70
 0x10006b68 func   ?vfunc2@CTEGunshotDecal@@UAEPAV1@I@Z CTEGunshotDecal::vfunc2
+0x10006b6d func   ?vfunc80@CItemGLillyPhoto@@QAEHXZ CItemGLillyPhoto::vfunc80
 0x10006b72 func   _npc_VChangBrosClaw npc_VChangBrosClaw
 0x10006b77 func   ?vfunc271@CVampireProjectile@@UAEMXZ CVampireProjectile::vfunc271
 0x10006b7c func   ?sub_100cd640@CUnknown100cd640@@QAEPADXZ CUnknown100cd640::sub_100cd640
