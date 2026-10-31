@@ -14,6 +14,17 @@ CMoveHelperServer *CMoveHelperServer::vfunc14(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013eec0 size=0xf
+#include "CMoveHelperServer.h"
+
+// TARGET: CMoveHelperServer::sub_1013eec0
+void CMoveHelperServer::sub_1013eec0(CBaseEntity *pHost)
+{
+	m_pHost = pHost;
+	vfunc1();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013eee0 size=0x139
 #include "CBaseEntity.h"
 #include "CBaseEntitySlots.h"
