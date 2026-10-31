@@ -131948,6 +131948,26 @@ char __fastcall sub_102ef0e0(void *self, int unused, Info102ef0e0 *pInfo, float 
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ef6a0 size=0x1a
+// TARGET: sub_102ef6a0
+struct CUnk102ef6a0Obj {
+    int sub_1027a6c0();
+    void sub_10272650(int a);
+};
+struct CUnk102ef6a0 {
+    char pad[0];
+    bool sub_102ef6a0(int a);
+};
+bool CUnk102ef6a0::sub_102ef6a0(int a)
+{
+    CUnk102ef6a0Obj *o = *(CUnk102ef6a0Obj **)((char *)this - 0xc);
+    int r = o->sub_1027a6c0();
+    o = *(CUnk102ef6a0Obj **)((char *)this - 0xc);
+    o->sub_10272650(r);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102efd50 size=0x68
 #include "CAI_Navigator.h"
 
