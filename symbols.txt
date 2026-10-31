@@ -5089,6 +5089,7 @@
 0x1000b285 func   ?sub_1027a6c0@CAI_BaseNPC@@QAEHXZ CAI_BaseNPC::sub_1027a6c0
 0x1000b28f func   ?vfunc127@CNPC_VVampireBoss@@QAEHH@Z CNPC_VVampireBoss::vfunc127
 0x1000b294 func   ?vfunc81@CFuncAreaPortalWindow@@UAEHXZ CFuncAreaPortalWindow::vfunc81
+0x1000b299 func   ?vfunc110@CEnvSoundscape@@QAEDPBD0@Z CEnvSoundscape::vfunc110
 0x1000b29e func   ?sub_10370630@@YAXXZ sub_10370630
 0x1000b2a3 func   ?vfunc82@CEnvWind@@UAEPAUdatamap_t@@XZ CEnvWind::vfunc82
 0x1000b2a8 func   ?sub_102bf050@@YAXXZ sub_102bf050
