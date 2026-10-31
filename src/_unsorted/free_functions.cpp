@@ -56438,6 +56438,27 @@ unsigned int *Pool::sub_1013dc60(unsigned int n)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013dce0 size=0x1a
+struct CUnk1013dce0
+{
+	char m_pad0000[0x1c];
+	int *m_pHead1c;
+	int m_n20;
+
+	void sub_1013dce0(int *p);
+};
+
+// TARGET: sub_1013dce0
+void CUnk1013dce0::sub_1013dce0(int *p)
+{
+	if (p != 0) {
+		m_n20--;
+		*p = (int)m_pHead1c;
+		m_pHead1c = p;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013dd10 size=0x5
 char __stdcall sub_1013dd10(int a0)
 {
