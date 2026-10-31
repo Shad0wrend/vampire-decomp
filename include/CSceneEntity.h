@@ -150,7 +150,7 @@ public:
 	CSceneOutputList m_list4fc;	// 0x4fc
 	char m_pad0514[0x574 - 0x514];
 	int m_n574;	// 0x574
-	char m_pad0578[0x57c - 0x578];
+	int m_n578;	// 0x578: the actor move mode handed to sub_100821f0
 	char m_b57c;	// 0x57c
 	char m_pad057d[1];
 	char m_b57e;	// 0x57e
