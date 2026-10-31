@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10225930 size=0x8
+#include "CPropDoorknob.h"
+// TARGET: CPropDoorknob::sub_10225930
+unsigned char CPropDoorknob::sub_10225930()
+{
+    unsigned char b;
+    b = sub_100056aa();
+    b &= 0xfd;
+    return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10225950 size=0x6d
 #include "CPropDoorknob.h"
 
