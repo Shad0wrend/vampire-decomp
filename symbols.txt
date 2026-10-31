@@ -4470,6 +4470,7 @@
 0x100097eb func   ?sub_10397f00@CNPC_VMingXiao@@QAEXXZ CNPC_VMingXiao::sub_10397f00
 0x100097ff func   ?sub_101f4530@CUnit101f4530@@QAEHHH@Z CUnit101f4530::sub_101f4530
 0x10009804 func   ?sub_104001f0@@YAHXZ sub_104001f0
+0x10009809 func   ?vfunc81@CItemGCarStereo@@QAEHXZ CItemGCarStereo::vfunc81
 0x1000980e func   ?sub_1018b6f0@@YAHXZ sub_1018b6f0
 0x10009818 func   ?sub_1007bfc0@@YGHH@Z sub_1007bfc0
 0x10009822 func   ?sub_1028e870@CUnknown1028e870@@QAEHXZ CUnknown1028e870::sub_1028e870

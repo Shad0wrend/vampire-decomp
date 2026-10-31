@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103fce00 size=0x3
+#include "CItemGCarStereo.h"
+int CItemGCarStereo::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040a180 size=0x1e
 #include "CItemGCarStereo.h"
 
