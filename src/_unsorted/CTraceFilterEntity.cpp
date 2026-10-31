@@ -14,3 +14,18 @@ CTraceFilterEntity::CTraceFilterEntity(void *pPassEnt, int collisionGroup) : CTr
 		m_pRootParent = sub_101cd070(pPassEnt);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101ccfe0 size=0x61
+#include "CTraceFilterEntity.h"
+
+struct CTraceEntParentView { char pad[0x25c]; EHANDLE m_hParent; };
+
+bool CTraceFilterEntity::vfunc0(void *pHandleEntity, int contentsMask)
+{
+	if (m_pRootParent || ((CTraceEntParentView *)pHandleEntity)->m_hParent.Get()) {
+		if (m_pRootParent == sub_101cd070(pHandleEntity))
+			return false;
+	}
+	return sub_101d31c0(pHandleEntity, contentsMask);
+}
+// END FUNCTION
