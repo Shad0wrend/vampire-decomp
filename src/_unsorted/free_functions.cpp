@@ -100960,6 +100960,21 @@ void CUnk10219240::sub_10219240()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10219270 size=0x18
+struct CUnk10219270 {
+    char pad[0x81c];
+    unsigned int m_81c;
+    void sub_10219270();
+    void sub_10219120();
+};
+
+void CUnk10219270::sub_10219270()
+{
+    sub_10219120();
+    m_81c |= 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102192a0 size=0xdb
 #include "CUnknown10217f50.h"
 #include "CEntityMessageFilter.h"
