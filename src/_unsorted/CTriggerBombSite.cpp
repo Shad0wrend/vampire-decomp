@@ -12,6 +12,20 @@ int CTriggerBombSite::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102110c0 size=0x10
+#include "CTriggerBombSite.h"
+
+void __fastcall sub_1000350d(void *pThis);
+void __fastcall sub_101c5080(void *pThis);
+
+// TARGET: CTriggerBombSite::vfunc103
+void CTriggerBombSite::vfunc103()
+{
+	sub_1000350d(this);
+	sub_101c5080(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102110e0 size=0x52
 #include "CCameraTrack.h"
 #include "CTriggerBombSite.h"

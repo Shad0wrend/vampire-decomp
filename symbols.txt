@@ -5970,6 +5970,7 @@
 0x1000b8ed func   ?sub_1010d020@@YAHXZ sub_1010d020
 0x1000b8f2 func   ?sub_101c2770@CUnknown101c2770@@QAEPAV1@PAVCVDmg_t@@@Z CUnknown101c2770::sub_101c2770
 0x1000b8f7 func   ?sub_10077730@CUnknown10077730@@QAEXD@Z CUnknown10077730::sub_10077730
+0x1000b8fc func   ?vfunc103@CTriggerBombSite@@QAEXXZ CTriggerBombSite::vfunc103
 0x1000b901 func   ?sub_10098810@CUnknown10098810@@QAEPAV1@XZ CUnknown10098810::sub_10098810
 0x1000b906 func   ?vfunc376@CNPC_VHuman@@UAEHH@Z CNPC_VHuman::vfunc376
 0x1000b910 func   ?sub_10373600@@YIPAXPAX@Z sub_10373600
