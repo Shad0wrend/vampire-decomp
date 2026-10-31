@@ -136,7 +136,7 @@ public:
 	virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8();
 	virtual void vfunc9(int a, float b);
 	virtual void vfunc10(int a, float b);
-	virtual void vfunc11(); virtual int vfunc12(int a); virtual int vfunc13(int a); virtual int vfunc14(int a);
+	virtual void vfunc11(int a); virtual int vfunc12(int a); virtual int vfunc13(int a); virtual int vfunc14(int a);
 	virtual int vfunc15(void *pGoal, int a); virtual bool vfunc16(int *pOut); virtual void vfunc17(CAI_NavGoal *pGoal); virtual void vfunc18(); virtual void vfunc19();
 	virtual void vfunc20();
 	void sub_10011c98();	// as in CDataObjectAccessSystem (transplant)
