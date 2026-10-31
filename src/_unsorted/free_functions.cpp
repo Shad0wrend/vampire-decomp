@@ -89884,6 +89884,19 @@ void CUnknown101f3e50::sub_101f3e50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f40f0 size=0x16
+struct CUnknown101f35c0 { void sub_101f35c0(); };
+struct CUnknown101f4150 { void sub_101f4150(); };
+
+// TARGET: sub_101f40f0
+void *__fastcall sub_101f40f0(char *pThis)
+{
+	((CUnknown101f35c0 *)(pThis + 0x10))->sub_101f35c0();
+	((CUnknown101f4150 *)pThis)->sub_101f4150();
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f4150 size=0xe
 struct CUnknown101f4150 { int sub_101f4150(); };
 int CUnknown101f4150::sub_101f4150()
