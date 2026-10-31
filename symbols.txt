@@ -1447,6 +1447,7 @@
 0x10003ae9 func   ?sub_100735a0@CUnknown100735a0@@QAEXH@Z CUnknown100735a0::sub_100735a0
 0x10003aee func   ?vfunc25@CGameRules@@UAEHXZ CGameRules::vfunc25
 0x10003af3 func   ?vfunc13@CServerNetworkProperty@@UAEHXZ CServerNetworkProperty::vfunc13
+0x10003af8 func   ?vfunc580@CNPC_Crow@@QAEHXZ CNPC_Crow::vfunc580
 0x10003b02 func   ?sub_1003cb00@CBaseEntity@@QAE_NH@Z CBaseEntity::sub_1003cb00
 0x10003b07 func   ?sub_101713c0@CBasePlayer@@QAEXXZ CBasePlayer::sub_101713c0
 0x10003b11 func   ?sub_102dd9c0@@YAPAUsub_Rec102dd9c0@@PBD@Z sub_102dd9c0

@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10357370 size=0x6
+#include "CNPC_Crow.h"
+namespace lifted {
+extern char g_1093a0d0;
+}
+int CNPC_Crow::vfunc580()
+{
+    return (int)&lifted::g_1093a0d0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10357440 size=0x1a6
 #include "CNPC_Crow.h"
 #include "CEntityVSlots.h"
