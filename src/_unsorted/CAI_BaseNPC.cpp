@@ -717,6 +717,31 @@ char CAI_BaseNPC::vfunc573(const Vector *pOffset, const float *pEnd, char bSetCo
 }
 // END FUNCTION
 
+// FUNCTION: 0x102702d0 size=0x63
+struct SDifficultyView {
+    virtual void s0();
+    virtual bool s1();
+    char m_pad[0x24];
+    float m28;
+};
+extern SDifficultyView *g_10924a1c;
+// TARGET: CAI_BaseNPC::vfunc418
+float CAI_BaseNPC::vfunc418(float a)
+{
+    switch ((int)a) {
+    case -1000003:
+        if (g_10924a1c->s1())
+            return 0.0f;
+        return g_10924a1c->m28;
+    case -1000002:
+        return 160.0f;
+    case -1000000:
+        return *(float *)((char *)this + 0x5bac);
+    }
+    return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10271f50 size=0x7
 int CAI_BaseNPC::vfunc375(int a0)
 {
