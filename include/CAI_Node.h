@@ -12,7 +12,7 @@ public:
 	int m_nType;	// 0x70: 1 ground, 2 air, 3 climb, 4 water
 	int m_n74;	// 0x74
 	int m_n78;	// 0x78: cleared for every node by CAI_NodeGraph::sub_102f4e00
-	struct CAI_NodeLink *m_ppLinks;	// 0x7c: array of m_n78 link pointers
+	struct CAI_NodeLink **m_ppLinks;	// 0x7c: array of m_n78 link pointers
 	char m_pad0080[0x88 - 0x80];
 	int m_n88;	// 0x88: cleared together with m_n78
 	char m_pad008c[4];
