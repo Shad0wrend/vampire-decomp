@@ -71620,6 +71620,16 @@ void sub_101af030()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101af070 size=0x15
+#include "vampire.h"
+
+// TARGET: sub_101af070
+int sub_101af070(int a)
+{
+	return engine->vfunc53(a + 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101af0a0 size=0x14
 #include "vampire.h"
 
