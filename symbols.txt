@@ -1823,6 +1823,7 @@
 0x100047c8 func   ?sub_101ad440@CUnknown101ad440@@QAEHH@Z CUnknown101ad440::sub_101ad440
 0x100047dc func   ?sub_101d20a0@@YAXPAUEntV@@0@Z sub_101d20a0
 0x100047e6 func   ?vfunc141@CPhysicsCannister@@QAEXPAUCCannisterTakeInfo@@PBVVector@@PAUCGameTrace@@@Z CPhysicsCannister::vfunc141
+0x100047eb func   ?vfunc81@CWeaponWallet@@QAEHXZ CWeaponWallet::vfunc81
 0x100047f0 func   ?sub_101f4330@CUnk101f4330@@QAEXHH@Z CUnk101f4330::sub_101f4330
 0x100047ff func   ?sub_101dd4f0@@YI_NPAH@Z sub_101dd4f0
 0x10004804 func   ?sub_103c8e00@@YIPAXPAX@Z sub_103c8e00
