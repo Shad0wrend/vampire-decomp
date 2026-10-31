@@ -31,6 +31,14 @@ int CWeaponMelee_Torch::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e7320 size=0x6
+#include "CWeaponMelee_Torch.h"
+int CWeaponMelee_Torch::vfunc363()
+{
+    return 0xde;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e74d0 size=0x29
 #include "CUnknown1070b248.h"
 #include "CBaseCombatWeapon.h"
