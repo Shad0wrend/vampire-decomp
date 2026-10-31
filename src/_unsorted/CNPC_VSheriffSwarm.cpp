@@ -70,6 +70,17 @@ datamap_t * CNPC_VSheriffSwarm::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b2360 size=0x14
+#include "CNPC_VSheriffSwarm.h"
+
+// TARGET: CNPC_VSheriffSwarm::vfunc420
+void CNPC_VSheriffSwarm::vfunc420()
+{
+	((CAI_BaseNPC *)this)->CAI_BaseNPC::vfunc420();
+	*(int *)((char *)this + 0x5de4) = 0x477fff00;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b2390 size=0x6
 #include "CNPC_VSheriffSwarm.h"
 int CNPC_VSheriffSwarm::vfunc473()

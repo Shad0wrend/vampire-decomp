@@ -11647,6 +11647,7 @@
 0x10015c49 func   ?vfunc80@CWeaponRanged_Rifle_M37@@QAEHXZ CWeaponRanged_Rifle_M37::vfunc80
 0x10015c4e func   ?sub_1034d2d0@CNPCMaker_Zombie@@QAEXXZ CNPCMaker_Zombie::sub_1034d2d0
 0x10015c53 func   ?sub_1030b2a0@CUnk1030b2a0@@QAEPAU1@PBU1@@Z CUnk1030b2a0::sub_1030b2a0
+0x10015c58 func   ?vfunc420@CNPC_VSheriffSwarm@@UAEXXZ CNPC_VSheriffSwarm::vfunc420
 0x10015c5d func   ?sub_10255c30@CBaseCombatWeapon@@QAEXPAX@Z CBaseCombatWeapon::sub_10255c30
 0x10015c62 func   ?sub_1019d490@CUnknown1019d490@@QAEXD@Z CUnknown1019d490::sub_1019d490
 0x10015c67 func   ?vfunc80@CFuncParticle@@QAEHXZ CFuncParticle::vfunc80
