@@ -155,6 +155,12 @@ void CItemContainerLock::vfunc42(CBasePlayer *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10225910 size=0x1
+void CItemContainerLock::vfunc274()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10226460 size=0x6d
 #include "CItemContainerLock.h"
 
