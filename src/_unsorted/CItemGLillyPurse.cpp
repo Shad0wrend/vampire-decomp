@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103ff380 size=0x6
+#include "CItemGLillyPurse.h"
+namespace lifted {
+extern char g_109449a0;
+}
+int CItemGLillyPurse::vfunc80()
+{
+    return (int)&lifted::g_109449a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ff3a0 size=0x3
 #include "CItemGLillyPurse.h"
 int CItemGLillyPurse::vfunc81()
