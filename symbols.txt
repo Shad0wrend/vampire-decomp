@@ -8854,6 +8854,7 @@
 0x1001222e func   ?vfunc72@CMultiplayRules@@UAE_NXZ CMultiplayRules::vfunc72
 0x10012233 func   ?vfunc19@CServerGameDLL@@UAEXPAX@Z CServerGameDLL::vfunc19
 0x10012238 func   ?vfunc3@CTEInspectionFX@@UAEXPBM0@Z CTEInspectionFX::vfunc3
+0x1001223d func   ?sub_10359170@@YIPAXPAX@Z sub_10359170
 0x10012242 func   ?vfunc125@CBaseEntity@@UAEXXZ CBaseEntity::vfunc125
 0x10012247 func   ?sub_1019efb0@CRopeKeyframe@@QAEXXZ CRopeKeyframe::sub_1019efb0
 0x10012260 func   ?sub_1033e960@@YAXXZ sub_1033e960
