@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10189b20 size=0x3
+#include "CPlayerResource.h"
+int CPlayerResource::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018a0d0 size=0xdc
 #include "CBaseEntity.h"
 #include "CPlayerResource.h"
