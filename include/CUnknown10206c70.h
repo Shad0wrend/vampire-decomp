@@ -3,6 +3,7 @@
 #pragma once
 
 class CBaseCombatCharacter;
+struct StatDefault3;
 
 class CUnknown10206c70
 {
