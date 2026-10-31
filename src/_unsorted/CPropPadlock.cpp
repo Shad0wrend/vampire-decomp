@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10225d00 size=0x8
+#include "CPropPadlock.h"
+// TARGET: CPropPadlock::sub_10225d00
+unsigned char CPropPadlock::sub_10225d00()
+{
+    unsigned char b;
+    b = sub_100056aa();
+    b &= 0xfd;
+    return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10225d20 size=0x6d
 #include "CPropPadlock.h"
 
