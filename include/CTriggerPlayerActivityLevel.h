@@ -12,6 +12,7 @@ public:
 	void vfunc176(CBaseEntity *pOther);	// slot 176 "EndTouch" (plain member): with a player object at pOther+0xa8, when the trigger flag 0x20 at +0x204 is set resets the player's levels A and B (+0x598 / +0x59c) that are not negative and equal the player's current ones (time -1.0f, the text "CTriggerPlayerActivityLevel::EndTouch %s" with this entity's name); level C (+0x5a0) is reset likewise; then CBaseTrigger::vfunc176
 	const char *sub_100ab4f0();	// CBaseEntity::sub_100ab4f0 (stub 0x1000b5cd): the entity's debug name
 	void sub_101c55d0(CBaseEntity *pOther);	// CBaseTrigger::vfunc176 (stub 0x1001346c), called directly
+	void sub_101c5080();	// the stub 0x1000dfd0: a member of the entity, reached by a jump from vfunc103
 
 	int m_nLevelA;	// 0x598
 	int m_nLevelB;	// 0x59c
