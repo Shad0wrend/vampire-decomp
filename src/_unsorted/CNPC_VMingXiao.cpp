@@ -292,6 +292,21 @@ int CNPC_VMingXiao::vfunc376(int act)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10394930 size=0x30
+#include "CNPC_VMingXiao.h"
+#include "CUnknown10739d08.h"
+
+extern CUnknown10739d08 g_10739d08;
+
+float CNPC_VMingXiao::vfunc516()
+{
+	int act = *(int *)((char *)this + 0xfec);
+	if (act >= 0x112a && act <= 0x112d)
+		return g_10739d08.sub_101e8da0()[0x12];
+	return g_10739d08.sub_101e8da0()[0x11];
+}
+// END FUNCTION
+
 // FUNCTION: 0x103951d0 size=0x7c
 #include "CBaseEntity.h"
 #include "CNPC_VMingXiao.h"
