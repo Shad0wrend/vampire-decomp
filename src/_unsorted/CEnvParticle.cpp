@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100fa740 size=0x6
+namespace lifted {
+extern char g_10708e20;
+}
+int CEnvParticle::vfunc80()
+{
+    return (int)&lifted::g_10708e20;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fa760 size=0x3
 int CEnvParticle::vfunc81()
 {
