@@ -44,6 +44,17 @@ int CSimplePhysicsBrush::vfunc226()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004fae0 size=0x8
+unsigned char sub_10006703();
+// TARGET: sub_1004fae0
+unsigned char sub_1004fae0()
+{
+    unsigned char r = sub_10006703();
+    r &= 0xfd;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004fb00 size=0x1e
 #include "CSimplePhysicsBrush.h"
 
