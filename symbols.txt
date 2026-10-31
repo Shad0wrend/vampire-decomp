@@ -2789,6 +2789,7 @@
 0x100065f0 func   ?sub_10403500@@YAHXZ sub_10403500
 0x100065ff func   ?sub_10135290@CLogicPythonCheck@@QAE_NXZ CLogicPythonCheck::sub_10135290
 0x10006604 func   ?sub_102dc3e0@@YIXPAVCBaseEntity@@@Z sub_102dc3e0
+0x10006609 func   ?vfunc81@CWeaponRanged_Pistol_Thirtyeight@@QAEHXZ CWeaponRanged_Pistol_Thirtyeight::vfunc81
 0x1000662c func   ?sub_10406810@@YAHXZ sub_10406810
 0x10006631 func   ?sub_101712d0@CBasePlayer@@QAEXPAUCBasePlayerVehicle@@H@Z CBasePlayer::sub_101712d0
 0x10006636 func   ?sub_1024a2b0@@YA_NPAG0@Z sub_1024a2b0
