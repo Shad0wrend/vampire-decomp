@@ -6893,6 +6893,7 @@
 0x1000e07f func   _env_physimpact env_physimpact
 0x1000e08e func   ?vfunc532@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::vfunc532
 0x1000e093 func   ?vfunc30@CMultiplayRules@@UAEMH@Z CMultiplayRules::vfunc30
+0x1000e098 func   ?vfunc81@CItemGLillyPhoto@@QAEHXZ CItemGLillyPhoto::vfunc81
 0x1000e0a2 func   ?vfunc580@CNPC_VVampire@@UAEHXZ CNPC_VVampire::vfunc580
 0x1000e0ac func   ?sub_1022bc00@@YAHXZ sub_1022bc00
 0x1000e0b6 func   ?sub_10430100@@YAXXZ sub_10430100
