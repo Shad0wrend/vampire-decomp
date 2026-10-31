@@ -145200,6 +145200,18 @@ int *sub_1034abb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034b430 size=0x1a
+// TARGET: CNPCMaker::sub_1034b430
+#include "CNPCMaker.h"
+char CNPCMaker::sub_1034b430()
+{
+    if (m_b66c3 == 0 && m_n6660 <= 0) {
+        return 1;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034b460 size=0x14
 #include "CNPCMaker.h"
 
