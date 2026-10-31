@@ -16,3 +16,9 @@ struct CRBTree16Entry8 { char m_Data[8]; };
 // one member, not `template class`: that emits every member (and the sentinel) in this object
 static void (CUtlRBTree<CRBTree16Entry8, unsigned short>::*s_RemoveRebalance)(unsigned short) = &CUtlRBTree<CRBTree16Entry8, unsigned short>::RemoveRebalance;
 // END FUNCTION
+
+// FUNCTION: 0x1004a070 size=0x1b5
+#include "utlrbtree.h"
+struct CRBTree16Entry8 { int a, b; };
+static void (CUtlRBTree<CRBTree16Entry8, unsigned short>::*s_RotateRight)(unsigned short) = &CUtlRBTree<CRBTree16Entry8, unsigned short>::RotateRight;
+// END FUNCTION
