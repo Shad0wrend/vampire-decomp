@@ -36,7 +36,9 @@ public:
 	char pad5d84[0x5da4 - 0x5d84];
 	void *m_p5da4;
 	void *m_p5da8;
-	char pad5dac[0x6244 - 0x5dac];
+	char pad5dac[0x5de8 - 0x5dac];
+	void *m_pTarget5de8;	// 0x5de8: the entity found by the target name
+	char pad5dec[0x6244 - 0x5dec];
 	float m_flCur6244[4];	// 0x6244: four timestamps
 	float m_flPrev6254[4];	// 0x6254: the previous four
 	char pad6264[0x62dc - 0x6264];
