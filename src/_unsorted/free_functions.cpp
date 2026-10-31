@@ -132660,6 +132660,19 @@ void CUnknown10307bf0::sub_10307bf0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10307d00 size=0x16
+extern int g_109363f8;
+void sub_10307e00();
+
+// TARGET: sub_10307d00
+void *__fastcall sub_10307d00(void *pThis)
+{
+	sub_10307e00();
+	g_109363f8 = 0;
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10307d30 size=0x54
 struct SPatrolPathX { char data[0x114]; };
 extern SPatrolPathX g_10934158[32];
