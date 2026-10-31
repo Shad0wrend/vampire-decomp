@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10135510 size=0x6
+#include "CLogicNPCCondition.h"
+namespace lifted {
+extern char g_1057748c;
+}
+int CLogicNPCCondition::vfunc82()
+{
+    return (int)&lifted::g_1057748c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10135650 size=0x98
 #include "CLogicNPCCondition.h"
 #include "CEntityVSlots.h"

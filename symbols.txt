@@ -8368,6 +8368,7 @@
 0x100109e7 func   ?sub_1009d850@CBaseEntity@@QAEMPAXPAM@Z CBaseEntity::sub_1009d850
 0x100109ec func   ?vfunc344@CBaseCombatCharacter@@QAEMXZ CBaseCombatCharacter::vfunc344
 0x100109f1 func   ?sub_101b50f0@CSoundEmitterSystemBase@@QAEXPBD@Z CSoundEmitterSystemBase::sub_101b50f0
+0x100109f6 func   ?vfunc82@CLogicNPCCondition@@QAEHXZ CLogicNPCCondition::vfunc82
 0x10010a00 func   ?sub_102d2940@@YAXHHHHH@Z sub_102d2940
 0x10010a0a func   _phys_constraint phys_constraint
 0x10010a0f func   ?vfunc431@CNPC_VZombie@@QAEXXZ CNPC_VZombie::vfunc431
