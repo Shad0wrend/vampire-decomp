@@ -97786,6 +97786,25 @@ void CUnit1020d080::sub_1020d080(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020d0b0 size=0x14
+struct CUnit1020d080
+{
+	char m_pad0000[0x77c];
+	bool m_b77c;
+
+	void sub_1020c4f0(int a);
+	void sub_1020d0b0(int a);
+};
+
+// TARGET: CUnit1020d080::sub_1020d0b0
+void CUnit1020d080::sub_1020d0b0(int a)
+{
+	m_b77c = false;
+	a = 7;
+	sub_1020c4f0(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020d0e0 size=0x43
 #include "CPropSwitch.h"
 void *sub_100aa720(int size);
