@@ -11397,6 +11397,7 @@
 0x100153cf func   ?sub_10202d10@CUnknown10202d10@@QAEPAVCUnknown102029c0@@XZ CUnknown10202d10::sub_10202d10
 0x100153d9 func   ?sub_10404d30@@YAHXZ sub_10404d30
 0x100153de func   ?vfunc5@CFuncBrush@@QAEPAV1@I@Z CFuncBrush::vfunc5
+0x100153e3 func   ?sub_100ecb10@@YGHPAVCBaseAnimating@@@Z sub_100ecb10
 0x100153e8 func   ?vfunc4@CSave@@UAEXXZ CSave::vfunc4
 0x100153ed func   ?sub_101ff270@CVStatInfo_t@@QAEHH@Z CVStatInfo_t::sub_101ff270
 0x100153f2 func   ?sub_100f2a00@CRotDoorUnit@@QAEXPAVVector@@0@Z CRotDoorUnit::sub_100f2a00

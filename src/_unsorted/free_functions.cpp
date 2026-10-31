@@ -40825,6 +40825,21 @@ CUnknown100ec410Elem *CUnknown100ec410::sub_100ec410(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ecb10 size=0x17
+#include "CBaseAnimating.h"
+
+// TARGET: sub_100ecb10
+int __stdcall sub_100ecb10(CBaseAnimating *pAnim)
+{
+	int nSeq = pAnim->sub_1008dd30(1, -1);
+	if (nSeq == -1)
+	{
+		nSeq = 0;
+	}
+	return nSeq;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ecb40 size=0x7f
 #include "utlvector.h"
 struct CThreeVecs {
