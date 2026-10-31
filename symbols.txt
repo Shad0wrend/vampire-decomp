@@ -7422,6 +7422,7 @@
 0x1000eab6 func   ?sub_100dac20@@YAXXZ sub_100dac20
 0x1000eabb func   ?vfunc5@CItemGGiovanniInvitationVictor@@QAEPAV1@I@Z CItemGGiovanniInvitationVictor::vfunc5
 0x1000eac5 func   ?sub_103f0590@CWeaponThrown_Chang_Energy_Ball@@QAEXXZ CWeaponThrown_Chang_Energy_Ball::sub_103f0590
+0x1000eacf func   ?vfunc373@CWeaponMelee_ZombieFists@@QAEHXZ CWeaponMelee_ZombieFists::vfunc373
 0x1000ead9 func   ?vfunc267@CRagdollProp@@UAE_NXZ CRagdollProp::vfunc267
 0x1000eade func   _logic_branch logic_branch
 0x1000eae3 func   ?sub_1034dd70@CUnknown1034d620@@QAEXXZ CUnknown1034d620::sub_1034dd70
