@@ -122,6 +122,17 @@ void CNPC_VBach::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10363940 size=0x14
+#include "CNPC_VBach.h"
+
+// TARGET: CNPC_VBach::vfunc420
+void CNPC_VBach::vfunc420()
+{
+	((CAI_BaseNPC *)this)->CAI_BaseNPC::vfunc420();
+	*(int *)((char *)this + 0x5de4) = 0x477fff00;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10363970 size=0x6
 #include "CNPC_VBach.h"
 int CNPC_VBach::vfunc473()
