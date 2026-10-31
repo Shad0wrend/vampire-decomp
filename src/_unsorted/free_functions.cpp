@@ -97400,6 +97400,20 @@ void CSecCamera::sub_1020cbf0(const char *pszSequence)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020cd00 size=0x12
+#include "vampire.h"
+
+char __fastcall sub_1020cd30(void *pThis);
+
+// TARGET: sub_1020cd00
+char __fastcall sub_1020cd00(void *pThis)
+{
+	if (*((char *)pThis + 0x7d8))
+		return sub_1020cd30(pThis);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020d0e0 size=0x43
 #include "CPropSwitch.h"
 void *sub_100aa720(int size);
