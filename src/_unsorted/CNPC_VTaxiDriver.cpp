@@ -54,6 +54,14 @@ int CNPC_VTaxiDriver::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b3630 size=0x6
+#include "CNPC_VTaxiDriver.h"
+int CNPC_VTaxiDriver::vfunc138()
+{
+    return 4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b36d0 size=0x167
 #include "CNPC_VTaxiDriver.h"
 #include "CNPC_VHuman.h"
