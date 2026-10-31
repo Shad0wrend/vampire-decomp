@@ -131064,6 +131064,14 @@ TObj *TObj::sub_1030bec0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030bf50 size=0xb
+void __cdecl sub_1031a050(int a);
+void __fastcall sub_1030bf50(char *pThis)
+{
+    sub_1031a050(*(int *)(pThis + 0x24));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030c390 size=0x6
 namespace lifted {
 extern char g_10936b5c;
