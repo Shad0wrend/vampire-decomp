@@ -90,7 +90,8 @@ struct CNPC_VWerewolfSchedule
 // The hint object at +0x66b0 (class not known yet).
 struct CNPC_VWerewolfHint66b0
 {
-	char m_pad0000[0x5dc];
+	char m_pad0000[0x5d8];
+	CNPC_VWerewolfHint66b0 *m_pNext;	// 0x5d8: next hint of the global list (head at 0x10925450)
 	int m_nType;	// 0x5dc: the hint type
 	void sub_102d1420(float delay);	// stub 0x10013d68: clears the dword at +0x5e0 to -1 and stores delay + curtime at +0x5ec
 };
