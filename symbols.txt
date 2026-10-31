@@ -2686,6 +2686,7 @@
 0x1000622b func   _item_g_warr_ledger_2 item_g_warr_ledger_2
 0x10006230 func   ?sub_101d5b90@CStatDefault3List@@QAEXXZ CStatDefault3List::sub_101d5b90
 0x10006235 func   ?sub_10266d40@@YAXVVector@@0H@Z sub_10266d40
+0x1000623a func   ?vfunc81@CItemGWerewolfBlood@@QAEHXZ CItemGWerewolfBlood::vfunc81
 0x1000623f func   ?sub_10323630@@YIXPAVCBaseCombatCharacter@@@Z sub_10323630
 0x10006244 func   ?sub_101cc3d0@V101cc3d0@@QAEPAXI@Z V101cc3d0::sub_101cc3d0
 0x10006249 func   ?sub_10349400@TOps@@QAE_NPAPAH@Z TOps::sub_10349400
