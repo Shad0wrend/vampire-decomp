@@ -123705,6 +123705,17 @@ void CUnknown102d09b0::sub_102d09b0(CBaseEntity *pOther, int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d09f0 size=0x16
+struct CThis100a8990 { void sub_100a8990(); };
+
+// TARGET: sub_102d09f0
+void __fastcall sub_102d09f0(void *pThis, int, int)
+{
+	((CThis100a8990 *)pThis)->sub_100a8990();
+	*(int *)((char *)pThis + 0x5e8) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d0ab0 size=0x48
 extern void (*g_109f3890)(char *dst, const char *src, int n);
 struct CAI_FailView {
