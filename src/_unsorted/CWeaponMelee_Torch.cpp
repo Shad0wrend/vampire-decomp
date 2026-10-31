@@ -126,6 +126,20 @@ void CWeaponMelee_TorchX::sub_103e7920(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e7960 size=0x10
+#include "CWeaponMelee_Torch.h"
+
+void __fastcall sub_10008512(void *pThis);
+void __fastcall sub_1009d2a0(void *pThis);
+
+// TARGET: CWeaponMelee_Torch::vfunc66
+void CWeaponMelee_Torch::vfunc66()
+{
+	sub_10008512(this);
+	sub_1009d2a0(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecde0 size=0x1e
 #include "CWeaponMelee_Torch.h"
 
