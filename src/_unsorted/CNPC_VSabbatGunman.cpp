@@ -49,6 +49,15 @@ CNPC_VSabbatGunman *CNPC_VSabbatGunman::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a51e0 size=0x6
+extern unsigned char g_1064c130;
+// TARGET: sub_103a51e0
+unsigned char sub_103a51e0()
+{
+    return g_1064c130;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a5240 size=0x1d
 #include "CNPC_VSabbatGunman.h"
 struct A { int sub_10012300(int); };
