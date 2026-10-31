@@ -7277,6 +7277,7 @@
 0x1000ed3b func   ?vfunc5@CSteamJet@@UAEPAV1@I@Z CSteamJet::vfunc5
 0x1000ed40 func   ?vfunc6@ConVar@@UAEXPBD@Z ConVar::vfunc6
 0x1000ed45 func   ?sub_100bb900@CBeam@@QAEXHPBM@Z CBeam::sub_100bb900
+0x1000ed4a func   ?vfunc81@CWeaponMelee_OccultBlade@@QAEHXZ CWeaponMelee_OccultBlade::vfunc81
 0x1000ed68 func   ?sub_10045110@CUnknown10045110@@QAEXH@Z CUnknown10045110::sub_10045110
 0x1000ed7c func   ?sub_101384e0@@YA?AVQAngle@@ABV1@0@Z sub_101384e0
 0x1000ed81 func   ?vfunc15@CAI_Motor@@UAEMAAVVector@@@Z CAI_Motor::vfunc15
