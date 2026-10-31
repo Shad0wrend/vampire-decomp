@@ -45884,6 +45884,23 @@ int __fastcall sub_10103790(CHandleHolderView *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10103830 size=0x1b
+// TARGET: sub_10103830
+struct CUnk10103830 {
+    char pad[0x45c];
+    char m_b45c;
+    int sub_10103790();
+    void sub_101038b0(int a);
+    void sub_10103830(int a);
+};
+void CUnk10103830::sub_10103830(int a)
+{
+    m_b45c = 0;
+    int r = sub_10103790();
+    sub_101038b0(r);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10103c80 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
