@@ -31,6 +31,19 @@ int CBreakableSurface::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010fec0 size=0x18
+#include "CBreakableSurface.h"
+#include "CBreakable.h"
+
+void sub_101d0ec0(const char *psz);
+
+void CBreakableSurface::vfunc104()
+{
+    sub_101d0ec0("window_pane");
+    ((CBreakable *)this)->vfunc104();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010fef0 size=0x3a
 #include "CBreakableSurface.h"
 
