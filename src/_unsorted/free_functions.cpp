@@ -155028,6 +155028,27 @@ void CNPC_VVampireBoss::sub_103c6df0(int index, const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c6e80 size=0x1a
+#include "CNPC_VVampireBoss.h"
+
+namespace block_103c6e80 {
+struct CVampireBossUnit : CNPC_VVampireBoss { void sub_103c6df0(int index, const char *name); };
+void CVampireBossUnit::sub_103c6df0(int index, const char *name)
+{
+	m_pBodyEmitterNames[index] = name;
+}
+}
+using namespace block_103c6e80;
+
+// TARGET: CNPC_VVampireBoss::sub_103c6e80
+void CNPC_VVampireBoss::sub_103c6e80(const char *name)
+{
+	for (int i = 0; i < 4; i++) {
+		((CVampireBossUnit *)this)->sub_103c6df0(i, name);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c6eb0 size=0x6b
 struct ScopeEntry {
     const char *a;
