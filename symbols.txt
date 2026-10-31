@@ -7957,6 +7957,7 @@
 0x1000eedf func   ?sub_10102c50@@YAHXZ sub_10102c50
 0x1000eee4 func   ?vfunc304@CBaseCombatWeapon@@UAEDXZ CBaseCombatWeapon::vfunc304
 0x1000eeee func   ?vfunc451@CNPC_VHunter@@UAEHXZ CNPC_VHunter::vfunc451
+0x1000eef3 func   ?sub_101b72b0@@YAXPAX0@Z sub_101b72b0
 0x1000eef8 func   ?sub_101d56f0@Loader@@QAE_NPBD@Z Loader::sub_101d56f0
 0x1000ef0c func   ??0?$CUtlMemory@V?$CHandle@VCBaseEntity@@@@@@QAE@HH@Z CUtlMemory<CHandle<CBaseEntity> >::CUtlMemory
 0x1000ef0c func   ??0?$CUtlMemory@VCBaseHandle@@@@QAE@HH@Z CUtlMemory<CBaseHandle>::CUtlMemory

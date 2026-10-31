@@ -74414,6 +74414,18 @@ void CUtlVector130::sub_101b7240(int elem, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b72b0 size=0x1a
+#include <string.h>
+
+// TARGET: sub_101b72b0
+void sub_101b72b0(void *pDest, void *pSrc)
+{
+	if (pDest != 0) {
+		memcpy(pDest, pSrc, 0x82);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b72e0 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
