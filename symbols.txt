@@ -7627,6 +7627,7 @@
 0x1000e4e9 func   ?vfunc453@CNPC_VHumanCombatant@@QAEXXZ CNPC_VHumanCombatant::vfunc453
 0x1000e4ee func   ?vfunc278@CBaseCombatWeapon@@UAEMXZ CBaseCombatWeapon::vfunc278
 0x1000e4f3 func   ?vfunc5@CPhysicsProp@@QAEPAV1@I@Z CPhysicsProp::vfunc5
+0x1000e4f8 func   ?sub_1010a8d0@CUnk1010a8d0@@QAEDXZ CUnk1010a8d0::sub_1010a8d0
 0x1000e4fd func   ?vfunc81@CItemGWarrClipboard@@QAEHXZ CItemGWarrClipboard::vfunc81
 0x1000e502 func   ?sub_10257820@@YI_NPAX@Z sub_10257820
 0x1000e507 func   ?vfunc546@CNPC_VSheriffSwarm@@QAEHH@Z CNPC_VSheriffSwarm::vfunc546

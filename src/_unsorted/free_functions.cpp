@@ -47416,6 +47416,22 @@ void CFire::sub_1010a7f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010a8d0 size=0x1b
+// TARGET: sub_1010a8d0
+struct CUnk1010a8d0 {
+    char pad[0x46c];
+    float m_fl46c;
+    char sub_1010a8d0();
+};
+char CUnk1010a8d0::sub_1010a8d0()
+{
+    if (m_fl46c > 0.0f) {
+        return 1;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010b3c0 size=0x45
 #include "CBaseEntity.h"
 #include "CFire.h"
