@@ -74,12 +74,13 @@ public:
 	char m_pad5d90[0x6664 - 0x5d90];
 	unsigned int m_h6664;	// 0x6664: entity handle (the target of the bone attack)
 	int m_n6668;	// 0x6668: index of the bone name used by the attack
-	char m_pad666c[0x6670 - 0x666c];
+	float m_fl666c;	// 0x666c
 	float m_fl6670;	// 0x6670
 	char m_pad6674[0x6678 - 0x6674];
 	int m_n6678;	// 0x6678
 	char m_b667c;	// 0x667c: set while the target is carried / claimed
-	char m_pad667d[0x6680 - 0x667d];
+	char m_b667d;	// 0x667d
+	char m_pad667e[0x6680 - 0x667e];
 	int m_n6680;	// 0x6680
 	Vector m_vecBonePos;	// 0x6684: position of the chosen bone
 	unsigned int m_h6690;	// 0x6690: entity handle (the grabbed phys_animlink)
