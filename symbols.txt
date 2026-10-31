@@ -8443,6 +8443,7 @@
 0x100108d9 func   ?sub_1016e650@@YAXXZ sub_1016e650
 0x100108de func   ?vfunc103@CEnvMicrophone@@UAEXXZ CEnvMicrophone::vfunc103
 0x100108e3 func   ?vfunc283@CWeaponMelee@@UAE_NPAVCBaseEntity@@@Z CWeaponMelee::vfunc283
+0x100108e8 func   ?vfunc373@CWeaponMelee_Claws_Ghoul@@QAEHXZ CWeaponMelee_Claws_Ghoul::vfunc373
 0x100108ed func   ??1CEnvPlayerSurfaceTrigger@@QAE@XZ CEnvPlayerSurfaceTrigger::~CEnvPlayerSurfaceTrigger
 0x100108f7 func   ?sub_1024b000@CUnknown1024b000@@QAEPAU1@H@Z CUnknown1024b000::sub_1024b000
 0x100108fc func   ?sub_101a59f0@CUnknown101a59f0@@QAEXH@Z CUnknown101a59f0::sub_101a59f0
