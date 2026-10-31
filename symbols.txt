@@ -8178,6 +8178,7 @@
 0x1000f39e func   ?vfunc329@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc329
 0x1000f3a3 func   ?sub_100ce5c0@@YIDPAXH0@Z sub_100ce5c0
 0x1000f3a8 func   ?sub_10069ca0@@YAHXZ sub_10069ca0
+0x1000f3b7 func   ?sub_102d0a80@CUnk102d0a80@@QAEXH@Z CUnk102d0a80::sub_102d0a80
 0x1000f3c1 func   ?vfunc2@CTEBeamEntPoint@@UAEPAV1@I@Z CTEBeamEntPoint::vfunc2
 0x1000f3c6 func   ?vfunc175@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::vfunc175
 0x1000f3cb func   ?sub_1007e580@@YIXPAH@Z sub_1007e580

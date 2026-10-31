@@ -126469,6 +126469,25 @@ void CUnk102d0a50::sub_102d0a50(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d0a80 size=0x1b
+// TARGET: sub_102d0a80
+struct CUnk102d0a80Target {
+    void sub_102f97c0(int a);
+};
+struct CUnk102d0a80 {
+    CUnk102d0a80Target *sub_102d3e60();
+    void sub_102d0a80(int a);
+};
+void CUnk102d0a80::sub_102d0a80(int a)
+{
+    CUnk102d0a80Target *p = sub_102d3e60();
+    if (p) {
+        a = 0;
+        p->sub_102f97c0(a);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d0ab0 size=0x48
 extern void (*g_109f3890)(char *dst, const char *src, int n);
 struct CAI_FailView {
