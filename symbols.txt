@@ -2565,6 +2565,7 @@
 0x10005a6f func   ?sub_100c7b70@@YAHHPADHH@Z sub_100c7b70
 0x10005a74 func   ?vfunc80@CWeaponMelee_Baton@@QAEHXZ CWeaponMelee_Baton::vfunc80
 0x10005a79 func   ?sub_1036e8c0@CNPC_VChangBros@@QAEXXZ CNPC_VChangBros::sub_1036e8c0
+0x10005a7e func   ?sub_102a9770@CAI_BaseNPCTroika@@QAE_NI@Z CAI_BaseNPCTroika::sub_102a9770
 0x10005a83 func   ?vfunc5@CBaseProp@@QAEPAV1@I@Z CBaseProp::vfunc5
 0x10005a88 func   ?vfunc104@CPropDestructable@@UAEXXZ CPropDestructable::vfunc104
 0x10005a8d func   ?vfunc332@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc332

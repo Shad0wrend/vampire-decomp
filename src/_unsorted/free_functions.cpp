@@ -118989,6 +118989,16 @@ void CUnknown102a9750::sub_102a9750(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a9770 size=0x14
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CAI_BaseNPCTroika::sub_102a9770
+bool CAI_BaseNPCTroika::sub_102a9770(unsigned int flags)
+{
+	return (m_flags14b8 & flags) == 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a97a0 size=0x15
 #include "CAI_BaseNPCTroika.h"
 
