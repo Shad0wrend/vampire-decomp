@@ -47096,6 +47096,20 @@ void CBreakable::sub_1010db90(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010dc30 size=0xf
+// TARGET: sub_1010dc30
+struct CUnknown1010dc30
+{
+    void sub_1010ddc0(int v);
+    void sub_1010dc30(int *p);
+};
+
+void CUnknown1010dc30::sub_1010dc30(int *p)
+{
+    sub_1010ddc0(*p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010dc50 size=0x74
 #include "CBreakable.h"
 #include "inputdata_t.h"
