@@ -21,8 +21,8 @@ struct CSoundParameters
 		pitchlow = 100;
 		pitchhigh = 100;
 		soundlevel = 75;
-		count = 0;
-		play_to_owner_only = false;
 		soundname[0] = 0;
+		play_to_owner_only = false;
+		count = 0;
 	}
 };
