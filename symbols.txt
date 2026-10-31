@@ -8657,6 +8657,7 @@
 0x10010460 func   ?sub_102cdca0@CUnk102cd310@@QAEXPAH@Z CUnk102cd310::sub_102cdca0
 0x1001046a func   ?sub_101cecf0@@YAXPAUCMsgPlayerView@@HH@Z sub_101cecf0
 0x1001046f func   ?sub_1004faa0@@YGXH@Z sub_1004faa0
+0x10010488 func   ?sub_102daf20@CUnknown102daf20@@QAEPAXXZ CUnknown102daf20::sub_102daf20
 0x10010492 func   ?sub_101251e0@@YIXPAD@Z sub_101251e0
 0x1001049c func   ?sub_1039ee20@CNPC_VMingXiaoTentacle@@QAEXPAX@Z CNPC_VMingXiaoTentacle::sub_1039ee20
 0x100104a6 func   ?sub_10322180@@YAHXZ sub_10322180

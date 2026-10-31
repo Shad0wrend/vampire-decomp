@@ -127183,6 +127183,33 @@ void *CUnknown102daef0::sub_102daef0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102daf20 size=0x15
+extern char g_106b8540;
+
+struct CUnknown102dd580
+{
+	void *sub_102dd580();
+};
+
+struct CUnknown102daf20
+{
+	char m_pad0000[0x548];
+	CUnknown102dd580 *m_p548;
+
+	void *sub_102daf20();
+};
+
+// TARGET: CUnknown102daf20::sub_102daf20
+void *CUnknown102daf20::sub_102daf20()
+{
+	if (m_p548 != 0)
+	{
+		return m_p548->sub_102dd580();
+	}
+	return &g_106b8540;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102daf50 size=0x12
 #include "vampire.h"
 
