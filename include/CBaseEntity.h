@@ -242,7 +242,9 @@ public:
 	char m_pad00f5;
 	short m_nSavedSlot211_00f6;	// 0x00f6
 	unsigned int m_nSavedEffects00f8;	// 0x00f8
-	char m_pad00fc[0x114 - 0xfc];
+	char m_pad00fc[0x10c - 0xfc];
+	EHANDLE m_hActivator10c;	// 0x010c: the activator of the entity's current input
+	EHANDLE m_hCaller110;	// 0x0110: the caller of the entity's current input
 	void (CBaseEntity::*m_pfn0114)();
 	void (CBaseEntity::*m_pfnThink)();
 	const char *m_classname11c;
