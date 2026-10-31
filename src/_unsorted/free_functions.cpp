@@ -141741,6 +141741,15 @@ void sub_10359c50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10359dc0 size=0xc
+void __fastcall sub_10359de0(void *pThis);
+void * __fastcall sub_10359dc0(void *pThis)
+{
+    sub_10359de0(pThis);
+    return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10359de0 size=0x33
 void sub_10014d7b();
 void sub_10012fd0();
