@@ -130377,6 +130377,22 @@ bool CAI_Navigator::sub_102f0e80(char *pbDone)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f13a0 size=0x17
+extern int g_1060fce8;
+
+struct CUnk102f13a0 {
+    bool sub_102f13a0(int a);
+    char sub_102f0e00(void *p, int a);
+};
+
+bool CUnk102f13a0::sub_102f13a0(int a)
+{
+    if (sub_102f0e00(&g_1060fce8, a))
+        return true;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f13d0 size=0xeb
 #include "CAI_Navigator.h"
 #include "CUnknown1027d990.h"
