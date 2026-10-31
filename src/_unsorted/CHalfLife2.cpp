@@ -45,6 +45,34 @@ void CHalfLife2::vfunc35(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10355810 size=0x24f
+#include "CHalfLife2.h"
+#include "CGameRules.h"
+#include "CUnknown10427700.h"
+
+void CHalfLife2::vfunc56()
+{
+	m_pAmmoDef = (CUnknown10427700 *)new CGameRulesSub;
+	m_pAmmoDef->sub_10427790("MediumRound", 2, 1, "sk_plr_dmg_medium_round", "sk_npc_dmg_medium_round", "sk_max_medium_round");
+	m_pAmmoDef->sub_10427790("FragGrenade", 0x40, 0, "sk_plr_dmg_grenade", "sk_npc_dmg_grenade", "sk_max_grenade");
+	m_pAmmoDef->sub_10427790("AnacondaRound", 2, 1, "sk_plr_dmg_anaconda_round", "sk_npc_dmg_anaconda_round", "sk_max_anaconda_round");
+	m_pAmmoDef->sub_10427790("CrossbowBolt", 2, 1, "sk_plr_dmg_crossbow_bolt", "sk_npc_dmg_crossbow_bolt", "sk_max_crossbow_bolt");
+	m_pAmmoDef->sub_10427790("DesertEagle_Round", 2, 1, "sk_plr_dmg_deserteagle_round", "sk_npc_dmg_deserteagle_round", "sk_max_deserteagle_round");
+	m_pAmmoDef->sub_10427790("Glock_17cRound", 2, 1, "sk_plr_dmg_glock_17c_round", "sk_npc_dmg_glock_17c_round", "sk_max_glock_17c_round");
+	m_pAmmoDef->sub_10427790("Ithica_M37Round", 0x4000002, 1, "sk_plr_dmg_ithica_m37_round", "sk_npc_dmg_ithica_m37_round", "sk_max_ithica_m37_round");
+	m_pAmmoDef->sub_10427790("Mac_10Round", 2, 1, "sk_plr_dmg_mac10_round", "sk_npc_dmg_mac10_round", "sk_max_mac10_round");
+	m_pAmmoDef->sub_10427790("Remington_M_700Round", 0x2000002, 1, "sk_plr_dmg_remington_round", "sk_npc_dmg_remington_round", "sk_max_remington_round");
+	m_pAmmoDef->sub_10427790("Steyr_AugRound", 0x2000002, 1, "sk_plr_dmg_steyr_round", "sk_npc_dmg_steyr_round", "sk_max_steyr_round");
+	m_pAmmoDef->sub_10427790("Super_ShotgunRound", 0x4000002, 1, "sk_plr_dmg_supershotgun_round", "sk_npc_dmg_supershotgun_round", "sk_max_supershotgun_round");
+	m_pAmmoDef->sub_10427790("UziRound", 2, 1, "sk_plr_dmg_uzi_round", "sk_npc_dmg_uzi_round", "sk_max_uzi_round");
+	m_pAmmoDef->sub_10427790("FlameThrowerRound", 8, 1, "sk_plr_dmg_flamethrower_round", "sk_npc_dmg_flamethrower_round", "sk_max_flamethrower_round");
+	m_pAmmoDef->sub_10427790("ThirtyeightRound", 2, 1, "sk_plr_dmg_thirtyeight_round", "sk_npc_dmg_thirtyeight_round", "sk_max_thirtyeight_round");
+	m_pAmmoDef->sub_10427790("BloodRound", 0, 0, "sk_plr_dmg_bloodpack_round", "sk_npc_dmg_bloodpack_round", "sk_max_bloodpack_round");
+	m_pAmmoDef->sub_10427790("BlueBloodRound", 0, 0, "sk_plr_dmg_bluebloodpack_round", "sk_npc_dmg_bluebloodpack_round", "sk_max_bluebloodpack_round");
+	m_pAmmoDef->sub_10427790("VitaeRound", 0, 0, "sk_plr_dmg_eldervitaepack_round", "sk_npc_dmg_eldervitaepack_round", "sk_max_eldervitaepack_round");
+}
+// END FUNCTION
+
 // FUNCTION: 0x10356080 size=0x1
 #include "CHalfLife2.h"
 void CHalfLife2::vfunc57()
