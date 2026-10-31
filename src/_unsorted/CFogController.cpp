@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1034e490 size=0x6
+#include "CFogController.h"
+namespace lifted {
+extern char g_10625e58;
+}
+int CFogController::vfunc82()
+{
+    return (int)&lifted::g_10625e58;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034ef70 size=0x1e
 #include "CFogController.h"
 
