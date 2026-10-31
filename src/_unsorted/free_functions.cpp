@@ -49989,6 +49989,16 @@ void CGameMovement::sub_10124ba0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10124d50 size=0x17
+extern int g_1070b608[];
+
+// TARGET: sub_10124d50
+void sub_10124d50(int a, int b)
+{
+	g_1070b608[a * 2 + b] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10125190 size=0x6
 namespace lifted {
 extern int g_1071a278;
