@@ -29476,6 +29476,20 @@ char * CUnknown100b7d80::sub_100b7d80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7da0 size=0x30
+#include "CBaseNetworkable.h"
+void CBaseNetworkable::sub_100b7da0()
+{
+	CBaseNetworkableEdict_t *p = m_pEdict;
+	if (p) {
+		p->m_n40 = 0;
+		p->m_b44 = 0;
+		engine->vfunc44(m_pEdict);
+		m_pEdict = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7e10 size=0x5
 struct CUnknown100b7e10 { void sub_100b7e10(); };
 void CUnknown100b7e10::sub_100b7e10()
