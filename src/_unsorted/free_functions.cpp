@@ -85616,6 +85616,92 @@ void CUnknown101e56e0::sub_101e5e60(CBaseCombatCharacter *pCharacter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e6040 size=0x238
+#include "CVFeatMgr.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+struct IObj102038e0;
+int sub_102038e0(int, IObj102038e0 *, int);
+int *sub_10203ed0(int *out, const char *pszName);
+
+struct CVKeyCacheable
+{
+	virtual void a0();
+	virtual void Release();
+};
+
+struct CVFeatFile : CVFeatKV
+{
+	int *m_pVbTable;
+	void Release() { ((CVKeyCacheable *)((char *)this + 4 + m_pVbTable[1]))->Release(); }
+};
+
+struct CTmpInt
+{
+	int v;
+	CTmpInt() {}
+};
+inline int *TmpAddr(const CTmpInt &t) { return (int *)&t.v; }
+
+CVFeatFile *sub_101f2e20(const char *pszPath, void *pPathID);
+extern void *g_1070b238;
+__declspec(dllimport) void Msg(const char *fmt, ...);
+
+// TARGET: CVFeatMgr::sub_101e6040
+void CVFeatMgr::sub_101e6040()
+{
+	if (m_ppFeats) {
+		for (int i = 0; i < m_nCount; i++) {
+			CVFeat_t *pFeat = m_ppFeats[i];
+			if (pFeat)
+				delete pFeat;
+			m_ppFeats[i] = 0;
+		}
+		delete m_ppFeats;
+		m_ppFeats = 0;
+	}
+	char szPath[128];
+	m_nNextId = 0;
+	m_nCount = 0;
+	m_nAlloc = 0;
+	sprintf(szPath, "%s%s.txt", "vdata\\system\\", "feats");
+	CVFeatFile *pFile = sub_101f2e20(szPath, g_1070b238);
+	if (pFile) {
+		CVFeatKV *pFeats = pFile->FindKey("Feats");
+		m_iInternalName = *(int *)sub_102038e0((int)TmpAddr(CTmpInt()), (IObj102038e0 *)pFeats, (int)"InternalName");
+		m_iName = *sub_10203ed0(TmpAddr(CTmpInt()), pFeats->GetString("Name", ""));
+		for (CVFeatKV *pKV = pFeats->FindKey("Feat"); pKV; pKV = pKV->GetNextKey()) {
+			if (m_nAlloc == m_nCount) {
+				m_nAlloc += m_nGrow;
+				if (m_ppFeats) {
+					CVFeat_t **ppNew = new CVFeat_t *[m_nAlloc];
+					int i;
+					for (i = 0; i < m_nCount; i++)
+						ppNew[i] = m_ppFeats[i];
+					for (; i < m_nAlloc; i++)
+						ppNew[i] = 0;
+					delete m_ppFeats;
+					m_ppFeats = ppNew;
+					m_nCount++;
+				} else {
+					m_ppFeats = new CVFeat_t *[m_nAlloc];
+					for (int i = 0; i < m_nAlloc; i++)
+						m_ppFeats[i] = 0;
+					m_nCount++;
+				}
+			} else
+				m_nCount++;
+			if (!m_ppFeats[m_nCount - 1])
+				m_ppFeats[m_nCount - 1] = new CVFeat_t(m_nNextId++);
+			m_ppFeats[m_nCount - 1]->sub_101e4fe0(pKV);
+		}
+		pFile->Release();
+	} else
+		Msg("Unable to open [%s] data file for: Feats\n", szPath);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e7c50 size=0x8e
 #include "CUnknown101e7c50.h"
 
