@@ -22,4 +22,7 @@ public:
     unsigned int m_hOwner008c;    // 0x008c
     char m_pad0090[0x55c - 0x90];
     bool m_bDisabled;    // 0x055c
+    char m_pad055d[0x598 - 0x55d];
+    float m_flTouchTime0598;    // 0x0598: the time of the last touch (vfunc39)
+    char m_bGiven059c;    // 0x059c: set once the touching character was given its amount
 };
