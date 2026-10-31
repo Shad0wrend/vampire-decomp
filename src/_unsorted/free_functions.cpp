@@ -170021,6 +170021,29 @@ int __stdcall sub_1042f0a0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042f0c0 size=0x19
+void __fastcall sub_1042ef40(char *pThis);
+void __fastcall sub_1042ef70(char *pThis);
+
+struct CUnk1042f0c0
+{
+	char m_pad0000[0x19c];
+	int m_n19c;
+
+	void sub_1042f0c0(int a);
+};
+
+// TARGET: sub_1042f0c0
+void CUnk1042f0c0::sub_1042f0c0(int a)
+{
+	if (m_n19c != 0x40) {
+		sub_1042ef40((char *)this);
+		return;
+	}
+	sub_1042ef70((char *)this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042f110 size=0x8
 namespace lifted {
 int sub_1000c3ce();
