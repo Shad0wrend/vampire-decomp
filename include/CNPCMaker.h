@@ -15,7 +15,8 @@ public:
 	void sub_1034bbf0();	// schedules the next think: the spawn delay (+0x6664) after slot 617(0) or when the live count (+0x66b0) reached the limit (+0x66b4), else 1..2 seconds
 	char vfunc618(char bForce);	// slot 618 "CanSpawn": true when forced; false at the live limit, while the global at 0x106c8a41 is set, when the player (sub_101cda50) is excluded by the flags at +0x66c1 / +0x66c5 or nearer than the distance at +0x66c8; else true when the box around the maker holds no entity (mask 0x2080)
 
-	char m_pad03e0[0x6664 - 0x3e0];
+	char m_pad03e0[0x6660 - 0x3e0];
+	int m_n6660;	// 0x6660
 	float m_flSpawnDelay;	// 0x6664
 	char m_pad6668[0x66b0 - 0x6668];
 	int m_n66b0;	// 0x66b0
