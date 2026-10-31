@@ -460,6 +460,7 @@
 0x10001d7f func   ?sub_1007f540@UtlMem@@QAEXXZ UtlMem::sub_1007f540
 0x10001d84 func   ?sub_102d89f0@@YAHXZ sub_102d89f0
 0x10001d8e func   ?sub_10147a30@CUnknown10147a30@@QAEHH@Z CUnknown10147a30::sub_10147a30
+0x10001d93 func   ?vfunc80@CItemGHannahsApptBook@@QAEHXZ CItemGHannahsApptBook::vfunc80
 0x10001d98 func   ?sub_102ee270@CUnknown102ee270@@QAEDXZ CUnknown102ee270::sub_102ee270
 0x10001d9d func   ?sub_103f4bf0@@YAHXZ sub_103f4bf0
 0x10001da2 func   ?vfunc498@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc498
