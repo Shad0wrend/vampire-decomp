@@ -97815,6 +97815,59 @@ void CPropHacking::sub_1021b410()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021b750 size=0x1ed
+#include "CBaseEntity.h"
+#include "CPropHacking.h"
+#include "CUnknown1021bec0.h"
+#include <string.h>
+
+__declspec(dllimport) int Q_strnicmp(const char *s1, const char *s2, int n);
+
+struct SHackRec1
+{
+	char m_szName[0x30];
+	char m_szText[0x14];
+	char m_szDep[0x40];
+	int m_aIdx[20];
+};
+
+struct SHackRec2
+{
+	char m_szName[0x230];
+	char m_szDep[0x84];
+};
+
+char CPropHacking::sub_1021b750(int a, const char *pszName)
+{
+	int i;
+	int nLimit = m_n09c0;
+	int nCount = m_n09ac;
+	for (i = 0; i < nCount; i++) {
+		SHackRec1 rec = *(SHackRec1 *)&m_pRecords09a0[i];
+		if (Q_strnicmp(rec.m_szName, pszName, 16) == 0 && ((CUnknown1021bec0 *)this)->sub_1021bec0(rec.m_szDep)) {
+			if (strlen(rec.m_szText) != 0 && !m_abVisited0986[i]) {
+				sub_1021c390(i);
+				return 1;
+			}
+			m_abVisited0986[i] = 1;
+			return sub_1021c890(i);
+		}
+	}
+	if (m_n09dc < 0 || m_n09dc > nCount)
+		return 0;
+	SHackRec1 sel = *(SHackRec1 *)&m_pRecords09a0[m_n09dc];
+	for (int j = 0; j < 20; j++) {
+		if (sel.m_aIdx[j] >= 0 && sel.m_aIdx[j] < nLimit) {
+			int k = ((SHackRec1 *)m_pRecords09a0)[m_n09dc].m_aIdx[j];
+			SHackRec2 rec2 = ((SHackRec2 *)m_p09b4)[k];
+			if (Q_strnicmp(rec2.m_szName, pszName, 16) == 0 && ((CUnknown1021bec0 *)this)->sub_1021bec0(rec2.m_szDep))
+				return sub_1021c6d0(k);
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021bc20 size=0x25
 void __stdcall sub_10015569(int value);
 
