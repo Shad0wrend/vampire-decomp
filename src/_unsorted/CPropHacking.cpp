@@ -12,6 +12,18 @@ datamap_t * CPropHacking::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10219ec0 size=0x8
+#include "CPropHacking.h"
+// TARGET: CPropHacking::sub_10219ec0
+unsigned char CPropHacking::sub_10219ec0()
+{
+    unsigned char b;
+    b = ((CBaseEntity *)this)->CBaseEntity::vfunc117();
+    b &= 0xfd;
+    return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10219ee0 size=0x1e
 #include "CPropHacking.h"
 
