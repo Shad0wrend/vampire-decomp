@@ -143656,6 +143656,16 @@ extern "C" CBaseEntity *npc_VCombatman()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036fbe0 size=0xc
+void __fastcall sub_1036fc00(void *pThis);
+
+void * __fastcall sub_1036fbe0(void *pThis)
+{
+	sub_1036fc00(pThis);
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036fc00 size=0x33
 void sub_100053cb();
 void sub_100146d2();
