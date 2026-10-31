@@ -52,6 +52,18 @@ bool CFuncMoveLinear::vfunc223()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10116550 size=0x8
+#include "CFuncMoveLinear.h"
+// TARGET: CFuncMoveLinear::sub_10116550
+unsigned char CFuncMoveLinear::sub_10116550()
+{
+    unsigned char b;
+    b = ((CBaseEntity *)this)->CBaseEntity::vfunc117();
+    b &= 0xfd;
+    return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10116bf0 size=0xed
 #include "CFuncMoveLinear.h"
 
