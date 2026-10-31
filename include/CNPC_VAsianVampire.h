@@ -28,7 +28,8 @@ public:
 	int m_nIdealActivity;	// +0xfec
 	char padff0[0x1b2c - 0xff0];
 	int m_n1b2c;	// +0x1b2c: set to 6 by SelectSchedule
-	char pad1b30[0x1b38 - 0x1b30];
+	const char *m_pszFile1b30;	// +0x1b30: source file stamp of the last schedule pick
+	int m_nLine1b30;	// +0x1b34: its line
 	int m_nIdealState;	// +0x1b38
 	char pad1b3c[0x1b44 - 0x1b3c];
 	const char *m_pszFailFile;	// +0x1b44: the source file recorded by a task failure
