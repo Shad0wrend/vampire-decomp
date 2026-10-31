@@ -99149,6 +99149,22 @@ void __fastcall sub_10216850(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10216870 size=0x14
+struct CUnit10216870
+{
+	char m_pad0000[0x734];
+	bool m_b734;
+
+	void sub_10216870(int a);
+};
+
+// TARGET: CUnit10216870::sub_10216870
+void CUnit10216870::sub_10216870(int a)
+{
+	m_b734 = !m_b734;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102168a0 size=0x64
 #include "CPropModelState.h"
 #include "inputdata_t.h"
