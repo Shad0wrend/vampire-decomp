@@ -140483,6 +140483,22 @@ unsigned char __fastcall sub_10338900(void *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10338920 size=0x17
+struct CUnk10338920 {
+    void sub_1033c770(int a);
+    void sub_101d7460(void *p);
+    void sub_10338920();
+};
+
+extern CUnk10338920 g_10738cf0;
+
+void CUnk10338920::sub_10338920()
+{
+    sub_1033c770(0x40);
+    g_10738cf0.sub_101d7460(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10338950 size=0x150
 #include "ScopeTrace.h"
 char CBaseCombatCharacter::sub_10338950()
