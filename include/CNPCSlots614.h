@@ -16,6 +16,6 @@ public:
 	EVS10(40) EVS10(41) EVS10(42) EVS10(43) EVS10(44) EVS10(45) EVS10(46) EVS10(47) EVS10(48) EVS10(49)
 	EVS10(50) EVS10(51) EVS10(52) EVS10(53) EVS10(54) EVS10(55) EVS10(56) EVS10(57) EVS10(58) EVS10(59)
 	EVS10(60)
-	EVS(610) EVS(611) EVS(612) EVS(613)
+	EVS(610) virtual int slot611(); EVS(612) EVS(613)
 	virtual void slot614();	// the Troika NPCs' "stop the current action" slot (called by the scripted-sequence code)
 };
