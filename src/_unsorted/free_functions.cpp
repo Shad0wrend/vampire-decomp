@@ -34960,6 +34960,26 @@ char __fastcall sub_100ce5c0(void *pSelf, int unused, void *pDst)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ce600 size=0x19
+struct CUnk100ce600
+{
+	char m_pad0000[0x54];
+	int *m_pValue;	// 0x54: a pointer to the value, null when there is none
+
+	bool sub_100ce600(int *pOut);
+};
+
+// TARGET: sub_100ce600
+bool CUnk100ce600::sub_100ce600(int *pOut)
+{
+	if (m_pValue) {
+		*pOut = *m_pValue;
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ce630 size=0x64
 #include "CUnknown100ce630.h"
 
