@@ -39,6 +39,14 @@ int CWeaponMelee_Claws::vfunc363()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e4b30 size=0x6
+#include "CWeaponMelee_Claws.h"
+int CWeaponMelee_Claws::vfunc373()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecba0 size=0x1e
 #include "CWeaponMelee_Claws.h"
 
