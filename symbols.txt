@@ -5158,6 +5158,7 @@
 0x1000a65f func   _prop_destructable prop_destructable
 0x1000a664 func   ?sub_10247520@@YAHPBD@Z sub_10247520
 0x1000a669 func   ?sub_101ae440@CEnvSoundscape@@QAEDPAX@Z CEnvSoundscape::sub_101ae440
+0x1000a66e func   ?vfunc80@CItemGJumblesFlyer@@QAEHXZ CItemGJumblesFlyer::vfunc80
 0x1000a67d func   ?sub_1042b160@CUnknown1042b160@@QAEHXZ CUnknown1042b160::sub_1042b160
 0x1000a682 func   ?sub_101f95f0@@YAXH@Z sub_101f95f0
 0x1000a687 func   ?sub_102304b0@@YGHHH@Z sub_102304b0

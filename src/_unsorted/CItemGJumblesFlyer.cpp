@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103ffe40 size=0x6
+#include "CItemGJumblesFlyer.h"
+namespace lifted {
+extern char g_10944d1c;
+}
+int CItemGJumblesFlyer::vfunc80()
+{
+    return (int)&lifted::g_10944d1c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ffe60 size=0x3
 #include "CItemGJumblesFlyer.h"
 int CItemGJumblesFlyer::vfunc81()
