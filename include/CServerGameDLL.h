@@ -16,6 +16,8 @@ public:
 	virtual void vfunc13(void *pData, int a, int b, int c, int d, int e);	// builds a CSave on pData and runs its slot 3 (a..e)
 	virtual void vfunc14(void *pData, int a, int b, int c, int d, int e);	// builds a CRestore on pData and runs its slot 3 (a..e)
 	virtual int vfunc15(int); virtual int vfunc16(int); virtual void vfunc17(); virtual void vfunc18(); virtual void vfunc19(void *pArg);
-	virtual void vfunc20(void *pData); virtual void vfunc21(); virtual void vfunc22();
+	virtual void vfunc20(void *pData); virtual void vfunc21();
+	virtual int vfunc22(void *pSaveData, unsigned int a, unsigned int b);	// "CServerGameDLL::CreateEntityTransitionList": inside a profiler scope, runs sub_101a3c40(pSaveData, a, b) and when it is non-zero restores four block handlers from a CRestore on pSaveData; then calls slot 8 of all four; returns the result
+	
 	virtual void vfunc23(int a, int b);	// slot 23 "CServerGameDLL::BuildAdjacentMap": inside a profiler scope, when the global at gpGlobals + 0x20 is set stores the result of sub_101c7ff0(node list at +0x1c, 0x3c, a, b) at +0x18 of it
 };
