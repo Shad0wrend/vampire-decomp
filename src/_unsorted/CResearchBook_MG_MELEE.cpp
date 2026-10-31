@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103f8430 size=0x6
+#include "CResearchBook_MG_MELEE.h"
+namespace lifted {
+extern char g_109477b8;
+}
+int CResearchBook_MG_MELEE::vfunc80()
+{
+    return (int)&lifted::g_109477b8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f8450 size=0x3
 #include "CResearchBook_MG_MELEE.h"
 int CResearchBook_MG_MELEE::vfunc81()
