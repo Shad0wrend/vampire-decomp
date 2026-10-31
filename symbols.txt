@@ -2332,6 +2332,7 @@
 0x10005646 func   ?vfunc362@CPayphone@@UAE_NH@Z CPayphone::vfunc362
 0x10005655 func   ?sub_102dce30@UtlVec8@@QAEXHH@Z UtlVec8::sub_102dce30
 0x1000565a func   ?vfunc274@CItemContainerLock@@QAEXXZ CItemContainerLock::vfunc274
+0x1000565f func   ?vfunc117@CSprayCan@@QAEHXZ CSprayCan::vfunc117
 0x10005664 func   ?vfunc43@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHH@Z CTempEntsSystem::vfunc43
 0x10005669 func   ?sub_10130c90@@YAPAHXZ sub_10130c90
 0x10005673 func   ?sub_10362540@CNPC_VAsianVampire@@QAEXXZ CNPC_VAsianVampire::sub_10362540

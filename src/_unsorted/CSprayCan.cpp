@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10172e40 size=0x6
+#include "CSprayCan.h"
+int CSprayCan::vfunc117()
+{
+    return -2147483648;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10184420 size=0x1e
 #include "CSprayCan.h"
 
