@@ -164523,6 +164523,16 @@ bool sub_1042c4e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042c5b0 size=0xc
+void sub_1042c740(void *pfn);
+void sub_10012733();
+
+void sub_1042c5b0()
+{
+	sub_1042c740((void *)sub_10012733);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042c5d0 size=0x4e
 #include <string.h>
 extern char *g_109eed64;
