@@ -52,6 +52,23 @@ int CNPC_VFrenzyShadow::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10375c50 size=0x15
+#include "CNPC_VFrenzyShadow.h"
+#include "CNPC_VPlayerController.h"
+
+struct CUnk1026dc00 {
+    char pad[0x5cec];
+    unsigned int m_5cec;
+    unsigned int sub_1026dc00(unsigned int flags);
+};
+
+void CNPC_VFrenzyShadow::vfunc103()
+{
+    ((CUnk1026dc00 *)this)->sub_1026dc00(0x200000);
+    ((CNPC_VPlayerController *)this)->CNPC_VPlayerController::vfunc103();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10375d70 size=0x6
 int CNPC_VFrenzyShadow::vfunc138()
 {
