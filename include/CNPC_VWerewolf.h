@@ -134,7 +134,8 @@ public:
 
 	char m_b66a8;	// 0x66a8
 	char m_b66a9;	// 0x66a9
-	char pad66aa[0x66b0 - 0x66aa];
+	char pad66aa[2];
+	int m_n66ac;	// 0x66ac: cleared by TeleportOut
 	CNPC_VWerewolfHint66b0 *m_pHint66b0;	// 0x66b0
 	char pad66b4[0x66bc - 0x66b4];
 	CNPC_VWerewolfHint66b0 *m_pHint66bc;	// 0x66bc: the move hint
