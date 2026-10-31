@@ -1303,6 +1303,7 @@
 0x1000362a func   ?vfunc419@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc419
 0x1000362f func   ?sub_1006f870@CEnt1006f870@@QAEXXZ CEnt1006f870::sub_1006f870
 0x10003634 func   ?vfunc119@CTriggerWWZone@@UAEXXZ CTriggerWWZone::vfunc119
+0x10003639 func   ?vfunc80@CItemGDrugsMorphineBottle@@QAEHXZ CItemGDrugsMorphineBottle::vfunc80
 0x1000363e func   ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ CUnknown100a1d20::sub_100a1d20
 0x10003643 func   ?sub_10071970@@YAXXZ sub_10071970
 0x1000364d func   ?sub_101f3690@CUnknown101f35c0@@QAEXHPAVCUnknown101f3d80@@HH@Z CUnknown101f35c0::sub_101f3690
