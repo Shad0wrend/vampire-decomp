@@ -149575,6 +149575,35 @@ void CWeaponThrown_Grenade_Frag::sub_103ee6f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ee870 size=0x5f
+#include "CWeaponThrown_Grenade_Frag.h"
+#include "CCharacter1015fbb0.h"
+
+struct sub_Owner870
+{
+	char pad[0xa8];
+	CCharacter1015fbb0 *m_pChar;
+};
+
+// TARGET: CWeaponThrown_Grenade_Frag::sub_103ee870
+void CWeaponThrown_Grenade_Frag::sub_103ee870()
+{
+	if (!sub_103ee660() && m_nState920 == 3)
+	{
+		m_nState920 = 5;
+		sub_103ed920();
+		sub_Owner870 *pOwner = (sub_Owner870 *)sub_102521f0();
+		if (pOwner && pOwner->m_pChar)
+		{
+			if (m_n86c == 0)
+				pOwner->m_pChar->sub_1015fbb0(0xef9, 1);
+			else
+				pOwner->m_pChar->sub_1015fbb0(0xefb, 1);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103eec60 size=0xd
 void CUnknown103eec60::sub_103eec60(char value)
 {
