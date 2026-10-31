@@ -23,6 +23,7 @@ public:
 
 	void sub_102148f0();	// starts the "idle" sequence, sets the think function, fires the output at +0x804 with itself, stamps curtime at +0x780 and, when the target entity behind +0x7d0 is live, calls its slot 242, sets its next think time to 5.0f and clears the handle
 	void sub_102143e0();
+	void sub_102146d0();	// runs sub_102148f0, then sub_10214a20 (0x102146d0)
 	void sub_10214a20();	// tail-called from sub_102143e0 (stub 0x1000ff38)
 	unsigned int sub_10090ef0(int a);	// stub 0x10014ffb, returns a flag word
 	int sub_1008f7b0(const char *label);	// CBaseAnimating::LookupSequence (stub 0x1000e057), called directly
