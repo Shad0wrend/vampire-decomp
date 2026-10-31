@@ -143990,6 +143990,16 @@ extern "C" CBaseEntity *npc_VDog()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10373600 size=0xc
+void __fastcall sub_10373620(void *pThis);
+
+void * __fastcall sub_10373600(void *pThis)
+{
+	sub_10373620(pThis);
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10373620 size=0x33
 void sub_10001564();
 void sub_1000176c();
