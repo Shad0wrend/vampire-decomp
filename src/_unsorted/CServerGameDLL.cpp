@@ -1,6 +1,80 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1011a0c0 size=0x1e6
+#include "CServerGameDLL.h"
+#include "globalvars.h"
+struct CFactoryTable { CreateInterfaceFn engineFn; CreateInterfaceFn physicsFn; CreateInterfaceFn fileSystemFn; };
+struct CSaveRestoreBlockSetView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual void vfunc9(void *pHandler);
+};
+extern CSaveRestoreBlockSetView *g_10592db0;
+extern void *g_1070b230;
+extern void *g_1070b234;
+extern void *g_1070b238;
+extern void *g_1070b23c;
+extern void *g_1070b240;
+extern void *g_1070b244;
+extern void *g_1070b248;
+extern void *g_1070b24c;
+extern void *g_1070b250;
+extern void *g_1070b254;
+void sub_1012ee10(CFactoryTable *p);
+void sub_10118350();
+void *sub_101a3b00();
+void *sub_100cffa0();
+void *sub_10045700();
+void *sub_1030c390();
+void *sub_1019b360();
+int sub_1002d750();
+void sub_1042c310(int a);
+char sub_1042c4e0();
+bool CServerGameDLL::vfunc1(CreateInterfaceFn engineFactory, CreateInterfaceFn physicsFactory, CreateInterfaceFn fileSystemFactory, void *pGlobals)
+{
+	engine = (EngineGlobals::IVEngineServer *)engineFactory("VEngineServer014", 0);
+	if (engine) {
+	g_1070b230 = engineFactory("VoiceServer001", 0);
+	if (g_1070b230) {
+	g_1070b234 = engineFactory("VEngineCvar001", 0);
+	if (g_1070b234) {
+	g_1070b23c = engineFactory("VEngineServerStringTable001", 0);
+	if (g_1070b23c) {
+	g_1070b240 = engineFactory("StaticPropMgrServer001", 0);
+	if (g_1070b240) {
+	g_1070b244 = engineFactory("VEngineRandom001", 0);
+	if (g_1070b244) {
+	g_1070b248 = engineFactory("IEngineSoundServer003", 0);
+	if (g_1070b248) {
+	g_1070b24c = engineFactory("SpatialPartition001", 0);
+	if (g_1070b24c) {
+	g_1070b250 = engineFactory("VModelInfoServer001", 0);
+	if (g_1070b250) {
+	g_1070b254 = engineFactory("EngineTraceServer003", 0);
+	if (g_1070b254) {
+	g_1070b238 = fileSystemFactory("VFileSystem005", 0);
+	if (g_1070b238) {
+	gpGlobals = (EngineGlobals::CGlobalVars *)pGlobals;
+	CFactoryTable factories;
+	factories.engineFn = engineFactory;
+	factories.fileSystemFn = fileSystemFactory;
+	factories.physicsFn = physicsFactory;
+	sub_1012ee10(&factories);
+	sub_10118350();
+	g_10592db0->vfunc9(sub_101a3b00());
+	g_10592db0->vfunc9(sub_100cffa0());
+	g_10592db0->vfunc9(sub_10045700());
+	g_10592db0->vfunc9(sub_1030c390());
+	g_10592db0->vfunc9(sub_1019b360());
+	sub_1042c310(sub_1002d750());
+	return sub_1042c4e0();
+	}}}}}}}}}}}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011a330 size=0x8e
 #include "CServerGameDLL.h"
 
