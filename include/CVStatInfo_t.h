@@ -29,7 +29,8 @@ public:
 	int m_field0000;	// 0x0000
 	int m_field0004;	// 0x0004
 	int m_field0008;	// 0x0008, -1 = none
-	char m_pad000c[0x14 - 0x0c];
+	int m_field000c;	// 0x000c: set by PreCache from the list's dword at +0x2c
+	int m_field0010;	// 0x0010: set by PreCache to the record's index
 	const char *m_pszTitle;	// 0x0014
 	const char *m_pszName;	// 0x0018
 	char m_pad001c[0x60 - 0x1c];
