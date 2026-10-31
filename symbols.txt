@@ -7307,6 +7307,7 @@
 0x1000e44e func   ?vfunc7@ConCommand@@UAEXPBDP6AXXZ0H1@Z ConCommand::vfunc7
 0x1000e453 func   ?sub_101a75c0@@YAHXZ sub_101a75c0
 0x1000e45d func   ?sub_10398d90@CUnknown10398d90@@QAEXH@Z CUnknown10398d90::sub_10398d90
+0x1000e462 func   ?vfunc80@CItemGEDanePrintReport@@QAEHXZ CItemGEDanePrintReport::vfunc80
 0x1000e46c func   ?sub_101809e0@@YAXXZ sub_101809e0
 0x1000e476 func   ?sub_101a1490@@YIHPAD@Z sub_101a1490
 0x1000e47b func   ?sub_100b7c40@CUnknown100b7c40@@QAEHXZ CUnknown100b7c40::sub_100b7c40
