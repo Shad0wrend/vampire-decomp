@@ -36482,6 +36482,75 @@ void sub_100d60c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d6210 size=0x243
+#include "CStatDefault3List.h"
+#include "CUnknown10206c70.h"
+#include "CVStatInfoList_t.h"
+#include "CVStatList_t.h"
+#include "ConVar.h"
+extern "C" int __cdecl atoi(const char *);
+extern "C" char *__cdecl strncpy(char *, const char *, unsigned int);
+extern "C" char *__cdecl strcat(char *, const char *);
+extern "C" unsigned int __cdecl strlen(const char *);
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+#pragma intrinsic(strcat, strlen)
+extern CStatDefault3List g_10738d10;
+extern CUnknown10206c70 g_1074f028;
+extern CVStatInfoList_t g_1074e658;
+extern ConVar g_10725bc8;
+extern char g_106b8540[];
+void sub_101ce620(void *, int, const char *, const char *, const char *, const char *, const char *);
+int sub_101193b0();
+
+struct CNamePtr {
+	const char *m_p;
+	const char *Get() { return m_p ? m_p : g_106b8540; }
+};
+struct CNameAt8 { int pad[2]; CNamePtr n; };
+struct CNameAt10 { int pad[4]; CNamePtr n; };
+struct CNameAt14 { int pad[5]; CNamePtr n; };
+
+// TARGET: sub_100d6210
+void sub_100d6210()
+{
+	char buf[128];
+	int pl = sub_101193b0();
+	if (!pl)
+		return;
+	CBaseCombatCharacter *pPlayer = *(CBaseCombatCharacter **)(pl + 0xa8);
+	if (!pPlayer)
+		return;
+	if (engine->vfunc85() == 2) {
+		const char *arg = engine->vfunc84(1);
+		int id = g_10738d10.sub_101d5bd0(arg);
+		if (id == -1)
+			id = atoi(arg);
+		if (id < 0)
+			return;
+		g_1074f028.sub_10206aa0(id, pPlayer);
+		g_10725bc8.ConVar::vfunc6(((CNameAt8 *)g_1074f028.sub_10207c20(id))->n.Get());
+		engine->vfunc7("clanchangedone");
+	} else if (engine->vfunc85() == 1) {
+		CVStatList_t *list = CVStatListSet::Of(pPlayer)->Find(0);
+		const char *s = ((CNameAt14 *)g_1074e658.sub_10200370(10))->n.Get();
+		sprintf(buf, "%s: %s\n", s, list->sub_10201470(10));
+		sub_101ce620(pPlayer, 2, buf, 0, 0, 0, 0);
+		const char *t = ((CNameAt10 *)g_10738d10.sub_101d5f10(pPlayer))->n.Get();
+		if (strlen(t) > 0x7a) {
+			strncpy(buf, t, 0x7b);
+			buf[0x7b] = 0;
+			strcat(buf, "...\n");
+			sub_101ce620(pPlayer, 2, buf, 0, 0, 0, 0);
+		} else {
+			sub_101ce620(pPlayer, 2, t, 0, 0, 0, 0);
+			sub_101ce620(pPlayer, 2, "\n", 0, 0, 0, 0);
+		}
+	} else {
+		engine->vfunc85();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d6560 size=0xa3
 #include "CStatDefault3List.h"
 #include "CUnknown101d5bd0.h"
