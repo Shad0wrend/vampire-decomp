@@ -66345,6 +66345,77 @@ int sub_10199990(int self, int args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10199a70 size=0x1ef
+#include "CBaseCombatCharacter.h"
+#include "CVDmg_t.h"
+#include "CVStatList_t.h"
+
+struct PyObject
+{
+	int ob_refcnt;
+};
+
+extern "C" {
+__declspec(dllimport) int PyArg_ParseTuple(PyObject *args, const char *format, ...);
+__declspec(dllimport) PyObject *PyErr_Occurred(void);
+__declspec(dllimport) void PyErr_SetString(PyObject *exception, const char *message);
+__declspec(dllimport) extern PyObject *PyExc_AttributeError;
+__declspec(dllimport) extern PyObject _Py_NoneStruct;
+}
+
+char *sub_10196780(PyObject *pObj);
+int sub_10202780(int a);
+const char *sub_101d3730(const char *fmt, ...);
+void sub_101cebc0(void *pAI, int a, int b);
+
+// TARGET: sub_10199a70
+PyObject *sub_10199a70(PyObject *self, PyObject *args)
+{
+	PyObject *pObj = 0;
+	const char *pszStat = 0;
+	int nCount = 0;
+	if (!PyArg_ParseTuple(args, "Osi", &pObj, &pszStat, &nCount)) {
+		if (PyErr_Occurred())
+			return 0;
+		goto bad_args;
+	}
+	{
+		char *pEnt = sub_10196780(pObj);
+		CBaseCombatCharacter *pChar;
+		if (pEnt && (pChar = *(CBaseCombatCharacter **)(pEnt + 0x9c)) && pszStat && nCount) {
+			CVDmgBlock16_t block;
+			block.sub_10204570(pszStat);
+			if (block.sub_10204250()) {
+				if (PyErr_Occurred())
+					return 0;
+				PyErr_SetString(PyExc_AttributeError, sub_101d3730("invalid stat in BumpStat(): %s", pszStat));
+				return 0;
+			}
+			while (nCount > 0) {
+				int nType = block.m_a;
+				int nValue = block.m_b;
+				CVStatList_t *pList = CVStatListSet::Of(pChar)->Find(sub_10202780(nType));
+				if (pList->sub_10200ca0(nValue) < 5)
+					pChar->sub_10338440((const int *)&block);
+				nCount--;
+			}
+			void *pAI = *(void **)((char *)pChar + 0xa8);
+			if (pAI)
+				sub_101cebc0(pAI, 0x19, 0);
+			_Py_NoneStruct.ob_refcnt++;
+			return &_Py_NoneStruct;
+		}
+		if (PyErr_Occurred())
+			return 0;
+		PyErr_SetString(PyExc_AttributeError, "invalid args in BumpStat()");
+		return 0;
+	}
+bad_args:
+	PyErr_SetString(PyExc_AttributeError, "bad args to BumpStat()");
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10199ce0 size=0xf6
 #include "CBaseCombatCharacter.h"
 #include "CVStatList_t.h"
