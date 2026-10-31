@@ -15882,6 +15882,41 @@ float __fastcall sub_10075f60(CRampView *p, int unused, float flTime)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100765d0 size=0x15
+namespace block_10075e70 {
+struct CUnknown10075e70
+{
+	char m_pad0000[0x184];
+	float m_f184;
+
+	float sub_10075e70();
+};
+
+float CUnknown10075e70::sub_10075e70()
+{
+	return m_f184;
+}
+}
+using namespace block_10075e70;
+
+struct CUnknown10075e20
+{
+	void sub_10075e20(float f);
+};
+
+struct CUnknown100765d0
+{
+	void sub_100765d0(float f);
+};
+
+// TARGET: CUnknown100765d0::sub_100765d0
+void CUnknown100765d0::sub_100765d0(float f)
+{
+	float v = ((CUnknown10075e70 *)this)->sub_10075e70();
+	((CUnknown10075e20 *)this)->sub_10075e20(v + f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10076670 size=0xd
 void CUnknown10076670::sub_10076670(int value)
 {
