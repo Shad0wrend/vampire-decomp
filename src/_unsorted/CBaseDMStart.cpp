@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101c0970 size=0x6
+#include "CBaseDMStart.h"
+namespace lifted {
+extern char g_1059b680;
+}
+int CBaseDMStart::vfunc82()
+{
+    return (int)&lifted::g_1059b680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2060 size=0x1e
 #include "CBaseDMStart.h"
 

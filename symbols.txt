@@ -1398,6 +1398,7 @@
 0x100039bd func   ?sub_1018f1c0@CBreakableProp@@QAEPAV1@XZ CBreakableProp::sub_1018f1c0
 0x100039c2 func   ?vfunc82@CMathRemap@@UAEPAUdatamap_t@@XZ CMathRemap::vfunc82
 0x100039cc func   ?sub_101bb220@@YAHH@Z sub_101bb220
+0x100039d6 func   ?vfunc82@CBaseDMStart@@QAEHXZ CBaseDMStart::vfunc82
 0x100039db func   ?sub_10237860@@YAHXZ sub_10237860
 0x100039e0 func   ?sub_100d23a0@@YAXXZ sub_100d23a0
 0x100039e5 func   ?sub_102c8c00@UtlMem@@QAEXXZ UtlMem::sub_102c8c00
