@@ -594,8 +594,9 @@ public:
 	virtual void vfunc435(int arg);	// slot 435: the Troika base's vfunc435(arg), then the flags at +0x14b8 bit 3 clear: 0 at +0x6680 and the count at +0x6678 drops by one while above 0
 	virtual void vfunc436();
 	virtual void vfunc437();
-	virtual void vfunc438();
+	virtual int vfunc438();	// slot 438: state 2 picks a schedule by the conditions, the flag bit 5 and the target, state 5 gives 0x16f, else CNPC_VHuman::vfunc438
 	virtual void vfunc439();
+	int sub_10384ee0();	// CNPC_VHuman::vfunc438 (stub 0x10015ad2), called directly
 	virtual void vfunc440_slot();
 	virtual void vfunc441();
 	virtual void vfunc442();
