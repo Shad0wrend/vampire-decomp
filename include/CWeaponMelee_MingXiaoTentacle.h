@@ -252,7 +252,7 @@ public:
 	virtual void vfunc367_slot();
 	virtual void vfunc368();
 	virtual void vfunc369();
-	virtual void vfunc370();
+	virtual void vfunc370(struct CWeaponMeleeEvent *pEvent, int b);
 	virtual void vfunc371();
 	virtual void vfunc372();
 	virtual int vfunc373();
