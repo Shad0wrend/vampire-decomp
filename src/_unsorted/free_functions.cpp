@@ -34605,6 +34605,21 @@ float __fastcall sub_100cd260(char *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd2d0 size=0x1c
+void sub_100cd240(void *p);
+
+void __fastcall sub_100cd2d0(char *p)
+{
+	char *n = *(char **)(p + 0x14);
+	while (n != 0)
+	{
+		char *next = *(char **)(n + 0x1c);
+		sub_100cd240(n);
+		n = next;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cd640 size=0xc
 extern char g_106b8540[];
 char *CUnknown100cd640::sub_100cd640()
