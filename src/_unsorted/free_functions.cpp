@@ -138983,6 +138983,34 @@ int *sub_1034abb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034b490 size=0x30
+#include "CNPCMaker.h"
+
+extern char g_1000696a;
+
+namespace block_1034b490 {
+struct CNPCMakerUnit : CNPCMaker {
+	char sub_1034b430();
+};
+char CNPCMakerUnit::sub_1034b430()
+{
+	if (m_b66c3 || *(int *)((char *)this + 0x6660) > 0)
+		return 0;
+	return 1;
+}
+}
+using namespace block_1034b490;
+
+void CNPCMaker::sub_1034b490()
+{
+	if (!((CNPCMakerUnit *)this)->sub_1034b430()) {
+		m_b66c0 = 0;
+		sub_100ac4e0((int)&g_1000696a, 0, 0);
+		m_flNextThink = gpGlobals->curtime;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034b4d0 size=0x13
 namespace lifted {
 int __stdcall sub_10007fe5(int, int, int);
