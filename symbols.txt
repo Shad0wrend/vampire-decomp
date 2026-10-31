@@ -10841,6 +10841,7 @@
 0x10013de0 func   ?sub_102cef30@UtlMem9@@QAEXH@Z UtlMem9::sub_102cef30
 0x10013de5 func   ?sub_1003c220@CUtlVector16@@QAEXH@Z CUtlVector16::sub_1003c220
 0x10013dea func   ?sub_10221b10@QuestJournal@@QAEPADH@Z QuestJournal::sub_10221b10
+0x10013def func   ?sub_102e13f0@CUnk102e13f0@@QAEMXZ CUnk102e13f0::sub_102e13f0
 0x10013df4 func   ?sub_10064ca0@@YAHXZ sub_10064ca0
 0x10013df9 func   ?vfunc316@CBasePlayer@@UAEXPAVCGlobalEntityList_Ent@@HH@Z CBasePlayer::vfunc316
 0x10013dfe func   ?sub_1017e840@@YGXH@Z sub_1017e840

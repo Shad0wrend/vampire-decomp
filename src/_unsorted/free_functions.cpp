@@ -130549,6 +130549,20 @@ void __fastcall sub_102e12e0(COwner *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e13f0 size=0x1b
+// TARGET: sub_102e13f0
+struct CUnk102e13f0 {
+    float sub_102e12c0();
+    float sub_102e27b0();
+    float sub_102e13f0();
+};
+float CUnk102e13f0::sub_102e13f0()
+{
+    float a = sub_102e12c0();
+    return sub_102e27b0() * a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e1c10 size=0xa9
 #include "CAI_Motor.h"
 
