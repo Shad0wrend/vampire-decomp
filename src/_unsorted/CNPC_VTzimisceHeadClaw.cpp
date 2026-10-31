@@ -287,6 +287,26 @@ void HeadClawView::sub_103c1820(EventData *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c19e0 size=0x5b
+#include "CNPC_VTzimisceHeadClaw.h"
+#include "CUnknown1025ddd0.h"
+#include "globalvars.h"
+#include "engineiface.h"
+struct SNotify10924edc { virtual void vfunc0(); virtual void vfunc1(); };
+extern SNotify10924edc *g_10924edc;
+bool CNPC_VTzimisceHeadClaw::vfunc599(CBaseEntity *pEntity)
+{
+	if (m_pBehaviour65e8->sub_1025db70((CBaseEntity *)this)) {
+		g_10924edc->vfunc1();
+		m_b6078 = 1;
+		m_f6074 = enginerandom->vfunc1(7.5f, 15.0f) + gpGlobals->curtime;
+		return true;
+	}
+	m_b6078 = 0;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c1a60 size=0x43
 #include "CNPC_VTzimisceHeadClaw.h"
 #include "CUnknown1025ddd0.h"
