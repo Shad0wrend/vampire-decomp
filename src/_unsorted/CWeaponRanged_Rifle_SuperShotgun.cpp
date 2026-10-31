@@ -20,6 +20,17 @@ int CWeaponRanged_Rifle_SuperShotgun::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10236b00 size=0x6
+#include "CWeaponRanged_Rifle_SuperShotgun.h"
+namespace lifted {
+extern char g_105bdb48;
+}
+int CWeaponRanged_Rifle_SuperShotgun::vfunc362()
+{
+    return (int)&lifted::g_105bdb48;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a4d0 size=0x1e
 #include "CWeaponRanged_Rifle_SuperShotgun.h"
 
