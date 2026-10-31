@@ -13,7 +13,15 @@ public:
 	void vfunc103();	// slot 103 "CDynamicProp::Spawn": CBreakableProp::vfunc103, classname "prop_dynamic" (slot 122), AddFlag(0x40000) ..., and with the byte at +0x7c4 set a think function and the next think time
 	void sub_10190a00(inputdata_t *pInput);	// "CDynamicProp::InputSetAnimation": looks the input's string up as a sequence name; when found sets it (cycle 0), resets the sequence info, runs sub_100963d0, fires the output at +0x77c (caller this), removes flag 0x40000, sets a think function and the next think time (curtime + 0.1); else prints "Dynamic prop no sequence named:%s" and clears the sequence
 
-	char m_pad0004[0x6f0 - 4];
+	void sub_10190750();	// the animation think: with a sequence set (+0x7d8 not negative) applies it, fires the output at +0x77c, removes flag 0x40000, sets the next think function and the next think time (curtime + 0.1)
+	void sub_10090950();	// CBaseAnimating member (stub 0x100117b1), called directly
+	void sub_100963d0();	// CBaseAnimating member (stub 0x100024b9), called directly
+	void sub_100b3640(int flags);	// stub 0x1001457e: removes flags
+	int sub_100ac4e0(void *pfnThink, int a, int b);	// CBaseEntity::ThinkSet (stub 0x10007fe5)
+
+	char m_pad0004[0x17c - 4];
+	float m_flNextThink17c;	// 0x17c
+	char m_pad0180[0x6f0 - 0x180];
 	int m_nSequence;	// 0x6f0
 	char m_pad06f4[4];
 	float m_flCycle;	// 0x6f8
