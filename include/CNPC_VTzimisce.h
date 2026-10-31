@@ -98,7 +98,9 @@ public:
 	Vector m_vec1074;	// 0x1074: a 2D direction, turned by 90 degrees in Spawn
 	char m_pad1080[0x1574 - 0x1080];
 	float m_f1574;	// 0x1574: set to -0.5f in Spawn
-	char m_pad1578[0x5cc0 - 0x1578];
+	char m_pad1578[0x5c38 - 0x1578];
+	struct CTzimisceTask *m_pTask5c38;	// 0x5c38: the current schedule; its dword at +0x1c is the node id looked up by slot 580's range list
+	char m_pad5c3c[0x5cc0 - 0x5c3c];
 	int m_nState5cc0;
 	char m_pad5cc4[0x5d44 - 0x5cc4];
 	CAI_Motor *m_pMotor5d44;	// 0x5d44
