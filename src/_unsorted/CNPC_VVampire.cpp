@@ -49,6 +49,15 @@ CNPC_VVampire *CNPC_VVampire::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c4a20 size=0x6
+extern unsigned char g_1065e088;
+// TARGET: sub_103c4a20
+unsigned char sub_103c4a20()
+{
+    return g_1065e088;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c4a80 size=0x1d
 #include "CNPC_VVampire.h"
 struct A { int sub_10012300(int); };
