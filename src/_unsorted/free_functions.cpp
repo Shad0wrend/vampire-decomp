@@ -24172,6 +24172,11 @@ void CBaseTransmitProxy::sub_10097bd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10097c90 size=0x5
+// TARGET: sub_10097c90
+void __fastcall sub_10097c90(short *p) { (*(p + 4))++; }
+// END FUNCTION
+
 // FUNCTION: 0x10097d40 size=0x1a
 namespace lifted {
 extern int g_105509f8;
