@@ -30241,6 +30241,28 @@ void CBeam::sub_100bbbf0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bbdf0 size=0x56
+#include "CGlobalEntityList.h"
+#include "CBaseEntity.h"
+extern CGlobalEntityList g_106eb5d8;
+// TARGET: sub_100bbdf0
+CBaseEntity * __stdcall sub_100bbdf0(const char *pszName)
+{
+	CBaseEntity *pResult = 0;
+	CBaseEntity *pEnt = g_106eb5d8.sub_100f7770(0, pszName, 0, 0);
+	if (pEnt) {
+		int n = -1;
+		do {
+			n++;
+			if (enginerandom->vfunc2(0, n) < 1)
+				pResult = pEnt;
+			pEnt = g_106eb5d8.sub_100f7770(pEnt, pszName, 0, 0);
+		} while (pEnt);
+	}
+	return pResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bbe70 size=0x51
 #include "CBeam.h"
 

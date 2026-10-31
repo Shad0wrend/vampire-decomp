@@ -2990,6 +2990,7 @@
 0x10006f9b func   ?vfunc144@CBaseGrenade@@UAEXH@Z CBaseGrenade::vfunc144
 0x10006fa5 func   ?sub_1027ffe0@@YAXXZ sub_1027ffe0
 0x10006faa func   ?vfunc223@CRotDoor@@QAE_NXZ CRotDoor::vfunc223
+0x10006faf func   ?sub_100bbdf0@@YGPAVCBaseEntity@@PBD@Z sub_100bbdf0
 0x10006fb4 func   ?sub_10088380@@YAXXZ sub_10088380
 0x10006fbe func   ?sub_10345480@@YIHPAVCBaseAnimating@@@Z sub_10345480
 0x10006fc3 func   ?vfunc82@CBaseTrigger@@UAEPAUdatamap_t@@XZ CBaseTrigger::vfunc82
