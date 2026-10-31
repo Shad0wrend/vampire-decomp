@@ -105947,6 +105947,14 @@ int sub_1023bd00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023c430 size=0xe
+// TARGET: sub_1023c430
+float sub_1023c430()
+{
+    return engine->vfunc87();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023cde0 size=0xed
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
     virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
