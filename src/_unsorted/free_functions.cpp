@@ -16058,6 +16058,31 @@ void CUnknown10077db0::sub_10077db0(int list, const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10077e80 size=0x61
+#include "CTableFields10077ac0.h"
+namespace block_10077e80 {
+struct CTableUnit : CTableFields10077ac0 { unsigned int sub_10077ac0(int index); };
+unsigned int CTableUnit::sub_10077ac0(int index)
+{
+	return *(unsigned int *)((char *)this + 0x2f0 + index * 0x14);
+}
+}
+using namespace block_10077e80;
+float CTableFields10077ac0::sub_10077e80(int a, int b)
+{
+	CTableUnit *t = (CTableUnit *)this;
+	if (b <= -2)
+		return -0.5f;
+	if (b == -1)
+		return 0.0f;
+	if (b == (int)t->sub_10077ac0(a))
+		return 1.0f;
+	if (b > (int)t->sub_10077ac0(a))
+		return 1.5f;
+	return ((CUnknown10073b00 *)((CUnk10077af0 *)this)->sub_10077af0(a, b))->sub_10073b00();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100784b0 size=0xd
 void CUnknown10077730::sub_100784b0(float value)
 {
