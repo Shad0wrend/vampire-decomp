@@ -2160,6 +2160,7 @@
 0x10004ceb func   ?vfunc5@CItemGDrugsMorphineBottle@@QAEPAV1@I@Z CItemGDrugsMorphineBottle::vfunc5
 0x10004cf0 func   ?vfunc603@CNPC_VMingXiao@@QAEMPAM0@Z CNPC_VMingXiao::vfunc603
 0x10004cfa func   ?sub_104121f0@@YAXXZ sub_104121f0
+0x10004cff func   ?sub_100fef00@CUnk100fef00@@QAEXH@Z CUnk100fef00::sub_100fef00
 0x10004d04 func   ?sub_101b1dd0@@YAHHH@Z sub_101b1dd0
 0x10004d09 func   ?sub_101d6550@CUnk101d6aa0@@QAEXPAX@Z CUnk101d6aa0::sub_101d6550
 0x10004d13 func   ?sub_100ab250@@YAHPAUCUnknown100ab250@@@Z sub_100ab250

@@ -44981,6 +44981,28 @@ void __fastcall sub_100feed0(void *pThis, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fef00 size=0x1a
+struct CUnk100fef00
+{
+	char m_pad0000[0x4f4];
+	int m_n4f4;
+
+	void sub_100ff020();
+	void sub_100fef50();
+	void sub_100fef00(int a);
+};
+
+// TARGET: sub_100fef00
+void CUnk100fef00::sub_100fef00(int a)
+{
+	if (m_n4f4 != 0) {
+		sub_100ff020();
+		return;
+	}
+	sub_100fef50();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fef30 size=0x8
 namespace lifted {
 int sub_10009877();
