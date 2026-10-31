@@ -110093,6 +110093,16 @@ void sub_10246320(int unused, const float *pIn, float *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102463c0 size=0x19
+// TARGET: sub_102463c0
+void sub_102463c0(int unused, const int *pSrc, int *pDst)
+{
+	pDst[0] = pSrc[0];
+	pDst[1] = pSrc[1];
+	pDst[2] = pSrc[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x102463f0 size=0xe
 int sub_102463f0(int a0, int a1, int a2)
 {

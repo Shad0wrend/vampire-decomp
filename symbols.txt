@@ -1138,6 +1138,7 @@
 0x10002ff4 func   ?sub_101fee50@CVStatInfo_t@@QAEHH@Z CVStatInfo_t::sub_101fee50
 0x10002ff9 func   ?vfunc4@CTEBloodStream@@QAEXHH@Z CTEBloodStream::vfunc4
 0x1000300d func   ?vfunc82@CInspectionNode@@QAEHXZ CInspectionNode::vfunc82
+0x10003012 func   ?sub_102463c0@@YAXHPBHPAH@Z sub_102463c0
 0x10003017 func   _ai_changehintgroup ai_changehintgroup
 0x1000301c func   ?sub_100fbfc0@@YAHXZ sub_100fbfc0
 0x10003021 func   ?vfunc363@CBaseCombatWeapon@@UAEHXZ CBaseCombatWeapon::vfunc363
