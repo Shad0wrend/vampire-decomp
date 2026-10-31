@@ -180,7 +180,7 @@ public:
 	virtual void vfunc160();
 	virtual void vfunc161();
 	virtual void vfunc162();
-	virtual void vfunc163();
+	virtual char vfunc163();
 	virtual void vfunc164();
 	virtual void vfunc165();
 	virtual void vfunc166();
