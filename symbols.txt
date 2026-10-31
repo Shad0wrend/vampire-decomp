@@ -6839,6 +6839,7 @@
 0x1000e2e6 func   ?vfunc5@CItemMWallet@@QAEPAV1@I@Z CItemMWallet::vfunc5
 0x1000e2f0 func   ?vfunc329@CNPC_VTzimisceRunner@@UAE_NXZ CNPC_VTzimisceRunner::vfunc329
 0x1000e2f5 func   ?sub_1019a8e0@@YGXHH@Z sub_1019a8e0
+0x1000e2fa func   ?sub_10384130@@YIPAXPAX@Z sub_10384130
 0x1000e2ff func   ?sub_100427c0@UtlMem@@QAEXXZ UtlMem::sub_100427c0
 0x1000e31d func   ?sub_1010ddc0@CBreakable@@QAEXPAX@Z CBreakable::sub_1010ddc0
 0x1000e322 func   ?sub_102a9670@CUnknown102a9670@@QAEPAXXZ CUnknown102a9670::sub_102a9670
