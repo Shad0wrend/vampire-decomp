@@ -12,13 +12,18 @@ public:
 	void vfunc268();	// slot 268: with the discipline's entry in the global effect manager (id at +0x8bc) and a non-zero range, ends the projectile (sub_101ee7d0) once it is farther than the range from the point at +0x888
 	void sub_101ee7d0();	// CVampireProjectile member (stub 0x10003be3): removes the projectile, delayed by 10 seconds while the entity of the handle at +0x8b8 lives and the byte at +0x8b4 is clear
 
-	char m_pad03e0[0x888 - 0x3e0];
+	char m_pad03e0[0x778 - 0x3e0];
+	EHANDLE m_h778;	// 0x778
+	char m_pad077c[0x888 - 0x77c];
 	Vector m_vecStart888;	// 0x888
-	char m_pad0894[0x8b4 - 0x894];
+	char m_pad0894[0x8a8 - 0x894];
+	EHANDLE m_h8a8;	// 0x8a8
+	char m_pad08ac[0x8b4 - 0x8ac];
 	char m_b8b4;	// 0x8b4
 	char m_pad08b5[3];
 	EHANDLE m_h8b8;	// 0x8b8
 	int m_nDisc8bc;	// 0x8bc: the discipline id
+	int m_n8c0;	// 0x8c0
 public:
     virtual datamap_t * vfunc82();
 public:
