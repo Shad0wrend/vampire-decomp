@@ -79,6 +79,13 @@ void CWeaponThrown_Chang_Ghost::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f0cf0 size=0x3
+#include "CWeaponThrown_Chang_Ghost.h"
+void CWeaponThrown_Chang_Ghost::vfunc230(int a0, int a1)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f10e0 size=0x133
 #include "CWeaponThrown_Chang_Ghost.h"
 #include "CUnknown1070b244.h"

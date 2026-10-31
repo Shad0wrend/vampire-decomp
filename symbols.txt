@@ -4985,6 +4985,7 @@
 0x1000a7d1 func   ?sub_10341b60@CBaseCombatCharacter@@QAEXD@Z CBaseCombatCharacter::sub_10341b60
 0x1000a7d6 func   ?sub_103b7040@@YADXZ sub_103b7040
 0x1000a7db func   ?sub_102d0080@@YIXPAHHH@Z sub_102d0080
+0x1000a7e0 func   ?vfunc230@CWeaponThrown_Chang_Ghost@@QAEXHH@Z CWeaponThrown_Chang_Ghost::vfunc230
 0x1000a7e5 func   _npc_VHengeyokai npc_VHengeyokai
 0x1000a7ea func   ?sub_100b3d10@CBaseEntity@@QAEHXZ CBaseEntity::sub_100b3d10
 0x1000a7f9 func   ?vfunc362@CWeaponMelee_MingXiaoMelee@@UAEPAUCWeaponActivityRecord@@XZ CWeaponMelee_MingXiaoMelee::vfunc362
