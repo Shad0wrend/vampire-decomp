@@ -21,7 +21,7 @@ public:
 	virtual void vfunc4();
 	virtual void vfunc5();
 	virtual void vfunc6(IRestoreRead *pRestore);	// reads the block version and remembers whether it matches
-	virtual void vfunc7();
+	virtual void vfunc7(int a, int b, int c);	// reads the event queue (g_106e7050) through the restore interface a when the version matches
 	virtual void vfunc8();
 	virtual void vfunc9();
 
