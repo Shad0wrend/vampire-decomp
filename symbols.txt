@@ -10599,6 +10599,7 @@
 0x100140c4 func   ?sub_10374f40@CNPC_VDog@@QAEXXZ CNPC_VDog::sub_10374f40
 0x100140c9 func   ?sub_10197e50@@YAPAUPyObj@@PAU1@0@Z sub_10197e50
 0x100140ce func   ?sub_10197360@@YAPAUPyObj@@PAU1@0@Z sub_10197360
+0x100140d3 func   ?sub_100feed0@@YIXPAXHH@Z sub_100feed0
 0x100140d8 func   ?sub_10401770@@YAHXZ sub_10401770
 0x100140e2 func   ?sub_101af0d0@@YAXPAUSndSrcView@@PBD@Z sub_101af0d0
 0x100140e7 func   ?sub_100cae20@CMomentaryRotButton@@QAEXMPAX@Z CMomentaryRotButton::sub_100cae20

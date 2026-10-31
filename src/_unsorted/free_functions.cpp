@@ -44105,6 +44105,19 @@ void CFieldHolder::sub_100feea0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100feed0 size=0x12
+#include "vampire.h"
+
+void __fastcall sub_100ff020(void *pThis);
+
+// TARGET: sub_100feed0
+void __fastcall sub_100feed0(void *pThis, int, int)
+{
+	if (*(int *)((char *)pThis + 0x4f4))
+		sub_100ff020(pThis);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fef30 size=0x8
 namespace lifted {
 int sub_10009877();
