@@ -100,5 +100,6 @@
 	void sub_10161f10();	// ends the placeholder: the entity of the handle at +0x1da4 gets its think function reset (sub_100ac4e0) and the next think in 0.01 s, then the handle is cleared
 	Vector vfunc389(const Vector &vecPos);	// slot 389 (plain member, hidden return, ret 8): the view offset (+0x184) plus vecPos
 	void sub_10146e20(int a, int b);	// stub 0x10012562 (function 0x10146e20): last step of slot 449, called with the dword at +0xff0
-	void sub_10329560();	// CBaseCombatCharacter member (stub 0x1000acc2), called directly
+	void sub_10329560();
+	void sub_100b3580(unsigned int flags);	// "CBaseEntity::AddFlag" (stub 0x10003620), called directly	// CBaseCombatCharacter member (stub 0x1000acc2), called directly
 	char vfunc321(int unused);	// slot 321 (plain member): re-arms the random view punch timer (+0x1da8) when it is due, then punches the view by a random angle scaled by the player and punch convars (slot 169)
