@@ -2365,6 +2365,7 @@
 0x1000583a func   ?vfunc4@CVTSDependencySaveRestoreDataOps@@UAE_NHH@Z CVTSDependencySaveRestoreDataOps::vfunc4
 0x10005844 func   ?vfunc255@CBaseAnimatingOverlay@@QAEXPAX0H@Z CBaseAnimatingOverlay::vfunc255
 0x10005849 func   ?sub_10332ca0@CBaseCombatCharacter@@QAEXPAVCBaseEntity@@HH@Z CBaseCombatCharacter::sub_10332ca0
+0x1000584e func   ?vfunc81@CItemGPishaBook@@QAEHXZ CItemGPishaBook::vfunc81
 0x10005853 func   ?sub_10071cd0@@YAXPAMPBD@Z sub_10071cd0
 0x10005858 func   ?sub_100f8490@@YGPAVCBaseEntity@@PAV1@IPBVVector@@M@Z sub_100f8490
 0x10005862 func   ?vfunc602@CNPC_VGargoyle@@UAE_NXZ CNPC_VGargoyle::vfunc602

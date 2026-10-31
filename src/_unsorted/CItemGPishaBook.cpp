@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x104026b0 size=0x3
+#include "CItemGPishaBook.h"
+int CItemGPishaBook::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040a7b0 size=0x1e
 #include "CItemGPishaBook.h"
 
