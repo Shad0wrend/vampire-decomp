@@ -27330,6 +27330,33 @@ void CBaseEntity::sub_100aaf30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ab250 size=0x17
+struct CUnknown100ab250Obj
+{
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual void vfunc2();
+	virtual void vfunc3();
+	virtual int vfunc4();
+};
+
+struct CUnknown100ab250
+{
+	char m_pad0000[0x40];
+	CUnknown100ab250Obj *m_p40;
+};
+
+// TARGET: sub_100ab250
+int sub_100ab250(CUnknown100ab250 *p)
+{
+	if (p && p->m_p40)
+	{
+		return p->m_p40->vfunc4();
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ab980 size=0x1ee
 #include "CBaseEntity.h"
 #include "CEventAction.h"
