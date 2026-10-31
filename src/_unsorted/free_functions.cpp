@@ -56585,6 +56585,36 @@ struct CUnknown10146790 { char a; char b; char c; void sub_10146790(); };
 void CUnknown10146790::sub_10146790() { c = 0; b = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x101467b0 size=0x240
+#include "CBaseCombatCharacter.h"
+#include "CVStatList_t.h"
+#include "CVStatInfoList_t.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+
+extern CVStatInfoList_t g_1074e098;
+
+int sub_101467b0(CBaseCombatCharacter *pChar)
+{
+	if (!pChar)
+		return 0;
+	if (CVStatListSet::Of(pChar)->Find(3)->sub_102012d0(8) < 1)
+	{
+		static int s_bFlag = g_1074e098.sub_10200370(8)->sub_101fead0() & 0xff;
+		pChar->sub_10147710(s_bFlag ? CVStatListSet::Of(pChar)->Find(2)->sub_102012d0(8) : 1);
+		if (!pChar->m_bObfuscateReady14dc)
+		{
+			CPASAttenuationFilter filter((CEntitySoundOriginView *)pChar);
+			filter.MakeReliable();
+			int edict = pChar->m_pEdict2e0;
+			enginesound->vfunc3(&filter, engine->vfunc35(edict), 4, "disciplines/obfuscate/Obfuscate_Unhidden.wav", 1.0f, 0.8f, 1, 100, 0, 0, 1, 0);
+			return 0;
+		}
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146a80 size=0x7f
 char CBaseCombatCharacter::sub_10146a80()
 {
