@@ -104,7 +104,9 @@ class CNPC_VWerewolf
 {
 public:
 
-	char pad04[0x268];
+	char pad04[0x198];
+	unsigned int m_nEffectFlags;	// 0x19c: bit 6 is tested by UpdateConditionCanSpecialMove
+	char pad1a0[0xcc];
 	const char *m_name26c;
 	char pad270[0x5c38 - 0x270];
 	CNPC_VWerewolfSchedule *m_pSchedule5c38;	// 0x5c38
