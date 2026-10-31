@@ -148546,6 +148546,16 @@ extern "C" CBaseEntity *npc_VTest()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b3bf0 size=0xc
+void __fastcall sub_103b3c10(void *p);
+
+void *__fastcall sub_103b3bf0(void *p)
+{
+    sub_103b3c10(p);
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b3c10 size=0x33
 void sub_10007897();
 void sub_10013cf0();
