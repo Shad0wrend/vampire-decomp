@@ -24,8 +24,11 @@ public:
 
 	char m_pad898[0x910 - 0x898];
 	int m_n910;
-	char m_pad914[0x928 - 0x914];
+	char m_b914;	// 0x914
+	char m_pad915[0x928 - 0x915];
 	int m_nSoundState;	// 0x928
+	char m_pad92c[0xb25 - 0x92c];
+	char m_bB25;	// 0xb25
 public:
 	virtual int vfunc298(int, int);
 };
