@@ -34,7 +34,9 @@ public:
 	char m_pad04fc[0x520 - 0x4fc];
 	Vector m_angRotation520;	// +0x520: one end angle of the door
 	Vector m_angRotation52c;	// +0x52c: the other end angle
-	char m_pad0538[0x564 - 0x538];
+	char m_pad0538[0x53c - 0x538];
+	EHANDLE m_hActivator53c;	// +0x53c: entity handle of the activator
+	char m_pad0540[0x564 - 0x540];
 	CDoorEventList m_items564[8];	// +0x564 .. +0x624
 	char m_pad0624[0x630 - 0x624];
 	CHandle<CRotDoor> m_hLinked630;	// +0x630: the linked door
