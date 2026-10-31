@@ -12848,6 +12848,25 @@ void CUnk_1006cb10::sub_1006cb10(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006cba0 size=0x30
+#include "StatDefault.h"
+int StatDefault::sub_1006cba0(int arg)
+{
+	int n = a[4];
+	int i = 0;
+	if (n > 0) {
+		const float *p = (const float *)a[5];
+		do {
+			if (arg <= (int)*p)
+				return i;
+			i++;
+			p++;
+		} while (i < n);
+	}
+	return i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006cbe0 size=0x28
 struct CUnk1006cbe0
 {

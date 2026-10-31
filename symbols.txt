@@ -10311,6 +10311,7 @@
 0x100154e7 func   ?sub_10075e70@CUnknown10075e70@@QAEMXZ CUnknown10075e70::sub_10075e70
 0x100154f1 func   ?vfunc360@CWeaponIGeneric@@UAEHXZ CWeaponIGeneric::vfunc360
 0x100154fb func   ?sub_1023b3a0@@YAXPAUCStateHolder@@@Z sub_1023b3a0
+0x10015500 func   ?sub_1006cba0@StatDefault@@QAEHH@Z StatDefault::sub_1006cba0
 0x1001550a func   ?vfunc373@CWeaponMelee_MingXiaoMelee@@UAEHXZ CWeaponMelee_MingXiaoMelee::vfunc373
 0x1001550f func   ?sub_102fc910@CBitString@@QAEPAV1@H@Z CBitString::sub_102fc910
 0x10015514 func   ?sub_10056660@@YAHXZ sub_10056660
