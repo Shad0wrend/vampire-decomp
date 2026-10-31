@@ -49,7 +49,11 @@ public:
 	virtual void s160(); virtual void s161(); virtual void s162(); virtual void s163();
 	virtual void s164(); virtual void s165(); virtual void s166();
 	virtual CNPC_VTzimisceHelper *vfunc167();
-	VT_SLOTS10(t00) VT_SLOTS10(t01) VT_SLOTS10(t02) VT_SLOTS10(t03) VT_SLOTS10(t04) VT_SLOTS10(t05) VT_SLOTS10(t06)
+	VT_SLOTS10(t00) VT_SLOTS10(t01) VT_SLOTS10(t02) VT_SLOTS10(t03) VT_SLOTS10(t04) virtual void t0518(); virtual void t0519();
+	virtual void *vfunc220();
+	virtual void t0521(); virtual void t0522(); virtual void t0523(); virtual void t0524();
+	virtual void t0525(); virtual void t0526(); virtual void t0527();
+	VT_SLOTS10(t06)
 	virtual void t070(); virtual void t071(); virtual void t072();
 	virtual void vfunc241(char *pszOut, int *pEvent);	// slot 241 "CNPC_VTzimisce::GetAnimEventName": the sound / event name for the anim event ids 2..8 (START_IDLE, START_FIDGET, START_RUN, START_LANDHARD, START_ATTACK, START_ATTACKBIG, START_POUNCE) copied to pszOut, the base implementation for the other ids
 	virtual void t074(); virtual void t075(); virtual void t076(); virtual void t077(); virtual void t078(); virtual void t079();
