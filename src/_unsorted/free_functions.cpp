@@ -43058,6 +43058,17 @@ void CUtlLinkedList6::sub_100fa3a0(unsigned short i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fa5d0 size=0x13
+#include "vampire.h"
+
+// TARGET: sub_100fa5d0
+void __cdecl sub_100fa5d0(unsigned short *dst, const unsigned short *src)
+{
+	if (dst)
+		*dst = *src;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fa600 size=0x68
 extern void *(*g_109f3638)(void *, int);
 extern void *(*g_109f3634)(int);
