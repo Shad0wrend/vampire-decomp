@@ -19,6 +19,11 @@ void CBaseEntity::vfunc23(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026590 size=0x3
+// TARGET: CBaseEntity::vfunc24
+void CBaseEntity::vfunc24(int) { }
+// END FUNCTION
+
 // FUNCTION: 0x100265b0 size=0x3
 void CBaseEntity::vfunc25(int a0)
 {
