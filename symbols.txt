@@ -9225,6 +9225,7 @@
 0x10012bf2 func   ?sub_10091c80@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_10091c80
 0x10012bf7 func   ?sub_1019d3b0@CUnknown1019d3b0@@QAEXXZ CUnknown1019d3b0::sub_1019d3b0
 0x10012bfc func   ?vfunc19@CMultiplayRules@@UAEDPAVCBaseEntity@@0@Z CMultiplayRules::vfunc19
+0x10012c01 func   ?vfunc123@CScriptedTarget@@UAEXXZ CScriptedTarget::vfunc123
 0x10012c10 func   ?sub_1010a370@CFire@@QAEXHM@Z CFire::sub_1010a370
 0x10012c15 func   ?sub_10250560@@YAXH@Z sub_10250560
 0x10012c24 func   ?sub_103ec6f0@@YAHXZ sub_103ec6f0

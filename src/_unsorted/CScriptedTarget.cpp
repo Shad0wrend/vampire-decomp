@@ -117,3 +117,36 @@ int CScriptedTarget::vfunc124()
 	return nLine;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1034e070 size=0x21d
+#include "CScriptedTarget.h"
+#include "CEntityDebugView.h"
+#include "CEHandleGet.h"
+
+void sub_10142aa0(float *pOrigin, const Vector &vecMins, const Vector &vecMaxs, int r, int g, int b, int a, int c);
+void sub_10143b70(float *pOrigin, const Vector &vecMins, const Vector &vecMaxs, int r, int g, int b, int a, float flDuration);
+void sub_10142e90(float *pStart, float *pEnd, int r, int g, int b, int noDepth, int duration);
+
+void CScriptedTarget::vfunc123()
+{
+	CEntityDebugView *pView = (CEntityDebugView *)this;
+	if (*(unsigned char *)((char *)this + 0x224) & 0x24) {
+		if (m_n5f50) {
+			sub_10142aa0(pView->vfunc217(), Vector(-5.0f, -5.0f, -5.0f), Vector(5.0f, 5.0f, 5.0f), 200, 100, 100, 0, 0);
+		} else {
+			sub_10143b70(m_vecOrigin5f44, Vector(-8.0f, -8.0f, -8.0f), Vector(8.0f, 8.0f, 8.0f), 255, 0, 0, 1, 0.1f);
+			sub_10142aa0(pView->vfunc217(), Vector(-5.0f, -5.0f, -5.0f), Vector(5.0f, 5.0f, 5.0f), 255, 0, 0, 0, 0);
+			sub_10142e90(pView->vfunc217(), m_vecOrigin5f44, 255, 0, 0, 1, 0);
+		}
+		CEntityDebugView *pNext = pView->vfunc172();
+		if (pNext)
+			sub_10142e90(pView->vfunc217(), pNext->vfunc217(), 200, 100, 100, 1, 0);
+		if (EHandle_Get(m_hUser5ce4)) {
+			float vecUser[3];
+			CEntityDebugView *pUser = (CEntityDebugView *)EHandle_Get(m_hUser5ce4);
+			sub_10142e90(pView->vfunc217(), pUser->vfunc193(vecUser), 0, 255, 0, 1, 0);
+		}
+	}
+	CBaseEntity::vfunc123();
+}
+// END FUNCTION
