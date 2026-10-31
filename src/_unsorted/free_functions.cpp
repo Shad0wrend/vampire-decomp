@@ -146025,6 +146025,16 @@ extern "C" CBaseEntity *npc_VMingXiao()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103912c0 size=0xc
+void __fastcall sub_103912e0(void *p);
+
+void *__fastcall sub_103912c0(void *p)
+{
+    sub_103912e0(p);
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103912e0 size=0x33
 void sub_10014d7b();
 void sub_10013386();
