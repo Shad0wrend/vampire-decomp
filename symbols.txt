@@ -9858,6 +9858,7 @@
 0x10012fdf func   _item_k_hitman_lu_key item_k_hitman_lu_key
 0x10012fe4 func   _item_w_katana item_w_katana
 0x10012fe9 func   ?vfunc81@CTestTraceline@@UAEHXZ CTestTraceline::vfunc81
+0x10012fee func   ?vfunc80@COccultPresence@@QAEHXZ COccultPresence::vfunc80
 0x10012ff3 func   ?vfunc5@CBatSwarm_Teleport@@QAEPAV1@I@Z CBatSwarm_Teleport::vfunc5
 0x10012ffd func   ?vfunc103@CFuncBrush@@QAEXXZ CFuncBrush::vfunc103
 0x10013007 func   ?sub_1013bef0@@YAXABVVector@@000MAAV1@@Z sub_1013bef0
