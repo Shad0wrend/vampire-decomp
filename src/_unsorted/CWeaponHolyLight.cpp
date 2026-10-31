@@ -12,6 +12,14 @@ int CWeaponHolyLight::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f29b0 size=0x6
+#include "CWeaponHolyLight.h"
+int CWeaponHolyLight::vfunc363()
+{
+    return 0xc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f2a40 size=0x1e
 #include "CWeaponHolyLight.h"
 
