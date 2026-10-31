@@ -118,6 +118,7 @@
 0x1000136b func   ?sub_103ab110@CNPC_VSabbatLeader@@QAEXPBDPAVCEntityVSlots@@@Z CNPC_VSabbatLeader::sub_103ab110
 0x10001370 func   ?sub_1042c640@@YAXXZ sub_1042c640
 0x10001375 func   ?sub_1034b460@CUnknown1034b4d0@@QAEXXZ CUnknown1034b4d0::sub_1034b460
+0x1000137a func   ?sub_1021c390@CUnk1021c390@@QAEXH@Z CUnk1021c390::sub_1021c390
 0x1000137f func   ?vfunc9@CRestore@@UAEXPAG@Z CRestore::vfunc9
 0x10001384 func   ?sub_103dc400@CMem4b_t@@QAEXH@Z CMem4b_t::sub_103dc400
 0x10001389 func   ?vfunc617@CNPC_VGargoyle@@QAEXXZ CNPC_VGargoyle::vfunc617

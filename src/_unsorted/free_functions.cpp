@@ -101148,6 +101148,21 @@ void CPropHacking::sub_1021c040()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021c390 size=0x17
+struct CUnk1021c390 {
+    char pad[0x9e0];
+    int m_9e0;
+    void sub_1021c390(int a);
+    void sub_1021b5e0(int a);
+};
+
+void CUnk1021c390::sub_1021c390(int a)
+{
+    m_9e0 = a;
+    sub_1021b5e0(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021d730 size=0x103
 struct ISaveRestoreOps;
 struct datamap_t;
