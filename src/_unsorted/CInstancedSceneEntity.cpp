@@ -22,6 +22,13 @@ void CInstancedSceneEntity::vfunc271(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10084a90 size=0x3
+#include "CInstancedSceneEntity.h"
+void CInstancedSceneEntity::vfunc272(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10084e30 size=0x70
 #include "CInstancedSceneEntity.h"
 #include "CGlobalEntityList.h"
