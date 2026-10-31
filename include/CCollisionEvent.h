@@ -160,7 +160,11 @@ public:
 	void sub_10030910();	// "CCollisionEvent::FrameUpdate": scope trace, UpdateFrictionSounds, UpdateTouchEvents, then UpdateDamageEvents (called through the stub at 0x10005a42)
 
 	CFrictionEntry_t m_friction[8];	// 0x0008
-	char m_pad0068[0xb8 - 0x68];
+	char m_event68[0x18];	// 0x0068: the copy of the event (PreCollision), passed on to the entities' slots 228 / 230
+	float m_flSpeed80;	// 0x0080: the collision speed
+	int m_pInternalData84;	// 0x0084
+	char m_pad0088[0xa0 - 0x88];
+	float m_postVelocity[2][3];	// 0x00a0: the post velocities (slot 40 of the objects)
 	CCollisionEventRecords m_records;	// 0x00b8
 	char m_pad00d0[0xd8 - 0xd0];
 	CCollisionEventVec5 m_touchVec;	// 0x00d8: queued touch records of 0x24 bytes (memory +0xd8, size +0xe4)
