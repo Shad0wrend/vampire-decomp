@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10406710 size=0x6
+#include "CItemGBertramsCD.h"
+namespace lifted {
+extern char g_10945f00;
+}
+int CItemGBertramsCD::vfunc80()
+{
+    return (int)&lifted::g_10945f00;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10406730 size=0x3
 #include "CItemGBertramsCD.h"
 int CItemGBertramsCD::vfunc81()
