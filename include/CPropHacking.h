@@ -51,6 +51,8 @@ public:
 	void sub_1021b140(const char *pszText);	// stub 0x10013aac: starts a new screen page with the text (centred)
 	void sub_1021c3c0(int a, char *pszCommand);	// the fallback of AcceptCmd (vfunc273) for an unknown command: plays the error sound (g_1074f75c), starts a page headed by the screen text 5 ("%s: %s" with the command when it is not empty), prints the texts 6 and 7, the text 0x12 and sub_10218ff0(0, the line count - 1), then ends the page
 	void sub_1021c260();	// prints the selected record (+0x9f4 of the array at +0xa14): the screen texts 0x17 / 0x16 with its three strings, then the five heading texts 0x18..0x1c
+	void vfunc42(void *pPlayer);	// slot 42: the save step of the use: sub_1021a3d0, the terminal base, the noise think function sub_1021a740 after m_flDelay09e8 seconds, a new page, the selection reset to -1 and the player's camera released
+	void sub_10218220(void *pPlayer);	// CBaseTerminal::vfunc42 (stub 0x100080e4), called directly
 	void sub_1021a740();	// a random "noise" line: a random column and row (RandomInt within the line width left after the text at +0x904 and the screen height at +0x814), one of two page printers, the text at +0x904, then the next think at +0x9e4 seconds ahead
 	void sub_102189e0(const char *pszText);	// sends the text to every player but the one of this entity, reliably, in chunks of at most 250 characters (user message 0, byte 2, the chunk as a string)
 	void sub_102193c0(int c);	// sends the one character c (formatted "%c") to every player but the one of this entity, through sub_102189e0
