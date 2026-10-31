@@ -40,6 +40,7 @@ struct StatDefault3
 	int sub_101d4f60(int n);	// stub 0x1000295a: index of the n-th used slot
 	int sub_101d4d80();	// stub 0x100054ca
 	void sub_101d3a10();	// stub 0x10012a12: resets the item before it is loaded from a data node
+	void sub_101d3c10(StatDefault3 *pParent);	// stub 0x1000a245: fills every unset field (the zero ints, the lists, the flag bytes and floats) from the parent item
 	void sub_101d4520(void *pNode, CStatDefault3List *pList);	// stub 0x1000a32b: loads the item from a "ClanData" node
 	void sub_101d4fd0();	// stub 0x100135a7: applies the clan item to its owner (run by the clan console command)
 };
