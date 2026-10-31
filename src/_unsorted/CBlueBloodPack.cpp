@@ -44,6 +44,14 @@ char CBlueBloodPack::vfunc315()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103fc6d0 size=0x3
+#include "CBlueBloodPack.h"
+int CBlueBloodPack::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040a120 size=0x1e
 #include "CBlueBloodPack.h"
 
