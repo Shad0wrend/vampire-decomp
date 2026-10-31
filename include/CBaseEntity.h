@@ -232,7 +232,16 @@ public:
 	EHANDLE m_hD0;	// 0x00d0
 	int m_nD4;	// 0x00d4
 	float m_flD8;	// 0x00d8
-	char m_pad00dc[0x114 - 0xdc];
+	char m_pad00dc[0xe4 - 0xdc];
+	void (CBaseEntity::*m_pfnSavedThink00e4)();	// 0x00e4: the think function saved by ScriptHide
+	int m_nSavedSolid00e8;	// 0x00e8: slot 92 saved by ScriptHide
+	int m_nSavedMoveType00ec;	// 0x00ec
+	int m_nSavedMoveCollide00f0;	// 0x00f0
+	char m_bHidden00f4;	// 0x00f4: set while ScriptHide has hidden the entity
+	char m_pad00f5;
+	short m_nSavedSlot211_00f6;	// 0x00f6
+	unsigned int m_nSavedEffects00f8;	// 0x00f8
+	char m_pad00fc[0x114 - 0xfc];
 	void (CBaseEntity::*m_pfn0114)();
 	void (CBaseEntity::*m_pfnThink)();
 	const char *m_classname11c;
