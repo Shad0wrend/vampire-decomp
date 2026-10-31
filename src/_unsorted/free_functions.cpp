@@ -111110,6 +111110,23 @@ void CUnknown10248a50::sub_10247e40(const CUnknown10248a50 *pSrc)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10248060 size=0x1a
+struct CUnk10248060
+{
+	void sub_10247da0();
+	void sub_10247e40(int a);
+	CUnk10248060 *sub_10248060(int a);
+};
+
+// TARGET: sub_10248060
+CUnk10248060 *CUnk10248060::sub_10248060(int a)
+{
+	sub_10247da0();
+	sub_10247e40(a);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102480b0 size=0x3
 struct CUnknown102480b0 { int sub_102480b0(); };
 int CUnknown102480b0::sub_102480b0()
