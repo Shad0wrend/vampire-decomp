@@ -12,6 +12,17 @@ datamap_t * CSmallHullTrigger::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cbd80 size=0x10
+#include "CSmallHullTrigger.h"
+
+// TARGET: CSmallHullTrigger::vfunc103
+void CSmallHullTrigger::vfunc103()
+{
+	CBaseEntity::vfunc103();
+	sub_101c5080();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cbda0 size=0x21
 struct CSmallHullTriggerX
 {
