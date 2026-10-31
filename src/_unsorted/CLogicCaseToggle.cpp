@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10134590 size=0x6
+#include "CLogicCaseToggle.h"
+namespace lifted {
+extern char g_10576f80;
+}
+int CLogicCaseToggle::vfunc82()
+{
+    return (int)&lifted::g_10576f80;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10134620 size=0x8a
 #include "CLogicCaseToggle.h"
 extern void (__cdecl *g_109f3630)(const char *, ...);
