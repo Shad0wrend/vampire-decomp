@@ -122670,6 +122670,22 @@ int sub_102d6210(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d6230 size=0xf
+struct CTableEntryHead
+{
+	int m_nPad0;
+	int m_nValue;
+};
+
+extern CTableEntryHead *g_1060a750[];
+
+// TARGET: sub_102d6230
+int sub_102d6230(int i)
+{
+	return g_1060a750[i]->m_nValue;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d6250 size=0x43
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
