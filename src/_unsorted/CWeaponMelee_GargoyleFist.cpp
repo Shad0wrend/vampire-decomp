@@ -20,6 +20,17 @@ int CWeaponMelee_GargoyleFist::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103eb180 size=0x6
+#include "CWeaponMelee_GargoyleFist.h"
+namespace lifted {
+extern char g_10677fcc;
+}
+int CWeaponMelee_GargoyleFist::vfunc362()
+{
+    return (int)&lifted::g_10677fcc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103eb230 size=0x4
 #include "CWeaponMelee_GargoyleFist.h"
 int CWeaponMelee_GargoyleFist::vfunc373()
