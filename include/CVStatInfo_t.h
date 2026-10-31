@@ -26,7 +26,8 @@ public:
 	int m_field0000;	// 0x0000
 	int m_field0004;	// 0x0004
 	int m_field0008;	// 0x0008, -1 = none
-	char m_pad000c[0x18 - 0x0c];
+	char m_pad000c[0x14 - 0x0c];
+	const char *m_pszTitle;	// 0x0014
 	const char *m_pszName;	// 0x0018
 	char m_pad001c[0x60 - 0x1c];
 	CVDmgBlock16_t m_max0060;	// 0x0060: the "Max" value record
