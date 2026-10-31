@@ -162740,6 +162740,29 @@ int CUnknown1040bf70::sub_1040bf70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040bf90 size=0x13
+struct CHolder1040bf90
+{
+	virtual void v0();
+	virtual void v1(void *p);
+};
+
+struct CUnit1040bf90
+{
+	char m_pad0000[0x178];
+	CHolder1040bf90 *m_p178;
+
+	void sub_1040bf90();
+};
+
+// TARGET: CUnit1040bf90::sub_1040bf90
+void CUnit1040bf90::sub_1040bf90()
+{
+	if (m_p178)
+		m_p178->v1(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040bfc0 size=0x84
 #include "CUnknown1040cb60.h"
 
