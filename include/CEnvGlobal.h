@@ -10,6 +10,12 @@ public:
 	CEnvGlobal *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
 	virtual int vfunc124();	// "DrawDebugTextOverlays": base lines, then (when bit 0 of the byte at +0x224 is set) "State: %s" (+0x450) and "Value: OFF/ON/DEAD" as overlay text on the edict at +0x2e0
+	virtual void vfunc103();	// slot 103 "Spawn"-like: removes the entity when it has no global name; with spawn flag bit 0 (a new global) and no record of the name yet, adds one (name, map name, state)
+
+	char m_padEG[0x450 - sizeof(CBaseEntity)];
+	const char *m_pszGlobalName;	// 0x450
+	int m_n0454;
+	int m_nInitialState;	// 0x458
 public:
     virtual datamap_t * vfunc82();
 };
