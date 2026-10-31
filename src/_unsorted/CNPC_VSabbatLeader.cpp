@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103a5b50 size=0x6
+#include "CNPC_VSabbatLeader.h"
+namespace lifted {
+extern char g_1064c4a8;
+}
+int CNPC_VSabbatLeader::vfunc82()
+{
+    return (int)&lifted::g_1064c4a8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a5c80 size=0x3
 #include "CNPC_VSabbatLeader.h"
 bool CNPC_VSabbatLeader::vfunc70()
