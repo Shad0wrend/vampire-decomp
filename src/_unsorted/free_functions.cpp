@@ -162233,6 +162233,17 @@ void sub_1042c680()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042c700 size=0x28
+typedef void (__fastcall *PFN_ForEach)(void *pThis);
+extern void **g_109eed50;
+extern int g_109eed5c;
+void __cdecl sub_1042c700(PFN_ForEach pfn)
+{
+	for (int i = 0; i < g_109eed5c; i++)
+		pfn(g_109eed50[i]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042c740 size=0x23
 extern void **g_109eed50;
 extern int g_109eed5c;
