@@ -29,6 +29,23 @@ int CNPCMaker::vfunc370(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034ae20 size=0x14
+#include "CNPCMaker.h"
+
+// TARGET: CNPCMaker::vfunc371
+int CNPCMaker::vfunc371(int a)
+{
+	void **vt = *(void ***)this;
+	union {
+		void *p;
+		void (CNPCMaker::*pm)(int);
+	} u;
+	u.p = vt[369];
+	(this->*u.pm)(a);
+	return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034ae50 size=0x5
 #include "CNPCMaker.h"
 bool CNPCMaker::vfunc363(int a0)
