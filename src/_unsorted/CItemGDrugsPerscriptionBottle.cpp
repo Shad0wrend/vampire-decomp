@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103fd8c0 size=0x3
+#include "CItemGDrugsPerscriptionBottle.h"
+int CItemGDrugsPerscriptionBottle::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040a240 size=0x1e
 #include "CItemGDrugsPerscriptionBottle.h"
 
