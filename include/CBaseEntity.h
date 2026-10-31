@@ -46,7 +46,7 @@ public:
 	virtual void vfunc12(); virtual void vfunc13(const char *classname);
 	virtual char * vfunc14(); virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17(int a, int b); virtual void vfunc18();
 	virtual void vfunc19(); virtual void vfunc20(); virtual void vfunc21(int); virtual void vfunc22(int); virtual void vfunc23(int);
-	virtual void vfunc24(); virtual void vfunc25(int); virtual void vfunc26(int); virtual void vfunc27(); virtual float vfunc28();
+	virtual void vfunc24(int); virtual void vfunc25(int); virtual void vfunc26(int); virtual void vfunc27(); virtual float vfunc28();
 	virtual float vfunc29(); virtual float vfunc30(); virtual void vfunc31(int pDump);	/* slot 31 "Dump": takes the dump context handed to the DumpXxx helpers */ virtual bool vfunc32(int a); virtual int vfunc33();
 	virtual int vfunc34(int a); virtual int vfunc35(int a); virtual int vfunc36(); virtual float vfunc37(); virtual void * vfunc38(int);
 	virtual void vfunc39(CBaseEntity *pOther); virtual void vfunc40(int); virtual void vfunc41(); virtual int vfunc42(int); virtual void vfunc43(int);
