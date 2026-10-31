@@ -56600,6 +56600,24 @@ void sub_10148c00(float *v, float s, float *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014a0b0 size=0x14
+struct CUnit1014a0b0
+{
+	char m_pad0000[0x910];
+	int m_n910;
+
+	void sub_1014abe0();
+	void sub_1014a0b0();
+};
+
+// TARGET: CUnit1014a0b0::sub_1014a0b0
+void CUnit1014a0b0::sub_1014a0b0()
+{
+	sub_1014abe0();
+	m_n910 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014c0f0 size=0xf
 namespace lifted {
 int sub_10002392();
