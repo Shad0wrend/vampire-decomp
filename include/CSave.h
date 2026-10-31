@@ -37,7 +37,7 @@ public:
 	virtual void vfunc5(const void *p);	// pushes the current position on the section stack (vector at +4) after sub_101a05f0(p, 0)
 	virtual void vfunc6();	// pops the section stack, writes the section size
 	virtual void vfunc7(int a, int b, int count);	// forwards to sub_101a05b0 with the count doubled (shorts to bytes)
-	virtual void vfunc8(const char *pszName, int value);	// slot 8: writes a named value (the physics save block handler writes its flag 1 under the global name at 0x1053c340)
+	virtual bool vfunc8(const void *pData, int nBytes);	// slot 8: writes nBytes * 2 bytes through sub_1000643d (the physics save block handler writes its flag 1 under the global name at 0x1053c340)
 	virtual void vfunc9(const char *pszName, void *pData, int count);	// writes count ints (called by vfunc37 with the entity indices)
 	virtual bool vfunc10(const void *pData, int nBytes);	// WriteInt
 	virtual int vfunc11(int, int, int);
