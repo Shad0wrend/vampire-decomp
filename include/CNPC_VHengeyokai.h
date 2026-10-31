@@ -691,7 +691,7 @@ public:
 	virtual void vfunc538();
 	virtual void vfunc539();
 	virtual void vfunc540();
-	virtual void vfunc541();
+	virtual void *vfunc541();
 	virtual void vfunc542();
 	virtual void vfunc543();
 	virtual void vfunc544();
