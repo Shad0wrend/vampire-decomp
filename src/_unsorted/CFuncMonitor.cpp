@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10114e20 size=0x6
+#include "CFuncMonitor.h"
+namespace lifted {
+extern char g_1070a854;
+}
+int CFuncMonitor::vfunc80()
+{
+    return (int)&lifted::g_1070a854;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10114e40 size=0x3
 #include "CFuncMonitor.h"
 int CFuncMonitor::vfunc81()
