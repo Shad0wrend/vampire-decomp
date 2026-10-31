@@ -20,6 +20,17 @@ int CWeaponMelee_Torch::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e7300 size=0x6
+#include "CWeaponMelee_Torch.h"
+namespace lifted {
+extern char g_10671608;
+}
+int CWeaponMelee_Torch::vfunc362()
+{
+    return (int)&lifted::g_10671608;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e74d0 size=0x29
 #include "CUnknown1070b248.h"
 #include "CBaseCombatWeapon.h"
