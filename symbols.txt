@@ -6340,6 +6340,7 @@
 0x1000c7b6 func   ?vfunc1@CPyObjStrSaveRestoreDataOps@@UAEXPAPAXPAVIRestoreLike@@@Z CPyObjStrSaveRestoreDataOps::vfunc1
 0x1000c7bb func   ?sub_10222670@CExperienceTable@@QAEPAUCExperienceAward@@H@Z CExperienceTable::sub_10222670
 0x1000c7c0 func   ?vfunc82@CLogicCase@@QAEHXZ CLogicCase::vfunc82
+0x1000c7ca func   ?vfunc490@CNPC_Crow@@QAEHXZ CNPC_Crow::vfunc490
 0x1000c7cf func   _instanced_scripted_scene instanced_scripted_scene
 0x1000c7d4 func   ?sub_10314e50@CUtlRBTree16Unit@@QAEXG@Z CUtlRBTree16Unit::sub_10314e50
 0x1000c7de func   ?sub_10265970@CAI_BaseNPC@@QAEHXZ CAI_BaseNPC::sub_10265970
