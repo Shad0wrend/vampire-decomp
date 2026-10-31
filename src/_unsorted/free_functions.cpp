@@ -133169,6 +133169,20 @@ struct CUnknown10307b40 { int a; void sub_10307b40(int v); };
 void CUnknown10307b40::sub_10307b40(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x10307b60 size=0xd
+struct CUnk10307b60 {
+    char pad[0x10];
+    int m_10;
+    void sub_10307b60();
+    int sub_10307c20();
+};
+
+void CUnk10307b60::sub_10307b60()
+{
+    m_10 = sub_10307c20();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10307b80 size=0x47
 #include "CStepWalker.h"
 bool CStepWalker::sub_10307b80()
