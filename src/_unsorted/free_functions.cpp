@@ -97746,6 +97746,27 @@ char __fastcall sub_1020cd00(void *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020d050 size=0x14
+struct CUnit1020d080
+{
+	char m_pad0000[0x77c];
+	bool m_b77c;
+
+	void sub_1020d0b0();
+	void sub_1020d080();
+	void sub_1020d050();
+};
+
+// TARGET: CUnit1020d080::sub_1020d050
+void CUnit1020d080::sub_1020d050()
+{
+	if (m_b77c)
+		sub_1020d0b0();
+	else
+		sub_1020d080();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020d080 size=0x14
 struct CUnit1020d080
 {

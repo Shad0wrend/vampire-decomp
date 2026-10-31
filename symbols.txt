@@ -2711,6 +2711,7 @@
 0x10005ed4 func   ?sub_10199a70@@YAPAUPyObject@@PAU1@0@Z sub_10199a70
 0x10005ed9 func   ?sub_10050880@CUnknown10050880@@QAEHXZ CUnknown10050880::sub_10050880
 0x10005ee3 func   ?sub_102718e0@CUnknown102718e0@@QAEPAV1@PBV1@@Z CUnknown102718e0::sub_102718e0
+0x10005ee8 func   ?sub_1020d050@CUnit1020d080@@QAEXXZ CUnit1020d080::sub_1020d050
 0x10005eed func   ?vfunc2@CEffectsServer@@UAEXPBMHMM@Z CEffectsServer::vfunc2
 0x10005ef2 func   ?sub_1005a510@@YAHXZ sub_1005a510
 0x10005efc func   ?sub_100d9b80@@YAXXZ sub_100d9b80
