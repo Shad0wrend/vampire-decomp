@@ -5617,6 +5617,7 @@
 0x1000c17b func   ?sub_1019ab40@@YAXXZ sub_1019ab40
 0x1000c185 func   ?sub_1033f6d0@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_1033f6d0
 0x1000c18a func   ?vfunc359@CNPC_VGargoyle@@UAEHH@Z CNPC_VGargoyle::vfunc359
+0x1000c18f func   ?sub_101896f0@@YADPAVCBaseEntity@@HH@Z sub_101896f0
 0x1000c194 func   ?sub_10077690@CUnknown10077430Find@@QAEPAXPBD@Z CUnknown10077430Find::sub_10077690
 0x1000c199 func   ?sub_10197b00@@YAPAUPyObj@@PAX0@Z sub_10197b00
 0x1000c19e func   ?sub_1019d2f0@CUnknown1019d2f0@@QAEHH@Z CUnknown1019d2f0::sub_1019d2f0
