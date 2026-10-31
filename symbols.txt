@@ -7254,6 +7254,7 @@
 0x1000dac6 func   ?sub_101ebe60@CUnknown101ebe60@@QAEXHH@Z CUnknown101ebe60::sub_101ebe60
 0x1000dacb func   ?sub_100f4410@@YAXPBDHH@Z sub_100f4410
 0x1000dad0 func   ?sub_1037ea00@@YAEXZ sub_1037ea00
+0x1000dad5 func   ?sub_1039eee0@CNPC_VMingXiaoTentacle@@QAEDXZ CNPC_VMingXiaoTentacle::sub_1039eee0
 0x1000dada func   ?sub_1023e4b0@@YAXPAVCBaseEntity@@H@Z sub_1023e4b0
 0x1000dae4 func   ?vfunc40@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHH@Z CTempEntsSystem::vfunc40
 0x1000daee func   ?sub_103912c0@@YIPAXPAX@Z sub_103912c0

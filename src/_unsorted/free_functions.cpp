@@ -152325,6 +152325,21 @@ void CNPC_VMingXiaoTentacle::sub_1039ee20(void *pArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039eee0 size=0x1a
+#include "CNPC_VMingXiaoTentacle.h"
+#include "CNPC_VMingXiao.h"
+
+// TARGET: CNPC_VMingXiaoTentacle::sub_1039eee0
+char CNPC_VMingXiaoTentacle::sub_1039eee0()
+{
+	void *pPlayer = sub_1039ede0();
+	if (pPlayer == 0) {
+		return 0;
+	}
+	return ((CNPC_VMingXiao *)pPlayer)->sub_10397b40(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039ef60 size=0x16
 struct CUnknown1039ede0 { void *sub_1039ede0(); };
 struct CUnknown10397e00 { void sub_10397e00(void *pOther); };
