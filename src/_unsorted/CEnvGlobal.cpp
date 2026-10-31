@@ -12,6 +12,25 @@ datamap_t * CEnvGlobal::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10132980 size=0x54
+#include "CEnvGlobal.h"
+#include "CUnknown10057680.h"
+#include "globalvars.h"
+extern CUnknown10057680 g_106be530;
+void sub_101cd940(CBaseEntity *);
+void CEnvGlobal::vfunc103()
+{
+	if (!m_pszGlobalName) {
+		sub_101cd940(this);
+		return;
+	}
+	if (m_flags204 & 1) {
+		if (!g_106be530.sub_100576a0(m_pszGlobalName))
+			g_106be530.sub_10057740(m_pszGlobalName, gpGlobals->mapname, m_nInitialState);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10132be0 size=0x11e
 #include "CEnvGlobal.h"
 #define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
