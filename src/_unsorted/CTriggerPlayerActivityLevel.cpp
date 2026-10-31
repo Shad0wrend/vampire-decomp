@@ -43,6 +43,17 @@ void *V10210830::sub_10210830(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102108a0 size=0x10
+#include "CTriggerPlayerActivityLevel.h"
+
+// TARGET: CTriggerPlayerActivityLevel::vfunc103
+void CTriggerPlayerActivityLevel::vfunc103()
+{
+	CBaseEntity::vfunc103();
+	sub_101c5080();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102108e0 size=0x9a
 #include "CTriggerPlayerActivityLevel.h"
 
