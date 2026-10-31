@@ -31,6 +31,14 @@ int CWeaponMelee_Sheriff_Sword::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e6c90 size=0x6
+#include "CWeaponMelee_Sheriff_Sword.h"
+int CWeaponMelee_Sheriff_Sword::vfunc363()
+{
+    return 0x6f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecd80 size=0x1e
 #include "CWeaponMelee_Sheriff_Sword.h"
 
