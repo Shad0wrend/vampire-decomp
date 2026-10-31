@@ -147287,6 +147287,19 @@ char sub_1039b180()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039ea60 size=0x10
+#include "vampire.h"
+
+void __fastcall sub_1039e970(void *pThis);
+
+// TARGET: sub_1039ea60
+void __fastcall sub_1039ea60(void *pThis)
+{
+	if (!*((char *)pThis + 0x6699))
+		sub_1039e970(pThis);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039ede0 size=0x2d
 #include "CBasePlayer.h"
 
