@@ -199,6 +199,18 @@ char CNPC_VMingXiaoTentacle::vfunc599(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039eab0 size=0x1a
+// TARGET: CNPC_VMingXiaoTentacle::vfunc600
+#include "CNPC_VMingXiaoTentacle.h"
+struct S10924edc { virtual void a(); virtual void b(); };
+extern S10924edc *g_10924edc;
+char CNPC_VMingXiaoTentacle::vfunc600(int unused)
+{
+	g_10924edc->b();
+	return m_b6078 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039eae0 size=0x19
 #include "CNPC_VMingXiaoTentacle.h"
 

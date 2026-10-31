@@ -3116,6 +3116,7 @@
 0x1000680c func   ?sub_103b2630@CNPC_VSheriffSwarm@@QAE_NHH@Z CNPC_VSheriffSwarm::sub_103b2630
 0x10006811 func   ?sub_102ee120@CUnknown102ee120@@QAEXHHH@Z CUnknown102ee120::sub_102ee120
 0x10006816 func   ?vfunc308@CBaseCombatWeapon@@UAEXHH@Z CBaseCombatWeapon::vfunc308
+0x1000681b func   ?vfunc600@CNPC_VMingXiaoTentacle@@UAEDH@Z CNPC_VMingXiaoTentacle::vfunc600
 0x10006820 func   ?vfunc5@CFuncIllusionary@@QAEPAV1@I@Z CFuncIllusionary::vfunc5
 0x10006825 func   ?sub_100881c0@@YAXXZ sub_100881c0
 0x1000682a func   ?sub_10412160@@YA_NHPAH0@Z sub_10412160
