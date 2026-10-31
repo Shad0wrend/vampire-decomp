@@ -28,6 +28,17 @@ void CPositionInterpolator_Rope::vfunc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012fd60 size=0x17
+extern char g_105753a0[];
+
+// TARGET: sub_1012fd60
+void __stdcall sub_1012fd60(void **pObj, int *pFlag, int unused)
+{
+	*pObj = g_105753a0;
+	*pFlag = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012fd90 size=0x61
 #include "CPositionInterpolator_Rope.h"
 // TARGET: CPositionInterpolator_Rope::vfunc2
