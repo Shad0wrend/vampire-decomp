@@ -284,6 +284,18 @@ int CNPC_Crow::vfunc490()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10358f10 size=0xb
+#include "CNPC_Crow.h"
+namespace lifted {
+extern char g_10628c34;
+int __stdcall sub_10005c59(int);
+}
+int CNPC_Crow::vfunc489()
+{
+    return lifted::sub_10005c59((int)&lifted::g_10628c34);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10358f90 size=0x103
 #include "CNPC_Crow.h"
 extern "C" __declspec(dllimport) int __cdecl Q_snprintf(char *, int, const char *, ...);
