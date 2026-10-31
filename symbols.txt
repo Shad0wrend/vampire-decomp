@@ -1662,6 +1662,7 @@
 0x10003eae func   ?vfunc370@CItemContainer@@QAEHH@Z CItemContainer::vfunc370
 0x10003eb3 func   ?sub_101041a0@@YIXPAXHH@Z sub_101041a0
 0x10003eb8 func   ?sub_100e3400@CUnknown100e3400@@QAEPADHDPBD_N@Z CUnknown100e3400::sub_100e3400
+0x10003ebd func   ?sub_1030f710@CUnk1030f710@@QAEXXZ CUnk1030f710::sub_1030f710
 0x10003ec2 func   ?vfunc5@CGeneric_NPC_bathack@@QAEPAV1@I@Z CGeneric_NPC_bathack::vfunc5
 0x10003ed1 func   ?vfunc269@CWeaponMelee_TzimisceMelee@@UAEXPAVCBaseCombatWeapon@@VVector@@@Z CWeaponMelee_TzimisceMelee::vfunc269
 0x10003ed6 func   ?vfunc362@CWeaponMelee_Knife@@QAEHXZ CWeaponMelee_Knife::vfunc362

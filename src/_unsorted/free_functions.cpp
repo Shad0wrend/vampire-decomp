@@ -136346,6 +136346,22 @@ Helper1030f680 *Helper1030f680::sub_1030f680(const char *s, int v1, int v2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030f710 size=0x1a
+// TARGET: sub_1030f710
+struct CUnk1030f710 {
+    char pad00[0x20];
+    void *m_p20;
+    char pad24[0x40 - 0x24];
+    void *m_p40;
+    void sub_1030f710();
+};
+void CUnk1030f710::sub_1030f710()
+{
+    operator delete(m_p40);
+    operator delete(m_p20);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030f780 size=0x1a
 namespace lifted {
 extern int g_106145f8;
