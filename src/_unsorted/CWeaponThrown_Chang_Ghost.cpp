@@ -67,6 +67,18 @@ void CWeaponThrown_Chang_Ghost::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f0980 size=0x52
+#include "CWeaponThrown_Chang_Ghost.h"
+void CWeaponThrown_Chang_Ghost::vfunc104()
+{
+	engine->vfunc17("grenade_frag_emitter", 1);
+	engine->vfunc17("grenade_concussion_emitter", 1);
+	engine->vfunc17("grenade_smoke_emitter", 1);
+	enginesound->vfunc0("weapons/ranged/grenade_pineapple/tic.wav", 0);
+	sub_1001576c();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f10e0 size=0x133
 #include "CWeaponThrown_Chang_Ghost.h"
 #include "CUnknown1070b244.h"
