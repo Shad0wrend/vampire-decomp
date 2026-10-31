@@ -12,6 +12,17 @@ datamap_t * CStealthModifier::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cb9e0 size=0x10
+#include "CStealthModifier.h"
+
+// TARGET: CStealthModifier::vfunc103
+void CStealthModifier::vfunc103()
+{
+	CBaseEntity::vfunc103();
+	sub_101c5080();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cba00 size=0x2d
 struct CStealthUnit101cba00 {
     char pad[0x598];
