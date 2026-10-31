@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101cb230 size=0x1
+#include "CTriggerImpact.h"
+void CTriggerImpact::vfunc171()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cc2c0 size=0x62
 #include "CTriggerImpact.h"
 
