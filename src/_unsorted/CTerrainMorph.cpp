@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100de630 size=0x6
+#include "CTerrainMorph.h"
+namespace lifted {
+extern char g_10561290;
+}
+int CTerrainMorph::vfunc82()
+{
+    return (int)&lifted::g_10561290;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100de7a0 size=0x1e
 #include "CTerrainMorph.h"
 
