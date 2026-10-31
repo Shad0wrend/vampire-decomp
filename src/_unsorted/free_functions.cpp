@@ -141832,6 +141832,15 @@ extern "C" CBaseEntity *npc_generic_bathack()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035ac10 size=0xc
+void __fastcall sub_1035ac30(void *pThis);
+void * __fastcall sub_1035ac10(void *pThis)
+{
+    sub_1035ac30(pThis);
+    return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035ac30 size=0x33
 void sub_1000b15e();
 void sub_1000345e();
