@@ -7232,6 +7232,7 @@
 0x1000e255 func   ?sub_101cd970@@YAXPAUCEntRemoveView@@@Z sub_101cd970
 0x1000e25f func   ?vfunc511@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc511
 0x1000e264 func   ?sub_10134780@CUnknown101346e0@@QAEXPAUinputdata_t@@@Z CUnknown101346e0::sub_10134780
+0x1000e269 func   ?vfunc80@CItemGRing03@@QAEHXZ CItemGRing03::vfunc80
 0x1000e26e func   ?sub_102eeb70@CUnknown102eeb70@@QAEHXZ CUnknown102eeb70::sub_102eeb70
 0x1000e273 func   ?sub_1004ff40@@YAPAVCBaseEntity@@PAVCBreakableSlots@@@Z sub_1004ff40
 0x1000e278 func   ?vfunc39@CItemContainerLock@@QAEXPAVCBasePlayer@@@Z CItemContainerLock::vfunc39
