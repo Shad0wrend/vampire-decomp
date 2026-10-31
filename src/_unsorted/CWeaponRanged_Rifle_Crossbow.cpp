@@ -31,6 +31,14 @@ int CWeaponRanged_Rifle_Crossbow::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10234ad0 size=0x6
+#include "CWeaponRanged_Rifle_Crossbow.h"
+int CWeaponRanged_Rifle_Crossbow::vfunc363()
+{
+    return 0xf5;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a350 size=0x1e
 #include "CWeaponRanged_Rifle_Crossbow.h"
 
