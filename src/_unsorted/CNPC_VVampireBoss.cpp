@@ -18,6 +18,16 @@ int CNPC_VVampireBoss::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035c1d0 size=0x6
+namespace lifted {
+extern int g_1065e6cc;
+}
+int CNPC_VVampireBoss::vfunc451()
+{
+    return lifted::g_1065e6cc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c5270 size=0x1d
 #include "CNPC_VVampireBoss.h"
 struct A { int sub_10012300(int); };
