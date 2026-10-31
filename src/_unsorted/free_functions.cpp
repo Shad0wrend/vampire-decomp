@@ -16502,6 +16502,22 @@ int CUnknown10077060::sub_10077060()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10077080 size=0x1c
+struct CUnk10077080
+{
+	char m_pad0000[0x2d0];
+	char *m_p2d0;
+
+	char *sub_10077080(int index);
+};
+
+// TARGET: sub_10077080
+char *CUnk10077080::sub_10077080(int index)
+{
+	return m_p2d0 + index * 0x8c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100770b0 size=0x17f
 // TARGET: ?sub_100770b0@CUnknown10076da0@@QAEXPBDM_N@Z
 #include "CUnknown10076da0.h"
