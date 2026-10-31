@@ -183,6 +183,24 @@ void CSceneEntity::vfunc265(void *pTarget, void *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10081510 size=0x62
+#include "CSceneEntity.h"
+#include "CBaseAnimating.h"
+#include "CBaseAnimatingOverlay.h"
+__declspec(dllimport) void __cdecl Warning(const char *, ...);
+// TARGET: CSceneEntity::vfunc256
+void CSceneEntity::vfunc256(int b, CSceneEventActorEnt *pActor, CSceneEvent *pEvent)
+{
+	CBaseAnimatingOverlay *pNPC = (CBaseAnimatingOverlay *)pActor->m_pNPC94;
+	int iSequence = ((CBaseAnimating *)pActor)->sub_1008f7b0(pEvent->sub_10075c50());
+	if (pNPC && iSequence != -1) {
+		pNPC->sub_10099140(iSequence, pEvent->sub_10076b30(), 1);
+		return;
+	}
+	Warning("Could not find gesture sequence %s\n", pEvent->sub_10075c50());
+}
+// END FUNCTION
+
 // FUNCTION: 0x10081620 size=0xad
 #include "CSceneEntity.h"
 #include "CGlobalEntityList.h"
