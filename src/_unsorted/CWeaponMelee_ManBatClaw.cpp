@@ -31,6 +31,14 @@ int CWeaponMelee_ManBatClaw::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ebf10 size=0x6
+#include "CWeaponMelee_ManBatClaw.h"
+int CWeaponMelee_ManBatClaw::vfunc363()
+{
+    return 3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ebfa0 size=0x4
 #include "CWeaponMelee_ManBatClaw.h"
 int CWeaponMelee_ManBatClaw::vfunc373()
