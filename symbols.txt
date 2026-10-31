@@ -4283,6 +4283,7 @@
 0x100098b8 func   ?vfunc4@CTEFizz@@UAEXAAVCRecipientFilter@@M@Z CTEFizz::vfunc4
 0x100098d1 func   ?vfunc173@CFuncMoveLinear@@QAEXPAX0HM@Z CFuncMoveLinear::vfunc173
 0x100098d6 func   ?sub_100a6bb0@@YIHPADHH@Z sub_100a6bb0
+0x100098db func   ?vfunc35@CSave@@UAEXPBDPAXH@Z CSave::vfunc35
 0x100098e0 func   _point_hurt point_hurt
 0x100098e5 func   ??0CTEMetalSparks@@QAE@PBD@Z CTEMetalSparks::CTEMetalSparks
 0x100098f9 func   ?vfunc2@CTEMuzzleFlash@@UAEPAV1@I@Z CTEMuzzleFlash::vfunc2

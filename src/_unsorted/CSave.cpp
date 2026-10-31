@@ -390,6 +390,17 @@ void CSave::vfunc32(const int *pHandles, int count)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a0eb0 size=0x61
+#include "CSave.h"
+void CSave::vfunc35(const char *pszName, void *pData, int count)
+{
+	int tmp[256];
+	for (int i = 0; i < count; i++)
+		tmp[i] = sub_101a0830(((CSaveEdict **)pData)[i]);
+	vfunc9(pszName, tmp, count);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a0f40 size=0x59
 #include "CSave.h"
 void CSave::vfunc34(CSaveEdict *const *pEdicts, int count)
