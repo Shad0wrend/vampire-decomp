@@ -18,6 +18,7 @@ public:
 	const char *sub_100946b0(int index);	// "CBaseAnimating::GetFlexControllerName": scope trace (entity name), the name of the 0x14 byte controller record index (table at header + dword at +0x164), 0 when no header
 	int sub_10094790(int index);	// "CBaseAnimating::GetFlexControllerType": scope trace (entity name), address of the 0x14 byte controller record [index] plus its first dword (an offset to the type string); 0 when no header
 	int sub_100945e0(int index);	// "CBaseAnimating::GetFlexDescFacs"
+	void sub_10091d10(CBaseEntity *pEnt);	// replaces the entity behind the handle at +0x5a8 (the old one goes to sub_101cd940)
 	void sub_10091c80();	// "CBaseAnimating::OnSequenceFinish" scope only
 	float sub_10091740();	// "CBaseAnimating::GetIdealSpeed": returns the float at +0x654
 	float sub_1008d190();	// "CBaseAnimating::GetGroundSpeedScalar": returns the float at +0x564
