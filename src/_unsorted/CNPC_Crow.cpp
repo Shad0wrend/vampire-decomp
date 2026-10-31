@@ -155,6 +155,13 @@ bool CNPC_Crow::vfunc525(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10358310 size=0x1
+#include "CNPC_Crow.h"
+void CNPC_Crow::vfunc434()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10358ce0 size=0x17a
 #include "CNPC_Crow.h"
 #include "CUnknown1070b244.h"

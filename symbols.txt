@@ -4101,6 +4101,7 @@
 0x10008e3b func   ?sub_10203710@@YAPBDH@Z sub_10203710
 0x10008e40 func   ?sub_101bde70@UtlMem@@QAEXXZ UtlMem::sub_101bde70
 0x10008e45 func   ?sub_101ffc80@CVStatInfoList_t@@QAEHPBD@Z CVStatInfoList_t::sub_101ffc80
+0x10008e4a func   ?vfunc434@CNPC_Crow@@QAEXXZ CNPC_Crow::vfunc434
 0x10008e4f func   ?sub_10308190@CUnknown1030a6e0@@QAE_NPBVVector@@@Z CUnknown1030a6e0::sub_10308190
 0x10008e54 func   ?sub_103e1d90@@YAPAVCBaseEntity@@PAVCEntityVSlots@@@Z sub_103e1d90
 0x10008e59 func   ?sub_103bca20@CNPC_VTzimisce@@QAEHH@Z CNPC_VTzimisce::sub_103bca20
