@@ -159,6 +159,7 @@ public:
 	const char *sub_1009f200();	// "CBaseEntity::GetClassname": the string at +0x11c, or "" when it is null
 	void sub_1009f3c0(const char *msg, int duration);	// "CBaseEntity::AddTimedOverlay": scope trace (entity name), pushes a 16 byte record (copy of msg, curtime + duration, curtime, old head) on the list at +0x228
 	void sub_1009fa60();
+	void sub_100ab980(class CEventAction *pAction);	// "CBaseEntity::DrawOutputOverlay": scope trace (entity name), formats "%3.1f  (%s) --> (%s)" (with ",%.1f)" and the delay when set) into a 1024 byte buffer, AddTimedOverlay(text, 10) and, with the debug switch set, DevMsg("output: ...")
 	void sub_100a0420(const char *name);	// "CBaseEntity::SetName": scope trace, stores name at +0x26c, then slot 11(name or "")
 	void sub_100a0b20();	// "CBaseEntity::ClearParent": scope trace (entity name), then the call through the stub at 0x1000b636
 	void sub_100a53d0(int a);	// "CBaseEntity::PhysicsTouchTriggers": scope trace (entity name), then slot 122 of the global at 0x1070b22c (edict at +0x2e0, a)
