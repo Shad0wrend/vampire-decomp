@@ -58351,6 +58351,26 @@ void CBloodSplat::sub_101719d0(CBaseEntity *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10171d10 size=0x62
+#include "CVariantCopy.h"
+#define V(n) virtual void v##n();
+#define V10(p) V(p##0) V(p##1) V(p##2) V(p##3) V(p##4) V(p##5) V(p##6) V(p##7) V(p##8) V(p##9)
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+struct CHandlerView { V100(a) V100(b) V100(c) V100(d) V10(e0) V10(e1) V10(e2) V10(e3) V10(e4) V(e50) V(e51) V(e52) V(e53) V(e54) V(e55) V(e56) V(e57) V(e58) virtual void Slot459(const char *psz, int n); };
+struct CInputData { char pad[8]; CVariantCopy value; };
+struct CVariantView : CVariantCopy
+{
+	const char *String() const { return (m_fieldType == 2) ? (iszVal ? iszVal : "") : sub_100d0a00(); }
+};
+void __fastcall sub_10171d10(CHandlerView *self, int edx, CInputData *pData)
+{
+	CVariantView *v = (CVariantView *)&pData->value;
+	if (!v->String())
+		return;
+	self->Slot459(v->String(), 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10171da0 size=0x116
 #include "CBasePlayer.h"
 #include "inputdata_t.h"
