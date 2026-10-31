@@ -12783,6 +12783,19 @@ void CUtlBuffer::sub_1006c530(const char *pFmt, char *list)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006c5a0 size=0x14
+struct CUnit1006c5a0
+{
+	void sub_1006c530(int a, int *b);
+};
+
+// TARGET: sub_1006c5a0
+void __cdecl sub_1006c5a0(CUnit1006c5a0 *pObj, int a, int b)
+{
+	pObj->sub_1006c530(a, &b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006c6a0 size=0x37
 struct CUnknown1006c6a0
 {

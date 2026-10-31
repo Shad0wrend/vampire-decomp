@@ -3815,6 +3815,7 @@
 0x10007ee6 func   ?sub_1017f770@CUnknown1017f770@@QAEHXZ CUnknown1017f770::sub_1017f770
 0x10007ef0 func   ?sub_10357150@CUnknown10357150@@QAEHH@Z CUnknown10357150::sub_10357150
 0x10007eff func   _func_monitor func_monitor
+0x10007f04 func   ?sub_1006c5a0@@YAXPAUCUnit1006c5a0@@HH@Z sub_1006c5a0
 0x10007f09 func   ?vfunc82@CBaseFilter@@QAEHXZ CBaseFilter::vfunc82
 0x10007f0e func   ?sub_10077650@CUnknown10077430@@QAEXXZ CUnknown10077430::sub_10077650
 0x10007f13 func   ?sub_10043940@@YAHXZ sub_10043940
