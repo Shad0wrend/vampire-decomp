@@ -193,6 +193,68 @@ void CNPC_VSabbatLeader::vfunc259(void *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a70c0 size=0x234
+#include "CNPC_VSabbatLeader.h"
+#include "ScopeTrace.h"
+#include "ConVar.h"
+#include "CEntityVSlots.h"
+#include "CUnknown100290c0.h"
+#include "CEHandleGet.h"
+
+extern ConVar g_1093c2b0;
+extern ConVar g_1093c390;
+extern ConVar g_1093c2f8;
+
+// TARGET: CNPC_VSabbatLeader::vfunc438
+int CNPC_VSabbatLeader::vfunc438()
+{
+	ScopeTrace trace("CNPC_VSabbatLeader::SelectSchedule", g_106b8540);
+	m_n1b2c = 0x1f;
+	if (m_nState5cc0 == 5)
+		return 0x158;
+	if (g_1093c2b0.GetBool()) {
+		g_1093c2b0.sub_10246160(0);
+		CEntityVSlots *pPlayer = (CEntityVSlots *)((CUnknown100290c0 *)g_10566458)->sub_100290c0(&m_hPlayer);
+		if (pPlayer) {
+			Vector vecPos = *pPlayer->slot217();
+			vecPos.x += 20.0f;
+			((CEntityVSlots *)this)->slot216(&vecPos);
+		}
+	}
+	sub_103ab580();
+	if (m_n66e0 <= 0) {
+		m_n66e0 = 3;
+		return 0x165;
+	}
+	if (m_b66b8) {
+		if (g_1093c390.GetBool())
+			return 0x15b;
+		if (m_b66b8) {
+			if (g_1093c2f8.GetBool())
+				return 0x166;
+			if (m_b66b8) {
+				if (sub_10269aa0(0x79)) {
+					if (m_b66e5) {
+						if (enginerandom->vfunc2(0, 1) != 0)
+							return 0x15b;
+						return 0x164;
+					}
+					switch (enginerandom->vfunc2(0, 2)) {
+					case 0:
+						return 0x164;
+					case 1:
+						return 0x15b;
+					default:
+						return 0x166;
+					}
+				}
+			}
+		}
+	}
+	return sub_10015ad2();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a7390 size=0x85
 #include "CNPC_VSabbatLeader.h"
 

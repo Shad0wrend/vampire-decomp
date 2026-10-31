@@ -11642,6 +11642,7 @@
 0x10015cdf func   ?vfunc103@COrnamentProp@@UAEXXZ COrnamentProp::vfunc103
 0x10015ce4 func   ?vfunc153@CBaseMoveBehavior@@UAE_NXZ CBaseMoveBehavior::vfunc153
 0x10015ce9 func   ?vfunc5@CItemGDrugsDrugBox@@QAEPAV1@I@Z CItemGDrugsDrugBox::vfunc5
+0x10015cee func   ?vfunc438@CNPC_VSabbatLeader@@QAEHXZ CNPC_VSabbatLeader::vfunc438
 0x10015cf3 func   ?sub_10206980@NameSet@@QAEXPBD@Z NameSet::sub_10206980
 0x10015cf8 func   ?vfunc59@CSingleplayRules@@UAEMXZ CSingleplayRules::vfunc59
 0x10015d02 func   ?vfunc230@CWorld@@UAEXHH@Z CWorld::vfunc230
