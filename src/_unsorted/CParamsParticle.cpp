@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100fccd0 size=0x6
+#include "CParamsParticle.h"
+namespace lifted {
+extern char g_10566f60;
+}
+int CParamsParticle::vfunc82()
+{
+    return (int)&lifted::g_10566f60;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fce00 size=0x41
 #include "CParamsParticle.h"
 
