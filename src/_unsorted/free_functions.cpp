@@ -145423,6 +145423,18 @@ int sub_1034ca50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034cef0 size=0x1a
+// TARGET: CNPCMaker::sub_1034cef0
+#include "CNPCMaker.h"
+char CNPCMaker::sub_1034cef0()
+{
+    if (m_b66c3 == 0 && m_n6660 <= 0) {
+        return 1;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034cf20 size=0xb0
 #include "CNPCMaker.h"
 #include "CGlobalEntityList.h"
