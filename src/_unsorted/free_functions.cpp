@@ -130446,6 +130446,19 @@ void __fastcall sub_102e9e50(Mem *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e9f40 size=0x19
+void __fastcall sub_1024a1e0(char *pObj);
+
+void __fastcall sub_102e9f40(int *pThis)
+{
+	char *p = (char *)*pThis;
+	if (p != 0) {
+		sub_1024a1e0(p);
+		delete p;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e9f70 size=0x7
 namespace lifted {
 struct C1000579a { int sub_1000579a(); };
