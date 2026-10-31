@@ -10189,6 +10189,7 @@
 0x100152fd func   ?vfunc5@CBreakableSurface@@QAEPAV1@I@Z CBreakableSurface::vfunc5
 0x10015307 func   ?sub_103e4290@@YAHXZ sub_103e4290
 0x1001530c func   ?sub_10203150@CUnknown10203150@@QAE_NH@Z CUnknown10203150::sub_10203150
+0x10015316 func   ?sub_1004c290@CUtlRBTree16Unit@@QAEXG@Z CUtlRBTree16Unit::sub_1004c290
 0x1001531b func   ?AddRecipient@CRecipientFilter@@QAEXPAVCBasePlayer@@@Z CRecipientFilter::AddRecipient
 0x10015325 func   ?sub_1010cbc0@CMem8f_t@@QAEXH@Z CMem8f_t::sub_1010cbc0
 0x1001532f func   ?vfunc7@CEffectsServer@@UAEXPBMHH@Z CEffectsServer::vfunc7
