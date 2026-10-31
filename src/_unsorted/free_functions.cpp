@@ -39586,6 +39586,24 @@ void __stdcall sub_100ed2c0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ed2e0 size=0x63
+#include "CUnknown100ed370.h"
+extern char g_106eb0a8[];
+extern int (__cdecl *g_109f388c)(char *, int, const char *, ...);
+__declspec(dllimport) char *Q_strncpy(char *, const char *, int);
+
+char *CUnknown100ed370::sub_100ed2e0(int index)
+{
+	if (index >= 0 && index <= m_nNames) {
+		char *p = m_pNames + index * 0x264;
+		g_109f388c(g_106eb0a8, 0x200, "%d: %s %d\n", index, p, *(int *)(p + 0x40));
+		return g_106eb0a8;
+	}
+	Q_strncpy(g_106eb0a8, "INVALID DISPOSITION INDEX\n", 0x200);
+	return g_106eb0a8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ed370 size=0x2e
 // TARGET: sub_100ed370
 extern void (*g_109f3630)(const char *fmt, ...);

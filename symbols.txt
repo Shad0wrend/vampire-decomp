@@ -6050,6 +6050,7 @@
 0x1000cf72 func   ?sub_100a8240@CUnknown100a8340@@QAEPAVCBaseEntity@@XZ CUnknown100a8340::sub_100a8240
 0x1000cf77 func   ?sub_101a5100@SBlockSetView@@QAEXH@Z SBlockSetView::sub_101a5100
 0x1000cf7c func   ?vfunc82@CBaseCineCam@@UAEHXZ CBaseCineCam::vfunc82
+0x1000cf86 func   ?sub_100ed2e0@CUnknown100ed370@@QAEPADH@Z CUnknown100ed370::sub_100ed2e0
 0x1000cf8b func   ?sub_1002e7e0@@YAHPAVCBaseEntity@@HHPAXPBDDPAUPhysCreateParams@@@Z sub_1002e7e0
 0x1000cf90 func   ?sub_1007f3d0@@YAXPAUE8@@PBU1@@Z sub_1007f3d0
 0x1000cf9a func   ?sub_103f6630@@YAHXZ sub_103f6630
