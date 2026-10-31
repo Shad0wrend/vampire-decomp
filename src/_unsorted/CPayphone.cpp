@@ -257,6 +257,21 @@ void CPayphone::vfunc286(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aadb0 size=0x15
+#include "CPayphone.h"
+
+// TARGET: CPayphone::vfunc612
+int CPayphone::vfunc612()
+{
+	int nRet = 0xa80;
+	if (*(char *)((char *)this + 0x654c) == 0)
+	{
+		nRet = 0xe80;
+	}
+	return nRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aade0 size=0x30
 #include "CPayphone.h"
 bool CPayphone::vfunc379(CBaseEntity *pOther, int a, int b, int c, int d, int e, int f)
