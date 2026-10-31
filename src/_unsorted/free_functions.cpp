@@ -35526,6 +35526,31 @@ void sub_100d46c0(CVStatList_t *pList, int nMinValue, int nArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d4b40 size=0x1fc
+#include "CVStatList_t.h"
+#include "CUnknown101fa0e0.h"
+#include "engineserver.h"
+
+int sub_101193b0();
+CBaseEntity *sub_100db920(int a, const char *psz);
+void sub_100d46c0(CVStatList_t *pList, int nMin, int bTimed);
+
+void sub_100d4b40()
+{
+	CBaseEntity *pPlayer = sub_100db920(sub_101193b0(), engine->vfunc84(1));
+	if (!pPlayer)
+		return;
+	void *pChar = pPlayer->m_p9c;
+	if (!pChar)
+		return;
+	sub_100d46c0(CVStatListSet::Of(pChar)->Find(0), 0xfffe7961, 0);
+	sub_100d46c0(CVStatListSet::Of(pChar)->Find(1), 0xfffe7961, 0);
+	sub_100d46c0(CVStatListSet::Of(pChar)->Find(2), 0, 0);
+	sub_100d46c0(CVStatListSet::Of(pChar)->Find(3), 1, 1);
+	((CUnknown101fa0e0 *)((char *)pChar + 0x13dc))->sub_101fa0e0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d4e50 size=0xdf
 #include <stdio.h>
 #include "CVFeat_t.h"
