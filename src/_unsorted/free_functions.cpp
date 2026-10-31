@@ -44728,6 +44728,19 @@ const char *CExpressionTable::sub_10105090(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10105170 size=0x30
+#include "CExpressionTable.h"
+#include "CUnknown1024b370.h"
+__declspec(dllimport) void Msg(const char *pMsg, ...);
+void CExpressionTable::sub_10105170()
+{
+	Msg("-------------------\n");
+	Msg("[Expression names]:\n");
+	((CUnknown1024b370 *)&m_list)->sub_1024b940();
+	Msg("-------------------\n");
+}
+// END FUNCTION
+
 // FUNCTION: 0x101051b0 size=0x88
 #include "CExpressionTable.h"
 #include "ScopeTrace.h"
