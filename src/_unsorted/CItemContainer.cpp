@@ -16,6 +16,13 @@ bool CItemContainer::vfunc408()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10208a10 size=0x3
+#include "CItemContainer.h"
+void CItemContainer::vfunc330(int a0, int a1)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10208ad0 size=0x1e
 #include "CItemContainer.h"
 

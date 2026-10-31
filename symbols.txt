@@ -143,6 +143,7 @@
 0x10001447 func   ?vfunc113@CPropSwitch@@UAEXXZ CPropSwitch::vfunc113
 0x10001451 func   ?vfunc2@CGameMovement@@UAEPAMDH@Z CGameMovement::vfunc2
 0x10001456 func   _logic_pythoncheck logic_pythoncheck
+0x10001460 func   ?vfunc330@CItemContainer@@QAEXHH@Z CItemContainer::vfunc330
 0x1000146a func   ?sub_1040d8b0@@YAPAHXZ sub_1040d8b0
 0x10001479 func   ?sub_1012d3d0@CHudTimer@@QAEPAV1@XZ CHudTimer::sub_1012d3d0
 0x10001488 func   ?sub_1004ee90@@YAEXZ sub_1004ee90
