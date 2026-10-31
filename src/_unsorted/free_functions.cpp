@@ -41321,6 +41321,24 @@ void CAI_BaseNPCTroika::sub_100f0e90(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f0ec0 size=0x14
+struct CUnit100f0ec0
+{
+	char m_pad0000[0x644];
+	unsigned int m_n644;
+
+	bool sub_100f0ec0(unsigned int a);
+};
+
+// TARGET: CUnit100f0ec0::sub_100f0ec0
+bool CUnit100f0ec0::sub_100f0ec0(unsigned int a)
+{
+	if ((m_n644 & a) == a)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0f30 size=0xb
 #define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define H(p) T(p##0) T(p##1) T(p##2) T(p##3) T(p##4) T(p##5) T(p##6) T(p##7) T(p##8) T(p##9)
