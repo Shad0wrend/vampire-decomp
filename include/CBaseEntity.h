@@ -232,7 +232,8 @@ public:
 	EHANDLE m_hD0;	// 0x00d0
 	int m_nD4;	// 0x00d4
 	float m_flD8;	// 0x00d8
-	char m_pad00dc[0xe4 - 0xdc];
+	int m_nDC;	// 0x00dc: the energy scale of collision damage
+	char m_pad00e0[4];
 	void (CBaseEntity::*m_pfnSavedThink00e4)();	// 0x00e4: the think function saved by ScriptHide
 	int m_nSavedSolid00e8;	// 0x00e8: slot 92 saved by ScriptHide
 	int m_nSavedMoveType00ec;	// 0x00ec
