@@ -20,6 +20,17 @@ int CWeaponMelee_SeveredArm::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e7be0 size=0x6
+#include "CWeaponMelee_SeveredArm.h"
+namespace lifted {
+extern char g_10672120;
+}
+int CWeaponMelee_SeveredArm::vfunc362()
+{
+    return (int)&lifted::g_10672120;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ece10 size=0x1e
 #include "CWeaponMelee_SeveredArm.h"
 
