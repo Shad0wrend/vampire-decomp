@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103f6550 size=0x3
+#include "CItemGAstrolite.h"
+int CItemGAstrolite::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10409be0 size=0x1e
 #include "CItemGAstrolite.h"
 
