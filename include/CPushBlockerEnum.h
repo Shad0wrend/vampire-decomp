@@ -19,10 +19,10 @@ struct CPushBlockerList
 class CPushBlockerEnum
 {
 public:
-	virtual void vfunc0();
+	virtual int vfunc0(void *pHandleEntity);	// "CPushBlockerEnum::EnumElement"
 
 	CPushBlockerList *m_pList;
-	char m_pad0008[4];
+	CBaseEntity *m_pPusher;	// 0x08
 	char m_push[4];	// 0x0c, start of the push description handed to the entity
 
 	bool sub_10037750(CBaseEntity *pEnt);	// "CPushBlockerEnum::IsStandingOnPusher": scope trace, true when the entity from slot 209 of pEnt (or any, when pEnt has flag bit 0 set) is in the list
