@@ -21,6 +21,14 @@ char CElderVitaePack::vfunc315()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103fcb00 size=0x3
+#include "CElderVitaePack.h"
+int CElderVitaePack::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040a150 size=0x1e
 #include "CElderVitaePack.h"
 
