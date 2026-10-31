@@ -20,6 +20,17 @@ int CWeaponRanged_Smg_Uzi::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10236e40 size=0x6
+#include "CWeaponRanged_Smg_Uzi.h"
+namespace lifted {
+extern char g_105be6d8;
+}
+int CWeaponRanged_Smg_Uzi::vfunc362()
+{
+    return (int)&lifted::g_105be6d8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a500 size=0x1e
 #include "CWeaponRanged_Smg_Uzi.h"
 
