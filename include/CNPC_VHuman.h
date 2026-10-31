@@ -15,6 +15,7 @@ public:
 	int vfunc482(char bDisregardState, int interruptLevel);
 	// Slot 442 (StartTask) implementation (stub 0x10013336, function 0x103847f0), called directly by the subclasses' override; takes the task record.
 	void sub_10013336(const int *pTask);
+	void vfunc442(const int *pTask);	// slot 442 (StartTask, plain member): function 0x103847f0, the same as sub_10013336
 	// Slot 390 implementation (damage handling taking the damage info), called directly by the Bach override.
 	int sub_10001b45(void *info);
 	// Slot 104 (Precache) override, called directly by the NPC subclasses' Precache.
