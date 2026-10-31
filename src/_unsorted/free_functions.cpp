@@ -87945,6 +87945,11 @@ void CUnknown101f1e20::sub_101f1e20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f2120 size=0x4
+// TARGET: sub_101f2120
+void __fastcall sub_101f2120(int *p) { (*(p - 9))++; }
+// END FUNCTION
+
 // FUNCTION: 0x101f2360 size=0x106
 #include "CUnknown101f2360.h"
 #include <string.h>
