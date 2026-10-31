@@ -31,6 +31,14 @@ int CWeaponRanged_Smg_Mac10::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10235b10 size=0x6
+#include "CWeaponRanged_Smg_Mac10.h"
+int CWeaponRanged_Smg_Mac10::vfunc363()
+{
+    return 0x8a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a440 size=0x1e
 #include "CWeaponRanged_Smg_Mac10.h"
 
