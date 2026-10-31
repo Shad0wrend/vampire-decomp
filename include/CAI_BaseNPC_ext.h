@@ -9,4 +9,5 @@
 	float sub_1027db80(const Vector *pDir);	// the yaw for a direction: the NPC's own yaw (angles, slot 221, y) for a zero direction, else sub_101d2c70(pDir)
 	void sub_10266690(void *pInfo, void *pOther);	// hands the damage record pInfo (its damage, 2.5 times) and the point that slot 217 gives for pOther to the rules' slot 33
 	const char *sub_1027f290(int unused);	// the class name of the NPC type id at +0x1b2c (a switch over 0..0x2b returning "NONE", "AI_BASENPC", ... "NPC_VZOMBIE"; "**UNKNOWN**" otherwise); takes one unused stack argument
+	void sub_10273790(const char *pszRelationship, CBaseEntity *pActivator);	// \"CAI_BaseNPC::AddRelationship\" (stub 0x1000421e): parses \"[entityname|entityclass|player] [D_HT|D_FR|D_LI|D_NU] [priority]\" groups with strtok and adds the entity / class relationships; the activator is unused
 	void vfunc511();	// slot 511 (plain member): sends the edict at +0x2e0 to the engine (IndexOfEdict-style slot 35 of 0x1070b22c with a 1) and gives the index to the sound system's slot 5
