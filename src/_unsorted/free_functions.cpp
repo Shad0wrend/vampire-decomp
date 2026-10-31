@@ -144640,6 +144640,16 @@ extern "C" CBaseEntity *npc_VGuard1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037c730 size=0xc
+void __fastcall sub_1037c750(void *pThis);
+
+void * __fastcall sub_1037c730(void *pThis)
+{
+	sub_1037c750(pThis);
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037c750 size=0x33
 void sub_100053cb();
 void sub_10001fc3();
