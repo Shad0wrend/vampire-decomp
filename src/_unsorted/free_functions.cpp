@@ -117977,6 +117977,24 @@ void CUnknown10293dc0::sub_10293dc0(float flDelay)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10293df0 size=0x15
+#include "vampire.h"
+
+struct CUnknown10293df0
+{
+	char m_pad0000[0x63a0];
+	float m_f63a0;
+
+	void sub_10293df0(float flDelay);
+};
+
+// TARGET: CUnknown10293df0::sub_10293df0
+void CUnknown10293df0::sub_10293df0(float flDelay)
+{
+	m_f63a0 = flDelay + gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102950c0 size=0x8a
 #include "CAI_BaseNPCTroika.h"
 
