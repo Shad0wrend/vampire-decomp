@@ -121138,6 +121138,24 @@ void sub_102cc540()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cc5d0 size=0x11
+#include "vampire.h"
+
+struct CUnknown102cc5d0
+{
+	int m_a;
+	int m_b;
+	void sub_102cc5d0(const CUnknown102cc5d0 *pSrc);
+};
+
+// TARGET: CUnknown102cc5d0::sub_102cc5d0
+void CUnknown102cc5d0::sub_102cc5d0(const CUnknown102cc5d0 *pSrc)
+{
+	m_a = pSrc->m_a;
+	m_b = pSrc->m_b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cc640 size=0x1a
 namespace lifted {
 extern int g_10608a8c;
