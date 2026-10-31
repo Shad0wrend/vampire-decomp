@@ -123716,6 +123716,17 @@ void __fastcall sub_102d09f0(void *pThis, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d0a20 size=0x16
+struct CThis100a8710 { void sub_100a8710(); };
+
+// TARGET: sub_102d0a20
+void __fastcall sub_102d0a20(void *pThis, int, int)
+{
+	((CThis100a8710 *)pThis)->sub_100a8710();
+	*(int *)((char *)pThis + 0x5e8) = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d0ab0 size=0x48
 extern void (*g_109f3890)(char *dst, const char *src, int n);
 struct CAI_FailView {
