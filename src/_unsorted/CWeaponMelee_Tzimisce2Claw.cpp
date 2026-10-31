@@ -39,6 +39,14 @@ int CWeaponMelee_Tzimisce2Claw::vfunc363()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103eb570 size=0x6
+#include "CWeaponMelee_Tzimisce2Claw.h"
+int CWeaponMelee_Tzimisce2Claw::vfunc373()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecfc0 size=0x1e
 #include "CWeaponMelee_Tzimisce2Claw.h"
 
