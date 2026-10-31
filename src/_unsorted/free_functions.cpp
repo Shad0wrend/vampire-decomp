@@ -48155,6 +48155,20 @@ extern "C" CBaseEntity *game_ui(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10118b20 size=0xf
+// TARGET: sub_10118b20
+struct CUnknown10118b20
+{
+    void sub_10118b40(int v);
+    void sub_10118b20(int *p);
+};
+
+void CUnknown10118b20::sub_10118b20(int *p)
+{
+    sub_10118b40(*p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10118b40 size=0x12e
 #include "CGameUI.h"
 #include "COutputEvent.h"
