@@ -14,6 +14,13 @@ CPhysicsAnimlinkEntityDeleteProxy *CPhysicsAnimlinkEntityDeleteProxy::vfunc2(uns
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014ec50 size=0x3
+#include "CPhysicsAnimlinkEntityDeleteProxy.h"
+void CPhysicsAnimlinkEntityDeleteProxy::vfunc0(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014ec70 size=0x93
 #include "CPhysicsAnimlinkEntityDeleteProxy.h"
 #include "CGlobalEntityList.h"
