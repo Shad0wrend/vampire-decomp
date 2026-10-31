@@ -23,5 +23,5 @@ public:
 	char m_pad003c[0x44 - 0x3c];
 
 	CVModInfo_t(int a, int b, int c);	// 0x101f6910 (stub 0x10005ba0): builds the block from (a, b), stores c and the defaults
-	void sub_101f69a0();	// stub 0x1000b712, run on the record by the other Effect_* functions
+	int sub_101f69a0();	// stub 0x1000b712, run on the record by the other Effect_* functions
 };
