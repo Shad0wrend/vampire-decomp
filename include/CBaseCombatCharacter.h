@@ -219,7 +219,8 @@ public:
 	EHANDLE m_hTarget1538;	// 0x1538
 	int m_nTarget153c;	// 0x153c
 	int m_nTargetMode1540;	// 0x1540
-	char m_pad1544[0x1568 - 0x1544];
+	char m_pad1544[0x1564 - 0x1544];
+	float m_flNextAttack1564;	// 0x1564: the time the weapon may attack / reload again
 	int m_field1568;	// 0x1568
 	char m_pad156c[0x1574 - 0x156c];
 	int m_field1574;
