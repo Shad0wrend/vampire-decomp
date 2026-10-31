@@ -163692,6 +163692,11 @@ void __fastcall sub_1042c790(void *p) { typedef void (__fastcall *Fn)(void *); (
 void __fastcall sub_1042c7a0(void *p) { typedef void (__fastcall *Fn)(void *); (*(Fn *)(*(int *)p + 8))(p); }
 // END FUNCTION
 
+// FUNCTION: 0x1042c7b0 size=0x5
+// TARGET: sub_1042c7b0
+void __fastcall sub_1042c7b0(void *p) { typedef void (__fastcall *Fn)(void *); (*(Fn *)(*(int *)p + 0xc))(p); }
+// END FUNCTION
+
 // FUNCTION: 0x1042d570 size=0x20
 namespace lifted {
 extern int g_109ef58c;
