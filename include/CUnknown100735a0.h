@@ -16,6 +16,7 @@ public:
 	char m_b98;	// 0x98
 
 	CUnknown100735a0();	// 0x10073380 (stub 0x100051be): clears the vector at +0x84, then sub_10073760
+	void sub_10073760();	// the rest of the constructor: clears the flag at +4, runs CUnknown100737b0::sub_100737b0(0) on this, then sets the flag at +0x98
 	void sub_100735a0(int value);	// "CUtlVector::AddToTail": grows by one and stores value at the end
 	CUnknown100735a0 *sub_10073410(const CUnknown100735a0 *pOther);	// copy: the flag and the name, then a new CUnknown10075aa0 copy of each element of pOther's vector, added to this vector and told about this object
 };
