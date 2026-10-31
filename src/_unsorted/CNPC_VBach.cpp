@@ -38,6 +38,12 @@ CNPC_VBach *CNPC_VBach::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10362d90 size=0x6
+// TARGET: sub_10362d90
+extern unsigned char g_1062d220;
+unsigned char __cdecl sub_10362d90(void) { return g_1062d220; }
+// END FUNCTION
+
 // FUNCTION: 0x10362df0 size=0x1d
 #include "CNPC_VBach.h"
 struct A { int sub_10012300(int); };

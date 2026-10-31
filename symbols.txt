@@ -8697,6 +8697,7 @@
 0x10011f36 func   ?sub_10290fc0@CAI_BaseNPCTroika@@QAE_NPAM@Z CAI_BaseNPCTroika::sub_10290fc0
 0x10011f3b func   ?sub_1030d480@@YGHPBD@Z sub_1030d480
 0x10011f40 func   ?vfunc440@CNPC_VHengeyokai@@QAEHH@Z CNPC_VHengeyokai::vfunc440
+0x10011f45 func   ?sub_10362d90@@YAEXZ sub_10362d90
 0x10011f4a func   ?sub_1023ef40@@YAXXZ sub_1023ef40
 0x10011f4f func   ?sub_101fb2c0@@YAXH@Z sub_101fb2c0
 0x10011f59 func   ?sub_10028ca0@CPhysMotor@@QAEXXZ CPhysMotor::sub_10028ca0
