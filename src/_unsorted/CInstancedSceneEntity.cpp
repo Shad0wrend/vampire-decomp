@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10084a30 size=0x3
+#include "CInstancedSceneEntity.h"
+void CInstancedSceneEntity::vfunc270(int a0, int a1)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10084e30 size=0x70
 #include "CInstancedSceneEntity.h"
 #include "CGlobalEntityList.h"
