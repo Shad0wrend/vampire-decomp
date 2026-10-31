@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x104059c0 size=0x3
+#include "CItemGIdolElephant.h"
+int CItemGIdolElephant::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040ab40 size=0x1e
 #include "CItemGIdolElephant.h"
 
