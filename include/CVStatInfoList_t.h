@@ -11,7 +11,9 @@ public:
 	int m_pad0000;	// set from the constructor's last argument
 	int m_nStats;	// +4
 	CVStatInfo_t *m_pStats;	// +8, m_nStats records of 0x13c bytes
-	char m_szName[0x20];	// +0xc
+	char m_szName[0x18];	// +0xc
+	const char *m_pszName24;	// +0x24: the stat list's display text (set by PreCache)
+	int m_field28;	// +0x28: set by PreCache from "InternalName"
 	int m_field2c;	// +0x2c
 	CVStatCost_t m_cost;	// +0x30
 
