@@ -305,7 +305,12 @@ public:
 	char m_b63da;
 	char m_pad63db[0x63f0 - 0x63db];
 	char m_b63f0;	// 0x63f0
-	char m_pad63f1[0x6440 - 0x63f1];
+	char m_pad63f1[0x6420 - 0x63f1];
+	int m_nRoll6420;	// 0x6420 .. 0x642c: the roll thresholds of slot 606
+	int m_nRoll6424;
+	int m_nRoll6428;
+	int m_nRoll642c;
+	char m_pad6430[0x6440 - 0x6430];
 	float m_f6440;
 	CBaseEntity *m_p6444;
 	unsigned int m_h6448;
