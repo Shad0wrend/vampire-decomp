@@ -88,3 +88,22 @@ void CAI_SaveRestoreBlockHandler::vfunc2(CSave *pSave)
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x1030c1a0 size=0x13
+#include "vampire.h"
+
+struct CUnknown1030c1a0
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(const void *pData, int a);
+};
+
+extern char g_10612968[];
+
+// TARGET: sub_1030c1a0
+void __stdcall sub_1030c1a0(CUnknown1030c1a0 *pObj)
+{
+	pObj->v8(g_10612968, 1);
+}
+// END FUNCTION
