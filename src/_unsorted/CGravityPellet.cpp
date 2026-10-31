@@ -45,6 +45,17 @@ void CGravityPellet::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10148500 size=0x6
+#include "CGravityPellet.h"
+namespace lifted {
+extern char g_1057b7c0;
+}
+int CGravityPellet::vfunc82()
+{
+    return (int)&lifted::g_1057b7c0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10148720 size=0x1e
 #include "CGravityPellet.h"
 

@@ -7227,6 +7227,7 @@
 0x1000e7be func   ?sub_100f3860@@YGMPBUS100f3860@@0@Z sub_100f3860
 0x1000e7c3 func   ?Grow@?$CUtlMemory@PAUCRandomSpawnFactory@@@@QAEXH@Z CUtlMemory<CRandomSpawnFactory *>::Grow
 0x1000e7c3 func   ?sub_101c4490@CMem4e_t@@QAEXH@Z CMem4e_t::sub_101c4490
+0x1000e7d7 func   ?vfunc82@CGravityPellet@@QAEHXZ CGravityPellet::vfunc82
 0x1000e7dc func   ?sub_103499d0@CDataObjectAccessSystem@@QAEPAV1@I@Z CDataObjectAccessSystem::sub_103499d0
 0x1000e7e6 func   ?vfunc389@CBasePlayer@@QAE?AVVector@@ABV2@@Z CBasePlayer::vfunc389
 0x1000e7eb func   ?sub_100bf980@@YAHXZ sub_100bf980
