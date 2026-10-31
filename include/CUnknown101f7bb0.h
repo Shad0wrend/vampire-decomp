@@ -2,13 +2,21 @@
 // CUnknown101f10e0 (name table at 0x1074df78).
 #pragma once
 
+struct CUnknown101f7bb0_Item
+{
+	virtual ~CUnknown101f7bb0_Item() {}
+};
+
 class CUnknown101f7bb0
 {
 public:
-	int m_pad0000[3];
+	int m_n0000;	// 0x00: cleared by the reset
+	int m_nItems;	// 0x04: number of items
+	CUnknown101f7bb0_Item **m_ppItems;	// 0x08: the items, deleted by the reset
 	int m_iInternalName;	// 0x0c: pooled string id of the General key "InternalName"
 	int m_iName;	// 0x10: pooled string id of the General key "Name"
-	char m_pad0014[0x1c - 0x14];
+	int m_n0014;	// 0x14: cleared by the reset
+	void *m_p0018;	// 0x18: buffer freed by the reset
 	int m_aiModifierName[11];	// 0x1c: pooled string ids of the "ModifierNames" entries 0..10
 	int m_anModifierNameLen[11];	// 0x48: their lengths
 
