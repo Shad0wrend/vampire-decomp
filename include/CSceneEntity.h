@@ -146,7 +146,7 @@ public:
 	void *m_pScene4bc;	// 0x4bc
 	char m_pad04c0[0x4cc - 0x4c0];
 	CSceneOutputList m_list4cc;	// 0x4cc: the start output
-	char m_pad04e4[0x4fc - 0x4e4];
+	CSceneOutputList m_list4e4;	// 0x4e4: the end output
 	CSceneOutputList m_list4fc;	// 0x4fc
 	char m_pad0514[0x574 - 0x514];
 	int m_n574;	// 0x574
