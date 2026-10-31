@@ -31,6 +31,17 @@ void CWeaponIWritten::vfunc291()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040b390 size=0x15
+#include "CWeaponIWritten.h"
+#include "globalvars.h"
+
+// TARGET: CWeaponIWritten::vfunc326
+void CWeaponIWritten::vfunc326()
+{
+	*(float *)((char *)this + 0x910) = gpGlobals->curtime + 0.1f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040b3c0 size=0x6
 #include "CWeaponIWritten.h"
 int CWeaponIWritten::vfunc328()
