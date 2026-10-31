@@ -130267,6 +130267,21 @@ void sub_1031a0e0(CChainNodeStub *pHead, CChainNodeStub *pNew)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10321690 size=0x60
+struct S10321690Ent { char pad[0xa8]; int m_pPlayer; char pad2[0x2e0 - 0xac]; int m_edict; };
+int *sub_10321690(S10321690Ent *pEnt, int *pRet, unsigned int *pBits)
+{
+	if (pEnt && pEnt->m_pPlayer) {
+		unsigned int idx = engine->vfunc35(pEnt->m_edict) - 1;
+		pBits[0] = 0;
+		pBits[idx >> 5] |= 1 << (idx & 0x1f);
+		return pRet;
+	}
+	pBits[0] = 0;
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103217d0 size=0xb2
 #include "SendProp.h"
 

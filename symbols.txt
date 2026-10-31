@@ -7388,6 +7388,7 @@
 0x1000fb4b func   ?sub_101e33c0@CVTriggerCasting_t@@QAEXHHHH@Z CVTriggerCasting_t::sub_101e33c0
 0x1000fb50 func   ?sub_10035df0@CPhysicsPushedEntities@@QAEXPAVCBaseEntity@@@Z CPhysicsPushedEntities::sub_10035df0
 0x1000fb55 func   ?sub_101622d0@@YAXPAUS101622d0_Arg@@@Z sub_101622d0
+0x1000fb5a func   ?sub_10321690@@YAPAHPAUS10321690Ent@@PAHPAI@Z sub_10321690
 0x1000fb5f func   ?vfunc82@CTriggerLook@@UAEPAUdatamap_t@@XZ CTriggerLook::vfunc82
 0x1000fb64 func   ?vfunc5@CNPC_VBach@@QAEPAV1@I@Z CNPC_VBach::vfunc5
 0x1000fb69 func   ?sub_10109da0@@YIXPADHH@Z sub_10109da0
