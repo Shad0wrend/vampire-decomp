@@ -13,6 +13,26 @@ unsigned char CPayphone::sub_101aa7d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aa7f0 size=0x14
+struct CPayphoneUnit101aa7f0
+{
+	int sub_101aa7f0(int a);
+};
+
+// TARGET: CPayphoneUnit101aa7f0::sub_101aa7f0
+int CPayphoneUnit101aa7f0::sub_101aa7f0(int a)
+{
+	void **vt = *(void ***)this;
+	union {
+		void *p;
+		void (CPayphoneUnit101aa7f0::*pm)(int);
+	} u;
+	u.p = vt[368];
+	(this->*u.pm)(a);
+	return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aa850 size=0x5
 #include "CPayphone.h"
 bool CPayphone::vfunc363(int a0)

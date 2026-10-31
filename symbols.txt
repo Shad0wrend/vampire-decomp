@@ -8886,6 +8886,7 @@
 0x10010f1e func   ?vfunc81@CItemGLillyDiary@@QAEHXZ CItemGLillyDiary::vfunc81
 0x10010f23 func   ??1CVStatAction_t@@QAE@XZ CVStatAction_t::~CVStatAction_t
 0x10010f32 func   ?vfunc7@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHHHHHHHHHH@Z CTempEntsSystem::vfunc7
+0x10010f37 func   ?sub_101aa7f0@CPayphoneUnit101aa7f0@@QAEHH@Z CPayphoneUnit101aa7f0::sub_101aa7f0
 0x10010f3c func   ?vfunc4@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHH@Z CTempEntsSystem::vfunc4
 0x10010f41 func   ?sub_1013dbb0@@YIXPAUPool@@@Z sub_1013dbb0
 0x10010f46 func   ?sub_101fb200@CVDmg_t@@QAEHHH@Z CVDmg_t::sub_101fb200
