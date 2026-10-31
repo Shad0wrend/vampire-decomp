@@ -87,6 +87,17 @@ void CBreakable::vfunc230(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010e600 size=0x8
+#include "CBreakable.h"
+namespace lifted {
+int sub_10012e1d();
+}
+int CBreakable::vfunc74(int a0)
+{
+    return lifted::sub_10012e1d();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010efe0 size=0x31
 #include "CBreakable.h"
 #include "CUnknown1070b244.h"
