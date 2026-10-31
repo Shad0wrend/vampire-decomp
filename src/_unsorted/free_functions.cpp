@@ -103871,6 +103871,25 @@ extern "C" CBaseEntity *prop_padlock()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10226190 size=0x43
+#include "CPropDoorknobElectronic.h"
+void *sub_100aa720(int size);
+extern char g_105b26d0[];
+
+// TARGET: prop_doorknob_electronic
+extern "C" CBaseEntity *prop_doorknob_electronic()
+{
+	void *mem = sub_100aa720(0x824);
+	CPropDoorknobElectronic *p;
+	if (mem)
+		p = ((CPropDoorknobElectronic *)mem)->sub_10226200();
+	else
+		p = 0;
+	p->vfunc106(g_105b26d0);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102265c0 size=0x43
 #include "CPlayerEvents.h"
 void *sub_100aa720(int size);
