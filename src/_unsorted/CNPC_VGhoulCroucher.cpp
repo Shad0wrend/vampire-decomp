@@ -12,6 +12,15 @@ datamap_t * CNPC_VGhoulCroucher::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037a8f0 size=0x6
+extern unsigned char g_1063abc0;
+// TARGET: sub_1037a8f0
+unsigned char sub_1037a8f0()
+{
+    return g_1063abc0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037a950 size=0x1d
 #include "CNPC_VGhoulCroucher.h"
 struct A { int sub_10012300(int); };
