@@ -7,4 +7,5 @@ class CGenericNPC
 public:
 	CGenericNPC *vfunc5(unsigned int flags);
 	void sub_1000c9cd();
+	void vfunc104();	// slot 104 (Precache): the three weapon fire sounds of the table at 0x106244c0, then the model named by slot 9
 };
