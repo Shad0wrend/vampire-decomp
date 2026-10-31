@@ -40064,6 +40064,26 @@ void CDialog::sub_100e5770()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e58b0 size=0x19
+struct CUnk100e58b0
+{
+	char m_pad0000[0x2830];
+	int m_n2830;	// 0x2830
+	char m_pad2834[0x30e9 - 0x2834];
+	char m_b30e9;	// 0x30e9
+
+	bool sub_100e58b0();
+};
+
+// TARGET: sub_100e58b0
+bool CUnk100e58b0::sub_100e58b0()
+{
+	if (m_b30e9)
+		return true;
+	return m_n2830 == 0 ? true : false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e5c70 size=0x6d
 #include "CDialog.h"
 
