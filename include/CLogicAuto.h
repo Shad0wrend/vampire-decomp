@@ -19,6 +19,7 @@ public:
 
 	void vfunc130(int a);	// slot 130 "OnRestore": CBaseEntity::vfunc130(a), then schedules the next think 0.2s ahead (when a is set, or bit 1 of the flags at +0x204)
 	void sub_10130d10();
+	unsigned char sub_10130c10();	// CLogicAuto::vfunc117 body (CBaseEntity::vfunc117 & 0xfd)
 	void vfunc134();
 public:
     virtual datamap_t * vfunc82();
