@@ -463,6 +463,24 @@ bool CNPC_VMingXiao::vfunc600(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10395e20 size=0x19
+#include "CNPC_VMingXiao.h"
+
+struct IUnk10924edc
+{
+	virtual void v0();
+	virtual void v1();
+};
+extern IUnk10924edc *g_10924edc;
+
+// TARGET: vfunc601
+void CNPC_VMingXiao::vfunc601(int a)
+{
+	g_10924edc->v1();
+	m_b6078 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10395e50 size=0x3
 #include "CNPC_VMingXiao.h"
 bool CNPC_VMingXiao::vfunc602()
