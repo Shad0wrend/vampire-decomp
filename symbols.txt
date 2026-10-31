@@ -4655,6 +4655,7 @@
 0x1000994e func   ?sub_1025b800@@YAHXZ sub_1025b800
 0x10009953 func   ?sub_103bfc20@CNPC_VTzimisce@@QAEDPAVCBaseEntity@@0@Z CNPC_VTzimisce::sub_103bfc20
 0x10009958 func   ?vfunc4@CTEDust@@QAEXHH@Z CTEDust::vfunc4
+0x1000995d func   ?vfunc363@CWeaponMelee_AVampBlade@@QAEHXZ CWeaponMelee_AVampBlade::vfunc363
 0x10009962 func   ?sub_103166b0@@YIPAVCGlobalEntityList_Ent@@PAD@Z sub_103166b0
 0x10009967 func   ?sub_101c1a70@CBaseEntity@@QAEXXZ CBaseEntity::sub_101c1a70
 0x1000996c func   ?vfunc363@CWeaponMelee_TireIron@@QAEHXZ CWeaponMelee_TireIron::vfunc363
