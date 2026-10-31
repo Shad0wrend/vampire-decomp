@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10402960 size=0x3
+#include "CItemGBadluckTalisman.h"
+int CItemGBadluckTalisman::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040a7e0 size=0x1e
 #include "CItemGBadluckTalisman.h"
 
