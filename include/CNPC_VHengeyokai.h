@@ -315,8 +315,8 @@ public:
 	virtual void vfunc162();
 	virtual void vfunc163();
 	virtual void vfunc164();
-	virtual void vfunc165();
-	virtual void vfunc166();
+	virtual CBaseEntity *vfunc165();	// header slot numbering is 2 behind the game's here: this is the game's slot 167
+	virtual CBaseEntity *vfunc166();	// the game's slot 168
 	virtual CBaseEntity *vfunc167();
 	virtual CBaseEntity *vfunc168();
 	virtual void vfunc169();
