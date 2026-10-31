@@ -10888,6 +10888,7 @@
 0x10015429 func   ?vfunc314@CWeaponLockpick@@UAEDXZ CWeaponLockpick::vfunc314
 0x1001542e func   ?sub_102c9c30@@YAXXZ sub_102c9c30
 0x10015433 func   ?vfunc4@CTEBeamRing@@UAEXHH@Z CTEBeamRing::vfunc4
+0x10015438 func   ?vfunc80@CWeaponRanged_Pistol_DesertEagle@@QAEHXZ CWeaponRanged_Pistol_DesertEagle::vfunc80
 0x1001543d func   ?vfunc5@CRevertSaved@@QAEPAV1@I@Z CRevertSaved::vfunc5
 0x1001544c func   ?sub_100de930@CUnknown100de930@@QAEXXZ CUnknown100de930::sub_100de930
 0x10015451 func   ?vfunc81@CWeaponMelee_GargoyleFist@@QAEHXZ CWeaponMelee_GargoyleFist::vfunc81
