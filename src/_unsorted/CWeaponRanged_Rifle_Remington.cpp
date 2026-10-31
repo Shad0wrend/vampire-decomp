@@ -34,3 +34,17 @@ CWeaponRanged_Rifle_Remington *CWeaponRanged_Rifle_Remington::vfunc5(unsigned in
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10236110 size=0x10
+#include "CWeaponRanged_Rifle_Remington.h"
+
+void __fastcall sub_1001245e(void *pThis);
+void __fastcall sub_10253ea0(void *pThis);
+
+// TARGET: CWeaponRanged_Rifle_Remington::vfunc319
+void CWeaponRanged_Rifle_Remington::vfunc319()
+{
+	sub_1001245e(this);
+	sub_10253ea0(this);
+}
+// END FUNCTION
