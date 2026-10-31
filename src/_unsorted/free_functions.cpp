@@ -126644,6 +126644,16 @@ void __fastcall sub_102e8aa0(char *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e8ac0 size=0xf
+void sub_101cf2f0(void *p, int n);
+
+// TARGET: sub_102e8ac0
+void __fastcall sub_102e8ac0(char *pThis)
+{
+	sub_101cf2f0(pThis + 0x18, 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e96e0 size=0x1c0
 extern float g_1060f358[14];
 extern char g_1060f398[7][20];
