@@ -24,6 +24,25 @@ void CEQ_SaveRestoreBlockHandler::vfunc2()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cff00 size=0x13
+#include "vampire.h"
+
+struct CUnknown100cff00
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(const void *pData, int a);
+};
+
+extern char g_1055deb0[];
+
+// TARGET: sub_100cff00
+void __stdcall sub_100cff00(CUnknown100cff00 *pObj)
+{
+	pObj->v8(g_1055deb0, 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cff30 size=0x2b
 #include "CEQ_SaveRestoreBlockHandler.h"
 

@@ -4961,6 +4961,7 @@
 0x10009f16 func   ?sub_10077820@CUnknown10077820@@QAEDPAUCUnknownSlot3Obj@@HH@Z CUnknown10077820::sub_10077820
 0x10009f1b func   ?sub_101780e0@CUnknown101780e0@@QAEXXZ CUnknown101780e0::sub_101780e0
 0x10009f25 func   ?sub_102da7c0@CUnk102da7c0@@QAEXPAXDD@Z CUnk102da7c0::sub_102da7c0
+0x10009f2f func   ?sub_100cff00@@YGXPAUCUnknown100cff00@@@Z sub_100cff00
 0x10009f39 func   _prop_haunted prop_haunted
 0x10009f3e func   ?sub_10077b30@CUnknown10077b30@@QAEPAVCUnknown10073ae0@@HPBD@Z CUnknown10077b30::sub_10077b30
 0x10009f43 func   ?vfunc362@CWeaponMelee_ManBatClaw@@QAEHXZ CWeaponMelee_ManBatClaw::vfunc362
