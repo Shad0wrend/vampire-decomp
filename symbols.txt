@@ -8619,6 +8619,7 @@
 0x1001105e func   ?sub_1039ede0@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_1039ede0
 0x10011063 func   ?sub_101a3380@@YG_NPAUVEnt@@H@Z sub_101a3380
 0x10011068 func   ?sub_1036e580@CNPC_VChangBros@@QAEHH@Z CNPC_VChangBros::sub_1036e580
+0x10011072 func   ?vfunc80@CWeaponRanged_Pistol_Glock@@QAEHXZ CWeaponRanged_Pistol_Glock::vfunc80
 0x10011077 func   ?sub_100d2290@@YAXPBD@Z sub_100d2290
 0x10011086 func   ?sub_10088620@@YAXXZ sub_10088620
 0x10011090 func   ?sub_102f7c00@@YAIHID@Z sub_102f7c00
