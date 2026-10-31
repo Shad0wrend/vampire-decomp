@@ -149926,6 +149926,18 @@ float CNPC_VVampireBossUnit::sub_103c6830()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c6a00 size=0x10
+#include "vampire.h"
+
+float __fastcall sub_103c6830(void *pThis);
+
+// TARGET: sub_103c6a00
+void __fastcall sub_103c6a00(void *pThis)
+{
+	*((float *)((char *)pThis + 0x6698)) = sub_103c6830(pThis);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c6a50 size=0x2e
 #include "Vector.h"
 
