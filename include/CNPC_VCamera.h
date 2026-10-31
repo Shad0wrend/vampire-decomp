@@ -8,7 +8,11 @@ public:
 
 	char pad0004[0x17c - 4];
 	float m_flNextThink;	// 0x17c
-	char pad0180[0x14bc - 0x180];
+	char pad0180[0x204 - 0x180];
+	unsigned int m_flags204;	// 0x204
+	char pad0208[4];
+	const char *m_target20c;	// 0x20c: the target name
+	char pad0210[0x14bc - 0x210];
 	unsigned int m_flags14bc;
 	char pad14c0[0x1568 - 0x14c0];
 	int m_n1568;	// 0x1568
