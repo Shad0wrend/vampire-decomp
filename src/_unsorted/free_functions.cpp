@@ -113937,6 +113937,28 @@ bool CAI_BaseNPCTroika::sub_1028e360()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028e700 size=0x63
+#include "CAI_BaseNPC.h"
+#include "globalvars.h"
+
+struct S1028e700View {
+	char m_pad[0x62c8];
+	float m_fl62c8;
+};
+
+void CAI_BaseNPC::sub_1028e700(int condition, float *pTime)
+{
+	if (sub_10269aa0(condition)) {
+		if (*pTime == 0.0f)
+			*pTime = ((S1028e700View *)this)->m_fl62c8 + gpGlobals->curtime;
+		if (gpGlobals->curtime < *pTime)
+			sub_10269b50(condition);
+	} else {
+		*pTime = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028e790 size=0x7e
 #include "CAI_BaseNPC.h"
 #include "CUnknown102dc2c0.h"
