@@ -124,7 +124,7 @@ public:
 	CCollisionEvent();
 
 	virtual void vfunc0(void *pEvent);	// "CCollisionEvent::PreCollision": scope trace, copies the 32 byte event to +0x68, then slot 40 of both objects fills the records at +0x88 / +0x94 (second argument 0x30 further)
-	virtual void vfunc1();
+	virtual void vfunc1(void *pEvent);	// "CCollisionEvent::PostCollision": scope trace, the post velocities (slot 40 of both objects into +0xa0 / +0xac) and the entities (slot 6) into +0xd0 / +0xd4, notes the shadow / gamedata flags, then starts or ends the touches of the colliding pair
 	virtual void vfunc2(void *pObject, float energy, int surfaceProps, int surfacePropsHit, void *pData);	// "CCollisionEvent::Friction": scope trace (no entity name), the velocity of the object at the contact point reversed and normalised, effects for hard hits on concrete-like materials, then the entity's slot 231 (VPhysicsFriction)
 
 	// Slots 3, 4, 6, 8 and 9.
