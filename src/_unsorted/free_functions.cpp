@@ -30376,6 +30376,16 @@ void CBatSwarm::sub_100b8b50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b97b0 size=0x1c
+void __fastcall sub_100b97b0(char *p)
+{
+	*(int *)(p + 0x740) = 0;
+	int *q = (int *)(p + 0xbf8);
+	for (int i = 0; i < 0x20; i++)
+		q[i] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b97e0 size=0x73
 struct Vec3 { float x, y, z; };
 struct Entry {

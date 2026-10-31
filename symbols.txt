@@ -10721,6 +10721,7 @@
 0x10013a61 func   ?sub_100e3180@CDialog@@QAEHPAUCDialogEntry_t@@H@Z CDialog::sub_100e3180
 0x10013a66 func   ?sub_1040e5b0@@YAMXZ sub_1040e5b0
 0x10013a6b func   _item_g_giovanni_invitation_maria item_g_giovanni_invitation_maria
+0x10013a7f func   ?sub_100b97b0@@YIXPAD@Z sub_100b97b0
 0x10013a89 func   ?sub_101dbb00@@YAPBDH@Z sub_101dbb00
 0x10013a93 func   ?sub_10078f20@CUtlVector136@@QAEXHH@Z CUtlVector136::sub_10078f20
 0x10013a98 func   ?vfunc5@CWeaponMelee_BaseballBat@@QAEPAV1@I@Z CWeaponMelee_BaseballBat::vfunc5
