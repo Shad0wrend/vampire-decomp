@@ -48744,6 +48744,20 @@ int sub_10119390()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101193b0 size=0x16
+int sub_10119390();
+int sub_101cd9e0(int);
+
+// TARGET: sub_101193b0
+int sub_101193b0()
+{
+	int i = sub_10119390();
+	if (i > 0)
+		return sub_101cd9e0(i);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10119750 size=0x145
 extern "C" char *__cdecl strncpy(char *, const char *, unsigned int);
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
