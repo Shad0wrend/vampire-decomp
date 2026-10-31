@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103fe610 size=0x6
+#include "CItemGRingGold.h"
+namespace lifted {
+extern char g_10945748;
+}
+int CItemGRingGold::vfunc80()
+{
+    return (int)&lifted::g_10945748;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103fe630 size=0x3
 #include "CItemGRingGold.h"
 int CItemGRingGold::vfunc81()
