@@ -25,6 +25,22 @@ struct CNewscasterList	// a CUtlVector<CNewscasterEntry>
 
 	CNewscasterEntry &Element(int i) { return m_pMemory[i]; }
 
+	void AddToTail(const CNewscasterEntry &src)	// CUtlVector::InsertBefore(size, src)
+	{
+		int idx = m_size;
+		if (m_allocationCount < idx + 1)
+			((CUnknown103a1320 *)this)->sub_103a1320(idx - m_allocationCount + 1);
+		int newSize = m_size + 1;
+		m_pElements = m_pMemory;
+		m_size = newSize;
+		int n = newSize - idx - 1;
+		if (n > 0)
+			memmove(m_pMemory + idx + 1, m_pMemory + idx, n * sizeof(CNewscasterEntry));
+		CNewscasterEntry *d = m_pMemory + idx;
+		if (d)
+			*d = src;
+	}
+
 	void RemoveFirst()	// CUtlVector::Remove(0): shifts the tail down and shrinks the size
 	{
 		int n = m_size - 1;
