@@ -20,6 +20,17 @@ int CWeaponMelee_Baton::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e82e0 size=0x6
+#include "CWeaponMelee_Baton.h"
+namespace lifted {
+extern char g_10673b48;
+}
+int CWeaponMelee_Baton::vfunc362()
+{
+    return (int)&lifted::g_10673b48;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ece70 size=0x1e
 #include "CWeaponMelee_Baton.h"
 
