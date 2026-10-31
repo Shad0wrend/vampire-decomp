@@ -20,6 +20,17 @@ int CWeaponMelee_AVampBlade::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e99c0 size=0x6
+#include "CWeaponMelee_AVampBlade.h"
+namespace lifted {
+extern char g_10677020;
+}
+int CWeaponMelee_AVampBlade::vfunc362()
+{
+    return (int)&lifted::g_10677020;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecf60 size=0x1e
 #include "CWeaponMelee_AVampBlade.h"
 
