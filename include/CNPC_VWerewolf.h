@@ -156,7 +156,9 @@ public:
 	char pad6700[0x6708 - 0x6700];
 	int m_n6708;	// 0x6708
 	int m_n670c;	// 0x670c
-	char pad6710[0x6770 - 0x6710];
+	char pad6710[0x6720 - 0x6710];
+	int m_n6720;	// 0x6720: count of the hint records
+	char pad6724[0x6770 - 0x6724];
 	char m_OnTeleportOut[0x18];	// 0x6770: a COutputEvent (fired with the target as activator)
 	char m_OnTeleportIn[0x18];	// 0x6788: a COutputEvent (fired with the target as activator)
 
