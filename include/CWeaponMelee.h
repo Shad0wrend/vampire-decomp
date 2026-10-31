@@ -16,6 +16,7 @@ public:
 	CWeaponMelee();
 	bool vfunc283(CBaseEntity *pTarget);	// slot 283: its own (0x103ea6d0), true when pTarget answers slot 158, the weapon has an owner other than pTarget and the owner's centre (slot 192) is within the melee range of pTarget's
 	bool vfunc315();	// when the weapon has an owner: plays the swing, picks a sound name by the owner state (slots 272 / 273), and queries the animation (slots 342, 343, 344)
+	void vfunc319();	// slot 319: its own (0x103eaec0), runs slot 326 when the owner's player object has flag bit 0 and the time at +0x730 has passed, else slot 321
 	void vfunc326();	// slot 326: its own (0x103eaca0): picks the swing activity (0x4b, 0x4c or 0x53) and tries it through slot 372 in a few ways, then tells the owner's player (slot 429) when one of them worked
 	void vfunc327();	// slot 327: its own (0x103eae00)
 	void vfunc339();	// slot 339: kicks the owner player's view with a random (x, y) punch from the weapon's roll record (+0x384..+0x398), scaled down by the owner's stat 1 of its type 0 list
