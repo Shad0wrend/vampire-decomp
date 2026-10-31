@@ -117,7 +117,9 @@ public:
 	CNPC_VWerewolfSchedule *m_pSchedule5c38;	// 0x5c38
 	char pad5c3c[0x5d34 - 0x5c3c];
 	CNPC_VWerewolfHelper5d34 *m_pHelper5d34;	// 0x5d34
-	char pad5d38[0x6264 - 0x5d38];
+	char pad5d38[0x5f2d - 0x5d38];
+	char m_b5f2d;	// 0x5f2d
+	char pad5f2e[0x6264 - 0x5f2e];
 	float m_f6264;	// 0x6264
 	char pad6268[0x665c - 0x6268];
 	CNPC_VWerewolfTimerVec m_Timers;	// 0x665c
