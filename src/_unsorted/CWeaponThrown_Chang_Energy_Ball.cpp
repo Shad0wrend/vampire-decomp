@@ -53,6 +53,17 @@ void CWeaponThrown_Chang_Energy_Ball::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f0620 size=0x6
+#include "CWeaponThrown_Chang_Energy_Ball.h"
+namespace lifted {
+extern char g_1067d48c;
+}
+int CWeaponThrown_Chang_Energy_Ball::vfunc362()
+{
+    return (int)&lifted::g_1067d48c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f13e0 size=0x1e
 #include "CWeaponThrown_Chang_Energy_Ball.h"
 
