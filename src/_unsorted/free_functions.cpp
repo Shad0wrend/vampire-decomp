@@ -132588,6 +132588,12 @@ bool sub_10312e00(const char **a, const char **b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10312f30 size=0x6
+// TARGET: sub_10312f30
+extern void (*g_109f076c)(void);
+void sub_10312f30(void) { g_109f076c(); }
+// END FUNCTION
+
 // FUNCTION: 0x10312f70 size=0x30
 #include "CUtlMemory16.h"
 
