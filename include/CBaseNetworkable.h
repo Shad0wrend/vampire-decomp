@@ -28,7 +28,8 @@ public:
 	virtual int vfunc5();
 	virtual void vfunc6(CBaseNetworkableBits_t *pBits);	// sets the bit of this edict's index
 	int m_pad04;
-	int m_pEdict;	// 0x8
+	CBaseNetworkableEdict_t *m_pEdict;	// 0x8
 
 	int sub_100b7de0();	// the engine's index of the edict
+	void sub_100b7da0();	// releases the edict
 };
