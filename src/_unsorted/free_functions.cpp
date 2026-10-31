@@ -59868,6 +59868,45 @@ void CBasePlayer::sub_1017c830()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017c900 size=0x1f2
+#include "CBasePlayer.h"
+#include "CEntityMessageFilter.h"
+#include "engineserver.h"
+
+// TARGET: CBasePlayer::sub_1017c900
+void CBasePlayer::sub_1017c900(char bFlag)
+{
+	CEntityMessageFilter filter;
+	int iEdict = m_n02E0;
+	int iClient = engine->vfunc35(iEdict);
+	filter.sub_1019d2f0(iClient);
+	filter.MakeReliable();
+	engine->vfunc65(&filter, 0);
+	engine->vfunc67(0x4e);
+	engine->vfunc67(m_n1DAC);
+	engine->vfunc66();
+	engine->vfunc65(&filter, 0);
+	engine->vfunc67(0x4d);
+	int n = 0;
+	for (int i = 0; i < m_nQuestRecords1D74; i++) {
+		CBasePlayerQuestRecord *pRec = &m_pQuestRecords1D68[i];
+		engine->vfunc71(pRec->m_nQuest30);
+		engine->vfunc71(pRec->m_nStep38);
+		engine->vfunc71(pRec->m_nOrder34);
+		engine->vfunc67(pRec->m_bFlag3C);
+		engine->vfunc71(bFlag != 0);
+		n++;
+		if (n >= 7) {
+			engine->vfunc66();
+			engine->vfunc65(&filter, 0);
+			engine->vfunc67(0x4d);
+			n = 0;
+		}
+	}
+	engine->vfunc66();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017cb80 size=0x7b
 #include "CUnknown1017cb80.h"
 #include "QuestJournal.h"
