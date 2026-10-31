@@ -73546,6 +73546,17 @@ void CSoundEnt::sub_101baf80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bb0f0 size=0x14
+extern char *g_1072c464;
+
+int sub_101bb0f0()
+{
+	if (!g_1072c464)
+		return -1;
+	return *(int *)(g_1072c464 + 0x454);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bb220 size=0x6b
 struct ScopeEntry {
     const char *a;
