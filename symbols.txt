@@ -4628,6 +4628,7 @@
 0x1000984f func   ?sub_10366120@CNPC_VVampireBoss@@QAEXPAUinputdata_t@@@Z CNPC_VVampireBoss::sub_10366120
 0x10009859 func   ?sub_101a4760@@YAHXZ sub_101a4760
 0x1000985e func   ?vfunc585@CCineAISchedule@@QAE_NXZ CCineAISchedule::vfunc585
+0x1000987c func   ?vfunc80@CWeaponMelee_HengeyokaiFist@@QAEHXZ CWeaponMelee_HengeyokaiFist::vfunc80
 0x10009881 func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@UEXPERIENCE_ENTRY@@V?$CUtlMemory@UEXPERIENCE_ENTRY@@@@@@$08@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<EXPERIENCE_ENTRY,CUtlMemory<EXPERIENCE_ENTRY> >,9>::vfunc3
 0x10009886 func   ?sub_103adc00@@YADXZ sub_103adc00
 0x1000988b func   ?sub_102f28a0@CUnknown102ee270@@QAEXXZ CUnknown102ee270::sub_102f28a0
