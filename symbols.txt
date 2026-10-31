@@ -698,6 +698,7 @@
 0x10002432 func   ?sub_101fbf80@CUnknown101fbf80@@QAE_NHHHHH@Z CUnknown101fbf80::sub_101fbf80
 0x10002437 func   ?sub_100cc130@CUnknown100cc130@@QAEXPAUinputdata_t@@@Z CUnknown100cc130::sub_100cc130
 0x1000243c func   ?vfunc2@CMoveHelperServer@@UAE_NPBXPBM@Z CMoveHelperServer::vfunc2
+0x10002441 func   ?sub_101317a0@CUnit101317a0@@QAEXXZ CUnit101317a0::sub_101317a0
 0x10002446 func   ?vfunc104@CWeaponGravityGun@@UAEXXZ CWeaponGravityGun::vfunc104
 0x1000244b func   ?sub_104014c0@@YAHXZ sub_104014c0
 0x10002450 func   ?sub_100f8960@@YIXH@Z sub_100f8960

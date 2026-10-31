@@ -51462,6 +51462,27 @@ void CUnknown10131770::sub_10131770()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101317a0 size=0x14
+struct CUnit101317a0
+{
+	char m_pad0000[0x498];
+	int m_n498;
+
+	void sub_10131750();
+	void sub_10131770();
+	void sub_101317a0();
+};
+
+// TARGET: CUnit101317a0::sub_101317a0
+void CUnit101317a0::sub_101317a0()
+{
+	if (m_n498)
+		sub_10131750();
+	else
+		sub_10131770();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101317d0 size=0x64
 struct COutputX {
     char m_pad[0x18];
