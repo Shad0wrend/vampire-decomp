@@ -48,6 +48,18 @@ void CEntityListSystem::vfunc2()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f9080 size=0xa
+#include "CEntityListSystem.h"
+namespace lifted {
+extern char g_10703634;
+struct C1000fd6c { int sub_1000fd6c(); };
+}
+int CEntityListSystem::vfunc4()
+{
+    return ((lifted::C1000fd6c *)((int)&lifted::g_10703634))->sub_1000fd6c();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f90a0 size=0x8d
 #include "CEntityListSystem.h"
 #include "CGlobalEntityList.h"
