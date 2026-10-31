@@ -116,3 +116,22 @@ void CPropDoorknob::vfunc273()
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x10225bc0 size=0x30
+#include "CPropDoorknob.h"
+
+#define V5(p) virtual void p##a(); virtual void p##b(); virtual void p##c(); virtual void p##d(); virtual void p##e();
+#define V25(p) V5(p##1) V5(p##2) V5(p##3) V5(p##4) V5(p##5)
+#define V125(p) V25(p##1) V25(p##2) V25(p##3) V25(p##4) V25(p##5)
+struct SlotView_10225bc0 {
+	V125(x) V125(y)
+	virtual float vfunc250(int a);
+};
+
+void CPropDoorknob::vfunc134()
+{
+	if (!*(char *)((char *)this + 0x65c))
+		((SlotView_10225bc0 *)this)->vfunc250(0);
+	m_flNextThink = gpGlobals->curtime + 0.1;
+}
+// END FUNCTION
