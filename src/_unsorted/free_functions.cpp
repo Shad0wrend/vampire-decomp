@@ -82634,6 +82634,20 @@ void CUnknown101e0f00SrcA::sub_101dc8a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dcb50 size=0x11
+#include "vampire.h"
+
+void __fastcall sub_101dcdb0(void *pThis);
+void __fastcall sub_101dc1f0(void *pThis);
+
+// TARGET: sub_101dcb50
+void __fastcall sub_101dcb50(void *pThis)
+{
+	sub_101dcdb0(pThis);
+	sub_101dc1f0((char *)pThis + 0xc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dcb80 size=0x64
 struct CItemVec {
     int m_growBy;
