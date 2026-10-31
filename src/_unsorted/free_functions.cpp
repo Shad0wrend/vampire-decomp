@@ -142145,6 +142145,28 @@ int *sub_1034abb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034b460 size=0x14
+#include "CNPCMaker.h"
+
+struct CUnknown1034b4d0
+{
+	char m_pad0000[0x66c0];
+	char m_b66c0;
+
+	void sub_1034b460();
+	void sub_1034b4d0();
+};
+
+// TARGET: CUnknown1034b4d0::sub_1034b460
+void CUnknown1034b4d0::sub_1034b460()
+{
+	if (m_b66c0)
+		((CNPCMaker *)this)->sub_1034b490();
+	else
+		sub_1034b4d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034b490 size=0x30
 #include "CNPCMaker.h"
 
