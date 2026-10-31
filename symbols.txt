@@ -10523,6 +10523,7 @@
 0x100138ef func   ?sub_1015f510@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_1015f510
 0x100138f4 func   ?vfunc310@CBaseCombatWeapon@@UAEXM@Z CBaseCombatWeapon::vfunc310
 0x100138f9 func   ?sub_102231c0@@YAPAHXZ sub_102231c0
+0x100138fe func   ?sub_10253110@@YIXPAX@Z sub_10253110
 0x10013903 func   ?vfunc0@CGlobalEntityList@@UAEXPAVCGlobalEntityList_Ent@@I@Z CGlobalEntityList::vfunc0
 0x10013908 func   ?sub_100c65b0@@YAMXZ sub_100c65b0
 0x1001390d func   ?vfunc0@CChoreoQueueItem@@QAEPAV1@I@Z CChoreoQueueItem::vfunc0

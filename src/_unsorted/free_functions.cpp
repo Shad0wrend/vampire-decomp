@@ -113139,6 +113139,19 @@ void sub_10252800(CBaseAnimating *pEnt, float flSize)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10253110 size=0x16
+struct CUnknown10252290 { void *sub_10252290(); };
+struct CUnknown10182e00 { void sub_10182e00(void *pOther); };
+
+// TARGET: sub_10253110
+void __fastcall sub_10253110(void *pThis)
+{
+	void *p = ((CUnknown10252290 *)pThis)->sub_10252290();
+	if (p)
+		((CUnknown10182e00 *)p)->sub_10182e00(pThis);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10253b40 size=0x13
 #include "CBaseCombatWeapon.h"
 
