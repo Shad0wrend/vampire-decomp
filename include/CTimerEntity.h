@@ -6,7 +6,9 @@
 class CTimerEntity
 {
 public:
-	char m_pad0000[0x498];
+	char m_pad0000[0x17c];
+	float m_flNextThink17c;	// 0x17c: time of the next think
+	char m_pad0180[0x498 - 0x180];
 	int m_n498;	// 0x498: nonzero while the timer is disabled
 	float m_fInterval;	// 0x49c: the refire interval
 	char m_pad04a0[4];
