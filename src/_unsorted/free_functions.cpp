@@ -130150,6 +130150,17 @@ float __fastcall sub_102e27b0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e27d0 size=0x1a
+#include "CAI_Motor.h"
+#include "CAI_BaseNPC.h"
+
+// TARGET: CAI_Motor::sub_102e27d0
+float CAI_Motor::sub_102e27d0(const char *a, float b)
+{
+	return ((CAI_BaseNPC *)m_pOuter)->vfunc345(a, b, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e2800 size=0x8
 struct B { void sub_1000108c(int); };
 struct A { int a; B *b; void sub_102e2800(int x); };
