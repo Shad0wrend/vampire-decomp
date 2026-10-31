@@ -55988,6 +55988,22 @@ void __fastcall sub_1013db40(int *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013db80 size=0x18
+extern void (__cdecl *g_1071a240)(const char *, int);
+
+struct CUnk1013db80 {
+    char pad[0x20];
+    int m_20;
+    void sub_1013db80();
+};
+
+void CUnk1013db80::sub_1013db80()
+{
+    if (g_1071a240)
+        g_1071a240("Memory leak: mempool blocks left in memory: %d\n", m_20);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013dbb0 size=0x70
 struct Blob { Blob *m_pNext; Blob *m_pPrev; int m_NumBytes; char m_Data[1]; };
 struct BlobHead { Blob *m_pNext; Blob *m_pPrev; };

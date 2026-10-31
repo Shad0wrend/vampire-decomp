@@ -10411,6 +10411,7 @@
 0x100136e7 func   ?sub_101e8b30@CUnknown101e8b30@@QAEHXZ CUnknown101e8b30::sub_101e8b30
 0x100136ec func   ?sub_10181620@CUnknown10181620@@QAEHH@Z CUnknown10181620::sub_10181620
 0x100136f1 func   _item_w_ithaca_m_37 item_w_ithaca_m_37
+0x100136f6 func   ?sub_1013db80@CUnk1013db80@@QAEXXZ CUnk1013db80::sub_1013db80
 0x100136fb func   ?sub_1042da40@@YIEPAE@Z sub_1042da40
 0x10013700 func   ?sub_10323210@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::sub_10323210
 0x10013705 func   ?vfunc5@CTETParticleHUD@@UAEXXZ CTETParticleHUD::vfunc5
