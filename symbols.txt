@@ -4954,6 +4954,7 @@
 0x1000ada3 func   ?sub_102e2630@CUnknown102e2630@@QAEHH@Z CUnknown102e2630::sub_102e2630
 0x1000adad func   ?vfunc73@CGameRules@@UAE_NPAVCBaseEntity@@@Z CGameRules::vfunc73
 0x1000adb2 func   ?sub_101d1670@@YAXPAPADH@Z sub_101d1670
+0x1000adb7 func   ?sub_1013ad40@@YAMPAM@Z sub_1013ad40
 0x1000adbc func   ?vfunc492@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc492
 0x1000adc1 func   ?sub_101fb980@CVStatSubCost_t@@QAEXPBD@Z CVStatSubCost_t::sub_101fb980
 0x1000adcb func   ?sub_101ab590@CInitPair101ab590@@QAEXH@Z CInitPair101ab590::sub_101ab590
