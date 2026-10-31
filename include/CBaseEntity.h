@@ -56,8 +56,8 @@ public:
 	virtual void vfunc59(int); virtual void vfunc60(int); virtual void vfunc61(int); virtual void vfunc62(); virtual void vfunc63();
 	virtual void vfunc64(const float *angles);	// "CBaseEntity::SetAngles": scope trace (entity name), when the three floats differ from the ones at +0x428 runs three helpers (0x800, 0x3000), stores them and sets the byte at +0x1b1
 	virtual void vfunc65(); virtual void vfunc66(); virtual void vfunc67(); virtual void vfunc68();
-	virtual void vfunc69(); virtual bool vfunc70(); virtual void vfunc71(); virtual bool vfunc72(int); virtual void vfunc73();
-	virtual bool vfunc74(int); virtual void vfunc75(); virtual void vfunc76(); virtual void vfunc77(); virtual void vfunc78();
+	virtual void vfunc69(); virtual bool vfunc70(); virtual void vfunc71(); virtual bool vfunc72(int); virtual bool vfunc73(CBaseEntity *pOther);
+	virtual bool vfunc74(int); virtual void vfunc75(int index, void *pEvent); virtual void vfunc76(); virtual void vfunc77(); virtual void vfunc78();
 	virtual int vfunc79(); virtual int vfunc80(); virtual int vfunc81(); virtual datamap_t *vfunc82(); virtual int vfunc83();	// slot 82 "GetDataDescMap": the entity class's datamap
 	virtual void vfunc84(int flags); virtual char *vfunc85(); virtual void vfunc86(); virtual void vfunc87(void *pCheckTransmitInfo); virtual int vfunc88();	// slot 87 "CBaseEntity::SetTransmit"-like: takes the transmit info (bit vector pointer at +0x10)
 	virtual void vfunc89(); virtual void vfunc90(); virtual char vfunc91(void *pPassEnt, int contentsMask);	/* slot 91: collision test against the pass entity: false for collision group 1 unless the mask has bit 26 */ virtual int vfunc92();
