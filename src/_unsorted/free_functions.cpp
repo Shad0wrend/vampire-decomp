@@ -121496,6 +121496,22 @@ bool sub_102ce100(const unsigned int *a, const unsigned int *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ce130 size=0xe
+// TARGET: sub_102ce130
+struct CUnknown102ce130
+{
+    int m_i0;
+
+    void sub_102ce130(int v);
+};
+
+void CUnknown102ce130::sub_102ce130(int v)
+{
+    if (m_i0 == 0)
+        m_i0 = v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ce550 size=0xbf
 #include "CUtlRBTree12.h"
 

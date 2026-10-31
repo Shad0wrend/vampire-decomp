@@ -6554,6 +6554,7 @@
 0x1000d8d7 func   ?sub_1005ac90@CUnknown1005ac90@@QAEHXZ CUnknown1005ac90::sub_1005ac90
 0x1000d8e1 func   ?sub_101ac670@CUnknown101ac670@@QAEHH@Z CUnknown101ac670::sub_101ac670
 0x1000d8eb func   ?vfunc438@CNPC_VWolfMorph@@QAEHXZ CNPC_VWolfMorph::vfunc438
+0x1000d8fa func   ?sub_102ce130@CUnknown102ce130@@QAEXH@Z CUnknown102ce130::sub_102ce130
 0x1000d8ff func   ?vfunc103@CHudCounter@@UAEXXZ CHudCounter::vfunc103
 0x1000d904 func   ?sub_1013e590@@YAPAHXZ sub_1013e590
 0x1000d909 func   _item_p_research_hg_computers item_p_research_hg_computers
