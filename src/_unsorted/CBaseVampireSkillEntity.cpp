@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1020a770 size=0x6
+namespace lifted {
+extern char g_105aa150;
+}
+int CBaseVampireSkillEntity::vfunc82()
+{
+    return (int)&lifted::g_105aa150;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020ab00 size=0x6d
 #include "CBaseVampireSkillEntity.h"
 
