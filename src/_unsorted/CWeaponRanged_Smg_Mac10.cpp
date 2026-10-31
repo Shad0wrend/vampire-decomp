@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10235940 size=0x3
+#include "CWeaponRanged_Smg_Mac10.h"
+int CWeaponRanged_Smg_Mac10::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a440 size=0x1e
 #include "CWeaponRanged_Smg_Mac10.h"
 
