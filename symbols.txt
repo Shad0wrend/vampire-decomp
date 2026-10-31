@@ -947,6 +947,7 @@
 0x10002c39 func   ?sub_10312f30@@YAXXZ sub_10312f30
 0x10002c3e func   ?sub_101ee2b0@@YAHXZ sub_101ee2b0
 0x10002c48 func   ?sub_101bb500@@YAHXZ sub_101bb500
+0x10002c4d func   ?vfunc80@CWeaponRanged_Pistol_Anaconda@@QAEHXZ CWeaponRanged_Pistol_Anaconda::vfunc80
 0x10002c52 func   ?vfunc472@CHL2_Player@@UAEXXZ CHL2_Player::vfunc472
 0x10002c57 func   ?vfunc448@CNPC_VGargoyle@@QAEXH@Z CNPC_VGargoyle::vfunc448
 0x10002c5c func   ?vfunc1@?$CUtlVectorDataOps@V?$CUtlVector@UDisciplineSrc@@V?$CUtlMemory@UDisciplineSrc@@@@@@$08@@UAEXPAX0@Z CUtlVectorDataOps<CUtlVector<DisciplineSrc,CUtlMemory<DisciplineSrc> >,9>::vfunc1
