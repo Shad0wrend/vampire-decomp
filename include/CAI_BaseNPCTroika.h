@@ -243,7 +243,9 @@ public:
 	unsigned int m_h6010;
 	char m_pad6014[0x6074 - 0x6014];
 	float m_f6074;	// 0x6074: the next time slot 600 may ask again
-	char m_pad6078[0x6084 - 0x6078];
+	char m_pad6078[0x607c - 0x6078];
+	float m_f607c;
+	char m_pad6080[0x6084 - 0x6080];
 	float m_f6084;
 	unsigned int m_h6088;
 	unsigned int m_h608c;
