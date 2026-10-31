@@ -11490,6 +11490,7 @@
 0x1001523f func   ?vfunc363@CWeaponRanged_FlameThrower@@UAEHXZ CWeaponRanged_FlameThrower::vfunc363
 0x10015244 func   ??0CTETextMessage@@QAE@PBD@Z CTETextMessage::CTETextMessage
 0x10015249 func   ?sub_101b5180@CSoundEmitterSystemBase@@QAEXPBD0@Z CSoundEmitterSystemBase::sub_101b5180
+0x1001524e func   ?sub_10099360@CUnk10099360@@QAEXHM@Z CUnk10099360::sub_10099360
 0x10015258 func   ?sub_102490e0@CKeyValuesX@@QAEXPBD0@Z CKeyValuesX::sub_102490e0
 0x10015262 func   ?vfunc39@CBaseEntity@@UAEXPAV1@@Z CBaseEntity::vfunc39
 0x1001526c func   ?sub_1006a370@@YAXPAVCUnknown1019d130@@HPAUTERecipientX@@HDPBD@Z sub_1006a370

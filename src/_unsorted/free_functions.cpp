@@ -25036,6 +25036,21 @@ void CBaseAnimatingOverlay::sub_10099320(int a, float b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10099360 size=0x1a
+struct CUnk10099360
+{
+	void sub_10099360(int index, float flValue);
+};
+
+// TARGET: sub_10099360
+void CUnk10099360::sub_10099360(int index, float flValue)
+{
+	if (index != -1) {
+		*(float *)((char *)this + (index * 3 + 0x75) * 0x10) = flValue;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100993c0 size=0x23
 // TARGET: sub_100993c0
 char __fastcall sub_100993c0(void *pSelf, int unused, int index)
