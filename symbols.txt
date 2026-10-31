@@ -1320,6 +1320,7 @@
 0x1000382d func   ?vfunc341@CItemKeyGeneric@@QAEXPAVCBaseCombatCharacter@@@Z CItemKeyGeneric::vfunc341
 0x10003832 func   ?vfunc25@CGameMovement@@UAEXXZ CGameMovement::vfunc25
 0x10003837 func   ?sub_1010e620@CBreakable@@QAEXXZ CBreakable::sub_1010e620
+0x1000383c func   ?vfunc81@CWeaponMelee_ChangClaw@@QAEHXZ CWeaponMelee_ChangClaw::vfunc81
 0x10003841 func   ?vfunc103@CNPC_Crow@@QAEXXZ CNPC_Crow::vfunc103
 0x1000384b func   ?vfunc243@CBaseDoor@@UAEXDH@Z CBaseDoor::vfunc243
 0x10003850 func   ?vfunc500@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc500
