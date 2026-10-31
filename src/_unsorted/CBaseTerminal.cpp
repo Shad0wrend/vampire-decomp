@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x102172e0 size=0x6
+#include "CBaseTerminal.h"
+namespace lifted {
+extern char g_1074f380;
+}
+int CBaseTerminal::vfunc80()
+{
+    return (int)&lifted::g_1074f380;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10217300 size=0x3
 #include "CBaseTerminal.h"
 int CBaseTerminal::vfunc81()
