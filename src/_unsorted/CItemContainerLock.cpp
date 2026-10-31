@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10224070 size=0x6
+namespace lifted {
+extern char g_105b21e8;
+}
+int CItemContainerLock::vfunc82()
+{
+    return (int)&lifted::g_105b21e8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10224190 size=0xb
 void CItemContainerLock::vfunc275()
 {
