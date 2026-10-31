@@ -264,6 +264,19 @@ void CNPC_VTzimisceRunner::vfunc130(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c3cd0 size=0x30
+#include "CNPC_VTzimisceRunner.h"
+#include "CAI_BaseNPC.h"
+
+void CNPC_VTzimisceRunner::vfunc335()
+{
+	((CAI_BaseNPC *)this)->sub_10273180(1);
+	m_b6672 = 1;
+	m_b5f2c = 0;
+	m_f6674 = engine->vfunc119(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c3d10 size=0x47
 #include "CNPC_VTzimisceRunner.h"
 #include "engineserver.h"
