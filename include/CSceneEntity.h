@@ -85,7 +85,7 @@ public:
 	virtual void vfunc253(int b, CSceneEventActorEnt *pActor, CSceneEvent *pEvent);	// slot 253: the finish handler of a type 2 event
 	SCENE_V(254)
 	virtual void vfunc255(int b, CSceneEventActorEnt *pActor, CSceneEvent *pEvent);	// slot 255: the finish handler of a type 10 event
-	SCENE_V(256)
+	virtual void vfunc256(int b, CSceneEventActorEnt *pActor, CSceneEvent *pEvent);	// slot 256: the gesture handler: looks the event's text parameter up as a sequence of the actor and starts it as a gesture on the actor's NPC (Warning "Could not find gesture sequence %s" when either is missing)
 	virtual void vfunc257(int b, CSceneEventActorEnt *pActor, CSceneEvent *pEvent);	// slot 257: the finish handler of a type 6 event
 	SCENE_V(258)
 	virtual void vfunc259(int unused, void *pEvent, const char *pszTarget);	// slot 259: for the actor of the scene event (object at +0x94 of pEvent) and the entity named pszTarget: sets the actor's move type (4, 0), copies the target's slot 192 vector to +0x5db8 and its slot 219 vector to +0x5dc4 of the actor, runs the actor's sub_10280de0(0x39) and stamps curtime at +0x5cf0
