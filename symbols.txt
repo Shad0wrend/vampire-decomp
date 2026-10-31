@@ -9308,6 +9308,7 @@
 0x10013273 func   ?sub_100fea60@CUnknown100fea60@@QAEXPAVCBaseEntity@@@Z CUnknown100fea60::sub_100fea60
 0x1001327d func   ?sub_10160ec0@@YI_NPAUPlayerView@@@Z sub_10160ec0
 0x10013282 func   ?sub_10090e30@CBaseAnimating@@QAE_NH@Z CBaseAnimating::sub_10090e30
+0x10013287 func   ?sub_1042c780@@YIXPAX@Z sub_1042c780
 0x1001328c func   ?sub_10074b10@CFlexAnimationTrack@@QAEXH@Z CFlexAnimationTrack::sub_10074b10
 0x10013296 func   ?vfunc279@CBaseFlex@@QAEXHM@Z CBaseFlex::vfunc279
 0x1001329b func   ??0CFlexAnimationTrack@@QAE@PAVCUnknown10075aa0@@@Z CFlexAnimationTrack::CFlexAnimationTrack
