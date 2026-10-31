@@ -111,7 +111,9 @@ public:
 	unsigned int m_nEffectFlags;	// 0x19c: bit 6 is tested by UpdateConditionCanSpecialMove
 	char pad1a0[0xcc];
 	const char *m_name26c;
-	char pad270[0x5c38 - 0x270];
+	char pad270[0x2e0 - 0x270];
+	int m_pEdict2e0;	// 0x2e0: the entity's edict
+	char pad2e4[0x5c38 - 0x2e4];
 	CNPC_VWerewolfSchedule *m_pSchedule5c38;	// 0x5c38
 	char pad5c3c[0x5d34 - 0x5c3c];
 	CNPC_VWerewolfHelper5d34 *m_pHelper5d34;	// 0x5d34
