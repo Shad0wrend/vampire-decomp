@@ -20,6 +20,17 @@ int CWeaponMelee_HengeyokaiFist::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ebbe0 size=0x6
+#include "CWeaponMelee_HengeyokaiFist.h"
+namespace lifted {
+extern char g_10678080;
+}
+int CWeaponMelee_HengeyokaiFist::vfunc362()
+{
+    return (int)&lifted::g_10678080;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ebc90 size=0x4
 #include "CWeaponMelee_HengeyokaiFist.h"
 int CWeaponMelee_HengeyokaiFist::vfunc373()

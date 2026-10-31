@@ -10224,6 +10224,7 @@
 0x10013ba1 func   ?sub_100bb870@CBeam@@QAEXHPBM@Z CBeam::sub_100bb870
 0x10013ba6 func   ??0CVStatList_t@@QAE@H@Z CVStatList_t::CVStatList_t
 0x10013bab func   ?vfunc429@CAI_BaseHumanoid@@QAEPAVCAI_Navigator@@XZ CAI_BaseHumanoid::vfunc429
+0x10013bb0 func   ?vfunc362@CWeaponMelee_HengeyokaiFist@@QAEHXZ CWeaponMelee_HengeyokaiFist::vfunc362
 0x10013bb5 func   ?vfunc144@CNPC_VMingXiao@@UAEXH@Z CNPC_VMingXiao::vfunc144
 0x10013bba func   ?vfunc104@CPropHaunted@@UAEXXZ CPropHaunted::vfunc104
 0x10013bbf func   ?sub_100f79b0@CGlobalEntityList@@QAEPAVCBaseEntity@@PAV2@PBMM@Z CGlobalEntityList::sub_100f79b0
