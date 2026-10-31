@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10375120 size=0x5
+#include "CNPC_VPlayerController.h"
+bool CNPC_VPlayerController::vfunc363(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10376f50 size=0x1e
 #include "CNPC_VPlayerController.h"
 
