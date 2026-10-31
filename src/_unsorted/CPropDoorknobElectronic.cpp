@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10226200 size=0x30
+#include "CPropDoorknobElectronic.h"
+
+CPropDoorknobElectronic::CPropDoorknobElectronic()
+{
+	m_n818 = 0x35;
+	m_n81c = 0x36;
+	m_n820 = 5;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10226260 size=0x6d
 #include "CPropDoorknobElectronic.h"
 
