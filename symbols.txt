@@ -4313,6 +4313,7 @@
 0x10008d37 func   ?sub_101a2c00@@YAHXZ sub_101a2c00
 0x10008d3c func   ?vfunc80@CResearchBook_HG_MELEE@@QAEHXZ CResearchBook_HG_MELEE::vfunc80
 0x10008d41 func   ?vfunc80@CBaseCineCam@@UAEHXZ CBaseCineCam::vfunc80
+0x10008d46 func   ?sub_101b9840@@YIXPAD@Z sub_101b9840
 0x10008d4b func   ?sub_101a0320@CSave@@QAEHHHPAUCSaveDesc@@@Z CSave::sub_101a0320
 0x10008d50 func   ?sub_102c9da0@CUnknown102ca630Rec@@QAEXPAU1@@Z CUnknown102ca630Rec::sub_102c9da0
 0x10008d5a func   ?sub_1011a430@@YAXXZ sub_1011a430

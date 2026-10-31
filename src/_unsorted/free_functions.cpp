@@ -72856,6 +72856,16 @@ int CUnknown101b9140::sub_101b9140(int elem, int num, const CUnknown101b9140Elem
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b9840 size=0xf
+void sub_101cf250(void *p, int n);
+
+// TARGET: sub_101b9840
+void __fastcall sub_101b9840(char *pThis)
+{
+	sub_101cf250(pThis + 0x10, 2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b9880 size=0x3b
 extern int g_1070d1b0;
 extern int g_1070d1b4;
