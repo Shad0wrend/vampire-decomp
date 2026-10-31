@@ -11607,6 +11607,7 @@
 0x10015a69 func   ?vfunc5@CNPC_VNewscaster@@QAEPAV1@I@Z CNPC_VNewscaster::vfunc5
 0x10015a73 func   ?sub_103fa6d0@@YAHXZ sub_103fa6d0
 0x10015a78 func   ?sub_10076710@CUnknown10076710@@QAEHXZ CUnknown10076710::sub_10076710
+0x10015a7d func   ?sub_100ecbe0@CUnknown100eb870@@QAEXXZ CUnknown100eb870::sub_100ecbe0
 0x10015a82 func   ?vfunc5@CBloodPack@@QAEPAV1@I@Z CBloodPack::vfunc5
 0x10015a87 func   ?vfunc493@CNPC_VPlayerController@@QAEXXZ CNPC_VPlayerController::vfunc493
 0x10015a91 func   ?vfunc403@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc403

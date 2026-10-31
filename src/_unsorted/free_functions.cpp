@@ -40629,6 +40629,21 @@ void CThreeVecs::sub_100ecb40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ecbe0 size=0x16
+struct CThreeVecs { void sub_100ecb40(); };
+struct CUnknown100eb870 {
+	void sub_100eb870(const char *psz);
+	void sub_100ecbe0();
+};
+
+// TARGET: CUnknown100eb870::sub_100ecbe0
+void CUnknown100eb870::sub_100ecbe0()
+{
+	((CThreeVecs *)this)->sub_100ecb40();
+	sub_100eb870("vdata/System/DispositionTable.txt");
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ecc10 size=0x38
 // TARGET: CUnknown100ecc10::sub_100ecc10
 struct CUnknown100ecc10
