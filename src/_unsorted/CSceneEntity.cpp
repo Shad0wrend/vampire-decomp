@@ -364,6 +364,71 @@ void CSceneEntity::vfunc134()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10081b60 size=0x20c
+#include "CSceneEntity.h"
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "CUnknown1007ce20.h"
+#include "CUnknown1007a2c0.h"
+#include "ScopeTrace.h"
+
+struct CUnknown10072d90
+{
+	int m_n0;
+	int m_n4;
+	int m_n8;
+	int m_nc;
+	int m_n10;
+	char *sub_10072d90();
+};
+void sub_100828d0();
+
+struct CSceneSolidView : CBaseEntity
+{
+	void SetSolidFlags(int flags)
+	{
+		ScopeTrace trace("CBaseEntity::SetSolidFlags", m_name26c ? m_name26c : g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc580(flags);
+	}
+	void SetSolid(int solid)
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", m_name26c ? m_name26c : g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(solid);
+	}
+};
+
+void CSceneEntity::vfunc247()
+{
+	if (!m_bPlaying498)
+		return;
+	sub_10082db0();
+	((CUnknown1007ce20 *)m_pScene4bc)->sub_1007cfc0(1, 0, 0);
+	m_bPlaying498 = 0;
+	m_bPlaying499 = 0;
+	m_f4a0 = 0;
+	sub_100821f0(m_n578);
+	sub_100845a0(m_pScene4bc);
+	if (m_n574 == 1) {
+		for (int i = 0; i < ((CUnknown1007a2c0 *)m_pScene4bc)->sub_1007a2a0(); i++) {
+			CUnknown10072d90 *pElem = (CUnknown10072d90 *)((CUnknown1007a2c0 *)m_pScene4bc)->sub_1007a2c0(i);
+			if (pElem) {
+				CSceneSolidView *pEnt = (CSceneSolidView *)vfunc268(pElem->sub_10072d90(), 0);
+				if (pEnt) {
+					pEnt->vfunc93(pElem->m_n4, pElem->m_n8);
+					pEnt->SetSolidFlags(pElem->m_n10);
+					pEnt->SetSolid(pElem->m_nc);
+				}
+			}
+		}
+	}
+	m_list4e4.sub_100cd660(this, this, 0);
+	sub_10084170(m_pScene4bc);
+	sub_100847e0(m_pScene4bc);
+	if (m_b57e)
+		sub_100828d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100829e0 size=0xbb
 #include "CSceneEntity.h"
 #include "CUnknown1007ce20.h"
