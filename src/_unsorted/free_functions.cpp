@@ -113020,6 +113020,35 @@ bool CAI_BaseNPC::sub_10280a50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10280c80 size=0x63
+extern void (__cdecl *g_109f3630)(const char *pszFormat, ...);
+struct STaskTiming {
+    const char *m_pszName;
+    int m_pad04[3];
+    __int64 m_select;
+    __int64 m_pad18;
+    __int64 m_start;
+    __int64 m_run;
+    int m_pad30[2];
+};
+extern STaskTiming g_10923a38[];
+extern int g_10923c70;
+extern double *g_109f367c;
+// TARGET: sub_10280c80
+void sub_10280c80()
+{
+    void (__cdecl *pfnMsg)(const char *, ...) = g_109f3630;
+    pfnMsg(" Tasks timings:\n");
+    for (int i = 0; i < g_10923c70; i++) {
+        pfnMsg("   %32s -- select %5.2f, start %5.2f, run %5.2f\n",
+               g_10923a38[i].m_pszName,
+               g_10923a38[i].m_select * *g_109f367c,
+               g_10923a38[i].m_start * *g_109f367c,
+               g_10923a38[i].m_run * *g_109f367c);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10280d10 size=0xc
 bool CUnknown10280d10::sub_10280d10()
 {
