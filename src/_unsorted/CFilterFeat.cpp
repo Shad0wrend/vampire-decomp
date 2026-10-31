@@ -32,6 +32,17 @@ bool CFilterFeat::vfunc241(char *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101084a0 size=0x6
+#include "CFilterFeat.h"
+namespace lifted {
+extern char g_1056c5f0;
+}
+int CFilterFeat::vfunc82()
+{
+    return (int)&lifted::g_1056c5f0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10108710 size=0x36
 #include "CFilterFeat.h"
 
