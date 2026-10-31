@@ -27,6 +27,8 @@ public:
 	int sub_10295710(int act);	// CAI_BaseNPCTroika::vfunc376 (stub 0x1000fb14), called directly
 	// Slot 600 override: same as CAI_BaseNPCTroika::sub_102b57c0.
 	virtual char vfunc600(int unused);
+	// Slot 601 override: notifies the global at 0x10924edc, clears the byte at +0x6078, re-arms the time at +0x6070 when slot 308 holds, then the named object at +0x65e8 gets sub_1025ddd0.
+	virtual void vfunc601(int a);
 	// Slot 602 override: true when the NPC may carry on (not blocked by the flags at +0x5b84 / slot 293); without the named object check of the base.
 	virtual char vfunc602();
 	// Slot 463 implementation (stub 0x10011234, function 0x10384720), called directly by the Guard override; two arguments.
