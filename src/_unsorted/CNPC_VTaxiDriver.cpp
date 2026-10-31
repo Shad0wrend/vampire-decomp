@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103b2f50 size=0x5
+#include "CNPC_VTaxiDriver.h"
+bool CNPC_VTaxiDriver::vfunc72(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b3170 size=0x1d
 #include "CNPC_VTaxiDriver.h"
 struct A { int sub_10012300(int); };
