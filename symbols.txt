@@ -5162,6 +5162,7 @@
 0x1000aa65 func   ?sub_1022bc30@CPropRadio@@QAEPAV1@XZ CPropRadio::sub_1022bc30
 0x1000aa6f func   ?vfunc468@CAI_BaseNPC@@UAE_NPAVCBaseEntity@@@Z CAI_BaseNPC::vfunc468
 0x1000aa74 func   ?sub_100f4340@@YAXHMMMH@Z sub_100f4340
+0x1000aa79 func   ?vfunc82@CPathCorner@@QAEHXZ CPathCorner::vfunc82
 0x1000aa7e func   ?sub_10050860@CUnknown10050860@@QAEPBDXZ CUnknown10050860::sub_10050860
 0x1000aa83 func   ?sub_103ee020@@YAHXZ sub_103ee020
 0x1000aa92 func   ?sub_10172410@@YAPAVCBaseEntity@@PAVCBasePlayer@@@Z sub_10172410

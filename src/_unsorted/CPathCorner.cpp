@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10147bb0 size=0x6
+#include "CPathCorner.h"
+namespace lifted {
+extern char g_1057b410;
+}
+int CPathCorner::vfunc82()
+{
+    return (int)&lifted::g_1057b410;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10147cf0 size=0x1
 #include "CPathCorner.h"
 void CPathCorner::vfunc103()
