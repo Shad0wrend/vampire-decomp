@@ -47,3 +47,8 @@ void ConCommand::vfunc7(const char *pszName, void (*pCallback)(), const char *ps
     ((ConCommandBase *)this)->vfunc2(pszName, pszHelp, nFlags);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10245a20 size=0x4
+// TARGET: sub_10245a20
+char __fastcall sub_10245a20(void *p) { return ((unsigned char *)p)[0x24]; }
+// END FUNCTION
