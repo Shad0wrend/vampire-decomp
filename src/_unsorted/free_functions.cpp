@@ -9051,6 +9051,17 @@ void CUnknown10057680::sub_10057740(const char *pszName, const char *pszMap, int
 }
 // END FUNCTION
 
+// FUNCTION: 0x100577d0 size=0x18
+char *__stdcall sub_100576a0(int a);
+
+void __stdcall sub_100577d0(int a, int b)
+{
+    char *p = sub_100576a0(a);
+    if (p)
+        *(int *)(p + 0x60) = b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057850 size=0x6d
 struct IVisitor { virtual void v0(); virtual void v1(); virtual void v2(); virtual int v3(const char *name, void *data, int a, void *desc, int n); };
 extern char g_1053fdd4[];
