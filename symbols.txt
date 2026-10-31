@@ -5252,6 +5252,7 @@
 0x1000abc8 func   ?vfunc110@CDynamicLight@@QAE_NPBD0@Z CDynamicLight::vfunc110
 0x1000abd2 func   ?sub_103abad0@@YAHXZ sub_103abad0
 0x1000abd7 func   ?vfunc3@CTEBeamLaser@@UAEXHH@Z CTEBeamLaser::vfunc3
+0x1000abdc func   ?vfunc580@CNPC_VChangBrosBlade@@QAEHXZ CNPC_VChangBrosBlade::vfunc580
 0x1000abe1 func   ?sub_10247820@CUnknown10247820@@QAEPADXZ CUnknown10247820::sub_10247820
 0x1000abeb func   ?sub_101510c0@CPhysicsCannister@@QAEXXZ CPhysicsCannister::sub_101510c0
 0x1000abf0 func   ?sub_100f09d0@CBaseDoor@@QAEXXZ CBaseDoor::sub_100f09d0
