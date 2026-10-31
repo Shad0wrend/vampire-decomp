@@ -49,6 +49,15 @@ CNPC_VHunter *CNPC_VHunter::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103881a0 size=0x6
+extern unsigned char g_1063fef0;
+// TARGET: sub_103881a0
+unsigned char sub_103881a0()
+{
+    return g_1063fef0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10388200 size=0x1d
 #include "CNPC_VHunter.h"
 struct A { int sub_10012300(int); };
