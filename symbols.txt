@@ -556,6 +556,7 @@
 0x100020d1 func   ?vfunc103@CBaseAnimating@@UAEXXZ CBaseAnimating::vfunc103
 0x100020d6 func   ?vfunc2@CTESpriteSpray@@UAEPAV1@I@Z CTESpriteSpray::vfunc2
 0x100020ef func   ?sub_101d1800@@YAPAUCUnknown1070b22c_Edict@@PAUViewerEntity@@@Z sub_101d1800
+0x100020f4 func   ?vfunc80@CWeaponMelee_Fists@@QAEHXZ CWeaponMelee_Fists::vfunc80
 0x100020f9 func   ?NewNode@?$CUtlRBTree@UCRBEntry28@@G@@QAEGXZ CUtlRBTree<CRBEntry28,unsigned short>::NewNode
 0x100020f9 func   ?NewNode@?$CUtlRBTree@UCRBTree36Entry_1004c5b0@@G@@QAEGXZ CUtlRBTree<CRBTree36Entry_1004c5b0,unsigned short>::NewNode
 0x100020fe func   ?sub_101c99c0@@YIXPAUS101c99c0Ent@@HPAPAH@Z sub_101c99c0
