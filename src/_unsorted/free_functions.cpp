@@ -107677,6 +107677,18 @@ char __fastcall sub_10246210(void *pThis, int, int *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10246240 size=0x12
+#include "vampire.h"
+
+// TARGET: sub_10246240
+char __fastcall sub_10246240(void *pThis, int, int *pOut)
+{
+	char *pOwner = *(char **)((char *)pThis + 4);
+	*pOut = *(int *)(pOwner + 0x3c);
+	return pOwner[0x38];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10246270 size=0x7
 struct CUnknown10246270 { int sub_10246270(); };
 int CUnknown10246270::sub_10246270()
