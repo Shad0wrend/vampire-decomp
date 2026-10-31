@@ -51,6 +51,14 @@ char CBloodPack::vfunc315()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103fc270 size=0x3
+#include "CBloodPack.h"
+int CBloodPack::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040a0f0 size=0x1e
 #include "CBloodPack.h"
 
