@@ -108,6 +108,15 @@ CNPC_VTzimisce *CNPC_VTzimisce::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b7090 size=0x6
+extern unsigned char g_10653434;
+// TARGET: sub_103b7090
+unsigned char sub_103b7090()
+{
+    return g_10653434;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b70f0 size=0x1d
 #include "CNPC_VTzimisce.h"
 struct A { int sub_10012300(int); };
