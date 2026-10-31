@@ -37,6 +37,8 @@ public:
 	int *sub_102517e0();	// CBaseCombatWeapon member (stub 0x10003d91): the weapon's current roll slot record
 	bool sub_103ee660();	// the fuse step: once the time at +0x91c has passed, sets the finished byte, runs sub_103ed200, hands the owner's object (+0xa8) to sub_103ed830, sets the think function and the next think 0.2 seconds ahead; false before that
 	void sub_103ed200();	// stub 0x1000d5f3
+	void sub_103ed920();	// stub 0x1000750e
+	void sub_103ee870();	// when the fuse step has not run and the state at +0x920 is 3: state 5, sub_103ed920, then the owner's character plays animation 0xef9 (0xefb when +0x86c is set)
 	void sub_103ed830(void *pObject);	// stub 0x1000c734
 	void sub_100ac4e0(void *pFunc, int a, int b);	// CBaseEntity::ThinkSet (stub 0x10007fe5)
 	void vfunc319();	// slot 319: tells the owner's object (slot 112 with 0 and the value at +0x92c; slot 410 when the state at +0x920 is set), then the base CWeaponIThrown::vfunc319
