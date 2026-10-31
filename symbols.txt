@@ -4940,6 +4940,7 @@
 0x1000a551 func   ?sub_102017b0@CVStatList_t@@QAE_NHH@Z CVStatList_t::sub_102017b0
 0x1000a565 func   ?vfunc420@CNPC_VAsianVampire@@QAEXXZ CNPC_VAsianVampire::vfunc420
 0x1000a56f func   ?sub_10147d50@CUnknown10147d10@@QAEXPAUCPair10147d50@@@Z CUnknown10147d10::sub_10147d50
+0x1000a574 func   ?vfunc81@CItemGWarrens4Passkey@@QAEHXZ CItemGWarrens4Passkey::vfunc81
 0x1000a579 func   ?vfunc81@CWeaponThrown_Grenade_Frag@@UAEHXZ CWeaponThrown_Grenade_Frag::vfunc81
 0x1000a57e func   ?vfunc516@CNPC_VTzimisce@@QAEMXZ CNPC_VTzimisce::vfunc516
 0x1000a583 func   ?sub_103a5d80@@YIPAXPAX@Z sub_103a5d80

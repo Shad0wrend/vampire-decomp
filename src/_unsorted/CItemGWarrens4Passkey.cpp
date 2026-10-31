@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10402c10 size=0x3
+#include "CItemGWarrens4Passkey.h"
+int CItemGWarrens4Passkey::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040a810 size=0x1e
 #include "CItemGWarrens4Passkey.h"
 
