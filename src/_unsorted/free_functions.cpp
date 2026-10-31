@@ -164549,6 +164549,16 @@ void sub_1042c5d0(const char *psz)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042c640 size=0xc
+void __cdecl sub_1042c700(void *fn);
+void sub_1000b924();
+
+void sub_1042c640()
+{
+    sub_1042c700((void *)sub_1000b924);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042c680 size=0x2a
 void sub_1042c740(void *pfn);
 void sub_1001330e();
