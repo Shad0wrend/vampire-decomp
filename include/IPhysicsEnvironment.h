@@ -13,6 +13,8 @@ public:
 	PENV1(20) PENV1(21) PENV1(22) PENV1(23) PENV1(24) PENV1(25) PENV1(26) PENV1(27) PENV1(28) PENV1(29)
 	PENV1(30) PENV1(31) PENV1(32) PENV1(33) PENV1(34) PENV1(35) PENV1(36) PENV1(37) PENV1(38) PENV1(39)
 	virtual void vfunc40(void *pController);	// slot 40 DestroyMotionController
+	PENV1(41) PENV1(42) PENV1(43) PENV1(44) PENV1(45) PENV1(46) PENV1(47) PENV1(48) PENV1(49) PENV1(50)
+	virtual void vfunc51();	// slot 51: called by the save / restore block handler's slot 8 before it frees its tree
 };
 
 #undef PENV1
