@@ -341,7 +341,7 @@ public:
 	virtual void vfunc413();
 	virtual void vfunc414();
 	virtual void vfunc415();
-	virtual void vfunc416();
+	virtual void vfunc416(char value);
 	virtual void vfunc417();
 	virtual void vfunc418();
 	virtual void vfunc419();
