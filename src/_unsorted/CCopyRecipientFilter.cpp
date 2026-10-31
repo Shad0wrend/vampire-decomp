@@ -26,6 +26,11 @@ unsigned int CCopyRecipientFilter::vfunc7()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bcfb0 size=0x4
+// TARGET: sub_101bcfb0
+char __fastcall sub_101bcfb0(void *p) { return ((unsigned char *)p)[0x1c]; }
+// END FUNCTION
+
 // FUNCTION: 0x101bcfd0 size=0x4
 int CCopyRecipientFilter::vfunc5()
 {
