@@ -8186,6 +8186,7 @@
 0x1000fa3d func   ?sub_103f0740@@YAHXZ sub_103f0740
 0x1000fa42 func   ?vfunc432@CNPC_VZombie@@QAEXH@Z CNPC_VZombie::vfunc432
 0x1000fa47 func   ?sub_1034e700@@YGXH@Z sub_1034e700
+0x1000fa4c func   ?sub_102a9910@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::sub_102a9910
 0x1000fa51 func   ?sub_1018a450@@YAXXZ sub_1018a450
 0x1000fa56 func   ?sub_101bf060@CStealthKillRules@@QAEMPAVCBaseEntity@@0@Z CStealthKillRules::sub_101bf060
 0x1000fa5b func   ?sub_103fca20@CElderVitaePackUnit103fca20@@QAEXXZ CElderVitaePackUnit103fca20::sub_103fca20

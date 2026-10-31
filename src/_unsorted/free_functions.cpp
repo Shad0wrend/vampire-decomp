@@ -118946,6 +118946,24 @@ void CAI_BaseNPCTroika::sub_102a98e0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a9910 size=0x14
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CAI_BaseNPCTroika::sub_102a9910
+int CAI_BaseNPCTroika::sub_102a9910()
+{
+	int n = *(int *)((char *)this + 0x5bb0);
+	if (n <= 0)
+	{
+		return *(int *)((char *)this + 0x5da4);
+	}
+	else
+	{
+		return 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a9940 size=0xd
 void CUnknown102a9750::sub_102a9940(int value)
 {
