@@ -147482,6 +147482,16 @@ CNPC_VSabbatLeader *CNPC_VSabbatLeaderCtor::sub_103a5be0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a5d80 size=0xc
+void __fastcall sub_103a5da0(void *p);
+
+void *__fastcall sub_103a5d80(void *p)
+{
+    sub_103a5da0(p);
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a5da0 size=0x33
 void sub_1000831e();
 void sub_1000c5a9();
