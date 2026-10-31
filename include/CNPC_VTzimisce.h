@@ -138,6 +138,7 @@ public:
 	bool sub_10269d30(int condition);	// CAI_BaseNPC condition test (stub 0x1001482b), called directly
 	bool sub_10269aa0(int condition);	// CAI_BaseNPC::HasCondition (stub 0x10014df8), called directly
 	int sub_103bc820();	// the base schedule choice (stub 0x10002a4f), called directly
+	int sub_103bcaf0(int a);	// picks a schedule: condition 0x5d schedule 0x170 (source line 0xb85 recorded at +0x1b30 / +0x1b34); else the range lookup of the current task's node id
 	int sub_103bca20(int a);	// picks a schedule (slot 438 helper): condition 0xc schedule 0x173 (source line 0xb66 recorded at +0x1b30 / +0x1b34); 10 or 0xd schedule 0x174 (line 0xb6a); condition 0x5d the base choice sub_103bc820; else schedule 0x170 (line 0xb7c)
 	void sub_103ba640(void *pEnt, Vector *pVec, int *pFlag, int *pOut);	// slot 563: with the navigator state 2 (sub_1027d990) shifts *pVec by the entity's position difference (slot 193 minus slot 217); else runs the two path-step workers sub_102c3b50 / sub_102c36d0 and stores the stepped vector back in *pVec
 	void sub_102c3b50(void *pEnt, Vector vecStart, Vector *pVec, int *pOut);	// stub 0x100041d3
