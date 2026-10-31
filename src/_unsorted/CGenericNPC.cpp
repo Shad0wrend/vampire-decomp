@@ -9,6 +9,17 @@ int CGenericNPC::vfunc138()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034a2f0 size=0x7
+#include "CGenericNPC.h"
+namespace lifted {
+extern float g_10455050;
+}
+float CGenericNPC::vfunc516()
+{
+    return lifted::g_10455050;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034a6b0 size=0x3
 #include "CGenericNPC.h"
 int CGenericNPC::vfunc473()
