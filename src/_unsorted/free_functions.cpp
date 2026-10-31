@@ -116609,6 +116609,25 @@ bool CAI_BaseNPC::sub_10273180(char bForce)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10273760 size=0x18
+// TARGET: sub_10273760
+extern char g_106b8540[];
+struct CUnk10273760 {
+    char pad[0x1584];
+    void *m_p1584;
+    void sub_10273760();
+    void sub_10273790(void *p, int flag);
+};
+void CUnk10273760::sub_10273760()
+{
+    void *p = m_p1584;
+    if (p == 0) {
+        p = g_106b8540;
+    }
+    sub_10273790(p, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10273e80 size=0x24
 #include "CAI_BaseNPC.h"
 
