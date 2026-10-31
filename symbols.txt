@@ -4087,6 +4087,7 @@
 0x10008b61 func   ?sub_100673c0@@YAHXZ sub_100673c0
 0x10008b66 func   ?sub_103ebe20@@YAHXZ sub_103ebe20
 0x10008b6b func   ?sub_101ce620@@YAXPAXHPBD1111@Z sub_101ce620
+0x10008b70 func   ?vfunc80@CBaseAnimatingOverlay@@QAEHXZ CBaseAnimatingOverlay::vfunc80
 0x10008b75 func   ?sub_101910c0@COrnamentPropUnit@@QAEXPAUinputdata_t@@@Z COrnamentPropUnit::sub_101910c0
 0x10008b7a func   ?sub_101e9640@CUnknown101e98c0Item@@QAE_NPAUCDataNode@@@Z CUnknown101e98c0Item::sub_101e9640
 0x10008b7f func   ?sub_10307890@@YIXPAUCUnknown10307890@@@Z sub_10307890

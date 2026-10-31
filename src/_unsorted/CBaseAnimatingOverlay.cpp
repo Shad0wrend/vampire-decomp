@@ -23,6 +23,17 @@ int CBaseAnimatingOverlay::vfunc79()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10098020 size=0x6
+#include "CBaseAnimatingOverlay.h"
+namespace lifted {
+extern char g_106ce634;
+}
+int CBaseAnimatingOverlay::vfunc80()
+{
+    return (int)&lifted::g_106ce634;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10098040 size=0x3
 #include "CBaseAnimatingOverlay.h"
 int CBaseAnimatingOverlay::vfunc81()
