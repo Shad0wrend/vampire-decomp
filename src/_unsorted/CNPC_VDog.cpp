@@ -38,6 +38,15 @@ CNPC_VDog *CNPC_VDog::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10373670 size=0x6
+extern unsigned char g_106368a8;
+// TARGET: sub_10373670
+unsigned char sub_10373670()
+{
+    return g_106368a8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103736d0 size=0x1d
 #include "CNPC_VDog.h"
 struct A { int sub_10012300(int); };
