@@ -20,6 +20,17 @@ int CBaseTerminal::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102175f0 size=0x6
+#include "CBaseTerminal.h"
+namespace lifted {
+extern char g_105af268;
+}
+int CBaseTerminal::vfunc82()
+{
+    return (int)&lifted::g_105af268;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10217680 size=0x18b
 #include "CBaseTerminal.h"
 

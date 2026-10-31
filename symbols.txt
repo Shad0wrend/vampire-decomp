@@ -8052,6 +8052,7 @@
 0x1000ff65 func   ?sub_10148560@@YAPAHXZ sub_10148560
 0x1000ff6f func   ?vfunc5@CBaseParticleEntity@@QAEPAV1@I@Z CBaseParticleEntity::vfunc5
 0x1000ff74 func   ?vfunc81@CWeaponMelee_Torch@@QAEHXZ CWeaponMelee_Torch::vfunc81
+0x1000ff79 func   ?vfunc82@CBaseTerminal@@QAEHXZ CBaseTerminal::vfunc82
 0x1000ff7e func   _item_p_research_mg_security item_p_research_mg_security
 0x1000ff83 func   ?vfunc619@CNPCMaker_Fleshpile@@UAEXH@Z CNPCMaker_Fleshpile::vfunc619
 0x1000ff8d func   ?vfunc295@CNPC_VRat@@QAE_NH@Z CNPC_VRat::vfunc295
