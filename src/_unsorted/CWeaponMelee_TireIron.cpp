@@ -39,6 +39,17 @@ int CWeaponMelee_TireIron::vfunc363()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e8030 size=0xb
+#include "CWeaponMelee_TireIron.h"
+namespace lifted {
+int sub_100048fe();
+}
+int CWeaponMelee_TireIron::vfunc360()
+{
+    return (lifted::sub_100048fe()) & -1073741825;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ece40 size=0x1e
 #include "CWeaponMelee_TireIron.h"
 
