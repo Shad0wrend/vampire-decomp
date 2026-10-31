@@ -6335,6 +6335,7 @@
 0x1000d003 func   _npc_VManBat npc_VManBat
 0x1000d008 func   ?sub_101e9000@CUnknown101e9000@@QAEHXZ CUnknown101e9000::sub_101e9000
 0x1000d00d func   ?vfunc70@CNPC_VHengeyokai@@UAE_NXZ CNPC_VHengeyokai::vfunc70
+0x1000d012 func   ?vfunc81@COccultHealRate@@QAEHXZ COccultHealRate::vfunc81
 0x1000d017 func   ?vfunc5@CGameUI@@QAEPAV1@I@Z CGameUI::vfunc5
 0x1000d026 func   ?sub_10078610@CUnknown10078610@@QAEHXZ CUnknown10078610::sub_10078610
 0x1000d02b func   ?sub_102c4c50@CAI_BaseNPCTroika@@QAEXPAUCAI_ArcRecord@@MHH@Z CAI_BaseNPCTroika::sub_102c4c50
