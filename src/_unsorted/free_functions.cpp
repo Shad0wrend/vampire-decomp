@@ -97818,6 +97818,19 @@ int sub_10207c20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10207c40 size=0x17
+#include "CStatDefault3List.h"
+#include "CBaseCombatCharacter.h"
+
+extern CStatDefault3List g_10738d10;
+
+StatDefault3 * __stdcall sub_10207c40(CBaseCombatCharacter *p)
+{
+    int r = p->sub_10337860();
+    return g_10738d10.sub_101d5e80(r);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10207df0 size=0x4c
 #include "CStatDefault3List.h"
 #include "CBaseCombatCharacter.h"
