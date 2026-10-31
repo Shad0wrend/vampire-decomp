@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100cb610 size=0x6
+#include "CCameraKeyFrame.h"
+namespace lifted {
+extern char g_1055ce68;
+}
+int CCameraKeyFrame::vfunc82()
+{
+    return (int)&lifted::g_1055ce68;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cb750 size=0x158
 #include "CGlobalEntityList.h"
 #include "CCameraKeyFrame.h"

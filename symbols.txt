@@ -4574,6 +4574,7 @@
 0x100099c6 func   ?vfunc133@CFuncElevator@@QAEXXZ CFuncElevator::vfunc133
 0x100099cb func   ?vfunc276@CBaseCombatWeapon@@UAEHI@Z CBaseCombatWeapon::vfunc276
 0x100099d0 func   _item_g_pisha_fetish item_g_pisha_fetish
+0x100099d5 func   ?vfunc82@CCameraKeyFrame@@QAEHXZ CCameraKeyFrame::vfunc82
 0x100099da func   ?vfunc326@CWeaponIArmor@@UAEXXZ CWeaponIArmor::vfunc326
 0x100099df func   ?sub_100d2eb0@@YAXXZ sub_100d2eb0
 0x100099f3 func   ?RemoveAll@?$CUtlVector@V?$CUtlVector@UStepSimulationData@@V?$CUtlMemory@UStepSimulationData@@@@@@V?$CUtlMemory@V?$CUtlVector@UStepSimulationData@@V?$CUtlMemory@UStepSimulationData@@@@@@@@@@QAEXXZ CUtlVector<CUtlVector<StepSimulationData,CUtlMemory<StepSimulationData> >,CUtlMemory<CUtlVector<StepSimulationData,CUtlMemory<StepSimulationData> > > >::RemoveAll
