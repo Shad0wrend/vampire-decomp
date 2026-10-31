@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10402690 size=0x6
+#include "CItemGPishaBook.h"
+namespace lifted {
+extern char g_10944e54;
+}
+int CItemGPishaBook::vfunc80()
+{
+    return (int)&lifted::g_10944e54;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104026b0 size=0x3
 #include "CItemGPishaBook.h"
 int CItemGPishaBook::vfunc81()
