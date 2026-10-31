@@ -664,7 +664,7 @@ public:
 	virtual void vfunc593();
 	virtual void vfunc594();
 	virtual void vfunc595();
-	virtual void vfunc596();
+	virtual void vfunc596(CBaseEntity *pTarget);
 	virtual void vfunc597();
 	virtual void vfunc598();
 	virtual void vfunc599();
