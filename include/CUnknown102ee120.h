@@ -21,6 +21,7 @@ public:
 	char pad0[0x30];
 	CUnknown102ee120_Target *m_unk30;
 
+	CBaseEntity *sub_102ee160();	// the entity of the target handle at +0x30 of the structure behind +0x30 (0 when stale)
 	void sub_102ee120(int a, int b, int c);
 	void sub_102ee1c0(int value);
 	void sub_102ee250(int value);
