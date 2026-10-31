@@ -169185,6 +169185,21 @@ unsigned int __fastcall sub_1042d720(unsigned int *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042d740 size=0x18
+struct CBits1042d740
+{
+	unsigned int m_bits;
+
+	void sub_1042d740(int v);
+};
+
+// TARGET: sub_1042d740
+void CBits1042d740::sub_1042d740(int v)
+{
+	m_bits = ((v << 6) ^ m_bits) & 0xffc0 ^ m_bits;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042d890 size=0xc1
 extern "C" __declspec(dllimport) char *Q_strncpy(char *, const char *, int);
 extern "C" char *__cdecl _strlwr(char *);
