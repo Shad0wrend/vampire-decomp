@@ -134461,6 +134461,18 @@ int CUtlVector4::sub_103109a0(int elem, int num, const int *pToInsert)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10310b10 size=0x11
+extern char g_106b8540[];
+struct CUnknown10310b90 { void sub_10310b90(const char *psz); };
+struct CUnknown10310b10 { CUnknown10310b10 *sub_10310b10(); };
+// TARGET: CUnknown10310b10::sub_10310b10
+CUnknown10310b10 *CUnknown10310b10::sub_10310b10()
+{
+	((CUnknown10310b90 *)this)->sub_10310b90(g_106b8540);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10310b70 size=0x1
 void sub_10310b70()
 {
