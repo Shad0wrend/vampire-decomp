@@ -6682,6 +6682,12 @@ extern void (*g_109f0b7c)(void);
 void sub_10045f60(void) { g_109f0b7c(); }
 // END FUNCTION
 
+// FUNCTION: 0x10045f80 size=0x6
+// TARGET: sub_10045f80
+extern void (*g_109f0b6c)(void);
+void sub_10045f80(void) { g_109f0b6c(); }
+// END FUNCTION
+
 // FUNCTION: 0x10045fe0 size=0x45
 struct S10045fe0 {
     char *m_pMemory;
