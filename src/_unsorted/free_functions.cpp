@@ -164559,6 +164559,16 @@ void sub_1042c640()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042c660 size=0xc
+void sub_1042c740(void *pfn);
+void sub_10013291();
+
+void sub_1042c660()
+{
+	sub_1042c740((void *)sub_10013291);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042c680 size=0x2a
 void sub_1042c740(void *pfn);
 void sub_1001330e();
