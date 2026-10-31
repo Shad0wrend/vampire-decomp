@@ -2,7 +2,15 @@
 // only what matched code needs, as plain members.
 #pragma once
 
-class CNPC_VHumanCombatantWeapon;	// the active weapon (slots 66 and 67 are used)
+#define CVHW_V(n) virtual void vfunc##n();
+#define CVHW_V10(p) CVHW_V(p##0) CVHW_V(p##1) CVHW_V(p##2) CVHW_V(p##3) CVHW_V(p##4) CVHW_V(p##5) CVHW_V(p##6) CVHW_V(p##7) CVHW_V(p##8) CVHW_V(p##9)
+class CNPC_VHumanCombatantWeapon	// the active weapon (slots 66 and 67 are used)
+{
+public:
+	CVHW_V10(0) CVHW_V10(1) CVHW_V10(2) CVHW_V10(3) CVHW_V10(4) CVHW_V10(5)
+	CVHW_V(60) CVHW_V(61) CVHW_V(62) CVHW_V(63) CVHW_V(64) CVHW_V(65) CVHW_V(66)
+	virtual void vfunc67();
+};
 
 class CNPC_VHumanCombatant : public CBaseEntity
 {
