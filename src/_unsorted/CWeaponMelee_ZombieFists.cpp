@@ -20,6 +20,17 @@ int CWeaponMelee_ZombieFists::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e5b40 size=0x6
+#include "CWeaponMelee_ZombieFists.h"
+namespace lifted {
+extern char g_1066bce8;
+}
+int CWeaponMelee_ZombieFists::vfunc362()
+{
+    return (int)&lifted::g_1066bce8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecc90 size=0x1e
 #include "CWeaponMelee_ZombieFists.h"
 
