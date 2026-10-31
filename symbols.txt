@@ -448,6 +448,7 @@
 0x10001cd5 func   ?vfunc613@CPayphone@@UAE_NXZ CPayphone::vfunc613
 0x10001cda func   ?sub_101dba50@@YAPBDH@Z sub_101dba50
 0x10001ce4 func   ?sub_1023cde0@@YAXPAUSWorldInfo@@@Z sub_1023cde0
+0x10001ce9 func   ?sub_101486c0@CFooUnit_101486c0@@QAEXH@Z CFooUnit_101486c0::sub_101486c0
 0x10001cee func   ?vfunc457@CBasePlayer@@UAEXPBDH@Z CBasePlayer::vfunc457
 0x10001cf8 func   ?sub_101af3f0@@YAHXZ sub_101af3f0
 0x10001cfd func   ?sub_101318e0@CTimerEntity@@QAEXPAUinputdata_t@@@Z CTimerEntity::sub_101318e0

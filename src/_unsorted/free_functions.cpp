@@ -57189,6 +57189,19 @@ int *sub_10148560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101486c0 size=0xa
+void sub_10014614(int);
+
+struct CFooUnit_101486c0 {
+    void sub_101486c0(int b);
+};
+
+void CFooUnit_101486c0::sub_101486c0(int b)
+{
+    sub_10014614((int)this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10148780 size=0xb
 namespace lifted {
 extern char g_1046c920;
