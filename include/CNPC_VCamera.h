@@ -163,7 +163,7 @@ public:
 	virtual void vfunc90();
 	virtual void vfunc91();
 	virtual void vfunc92();
-	virtual void vfunc93();
+	virtual void vfunc93(int a, int b);
 	virtual int vfunc94();
 	virtual void vfunc95();
 	virtual void vfunc96();
