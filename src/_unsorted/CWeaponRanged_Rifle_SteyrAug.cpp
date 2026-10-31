@@ -31,6 +31,14 @@ int CWeaponRanged_Rifle_SteyrAug::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102367e0 size=0x6
+#include "CWeaponRanged_Rifle_SteyrAug.h"
+int CWeaponRanged_Rifle_SteyrAug::vfunc363()
+{
+    return 0xf5;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a4a0 size=0x1e
 #include "CWeaponRanged_Rifle_SteyrAug.h"
 
