@@ -58,7 +58,7 @@ public:
 	VT_SLOTS10(t20) VT_SLOTS10(t21) VT_SLOTS10(t22) VT_SLOTS10(t23) VT_SLOTS10(t24)
 	virtual void t250(); virtual void t251();
 	virtual void vfunc420();	// slot 420: base boss reset, then the state flag at +0x6689, the timers at +0x66ac / +0x66b0 (curtime + 3), the target handle at +0x6670 = -1
-	virtual void t253(); virtual void t254(); virtual void t255(); virtual void t256(); virtual void t257(); virtual void t258(); virtual void t259();
+	virtual void t253(); virtual void t254(); virtual void t255(); virtual void t256(); virtual void t257(); virtual void t258(); virtual void vfunc259(int *pEvent);
 	virtual void t260(); virtual void t261(); virtual void t262(); virtual void t263();
 	virtual void vfunc432(int a);	// slot 432: asks sub_103c0160 for an object and its kind; kind 1 goes to sub_103c0860, others to sub_103c05e0; then CAI_BaseNPCTroika::vfunc432(a)
 	virtual void t265(); virtual void t266(); virtual void t267(); virtual void t268(); virtual void t269();
