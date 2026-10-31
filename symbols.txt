@@ -8709,6 +8709,7 @@
 0x10012134 func   ?sub_1022d050@UtlMem@@QAEXXZ UtlMem::sub_1022d050
 0x10012139 func   ?vfunc326@CWeaponGravityGun@@UAEXXZ CWeaponGravityGun::vfunc326
 0x1001213e func   ?sub_10296820@CUnknown10296820@@QAEPAXH@Z CUnknown10296820::sub_10296820
+0x10012148 func   ?vfunc259@CNPC_VTzimisce@@UAEXPAH@Z CNPC_VTzimisce::vfunc259
 0x10012161 func   ?vfunc31@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc31
 0x1001216b func   ?vfunc108@CBaseEntity@@UAE_NPBDMMM@Z CBaseEntity::vfunc108
 0x10012170 func   ?vfunc5@CPhysicsCannister@@QAEPAV1@I@Z CPhysicsCannister::vfunc5

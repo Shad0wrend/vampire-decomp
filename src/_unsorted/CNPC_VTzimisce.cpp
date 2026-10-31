@@ -570,6 +570,66 @@ void CNPC_VTzimisce::vfunc463(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ba410 size=0x1c0
+#include "CNPC_VTzimisce.h"
+#include "CUnknown10381be0.h"
+#include "CEHandleGet.h"
+extern const char *g_106530e8[];
+void sub_101cdba0(void *, float, float, float, float, int, int);
+
+// TARGET: CNPC_VTzimisce::vfunc259
+void CNPC_VTzimisce::vfunc259(int *pEvent)
+{
+	switch (*pEvent) {
+	case 2:
+		if (m_nState5cc0 == 1)
+			vfunc490();
+		break;
+	case 3:
+		if (m_nState5cc0 == 1)
+			vfunc618();
+		break;
+	case 4:
+		vfunc623();
+		break;
+	case 5:
+		vfunc624();
+		break;
+	case 6:
+		vfunc621();
+		break;
+	case 7:
+		vfunc622();
+		break;
+	case 8:
+		vfunc625();
+		break;
+	case 9:
+		vfunc626();
+		break;
+	case 0x7f8:
+		if (!((CUnknown10381be0 *)this)->sub_103be130())
+			sub_103bef20((CBaseEntity *)EHandle_Get(m_hTarget), g_106530e8[m_n6680]);
+		break;
+	case 0x802:
+	case 0x803:
+		sub_101cdba0(vfunc220(), 2.0f, 0.2f, 0.2f, 1024.0f, 0, 0);
+		vfunc619();
+		break;
+	case 0xbbb:
+		vfunc620();
+		break;
+	case 0xbbd:
+		if (((CUnknown10381be0 *)this)->sub_103be130())
+			sub_103bea90(vfunc167());
+		break;
+	default:
+		sub_1029b290(pEvent);
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ba640 size=0xf9
 #include "CNPC_VTzimisce.h"
 #include "CUnknown1027d990.h"
