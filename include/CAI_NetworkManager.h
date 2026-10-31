@@ -19,7 +19,9 @@ public:
 	void *m_pNetwork;	// 0x454: the 0x18 byte network object (sub_102f8e30)
 	char m_Graph[0x200];	// 0x458: the CAI_NodeGraph
 	char m_b658;	// 0x658
-	char m_b659;	// 0x659
+	char m_b659;
+	char m_sz65a[1];	// 0x65a: the name of the map to load after the rebuild
+	void sub_102f6a50();	// InitializeAINetworks-like: rebuilds the node graph or loads it, then thinks / loads the map	// 0x659
 public:
     virtual datamap_t * vfunc82();
 };
