@@ -19345,6 +19345,20 @@ void CUtlVector12::sub_1007f690(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007fc70 size=0x4f
+#include "CUtlRBTree24.h"
+#include "utlrbtree.h"
+struct CRBEntry8 {
+    int a;
+    int b;
+};
+
+const CUtlRBTree24::Links_t &CUtlRBTree24::sub_1007fc70(int i) const
+{
+	return (const Links_t &)((const CUtlRBTree<CRBEntry8, int> *)this)->Links(i);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007fce0 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
