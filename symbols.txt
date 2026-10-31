@@ -4920,6 +4920,7 @@
 0x1000a317 func   ?sub_101ceef0@@YAXMVVector@@000M@Z sub_101ceef0
 0x1000a31c func   ?vfunc80@CVampireProjectile_MingXiaoSpit@@UAEHXZ CVampireProjectile_MingXiaoSpit::vfunc80
 0x1000a326 func   ?vfunc82@CWindowPane@@UAEPAUdatamap_t@@XZ CWindowPane::vfunc82
+0x1000a330 func   ?vfunc82@CItemContainer@@QAEHXZ CItemContainer::vfunc82
 0x1000a335 func   ?sub_10429240@@YAPBDH@Z sub_10429240
 0x1000a33a func   ?vfunc82@CFunc_LOD@@UAEHXZ CFunc_LOD::vfunc82
 0x1000a33f func   ?vfunc117@CPropMover@@UAEHXZ CPropMover::vfunc117
