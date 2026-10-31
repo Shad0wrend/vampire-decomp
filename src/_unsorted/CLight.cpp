@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101302d0 size=0x6
+#include "CLight.h"
+namespace lifted {
+extern char g_105754f8;
+}
+int CLight::vfunc82()
+{
+    return (int)&lifted::g_105754f8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130390 size=0x1e
 #include "CLight.h"
 
