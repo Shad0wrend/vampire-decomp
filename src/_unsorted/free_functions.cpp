@@ -151941,6 +151941,16 @@ CNPC_VZombie *CNPC_VZombie::sub_103de330(int nMode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103de400 size=0xc
+void __fastcall sub_103de420(void *p);
+
+void *__fastcall sub_103de400(void *p)
+{
+    sub_103de420(p);
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103de420 size=0x33
 void sub_10001564();
 void sub_100059c0();
