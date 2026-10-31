@@ -67992,6 +67992,29 @@ SPyObj *sub_1019ba60(SPySelf *self, void *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019bae0 size=0x13
+#include "vampire.h"
+
+struct CUnknown1019bae0Obj
+{
+	virtual int vfunc0();
+};
+
+struct CUnknown1019bae0
+{
+	char m_pad00[8];
+	CUnknown1019bae0Obj *m_pObj;
+	int m_n0c;
+};
+
+// TARGET: sub_1019bae0
+int __cdecl sub_1019bae0(CUnknown1019bae0 *p)
+{
+	int r = p->m_pObj->vfunc0();
+	return r - p->m_n0c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019bb10 size=0x27
 struct CPyObjWrap {
     int ob_refcnt;
