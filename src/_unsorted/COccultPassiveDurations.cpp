@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103fb7d0 size=0x6
+#include "COccultPassiveDurations.h"
+namespace lifted {
+extern char g_10944de0;
+}
+int COccultPassiveDurations::vfunc80()
+{
+    return (int)&lifted::g_10944de0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103fb7f0 size=0x3
 #include "COccultPassiveDurations.h"
 int COccultPassiveDurations::vfunc81()
