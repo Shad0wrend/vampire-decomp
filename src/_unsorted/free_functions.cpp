@@ -38662,6 +38662,54 @@ bool sub_100e3100(const char *name, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e3180 size=0x1f7
+#include <string.h>
+#include "CDialog.h"
+#include "CUnknown100e3400.h"
+
+struct CUnknown100df030;
+int sub_100df0b0(const char *psz);
+bool sub_100e3100(const char *pszFile, int pFile);
+bool sub_100df030(CUnknown100df030 *p);
+extern char g_1045466c[7];
+
+int CDialog::sub_100e3180(CDialogEntry_t *pEntry, int pFile)
+{
+	const char **ppText = (const char **)pEntry->m_data;
+	CUnknown100e3400 *pNames = (CUnknown100e3400 *)this;
+	if (!sub_100df0b0(ppText[1]))
+		return 0;
+	int nMissing = 0;
+	if (sub_100e3100(pNames->sub_100e3400(pEntry->m_data[0], 'e', "mp3", false), pFile))
+		nMissing = 1;
+	if (sub_100e3100(pNames->sub_100e3400(pEntry->m_data[0], 'e', "vcd", false), pFile))
+		nMissing++;
+	if (sub_100e3100(pNames->sub_100e3400(pEntry->m_data[0], 'e', "lip", false), pFile))
+		nMissing++;
+	if (sub_100df030((CUnknown100df030 *)pEntry)) {
+		if (sub_100e3100(pNames->sub_100e3400(pEntry->m_data[0], 'f', "mp3", false), pFile))
+			nMissing++;
+		if (sub_100e3100(pNames->sub_100e3400(pEntry->m_data[0], 'f', "vcd", false), pFile))
+			nMissing++;
+		if (sub_100e3100(pNames->sub_100e3400(pEntry->m_data[0], 'f', "lip", false), pFile))
+			nMissing++;
+	}
+	for (unsigned int i = 0; i < 7; i++) {
+		const char *pszClan = ppText[6 + i];
+		if (pszClan && strlen(pszClan)) {
+			char col = g_1045466c[i];
+			if (sub_100e3100(pNames->sub_100e3400(pEntry->m_data[0], col, "mp3", false), pFile))
+				nMissing++;
+			if (sub_100e3100(pNames->sub_100e3400(pEntry->m_data[0], col, "vcd", false), pFile))
+				nMissing++;
+			if (sub_100e3100(pNames->sub_100e3400(pEntry->m_data[0], col, "lip", false), pFile))
+				nMissing++;
+		}
+	}
+	return nMissing;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e3400 size=0x98
 #include <string.h>
 #include "CUnknown100e3400.h"
