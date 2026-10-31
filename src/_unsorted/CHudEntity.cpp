@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1012e730 size=0x6
+#include "CHudEntity.h"
+namespace lifted {
+extern char g_105748e0;
+}
+int CHudEntity::vfunc82()
+{
+    return (int)&lifted::g_105748e0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012e850 size=0x3
 #include "CHudEntity.h"
 int CHudEntity::vfunc81()
