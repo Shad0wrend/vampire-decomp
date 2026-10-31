@@ -146,6 +146,8 @@ public:
 	void sub_1028d610();	// CAI_BaseNPCTroika destructor body (stub 0x100123af), called directly
 	void vfunc292(struct CGargoyleDmgInfo *pInfo, int b, int c);	// slot 292 (plain member): passes the damage record on to CBaseCombatCharacter::vfunc292 unless its flags (record and damage block) have 0x4000002 or it deals no damage
 	void sub_10015843(struct CGargoyleDmgInfo *pInfo, int b, int c);	// CBaseCombatCharacter::vfunc292 (stub 0x10015843), called directly
+	void vfunc444(int *pTask);	// slot 444 (RunTask, plain member): the task id is the first int; the chase / face / turn tasks (0x31, 0xc8..0xca, 0x132..0x134, 0x14b) are handled here, the others by CNPC_VHuman::vfunc444
+	void sub_10011928(int *pTask);	// CNPC_VHuman::vfunc444 (stub 0x10011928), called directly
 	void vfunc144(int info);	// slot 144 "Event_Killed"-like (plain member): the flag check (sub_10381c80) then sub_103828a0 when it holds, then CNPC_VVampire::vfunc144(info)
 public:
 	virtual void vfunc0();
