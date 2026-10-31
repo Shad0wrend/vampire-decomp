@@ -30,6 +30,7 @@ public:
 	void vfunc373(int unused);	// slot 373 (plain member, takes one stack argument that is not used): arms the think function sub_103ee6f0 (ThinkSet, stub 0x10007fe5) with no context, stamps the time at +0x91c and schedules the next think 0.01 seconds ahead
 	bool vfunc325();	// slot 325 (declared as a plain member, the slots are not modelled here): with a live owner that still has ammo of the roll's ammo type, clears the field at +0x920, tells the owner (slot 449 with 0xe, 0), plays slot 307(0xc2), stamps the time at +0x730 and starts slot 333(10, 1, 0, 0, 0, 0); false without
 	void vfunc326();	// slot 326 (plain member): the throw state machine step (state +0x920, time +0x924, timer +0x91c, finished byte +0x930): when sub_103ee8f0() holds starts the fuse (state 1) and calls slot 307(0xb8); state 1 after 0.3 seconds goes to 3 and sets the think function
+	void sub_10250ed0();	// CBaseCombatWeapon::vfunc104 (stub 0x1001576c), called directly
 	char sub_103ee8f0();	// stub 0x1001556e
 	char sub_10252410(int a);	// CBaseCombatWeapon member (stub 0x10008341)
 	int vfunc376(int a);	// slot 376 (plain member): when the state at +0x1fc is 2, stores the time of the base (+0xc of the global object) plus 0.1 at +0x17c and returns 1; else CBaseEntity::sub_100a1250(a) (tail call)
