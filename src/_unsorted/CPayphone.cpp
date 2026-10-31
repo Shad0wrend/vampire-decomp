@@ -33,6 +33,26 @@ int CPayphoneUnit101aa7f0::sub_101aa7f0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aa820 size=0x14
+struct CPayphoneUnit101aa820
+{
+	int sub_101aa820(int a);
+};
+
+// TARGET: CPayphoneUnit101aa820::sub_101aa820
+int CPayphoneUnit101aa820::sub_101aa820(int a)
+{
+	void **vt = *(void ***)this;
+	union {
+		void *p;
+		void (CPayphoneUnit101aa820::*pm)(int);
+	} u;
+	u.p = vt[369];
+	(this->*u.pm)(a);
+	return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aa850 size=0x5
 #include "CPayphone.h"
 bool CPayphone::vfunc363(int a0)
