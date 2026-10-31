@@ -11005,6 +11005,7 @@
 0x10015b6d func   ?vfunc0@CTETParticleAttached@@UAEPAUServerClass@@XZ CTETParticleAttached::vfunc0
 0x10015b72 func   ?sub_102c6a00@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_102c6a00
 0x10015b77 func   ?sub_100d7400@@YAXXZ sub_100d7400
+0x10015b7c func   ?vfunc81@CItemGGarysFilm@@QAEHXZ CItemGGarysFilm::vfunc81
 0x10015b81 func   ?vfunc488@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc488
 0x10015b95 func   ?sub_100f8370@CGlobalEntityList@@QAEPAVCBaseEntity@@PAV2@I@Z CGlobalEntityList::sub_100f8370
 0x10015b9a func   ?sub_103c2a00@@YAEXZ sub_103c2a00
