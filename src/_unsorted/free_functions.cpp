@@ -48425,6 +48425,22 @@ void __fastcall sub_10118cc0(CHandleOwner *self, int, CTargetEnt **ppEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101192e0 size=0xc
+#include "COutputEvent.h"
+
+struct CUnit101192e0
+{
+	void *sub_101192e0();
+};
+
+// TARGET: CUnit101192e0::sub_101192e0
+void *CUnit101192e0::sub_101192e0()
+{
+	((COutputEvent *)this)->sub_100cd2a0();
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10119390 size=0x7
 namespace lifted {
 extern int g_1070b25c;
