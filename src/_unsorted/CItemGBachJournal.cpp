@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10400bd0 size=0x3
+#include "CItemGBachJournal.h"
+int CItemGBachJournal::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040a5d0 size=0x1e
 #include "CItemGBachJournal.h"
 
