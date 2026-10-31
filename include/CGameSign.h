@@ -9,6 +9,7 @@ class CBasePlayer;
 class CGameSign : public CBaseEntity
 {
 public:
+	CGameSign();	// 0x10212530
 	CGameSign *vfunc5(unsigned int flags);
 	void sub_1000726b();
 	CGameSign *sub_10212530();	// as in CKeepUpright (transplant)
