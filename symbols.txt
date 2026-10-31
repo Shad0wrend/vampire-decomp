@@ -6608,6 +6608,7 @@
 0x1000d959 func   ?sub_10028a60@CUnk10028a60@@QAEXXZ CUnk10028a60::sub_10028a60
 0x1000d95e func   ?sub_10307b40@CUnknown10307b40@@QAEXH@Z CUnknown10307b40::sub_10307b40
 0x1000d968 func   _item_g_lilly_purse item_g_lilly_purse
+0x1000d96d func   ?vfunc81@CWeaponRanged_Rifle_SuperShotgun@@QAEHXZ CWeaponRanged_Rifle_SuperShotgun::vfunc81
 0x1000d977 func   ?sub_1009a370@@YAHXZ sub_1009a370
 0x1000d97c func   ?sub_100847e0@CSceneEntity@@QAEXPAX@Z CSceneEntity::sub_100847e0
 0x1000d986 func   ?vfunc347@CBaseCombatWeapon@@UAEHH@Z CBaseCombatWeapon::vfunc347
