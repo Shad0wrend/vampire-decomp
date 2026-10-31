@@ -20,6 +20,17 @@ int CWeaponMelee_Sheriff_Sword::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e6c70 size=0x6
+#include "CWeaponMelee_Sheriff_Sword.h"
+namespace lifted {
+extern char g_10670110;
+}
+int CWeaponMelee_Sheriff_Sword::vfunc362()
+{
+    return (int)&lifted::g_10670110;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecd80 size=0x1e
 #include "CWeaponMelee_Sheriff_Sword.h"
 
