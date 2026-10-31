@@ -111103,6 +111103,18 @@ void sub_10252800(CBaseAnimating *pEnt, float flSize)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10253b40 size=0x13
+#include "CBaseCombatWeapon.h"
+
+bool CBaseCombatWeapon::sub_10253b40(int a)
+{
+	int nValue = *(int *)((char *)this + 0x744 + a * 4);
+	if (nValue < 0)
+		return false;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10253b70 size=0xa6
 #include "CBaseCombatWeapon.h"
 
