@@ -20,6 +20,17 @@ int CWeaponMelee_Knife::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e65d0 size=0x6
+#include "CWeaponMelee_Knife.h"
+namespace lifted {
+extern char g_1066e6e8;
+}
+int CWeaponMelee_Knife::vfunc362()
+{
+    return (int)&lifted::g_1066e6e8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecd20 size=0x1e
 #include "CWeaponMelee_Knife.h"
 
