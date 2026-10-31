@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x104013e0 size=0x3
+#include "CItemGEDanePrintReport.h"
+int CItemGEDanePrintReport::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040a660 size=0x1e
 #include "CItemGEDanePrintReport.h"
 
