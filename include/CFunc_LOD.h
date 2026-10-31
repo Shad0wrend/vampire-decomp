@@ -24,6 +24,7 @@ public:
 	virtual void vfunc114();
 	virtual void vfunc115();
 	virtual void vfunc116();
+	unsigned char sub_10114a50();	// CFunc_LOD::vfunc117 body (CBaseEntity::vfunc117 & 0xfd)
 	virtual int vfunc117();
 	virtual void vfunc118();
 	virtual void vfunc119();
