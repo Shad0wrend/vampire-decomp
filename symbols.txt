@@ -7912,6 +7912,7 @@
 0x100105eb func   _func_pushable func_pushable
 0x100105f0 func   ?sub_10104510@CUnknown10104510@@QAEPADXZ CUnknown10104510::sub_10104510
 0x100105fa func   ?vfunc254@CBaseAnimating@@QAEHHHH@Z CBaseAnimating::vfunc254
+0x100105ff func   ?sub_103a3bf0@@YAEXZ sub_103a3bf0
 0x10010609 func   ?sub_102012d0@CVStatList_t@@QAEHH@Z CVStatList_t::sub_102012d0
 0x1001060e func   ?vfunc222@CBaseEntity@@QAEHH@Z CBaseEntity::vfunc222
 0x10010613 func   ?sub_102dfed0@CEnemiesView@@QAE?AVVector@@PAVCBaseEntity@@@Z CEnemiesView::sub_102dfed0

@@ -12,6 +12,15 @@ datamap_t * CNPC_VPlaceholder::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a3bf0 size=0x6
+extern unsigned char g_1064b9c0;
+// TARGET: sub_103a3bf0
+unsigned char sub_103a3bf0()
+{
+    return g_1064b9c0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a3c50 size=0x1d
 #include "CNPC_VPlaceholder.h"
 struct A { int sub_10012300(int); };
