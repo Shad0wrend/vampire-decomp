@@ -95045,6 +95045,14 @@ int sub_10204100(CBaseCombatCharacter *pChar, int index, char bIncludeZero)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10204250 size=0x7
+// TARGET: sub_10204250
+bool __fastcall sub_10204250(int *pThis)
+{
+    return (*pThis == -1) ? true : false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10204270 size=0x15
 struct CUnknown10204270 { void sub_10204270(); };
 void CUnknown10204270::sub_10204270()
