@@ -55,6 +55,20 @@ void CGameRules::vfunc52(CBaseCombatCharacter *pChar, int nIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128400 size=0x17
+#include "CGameRules.h"
+
+// TARGET: CGameRules::sub_10128400
+void *CGameRules::sub_10128400()
+{
+	if (*(void **)((char *)this + 4) == 0)
+	{
+		vfunc56();
+	}
+	return *(void **)((char *)this + 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128430 size=0x27
 #include "CGameRules.h"
 
