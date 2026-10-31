@@ -45,6 +45,15 @@ int CNPC_VGargoyle::vfunc451()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10377c70 size=0x6
+extern unsigned char g_106395c0;
+// TARGET: sub_10377c70
+unsigned char sub_10377c70()
+{
+    return g_106395c0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10377cd0 size=0x1d
 #include "CNPC_VGargoyle.h"
 struct A { int sub_10012300(int); };
