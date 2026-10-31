@@ -119933,6 +119933,11 @@ void CCopyUnit102c73b0::sub_102c73b0(void *pSrc)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c7e10 size=0x4
+// TARGET: sub_102c7e10
+void __fastcall sub_102c7e10(int *p) { (*(p + 0x12))--; }
+// END FUNCTION
+
 // FUNCTION: 0x102c7eb0 size=0x2e
 // TARGET: sub_102c7eb0
 extern int g_10601878;
