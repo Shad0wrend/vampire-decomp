@@ -2742,6 +2742,7 @@
 0x1000603c func   ?sub_1003c0e0@CUtlVector4@@QAEHHPBH@Z CUtlVector4::sub_1003c0e0
 0x10006041 func   ?vfunc451@CNPC_VTzimisceRunner@@UAEHXZ CNPC_VTzimisceRunner::vfunc451
 0x1000604b func   _prop_physics_contested prop_physics_contested
+0x1000605a func   ?vfunc605@CNPC_VAsianVampire@@QAEHH@Z CNPC_VAsianVampire::vfunc605
 0x1000605f func   ?vfunc113@CNPC_VAndreiBlood@@UAEXXZ CNPC_VAndreiBlood::vfunc113
 0x10006064 func   ?sub_1015ae10@@YAHXZ sub_1015ae10
 0x10006069 func   ?vfunc82@CFuncMoveLinear@@UAEHXZ CFuncMoveLinear::vfunc82

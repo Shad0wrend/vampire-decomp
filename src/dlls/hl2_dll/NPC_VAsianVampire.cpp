@@ -97,3 +97,51 @@ void CNPC_VAsianVampireUnit::sub_10361a70(void *pHint)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x103620d0 size=0x222
+#include "CAI_BaseNPCTroika.h"
+#include "CNPC_VAsianVampire.h"
+#include "ScopeTrace.h"
+
+int CNPC_VAsianVampire::vfunc605(int unused)
+{
+	ScopeTrace trace("CNPC_VAsianVampire::SelectScheduleRangedCombat", g_106b8540, g_106b8540);
+	CAI_BaseNPCTroika *pNPC = (CAI_BaseNPCTroika *)this;
+	if (m_b6078) {
+		m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VAsianVampire.cpp";
+		m_nLine1b30 = 0x26a;
+		return 0xe3;
+	}
+	if (pNPC->sub_10014df8(8) && pNPC->vfunc307() && pNPC->vfunc599(pNPC->vfunc167())) {
+		m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VAsianVampire.cpp";
+		m_nLine1b30 = 0x284;
+		return 0xe3;
+	}
+	if (pNPC->sub_10014df8(0x3c)) {
+		m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VAsianVampire.cpp";
+		m_nLine1b30 = 0x289;
+		return 0xf0;
+	}
+	int nSchedule = sub_102b8620();
+	if (nSchedule)
+		return nSchedule;
+	if ((pNPC->sub_10014df8(0x5f) || pNPC->sub_10014df8(8)) && !pNPC->sub_10014df8(0x2f) && !pNPC->sub_10014df8(0x63)) {
+		m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VAsianVampire.cpp";
+		m_nLine1b30 = 0x2af;
+		return 0xf0;
+	}
+	if (pNPC->sub_10014df8(0x46) && !pNPC->sub_10014df8(0x48) && !pNPC->sub_10014df8(0x60)) {
+		m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VAsianVampire.cpp";
+		m_nLine1b30 = 0x2e5;
+		return 0xf0;
+	}
+	char bHas = pNPC->sub_10014df8(0x59);
+	m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VAsianVampire.cpp";
+	if (bHas) {
+		m_nLine1b30 = 0x2ce;
+		return sub_10362430();
+	}
+	m_nLine1b30 = 0x2d2;
+	return 0xe8;
+}
+// END FUNCTION
