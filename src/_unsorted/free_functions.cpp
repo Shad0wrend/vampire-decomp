@@ -59229,6 +59229,21 @@ char CAnimRangeView::sub_10160dc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10160e90 size=0x18
+struct CUnk10160e90 {
+    char pad[0xff0];
+    int m_ff0;
+    bool sub_10160e90();
+};
+
+bool CUnk10160e90::sub_10160e90()
+{
+    if (m_ff0 == 0x1154 || m_ff0 == 0x52)
+        return true;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160ec0 size=0x79
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
