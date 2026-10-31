@@ -9,6 +9,13 @@ public:
 	int m_unk670;
 	char pad674[0x815 - 0x674];
 	char m_b815;
+	char pad816[0x818 - 0x816];
+	int m_n818;
+	int m_n81c;
+	int m_n820;
+
+	CPropDoorknobElectronic();	// 0x10226200: CPropDoorknob's constructor body (sub_102258a0), then the vftable and the three dwords at +0x818 / +0x81c / +0x820
+	void sub_102258a0();	// the base constructor body (stub 0x1000e91c)
 
 	void vfunc103();	// slot 103 (plain member): CPropDoorknob::vfunc103 (the Spawn), then the byte at +0x815 is set and the state at +0x670 is 0 when sub_10224100 holds, else the value of edx (1) is stored there
 	char sub_10224100();	// stub 0x10001d2f, called directly by vfunc103
