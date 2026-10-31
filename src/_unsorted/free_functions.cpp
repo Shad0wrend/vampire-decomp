@@ -69499,6 +69499,43 @@ extern "C" CBaseEntity *keyframe_rope()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019d8d0 size=0x247
+#include "SendTable.h"
+
+extern SendTable g_1072b968;
+extern const char *g_10592254;
+SendProp sub_10246af0(const char *pName, int nOffset, int nSize, int nBits, int nFlags, int nExtra, void *pProxy);
+SendProp sub_101ab220(const char *pName, int nOffset, int nSize);
+SendProp sub_10246510(const char *pName, int nOffset, int nSize, int nBits, int nFlags, int nLow, int nHigh, void *pProxy);
+SendProp sub_10246700(const char *pName, int nOffset, int nSize, int nBits, int nFlags, int nLow, int nHigh, void *pProxy);
+void sub_10246300();
+void sub_10003012();
+
+int sub_1019d8d0()
+{
+	static SendProp s_Props[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_101ab220("m_hStartPoint", 0x490, 4),
+		sub_101ab220("m_hEndPoint", 0x494, 4),
+		sub_10246af0("m_iStartAttachment", 0x498, 2, 5, 0, 0, 0),
+		sub_10246af0("m_iEndAttachment", 0x49a, 2, 5, 0, 0, 0),
+		sub_10246af0("m_Slack", 0x45c, 4, 0xc, 0, 0, 0),
+		sub_10246af0("m_RopeLength", 0x474, 4, 0xe, 0, 0, 0),
+		sub_10246af0("m_fLockedPoints", 0x478, 4, 4, 1, 0, 0),
+		sub_10246af0("m_RopeFlags", 0x454, 4, 8, 1, 0, 0),
+		sub_10246af0("m_nSegments", 0x468, 4, 4, 1, 0, 0),
+		sub_10246af0("m_iRopeMaterialModel", 0x46c, 4, 0x10, 1, 0, 0),
+		sub_10246af0("m_Subdiv", 0x470, 4, 4, 1, 0, 0),
+		sub_10246510("m_TextureScale", 0x464, 4, 10, 0, 0x3dcccccd, 0x41200000, (void *)sub_10246300),
+		sub_10246510("m_Width", 0x460, 4, 0, 4, 0, (int)0xc7ec9090, (void *)sub_10246300),
+		sub_10246510("m_flScrollSpeed", 0x484, 4, 0, 4, 0, (int)0xc7ec9090, (void *)sub_10246300),
+		sub_10246700("m_vecAbsOrigin", 0x404, 0xc, -1, 2, 0, (int)0xc7ec9090, (void *)sub_10003012),
+	};
+	g_1072b968.sub_10247240(&s_Props[1], 15, g_10592254);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019dc50 size=0x1a
 namespace lifted {
 extern int g_10592258;
