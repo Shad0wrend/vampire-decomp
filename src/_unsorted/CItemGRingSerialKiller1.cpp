@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x104069c0 size=0x6
+#include "CItemGRingSerialKiller1.h"
+namespace lifted {
+extern char g_10945cd0;
+}
+int CItemGRingSerialKiller1::vfunc80()
+{
+    return (int)&lifted::g_10945cd0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104069e0 size=0x3
 #include "CItemGRingSerialKiller1.h"
 int CItemGRingSerialKiller1::vfunc81()
