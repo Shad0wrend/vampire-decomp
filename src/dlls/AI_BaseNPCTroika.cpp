@@ -519,6 +519,30 @@ void __fastcall sub_102aa860(CAI_BaseNPCTroika *pThis, int, CTaskPath_102aa860 *
 }
 // END FUNCTION
 
+// FUNCTION: 0x102aa9e0 size=0x5f
+#include "CAI_BaseNPCTroika.h"
+#include "CStepWalker.h"
+struct CPatrolHolderView {
+	char m_b0;
+	char m_pad01[3];
+	CStepWalker *m_pWalker;	// 0x04
+};
+void CAI_BaseNPCTroika::sub_102aa9e0(void *pHolder)
+{
+	CPatrolHolderView *p = (CPatrolHolderView *)pHolder;
+	if (p && p->m_pWalker) {
+		if (p->m_pWalker->sub_10307b80())
+			sub_1029f5d0(p);
+		sub_1029f650(p);
+		sub_10273e80(0);
+		return;
+	}
+	*(const char **)((char *)this + 0x1b44) = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+	*(int *)((char *)this + 0x1b48) = 0x3d9c;
+	vfunc448(0x1d);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ad260 size=0x4c
 #include "CAI_BaseNPCTroika.h"
 // TARGET: CAI_BaseNPCTroika::sub_102ad260
