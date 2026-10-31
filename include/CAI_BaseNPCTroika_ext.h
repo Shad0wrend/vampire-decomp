@@ -98,4 +98,5 @@
 	char sub_1027f550(CAI_BaseNPCTroika *pOther);	// false for null; with the flags of slot 513 lacking 0xd00 sets flag 8 on pOther and answers false; with pOther's time at +0x640 not past curtime sets flag 0x10 and answers false; else true
 	void sub_102aa9e0(void *pHolder);	// with a patrol path holder that has a walker (+4): releases the holder (sub_1029f5d0) when the walker says so (CStepWalker::sub_10307b80), sub_1029f650(holder), sub_10273e80(0); else stamps the source file / line 0x3d9c at +0x1b44 / +0x1b48 and fails the task (slot 448(0x1d))
 	char sub_1029f650(void *pHolder);	// stub 0x100151f4
+	virtual bool vfunc564();	// slot 564 override: false while the class flags (slot 513) have bit 15, an active weapon exists and the byte at +0x6078 is clear; else CAI_BaseNPC::vfunc564
 	void sub_102bf770();	// alternate action end (stub-less, called by slot 531 / 442): when the ideal activity (+0xff0) is the navigator's task id (+0x5d34) the NPC's sub_1027a6c0 result becomes the ideal activity (sub_10272650); clears the byte at +0x1a40, lets the navigator finish (sub_102ee2a0) and clears +0x63ec
