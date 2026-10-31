@@ -63,6 +63,7 @@ public:
 	int m_64;
 	int m_68;
 
+	void sub_102e09c0();	// the destructor body (vfunc0 0x102e0990 calls it): both vtables, empties the facing queue (+0x54, CUtlVector<CAI_InterestTarget>) twice, then the CAI_Component vftable
 	int sub_102e2610();
 	CAI_Motor *sub_102e0900(int outer);
 	void sub_102e2840(int a, int b);	// forwards (a, b) to slot 93 of the owning NPC (stub 0x1000628a)
