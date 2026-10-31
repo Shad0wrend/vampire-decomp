@@ -64,6 +64,13 @@ void CNPC_VTaxiDriver::vfunc444(const int *pTask)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b3950 size=0x3
+#include "CNPC_VTaxiDriver.h"
+void CNPC_VTaxiDriver::vfunc144(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b3970 size=0x1e
 #include "CNPC_VTaxiDriver.h"
 

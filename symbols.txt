@@ -1202,6 +1202,7 @@
 0x10003463 func   ?sub_100b6510@@YAXPBDPAD@Z sub_100b6510
 0x1000346d func   ?vfunc0@CThrustController@@UAEHPAXHMAAVVector@@1@Z CThrustController::vfunc0
 0x10003472 func   ?sub_10090890@CBaseAnimating@@QAEXM@Z CBaseAnimating::sub_10090890
+0x10003477 func   ?vfunc144@CNPC_VTaxiDriver@@QAEXH@Z CNPC_VTaxiDriver::vfunc144
 0x1000347c func   ?sub_1029f2e0@CUnknown1029f2e0@@QAEDXZ CUnknown1029f2e0::sub_1029f2e0
 0x10003481 func   ?sub_1010c370@@YAHXZ sub_1010c370
 0x10003486 func   ?vfunc103@CNPC_VTzimisceHeadClaw@@QAEXXZ CNPC_VTzimisceHeadClaw::vfunc103
