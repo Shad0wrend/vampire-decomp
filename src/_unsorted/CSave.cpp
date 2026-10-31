@@ -124,6 +124,16 @@ void CSave::vfunc19(const char **ppStrings, int count)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019fbb0 size=0xf
+#include "CSave.h"
+
+// TARGET: CSave::vfunc24
+void CSave::vfunc24(const Vector &value)
+{
+	sub_1000643d(&value, 12);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019fc20 size=0x1a
 #include "CSave.h"
 
