@@ -11066,6 +11066,7 @@
 0x100151ae func   ?sub_102bf7e0@CUnknown102bf7e0@@QAEXXZ CUnknown102bf7e0::sub_102bf7e0
 0x100151b8 func   ?sub_1032d890@CBaseCombatCharacter@@QAEPAXPBDH@Z CBaseCombatCharacter::sub_1032d890
 0x100151c7 func   ?sub_100ba470@@YAHXZ sub_100ba470
+0x100151cc func   ?vfunc80@CItemGHattersScreenplay@@QAEHXZ CItemGHattersScreenplay::vfunc80
 0x100151d1 func   ?vfunc41@CPhysicsPropContested@@QAEXPAVCBaseEntity@@@Z CPhysicsPropContested::vfunc41
 0x100151d6 func   _func_areaportal func_areaportal
 0x100151e0 func   _logic_case logic_case
