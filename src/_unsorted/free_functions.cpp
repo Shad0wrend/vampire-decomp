@@ -102029,6 +102029,22 @@ CTriggerElectricBugaloo *CTriggerElectricBugaloo::sub_10231290()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10231790 size=0x42
+#include "CTriggerElectricBugaloo.h"
+#include "CBaseCombatCharacter.h"
+
+void sub_1022dc30(CBaseCombatCharacter *pChar, int nAmount);
+extern float g_1048e708;
+
+void CTriggerElectricBugaloo::sub_10231790(void *pEnt)
+{
+	if (!m_bGiven059c && g_1048e708 + m_flTouchTime0598 < gpGlobals->curtime) {
+		sub_1022dc30((CBaseCombatCharacter *)pEnt, 1);
+		m_bGiven059c = 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10231970 size=0x147
 #include "SendProp.h"
 
