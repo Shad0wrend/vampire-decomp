@@ -61,7 +61,9 @@ public:
 	char m_pad0028[4];
 	CAI_PathfinderNetwork *m_pNetwork;	// 0x2c
 
-	void sub_10300140(int a, int b, int c, int d, int e);	// stub 0x10010fc8, called by CAI_Navigator::sub_102ee300
+	char sub_10300140(int a, int b, int c, int d, int e);	// stub 0x10010fc8, called by CAI_Navigator::sub_102ee300; the result is tested (true when the route can be built)
+	CAI_Waypoint *sub_10304e00(int a1, void *pRoute, int a3, int a4, int a5, const float *pOrigin, int a7, int a8);	// stub 0x10004507 (ret 0x20): builds the node route from the route record the check filled in
+	CAI_Waypoint *sub_103055b0(int a1, int a2, int a3, int a4, int a5, int a6);	// "CAI_Pathfinder_BuildExtrapolationNodeRoute" (ret 0x18): profiler scope, sub_10300140([this+4], a2, a4, a5, route) then sub_10304e00(a1, route, a3, 0, 0, zero vector, 0, a6); 0 when the check fails
 	void sub_102ee970();	// copies the NPC's field at +0x156c and the global at 0x1070b228 + 4 into m_unk08 / m_unk0c, then the network's nearest node query for the NPC's position (vfunc220)
 	bool sub_103058c0(int navType, const float *vecStart, const float *vecApex, const float *vecEnd, const CBaseEntity *pTarget, AIMoveTrace_t *pStartTrace, unsigned int collisionMask);	// "CAI_Pathfinder::TestTriangulationRoute": true when the probe can move from the start to the apex and from there to the end
 	bool sub_102fce80(int moveType, CAI_PathfinderLink *pLink);	// "CAI_Pathfinder::IsLinkStillStale": false without the stale bit (bit 0 of +0x64) or once the stale time (+0x68) has passed (the bit is cleared); at most one route check per frame (time at +0x14, hull type at +0x8): CheckStaleRoute(position of the node +4, of the node +8, moveType) - when it passes the bit is cleared and false returned, else true
