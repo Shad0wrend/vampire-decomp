@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1014fac0 size=0xc
+#include "CPhysicsCannister.h"
+namespace lifted {
+int sub_1000cfa9();
+}
+int CPhysicsCannister::vfunc226()
+{
+    *(char *)((char *)this + 0x1b1) = 1;
+    return lifted::sub_1000cfa9();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014fae0 size=0x67
 #include "CPhysicsCannister.h"
 #include "CCollisionProperty.h"
