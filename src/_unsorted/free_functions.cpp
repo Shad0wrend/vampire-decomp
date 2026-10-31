@@ -137747,6 +137747,29 @@ struct CUnknown10319fe0 { int a; void sub_10319fe0(int v); };
 void CUnknown10319fe0::sub_10319fe0(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x1031a000 size=0x18
+// TARGET: sub_1031a000
+struct CUnk1031a000Node {
+    char pad[0x30];
+    CUnk1031a000Node *m_pNext;
+};
+struct CUnk1031a000 {
+    CUnk1031a000Node *m_pHead;
+    void *sub_1031a000();
+};
+void *CUnk1031a000::sub_1031a000()
+{
+    CUnk1031a000Node *p = m_pHead;
+    if (p == 0) {
+        return 0;
+    }
+    while (p->m_pNext != 0) {
+        p = p->m_pNext;
+    }
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1031a0a0 size=0x2b
 struct CUnk10936c84 { char sub_1000afe2(void *p); };
 extern int g_10936c84;
