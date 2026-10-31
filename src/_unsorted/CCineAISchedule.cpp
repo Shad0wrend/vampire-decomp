@@ -17,6 +17,14 @@ void CCineAISchedule::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a9770 size=0x3
+#include "CCineAISchedule.h"
+bool CCineAISchedule::vfunc585()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a9790 size=0xe9
 #include "CCineAISchedule.h"
 #include "CBaseEntity.h"
