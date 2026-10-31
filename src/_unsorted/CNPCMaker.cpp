@@ -12,6 +12,23 @@ datamap_t * CNPCMaker::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034adf0 size=0x14
+#include "CNPCMaker.h"
+
+// TARGET: CNPCMaker::vfunc370
+int CNPCMaker::vfunc370(int a)
+{
+	void **vt = *(void ***)this;
+	union {
+		void *p;
+		void (CNPCMaker::*pm)(int);
+	} u;
+	u.p = vt[368];
+	(this->*u.pm)(a);
+	return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034ae50 size=0x5
 #include "CNPCMaker.h"
 bool CNPCMaker::vfunc363(int a0)
