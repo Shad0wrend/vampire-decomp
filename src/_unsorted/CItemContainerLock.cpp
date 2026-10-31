@@ -101,6 +101,16 @@ int CItemContainerLock::vfunc36()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10224eb0 size=0x7
+namespace lifted {
+extern float g_104454c8;
+}
+float CItemContainerLock::vfunc37()
+{
+    return lifted::g_104454c8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10224ed0 size=0x9d
 #include "CItemContainerLock.h"
 #include "CGlobalEntityList.h"
