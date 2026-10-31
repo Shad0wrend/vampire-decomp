@@ -86,6 +86,75 @@ void CCollisionEvent::vfunc0(void *pEventArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10030210 size=0x257
+#include "CCollisionEvent.h"
+#include "ScopeTrace.h"
+#include "CEntityVSlots.h"
+#include "gamevcollisionevent_t.h"
+#include "CUnknown10074f70.h"
+
+extern CUnknown10074f70_Global *g_107238f4;
+void sub_10158550(IPhysicsObject *pObject, float flTime);
+
+struct CColEntView
+{
+	char m_pad0000[0x94];
+	int m_n94;
+	char m_pad0098[0xa8 - 0x98];
+	int m_nA8;
+
+	bool HasPhysicsParent()
+	{
+		if (m_n94 || m_nA8)
+			return true;
+		return false;
+	}
+};
+
+void CCollisionEvent::vfunc1(void *pEventArg)
+{
+	gamevcollisionevent_t *pEvent = (gamevcollisionevent_t *)pEventArg;
+	ScopeTrace trace("CCollisionEvent::PostCollision", g_106b8540, g_106b8540);
+	char bHasFlags[2] = { 0, 0 };
+	char bFlag10[2] = { 0, 0 };
+	for (int i = 0; i < 2; i++) {
+		IPhysicsObject *pObject = pEvent->pObjects[i];
+		if (pObject) {
+			m_pEntities[i] = (CBaseEntity *)pObject->vfunc6();
+			if (m_pEntities[i]) {
+				bHasFlags[i] = ((CColEntView *)m_pEntities[i])->HasPhysicsParent();
+				int flags = (unsigned short)pObject->vfunc10();
+				pObject->vfunc40((float *)m_postVelocity[i], 0);
+				if (flags & 0x10)
+					bFlag10[i] = 1;
+				if (pEvent->deltaCollisionTime < 1.0) {
+					if (!g_107238f4->vfunc1() && g_107238f4->m_n2c)
+						sub_10158550(pObject, pEvent->deltaCollisionTime);
+				}
+			}
+		}
+	}
+	if (m_pEntities[0] && m_pEntities[1] && !((CEntityVSlots *)m_pEntities[0])->slot68((CEntityVSlots *)m_pEntities[1]) && !((CEntityVSlots *)m_pEntities[1])->slot68((CEntityVSlots *)m_pEntities[0])) {
+		m_flSpeed80 = pEvent->collisionSpeed;
+		m_pInternalData84 = (int)pEvent->pInternalData;
+		if (m_pEntities[0] == m_pEntities[1]) {
+			if (pEvent->isCollision && m_pEntities[0]) {
+				m_pEntities[1] = 0;
+				((CEntityVSlots *)m_pEntities[0])->slot230(0, m_event68);
+				return;
+			}
+		} else if (!bHasFlags[0] || !bHasFlags[1]) {
+			for (int i = 0; i < 2; i++) {
+				if (pEvent->isCollision)
+					((CEntityVSlots *)m_pEntities[i])->slot230(i, m_event68);
+				if (pEvent->isShadowCollision && bFlag10[i])
+					((CEntityVSlots *)m_pEntities[i])->slot228(i, m_event68);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10030510 size=0x19a
 #include "CCollisionEvent.h"
 #include "Vector.h"
