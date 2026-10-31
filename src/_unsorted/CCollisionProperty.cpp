@@ -11,6 +11,19 @@ int CCollisionProperty::vfunc18()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dc190 size=0x1a
+// TARGET: CCollisionProperty::CCollisionProperty
+#include "CCollisionProperty.h"
+struct CUnk100dc300 {
+    void sub_100dc300(int a);
+};
+CCollisionProperty::CCollisionProperty()
+{
+    m_hPartition = 0xffff;
+    ((CUnk100dc300 *)this)->sub_100dc300(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dc1c0 size=0x1
 void CCollisionProperty::vfunc17()
 {
