@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103f5c10 size=0x3
+#include "CItemMMoneyClip.h"
+int CItemMMoneyClip::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10409b50 size=0x1e
 #include "CItemMMoneyClip.h"
 
