@@ -53283,6 +53283,16 @@ double sub_101371d0(float x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101371f0 size=0x14
+float sub_101371d0(int a);
+
+// TARGET: sub_101371f0
+float sub_101371f0(int a)
+{
+	return 1.0f / sub_101371d0(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10137220 size=0x43
 #include <math.h>
 float Vector::sub_10137220()
