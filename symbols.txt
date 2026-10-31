@@ -543,6 +543,7 @@
 0x10001f41 func   ?sub_10077770@CUnknown10077770@@QAEXPAUCUnknownSlot0Obj@@HH@Z CUnknown10077770::sub_10077770
 0x10001f46 func   ?sub_10427520@CTable@@QAEHH@Z CTable::sub_10427520
 0x10001f4b func   ?sub_1006b440@@YAHXZ sub_1006b440
+0x10001f55 func   ?sub_10080420@@YAPAHXZ sub_10080420
 0x10001f5a func   ?sub_101a2820@CRestore@@QAEXPAGPAHPAXPAUtypedescription_t@@@Z CRestore::sub_101a2820
 0x10001f5f func   _item_w_zombie_fists item_w_zombie_fists
 0x10001f69 func   ?sub_10310440@CUnknown10310440@@QAEHPAH@Z CUnknown10310440::sub_10310440

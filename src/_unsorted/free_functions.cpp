@@ -19624,6 +19624,74 @@ void CUtlRBTree24::sub_1007ffc0(int elem)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10080420 size=0x269
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_10548180[2];
+void sub_10006460();
+void sub_10011bc1();
+void sub_1000ce19();
+void sub_100034db();
+
+int *sub_10080420()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 2, "m_iszSceneFile", {0x450, 0}, 1, 6, "SceneFile" },
+        { 2, "m_iszTarget1", {0x458, 0}, 1, 6, "target1" },
+        { 2, "m_iszTarget2", {0x45c, 0}, 1, 6, "target2" },
+        { 2, "m_iszTarget3", {0x460, 0}, 1, 6, "target3" },
+        { 2, "m_iszTarget4", {0x464, 0}, 1, 6, "target4" },
+        { 2, "m_iszOverrideSpeechTarget", {0x468, 0}, 1, 6, "override_speech_target" },
+        { 16, "m_iszBaseAnimSet", {0x480, 0}, 1, 6, "BaseAnim" },
+        { 16, "m_iszAnimSetForMalePlayer", {0x484, 0}, 1, 6, "MaleAnim" },
+        { 16, "m_iszAnimSetForFemalePlayer", {0x488, 0}, 1, 6, "FemaleAnim" },
+        { 4, "m_ActorPosStart", {0x574, 0}, 1, 6, "position_start" },
+        { 4, "m_ActorPosEnd", {0x578, 0}, 1, 6, "position_end" },
+        { 5, "m_bHideEnts", {0x57e, 0}, 1, 6, "hide_ents" },
+        { 5, "m_bForceLOD", {0x57d, 0}, 1, 6, "force_lod_2" },
+        { 5, "m_bFullSound", {0x57f, 0}, 1, 6, "full_sound" },
+        { 5, "m_bIsPlayingBack", {0x498, 0}, 1, 2 },
+        { 5, "m_bPaused", {0x499, 0}, 1, 2 },
+        { 1, "m_flCurrentTime", {0x4a0, 0}, 1, 2 },
+        { 1, "m_flFrameTime", {0x49c, 0}, 1, 2 },
+        { 5, "m_bAutomated", {0x4ac, 0}, 1, 2 },
+        { 4, "m_nAutomatedAction", {0x4b0, 0}, 1, 2 },
+        { 1, "m_flAutomationDelay", {0x4b4, 0}, 1, 2 },
+        { 1, "m_flAutomationTime", {0x4b8, 0}, 1, 2 },
+        { 15, "m_flLastUpdateTime", {0x4a4, 0}, 1, 2 },
+        { 0, "InputStartPlayback", {0, 0}, 1, 8, "Start", 0, (void *)sub_10006460 },
+        { 0, "InputPausePlayback", {0, 0}, 1, 8, "Pause", 0, (void *)sub_10011bc1 },
+        { 0, "InputResumePlayback", {0, 0}, 1, 8, "Resume", 0, (void *)sub_1000ce19 },
+        { 0, "InputCancelPlayback", {0, 0}, 1, 8, "Cancel", 0, (void *)sub_100034db },
+        { 10, "m_OnStart", {0x4cc, 0}, 1, 0x16, "OnStart", g_1055dc70 },
+        { 10, "m_OnCompletion", {0x4e4, 0}, 1, 0x16, "OnCompletion", g_1055dc70 },
+        { 10, "m_OnCanceled", {0x4fc, 0}, 1, 0x16, "OnCanceled", g_1055dc70 },
+        { 10, "m_OnTrigger1", {0x514, 0}, 1, 0x16, "OnTrigger1", g_1055dc70 },
+        { 10, "m_OnTrigger2", {0x52c, 0}, 1, 0x16, "OnTrigger2", g_1055dc70 },
+        { 10, "m_OnTrigger3", {0x544, 0}, 1, 0x16, "OnTrigger3", g_1055dc70 },
+        { 10, "m_OnTrigger4", {0x55c, 0}, 1, 0x16, "OnTrigger4", g_1055dc70 },
+    };
+    g_10548180[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_10548180[0] = (int)&dataDesc[1];
+    return g_10548180;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10080730 size=0x10
 namespace lifted {
 extern char g_1044f044;
