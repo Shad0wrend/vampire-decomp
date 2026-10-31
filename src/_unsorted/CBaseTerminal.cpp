@@ -55,6 +55,13 @@ void CBaseTerminal::vfunc71()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10218020 size=0x1
+#include "CBaseTerminal.h"
+void CBaseTerminal::vfunc275()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10218220 size=0x69
 #include "CBaseTerminal.h"
 #include "CAI_BaseNPCTroika.h"
