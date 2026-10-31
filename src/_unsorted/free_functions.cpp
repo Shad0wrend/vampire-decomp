@@ -117386,6 +117386,49 @@ void CAI_BaseNPCTroika::sub_102c2b20(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c2c50 size=0x1ea
+#include "inputdata_t.h"
+extern "C" char *__cdecl _strlwr(char *);
+extern "C" char *__cdecl strstr(const char *, const char *);
+extern "C" int __cdecl atoi(const char *);
+extern "C" unsigned int __cdecl strlen(const char *);
+#pragma intrinsic(strlen)
+__declspec(dllimport) char *__cdecl Q_strncpy(char *, const char *, int);
+extern void (__cdecl *g_109f3888)(char *, char *, int);
+__declspec(dllimport) void __cdecl DevWarning(const char *, ...);
+void CAI_BaseNPCTroika::sub_102c2c50(inputdata_t *data)
+{
+    char szTemp[64];
+    Q_strncpy(szTemp, data->value.String(), 64);
+    char *pName = _strlwr(szTemp);
+    int nDiscipline;
+    if (strlen(pName)) {
+        if (strstr(pName, "auspex")) nDiscipline = 1;
+        else if (strstr(pName, "celerity")) nDiscipline = 3;
+        else if (strstr(pName, "corpus_vampirus")) nDiscipline = 4;
+        else if (strstr(pName, "fortitude")) nDiscipline = 7;
+        else if (strstr(pName, "obfuscate")) nDiscipline = 8;
+        else if (strstr(pName, "potence")) nDiscipline = 9;
+        else if (strstr(pName, "presence")) nDiscipline = 10;
+        else if (strstr(pName, "shield_of_faith")) nDiscipline = 13;
+        else if (strstr(pName, "divine_vision")) nDiscipline = 14;
+        else if (strstr(pName, "mind_shield")) nDiscipline = 16;
+        else goto bad;
+        char *pLevel = strstr(szTemp, " ");
+        if (pLevel) {
+            g_109f3888(pLevel, szTemp, 64);
+            int nLevel = atoi(szTemp);
+            if (nLevel >= 0 && nLevel <= 5) {
+                vfunc589(nDiscipline, nLevel);
+                return;
+            }
+        }
+    }
+bad:
+    DevWarning("%s recieved invalid SetDiscipline input: %s\n", sub_1000b5cd(), data->value.String());
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c32d0 size=0x52
 #include "inputdata_t.h"
 #include "CUnknown101e0f00.h"
