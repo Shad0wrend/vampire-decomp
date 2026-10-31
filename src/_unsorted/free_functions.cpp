@@ -26763,6 +26763,37 @@ void CBaseEntity::sub_100aaf30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ab980 size=0x1ee
+#include "CBaseEntity.h"
+#include "CEventAction.h"
+#include "ScopeTrace.h"
+#include "CUnknown10738964.h"
+
+__declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+__declspec(dllimport) void DevMsg(const char *pFormat, ...);
+extern CUnknown10738964 *g_106cfe54;
+extern float g_104454c4;
+
+#define STR(p) ((p) ? (p) : g_106b8540)
+
+void CBaseEntity::sub_100ab980(CEventAction *pAction)
+{
+	ScopeTrace trace("CBaseEntity::DrawOutputOverlay", this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY", g_106b8540);
+	char text[1024];
+	if (pAction->m_flDelay != g_104454c4)
+		Q_snprintf(text, sizeof(text), "%3.1f  (%s) --> (%s),%.1f) \n", gpGlobals->curtime, STR((const char *)pAction->m_iTargetInput), STR((const char *)pAction->m_iTarget), pAction->m_flDelay);
+	else
+		Q_snprintf(text, sizeof(text), "%3.1f  (%s) --> (%s)\n", gpGlobals->curtime, STR((const char *)pAction->m_iTargetInput), STR((const char *)pAction->m_iTarget));
+	sub_1009f3c0(text, 10);
+	if (!g_106cfe54->vfunc1() && g_106cfe54->m_n2c) {
+		if (pAction->m_flDelay != g_104454c4)
+			DevMsg("output: (%s,%s) -> (%s,%s,%.1f)\n", STR(m_classname11c), sub_100ab4f0(), STR((const char *)pAction->m_iTarget), STR((const char *)pAction->m_iTargetInput), pAction->m_flDelay);
+		else
+			DevMsg("output: (%s,%s) -> (%s,%s)\n", STR(m_classname11c), sub_100ab4f0(), STR((const char *)pAction->m_iTarget), STR((const char *)pAction->m_iTargetInput));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100abbf0 size=0x71
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
