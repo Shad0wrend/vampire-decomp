@@ -69,3 +69,14 @@ int CNPC_VLasombra::vfunc546(int x)
     return g_10936c74.sub_1000aed4(g_1093b680.sub_10012300(x));
 }
 // END FUNCTION
+
+// FUNCTION: 0x10389390 size=0x14
+#include "CNPC_VLasombra.h"
+
+// TARGET: CNPC_VLasombra::vfunc103
+void CNPC_VLasombra::vfunc103()
+{
+	sub_103c4ef0();
+	*(int *)((char *)this + 0x6664) = 0;
+}
+// END FUNCTION
