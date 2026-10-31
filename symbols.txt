@@ -1053,6 +1053,7 @@
 0x10003058 func   _item_k_museum_storeroom_key item_k_museum_storeroom_key
 0x10003062 func   ?sub_10079230@CUnknown10079230@@QAEPAXXZ CUnknown10079230::sub_10079230
 0x1000306c func   ?sub_1017cf90@@YIPAXPAUHolder@@@Z sub_1017cf90
+0x10003071 func   ?sub_103adbe0@@YIPAXPAX@Z sub_103adbe0
 0x10003076 func   _info_node_sabbat_arch info_node_sabbat_arch
 0x10003085 func   ?vfunc318@CWeaponPhysCannon@@UAEXXZ CWeaponPhysCannon::vfunc318
 0x1000308a func   ?vfunc5@CResearchBook_LG_FIREARMS@@QAEPAV1@I@Z CResearchBook_LG_FIREARMS::vfunc5
