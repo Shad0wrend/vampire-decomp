@@ -17,6 +17,14 @@ void CCollisionProperty::vfunc17()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dc1e0 size=0x7
+// TARGET: sub_100dc1e0
+unsigned int __fastcall sub_100dc1e0(void *pThis)
+{
+    return *(unsigned short *)((char *)pThis + 0x44);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dc3a0 size=0x4
 int CCollisionProperty::vfunc0()
 {
