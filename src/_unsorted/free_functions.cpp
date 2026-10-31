@@ -15031,6 +15031,31 @@ struct CUnknown10073f40 { char p[0x4c]; int a; void sub_10073f40(int v); };
 void CUnknown10073f40::sub_10073f40(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x10073f60 size=0x15
+struct CUnknown10073f60Item
+{
+	int m_n0000;
+	char m_pad0004[0x10];
+};
+
+struct CUnknown10073f60
+{
+	char m_pad0000[0x20];
+	CUnknown10073f60Item m_items[2];
+
+	void sub_10073f60();
+};
+
+// TARGET: CUnknown10073f60::sub_10073f60
+void CUnknown10073f60::sub_10073f60()
+{
+	for (int i = 0; i < 2; i++)
+	{
+		m_items[i].m_n0000 = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10073f90 size=0x45
 #include "utlvector.h"
 struct Elem12 { int a, b, c; };
