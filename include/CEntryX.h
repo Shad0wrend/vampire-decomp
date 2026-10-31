@@ -1,12 +1,17 @@
 // CEntryX: a record found in a global table by key (key at +0, name at +8); a static default one (key -1) is the fallback.
 #pragma once
 
+#include "CVDmg_t.h"
+
 class CEntryX
 {
 public:
 	int m_key;
 	int m_pad;
 	const char *m_name;
+	CVDmg_t m_dmg;	// 0x0c
+	int m_n50;	// 0x50
+	int m_n54;	// 0x54
 	CEntryX(int key);	// stub 0x100066ea
 	~CEntryX();	// stub 0x1000c9f0
 };
