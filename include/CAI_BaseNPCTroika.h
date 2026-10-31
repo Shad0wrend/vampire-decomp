@@ -207,7 +207,9 @@ public:
 
 #include "CAI_BaseNPCTroika_ext.h"
 
-	char m_pad0004[0x204 - 4];
+	char m_pad0004[0x19c - 4];
+	unsigned int m_flags19c;
+	char m_pad01a0[0x204 - 0x1a0];
 	unsigned int m_flags204;
 	char m_pad0208[0x65c - 0x208];
 	char m_b065c;
