@@ -4829,6 +4829,7 @@
 0x1000a29a func   ?sub_10427790@CUnknown10427700@@QAEXPBDHH000@Z CUnknown10427700::sub_10427790
 0x1000a29f func   ?sub_10224fa0@CItemContainerLock@@QAEXPAVCBaseCombatCharacter@@@Z CItemContainerLock::sub_10224fa0
 0x1000a2a4 func   ?vfunc9@CSoundControllerImp@@UAEXPAX@Z CSoundControllerImp::vfunc9
+0x1000a2a9 func   ?vfunc81@CItemGDrugsMorphineBottle@@QAEHXZ CItemGDrugsMorphineBottle::vfunc81
 0x1000a2ae func   ??0CPropDoorknobElectronic@@QAE@XZ CPropDoorknobElectronic::CPropDoorknobElectronic
 0x1000a2bd func   ?vfunc79@CBaseViewModel@@UAEHXZ CBaseViewModel::vfunc79
 0x1000a2c2 func   ?sub_101f3070@@YIXPAD@Z sub_101f3070
