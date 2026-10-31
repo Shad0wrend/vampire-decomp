@@ -91393,6 +91393,23 @@ void CUnknown101f5d80::sub_101f5d80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f5e20 size=0xc
+struct CUnk101f5ed0
+{
+	char m_pad0000[8];
+
+	void sub_101f5ed0();
+	CUnk101f5ed0 *sub_101f5e20();
+};
+
+// TARGET: sub_101f5e20
+CUnk101f5ed0 *CUnk101f5ed0::sub_101f5e20()
+{
+	sub_101f5ed0();
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f5e40 size=0x27
 void __fastcall sub_101f5e40(void **pThis)
 {
