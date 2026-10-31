@@ -9,8 +9,22 @@ struct S1033d380;
 struct CVFeatKV;
 class CUnknown101e0f00;
 
-struct CUnknown101e0f00SrcA	// an element of the first list of a source description
+struct CUnknown101e0f00SrcA	// an element of the first list of a source description: one particle effect
 {
+	int m_bFirstPerson;	// 0x00
+	char m_pad0004;
+	char m_bDiscipline;	// 0x05
+	char m_pad0006[2];
+	const char *m_pszEntity;	// 0x08: the parameter block (CUnknown100eb420) starts here
+	float m_flRateMin;	// 0x0c
+	float m_flOpacityMin;	// 0x10
+	float m_flSizeMin;	// 0x14
+	const char *m_pszParticleName;	// 0x18
+	int m_nAttachType;	// 0x1c
+	const char *m_pszAttachName;	// 0x20
+	int m_nBitFlags;	// 0x24
+	int m_nMiscFlags;	// 0x28
+
 	void sub_101dc8a0();	// Debug_Display (stub 0x10003143)
 };
 
