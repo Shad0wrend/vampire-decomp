@@ -20,6 +20,17 @@ int CFunc_Dust::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10113aa0 size=0x6
+#include "CFunc_Dust.h"
+namespace lifted {
+extern char g_1056fac0;
+}
+int CFunc_Dust::vfunc82()
+{
+    return (int)&lifted::g_1056fac0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10113cc0 size=0x1e
 #include "CFunc_Dust.h"
 
