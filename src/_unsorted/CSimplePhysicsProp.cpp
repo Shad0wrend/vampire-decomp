@@ -34,6 +34,18 @@ int CSimplePhysicsProp::vfunc226()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004fe60 size=0x8
+#include "CSimplePhysicsProp.h"
+// TARGET: CSimplePhysicsProp::vfunc117
+unsigned char CSimplePhysicsProp::vfunc117()
+{
+    unsigned char b;
+    b = ((CBaseEntity *)this)->CBaseEntity::vfunc117();
+    b &= 0xfd;
+    return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004fe80 size=0x1e
 #include "CSimplePhysicsProp.h"
 

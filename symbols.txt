@@ -9110,6 +9110,7 @@
 0x10012aad func   ?sub_1039b1d0@@YAEXZ sub_1039b1d0
 0x10012ab2 func   ?sub_10178120@CUnknown10178120@@QAEHXZ CUnknown10178120::sub_10178120
 0x10012ab7 func   ?sub_101f9650@@YAXH@Z sub_101f9650
+0x10012abc func   ?vfunc117@CSimplePhysicsProp@@UAEEXZ CSimplePhysicsProp::vfunc117
 0x10012ac1 func   ?sub_103d2810@CNPC_VWerewolf@@QAE_NPAX@Z CNPC_VWerewolf::sub_103d2810
 0x10012ac6 func   ?sub_102c62f0@@YGII@Z sub_102c62f0
 0x10012ad5 func   ?sub_1018c600@@YAXXZ sub_1018c600
