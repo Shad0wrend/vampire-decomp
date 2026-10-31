@@ -11,6 +11,17 @@ int CAI_Hint::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d0890 size=0x14
+#include "CAI_Hint.h"
+
+// TARGET: CAI_Hint::vfunc78
+void CAI_Hint::vfunc78()
+{
+	sub_100a8990();
+	*(int *)((char *)this + 0x5e8) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d08c0 size=0x8
 // TARGET: CAI_Hint::vfunc119
 void CAI_Hint::vfunc119()
