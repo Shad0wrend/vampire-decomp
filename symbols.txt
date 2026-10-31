@@ -10414,6 +10414,7 @@
 0x10013e9e func   ?sub_102eb2d0@CUnknown102eb2d0@@QAEXG@Z CUnknown102eb2d0::sub_102eb2d0
 0x10013ea3 func   ?vfunc580@CNPC_VAsianVampire@@QAEHXZ CNPC_VAsianVampire::vfunc580
 0x10013ea8 func   ?sub_100b4010@@YIPAVCBaseEntity@@PAV1@@Z sub_100b4010
+0x10013ead func   ?vfunc80@CItemGOHDiary@@QAEHXZ CItemGOHDiary::vfunc80
 0x10013eb2 func   ?sub_1026ff00@CUnitHelper@@QAEXPBVVector@@PBM@Z CUnitHelper::sub_1026ff00
 0x10013ebc func   _item_k_museum_basement_key item_k_museum_basement_key
 0x10013ec1 func   ?vfunc103@CTempEntTester@@UAEXXZ CTempEntTester::vfunc103

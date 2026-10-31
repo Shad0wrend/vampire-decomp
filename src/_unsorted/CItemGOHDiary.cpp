@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10400900 size=0x6
+#include "CItemGOHDiary.h"
+namespace lifted {
+extern char g_10945260;
+}
+int CItemGOHDiary::vfunc80()
+{
+    return (int)&lifted::g_10945260;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10400920 size=0x3
 #include "CItemGOHDiary.h"
 int CItemGOHDiary::vfunc81()
