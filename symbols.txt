@@ -3485,6 +3485,7 @@
 0x100077c5 func   ?sub_103b1d60@@YAEXZ sub_103b1d60
 0x100077cf func   ?sub_10412550@@YAHH@Z sub_10412550
 0x100077de func   ?sub_10196bb0@@YAPAXXZ sub_10196bb0
+0x100077e3 func   ?vfunc362@CWeaponMelee_BushHook@@QAEHXZ CWeaponMelee_BushHook::vfunc362
 0x100077ed func   ?Grow@?$CUtlMemory@UCUnknown10076da0TimingTag@@@@QAEXH@Z CUtlMemory<CUnknown10076da0TimingTag>::Grow
 0x100077ed func   ?Grow@CUnknown10076da0TagMemory@@QAEXH@Z CUnknown10076da0TagMemory::Grow
 0x100077ed func   ?sub_10079060@CUnknown10079060@@QAEXH@Z CUnknown10079060::sub_10079060

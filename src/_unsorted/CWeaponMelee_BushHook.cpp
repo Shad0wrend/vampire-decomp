@@ -20,6 +20,17 @@ int CWeaponMelee_BushHook::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e4710 size=0x6
+#include "CWeaponMelee_BushHook.h"
+namespace lifted {
+extern char g_10667858;
+}
+int CWeaponMelee_BushHook::vfunc362()
+{
+    return (int)&lifted::g_10667858;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecb70 size=0x1e
 #include "CWeaponMelee_BushHook.h"
 
