@@ -8707,6 +8707,7 @@
 0x100120cb func   ?sub_103ba640@CNPC_VTzimisce@@QAEXPAXPAVVector@@PAH2@Z CNPC_VTzimisce::sub_103ba640
 0x100120df func   ?vfunc32@CPhysicsProp@@UAE_NH@Z CPhysicsProp::vfunc32
 0x100120e9 func   ?sub_1013d0e0@@YAXMMMH_N000@Z sub_1013d0e0
+0x100120f8 func   ?sub_100e94e0@CDialogDependency@@QAEDPAVCBaseEntity@@0@Z CDialogDependency::sub_100e94e0
 0x100120fd func   ?sub_10383e20@CUnknown10383e20@@QAEPAXH@Z CUnknown10383e20::sub_10383e20
 0x10012102 func   ?sub_10412590@@YAXHH@Z sub_10412590
 0x1001211b func   ?vfunc3@CTraitDependencyDataDescSaveDataOps@@UAEXH@Z CTraitDependencyDataDescSaveDataOps::vfunc3

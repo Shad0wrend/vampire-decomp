@@ -39468,6 +39468,52 @@ void CDialogDependency::sub_100e8ef0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e94e0 size=0x1f8
+#include "CDialogDependency.h"
+#include "ScopeTrace.h"
+
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+
+char CDialogDependency::sub_100e94e0(CBaseEntity *pNPC, CBaseEntity *pSpeaker)
+{
+	ScopeTrace trace("CDialogDependency::Test", g_106b8540, g_106b8540);
+	char bResult = 0;
+	switch (m_n21c) {
+	case 0:
+		bResult = 1;
+		break;
+	case 1:
+		if (m_n220 == 1)
+			bResult = sub_100e9760(pNPC, pSpeaker);
+		else if (m_n220 == 2)
+			bResult = sub_100e9ff0((int)pNPC, (int)pSpeaker);
+		else
+			DevMsg("invalid m_CompoundPrecedence in CDialogDependency::Test\n");
+		break;
+	case 2:
+		if (m_n220 == 1)
+			bResult = sub_100e9760(pNPC, pSpeaker) && sub_100e9ff0((int)pNPC, (int)pSpeaker);
+		else if (m_n220 == 2)
+			bResult = sub_100e9ff0((int)pNPC, (int)pSpeaker) && sub_100e9760(pNPC, pSpeaker);
+		else
+			DevMsg("invalid m_CompoundPrecedence in CDialogDependency::Test\n");
+		break;
+	case 3:
+		if (m_n220 == 1)
+			bResult = sub_100e9760(pNPC, pSpeaker) || sub_100e9ff0((int)pNPC, (int)pSpeaker);
+		else if (m_n220 == 2)
+			bResult = sub_100e9ff0((int)pNPC, (int)pSpeaker) || sub_100e9760(pNPC, pSpeaker);
+		else
+			DevMsg("invalid m_CompoundPrecedence in CDialogDependency::Test\n");
+		break;
+	default:
+		DevMsg("invalid m_CompoundType in CDialogDependency::Test\n");
+		break;
+	}
+	return bResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e9ff0 size=0xac
 #include "CDialogDependency.h"
 #include <string.h>
