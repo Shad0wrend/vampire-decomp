@@ -51213,6 +51213,17 @@ void CUnknown101337a0::sub_101337a0(inputdata_t &data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10133910 size=0x30
+#include "CMathCounter.h"
+extern float g_104454c4;
+void CMathCounter::sub_10133910(inputdata_t &inputdata)
+{
+	float flCur = m_OutValue.flValue;
+	float flIn = inputdata.value.fieldType == 1 ? inputdata.value.flValue : g_104454c4;
+	sub_10133950(inputdata.pActivator, flCur - flIn);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10133ac0 size=0x78
 void *sub_1000db89(int);
 extern int vt_104475c4;
