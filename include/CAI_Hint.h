@@ -199,7 +199,8 @@ public:
 	virtual void vfunc179();
 	virtual void vfunc180();
 	virtual void vfunc181(Vector *pPos, int a, int b);
-	void sub_10005e98();	// as in CPhysForce (transplant)
+	void sub_10005e98();
+	void sub_100a8990();	// CBaseEntity::vfunc78 (stub 0x1000468d), called directly by vfunc78	// as in CPhysForce (transplant)
 	void sub_100a8710();	// CBaseEntity::vfunc77 (stub 0x100011cc), called directly
 
 	char m_pad0004[0x4f8];
