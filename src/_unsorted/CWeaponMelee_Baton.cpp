@@ -39,6 +39,17 @@ int CWeaponMelee_Baton::vfunc363()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e8390 size=0xb
+#include "CWeaponMelee_Baton.h"
+namespace lifted {
+int sub_100048fe();
+}
+int CWeaponMelee_Baton::vfunc360()
+{
+    return (lifted::sub_100048fe()) & -1073741825;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ece70 size=0x1e
 #include "CWeaponMelee_Baton.h"
 
