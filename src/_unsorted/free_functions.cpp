@@ -6845,6 +6845,24 @@ void PQ::sub_10046050(const Elem &src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100462a0 size=0x19
+struct CPQ100462a0
+{
+	int m_n[13];
+
+	CPQ100462a0 *sub_100462a0();
+};
+
+// TARGET: sub_100462a0
+CPQ100462a0 *CPQ100462a0::sub_100462a0()
+{
+	m_n[1] = -1;
+	for (int i = 0; i < 13; i++)
+		m_n[i] = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100462d0 size=0x2b
 struct CSix100462d0 {
     int v[6];
