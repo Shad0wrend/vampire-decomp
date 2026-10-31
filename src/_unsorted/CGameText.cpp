@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1020e200 size=0x6
+#include "CGameText.h"
+namespace lifted {
+extern char g_105aab6c;
+}
+int CGameText::vfunc82()
+{
+    return (int)&lifted::g_105aab6c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10216e00 size=0x1e
 #include "CGameText.h"
 
