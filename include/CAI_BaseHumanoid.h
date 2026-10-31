@@ -21,8 +21,15 @@ public:
 	int m_pad5f98;
 	const char *m_pSceneName;	// 0x5f9c
 	unsigned int m_hScene;	// 0x5fa0
-	char pad3[0x5fe0 - 0x5fa4];
+	char pad3[0x5fb8 - 0x5fa4];
+	int m_nPose5fb8[10];	// 0x5fb8: pose parameter indices (body_trans_Y .. neck_trans)
 	int m_nPose5fe0[3];	// 0x5fe0: pose parameter indices reset by sub_1025efc0
+	int m_nPose5fec[13];	// 0x5fec: pose parameter indices (move_rightleft .. head_tilt)
+
+	void sub_1000245f(void *p);	// CBaseCombatCharacter::vfunc105 (stub), called directly
+	int sub_10009ac5(const char *pszName);	// CBaseAnimating::sub_10092270 (stub): index of a pose parameter
+	int sub_1001337c(const char *pszName);	// CBaseFlex::sub_100b5d10 (stub): index of a flex controller
+	void vfunc105(void *p);
 
 	void sub_1025efc0();	// resets the three pose parameters (slot 346(index, 0, 0)), runs CBaseAnimating::sub_100955c0 and clears bits 0 and 1 of +0x5f4c
 
