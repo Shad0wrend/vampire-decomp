@@ -20,6 +20,17 @@ int CWeaponMelee_Claws::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e4a80 size=0x6
+#include "CWeaponMelee_Claws.h"
+namespace lifted {
+extern char g_10668808;
+}
+int CWeaponMelee_Claws::vfunc362()
+{
+    return (int)&lifted::g_10668808;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecba0 size=0x1e
 #include "CWeaponMelee_Claws.h"
 
