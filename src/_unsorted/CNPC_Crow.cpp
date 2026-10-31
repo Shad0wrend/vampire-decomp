@@ -226,6 +226,19 @@ void CNPC_Crow::vfunc434()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10358c40 size=0xd
+#include "CNPC_Crow.h"
+namespace lifted {
+extern char g_10628c14;
+int __stdcall sub_10005c59(int);
+}
+bool CNPC_Crow::vfunc394()
+{
+    lifted::sub_10005c59((int)&lifted::g_10628c14);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10358ce0 size=0x17a
 #include "CNPC_Crow.h"
 #include "CUnknown1070b244.h"
