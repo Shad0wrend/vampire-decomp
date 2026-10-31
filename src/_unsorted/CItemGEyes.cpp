@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10403980 size=0x3
+#include "CItemGEyes.h"
+int CItemGEyes::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040a900 size=0x1e
 #include "CItemGEyes.h"
 
