@@ -168,6 +168,20 @@ CNPC_VNewscaster *CNPC_VNewscaster::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a03a0 size=0x10
+#include "vampire.h"
+
+void __fastcall sub_103a0d50(void *pThis);
+void __fastcall sub_1028d6e0(void *pThis);
+
+// TARGET: sub_103a03a0
+void __fastcall sub_103a03a0(void *pThis)
+{
+	sub_103a0d50(pThis);
+	sub_1028d6e0(pThis);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a03e0 size=0x2f
 // TARGET: CNPC_VNewscaster::vfunc104
 #include "CNPC_VNewscaster.h"
