@@ -70015,6 +70015,18 @@ char * __stdcall sub_101b40a0(char *p, int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b4170 size=0x61
+#include "CSoundEmitterSystemBase.h"
+
+int CSoundEmitterSystemBase::sub_101b4170(const char *pszName)
+{
+	CSoundParameters params;
+	if (!sub_101b33f0(pszName, params))
+		return 75;
+	return params.soundlevel;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b45b0 size=0x99
 #include "CUnknown101b45b0.h"
 extern "C" __declspec(dllimport) char *Q_strncpy(char *dest, const char *src, int maxLen);

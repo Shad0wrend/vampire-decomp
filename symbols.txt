@@ -237,6 +237,7 @@
 0x10001771 func   ?sub_100ce570@CList_t@@QAE_NHHPAH@Z CList_t::sub_100ce570
 0x10001776 func   ?vfunc5@CHudEntity@@QAEPAV1@I@Z CHudEntity::vfunc5
 0x1000177b func   ?sub_10376ba0@CNPC_VFrenzyShadow@@QAE_NH@Z CNPC_VFrenzyShadow::sub_10376ba0
+0x10001780 func   ?sub_101b4170@CSoundEmitterSystemBase@@QAEHPBD@Z CSoundEmitterSystemBase::sub_101b4170
 0x10001785 func   ?vfunc5@CBaseFire@@UAEPAV1@I@Z CBaseFire::vfunc5
 0x1000178f func   _npc_VDog npc_VDog
 0x10001794 func   ?sub_101a7390@CCineNPC@@QAEXH@Z CCineNPC::sub_101a7390
