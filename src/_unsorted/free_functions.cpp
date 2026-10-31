@@ -55120,6 +55120,16 @@ float sub_1013a8c0(float x, float g)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013a940 size=0x19
+#include <math.h>
+
+// TARGET: sub_1013a940
+double sub_1013a940(float x)
+{
+	return (1.0 - cos(x * 3.141592653589793)) * 0.5;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013a9f0 size=0x82
 #include "Quaternion.h"
 

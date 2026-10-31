@@ -10384,6 +10384,7 @@
 0x100133b8 func   ?sub_1006e6a0@CBaseCineCam@@QAE_NHHHHH@Z CBaseCineCam::sub_1006e6a0
 0x100133c2 func   ?sub_10245720@@YAXI@Z sub_10245720
 0x100133c7 func   ?vfunc138@CNPC_VMoleman@@UAEHXZ CNPC_VMoleman::vfunc138
+0x100133cc func   ?sub_1013a940@@YANM@Z sub_1013a940
 0x100133d1 func   ?sub_102ce550@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_102ce550
 0x100133e0 func   ?sub_101e49b0@UtlVec8@@QAEXHH@Z UtlVec8::sub_101e49b0
 0x100133e5 func   ?sub_10375370@@YIPAXPAX@Z sub_10375370
