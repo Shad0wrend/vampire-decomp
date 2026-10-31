@@ -52976,6 +52976,14 @@ float sub_10137300(const float *pVec)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10137480 size=0x8
+float __fastcall sub_101373c0(void *pThis);
+void __fastcall sub_10137480(void *pThis)
+{
+    sub_101373c0(pThis);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10137c30 size=0x28
 #include <math.h>
 extern float g_1070c8ac[];

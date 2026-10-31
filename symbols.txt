@@ -511,6 +511,7 @@
 0x10001fff func   ?vfunc104@CNPC_VManBat@@QAEXXZ CNPC_VManBat::vfunc104
 0x10002004 func   ?sub_101e8b90@CUnknown101e8b90@@QAEHXZ CUnknown101e8b90::sub_101e8b90
 0x10002009 func   ?vfunc104@CItemContainer@@QAEXXZ CItemContainer::vfunc104
+0x1000200e func   ?sub_10137480@@YIXPAX@Z sub_10137480
 0x10002013 func   ?sub_100ee630@CBaseDoor@@QAEXPAVCBaseEntity@@@Z CBaseDoor::sub_100ee630
 0x10002018 func   ?vfunc104@CNPC_VGhoulCroucher@@UAEXXZ CNPC_VGhoulCroucher::vfunc104
 0x1000201d func   ?sub_10150f50@CPhysicsCannister@@QAEXXZ CPhysicsCannister::sub_10150f50
