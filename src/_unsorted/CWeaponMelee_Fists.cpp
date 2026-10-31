@@ -31,6 +31,14 @@ int CWeaponMelee_Fists::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e57d0 size=0x6
+#include "CWeaponMelee_Fists.h"
+int CWeaponMelee_Fists::vfunc363()
+{
+    return 0xe1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecc60 size=0x1e
 #include "CWeaponMelee_Fists.h"
 
