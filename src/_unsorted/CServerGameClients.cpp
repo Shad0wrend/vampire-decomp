@@ -26,6 +26,18 @@ void CServerGameClients::vfunc2(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011c4a0 size=0x15
+#include "CServerGameClients.h"
+
+int sub_10352d70(int a, int b);
+
+// TARGET: CServerGameClients::vfunc4
+int CServerGameClients::vfunc4(int a, int b)
+{
+	return sub_10352d70(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011d3e0 size=0x42
 #include "CServerGameClients.h"
 #include "CGlobalEntityList.h"
