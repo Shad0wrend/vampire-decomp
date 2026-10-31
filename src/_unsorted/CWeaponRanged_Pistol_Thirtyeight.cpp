@@ -31,6 +31,14 @@ int CWeaponRanged_Pistol_Thirtyeight::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102371a0 size=0x6
+#include "CWeaponRanged_Pistol_Thirtyeight.h"
+int CWeaponRanged_Pistol_Thirtyeight::vfunc363()
+{
+    return 0xf5;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a530 size=0x1e
 #include "CWeaponRanged_Pistol_Thirtyeight.h"
 
