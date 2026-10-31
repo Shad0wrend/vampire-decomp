@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10407480 size=0x6
+#include "CItemGSewerBook1.h"
+namespace lifted {
+extern char g_1094914c;
+}
+int CItemGSewerBook1::vfunc80()
+{
+    return (int)&lifted::g_1094914c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104074a0 size=0x3
 #include "CItemGSewerBook1.h"
 int CItemGSewerBook1::vfunc81()

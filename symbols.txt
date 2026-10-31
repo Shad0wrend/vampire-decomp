@@ -9400,6 +9400,7 @@
 0x100120c1 func   ?vfunc87@CBaseEntity@@UAEXPAX@Z CBaseEntity::vfunc87
 0x100120c6 func   ?vfunc103@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::vfunc103
 0x100120cb func   ?sub_103ba640@CNPC_VTzimisce@@QAEXPAXPAVVector@@PAH2@Z CNPC_VTzimisce::sub_103ba640
+0x100120d0 func   ?vfunc80@CItemGSewerBook1@@QAEHXZ CItemGSewerBook1::vfunc80
 0x100120da func   ?vfunc81@CItemGIdolCrane@@QAEHXZ CItemGIdolCrane::vfunc81
 0x100120df func   ?vfunc32@CPhysicsProp@@UAE_NH@Z CPhysicsProp::vfunc32
 0x100120e9 func   ?sub_1013d0e0@@YAXMMMH_N000@Z sub_1013d0e0
