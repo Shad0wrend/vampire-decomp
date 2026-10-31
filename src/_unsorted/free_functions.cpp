@@ -56565,6 +56565,18 @@ void CUnit10155460::sub_10155460(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10155a30 size=0x30
+#include "CRagdollProp.h"
+struct CPhysObjView25 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); };
+void CRagdollProp::sub_10155a30()
+{
+	for (int i = 0; i < m_nBodies730; i++)
+		((CPhysObjView25 *)m_Bodies[i].m_pObject)->v25();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101563b0 size=0x88
 struct CRagdollBody { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
 	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
