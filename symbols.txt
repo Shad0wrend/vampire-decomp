@@ -10228,6 +10228,7 @@
 0x10015276 func   ?vfunc268@CPropHacking@@QAEHH@Z CPropHacking::vfunc268
 0x1001527b func   ?sub_10066ae0@CUnknown10066ae0@@QAEHXZ CUnknown10066ae0::sub_10066ae0
 0x10015280 func   ?sub_103be130@CUnknown10381be0@@QAE_NXZ CUnknown10381be0::sub_103be130
+0x10015285 func   ?vfunc601@CNPC_VHuman@@UAEXH@Z CNPC_VHuman::vfunc601
 0x1001528a func   ?sub_102c6a50@UtlVec8@@QAEHHPBUUtlVec8Elem@@@Z UtlVec8::sub_102c6a50
 0x1001528f func   ?sub_100ff020@CEnvBeam@@QAEXXZ CEnvBeam::sub_100ff020
 0x10015299 func   ?sub_102370b0@@YAHXZ sub_102370b0

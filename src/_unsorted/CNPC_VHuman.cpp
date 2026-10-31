@@ -240,6 +240,30 @@ char CNPC_VHuman::vfunc600(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10385cf0 size=0x57
+#include "CNPC_VHuman.h"
+struct CHumanNotify { virtual void v0(); virtual void vfunc1(); };
+extern CHumanNotify *g_10924edc;
+struct CHumanFields601
+{
+	char m_pad0000[0x6070];
+	float m_f6070;
+	char m_pad6074[4];
+	char m_b6078;
+	char m_pad6079[0x65e8 - 0x6079];
+	CAI_NamedThing *m_pNamed65e8;
+};
+void CNPC_VHuman::vfunc601(int a)
+{
+	CHumanFields601 *f = (CHumanFields601 *)this;
+	g_10924edc->vfunc1();
+	f->m_b6078 = 0;
+	if (vfunc308())
+		f->m_f6070 = enginerandom->vfunc1(5.0f, 10.0f) + gpGlobals->curtime;
+	f->m_pNamed65e8->sub_1025ddd0(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10385d70 size=0x9d
 #include "CNPC_VHuman.h"
 
