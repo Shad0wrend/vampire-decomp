@@ -85406,6 +85406,14 @@ float CUnknown101e8e20::sub_101e8e20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e8e40 size=0x7
+// TARGET: sub_101e8e40
+double __fastcall sub_101e8e40(char *pThis)
+{
+    return (double)*(int *)(pThis + 0x358);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e8e60 size=0x7
 struct CUnknown101e8e60 { int sub_101e8e60(); };
 int CUnknown101e8e60::sub_101e8e60()
