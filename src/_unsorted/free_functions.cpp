@@ -107332,6 +107332,30 @@ void CVGuiScreen::sub_10231f40(const char *pszPanelName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10231f80 size=0x1b
+// TARGET: sub_10231f80
+struct CUnk10231f80Iface {
+    virtual void a0();
+    virtual void a1();
+    virtual void a2();
+    virtual void a3();
+    virtual void a4();
+    virtual void a5();
+    virtual void a6(int first, int second);
+};
+extern CUnk10231f80Iface *g_1070b23c;
+extern int g_10571c20;
+struct CUnk10231f80 {
+    char pad[0x458];
+    int m_n458;
+    void sub_10231f80();
+};
+void CUnk10231f80::sub_10231f80()
+{
+    g_1070b23c->a6(g_10571c20, m_n458);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10231fb0 size=0x1e
 struct CUnknown10231fb0 { int sub_10231fb0(int, int); };
 int CUnknown10231fb0::sub_10231fb0(int a0, int a1)
