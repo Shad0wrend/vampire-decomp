@@ -199,6 +199,13 @@ void CNPC_VSheriffMan::vfunc444(int *pTask)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103af810 size=0x5
+bool CNPC_VSheriffMan::vfunc566(int a0)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103af830 size=0x72
 #include "CNPC_VSheriffMan.h"
 
