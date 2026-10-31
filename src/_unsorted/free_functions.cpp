@@ -107951,6 +107951,22 @@ SendProp sub_10247030(const char *pszDataTableName, const char *pszPropName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102471f0 size=0x12
+#include "vampire.h"
+
+struct CUnknown10247240
+{
+	void sub_10247240(int a, int b, int c);
+};
+
+// TARGET: sub_102471f0
+void *__fastcall sub_102471f0(void *pThis)
+{
+	((CUnknown10247240 *)pThis)->sub_10247240(0, 0, 0);
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10247220 size=0x1
 void sub_10247220()
 {
