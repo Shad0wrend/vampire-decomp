@@ -97716,6 +97716,14 @@ void CTriggerDisciplineContext::sub_10210b00(void *pInputData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10210bc0 size=0x9
+void __cdecl sub_101cd9e0(int a);
+void sub_10210bc0()
+{
+    sub_101cd9e0(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10210be0 size=0x43
 #include "CTriggerDisciplineContext.h"
 void *sub_100aa720(int size);
