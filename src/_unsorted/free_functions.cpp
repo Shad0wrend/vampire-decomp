@@ -149666,6 +149666,16 @@ extern "C" CBaseEntity *npc_VVentrue()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c7880 size=0xc
+void __fastcall sub_103c78a0(void *p);
+
+void *__fastcall sub_103c7880(void *p)
+{
+    sub_103c78a0(p);
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c78a0 size=0x33
 void sub_10007897();
 void sub_10005f2e();
