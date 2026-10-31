@@ -4944,6 +4944,7 @@
 0x1000a137 func   ?vfunc438@CNPC_VCamera@@QAEHXZ CNPC_VCamera::vfunc438
 0x1000a141 func   ?vfunc365@CNPCMaker_Fleshpile@@UAE_NH@Z CNPCMaker_Fleshpile::vfunc365
 0x1000a14b func   ?sub_10170d60@CBasePlayer@@QAEXXZ CBasePlayer::sub_10170d60
+0x1000a150 func   ?vfunc82@CBaseMoneyObject@@QAEHXZ CBaseMoneyObject::vfunc82
 0x1000a155 func   ?sub_102ae8e0@CUnknown102ae8e0@@QAEHH@Z CUnknown102ae8e0::sub_102ae8e0
 0x1000a15a func   ?sub_101ecde0@ItemLoader@@QAE_NXZ ItemLoader::sub_101ecde0
 0x1000a169 func   ?vfunc5@CBaseVampireSkillEntity@@QAEPAV1@I@Z CBaseVampireSkillEntity::vfunc5

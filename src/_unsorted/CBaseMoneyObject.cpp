@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103f56f0 size=0x6
+#include "CBaseMoneyObject.h"
+namespace lifted {
+extern char g_1067f184;
+}
+int CBaseMoneyObject::vfunc82()
+{
+    return (int)&lifted::g_1067f184;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f57b0 size=0x1e
 #include "CBaseMoneyObject.h"
 
