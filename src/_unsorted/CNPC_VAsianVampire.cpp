@@ -12,6 +12,17 @@ int CNPC_VAsianVampire::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103603f0 size=0x6
+#include "CNPC_VAsianVampire.h"
+namespace lifted {
+extern int g_1062c5ec;
+}
+int CNPC_VAsianVampire::vfunc451()
+{
+    return lifted::g_1062c5ec;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10360610 size=0x1d
 #include "CNPC_VAsianVampire.h"
 struct A { int sub_10012300(int); };
