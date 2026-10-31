@@ -40,6 +40,17 @@ void CGargoyleTalisman::vfunc300()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103fbdd0 size=0x6
+#include "CGargoyleTalisman.h"
+namespace lifted {
+extern char g_10943964;
+}
+int CGargoyleTalisman::vfunc80()
+{
+    return (int)&lifted::g_10943964;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103fbdf0 size=0x3
 #include "CGargoyleTalisman.h"
 int CGargoyleTalisman::vfunc81()
