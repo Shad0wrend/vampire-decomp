@@ -110540,6 +110540,18 @@ float sub_10251790()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102517b0 size=0x11
+#include "vampire.h"
+
+int __cdecl sub_10259de0(unsigned short a);
+
+// TARGET: sub_102517b0
+int __fastcall sub_102517b0(void *pThis)
+{
+	return sub_10259de0(*(unsigned short *)((char *)pThis + 0x8da));
+}
+// END FUNCTION
+
 // FUNCTION: 0x102517e0 size=0xb4
 #include "CVDmg_t.h"
 
