@@ -140473,6 +140473,41 @@ void CUnk1034f9e0::sub_1034f9e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10350340 size=0x20e
+#include "engineserver.h"
+
+void sub_1016e650();
+extern int g_10726020, g_10726024, g_10726054, g_10726058, g_1072605c, g_10726060, g_10726064, g_10726068;
+extern int g_1072606c, g_10726070, g_10726074, g_10726078, g_1072607c, g_10726080, g_10726084, g_10726088;
+extern int g_1072608c, g_10726090, g_10726094, g_10726098;
+
+// TARGET: sub_10350340
+void sub_10350340()
+{
+	sub_1016e650();
+	g_10726020 = engine->vfunc82("Health", 1);
+	g_10726024 = engine->vfunc82("Damage", 0x12);
+	g_10726054 = engine->vfunc82("DiscCtrl", 1);
+	g_10726058 = engine->vfunc82("Bloodctrl", 1);
+	g_1072605c = engine->vfunc82("Faithctrl", 1);
+	g_10726060 = engine->vfunc82("FeedBar", 1);
+	g_10726064 = engine->vfunc82("BossHP", -1);
+	g_10726068 = engine->vfunc82("FrenzyBar", 1);
+	g_1072606c = engine->vfunc82("AgrDmg", 1);
+	g_10726074 = engine->vfunc82("Discipline", -1);
+	g_10726078 = engine->vfunc82("TraitFX", 2);
+	g_1072607c = engine->vfunc82("ProgBar", -1);
+	g_10726080 = engine->vfunc82("HUDTimer", 8);
+	g_10726084 = engine->vfunc82("InfoBarCtrl", -1);
+	g_10726070 = engine->vfunc82("InfoCtrl", -1);
+	g_10726088 = engine->vfunc82("SignUI", -1);
+	g_1072608c = engine->vfunc82("DialogCtrl", -1);
+	g_10726090 = engine->vfunc82("RangedAcc", 1);
+	g_10726094 = engine->vfunc82("ForceCam", 1);
+	g_10726098 = engine->vfunc82("Credits", -1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10351510 size=0xb
 namespace lifted {
 extern char g_104a271c;
