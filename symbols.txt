@@ -8952,6 +8952,7 @@
 0x100116d5 func   ?sub_10363780@@YAHXZ sub_10363780
 0x100116da func   ?sub_10428750@@YAPBDHH@Z sub_10428750
 0x100116df func   ?vfunc5@CBreakModelsPrecached@@UAEXXZ CBreakModelsPrecached::vfunc5
+0x100116e4 func   ?vfunc80@CWeaponMelee_Tzimisce2Claw@@QAEHXZ CWeaponMelee_Tzimisce2Claw::vfunc80
 0x100116e9 func   ?sub_10395c70@CNPC_VMingXiao@@QAEXXZ CNPC_VMingXiao::sub_10395c70
 0x100116ee func   ?vfunc1@CPhysicsAnimlinkEntityDeleteProxy@@QAEXPAVCBaseEntity@@@Z CPhysicsAnimlinkEntityDeleteProxy::vfunc1
 0x100116f8 func   ?sub_10033aa0@CBaseEntity@@QAEXPAM00@Z CBaseEntity::sub_10033aa0
