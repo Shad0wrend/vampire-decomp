@@ -36489,6 +36489,32 @@ extern char g_106e7e91;
 void sub_100db3f0() { g_106e7e91 = 1; }
 // END FUNCTION
 
+// FUNCTION: 0x100db4a0 size=0x63
+#include <stdio.h>
+#include "CUnknown10245700.h"
+extern CUnknown10245700 *g_1055e880[];
+extern CUnknown10245700 *g_1055e8fc[];
+void *sub_101193b0();
+void sub_101ce620(void *pPlayer, int type, const char *a, const char *b, const char *c, const char *d, const char *e);
+
+void sub_100db4a0()
+{
+	char buf[128];
+	char *pOwner = (char *)sub_101193b0();
+	if (pOwner) {
+		void *pPlayer = *(void **)(pOwner + 0xa8);
+		if (pPlayer) {
+			CUnknown10245700 **pp = g_1055e880;
+			do {
+				sprintf(buf, "\t%s\n", (*pp)->sub_10245700());
+				sub_101ce620(pPlayer, 2, buf, 0, 0, 0, 0);
+				pp++;
+			} while ((int)pp < (int)g_1055e8fc);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100db5c0 size=0x41
 #include "CAI_BaseNPCTroika.h"
 #include "CBaseEntity.h"
