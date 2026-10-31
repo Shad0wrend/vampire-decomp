@@ -145113,6 +145113,19 @@ bool CTargetNPC::sub_103be3d0(CBaseEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103bf170 size=0x63
+#include "CNPC_VTzimisce.h"
+void sub_101cd970(CBaseEntity *);
+void CNPC_VTzimisce::sub_103bf170()
+{
+	m_hTarget = -1;
+	sub_102c43b0(0.75f);
+	sub_101cd970(m_hEnt6684.Get());
+	m_hEnt6684 = (CBaseEntity *)0;
+	sub_103be0b0(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103bf200 size=0xed
 #include "CUnknown103bf200.h"
 
