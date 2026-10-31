@@ -109427,6 +109427,23 @@ ConVar *ConVar::sub_10245bd0(const char *pName, const char *pDefaultValue, int f
 }
 // END FUNCTION
 
+// FUNCTION: 0x10245c80 size=0x18
+struct CUnk10245c80 {
+    char pad[0x20];
+    int m_20;
+    char pad2[0x40 - 0x24];
+    void (__cdecl *m_40)(void *, int);
+    void sub_10245c80(void (__cdecl *fn)(void *, int));
+};
+
+void CUnk10245c80::sub_10245c80(void (__cdecl *fn)(void *, int))
+{
+    m_40 = fn;
+    if (fn)
+        fn(this, m_20);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102461b0 size=0xd
 void CUnknown102461b0::sub_102461b0()
 {
