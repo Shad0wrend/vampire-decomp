@@ -72990,6 +72990,61 @@ void CUnknown101b0d80::sub_101b0d80(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b0dc0 size=0x1ff
+#include "CSoundEmitterSystemBase.h"
+#include "ScopeTrace.h"
+#include "CRecipientFilter.h"
+
+struct SndUnkView { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void *vfunc4(); };
+struct SndEdictView { char pad[0x40]; SndUnkView *m_pUnk; };
+struct SndStr { const char *p; };
+struct SndEntView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual SndStr *vfunc9(SndStr *out);
+};
+struct SndTraceOut {
+	void sub_10037300(const char *func, const char *name, const char *line);
+	~SndTraceOut() { (*g_109f3680)--; }
+};
+extern CSoundEmitterSystemBase g_1072be18;
+extern "C" __declspec(dllimport) int __cdecl Q_strncasecmp(const char *a, const char *b, int n);
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+
+// TARGET: sub_101b0dc0
+void sub_101b0dc0(const CRecipientFilter *filter, int iEntIndex, const char *soundname, const float *pOrigin, int soundtime, float *duration)
+{
+	CSoundParameters params;
+	SndEntView *pEnt;
+	{
+		ScopeTrace t1("CBaseEntity::Instance", g_106b8540);
+		SndEdictView *pEdict = (SndEdictView *)engine->vfunc38(iEntIndex);
+		{
+			SndTraceOut t2;
+			t2.sub_10037300("CBaseEntity::Instance", g_106b8540, g_106b8540);
+			if (!pEdict)
+				pEdict = (SndEdictView *)engine->vfunc38(0);
+			if (pEdict && pEdict->m_pUnk)
+				pEnt = (SndEntView *)pEdict->m_pUnk->vfunc4();
+			else
+				pEnt = 0;
+		}
+	}
+	if (pEnt) {
+		SndStr tmp;
+		const char *s = pEnt->vfunc9(&tmp)->p;
+		g_1072be18.sub_101b3b90(s ? s : g_106b8540);
+	}
+	if (g_1072be18.sub_101b33f0(soundname, params) && params.soundname[0]) {
+		if (!Q_strncasecmp(params.soundname, "vo", 2) && params.channel != 5 && params.channel != 2)
+			DevMsg("EmitSound:  Voice .wav file %s doesn't specify CHAN_VOICE or CHAN_STREAM for sound %s\n", params.soundname, soundname);
+		enginesound->vfunc2(filter, iEntIndex, params.channel, params.soundname, params.volume, params.soundlevel, 0, params.pitch, pOrigin, 0, 1, soundtime);
+		if (duration)
+			*duration = enginesound->vfunc1(params.soundname);
+		((void (__cdecl *)(void *, const char *, const char *, const char *, int))((void **)g_1072be18.m_vtbl)[3])(&g_1072be18, "EmitSound:  '%s' emitted as '%s' (ent %i)\n", soundname, params.soundname, iEntIndex);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b1040 size=0xa1
 struct SSoundParams
 {
