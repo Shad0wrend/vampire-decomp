@@ -117006,6 +117006,25 @@ bool CAI_BaseNPCTroikaUnit6120::sub_102b6120(Vector *pPos, char bFlag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b7f40 size=0x5d
+#include "CAI_BaseNPCTroika.h"
+#include "CStatusFlagList.h"
+#include "engineiface.h"
+extern CStatusFlagList g_10739a4c;
+bool CAI_BaseNPCTroika::sub_102b7f40()
+{
+	if (sub_1008dc40(0x10, -1)) {
+		if (!sub_10014df8(0x2c) && enginerandom->vfunc2(0, 99) < 75)
+			return true;
+		if (g_10739a4c.sub_101e3f50((CStatusTarget *)this))
+			return true;
+		if (sub_10014df8(0x3c))
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b97a0 size=0x33
 void sub_1000b15e();
 void sub_10002914();
