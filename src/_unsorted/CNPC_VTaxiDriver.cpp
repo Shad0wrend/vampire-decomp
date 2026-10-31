@@ -20,6 +20,17 @@ int CNPC_VTaxiDriver::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b2f90 size=0x6
+#include "CNPC_VTaxiDriver.h"
+namespace lifted {
+extern int g_10651f50;
+}
+int CNPC_VTaxiDriver::vfunc451()
+{
+    return lifted::g_10651f50;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b3170 size=0x1d
 #include "CNPC_VTaxiDriver.h"
 struct A { int sub_10012300(int); };
