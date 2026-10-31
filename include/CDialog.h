@@ -99,6 +99,7 @@ public:
 	int sub_100e82d0(int *pChoices);	// stub 0x10014858: collects the player choices into the array, returns their count
 	int sub_100e8520(int nKey, int nSlot, char *pPacket);	// stub 0x10001fe1: builds response nSlot for the choice key into the packet; -1 failed (no reply), 0 skipped, 1 and above filled
 	void sub_100dfb80(CBaseEntity *pNPC, CBaseEntity *pSpeaker);	// "CDialog::GenerateScriptFile": scope trace; without a table takes the handles of the speaker (its object at +0x98) and of the NPC (its object at +0xa8) and, when both resolve, logs "Dumping script file for npc: %s, dialog: %s", runs sub_100e37d0 / sub_100e34d0, clears both handles and unloads the table (sub_100e5770)
+	int sub_100e3180(CDialogEntry_t *pEntry, int pFile);	// stub 0x10013a61: audit one table entry; writes every missing speech file (mp3 / vcd / lip) of its text and of the per-clan texts to the script file and returns how many were missing
 	void sub_100e7d10(char *pPacket, const char *pszText);	// stub 0x100090de: writes the NPC text into the packet
 	void sub_100e8060(char *pPacket, int nMax);	// stub 0x100023c4: finishes the packet line (limit nMax)
 	void sub_100e5d00(int nIndex, char *pszText);	// "CDialog::message_append": scope trace; sends a reliable user message (type g_1072608c, byte 1, nIndex, the text) to the player behind the handle at +4, in pieces of at most 100 characters
