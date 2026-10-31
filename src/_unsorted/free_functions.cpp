@@ -117587,6 +117587,43 @@ void CAI_KeyedList::sub_102cc6c0(int key, float a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cc760 size=0x60
+#include "CAIPendingCondList.h"
+#include "globalvars.h"
+
+struct sub_DevFlag102cc760
+{
+	virtual void v0();
+	virtual char vfunc1();
+};
+extern sub_DevFlag102cc760 *g_10924a6c;
+
+// TARGET: CAIPendingCondList::sub_102cc760
+void CAIPendingCondList::sub_102cc760(CAI_BaseNPCCondTarget *pNPC)
+{
+	if (m_nEntries && pNPC)
+	{
+		CAIPendingCond *pCur = m_Entries;
+		CAIPendingCond *pEnd = &m_Entries[m_nEntries];
+		if (pCur < pEnd)
+		{
+			do
+			{
+				if (pCur->m_flExpireTime <= gpGlobals->curtime)
+				{
+					g_10924a6c->vfunc1();
+					pNPC->sub_10269a20(pCur->m_nCondition);
+					sub_102cc730(pCur);
+					pEnd--;
+				}
+				else
+					pCur++;
+			} while (pCur < pEnd);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cc7e0 size=0x8
 void __fastcall sub_102cc7e0(int *p) { p[16] = 0; }
 // END FUNCTION
