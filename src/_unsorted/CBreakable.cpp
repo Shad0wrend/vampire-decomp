@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1010d450 size=0x6
+#include "CBreakable.h"
+namespace lifted {
+extern char g_1056e590;
+}
+int CBreakable::vfunc82()
+{
+    return (int)&lifted::g_1056e590;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010d8c0 size=0xa0
 #include "CBreakable.h"
 
