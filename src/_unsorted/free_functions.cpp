@@ -169233,6 +169233,22 @@ unsigned short CUnknown1042d9a0::sub_1042d9a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042d9c0 size=0x18
+struct CBits1042d9c0
+{
+	unsigned int m_bits;
+
+	void sub_1042d9c0(int v);
+};
+
+// TARGET: sub_1042d9c0
+void CBits1042d9c0::sub_1042d9c0(int v)
+{
+	unsigned int s = v << 28;
+	m_bits = ((m_bits ^ s) & 0xfffffff) ^ s;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042d9f0 size=0x6
 unsigned __fastcall sub_1042d9f0(unsigned *p) { return *p >> 28; }
 // END FUNCTION
