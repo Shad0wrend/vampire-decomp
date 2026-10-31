@@ -317,7 +317,9 @@ public:
 	char m_pad64c1[0x64c8 - 0x64c1];
 	int m_n64c8;	// 0x64c8: the table index (stance) the NPC is in
 	float m_f64cc;
-	char m_pad64d0[0x64e4 - 0x64d0];
+	char m_pad64d0[0x64e0 - 0x64d0];
+	char m_b64e0;
+	char m_pad64e1[3];
 	float m_f64e4;	// 0x64e4: curtime of the last stance change
 	char m_pad64e8[0x64ec - 0x64e8];
 	char m_b64ec;	// 0x64ec: the second talking flag (sub_102c1170)
