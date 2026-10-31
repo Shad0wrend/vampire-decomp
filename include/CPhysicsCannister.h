@@ -54,6 +54,7 @@ public:
 	char m_bLeaking;	// 0x19e4
 	char m_pad19e5[0x19f4 - 0x19e5];
 	float m_flLeakStart;	// 0x19f4
-	char m_pad19f8[0x1a14 - 0x19f8];
+	const char *m_pszSound19f8;	// 0x19f8: sound name stopped by slot 104
+	char m_pad19fc[0x1a14 - 0x19fc];
 	const char *m_pszExplosion1a14;	// 0x1a14: name of the explosion parameters entity
 };
