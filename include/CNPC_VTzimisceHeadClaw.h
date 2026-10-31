@@ -17,7 +17,8 @@ public:
 	unsigned int m_nFlags5b84;	// +0x5b84
 	char pad5b88[0x5cc0 - 0x5b88];
 	int m_nState5cc0;	// +0x5cc0: the NPC state, 2 while a schedule is running
-	char pad5cc4[0x6078 - 0x5cc4];
+	char pad5cc4[0x6074 - 0x5cc4];
+	float m_f6074;	// +0x6074: time of the next behaviour change
 	char m_b6078;	// +0x6078
 	char pad6079[0x6268 - 0x6079];
 	float m_f6268;	// +0x6268
