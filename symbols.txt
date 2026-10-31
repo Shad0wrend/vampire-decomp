@@ -5959,6 +5959,7 @@
 0x1000b6b3 func   ?sub_1033d9d0@CBaseCombatCharacter@@QAEHPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_1033d9d0
 0x1000b6b8 func   ?sub_101fb3e0@CVDmg_t@@QAEXI@Z CVDmg_t::sub_101fb3e0
 0x1000b6bd func   ?vfunc5@CPhysConstraint@@UAEPAV1@I@Z CPhysConstraint::vfunc5
+0x1000b6c2 func   ?sub_102d0a50@CUnk102d0a50@@QAEXH@Z CUnk102d0a50::sub_102d0a50
 0x1000b6c7 func   ?vfunc16@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHH@Z CTempEntsSystem::vfunc16
 0x1000b6cc func   ?sub_10157910@CUnknown101578b0@@QAEXH@Z CUnknown101578b0::sub_10157910
 0x1000b6d1 func   ?sub_101753a0@CTriggerEnvAudio@@QAEXH@Z CTriggerEnvAudio::sub_101753a0

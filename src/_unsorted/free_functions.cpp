@@ -126450,6 +126450,25 @@ void __fastcall sub_102d0a20(void *pThis, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d0a50 size=0x1b
+// TARGET: sub_102d0a50
+struct CUnk102d0a50Target {
+    void sub_102f97c0(int a);
+};
+struct CUnk102d0a50 {
+    CUnk102d0a50Target *sub_102d3e60();
+    void sub_102d0a50(int a);
+};
+void CUnk102d0a50::sub_102d0a50(int a)
+{
+    CUnk102d0a50Target *p = sub_102d3e60();
+    if (p) {
+        a = 1;
+        p->sub_102f97c0(a);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d0ab0 size=0x48
 extern void (*g_109f3890)(char *dst, const char *src, int n);
 struct CAI_FailView {
