@@ -111348,6 +111348,11 @@ void *sub_10259de0(unsigned short index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10259e20 size=0x5
+// TARGET: sub_10259e20
+unsigned short __cdecl sub_10259e20(void) { return 0xffff; }
+// END FUNCTION
+
 // FUNCTION: 0x1025b390 size=0x12
 struct CVDmg_t {
     CVDmg_t();
