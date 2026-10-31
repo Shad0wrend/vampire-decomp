@@ -333,6 +333,7 @@
 0x10001983 func   ?vfunc33@CSave@@UAEXPBDPAXH@Z CSave::vfunc33
 0x10001988 func   ?sub_102f8fc0@CUnknown102f8fc0@@QAEPAXHH@Z CUnknown102f8fc0::sub_102f8fc0
 0x10001992 func   ?vfunc241@CFilterClass@@QAE_NPAX@Z CFilterClass::vfunc241
+0x10001997 func   ?vfunc440@CAI_BaseNPCTroika@@UAEHH@Z CAI_BaseNPCTroika::vfunc440
 0x1000199c func   _info_constraint_anchor info_constraint_anchor
 0x100019a1 func   _npc_VNewscaster npc_VNewscaster
 0x100019a6 func   ?vfunc103@CPropButton@@UAEXXZ CPropButton::vfunc103
