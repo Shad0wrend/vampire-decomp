@@ -51,6 +51,17 @@ char CBloodPack::vfunc315()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103fc250 size=0x6
+#include "CBloodPack.h"
+namespace lifted {
+extern char g_10944490;
+}
+int CBloodPack::vfunc80()
+{
+    return (int)&lifted::g_10944490;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103fc270 size=0x3
 #include "CBloodPack.h"
 int CBloodPack::vfunc81()

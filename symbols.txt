@@ -3278,6 +3278,7 @@
 0x100070c2 func   ?sub_10179270@@YAHXZ sub_10179270
 0x100070c7 func   ?sub_10077ac0@CTableFields10077ac0@@QAEIH@Z CTableFields10077ac0::sub_10077ac0
 0x100070cc func   ?sub_1024aca0@CUtlRBTree16Unit@@QAEXG@Z CUtlRBTree16Unit::sub_1024aca0
+0x100070d1 func   ?vfunc80@CBloodPack@@QAEHXZ CBloodPack::vfunc80
 0x100070d6 func   _raggib raggib
 0x100070db func   ?sub_100ce4e0@CList_t@@QAE_NPAXPAH@Z CList_t::sub_100ce4e0
 0x100070e5 func   ?vfunc134@CSoundEnt@@QAEXXZ CSoundEnt::vfunc134
