@@ -26,6 +26,8 @@ public:
 	unsigned __int64 m_TotalTime;	// 0x18
 	char m_pad0020[0x48 - 0x20];
 	CVProfNode *m_pParent;	// 0x48
+	char m_pad004c[0x54 - 0x4c];
+	int m_nBudgetGroupID;	// 0x54: the group PushGroup is told about when the node is entered
 
 	bool ExitScopeInlined();
 };
