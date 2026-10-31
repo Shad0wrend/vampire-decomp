@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103eba30 size=0x3
+#include "CWeaponMelee_HengeyokaiFist.h"
+int CWeaponMelee_HengeyokaiFist::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ed020 size=0x1e
 #include "CWeaponMelee_HengeyokaiFist.h"
 
