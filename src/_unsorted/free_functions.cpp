@@ -108372,6 +108372,16 @@ struct CUnknown10248980 { int p[5]; int a; char sub_10248980(); };
 char CUnknown10248980::sub_10248980() { int v = a; return v != 0; }
 // END FUNCTION
 
+// FUNCTION: 0x102489a0 size=0xd
+#include "CKeyValuesX.h"
+
+// TARGET: CKeyValuesX::sub_102489a0
+CKeyValuesX *CKeyValuesX::sub_102489a0(const char *pszName, char bCreate)
+{
+	return sub_10248900(pszName, bCreate);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102489c0 size=0x33
 // TARGET: sub_102489c0
 int __cdecl _strcmpi(const char *, const char *);
