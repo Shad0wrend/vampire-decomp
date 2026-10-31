@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x104046f0 size=0x3
+#include "CItemGWarrLedger2.h"
+int CItemGWarrLedger2::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040a9f0 size=0x1e
 #include "CItemGWarrLedger2.h"
 
