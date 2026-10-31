@@ -38,6 +38,12 @@ CNPC_VBatSwarm *CNPC_VBatSwarm::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10366db0 size=0x6
+// TARGET: sub_10366db0
+extern unsigned char g_1062ef00;
+unsigned char __cdecl sub_10366db0(void) { return g_1062ef00; }
+// END FUNCTION
+
 // FUNCTION: 0x10366e10 size=0x1d
 #include "CNPC_VBatSwarm.h"
 struct A { int sub_10012300(int); };
