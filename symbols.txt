@@ -10554,6 +10554,7 @@
 0x100c1870 func   ?sub_100c1870@@YAPADPAUSStudioHdr@@HPAPAU1@HPAH@Z sub_100c1870
 0x100c4980 func   ?sub_100c4980@@YAXPAUCUnknownFreeList100c4980@@@Z sub_100c4980
 0x100c49d0 func   ?sub_100c49d0@@YAXXZ sub_100c49d0
+0x100cce10 func   ?sub_100cce10@@YAMM@Z sub_100cce10
 0x100d2c30 func   ?sub_100d2c30@@YAHPBDPAD@Z sub_100d2c30
 0x100d3860 func   ?sub_100d3860@@YAHPAUCOriginEnt@@@Z sub_100d3860
 0x100d38d0 func   ?sub_100d38d0@@YAHPAUCOriginEnt@@PBUVec3@@MPAU2@@Z sub_100d38d0

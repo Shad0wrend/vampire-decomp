@@ -33215,6 +33215,23 @@ void CCameraTrack::sub_100cc360()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cce10 size=0x63
+#include <math.h>
+float sub_100cce10(float x)
+{
+	if (!(x > 8.95f))
+		return 170.0f;
+	float a = (float)asin(8.95f / x);
+	float deg = a * 57.29578f;
+	float r = deg * 4.0f;
+	if (r > 170.0f)
+		return 170.0f;
+	if (r < 2.0f)
+		return 2.0f;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ccea0 size=0x60
 #include "CCameraTrack.h"
 #include "globalvars.h"
