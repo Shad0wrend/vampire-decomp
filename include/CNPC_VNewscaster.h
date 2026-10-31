@@ -3,6 +3,7 @@
 // position of the virtual below is not its real slot (404). Give the class its
 // real base and padding before making a virtual call through it.
 #pragma once
+#include "CUnknown103a1320.h"
 
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 extern "C" __declspec(dllimport) void __cdecl Plat_Free(void *);
