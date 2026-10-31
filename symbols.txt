@@ -10114,6 +10114,7 @@
 0x1001354d func   ?sub_10224950@CItemContainerLock@@QAEXPAVCBaseEntity@@@Z CItemContainerLock::sub_10224950
 0x10013552 func   ?vfunc5@CItemGWarrLedger2@@QAEPAV1@I@Z CItemGWarrLedger2::vfunc5
 0x10013557 func   ?vfunc7@CCopyRecipientFilter@@UAEIXZ CCopyRecipientFilter::vfunc7
+0x10013561 func   ?vfunc79@CBaseParticleEntity@@QAEHXZ CBaseParticleEntity::vfunc79
 0x1001356b func   ?sub_1028a190@CAI_BaseNPCTroika@@QAEDXZ CAI_BaseNPCTroika::sub_1028a190
 0x10013575 func   _light_spot light_spot
 0x10013593 func   ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z CBaseCombatWeapon::vfunc130

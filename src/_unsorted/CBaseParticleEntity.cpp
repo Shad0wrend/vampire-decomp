@@ -20,6 +20,17 @@ int CBaseParticleEntity::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042b540 size=0x6
+#include "CBaseParticleEntity.h"
+namespace lifted {
+extern char g_106ad4e8;
+}
+int CBaseParticleEntity::vfunc79()
+{
+    return (int)&lifted::g_106ad4e8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042b590 size=0x1e
 #include "CBaseParticleEntity.h"
 
