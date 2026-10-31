@@ -60220,6 +60220,27 @@ void CNPC_VCopUnit::sub_1017f650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017f6e0 size=0x63
+#include "CBasePlayer.h"
+#include "ConVar.h"
+#include "globalvars.h"
+
+struct CNPC_VCopUnit { void sub_1017f9c0(); };
+extern ConVar *g_107258dc;
+void sub_10370630(CBasePlayer *p);
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+
+void CBasePlayer::sub_1017f6e0()
+{
+	if (--*(int *)((char *)this + 0x1d10) == 0) {
+		sub_10370630(this);
+		((CNPC_VCopUnit *)this)->sub_1017f9c0();
+	}
+	if (!g_107258dc->vfunc1() && g_107258dc->m_nValue)
+		DevMsg("CSActs:    %6.1f - OnCopPursuitStart - %d in pursuit\n", gpGlobals->curtime, *(int *)((char *)this + 0x1d10));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017f770 size=0x7
 struct CUnknown1017f770 { int sub_1017f770(); };
 int CUnknown1017f770::sub_1017f770()
