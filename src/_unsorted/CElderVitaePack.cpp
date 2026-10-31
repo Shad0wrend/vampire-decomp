@@ -21,6 +21,17 @@ char CElderVitaePack::vfunc315()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103fcae0 size=0x6
+#include "CElderVitaePack.h"
+namespace lifted {
+extern char g_1094506c;
+}
+int CElderVitaePack::vfunc80()
+{
+    return (int)&lifted::g_1094506c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103fcb00 size=0x3
 #include "CElderVitaePack.h"
 int CElderVitaePack::vfunc81()
