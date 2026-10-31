@@ -240,7 +240,8 @@ public:
 
 	float m_f1DA8;	// 0x1DA8: when the next random view punch is due
 	int m_n1DAC;	// 0x1DAC: sent with the quest journal message
-	char m_pad1DB0[0x1dd8 - 0x1db0];	// 0x1DB0 .. 0x1DD7
+	EHANDLE m_hControllerNPC1db0;	// 0x1DB0: the NPC the player controls (GetControllerNPC)
+	char m_pad1DB4[0x1dd8 - 0x1db4];	// 0x1DB4 .. 0x1DD7
 	float m_f1DD8;	// 0x1DD8: curtime stamp of the last slot 24 call
 	float m_f1DDC;	// 0x1DDC: the attack meter (0..99)
 	char m_pad1DE0[4];	// 0x1DE0 .. 0x1DE3
