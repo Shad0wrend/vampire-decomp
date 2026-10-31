@@ -62249,6 +62249,27 @@ void CBasePlayerUnit::sub_1017c600(CBaseEntity *pEnt, char bLoot, int a, int b, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017c6a0 size=0x1a
+struct CUnk1017c6a0
+{
+	char m_pad0000[0x1eb8];
+	void *m_p1eb8;
+	char m_pad1ebc[4];
+	char m_b1ec0;
+
+	char sub_1017c6a0();
+};
+
+// TARGET: sub_1017c6a0
+char CUnk1017c6a0::sub_1017c6a0()
+{
+	if (m_p1eb8 != 0 && m_b1ec0 != 0) {
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017c6d0 size=0x10c
 #include "CBasePlayer.h"
 #include "CBaseEntity.h"
