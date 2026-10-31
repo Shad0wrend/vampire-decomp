@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103feb70 size=0x6
+#include "CItemGWatchFancy.h"
+namespace lifted {
+extern char g_10944e3c;
+}
+int CItemGWatchFancy::vfunc80()
+{
+    return (int)&lifted::g_10944e3c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103feb90 size=0x3
 #include "CItemGWatchFancy.h"
 int CItemGWatchFancy::vfunc81()
