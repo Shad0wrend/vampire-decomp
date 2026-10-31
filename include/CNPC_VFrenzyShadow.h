@@ -208,7 +208,7 @@ public:
 	virtual void vfunc164();
 	virtual void vfunc165();
 	virtual void vfunc166();
-	virtual void vfunc167();
+	virtual CBaseEntity *vfunc167();
 	virtual void vfunc168();
 	virtual void vfunc169();
 	virtual void vfunc170();
