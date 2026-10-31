@@ -16,5 +16,7 @@ public:
 	int m_nCount;	// 0x00
 	CMovedEntityRecord_t m_Records[512];	// 0x04
 
+	CPhysicsMovedEntities *sub_10033630();	// "CPhysicsMovedEntities::CPhysicsMovedEntities": scope trace around the body sub_100336c0 (stub 0x100073e2); returns this
+	void sub_100336c0();	// constructor body
 	bool sub_10033740(CBaseEntity *pEntity);	// "CPhysicsMovedEntities::AddEntity": scope trace, false when full, else stores the entity and a copy of its origin (slot 220)
 };
