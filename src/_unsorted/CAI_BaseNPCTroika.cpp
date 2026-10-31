@@ -1774,6 +1774,57 @@ void CAI_BaseNPCTroikaCallee::sub_102b39a0(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b3e00 size=0x1e5
+#include "CAI_BaseNPCTroika.h"
+#include "CUnknown100290c0.h"
+#include "CDevFlagObj.h"
+#include "COutputEvent.h"
+#include "CBaseCombatCharacter.h"
+#include "CEHandleGet.h"
+extern CDevFlagObj *g_10924a6c;
+struct EntWithPlayer { char pad[0xa8]; CBaseCombatCharacter *m_pPlayer; };
+
+// TARGET: CAI_BaseNPCTroika::vfunc472
+void CAI_BaseNPCTroika::vfunc472(CBaseEntity *pEnt)
+{
+	if ((~m_flags14bc & 0x4000000) && m_b6081 && sub_102b3270(pEnt, 0)) {
+		if (((EntWithPlayer *)pEnt)->m_pPlayer && ((EntWithPlayer *)pEnt)->m_pPlayer->sub_101671a0()) {
+			g_10924a6c->vfunc1();
+			sub_100041b0(1);
+			unsigned int *pCur = &m_h6088;
+			if ((CBaseEntity *)((CUnknown100290c0 *)g_10566458)->sub_100290c0(pCur) == pEnt)
+				return;
+			*pCur = *(unsigned int *)pEnt->vfunc1();
+			m_n60a8++;
+			CUnknown100290c0 *pList = (CUnknown100290c0 *)g_10566458;
+			if (pList->sub_100290c0(&m_h6088) == pList->sub_100290c0(&m_h608c)) {
+				m_n60a4++;
+				m_flags14b8 &= 0xfebfffff;
+				return;
+			}
+			if (((EntWithPlayer *)pEnt)->m_pPlayer)
+				((COutputEvent *)((char *)this + 0x5fa4))->sub_100cd660(pEnt, this, 0);
+			m_h608c = m_h6088;
+			CAI_BaseNPC *pOld = (CAI_BaseNPC *)((CUnknown100290c0 *)g_10566458)->sub_100290c0(&m_h608c);
+			float *pPos = pOld->vfunc217();
+			m_v6090[0] = pPos[0];
+			m_v6090[1] = pPos[1];
+			m_v6090[2] = pPos[2];
+			m_n60a4 = 0;
+			m_f609c = gpGlobals->curtime + enginerandom->vfunc1(10.0f, 20.0f);
+			m_f60a0 = gpGlobals->curtime + enginerandom->vfunc1(5.0f, 10.0f);
+			m_flags14b8 &= 0xfe9fffff;
+			return;
+		}
+		m_flags14b8 |= 0x800000;
+	}
+	if ((CBaseEntity *)EHandle_Get(m_h6088) == pEnt) {
+		m_h6088 = 0xffffffff;
+		m_flags14b8 &= 0xfe9fffff;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b4540 size=0xb4
 #include "CAI_BaseNPCTroika.h"
 #include "CGlobalEntityList.h"
