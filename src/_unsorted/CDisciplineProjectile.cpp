@@ -79,6 +79,64 @@ void CDisciplineProjectile::vfunc269()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101da020 size=0x235
+#include "CDisciplineProjectile.h"
+#include "CUnknown101e0f00.h"
+#include "ScopeTrace.h"
+#include "engineserver.h"
+
+extern CUnknown101e0f00 g_10739a4c;
+extern char g_10538764[];
+extern char g_105a1e08[];
+extern "C" void *__cdecl __RTDynamicCast(void *pObj, long nVfDelta, void *pSrcType, void *pTargetType, int bIsReference);
+
+struct CUnkView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual CBaseEntity *vfunc4();
+};
+
+struct CEdictView
+{
+	char m_pad[0x40];
+	CUnkView *m_pUnk;
+};
+
+// TARGET: CDisciplineProjectile::vfunc266
+void CDisciplineProjectile::vfunc266(CBaseEntity *pOther)
+{
+	if (__RTDynamicCast(pOther, 0, g_10538764, g_105a1e08, 0))
+		return;
+	CBaseEntity *pWorld;
+	{
+		CEdictView *pEdict = (CEdictView *)engine->vfunc38(0);
+		ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+		if (!pEdict)
+			pEdict = (CEdictView *)engine->vfunc38(0);
+		pWorld = (pEdict && pEdict->m_pUnk) ? pEdict->m_pUnk->vfunc4() : 0;
+	}
+	void *pOwner = pOther->m_p9c;
+	if (!pOther->sub_100b5110() && pWorld != pOther) {
+		if (!pOwner)
+			return;
+		if (m_h8a8.Get() && m_h8a8.Get() != pOwner)
+			return;
+		CBaseEntity *pTarget = m_h778.Get();
+		if (pTarget)
+			g_10739a4c.sub_101e3850((int)pTarget->m_p9c, (int)pOwner, m_nDisc8bc, m_n8c0);
+		sub_101ee7d0();
+	} else {
+		bool bSolidFlag;
+		{
+			ScopeTrace trace("CBaseEntity::IsSolidFlagSet", pOther->m_name26c ? pOther->m_name26c : g_106b8540);
+			bSolidFlag = (pOther->m_b2b4 >> 3) & 1;
+		}
+		if (!bSolidFlag)
+			sub_101ee7d0();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101da7b0 size=0x9a
 #include "CBaseEntity.h"
 #include "CDisciplineProjectile.h"
