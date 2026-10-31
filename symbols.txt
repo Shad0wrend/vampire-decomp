@@ -2230,6 +2230,7 @@
 0x100052c7 func   ?sub_1027db80@CAI_BaseNPC@@QAEMPBVVector@@@Z CAI_BaseNPC::sub_1027db80
 0x100052d1 func   ?sub_102fca40@@YAHH@Z sub_102fca40
 0x100052d6 func   ?vfunc431@CNPC_VVampireBoss@@QAEXXZ CNPC_VVampireBoss::vfunc431
+0x100052db func   ?vfunc117@CCorpse@@QAEHXZ CCorpse::vfunc117
 0x100052e0 func   ??0CGrabController@@QAE@XZ CGrabController::CGrabController
 0x100052e5 func   ?sub_1027e660@@YAPBDH@Z sub_1027e660
 0x100052ea func   ?sub_10232400@@YAHXZ sub_10232400

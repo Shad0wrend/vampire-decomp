@@ -20,6 +20,14 @@ int CCorpse::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10355de0 size=0x6
+#include "CCorpse.h"
+int CCorpse::vfunc117()
+{
+    return -2147483648;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10356270 size=0x1e
 #include "CCorpse.h"
 
