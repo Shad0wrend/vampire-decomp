@@ -126662,6 +126662,17 @@ int *CUnk102dd630::sub_102dd630(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dd700 size=0xc
+void sub_102dd720();
+
+// TARGET: sub_102dd700
+void *__fastcall sub_102dd700(void *pThis)
+{
+	sub_102dd720();
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dd720 size=0x10
 extern int g_10931bc8;
 void sub_102dd990();
