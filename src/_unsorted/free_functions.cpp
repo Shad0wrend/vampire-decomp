@@ -151055,6 +151055,16 @@ float CNPC_VMingXiaoUnit::sub_10397f70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10398000 size=0x19
+#include "CNPC_VMingXiao.h"
+
+// TARGET: sub_10398000
+char CNPC_VMingXiao::sub_10398000(int code)
+{
+	return (m_n6710 & (1 << code)) == 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10398630 size=0x37
 #include "CBaseAnimating.h"
 
