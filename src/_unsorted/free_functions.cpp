@@ -101867,6 +101867,24 @@ void CUnk1021a530::sub_1021a530(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021a560 size=0x1a
+struct CUnk1021a560
+{
+	char m_pad0000[0xa28];
+	unsigned int m_arr0a28[0x80];
+
+	void sub_1021a560(int index);
+};
+
+// TARGET: sub_1021a560
+void CUnk1021a560::sub_1021a560(int index)
+{
+	if (index >= 0 && index < 0x80) {
+		m_arr0a28[index] |= 2;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021a740 size=0xb4
 #include "CPropHacking.h"
 #include "CUnknown10217f50.h"
