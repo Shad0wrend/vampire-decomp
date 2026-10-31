@@ -92169,6 +92169,21 @@ bool CUnknown101f0e50::sub_101f82d0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f8300 size=0x18
+struct CUnk101f8300 {
+    char pad[0x14];
+    int m_14;
+    bool sub_101f8300(int index);
+};
+
+bool CUnk101f8300::sub_101f8300(int index)
+{
+    if (index != -1 && index < m_14)
+        return true;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f8330 size=0x4d
 #include "CNamedListX.h"
 struct CNamedListXB : CNamedListX { int sub_101f8330(const char *name); };
