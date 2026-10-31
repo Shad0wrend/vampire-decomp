@@ -8228,6 +8228,7 @@
 0x1000fd35 func   ?sub_102c6760@CUnknown102c6760@@QAEHXZ CUnknown102c6760::sub_102c6760
 0x1000fd3a func   ?sub_100cf080@CEventQueue@@QAEXXZ CEventQueue::sub_100cf080
 0x1000fd3f func   ?sub_101dcc80@CUnknown101dcc80@@QAEPAUCUnknown101dcc80Record@@XZ CUnknown101dcc80::sub_101dcc80
+0x1000fd44 func   ?sub_102d6100@@YAPADH@Z sub_102d6100
 0x1000fd49 func   ?sub_1035fd20@@YAHXZ sub_1035fd20
 0x1000fd53 func   ?sub_102b2730@CAI_BaseNPCTroika@@QAEXXZ CAI_BaseNPCTroika::sub_102b2730
 0x1000fd58 func   ?vfunc5@CFilterClass@@QAEPAV1@I@Z CFilterClass::vfunc5
