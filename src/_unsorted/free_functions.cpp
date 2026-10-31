@@ -125417,6 +125417,25 @@ void CUnknown102db420::sub_102db420(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102db440 size=0x14
+struct CUnit102db440
+{
+	char m_pad0000[0x57c];
+	bool m_b57c;
+
+	void sub_102daac0(int a);
+	void sub_102db440(int a);
+};
+
+// TARGET: CUnit102db440::sub_102db440
+void CUnit102db440::sub_102db440(int a)
+{
+	m_b57c = false;
+	a = 0;
+	sub_102daac0(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102db470 size=0xd2
 #include "CUnknown102db470.h"
 
