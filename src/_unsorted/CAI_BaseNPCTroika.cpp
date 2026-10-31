@@ -1915,6 +1915,22 @@ Vector CAI_BaseNPCTroika::vfunc533(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b4c40 size=0x5d
+#include "CAI_BaseNPCTroika.h"
+#include "globalvars.h"
+#include "engineiface.h"
+// TARGET: CAI_BaseNPCTroika::vfunc487
+void CAI_BaseNPCTroika::vfunc487()
+{
+	*(float *)((char *)this + 0x5ce8) = enginerandom->vfunc1(0.25f, 0.75f) + gpGlobals->curtime;
+	if (*(int *)((char *)this + 0x5bb0) <= 0) {
+		char *pSquad = *(char **)((char *)this + 0x5da4);
+		if (pSquad)
+			*(float *)(pSquad + 0x60) = enginerandom->vfunc1(0.25f, 0.75f) + gpGlobals->curtime;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b4fb0 size=0x14
 namespace lifted {
 struct C10005849 { int sub_10005849(int, int, int); };
