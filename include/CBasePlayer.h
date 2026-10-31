@@ -140,7 +140,7 @@ public:
 	virtual char vfunc418(int unused);	// slot 418: runs sub_101644f0(-1, 0, 0), then steps the activity at +0xff0 (0xf49 -> 0xf52 when the entity of the handle at +0xfe8 is gone; with the byte at +0x65c set 0xf40 -> 0xf49), true while it is 0xf52
 	virtual char vslot419(int a); virtual char vslot420(int a);
 	virtual char vfunc421(int unused);	// slot 421: false unless the byte at +0x65c is set; with a live character behind the handle at +0x1538 (and +0x153c set) builds a damage record sourced at this player and hands the character a one point damage info (stat 0xf set to the value of stat 0x11 of its active stat list), slot 144 and slot 403; true
-	CBP_V1(si13) CBP_V1(si14) CBP_V1(si15) CBP_V1(si16) CBP_V1(si17)
+	virtual char vslot422(int a); virtual char vslot423(int a); CBP_V1(si15) CBP_V1(si16) CBP_V1(si17)
 	virtual void vfunc427();	// slot 427: hands the entity of the handle at +0x1538 (null while the dword at +0x153c is -1 or the handle is stale) to sub_10165790
 	CBP_V1(si19)
 	CBP_V1(si20) CBP_V1(si21) CBP_V1(si22) CBP_V1(si23) CBP_V1(si24) CBP_V1(si25) CBP_V1(si26) CBP_V1(si27) CBP_V1(si28)
