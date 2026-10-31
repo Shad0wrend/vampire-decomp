@@ -97,8 +97,11 @@ public:
 	virtual Vector *slot219();	// "GetAbsAngles"
 	virtual Vector *slot220();	// absolute origin
 	virtual Vector *slot221();	// absolute angles
-	EVS(222) EVS(223) EVS(224) EVS(225) EVS(226) EVS(227) EVS(228) EVS(229)
-	EVS(230) EVS(231)
+	EVS(222) EVS(223) EVS(224) EVS(225) EVS(226) EVS(227)
+	virtual void slot228(int index, const void *pEvent);	// VPhysicsShadowCollision
+	EVS(229)
+	virtual void slot230(int index, const void *pEvent);	// VPhysicsCollision
+	EVS(231)
 	virtual void slot232(int a);	// "UpdatePhysicsShadow"
 	virtual int slot233(CEntityVSlots **pOut, int nMax);	// fills the array with the entities it touches / carries, answers their count
 	EVS(234) EVS(235) EVS(236) EVS(237) EVS(238) EVS(239)
