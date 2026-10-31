@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10406730 size=0x3
+#include "CItemGBertramsCD.h"
+int CItemGBertramsCD::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040ac30 size=0x1e
 #include "CItemGBertramsCD.h"
 
