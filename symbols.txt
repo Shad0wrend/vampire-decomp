@@ -4152,6 +4152,7 @@
 0x1000880f func   ?vfunc601@CNPC_VFrenzyShadow@@UAEXH@Z CNPC_VFrenzyShadow::vfunc601
 0x10008814 func   ?vfunc4@CAI_Motor@@UAEHABVVector@@M@Z CAI_Motor::vfunc4
 0x10008819 func   ?sub_101fb000@CVDmg_t@@QAEXPBD@Z CVDmg_t::sub_101fb000
+0x1000881e func   ??1CMeasureSection@@QAE@XZ CMeasureSection::~CMeasureSection
 0x10008823 func   ?vfunc451@CAI_BaseNPC@@UAEPBDXZ CAI_BaseNPC::vfunc451
 0x1000882d func   ?sub_10195160@CUtlRBTree12Unit@@QAEXG@Z CUtlRBTree12Unit::sub_10195160
 0x10008832 func   ?sub_102eeba0@CUnknown102eeba0@@QAEXH@Z CUnknown102eeba0::sub_102eeba0
