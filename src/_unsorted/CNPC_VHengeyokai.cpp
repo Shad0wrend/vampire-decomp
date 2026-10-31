@@ -433,6 +433,20 @@ char CNPC_VHengeyokai::vfunc69(void *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10381780 size=0x17
+#include "CNPC_VHengeyokai.h"
+struct S10924edc { virtual void a(); virtual void b(); };
+extern S10924edc *g_10924edc;
+
+// TARGET: CNPC_VHengeyokai::vfunc600
+bool CNPC_VHengeyokai::vfunc600(int unused)
+{
+	m_b6078 = 1;
+	g_10924edc->b();
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103817b0 size=0xe
 #include "CNPC_VHengeyokai.h"
 struct CUnk10924edc
