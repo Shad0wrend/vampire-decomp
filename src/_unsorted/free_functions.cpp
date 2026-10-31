@@ -125613,6 +125613,23 @@ bool CAI_DynamicLink::sub_102ccc10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cccb0 size=0x1b
+// TARGET: sub_102cccb0
+struct CUnk102cccb0 {
+    char pad[0x45c];
+    int m_n45c;
+    void sub_102ccce0();
+    void sub_102cccb0(int a);
+};
+void CUnk102cccb0::sub_102cccb0(int a)
+{
+    if (m_n45c == 1) {
+        m_n45c = 0;
+        sub_102ccce0();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ccce0 size=0xe2
 #include "CAI_DynamicLink.h"
 struct SLink { int pad0; int src; int dest; char pad[0x58]; unsigned int flags; };
