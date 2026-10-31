@@ -15340,6 +15340,38 @@ void CFlexAnimationTrack::sub_10074b10(int nList)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10074bf0 size=0x244
+#include "CUnknown10074f70.h"
+extern "C" char *__cdecl strcpy(char *, const char *);
+#pragma intrinsic(strcpy)
+
+void CUnknown10074f70::sub_10074bf0(char *pBuf)
+{
+	switch (sub_10075b70()) {
+	case 1: strcpy(pBuf, "SECTION"); break;
+	case 2: strcpy(pBuf, "EXPRESSION"); break;
+	case 3: strcpy(pBuf, "LOOKAT"); break;
+	case 4: strcpy(pBuf, "MOVETO"); break;
+	case 5: strcpy(pBuf, "SPEAK"); break;
+	case 6: strcpy(pBuf, "GESTURE"); break;
+	case 7: strcpy(pBuf, "SEQUENCE"); break;
+	case 8: strcpy(pBuf, "FACE"); break;
+	case 9: strcpy(pBuf, "FIRETRIGGER"); break;
+	case 10: strcpy(pBuf, "FLEXANIMATION"); break;
+	case 11: strcpy(pBuf, "SUBSCENE"); break;
+	case 12: strcpy(pBuf, "LOOP"); break;
+	case 13: strcpy(pBuf, "SILENCE"); break;
+	case 14: strcpy(pBuf, "LOUD"); break;
+	case 15: strcpy(pBuf, "PYTHON"); break;
+	case 16: strcpy(pBuf, "CAMERAMOVE"); break;
+	case 17: strcpy(pBuf, "CAMERASHOT"); break;
+	case 18: strcpy(pBuf, "CAMERARESTORE"); break;
+	case 19: strcpy(pBuf, "BODYSOUND"); break;
+	default: strcpy(pBuf, "**UNKNOWN**"); break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10074f70 size=0x9f
 #include "CUnknown10074f70.h"
 extern CUnknown10074f70_Global *g_106c851c;
