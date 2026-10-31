@@ -372,6 +372,53 @@ int sub_100283c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10028720 size=0x227
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern int g_105372ac[2];
+extern int g_10537108[];
+int *sub_10045d90(int);
+void sub_1000c810();
+void sub_10011d38();
+void sub_10003990();
+
+int *sub_10028720()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 2, "m_nameAttach", {0x450, 0}, 1, 6, "attach1" },
+        { 12, "m_attachedObject", {0x454, 0}, 1, 2 },
+        { 1, "m_spinUp", {0x458, 0}, 1, 6, "spinup" },
+        { 1, "m_additionalAcceleration", {0x45c, 0}, 1, 6, "addangaccel" },
+        { 1, "m_targetSpeed", {0x460, 0}, 1, 6, "speed" },
+        { 1, "m_angularAcceleration", {0x464, 0}, 1, 2 },
+        { 15, "m_lastTime", {0x468, 0}, 1, 2 },
+        { 10, "m_pHinge", {0x46c, 0}, 1, 2, 0, (ISaveRestoreOps *)sub_10045d90(5), 0 },
+        { 10, "m_pController", {0x470, 0}, 1, 2, 0, (ISaveRestoreOps *)sub_10045d90(8), 0 },
+        { 1, "InputSetTargetSpeed", {0, 0}, 1, 8, "SetSpeed", 0, (void *)sub_1000c810 },
+        { 0, "InputTurnOn", {0, 0}, 1, 8, "TurnOn", 0, (void *)sub_10011d38 },
+        { 0, "InputTurnOff", {0, 0}, 1, 8, "TurnOff", 0, (void *)sub_10003990 },
+        { 9, "m_motor", {0x474, 0}, 1, 2, 0, 0, 0, (datamap_t *)g_10537108 },
+    };
+    g_105372ac[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_105372ac[0] = (int)&dataDesc[1];
+    return g_105372ac;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100289e0 size=0x5f
 extern int vt_104462a8[];
 extern int vt_10445e1c[];
