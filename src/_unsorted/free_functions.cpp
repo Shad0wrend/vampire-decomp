@@ -116000,6 +116000,30 @@ char sub_102b97a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102be9f0 size=0x63
+struct CTimerArg { char m_d[8]; };
+struct CTimerArgs { CTimerArg m_a, m_b, m_c; };
+struct CTimerOwnerA { char m_d[0x18]; };
+struct CTimerOwnerB { char m_d[0x18]; };
+struct CTimerOwnerC { char m_d[0x18]; };
+struct CTimerOwner : CTimerOwnerA, CTimerOwnerB, CTimerOwnerC {};
+struct CTimerX {
+    char m_d[0x18];
+    char sub_102ea0e0(CTimerArg *pArg, void *pOwner);
+};
+struct CTimerTriple {
+    CTimerX m_a, m_b, m_c;
+    bool sub_102be9f0(CTimerArgs *pArgs, CTimerOwner *pOwner);
+};
+// TARGET: CTimerTriple::sub_102be9f0
+bool CTimerTriple::sub_102be9f0(CTimerArgs *pArgs, CTimerOwner *pOwner)
+{
+    return m_a.sub_102ea0e0(&pArgs->m_a, (CTimerOwnerA *)pOwner)
+        && m_b.sub_102ea0e0(&pArgs->m_b, (CTimerOwnerB *)pOwner)
+        && m_c.sub_102ea0e0(&pArgs->m_c, (CTimerOwnerC *)pOwner);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102bea80 size=0x1c
 namespace lifted {
 extern char g_10594488;
