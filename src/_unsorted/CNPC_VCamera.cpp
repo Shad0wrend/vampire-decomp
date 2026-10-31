@@ -395,6 +395,74 @@ int CNPC_VCamera::vfunc473()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10369930 size=0x208
+#include "CNPC_VCamera.h"
+#include "CGlobalEntityList.h"
+#include "engineiface.h"
+#include "globalvars.h"
+#include "Vector.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern char g_106b8540[];
+extern CGlobalEntityList g_106eb5d8;
+__declspec(dllimport) void Warning(const char *fmt, ...);
+void sub_1027fc40();
+
+struct CVCameraMotor
+{
+	char sub_102e7880(Vector *pPos, unsigned int mask, void *pPass, float flDist, Vector *pOut, int f);
+};
+
+static inline bool CamBit(unsigned int v, int bit)
+{
+	return ((v >> bit) & 1) != 0;
+}
+
+void CNPC_VCamera::vfunc422()
+{
+	int nTmp;
+	const char *pszModel = *vfunc9(&nTmp);
+	if (!pszModel)
+		pszModel = g_106b8540;
+	if (!_strcmpi(pszModel, "models/null.mdl")) {
+		if (vfunc94() == 5 || vfunc94() == 6 || (vfunc513() & 4) || CamBit(m_flags204, 2)) {
+			sub_100b3640(1);
+		} else {
+			Vector vec = *(Vector *)vfunc220();
+			CVCameraMotor *pMotor = (CVCameraMotor *)m_pMotor5d40;
+			if (!pMotor->sub_102e7880(&vec, 0x202400b, 0, -256.0f, &vec, 0))
+				Warning("NPC %s stuck in wall--level design error\n", sub_1000ea11());
+			vfunc62(&vec.x);
+		}
+	}
+	if (m_target20c) {
+		m_pTarget5de8 = g_106eb5d8.sub_100f7770(0, m_target20c, 0, 0);
+		if (!m_pTarget5de8) {
+			Warning("ReadyNPC()--%s couldn't find target %s", sub_1000ea11(), m_target20c ? m_target20c : g_106b8540);
+		} else {
+			sub_1026e340(1);
+			sub_10280de0(3);
+		}
+	}
+	vfunc545_slot();
+	if (gpGlobals->curtime > 1.0) {
+		sub_100ac4e0((int)sub_1027fc40, 0, 0);
+		m_flNextThink = gpGlobals->curtime;
+	} else {
+		sub_100ac4e0((int)sub_1027fc40, 0, 0);
+		m_flNextThink = enginerandom->vfunc1(0.1f, 0.4f) + gpGlobals->curtime;
+	}
+	m_n5d7c = -1;
+	m_n5d80 = 0;
+	if (CamBit(m_flags204, 7)) {
+		sub_1026e340(1);
+		vfunc310(1);
+		sub_10280de0(0x2d);
+	}
+	sub_100ac4e0((int)sub_1027fc40, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10369bd0 size=0xa5
 #include "CNPC_VCamera.h"
 class CBaseEntity;
