@@ -54,6 +54,18 @@ int CAI_Hint::vfunc124()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d2ee0 size=0x8
+#include "CAI_Hint.h"
+// TARGET: CAI_Hint::sub_102d2ee0
+unsigned char CAI_Hint::sub_102d2ee0()
+{
+    unsigned char b;
+    b = ((CBaseEntity *)this)->CBaseEntity::vfunc117();
+    b &= 0xfd;
+    return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d2f00 size=0x1e
 #include "CAI_Hint.h"
 
