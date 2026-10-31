@@ -81205,6 +81205,76 @@ char *sub_101d3730(const char *format, ...)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d3c10 size=0x25c
+#include "StatDefault3.h"
+
+extern int g_1074e65c;
+extern int g_1074e4f4;
+extern int g_1074e09c;
+extern int g_10738d14;
+
+void StatDefault3::sub_101d3c10(StatDefault3 *pParent)
+{
+	int i, n;
+	if (m_pszDisplayName == 0)
+		m_pszDisplayName = pParent->m_pszDisplayName;
+	if (m_14 == 0)
+		m_14 = pParent->m_14;
+	if (m_18 == 0)
+		m_18 = pParent->m_18;
+	if (m_1c == 0)
+		m_1c = pParent->m_1c;
+	if (m_20 == 0)
+		m_20 = pParent->m_20;
+	if (m_78 == 0)
+		m_78 = pParent->m_78;
+	if (m_7c == 0)
+		m_7c = pParent->m_7c;
+	n = g_1074e65c;
+	for (i = 0; i < n; i++)
+		m_d0[0][i] = pParent->m_d0[0][i];
+	n = g_1074e4f4;
+	for (i = 0; i < n; i++)
+		m_d0[1][i] = pParent->m_d0[1][i];
+	n = g_1074e09c;
+	for (i = 0; i < n; i++)
+		m_pd8[i] = pParent->m_pd8[i];
+	n = g_10738d14;
+	for (i = 0; i < n; i++)
+		m_dc[i] = pParent->m_dc[i];
+	m_8c[0] = pParent->m_8c[0];
+	m_8c[1] = pParent->m_8c[1];
+	m_8c[2] = pParent->m_8c[2];
+	m_8c[3] = pParent->m_8c[3];
+	m_8c[4] = pParent->m_8c[4];
+	m_8c[5] = pParent->m_8c[5];
+	m_8c[6] = pParent->m_8c[6];
+	m_8c[7] = pParent->m_8c[7];
+	m_8c[8] = pParent->m_8c[8];
+	m_8c[9] = pParent->m_8c[9];
+	m_8c[10] = pParent->m_8c[10];
+	m_8c[11] = pParent->m_8c[11];
+	m_ac = pParent->m_ac;
+	m_98[0] = pParent->m_98[0];
+	m_98[1] = pParent->m_98[1];
+	m_98[2] = pParent->m_98[2];
+	m_98[3] = pParent->m_98[3];
+	m_98[4] = pParent->m_98[4];
+	m_98[5] = pParent->m_98[5];
+	m_98[6] = pParent->m_98[6];
+	m_98[7] = pParent->m_98[7];
+	m_98[8] = pParent->m_98[8];
+	m_98[9] = pParent->m_98[9];
+	m_a4 = pParent->m_a4;
+	m_a8 = pParent->m_a8;
+	m_a9 = pParent->m_a9;
+	m_bc[0] = pParent->m_bc[0];
+	m_bc[1] = pParent->m_bc[1];
+	m_bc[2] = pParent->m_bc[2];
+	m_cc = pParent->m_cc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d4ca0 size=0x3d
 #include <string.h>
 

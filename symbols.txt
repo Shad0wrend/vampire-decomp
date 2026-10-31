@@ -5219,6 +5219,7 @@
 0x1000a236 func   ?sub_103706b0@@YAXPAUCWitnessPlayer@@D@Z sub_103706b0
 0x1000a23b func   ?vfunc494@CNPC_VTest@@QAEXXZ CNPC_VTest::vfunc494
 0x1000a240 func   ?vfunc516@CGeneric_NPC@@UAEMXZ CGeneric_NPC::vfunc516
+0x1000a245 func   ?sub_101d3c10@StatDefault3@@QAEXPAU1@@Z StatDefault3::sub_101d3c10
 0x1000a24f func   ?sub_10030720@CCollisionEvent@@QAEPAUCFrictionEntry_t@@H@Z CCollisionEvent::sub_10030720
 0x1000a263 func   ?vfunc103@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc103
 0x1000a268 func   ?sub_10072f10@CUnknown10072f10@@QAEXH@Z CUnknown10072f10::sub_10072f10
