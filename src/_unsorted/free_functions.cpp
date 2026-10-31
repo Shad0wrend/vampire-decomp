@@ -142572,6 +142572,15 @@ extern "C" CBaseEntity *npc_VBach()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10362d20 size=0xc
+void __fastcall sub_10362d40(void *pThis);
+void * __fastcall sub_10362d20(void *pThis)
+{
+    sub_10362d40(pThis);
+    return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10362d40 size=0x33
 void sub_10007897();
 void sub_10013b5b();
