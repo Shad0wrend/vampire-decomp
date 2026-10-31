@@ -142868,6 +142868,16 @@ extern "C" CBaseEntity *npc_VBatSwarm()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10366d40 size=0xc
+void __fastcall sub_10366d60(void *pThis);
+
+void * __fastcall sub_10366d40(void *pThis)
+{
+	sub_10366d60(pThis);
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10366d60 size=0x33
 void sub_10007897();
 void sub_10011d4c();
