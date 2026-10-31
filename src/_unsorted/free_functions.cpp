@@ -52424,6 +52424,23 @@ void sub_10139d20(float *pAngles, float *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10139f00 size=0x62
+void sub_10139d70(float *, float *);
+void sub_101381b0(float *, float *, float *);
+void sub_10138760(float *, int, float *);
+
+void sub_10139f00(float *a, float *b, float *c)
+{
+	float v[3];
+	sub_10139d70(a, c);
+	sub_101381b0(b, c, v);
+	v[0] = v[0] * -1.0f;
+	v[1] = v[1] * -1.0f;
+	v[2] = v[2] * -1.0f;
+	sub_10138760(v, 3, c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10139f90 size=0x71
 #include "Vector.h"
 

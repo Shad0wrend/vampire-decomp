@@ -5062,6 +5062,7 @@
 0x1000b0ff func   ?vfunc585@CCineNPC@@UAE_NXZ CCineNPC::vfunc585
 0x1000b104 func   ?vfunc14@CMoveHelperServer@@UAEPAV1@I@Z CMoveHelperServer::vfunc14
 0x1000b10e func   ?vfunc438@CNPC_VHumanCombatant@@QAEHXZ CNPC_VHumanCombatant::vfunc438
+0x1000b118 func   ?sub_10139f00@@YAXPAM00@Z sub_10139f00
 0x1000b11d func   ?sub_1034f6f0@@YAHXZ sub_1034f6f0
 0x1000b127 func   ?vfunc82@CEnvLaser@@UAEHXZ CEnvLaser::vfunc82
 0x1000b12c func   ?sub_100f7fe0@@YGXHHHHH@Z sub_100f7fe0
