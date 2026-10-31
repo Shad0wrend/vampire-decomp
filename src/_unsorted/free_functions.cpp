@@ -149531,6 +149531,19 @@ void CNPC_VMingXiaoTentacle::sub_1039ee20(void *pArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039ef60 size=0x16
+struct CUnknown1039ede0 { void *sub_1039ede0(); };
+struct CUnknown10397e00 { void sub_10397e00(void *pOther); };
+
+// TARGET: sub_1039ef60
+void __fastcall sub_1039ef60(void *pThis)
+{
+	void *p = ((CUnknown1039ede0 *)pThis)->sub_1039ede0();
+	if (p)
+		((CUnknown10397e00 *)p)->sub_10397e00(pThis);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039ef90 size=0x39
 struct CUnknown1039ef90Global {
     virtual void vfunc0();
