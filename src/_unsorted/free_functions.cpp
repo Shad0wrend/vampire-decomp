@@ -16685,6 +16685,26 @@ void CUnknown10078540::sub_10078580(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100785a0 size=0x15
+struct CUnknown100785a0
+{
+	char m_pad0000[0x190];
+	int m_n190;
+
+	void sub_100785a0(int a);
+};
+
+// TARGET: CUnknown100785a0::sub_100785a0
+void CUnknown100785a0::sub_100785a0(int a)
+{
+	if (a <= -1)
+	{
+		a = -1;
+	}
+	m_n190 = a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100785d0 size=0x7
 struct CUnknown100785d0 { int sub_100785d0(); };
 int CUnknown100785d0::sub_100785d0()
