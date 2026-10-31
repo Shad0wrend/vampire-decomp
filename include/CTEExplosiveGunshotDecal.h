@@ -20,8 +20,6 @@ public:
 	int m_n44;
 	int m_n48;
 
-	CTEExplosiveGunshotDecal(const char *pszName);	// constructor: the CTEGunshotDecal part (sub_10064010), then the vtable
-	void sub_10064010(const char *pszName);	// CTEGunshotDecal::CTEGunshotDecal (0x10064010), called directly
 	void sub_10010f0a();	// destructor body
 	void vfunc4(void *pFilter, int delay);	// slot 4 "Create"-like worker (stub 0x10004197), called directly
 public:
