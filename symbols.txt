@@ -3550,6 +3550,7 @@
 0x100077ed func   ?Grow@CUnknown10076da0TagMemory@@QAEXH@Z CUnknown10076da0TagMemory::Grow
 0x100077ed func   ?sub_10079060@CUnknown10079060@@QAEXH@Z CUnknown10079060::sub_10079060
 0x100077f2 func   ?vfunc2@CAI_CsActList@@UAEXD@Z CAI_CsActList::vfunc2
+0x10007806 func   ?vfunc80@CItemGVVPhoto@@QAEHXZ CItemGVVPhoto::vfunc80
 0x1000780b func   ?sub_101e1870@@YGII@Z sub_101e1870
 0x1000781f func   ?sub_10314000@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_10314000
 0x10007824 func   _item_p_occult_dexterity item_p_occult_dexterity
