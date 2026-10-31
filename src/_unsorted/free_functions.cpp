@@ -127278,6 +127278,24 @@ int CUnknown102e9f90::sub_102e9f90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e9fb0 size=0x13
+struct CTreeHolder1024a120;
+void __fastcall sub_1024a120(CTreeHolder1024a120 *p);
+
+struct CTreeUnit102e9fb0 {
+	CTreeHolder1024a120 *m_pHolder;
+	int m_nTime;
+	void sub_102e9fb0();
+};
+
+// TARGET: CTreeUnit102e9fb0::sub_102e9fb0
+void CTreeUnit102e9fb0::sub_102e9fb0()
+{
+	sub_1024a120(m_pHolder);
+	m_nTime = 1000000000;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e9fe0 size=0x2c
 struct CSymMapUnit102e9fe0 {
     void sub_10249980(int a, int b);
