@@ -4804,6 +4804,7 @@
 0x10009809 func   ?vfunc81@CItemGCarStereo@@QAEHXZ CItemGCarStereo::vfunc81
 0x1000980e func   ?sub_1018b6f0@@YAHXZ sub_1018b6f0
 0x10009818 func   ?sub_1007bfc0@@YGHH@Z sub_1007bfc0
+0x1000981d func   ?vfunc77@CLight@@QAEXXZ CLight::vfunc77
 0x10009822 func   ?sub_1028e870@CUnknown1028e870@@QAEHXZ CUnknown1028e870::sub_1028e870
 0x10009827 func   ?vfunc37@CBaseEntity@@UAEMXZ CBaseEntity::vfunc37
 0x10009831 func   ?sub_100bc080@CBeam@@QAEXAAUinputdata_t@@@Z CBeam::sub_100bc080
