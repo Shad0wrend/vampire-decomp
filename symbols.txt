@@ -3491,6 +3491,7 @@
 0x10007aa4 func   ?sub_101e5e60@CUnknown101e56e0@@QAEXPAVCBaseCombatCharacter@@@Z CUnknown101e56e0::sub_101e5e60
 0x10007aa9 func   ?vfunc30@CHL2_Player@@UAEMXZ CHL2_Player::vfunc30
 0x10007aae func   ?sub_10066290@@YAXHHPBVVector@@0HH@Z sub_10066290
+0x10007ab8 func   ?vfunc81@COccultThaumDamage@@QAEHXZ COccultThaumDamage::vfunc81
 0x10007ac2 func   ?vfunc17@CMultiplayRules@@UAE_NH@Z CMultiplayRules::vfunc17
 0x10007ac7 func   ?vfunc623@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc623
 0x10007acc func   ?sub_102e27b0@@YIMPAD@Z sub_102e27b0
