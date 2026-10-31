@@ -18,6 +18,10 @@ public:
 	void sub_1035f650(int *pTask);	// slot 442 implementation (stub 0x10009b06): the task start handler of the animal NPCs, called directly by the dog
 	int vfunc440(int activity);	// slot 440 (the base implementation, stub 0x10012283, 0x1035fe60): tail called by CNPC_VDog::vfunc440
 	void vfunc103();	// slot 103 (stub 0x100117ca): the base implementation, called by CNPC_VScurrying::vfunc103
+	int vfunc461();	// slot 461 "SelectIdealState" (plain member): by the state at +0x5cc0 (2, 8 or 10) picks the ideal state (+0x5cc4) from conditions 0x44 / 0x46 / 0x47 and stamps the source file / line (+0x1b3c / +0x1b40), else CAI_BaseNPCTroika::vfunc461
+	bool sub_10269d30(int condition);	// CAI_BaseNPC member (stub 0x1001482b), called directly
+	bool sub_10269aa0(int condition);	// CAI_BaseNPC::HasCondition (stub 0x10014df8), called directly
+	int sub_102ad660();	// CAI_BaseNPCTroika::vfunc461 (stub 0x1000e49e), tail called
 	int vfunc482(char bDisregardState, int interruptLevel);	// slot 482 (CanPlaySequence-like), same as CNPC_VHuman::vfunc482
 public:
     virtual datamap_t * vfunc82();
