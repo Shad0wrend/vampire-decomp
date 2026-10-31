@@ -5,7 +5,7 @@ class IPhysicsCollisionEvent
 {
 public:
 	virtual void vfunc0(void *pEvent) = 0;
-	virtual void vfunc1() = 0;
+	virtual void vfunc1(void *pEvent) {}	// PostCollision (implemented by CCollisionEvent)
 	virtual void vfunc2(void *pObject, float energy, int surfaceProps, int surfacePropsHit, void *pData) {}	// Friction (implemented by CCollisionEvent)
 	virtual void vfunc3(void *pObject1, void *pObject2, void *pData) = 0;
 	virtual void vfunc4(void *pObject1, void *pObject2, void *pData) = 0;
