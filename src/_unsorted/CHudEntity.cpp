@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1012e850 size=0x3
+#include "CHudEntity.h"
+int CHudEntity::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012eb70 size=0x28
 #include "CHudEntity.h"
 
