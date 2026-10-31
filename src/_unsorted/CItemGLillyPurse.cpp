@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103ff3a0 size=0x3
+#include "CItemGLillyPurse.h"
+int CItemGLillyPurse::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040a420 size=0x1e
 #include "CItemGLillyPurse.h"
 
