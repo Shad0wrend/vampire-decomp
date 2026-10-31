@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103a5c80 size=0x3
+#include "CNPC_VSabbatLeader.h"
+bool CNPC_VSabbatLeader::vfunc70()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a5e50 size=0x1d
 #include "CNPC_VSabbatLeader.h"
 struct A { int sub_10012300(int); };

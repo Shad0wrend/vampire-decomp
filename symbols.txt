@@ -8361,6 +8361,7 @@
 0x10010f3c func   ?vfunc4@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHH@Z CTempEntsSystem::vfunc4
 0x10010f41 func   ?sub_1013dbb0@@YIXPAUPool@@@Z sub_1013dbb0
 0x10010f46 func   ?sub_101fb200@CVDmg_t@@QAEHHH@Z CVDmg_t::sub_101fb200
+0x10010f4b func   ?vfunc70@CNPC_VSabbatLeader@@QAE_NXZ CNPC_VSabbatLeader::vfunc70
 0x10010f5a func   ?sub_1014c0f0@CUnknown1014c0f0@@QAEHXZ CUnknown1014c0f0::sub_1014c0f0
 0x10010f5f func   ?sub_101371d0@@YANM@Z sub_101371d0
 0x10010f69 func   _gibshooter gibshooter
