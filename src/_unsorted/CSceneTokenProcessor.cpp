@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10083870 size=0x4
+#include "CSceneTokenProcessor.h"
+char * CSceneTokenProcessor::vfunc0()
+{
+    return (char *)this + 8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10083890 size=0x22
 // TARGET: CSceneTokenProcessor::vfunc1
 #include "CSceneTokenProcessor.h"
