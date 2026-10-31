@@ -87824,6 +87824,97 @@ void CUnknown101eb820::sub_101eb820()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101eb9f0 size=0x246
+#include "CEntryXTable.h"
+#include <stdio.h>
+
+__declspec(dllimport) void __cdecl Msg(const char *, ...);
+
+class IKVClose
+{
+public:
+	virtual void v0();
+	virtual void Close();
+};
+
+class IKV
+{
+public:
+	virtual void v0();
+	virtual void v1();
+	virtual IKV *Find(const char *pszName);
+	virtual IKV *Next();
+};
+
+class IKVRoot : public IKV, public virtual IKVClose
+{
+};
+
+extern int g_1070b238;
+IKVRoot *sub_101f2e20(const char *pszPath, int a);
+int *sub_10203920(int *pOut, IKV *pNode);
+int *sub_102038e0(int *pOut, IKV *pNode, const char *pszName);
+
+char CEntryXTable::sub_101eb9f0()
+{
+	if (m_pRecords) {
+		for (int i = 0; i < m_nRecords; i++) {
+			if (m_pRecords[i])
+				delete m_pRecords[i];
+			m_pRecords[i] = 0;
+		}
+		::operator delete(m_pRecords);
+		m_pRecords = 0;
+	}
+	m_nNextKey = 0;
+	m_nRecords = 0;
+	m_nAlloc = 0;
+	char szPath[128];
+	sprintf(szPath, "%s%s.txt", "vdata\\system\\", "items");
+	IKVRoot *pRoot = sub_101f2e20(szPath, g_1070b238);
+	if (pRoot) {
+		IKV *pTypes = pRoot->Find("BotchTypes");
+		if (pTypes) {
+			int tmp;
+			m_unk0c = *sub_10203920(&tmp, pTypes);
+			m_unk08 = *sub_102038e0(&tmp, pTypes, "InternalName");
+			for (IKV *pNode = pTypes->Find("BotchType"); pNode; pNode = pNode->Next()) {
+				if (m_nAlloc == m_nRecords) {
+					m_nAlloc += m_nGrow;
+					if (m_pRecords != 0) {
+						CEntryX **pNew = (CEntryX **)::operator new(m_nAlloc * 4);
+						int i;
+						for (i = 0; i < m_nRecords; i++)
+							pNew[i] = m_pRecords[i];
+						for (; i < m_nAlloc; i++)
+							pNew[i] = 0;
+						::operator delete(m_pRecords);
+						m_pRecords = pNew;
+						m_nRecords++;
+					} else {
+						m_pRecords = (CEntryX **)::operator new(m_nAlloc * 4);
+						for (int i = 0; i < m_nAlloc; i++)
+							m_pRecords[i] = 0;
+						m_nRecords++;
+					}
+				} else {
+					m_nRecords++;
+				}
+				if (m_pRecords[m_nRecords - 1] == 0)
+					m_pRecords[m_nRecords - 1] = new CEntryX(m_nNextKey++);
+				m_pRecords[m_nRecords - 1]->sub_101eb6b0(pNode);
+			}
+		} else {
+			Msg("Unable to open data file for: %s\n", szPath);
+		}
+		((IKVClose *)pRoot)->Close();
+		return 0;
+	}
+	Msg("Unable to load data for: %s\n", szPath);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ebd10 size=0x1
 void sub_101ebd10()
 {
