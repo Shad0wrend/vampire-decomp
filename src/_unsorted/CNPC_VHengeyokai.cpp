@@ -201,6 +201,78 @@ void CNPC_VHengeyokai::vfunc259(CNPC_VHengeyokaiEvent *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037fca0 size=0x25c
+#include "CNPC_VHengeyokai.h"
+#include "CEntityVSlots.h"
+#include "engineiface.h"
+
+char __fastcall sub_10381c80(CNPC_VHengeyokai *pNPC);
+char __fastcall sub_10381ca0(CNPC_VHengeyokai *pNPC);
+
+int CNPC_VHengeyokai::vfunc438()
+{
+	CEntityVSlots *pSlots = (CEntityVSlots *)this;
+	m_n1b2c = 0x13;
+	switch (m_n5cc0) {
+	case 2:
+		m_b5b80 = 0;
+		if (sub_10269aa0(0x58) && sub_10381c80(this))
+			return 0x15e;
+		if (((CUnknown10381be0 *)this)->sub_10381be0()) {
+			sub_10381ba0(0);
+			if (sub_10269d30(0x51)) {
+				m_h6664 = 0xffffffff;
+				sub_102c43b0(0.0f);
+				return sub_10382f60();
+			}
+			if (!sub_10269d30(0x5f) && !sub_10269d30(8)) {
+				int r = sub_10382d40();
+				if (r)
+					return r;
+				m_h6664 = 0xffffffff;
+				sub_102c43b0(0.0f);
+				return 0x15f;
+			}
+			m_h6664 = 0xffffffff;
+			sub_102c43b0(0.0f);
+			return sub_10382f60();
+		}
+		if (sub_10381c80(this)) {
+			if (sub_10381ca0(this) && !pSlots->slot530((CEntityVSlots *)pSlots->slot167()))
+				return 0x161;
+			if (!sub_10269aa0(0x48) && sub_10269aa0(0x46)) {
+				if (sub_10269aa0(0x5f) || sub_10269aa0(8))
+					return 0x15e;
+				if (sub_10269aa0(0x1b)) {
+					if (!m_b667d && enginerandom->vfunc2(0, 99) < 5) {
+						m_b667d = 1;
+						return 0x162 + (sub_103822a0((CBaseEntity *)pSlots->slot167()) ? 2 : 0);
+					}
+					return 0x160 + (sub_103822a0((CBaseEntity *)pSlots->slot167()) ? 3 : 0);
+				}
+			}
+			return 0x166;
+		}
+		m_flags14b8 &= ~8;
+		{
+			int r2 = sub_10382d40();
+			if (r2)
+				return r2;
+		}
+		if (pSlots->slot530((CEntityVSlots *)pSlots->slot167()))
+			return 0x167;
+		if (sub_10269aa0(0x48))
+			return 0x165;
+		if (sub_10269aa0(9))
+			return 0x165 + (sub_10269aa0(0x46) ? 4 : 0);
+		break;
+	case 5:
+		return 0x16f;
+	}
+	return sub_10384ee0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037ffa0 size=0x110
 #include "CNPC_VHengeyokai.h"
 
