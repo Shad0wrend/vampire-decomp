@@ -7628,6 +7628,7 @@
 0x1000f8a8 func   ?vfunc5@CBaseCombatWeapon@@UAEPAV1@I@Z CBaseCombatWeapon::vfunc5
 0x1000f8ad func   ?vfunc5@CNPC_VPlaceholder@@QAEPAV1@I@Z CNPC_VPlaceholder::vfunc5
 0x1000f8b2 func   ?sub_1024c050@@YIXPAUMem4@@HH@Z sub_1024c050
+0x1000f8b7 func   ?vfunc81@CWeaponRanged_Rifle_Crossbow_Flaming@@QAEHXZ CWeaponRanged_Rifle_Crossbow_Flaming::vfunc81
 0x1000f8bc func   ?sub_100f6bb0@@YGXPAUSEntityObject@@@Z sub_100f6bb0
 0x1000f8c6 func   ?sub_103109a0@CUtlVector4@@QAEHHHPBH@Z CUtlVector4::sub_103109a0
 0x1000f8da func   ?vfunc176@CStealthModifier@@QAEXPAVCBaseEntity@@@Z CStealthModifier::vfunc176
