@@ -10331,6 +10331,7 @@
 0x1001454c func   ?sub_101db430@CUnknown101db210@@QAEHHH@Z CUnknown101db210::sub_101db430
 0x10014551 func   ?sub_1039aca0@CNPC_VMingXiao@@QAEXXZ CNPC_VMingXiao::sub_1039aca0
 0x10014556 func   ?sub_10130610@CLight@@QAEXXZ CLight::sub_10130610
+0x1001455b func   ?vfunc82@CEnvShooter@@QAEHXZ CEnvShooter::vfunc82
 0x10014560 func   ?sub_101db5f0@CUnknown101db5f0@@QAEPAV1@XZ CUnknown101db5f0::sub_101db5f0
 0x1001456a func   ?sub_10405aa0@@YAHXZ sub_10405aa0
 0x1001457e func   ?sub_100b3640@CBaseEntity@@QAEXI@Z CBaseEntity::sub_100b3640

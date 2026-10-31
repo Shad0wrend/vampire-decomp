@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100f5710 size=0x6
+#include "CEnvShooter.h"
+namespace lifted {
+extern char g_10565c44;
+}
+int CEnvShooter::vfunc82()
+{
+    return (int)&lifted::g_10565c44;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f5810 size=0x48
 #include "CEnvShooter.h"
 #include "CGibShooter.h"
