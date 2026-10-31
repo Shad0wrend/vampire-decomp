@@ -36594,6 +36594,26 @@ void sub_100d5920()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d5a20 size=0x19
+#include "CBaseCombatCharacter.h"
+
+struct CUnit100d5a20
+{
+	char m_pad0000[0xa8];
+	CBaseCombatCharacter *m_pChar;	// 0xa8
+};
+
+CUnit100d5a20 *sub_101193b0();
+
+// TARGET: sub_100d5a20
+void sub_100d5a20()
+{
+	CUnit100d5a20 *p = sub_101193b0();
+	if (p && p->m_pChar)
+		p->m_pChar->sub_10336170();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d5ae0 size=0x48
 #include "engineserver.h"
 #include "CBaseCombatCharacter.h"
