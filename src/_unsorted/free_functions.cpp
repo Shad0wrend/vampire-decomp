@@ -88772,6 +88772,21 @@ int CUnknown101f9b70::sub_101f9b70(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f9bf0 size=0x60
+#include "CUnknown101f9bf0.h"
+#include "CUnknown101f0e50.h"
+#include "CVTraitEffectGroup_t.h"
+#include "CVModInfo_t.h"
+extern CUnknown101f0e50 g_1074df78;
+int CUnknown101f9bf0::sub_101f9bf0(int a, int stat, int base)
+{
+	CVModInfo_t info(a, stat, base);
+	for (int i = 0; i < m_count; i++)
+		g_1074df78.sub_101f8480(m_items[i])->sub_101f75a0((CTraitStatBlock *)&info);
+	return info.sub_101f69a0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f9c70 size=0xb6
 #include "CUnknown101f9c70.h"
 struct TraceEnt { const char *a; const void *b; const void *c; };
