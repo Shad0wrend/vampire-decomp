@@ -126756,6 +126756,19 @@ PatrolPlace* sub_102dd8b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dd990 size=0x16
+extern int g_10927280[16];
+extern int g_10931bcc;
+
+// TARGET: sub_102dd990
+void sub_102dd990()
+{
+	for (int i = 0; i < 16; i++)
+		g_10927280[i] = 0;
+	g_10931bcc = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dd9c0 size=0x60
 struct sub_Rec102dd9c0
 {
