@@ -19468,6 +19468,19 @@ CBaseEntity *CBasePlayer::sub_10081890()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10081980 size=0x16
+float __fastcall sub_1007bef0(void *pThis);
+
+// TARGET: sub_10081980
+float __fastcall sub_10081980(char *pThis)
+{
+	void *p = *(void **)(pThis + 0x4bc);
+	if (p)
+		return sub_1007bef0(p);
+	return 0.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10081e00 size=0x3f
 extern char g_106e7e91;
 void sub_101d2850(const char *pszName, int nSize);

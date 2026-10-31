@@ -2027,6 +2027,7 @@
 0x10004a25 func   ?vfunc5@CRagdollPropAttached@@QAEPAVCRagdollProp@@I@Z CRagdollPropAttached::vfunc5
 0x10004a34 func   ?sub_102906e0@@YADXZ sub_102906e0
 0x10004a39 func   ?vfunc362@CWeaponRanged_Rifle_Crossbow_Flaming@@QAEHXZ CWeaponRanged_Rifle_Crossbow_Flaming::vfunc362
+0x10004a3e func   ?sub_10081980@@YIMPAD@Z sub_10081980
 0x10004a43 func   ?vfunc80@CItemMWallet@@QAEHXZ CItemMWallet::vfunc80
 0x10004a48 func   ?vfunc5@CNPC_VGhoulCroucher@@QAEPAV1@I@Z CNPC_VGhoulCroucher::vfunc5
 0x10004a4d func   ?sub_100e49b0@CDialog@@QAEXH@Z CDialog::sub_100e49b0
