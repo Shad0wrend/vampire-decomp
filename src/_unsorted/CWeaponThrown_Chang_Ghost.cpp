@@ -143,6 +143,14 @@ int CWeaponThrown_Chang_Ghost::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f1310 size=0x6
+#include "CWeaponThrown_Chang_Ghost.h"
+int CWeaponThrown_Chang_Ghost::vfunc363()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f1410 size=0x1e
 #include "CWeaponThrown_Chang_Ghost.h"
 
