@@ -20,6 +20,17 @@ int CWeaponRanged_Rifle_RemingtonBach::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102364d0 size=0x6
+#include "CWeaponRanged_Rifle_RemingtonBach.h"
+namespace lifted {
+extern char g_105bc428;
+}
+int CWeaponRanged_Rifle_RemingtonBach::vfunc362()
+{
+    return (int)&lifted::g_105bc428;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a470 size=0x1e
 #include "CWeaponRanged_Rifle_RemingtonBach.h"
 
