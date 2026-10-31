@@ -9684,6 +9684,7 @@
 0x10012ad0 func   ?vfunc81@CItemGGiovanniInvitationMaria@@QAEHXZ CItemGGiovanniInvitationMaria::vfunc81
 0x10012ad5 func   ?sub_1018c600@@YAXXZ sub_1018c600
 0x10012ada func   ?sub_10090b20@@YIXPAD@Z sub_10090b20
+0x10012adf func   ?vfunc80@CResearchBook_HG_DODGE@@QAEHXZ CResearchBook_HG_DODGE::vfunc80
 0x10012ae4 func   ?sub_102f3770@@YAHPBM0@Z sub_102f3770
 0x10012ae9 func   _info_node_kick_over info_node_kick_over
 0x10012aee func   ?sub_10229550@CUnknown10229550@@QAEXPAUCUnknown10229550Item@@M@Z CUnknown10229550::sub_10229550
