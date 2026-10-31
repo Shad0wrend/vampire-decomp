@@ -35,6 +35,7 @@ public:
 	virtual const char *vfunc63(int index);
 	virtual bool vfunc73(CBaseEntity *pPlayer);	// slot 73: false when the gate convar at 0x1070aec4 is flagged or zero; true for a player the sub_101664d0 test accepts (its slot 94 / 0x178 answer is 10), else true only when the horizontal speed (the velocity at +0x3d4) exceeds 220.0f
 	virtual void vfunc75();
+	virtual void vfunc79();	// "CHalfLifeMultiplay::ChangeLevel": reads the map cycle file named by the cvar at 0x1070aad0 and changes to the map after the current one (the first valid one when the current map is last or missing), sets the flag byte at 0x1070ba2c
 	virtual void vfunc80();	// once (flag byte at 0x1070ba2c): sends the user message 0x1a reliably to everybody, then sets the time at +0x8 to the current time (0x1070b228 + 0xc) plus a constant, the flag byte and clears the byte at +0xc
 
 	int m_n04;	// 0x04
