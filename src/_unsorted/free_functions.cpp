@@ -159453,6 +159453,24 @@ void CUnknown10427700::sub_104278d0(const char *name, int a, int b, int plrDmg, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x104279a0 size=0x63
+struct SEntry { char pad[0x1c]; float a[3]; float b[3]; };
+SEntry *sub_100c7480(int, int);
+// TARGET: sub_104279a0
+int sub_104279a0(int a, int b, float *pA, float *pB)
+{
+	SEntry *p = sub_100c7480(a, b);
+	if (p == 0) {
+		pA[0] = 0; pA[1] = 0; pA[2] = 0;
+		pB[0] = 0; pB[1] = 0; pB[2] = 0;
+		return 0;
+	}
+	pA[0] = p->a[0]; pA[1] = p->a[1]; pA[2] = p->a[2];
+	pB[0] = p->b[0]; pB[1] = p->b[1]; pB[2] = p->b[2];
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10427a30 size=0x22
 // TARGET: sub_10427a30
 extern "C" void __declspec(dllimport) Msg(const char *pszFormat, ...);
