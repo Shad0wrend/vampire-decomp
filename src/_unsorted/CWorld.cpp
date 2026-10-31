@@ -142,6 +142,33 @@ void CWorld::vfunc241(void *pSource, int nSound, int unused1, int unused2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023bba0 size=0x5e
+#include "CWorld.h"
+#include "engineserver.h"
+
+struct sub_Obj106e7050 { void sub_100cdd80(); };
+extern sub_Obj106e7050 g_106e7050;
+void sub_1023e6b0();
+
+inline char *sub_NullIfEmpty(char *p)
+{
+	if (!*p)
+		return 0;
+	return p;
+}
+
+// TARGET: CWorld::vfunc103
+void CWorld::vfunc103()
+{
+	vfunc10(1);
+	vfunc212_slot((int)sub_NullIfEmpty(engine->vfunc19(vfunc8())));
+	sub_100b3580(0x1000000);
+	g_106e7050.sub_100cdd80();
+	sub_1023e6b0();
+	vfunc104();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023bc20 size=0xae
 #include "CWorld.h"
 #include "ConVar.h"
