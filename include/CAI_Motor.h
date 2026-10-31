@@ -82,6 +82,7 @@ public:
 	void sub_102e1560(int a, float flScale, float flValue, int b, int c);	// stub 0x10012116, called directly by slot 19 with five stack arguments
 	void sub_102e2690(Vector *pVec);	// stub 0x10011a09
 	void sub_102e26b0(Vector *pVec);	// stub 0x10003f7b, called directly by slot 7 (fills the facing direction)
+	float sub_102e27d0(int a, int b);	// forwards (a, b, 0) to slot 345 (+0x564) of the owning NPC (m_pOuter) and returns its float
 	void sub_10288670(float flIdealYaw);	// sets the ideal yaw (+0x34): flipped by 180 when the byte at +0x28 is set, limited by sub_102e0a80 unless the largest change (+0x1c) is 180
 
 	// The datamap getter (BEGIN_DATADESC); its m_facingQueue field uses the vector save/restore ops below.
