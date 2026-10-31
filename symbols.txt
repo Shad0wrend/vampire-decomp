@@ -10677,6 +10677,7 @@
 0x10014b46 func   ?sub_1008bb70@CBaseAnimating@@QAEXPAVCBaseEntity@@@Z CBaseAnimating::sub_1008bb70
 0x10014b4b func   ?sub_103232b0@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::sub_103232b0
 0x10014b50 func   ?sub_10026af0@@YGDH@Z sub_10026af0
+0x10014b55 func   ?vfunc363@CWeaponMelee_BushHook@@QAEHXZ CWeaponMelee_BushHook::vfunc363
 0x10014b5a func   ?vfunc138@CNPC_VBrujah@@UAEHXZ CNPC_VBrujah::vfunc138
 0x10014b5f func   ?vfunc5@CFilterFeat@@QAEPAV1@I@Z CFilterFeat::vfunc5
 0x10014b64 func   ?sub_101ddc10@@YAXXZ sub_101ddc10
