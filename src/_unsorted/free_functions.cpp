@@ -122941,6 +122941,19 @@ float __cdecl sub_102d61b0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d61e0 size=0x12
+#include "vampire.h"
+
+extern char *g_1060a750[];
+
+// TARGET: sub_102d61e0
+float __cdecl sub_102d61e0(int index)
+{
+	char *p = g_1060a750[index];
+	return *(float *)(p + 0x1c) - *(float *)(p + 0x10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d6210 size=0xe
 extern int *g_1060a750[];
 
