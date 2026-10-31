@@ -104009,6 +104009,17 @@ void * CUnknown10230cd0::sub_10230cd0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10230ed0 size=0x13
+#include "CVDmg_t.h"
+
+CVDmgBlock16_t *CVDmgBlock16_t::sub_10230ed0()
+{
+	sub_10205380();
+	sub_10204270();
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10230f60 size=0x13
 struct CUnknown10230f60 { void * sub_10230f60(int); };
 void * CUnknown10230f60::sub_10230f60(int a0)

@@ -8579,6 +8579,7 @@
 0x10010663 func   ?sub_10237ce0@@YAXXZ sub_10237ce0
 0x1001066d func   ?sub_101ff190@CVStatInfo_t@@QAEHH@Z CVStatInfo_t::sub_101ff190
 0x10010677 func   ?vfunc276@CRagdollProp@@UAEDXZ CRagdollProp::vfunc276
+0x1001067c func   ?sub_10230ed0@CVDmgBlock16_t@@QAEPAU1@XZ CVDmgBlock16_t::sub_10230ed0
 0x10010681 func   ?sub_1019bf80@@YAXPAUCUnknown1019bf80List@@@Z sub_1019bf80
 0x10010686 func   ?sub_102d0b20@CUnknown102d0b20@@QAEXXZ CUnknown102d0b20::sub_102d0b20
 0x1001068b func   ?vfunc82@CAmbientGeneric@@QAEHXZ CAmbientGeneric::vfunc82
