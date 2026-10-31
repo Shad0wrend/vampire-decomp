@@ -10,7 +10,7 @@ class IPositionInterpolator
 public:
 	virtual void vfunc0() = 0;
 	virtual void vfunc1() = 0;
-	virtual void vfunc2() = 0;
+	virtual void vfunc2(int index, const Vector *pPos) = 0;	// stores the end point (0 or 1)
 	virtual void vfunc3(float t, Vector *pOut) = 0;	// the position at t (0..1) along the rope
 	virtual char vfunc4(const char *pKey, const char *pValue) = 0;
 	int m_unk0004;
