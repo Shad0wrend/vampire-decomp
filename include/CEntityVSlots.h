@@ -85,7 +85,7 @@ public:
 	EVS(205) EVS(206) EVS(207) EVS(208)
 	virtual CEntityVSlots *slot209();	// "GetGroundEntity"
 	virtual void slot210(Vector *pOut);	// "GetGroundVelocityToApply": fills pOut
-	EVS(211)
+	virtual short slot211();	// answers a short in ax (CBaseEntity::vfunc77 saves it)
 	virtual void slot212(int set);
 	virtual void slot213(const float *pSize);	// "SetSize"
 	virtual Vector *slot214();	// "GetSize": the entity's size (+0x38c)
