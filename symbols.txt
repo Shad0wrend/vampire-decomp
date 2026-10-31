@@ -10089,6 +10089,7 @@
 0x10013c8c func   ?sub_100bbbf0@CBeam@@QAEXXZ CBeam::sub_100bbbf0
 0x10013c91 func   ?vfunc103@CPropClockHand@@UAEXXZ CPropClockHand::vfunc103
 0x10013c96 func   ?sub_1007a270@S1007a270@@QAEHH@Z S1007a270::sub_1007a270
+0x10013c9b func   ?vfunc274@CBaseTerminal@@QAEHXZ CBaseTerminal::vfunc274
 0x10013ca0 func   ?sub_102becb0@CUnknown102becb0@@QAEXXZ CUnknown102becb0::sub_102becb0
 0x10013ca5 func   ?vfunc1@CTEBeamRingPoint@@UAEHXZ CTEBeamRingPoint::vfunc1
 0x10013caa func   ?sub_101912d0@CPhysicsProp@@QAEEXZ CPhysicsProp::sub_101912d0
