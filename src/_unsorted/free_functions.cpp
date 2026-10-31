@@ -72256,6 +72256,25 @@ void sub_101af0d0(SndSrcView *pSrc, const char *pszSample)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101af2d0 size=0x18
+struct IUnk10723944 {
+    virtual void vfunc0();
+    virtual void vfunc1();
+    virtual void vfunc2();
+    virtual void vfunc3();
+    virtual void vfunc4();
+    virtual char *vfunc5(int index);
+};
+
+extern IUnk10723944 *g_10723944;
+
+char sub_101af2d0(char *p)
+{
+    char *q = g_10723944->vfunc5(*(short *)(p + 0x40));
+    return q[0x70];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101af3f0 size=0x1a
 namespace lifted {
 extern int g_10596ed8;
