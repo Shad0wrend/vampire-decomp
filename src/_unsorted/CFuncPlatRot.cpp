@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1015a0b0 size=0x6
+#include "CFuncPlatRot.h"
+namespace lifted {
+extern char g_10580658;
+}
+int CFuncPlatRot::vfunc82()
+{
+    return (int)&lifted::g_10580658;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015a2c0 size=0x28
 #include "CFuncPlatRot.h"
 #include "CFuncPlat.h"

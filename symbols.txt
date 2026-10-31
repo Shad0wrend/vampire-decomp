@@ -1539,6 +1539,7 @@
 0x10003e22 func   ?vfunc8@CAI_RatLocalNavigator@@QAEPAVCAI_PlaneSolver@@XZ CAI_RatLocalNavigator::vfunc8
 0x10003e27 func   ?vfunc193@CAI_BaseHumanoid@@QAE?AVVector@@XZ CAI_BaseHumanoid::vfunc193
 0x10003e2c func   ?sub_101784c0@CBasePlayer@@QAEXPAVCBaseEntity@@@Z CBasePlayer::sub_101784c0
+0x10003e31 func   ?vfunc82@CFuncPlatRot@@QAEHXZ CFuncPlatRot::vfunc82
 0x10003e36 func   ?sub_10132b50@CUnit10132b50@@QAEXH@Z CUnit10132b50::sub_10132b50
 0x10003e40 func   ?vfunc230@CPropHaunted@@QAEXHPAX@Z CPropHaunted::vfunc230
 0x10003e45 func   ?vfunc445@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc445
