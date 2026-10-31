@@ -27,3 +27,17 @@ void CPositionInterpolator_Rope::vfunc0()
     lifted::sub_10430964((int)this);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1012fd90 size=0x61
+#include "CPositionInterpolator_Rope.h"
+// TARGET: CPositionInterpolator_Rope::vfunc2
+void CPositionInterpolator_Rope::vfunc2(int index, const Vector *pPos)
+{
+	if (index == 0 || index == 1) {
+		Vector *pVec = (Vector *)&m_vecs[index];
+		if (*pPos != *pVec)
+			m_bChanged = 1;
+		*pVec = *pPos;
+	}
+}
+// END FUNCTION
