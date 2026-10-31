@@ -175,7 +175,7 @@ public:
 	virtual void vfunc102();
 	virtual void vfunc103();
 	virtual void vfunc104_slot();
-	virtual void vfunc105();
+	virtual void vfunc105(const char *p);
 	virtual void vfunc106();
 	virtual void vfunc107();
 	virtual void vfunc108();
