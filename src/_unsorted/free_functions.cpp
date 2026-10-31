@@ -50572,6 +50572,20 @@ int *sub_10131490()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101316e0 size=0x4c
+#include "CTimerEntity.h"
+#include "globalvars.h"
+#include "engineiface.h"
+void CTimerEntity::sub_101316e0()
+{
+	if (m_n498 == 0) {
+		if (m_n4a4 != 0)
+			m_fInterval = enginerandom->vfunc1(m_fLowerRandomBound, m_fUpperRandomBound);
+		m_flNextThink17c = m_fInterval + gpGlobals->curtime;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10131750 size=0xf
 namespace lifted {
 int sub_1000c1b2();
