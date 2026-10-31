@@ -122049,6 +122049,34 @@ CAI_Motor *CAI_Motor::sub_102e0900(int outer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e09c0 size=0x60
+#include "CAI_Motor.h"
+#include "utlvector.h"
+
+extern void *vt_1049d854[];
+extern void *vt_1049d824[];
+extern void *vt_1049a0f8[];
+
+struct sub_MotorView
+{
+	void **m_pVtbl;
+	char pad04[0x10 - 4];
+	void **m_pSinkVtbl;
+	char pad14[0x54 - 0x14];
+	CUtlVector<int> m_Queue;
+};
+
+// TARGET: CAI_Motor::sub_102e09c0
+void CAI_Motor::sub_102e09c0()
+{
+	sub_MotorView *p = (sub_MotorView *)this;
+	p->m_pVtbl = vt_1049d854;
+	p->m_pSinkVtbl = vt_1049d824;
+	p->m_Queue.~CUtlVector<int>();
+	p->m_pVtbl = vt_1049a0f8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e0a40 size=0xa
 struct CUnknown102e0a40 { int p[6]; int a; void sub_102e0a40(int v); };
 // TARGET: CUnknown102e0a40::sub_102e0a40

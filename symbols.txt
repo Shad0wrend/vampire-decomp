@@ -9880,6 +9880,7 @@
 0x10014b23 func   ?vfunc103@CDynamicLight@@QAEXXZ CDynamicLight::vfunc103
 0x10014b28 func   ?vfunc580@CGeneric_NPC@@UAEPAUCAI_CondOwner@@XZ CGeneric_NPC::vfunc580
 0x10014b2d func   ?sub_102583e0@@YIXPAVCBaseEntity@@@Z sub_102583e0
+0x10014b32 func   ?sub_102e09c0@CAI_Motor@@QAEXXZ CAI_Motor::sub_102e09c0
 0x10014b37 func   ?sub_10085180@@YAXXZ sub_10085180
 0x10014b46 func   ?sub_1008bb70@CBaseAnimating@@QAEXPAVCBaseEntity@@@Z CBaseAnimating::sub_1008bb70
 0x10014b4b func   ?sub_103232b0@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::sub_103232b0
