@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10400e60 size=0x6
+#include "CItemGVampyrApocrypha.h"
+namespace lifted {
+extern char g_10946424;
+}
+int CItemGVampyrApocrypha::vfunc80()
+{
+    return (int)&lifted::g_10946424;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10400e80 size=0x3
 #include "CItemGVampyrApocrypha.h"
 int CItemGVampyrApocrypha::vfunc81()
