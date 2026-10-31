@@ -52,6 +52,45 @@ int CNPC_VCop::vfunc438()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103723f0 size=0x236
+#include "CNPC_VCop.h"
+#include "CEHandleGet.h"
+
+// TARGET: CNPC_VCop::sub_103723f0
+int CNPC_VCop::sub_103723f0()
+{
+	EHANDLE &hPlayer = (EHANDLE &)m_h628c;
+	bool bPlayer = false;
+	if (sub_10269aa0(0x25) && sub_10269aa0(0xa)) {
+		if (sub_10269aa0(0x6d)) {
+			CBaseEntity *pPlayer = hPlayer.Get();
+			if (m_h6160.Get() == pPlayer)
+				bPlayer = true;
+		}
+		if (sub_10269aa0(0x70)) {
+			CBaseEntity *pPlayer = hPlayer.Get();
+			if (m_h618c.Get() == pPlayer)
+				bPlayer = true;
+		}
+	}
+	if (sub_10269aa0(0x4c) || sub_10269aa0(0x4d) || sub_10269aa0(0x4e)) {
+		m_b5b80 = 0;
+		CBaseEntity *pPlayer = hPlayer.Get();
+		if (m_h5b7c.Get() == pPlayer)
+			goto LPursue;
+	}
+	if (bPlayer) {
+LPursue:
+		((CNPC_VCopSlots *)this)->slot597((CNPC_VCopPlayer *)hPlayer.Get(), 10);
+		((CNPC_VCopSlots *)this)->slot596(hPlayer.Get());
+		m_pszFile1b3c = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VCop.cpp";
+		m_nLine1b40 = 0x527;
+		return m_n5cc4 = 2;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10372dd0 size=0xee
 #include "CNPC_VCop.h"
 #include "CAI_BaseNPCTroika.h"
