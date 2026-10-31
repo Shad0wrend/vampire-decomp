@@ -8381,6 +8381,7 @@
 0x10010e6a func   ?sub_100d9d60@@YAXXZ sub_100d9d60
 0x10010e6f func   ?sub_100c97c0@CBaseButton@@QAEXXZ CBaseButton::sub_100c97c0
 0x10010e74 func   ?sub_10097c90@@YIXPAF@Z sub_10097c90
+0x10010e79 func   ?vfunc81@CResearchBook_LG_STEALTH@@QAEHXZ CResearchBook_LG_STEALTH::vfunc81
 0x10010e7e func   ?vfunc123@CPhysHinge@@QAEXXZ CPhysHinge::vfunc123
 0x10010e83 func   ?vfunc438@CNPC_VTzimisceHeadClaw@@QAEHXZ CNPC_VTzimisceHeadClaw::vfunc438
 0x10010e88 func   ?sub_1018d210@CPointAngleSensor@@QAEXPAUinputdata_t@@@Z CPointAngleSensor::sub_1018d210
