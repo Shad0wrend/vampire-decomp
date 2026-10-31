@@ -136913,6 +136913,32 @@ char CBaseCombatCharacter::sub_103380d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10338190 size=0x213
+#include "ScopeTrace.h"
+#include "CBaseCombatCharacter.h"
+#include "CVStatList_t.h"
+#include "CUnknown10204e90.h"
+
+extern void (__cdecl *g_109f3650)(int level, const char *fmt, ...);
+int sub_10202780(int kind);
+
+// TARGET: CBaseCombatCharacter::sub_10338190
+bool CBaseCombatCharacter::sub_10338190(CUnknown10204e90 *pRef)
+{
+	ScopeTrace trace("CBaseCombatCharacter::VStatBuy", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	g_109f3650(4, "VStatBuy: %s %d\n", pRef->sub_102043a0(), 1);
+	int nCost = pRef->sub_10205100(this);
+	if (nCost <= CVStatListSet::Of(this)->Find(0)->sub_102012d0(0x22)) {
+		int nIndex = pRef->m_nIndex;
+		if (CVStatListSet::Of(this)->Find(sub_10202780(pRef->m_nKind))->sub_10200d60(nIndex)) {
+			CVStatListSet::Of(this)->Find(0)->sub_10201100(0x22, nCost);
+			return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10338440 size=0xf0
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
