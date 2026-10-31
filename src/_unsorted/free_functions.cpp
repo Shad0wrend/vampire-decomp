@@ -20384,6 +20384,29 @@ void sub_10088fc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100891c0 size=0x63
+#include "CAI_NodeGraph.h"
+struct CAI_NodeLink { char m_pad0000[0x64]; unsigned int m_nFlags; };
+extern CAI_NodeGraph *g_1093407c;
+extern int g_106c994c;
+void sub_100891c0()
+{
+	for (int i = 0; i < g_1093407c->m_nNodes; i++) {
+		CAI_Node *pNode;
+		if (i < 0 || i >= g_1093407c->m_nNodes) {
+			g_106c994c++;
+			pNode = 0;
+		} else {
+			pNode = g_1093407c->m_ppNodes[i];
+		}
+		for (int j = 0; j < pNode->m_n78; j++) {
+			CAI_NodeLink *pLink = ((CAI_NodeLink **)pNode->m_ppLinks)[j];
+			pLink->m_nFlags &= ~1;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100892e0 size=0x8b
 #include "CGlobalEntityList.h"
 #include "CAI_BaseNPC.h"
