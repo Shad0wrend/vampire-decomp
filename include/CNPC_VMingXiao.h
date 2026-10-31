@@ -437,7 +437,7 @@ public:
 	virtual void vfunc434();
 	virtual void vfunc435();
 	virtual void vfunc436();
-	virtual void vfunc437();
+	virtual int vfunc437();	// slot 437: marks the task state (+0x1b2c = 0x19); in state 5 stamps the source file / line (+0x1b30 / +0x1b34) and answers 0x157, else sends the grabbed target (handle +0x6680) to slot 388 and answers 0
 	virtual void vfunc438();
 	virtual void vfunc439();
 	virtual void vfunc440();
