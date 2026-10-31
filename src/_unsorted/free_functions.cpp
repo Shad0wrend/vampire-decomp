@@ -49907,6 +49907,48 @@ extern "C" GP *gib()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012b370 size=0x232
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+extern char g_1070d1b0[];
+void sub_101cf390(CBaseEntity *pEnt, const void *a, const void *b);
+void sub_101cf5c0(CBaseEntity *pEnt, int a, int b);
+
+#define ENTNAME(p) ((p) ? ((p)->m_name26c ? (p)->m_name26c : g_106b8540) : g_105387dc)
+#define COL(p) ((CCollisionProperty *)((char *)(p) + 0x270))
+
+// TARGET: CBaseEntity::sub_1012b370
+void CBaseEntity::sub_1012b370(const char *pszModel, int b, int c)
+{
+	CCollisionProperty *pCol;
+	{
+		ScopeTrace t("CBaseEntity::SetSolid", ENTNAME(this));
+		pCol = COL(this);
+		pCol->sub_100dc480(2);
+	}
+	{
+		ScopeTrace t("CBaseEntity::AddSolidFlags", ENTNAME(this));
+		pCol->AddSolidFlags(4);
+	}
+	vfunc105(pszModel);
+	sub_101cf390(this, g_1070d1b0, g_1070d1b0);
+	sub_101cf5c0(this, b, 0);
+	if (!sub_10090180(c, -1, 0)) {
+		{
+			ScopeTrace t("CBaseEntity::AddSolidFlags", ENTNAME(this));
+			pCol->AddSolidFlags(0x10);
+		}
+		{
+			ScopeTrace t("CBaseEntity::RemoveSolidFlags", ENTNAME(this));
+			pCol->sub_100dc580(pCol->m_usSolidFlags & ~4);
+		}
+		sub_100b3b00();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012b640 size=0x49
 void *sub_1000db89(int);
 struct GP;
