@@ -13,6 +13,24 @@ int CAI_SystemHook::vfunc2()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cc410 size=0x1e
+#include "CAI_SystemHook.h"
+namespace lifted {
+extern char g_10936b68;
+int sub_10003616();
+struct C10006b59 { int sub_10006b59(); };
+struct C1000cb2b { int sub_1000cb2b(); };
+int sub_100158cf();
+}
+int CAI_SystemHook::vfunc5()
+{
+    lifted::sub_100158cf();
+    ((lifted::C1000cb2b *)((int)&lifted::g_10936b68))->sub_1000cb2b();
+    lifted::sub_10003616();
+    return ((lifted::C10006b59 *)((int)&lifted::g_10936b68))->sub_10006b59();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cc480 size=0x1e
 #include "CAI_SystemHook.h"
 
