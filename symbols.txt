@@ -3856,6 +3856,7 @@
 0x10008558 func   _npc_VHumanCombatPatrol npc_VHumanCombatPatrol
 0x10008562 func   ?sub_101815b0@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_101815b0
 0x10008571 func   ?sub_102d74c0@@YAPAUCEnt5f44@@XZ sub_102d74c0
+0x1000857b func   ?vfunc373@CWeaponMelee_ManBatClaw@@QAEHXZ CWeaponMelee_ManBatClaw::vfunc373
 0x10008580 func   ?sub_10148a20@CGravControllerPoint@@QAEXXZ CGravControllerPoint::sub_10148a20
 0x1000858a func   ?sub_10230260@@YAHH@Z sub_10230260
 0x10008594 func   ?vfunc81@CFunc_LOD@@UAEHXZ CFunc_LOD::vfunc81
