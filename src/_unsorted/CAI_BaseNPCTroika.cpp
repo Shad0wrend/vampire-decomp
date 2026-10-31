@@ -2579,6 +2579,61 @@ void CAI_BaseNPCTroika::vfunc77()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c1ec0 size=0x255
+#include "CEHandleGet.h"
+#include "CBaseCombatCharacter.h"
+#include "CNPCSlots614.h"
+
+struct SScriptRec
+{
+	char m_pad[0x5f78];
+	int m_n5f78;
+	int m_n5f7c;
+	int m_n5f80;
+	int m_n5f84;
+	int m_n5f88;
+	int m_n5f8c;
+};
+
+class SSlotView
+{
+public:
+	EVS(0) EVS(1) EVS(2) EVS(3) EVS(4) EVS(5) EVS(6) EVS(7) EVS(8) EVS(9)
+	EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5) EVS10(6) EVS10(7) EVS10(8)
+	EVS(90) EVS(91) virtual int slot92(); EVS(93) virtual int slot94(); virtual int slot95();
+	EVS(96) EVS(97) EVS(98) EVS(99)
+	EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15) EVS10(16) EVS10(17) EVS10(18) EVS10(19)
+	EVS(200) EVS(201) EVS(202) EVS(203) EVS(204) EVS(205) EVS(206) EVS(207) EVS(208) EVS(209)
+	EVS(210) virtual int slot211();
+};
+
+void CAI_BaseNPCTroika::vfunc78()
+{
+	SSlotView *pView = (SSlotView *)this;
+	if (m_b5d78 && EHandle_Get(m_h5d74)) {
+		pView->slot94();
+		pView->slot95();
+		pView->slot92();
+		pView->slot211();
+	}
+	sub_100a8990();
+	((CNPCSlots614 *)this)->slot614();
+	if (sub_1032e7b0())
+		((CEntityVSlots *)sub_1032e7b0())->slot78();
+	if (m_b5d78 && EHandle_Get(m_h5d74)) {
+		((SScriptRec *)EHandle_Get(m_h5d74))->m_n5f78 = pView->slot94();
+		((SScriptRec *)EHandle_Get(m_h5d74))->m_n5f7c = pView->slot95();
+		((SScriptRec *)EHandle_Get(m_h5d74))->m_n5f80 = pView->slot92();
+		((SScriptRec *)EHandle_Get(m_h5d74))->m_n5f84 = pView->slot211();
+		((SScriptRec *)EHandle_Get(m_h5d74))->m_n5f88 = m_flags19c;
+		unsigned int h = m_h5d74;
+		unsigned int flags = m_flags14b8;
+		((SScriptRec *)EHandle_Get(h))->m_n5f8c = flags;
+	}
+	m_b5d78 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c21c0 size=0xf4
 #include "CAI_BaseNPCTroika.h"
 #include "CBaseCombatCharacter.h"
