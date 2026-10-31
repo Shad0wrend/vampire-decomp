@@ -4209,6 +4209,7 @@
 0x100089c7 func   ?sub_10388f20@@YAEXZ sub_10388f20
 0x100089cc func   ?sub_10365860@CNPC_VBach@@QAEXPBDM@Z CNPC_VBach::sub_10365860
 0x100089d1 func   ?vfunc5@CAI_DynamicLink@@QAEPAV1@I@Z CAI_DynamicLink::vfunc5
+0x100089d6 func   ?sub_101364b0@CUnit101364b0@@QAEXH@Z CUnit101364b0::sub_101364b0
 0x100089db func   ?sub_103fb2d0@@YAHXZ sub_103fb2d0
 0x100089e0 func   ?vfunc0@CTraceFilterSoundOcclude@@QAE_NPAXH@Z CTraceFilterSoundOcclude::vfunc0
 0x100089e5 func   ?vfunc498@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc498

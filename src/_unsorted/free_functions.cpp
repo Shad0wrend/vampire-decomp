@@ -52848,6 +52848,22 @@ void __fastcall sub_10136490(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101364b0 size=0x14
+struct CUnit101364b0
+{
+	char m_pad0000[0x450];
+	bool m_b450;
+
+	void sub_101364b0(int a);
+};
+
+// TARGET: CUnit101364b0::sub_101364b0
+void CUnit101364b0::sub_101364b0(int a)
+{
+	m_b450 = !m_b450;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101364e0 size=0x7c
 #include "CLogicRelay.h"
 #include "CEventQueue.h"
