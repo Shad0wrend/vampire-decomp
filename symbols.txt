@@ -2404,6 +2404,7 @@
 0x10005628 func   ?vfunc33@CBaseEntity@@UAEHXZ CBaseEntity::vfunc33
 0x1000562d func   ?vfunc5@CEnvFireSource@@QAEPAV1@I@Z CEnvFireSource::vfunc5
 0x10005632 func   ?sub_10204ad0@CVDmgBlock16_t@@QAEHPAX@Z CVDmgBlock16_t::sub_10204ad0
+0x10005637 func   ?vfunc2@CCheckClient@@QAEXXZ CCheckClient::vfunc2
 0x1000563c func   ?vfunc365@CNPC_VPlayerController@@QAE_NH@Z CNPC_VPlayerController::vfunc365
 0x10005641 func   ?vfunc380@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc380
 0x10005646 func   ?vfunc362@CPayphone@@UAE_NH@Z CPayphone::vfunc362
