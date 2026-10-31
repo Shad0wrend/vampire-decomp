@@ -129266,6 +129266,26 @@ int CAI_PlaneSolver::sub_10309650(CAI_PlaneSolverObj *pObj, float flYaw, float f
 }
 // END FUNCTION
 
+// FUNCTION: 0x10309e40 size=0x30
+#include "CUnknown1030a6e0.h"
+
+#define V5(p) virtual void p##a(); virtual void p##b(); virtual void p##c(); virtual void p##d(); virtual void p##e();
+#define V25(p) V5(p##1) V5(p##2) V5(p##3) V5(p##4) V5(p##5)
+#define V125(p) V25(p##1) V25(p##2) V25(p##3) V25(p##4) V25(p##5)
+struct SlotView_10309e40 {
+	V125(x) V25(y) V25(z) V5(w) V5(u) V5(t)
+	virtual void s1();
+	virtual void s2();
+	virtual Vector vfunc192();
+};
+
+void CUnknown1030a6e0::sub_10309e40()
+{
+	if (*(unsigned int *)((char *)m_pOuter + 0x224) & 0x4000000)
+		m_Debug50.sub_102e8b80(((SlotView_10309e40 *)m_pOuter)->vfunc192());
+}
+// END FUNCTION
+
 // FUNCTION: 0x10309e80 size=0xa5
 #include "CUnknown1030a6e0.h"
 #include "Vector.h"
