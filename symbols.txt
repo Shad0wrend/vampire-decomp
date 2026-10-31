@@ -2438,6 +2438,7 @@
 0x100054de func   ?vfunc0@CBaseTempEntity@@UAEPAUServerClass@@XZ CBaseTempEntity::vfunc0
 0x100054e3 func   ?sub_10366400@CNPC_VWerewolf@@QAE_NH@Z CNPC_VWerewolf::sub_10366400
 0x100054e8 func   ?sub_102f9090@CUnknown102f9090@@QAEXHH@Z CUnknown102f9090::sub_102f9090
+0x100054ed func   ?sub_1029f340@@YGHH@Z sub_1029f340
 0x100054f2 func   ?vfunc2@CTEShowLine@@UAEPAV1@I@Z CTEShowLine::vfunc2
 0x100054f7 func   ?sub_1025d3a0@CUtlRBTreeBig@@QBE_NG@Z CUtlRBTreeBig::sub_1025d3a0
 0x10005501 func   ?sub_101a75e0@@YAXXZ sub_101a75e0

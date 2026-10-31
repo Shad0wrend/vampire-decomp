@@ -120870,6 +120870,19 @@ char CUnknown1029f2e0::sub_1029f2e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029f340 size=0x1a
+int sub_10412520(int a);
+
+// TARGET: sub_1029f340
+int __stdcall sub_1029f340(int a)
+{
+	if (a == 0) {
+		return -1;
+	}
+	return sub_10412520(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029f370 size=0xbc
 #include "CAI_BaseNPCTroika.h"
 
