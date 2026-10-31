@@ -5534,6 +5534,7 @@
 0x1000af3d func   ?vfunc7@CGameRules@@UAEXH@Z CGameRules::vfunc7
 0x1000af51 func   ?vfunc5@CLogicBranch@@QAEPAV1@I@Z CLogicBranch::vfunc5
 0x1000af56 func   ?sub_100f2f90@CUnknown100f2f90@@QAEPAXHHH@Z CUnknown100f2f90::sub_100f2f90
+0x1000af5b func   ?sub_102146d0@CUnknown102148f0@@QAEXH@Z CUnknown102148f0::sub_102146d0
 0x1000af60 func   ?sub_101d1460@CUnknown101d1460@@QAEXH@Z CUnknown101d1460::sub_101d1460
 0x1000af65 func   ?sub_1037e9b0@@YADXZ sub_1037e9b0
 0x1000af6a func   ?vfunc11@CSave@@UAEHHHH@Z CSave::vfunc11

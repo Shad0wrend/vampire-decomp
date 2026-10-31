@@ -98575,6 +98575,16 @@ void CPropHaunted::sub_10214300()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102146d0 size=0x13
+#include "CUnknown102148f0.h"
+
+void CUnknown102148f0::sub_102146d0(int a)
+{
+	sub_102148f0();
+	sub_10214a20();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10214700 size=0x8
 namespace lifted {
 int sub_100122f6();
