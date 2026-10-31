@@ -88,5 +88,6 @@ public:
 	bool sub_1019fe10(void *pData, typedescription_t *pField);	// "CSave::IsFieldNonEmpty"-like (recursive, stub 0x10015aaf): whether the field holds data that has to be saved: embedded structures (type 9) are checked field by field, custom fields (type 10) ask their save/restore ops (slot 2), everything else is tested for all-zero bytes (sub_101a0570)
 	int sub_101a0570(const void *pData, int nBytes);	// whether the bytes are all zero (stub 0x100041d8)
 	int sub_101a01f0(const void *pBaseData, typedescription_t *pFields, int nFields);	// the number of fields that have to be saved (stub 0x100143da)
+	bool sub_1019ff50(const unsigned short *pToken, void *pData, void *pRootMap, typedescription_t *pField);	// \"CSave::WriteBasicField\" (stub 0x10015401): the basic types 1..10, called by sub_101a01c0
 	bool sub_101a01c0(const char *pszName, void *pData, void *pRootMap, typedescription_t *pField);	// writes one field (stub 0x1000b0fa); false when it failed
 };
