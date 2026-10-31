@@ -9766,6 +9766,7 @@
 0x10012a58 func   ?sub_100eecf0@CBaseDoor@@QAEDXZ CBaseDoor::sub_100eecf0
 0x10012a5d func   ?sub_101dbe10@@YI_NPAH@Z sub_101dbe10
 0x10012a67 func   ?sub_10175220@CBasePlayer@@QAEHXZ CBasePlayer::sub_10175220
+0x10012a76 func   ?vfunc241@CFuncBrush@@QAEHXZ CFuncBrush::vfunc241
 0x10012a7b func   ?sub_100ecd30@CUnknown100ecd30@@QAEXHPAH000@Z CUnknown100ecd30::sub_100ecd30
 0x10012a80 func   ?sub_101a8460@CCineNPC@@QAEXPAVCBaseAnimating@@@Z CCineNPC::sub_101a8460
 0x10012a85 func   ?vfunc0@CTEDynamicLight@@UAEHXZ CTEDynamicLight::vfunc0

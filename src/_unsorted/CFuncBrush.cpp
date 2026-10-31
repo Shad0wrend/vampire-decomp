@@ -65,6 +65,14 @@ bool CFuncBrush::vfunc223()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013e480 size=0xf
+#include "CFuncBrush.h"
+int CFuncBrush::vfunc241()
+{
+    return ((unsigned)(~(*(int *)((char *)this + 0x19c))) >> 6) & 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013ec30 size=0x1e
 #include "CFuncBrush.h"
 
