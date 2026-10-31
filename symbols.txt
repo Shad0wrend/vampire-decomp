@@ -2832,6 +2832,7 @@
 0x10006366 func   ?sub_102da9e0@CUnknown102d9ed0@@QAEPAUPlaceRecord_t@@PBVVector@@00@Z CUnknown102d9ed0::sub_102da9e0
 0x1000636b func   ?sub_10032f00@UtlVec8@@QAEXHH@Z UtlVec8::sub_10032f00
 0x10006370 func   ?vfunc489@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc489
+0x10006375 func   ?vfunc80@CItemGStake@@QAEHXZ CItemGStake::vfunc80
 0x10006389 func   ?sub_10387800@@YADXZ sub_10387800
 0x1000638e func   ?sub_1022d1e0@@YAXPAUCBlock4k@@PBU1@@Z sub_1022d1e0
 0x10006393 func   ?v1@CGlobalEntityList_Ent@@UAEPAIXZ CGlobalEntityList_Ent::v1

@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10403ec0 size=0x6
+#include "CItemGStake.h"
+namespace lifted {
+extern char g_10945034;
+}
+int CItemGStake::vfunc80()
+{
+    return (int)&lifted::g_10945034;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10403ee0 size=0x3
 #include "CItemGStake.h"
 int CItemGStake::vfunc81()
