@@ -271,6 +271,14 @@ void CNPC_VTest::vfunc495()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b4ed0 size=0x6
+#include "CNPC_VTest.h"
+int CNPC_VTest::vfunc138()
+{
+    return 4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b4f30 size=0x77
 #include "CNPC_VTest.h"
 struct CNPC_VTestUnit : CNPC_VTest {
