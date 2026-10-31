@@ -269,7 +269,7 @@ public:
 	virtual void vfunc217();
 	virtual void vfunc218();
 	virtual void vfunc219();
-	virtual void vfunc220();
+	virtual float *vfunc220();
 	virtual void vfunc221();
 	virtual void vfunc222();
 	virtual void vfunc223();
