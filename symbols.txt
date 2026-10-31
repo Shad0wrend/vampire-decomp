@@ -6523,6 +6523,7 @@
 0x1000d70b func   _physics_cannister physics_cannister
 0x1000d71a func   ?sub_100f18d0@@YAHXZ sub_100f18d0
 0x1000d724 func   ?sub_101ce060@@YAXPBUCMsgShortsBytes@@PAVCEntityVSlots@@@Z sub_101ce060
+0x1000d729 func   ?vfunc267@CBaseAnimatingOverlay@@QAEHXZ CBaseAnimatingOverlay::vfunc267
 0x1000d733 func   ?vfunc201@CNPC_VCameraSecurity@@QAE_NPAVCBaseEntity@@HHH@Z CNPC_VCameraSecurity::vfunc201
 0x1000d73d func   _move_keyframed move_keyframed
 0x1000d747 func   ?sub_10348560@@YAXXZ sub_10348560

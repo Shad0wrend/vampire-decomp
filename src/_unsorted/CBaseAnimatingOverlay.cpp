@@ -9,6 +9,14 @@ int CBaseAnimatingOverlay::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10098a40 size=0x3
+#include "CBaseAnimatingOverlay.h"
+int CBaseAnimatingOverlay::vfunc267()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10098a60 size=0x1e
 #include "CBaseAnimatingOverlay.h"
 
