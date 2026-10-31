@@ -150,6 +150,16 @@ int __fastcall sub_103cab50(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103cabf0 size=0x18
+// TARGET: CNPC_VWerewolf::vfunc130
+#include "CNPC_VWerewolf.h"
+void CNPC_VWerewolf::vfunc130(int a)
+{
+    sub_102998c0(a);
+    sub_103cac20();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103cb170 size=0x6f
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;

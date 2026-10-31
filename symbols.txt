@@ -9297,6 +9297,7 @@
 0x100114e6 func   ?sub_100ae450@@YAXXZ sub_100ae450
 0x100114eb func   ?sub_1020f220@CFuncElevatorUnit1020f220@@QAEXXZ CFuncElevatorUnit1020f220::sub_1020f220
 0x100114f0 func   ?vfunc81@CVampireProjectile_MingXiaoSpit@@UAEHXZ CVampireProjectile_MingXiaoSpit::vfunc81
+0x100114f5 func   ?vfunc130@CNPC_VWerewolf@@UAEXH@Z CNPC_VWerewolf::vfunc130
 0x100114fa func   ?sub_10245c80@CUnk10245c80@@QAEXP6AXPAXH@Z@Z CUnk10245c80::sub_10245c80
 0x100114ff func   ?vfunc3@CTESparks@@UAEXPBM0@Z CTESparks::vfunc3
 0x10011504 func   ?vfunc5@CAnchorList@@UAEXXZ CAnchorList::vfunc5
