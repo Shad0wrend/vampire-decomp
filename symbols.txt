@@ -10182,6 +10182,7 @@
 0x1001505a func   ?vfunc433@CNPC_VSabbatLeader@@QAEXXZ CNPC_VSabbatLeader::vfunc433
 0x1001505f func   ?sub_10237c30@@YAXXZ sub_10237c30
 0x10015064 func   ?sub_100ac250@CBaseEntity@@QAEHPBD@Z CBaseEntity::sub_100ac250
+0x1001506e func   ??0CUnknown101d88b0@@QAE@PAUCVDmgSource_t@@PBUCVDmgBlock16_t@@HH@Z CUnknown101d88b0::CUnknown101d88b0
 0x10015078 func   ?sub_10221be0@QuestJournal@@QAEDH@Z QuestJournal::sub_10221be0
 0x1001507d func   ?vfunc5@CWeaponRanged_Rifle_M37@@QAEPAV1@I@Z CWeaponRanged_Rifle_M37::vfunc5
 0x10015082 func   ?vfunc20@CAI_StandoffBehavior@@UAEXXZ CAI_StandoffBehavior::vfunc20
