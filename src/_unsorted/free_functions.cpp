@@ -50445,6 +50445,27 @@ bool __fastcall sub_10129740(void *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10129770 size=0x19
+struct CUnk10129770
+{
+	char m_pad0000[0x4c];
+	int m_n4c;	// 0x4c
+
+	char sub_10129740();
+	int sub_10129770();
+};
+
+// TARGET: sub_10129770
+int CUnk10129770::sub_10129770()
+{
+	if (m_n4c) {
+		if (!sub_10129740())
+			return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101297a0 size=0x21
 // TARGET: sub_101297a0
 #include "CBaseEntity.h"

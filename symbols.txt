@@ -895,6 +895,7 @@
 0x10002955 func   ?vfunc5@CGameRules@@UAEXHH@Z CGameRules::vfunc5
 0x1000295a func   ?sub_101d4f60@StatDefault3@@QAEHH@Z StatDefault3::sub_101d4f60
 0x1000295f func   ?sub_100cfac0@@YAHXZ sub_100cfac0
+0x10002964 func   ?sub_10129770@CUnk10129770@@QAEHXZ CUnk10129770::sub_10129770
 0x10002969 func   ?vfunc103@CPhysConstraintSystem@@QAEXXZ CPhysConstraintSystem::vfunc103
 0x10002978 func   ?vfunc82@CCameraTrack@@UAEHXZ CCameraTrack::vfunc82
 0x1000297d func   ?sub_101d5bd0@CNamedListX@@QAEHPBD@Z CNamedListX::sub_101d5bd0
