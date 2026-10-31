@@ -125847,6 +125847,16 @@ void __fastcall sub_102e0b40(float *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e0b60 size=0xf
+void sub_101cf250(void *p, int n);
+
+// TARGET: sub_102e0b60
+void __fastcall sub_102e0b60(char *pThis)
+{
+	sub_101cf250(pThis + 0x2c, 2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e12c0 size=0xb
 void CUnknown102e12c0::sub_102e12c0()
 {
