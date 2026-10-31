@@ -10,6 +10,13 @@ struct CBaseNetworkableBits_t
 	unsigned char *m_pBits;	// 0x10
 };
 
+struct CBaseNetworkableEdict_t
+{
+	char m_pad0000[0x40];
+	int m_n40;	// 0x40
+	unsigned char m_b44;	// 0x44
+};
+
 class CBaseNetworkable
 {
 public:
