@@ -6432,6 +6432,7 @@
 0x1000d41d func   ?vfunc82@CDisciplineParticle@@UAEHXZ CDisciplineParticle::vfunc82
 0x1000d42c func   ?vfunc379@CPayphone@@UAE_NPAVCBaseEntity@@HHHHHH@Z CPayphone::vfunc379
 0x1000d431 func   ?sub_1033b980@CUnknown1033b980@@QAEMXZ CUnknown1033b980::sub_1033b980
+0x1000d43b func   ?vfunc81@CBaseTerminal@@QAEHXZ CBaseTerminal::vfunc81
 0x1000d445 func   _item_w_avamp_blade item_w_avamp_blade
 0x1000d44a func   ?sub_101e94d0@@YGXH@Z sub_101e94d0
 0x1000d454 func   ?sub_1009ba60@CBaseEntity@@QAEXHPADH@Z CBaseEntity::sub_1009ba60

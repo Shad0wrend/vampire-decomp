@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10217300 size=0x3
+#include "CBaseTerminal.h"
+int CBaseTerminal::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10217680 size=0x18b
 #include "CBaseTerminal.h"
 
