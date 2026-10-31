@@ -6412,6 +6412,7 @@
 0x1000c356 func   ?sub_100b5ce0@CBaseFlex@@QAEXXZ CBaseFlex::sub_100b5ce0
 0x1000c35b func   ?sub_1006bf40@CUnknown1006bea0@@QAEXXZ CUnknown1006bea0::sub_1006bf40
 0x1000c360 func   ?vfunc5@CWeaponMelee_OccultBlade@@QAEPAV1@I@Z CWeaponMelee_OccultBlade::vfunc5
+0x1000c36a func   ?sub_10357b70@CUnk10357b70@@QAEXH@Z CUnk10357b70::sub_10357b70
 0x1000c374 func   ?sub_10430440@@YAXXZ sub_10430440
 0x1000c37e func   ?sub_10253b70@CBaseCombatWeapon@@QAE_NHHHH@Z CBaseCombatWeapon::sub_10253b70
 0x1000c383 func   ?sub_100f9c40@CBaseEntityList@@QAEXXZ CBaseEntityList::sub_100f9c40

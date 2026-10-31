@@ -147269,6 +147269,21 @@ int sub_10357410()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10357b70 size=0x1b
+// TARGET: sub_10357b70
+struct S10924a6c { virtual void a(); virtual void b(); };
+extern S10924a6c *g_10924a6c;
+struct CUnk10357b70 {
+    void sub_10269a20(int condition);
+    void sub_10357b70(int a);
+};
+void CUnk10357b70::sub_10357b70(int a)
+{
+    g_10924a6c->b();
+    sub_10269a20(0x79);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10357be0 size=0x1e1
 #include "CEntityVSlots.h"
 #include "CAI_Motor.h"
