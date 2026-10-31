@@ -3293,6 +3293,7 @@
 0x10007450 func   ?sub_10032a60@CUtlMemory20@@QAEPAV1@HH@Z CUtlMemory20::sub_10032a60
 0x10007455 func   ?sub_1007edb0@@YGMM@Z sub_1007edb0
 0x1000745f func   _item_k_sarcophagus_key item_k_sarcophagus_key
+0x10007464 func   ?vfunc81@CItemGHattersScreenplay@@QAEHXZ CItemGHattersScreenplay::vfunc81
 0x10007469 func   ?sub_101b3730@CUnknown101b3730@@QAEPAXH@Z CUnknown101b3730::sub_101b3730
 0x1000746e func   ?sub_10092460@CBaseAnimating@@QAE_NHH@Z CBaseAnimating::sub_10092460
 0x10007473 func   ?vfunc247@CSceneEntity@@UAEXXZ CSceneEntity::vfunc247

@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10403c30 size=0x3
+#include "CItemGHattersScreenplay.h"
+int CItemGHattersScreenplay::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040a930 size=0x1e
 #include "CItemGHattersScreenplay.h"
 
