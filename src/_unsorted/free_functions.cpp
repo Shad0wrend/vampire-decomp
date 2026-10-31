@@ -127708,6 +127708,16 @@ void __fastcall sub_102e0b80(char *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e0ba0 size=0x16
+// TARGET: sub_102e0ba0
+void __fastcall sub_102e0ba0(char *pThis, int, int a)
+{
+	*(int *)(pThis + 0x14) = a;
+	char *pOwner = *(char **)(pThis + 4);
+	*(int *)(pThis + 0x68) = *(int *)(pOwner + 0x5d40);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e12c0 size=0xb
 void CUnknown102e12c0::sub_102e12c0()
 {
