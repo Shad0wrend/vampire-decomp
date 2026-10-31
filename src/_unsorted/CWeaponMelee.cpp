@@ -198,3 +198,40 @@ void CWeaponMelee::vfunc327()
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x103eaec0 size=0x5f
+#include "CWeaponMelee.h"
+#include "CUnknown1015ef20.h"
+#include "globalvars.h"
+
+struct sub_PlayerObj319 : CUnknown1015ef20
+{
+	char padObj[0x208c - sizeof(CUnknown1015ef20)];
+	unsigned int m_nFlags;
+};
+struct sub_Owner319
+{
+	char pad[0xa8];
+	sub_PlayerObj319 *m_pObj;
+};
+struct sub_Weapon319
+{
+	char pad[0x730];
+	float m_flTime;
+};
+
+// TARGET: CWeaponMelee::vfunc319
+void CWeaponMelee::vfunc319()
+{
+	sub_Owner319 *pOwner = (sub_Owner319 *)sub_102521f0();
+	if (!pOwner || !pOwner->m_pObj)
+		return;
+	unsigned int flags = pOwner->m_pObj->m_nFlags;
+	if (!pOwner->m_pObj->sub_1015ef20())
+		flags &= 0xfffff7fe;
+	if ((flags & 1) && ((sub_Weapon319 *)this)->m_flTime <= gpGlobals->curtime)
+		vfunc326();
+	else
+		vfunc321();
+}
+// END FUNCTION

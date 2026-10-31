@@ -9016,6 +9016,7 @@
 0x1001302f func   ?vfunc433@CNPC_VPedestrian@@QAEXXZ CNPC_VPedestrian::vfunc433
 0x10013039 func   ?sub_102a0cb0@CAI_BaseNPCTroika@@QAE_NPAV1@@Z CAI_BaseNPCTroika::sub_102a0cb0
 0x1001303e func   ?sub_101ab1e0@@YAXHPAEPAI@Z sub_101ab1e0
+0x10013043 func   ?vfunc319@CWeaponMelee@@UAEXXZ CWeaponMelee::vfunc319
 0x1001304d func   ?vfunc0@CAI_Motor@@UAEPAV1@I@Z CAI_Motor::vfunc0
 0x10013052 func   ?vfunc128@CRagdollProp@@UAE_NXZ CRagdollProp::vfunc128
 0x10013057 func   ?vfunc79@CBaseCombatCharacter@@UAEHXZ CBaseCombatCharacter::vfunc79
