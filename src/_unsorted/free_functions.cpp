@@ -123418,6 +123418,19 @@ void __fastcall sub_102ecce0(COwner *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ed940 size=0x60
+#include "CAI_BaseNPC.h"
+bool CAI_Navigator::sub_102ed940(float f, const Vector *pVec, int c)
+{
+	m_i08 = *(int *)(m_pOuter + 0x156c);
+	m_i0c = *(int *)(((int *)gpGlobals) + 1);
+	CAI_NavComponentData *p = (CAI_NavComponentData *)sub_102ecc00();
+	p->m_i08 = *(int *)(p->m_pOuter + 0x156c);
+	p->m_i0c = *(int *)(((int *)gpGlobals) + 1);
+	return sub_102ed430((const Vector *)((CAI_BaseNPC *)m_pOuter)->vfunc220(), *(int *)&f, (int)pVec, c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ed9c0 size=0xa6
 #include "CAI_Navigator.h"
 
