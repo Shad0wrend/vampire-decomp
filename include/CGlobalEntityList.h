@@ -83,6 +83,7 @@ public:
 	CBaseEntity *sub_100f8370(CBaseEntity *pCurrent, unsigned int nFlags);	// the next entity after pCurrent (the first one when null) with any of the flag bits nFlags in its dword at +0x4c (stub 0x10015b95)
 	void sub_100f6ec0();	// "CGlobalEntityList::Clear": sets the byte at +0x18044, removes every live entity (UTIL_Remove through the list from its head), runs sub_100f6ce0, purges a global vector (0x10703668), resets two globals and the counters at +0x1803c / +0x18040 and the byte
 	void sub_100f6bb0(struct SEntityObject *pObject);	// "UTIL_Remove" queue step (stub 0x1000f8bc): adds a live networkable to the pending-delete vector (0x10703668); called on the global with this unused
+	CGlobalEntityList *sub_100f6b40();	// the constructor: CBaseEntityList::CBaseEntityList (0x100f9a60), the vptr and the zeroed counters
 	void sub_100f6ce0();	// stub 0x10007478
 	int sub_100f6d60();	// takes the global pending-delete value (0x10703674) and clears it (stub 0x10003d1e); does not use this
 };
