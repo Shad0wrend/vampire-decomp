@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10406f40 size=0x3
+#include "CItemGVVPhoto.h"
+int CItemGVVPhoto::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040acc0 size=0x1e
 #include "CItemGVVPhoto.h"
 

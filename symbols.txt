@@ -4331,6 +4331,7 @@
 0x10009322 func   ?sub_102ecc40@CAI_Navigator@@QAEPAXXZ CAI_Navigator::sub_102ecc40
 0x1000932c func   ?vfunc326@CWeaponPhysCannon@@UAEXXZ CWeaponPhysCannon::vfunc326
 0x1000933b func   ?sub_100acd40@CBaseEntity@@QAEXPAUinputdata_t@@@Z CBaseEntity::sub_100acd40
+0x10009340 func   ?vfunc81@CItemGVVPhoto@@QAEHXZ CItemGVVPhoto::vfunc81
 0x1000934f func   ?vfunc29@CRestore@@UAEHPAHHH@Z CRestore::vfunc29
 0x10009354 func   ?vfunc7@CMoveHelperServer@@UAE_NXZ CMoveHelperServer::vfunc7
 0x1000936d func   ?vfunc249@CSceneEntity@@UAEXMHPAUCSceneEvent@@@Z CSceneEntity::vfunc249
