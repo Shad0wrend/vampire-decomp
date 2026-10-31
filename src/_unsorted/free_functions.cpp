@@ -87993,6 +87993,28 @@ S101f7310 *CUnknown101f7960::sub_101f7960()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f7a90 size=0x62
+#include "CUnknown101f7bb0.h"
+void CUnknown101f7bb0::sub_101f7a90()
+{
+	if (m_ppItems) {
+		for (int i = 0; i < m_nItems; i++) {
+			delete m_ppItems[i];
+			m_ppItems[i] = 0;
+		}
+		operator delete(m_ppItems);
+		m_ppItems = 0;
+	}
+	m_nItems = 0;
+	m_n0000 = 0;
+	if (m_p0018) {
+		operator delete(m_p0018);
+		m_p0018 = 0;
+	}
+	m_n0014 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f7b20 size=0x6b
 #include "CUnknown101f7b20.h"
 

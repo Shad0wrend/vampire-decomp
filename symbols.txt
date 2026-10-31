@@ -4206,6 +4206,7 @@
 0x10009610 func   ?vfunc4@CNavPropertyDatabase@@QAEXXZ CNavPropertyDatabase::vfunc4
 0x1000961a func   ?vfunc127@CBaseEntity@@UAEHH@Z CBaseEntity::vfunc127
 0x1000961f func   _item_k_malcolm_office_key item_k_malcolm_office_key
+0x10009624 func   ?sub_101f7a90@CUnknown101f7bb0@@QAEXXZ CUnknown101f7bb0::sub_101f7a90
 0x10009629 func   ?sub_10257200@CBaseCombatWeapon@@QAEDXZ CBaseCombatWeapon::sub_10257200
 0x1000962e func   ?sub_101aa210@CUnknown101aa210@@QAEPAXXZ CUnknown101aa210::sub_101aa210
 0x10009638 func   ?sub_1029f5d0@@YGXPAUSNPCTroikaRef_t@@@Z sub_1029f5d0
