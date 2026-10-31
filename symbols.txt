@@ -2075,6 +2075,7 @@
 0x10004f98 func   ?sub_10364500@@YGHMM@Z sub_10364500
 0x10004fa7 func   ?sub_10059fe0@CTEMetalSparks@@QAEXHH@Z CTEMetalSparks::sub_10059fe0
 0x10004fb1 func   ?sub_10063a20@CUnknown10063a20@@QAEHXZ CUnknown10063a20::sub_10063a20
+0x10004fb6 func   ?vfunc81@CWeaponMelee_ZombieFists@@QAEHXZ CWeaponMelee_ZombieFists::vfunc81
 0x10004fbb func   ?sub_10191170@COrnamentProp@@QAEXPAVCBaseEntity@@@Z COrnamentProp::sub_10191170
 0x10004fc5 func   ?sub_102f67a0@@YA_NPBD@Z sub_102f67a0
 0x10004fca func   ?sub_10113cf0@CUnknown10113cf0@@QAEHXZ CUnknown10113cf0::sub_10113cf0
