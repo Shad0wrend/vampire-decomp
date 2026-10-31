@@ -165,5 +165,5 @@ public:
 	virtual void vfunc114();
 	virtual void vfunc115();
 	virtual void vfunc116();
-	virtual int vfunc117();
+	virtual unsigned char vfunc117();
 };
