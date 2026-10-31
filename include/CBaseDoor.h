@@ -16,7 +16,9 @@ public:
 	virtual void dsc0(); virtual void dsc1();
 	virtual void vfunc156(int bOpen);	// slot 156: hands this door and its open (nonzero, +0x508) or closed (+0x514) position, with 0, to sub_101cf5c0
 	virtual void dsc3(); virtual void dsc4(); virtual void dsc5(); virtual void dsc6(); virtual void dsc7(); virtual void dsc8(); virtual void dsc9();
-	DOOR_SLOTS10(dsd)	// slots 134..173
+	virtual void dsd0(); virtual void dsd1(); virtual void dsd2(); virtual void dsd3(); virtual void dsd4();	// slots 164..172
+	virtual void dsd5(); virtual void dsd6(); virtual void dsd7(); virtual void dsd8();
+	virtual void vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value);	// slot 173 "CBaseDoor::Use": scope trace (empty names); remembers the activator, hands the use to the linked entity (handle +0x638) as an input when there is one, otherwise to the lock check, the doorknob (+0x628) or the open / close slots by the door state
 	virtual void dse0(); virtual void dse1(); virtual void dse2(); virtual void dse3(); virtual void dse4();	// slots 174..178
 	virtual void vfunc179();	// slot 179: fires the door's event list 2 (state 3, closing) or 3 (other states) with the door as activator and caller
 	virtual void dse6(); virtual void dse7(); virtual void dse8(); virtual void dse9();	// slots 180..183
