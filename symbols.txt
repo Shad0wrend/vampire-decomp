@@ -6844,6 +6844,7 @@
 0x1000eac5 func   ?sub_103f0590@CWeaponThrown_Chang_Energy_Ball@@QAEXXZ CWeaponThrown_Chang_Energy_Ball::sub_103f0590
 0x1000ead9 func   ?vfunc267@CRagdollProp@@UAE_NXZ CRagdollProp::vfunc267
 0x1000eade func   _logic_branch logic_branch
+0x1000eae3 func   ?sub_1034dd70@CUnknown1034d620@@QAEXXZ CUnknown1034d620::sub_1034dd70
 0x1000eae8 func   ?sub_10245bd0@ConVar@@QAEPAV1@PBD0H0_NM1MP6AXPAV1@0@Z@Z ConVar::sub_10245bd0
 0x1000eaf2 func   ?vfunc5@CBatSwarm@@QAEPAV1@I@Z CBatSwarm::vfunc5
 0x1000eaf7 func   ?vfunc104@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc104

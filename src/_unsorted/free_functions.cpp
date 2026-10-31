@@ -136514,6 +136514,24 @@ CBaseEntity *CUnknown1034d620::sub_1034db70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034dd70 size=0x5f
+#include "CUnknown1034d620.h"
+#include "CAI_BaseNPC.h"
+#include "CEHandleGet.h"
+#include "globalvars.h"
+
+// TARGET: CUnknown1034d620::sub_1034dd70
+void CUnknown1034d620::sub_1034dd70()
+{
+	if (!EHandle_Get(m_hEntity))
+	{
+		m_n5f64 = 0;
+		((CAI_BaseNPC *)this)->sub_10279cc0(sub_1034db70());
+	}
+	m_flNextThink = gpGlobals->curtime + 0.1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034e4f0 size=0x1a
 namespace lifted {
 extern int g_10625e58;
