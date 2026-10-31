@@ -148497,6 +148497,16 @@ int sub_103b3010()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b30a0 size=0xc
+void __fastcall sub_103b30c0(void *pThis);
+
+void * __fastcall sub_103b30a0(void *pThis)
+{
+	sub_103b30c0(pThis);
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b30c0 size=0x33
 void sub_100053cb();
 void sub_100077d4();
