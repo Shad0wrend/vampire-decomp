@@ -99,7 +99,9 @@ public:
 	int m_n02e0;
 	char m_pad02e4[0x1074 - 0x2e4];
 	Vector m_vec1074;	// 0x1074: a 2D direction, turned by 90 degrees in Spawn
-	char m_pad1080[0x1574 - 0x1080];
+	char m_pad1080[0x14b8 - 0x1080];
+	unsigned int m_flags14b8;	// 0x14b8: bit 5 set while hiding
+	char m_pad14bc[0x1574 - 0x14bc];
 	float m_f1574;	// 0x1574: set to -0.5f in Spawn
 	char m_pad1578[0x5c38 - 0x1578];
 	struct CTzimisceTask *m_pTask5c38;	// 0x5c38: the current schedule; its dword at +0x1c is the node id looked up by slot 580's range list
