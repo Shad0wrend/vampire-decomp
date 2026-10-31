@@ -104203,6 +104203,22 @@ void CSoundScheme::sub_1022b590(float flDelay)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022b660 size=0x17
+#include "CBaseEntity.h"
+
+struct CUnk1022b660 {
+    char pad[0x455];
+    char m_455;
+    void sub_1022b660();
+};
+
+void CUnk1022b660::sub_1022b660()
+{
+    ((CBaseEntity *)this)->sub_100ac4e0(0, 0, 0);
+    m_455 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022bb30 size=0x43
 #include "CPropRadio.h"
 void *sub_100aa720(int size);
