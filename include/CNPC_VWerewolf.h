@@ -266,6 +266,7 @@ public:
 	void *sub_102cc1f0(int type);	// CAI_BaseNPC::GetScheduleOfType (stub 0x10014f6a), called directly
 	void sub_1029adb0(int failcode);	// CAI_BaseNPCTroika::vfunc448 (stub 0x100054bb), called directly
 	void sub_103cb920(int a);	// stub 0x1000... member, called directly
+	void sub_102998c0(int a);	// CAI_BaseNPCTroika::vfunc130 (stub 0x10002b99), called directly
 	void sub_103cac20();	// the NPC init: SetSchedule-like sub_10279a50(0), resets the move / hint state (+0x628c, +0x66a1..+0x6708), stamps the current time at +0x66ec / +0x66f4 and adds the hull's half diagonal (from its mins / maxs, sub_102d6100 / sub_102d6120) and a constant square root to the totals at +0x66cc / +0x66d0
 	void sub_10279a50(int a);	// CAI_BaseNPC member (stub 0x1000b974), called directly
 	void sub_10366270();	// CNPC_VBaseBoss::vfunc420 (stub 0x100023dd), called directly
