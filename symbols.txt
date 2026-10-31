@@ -6546,6 +6546,7 @@
 0x1000d706 func   ?sub_101ec550@CUnknown101ec6f0@@QAE_NPAUCVFeatKV@@@Z CUnknown101ec6f0::sub_101ec550
 0x1000d70b func   _physics_cannister physics_cannister
 0x1000d71a func   ?sub_100f18d0@@YAHXZ sub_100f18d0
+0x1000d71f func   ?vfunc81@CWeaponMelee_BaseballBat@@QAEHXZ CWeaponMelee_BaseballBat::vfunc81
 0x1000d724 func   ?sub_101ce060@@YAXPBUCMsgShortsBytes@@PAVCEntityVSlots@@@Z sub_101ce060
 0x1000d729 func   ?vfunc267@CBaseAnimatingOverlay@@QAEHXZ CBaseAnimatingOverlay::vfunc267
 0x1000d733 func   ?vfunc201@CNPC_VCameraSecurity@@QAE_NPAVCBaseEntity@@HHH@Z CNPC_VCameraSecurity::vfunc201
