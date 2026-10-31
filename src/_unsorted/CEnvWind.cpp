@@ -21,6 +21,18 @@ void CEnvWind::vfunc113()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fe6e0 size=0x8
+#include "CEnvWind.h"
+// TARGET: CEnvWind::sub_100fe6e0
+unsigned char CEnvWind::sub_100fe6e0()
+{
+    unsigned char b;
+    b = ((CBaseEntity *)this)->CBaseEntity::vfunc117();
+    b &= 0xfd;
+    return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fe700 size=0x3
 #include "CEnvWind.h"
 void CEnvWind::vfunc241(int a0, int a1, int a2, int a3, int a4)

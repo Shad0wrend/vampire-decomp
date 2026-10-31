@@ -6090,6 +6090,7 @@
 0x1000ccd4 func   ?sub_1028fc90@CUnknown1028fc90@@QAEHXZ CUnknown1028fc90::sub_1028fc90
 0x1000ccd9 func   ?sub_10200be0@CVStatList_t@@QAEXHH@Z CVStatList_t::sub_10200be0
 0x1000ccde func   _item_w_werewolf_attacks item_w_werewolf_attacks
+0x1000cce3 func   ?sub_100fe6e0@CEnvWind@@QAEEXZ CEnvWind::sub_100fe6e0
 0x1000cce8 func   ?sub_10189660@@YAXPAVCBaseEntity@@HH@Z sub_10189660
 0x1000ccf2 func   ?sub_100c3240@@YAXPAUStudioBoneView@@HPAUmatrix3x4_view@@PAM2@Z sub_100c3240
 0x1000ccf7 func   ?vfunc0@CAI_HumanoidMotor@@QAEPAV1@I@Z CAI_HumanoidMotor::vfunc0
