@@ -79,6 +79,23 @@ void CFire::vfunc180()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10109cf0 size=0x56
+#include "CBaseEntity.h"
+#include "CFire.h"
+struct CFireFieldView { char m_pad[0x458]; int m_n458; };
+void sub_101d0ec0(const char *);
+void CFire::vfunc104()
+{
+	CFireFieldView *f = (CFireFieldView *)this;
+	if (f->m_n458 == 0)
+		sub_101d0ec0("_firesmoke");
+	if (f->m_n458 == 1)
+		sub_101d0ec0("_plasma");
+	enginesound->vfunc0("environmental/fire/fire_crackeling.wav", 0);
+	enginesound->vfunc0("environmental/fire/fire_roaring.wav", 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010a130 size=0x18b
 #include "CBaseEntity.h"
 #include "CFire.h"
