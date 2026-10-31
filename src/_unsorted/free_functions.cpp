@@ -119390,6 +119390,46 @@ bool CUtlRBTree12::sub_102cefc0(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cfd20 size=0x1c0
+#include "CUtlRBTree12.h"
+
+struct CUtlRBTree12Unit : CUtlRBTree12At<0x10925430>
+{
+    const Links_t *sub_102cea60(unsigned short i) const;
+    void sub_102cfd20(unsigned short i);
+
+    unsigned short P(unsigned short i) { return sub_102cea60(i)->m_Parent; }
+    unsigned short Lc(unsigned short i) { return sub_102cea60(i)->m_Left; }
+    unsigned short Rc(unsigned short i) { return sub_102cea60(i)->m_Right; }
+    bool IsRc(unsigned short i) { return Links(P(i)).m_Right == i; }
+    unsigned short Parent(unsigned short i) const { return Links(i).m_Parent; }
+    void SetP(unsigned short i, unsigned short v) { m_pElements[i].m_Links.m_Parent = v; }
+    void SetL(unsigned short i, unsigned short v) { m_pElements[i].m_Links.m_Left = v; }
+    void SetR(unsigned short i, unsigned short v) { m_pElements[i].m_Links.m_Right = v; }
+};
+
+// TARGET: CUtlRBTree12Unit::sub_102cfd20
+void CUtlRBTree12Unit::sub_102cfd20(unsigned short elem)
+{
+    unsigned short leftchild = Lc(elem);
+    SetL(elem, Rc(leftchild));
+    if (Rc(leftchild) != 0xffff)
+        SetP(Rc(leftchild), elem);
+    if (leftchild != 0xffff)
+        SetP(leftchild, P(elem));
+    if (elem != m_Root) {
+        if (IsRc(elem))
+            SetR(Parent(elem), leftchild);
+        else
+            SetL(Parent(elem), leftchild);
+    } else
+        m_Root = leftchild;
+    SetR(leftchild, elem);
+    if (elem != 0xffff)
+        SetP(elem, leftchild);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cff50 size=0x2b
 struct CUnk102cff50
 {

@@ -7625,6 +7625,7 @@
 0x100100be func   ?sub_1030fa00@CAI_Senses@@QAEDPAVCBaseEntity@@@Z CAI_Senses::sub_1030fa00
 0x100100c3 func   ?vfunc82@CBaseDoor@@UAEPAUdatamap_t@@XZ CBaseDoor::vfunc82
 0x100100c8 func   ?vfunc215@CBeam@@QAEPAVVector@@XZ CBeam::vfunc215
+0x100100cd func   ?sub_102cfd20@CUtlRBTree12Unit@@QAEXG@Z CUtlRBTree12Unit::sub_102cfd20
 0x100100dc func   ?vfunc444@CNPC_VTzimisceRunner@@QAEXPAH@Z CNPC_VTzimisceRunner::vfunc444
 0x100100e1 func   ?sub_1038f640@@YIEPAD@Z sub_1038f640
 0x100100f0 func   ?sub_1037e550@@YAHXZ sub_1037e550
