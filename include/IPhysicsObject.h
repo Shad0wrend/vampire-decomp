@@ -8,7 +8,7 @@ class IPhysicsObject
 public:
 	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4();
 	virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
-	virtual void vfunc10(); virtual void vfunc11();
+	virtual void vfunc10(); virtual void vfunc11(float flMass);	/* slot 11 SetMass */
 	virtual float vfunc12();	// slot 12 GetMass
 	virtual void vfunc13(); virtual void vfunc14();
 	virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17(const Vector *pVelocity, const Vector *pAngVelocity);	// slot 17: called by CGravControllerPoint::sub_10148a20 as (0, &vector)
