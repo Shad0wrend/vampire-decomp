@@ -14055,6 +14055,25 @@ CCameraAnimatedUnit *CCameraAnimatedUnit::sub_10071220()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10071440 size=0x18
+extern char g_106b8540;
+void __stdcall sub_10071550(void *p);
+
+struct CUnk10071440 {
+    char pad[0x7f4];
+    char *m_7f4;
+    void sub_10071440(void *p);
+};
+
+void CUnk10071440::sub_10071440(void *p)
+{
+    p = m_7f4;
+    if (p == 0)
+        p = &g_106b8540;
+    sub_10071550(p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10071470 size=0x8
 namespace lifted {
 int sub_10013b65();
