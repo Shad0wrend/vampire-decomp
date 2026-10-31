@@ -4392,6 +4392,7 @@
 0x1000975a func   ?vfunc0@CTraceFilterValidForDecal@CDecal@@UAE_NPAXH@Z CDecal::CTraceFilterValidForDecal::vfunc0
 0x1000975f func   ?vfunc103@CPayphone@@UAEXXZ CPayphone::vfunc103
 0x10009764 func   ?sub_100c98e0@@YIXPAD@Z sub_100c98e0
+0x10009769 func   ?vfunc0@CPositionInterpolator_CatmullRom@@QAEXXZ CPositionInterpolator_CatmullRom::vfunc0
 0x1000976e func   ?sub_10140bd0@CScaleFields10140bd0@@QAEMMM@Z CScaleFields10140bd0::sub_10140bd0
 0x10009773 func   ?sub_1007a170@CChoreoScene1007e970@@QAEPAUCChoreoSceneActor1007e970@@PBD@Z CChoreoScene1007e970::sub_1007a170
 0x10009778 func   _mover_keyframe mover_keyframe
