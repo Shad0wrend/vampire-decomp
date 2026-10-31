@@ -135,6 +135,7 @@
 0x1000140b func   ?vfunc0@CTEBeamSpline@@UAEHXZ CTEBeamSpline::vfunc0
 0x10001410 func   ?vfunc241@CBaseParticleEntity@@QAE_NHPAUCParticleTransmitInfo_t@@HH@Z CBaseParticleEntity::vfunc241
 0x1000141a func   ?vfunc6@CBaseNetworkable@@UAEXPAUCBaseNetworkableBits_t@@@Z CBaseNetworkable::vfunc6
+0x1000141f func   ?vfunc81@CItemGLarryBriefcase@@QAEHXZ CItemGLarryBriefcase::vfunc81
 0x10001424 func   ?sub_1021bc20@@YIXPAD@Z sub_1021bc20
 0x10001429 func   ?sub_10091230@CBaseAnimating@@QAEMH@Z CBaseAnimating::sub_10091230
 0x1000142e func   ?vfunc80@CWeaponIArmor_Hvy_Cloth@@UAEHXZ CWeaponIArmor_Hvy_Cloth::vfunc80

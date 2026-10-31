@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10400110 size=0x3
+#include "CItemGLarryBriefcase.h"
+int CItemGLarryBriefcase::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040a510 size=0x1e
 #include "CItemGLarryBriefcase.h"
 
