@@ -151826,6 +151826,16 @@ extern "C" CBaseEntity *npc_VYukie()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dd120 size=0xc
+void __fastcall sub_103dd140(void *pThis);
+
+void * __fastcall sub_103dd120(void *pThis)
+{
+	sub_103dd140(pThis);
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dd140 size=0x33
 void sub_1000ef84();
 void sub_1000fa9c();
