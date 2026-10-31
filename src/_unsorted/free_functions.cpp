@@ -97179,6 +97179,23 @@ CVStatInfo_t *__fastcall sub_10204ba0(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10204bf0 size=0x18
+extern char g_106b8540;
+void *sub_10204ba0(void);
+
+struct CUnk10204bf0 {
+    char *sub_101fdda0(int a);
+};
+
+char *__stdcall sub_10204bf0(int a)
+{
+    void *p = sub_10204ba0();
+    if (p)
+        return ((CUnk10204bf0 *)p)->sub_101fdda0(a);
+    return &g_106b8540;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10204c60 size=0x9c
 #include "CUnknown10204c60.h"
 #include "CUnknown10205ba0.h"
