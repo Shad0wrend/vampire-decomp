@@ -114575,6 +114575,20 @@ bool CUnknown10258580::sub_10258580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102585c0 size=0x1a
+char *sub_102517b0();
+
+// TARGET: sub_102585c0
+char sub_102585c0()
+{
+	int v = *(int *)(sub_102517b0() + 0x24d0);
+	if (v >= 0 && v <= 2) {
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102587f0 size=0x6
 namespace lifted {
 extern char g_1055ef2c;
