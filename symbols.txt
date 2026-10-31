@@ -2218,6 +2218,7 @@
 0x100050a1 func   ?sub_103d6520@CNPC_VWerewolf@@QAEPAXPAX@Z CNPC_VWerewolf::sub_103d6520
 0x100050a6 func   ?vfunc369@CBaseCombatWeapon@@UAEXH@Z CBaseCombatWeapon::vfunc369
 0x100050ab func   ?vfunc80@CWeaponMelee_ManBatClaw@@QAEHXZ CWeaponMelee_ManBatClaw::vfunc80
+0x100050b0 func   ?vfunc390@CNPC_VAnimal@@QAEXPAUCVAnimalArg@@@Z CNPC_VAnimal::vfunc390
 0x100050b5 func   ?vfunc47@CMultiplayRules@@UAEDPAVCBaseEntity@@0@Z CMultiplayRules::vfunc47
 0x100050ba func   ?sub_1040bea0@@YAHXZ sub_1040bea0
 0x100050c4 func   ?sub_101cfe10@@YAXPAXHH@Z sub_101cfe10

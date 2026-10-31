@@ -152,3 +152,20 @@ int CNPC_VAnimal::vfunc482(char bDisregardState, int interruptLevel)
 	return result;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103601a0 size=0x30
+#include "CAI_BaseNPCTroika.h"
+#include "CNPC_VAnimal.h"
+struct SInner { char pad[0xa8]; int m_n; };
+struct CVAnimalArg { char pad[0x2c]; SInner *m_p; };
+int sub_101cda50();
+struct CAnimalView { char pad[0x6660]; char m_b; };
+struct CTroikaCall : CAI_BaseNPCTroika { void sub_10012611(CVAnimalArg *a); };
+void CNPC_VAnimal::vfunc390(CVAnimalArg *pArg)
+{
+    int n = pArg->m_p->m_n;
+    if (n == sub_101cda50())
+        ((CAnimalView *)this)->m_b = 1;
+    ((CTroikaCall *)this)->sub_10012611(pArg);
+}
+// END FUNCTION
