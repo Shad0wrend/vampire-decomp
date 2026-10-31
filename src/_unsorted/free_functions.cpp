@@ -36457,6 +36457,34 @@ bool sub_100d94a0(CBaseCombatCharacter *pChar, int stat)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d9750 size=0x30
+struct CCharView
+{
+	char m_pad0000[0x1b70];
+	int m_n1b70;
+	char m_pad1b74[4];
+	int m_n1b78;
+};
+struct CPlayerView
+{
+	char m_pad0000[0xa8];
+	CCharView *m_pChar;
+};
+CPlayerView *sub_101193b0();
+void sub_100d8830(CCharView *pChar, int a, int b);
+
+// TARGET: sub_100d9750
+void sub_100d9750()
+{
+	CPlayerView *pPlayer = sub_101193b0();
+	if (pPlayer) {
+		CCharView *pChar = pPlayer->m_pChar;
+		if (pChar && pChar->m_n1b70 != -1)
+			sub_100d8830(pChar, pChar->m_n1b70, pChar->m_n1b78);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d9820 size=0xe8
 struct CRosterFlagsView
 {
