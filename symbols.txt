@@ -9080,6 +9080,7 @@
 0x10012a8f func   ?sub_10078fd0@CUtlMemory12@@QAEXH@Z CUtlMemory12::sub_10078fd0
 0x10012a9e func   ?vfunc569@CAI_BaseNPCTroika@@UAEHPAVCBaseEntity@@@Z CAI_BaseNPCTroika::vfunc569
 0x10012aa8 func   ?sub_102b2570@CAI_BaseNPCTroika@@QAEXXZ CAI_BaseNPCTroika::sub_102b2570
+0x10012aad func   ?sub_1039b1d0@@YAEXZ sub_1039b1d0
 0x10012ab2 func   ?sub_10178120@CUnknown10178120@@QAEHXZ CUnknown10178120::sub_10178120
 0x10012ab7 func   ?sub_101f9650@@YAXH@Z sub_101f9650
 0x10012ac1 func   ?sub_103d2810@CNPC_VWerewolf@@QAE_NPAX@Z CNPC_VWerewolf::sub_103d2810

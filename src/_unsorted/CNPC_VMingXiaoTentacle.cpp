@@ -66,6 +66,15 @@ CNPC_VMingXiaoTentacle *CNPC_VMingXiaoTentacle::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039b1d0 size=0x6
+extern unsigned char g_106477d0;
+// TARGET: sub_1039b1d0
+unsigned char sub_1039b1d0()
+{
+    return g_106477d0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039b230 size=0x1d
 #include "CNPC_VMingXiaoTentacle.h"
 struct A { int sub_10012300(int); };
