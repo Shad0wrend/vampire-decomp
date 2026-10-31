@@ -10,3 +10,13 @@ void CChoreoEventCallback::vfunc0(float a, int b, int c)
 		m_pScene->vfunc248(a, b, c);
 }
 // END FUNCTION
+
+// FUNCTION: 0x100807a0 size=0x1a
+#include "CChoreoEventCallback.h"
+
+void CChoreoEventCallback::vfunc1(float a, int b, int c)
+{
+	if (m_pScene)
+		m_pScene->vfunc249(a, b, (CSceneEvent *)c);
+}
+// END FUNCTION
