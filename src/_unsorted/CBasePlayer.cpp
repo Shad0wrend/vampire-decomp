@@ -1713,6 +1713,27 @@ void CBasePlayer::sub_10178660(CBaseEntity *pEnt, char bCenter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10178d10 size=0x63
+#include "CGameRules.h"
+extern CGameRules *g_1070ba0c;
+// TARGET: CBasePlayer::vfunc359
+int CBasePlayer::vfunc359(CBaseEntity *pEnt)
+{
+    if (m_n146c > 0)
+        return 3;
+    if (!pEnt)
+        return -1;
+    int n = g_1070ba0c->vfunc64((int)this, (int)pEnt);
+    if (n != 1 && n != 3) {
+        if (n == 4)
+            return 5;
+        if (n == 2 || n == 0)
+            return 1;
+    }
+    return 2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017be50 size=0x8f
 int sub_1002dfe0(int a, int b);
 
