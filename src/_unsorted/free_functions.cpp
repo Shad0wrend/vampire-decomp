@@ -49902,6 +49902,17 @@ float CGameMovement::sub_101282b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10129740 size=0x16
+struct CUnknown1023bd00 { int sub_1023bd00(); };
+
+// TARGET: sub_10129740
+bool __fastcall sub_10129740(void *pThis)
+{
+	int i = ((CUnknown1023bd00 *)pThis)->sub_1023bd00();
+	return *(int *)((char *)pThis + 0x4c) == i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101297a0 size=0x21
 // TARGET: sub_101297a0
 #include "CBaseEntity.h"

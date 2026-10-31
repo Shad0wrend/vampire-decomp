@@ -6510,6 +6510,7 @@
 0x1000c996 func   ?vfunc5@CBaseMoveBehavior@@QAEPAV1@I@Z CBaseMoveBehavior::vfunc5
 0x1000c99b func   ?vfunc223@CFuncRotating@@QAE_NXZ CFuncRotating::vfunc223
 0x1000c9a0 func   _info_node_kick_at info_node_kick_at
+0x1000c9a5 func   ?sub_10129740@@YI_NPAX@Z sub_10129740
 0x1000c9aa func   ?vfunc80@CFunc_Dust@@QAEHXZ CFunc_Dust::vfunc80
 0x1000c9af func   ?vfunc71@CBaseDoor@@UAEXXZ CBaseDoor::vfunc71
 0x1000c9b9 func   ?sub_1036a340@@YADXZ sub_1036a340
