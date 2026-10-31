@@ -11,6 +11,16 @@ int CCameraAnimated::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10071000 size=0x6
+namespace lifted {
+extern char g_106c7f88;
+}
+int CCameraAnimated::vfunc80()
+{
+    return (int)&lifted::g_106c7f88;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10071020 size=0x3
 int CCameraAnimated::vfunc81()
 {
