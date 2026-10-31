@@ -128880,6 +128880,14 @@ int CUnknown10359c50::sub_102ea2d0(int nLocalId)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ea4a0 size=0x16
+// TARGET: sub_102ea4a0
+bool sub_102ea4a0(int *pA, int *pB)
+{
+	return *pA < *pB;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ea5e0 size=0x3
 void __stdcall sub_102ea5e0(int a0)
 {

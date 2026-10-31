@@ -11856,6 +11856,7 @@
 0x102df130 func   ?sub_102df130@@YAPAUNode@@XZ sub_102df130
 0x102df1b0 func   ?sub_102df1b0@@YAHH@Z sub_102df1b0
 0x102e96e0 func   ?sub_102e96e0@@YAXXZ sub_102e96e0
+0x102ea4a0 func   ?sub_102ea4a0@@YA_NPAH0@Z sub_102ea4a0
 0x102f2d10 func   ?sub_102f2d10@@YAXPAMHI@Z sub_102f2d10
 0x102f2de0 func   ?sub_102f2de0@@YAXPAMH@Z sub_102f2de0
 0x102fb470 func   ?sub_102fb470@@YAXXZ sub_102fb470
