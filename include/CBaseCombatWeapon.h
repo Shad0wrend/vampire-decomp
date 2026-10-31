@@ -129,6 +129,7 @@ public:
 	CWeaponOwner *sub_102517b0();	// the weapon's owner (player) object
 	int *sub_102517e0();	// the weapon's current roll slot index (static fallback record when none matches)
 	CWeaponOwner *sub_10252290();	// resolves the owner handle at +0x88c (0 when stale)
+	void sub_102564b0();	// when the owner handle resolves twice, slot 385(this, 0, 0) of the object at +0xa8 of the resolved owner
 	void *sub_102521f0();	// the dword at +0x9c of the entity the owner handle at +0x88c resolves to (0 when stale)
 	int sub_10252240();	// same as sub_102521f0 (stub 0x100011f4)
 	char *sub_10252120(int a, int index);	// stub 0x1000aaba: the record `index` of the list slot 347(a) counts
