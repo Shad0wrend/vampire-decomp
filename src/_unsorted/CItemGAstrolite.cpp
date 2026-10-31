@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103f6530 size=0x6
+#include "CItemGAstrolite.h"
+namespace lifted {
+extern char g_10945588;
+}
+int CItemGAstrolite::vfunc80()
+{
+    return (int)&lifted::g_10945588;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f6550 size=0x3
 #include "CItemGAstrolite.h"
 int CItemGAstrolite::vfunc81()
