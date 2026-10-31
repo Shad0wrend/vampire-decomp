@@ -11,6 +11,17 @@ char CWeaponGravityGun::vfunc316(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014a000 size=0x30
+#include "CWeaponGravityGun.h"
+void CWeaponGravityGun::vfunc103()
+{
+	vfunc104();
+	vfunc105((const char *)vfunc343());
+	m_bB25 = 0;
+	m_b914 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014a040 size=0x4f
 #include "CWeaponGravityGun.h"
 #include "engineiface.h"
