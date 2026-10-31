@@ -4986,6 +4986,7 @@
 0x10009c19 func   ?sub_10373420@@YIXPAH@Z sub_10373420
 0x10009c23 func   ?sub_102ee2e0@CUnknown102ee2e0@@QAEDXZ CUnknown102ee2e0::sub_102ee2e0
 0x10009c28 func   ?sub_1012dbd0@CPropClockHand@@QAEXXZ CPropClockHand::sub_1012dbd0
+0x10009c2d func   ?sub_1021a530@CUnk1021a530@@QAEXH@Z CUnk1021a530::sub_1021a530
 0x10009c32 func   ?sub_102dfaa0@CUnknown102dfaa0@@QAEXPAXH@Z CUnknown102dfaa0::sub_102dfaa0
 0x10009c37 func   ?sub_10202760@@YAHH@Z sub_10202760
 0x10009c3c func   ?vfunc80@CWeaponRanged_Rifle_Remington@@UAEHXZ CWeaponRanged_Rifle_Remington::vfunc80
