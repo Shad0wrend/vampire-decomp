@@ -31,6 +31,14 @@ int CWeaponRanged_Rifle_M37::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102357d0 size=0x6
+#include "CWeaponRanged_Rifle_M37.h"
+int CWeaponRanged_Rifle_M37::vfunc363()
+{
+    return 0xf5;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a410 size=0x1e
 #include "CWeaponRanged_Rifle_M37.h"
 
