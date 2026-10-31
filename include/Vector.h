@@ -69,6 +69,7 @@ public:
 	Vector Min(const Vector &vOther) const;
 	Vector Max(const Vector &vOther) const;
 
+	void sub_1010e530(float minVal, float maxVal);	// Vector::Random: each component rand() * (max - min) / 32767 + min
 	float sub_10137220();	// the C VectorNormalize (returns the length): v *= 1 / (sqrt(v.v) + FLT_EPSILON), not inlined
 	Vector &sub_1003e4b0(const Vector &v);	// operator=, where the game did not inline it
 	Vector &sub_1011d2e0(const Vector &v);	// provisional, like sub_1003e4b0 (transplant)
