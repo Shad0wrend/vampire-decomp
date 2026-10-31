@@ -74,6 +74,7 @@ public:
 	}
 
 	void SetSink(CAI_ExpresserSink *pSink) { m_n10 = pSink; }
+	void SetHost(void *pHost) { m_pOuter = pHost; }
 
 	virtual ~CAI_Expresser();	// slot 0
 	CAI_Expresser *vfunc0(unsigned char flags);	// 0x10312e80: slot 0's scalar deleting form (plain member)
