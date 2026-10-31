@@ -131399,6 +131399,16 @@ bool CBaseCombatCharacter::sub_10325da0(const Vector *pTarget)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10325e70 size=0x62
+#include "ScopeTrace.h"
+extern int g_10937ccc;
+int sub_10325e70()
+{
+	ScopeTrace trace("CBaseCombatCharacter::GetInteractionID", g_106b8540);
+	return ++g_10937ccc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103261f0 size=0x120
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
