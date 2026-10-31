@@ -51,3 +51,14 @@ void CPropDoorknobElectronic::vfunc274()
 	m_unk670 = 1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10226380 size=0x14
+#include "CPropDoorknobElectronic.h"
+
+// TARGET: CPropDoorknobElectronic::vfunc276
+void CPropDoorknobElectronic::vfunc276()
+{
+	sub_102241b0();
+	*(int *)((char *)this + 0x670) = 1;
+}
+// END FUNCTION
