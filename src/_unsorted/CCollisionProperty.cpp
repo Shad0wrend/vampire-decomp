@@ -105,6 +105,22 @@ float * CCollisionProperty::vfunc2()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dc850 size=0x5f
+#include "CCollisionProperty.h"
+void CCollisionProperty::vfunc3(Vector *pMins, Vector *pMaxs)
+{
+	sub_100dcd90(&m_vecMins.x, &m_vecMaxs.x, &pMins->x, &pMaxs->x);
+	unsigned short flags = vfunc12();
+	if (flags & 0x100) {
+		pMins->x = pMins->x - m_flTriggerBloat;
+		pMins->y = pMins->y - m_flTriggerBloat;
+		pMaxs->x = m_flTriggerBloat + pMaxs->x;
+		pMaxs->y = pMaxs->y + m_flTriggerBloat;
+		pMaxs->z = m_flTriggerBloat * 0.5f + pMaxs->z;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dc920 size=0x8
 // TARGET: CCollisionProperty::vfunc6
 int CCollisionProperty::vfunc6()
