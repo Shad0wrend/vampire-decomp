@@ -12,4 +12,5 @@ public:
 	virtual void vfunc103();	// slot 103 "CPropDoorknob::Spawn": CBaseVampireSkillEntity::vfunc103, +0x19c = 0xa0, inlined SetSolid(0) with scope trace, then CBaseAnimating::sub_10093b10 and the state at +0x780 (1 with the object at +0x77c, else 3)
 public:
     virtual int vfunc117();
+    virtual void vfunc134();	// slot 134 (the first slot past CBaseEntity's declared ones): makes sure the model is set up (slot 250(0) while the byte at +0x65c is clear), then thinks again in 0.1 seconds
 };
