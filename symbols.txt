@@ -4094,6 +4094,7 @@
 0x1000834b func   ?sub_100e76d0@@YGPAXPAXHH@Z sub_100e76d0
 0x10008350 func   ?sub_10264330@UtlMem@@QAEXXZ UtlMem::sub_10264330
 0x1000835a func   ?sub_102daef0@CUnknown102daef0@@QAEPAXXZ CUnknown102daef0::sub_102daef0
+0x10008369 func   ?sub_100d8490@@YAXXZ sub_100d8490
 0x1000836e func   ?sub_1013ca80@@YAMABVVector@@00PAM@Z sub_1013ca80
 0x10008373 func   ?vfunc363@CNPCMaker_Zombie@@UAE_NH@Z CNPCMaker_Zombie::vfunc363
 0x1000837d func   ?sub_1008fab0@CBaseAnimating@@QAEMH@Z CBaseAnimating::sub_1008fab0

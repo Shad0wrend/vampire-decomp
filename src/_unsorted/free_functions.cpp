@@ -37588,6 +37588,72 @@ void sub_100d8120()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d8490 size=0x265
+#include "CBasePlayer.h"
+#include "CBaseCombatCharacter.h"
+#include "CVStatList_t.h"
+#include "CVStatInfoList_t.h"
+#include "StatDefault3.h"
+
+struct StatDBView {
+	StatDefault3 *sub_10207c40(CBaseCombatCharacter *pChar);
+};
+extern StatDBView g_1074f028;
+extern CVStatInfoList_t g_1074e098;
+extern "C" int atoi(const char *);
+int sub_101193b0();
+void sub_100d8830(CBasePlayer *pPlayer, int a, int b);
+
+// TARGET: sub_100d8490
+void sub_100d8490()
+{
+	int pCmd = sub_101193b0();
+	if (!pCmd)
+		return;
+	CBasePlayer *pPlayer = *(CBasePlayer **)(pCmd + 0xa8);
+	if (!pPlayer)
+		return;
+	int argc = engine->vfunc85();
+	if (argc >= 2) {
+		const char *arg = (const char *)engine->vfunc84(1);
+		int idx = g_1074e098.sub_101ffaa0(arg);
+		if (idx == -1) {
+			if (*arg == '#') {
+				idx = atoi(arg + 1);
+				if (idx >= 0)
+					idx = g_1074f028.sub_10207c40((CBaseCombatCharacter *)pPlayer)->sub_101d4f60(idx);
+				else
+					goto done;
+			} else {
+				idx = atoi(arg);
+				if (idx >= 0 && idx < g_1074e098.m_nStats && pPlayer->m_nRangeStart1B70 != idx)
+					pPlayer->m_nRangeEnd1B78 = 0;
+				else
+					goto done;
+			}
+		}
+		pPlayer->m_nRangeStart1B70 = idx;
+	}
+done:
+	if (pPlayer->m_nRangeStart1B70 != -1) {
+		if (CVStatListSet::Of(pPlayer)->Find(2)->sub_102012d0(pPlayer->m_nRangeStart1B70) <= 0)
+			return;
+	}
+	if (pPlayer->m_nRangeStart1B70 == -1)
+		pPlayer->m_nRangeStart1B70 = CVStatListSet::Of(pPlayer)->Find(2)->sub_10201980();
+	if (pPlayer->m_nRangeStart1B70 == 8 && !((CBaseCombatCharacter *)pPlayer)->sub_10146d50())
+		return;
+	if (pPlayer->m_nRangeStart1B70 == -1)
+		return;
+	if (argc == 2) {
+		sub_100d8830(pPlayer, pPlayer->m_nRangeStart1B70, pPlayer->m_nRangeEnd1B78);
+		return;
+	}
+	int v = atoi((const char *)engine->vfunc84(2));
+	CVStatListSet::Of(pPlayer)->Find(0)->sub_10201100(0xc, v);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d94a0 size=0x118
 #include "CBaseCombatCharacter.h"
 #include "CVStatList_t.h"
