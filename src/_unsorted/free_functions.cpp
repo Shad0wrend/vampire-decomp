@@ -164275,6 +164275,21 @@ void *__cdecl sub_10427a30(int *pHdr)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10427d90 size=0x13
+struct CUnit10427d90
+{
+	char m_pad0000[0x118];
+	int m_n118;
+};
+
+// TARGET: sub_10427d90
+void __cdecl sub_10427d90(CUnit10427d90 *p)
+{
+	if (p)
+		p->m_n118 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104280f0 size=0x47
 int sub_104280f0(int n, int *values, int *weights)
 {
