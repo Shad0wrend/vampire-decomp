@@ -12,6 +12,18 @@ int CBreakable::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010d880 size=0x8
+#include "CBreakable.h"
+namespace lifted {
+int sub_10007284();
+}
+bool CBreakable::vfunc223()
+{
+    lifted::sub_10007284();
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010d8c0 size=0xa0
 #include "CBreakable.h"
 
