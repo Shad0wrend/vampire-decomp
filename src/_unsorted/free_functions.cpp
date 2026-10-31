@@ -99763,6 +99763,52 @@ CBaseCombatWeapon *sub_1021fe50(CBaseCombatCharacter *pChar, const char *pszName
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021ff20 size=0x20a
+#include "CBaseEntity.h"
+#include "CVStatList_t.h"
+#include "CUnknown101ec4f0.h"
+#include "CUnknown101ec690.h"
+#include "ScopeTrace.h"
+#include "engineserver.h"
+
+struct SInstanceUnknown
+{
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3();
+	virtual CBaseEntity *GetBaseEntity();
+};
+
+struct SInstanceEdict
+{
+	char m_pad0000[0x40];
+	SInstanceUnknown *m_pUnk;	// 0x40
+};
+
+void sub_1021ff20(CUnknown101ec4f0Set *pSet, int nEntIndex)
+{
+	SInstanceEdict *pEdict = (SInstanceEdict *)engine->vfunc38(nEntIndex);
+	CBaseEntity *pEnt;
+	{
+		ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+		if ((pEdict || (pEdict = (SInstanceEdict *)engine->vfunc38(0))) && pEdict->m_pUnk)
+			pEnt = pEdict->m_pUnk->GetBaseEntity();
+		else
+			pEnt = 0;
+	}
+	if (!pEnt)
+		return;
+	void *pChar = pEnt->m_p9c;
+	if (!pChar)
+		return;
+	int nStat = CVStatListSet::Of(pChar)->Find(0)->sub_102012d0(0x1e);
+	for (int i = 0; i < pSet->m_nEntries; i++) {
+		if (pSet->Find(i)->m_id == nStat) {
+			((CUnknown101ec690 *)pSet->Find(i))->sub_101ec690(nEntIndex);
+			return;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10220e10 size=0x83
 #include "QuestJournal.h"
 
