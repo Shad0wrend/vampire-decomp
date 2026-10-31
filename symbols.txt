@@ -4323,6 +4323,7 @@
 0x100090a2 func   ?sub_103dc490@S103dc490@@QAEXH@Z S103dc490::sub_103dc490
 0x100090a7 func   ?vfunc35@CHalfLife2@@UAEXH@Z CHalfLife2::vfunc35
 0x100090ac func   ??0CEntryY@@QAE@H@Z CEntryY::CEntryY
+0x100090b1 func   ?vfunc138@CNPC_VNosferatu@@UAEHXZ CNPC_VNosferatu::vfunc138
 0x100090b6 func   ?sub_10370850@@YAHPAUCPrecacheView@@@Z sub_10370850
 0x100090ca func   ?sub_101d8470@CCheckList@@QAE_NPAVCBaseCombatCharacter@@@Z CCheckList::sub_101d8470
 0x100090cf func   _logic_relay logic_relay
