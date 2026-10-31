@@ -129044,6 +129044,28 @@ struct A { char pad[0x30]; B *b; void sub_102ee590(int *x); };
 void A::sub_102ee590(int *x) { b->sub_10014ef2(x); }
 // END FUNCTION
 
+// FUNCTION: 0x102ee5b0 size=0x14
+struct CUnknown1030b610;
+struct CUnknown102ee5b0
+{
+	char m_pad0000[0x30];
+	CUnknown1030b610 *m_p30;
+
+	int sub_102ee5b0(int a);
+};
+struct CUnknown1030b610
+{
+	void sub_1030b6b0(int a);
+};
+
+// TARGET: CUnknown102ee5b0::sub_102ee5b0
+int CUnknown102ee5b0::sub_102ee5b0(int a)
+{
+	m_p30->sub_1030b6b0(a);
+	return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ee5e0 size=0x8
 CUnknown1030bc20_Record *CUnknown102ee120::sub_102ee5e0()
 {
