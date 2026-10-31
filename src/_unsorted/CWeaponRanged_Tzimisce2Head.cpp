@@ -31,6 +31,14 @@ int CWeaponRanged_Tzimisce2Head::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102374e0 size=0x6
+#include "CWeaponRanged_Tzimisce2Head.h"
+int CWeaponRanged_Tzimisce2Head::vfunc363()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a560 size=0x1e
 #include "CWeaponRanged_Tzimisce2Head.h"
 
