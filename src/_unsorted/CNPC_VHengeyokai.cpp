@@ -66,6 +66,15 @@ CNPC_VHengeyokai *CNPC_VHengeyokai::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037ea00 size=0x6
+extern unsigned char g_1063c030;
+// TARGET: sub_1037ea00
+unsigned char sub_1037ea00()
+{
+    return g_1063c030;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037ea60 size=0x1d
 #include "CNPC_VHengeyokai.h"
 struct A { int sub_10012300(int); };
