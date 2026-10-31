@@ -144663,6 +144663,24 @@ int CUnknown1037b870::sub_1037b870()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037b890 size=0xe
+// TARGET: sub_1037b890
+extern int g_1063abdc[];
+
+struct CUnknown1037b890
+{
+    char pad[0x6668];
+    int m_i6668;
+
+    int sub_1037b890();
+};
+
+int CUnknown1037b890::sub_1037b890()
+{
+    return g_1063abdc[m_i6668];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037bb20 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
