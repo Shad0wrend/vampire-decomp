@@ -104,6 +104,18 @@ void CEntityListSystem::vfunc5()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f9160 size=0xa
+#include "CEntityListSystem.h"
+namespace lifted {
+extern char g_107036b0;
+struct C10015b1d { int sub_10015b1d(); };
+}
+int CEntityListSystem::vfunc7()
+{
+    return ((lifted::C10015b1d *)((int)&lifted::g_107036b0))->sub_10015b1d();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f91c0 size=0x1e
 #include "CEntityListSystem.h"
 
