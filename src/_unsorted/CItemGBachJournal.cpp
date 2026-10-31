@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10400bb0 size=0x6
+#include "CItemGBachJournal.h"
+namespace lifted {
+extern char g_1094880c;
+}
+int CItemGBachJournal::vfunc80()
+{
+    return (int)&lifted::g_1094880c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10400bd0 size=0x3
 #include "CItemGBachJournal.h"
 int CItemGBachJournal::vfunc81()
