@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10404170 size=0x6
+#include "CItemGWarrClipboard.h"
+namespace lifted {
+extern char g_10945018;
+}
+int CItemGWarrClipboard::vfunc80()
+{
+    return (int)&lifted::g_10945018;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10404190 size=0x3
 #include "CItemGWarrClipboard.h"
 int CItemGWarrClipboard::vfunc81()
