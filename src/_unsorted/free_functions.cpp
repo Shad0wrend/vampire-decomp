@@ -113158,6 +113158,83 @@ Vector Vector::sub_1026b7a0(const Vector &v) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026c120 size=0x218
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+#include "CAI_BaseNPC.h"
+#include "CVProfile.h"
+
+struct CCycleSampler
+{
+	unsigned __int64 m_Int64;
+	void Sample()
+	{
+		unsigned long *pl = (unsigned long *)&m_Int64;
+		__asm {
+			mov ecx, pl
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+	void Add(CCycleSampler &other) { m_Int64 += other.m_Int64; }
+};
+
+struct CMotorSlots5d34
+{
+	virtual void slot0();
+	virtual void slot1();
+	virtual void slot2();
+	virtual void slot3();
+	virtual void slot4();
+	virtual void slot5(int a, int b);
+};
+
+extern CCycleSampler g_1090ff58;
+
+// TARGET: CAI_BaseNPC::sub_1026c120
+void CAI_BaseNPC::sub_1026c120(int a, int b)
+{
+	CBaseEntity *pSelf = (CBaseEntity *)this;
+	ScopeTrace trace("CAI_BaseNPC::PerformMovement", pSelf ? (pSelf->m_name26c ? pSelf->m_name26c : g_106b8540) : g_105387dc);
+	CVProfile *pProf = g_109f3648;
+	if (pProf->m_enabled || !pProf->m_bAtRoot) {
+		if (pProf->m_pCurNode->m_pszName != "CAI_BaseNPC_PerformMovement")
+			pProf->m_pCurNode = pProf->m_pCurNode->GetSubNode("CAI_BaseNPC_PerformMovement", 0, "Unaccounted");
+		CVProfNode *pNode = pProf->m_pCurNode;
+		pNode->m_nCurFrameCalls++;
+		if (pNode->m_nRecursions++ == 0) {
+			((CCycleSampler *)&pNode->m_CurFrameTime)->Sample();
+			g_109f3648->PushGroup(pNode->m_nBudgetGroupID);
+		}
+		pProf->m_bAtRoot = false;
+	}
+	g_1090ff58.Sample();
+	(*(CMotorSlots5d34 **)((char *)this + 0x5d34))->slot5(a, b);
+	{
+		CCycleSampler tmp;
+		tmp.m_Int64 = 0;
+		tmp.Sample();
+		g_1090ff58.m_Int64 = tmp.m_Int64 - g_1090ff58.m_Int64;
+	}
+	CVProfile *pProf2 = g_109f3648;
+	if (!pProf2->m_bAtRoot || pProf2->m_enabled) {
+		CVProfNode *pNode = pProf2->m_pCurNode;
+		if (--pNode->m_nRecursions == 0 && pNode->m_nCurFrameCalls != 0) {
+			CCycleSampler tmp2;
+			tmp2.m_Int64 = 0;
+			tmp2.Sample();
+			pNode->m_CurFrameTime.m_Int64 = tmp2.m_Int64 - pNode->m_CurFrameTime.m_Int64;
+			((CCycleSampler *)&pNode->m_TotalTime)->Add(*(CCycleSampler *)&pNode->m_CurFrameTime);
+			g_109f3648->PopGroup();
+		}
+		if (pNode->m_nRecursions == 0)
+			pProf2->m_pCurNode = pProf2->m_pCurNode->m_pParent;
+		pProf2->m_bAtRoot = (pProf2->m_pCurNode == pProf2->m_pRoot);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026c3d0 size=0x11f
 #include "CAI_BaseNPC.h"
 
