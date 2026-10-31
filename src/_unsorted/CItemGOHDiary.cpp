@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10400920 size=0x3
+#include "CItemGOHDiary.h"
+int CItemGOHDiary::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040a5a0 size=0x1e
 #include "CItemGOHDiary.h"
 
