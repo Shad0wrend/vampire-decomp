@@ -22,6 +22,17 @@ bool CFilterClass::vfunc241(void *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10107e60 size=0x6
+#include "CFilterClass.h"
+namespace lifted {
+extern char g_1056c4a0;
+}
+int CFilterClass::vfunc82()
+{
+    return (int)&lifted::g_1056c4a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10108620 size=0x36
 #include "CFilterClass.h"
 
