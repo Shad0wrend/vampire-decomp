@@ -81863,6 +81863,64 @@ void sub_101dc880()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dc8a0 size=0x1fb
+#include "CUnknown101e0f00.h"
+#include "CUnknown100eb420.h"
+#include "ScopeTrace.h"
+
+__declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+__declspec(dllimport) void Msg(const char *pMsg, ...);
+const char *sub_10202880(int nAttachType);
+
+struct SrcAParams
+{
+	const char *m_pszEntity;
+	float m_flRateMin;
+	float m_flOpacityMin;
+	float m_flSizeMin;
+	const char *m_pszParticleName;
+	int m_nAttachType;
+	const char *m_pszAttachName;
+	int m_nBitFlags;
+	int m_nMiscFlags;
+};
+
+void CUnknown101e0f00SrcA::sub_101dc8a0()
+{
+	char msg[512];
+	SrcAParams *p = (SrcAParams *)&m_pszEntity;
+	if (!((CUnknown100eb420 *)p)->sub_100eb420())
+		return;
+	if (!m_bFirstPerson)
+		Q_snprintf(msg, 512, "Particle_ThirdPerson\n");
+	else
+		Q_snprintf(msg, 512, "Particle_FirstPerson\n");
+	Msg("%s", msg);
+	if (!m_bDiscipline) {
+		Q_snprintf(msg, 512, "   NON-Discipline Particle\n");
+		Msg("%s", msg);
+	}
+	Q_snprintf(msg, 512, "   Entity: %s\n", p->m_pszEntity ? p->m_pszEntity : g_106b8540);
+	Msg("%s", msg);
+	Q_snprintf(msg, 512, "   RateMin: %03f\n", p->m_flRateMin);
+	Msg("%s", msg);
+	Q_snprintf(msg, 512, "   OpacityMin: %03f\n", p->m_flOpacityMin);
+	Msg("%s", msg);
+	Q_snprintf(msg, 512, "   SizeMin: %03f\n", p->m_flSizeMin);
+	Msg("%s", msg);
+	Q_snprintf(msg, 512, "   ParticleName: %s\n", p->m_pszParticleName ? p->m_pszParticleName : g_106b8540);
+	Msg("%s", msg);
+	Q_snprintf(msg, 512, "   AttachType: %s\n", sub_10202880(p->m_nAttachType));
+	Msg("%s", msg);
+	Q_snprintf(msg, 512, "   AttachName: %s\n", p->m_pszAttachName ? p->m_pszAttachName : g_106b8540);
+	Msg("%s", msg);
+	Q_snprintf(msg, 512, "   BitFlags: %d\n", p->m_nBitFlags);
+	Msg("%s", msg);
+	Q_snprintf(msg, 512, "   MiscFlags: %d\n", p->m_nMiscFlags);
+	Msg("%s", msg);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dcb80 size=0x64
 struct CItemVec {
     int m_growBy;
