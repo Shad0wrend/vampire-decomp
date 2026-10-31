@@ -116,6 +116,14 @@ bool CTriggerBombSite::vfunc32(void *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102113a0 size=0x3
+#include "CTriggerBombSite.h"
+int CTriggerBombSite::vfunc36()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102113c0 size=0x31
 // TARGET: CTriggerBombSite::vfunc39
 #include "CTriggerBombSite.h"
