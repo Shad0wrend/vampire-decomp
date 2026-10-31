@@ -64,6 +64,14 @@ int CWeaponThrown_Chang_Energy_Ball::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f0640 size=0x6
+#include "CWeaponThrown_Chang_Energy_Ball.h"
+int CWeaponThrown_Chang_Energy_Ball::vfunc363()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f13e0 size=0x1e
 #include "CWeaponThrown_Chang_Energy_Ball.h"
 
