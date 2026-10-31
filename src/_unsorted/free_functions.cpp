@@ -142294,6 +142294,73 @@ void CBaseCombatCharacter::sub_103352b0(inputdata_t &data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10335470 size=0x266
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+#include "ScopeTrace.h"
+
+int __fastcall sub_102517b0(void *pWeapon);
+void __fastcall sub_1033d990(void *pThis);
+
+// TARGET: CBaseCombatCharacter::sub_10335470
+void CBaseCombatCharacter::sub_10335470(void *pEnt)
+{
+	int bFound;
+	ScopeTrace trace("CBaseCombatCharacter::Inventory_Remove", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CBaseCombatWeapon *pWeapon = (CBaseCombatWeapon *)pEnt;
+	if (!pWeapon)
+		return;
+	int nType = pWeapon->sub_10255cf0();
+	int idx = 0;
+	bFound = 0;
+	for (int i = 0; i < nType; i++)
+		idx += vfunc298(i);
+	int k = 0;
+	for (; k < vfunc298(pWeapon->sub_10255cf0()); k++, idx++) {
+		if (sub_1032e8b0(idx) == pWeapon) {
+			*(int *)((char *)pWeapon + 0x73c) = 0xff;
+			sub_1032e9f0(idx, 0);
+			bFound = 1;
+			break;
+		}
+	}
+	while (k < vfunc298(pWeapon->sub_10255cf0()) - 1) {
+		int j = idx + 1;
+		if (!sub_1032e8b0(j))
+			break;
+		if (sub_1032e8b0(idx))
+			sub_1032e8b0(idx);
+		sub_1032e8b0(j);
+		((CBaseEntity *)sub_1032e8b0(j))->sub_1009d1e0();
+		sub_1032e9f0(idx, (CBaseEntity *)sub_1032e8b0(j));
+		*(int *)((char *)sub_1032e8b0(idx) + 0x73c) = idx;
+		k++;
+		idx++;
+	}
+	if (bFound) {
+		sub_1032e9f0(idx, 0);
+		if (sub_1032e7b0() == pWeapon)
+			*(int *)((char *)this + 0x19a4) = -1;
+		else if (sub_10341510() == pWeapon)
+			*(int *)((char *)this + 0x10dc) = -1;
+		char *pInfo = (char *)sub_102517b0(pWeapon) + 0x5eb20;
+		if (*(int *)(pInfo + 0x20)) {
+			int i;
+			for (i = 0; i < 0xe0; i++) {
+				void *w = sub_1032e8b0(i);
+				if (w) {
+					char *pWInfo = (char *)sub_102517b0(w) + 0x5eb20;
+					if (*(int *)(pWInfo + 0x20))
+						break;
+				}
+			}
+			if (i >= 0xe0)
+				sub_1033d990(this);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10335780 size=0x16c
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
