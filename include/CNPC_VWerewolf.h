@@ -834,7 +834,7 @@ public:
 	virtual void vfunc563();
 	virtual void vfunc564();
 	virtual void vfunc565();
-	virtual void vfunc566_slot();
+	virtual bool vfunc566_slot(void *pHint);
 	virtual void vfunc567();
 	virtual void vfunc568();
 	virtual void vfunc569();
