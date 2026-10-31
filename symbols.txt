@@ -7786,6 +7786,7 @@
 0x1000f4ca func   ?vfunc62@CMultiplayRules@@UAEHH@Z CMultiplayRules::vfunc62
 0x1000f4cf func   ?sub_102974f0@CAI_BaseNPCTroika@@QAEXPAV1@@Z CAI_BaseNPCTroika::sub_102974f0
 0x1000f4d4 func   ?sub_101dc880@@YAXXZ sub_101dc880
+0x1000f4d9 func   ?vfunc80@CWeaponMelee_FireAxe@@QAEHXZ CWeaponMelee_FireAxe::vfunc80
 0x1000f4de func   ?sub_103c0860@@YIXPAUE@@HH@Z sub_103c0860
 0x1000f4e3 func   ?sub_10041fe0@UtlHash8@@QAEIPAX@Z UtlHash8::sub_10041fe0
 0x1000f4e8 func   ?sub_1027fc40@CUnknown1027fc40@@QAEXXZ CUnknown1027fc40::sub_1027fc40
