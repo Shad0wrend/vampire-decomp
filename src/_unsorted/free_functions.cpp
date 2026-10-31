@@ -126662,6 +126662,18 @@ int *CUnk102dd630::sub_102dd630(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dd720 size=0x10
+extern int g_10931bc8;
+void sub_102dd990();
+
+// TARGET: sub_102dd720
+void sub_102dd720()
+{
+	sub_102dd990();
+	g_10931bc8 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dd740 size=0x11e
 #include "CUnknown10248a50.h"
 #include <stdio.h>
