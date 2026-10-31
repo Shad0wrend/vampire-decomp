@@ -47,7 +47,7 @@ public:
 	virtual void vfunc50();
 	virtual int vfunc51(int nGroup, char *pszBuffer, int nBufferSize);	// SentenceGroupPick: picks a sentence of the group, its name into the buffer; negative when none
 	virtual int vfunc52(int nGroup, char *pszBuffer, int nBufferSize, int nSentence, int bReset);	// SentenceGroupPickSequential: the name of the group's sentence, negative when none
-	virtual void vfunc53(); virtual void vfunc54();
+	virtual int vfunc53(int a); virtual void vfunc54();
 	virtual int vfunc55(const char *pszGroupName);	// SentenceGroupIndexFromName: negative for an unknown group
 	virtual void vfunc56(); virtual void vfunc57();
 	virtual void *vfunc58(int modelIndex);	// GetVCollide: a model's collision data (0 when none)
