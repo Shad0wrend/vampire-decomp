@@ -452,6 +452,7 @@
 0x10001e10 func   ?vfunc1@CTEImpact@@UAEHXZ CTEImpact::vfunc1
 0x10001e1a func   ?vfunc37@CPayphone@@UAEMXZ CPayphone::vfunc37
 0x10001e2e func   ?vfunc328@CNPC_VWerewolf@@UAE_NXZ CNPC_VWerewolf::vfunc328
+0x10001e33 func   ?sub_10149e00@@YIHH@Z sub_10149e00
 0x10001e3d func   ?vfunc82@CSteamJet@@UAEHXZ CSteamJet::vfunc82
 0x10001e47 func   ?sub_104292c0@@YAHXZ sub_104292c0
 0x10001e4c func   ??0CPlayerEvents@@QAE@XZ CPlayerEvents::CPlayerEvents

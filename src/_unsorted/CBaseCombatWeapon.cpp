@@ -23,6 +23,11 @@ char CBaseCombatWeapon::vfunc313()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10149e00 size=0x3
+// TARGET: sub_10149e00
+int __fastcall sub_10149e00(int x) { return x; }
+// END FUNCTION
+
 // FUNCTION: 0x10149e60 size=0x9
 extern float g_104454c4;
 float CBaseCombatWeapon::vfunc337(int a, int b) { return g_104454c4; }
