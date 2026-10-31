@@ -11,7 +11,9 @@ public:
 	int m_pfnUse1f0;	// 0x1f0: the use function (a stub address)
 	char pad1f4[0x204 - 0x1f4];
 	unsigned int m_spawnflags;
-	char pad208[0x26c - 0x208];
+	char pad208[0x210 - 0x208];
+	int m_iHealth;	// 0x210
+	char pad214[0x26c - 0x214];
 	const char *m_name26c;	// 0x26c: the entity name
 	char pad270[0x450 - 0x270];
 	float m_flVolume0450;	// 0x450
