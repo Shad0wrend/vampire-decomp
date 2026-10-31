@@ -2337,6 +2337,7 @@
 0x10005227 func   ?sub_10087de0@@YAXXZ sub_10087de0
 0x1000522c func   ?vfunc230@CPhysBox@@QAEXHH@Z CPhysBox::vfunc230
 0x1000523b func   ?sub_101f6390@@YAXXZ sub_101f6390
+0x10005240 func   ?sub_100f55d0@CUnk100f55d0@@QAEXH@Z CUnk100f55d0::sub_100f55d0
 0x10005245 func   ?sub_10221ca0@QuestJournal@@QAEDH@Z QuestJournal::sub_10221ca0
 0x1000524f func   ?vfunc245@CNPC_VPlayerController@@QAEXHHHHH@Z CNPC_VPlayerController::vfunc245
 0x10005254 func   ?sub_1033df80@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_1033df80

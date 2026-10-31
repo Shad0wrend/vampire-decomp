@@ -42569,6 +42569,23 @@ CUnknown100f5600 *sub_100f54c0(CBaseEntity *pTarget)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f55d0 size=0x1a
+#include "CBaseEntity.h"
+
+struct CUnk100f55d0
+{
+	void sub_100a0670(int a, int b);
+	void sub_100f55d0(int a);
+};
+
+// TARGET: sub_100f55d0
+void CUnk100f55d0::sub_100f55d0(int a)
+{
+	sub_100a0670(a, 0);
+	((CBaseEntity *)this)->CBaseEntity::sub_100b3b00();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f5600 size=0xd
 #include "CUnknown100f5600.h"
 
