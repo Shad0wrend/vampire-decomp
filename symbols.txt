@@ -3963,6 +3963,7 @@
 0x100085a8 func   ?sub_1003d490@CBaseEntity@@QAEXXZ CBaseEntity::sub_1003d490
 0x100085ad func   _game_sign game_sign
 0x100085b2 func   ?vfunc28@CRestore@@UAEHPAPAVCBaseEntity@@HH@Z CRestore::vfunc28
+0x100085b7 func   ?vfunc80@CWeaponMelee_AVampBlade@@QAEHXZ CWeaponMelee_AVampBlade::vfunc80
 0x100085bc func   ?sub_102f45f0@CUnknown102f45f0@@QAEXPBUCachedPos_t@@HH@Z CUnknown102f45f0::sub_102f45f0
 0x100085c1 func   ?vfunc362@CWeaponRanged_Rifle_M37@@QAEHXZ CWeaponRanged_Rifle_M37::vfunc362
 0x100085cb func   ?vfunc4@CServerNetworkProperty@@UAEHXZ CServerNetworkProperty::vfunc4
