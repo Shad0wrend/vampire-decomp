@@ -9,6 +9,17 @@ bool CFuncBrush::vfunc128()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013de10 size=0x6
+#include "CFuncBrush.h"
+namespace lifted {
+extern char g_10579aa8;
+}
+int CFuncBrush::vfunc82()
+{
+    return (int)&lifted::g_10579aa8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013dea0 size=0x16d
 #include "CFuncBrush.h"
 #include "CCollisionProperty.h"

@@ -9374,6 +9374,7 @@
 0x100127ec func   ?sub_100eef10@CUnknown100eef10@@QAE_NXZ CUnknown100eef10::sub_100eef10
 0x100127f1 func   ?vfunc0@CTEBeamPoints@@UAEPAUServerClass@@XZ CTEBeamPoints::vfunc0
 0x10012805 func   ?sub_1030b7c0@CUnknown1030bc20@@QAEPAUCUnknown1030bc20_Record@@XZ CUnknown1030bc20::sub_1030b7c0
+0x1001280f func   ?vfunc82@CFuncBrush@@QAEHXZ CFuncBrush::vfunc82
 0x10012814 func   ?sub_1008fe80@CBaseAnimating@@QAEPBDH@Z CBaseAnimating::sub_1008fe80
 0x10012819 func   ?sub_101d2920@@YAMHHMM@Z sub_101d2920
 0x1001281e func   ?sub_1020c890@CSecCamera@@QAEXXZ CSecCamera::sub_1020c890
