@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100bf740 size=0x8
+#include "CFuncIllusionary.h"
+// TARGET: CFuncIllusionary::sub_100bf740
+unsigned char CFuncIllusionary::sub_100bf740()
+{
+    unsigned char b;
+    b = ((CBaseEntity *)this)->CBaseEntity::vfunc117();
+    b &= 0xfd;
+    return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bf760 size=0xc4
 #include "CFuncIllusionary.h"
 #include "CEntityVSlots.h"
