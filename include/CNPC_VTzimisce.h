@@ -130,6 +130,9 @@ public:
 	char m_pad66b5[0x66b8 - 0x66b5];
 	int m_n66b8;
 
+	void sub_1029b290(int *pEvent);	// CAI_BaseNPCTroika::vfunc259 (stub 0x100146e1), called directly
+	void sub_103bef20(CBaseEntity *pEnt, const char *pszBone);	// stub 0x10010082
+	void sub_103bea90(void *pObj);	// stub 0x10014687
 	void sub_10298d30();	// CAI_BaseNPCTroika::vfunc103 (stub 0x1000303a), called directly by Spawn
 	void sub_1009b060(Vector *pSize);	// stub 0x10001a50: sets the entity's size from the vector
 	void sub_100b3900(int flags);	// CBaseEntity::RemoveFlag2 (stub 0x1000df44), called directly
