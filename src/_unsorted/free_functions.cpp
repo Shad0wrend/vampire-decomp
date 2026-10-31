@@ -49680,6 +49680,29 @@ Vector &Vector::sub_1011d2e0(const Vector &v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011d310 size=0x1a
+struct CUnk1011d310
+{
+	int m_n0;
+	int m_n4;
+	int m_nLimit8;
+	int m_nCurrentC;
+	char m_bFlag10;
+
+	char sub_1011d310(int a);
+};
+
+// TARGET: sub_1011d310
+char CUnk1011d310::sub_1011d310(int a)
+{
+	int sum = m_nCurrentC + a;
+	if (sum > m_nLimit8) {
+		m_bFlag10 = 1;
+	}
+	return m_bFlag10;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011d6a0 size=0x6a
 extern void *(*g_109f3638)(void *, int);
 extern void *(*g_109f3634)(int);
