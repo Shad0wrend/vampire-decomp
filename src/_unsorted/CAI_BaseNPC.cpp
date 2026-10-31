@@ -908,6 +908,28 @@ bool CAI_BaseNPC::vfunc545()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10273dd0 size=0x30
+#include "CAI_BaseNPC.h"
+#include "CUnknown102e0730.h"
+struct CAI_NPC542View
+{
+	char m_pad0000[0x5d88];
+	CUnknown102e0730 *m_p5d88;	// 0x5d88
+	char m_pad5d8c[0x5da4 - 0x5d8c];
+	int m_n5da4;	// 0x5da4
+};
+void CAI_BaseNPC::vfunc542()
+{
+	CAI_NPC542View *p = (CAI_NPC542View *)this;
+	CUnknown102e0730 *pObj = p->m_p5d88;
+	if (pObj) {
+		pObj->sub_100146d7();
+		delete pObj;
+	}
+	p->m_p5d88 = (CUnknown102e0730 *)(p->m_n5da4 + 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10273e40 size=0x27
 // TARGET: CUnknown10273e40::sub_10273e40
 #include "CUnknown10273e40.h"
