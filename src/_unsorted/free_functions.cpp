@@ -69032,6 +69032,22 @@ void *sub_101ab220(void *pSelf, int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ab260 size=0x63
+void sub_101ab260(int unused, EHANDLE *pHandle, int *pOut)
+{
+    if (pHandle) {
+        CBaseEntity *pEnt = pHandle->Get();
+        if (pEnt) {
+            *pOut = engine->vfunc35(pEnt->m_pEdict2e0);
+            return;
+        }
+        *pOut = 0x7ff;
+    } else {
+        *pOut = 0x7ff;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab2f0 size=0x3
 int sub_101ab2f0()
 {
