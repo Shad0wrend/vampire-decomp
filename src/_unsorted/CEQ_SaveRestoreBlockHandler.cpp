@@ -55,3 +55,17 @@ void CEQ_SaveRestoreBlockHandler::vfunc6(IRestoreRead *pRestore)
 	m_bVersionMatches = (version == g_1055deb0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x100cff70 size=0x19
+#include "CEQ_SaveRestoreBlockHandler.h"
+#include "CEventQueue.h"
+
+extern CEventQueue g_106e7050;
+
+// TARGET: CEQ_SaveRestoreBlockHandler::vfunc7
+void CEQ_SaveRestoreBlockHandler::vfunc7(int a, int b, int c)
+{
+	if (m_bVersionMatches)
+		g_106e7050.sub_100cfda0((IEQRestore *)a);
+}
+// END FUNCTION
