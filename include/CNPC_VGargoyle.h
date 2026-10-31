@@ -59,7 +59,9 @@ public:
 	void *m_pObj5d44;	// 0x5d44
 	char m_pad5d48[0x5d8c - 0x5d48];
 	unsigned int m_nFlags5d8c;	// 0x5d8c
-	char m_pad5d90[0x667c - 0x5d90];
+	char m_pad5d90[0x6078 - 0x5d90];
+	char m_b6078;	// 0x6078
+	char m_pad6079[0x667c - 0x6079];
 	int m_hPillar;	// 0x667c
 	int m_n6680;	// 0x6680: the counter the vfunc435 override lowers
 	void *m_p6684;	// 0x6684: the object that takes the Event_Killed call when set
