@@ -92,7 +92,7 @@ public:
 	int m_n09dc;	// 0x9dc
 	int m_n09e0;	// 0x9e0
 	float m_flDelay09e4;	// 0x9e4
-	char m_pad09e8[0x9ec - 0x9e8];
+	float m_flDelay09e8;	// 0x9e8: the delay of the first noise think
 	char m_b09ec;	// 0x9ec
 	char m_pad09ed[0x9f4 - 0x9ed];
 	int m_nSelected09f4;	// 0x9f4: the selected record
