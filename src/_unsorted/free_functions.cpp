@@ -4770,6 +4770,51 @@ void * CUnknown1003ff80::sub_1003ff80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003ffa0 size=0x1f1
+#include "CBaseEntity.h"
+#include "CVProfile.h"
+#include "ScopeTrace.h"
+
+struct CCycleSample
+{
+	unsigned __int64 m_Int64;
+
+	void Sample()
+	{
+		unsigned int *pSample = (unsigned int *)&m_Int64;
+		__asm {
+			mov ecx, pSample
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+};
+
+void CBaseEntity::sub_1003ffa0()
+{
+	ScopeTrace trace("CBaseEntity::PhysicsSimulateChildren", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CVProfile *pProfile = g_109f3648;
+	if (pProfile->m_enabled || !pProfile->m_bAtRoot) {
+		if (pProfile->m_pCurNode->m_pszName != "CBaseEntity_PhysicsSimulateChildren")
+			pProfile->m_pCurNode = pProfile->m_pCurNode->GetSubNode("CBaseEntity_PhysicsSimulateChildren", 0, "Unaccounted");
+		CVProfNode *pNode = pProfile->m_pCurNode;
+		pNode->m_nCurFrameCalls++;
+		if (pNode->m_nRecursions++ == 0) {
+			((CCycleSample *)&pNode->m_CurFrameTime)->Sample();
+			g_109f3648->PushGroup(pNode->m_nBudgetGroupID);
+		}
+		pProfile->m_bAtRoot = false;
+	}
+	CBaseEntity *pChild = m_hMoveChild260.Get();
+	while (pChild) {
+		pChild->sub_10040390();
+		pChild = pChild->m_hMovePeer264.Get();
+	}
+	g_109f3648->ExitScopeInlined();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10040220 size=0x114
 #include "ScopeTrace.h"
 #include "CEntityVSlots.h"
