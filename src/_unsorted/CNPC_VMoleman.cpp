@@ -28,6 +28,13 @@ int CNPC_VMoleman::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039fcc0 size=0x6
+int CNPC_VMoleman::vfunc138()
+{
+    return 4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039fd20 size=0x9d
 // TARGET: CNPC_VMoleman::vfunc438
 int CNPC_VMoleman::vfunc438()
