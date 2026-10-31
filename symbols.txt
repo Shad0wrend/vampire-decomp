@@ -6954,6 +6954,7 @@
 0x1000e4cb func   ?sub_102193c0@CPropHacking@@QAEXH@Z CPropHacking::sub_102193c0
 0x1000e4d0 func   ?sub_100f7040@CUnknown100f7040@@QAEHXZ CUnknown100f7040::sub_100f7040
 0x1000e4da func   ?vfunc22@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc22
+0x1000e4df func   ?vfunc496@CNPC_VPlayerController@@QAEXXZ CNPC_VPlayerController::vfunc496
 0x1000e4e4 func   ?sub_1012d950@CPropClockHand@@QAEPAV1@XZ CPropClockHand::sub_1012d950
 0x1000e4e9 func   ?vfunc453@CNPC_VHumanCombatant@@QAEXXZ CNPC_VHumanCombatant::vfunc453
 0x1000e4ee func   ?vfunc278@CBaseCombatWeapon@@UAEMXZ CBaseCombatWeapon::vfunc278
