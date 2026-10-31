@@ -99046,6 +99046,22 @@ void CUnknown10215910::sub_10215910(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10215930 size=0x14
+struct CUnit10215930
+{
+	char m_pad0000[0x738];
+	bool m_b738;
+
+	void sub_10215930(int a);
+};
+
+// TARGET: CUnit10215930::sub_10215930
+void CUnit10215930::sub_10215930(int a)
+{
+	m_b738 = !m_b738;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10215960 size=0x64
 #include "CPropButton.h"
 #include "inputdata_t.h"

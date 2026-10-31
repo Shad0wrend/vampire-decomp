@@ -11478,6 +11478,7 @@
 0x100158ca func   ?sub_102f90e0@UtlVec8@@QAEHH@Z UtlVec8::sub_102f90e0
 0x100158cf func   ?sub_102f65b0@@YAXXZ sub_102f65b0
 0x100158d4 func   ?vfunc47@CBaseEntity@@UAEXXZ CBaseEntity::vfunc47
+0x100158d9 func   ?sub_10215930@CUnit10215930@@QAEXH@Z CUnit10215930::sub_10215930
 0x100158de func   ?vfunc192@CNPC_Crow@@QAE?AVVector@@XZ CNPC_Crow::vfunc192
 0x100158e8 func   ?vfunc208@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::vfunc208
 0x100158ed func   ?vfunc363@CWeaponMelee_Claws_Protean5@@QAEHXZ CWeaponMelee_Claws_Protean5::vfunc363
