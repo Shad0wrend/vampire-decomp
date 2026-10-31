@@ -6007,6 +6007,7 @@
 0x1000ca0e func   ?sub_104123a0@@YA_NPBD0@Z sub_104123a0
 0x1000ca18 func   ?vfunc1@CTEDynamicLight@@UAEHXZ CTEDynamicLight::vfunc1
 0x1000ca22 func   ?vfunc451@CGenericSabbat_NPC@@UAEPBDXZ CGenericSabbat_NPC::vfunc451
+0x1000ca27 func   ?sub_100bf8e0@CFuncRotating@@QAEEXZ CFuncRotating::sub_100bf8e0
 0x1000ca2c func   ?vfunc5@CAI_NetworkManager@@QAEPAV1@I@Z CAI_NetworkManager::vfunc5
 0x1000ca31 func   ?sub_101c1ba0@CUnknown101c1b60@@QAEXH@Z CUnknown101c1b60::sub_101c1ba0
 0x1000ca36 func   ?vfunc5@CFogController@@QAEPAV1@I@Z CFogController::vfunc5

@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100bf8e0 size=0x8
+#include "CFuncRotating.h"
+// TARGET: CFuncRotating::sub_100bf8e0
+unsigned char CFuncRotating::sub_100bf8e0()
+{
+    unsigned char b;
+    b = ((CBaseEntity *)this)->CBaseEntity::vfunc117();
+    b &= 0xfd;
+    return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bf900 size=0x3
 #include "CFuncRotating.h"
 bool CFuncRotating::vfunc128()
