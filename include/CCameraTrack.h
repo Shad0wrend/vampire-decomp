@@ -35,6 +35,7 @@ public:
 	float vfunc52();	// slot 52: the float at +0x4b4 when it is above 0.0f, else 0.0f
 
 	char sub_100cc430(float *a, float *b, float *c, float *d, float *e, float *f, int g, int h);	// worker run on the two timers (stub 0x100157b2); true when it changed something
+	void sub_100ccea0(class COutputEvent *pOutput, char bSecond);	// stub 0x1000c97d: fires the output (this, this, 0) when the player slot chosen by bSecond (sub_1017d680 / sub_1017d630) is this track
 	void sub_100cc360();	// runs the worker on the timer at +0x4d4 (arguments +0x4d4, +0x4d8, +0x4dc, +0x4e0, +0x4f0, +0x4ec, 0, 0) and on the one at +0x4bc (+0x4bc, +0x4c0, +0x4c4, +0x4c8, a zeroed local twice, 1, 0); when either returns true SetNextThink(engine time)
 
 	int sub_100ac4e0(int func, int thinkTime, const char *szContext);	// CBaseEntity::ThinkSet (stub 0x10007fe5)
