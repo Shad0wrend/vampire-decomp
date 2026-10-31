@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1025e450 size=0x6
+namespace lifted {
+extern char g_105c8b78;
+}
+int CAI_BaseHumanoid::vfunc82()
+{
+    return (int)&lifted::g_105c8b78;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025e510 size=0x1e5
 void CAI_BaseHumanoid::vfunc105(void *p)
 {
