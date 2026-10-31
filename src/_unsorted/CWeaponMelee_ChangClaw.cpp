@@ -31,6 +31,14 @@ int CWeaponMelee_ChangClaw::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e9360 size=0x6
+#include "CWeaponMelee_ChangClaw.h"
+int CWeaponMelee_ChangClaw::vfunc363()
+{
+    return 0x14d;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecf00 size=0x1e
 #include "CWeaponMelee_ChangClaw.h"
 
