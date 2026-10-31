@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x102d72b0 size=0x7
+#include "CAI_TestHull.h"
+namespace lifted {
+extern float g_10462950;
+}
+float CAI_TestHull::vfunc522()
+{
+    return lifted::g_10462950;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d72f0 size=0x16b
 #include "ScopeTrace.h"
 #include "CCollisionProperty.h"
