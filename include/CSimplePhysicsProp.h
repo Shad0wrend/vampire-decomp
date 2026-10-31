@@ -27,7 +27,7 @@ public:
 	void sub_10011793();	// CBaseProp::vfunc103 (jump stub)
 	void sub_100b3900(unsigned int flags);	// "CBaseEntity::RemoveFlag2"
 public:
-	virtual int vfunc117();
+	virtual unsigned char vfunc117();
 public:
 	virtual int vfunc226();
 public:
