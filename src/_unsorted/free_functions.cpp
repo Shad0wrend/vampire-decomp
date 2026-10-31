@@ -111825,6 +111825,25 @@ void __stdcall sub_1027f270(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027f550 size=0x5f
+#include "CAI_BaseNPCTroika.h"
+#include "globalvars.h"
+char CAI_BaseNPCTroika::sub_1027f550(CAI_BaseNPCTroika *pOther)
+{
+	if (!pOther)
+		return 0;
+	if ((vfunc513() & 0xd00) != 0xd00) {
+		pOther->sub_100f0e90(8);
+		return 0;
+	}
+	if (*(float *)((char *)pOther + 0x640) > gpGlobals->curtime) {
+		pOther->sub_100f0e90(0x10);
+		return 0;
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027f5d0 size=0x28
 #include <stdarg.h>
 
