@@ -9920,6 +9920,7 @@
 0x100129c7 func   ?sub_100c65d0@@YAHXZ sub_100c65d0
 0x100129d1 func   ?vfunc219@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc219
 0x100129d6 func   ?sub_103282e0@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::sub_103282e0
+0x100129db func   ?vfunc7@CAI_ProxyMovementSink@@QAE_NHHHH@Z CAI_ProxyMovementSink::vfunc7
 0x100129e5 func   ?vfunc24@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEDH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc24
 0x100129ea func   ?sub_10136c50@@YAPBDPBD@Z sub_10136c50
 0x100129ef func   ?vfunc103@CNPC_VBach@@UAEXXZ CNPC_VBach::vfunc103
