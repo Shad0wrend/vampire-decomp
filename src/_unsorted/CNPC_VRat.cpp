@@ -27,6 +27,13 @@ bool CNPC_VRat::vfunc615()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ad7d0 size=0x3
+#include "CNPC_VRat.h"
+void CNPC_VRat::vfunc333(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ad930 size=0x1e
 #include "CNPC_VRat.h"
 

@@ -6488,6 +6488,7 @@
 0x1000d56c func   ?vfunc8@CCollisionProperty@@UAEXXZ CCollisionProperty::vfunc8
 0x1000d571 func   ?sub_100740d0@CUnknown100740d0@@QAEDXZ CUnknown100740d0::sub_100740d0
 0x1000d576 func   ?sub_1002a210@@YAXPAUEntView@@PAUPhysObjView@@1PBVQAngle@@PBVVector@@_N@Z sub_1002a210
+0x1000d57b func   ?vfunc333@CNPC_VRat@@QAEXH@Z CNPC_VRat::vfunc333
 0x1000d585 func   ?sub_103a9540@CNPC_VSabbatLeader@@QAEPAUCNPC_VSabbatLeaderHint@@XZ CNPC_VSabbatLeader::sub_103a9540
 0x1000d58f func   ?sub_10064df0@@YAXPAXHPAH1HHHHDHHH@Z sub_10064df0
 0x1000d594 func   ?sub_103c8e20@@YADXZ sub_103c8e20
