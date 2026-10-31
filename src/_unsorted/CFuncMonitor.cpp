@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10114e40 size=0x3
+#include "CFuncMonitor.h"
+int CFuncMonitor::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101150b0 size=0x2a
 #include "CFuncMonitor.h"
 
