@@ -2896,6 +2896,7 @@
 0x100062ad func   ?vfunc81@CItemGRingSerialKiller1@@QAEHXZ CItemGRingSerialKiller1::vfunc81
 0x100062b7 func   ?vfunc45@CSingleplayRules@@UAEXPAVCBaseEntity@@PAUCMPDamageInfo@@@Z CSingleplayRules::vfunc45
 0x100062bc func   ?sub_10367940@@YIPAXPAX@Z sub_10367940
+0x100062c1 func   ?vfunc440@CNPC_VTzimisce@@UAEHH@Z CNPC_VTzimisce::vfunc440
 0x100062cb func   ?vfunc80@CSun@@UAEHXZ CSun::vfunc80
 0x100062d0 func   ?sub_1035ac80@@YAEXZ sub_1035ac80
 0x100062d5 func   ?vfunc82@CPhysMotor@@UAEHXZ CPhysMotor::vfunc82

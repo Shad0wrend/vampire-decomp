@@ -234,3 +234,63 @@ int CNPC_VTzimisce::vfunc482(char bDisregardState, int interruptLevel)
 	return result;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103bd390 size=0x253
+#include "CNPC_VTzimisce.h"
+
+#define SET_SOURCE(line) \
+	*(const char **)((char *)this + 0x1b30) = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VTzimisce.cpp"; \
+	*(int *)((char *)this + 0x1b34) = (line)
+
+int CNPC_VTzimisce::vfunc440(int a)
+{
+	switch (a) {
+	case 1:
+		SET_SOURCE(0xd00);
+		return 0x157;
+	case 6:
+		SET_SOURCE(0xd01);
+		return 0x158;
+	case 0x15:
+		SET_SOURCE(0xd02);
+		return 0x16c;
+	case 0xf:
+		SET_SOURCE(0xd03);
+		return 0x166;
+	case 0x10:
+		SET_SOURCE(0xd04);
+		return 0x16a;
+	case 0x28:
+		SET_SOURCE(0xd06);
+		return 0x16e;
+	case 0x25:
+		SET_SOURCE(0xd07);
+		return 0x16d;
+	case 0x21:
+		SET_SOURCE(0xd08);
+		return 0x184;
+	case 0x22:
+		SET_SOURCE(0xd09);
+		return 0x185;
+	case 0x2f:
+		SET_SOURCE(0xd0a);
+		return 0x188;
+	case 0x30:
+		SET_SOURCE(0xd0b);
+		return 0x189;
+	case 0x31:
+		SET_SOURCE(0xd0c);
+		return 0x18a;
+	case 0x32:
+		SET_SOURCE(0xd0d);
+		return 0x18b;
+	case 0x33:
+		SET_SOURCE(0xd0e);
+		return 0x18c;
+	case 5:
+		SET_SOURCE(0xd0f);
+		return 0x19b;
+	}
+	return sub_102b12f0(a);
+}
+// END FUNCTION
