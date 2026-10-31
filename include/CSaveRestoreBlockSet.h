@@ -24,6 +24,7 @@ public:
 	int m_nEntries;	// 0x4c, number of entries at m_pEntries
 	char *m_pEntryElements;	// 0x50
 
+	void vfunc1(void *pSave);	// slot 1: rebuilds the entry table from the handlers' block names, then calls slot 1 of every handler
 	void vfunc2(void *pSave);
 	void vfunc4();	// slot 4: calls slot 4 of every handler, then empties the entry table (CUtlVector Purge)
 	void vfunc5();	// slot 5: calls slot 5 of every handler in the list (CUtlVector<void *> at +0x24, count at +0x30)
