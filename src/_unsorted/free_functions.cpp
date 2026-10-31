@@ -146466,6 +146466,21 @@ bool CUnknown10381be0::sub_103be090()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103be0b0 size=0x54
+#include "CNPC_VTzimisce.h"
+void CNPC_VTzimisce::sub_103be0b0(char bOn)
+{
+	if (bOn) {
+		m_flags14b8 |= 0x20;
+		float flDelay; flDelay = enginerandom->vfunc1(7.5f, 10.0f);
+		m_fl66a4 = flDelay + gpGlobals->curtime;
+		m_b66b4 = 0;
+	} else {
+		m_flags14b8 &= ~0x20;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103be130 size=0xc
 bool CUnknown10381be0::sub_103be130()
 {
