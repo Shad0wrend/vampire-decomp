@@ -274,7 +274,7 @@ public:
 	int m_field200;
 	unsigned int m_flags204;	// 0x0204
 	int m_iMaxHealth;	// 0x0208
-	char m_pad020c[4];
+	const char *m_target20c;	// 0x020c: the target name
 	int m_iHealth;	// 0x0210
 	char m_pad0214[4];
 	unsigned int m_hUseFilter;	// 0x0218: entity handle of the use filter
