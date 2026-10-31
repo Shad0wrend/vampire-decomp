@@ -74,6 +74,7 @@ public:
 	int sub_103346c0(int ammoIndex);	// "CBaseCombatCharacter::GetAmmoCount": scope trace, the dword at +0x15a4 + ammoIndex*4 (0 for index -1)
 	int sub_103343f0(int count, const char *pszAmmoName);	// "CBaseCombatCharacter::GiveAmmo" (by name): scope trace (entity name), looks the name up in the ammo definitions (global at 0x1070ba0c), then slot 374(count, index, 0); Msg when unknown
 	void sub_10346760();	// "CBaseCombatCharacter::ForceMeleeReset": scope trace (entity name), sets the byte at +0xaa1 and clears the bytes at +0xaa0/+0xaa2/+0xaa3 and the dword at +0xa94
+	bool sub_10338190(class CUnknown10204e90 *pRef);	// "CBaseCombatCharacter::VStatBuy": scope trace (entity name), pays the cost of the referenced stat from stat 0x22 of the active stat list when the stat's own list accepts the purchase
 	void sub_1033ca60();	// "CBaseCombatCharacter::ClearMiscFlags": stores 0 at +0xfe4
 	void sub_1033c6b0(unsigned int flags);	// "CBaseCombatCharacter::AddMiscFlag": scope trace (entity name), ORs flags into +0xfe4
 	void sub_1033c770(unsigned int flags);	// "CBaseCombatCharacter::RemoveMiscFlag": scope trace (entity name), clears flags in +0xfe4
