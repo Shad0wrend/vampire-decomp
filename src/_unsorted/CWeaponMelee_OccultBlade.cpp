@@ -31,6 +31,14 @@ int CWeaponMelee_OccultBlade::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e6950 size=0x6
+#include "CWeaponMelee_OccultBlade.h"
+int CWeaponMelee_OccultBlade::vfunc363()
+{
+    return 0x14d;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecd50 size=0x1e
 #include "CWeaponMelee_OccultBlade.h"
 
