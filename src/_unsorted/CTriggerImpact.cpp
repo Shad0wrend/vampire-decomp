@@ -12,6 +12,18 @@ int CTriggerImpact::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cb210 size=0xc
+#include "CTriggerImpact.h"
+namespace lifted {
+int sub_100048ef();
+}
+int CTriggerImpact::vfunc103()
+{
+    *(char *)((char *)this + 0x55c) = 1;
+    return lifted::sub_100048ef();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cb230 size=0x1
 #include "CTriggerImpact.h"
 void CTriggerImpact::vfunc171()
