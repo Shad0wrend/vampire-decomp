@@ -19,8 +19,10 @@ public:
 	char pad38[0x4];
 	int m_nSize;	// 0x3c
 	char *m_pEntries;	// 0x40, entries of 0x28 bytes
-	char pad44[0x8];
+	int m_nEntriesAlloc;	// 0x44
+	int m_nEntriesGrow;	// 0x48
 	int m_nEntries;	// 0x4c, number of entries at m_pEntries
+	char *m_pEntryElements;	// 0x50
 
 	void vfunc2(void *pSave);
 	void vfunc5();	// slot 5: calls slot 5 of every handler in the list (CUtlVector<void *> at +0x24, count at +0x30)
