@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1035c190 size=0x5
+bool CNPC_VVampireBoss::vfunc378(int a0, int a1)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c5270 size=0x1d
 #include "CNPC_VVampireBoss.h"
 struct A { int sub_10012300(int); };

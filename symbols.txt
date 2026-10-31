@@ -6881,6 +6881,7 @@
 0x1000dee5 func   ?sub_1029ed90@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_1029ed90
 0x1000deea func   ?vfunc104@CFire@@UAEXXZ CFire::vfunc104
 0x1000def4 func   ?vfunc5@CNPC_VFrenzyShadow@@QAEPAV1@I@Z CNPC_VFrenzyShadow::vfunc5
+0x1000def9 func   ?vfunc378@CNPC_VVampireBoss@@QAE_NHH@Z CNPC_VVampireBoss::vfunc378
 0x1000df03 func   ?sub_101e48b0@UtlMem@@QAEXXZ UtlMem::sub_101e48b0
 0x1000df08 func   ?vfunc3@CTETParticleAttached@@UAEXHH@Z CTETParticleAttached::vfunc3
 0x1000df0d func   ?vfunc12@CRestore@@UAEIHHH@Z CRestore::vfunc12
