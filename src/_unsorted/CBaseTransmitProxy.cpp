@@ -32,3 +32,11 @@ CBaseTransmitProxy *CBaseTransmitProxy::vfunc0(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10097c70 size=0x5
+#include "CBaseTransmitProxy.h"
+bool CBaseTransmitProxy::vfunc1(int a0, int a1, int a2, int a3, int a4)
+{
+    return 0;
+}
+// END FUNCTION

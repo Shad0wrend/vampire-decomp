@@ -1583,6 +1583,7 @@
 0x10004002 func   ?sub_101e83d0@CUnknown101e83d0@@QAEXPAHPAXH@Z CUnknown101e83d0::sub_101e83d0
 0x10004007 func   ?sub_10203f10@@YAHPAVCBaseCombatCharacter@@D@Z sub_10203f10
 0x1000400c func   ?vfunc10@CCollisionProperty@@UAEPAMXZ CCollisionProperty::vfunc10
+0x10004016 func   ?vfunc1@CBaseTransmitProxy@@QAE_NHHHHH@Z CBaseTransmitProxy::vfunc1
 0x10004020 func   ?sub_103816e0@@YIXPAUE@@HH@Z sub_103816e0
 0x10004025 func   ?vfunc173@CBaseCombatWeapon@@UAEXPAVCBaseEntity@@0HH@Z CBaseCombatWeapon::vfunc173
 0x1000402f func   ?sub_100e7890@CDialog@@QAEXPAUCDialogEntry_t@@PBU2@@Z CDialog::sub_100e7890
