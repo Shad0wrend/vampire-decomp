@@ -9000,6 +9000,7 @@
 0x10011865 func   _path_corner path_corner
 0x1001186a func   ?sub_1004e0a0@CPhysBox@@QAEPAV1@XZ CPhysBox::sub_1004e0a0
 0x1001186f func   ?MakeReliable@CRecipientFilter@@QAEXXZ CRecipientFilter::MakeReliable
+0x10011874 func   ?vfunc362@CWeaponMelee_ChangClaw@@QAEHXZ CWeaponMelee_ChangClaw::vfunc362
 0x10011879 func   ?sub_101b6b90@UtlMem@@QAEXXZ UtlMem::sub_101b6b90
 0x1001187e func   ?sub_101941d0@CPropDestructableUnit@@QAEHXZ CPropDestructableUnit::sub_101941d0
 0x10011888 func   ?sub_100fce70@@YAXPAVCBaseEntity@@PBD@Z sub_100fce70
