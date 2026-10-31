@@ -124026,6 +124026,21 @@ void CAI_BaseNPCTroika::sub_102c4310(int a, int b, int c, int d, int e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c4380 size=0x1b
+// TARGET: sub_102c4380
+struct CUnk102c4380 {
+    char pad[0x6458];
+    int m_n6458;
+    void sub_1008bb70(const char *psz);
+    void sub_102c4380(const char *psz);
+};
+void CUnk102c4380::sub_102c4380(const char *psz)
+{
+    sub_1008bb70(psz);
+    m_n6458 = 0x7f7fffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c43b0 size=0x29
 void *__fastcall sub_1008bf00(void *p);
 
