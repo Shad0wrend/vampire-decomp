@@ -66,7 +66,9 @@ public:
 	virtual void t260(); virtual void t261(); virtual void t262(); virtual void t263();
 	virtual void vfunc432(int a);	// slot 432: asks sub_103c0160 for an object and its kind; kind 1 goes to sub_103c0860, others to sub_103c05e0; then CAI_BaseNPCTroika::vfunc432(a)
 	virtual void t265(); virtual void t266(); virtual void t267(); virtual void t268(); virtual void t269();
-	VT_SLOTS10(t27)
+	virtual void t270(); virtual void t271(); virtual int vfunc440(int a);	// slot 440: maps an NPC schedule type to this NPC's schedule id (source line recorded at +0x1b30 / +0x1b34), the base mapping otherwise
+	virtual void t273(); virtual void t274(); virtual void t275(); virtual void t276(); virtual void t277(); virtual void t278(); virtual void t279();
+	int sub_102b12f0(int a);	// CAI_BaseNPCTroika::vfunc440 (stub 0x10001997), called directly
 	void *sub_103c0160(int *pKind);	// stub 0x10009b5b
 	void sub_103c0860(void *pObj);	// stub 0x1000f4de
 	void sub_103c05e0(int nObj);	// stub 0x10009e26
