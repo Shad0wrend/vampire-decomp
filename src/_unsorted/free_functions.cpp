@@ -118164,6 +118164,21 @@ void CUnknown102a99c0::sub_102a99c0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a9c40 size=0x10
+extern char g_106b8540[];
+
+// TARGET: sub_102a9c40
+char *__fastcall sub_102a9c40(char *pThis)
+{
+	char *p = *(char **)(pThis + 0x468);
+	if (p == 0)
+	{
+		p = g_106b8540;
+	}
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a9c60 size=0x4
 struct CUnknown102a9c60 { int sub_102a9c60(); };
 int CUnknown102a9c60::sub_102a9c60()
