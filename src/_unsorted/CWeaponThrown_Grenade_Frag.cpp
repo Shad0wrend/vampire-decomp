@@ -44,6 +44,20 @@ void CGrenadeUnit103ee260::sub_103ee260()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ee2a0 size=0x52
+#include "CWeaponThrown_Grenade_Frag.h"
+#include "engineserver.h"
+#include "engineiface.h"
+void CWeaponThrown_Grenade_Frag::vfunc104()
+{
+	engine->vfunc17("grenade_frag_emitter", 1);
+	engine->vfunc17("grenade_concussion_emitter", 1);
+	engine->vfunc17("grenade_smoke_emitter", 1);
+	enginesound->vfunc0("weapons/ranged/grenade_pineapple/tic.wav", 0);
+	sub_10250ed0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ee410 size=0x47
 #include "CWeaponThrown_Grenade_Frag.h"
 

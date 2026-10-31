@@ -7483,6 +7483,7 @@
 0x1000fb64 func   ?vfunc5@CNPC_VBach@@QAEPAV1@I@Z CNPC_VBach::vfunc5
 0x1000fb69 func   ?sub_10109da0@@YIXPADHH@Z sub_10109da0
 0x1000fb6e func   ?vfunc103@CEnvShake@@UAEXXZ CEnvShake::vfunc103
+0x1000fb73 func   ?vfunc104@CWeaponThrown_Grenade_Frag@@UAEXXZ CWeaponThrown_Grenade_Frag::vfunc104
 0x1000fb7d func   ?vfunc243@CFuncPlatRot@@QAEXXZ CFuncPlatRot::vfunc243
 0x1000fb82 func   ?vfunc4@CEffectsServer@@UAEXPBMHHH@Z CEffectsServer::vfunc4
 0x1000fb8c func   ?sub_1034e7e0@@YGXH@Z sub_1034e7e0
