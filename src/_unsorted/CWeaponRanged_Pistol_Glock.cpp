@@ -20,6 +20,17 @@ int CWeaponRanged_Pistol_Glock::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10235130 size=0x6
+#include "CWeaponRanged_Pistol_Glock.h"
+namespace lifted {
+extern char g_105b8f60;
+}
+int CWeaponRanged_Pistol_Glock::vfunc362()
+{
+    return (int)&lifted::g_105b8f60;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a3b0 size=0x1e
 #include "CWeaponRanged_Pistol_Glock.h"
 
