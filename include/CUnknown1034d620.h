@@ -37,6 +37,9 @@ public:
 	int m_field5f50;	// 0x5f50
 	const char *m_pszTargetName;	// 0x5f54: the name of the entity the NPC looks for
 	int m_nSearchRadius;	// 0x5f58: a float's bits (the search radius)
+	char pad5f5c[0x5f64 - 0x5f5c];
+	int m_n5f64;	// 0x5f64
+	void sub_1034dd70();	// finds the target again when the handle at +0x5ce4 no longer resolves, then schedules the next think 0.1 s ahead
 
 	void sub_10007fe5(int a, int b, int c);
 	void sub_1034d620();	// scope-less: calls sub_10007fe5(0, 0, 0), sets +0x5f50 to 1, then calls slot 366 (global value, 0, 0) of the object at +0x94 of the entity behind the handle at +0x5ce4 (when it resolves)
