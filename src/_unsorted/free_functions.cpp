@@ -163950,6 +163950,14 @@ void sub_1042d670()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042d6b0 size=0x7
+// TARGET: sub_1042d6b0
+bool __fastcall sub_1042d6b0(int *pThis)
+{
+    return (*pThis) ? true : false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042d700 size=0x8
 unsigned int __fastcall sub_1042d700(unsigned int *p) { return (*p >> 1) & 0x1f; }
 // END FUNCTION

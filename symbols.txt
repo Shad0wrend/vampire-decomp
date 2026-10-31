@@ -5994,6 +5994,7 @@
 0x1000c9dc func   ?sub_103ad6d0@CNPC_VRatX@@QAE_NH@Z CNPC_VRatX::sub_103ad6d0
 0x1000c9e1 func   ?vfunc5@CWeaponRanged_Rifle_SteyrAug@@QAEPAV1@I@Z CWeaponRanged_Rifle_SteyrAug::vfunc5
 0x1000c9e6 func   ?sub_1019dc50@@YAHXZ sub_1019dc50
+0x1000c9eb func   ?sub_1042d6b0@@YI_NPAH@Z sub_1042d6b0
 0x1000c9f0 func   ??1CEntryX@@QAE@XZ CEntryX::~CEntryX
 0x1000c9fa func   ?sub_10248af0@CUnknown10248a50@@QAEPAV1@PBD@Z CUnknown10248a50::sub_10248af0
 0x1000c9ff func   ?sub_1033f1a0@CBaseCombatCharacter@@QAE_NH@Z CBaseCombatCharacter::sub_1033f1a0
