@@ -48030,6 +48030,22 @@ int sub_1010c370()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010c3a0 size=0x1c
+#include "CAreaPortal.h"
+
+void __fastcall sub_1010c780(void *p);
+extern int vt_1045df8c[];
+
+// TARGET: sub_1010c3a0
+void *__fastcall sub_1010c3a0(void *p)
+{
+	sub_1010c780(p);
+	*(int **)p = vt_1045df8c;
+	((CAreaPortal *)p)->m_bStartOpen = 1;
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010c460 size=0x12
 namespace lifted {
 int sub_10011c25();

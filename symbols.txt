@@ -7717,6 +7717,7 @@
 0x1000e6e7 func   ?sub_102e1e20@CAI_Motor@@QAEXH@Z CAI_Motor::sub_102e1e20
 0x1000e6ec func   ?vfunc54@CSingleplayRules@@UAEXHHH@Z CSingleplayRules::vfunc54
 0x1000e700 func   ?sub_1005cae0@@YAXHHHHHHHHHHHHHHHHH@Z sub_1005cae0
+0x1000e705 func   ?sub_1010c3a0@@YIPAXPAX@Z sub_1010c3a0
 0x1000e70a func   ?sub_10093cb0@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_10093cb0
 0x1000e70f func   _speaker speaker
 0x1000e714 func   ?sub_103e8f30@@YAHXZ sub_103e8f30
