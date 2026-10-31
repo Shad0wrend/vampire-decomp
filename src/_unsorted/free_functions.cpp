@@ -67005,6 +67005,20 @@ int *sub_1019b3d0(int *self, const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019b4a0 size=0x30
+struct PyObject { int ob_refcnt; void *ob_type; };
+extern void *g_109f37d0;
+extern char *(__cdecl *g_109f36cc)(PyObject *);
+extern PyObject *(__cdecl *g_109f3798)(long);
+PyObject *sub_1019b3d0(PyObject *self, char *name);
+PyObject *sub_1019b4a0(PyObject *self, PyObject *name)
+{
+	if (name->ob_type == g_109f37d0)
+		return sub_1019b3d0(self, g_109f36cc(name));
+	return g_109f3798(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019b570 size=0x144
 extern "C" int __cdecl _strcmpi(const char *, const char *);
 
