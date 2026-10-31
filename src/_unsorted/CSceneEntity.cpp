@@ -317,6 +317,25 @@ void CSceneEntity::vfunc260(int unused, void *pEvent, const char *pszTarget, int
 }
 // END FUNCTION
 
+// FUNCTION: 0x10081950 size=0x14
+struct CVirtObj10081950
+{
+	void v0(int a);
+};
+
+// TARGET: sub_10081950
+void __stdcall sub_10081950(int a1, CVirtObj10081950 *pObj, int a3)
+{
+	void **vt = *(void ***)pObj;
+	union {
+		void *p;
+		void (CVirtObj10081950::*pm)(int);
+	} u;
+	u.p = vt[287];
+	(pObj->*u.pm)(a3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100819b0 size=0x145
 #include "CSceneEntity.h"
 #include "CEHandleGet.h"
