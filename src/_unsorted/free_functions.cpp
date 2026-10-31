@@ -91725,6 +91725,28 @@ void CUnknown101f40f0::sub_101f41b0()
 int __fastcall sub_101f4280(int *p) { return (*p)++; }
 // END FUNCTION
 
+// FUNCTION: 0x101f42a0 size=0x1b
+// TARGET: sub_101f42a0
+struct CUnk101f42a0Inner {
+    int m_first;
+    int sub_101f39d0(int a);
+};
+struct CUnk101f42a0 {
+    char pad[0x10];
+    CUnk101f42a0Inner m_inner;
+    int sub_101f42a0(int a);
+};
+int CUnk101f42a0::sub_101f42a0(int a)
+{
+    CUnk101f42a0Inner *p = &m_inner;
+    int r = p->sub_101f39d0(a);
+    if (r == -1) {
+        r = p->m_first;
+    }
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f42d0 size=0x1a
 struct CUnk101f3b00
 {

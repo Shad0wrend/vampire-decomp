@@ -6787,6 +6787,7 @@
 0x1000cd83 func   ?sub_1035c300@@YAHXZ sub_1035c300
 0x1000cd88 func   ?sub_101f0910@@YIHPAUCUnknownStat101f0910@@@Z sub_101f0910
 0x1000cd8d func   ?vfunc5@CTriggerSave@@QAEPAXI@Z CTriggerSave::vfunc5
+0x1000cd92 func   ?sub_101f42a0@CUnk101f42a0@@QAEHH@Z CUnk101f42a0::sub_101f42a0
 0x1000cd97 func   ?sub_100b68d0@@YAXHPAUTSet@@@Z sub_100b68d0
 0x1000cd9c func   ?sub_10242220@@YAXPAUCObjY@@PBVVector@@111HH@Z sub_10242220
 0x1000cda6 func   ?vfunc175@CNPC_VGargoyle@@QAEXPAVCBaseEntity@@@Z CNPC_VGargoyle::vfunc175
