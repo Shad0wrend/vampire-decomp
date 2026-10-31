@@ -11,6 +11,18 @@ void CPhysicsProp::vfunc226(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101912d0 size=0x8
+#include "CPhysicsProp.h"
+// TARGET: CPhysicsProp::sub_101912d0
+unsigned char CPhysicsProp::sub_101912d0()
+{
+    unsigned char b;
+    b = ((CBaseEntity *)this)->CBaseEntity::vfunc117();
+    b &= 0xfd;
+    return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101912f0 size=0x36
 #include "CPhysicsProp.h"
 
