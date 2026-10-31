@@ -70,6 +70,11 @@ bool CAI_BaseNPC::vfunc468(CBaseEntity * a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a67a0 size=0x3
+// TARGET: sub_101a67a0
+void __stdcall sub_101a67a0(int) {}
+// END FUNCTION
+
 // FUNCTION: 0x101a6840 size=0xb
 void CAI_BaseNPC::vfunc483(int unused)
 {
