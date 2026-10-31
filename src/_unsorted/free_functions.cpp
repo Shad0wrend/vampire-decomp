@@ -33038,6 +33038,30 @@ void CCameraTrack::sub_100cc360()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ccea0 size=0x60
+#include "CCameraTrack.h"
+#include "globalvars.h"
+#include "CUnknown1017d630.h"
+#include "CUnknown1017d680.h"
+#include "COutputEvent.h"
+CBaseEntity *sub_101cd9e0(int index);
+void CCameraTrack::sub_100ccea0(COutputEvent *pOutput, char bSecond)
+{
+	for (int i = 1; i <= gpGlobals->maxClients; i++) {
+		CBaseEntity *pPlayer = sub_101cd9e0(i);
+		if (pPlayer) {
+			void *pEnt;
+			if (bSecond)
+				pEnt = ((CUnknown1017d680 *)pPlayer)->sub_1017d680();
+			else
+				pEnt = (void *)((CUnknown1017d630 *)pPlayer)->sub_1017d630();
+			if (pEnt == this)
+				pOutput->sub_100cd660(this, this, 0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ccf60 size=0x1a
 namespace lifted {
 extern int g_1055da88;
