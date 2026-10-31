@@ -81,6 +81,18 @@ int CNPC_VPedestrian::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a2570 size=0x18
+// TARGET: CNPC_VPedestrian::vfunc420
+#include "CNPC_VPedestrian.h"
+void sub_1029a0b0();
+void CNPC_VPedestrian::vfunc420()
+{
+    sub_1029a0b0();
+    m_b6678 = 0;
+    m_n641c = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a28f0 size=0x6
 #include "CNPC_VPedestrian.h"
 int CNPC_VPedestrian::vfunc473()
