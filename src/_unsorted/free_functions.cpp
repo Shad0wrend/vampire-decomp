@@ -148424,6 +148424,16 @@ extern "C" CBaseEntity *npc_VStalker()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b2980 size=0xc
+void __fastcall sub_103b29a0(void *p);
+
+void *__fastcall sub_103b2980(void *p)
+{
+    sub_103b29a0(p);
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b29a0 size=0x33
 void sub_1000ef84();
 void sub_10004179();
