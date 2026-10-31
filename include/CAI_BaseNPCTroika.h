@@ -208,7 +208,9 @@ public:
 	unsigned int m_flags204;
 	char m_pad0208[0xfe8 - 0x208];
 	unsigned int m_hfe8;
-	char m_pad0fec[0x14b8 - 0xfec];
+	char m_pad0fec[0xff0 - 0xfec];
+	int m_nActivityff0;	// 0xff0: the ideal activity
+	char m_pad0ff4[0x14b8 - 0xff4];
 	unsigned int m_flags14b8;
 	unsigned int m_flags14bc;
 	char m_pad14c0[0x1538 - 0x14c0];
