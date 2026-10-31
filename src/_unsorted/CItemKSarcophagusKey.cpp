@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x104071f0 size=0x3
+#include "CItemKSarcophagusKey.h"
+int CItemKSarcophagusKey::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040acf0 size=0x1e
 #include "CItemKSarcophagusKey.h"
 
