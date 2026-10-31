@@ -166752,6 +166752,21 @@ bool __fastcall sub_1042d6b0(int *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042d6d0 size=0x14
+struct CUnknown1042d6d0
+{
+	unsigned int m_n0000;
+
+	void sub_1042d6d0(int a);
+};
+
+// TARGET: CUnknown1042d6d0::sub_1042d6d0
+void CUnknown1042d6d0::sub_1042d6d0(int a)
+{
+	m_n0000 = ((a * 2 ^ m_n0000) & 0x3e) ^ m_n0000;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042d700 size=0x8
 unsigned int __fastcall sub_1042d700(unsigned int *p) { return (*p >> 1) & 0x1f; }
 // END FUNCTION
