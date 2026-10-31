@@ -162,6 +162,7 @@ public:
 	void sub_103d2a10();	// stub 0x10012a99
 	void sub_102b27f0();	// CAI_BaseNPCTroika::vfunc433 (stub 0x10013f2f), called directly
 	void sub_103d14f0();	// stub 0x1000296e
+	bool sub_103d1200();	// "CNPC_VWerewolf::FindEgressHint": scope trace (entity name); keeps the move hint (+0x66bc) while HasPath holds from this entity to its ground point and from its end point to the target (slot 167), else clears it and takes a hint of type 0x3aa8 of the global list that HasPath and slot 617 accept
 	bool sub_103d1e50();	// both doors are valid and close together (door state 2 is always true)
 	int sub_10366490(int key);
 	bool sub_10366400(int key);
