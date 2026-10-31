@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1012f990 size=0x1
+#include "CPositionInterpolator_Linear.h"
+void CPositionInterpolator_Linear::vfunc0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012f9f0 size=0x2d
 #include "CPositionInterpolator_Linear.h"
 
