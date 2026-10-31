@@ -58795,6 +58795,18 @@ void CBasePlayer::sub_1015d6d0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015d790 size=0x17
+extern int g_107260a0;
+int sub_10136580(int a);
+
+// TARGET: sub_1015d790
+int sub_1015d790(int a, int b)
+{
+	g_107260a0 = b;
+	return sub_10136580(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015eec0 size=0xe
 bool CUnknown1015ef20::sub_1015eec0()
 {

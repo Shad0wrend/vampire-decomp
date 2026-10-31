@@ -11178,6 +11178,7 @@
 0x10014d53 func   ?sub_1013aab0@@YAXHHHH@Z sub_1013aab0
 0x10014d58 func   ?sub_100cc360@CCameraTrack@@QAEXXZ CCameraTrack::sub_100cc360
 0x10014d5d func   ?sub_102158f0@@YIXPADHH@Z sub_102158f0
+0x10014d62 func   ?sub_1015d790@@YAHHH@Z sub_1015d790
 0x10014d67 func   ?sub_100b7880@@YAHXZ sub_100b7880
 0x10014d6c func   ?sub_10257560@CBaseEntity@@QAEXPAV1@HH@Z CBaseEntity::sub_10257560
 0x10014d76 func   ?vfunc138@CNPC_VManBat@@QAEHXZ CNPC_VManBat::vfunc138
