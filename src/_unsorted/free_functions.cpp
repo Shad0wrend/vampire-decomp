@@ -142662,6 +142662,26 @@ int sub_1034be20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034c8b0 size=0x15
+#include "vampire.h"
+
+struct CUnknown1034c8b0
+{
+	char m_pad0000[0x17c];
+	float m_f17c;
+	char m_pad0180[0x6664 - 0x180];
+	float m_f6664;
+
+	void sub_1034c8b0();
+};
+
+// TARGET: CUnknown1034c8b0::sub_1034c8b0
+void CUnknown1034c8b0::sub_1034c8b0()
+{
+	m_f17c = m_f6664 + gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034c980 size=0x43
 #include "CNPCMaker_Zombie.h"
 void *sub_100aa720(int size);

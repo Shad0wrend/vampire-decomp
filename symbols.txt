@@ -8891,6 +8891,7 @@
 0x10010dbb func   ?vfunc5@CItemKSarcophagusKey@@QAEPAV1@I@Z CItemKSarcophagusKey::vfunc5
 0x10010dca func   ?sub_100679a0@@YAHXZ sub_100679a0
 0x10010dcf func   ?sub_10303740@CAI_Pathfinder@@QAEPAVCAI_Waypoint@@HPBM0PBVCBaseEntity@@HHHHH@Z CAI_Pathfinder::sub_10303740
+0x10010dd4 func   ?sub_1034c8b0@CUnknown1034c8b0@@QAEXXZ CUnknown1034c8b0::sub_1034c8b0
 0x10010dd9 func   _item_p_occult_frenzy item_p_occult_frenzy
 0x10010de3 func   ?vfunc242@CFuncPlatRot@@QAEXXZ CFuncPlatRot::vfunc242
 0x10010df2 func   ?vfunc104@CRagdollProp@@UAEXXZ CRagdollProp::vfunc104
