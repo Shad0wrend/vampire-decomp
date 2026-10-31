@@ -111,7 +111,7 @@ public:
 	virtual void vfunc59();
 	virtual void vfunc60();
 	virtual void vfunc61();
-	virtual void vfunc62();
+	virtual void vfunc62(const float *pOrigin);
 	virtual void vfunc63();
 	virtual void vfunc64();
 	virtual void vfunc65();
