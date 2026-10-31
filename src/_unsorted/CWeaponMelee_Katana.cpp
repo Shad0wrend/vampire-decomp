@@ -31,6 +31,14 @@ int CWeaponMelee_Katana::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e62b0 size=0x6
+#include "CWeaponMelee_Katana.h"
+int CWeaponMelee_Katana::vfunc363()
+{
+    return 0x14d;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103eccf0 size=0x1e
 #include "CWeaponMelee_Katana.h"
 
