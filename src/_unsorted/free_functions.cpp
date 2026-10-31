@@ -52121,6 +52121,16 @@ int sub_1012faf0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012fc70 size=0x1b
+// TARGET: sub_1012fc70
+#include "CPositionInterpolator_Rope.h"
+void *operator new(unsigned int size);
+IPositionInterpolator *sub_1012fc70()
+{
+    return new CPositionInterpolator_Rope();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101300e0 size=0x6
 int sub_101300e0()
 {

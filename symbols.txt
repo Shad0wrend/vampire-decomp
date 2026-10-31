@@ -11010,6 +11010,7 @@
 0x100142c2 func   ?vfunc103@CAI_InterestingPlace@@UAEXXZ CAI_InterestingPlace::vfunc103
 0x100142cc func   ?vfunc1@CMoveHelperServer@@UAEXXZ CMoveHelperServer::vfunc1
 0x100142d1 func   ?sub_102d2e30@CAI_Hint@@QAEPAV1@XZ CAI_Hint::sub_102d2e30
+0x100142db func   ?sub_1012fc70@@YAPAVIPositionInterpolator@@XZ sub_1012fc70
 0x100142e0 func   ?vfunc82@CNPC_VBatSwarm@@UAEPAUdatamap_t@@XZ CNPC_VBatSwarm::vfunc82
 0x100142ef func   ?vfunc362@CWeaponMelee_GargoyleFist@@QAEHXZ CWeaponMelee_GargoyleFist::vfunc362
 0x100142f9 func   ?vfunc546@CNPC_VLasombra@@QAEHH@Z CNPC_VLasombra::vfunc546
