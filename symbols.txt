@@ -2450,6 +2450,7 @@
 0x100056be func   ?vfunc72@CPayphone@@UAE_NH@Z CPayphone::vfunc72
 0x100056c3 func   ?sub_100660a0@@YAHXZ sub_100660a0
 0x100056cd func   ?vfunc5@CWeaponIArmor_Lt_Leather@@QAEPAV1@I@Z CWeaponIArmor_Lt_Leather::vfunc5
+0x100056d7 func   ?vfunc2@CAI_ProxyMovementSink@@QAE_NHHH@Z CAI_ProxyMovementSink::vfunc2
 0x100056dc func   ?sub_101e7dd0@CRules101e7dd0@@QAEMM@Z CRules101e7dd0::sub_101e7dd0
 0x100056e1 func   ?vfunc8@CGameMovement@@UAEXXZ CGameMovement::vfunc8
 0x100056e6 func   ?sub_10056a30@CUnknown10056a30@@QAEXH@Z CUnknown10056a30::sub_10056a30
