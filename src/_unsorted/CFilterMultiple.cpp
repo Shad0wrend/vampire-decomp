@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101079a0 size=0x6
+#include "CFilterMultiple.h"
+namespace lifted {
+extern char g_1056c2dc;
+}
+int CFilterMultiple::vfunc82()
+{
+    return (int)&lifted::g_1056c2dc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107a30 size=0x45
 #include "CFilterMultiple.h"
 #include "CBaseEntity.h"
