@@ -149767,6 +149767,25 @@ int sub_103ed0e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ed830 size=0x61
+#include "CWeaponThrown_Grenade_Frag.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+void sub_101cd940(void *);
+typedef void (__fastcall *Slot385_t)(void *, void **, void *, int, int);
+// TARGET: CWeaponThrown_Grenade_Frag::sub_103ed830
+void CWeaponThrown_Grenade_Frag::sub_103ed830(void *pObject)
+{
+	CBaseCombatCharacter *pOwner = (CBaseCombatCharacter *)pObject;
+	pOwner->sub_10334500(1, m_nAmmoType744[sub_102517e0()[0x10c / 4]]);
+	if (pOwner->sub_103346c0(m_nAmmoType744[sub_102517e0()[0x10c / 4]]) <= 0) {
+		void **vt = *(void ***)pOwner;
+		((Slot385_t)vt[385])(pOwner, vt, this, 0, 0);
+		sub_101cd940(this);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ed920 size=0x68
 struct OwnerX { char pad[0xa8]; void *p; };
 void sub_1000d5f3();
