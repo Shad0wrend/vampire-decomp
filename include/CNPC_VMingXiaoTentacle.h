@@ -200,6 +200,7 @@ public:
 	virtual void vfunc128();
 	virtual void vfunc129();
 	virtual void vfunc130(int a);
+	void sub_10002b99(int a);	// CAI_BaseNPCTroika::vfunc130 (stub 0x10002b99), called directly
 	virtual void vfunc131();
 	virtual void vfunc132();
 	virtual void vfunc133();
