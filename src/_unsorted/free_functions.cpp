@@ -35903,6 +35903,95 @@ void sub_100d6930()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d6d40 size=0x1e6
+#include "CBaseCombatCharacter.h"
+#include "CUnknown10203240.h"
+#include "CUnknown10202ba0.h"
+
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+extern "C" int __cdecl atoi(const char *);
+extern "C" char *__cdecl strncpy(char *, const char *, unsigned int);
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" unsigned int __cdecl strlen(const char *);
+extern "C" char *__cdecl strcat(char *, const char *);
+#pragma intrinsic(strlen, strcat)
+
+struct SHistEntry
+{
+	char m_pad0000[4];
+	const char *m_pszName;	// 0x04
+	char m_pad0008[4];
+	const char *m_pszDesc;	// 0x0c
+};
+
+struct SHistList
+{
+	char m_pad0000[4];
+	int m_nCount;	// 0x04
+	char m_pad0008[0x14 - 8];
+
+	int sub_101e9fd0(const char *pszName);
+	bool sub_101e9f90(CBaseCombatCharacter *pChar, int index);
+	bool sub_101e9f10(int index);
+	SHistEntry *sub_101ea0b0(int index);
+};
+
+extern SHistList g_1073a28c;
+extern CUnknown10203240 g_1074e968;
+char *sub_101193b0();
+void sub_101ce620(void *pPlayer, int a, const char *pszText, const char *b, const char *c, const char *d, const char *e);
+
+void sub_100d6d40()
+{
+	char *pPlayer = sub_101193b0();
+	if (!pPlayer)
+		return;
+	CBaseCombatCharacter *pChar = *(CBaseCombatCharacter **)(pPlayer + 0xa8);
+	if (!pChar)
+		return;
+	if (engine->vfunc85() == 2) {
+		const char *pszArg = (const char *)engine->vfunc84(1);
+		int iHist = g_1073a28c.sub_101e9fd0(pszArg);
+		if (iHist == -1) {
+			if (_strcmpi("none", pszArg) == 0)
+				iHist = -1;
+			else
+				iHist = atoi(pszArg);
+		}
+		if (iHist >= 0) {
+			if (g_1073a28c.sub_101e9f90(pChar, iHist))
+				pChar->sub_10337980(iHist);
+		} else {
+			pChar->sub_10337980(-1);
+		}
+	} else {
+		char szMisc[32];
+		char szLine[128];
+		int iCurrent = pChar->sub_10337a60();
+		if (g_1073a28c.sub_101e9f10(iCurrent)) {
+			const char *const *ppName = &g_1073a28c.sub_101ea0b0(iCurrent)->m_pszName;
+			const char *pszName = *ppName;
+			sprintf(szLine, "%s\n", pszName ? pszName : "");
+			sub_101ce620(pChar, 2, szLine, 0, 0, 0, 0);
+			const char *const *ppDesc = &g_1073a28c.sub_101ea0b0(iCurrent)->m_pszDesc;
+			const char *pszRaw = *ppDesc;
+			const char *pszDesc = pszRaw ? pszRaw : "";
+			if (strlen(pszDesc) > 0x7a) {
+				strncpy(szLine, pszDesc, 0x7b);
+				szLine[0x7b] = 0;
+				strcat(szLine, "...\n");
+				sub_101ce620(pChar, 2, szLine, 0, 0, 0, 0);
+			} else {
+				sub_101ce620(pChar, 2, pszDesc, 0, 0, 0, 0);
+			}
+		} else {
+			sprintf(szMisc, "%s\n", ((CUnknown10202ba0 *)g_1074e968.sub_10203240("MiscStrs"))->sub_10202a10(0));
+			sub_101ce620(pChar, 2, szMisc, 0, 0, 0, 0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d7210 size=0x7e
 #include <stdlib.h>
 
