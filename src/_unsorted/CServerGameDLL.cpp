@@ -270,6 +270,16 @@ void __stdcall sub_1011b040(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011b060 size=0xe
+// TARGET: sub_1011b060
+void sub_10057ac0(int x);
+
+void __stdcall sub_1011b060(int x)
+{
+    sub_10057ac0(x);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011b890 size=0xb
 struct IUnk10592db0 {
 	virtual void v0();

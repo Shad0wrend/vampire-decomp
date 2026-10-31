@@ -5675,6 +5675,7 @@
 0x1000bece func   ?sub_10233ee0@@YAXXZ sub_10233ee0
 0x1000bed8 func   ?sub_1008b490@@YIXPAD@Z sub_1008b490
 0x1000bee2 func   ?vfunc580@CNPC_VCop@@UAEHXZ CNPC_VCop::vfunc580
+0x1000beec func   ?sub_1011b060@@YGXH@Z sub_1011b060
 0x1000bef6 func   ?GrowVector@?$CUtlVector@UCHumanoidRec@@V?$CUtlMemory@UCHumanoidRec@@@@@@QAEXH@Z CUtlVector<CHumanoidRec,CUtlMemory<CHumanoidRec> >::GrowVector
 0x1000bef6 func   ?sub_10260870@CUtlVector36@@QAEXH@Z CUtlVector36::sub_10260870
 0x1000bf00 func   ?sub_10190d80@@YAHXZ sub_10190d80
