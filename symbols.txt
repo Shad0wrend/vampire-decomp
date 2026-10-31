@@ -453,6 +453,7 @@
 0x10001e2e func   ?vfunc328@CNPC_VWerewolf@@UAE_NXZ CNPC_VWerewolf::vfunc328
 0x10001e3d func   ?vfunc82@CSteamJet@@UAEHXZ CSteamJet::vfunc82
 0x10001e47 func   ?sub_104292c0@@YAHXZ sub_104292c0
+0x10001e4c func   ??0CPlayerEvents@@QAE@XZ CPlayerEvents::CPlayerEvents
 0x10001e5b func   _info_node_sabbat_bottom info_node_sabbat_bottom
 0x10001e60 func   ?sub_1021ac30@CPropHacking@@QAEXXZ CPropHacking::sub_1021ac30
 0x10001e6a func   ?vfunc473@CNPC_VBach@@UAEHXZ CNPC_VBach::vfunc473
