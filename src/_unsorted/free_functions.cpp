@@ -146820,6 +146820,14 @@ void CUnknown10398630::sub_10398630(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10398870 size=0xf
+// TARGET: sub_10398870
+bool __fastcall sub_10398870(char *pThis)
+{
+	return *(int *)(pThis + 0x6674) != -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103989b0 size=0x113
 #include "CEntityVSlots.h"
 #include <math.h>
