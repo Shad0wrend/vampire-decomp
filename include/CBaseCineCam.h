@@ -45,6 +45,7 @@ public:
 	char m_pad063c[4];
 	char m_b640;	// 0x0640
 	void sub_10070780(class CBasePlayer *pPlayer);	// starts the shot for the player: finds the four target entities by name, then either sets up the player's current camera (sub_1017cf90) with the shot's name or creates a new one (sub_10070470) and makes the player watch it; Warning when that fails
+	void sub_10070720(int unused);	// starts the shot for the player found by sub_101cd9e0(1) (sub_10070780), one unused stack argument
 	int sub_100ab4f0();	// stub 0x1000b5cd, thiscall without stack arguments (the debug name)
 	float *sub_1030be50(float *out);	// provisional, like vfunc193 (transplant)
 public:
