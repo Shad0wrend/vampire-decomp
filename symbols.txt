@@ -5304,6 +5304,7 @@
 0x1000af79 func   ?sub_10042d00@CMem8c_t@@QAEXH@Z CMem8c_t::sub_10042d00
 0x1000af83 func   ?sub_101345f0@@YAHXZ sub_101345f0
 0x1000af88 func   ?sub_10115080@@YAHXZ sub_10115080
+0x1000af8d func   ?vfunc142@CNPC_VTaxiDriver@@QAEHH@Z CNPC_VTaxiDriver::vfunc142
 0x1000af92 func   ?sub_10249160@CUnknown10249160@@QAEXHH@Z CUnknown10249160::sub_10249160
 0x1000af97 func   ?vfunc8@CServerGameDLL@@UAEXXZ CServerGameDLL::vfunc8
 0x1000af9c func   ?vfunc81@CWeaponIArmor_Lt_Cloth@@QAEHXZ CWeaponIArmor_Lt_Cloth::vfunc81
