@@ -148857,6 +148857,44 @@ void CTriggerWWZone::sub_103daf10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dbad0 size=0x1f3
+#include "ScopeTrace.h"
+struct CDbgEnt { char pad[0x224]; unsigned int m_nFlags; };
+struct CConVarView { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void SetInt(int n); virtual void SetFloat(float f); };
+extern char g_1093fac4;
+extern int g_109340d8;
+CDbgEnt *sub_101cd9e0(int a);
+void sub_10119900(CDbgEnt *p);
+CConVarView *sub_10245660(const char *name);
+const char *sub_101d3730(const char *s);
+
+void sub_103dbad0(CDbgEnt *pEnt)
+{
+	ScopeTrace trace("EnableDebugStuff", g_106b8540, g_106b8540);
+	CDbgEnt *pOther = sub_101cd9e0(1);
+	if (!g_1093fac4 && pOther) {
+		pEnt->m_nFlags |= 0xc;
+		sub_10119900(pEnt);
+		pOther->m_nFlags |= 0xc;
+		CConVarView *p;
+		p = sub_10245660("meleedebug"); if (p) p->SetInt(1);
+		p = sub_10245660("volume"); if (p) p->SetFloat(0.25f);
+		p = sub_10245660("entity_debug_stats"); if (p) p->SetInt(1);
+		p = sub_10245660("ai_report_task_timings_on_limit"); if (p) p->SetInt(0);
+		p = sub_10245660("ai_think_limit_label"); if (p) p->SetInt(0);
+		p = sub_10245660("think_limit"); if (p) p->SetInt(0x32);
+		p = sub_10245660("r_cloth"); if (p) p->SetInt(0);
+		p = sub_10245660("r_shadows");
+		if (p) { p->SetInt(0); g_1093fac4 = 1; }
+		g_109340d8 = 0xc;
+		engine->vfunc7(sub_101d3730("bind [ \"host_timescale 0.1\" "));
+		engine->vfunc7(sub_101d3730("bind ] \"host_timescale 1.0\" "));
+		engine->vfunc7(sub_101d3730("bind g \"god\" "));
+		engine->vfunc7(sub_101d3730("bind n \"noclip\" "));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dbd50 size=0x66
 #include "CGlobalEntityList.h"
 
