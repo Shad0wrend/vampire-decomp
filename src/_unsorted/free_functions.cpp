@@ -94381,6 +94381,20 @@ void * CUnknown10204330::sub_10204330(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10204360 size=0x30
+#include "CVDmg_t.h"
+
+bool CVDmgBlock16_t::sub_10204360(const CVDmgBlock16_t *pOther)
+{
+	if (m_a != pOther->m_a)
+		return false;
+	if (m_b != pOther->m_b)
+		return false;
+	bool bSame = (m_d == pOther->m_d);
+	return bSame;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102043a0 size=0x148
 #include "CVDmg_t.h"
 #include "CVStatInfoList_t.h"
