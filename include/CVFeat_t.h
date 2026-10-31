@@ -28,6 +28,7 @@ public:
 	CVDmgBlock16_t *m_pEffects;	// 0x28: m_nEffects blocks of 16 bytes (kind, stat, ?, multiplier)
 	int m_pad002c;
 	char *m_p30;	// 0x30: a table freed by the destructor
+	char m_pad0034[8];	// 0x34: the object is 0x3c bytes (CVFeatMgr allocates 0x3c)
 
 	CVFeat_t(int a);	// 0x101e4f30: the default feat (id a at +0 and +0x10, +0x18 = 10, the rest cleared)
 	~CVFeat_t();	// 0x101e4f70 (stub 0x10014c72): frees the tables at +0x20 / +0x28 / +0x30; the exit destroy of the static default feat (0x100dba10, stub 0x1001509b) runs it
