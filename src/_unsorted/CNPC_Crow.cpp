@@ -177,6 +177,18 @@ Vector CNPC_Crow::vfunc192()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10357800 size=0xb
+#include "CNPC_Crow.h"
+namespace lifted {
+extern char g_10628bb4;
+int __stdcall sub_10005f29(int);
+}
+int CNPC_Crow::vfunc511()
+{
+    return lifted::sub_10005f29((int)&lifted::g_10628bb4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10357b30 size=0x28
 #include "CNPC_Crow.h"
 #include "CUnknown1070b244.h"
