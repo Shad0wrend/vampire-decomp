@@ -1,6 +1,24 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10394120 size=0x84
+#include "CNPC_VMingXiao.h"
+
+// TARGET: CNPC_VMingXiao::vfunc437
+int CNPC_VMingXiao::vfunc437()
+{
+	m_n1b2c = 0x19;
+	if (m_nState5cc0 == 5) {
+		m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiao.cpp";
+		m_nLine1b34 = 0x4f6;
+		return 0x157;
+	}
+	CBaseEntity *pEnt = m_h6680.Get();
+	vfunc388(!pEnt ? 0 : pEnt->m_n00a0, 0);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103945a0 size=0x96
 #include "CNPC_VMingXiao.h"
 
