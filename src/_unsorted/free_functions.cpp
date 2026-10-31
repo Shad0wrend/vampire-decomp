@@ -132570,6 +132570,31 @@ int CUnknown1030b520::sub_1030b520()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030b580 size=0x14
+struct CUnknown1031a030
+{
+	char *sub_1000bee7();
+};
+
+struct CUnknown1030b580
+{
+	char m_pad0000[0x24];
+
+	int sub_1030b580();
+};
+
+// TARGET: CUnknown1030b580::sub_1030b580
+int CUnknown1030b580::sub_1030b580()
+{
+	char *p = ((CUnknown1031a030 *)((char *)this + 0x24))->sub_1000bee7();
+	if (p != 0)
+	{
+		return *(int *)(p + 0x1c);
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030b6b0 size=0xc5
 #include "CUnknown1030b610.h"
 #include "CBaseEntity.h"
