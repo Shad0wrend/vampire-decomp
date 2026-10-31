@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x104003a0 size=0x6
+#include "CItemGHorrorTape_1.h"
+namespace lifted {
+extern char g_10944c50;
+}
+int CItemGHorrorTape_1::vfunc80()
+{
+    return (int)&lifted::g_10944c50;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104003c0 size=0x3
 #include "CItemGHorrorTape_1.h"
 int CItemGHorrorTape_1::vfunc81()
