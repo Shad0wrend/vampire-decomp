@@ -31,6 +31,14 @@ int CWeaponMelee_Knife::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e65f0 size=0x6
+#include "CWeaponMelee_Knife.h"
+int CWeaponMelee_Knife::vfunc363()
+{
+    return 0xde;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecd20 size=0x1e
 #include "CWeaponMelee_Knife.h"
 
