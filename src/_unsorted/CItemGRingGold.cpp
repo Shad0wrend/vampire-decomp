@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103fe630 size=0x3
+#include "CItemGRingGold.h"
+int CItemGRingGold::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040a330 size=0x1e
 #include "CItemGRingGold.h"
 

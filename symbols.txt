@@ -2930,6 +2930,7 @@
 0x100069e7 func   ?sub_1029f730@CLazyTroikaView@@QAEHH@Z CLazyTroikaView::sub_1029f730
 0x100069f1 func   ?vfunc515@CAI_BaseNPC@@QAEMPBVVector@@@Z CAI_BaseNPC::vfunc515
 0x100069f6 func   ?vfunc68@CPhysicsProp@@UAE_NPAX@Z CPhysicsProp::vfunc68
+0x100069fb func   ?vfunc81@CItemGRingGold@@QAEHXZ CItemGRingGold::vfunc81
 0x10006a00 func   ?sub_101a81a0@CCineNPC@@QAEXXZ CCineNPC::sub_101a81a0
 0x10006a05 func   ?sub_10067b70@@YAXPAVCUnknown1019d130@@MPBVVector@@HH1@Z sub_10067b70
 0x10006a0f func   ?vfunc602@CNPC_VMingXiao@@UAE_NXZ CNPC_VMingXiao::vfunc602
