@@ -14,6 +14,18 @@ ConVar *ConVar::vfunc0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10245c40 size=0x28
+#include "ConVar.h"
+ConVar::~ConVar()
+{
+	if (m_pszString) {
+		delete m_pszString;
+		m_pszString = 0;
+	}
+	sub_10245580();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10245cb0 size=0x3
 #include "ConVar.h"
 char ConVar::vfunc1()
