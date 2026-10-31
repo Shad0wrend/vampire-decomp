@@ -1422,6 +1422,7 @@
 0x100039b3 func   ?vfunc82@CPropDestructable@@UAEPAUdatamap_t@@XZ CPropDestructable::vfunc82
 0x100039bd func   ?sub_1018f1c0@CBreakableProp@@QAEPAV1@XZ CBreakableProp::sub_1018f1c0
 0x100039c2 func   ?vfunc82@CMathRemap@@UAEPAUdatamap_t@@XZ CMathRemap::vfunc82
+0x100039c7 func   ?vfunc80@CItemGDrugsDrugBox@@QAEHXZ CItemGDrugsDrugBox::vfunc80
 0x100039cc func   ?sub_101bb220@@YAHH@Z sub_101bb220
 0x100039d6 func   ?vfunc82@CBaseDMStart@@QAEHXZ CBaseDMStart::vfunc82
 0x100039db func   ?sub_10237860@@YAHXZ sub_10237860
