@@ -14,6 +14,14 @@ CAI_RatLocalNavigator *CAI_RatLocalNavigator::vfunc0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ad5d0 size=0x5
+#include "CAI_RatLocalNavigator.h"
+bool CAI_RatLocalNavigator::vfunc5(int a0, int a1, int a2, int a3, int a4)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ad5f0 size=0x22
 // TARGET: CAI_RatLocalNavigator::vfunc8
 #include "CAI_RatLocalNavigator.h"
