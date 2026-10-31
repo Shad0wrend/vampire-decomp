@@ -10667,6 +10667,7 @@
 0x10013ec1 func   ?vfunc103@CTempEntTester@@UAEXXZ CTempEntTester::vfunc103
 0x10013ec6 func   ?sub_1006c470@@YAXPAUCUnit1006c470@@HH@Z sub_1006c470
 0x10013ed0 func   ?vfunc104@CGeneric_NPC_bathack@@UAEXXZ CGeneric_NPC_bathack::vfunc104
+0x10013ed5 func   ?vfunc433@CNPC_VWerewolf@@UAEXXZ CNPC_VWerewolf::vfunc433
 0x10013eda func   ?sub_10231790@CTriggerElectricBugaloo@@QAEXPAX@Z CTriggerElectricBugaloo::sub_10231790
 0x10013edf func   ?sub_10194330@CUtlRBTree12@@QBEGPBX@Z CUtlRBTree12::sub_10194330
 0x10013ee4 func   ?sub_10067cb0@CUnknown10067cb0@@QAEHXZ CUnknown10067cb0::sub_10067cb0

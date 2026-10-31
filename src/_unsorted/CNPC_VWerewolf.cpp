@@ -377,6 +377,84 @@ void CNPC_VWerewolf::vfunc561(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d0410 size=0x1c0
+#include "CNPC_VWerewolf.h"
+#include "ScopeTrace.h"
+#include "CEntityVSlots.h"
+#include "CDevFlagObj.h"
+
+struct CWerewolfSignal
+{
+	virtual void v0();
+	virtual void v1();
+};
+extern CWerewolfSignal *g_10924a6c;
+extern CDevFlagObj *g_1093f9a4;
+extern Vector g_1070d1b0;
+
+class CWWView
+{
+public:
+	EVS10(0) EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5) EVS10(6) EVS10(7)
+	EVS10(8) EVS10(9) EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15)
+	EVS(160) EVS(161) EVS(162) EVS(163) EVS(164) EVS(165) EVS(166)
+	virtual CWWView *slot167();
+	EVS(168) EVS(169)
+	EVS10(17) EVS10(18) EVS10(19) EVS10(20) EVS10(21)
+	virtual Vector *slot220(Vector *pOut);
+	EVS(221) EVS(222) EVS(223) EVS(224) EVS(225) EVS(226) EVS(227) EVS(228) EVS(229)
+	EVS10(23) EVS10(24) EVS10(25) EVS10(26) EVS10(27) EVS10(28) EVS10(29) EVS10(30)
+	EVS10(31) EVS10(32) EVS10(33) EVS10(34) EVS10(35) EVS10(36) EVS10(37) EVS10(38)
+	EVS10(39) EVS10(40) EVS10(41) EVS10(42) EVS10(43) EVS10(44) EVS10(45) EVS10(46)
+	EVS10(47) EVS10(48) EVS10(49) EVS10(50) EVS10(51) EVS10(52) EVS10(53)
+	EVS(540) EVS(541) EVS(542) EVS(543)
+	virtual void slot544(CWWView *pTarget, Vector *pPos);
+};
+
+// TARGET: CNPC_VWerewolf::vfunc433
+void CNPC_VWerewolf::vfunc433()
+{
+	ScopeTrace trace("CNPC_VWerewolf::GatherConditions", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CWWView *pTarget = ((CWWView *)this)->slot167();
+	float flLimit = m_f66d0 + m_f66cc + 1.0;
+	if (pTarget) {
+		g_10924a6c->v1();
+		sub_10269a20(0x46);
+		((CWWView *)this)->slot544(pTarget, pTarget->slot220(&g_1070d1b0));
+		if (m_f6264 < flLimit) {
+			g_10924a6c->v1();
+			sub_10269a20(0x5f);
+		}
+	}
+	sub_102b27f0();
+	if (pTarget) {
+		sub_103cc0d0();
+		sub_103cc320();
+		sub_103cc890();
+		sub_103cc5c0();
+		sub_103cc450();
+	}
+	if (sub_10269aa0(9)) {
+		g_10924a6c->v1();
+		sub_10269a20(0x60);
+	}
+	if (sub_10269aa0(0x60)) {
+		g_10924a6c->v1();
+		sub_10269a20(9);
+	}
+	if (m_pHint66bc) {
+		g_10924a6c->v1();
+		sub_10269a20(0x78);
+	}
+	if (!g_1093f9a4->vfunc1() && g_1093f9a4->m_n2c) {
+		sub_10015839(0x51);
+		sub_10015839(0x52);
+		sub_10015839(0x78);
+		sub_10015839(0x79);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d0640 size=0xfc
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
