@@ -7,6 +7,7 @@ class CEnvWind : public CBaseEntity
 {
 public:
 	virtual void vfunc113();
+	virtual void vfunc103();	// slot 103 "CEnvWind::Spawn": the base, then SetSolid(6 when the entity of the handle at +0x254 resolves, else 1), AddSolidFlags(4), AddSolidFlags(8), SetMoveType(0, 0), SetModel(name), and bit 6 of the effect flags (+0x19c)
 
 	void sub_100a53d0(int a);
 	CEnvWind *vfunc5(unsigned int flags);	// as in CLogicalEntity (transplant)
