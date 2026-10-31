@@ -43560,6 +43560,19 @@ void CEnvBeam::sub_100fef50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ff020 size=0x41
+#include "CEnvBeam.h"
+void CEnvBeam::sub_100ff020()
+{
+	m_nActive = 0;
+	if (m_flLife == 0.0f && !(m_flags204 & 8)) {
+		m_nEffectFlags |= 0x40;
+	}
+	m_flNextThink = 0;
+	CBaseEntity::sub_100ac4e0(0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ff090 size=0xd5
 #include "CEnvBeam.h"
 #include "CEntityVSlots.h"
