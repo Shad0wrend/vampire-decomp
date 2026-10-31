@@ -9263,6 +9263,14 @@ int sub_100580b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100581d0 size=0x16
+// TARGET: sub_100581d0
+void __fastcall sub_100581d0(char *pThis, int, int)
+{
+	*(int *)(pThis + 0x468) = *(int *)(pThis + 0x468) == 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10058200 size=0xd
 // TARGET: CUnknown10058200::sub_10058200
 void CUnknown10058200::sub_10058200(int unused)
