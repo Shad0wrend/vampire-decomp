@@ -20,6 +20,17 @@ int CWeaponWallet::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f63c0 size=0x6
+#include "CWeaponWallet.h"
+namespace lifted {
+extern char g_1067f268;
+}
+int CWeaponWallet::vfunc362()
+{
+    return (int)&lifted::g_1067f268;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10409bb0 size=0x1e
 #include "CWeaponWallet.h"
 
