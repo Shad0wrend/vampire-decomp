@@ -29,6 +29,23 @@ int CNPCMaker_Zombie::vfunc370(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034cb00 size=0x14
+#include "CNPCMaker_Zombie.h"
+
+// TARGET: CNPCMaker_Zombie::vfunc371
+int CNPCMaker_Zombie::vfunc371(int a)
+{
+	void **vt = *(void ***)this;
+	union {
+		void *p;
+		void (CNPCMaker_Zombie::*pm)(int);
+	} u;
+	u.p = vt[369];
+	(this->*u.pm)(a);
+	return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034cb30 size=0x5
 #include "CNPCMaker_Zombie.h"
 bool CNPCMaker_Zombie::vfunc363(int a0)
