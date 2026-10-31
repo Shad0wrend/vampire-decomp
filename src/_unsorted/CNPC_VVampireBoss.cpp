@@ -8,6 +8,16 @@ bool CNPC_VVampireBoss::vfunc378(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035c1b0 size=0x6
+namespace lifted {
+extern char g_1093d330;
+}
+int CNPC_VVampireBoss::vfunc580()
+{
+    return (int)&lifted::g_1093d330;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c5270 size=0x1d
 #include "CNPC_VVampireBoss.h"
 struct A { int sub_10012300(int); };
