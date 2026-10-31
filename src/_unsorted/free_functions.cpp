@@ -119136,6 +119136,59 @@ void __fastcall sub_102ae310(Holder *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ae490 size=0x22e
+#include "CAI_BaseNPCTroika.h"
+#include "CEHandleGet.h"
+#include "CCineNPC.h"
+#include "CUnknown1027d990.h"
+
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+
+// TARGET: CAI_BaseNPCTroika::sub_102ae490
+void CAI_BaseNPCTroika::sub_102ae490(int a, char b)
+{
+	if (!sub_1028a190()) {
+		DevMsg("********************* WARNING **********************\n");
+		DevMsg("********************* WARNING **********************\n");
+		DevMsg("Calling ForceScheduleChange on NPC '%s'\n", sub_1000b5cd());
+		DevMsg("who is not supposed to be interruptable\n");
+		DevMsg("Be sure you really want to do this!\n");
+		DevMsg("This message will self destruct.\n");
+		DevMsg("********************* WARNING **********************\n");
+		DevMsg("********************* WARNING **********************\n");
+	}
+	if (!vfunc158() && !b) {
+		DevMsg("********************* WARNING **********************\n");
+		DevMsg("********************* WARNING **********************\n");
+		DevMsg("Calling ForceScheduleChange on NPC '%s'\n", sub_1000b5cd());
+		DevMsg("who is dead or dying.\n");
+		DevMsg("Be sure you really want to do this!\n");
+		DevMsg("This message will self destruct.\n");
+		DevMsg("********************* WARNING **********************\n");
+		DevMsg("********************* WARNING **********************\n");
+	}
+	if (EHandle_Get(m_h5d74)) {
+		if (!((CCineNPC *)EHandle_Get(m_h5d74))->m_b5f90) {
+			DevMsg("********************* WARNING **********************\n");
+			DevMsg("********************* WARNING **********************\n");
+			DevMsg("Calling ForceScheduleChange on NPC '%s'\n", sub_1000b5cd());
+			DevMsg("who is in an uninterruptable script '%s'\n", ((CAI_BaseNPCTroika *)EHandle_Get(m_h5d74))->sub_1000b5cd());
+			DevMsg("********************* WARNING **********************\n");
+			DevMsg("********************* WARNING **********************\n");
+		}
+		((CCineNPC *)EHandle_Get(m_h5d74))->sub_101a8c30();
+		if (m_n5cc0 != m_n5cc4) {
+			if (m_n5cc4 != 7)
+				sub_1026f4d0();
+			sub_1026e340(m_n5cc4);
+		}
+	}
+	if (((CUnknown1027d990 *)this)->sub_1027d990() != 3 && ((CUnknown1027d990 *)this)->sub_1027d990() != 1)
+		m_flags14b8 &= ~8;
+	vfunc435((void *)a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ae780 size=0x49
 void CAI_BaseNPCTroika::sub_102ae780(int a, char b)
 {

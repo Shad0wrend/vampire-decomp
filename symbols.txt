@@ -9879,6 +9879,7 @@
 0x10012ae4 func   ?sub_102f3770@@YAHPBM0@Z sub_102f3770
 0x10012ae9 func   _info_node_kick_over info_node_kick_over
 0x10012aee func   ?sub_10229550@CUnknown10229550@@QAEXPAUCUnknown10229550Item@@M@Z CUnknown10229550::sub_10229550
+0x10012af8 func   ?sub_102ae490@CAI_BaseNPCTroika@@QAEXHD@Z CAI_BaseNPCTroika::sub_102ae490
 0x10012afd func   _func_door_rotating func_door_rotating
 0x10012b02 func   _item_k_malkavian_refrigerator_key item_k_malkavian_refrigerator_key
 0x10012b07 func   ?sub_10407700@@YAHXZ sub_10407700
