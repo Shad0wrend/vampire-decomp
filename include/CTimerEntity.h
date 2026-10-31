@@ -13,6 +13,8 @@ public:
 	float m_fInterval;	// 0x49c: the refire interval
 	char m_pad04a0[4];
 	int m_n4a4;	// 0x4a4: nonzero for a random-interval timer (the interval is a range)
+	float m_fLowerRandomBound;	// 0x4a8
+	float m_fUpperRandomBound;	// 0x4ac
 
 	void vfunc103();	// slot 103 "CTimerEntity::Spawn": clamps the interval to 0.01f unless random, then arms the timer (sub_10131750) or leaves it disabled (sub_10131770)
 	void sub_10131750();	// stub 0x1001385e
