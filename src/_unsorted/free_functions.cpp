@@ -164595,6 +164595,16 @@ void sub_1042c6c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042c6e0 size=0xc
+void sub_1042c700(void *pfn);
+void sub_10013287();
+
+void sub_1042c6e0()
+{
+	sub_1042c700((void *)sub_10013287);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042c700 size=0x28
 typedef void (__fastcall *PFN_ForEach)(void *pThis);
 extern void **g_109eed50;
