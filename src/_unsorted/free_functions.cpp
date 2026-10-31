@@ -55959,6 +55959,23 @@ void sub_1013da70(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013dae0 size=0x17
+struct CUnk1013dae0 {
+    char pad[0x20];
+    int m_20;
+    void sub_1013dae0();
+    void sub_1013db80();
+    void sub_1013db40();
+};
+
+void CUnk1013dae0::sub_1013dae0()
+{
+    if (m_20 > 0)
+        sub_1013db80();
+    sub_1013db40();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013db10 size=0x15
 struct CUnknown1013db10 { char * sub_1013db10(); };
 char * CUnknown1013db10::sub_1013db10()
