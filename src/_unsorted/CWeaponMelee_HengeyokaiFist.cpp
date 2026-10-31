@@ -31,6 +31,14 @@ int CWeaponMelee_HengeyokaiFist::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ebc00 size=0x6
+#include "CWeaponMelee_HengeyokaiFist.h"
+int CWeaponMelee_HengeyokaiFist::vfunc363()
+{
+    return 3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ebc90 size=0x4
 #include "CWeaponMelee_HengeyokaiFist.h"
 int CWeaponMelee_HengeyokaiFist::vfunc373()

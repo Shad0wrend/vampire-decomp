@@ -5701,6 +5701,7 @@
 0x1000b7d5 func   ?vfunc76@CBaseEntity@@UAEXXZ CBaseEntity::vfunc76
 0x1000b7df func   _info_node_chang_column info_node_chang_column
 0x1000b7e4 func   ?sub_100fe610@@YAHXZ sub_100fe610
+0x1000b7e9 func   ?vfunc363@CWeaponMelee_HengeyokaiFist@@QAEHXZ CWeaponMelee_HengeyokaiFist::vfunc363
 0x1000b7ee func   ?sub_102f3000@CUnknown102f3000@@QAEDXZ CUnknown102f3000::sub_102f3000
 0x1000b7f3 func   ?sub_101871f0@@YGXPAUCPlayerTimeStub@@N@Z sub_101871f0
 0x1000b7f8 func   ?sub_10072bf0@CUnknown10072f10@@QAEPAV1@PBV1@@Z CUnknown10072f10::sub_10072bf0
