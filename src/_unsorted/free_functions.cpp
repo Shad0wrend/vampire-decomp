@@ -16034,6 +16034,20 @@ CUnknown10077290Entry *CUnknown10077290::sub_10077370(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100773f0 size=0x30
+#include "CUnknown10077430.h"
+#include "CFlexAnimationTrack.h"
+void CUnknown10077430::sub_100773f0()
+{
+	int n = sub_10077430();
+	for (int i = 0; i < n; i++) {
+		CFlexAnimationTrack *pTrack = (CFlexAnimationTrack *)sub_10077450(i);
+		if (pTrack)
+			pTrack->sub_10074820(0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10077430 size=0x7
 struct CUnknown10077430 { int sub_10077430(); };
 int CUnknown10077430::sub_10077430()
