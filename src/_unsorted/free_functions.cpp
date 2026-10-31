@@ -117685,6 +117685,21 @@ void CAI_BaseNPCTroika::sub_102c24a0(inputdata_t *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c2890 size=0x52
+#include "CAI_BaseNPCTroika.h"
+#include "inputdata_t.h"
+#include "engineiface.h"
+// TARGET: CAI_BaseNPCTroika::sub_102c2890
+void CAI_BaseNPCTroika::sub_102c2890(inputdata_t *data)
+{
+	const char *psz = data->value.String();
+	if (psz && *psz) {
+		enginesound->vfunc0(psz, 0);
+		sub_102c0520(psz, 0, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c2910 size=0x6e
 #include "inputdata_t.h"
 extern "C" __declspec(dllimport) void Q_trimspace(const char *pSource, char *pDest, int maxLen);
