@@ -49,6 +49,15 @@ CNPC_VGuard1 *CNPC_VGuard1::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037c7a0 size=0x6
+extern unsigned char g_1063b600;
+// TARGET: sub_1037c7a0
+unsigned char sub_1037c7a0()
+{
+    return g_1063b600;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037c800 size=0x1d
 #include "CNPC_VGuard1.h"
 struct A { int sub_10012300(int); };
