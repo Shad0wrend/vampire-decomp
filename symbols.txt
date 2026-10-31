@@ -7474,6 +7474,7 @@
 0x1000f0ba func   ?sub_102697b0@@YIXPAUDeathThinkView@@@Z sub_102697b0
 0x1000f0bf func   ?sub_10030cb0@@YGXPAX0@Z sub_10030cb0
 0x1000f0c4 func   ?sub_101f73b0@CUnknown101f73b0@@QAEXHH@Z CUnknown101f73b0::sub_101f73b0
+0x1000f0c9 func   ?vfunc4@CPositionInterpolator_Linear@@QAE_NHH@Z CPositionInterpolator_Linear::vfunc4
 0x1000f0ce func   _item_p_occult_lockpicking item_p_occult_lockpicking
 0x1000f0d8 func   ?sub_10042d90@CUtlVector20@@QAEHHHPBX@Z CUtlVector20::sub_10042d90
 0x1000f0e7 func   ?sub_10210b00@CTriggerDisciplineContext@@QAEXPAX@Z CTriggerDisciplineContext::sub_10210b00
