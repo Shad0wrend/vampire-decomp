@@ -11,6 +11,24 @@ char CWeaponGravityGun::vfunc316(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014a040 size=0x4f
+#include "CWeaponGravityGun.h"
+#include "engineiface.h"
+#include "engineserver.h"
+extern const char *g_1057b8a0;
+extern const char *g_1057b888[6];
+extern int g_1071a36c;
+// TARGET: CWeaponGravityGun::vfunc104
+void CWeaponGravityGun::vfunc104()
+{
+	CBaseCombatWeapon::vfunc104();
+	enginesound->vfunc0(g_1057b8a0, 0);
+	for (unsigned int i = 0; i < 6; i++)
+		enginesound->vfunc0(g_1057b888[i], 0);
+	g_1071a36c = engine->vfunc13("hud/PhysicsHand_Closed.vmt", 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014aa80 size=0x67
 #include "CWeaponGravityGun.h"
 #include "CEHandleGet.h"
