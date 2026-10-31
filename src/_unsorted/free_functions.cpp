@@ -28646,6 +28646,35 @@ void sub_100b6510(const char *in, char *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b6850 size=0x60
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+struct StudioNamedRec24 {
+	int m_nNameIndex;
+	char m_pad[0x14];
+	const char *Name() { return (const char *)this + m_nNameIndex; }
+};
+struct StudioHdr8c {
+	char m_pad0000[0x8c];
+	int m_nCount;
+	int m_nIndex;
+	StudioNamedRec24 *Rec(int i) { return (StudioNamedRec24 *)((char *)this + m_nIndex) + i; }
+};
+StudioNamedRec24 * __stdcall sub_100b6850(StudioHdr8c *pHdr, const char *pszName)
+{
+	StudioNamedRec24 *p = 0;
+	int i;
+	for (i = 0; i < pHdr->m_nCount; i++) {
+		p = pHdr->Rec(i);
+		if (p) {
+			const char *pszRec = p->Name();
+			if (!_strcmpi(pszRec, pszName))
+				break;
+		}
+	}
+	return (i >= pHdr->m_nCount) ? 0 : p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b68d0 size=0x6a
 struct TRandom {
 	virtual void v0();
