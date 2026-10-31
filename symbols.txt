@@ -10875,6 +10875,7 @@
 0x10015771 func   ??0CFunc_LOD@@QAE@XZ CFunc_LOD::CFunc_LOD
 0x1001577b func   ?sub_1018be10@CUnknownCopy1018be10@@QAEPAU1@PBU1@@Z CUnknownCopy1018be10::sub_1018be10
 0x10015780 func   ?vfunc359@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc359
+0x10015785 func   ?vfunc81@CBaseParticleEntity@@QAEHXZ CBaseParticleEntity::vfunc81
 0x1001578a func   ?vfunc460@CNPC_VDog@@QAEHXZ CNPC_VDog::vfunc460
 0x1001578f func   ?vfunc82@CEnvMicrophone@@UAEPAUdatamap_t@@XZ CEnvMicrophone::vfunc82
 0x10015799 func   ?vfunc173@CRevertSaved@@QAEXHHHH@Z CRevertSaved::vfunc173
