@@ -29,7 +29,7 @@ struct CSoundParametersInternal
 	CSoundWaveEntry &Wave(int i) { return m_pWaves[i]; }	// the i-th wave of the record (the CUtlVector element)
 };
 
-// A tree (0x20 bytes, int indices) followed by a 0x2c byte table object: 0x4c bytes.
+// The element of the sound record tree (CUtlRBTree<CSoundEmitterRecord, int>, 0xe8 byte nodes: 16 bytes of links and\n// this 0xd8 byte element). Its sentinel static is at 0x1072c414.\nstruct CSoundEmitterRecord\n{\n\tchar m_pad0000[0xd8];\n};\n\n// A tree (0x20 bytes, int indices) followed by a 0x2c byte table object: 0x4c bytes.
 struct CSoundEmitterDict
 {
 	CUtlRBTree<int, int> m_tree;
