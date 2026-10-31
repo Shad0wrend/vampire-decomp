@@ -102,6 +102,7 @@ public:
 	void sub_101b5180(const char *pszSound, const char *pszScript);	// "CSoundEmitterSystemBase::MoveSound": moves the sound record to another script file of the manifest (both script flags are marked changed); DevWarning for an unknown sound or a script file that is not in the manifest
 	CSoundParametersInternal *sub_101b3730(int index);	// the sound record of the index (stub 0x100130a7 is sub_101b2f60, this one is 0x10007469), null when the index is out of range
 	int sub_101b3240(void *pWaves, int nStart);	// index of the first wave (from nStart) of the vector pWaves, -1 when none (stub 0x1000bfff)
+	int sub_101b3b90(const char *pszName);	// stub returning 0 (ret 4)
 	char sub_101b33f0(const char *pszName, CSoundParameters &params);	// "GetParametersForSound": fills the parameters of the sound record named pszName; false (DevMsg) when it is unknown or has no wave
 	int sub_101b4170(const char *pszName);	// "LookupSoundLevel"-like: the sound level of the named sound, 75 when it cannot be resolved
 	const char *sub_101b4c90(const CSoundWaveEntry *pWave);	// the wave name of an entry: looks its symbol up in the string table at +0xb0 (stub 0x10008981)
