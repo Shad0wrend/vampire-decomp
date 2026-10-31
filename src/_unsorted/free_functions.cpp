@@ -149117,6 +149117,16 @@ int sub_103c0b30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c0bc0 size=0xc
+void __fastcall sub_103c0be0(void *p);
+
+void *__fastcall sub_103c0bc0(void *p)
+{
+    sub_103c0be0(p);
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c0be0 size=0x33
 void sub_10014d7b();
 void sub_1000b3bb();
