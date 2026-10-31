@@ -44,6 +44,15 @@ int CSimplePhysicsBrush::vfunc226()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004faa0 size=0xe
+void __cdecl sub_1040d950(int a);
+
+void __stdcall sub_1004faa0(int a)
+{
+    sub_1040d950(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004fae0 size=0x8
 unsigned char sub_10006703();
 // TARGET: sub_1004fae0
