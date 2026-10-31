@@ -56,7 +56,7 @@ struct RecVec1030a6e0
 
 struct CUnknown1030a6e0_Debug	// the object at +0x50 (its fields are not known yet)
 {
-	void sub_102e8b80(const Vector *pOrigin);	// stub 0x1001398a: debug draw for the given origin
+	void sub_102e8b80(const Vector &vecOrigin);	// stub 0x1001398a: debug draw for the given origin
 };
 
 class CUnknown1030a6e0
