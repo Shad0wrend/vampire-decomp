@@ -95999,6 +95999,16 @@ int CUnknown10205030::sub_10205240(CBaseCombatCharacter *pCharacter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102053d0 size=0x13
+#include "CVDmg_t.h"
+
+CVDmgBlock16_t *CVDmgBlock16_t::sub_102053d0(const char *pszText)
+{
+	sub_10204570(pszText);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10205400 size=0x13
 struct CUnknown10205400 { void * sub_10205400(int); };
 void * CUnknown10205400::sub_10205400(int a0)
