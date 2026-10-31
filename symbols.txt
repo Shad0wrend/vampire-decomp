@@ -98,6 +98,7 @@
 0x100012c6 func   ?vfunc451@CNPC_VPedestrian@@UAEHXZ CNPC_VPedestrian::vfunc451
 0x100012cb func   ?sub_10130690@CLight@@QAEXXZ CLight::sub_10130690
 0x100012d5 func   ?sub_101b90a0@CUnknown101b90a0@@QAEXH@Z CUnknown101b90a0::sub_101b90a0
+0x100012da func   ?sub_10117470@CUnk10117470@@QAEXH@Z CUnk10117470::sub_10117470
 0x100012df func   ?sub_103d44e0@CNPC_VWerewolf@@QAEXPAUCNPC_VWerewolfHint66b0@@D@Z CNPC_VWerewolf::sub_103d44e0
 0x100012e9 func   ?vfunc315@CWeaponIWritten@@UAE_NXZ CWeaponIWritten::vfunc315
 0x100012f3 func   ?sub_10273ec0@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_10273ec0

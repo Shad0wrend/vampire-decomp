@@ -49286,6 +49286,27 @@ void CMoverUnit::sub_10117310(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10117470 size=0x1b
+// TARGET: sub_10117470
+extern char g_1070d1b0[];
+struct CUnknown100b2e30
+{
+	void sub_100b2e30(const char *psz);
+};
+struct CUnk10117470
+{
+	char m_pad0000[0x3fc];
+	float m_fl3fc;	// 0x3fc
+
+	void sub_10117470(int a);
+};
+void CUnk10117470::sub_10117470(int a)
+{
+	((CUnknown100b2e30 *)this)->sub_100b2e30(g_1070d1b0);
+	m_fl3fc = -1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101189e0 size=0xfd
 #include "CBaseEntity.h"
 
