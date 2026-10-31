@@ -74,6 +74,8 @@ public:
 	void sub_100e5770();	// "CDialog::unload": scope trace, frees every line of the table and the table itself, then releases the two global buffers at 0x106ea780 / 0x106ea784
 	void sub_100e7c20(DialogLine *pLine);	// "CDialog::line_free" (called with this in ecx; it is declared elsewhere as a free __stdcall function)
 	char *sub_100e7310();	// "CDialog::get_dialog_filename": scope trace, when both handles resolve returns the lowercased, trimmed string at +0x128 of the entity behind the handle at +0, (in a global 260 byte buffer), else ""
+	int sub_100dfd30(CBaseEntity *pNPC, CBaseEntity *pSpeaker, int nArg);	// "CDialog::CheckNameCollisions": scope trace, resolves both handles, then logs every table entry that has auto ellipses; returns how many
+	char sub_100e5410(char *pszFilename);	// stub 0x10011da6
 	void sub_100e5c70();	// "CDialog::CallPendingNPCEventScript": scope trace, when the pending event script name at +0x30ea is set runs it (sub_100e4f30) and clears it
 	void sub_100e4f30(char *pszScript);
 	void sub_100e7630(void *pFile);	// "CDialog::eat_line": scope trace, reads characters from the file until a newline or EOF
