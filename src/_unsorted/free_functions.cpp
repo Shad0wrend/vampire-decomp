@@ -125533,6 +125533,33 @@ bool CUnknown102db470Node::sub_102dad60(CUnknown102db470 *pNPC, float *pOut1, fl
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dae70 size=0x15
+extern char g_106b8540;
+
+struct CUnknown102dd500
+{
+	void *sub_102dd500();
+};
+
+struct CUnknown102dae70
+{
+	char m_pad0000[0x548];
+	CUnknown102dd500 *m_p548;
+
+	void *sub_102dae70();
+};
+
+// TARGET: CUnknown102dae70::sub_102dae70
+void *CUnknown102dae70::sub_102dae70()
+{
+	if (m_p548 != 0)
+	{
+		return m_p548->sub_102dd500();
+	}
+	return &g_106b8540;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102daea0 size=0x35
 extern char g_106b8540[];
 

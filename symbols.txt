@@ -5289,6 +5289,7 @@
 0x1000a71d func   ?vfunc2@CBaseEntity@@UAEPADXZ CBaseEntity::vfunc2
 0x1000a72c func   ?sub_10230880@CNameSymbolTable@@QAEGPBD@Z CNameSymbolTable::sub_10230880
 0x1000a731 func   ?sub_100675b0@@YAXPAXHPBVVector@@HMH@Z sub_100675b0
+0x1000a73b func   ?sub_102dae70@CUnknown102dae70@@QAEPAXXZ CUnknown102dae70::sub_102dae70
 0x1000a740 func   ?vfunc82@CSoundScheme@@UAEPAUdatamap_t@@XZ CSoundScheme::vfunc82
 0x1000a745 func   ?sub_101ba630@@YAHXZ sub_101ba630
 0x1000a74a func   ?vfunc104@CNPC_VTzimisceHeadClaw@@QAEXXZ CNPC_VTzimisceHeadClaw::vfunc104
