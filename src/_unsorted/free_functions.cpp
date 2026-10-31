@@ -137614,6 +137614,63 @@ void CBaseCombatCharacter::sub_1032ead0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032ec90 size=0x239
+#include "CBaseCombatCharacter.h"
+#include "CBaseAnimating.h"
+#include "CEnvParticle.h"
+#include "CBaseEntityUnit100fbaf0.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "ScopeTrace.h"
+
+extern char g_1070d9d0[];
+extern char g_1070d1b0[];
+extern const char *g_10619e50[5];
+CEnvParticle *sub_100fbc90(const char *name, const char *a, const char *b, float f);
+
+#define TEV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CTempEntsView20
+{
+	TEV10(a0) TEV10(a1)
+	virtual void vfunc20(const CRecipientFilter *pFilter, int a, const Vector *pOrigin, int r, int g, int b, int e, float radius, float time, float decay);
+};
+extern CTempEntsView20 *g_10540528;
+
+void CBaseCombatCharacter::sub_1032ec90(int nType, int bFlag, int unused)
+{
+	ScopeTrace trace("CBaseCombatCharacter::CreatePotenceHitEffect", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if ((nType >= 0 || nType <= 4) && bFlag)
+	{
+		CEnvParticle *pParticle = sub_100fbc90(g_10619e50[nType], g_1070d1b0, g_1070d9d0, -1.0f);
+		if (pParticle)
+		{
+			char *pModel = (char *)((CBaseAnimating *)this)->sub_100952d0(-1);
+			if (pModel)
+			{
+				char *hdr = pModel + *(int *)(pModel + 0x104);
+				int *rec = !hdr ? 0 : (int *)(*(int *)(hdr + 8) + m_nHitBoxSet1594 * 0x20 + hdr);
+				int nBone = *rec;
+				pParticle->sub_100fb1f0((CBaseEntity *)this, 4, nBone);
+				((CBaseEntityUnit100fbaf0 *)pParticle)->sub_100fbaf0(10.0f);
+				CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+				filter.MakeReliable();
+				int edict = m_pEdict2e0;
+				if (nType == 4)
+					enginesound->vfunc3(&filter, engine->vfunc35(edict), 0, "disciplines/potence/melee_hit_deathblow.wav", 1.0f, 0.8f, 1, 100, 0, 0, 1, 0);
+				else
+					enginesound->vfunc3(&filter, engine->vfunc35(edict), 0, "disciplines/potence/melee_hit.wav", 1.0f, 0.8f, 1, 100, 0, 0, 1, 0);
+				Vector vecOrigin;
+				Vector vecAngles;
+				((CBaseAnimating *)this)->sub_100926e0(nBone, (int)&vecOrigin, (int)&vecAngles);
+				g_10540528->vfunc20(&filter, 0, &vecOrigin, 200, 200, 255, 0, 500.0f, 0.5f, 100.0f);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032f930 size=0x86
 #include "CBaseCombatCharacter.h"
 
