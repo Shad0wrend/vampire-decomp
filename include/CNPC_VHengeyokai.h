@@ -85,7 +85,8 @@ public:
 	Vector m_vecBonePos;	// 0x6684: position of the chosen bone
 	unsigned int m_h6690;	// 0x6690: entity handle (the grabbed phys_animlink)
 	char m_b6694;	// 0x6694
-	char m_pad6695[0x66a4 - 0x6695];
+	char m_pad6695[0x66a0 - 0x6695];
+	unsigned int m_n66a0;	// 0x66a0
 	CNPC_VHengeyokaiTimerVec m_Timers;	// 0x66a4
 
 	CNPC_VHengeyokai *vfunc5(unsigned int flags);	// slot 5 (scalar deleting destructor, plain member): the timer vector goes, then the Troika base's destructor body (stub 0x100123af), then the delete when bit 0 of flags is set
