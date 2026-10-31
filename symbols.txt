@@ -6154,6 +6154,7 @@
 0x1000c2a2 func   ?sub_10272900@@YIHPAX@Z sub_10272900
 0x1000c2ac func   ?sub_1007ee40@@YIXPAH@Z sub_1007ee40
 0x1000c2b1 func   ?sub_1013b4d0@@YAXABVVector@@00H@Z sub_1013b4d0
+0x1000c2b6 func   ?vfunc584@CAI_ExpressiveNPC@@QAEHXZ CAI_ExpressiveNPC::vfunc584
 0x1000c2bb func   ?sub_10232520@@YIXPAHHH@Z sub_10232520
 0x1000c2ca func   ?vfunc260@CSceneEntity@@UAEXHPAXPBDHH@Z CSceneEntity::vfunc260
 0x1000c2d4 func   ?sub_1010f100@@YAHXZ sub_1010f100

@@ -24,6 +24,17 @@ int CAI_ExpressiveNPC::vfunc512()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10260dc0 size=0xb
+#include "CAI_ExpressiveNPC.h"
+namespace lifted {
+struct C100116d0 { int sub_100116d0(); };
+}
+int CAI_ExpressiveNPC::vfunc584()
+{
+    return ((lifted::C100116d0 *)(*(int *)((char *)this + 0x5f48)))->sub_100116d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10312d40 size=0x90
 #include "CAI_ExpressiveNPC.h"
 #include "CAI_Expresser.h"
