@@ -1,6 +1,19 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101bc590 size=0x61
+#include "CSoundControllerImp.h"
+#include "utlvector.h"
+#include "CUnknown101bc140.h"
+#include "CUnknown101bbd10.h"
+
+void CSoundControllerImp::sub_101bc590(void *pSound)
+{
+	((CUtlVector<CUnknown101bc140 *> *)&m_Sounds)->FindAndRemove((CUnknown101bc140 *)pSound);
+	((CUnknown101bbd10 *)pSound)->sub_101bbd10();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bc7f0 size=0x5f
 #include "CSoundControllerImp.h"
 #include "CUnknown101bc750.h"
