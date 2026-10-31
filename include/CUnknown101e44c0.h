@@ -15,5 +15,6 @@ public:
 	char pad0[8];
 	NamedEntry101e44c0 **m_ppEntries;	// +8, 30 entries
 
+	void sub_101e45b0(CBaseCombatCharacter *pChar, int *pLine);	// stub 0x1000f7e0 neighbour: draws the discipline flag lines ("DisciplineFlagsSrc:" / "DisciplineFlagsTgt:" of +0xeb0 / +0xeb4) and the "Disciplines: name(level)" line as entity text lines, *pLine counting them
 	bool sub_101e44c0(char *buf, const char *fmt, unsigned int mask);	// snprintf(buf, 512, fmt), then appends " name" for every set bit of mask (bit i = entry i); returns true when any bit was set
 };
