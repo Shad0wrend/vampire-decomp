@@ -87041,6 +87041,18 @@ void sub_101eddd0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101eddf0 size=0xe
+// TARGET: sub_101eddf0
+extern bool (*g_1073a3b4)();
+
+bool sub_101eddf0()
+{
+    if (g_1073a3b4)
+        return g_1073a3b4();
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101edfe0 size=0x126
 #include "SendProp.h"
 
