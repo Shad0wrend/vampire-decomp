@@ -74148,6 +74148,22 @@ bool sub_101b6680(unsigned short *a, unsigned short *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b66b0 size=0x1a
+struct CUnk101b66b0
+{
+	int m_pad0000;
+	char *m_p4;
+
+	char *sub_101b66b0(int index);
+};
+
+// TARGET: sub_101b66b0
+char *CUnk101b66b0::sub_101b66b0(int index)
+{
+	return m_p4 + 0x10 + index * 0xe8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b68f0 size=0xf3
 #include "CUtlRBTreeFind232.h"
 
