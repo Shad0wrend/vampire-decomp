@@ -39,6 +39,15 @@ CPropKeypad *CPropKeypad::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021d9a0 size=0x15
+#include "CPropKeypad.h"
+void CPropKeypad::vfunc113()
+{
+    *(int *)((char *)this + 0x81c) = 0xa;
+    *(int *)((char *)this + 0x820) = 4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021d9d0 size=0x4f
 #include "CPropKeypad.h"
 #include "CBreakableProp.h"
