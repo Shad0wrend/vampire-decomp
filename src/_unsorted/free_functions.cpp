@@ -125593,6 +125593,33 @@ void *__fastcall sub_102daea0(COwnerView *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102daef0 size=0x15
+extern char g_106b8540;
+
+struct CUnknown102dd550
+{
+	void *sub_102dd550();
+};
+
+struct CUnknown102daef0
+{
+	char m_pad0000[0x548];
+	CUnknown102dd550 *m_p548;
+
+	void *sub_102daef0();
+};
+
+// TARGET: CUnknown102daef0::sub_102daef0
+void *CUnknown102daef0::sub_102daef0()
+{
+	if (m_p548 != 0)
+	{
+		return m_p548->sub_102dd550();
+	}
+	return &g_106b8540;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102daf50 size=0x12
 #include "vampire.h"
 
