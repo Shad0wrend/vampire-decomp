@@ -31562,6 +31562,24 @@ void CUnit100c0b40::sub_100c0b40(SInput100c0b40 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c0be0 size=0xf
+// TARGET: sub_100c0be0
+struct CUnknown100c0be0
+{
+    char pad[0x460];
+    int m_i460;
+
+    void sub_100c0970(int v);
+    void sub_100c0be0(int v);
+};
+
+void CUnknown100c0be0::sub_100c0be0(int v)
+{
+    v = m_i460;
+    sub_100c0970(v);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c0c60 size=0xd
 void CUnknown100c0c60::sub_100c0c60(float value)
 {
