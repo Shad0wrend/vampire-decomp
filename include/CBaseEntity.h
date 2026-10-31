@@ -289,7 +289,10 @@ public:
 	EHANDLE m_hMovePeer264;	// 0x264: the next entity parented to the same parent
 	unsigned int m_flags268;
 	const char *m_name26c;
-	char m_pad0270[0x2e0 - 0x270];
+	char m_pad0270[0x2b0 - 0x270];
+	int m_n2b0;	// 0x02b0: tested by IsSolid
+	unsigned char m_b2b4;	// 0x02b4: bit 2 clears IsSolid, bit 3 is IsSolidFlagSet
+	char m_pad02b5[0x2e0 - 0x2b5];
 	int m_pEdict2e0;	// 0x02e0
 	char m_pad02e4[0x35c - 0x2e4];
 	int m_nMoveType35c;	// 0x035c
