@@ -20,6 +20,17 @@ int CWeaponMelee_BaseballBat::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e4360 size=0x6
+#include "CWeaponMelee_BaseballBat.h"
+namespace lifted {
+extern char g_106668a8;
+}
+int CWeaponMelee_BaseballBat::vfunc362()
+{
+    return (int)&lifted::g_106668a8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecb40 size=0x1e
 #include "CWeaponMelee_BaseballBat.h"
 
