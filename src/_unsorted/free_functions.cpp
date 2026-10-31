@@ -158021,6 +158021,86 @@ bool CWeaponRanged_FlameThrower::sub_103e3490(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e3930 size=0x264
+#include "CWeaponRanged_FlameThrower.h"
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+
+struct FlamePosView {
+	Vector m_pos;
+	char m_pad0c[0x3c - 0xc];
+};
+struct Flame20 {
+	char m_b[20];
+};
+struct FlameBurnRec {
+	EHANDLE m_hEnt;
+	float m_flTime;
+};
+extern "C" void *memset(void *, int, unsigned int);
+int sub_101cca80(CBaseEntity **ppList, int listMax, const Vector &mins, const Vector &maxs, int flags, int a);
+bool sub_1023fd00(const Vector &a, const Vector &b, const Vector &c, float radius);
+
+// TARGET: CWeaponRanged_FlameThrower::sub_103e3930
+void CWeaponRanged_FlameThrower::sub_103e3930()
+{
+	float radius;
+	Vector maxs;
+	Vector mins;
+	int i, j, a;
+	FlamePosView *poss = (FlamePosView *)((char *)this + 0x924);
+	mins.x = 3.402823466e+38f;
+	mins.y = 3.402823466e+38f;
+	mins.z = 3.402823466e+38f;
+	maxs.x = -3.402823466e+38f;
+	maxs.y = -3.402823466e+38f;
+	maxs.z = -3.402823466e+38f;
+	for (i = 0; i < 50; i++) {
+		for (a = 0; a < 3; a++) {
+			if (poss[i].m_pos[a] > maxs[a])
+				maxs[a] = poss[i].m_pos[a];
+			if (poss[i].m_pos[a] < mins[a])
+				mins[a] = poss[i].m_pos[a];
+		}
+	}
+	if (!m_unk1550)
+		return;
+	for (i = 0; i < 50; i++) {
+		if (m_aBuf[i * 15] == 1) {
+			CBaseEntity *ents[100];
+			memset(ents, 0, sizeof(ents));
+			int n = sub_101cca80(ents, 100, mins, maxs, 0x20002080, 0);
+			radius = sub_103e3900();
+			for (i = 0; i < n; i++) {
+				for (j = 0; j < m_n1560; j++) {
+					if (((FlameBurnRec *)m_n1554)[j].m_hEnt.Get() == ents[i]) {
+						ents[i] = 0;
+						break;
+					}
+				}
+			}
+			for (i = 0; i < n; i++) {
+				if (!ents[i])
+					continue;
+				for (j = 0; j < 50; j++) {
+					const Vector &vp = poss[j].m_pos;
+					if (((const int *)&vp)[-2] == 1 && sub_103e3490(ents[i])) {
+						Vector pos = vp;
+						CCollisionProperty *pCol = (CCollisionProperty *)((char *)ents[i] + 0x270);
+						pCol->sub_100dcd90(&pCol->m_vecMins.x, &pCol->m_vecMaxs.x, &mins.x, &maxs.x);
+						if (sub_1023fd00(mins, maxs, pos, radius)) {
+							sub_103e3570(ents[i], *(Vector *)&((Flame20 *)this)[j * 3 + 0x75]);
+							break;
+						}
+					}
+				}
+			}
+			return;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e3d80 size=0x8f
 #include "CBaseAnimating.h"
 #include "CWeaponRanged_FlameThrower.h"
