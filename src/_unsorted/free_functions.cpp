@@ -136418,6 +136418,17 @@ int *__fastcall sub_10319e70(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10319ee0 size=0x16
+void sub_1031a050(int a);
+
+// TARGET: sub_10319ee0
+void __fastcall sub_10319ee0(int *pThis)
+{
+	sub_1031a050(*pThis);
+	*pThis = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10319f10 size=0xc
 bool sub_1000528b(void *);
 bool CUnknown10319f10::sub_10319f10()
