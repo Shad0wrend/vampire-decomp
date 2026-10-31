@@ -10177,6 +10177,7 @@
 0x10014e7f func   ?vfunc421@CBasePlayer@@UAEDH@Z CBasePlayer::vfunc421
 0x10014e84 func   ?vfunc1@CTEBeamLaser@@UAEHXZ CTEBeamLaser::vfunc1
 0x10014e8e func   ?vfunc35@CTriggerElectricBugaloo@@QAEHPAX@Z CTriggerElectricBugaloo::vfunc35
+0x10014e9d func   ?sub_10026770@@YGXH@Z sub_10026770
 0x10014ea2 func   ?sub_103ed0e0@@YAHXZ sub_103ed0e0
 0x10014eac func   ?sub_102bfe10@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::sub_102bfe10
 0x10014eb1 func   ?sub_102033e0@@YAPADH@Z sub_102033e0
