@@ -50,6 +50,23 @@ int CNPC_VDog::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10374000 size=0x5a
+#include "CBaseEntity.h"
+#include "CNPC_VDog.h"
+#include "globalvars.h"
+#include "engineiface.h"
+// TARGET: CNPC_VDog::vfunc103
+void CNPC_VDog::vfunc103()
+{
+	*(float *)((char *)this + 0x6674) = enginerandom->vfunc1(0.0f, 1.0f) + gpGlobals->curtime;
+	*(int *)((char *)this + 0x6688) = 0;
+	sub_1026dc00(0x4000000);
+	sub_1026dc00(0x200000);
+	sub_1026dc00(0x8000);
+	CNPC_VAnimal::vfunc103();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10374080 size=0x6
 #include "CNPC_VDog.h"
 int CNPC_VDog::vfunc138()
