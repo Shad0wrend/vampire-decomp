@@ -69,6 +69,17 @@ bool CFilterInventory::vfunc241(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10108240 size=0x6
+#include "CFilterInventory.h"
+namespace lifted {
+extern char g_1056c580;
+}
+int CFilterInventory::vfunc82()
+{
+    return (int)&lifted::g_1056c580;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101086c0 size=0x36
 #include "CFilterInventory.h"
 
