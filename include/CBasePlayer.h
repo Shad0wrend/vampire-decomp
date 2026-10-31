@@ -81,9 +81,10 @@ public:
 	CBP_V1(sc00) CBP_V1(sc01) CBP_V1(sc02) CBP_V1(sc03)	// slots 165..168
 	virtual void vfunc169(const Vector *pPunch);	// slot 169: takes the pointer of a view punch angle
 	CBP_V1(sc05) CBP_V1(sc06) CBP_V1(sc07) CBP_V1(sc08) CBP_V1(sc09)	// slots 170..174
-	CBP_V1(sc10) CBP_V1(sc11) CBP_V1(sc12) CBP_V1(sc13) CBP_V1(sc14) CBP_V1(sc15)	// slots 175..180
+	CBP_V1(sc10) CBP_V1(sc11) CBP_V1(sc12) CBP_V1(sc13) CBP_V1(sc14)	// slots 175..179
 	virtual void vfunc180();	// slot 180: view parts released from the physics environment, then CBaseCombatCharacter::vfunc180
-	CBP_V1(sc17) CBP_V1(sc18) CBP_V1(sc19)	// slots 181..184
+	CBP_V1(sc16) CBP_V1(sc17) CBP_V1(sc18) CBP_V1(sc19)	// slots 181..184
+	void sub_1000b0c8();	// CBaseCombatCharacter::vfunc180, called directly
 	CBP_V1(sc20) CBP_V1(sc21) CBP_V1(sc22) CBP_V1(sc23) CBP_V1(sc24) CBP_V1(sc25) CBP_V1(sc26)
 	virtual Vector vfunc192();	// "EyePosition"-like getter returning the vector by value (hidden pointer, ret 4)
 	virtual Vector vfunc193();	// slot 193 \"EyePosition\" (by value, hidden result pointer)
