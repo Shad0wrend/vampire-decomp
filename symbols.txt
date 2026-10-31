@@ -5356,6 +5356,7 @@
 0x1000ad8a func   ?sub_100ad100@@YIXPAVCBaseEntity@@HH@Z sub_100ad100
 0x1000ad8f func   ?sub_101d6500@@YGDHH@Z sub_101d6500
 0x1000ad99 func   ?sub_102c2b20@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_102c2b20
+0x1000ad9e func   ?vfunc80@CWeaponMelee_SabbatLeaderAttack@@QAEHXZ CWeaponMelee_SabbatLeaderAttack::vfunc80
 0x1000ada3 func   ?sub_102e2630@CUnknown102e2630@@QAEHH@Z CUnknown102e2630::sub_102e2630
 0x1000adad func   ?vfunc73@CGameRules@@UAE_NPAVCBaseEntity@@@Z CGameRules::vfunc73
 0x1000adb2 func   ?sub_101d1670@@YAXPAPADH@Z sub_101d1670
