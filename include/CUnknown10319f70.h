@@ -9,5 +9,5 @@ public:
 	char m_unk0;
 
 	void sub_10319f70(int a, int b, int c);
-	void sub_10319f30(CAI_Waypoint *pWaypoint);	// stub 0x10007f4f: adds the waypoint to the route
+	bool sub_10319f30(CAI_Waypoint *pWaypoint);	// stub 0x10007f4f: adds the waypoint to the route
 };
