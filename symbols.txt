@@ -6509,6 +6509,7 @@
 0x1000c8bf func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@UKEYRING_ENTRY@@V?$CUtlMemory@UKEYRING_ENTRY@@@@@@$08@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<KEYRING_ENTRY,CUtlMemory<KEYRING_ENTRY> >,9>::vfunc3
 0x1000c8c4 func   ?vfunc82@CBatSwarm@@UAEPAUdatamap_t@@XZ CBatSwarm::vfunc82
 0x1000c8c9 func   ?sub_10058220@CUnknown10058220@@QAEXH@Z CUnknown10058220::sub_10058220
+0x1000c8ce func   ?vfunc600@CNPC_VMingXiao@@UAE_NH@Z CNPC_VMingXiao::vfunc600
 0x1000c8d3 func   ?vfunc37@CGameSign@@UAEMXZ CGameSign::vfunc37
 0x1000c8d8 func   ?vfunc3@CTEBeamEnts@@UAEXPBM0@Z CTEBeamEnts::vfunc3
 0x1000c8dd func   _item_p_occult_regen item_p_occult_regen
