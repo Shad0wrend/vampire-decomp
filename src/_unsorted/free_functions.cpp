@@ -14869,6 +14869,23 @@ int S10073720::sub_10073720(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10073760 size=0x17
+#include "CUnknown100735a0.h"
+
+struct CUnknown100737b0
+{
+	void sub_100737b0(int a);
+};
+
+// TARGET: CUnknown100735a0::sub_10073760
+void CUnknown100735a0::sub_10073760()
+{
+	m_szName[0] = 0;
+	((CUnknown100737b0 *)this)->sub_100737b0(0);
+	m_b98 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10073790 size=0x3
 struct CUnknown10073790 { int sub_10073790(); };
 int CUnknown10073790::sub_10073790()
