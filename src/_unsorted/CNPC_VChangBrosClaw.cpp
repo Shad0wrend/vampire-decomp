@@ -23,6 +23,17 @@ int CNPC_VChangBrosClaw::vfunc451()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036f330 size=0x6
+#include "CNPC_VChangBrosClaw.h"
+namespace lifted {
+extern char g_1062fe44;
+}
+int CNPC_VChangBrosClaw::vfunc82()
+{
+    return (int)&lifted::g_1062fe44;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036f4f0 size=0x1d
 #include "CNPC_VChangBrosClaw.h"
 struct A { int sub_10012300(int); };
