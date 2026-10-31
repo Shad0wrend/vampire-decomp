@@ -20,6 +20,17 @@ int CWeaponMelee_Sledgehammer::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e6f60 size=0x6
+#include "CWeaponMelee_Sledgehammer.h"
+namespace lifted {
+extern char g_10670658;
+}
+int CWeaponMelee_Sledgehammer::vfunc362()
+{
+    return (int)&lifted::g_10670658;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecdb0 size=0x1e
 #include "CWeaponMelee_Sledgehammer.h"
 
