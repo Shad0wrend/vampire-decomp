@@ -2002,6 +2002,25 @@ char CAI_BaseNPCTroika::sub_102b57c0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b5880 size=0x5b
+#include "CAI_BaseNPCTroika.h"
+#include "globalvars.h"
+#include "engineiface.h"
+struct STroikaNotify { virtual void a0(); virtual void vfunc1(); };
+extern STroikaNotify *g_10924edc;
+// TARGET: CAI_BaseNPCTroika::vfunc601
+void CAI_BaseNPCTroika::vfunc601(int a)
+{
+	g_10924edc->vfunc1();
+	*(char *)((char *)this + 0x6078) = 0;
+	if (((char (__fastcall *)(CAI_BaseNPCTroika *))(*(void ***)this)[308])(this))
+		*(float *)((char *)this + 0x6070) = enginerandom->vfunc1(5.0f, 10.0f) + gpGlobals->curtime;
+	CAI_NamedThing *pThing = *(CAI_NamedThing **)((char *)this + 0x65e8);
+	if (pThing)
+		pThing->sub_1025ddd0(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b5900 size=0xab
 #include "CAI_BaseNPCTroika.h"
 
