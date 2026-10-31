@@ -185,7 +185,9 @@ public:
 	unsigned int m_hEnt0EA4;	// entity handle
 	char m_pad0EA8[0xfe8 - 0xea8];	// 0x0EA8 .. 0x0FE7
 	unsigned int m_hDialogPartnerFE8;	// 0x0FE8: entity handle
-	char m_pad0FEC[0x1040 - 0xfec];	// 0x0FEC .. 0x103F
+	int m_nFEC;	// 0x0FEC
+	int m_nFF0;	// 0x0FF0: the activity
+	char m_pad0FF4[0x1040 - 0xff4];	// 0x0FF4 .. 0x103F
 	unsigned int m_hUseEnt1040;	// 0x1040: entity handle
 	char m_pad1044[0x10dc - 0x1044];
 	EHANDLE m_hEnt10DC;	// 0x10DC: entity handle
