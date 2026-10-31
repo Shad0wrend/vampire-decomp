@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103f2990 size=0x6
+#include "CWeaponHolyLight.h"
+namespace lifted {
+extern char g_1067e788;
+}
+int CWeaponHolyLight::vfunc362()
+{
+    return (int)&lifted::g_1067e788;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f2a40 size=0x1e
 #include "CWeaponHolyLight.h"
 

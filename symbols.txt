@@ -1704,6 +1704,7 @@
 0x1000423c func   ?vfunc104@CWeaponThrown_Chang_Energy_Ball@@QAEXXZ CWeaponThrown_Chang_Energy_Ball::vfunc104
 0x10004246 func   ?sub_101ab550@CServerNetworkProperty@@QAEXXZ CServerNetworkProperty::sub_101ab550
 0x1000424b func   ?sub_103ebb10@@YAHXZ sub_103ebb10
+0x1000425f func   ?vfunc362@CWeaponHolyLight@@QAEHXZ CWeaponHolyLight::vfunc362
 0x10004269 func   _params_particle params_particle
 0x1000426e func   ?vfunc339@CWeaponMelee@@UAEXXZ CWeaponMelee::vfunc339
 0x10004278 func   ?sub_102c7e90@@YIPAXPAX@Z sub_102c7e90
