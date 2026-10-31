@@ -71,6 +71,9 @@ public:
 	char m_bStuck;	// 0x30
 	char pad31[0x3c - 0x31];
 	RecVec1030a6e0 m_List;	// +0x3c
+	CUnknown1030a6e0_Debug m_Debug50;	// 0x50
+
+	void sub_10309e40();	// debug: with bit 26 of the NPC's flags (+0x224) set, hands the NPC's slot 192 position to the object at +0x50
 
 	void sub_1030a6e0(const float *pos, int a, CBaseEntity *pEnt, int b);	// appends a record {*pos, a, b, handle of pEnt (-1 for null)} to the list (AddToTail inlined)
 	void sub_10309e80(const Vector *pDirA, const Vector *pDirB);	// debug draw: with bit 26 of the NPC's flags (+0x224) set, draws a white line from slot 192 of the NPC along pDirA (length 20) and a yellow one along pDirB, each for 0.1 s
