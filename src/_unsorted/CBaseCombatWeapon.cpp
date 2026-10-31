@@ -52,6 +52,24 @@ float CBaseCombatWeapon::vfunc278()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024efa0 size=0x61
+#include "CBaseCombatWeapon.h"
+// TARGET: CBaseCombatWeapon::vfunc369
+void CBaseCombatWeapon::vfunc369(int a)
+{
+	float f = vfunc250(0);
+	if (m_b65c != 0 && m_b65d != 0) {
+		unsigned int h = *(unsigned int *)((char *)this + 0x8a8);
+		int seq = sub_1008dc40(h, -1);
+		if (seq != -1) {
+			m_nSequence = seq;
+			sub_10090950();
+		}
+	}
+	vfunc258(f, a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024f030 size=0x64
 struct CNameObj_t { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual const char *GetName(); };
 struct CNameSrc_t { virtual void v0(); virtual void v1(); virtual void v2(); virtual CNameObj_t *Get(); };
