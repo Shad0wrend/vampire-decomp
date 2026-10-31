@@ -156263,6 +156263,60 @@ void CNPC_VWerewolf::sub_103d4760()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d4a60 size=0x253
+#include "CNPC_VWerewolf.h"
+#include "CCollisionProperty.h"
+#include "COutputEvent.h"
+#include "CSingleUserRecipientFilter.h"
+#include "ScopeTrace.h"
+#include "engineserver.h"
+#include "engineiface.h"
+
+struct CUnk1093f73c
+{
+	virtual void v0();
+	virtual bool v1();
+	int m_pad[10];
+	int m_2c;
+};
+extern CUnk1093f73c *g_1093f73c;
+void sub_101ce620(int player, int type, const char *msg, int a, int b, int c, int d);
+
+void CNPC_VWerewolf::sub_103d4a60()
+{
+	ScopeTrace t("CNPC_VWerewolf::TeleportOut", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	m_flTime66f0 = gpGlobals->curtime;
+	vfunc66();
+	m_nEffectFlags |= 0x20;
+	{
+		ScopeTrace t2("CBaseEntity::AddSolidFlags", m_name26c ? m_name26c : g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->AddSolidFlags(4);
+	}
+	sub_100b3b00();
+	m_n66ac = 0;
+	sub_103d4760();
+	m_nFlags66e8 = 0;
+	((COutputEvent *)m_OnTeleportOut)->sub_100cd660(vfunc167(), this, 0);
+	if (!g_1093f73c->v1() && g_1093f73c->m_2c) {
+		CBaseEntity *pTarget = vfunc167();
+		int nPlayer;
+		if (!pTarget)
+			nPlayer = 0;
+		else
+			nPlayer = *(int *)((char *)pTarget + 0xa8);
+		CSingleUserRecipientFilter filter((void *)nPlayer);
+		filter.MakeReliable();
+		int nEdict = m_pEdict2e0;
+		enginesound->vfunc2(&filter, engine->vfunc35(nEdict), 0, "dev/ww_tele_out.wav", 1.0f, 0, 0, 100, 0, 0, 1, 0);
+		pTarget = vfunc167();
+		nPlayer = (int)pTarget;
+		if (pTarget)
+			nPlayer = *(int *)((char *)pTarget + 0xa8);
+		sub_101ce620(nPlayer, 3, "Werewolf teleported out", 0, 0, 0, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d6280 size=0xce
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
