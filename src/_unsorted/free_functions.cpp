@@ -134473,6 +134473,16 @@ CUnknown10310b10 *CUnknown10310b10::sub_10310b10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10310b40 size=0x13
+#include "CVDmg_t.h"
+
+CVDmgBlock16_t *CVDmgBlock16_t::sub_10310b40(const char *pszText)
+{
+	sub_10310b90(pszText);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10310b70 size=0x1
 void sub_10310b70()
 {
