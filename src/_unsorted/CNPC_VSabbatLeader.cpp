@@ -31,6 +31,17 @@ int CNPC_VSabbatLeader::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a5cc0 size=0x6
+#include "CNPC_VSabbatLeader.h"
+namespace lifted {
+extern int g_1064c7b4;
+}
+int CNPC_VSabbatLeader::vfunc451()
+{
+    return lifted::g_1064c7b4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a5e50 size=0x1d
 #include "CNPC_VSabbatLeader.h"
 struct A { int sub_10012300(int); };
