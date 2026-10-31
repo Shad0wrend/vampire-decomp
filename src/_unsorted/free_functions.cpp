@@ -137371,6 +137371,17 @@ int sub_103388e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10338900 size=0xb
+unsigned int __fastcall sub_1033c9c0(void *pThis);
+unsigned char __fastcall sub_10338900(void *pThis)
+{
+    unsigned char b;
+    b = (unsigned char)(sub_1033c9c0(pThis) >> 6);
+    b &= 1;
+    return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10338950 size=0x150
 #include "ScopeTrace.h"
 char CBaseCombatCharacter::sub_10338950()
