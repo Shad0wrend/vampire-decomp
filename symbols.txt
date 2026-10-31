@@ -4233,6 +4233,7 @@
 0x10009282 func   ?vfunc259@CNPC_VMingXiao@@UAEXPAH@Z CNPC_VMingXiao::vfunc259
 0x10009287 func   ?vfunc546@CNPC_VZombie@@QAEHH@Z CNPC_VZombie::vfunc546
 0x1000928c func   ?sub_100d9750@@YAXXZ sub_100d9750
+0x10009296 func   ?sub_1011b040@@YGXH@Z sub_1011b040
 0x1000929b func   ?sub_10046b70@@YA_NPBI0@Z sub_10046b70
 0x100092af func   ?sub_1019dee0@CRopeKeyframe@@SAPAV1@PAVCBaseEntity@@0HHHPBDH@Z CRopeKeyframe::sub_1019dee0
 0x100092b9 func   ?sub_1013af60@@YAXABVQuaternion@@0AAV1@@Z sub_1013af60

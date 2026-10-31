@@ -260,6 +260,16 @@ void CServerGameDLL::vfunc14(void *pData, int a, int b, int c, int d, int e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011b040 size=0xe
+// TARGET: sub_1011b040
+void sub_10057a30(int x);
+
+void __stdcall sub_1011b040(int x)
+{
+    sub_10057a30(x);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011b890 size=0xb
 struct IUnk10592db0 {
 	virtual void v0();
