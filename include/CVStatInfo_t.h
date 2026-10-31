@@ -2,6 +2,8 @@
 // Only what decompiled code needs.
 #pragma once
 
+#include "CVDmg_t.h"
+
 struct CVStatLevelEntry_t
 {
 	int m_duration;
