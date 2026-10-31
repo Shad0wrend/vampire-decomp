@@ -248,6 +248,11 @@ void CBaseEntity::vfunc61(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026a90 size=0x5
+// TARGET: sub_10026a90
+char __stdcall sub_10026a90(int) { return 0; }
+// END FUNCTION
+
 // FUNCTION: 0x10026ad0 size=0x5
 bool CBaseEntity::vfunc72(int a0)
 {
