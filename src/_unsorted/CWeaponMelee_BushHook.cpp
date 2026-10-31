@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103e4540 size=0x6
+#include "CWeaponMelee_BushHook.h"
+namespace lifted {
+extern char g_109424fc;
+}
+int CWeaponMelee_BushHook::vfunc80()
+{
+    return (int)&lifted::g_109424fc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e4560 size=0x3
 #include "CWeaponMelee_BushHook.h"
 int CWeaponMelee_BushHook::vfunc81()
