@@ -251,6 +251,12 @@ public:
 	void sub_103cb920(int a);	// stub 0x1000... member, called directly
 	void sub_103cac20();	// the NPC init: SetSchedule-like sub_10279a50(0), resets the move / hint state (+0x628c, +0x66a1..+0x6708), stamps the current time at +0x66ec / +0x66f4 and adds the hull's half diagonal (from its mins / maxs, sub_102d6100 / sub_102d6120) and a constant square root to the totals at +0x66cc / +0x66d0
 	void sub_10279a50(int a);	// CAI_BaseNPC member (stub 0x1000b974), called directly
+	void sub_10366270();	// CNPC_VBaseBoss::vfunc420 (stub 0x100023dd), called directly
+	void sub_10334b10();	// CBaseCombatCharacter::sub_10334b10 (stub 0x1000289c), called directly
+	void sub_10332aa0(int a, int b, int c);	// stub 0x10013cf5
+	void sub_1026a2a0(float f);	// stub 0x100082ba
+	void sub_1028fb70();	// stub 0x1000bd16
+	void sub_1026dc00(int flags);	// stub 0x10012855
 	void sub_103cc320();	// "CNPC_VWerewolf::UpdateConditionEnemyUnreachable": scope trace (entity name); the unreachable flag (sub_103da0a0) picks which of the conditions 0x59 / 0x79 is set (sub_10015839) and which cleared (sub_10269a20), after signalling the object behind the global 0x10924a6c (slot 1); a newly raised 0x59 without a path (sub_103cfc50) sets the byte at +0x66a9; remembers whether 0x59 is set in the byte at +0x66a8
 	char sub_103cfc50();	// stub 0x100112ac
 	void vfunc104();	// slot 104 "CNPC_VWerewolf::Precache": scope trace (entity name), the base Precache, the werewolf and observatory sound folders, the VSound group / table of the "Werewolf" model name, the four footstep sounds, the "item_w_werewolf_attacks" weapon and the two teleport sounds
