@@ -129789,6 +129789,82 @@ bool CAI_Navigator::sub_102edd50(const Vector *pPosition, float flDistance, int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ede30 size=0x245
+#include "CAI_Navigator.h"
+#include "CAI_Pathfinder.h"
+#include "CVProfile.h"
+#include "CBasePlayer.h"
+#include "CUnknown102ee120.h"
+
+__declspec(dllimport) void vtune(bool bEnable);
+
+struct CCycleCountX
+{
+	unsigned __int64 m_Int64;
+	void Sample()
+	{
+		unsigned long *pSample = (unsigned long *)&m_Int64;
+		__asm {
+			mov ecx, pSample
+			rdtsc
+			mov [ecx], eax
+			mov [ecx+4], edx
+		}
+	}
+	void End()
+	{
+		CCycleCountX cnt;
+		cnt.m_Int64 = 0;
+		cnt.Sample();
+		m_Int64 = cnt.m_Int64 - m_Int64;
+	}
+	void operator+=(CCycleCountX &other) { m_Int64 += other.m_Int64; }
+};
+
+inline bool NavNodeExitFull(CVProfNode *node)
+{
+	if (--node->m_nRecursions == 0 && node->m_nCurFrameCalls != 0) {
+		((CCycleCountX *)&node->m_CurFrameTime)->End();
+		*(CCycleCountX *)&node->m_TotalTime += *(CCycleCountX *)&node->m_CurFrameTime;
+		CVProfile *q = g_109f3648;
+		int d = --q->m_nGroupStackDepth;
+		int cur = q->m_GroupIDStack[d + 1];
+		int prev = q->m_GroupIDStack[d];
+		if (prev != cur && q->m_bVTuneGroupsEnabled && cur == q->m_nVTuneGroupID)
+			vtune(false);
+	}
+	return node->m_nRecursions == 0;
+}
+
+bool CAI_Navigator::sub_102ede30(int a, int b)
+{
+	CVProfile *p = g_109f3648;
+	const char *pszName = "CAI_Navigator_PrependLocalAvoidance";
+	if (p->m_enabled || !p->m_bAtRoot) {
+		if (p->m_pCurNode->m_pszName != pszName)
+			p->m_pCurNode = p->m_pCurNode->GetSubNode(pszName, 0, "Unaccounted");
+		p->m_pCurNode->EnterScope();
+		p->m_bAtRoot = false;
+	}
+	int i18 = m_i18;
+	float *pOrigin = ((CBasePlayer *)m_pOuter)->vfunc220();
+	CAI_Waypoint *pWaypoint = ((CAI_Pathfinder *)sub_102ecc00())->sub_10304020((int)pOrigin, (const float *)((CUnknown102ee120 *)this)->sub_102ee5e0(), (int)sub_102ecc40(), 1, -1, 0, a, i18, 0x202400b, b);
+	if (!pWaypoint) {
+		g_109f3648->ExitScopeInlined();
+		return false;
+	}
+	CAI_NavRoute *pRoute = m_p30;
+	bool r = ((CUnknown10319f70 *)&pRoute->m_pWaypoint)->sub_10319f30(pWaypoint);
+	CVProfile *q = g_109f3648;
+	if (!q->m_bAtRoot || q->m_enabled) {
+		if (NavNodeExitFull(q->m_pCurNode))
+			q->m_pCurNode = q->m_pCurNode->m_pParent;
+		q->m_bAtRoot = (q->m_pCurNode == q->m_pRoot);
+	}
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ee120 size=0xb
 void CUnknown102ee120::sub_102ee120(int a, int b, int c)
 {
