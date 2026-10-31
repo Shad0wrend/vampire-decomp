@@ -477,6 +477,17 @@ void CSceneEntity::vfunc242()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10082ad0 size=0x1c
+#include "CSceneEntity.h"
+
+// TARGET: CSceneEntity::vfunc243
+void CSceneEntity::vfunc243()
+{
+	if (m_bPlaying498 && !m_bPlaying499)
+		m_bPlaying499 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10082b00 size=0x56
 #include "CSceneEntity.h"
 #include "globalvars.h"

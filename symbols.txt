@@ -7459,6 +7459,7 @@
 0x1000dffd func   ?sub_10041c60@@YAHH@Z sub_10041c60
 0x1000e007 func   ?sub_10178660@CBasePlayer@@QAEXPAVCBaseEntity@@D@Z CBasePlayer::sub_10178660
 0x1000e00c func   ?sub_103abce0@@YAEXZ sub_103abce0
+0x1000e011 func   ?vfunc243@CSceneEntity@@UAEXXZ CSceneEntity::vfunc243
 0x1000e01b func   _item_m_money_clip item_m_money_clip
 0x1000e020 func   ?sub_10341370@CBaseCombatCharacter@@QAEXPAV1@H@Z CBaseCombatCharacter::sub_10341370
 0x1000e025 func   ?vfunc80@COccultHealRate@@QAEHXZ COccultHealRate::vfunc80
