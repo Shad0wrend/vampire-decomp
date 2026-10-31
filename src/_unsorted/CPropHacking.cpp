@@ -98,6 +98,27 @@ void CPropHacking::sub_1021a5b0(CBaseEntity *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021a6c0 size=0x60
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "CPropHacking.h"
+#include "globalvars.h"
+
+void sub_10014b82();
+
+void CPropHacking::vfunc42(void *pPlayer)
+{
+	sub_1021a3d0((CSave *)pPlayer);
+	sub_10218220(pPlayer);
+	sub_100ac4e0((int)sub_10014b82, 0, 0);
+	m_flNextThink = m_flDelay09e8 + gpGlobals->curtime;
+	sub_1021b140(0);
+	m_n09dc = -1;
+	m_n09e0 = -1;
+	((CBasePlayer *)pPlayer)->sub_1017cef0(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021c560 size=0xf2
 #include "CPropHacking.h"
 #include "CEHandleGet.h"
