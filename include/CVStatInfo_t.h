@@ -39,7 +39,9 @@ public:
 	CVStatLevelEntry_t *m_pLevels;	// 0x0100
 	unsigned int m_flags;	// 0x0104
 	char m_bField0108;	// 0x0108
-	char m_pad0109[0x120 - 0x109];	// 0x4c..0xb0: five 0x14-byte records starting with -1, 0xb0: a CVStatCost_t, 0x10c: a 12 byte list
+	char m_pad0109[0x118 - 0x109];	// 0x4c..0xb0: five 0x14-byte records starting with -1, 0xb0: a CVStatCost_t, 0x10c: a 12 byte list
+	int m_field0118;	// 0x0118: set by PreCache like +0x0c
+	int m_field011c;	// 0x011c: set by PreCache like +0x10
 	int m_field0120;	// 0x0120
 	int m_field0124;	// 0x0124
 	char m_pad0128[0x130 - 0x128];
