@@ -13,7 +13,8 @@ public:
 	CPhysicsProp *vfunc5(unsigned int flags);	// as in CBaseCineCam (transplant)
 	virtual bool vfunc68(void *pOther);	// slot 68 override: true for a pOther with an owner object (+0x9c) when bit 2 of +0x204 is set, or with a player object (+0xa8) when sub_100b39c0 holds, else CBaseAnimating::vfunc68
 	bool sub_1008bfe0(void *pOther);	// CBaseAnimating::vfunc68 (stub 0x10003c1a), called directly
-	char sub_100b39c0();	// stub 0x10012887, asked by vfunc68
+	char sub_100b39c0();
+	unsigned char sub_101912d0();	// CPhysicsProp::vfunc117 body (CBaseEntity::vfunc117 & 0xfd)	// stub 0x10012887, asked by vfunc68
 	bool vfunc223();	// slot 223 override: creates the physics object (CBaseEntity::VPhysicsInitNormal-like), applies the mass / damping at +0x77c / +0x780
 public:
     virtual datamap_t * vfunc82();
