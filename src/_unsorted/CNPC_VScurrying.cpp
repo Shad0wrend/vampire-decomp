@@ -49,6 +49,15 @@ CNPC_VScurrying *CNPC_VScurrying::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103abce0 size=0x6
+extern unsigned char g_1064f5a0;
+// TARGET: sub_103abce0
+unsigned char sub_103abce0()
+{
+    return g_1064f5a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103abd40 size=0x1d
 #include "CNPC_VScurrying.h"
 struct A { int sub_10012300(int); };
