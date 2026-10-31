@@ -120,6 +120,8 @@ public:
 	void sub_102a97a0(unsigned int flags);	// ORs flags into the dword at +0x14b8
 	void sub_102a97d0(unsigned int flags);	// clears flags in the dword at +0x14b8
 	void sub_102c2c50(inputdata_t *data);	// "SetDiscipline" input handler: the input text names a discipline (auspex, celerity, ...) with an optional level 0..5, handed to slot 589
+	void sub_102c2890(inputdata_t *data);	// input handler: the input as text; when it is not empty precaches it as a sound and hands it to sub_102c0520(text, 0, 0)
+	void sub_102c0520(const char *psz, int a, int b);	// stub 0x10014cbd, called directly
 	void sub_102c32d0(inputdata_t *data);	// input handler: with a boolean input (type 5) true activates the "Thaumaturgy_Bloodshield" discipline effect on this NPC (sub_101e3380), else removes it (sub_101e3af0)
 	void sub_102c2a30(inputdata_t *data);	// input handler: stores the input's byte (0 unless its type is 5) at +0x63d8
 	void sub_102c24a0(inputdata_t *data);	// input handler: when the input holds an entity handle (type 12) that resolves, copies that entity's absolute origin and angles onto this one (slots 216 / 218), then sub_100b3b00, slot 614 and ForceTransmit
