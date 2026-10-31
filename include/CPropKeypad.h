@@ -22,6 +22,7 @@ public:
 	char m_bFlag8b9;	// 0x8b9
 
 	const char *sub_1021dc20();	// slot 274: the string at +0x880, or "" when it is null
+	void vfunc104();	// slot 104: precaches the keystroke sound, CBreakableProp::vfunc104, loads the text strings, sets a think function and thinks again in a second
 	char vfunc32(int a);	// slot 32: 0 when the byte at +0x8b8 is set, else CBaseTerminal::vfunc32
 	CPropKeypad *sub_1021d890();	// constructor body: CBaseTerminal base constructor (0x10014f4c), two member constructors (+0x888, +0x8a0), vtables, flags at +0x8b8/+0x8b9; returns this
 	CPropKeypad *vfunc5(unsigned int flags);	// scalar deleting destructor, declared as a plain member: destroys the nine members, then the base; deletes this when bit 0 of flags is set
