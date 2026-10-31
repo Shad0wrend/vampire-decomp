@@ -145566,6 +145566,16 @@ extern "C" CBaseEntity *npc_VLasombra()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10388eb0 size=0xc
+void __fastcall sub_10388ed0(void *pThis);
+
+void * __fastcall sub_10388eb0(void *pThis)
+{
+	sub_10388ed0(pThis);
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10388ed0 size=0x33
 void sub_10007897();
 void sub_10007234();
