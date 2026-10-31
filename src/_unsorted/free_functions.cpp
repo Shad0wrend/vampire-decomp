@@ -89101,6 +89101,28 @@ int CUnknown101f9c70::sub_101f9c70(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f9d60 size=0x63
+#include "CVModInfo_t.h"
+#include "CVTraitEffectGroup_t.h"
+#include "CUnknown101f0e50.h"
+extern CUnknown101f0e50 g_1074df78;
+struct CTraitIdListX {
+    int m_count;
+    int m_ids[1];
+    int sub_101f9d60(int a, int b, int c);
+};
+// TARGET: CTraitIdListX::sub_101f9d60
+int CTraitIdListX::sub_101f9d60(int a, int b, int c)
+{
+    CVModInfo_t info(a, b, c);
+    for (int i = 0; i < m_count; i++)
+        g_1074df78.sub_101f8480(m_ids[i])->sub_101f75a0((CTraitStatBlock *)&info);
+    if (c > info.m_field30)
+        return c;
+    return info.m_field30;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f9ff0 size=0xb5
 #include "ScopeTrace.h"
 #include "CUnknown101f9c70.h"
