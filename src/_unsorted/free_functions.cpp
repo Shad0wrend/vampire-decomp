@@ -144220,6 +144220,16 @@ extern "C" CBaseEntity *npc_VGangrel()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10377140 size=0xc
+void __fastcall sub_10377160(void *pThis);
+
+void * __fastcall sub_10377140(void *pThis)
+{
+	sub_10377160(pThis);
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10377160 size=0x33
 void sub_10007897();
 void sub_100130d9();
