@@ -133206,6 +133206,27 @@ void CUnknown10307bf0::sub_10307bf0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10307c20 size=0x17
+extern int g_1049df28[];
+
+struct CUnk10307c20 {
+    int m_0;
+    int m_4;
+    int m_8;
+    int m_c;
+    int sub_10307c20();
+};
+
+int CUnk10307c20::sub_10307c20()
+{
+    int iVar1 = m_c - 1;
+    int n = g_1049df28[m_0 * 5];
+    if (iVar1 < n)
+        return iVar1;
+    return n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10307d00 size=0x16
 extern int g_109363f8;
 void sub_10307e00();

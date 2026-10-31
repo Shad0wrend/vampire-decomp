@@ -8319,6 +8319,7 @@
 0x1000fbcd func   _move_rope move_rope
 0x1000fbd2 func   ?sub_100f6ec0@CGlobalEntityList@@QAEXXZ CGlobalEntityList::sub_100f6ec0
 0x1000fbd7 func   ?sub_1006d2f0@@YAHXZ sub_1006d2f0
+0x1000fbdc func   ?sub_10307c20@CUnk10307c20@@QAEHXZ CUnk10307c20::sub_10307c20
 0x1000fbe1 func   ?sub_102563f0@CBaseCombatWeapon@@QAE?AUCWeaponRollValue@@PAVCUnknown101d8a70@@H@Z CBaseCombatWeapon::sub_102563f0
 0x1000fbe6 func   ?sub_10211550@CTriggerBombSite@@QAEXUCBombState@@0@Z CTriggerBombSite::sub_10211550
 0x1000fbff func   ?vfunc267@CBaseViewModel@@QAEPAVCBaseEntity@@XZ CBaseViewModel::vfunc267
