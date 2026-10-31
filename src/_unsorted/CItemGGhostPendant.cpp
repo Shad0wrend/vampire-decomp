@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103fde00 size=0x6
+#include "CItemGGhostPendant.h"
+namespace lifted {
+extern char g_10947af0;
+}
+int CItemGGhostPendant::vfunc80()
+{
+    return (int)&lifted::g_10947af0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103fde20 size=0x3
 #include "CItemGGhostPendant.h"
 int CItemGGhostPendant::vfunc81()
