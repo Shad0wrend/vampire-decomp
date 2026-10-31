@@ -89,7 +89,13 @@ public:
 	char m_b1482;	// +0x1482
 	char m_pad1483[0x1574 - 0x1483];
 	float m_f1574;	// +0x1574
-	char m_pad1578[0x6264 - 0x1578];
+	char m_pad1578[0x1b2c - 0x1578];
+	int m_n1b2c;	// +0x1b2c
+	const char *m_pszFile1b30;	// +0x1b30: the source file marker
+	int m_nLine1b34;	// +0x1b34: the source line marker
+	char m_pad1b38[0x5cc0 - 0x1b38];
+	int m_nState5cc0;	// +0x5cc0
+	char m_pad5cc4[0x6264 - 0x5cc4];
 	float m_f6264;	// +0x6264
 	char m_pad6268[0x6290 - 0x6268];
 	Vector m_vecAxis6290;	// +0x6290
