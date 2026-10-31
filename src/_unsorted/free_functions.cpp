@@ -130898,6 +130898,25 @@ int CAI_Network::sub_102f6d10(int wcId)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f7940 size=0x15
+extern char g_109340dd;
+
+struct CUnknown102f7940
+{
+	char m_pad0000[8];
+	unsigned int m_n8;
+
+	void sub_102f7940();
+};
+
+// TARGET: CUnknown102f7940::sub_102f7940
+void CUnknown102f7940::sub_102f7940()
+{
+	m_n8 = (m_n8 & 0xffffffc3) | 0x10000000;
+	g_109340dd = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f7970 size=0x79
 #include "CUnknown102f7970.h"
 
