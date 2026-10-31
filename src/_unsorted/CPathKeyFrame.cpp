@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1013ff10 size=0x6
+#include "CPathKeyFrame.h"
+namespace lifted {
+extern char g_1057a308;
+}
+int CPathKeyFrame::vfunc82()
+{
+    return (int)&lifted::g_1057a308;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013ffa0 size=0x71
 #include "CPathKeyFrame.h"
 #include "CEntityVSlots.h"

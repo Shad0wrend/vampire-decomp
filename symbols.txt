@@ -6743,6 +6743,7 @@
 0x1000d913 func   ?sub_10211870@CUnknown10211870@@QAEHHH@Z CUnknown10211870::sub_10211870
 0x1000d918 func   ?sub_101f5050@CUnknown101f5050@@QAEXXZ CUnknown101f5050::sub_101f5050
 0x1000d931 func   ?sub_1020f3f0@CFuncElevator@@QAEXPAUinputdata_t@@@Z CFuncElevator::sub_1020f3f0
+0x1000d936 func   ?vfunc82@CPathKeyFrame@@QAEHXZ CPathKeyFrame::vfunc82
 0x1000d93b func   ?sub_10404fe0@@YAHXZ sub_10404fe0
 0x1000d940 func   ?sub_10332fc0@CUnknown10332fc0@@QAEHPAX@Z CUnknown10332fc0::sub_10332fc0
 0x1000d945 func   ?sub_10109770@@YAXPAMMM@Z sub_10109770
