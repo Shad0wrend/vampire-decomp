@@ -33701,6 +33701,22 @@ int *sub_100cb670()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cc020 size=0xc
+#include "COutputEvent.h"
+
+struct CUnit100cc020
+{
+	void *sub_100cc020();
+};
+
+// TARGET: CUnit100cc020::sub_100cc020
+void *CUnit100cc020::sub_100cc020()
+{
+	((COutputEvent *)this)->sub_100cd2a0();
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cc090 size=0x3d
 void *sub_1000ac8b(int);
 
