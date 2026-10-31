@@ -98976,6 +98976,22 @@ void __fastcall sub_1020f2e0(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020f300 size=0x17
+#include "CFuncElevator.h"
+
+struct CUnk1020f300 {
+    char pad[0x630];
+    int m_630;
+    void sub_1020f300(int b);
+};
+
+void CUnk1020f300::sub_1020f300(int b)
+{
+    if (m_630 != -1)
+        ((CFuncElevator *)this)->sub_1020f700(m_630);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020f330 size=0x87
 #include "CPropSwitch.h"
 #include "inputdata_t.h"
