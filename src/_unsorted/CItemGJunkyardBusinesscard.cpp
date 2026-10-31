@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10404ee0 size=0x6
+#include "CItemGJunkyardBusinesscard.h"
+namespace lifted {
+extern char g_10948448;
+}
+int CItemGJunkyardBusinesscard::vfunc80()
+{
+    return (int)&lifted::g_10948448;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10404f00 size=0x3
 #include "CItemGJunkyardBusinesscard.h"
 int CItemGJunkyardBusinesscard::vfunc81()
