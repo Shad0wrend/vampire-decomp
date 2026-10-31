@@ -119,6 +119,14 @@ bool CItemContainer::vfunc409()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10208ab0 size=0x5
+#include "CItemContainer.h"
+bool CItemContainer::vfunc72(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10208ad0 size=0x1e
 #include "CItemContainer.h"
 
