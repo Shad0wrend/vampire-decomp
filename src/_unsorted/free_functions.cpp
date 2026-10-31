@@ -57715,6 +57715,27 @@ char CPlayerTargetView::sub_10167370()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10167d70 size=0x63
+#include "CBasePlayer.h"
+
+inline void SetH(unsigned int &h, CBaseEntity *p)
+{
+	if (p)
+		h = *p->vfunc1();
+	else
+		h = 0xffffffff;
+}
+
+void CBasePlayer::sub_10167d70(CBaseEntity *pEnt)
+{
+	if (pEnt->vfunc32((int)this)) {
+		SetH(m_hUseEnt1040, pEnt);
+		SetH(*(unsigned int *)((char *)pEnt + 0x8c), (CBaseEntity *)this);
+		pEnt->vfunc39((CBaseEntity *)this);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10167fd0 size=0x16a
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
