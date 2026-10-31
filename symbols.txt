@@ -6846,6 +6846,7 @@
 0x1000ea11 func   ?sub_1009f200@CBaseEntity@@QAEPBDXZ CBaseEntity::sub_1009f200
 0x1000ea16 func   ?sub_10264000@CUtlVector56@@QAEHHPBX@Z CUtlVector56::sub_10264000
 0x1000ea20 func   ?sub_1028b0f0@@YGHH@Z sub_1028b0f0
+0x1000ea25 func   ?sub_10082db0@CSceneEntity@@QAEXXZ CSceneEntity::sub_10082db0
 0x1000ea34 func   ?vfunc32@CSave@@UAEXPBHH@Z CSave::vfunc32
 0x1000ea4d func   ??9?$CHandle@VCBaseEntity@@@@QBE_NPAVCBaseEntity@@@Z ??9?$CHandle@VCBaseEntity@@@@QBE_NPAVCBaseEntity@@@Z
 0x1000ea61 func   ?vfunc31@CGameRules@@UAE_NHH@Z CGameRules::vfunc31
