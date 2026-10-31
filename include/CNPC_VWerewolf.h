@@ -156,7 +156,8 @@ public:
 	char pad6700[0x6708 - 0x6700];
 	int m_n6708;	// 0x6708
 	int m_n670c;	// 0x670c
-	char pad6710[0x6788 - 0x6710];
+	char pad6710[0x6770 - 0x6710];
+	char m_OnTeleportOut[0x18];	// 0x6770: a COutputEvent (fired with the target as activator)
 	char m_OnTeleportIn[0x18];	// 0x6788: a COutputEvent (fired with the target as activator)
 
 	void sub_103d4d60();	// "CNPC_VWerewolf::TeleportIn": scope trace (entity name), PositionAtHint of the teleport hint, slot 67, clears effect bit 5, RemoveSolidFlags(4) with its own scope trace, stamps curtime at +0x66ec, fires the output at +0x6788 with the target (slot 167); unless the dev object at 0x1093f73c says otherwise plays "dev/ww_tele_in.wav" and a debug message to the target's player
