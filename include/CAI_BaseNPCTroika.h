@@ -348,6 +348,7 @@ public:
 	void sub_102a9830(unsigned int flags);	// provisional, like sub_102a97d0 (transplant)
 	void sub_102a98e0(unsigned int flags);	// provisional, like sub_102a97d0 (transplant)
 	int sub_102a9910();	// the squad's count at +0x5da4 (its pending value at +0x5bb0 is not positive), else 0
+	int sub_102c1400();	// ends the talk state: sub_102c0360 when not talking (-1), else cleans up the talk handle / flags and returns the state (+0xfec, or 0xf1 / 1 from the disposition sequence)
 	void sub_102ae810(void *pObj);	// stores the dword at +0x1c of pObj (when not null) at +0x65c8
 public:
     virtual void vfunc465(int);
