@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103f6f50 size=0x3
+#include "CResearchBook_HG_COMP.h"
+int CResearchBook_HG_COMP::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10409c40 size=0x1e
 #include "CResearchBook_HG_COMP.h"
 
