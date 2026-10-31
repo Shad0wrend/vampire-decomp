@@ -61743,6 +61743,25 @@ void CBasePlayer::sub_10175400(char bFade)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101764a0 size=0x1a
+struct CUnk101764a0
+{
+	void sub_100b3580(int flags);
+	void sub_100b3640(int flags);
+	void sub_101764a0(char b);
+};
+
+// TARGET: sub_101764a0
+void CUnk101764a0::sub_101764a0(char b)
+{
+	if (b == 0) {
+		sub_100b3580(0x20);
+	} else {
+		sub_100b3640(0x20);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101771b0 size=0x23
 // TARGET: sub_101771b0
 void __fastcall sub_101771b0(void *pSelf, int unused, int value)
