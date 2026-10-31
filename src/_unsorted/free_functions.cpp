@@ -60452,6 +60452,20 @@ int sub_10179430()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017a270 size=0xe
+// TARGET: sub_1017a270
+struct StatMaskView
+{
+    StatMaskView *sub_1017a2b0(int flags);
+};
+
+StatMaskView *__fastcall sub_1017a270(StatMaskView *p)
+{
+    p->sub_1017a2b0(0);
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017a290 size=0x1
 void sub_1017a290()
 {

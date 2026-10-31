@@ -1814,6 +1814,7 @@
 0x10004813 func   ?sub_10070550@@YAPAVCBaseCineCam@@PBDH@Z sub_10070550
 0x10004818 func   ?vfunc19@CSave@@UAEXPAPBDH@Z CSave::vfunc19
 0x10004822 func   ?sub_10319e70@@YIPAHPAH@Z sub_10319e70
+0x10004827 func   ?sub_1017a270@@YIPAUStatMaskView@@PAU1@@Z sub_1017a270
 0x1000482c func   _item_w_tzimisce2_claw item_w_tzimisce2_claw
 0x10004831 func   ?sub_102ee640@CUnknown102ee640@@QAEHXZ CUnknown102ee640::sub_102ee640
 0x10004836 func   ?sub_1023bb80@@YAXXZ sub_1023bb80
