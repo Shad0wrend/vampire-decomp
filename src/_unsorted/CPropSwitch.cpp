@@ -12,6 +12,25 @@ datamap_t * CPropSwitch::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020d680 size=0x4c
+#include "CPropSwitch.h"
+void __fastcall sub_100cd2d0(void *p);
+void __fastcall sub_1008b3c0(void *p);
+void sub_100aa7b0(void *p);
+// TARGET: CPropSwitch::vfunc5
+void *CPropSwitch::vfunc5(unsigned int flags)
+{
+	sub_100cd2d0((char *)this + 0x78c);
+	sub_100cd2d0((char *)this + 0x774);
+	sub_100cd2d0((char *)this + 0x75c);
+	sub_100cd2d0((char *)this + 0x744);
+	sub_1008b3c0(this);
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020d6f0 size=0x13
 #include "CPropSwitch.h"
 #include "CBaseEntitySlots.h"
