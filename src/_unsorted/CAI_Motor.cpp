@@ -149,6 +149,30 @@ void CAI_Motor::vfunc6(Vector *pDirection)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e11f0 size=0x5f
+#include "CAI_Motor.h"
+#include "CAI_BaseNPC.h"
+struct CAI_MotorOwner310 {
+	CAI_NPC_V10(0) CAI_NPC_V10(1) CAI_NPC_V10(2) CAI_NPC_V10(3) CAI_NPC_V10(4) CAI_NPC_V10(5) CAI_NPC_V10(6) CAI_NPC_V10(7) CAI_NPC_V10(8) CAI_NPC_V10(9)
+	CAI_NPC_V10(10) CAI_NPC_V10(11) CAI_NPC_V10(12) CAI_NPC_V10(13) CAI_NPC_V10(14) CAI_NPC_V10(15) CAI_NPC_V10(16) CAI_NPC_V10(17) CAI_NPC_V10(18) CAI_NPC_V10(19)
+	CAI_NPC_V10(20) CAI_NPC_V10(21) CAI_NPC_V10(22) CAI_NPC_V10(23) CAI_NPC_V10(24) CAI_NPC_V10(25) CAI_NPC_V10(26) CAI_NPC_V10(27) CAI_NPC_V10(28) CAI_NPC_V10(29)
+	CAI_NPC_V10(30)
+	virtual void vfunc310(int a);
+};
+int CAI_Motor::vfunc7()
+{
+	sub_102e1e20(-1);
+	Vector vecDir;
+	sub_102e26b0(&vecDir);
+	if (vecDir.z > 0.0f)
+		((CAI_MotorOwner310 *)m_pOuter)->vfunc310(0x2d);
+	else
+		((CAI_MotorOwner310 *)m_pOuter)->vfunc310(0x2e);
+	m_30 = 0;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e1300 size=0xba
 #include "CAI_Motor.h"
 #include "Vector.h"
