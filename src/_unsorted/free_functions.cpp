@@ -120819,6 +120819,52 @@ void CAI_BaseNPCTroika::sub_102c0bb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c0ca0 size=0x23d
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "CDialog.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+#include "globalvars.h"
+#include "CEHandleGet.h"
+
+CBasePlayer *sub_101cd9e0(int a);
+void sub_101cd940(CBaseEntity *pEnt);
+void sub_101c0b10();
+
+// TARGET: CAI_BaseNPCTroika::sub_102c0ca0
+void CAI_BaseNPCTroika::sub_102c0ca0()
+{
+	ScopeTrace t("CAI_BaseNPCTroika::FinishTalking", this ? (((CBaseEntity *)this)->m_name26c ? ((CBaseEntity *)this)->m_name26c : g_106b8540) : g_105387dc);
+	char bTalking = m_b64c0;
+	if (EHandle_Get(m_h6554)) {
+		CBaseEntity *pEnt = (CBaseEntity *)EHandle_Get(m_h6554);
+		if (*((char *)pEnt + 0x498)) {
+			((CEntityVSlots *)EHandle_Get(m_h6554))->slot245();
+			((CBaseEntity *)EHandle_Get(m_h6554))->sub_100ac4e0((int)sub_101c0b10, 0, 0);
+			((CBaseEntity *)EHandle_Get(m_h6554))->m_flNextThink = gpGlobals->curtime + 0.1;
+		} else {
+			sub_101cd940((CBaseEntity *)EHandle_Get(m_h6554));
+		}
+	}
+	m_h6554 = 0xffffffff;
+	m_b64ec = 0;
+	m_b64c0 = 0;
+	m_f64cc = gpGlobals->curtime;
+	((CBaseEntity *)this)->sub_100a8ef0();
+	if (bTalking) {
+		CBasePlayer *p = sub_101cd9e0(1);
+		if (p)
+			((CDialog *)p->sub_10178120())->sub_100e4780();
+	} else {
+		CBasePlayer *p = sub_101cd9e0(1);
+		if (p)
+			((CDialog *)p->sub_10178120())->sub_100e5c70();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c0f70 size=0x183
 #include "CAI_BaseNPCTroika.h"
 #include "CBaseAnimating.h"
