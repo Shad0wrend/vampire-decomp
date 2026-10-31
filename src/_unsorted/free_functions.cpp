@@ -60914,6 +60914,23 @@ void StatMaskView::sub_1017a2b0(int type)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017b6c0 size=0x14
+struct CStatMaskUnit1017b6c0
+{
+	int m_n0;
+
+	void sub_1017a2b0(int a);
+	void sub_1017b6c0(int a, int b);
+};
+
+// TARGET: CStatMaskUnit1017b6c0::sub_1017b6c0
+void CStatMaskUnit1017b6c0::sub_1017b6c0(int a, int b)
+{
+	sub_1017a2b0(0);
+	m_n0 = b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017bf10 size=0x10d
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
