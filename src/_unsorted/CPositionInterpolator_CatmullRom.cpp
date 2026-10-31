@@ -8,6 +8,20 @@ void CPositionInterpolator_CatmullRom::vfunc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012fb30 size=0x21
+#include "CPositionInterpolator_CatmullRom.h"
+namespace lifted {
+extern char g_105752b4;
+}
+int CPositionInterpolator_CatmullRom::vfunc1(int a0, int a1, int a2)
+{
+    *(int *)((char *)a0) = (int)&lifted::g_105752b4;
+    *(int *)((char *)a1) = -1;
+    *(int *)((char *)a2) = 2;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012fb70 size=0x2d
 #include "CPositionInterpolator_CatmullRom.h"
 
