@@ -47296,6 +47296,22 @@ void CBreakable::sub_1010e620()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010efc0 size=0xf
+// TARGET: sub_1010efc0
+struct CUnknown1010efc0
+{
+    char pad[0x454];
+    int m_i454;
+
+    bool sub_1010efc0();
+};
+
+bool CUnknown1010efc0::sub_1010efc0()
+{
+    return m_i454 != 7;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f100 size=0x1a
 namespace lifted {
 extern int g_1056e868;
