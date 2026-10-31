@@ -8151,6 +8151,21 @@ int *sub_10050170()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10050720 size=0x59
+#include "SendProp.h"
+struct CUnknown10247240 { void sub_10247240(int a, int b, int c); };
+SendProp sub_10246af0(const char *name, int a, int b, int c, int d, int e, void *f);
+extern CUnknown10247240 g_106bdcc0;
+extern int g_106bdd34;
+extern int g_1053dfac;
+int sub_10050720()
+{
+	static SendProp s_dummy = sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0);
+	g_106bdcc0.sub_10247240((int)&g_106bdd34, 0, g_1053dfac);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100507c0 size=0x6
 namespace lifted {
 extern int g_106bdd3c;
