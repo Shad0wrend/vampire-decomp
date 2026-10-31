@@ -113533,6 +113533,21 @@ void CAI_BaseNPCUnit::sub_1026a0f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026a2a0 size=0x10
+struct CUnknown1026a2a0
+{
+	char pad_0000[0x5cdc];
+	char *m_pSub5cdc;
+	void sub_1026a2a0(int a);
+};
+
+// TARGET: CUnknown1026a2a0::sub_1026a2a0
+void CUnknown1026a2a0::sub_1026a2a0(int a)
+{
+	*(int *)(m_pSub5cdc + 0x10) = a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026a930 size=0x1a7
 #include "CBaseEntity.h"
 #include "CBaseGrenade.h"
