@@ -5,8 +5,8 @@
 
 struct CVFeatKV	// a KeyValues-like object (slot 10 = GetInt, slot 13 = GetString)
 {
-	virtual void v0(); virtual void v1(); virtual CVFeatKV *FindKey(const char *pszName);	/* slot 2: the sub key of that name, 0 when none */ virtual CVFeatKV *GetNextKey(); virtual void v4();
-	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual const char *GetName(); virtual void v1(); virtual CVFeatKV *FindKey(const char *pszName);	/* slot 2: the sub key of that name, 0 when none */ virtual CVFeatKV *GetNextKey(); virtual CVFeatKV *GetFirstSubKey();	/* slot 4 */
+	virtual CVFeatKV *GetNextSubKey();	/* slot 5 */ virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
 	virtual int GetInt(const char *pszKey, int nDefault);
 	virtual float GetFloat(const char *pszKey, float flDefault);
 	virtual char GetBool(const char *pszKey, int nDefault);
