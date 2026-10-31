@@ -4415,6 +4415,7 @@
 0x10009d1d func   ?sub_103dc280@CUtlVector12@@QAEXH@Z CUtlVector12::sub_103dc280
 0x10009d27 func   ?vfunc21@CAI_StandoffBehavior@@UAEXXZ CAI_StandoffBehavior::vfunc21
 0x10009d2c func   ?sub_101d57c0@CStatDefault3List@@QAEDPBDH@Z CStatDefault3List::sub_101d57c0
+0x10009d31 func   ?sub_1017f7b0@CHunterChar@@QAEXXZ CHunterChar::sub_1017f7b0
 0x10009d3b func   ?sub_101927c0@@YAPBDM@Z sub_101927c0
 0x10009d40 func   ?vfunc432@CNPC_VSheriffMan@@QAEXH@Z CNPC_VSheriffMan::vfunc432
 0x10009d45 func   ?sub_10375390@@YADXZ sub_10375390

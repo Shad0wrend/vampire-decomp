@@ -59814,6 +59814,25 @@ float CUnknown1017f790::sub_1017f790()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017f7b0 size=0x60
+#include "CHunterChar.h"
+#include "ConVar.h"
+#include "globalvars.h"
+
+extern ConVar *g_107258dc;
+extern void (*g_109f3630)(const char *pMsg, ...);
+
+// TARGET: CHunterChar::sub_1017f7b0
+void CHunterChar::sub_1017f7b0()
+{
+	if (m_nHolds1d14 == 0)
+		sub_1017fa40();
+	m_nHolds1d14++;
+	if (!g_107258dc->vfunc1() && g_107258dc->m_nValue)
+		g_109f3630("CSActs:    %6.1f - OnHunterPursuitStart - %d in pursuit\n", gpGlobals->curtime, m_nHolds1d14);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017f830 size=0x58
 #include "CHunterChar.h"
 #include "ConVar.h"
