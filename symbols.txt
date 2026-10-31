@@ -2872,6 +2872,7 @@
 0x10006b18 func   ?vfunc0@CBaseEntityList@@UAEXHH@Z CBaseEntityList::vfunc0
 0x10006b1d func   ?sub_100e09a0@Dialog@@QAEXPBD@Z Dialog::sub_100e09a0
 0x10006b27 func   ?vfunc5@CEnvFireSensor@@QAEPAV1@I@Z CEnvFireSensor::vfunc5
+0x10006b2c func   ?sub_100d7760@@YAXXZ sub_100d7760
 0x10006b31 func   ?sub_10062890@@YAHXZ sub_10062890
 0x10006b3b func   ?sub_103fb8d0@@YAHXZ sub_103fb8d0
 0x10006b4a func   ?sub_1014eb40@CUnknown1014eb40@@QAEPAXXZ CUnknown1014eb40::sub_1014eb40

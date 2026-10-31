@@ -36308,6 +36308,66 @@ void sub_100d7400()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d7760 size=0x1fe
+#include "CUnknown101eac50.h"
+#include "CUnknown101eb1d0.h"
+#include "CUnknown101ec6f0.h"
+#include "CUnknown101eccd0.h"
+
+struct CUnknown101eda90 { void sub_101eda90(); };
+struct CUnknown101ed510 { void sub_101ed510(); };
+struct CDumpObj { char pad[0xa8]; int m_na8; };
+CDumpObj *sub_10008d8c();
+void sub_10203dd0(const char *msg);
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+extern const char *g_1073a2d4;
+extern int g_1073a2dc;
+extern CUnknown101eac50 **g_1073a2e0;
+extern const char *g_1073a328;
+extern int g_1073a330;
+extern CUnknown101eb1d0 **g_1073a334;
+extern const char *g_1073a37c;
+extern int g_1073a384;
+extern CUnknown101eda90 **g_1073a388;
+extern const char *g_1073a360;
+extern int g_1073a368;
+extern CUnknown101ec6f0 **g_1073a36c;
+extern const char *g_1073a30c;
+extern int g_1073a314;
+extern CUnknown101eccd0 **g_1073a318;
+extern const char *g_1073a344;
+extern int g_1073a34c;
+extern CUnknown101ed510 **g_1073a350;
+extern char g_106b8540[];
+
+void sub_100d7760()
+{
+	char buf[128];
+	int i;
+	CDumpObj *p = sub_10008d8c();
+	if (p && p->m_na8) {
+		sprintf(buf, "\n   %s:\n\n", g_1073a2d4 ? g_1073a2d4 : g_106b8540);
+		sub_10203dd0(buf);
+		for (i = 0; i < g_1073a2dc; i++) g_1073a2e0[i]->sub_101eac50();
+		sprintf(buf, "\n   %s:\n\n", g_1073a328 ? g_1073a328 : g_106b8540);
+		sub_10203dd0(buf);
+		for (i = 0; i < g_1073a330; i++) g_1073a334[i]->sub_101eb1d0();
+		sprintf(buf, "\n   %s:\n\n", g_1073a37c ? g_1073a37c : g_106b8540);
+		sub_10203dd0(buf);
+		for (i = 0; i < g_1073a384; i++) g_1073a388[i]->sub_101eda90();
+		sprintf(buf, "\n   %s:\n\n", g_1073a360 ? g_1073a360 : g_106b8540);
+		sub_10203dd0(buf);
+		for (i = 0; i < g_1073a368; i++) g_1073a36c[i]->sub_101ec6f0();
+		sprintf(buf, "\n   %s:\n\n", g_1073a30c ? g_1073a30c : g_106b8540);
+		sub_10203dd0(buf);
+		for (i = 0; i < g_1073a314; i++) g_1073a318[i]->sub_101eccd0();
+		sprintf(buf, "\n   %s:\n\n", g_1073a344 ? g_1073a344 : g_106b8540);
+		sub_10203dd0(buf);
+		for (i = 0; i < g_1073a34c; i++) g_1073a350[i]->sub_101ed510();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d7b30 size=0x42
 struct SView { char pad[0xa8]; int m_a8; };
 struct SObj { void sub_1021ebc0(const char *s); };
