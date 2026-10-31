@@ -12,6 +12,15 @@ int CNPC_VTzimisceHeadClaw::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c0c30 size=0x6
+extern unsigned char g_1065cb24;
+// TARGET: sub_103c0c30
+unsigned char sub_103c0c30()
+{
+    return g_1065cb24;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c0c90 size=0x1d
 #include "CNPC_VTzimisceHeadClaw.h"
 struct A { int sub_10012300(int); };
