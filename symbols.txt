@@ -10029,6 +10029,7 @@
 0x10014394 func   ?sub_1035b060@@YAHXZ sub_1035b060
 0x10014399 func   ?sub_101fbd30@CVStatSubCost_t@@QAEPBDXZ CVStatSubCost_t::sub_101fbd30
 0x1001439e func   ?sub_1008d450@CBaseAnimating@@QAEXPAUinputdata_t@@@Z CBaseAnimating::sub_1008d450
+0x100143a8 func   ?vfunc7@CAI_Navigator@@UAEXXZ CAI_Navigator::vfunc7
 0x100143ad func   _func_button func_button
 0x100143c6 func   ?sub_1029ea40@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_1029ea40
 0x100143d5 func   ?vfunc438@CNPC_VAsianVampire@@QAEHXZ CNPC_VAsianVampire::vfunc438

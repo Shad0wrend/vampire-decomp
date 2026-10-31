@@ -40,6 +40,17 @@ void CAI_Navigator::vfunc6()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102eea70 size=0xe
+// TARGET: CAI_Navigator::vfunc7
+#include "CAI_Navigator.h"
+
+void CAI_Navigator::vfunc7()
+{
+    sub_102eeb70();
+    m_b1c = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102eeb50 size=0xd
 #include "CAI_Navigator.h"
 
