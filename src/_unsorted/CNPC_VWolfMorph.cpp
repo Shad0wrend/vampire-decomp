@@ -34,6 +34,15 @@ int CNPC_VWolfMorph::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dc8f0 size=0x6
+extern unsigned char g_10663bd4;
+// TARGET: sub_103dc8f0
+unsigned char sub_103dc8f0()
+{
+    return g_10663bd4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dc950 size=0x1d
 #include "CNPC_VWolfMorph.h"
 struct A { int sub_10012300(int); };

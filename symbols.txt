@@ -4880,6 +4880,7 @@
 0x1000a7b8 func   ?sub_10054360@@YAXPAUS10054360Particle@@@Z sub_10054360
 0x1000a7bd func   ?sub_1030b7e0@CUnknown1030bc20@@QAEPAXXZ CUnknown1030bc20::sub_1030b7e0
 0x1000a7c7 func   ?sub_10095cb0@CBaseAnimating@@QAEMHM@Z CBaseAnimating::sub_10095cb0
+0x1000a7cc func   ?sub_103dc8f0@@YAEXZ sub_103dc8f0
 0x1000a7d1 func   ?sub_10341b60@CBaseCombatCharacter@@QAEXD@Z CBaseCombatCharacter::sub_10341b60
 0x1000a7d6 func   ?sub_103b7040@@YADXZ sub_103b7040
 0x1000a7db func   ?sub_102d0080@@YIXPAHHH@Z sub_102d0080
