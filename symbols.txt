@@ -3099,6 +3099,7 @@
 0x100068e8 func   ?sub_10290200@CAI_BaseNPCTroika@@QAE_NH@Z CAI_BaseNPCTroika::sub_10290200
 0x100068f2 func   ?sub_10035fd0@CPhysicsPushedEntities@@QAEXPAH@Z CPhysicsPushedEntities::sub_10035fd0
 0x100068f7 func   ?sub_10097480@CBaseAnimating@@QAEHPAHHABVVector@@M@Z CBaseAnimating::sub_10097480
+0x100068fc func   ??0CGravControllerPoint@@QAE@XZ CGravControllerPoint::CGravControllerPoint
 0x10006901 func   ?vfunc5@CWeaponRanged_Smg_Uzi@@QAEPAV1@I@Z CWeaponRanged_Smg_Uzi::vfunc5
 0x10006906 func   ?sub_101f25a0@@YIHPAD@Z sub_101f25a0
 0x10006910 func   ?sub_100eb030@CUnknown100eb030@@QAEPAXH@Z CUnknown100eb030::sub_100eb030
