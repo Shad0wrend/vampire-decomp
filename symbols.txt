@@ -7914,6 +7914,7 @@
 0x1000ef0c func   ??0?$CUtlMemory@VCBaseHandle@@@@QAE@HH@Z CUtlMemory<CBaseHandle>::CUtlMemory
 0x1000ef0c func   ?sub_102c6b30@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_102c6b30
 0x1000ef11 func   ?sub_10118cc0@@YIXPAUCHandleOwner@@HPAPAUCTargetEnt@@@Z sub_10118cc0
+0x1000ef16 func   ?vfunc103@CTriggerElectricBugaloo@@QAEXXZ CTriggerElectricBugaloo::vfunc103
 0x1000ef1b func   ?vfunc13@CServerGameClients@@UAEXPAXPAM@Z CServerGameClients::vfunc13
 0x1000ef25 func   ?vfunc309@CBaseCombatWeapon@@UAE_NXZ CBaseCombatWeapon::vfunc309
 0x1000ef2a func   ?vfunc298@CWeaponMelee_FireAxe@@QAEXHH@Z CWeaponMelee_FireAxe::vfunc298

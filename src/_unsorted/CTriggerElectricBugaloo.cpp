@@ -31,6 +31,20 @@ void *CTriggerElectricBugaloo::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10231350 size=0x10
+#include "CTriggerElectricBugaloo.h"
+
+void __fastcall sub_1000350d(void *pThis);
+void __fastcall sub_101c5080(void *pThis);
+
+// TARGET: CTriggerElectricBugaloo::vfunc103
+void CTriggerElectricBugaloo::vfunc103()
+{
+	sub_1000350d(this);
+	sub_101c5080(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10231370 size=0x52
 #include "CCameraTrack.h"
 #include "CTriggerElectricBugaloo.h"
