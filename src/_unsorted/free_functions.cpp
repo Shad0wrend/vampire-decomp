@@ -169993,6 +169993,14 @@ int CUnknown1042ef10::sub_1042ef10(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042ef40 size=0x19
+void __fastcall sub_1042ef40(char *pThis)
+{
+	*(int *)(pThis + 0x17c) = 0;
+	*(unsigned int *)(pThis + 0x19c) |= 0x40;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042f080 size=0x8
 namespace lifted {
 int sub_10010dde();
