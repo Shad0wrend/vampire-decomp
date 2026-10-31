@@ -8,6 +8,14 @@ struct CUnknown101d7ec0_Entry	// 12 bytes: the entries of the table at +4
 	int m_n0;
 	int m_n4;
 	int m_nType;	// 0x08: 0 compares the character's stat index, 1 its byte flag, 2 always matches
+
+	void *sub_101d7bc0();	// stub 0x10010ef6: sets the key and the type to -1 and the text to 0
+};
+
+struct CUnknown101d7ec0_DefaultEntry : CUnknown101d7ec0_Entry	// the shared "no such entry" record
+{
+	CUnknown101d7ec0_DefaultEntry() { sub_101d7bc0(); }
+	~CUnknown101d7ec0_DefaultEntry() {}
 };
 
 struct CUnknown101d7ec0_Check	// 12 bytes: one condition tested by sub_101d7fb0
