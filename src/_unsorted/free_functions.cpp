@@ -169864,6 +169864,17 @@ const char *sub_104287d0(int pStudioHdr, int iSequence)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10428850 size=0x1b
+// TARGET: sub_10428850
+int sub_10428850(int v)
+{
+    if (v == 0x3ec || v == 0x3f0) {
+        return 1;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10428880 size=0xbe
 #include <string.h>
 

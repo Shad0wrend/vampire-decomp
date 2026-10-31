@@ -9614,6 +9614,7 @@
 0x10011c07 func   ?sub_101eac50@CUnknown101eac50@@QAEXXZ CUnknown101eac50::sub_101eac50
 0x10011c0c func   ?vfunc600@CNPC_VHuman@@UAEDH@Z CNPC_VHuman::vfunc600
 0x10011c11 func   ?sub_10246240@@YIDPAXHPAH@Z sub_10246240
+0x10011c16 func   ?sub_10428850@@YAHH@Z sub_10428850
 0x10011c1b func   ?vfunc347@CAI_BaseNPCTroika@@QAE_NHPADPAM111@Z CAI_BaseNPCTroika::vfunc347
 0x10011c20 func   ?sub_10115180@CUnknown10115180@@QAEHXZ CUnknown10115180::sub_10115180
 0x10011c25 func   ?sub_1010c5d0@CUnknown1010c5d0@@QAE_NXZ CUnknown1010c5d0::sub_1010c5d0
