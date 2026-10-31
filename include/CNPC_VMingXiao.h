@@ -72,6 +72,8 @@ public:
 	void vfunc563(CBaseEntity *pEnt, Vector *pPos, int *pOut1, int *pOut2);	// slot 563 (plain member): with the navigator state (sub_1027d990) 2, moves *pPos by the offset between pEnt's slot 193 and slot 217 positions; otherwise stores the float at +0x6320 in *pOut2, lets sub_102c3b50 adjust *pPos, copies *pOut2 to *pOut1 and runs sub_102c36d0 on this entity's origin (slot 220) with the dword at +0x654 to get the new *pPos
 	void sub_102c3b50(CBaseEntity *pEnt, Vector vecPos, Vector *pPos, int *pOut);	// stub 0x100041d3, called directly by vfunc563
 	void sub_102c36d0(Vector vecOrigin, CBaseEntity *pEnt, int nValue, Vector *pPos, Vector *pOut);	// stub 0x1000c0ae, called directly by vfunc563
+	void sub_10399610();	// "CNPC_VMingXiao::CoordinateTroops" (profiled as CNPC_VMingXiao_CoordinateTroops): per call tells the tentacle of the current slot index (+0x6740) in the old array (+0x66a8) sub_103998d0 and the one in the new array (+0x668c) sub_103999f0, then steps the index (0..5)
+	void sub_103999f0(CNPC_VMingXiaoTentacle *pTentacle);	// stub 0x1001415f, called with the tentacle of the new-slot handle
 	void sub_103998d0(CNPC_VMingXiaoTentacle *pTentacle);	// a tentacle (not in the activities 0x163 / 0x165, state 2) within 128 units whose direction from this NPC has a positive-enough dot (>= 0.25) with the axis at +0x6290 (x/y only) is told to go to this NPC's slot 217 position (sub_1039ef90)
 	Vector vfunc574(const Vector &vecPos, int a, int b);	// slot 574 (plain member, Vector by value): the unit direction from vecPos to the point sub_10278650 finds for (vecPos, a, b), raised by 20.0f
 	void sub_10278650(Vector *pOut, const Vector *pPos, int a, int b);	// stub 0x1001592e, called directly by vfunc574 (this stays in ecx)
