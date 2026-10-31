@@ -39,6 +39,14 @@ int CWeaponMelee_Claws_Protean5::vfunc363()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e5500 size=0x6
+#include "CWeaponMelee_Claws_Protean5.h"
+int CWeaponMelee_Claws_Protean5::vfunc373()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecc30 size=0x1e
 #include "CWeaponMelee_Claws_Protean5.h"
 
