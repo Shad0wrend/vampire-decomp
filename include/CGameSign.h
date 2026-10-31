@@ -21,8 +21,11 @@ public:
 	char m_pad03e0[0x450 - 0x3e0];
 	char *m_pszFile450;	// 0x450: copy of the sign's file name
 	const char *m_psz454;	// 0x454: the data file to load
-	char m_pad458[0x464 - 0x458];
+	float m_f458;	// 0x458: 0.5f
+	float m_f45c;	// 0x45c: 0.5f
+	char m_pad460[0x464 - 0x460];
 	Vector m_vecToucherPos;	// 0x464
+	char m_b470;	// 0x470
 public:
     virtual bool vfunc32(int);
     virtual datamap_t * vfunc82();
