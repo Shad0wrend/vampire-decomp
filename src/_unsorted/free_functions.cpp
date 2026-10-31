@@ -452,6 +452,23 @@ void CPhysMotor::sub_10028aa0(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10028b20 size=0x30
+#include "CPhysMotor.h"
+#include "globalvars.h"
+struct SMotorSub
+{
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3();
+	virtual void a4(); virtual void a5(); virtual void a6(); virtual void vfunc7();
+};
+// TARGET: CPhysMotor::sub_10028b20
+void CPhysMotor::sub_10028b20()
+{
+	sub_100ac610(gpGlobals->curtime, 0);
+	m_flLastTime468 = gpGlobals->curtime;
+	(*(SMotorSub **)((char *)this + 0x470))->vfunc7();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10028b60 size=0x8
 namespace lifted {
 int sub_10011f59();
