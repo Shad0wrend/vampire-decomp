@@ -2,10 +2,14 @@
 // The base IServerGameDLL is not modelled; only the slot numbers are kept.
 #pragma once
 
+typedef void *(__cdecl *CreateInterfaceFn)(const char *pName, int *pReturnCode);
+
 class CServerGameDLL
 {
 public:
-	virtual void vfunc0(); virtual void vfunc1(); virtual bool vfunc2(); virtual void vfunc3();
+	virtual void vfunc0();
+	virtual bool vfunc1(CreateInterfaceFn engineFactory, CreateInterfaceFn physicsFactory, CreateInterfaceFn fileSystemFactory, void *pGlobals);	// DLLInit: fetches the engine interfaces (g_1070b22c .. g_1070b254) from the factories, publishes the globals, registers five save/restore handlers with the block set at 0x10592db0
+ virtual bool vfunc2(); virtual void vfunc3();
 	virtual void vfunc4(int a, int b, int c);	// the level shutdown/frame step with three (unused) stack arguments: warns when the delete queue is not empty, runs slot 113 on every entity whose flag bit 1 (+0x268) is clear, clears the game's pending lists and, unless the cheat convar allows it, resets the convar at 0x106bd868 to 0
 	virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual int vfunc9();
 	virtual void vfunc10(); virtual void vfunc11(); virtual int vfunc12(int);
