@@ -35,6 +35,7 @@ struct CUnknown101d7520Rule	// one of the rules of an entry (the array at +0xc o
 	CUnknown101d7520Sub m_sub;	// 0x0010 (0x1c bytes)
 
 	void sub_101d6590();	// dumps the rule (stub 0x10007603)
+	bool sub_101d6520(void *pArg);	// whether the rule's dependencies hold for pArg (m_sub.sub_10206140)
 };
 
 struct CUnknown101d7520Entry
