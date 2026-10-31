@@ -7881,6 +7881,7 @@
 0x1000ff60 func   ?sub_1003b8a0@@YAXXZ sub_1003b8a0
 0x1000ff65 func   ?sub_10148560@@YAPAHXZ sub_10148560
 0x1000ff6f func   ?vfunc5@CBaseParticleEntity@@QAEPAV1@I@Z CBaseParticleEntity::vfunc5
+0x1000ff74 func   ?vfunc81@CWeaponMelee_Torch@@QAEHXZ CWeaponMelee_Torch::vfunc81
 0x1000ff7e func   _item_p_research_mg_security item_p_research_mg_security
 0x1000ff83 func   ?vfunc619@CNPCMaker_Fleshpile@@UAEXH@Z CNPCMaker_Fleshpile::vfunc619
 0x1000ff97 func   ?sub_103346c0@CBaseCombatCharacter@@QAEHH@Z CBaseCombatCharacter::sub_103346c0
