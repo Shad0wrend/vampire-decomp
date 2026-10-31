@@ -72,6 +72,15 @@ CNPC_VMingXiao *CNPC_VMingXiao::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10391330 size=0x6
+extern unsigned char g_106433a0;
+// TARGET: sub_10391330
+unsigned char sub_10391330()
+{
+    return g_106433a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10391390 size=0x1d
 #include "CNPC_VMingXiao.h"
 struct A { int sub_10012300(int); };
