@@ -81135,6 +81135,25 @@ void CUnknown101dbe30::sub_101dbed0(CBaseEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dc0b0 size=0x47
+#include "CUnknown101dbe30.h"
+#include "CBaseEntity.h"
+#include "engineserver.h"
+#include "engineiface.h"
+extern char g_106b8540[];
+void CUnknown101dbe30::sub_101dc0b0(CBaseEntity *pEntity)
+{
+	if (sub_101dbe10()) {
+		const char *pszSound = (const char *)m_field0000;
+		if (!pszSound)
+			pszSound = g_106b8540;
+		int iEdict = pEntity->m_pEdict2e0;
+		int index = engine->vfunc35(iEdict);
+		enginesound->vfunc7(index, m_field0004, pszSound);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dc150 size=0x4a
 #include "CUnknown101dbe30.h"
 
