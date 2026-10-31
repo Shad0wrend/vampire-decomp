@@ -51574,6 +51574,29 @@ void sub_10136b40(CBaseEntity **ppEntity, char *pEntData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136c50 size=0x62
+#include <string.h>
+extern char g_1070c740[];
+extern const char *g_10579478;
+const char *sub_10136ce0(const char *, char *, const char *);
+
+const char *sub_10136c50(const char *pData)
+{
+	if (pData) {
+		int depth = 1;
+		do {
+			pData = sub_10136ce0(pData, g_1070c740, g_10579478);
+			if (!_strcmpi(g_1070c740, "{")) {
+				depth++;
+			} else if (!_strcmpi(g_1070c740, "}") && --depth == 0) {
+				return pData;
+			}
+		} while (pData);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136ce0 size=0x116
 extern "C" void *__cdecl memset(void *, int, unsigned int);
 extern const char *g_1070c840;
