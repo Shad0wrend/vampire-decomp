@@ -130128,6 +130128,24 @@ bool __fastcall sub_102ee680(char *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ee6a0 size=0x17
+struct CUnk102ee6a0 {
+    char pad[0x30];
+    void *m_30;
+    int sub_102ee6a0();
+};
+
+struct S102ee6a0 { char pad[0x24]; int m_field; };
+
+int CUnk102ee6a0::sub_102ee6a0()
+{
+    S102ee6a0 *p = (S102ee6a0 *)m_30;
+    if (p && p->m_field)
+        return 1;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ee9c0 size=0x4c
 extern int g_106c994c;
 
