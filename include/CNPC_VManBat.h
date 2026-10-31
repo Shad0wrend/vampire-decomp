@@ -25,8 +25,8 @@ public:
 	char m_b6694;	// handed to the ragdoll when it is let go
 	char m_pad6695[3];
 	int m_n6698;
-	unsigned int m_h669c;	// 0x669c: entity handle removed by sub_1038f020
-	unsigned int m_h66a0;	// 0x66a0: entity handle removed by sub_1038f020
+	EHANDLE m_h669c;	// 0x669c: entity handle removed by sub_1038f020
+	EHANDLE m_h66a0;	// 0x66a0: entity handle removed by sub_1038f020
 	unsigned int m_h66a4;	// entity handle released by vfunc144
 	unsigned int m_h66a8;	// 0x66a8: entity handle removed by sub_1038f020
 	char m_pad66ac[0x66b0 - 0x66ac];
