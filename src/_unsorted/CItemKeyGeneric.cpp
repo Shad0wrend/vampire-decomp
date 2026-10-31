@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x104086f0 size=0x3
+#include "CItemKeyGeneric.h"
+int CItemKeyGeneric::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104088d0 size=0x32
 #include <string.h>
 void __fastcall sub_10014c3b(char *self);
