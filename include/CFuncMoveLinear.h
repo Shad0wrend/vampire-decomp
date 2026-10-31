@@ -51,6 +51,7 @@ public:
 	int sub_100ac4e0(int func, int thinkTime, const char *szContext);	// CBaseEntity::ThinkSet (stub 0x10007fe5), called directly
 	const char *sub_100ab4f0();	// CBaseEntity::sub_100ab4f0 (stub 0x1000b5cd): the entity's debug name
 	int sub_100a02b0();	// CBaseEntity::vfunc124 (stub 0x100018cf), called directly: the base overlay lines, returns the next free text line
+	unsigned char sub_10116550();	// CFuncMoveLinear::vfunc117 body (CBaseEntity::vfunc117 & 0xfd)
 	void sub_1000cb8a();	// destructor body (the CBaseToggle/CBaseEntity part, stub 0x1000cb8a), called directly
 
 	char m_pad0004[0x164 - 4];
