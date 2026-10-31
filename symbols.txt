@@ -8277,6 +8277,7 @@
 0x10010677 func   ?vfunc276@CRagdollProp@@UAEDXZ CRagdollProp::vfunc276
 0x10010681 func   ?sub_1019bf80@@YAXPAUCUnknown1019bf80List@@@Z sub_1019bf80
 0x10010686 func   ?sub_102d0b20@CUnknown102d0b20@@QAEXXZ CUnknown102d0b20::sub_102d0b20
+0x1001068b func   ?vfunc82@CAmbientGeneric@@QAEHXZ CAmbientGeneric::vfunc82
 0x10010690 func   ?vfunc622@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc622
 0x1001069a func   ?sub_101a1520@CSave@@QAEXPBGPAX1PAUtypedescription_t@@@Z CSave::sub_101a1520
 0x1001069f func   ?sub_1030f5f0@@YGHPBD@Z sub_1030f5f0

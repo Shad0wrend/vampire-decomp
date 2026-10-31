@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101ac1a0 size=0x6
+namespace lifted {
+extern char g_105969a4;
+}
+int CAmbientGeneric::vfunc82()
+{
+    return (int)&lifted::g_105969a4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ac2a0 size=0x3
 bool CAmbientGeneric::vfunc136()
 {
