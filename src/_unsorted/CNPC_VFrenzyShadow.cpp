@@ -31,6 +31,15 @@ int CNPC_VFrenzyShadow::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103753e0 size=0x6
+extern unsigned char g_10637b44;
+// TARGET: sub_103753e0
+unsigned char sub_103753e0()
+{
+    return g_10637b44;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10375440 size=0x1d
 #include "CNPC_VFrenzyShadow.h"
 struct A { int sub_10012300(int); };
