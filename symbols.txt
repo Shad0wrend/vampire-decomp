@@ -7445,6 +7445,7 @@
 0x1000f010 func   ?sub_100eef50@CBaseDoor@@QAEXPAVCBaseEntity@@0HM@Z CBaseDoor::sub_100eef50
 0x1000f015 func   ?vfunc103@CPropSwitch@@UAEXXZ CPropSwitch::vfunc103
 0x1000f01a func   ?vfunc20@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHH@Z CTempEntsSystem::vfunc20
+0x1000f01f func   ?vfunc81@CItemGIdolDragon@@QAEHXZ CItemGIdolDragon::vfunc81
 0x1000f024 func   ?sub_1024a080@NodeHolder@@QAEHG@Z NodeHolder::sub_1024a080
 0x1000f029 func   ?sub_102a9960@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_102a9960
 0x1000f038 func   ?sub_1010c200@@YGHH@Z sub_1010c200
