@@ -72,6 +72,28 @@ float CWeaponGravityGun::vfunc278()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014dcc0 size=0x61
+#include "CWeaponGravityGun.h"
+// TARGET: CWeaponGravityGun::vfunc326
+void CWeaponGravityGun::vfunc326()
+{
+	float *pf = (float *)((char *)this + 0x730);
+	if (*pf > gpGlobals->curtime)
+		return;
+	float t = gpGlobals->curtime + 0.01;
+	int h = m_n910;
+	*pf = t;
+	if (h == 0) {
+		vfunc307(0xbc);
+		sub_1014a0b0();
+		sub_1014c0f0();
+		return;
+	}
+	sub_1014abe0();
+	sub_1014c2d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014e470 size=0x69
 #include "CWeaponGravityGun.h"
 
