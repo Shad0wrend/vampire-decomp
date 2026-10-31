@@ -161767,6 +161767,28 @@ void CFloatOwner_1042b710::sub_1042b710(float v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042b760 size=0x50
+#include "CBaseEntity.h"
+#include "CBaseViewModel.h"
+extern void *vt_1051671c[];
+// TARGET: CBaseViewModel::sub_1042b760
+CBaseViewModel *CBaseViewModel::sub_1042b760()
+{
+	sub_1008b230();
+	*(int *)((char *)this + 0x734) = 0xffffffff;
+	*((unsigned char *)this + 0x1a3) = 0xff;
+	*((unsigned char *)this + 0x1a2) = 0xff;
+	*((unsigned char *)this + 0x1a1) = 0xff;
+	*((unsigned char *)this + 0x1a0) = 0xff;
+	*(void ***)this = vt_1051671c;
+	*(int *)((char *)this + 0x744) = 0;
+	*(int *)((char *)this + 0x748) = 0;
+	*(int *)((char *)this + 0x730) = 0;
+	*(int *)((char *)this + 0x740) = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042b860 size=0xb
 namespace lifted {
 extern char g_1051671c;
