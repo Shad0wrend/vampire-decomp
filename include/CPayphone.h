@@ -517,7 +517,7 @@ public:
 	virtual void vfunc609();
 	virtual void vfunc610();
 	virtual void vfunc611_slot();
-	virtual void vfunc612();
+	virtual int vfunc612();	// slot 612: 0xa80 while the byte at +0x654c is set, else 0xe80
 	virtual bool vfunc613();
 	virtual void vfunc614();
 	virtual bool vfunc615();
