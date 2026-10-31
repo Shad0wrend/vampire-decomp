@@ -7074,6 +7074,7 @@
 0x1000e7f0 func   ?sub_101e1850@@YGII@Z sub_101e1850
 0x1000e7f5 func   ?sub_10205dc0@CUnknown10205dc0@@QAEPBDXZ CUnknown10205dc0::sub_10205dc0
 0x1000e7fa func   _env_terrainmorph env_terrainmorph
+0x1000e7ff func   ?vfunc81@CWeaponRanged_Rifle_RemingtonBach@@QAEHXZ CWeaponRanged_Rifle_RemingtonBach::vfunc81
 0x1000e80e func   ?vfunc228@CPropHaunted@@QAEXHPAX@Z CPropHaunted::vfunc228
 0x1000e81d func   _item_w_rem_m_700_bach item_w_rem_m_700_bach
 0x1000e827 func   ?sub_10267350@@YAXXZ sub_10267350

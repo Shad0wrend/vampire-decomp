@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10236320 size=0x3
+#include "CWeaponRanged_Rifle_RemingtonBach.h"
+int CWeaponRanged_Rifle_RemingtonBach::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a470 size=0x1e
 #include "CWeaponRanged_Rifle_RemingtonBach.h"
 
