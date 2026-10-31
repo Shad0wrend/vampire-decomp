@@ -121528,6 +121528,71 @@ int CAI_BaseNPCTroika::sub_102c1230()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c1400 size=0x1fa
+#include "CEHandleGet.h"
+#include "CDialog.h"
+#include "CBasePlayer.h"
+#include "CNPCSlots614.h"
+#include "globalvars.h"
+struct SceneView498 { char pad[0x498]; char b; };
+struct EntA8View { char pad[0xa8]; CBasePlayer *p; };
+void sub_101cd940(void *pEnt);
+__declspec(dllimport) void __cdecl DevMsg(const char *, ...);
+
+namespace block_102c1400 {
+struct CTroikaUnit : CAI_BaseNPCTroika { char sub_102c0aa0(); };
+char CTroikaUnit::sub_102c0aa0()
+{
+	if (EHandle_Get(m_h6554) && ((SceneView498 *)EHandle_Get(m_h6554))->b)
+		return 1;
+	return m_f64cc > gpGlobals->curtime;
+}
+}
+using namespace block_102c1400;
+
+int CAI_BaseNPCTroika::sub_102c1400()
+{
+	if (!sub_102c1170()) {
+		sub_102c0360();
+		return -1;
+	}
+	if (EHandle_Get(m_h6554) && !((SceneView498 *)EHandle_Get(m_h6554))->b) {
+		sub_101cd940(EHandle_Get(m_h6554));
+		m_h6554 = -1;
+	}
+	if (m_b64c0) {
+		if (!((CTroikaUnit *)this)->sub_102c0aa0())
+			sub_1000e4d5();
+	}
+	if (m_b64ec && !m_b64e0 && !m_b64c0) {
+		sub_102c0520(&m_b64ec, 0, 0);
+		m_b64ec = 0;
+	}
+	int state = m_nState0fec;
+	if (m_b065c) {
+		int act = ((CNPCSlots614 *)this)->slot611();
+		if (act > -1) {
+			sub_10260a50(act);
+			m_n06f8 = 0;
+			state = 0xf1;
+		} else {
+			DevMsg("%s could not look up disposition sequence!!!\n", sub_1000b5cd());
+			state = 1;
+		}
+	}
+	EntA8View *pDlg = (EntA8View *)EHandle_Get(m_hfe8);
+	if (pDlg && pDlg->p) {
+		bool bFlag;
+		if (EHandle_Get(m_h6554) || m_b64c0 || m_b64ec)
+			bFlag = false;
+		else
+			bFlag = true;
+		((CDialog *)pDlg->p->sub_10178120())->sub_100e13d0(bFlag);
+	}
+	return state;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c2430 size=0x43
 #include "CAI_BaseNPCTroika.h"
 #include "globalvars.h"
