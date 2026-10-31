@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10401110 size=0x6
+#include "CItemGPishaFetish.h"
+namespace lifted {
+extern char g_10947204;
+}
+int CItemGPishaFetish::vfunc80()
+{
+    return (int)&lifted::g_10947204;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10401130 size=0x3
 #include "CItemGPishaFetish.h"
 int CItemGPishaFetish::vfunc81()
