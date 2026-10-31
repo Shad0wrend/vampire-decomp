@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x104086d0 size=0x6
+#include "CItemKeyGeneric.h"
+namespace lifted {
+extern char g_10947f40;
+}
+int CItemKeyGeneric::vfunc80()
+{
+    return (int)&lifted::g_10947f40;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104086f0 size=0x3
 #include "CItemKeyGeneric.h"
 int CItemKeyGeneric::vfunc81()
