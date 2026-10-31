@@ -34,6 +34,7 @@ public:
 	void sub_103c6df0(int index, const char *name);
 	float sub_103c6a20();	// the health percent record minus the current health percent (sub_103c6830)
 	void sub_103c6eb0();	// ClearBodyEmitterNames
+	void sub_103c6e80(const char *name);	// sets the four body emitter names (sub_103c6df0) to name
 	int sub_103c6a90(int *pBalance, int limit, int a, int b);	// "CNPC_VVampireBoss::SelectRandomBalancedSchedule": scope trace, random coin flip against the running balance; moves the balance by one and returns a or b
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	void vfunc431();	// "CNPC_VVampireBoss::NPCThink": scope trace around the base think, then schedules the next think
