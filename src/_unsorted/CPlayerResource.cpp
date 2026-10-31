@@ -37,6 +37,14 @@ void CPlayerResource::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018a1f0 size=0x5
+#include "CPlayerResource.h"
+bool CPlayerResource::vfunc86(int a0, int a1, int a2, int a3, int a4)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018a210 size=0x22
 // TARGET: sub_1018a210
 void __fastcall sub_1018a210(void *pSelf)
