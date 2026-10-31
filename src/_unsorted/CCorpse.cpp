@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10355b70 size=0x6
+#include "CCorpse.h"
+namespace lifted {
+extern char g_10938a9c;
+}
+int CCorpse::vfunc80()
+{
+    return (int)&lifted::g_10938a9c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10355b90 size=0x3
 #include "CCorpse.h"
 int CCorpse::vfunc81()
