@@ -37,6 +37,17 @@ bool CPhysicsCannister::vfunc72(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014fbb0 size=0x6
+#include "CPhysicsCannister.h"
+namespace lifted {
+extern char g_1057c8b8;
+}
+int CPhysicsCannister::vfunc82()
+{
+    return (int)&lifted::g_1057c8b8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10150380 size=0x120
 #include "CPhysicsCannister.h"
 #include "CBaseCombatCharacter.h"
