@@ -97,7 +97,9 @@ public:
 	int m_nLine1b34;	// +0x1b34: the source line marker
 	char m_pad1b38[0x5cc0 - 0x1b38];
 	int m_nState5cc0;	// +0x5cc0
-	char m_pad5cc4[0x6264 - 0x5cc4];
+	char m_pad5cc4[0x6078 - 0x5cc4];
+	char m_b6078; // +0x6078: set by slot 599
+	char m_pad6079[0x6264 - 0x6079];
 	float m_f6264;	// +0x6264
 	char m_pad6268[0x6290 - 0x6268];
 	Vector m_vecAxis6290;	// +0x6290
