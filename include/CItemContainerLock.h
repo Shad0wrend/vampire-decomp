@@ -15,7 +15,9 @@ public:
 	unsigned int m_hUser8c;	// 0x8c: EHANDLE of the entity that may use the lock
 	char pad90[0x780 - 0x90];
 	int m_unk780;
-	char pad784[0x80c - 0x784];
+	char pad784[0x7dc - 0x784];
+	COutputEvent m_OnIntrusion;	// 0x7dc
+	char pad7f4[0x80c - 0x7f4];
 	unsigned int m_hContainer;	// 0x80c: EHANDLE to the container this lock is attached to
 	CItemGKeyring *m_pKeyring;	// 0x810: the keyring item the lock was made for (a static default object when null)
 	char m_bGiveKeyring;	// 0x814
