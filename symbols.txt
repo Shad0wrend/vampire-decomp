@@ -7558,6 +7558,7 @@
 0x1000e85e func   ?sub_1039a6e0@CUnknown1039a6e0@@QAEXH@Z CUnknown1039a6e0::sub_1039a6e0
 0x1000e863 func   ?sub_10310cf0@CUnknown10310c10@@QAEPAXVVector@@@Z CUnknown10310c10::sub_10310cf0
 0x1000e868 func   ?sub_101f7b20@CUnknown101f7b20@@QAEPAHXZ CUnknown101f7b20::sub_101f7b20
+0x1000e86d func   ?vfunc449@CBasePlayer@@UAEXHH@Z CBasePlayer::vfunc449
 0x1000e872 func   ?sub_10077430@CUnknown10077430@@QAEHXZ CUnknown10077430::sub_10077430
 0x1000e877 func   ?vfunc86@CHudTimer@@QAE_NHHHHH@Z CHudTimer::vfunc86
 0x1000e87c func   ?vfunc7@CCollisionProperty@@UAEXXZ CCollisionProperty::vfunc7

@@ -659,6 +659,89 @@ void CBasePlayer::vfunc403()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10164240 size=0x21c
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+#include "CEHandleGet.h"
+
+struct CEntSlot360View
+{
+	CBP_V100(xa0) CBP_V100(xa1) CBP_V100(xa2) CBP_V10(xb0) CBP_V10(xb1) CBP_V10(xb2) CBP_V10(xb3) CBP_V10(xb4) CBP_V10(xb5)
+	virtual int vfunc360();
+};
+
+static inline CGlobalEntityList_Ent *GrappleTarget(CBasePlayer *p)
+{
+	CGlobalEntityList_Ent *pEnt = EHandle_Get(p->m_h1538);
+	if (pEnt && p->m_n153C != -1)
+		return pEnt;
+	return 0;
+}
+
+void CBasePlayer::vfunc449(int a, int b)
+{
+	if (vfunc412())
+	{
+		if (m_b1DF4 && sub_10161380() && m_f6f8 >= 0.65f)
+		{
+			CEntSlot360View *pEnt = (CEntSlot360View *)EHandle_Get(m_hEnt0EA4);
+			if (pEnt && (pEnt->vfunc360() & 0x6000))
+			{
+				m_b1DF4 = 0;
+				vfunc456();
+			}
+		}
+		sub_101641d0(a);
+	}
+	else if (!GrappleTarget(this))
+	{
+		vfunc417(a, b);
+	}
+	else if (!(EHandle_Get(m_h1538) && m_n153C == 1))
+	{
+		char r;
+		if (EHandle_Get(m_h1538))
+		{
+			switch (m_n1540)
+			{
+			case 0:
+			case 1:
+				r = vslot419(a);
+				break;
+			case 2:
+				r = vslot420(a);
+				break;
+			case 3:
+				r = vfunc421(a);
+				break;
+			case 5:
+				r = vfunc418(a);
+				break;
+			case 6:
+				r = vslot422(a);
+				break;
+			case 8:
+				r = vslot423(a);
+				break;
+			default:
+				r = m_b65c;
+				break;
+			}
+		}
+		else
+			r = m_b65c;
+		if (r)
+		{
+			sub_10329560();
+			sub_100b3580(0x40000000);
+			vfunc449(a, 0);
+		}
+	}
+	sub_10146e20(m_nFF0, a);
+	sub_1017e900(m_nFEC, a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101647a0 size=0x9b
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
