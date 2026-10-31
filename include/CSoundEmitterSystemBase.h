@@ -2,6 +2,7 @@
 #pragma once
 #include "CUnknown1024b2d0.h"
 #include "utlrbtree.h"
+#include "CSoundParameters.h"
 
 class UtlMem2;
 
