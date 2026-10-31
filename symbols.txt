@@ -9196,6 +9196,7 @@
 0x100115bd func   ?sub_103b6bc0@@YAHXZ sub_103b6bc0
 0x100115c2 func   ?vfunc546@CNPC_VGargoyle@@QAEHH@Z CNPC_VGargoyle::vfunc546
 0x100115c7 func   ?sub_1021d730@@YAPAHXZ sub_1021d730
+0x100115d1 func   ?sub_103cc5c0@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103cc5c0
 0x100115d6 func   _item_k_skyline_haven_key item_k_skyline_haven_key
 0x100115db func   ?sub_103bf560@CUnknown103bf560@@QAEHXZ CUnknown103bf560::sub_103bf560
 0x100115e0 func   ?sub_100adf10@CBaseEntity@@QAEXPBM0@Z CBaseEntity::sub_100adf10

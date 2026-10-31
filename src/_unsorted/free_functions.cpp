@@ -152855,6 +152855,62 @@ void CNPC_VWerewolf::sub_103cc450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103cc5c0 size=0x238
+#include "CNPC_VWerewolf.h"
+#include "ScopeTrace.h"
+
+struct CWerewolfSignal
+{
+	virtual void v0();
+	virtual void v1();
+};
+extern CWerewolfSignal *g_10924a6c;
+
+static inline bool IsCurrentSchedule(CNPC_VWerewolf *p, int type)
+{
+	return p->m_pSchedule5c38 && p->m_pSchedule5c38 == (CNPC_VWerewolfSchedule *)p->sub_102cc1f0(type);
+}
+
+// TARGET: CNPC_VWerewolf::sub_103cc5c0
+void CNPC_VWerewolf::sub_103cc5c0()
+{
+	ScopeTrace trace("CNPC_VWerewolf::UpdateConditionCanSpecialMove", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (IsCurrentSchedule(this, 0x15f) || IsCurrentSchedule(this, 0x15b) || IsCurrentSchedule(this, 0x15a) || IsCurrentSchedule(this, 0x160))
+		return;
+	if ((m_nEffectFlags & 0x40) == 0x40)
+		return;
+	if (m_pHint66bc && m_pHint66bc->m_nType == 0x3aa5) {
+		if (!sub_103d1e50())
+			sub_103d4690();
+	}
+	if (m_pHint66bc) {
+		if (sub_103d2070(m_pHint66bc)) {
+			g_10924a6c->v1();
+			sub_10269a20(0x78);
+			return;
+		}
+		CNPC_VWerewolfVec3 vHint;
+		sub_103d68d0(&vHint, m_pHint66bc);
+		CNPC_VWerewolfVec3 vTarget = sub_103d9c90();
+		if ((char)sub_103d0db0(vHint, vTarget)) {
+			g_10924a6c->v1();
+			sub_10269a20(0x78);
+			return;
+		}
+		sub_103d4690();
+	}
+	if (sub_10269aa0(0x59)) {
+		if (m_pHint66bc)
+			return;
+		if (sub_103cf5f0())
+			sub_103d2a10();
+		else
+			sub_103d14f0();
+	} else
+		sub_103d4690();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103cc890 size=0xda
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
