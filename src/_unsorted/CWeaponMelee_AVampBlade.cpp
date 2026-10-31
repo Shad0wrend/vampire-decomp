@@ -39,6 +39,14 @@ int CWeaponMelee_AVampBlade::vfunc363()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e9aa0 size=0x6
+#include "CWeaponMelee_AVampBlade.h"
+int CWeaponMelee_AVampBlade::vfunc373()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecf60 size=0x1e
 #include "CWeaponMelee_AVampBlade.h"
 
