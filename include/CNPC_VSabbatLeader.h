@@ -55,6 +55,10 @@ public:
 	int m_nPlayerHealth;	// +0x66cc: the player's stat 0xf, recorded by RecordPlayerHealth
 	char pad66d0[0x66d5 - 0x66d0];
 	char m_b66d5;	// +0x66d5
+	char pad66d6[0x66e0 - 0x66d6];
+	int m_n66e0;	// +0x66e0: the victim-hit counter
+	char pad66e4;
+	char m_b66e5;	// +0x66e5
 
 	void sub_103a7760(int arg);
 	void sub_1000b8a2(int arg);
