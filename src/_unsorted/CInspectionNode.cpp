@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100fbf60 size=0x6
+#include "CInspectionNode.h"
+namespace lifted {
+extern char g_10566e3c;
+}
+int CInspectionNode::vfunc82()
+{
+    return (int)&lifted::g_10566e3c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fc020 size=0x3e
 #include "vampire.h"
 #include "CInspectionNode.h"
