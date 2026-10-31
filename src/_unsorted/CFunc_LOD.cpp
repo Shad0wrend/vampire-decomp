@@ -39,6 +39,18 @@ CFunc_LOD::CFunc_LOD() : CConstraintAnchorBase(0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10114a50 size=0x8
+#include "CFunc_LOD.h"
+// TARGET: CFunc_LOD::sub_10114a50
+unsigned char CFunc_LOD::sub_10114a50()
+{
+    unsigned char b;
+    b = ((CBaseEntity *)this)->CBaseEntity::vfunc117();
+    b &= 0xfd;
+    return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10114ac0 size=0xb4
 #include "CFunc_LOD.h"
 #include "CBaseEntity.h"
