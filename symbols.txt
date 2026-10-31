@@ -2336,6 +2336,7 @@
 0x10005871 func   ?vfunc145@CBaseGrenade@@UAEHXZ CBaseGrenade::vfunc145
 0x10005876 func   ?sub_102e8250@@YIXPAM@Z sub_102e8250
 0x1000587b func   ?vfunc14@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHH@Z CTempEntsSystem::vfunc14
+0x10005880 func   ?vfunc123@CBaseEntity@@UAEXXZ CBaseEntity::vfunc123
 0x10005885 func   ?sub_10099ca0@@YAXPAUAnimEnt@@HPAI@Z sub_10099ca0
 0x1000588f func   ?vfunc273@CRagdollProp@@UAEHXZ CRagdollProp::vfunc273
 0x10005894 func   ?vfunc31@CMultiplayRules@@UAE_NHH@Z CMultiplayRules::vfunc31
