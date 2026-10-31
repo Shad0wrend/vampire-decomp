@@ -20,6 +20,17 @@ int CWeaponRanged_Pistol_Anaconda::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102346b0 size=0x6
+#include "CWeaponRanged_Pistol_Anaconda.h"
+namespace lifted {
+extern char g_105b6cb0;
+}
+int CWeaponRanged_Pistol_Anaconda::vfunc362()
+{
+    return (int)&lifted::g_105b6cb0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a320 size=0x1e
 #include "CWeaponRanged_Pistol_Anaconda.h"
 
