@@ -10136,6 +10136,7 @@
 0x10013a0c func   ?sub_101a1400@SRestore@@QAEPAU1@E@Z SRestore::sub_101a1400
 0x10013a11 func   ?vfunc82@CPhysThruster@@UAEHXZ CPhysThruster::vfunc82
 0x10013a16 func   ?sub_10062490@@YAXAAVCRecipientFilter@@MPAVCBaseEntity@@HH@Z sub_10062490
+0x10013a1b func   ?vfunc363@CWeaponMelee_SeveredArm@@QAEHXZ CWeaponMelee_SeveredArm::vfunc363
 0x10013a20 func   ?sub_10118b40@CGameUI@@QAEXPAVCBaseEntity@@@Z CGameUI::sub_10118b40
 0x10013a25 func   ?vfunc82@CTriggerElectricBugaloo@@QAEHXZ CTriggerElectricBugaloo::vfunc82
 0x10013a2a func   ?sub_100bb6b0@@YAPAVCBeam@@PBDH@Z sub_100bb6b0

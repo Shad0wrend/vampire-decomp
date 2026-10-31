@@ -31,6 +31,14 @@ int CWeaponMelee_SeveredArm::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e7c00 size=0x6
+#include "CWeaponMelee_SeveredArm.h"
+int CWeaponMelee_SeveredArm::vfunc363()
+{
+    return 0x14d;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ece10 size=0x1e
 #include "CWeaponMelee_SeveredArm.h"
 
