@@ -118725,6 +118725,25 @@ bool CUnknown102d01e0::sub_102d01e0(const float *pPoint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d0270 size=0x62
+#include "CUnknown102d0270.h"
+bool CUnknown102d0270::sub_102d0270(const float *pPoint)
+{
+	for (int i = 0; i < m_nSpheres; ++i) {
+		const CUnknown102d01e0_Sphere *s = &m_pSpheres[i];
+		float dx = s->x - pPoint[0];
+		float dy = s->y - pPoint[1];
+		float dz = s->z - pPoint[2];
+		float flSum = dx * dx;
+		flSum += dz * dz;
+		flSum += dy * dy;
+		if (flSum < s->radius * s->radius)
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d08e0 size=0x16
 #include "CPhysBox.h"
 
