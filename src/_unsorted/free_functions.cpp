@@ -146952,6 +146952,16 @@ extern "C" CBaseEntity *npc_VMoleman()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039f6d0 size=0xc
+void __fastcall sub_1039f6f0(void *p);
+
+void *__fastcall sub_1039f6d0(void *p)
+{
+    sub_1039f6f0(p);
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039f6f0 size=0x33
 void sub_100053cb();
 void sub_10003f30();
