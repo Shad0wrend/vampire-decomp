@@ -20483,6 +20483,27 @@ void sub_10089860()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100899b0 size=0x60
+#include "CBasePlayer.h"
+#include "CEHandleGet.h"
+CBasePlayer *sub_101193b0();
+char *sub_10172710(CBasePlayer *p);
+struct CUnknown10924980 { void sub_100ed030(void *p); };
+extern CUnknown10924980 g_10924980;
+void sub_100899b0()
+{
+	char *pEnt = (char *)EHandle_Get(sub_101193b0()->m_hDialogPartnerFE8);
+	if (!pEnt) {
+		pEnt = sub_10172710(sub_101193b0());
+		if (!pEnt)
+			return;
+	}
+	void *p = *(void **)(pEnt + 0x98);
+	if (p)
+		g_10924980.sub_100ed030(p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10089ac0 size=0xcb
 #include "IVEngineServer.h"
 extern "C" int __cdecl atoi(const char *);
