@@ -5156,6 +5156,7 @@
 0x1000aa9c func   ?sub_10206400@CUnknown10206400@@QAEPAXH@Z CUnknown10206400::sub_10206400
 0x1000aaa6 func   ?vfunc0@CAI_NPCPatrolPathSaveRestoreOps@@UAEXPAUSaveRestoreFieldInfo_t@@PAVCSave@@@Z CAI_NPCPatrolPathSaveRestoreOps::vfunc0
 0x1000aaab func   ?sub_1020cbf0@CSecCamera@@QAEXPBD@Z CSecCamera::sub_1020cbf0
+0x1000aab0 func   ?vfunc82@CFuncParticle@@QAEHXZ CFuncParticle::vfunc82
 0x1000aaba func   ?sub_10252120@CBaseCombatWeapon@@QAEPADHH@Z CBaseCombatWeapon::sub_10252120
 0x1000aabf func   ?sub_101ec6c0@CUnknown101ec6c0@@QAEXH@Z CUnknown101ec6c0::sub_101ec6c0
 0x1000aac4 func   ?sub_1029fbe0@@YIXPAUThreatNpcView@@HHPAUThreatRecView@@@Z sub_1029fbe0

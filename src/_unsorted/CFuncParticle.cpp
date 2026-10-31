@@ -20,6 +20,17 @@ int CFuncParticle::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fc9d0 size=0x6
+#include "CFuncParticle.h"
+namespace lifted {
+extern char g_10566eec;
+}
+int CFuncParticle::vfunc82()
+{
+    return (int)&lifted::g_10566eec;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fca60 size=0xb6
 #include "CFuncParticle.h"
 #include "CEnvParticle.h"
