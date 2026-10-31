@@ -56872,6 +56872,19 @@ void sub_10158570(int a, IFieldSink *sink, IRestoreSrc *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10158ab0 size=0x30
+struct CPhysObjView1 { virtual void v0(); virtual bool v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); };
+void sub_10158ab0(CPhysObjView1 *pA, CPhysObjView1 *pB)
+{
+	if (!pA->v1())
+		pA->v25();
+	if (!pB->v1())
+		pB->v25();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10158af0 size=0x39
 #include "CUnknown1070b244.h"
 
