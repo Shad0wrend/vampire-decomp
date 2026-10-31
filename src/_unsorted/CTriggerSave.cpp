@@ -27,3 +27,16 @@ void CTriggerSave::vfunc103()
     sub_1000dfd0();
 }
 // END FUNCTION
+
+// FUNCTION: 0x101c9810 size=0x30
+#include "CTriggerSave.h"
+void sub_10014614(CTriggerSave *pThis);
+struct CTriggerSaveOtherView { char pad[0xa8]; void *m_pA8; };
+void CTriggerSave::vfunc175(CBaseEntity *pOther)
+{
+	if (((CTriggerSaveOtherView *)pOther)->m_pA8) {
+		sub_10014614(this);
+		engine->vfunc59("autosave\n");
+	}
+}
+// END FUNCTION
