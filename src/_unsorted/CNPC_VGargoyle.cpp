@@ -373,6 +373,25 @@ bool CNPC_VGargoyle::vfunc70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10379f20 size=0x17
+#include "CNPC_VGargoyle.h"
+
+struct S10924edc { virtual void a(); virtual void b(); };
+extern S10924edc *g_10924edc;
+
+struct CUnk10379f20 {
+    char pad[0x6078];
+    char m_6078;
+};
+
+bool CNPC_VGargoyle::vfunc600(int unused)
+{
+    ((CUnk10379f20 *)this)->m_6078 = 1;
+    g_10924edc->b();
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10379f50 size=0xe
 struct CUnk10924edc
 {
