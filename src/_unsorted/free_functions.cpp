@@ -111906,6 +111906,29 @@ float *CUnk1024d7b0::sub_1024d7b0(float *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024d7e0 size=0x18
+struct CUnk1024d7e0 {
+    char pad4[8];
+    float m_8;
+    char pad8[0x18 - 0xc];
+    float m_18;
+    char pad18[0x28 - 0x1c];
+    float m_28;
+    float *sub_1024d7e0(float *out);
+};
+
+float *CUnk1024d7e0::sub_1024d7e0(float *out)
+{
+    float z = m_28;
+    float y = m_18;
+    float x = m_8;
+    out[0] = x;
+    out[1] = y;
+    out[2] = z;
+    return out;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024dfb0 size=0x3b
 void sub_1024dfb0(float *m)
 {
