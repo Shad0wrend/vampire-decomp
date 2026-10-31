@@ -23,7 +23,9 @@ struct CItemDamageInfo	// the damage info of slot 142 (OnTakeDamage)
 class CItemContainer
 {
 public:
-	char pad0[0x1fc];
+	char pad0[0xb4];
+	int m_nVSoundGroupb4;	// 0xb4
+	char padb8[0x1fc - 0xb8];
 	int m_nTakeDamage1fc;	// 0x1fc
 	int m_nField200;	// 0x200: 2 once the container is broken
 	char pad204[0x210 - 0x204];
