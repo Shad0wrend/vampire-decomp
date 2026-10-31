@@ -1161,6 +1161,20 @@ void CAI_BaseNPCTroika::vfunc563(CBaseEntity *pEnt, const void *pGoal, const voi
 }
 // END FUNCTION
 
+// FUNCTION: 0x102953e0 size=0x59
+// TARGET: CAI_BaseNPCTroika::vfunc592
+bool CAI_BaseNPCTroika::vfunc592()
+{
+    if (sub_10014df8(0x48))
+        return true;
+    if (gpGlobals->curtime >= m_f607c)
+        return true;
+    if (m_f607c - 1.0f <= gpGlobals->curtime && !sub_10014df8(0x4f))
+        return true;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10295590 size=0x127
 #include "CAI_BaseNPCTroika.h"
 
