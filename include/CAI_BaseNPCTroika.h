@@ -34,6 +34,7 @@ struct CAI_NamedThing	// one of the three global objects an NPC can be bound to 
 	char sub_1025dca0(CAI_BaseNPCTroika *pNPC, int a);	// whether the NPC may use this named thing (stub 0x10015564)
 	char sub_1025de90(CAI_BaseNPCTroika *pNPC);	// stub 0x1000d634, run by slot 602 when the NPC may not simply carry on
 	char sub_1025db50();	// stub 0x1001450b, asked by slot 602
+	void sub_1025ddd0(CAI_BaseNPCTroika *pNPC);	// stub 0x10013d31, run by slot 601 for the bound named thing
 };
 
 class CAI_BaseNPCTroika : public CAI_BaseNPC
