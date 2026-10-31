@@ -28,7 +28,9 @@ public:
 	int m_field0008;	// 0x0008, -1 = none
 	char m_pad000c[0x18 - 0x0c];
 	const char *m_pszName;	// 0x0018
-	char m_pad001c[0x100 - 0x1c];
+	char m_pad001c[0x60 - 0x1c];
+	CVDmgBlock16_t m_max0060;	// 0x0060: the "Max" value record
+	char m_pad0070[0x100 - 0x70];
 	CVStatLevelEntry_t *m_pLevels;	// 0x0100
 	unsigned int m_flags;	// 0x0104
 	char m_bField0108;	// 0x0108
