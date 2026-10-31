@@ -29,6 +29,23 @@ int CItemContainer::vfunc370(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102088a0 size=0x14
+#include "CItemContainer.h"
+
+// TARGET: CItemContainer::vfunc371
+int CItemContainer::vfunc371(int a)
+{
+	void **vt = *(void ***)this;
+	union {
+		void *p;
+		void (CItemContainer::*pm)(int);
+	} u;
+	u.p = vt[369];
+	(this->*u.pm)(a);
+	return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102088d0 size=0x5
 #include "CItemContainer.h"
 bool CItemContainer::vfunc363(int a0)

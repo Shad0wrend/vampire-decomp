@@ -8651,6 +8651,7 @@
 0x10010375 func   ?sub_101cf0a0@@YAXPAUCUnknown101cf0a0@@PAUCUnknown101cf0a0_Source@@PAUCUnknown1070b22c_Edict@@MHHPBVVector@@H@Z sub_101cf0a0
 0x10010384 func   ?vfunc5@CHudCounter@@QAEPAV1@I@Z CHudCounter::vfunc5
 0x1001038e func   ?sub_101f1950@CNamedList1950@@QAEHPBD@Z CNamedList1950::sub_101f1950
+0x10010393 func   ?vfunc371@CItemContainer@@QAEHH@Z CItemContainer::vfunc371
 0x10010398 func   ?sub_101afba0@CUnknown101afba0@@QAEXXZ CUnknown101afba0::sub_101afba0
 0x1001039d func   ?sub_102306d0@@YGHHH@Z sub_102306d0
 0x100103a2 func   ?sub_102047d0@CUnknown102047d0@@QAEXPBDPAH1@Z CUnknown102047d0::sub_102047d0
