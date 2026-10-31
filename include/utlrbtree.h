@@ -243,7 +243,7 @@ inline void CUtlRBTree<T, I>::SetLeftChild(I i, I child)
 template <class T, class I>
 inline void CUtlRBTree<T, I>::SetRightChild(I i, I child)
 {
-	Links(i).m_Right = child;
+	m_Elements[i].m_Right = child;
 }
 
 template <class T, class I>
