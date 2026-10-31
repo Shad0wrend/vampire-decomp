@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10107700 size=0x6
+#include "CBaseFilter.h"
+namespace lifted {
+extern char g_1056c1e8;
+}
+int CBaseFilter::vfunc82()
+{
+    return (int)&lifted::g_1056c1e8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107840 size=0x5
 #include "CBaseFilter.h"
 bool CBaseFilter::vfunc241(int a0)
