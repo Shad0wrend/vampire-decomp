@@ -82335,6 +82335,25 @@ const char *CUnknown101da960::sub_101da960(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101da980 size=0x15
+struct CUnknown101da980
+{
+	unsigned int m_bits;
+
+	bool sub_101da980(int n);
+};
+
+// TARGET: CUnknown101da980::sub_101da980
+bool CUnknown101da980::sub_101da980(int n)
+{
+	if (m_bits & (1 << n))
+	{
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101da9b0 size=0x12
 struct CBitfieldSet {
     unsigned int m_bits;
