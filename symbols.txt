@@ -8282,6 +8282,7 @@
 0x100110a9 func   ?sub_101cf620@@YAXXZ sub_101cf620
 0x100110ae func   ?vfunc248@CRotDoor@@QAEXXZ CRotDoor::vfunc248
 0x100110b8 func   ?sub_10088fc0@@YAXXZ sub_10088fc0
+0x100110bd func   ?sub_1034d410@CScriptedTarget@@QAEEXZ CScriptedTarget::sub_1034d410
 0x100110c2 func   ?vfunc3@CCopyRecipientFilter@@UAEHH@Z CCopyRecipientFilter::vfunc3
 0x100110c7 func   ?vfunc362@CBaseCombatWeapon@@UAEPAUCWeaponActivityRecord@@XZ CBaseCombatWeapon::vfunc362
 0x100110cc func   ?vfunc5@CEnvDustPuff@@QAEPAV1@I@Z CEnvDustPuff::vfunc5

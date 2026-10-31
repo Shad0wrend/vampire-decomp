@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1034d410 size=0x8
+#include "CScriptedTarget.h"
+// TARGET: CScriptedTarget::sub_1034d410
+unsigned char CScriptedTarget::sub_1034d410()
+{
+    unsigned char b;
+    b = ((CBaseEntity *)this)->CBaseEntity::vfunc117();
+    b &= 0xfd;
+    return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034d430 size=0x6
 #include "CScriptedTarget.h"
 namespace lifted {
