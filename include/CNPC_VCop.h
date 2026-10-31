@@ -93,7 +93,7 @@ public:
 	virtual void vfunc165();
 	virtual void vfunc166();
 	virtual CNPC_VCopTarget *vfunc167();
-	virtual void vfunc168_slot();
+	virtual CNPC_VCopTarget *vfunc168_slot();
 	virtual void vfunc169();
 	virtual void vfunc170();
 	virtual void vfunc171();
