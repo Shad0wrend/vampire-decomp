@@ -4,6 +4,8 @@
 #include "SaveRestoreFieldInfo_t.h"
 #include "CSave.h"
 
+class CRestore;
+
 class CAI_NPCPatrolPathSaveRestoreOps
 {
 public:
