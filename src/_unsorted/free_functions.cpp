@@ -115943,6 +115943,86 @@ int CAI_BaseNPC::sub_10271ff0(int act, int *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10272130 size=0x240
+#include "CAI_BaseNPC.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+const char *sub_10412550(int act);
+extern CAI_BaseNPC *g_10920334;
+extern int g_1090fdbc;
+extern float g_1090fe04;
+
+struct CNPCObj98 { void sub_10295a80(int a, int *pSeq, int *pTrans, int *pOut); };
+struct CScriptCineView { char m_pad0000[0x5f50]; const char *m_pszCustomMove; };
+
+void CAI_BaseNPC::sub_10272130(int act, int *pSequence, int *pTranslated, int *pOut)
+{
+	for (;;)
+	{
+		*pSequence = -1;
+		*pTranslated = sub_10271ff0(act, pOut);
+		if (act == 0x18)
+		{
+			if (!EHandle_Get(*(unsigned int *)((char *)this + 0x5d74)))
+				goto common;
+			const char *pszMove = ((CScriptCineView *)EHandle_Get(*(unsigned int *)((char *)this + 0x5d74)))->m_pszCustomMove;
+			if (!pszMove)
+				pszMove = g_106b8540;
+			*pSequence = sub_1008f7b0(pszMove);
+			if (*pSequence != -1)
+				return;
+			DevMsg("SCRIPT_CUSTOM_MOVE: %s has no sequence:%s\n", sub_1009f200(), ((CScriptCineView *)EHandle_Get(*(unsigned int *)((char *)this + 0x5d74)))->m_pszCustomMove);
+			*pSequence = sub_1008dc40(9, -1);
+			goto check;
+		}
+		if (act != 0xf1 || !*(CNPCObj98 **)((char *)this + 0x98))
+			goto common;
+		(*(CNPCObj98 **)((char *)this + 0x98))->sub_10295a80(0xf1, pSequence, pTranslated, pOut);
+		if (*pSequence != -1)
+			return;
+		{
+			int nTemp;
+			const char *pszName = *vfunc9(&nTemp);
+			if (!pszName)
+				pszName = g_106b8540;
+			DevMsg("%s has no sequence for act:ACT_DISPOSITION\n", pszName);
+		}
+		goto check;
+common:
+		*pSequence = sub_1008dc40(*pTranslated, -1);
+		if (*pSequence != -1)
+			return;
+		if ((g_10920334 != this && g_1090fdbc != *pTranslated) || gpGlobals->curtime - g_1090fe04 > 5.0)
+		{
+			int nTemp;
+			const char *pszName = *vfunc9(&nTemp);
+			if (!pszName)
+				pszName = g_106b8540;
+			DevMsg("%s has no sequence for act:%s (%s)\n", sub_1009f200(), sub_10412550(*pTranslated), pszName);
+			g_10920334 = this;
+			g_1090fdbc = *pTranslated;
+			g_1090fe04 = gpGlobals->curtime;
+		}
+		if (*pTranslated == 0x13)
+		{
+			*pTranslated = 9;
+			*pSequence = sub_1008dc40(9, -1);
+		}
+check:
+		if (*pSequence != -1)
+			return;
+		if (act == 0xf1)
+		{
+			*pSequence = 0;
+			return;
+		}
+		act = 0xf1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10272490 size=0xf3
 #include "CAI_BaseNPC.h"
 #include "CVSoundActivityTable_t.h"
