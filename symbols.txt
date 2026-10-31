@@ -5706,6 +5706,7 @@
 0x1000b6fe func   ?sub_101c1b80@CUnknown101c1b40@@QAEXH@Z CUnknown101c1b40::sub_101c1b80
 0x1000b703 func   ?sub_1015fbb0@CCharacter1015fbb0@@QAEXH_N@Z CCharacter1015fbb0::sub_1015fbb0
 0x1000b708 func   ?sub_10027c80@@YAHXZ sub_10027c80
+0x1000b70d func   ?vfunc80@CItemGDrugsPerscriptionBottle@@QAEHXZ CItemGDrugsPerscriptionBottle::vfunc80
 0x1000b712 func   ?sub_101f69a0@@YIHPAUCUnknownStat101f69a0@@@Z sub_101f69a0
 0x1000b717 func   _item_w_sheriff_sword item_w_sheriff_sword
 0x1000b71c func   ?vfunc5@CNPC_VBrujah@@QAEPAV1@I@Z CNPC_VBrujah::vfunc5
