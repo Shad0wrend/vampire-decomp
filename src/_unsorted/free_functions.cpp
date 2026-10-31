@@ -148644,6 +148644,16 @@ extern "C" CBaseEntity *npc_VTremere()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b5ba0 size=0xc
+void __fastcall sub_103b5bc0(void *p);
+
+void *__fastcall sub_103b5ba0(void *p)
+{
+    sub_103b5bc0(p);
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b5bc0 size=0x33
 void sub_10007897();
 void sub_1000c167();
