@@ -73187,6 +73187,15 @@ float CUnknown101bbcd0::sub_101bbcd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bbcf0 size=0x7
+// TARGET: sub_101bbcf0
+float __fastcall sub_101bbcf0(char *pThis)
+{
+    float a = *(float *)(pThis + 0x10);
+    return a * *(float *)(pThis + 0x40);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bbd10 size=0x9e
 #include "CUnknown101bbd10.h"
 #include "CGlobalEntityList.h"
