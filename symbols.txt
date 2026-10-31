@@ -11211,6 +11211,7 @@
 0x10015b18 func   ?vfunc82@CEnvFloatingCamera@@QAEHXZ CEnvFloatingCamera::vfunc82
 0x10015b1d func   ?sub_100f8ec0@CEntityListSystem@@QAEXXZ CEntityListSystem::sub_100f8ec0
 0x10015b27 func   ?vfunc103@CFunc_Dust@@QAEXXZ CFunc_Dust::vfunc103
+0x10015b2c func   ?vfunc138@CNPC_VToreador@@UAEHXZ CNPC_VToreador::vfunc138
 0x10015b31 func   ?sub_101bb7e0@@YAPAHXZ sub_101bb7e0
 0x10015b3b func   ?sub_101a9680@@YAHXZ sub_101a9680
 0x10015b40 func   ?sub_1012b080@CGib@@QAEXPBD@Z CGib::sub_1012b080
