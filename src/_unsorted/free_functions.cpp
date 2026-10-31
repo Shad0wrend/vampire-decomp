@@ -44439,6 +44439,52 @@ int *sub_10101e30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10102030 size=0x216
+#include "ScopeTrace.h"
+#include "CMessage.h"
+#include "inputdata_t.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "engineserver.h"
+#include "engineiface.h"
+
+void sub_101ceb70(const char *pszMessage);
+void sub_101cea60(const char *pszMessage, void *pPlayer);
+void *sub_100ab250(void *pEdict);
+void sub_101cd940(CBaseEntity *pEnt);
+
+inline void *CBaseEntity_Instance(void *pEdict)
+{
+	ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+	if (!pEdict)
+		pEdict = engine->vfunc38(0);
+	return sub_100ab250(pEdict);
+}
+
+// TARGET: CMessage::sub_10102030
+void CMessage::sub_10102030(inputdata_t *inputdata)
+{
+	if (m_flags204 & 2) {
+		sub_101ceb70(m_pszMessage450 ? m_pszMessage450 : g_106b8540);
+	} else {
+		void *pActivator = inputdata->pActivator;
+		if (!pActivator || !*(int *)((char *)pActivator + 0xa8))
+			pActivator = CBaseEntity_Instance(engine->vfunc38(1));
+		if (pActivator)
+			sub_101cea60(m_pszMessage450 ? m_pszMessage450 : g_106b8540, pActivator);
+	}
+	if (m_pszSound460) {
+		CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+		const char *pszSound = m_pszSound460 ? m_pszSound460 : g_106b8540;
+		int edict = engine->vfunc35(m_pEdict2e0);
+		enginesound->vfunc3(&filter, edict, 4, pszSound, m_f454, m_f45c, 0, 100, 0, 0, 1, 0);
+	}
+	if (m_flags204 & 1)
+		sub_101cd940(this);
+	m_OnShowMessage464.sub_100cd660(inputdata->pActivator, this, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10102410 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
