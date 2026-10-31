@@ -25,6 +25,7 @@ public:
 	char *m_pEntryElements;	// 0x50
 
 	void vfunc2(void *pSave);
+	void vfunc4();	// slot 4: calls slot 4 of every handler, then empties the entry table (CUtlVector Purge)
 	void vfunc5();	// slot 5: calls slot 5 of every handler in the list (CUtlVector<void *> at +0x24, count at +0x30)
 	void vfunc7(void *pSave, int a, int b);	// for every handler whose block name is found in the entry table (name at +0, offset at +0x24 unless -1) seeks the save/restore stream to base + offset and forwards (pSave, a, b) to the handler's slot 7; finally seeks to base + m_nSize
 	void vfunc9(void *pHandler);	// AddHandler: CUtlVector::AddToTail
