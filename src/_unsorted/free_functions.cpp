@@ -116895,6 +116895,18 @@ int sub_1028d800()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028e030 size=0x14
+struct CUnknown1028e030 {
+    void *sub_100952d0(int a);
+    void sub_1028e090(void *p);
+    void sub_1028e030();
+};
+void CUnknown1028e030::sub_1028e030()
+{
+    sub_1028e090(sub_100952d0(-1));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028e360 size=0xd7
 #include "CAI_BaseNPCTroika.h"
 struct EntInfo { CBaseEntity *ent; int serial; int pad; };
