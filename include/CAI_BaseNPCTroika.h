@@ -338,6 +338,7 @@ public:
 	void sub_101815b0(unsigned int flags);	// provisional, like sub_102a97d0 (transplant)
 	void sub_102a9830(unsigned int flags);	// provisional, like sub_102a97d0 (transplant)
 	void sub_102a98e0(unsigned int flags);	// provisional, like sub_102a97d0 (transplant)
+	int sub_102a9910();	// the squad's count at +0x5da4 (its pending value at +0x5bb0 is not positive), else 0
 public:
     virtual void vfunc465(int);
     virtual const char * vfunc451();
