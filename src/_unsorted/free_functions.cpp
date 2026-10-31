@@ -41280,6 +41280,27 @@ int sub_100f6ae0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f6b40 size=0x44
+#include "CGlobalEntityList.h"
+extern char vt_10455e90[];
+struct CBaseEntityListView { void sub_100f9a60(); };
+CGlobalEntityList *CGlobalEntityList::sub_100f6b40()
+{
+	volatile int *p = (volatile int *)this;
+	((CBaseEntityListView *)this)->sub_100f9a60();
+	p[0x6012] = 0;
+	p[0x6013] = 0;
+	p[0x6014] = 0;
+	p[0x6015] = 0;
+	p[0x6016] = 0;
+	p[0x6010] = 0;
+	p[0x600f] = 0;
+	*((volatile char *)p + 0x18044) = 0;
+	p[0] = (int)vt_10455e90;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f6bb0 size=0xed
 extern "C" void *memmove(void *, const void *, unsigned int);
 extern void *(__cdecl *g_109f3634)(unsigned int);
