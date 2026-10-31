@@ -99879,6 +99879,89 @@ void sub_102201c0(CUnknown101ec4f0Set *pSet, int nEntIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10220ad0 size=0x210
+#include "CBaseEntity.h"
+#include "CWeaponRanged.h"
+#include "ScopeTrace.h"
+#include "engineserver.h"
+
+struct SInstanceUnknown
+{
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3();
+	virtual void *GetBaseEntity();
+};
+
+struct SInstanceEdict
+{
+	char m_pad0000[0x40];
+	SInstanceUnknown *m_pUnk;	// 0x40
+};
+
+struct SPlayerView
+{
+	char m_pad0000[0xa8];
+	void *m_pObject;	// 0xa8
+	char m_pad00ac[0x1eb8 - 0xac];
+	int m_nTarget;	// 0x1eb8
+};
+
+struct SPawnView
+{
+	char m_pad0000[0x9c];
+	void *m_p9c;	// 0x9c
+	CWeaponRanged *m_pWeapon;	// 0xa0
+};
+
+SPlayerView *sub_100ab250(SInstanceEdict *pEdict);
+int __fastcall sub_10341120(char *pCharacter);
+
+char sub_10220ad0(int nPlayerIndex, int nOtherIndex)
+{
+	SInstanceEdict *pEdict = (SInstanceEdict *)engine->vfunc38(nPlayerIndex);
+	SPlayerView *pPlayer;
+	{
+		ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+		if (!pEdict)
+			pEdict = (SInstanceEdict *)engine->vfunc38(0);
+		pPlayer = sub_100ab250(pEdict);
+	}
+	if (!pPlayer)
+		return 0;
+	if (!pPlayer->m_pObject)
+		return 0;
+
+	pEdict = (SInstanceEdict *)engine->vfunc38(nOtherIndex);
+	SPawnView *pOther;
+	{
+		ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+		if ((pEdict || (pEdict = (SInstanceEdict *)engine->vfunc38(0))) && pEdict->m_pUnk)
+			pOther = (SPawnView *)pEdict->m_pUnk->GetBaseEntity();
+		else
+			pOther = 0;
+	}
+	if (pOther) {
+		CWeaponRanged *pWeapon = pOther->m_pWeapon;
+		int nTarget = pPlayer->m_nTarget;
+		pEdict = (SInstanceEdict *)engine->vfunc38(nTarget);
+		SPawnView *pTarget;
+		{
+			ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+			if ((pEdict || (pEdict = (SInstanceEdict *)engine->vfunc38(0))) && pEdict->m_pUnk)
+				pTarget = (SPawnView *)pEdict->m_pUnk->GetBaseEntity();
+			else
+				pTarget = 0;
+		}
+		if (pTarget && pTarget->m_p9c) {
+			int nPrice = pWeapon->sub_10257280(pPlayer, pTarget->m_p9c, 0);
+			int nMoney = sub_10341120((char *)pPlayer);
+			if (nPrice <= nMoney)
+				return 1;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10220e10 size=0x83
 #include "QuestJournal.h"
 

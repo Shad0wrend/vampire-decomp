@@ -6532,6 +6532,7 @@
 0x1000dc06 func   ?sub_1042fe90@@YAII@Z sub_1042fe90
 0x1000dc10 func   ?sub_10067690@CUnknown10067690@@QAEHXZ CUnknown10067690::sub_10067690
 0x1000dc1a func   ?sub_100cfda0@CEventQueue@@QAEHPAVIEQRestore@@@Z CEventQueue::sub_100cfda0
+0x1000dc33 func   ?sub_10220ad0@@YADHH@Z sub_10220ad0
 0x1000dc3d func   ?sub_101e3ee0@CUnknown101e0f00@@QAEXPAUS1033d380@@@Z CUnknown101e0f00::sub_101e3ee0
 0x1000dc42 func   ?sub_101b6650@@YA_NPAG0@Z sub_101b6650
 0x1000dc4c func   ?sub_102a1510@@YIHPAUN@@@Z sub_102a1510
