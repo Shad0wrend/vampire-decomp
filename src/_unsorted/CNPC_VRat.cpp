@@ -35,6 +35,14 @@ bool CNPC_VRat::vfunc615()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ad7b0 size=0x5
+#include "CNPC_VRat.h"
+bool CNPC_VRat::vfunc295(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ad7d0 size=0x3
 #include "CNPC_VRat.h"
 void CNPC_VRat::vfunc333(int a0)
