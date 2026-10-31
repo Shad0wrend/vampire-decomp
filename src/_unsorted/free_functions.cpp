@@ -123564,6 +123564,66 @@ int CUnknown102db760::sub_102db760()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102db850 size=0x214
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1060c2c0[2];
+void sub_100045ac();
+void sub_100122b5();
+void sub_10006582();
+void sub_100141a0();
+void sub_1000b398();
+
+int *sub_102db850()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 5, "m_bEnabled", {0x45c, 0}, 1, 6, "enabled" },
+        { 1, "m_flPlayerDist", {0x464, 0}, 1, 6, "player_dist" },
+        { 1, "m_flAudibleDist", {0x468, 0}, 1, 6, "audible_dist" },
+        { 2, "m_iszSoundLoop", {0x454, 0}, 1, 6, "sound_loop" },
+        { 2, "m_iszSoundOnce", {0x458, 0}, 1, 6, "sound_once" },
+        { 2, "m_iszInterestingPlaces", {0x450, 0}, 1, 6, "interesting_places" },
+        { 1, "m_flMinTime", {0x50c, 0}, 1, 6, "min_time" },
+        { 1, "m_flMaxTime", {0x510, 0}, 1, 6, "max_time" },
+        { 5, "m_bTurnTowardsTalker", {0x514, 0}, 1, 6, "turn_towards_talker" },
+        { 5, "m_bSoundOccluded", {0x515, 0}, 1, 6, "sound_occluded" },
+        { 0xf, "m_flTalkTime", {0x508, 0}, 1, 2 },
+        { 0xf, "m_flOneOffSoundComplete", {0x460, 0}, 1, 2 },
+        { 5, "m_bPlayOneOffSound", {0x45d, 0}, 1, 2 },
+        { 5, "m_bNodesDisabled", {0x516, 0}, 1, 2 },
+        { 0, "CAI_InterestingPlaceConverstationWaitThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_100045ac },
+        { 0, "CAI_InterestingPlaceConverstationTalkThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_100122b5 },
+        { 0, "InputEnable", {0, 0}, 1, 8, "Enable", 0, (void *)sub_10006582 },
+        { 0, "InputDisable", {0, 0}, 1, 8, "Disable", 0, (void *)sub_100141a0 },
+        { 0, "InputPlayOneOffSound", {0, 0}, 1, 8, "PlayOneOffSound", 0, (void *)sub_1000b398 },
+        { 10, "m_OnConversationStart", {0x46c, 0}, 1, 0x16, "OnConversationStart", g_1055dc70 },
+        { 10, "m_OnNewTalker", {0x484, 0}, 1, 0x16, "OnNewTalker", g_1055dc70 },
+        { 10, "m_OnConversationEnd", {0x49c, 0}, 1, 0x16, "OnConversationEnd", g_1055dc70 },
+        { 10, "m_OnPlayerTooClose", {0x4b4, 0}, 1, 0x16, "OnPlayerTooClose", g_1055dc70 },
+        { 10, "m_OnOneOffSoundComplete", {0x4cc, 0}, 1, 0x16, "OnOneOffSoundComplete", g_1055dc70 },
+        { 10, "m_OnPlayerLeftRadius", {0x4e4, 0}, 1, 0x16, "OnPlayerLeftRadius", g_1055dc70 },
+    };
+    g_1060c2c0[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1060c2c0[0] = (int)&dataDesc[1];
+    return g_1060c2c0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dbfb0 size=0x164
 #include "CUnknown102dca60.h"
 #include "CUnknown102dc2c0.h"
