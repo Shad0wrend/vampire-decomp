@@ -11017,6 +11017,7 @@
 0x10015cb2 func   ?sub_103a3b80@@YIPAXPAX@Z sub_103a3b80
 0x10015cc6 func   ?sub_102b6120@CAI_BaseNPCTroikaUnit6120@@QAE_NPAVVector@@D@Z CAI_BaseNPCTroikaUnit6120::sub_102b6120
 0x10015cd0 func   ?sub_1034be20@@YAHXZ sub_1034be20
+0x10015cd5 func   ?vfunc81@CItemGHorrorTape_1@@QAEHXZ CItemGHorrorTape_1::vfunc81
 0x10015cda func   _aitesthull aitesthull
 0x10015cdf func   ?vfunc103@COrnamentProp@@UAEXXZ COrnamentProp::vfunc103
 0x10015ce4 func   ?vfunc153@CBaseMoveBehavior@@UAE_NXZ CBaseMoveBehavior::vfunc153
