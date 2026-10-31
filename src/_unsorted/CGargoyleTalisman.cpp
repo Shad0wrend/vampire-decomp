@@ -40,6 +40,14 @@ void CGargoyleTalisman::vfunc300()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103fbdf0 size=0x3
+#include "CGargoyleTalisman.h"
+int CGargoyleTalisman::vfunc81()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040a0c0 size=0x1e
 #include "CGargoyleTalisman.h"
 
