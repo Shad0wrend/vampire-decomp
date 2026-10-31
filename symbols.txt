@@ -9651,6 +9651,7 @@
 0x10012ecc func   ?sub_103abc70@@YIPAXPAX@Z sub_103abc70
 0x10012ed1 func   ?vfunc129@CSoundScheme@@UAEXXZ CSoundScheme::vfunc129
 0x10012ed6 func   ?sub_1019ee20@@YGHH@Z sub_1019ee20
+0x10012ee0 func   ?vfunc363@CWeaponRanged_Smg_Uzi@@QAEHXZ CWeaponRanged_Smg_Uzi::vfunc363
 0x10012eea func   ?vfunc0@CTEBubbleTrail@@UAEHXZ CTEBubbleTrail::vfunc0
 0x10012eef func   ?vfunc103@CBreakableProp@@QAEXXZ CBreakableProp::vfunc103
 0x10012ef4 func   ?sub_1017f650@CNPC_VCopUnit@@QAEXXZ CNPC_VCopUnit::sub_1017f650

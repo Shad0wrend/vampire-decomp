@@ -31,6 +31,14 @@ int CWeaponRanged_Smg_Uzi::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10236e60 size=0x6
+#include "CWeaponRanged_Smg_Uzi.h"
+int CWeaponRanged_Smg_Uzi::vfunc363()
+{
+    return 0x8a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a500 size=0x1e
 #include "CWeaponRanged_Smg_Uzi.h"
 
