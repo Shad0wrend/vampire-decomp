@@ -12,6 +12,7 @@ struct CUnknown102ee120_Target
 	char pad25[3];
 	int m_unk28;
 	int m_unk2c;
+	EHANDLE m_hTarget30;	// 0x30: handle of the goal's target entity
 };
 
 class CUnknown102ee120
