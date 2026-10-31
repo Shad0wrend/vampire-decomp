@@ -412,7 +412,7 @@ public:
 	virtual void vfunc127();
 	virtual void vfunc128();
 	virtual void vfunc129();
-	virtual void vfunc130();
+	virtual void vfunc130(int a);
 	virtual void vfunc131();
 	virtual void vfunc132();
 	virtual void vfunc133();
