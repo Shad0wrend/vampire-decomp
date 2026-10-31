@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10108000 size=0x6
+#include "CFilterMass.h"
+namespace lifted {
+extern char g_1056c510;
+}
+int CFilterMass::vfunc82()
+{
+    return (int)&lifted::g_1056c510;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10108670 size=0x36
 #include "CFilterMass.h"
 
