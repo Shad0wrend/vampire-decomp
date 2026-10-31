@@ -2514,6 +2514,7 @@
 0x10006073 func   ?sub_1010e530@Vector@@QAEXMM@Z Vector::sub_1010e530
 0x10006078 func   ?sub_103d4a20@CWerewolfUnit103d4a20@@QAEXXZ CWerewolfUnit103d4a20::sub_103d4a20
 0x1000607d func   ?sub_101387a0@@YAHPBM0@Z sub_101387a0
+0x10006082 func   ?sub_1007c280@@YAXPAXH0@Z sub_1007c280
 0x10006087 func   ?sub_1022d0d0@CUtlVector72@@QAEXH@Z CUtlVector72::sub_1022d0d0
 0x1000608c func   ?sub_10046390@CUtlRBTreeFind16@@QAEGPBX@Z CUtlRBTreeFind16::sub_10046390
 0x1000609b func   ?sub_10103120@CUnknown10103120@@QAEXPAUCUnknown10103120Param@@@Z CUnknown10103120::sub_10103120

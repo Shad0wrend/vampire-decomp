@@ -17677,6 +17677,47 @@ void __cdecl sub_1007c1c0(void *pFile, int nIndent, CUnknown10078540 *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007c280 size=0x1ed
+#include "CUnknown10074050.h"
+#include "CUnknown10074070.h"
+struct CUnknown100740d0 { char sub_100740d0(); };
+struct CUnknown10074a50 { char sub_10074a50(); };
+struct CUnknown10074ab0 { float sub_10074ab0(int); float sub_10074ae0(int); };
+void sub_1007bf70(void *buf, int indent, const char *fmt, ...);
+void sub_1007c280(void *buf, int indent, void *pObj)
+{
+	if (!pObj)
+		return;
+	if (!((CUnknown100740d0 *)pObj)->sub_100740d0() && ((CUnknown10074070 *)pObj)->sub_10074070(0) <= 0)
+		return;
+	int ind = indent + 2;
+	sub_1007bf70(buf, ind, "\"%s\"", ((CUnknown10074050 *)pObj)->sub_10074050());
+	if (!((CUnknown100740d0 *)pObj)->sub_100740d0())
+		sub_1007bf70(buf, ind, " disabled");
+	if (((CUnknown10074a50 *)pObj)->sub_10074a50())
+		sub_1007bf70(buf, ind, " combo");
+	if (((CUnknown10074ab0 *)pObj)->sub_10074ab0(0) != 0.0f || ((CUnknown10074ab0 *)pObj)->sub_10074ae0(0) != 1.0f)
+		sub_1007bf70(buf, ind, " range %.1f %.1f", (double)((CUnknown10074ab0 *)pObj)->sub_10074ab0(0), (double)((CUnknown10074ab0 *)pObj)->sub_10074ae0(0));
+	sub_1007bf70(buf, ind, "\n");
+	sub_1007bf70(buf, ind, "{\n");
+	for (int i = 0; i < ((CUnknown10074070 *)pObj)->sub_10074070(0); i++) {
+		float *p = ((CUnknown10074070 *)pObj)->sub_10074090(i, 0);
+		if (p)
+			sub_1007bf70(buf, indent + 3, "%.4f %.4f\n", (double)p[1], (double)p[0]);
+	}
+	sub_1007bf70(buf, ind, "}\n");
+	if (((CUnknown10074a50 *)pObj)->sub_10074a50()) {
+		sub_1007bf70(buf, ind, "{\n");
+		for (int i = 0; i < ((CUnknown10074070 *)pObj)->sub_10074070(1); i++) {
+			float *p = ((CUnknown10074070 *)pObj)->sub_10074090(i, 1);
+			if (p)
+				sub_1007bf70(buf, indent + 3, "%.4f %.4f\n", (double)p[1], (double)p[0]);
+		}
+		sub_1007bf70(buf, ind, "}\n");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007c4f0 size=0x81
 #include "CUnknown10077430.h"
 
