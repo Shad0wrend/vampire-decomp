@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x104036b0 size=0x6
+#include "CItemGWirelessCamera4.h"
+namespace lifted {
+extern char g_109439a4;
+}
+int CItemGWirelessCamera4::vfunc80()
+{
+    return (int)&lifted::g_109439a4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104036d0 size=0x3
 #include "CItemGWirelessCamera4.h"
 int CItemGWirelessCamera4::vfunc81()
