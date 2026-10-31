@@ -9883,6 +9883,7 @@
 0x1001294a func   ?sub_10068870@@YAHXZ sub_10068870
 0x1001294f func   ?sub_103b1aa0@@YAHXZ sub_103b1aa0
 0x10012954 func   ?vfunc580@CNPC_VFrenzyShadow@@UAEHXZ CNPC_VFrenzyShadow::vfunc580
+0x10012959 func   ?sub_10158b90@@YAXHH@Z sub_10158b90
 0x1001295e func   ?sub_10232090@@YAXPAX@Z sub_10232090
 0x10012968 func   ?sub_1002ee60@@YAXPAX@Z sub_1002ee60
 0x10012972 func   ?vfunc265@CWeaponRanged_FlameThrower@@UAEXXZ CWeaponRanged_FlameThrower::vfunc265

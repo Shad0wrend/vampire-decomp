@@ -58146,6 +58146,22 @@ void sub_10158b40(void *pA, void *pB)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10158b90 size=0x16
+struct CIface10723948 {
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual void vfunc2();
+	virtual void vfunc3(int, int);
+};
+extern CIface10723948 *g_10723948;
+
+// TARGET: sub_10158b90
+void sub_10158b90(int a, int b)
+{
+	g_10723948->vfunc3(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10158c40 size=0x6
 namespace lifted {
 extern char g_10580418;
