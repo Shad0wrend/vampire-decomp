@@ -119050,6 +119050,19 @@ void CAI_BaseNPC::sub_1028ae60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028b160 size=0x19
+void __fastcall sub_1028b160(char *pThis)
+{
+	int *p = (int *)(pThis + 8);
+	for (int i = 0x5; i != 0; i--) {
+		p[-2] = 0;
+		p[-1] = 0;
+		p[0] = 0;
+		p += 3;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028b190 size=0xac
 #include "CUnknown1028b190.h"
 extern float g_1044e674;
