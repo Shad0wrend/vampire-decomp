@@ -51,6 +51,23 @@ void CAI_Navigator::vfunc7()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102eea90 size=0x15
+#include "CAI_Navigator.h"
+
+struct CUnknown102eccc0
+{
+	void sub_102eccc0();
+};
+
+// TARGET: CAI_Navigator::vfunc8
+void CAI_Navigator::vfunc8()
+{
+	sub_102eeb70();
+	((CUnknown102eccc0 *)this)->sub_102eccc0();
+	*(char *)((char *)this + 0x1c) = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102eeac0 size=0x10
 #include "vampire.h"
 
