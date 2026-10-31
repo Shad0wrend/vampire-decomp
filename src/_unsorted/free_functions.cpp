@@ -105224,6 +105224,22 @@ void sub_1023ee30(int src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023ef40 size=0x5d
+#include "utlvector.h"
+#include "engineserver.h"
+#include "engineiface.h"
+struct CWorldPrecacheModel_Entry { const char *m_pszName; bool m_bPreload; };
+extern CUtlVector<CWorldPrecacheModel_Entry> g_10752e88;
+extern CUtlVector<const char *> g_10752dc4;
+void sub_1023ef40()
+{
+	for (int i = 0; i < g_10752e88.Count(); i++)
+		engine->vfunc13(g_10752e88[i].m_pszName, g_10752e88[i].m_bPreload);
+	for (int j = 0; j < g_10752dc4.Count(); j++)
+		enginesound->vfunc0(g_10752dc4[j], 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023eff0 size=0x36
 #include <string.h>
 
