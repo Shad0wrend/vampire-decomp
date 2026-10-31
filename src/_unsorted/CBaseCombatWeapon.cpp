@@ -420,6 +420,16 @@ int CBaseCombatWeapon::vfunc276(unsigned int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10251ec0 size=0x1a
+#include "CBaseCombatWeapon.h"
+
+// TARGET: vfunc277
+bool CBaseCombatWeapon::vfunc277(int a)
+{
+	return vfunc275(a) != -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10251ef0 size=0xc
 namespace lifted {
 int sub_10010ea6();
