@@ -112609,6 +112609,21 @@ void __fastcall sub_10260750(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10260770 size=0x10
+extern char g_106b8540[];
+
+// TARGET: sub_10260770
+char *__fastcall sub_10260770(char *pThis)
+{
+	char *p = *(char **)(pThis + 0x5f9c);
+	if (p == 0)
+	{
+		p = g_106b8540;
+	}
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10260820 size=0x3e
 #include <string.h>
 
