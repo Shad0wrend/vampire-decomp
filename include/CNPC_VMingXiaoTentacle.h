@@ -24,6 +24,7 @@ public:
 	void vfunc433();	// "CNPC_VMingXiaoTentacle::RunAI"-like: sets the conditions 0x77 and 0x79, the Troika base, then (with a slot 167 target, the time at +0x6678 passed and the float at +0x6268 not above the limit) rings the dev object and fails task 0x77; once the time at +0x6674 has passed it does the same for task 0x79
 	bool vfunc68(CBaseEntity *pOther);	// slot 68 override: true when pOther is null or (pOther has no field at +0x9c and this is not flagged at +0x6688); else CAI_BaseNPCTroika::vfunc68(pOther) (tail call)
 	void sub_10269b50(int condition);	// CAI_BaseNPC member (stub 0x10015839), called directly
+	void sub_10332ca0(CBaseEntity *pTarget, int a, int b);	// CBaseCombatCharacter member (stub 0x10005849), called directly with (target, 1, 5)
 	void sub_10269a20(int a);	// CAI_BaseNPC member (stub 0x100041b0), called directly
 	void sub_102b27f0();	// CAI_BaseNPCTroika::vfunc433 (stub 0x10013f2f), called directly
 	void sub_10012855(int flags);	// sets the solid flags (stub of the entity member), called directly
