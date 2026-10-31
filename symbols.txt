@@ -4901,6 +4901,7 @@
 0x1000a420 func   ?sub_1003ef00@@YIHPAVCBaseEntity@@HABVVector@@1AAV2@M@Z sub_1003ef00
 0x1000a425 func   ?vfunc27@CNPC_VPedestrian@@QAEXH@Z CNPC_VPedestrian::vfunc27
 0x1000a42a func   ?vfunc5@CTEGunshotDecal@@UAEXXZ CTEGunshotDecal::vfunc5
+0x1000a434 func   ?vfunc81@CItemGHannahsApptBook@@QAEHXZ CItemGHannahsApptBook::vfunc81
 0x1000a439 func   ?sub_103604b0@@YAHXZ sub_103604b0
 0x1000a43e func   ?sub_10178400@CUnitP2@@QAEXXZ CUnitP2::sub_10178400
 0x1000a457 func   _func_rotating func_rotating
