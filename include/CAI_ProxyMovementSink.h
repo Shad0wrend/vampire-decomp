@@ -10,6 +10,7 @@ public:
 	void *m_pTarget;	// 0x04: the sink the proxy forwards to (null when none)
 
 	bool vfunc2(int a, int b, int c);	// slot 2 (plain member) "OnFailedSteer": profiled as CAI_ProxyMSink_OnFailedSteer; true when the target sink answers its slot 2 with the three arguments
+	bool vfunc3(int a, int b, int c);	// slot 3 (plain member) "OnFailedLocalNavigation": profiled as CAI_ProxyMSink_OnFailedLocalNavigation; true when the target sink answers its slot 3 with the three arguments
 	bool vfunc5(int a);	// slot 5 "OnMoveBlocked": profiled as CAI_ProxyMSink_OnMoveBlocked; true when the target sink answers its slot 5
 	bool vfunc6(int a);	// slot 6 (plain member) \"OnMoveStalled\": profiled as CAI_ProxyMSink_OnMoveStalled; true when the target sink answers its slot 6 with a (the proxy forwards), else false
 	float vfunc0();	// slot 0: the target's slot 0 value, or -1.0f when there is no target or it answers -1.0 (double)
