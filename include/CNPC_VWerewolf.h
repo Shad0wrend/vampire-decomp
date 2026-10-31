@@ -149,7 +149,8 @@ public:
 	CNPC_VWerewolfVec3 m_vSnap66dc;	// 0x66dc: set from the global vector at 0x1070d1b0 by SnapToAnimationPoint
 	unsigned int m_nFlags66e8;	// 0x66e8: attack state bits (4 and 0x100 make GatherAttackConditions compare heights)
 	float m_flTeleport66ec;	// 0x66ec
-	char pad66f0[0x66f8 - 0x66f0];
+	float m_flTime66f0;	// 0x66f0: the time of the last teleport out
+	char pad66f4[0x66f8 - 0x66f4];
 	float m_flNodeTime;	// 0x66f8: time stamp of the cached node
 	void *m_pNode;	// 0x66fc: cached nearest node
 	char pad6700[0x6708 - 0x6700];
