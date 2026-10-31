@@ -198,6 +198,22 @@ void CNPC_VBach::vfunc432(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10364280 size=0x42
+#include "CNPC_VBach.h"
+
+int CNPC_VBach::vfunc606(int arg)
+{
+	if (sub_10269aa0(0x48)) {
+		if (m_b66a3)
+			return sub_102b8320(arg);
+		m_b66a3 = 1;
+		return 0;
+	}
+	m_b66a3 = 0;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10364500 size=0x31
 // TARGET: sub_10364500
 int __stdcall sub_10364500(float flA, float flB)
