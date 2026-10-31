@@ -172,6 +172,14 @@ void CNPC_VAsianVampire::vfunc444(const CVAsianVampireTask_t *pTask)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10361470 size=0x5
+#include "CNPC_VAsianVampire.h"
+bool CNPC_VAsianVampire::vfunc566(int a0)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10361490 size=0x72
 #include "CNPC_VAsianVampire.h"
 

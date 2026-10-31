@@ -1136,6 +1136,7 @@
 0x10003242 func   ?sub_10231970@@YAHXZ sub_10231970
 0x10003247 func   ?sub_10070990@CEnt10070990@@QAEXPAUCBasePlayerV@@@Z CEnt10070990::sub_10070990
 0x1000324c func   ?sub_103cade0@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103cade0
+0x10003251 func   ?vfunc566@CNPC_VAsianVampire@@QAE_NH@Z CNPC_VAsianVampire::vfunc566
 0x10003256 func   ?sub_103fa3d0@@YAHXZ sub_103fa3d0
 0x1000325b func   ?sub_10232c70@CPair10232c70@@QAE_NPAH@Z CPair10232c70::sub_10232c70
 0x10003265 func   ?sub_1006ca50@CUnk_1006ca50@@QAEXH@Z CUnk_1006ca50::sub_1006ca50
