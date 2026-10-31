@@ -368,6 +368,17 @@ void CSave::vfunc31(void *pBase, const char *pszName, void *pData, int count)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a0da0 size=0x61
+#include "CSave.h"
+void CSave::vfunc33(const char *pszName, void *pData, int count)
+{
+	int tmp[256];
+	for (int i = 0; i < count; i++)
+		tmp[i] = sub_101a08f0(((void **)pData)[i]);
+	vfunc9(pszName, tmp, count);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a0e30 size=0x59
 #include "CSave.h"
 void CSave::vfunc32(const int *pHandles, int count)
