@@ -9,6 +9,7 @@ class CHalfLife2
 public:
 	CGameRules *vfunc0(unsigned int flags);	// scalar deleting destructor: the half life 2 rules' vftable (vt_1047a40c), the base destructor (sub_1000d189), then delete when flags & 1
 public:
+	class CUnknown10427700 *m_pAmmoDef;	// 0x04: the ammo definitions (created by vfunc56)
 	virtual void vfunc0_slot();
 	virtual void vfunc1();
 	virtual void vfunc2();
