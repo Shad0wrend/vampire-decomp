@@ -51,3 +51,57 @@ void CScriptedTarget::vfunc103()
     sub_100b3840(0x10);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1034ddf0 size=0x1f1
+#include "CScriptedTarget.h"
+#include "ehandle.h"
+
+__declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+__declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+void sub_101434b0(int nEntIndex, int nLine, const char *pszText, int nDuration, int r, int g, int b, int a);
+
+#define SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct SScriptedTargetSlots
+{
+	SLOTS10(a0) SLOTS10(a1) SLOTS10(a2) SLOTS10(a3) SLOTS10(a4) SLOTS10(a5) SLOTS10(a6) SLOTS10(a7) SLOTS10(a8) SLOTS10(a9)
+	SLOTS10(b0) SLOTS10(b1) SLOTS10(b2) SLOTS10(b3) SLOTS10(b4) SLOTS10(b5) SLOTS10(b6)
+	virtual void c70();
+	virtual void c71();
+	virtual CBaseEntity *vfunc172();
+};
+
+int CScriptedTarget::vfunc124()
+{
+	char text[512];
+	int nLine = CBaseEntity::vfunc124();
+	if (m_pad0224[0] & 1) {
+		if (m_n5f50)
+			Q_strncpy(text, "State: Off", sizeof(text));
+		else
+			Q_strncpy(text, "State: On", sizeof(text));
+		int nEdict = m_pEdict2e0;
+		sub_101434b0(engine->vfunc35(nEdict), nLine, text, 0, 255, 255, 255, 255);
+		nLine++;
+		CBaseEntity *pNext = ((SScriptedTargetSlots *)this)->vfunc172();
+		if (pNext)
+			Q_snprintf(text, sizeof(text), "Next: %s", pNext->sub_1000b5cd());
+		else
+			Q_strncpy(text, "Next: -NONE-", sizeof(text));
+		nEdict = m_pEdict2e0;
+		sub_101434b0(engine->vfunc35(nEdict), nLine, text, 0, 255, 255, 255, 255);
+		nLine++;
+		if (m_hUser5ce4.Get())
+			Q_snprintf(text, sizeof(text), "User: %s", m_hUser5ce4.Get()->sub_1000b5cd());
+		else if (m_n5f50)
+			Q_strncpy(text, "User: -NONE-", sizeof(text));
+		else
+			Q_strncpy(text, "User: -LOOKING-", sizeof(text));
+		nEdict = m_pEdict2e0;
+		sub_101434b0(engine->vfunc35(nEdict), nLine, text, 0, 255, 255, 255, 255);
+		nLine++;
+	}
+	return nLine;
+}
+// END FUNCTION
