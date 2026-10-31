@@ -161,7 +161,8 @@ public:
 	char m_pad02E4[0x3b0 - 0x2e4];	// 0x02E4 .. 0x03AF
 	Vector m_vec03B0;	// 0x03B0: the velocity
 	Vector m_vec03BC;	// 0x03BC: the base velocity
-	char m_pad03C8[0x3e0 - 0x3c8];	// 0x03C8 .. 0x03DF
+	char m_pad03C8[0x3d4 - 0x3c8];	// 0x03C8 .. 0x03D3
+	Vector m_vec03D4;	// 0x03D4
 	int m_n03E0;	// 0x03E0: the move type
 	char m_pad03E4[0xea4 - 0x3e4];	// 0x03E4 .. 0x0EA3
 	unsigned int m_hEnt0EA4;	// entity handle
