@@ -54824,6 +54824,31 @@ void CUnknown101466e0::sub_101466e0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146700 size=0x63
+#include "CUnknown10146700.h"
+#include "globalvars.h"
+
+int CUnknown10146700::sub_10146700()
+{
+	if (m_usPeriod > 0) {
+		unsigned short dec = (unsigned short)(int)(gpGlobals->frametime * 13107.0);
+		if (dec >= m_usTimer) {
+			m_usTimer = m_usPeriod;
+			m_b2 = 1;
+		} else {
+			m_usTimer -= dec;
+		}
+	}
+	if (m_b0 == 0) {
+		if (!(m_usPeriod > 0) || m_b2 != 0)
+			return 0;
+	} else if (m_b1 != 0) {
+		return 0;
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146790 size=0x9
 struct CUnknown10146790 { char a; char b; char c; void sub_10146790(); };
 void CUnknown10146790::sub_10146790() { c = 0; b = 0; }
