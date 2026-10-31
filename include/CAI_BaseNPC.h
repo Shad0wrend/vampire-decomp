@@ -183,7 +183,8 @@ public:
 	virtual char vfunc562(int a, int b, char bFlag);	// slot 562 (ret 0xc): lets the active weapon (slot 364) answer, else, for NPCs with class flag 0x20000, slot 573; without either a TaskFail(0x42) when bFlag; with class flag 0x10000000 and sub_10266b10(a, b, 0.92f) true a TaskFail(0x64) when bFlag and false; else the answer
 	virtual void vfunc563(CBaseEntity *pEnt, const void *pGoal, const void *pParams, const void *pExtra);	// slot 563: takes the entity, a vector (the goal's destination), a movement parameter block (8 dwords) and the address of a stack value
 	virtual bool vfunc564();	// slot 564: false in states 3 and 1 and while condition 0x46 is clear or 0x55 set
-	CAI_NPC_V(565) CAI_NPC_V(566)
+	CAI_NPC_V(565)
+	virtual bool vfunc566(CBaseEntity *pHint);	// "FValidateHintType": whether the hint (its groups at +0x470 against the NPC's usable groups, its type at +0x5dc) is one this NPC can use
 	virtual int vfunc567(int unused);
 	virtual float vfunc568(int a);
 
