@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103ad660 size=0x6
+#include "CNPC_VRat.h"
+int CNPC_VRat::vfunc138()
+{
+    return 0xd;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ad680 size=0x5
 #include "CNPC_VRat.h"
 bool CNPC_VRat::vfunc294(int a0)

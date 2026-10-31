@@ -6336,6 +6336,7 @@
 0x1000cb80 func   ?sub_1024aa70@CUtlRBTree16Unit@@QAEXG@Z CUtlRBTree16Unit::sub_1024aa70
 0x1000cb94 func   ?vfunc180@CBaseEntity@@QAEXXZ CBaseEntity::vfunc180
 0x1000cb9e func   ?sub_103f7330@@YAHXZ sub_103f7330
+0x1000cbad func   ?vfunc138@CNPC_VRat@@QAEHXZ CNPC_VRat::vfunc138
 0x1000cbb2 func   ?sub_10325cb0@CBaseCombatCharacter@@QAEXPAXH@Z CBaseCombatCharacter::sub_10325cb0
 0x1000cbbc func   ?sub_1018ec20@@YAXPAVCBaseEntity@@M@Z sub_1018ec20
 0x1000cbc1 func   ?sub_103090d0@@YAMM@Z sub_103090d0
