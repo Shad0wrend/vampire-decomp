@@ -1303,6 +1303,7 @@
 0x1000393b func   ?sub_102e9a90@CUtlVector280@@QAEHHPBX@Z CUtlVector280::sub_102e9a90
 0x10003940 func   ?vfunc408@CNPC_VMingXiaoTentacle@@QAEPAXH@Z CNPC_VMingXiaoTentacle::vfunc408
 0x1000394a func   ?sub_101db630@CStatDefault60List@@QAEDPAVIKVNodeView@@PAX@Z CStatDefault60List::sub_101db630
+0x1000394f func   ?sub_10397380@CNPC_VMingXiao@@QAEXPAVCNPC_VMingXiaoTentacle@@@Z CNPC_VMingXiao::sub_10397380
 0x10003959 func   ?sub_102cdcf0@@YGXH@Z sub_102cdcf0
 0x10003963 func   ?vfunc103@CSoundEnt@@UAEXXZ CSoundEnt::vfunc103
 0x10003977 func   ?sub_10180100@CBasePlayer@@QAEPAVCBaseEntity@@H@Z CBasePlayer::sub_10180100

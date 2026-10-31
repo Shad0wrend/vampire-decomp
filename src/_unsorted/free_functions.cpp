@@ -142162,6 +142162,29 @@ int CNPC_VMingXiao::sub_10395650(int a, void *pWeapon)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10397380 size=0x62
+#include "CNPC_VMingXiao.h"
+#include "CNPC_VMingXiaoTentacle.h"
+#include "CDevFlagObj.h"
+#include "CUnknown103160c0.h"
+extern CDevFlagObj *g_10924a6c;
+void CNPC_VMingXiao::sub_10397380(CNPC_VMingXiaoTentacle *pTentacle)
+{
+	CBaseEntity *pTarget = ((CBaseEntity *(__fastcall *)(void *))(*(void ***)this)[167])(this);
+	if (pTarget) {
+		pTentacle->sub_10332ca0(pTarget, 1, 5);
+		pTentacle->vfunc596(pTarget);
+		g_10924a6c->vfunc1();
+		pTentacle->sub_10269a20(0x54);
+		if (*(int *)((char *)this + 0x5bb0) <= 0) {
+			CUnknown103160c0 *pSquad = *(CUnknown103160c0 **)((char *)this + 0x5da4);
+			if (pSquad)
+				pSquad->sub_103161a0((int)pTarget);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10397930 size=0x75
 #include "CNPC_VMingXiao.h"
 #include "CBaseAnimatingOverlay.h"
