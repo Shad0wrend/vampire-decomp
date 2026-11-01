@@ -3357,6 +3357,7 @@
 0x10006c03 func   ?sub_100b0850@@YAXXZ sub_100b0850
 0x10006c08 func   ?sub_100a8d30@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::sub_100a8d30
 0x10006c17 func   ?vfunc104@CNPC_VChangBros@@UAEXXZ CNPC_VChangBros::vfunc104
+0x10006c1c func   ?sub_102c6420@CBaseHandle@@QAEPAVIHandleEntity@@XZ CBaseHandle::sub_102c6420
 0x10006c2b func   ?sub_10156d90@CRagdollPropAttached@@QAEXXZ CRagdollPropAttached::sub_10156d90
 0x10006c30 func   ?vfunc81@COccultObfuscate@@QAEHXZ COccultObfuscate::vfunc81
 0x10006c3a func   ?sub_101d0ec0@@YAXPBD@Z sub_101d0ec0

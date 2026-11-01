@@ -127738,6 +127738,16 @@ bool CUnknown102c63b0::sub_102c63b0(void *pEntity) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c6420 size=0x29
+#include "ehandle.h"
+
+// TARGET: CBaseHandle::sub_102c6420
+IHandleEntity *CBaseHandle::sub_102c6420()
+{
+	return Get();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c6590 size=0xc
 int *CUnknown102c6590::sub_102c6590(int index)
 {
