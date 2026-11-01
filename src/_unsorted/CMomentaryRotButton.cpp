@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_1055c264;
 }
-int CMomentaryRotButton::vfunc82()
+CMomentaryRotButton::Datamap82 CMomentaryRotButton::vfunc82()
 {
-    return (int)&lifted::g_1055c264;
+    return (CMomentaryRotButton::Datamap82)&lifted::g_1055c264;
 }
 // END FUNCTION
 
