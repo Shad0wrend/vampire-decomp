@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_1067f184;
 }
-CBaseMoneyObject::Datamap82 CBaseMoneyObject::vfunc82()
+datamap_t *CBaseMoneyObject::vfunc82()
 {
-    return (CBaseMoneyObject::Datamap82)&lifted::g_1067f184;
+    return (datamap_t *)&lifted::g_1067f184;
 }
 // END FUNCTION
 
