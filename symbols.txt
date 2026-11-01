@@ -7574,6 +7574,7 @@
 0x1000dcf1 func   ?sub_101d9640@CUnknown101d9640@@QAEHH@Z CUnknown101d9640::sub_101d9640
 0x1000dcf6 func   ?sub_100c2bd0@@YAXHHHHHHHM@Z sub_100c2bd0
 0x1000dcfb func   ?sub_1005b3d0@CUnknown1005b3d0@@QAEHXZ CUnknown1005b3d0::sub_1005b3d0
+0x1000dd0a func   ?vfunc99@CPropDoorknob@@UAE_NHHH@Z CPropDoorknob::vfunc99
 0x1000dd0f func   ?sub_100d7c40@@YAXXZ sub_100d7c40
 0x1000dd14 func   ?sub_1006fe00@@YIXPAUFollowObj@@@Z sub_1006fe00
 0x1000dd19 func   ?vfunc5@CPhysTorque@@UAEPAV1@I@Z CPhysTorque::vfunc5
