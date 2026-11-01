@@ -11661,6 +11661,7 @@
 0x1001539d func   ?vfunc82@CVGuiScreen@@UAEPAUdatamap_t@@XZ CVGuiScreen::vfunc82
 0x100153a7 func   ?sub_1033c6b0@CBaseCombatCharacter@@QAEXI@Z CBaseCombatCharacter::sub_1033c6b0
 0x100153b6 func   ?vfunc1@CTraitDependencyDataDescSaveDataOps@@UAEXPAUCTraitDependencyField@@PAX@Z CTraitDependencyDataDescSaveDataOps::vfunc1
+0x100153bb func   ?sub_103e1740@@YAHXZ sub_103e1740
 0x100153c0 func   ?vfunc0@CSoundControllerImp@@UAEXXZ CSoundControllerImp::vfunc0
 0x100153cf func   ?sub_10202d10@CUnknown10202d10@@QAEPAVCUnknown102029c0@@XZ CUnknown10202d10::sub_10202d10
 0x100153d9 func   ?sub_10404d30@@YAHXZ sub_10404d30

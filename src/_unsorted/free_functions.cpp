@@ -159156,6 +159156,24 @@ float sub_103e1680()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e1740 size=0x1c
+struct CUnknown1094068c {
+	virtual void vfunc0();
+	virtual char vfunc1();
+	char m_pad0004[0x2c - 4];
+	int m_n002c;
+};
+extern int g_1094068c;
+
+// TARGET: sub_103e1740
+int __cdecl sub_103e1740()
+{
+	if (((CUnknown1094068c *)g_1094068c)->vfunc1())
+		return 0;
+	return ((CUnknown1094068c *)g_1094068c)->m_n002c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e17b0 size=0x126
 #include "CBaseEntity.h"
 #include "CGameTrace.h"
