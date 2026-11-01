@@ -9528,6 +9528,7 @@
 0x100116ee func   ?vfunc1@CPhysicsAnimlinkEntityDeleteProxy@@QAEXPAVCBaseEntity@@@Z CPhysicsAnimlinkEntityDeleteProxy::vfunc1
 0x100116f8 func   ?sub_10033aa0@CBaseEntity@@QAEXPAM00@Z CBaseEntity::sub_10033aa0
 0x10011702 func   ?sub_103e4640@@YAHXZ sub_103e4640
+0x10011707 func   ?sub_102f37a0@@YAHPBM0@Z sub_102f37a0
 0x1001170c func   ?sub_101976b0@@YAPAUPyObj@@PAU1@0@Z sub_101976b0
 0x1001171b func   ?vfunc17@CBaseEntity@@UAEXHH@Z CBaseEntity::vfunc17
 0x10011720 func   ?sub_10407020@@YAHXZ sub_10407020

@@ -135079,6 +135079,16 @@ int sub_102f3770(const float *a, const float *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f37a0 size=0x1e
+// TARGET: sub_102f37a0
+int sub_102f37a0(const float *a, const float *b)
+{
+	if (*b > *a)
+		return 1;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f37d0 size=0x1d
 namespace lifted {
 extern char g_1049da30;
