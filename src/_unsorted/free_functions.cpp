@@ -37652,6 +37652,33 @@ void sub_100d7400()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d7520 size=0x1f
+void *sub_101193b0();
+
+struct CUnk101f1e20 {
+	void sub_101f1e20();
+};
+
+struct CUnk100d7520 {
+	char m_pad0000[0xa8];
+	char *m_a8;
+};
+
+// TARGET: sub_100d7520
+void sub_100d7520()
+{
+	CUnk100d7520 *p = (CUnk100d7520 *)sub_101193b0();
+	if (p)
+	{
+		char *q = p->m_a8;
+		if (q)
+		{
+			((CUnk101f1e20 *)(q + 0x1460))->sub_101f1e20();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d75e0 size=0x1e
 // TARGET: sub_100d75e0
 struct CUnk100d75e0

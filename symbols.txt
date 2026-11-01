@@ -10710,6 +10710,7 @@
 0x10013728 func   ?sub_100b2e30@CBaseEntity@@QAEXPBM@Z CBaseEntity::sub_100b2e30
 0x1001372d func   ?vfunc104@CNPC_VTzimisceRunner@@QAEXXZ CNPC_VTzimisceRunner::vfunc104
 0x10013732 func   ?vfunc363@CWeaponRanged_Rifle_SuperShotgun@@QAEHXZ CWeaponRanged_Rifle_SuperShotgun::vfunc363
+0x10013737 func   ?sub_100d7520@@YAXXZ sub_100d7520
 0x1001373c func   ?sub_100b97e0@Obj@@QAEXPBUVec3@@MM@Z Obj::sub_100b97e0
 0x10013741 func   ?sub_100d6930@@YAXXZ sub_100d6930
 0x10013746 func   ?vfunc23@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHHHHHHHH@Z CTempEntsSystem::vfunc23
