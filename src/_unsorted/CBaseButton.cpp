@@ -93,6 +93,24 @@ void CBaseButton::vfunc71()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c8940 size=0x3b
+#include "CBaseButton.h"
+
+// TARGET: CBaseButton::vfunc35
+int CBaseButton::vfunc35(int pActivator)
+{
+    if (*(char *)((char *)this + 0x5c4))
+    {
+        return *(int *)((char *)this + 0x5cc);
+    }
+    if (!((CBaseEntity *)this)->sub_100a7bd0((CBaseEntity *)pActivator))
+    {
+        return *(int *)((char *)this + 0x5cc);
+    }
+    return *(int *)((char *)this + 0x5c8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c8990 size=0x16
 #include "CBaseButton.h"
 
