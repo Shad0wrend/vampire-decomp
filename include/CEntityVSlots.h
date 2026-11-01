@@ -53,7 +53,9 @@ public:
 	EVS(120) EVS(121)
 	virtual void slot122(const char *pszClassname);	// "SetClassname"
 	EVS(123) EVS(124) EVS(125) EVS(126) EVS(127) EVS(128) EVS(129)
-	EVS10(13)
+	EVS(130) EVS(131) EVS(132) EVS(133) EVS(134) EVS(135) EVS(136) EVS(137)
+	virtual int slot138();	// answers an int in eax that the caller tests (CAI_BaseNPCTroika::vfunc113: attach the navigation hint when non-zero)
+	EVS(139)
 	EVS(140) EVS(141)
 	virtual int slot142(const void *pInfo);	// "OnTakeDamage": takes the damage info record, answers an int
 	virtual int slot143(float flHealth, int bitsDamageType);	// "TakeHealth"
