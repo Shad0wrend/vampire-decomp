@@ -85493,6 +85493,19 @@ void sub_101cfe10(void *pObj, int a, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cfea0 size=0x35
+#include "CGameTrace.h"
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+struct CEntV155 { V100(a) V10(b) V10(c) V10(d) V10(e) V10(f) virtual void g0(); virtual void g1(); virtual void g2(); virtual void g3(); virtual void g4();
+	virtual void s155(CGameTrace *pTrace, int a, int b, int c, int d, int e, int f); };
+void sub_101cfea0(CGameTrace *pTrace, int a, int f)
+{
+	if (pTrace->m_fraction != 1.0)
+		((CEntV155 *)pTrace->m_pEnt)->s155(pTrace, a, 0, 1, 0, 0, f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d02a0 size=0x1
 void sub_101d02a0()
 {
