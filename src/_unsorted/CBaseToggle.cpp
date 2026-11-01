@@ -157,8 +157,8 @@ static inline void AssignVector(Vector &dst, const Vector &src)
 	dst.z = src.z;
 }
 
-// TARGET: CBaseToggle::vfunc103
-void CBaseToggle::vfunc103()
+// TARGET: CBaseToggle::sub_101c1cb0
+void CBaseToggle::sub_101c1cb0()
 {
 	vfunc93(8, 0);
 	sub_100b3b00();
