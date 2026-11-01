@@ -17,9 +17,9 @@ unsigned char sub_1004ea30()
 namespace lifted {
 extern char g_1053d12c;
 }
-CPhysExplosion::Datamap82 CPhysExplosion::vfunc82()
+datamap_t *CPhysExplosion::vfunc82()
 {
-    return (CPhysExplosion::Datamap82)&lifted::g_1053d12c;
+    return (datamap_t *)&lifted::g_1053d12c;
 }
 // END FUNCTION
 
