@@ -723,7 +723,7 @@ public:
 	virtual void vfunc428();
 	virtual void vfunc429();
 	virtual void vfunc430();
-	virtual void vfunc431();
+	virtual void vfunc431_slot();
 	virtual void vfunc432();
 	virtual void vfunc433();
 	virtual void vfunc434();
