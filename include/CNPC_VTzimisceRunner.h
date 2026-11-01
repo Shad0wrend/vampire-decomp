@@ -400,7 +400,7 @@ public:
 	virtual void vfunc316();
 	virtual void vfunc317();
 	virtual void vfunc318();
-	virtual void vfunc319();
+	virtual char vfunc319(int, int);	// the game's slot 320 (+0x500): this header's numbering is one ahead from here on
 	virtual char vfunc320(int, int);	// slot 320: forwards to CAI_BaseNPCTroika::vfunc320 with the second argument replaced by 0x79 (the forwarder 0x103c43f0 stores it over the stack argument), returns the callee's char in al
 	virtual void vfunc321();
 	virtual void vfunc322();
