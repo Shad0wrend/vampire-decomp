@@ -7580,6 +7580,7 @@
 0x1000dc56 func   ?sub_1011f6e0@CUnknown1011f6e0@@QAEXXZ CUnknown1011f6e0::sub_1011f6e0
 0x1000dc5b func   ?vfunc484@CHL2_Player@@UAEXXZ CHL2_Player::vfunc484
 0x1000dc60 func   ?vfunc1@CTEKillPlayerAttachments@@UAEHXZ CTEKillPlayerAttachments::vfunc1
+0x1000dc65 func   ?sub_102c8b10@CUtlVector16@@QAEXXZ CUtlVector16::sub_102c8b10
 0x1000dc6f func   ?vfunc0@CTEFizz@@UAEHXZ CTEFizz::vfunc0
 0x1000dc74 func   ?vfunc82@CNPCMaker_Fleshpile@@UAEPAUdatamap_t@@XZ CNPCMaker_Fleshpile::vfunc82
 0x1000dc79 func   ?sub_101f6e70@CUnknown101f6c50@@QAEXHPAUCTraitStatBlock@@PAH@Z CUnknown101f6c50::sub_101f6e70
