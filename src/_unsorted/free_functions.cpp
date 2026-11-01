@@ -52374,6 +52374,18 @@ bool sub_1012f890(int nIndex, const char **ppOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012f8e0 size=0x1c
+struct CUnk1012f8e0Entry { float (__cdecl *fn)(int); int pad; };
+extern CUnk1012f8e0Entry g_105751a4[];
+
+// TARGET: sub_1012f8e0
+bool sub_1012f8e0(int a, int index, float *pOut)
+{
+	*pOut = g_105751a4[index].fn(a);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012f970 size=0x6
 namespace lifted {
 extern char g_1070c4c0;
