@@ -28603,6 +28603,45 @@ int sub_100ab250(CUnknown100ab250 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ab5c0 size=0x2f2
+#include "CBaseEntity.h"
+#include "CVariantCopy.h"
+#include "CUnknown10738964.h"
+#include "ScopeTrace.h"
+#include "globalvars.h"
+
+extern CUnknown10738964 *g_106cfe54;
+extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+
+static inline int VInt(const CVariantCopy &v) { return v.m_fieldType == 4 ? v.m_value : 0; }
+static inline const char *VString(const CVariantCopy &v) { return v.m_fieldType == 2 ? (v.iszVal ? v.iszVal : g_106b8540) : v.sub_100d0a00(); }
+
+// TARGET: CBaseEntity::sub_100ab5c0
+void CBaseEntity::sub_100ab5c0(const char *szInputName, CBaseEntity *pActivator, CVariantCopy Value)
+{
+	ScopeTrace trace("CBaseEntity::DrawInputOverlay", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	char szText[1024];
+	if (Value.m_fieldType == 4) {
+		Q_snprintf(szText, sizeof(szText), "%3.1f  (%s,%d) <-- (%s)\n", gpGlobals->curtime, szInputName, VInt(Value), pActivator ? pActivator->sub_100ab4f0() : 0);
+	} else if (Value.m_fieldType == 2) {
+		Q_snprintf(szText, sizeof(szText), "%3.1f  (%s,%s) <-- (%s)\n", gpGlobals->curtime, szInputName, VString(Value), pActivator ? pActivator->sub_100ab4f0() : 0);
+	} else {
+		Q_snprintf(szText, sizeof(szText), "%3.1f  (%s) <-- (%s)\n", gpGlobals->curtime, szInputName, pActivator ? pActivator->sub_100ab4f0() : 0);
+	}
+	sub_1009f3c0(szText, 10);
+	if (!g_106cfe54->vfunc1() && g_106cfe54->m_n2c) {
+		if (Value.m_fieldType == 4) {
+			DevMsg("input: (%s,%d) -> (%s,%s), from (%s)\n", szInputName, VInt(Value), m_classname11c ? m_classname11c : g_106b8540, sub_100ab4f0(), pActivator ? pActivator->sub_100ab4f0() : 0);
+		} else if (Value.m_fieldType == 2) {
+			DevMsg("input: (%s,%s) -> (%s,%s), from (%s)\n", szInputName, VString(Value), m_classname11c ? m_classname11c : g_106b8540, sub_100ab4f0(), pActivator ? pActivator->sub_100ab4f0() : 0);
+		} else {
+			DevMsg("input: (%s) -> (%s,%s), from (%s)\n", szInputName, m_classname11c ? m_classname11c : g_106b8540, sub_100ab4f0(), pActivator ? pActivator->sub_100ab4f0() : 0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ab980 size=0x1ee
 #include "CBaseEntity.h"
 #include "CEventAction.h"
