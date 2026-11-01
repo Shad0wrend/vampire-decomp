@@ -36,8 +36,9 @@ public:
 	int m_nSoundState;	// 0x928
 	char m_pad92c[0x93c - 0x92c];
 	CGravControllerPoint m_controller93c;	// 0x93c
-	char m_pad9d0[0x9dc - 0x93c - sizeof(CGravControllerPoint)];
-	struct CSlot9dc { EHANDLE a; EHANDLE b; int pad[3]; } m_slots9dc[16];	// 0x9dc: two handles per entry; the last entry's pad[2] is the handle at 0xb18
+	char m_pad9d0[0x9d8 - 0x93c - sizeof(CGravControllerPoint)];
+	struct CSlot9d8 { int pad; EHANDLE a; EHANDLE b; int pad2[2]; } m_slots9d8[16];	// 0x9d8: two handles per entry
+	unsigned int m_hB18;	// 0xb18
 	unsigned int m_hB1c;	// 0xb1c
 	char m_padb20[0xb25 - 0xb20];
 	char m_bB25;	// 0xb25
