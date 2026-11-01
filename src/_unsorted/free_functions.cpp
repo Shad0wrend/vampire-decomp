@@ -68600,6 +68600,23 @@ void __fastcall sub_1018d840(SThinkView *p, int unused, SInputActivator *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018d8c0 size=0x3a
+#include "CUnknown1018d8c0.h"
+#include "CBaseEntity.h"
+
+void __fastcall sub_1018d5f0(char *p);
+
+void CUnknown1018d8c0::sub_1018d8c0(inputdata_t *inputdata)
+{
+	CBaseEntity *pEnt = (CBaseEntity *)inputdata->pActivator;
+	if (pEnt)
+		m_hEntity = *pEnt->vfunc1();
+	else
+		m_hEntity = 0xffffffff;
+	sub_1018d5f0((char *)this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018da10 size=0x1a
 namespace lifted {
 extern int g_1058cbf8;
