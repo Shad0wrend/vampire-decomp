@@ -5891,6 +5891,7 @@
 0x1000b2a3 func   ?vfunc82@CEnvWind@@UAEPAUdatamap_t@@XZ CEnvWind::vfunc82
 0x1000b2a8 func   ?sub_102bf050@@YAXXZ sub_102bf050
 0x1000b2ad func   ?vfunc373@CWeaponMelee_AVampBlade@@QAEHXZ CWeaponMelee_AVampBlade::vfunc373
+0x1000b2b2 func   ?sub_10427970@CUnk10427970@@QAEXXZ CUnk10427970::sub_10427970
 0x1000b2b7 func   ?sub_1006aa90@CUnknown1006aa90@@QAEHXZ CUnknown1006aa90::sub_1006aa90
 0x1000b2bc func   ?vfunc113@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::vfunc113
 0x1000b2c6 func   ?vfunc0@CPython_SaveRestoreBlockHandler@@UAEHXZ CPython_SaveRestoreBlockHandler::vfunc0
