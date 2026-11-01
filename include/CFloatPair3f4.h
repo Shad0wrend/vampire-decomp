@@ -8,6 +8,7 @@ public:
 	void sub_100c08d0();	// stub 0x10006a91
 	void sub_100c0ad0(int a, int b, int c, int d);	// takes four stack arguments it does not read (ret 0x10): sub_100c0970(0.0f) when +0x164 is not zero, else sub_100c0970(+0x460)
 
+	void sub_100c0c80(float flUnused);	// takes one stack argument it overwrites (ret 4 via the tail jump): sub_100c0970(+0x460) when +0x164 is not above 0, else sub_100c0970(0.0f)
 	void sub_100c0830();	// the member at 0x100c0830: when the helper at 0x10014691 accepts +0x45c, swaps the member pointer at +0x114 to sub_100c08d0 and runs it; else +0x3fc = +0x3f4 + 0.1
 	void sub_100c0690();	// picks the target value from |+0x164| + +0x460 * +0x450 and +0x45c (the +0x45c value wins when its magnitude does not exceed it: then the member pointer at +0x114 becomes sub_100c08d0 and runs), hands it to sub_100c0420 and arms +0x3fc = +0x3f4 + 0.1
 	void sub_100c0420(float flValue);	// stub 0x10002a59
