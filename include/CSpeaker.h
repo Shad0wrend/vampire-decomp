@@ -27,6 +27,7 @@ public:
 
 	void sub_101af650();	// "CSpeaker::SpeakerThink": waits for the talk monsters (global at 0x10936c40), then plays the sentence (a '!' name once, then stops thinking) or a random one of the sentence group and re-arms the think with a random delay
 public:
-	int vfunc82();
+	typedef int Datamap82;	// staged: becomes datamap_t *
+	Datamap82 vfunc82();
 	int vfunc117();
 };

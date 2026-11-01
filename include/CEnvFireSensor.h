@@ -17,5 +17,6 @@ public:
 	char m_pad452[0x460 - 0x452];
 	int m_field460;
 public:
-	int vfunc82();
+	typedef int Datamap82;	// staged: becomes datamap_t *
+	Datamap82 vfunc82();
 };

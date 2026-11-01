@@ -51,7 +51,8 @@ public:
 public:
 	int vfunc36();
 	float vfunc37();
-	int vfunc82();
+	typedef int Datamap82;	// staged: becomes datamap_t *
+	Datamap82 vfunc82();
 	int vfunc117();
 	void vfunc273();
 	void vfunc274();

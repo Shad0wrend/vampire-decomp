@@ -33,7 +33,8 @@ public:
 	char m_cTarget;	// 0x459
 	float m_flFadeTime;	// 0x45c
 public:
-	int vfunc82();
+	typedef int Datamap82;	// staged: becomes datamap_t *
+	Datamap82 vfunc82();
 	void vfunc77();	// as in CNPC_VBach (transplant)
 	void vfunc78();	// as in CNPC_VBach (transplant)
 	void vfunc119();	// as in CNPC_VBach (transplant)

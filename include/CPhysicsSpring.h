@@ -132,5 +132,6 @@ public:
 	virtual void vfunc79();
 	virtual void vfunc80();
 	virtual void vfunc81();
-	virtual int vfunc82();
+	typedef int Datamap82;	// staged: becomes datamap_t *
+	virtual Datamap82 vfunc82();
 };

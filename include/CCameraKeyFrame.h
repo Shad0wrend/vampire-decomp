@@ -24,5 +24,6 @@ public:
 	char m_pad0474[0x47c - 0x474];
 	char m_b47c;	// 0x47c
 public:
-	int vfunc82();
+	typedef int Datamap82;	// staged: becomes datamap_t *
+	Datamap82 vfunc82();
 };

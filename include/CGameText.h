@@ -10,6 +10,7 @@ public:
 	bool vfunc110(const char *szKeyName, const char *szValue);	// slot 110 "CGameText::KeyValue": color and color2 are parsed as four integers and stored as bytes at +0x460 / +0x464, anything else goes to CBaseEntity::vfunc110
 	bool sub_1009e430(const char *szKeyName, const char *szValue);	// CBaseEntity::vfunc110 (stub 0x1000fc86), called directly
 public:
-	int vfunc82();
+	typedef int Datamap82;	// staged: becomes datamap_t *
+	Datamap82 vfunc82();
 	int vfunc173(int, int, int, int);
 };

@@ -15,5 +15,6 @@ public:
 	char m_pad0208[0x450 - 0x208];
 	const char *m_name450;	// 0x450: the name of the explosion parameter entity
 public:
-	int vfunc82();
+	typedef int Datamap82;	// staged: becomes datamap_t *
+	Datamap82 vfunc82();
 };

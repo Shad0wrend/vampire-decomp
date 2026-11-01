@@ -32,7 +32,8 @@ public:
 	char m_out0484[0x18];	// OnHealthChanged: a variant output (the variant value first, then the event)
 public:
 	int vfunc74(int);
-	int vfunc82();
+	typedef int Datamap82;	// staged: becomes datamap_t *
+	Datamap82 vfunc82();
 	char vfunc117();
 	bool vfunc223();
 };

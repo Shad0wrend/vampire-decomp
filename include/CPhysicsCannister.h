@@ -59,7 +59,8 @@ public:
 	const char *m_pszExplosion1a14;	// 0x1a14: name of the explosion parameters entity
 public:
 	bool vfunc72(int);
-	int vfunc82();
+	typedef int Datamap82;	// staged: becomes datamap_t *
+	Datamap82 vfunc82();
 	bool vfunc158();
 	int vfunc226();
 };

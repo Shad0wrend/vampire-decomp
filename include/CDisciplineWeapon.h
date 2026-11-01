@@ -35,5 +35,6 @@ public:
 public:
 	virtual bool vfunc281();
 public:
-	virtual int vfunc82();
+	typedef int Datamap82;	// staged: becomes datamap_t *
+	virtual Datamap82 vfunc82();
 };

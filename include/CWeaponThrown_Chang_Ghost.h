@@ -44,7 +44,8 @@ public:
 	float m_f0928;	// 0x928
 	EHANDLE m_hEmitter92c;	// 0x92c: the bone tree emitter entity
 public:
-	int vfunc82();
+	typedef int Datamap82;	// staged: becomes datamap_t *
+	Datamap82 vfunc82();
 	void vfunc230(int, int);
 	int vfunc362();
 	int vfunc363();

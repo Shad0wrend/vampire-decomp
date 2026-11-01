@@ -19,5 +19,6 @@ public:
 	int m_nDestID;	// 0x458
 	int m_nLinkState;	// 0x45c
 public:
-	int vfunc82();
+	typedef int Datamap82;	// staged: becomes datamap_t *
+	Datamap82 vfunc82();
 };

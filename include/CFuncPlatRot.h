@@ -25,5 +25,6 @@ public:
 	Vector m_vecFinalAngle;	// 0x574
 	Vector m_vecStart;	// 0x580
 public:
-	int vfunc82();
+	typedef int Datamap82;	// staged: becomes datamap_t *
+	Datamap82 vfunc82();
 };

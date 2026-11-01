@@ -37,7 +37,8 @@ public:
 	virtual float vfunc30(); virtual void vfunc31(int pDump);	// slot 31 "Dump": dumps the suit power fields, then the player base's Dump
 	virtual void pa32(); virtual void pa33(); virtual void pa34(); virtual void pa35(); virtual void pa36(); virtual void pa37(); virtual void pa38(); virtual void pa39();
 	CHL2_V10(pa4) CHL2_V10(pa5) CHL2_V10(pa6) CHL2_V10(pa7)	// slots 40..79
-	virtual int vfunc80(); virtual int vfunc81(); virtual int vfunc82(); virtual void pa83(); virtual void pa84(); virtual void pa85(); virtual void pa86(); virtual void pa87(); virtual void pa88(); virtual void pa89();	// slots 80..89
+	typedef int Datamap82;	// staged: becomes datamap_t *
+	virtual int vfunc80(); virtual int vfunc81(); virtual Datamap82 vfunc82(); virtual void pa83(); virtual void pa84(); virtual void pa85(); virtual void pa86(); virtual void pa87(); virtual void pa88(); virtual void pa89();	// slots 80..89
 	virtual void pa90(); virtual void pa91(); virtual int vfunc92(); virtual void pa93(); virtual int vfunc94();	// slots 90..94
 	virtual void pa95(); virtual void pa96(); virtual void pa97(); virtual void pa98(); virtual void pa99();	// slots 95..99
 	virtual void pb00(); virtual void pb01(); virtual void pb02();	// slots 100..102

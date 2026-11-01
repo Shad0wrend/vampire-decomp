@@ -26,5 +26,6 @@ public:
 	void sub_100fd270(int pObject);
 	char sub_100b5190();	// stub 0x10014da8
 public:
-	int vfunc82();
+	typedef int Datamap82;	// staged: becomes datamap_t *
+	Datamap82 vfunc82();
 };

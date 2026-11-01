@@ -36,7 +36,8 @@ public:
 
 	void sub_1000cb8a();	// destructor body
 public:
-	virtual int vfunc82();
+	typedef int Datamap82;	// staged: becomes datamap_t *
+	virtual Datamap82 vfunc82();
 public:
 	virtual int vfunc117();
 };

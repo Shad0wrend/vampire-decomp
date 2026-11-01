@@ -94,7 +94,8 @@ public:
 	void *sub_103615c0();	// stub 0x1000c61c: the hint for task 0x151
 	void *sub_10361730();	// stub 0x10006a1e: the hint for task 0x152
 public:
-	int vfunc82();
+	typedef int Datamap82;	// staged: becomes datamap_t *
+	Datamap82 vfunc82();
 	int vfunc451();
 	bool vfunc452();
 	bool vfunc566(int);

@@ -44,5 +44,6 @@ public:
 	char m_pad047c[4];
 	Vector m_vec480;	// 0x0480
 public:
-	virtual int vfunc82();
+	typedef int Datamap82;	// staged: becomes datamap_t *
+	virtual Datamap82 vfunc82();
 };

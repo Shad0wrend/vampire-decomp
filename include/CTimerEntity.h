@@ -23,5 +23,6 @@ public:
 	void sub_101316e0();	// re-arms the next think from the interval (stub 0x1000c1b2)
 	void sub_101318e0(inputdata_t *pInput);	// input handler: sets the interval from a float variant (at least 0.01f), re-arming when it changed
 public:
-	int vfunc82();
+	typedef int Datamap82;	// staged: becomes datamap_t *
+	Datamap82 vfunc82();
 };

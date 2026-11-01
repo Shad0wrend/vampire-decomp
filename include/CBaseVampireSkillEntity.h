@@ -40,5 +40,6 @@ public:
 	const char *sub_1000b5cd();	// CBaseEntity::sub_100ab4f0 (stub 0x1000b5cd): the debug name text
 	int *vfunc267(int *pOut, CBaseEntity *pPlayer);	// slot 267 (plain member): stamps the time at +0x788, tests the player's skill of the kind +0x784 (1 or 2) with the tuning block at 0x10739d08 into +0x780, fires the output at +0x7f4 with the player, then by the outcome (3 or more: slot 270, 0: the player view message 2 and slot 269, else slot 271); stores the outcome in *pOut and returns pOut
 public:
-	int vfunc82();
+	typedef int Datamap82;	// staged: becomes datamap_t *
+	Datamap82 vfunc82();
 };

@@ -8,5 +8,6 @@ public:
 	CAISound *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
 public:
-	int vfunc82();
+	typedef int Datamap82;	// staged: becomes datamap_t *
+	Datamap82 vfunc82();
 };
