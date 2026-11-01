@@ -89,6 +89,20 @@ int __fastcall sub_101a1490(char *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a14b0 size=0x1d
+#include "CRestore.h"
+
+// TARGET: CRestore::sub_101a14b0
+void CRestore::sub_101a14b0(int pos)
+{
+	int *piVar1 = (int *)m_pData;
+	if (pos >= 0 && pos < piVar1[3]) {
+		piVar1[2] = pos;
+		piVar1[1] = piVar1[0] + pos;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a18a0 size=0xbb
 #include <string.h>
 #include "CRestore.h"
