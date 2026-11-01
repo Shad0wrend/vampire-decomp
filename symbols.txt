@@ -7555,6 +7555,7 @@
 0x1000d9a4 func   ?sub_1024fc20@CDropEntityUnit@@QAEXXZ CDropEntityUnit::sub_1024fc20
 0x1000d9a9 func   ?sub_10138870@@YAXPAVVector@@00@Z sub_10138870
 0x1000d9ae func   ?vfunc320@CItemContainer@@QAE_NHH@Z CItemContainer::vfunc320
+0x1000d9b3 func   ?vfunc103@CNullEntity@@QAEXXZ CNullEntity::vfunc103
 0x1000d9b8 func   ?sub_10266c80@@YG_NPBVVector@@M@Z sub_10266c80
 0x1000d9c7 func   ?sub_102d11f0@@YGHH@Z sub_102d11f0
 0x1000d9cc func   ?sub_100d6680@@YAXXZ sub_100d6680
