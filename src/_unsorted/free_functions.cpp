@@ -142200,6 +142200,18 @@ void __fastcall sub_102f5090(int *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f50e0 size=0x28
+#include "CAI_NetworkManager.h"
+
+// TARGET: CAI_NetworkManager::sub_102f50e0
+void CAI_NetworkManager::sub_102f50e0()
+{
+	sub_100ac4e0(0, 0, 0);
+	((CUnknown102f7970 *)m_pNetwork)->m_flags &= 0xefffffff;
+	sub_102f5190();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f5120 size=0x4c
 void sub_101ce440(int a, const char *s1, const char *s2, const char *s3, const char *s4, const char *s5);
 void sub_1000993a();
