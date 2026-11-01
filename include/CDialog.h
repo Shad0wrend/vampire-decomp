@@ -88,6 +88,7 @@ public:
 	char sub_100e5410(char *pszFilename);	// stub 0x10011da6
 	void sub_100e5c70();	// "CDialog::CallPendingNPCEventScript": scope trace, when the pending event script name at +0x30ea is set runs it (sub_100e4f30) and clears it
 	void sub_100e4f30(char *pszScript);
+	int sub_100e61d0(void *pFile, DialogLine *pLine, int *pLineNo);	// "CDialog::read_line_data": scope trace, reads one dialog line (key, text, gender, response, dependency, script, seven clan texts); 1 ok, 0 empty line, -1 missing field
 	void sub_100e7630(void *pFile);	// "CDialog::eat_line": scope trace, reads characters from the file until a newline or EOF
 	int sub_100e7510(void *pFile);	// reads one character (-1 at end of file)
 	int sub_100e6ed0(void *pFile, char *pszOut, int *pLine, char bStripBrackets);	// "CDialog::read_str_data": scope trace; skips to the opening { (// comments, warns about a stray }), then reads up to the closing } into pszOut (trimmed, curly quotes straightened, [..] dropped when bStripBrackets); 1 ok, 0 at end of file, -1 on a newline before the brace
