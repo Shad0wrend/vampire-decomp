@@ -5270,6 +5270,7 @@
 0x10009b60 func   ?sub_10084c30@@YAXHI@Z sub_10084c30
 0x10009b65 func   ?vfunc103@CNPC_VCop@@UAEXXZ CNPC_VCop::vfunc103
 0x10009b6a func   ?vfunc4@CTEBeamRingPoint@@UAEXHH@Z CTEBeamRingPoint::vfunc4
+0x10009b6f func   ?vfunc105@CAI_BaseNPCTroika@@QAEXPBD@Z CAI_BaseNPCTroika::vfunc105
 0x10009b74 func   ?sub_10196970@@YAPAUPyObject@@PAU1@0@Z sub_10196970
 0x10009b79 func   ?sub_103404f0@@YI_NPADHH@Z sub_103404f0
 0x10009b7e func   ?vfunc317@CNPC_VPlaceholder@@UAE_NH@Z CNPC_VPlaceholder::vfunc317

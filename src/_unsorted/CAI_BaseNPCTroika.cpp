@@ -1306,6 +1306,19 @@ int CAI_BaseNPCTroika::vfunc569(CBaseEntity *pHint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10298ce0 size=0x32
+#include "CAI_BaseNPCTroika.h"
+#include "CUnknown100ecee0.h"
+extern CUnknown100ecee0 g_10924980;
+void CAI_BaseNPCTroika::vfunc105(const char *pszName)
+{
+	sub_103409a0(pszName);
+	sub_10273070(1);
+	CAI_BaseNPC::sub_10274ca0();
+	m_n64e8 = g_10924980.sub_100ec640((CBaseAnimating *)this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10299700 size=0x158
 #include "CAI_BaseNPCTroika.h"
 #include "CRestore.h"
