@@ -15,6 +15,7 @@ public:
 	virtual void vfunc3(const Vector &origin, const QAngle &angles);	// "CTEBubbleTrail::Test": like CTEBubbles::Test with 20 bubbles, height 128 and speed 8.0
 	virtual void vfunc4(CRecipientFilter &filter, float delay);	// "Create"
 
+	CTEBubbleTrail *sub_1005fca0(const char *name);	// constructor body (0x1005fca0): the CBaseTempEntityHead constructor with the name, the vtable, the ten zeroed dwords; returns this
 	void sub_100157ee();	// destructor body
 	void sub_1005fec0(int a, int b);	// "CTEBubbleTrail::Create" (called through the stub at 0x10010992)
 
