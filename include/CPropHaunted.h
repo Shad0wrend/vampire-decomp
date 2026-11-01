@@ -31,6 +31,8 @@ public:
 	virtual void hsm5(); virtual void hsm6(); virtual void hsm7(); virtual void hsm8(); virtual void hsm9();
 	virtual void hsn0(); virtual void hsn1();
 	virtual void vfunc266(CBaseEntity *pOther);	// slot 266: reacts to the entity that hit the prop
+	virtual void vfunc103();	// slot 103: CBreakableProp::vfunc103, then the physics setup (slot 225, SetMoveType, VPhysicsInitNormal, wakes the object)
+	void sub_1018f340();	// CBreakableProp::vfunc103 (stub 0x10012eef), called directly
 	CPropHaunted *sub_102139f0();
 	void vfunc174(CBaseEntity *pOther);	// slot 174 (declared as a plain member): CBaseEntity::vfunc174 for the entity that hit the prop, the impact reaction sub_10213ef0 (index 0, no event) first; the reaction is skipped while the state at +0x200 is 2
 	void vfunc228(int index, void *pEvent);	// slot 228 (declared as a plain member): the impact reaction sub_10213ef0 for the entity of the event's other side (the engine entity 0 when none), then CBaseEntity::vfunc228 unless the state at +0x200 is 2
