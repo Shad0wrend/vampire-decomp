@@ -60313,6 +60313,26 @@ int CUnk1015fd50::sub_1015fd50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015fdc0 size=0x1e
+// TARGET: sub_1015fdc0
+struct CUnk1015fdc0
+{
+    char pad[0x73c];
+    int m_73c;
+    char pad2[0x748 - 0x740];
+    float m_748;
+    int sub_1015fdc0();
+};
+int CUnk1015fdc0::sub_1015fdc0()
+{
+    if (m_748 == 0.0f)
+    {
+        return -1;
+    }
+    return m_73c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160560 size=0xe0
 #include "CBasePlayer.h"
 #include "CBaseCombatWeapon.h"
