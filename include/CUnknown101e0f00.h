@@ -36,6 +36,7 @@ struct CUnknown101e0f00SrcB	// an element of the second list of a source descrip
 struct CUnknown101e0f00SrcSub	// the object at +0xc of a source description
 {
 	char sub_101dc750();	// whether it holds a value (stub 0x10011bc6)
+	void sub_101dc790(int pOwner);	// runs the list of the sub object for the owner (stub 0x10015e38)
 };
 
 struct CUnknown101e0f00Src	// the 0x1c byte source descriptions at +0xa4 / +0xc0 of an entry
