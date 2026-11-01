@@ -266,6 +266,10 @@ public:
 	bool sub_103d7dc0(void *pHint);	// stub 0x10010424: the hint test of the mode 5
 	bool sub_103d8300(void *pHint);	// stub 0x10013796: the hint test of the mode 6
 	int sub_103d5590(void *pHint);	// stub 0x10015d7a: adds the hint as pathable
+	void sub_103d7710();	// stub 0x100034a4, called directly by NPCThink
+	void sub_103d93b0();	// stub 0x1000e93a, called directly by NPCThink
+	void sub_10292de0();	// CAI_BaseNPCTroika::vfunc431 (stub 0x10002a7c), called directly
+	void vfunc431();	// slot 431 "CNPC_VWerewolf::NPCThink"
 	void sub_103cb4b0();	// walks the global hint list (0x10925450, next at +0x5d8) and, by the mode of the global object at 0x1093f95c (0 while its slot 1 is true, else the dword at +0x2c; modes 1..6 pick one of sub_103d2070 / sub_103d2810 / sub_103d3360 / sub_103d8060 / sub_103d7dc0 / sub_103d8300), runs sub_103d5590 on every hint the test accepts
 	bool sub_103d8300(CAI_Hint *pHint);	// "CNPC_VWerewolf::IsValidTeleportHint": scope trace (entity name), false for no hint, when the attack state bit 4 of +0x66e8 is set, for a locked hint (CAI_Hint::sub_102d14c0), when slot 566 refuses the hint, for the hint types 0x3aa3..0x3aa8, for a hint of kind 1 at +0x470 while bit 6 of +0x66e8 is set, or when the hint's end entity (sub_103d6390) is unselectable (CBaseEntity::sub_100b5190); else true
 	void sub_103cc450();	// "CNPC_VWerewolf::UpdateConditionShouldBreakHint": scope trace (entity name), SetCondition(0x7b); the break hint handle at +0x66c4 is dropped unless bit 1 of the attack state (+0x66e8) is set; with a valid break hint (sub_103d8550) and HasPath from this entity's origin (slot 217) to the hint's ground point it signals the object behind the global 0x10924a6c (slot 1) and sets condition 0x7b again (sub_10269a20)
