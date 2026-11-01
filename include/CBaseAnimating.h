@@ -103,6 +103,7 @@ public:
 	virtual bool vfunc99(int pRay, int mask, int pTrace);	// slot 99 \"CBaseAnimating::TestCollision\": scope trace (entity name); a ray (byte +0x30) or the custom ray / box solid flags (IsSolidFlagSet, inlined scope traces) go through slot 100 (TestHitboxes) and answer true unless the trace is a clean miss (fraction >= 1.0, no allsolid / startsolid); otherwise warns (Warning for SOLID_VPHYSICS, slot 92 == 6, DevMsg for the others) and answers false
 
 	void vfunc105(const char *pModelName);	// slot 105 "CBaseAnimating::SetModel"
+	void vfunc256(int iBone, float *pMatrix);	// slot 256 "CBaseAnimating::GetBoneTransform": scope trace (entity name), copies the cached bone matrix (sub_100c45c0 of the bone cache sub_10095460) of iBone, or the entity's own matrix at +0x130 (after slot 98 when bit 11 of +0x268 is set), to pMatrix; for move types 0xb / 0xc it then re-expresses it relative to the matching bone (found by name) of the parent entity's model (the aim entity handle at +0x37c, its slot 137)
 
 	// Slot 249, called directly so far; declared as a plain member.
 	float vfunc249();	// "CBaseAnimating::GetIdealAccel": slot 248 + constant
