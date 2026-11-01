@@ -962,6 +962,7 @@
 0x10002ac2 func   ?sub_1017a2b0@StatMaskView@@QAEXH@Z StatMaskView::sub_1017a2b0
 0x10002ac7 func   ?vfunc5@CInspectionBrush@@QAEPAV1@I@Z CInspectionBrush::vfunc5
 0x10002acc func   ?vfunc404@CNPC_VNewscaster@@UAEHH@Z CNPC_VNewscaster::vfunc404
+0x10002ad6 func   ?sub_10227bd0@CUnk10227bd0@@QAEXXZ CUnk10227bd0::sub_10227bd0
 0x10002adb func   ?vfunc19@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHH@Z CTempEntsSystem::vfunc19
 0x10002ae0 func   ?sub_1033ea90@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_1033ea90
 0x10002ae5 func   _prop_ragdoll_attached prop_ragdoll_attached
