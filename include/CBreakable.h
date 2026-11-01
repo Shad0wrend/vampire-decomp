@@ -33,6 +33,6 @@ public:
 public:
 	int vfunc74(int);
 	int vfunc82();
-	int vfunc117();
+	char vfunc117();
 	bool vfunc223();
 };
