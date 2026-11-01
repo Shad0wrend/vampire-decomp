@@ -3940,6 +3940,90 @@ CBaseEntity *CPhysicsPushedEntities::sub_10038400(CBaseEntity *pRoot, const floa
 }
 // END FUNCTION
 
+// FUNCTION: 0x100397c0 size=0x255
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "CVProfile.h"
+#include "ScopeTrace.h"
+#include "globalvars.h"
+
+void sub_10139500(float *, float, const Vector *, Vector *);
+
+struct CEntSlots216 {
+	CBP_V100(xa) CBP_V100(xb) CBP_V10(xc0)
+	CBP_V1(xd0) CBP_V1(xd1) CBP_V1(xd2) CBP_V1(xd3) CBP_V1(xd4) CBP_V1(xd5)
+	virtual void vfunc216(Vector *pOut);
+	virtual float *vfunc217();
+};
+
+struct CCycleCountV {
+	unsigned __int64 m_Int64;
+	CCycleCountV() { m_Int64 = 0; }
+	void Sample() {
+		unsigned int *pSt = (unsigned int *)&m_Int64;
+		__asm {
+			mov ecx, pSt
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+	void End() {
+		CCycleCountV stamp;
+		stamp.Sample();
+		m_Int64 = stamp.m_Int64 - m_Int64;
+	}
+	void Add(const CCycleCountV &r) { m_Int64 += r.m_Int64; }
+};
+
+struct CVProfNodeV {
+	char m_pad[8];
+	CCycleCountV m_CurFrameTime;
+	int m_nRecursions;
+	int m_nCurFrameCalls;
+	CCycleCountV m_TotalTime;
+	char m_pad2[0x48 - 0x20];
+	CVProfNodeV *m_pParent;
+	bool Exit() {
+		if (--m_nRecursions == 0 && m_nCurFrameCalls != 0) {
+			m_CurFrameTime.End();
+			m_TotalTime.Add(m_CurFrameTime);
+			g_109f3648->PopGroup();
+		}
+		return m_nRecursions == 0;
+	}
+};
+
+void CBaseEntity::sub_100397c0()
+{
+	ScopeTrace trace("CBaseEntity::PhysicsNoclip", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CVProfile *p = g_109f3648;
+	if (p->m_enabled || !p->m_bAtRoot) {
+		if (p->m_pCurNode->m_pszName != "CBaseEntity::PhysicsNoclip")
+			p->m_pCurNode = p->m_pCurNode->GetSubNode("CBaseEntity::PhysicsNoclip", 0, "Unaccounted");
+		p->m_pCurNode->EnterScope();
+		p->m_bAtRoot = false;
+	}
+	if (!sub_10033f60(0)) {
+		g_109f3648->ExitScope();
+		return;
+	}
+	sub_1003f810(gpGlobals->frametime);
+	unsigned char bAttached = (unsigned char)((m_flags268 >> 12) & 1);
+	if (bAttached)
+		sub_100b1d10();
+	Vector v;
+	sub_10139500(((CEntSlots216 *)this)->vfunc217(), gpGlobals->frametime, &m_vecVelocity3bc, &v);
+	((CEntSlots216 *)this)->vfunc216(&v);
+	CVProfile *q = g_109f3648;
+	if (!q->m_bAtRoot || q->m_enabled) {
+		if (((CVProfNodeV *)q->m_pCurNode)->Exit())
+			q->m_pCurNode = q->m_pCurNode->m_pParent;
+		q->m_bAtRoot = (q->m_pCurNode == q->m_pRoot);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003b850 size=0x36
 #include "Vector.h"
 
