@@ -26698,6 +26698,16 @@ const char *CBaseEntity::sub_1009f200()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f380 size=0x21
+// TARGET: sub_1009f380
+void __fastcall sub_1009f380(char *self, int dummy, const int *v)
+{
+    *(int *)(self + 0x184) = v[0];
+    *(int *)(self + 0x188) = v[1];
+    *(int *)(self + 0x18c) = v[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f3c0 size=0xdf
 extern int *g_109f3680;
 extern const char **g_109f3620;
