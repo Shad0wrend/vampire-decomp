@@ -5,10 +5,12 @@
 class CUnknown101d90c0_Section
 {
 public:
-	virtual void vfunc0();
-	virtual void vfunc1();
+	virtual const char *vfunc0();	// the section's own name
+	virtual char vfunc1();	// whether the section is a sub-section with values (counted by the RollInfo loader)
 	virtual CUnknown101d90c0_Section *vfunc2(const char *name);	// the sub-section with this name
-	virtual void vfunc3(); virtual void vfunc4(); virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7();
+	virtual void vfunc3(); virtual CUnknown101d90c0_Section *vfunc4();	// the first child section
+	virtual CUnknown101d90c0_Section *vfunc5();	// the next sibling
+	virtual void vfunc6(); virtual void vfunc7();
 	virtual void vfunc8(); virtual void vfunc9();
 	virtual int vfunc10(const char *name, int create);	// handle of the named value
 	virtual void vfunc11(); virtual void vfunc12();
