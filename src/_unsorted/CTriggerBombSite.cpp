@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_105ab7a0;
 }
-CTriggerBombSite::Datamap82 CTriggerBombSite::vfunc82()
+datamap_t *CTriggerBombSite::vfunc82()
 {
-    return (CTriggerBombSite::Datamap82)&lifted::g_105ab7a0;
+    return (datamap_t *)&lifted::g_105ab7a0;
 }
 // END FUNCTION
 
