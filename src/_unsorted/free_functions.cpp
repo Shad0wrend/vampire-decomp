@@ -52311,6 +52311,19 @@ int sub_1012e930()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012ee10 size=0x1e
+// TARGET: sub_1012ee10
+extern int g_1070c4ac;
+extern int g_1070c4b0;
+extern int g_1070c4b4;
+void __cdecl sub_1012ee10(const int *v)
+{
+    g_1070c4ac = v[0];
+    g_1070c4b0 = v[1];
+    g_1070c4b4 = v[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012ee40 size=0x1f
 namespace lifted {
 extern int g_1070c4ac;
