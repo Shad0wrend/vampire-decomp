@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10569fd4;
 }
-CEnvFloatingCamera::Datamap82 CEnvFloatingCamera::vfunc82()
+datamap_t *CEnvFloatingCamera::vfunc82()
 {
-    return (CEnvFloatingCamera::Datamap82)&lifted::g_10569fd4;
+    return (datamap_t *)&lifted::g_10569fd4;
 }
 // END FUNCTION
 
