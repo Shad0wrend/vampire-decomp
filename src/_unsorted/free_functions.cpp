@@ -110366,6 +110366,18 @@ void CUtlVector72::sub_1022d0d0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022d190 size=0x3e
+#include "UtlVec72.h"
+
+void UtlVec72::sub_1022d190(int elem, int num)
+{
+	int numToMove = m_Size - elem - num;
+	if (numToMove > 0 && num > 0) {
+		memmove(m_pMemory + (elem + num) * 72, m_pMemory + elem * 72, numToMove * 72);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022d1e0 size=0x18
 struct CBlock4k
 {
