@@ -11277,6 +11277,7 @@
 0x10013917 func   _info_hint info_hint
 0x1001391c func   ?vfunc0@CDebugSaveRestoreOps@@UAEXHH@Z CDebugSaveRestoreOps::vfunc0
 0x10013921 func   ?vfunc103@CPhysBox@@UAEXXZ CPhysBox::vfunc103
+0x10013926 func   ?sub_10384010@@YIPAXPAD@Z sub_10384010
 0x1001392b func   ?sub_101d8230@CUnknown101d8230@@QAEPAXXZ CUnknown101d8230::sub_101d8230
 0x10013930 func   ?vfunc600@CNPC_VHengeyokai@@UAE_NH@Z CNPC_VHengeyokai::vfunc600
 0x10013935 func   ?sub_1022a0c0@@YAHXZ sub_1022a0c0

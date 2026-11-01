@@ -161085,6 +161085,33 @@ int sub_10383f70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10384010 size=0x35
+struct CGenericBaseCtorCall_10384010
+{
+	void sub_1028d230();
+};
+
+struct CGenericMemberCtorCall_10384010
+{
+	void sub_10384130();
+};
+
+extern void *vt_104b742c[];
+extern void *vt_104b73fc[];
+
+// TARGET: sub_10384010
+void *__fastcall sub_10384010(char *self)
+{
+	((CGenericBaseCtorCall_10384010 *)self)->sub_1028d230();
+	((CGenericMemberCtorCall_10384010 *)(self + 0x665c))->sub_10384130();
+	*(void ***)self = vt_104b742c;
+	*(int *)(self + 0x1568) = 0;
+	*(int *)(self + 0x156c) = 0;
+	*(void ***)(self + 0x19b0) = vt_104b73fc;
+	return self;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10384130 size=0xc
 void __fastcall sub_10384150(void *pThis);
 
