@@ -14972,6 +14972,41 @@ int __stdcall sub_10071470(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10071550 size=0xc1
+#include "CUnk10071840.h"
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+#include "CEHandleGet.h"
+
+struct CUnk10071770View { void sub_10071770(const char *pszSequence); };
+struct CRefEntity { virtual void v0(); virtual unsigned int *vfunc1(); };
+
+CBasePlayer *sub_101cd9e0(int);
+CRefEntity *sub_10070690(CUnk10071840 *);
+void __fastcall sub_1015ef40(CBasePlayer *);
+extern char g_106b8540[];
+
+// TARGET: CUnk10071840::sub_10071550
+void CUnk10071840::sub_10071550(int unused)
+{
+	sub_10071660();
+	m_flags268 &= 0xffffffbd;
+	sub_100b3640(0x40000);
+	CBasePlayer *pPlayer = sub_101cd9e0(1);
+	if (pPlayer) {
+		CRefEntity *pRef = sub_10070690(this);
+		if (pRef)
+			m_hTarget = *pRef->vfunc1();
+		else
+			m_hTarget = 0xffffffff;
+		pPlayer->sub_1017cef0((CBaseEntity *)EHandle_Get(m_hTarget));
+		((CUnk10071770View *)this)->sub_10071770(m_pszSequence7f4 ? m_pszSequence7f4 : g_106b8540);
+		if (m_flags204 & 1)
+			sub_1015ef40(pPlayer);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10071660 size=0xc5
 #include "CUnk10071840.h"
 #include "CEHandleGet.h"

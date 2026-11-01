@@ -12096,6 +12096,7 @@
 0x10015352 func   ?vfunc276@CPropDoorknobElectronic@@QAEXXZ CPropDoorknobElectronic::vfunc276
 0x10015357 func   ?vfunc364@CPayphone@@UAE_NH@Z CPayphone::vfunc364
 0x1001535c func   ?vfunc5@CAI_Motor@@UAEXXZ CAI_Motor::vfunc5
+0x10015361 func   ?sub_10071550@CUnk10071840@@QAEXH@Z CUnk10071840::sub_10071550
 0x10015366 func   ?sub_1012d5e0@CUnknown1012d740@@QAEXH@Z CUnknown1012d740::sub_1012d5e0
 0x1001536b func   ?sub_10228e80@CSoundSchemeManager@@QAEXH@Z CSoundSchemeManager::sub_10228e80
 0x10015370 func   ?vfunc51@CMultiplayRules@@UAE?AVVector@@PAVCBaseEntity@@@Z CMultiplayRules::vfunc51
