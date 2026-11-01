@@ -157070,6 +157070,31 @@ extern "C" CBaseEntity *npc_VMoleman()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039f5c0 size=0x27
+struct CGenericBaseCtorCall_1039f5c0
+{
+	void sub_10384010();
+};
+
+struct CGenericMemberCtorCall_1039f5c0
+{
+	void sub_10015073();
+};
+
+extern void *vt_104bea6c[];
+extern void *vt_104bea40[];
+
+// TARGET: sub_1039f5c0
+void *__fastcall sub_1039f5c0(char *self)
+{
+	((CGenericBaseCtorCall_1039f5c0 *)self)->sub_10384010();
+	((CGenericMemberCtorCall_1039f5c0 *)(self + 0x6660))->sub_10015073();
+	*(void ***)self = vt_104bea6c;
+	*(void ***)(self + 0x19b0) = vt_104bea40;
+	return self;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039f6d0 size=0xc
 void __fastcall sub_1039f6f0(void *p);
 

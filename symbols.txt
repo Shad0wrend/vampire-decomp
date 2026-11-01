@@ -11988,6 +11988,7 @@
 0x100156a4 func   ?vfunc5@CItemGRingGold@@QAEPAV1@I@Z CItemGRingGold::vfunc5
 0x100156a9 func   ?sub_10247450@@YAPADH@Z sub_10247450
 0x100156ae func   ?sub_100dd630@CCollisionProperty@@QAEXPAVVector@@0@Z CCollisionProperty::sub_100dd630
+0x100156b3 func   ?sub_1039f5c0@@YIPAXPAD@Z sub_1039f5c0
 0x100156b8 func   ?sub_1010c930@CFuncAreaPortalBase@@QAEXXZ CFuncAreaPortalBase::sub_1010c930
 0x100156bd func   ?sub_10130100@@YAXH@Z sub_10130100
 0x100156c2 func   ?vfunc80@CElderVitaePack@@QAEHXZ CElderVitaePack::vfunc80
