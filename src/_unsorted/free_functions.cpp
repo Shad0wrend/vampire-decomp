@@ -108041,6 +108041,18 @@ int CUnknown10231fb0::sub_10231fb0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10231fe0 size=0x1c
+struct CUnk10231fe0Iface { virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(int, int, int, int); };
+extern CUnk10231fe0Iface *g_1070b23c;
+extern int g_10571c20;
+
+// TARGET: sub_10231fe0
+void sub_10231fe0(int a)
+{
+	g_1070b23c->a3(g_10571c20, a, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10232010 size=0x5d
 #include "CVGuiScreen.h"
 extern float g_1070d1b0[3];
