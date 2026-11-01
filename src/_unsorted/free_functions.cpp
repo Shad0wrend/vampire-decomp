@@ -48372,6 +48372,26 @@ int sub_1010bbb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010bd40 size=0x20
+#include "vampire.h"
+struct CUnk1010bd40
+{
+    char m_pad0000[0x17c];
+    int m_n17c;  // 0x17c
+    char m_pad0180[0x450 - 0x180];
+    char m_b450;  // 0x450
+    void sub_1010bd40();
+};
+// TARGET: CUnk1010bd40::sub_1010bd40
+void CUnk1010bd40::sub_1010bd40()
+{
+    if (m_b450 == 0) {
+        m_b450 = 1;
+        m_n17c = *(int *)&gpGlobals->curtime;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010bd70 size=0x19
 #include "CEnvFireSource.h"
 
