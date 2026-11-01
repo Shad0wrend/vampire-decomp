@@ -23,6 +23,7 @@ public:
 	unsigned char m_chMaterialType;	// 0x2c
 
 	void sub_100059d4();	// destructor body
+	CTEFootprintDecal *sub_10062e50(const char *name);	// constructor body (CBaseTempEntityHead base at stub 0x10015334), zeroes from +0xc, the material byte 0x43 at +0x2c
 	void sub_10062ee0(CUnknown1019d130 *filter, float delay);	// "Create": sends the decal to the recipients (stub 0x1000a11e)
 	void vfunc4(int a, int b);	// as in CTEMetalSparks (transplant)
 };
