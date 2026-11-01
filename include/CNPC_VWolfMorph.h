@@ -19,6 +19,8 @@ public:
 	int m_nLine1b40;	// 0x1b40: its line
 	char m_pad1b44[0x5c38 - 0x1b44];
 	void *m_p5c38;	// 0x5c38: the object of the current schedule
+	char m_pad5c3c[0x5cc4 - 0x5c3c];
+	int m_nTaskState5cc4;	// 0x5cc4: 0xc after vfunc420
 public:
 	virtual void vfunc0();
 	virtual void vfunc1();
