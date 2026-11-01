@@ -20,9 +20,9 @@ inline int FindFeatId(const char *pszName)
 	return -1;
 }
 
-bool CFilterFeat::vfunc241(char *pEntity)
+bool CFilterFeat::vfunc241(CFilterFeat::Arg241 pEntity)
 {
-	CBaseCombatCharacter *pChar = pEntity ? *(CBaseCombatCharacter **)(pEntity + 0x9c) : 0;
+	CBaseCombatCharacter *pChar = pEntity ? *(CBaseCombatCharacter **)((char *)pEntity + 0x9c) : 0;
 	if (!pChar)
 		return false;
 	int id = FindFeatId(OrEmpty(m_pszFeat));
