@@ -8982,6 +8982,87 @@ void UtlVec8::sub_10055000(int elem, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10055170 size=0x2ef
+#include "CUtlRBTree24.h"
+
+// TARGET: CUtlRBTree24::sub_10055170
+void CUtlRBTree24::sub_10055170(int elem, int parent, bool isLeft)
+{
+	Links_t &node = Links(elem);
+	node.m_Left = node.m_Right = -1;
+	node.m_Tag = 0;
+	node.m_Parent = parent;
+
+	if (parent != -1) {
+		if (isLeft)
+			Links(parent).m_Left = elem;
+		else
+			Links(parent).m_Right = elem;
+	} else {
+		m_Root = elem;
+	}
+
+	while (!IsRoot(elem) && Color(Parent(elem)) == 0) {
+		int par = Parent(elem);
+		int grandparent = Parent(par);
+		if (IsLeftChild(par)) {
+			int uncle = RightChild(grandparent);
+			if (IsRed(uncle)) {
+				SetColor(par, 1);
+				SetColor(uncle, 1);
+				SetColor(grandparent, 0);
+				elem = grandparent;
+			} else {
+				if (IsRightChild(elem)) {
+					elem = par;
+					// RotateLeft(elem), expanded by the game's compiler here
+					int rightchild = RightChild(elem);
+					Links(elem).m_Right = LeftChild(rightchild);
+					if (LeftChild(rightchild) != -1)
+						Links(LeftChild(rightchild)).m_Parent = elem;
+					if (rightchild != -1)
+						Links(rightchild).m_Parent = Parent(elem);
+					if (!IsRoot(elem)) {
+						if (IsLeftChild(elem))
+							Links(Parent(elem)).m_Left = rightchild;
+						else
+							Links(Parent(elem)).m_Right = rightchild;
+					} else
+						m_Root = rightchild;
+					Links(rightchild).m_Left = elem;
+					if (elem != -1)
+						Links(elem).m_Parent = rightchild;
+					par = Parent(elem);
+					grandparent = Parent(par);
+				}
+				SetColor(par, 1);
+				SetColor(grandparent, 0);
+				sub_100561a0(grandparent);
+			}
+		} else {
+			int uncle = LeftChild(grandparent);
+			if (IsRed(uncle)) {
+				SetColor(par, 1);
+				SetColor(uncle, 1);
+				SetColor(grandparent, 0);
+				elem = grandparent;
+			} else {
+				if (IsLeftChild(elem)) {
+					elem = par;
+					sub_100561a0(par);
+					par = Parent(elem);
+					grandparent = Parent(par);
+				}
+				SetColor(par, 1);
+				SetColor(grandparent, 0);
+				sub_10055f50(grandparent);
+			}
+		}
+	}
+	SetColor(m_Root, 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10055520 size=0x4f
 #include "CUtlRBTree24.h"
 #include "utlrbtree.h"

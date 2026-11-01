@@ -11502,6 +11502,7 @@
 0x10014817 func   ?sub_103b1470@CNPC_VSheriffMan@@QAEXH@Z CNPC_VSheriffMan::sub_103b1470
 0x1001481c func   ?vfunc141@CEnvWind@@UAEXHHH@Z CEnvWind::vfunc141
 0x10014826 func   ?vfunc433@CNPC_VTzimisceRunner@@UAEXXZ CNPC_VTzimisceRunner::vfunc433
+0x10014830 func   ?sub_10055170@CUtlRBTree24@@QAEXHH_N@Z CUtlRBTree24::sub_10055170
 0x1001483a func   ?vfunc584@CCineNPC@@QAEDPAVCBaseAnimating@@PBDD@Z CCineNPC::vfunc584
 0x1001483f func   ?sub_103326b0@CBaseCombatCharacter@@QAEXM@Z CBaseCombatCharacter::sub_103326b0
 0x10014844 func   ?sub_101be930@CStealthKillRules@@QAEMPAVCBaseEntity@@@Z CStealthKillRules::sub_101be930
