@@ -153924,6 +153924,18 @@ unsigned char __fastcall sub_10381c80(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10381ca0 size=0x20
+#include "globalvars.h"
+
+// TARGET: sub_10381ca0
+int __fastcall sub_10381ca0(char *self)
+{
+    if (gpGlobals->curtime >= *(float *)(self + 0x666c))
+        return 1;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103822a0 size=0x10e
 #include "Vector.h"
 #include "CEntityVSlots.h"

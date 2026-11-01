@@ -7538,6 +7538,7 @@
 0x1000dee0 func   ?sub_102dc490@CUnknown102dca60@@QAEXXZ CUnknown102dca60::sub_102dc490
 0x1000dee5 func   ?sub_1029ed90@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_1029ed90
 0x1000deea func   ?vfunc104@CFire@@UAEXXZ CFire::vfunc104
+0x1000deef func   ?sub_10381ca0@@YIHPAD@Z sub_10381ca0
 0x1000def4 func   ?vfunc5@CNPC_VFrenzyShadow@@QAEPAV1@I@Z CNPC_VFrenzyShadow::vfunc5
 0x1000def9 func   ?vfunc378@CNPC_VVampireBoss@@QAE_NHH@Z CNPC_VVampireBoss::vfunc378
 0x1000df03 func   ?sub_101e48b0@UtlMem@@QAEXXZ UtlMem::sub_101e48b0
