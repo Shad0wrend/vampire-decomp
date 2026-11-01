@@ -6,6 +6,7 @@
 class CSingleplayRules : public CGameRules
 {
 public:
+	CSingleplayRules();
 	CGameRules *vfunc0(unsigned int flags);	// scalar deleting destructor: the single player rules' vftable, the base destructor (sub_1000d189), then delete when flags & 1
 	void sub_1000d189();	// the base destructor body (stub 0x1000d189), called directly
 	virtual CBaseEntity *vfunc20(CBaseEntity *pPlayer, CBaseEntity *pCurrentWeapon);	// "GetNextBestWeapon": over the player's 0xe0 weapon slots, the usable owned weapon with the highest weight (pCurrentWeapon is not looked at), null when there is none
