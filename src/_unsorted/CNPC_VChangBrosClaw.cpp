@@ -34,6 +34,12 @@ int CNPC_VChangBrosClaw::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036f490 size=0x6
+extern char g_1062fe5c;
+// TARGET: sub_1036f490
+char sub_1036f490() { return g_1062fe5c; }
+// END FUNCTION
+
 // FUNCTION: 0x1036f4f0 size=0x1d
 #include "CNPC_VChangBrosClaw.h"
 struct A { int sub_10012300(int); };
