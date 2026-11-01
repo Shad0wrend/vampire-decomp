@@ -7686,6 +7686,7 @@
 0x1000da67 func   ?sub_1036cbd0@CNPC_VChangBros@@QAE_NXZ CNPC_VChangBros::sub_1036cbd0
 0x1000da71 func   ?vfunc0@CPositionInterpolator_Linear@@QAEXXZ CPositionInterpolator_Linear::vfunc0
 0x1000da76 func   ?sub_1003e4b0@Vector@@QAEAAV1@ABV1@@Z Vector::sub_1003e4b0
+0x1000da7b func   ?sub_101e0650@CUnknown101e0f00Entry@@QAEHPAX@Z CUnknown101e0f00Entry::sub_101e0650
 0x1000da85 func   ?sub_102e1470@@YAMMMM@Z sub_102e1470
 0x1000da8a func   ?sub_10389e80@@YIPAXPAX@Z sub_10389e80
 0x1000da8f func   ?vfunc451@CNPC_VTaxiDriver@@QAEHXZ CNPC_VTaxiDriver::vfunc451

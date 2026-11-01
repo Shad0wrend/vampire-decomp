@@ -91536,6 +91536,22 @@ void sub_101e0630()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e0650 size=0x36
+#include "CUnknown101e0f00.h"
+#include "CUnknown101f9c70.h"
+struct CUnknown101e0f00Char
+{
+	char m_pad0000[0x13dc];
+	CUnknown101f9c70 m_traits13dc;
+};
+int CUnknown101e0f00Entry::sub_101e0650(void *pChar)
+{
+	int nMod = 0;
+	((CUnknown101e0f00Char *)pChar)->m_traits13dc.sub_101f9ff0(8, 2, m_n10, (int)&nMod);
+	return m_nBaseCost + nMod;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e08d0 size=0x4c
 #include "CUnknown101e0f00.h"
 #include "S101df260.h"
