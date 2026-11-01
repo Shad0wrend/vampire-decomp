@@ -70526,6 +70526,20 @@ void sub_1019b720(void *a, void *obj, void *c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019b7b0 size=0x1f
+#include "vampire.h"
+extern void *g_1072b370;
+extern int g_109f3748[1];
+extern void (*g_109f3734)(void *);
+// TARGET: sub_1019b7b0
+void *sub_1019b7b0()
+{
+    g_109f3734(g_1072b370);
+    ++*(int *)g_109f3748[0];
+    return (void *)g_109f3748[0];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019b7e0 size=0x10
 extern void *g_1072b370;
 extern void *(__cdecl *g_109f3738)(void *);

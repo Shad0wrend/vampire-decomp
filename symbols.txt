@@ -12205,6 +12205,7 @@
 0x1019b4a0 func   ?sub_1019b4a0@@YAPAUPyObject@@PAU1@0@Z sub_1019b4a0
 0x1019b570 func   ?sub_1019b570@@YAHPAUPyDataObj@@PBDPAUPyObj@@@Z sub_1019b570
 0x1019b720 func   ?sub_1019b720@@YAXPAX00@Z sub_1019b720
+0x1019b7b0 func   ?sub_1019b7b0@@YAPAXXZ sub_1019b7b0
 0x1019b7e0 func   ?sub_1019b7e0@@YAPAXXZ sub_1019b7e0
 0x1019ba30 func   ?sub_1019ba30@@YAPAXPAXPAD@Z sub_1019ba30
 0x1019ba60 func   ?sub_1019ba60@@YAPAUSPyObj@@PAUSPySelf@@PAX@Z sub_1019ba60
