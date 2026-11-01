@@ -75565,6 +75565,18 @@ int sub_101bb220(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bb2b0 size=0x1c
+extern char *g_1072c464;
+
+// TARGET: sub_101bb2b0
+void sub_101bb2b0(unsigned int flags)
+{
+	if (g_1072c464) {
+		*(unsigned int *)(g_1072c464 + 0x460) |= flags;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bb310 size=0x2a
 extern char *g_1072c464;
 
