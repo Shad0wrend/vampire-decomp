@@ -77409,6 +77409,25 @@ void UtlVec8::sub_101b6550(const SElem8 *src, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b65e0 size=0x3d
+#include "CUtlVector16.h"
+
+extern void (__cdecl *g_109f3624)(void *);
+
+void CUtlVector16::sub_101b65e0()
+{
+	m_size = 0;
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+	m_pElements = m_pMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6630 size=0x3
 struct CUnknown101b6630 { int sub_101b6630(); };
 int CUnknown101b6630::sub_101b6630()
