@@ -158622,6 +158622,26 @@ void CNPC_VTzimisce::sub_103b9f90(int a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103be050 size=0x24
+class CUnknown103be050
+{
+public:
+	char pad0[0x14b8];
+	unsigned int m_flags14b8;
+
+	void sub_103be050(char on);
+};
+
+// TARGET: CUnknown103be050::sub_103be050
+void CUnknown103be050::sub_103be050(char on)
+{
+	if (on)
+		m_flags14b8 |= 16;
+	else
+		m_flags14b8 &= ~16;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103be090 size=0xc
 bool CUnknown10381be0::sub_103be090()
 {

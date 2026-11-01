@@ -8415,6 +8415,7 @@
 0x1000f547 func   ?vfunc104@CPropKeypad@@QAEXXZ CPropKeypad::vfunc104
 0x1000f54c func   ?sub_101e3310@CNamedListX@@QAEXHPBD@Z CNamedListX::sub_101e3310
 0x1000f551 func   ?sub_10179000@@YAHXZ sub_10179000
+0x1000f556 func   ?sub_103be050@CUnknown103be050@@QAEXD@Z CUnknown103be050::sub_103be050
 0x1000f55b func   ?vfunc103@CSimplePhysicsProp@@UAEXXZ CSimplePhysicsProp::vfunc103
 0x1000f560 func   ?sub_10321ec0@@YAXXZ sub_10321ec0
 0x1000f56a func   ?vfunc5@CAI_ProxyMovementSink@@QAE_NH@Z CAI_ProxyMovementSink::vfunc5
