@@ -8764,6 +8764,7 @@
 0x1000fd58 func   ?vfunc5@CFilterClass@@QAEPAV1@I@Z CFilterClass::vfunc5
 0x1000fd5d func   ?sub_101f5d80@CUnknown101f5d80@@QAEXXZ CUnknown101f5d80::sub_101f5d80
 0x1000fd62 func   ?sub_10227a30@SList2@@QAEXHH@Z SList2::sub_10227a30
+0x1000fd67 func   ?vfunc470@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc470
 0x1000fd6c func   ?sub_100f89a0@CListEntryView@@QAEXXZ CListEntryView::sub_100f89a0
 0x1000fd71 func   ?sub_1042d700@@YIIPAI@Z sub_1042d700
 0x1000fd76 func   ?sub_10411630@CUnknown10411630@@QAEPAVCBaseEntity@@M@Z CUnknown10411630::sub_10411630

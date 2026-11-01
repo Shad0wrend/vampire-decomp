@@ -1839,6 +1839,49 @@ void CAI_BaseNPCTroikaCallee::sub_102b39a0(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b39e0 size=0x2e4
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_Senses.h"
+#include "CEHandleGet.h"
+#include "CGlobalEntityList.h"
+#include "CAI_Timer2c.h"
+#include "CUnknown102c66b0.h"
+
+struct CSenseSnap {
+	int m_n00, m_n04, m_n08, m_n0c, m_n10;
+	char m_b14;
+	int m_n18, m_n1c;
+	Vector m_vec20;
+};
+
+#define COPY_SNAP(off, type) { \
+	const CSenseSnap *r = (const CSenseSnap *)((CAI_Senses *)m_pSenses5cdc)->sub_103105d0(type); \
+	CSenseSnap *d = (CSenseSnap *)((char *)this + off); \
+	d->m_n00 = r->m_n00; d->m_n04 = r->m_n04; d->m_n08 = r->m_n08; d->m_n0c = r->m_n0c; d->m_n10 = r->m_n10; \
+	d->m_b14 = r->m_b14; d->m_n18 = r->m_n18; d->m_n1c = r->m_n1c; d->m_vec20.sub_1003e4b0(r->m_vec20); }
+
+#define FLAGS (*(unsigned int *)((char *)this + 0x5cb4))
+#define TEST_BIT(n) unsigned char b##n = (unsigned char)((FLAGS >> n) & 1); if (b##n)
+
+void CAI_BaseNPCTroika::vfunc470()
+{
+	CAI_BaseNPC::vfunc470();
+	{ TEST_BIT(14) COPY_SNAP(0x61e4, 2) }
+	{ TEST_BIT(17) COPY_SNAP(0x6134, 0x400) }
+	{ TEST_BIT(10) COPY_SNAP(0x6108, 8) }
+	{ TEST_BIT(15) COPY_SNAP(0x61b8, 4) }
+	if (*(unsigned char *)((char *)this + 0x5cb6) & 1)
+		COPY_SNAP(0x618c, 0x10)
+	{ TEST_BIT(13) ((CAI_Timer2c *)((char *)this + 0x6160))->sub_102b3d90(*(CAI_Timer2c *)((CAI_Senses *)m_pSenses5cdc)->sub_103105d0(1)); }
+	if (((CUnknown102c66b0 *)((char *)this + 0x5ca8))->sub_102c66b0(0x72))
+		((CAI_Timer2c *)((char *)this + 0x6210))->sub_102b3d90(*(CAI_Timer2c *)((CAI_Senses *)m_pSenses5cdc)->sub_103105d0(0x800));
+	if (sub_10014df8(0x6d))
+		sub_1028e8b0((CBaseEntity *)g_10566458->sub_100290c0((unsigned int *)((char *)this + 0x6160)), 0x3f800000);
+	if (sub_10014df8(0x70))
+		sub_1028e8b0((CBaseEntity *)g_10566458->sub_100290c0((unsigned int *)((char *)this + 0x618c)), 0x3f800000);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b3e00 size=0x1e5
 #include "CAI_BaseNPCTroika.h"
 #include "CUnknown100290c0.h"
