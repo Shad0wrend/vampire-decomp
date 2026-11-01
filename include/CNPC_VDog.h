@@ -20,6 +20,9 @@ public:
 	void sub_10374e50();	// state change helper of vfunc460: passes the entity behind the handle at +0x628c to slot 596, records the source line (0x52a) and state 2, and tells the active thing at +0x5da4 about the slot 167 value
 	void sub_10374f40();	// the dog's bite shot (called by vfunc259): with an enemy (slot 167) and an active weapon, traces from this one's origin to the enemy's origin at the same height (mask 0x202400b) and hands the trace result to the weapon's slot 270
 	CEntityVSlots *sub_1032e7b0();	// CBaseCombatCharacter::GetActiveWeapon (stub 0x10007e19), called directly
+	int vfunc461();	// slot 461 "SelectIdealState" (plain member): state 1 / 3 (+0x5cc0) pick the ideal state (+0x5cc4) from conditions (0x44, 0x54, 0x46, 0x78, 0x7c, 0x7d, 0x2b, ...) and stamp the source line; else CNPC_VAnimal::vfunc461
+	void sub_100041b0(int condition);	// CAI_BaseNPC condition clear (stub for sub_10269a20), called directly
+	char sub_103747c0(int arg);	// returns 0 (this unused)
 	int vfunc460();	// slot 460 (declared as a plain member): conditions 0x78 / 0x7e run the state change helper and answer the state at +0x5cc4; 0x79 forces state 3, 0x7c leaves state 3 for state 1 (both stamp the source line), then the Troika base
 	char sub_10014df8(int condition);	// "HasCondition" (the stub at 0x10014df8 for CAI_BaseNPC::sub_10269aa0), called directly
 	char sub_1001482b(int condition);	// CAI_BaseNPC condition test (the stub for sub_10269d30), called directly
