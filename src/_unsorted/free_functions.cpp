@@ -82650,6 +82650,25 @@ char *sub_101d3730(const char *format, ...)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d37a0 size=0x1f
+extern char g_10737960[];
+
+// TARGET: sub_101d37a0
+bool sub_101d37a0(char *p)
+{
+    char *q = g_10737960;
+    do
+    {
+        if (q == p)
+        {
+            return true;
+        }
+        q += 0x400;
+    } while (q < g_10737960 + 0x1000);
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d3c10 size=0x25c
 #include "StatDefault3.h"
 

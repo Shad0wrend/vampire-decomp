@@ -702,6 +702,7 @@
 0x1000236f func   ?sub_101cb6b0@@YAPAHXZ sub_101cb6b0
 0x10002374 func   ?vfunc0@CTEBeamRingPoint@@UAEPAUServerClass@@XZ CTEBeamRingPoint::vfunc0
 0x10002379 func   ?vfunc82@CNPCMaker_Zombie@@UAEPAUdatamap_t@@XZ CNPCMaker_Zombie::vfunc82
+0x10002383 func   ?sub_101d37a0@@YA_NPAD@Z sub_101d37a0
 0x1000238d func   ?sub_101f35c0@@YIPAXPAX@Z sub_101f35c0
 0x10002392 func   ?sub_1014c2b0@@YAXXZ sub_1014c2b0
 0x10002397 func   ?sub_10311a20@CUnknown10311a20@@QAEXHH@Z CUnknown10311a20::sub_10311a20
