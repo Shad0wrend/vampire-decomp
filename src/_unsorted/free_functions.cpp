@@ -12607,6 +12607,34 @@ void sub_10068380(int a, int b, int *pos, int c, int d, int e, int f, int *dir, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x10068440 size=0x39
+#include "CTESpriteSpray.h"
+
+extern int vt_1044e0ac[];
+
+struct CBaseTempEntityHeadPlaceholder {
+    void sub_100507e0(const char *name);
+};
+
+// TARGET: CTESpriteSpray::sub_10068440
+CTESpriteSpray *CTESpriteSpray::sub_10068440(const char *name)
+{
+	((CBaseTempEntityHeadPlaceholder *)this)->sub_100507e0(name);
+	*(int **)this = vt_1044e0ac;
+	*(int *)((char *)this + 0x0c) = 0;
+	*(int *)((char *)this + 0x10) = 0;
+	*(int *)((char *)this + 0x14) = 0;
+	*(int *)((char *)this + 0x18) = 0;
+	*(int *)((char *)this + 0x1c) = 0;
+	*(int *)((char *)this + 0x20) = 0;
+	*(int *)((char *)this + 0x24) = 0;
+	*(int *)((char *)this + 0x2c) = 0;
+	*(int *)((char *)this + 0x28) = 0;
+	*(int *)((char *)this + 0x30) = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100684c0 size=0xb
 namespace lifted {
 extern char g_1044e0ac;
