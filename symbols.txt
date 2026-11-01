@@ -517,6 +517,7 @@
 0x10001e7e func   ?sub_10077a50@CUnknown10077430@@QAEXH@Z CUnknown10077430::sub_10077a50
 0x10001e83 func   ?sub_10033820@CPhysicsMovedEntitiesUnit@@QAEXDPBVVector@@@Z CPhysicsMovedEntitiesUnit::sub_10033820
 0x10001e88 func   ?sub_103ef640@@YAHXZ sub_103ef640
+0x10001e8d func   ?sub_101d9190@CUnk101d9190@@QAEHH@Z CUnk101d9190::sub_101d9190
 0x10001e97 func   ?vfunc81@CVGuiScreen@@UAEHXZ CVGuiScreen::vfunc81
 0x10001e9c func   ?vfunc71@CBaseEntity@@UAEXXZ CBaseEntity::vfunc71
 0x10001ea1 func   ?vfunc362@CWeaponMelee_Katana@@QAEHXZ CWeaponMelee_Katana::vfunc362

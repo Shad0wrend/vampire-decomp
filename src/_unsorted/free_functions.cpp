@@ -83980,6 +83980,23 @@ bool CUnknown101d90c0::sub_101d90c0(CUnknown101d90c0_Section *pSection)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d9190 size=0x1c
+struct CUnk101d9190 {
+	int m_00[3];
+	int m_0c[100];
+	int sub_101d9190(int index);
+};
+
+// TARGET: CUnk101d9190::sub_101d9190
+int CUnk101d9190::sub_101d9190(int index)
+{
+	if (index >= 0 && index < 100) {
+		return m_0c[index];
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d91c0 size=0x1c
 struct CUnknown101d91c0 { void * sub_101d91c0(); };
 void * CUnknown101d91c0::sub_101d91c0()
