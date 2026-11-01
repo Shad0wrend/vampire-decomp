@@ -107,6 +107,16 @@ void CFuncMonitor::vfunc39(void *pArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101152b0 size=0x34
+#include "CFuncMonitor.h"
+#include "CEntityVSlots.h"
+#include "CBasePlayer.h"
+void CFuncMonitor::vfunc41(CBasePlayer *pPlayer)
+{
+	pPlayer->sub_10178590(((CEntityVSlots *)this)->slot192());
+}
+// END FUNCTION
+
 // FUNCTION: 0x10115300 size=0x31
 #include "CFuncMonitor.h"
 #include "CBasePlayer.h"
