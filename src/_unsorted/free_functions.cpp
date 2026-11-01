@@ -109574,6 +109574,17 @@ int sub_10231c70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10231e20 size=0x21
+int sub_1011bc70(int a);
+
+// TARGET: sub_10231e20
+void __fastcall sub_10231e20(char *self, int dummy, int arg)
+{
+    *(int *)(self + 0x460) = sub_1011bc70(arg);
+    *(char *)(self + 0x1b1) = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10231e60 size=0xa
 unsigned int __fastcall sub_10231e60(char *self)
 {
