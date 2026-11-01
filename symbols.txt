@@ -9412,6 +9412,7 @@
 0x1001114e func   ?sub_1004fac0@@YGXH@Z sub_1004fac0
 0x10011153 func   ?sub_10247e40@CUnknown10248a50@@QAEXPBV1@@Z CUnknown10248a50::sub_10247e40
 0x10011158 func   ?sub_103de220@CNPC_VZombie@@QAEPAV1@XZ CNPC_VZombie::sub_103de220
+0x10011162 func   ?sub_103b1ad0@@YIPAHPAD@Z sub_103b1ad0
 0x10011167 func   ?vfunc0@CAI_HumanoidNavigator@@QAEPAV1@I@Z CAI_HumanoidNavigator::vfunc0
 0x10011176 func   ?sub_1027d9f0@@YI_NPADHHH@Z sub_1027d9f0
 0x1001117b func   ?sub_101563b0@CRagdollProp@@QAEXHH@Z CRagdollProp::sub_101563b0

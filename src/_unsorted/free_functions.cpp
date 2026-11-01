@@ -157832,6 +157832,22 @@ int sub_103b1aa0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b1ad0 size=0x12
+extern int vt_104c6d4c[];
+struct CBatSwarmCtorCall_103b1ad0
+{
+    void sub_100b8730();
+};
+
+// TARGET: sub_103b1ad0
+int *__fastcall sub_103b1ad0(char *self)
+{
+    ((CBatSwarmCtorCall_103b1ad0 *)self)->sub_100b8730();
+    *(int *)self = (int)vt_104c6d4c;
+    return (int *)self;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b1b70 size=0x43
 #include "CNPC_VSheriffSwarm.h"
 void *sub_100aa720(int size);
