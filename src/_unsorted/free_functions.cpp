@@ -170405,6 +170405,29 @@ CBaseEntity *CUnknown10411630::sub_10411630(float arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10411b20 size=0x1d
+// TARGET: sub_10411b20
+struct CUnk10411b20
+{
+    char pad[0x4c];
+    unsigned char m_4c;
+    char pad2[0xa0 - 0x4d];
+    int m_a0;
+};
+bool __cdecl sub_10411b20(CUnk10411b20 *p)
+{
+    if (p && (p->m_4c & 0x1e) != 0)
+    {
+        if (p->m_a0 == 0)
+        {
+            return true;
+        }
+        return false;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10411e80 size=0x46
 #include "ConVar.h"
 extern ConVar *g_109d302c;
