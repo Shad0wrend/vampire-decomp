@@ -2,12 +2,28 @@
 // only what matched code needs, as plain members.
 #pragma once
 #include "CTakeDamageInfo.h"
+#include "CBaseEntity.h"
 
-class CDebugEntity
+struct CDebugEntityRecord	// 0x90 byte element of the debug record list at +0x450
+{
+	char m_pad00[0x80];
+	int m_n80;
+	int m_n84;
+	int m_n88;
+	int m_n8c;
+};
+
+class CDebugEntity : public CBaseEntity
 {
 public:
 	CDebugEntity *vfunc5(unsigned int flags);
 	void sub_1009df20();
 public:
-	int vfunc104();
+	void vfunc104();
+	virtual int vfunc124();	// slot 124 (DrawDebugTextOverlays): CBaseEntity::vfunc124's next free line, then with overlay flag bit 0 (+0x224) one overlay text per record of the list at +0x450 (count +0x45c), each on its own line; returns the next free line
+
+	char m_pad03e0[0x450 - 0x3e0];
+	CDebugEntityRecord *m_pRecords450;	// 0x450
+	char m_pad454[0x45c - 0x454];
+	int m_nRecords45c;	// 0x45c
 };
