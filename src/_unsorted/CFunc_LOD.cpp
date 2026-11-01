@@ -25,9 +25,9 @@ int CFunc_LOD::vfunc81()
 namespace lifted {
 extern char g_105702e8;
 }
-int CFunc_LOD::vfunc82()
+CFunc_LOD::Datamap82 CFunc_LOD::vfunc82()
 {
-    return (int)&lifted::g_105702e8;
+    return (CFunc_LOD::Datamap82)&lifted::g_105702e8;
 }
 // END FUNCTION
 
