@@ -260,7 +260,9 @@ public:
 	int m_n5d70;	// 0x5d70
 	unsigned int m_h5d74;
 	char m_b5d78;	// 0x5d78: set while the scripted sequence entity (handle at +0x5d74) is recording this NPC's state
-	char m_pad5d79[0x5d98 - 0x5d79];
+	char m_pad5d79[0x5d8c - 0x5d79];
+	unsigned int m_flags5d8c;
+	char m_pad5d90[0x5d98 - 0x5d90];
 	float m_f5d98;	// 0x5d98: the time of the last output fired by vfunc142
 	char m_pad5d9c[0x5db4 - 0x5d9c];
 	float m_f5db4;	// 0x5db4: a time (curtime + the parameter's value, or + 1000.0f for a non-positive one)
