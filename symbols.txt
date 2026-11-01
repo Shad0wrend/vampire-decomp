@@ -11277,6 +11277,7 @@
 0x10013ee4 func   ?sub_10067cb0@CUnknown10067cb0@@QAEHXZ CUnknown10067cb0::sub_10067cb0
 0x10013ef8 func   ?sub_100bdd00@@YGHH@Z sub_100bdd00
 0x10013efd func   ?sub_102e2820@CUnknown102e2820@@QAEHXZ CUnknown102e2820::sub_102e2820
+0x10013f02 func   ?sub_1035fc90@CUnk1035fc90@@QAEXH@Z CUnk1035fc90::sub_1035fc90
 0x10013f07 func   ?sub_10307aa0@CUnknown10307aa0@@QAEHXZ CUnknown10307aa0::sub_10307aa0
 0x10013f0c func   ?sub_102a1590@@YI_NPAUN@@@Z sub_102a1590
 0x10013f16 func   ?vfunc5@CBlueBloodPack@@QAEPAV1@I@Z CBlueBloodPack::vfunc5
