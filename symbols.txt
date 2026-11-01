@@ -9391,6 +9391,7 @@
 0x10010c03 func   ?sub_10249980@SymMap@@QAEGIH@Z SymMap::sub_10249980
 0x10010c08 func   ?sub_10158570@@YAXHPAUIFieldSink@@PAUIRestoreSrc@@@Z sub_10158570
 0x10010c12 func   ?sub_1019a960@@YGDHH@Z sub_1019a960
+0x10010c1c func   ?sub_100bc980@bf_write@@QAE_NPBXH@Z bf_write::sub_100bc980
 0x10010c21 func   ?sub_1030d400@@YGHPBD@Z sub_1030d400
 0x10010c26 func   _multisource multisource
 0x10010c2b func   ?sub_100f0320@@YIXPAD@Z sub_100f0320
