@@ -7487,6 +7487,7 @@
 0x1000d611 func   ?vfunc81@CItemGGarysCD@@QAEHXZ CItemGGarysCD::vfunc81
 0x1000d616 func   ?sub_102a98e0@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_102a98e0
 0x1000d61b func   ?InsertAt@?$CUtlRBTree@UCRBEntry24@@H@@QAEHH_N@Z CUtlRBTree<CRBEntry24,int>::InsertAt
+0x1000d620 func   ?sub_101f5390@CUnknown101f5d60@@QAE_NPAX@Z CUnknown101f5d60::sub_101f5390
 0x1000d62f func   ?sub_103ee870@CWeaponThrown_Grenade_Frag@@QAEXXZ CWeaponThrown_Grenade_Frag::sub_103ee870
 0x1000d634 func   ?sub_1025de90@@YI_NPAUCEntHandleList_1025de90@@HPAVCBaseEntity@@@Z sub_1025de90
 0x1000d639 func   ?sub_102f95d0@CUnknown102f95d0@@QAEXH@Z CUnknown102f95d0::sub_102f95d0
