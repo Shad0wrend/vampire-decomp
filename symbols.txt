@@ -9873,6 +9873,7 @@
 0x100115fe func   ?sub_101306f0@CEnvFireSource@@QAEXXZ CEnvFireSource::sub_101306f0
 0x10011603 func   ?sub_1019de30@CRopeKeyframe@@QAEXPAVCBaseEntity@@H@Z CRopeKeyframe::sub_1019de30
 0x10011608 func   ?vfunc42@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHH@Z CTempEntsSystem::vfunc42
+0x10011612 func   ?vfunc418@CNPC_VMingXiao@@UAEMM@Z CNPC_VMingXiao::vfunc418
 0x10011617 func   ?CopyConstruct@@YAXPAV?$CHandle@VCBaseEntity@@@@ABV1@@Z CopyConstruct
 0x10011617 func   ?sub_10085070@@YAXPAHPBH@Z sub_10085070
 0x1001161c func   ?vfunc73@CPushable@@UAE_NH@Z CPushable::vfunc73

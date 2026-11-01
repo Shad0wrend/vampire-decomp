@@ -142,6 +142,21 @@ int CNPC_VMingXiao::vfunc138()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10392a10 size=0x2d
+#include "CNPC_VMingXiao.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: ?vfunc418@CNPC_VMingXiao@@UAEMM@Z
+float CNPC_VMingXiao::vfunc418(float a)
+{
+    if ((int)a != -1000004)
+    {
+        return ((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc418(a);
+    }
+    return m_f6748;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10392a50 size=0xb
 #include "CNPC_VMingXiao.h"
 namespace lifted {
