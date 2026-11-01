@@ -6927,6 +6927,7 @@
 0x1000d00d func   ?vfunc70@CNPC_VHengeyokai@@UAE_NXZ CNPC_VHengeyokai::vfunc70
 0x1000d012 func   ?vfunc81@COccultHealRate@@QAEHXZ COccultHealRate::vfunc81
 0x1000d017 func   ?vfunc5@CGameUI@@QAEPAV1@I@Z CGameUI::vfunc5
+0x1000d01c func   ?sub_1017fa40@CUnknown1017fa40@@QAEXXZ CUnknown1017fa40::sub_1017fa40
 0x1000d026 func   ?sub_10078610@CUnknown10078610@@QAEHXZ CUnknown10078610::sub_10078610
 0x1000d02b func   ?sub_102c4c50@CAI_BaseNPCTroika@@QAEXPAUCAI_ArcRecord@@MHH@Z CAI_BaseNPCTroika::sub_102c4c50
 0x1000d030 func   ?sub_1027f610@@YIXPAI@Z sub_1027f610

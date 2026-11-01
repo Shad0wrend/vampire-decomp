@@ -63835,6 +63835,24 @@ void CNPC_VCopUnit::sub_1017f9c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017fa40 size=0x1d
+#include "COutputEvent.h"
+
+char *sub_1023dcd0();
+
+struct CUnknown1017fa40 {
+	void sub_1017fa40();
+};
+
+// TARGET: CUnknown1017fa40::sub_1017fa40
+void CUnknown1017fa40::sub_1017fa40()
+{
+	char *p = sub_1023dcd0();
+	if (p)
+		((COutputEvent *)(p + 0x4e0))->sub_100cd660(this, this, 0.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017faa0 size=0x65
 struct CMsgPlayerView;
 struct CPlayerLookup { char pad[0x49c]; int m_nState; };
