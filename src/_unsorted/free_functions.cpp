@@ -66773,6 +66773,21 @@ CUtlMemory72 *CUtlMemory72::sub_10185010(int growSize, int allocationCount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10185060 size=0x33
+#include "CUtlMemory576.h"
+extern void *(*g_109f3634)(int);
+
+CUtlMemory576 *CUtlMemory576::sub_10185060(int growSize, int allocationCount)
+{
+    m_pMemory = 0;
+    m_allocationCount = allocationCount;
+    m_growSize = growSize;
+    if (allocationCount)
+        m_pMemory = (char *)g_109f3634(allocationCount * 576);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10185100 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);
