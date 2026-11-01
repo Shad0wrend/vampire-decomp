@@ -25,9 +25,9 @@ int CFuncMonitor::vfunc81()
 namespace lifted {
 extern char g_10570580;
 }
-int CFuncMonitor::vfunc82()
+CFuncMonitor::Datamap82 CFuncMonitor::vfunc82()
 {
-    return (int)&lifted::g_10570580;
+    return (CFuncMonitor::Datamap82)&lifted::g_10570580;
 }
 // END FUNCTION
 
