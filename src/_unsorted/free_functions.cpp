@@ -19270,6 +19270,16 @@ void CUnknown1007b7b0::sub_1007ba30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007baa0 size=0x35
+#include "CUnknown1007b7b0.h"
+#include <string.h>
+void CUnknown1007b7b0::sub_1007baa0()
+{
+	m_pReader->vfunc1(1);
+	m_bSnap12d = strcmpi(m_pReader->vfunc0(), "on") == 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007baf0 size=0x28
 #include "CUnknown1007b7b0.h"
 

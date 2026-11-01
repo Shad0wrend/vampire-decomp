@@ -2177,6 +2177,7 @@
 0x1000498a func   ?vfunc82@CFilterClass@@UAEPAUdatamap_t@@XZ CFilterClass::vfunc82
 0x1000498f func   ?sub_101d4ca0@@YAXPAIPBD@Z sub_101d4ca0
 0x10004994 func   ?sub_102cadb0@@YAHH@Z sub_102cadb0
+0x10004999 func   ?sub_1007baa0@CUnknown1007b7b0@@QAEXXZ CUnknown1007b7b0::sub_1007baa0
 0x100049a3 func   ?vfunc440@CNPC_VSheriffMan@@QAEHH@Z CNPC_VSheriffMan::vfunc440
 0x100049a8 func   ?sub_102cc640@@YAHXZ sub_102cc640
 0x100049ad func   ?sub_10238320@@YAHXZ sub_10238320
