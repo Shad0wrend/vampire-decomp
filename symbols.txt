@@ -3618,6 +3618,7 @@
 0x1000744b func   ?vfunc473@CNPC_VSheriffSwarm@@UAEHXZ CNPC_VSheriffSwarm::vfunc473
 0x10007450 func   ?sub_10032a60@CUtlMemory20@@QAEPAV1@HH@Z CUtlMemory20::sub_10032a60
 0x10007455 func   ?sub_1007edb0@@YGMM@Z sub_1007edb0
+0x1000745a func   ?sub_1030b5e0@CUnk1030b5e0@@QAEXPBH@Z CUnk1030b5e0::sub_1030b5e0
 0x1000745f func   _item_k_sarcophagus_key item_k_sarcophagus_key
 0x10007464 func   ?vfunc81@CItemGHattersScreenplay@@QAEHXZ CItemGHattersScreenplay::vfunc81
 0x10007469 func   ?sub_101b3730@CUnknown101b3730@@QAEPAXH@Z CUnknown101b3730::sub_101b3730

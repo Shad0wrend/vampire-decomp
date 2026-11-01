@@ -138740,6 +138740,25 @@ void CUnk1030b5b0::sub_1030b5b0(int v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030b5e0 size=0x1f
+struct CUnk1030b5e0
+{
+    char pad[0x64];
+    int m_64;
+    int m_68;
+    int m_6c;
+    int m_70;
+    void sub_1030b5e0(const int *pSrc);
+};
+void CUnk1030b5e0::sub_1030b5e0(const int *pSrc)
+{
+    m_70 = -1;
+    m_64 = pSrc[0];
+    m_68 = pSrc[1];
+    m_6c = pSrc[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030b6b0 size=0xc5
 #include "CUnknown1030b610.h"
 #include "CBaseEntity.h"
