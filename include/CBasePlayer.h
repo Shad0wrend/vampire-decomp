@@ -278,7 +278,8 @@ public:
 	int m_aSlotValue2040[10];	// 0x2040: value of each command slot (a name hash or packed range)
 	char m_pad2068[4];	// 0x2068 .. 0x206B
 	Vector m_vec206c;	// 0x206C: the view angles / target vector (stored by sub_10167030)
-	char m_pad2078[0x208c - 0x2078];	// 0x2078 .. 0x208B
+	char m_pad2078[0x208c - 0x2078];
+	void sub_1016b090(unsigned int buttons);	// button-state update: prev buttons -> +0x2094, new buttons -> +0x2088	// 0x2078 .. 0x208B
 	unsigned char m_b208C;	// 0x208C
 	char m_pad208D[0x20a8 - 0x208d];	// 0x208D .. 0x20A7
 	char m_b20A8;
