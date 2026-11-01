@@ -3379,6 +3379,7 @@
 0x10006a19 func   ?vfunc32@CPhysicsPropContested@@UAE_NH@Z CPhysicsPropContested::vfunc32
 0x10006a1e func   ?sub_10361730@CNPC_VAsianVampire@@QAEPAXXZ CNPC_VAsianVampire::sub_10361730
 0x10006a23 func   ?sub_101e04a0@CUnknown101dff00List@@QAEXXZ CUnknown101dff00List::sub_101e04a0
+0x10006a28 func   ?sub_10072b10@CCameraShotTable@@QAEPAUCCameraShot_t@@H@Z CCameraShotTable::sub_10072b10
 0x10006a32 func   ?vfunc365@CNPC_VPlaceholder@@UAE_NH@Z CNPC_VPlaceholder::vfunc365
 0x10006a37 func   ?sub_1030a0a0@@YGHHPAH@Z sub_1030a0a0
 0x10006a41 func   ?sub_101da8b0@@YAXXZ sub_101da8b0
