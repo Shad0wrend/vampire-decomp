@@ -9228,6 +9228,7 @@
 0x1001046f func   ?sub_1004faa0@@YGXH@Z sub_1004faa0
 0x10010479 func   ?sub_100ce600@CUnk100ce600@@QAE_NPAH@Z CUnk100ce600::sub_100ce600
 0x10010488 func   ?sub_102daf20@CUnknown102daf20@@QAEPAXXZ CUnknown102daf20::sub_102daf20
+0x1001048d func   ?sub_101f12e0@CUnknown101f10e0@@QAE_NPBD@Z CUnknown101f10e0::sub_101f12e0
 0x10010492 func   ?sub_101251e0@@YIXPAD@Z sub_101251e0
 0x1001049c func   ?sub_1039ee20@CNPC_VMingXiaoTentacle@@QAEXPAX@Z CNPC_VMingXiaoTentacle::sub_1039ee20
 0x100104a6 func   ?sub_10322180@@YAHXZ sub_10322180
