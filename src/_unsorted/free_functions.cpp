@@ -108728,6 +108728,21 @@ CVDmgBlock16_t *CVDmgBlock16_t::sub_10230ed0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10230f00 size=0x1f
+#include "CVDmg_t.h"
+
+struct CUnk10230f00
+{
+    CUnk10230f00 *sub_10230f00(int a, int b);
+};
+CUnk10230f00 *CUnk10230f00::sub_10230f00(int a, int b)
+{
+    ((CVDmgBlock16_t *)this)->sub_10205380();
+    ((CVDmgBlock16_t *)this)->sub_102042a0(a, b);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10230f30 size=0x1a
 struct CUnk10230f30
 {
