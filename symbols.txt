@@ -8528,6 +8528,7 @@
 0x1000f51f func   _item_k_empire_mafia_key item_k_empire_mafia_key
 0x1000f524 func   ?vfunc81@CHudEntity@@QAEHXZ CHudEntity::vfunc81
 0x1000f529 func   ?vfunc249@CRotDoor@@UAEHXZ CRotDoor::vfunc249
+0x1000f52e func   ?sub_103dc340@UtlVec12@@QAEXHH@Z UtlVec12::sub_103dc340
 0x1000f53d func   ?sub_1005e700@CUnknown1005e700@@QAEHXZ CUnknown1005e700::sub_1005e700
 0x1000f542 func   ?sub_103b2e60@@YGHH@Z sub_103b2e60
 0x1000f547 func   ?vfunc104@CPropKeypad@@QAEXXZ CPropKeypad::vfunc104

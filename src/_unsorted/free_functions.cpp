@@ -164431,6 +164431,18 @@ void CUtlVector12::sub_103dc280(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dc340 size=0x3e
+#include "UtlVec12.h"
+
+void UtlVec12::sub_103dc340(int elem, int num)
+{
+	int numToMove = m_Size - elem - num;
+	if (numToMove > 0 && num > 0) {
+		memmove(m_pMemory + (elem + num) * 12, m_pMemory + elem * 12, numToMove * 12);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dc390 size=0x1d
 // TARGET: sub_103dc390
 struct Vec3Copy
