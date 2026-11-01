@@ -21,6 +21,13 @@ void __fastcall sub_101a6540(void *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6560 size=0x1
+// TARGET: sub_101a6560
+void __fastcall sub_101a6560(void *pThis)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a65e0 size=0x26
 struct CUnknown101a65e0View {
     int sub_101a65e0(int a);
