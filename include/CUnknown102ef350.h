@@ -35,16 +35,7 @@ public:
 	CUnknown102ef350Sink m_Sink19b0;	// 0x19b0
 };
 
-class CUnknown102ef350Outer : public CUnknown102ef3e0	// the primary part (tracker members at 0x51..0x68)
-{
-public:
-	virtual void vfunc0();
-	virtual void vfunc1();
-	virtual void vfunc2();
-	virtual void vfunc3();
-	virtual void vfunc4();
-	virtual void vfunc5();
-	virtual void vfunc6();
-	virtual void vfunc7();
-	virtual void vfunc8();	// slot 8 (+0x20), called by 0x102ef6d0 on type 4
-};
+// Not modelled yet (needs the real class, found from the vtable that holds 0x102ef350 / 0x102ef6d0 at the
+// interface offset 0x10): the outer object has a vtable at +0, the owner pointer (CUnknown102ef350Owner *) at +4,
+// the tracker members of CUnknown102ef3e0 from +0x51 to +0x68 (so CUnknown102ef3e0's m_pad0000 hides a vptr and
+// this interface's vptr at +0x10), and a virtual slot 8 (+0x20) that 0x102ef6d0 calls on a type-4 event.
