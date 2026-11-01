@@ -12077,6 +12077,7 @@
 0x10015aeb func   ?sub_100e5c70@CDialog@@QAEXXZ CDialog::sub_100e5c70
 0x10015af0 func   ?sub_101e7e60@CUnknown101e7e60@@QAEMXZ CUnknown101e7e60::sub_101e7e60
 0x10015af5 func   ?vfunc5@CDecal@@QAEPAV1@I@Z CDecal::vfunc5
+0x10015afa func   ??0CTraceFilterValidForDecal@CDecal@@QAE@PAXH@Z CDecal::CTraceFilterValidForDecal::CTraceFilterValidForDecal
 0x10015aff func   ?vfunc546@CNPC_VAsianVampire@@QAEHH@Z CNPC_VAsianVampire::vfunc546
 0x10015b04 func   ?vfunc4@CServerGameClients@@UAEHHH@Z CServerGameClients::vfunc4
 0x10015b09 func   ?sub_100c6020@@YA_NPAXHMPBMAAVVector@@2@Z sub_100c6020
