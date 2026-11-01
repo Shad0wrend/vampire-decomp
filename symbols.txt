@@ -3123,6 +3123,7 @@
 0x100065ff func   ?sub_10135290@CLogicPythonCheck@@QAE_NXZ CLogicPythonCheck::sub_10135290
 0x10006604 func   ?sub_102dc3e0@@YIXPAVCBaseEntity@@@Z sub_102dc3e0
 0x10006609 func   ?vfunc81@CWeaponRanged_Pistol_Thirtyeight@@QAEHXZ CWeaponRanged_Pistol_Thirtyeight::vfunc81
+0x10006613 func   ?sub_10379000@CUnknown10379000@@QAEXD@Z CUnknown10379000::sub_10379000
 0x1000661d func   ?vfunc362@CWeaponMelee_Sheriff_Sword@@QAEHXZ CWeaponMelee_Sheriff_Sword::vfunc362
 0x10006627 func   ?vfunc363@CWeaponMelee_Claws_Protean4@@QAEHXZ CWeaponMelee_Claws_Protean4::vfunc363
 0x1000662c func   ?sub_10406810@@YAHXZ sub_10406810

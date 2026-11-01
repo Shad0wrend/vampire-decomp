@@ -153955,6 +153955,26 @@ int CNPC_VGargoyle::sub_10378f80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10379000 size=0x24
+class CUnknown10379000
+{
+public:
+	char pad0[0x14b8];
+	unsigned int m_flags14b8;
+
+	void sub_10379000(char on);
+};
+
+// TARGET: CUnknown10379000::sub_10379000
+void CUnknown10379000::sub_10379000(char on)
+{
+	if (on)
+		m_flags14b8 |= 16;
+	else
+		m_flags14b8 &= ~16;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10379040 size=0xc
 bool CUnknown10381be0::sub_10379040()
 {
