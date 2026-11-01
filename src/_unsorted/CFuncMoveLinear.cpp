@@ -14,9 +14,9 @@ bool CFuncMoveLinear::vfunc128()
 namespace lifted {
 extern char g_10570868;
 }
-int CFuncMoveLinear::vfunc82()
+CFuncMoveLinear::Datamap82 CFuncMoveLinear::vfunc82()
 {
-    return (int)&lifted::g_10570868;
+    return (CFuncMoveLinear::Datamap82)&lifted::g_10570868;
 }
 // END FUNCTION
 
