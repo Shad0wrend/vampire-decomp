@@ -5,9 +5,9 @@
 namespace lifted {
 extern char g_106099f0;
 }
-int CAI_Hint::vfunc82()
+CAI_Hint::Datamap82 CAI_Hint::vfunc82()
 {
-    return (int)&lifted::g_106099f0;
+    return (CAI_Hint::Datamap82)&lifted::g_106099f0;
 }
 // END FUNCTION
 
