@@ -16,6 +16,7 @@ public:
 	int m_nSink;	// 0x5f44: the CAI_ExpresserSink sub-object (secondary vtable pointer)
 	CAI_Expresser *m_pExpresser;	// 0x5f48
 public:
-	int vfunc512();
+	int vfunc512();	// slot 512 (+0x800): returns m_pExpresser (as an int; cast it to CAI_Expresser *)
+	int vfunc484(const char *pszName, float flDelay, float flVolume, int nSoundLevel, int b);	// 0x10312ef0: ((CAI_Expresser *)vfunc512())->sub_10311f50(the same five arguments); the arguments are pushed before the slot call
 	int vfunc584();
 };
