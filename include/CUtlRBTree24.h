@@ -72,6 +72,15 @@ public:
 	bool IsRed(int i) const { return sub_10055520(i).m_Tag == 0; }
 	int Color(int i) const { return sub_10055520(i).m_Tag; }
 	void SetColor(int i, int c) { Links(i).m_Tag = c; }
+	// the same accessors over the other instance's out-of-line Links (sub_1007fc70)
+	int ParentB(int i) const { return sub_1007fc70(i).m_Parent; }
+	int LeftChildB(int i) const { return sub_1007fc70(i).m_Left; }
+	int RightChildB(int i) const { return sub_1007fc70(i).m_Right; }
+	bool IsLeftChildB(int i) const { return LeftChildB(ParentB(i)) == i; }
+	bool IsRightChildB(int i) const { return RightChildB(ParentB(i)) == i; }
+	bool IsRedB(int i) const { return sub_1007fc70(i).m_Tag == 0; }
+	int ColorB(int i) const { return sub_1007fc70(i).m_Tag; }
+	void sub_1007f8c0(int elem, int parent, bool isLeft);	// "CUtlRBTree::LinkToParent" with InsertRebalance inlined, for the instance of sub_1007fc70
 	int sub_10055050();	// "CUtlRBTree::NewNode": takes the first free node (or grows the node memory by one and uses the next unused one) and returns its index
 	void sub_1007f250(const void *pInsert, int *pParent, bool *pLeftChild);	// "CUtlRBTree::FindInsertionPosition": walks down from the root with the less function, stores the last visited node in *pParent and whether the new element goes to its left in *pLeftChild
 	void sub_10055170(int elem, int parent, bool isLeft);	// "CUtlRBTree::LinkToParent" with InsertRebalance inlined (Links stays the out-of-line sub_10055520, rotations the out-of-line sub_10055f50 / sub_100561a0)
