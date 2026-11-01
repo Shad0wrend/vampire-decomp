@@ -5360,6 +5360,7 @@
 0x1000a3b2 func   ?sub_1026c120@CAI_BaseNPC@@QAEXHH@Z CAI_BaseNPC::sub_1026c120
 0x1000a3b7 func   ?sub_100fdd50@UtlMem7@@QAEXH@Z UtlMem7::sub_100fdd50
 0x1000a3bc func   ?sub_1013aeb0@@YAXABVQuaternion@@0AAV1@@Z sub_1013aeb0
+0x1000a3c1 func   ??0CTraceFilterFVisible@@QAE@PAXH@Z CTraceFilterFVisible::CTraceFilterFVisible
 0x1000a3c6 func   ?sub_101eab00@@YAXH@Z sub_101eab00
 0x1000a3cb func   ?sub_1030bf50@@YIXPAD@Z sub_1030bf50
 0x1000a3d0 func   ?sub_10341030@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_10341030
