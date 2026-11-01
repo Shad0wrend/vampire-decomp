@@ -387,5 +387,6 @@ public:
 	void sub_100b1d10();	// CBaseEntity member (stub 0x1000d486), called directly by slot 434
 	void vfunc434();	// slot 434 (plain member): with the player on the ground (flags bit 0, not bit 2, move type below 2): slot 449(2, 0), stamps the time at +0x148c and, when the entity of slot 209 has flag bit 12, hands the velocity plus the base velocity to sub_100b2e30
 
+	void vfunc26(CBaseEntity *pOther);	// slot 26 override (plain member beside the placeholder sa26; twin of slot 25): with an entity, the handle at +0x1c60 becomes the handle of its owning object (+0x9c, -1 when none)
 #include "CBasePlayer_ext.h"
 };
