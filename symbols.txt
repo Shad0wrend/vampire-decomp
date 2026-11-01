@@ -8068,6 +8068,7 @@
 0x1000f051 func   ?sub_100577d0@@YGXHH@Z sub_100577d0
 0x1000f05b func   ?sub_100b5340@CBaseEntity@@QAEXII@Z CBaseEntity::sub_100b5340
 0x1000f065 func   ?sub_1015dc60@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_1015dc60
+0x1000f06a func   ?sub_10103800@CBaseEntity@@QAEXH@Z CBaseEntity::sub_10103800
 0x1000f074 func   ?sub_100ce210@CEventQueue@@QAEXPAUCEQEvent@@@Z CEventQueue::sub_100ce210
 0x1000f07e func   ?sub_1029f250@CUnknown1029f250View@@QAEXH@Z CUnknown1029f250View::sub_1029f250
 0x1000f088 func   ?vfunc324@CNPC_VTzimisceRunner@@UAE_NXZ CNPC_VTzimisceRunner::vfunc324

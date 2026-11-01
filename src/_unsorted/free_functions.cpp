@@ -46086,6 +46086,17 @@ int __fastcall sub_10103790(CHandleHolderView *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10103800 size=0x1b
+#include "CBaseEntity.h"
+
+// TARGET: CBaseEntity::sub_10103800
+void CBaseEntity::sub_10103800(int unused)
+{
+	*((char *)this + 0x45c) = 1;
+	sub_10103860(sub_10103790());
+}
+// END FUNCTION
+
 // FUNCTION: 0x10103830 size=0x1b
 // TARGET: sub_10103830
 struct CUnk10103830 {
