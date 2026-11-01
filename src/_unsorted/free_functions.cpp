@@ -93171,6 +93171,22 @@ void CUnknown101f5050::sub_101f5050()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f5120 size=0x1e
+int *sub_10203ed0(int *pArg, int value);
+
+struct CUnk101f5120 {
+	char m_pad0000[0x24];
+	int m_24;
+	void sub_101f5120(int a);
+};
+
+// TARGET: CUnk101f5120::sub_101f5120
+void CUnk101f5120::sub_101f5120(int a)
+{
+	m_24 = *sub_10203ed0(&a, a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f5150 size=0x8c
 #include "CUnknown101f5150.h"
 bool CUnknown101f5150::sub_101f5150(const char *pszName)
