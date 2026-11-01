@@ -30,12 +30,16 @@ struct CAI_LocalNavigatorStopState	// the state object vfunc7 reads: only the fl
 	float m_flStop2c;	// 0x2c
 };
 
-class CAI_LocalNavigator : public CAI_Component, public CAI_ProxyMovementSink
+struct CAI_LocalNavigatorHead : public CAI_Component	// the component part up to the proxy sink at +0x10
+{
+	int m_n08;	// 0x08
+	int m_n0c;	// 0x0c: -1 after construction
+};
+
+class CAI_LocalNavigator : public CAI_LocalNavigatorHead, public CAI_ProxyMovementSink
 {
 public:
 	CAI_LocalNavigator(void *pOuter);	// 0x102ddab0: outer at +4, +0xc = -1, the proxy sink target and +0x18 / +0x1c cleared
-	int m_n08;	// 0x08
-	int m_n0c;	// 0x0c: -1 after construction
 	CAI_LocalNavigatorData *m_pData;	// 0x18, heap allocated
 	int m_n1c;	// 0x1c
 
