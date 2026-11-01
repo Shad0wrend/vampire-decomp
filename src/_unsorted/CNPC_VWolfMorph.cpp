@@ -28,9 +28,9 @@ int CNPC_VWolfMorph::vfunc451()
 namespace lifted {
 extern char g_10663b38;
 }
-int CNPC_VWolfMorph::vfunc82()
+CNPC_VWolfMorph::Datamap82 CNPC_VWolfMorph::vfunc82()
 {
-    return (int)&lifted::g_10663b38;
+    return (CNPC_VWolfMorph::Datamap82)&lifted::g_10663b38;
 }
 // END FUNCTION
 
