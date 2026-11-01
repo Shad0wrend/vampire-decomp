@@ -309,7 +309,9 @@ public:
 	float m_f22A8;
 	float m_f22AC;
 	float m_f22B0;
-	char m_pad22B4[0x23bc - 0x22b4];	// 0x22B4 .. 0x23BB
+	char m_pad22B4[0x2304 - 0x22b4];	// 0x22B4 .. 0x2303
+	int m_n2304;	// 0x2304: set while the player is held (sub_10177ba0 clears it after restoring the move type)
+	char m_pad2308[0x23bc - 0x2308];	// 0x2308 .. 0x23BB
 	CBasePlayerHandleVec m_SimulationList;	// 0x23BC (count at +0x23C8)
 	char m_pad23D0[0x2454 - 0x23d0];	// 0x23D0 .. 0x2453
 	unsigned char m_b2454;	// 0x2454
