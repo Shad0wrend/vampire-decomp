@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_1053e1d0;
 }
-int CDisciplineParticle::vfunc82()
+CDisciplineParticle::Datamap82 CDisciplineParticle::vfunc82()
 {
-    return (int)&lifted::g_1053e1d0;
+    return (CDisciplineParticle::Datamap82)&lifted::g_1053e1d0;
 }
 // END FUNCTION
 
