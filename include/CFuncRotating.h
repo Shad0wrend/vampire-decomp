@@ -21,11 +21,18 @@ public:
 	void sub_100c0420(float flSpeed);
 	unsigned char sub_100bf8e0();	// CFuncRotating::vfunc117 body (CBaseEntity::vfunc117 & 0xfd)	// stub 0x10002a59: applies the new speed
 
-	char m_pad03e0[0x450 - sizeof(CBaseEntity)];
+	void sub_100c0880();	// think function (stub): when sub_100c0760(0) is true calls sub_100c0970(m_flTargetSpeed), else +0x3fc = +0x3f4 + 0.1
+	void sub_100c0970(float flSpeed);	// "UpdateSpeed" (the CFloatPair3f4 view declares it too): sets +0x45c = |flSpeed| (negated when byte +0x46c), picks the think function at +0x114
+
+	char m_pad03e0[0x3f4 - sizeof(CBaseEntity)];
+	float m_flLocalTime3f4;	// 0x3f4
+	char m_pad03f8[4];
+	float m_flNextThink3fc;	// 0x3fc
+	char m_pad0400[0x450 - 0x400];
 	float m_flFanFriction;	// 0x450
 	float m_flAttenuation;	// 0x454
 	float m_flVolume;	// 0x458
-	char m_pad045c[0x460 - 0x45c];
+	float m_flTargetSpeed;	// 0x45c
 	float m_f460;	// 0x460
 	float m_f464;	// 0x464: the damage value of the blocked hit (vfunc178)
 	const char *m_pszNoiseRunning;	// 0x468
