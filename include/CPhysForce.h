@@ -12,7 +12,8 @@ struct CPhysForceMotion
 
 	void sub_10025f80(float flScale);	// start = start2 * flScale, end = end2 * flScale
 
-	char m_pad0000[8];
+	virtual void vfunc0();	// the CConstantForceController vftable (0x104454b8) is stored by the CPhysForce constructor
+	char m_pad0004[4];
 	CPhysForceVec3 m_vStart;	// 0x08
 	CPhysForceVec3 m_vEnd;	// 0x14
 	CPhysForceVec3 m_vStart2;	// 0x20
