@@ -6340,6 +6340,7 @@
 0x1000bb40 func   ?sub_100778b0@CUnknown100778b0@@QAEHXZ CUnknown100778b0::sub_100778b0
 0x1000bb4f func   ?sub_100584a0@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHH@Z CTempEntsSystem::sub_100584a0
 0x1000bb59 func   ?vfunc78@CGameRules@@UAEMHHHHH@Z CGameRules::vfunc78
+0x1000bb63 func   ?sub_10349f80@CUtlVector16@@QAEXHH@Z CUtlVector16::sub_10349f80
 0x1000bb68 func   ?vfunc81@CItemGDrugsPerscriptionBottle@@QAEHXZ CItemGDrugsPerscriptionBottle::vfunc81
 0x1000bb6d func   ?sub_1021fb50@@YAXPAUCEquipList@@H@Z sub_1021fb50
 0x1000bb72 func   ?sub_1017f9c0@CNPC_VCopUnit@@QAEXXZ CNPC_VCopUnit::sub_1017f9c0

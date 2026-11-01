@@ -151045,6 +151045,18 @@ void CUtlVector16::sub_10349ec0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10349f80 size=0x3a
+#include "CUtlVector16.h"
+
+void CUtlVector16::sub_10349f80(int elem, int num)
+{
+	int numToMove = m_size - elem - num;
+	if (numToMove > 0 && num > 0) {
+		memmove(m_pMemory + (elem + num) * 16, m_pMemory + elem * 16, numToMove * 16);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10349fd0 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);
