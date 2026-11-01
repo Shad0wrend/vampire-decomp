@@ -84,7 +84,7 @@ public:
 	virtual void vfunc32();
 	virtual void vfunc33();
 	virtual void vfunc34();
-	virtual void vfunc35();
+	virtual int vfunc35(CBaseEntity *pOther);	// slot 35 (CBaseCombatWeapon's signature): 0x49 when the fuse byte at +0x931 is clear and the owner resolves to nothing, else 0
 	virtual void vfunc36();
 	virtual void vfunc37();
 	virtual void vfunc38();
