@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_1056fd24;
 }
-int CEnvDustPuff::vfunc82()
+CEnvDustPuff::Datamap82 CEnvDustPuff::vfunc82()
 {
-    return (int)&lifted::g_1056fd24;
+    return (CEnvDustPuff::Datamap82)&lifted::g_1056fd24;
 }
 // END FUNCTION
 
