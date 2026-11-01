@@ -5789,6 +5789,7 @@
 0x1000ae61 func   ?sub_1020b020@CUnknown1020b020@@QAEHH@Z CUnknown1020b020::sub_1020b020
 0x1000ae66 func   ?vfunc3@?$CBitStringSaveRestoreOps@VCBitString@@@@UAEXPAPAVCBitString@@@Z CBitStringSaveRestoreOps<CBitString>::vfunc3
 0x1000ae6b func   ?sub_1030ffa0@CAI_Senses@@QAEDPAX@Z CAI_Senses::sub_1030ffa0
+0x1000ae70 func   ?sub_102c3500@@YIXPADH0@Z sub_102c3500
 0x1000ae75 func   ?sub_10032c60@CUtlVector32@@QAEXH@Z CUtlVector32::sub_10032c60
 0x1000ae7f func   ?sub_101434b0@@YAXHHPBDHHHHH@Z sub_101434b0
 0x1000ae84 func   ?vfunc362@CNPC_VPlaceholder@@UAE_NH@Z CNPC_VPlaceholder::vfunc362

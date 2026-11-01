@@ -126746,6 +126746,19 @@ void CFlagOwnerView::sub_102c34b0(CFlagArgView *pArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c3500 size=0x21
+// TARGET: sub_102c3500
+void __fastcall sub_102c3500(char *self, int dummy, char *data)
+{
+    char v;
+    if (*(int *)(data + 0x18) == 5)
+        v = *(char *)(data + 8);
+    else
+        v = 0;
+    *(char *)(self + 0x6496) = v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c3540 size=0x2b
 struct CVariantArg102c3540
 {
