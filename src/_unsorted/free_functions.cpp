@@ -149334,6 +149334,32 @@ float CUnknown1033b980::sub_1033b980()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033bf50 size=0x31c
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+#include "CVStatList_t.h"
+
+void CBaseCombatCharacter::sub_1033bf50(int nAmount)
+{
+	ScopeTrace trace("CBaseCombatCharacter::BloodHeal", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (CVStatListSet::Of(this)->Find(2)->sub_102012d0(2) > 0 && nAmount > 0) {
+		int n = nAmount;
+		do {
+			int nBlood = CVStatListSet::Of(this)->Find(0)->sub_102012d0(0xf);
+			if (nBlood > 0) {
+				if (nBlood < CVStatListSet::Of(this)->Find(0)->sub_102012d0(0x11)) {
+					int nCost = (nBlood <= CVStatListSet::Of(this)->Find(0)->sub_102012d0(0x10)) + 1;
+					if (nCost <= CVStatListSet::Of(this)->Find(0)->sub_102012d0(0xc)) {
+						CVStatListSet::Of(this)->Find(0)->sub_10201100(0xc, nCost);
+						sub_1033c340(nAmount);
+					}
+				}
+			}
+		} while (--n);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033c340 size=0x2b1
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
