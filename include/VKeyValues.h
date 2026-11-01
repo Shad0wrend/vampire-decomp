@@ -36,7 +36,7 @@ struct VKeyValues
 	int m_nValue08;	// 0x08: the int value (a float for type 3)
 	const char *m_pszValue0c;	// 0x0c: the string value (type 1)
 	int m_nType10;	// 0x10: 1 string, 3 float, else int
-	char m_pad0014[4];
+	char *m_pszName14;	// 0x14: malloc'ed copy of the key's name (sub_101f2f70)
 	VKeyValues *m_pNext18;	// 0x18: the next key of the same level
 	VKeyValues *m_pChild1c;	// 0x1c: the first sub key
 	VKeyValues *m_pParent20;	// 0x20: the key searched next when no sub key has the name
