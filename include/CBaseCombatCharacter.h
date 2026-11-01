@@ -244,7 +244,9 @@ public:
 	float m_f1580;	// 0x1580: along the up vector
 	char m_pad1584[0x1594 - 0x1584];
 	int m_nHitBoxSet1594;	// 0x1594: the index of the record read from the studio header's table (potence hit effect)
-	char m_pad1598[0x15a4 - 0x1598];
+	struct CRelationRecord *m_ppRelationships1598;	// 0x1598: the relationship table (array of pointers to records)
+	char m_pad159c[4];
+	int m_nRelationships15a0;	// 0x15a0: its size
 	int m_iAmmo[32];	// 0x15a4: the ammo count per ammo index
 	char m_pad1624[0x19a4 - 0x1624];
 	EHANDLE m_hActiveWeapon19a4;	// 0x19a4: the active weapon
