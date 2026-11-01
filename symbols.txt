@@ -3239,6 +3239,7 @@
 0x100066b8 func   ?vfunc552@CAI_BaseNPC@@UAEIXZ CAI_BaseNPC::vfunc552
 0x100066bd func   ?sub_1018b760@@YAHXZ sub_1018b760
 0x100066c7 func   ?sub_102180a0@@YIXPADHH@Z sub_102180a0
+0x100066cc func   ?sub_101f9a00@@YGXPAUCTraitOwner@@H@Z sub_101f9a00
 0x100066d6 func   ?vfunc330@CNPC_VPlaceholder@@UAEXHH@Z CNPC_VPlaceholder::vfunc330
 0x100066db func   ?sub_1013a540@@YAMM@Z sub_1013a540
 0x100066e5 func   ?vfunc364@CItemContainer@@QAE_NH@Z CItemContainer::vfunc364

@@ -99183,6 +99183,35 @@ void __stdcall sub_101f99e0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f9a00 size=0x2d
+#define P10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+    virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CTraitEffectList
+{
+    void sub_101f96b0(void *pObj, int a);
+};
+
+struct CTraitOwner
+{
+    P10(a) P10(b) P10(c) P10(d) P10(e) P10(f) P10(g) P10(h) P10(i) P10(j) P10(k)
+    virtual void vfunc110();
+    virtual void vfunc111();
+    char m_pad0004[0x13dc - 4];
+    CTraitEffectList m_TraitEffects;
+};
+
+// TARGET: sub_101f9a00
+void __stdcall sub_101f9a00(CTraitOwner *pObj, int a)
+{
+    if (a != -1 && pObj)
+    {
+        pObj->m_TraitEffects.sub_101f96b0(pObj, a);
+        pObj->vfunc111();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f9a40 size=0x28
 #include "CBaseEntity.h"
 #include "CUnknown101f9c70.h"
