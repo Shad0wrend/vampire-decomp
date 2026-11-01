@@ -57050,6 +57050,18 @@ void CUnknown101358e0::sub_101358e0(int *pArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10135930 size=0x67
+#include "CLogicSquadCondition.h"
+
+// TARGET: logic_squad_condition
+extern "C" CBaseEntity *logic_squad_condition()
+{
+    CLogicSquadCondition *p = new CLogicSquadCondition;
+    p->vfunc106("logic_squad_condition");
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10135a20 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
