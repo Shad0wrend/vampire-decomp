@@ -6609,6 +6609,7 @@
 0x1000c243 func   ?sub_1037a880@@YIPAXPAX@Z sub_1037a880
 0x1000c248 func   ?sub_1021e6c0@@YIXPAUMem@@HH@Z sub_1021e6c0
 0x1000c257 func   ?sub_103b0930@CNPC_VSheriffMan@@QAEPAVCEntityVSlots@@XZ CNPC_VSheriffMan::sub_103b0930
+0x1000c25c func   ?sub_1038e6a0@CNPC_VManBat@@QAEXXZ CNPC_VManBat::sub_1038e6a0
 0x1000c266 func   ?vfunc320@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc320
 0x1000c26b func   ?sub_103d0db0@CNPC_VWerewolf@@QAEHUCNPC_VWerewolfVec3@@0@Z CNPC_VWerewolf::sub_103d0db0
 0x1000c270 func   ?vfunc371@CHL2_Player@@UAE?AVVector@@XZ CHL2_Player::vfunc371
