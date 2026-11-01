@@ -37,6 +37,7 @@ public:
 	virtual void vfunc5();
 	virtual int vfunc6();
 	virtual void vfunc8();
+	virtual float *vfunc9(bool bOuter);	// "CCollisionProperty::GetCollisionAngles": vec3_origin (0x1070d9d0) for flag 0 when the byte at +0x44 is negative (bit 7) or the solid type (+0x40) is 0 / 2, else the outer entity's slot 219 (called without the argument)
 	virtual float *vfunc10();	// "CCollisionProperty::CollisionToWorldTransform": one of four rotating static matrices; the outer entity's own transform when the bounds are in entity space, else identity with the origin as column 3
 	virtual int vfunc14();
 	virtual void vfunc15(Vector *pMins, Vector *pMaxs);	// "CCollisionProperty::WorldSpaceSurroundingBounds": when the outer entity's surrounding bounds dirty flag (bit 14 of +0x268) is set clears it and recomputes the offsets (sub_100dd780) from the collision origin, else adds the cached offsets to the origin
