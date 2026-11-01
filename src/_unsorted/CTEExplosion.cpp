@@ -50,6 +50,17 @@ void CTEExplosion::vfunc3(const Vector *pOrigin, const Vector *pAngles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10061a40 size=0x39
+#include "CTEExplosion.h"
+#include "CTEMetalSparks.h"
+#include "IVEngineServerFull.h"
+
+void CTEExplosion::vfunc4(void *pFilter, int delay)
+{
+	engine->vfunc103((int)pFilter, delay, this, ((CTEMetalSparks *)this)->vfunc0()->m_pTable, ((CTEMetalSparks *)this)->vfunc0()->m_ClassID);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10061b00 size=0x6
 #include "CTEExplosion.h"
 namespace lifted {
