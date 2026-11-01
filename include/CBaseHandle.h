@@ -27,6 +27,7 @@ public:
 	bool operator!=(const CBaseHandle &other) const { return m_Index != other.m_Index; }
 	inline IHandleEntity *Get() const;	// ehandle.h
 	IHandleEntity *sub_100d1590();	// Get() as an out-of-line copy (the same lookup)
+	IHandleEntity *sub_1028acc0();	// Get() as an out-of-line copy (the same lookup), 0x1028acc0
 	inline const CBaseHandle &Set(const IHandleEntity *pEntity);	// ehandle.h
 
 	unsigned long m_Index;
