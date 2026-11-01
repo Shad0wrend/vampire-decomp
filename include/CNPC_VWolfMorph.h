@@ -13,7 +13,11 @@ public:
 	void sub_100123af();	// as in CPhysForce (transplant)
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 
-	char m_pad0004[0x5c38 - 4];
+	void sub_103a4580();	// CNPC_VPlayerController::vfunc420 (stub 0x100155aa), called directly by vfunc420
+	char m_pad0004[0x1b3c - 4];
+	const char *m_pszFile1b3c;	// 0x1b3c: source file marker (\"...NPC_VWolfMorph.cpp\")
+	int m_nLine1b40;	// 0x1b40: its line
+	char m_pad1b44[0x5c38 - 0x1b44];
 	void *m_p5c38;	// 0x5c38: the object of the current schedule
 public:
 	virtual void vfunc0();
