@@ -11840,6 +11840,7 @@
 0x10014d7b func   ?sub_102b97a0@@YADXZ sub_102b97a0
 0x10014d80 func   ?sub_1012faf0@@YAHXZ sub_1012faf0
 0x10014d8a func   ?sub_1042ffe0@@YAII@Z sub_1042ffe0
+0x10014d8f func   ?vfunc3@PyServerSystem@@UAEXXZ PyServerSystem::vfunc3
 0x10014d94 func   ?vfunc138@CNPC_VTest@@UAEHXZ CNPC_VTest::vfunc138
 0x10014d99 func   ?sub_10247030@@YA?AVSendProp@@PBD0@Z sub_10247030
 0x10014d9e func   ?sub_1035b420@@YIPAXPAX@Z sub_1035b420
