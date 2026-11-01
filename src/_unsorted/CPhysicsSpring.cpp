@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_1053cca0;
 }
-CPhysicsSpring::Datamap82 CPhysicsSpring::vfunc82()
+datamap_t *CPhysicsSpring::vfunc82()
 {
-    return (CPhysicsSpring::Datamap82)&lifted::g_1053cca0;
+    return (datamap_t *)&lifted::g_1053cca0;
 }
 // END FUNCTION
 
