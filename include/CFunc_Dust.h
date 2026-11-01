@@ -14,5 +14,5 @@ public:
 	int vfunc80();
 	int vfunc81();
 	int vfunc82();
-	int vfunc117();
+	char vfunc117();
 };
