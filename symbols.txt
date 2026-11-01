@@ -2812,6 +2812,7 @@
 0x10005aab func   ?vfunc82@CRotDoor@@UAEPAUdatamap_t@@XZ CRotDoor::vfunc82
 0x10005ab0 func   ??0CUnknown10206340@@QAE@H@Z CUnknown10206340::CUnknown10206340
 0x10005ab0 func   ?sub_10206300@@YIPAHPAHHH@Z sub_10206300
+0x10005aba func   ?sub_1039ef10@CNPC_VMingXiaoTentacle@@QAE_NXZ CNPC_VMingXiaoTentacle::sub_1039ef10
 0x10005abf func   ?sub_101f2120@@YIXPAH@Z sub_101f2120
 0x10005ace func   ?sub_102058e0@CUnknown102058e0@@QAEHH@Z CUnknown102058e0::sub_102058e0
 0x10005ad8 func   ?vfunc134@CLogicLineToEntity@@QAEXXZ CLogicLineToEntity::vfunc134
