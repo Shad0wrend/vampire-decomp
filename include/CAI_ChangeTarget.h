@@ -9,5 +9,5 @@ public:
 	void sub_1000cb8a();
 public:
 	int vfunc82();
-	int vfunc117();
+	char vfunc117();
 };
