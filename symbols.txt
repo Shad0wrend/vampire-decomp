@@ -10146,6 +10146,7 @@
 0x10011db0 func   ?sub_1038e6e0@CNPC_VManBat@@QAEXXZ CNPC_VManBat::sub_1038e6e0
 0x10011db5 func   ?vfunc103@CNPC_VSabbatLeader@@QAEXXZ CNPC_VSabbatLeader::vfunc103
 0x10011dba func   ?vfunc5@CNPC_VHumanCombatant@@QAEPAV1@I@Z CNPC_VHumanCombatant::vfunc5
+0x10011dbf func   ?sub_103674c0@CNPC_VBatSwarmFwd@@QAEXH@Z CNPC_VBatSwarmFwd::sub_103674c0
 0x10011dce func   ?sub_10057660@CUnknown10057680@@QAEPAV1@XZ CUnknown10057680::sub_10057660
 0x10011dd8 func   ?sub_101ceb70@@YAXH@Z sub_101ceb70
 0x10011ddd func   ?vfunc104@CActivityCopyProp@@UAEXXZ CActivityCopyProp::vfunc104
