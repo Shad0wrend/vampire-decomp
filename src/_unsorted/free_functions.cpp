@@ -271,6 +271,17 @@ void CUnknown10027a70::sub_10027a70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10027b60 size=0x31
+#include "CPhysForce.h"
+void CPhysForce::sub_10027b60(float flScale)
+{
+	if (!m_pController)
+		sub_100278e0();
+	m_Motion.sub_10025f80(flScale);
+	((CPhysForceController *)m_pController)->vfunc7();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027bb0 size=0x49
 void *sub_1000db89(int);
 struct GP;
