@@ -27653,6 +27653,26 @@ int sub_100a2260()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a47b0 size=0xf
+#define P10(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
+
+// Local view of the vtable: slot 173 is the virtual call; the other slots are placeholders.
+struct CUnk100a47b0 {
+	P10(p0) P10(p1) P10(p2) P10(p3) P10(p4) P10(p5) P10(p6) P10(p7) P10(p8) P10(p9)
+	P10(p10) P10(p11) P10(p12) P10(p13) P10(p14) P10(p15) P10(p16)
+	virtual void p170();
+	virtual void p171();
+	virtual void p172();
+	virtual void vfunc173(void *a, void *b, int c, int d);
+	void sub_100a47b0();
+};
+
+void CUnk100a47b0::sub_100a47b0()
+{
+	vfunc173(this, this, 3, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a4930 size=0x7a
 #include "CBaseEntity.h"
 

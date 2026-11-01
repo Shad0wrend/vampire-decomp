@@ -1719,6 +1719,7 @@
 0x10003e45 func   ?vfunc445@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc445
 0x10003e4a func   ?sub_100be100@bf_read@@QAE_NPAXH@Z bf_read::sub_100be100
 0x10003e4f func   ?sub_100be590@bf_read@@QAEHH@Z bf_read::sub_100be590
+0x10003e54 func   ?sub_100a47b0@CUnk100a47b0@@QAEXXZ CUnk100a47b0::sub_100a47b0
 0x10003e59 func   ?sub_100792a0@CUnknown100792a0@@QAEHXZ CUnknown100792a0::sub_100792a0
 0x10003e5e func   ?sub_1021eac0@@YGHH@Z sub_1021eac0
 0x10003e6d func   ?sub_101d8250@@YIXPAH@Z sub_101d8250
