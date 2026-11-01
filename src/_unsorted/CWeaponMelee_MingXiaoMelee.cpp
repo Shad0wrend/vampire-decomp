@@ -20,6 +20,20 @@ int CWeaponMelee_MingXiaoMelee::vfunc363()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ec2b0 size=0x37
+#include "CWeaponMelee_MingXiaoMelee.h"
+
+// TARGET: CWeaponMelee_MingXiaoMelee::CWeaponMelee_MingXiaoMelee
+CWeaponMelee_MingXiaoMelee::CWeaponMelee_MingXiaoMelee()
+{
+	m_n08b8 = 0;
+	m_n08bc = 0;
+	m_f08c0 = 500.0f;
+	m_f08c4 = 500.0f;
+	m_n0910 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ec300 size=0x4
 #include "CWeaponMelee_MingXiaoMelee.h"
 int CWeaponMelee_MingXiaoMelee::vfunc373()
