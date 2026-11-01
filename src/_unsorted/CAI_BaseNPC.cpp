@@ -7,6 +7,13 @@ void CAI_BaseNPC::vfunc416(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6500 size=0x1
+// TARGET: sub_101a6500
+void __fastcall sub_101a6500(void *pThis)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a65e0 size=0x26
 struct CUnknown101a65e0View {
     int sub_101a65e0(int a);
