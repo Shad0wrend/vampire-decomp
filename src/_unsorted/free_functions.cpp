@@ -77200,6 +77200,16 @@ bool CUnknown101afba0::sub_101afdc0(CKeyValuesX *pKeys)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aff20 size=0xf
+struct CSecondaryThunkBase { virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); };
+struct CThunkOwner { void sub_101aff20(); };
+// TARGET: CThunkOwner::sub_101aff20
+void CThunkOwner::sub_101aff20()
+{
+    ((CSecondaryThunkBase *)((char *)this - 0xdc))->vfunc1();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b0670 size=0x1c
 struct CUnk101b0670 { int sub_101b4740(int a); };
 extern CUnk101b0670 g_1072be18;
