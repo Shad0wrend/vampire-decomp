@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10593d94;
 }
-CScriptedSentence::Datamap82 CScriptedSentence::vfunc82()
+datamap_t *CScriptedSentence::vfunc82()
 {
-    return (CScriptedSentence::Datamap82)&lifted::g_10593d94;
+    return (datamap_t *)&lifted::g_10593d94;
 }
 // END FUNCTION
 
