@@ -5403,6 +5403,7 @@
 0x1000a4e3 func   ?vfunc233@CRagdollProp@@UAEHPAHH@Z CRagdollProp::vfunc233
 0x1000a4e8 func   ?vfunc81@CBaseGrenade@@UAEHXZ CBaseGrenade::vfunc81
 0x1000a4ed func   ?sub_103ee100@@YAHXZ sub_103ee100
+0x1000a4f2 func   ?sub_102f9750@CUnk102f9750@@QAEXXZ CUnk102f9750::sub_102f9750
 0x1000a4fc func   ?vfunc315@CWeaponIGeneric@@UAE_NXZ CWeaponIGeneric::vfunc315
 0x1000a501 func   ?vfunc0@CTEUserTracer@@UAEPAUServerClass@@XZ CTEUserTracer::vfunc0
 0x1000a506 func   ?vfunc81@CItemGOHDiary@@QAEHXZ CItemGOHDiary::vfunc81

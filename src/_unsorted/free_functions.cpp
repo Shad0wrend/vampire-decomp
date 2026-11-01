@@ -137032,6 +137032,25 @@ CPairFields102dda40 *CAINodeView::sub_102f96e0(int destID)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f9750 size=0x1f
+struct CUnk102f9750
+{
+    char pad[0x78];
+    int m_78;
+    char pad2[0xa4 - 0x7c];
+    int m_a4;
+    void sub_102f9750();
+};
+void CUnk102f9750::sub_102f9750()
+{
+    m_a4++;
+    if (m_a4 >= m_78)
+    {
+        m_a4 = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f9780 size=0x27
 struct CUnknown102f9780View {
     char m_pad0000[0x78];
