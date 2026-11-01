@@ -781,6 +781,36 @@ float CAI_BaseNPC::vfunc418(float a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10270840 size=0x3b
+#include "CAI_BaseNPC.h"
+
+namespace block_10270840 {
+	struct CUnk10270840 : CAI_BaseNPC {
+		int sub_1027d990();
+		char sub_10014df8(int a);
+	};
+}
+
+// TARGET: CAI_BaseNPC::vfunc564
+bool CAI_BaseNPC::vfunc564()
+{
+	if (((block_10270840::CUnk10270840 *)this)->sub_1027d990() != 3)
+	{
+		if (((block_10270840::CUnk10270840 *)this)->sub_1027d990() != 1)
+		{
+			if (((block_10270840::CUnk10270840 *)this)->sub_10014df8(0x46))
+			{
+				if (!((block_10270840::CUnk10270840 *)this)->sub_10014df8(0x55))
+				{
+					return 1;
+				}
+			}
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10271f50 size=0x7
 int CAI_BaseNPC::vfunc375(int a0)
 {
