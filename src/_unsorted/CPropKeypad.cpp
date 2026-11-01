@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_105af80c;
 }
-int CPropKeypad::vfunc82()
+CPropKeypad::Datamap82 CPropKeypad::vfunc82()
 {
-    return (int)&lifted::g_105af80c;
+    return (CPropKeypad::Datamap82)&lifted::g_105af80c;
 }
 // END FUNCTION
 
