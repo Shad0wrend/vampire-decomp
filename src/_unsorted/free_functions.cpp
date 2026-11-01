@@ -114602,6 +114602,16 @@ void sub_1024ed00(VMatrix &dst, float x, float y, float z)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024ed70 size=0x1d
+void sub_1024ed00(void *m, float a, float b, float c);
+
+// TARGET: sub_1024ed70
+void __cdecl sub_1024ed70(void *m, const float *v)
+{
+	sub_1024ed00(m, v[0], v[1], v[2]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024eda0 size=0x1
 void sub_1024eda0()
 {

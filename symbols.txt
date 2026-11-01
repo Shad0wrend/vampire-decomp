@@ -1762,6 +1762,7 @@
 0x1000411f func   ?vfunc362@CWeaponRanged_Pistol_Glock@@QAEHXZ CWeaponRanged_Pistol_Glock::vfunc362
 0x10004129 func   ?vfunc30@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHH@Z CTempEntsSystem::vfunc30
 0x1000412e func   ?sub_103ceb60@CNPC_VWerewolf@@QAEPBDPAX@Z CNPC_VWerewolf::sub_103ceb60
+0x10004133 func   ?sub_1024ed70@@YAXPAXPBM@Z sub_1024ed70
 0x10004138 func   ?sub_101a77a0@CCineNPC@@QAEXPAX@Z CCineNPC::sub_101a77a0
 0x10004142 func   ?sub_10266710@@YGXPAUSDmgInfo@@PAXH@Z sub_10266710
 0x1000414c func   ?sub_100dd990@CUnknown100dd990@@QAEXHPBUCUnknown100dd990Vec@@0@Z CUnknown100dd990::sub_100dd990
