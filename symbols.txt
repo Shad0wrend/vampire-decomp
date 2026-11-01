@@ -1143,6 +1143,7 @@
 0x10002f9a func   ?vfunc82@CAI_ChangeTarget@@QAEHXZ CAI_ChangeTarget::vfunc82
 0x10002fa4 func   ?sub_10067080@CUnknown10067080@@QAEHXZ CUnknown10067080::sub_10067080
 0x10002fa9 func   ?sub_10369d50@@YAHXZ sub_10369d50
+0x10002fc2 func   ?vfunc0@CBaseRopePhysics@@UAEXPAUCRopeNode@@HPAVVector@@@Z CBaseRopePhysics::vfunc0
 0x10002fc7 func   ?vfunc226@CPhysBox@@QAEXH@Z CPhysBox::vfunc226
 0x10002fcc func   ?sub_101e8e80@CUnknown101e8e80@@QAEHXZ CUnknown101e8e80::sub_101e8e80
 0x10002fd1 func   ?vfunc360@CWeaponMelee_Knife@@QAEHXZ CWeaponMelee_Knife::vfunc360
