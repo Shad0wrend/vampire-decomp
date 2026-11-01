@@ -25,9 +25,9 @@ int CTestTraceline::vfunc81()
 namespace lifted {
 extern char g_10545fc8;
 }
-CTestTraceline::Datamap82 CTestTraceline::vfunc82()
+datamap_t *CTestTraceline::vfunc82()
 {
-    return (CTestTraceline::Datamap82)&lifted::g_10545fc8;
+    return (datamap_t *)&lifted::g_10545fc8;
 }
 // END FUNCTION
 
