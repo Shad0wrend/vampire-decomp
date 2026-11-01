@@ -6890,6 +6890,7 @@
 0x1000c978 func   ?sub_101719d0@CBloodSplat@@QAEXPAVCBaseEntity@@@Z CBloodSplat::sub_101719d0
 0x1000c97d func   ?sub_100ccea0@CCameraTrack@@QAEXPAVCOutputEvent@@D@Z CCameraTrack::sub_100ccea0
 0x1000c982 func   ?vfunc363@CPayphone@@UAE_NH@Z CPayphone::vfunc363
+0x1000c98c func   ?sub_103ed8f0@CUnk103ed8f0@@QAEXXZ CUnk103ed8f0::sub_103ed8f0
 0x1000c991 func   ?sub_1015ada0@@YAHXZ sub_1015ada0
 0x1000c996 func   ?vfunc5@CBaseMoveBehavior@@QAEPAV1@I@Z CBaseMoveBehavior::vfunc5
 0x1000c99b func   ?vfunc223@CFuncRotating@@QAE_NXZ CFuncRotating::vfunc223
