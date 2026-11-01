@@ -8618,6 +8618,7 @@
 0x1000fbaa func   ?sub_10073e70@CFlexAnimationTrack@@QAEXXZ CFlexAnimationTrack::sub_10073e70
 0x1000fbaf func   ?vfunc584@CAI_BaseNPCTroika@@UAEXH@Z CAI_BaseNPCTroika::vfunc584
 0x1000fbb4 func   _point_anglesensor point_anglesensor
+0x1000fbbe func   ?vfunc466@CAI_BaseNPC@@UAE_NXZ CAI_BaseNPC::vfunc466
 0x1000fbcd func   _move_rope move_rope
 0x1000fbd2 func   ?sub_100f6ec0@CGlobalEntityList@@QAEXXZ CGlobalEntityList::sub_100f6ec0
 0x1000fbd7 func   ?sub_1006d2f0@@YAHXZ sub_1006d2f0
