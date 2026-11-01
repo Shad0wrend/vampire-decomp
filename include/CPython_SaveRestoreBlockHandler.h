@@ -38,7 +38,7 @@ public:
 	virtual void vfunc3();
 	virtual void vfunc4();
 	virtual void vfunc5();
-	virtual void vfunc6();
+	virtual void vfunc6(IRestorePy *pRestore);	// Restore of the version: the Python side reads the version short and compares it with the game's version (m_bEnabled)
 	virtual void vfunc7(IRestorePy *pRestore, int a, int b);	// Restore: with the Python side enabled, calls the restore callbacks of the Python module for the two saved blocks
 	virtual void vfunc8();
 	virtual void vfunc9();
