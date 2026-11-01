@@ -23,6 +23,7 @@ struct CAI_LocalNavigatorStopState	// the state object vfunc7 reads: only the fl
 {
 	char m_pad00[0x28];
 	float m_flStop28;	// 0x28
+	float m_flStop2c;	// 0x2c
 };
 
 class CAI_LocalNavigator
