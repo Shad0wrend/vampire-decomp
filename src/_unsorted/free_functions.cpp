@@ -90548,6 +90548,24 @@ void CUnk101ec450::sub_101ec450(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ec480 size=0x1f
+extern char *(__cdecl *g_1073a394)(int, int);
+extern char g_106b8540[];
+
+struct CUnk101ec480
+{
+    char *sub_101ec480(int b);
+};
+char *CUnk101ec480::sub_101ec480(int b)
+{
+    if (g_1073a394)
+    {
+        return g_1073a394((int)this, b);
+    }
+    return g_106b8540;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ec550 size=0xf6
 #include "CUnknown101ec6f0.h"
 extern "C" int __cdecl _strcmpi(const char *, const char *);
