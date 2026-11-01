@@ -17,7 +17,8 @@ public:
 	int m_n6f8;	// 0x6f8
 	char m_pad06fc[0x7f0 - 0x6fc];
 	unsigned int m_hTarget;	// 0x7f0: entity handle of the target, -1 when none
-	char m_pad07f4[0x810 - 0x7f4];
+	const char *m_pszSequence7f4;	// 0x7f4: sequence name (null = default)
+	char m_pad07f8[0x810 - 0x7f8];
 	COutputEvent m_out810;	// 0x810
 
 	void sub_10071660();	// fires the output at +0x810, removes the target entity, makes this entity dormant, adds flag 0x40000, clears +0x6f0 / +0x6f8 and tells the first player (when this entity has flag bit 0 of +0x204)
