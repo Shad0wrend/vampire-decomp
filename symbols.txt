@@ -9410,6 +9410,7 @@
 0x10010a19 func   ?sub_101f96b0@CTraitEffectList@@QAEXPAVCTraitOwnerX@@H@Z CTraitEffectList::sub_101f96b0
 0x10010a1e func   ?sub_103f2f10@@YAHXZ sub_103f2f10
 0x10010a23 func   ?vfunc82@CTriggerDisciplineContext@@UAEPAUdatamap_t@@XZ CTriggerDisciplineContext::vfunc82
+0x10010a2d func   ?sub_101a6a60@@YAXXZ sub_101a6a60
 0x10010a32 func   ?sub_103e2000@CFlameCluster@@QAEXPAVCBaseEntity@@H@Z CFlameCluster::sub_103e2000
 0x10010a37 func   ?sub_10203480@@YAHH@Z sub_10203480
 0x10010a3c func   ?sub_100417c0@@YIPAUHashHolder@@PAU1@HE@Z sub_100417c0
