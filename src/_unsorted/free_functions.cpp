@@ -165368,6 +165368,19 @@ int CUnknown103f5800::sub_103f5800()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f5820 size=0x21
+// TARGET: sub_103f5820
+void __fastcall sub_103f5820(char *self, int dummy, char *data)
+{
+    int v;
+    if (*(int *)(data + 0x18) == 4)
+        v = *(int *)(data + 8);
+    else
+        v = 0;
+    *(int *)(self + 0x8d4) = v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f59f0 size=0x72
 #include "SendProp.h"
 
