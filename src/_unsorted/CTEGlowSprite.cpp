@@ -41,6 +41,17 @@ void CTEGlowSprite::vfunc3(const Vector &origin, const QAngle &angles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10063bb0 size=0x39
+#include "CTEGlowSprite.h"
+#include "CTEMetalSparks.h"
+#include "IVEngineServerFull.h"
+
+void CTEGlowSprite::vfunc4(CRecipientFilter &filter, float delay)
+{
+	engine->vfunc103((int)&filter, *(int *)&delay, this, ((CTEMetalSparks *)this)->vfunc0()->m_pTable, ((CTEMetalSparks *)this)->vfunc0()->m_ClassID);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10063c70 size=0x6
 #include "CTEGlowSprite.h"
 namespace lifted {
