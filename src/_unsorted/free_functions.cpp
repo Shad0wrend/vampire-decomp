@@ -155331,6 +155331,31 @@ extern "C" CBaseEntity *npc_VHumanCombatPatrol()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103876d0 size=0x27
+struct CGenericBaseCtorCall_103876d0
+{
+	void sub_10386aa0();
+};
+
+struct CGenericMemberCtorCall_103876d0
+{
+	void sub_10002c9d();
+};
+
+extern void *vt_104b8bbc[];
+extern void *vt_104b8b8c[];
+
+// TARGET: sub_103876d0
+void *__fastcall sub_103876d0(char *self)
+{
+	((CGenericBaseCtorCall_103876d0 *)self)->sub_10386aa0();
+	((CGenericMemberCtorCall_103876d0 *)(self + 0x6664))->sub_10002c9d();
+	*(void ***)self = vt_104b8bbc;
+	*(void ***)(self + 0x19b0) = vt_104b8b8c;
+	return self;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103877e0 size=0xc
 void __fastcall sub_10387800(void *pThis);
 
