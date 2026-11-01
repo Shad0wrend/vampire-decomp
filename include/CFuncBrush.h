@@ -26,7 +26,7 @@ public:
 	void sub_1013e420();	// stub 0x10003cb5: when slot 241 reports true calls slot 77
 public:
 	int vfunc82();
-	int vfunc117();
+	char vfunc117();
 	bool vfunc128();
 	bool vfunc223();
 	int vfunc241();
