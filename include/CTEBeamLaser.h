@@ -6,6 +6,7 @@
 class CTEBeamLaser
 {
 public:
+	CTEBeamLaser(const char *name);	// 0x1005b940: base CTEBaseBeam constructor call, vtable, +0x44/+0x48 cleared
 	virtual ServerClass *vfunc0();	// GetServerClass
 	virtual int vfunc1();
 	virtual CTEBeamLaser *vfunc2(unsigned int flags);	// scalar deleting destructor
