@@ -171498,6 +171498,25 @@ void sub_10428880(void *pHdr, int iSequence)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10428970 size=0x1d
+// TARGET: sub_10428970
+struct CUnk10428970
+{
+    char pad[8];
+    int m_8;
+};
+CUnk10428970 *__cdecl sub_100c7480(int a, int b);
+int __cdecl sub_10428970(int a, int b)
+{
+    CUnk10428970 *p = sub_100c7480(a, b);
+    if (p)
+    {
+        return p->m_8;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104289a0 size=0xe1
 struct CTimeTableRec
 {

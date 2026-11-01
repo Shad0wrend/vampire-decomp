@@ -5183,6 +5183,7 @@
 0x10009fb1 func   ?sub_1006ee10@CUnk1006ee10@@QAEHH@Z CUnk1006ee10::sub_1006ee10
 0x10009fb6 func   ?sub_103f9ad0@@YAHXZ sub_103f9ad0
 0x10009fbb func   ?sub_101d0570@@YAXPAHHPBD@Z sub_101d0570
+0x10009fc0 func   ?sub_10428970@@YAHHH@Z sub_10428970
 0x10009fc5 func   ?sub_100aa7b0@@YAXPAX@Z sub_100aa7b0
 0x10009fca func   ?sub_102ee5e0@CUnknown102ee120@@QAEPAUCUnknown1030bc20_Record@@XZ CUnknown102ee120::sub_102ee5e0
 0x10009fcf func   ?sub_10230fc0@CVDmgBlock16_t@@QAEHPAX@Z CVDmgBlock16_t::sub_10230fc0
