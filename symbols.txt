@@ -3642,6 +3642,7 @@
 0x100072de func   ?sub_1039a700@CMingXiaoView@@QAEXH@Z CMingXiaoView::sub_1039a700
 0x100072e8 func   ?vfunc81@CItemGCashBox@@QAEHXZ CItemGCashBox::vfunc81
 0x100072ed func   ?sub_10397930@CNPC_VMingXiao@@QAEXH@Z CNPC_VMingXiao::sub_10397930
+0x100072f2 func   ?sub_1007eeb0@CUtlVector16@@QAEXXZ CUtlVector16::sub_1007eeb0
 0x100072f7 func   ?sub_103228c0@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_103228c0
 0x1000730b func   ?sub_101bf550@@YA_NPAPBD0@Z sub_101bf550
 0x10007315 func   ?sub_103e16b0@@YAMXZ sub_103e16b0
