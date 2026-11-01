@@ -6190,6 +6190,7 @@
 0x1000b438 func   ?vfunc82@CNPC_Crow@@QAEHXZ CNPC_Crow::vfunc82
 0x1000b43d func   ?sub_10248980@CUnknown10248980@@QAEDXZ CUnknown10248980::sub_10248980
 0x1000b442 func   ?sub_101301f0@@YA_NMHH@Z sub_101301f0
+0x1000b447 func   ?sub_10087940@@YAXXZ sub_10087940
 0x1000b44c func   ?vfunc324@CNPC_VTzimisce@@UAE_NXZ CNPC_VTzimisce::vfunc324
 0x1000b456 func   ?sub_1034fd90@CHL2_Player@@QAEHH@Z CHL2_Player::sub_1034fd90
 0x1000b460 func   _item_k_museum_storage_key item_k_museum_storage_key
