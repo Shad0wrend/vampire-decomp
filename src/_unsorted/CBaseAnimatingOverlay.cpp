@@ -241,3 +241,16 @@ void CBaseAnimatingOverlay::vfunc273(int a, char b, int c)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x100995e0 size=0x32
+#include "CBaseAnimatingOverlay.h"
+#include "CEntityVSlots.h"
+void CBaseAnimatingOverlay::vfunc274(int a)
+{
+	int i = ((CEntityVSlots *)this)->slot271(a);
+	if (i != -1) {
+		m_Layers[i].m_f10 = 0;
+		m_Layers[i].m_nSequence = 0;
+	}
+}
+// END FUNCTION
