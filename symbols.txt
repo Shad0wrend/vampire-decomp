@@ -3035,6 +3035,7 @@
 0x1000625d func   ?vfunc82@CPropSign@@UAEHXZ CPropSign::vfunc82
 0x10006262 func   ?sub_100ce6c0@CList_t@@QAE_NHHUCList_tValue@@@Z CList_t::sub_100ce6c0
 0x10006267 func   ?sub_10310bc0@@YIXPAUCNPCMakerOwnerView@@@Z sub_10310bc0
+0x1000626c func   ?sub_102c8bb0@CUtlVector16@@QAEXXZ CUtlVector16::sub_102c8bb0
 0x10006276 func   ?sub_1018d780@CUnit1018d780@@QAEXPAUinputdata_t@@@Z CUnit1018d780::sub_1018d780
 0x1000627b func   ?vfunc36@CHalfLife2@@UAEXH@Z CHalfLife2::vfunc36
 0x10006285 func   ?sub_100b5810@@YAHXZ sub_100b5810
