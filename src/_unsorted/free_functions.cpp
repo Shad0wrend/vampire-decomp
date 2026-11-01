@@ -44531,6 +44531,21 @@ void CBaseEntityList::sub_100f9c40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f9df0 size=0x20
+#include "vampire.h"
+struct CUnk100f9df0
+{
+    void sub_100f9fc0(int a, int b, int c, int d);
+    int sub_100f9df0(int a, int b, int c, int d);
+};
+// TARGET: CUnk100f9df0::sub_100f9df0
+int CUnk100f9df0::sub_100f9df0(int a, int b, int c, int d)
+{
+    sub_100f9fc0(a, b, c, d);
+    return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f9f90 size=0x12
 #include "CBaseEntityList.h"
 
