@@ -7,7 +7,7 @@
 extern char g_106b8540[];
 int sub_1043e780(const char *, const char *);
 
-bool CFilterClass::vfunc241(CFilterClass::Arg241 pEntity)
+bool CFilterClass::vfunc241(CBaseEntity *pEntity)
 {
     const char *pEntName;
 
