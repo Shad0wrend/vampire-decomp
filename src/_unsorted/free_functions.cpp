@@ -123193,6 +123193,68 @@ void CAI_BaseNPC::sub_10272490(int act, int seq, int c, int d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10272650 size=0x3c
+#include "CAI_BaseNPC.h"
+
+#define CSV_ROW(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CNPCSlot310View
+{
+	CSV_ROW(r0)
+	CSV_ROW(r1)
+	CSV_ROW(r2)
+	CSV_ROW(r3)
+	CSV_ROW(r4)
+	CSV_ROW(r5)
+	CSV_ROW(r6)
+	CSV_ROW(r7)
+	CSV_ROW(r8)
+	CSV_ROW(r9)
+	CSV_ROW(r10)
+	CSV_ROW(r11)
+	CSV_ROW(r12)
+	CSV_ROW(r13)
+	CSV_ROW(r14)
+	CSV_ROW(r15)
+	CSV_ROW(r16)
+	CSV_ROW(r17)
+	CSV_ROW(r18)
+	CSV_ROW(r19)
+	CSV_ROW(r20)
+	CSV_ROW(r21)
+	CSV_ROW(r22)
+	CSV_ROW(r23)
+	CSV_ROW(r24)
+	CSV_ROW(r25)
+	CSV_ROW(r26)
+	CSV_ROW(r27)
+	CSV_ROW(r28)
+	CSV_ROW(r29)
+	CSV_ROW(r30)
+	virtual void vfunc310(int a);
+};
+
+namespace block_10272650 {
+	struct CAI_BaseNPCUnit10272650 : CAI_BaseNPC
+	{
+		void sub_10272650(int nValue);
+		void sub_10272130(int nValue, int *pA, int *pB, int *pC);
+	};
+}
+
+// TARGET: block_10272650::CAI_BaseNPCUnit10272650::sub_10272650
+void block_10272650::CAI_BaseNPCUnit10272650::sub_10272650(int nValue)
+{
+	if (nValue == 0)
+	{
+		((CNPCSlot310View *)this)->vfunc310(0);
+		return;
+	}
+	*(int *)((char *)this + 0xff0) = nValue;
+	sub_10272130(nValue, (int *)((char *)this + 0x5ccc), (int *)((char *)this + 0x5cd0), (int *)((char *)this + 0x5cd4));
+}
+// END FUNCTION
+
 // FUNCTION: 0x102727d0 size=0xe6
 #include "CAI_BaseNPC.h"
 #include "ScopeTrace.h"
