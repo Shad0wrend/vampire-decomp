@@ -38,7 +38,7 @@ public:
 	void sub_1029a0b0();	// CAI_BaseNPC::vfunc420 (stub 0x1000c531), called directly
 
 	bool sub_1038f290();
-	char sub_1038f2c0(const char *pszModel, int nBone, int nArg, const char *pszName);	// creates a prop_physics with the model, bites it into the bat's foot (sub_1038f430) and keeps its handle at +0x668c
+	bool sub_1038f2c0(const char *pszModel, int nBone, int nArg, const char *pszName);	// creates a prop_physics with the model, bites it into the bat's foot (sub_1038f430) and keeps its handle at +0x668c
 	CNPC_VManBat *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_100123af();	// as in CPhysForce (transplant)
 	int vfunc390(void *info);	// slot 390: 1 while the bat's field at +0x210 is below 25 and the attacker of info (its +0x2c object) has no value at +0xa8; else CNPC_VHuman::sub_10001b45(info)
