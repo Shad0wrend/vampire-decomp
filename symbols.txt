@@ -11986,6 +11986,7 @@
 0x10014f88 func   ?sub_100c89e0@@YIXPADHH@Z sub_100c89e0
 0x10014f8d func   ?sub_1003c2e0@CUtlVector16@@QAEXHH@Z CUtlVector16::sub_1003c2e0
 0x10014f92 func   ?vfunc432@CNPC_VAnimal@@UAEXH@Z CNPC_VAnimal::vfunc432
+0x10014f97 func   ?sub_10043c00@@YIXPAX@Z sub_10043c00
 0x10014fa6 func   ?sub_100c7650@@YAPAXPAUStudioHdr@@HPAPAU1@PAMPBM@Z sub_100c7650
 0x10014fab func   ?sub_102521f0@CBaseCombatWeapon@@QAEPAXXZ CBaseCombatWeapon::sub_102521f0
 0x10014fb0 func   ?vfunc444@CNPC_VDog@@UAEXPAH@Z CNPC_VDog::vfunc444
