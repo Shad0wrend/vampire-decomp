@@ -21,6 +21,17 @@ void CTEExplosiveGunshotDecal::vfunc5()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10064ae0 size=0x39
+#include "CTEExplosiveGunshotDecal.h"
+#include "CTEMetalSparks.h"
+#include "IVEngineServerFull.h"
+
+void CTEExplosiveGunshotDecal::vfunc4(void *pFilter, int delay)
+{
+	engine->vfunc103((int)pFilter, delay, this, ((CTEMetalSparks *)this)->vfunc0()->m_pTable, ((CTEMetalSparks *)this)->vfunc0()->m_ClassID);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10064ba0 size=0x6
 #include "CTEExplosiveGunshotDecal.h"
 namespace lifted {
