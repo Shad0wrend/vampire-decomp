@@ -115233,6 +115233,26 @@ char CBaseCombatWeapon::sub_10256250()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10256280 size=0x1c
+namespace block_10256200 {
+unsigned char __fastcall sub_10256200(unsigned char *p)
+{
+	return (p[0x778] >> 1) & 1;
+}
+}
+using namespace block_10256200;
+
+char *__fastcall sub_102517b0(void *p);
+
+// TARGET: sub_10256280
+unsigned char __fastcall sub_10256280(void *p)
+{
+	if (sub_10256200((unsigned char *)p))
+		return 0;
+	return *(int *)(sub_102517b0(p) + 0x24d0) == 4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102562b0 size=0x3e
 #include "vampire.h"
 
