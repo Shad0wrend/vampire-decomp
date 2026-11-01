@@ -173188,6 +173188,22 @@ int sub_103f90c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f90f0 size=0x2c
+#include "COccultRegen.h"
+#include "CUnknown10739d08.h"
+extern CUnknown10739d08 g_10739d08;
+extern void *vt_104f02bc;
+void __fastcall sub_103f42b0(void *);
+COccultRegen *COccultRegen::sub_103f90f0()
+{
+	sub_103f42b0(this);
+	*(void **)this = &vt_104f02bc;
+	m_nTimer914 = g_10739d08.sub_101e9040();
+	m_nLevel918 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f9160 size=0x47
 #include "CBaseEntity.h"
 #include "COccultRegen.h"

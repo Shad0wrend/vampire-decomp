@@ -5939,6 +5939,7 @@
 0x1000acdb func   ?sub_102e9f70@CUnknown102e9f70@@QAEHXZ CUnknown102e9f70::sub_102e9f70
 0x1000ace0 func   _prop_doorknob_electronic prop_doorknob_electronic
 0x1000ace5 func   ?vfunc5@CGravityPellet@@QAEPAV1@I@Z CGravityPellet::vfunc5
+0x1000acea func   ?sub_103f90f0@COccultRegen@@QAEPAV1@XZ COccultRegen::sub_103f90f0
 0x1000acef func   ?vfunc420@CNPC_VYukie@@QAEXXZ CNPC_VYukie::vfunc420
 0x1000acf4 func   ?sub_1032aa40@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_1032aa40
 0x1000acf9 func   ?sub_103b7020@@YIPAXPAX@Z sub_103b7020
