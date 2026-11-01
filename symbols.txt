@@ -6750,6 +6750,7 @@
 0x1000c329 func   ?vfunc246@CNPC_VPlayerController@@QAEXXZ CNPC_VPlayerController::vfunc246
 0x1000c32e func   ?vfunc226@CPhysicsProp@@QAEXH@Z CPhysicsProp::vfunc226
 0x1000c338 func   ?vfunc80@CWeaponMelee_OccultBlade@@QAEHXZ CWeaponMelee_OccultBlade::vfunc80
+0x1000c33d func   ?sub_10269fb0@CAI_BaseNPC@@QAEXH@Z CAI_BaseNPC::sub_10269fb0
 0x1000c347 func   ?vfunc5@COccultExperience@@QAEPAV1@I@Z COccultExperience::vfunc5
 0x1000c351 func   ?sub_102f9900@@YAXXZ sub_102f9900
 0x1000c356 func   ?sub_100b5ce0@CBaseFlex@@QAEXXZ CBaseFlex::sub_100b5ce0
