@@ -157382,6 +157382,31 @@ extern "C" CBaseEntity *npc_VNosferatu()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a1460 size=0x27
+struct CGenericBaseCtorCall_103a1460
+{
+	void sub_103c48e0();
+};
+
+struct CGenericMemberCtorCall_103a1460
+{
+	void sub_10002cd9();
+};
+
+extern void *vt_104c01fc[];
+extern void *vt_104c01cc[];
+
+// TARGET: sub_103a1460
+void *__fastcall sub_103a1460(char *self)
+{
+	((CGenericBaseCtorCall_103a1460 *)self)->sub_103c48e0();
+	((CGenericMemberCtorCall_103a1460 *)(self + 0x6664))->sub_10002cd9();
+	*(void ***)self = vt_104c01fc;
+	*(void ***)(self + 0x19b0) = vt_104c01cc;
+	return self;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a1570 size=0xc
 void __fastcall sub_103a1590(void *p);
 
