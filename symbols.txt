@@ -466,6 +466,7 @@
 0x10001cf8 func   ?sub_101af3f0@@YAHXZ sub_101af3f0
 0x10001cfd func   ?sub_101318e0@CTimerEntity@@QAEXPAUinputdata_t@@@Z CTimerEntity::sub_101318e0
 0x10001d02 func   ?sub_102c65d0@CUtlVector4@@QAEHPBH@Z CUtlVector4::sub_102c65d0
+0x10001d0c func   ?sub_100d76a0@@YAXXZ sub_100d76a0
 0x10001d11 func   ?sub_102e2020@CAI_Motor@@QAEXPBMH@Z CAI_Motor::sub_102e2020
 0x10001d16 func   ??1CMeasureSectionInstance@@QAE@XZ CMeasureSectionInstance::~CMeasureSectionInstance
 0x10001d1b func   ?vfunc4@CTEPlayerDecal@@QAEXHH@Z CTEPlayerDecal::vfunc4

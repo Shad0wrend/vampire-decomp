@@ -37577,6 +37577,26 @@ void sub_100d75e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d76a0 size=0x1e
+// TARGET: sub_100d76a0
+struct CUnk100d76a0
+{
+    char pad[0xa8];
+    int m_a8;
+    void sub_10203320();
+};
+extern int g_1074e968;
+CUnk100d76a0 *sub_101193b0();
+void sub_100d76a0()
+{
+    CUnk100d76a0 *p = sub_101193b0();
+    if (p && p->m_a8)
+    {
+        ((CUnk100d76a0 *)&g_1074e968)->sub_10203320();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d7760 size=0x1fe
 #include "CUnknown101eac50.h"
 #include "CUnknown101eb1d0.h"
