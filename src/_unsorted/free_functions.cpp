@@ -119248,6 +119248,53 @@ int *CBaseCombatWeapon::sub_102517e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102518f0 size=0x351
+struct CWeaponStruct44 { int d[17]; };
+struct CWeaponStruct88 { int d[34]; };
+struct CWeaponStructBig { int d[0x39e9]; };
+struct CWeaponCopy
+{
+	int m0;
+	char m4[0x80];
+	char m84[0x80];
+	int m104, m108, m10c, m110, m114;
+	char m118[0x80];
+	CWeaponStruct44 m198;
+	char m1dc[0x80];
+	int m25c, m260, m264, m268, m26c, m270;
+	CWeaponStruct88 m274[2];
+	int m384, m388, m38c, m390, m394, m398, m39c, m3a0, m3a4, m3a8, m3ac, m3b0, m3b4, m3b8, m3bc, m3c0, m3c4, m3c8, m3cc, m3d0, m3d4, m3d8, m3dc, m3e0, m3e4, m3e8, m3ec, m3f0, m3f4, m3f8, m3fc, m400, m404, m408, m40c;
+	char m410[0x80];
+	CWeaponStructBig m490;
+	int mec34[10];
+	int mec5c[10];
+
+	CWeaponCopy *sub_102518f0(const CWeaponCopy *p);
+};
+
+// TARGET: CWeaponCopy::sub_102518f0
+CWeaponCopy *CWeaponCopy::sub_102518f0(const CWeaponCopy *p)
+{
+	unsigned i0, i1, i3, i4, i8;
+	int i6, i10, i11, i9;
+	m0 = p->m0;
+	for (i0 = 0; i0 < 0x80; i0++) m4[i0] = p->m4[i0];
+	for (i1 = 0; i1 < 0x80; i1++) m84[i1] = p->m84[i1];
+	m104 = p->m104; m108 = p->m108; m10c = p->m10c; m110 = p->m110; m114 = p->m114;
+	for (i3 = 0; i3 < 0x80; i3++) m118[i3] = p->m118[i3];
+	m198 = p->m198;
+	for (i4 = 0; i4 < 0x80; i4++) m1dc[i4] = p->m1dc[i4];
+	m25c = p->m25c; m260 = p->m260; m264 = p->m264; m268 = p->m268; m26c = p->m26c; m270 = p->m270;
+	for (i6 = 0; i6 < 2; i6++) m274[i6] = p->m274[i6];
+	m384 = p->m384; m388 = p->m388; m38c = p->m38c; m390 = p->m390; m394 = p->m394; m398 = p->m398; m39c = p->m39c; m3a0 = p->m3a0; m3a4 = p->m3a4; m3a8 = p->m3a8; m3ac = p->m3ac; m3b0 = p->m3b0; m3b4 = p->m3b4; m3b8 = p->m3b8; m3bc = p->m3bc; m3c0 = p->m3c0; m3c4 = p->m3c4; m3c8 = p->m3c8; m3cc = p->m3cc; m3d0 = p->m3d0; m3d4 = p->m3d4; m3d8 = p->m3d8; m3dc = p->m3dc; m3e0 = p->m3e0; m3e4 = p->m3e4; m3e8 = p->m3e8; m3ec = p->m3ec; m3f0 = p->m3f0; m3f4 = p->m3f4; m3f8 = p->m3f8; m3fc = p->m3fc; m400 = p->m400; m404 = p->m404; m408 = p->m408; m40c = p->m40c;
+	for (i8 = 0; i8 < 0x80; i8++) m410[i8] = p->m410[i8];
+	m490 = p->m490;
+	for (i10 = 0; i10 < 10; i10++) mec34[i10] = p->mec34[i10];
+	for (i11 = 0; i11 < 10; i11++) mec5c[i11] = p->mec5c[i11];
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10251d30 size=0x3f
 #include "vampire.h"
 
