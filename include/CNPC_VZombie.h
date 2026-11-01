@@ -399,7 +399,7 @@ public:
 	virtual void vfunc435();
 	virtual void vfunc436();
 	virtual void vfunc437();
-	virtual void vfunc438();
+	virtual int vfunc438();	// slot 438 "SelectSchedule"-like: stamps +0x1b2c = 0x2b and the source line of each returned schedule
 	virtual void vfunc439();
 	virtual void vfunc440_slot();
 	virtual void vfunc441();
