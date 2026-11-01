@@ -33979,6 +33979,18 @@ void CFloatPair3f4::sub_100c0830()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c0880 size=0x32
+#include "CFuncRotating.h"
+void CFuncRotating::sub_100c0880()
+{
+	if (sub_100c0760(0)) {
+		sub_100c0970(m_flTargetSpeed);
+		return;
+	}
+	m_flNextThink3fc = m_flLocalTime3f4 + 0.1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c08d0 size=0x13
 struct CFloatPair3f4 {
     char pad_0000[0x3f4];
