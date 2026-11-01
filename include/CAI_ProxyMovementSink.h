@@ -7,6 +7,7 @@
 class CAI_ProxyMovementSink : public CAI_DefMovementSink
 {
 public:
+	CAI_ProxyMovementSink() : m_pTarget(0) {}
 	void *m_pTarget;	// 0x04: the sink the proxy forwards to (null when none)
 
 	bool vfunc2(int a, int b, int c);	// slot 2 (plain member) "OnFailedSteer": profiled as CAI_ProxyMSink_OnFailedSteer; true when the target sink answers its slot 2 with the three arguments
