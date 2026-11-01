@@ -49900,6 +49900,18 @@ int sub_101082a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101082d0 size=0x67
+#include "CFilterFeat.h"
+
+// TARGET: filter_activator_feat
+extern "C" CBaseEntity *filter_activator_feat()
+{
+    CFilterFeat *p = new CFilterFeat;
+    p->vfunc106("filter_activator_feat");
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10108500 size=0x1a
 namespace lifted {
 extern int g_1056c5f0;
