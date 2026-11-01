@@ -41,6 +41,80 @@ void ZView103defc0::sub_103defc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103df2e0 size=0x20c
+#include "CNPC_VZombie.h"
+
+struct CZombieEnemy167 {
+	char m_pad[0xa8];
+	CBaseCombatCharacter *m_pChar;
+};
+
+int CNPC_VZombie::vfunc438()
+{
+	m_nType1b2c = 0x2b;
+	if (m_b667c) {
+		m_nLine1b34 = 0x145;
+		m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VZombie.cpp";
+		return 0x161;
+	}
+	if ((m_nEffectFlags & 0x40) == 0x40)
+		vfunc67();
+	if (!vfunc158_slot())
+		sub_103dfbb0(m_a6680, m_a668c);
+	if (m_nMode6678 == 8 || m_nMode6678 == 7) {
+		if (sub_10269aa0(0x4c) || sub_10269aa0(0x4c) || sub_10269aa0(0x4d) || sub_10269aa0(0x79)) {
+			m_nMode6678 = 1;
+		} else if (!sub_10269aa0(0x68)) {
+			m_nLine1b34 = 0x160;
+			m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VZombie.cpp";
+			return 0x16b;
+		}
+	}
+	switch (m_nState5cc0) {
+	case 1:
+		switch (m_nMode6678) {
+		case 1:
+			sub_1026e340(2);
+			if (sub_10269aa0(0x46)) {
+				m_nLine1b34 = 0x171;
+				m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VZombie.cpp";
+				return 0x165;
+			}
+			m_nLine1b34 = 0x175;
+			m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VZombie.cpp";
+			return 0x169;
+		case 5:
+			m_nLine1b34 = 0x17b;
+			m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VZombie.cpp";
+			return 0x169;
+		default:
+			if (m_p6590) {
+				m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VZombie.cpp";
+				m_nLine1b34 = 0x181;
+				return m_p6590[1];
+			}
+		}
+		break;
+	case 2:
+	case 3: {
+		CZombieEnemy167 *pEnemy = vfunc167();
+		if (pEnemy) {
+			CBaseCombatCharacter *pChar = pEnemy->m_pChar;
+			if (pChar && sub_10269aa0(0x46) && !pChar->sub_10146a80()) {
+				m_nLine1b34 = 0x190;
+				m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VZombie.cpp";
+				return 0x165;
+			}
+		}
+		m_nLine1b34 = 0x194;
+		m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VZombie.cpp";
+		return 0x169;
+	}
+	}
+	return sub_1035fb50();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103df5f0 size=0x1d8
 #include "CNPC_VAnimal.h"
 #include "CNPC_VZombie.h"
