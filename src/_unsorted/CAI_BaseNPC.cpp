@@ -113,6 +113,13 @@ void CAI_BaseNPC::vfunc483(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6880 size=0x1
+// TARGET: sub_101a6880
+void __fastcall sub_101a6880(void *pThis)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6ce0 size=0x10
 struct CUnknownNPC101a6ce0 {
     bool sub_101a6ce0(int unused);
