@@ -718,6 +718,7 @@
 0x100023ab func   ?vfunc113@CSecCamera@@UAEXXZ CSecCamera::vfunc113
 0x100023b0 func   ?vfunc1@CServerGameClients@@UAEXXZ CServerGameClients::vfunc1
 0x100023b5 func   ?sub_100fad20@@YAHXZ sub_100fad20
+0x100023ba func   ?sub_100b8730@@YIPAHPAD@Z sub_100b8730
 0x100023bf func   ?sub_101b1fb0@@YAXPBDH@Z sub_101b1fb0
 0x100023c9 func   ?sub_100daec0@@YAXXZ sub_100daec0
 0x100023ce func   ?sub_10087550@@YAHXZ sub_10087550

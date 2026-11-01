@@ -30784,6 +30784,24 @@ extern "C" CBaseEntity *env_swarm_bats()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b8730 size=0x23
+extern int vt_104515ac[];
+struct CBaseAnimatingCtorCall_100b8730
+{
+    void sub_100103fc();
+};
+
+// TARGET: sub_100b8730
+int *__fastcall sub_100b8730(char *self)
+{
+    ((CBaseAnimatingCtorCall_100b8730 *)self)->sub_100103fc();
+    *(int *)self = (int)vt_104515ac;
+    *(float *)(self + 0x738) = 200.0f;
+    *(char *)(self + 0x73c) = 0;
+    return (int *)self;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b8b50 size=0x17b
 #include "CBatSwarm.h"
 #include "CCollisionProperty.h"
