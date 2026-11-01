@@ -1482,6 +1482,7 @@
 0x1000394f func   ?sub_10397380@CNPC_VMingXiao@@QAEXPAVCNPC_VMingXiaoTentacle@@@Z CNPC_VMingXiao::sub_10397380
 0x10003959 func   ?sub_102cdcf0@@YGXH@Z sub_102cdcf0
 0x10003963 func   ?vfunc103@CSoundEnt@@UAEXXZ CSoundEnt::vfunc103
+0x10003968 func   ?sub_1010d050@@YIPAXPAX@Z sub_1010d050
 0x10003977 func   ?sub_10180100@CBasePlayer@@QAEPAVCBaseEntity@@H@Z CBasePlayer::sub_10180100
 0x1000397c func   ?sub_103e3930@CWeaponRanged_FlameThrower@@QAEXXZ CWeaponRanged_FlameThrower::sub_103e3930
 0x1000398b func   ?sub_10103100@CUnknown10103100@@QAEXH@Z CUnknown10103100::sub_10103100
