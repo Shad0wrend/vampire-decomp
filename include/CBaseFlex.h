@@ -24,6 +24,9 @@ struct CBaseFlexItemObject	// the object an item at +0xa58 refers to
 {
 	int sub_100029c8();	// the object's type (the dword at +0; stub 0x100029c8 for 0x10075b70)
 	bool sub_1000695b();	// whether the float at +0x188 is set, i.e. not -1.0f (stub 0x1000695b for 0x10075f30)
+	const char *sub_10006fdc();	// a name (stub 0x10006fdc for 0x10075c50)
+	void *sub_1000b93d();	// stub 0x1000b93d for 0x10075ca0
+	float sub_10002900(float flWeight);	// stub 0x10002900 for 0x10076280
 };
 
 struct CBaseFlexItem	// 0x1c byte element
@@ -76,16 +79,11 @@ public:
 	int sub_10094520();	// CBaseAnimating member (stub 0x10012530): the number of flex controllers
 	CFlexStudioHdr *sub_100952d0(int a);	// CBaseAnimating member (stub 0x10013d8b): the model's studio header
 	void vfunc105(const char *pszModel);	// slot 105 override: CBaseAnimating::vfunc105(pszModel), then slot 279(i, 0) once for each flex controller (sub_10094520 counts them, re-read after each call)
-	void vfunc279(int nController, float flValue);	// slot 279 (CBaseAnimating's flex controller setter, called through the vtable)
 	CBaseFlexFileData *sub_100b62a0(const char *pszName);	// loads the expression file of that name once (cached in the vector at +0xa6c) and patches its controller indices
 	int sub_100b5d10(const char *pszName);	// "CBaseFlex::FindFlexController": the index of the flex controller whose name equals pszName (case-insensitive), 0 when none
 	int sub_1001337c(int a);	// CBaseFlex member (stub 0x1001337c), called from vfunc280
 	void sub_100b5b00(const float *v);	// slot 277 override: stores three floats at +0x848
 	void sub_100b5ce0();	// slot 276 override: toggles the int at +0x854
-	void vfunc287(CBaseFlexItemObject *pObject);	// slot 287: removes the item of the vector at +0xa58 that refers to pObject (calls its sub_100029c8, clears the item and shifts the following ones down)
-	void vfunc285(int nKey);	// slot 285: clears the item vector when nKey is 0, else removes every item whose second field (+4) equals nKey, like slot 287
-	float vfunc281(int index);	// slot 281 "GetFlexWeight"-like: the flex controller index's value at +0x858 scaled from 0..1 into the controller's range (its two floats at +0xc / +0x10), 0.0f for an index outside the model's controllers
-	void vfunc291(CFlexRequest *pRequest);	// slot 291 (plain member): for a request with a track, a source and a non-negative index: sets the track's position from the time since the request started over the track's duration and applies the source's weight to the track
 	float sub_10091080(int sequence);	// CBaseAnimating member (stub 0x10009813), returns a float
 
 	char m_pad03e0[0x848 - 0x3e0];
@@ -254,5 +252,17 @@ public:
 	virtual void vfunc276();
 	virtual void vfunc277();
 	virtual char * vfunc278();
-	virtual void vfunc279_virt();
+	virtual void vfunc279(int nController, float flValue);	// CBaseAnimating's flex controller setter
+	virtual void vfunc280(int a, int b);
+	virtual float vfunc281(int index);	// "GetFlexWeight"-like: the flex controller index's value at +0x858 scaled from 0..1 into the controller's range, 0.0f outside the model's controllers
+	virtual void vfunc282();
+	virtual void vfunc283();
+	virtual void vfunc284();	// walks the items at +0xa58 and dispatches on their type through slots 288-291
+	virtual void vfunc285(int nKey);	// clears the item vector when nKey is 0, else removes every item whose second field (+4) equals nKey
+	virtual void vfunc286();
+	virtual void vfunc287(CBaseFlexItemObject *pObject);	// removes the item that refers to pObject
+	virtual void vfunc288(void *pObject, float flWeight, CBaseFlexFileData *pFile, CBaseFlexFileData *pFile2, bool bFirst);
+	virtual void vfunc289(CBaseFlexItem *pItem);
+	virtual void vfunc290(CBaseFlexItem *pItem);
+	virtual void vfunc291(CFlexRequest *pRequest);	// sets the track's position from the time since the request started and applies the source's weight
 };
