@@ -100306,6 +100306,20 @@ void CItemContainerAnimated::sub_10209e30(const char *pszLabel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10209f60 size=0x1c
+void __fastcall sub_102087e0(void *p);
+extern int vt_10484c84[];
+
+// TARGET: sub_10209f60
+void *__fastcall sub_10209f60(void *p)
+{
+	sub_102087e0(p);
+	*(int **)p = vt_10484c84;
+	*(int *)((char *)p + 0x158c) = 5;
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10209ff0 size=0x6d
 void *sub_100aa720(int size);
 extern char g_105a9e64[];
