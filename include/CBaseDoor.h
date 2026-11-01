@@ -22,7 +22,11 @@ public:
 	virtual void dse0(); virtual void dse1(); virtual void dse2(); virtual void dse3(); virtual void dse4();	// slots 174..178
 	virtual void vfunc179();	// slot 179: fires the door's event list 2 (state 3, closing) or 3 (other states) with the door as activator and caller
 	virtual void dse6(); virtual void dse7(); virtual void dse8(); virtual void dse9();	// slots 180..183
-	DOOR_SLOTS10(dsf) DOOR_SLOTS10(dsg) DOOR_SLOTS10(dsh) DOOR_SLOTS10(dsi) DOOR_SLOTS10(dsj)	// slots 184..233
+	DOOR_SLOTS10(dsf) DOOR_SLOTS10(dsg) DOOR_SLOTS10(dsh)	// slots 184..213
+	virtual void dsi0(); virtual void dsi1(); virtual void dsi2(); virtual void dsi3(); virtual void dsi4();	// slots 214..222
+	virtual void dsi5(); virtual void dsi6(); virtual void dsi7(); virtual void dsi8();
+	virtual bool vfunc223();	// slot 223 "CBaseEntity::IsSolidFlagSet"-like: a func_water door becomes a vphysics fluid (solid flag 0x20, fluid controller with the surface at its top), any other door with bit 2 of +0x2b4 clear gets a shadow (VPhysicsInitShadow); true
+	DOOR_SLOTS10(dsj)	// slots 224..233
 	virtual void dsk0(); virtual void dsk1(); virtual void dsk2(); virtual void dsk3(); virtual void dsk4();	// slots 234..245
 	virtual void dsk5(); virtual void dsk6(); virtual void dsk7(); virtual int vfunc242(); void dsk8() { vfunc242(); } virtual void vfunc243(char bChain, int bLinked);	// slot 243: closes the door (like slot 244 opens it): with bChain and a linked door (handle +0x630) the linked door closes too, taking over the activator; then state 2, the closed think sub_100f0860 and a LinearMove to the closed position (+0x514); fires the output at +0x60c with the activator
 	virtual void vfunc244(char bChain);	// slot 244: opens the door: with bChain and a linked door (handle +0x630) the linked door opens too, taking over this door's activator for the duration; then state 3, the arrival think sub_100f11b0 and a LinearMove to the open position (+0x508) at the entity's speed; fires the output at +0x5f4 with the activator
