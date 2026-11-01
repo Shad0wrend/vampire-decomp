@@ -14,9 +14,9 @@ float CPathCorner::vfunc152()
 namespace lifted {
 extern char g_1057b410;
 }
-CPathCorner::Datamap82 CPathCorner::vfunc82()
+datamap_t *CPathCorner::vfunc82()
 {
-    return (CPathCorner::Datamap82)&lifted::g_1057b410;
+    return (datamap_t *)&lifted::g_1057b410;
 }
 // END FUNCTION
 
