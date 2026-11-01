@@ -137375,6 +137375,27 @@ unsigned char CHolderInner24::sub_1030bd50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030be20 size=0x1c
+struct CUnknown1030be20 {
+	char m_pad0000[0x11];
+	char m_b0011;
+	char m_pad0012[0x14 - 0x12];
+	int m_n0014;
+	int m_n0018;
+	int m_n001c;
+	void sub_1030be20(const int *pSrc);
+};
+
+// TARGET: CUnknown1030be20::sub_1030be20
+void CUnknown1030be20::sub_1030be20(const int *pSrc)
+{
+	m_b0011 = 1;
+	m_n0014 = pSrc[0];
+	m_n0018 = pSrc[1];
+	m_n001c = pSrc[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030be50 size=0x1e
 #include "CBaseCineCam.h"
 
