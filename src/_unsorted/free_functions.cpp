@@ -19247,6 +19247,17 @@ void CUnknown1007b7b0::sub_1007ba30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007baf0 size=0x28
+#include "CUnknown1007b7b0.h"
+
+// TARGET: CUnknown1007b7b0::sub_1007baf0
+void CUnknown1007b7b0::sub_1007baf0(CUnknown1007a060Elem *pElem)
+{
+	m_pReader->vfunc1(0);
+	pElem->sub_10073260(m_pReader->vfunc0());
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007bb30 size=0x67
 #include "CUnknown1007bb30.h"
 extern void (__cdecl *g_109f3890)(char *, const char *, int);
