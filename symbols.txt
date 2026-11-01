@@ -20,6 +20,7 @@
 0x10001082 func   _trigger_brush trigger_brush
 0x1000108c func   ?sub_100920d0@CBaseAnimating@@QAEMPBD@Z CBaseAnimating::sub_100920d0
 0x10001091 func   ?sub_10307e00@@YAXXZ sub_10307e00
+0x10001096 func   ?sub_103114d0@@YA_NPAH0@Z sub_103114d0
 0x100010a0 func   ?vfunc5@CBloodSplat@@QAEPAV1@I@Z CBloodSplat::vfunc5
 0x100010a5 func   ?sub_102b8a10@@YIHPAX@Z sub_102b8a10
 0x100010aa func   ?sub_101c68e0@CTriggerMultiple@@QAEXPAVCBaseEntity@@@Z CTriggerMultiple::sub_101c68e0

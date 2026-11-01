@@ -141036,6 +141036,16 @@ void *CUnknown10310c10::sub_10310cf0(Vector vecOrigin)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103114d0 size=0x20
+#include <string.h>
+
+// TARGET: sub_103114d0
+bool sub_103114d0(int *pA, int *pB)
+{
+    return strcmpi((const char *)*pA, (const char *)*pB) < 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10311710 size=0x16e
 #include "CUnknown10311a20.h"
 #include "CUtlMemory16.h"
