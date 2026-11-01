@@ -121965,6 +121965,23 @@ int sub_10299ce0(CObj10299ce0 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10299d50 size=0x1c
+struct IGlobalObj109253f8 {
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual void vfunc2(int a);
+};
+extern int g_109253f8;
+void sub_103708c0(int a);
+
+// TARGET: sub_10299d50
+void __cdecl sub_10299d50(int a)
+{
+	((IGlobalObj109253f8 *)g_109253f8)->vfunc2(a);
+	sub_103708c0(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029a930 size=0xa7
 #include "CAI_BaseNPCTroika.h"
 #include "CUnknown103164c0.h"
