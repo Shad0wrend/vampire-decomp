@@ -78,6 +78,19 @@ char __fastcall sub_1040dc70(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040dc90 size=0x2a
+#include "CWeaponPhysCannon.h"
+
+// TARGET: CWeaponPhysCannon::vfunc316
+char CWeaponPhysCannon::vfunc316(int a)
+{
+	if (m_bGrab911)
+		return 0;
+	sub_1040dbb0();
+	return CBaseCombatWeapon::vfunc316(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040dcd0 size=0xe
 #include "CWeaponPhysCannon.h"
 // TARGET: CWeaponPhysCannon::vfunc291
