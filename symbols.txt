@@ -10815,6 +10815,7 @@
 0x10013967 func   ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z sub_100b4c30
 0x1001396c func   ?sub_101d6100@CUnknown101d6100@@QAE_NPAX@Z CUnknown101d6100::sub_101d6100
 0x10013971 func   ?sub_100c8490@@YAPAHXZ sub_100c8490
+0x10013976 func   ?sub_10128f50@@YAXXZ sub_10128f50
 0x1001397b func   ?vfunc79@CBaseEntity@@UAEHXZ CBaseEntity::vfunc79
 0x1001398f func   ?sub_10050e70@CDisciplineParticle@@SAPAV1@PBDHHHHHHHHHHH@Z CDisciplineParticle::sub_10050e70
 0x10013994 func   ?vfunc104@CNPC_VAndreiBlood@@UAEXXZ CNPC_VAndreiBlood::vfunc104

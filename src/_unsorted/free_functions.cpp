@@ -51292,6 +51292,22 @@ float CGameMovement::sub_101282b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128f50 size=0x1b
+#include "globalvars.h"
+
+struct CUnk10232540
+{
+    void sub_10232540(double d);
+};
+void *sub_10232400();
+
+// TARGET: sub_10128f50
+void sub_10128f50()
+{
+    ((CUnk10232540 *)sub_10232400())->sub_10232540(gpGlobals->frametime);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10129740 size=0x16
 struct CUnknown1023bd00 { int sub_1023bd00(); };
 
