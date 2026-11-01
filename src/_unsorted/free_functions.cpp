@@ -146351,6 +146351,57 @@ int sub_103217d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10321a60 size=0x34e
+#include "SendTable.h"
+
+SendProp sub_10246af0(const char *name, int offset, int size, int bits, int flags, int i5, void *proxy);
+SendProp sub_10246510(const char *name, int offset, int size, int bits, int flags, float lo, float hi, void *proxy);
+SendProp sub_10246700(const char *name, int offset, int size, int bits, int flags, float lo, float hi, void *proxy);
+SendProp sub_10246dc0(const char *name, int offset, int dt, void *proxy);
+SendProp SendPropEHandle(const char *name, int offset, int size);
+void sub_10246300();
+void sub_102463c0();
+void sub_102464d0();
+void sub_10321690();
+extern int g_10559358;
+extern int g_10937c6c;
+extern SendTable g_10936dc4;
+extern char *g_10619d58;
+
+int sub_10321a60()
+{
+	static SendProp props[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246dc0("baseclass", 0, g_10559358, (void *)sub_102464d0),
+		sub_10246af0("m_nMotionTrail", 0x1484, 4, 4, 1, 0, 0),
+		sub_10246510("m_flSpeedScale", 0x1488, 4, 0x10, 8, 1.0f, 10.0f, (void *)sub_10246300),
+		sub_10246af0("m_iGender", 0x13cc, 4, 4, 1, 0, 0),
+		sub_10246510("m_flHolyLightEndTime", 0x13d4, 4, 0, 4, 0.0f, -121121.121212f, (void *)sub_10246300),
+		sub_10246dc0("bcc_localdata", 0, (int)&g_10937c6c, (void *)sub_10321690),
+		SendPropEHandle("m_hGrappleAnimDriver", 0x1558, 4),
+		SendPropEHandle("m_hProteanTransformOther", 0x155c, 4),
+		sub_10246510("m_flProteanTransformStartTime", 0x1560, 4, 0, 4, 0.0f, -121121.121212f, (void *)sub_10246300),
+		SendPropEHandle("m_hActiveWeapon", 0x19a4, 4),
+		SendPropEHandle("m_hActiveIArmor", 0x10dc, 4),
+		sub_10246af0("m_iVendorIndex", 0xe30, 4, 9, 0, 0, 0),
+		sub_10246af0("m_iVendorRestrictFlags", 0xe34, 4, 0x20, 1, 0, 0),
+		sub_10246af0("m_iOccultPowerFlags", 0xe38, 4, 4, 1, 0, 0),
+		sub_10246af0("m_iMoney", 0x13d8, 4, 0xc, 1, 0, 0),
+		sub_10246af0("m_bAimWeaponAtTarget", 0xe6c, 1, 1, 1, 0, 0),
+		SendPropEHandle("m_hWeaponAimTarget", 0xe70, 4),
+		sub_10246700("m_vWeaponAimOffset", 0xe74, 0xc, -1, 2, 0.0f, -121121.121212f, (void *)sub_102463c0),
+		sub_10246af0("m_bMeetsObfuscateRules", 0x14dc, 1, 1, 1, 0, 0),
+		sub_10246af0("m_bIsBCCTargetable", 0x1480, 1, 1, 1, 0, 0),
+		sub_10246510("m_flMeltExpansionTime", 0x19a8, 4, 10, 8, 0.0f, 10.0f, (void *)sub_10246300),
+		sub_10246510("m_flMeltMaxExpand", 0x19ac, 4, 8, 8, 0.0f, 128.0f, (void *)sub_10246300),
+		sub_10246af0("m_LootableType", 0x158c, 4, 3, 1, 0, 0),
+		sub_10246af0("m_bCutsceneForceLOD", 0x1590, 1, 1, 1, 0, 0),
+	};
+	g_10936dc4.sub_10247240(&props[1], 24, g_10619d58);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10321ec0 size=0xb
 extern int g_10937ccc;
 void sub_10321ec0(void)
