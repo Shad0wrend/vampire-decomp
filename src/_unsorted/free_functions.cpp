@@ -159422,6 +159422,26 @@ bool CTargetNPC::sub_103be3d0(CBaseEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103be530 size=0x28
+#include "CTraceFilterHasThrowLOS.h"
+
+extern int vt_104cc524[];
+
+struct CTraceFilterSimplePlaceholder {
+    void sub_1000bd7f(int a, int b);
+};
+
+// TARGET: CTraceFilterHasThrowLOS::sub_103be530
+CTraceFilterHasThrowLOS *CTraceFilterHasThrowLOS::sub_103be530(int a, int b)
+{
+    ((CTraceFilterSimplePlaceholder *)this)->sub_1000bd7f(a, b);
+    m_0c = b;
+    *(int **)this = vt_104cc524;
+    m_10 = a;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103bf170 size=0x63
 #include "CNPC_VTzimisce.h"
 void sub_101cd970(CBaseEntity *);

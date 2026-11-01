@@ -12165,6 +12165,7 @@
 0x10015abe func   ?sub_100d6d40@@YAXXZ sub_100d6d40
 0x10015ac3 func   ?sub_10116550@CFuncMoveLinear@@QAEEXZ CFuncMoveLinear::sub_10116550
 0x10015ac8 func   ?vfunc69@CBatSwarm@@QAE_NPAX@Z CBatSwarm::vfunc69
+0x10015acd func   ?sub_103be530@CTraceFilterHasThrowLOS@@QAEPAV1@HH@Z CTraceFilterHasThrowLOS::sub_103be530
 0x10015ad2 func   ?vfunc438@CNPC_VHuman@@UAEHXZ CNPC_VHuman::vfunc438
 0x10015ad7 func   ?sub_1021c000@CPropHacking@@QAEXXZ CPropHacking::sub_1021c000
 0x10015adc func   ?sub_101e18f0@@YGHH@Z sub_101e18f0
