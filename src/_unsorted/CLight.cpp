@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_105754f8;
 }
-CLight::Datamap82 CLight::vfunc82()
+datamap_t *CLight::vfunc82()
 {
-    return (CLight::Datamap82)&lifted::g_105754f8;
+    return (datamap_t *)&lifted::g_105754f8;
 }
 // END FUNCTION
 
