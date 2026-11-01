@@ -49860,6 +49860,18 @@ int sub_10107ec0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10107ef0 size=0x67
+#include "CFilterMass.h"
+
+// TARGET: filter_activator_mass
+extern "C" CBaseEntity *filter_activator_mass()
+{
+    CFilterMass *p = new CFilterMass;
+    p->vfunc106("filter_activator_mass");
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10108060 size=0x1a
 namespace lifted {
 extern int g_1056c510;
