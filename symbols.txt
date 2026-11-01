@@ -4558,6 +4558,7 @@
 0x10008d46 func   ?sub_101b9840@@YIXPAD@Z sub_101b9840
 0x10008d4b func   ?sub_101a0320@CSave@@QAEHHHPAUCSaveDesc@@@Z CSave::sub_101a0320
 0x10008d50 func   ?sub_102c9da0@CUnknown102ca630Rec@@QAEXPAU1@@Z CUnknown102ca630Rec::sub_102c9da0
+0x10008d55 func   ?sub_10072ed0@@YIHPADHH@Z sub_10072ed0
 0x10008d5a func   ?sub_1011a430@@YAXXZ sub_1011a430
 0x10008d64 func   ?sub_10094b70@CBaseAnimating@@QAEMMPADPAM1@Z CBaseAnimating::sub_10094b70
 0x10008d6e func   ?sub_10196c50@@YAPAUPyObj@@PAU1@0@Z sub_10196c50
