@@ -105076,6 +105076,58 @@ extern "C" CBaseEntity *prop_switch()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020d1b0 size=0x35c
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_105aa864[2];
+void sub_1020db00();
+void sub_1020e060();
+void sub_1020e080();
+void sub_1000a7ef();
+void sub_10005e7f();
+void sub_1020dd70();
+
+int *sub_1020d1b0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 5, "m_bLocked", {0x7a4, 0}, 1, 2 },
+        { 5, "m_bActivated", {0x7a5, 0}, 1, 2 },
+        { 2, "m_sLinkedSwitch", {0x730, 0}, 1, 6, "linkedswitch" },
+        { 4, "m_UseIcon", {0x734, 0}, 1, 6, "use_icon" },
+        { 4, "m_LockedIcon", {0x738, 0}, 1, 6, "locked_icon" },
+        { 4, "m_nResetState", {0x73c, 0}, 1, 6, "reset_state" },
+        { 10, "m_OnActivate", {0x744, 0}, 1, 0x16, "OnActivate", g_1055dc70 },
+        { 10, "m_OnDeactivate", {0x75c, 0}, 1, 0x16, "OnDeactivate", g_1055dc70 },
+        { 10, "m_OnUse", {0x774, 0}, 1, 0x16, "OnUse", g_1055dc70 },
+        { 10, "m_OnLockedUse", {0x78c, 0}, 1, 0x16, "OnLockedUse", g_1055dc70 },
+        { 0, "InputToggle", {0, 0}, 1, 8, "Toggle", 0, (void *)sub_1020db00 },
+        { 0, "InputLock", {0, 0}, 1, 8, "Lock", 0, (void *)sub_1020e060 },
+        { 0, "InputUnlock", {0, 0}, 1, 8, "Unlock", 0, (void *)sub_1020e080 },
+        { 0, "InputActivate", {0, 0}, 1, 8, "Activate", 0, (void *)sub_1000a7ef },
+        { 0, "InputDeactivate", {0, 0}, 1, 8, "Deactivate", 0, (void *)sub_10005e7f },
+        { 0, "CPropSwitchSwitchThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1020dd70 },
+    };
+    g_105aa864[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_105aa864[0] = (int)&dataDesc[1];
+    return g_105aa864;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020db00 size=0x1c
 // Local view of a vtable: slot 173 is the virtual call; slots 0..172 are placeholders.
 struct CVTableView173
