@@ -5,9 +5,9 @@
 namespace lifted {
 extern char g_105c8b78;
 }
-int CAI_BaseHumanoid::vfunc82()
+CAI_BaseHumanoid::Datamap82 CAI_BaseHumanoid::vfunc82()
 {
-    return (int)&lifted::g_105c8b78;
+    return (CAI_BaseHumanoid::Datamap82)&lifted::g_105c8b78;
 }
 // END FUNCTION
 
