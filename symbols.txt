@@ -6519,6 +6519,7 @@
 0x1000bcda func   ?sub_101b61a0@CUnknown101b61a0@@QAEAAV1@ABV1@@Z CUnknown101b61a0::sub_101b61a0
 0x1000bcdf func   _auspex_aura auspex_aura
 0x1000bce4 func   ?sub_1024dfb0@@YAXPAM@Z sub_1024dfb0
+0x1000bce9 func   ??0CWeaponGravityGun@@QAE@XZ CWeaponGravityGun::CWeaponGravityGun
 0x1000bcee func   ?vfunc18@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEHH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc18
 0x1000bcf3 func   ?sub_102305a0@@YGHHH@Z sub_102305a0
 0x1000bcf8 func   ?vfunc241@CSceneEntity@@UAEXXZ CSceneEntity::vfunc241
