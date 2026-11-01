@@ -85270,6 +85270,90 @@ bool CUnknown101dce30::sub_101dce30(CUnknown101dc5a0Keys *pKeys, const char *psz
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dd090 size=0x26e
+#include "CUnknown101e0f00.h"
+#include "CUnknown100eb420.h"
+#include "CDisciplineParticle.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+class CBaseEntity;
+class CEnvParticle;
+class CBaseEntityUnit100fbaf0;
+class CBasePlayer;
+#include "CEnvParticle.h"
+#include "CBaseEntityUnit100fbaf0.h"
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+
+__declspec(dllimport) void DevMsg(int level, const char *pMsg, ...);
+extern float g_1070d1b0[3];
+extern float g_1070d9d0[3];
+extern CUnknown101e0f00Entry *g_10739a74;
+CEntityVSlots *sub_100fbc90(const char *pszName, const float *pOrigin, const float *pAngles, float flLife);
+
+struct CDiscTable_101e1720
+{
+	int sub_101e1720(int id);
+};
+extern CDiscTable_101e1720 g_10739a4c;
+
+struct CDiscEntityView
+{
+	char m_pad0000[0xa8];
+	CBasePlayer *m_pPlayer;	// 0xa8
+};
+
+// TARGET: CUnknown101e0f00Src::sub_101dd090
+void CUnknown101e0f00Src::sub_101dd090(int a, int id)
+{
+	int nTable = g_10739a4c.sub_101e1720(id);
+	for (int i = 0; i < m_nA; i++) {
+		CDisciplineParticle *pOut = 0;
+		CUnknown101e0f00SrcA *pRec = m_ppA[i];
+		if (((CUnknown100eb420 *)&pRec->m_pszEntity)->sub_100eb420()) {
+			if (pRec->m_bFirstPerson == 0) {
+				if (pRec->m_bDiscipline) {
+					pOut = CDisciplineParticle::sub_10050c70((CDisciplineParticleParams *)&pRec->m_pszEntity, a, nTable, 0, id);
+				} else {
+					const char *pszName = pRec->m_pszParticleName ? pRec->m_pszParticleName : g_106b8540;
+					CEnvParticle *pParticle = (CEnvParticle *)sub_100fbc90(pszName, g_1070d1b0, g_1070d9d0, -1.0f);
+					if (pParticle) {
+						pParticle->sub_100fb1f0((CBaseEntity *)a, pRec->m_nAttachType, (unsigned char)(pRec->m_pszAttachName != 0));
+						((CBaseEntityUnit100fbaf0 *)pParticle)->sub_100fbaf0(10.0f);
+					}
+				}
+				const char *pszGlobal = g_10739a74 ? (g_10739a74->m_pszName ? g_10739a74->m_pszName : g_106b8540) : "NULL";
+				const char *pszEnt = ((CBaseEntity *)a)->m_name26c ? ((CBaseEntity *)a)->m_name26c : g_106b8540;
+				const char *pszParticle = pRec->m_pszParticleName ? pRec->m_pszParticleName : g_106b8540;
+				DevMsg(3, "Discipline<%s>: Particle3rd: <%s> Added on %s (%s)\n", pszGlobal, pszParticle, pszEnt, ((CBaseEntity *)a)->sub_1009f200());
+			} else {
+				CBaseEntity *pPlayer;
+				if (!((CDiscEntityView *)a)->m_pPlayer || !(pPlayer = ((CDiscEntityView *)a)->m_pPlayer->sub_1015d680(0)))
+					continue;
+				if (pRec->m_bDiscipline) {
+					pOut = CDisciplineParticle::sub_10050c70((CDisciplineParticleParams *)&pRec->m_pszEntity, a, nTable, (int)pPlayer, id);
+				} else {
+					const char *pszName = pRec->m_pszParticleName ? pRec->m_pszParticleName : g_106b8540;
+					CEnvParticle *pParticle = (CEnvParticle *)sub_100fbc90(pszName, g_1070d1b0, g_1070d9d0, -1.0f);
+					if (pParticle) {
+						pParticle->sub_100fb1f0((CBaseEntity *)a, pRec->m_nAttachType, (unsigned char)(pRec->m_pszAttachName != 0));
+						((CBaseEntityUnit100fbaf0 *)pParticle)->sub_100fbaf0(10.0f);
+					}
+				}
+				const char *pszGlobal = g_10739a74 ? (g_10739a74->m_pszName ? g_10739a74->m_pszName : g_106b8540) : "NULL";
+				const char *pszEnt = ((CBaseEntity *)a)->m_name26c ? ((CBaseEntity *)a)->m_name26c : g_106b8540;
+				const char *pszParticle = pRec->m_pszParticleName ? pRec->m_pszParticleName : g_106b8540;
+				DevMsg(3, "Discipline<%s>: Particle1st: <%s> Added on %s (%s)\n", pszGlobal, pszParticle, pszEnt, ((CBaseEntity *)a)->sub_1009f200());
+			}
+			if (pOut && pRec->m_bMarkParticle)
+				*((char *)pOut + 0x4c5) = 1;
+		}
+	}
+	m_sub.sub_101dc790(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dd3a0 size=0x10
 namespace lifted {
 struct C10011e8c { int sub_10011e8c(int); };

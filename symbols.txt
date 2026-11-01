@@ -9818,6 +9818,7 @@
 0x10012143 func   ?vfunc81@CItemGMilligansBuisnesscard@@QAEHXZ CItemGMilligansBuisnesscard::vfunc81
 0x10012148 func   ?vfunc259@CNPC_VTzimisce@@UAEXPAH@Z CNPC_VTzimisce::vfunc259
 0x1001214d func   ?vfunc80@CItemGPishaBook@@QAEHXZ CItemGPishaBook::vfunc80
+0x10012157 func   ?sub_101dd090@CUnknown101e0f00Src@@QAEXHH@Z CUnknown101e0f00Src::sub_101dd090
 0x10012161 func   ?vfunc31@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc31
 0x1001216b func   ?vfunc108@CBaseEntity@@UAE_NPBDMMM@Z CBaseEntity::vfunc108
 0x10012170 func   ?vfunc5@CPhysicsCannister@@QAEPAV1@I@Z CPhysicsCannister::vfunc5
