@@ -56,6 +56,7 @@
 0x10001177 func   ?sub_101852b0@UtlMem@@QAEXXZ UtlMem::sub_101852b0
 0x10001190 func   ?sub_10028060@CUnknown101d1460@@QAEXPAMPBM@Z CUnknown101d1460::sub_10028060
 0x10001195 func   ?sub_104301a0@@YAXXZ sub_104301a0
+0x1000119a func   ?sub_103b2870@@YIPAXPAD@Z sub_103b2870
 0x1000119f func   ?sub_101328e0@@YAHXZ sub_101328e0
 0x100011a4 func   ?sub_101e9040@CUnknown101e9040@@QAEHXZ CUnknown101e9040::sub_101e9040
 0x100011ae func   ?vfunc29@CBaseEntity@@UAEMXZ CBaseEntity::vfunc29

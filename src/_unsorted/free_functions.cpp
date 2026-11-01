@@ -158629,6 +158629,31 @@ extern "C" CBaseEntity *npc_VStalker()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b2870 size=0x27
+struct CGenericBaseCtorCall_103b2870
+{
+	void sub_10386aa0();
+};
+
+struct CGenericMemberCtorCall_103b2870
+{
+	void sub_10011ec3();
+};
+
+extern void *vt_104c7e4c[];
+extern void *vt_104c7e1c[];
+
+// TARGET: sub_103b2870
+void *__fastcall sub_103b2870(char *self)
+{
+	((CGenericBaseCtorCall_103b2870 *)self)->sub_10386aa0();
+	((CGenericMemberCtorCall_103b2870 *)(self + 0x6664))->sub_10011ec3();
+	*(void ***)self = vt_104c7e4c;
+	*(void ***)(self + 0x19b0) = vt_104c7e1c;
+	return self;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b2980 size=0xc
 void __fastcall sub_103b29a0(void *p);
 
