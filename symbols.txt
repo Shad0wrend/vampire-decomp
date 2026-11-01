@@ -7531,6 +7531,7 @@
 0x1000d783 func   ?sub_101dadd0@CUnknown101da960@@QAEXXZ CUnknown101da960::sub_101dadd0
 0x1000d788 func   ?sub_101da980@CUnknown101da980@@QAE_NH@Z CUnknown101da980::sub_101da980
 0x1000d797 func   ?sub_10209f60@@YIPAXPAX@Z sub_10209f60
+0x1000d79c func   ??0CSingleplayRules@@QAE@XZ CSingleplayRules::CSingleplayRules
 0x1000d7a6 func   ?vfunc472@CAI_BaseNPCTroika@@UAEXPAVCBaseEntity@@@Z CAI_BaseNPCTroika::vfunc472
 0x1000d7ab func   _item_w_gargoyle_fist item_w_gargoyle_fist
 0x1000d7b5 func   ?vfunc505@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc505
