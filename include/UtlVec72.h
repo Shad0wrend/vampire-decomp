@@ -12,4 +12,5 @@ public:
 	int m_Size;
 
 	void sub_10185570(int elem, int num);	// ShiftElementsRight
+	void sub_1022d190(int elem, int num);	// ShiftElementsRight (same as sub_10185570)
 };
