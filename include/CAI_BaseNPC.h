@@ -192,6 +192,7 @@ public:
 	void sub_1027d170();	// stub 0x100119b9: run by vfunc440 when the scripted sequence entity is gone, before schedule 1 is asked for
 	void sub_10270aa0(CBaseEntity *pEnt);	// stores pEnt's entity handle at +0x5d90 (-1 for null)
 	void sub_10269a20(int a);	// stub 0x100041b0, run by TaskFail with 0x5c
+	void sub_1026d460(int nSide);	// footstep: picks volume / sound level from the surface data or convars by nSide, emits the sound the sound table gives for the record at +0x5b90 to a CPASAttenuationFilter (called by vfunc259)
 	bool sub_10273180(char bForce);	// sets the hull size from the hull (+0x1568) when the byte +0x5f2d is clear or bForce, sets the byte, then runs sub_10272f40 with a navigator at +0x36c; always true
 	void sub_10272f40();	// the navigator hand-over after the hull is set (stub 0x100081c0)
 	void sub_10269b50(int condition);	// "CAI_BaseNPC::SetCondition"-like (called through the stub at 0x10015839)
