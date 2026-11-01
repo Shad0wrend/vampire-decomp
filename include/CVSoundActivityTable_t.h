@@ -36,7 +36,7 @@ public:
 	CVSoundEdict *m_pEdict;	// 0x2e0
 };
 
-struct CVSoundList	// the sounds of one table row
+struct CVSoundList : public CUnk101f42d0	// the sounds of one table row
 {
 	const char *sub_101f4600(CVSoundEnt *pEnt, int a);	// stub 0x10004930: the sample name picked for the entity
 };
