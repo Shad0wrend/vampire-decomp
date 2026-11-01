@@ -82464,6 +82464,22 @@ void sub_101d2460(const float *pOrigin, int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d2530 size=0x20
+#include "vampire.h"
+struct CUnk101d2530Vt
+{
+    virtual void vfunc0();
+    virtual void vfunc1();
+    virtual void vfunc2(int a, int b, int c, int d);
+};
+extern CUnk101d2530Vt *g_1070b254;
+// TARGET: sub_101d2530
+void sub_101d2530(int a, int b, int c, int d)
+{
+    g_1070b254->vfunc2(a, b, c, d);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d2560 size=0xa9
 #include "CPVSFilter.h"
 #include "Vector.h"
