@@ -27,9 +27,9 @@ bool CFilterClass::vfunc241(void *pEntity)
 namespace lifted {
 extern char g_1056c4a0;
 }
-CFilterClass::Datamap82 CFilterClass::vfunc82()
+datamap_t *CFilterClass::vfunc82()
 {
-    return (CFilterClass::Datamap82)&lifted::g_1056c4a0;
+    return (datamap_t *)&lifted::g_1056c4a0;
 }
 // END FUNCTION
 
