@@ -129616,6 +129616,27 @@ int sub_102d7860()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d7cd0 size=0x1e
+extern int vt_1049c954[];
+
+struct CUnk102d7cd0 {
+	void *m_vptr;
+	char m_pad0004[0x224 - 4];
+	int m_224;
+	void sub_100090fc(int a);
+	CUnk102d7cd0 *sub_102d7cd0();
+};
+
+// TARGET: CUnk102d7cd0::sub_102d7cd0
+CUnk102d7cd0 *CUnk102d7cd0::sub_102d7cd0()
+{
+	sub_100090fc(0);
+	m_vptr = vt_1049c954;
+	m_224 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d89f0 size=0x1a
 namespace lifted {
 extern int g_1060ba18;
