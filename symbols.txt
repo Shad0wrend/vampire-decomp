@@ -1655,6 +1655,7 @@
 0x10003c6a func   ?sub_10328c80@CBaseCombatCharacter@@QAEHH@Z CBaseCombatCharacter::sub_10328c80
 0x10003c6f func   ?vfunc26@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc26
 0x10003c74 func   ?vfunc5@CWeaponThrown_Grenade_Frag@@QAEPAV1@I@Z CWeaponThrown_Grenade_Frag::vfunc5
+0x10003c7e func   ?sub_10180150@@YAXXZ sub_10180150
 0x10003c83 func   _item_k_edane_key item_k_edane_key
 0x10003c8d func   ?sub_10246210@@YIDPAXHPAH@Z sub_10246210
 0x10003c92 func   ?vfunc6@CAI_StandoffBehavior@@UAEHXZ CAI_StandoffBehavior::vfunc6

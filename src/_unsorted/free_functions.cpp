@@ -66150,6 +66150,26 @@ CBaseEntity *CBasePlayer::sub_10180100(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10180150 size=0x26
+#include "vampire.h"
+
+void *sub_101193b0();
+
+struct CUnk10180150 {
+    void sub_10007072(const char *r);
+};
+
+void sub_10180150()
+{
+    void *p = sub_101193b0();
+    if (p)
+    {
+        const char *r = engine->vfunc84(1);
+        ((CUnk10180150 *)p)->sub_10007072(r);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10180220 size=0x11
 struct P { void sub_1015ef60(); };
 P *sub_10008d8c();
