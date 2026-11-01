@@ -4,7 +4,7 @@
 class CThinkContextsSaveDataOps
 {
 public:
-	virtual void vfunc0();
+	virtual void vfunc0(void *pFieldInfo, void *pSave);	// "Save": feeds the vector through CUtlVectorDataOps::Save, then writes the name of every think function
 	virtual void vfunc1();
 	virtual void vfunc2();
 	virtual void vfunc3(void *pField);	// "MakeEmpty": scope trace only
