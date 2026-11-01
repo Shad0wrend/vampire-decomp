@@ -25,9 +25,9 @@ int CNPC_VFrenzyShadow::vfunc451()
 namespace lifted {
 extern char g_10637aa8;
 }
-int CNPC_VFrenzyShadow::vfunc82()
+CNPC_VFrenzyShadow::Datamap82 CNPC_VFrenzyShadow::vfunc82()
 {
-    return (int)&lifted::g_10637aa8;
+    return (CNPC_VFrenzyShadow::Datamap82)&lifted::g_10637aa8;
 }
 // END FUNCTION
 
