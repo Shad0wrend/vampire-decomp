@@ -126795,6 +126795,49 @@ int sub_1028d800()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028d820 size=0x2f
+#include "CGlobalEntityList.h"
+
+#define P10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+    virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CUnk1028d820Obj
+{
+    P10(a) P10(b) P10(c) P10(d) P10(e) P10(f) P10(g) P10(h) P10(i) P10(j) P10(k) P10(l) P10(m)
+    P10(n) P10(o) P10(p) P10(q) P10(r) P10(s) P10(t) P10(u) P10(v) P10(w) P10(x) P10(y) P10(z)
+    P10(A) P10(B) P10(C) P10(D) P10(E) P10(F) P10(G) P10(H) P10(I) P10(J) P10(K) P10(L) P10(M)
+    P10(N) P10(O) P10(P) P10(Q) P10(R) P10(S) P10(T) P10(U) P10(V) P10(W) P10(X) P10(Y) P10(Z)
+    P10(aa) P10(ab) P10(ac) P10(ad) P10(ae) P10(af)
+    virtual void vfunc580();
+    virtual void vfunc581();
+    virtual void vfunc582();
+    virtual void vfunc583(int a);
+};
+
+struct CUnk1028d820Ent
+{
+    char m_pad0000[0x98];
+    CUnk1028d820Obj *m_pObj;
+};
+
+extern CGlobalEntityList g_106eb5d8;
+
+// TARGET: sub_1028d820
+void sub_1028d820(int a)
+{
+    CBaseEntity *pEnt = 0;
+    while (true)
+    {
+        pEnt = g_106eb5d8.sub_100f8370(pEnt, 0x40);
+        if (pEnt == 0)
+        {
+            break;
+        }
+        ((CUnk1028d820Ent *)pEnt)->m_pObj->vfunc583(a);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028e030 size=0x14
 struct CUnknown1028e030 {
     void *sub_100952d0(int a);
