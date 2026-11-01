@@ -26,7 +26,9 @@ public:
 	virtual void vfunc42();
 	virtual void vfunc43();
 	virtual char vfunc44(Vector *pContactPoint, IPhysicsObject **ppObject);	// slot 44 GetContactPoint
-	virtual void vfunc45(); virtual void vfunc46(); virtual void vfunc47(); virtual void vfunc48(); virtual void vfunc49();
+	virtual void vfunc45(float flMaxSpeed, float flMaxAngularSpeed, int a, int b);	// slot 45 SetShadow
+	virtual void vfunc46(const float *pPosition, const float *pAngles, int a, int b);	// slot 46 UpdateShadow
+	virtual void vfunc47(); virtual void vfunc48(); virtual void vfunc49();
 	virtual void vfunc50(); virtual void vfunc51(); virtual void vfunc52();
 	virtual float vfunc53(void *pShadowParams, float flSecondsToArrive, float flDeltaTime);	// slot 53 ComputeShadowControl
 };
