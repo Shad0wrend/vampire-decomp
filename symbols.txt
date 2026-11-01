@@ -9834,6 +9834,7 @@
 0x10011676 func   ?sub_10031bd0@@YA_NPAX@Z sub_10031bd0
 0x10011685 func   ?sub_10101970@@YIXPAXHH@Z sub_10101970
 0x1001168a func   ?sub_1013cdd0@@YAXPAM0000@Z sub_1013cdd0
+0x1001168f func   ?sub_10209330@@YIEPAX@Z sub_10209330
 0x10011694 func   ?sub_1015d6d0@CBasePlayer@@QAEXH@Z CBasePlayer::sub_1015d6d0
 0x10011699 func   ?sub_104300d0@@YAII@Z sub_104300d0
 0x1001169e func   ?vfunc546@CNPC_VToreador@@QAEHH@Z CNPC_VToreador::vfunc546

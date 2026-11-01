@@ -250,6 +250,19 @@ void CItemContainer::vfunc350(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10209330 size=0xa
+unsigned char __fastcall sub_100b4320(void *pThis);
+
+// TARGET: sub_10209330
+unsigned char __fastcall sub_10209330(void *pThis)
+{
+	unsigned char bResult = sub_100b4320(pThis);
+	bResult &= 0xfd;
+	bResult |= 8;
+	return bResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10209710 size=0x5d
 #include "CItemContainer.h"
 #include "engineserver.h"
