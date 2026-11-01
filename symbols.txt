@@ -7062,6 +7062,7 @@
 0x1000caea func   ?sub_102c6e90@@YIXPAV?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@@Z sub_102c6e90
 0x1000caf4 func   ?sub_1002e970@@YAPAXHHHPAD@Z sub_1002e970
 0x1000caf9 func   ?vfunc420@CNPC_VBach@@UAEXXZ CNPC_VBach::vfunc420
+0x1000cafe func   ?sub_101ec900@CUnknown101ec7c0@@QAE_NPAX@Z CUnknown101ec7c0::sub_101ec900
 0x1000cb03 func   ?sub_1019e5d0@CRopeKeyframe@@QAEXXZ CRopeKeyframe::sub_1019e5d0
 0x1000cb08 func   ?vfunc321@CWeaponPhysCannon@@UAEXXZ CWeaponPhysCannon::vfunc321
 0x1000cb0d func   ?sub_100397c0@CBaseEntity@@QAEXXZ CBaseEntity::sub_100397c0
