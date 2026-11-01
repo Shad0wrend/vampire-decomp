@@ -11343,6 +11343,7 @@
 0x10013f02 func   ?sub_1035fc90@CUnk1035fc90@@QAEXH@Z CUnk1035fc90::sub_1035fc90
 0x10013f07 func   ?sub_10307aa0@CUnknown10307aa0@@QAEHXZ CUnknown10307aa0::sub_10307aa0
 0x10013f0c func   ?sub_102a1590@@YI_NPAUN@@@Z sub_102a1590
+0x10013f11 func   ?sub_101096b0@@YAXPBVVector@@MM@Z sub_101096b0
 0x10013f16 func   ?vfunc5@CBlueBloodPack@@QAEPAV1@I@Z CBlueBloodPack::vfunc5
 0x10013f1b func   ?sub_10235bf0@CWeaponKick@@QAEXMPAUCKickWeapon@@@Z CWeaponKick::sub_10235bf0
 0x10013f20 func   ?vfunc276@CBaseTerminal@@QAEXXZ CBaseTerminal::vfunc276

@@ -49620,6 +49620,33 @@ bool sub_10109550(Vector *pOrigin, float flHeat, int a, int b, unsigned int nFla
 }
 // END FUNCTION
 
+// FUNCTION: 0x101096b0 size=0x84
+#include "Vector.h"
+#include "CBaseEntity.h"
+#include "CFire.h"
+
+struct CFireScaleVar
+{
+	virtual void a0();
+	virtual bool vfunc1();
+	char m_pad0004[0x28 - 4];
+	float m_flValue;
+};
+extern CFireScaleVar *g_10709394;
+int sub_10108f60(int *pList, int nMax, char bFlag, const Vector *pOrigin, float flRadius);
+
+// TARGET: sub_101096b0
+void sub_101096b0(const Vector *pOrigin, float flRadius, float flFraction)
+{
+	float flScale = g_10709394->vfunc1() ? 0.0f : g_10709394->m_flValue;
+	flScale = (1.0f - flFraction) * flScale;
+	CFire *apFires[32];
+	int n = sub_10108f60((int *)apFires, 0x20, 0, pOrigin, flRadius);
+	for (int i = 0; i < n; i++)
+		apFires[i]->sub_1010b840(flScale);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109770 size=0x4e
 #include "CBaseEntity.h"
 #include "CFire.h"
