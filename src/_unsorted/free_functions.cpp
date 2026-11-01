@@ -153501,6 +153501,23 @@ CNPC_VMingXiaoTentacle *CNPC_VMingXiao::sub_10397c70(CNPC_VMingXiaoTentacle *pTe
 }
 // END FUNCTION
 
+// FUNCTION: 0x10397dd0 size=0x1d
+// TARGET: CUnk10397dd0::sub_10397dd0
+struct CUnk10397dd0
+{
+    char pad[0x66c0];
+    int m_66c0;
+    void sub_10397dd0(int a, int b);
+};
+void CUnk10397dd0::sub_10397dd0(int a, int b)
+{
+    if (a && b)
+    {
+        m_66c0 = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10397e00 size=0x64
 #include "CGlobalEntityList.h"
 #include "CNPC_VMingXiaoTentacle.h"
