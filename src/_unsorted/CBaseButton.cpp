@@ -5,9 +5,9 @@
 namespace lifted {
 extern char g_1055beb0;
 }
-CBaseButton::Datamap82 CBaseButton::vfunc82()
+datamap_t *CBaseButton::vfunc82()
 {
-    return (CBaseButton::Datamap82)&lifted::g_1055beb0;
+    return (datamap_t *)&lifted::g_1055beb0;
 }
 // END FUNCTION
 
