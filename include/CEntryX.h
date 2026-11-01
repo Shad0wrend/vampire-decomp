@@ -2,6 +2,7 @@
 #pragma once
 
 #include "CVDmg_t.h"
+#include "CVFeat_t.h"
 
 class CEntryX
 {
