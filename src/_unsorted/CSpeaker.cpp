@@ -1,6 +1,19 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101af370 size=0x8
+unsigned char sub_10001109();
+
+// TARGET: sub_101af370
+unsigned char sub_101af370()
+{
+    unsigned char bVar1;
+    bVar1 = sub_10001109();
+    bVar1 &= 0xfd;
+    return bVar1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101af390 size=0x6
 #include "CSpeaker.h"
 namespace lifted {

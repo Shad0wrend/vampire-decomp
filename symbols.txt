@@ -5140,6 +5140,7 @@
 0x10009935 func   ?sub_1003d130@CBaseEntity@@QAEXH@Z CBaseEntity::sub_1003d130
 0x1000993f func   ?vfunc2@CTEEnergySplash@@UAEPAV1@I@Z CTEEnergySplash::vfunc2
 0x10009944 func   ?vfunc152@CPathCorner@@QAEMXZ CPathCorner::vfunc152
+0x10009949 func   ?sub_101af370@@YAEXZ sub_101af370
 0x1000994e func   ?sub_1025b800@@YAHXZ sub_1025b800
 0x10009953 func   ?sub_103bfc20@CNPC_VTzimisce@@QAEDPAVCBaseEntity@@0@Z CNPC_VTzimisce::sub_103bfc20
 0x10009958 func   ?vfunc4@CTEDust@@QAEXHH@Z CTEDust::vfunc4
