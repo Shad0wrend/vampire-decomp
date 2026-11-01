@@ -48,6 +48,17 @@ void CTEBeamSpline::vfunc3(const Vector &current_origin, const Vector &current_a
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005d4d0 size=0x39
+#include "CTEBeamSpline.h"
+#include "CTEMetalSparks.h"
+#include "IVEngineServerFull.h"
+
+void CTEBeamSpline::vfunc4(void *pFilter, float delay)
+{
+	engine->vfunc103((int)pFilter, *(int *)&delay, this, ((CTEMetalSparks *)this)->vfunc0()->m_pTable, ((CTEMetalSparks *)this)->vfunc0()->m_ClassID);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005d590 size=0x6
 #include "CTEBeamSpline.h"
 namespace lifted {
