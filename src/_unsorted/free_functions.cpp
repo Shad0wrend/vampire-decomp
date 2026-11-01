@@ -42000,6 +42000,94 @@ void CDialog::sub_100e5d00(int nIndex, char *pszText)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e61d0 size=0x323
+#include "CDialog.h"
+#include "ScopeTrace.h"
+#include <string.h>
+
+extern char g_10454663[];
+void sub_100dfaf0(int level, const char *fmt, ...);
+int __cdecl sub_10431447(const char *);
+
+#define COPY(dst, src) { const char *s_ = (src); char *d_ = (dst); char c_; do { c_ = *s_++; *d_++ = c_; } while (c_); }
+
+int CDialog::sub_100e61d0(void *pFile, DialogLine *pLine, int *pLineNo)
+{
+	ScopeTrace trace("CDialog::read_line_data", g_106b8540, g_106b8540);
+	char buf[2048];
+	int nKey;
+	int r;
+	int i;
+	char **pp;
+
+	if (!sub_100e6ed0(pFile, buf, pLineNo, 1))
+		return -1;
+	nKey = sub_10431447(buf);
+	pLine->m_nKey = nKey;
+	if (!sub_100e6ed0(pFile, buf, pLineNo, 1))
+	{
+		sub_100dfaf0(0xb, "Missing text on line: %d (dialog line %d)\n", *pLineNo, nKey);
+		sub_100e7630(pFile);
+		return -1;
+	}
+	if (strlen(buf) == 0)
+	{
+		sub_100e7630(pFile);
+		return 0;
+	}
+	COPY(pLine->m_pszText, buf);
+	if (!sub_100e6ed0(pFile, buf, pLineNo, 1))
+	{
+		sub_100dfaf0(0xb, "Missing gender field on line: %d (dialog line %d)\n", *pLineNo, nKey);
+		sub_100e7630(pFile);
+		return -1;
+	}
+	COPY(pLine->m_pszAlt, buf);
+	if (!sub_100e6ed0(pFile, buf, pLineNo, 1))
+	{
+		sub_100dfaf0(0xb, "Missing response value on line: %d (dialog line %d)\n", *pLineNo, nKey);
+		sub_100e7630(pFile);
+		return -1;
+	}
+	if (buf[0] == '#')
+		pLine->m_nResponse = -1;
+	else
+		pLine->m_nResponse = sub_10431447(buf);
+	if (!sub_100e6ed0(pFile, buf, pLineNo, 1))
+	{
+		sub_100dfaf0(0xb, "Missing trait dependency field on line: %d (dialog line %d)\n", *pLineNo, nKey);
+		sub_100e7630(pFile);
+		return -1;
+	}
+	COPY(pLine->m_pszDependency, buf);
+	if (!sub_100e6ed0(pFile, buf, pLineNo, 1))
+	{
+		sub_100dfaf0(0xb, "Missing event script field on line: %d (dialog line %d)\n", *pLineNo, nKey);
+		sub_100e7630(pFile);
+		return -1;
+	}
+	COPY(pLine->m_pszScript, buf);
+	pp = pLine->m_apszClan;
+	for (i = 0; i < 7; i++, pp++)
+	{
+		r = sub_100e6ed0(pFile, buf, pLineNo, 1);
+		if (r <= 0)
+		{
+			sub_100dfaf0(9, "Missing clan field %c on node: %d (dialog file line %d)\n", g_10454663[i], *pLineNo, nKey);
+			if (r != -1)
+				sub_100e7630(pFile);
+			COPY(pLine->m_apszClan[i], g_106b8540);
+			return 1;
+		}
+		COPY(*pp, buf);
+	}
+	sub_100e7630(pFile);
+	if (pLine->m_nKey >= 0 && pLine->m_pszText && (int)strlen(pLine->m_pszText) >= 2)
+		return 1;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e6ed0 size=0x2a2
 #include "CDialog.h"
 #include "ScopeTrace.h"

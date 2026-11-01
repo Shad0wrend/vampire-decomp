@@ -1483,6 +1483,7 @@
 0x100037c9 func   ?sub_100ba030@@YIHPAH@Z sub_100ba030
 0x100037ce func   ?Grow@?$CUtlMemory@UQuestJournal_Quest@@@@QAEXH@Z CUtlMemory<QuestJournal_Quest>::Grow
 0x100037ce func   ?sub_10222e30@@YIXPAUMem@@HH@Z sub_10222e30
+0x100037d3 func   ?sub_100e61d0@CDialog@@QAEHPAXPAUDialogLine@@PAH@Z CDialog::sub_100e61d0
 0x100037dd func   ?RotateRight@?$CUtlRBTree@UCRBTree16Entry8@@G@@QAEXG@Z CUtlRBTree<CRBTree16Entry8,unsigned short>::RotateRight
 0x100037e2 func   ?sub_102ee620@CUnknown102ee620@@QAEHXZ CUnknown102ee620::sub_102ee620
 0x100037f1 func   ?sub_101d6de0@CUnknown101d5bd0@@QAEXXZ CUnknown101d5bd0::sub_101d6de0
