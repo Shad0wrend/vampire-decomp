@@ -6657,6 +6657,7 @@
 0x1000c86a func   ?vfunc103@CBasePlayer@@QAEXXZ CBasePlayer::vfunc103
 0x1000c874 func   ?sub_1006caa0@SCurve6caa0@@QAEMH@Z SCurve6caa0::sub_1006caa0
 0x1000c879 func   ?vfunc175@CTriggerPlayerActivityLevel@@QAEXPAVCBaseEntity@@@Z CTriggerPlayerActivityLevel::vfunc175
+0x1000c883 func   ?sub_100d7a70@@YAXXZ sub_100d7a70
 0x1000c88d func   ?sub_1042d9c0@CBits1042d9c0@@QAEXH@Z CBits1042d9c0::sub_1042d9c0
 0x1000c897 func   ?sub_10270290@CUnknown10270290@@QAEXH@Z CUnknown10270290::sub_10270290
 0x1000c89c func   ?sub_1026ff80@CUnitHelper@@QAE_NPAVCBaseEntity@@PBM1@Z CUnitHelper::sub_1026ff80

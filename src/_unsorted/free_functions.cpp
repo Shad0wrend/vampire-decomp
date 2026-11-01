@@ -37657,6 +37657,26 @@ void sub_100d7760()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d7a70 size=0x1e
+// TARGET: sub_100d7a70
+struct CUnk100d7a70
+{
+    char pad[0xa8];
+    int m_a8;
+    void sub_1021eaf0();
+};
+extern int g_1074f898;
+CUnk100d7a70 *sub_101193b0();
+void sub_100d7a70()
+{
+    CUnk100d7a70 *p = sub_101193b0();
+    if (p && p->m_a8)
+    {
+        ((CUnk100d7a70 *)&g_1074f898)->sub_1021eaf0();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d7b30 size=0x42
 struct SView { char pad[0xa8]; int m_a8; };
 struct SObj { void sub_1021ebc0(const char *s); };
