@@ -10524,6 +10524,7 @@
 0x10012ff3 func   ?vfunc5@CBatSwarm_Teleport@@QAEPAV1@I@Z CBatSwarm_Teleport::vfunc5
 0x10012ffd func   ?vfunc103@CFuncBrush@@QAEXXZ CFuncBrush::vfunc103
 0x10013007 func   ?sub_1013bef0@@YAXABVVector@@000MAAV1@@Z sub_1013bef0
+0x1001300c func   ?sub_102c2c10@@YIXPADH0@Z sub_102c2c10
 0x10013011 func   ?sub_102ecc00@CUnknown102ecc00@@QAEHXZ CUnknown102ecc00::sub_102ecc00
 0x1001301b func   ?sub_10312b50@CAI_Expresser@@QAEXXZ CAI_Expresser::sub_10312b50
 0x10013020 func   ?vfunc1@ConCommand@@UAE_NXZ ConCommand::vfunc1

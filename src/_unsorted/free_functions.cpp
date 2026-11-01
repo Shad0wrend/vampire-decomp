@@ -126568,6 +126568,19 @@ void __fastcall sub_102c2bd0(char *self, int dummy, char *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c2c10 size=0x21
+// TARGET: sub_102c2c10
+void __fastcall sub_102c2c10(char *self, int dummy, char *data)
+{
+    char v;
+    if (*(int *)(data + 0x18) == 5)
+        v = *(char *)(data + 8);
+    else
+        v = 0;
+    *(char *)(self + 0x6436) = v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c2c50 size=0x1ea
 #include "inputdata_t.h"
 extern "C" char *__cdecl _strlwr(char *);
