@@ -134176,6 +134176,21 @@ int CUnknown102e2690::sub_102e2690()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e26b0 size=0x28
+struct CUnknown102e26b0 {
+	char m_pad0000[4];
+	void *m_pInner;
+	Vector sub_102e26b0();
+};
+
+// TARGET: CUnknown102e26b0::sub_102e26b0
+Vector CUnknown102e26b0::sub_102e26b0()
+{
+	typedef Vector *(__fastcall *Fn)(void *);
+	return *((Fn)(*(void ***)m_pInner)[198])(m_pInner);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e26f0 size=0xb
 #define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define H(p) T(p##0) T(p##1) T(p##2) T(p##3) T(p##4) T(p##5) T(p##6) T(p##7) T(p##8) T(p##9)

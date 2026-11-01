@@ -1737,6 +1737,7 @@
 0x10003f6c func   ?sub_101960f0@@YAPAVVector@@PAV1@PAUPyObject@@@Z sub_101960f0
 0x10003f71 func   ?sub_102477a0@CUnknown102477a0@@QAEXXZ CUnknown102477a0::sub_102477a0
 0x10003f76 func   ?sub_101e1440@CUnknown101d5bd0@@QAEHPBDH@Z CUnknown101d5bd0::sub_101e1440
+0x10003f7b func   ?sub_102e26b0@CUnknown102e26b0@@QAE?AVVector@@XZ CUnknown102e26b0::sub_102e26b0
 0x10003f85 func   ?sub_1002e0a0@@YAGPAUIPhysObj@@G@Z sub_1002e0a0
 0x10003f8a func   ?sub_10197050@@YAPAUPyObject@@PAU1@PAD@Z sub_10197050
 0x10003f94 func   _logic_case_toggle logic_case_toggle
