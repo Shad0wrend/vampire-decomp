@@ -290,7 +290,8 @@ public:
 	int sub_102cc1f0(int type);	// stub 0x10014f6a: the schedule of the given type
 	void sub_10273ec0();	// "CAI_BaseNPC::TaskMovementComplete": clears the byte at +0x1a40, by the movement state at +0x5c44 (0 / 1: becomes 3, 2: sub_10273e80(0), 3: Warning "Movement completed twice!") and, unless the state at +0x5d70 is 4, 5 or 6, sub_10272650(sub_1027a6c0()); then, when the navigator at +0x5d34 answers sub_102ee6a0, sub_102f0400, and finally the navigator's sub_102ee270
 	int sub_1027a6c0();	// stub 0x1000b285, run by TaskMovementComplete
-	void sub_10272650(int a);	// stub 0x100097d2, run by TaskMovementComplete with the result of sub_1027a6c0
+	void sub_10272650(int a);
+	void sub_10289ee0(int activity);	// CAI_BaseNPC activity setter (stub 0x10014524): clears +0xfec when it holds activity, then sub_10272650(activity)	// stub 0x100097d2, run by TaskMovementComplete with the result of sub_1027a6c0
 	bool sub_10278220(const Vector *pStart, const Vector *pEnd, int mask);	// stub 0x100116b7: a trace-based visibility test of pEnd (offset by the eye offset at +0x184) from pStart; true when it is clear or the navigator accepts a move there
 	bool sub_102784a0(const Vector *pStart, int mask);	// tests pStart against the NPC's origin and then against five pairs of points that step 48 units either side of the origin along its right vector (sub_10278220 each); true at the first one that is clear
 	char vfunc573(const Vector *pOffset, const float *pEnd, char bSetCondition);	// slot 573 (plain member): traces from the view position (+0x184 plus pOffset) to pEnd; true when the way is clear or the hit entity is slot 167's, else (with bSetCondition) sets condition 0x63 / 0x66 and reports the blocker
