@@ -1449,6 +1449,7 @@
 0x10003765 func   ?sub_103de470@@YAEXZ sub_103de470
 0x1000376f func   ?sub_101cbae0@@YAHXZ sub_101cbae0
 0x10003779 func   ?sub_10397c70@CNPC_VMingXiao@@QAEPAVCNPC_VMingXiaoTentacle@@PAV2@@Z CNPC_VMingXiao::sub_10397c70
+0x1000377e func   ?sub_10062500@CTEFogRipple@@QAEPAV1@PBD@Z CTEFogRipple::sub_10062500
 0x10003783 func   ?sub_104289a0@@YAHPBX0PAUCTimeTableHit@@MMH@Z sub_104289a0
 0x10003788 func   ?vfunc438@CNPC_VScurrying@@QAEHXZ CNPC_VScurrying::vfunc438
 0x1000378d func   ?vfunc80@CWeaponMelee_Claws_Protean4@@QAEHXZ CWeaponMelee_Claws_Protean4::vfunc80

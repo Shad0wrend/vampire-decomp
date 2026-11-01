@@ -11366,6 +11366,31 @@ void sub_10062490(CRecipientFilter &filter, float delay, CBaseEntity *pEntity, i
 }
 // END FUNCTION
 
+// FUNCTION: 0x10062500 size=0x2d
+#include "CTEFogRipple.h"
+
+struct CBaseTempEntityHeadUnit {
+	void sub_10015334(const char *name);
+};
+
+extern void *vt_1044de90[];
+
+// TARGET: CTEFogRipple::sub_10062500
+CTEFogRipple *CTEFogRipple::sub_10062500(const char *name)
+{
+	((CBaseTempEntityHeadUnit *)this)->sub_10015334(name);
+	*(void ***)this = vt_1044de90;
+	int *p = (int *)((char *)this + 0xc);
+	p[0] = 0;
+	p[1] = 0;
+	p[2] = 0;
+	p[3] = 0;
+	p[4] = 0;
+	p[5] = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10062570 size=0xb
 namespace lifted {
 extern char g_1044de90;
