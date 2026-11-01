@@ -119,7 +119,7 @@ public:
 	virtual void vfunc155();
 	virtual void vfunc156();
 	virtual void vfunc157();
-	virtual void vfunc158_slot();
+	virtual char vfunc158_slot();
 	virtual void vfunc159();
 	virtual void vfunc160();
 	virtual void vfunc161_slot();
