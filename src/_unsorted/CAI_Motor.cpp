@@ -196,6 +196,22 @@ void CAI_Motor::vfunc9()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e1440 size=0x1b
+#include "CAI_Motor.h"
+#include <string.h>
+
+struct CUnknown102ddc40 {
+	void *sub_102ddc40();
+};
+
+// TARGET: CAI_Motor::vfunc10
+int CAI_Motor::vfunc10()
+{
+	memset(&m_3c, 0, 12);
+	return (int)((CUnknown102ddc40 *)*(char **)(m_pOuter + 0x5d38))->sub_102ddc40();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e2180 size=0x1a6
 #include "CAI_Motor.h"
 #include "CEntityVSlots.h"

@@ -8155,6 +8155,7 @@
 0x1000ed81 func   ?vfunc15@CAI_Motor@@UAEMAAVVector@@@Z CAI_Motor::vfunc15
 0x1000ed86 func   ?sub_100b6f10@CUnknown100b6f10@@QAEPAUS100b6f10Node@@H@Z CUnknown100b6f10::sub_100b6f10
 0x1000ed8b func   ?sub_100732d0@CUnknown100732d0@@QAEDXZ CUnknown100732d0::sub_100732d0
+0x1000ed90 func   ?vfunc10@CAI_Motor@@UAEHXZ CAI_Motor::vfunc10
 0x1000ed95 func   ?sub_10248cd0@CKeyValuesX@@QAEPBDPBD0@Z CKeyValuesX::sub_10248cd0
 0x1000ed9a func   ?sub_102dd450@CUnknown102dd450@@QAE_NXZ CUnknown102dd450::sub_102dd450
 0x1000ed9f func   ?vfunc82@CGib@@UAEPAUdatamap_t@@XZ CGib::vfunc82
