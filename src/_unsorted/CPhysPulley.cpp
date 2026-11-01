@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10538f44;
 }
-int CPhysPulley::vfunc82()
+CPhysPulley::Datamap82 CPhysPulley::vfunc82()
 {
-    return (int)&lifted::g_10538f44;
+    return (CPhysPulley::Datamap82)&lifted::g_10538f44;
 }
 // END FUNCTION
 
