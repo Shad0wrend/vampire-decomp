@@ -10019,6 +10019,7 @@
 0x10011b0d func   ?vfunc1@CPositionInterpolator_Linear@@QAEHHHH@Z CPositionInterpolator_Linear::vfunc1
 0x10011b12 func   ?vfunc619@CNPC_VAsianVampire@@QAEXH@Z CNPC_VAsianVampire::vfunc619
 0x10011b17 func   ?RotateRight@?$CUtlRBTree@UCSoundEmitterRecord@@H@@QAEXH@Z CUtlRBTree<CSoundEmitterRecord,int>::RotateRight
+0x10011b1c func   ?sub_1015dcf0@@YIXPAX@Z sub_1015dcf0
 0x10011b21 func   ?sub_10085770@@YAHXZ sub_10085770
 0x10011b26 func   ?sub_103a1320@CUnknown103a1320@@QAEXH@Z CUnknown103a1320::sub_103a1320
 0x10011b30 func   ?vfunc363@CWeaponMelee_Fists@@QAEHXZ CWeaponMelee_Fists::vfunc363
