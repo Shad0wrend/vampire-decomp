@@ -9,7 +9,7 @@ class IFileSystemView
 public:
 	virtual int vfunc0(const char *pszFile, const char *pszMode, int arg);	// slot 0: opens a file, returns its handle (0 on failure)
 	virtual void vfunc1(int hFile);	// slot 1 (+0x4): closes the handle
-	VIEW_SLOT(2)
+	virtual void vfunc2(void *pBuffer, int nBytes, int hFile);	// slot 2 (+8): reads nBytes from the handle into the buffer
 	virtual void vfunc3(const char *pszFile, int length, int arg);	// slot 3 (+0xc): takes a file name with its length and an argument
 	VIEW_SLOT(4) VIEW_SLOT(5) VIEW_SLOT(6) VIEW_SLOT(7) VIEW_SLOT(8) VIEW_SLOT(9)
 	VIEW_SLOT(10) VIEW_SLOT(11) VIEW_SLOT(12) VIEW_SLOT(13)
