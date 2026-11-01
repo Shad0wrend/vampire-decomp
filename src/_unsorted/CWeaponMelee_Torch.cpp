@@ -44,9 +44,9 @@ int CWeaponMelee_Torch::vfunc363()
 namespace lifted {
 extern char g_10672070;
 }
-int CWeaponMelee_Torch::vfunc82()
+CWeaponMelee_Torch::Datamap82 CWeaponMelee_Torch::vfunc82()
 {
-    return (int)&lifted::g_10672070;
+    return (CWeaponMelee_Torch::Datamap82)&lifted::g_10672070;
 }
 // END FUNCTION
 
