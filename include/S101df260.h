@@ -39,7 +39,7 @@ struct S101ddec0	// 0xac byte item
 	const char *m_pszSchedule34;	// 0x34: null after construction
 	int m_n38;	// -1 after construction
 	int m_n3c;	// -1 after construction
-	int m_n40;
+	float m_n40;	// 0x40: the gesture duration
 	int m_n44;
 	int m_n48;
 	int m_n4c;
