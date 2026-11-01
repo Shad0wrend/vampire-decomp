@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10566e3c;
 }
-int CInspectionNode::vfunc82()
+CInspectionNode::Datamap82 CInspectionNode::vfunc82()
 {
-    return (int)&lifted::g_10566e3c;
+    return (CInspectionNode::Datamap82)&lifted::g_10566e3c;
 }
 // END FUNCTION
 
