@@ -7640,6 +7640,7 @@
 0x1000db84 func   ?vfunc124@CTriggerWind@@UAEHXZ CTriggerWind::vfunc124
 0x1000db89 func   ?sub_100aa720@@YAHH@Z sub_100aa720
 0x1000db8e func   ?sub_1030bb30@CAI_NavRoute@@QAEXXZ CAI_NavRoute::sub_1030bb30
+0x1000db98 func   ?sub_101a6540@@YIXPAX@Z sub_101a6540
 0x1000db9d func   ?vfunc442@CNPC_VDog@@QAEXPAH@Z CNPC_VDog::vfunc442
 0x1000dba7 func   ?sub_10109550@@YA_NPAVVector@@MHHIPAUCFireHandleSrc@@H@Z sub_10109550
 0x1000dbac func   ?vfunc41@CGameSign@@QAEXPAX@Z CGameSign::vfunc41
