@@ -7285,6 +7285,7 @@
 0x1000d6bb func   ?vfunc44@CSingleplayRules@@UAEXPAVCBaseEntity@@PAUCMPDamageInfo@@@Z CSingleplayRules::vfunc44
 0x1000d6ca func   ?vfunc197@CBasePlayer@@QAE?AVVector@@ABV2@DD@Z CBasePlayer::vfunc197
 0x1000d6cf func   _npc_VAnimal npc_VAnimal
+0x1000d6d4 func   ?sub_101ccbb0@CUnknown101ccbb0@@QAE_NH@Z CUnknown101ccbb0::sub_101ccbb0
 0x1000d6d9 func   ?vfunc1@CTEMuzzleFlash@@UAEHXZ CTEMuzzleFlash::vfunc1
 0x1000d6de func   ?sub_1030fff0@CUnknown1030fe50@@QAEHH@Z CUnknown1030fe50::sub_1030fff0
 0x1000d6e8 func   ?sub_10324ad0@CUnknown10324ad0@@QAE_NXZ CUnknown10324ad0::sub_10324ad0
