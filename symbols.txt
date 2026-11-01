@@ -9969,6 +9969,7 @@
 0x1001181a func   ?sub_10217650@@YAHXZ sub_10217650
 0x10011824 func   ?sub_101e8f20@CUnknown101e8f20@@QAEHPAVCBaseCombatCharacter@@@Z CUnknown101e8f20::sub_101e8f20
 0x10011829 func   _item_g_jumbles_flyer item_g_jumbles_flyer
+0x1001182e func   ?sub_1035eba0@@YIPAXPAD@Z sub_1035eba0
 0x10011833 func   ?vfunc14@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEHHHH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc14
 0x10011838 func   ?sub_10382970@CUnknown10382970@@QAEXH@Z CUnknown10382970::sub_10382970
 0x10011838 func   ?sub_10382970@CUnknown10382970@@QAEXVCBaseHandle@@@Z CUnknown10382970::sub_10382970
