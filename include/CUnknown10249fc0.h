@@ -30,5 +30,6 @@ class CUnknown10249fc0
 public:
 	CUnknown10249fc0_Tree *m_pTree;	// 0x00
 
+	int sub_10249c70(int nKey);	// walks the tree in order for the node whose key (the dword at +4 of its data) equals nKey and answers the sub container's answer for its data, 0 when there is none
 	int sub_10249fc0(unsigned short i);	// 0 when the node's first link is its own index (or i is invalid), else the sub container's answer for the node's data
 };
