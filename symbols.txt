@@ -5672,6 +5672,7 @@
 0x1000ac6d func   ?sub_100f43c0@@YAXHH@Z sub_100f43c0
 0x1000ac72 func   ?sub_1005b1e0@@YAXHHHPAUTEVec3@@H0HHHHHHHHHHHHHH@Z sub_1005b1e0
 0x1000ac77 func   ?sub_102454a0@@YAXH@Z sub_102454a0
+0x1000ac7c func   ?sub_1012f820@@YAMM@Z sub_1012f820
 0x1000ac86 func   ?sub_10132680@CMathColorBlend@@QAEXAAUinputdata_t@@@Z CMathColorBlend::sub_10132680
 0x1000ac8b func   ?sub_101cd9e0@@YAPAVCBaseEntity@@H@Z sub_101cd9e0
 0x1000ac95 func   _keyframe_rope keyframe_rope

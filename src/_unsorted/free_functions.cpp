@@ -52698,6 +52698,19 @@ float sub_1012f800(float a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012f820 size=0x1f
+#include "vampire.h"
+#include <math.h>
+extern double g_10449270;
+extern double g_10464cd0;
+// TARGET: sub_1012f820
+float sub_1012f820(float x)
+{
+    double c = cos((x + 1.0f) * g_10464cd0);
+    return c * 0.5 + g_10449270;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012f850 size=0x9
 // TARGET: sub_1012f850
 float sub_1012f850(float x) { return x * x; }
