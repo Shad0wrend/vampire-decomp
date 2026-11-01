@@ -199,6 +199,7 @@ public:
 	void sub_10272f40();	// the navigator hand-over after the hull is set (stub 0x100081c0)
 	void sub_10269b50(int condition);	// "CAI_BaseNPC::SetCondition"-like (called through the stub at 0x10015839)
 	bool sub_10269aa0(int condition);	// "CAI_BaseNPC::HasCondition" (stub 0x10014df8): translates ids below 1000000000 first, then tests the condition bit in the array at +0x5c5c
+	void vfunc458(int condition);	// slot 458 (plain member): ids below 1000000000 (and -1) are translated through slot 580 first, then the (translated) id goes to the global 0x109203dc's sub_102ea020 (a name / id lookup)
 	void sub_10269bd0(int *pConditions, int nConditions);	// "CAI_BaseNPC::ClearConditions": clears the condition bits (array at +0x5c5c) of each id, translating ids below 1000000000 first through slot 580
 	void sub_1026e340(int newState);	// "CAI_BaseNPC::SetState": stores the state at +0x5cc0/+0x5cc4 (curtime at +0x5cc8 on a change), strips the weapon of an NPC in state 1 that slot 167 flags, then calls slot 463(old, new)
 	void sub_1028e090(void *pModel);  // stub 0x1000944e: called by sub_1028e060 with the model pointer of the object (GetModelPtr of the entity at its +0x0)
