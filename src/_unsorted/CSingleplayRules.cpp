@@ -170,7 +170,7 @@ float CSingleplayRules::vfunc49(CBaseEntity *a) { return g_104492dc; }
 
 // FUNCTION: 0x101abfa0 size=0x9
 extern float g_104454c4;
-float CSingleplayRules::vfunc50(CSingleplayRules::Arg4950 a) { return g_104454c4; }
+float CSingleplayRules::vfunc50(CBaseEntity *a) { return g_104454c4; }
 // END FUNCTION
 
 // FUNCTION: 0x101abfc0 size=0x29
