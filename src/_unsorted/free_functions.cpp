@@ -118473,6 +118473,88 @@ void CUnk10273760::sub_10273760()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10273790 size=0x269
+#include "CAI_BaseNPC.h"
+#include "CGlobalEntityList.h"
+#include "CBasePlayer.h"
+
+struct NpcRelEntView {
+	CBP_V100(a) CBP_V10(b0) CBP_V10(b1) CBP_V10(b2) CBP_V1(c0) CBP_V1(c1) CBP_V1(c2) CBP_V1(c3) CBP_V1(c4) CBP_V1(c5) CBP_V1(c6) CBP_V1(c7)
+	virtual int vfunc138();
+};
+extern "C" int __cdecl _strcmpi(const char *a, const char *b);
+extern "C" char *__cdecl strtok(char *s, const char *delim);
+extern "C" int __cdecl atoi(const char *s);
+extern "C" unsigned int __cdecl strlen(const char *s);
+__declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+__declspec(dllimport) void DevMsg(int level, const char *pMsg, ...);
+__declspec(dllimport) void Warning(const char *pMsg, ...);
+extern CGlobalEntityList g_106eb5d8;
+void *sub_10136580(const char *pszName);
+void sub_101cd970(void *pEnt);
+
+// TARGET: CAI_BaseNPC::sub_10273790
+void CAI_BaseNPC::sub_10273790(const char *pszRelationship, CBaseEntity *pActivator)
+{
+	char parseString[1000];
+	Q_strncpy(parseString, pszRelationship, sizeof(parseString));
+	char *entityString = strtok(parseString, " ");
+	while (entityString) {
+		char *dispositionString = strtok(0, " ");
+		int disposition;
+		if (!dispositionString) {
+			DevMsg(1, "***ERROR***\n");
+			DevMsg(1, "Ignoring invalid relationship string '%s'.\nThe proper format is '[entityname|entityclass|player] [D_HT|D_FR|D_LI|D_NU] [1-10]'\n", dispositionString);
+			DevMsg(1, "***ERROR***\n");
+			return;
+		}
+		if (!_strcmpi(dispositionString, "D_HT"))
+			disposition = 1;
+		else if (!_strcmpi(dispositionString, "D_FR"))
+			disposition = 2;
+		else if (!_strcmpi(dispositionString, "D_LI"))
+			disposition = 3;
+		else if (!_strcmpi(dispositionString, "D_NU"))
+			disposition = 4;
+		else {
+			DevMsg(1, "***ERROR***\n");
+			DevMsg(1, "Bad relationship type (%s) to unknown entity (%s)!\nThe proper format is '[entityname|entityclass|player] [D_HT|D_FR|D_LI|D_NU] [1-10]'\n", dispositionString, entityString);
+			DevMsg(1, "***ERROR***\n");
+			return;
+		}
+		char *priorityString = strtok(0, " ");
+		int priority;
+		if (!priorityString) {
+			DevMsg(1, "***ERROR***\n");
+			DevMsg(1, "Ignoring invalid relationship string '%s'.\nThe proper format is '[entityname|entityclass|player] [D_HT|D_FR|D_LI|D_NU] [1-10]'\n", dispositionString);
+			DevMsg(1, "***ERROR***\n");
+			return;
+		}
+		priority = atoi(priorityString);
+		if (entityString[strlen(entityString) - 1] == '*') {
+			for (CBaseEntity *pEnt = g_106eb5d8.sub_100f7770(0, entityString, 0, 0); pEnt; pEnt = g_106eb5d8.sub_100f7770(pEnt, entityString, 0, 0))
+				sub_10332ca0(pEnt, disposition, priority);
+		} else {
+			CBaseEntity *pEnt = g_106eb5d8.sub_100f7770(0, entityString, 0, 0);
+			if (pEnt) {
+				sub_10332ca0(pEnt, disposition, priority);
+			} else if (!_strcmpi("player", entityString)) {
+				sub_10332aa0(1, disposition, priority);
+			} else {
+				NpcRelEntView *pTemp = (NpcRelEntView *)sub_10136580(entityString);
+				if (pTemp) {
+					sub_10332aa0(pTemp->vfunc138(), disposition, priority);
+					sub_101cd970(pTemp);
+				} else {
+					Warning("***ERROR***\nCounldn't set relationship to unknown entity or class (%s)!\n", entityString);
+				}
+			}
+		}
+		entityString = strtok(0, " ");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10273e80 size=0x24
 #include "CAI_BaseNPC.h"
 
