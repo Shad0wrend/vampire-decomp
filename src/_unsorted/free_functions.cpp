@@ -122994,6 +122994,16 @@ CBaseHandle &CBaseHandle::sub_1028ac80(IHandleEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028acc0 size=0x29
+#include "ehandle.h"
+
+// TARGET: CBaseHandle::sub_1028acc0
+IHandleEntity *CBaseHandle::sub_1028acc0()
+{
+	return Get();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028ad00 size=0xe
 namespace lifted {
 int __stdcall sub_10012a0d(int, int);
