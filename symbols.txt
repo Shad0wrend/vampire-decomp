@@ -11344,6 +11344,7 @@
 0x1001404c func   ?vfunc5@CFilterName@@QAEPAV1@I@Z CFilterName::vfunc5
 0x10014051 func   ?sub_10150e10@@YGHH@Z sub_10150e10
 0x1001405b func   ?sub_100773f0@CUnknown10077430@@QAEXXZ CUnknown10077430::sub_100773f0
+0x10014060 func   ?vfunc103@CNPC_VManBat@@QAEXXZ CNPC_VManBat::vfunc103
 0x1001406f func   ?vfunc81@CItemGJumblesFlyer@@QAEHXZ CItemGJumblesFlyer::vfunc81
 0x10014079 func   ?sub_100be4b0@bf_read@@QAEIH@Z bf_read::sub_100be4b0
 0x1001407e func   _item_g_drugs_pill_bottle item_g_drugs_pill_bottle

@@ -99,6 +99,24 @@ void CNPC_VManBat::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1038b030 size=0x23
+#include "CNPC_VVampire.h"
+#include "CNPC_VManBat.h"
+#include "CAI_BaseNPC.h"
+
+struct CUnk1038b030Call {
+	void sub_10014876();
+};
+
+// TARGET: CNPC_VManBat::vfunc103
+void CNPC_VManBat::vfunc103()
+{
+	((CUnk1038b030Call *)this)->sub_10014876();
+	((CAI_BaseNPC *)this)->vfunc416(1);
+	sub_10332aa0(1, 1, 10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1038b070 size=0x47
 #include "CNPC_VManBat.h"
 #include "globalvars.h"
