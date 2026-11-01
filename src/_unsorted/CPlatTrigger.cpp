@@ -1,6 +1,12 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101592f0 size=0xd
+#include "CPlatTrigger.h"
+// TARGET: CPlatTrigger::vfunc117
+int CPlatTrigger::vfunc117() { int c = ((CBaseEntity *)this)->CBaseEntity::vfunc117(); return (c & (char)0xfd) | 0x80000000; }
+// END FUNCTION
+
 // FUNCTION: 0x10159660 size=0x7d
 #include "CPlatTrigger.h"
 
