@@ -3420,6 +3420,7 @@
 0x10006c71 func   ?sub_101d7c90@CUnkDelete101d7c90@@QAEPAXE@Z CUnkDelete101d7c90::sub_101d7c90
 0x10006c76 func   ?sub_100473c0@CUtlRBTree16Unit@@QAEXGG_N@Z CUtlRBTree16Unit::sub_100473c0
 0x10006c7b func   ?vfunc362@CWeaponIArmor_Hvy_Cloth@@UAEHXZ CWeaponIArmor_Hvy_Cloth::vfunc362
+0x10006c85 func   ?vfunc127@CVampireProjectile@@UAEHH@Z CVampireProjectile::vfunc127
 0x10006c94 func   ?sub_10081950@@YGXHPAUCVirtObj10081950@@H@Z sub_10081950
 0x10006c9e func   ?vfunc81@CWeaponMelee_AVampBlade@@QAEHXZ CWeaponMelee_AVampBlade::vfunc81
 0x10006ca8 func   ?sub_10074a90@CUnknown10074a90@@QAEXH@Z CUnknown10074a90::sub_10074a90
