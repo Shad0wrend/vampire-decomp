@@ -96928,6 +96928,22 @@ void CUnknown101f1e20::sub_101f1e20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f2090 size=0x2d
+#include "VKeyValues.h"
+char *sub_101f2f70(const char *pszSrc);
+extern char g_1073aa40;
+void VKeyValues::sub_101f2090(const char *pszName)
+{
+	m_pszName14 = sub_101f2f70(pszName);
+	m_pszValue0c = 0;
+	m_nType10 = 0;
+	m_pChild1c = 0;
+	m_pNext18 = 0;
+	m_pParent20 = 0;
+	g_1073aa40 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2120 size=0x4
 // TARGET: sub_101f2120
 void __fastcall sub_101f2120(int *p) { (*(p - 9))++; }

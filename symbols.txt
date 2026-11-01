@@ -11307,6 +11307,7 @@
 0x10013a6b func   _item_g_giovanni_invitation_maria item_g_giovanni_invitation_maria
 0x10013a7f func   ?sub_100b97b0@@YIXPAD@Z sub_100b97b0
 0x10013a89 func   ?sub_101dbb00@@YAPBDH@Z sub_101dbb00
+0x10013a8e func   ?sub_101f2090@VKeyValues@@QAEXPBD@Z VKeyValues::sub_101f2090
 0x10013a93 func   ?sub_10078f20@CUtlVector136@@QAEXHH@Z CUtlVector136::sub_10078f20
 0x10013a98 func   ?vfunc5@CWeaponMelee_BaseballBat@@QAEPAV1@I@Z CWeaponMelee_BaseballBat::vfunc5
 0x10013aa2 func   ?sub_101e2da0@CUnknown101e0f00@@QAEXPAXHH@Z CUnknown101e0f00::sub_101e2da0
