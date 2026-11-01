@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10576934;
 }
-CLogicCase::Datamap82 CLogicCase::vfunc82()
+datamap_t *CLogicCase::vfunc82()
 {
-    return (CLogicCase::Datamap82)&lifted::g_10576934;
+    return (datamap_t *)&lifted::g_10576934;
 }
 // END FUNCTION
 
