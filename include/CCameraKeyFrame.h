@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+struct datamap_t;
+
 class CGlobalEntityList_Ent;
 
 class CCameraKeyFrame
@@ -24,6 +26,6 @@ public:
 	char m_pad0474[0x47c - 0x474];
 	char m_b47c;	// 0x47c
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 };

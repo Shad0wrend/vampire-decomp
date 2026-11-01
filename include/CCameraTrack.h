@@ -1,6 +1,8 @@
 // CCameraTrack: camera track entity (CCameraKeyFrame -> CLogicalEntity -> CBaseEntity). Declared flat; only the vtable head is modelled.
 #pragma once
 
+struct datamap_t;
+
 class CCameraTrack;
 
 #define CCT_V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
@@ -52,7 +54,7 @@ public:
 	unsigned int m_hHandle;	// 0x04d8
 	char m_bStarted;	// 0x04dc
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	virtual Datamap82 vfunc82();
 public:
 	virtual float vfunc48();

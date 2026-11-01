@@ -1,6 +1,8 @@
 // CBaseTerminal: computer terminal entity. Only slots that decompiled code needs are declared, as plain members.
 #pragma once
 
+struct datamap_t;
+
 class CBaseTerminal
 {
 public:
@@ -27,7 +29,7 @@ public:
 public:
 	int vfunc80();
 	int vfunc81();
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 	void vfunc273(int, int);
 	int vfunc274();

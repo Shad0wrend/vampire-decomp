@@ -4,6 +4,8 @@
 // real base before making a virtual call through it.
 #pragma once
 
+struct datamap_t;
+
 #include "Vector.h"
 
 class CBaseEntity;
@@ -132,7 +134,7 @@ public:
 	virtual void vfunc79();
 	virtual int vfunc80();
 	virtual int vfunc81();
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	virtual Datamap82 vfunc82();
 	virtual void vfunc83();
 	virtual void vfunc84();

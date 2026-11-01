@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+struct datamap_t;
+
 class CFuncParticle
 {
 public:
@@ -14,6 +16,6 @@ public:
 public:
 	int vfunc80();
 	int vfunc81();
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 };

@@ -2,6 +2,8 @@
 // Layout is declared flat (vptr and base members are padding) until the bases are recovered.
 #pragma once
 
+struct datamap_t;
+
 struct dynpitchvol_t
 {
 	int preset;
@@ -53,7 +55,7 @@ public:
 	void vfunc113();	// slot 113: finds the attached entity (cached as a handle by name, else the ambient itself), and while playing re-emits the sound on its edict (sub_101cdac0), then schedules the next think
 	int sub_101ac670(int flags);	// flags | the dword at +0x4e0 (stub 0x1000d8e1)
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 	bool vfunc136();
 };

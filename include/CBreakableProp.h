@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+struct datamap_t;
+
 struct inputdata_t;
 
 class CBreakableProp
@@ -54,6 +56,6 @@ public:
     int m_nBreakMode;    // 0x76c: 0, 1 or 2 (anything else warns and becomes 2)
     float m_flFadeTime770;    // 0x770
 public:
-    typedef int Datamap82;	// staged: becomes datamap_t *
+    typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
     Datamap82 vfunc82();
 };

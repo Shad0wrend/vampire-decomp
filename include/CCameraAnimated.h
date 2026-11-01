@@ -1,6 +1,8 @@
 // CCameraAnimated: animated camera entity (CBaseAnimating based); only what decompiled code needs.
 #pragma once
 
+struct datamap_t;
+
 // 0x18-byte member objects of CCameraAnimated, released by sub_100cd2d0 (their destructor).
 struct CCameraAnimatedItem
 {
@@ -28,6 +30,6 @@ public:
 public:
 	int vfunc80();
 	int vfunc81();
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 };

@@ -1,6 +1,8 @@
 // CNPC_Crow: crow NPC (base chain not modelled). Only what decompiled code needs.
 #pragma once
 
+struct datamap_t;
+
 #include "Vector.h"
 
 class CBaseEntity;
@@ -72,7 +74,7 @@ public:
 	void sub_1026dc60();	// stub 0x1000d990, called directly
 	void sub_10332aa0(int classId, int disposition, int priority);	// "CBaseCombatCharacter::AddClassRelationship" (stub 0x10013cf5), called directly
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 	int vfunc138();
 	bool vfunc394();

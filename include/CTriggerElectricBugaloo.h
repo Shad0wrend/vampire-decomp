@@ -1,6 +1,8 @@
 // CTriggerElectricBugaloo: only what matched code needs, as plain members (no vtable pointer is declared, so offsets start at 0).
 #pragma once
 
+struct datamap_t;
+
 class CTriggerElectricBugaloo
 {
 public:
@@ -27,7 +29,7 @@ public:
     char m_bGiven059c;    // 0x059c: set once the touching character was given its amount
 public:
     int vfunc33();
-    typedef int Datamap82;	// staged: becomes datamap_t *
+    typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
     Datamap82 vfunc82();
     void vfunc103();	// as in CNPC_VBach (transplant)
 };

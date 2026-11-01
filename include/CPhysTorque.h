@@ -1,6 +1,8 @@
 // CPhysTorque: physics torque entity. Declared flat (bases not recovered); only the vtable head is modelled.
 #pragma once
 
+struct datamap_t;
+
 #include "Vector.h"
 
 class CPhysObjSlots;
@@ -103,6 +105,6 @@ public:
 	virtual void vfunc79();
 	virtual void vfunc80();
 	virtual void vfunc81();
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	virtual Datamap82 vfunc82();
 };

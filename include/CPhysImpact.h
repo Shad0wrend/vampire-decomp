@@ -2,6 +2,8 @@
 // slots up to slot 212 (the ones the code calls are typed).
 #pragma once
 
+struct datamap_t;
+
 #include "CCollisionProperty.h"
 
 #define PI_V1(p) virtual void p();
@@ -36,7 +38,7 @@ public:
 
 	void sub_1000cb8a();	// destructor body
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	virtual Datamap82 vfunc82();
 public:
 	virtual int vfunc117();

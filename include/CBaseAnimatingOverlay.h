@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+struct datamap_t;
+
 struct CAnimationLayer	// 0x30 byte record
 {
 	int m_n00;
@@ -53,7 +55,7 @@ public:
 	int vfunc79();
 	int vfunc80();
 	int vfunc81();
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 	int vfunc267();
 };

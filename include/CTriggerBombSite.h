@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members (no vtable pointer is declared, so offsets start at 0).
 #pragma once
 
+struct datamap_t;
+
 class CBaseEntity;
 class CBasePlayer;
 
@@ -38,7 +40,7 @@ public:
 public:
 	int vfunc33();
 	int vfunc36();
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 	void vfunc103();	// as in CNPC_VBach (transplant)
 };

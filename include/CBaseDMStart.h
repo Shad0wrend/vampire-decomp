@@ -2,13 +2,15 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+struct datamap_t;
+
 class CBaseDMStart
 {
 public:
 	CBaseDMStart *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 	int vfunc147(int);
 };

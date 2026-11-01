@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+struct datamap_t;
+
 class CNPC_VChangBrosClaw
 {
 public:
@@ -9,7 +11,7 @@ public:
 	void vfunc420();	// "CNPC_VChangBrosClaw::NPCInit": scope trace (no entity name), sets the dword at +0x66b8 to 1, then CNPC_VChangBros::vfunc420 (stub 0x10014867)
 	void sub_10014867();	// CNPC_VChangBros::vfunc420, called directly
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 	int vfunc451();
 	bool vfunc452();

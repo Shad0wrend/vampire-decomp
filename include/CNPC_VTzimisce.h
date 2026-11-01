@@ -2,6 +2,8 @@
 // the ones we need are placeholders that keep the slot numbers right.
 #pragma once
 
+struct datamap_t;
+
 #include "Vector.h"
 
 #define VT_SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
@@ -204,7 +206,7 @@ public:
 	virtual void vfunc228(int, int);
 	virtual bool vfunc509();
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	virtual Datamap82 vfunc82();
 	virtual int vfunc138();
 	virtual int vfunc451();

@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+struct datamap_t;
+
 class CNPC_VTaxiDriver
 {
 public:
@@ -29,7 +31,7 @@ public:
 	char m_b6660;	// 0x6660
 public:
 	bool vfunc72(int);
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 	int vfunc138();
 	int vfunc142(int);

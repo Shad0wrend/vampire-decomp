@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+struct datamap_t;
+
 class CAI_DynamicLink
 {
 public:
@@ -19,6 +21,6 @@ public:
 	int m_nDestID;	// 0x458
 	int m_nLinkState;	// 0x45c
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 };

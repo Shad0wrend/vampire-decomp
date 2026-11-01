@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+struct datamap_t;
+
 #include "CGlobalEntityList.h"
 
 struct CInspectionBrushEdict	// the engine edict handed to slot 86: its server unknown sits at +0x40
@@ -26,6 +28,6 @@ public:
 	void sub_100fd270(int pObject);
 	char sub_100b5190();	// stub 0x10014da8
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 };

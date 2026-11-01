@@ -1,6 +1,8 @@
 // CGibShooter: gib shooter entity. Declared standalone: only the members the matched functions touch.
 #pragma once
 
+struct datamap_t;
+
 class CGib;
 class Vector;
 
@@ -28,7 +30,7 @@ public:
     CGib *vfunc241();    // slot 241 "CGibShooter::CreateGib": with the violence_hgibs convar set to "no gibs" returns null, else creates a "gib" entity (warns when it is the wrong class), sets the gib model, +0x730 = 0xf7 and the body from the model's body list
     void sub_100f49e0(CGib *pGib, const Vector &vecShootDir);    // "CGibShooter::InitPointGib": puts the gib at the shooter's origin, gives it the velocity vecShootDir * m_flGibVelocity and a random spin (x 100..200, y 100..300), a life time of 0.95..1.05 times m_flGibLife (the gib thinks at that time when sooner than its next think), then hands it to sub_101cf600
 public:
-    typedef int Datamap82;	// staged: becomes datamap_t *
+    typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
     Datamap82 vfunc82();
     int vfunc242(int, int, int, int, int, int);
 };

@@ -2,6 +2,8 @@
 // until the bases are recovered. Only what decompiled code needs.
 #pragma once
 
+struct datamap_t;
+
 #include "Vector.h"
 
 class CBaseEntity;
@@ -94,7 +96,7 @@ public:
 	void *sub_103615c0();	// stub 0x1000c61c: the hint for task 0x151
 	void *sub_10361730();	// stub 0x10006a1e: the hint for task 0x152
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 	int vfunc451();
 	bool vfunc452();

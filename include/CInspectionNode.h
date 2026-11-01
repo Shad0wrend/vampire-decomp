@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+struct datamap_t;
+
 #include "CEnvParticle.h"
 
 class CInspectionNode : public CEnvParticle
@@ -13,6 +15,6 @@ public:
 	void sub_100fc1e0(int pOwner);	// stub 0x10013ee9
 	void vfunc104();	// slot 104: precaches the "Inspection_Emitter" and "Inspection_Insight_Emitter" particle systems (the first index is kept in the global at 0x10708e3c and in the field at +0x454)
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 };

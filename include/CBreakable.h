@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+struct datamap_t;
+
 struct inputdata_t;
 
 class CBreakable
@@ -32,7 +34,7 @@ public:
 	char m_out0484[0x18];	// OnHealthChanged: a variant output (the variant value first, then the event)
 public:
 	int vfunc74(int);
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 	char vfunc117();
 	bool vfunc223();

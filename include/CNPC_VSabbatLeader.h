@@ -1,6 +1,8 @@
 // CNPC_VSabbatLeader: Sabbat leader NPC. Only the members that decompiled code needs are declared.
 #pragma once
 
+struct datamap_t;
+
 class CEntityVSlots;
 
 struct CNPC_VSabbatLeaderHint
@@ -129,7 +131,7 @@ public:
 	char sub_10269aa0(int condition);	// "HasCondition" (stub 0x10014df8)
 public:
 	bool vfunc70();
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 	int vfunc451();
 	bool vfunc452();

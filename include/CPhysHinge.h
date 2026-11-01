@@ -1,6 +1,8 @@
 // CPhysHinge: physics hinge constraint. Declared flat (bases not recovered); the vtable head and the members the constraint creation reads.
 #pragma once
 
+struct datamap_t;
+
 #include "Vector.h"
 
 struct CPhysBreakableParams	// the engine's constraint_breakableparams_t of this version: strength, force / torque limit and an active flag
@@ -139,6 +141,6 @@ public:
 	virtual void vfunc79();
 	virtual void vfunc80();
 	virtual void vfunc81();
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	virtual Datamap82 vfunc82();
 };

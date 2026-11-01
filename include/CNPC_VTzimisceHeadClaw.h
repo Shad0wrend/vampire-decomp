@@ -1,5 +1,7 @@
 // CNPC_VTzimisceHeadClaw: Tzimisce head claw boss NPC.
 #pragma once
+
+struct datamap_t;
 #include "CNPC_VBaseBoss.h"
 
 class CUnknown1025ddd0;
@@ -67,7 +69,7 @@ public:
 	virtual bool vfunc324();
 	virtual bool vfunc325();
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	virtual Datamap82 vfunc82();
 	virtual bool vfunc452();
 	virtual int vfunc580();

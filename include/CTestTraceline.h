@@ -1,6 +1,8 @@
 // CTestTraceline: test traceline entity. Declared flat (bases not recovered).
 #pragma once
 
+struct datamap_t;
+
 class CTestTraceline
 {
 public:
@@ -25,7 +27,7 @@ public:
 	virtual void vfunc66(); virtual void vfunc67(); virtual void vfunc68(); virtual void vfunc69(); virtual void vfunc70();
 	virtual void vfunc71(); virtual void vfunc72(); virtual void vfunc73(); virtual void vfunc74(); virtual void vfunc75();
 	virtual void vfunc76(); virtual void vfunc77(); virtual void vfunc78(); virtual void vfunc79(); virtual int vfunc80();
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	virtual int vfunc81(); virtual Datamap82 vfunc82(); virtual void vfunc83(); virtual void vfunc84(); virtual void vfunc85();
 	virtual bool vfunc86(int, int, int, int, int); virtual void vfunc87(); virtual void vfunc88(); virtual void vfunc89(); virtual void vfunc90();
 	virtual void vfunc91(); virtual void vfunc92(); virtual void vfunc93(); virtual void vfunc94(); virtual void vfunc95();

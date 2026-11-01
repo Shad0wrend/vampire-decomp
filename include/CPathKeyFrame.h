@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members (the vtable pointer at +0 is not modelled).
 #pragma once
 
+struct datamap_t;
+
 #include "Vector.h"
 
 void sub_1013fdf0(float *pAngles);	// stub 0x10003710 (free, cdecl): normalises a vector of three angles into -180..180
@@ -27,6 +29,6 @@ public:
 	CPathKeyFrame *m_pPrev;	// 0x484
 	float m_flSpeed;	// 0x488
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 };

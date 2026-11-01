@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members (the object is addressed as a plain struct: the vtable pointer is at +0).
 #pragma once
 
+struct datamap_t;
+
 #include "Vector.h"
 
 class CFuncPlatRot
@@ -25,6 +27,6 @@ public:
 	Vector m_vecFinalAngle;	// 0x574
 	Vector m_vecStart;	// 0x580
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 };

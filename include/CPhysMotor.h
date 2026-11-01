@@ -1,5 +1,7 @@
 // CPhysMotor: physics motor entity. Declared flat (bases not recovered); only the vtable head is modelled.
 #pragma once
+
+struct datamap_t;
 #include "Vector.h"
 
 #define CPM_V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
@@ -44,6 +46,6 @@ public:
 	char m_pad047c[4];
 	Vector m_vec480;	// 0x0480
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	virtual Datamap82 vfunc82();
 };

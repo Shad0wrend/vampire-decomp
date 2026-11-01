@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+struct datamap_t;
+
 struct CEnvSoundscapeParams
 {
 	float m_vecPositions[4][3];	// 0x00: origins of the (up to four) named position entities
@@ -26,6 +28,6 @@ public:
 	void sub_101ae7a0();	// slot 134 (the think): finds the player's soundscape and keeps the active one, thinking every 0.25 s while a player is in it (0.5 s extra when it was already the active one and the player left), 1 s without a player
 	char sub_101ae440(void *pPlayer);	// whether the player is inside this soundscape's range (stub 0x1000a669)
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 };

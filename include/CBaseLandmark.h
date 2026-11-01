@@ -2,6 +2,8 @@
 // entity outputs at +0x450 (0x18 bytes each), 0x510 bytes in all. Only what the entity factory needs.
 #pragma once
 
+struct datamap_t;
+
 #include "CPointEntity.h"
 #include "COutputEvent.h"
 
@@ -100,6 +102,6 @@ public:
 	virtual void vfunc79();
 	virtual void vfunc80();
 	virtual void vfunc81();
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	virtual Datamap82 vfunc82();
 };

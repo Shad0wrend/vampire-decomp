@@ -3,6 +3,8 @@
 // vtable and the base members are not modelled, so offsets count from the start of the object).
 #pragma once
 
+struct datamap_t;
+
 class CPlayerResource
 {
 public:
@@ -17,7 +19,7 @@ public:
 public:
 	int vfunc80();
 	int vfunc81();
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 	bool vfunc86(int, int, int, int, int);
 };

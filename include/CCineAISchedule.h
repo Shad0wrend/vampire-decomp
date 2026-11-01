@@ -2,6 +2,8 @@
 // flattened. Only what recovered code needs, as plain members.
 #pragma once
 
+struct datamap_t;
+
 class CCineAISchedule
 {
 public:
@@ -13,7 +15,7 @@ public:
 	int m_n6090;	// 0x6090
 	int m_n6094;	// 0x6094
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 	bool vfunc585();
 };

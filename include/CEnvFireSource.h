@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+struct datamap_t;
+
 class CFire;
 
 class CEnvFireSource
@@ -24,6 +26,6 @@ public:
 	void sub_101306f0();	// provisional, like vfunc103 (transplant)
 	void sub_1010bd70();	// turns the think off: when enabled, clears the enabled byte and the next think time
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 };

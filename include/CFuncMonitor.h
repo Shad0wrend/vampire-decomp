@@ -2,6 +2,8 @@
 // until the bases are recovered. Only what decompiled code needs.
 #pragma once
 
+struct datamap_t;
+
 struct CFuncMonitorHandle
 {
 	unsigned int m_Index;
@@ -30,6 +32,6 @@ public:
 public:
 	int vfunc80();
 	int vfunc81();
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 };

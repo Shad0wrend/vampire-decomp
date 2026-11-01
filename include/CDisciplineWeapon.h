@@ -2,6 +2,8 @@
 // virtual slots so that the virtuals below sit at their real slots (316, 326).
 #pragma once
 
+struct datamap_t;
+
 #define CDW_PAD1(n) virtual void pad##n();
 #define CDW_PAD10(n) CDW_PAD1(n##0) CDW_PAD1(n##1) CDW_PAD1(n##2) CDW_PAD1(n##3) CDW_PAD1(n##4) CDW_PAD1(n##5) CDW_PAD1(n##6) CDW_PAD1(n##7) CDW_PAD1(n##8) CDW_PAD1(n##9)
 #define CDW_PAD100(n) CDW_PAD10(n##0) CDW_PAD10(n##1) CDW_PAD10(n##2) CDW_PAD10(n##3) CDW_PAD10(n##4) CDW_PAD10(n##5) CDW_PAD10(n##6) CDW_PAD10(n##7) CDW_PAD10(n##8) CDW_PAD10(n##9)
@@ -35,6 +37,6 @@ public:
 public:
 	virtual bool vfunc281();
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	virtual Datamap82 vfunc82();
 };

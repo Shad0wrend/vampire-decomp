@@ -1,6 +1,8 @@
 // CNPC_VSheriffMan: sheriff man NPC (derived from CNPC_VVampireBoss at +0x0). Only the functions that decompiled code needs are declared.
 #pragma once
 
+struct datamap_t;
+
 class CEntityVSlots;
 
 class CNPC_VSheriffMan
@@ -85,7 +87,7 @@ public:
 	bool sub_103b0c70(const Vector *pPos, float flMinDist);	// "CNPC_VSheriffMan::PositionClearForTeleport": scope trace (no entity name); false when the position is closer than flMinDist to this entity's origin, closer than 100.0f to the spawn origin (+0x66d4) or, with a live entity behind the handle at +0x628c, closer than flMinDist to that entity's origin; else true
 	void sub_103b1860();	// "CNPC_VSheriffMan::SetTeleportVel": scope trace (no entity name); with a target at +0x5ddc: the velocity towards it (target origin - own origin, normalised) scaled by distance / 1.5 is set as the absolute velocity (sub_100b2770) and the scale is kept at +0x66f0
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 	int vfunc451();
 	bool vfunc452();

@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+struct datamap_t;
+
 #include "Vector.h"
 
 class CWeaponThrown_Chang_Ghost
@@ -44,7 +46,7 @@ public:
 	float m_f0928;	// 0x928
 	EHANDLE m_hEmitter92c;	// 0x92c: the bone tree emitter entity
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 	void vfunc230(int, int);
 	int vfunc362();

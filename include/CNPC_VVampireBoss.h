@@ -1,6 +1,8 @@
 // CNPC_VVampireBoss: vampire boss NPC. Only the members and slots that decompiled code needs are declared (slots as plain members).
 #pragma once
 
+struct datamap_t;
+
 #include "Vector.h"
 
 struct inputdata_t;
@@ -60,7 +62,7 @@ public:
 	void sub_103c6570(CEntityVSlots *pHint, const Vector *pPoint);	// "CNPC_VVampireBoss::DistToHintCenterLine2D_2": scope trace, the hint's origin with z = 0 and its facing direction (AngleVectors of slot 219, z = 0, normalised) are handed with pPoint to sub_103c6680 (the distance of the point to the hint's centre line)
 	void sub_103c6680(const Vector *pOrigin, const Vector *pDirection, const Vector *pPoint);	// "CNPC_VVampireBoss::DistToHintCenterLine2D": the 2D distance of pPoint to the line (stub 0x1000314d)
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 	bool vfunc378(int, int);
 	int vfunc451();

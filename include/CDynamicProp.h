@@ -1,6 +1,8 @@
 // CDynamicProp: dynamic prop entity. Declared flat (bases not recovered); only what the matched functions need.
 #pragma once
 
+struct datamap_t;
+
 #include "CCineNPC.h"
 
 struct inputdata_t;
@@ -122,6 +124,6 @@ public:
 	virtual void vfunc79();
 	virtual int vfunc80();
 	virtual int vfunc81();
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	virtual Datamap82 vfunc82();
 };

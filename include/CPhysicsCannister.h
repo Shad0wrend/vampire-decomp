@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+struct datamap_t;
+
 #include "Vector.h"
 
 class CVDmg_t;
@@ -59,7 +61,7 @@ public:
 	const char *m_pszExplosion1a14;	// 0x1a14: name of the explosion parameters entity
 public:
 	bool vfunc72(int);
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 	bool vfunc158();
 	int vfunc226();

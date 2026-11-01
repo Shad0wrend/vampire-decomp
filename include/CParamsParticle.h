@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+struct datamap_t;
+
 class CParamsParticle
 {
 public:
@@ -14,6 +16,6 @@ public:
 	const char *m_pszParticleName;	// 0x454: the particle file / effect name
 	const char *m_pszAttachment;	// 0x458: the attachment name
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 };

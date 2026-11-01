@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+struct datamap_t;
+
 class CLogicPythonCheck
 {
 public:
@@ -11,6 +13,6 @@ public:
 	char m_pad0000[0x450];
 	const char *m_pszCode;	// 0x450
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 };

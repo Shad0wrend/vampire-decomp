@@ -3,6 +3,8 @@
 // virtual below is not its real slot (375).
 #pragma once
 
+struct datamap_t;
+
 class CNPC_VWolfMorph
 {
 public:
@@ -96,7 +98,7 @@ public:
 	virtual void vfunc79();
 	virtual void vfunc80();
 	virtual void vfunc81();
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	virtual Datamap82 vfunc82();
 	virtual void vfunc83();
 	virtual void vfunc84();

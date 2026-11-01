@@ -1,6 +1,8 @@
 // CDynamicLight: dynamic light entity. Declared flat (bases not recovered); only the vtable head is modelled.
 #pragma once
 
+struct datamap_t;
+
 class CDynamicLight
 {
 public:
@@ -92,6 +94,6 @@ public:
 	virtual void vfunc79();
 	virtual int vfunc80();
 	virtual int vfunc81();
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	virtual Datamap82 vfunc82();
 };

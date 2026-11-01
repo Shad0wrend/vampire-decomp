@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+struct datamap_t;
+
 class CBaseEntity;
 
 class CWeaponThrown_Chang_Energy_Ball
@@ -25,7 +27,7 @@ public:
 	char m_pad091d[0x924 - 0x91d];
 	EHANDLE m_h924;	// 0x924: the entity whose think is set
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 	int vfunc142(int);
 	int vfunc362();

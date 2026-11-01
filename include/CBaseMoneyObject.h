@@ -2,6 +2,8 @@
 // Layout is declared flat (vptr and base members are padding) until the bases are recovered.
 #pragma once
 
+struct datamap_t;
+
 class CBaseMoneyObject
 {
 public:
@@ -16,7 +18,7 @@ public:
 	CBaseMoneyObject *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_10013a57();	// as in CPhysForce (transplant)
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 	int vfunc298(int, int);
 };

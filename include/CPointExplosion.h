@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members (no vptr is modelled, so the offsets below are the real ones).
 #pragma once
 
+struct datamap_t;
+
 class CPointExplosion
 {
 public:
@@ -15,6 +17,6 @@ public:
 	char m_pad0208[0x450 - 0x208];
 	const char *m_name450;	// 0x450: the name of the explosion parameter entity
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 };

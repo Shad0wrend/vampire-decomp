@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+struct datamap_t;
+
 #include "Vector.h"
 
 class CBaseEntity;
@@ -37,6 +39,6 @@ public:
 	int m_n478;	// 0x478
 	int m_n47c;	// 0x47c
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 };

@@ -2,6 +2,8 @@
 // Layout is declared flat (vptr and base members are padding) until the bases are recovered.
 #pragma once
 
+struct datamap_t;
+
 #include "COutputEvent.h"
 
 class CBaseEntity;
@@ -51,7 +53,7 @@ public:
 public:
 	int vfunc36();
 	float vfunc37();
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 	int vfunc117();
 	void vfunc273();

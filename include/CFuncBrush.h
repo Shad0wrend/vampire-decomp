@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+struct datamap_t;
+
 #include "CBaseEntitySlots.h"
 
 // The CBaseEntity vtable out to slot 223 (CBaseEntitySlots stops at 193), to call the slots of a brush entity.
@@ -25,7 +27,7 @@ public:
 	void vfunc103();	// slot 103 "CFuncBrush::Spawn": move type 8 (slot 93), inlined SetSolid(1) and, when the dword at +0x450 is 1, AddSolidFlags(4) on the collision property at +0x270 (both with scope traces), the model name from slot 9 into slot 105, sub_1013e420 when the dword at +0x454 is set, flag 0x1000000 for an unnamed entity or one without the dword at +0x124, sub_100b3b00, slot 223
 	void sub_1013e420();	// stub 0x10003cb5: when slot 241 reports true calls slot 77
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 	char vfunc117();
 	bool vfunc128();
