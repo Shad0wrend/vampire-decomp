@@ -44,7 +44,7 @@ struct CDialogTable_t
 {
 	char m_pad0000[0x104];
 	int m_nEntries;	// 0x104
-	char m_pad0108[4];
+	int m_nAllocated;	// 0x108: entries allocated at m_pEntries
 	CDialogEntry_t *m_pEntries;	// 0x10c, sorted for bsearch
 };
 
