@@ -22,6 +22,30 @@ char CWeaponPhysCannon::vfunc312()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040daa0 size=0x2b
+#include "CWeaponPhysCannon.h"
+
+struct CGargoyleMemberUnit {
+	void sub_10011a77();
+};
+
+struct CGargoyleBaseUnit {
+	void sub_10013a57();
+};
+
+void __cdecl sub_10009fc5(void *p);
+
+// TARGET: CWeaponPhysCannon::vfunc5
+CBaseCombatWeapon *CWeaponPhysCannon::vfunc5(unsigned int flags)
+{
+	((CGargoyleMemberUnit *)((char *)this + 0x96c))->sub_10011a77();
+	((CGargoyleBaseUnit *)this)->sub_10013a57();
+	if (flags & 1)
+		sub_10009fc5(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040dc40 size=0x18
 #include "CWeaponPhysCannon.h"
 
