@@ -8388,6 +8388,7 @@
 0x1000f718 func   ?vfunc367@CWeaponMelee_MingXiaoMelee@@UAEHHMM@Z CWeaponMelee_MingXiaoMelee::vfunc367
 0x1000f722 func   ?sub_10315a60@@YGHH@Z sub_10315a60
 0x1000f73b func   ?sub_10214200@CPropHaunted@@QAEXPBD@Z CPropHaunted::sub_10214200
+0x1000f745 func   ?sub_10205ca0@CVTraitDependencyValue_t@@QAEPAV1@H@Z CVTraitDependencyValue_t::sub_10205ca0
 0x1000f74a func   ?sub_101b52d0@CUnknown101b52d0@@QAEEH@Z CUnknown101b52d0::sub_101b52d0
 0x1000f754 func   ?vfunc42@CBaseVampireSkillEntity@@QAEXPAX@Z CBaseVampireSkillEntity::vfunc42
 0x1000f763 func   ?vfunc5@CBaseViewModel@@QAEPAV1@I@Z CBaseViewModel::vfunc5

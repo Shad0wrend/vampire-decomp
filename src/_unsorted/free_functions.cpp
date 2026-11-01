@@ -100072,6 +100072,21 @@ CVTraitDependencyValue_t *CVTraitDependencyValue_t::sub_10205c70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10205ca0 size=0x1e
+#include "CVTraitDependencyValue_t.h"
+
+extern int vt_10483d00[];
+
+// TARGET: CVTraitDependencyValue_t::sub_10205ca0
+CVTraitDependencyValue_t *CVTraitDependencyValue_t::sub_10205ca0(int a)
+{
+	m_18.sub_102056d0();
+	m_vptr = vt_10483d00;
+	sub_10002563();
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10205dc0 size=0x7e
 #include "vampire.h"
 #include "CUnknown10205dc0.h"
