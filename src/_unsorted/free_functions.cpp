@@ -92092,6 +92092,22 @@ VKeyValues *VKeyValues::sub_101f2d70(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f2f00 size=0x1d
+typedef void (*PFN_109f383c)(int, void *);
+extern PFN_109f383c g_109f383c;
+
+// TARGET: sub_101f2f00
+void __cdecl sub_101f2f00(int a, char *p)
+{
+	char *q;
+	if (p == 0)
+		q = 0;
+	else
+		q = p + ((int *)*(int *)p)[1];
+	g_109f383c(a, q);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2f30 size=0x23
 extern int g_1073aa80;
 int sub_10004273(int a, void *b, int c);
