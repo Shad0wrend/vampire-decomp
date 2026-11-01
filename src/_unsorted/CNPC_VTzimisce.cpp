@@ -159,6 +159,20 @@ void CNPC_VTzimisce::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b9120 size=0x2d
+#include "CNPC_VTzimisce.h"
+#include "CAI_BaseNPCTroika.h"
+
+float CNPC_VTzimisce::vfunc418(float a)
+{
+	if ((int)a != -1000001)
+	{
+		return ((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc418(a);
+	}
+	return 150.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b91d0 size=0x71
 #include "CNPC_VTzimisce.h"
 #include "CNPC_VBaseBoss.h"
