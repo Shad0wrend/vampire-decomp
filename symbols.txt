@@ -2210,6 +2210,7 @@
 0x10004d90 func   ?sub_1022c180@@YIHPADHH@Z sub_1022c180
 0x10004d95 func   ?sub_102293f0@CUnknown10229550@@QAEXM@Z CUnknown10229550::sub_102293f0
 0x10004d9a func   ?vfunc43@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc43
+0x10004d9f func   ?sub_103f5780@CBaseMoneyObject@@QAEPAV1@XZ CBaseMoneyObject::sub_103f5780
 0x10004da4 func   ?sub_103bcaf0@CNPC_VTzimisce@@QAEHH@Z CNPC_VTzimisce::sub_103bcaf0
 0x10004da9 func   ?sub_1026d7b0@CUnknown1026d7b0@@QAEXHHHH@Z CUnknown1026d7b0::sub_1026d7b0
 0x10004dae func   ?sub_104285d0@@YAXPAUStudioHdr@@HPAM1@Z sub_104285d0

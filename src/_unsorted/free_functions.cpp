@@ -162668,6 +162668,21 @@ int sub_103f5750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f5780 size=0x1c
+#include "CBaseMoneyObject.h"
+
+extern int vt_104e84bc[];
+
+// TARGET: CBaseMoneyObject::sub_103f5780
+CBaseMoneyObject *CBaseMoneyObject::sub_103f5780()
+{
+	sub_103f42b0();
+	*(int **)this = vt_104e84bc;
+	m_n08d4 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f5800 size=0x7
 struct CUnknown103f5800 { int sub_103f5800(); };
 int CUnknown103f5800::sub_103f5800()
