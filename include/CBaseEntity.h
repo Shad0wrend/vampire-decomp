@@ -118,6 +118,7 @@ public:
 	char sub_100ab020(int a, int b, int c, int d, int e);	// slot 86 "CBaseEntity::ShouldTransmit": scope trace (entity name); true while the force-transmit time at +0x90 is ahead of curtime, false with bit 6 of +0x19c, else the visibility test of the network property at +0x2d4 for the viewer edict b
 	const char *sub_1000ea11();
 	void sub_10033b80(void (CBaseEntity::*pfnThink)());	// "CBaseEntity::PhysicsDispatchThink": scope trace (entity name), runs the think function pointer and, with the think_limit convar set, reports (DevMsg, at most once a second) or hands to the owner's slot 582 a think that took longer than the limit
+	bool sub_10033f60(int nThinkMethod);	// "CBaseEntity::PhysicsRunThink": scope trace (entity name) and the "CBaseEntity_PhysicsRunThink" profiler scope; runs the main think (+0x17c / +0x178, unless the method is 2) and, unless the method is 1, every think context (vector at +0x1b8, count at +0x1c4, index at +0x1cc); false as soon as one of them says the entity is gone
 	void sub_1003ffa0();	// "CBaseEntity::PhysicsSimulateChildren": scope trace (entity name or NULL ENTITY) and the "CBaseEntity_PhysicsSimulateChildren" profiler scope around PhysicsSimulate (sub_10040390) of every entity in the move child list (+0x260, next at +0x264)
 	void sub_10040390();	// "CBaseEntity::PhysicsSimulate", called directly by sub_1003ffa0 (it calls sub_1003ffa0 back)
 	void sub_10026c70();	// "CBaseEntity::Think": calls the think function pointer at +0x118
