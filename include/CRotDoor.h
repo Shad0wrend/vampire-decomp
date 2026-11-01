@@ -23,6 +23,7 @@ public:
 	void sub_100efab0();	// CBaseDoor::vfunc104 (stub 0x100076b2), called directly
 	void sub_100f19b0(Vector vecAngles, Vector *pMins, Vector *pMaxs);	// stub 0x10011216: the volume the door sweeps for the angles
 	void sub_100f3f20();	// stub 0x1000d53f, called directly
+	void sub_100f0860();	// CBaseDoor::sub_100f0860 (stub 0x10010db1), the closed think
 	void sub_100f3390(CBaseEntity *pEntity);	// "CRotDoor::OpenAwayFromEntity": scope trace, the distances of the entity's centre to the two end volume centres (+0x6b0 / +0x6d4) pick which end angles (+0x52c, or their negation) the door turns to (sub_101c17e0 at the door's speed); the byte at +0x655 inverts the choice
 	void sub_100ee4e0(int a, char b);	// CBaseDoor::sub_100ee4e0 (stub 0x1000ae20), called directly
 	void sub_100f11b0();	// CBaseDoor::sub_100f11b0 (stub 0x10005ddf), the arrival think
