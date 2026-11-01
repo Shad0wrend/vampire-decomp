@@ -116526,6 +116526,21 @@ bool CUtlRBTreeBig::sub_1025d3a0(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025d700 size=0x1c
+struct SymMap {
+	unsigned short sub_10249980(unsigned int key, int value);
+};
+extern int g_1090fbe0;
+extern int g_1090fbe4;
+
+// TARGET: sub_1025d700
+void __cdecl sub_1025d700(unsigned int key, int value)
+{
+	((SymMap *)g_1090fbe0)->sub_10249980(key, value);
+	g_1090fbe4++;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025d730 size=0x11
 namespace lifted {
 extern int g_1090fbe0;
