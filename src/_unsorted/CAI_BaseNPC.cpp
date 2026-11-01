@@ -843,6 +843,32 @@ void CAI_BaseNPC::vfunc311(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102725d0 size=0x5f
+#include "CAI_BaseNPC.h"
+
+struct CAI_BaseNPCView310 : CAI_BaseNPC
+{
+	char pad0004[0xfec - 4];
+	int m_nActivity;
+	int m_nIdealActivity;
+	char padff4[0x5ccc - 0xff4];
+	int m_nSeq;
+	int m_nA;
+	int m_nB;
+};
+
+// TARGET: CAI_BaseNPC::vfunc310
+void CAI_BaseNPC::vfunc310(int act)
+{
+	CAI_BaseNPCView310 *p = (CAI_BaseNPCView310 *)this;
+	if (p->m_nActivity != act && (act == 0 || p->m_nActivity != 2)) {
+		p->m_nIdealActivity = act;
+		sub_10272130(act, &p->m_nSeq, &p->m_nA, &p->m_nB);
+		sub_10272490(p->m_nIdealActivity, p->m_nSeq, p->m_nA, p->m_nB);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10272790 size=0x21
 // TARGET: CAI_BaseNPC::vfunc466
 bool CAI_BaseNPC::vfunc466()
