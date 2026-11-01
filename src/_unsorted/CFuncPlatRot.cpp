@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10580658;
 }
-CFuncPlatRot::Datamap82 CFuncPlatRot::vfunc82()
+datamap_t *CFuncPlatRot::vfunc82()
 {
-    return (CFuncPlatRot::Datamap82)&lifted::g_10580658;
+    return (datamap_t *)&lifted::g_10580658;
 }
 // END FUNCTION
 
