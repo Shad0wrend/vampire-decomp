@@ -6977,6 +6977,7 @@
 0x1000caae func   ?sub_1033e2b0@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_1033e2b0
 0x1000cab3 func   _events_player events_player
 0x1000cab8 func   ?sub_101f02b0@CHolder101f02b0@@QAE_NPAUCSource101f02b0@@@Z CHolder101f02b0::sub_101f02b0
+0x1000cac2 func   ?sub_1016b090@CBasePlayer@@QAEXI@Z CBasePlayer::sub_1016b090
 0x1000cac7 func   ?sub_103e1c00@@YAHPAD@Z sub_103e1c00
 0x1000cacc func   ?sub_10203bb0@@YAXXZ sub_10203bb0
 0x1000cad1 func   ?vfunc284@CBaseCombatCharacter@@UAEXXZ CBaseCombatCharacter::vfunc284

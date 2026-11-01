@@ -63821,6 +63821,21 @@ float __cdecl sub_1016af30(int n, CSumElem_1016af30 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016b090 size=0x37
+// TARGET: CBasePlayer::sub_1016b090
+#include "CBasePlayer.h"
+
+void CBasePlayer::sub_1016b090(unsigned int buttons)
+{
+    char *p = (char *)this;
+    *(unsigned int *)(p + 0x2094) = *(unsigned int *)(p + 0x2088);
+    *(unsigned int *)(p + 0x2088) = buttons;
+    unsigned int changed = *(unsigned int *)(p + 0x2094) ^ buttons;
+    *(unsigned int *)(p + 0x208c) = changed & buttons;
+    *(unsigned int *)(p + 0x2090) = ~buttons & changed;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016b0e0 size=0x37
 // TARGET: CBasePlayer::sub_1016b0e0
 #include "CBasePlayer.h"
