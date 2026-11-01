@@ -60704,6 +60704,18 @@ char __stdcall sub_101611e0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10161380 size=0x1f
+#include "vampire.h"
+// TARGET: sub_10161380
+char __fastcall sub_10161380(char *p)
+{
+    int a = *(int *)(p + 0xff0);
+    if (a >= 0x75 && (a <= 0x93 || a == 0x9d0))
+        return 1;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101613b0 size=0x51
 #include "CBasePlayerUnit326.h"
 struct CBasePlayerUnit326View { char pad[0xff0]; int m_nState; };
