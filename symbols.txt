@@ -4994,6 +4994,7 @@
 0x10009502 func   ?vfunc5@CWeaponRanged_Rifle_RemingtonBach@@QAEPAV1@I@Z CWeaponRanged_Rifle_RemingtonBach::vfunc5
 0x10009507 func   ?sub_102508f0@CUnknown102508f0@@QAEPAUCUnknown102508f0_Elem@@H@Z CUnknown102508f0::sub_102508f0
 0x1000950c func   ?sub_101a05f0@CSave@@QAEXPBXH@Z CSave::sub_101a05f0
+0x10009516 func   ?sub_102c8a90@CUnknown102c8a90@@QAEXXZ CUnknown102c8a90::sub_102c8a90
 0x1000951b func   ?sub_101e90f0@CUnknown10739d08@@QAEMPAVCBaseCombatCharacter@@@Z CUnknown10739d08::sub_101e90f0
 0x1000952f func   ?vfunc363@CWeaponRanged_Pistol_Anaconda@@QAEHXZ CWeaponRanged_Pistol_Anaconda::vfunc363
 0x10009539 func   ?sub_102464d0@@YAHHH@Z sub_102464d0
