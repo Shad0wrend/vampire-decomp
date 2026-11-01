@@ -102,6 +102,8 @@ public:
 
 	virtual bool vfunc99(int pRay, int mask, int pTrace);	// slot 99 \"CBaseAnimating::TestCollision\": scope trace (entity name); a ray (byte +0x30) or the custom ray / box solid flags (IsSolidFlagSet, inlined scope traces) go through slot 100 (TestHitboxes) and answer true unless the trace is a clean miss (fraction >= 1.0, no allsolid / startsolid); otherwise warns (Warning for SOLID_VPHYSICS, slot 92 == 6, DevMsg for the others) and answers false
 
+	void vfunc105(const char *pModelName);	// slot 105 "CBaseAnimating::SetModel"
+
 	// Slot 249, called directly so far; declared as a plain member.
 	float vfunc249();	// "CBaseAnimating::GetIdealAccel": slot 248 + constant
 	int vfunc252(int a, int b, int c);	// "CBaseAnimating::SelectWeightedSequenceForStat": scope trace, then sub_1008dc40(a, -1)
