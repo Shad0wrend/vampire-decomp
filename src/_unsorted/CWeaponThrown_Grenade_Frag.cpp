@@ -5,9 +5,9 @@
 namespace lifted {
 extern char g_1067caec;
 }
-int CWeaponThrown_Grenade_Frag::vfunc82()
+CWeaponThrown_Grenade_Frag::Datamap82 CWeaponThrown_Grenade_Frag::vfunc82()
 {
-    return (int)&lifted::g_1067caec;
+    return (CWeaponThrown_Grenade_Frag::Datamap82)&lifted::g_1067caec;
 }
 // END FUNCTION
 
