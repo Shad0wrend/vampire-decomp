@@ -4289,6 +4289,7 @@
 0x100087ce func   ?sub_100579f0@@YIXPAH@Z sub_100579f0
 0x100087d3 func   ?sub_1027dc10@CSub@@QAE_NPAUCPEnt@@HH@Z CSub::sub_1027dc10
 0x100087d8 func   _trigger trigger
+0x100087dd func   ?sub_10147a60@CUnknown10147a60@@QAEXXZ CUnknown10147a60::sub_10147a60
 0x100087e2 func   ?sub_101e22b0@CUnknown101e22b0@@QAE_NXZ CUnknown101e22b0::sub_101e22b0
 0x100087ec func   ?sub_1002e580@@YAPAXPAVCBaseEntity@@HPBVVector@@1@Z sub_1002e580
 0x100087f1 func   ?sub_1022ea80@@YAXPAX@Z sub_1022ea80

@@ -58026,6 +58026,25 @@ int CUnknown10147a30::sub_10147a30(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10147a60 size=0x1d
+#include "CEventQueue.h"
+#include "CUnknown101e3af0.h"
+
+extern CEventQueue g_106e7050;
+extern CUnknown101e3af0 g_10739a4c;
+
+struct CUnknown10147a60 {
+	void sub_10147a60();
+};
+
+// TARGET: CUnknown10147a60::sub_10147a60
+void CUnknown10147a60::sub_10147a60()
+{
+	g_106e7050.sub_100cf420((CBaseEntity *)this);
+	g_10739a4c.sub_101e3c80((CBaseCombatCharacter *)this, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10147c10 size=0xa6
 struct ISaveRestoreOps;
 struct datamap_t;
