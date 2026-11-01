@@ -72,20 +72,17 @@ public:
 			m_iCurBit = m_nDataBits;
 			m_bOverflow = true;
 		} else {
-			int iCurBitMasked = m_iCurBit & 31;
 			int iDWord = m_iCurBit >> 5;
-			unsigned long *pOut = m_pData + iDWord;
+			int iCurBitMasked = m_iCurBit & 31;
+			unsigned long *pOut = &m_pData[iDWord];
 			*pOut &= g_106d1990[iCurBitMasked][numbits];
-			pOut = m_pData + iDWord;
-			*pOut |= curData << iCurBitMasked;
+			m_pData[iDWord] |= curData << iCurBitMasked;
 			int nBitsWritten = 32 - iCurBitMasked;
 			if (nBitsWritten < numbits) {
-				curData >>= nBitsWritten;
 				iCurBitMasked = (m_iCurBit + nBitsWritten) & 31;
-				pOut = m_pData + iDWord + 1;
+				pOut = &m_pData[iDWord + 1];
 				*pOut &= g_106d1990[iCurBitMasked][numbits - nBitsWritten];
-				pOut = m_pData + iDWord + 1;
-				*pOut |= curData << iCurBitMasked;
+				m_pData[iDWord + 1] |= (curData >> nBitsWritten) << iCurBitMasked;
 			}
 			m_iCurBit += numbits;
 		}
