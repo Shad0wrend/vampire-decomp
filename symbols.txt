@@ -6190,6 +6190,7 @@
 0x1000b53c func   ?vfunc362@CWeaponRanged_Rifle_Crossbow@@QAEHXZ CWeaponRanged_Rifle_Crossbow::vfunc362
 0x1000b541 func   ?sub_101dfa00@CUnknown101dff00@@QAE_NHPAXPBD@Z CUnknown101dff00::sub_101dfa00
 0x1000b546 func   ??0StatDefault60@@QAE@H@Z StatDefault60::StatDefault60
+0x1000b54b func   ?sub_1015ddd0@@YIXPAX@Z sub_1015ddd0
 0x1000b550 func   ?sub_102ddc40@CUnknown102ddc40@@QAEXXZ CUnknown102ddc40::sub_102ddc40
 0x1000b555 func   _item_k_oceanhouse_sewer_key item_k_oceanhouse_sewer_key
 0x1000b55a func   ?sub_101e9170@CUnknown101e9170@@QAEHPAUCUnknown101e9170Char@@HH@Z CUnknown101e9170::sub_101e9170
