@@ -1214,6 +1214,7 @@
 0x1000306c func   ?sub_1017cf90@@YIPAXPAUHolder@@@Z sub_1017cf90
 0x10003071 func   ?sub_103adbe0@@YIPAXPAX@Z sub_103adbe0
 0x10003076 func   _info_node_sabbat_arch info_node_sabbat_arch
+0x10003080 func   ?sub_10082c90@CSceneEntity@@QAEXXZ CSceneEntity::sub_10082c90
 0x10003085 func   ?vfunc318@CWeaponPhysCannon@@UAEXXZ CWeaponPhysCannon::vfunc318
 0x1000308a func   ?vfunc5@CResearchBook_LG_FIREARMS@@QAEPAV1@I@Z CResearchBook_LG_FIREARMS::vfunc5
 0x1000308f func   ?sub_101fdf40@TInfo@@QAE_NXZ TInfo::sub_101fdf40
