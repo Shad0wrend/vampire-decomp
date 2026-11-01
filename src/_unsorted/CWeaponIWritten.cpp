@@ -58,6 +58,17 @@ int CWeaponIWritten::vfunc329()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040b400 size=0x20
+#include "CWeaponIWritten.h"
+
+// TARGET: CWeaponIWritten::vfunc321
+void CWeaponIWritten::vfunc321()
+{
+	if (vfunc309())
+		vfunc307(0xb6);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040b430 size=0x3
 #include "CWeaponIWritten.h"
 bool CWeaponIWritten::vfunc325()

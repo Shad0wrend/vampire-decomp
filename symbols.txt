@@ -140,6 +140,7 @@
 0x100013c0 func   ?sub_101b6680@@YA_NPAG0@Z sub_101b6680
 0x100013c5 func   ?vfunc17@CCollisionProperty@@UAEXXZ CCollisionProperty::vfunc17
 0x100013ca func   ?sub_10227230@@YIXPADHH@Z sub_10227230
+0x100013cf func   ?vfunc321@CWeaponIWritten@@UAEXXZ CWeaponIWritten::vfunc321
 0x100013d4 func   ?vfunc25@CSave@@UAEXPBMH@Z CSave::vfunc25
 0x100013d9 func   ?sub_100ad850@@YIHPAVCBaseEntity@@@Z sub_100ad850
 0x100013de func   ?vfunc113@CPropKeypad@@QAEXXZ CPropKeypad::vfunc113
