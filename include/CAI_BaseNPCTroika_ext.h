@@ -108,5 +108,6 @@
 	bool sub_10295ed0(CBaseEntity *pHint);	// stub 0x10006050, hint types 0x283c / 0x283d
 	bool sub_102961a0(CBaseEntity *pHint);	// stub 0x100036cf, hint type 0x28a0
 	void sub_102bf770();
+	void sub_102b7110(int a);	// finds a hint node (+0x5ddc) for the NPC, stub 0x1000bfaa
 	int sub_102b7370();	// schedule pick that looks for a hint node / enemy to approach (called by slots 604 / 605)
 	bool sub_102a9770(unsigned int flags);	// true when none of the flags is set in the dword at +0x14b8	// alternate action end (stub-less, called by slot 531 / 442): when the ideal activity (+0xff0) is the navigator's task id (+0x5d34) the NPC's sub_1027a6c0 result becomes the ideal activity (sub_10272650); clears the byte at +0x1a40, lets the navigator finish (sub_102ee2a0) and clears +0x63ec
