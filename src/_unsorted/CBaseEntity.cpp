@@ -179,6 +179,17 @@ float CBaseEntity::vfunc49()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026890 size=0x2a
+#include "CBaseEntity.h"
+#include "CEntitySoundOriginView.h"
+
+// TARGET: CBaseEntity::vfunc51
+void CBaseEntity::vfunc51(int unused, Vector *pOut)
+{
+	*pOut = ((CEntitySoundOriginView *)this)->WorldSpaceCenter();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100268d0 size=0x7
 namespace lifted {
 extern float g_104454c4;
