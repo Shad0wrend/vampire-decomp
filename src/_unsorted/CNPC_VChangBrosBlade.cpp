@@ -28,9 +28,9 @@ int CNPC_VChangBrosBlade::vfunc451()
 namespace lifted {
 extern char g_1062fe20;
 }
-CNPC_VChangBrosBlade::Datamap82 CNPC_VChangBrosBlade::vfunc82()
+datamap_t *CNPC_VChangBrosBlade::vfunc82()
 {
-    return (CNPC_VChangBrosBlade::Datamap82)&lifted::g_1062fe20;
+    return (datamap_t *)&lifted::g_1062fe20;
 }
 // END FUNCTION
 
