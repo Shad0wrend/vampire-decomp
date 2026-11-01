@@ -30,6 +30,7 @@ public:
 	void vfunc442(int *pEvent);	// slot 442 (plain member): the anim event handler: events 0x36 / 0x37 go to slot 618, 0x122..0x124 start activity 1 and stamp the time at +0x5db4 (curtime + the float at +0x6330), 0x130 remembers the position (slot 220) of the entity of the handle at +0x6678 at +0x5dd0 and runs sub_10273e80(0); then the Troika base
 	int sub_102a1910(int *pEvent);	// CAI_BaseNPCTroika::vfunc442 (stub 0x10010695), called directly
 	void sub_10289ee0(int activity);	// stub 0x10014524: starts the activity
+	int sub_102b12f0(int schedule);	// CAI_BaseNPCTroika::vfunc440 \"TranslateSchedule\" (stub 0x10001997), called directly (tail jump) by the slot 440 override 0x103c3560
 	void vfunc444(int *pEvent);	// slot 444
 	void sub_102aacf0(int *pEvent);	// CAI_BaseNPCTroika::vfunc444 (stub 0x10015c2b), called directly
 	bool sub_10280a50();	// CAI_BaseNPC::AutoMovement (stub 0x1000cf6d), called directly
