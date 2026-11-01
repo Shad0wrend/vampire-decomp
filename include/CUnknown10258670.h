@@ -3,36 +3,13 @@
 // name records numbered from 0; a static default list / record (key -1) is the fallback.
 #pragma once
 
-class CUnknown10258670Entry	// a name record: key at +0, name at +4
-{
-public:
-	int m_key;
-	const char *m_name;
-
-	CUnknown10258670Entry(int key);	// stub 0x10005ab0
-	~CUnknown10258670Entry();	// stub 0x1000354e
-};
-
-class CUnknown10258670List	// a list of name records: count at +0x14, pointer array at +0x18, key at +0x1c
-{
-public:
-	char m_pad0000[0x14];
-	int m_nEntries;	// 0x14
-	CUnknown10258670Entry **m_ppEntries;	// 0x18
-	int m_key;	// 0x1c
-
-	CUnknown10258670List(int key);	// stub 0x1000aa9c
-	~CUnknown10258670List();	// stub 0x10014574
-};
+#include "CUnknown10206400.h"	// the name lists are its vendor records (CUnknown10206400, entries CUnknown10206340: same constructors), g_1074f018 / g_1074f01c are declared there
 
 struct CUnknown10258670Character	// the part of the character the key is read from
 {
 	char m_pad0000[0xe30];
 	int m_nKey;	// 0xe30
 };
-
-extern int g_1074f018;	// the number of lists
-extern CUnknown10258670List **g_1074f01c;	// the lists
 
 #define CU258670_V(n) virtual void vfunc##n();
 #define CU258670_V10(p) CU258670_V(p##0) CU258670_V(p##1) CU258670_V(p##2) CU258670_V(p##3) CU258670_V(p##4) CU258670_V(p##5) CU258670_V(p##6) CU258670_V(p##7) CU258670_V(p##8) CU258670_V(p##9)

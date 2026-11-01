@@ -1,13 +1,6 @@
+// CBeamHead: the CBeam part of the laser's constructor chain (constructor 0x100bac50), defined in CEnvLaser.h:
+// one definition per name. Known members past the vtable (from an earlier draft): an array of 10 attachment
+// handles at +0x468 and the end entity handle at +0x4e4.
 #pragma once
-#include "CConstraintAnchor.h"
 
-class CBeamHead : public CConstraintAnchorBase
-{
-public:
-	CBeamHead();
-	virtual void vfunc0();
-	char m_pad0004[0x468 - 4];
-	int m_hAttached[10];	// 0x468
-	char m_pad0490[0x4e4 - 0x490];
-	int m_hEnd;	// 0x4e4
-};
+#include "CEnvLaser.h"
