@@ -25,9 +25,9 @@ int CFuncMonitor::vfunc81()
 namespace lifted {
 extern char g_10570580;
 }
-CFuncMonitor::Datamap82 CFuncMonitor::vfunc82()
+datamap_t *CFuncMonitor::vfunc82()
 {
-    return (CFuncMonitor::Datamap82)&lifted::g_10570580;
+    return (datamap_t *)&lifted::g_10570580;
 }
 // END FUNCTION
 
