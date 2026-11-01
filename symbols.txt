@@ -9525,6 +9525,7 @@
 0x100116bc func   ?sub_100cd760@@YAPAHXZ sub_100cd760
 0x100116c1 func   ?sub_10357180@CUnknown10357180@@QAEHH@Z CUnknown10357180::sub_10357180
 0x100116c6 func   ?sub_100466d0@S100466d0@@QAEPAU1@HHH@Z S100466d0::sub_100466d0
+0x100116cb func   ?sub_103ee630@@YIXPAUCUnkGrenade103ee630@@@Z sub_103ee630
 0x100116d5 func   ?sub_10363780@@YAHXZ sub_10363780
 0x100116da func   ?sub_10428750@@YAPBDHH@Z sub_10428750
 0x100116df func   ?vfunc5@CBreakModelsPrecached@@UAEXXZ CBreakModelsPrecached::vfunc5
