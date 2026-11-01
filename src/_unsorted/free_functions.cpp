@@ -107266,6 +107266,23 @@ void __stdcall sub_10227440(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102274b0 size=0x20
+#include "vampire.h"
+int sub_101cd9e0(int a);
+struct CUnk102274b0
+{
+    void sub_10330ce0(int a);
+};
+// TARGET: sub_102274b0
+void __stdcall sub_102274b0(int a)
+{
+    CUnk102274b0 *p = (CUnk102274b0 *)sub_101cd9e0(1);
+    if (p != 0) {
+        p->sub_10330ce0(0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102277a0 size=0x111
 #include "CUnknown10750cb4.h"
 

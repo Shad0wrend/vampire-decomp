@@ -10383,6 +10383,7 @@
 0x10012cc9 func   ?sub_103f4fe0@CItemContainerLock@@QAEXH@Z CItemContainerLock::sub_103f4fe0
 0x10012cce func   ?vfunc247@CBaseDoor@@UAEMXZ CBaseDoor::vfunc247
 0x10012cdd func   ?sub_101d7000@Loader@@QAE_NPBD@Z Loader::sub_101d7000
+0x10012cec func   ?sub_102274b0@@YGXH@Z sub_102274b0
 0x10012cf1 func   ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z sub_100ada20
 0x10012cf6 func   ?vfunc580@CNPC_VMingXiaoTentacle@@UAEHXZ CNPC_VMingXiaoTentacle::vfunc580
 0x10012cfb func   ?sub_1028b0b0@@YIDPAXHHPAH@Z sub_1028b0b0
