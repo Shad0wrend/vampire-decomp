@@ -11,7 +11,7 @@ struct CBaseFlexFileData	// a loaded expression file; only the tables the flex c
 	int m_nIndexTable;	// 0xa8: byte offset of the table that receives the controller indices
 
 	const char *ControllerName(int i) { return (char *)this + *(int *)((char *)this + m_nNameTable + i * 4); }
-	int &ControllerIndex(int i) { return *(int *)((int)this + i * 4 + m_nIndexTable); }
+	int &ControllerIndex(int i) { char *pEntry = (char *)this + i * 4; return *(int *)(pEntry + m_nIndexTable); }
 };
 
 struct CBaseFlexFileRec	// 0x84 byte cache record
