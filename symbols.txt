@@ -4712,6 +4712,7 @@
 0x10009039 func   ?sub_1005cbc0@CTEBeamRingPoint@@QAEPAV1@H@Z CTEBeamRingPoint::sub_1005cbc0
 0x1000903e func   ?vfunc237@CBaseEntity@@QAEHXZ CBaseEntity::vfunc237
 0x10009043 func   ?vfunc26@CAI_StandoffBehavior@@UAEXHH@Z CAI_StandoffBehavior::vfunc26
+0x10009048 func   ?vfunc319@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc319
 0x1000904d func   _light_environment light_environment
 0x10009052 func   ?sub_100c5720@@YAMHHH@Z sub_100c5720
 0x1000905c func   ?sub_101c0cc0@@YAPAHXZ sub_101c0cc0
