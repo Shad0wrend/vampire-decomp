@@ -103951,6 +103951,25 @@ void __fastcall sub_1021bc20(char *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021bc60 size=0x1e
+struct CUnk1021bc60 {
+	char m_pad0000[0x9f0];
+	int m_9f0;
+	void sub_1021bc60();
+	void sub_1021bc90(int a);
+};
+
+// TARGET: CUnk1021bc60::sub_1021bc60
+void CUnk1021bc60::sub_1021bc60()
+{
+	if (m_9f0 > 0)
+	{
+		m_9f0--;
+	}
+	sub_1021bc90(m_9f0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021bec0 size=0xca
 #include <string.h>
 #include "CUnknown1021bec0.h"

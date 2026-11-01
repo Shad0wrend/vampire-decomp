@@ -11358,6 +11358,7 @@
 0x10014966 func   _item_a_lt_cloth item_a_lt_cloth
 0x1001496b func   ?sub_101e09c0@CUnk101e09c0@@QAEPADPAX@Z CUnk101e09c0::sub_101e09c0
 0x10014970 func   ?vfunc117@CPropButton@@UAEHXZ CPropButton::vfunc117
+0x1001497a func   ?sub_1021bc60@CUnk1021bc60@@QAEXXZ CUnk1021bc60::sub_1021bc60
 0x1001497f func   ?vfunc103@CTimerEntity@@QAEXXZ CTimerEntity::vfunc103
 0x1001498e func   ?vfunc2@CPositionInterpolator_Linear@@QAEXHPBVVector@@@Z CPositionInterpolator_Linear::vfunc2
 0x10014993 func   ?vfunc321@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc321
