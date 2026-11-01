@@ -66,7 +66,9 @@ public:
 	int m_nLine1b34;	// 0x1b34: its line
 	char m_pad1b38[0x5c38 - 0x1b38];
 	struct CVZombie5c38 *m_p5c38;	// 0x5c38
-	char m_pad5c3c[0x6264 - 0x5c3c];
+	char m_pad5c3c[0x5cc0 - 0x5c3c];
+	int m_nState5cc0;	// 0x5cc0
+	char m_pad5cc4[0x6264 - 0x5cc4];
 	float m_flPlayerDist6264;	// 0x6264: the distance to the player
 	char m_pad6268[0x628c - 0x6268];
 	unsigned int m_hEnemy628c;	// 0x628c: entity handle of the target
