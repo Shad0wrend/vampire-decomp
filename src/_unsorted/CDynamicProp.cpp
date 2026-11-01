@@ -5,9 +5,9 @@
 namespace lifted {
 extern char g_1058d4f8;
 }
-CDynamicProp::Datamap82 CDynamicProp::vfunc82()
+datamap_t *CDynamicProp::vfunc82()
 {
-    return (CDynamicProp::Datamap82)&lifted::g_1058d4f8;
+    return (datamap_t *)&lifted::g_1058d4f8;
 }
 // END FUNCTION
 
