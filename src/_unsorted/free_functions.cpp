@@ -118849,9 +118849,12 @@ char CBaseCombatWeapon::sub_10256250()
 
 // FUNCTION: 0x10256280 size=0x1c
 namespace block_10256200 {
-unsigned char __fastcall sub_10256200(unsigned char *p)
+unsigned char __fastcall sub_10256200(unsigned char *self)
 {
-	return (p[0x778] >> 1) & 1;
+	unsigned char v = self[0x778];
+	v >>= 1;
+	v &= 1;
+	return v;
 }
 }
 using namespace block_10256200;
