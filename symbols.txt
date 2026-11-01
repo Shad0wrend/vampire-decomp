@@ -11005,6 +11005,7 @@
 0x10013908 func   ?sub_100c65b0@@YAMXZ sub_100c65b0
 0x1001390d func   ?vfunc0@CChoreoQueueItem@@QAEPAV1@I@Z CChoreoQueueItem::vfunc0
 0x10013912 func   ?vfunc133@CBaseToggle@@UAEXXZ CBaseToggle::vfunc133
+0x10013912 func   ?vfunc133@CPropDoorknob@@UAEXXZ CPropDoorknob::vfunc133
 0x10013917 func   _info_hint info_hint
 0x1001391c func   ?vfunc0@CDebugSaveRestoreOps@@UAEXHH@Z CDebugSaveRestoreOps::vfunc0
 0x10013921 func   ?vfunc103@CPhysBox@@UAEXXZ CPhysBox::vfunc103
