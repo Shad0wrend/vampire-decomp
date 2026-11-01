@@ -20,9 +20,9 @@ bool CFuncBrush::vfunc128()
 namespace lifted {
 extern char g_10579aa8;
 }
-int CFuncBrush::vfunc82()
+CFuncBrush::Datamap82 CFuncBrush::vfunc82()
 {
-    return (int)&lifted::g_10579aa8;
+    return (CFuncBrush::Datamap82)&lifted::g_10579aa8;
 }
 // END FUNCTION
 
