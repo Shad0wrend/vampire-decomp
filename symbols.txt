@@ -1479,6 +1479,7 @@
 0x1000371f func   ?vfunc77@CAI_Hint@@UAEXXZ CAI_Hint::vfunc77
 0x10003724 func   ?vfunc5@CItemGRingSilver@@QAEPAV1@I@Z CItemGRingSilver::vfunc5
 0x1000372e func   ?sub_101c9b30@@YAHXZ sub_101c9b30
+0x10003738 func   ?sub_101a6a40@@YAXXZ sub_101a6a40
 0x1000373d func   _item_w_unarmed item_w_unarmed
 0x10003742 func   ?vfunc451@CNPC_VChangBros@@UAEPBDXZ CNPC_VChangBros::vfunc451
 0x10003751 func   ?vfunc0@CTEArmorRicochet@@UAEHXZ CTEArmorRicochet::vfunc0
