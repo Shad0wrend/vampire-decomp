@@ -21,9 +21,9 @@ CEnvSoundscape *CEnvSoundscape::vfunc5(unsigned int flags)
 namespace lifted {
 extern char g_10596db4;
 }
-int CEnvSoundscape::vfunc82()
+CEnvSoundscape::Datamap82 CEnvSoundscape::vfunc82()
 {
-    return (int)&lifted::g_10596db4;
+    return (CEnvSoundscape::Datamap82)&lifted::g_10596db4;
 }
 // END FUNCTION
 
