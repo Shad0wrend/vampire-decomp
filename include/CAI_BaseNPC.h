@@ -273,6 +273,7 @@ public:
 	void sub_10270180(void *pObject, char bTrack);	// stub 0x10006217, called directly: remembers where the entity pObject is (position at +0x5bc8, tracking flag +0x5bc5)
 	void sub_1027d8d0(CBaseEntity *pEnt);	// run for an entity that moves faster than 50 units (|vx| + |vy| of its velocity at +0x3bc / +0x3c0): asks the dev flag object (slot 1), sets condition 0x74, resets the motor's (+0x5d44) look state (sub_102e0b40) and hands it pEnt's slot 220 position (sub_102e2020)
 	CBaseEntity *sub_1027a310(const char *pszItemName, Vector vecPos, Vector vecAng);	// "CAI_BaseNPC::DropItem": DevMsg "DropItem() - No item name!" for no name; creates the item entity at vecPos / vecAng (sub_100a99d0), clears its parent when it has one (bit 12 of the flags at +0x268), gives it this NPC's velocity (+0x3bc), then a random 0..100 impulse; null with a DevMsg when the item cannot be created
+	void sub_10269fb0(int condition);	// sets the condition bit in the array at +0x5c8c (ids below 1000000000 and -1 are translated through slot 580 first)
 	void sub_10269eb0(int condition);	// sets the condition bit in the array at +0x5c74 (ids below 1000000000 and -1 are translated through slot 580 first)
 	void sub_10266690(void *pInfo, void *pOther);
 	char sub_10266b10(int a, int b, float f);	// stub 0x10013c32, called by slot 562 with (a, b, 0.92f)
