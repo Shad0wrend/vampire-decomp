@@ -333,7 +333,9 @@ public:
 	EHANDLE m_h647c;
 	char m_pad6480[0x6495 - 0x6480];
 	char m_b6495;
-	char m_pad6496[0x64bc - 0x6496];
+	char m_b6496;
+	char m_b6497;
+	char m_pad6498[0x64bc - 0x6498];
 	int m_n64bc;
 	char m_b64c0;
 	char m_pad64c1[0x64c8 - 0x64c1];
