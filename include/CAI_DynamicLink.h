@@ -9,6 +9,7 @@ public:
 	void sub_10009101();
 	void sub_102ccee0();	// destructor body: vtable, unlinks from the global list (head at 0x1092541c), then the base destructor
 	void sub_102ccce0();	// "CAI_DynamicLink::SetLinkState": finds the link between the two nodes (ids at +0x454 / +0x458) in the AI network and sets or clears its off bit (0x1000) from the state at +0x45c; complains when a node id is invalid or the link does not exist
+	void sub_102ccc80(int a);	// stub-less member: sets the state at +0x45c to 1 and runs sub_102ccce0 the first time (the argument is unused)
 	bool sub_102ccc10();	// whether the link's source node (id +0x454; a bad id bumps the global 0x106c994c) has a connection to the destination node id (+0x458)
 	CAI_DynamicLink *sub_102cce60();	// the constructor body: the constraint anchor base, the vtable, both node ids -1, the state 0, then the link is pushed on the global list (head at 0x1092541c)
 
