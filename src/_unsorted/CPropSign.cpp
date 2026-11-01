@@ -5,9 +5,9 @@
 namespace lifted {
 extern char g_105ab83c;
 }
-int CPropSign::vfunc82()
+CPropSign::Datamap82 CPropSign::vfunc82()
 {
-    return (int)&lifted::g_105ab83c;
+    return (CPropSign::Datamap82)&lifted::g_105ab83c;
 }
 // END FUNCTION
 
