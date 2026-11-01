@@ -20,7 +20,7 @@ struct CRopeLink	// a pair of positions the constraint pulls together
 class CBaseRopePhysicsNext	// the next helper the constraints are handed on to (only slot 1 is typed)
 {
 public:
-	virtual void vfunc0();
+	virtual void vfunc0(CRopeNode *pNodes, int iNode, Vector *pAccel);
 	virtual void vfunc1(CRopeNode *pNodes, int nNodes);
 };
 
