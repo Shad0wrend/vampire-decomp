@@ -48313,6 +48313,63 @@ void CUnk10103830::sub_10103830(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10103860 size=0x3a
+#include "CBaseEntity.h"
+
+#define CSV_ROW(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CUnk10103860View
+{
+	CSV_ROW(b0)
+	CSV_ROW(b1)
+	CSV_ROW(b2)
+	CSV_ROW(b3)
+	CSV_ROW(b4)
+	CSV_ROW(b5)
+	CSV_ROW(b6)
+	CSV_ROW(b7)
+	CSV_ROW(b8)
+	CSV_ROW(b9)
+	CSV_ROW(b10)
+	CSV_ROW(b11)
+	CSV_ROW(b12)
+	CSV_ROW(b13)
+	CSV_ROW(b14)
+	CSV_ROW(b15)
+	CSV_ROW(b16)
+	CSV_ROW(b17)
+	CSV_ROW(b18)
+	CSV_ROW(b19)
+	CSV_ROW(b20)
+	virtual void c210();
+	virtual void c211();
+	virtual void c212();
+	virtual void c213();
+	virtual void c214();
+	virtual void c215();
+	virtual void c216();
+	virtual void c217();
+	virtual void c218();
+	virtual void *s219();
+};
+
+namespace block_10103860 {
+	struct CUnk10103860Unit : CBaseEntity {
+		void sub_10103860(int a);
+	};
+}
+
+void sub_101cde40(int a, int b, int c, int d, float e, int f);
+
+// TARGET: block_10103860::CUnk10103860Unit::sub_10103860
+void block_10103860::CUnk10103860Unit::sub_10103860(int a)
+{
+	void *pRes = ((CUnk10103860View *)this)->s219();
+	float fVal = *(float *)((char *)pRes + 4);
+	sub_101cde40(a, *(int *)((char *)this + 0x450), *(int *)((char *)this + 0x454), *(int *)((char *)this + 0x458), fVal, 5);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10103c80 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
