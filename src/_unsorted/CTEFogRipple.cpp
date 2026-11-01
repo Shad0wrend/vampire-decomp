@@ -37,6 +37,17 @@ void CTEFogRipple::vfunc3(const Vector *pOrigin, const Vector *pAngles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100626d0 size=0x39
+#include "CTEFogRipple.h"
+#include "CTEMetalSparks.h"
+#include "IVEngineServerFull.h"
+
+void CTEFogRipple::vfunc4(CRecipientFilter *pFilter, float flDelay)
+{
+	engine->vfunc103((int)pFilter, *(int *)&flDelay, this, ((CTEMetalSparks *)this)->vfunc0()->m_pTable, ((CTEMetalSparks *)this)->vfunc0()->m_ClassID);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10062790 size=0x6
 #include "CTEFogRipple.h"
 namespace lifted {

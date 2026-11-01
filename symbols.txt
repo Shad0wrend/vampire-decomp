@@ -1289,6 +1289,7 @@
 0x100032b5 func   ?vfunc5@CItemGPishaBook@@QAEPAV1@I@Z CItemGPishaBook::vfunc5
 0x100032ba func   ?sub_1030b3c0@@YAHXZ sub_1030b3c0
 0x100032bf func   ?sub_1017e760@CBasePlayer@@QAEXH@Z CBasePlayer::sub_1017e760
+0x100032c4 func   ?vfunc4@CTEFogRipple@@UAEXPAVCRecipientFilter@@M@Z CTEFogRipple::vfunc4
 0x100032c9 func   ?sub_103f1d90@@YAHXZ sub_103f1d90
 0x100032ce func   ?sub_100db4a0@@YAXXZ sub_100db4a0
 0x100032d3 func   ?sub_1023af10@@YAHXZ sub_1023af10
