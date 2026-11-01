@@ -147256,6 +147256,30 @@ float CUnknown1033b980::sub_1033b980()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033c340 size=0x2b1
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+
+// TARGET: CBaseCombatCharacter::sub_1033c340
+void CBaseCombatCharacter::sub_1033c340(int nCount)
+{
+	ScopeTrace trace("CBaseCombatCharacter::HealthHeal", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	for (; nCount > 0; nCount--) {
+		int nCur = GetActiveStatList()->sub_102012d0(0xf);
+		if (nCur > 0) {
+			int nMax = GetActiveStatList()->sub_102012d0(0x11);
+			if (nCur < nMax) {
+				int nBlood = GetActiveStatList()->sub_102012d0(0x10);
+				int nFull = nCur <= nBlood;
+				GetActiveStatList()->sub_10201100(0xf, 1);
+				GetActiveStatList()->sub_10201100(0x10, nFull);
+				m_iHealth = c348();
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033c6b0 size=0x86
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };

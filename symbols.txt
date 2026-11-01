@@ -5991,6 +5991,7 @@
 0x1000b348 func   ?sub_101a8130@CCineNPC@@QAEPAV1@XZ CCineNPC::sub_101a8130
 0x1000b34d func   ?vfunc5@CGargoyleTalisman@@QAEPAV1@I@Z CGargoyleTalisman::vfunc5
 0x1000b352 func   ?vfunc265@CPropButton@@QAEXPAX0HM@Z CPropButton::vfunc265
+0x1000b357 func   ?sub_1033c340@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_1033c340
 0x1000b361 func   ?sub_103159d0@@YIXPAUSquad@@HPAUEnt@@@Z sub_103159d0
 0x1000b366 func   ?sub_101ce920@@YAXHPAUCEdictHolder@@@Z sub_101ce920
 0x1000b370 func   ?sub_103352b0@CBaseCombatCharacter@@QAEXAAUinputdata_t@@@Z CBaseCombatCharacter::sub_103352b0
