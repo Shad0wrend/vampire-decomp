@@ -60,6 +60,8 @@ public:
 	void sub_103c4f40(int arg);	// CNPC_VVampire::vfunc144 (stub 0x1000b8a2), called directly
 	void sub_1038f600(char bOn);	// sets / clears bit 5 of the flags at +0x14b8
 	void sub_1038e720(Vector vecDir);	// picks the reaction to a hit from the direction: a downward-pointing hit (z of 30 or more) and a hit from the side other than the front arc (30..330 degrees from the facing) run sub_1038e640 / sub_1038e6a0 / sub_1038e6e0 / sub_1038e670 (none in the states 0x28, 0x30, 0xb0, 0x4b, 0x1171)
+	void vfunc259(int *pEvent);	// slot 259: handles the animation events 1 / 2 / 3 (man-bat screech / sound tables at 0x10640d10, 0x10642b2c, 0x10640d1c), else CNPC_VHuman::vfunc259
+	void sub_100076bc(int *pEvent);	// CNPC_VHuman::vfunc259 (stub 0x100076bc), called directly
 	void sub_1038fa90(struct inputdata_t *pInput);	// input handler: stores the input's integer (0 unless its type is 4) at +0x6698, sub_1038c170(1) and starts schedule 0x160
 	void sub_102ae750(int schedule, int a);	// stub 0x1000198d
 	void sub_1038e640();	// stub 0x10012e4f
