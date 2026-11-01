@@ -130,7 +130,10 @@ public:
 	float m_flNextThink;	// 0x17c
 	char m_pad0180[0x450 - 0x180];
 	const char *m_pszSceneFile450;	// 0x450: the scene file name (null when unset)
-	char m_pad0454[0x498 - 0x454];
+	char m_pad0454[0x48c - 0x454];
+	int m_n48c;	// 0x48c
+	int m_n490;	// 0x490: the value handed to the extra animation slot, replaced by m_n494 for a character that is not male
+	int m_n494;	// 0x494
 	char m_bPlaying498;	// 0x498
 	char m_bPlaying499;	// 0x499
 	char m_pad049a[2];
