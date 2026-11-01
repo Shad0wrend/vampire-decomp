@@ -359,6 +359,22 @@ int CNPC_VMingXiaoTentacle::vfunc409()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039ed50 size=0x35
+#include "CNPC_VMingXiaoTentacle.h"
+
+void sub_1009d940(void *p, int n);
+void sub_1009d960(void *p, int n);
+
+int CNPC_VMingXiaoTentacle::vfunc126(int a)
+{
+	void *member = (char *)this + 0x6674;
+	sub_1009d940(member, 3);
+	int r = sub_100025cc(a);
+	sub_1009d960(member, 3);
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039eda0 size=0x28
 void __cdecl sub_10015311(void *p, int mode);
 

@@ -9594,6 +9594,7 @@
 0x10011405 func   ?sub_103d9e00@CNPC_VWerewolfUnit@@QAEXPAVCEntityVSlots@@PAVVector@@PAM2@Z CNPC_VWerewolfUnit::sub_103d9e00
 0x10011414 func   ?sub_1012d720@CHudTimer@@QAEXXZ CHudTimer::sub_1012d720
 0x1001141e func   ?sub_100bf480@CBitString@@QAEXH@Z CBitString::sub_100bf480
+0x10011423 func   ?vfunc126@CNPC_VMingXiaoTentacle@@UAEHH@Z CNPC_VMingXiaoTentacle::vfunc126
 0x10011428 func   ?vfunc2@CTEWorldDecal@@UAEPAV1@I@Z CTEWorldDecal::vfunc2
 0x1001142d func   ?vfunc336@CNPC_VTzimisceRunner@@QAEXXZ CNPC_VTzimisceRunner::vfunc336
 0x10011432 func   ?sub_101cf390@@YAXHHH@Z sub_101cf390
