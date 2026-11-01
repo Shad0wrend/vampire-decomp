@@ -105,4 +105,5 @@
 	void sub_10146e20(int a, int b);	// stub 0x10012562 (function 0x10146e20): last step of slot 449, called with the dword at +0xff0
 	void sub_10329560();
 	void sub_100b3580(unsigned int flags);	// "CBaseEntity::AddFlag" (stub 0x10003620), called directly	// CBaseCombatCharacter member (stub 0x1000acc2), called directly
+	void sub_10177ba0();	// releases the held state: when the field at +0x2304 is set, RemoveFlag(0x4020), SetMoveType(3, 0) (slot 93) and the field cleared
 	char vfunc321(int unused);	// slot 321 (plain member): re-arms the random view punch timer (+0x1da8) when it is due, then punches the view by a random angle scaled by the player and punch convars (slot 169)
