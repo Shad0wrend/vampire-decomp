@@ -11710,6 +11710,7 @@
 0x10014605 func   ?sub_102237c0@CUnknown102237c0@@QAEXH@Z CUnknown102237c0::sub_102237c0
 0x1001460a func   ?sub_102101d0@CUnit10210250@@QAE_NPAVCEntityVSlots@@0@Z CUnit10210250::sub_102101d0
 0x1001460f func   ?sub_10093e30@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_10093e30
+0x10014614 func   ?sub_101cd940@@YAXPAD@Z sub_101cd940
 0x10014619 func   ?sub_10215960@CPropButton@@QAEXPAUinputdata_t@@@Z CPropButton::sub_10215960
 0x1001461e func   ?sub_1012c9c0@@YAPAUTEnt@@PAU1@@Z sub_1012c9c0
 0x10014628 func   ?vfunc119@CBaseCombatCharacter@@UAEXXZ CBaseCombatCharacter::vfunc119

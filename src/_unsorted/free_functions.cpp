@@ -84122,6 +84122,19 @@ int sub_101cd340(CBaseEntity *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cd940 size=0x17
+void sub_101cd8c0(void *p);
+
+// TARGET: sub_101cd940
+void sub_101cd940(char *p)
+{
+    if (p)
+    {
+        sub_101cd8c0(p + 0x2d4);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cd970 size=0x4e
 struct CEntRemoveView {
 	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
