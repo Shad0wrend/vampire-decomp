@@ -10247,6 +10247,7 @@
 0x10012783 func   ?sub_101fb340@CVDmg_t@@QAE_NH@Z CVDmg_t::sub_101fb340
 0x10012788 func   ?vfunc142@CPhysicsCannister@@QAEHPAUCCannisterTakeInfo@@@Z CPhysicsCannister::vfunc142
 0x1001278d func   ?sub_100c1e20@@YAXPADHHH@Z sub_100c1e20
+0x10012792 func   ?sub_101cc9a0@CUnknown101cc9a0@@QAE_NH@Z CUnknown101cc9a0::sub_101cc9a0
 0x10012797 func   ?sub_10161ed0@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_10161ed0
 0x1001279c func   ?sub_1013cb80@@YAXABVVector@@00AAV1@PAM@Z sub_1013cb80
 0x100127a1 func   ?vfunc3@CTEDynamicLight@@UAEXABVVector@@ABVQAngle@@@Z CTEDynamicLight::vfunc3

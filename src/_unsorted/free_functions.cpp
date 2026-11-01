@@ -81043,6 +81043,30 @@ CFlaggedEntitiesEnum *CFlaggedEntitiesEnum::sub_101cc950(CBaseEntity **pList, in
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cc9a0 size=0x27
+class CUnknown101cc9a0
+{
+public:
+	int m_pad00;		// 0x0
+	int *m_pData;		// 0x4
+	int m_capacity;		// 0x8
+	int m_pad0c;		// 0xc
+	int m_count;		// 0x10
+
+	bool sub_101cc9a0(int value);
+};
+
+// TARGET: CUnknown101cc9a0::sub_101cc9a0
+bool CUnknown101cc9a0::sub_101cc9a0(int value)
+{
+	if (m_count >= m_capacity)
+		return false;
+	m_pData[m_count] = value;
+	m_count++;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cca80 size=0x46
 #include "CFlaggedEntitiesEnum.h"
 struct CSpatialPartition101cca80 {
