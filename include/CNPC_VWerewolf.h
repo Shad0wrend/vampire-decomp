@@ -488,7 +488,7 @@ public:
 	virtual void vfunc189();
 	virtual void vfunc190();
 	virtual void vfunc191();
-	virtual void vfunc192();
+	virtual Vector vfunc192();	// slot 192 (+0x300): a Vector by value (hidden result pointer), the origin used for the footstep sounds
 	virtual void vfunc193();
 	virtual void vfunc194();
 	virtual void vfunc195();
