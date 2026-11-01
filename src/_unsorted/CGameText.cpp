@@ -17,9 +17,9 @@ int CGameText::vfunc173(int a0, int a1, int a2, int a3)
 namespace lifted {
 extern char g_105aab6c;
 }
-CGameText::Datamap82 CGameText::vfunc82()
+datamap_t *CGameText::vfunc82()
 {
-    return (CGameText::Datamap82)&lifted::g_105aab6c;
+    return (datamap_t *)&lifted::g_105aab6c;
 }
 // END FUNCTION
 
