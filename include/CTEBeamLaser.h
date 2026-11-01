@@ -2,6 +2,7 @@
 #pragma once
 
 #include "ServerClass.h"
+#include "CTEBaseBeam.h"
 
 class CTEBeamLaser
 {
