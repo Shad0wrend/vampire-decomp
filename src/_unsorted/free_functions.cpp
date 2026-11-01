@@ -73772,6 +73772,22 @@ extern "C" GP *npc_payphone()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aa980 size=0x21
+#include "globalvars.h"
+struct CThinkCall_101aa980
+{
+    void sub_100ac4e0(void *fn, int a, int b);
+};
+void sub_10015b68();
+
+// TARGET: sub_101aa980
+void __fastcall sub_101aa980(char *self)
+{
+    ((CThinkCall_101aa980 *)self)->sub_100ac4e0((void *)sub_10015b68, 0, 0);
+    *(float *)(self + 0x17c) = gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab1e0 size=0x26
 void sub_101ab1e0(int unk0, unsigned char *pSrc, unsigned int *pDst)
 {
