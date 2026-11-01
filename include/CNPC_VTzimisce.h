@@ -169,6 +169,8 @@ public:
 	int sub_103bde40(int activity);	// slot 375 (NPC_TranslateActivity): while the 10381be0 check passes, activity 1 / 9 / 0x13 map to 0xfd / 0xff (0xfc / 0xfe when the byte at +0x6688 is set); everything else goes to the base implementation
 	CNPC_VTzimisce *vfunc5(unsigned int flags);	// scalar deleting destructor: destructs the vectors at +0x6690 and +0x665c, the base (sub_1028d610), and frees the object when bit 0 of flags is set
 	void sub_1028d610();	// base class destructor body (stub 0x100123af)
+	void sub_1028d230();	// CAI_BaseNPCTroika constructor body (stub 0x100157df), called first by the constructor
+	CNPC_VTzimisce *sub_103b6c60();	// constructor (called by npc_VTzimisce 0x103b6bf0): Troika ctor, UtlMem::sub_1039ae10(0, 0) on the vector at +0x665c, CNPC_VBaseBoss vtables (0x104bd2cc / 0x104bd2a0 at +0 / +0x19b0), handles +0x6670 / +0x6684 = -1, +0x6690..+0x66a0 = 0, member at +0x66bd (sub_103b7020), CNPC_VTzimisce vtables (0x104cb934 / 0x104cb904), grow size 8 at +0x6698 and a 0x40 byte alloc at +0x6690 when the alloc count is below 8, +0x66a0 = +0x6690, +0x1568 = +0x156c = 10, byte +0x65f9 = 1
 	void sub_1008c170(char *pszOut, int *pEvent);	// CBaseAnimating::vfunc241 (stub 0x10002793), called directly
 	void sub_1029a0b0();	// CNPC_VBaseBoss::vfunc420 (stub 0x100023dd), called directly
 	int sub_103bcc00(int a);	// picks a schedule: with the byte at +0x568 clear and condition 10 or 13 set, schedule 0x174 (recording the source line 0xbd6 at +0x1b30 / +0x1b34); with condition 0x5d set, schedule 0x170 (line 0xbde, bit 30 of +0x5d8c cleared); else the base choice sub_103bc820
