@@ -114,6 +114,9 @@ public:
 	int m_n0000;
 	int m_nEntries;	// 0x04
 	void **m_ppEntries;	// 0x08: the entries the data files fill, one per file
+	// (members not declared: +0x14 is a dword sub_101e22b0 tests for 1, +0x20 a dword sub_101e3560 clears; adding them broke 0x101e2f50)
+
+	void sub_101e3560(int id, class CBaseCombatCharacter *pChar);	// stub 0x1000dba2, ret 8: "prepare the effect of discipline id on the character": the entry m_ppEntries[sub_101e12a0(id)] (nothing for -1) becomes the current entry (global 0x10739a74); unless pChar->sub_1033d2f0(id) (it already has the discipline) it AddDiscFlag(id, 0.1f, pChar, -1) (sub_1033cfb0), the entry's instant source (+0xa4) notes the hit (sub_101dd090(pChar, id)), this+0x20 = 0, pChar->AddMiscFlag(0x200000) (sub_1033c6b0); with the entry's byte +0x35 it inserts a combat sound (sub_101bac90, cdecl: type 1, pChar->vfunc220(), the int global 0x1072bc40, 0.2f, the byte global 0x1072bcb0, pChar); and for a character with the object at +0xa8, when the user message type global 0x10726054 is non-zero, sends it reliably to that player (CSingleUserRecipientFilter filter(pPlayer); filter.MakeReliable(); engine->vfunc65(&filter, g_10726054); engine->vfunc67(index of the entry); engine->vfunc66())
 
 	bool sub_101e10e0(const char *name, int *pIndex);	// opens the data file `name` (stub 0x1000bb9a) and walks its "DisciplineTgt" nodes: each node is parsed into the entry m_ppEntries[(*pIndex)++] (sub_101e08d0); false (after a Msg) when the file cannot be opened or an entry is missing
 	void sub_101e0f00();	// counts the "vdata\system\DisciplineTgt_*.txt" files, then loads each DisciplineTgt_%03d.txt (Msg when one cannot be opened)
