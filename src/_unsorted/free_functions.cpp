@@ -155069,6 +155069,18 @@ void CUnknown10398630::sub_10398630(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10398680 size=0x1f
+#include "vampire.h"
+extern const char *g_106433ac[];
+// TARGET: sub_10398680
+const char *__stdcall sub_10398680(int i)
+{
+    if (i < 0 && i >= 6)
+        return g_106433ac[0];
+    return g_106433ac[i];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10398870 size=0xf
 // TARGET: sub_10398870
 bool __fastcall sub_10398870(char *pThis)

@@ -2483,6 +2483,7 @@
 0x1000547a func   ?sub_100462d0@CSix100462d0@@QAEPAU1@PAU1@@Z CSix100462d0::sub_100462d0
 0x1000547f func   ?sub_1042e310@@YAHXZ sub_1042e310
 0x10005484 func   ?sub_102c0010@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::sub_102c0010
+0x1000548e func   ?sub_10398680@@YGPBDH@Z sub_10398680
 0x10005498 func   ?vfunc331@CWeaponIGeneric@@UAEABVVector@@XZ CWeaponIGeneric::vfunc331
 0x1000549d func   ?sub_1022ea60@@YAXXZ sub_1022ea60
 0x100054a2 func   ?vfunc5@CFunc_Dust@@QAEPAV1@I@Z CFunc_Dust::vfunc5
