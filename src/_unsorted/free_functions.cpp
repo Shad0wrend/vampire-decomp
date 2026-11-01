@@ -76707,6 +76707,30 @@ void CFloatUnit::sub_101bb6f0(float flValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bb730 size=0x20
+#include "vampire.h"
+struct CUnk101bb730
+{
+    float m_flA;  // 0x00
+    float m_flB;  // 0x04
+    char m_pad0008[4];
+    char m_b0c;  // 0x0c
+    unsigned char sub_101bb730();
+};
+// TARGET: CUnk101bb730::sub_101bb730
+unsigned char CUnk101bb730::sub_101bb730()
+{
+    if (m_b0c != 0) {
+        m_b0c = 0;
+        return 1;
+    }
+    if (m_flA != m_flB) {
+        return 1;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bb760 size=0x23
 float __cdecl sub_1013d400(float a, float b, float c);
 

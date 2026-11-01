@@ -11438,6 +11438,7 @@
 0x100149c5 func   ?vfunc5@CBaseCombatCharacter@@QAEPAV1@I@Z CBaseCombatCharacter::vfunc5
 0x100149cf func   _phys_spring phys_spring
 0x100149d4 func   ?sub_10170e80@CUnk10170e80@@QAEXPBD@Z CUnk10170e80::sub_10170e80
+0x100149d9 func   ?sub_101bb730@CUnk101bb730@@QAEEXZ CUnk101bb730::sub_101bb730
 0x100149f2 func   ?vfunc4@CTETracer@@UAEXPAXH@Z CTETracer::vfunc4
 0x100149f7 func   ?vfunc460@CNPC_VCamera@@QAEHXZ CNPC_VCamera::vfunc460
 0x100149fc func   ?sub_101eb1d0@CUnknown101eb1d0@@QAEXXZ CUnknown101eb1d0::sub_101eb1d0
