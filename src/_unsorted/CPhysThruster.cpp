@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10537024;
 }
-CPhysThruster::Datamap82 CPhysThruster::vfunc82()
+datamap_t *CPhysThruster::vfunc82()
 {
-    return (CPhysThruster::Datamap82)&lifted::g_10537024;
+    return (datamap_t *)&lifted::g_10537024;
 }
 // END FUNCTION
 
