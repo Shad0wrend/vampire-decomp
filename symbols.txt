@@ -1192,6 +1192,7 @@
 0x10003099 func   ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z sub_100aa680
 0x1000309e func   ?sub_10289c90@@YIXPAH@Z sub_10289c90
 0x100030b2 func   ?vfunc67@CGameRules@@UAEPBDH@Z CGameRules::vfunc67
+0x100030bc func   ?sub_102c2a70@@YIXPADH0@Z sub_102c2a70
 0x100030c1 func   ?sub_1026b7a0@Vector@@QBE?AV1@ABV1@@Z Vector::sub_1026b7a0
 0x100030c6 func   ?sub_100fe150@CUnknown100fe0c0@@QAEXM@Z CUnknown100fe0c0::sub_100fe150
 0x100030cb func   ?vfunc144@CNPC_VManBat@@QAEXH@Z CNPC_VManBat::vfunc144

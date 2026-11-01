@@ -126495,6 +126495,19 @@ void CAI_BaseNPCTroika::sub_102c2a30(inputdata_t *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c2a70 size=0x21
+// TARGET: sub_102c2a70
+void __fastcall sub_102c2a70(char *self, int dummy, char *data)
+{
+    char v;
+    if (*(int *)(data + 0x18) == 5)
+        v = *(char *)(data + 8);
+    else
+        v = 0;
+    *(char *)(self + 0x63d9) = v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c2ab0 size=0x42
 #include "CAI_BaseNPCTroika.h"
 #include "inputdata_t.h"
