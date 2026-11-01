@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_1053f0b0;
 }
-CDynamicLight::Datamap82 CDynamicLight::vfunc82()
+datamap_t *CDynamicLight::vfunc82()
 {
-    return (CDynamicLight::Datamap82)&lifted::g_1053f0b0;
+    return (datamap_t *)&lifted::g_1053f0b0;
 }
 // END FUNCTION
 
