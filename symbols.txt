@@ -295,6 +295,7 @@
 0x100017c1 func   ?sub_1013c090@@YAXMMMH@Z sub_1013c090
 0x100017c6 func   ?vfunc437@CNPC_VMingXiaoTentacle@@UAEHXZ CNPC_VMingXiaoTentacle::vfunc437
 0x100017cb func   _npc_VCop npc_VCop
+0x100017d0 func   ?sub_1020abc0@@YAXPAD@Z sub_1020abc0
 0x100017da func   _npc_VRat npc_VRat
 0x100017df func   ?sub_102a9800@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_102a9800
 0x100017e4 func   ?sub_100b7780@@YAHXZ sub_100b7780

@@ -105374,6 +105374,22 @@ CBaseVampireSkillEntity *CBaseVampireSkillEntity::sub_1020aa70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020abc0 size=0x21
+void sub_1020ac00(int a);
+
+// TARGET: sub_1020abc0
+void sub_1020abc0(char *p)
+{
+    int v;
+    if (*(int *)(p + 0x18) == 4) {
+        v = *(int *)(p + 8);
+    } else {
+        v = 0;
+    }
+    sub_1020ac00(v);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020ac00 size=0x3a
 typedef void (__fastcall *CUnknownVFunc272)(void *pThis);
 
