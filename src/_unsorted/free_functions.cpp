@@ -137129,6 +137129,28 @@ void CRelSetUnit::sub_102f97c0(char bClear)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f98d0 size=0x1f
+struct CUnk102f98d0Owner
+{
+    char pad[0x5dc];
+    int m_5dc;
+};
+struct CUnk102f98d0
+{
+    char pad[0xa0];
+    CUnk102f98d0Owner *m_a0;
+    int sub_102f98d0();
+};
+int CUnk102f98d0::sub_102f98d0()
+{
+    if (m_a0 && m_a0->m_5dc == 11000)
+    {
+        return 1;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f9900 size=0xd
 extern int g_10610be8;
 extern char g_1093412c;
