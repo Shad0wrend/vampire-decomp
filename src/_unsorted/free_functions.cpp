@@ -106850,6 +106850,58 @@ void QuestJournal::sub_102210f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102213c0 size=0x20b
+#include "QuestJournal.h"
+#include "CKeyValuesX.h"
+#include "ScopeTrace.h"
+#include "utlvector.h"
+#include <string.h>
+
+extern char g_1074f930[];
+__declspec(dllimport) void Q_trimspace(const char *, char *, int);
+__declspec(dllimport) void Q_strncpy(char *, const char *, int);
+
+struct QuestJournal_Quest
+{
+	char *m_pszTitle;
+	char *m_pszDisplayName;
+	int m_nIndex;
+	int m_n0c;
+	int m_n10;
+	int m_aCompletions[20];
+	int m_n64;
+};
+
+// TARGET: QuestJournal::sub_102213c0
+void QuestJournal::sub_102213c0(CKeyValuesX *pKey, int index)
+{
+	ScopeTrace trace("QuestJournal::AddQuest", g_106b8540);
+	QuestJournal_Quest quest;
+	memset(&quest, 0, sizeof(quest));
+	quest.m_nIndex = index;
+	Q_trimspace(pKey->sub_10248cd0("Title", "!!TITLE!!"), g_1074f930, 0x1000);
+	quest.m_pszTitle = new char[strlen(g_1074f930) + 1];
+	Q_strncpy(quest.m_pszTitle, g_1074f930, strlen(g_1074f930) + 1);
+	Q_trimspace(pKey->sub_10248cd0("DisplayName", "!!DISPLAYNAME!!"), g_1074f930, 0x1000);
+	quest.m_pszDisplayName = new char[strlen(g_1074f930) + 1];
+	Q_strncpy(quest.m_pszDisplayName, g_1074f930, strlen(g_1074f930) + 1);
+	CKeyValuesX *pCompletion = pKey->sub_102489a0("CompletionState", 0);
+	for (int i = 0; i < 20; i++)
+		quest.m_aCompletions[i] = -1;
+	int n = 0;
+	while (pCompletion && n < 20) {
+		int c = sub_10221660(pCompletion);
+		quest.m_aCompletions[n] = c;
+		if (c != -1)
+			n++;
+		pCompletion = pCompletion->sub_1000fa65();
+	}
+	quest.m_n10 = -1;
+	quest.m_n0c = 0;
+	((CUtlVector<QuestJournal_Quest> *)&m_field[5])->AddToTail(quest);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10221660 size=0x2e0
 #include "QuestJournal.h"
 #include "CKeyValuesX.h"
