@@ -9604,6 +9604,7 @@
 0x100119c8 func   ?vfunc245@CFuncPlat@@UAEXXZ CFuncPlat::vfunc245
 0x100119cd func   ?sub_100cf680@@YAHXZ sub_100cf680
 0x100119d7 func   ?vfunc5@CPropPadlock@@QAEPAV1@I@Z CPropPadlock::vfunc5
+0x100119dc func   ?vfunc91@CBaseEntity@@UAEDPAXH@Z CBaseEntity::vfunc91
 0x100119e1 func   ?sub_1036e160@CNPC_VChangBros@@QAEXH@Z CNPC_VChangBros::sub_1036e160
 0x100119eb func   ?vfunc80@CResearchBook_HG_FIRE@@QAEHXZ CResearchBook_HG_FIRE::vfunc80
 0x100119f0 func   ?vfunc32@CGameSign@@UAE_NH@Z CGameSign::vfunc32

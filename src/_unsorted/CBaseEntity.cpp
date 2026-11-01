@@ -3263,6 +3263,19 @@ bool CBaseEntity::vfunc158()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b4de0 size=0x1e
+// TARGET: CBaseEntity::vfunc91
+#include "CBaseEntity.h"
+
+char CBaseEntity::vfunc91(void *pPassEnt, int contentsMask)
+{
+	char result = 1;
+	if (m_field368 == 1 && !(contentsMask & 0x4000000))
+		result = 0;
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4ef0 size=0x7
 int CBaseEntity::vfunc83()
 {
