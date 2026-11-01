@@ -90,6 +90,19 @@ bool CWeaponIWritten::vfunc315()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040b4c0 size=0x20
+#include "CWeaponIWritten.h"
+#include "CBaseCombatWeapon.h"
+
+// TARGET: CWeaponIWritten::vfunc319
+void CWeaponIWritten::vfunc319()
+{
+	CWeaponIArmorOwner *pOwner = sub_102521f0();
+	if (pOwner && *(int *)((char *)pOwner + 0xa8))
+		((CBaseCombatWeapon *)this)->CBaseCombatWeapon::vfunc319();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040b4f0 size=0x65
 #include "CWeaponIWritten.h"
 

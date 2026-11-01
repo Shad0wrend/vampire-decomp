@@ -8613,6 +8613,7 @@
 0x1000f916 func   ?vfunc5@CWeaponMelee_ChangBlade@@QAEPAV1@I@Z CWeaponMelee_ChangBlade::vfunc5
 0x1000f91b func   ?vfunc451@CNPC_VBach@@UAEHXZ CNPC_VBach::vfunc451
 0x1000f925 func   ?sub_100c73b0@@YAPAUSPoseHdr@@PAU1@H@Z sub_100c73b0
+0x1000f92a func   ?vfunc319@CWeaponIWritten@@UAEXXZ CWeaponIWritten::vfunc319
 0x1000f92f func   ?sub_1012d0a0@@YAPAHXZ sub_1012d0a0
 0x1000f939 func   ?sub_10339b50@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10339b50
 0x1000f93e func   ?sub_101fd090@@YAXH@Z sub_101fd090
