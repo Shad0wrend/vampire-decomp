@@ -3971,6 +3971,75 @@ void sub_1003b8a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003bdd0 size=0x26a
+#include "ScopeTrace.h"
+#include "CVProfile.h"
+#include "globalvars.h"
+
+struct CCyc { unsigned __int64 m; void Sample() { unsigned long *p = (unsigned long *)this; __asm { mov ecx, p
+ rdtsc
+ mov [ecx], eax
+ mov [ecx+4], edx } }
+ void End() { CCyc t; t.m = 0; t.Sample(); m = t.m - m; } };
+
+struct CUnkEntList { void sub_100f6ce0(); void *sub_100f7060(void *p); };
+extern CUnkEntList g_106eb5d8;
+struct CUnkMgr { virtual int vfunc0(); virtual bool vfunc1(); int pad[10]; int m2c; };
+extern CUnkMgr *g_106bbb14;
+extern bool g_1053a7a0;
+void *sub_101cd9e0(int);
+void sub_1003bad0(void *);
+
+void sub_1003bdd0(bool bFull)
+{
+	ScopeTrace trace("Physics_RunThinkFunctions", g_106b8540, g_106b8540);
+	CVProfile *pv = g_109f3648;
+	if (pv->m_enabled || !pv->m_bAtRoot) {
+		if (pv->m_pCurNode->m_pszName != "Physics_RunThinkFunctions")
+			pv->m_pCurNode = pv->m_pCurNode->GetSubNode("Physics_RunThinkFunctions", 0, "Unaccounted");
+		CVProfNode *n = pv->m_pCurNode;
+		n->m_nCurFrameCalls++;
+		if (n->m_nRecursions++ == 0) {
+			((CCyc *)&n->m_CurFrameTime)->Sample();
+			g_109f3648->PushGroup(n->m_nBudgetGroupID);
+		}
+		pv->m_bAtRoot = false;
+	}
+	g_1053a7a0 = (g_106bbb14->vfunc1() ? 0 : g_106bbb14->m2c) != 0;
+	float flSave = gpGlobals->curtime;
+	g_106eb5d8.sub_100f6ce0();
+	if (!bFull) {
+		for (int i = 1; i < gpGlobals->maxClients; i++) {
+			void *p = sub_101cd9e0(i);
+			if (p) {
+				gpGlobals->curtime = flSave;
+				sub_1003bad0(p);
+			}
+		}
+	} else {
+		void *p = g_106eb5d8.sub_100f7060(0);
+		while (p) {
+			gpGlobals->curtime = flSave;
+			sub_1003bad0(p);
+			p = g_106eb5d8.sub_100f7060(p);
+		}
+	}
+	gpGlobals->curtime = flSave;
+	CVProfile *pe = g_109f3648;
+	if (!pe->m_bAtRoot || pe->m_enabled) {
+		CVProfNode *n = pe->m_pCurNode;
+		if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0) {
+			((CCyc *)&n->m_CurFrameTime)->End();
+			n->m_TotalTime += n->m_CurFrameTime.m_Int64;
+			g_109f3648->PopGroup();
+		}
+		if (n->m_nRecursions == 0)
+			pe->m_pCurNode = pe->m_pCurNode->m_pParent;
+		pe->m_bAtRoot = (pe->m_pCurNode == pe->m_pRoot);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003c0e0 size=0xaa
 #include "CUtlVector4.h"
 

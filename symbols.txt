@@ -10419,6 +10419,7 @@
 0x10012b2f func   ?sub_100d60c0@@YAXXZ sub_100d60c0
 0x10012b34 func   ?sub_101d2fc0@@YADPAUCEntQ@@0@Z sub_101d2fc0
 0x10012b4d func   ?vfunc5@CBaseDoor@@QAEPAV1@E@Z CBaseDoor::vfunc5
+0x10012b52 func   ?sub_1003bdd0@@YAX_N@Z sub_1003bdd0
 0x10012b57 func   ?sub_101f18f0@CUnknown101f0e50@@QAE_NH@Z CUnknown101f0e50::sub_101f18f0
 0x10012b5c func   ?sub_100454d0@@YA_NPBUSortItem@@0@Z sub_100454d0
 0x10012b61 func   ?sub_1033c900@CBaseCombatCharacter@@QAE_NI@Z CBaseCombatCharacter::sub_1033c900
