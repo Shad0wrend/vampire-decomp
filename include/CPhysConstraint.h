@@ -69,6 +69,7 @@ public:
 
 	void vfunc183(int a, int b, struct CPhysConstraintInfo **ppInfo);	// slot 183 (plain member): when b is 0 and the engine's frame counter at +0x18 changed since the last time (+0x46c), hands a, the constraint object's two physics objects (slots 5 and 6) and the info record's angles / position / flag to sub_1002a210
 	bool sub_1002b4c0();	// attaches the constraint object to its two physics objects (creates it through slot 241 when missing); false when it cannot
+	void sub_1002b360(void *pObjects);	// fills the two attached physics objects (named at +0x454 / +0x458) into pObjects
 	void sub_100121ac();	// destructor body
 	void sub_1002a960(int unused);	// break: releases the two attached objects, plays the break sound, fires the output (+0x470) and removes the entity
 	void sub_1002af90(int unused);	// re-enables collisions of the two attached physics objects (clears bit 1 of their game flags), and with spawnflag bit 0 (dword at +0x204) calls sub_1001474a(first, second); the constraint is the object at +0x450
