@@ -86,5 +86,8 @@ public:
 	void sub_10312c20(int a);	// stub 0x10004502
 	void sub_10312aa0(const char *pszName, CGlobalEntityList_Ent *pListener);	// stub 0x10008b1b: the '~' sentence names (scripted speech) are handed to it
 	int sub_10311b90();	// the sound level of a sentence: the base level (+0x50) plus a random 0..3
+	bool sub_10311c10(int key, const char *pszScene);	// plays the sentence record of key (0x10311c10)
+	void *sub_10312340(int key);	// the record of key (m_Sub's lookup, stub 0x1000c0d1)
+	void sub_103126e0(int key);	// stub 0x10012ba7
 	int sub_10311f50(const char *pszName, float flDelay, float flVolume, int nSoundLevel, int b);	// starts the named sentence, -1 when it cannot (stub 0x10005745)
 };
