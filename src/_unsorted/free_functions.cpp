@@ -118812,6 +118812,26 @@ void __fastcall sub_1026d0c0(char* p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026d160 size=0x1e
+struct CUnk1026d160 {
+	char m_pad0000[0x5bb4];
+	int m_5bb4;
+	void sub_1026d160();
+	void sub_1026d0c0();
+};
+
+// TARGET: CUnk1026d160::sub_1026d160
+void CUnk1026d160::sub_1026d160()
+{
+	m_5bb4--;
+	if (m_5bb4 < 0)
+	{
+		m_5bb4 = 0;
+	}
+	sub_1026d0c0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026dc00 size=0x17
 struct CUnk1026dc00 {
     char pad[0x5cec];

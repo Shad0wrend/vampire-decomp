@@ -3969,6 +3969,7 @@
 0x10007e87 func   ?vfunc433@CNPC_VScurrying@@QAEXXZ CNPC_VScurrying::vfunc433
 0x10007e8c func   ?vfunc5@CBaseAnimatingOverlay@@QAEPAV1@I@Z CBaseAnimatingOverlay::vfunc5
 0x10007e9b func   ?sub_10196f30@@YAPAXPAX0@Z sub_10196f30
+0x10007ea0 func   ?sub_1026d160@CUnk1026d160@@QAEXXZ CUnk1026d160::sub_1026d160
 0x10007ea5 func   ?vfunc345@CBaseCombatCharacter@@QAEXPBDHH@Z CBaseCombatCharacter::vfunc345
 0x10007eaa func   ?sub_100d11f0@@YAHH@Z sub_100d11f0
 0x10007eaf func   ?vfunc5@CWeaponList@@UAEXXZ CWeaponList::vfunc5
