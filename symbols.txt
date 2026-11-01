@@ -1167,6 +1167,7 @@
 0x10002eff func   ?sub_101a6560@@YIXPAX@Z sub_101a6560
 0x10002f04 func   ?sub_10086e50@@YAXXZ sub_10086e50
 0x10002f09 func   ?sub_1019f760@@YAPBDPAUSFuncMap@@H@Z sub_1019f760
+0x10002f0e func   ?sub_10388ad0@CNPC_VHunterFwd@@QAEXH@Z CNPC_VHunterFwd::sub_10388ad0
 0x10002f13 func   ?vfunc104@CWeaponMelee_Torch@@QAEXXZ CWeaponMelee_Torch::vfunc104
 0x10002f18 func   ?sub_10342470@@YA_NPAUUserEntity@@PAUUsedEntity@@@Z sub_10342470
 0x10002f1d func   ?sub_101ccd40@@YIHPAH@Z sub_101ccd40

@@ -98,6 +98,23 @@ int CNPC_VHunter::vfunc440(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10388ad0 size=0xd
+struct CNPC_VHumanCombatantFwd;
+struct CNPC_VHunterFwd {
+    void sub_10388ad0(int a);
+};
+struct CNPC_VHumanCombatantFwd {
+    void sub_10387500(int a);
+};
+
+// TARGET: sub_10388ad0
+void CNPC_VHunterFwd::sub_10388ad0(int a)
+{
+    a = *(volatile int *)&a;
+    ((CNPC_VHumanCombatantFwd *)this)->sub_10387500(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10388b30 size=0x27
 // TARGET: CNPC_VHunter::vfunc420
 #include "CNPC_VHunter.h"
