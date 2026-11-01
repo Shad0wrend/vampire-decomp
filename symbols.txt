@@ -10520,6 +10520,7 @@
 0x100130a7 func   ?sub_101b2f60@CSoundEmitterSystemBase@@QAEHPBD@Z CSoundEmitterSystemBase::sub_101b2f60
 0x100130ac func   ?sub_100c0ad0@CFloatPair3f4@@QAEXHHHH@Z CFloatPair3f4::sub_100c0ad0
 0x100130b1 func   _npc_VAndreiBlood npc_VAndreiBlood
+0x100130b6 func   ?sub_1015e110@CUnk1015e110@@QAEPAXE@Z CUnk1015e110::sub_1015e110
 0x100130c5 func   ?vfunc362@CWeaponMelee_SeveredArm@@QAEHXZ CWeaponMelee_SeveredArm::vfunc362
 0x100130ca func   ?sub_102db420@CUnknown102db420@@QAEXH@Z CUnknown102db420::sub_102db420
 0x100130cf func   ?vfunc378@CNPC_VHengeyokai@@UAE_NHH@Z CNPC_VHengeyokai::vfunc378
