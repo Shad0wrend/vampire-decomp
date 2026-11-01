@@ -127631,6 +127631,17 @@ void CAI_VecView::sub_102d1180(void *pObj, Vector *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d11f0 size=0x1d
+// TARGET: sub_102d11f0
+float sub_102d12e0();
+void sub_101d2f40(int a, float f);
+int __stdcall sub_102d11f0(int a)
+{
+    sub_101d2f40(a, sub_102d12e0());
+    return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d1220 size=0x90
 #include "CUnknown102d1220.h"
 
