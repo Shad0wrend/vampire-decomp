@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10577394;
 }
-CLogicPythonCheck::Datamap82 CLogicPythonCheck::vfunc82()
+datamap_t *CLogicPythonCheck::vfunc82()
 {
-    return (CLogicPythonCheck::Datamap82)&lifted::g_10577394;
+    return (datamap_t *)&lifted::g_10577394;
 }
 // END FUNCTION
 
