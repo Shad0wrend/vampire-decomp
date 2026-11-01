@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_1056aec4;
 }
-int CPointExplosion::vfunc82()
+CPointExplosion::Datamap82 CPointExplosion::vfunc82()
 {
-    return (int)&lifted::g_1056aec4;
+    return (CPointExplosion::Datamap82)&lifted::g_1056aec4;
 }
 // END FUNCTION
 
