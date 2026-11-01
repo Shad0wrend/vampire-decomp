@@ -1,6 +1,12 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10114d70 size=0xa
+#include "CFuncBrush.h"
+// TARGET: CFuncBrush::vfunc117
+char CFuncBrush::vfunc117() { char c = ((CBaseEntity *)this)->CBaseEntity::vfunc117(); return (c & (char)0xfd) | 8; }
+// END FUNCTION
+
 // FUNCTION: 0x10114d90 size=0x3
 #include "CFuncBrush.h"
 bool CFuncBrush::vfunc128()

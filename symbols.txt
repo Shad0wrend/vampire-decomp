@@ -7353,6 +7353,7 @@
 0x1000d418 func   _trigger_discipline_context trigger_discipline_context
 0x1000d41d func   ?vfunc82@CDisciplineParticle@@UAEHXZ CDisciplineParticle::vfunc82
 0x1000d422 func   ?sub_101cb550@CUnknown101cb550@@QAEXPAUCInputData100bc0f0@@@Z CUnknown101cb550::sub_101cb550
+0x1000d427 func   ?vfunc117@CFuncBrush@@QAEDXZ CFuncBrush::vfunc117
 0x1000d42c func   ?vfunc379@CPayphone@@UAE_NPAVCBaseEntity@@HHHHHH@Z CPayphone::vfunc379
 0x1000d431 func   ?sub_1033b980@CUnknown1033b980@@QAEMXZ CUnknown1033b980::sub_1033b980
 0x1000d43b func   ?vfunc81@CBaseTerminal@@QAEHXZ CBaseTerminal::vfunc81
