@@ -103280,6 +103280,22 @@ char CPropHacking::sub_1021b750(int a, const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021bbf0 size=0x1c
+#include "CPropHacking.h"
+
+class CUnk1021a560 {
+public:
+	void sub_1021a560(int a);
+};
+
+// TARGET: CPropHacking::sub_1021bbf0
+void CPropHacking::sub_1021bbf0(int a)
+{
+	if (a >= 0 && a < m_n0a20)
+		((CUnk1021a560 *)this)->sub_1021a560(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021bc20 size=0x25
 void __stdcall sub_10015569(int value);
 
