@@ -11766,6 +11766,7 @@
 0x10014f65 func   ?sub_10128270@CGameMovement@@QAEMXZ CGameMovement::sub_10128270
 0x10014f6a func   ?sub_102cc1f0@CAI_BaseNPC@@QAEHH@Z CAI_BaseNPC::sub_102cc1f0
 0x10014f6f func   ?sub_10315170@CUtlRBTree16Unit@@QAEXG@Z CUtlRBTree16Unit::sub_10315170
+0x10014f79 func   ?sub_10064fc0@CTEImpact@@QAEPAV1@PBD@Z CTEImpact::sub_10064fc0
 0x10014f7e func   ?sub_10073090@CUnk10073090@@QAEXHH@Z CUnk10073090::sub_10073090
 0x10014f88 func   ?sub_100c89e0@@YIXPADHH@Z sub_100c89e0
 0x10014f92 func   ?vfunc432@CNPC_VAnimal@@UAEXH@Z CNPC_VAnimal::vfunc432

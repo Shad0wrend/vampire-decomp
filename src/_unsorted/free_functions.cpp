@@ -11828,6 +11828,31 @@ void sub_10064df0(void *pFilter, int delay, int *pA, int *pB, int a5, int a6, in
 }
 // END FUNCTION
 
+// FUNCTION: 0x10064fc0 size=0x2d
+#include "CTEImpact.h"
+
+struct CBaseTempEntityHeadUnit {
+	void sub_10015334(const char *name);
+};
+
+extern void *vt_1044df68[];
+
+// TARGET: CTEImpact::sub_10064fc0
+CTEImpact *CTEImpact::sub_10064fc0(const char *name)
+{
+	((CBaseTempEntityHeadUnit *)this)->sub_10015334(name);
+	*(void ***)this = vt_1044df68;
+	int *p = (int *)((char *)this + 0xc);
+	p[0] = 0;
+	p[1] = 0;
+	p[2] = 0;
+	p[3] = 0;
+	p[4] = 0;
+	p[5] = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10065030 size=0xb
 namespace lifted {
 extern char g_1044df68;
