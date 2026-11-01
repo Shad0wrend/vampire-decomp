@@ -309,5 +309,7 @@ public:
 	void sub_10273790(const char *pszRelationship, CBaseEntity *pActivator);	// "CAI_BaseNPC::AddRelationship" (stub 0x1000421e): parses "[entityname|entityclass|player] [D_HT|D_FR|D_LI|D_NU] [priority]" groups with strtok and adds entity / class relationships; the activator is unused
 	void sub_10332ca0(CBaseEntity *pEnt, int disposition, int priority);	// CBaseCombatCharacter::AddEntityRelationship (stub 0x10005849), called directly
 	void sub_10332aa0(int classId, int disposition, int priority);	// CBaseCombatCharacter::AddClassRelationship (stub 0x10013cf5), called directly
+	void sub_10271d10(CBaseEntity *pTarget);	// profiled as CAI_Memory_CheckTarget: clears conditions 0x4b / 0x49, then sets one by slot 201 (can see pTarget), then sub_10271b10
+	void sub_10271b10();
 	void sub_1028e980(CBaseEntity *pEnt);	// called by vfunc433: while the navigator (+0x5d34) is neither in mode 1 nor 3 and has a navigation type, hands pEnt's slot 220 position to the navigator (sub_102ee220, stub 0x1000481d) once the point the route heads for is farther than the threshold at 0x104454c8 from it
 };
