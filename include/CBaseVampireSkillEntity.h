@@ -17,7 +17,8 @@ struct CVampireSkillItem
 class CBaseVampireSkillEntity
 {
 public:
-	char pad0[0x780];
+	virtual int vfunc0(int);
+	char pad0[0x780 - 4];
 	int m_n780;
 	int m_n784;
 	int m_unk788;	// creation time, copied from the globals
