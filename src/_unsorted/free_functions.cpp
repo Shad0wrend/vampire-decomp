@@ -74535,6 +74535,22 @@ unsigned char CUnknown101b52d0::sub_101b52d0(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b5840 size=0x1c
+struct CUnk101b5840Sub { void sub_1024b5e0(int a, int b); };
+struct CUnk101b5840 {
+	char pad0000[0xb0];
+	CUnk101b5840Sub m_b0;
+	int sub_101b5840(int a, int b);
+};
+
+// TARGET: CUnk101b5840::sub_101b5840
+int CUnk101b5840::sub_101b5840(int a, int b)
+{
+	m_b0.sub_1024b5e0(a, b);
+	return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b61a0 size=0x6b
 #include "CUnknown101b61a0.h"
 
