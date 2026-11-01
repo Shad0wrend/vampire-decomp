@@ -5,9 +5,9 @@
 namespace lifted {
 extern char g_105aa150;
 }
-int CBaseVampireSkillEntity::vfunc82()
+CBaseVampireSkillEntity::Datamap82 CBaseVampireSkillEntity::vfunc82()
 {
-    return (int)&lifted::g_105aa150;
+    return (CBaseVampireSkillEntity::Datamap82)&lifted::g_105aa150;
 }
 // END FUNCTION
 
