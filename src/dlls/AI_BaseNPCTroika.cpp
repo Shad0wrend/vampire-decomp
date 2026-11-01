@@ -643,6 +643,53 @@ int CAI_BaseNPCTroika::sub_102b6fe0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b7fc0 size=0x2a5
+#include "CAI_BaseNPCTroika.h"
+#include "CStatusFlagList.h"
+
+extern CStatusFlagList g_10739a4c;
+
+#define STAMP(line, result) \
+	do { m_nLine1b34 = (line); m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp"; return (result); } while (0)
+
+// TARGET: CAI_BaseNPCTroika::vfunc605
+int CAI_BaseNPCTroika::vfunc605(int unused)
+{
+	if (m_b6078)
+		STAMP(0x5d98, 0xe3);
+	if (sub_10014df8(8) && vfunc307() && vfunc599(vfunc167()))
+		STAMP(0x5db2, 0xe3);
+	if (sub_10014df8(0x3c))
+		STAMP(0x5db7, 0xb8);
+	int nSched = sub_102b8620();
+	if (nSched == 0) {
+		if (!sub_10014df8(0x5f) && !sub_10014df8(8) && !g_10739a4c.sub_101e3f50((CStatusTarget *)this)) {
+			nSched = vfunc606(unused);
+			if (nSched)
+				return nSched;
+			if (sub_10014df8(0x2e))
+				STAMP(0x5dff, 0xbd);
+			if (sub_10014df8(0x60))
+				STAMP(0x5e04, 0xb1);
+			return 0;
+		}
+		if (!sub_10014df8(0x2f) && !sub_10014df8(0x63)) {
+			if (sub_102b7f40())
+				STAMP(0x5dd8, 0xef);
+			if (vfunc307() && enginerandom->vfunc2(0, 0x63) < 0x19 && vfunc599(vfunc167()))
+				STAMP(0x5ddc, 0xe8);
+			STAMP(0x5de0, 0xf0);
+		}
+		if (sub_102b7f40())
+			STAMP(0x5de9, 0xb8);
+		if (vfunc307() && vfunc599(vfunc167()))
+			STAMP(0x5ded, 0xe8);
+		STAMP(0x5df1, 0xb9);
+	}
+	return nSched;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b8320 size=0x259
 #include "CAI_BaseNPCTroika.h"
 #include "engineiface.h"

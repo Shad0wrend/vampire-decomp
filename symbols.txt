@@ -1220,6 +1220,7 @@
 0x10003143 func   ?sub_101dc8a0@CUnknown101e0f00SrcA@@QAEXXZ CUnknown101e0f00SrcA::sub_101dc8a0
 0x10003148 func   ?sub_10032fb0@S10032fb0@@QAEXH@Z S10032fb0::sub_10032fb0
 0x10003152 func   ?sub_101ff060@CVStatInfo_t@@QAEHH@Z CVStatInfo_t::sub_101ff060
+0x10003157 func   ?vfunc605@CAI_BaseNPCTroika@@UAEHH@Z CAI_BaseNPCTroika::vfunc605
 0x1000315c func   ?sub_10396dc0@CNPC_VMingXiao@@QAEHXZ CNPC_VMingXiao::sub_10396dc0
 0x10003161 func   ?sub_10325fa0@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10325fa0
 0x1000316b func   ?sub_1014cad0@CUnknown1014cad0@@QAEXXZ CUnknown1014cad0::sub_1014cad0
