@@ -70097,10 +70097,11 @@ unsigned short CUtlRBTree12::sub_10194330(const void *search) const
 // FUNCTION: 0x101945f0 size=0x10e
 #include "CUtlRBTree12.h"
 #include "utlrbtree.h"
+struct CRBTree12Entry_10194f30 { char data[4]; };	// the tree of its sentinel (one T per game instance)
 
 void CUtlRBTree12::sub_101945f0(const void *insert, unsigned short &parent, bool &leftchild)
 {
-    const CUtlRBTree<int, unsigned short> *tree = (const CUtlRBTree<int, unsigned short> *)this;
+    const CUtlRBTree<CRBTree12Entry_10194f30, unsigned short> *tree = (const CUtlRBTree<CRBTree12Entry_10194f30, unsigned short> *)this;
     unsigned short current = m_Root;
     parent = InvalidIndex();
     leftchild = false;
