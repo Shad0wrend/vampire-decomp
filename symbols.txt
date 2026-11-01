@@ -3141,6 +3141,7 @@
 0x1000646f func   ?sub_10185a30@CUnknown10185a30@@QAEXH@Z CUnknown10185a30::sub_10185a30
 0x10006474 func   ?vfunc5@COccultHealRate@@QAEPAV1@I@Z COccultHealRate::vfunc5
 0x1000647e func   ?vfunc376@CBaseCombatCharacter@@QAEHH@Z CBaseCombatCharacter::vfunc376
+0x10006483 func   ?sub_10043b80@@YIXPAX@Z sub_10043b80
 0x10006488 func   ??0ConVar@@QAE@PBD0H@Z ConVar::ConVar
 0x1000648d func   ??1SendProp@@QAE@XZ SendProp::~SendProp
 0x1000648d func   ??1SendProp@@UAE@XZ SendProp::~SendProp
