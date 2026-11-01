@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_1056d0b4;
 }
-CEnvFireSource::Datamap82 CEnvFireSource::vfunc82()
+datamap_t *CEnvFireSource::vfunc82()
 {
-    return (CEnvFireSource::Datamap82)&lifted::g_1056d0b4;
+    return (datamap_t *)&lifted::g_1056d0b4;
 }
 // END FUNCTION
 
