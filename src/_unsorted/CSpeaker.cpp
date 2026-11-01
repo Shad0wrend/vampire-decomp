@@ -19,9 +19,9 @@ unsigned char sub_101af370()
 namespace lifted {
 extern char g_10596ed8;
 }
-CSpeaker::Datamap82 CSpeaker::vfunc82()
+datamap_t *CSpeaker::vfunc82()
 {
-    return (CSpeaker::Datamap82)&lifted::g_10596ed8;
+    return (datamap_t *)&lifted::g_10596ed8;
 }
 // END FUNCTION
 
