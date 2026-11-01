@@ -179887,6 +179887,34 @@ void __cdecl sub_10427dc0(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10428060 size=0x6d
+extern int g_106ac398;
+int sub_10428060(int n, int *items, int *w)
+{
+    int sum, i, r;
+    if (n < 1)
+        return -1;
+    if (n == 1)
+        return items[0];
+    sum = 0;
+    for (i = 0; i < n; i++)
+        sum += w[i];
+    if (sum < 1) {
+        i = g_106ac398;
+        if (i >= 0 && i < n)
+            return items[i];
+        return items[0];
+    }
+    r = g_106ac398;
+    for (i = 0; i < n; i++) {
+        if (r < w[i])
+            return items[i];
+        r -= w[i];
+    }
+    return items[0];
+}
+// END FUNCTION
+
 // FUNCTION: 0x104280f0 size=0x47
 int sub_104280f0(int n, int *values, int *weights)
 {

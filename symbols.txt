@@ -7111,6 +7111,7 @@
 0x1000cc5c func   ?vfunc0@CVoiceGameMgr@@QAEPAV1@I@Z CVoiceGameMgr::vfunc0
 0x1000cc61 func   ?vfunc1@CHLPlayerMove@@QAEXHHHH@Z CHLPlayerMove::vfunc1
 0x1000cc70 func   ??1CUnknown102cff90@@QAE@XZ CUnknown102cff90::~CUnknown102cff90
+0x1000cc75 func   ?sub_10428060@@YAHHPAH0@Z sub_10428060
 0x1000cc7f func   ?sub_10227410@CUnknown10227410@@QAEXH@Z CUnknown10227410::sub_10227410
 0x1000cc84 func   ?sub_10203990@@YAXXZ sub_10203990
 0x1000cc89 func   ?sub_101c6390@CTriggerHurt@@QAEXXZ CTriggerHurt::sub_101c6390
