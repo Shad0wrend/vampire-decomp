@@ -119800,8 +119800,7 @@ void sub_1025cb30(unsigned short *dst, unsigned short *src)
 
 CUtlRBTreeBig::Links_t &CUtlRBTreeBig::sub_1025cb70(unsigned short i)
 {
-	static Links_t s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
-	return i != InvalidIndex() ? m_pElements[i].m_Links : s_Sentinel;
+	return const_cast<Links_t &>(Links(i));	// the const Links' sentinel: one static in the game
 }
 // END FUNCTION
 
