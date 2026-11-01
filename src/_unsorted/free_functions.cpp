@@ -134914,6 +134914,19 @@ int CUnk102ee6a0::sub_102ee6a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ee940 size=0x1f
+#include "Vector.h"
+
+struct CUnk102ee940 : public Vector
+{
+    float sub_102ee940();
+};
+float CUnk102ee940::sub_102ee940()
+{
+    return FastSqrt(y * y + x * x);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ee9c0 size=0x4c
 extern int g_106c994c;
 

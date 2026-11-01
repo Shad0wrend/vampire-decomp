@@ -10487,6 +10487,7 @@
 0x10013052 func   ?vfunc128@CRagdollProp@@UAE_NXZ CRagdollProp::vfunc128
 0x10013057 func   ?vfunc79@CBaseCombatCharacter@@UAEHXZ CBaseCombatCharacter::vfunc79
 0x1001305c func   _item_g_wireless_camera_1 item_g_wireless_camera_1
+0x10013061 func   ?sub_102ee940@CUnk102ee940@@QAEMXZ CUnk102ee940::sub_102ee940
 0x10013066 func   ?sub_101f7cc0@CUnknown101f7cc0@@QAE_NPAX@Z CUnknown101f7cc0::sub_101f7cc0
 0x1001306b func   ?sub_10256220@CBaseCombatWeapon@@QAEDXZ CBaseCombatWeapon::sub_10256220
 0x10013070 func   ?sub_1017c6d0@CBasePlayer@@QAEXXZ CBasePlayer::sub_1017c6d0
