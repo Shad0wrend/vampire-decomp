@@ -11234,6 +11234,7 @@
 0x10014704 func   ?vfunc81@CItemGWarrLedger1@@UAEHXZ CItemGWarrLedger1::vfunc81
 0x10014709 func   ?vfunc598@CNPC_VCop@@QAEXPAVCBaseEntity@@@Z CNPC_VCop::vfunc598
 0x1001470e func   ?sub_1035b1c0@CUnknown1035b1c0@@QAEHHHHH@Z CUnknown1035b1c0::sub_1035b1c0
+0x10014713 func   ?sub_101bbbf0@CUnknown101bbbf0@@QAEXMM@Z CUnknown101bbbf0::sub_101bbbf0
 0x10014718 func   ?vfunc3@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc3
 0x1001471d func   ?sub_100bb270@CBeam@@QAEPAMXZ CBeam::sub_100bb270
 0x10014722 func   ?vfunc5@CItemGPishaFetish@@QAEPAV1@I@Z CItemGPishaFetish::vfunc5

@@ -75910,6 +75910,23 @@ int sub_101bb960()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bbbf0 size=0x1d
+#include "CFloatUnit.h"
+
+struct CUnknown101bbbf0 {
+	char m_pad0000[0x38];
+	unsigned int m_n0038;
+	void sub_101bbbf0(float flValue, float flTime);
+};
+
+// TARGET: CUnknown101bbbf0::sub_101bbbf0
+void CUnknown101bbbf0::sub_101bbbf0(float flValue, float flTime)
+{
+	m_n0038 |= 2;
+	((CFloatUnit *)this)->sub_101bb650(flValue, flTime);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bbcb0 size=0x3
 struct CUnknown101bbcb0 { float sub_101bbcb0(); };
 float CUnknown101bbcb0::sub_101bbcb0()
