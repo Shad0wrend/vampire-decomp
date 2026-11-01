@@ -107,6 +107,21 @@ bool CPushable::vfunc223()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010f470 size=0x35
+#include "CPushable.h"
+#include "CBreakable.h"
+#include "CBaseEntity.h"
+#include "gamevcollisionevent_t.h"
+void CPushable::vfunc230(int index, gamevcollisionevent_t *pEvent)
+{
+	CBaseEntity *pOther = pEvent->pEntities[index == 0];
+	if (pOther->m_pA8)
+		((CBaseEntity *)this)->vfunc230(index, pEvent);
+	else
+		((CBreakable *)this)->vfunc230(index, (int)pEvent);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f4c0 size=0x9
 int CPushable::vfunc35(int a) { return m_field4a8; }
 // END FUNCTION

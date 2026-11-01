@@ -5711,6 +5711,7 @@
 0x1000a6be func   ?vfunc3@CAI_Navigator@@UAEXH@Z CAI_Navigator::vfunc3
 0x1000a6c3 func   ?sub_1010a7f0@CFire@@QAEXXZ CFire::sub_1010a7f0
 0x1000a6c8 func   ?sub_1023adb0@CDecal@@QAE_NPBD0@Z CDecal::sub_1023adb0
+0x1000a6d2 func   ?vfunc230@CPushable@@QAEXHPAUgamevcollisionevent_t@@@Z CPushable::vfunc230
 0x1000a6d7 func   ?vfunc497@CNPC_VPlayerController@@QAEXXZ CNPC_VPlayerController::vfunc497
 0x1000a6dc func   ?sub_101e3cf0@CUnknown101e3cf0@@QAEXPAUCUnknown101e3cfObj@@@Z CUnknown101e3cf0::sub_101e3cf0
 0x1000a6e1 func   ?sub_1013dc40@CUnknown1013dc40@@QAEHXZ CUnknown1013dc40::sub_1013dc40
