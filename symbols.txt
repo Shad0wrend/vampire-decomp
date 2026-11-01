@@ -42,6 +42,7 @@
 0x10001127 func   ?vfunc370@CWeaponMelee_MingXiaoMelee@@QAEXPAUCWeaponMeleeEvent@@H@Z CWeaponMelee_MingXiaoMelee::vfunc370
 0x10001136 func   ?sub_102dd700@@YIPAXPAX@Z sub_102dd700
 0x1000113b func   ?sub_10129840@@YAHXZ sub_10129840
+0x10001145 func   ?vfunc70@CBaseEntity@@UAE_NXZ CBaseEntity::vfunc70
 0x1000114a func   ?vfunc194@CBaseEntity@@QAEXXZ CBaseEntity::vfunc194
 0x1000114f func   ?sub_103e2470@CUnknown103e2470@@QAEXPAUCFlameEvent_t@@@Z CUnknown103e2470::sub_103e2470
 0x10001154 func   ?sub_102dca60@CUnknown102dca60@@QAEXXZ CUnknown102dca60::sub_102dca60

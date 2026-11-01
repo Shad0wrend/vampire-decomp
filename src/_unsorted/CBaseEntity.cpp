@@ -912,6 +912,27 @@ void CBaseEntity::vfunc71()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009d820 size=0x1f
+#include "CBaseEntity.h"
+
+struct CUnkStatDefault3 {
+	char *sub_101d5f10(void *p);
+};
+
+extern CUnkStatDefault3 g_10738d10;
+
+// TARGET: CBaseEntity::vfunc70
+bool CBaseEntity::vfunc70()
+{
+	if (m_p9c)
+	{
+		char *p = g_10738d10.sub_101d5f10(m_p9c);
+		return *(bool *)(p + 0x8e);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009e100 size=0x6
 namespace lifted {
 extern char g_10552d34;
