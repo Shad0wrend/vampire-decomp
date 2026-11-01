@@ -27,6 +27,67 @@ CNPC_Bullseye *CNPC_Bullseye::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103567e0 size=0x296
+#include "CNPC_Bullseye.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+#include "globalvars.h"
+
+void sub_101cf390(CBaseEntity *, const float *, const float *);
+void sub_100097fa();
+class CBaseCombatCharacter;
+
+struct CBullseyeView
+{
+	char m_pad0000[0x1574];
+	float m_f1574;
+};
+
+// TARGET: CNPC_Bullseye::vfunc103
+void CNPC_Bullseye::vfunc103()
+{
+	vfunc104();
+	float maxs[3] = { 16.0f, 16.0f, 16.0f };
+	float mins[3] = { -16.0f, -16.0f, -16.0f };
+	sub_101cf390(this, mins, maxs);
+	vfunc93(0, 0);
+	((CBaseCombatCharacter *)this)->sub_10327960(0xf7);
+	m_nEffectFlags = 0;
+	((CBullseyeView *)this)->m_f1574 = 0.5f;
+	*(float *)((char *)this + 0x3ec) = 0;
+	if (m_flags204 & 0x80000)
+		((CBaseCombatCharacter *)this)->sub_10327960(0xf7);
+	else
+		((CBaseCombatCharacter *)this)->sub_10327960(-1);
+	sub_100b3580(0x2000);
+	sub_100ac4e0((int)sub_100097fa, 0, 0);
+	m_flNextThink = gpGlobals->curtime + 0.1;
+	{
+		const char *pszName = m_name26c ? m_name26c : g_106b8540;
+		ScopeTrace t("CBaseEntity::SetSolid", pszName);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(2);
+	}
+	{
+		const char *pszName = m_name26c ? m_name26c : g_106b8540;
+		ScopeTrace t("CBaseEntity::AddSolidFlags", pszName);
+		((CCollisionProperty *)((char *)this + 0x270))->AddSolidFlags(0x10);
+	}
+	if (m_flags204 & 0x10000) {
+		const char *pszName = m_name26c ? m_name26c : g_106b8540;
+		ScopeTrace t("CBaseEntity::AddSolidFlags", pszName);
+		((CCollisionProperty *)((char *)this + 0x270))->AddSolidFlags(4);
+	}
+	if (m_flags204 & 0x20000)
+		m_nTakeDamage = 0;
+	else
+		m_nTakeDamage = 2;
+	sub_100b3b00();
+	m_nEffectFlags |= 0x40;
+	sub_1003e880();
+	sub_100b3840(0x10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10356b50 size=0xa9
 #include "CBaseEntity.h"
 #include "CNPC_Bullseye.h"

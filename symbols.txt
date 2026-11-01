@@ -6374,6 +6374,7 @@
 0x1000bf5f func   ?sub_1005fc00@@YAXHHPBH0HHHH@Z sub_1005fc00
 0x1000bf64 func   _logic_compare logic_compare
 0x1000bf69 func   ?sub_10126e20@CGameMovement@@QAEXM@Z CGameMovement::sub_10126e20
+0x1000bf6e func   ?vfunc103@CNPC_Bullseye@@UAEXXZ CNPC_Bullseye::vfunc103
 0x1000bf73 func   ?sub_100c0b40@CUnit100c0b40@@QAEXPAUSInput100c0b40@@@Z CUnit100c0b40::sub_100c0b40
 0x1000bf78 func   ?vfunc68@CPhysBox@@QAE_NPAX@Z CPhysBox::vfunc68
 0x1000bf82 func   ?vfunc493@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc493
