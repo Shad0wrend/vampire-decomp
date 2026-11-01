@@ -9112,6 +9112,7 @@
 0x10010352 func   ?sub_10278c80@CUnknown10290040@@QAEDXZ CUnknown10290040::sub_10278c80
 0x1001035c func   ?sub_101d6c20@CStatList56@@QAEPAUStatItem56@@XZ CStatList56::sub_101d6c20
 0x10010366 func   ?vfunc318@CItemContainer@@QAE_NHHH@Z CItemContainer::vfunc318
+0x10010370 func   ?RemoveRebalance@?$CUtlRBTree@HG@@QAEXG@Z CUtlRBTree<int,unsigned short>::RemoveRebalance
 0x10010375 func   ?sub_101cf0a0@@YAXPAUCUnknown101cf0a0@@PAUCUnknown101cf0a0_Source@@PAUCUnknown1070b22c_Edict@@MHHPBVVector@@H@Z sub_101cf0a0
 0x1001037f func   ?sub_101a59a0@UtlVec40@@QAEXHH@Z UtlVec40::sub_101a59a0
 0x10010384 func   ?vfunc5@CHudCounter@@QAEPAV1@I@Z CHudCounter::vfunc5
