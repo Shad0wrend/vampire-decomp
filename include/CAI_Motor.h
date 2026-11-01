@@ -32,7 +32,7 @@ public:
 	virtual float vfunc16();	// slot 16: the minimum speed (asked by slot 17 with the same call twice)
 	virtual float vfunc17();	// slot 17: the wanted speed (+0x30 times the component's scale) raised to at least slot 16 and capped at sub_102d61b0(+0x8)
 	virtual void vfunc18(int a);	// takes one argument (slot 19 hands it its first argument)
-	virtual void vfunc19(int a, int b, int c);	// slot 19: slot 18(a), then sub_102e1560(a, scale, (speed of the velocity vector + scale) * the wanted speed * 0.5, b, c)
+	virtual int vfunc19(int a, int b, int c);	// slot 19: slot 18(a), then sub_102e1560(a, scale, (speed of the velocity vector + scale) * the wanted speed * 0.5, b, c)
 	virtual int vfunc20(int a, int b, int c);	// slot 20: the other move executor MoveNormalExecute dispatches to (same arguments as slot 19)
 
 	char *m_pOuter;	// 0x0004, CAI_Component::m_pOuter (the owning NPC)
