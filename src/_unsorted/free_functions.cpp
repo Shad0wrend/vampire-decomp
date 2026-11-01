@@ -120785,6 +120785,17 @@ void __fastcall sub_102781e0(void *pSelf, int unused, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10278c80 size=0x20
+#include <math.h>
+#include "CUnknown10290040.h"
+
+// TARGET: CUnknown10290040::sub_10278c80
+char CUnknown10290040::sub_10278c80()
+{
+    return fabs(m_pMotor5d44->sub_102e1f90()) <= 0.006;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10279040 size=0xb
 namespace lifted {
 extern char g_105ccb48;
