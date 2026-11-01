@@ -7878,6 +7878,7 @@
 0x1000e5cf func   ?vfunc366@CNPC_VCamera@@UAE_NHHH@Z CNPC_VCamera::vfunc366
 0x1000e5d9 func   ?vfunc366@CNPC_VMingXiaoTentacle@@UAE_NHHH@Z CNPC_VMingXiaoTentacle::vfunc366
 0x1000e5de func   _item_w_mingxiao_spit item_w_mingxiao_spit
+0x1000e5e8 func   ?sub_10221660@QuestJournal@@QAEHPAVCKeyValuesX@@@Z QuestJournal::sub_10221660
 0x1000e5ed func   ?vfunc80@CWeaponMelee_SeveredArm@@QAEHXZ CWeaponMelee_SeveredArm::vfunc80
 0x1000e5f2 func   _item_g_bailbond_receipt item_g_bailbond_receipt
 0x1000e5f7 func   ?sub_1033e0a0@CBaseCombatCharacter@@QAEXHHPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_1033e0a0

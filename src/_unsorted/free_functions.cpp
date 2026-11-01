@@ -106766,6 +106766,64 @@ void QuestJournal::sub_102210f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10221660 size=0x2e0
+#include "QuestJournal.h"
+#include "CKeyValuesX.h"
+#include "ScopeTrace.h"
+#include "utlvector.h"
+#include <string.h>
+
+extern char g_1074f930[];
+__declspec(dllimport) void Q_trimspace(const char *, char *, int);
+__declspec(dllimport) void Q_strncpy(char *, const char *, int);
+__declspec(dllimport) char *Q_stristr(const char *, const char *);
+
+struct QuestJournal_Completion
+{
+	int m_nID;
+	char *m_pszDescription;
+	int m_nState;
+	int m_nAwardMoney;
+	char *m_pszAwardXP;
+	char *m_pszEvent;
+};
+
+// TARGET: QuestJournal::sub_10221660
+int QuestJournal::sub_10221660(CKeyValuesX *pKey)
+{
+	ScopeTrace trace("QuestJournal::AddCompletion", g_106b8540);
+	QuestJournal_Completion rec;
+	memset(&rec, 0, sizeof(rec));
+	rec.m_nAwardMoney = pKey->sub_10248bb0("AwardMoney", 0);
+	Q_trimspace(pKey->sub_10248cd0("AwardXP", g_106b8540), g_1074f930, 0x1000);
+	rec.m_pszAwardXP = new char[strlen(g_1074f930) + 1];
+	Q_strncpy(rec.m_pszAwardXP, g_1074f930, strlen(g_1074f930) + 1);
+	rec.m_nID = pKey->sub_10248bb0("ID", -1);
+	if (rec.m_nID == -1)
+		return -1;
+	Q_trimspace(pKey->sub_10248cd0("Description", "!!DESCRIPTION!!"), g_1074f930, 0x1000);
+	rec.m_pszDescription = new char[strlen(g_1074f930) + 1];
+	Q_strncpy(rec.m_pszDescription, g_1074f930, strlen(g_1074f930) + 1);
+	Q_trimspace(pKey->sub_10248cd0("Event", g_106b8540), g_1074f930, 0x1000);
+	if (strlen(g_1074f930)) {
+		int n = strlen(g_1074f930) + 1;
+		rec.m_pszEvent = new char[n];
+		memset(rec.m_pszEvent, 0, n);
+		Q_trimspace(g_1074f930, rec.m_pszEvent, n);
+	}
+	Q_trimspace(pKey->sub_10248cd0("Type", "incomplete"), g_1074f930, 0x1000);
+	if (Q_stristr(g_1074f930, "incomplete"))
+		rec.m_nState = 1;
+	else if (Q_stristr(g_1074f930, "success"))
+		rec.m_nState = 2;
+	else if (Q_stristr(g_1074f930, "fail"))
+		rec.m_nState = 3;
+	else
+		rec.m_nState = Q_stristr(g_1074f930, "botch") ? 4 : 1;
+	return ((CUtlVector<QuestJournal_Completion> *)this)->AddToTail(rec);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10221a00 size=0xcb
 #include "QuestJournal.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
