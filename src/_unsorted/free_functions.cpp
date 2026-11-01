@@ -162266,11 +162266,26 @@ void CNPC_VVampireBoss::sub_103c6df0(int index, const char *name)
 // FUNCTION: 0x103c6e80 size=0x1a
 #include "CNPC_VVampireBoss.h"
 
+struct TScope {
+	const char *name;
+	void *a;
+	void *b;
+};
+extern int *g_109f3680;
+extern TScope *g_109f3620;
+extern char g_1065ee4c[];
+extern char g_106b8540[];
+
 namespace block_103c6e80 {
 struct CVampireBossUnit : CNPC_VVampireBoss { void sub_103c6df0(int index, const char *name); };
-void CVampireBossUnit::sub_103c6df0(int index, const char *name)
+void CVampireBossUnit::sub_103c6df0(int index, const char *name)	// 0x103c6df0's source, compiled before its caller
 {
+	g_109f3620[*g_109f3680].name = g_1065ee4c;
+	g_109f3620[*g_109f3680].a = g_106b8540;
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	(*g_109f3680)++;
 	m_pBodyEmitterNames[index] = name;
+	(*g_109f3680)--;
 }
 }
 using namespace block_103c6e80;
