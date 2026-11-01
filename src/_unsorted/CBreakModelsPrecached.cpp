@@ -4,6 +4,7 @@
 // FUNCTION: 0x10191920 size=0x86
 #include "CBreakModelsPrecached.h"
 #include "utlrbtree.h"
+struct CRBTree12Entry_10194f30 { char data[4]; };	// the tree of its sentinel (one T per game instance)
 
 void CBreakModelsPrecached::vfunc5()
 {
@@ -11,7 +12,7 @@ void CBreakModelsPrecached::vfunc5()
 	unsigned short prev = CUtlRBTree12::InvalidIndex();
 	for (int i = (int)tree->m_TotalElements; --i >= 0; ) {
 		unsigned short idx = (unsigned short)i;
-		((const CUtlRBTree<int, unsigned short> *)tree)->Links(idx);
+		((const CUtlRBTree<CRBTree12Entry_10194f30, unsigned short> *)tree)->Links(idx);
 		tree->m_pElements[idx].m_Links.m_Right = prev;
 		tree->m_pElements[idx].m_Links.m_Left = idx;
 		prev = idx;
