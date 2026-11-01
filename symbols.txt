@@ -2026,6 +2026,7 @@
 0x1000480e func   ?sub_1025c800@CUtlRBTreeBig@@QAEGG_N@Z CUtlRBTreeBig::sub_1025c800
 0x10004813 func   ?sub_10070550@@YAPAVCBaseCineCam@@PBDH@Z sub_10070550
 0x10004818 func   ?vfunc19@CSave@@UAEXPAPBDH@Z CSave::vfunc19
+0x1000481d func   ?sub_102ee220@CAI_Navigator@@QAEXPBVVector@@@Z CAI_Navigator::sub_102ee220
 0x10004822 func   ?sub_10319e70@@YIPAHPAH@Z sub_10319e70
 0x10004827 func   ?sub_1017a270@@YIPAUStatMaskView@@PAU1@@Z sub_1017a270
 0x1000482c func   _item_w_tzimisce2_claw item_w_tzimisce2_claw

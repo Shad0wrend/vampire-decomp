@@ -134603,6 +134603,22 @@ int sub_102ee200()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ee220 size=0x1f
+#include "CAI_Navigator.h"
+
+struct CUnk102ee220Route
+{
+    void sub_1030b950(const Vector *pPosition);
+};
+
+// TARGET: CAI_Navigator::sub_102ee220
+void CAI_Navigator::sub_102ee220(const Vector *pPosition)
+{
+    ((CUnk102ee220Route *)m_p30)->sub_1030b950(pPosition);
+    sub_102f1dc0(0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ee250 size=0xd
 __declspec(naked) void CUnknown102ee120::sub_102ee250(int value)
 {
