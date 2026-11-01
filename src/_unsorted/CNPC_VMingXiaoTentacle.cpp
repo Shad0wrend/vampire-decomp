@@ -359,6 +359,18 @@ int CNPC_VMingXiaoTentacle::vfunc409()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039eda0 size=0x28
+void __cdecl sub_10015311(void *p, int mode);
+
+// TARGET: CNPC_VMingXiaoTentacle::vfunc127
+int CNPC_VMingXiaoTentacle::vfunc127(int a)
+{
+	int r = sub_1000527c(a);
+	sub_10015311((char *)this + 0x6674, 3);
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039f000 size=0x17
 #include "CNPC_VMingXiaoTentacle.h"
 extern int g_1093bd34;

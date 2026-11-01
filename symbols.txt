@@ -1505,6 +1505,7 @@
 0x100038ff func   ?sub_10235ea0@@YAHXZ sub_10235ea0
 0x10003904 func   ?vfunc29@CGameRules@@UAEXPAX@Z CGameRules::vfunc29
 0x10003909 func   ?vfunc81@CWorld@@UAEHXZ CWorld::vfunc81
+0x1000390e func   ?vfunc127@CNPC_VMingXiaoTentacle@@UAEHH@Z CNPC_VMingXiaoTentacle::vfunc127
 0x1000391d func   ?sub_101afdc0@CUnknown101afba0@@QAE_NPAVCKeyValuesX@@@Z CUnknown101afba0::sub_101afdc0
 0x10003922 func   _item_g_bloodpack item_g_bloodpack
 0x10003927 func   ?sub_10198150@@YAPAXPAX0@Z sub_10198150
