@@ -44564,6 +44564,25 @@ void CUnknown100fba40::sub_100fba40(float flRampTime)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fbac0 size=0x1d
+struct CUnit100fb980 {
+	void sub_100fb980(int a);
+};
+struct CUnknown100fba40 {
+	void sub_100fba40(int a);
+};
+struct CUnknown100fbac0 {
+	void sub_100fbac0(int a, int b);
+};
+
+// TARGET: CUnknown100fbac0::sub_100fbac0
+void CUnknown100fbac0::sub_100fbac0(int a, int b)
+{
+	((CUnit100fb980 *)this)->sub_100fb980(a);
+	((CUnknown100fba40 *)this)->sub_100fba40(b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fbaf0 size=0x3a
 #include "CBaseEntity.h"
 

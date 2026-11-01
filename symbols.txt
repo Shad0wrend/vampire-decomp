@@ -2013,6 +2013,7 @@
 0x10004836 func   ?sub_1023bb80@@YAXXZ sub_1023bb80
 0x1000483b func   ?sub_101db870@CUnknown101db210Sub@@QAEHHH@Z CUnknown101db210Sub::sub_101db870
 0x10004840 func   ?vfunc80@CBeam@@UAEHXZ CBeam::vfunc80
+0x10004845 func   ?sub_100fbac0@CUnknown100fbac0@@QAEXHH@Z CUnknown100fbac0::sub_100fbac0
 0x1000484a func   ?sub_1024ed00@@YAXAAVVMatrix@@MMM@Z sub_1024ed00
 0x10004854 func   ?vfunc5@CItemContainerAnimated@@QAEPAV1@I@Z CItemContainerAnimated::vfunc5
 0x1000485e func   ?vfunc434@CGenericSabbat_NPC@@UAEXXZ CGenericSabbat_NPC::vfunc434
