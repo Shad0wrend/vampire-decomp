@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10566f60;
 }
-CParamsParticle::Datamap82 CParamsParticle::vfunc82()
+datamap_t *CParamsParticle::vfunc82()
 {
-    return (CParamsParticle::Datamap82)&lifted::g_10566f60;
+    return (datamap_t *)&lifted::g_10566f60;
 }
 // END FUNCTION
 
