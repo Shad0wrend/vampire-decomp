@@ -16774,6 +16774,22 @@ void CUnknown10077770::sub_10077770(CUnknownSlot0Obj *pObj, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100777b0 size=0x1d
+struct CUnknown100777b0 {
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual void vfunc2(int a, int b, int c);
+	void sub_100777b0(CUnknown100777b0 *p, int a, int b);
+};
+
+// TARGET: CUnknown100777b0::sub_100777b0
+void CUnknown100777b0::sub_100777b0(CUnknown100777b0 *p, int a, int b)
+{
+	if (p)
+		p->vfunc2(b, a, (int)this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100777e0 size=0x26
 struct CUnknown100777e0Vt {
     virtual void vfunc0();

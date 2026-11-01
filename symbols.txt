@@ -8794,6 +8794,7 @@
 0x100103d9 func   ?sub_101eaac0@@YAXH@Z sub_101eaac0
 0x100103de func   ?sub_10138580@@YA?AUQAngleView@@ABU1@0@Z sub_10138580
 0x100103e3 func   ?sub_100f4140@@YAXPBDHH@Z sub_100f4140
+0x100103e8 func   ?sub_100777b0@CUnknown100777b0@@QAEXPAU1@HH@Z CUnknown100777b0::sub_100777b0
 0x100103ed func   ?sub_100424a0@UtlVec8@@QAEHHPBUUtlVec8Elem@@@Z UtlVec8::sub_100424a0
 0x100103f2 func   ?vfunc619@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc619
 0x100103f7 func   ?sub_100ecc60@EntryTable@@QAEHHH@Z EntryTable::sub_100ecc60
