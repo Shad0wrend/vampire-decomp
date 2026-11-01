@@ -359,7 +359,7 @@ inline void CUtlRBTree<T, I>::RotateRight(I elem)
 }
 
 template <class T, class I>
-__forceinline void CUtlRBTree<T, I>::InsertRebalance(I elem)
+inline void CUtlRBTree<T, I>::InsertRebalance(I elem)
 {
 	while (!IsRoot(elem) && (Color(Parent(elem)) == RED)) {
 		I parent = Parent(elem);
