@@ -627,6 +627,7 @@
 0x10002149 func   ?sub_101c7690@@YAPAVCBaseEntity@@PBDPAVCChangeLevel@@@Z sub_101c7690
 0x1000214e func   ?sub_10105950@@YAXXZ sub_10105950
 0x10002153 func   _item_g_car_stereo item_g_car_stereo
+0x1000216c func   ?vfunc529@CAI_BaseNPC@@UAE_NXZ CAI_BaseNPC::vfunc529
 0x10002176 func   ?sub_10147690@CBaseCombatCharacter@@QAEXPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_10147690
 0x10002180 func   ?sub_103629d0@CNPC_VAsianVampire@@QAE_NPBMM@Z CNPC_VAsianVampire::sub_103629d0
 0x10002185 func   ?vfunc473@CNPC_VHengeyokai@@UAEHXZ CNPC_VHengeyokai::vfunc473

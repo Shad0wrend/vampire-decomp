@@ -1587,6 +1587,25 @@ unsigned int CAI_BaseNPC::vfunc423()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10280330 size=0x20
+#include "CAI_BaseNPC.h"
+
+// TARGET: CAI_BaseNPC::vfunc529
+bool CAI_BaseNPC::vfunc529()
+{
+    int *p = sub_1028a150();
+    if (p)
+    {
+        int v = *p;
+        if (v != 0x6e && v != 0xb && v != 0x72)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10280bb0 size=0x7
 namespace lifted {
 extern float g_1049949c;
