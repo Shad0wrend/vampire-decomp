@@ -170696,6 +170696,17 @@ void __cdecl sub_10427d90(CUnit10427d90 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10427dc0 size=0x1c
+void sub_10427a70(void *p);
+
+// TARGET: sub_10427dc0
+void __cdecl sub_10427dc0(char *p)
+{
+	if (p && *(int *)(p + 0x118) == 0)
+		sub_10427a70(p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x104280f0 size=0x47
 int sub_104280f0(int n, int *values, int *weights)
 {
