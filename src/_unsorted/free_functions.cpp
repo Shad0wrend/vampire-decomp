@@ -16187,6 +16187,20 @@ void CUnknown100765d0::sub_100765d0(float f)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10076600 size=0x1e
+// TARGET: sub_10076600
+char __cdecl sub_10075f30();
+float __cdecl sub_10075f10();
+void __stdcall sub_10075e90(float v);
+void __stdcall sub_10076600(float v)
+{
+    if (sub_10075f30())
+    {
+        sub_10075e90(sub_10075f10() + v);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10076670 size=0xd
 void CUnknown10076670::sub_10076670(int value)
 {

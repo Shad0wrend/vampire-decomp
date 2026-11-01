@@ -2104,6 +2104,7 @@
 0x10004a5c func   ?sub_1038f290@CNPC_VManBat@@QAE_NXZ CNPC_VManBat::sub_1038f290
 0x10004a61 func   ?sub_103f8230@@YAHXZ sub_103f8230
 0x10004a6b func   ?vfunc420@CNPC_VManBat@@QAEXXZ CNPC_VManBat::vfunc420
+0x10004a70 func   ?sub_10076600@@YGXM@Z sub_10076600
 0x10004a75 func   ?Purge@?$CUtlMemory@UCUnknown102cff90Elem@@@@QAEXXZ CUtlMemory<CUnknown102cff90Elem>::Purge
 0x10004a75 func   ?sub_102d4160@UtlMem@@QAEXXZ UtlMem::sub_102d4160
 0x10004a7a func   ?vfunc81@CWeaponMelee_ChangBlade@@QAEHXZ CWeaponMelee_ChangBlade::vfunc81
