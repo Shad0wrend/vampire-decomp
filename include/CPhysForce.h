@@ -33,6 +33,7 @@ public:
 	CPhysForce *vfunc5(unsigned int flags);	// scalar deleting destructor
 	void vfunc130(int a);	// slot 130: CBaseEntity::vfunc130(a), then the controller's slot 1 with the motion record
 
+	void sub_10027b60(float flScale);	// input handler body (called by the inputdata_t wrapper 0x10027890 with the float value): attaches the force when there is no controller, scales the motion record (+0x464) by flScale and runs the controller's slot 7
 	void sub_10014470();	// destructor body
 	void sub_100276c0();	// 0x100276c0: vtable store, DestroySpring of the controller (env slot 40), then the CBaseEntity destructor body (stub 0x1000cb8a)
 	void sub_100a0bc0();	// CBaseEntity::vfunc113 (stub 0x10001226), called directly
