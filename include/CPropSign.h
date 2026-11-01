@@ -40,8 +40,9 @@ public:
 	char m_pad0090[0x26c - 0x90];
 	const char *m_name26c;	// 0x26c
 	CCollisionProperty m_Collision;	// 0x270
-	char m_pad02b8[0x74c - 0x270 - sizeof(CCollisionProperty)];
-	CPropSignUserList m_Users74c;	// 0x74c
+	char m_pad02b8[0x734 - 0x270 - sizeof(CCollisionProperty)];
+	COutputEvent m_Output734;	// 0x734 (fired by vfunc39, destroyed by sub_100cd2d0 in the destructor 0x10211af0)
+	CPropSignUserList m_Users74c;	// 0x74c; really an output event (0x18 bytes, destroyed by sub_100cd2d0) followed by the sign text pointer m_pText764 (+0x764, freed with operator delete in the destructor)
 	int m_field768;
 	void sub_10001a0a();	// as in CPhysForce (transplant)
 	void vfunc103();	// slot 103 "CPropSign::Spawn": CBaseProp::vfunc103, then with a studio header: stops the movement (slot 93), makes the entity solid (SetSolid 3), takes the collision bounds from the header (+0xb4 / +0xc0), sets collision group 1 and refreshes the partition (sub_100ddd90) and the entity (sub_100b3b00)
