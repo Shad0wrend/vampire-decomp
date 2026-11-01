@@ -56,7 +56,10 @@ public:
 	char m_pad5b81[0x5cc0 - 0x5b81];
 	int m_n5cc0;	// 0x5cc0: the NPC state
 	int m_n5cc4;	// 0x5cc4: the ideal state
-	char m_pad5cc8[0x6160 - 0x5cc8];
+	char m_pad5cc8[0x6081 - 0x5cc8];
+	char m_b6081;	// 0x6081
+	char m_pad6082[0x6160 - 0x6082];
+	void vfunc472(int a);	// slot 472 override: sub_10370560(a) when the byte is clear and slot 404 answers 1, then CAI_BaseNPCTroika::vfunc472(a)
 	EHANDLE m_h6160;	// 0x6160
 	char m_pad6164[0x618c - 0x6164];
 	EHANDLE m_h618c;	// 0x618c
