@@ -93688,6 +93688,22 @@ bool CUnknown101f5150::sub_101f5150(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f58e0 size=0x50
+#include "CVSoundActivityTable_t.h"
+
+// TARGET: CVActivitySound::sub_101f58e0
+void CVActivitySound::sub_101f58e0(CVSoundEnt *pEnt)
+{
+	int iRow = pEnt->sub_1009d5e0();
+	pEnt->sub_1009d6a0();
+	for (int i = 0; i < m_nSounds; i++) {
+		const char *pszSample = m_ppLists[iRow]->sub_101f4600(pEnt, i);
+		if (pszSample)
+			enginesound->vfunc0(pszSample, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f5950 size=0x198
 #include "CVSoundActivityTable_t.h"
 #include "CPASAttenuationFilter.h"

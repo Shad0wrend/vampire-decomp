@@ -9494,6 +9494,7 @@
 0x1001152c func   ?sub_10248730@CKeyValuesX@@QAEXPAVCUtlBuffer@@H@Z CKeyValuesX::sub_10248730
 0x10011531 func   ?sub_1033c770@CBaseCombatCharacter@@QAEXI@Z CBaseCombatCharacter::sub_1033c770
 0x10011536 func   ?vfunc66@CGameRules@@UAEHH@Z CGameRules::vfunc66
+0x10011545 func   ?sub_101f58e0@CVActivitySound@@QAEXPAVCVSoundEnt@@@Z CVActivitySound::sub_101f58e0
 0x1001154f func   ?sub_102daea0@@YIPAXPAUCOwnerView@@@Z sub_102daea0
 0x10011554 func   ?sub_102cac90@CAI_DebugRecordList@@QAEXXZ CAI_DebugRecordList::sub_102cac90
 0x1001155e func   ?vfunc0@CFlexAnimationTrack@@UAEPAV1@I@Z CFlexAnimationTrack::vfunc0
