@@ -1,6 +1,12 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101c9910 size=0x8
+#include "CAI_ChangeTarget.h"
+// TARGET: CAI_ChangeTarget::vfunc117
+char CAI_ChangeTarget::vfunc117() { char c = ((CBaseEntity *)this)->CBaseEntity::vfunc117(); return c & (char)0xfd; }
+// END FUNCTION
+
 // FUNCTION: 0x101c9930 size=0x6
 #include "CAI_ChangeTarget.h"
 namespace lifted {

@@ -3830,6 +3830,7 @@
 0x100076c6 func   ?vfunc70@CNPC_VTzimisceHeadClaw@@UAE_NXZ CNPC_VTzimisceHeadClaw::vfunc70
 0x100076d0 func   ?sub_102a95c0@CUnknown102a95c0@@QAEPAXXZ CUnknown102a95c0::sub_102a95c0
 0x100076d5 func   ?sub_10075ce0@CUnknown10077730@@QAEXD@Z CUnknown10077730::sub_10075ce0
+0x100076da func   ?vfunc117@CAI_ChangeTarget@@QAEDXZ CAI_ChangeTarget::vfunc117
 0x100076e9 func   ?vfunc5@CNPC_VMoleman@@QAEPAV1@I@Z CNPC_VMoleman::vfunc5
 0x100076ee func   ?sub_1035f5c0@CAnimalUnit@@QAEXPAVCEntityVSlots@@PAVVector@@HH@Z CAnimalUnit::sub_1035f5c0
 0x100076f3 func   ?sub_101f82d0@CUnknown101f0e50@@QAE_NH@Z CUnknown101f0e50::sub_101f82d0
