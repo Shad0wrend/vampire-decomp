@@ -7050,6 +7050,7 @@
 0x1000d170 func   ?sub_100bc4d0@bf_write@@QAEPAV1@PAXHH@Z bf_write::sub_100bc4d0
 0x1000d175 func   _item_k_shrekhub_one_key item_k_shrekhub_one_key
 0x1000d184 func   ?sub_102f65d0@CUnknown102f65d0@@QAEXPBD@Z CUnknown102f65d0::sub_102f65d0
+0x1000d189 func   ?sub_101296d0@CUnk101296d0@@QAEXXZ CUnk101296d0::sub_101296d0
 0x1000d18e func   ?sub_10097b00@CUtlMemory60@@QAEPAU1@HH@Z CUtlMemory60::sub_10097b00
 0x1000d193 func   ?sub_10073900@CUnknown10073900@@QAEHXZ CUnknown10073900::sub_10073900
 0x1000d198 func   ?sub_10239f30@@YGXPAX@Z sub_10239f30

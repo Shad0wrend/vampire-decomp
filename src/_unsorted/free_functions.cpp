@@ -51565,6 +51565,29 @@ void sub_10128f50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101296d0 size=0x20
+#include "vampire.h"
+extern char g_104629f4;
+void __fastcall sub_10427970(void *p);
+void sub_10430964(void *p);
+struct CUnk101296d0
+{
+    char m_pad0000[4];
+    void *m_pObj;  // 0x04
+    void sub_101296d0();
+};
+// TARGET: CUnk101296d0::sub_101296d0
+void CUnk101296d0::sub_101296d0()
+{
+    void *p = m_pObj;
+    *(void **)this = &g_104629f4;
+    if (p != 0) {
+        sub_10427970(p);
+        sub_10430964(p);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10129740 size=0x16
 struct CUnknown1023bd00 { int sub_1023bd00(); };
 
