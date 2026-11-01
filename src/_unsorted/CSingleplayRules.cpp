@@ -165,7 +165,7 @@ void CSingleplayRules::vfunc45(CBaseEntity * a0, CMPDamageInfo * a1)
 
 // FUNCTION: 0x101abf80 size=0x9
 extern float g_104492dc;
-float CSingleplayRules::vfunc49(CSingleplayRules::Arg4950 a) { return g_104492dc; }
+float CSingleplayRules::vfunc49(CBaseEntity *a) { return g_104492dc; }
 // END FUNCTION
 
 // FUNCTION: 0x101abfa0 size=0x9
