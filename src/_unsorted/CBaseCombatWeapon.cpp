@@ -159,7 +159,7 @@ CBaseEntity *CBaseCombatWeapon::vfunc187()
 		*(unsigned int *)((char *)pNew + 0x1ec) = 0;
 		pNew->sub_100ac4e0((int)sub_100155eb, 0, 0);
 		sub_101cd250(this, 0x200400b, 0);
-		*(float *)((char *)pNew + 0x17c) = g_1070ba0c->vfunc49((CGameRules::Arg4950)this);
+		*(float *)((char *)pNew + 0x17c) = g_1070ba0c->vfunc49((CBaseEntity *)this);
 	} else {
 		g_109f362c("Respawn failed to create %s!\n", ((CHolderLike *)m_pHolder)->ClassnameStr());
 	}
