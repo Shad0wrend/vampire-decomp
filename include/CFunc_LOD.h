@@ -18,8 +18,7 @@ public:
 public:
 	virtual int vfunc81();
 	virtual int vfunc80();
-	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
-	virtual Datamap82 vfunc82();	// slot 82 GetDataDescMap (0x10114990)
+	virtual datamap_t *vfunc82();	// slot 82 GetDataDescMap (0x10114990)
 	virtual void vfunc112();
 	virtual void vfunc113();
 	virtual void vfunc114();
