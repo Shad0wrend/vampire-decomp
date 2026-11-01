@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10577244;
 }
-CLogicBranch::Datamap82 CLogicBranch::vfunc82()
+datamap_t *CLogicBranch::vfunc82()
 {
-    return (CLogicBranch::Datamap82)&lifted::g_10577244;
+    return (datamap_t *)&lifted::g_10577244;
 }
 // END FUNCTION
 
