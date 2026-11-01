@@ -2340,6 +2340,7 @@
 0x10005088 func   ?sub_103ca390@CHintData_WW@@QAEXH@Z CHintData_WW::sub_103ca390
 0x1000508d func   ?sub_10430410@@YAII@Z sub_10430410
 0x10005092 func   ?sub_104106a0@CWeaponPhysCannon@@QAEXHD@Z CWeaponPhysCannon::sub_104106a0
+0x10005097 func   ?sub_10279c90@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_10279c90
 0x100050a1 func   ?sub_103d6520@CNPC_VWerewolf@@QAEPAXPAX@Z CNPC_VWerewolf::sub_103d6520
 0x100050a6 func   ?vfunc369@CBaseCombatWeapon@@UAEXH@Z CBaseCombatWeapon::vfunc369
 0x100050ab func   ?vfunc80@CWeaponMelee_ManBatClaw@@QAEHXZ CWeaponMelee_ManBatClaw::vfunc80
