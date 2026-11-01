@@ -411,7 +411,7 @@ public:
 	virtual void vfunc327();
 	virtual void vfunc328();
 	virtual bool vfunc329();
-	virtual void vfunc330();
+	virtual char vfunc330(int unused, void *pEnt);	// slot 330 (ret 8): slot 320(the field at +0x9c of the object at +0x94 of pEnt, 0 without that object, 0x79) as a tail call; the first argument is unused
 	virtual void vfunc331();
 	virtual void vfunc332();
 	virtual void vfunc333();
