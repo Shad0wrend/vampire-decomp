@@ -76025,6 +76025,23 @@ void sub_101bb2b0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bb2e0 size=0x1e
+struct CUnk101bb2e0
+{
+    char pad[0x460];
+    unsigned int m_460;
+};
+extern CUnk101bb2e0 *g_1072c464;
+
+void sub_101bb2e0(unsigned int flags)
+{
+    if (g_1072c464)
+    {
+        g_1072c464->m_460 &= ~flags;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bb310 size=0x2a
 extern char *g_1072c464;
 

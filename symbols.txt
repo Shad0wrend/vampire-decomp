@@ -7047,6 +7047,7 @@
 0x1000d2a6 func   ?sub_101051b0@CExpressionTable@@QAEHH@Z CExpressionTable::sub_101051b0
 0x1000d2b0 func   ?vfunc14@CSave@@UAE_NPBXH@Z CSave::vfunc14
 0x1000d2b5 func   ?sub_100ee750@CUnknown100ee750@@QAEXPAX@Z CUnknown100ee750::sub_100ee750
+0x1000d2ba func   ?sub_101bb2e0@@YAXI@Z sub_101bb2e0
 0x1000d2bf func   ?vfunc580@CNPC_VZombie@@UAEHXZ CNPC_VZombie::vfunc580
 0x1000d2c4 func   ?sub_1028b3e0@@YIMPAH@Z sub_1028b3e0
 0x1000d2c9 func   ?vfunc39@CBaseVampireSkillEntity@@QAEXPAX@Z CBaseVampireSkillEntity::vfunc39
