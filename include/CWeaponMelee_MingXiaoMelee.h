@@ -13,7 +13,11 @@ public:
 	void vfunc269(CBaseCombatWeapon *pOther, Vector vecDir);	// slot 269: its own (0x103ec490), pushes pOther along -vecDir scaled by the mathlib value while the state at +0x910 is 1 or 2
 	CBaseCombatWeapon *vfunc5(unsigned int flags);	// as in CPhysForce (transplant); VC6 has no covariant returns
 
-	char m_pad08b8[0x910 - 0x8b8];
+	int m_n08b8;
+	int m_n08bc;
+	float m_f08c0;
+	float m_f08c4;
+	char m_pad08c8[0x910 - 0x8c8];
 	int m_n0910;
 public:
     virtual CWeaponActivityRecord * vfunc362();
