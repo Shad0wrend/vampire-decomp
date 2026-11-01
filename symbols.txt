@@ -2265,6 +2265,7 @@
 0x10004bba func   ?sub_103cc0d0@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103cc0d0
 0x10004bbf func   ?vfunc418@CBasePlayer@@UAEDH@Z CBasePlayer::vfunc418
 0x10004bc4 func   ?sub_101d6470@CLevelLoader@@QAE_NPAUKVNode@@H@Z CLevelLoader::sub_101d6470
+0x10004bc9 func   ??0CItemGKeyring@@QAE@XZ CItemGKeyring::CItemGKeyring
 0x10004bce func   ?vfunc295@CBaseCombatCharacter@@QAE_NH@Z CBaseCombatCharacter::vfunc295
 0x10004bd3 func   ?sub_102d0ab0@CAI_FailView@@QAEXPBD@Z CAI_FailView::sub_102d0ab0
 0x10004bdd func   ?sub_101c4710@CUnk101c4710@@QAEXHHH@Z CUnk101c4710::sub_101c4710
