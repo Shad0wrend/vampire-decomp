@@ -6178,6 +6178,7 @@
 0x1000b60e func   ?sub_101ddf80@CUnk101ddf80@@QAEXXZ CUnk101ddf80::sub_101ddf80
 0x1000b61d func   ?sub_10357be0@CNPC_Crow@@QAEXM@Z CNPC_Crow::sub_10357be0
 0x1000b627 func   _func_wall func_wall
+0x1000b62c func   ?sub_10078650@CUnk10078650@block_10078650@@QAEHH@Z block_10078650::CUnk10078650::sub_10078650
 0x1000b636 func   ?sub_1012c840@@YAXPAUCChildView@@@Z sub_1012c840
 0x1000b63b func   ?sub_102d3ea0@@YAXXZ sub_102d3ea0
 0x1000b645 func   ?vfunc187@CBaseCombatWeapon@@UAEPAVCBaseEntity@@XZ CBaseCombatWeapon::vfunc187

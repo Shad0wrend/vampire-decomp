@@ -17837,6 +17837,36 @@ int CUnknown10078630::sub_10078630()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10078650 size=0x25
+namespace block_10078650 {
+struct CUnk10078650
+{
+    int m_pad0000[0x19c / 4];
+    int m_19c;
+    int m_pad1a0[(0x1a8 - 0x1a0) / 4];
+    int m_1a8;
+    int sub_10078630();
+    int sub_10078650(int i);
+};
+
+int CUnk10078650::sub_10078630()
+{
+    return m_1a8;
+}
+
+// TARGET: sub_10078650
+int CUnk10078650::sub_10078650(int i)
+{
+    if (i >= 0) {
+        if (i < sub_10078630()) {
+            return m_19c + i * 12;
+        }
+    }
+    return 0;
+}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100787f0 size=0x4f
 #include <string.h>
 struct CRampView10078540 { char pad0[0x19c]; char *m_pSamples; char pad1a0[8]; int m_nSamples; };
