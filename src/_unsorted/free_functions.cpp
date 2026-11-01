@@ -153981,6 +153981,42 @@ void CUnk1035fc90::sub_1035fc90(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035fcc0 size=0x1e
+#define P10(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
+
+struct CUnk102ea280 {
+	void sub_102ea280(int a);
+};
+
+struct CUnk1035fcc0Inner {
+	char m_pad0000[0x1c];
+	int m_1c;
+};
+
+// Local view of the vtable: slot 580 is the virtual call; the other slots are placeholders.
+struct CUnk1035fcc0 {
+	P10(p0) P10(p1) P10(p2) P10(p3) P10(p4) P10(p5) P10(p6) P10(p7) P10(p8) P10(p9)
+	P10(p10) P10(p11) P10(p12) P10(p13) P10(p14) P10(p15) P10(p16) P10(p17) P10(p18) P10(p19)
+	P10(p20) P10(p21) P10(p22) P10(p23) P10(p24) P10(p25) P10(p26) P10(p27) P10(p28) P10(p29)
+	P10(p30) P10(p31) P10(p32) P10(p33) P10(p34) P10(p35) P10(p36) P10(p37) P10(p38) P10(p39)
+	P10(p40) P10(p41) P10(p42) P10(p43) P10(p44) P10(p45) P10(p46) P10(p47) P10(p48) P10(p49)
+	P10(p50) P10(p51) P10(p52) P10(p53) P10(p54) P10(p55) P10(p56) P10(p57)
+	virtual CUnk102ea280 *vfunc580();
+	char m_pad0004[0x5c38 - 4];
+	CUnk1035fcc0Inner *m_5c38;
+	void sub_1035fcc0(int a);
+};
+
+// TARGET: CUnk1035fcc0::sub_1035fcc0
+void CUnk1035fcc0::sub_1035fcc0(int a)
+{
+	CUnk102ea280 *r;
+	int v = m_5c38->m_1c;
+	r = vfunc580();
+	r->sub_102ea280(v);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035fcf0 size=0x1e
 #define P10(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
 
