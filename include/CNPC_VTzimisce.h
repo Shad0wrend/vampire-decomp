@@ -62,7 +62,8 @@ public:
 	VT_SLOTS10(t08) VT_SLOTS10(t09)
 	VT_SLOTS100(t1)
 	VT_SLOTS10(t20) VT_SLOTS10(t21) VT_SLOTS10(t22) VT_SLOTS10(t23) VT_SLOTS10(t24)
-	virtual void t250(); virtual void t251();
+	virtual float vfunc418(float a);	// slot 418 (0x103b9120): (int)a == -1000001 gives 150.0f, else CAI_BaseNPCTroika::vfunc418(a)
+	virtual void t251();
 	virtual void vfunc420();	// slot 420: base boss reset, then the state flag at +0x6689, the timers at +0x66ac / +0x66b0 (curtime + 3), the target handle at +0x6670 = -1
 	virtual void t253(); virtual void t254(); virtual void t255(); virtual void t256(); virtual void t257(); virtual void t258(); virtual void vfunc259(int *pEvent);
 	virtual void t260(); virtual void t261(); virtual void t262(); virtual void t263();
