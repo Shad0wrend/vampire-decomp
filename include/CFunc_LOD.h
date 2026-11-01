@@ -19,6 +19,7 @@ public:
 	virtual int vfunc81();
 	virtual int vfunc80();
 	virtual datamap_t *vfunc82();	// slot 82 GetDataDescMap (0x10114990)
+	virtual void vfunc111();	// slot 111: CBaseEntity's 0x10026bb0 in the game
 	virtual void vfunc112();
 	virtual void vfunc113();
 	virtual void vfunc114();
