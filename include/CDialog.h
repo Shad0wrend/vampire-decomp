@@ -94,6 +94,7 @@ public:
 	void *sub_100e76d0(void *pOld, int nOld, int nNew);	// "CDialog::drealloc" (this unused)
 	void sub_100e7480(int hFile);	// closes the dialog file (this unused)
 	int sub_100dffa0(CBaseEntity *pNPC, CBaseEntity *pSpeaker, int nArg);	// "CDialog::LogAutoendFloats": scope trace, takes the handles, loads the speaker's dialog file and writes the lip file name of every line that follows an auto-end line to the file system object; returns how many
+	void sub_100e34d0();	// "CDialog::audit_asset_files": scope trace, loads the dialog file, writes "<name>_missing.txt" with the missing speech files of every flagged entry (sub_100e3180) and removes it again when nothing is missing
 	void sub_100e7630(void *pFile);	// "CDialog::eat_line": scope trace, reads characters from the file until a newline or EOF
 	int sub_100e7510(void *pFile);	// reads one character (-1 at end of file)
 	int sub_100e6ed0(void *pFile, char *pszOut, int *pLine, char bStripBrackets);	// "CDialog::read_str_data": scope trace; skips to the opening { (// comments, warns about a stray }), then reads up to the closing } into pszOut (trimmed, curly quotes straightened, [..] dropped when bStripBrackets); 1 ok, 0 at end of file, -1 on a newline before the brace
