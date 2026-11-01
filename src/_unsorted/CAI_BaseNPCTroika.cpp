@@ -192,6 +192,22 @@ void CAI_BaseNPCTroika::vfunc19(const char *pszMsg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028e310 size=0x31
+#include "CAI_BaseNPCTroika.h"
+#include "CEntityVSlots.h"
+extern char g_106b8540[];
+void CAI_BaseNPCTroika::vfunc113()
+{
+	sub_100a0bc0();
+	if (((CEntityVSlots *)this)->slot138()) {
+		const char *psz = m_pszDisposition6558;
+		if (!psz)
+			psz = g_106b8540;
+		sub_102c0f70(psz, 1);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028ef20 size=0x76
 #include "CAI_BaseNPCTroika.h"
 char CAI_BaseNPCTroika::vfunc587(int unused)
