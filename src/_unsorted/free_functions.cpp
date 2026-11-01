@@ -74391,6 +74391,18 @@ void CUtlVector40::sub_101a58e0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a59a0 size=0x3e
+#include "UtlVec40.h"
+
+void UtlVec40::sub_101a59a0(int elem, int num)
+{
+	int numToMove = m_Size - elem - num;
+	if (numToMove > 0 && num > 0) {
+		memmove(m_pMemory + (elem + num) * 40, m_pMemory + elem * 40, numToMove * 40);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a59f0 size=0x6a
 #include "CUnknown101a59f0.h"
 
