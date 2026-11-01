@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10537098;
 }
-CPhysTorque::Datamap82 CPhysTorque::vfunc82()
+datamap_t *CPhysTorque::vfunc82()
 {
-    return (CPhysTorque::Datamap82)&lifted::g_10537098;
+    return (datamap_t *)&lifted::g_10537098;
 }
 // END FUNCTION
 
