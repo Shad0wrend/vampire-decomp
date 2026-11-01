@@ -125,6 +125,7 @@ public:
 	void sub_100843d0(void *pScene);	// stub 0x10008a8f, run on the scene when it starts
 	void sub_10081ed0();	// stub 0x100114b4, run when the scene starts
 	void sub_10082c90();	// stub 0x10003080, run when the scene starts
+	CBaseEntity *sub_100823c0(int iActor);	// stub 0x10010294: the entity of the iActor-th actor of the scene at +0x4bc (vfunc268 of its name), null when there is none
 
 	char m_pad0004[0x10c - 4];
 	unsigned int m_hPlayer10c;	// 0x10c: entity handle of the scene's player
