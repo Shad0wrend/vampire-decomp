@@ -129045,6 +129045,24 @@ void sub_102d7640()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d7730 size=0x1d
+// TARGET: CUnk102d7730::sub_102d7730
+struct CUnk102d7730
+{
+    char pad[0x1568];
+    int m_1568;
+    int m_156c;
+    void sub_10273070(int a);
+    void sub_102d7730(int a);
+};
+void CUnk102d7730::sub_102d7730(int a)
+{
+    m_1568 = a;
+    m_156c = a;
+    sub_10273070(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d77a0 size=0x1f
 namespace lifted {
 extern char g_1049be30;
