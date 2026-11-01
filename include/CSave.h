@@ -42,7 +42,7 @@ public:
 	virtual bool vfunc10(const void *pData, int nBytes);	// WriteInt
 	virtual int vfunc11(int, int, int);
 	virtual void vfunc12(const void *pData, int count);
-	virtual void vfunc13();
+	virtual void vfunc13(const char *pszName, void *pData, int count);
 	virtual bool vfunc14(const void *pData, int nBytes);
 	virtual void vfunc15();
 	virtual void vfunc16(const void *pData, int nBytes);	// slot 16: writes the float at pData (a 4-byte value), called by vfunc25 with the difference of two floats
