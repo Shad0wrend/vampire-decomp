@@ -14,9 +14,9 @@ int CSoundEnt::vfunc117()
 namespace lifted {
 extern char g_10599e24;
 }
-CSoundEnt::Datamap82 CSoundEnt::vfunc82()
+datamap_t *CSoundEnt::vfunc82()
 {
-    return (CSoundEnt::Datamap82)&lifted::g_10599e24;
+    return (datamap_t *)&lifted::g_10599e24;
 }
 // END FUNCTION
 
