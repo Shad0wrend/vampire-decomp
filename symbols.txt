@@ -11300,6 +11300,7 @@
 0x10013b01 func   ?sub_10095460@CBaseAnimating@@QAEHXZ CBaseAnimating::sub_10095460
 0x10013b06 func   ?sub_100febb0@@YAHXZ sub_100febb0
 0x10013b10 func   ?sub_101d8170@@YAXXZ sub_101d8170
+0x10013b15 func   ?vfunc440@CNPC_VMingXiaoTentacle@@UAEHH@Z CNPC_VMingXiaoTentacle::vfunc440
 0x10013b1a func   ??1CUnknown109f08c0@@QAE@XZ CUnknown109f08c0::~CUnknown109f08c0
 0x10013b1f func   ?vfunc451@CNPC_VWolfMorph@@UAEHXZ CNPC_VWolfMorph::vfunc451
 0x10013b29 func   ?vfunc80@CHudEntity@@QAEHXZ CHudEntity::vfunc80

@@ -135,6 +135,23 @@ int CNPC_VMingXiaoTentacle::vfunc437()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039e2d0 size=0x2b
+// TARGET: CNPC_VMingXiaoTentacle::vfunc440
+#include "CNPC_VMingXiaoTentacle.h"
+
+int CNPC_VMingXiaoTentacle::vfunc440(int a)
+{
+    switch (a)
+    {
+    case 0xc7:
+        return 0xc8;
+    case 0x147:
+        return 0x16d;
+    }
+    return sub_102b12f0(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039e7e0 size=0x1
 void CNPC_VMingXiaoTentacle::vfunc434()
 {
