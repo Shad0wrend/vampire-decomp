@@ -129271,6 +129271,22 @@ void __stdcall sub_1029f5d0(SNPCTroikaRef_t *pRef)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029f610 size=0x2e
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_TroikaLink.h"
+bool CAI_BaseNPCTroika::sub_1029f610(void *pHolder)
+{
+	CTroikaReqHolder *pH = (CTroikaReqHolder *)pHolder;
+	if (pH && pH->m_pReq)
+	{
+		CTroikaBits *pBits = *(CTroikaBits **)((char *)m_p5d34 + 0x2c);
+		if (pH->m_pReq->sub_10307ac0(pBits))
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029f650 size=0x44
 struct CAI_NavNodeView { char m_pad[0x46c]; int m_n46c; };
 char CAI_BaseNPCTroika::sub_1029f650(void *pHolder)

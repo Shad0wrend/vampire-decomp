@@ -4065,6 +4065,7 @@
 0x10007c2f func   _item_w_baseball_bat item_w_baseball_bat
 0x10007c34 func   ?sub_1005a330@@YAXHHPBH0@Z sub_1005a330
 0x10007c3e func   ?vfunc459@CBasePlayer@@UAEPAVCBaseEntity@@PBDH@Z CBasePlayer::vfunc459
+0x10007c48 func   ?sub_1029f610@CAI_BaseNPCTroika@@QAE_NPAX@Z CAI_BaseNPCTroika::sub_1029f610
 0x10007c4d func   ?sub_1006ed20@CUnknown1006ed20@@QAEXH@Z CUnknown1006ed20::sub_1006ed20
 0x10007c52 func   ?vfunc3@CTEBreakModel@@UAEXABVVector@@ABVQAngle@@@Z CTEBreakModel::vfunc3
 0x10007c57 func   ?vfunc144@CBreakableProp@@QAEXPAX@Z CBreakableProp::vfunc144
