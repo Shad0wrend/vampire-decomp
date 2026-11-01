@@ -120,3 +120,20 @@ int CNPC_VSheriffSwarm::vfunc461()
     return lifted::sub_10011225();
 }
 // END FUNCTION
+
+// FUNCTION: 0x103b2470 size=0xd
+struct CNPC_VHumanFwd;
+struct CNPC_VSheriffSwarmFwd {
+    void sub_103b2470(int a);
+};
+struct CNPC_VHumanFwd {
+    void sub_10385a10(int a);
+};
+
+// TARGET: sub_103b2470
+void CNPC_VSheriffSwarmFwd::sub_103b2470(int a)
+{
+    a = *(volatile int *)&a;
+    ((CNPC_VHumanFwd *)this)->sub_10385a10(a);
+}
+// END FUNCTION
