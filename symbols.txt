@@ -2056,6 +2056,7 @@
 0x10004926 func   ?vfunc376@CNPC_VMingXiao@@QAEHH@Z CNPC_VMingXiao::vfunc376
 0x10004935 func   ?sub_101d7bf0@@YAXXZ sub_101d7bf0
 0x1000493a func   ?vfunc2@CTEInspectionFX@@UAEPAV1@I@Z CTEInspectionFX::vfunc2
+0x10004944 func   ?sub_103e1cf0@@YAXPAUCUnk1032f770@@HH@Z sub_103e1cf0
 0x10004949 func   ?sub_10193ea0@CPropDestructable@@QAEXPAUinputdata_t@@@Z CPropDestructable::sub_10193ea0
 0x1000494e func   ?vfunc373@CWeaponMelee_ChangClaw@@QAEHXZ CWeaponMelee_ChangClaw::vfunc373
 0x10004953 func   ?vfunc420@CNPC_VPedestrian@@UAEXXZ CNPC_VPedestrian::vfunc420

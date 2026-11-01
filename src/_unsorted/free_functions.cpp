@@ -159686,6 +159686,21 @@ void sub_103e1c80(Node60 *list, Node60 *src, int parent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e1cf0 size=0x1d
+// TARGET: sub_103e1cf0
+struct CUnk1032f770
+{
+    void sub_1032f770(int a, float b, float c);
+};
+void __cdecl sub_103e1cf0(CUnk1032f770 *p, int b, int c)
+{
+    if (p)
+    {
+        p->sub_1032f770(c, 3.0f, 1.0f);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e1d20 size=0x43
 #include "CFlameCluster.h"
 void *sub_100aa720(int size);
