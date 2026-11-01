@@ -270,7 +270,8 @@ public:
 	unsigned int m_h6010;
 	char m_pad6014[0x6074 - 0x6014];
 	float m_f6074;	// 0x6074: the next time slot 600 may ask again
-	char m_pad6078[0x607c - 0x6078];
+	char m_b6078;	// 0x6078: set while slot 599 / 600 hold the ranged position
+	char m_pad6079[0x607c - 0x6079];
 	float m_f607c;
 	char m_b6080;
 	char m_b6081;
