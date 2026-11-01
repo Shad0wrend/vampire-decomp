@@ -2137,6 +2137,7 @@
 0x10004895 func   ?sub_1017cb80@CUnknown1017cb80@@QAEHPBD@Z CUnknown1017cb80::sub_1017cb80
 0x1000489a func   ?sub_100b2770@CBaseEntity@@QAEXABVVector@@@Z CBaseEntity::sub_100b2770
 0x100048a4 func   ?vfunc266@CDisciplineProjectile@@QAEXPAVCBaseEntity@@@Z CDisciplineProjectile::vfunc266
+0x100048a9 func   ?sub_101f27f0@VKeyValuesInterface@@QAEPAXPBDPAX@Z VKeyValuesInterface::sub_101f27f0
 0x100048ae func   ?sub_1040cce0@CUnknown1040cce0@@QAEMPAX@Z CUnknown1040cce0::sub_1040cce0
 0x100048b3 func   ?vfunc489@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc489
 0x100048b8 func   ?vfunc491@CNPC_VTest@@QAEXXZ CNPC_VTest::vfunc491

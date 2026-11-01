@@ -97212,6 +97212,22 @@ bool CUnknown101f27b0::sub_101f27b0(int a, bool b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f27f0 size=0x2f
+#include "VKeyValues.h"
+void *VKeyValuesInterface::sub_101f27f0(const char *pszName, void *pDefault)
+{
+	VKeyValues *pKey = (VKeyValues *)((char *)this - 0x30);
+	if (pszName)
+		pKey = pKey->sub_100122c4(pszName);
+	if (pKey) {
+		if (pKey->m_nType10 != 4)
+			return 0;
+		return (void *)pKey->m_nValue08;
+	}
+	return pDefault;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2830 size=0x4e
 #include <stdlib.h>
 #include "VKeyValues.h"
