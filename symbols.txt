@@ -10502,6 +10502,7 @@
 0x10012ed6 func   ?sub_1019ee20@@YGHH@Z sub_1019ee20
 0x10012edb func   ?sub_1024d7e0@CUnk1024d7e0@@QAEPAMPAM@Z CUnk1024d7e0::sub_1024d7e0
 0x10012ee0 func   ?vfunc363@CWeaponRanged_Smg_Uzi@@QAEHXZ CWeaponRanged_Smg_Uzi::vfunc363
+0x10012ee5 func   ?sub_10298800@CUnknown10298800@@QAEHH@Z CUnknown10298800::sub_10298800
 0x10012eea func   ?vfunc0@CTEBubbleTrail@@UAEHXZ CTEBubbleTrail::vfunc0
 0x10012eef func   ?vfunc103@CBreakableProp@@QAEXXZ CBreakableProp::vfunc103
 0x10012ef4 func   ?sub_1017f650@CNPC_VCopUnit@@QAEXXZ CNPC_VCopUnit::sub_1017f650

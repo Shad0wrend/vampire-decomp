@@ -123957,6 +123957,34 @@ void CAI_BaseNPCTroika::sub_10297a20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10298800 size=0x24
+struct CUnknown102ee2a0
+{
+	void sub_102ee2a0();
+};
+
+class CUnknown10298800
+{
+public:
+	char pad0[0x1a40];
+	unsigned char m_b1a40;
+	char pad1[0x5d34 - 0x1a41];
+	CUnknown102ee2a0 *m_pNav5d34;
+	char pad2[0x644c - 0x5d38];
+	int m_i644c;
+
+	int sub_10298800(int unused);
+};
+
+// TARGET: CUnknown10298800::sub_10298800
+int CUnknown10298800::sub_10298800(int unused)
+{
+	m_b1a40 = 0;
+	m_pNav5d34->sub_102ee2a0();
+	return m_i644c = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10298910 size=0x9f
 extern "C" int atoi(const char *);
 
