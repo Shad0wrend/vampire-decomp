@@ -7609,6 +7609,7 @@
 0x1000db07 func   ?vfunc500@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc500
 0x1000db16 func   _item_p_occult_experience item_p_occult_experience
 0x1000db1b func   ?vfunc69@CNPC_VTzimisce@@QAEDPAX@Z CNPC_VTzimisce::vfunc69
+0x1000db20 func   ?sub_101c9ab0@@YIEPAX@Z sub_101c9ab0
 0x1000db2a func   ?vfunc434@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc434
 0x1000db2f func   ?vfunc364@CNPC_VPlayerController@@QAE_NH@Z CNPC_VPlayerController::vfunc364
 0x1000db34 func   ?sub_102f9330@CMem4_t@@QAEXH@Z CMem4_t::sub_102f9330
