@@ -25,9 +25,9 @@ int CFunc_Dust::vfunc81()
 namespace lifted {
 extern char g_1056fac0;
 }
-CFunc_Dust::Datamap82 CFunc_Dust::vfunc82()
+datamap_t *CFunc_Dust::vfunc82()
 {
-    return (CFunc_Dust::Datamap82)&lifted::g_1056fac0;
+    return (datamap_t *)&lifted::g_1056fac0;
 }
 // END FUNCTION
 
