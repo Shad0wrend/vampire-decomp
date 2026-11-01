@@ -222,7 +222,9 @@ public:
 	char m_pad0094[0x9c - 0x94];
 	void *m_p9c;	// 0x009c: the owning object (the character behind a hand / weapon)
 	int m_n00a0;	// 0x00a0
-	char m_pad00a4[0xb4 - 0xa4];
+	char m_pad00a4[4];
+	void *m_pA8;	// 0x00a8: the player / character object that controls this entity (null for none)
+	char m_pad00ac[0xb4 - 0xac];
 	int m_nVSoundGroup;	// 0x00b4
 	int m_nVSoundGroupFemale;	// 0x00b8
 	int m_nVSoundTableIdx;	// 0x00bc
