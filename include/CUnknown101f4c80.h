@@ -21,6 +21,7 @@ public:
 	CUnknown101f4c80Str m_folder;	// 0x08
 	int m_unk0c;
 	int m_unk10;
+	int m_nMaxRange;	// 0x14
 
 	CUnknown101f4c80(int id);	// 0x101f4c80
 	~CUnknown101f4c80();	// 0x101f4cb0
