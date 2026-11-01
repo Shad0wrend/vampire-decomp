@@ -72006,6 +72006,18 @@ CRopeKeyframe *CRopeKeyframe::sub_1019dfb0(CBaseEntity *pStartEnt, int iStartAtt
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019e090 size=0x24
+#include "CBaseFire.h"
+
+void CBaseFire::sub_1019e090(char on)
+{
+	if (on)
+		*(unsigned int *)((char *)this + 0x478) |= 4;
+	else
+		*(unsigned int *)((char *)this + 0x478) &= ~4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019e0d0 size=0x24
 class CUnknown1019e0d0
 {
