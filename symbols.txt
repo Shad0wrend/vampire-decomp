@@ -7587,6 +7587,7 @@
 0x1000e1e2 func   ?sub_100df0b0@@YAHPBD@Z sub_100df0b0
 0x1000e1e7 func   ?sub_10196940@@YAHXZ sub_10196940
 0x1000e1ec func   ?sub_10370680@@YAHH@Z sub_10370680
+0x1000e1f1 func   ?sub_100d75e0@@YAXXZ sub_100d75e0
 0x1000e1f6 func   ?vfunc316@CNPC_VRat@@QAEXHHH@Z CNPC_VRat::vfunc316
 0x1000e1fb func   ?sub_100966a0@CBaseAnimating@@QAEHXZ CBaseAnimating::sub_100966a0
 0x1000e200 func   ?vfunc57@CBaseEntity@@UAEXHHHHHHH@Z CBaseEntity::vfunc57
