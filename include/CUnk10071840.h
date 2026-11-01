@@ -25,6 +25,7 @@ public:
 	void sub_100a8060();	// CBaseEntity::MakeDormant (stub 0x10011211), called directly
 	void sub_100b3580(unsigned int flags);	// CBaseEntity::AddFlag (stub 0x10003620), called directly
 	void sub_100b3640(unsigned int flags);	// CBaseEntity member (stub 0x1001457e), called directly
+	void sub_10071490(struct inputdata_t *pInput);	// input handler: stores the input's text (empty -> null) as the sequence name at +0x7f4
 	void sub_10071550(int unused);	// the start step: base cleanup, flag fixups, tells the first player about the sequence
 	void sub_10090950();	// CBaseAnimating member (stub 0x100117b1), called directly
 };
