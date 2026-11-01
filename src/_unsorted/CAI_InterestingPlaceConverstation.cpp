@@ -5,9 +5,9 @@
 namespace lifted {
 extern char g_1060c2c0;
 }
-int CAI_InterestingPlaceConverstation::vfunc82()
+CAI_InterestingPlaceConverstation::Datamap82 CAI_InterestingPlaceConverstation::vfunc82()
 {
-    return (int)&lifted::g_1060c2c0;
+    return (CAI_InterestingPlaceConverstation::Datamap82)&lifted::g_1060c2c0;
 }
 // END FUNCTION
 
