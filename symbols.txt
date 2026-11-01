@@ -591,6 +591,7 @@
 0x10001fd7 func   ?vfunc62@CSingleplayRules@@UAEHH@Z CSingleplayRules::vfunc62
 0x10001fe6 func   ??0CMeasureSection@@QAE@H@Z CMeasureSection::CMeasureSection
 0x10001feb func   ?sub_101934e0@@YAPAHXZ sub_101934e0
+0x10001ff0 func   ?Purge@?$CUtlMemory@VCBaseHandle@@@@QAEXXZ CUtlMemory<CBaseHandle>::Purge
 0x10001ff0 func   ?sub_102c6d40@UtlMem@@QAEXXZ UtlMem::sub_102c6d40
 0x10001ff5 func   ?sub_100ec410@CUnknown100ec410@@QAEPAUCUnknown100ec410Elem@@H@Z CUnknown100ec410::sub_100ec410
 0x10001ffa func   _item_d_holy_light item_d_holy_light
