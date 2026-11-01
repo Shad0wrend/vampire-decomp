@@ -2702,6 +2702,18 @@ void __fastcall sub_10032b00(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10032b20 size=0x3e
+#include "UtlVec36.h"
+
+void UtlVec36::sub_10032b20(int elem, int num)
+{
+	int numToMove = m_Size - elem - num;
+	if (numToMove > 0 && num > 0) {
+		memmove(m_pMemory + (elem + num) * 36, m_pMemory + elem * 36, numToMove * 36);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10032b70 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);
