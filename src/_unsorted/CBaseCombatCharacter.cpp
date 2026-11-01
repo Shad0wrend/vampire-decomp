@@ -772,6 +772,64 @@ int CBaseCombatCharacter::vfunc376(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10329760 size=0x270
+#include "CBaseCombatCharacter.h"
+#include "CStatDefault3List.h"
+#include "ScopeTrace.h"
+
+extern "C" int sprintf(char *, const char *, ...);
+void sub_101cf5c0(CBaseEntity *p, int v, int w);
+
+struct CGrappleDbg10937034
+{
+	virtual void v0();
+	virtual char v1();
+	char pad[0x2c - 4];
+	int m2c;
+};
+extern CGrappleDbg10937034 *g_10937034;
+extern CStatDefault3List g_10738d10;
+
+// TARGET: CBaseCombatCharacter::vfunc379
+char CBaseCombatCharacter::vfunc379(CBaseEntity *pTarget, int nRole, int nType, int a4, int a5, int a6, char bHolster)
+{
+	ScopeTrace trace("CBaseCombatCharacter::EnterGrappleState", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!g_10937034->v1() && g_10937034->m2c) {
+		char buf[256];
+		sprintf(buf, "%s EnterGrappleState with %s : role=%d type=%d", sub_100ab4f0(), pTarget->sub_100ab4f0(), nRole, nType);
+		sub_103221b0(buf);
+	}
+	if (pTarget)
+		m_hTarget1538 = pTarget;
+	else
+		m_hTarget1538 = (CBaseEntity *)0;
+	m_nTarget153c = nRole;
+	m_nTargetMode1540 = nType;
+	m_nGrapple1544 = a4;
+	m_bGrapple1554 = 0;
+	if (bHolster) {
+		if (sub_1032e7b0() && (((CBaseEntity *)sub_1032e7b0())->m_nEffectFlags & 0x40) != 0x40) {
+			((CBaseEntity *)sub_1032e7b0())->vfunc66();
+			m_bGrapple1554 = 1;
+		}
+	}
+	sub_100976e0();
+	m_vecGrapple1548 = *(Vector *)a86();
+	sub_101cf5c0(this, a5, 0);
+	vfunc65(*(int *)((char *)this + 0x428), a6, *(int *)((char *)this + 0x430));
+	m_nGrapple1534 = vfunc94();
+	if (m_pA8)
+		vfunc93(0, 0);
+	m_hGrapple1558 = (CBaseEntity *)0;
+	if (nRole)
+		m_hGrapple1558 = pTarget;
+	char *pCtrl = (char *)m_pA8;
+	if (pCtrl)
+		*(int *)(pCtrl + 0x1a90) = g_10738d10.sub_101d5f10((CBaseCombatCharacter *)m_hTarget1538.Get())->m_d0[0][12];
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032af40 size=0x1b7
 #include "ScopeTrace.h"
 #include "CCollisionProperty.h"
