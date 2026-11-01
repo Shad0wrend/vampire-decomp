@@ -132056,6 +132056,24 @@ int CUnknown102dccc0::sub_102dccc0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dcce0 size=0x20
+#include "CUnknown102dca60.h"
+#include "CBaseEntity.h"
+
+struct CUnk102dcce0
+{
+    char pad[0x45c];
+    char m_b45c;
+    void sub_102dcce0(int a);
+};
+void CUnk102dcce0::sub_102dcce0(int a)
+{
+    m_b45c = 0;
+    ((CUnknown102dca60 *)this)->sub_102dc490();
+    ((CBaseEntity *)this)->sub_100ac4e0(0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dcd10 size=0xa
 void CUnknown102dcd10::sub_102dcd10(int unused)
 {
