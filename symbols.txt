@@ -11363,6 +11363,7 @@
 0x1001442f func   ?sub_102f5b30@@YG_NPAXPBD11@Z sub_102f5b30
 0x10014434 func   ?sub_100b7da0@CBaseNetworkable@@QAEXXZ CBaseNetworkable::sub_100b7da0
 0x1001443e func   _item_w_chang_blade item_w_chang_blade
+0x10014443 func   ?vfunc5@CNPC_VGargoyle@@UAEPAV1@I@Z CNPC_VGargoyle::vfunc5
 0x10014448 func   _env_dustpuff env_dustpuff
 0x1001444d func   ?sub_10345f10@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::sub_10345f10
 0x10014452 func   ?sub_1004bb10@CUtlRBTree16Unit@@QAEXG@Z CUtlRBTree16Unit::sub_1004bb10

@@ -45,6 +45,30 @@ int CNPC_VGargoyle::vfunc451()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10377b60 size=0x2b
+#include "CNPC_VGargoyle.h"
+
+struct CGargoyleMemberUnit {
+	void sub_10015708();
+};
+
+struct CGargoyleBaseUnit {
+	void sub_100123af();
+};
+
+void __cdecl sub_10009fc5(void *p);
+
+// TARGET: CNPC_VGargoyle::vfunc5
+CNPC_VGargoyle *CNPC_VGargoyle::vfunc5(unsigned int flags)
+{
+	((CGargoyleMemberUnit *)((char *)this + 0x6664))->sub_10015708();
+	((CGargoyleBaseUnit *)this)->sub_100123af();
+	if (flags & 1)
+		sub_10009fc5(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10377c70 size=0x6
 extern unsigned char g_106395c0;
 // TARGET: sub_10377c70
