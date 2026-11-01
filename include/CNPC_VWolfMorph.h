@@ -326,7 +326,7 @@ public:
 	virtual void vfunc307();
 	virtual void vfunc308();
 	virtual void vfunc309();
-	virtual void vfunc310();
+	virtual void vfunc310(int a);	// slot 310: called by vfunc420 with 0x1145
 	virtual void vfunc311();
 	virtual void vfunc312();
 	virtual void vfunc313();
