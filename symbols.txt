@@ -2343,6 +2343,7 @@
 0x10004df4 func   ?sub_101d2640@@YAXVVector@@HPAVCBaseAnimating@@HH@Z sub_101d2640
 0x10004df9 func   ?sub_10204c60@CUnknown10204c60@@QAEHXZ CUnknown10204c60::sub_10204c60
 0x10004dfe func   ?Links@?$CUtlRBTree@HG@@IBEABULinks_t@1@G@Z CUtlRBTree<int,unsigned short>::Links
+0x10004dfe func   ?Links@?$CUtlRBTree@UCRBTree12Entry_102cfaf0@@G@@QBEABULinks_t@1@G@Z CUtlRBTree<CRBTree12Entry_102cfaf0,unsigned short>::Links
 0x10004e03 func   ?sub_10196d10@@YAPAXPAX0@Z sub_10196d10
 0x10004e08 func   ?sub_101d13a0@@YAIPAUTEnt@@@Z sub_101d13a0
 0x10004e0d func   ?vfunc0@CTraceFilterPlayerMovement@@UAE_NPAXH@Z CTraceFilterPlayerMovement::vfunc0
