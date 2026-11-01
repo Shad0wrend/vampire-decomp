@@ -49,6 +49,8 @@ struct CSceneEvent	// a scene event; only what the actor checks need
 	const char *sub_10075d00();	// the event's name (stub 0x10007d01)
 	float sub_10076b30();	// the event's duration (stub 0x10014835)
 	CUnknown1007ce20 *sub_10076710();	// the event's sub-scene (stub 0x10015a78), null when it has none
+	int sub_10075ca0();	// the event's last parameter (stub 0x1000b93d), pushed as the last argument of slot 258 by slot 250
+	float sub_10076280(float flTime);	// stub 0x10002900 (function 0x10076280, ret 4): the intensity of the event at flTime (0 outside the event's time span, else the spline value 0..1); slot 250 pushes the result of sub_10075ca0 before the argument and leaves it on the stack as the fifth argument of slot 258
 };
 
 struct CSceneEntityScene	// the scene object at +0x4bc
