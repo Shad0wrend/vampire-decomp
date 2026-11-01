@@ -154490,6 +154490,25 @@ bool CNPC_VWerewolf::sub_10366400(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10366b30 size=0x3d
+#include "CUtlVector16.h"
+
+extern void (__cdecl *g_109f3624)(void *);
+
+void CUtlVector16::sub_10366b30()
+{
+	m_size = 0;
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+	m_pElements = m_pMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10366bc0 size=0x43
 #include "CNPC_VBatSwarm.h"
 void *sub_100aa720(int size);
