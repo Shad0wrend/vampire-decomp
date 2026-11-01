@@ -10043,6 +10043,7 @@
 0x10011f0e func   _npc_VVampireBoss npc_VVampireBoss
 0x10011f18 func   ?vfunc242@CBaseMoveBehavior@@QAEXXZ CBaseMoveBehavior::vfunc242
 0x10011f1d func   ?sub_101f9550@@YAXH@Z sub_101f9550
+0x10011f22 func   ?vfunc4@CTESparks@@UAEXPAVCRecipientFilter@@M@Z CTESparks::vfunc4
 0x10011f27 func   ?sub_1015ef00@CUnknown1015ef00@@QAEXXZ CUnknown1015ef00::sub_1015ef00
 0x10011f31 func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@V?$CHandle@VCBaseEntity@@@@V?$CUtlMemory@V?$CHandle@VCBaseEntity@@@@@@@@$0M@@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<CHandle<CBaseEntity>,CUtlMemory<CHandle<CBaseEntity> > >,12>::vfunc3
 0x10011f36 func   ?sub_10290fc0@CAI_BaseNPCTroika@@QAE_NPAM@Z CAI_BaseNPCTroika::sub_10290fc0
