@@ -10177,6 +10177,30 @@ void sub_1005be30(int pFilter, int delay, int nStartEntity, int nEndEntity, int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005bf10 size=0x2d
+#include "CTEBeamPoints.h"
+
+struct CTEBaseBeamUnit {
+	void sub_1000b1a4(const char *name);
+};
+
+extern void *vt_1044dc64[];
+
+// TARGET: CTEBeamPoints::sub_1005bf10
+CTEBeamPoints *CTEBeamPoints::sub_1005bf10(const char *name)
+{
+	((CTEBaseBeamUnit *)this)->sub_1000b1a4(name);
+	*(void ***)this = vt_1044dc64;
+	m_vecStart.x = 0;
+	m_vecStart.y = 0;
+	m_vecStart.z = 0;
+	m_vecEnd.x = 0;
+	m_vecEnd.y = 0;
+	m_vecEnd.z = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005bf80 size=0xb
 namespace lifted {
 extern char g_1044dc64;

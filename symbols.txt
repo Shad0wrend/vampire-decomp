@@ -8954,6 +8954,7 @@
 0x100102f3 func   ?sub_1011e200@CUnknown1011e200@@QAEXXZ CUnknown1011e200::sub_1011e200
 0x100102f8 func   ?vfunc285@CBaseFlex@@QAEXH@Z CBaseFlex::vfunc285
 0x10010302 func   ?sub_10182210@CBasePlayerUnit10182210@@QAEHH@Z CBasePlayerUnit10182210::sub_10182210
+0x10010307 func   ?sub_1005bf10@CTEBeamPoints@@QAEPAV1@PBD@Z CTEBeamPoints::sub_1005bf10
 0x1001030c func   ?vfunc24@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHH@Z CTempEntsSystem::vfunc24
 0x10010311 func   _item_g_bluebloodpack item_g_bluebloodpack
 0x10010316 func   ?vfunc5@CNPC_VTzimisce@@QAEPAV1@I@Z CNPC_VTzimisce::vfunc5
