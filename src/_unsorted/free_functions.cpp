@@ -12215,6 +12215,31 @@ void sub_10066a00(int a, int b, int *pVec, int c, int d, int e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10066a70 size=0x2d
+#include "CTEShowLine.h"
+
+struct CBaseTempEntityHeadUnit {
+	void sub_10015334(const char *name);
+};
+
+extern void *vt_1044e01c[];
+
+// TARGET: CTEShowLine::sub_10066a70
+CTEShowLine *CTEShowLine::sub_10066a70(const char *name)
+{
+	((CBaseTempEntityHeadUnit *)this)->sub_10015334(name);
+	int *p = (int *)((char *)this + 0xc);
+	p[0] = 0;
+	p[1] = 0;
+	p[2] = 0;
+	*(void ***)this = vt_1044e01c;
+	p[3] = 0;
+	p[4] = 0;
+	p[5] = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10066ae0 size=0xb
 namespace lifted {
 extern char g_1044e01c;

@@ -595,6 +595,7 @@
 0x1000204f func   ?sub_10227b20@@YIXPAUMem4@@HH@Z sub_10227b20
 0x10002054 func   ?sub_100bee40@bf_read@@QAEXAAVVector@@@Z bf_read::sub_100bee40
 0x1000205e func   ?sub_100cdc80@@YAHH@Z sub_100cdc80
+0x10002063 func   ?sub_10066a70@CTEShowLine@@QAEPAV1@PBD@Z CTEShowLine::sub_10066a70
 0x10002072 func   ?sub_100f7330@CUnk_100f7330@@QAE_NH@Z CUnk_100f7330::sub_100f7330
 0x10002077 func   ?sub_103000a0@@YGXABVVector@@0MMAAV1@@Z sub_103000a0
 0x1000207c func   ?sub_101711e0@CBasePlayer@@QAEXM@Z CBasePlayer::sub_101711e0
