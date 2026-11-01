@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_1064c4a8;
 }
-CNPC_VSabbatLeader::Datamap82 CNPC_VSabbatLeader::vfunc82()
+datamap_t *CNPC_VSabbatLeader::vfunc82()
 {
-    return (CNPC_VSabbatLeader::Datamap82)&lifted::g_1064c4a8;
+    return (datamap_t *)&lifted::g_1064c4a8;
 }
 // END FUNCTION
 
