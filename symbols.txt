@@ -6530,6 +6530,7 @@
 0x1000c46e func   ?sub_10325b20@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10325b20
 0x1000c473 func   ?sub_102256f0@CBaseVampireSkillEntity@@QAEXPBD@Z CBaseVampireSkillEntity::sub_102256f0
 0x1000c478 func   ?sub_10288610@CUnknown10288610@@QAEHXZ CUnknown10288610::sub_10288610
+0x1000c47d func   ?sub_10232540@CUnk10232540@@QAEXN@Z CUnk10232540::sub_10232540
 0x1000c482 func   ?sub_1042ff00@@YAXXZ sub_1042ff00
 0x1000c48c func   ?sub_101f5f00@CUnknown101f5f00@@QAEXHHH@Z CUnknown101f5f00::sub_101f5f00
 0x1000c491 func   ?sub_10077710@CUnknown10077710@@QAEDXZ CUnknown10077710::sub_10077710

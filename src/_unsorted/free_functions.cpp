@@ -109099,6 +109099,25 @@ void __fastcall sub_10232520(int *self, int, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10232540 size=0x1f
+#include "vampire.h"
+struct CUnk10232540
+{
+    char m_pad0000[0x18];
+    double m_flValue;  // 0x18
+    void sub_102328c0();
+    void sub_10232540(double flAdd);
+};
+// TARGET: CUnk10232540::sub_10232540
+void CUnk10232540::sub_10232540(double flAdd)
+{
+    m_flValue = m_flValue + flAdd;
+    if (!(m_flValue < 0.3)) {
+        sub_102328c0();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10232570 size=0x47
 extern unsigned int g_10751648[];
 extern unsigned int g_107516c8[];
