@@ -24,12 +24,19 @@ struct StatDefault2
 extern int g_1073a34c;
 extern StatDefault2 **g_1073a350;
 
+// The lookups' shared default record: one function-local static in the game (0x109f0a40, guard 0x109f0a19), so
+// every lookup (FindStatDefault2, the out-of-line 0x10183910) returns it through this one function.
+inline StatDefault2 *StatDefault2_Default()
+{
+	static StatDefault2 s_default(-1);
+	return &s_default;
+}
+
 inline StatDefault2 *FindStatDefault2(int type)
 {
 	for (int i = 0; i < g_1073a34c; i++) {
 		if (g_1073a350[i]->m_type == type)
 			return g_1073a350[i];
 	}
-	static StatDefault2 s_default(-1);
-	return &s_default;
+	return StatDefault2_Default();
 }
