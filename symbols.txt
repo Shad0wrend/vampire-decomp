@@ -7202,6 +7202,7 @@
 0x1000d87d func   ?vfunc295@CAI_BaseNPCTroika@@QAE_NPAVCBaseCombatCharacter@@@Z CAI_BaseNPCTroika::vfunc295
 0x1000d882 func   ?vfunc387@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc387
 0x1000d887 func   ?sub_100aa080@CBaseEntity@@QAEHPAXH@Z CBaseEntity::sub_100aa080
+0x1000d891 func   ?sub_101facf0@@YAPADH@Z sub_101facf0
 0x1000d896 func   ?sub_10231c70@@YAHXZ sub_10231c70
 0x1000d8aa func   ?sub_10203240@CUnknown10203240@@QAEPAVCUnknown102029c0@@PBD@Z CUnknown10203240::sub_10203240
 0x1000d8af func   ?vfunc523@CNPC_VTzimisce@@UAEMXZ CNPC_VTzimisce::vfunc523
