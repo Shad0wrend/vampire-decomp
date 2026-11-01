@@ -64,6 +64,7 @@ public:
 	const Links_t &sub_10055520(int i) const;	// "CUtlRBTree::Links"
 	int sub_10055050();	// "CUtlRBTree::NewNode": takes the first free node (or grows the node memory by one and uses the next unused one) and returns its index
 	void sub_1007f250(const void *pInsert, int *pParent, bool *pLeftChild);	// "CUtlRBTree::FindInsertionPosition": walks down from the root with the less function, stores the last visited node in *pParent and whether the new element goes to its left in *pLeftChild
+	void sub_10055170(int elem, int parent, bool isLeft);	// "CUtlRBTree::LinkToParent" with InsertRebalance inlined (Links stays the out-of-line sub_10055520, rotations the out-of-line sub_10055f50 / sub_100561a0)
 	void sub_10055f50(int elem);	// "CUtlRBTree::RotateLeft"
 	void sub_100561a0(int elem);	// "CUtlRBTree::RotateRight"
 	const Links_t &sub_1007fc70(int i) const;	// "CUtlRBTree::Links" of another instance (sentinel 0x106c85b4, stub 0x10003bca)
