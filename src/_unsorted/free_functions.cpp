@@ -70172,9 +70172,13 @@ bool CUtlRBTree12::sub_10194e40(unsigned short i) const
 
 // FUNCTION: 0x10195160 size=0x1c0
 #include "CUtlRBTree12.h"
+#include "utlrbtree.h"
+struct CRBTree12Entry_10194f30 { char data[4]; };	// the tree of its sentinel (one T per game instance)
 
 struct CUtlRBTree12Unit : CUtlRBTree12At<0x1072b2a4>
 {
+    // the instance's sentinel is CUtlRBTree<CRBTree12Entry_10194f30, unsigned short>'s: one static in the game
+    const Links_t &Links(unsigned short i) const { return (const Links_t &)((const CUtlRBTree<CRBTree12Entry_10194f30, unsigned short> *)this)->Links(i); }
     const Links_t *sub_10194d20(unsigned short i) const;
     void sub_10195160(unsigned short i);
 
