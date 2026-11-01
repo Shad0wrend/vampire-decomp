@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_105c2580;
 }
-int CDecal::vfunc82()
+CDecal::Datamap82 CDecal::vfunc82()
 {
-    return (int)&lifted::g_105c2580;
+    return (CDecal::Datamap82)&lifted::g_105c2580;
 }
 // END FUNCTION
 
