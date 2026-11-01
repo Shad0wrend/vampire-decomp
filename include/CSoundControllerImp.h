@@ -70,4 +70,5 @@ public:
 
 	char m_pad0004[8];	// 0x04 .. 0x0b
 	CUtlVector4 m_Sounds;	// 0x0c: the playing sounds
+	CUtlVector4 m_Second20;	// 0x20: second vector (memory +0x20, alloc +0x24, grow +0x28, size +0x2c, elements +0x30); 0x101bd980 tears it down via UtlMem::sub_101bde70 at obj+0x20 (this+0x1c of the CAutoGameSystem subobject)
 };
