@@ -32265,6 +32265,28 @@ void CBitString::sub_100bf5b0(int numDwords)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bf6a0 size=0x1f
+void sub_10431641(void *p);
+
+struct CUnk100bf6a0 {
+	char m_pad0000[2];
+	unsigned short m_02;
+	char m_pad0004[4];
+	void *m_08;
+	void sub_100bf6a0();
+};
+
+// TARGET: CUnk100bf6a0::sub_100bf6a0
+void CUnk100bf6a0::sub_100bf6a0()
+{
+	if (m_02 > 1)
+	{
+		sub_10431641(m_08);
+	}
+	m_08 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bf980 size=0x1a
 namespace lifted {
 extern int g_1055b4c0;
