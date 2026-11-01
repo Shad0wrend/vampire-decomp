@@ -10448,6 +10448,7 @@
 0x1001264d func   ?sub_103ff1d0@@YAHXZ sub_103ff1d0
 0x10012652 func   ?vfunc440@CNPC_VCop@@QAEHH@Z CNPC_VCop::vfunc440
 0x10012657 func   ?sub_100f5140@@YAHXZ sub_100f5140
+0x10012666 func   ?sub_1014f8f0@@YIXPAX@Z sub_1014f8f0
 0x10012670 func   ?sub_102cc8d0@@YAHXZ sub_102cc8d0
 0x10012675 func   ?sub_100b7a40@@YIXPAH@Z sub_100b7a40
 0x1001267a func   ?sub_100694a0@CUnknown100694a0@@QAEHXZ CUnknown100694a0::sub_100694a0
