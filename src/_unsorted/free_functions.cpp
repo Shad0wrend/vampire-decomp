@@ -66608,6 +66608,35 @@ void SBlendView::sub_1017d0b0(float flRate)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017d460 size=0x170
+void CBasePlayer::sub_1017d460(CBaseEntity *pEnt, float flBlend)
+{
+	if (0.0f > flBlend)
+		flBlend = 0.0f;
+	if (pEnt == 0) {
+		sub_1017d6d0(flBlend);
+		return;
+	}
+	float flNow = engine->vfunc119(0);
+	if (flNow > m_flFadeTime19D0 && m_hFadeEnt19CC.Get() != 0) {
+		CBasePlayerFadeRec rec;
+		rec.m_bType = 0;
+		rec.m_hEnt = m_hFadeEnt19CC;
+		rec.m_flTime = m_flFadeTime19D0;
+		rec.m_flValue = m_flFadeValue19D4;
+		FadeStack().InsertBefore(0, rec);
+	}
+	float flMin = pEnt->vfunc52();
+	if (flMin > flBlend)
+		flBlend = flMin;
+	sub_1017d0b0(flBlend);
+	m_hFadeEnt19CC = pEnt;
+	m_flFadeTime19D0 = flNow;
+	m_flFadeValue19D4 = flBlend;
+	pEnt->vfunc46();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017d630 size=0x38
 // TARGET: CUnknown1017d630::sub_1017d630
 #include "CEHandleGet.h"
