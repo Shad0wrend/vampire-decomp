@@ -43,7 +43,9 @@ struct CVSoundList : public CUnk101f42d0	// the sounds of one table row
 
 struct CVActivitySound	// the table of the sound rows (+0x20, count +0x1c)
 {
-	char m_pad0000[0x1c];
+	char m_pad0000[0x14];
+	int m_nSounds;	// 0x14: sounds per row
+	char m_pad0018[4];
 	int m_nLists;	// 0x1c
 	CVSoundList **m_ppLists;	// 0x20
 
