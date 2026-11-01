@@ -80068,47 +80068,45 @@ void CTakeDamageInfo::sub_101c2890(void *pAttacker, void *pInflictor, float flDa
 // END FUNCTION
 
 // FUNCTION: 0x101c2910 size=0x50
-struct CAnimParams {
-    int m_n0; float m_f4, m_f8, m_fC; int m_pad[6];
-    int m_n28, m_n2c, m_n30, m_n34, m_n38, m_n3c, m_n40; float m_f44;
-    char m_b48, m_b49, m_b4a;
-    void sub_101c2890(int a, int b, int c, int d, int e, int f);
-    void sub_101c2910(int a, int b, const float *v1, const float *v2, int c, int d, int e, int f);
+#include "CTakeDamageInfo.h"
+
+struct CAnimParams : CTakeDamageInfo {
+    void sub_101c2890(void *pAttacker, void *pInflictor, float flDamage, int a, int b, int c);
+    void sub_101c2910(void *pAttacker, void *pInflictor, const float *v1, const float *v2, float flDamage, int a, int b, int c);
 };
-namespace block_101c2910 {
-void __fastcall sub_101c2890(CAnimParams *p, int edx, int a, int b, int c, int d, int e, int f);
-}
-void CAnimParams::sub_101c2890(int a, int b, int c, int d, int e, int f)
+// CTakeDamageInfo::sub_101c2890's source, compiled before its caller in this unit (link audit: one body per address)
+void CAnimParams::sub_101c2890(void *pAttacker, void *pInflictor, float flDamage, int a, int b, int c)
 {
-    m_n28 = a;
-    if (b == 0)
-        m_n2c = a;
-    else
-        m_n2c = b;
-    m_n0 = 0;
-    m_n30 = c;
-    m_n34 = c;
-    m_n38 = d;
-    m_n3c = e;
-    m_n40 = f;
-    m_f4 = 1.0f;
-    m_f8 = 1.0f;
-    m_fC = 1.0f;
-    m_f44 = 1.0f;
-    m_b48 = 0;
-    m_b49 = 0;
-    m_b4a = 0;
+	m_pAttacker = (CTakeDamageAttacker *)pAttacker;
+	if (pInflictor)
+		m_pInflictor = pInflictor;
+	else
+		m_pInflictor = pAttacker;
+	m_nZero00 = 0;
+	m_flDamage = flDamage;
+	m_flDamage34 = flDamage;
+	m_n38 = a;
+	m_n3c = b;
+	m_bitsDamageType = c;
+	m_fl04 = 1.0f;
+	m_fl08 = 1.0f;
+	m_fl0c = 1.0f;
+	m_fl44 = 1.0f;
+	m_b48 = 0;
+	m_b49 = 0;
+	m_b4a = 0;
 }
 // TARGET: CAnimParams::sub_101c2910
-void CAnimParams::sub_101c2910(int a, int b, const float *v1, const float *v2, int c, int d, int e, int f)
+void CAnimParams::sub_101c2910(void *pAttacker, void *pInflictor, const float *v1, const float *v2, float flDamage, int a, int b, int c)
 {
-    sub_101c2890(a, b, c, d, e, f);
-    m_pad[0] = ((const int *)v1)[0];
-    m_pad[1] = ((const int *)v1)[1];
-    m_pad[2] = ((const int *)v1)[2];
-    m_pad[3] = ((const int *)v2)[0];
-    m_pad[4] = ((const int *)v2)[1];
-    m_pad[5] = ((const int *)v2)[2];
+    sub_101c2890(pAttacker, pInflictor, flDamage, a, b, c);
+    int *v = (int *)m_pad0010;
+    v[0] = ((const int *)v1)[0];
+    v[1] = ((const int *)v1)[1];
+    v[2] = ((const int *)v1)[2];
+    v[3] = ((const int *)v2)[0];
+    v[4] = ((const int *)v2)[1];
+    v[5] = ((const int *)v2)[2];
 }
 // END FUNCTION
 
