@@ -20923,6 +20923,62 @@ void CSceneEntity::sub_10080b00(CSceneEvent *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10080cb0 size=0x154
+#include "CSceneEntity.h"
+#include "engineiface.h"
+
+__declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+__declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+extern void (*g_109f3878)(char *path, const char *extension, int pathStringLength);
+
+struct SceneObjView;
+struct SceneEventView : CSceneEvent {
+	void sub_100766f0(SceneObjView *pScene);
+};
+struct SceneObjView {
+	int sub_1007a250();
+	SceneEventView *sub_1007a270(int index);
+	char sub_1007ed10();
+	void sub_1007ecf0(int a);
+};
+struct SceneStub : CSceneEntity {
+	void sub_1001163f(int a);
+};
+
+void CSceneEntity::sub_10080cb0(int a)
+{
+	SceneObjView *pScene = (SceneObjView *)a;
+	char buf[0x104];
+	for (int i = 0; i < pScene->sub_1007a250(); i++) {
+		SceneEventView *pEvent = pScene->sub_1007a270(i);
+		if (!pEvent)
+			continue;
+		sub_10080b00(pEvent);
+		switch (pEvent->sub_100029c8()) {
+		case 5:
+			Q_snprintf(buf, 0x104, "*%s", pEvent->sub_10075c50());
+			enginesound->vfunc0(buf, 0);
+			g_109f3878(buf, ".mp3", 0x104);
+			enginesound->vfunc0(buf, 0);
+			break;
+		case 0xb:
+			if (!pScene->sub_1007ed10() && !pEvent->sub_10076710()) {
+				SceneObjView *pSub = (SceneObjView *)sub_100839c0(pEvent->sub_10075c50());
+				pSub->sub_1007ecf0(1);
+				pEvent->sub_100766f0(pSub);
+				((SceneStub *)this)->sub_1001163f((int)pSub);
+			}
+			break;
+		case 0x13:
+			Q_strncpy(buf, pEvent->sub_10075c50(), 0x104);
+			if (buf[0])
+				enginesound->vfunc0(buf, 0);
+			break;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10081190 size=0x5b
 #include <stdarg.h>
 #include "ConVar.h"
