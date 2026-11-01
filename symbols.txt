@@ -7297,6 +7297,7 @@
 0x1000da4e func   ?vfunc580@CNPC_VLasombra@@UAEHXZ CNPC_VLasombra::vfunc580
 0x1000da58 func   _aiscripted_schedule aiscripted_schedule
 0x1000da5d func   ?sub_10075cc0@CUnknown10075cc0@@QAEDXZ CUnknown10075cc0::sub_10075cc0
+0x1000da62 func   ?sub_10139190@@YAHPBI@Z sub_10139190
 0x1000da67 func   ?sub_1036cbd0@CNPC_VChangBros@@QAE_NXZ CNPC_VChangBros::sub_1036cbd0
 0x1000da71 func   ?vfunc0@CPositionInterpolator_Linear@@QAEXXZ CPositionInterpolator_Linear::vfunc0
 0x1000da76 func   ?sub_1003e4b0@Vector@@QAEAAV1@ABV1@@Z Vector::sub_1003e4b0

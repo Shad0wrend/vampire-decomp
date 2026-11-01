@@ -55284,6 +55284,16 @@ void sub_10138ff0(double a, double b, int *pQuot, int *pRem)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10139190 size=0x1d
+// TARGET: sub_10139190
+int __cdecl sub_10139190(const unsigned int *p)
+{
+	if ((*p & 0x7f800000) == 0 && (*p & 0x7fffff) != 0)
+		return 1;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101391c0 size=0x2c
 // TARGET: sub_101391c0
 unsigned int sub_101391c0(float *v)
