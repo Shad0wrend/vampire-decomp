@@ -165713,6 +165713,42 @@ bool CNPC_VWerewolf::sub_103d8550(void *pHint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d8c10 size=0x171
+#include "CNPC_VWerewolf.h"
+#include "CPASAttenuationFilter.h"
+
+extern "C" __declspec(dllimport) int RandomInt(int, int);
+extern const char *g_1065f4d0[];
+struct CWerewolfGate
+{
+	virtual bool vfunc0();
+	virtual bool vfunc1();
+	char pad[0x28];
+	int m_n2c;
+};
+extern CWerewolfGate *g_1093f8a4;
+extern CWerewolfGate *g_1093d64c;
+extern int g_1065f79c, g_1065f7a0, g_1065f7a4, g_1065f7a8;
+void sub_101cdba0(const Vector *pOrigin, int a, int b, int c, int d, int e, int f);
+inline void WerewolfNop() {}
+
+void CNPC_VWerewolf::sub_103d8c10()
+{
+	const char *pszSound = g_1065f4d0[enginerandom->vfunc2(0, 3)];
+	int nPitch = RandomInt(0x5a, 0x69);
+	if (pszSound && !g_1093f8a4->vfunc1() && g_1093f8a4->m_n2c) {
+		CPASAttenuationFilter filter(vfunc192(), 0.0f);
+		filter.MakeReliable();
+		int edict = m_pEdict2e0;
+		enginesound->vfunc2(&filter, engine->vfunc35(edict), 4, pszSound, 0.75f, 0x4b, 0x80, nPitch, 0, 0, 1, 0);
+	}
+	if (!g_1093d64c->vfunc1() && g_1093d64c->m_n2c) {
+		sub_101cdba0(&vfunc192(), g_1065f79c, g_1065f7a0, g_1065f7a4, g_1065f7a8, 0, 0);
+	}
+	WerewolfNop();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d99a0 size=0xcd
 #include "inputdata_t.h"
 

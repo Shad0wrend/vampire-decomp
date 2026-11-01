@@ -12073,6 +12073,7 @@
 0x1001528a func   ?sub_102c6a50@UtlVec8@@QAEHHPBUUtlVec8Elem@@@Z UtlVec8::sub_102c6a50
 0x1001528f func   ?sub_100ff020@CEnvBeam@@QAEXXZ CEnvBeam::sub_100ff020
 0x10015299 func   ?sub_102370b0@@YAHXZ sub_102370b0
+0x1001529e func   ?sub_103d8c10@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103d8c10
 0x100152a3 func   ?sub_101f1920@CUnk101f1920@@QAE_NH@Z CUnk101f1920::sub_101f1920
 0x100152a8 func   ?sub_1012fd60@@YGXPAPAXPAHH@Z sub_1012fd60
 0x100152ad func   ?sub_100b5970@CBaseFlex@@QAEXXZ CBaseFlex::sub_100b5970
