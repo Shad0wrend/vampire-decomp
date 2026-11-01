@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_105766dc;
 }
-int CMathCounter::vfunc82()
+CMathCounter::Datamap82 CMathCounter::vfunc82()
 {
-    return (int)&lifted::g_105766dc;
+    return (CMathCounter::Datamap82)&lifted::g_105766dc;
 }
 // END FUNCTION
 
