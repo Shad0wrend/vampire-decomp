@@ -5,9 +5,9 @@
 namespace lifted {
 extern char g_1056e868;
 }
-CPushable::Datamap82 CPushable::vfunc82()
+datamap_t *CPushable::vfunc82()
 {
-    return (CPushable::Datamap82)&lifted::g_1056e868;
+    return (datamap_t *)&lifted::g_1056e868;
 }
 // END FUNCTION
 
