@@ -86625,6 +86625,29 @@ void CUnknown101dddb0::sub_101dddb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ddf80 size=0x1f
+struct CUnk101ddf80Sub94
+{
+    void sub_101dc1f0();
+};
+struct CUnk101ddf80Sub78
+{
+    void sub_101dcb50();
+};
+struct CUnk101ddf80
+{
+    char pad[0x5c];
+    CUnk101ddf80Sub78 m_5c;
+    void sub_101ddf80();
+};
+void CUnk101ddf80::sub_101ddf80()
+{
+    ((CUnk101ddf80Sub94 *)((char *)this + 0x94))->sub_101dc1f0();
+    ((CUnk101ddf80Sub78 *)((char *)this + 0x78))->sub_101dcb50();
+    ((CUnk101ddf80Sub78 *)((char *)this + 0x5c))->sub_101dcb50();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101df000 size=0x1de
 #include "CUnknown101dff00.h"
 #include "CUnknown101dddb0.h"
