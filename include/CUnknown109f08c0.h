@@ -10,6 +10,8 @@ public:
 	int m_id;
 	int m_unk4;
 	const char *m_pszName;
+	unsigned int m_nExcludedFlags;	// 0x0c
+	unsigned int m_nRequiredFlags;	// 0x10
 
 	CUnknown109f08c0(int id);	// 0x1000ad62
 	~CUnknown109f08c0();
