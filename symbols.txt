@@ -5285,6 +5285,7 @@
 0x10009fd4 func   ?vfunc113@CPropHacking@@UAEXXZ CPropHacking::vfunc113
 0x10009fd9 func   ?vfunc327@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc327
 0x10009fde func   _npc_VGhoulCroucher npc_VGhoulCroucher
+0x10009fe8 func   ?sub_10067010@CTESmoke@@QAEPAV1@PBD@Z CTESmoke::sub_10067010
 0x10009fed func   _info_node_sabbat_top info_node_sabbat_top
 0x10009ff2 func   ?sub_101bb370@CSoundEnt@@SAPAUCSound@@HPBVVector@@@Z CSoundEnt::sub_101bb370
 0x1000a00b func   ?sub_1005c310@@YAHXZ sub_1005c310

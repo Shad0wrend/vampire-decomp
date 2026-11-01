@@ -12285,6 +12285,31 @@ int sub_10066e20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10067010 size=0x2d
+#include "CTESmoke.h"
+
+struct CBaseTempEntityHeadUnit {
+	void sub_10015334(const char *name);
+};
+
+extern void *vt_1044e040[];
+
+// TARGET: CTESmoke::sub_10067010
+CTESmoke *CTESmoke::sub_10067010(const char *name)
+{
+	((CBaseTempEntityHeadUnit *)this)->sub_10015334(name);
+	*(void ***)this = vt_1044e040;
+	int *p = (int *)((char *)this + 0xc);
+	p[0] = 0;
+	p[1] = 0;
+	p[2] = 0;
+	p[3] = 0;
+	p[4] = 0;
+	p[5] = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10067080 size=0xb
 namespace lifted {
 extern char g_1044e040;
