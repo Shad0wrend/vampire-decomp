@@ -21,7 +21,8 @@ struct CUnknown102dfaa0_Record
 	Vector m_vecA;	// 0x0c
 	Vector m_vecB;	// 0x18
 	unsigned int m_hEnt;	// 0x24: entity handle
-	char m_pad0028[0x38 - 0x28];
+	float m_flTime28;	// 0x28: the time the position was last confirmed
+	char m_pad002c[0x38 - 0x2c];
 	CUnknown102dfaa0_Record *m_pNext;	// 0x38
 };
 
