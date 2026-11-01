@@ -11317,6 +11317,7 @@
 0x10013f8e func   ?sub_10229090@@YGXPAUCSoundFadeItem@@M@Z sub_10229090
 0x10013f93 func   ?vfunc521@CAI_TestHull@@QAEXHHH@Z CAI_TestHull::vfunc521
 0x10013f98 func   ?sub_10217ac0@@YAXPAVCPropHacking@@PBDZZ sub_10217ac0
+0x10013f9d func   ?sub_101f28a0@CUnk101f28a0@@QAEHHH@Z CUnk101f28a0::sub_101f28a0
 0x10013fa7 func   ?sub_103bf200@CUnknown103bf200@@QAEXH@Z CUnknown103bf200::sub_103bf200
 0x10013fac func   ?sub_100c56a0@@YAMHHH@Z sub_100c56a0
 0x10013fb1 func   ?sub_10063d70@@YAHXZ sub_10063d70
