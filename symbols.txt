@@ -6354,6 +6354,7 @@
 0x1000c144 func   ?sub_10185140@UtlMem@@QAEXXZ UtlMem::sub_10185140
 0x1000c158 func   ?sub_101321f0@CMathRemap@@QAEXAAUinputdata_t@@@Z CMathRemap::sub_101321f0
 0x1000c15d func   ?sub_10094410@CBaseAnimating@@QAEXH@Z CBaseAnimating::sub_10094410
+0x1000c162 func   ?sub_10203920@@YAHHH@Z sub_10203920
 0x1000c16c func   ?vfunc5@CItemGEyes@@QAEPAV1@I@Z CItemGEyes::vfunc5
 0x1000c171 func   ?vfunc80@CResearchBook_MG_SEC@@QAEHXZ CResearchBook_MG_SEC::vfunc80
 0x1000c17b func   ?sub_1019ab40@@YAXXZ sub_1019ab40

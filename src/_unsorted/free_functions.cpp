@@ -98442,6 +98442,17 @@ int sub_102038e0(int a, IObj102038e0 *obj, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10203920 size=0x1c
+void __cdecl sub_10203950(int a, int b, const char *name);
+
+// TARGET: sub_10203920
+int __cdecl sub_10203920(int a, int b)
+{
+	sub_10203950(a, b, "Name");
+	return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10203990 size=0x1a9
 extern int g_1074edd4;
 extern char g_1074e968[], g_1074e658[], g_1074e4f0[], g_1074e098[], g_1074e5f8[], g_10739d08[], g_10738d10[];
