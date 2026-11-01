@@ -139273,6 +139273,19 @@ void CUnk10312c20::sub_10312c20(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10312c50 size=0x1c
+#include "CAI_Expresser.h"
+
+// TARGET: CAI_Expresser::sub_10312c50
+void CAI_Expresser::sub_10312c50()
+{
+	if (m_Tail.m_n64 > 0)
+		m_Tail.m_n64--;
+	m_n10->vfunc2();
+	m_Tail.m_b68 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10312c80 size=0x35
 #include "CAI_Expresser.h"
 

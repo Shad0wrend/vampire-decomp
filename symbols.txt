@@ -6257,6 +6257,7 @@
 0x1000be42 func   ?sub_10230f60@CUnknown10230f60@@QAEPAXH@Z CUnknown10230f60::sub_10230f60
 0x1000be47 func   ?sub_1022f4f0@@YAHPAVCBaseCombatCharacter@@HE@Z sub_1022f4f0
 0x1000be4c func   ?sub_103d3220@CNPC_VWerewolf@@QAEHPAX@Z CNPC_VWerewolf::sub_103d3220
+0x1000be51 func   ?sub_10312c50@CAI_Expresser@@QAEXXZ CAI_Expresser::sub_10312c50
 0x1000be5b func   _prop_ragdoll_special prop_ragdoll_special
 0x1000be60 func   ?sub_100cacb0@CMomentaryRotButton@@QAEXM_N@Z CMomentaryRotButton::sub_100cacb0
 0x1000be65 func   ?vfunc117@CBaseCineCam@@UAEEXZ CBaseCineCam::vfunc117
