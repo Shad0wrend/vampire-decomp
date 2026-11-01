@@ -109952,6 +109952,18 @@ void sub_10233d60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10233e20 size=0x20
+#include "vampire.h"
+extern unsigned char g_109340dc;
+// TARGET: sub_10233e20
+void sub_10233e20()
+{
+    if (engine->vfunc12()) {
+        g_109340dc = (g_109340dc == 0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10233ee0 size=0x2b
 extern unsigned char g_109340dc;
 extern float g_106102fc;
