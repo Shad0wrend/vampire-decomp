@@ -4103,6 +4103,7 @@
 0x10007dce func   ?vfunc553@CAI_BaseNPC@@UAEHMM@Z CAI_BaseNPC::vfunc553
 0x10007dd3 func   ?sub_100f9940@@YIXPAUMem4@@HH@Z sub_100f9940
 0x10007ddd func   ?sub_1030d710@@YGHPBD@Z sub_1030d710
+0x10007de2 func   ?sub_10142e90@@YAXPBVVector@@0HHHEM@Z sub_10142e90
 0x10007de7 func   ?sub_10076c00@CUnknown10076c00@@QAEHH@Z CUnknown10076c00::sub_10076c00
 0x10007df6 func   ?sub_101a1f70@CUnknown101a1f70@@QAEHXZ CUnknown101a1f70::sub_101a1f70
 0x10007dfb func   ?vfunc451@CNPC_VHumanCombatPatrol@@UAEHXZ CNPC_VHumanCombatPatrol::vfunc451

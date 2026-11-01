@@ -60329,6 +60329,39 @@ void sub_10142e20(CBaseEntity *pEntity, int r, int g, int b, int a, int duration
 }
 // END FUNCTION
 
+// FUNCTION: 0x10142e90 size=0x21a
+#include "ScopeTrace.h"
+#include "CSingleUserRecipientFilter.h"
+#include "CEntitySoundOriginView.h"
+CBaseEntity *sub_100ab250(void *);
+void sub_10142e90(const Vector *a, const Vector *b, int r, int g, int bl, unsigned char al, float d)
+{
+    void *edict = engine->vfunc38(1);
+    CBaseEntity *pEnt;
+    {
+        ScopeTrace trace("CBaseEntity::Instance", g_106b8540, g_106b8540);
+        if (!edict)
+            edict = engine->vfunc38(0);
+        pEnt = sub_100ab250(edict);
+    }
+    if (!pEnt)
+        return;
+    CEntitySoundOriginView *pView = (CEntitySoundOriginView *)pEnt;
+    if ((*(const Vector *)pView->GetOrigin() - *a).LengthSqr() > 9e7f && (*(const Vector *)pView->GetOrigin() - *b).LengthSqr() > 9e7f)
+        return;
+    CSingleUserRecipientFilter filter(pEnt);
+    engine->vfunc65(&filter, 0x30);
+    engine->vfunc75((int)a);
+    engine->vfunc75((int)b);
+    engine->vfunc69(r);
+    engine->vfunc69(g);
+    engine->vfunc69(bl);
+    engine->vfunc69(al);
+    engine->vfunc72(d);
+    engine->vfunc66();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101434b0 size=0x128
 #include "CBroadcastRecipientFilter.h"
 #include "CUnknown1070b22c.h"
