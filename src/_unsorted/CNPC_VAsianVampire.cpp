@@ -34,6 +34,12 @@ int CNPC_VAsianVampire::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103605b0 size=0x6
+extern char g_1062c5e4;
+// TARGET: sub_103605b0
+char sub_103605b0() { return g_1062c5e4; }
+// END FUNCTION
+
 // FUNCTION: 0x10360610 size=0x1d
 #include "CNPC_VAsianVampire.h"
 struct A { int sub_10012300(int); };
