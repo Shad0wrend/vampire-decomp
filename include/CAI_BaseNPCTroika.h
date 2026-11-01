@@ -322,7 +322,9 @@ public:
 	int m_nRoll6424;
 	int m_nRoll6428;
 	int m_nRoll642c;
-	char m_pad6430[0x6440 - 0x6430];
+	char m_pad6430[5];
+	char m_b6435;
+	char m_pad6436[0x6440 - 0x6436];
 	float m_f6440;
 	CBaseEntity *m_p6444;
 	unsigned int m_h6448;
