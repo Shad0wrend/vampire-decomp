@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_105748e0;
 }
-int CHudEntity::vfunc82()
+CHudEntity::Datamap82 CHudEntity::vfunc82()
 {
-    return (int)&lifted::g_105748e0;
+    return (CHudEntity::Datamap82)&lifted::g_105748e0;
 }
 // END FUNCTION
 
