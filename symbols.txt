@@ -9135,6 +9135,7 @@
 0x10010230 func   ?sub_103e78b0@CWeaponMelee_Torch@@QAEXXZ CWeaponMelee_Torch::sub_103e78b0
 0x10010235 func   ?vfunc78@CLight@@QAEXXZ CLight::vfunc78
 0x1001023a func   ?vfunc362@CWeaponMelee_ZombieFists@@QAEHXZ CWeaponMelee_ZombieFists::vfunc362
+0x1001023f func   ?sub_101c46b0@CUnk101c4710@@QAEPAU1@HHH@Z CUnk101c4710::sub_101c46b0
 0x10010244 func   ?sub_10199240@@YAPAUPyObj@@PAU1@0@Z sub_10199240
 0x10010249 func   ?vfunc156@CBaseDoor@@UAEXH@Z CBaseDoor::vfunc156
 0x1001024e func   ?sub_100dc200@CUnknown100dc200@@QAEHXZ CUnknown100dc200::sub_100dc200
