@@ -53,6 +53,7 @@ public:
 	void sub_100b3b00();	// CBaseEntity::sub_100b3b00 (stub 0x1001514a), called directly
 	void sub_102120c0(CBaseEntity *pPlayer);	// sends the user message 0x10726088 to pPlayer (when set): a zero value, the float 0.5f and the engine index of this entity (edict at +0x2e0)
 	void sub_10211f10(CBaseEntity *pPlayer);	// like sub_102120c0 with the value 1, followed by the sign's flag byte (+0x76c) and its text (the string at +0x764, else the one at +0x730, else ""); first runs sub_10212200
+	void sub_10211af0();	// destructor body (called by vfunc5): vptr, operator delete of the text at +0x764, sub_100cd2d0 on +0x74c and +0x734, then jmp CBaseAnimating::sub_1008b3c0
 	void sub_10212200();	// stub 0x10014074, run before the sign text is sent to a player
 public:
 	virtual void vfunc0();
