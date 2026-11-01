@@ -10326,6 +10326,7 @@
 0x10012d55 func   ?sub_101f4b20@CUnknown101f4b20@@QAEXXZ CUnknown101f4b20::sub_101f4b20
 0x10012d5a func   ?sub_102009b0@CVStatList_t@@QAEXH@Z CVStatList_t::sub_102009b0
 0x10012d64 func   ?sub_101f0ea0@CUnknown101f0ea0@@QAEPAUS101f0b50@@XZ CUnknown101f0ea0::sub_101f0ea0
+0x10012d69 func   ?sub_1015fd50@CUnk1015fd50@@QAEHXZ CUnk1015fd50::sub_1015fd50
 0x10012d6e func   ??0CWeaponPhysCannon@@QAE@XZ CWeaponPhysCannon::CWeaponPhysCannon
 0x10012d73 func   ?sub_102ddb30@CAI_LocalNavigator@@QAEXXZ CAI_LocalNavigator::sub_102ddb30
 0x10012d78 func   _item_g_wallet item_g_wallet

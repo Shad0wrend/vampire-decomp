@@ -60293,6 +60293,26 @@ void CCharacter1015fbb0::sub_1015fbb0(int nAnimation, bool bForce)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015fd50 size=0x1e
+// TARGET: sub_1015fd50
+struct CUnk1015fd50
+{
+    char pad[0x748];
+    float m_748;
+    char pad2[0x758 - 0x74c];
+    int m_758;
+    int sub_1015fd50();
+};
+int CUnk1015fd50::sub_1015fd50()
+{
+    if (m_748 == 0.0f)
+    {
+        return -1;
+    }
+    return m_758;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160560 size=0xe0
 #include "CBasePlayer.h"
 #include "CBaseCombatWeapon.h"
