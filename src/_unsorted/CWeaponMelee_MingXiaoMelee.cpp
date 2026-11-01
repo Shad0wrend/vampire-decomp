@@ -96,10 +96,10 @@ int CWeaponMelee_MingXiaoMelee::vfunc367(int a, float b, float c)
 
 // FUNCTION: 0x103ec460 size=0x18
 #include "CWeaponMelee_MingXiaoMelee.h"
-void CWeaponMelee_MingXiaoMelee::vfunc370(CWeaponMeleeEvent *pEvent, int b)
+void CWeaponMelee_MingXiaoMelee::vfunc370(int *event, CBaseCombatWeapon *other)
 {
-	if (pEvent->m_type != 0xbbb)
-		CWeaponMelee::sub_103ea5b0(pEvent, b);
+	if (((CWeaponMeleeEvent *)event)->m_type != 0xbbb)
+		CWeaponMelee::vfunc370(event, other);
 }
 // END FUNCTION
 
