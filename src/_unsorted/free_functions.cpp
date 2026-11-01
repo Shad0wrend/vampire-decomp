@@ -4250,6 +4250,18 @@ void CUtlVector16::sub_1003c220(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003c2e0 size=0x3a
+#include "CUtlVector16.h"
+
+void CUtlVector16::sub_1003c2e0(int elem, int num)
+{
+	int numToMove = m_size - elem - num;
+	if (numToMove > 0 && num > 0) {
+		memmove(m_pMemory + (elem + num) * 16, m_pMemory + elem * 16, numToMove * 16);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003c3a0 size=0x3
 struct CUnknown1003c3a0 { void * sub_1003c3a0(); };
 void * CUnknown1003c3a0::sub_1003c3a0()
