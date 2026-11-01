@@ -7696,6 +7696,7 @@
 0x1000e31d func   ?sub_1010ddc0@CBreakable@@QAEXPAX@Z CBreakable::sub_1010ddc0
 0x1000e322 func   ?sub_102a9670@CUnknown102a9670@@QAEPAXXZ CUnknown102a9670::sub_102a9670
 0x1000e327 func   ?vfunc504@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc504
+0x1000e32c func   ?sub_10179130@@YAXXZ sub_10179130
 0x1000e33b func   ?sub_101bde20@UtlVec8@@QAEXHH@Z UtlVec8::sub_101bde20
 0x1000e340 func   ?sub_10059e80@CUnknown10059e80@@QAEHXZ CUnknown10059e80::sub_10059e80
 0x1000e345 func   _env_steam env_steam

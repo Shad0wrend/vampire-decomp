@@ -63361,6 +63361,17 @@ void __fastcall sub_101790b0(SView179 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10179130 size=0x20
+#include "vampire.h"
+// TARGET: sub_10179130
+void sub_10179130()
+{
+    if (*((char *)gpGlobals + 0x30) == 0) {
+        engine->vfunc59("reload\n");
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10179160 size=0x13
 int sub_10179160(int a0, int a1, int a2)
 {
