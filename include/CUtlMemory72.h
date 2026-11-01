@@ -8,4 +8,5 @@ struct CUtlMemory72
 	int m_growSize;
 
 	CUtlMemory72 *sub_10185010(int growSize, int allocationCount);	// constructor: allocates allocationCount * 72 bytes
+	CUtlMemory72 *sub_103dc180(int growSize, int allocationCount);
 };
