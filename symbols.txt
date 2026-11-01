@@ -5198,7 +5198,7 @@
 0x100099d5 func   ?vfunc82@CCameraKeyFrame@@QAEPAUdatamap_t@@XZ CCameraKeyFrame::vfunc82
 0x100099da func   ?vfunc326@CWeaponIArmor@@UAEXXZ CWeaponIArmor::vfunc326
 0x100099df func   ?sub_100d2eb0@@YAXXZ sub_100d2eb0
-0x100099ee func   ?vfunc82@CLogicPythonCheck@@QAEPAUdatamap_t@@XZ CLogicPythonCheck::vfunc82
+0x100099ee func   ?vfunc82@CLogicPythonCheck@@UAEPAUdatamap_t@@XZ CLogicPythonCheck::vfunc82
 0x100099f3 func   ?RemoveAll@?$CUtlVector@V?$CUtlVector@UStepSimulationData@@V?$CUtlMemory@UStepSimulationData@@@@@@V?$CUtlMemory@V?$CUtlVector@UStepSimulationData@@V?$CUtlMemory@UStepSimulationData@@@@@@@@@@QAEXXZ CUtlVector<CUtlVector<StepSimulationData,CUtlMemory<StepSimulationData> >,CUtlMemory<CUtlVector<StepSimulationData,CUtlMemory<StepSimulationData> > > >::RemoveAll
 0x100099f8 func   ?sub_100d13d0@CUnknown106b89bc@@QAEXPAVCBaseEntity@@@Z CUnknown106b89bc::sub_100d13d0
 0x100099fd func   ?sub_101f1b90@CUnknown101f1b90@@QAEPAXXZ CUnknown101f1b90::sub_101f1b90
