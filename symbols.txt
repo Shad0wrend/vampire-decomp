@@ -1459,6 +1459,7 @@
 0x100037ba func   ?sub_101c8a60@CUnknown101c8a60@@QAEXPAUCInputData100bc0f0@@@Z CUnknown101c8a60::sub_101c8a60
 0x100037bf func   ?sub_101f0a60@CUnknown101f0960@@QAEXPAX@Z CUnknown101f0960::sub_101f0a60
 0x100037c9 func   ?sub_100ba030@@YIHPAH@Z sub_100ba030
+0x100037ce func   ?Grow@?$CUtlMemory@UQuestJournal_Quest@@@@QAEXH@Z CUtlMemory<QuestJournal_Quest>::Grow
 0x100037ce func   ?sub_10222e30@@YIXPAUMem@@HH@Z sub_10222e30
 0x100037dd func   ?RotateRight@?$CUtlRBTree@UCRBTree16Entry8@@G@@QAEXG@Z CUtlRBTree<CRBTree16Entry8,unsigned short>::RotateRight
 0x100037e2 func   ?sub_102ee620@CUnknown102ee620@@QAEHXZ CUnknown102ee620::sub_102ee620
