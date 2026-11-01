@@ -563,6 +563,7 @@
 0x10001efb func   ?vfunc2@CTEDecal@@UAEPAV1@I@Z CTEDecal::vfunc2
 0x10001f05 func   ?sub_102ea050@CUnknown102ea050@@QAEHXZ CUnknown102ea050::sub_102ea050
 0x10001f0f func   ?vfunc80@CPlayerResource@@QAEHXZ CPlayerResource::vfunc80
+0x10001f1e func   ?sub_101a6920@@YAXXZ sub_101a6920
 0x10001f23 func   ?RotateLeft@?$CUtlRBTree@HG@@QAEXG@Z CUtlRBTree<int,unsigned short>::RotateLeft
 0x10001f23 func   ?RotateLeft@?$CUtlRBTree@UCRBTree12Entry_10194f30@@G@@QAEXG@Z CUtlRBTree<CRBTree12Entry_10194f30,unsigned short>::RotateLeft
 0x10001f28 func   ?sub_101c0820@CPointEntity@@QAEXXZ CPointEntity::sub_101c0820
