@@ -4515,6 +4515,7 @@
 0x10008ad0 func   ?sub_101fb830@CVStatSubCost_t@@QAEXXZ CVStatSubCost_t::sub_101fb830
 0x10008ad5 func   ?sub_10145060@@YAPAUSPoolItem@@XZ sub_10145060
 0x10008adf func   ?sub_1029c970@CAI_BaseNPCTroika@@QAEMXZ CAI_BaseNPCTroika::sub_1029c970
+0x10008af3 func   ?vfunc33@CPropDoorknob@@UAEHXZ CPropDoorknob::vfunc33
 0x10008afd func   ?sub_101f7960@CUnknown101f7960@@QAEPAUS101f7310@@XZ CUnknown101f7960::sub_101f7960
 0x10008b02 func   ?sub_101e9470@@YIHPAXH0@Z sub_101e9470
 0x10008b07 func   ?sub_1021e620@CUnknown1021e620@@QAEXH@Z CUnknown1021e620::sub_1021e620
