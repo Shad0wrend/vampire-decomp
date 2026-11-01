@@ -8,7 +8,7 @@ class CFilterFeat : public CBaseFilter
 public:
 	CFilterFeat() {}
 	CFilterFeat *vfunc5(unsigned int flags);
-	typedef char *Arg241;	// staged: becomes CBaseEntity *
+	typedef CBaseEntity *Arg241;	// staged: becomes CBaseEntity *
 	bool vfunc241(Arg241 pEntity);	// slot 241 "PassesFilter": false without an entity or its character object (+0x9c); else true when the character's cost for the feat named at +0x484 is at least the value at +0x488
 
 	const char *m_pszFeat;	// 0x484
