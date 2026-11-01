@@ -20,5 +20,5 @@ public:
 	char m_pad0458[4];
 	variant_t m_OutValue;	// 0x45c
 public:
-    virtual int vfunc82();
+    virtual Datamap82 vfunc82();
 };

@@ -16,6 +16,7 @@ public:
 	char m_OnPass[0x18];	// 0x454: a COutputEvent
 	char m_OnFail[0x18];	// 0x46c: a COutputEvent
 public:
-	int vfunc82();
+	typedef int Datamap82;	// staged: becomes datamap_t *
+	Datamap82 vfunc82();
 	bool vfunc241(int);
 };

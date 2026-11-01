@@ -4,6 +4,7 @@
 class CLogicalEntity
 {
 public:
+	typedef int Datamap82;	// staged: becomes datamap_t *
 	virtual void vfunc0();
 	virtual void vfunc1();
 	virtual void vfunc2();
@@ -25,7 +26,7 @@ public:
 	virtual void vfunc65(); virtual void vfunc66(); virtual void vfunc67(); virtual void vfunc68(); virtual void vfunc69();
 	virtual void vfunc70(); virtual void vfunc71(); virtual void vfunc72(); virtual void vfunc73(); virtual void vfunc74();
 	virtual void vfunc75(); virtual void vfunc76(); virtual void vfunc77(); virtual void vfunc78(); virtual void vfunc79();
-	virtual void vfunc80(); virtual void vfunc81(); virtual int vfunc82(); virtual void vfunc83(); virtual void vfunc84();
+	virtual void vfunc80(); virtual void vfunc81(); virtual Datamap82 vfunc82(); virtual void vfunc83(); virtual void vfunc84();
 	virtual void vfunc85(); virtual void vfunc86(); virtual void vfunc87(); virtual void vfunc88(); virtual void vfunc89();
 	virtual void vfunc90(); virtual void vfunc91(); virtual void vfunc92(); virtual void vfunc93(); virtual void vfunc94();
 	virtual void vfunc95(); virtual void vfunc96(); virtual void vfunc97(); virtual void vfunc98(); virtual void vfunc99();

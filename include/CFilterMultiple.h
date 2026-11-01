@@ -17,5 +17,6 @@ public:
 	const char *m_pszFilterName[5];	// 0x488: the names of the five filters
 	unsigned int m_hFilter[5];	// 0x49c
 public:
-	int vfunc82();
+	typedef int Datamap82;	// staged: becomes datamap_t *
+	Datamap82 vfunc82();
 };
