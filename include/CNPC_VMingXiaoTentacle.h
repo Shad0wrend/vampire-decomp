@@ -95,7 +95,7 @@ public:
 	virtual void vfunc20();
 	virtual void vfunc21();
 	virtual void vfunc22(int arg);
-	virtual void vfunc23();
+	virtual void vfunc23(int arg);
 	virtual void vfunc24();
 	virtual void vfunc25();
 	virtual void vfunc26();
