@@ -1501,6 +1501,7 @@
 0x100039a9 func   ?sub_100d7340@@YAXXZ sub_100d7340
 0x100039ae func   ?sub_103fd6f0@@YAHXZ sub_103fd6f0
 0x100039b3 func   ?vfunc82@CPropDestructable@@UAEPAUdatamap_t@@XZ CPropDestructable::vfunc82
+0x100039b8 func   ?sub_1030b550@CUnk1030b550@@QAEXH@Z CUnk1030b550::sub_1030b550
 0x100039bd func   ?sub_1018f1c0@CBreakableProp@@QAEPAV1@XZ CBreakableProp::sub_1018f1c0
 0x100039c2 func   ?vfunc82@CMathRemap@@UAEPAUdatamap_t@@XZ CMathRemap::vfunc82
 0x100039c7 func   ?vfunc80@CItemGDrugsDrugBox@@QAEHXZ CItemGDrugsDrugBox::vfunc80

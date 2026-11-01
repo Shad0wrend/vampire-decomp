@@ -137386,6 +137386,24 @@ int CUnknown1030b520::sub_1030b520()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030b550 size=0x1d
+// TARGET: CUnk1030b550::sub_1030b550
+int *__fastcall sub_1031a000(void *p);
+struct CUnk1030b550
+{
+    void sub_1030b550(int v);
+};
+void CUnk1030b550::sub_1030b550(int v)
+{
+    int *p = sub_1031a000((char *)this + 0x24);
+    if (p)
+    {
+        p[6] = v;
+        p[7] = -1;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030b580 size=0x14
 struct CUnknown1031a030
 {
