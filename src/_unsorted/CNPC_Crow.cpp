@@ -39,9 +39,9 @@ int CNPC_Crow::vfunc451()
 namespace lifted {
 extern char g_10628928;
 }
-CNPC_Crow::Datamap82 CNPC_Crow::vfunc82()
+datamap_t *CNPC_Crow::vfunc82()
 {
-    return (CNPC_Crow::Datamap82)&lifted::g_10628928;
+    return (datamap_t *)&lifted::g_10628928;
 }
 // END FUNCTION
 
