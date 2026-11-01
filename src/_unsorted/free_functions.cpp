@@ -82364,6 +82364,36 @@ struct CUnknown101c4760 { int a; int b; int c; void sub_101c4760(); };
 void sub_101c4820(CUnknown101c4760 *p) { p->sub_101c4760(); }
 // END FUNCTION
 
+// FUNCTION: 0x101c4840 size=0x2e
+#include "CUnk101c4840.h"
+void sub_101c4880();
+namespace block_101c4840 {
+	struct CNodeUnit : CUnknown101c4690
+	{
+		CNodeUnit *m_pNext;
+		CNodeUnit *m_pPrev;
+		int m_nCount;
+		void *sub_101c4690();
+	};
+	void *CNodeUnit::sub_101c4690()
+	{
+		m_pPrev = this;
+		m_pNext = this;
+		m_nCount = 0;
+		return this;
+	}
+}
+using namespace block_101c4840;
+CUnk101c4840 *CUnk101c4840::sub_101c4840(int a, int b, int nArg)
+{
+	((CNodeUnit *)&m_Node)->sub_101c4690();
+	m_n0000 = a;
+	m_n0004 = b;
+	m_Node.sub_101c4710((int)sub_101c4880, (int)this, nArg);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c4880 size=0x25
 extern char g_1059d41c[];
 

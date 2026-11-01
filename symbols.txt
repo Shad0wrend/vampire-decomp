@@ -40,6 +40,7 @@
 0x100010ff func   ?vfunc3@CTEMuzzleFlash@@UAEXHH@Z CTEMuzzleFlash::vfunc3
 0x10001109 func   ?vfunc117@CGameSign@@UAEHXZ CGameSign::vfunc117
 0x1000110e func   ?vfunc448@CNPC_VAsianVampire@@QAEXH@Z CNPC_VAsianVampire::vfunc448
+0x10001113 func   ?sub_101c4840@CUnk101c4840@@QAEPAV1@HHH@Z CUnk101c4840::sub_101c4840
 0x1000111d func   ?vfunc35@CBaseDoor@@UAEHH@Z CBaseDoor::vfunc35
 0x10001122 func   ?sub_100945e0@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_100945e0
 0x10001127 func   ?vfunc370@CWeaponMelee_MingXiaoMelee@@UAEXPAHPAVCBaseCombatWeapon@@@Z CWeaponMelee_MingXiaoMelee::vfunc370
