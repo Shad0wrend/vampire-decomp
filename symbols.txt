@@ -12386,6 +12386,7 @@
 0x10015bfe func   ?sub_1009f380@@YIXPADHPBH@Z sub_1009f380
 0x10015c03 func   ?sub_10074820@CFlexAnimationTrack@@QAEXH@Z CFlexAnimationTrack::sub_10074820
 0x10015c08 func   ?vfunc448@CNPC_VSabbatLeader@@QAEXH@Z CNPC_VSabbatLeader::vfunc448
+0x10015c0d func   ?sub_1023b570@CUnknown1023b570@@QAEDXZ CUnknown1023b570::sub_1023b570
 0x10015c17 func   ?sub_1012b370@CBaseEntity@@QAEXPBDHH@Z CBaseEntity::sub_1012b370
 0x10015c1c func   ?sub_103f6ab0@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_103f6ab0
 0x10015c21 func   ?sub_10229730@CListZ@@QAEHH@Z CListZ::sub_10229730

@@ -113722,6 +113722,30 @@ void __cdecl sub_1023b500(SArg *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023b570 size=0x26
+struct CUnknown1023b570Node {
+	char m_pad0000[0x49c];
+	int m_n049c;
+};
+
+CUnknown1023b570Node *sub_1023bd00();
+
+struct CUnknown1023b570 {
+	char sub_1023b570();
+	char m_pad0000[0x4a9];
+	char m_b04a9;
+};
+
+char CUnknown1023b570::sub_1023b570()
+{
+	if (sub_1023bd00() != 0) {
+		if (sub_1023bd00()->m_n049c == 2)
+			return 1;
+	}
+	return m_b04a9;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023bb60 size=0xa
 namespace lifted {
 int sub_10004836();
