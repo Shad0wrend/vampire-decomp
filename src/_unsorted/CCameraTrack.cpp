@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_1055d0bc;
 }
-int CCameraTrack::vfunc82()
+CCameraTrack::Datamap82 CCameraTrack::vfunc82()
 {
-    return (int)&lifted::g_1055d0bc;
+    return (CCameraTrack::Datamap82)&lifted::g_1055d0bc;
 }
 // END FUNCTION
 
