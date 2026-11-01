@@ -8816,6 +8816,7 @@
 0x1000fe7a func   ?sub_10028720@@YAPAHXZ sub_10028720
 0x1000fe7f func   ?sub_101ab720@@YIXPAXH0@Z sub_101ab720
 0x1000fe84 func   ?vfunc32@CItemContainerLock@@QAE_NH@Z CItemContainerLock::vfunc32
+0x1000fe84 func   ?vfunc32@CPropDoorknob@@UAE_NH@Z CPropDoorknob::vfunc32
 0x1000fe89 func   ?vfunc103@CPlayerResource@@QAEXXZ CPlayerResource::vfunc103
 0x1000fe8e func   ?sub_10069e80@@YAXHHPAUCTEEntView@@HHPBD@Z sub_10069e80
 0x1000fe93 func   ?vfunc546@CNPC_VMingXiaoTentacle@@QAEHH@Z CNPC_VMingXiaoTentacle::vfunc546
