@@ -14,7 +14,7 @@ datamap_t *CBaseFilter::vfunc82()
 
 // FUNCTION: 0x10107840 size=0x5
 #include "CBaseFilter.h"
-bool CBaseFilter::vfunc241(int a0)
+bool CBaseFilter::vfunc241(CBaseFilter::Arg241 a0)
 {
     return 1;
 }
