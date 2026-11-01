@@ -11599,6 +11599,7 @@
 0x10014c54 func   ?vfunc28@CMultiplayRules@@UAEXPAX@Z CMultiplayRules::vfunc28
 0x10014c59 func   ?vfunc370@CWeaponMelee_TzimisceMelee@@UAEXPAHPAVCBaseCombatWeapon@@@Z CWeaponMelee_TzimisceMelee::vfunc370
 0x10014c5e func   ?sub_100fb1f0@CEnvParticle@@QAEXPAVCBaseEntity@@HH@Z CEnvParticle::sub_100fb1f0
+0x10014c63 func   ?sub_10381ba0@CUnknown10381ba0@@QAEXD@Z CUnknown10381ba0::sub_10381ba0
 0x10014c72 func   ??1CVFeat_t@@QAE@XZ CVFeat_t::~CVFeat_t
 0x10014c95 func   ?sub_101f0740@@YIXPAUHolder@@HPBD@Z sub_101f0740
 0x10014c9a func   ?vfunc259@CNPC_VAnimal@@UAEXPAH@Z CNPC_VAnimal::vfunc259

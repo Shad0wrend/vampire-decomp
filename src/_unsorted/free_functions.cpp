@@ -154415,6 +154415,26 @@ void __fastcall sub_103816e0(E *e, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10381ba0 size=0x24
+class CUnknown10381ba0
+{
+public:
+	char pad0[0x14b8];
+	unsigned int m_flags14b8;
+
+	void sub_10381ba0(char on);
+};
+
+// TARGET: CUnknown10381ba0::sub_10381ba0
+void CUnknown10381ba0::sub_10381ba0(char on)
+{
+	if (on)
+		m_flags14b8 |= 16;
+	else
+		m_flags14b8 &= ~16;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10381be0 size=0xc
 bool CUnknown10381be0::sub_10381be0()
 {
