@@ -679,7 +679,7 @@ public:
 	virtual void vfunc597();
 	virtual void vfunc598();
 	virtual bool vfunc599(void *pEntity);
-	virtual void x600(); virtual void x601(); virtual void x602(); virtual void x603(); virtual void x604();
+	virtual void x600(); virtual void x601(); virtual char vfunc602(); virtual void x603(); virtual void x604();
 	virtual void x605(); virtual void x606(); virtual void x607(); virtual void x608(); virtual void x609();
 	virtual void x610(); virtual void x611(); virtual void x612(); virtual void x613(); virtual void x614();
 	virtual void x615(); virtual void x616(); virtual void x617();
