@@ -116807,6 +116807,49 @@ int sub_10256c20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10256e80 size=0x294
+#include "SendTable.h"
+
+SendProp sub_10246af0(const char *, int, int, int, int, int, void *);
+SendProp sub_10246dc0(const char *, int, int, void *);
+SendProp sub_101ab220(const char *, int, int);
+void sub_102464d0();
+void sub_10256920();
+void sub_10256890();
+extern int g_1054d524;
+extern const char *g_105c6378;
+extern SendTable g_1089a4f8;
+extern char g_1088aeb0[], g_1089a520[];
+
+int sub_10256e80()
+{
+	static SendProp props[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246dc0("baseclass", 0, g_1054d524, (void *)sub_102464d0),
+		sub_10246dc0("LocalWeaponData", 0, (int)g_1088aeb0, (void *)sub_10256920),
+		sub_10246dc0("LocalActiveWeaponData", 0, (int)g_1089a520, (void *)sub_10256890),
+		sub_10246af0("m_iUniqueId", 0x738, 4, 0x10, 1, 0, 0),
+		sub_10246af0("m_iInvenPos", 0x73c, 4, 8, 1, 0, 0),
+		sub_10246af0("m_iViewModelIndex", 0x89c, 4, 0xb, 0, 0, 0),
+		sub_10246af0("m_iWorldModelIndex", 0x8a0, 4, 0xb, 0, 0, 0),
+		sub_10246af0("m_iWieldModelFIndex", 0x76c, 4, 0xb, 0, 0, 0),
+		sub_10246af0("m_iWieldModelMIndex", 0x770, 4, 0xb, 0, 0, 0),
+		sub_10246af0("m_iTargetModelIndex", 0x774, 4, 0xb, 0, 0, 0),
+		sub_10246af0("m_iState", 0x8b0, 4, 8, 1, 0, 0),
+		sub_10246af0("m_iItemCurActivateMode", 0x848, 4, 3, 1, 0, 0),
+		sub_101ab220("m_hOwner", 0x88c, 4),
+		sub_101ab220("m_hEntTgt", 0x874, 4),
+		sub_10246af0("m_iCostToBuy", 0x864, 4, 0xc, 1, 0, 0),
+		sub_10246af0("m_iCostToSell", 0x868, 4, 0xc, 1, 0, 0),
+		sub_10246af0("m_iAtkMode", 0x86c, 4, 4, 1, 0, 0),
+		sub_10246af0("m_iItemCount", 0x8d0, 4, 0x10, 0, 0, 0),
+		sub_10246af0("m_iCashAmount", 0x8d4, 4, 0x10, 0, 0, 0),
+	};
+	g_1089a4f8.sub_10247240(&props[1], 0x13, g_105c6378);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10257200 size=0x11
 #include "CBaseCombatWeapon.h"
 
