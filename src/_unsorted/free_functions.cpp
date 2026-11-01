@@ -122262,6 +122262,19 @@ void CUnknown1028e030::sub_1028e030()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028e060 size=0x1f
+#include "vampire.h"
+#include "CAI_BaseNPC.h"
+// TARGET: CAI_BaseNPC::sub_1028e060
+void CAI_BaseNPC::sub_1028e060()
+{
+    CAI_BaseNPC *pObj = (CAI_BaseNPC *)sub_10007e19();
+    if (pObj) {
+        sub_1028e090(pObj->sub_100952d0(-1));
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028e360 size=0xd7
 #include "CAI_BaseNPCTroika.h"
 struct EntInfo { CBaseEntity *ent; int serial; int pad; };
