@@ -22,4 +22,6 @@ public:
 	EHANDLE m_hOther7c;	// 0x7c
 	char m_pad0080[0x90 - 0x80];
 	void *m_pController90;	// 0x90
+public:
+	virtual int vfunc0(void *, int, float, Vector &, Vector &);	// slot 0: 0x10148c40 in the game's CGravControllerPoint vtable (link audit, CGravControllerPoint)
 };
