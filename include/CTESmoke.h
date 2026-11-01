@@ -19,4 +19,5 @@ public:
 	int m_nFrameRate;	// 0x20
 
 	void sub_10002fa4();	// destructor body
+	CTESmoke *sub_10067010(const char *name);	// constructor body (CBaseTempEntityHead base at stub 0x10015334), then the vtable and the zeroed fields from +0xc
 };
