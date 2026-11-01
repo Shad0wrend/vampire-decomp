@@ -20044,6 +20044,23 @@ void CUtlRBTree24::sub_1007f250(const void *pInsert, int *pParent, bool *pLeftCh
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007f380 size=0x33
+#include "CUtlMemory24.h"
+
+extern void *(*g_109f3634)(int);
+
+// TARGET: CUtlMemory24::sub_1007f380
+CUtlMemory24 *CUtlMemory24::sub_1007f380(int growSize, int allocationCount)
+{
+	m_pMemory = 0;
+	m_allocationCount = allocationCount;
+	m_growSize = growSize;
+	if (allocationCount)
+		m_pMemory = (char *)g_109f3634(allocationCount * 24);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007f3d0 size=0x17
 struct E8 { int a, b; };
 
