@@ -37,9 +37,9 @@ bool CFilterFeat::vfunc241(char *pEntity)
 namespace lifted {
 extern char g_1056c5f0;
 }
-CFilterFeat::Datamap82 CFilterFeat::vfunc82()
+datamap_t *CFilterFeat::vfunc82()
 {
-    return (CFilterFeat::Datamap82)&lifted::g_1056c5f0;
+    return (datamap_t *)&lifted::g_1056c5f0;
 }
 // END FUNCTION
 
