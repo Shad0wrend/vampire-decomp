@@ -6063,6 +6063,7 @@
 0x1000b0dc func   ?vfunc5@CItemGOHDiary@@QAEPAV1@I@Z CItemGOHDiary::vfunc5
 0x1000b0e1 func   ?sub_10075c00@CUnknown10075c00@@QAEPADXZ CUnknown10075c00::sub_10075c00
 0x1000b0eb func   ?sub_10157ca0@CRagdollPropSpecial@@QAEXPAVCBaseEntity@@@Z CRagdollPropSpecial::sub_10157ca0
+0x1000b0fa func   ?sub_101a01c0@CSave@@QAE_NPBDPAX1PAUtypedescription_t@@@Z CSave::sub_101a01c0
 0x1000b0ff func   ?vfunc585@CCineNPC@@UAE_NXZ CCineNPC::vfunc585
 0x1000b104 func   ?vfunc14@CMoveHelperServer@@UAEPAV1@I@Z CMoveHelperServer::vfunc14
 0x1000b109 func   ?sub_100e58b0@CUnk100e58b0@@QAE_NXZ CUnk100e58b0::sub_100e58b0

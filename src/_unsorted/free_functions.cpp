@@ -74718,6 +74718,18 @@ const char *sub_1019f760(SFuncMap *pMap, int pFunc)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a01c0 size=0x17
+#include "CSave.h"
+
+// TARGET: CSave::sub_101a01c0
+bool CSave::sub_101a01c0(const char *pszName, void *pData, void *pRootMap, typedescription_t *pField)
+{
+    if (*(int *)pField <= 10)
+        return sub_1019ff50((const unsigned short *)pszName, pData, pRootMap, pField);
+    return sub_101a1140((int)pszName, pData, pRootMap, pField);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a01f0 size=0x4c
 #include "CSave.h"
 
