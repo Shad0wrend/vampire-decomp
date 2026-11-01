@@ -11028,6 +11028,7 @@
 0x100136ce func   ?sub_100821f0@CSceneEntity@@QAEXH@Z CSceneEntity::sub_100821f0
 0x100136d3 func   ?vfunc104@CNPC_VTest@@UAEXXZ CNPC_VTest::vfunc104
 0x100136dd func   ?sub_100f8a20@@YGXH@Z sub_100f8a20
+0x100136e2 func   ?sub_1036ec90@@YADXZ sub_1036ec90
 0x100136e7 func   ?sub_101e8b30@CUnknown101e8b30@@QAEHXZ CUnknown101e8b30::sub_101e8b30
 0x100136ec func   ?sub_10181620@CUnknown10181620@@QAEHH@Z CUnknown10181620::sub_10181620
 0x100136f1 func   _item_w_ithaca_m_37 item_w_ithaca_m_37

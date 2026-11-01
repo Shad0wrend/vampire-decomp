@@ -34,6 +34,12 @@ int CNPC_VChangBrosBlade::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036ec90 size=0x6
+extern char g_1062fe38;
+// TARGET: sub_1036ec90
+char sub_1036ec90() { return g_1062fe38; }
+// END FUNCTION
+
 // FUNCTION: 0x1036ecf0 size=0x1d
 #include "CNPC_VChangBrosBlade.h"
 struct A { int sub_10012300(int); };
