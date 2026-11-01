@@ -6254,6 +6254,7 @@
 0x1000b75d func   ?sub_1042c4c0@@YAHXZ sub_1042c4c0
 0x1000b762 func   _item_g_watch_normal item_g_watch_normal
 0x1000b767 func   ?vfunc542@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc542
+0x1000b771 func   ?SendPropEHandle@@YA?AVSendProp@@PBDHH@Z SendPropEHandle
 0x1000b771 func   ?sub_101ab220@@YAPAXPAXHHH@Z sub_101ab220
 0x1000b776 func   ?sub_1009b980@CBaseEntity@@QAEXHPADH@Z CBaseEntity::sub_1009b980
 0x1000b780 func   ?sub_10136ec0@CUnknown10136ec0@@QAEHXZ CUnknown10136ec0::sub_10136ec0
