@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_1063bdb0;
 }
-CNPC_VHengeyokai::Datamap82 CNPC_VHengeyokai::vfunc82()
+datamap_t *CNPC_VHengeyokai::vfunc82()
 {
-    return (CNPC_VHengeyokai::Datamap82)&lifted::g_1063bdb0;
+    return (datamap_t *)&lifted::g_1063bdb0;
 }
 // END FUNCTION
 
