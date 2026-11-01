@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_1056c2dc;
 }
-int CFilterMultiple::vfunc82()
+CFilterMultiple::Datamap82 CFilterMultiple::vfunc82()
 {
-    return (int)&lifted::g_1056c2dc;
+    return (CFilterMultiple::Datamap82)&lifted::g_1056c2dc;
 }
 // END FUNCTION
 
