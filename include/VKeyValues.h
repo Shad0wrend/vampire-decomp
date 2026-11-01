@@ -26,6 +26,7 @@ struct VKeyValuesInterface	// the IKeyValues part: slot 0 is the key's name
 
 	int sub_101f28e0(const char *pszName, const char **ppszChoices, int nChoices, int nDefault);	// the index of the choice (case-insensitive) equal to the named sub key's string value, nDefault when none
 	float sub_101f2830(const char *pszName, float flDefault);	// the float getter: atof of the string, the int as a float, the float, else 0
+	void *sub_101f27f0(const char *pszName, void *pDefault);	// "GetPtr" of the IKeyValues part (this - 0x30 is the VKeyValues; caller thunk 0x101f3200): the named sub key's value (+0x8) when its type (+0x10) is 4, else 0; pDefault when there is no such key
 	int sub_101f2740(const char *pszName, int nDefault);	// "GetInt" of the IKeyValues part (this - 0x30 is the VKeyValues): the named sub key's value as an int (atoi of the string, ftol of the float), nDefault when there is none
 };
 
