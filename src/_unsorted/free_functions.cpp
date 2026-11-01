@@ -128925,6 +128925,24 @@ bool CAI_BaseNPC::sub_102d1350(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d1420 size=0x1f
+#include "globalvars.h"
+
+struct CUnk102d1420
+{
+    char pad[0x5e0];
+    int m_5e0;
+    char pad2[0x5ec - 0x5e4];
+    float m_5ec;
+    void sub_102d1420(float flTime);
+};
+void CUnk102d1420::sub_102d1420(float flTime)
+{
+    m_5e0 = -1;
+    m_5ec = flTime + gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d14c0 size=0x56
 struct CNpcView14c0 {
 	char m_pad0000[0x5e0];
