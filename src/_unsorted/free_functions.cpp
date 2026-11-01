@@ -148116,6 +148116,27 @@ char CBaseCombatCharacter::sub_10337300()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103373e0 size=0x2fb
+#include "CHL2_Player.h"
+#include "CVStatList_t.h"
+#include "CVStatInfoList_t.h"
+
+// TARGET: CHL2_Player::sub_103373e0
+void CHL2_Player::sub_103373e0()
+{
+	int n = ((CVStatInfoList_t *)CVStatListSet::Of(this)->Find(3)->m_field0c)->m_nStats;
+	for (int i = 0; i < n; i++) {
+		int v = CVStatListSet::Of(this)->Find(3)->sub_102012d0(i);
+		if (v > 0)
+			CVStatListSet::Of(this)->Find(3)->sub_10201100(i, v);
+	}
+	CVStatListSet::Of(this)->Find(0)->sub_102009b0(0xc);
+	CVStatListSet::Of(this)->Find(0)->sub_102009b0(0xe);
+	CVStatListSet::Of(this)->Find(0)->sub_102009b0(0xf);
+	CVStatListSet::Of(this)->Find(0)->sub_102009b0(0x10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103377a0 size=0x87
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
