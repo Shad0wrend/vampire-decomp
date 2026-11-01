@@ -9,7 +9,8 @@ class IPhysicsEnvironment
 {
 public:
 	PENV1(0) PENV1(1) PENV1(2) PENV1(3) PENV1(4) PENV1(5) PENV1(6) PENV1(7) PENV1(8) PENV1(9)
-	PENV10(1) 
+	virtual void *vfunc10(void *pObject, void *pParams);	// slot 10 CreateFluidController(object, fluidparams_t *)
+	PENV1(11) PENV1(12) PENV1(13) PENV1(14) PENV1(15) PENV1(16) PENV1(17) PENV1(18) PENV1(19)
 	PENV1(20) PENV1(21) PENV1(22) PENV1(23) PENV1(24) PENV1(25) PENV1(26) PENV1(27) PENV1(28) PENV1(29)
 	PENV1(30) PENV1(31) PENV1(32) PENV1(33) PENV1(34) PENV1(35) PENV1(36) PENV1(37) PENV1(38) PENV1(39)
 	virtual void vfunc40(void *pController);	// slot 40 DestroyMotionController
