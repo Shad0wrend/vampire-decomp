@@ -107422,6 +107422,35 @@ void CPropModelState::sub_102168a0(inputdata_t *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10216930 size=0x2e
+#define P10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+    virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CUnk10216930
+{
+    P10(a) P10(b) P10(c) P10(d) P10(e) P10(f) P10(g) P10(h) P10(i) P10(j) P10(k)
+    P10(l) P10(m) P10(n) P10(o) P10(p) P10(q) P10(r) P10(s) P10(t) P10(u) P10(v) P10(w) P10(x)
+    P10(y) P10(z)
+    virtual void vfunc260();
+    virtual void vfunc261();
+    virtual void vfunc262();
+    virtual void vfunc263();
+    virtual void vfunc264();
+    virtual void vfunc265(int a, int b, int c, int d);
+
+    void sub_10216930(int *pPair);
+};
+
+// TARGET: ?sub_10216930@CUnk10216930@@QAEXPAH@Z
+void CUnk10216930::sub_10216930(int *pPair)
+{
+    if (((CBaseEntity *)this)->sub_100a7bd0((CBaseEntity *)pPair[0]))
+    {
+        vfunc265(pPair[0], pPair[1], 1, 0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10216aa0 size=0xd6
 #include "CPropModelState.h"
 
