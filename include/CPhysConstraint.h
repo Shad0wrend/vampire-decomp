@@ -37,6 +37,35 @@ public:
 	virtual void vfunc90(); virtual void vfunc91(); virtual void vfunc92(); virtual void vfunc93(); virtual void vfunc94();
 	virtual void vfunc95(); virtual void vfunc96(); virtual void vfunc97(); virtual void vfunc98(); virtual void vfunc99();
 	virtual void vfunc100(); virtual void vfunc101(); virtual void vfunc102(); virtual void vfunc103(); virtual void vfunc104();
+	virtual void vfunc105(); virtual void vfunc106(); virtual void vfunc107(); virtual void vfunc108(); virtual void vfunc109();
+	virtual void vfunc110(); virtual void vfunc111(); virtual void vfunc112(); virtual void vfunc113(); virtual void vfunc114();
+	virtual void vfunc115(); virtual void vfunc116(); virtual void vfunc117(); virtual void vfunc118(); virtual void vfunc119();
+	virtual void vfunc120(); virtual void vfunc121(); virtual void vfunc122(); virtual void vfunc123(); virtual void vfunc124();
+	virtual void vfunc125(); virtual void vfunc126(); virtual void vfunc127(); virtual void vfunc128(); virtual void vfunc129();
+	virtual void vfunc130(); virtual void vfunc131(); virtual void vfunc132(); virtual void vfunc133(); virtual void vfunc134();
+	virtual void vfunc135(); virtual void vfunc136(); virtual void vfunc137(); virtual void vfunc138(); virtual void vfunc139();
+	virtual void vfunc140(); virtual void vfunc141(); virtual void vfunc142(); virtual void vfunc143(); virtual void vfunc144();
+	virtual void vfunc145(); virtual void vfunc146(); virtual void vfunc147(); virtual void vfunc148(); virtual void vfunc149();
+	virtual void vfunc150(); virtual void vfunc151(); virtual void vfunc152(); virtual void vfunc153(); virtual void vfunc154();
+	virtual void vfunc155(); virtual void vfunc156(); virtual void vfunc157(); virtual void vfunc158(); virtual void vfunc159();
+	virtual void vfunc160(); virtual void vfunc161(); virtual void vfunc162(); virtual void vfunc163(); virtual void vfunc164();
+	virtual void vfunc165(); virtual void vfunc166(); virtual void vfunc167(); virtual void vfunc168(); virtual void vfunc169();
+	virtual void vfunc170(); virtual void vfunc171(); virtual void vfunc172(); virtual void vfunc173(); virtual void vfunc174();
+	virtual void vfunc175(); virtual void vfunc176(); virtual void vfunc177(); virtual void vfunc178(); virtual void vfunc179();
+	virtual void vfunc180(); virtual void vfunc181(); virtual void vfunc182(); virtual void vfunc183x(); virtual void vfunc184();
+	virtual void vfunc185(); virtual void vfunc186(); virtual void vfunc187(); virtual void vfunc188(); virtual void vfunc189();
+	virtual void vfunc190(); virtual void vfunc191(); virtual void vfunc192(); virtual void vfunc193(); virtual void vfunc194();
+	virtual void vfunc195(); virtual void vfunc196(); virtual void vfunc197(); virtual void vfunc198(); virtual void vfunc199();
+	virtual void vfunc200(); virtual void vfunc201(); virtual void vfunc202(); virtual void vfunc203(); virtual void vfunc204();
+	virtual void vfunc205(); virtual void vfunc206(); virtual void vfunc207(); virtual void vfunc208(); virtual void vfunc209();
+	virtual void vfunc210(); virtual void vfunc211(); virtual void vfunc212(); virtual void vfunc213(); virtual void vfunc214();
+	virtual void vfunc215(); virtual void vfunc216(); virtual void vfunc217(); virtual void vfunc218(); virtual void vfunc219();
+	virtual void vfunc220(); virtual void vfunc221(); virtual void vfunc222(); virtual void vfunc223(); virtual void vfunc224();
+	virtual void vfunc225(); virtual void vfunc226(); virtual void vfunc227(); virtual void vfunc228(); virtual void vfunc229();
+	virtual void vfunc230(); virtual void vfunc231(); virtual void vfunc232(); virtual void vfunc233(); virtual void vfunc234();
+	virtual void vfunc235(); virtual void vfunc236(); virtual void vfunc237(); virtual void vfunc238(); virtual void vfunc239();
+	virtual void vfunc240();
+	virtual CPhysConstraintObj *vfunc241(struct CPhysConstraintSystem *pSystem, struct CPhysConstraintPair *pPair);
 
 	void vfunc183(int a, int b, struct CPhysConstraintInfo **ppInfo);	// slot 183 (plain member): when b is 0 and the engine's frame counter at +0x18 changed since the last time (+0x46c), hands a, the constraint object's two physics objects (slots 5 and 6) and the info record's angles / position / flag to sub_1002a210
 	void sub_100121ac();	// destructor body
