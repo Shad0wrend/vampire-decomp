@@ -1048,6 +1048,13 @@ char CBasePlayer::vfunc379(int a, int b, int c, int d, int e, int f, int g)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016a640 size=0x1
+// TARGET: sub_1016a640
+void __fastcall sub_1016a640(void *pThis)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016a870 size=0xf1
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"

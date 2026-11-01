@@ -4933,6 +4933,7 @@
 0x100093c2 func   ?sub_10429460@@YAHXZ sub_10429460
 0x100093cc func   _filter_activator_class filter_activator_class
 0x100093d1 func   _npc_VYukie npc_VYukie
+0x100093d6 func   ?sub_1016a640@@YIXPAX@Z sub_1016a640
 0x100093e0 func   ?sub_103e95b0@@YAHXZ sub_103e95b0
 0x100093e5 func   ?Grow@?$CUtlMemory@UCBreakModelRec@@@@QAEXH@Z CUtlMemory<CBreakModelRec>::Grow
 0x100093e5 func   ?sub_10194da0@CUnknown10194da0@@QAEXH@Z CUnknown10194da0::sub_10194da0
