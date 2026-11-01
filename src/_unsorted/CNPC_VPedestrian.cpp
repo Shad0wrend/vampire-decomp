@@ -109,6 +109,26 @@ int CNPC_VPedestrian::vfunc138()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a2980 size=0x1e
+#include "CNPC_VPedestrian.h"
+
+// The base-class members the game calls directly (stubs), seen from this class.
+struct CUnkPedestrianStubs {
+	void sub_10011b35();
+	void sub_100123f5(int a);
+};
+
+// TARGET: CNPC_VPedestrian::vfunc453
+void CNPC_VPedestrian::vfunc453()
+{
+	((CUnkPedestrianStubs *)this)->sub_10011b35();
+	if (!sub_1033e2b0())
+	{
+		((CUnkPedestrianStubs *)this)->sub_100123f5(0x24);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a2c30 size=0x18f
 #include "CNPC_VPedestrian.h"
 #include "CAI_BaseNPCTroika.h"
