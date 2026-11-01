@@ -136050,6 +136050,18 @@ void CUtlVector36::sub_102e2b60(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e2c20 size=0x3e
+#include "UtlVec36.h"
+
+void UtlVec36::sub_102e2c20(int elem, int num)
+{
+	int numToMove = m_Size - elem - num;
+	if (numToMove > 0 && num > 0) {
+		memmove(m_pMemory + (elem + num) * 36, m_pMemory + elem * 36, numToMove * 36);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e2d40 size=0x1a
 namespace lifted {
 extern int g_1060e900;

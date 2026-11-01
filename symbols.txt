@@ -613,6 +613,7 @@
 0x10002090 func   ?sub_101c2720@CSubHost@@QAEPAU1@HHHHHHH@Z CSubHost::sub_101c2720
 0x1000209a func   ?sub_100437e0@CUnknown100437e0@@QAEXH@Z CUnknown100437e0::sub_100437e0
 0x1000209f func   ?sub_1009f3c0@CBaseEntity@@QAEXPBDH@Z CBaseEntity::sub_1009f3c0
+0x100020a9 func   ?sub_102e2c20@UtlVec36@@QAEXHH@Z UtlVec36::sub_102e2c20
 0x100020ae func   ?sub_10280a20@CUnk10280a20@@QAEHXZ CUnk10280a20::sub_10280a20
 0x100020b3 func   ?sub_10214750@@YIXPAXHH@Z sub_10214750
 0x100020b8 func   ?sub_10281730@CNpcScheduleUnit@@QAEXXZ CNpcScheduleUnit::sub_10281730
