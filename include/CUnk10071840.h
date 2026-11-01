@@ -9,7 +9,9 @@ class CUnk10071840
 public:
 	char m_pad0000[0x204];
 	unsigned int m_flags204;	// 0x204
-	char m_pad0208[0x6f0 - 0x208];
+	char m_pad0208[0x268 - 0x208];
+	unsigned int m_flags268;	// 0x268
+	char m_pad026c[0x6f0 - 0x26c];
 	int m_n6f0;	// 0x6f0
 	char m_pad06f4[4];
 	int m_n6f8;	// 0x6f8
