@@ -84,6 +84,17 @@ void CTEBubbles::vfunc3(const Vector &origin, const QAngle &angles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005f7e0 size=0x39
+#include "CTEBubbles.h"
+#include "CTEMetalSparks.h"
+#include "IVEngineServerFull.h"
+
+void CTEBubbles::vfunc4(CRecipientFilter &filter, float delay)
+{
+	engine->vfunc103((int)&filter, *(int *)&delay, this, ((CTEMetalSparks *)this)->vfunc0()->m_pTable, ((CTEMetalSparks *)this)->vfunc0()->m_ClassID);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005f8a0 size=0x6
 #include "CTEBubbles.h"
 namespace lifted {
