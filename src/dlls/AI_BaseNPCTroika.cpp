@@ -643,6 +643,94 @@ int CAI_BaseNPCTroika::sub_102b6fe0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b7370 size=0x27f
+#include "CEntitySoundOriginView.h"
+#include "globalvars.h"
+
+struct CHintView5ddc { char m_pad[0x5dc]; int m_nType; };
+struct CSquadMember5da4 { char m_pad[0xa4]; CBaseEntity *m_pEnt; };
+struct CSquad5da4 { CSquadMember5da4 *sub_103166b0(); };
+struct CEnemyView640 { char m_pad[0x640]; float m_flTime; };
+
+int CAI_BaseNPCTroika::sub_102b7370()
+{
+	EHANDLE &hEnemy = *(EHANDLE *)((char *)this + 0x5d28);
+	CBaseEntity *pEnemy;
+	CHintView5ddc *pHint;
+	int type, r;
+	const float *pOrigin, *pMine;
+	float *pSaved;
+	float dx, dy, dz;
+	if (*(CHintView5ddc **)((char *)this + 0x5ddc))
+		goto none;
+	pEnemy = hEnemy.Get();
+	if (pEnemy) {
+		if (((CEnemyView640 *)pEnemy)->m_flTime <= gpGlobals->curtime) {
+			hEnemy = (CBaseEntity *)0;
+			pEnemy = 0;
+		} else
+			goto keep;
+	}
+	if (sub_10014df8(0x59) && *(int *)((char *)this + 0x5bb0) <= 0 && *(CSquad5da4 **)((char *)this + 0x5da4)) {
+		CSquadMember5da4 *pMember = (*(CSquad5da4 **)((char *)this + 0x5da4))->sub_103166b0();
+		if (pMember)
+			pEnemy = pMember->m_pEnt;
+	}
+	if (!pEnemy) {
+		if (!sub_10014df8(0x34))
+			goto none;
+		pEnemy = (*(EHANDLE *)((char *)this + 0x5d2c)).Get();
+		if (!pEnemy)
+			goto none;
+	}
+keep:
+	if (!*(CHintView5ddc **)((char *)this + 0x5ddc) && (~*(unsigned int *)((char *)this + 0x14b8) & 0x800)
+		&& !(*(EHANDLE *)((char *)this + 0x643c)).Get()) {
+		*(EHANDLE *)((char *)this + 0x6448) = pEnemy;
+		sub_102b7110(1);
+	}
+	pHint = *(CHintView5ddc **)((char *)this + 0x5ddc);
+	if (pHint) {
+		type = pHint->m_nType;
+		if (type >= 100 && (type <= 101 || type == 0x27d8)) {
+			m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+			m_nLine1b34 = 0x5c36;
+			return 0x9c;
+		}
+		sub_10295ab0(5.0f);
+none:
+		return 0;
+	}
+	pOrigin = ((CEntitySoundOriginView *)pEnemy)->GetAbsOrigin();
+	pSaved = (float *)((char *)this + 0x5dd0);
+	pSaved[0] = pOrigin[0];
+	pSaved[1] = pOrigin[1];
+	pSaved[2] = pOrigin[2];
+	pMine = ((CEntitySoundOriginView *)this)->GetAbsOrigin();
+	dx = pMine[0] - pSaved[0];
+	dy = pMine[1] - pSaved[1];
+	dz = pMine[2] - pSaved[2];
+	if (dx * dx + dy * dy + dz * dz <= 65536.0f) {
+		r = vfunc167();
+		m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+		if (r) {
+			m_nLine1b34 = 0x5c4a;
+			return 0x90;
+		}
+		m_nLine1b34 = 0x5c4e;
+		return 0x91;
+	}
+	r = vfunc167();
+	m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+	if (r) {
+		m_nLine1b34 = 0x5c55;
+		return 0x94;
+	}
+	m_nLine1b34 = 0x5c59;
+	return 0x96;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b7fc0 size=0x2a5
 #include "CAI_BaseNPCTroika.h"
 #include "CStatusFlagList.h"
