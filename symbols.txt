@@ -5991,6 +5991,7 @@
 0x1000b3de func   _func_door func_door
 0x1000b3ed func   ?sub_1014d110@CUnk1014d110@@QAEXXZ CUnk1014d110::sub_1014d110
 0x1000b3f2 func   ?sub_10131a40@@YAPAHXZ sub_10131a40
+0x1000b401 func   ?sub_10359ec0@CGeneric_NPC@@QAEPAV1@XZ CGeneric_NPC::sub_10359ec0
 0x1000b406 func   ?sub_10346220@CBaseCombatCharacter@@QAEMXZ CBaseCombatCharacter::sub_10346220
 0x1000b40b func   _logic_visibility_test logic_visibility_test
 0x1000b410 func   ?vfunc82@CNPC_VTzimisceRunner@@UAEHXZ CNPC_VTzimisceRunner::vfunc82

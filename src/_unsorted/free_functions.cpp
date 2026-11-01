@@ -151384,6 +151384,33 @@ char sub_10359de0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10359ec0 size=0x27
+#include "CGeneric_NPC.h"
+
+struct CGenericBaseCtorCall_10359ec0
+{
+	void sub_1028d230();
+};
+
+struct CGenericMemberCtorCall_10359ec0
+{
+	void sub_10002937();
+};
+
+extern void *vt_104a4da4[];
+extern void *vt_104a4d74[];
+
+// TARGET: CGeneric_NPC::sub_10359ec0
+CGeneric_NPC *CGeneric_NPC::sub_10359ec0()
+{
+	((CGenericBaseCtorCall_10359ec0 *)this)->sub_1028d230();
+	((CGenericMemberCtorCall_10359ec0 *)((char *)this + 0x665c))->sub_10002937();
+	*(void ***)this = vt_104a4da4;
+	*(void ***)((char *)this + 0x19b0) = vt_104a4d74;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035a870 size=0x12
 #define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
 #define V100(n) V10(n##a) V10(n##b) V10(n##c) V10(n##d) V10(n##e) V10(n##f) V10(n##g) V10(n##h) V10(n##i) V10(n##j)
