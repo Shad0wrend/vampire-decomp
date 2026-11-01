@@ -178153,6 +178153,27 @@ extern "C" CBaseEntity *item_i_written()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040b270 size=0x4b
+extern int *g_1070b228;
+extern int vt_105147dc[];
+void __fastcall sub_10011b8f(void *);
+int __fastcall sub_1040b270(void *this_)
+{
+    char *p = (char *)this_;
+    sub_10011b8f(p);
+    *(char *)(p + 0x8c8) = 0;
+    *(int *)p = (int)vt_105147dc;
+    int curtime = g_1070b228[3];
+    *(int *)(p + 0x910) = curtime;
+    *(int *)(p + 0x8b8) = 0;
+    *(int *)(p + 0x8c0) = 0;
+    *(int *)(p + 0x8bc) = 0;
+    *(int *)(p + 0x778) = 1;
+    *(int *)(p + 0x8c4) = 0;
+    return (int)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040be30 size=0x1a
 namespace lifted {
 extern int g_1068351c;

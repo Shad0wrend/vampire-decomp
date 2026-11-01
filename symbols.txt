@@ -10021,6 +10021,7 @@
 0x10011937 func   ?vfunc2@CTEBloodSprite@@UAEPAV1@I@Z CTEBloodSprite::vfunc2
 0x1001193c func   ?sub_1033c830@CBaseCombatCharacter@@QAEXI@Z CBaseCombatCharacter::sub_1033c830
 0x10011941 func   ?vfunc80@CWeaponUnarmed@@UAEHXZ CWeaponUnarmed::vfunc80
+0x10011946 func   ?sub_1040b270@@YIHPAX@Z sub_1040b270
 0x10011950 func   ?sub_1004bd40@CUtlRBTree16Unit@@QAEXG@Z CUtlRBTree16Unit::sub_1004bd40
 0x10011955 func   ?sub_102e06f0@@YIPAHPAH@Z sub_102e06f0
 0x1001195f func   ?vfunc56@CHalfLife2@@UAEXXZ CHalfLife2::vfunc56
