@@ -60225,6 +60225,26 @@ bool CUnknown101578b0::sub_101578b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101578d0 size=0x24
+class CUnknown101578d0
+{
+public:
+	char pad0[0x204];
+	unsigned int m_flags204;
+
+	void sub_101578d0(char on);
+};
+
+// TARGET: CUnknown101578d0::sub_101578d0
+void CUnknown101578d0::sub_101578d0(char on)
+{
+	if (on)
+		m_flags204 |= 16;
+	else
+		m_flags204 &= ~16;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10157910 size=0xd
 void CUnknown101578b0::sub_10157910(int value)
 {
