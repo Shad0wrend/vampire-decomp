@@ -170618,6 +170618,37 @@ void sub_1040d950()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040d970 size=0x1e
+#define P10(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
+
+// Local view of the vtable: slot 327 is the virtual call; the other slots are placeholders.
+struct CUnkVT327 {
+	P10(p0) P10(p1) P10(p2) P10(p3) P10(p4) P10(p5) P10(p6) P10(p7) P10(p8) P10(p9)
+	P10(p10) P10(p11) P10(p12) P10(p13) P10(p14) P10(p15) P10(p16) P10(p17) P10(p18) P10(p19)
+	P10(p20) P10(p21) P10(p22) P10(p23) P10(p24) P10(p25) P10(p26) P10(p27) P10(p28) P10(p29)
+	P10(p30) P10(p31)
+	virtual void p320(); virtual void p321(); virtual void p322(); virtual void p323(); virtual void p324();
+	virtual void p325(); virtual void p326();
+	virtual void vfunc327();
+};
+
+struct CUnkCombatChar {
+	CUnkVT327 *sub_10335950(void *p);
+};
+
+void *sub_102587f0();
+
+// TARGET: sub_1040d970
+void sub_1040d970(CUnkCombatChar *pThis)
+{
+	CUnkVT327 *p = pThis->sub_10335950(sub_102587f0());
+	if (p)
+	{
+		p->vfunc327();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040dbb0 size=0xa
 namespace lifted {
 int __stdcall sub_10005092(int, int);

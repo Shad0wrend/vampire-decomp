@@ -9236,6 +9236,7 @@
 0x10010eba func   ?sub_1012d290@@YAHXZ sub_1012d290
 0x10010ebf func   ?sub_1032b960@@YAPAVVector@@XZ sub_1032b960
 0x10010ec4 func   ?sub_10189a10@@YADPAVCBaseEntity@@@Z sub_10189a10
+0x10010ec9 func   ?sub_1040d970@@YAXPAUCUnkCombatChar@@@Z sub_1040d970
 0x10010ed3 func   ?vfunc534@CAI_BaseNPC@@UAEPAVCBaseEntity@@XZ CAI_BaseNPC::vfunc534
 0x10010ed8 func   ?vfunc25@CNPC_VZombie@@UAEXH@Z CNPC_VZombie::vfunc25
 0x10010edd func   ?sub_10258b00@@YAXPAVCUnknown10258b00@@@Z sub_10258b00
