@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_1057748c;
 }
-int CLogicNPCCondition::vfunc82()
+CLogicNPCCondition::Datamap82 CLogicNPCCondition::vfunc82()
 {
-    return (int)&lifted::g_1057748c;
+    return (CLogicNPCCondition::Datamap82)&lifted::g_1057748c;
 }
 // END FUNCTION
 
