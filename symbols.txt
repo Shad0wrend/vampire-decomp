@@ -1303,6 +1303,7 @@
 0x100032a1 func   ?vfunc315@CWeaponThrown_Grenade_Frag@@UAEHXZ CWeaponThrown_Grenade_Frag::vfunc315
 0x100032a6 func   ?sub_10205ac0@CParsedValue@@QAEXPAXPBD@Z CParsedValue::sub_10205ac0
 0x100032ab func   ?sub_101e08d0@EntryView101e08d0@@QAEDHH@Z EntryView101e08d0::sub_101e08d0
+0x100032b0 func   ?vfunc383@CBaseCombatCharacter@@QAEXPAVCBaseCombatWeapon@@D@Z CBaseCombatCharacter::vfunc383
 0x100032b5 func   ?vfunc5@CItemGPishaBook@@QAEPAV1@I@Z CItemGPishaBook::vfunc5
 0x100032ba func   ?sub_1030b3c0@@YAHXZ sub_1030b3c0
 0x100032bf func   ?sub_1017e760@CBasePlayer@@QAEXH@Z CBasePlayer::sub_1017e760

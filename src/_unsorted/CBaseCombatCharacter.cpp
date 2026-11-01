@@ -954,6 +954,42 @@ void CBaseCombatCharacter::vfunc387()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032d380 size=0x2aa
+#include "ScopeTrace.h"
+#include "CBaseCombatWeapon.h"
+bool __fastcall sub_10256280(void *p);
+// TARGET: CBaseCombatCharacter::vfunc383
+void CBaseCombatCharacter::vfunc383(CBaseCombatWeapon *pWeapon, char bNoEquip)
+{
+	ScopeTrace st("CBaseCombatCharacter::Weapon_Equip", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	bool bEquipped = false;
+	sub_10334e70(pWeapon);
+	if (!m_pA8 && !bNoEquip && !sub_10256280(pWeapon)) {
+		if (m_hActiveWeapon19a4.Get()) {
+			((CBaseCombatWeapon *)m_hActiveWeapon19a4.Get())->vfunc316(0);
+			((CBaseCombatWeapon *)m_hActiveWeapon19a4.Get())->vfunc66();
+		}
+		m_hActiveWeapon19a4 = (CBaseEntity *)pWeapon;
+		((CBaseCombatWeapon *)m_hActiveWeapon19a4.Get())->vfunc67();
+		sub_10335de0(m_hActiveWeapon19a4.Get());
+		bEquipped = true;
+		if (*(unsigned *)((char *)this + 0x204) & 0x100) {
+			*(unsigned *)((char *)m_hActiveWeapon19a4.Get() + 0x8c0) = 0x4e6e6b28;
+			*(unsigned *)((char *)m_hActiveWeapon19a4.Get() + 0x8c4) = 0x4e6e6b28;
+		}
+	}
+	pWeapon->vfunc298(this, *(int *)&bNoEquip);
+	if (!sub_10256280(pWeapon))
+		*((char *)this + 0x1588) = 1;
+	if (!bNoEquip && bEquipped) {
+		pWeapon->vfunc315();
+		return;
+	}
+	if (!m_pA8)
+		pWeapon->vfunc66();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032d6e0 size=0x14e
 #include "CBaseCombatCharacter.h"
 
