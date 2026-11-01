@@ -133473,6 +133473,29 @@ void CAI_LocalNavigator::sub_102ddb30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ddc40 size=0x2a
+struct CUnknown102ddc40 {
+	char m_pad0000[0x18];
+	char *m_pInner;
+	void sub_102ddc40();
+};
+
+// TARGET: CUnknown102ddc40::sub_102ddc40
+void CUnknown102ddc40::sub_102ddc40()
+{
+	char *p = m_pInner;
+	*(float *)(p + 0x34) = -1.0f;
+	*(char *)(p + 0x14) = 0;
+	*(int *)(p + 8) = 0x7f7fffff;
+	*(int *)(p + 0xc) = 0x7f7fffff;
+	*(int *)(p + 0x10) = 0x7f7fffff;
+	*(int *)(p + 0x18) = 0;
+	*(int *)(p + 0x28) = 0x7f7fffff;
+	*(int *)(p + 0x2c) = 0x7f7fffff;
+	*(char *)(p + 0x30) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102deea0 size=0x8
 void __fastcall sub_102deea0(int *p)
 {
