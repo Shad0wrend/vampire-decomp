@@ -5,9 +5,9 @@
 namespace lifted {
 extern char g_1065f4e0;
 }
-CNPC_VWerewolf::Datamap82 CNPC_VWerewolf::vfunc82()
+datamap_t *CNPC_VWerewolf::vfunc82()
 {
-    return (CNPC_VWerewolf::Datamap82)&lifted::g_1065f4e0;
+    return (datamap_t *)&lifted::g_1065f4e0;
 }
 // END FUNCTION
 
