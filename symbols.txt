@@ -18,6 +18,7 @@
 0x10001078 func   ?sub_101be1d0@CStealthKillRules@@QAEMPAVCBaseEntity@@@Z CStealthKillRules::sub_101be1d0
 0x1000107d func   ?vfunc80@CItemGGiovanniInvitationMaria@@QAEHXZ CItemGGiovanniInvitationMaria::vfunc80
 0x10001082 func   _trigger_brush trigger_brush
+0x10001087 func   ?vfunc420@CNPC_VWolfMorph@@UAEXXZ CNPC_VWolfMorph::vfunc420
 0x1000108c func   ?sub_100920d0@CBaseAnimating@@QAEMPBD@Z CBaseAnimating::sub_100920d0
 0x10001091 func   ?sub_10307e00@@YAXXZ sub_10307e00
 0x10001096 func   ?sub_103114d0@@YA_NPAH0@Z sub_103114d0
