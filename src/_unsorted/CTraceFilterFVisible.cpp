@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101075e0 size=0x20
+#include "vampire.h"
+#include "CTraceFilterFVisible.h"
+// TARGET: CTraceFilterFVisible::CTraceFilterFVisible
+CTraceFilterFVisible::CTraceFilterFVisible(void *pPassEnt, int collisionGroup)
+    : CTraceFilterSimple(pPassEnt, collisionGroup)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107630 size=0x30
 #include "CTraceFilterFVisible.h"
 struct CEntView { bool sub_100a91f0(); };
