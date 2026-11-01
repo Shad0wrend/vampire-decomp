@@ -68,6 +68,23 @@ int CNPC_VTaxiDriver::vfunc138()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b3650 size=0xd
+struct CNPC_VHumanFwd;
+struct CNPC_VTaxiDriverFwd {
+    void sub_103b3650(int a);
+};
+struct CNPC_VHumanFwd {
+    void sub_10385a10(int a);
+};
+
+// TARGET: sub_103b3650
+void CNPC_VTaxiDriverFwd::sub_103b3650(int a)
+{
+    a = *(volatile int *)&a;
+    ((CNPC_VHumanFwd *)this)->sub_10385a10(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b3670 size=0xf
 #include "CNPC_VTaxiDriver.h"
 namespace lifted {
