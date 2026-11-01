@@ -22,4 +22,6 @@ struct gamevcollisionevent_t
 	IPhysicsCollisionData *pInternalData;	// 0x1c
 	Vector preVelocity[2];	// 0x20
 	Vector postVelocity[2];	// 0x38
+	Vector postAngularVelocity[2];	// 0x50
+	class CBaseEntity *pEntities[2];	// 0x68: the entities of pObjects (VPhysicsCollision's other entity is pEntities[!index])
 };
