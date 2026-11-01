@@ -8720,6 +8720,7 @@
 0x1000f5e7 func   ?vfunc10@CServerGameClients@@UAEXXZ CServerGameClients::vfunc10
 0x1000f5ec func   ?sub_100c0b10@CUnk100c0b10@@QAEXH@Z CUnk100c0b10::sub_100c0b10
 0x1000f5f6 func   ?vfunc359@CPayphone@@UAEHH@Z CPayphone::vfunc359
+0x1000f5fb func   ?sub_10205960@CParsedValue@@QAEXPAUCVStatKV@@PBD@Z CParsedValue::sub_10205960
 0x1000f600 func   ?sub_10130760@@YGHH@Z sub_10130760
 0x1000f605 func   ?vfunc82@CPhysExplosion@@UAEPAUdatamap_t@@XZ CPhysExplosion::vfunc82
 0x1000f60a func   ?sub_1030ba30@CUnknown1030ba30@@QAEPADXZ CUnknown1030ba30::sub_1030ba30

@@ -105041,6 +105041,16 @@ int CUnknown10205940::sub_10205940(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10205960 size=0x2b
+#include "CParsedValue.h"
+
+// TARGET: CParsedValue::sub_10205960
+void CParsedValue::sub_10205960(CVStatKV *pKV, const char *pszKey)
+{
+	sub_102059a0(sub_10203d60(pKV->vfunc13(pszKey, "")));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10205ac0 size=0xab
 #include "CVDmg_t.h"
 
