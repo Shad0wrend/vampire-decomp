@@ -54979,6 +54979,32 @@ int sub_1012e550()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012e650 size=0x36
+#include "CBaseEntity.h"
+#include "engineserver.h"
+struct CEdictHolder1012e650 {
+	char m_pad0000[0x450];
+	int m_nEdictIndex450;
+	void sub_1012e650(struct CEdictSrc1012e650 *p);
+};
+struct CPlayerObj1012e650 {
+	char m_pad0000[0x2e0];
+	int m_pEdict2e0;
+};
+struct CEdictSrc1012e650 {
+	struct CEntWithPlayer1012e650 *m_pEnt;
+};
+struct CEntWithPlayer1012e650 {
+	char m_pad0000[0xa8];
+	CPlayerObj1012e650 *m_pPlayer;
+};
+void CEdictHolder1012e650::sub_1012e650(CEdictSrc1012e650 *p)
+{
+	if (p->m_pEnt && p->m_pEnt->m_pPlayer)
+		m_nEdictIndex450 = engine->vfunc35(p->m_pEnt->m_pPlayer->m_pEdict2e0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012e6a0 size=0xd
 void CUnknown1012e6a0::sub_1012e6a0(int unused)
 {

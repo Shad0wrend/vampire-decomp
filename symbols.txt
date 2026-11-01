@@ -4575,6 +4575,7 @@
 0x10008945 func   ?sub_100deb30@CUnknown100deb30@@QAEDXZ CUnknown100deb30::sub_100deb30
 0x1000894f func   ?sub_10248b60@@YIPADPAD@Z sub_10248b60
 0x10008954 func   ?sub_10232570@@YGXH@Z sub_10232570
+0x10008959 func   ?sub_1012e650@CEdictHolder1012e650@@QAEXPAUCEdictSrc1012e650@@@Z CEdictHolder1012e650::sub_1012e650
 0x1000895e func   ?sub_100738a0@CUnknown100738a0@@QAEPAXXZ CUnknown100738a0::sub_100738a0
 0x1000896d func   ?vfunc483@CAI_BaseNPC@@UAEXH@Z CAI_BaseNPC::vfunc483
 0x10008977 func   ?sub_103245a0@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_103245a0
