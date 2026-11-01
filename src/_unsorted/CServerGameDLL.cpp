@@ -1,6 +1,25 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1011a020 size=0x20
+#include "vampire.h"
+extern char g_1046257c;
+void sub_10430964(void *p);
+struct CUnk1011a020
+{
+    void *sub_1011a020(unsigned char bFree);
+};
+// TARGET: CUnk1011a020::sub_1011a020
+void *CUnk1011a020::sub_1011a020(unsigned char bFree)
+{
+    *(void **)this = &g_1046257c;
+    if (bFree & 1) {
+        sub_10430964(this);
+    }
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011a0c0 size=0x1e6
 #include "CServerGameDLL.h"
 #include "globalvars.h"

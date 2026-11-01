@@ -7045,6 +7045,7 @@
 0x1000d152 func   ?InsertMultipleBefore@?$CUtlVector@VCBaseHandle@@V?$CUtlMemory@VCBaseHandle@@@@@@QAEHHHPBVCBaseHandle@@@Z CUtlVector<CBaseHandle,CUtlMemory<CBaseHandle> >::InsertMultipleBefore
 0x1000d152 func   ?sub_102ce7f0@CUtlVector4@@QAEHHHPBH@Z CUtlVector4::sub_102ce7f0
 0x1000d157 func   ?sub_100978c0@CBaseAnimating@@QAEXH@Z CBaseAnimating::sub_100978c0
+0x1000d166 func   ?sub_1011a020@CUnk1011a020@@QAEPAXE@Z CUnk1011a020::sub_1011a020
 0x1000d16b func   _filter_activator_inventory filter_activator_inventory
 0x1000d170 func   ?sub_100bc4d0@bf_write@@QAEPAV1@PAXHH@Z bf_write::sub_100bc4d0
 0x1000d175 func   _item_k_shrekhub_one_key item_k_shrekhub_one_key
