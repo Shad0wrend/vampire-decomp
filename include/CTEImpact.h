@@ -11,6 +11,7 @@ public:
 	virtual void vfunc4(int a, int b);
 
 	void sub_1000c1a8();	// destructor body
+	CTEImpact *sub_10064fc0(const char *name);	// constructor body (CBaseTempEntityHead base at stub 0x10015334), then the vtable and the zeroed fields from +0xc
 public:
 	virtual void vfunc5();
 };
