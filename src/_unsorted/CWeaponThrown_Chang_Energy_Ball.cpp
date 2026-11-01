@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_1067d234;
 }
-int CWeaponThrown_Chang_Energy_Ball::vfunc82()
+CWeaponThrown_Chang_Energy_Ball::Datamap82 CWeaponThrown_Chang_Energy_Ball::vfunc82()
 {
-    return (int)&lifted::g_1067d234;
+    return (CWeaponThrown_Chang_Energy_Ball::Datamap82)&lifted::g_1067d234;
 }
 // END FUNCTION
 
