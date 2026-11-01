@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10561290;
 }
-CTerrainMorph::Datamap82 CTerrainMorph::vfunc82()
+datamap_t *CTerrainMorph::vfunc82()
 {
-    return (CTerrainMorph::Datamap82)&lifted::g_10561290;
+    return (datamap_t *)&lifted::g_10561290;
 }
 // END FUNCTION
 
