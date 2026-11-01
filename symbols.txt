@@ -8432,6 +8432,7 @@
 0x1000f556 func   ?sub_103be050@CUnknown103be050@@QAEXD@Z CUnknown103be050::sub_103be050
 0x1000f55b func   ?vfunc103@CSimplePhysicsProp@@UAEXXZ CSimplePhysicsProp::vfunc103
 0x1000f560 func   ?sub_10321ec0@@YAXXZ sub_10321ec0
+0x1000f565 func   ?sub_10377030@@YIPAXPAD@Z sub_10377030
 0x1000f56a func   ?vfunc5@CAI_ProxyMovementSink@@QAE_NH@Z CAI_ProxyMovementSink::vfunc5
 0x1000f579 func   ?sub_1025e120@CUnknown1025e120@@QAEPADXZ CUnknown1025e120::sub_1025e120
 0x1000f57e func   ?sub_10258af0@CUnknown10258af0@@QAEXXZ CUnknown10258af0::sub_10258af0

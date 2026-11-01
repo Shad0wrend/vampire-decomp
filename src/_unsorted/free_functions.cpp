@@ -154079,6 +154079,31 @@ extern "C" CBaseEntity *npc_VGangrel()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10377030 size=0x27
+struct CGenericBaseCtorCall_10377030
+{
+	void sub_103c48e0();
+};
+
+struct CGenericMemberCtorCall_10377030
+{
+	void sub_10002ca2();
+};
+
+extern void *vt_104b3914[];
+extern void *vt_104b38e4[];
+
+// TARGET: sub_10377030
+void *__fastcall sub_10377030(char *self)
+{
+	((CGenericBaseCtorCall_10377030 *)self)->sub_103c48e0();
+	((CGenericMemberCtorCall_10377030 *)(self + 0x6664))->sub_10002ca2();
+	*(void ***)self = vt_104b3914;
+	*(void ***)(self + 0x19b0) = vt_104b38e4;
+	return self;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10377140 size=0xc
 void __fastcall sub_10377160(void *pThis);
 
