@@ -122226,6 +122226,18 @@ bool __fastcall sub_10257820(void *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10258230 size=0x2e
+#include "CBaseCombatWeapon.h"
+#include "CBaseCombatCharacter.h"
+int __fastcall sub_10258230(CBaseCombatWeapon *pWeapon, int, CBaseCombatCharacter *pChar)
+{
+	if (!pChar)
+		return 0;
+	int *pData = pWeapon->sub_102517e0();
+	return (int)(pChar->sub_10346070() - pData[0x3fc / 4]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10258270 size=0xc
 namespace lifted {
 int sub_10003d91();

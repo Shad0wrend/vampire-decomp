@@ -11159,6 +11159,7 @@
 0x100136c9 func   ?sub_101e1520@CStatusFlagList@@QAEIHH@Z CStatusFlagList::sub_101e1520
 0x100136ce func   ?sub_100821f0@CSceneEntity@@QAEXH@Z CSceneEntity::sub_100821f0
 0x100136d3 func   ?vfunc104@CNPC_VTest@@UAEXXZ CNPC_VTest::vfunc104
+0x100136d8 func   ?sub_10258230@@YIHPAVCBaseCombatWeapon@@HPAVCBaseCombatCharacter@@@Z sub_10258230
 0x100136dd func   ?sub_100f8a20@@YGXH@Z sub_100f8a20
 0x100136e2 func   ?sub_1036ec90@@YADXZ sub_1036ec90
 0x100136e7 func   ?sub_101e8b30@CUnknown101e8b30@@QAEHXZ CUnknown101e8b30::sub_101e8b30
