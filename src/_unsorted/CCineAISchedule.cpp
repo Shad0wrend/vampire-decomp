@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10593c9c;
 }
-CCineAISchedule::Datamap82 CCineAISchedule::vfunc82()
+datamap_t *CCineAISchedule::vfunc82()
 {
-    return (CCineAISchedule::Datamap82)&lifted::g_10593c9c;
+    return (datamap_t *)&lifted::g_10593c9c;
 }
 // END FUNCTION
 
