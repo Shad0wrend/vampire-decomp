@@ -14,6 +14,7 @@ public:
 	void sub_102f5bd0();	// stub 0x1000fede: loads the node graph of the current map (called by InitializeAINetworks when the map has one)
 
 	void sub_102f6610();	// rebuilds the node graph (sub_102f4e00 on the graph at +0x458), writes it once, tells the engine ai_node_graph_built and logs DevMsg
+	void sub_102f5190();	// stub 0x1000c51d: the graph at +0x458 sub_102f4be0, sub_102ccb80, sub_102ccb50, the network's sub_102f7a90, then its sub_102f7970 (tail call)
 	void sub_102f51d0();	// stub 0x10007437: writes the node graph file of the map
 
 	char m_padNM[0x450 - sizeof(CBaseEntity)];
