@@ -296,5 +296,8 @@ public:
 	bool sub_102b62e0(CBaseEntity *pEnt);	// stub 0x10005065, the per-candidate test of sub_102b6650
 	const char *sub_1027f290(int unused);	// the class name of the NPC type id at +0x1b2c (a switch over 0..0x2b returning "NONE", "AI_BASENPC", ... "NPC_VZOMBIE"; "**UNKNOWN**" otherwise); takes one unused stack argument
 	int sub_1008f7b0(const char *label);	// CBaseAnimating::LookupSequence (stub 0x1000e057), called directly
+	void sub_10273790(const char *pszRelationship, CBaseEntity *pActivator);	// "CAI_BaseNPC::AddRelationship" (stub 0x1000421e): parses "[entityname|entityclass|player] [D_HT|D_FR|D_LI|D_NU] [priority]" groups with strtok and adds entity / class relationships; the activator is unused
+	void sub_10332ca0(CBaseEntity *pEnt, int disposition, int priority);	// CBaseCombatCharacter::AddEntityRelationship (stub 0x10005849), called directly
+	void sub_10332aa0(int classId, int disposition, int priority);	// CBaseCombatCharacter::AddClassRelationship (stub 0x10013cf5), called directly
 	void sub_1028e980(CBaseEntity *pEnt);	// called by vfunc433: while the navigator (+0x5d34) is neither in mode 1 nor 3 and has a navigation type, hands pEnt's slot 220 position to the navigator (sub_102ee220, stub 0x1000481d) once the point the route heads for is farther than the threshold at 0x104454c8 from it
 };
