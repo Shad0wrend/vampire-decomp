@@ -145855,6 +145855,16 @@ int CUnknown10344c80::sub_10344c80(int activity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10344da0 size=0x1c
+// TARGET: sub_10344da0
+bool __stdcall sub_10344da0(int a)
+{
+	if (a >= 0x8b && a <= 0x93)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10345480 size=0x2e
 #include "CBaseAnimating.h"
 struct SeqDesc { char pad[0x2e8]; int off; };
