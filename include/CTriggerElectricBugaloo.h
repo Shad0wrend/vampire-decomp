@@ -29,7 +29,6 @@ public:
     char m_bGiven059c;    // 0x059c: set once the touching character was given its amount
 public:
     int vfunc33();
-    typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
-    Datamap82 vfunc82();
+    datamap_t * vfunc82();
     void vfunc103();	// as in CNPC_VBach (transplant)
 };

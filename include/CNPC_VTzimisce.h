@@ -206,8 +206,7 @@ public:
 	virtual void vfunc228(int, int);
 	virtual bool vfunc509();
 public:
-	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
-	virtual Datamap82 vfunc82();
+	virtual datamap_t * vfunc82();
 	virtual int vfunc138();
 	virtual int vfunc451();
 	virtual bool vfunc452();

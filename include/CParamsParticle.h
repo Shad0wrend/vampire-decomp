@@ -16,6 +16,5 @@ public:
 	const char *m_pszParticleName;	// 0x454: the particle file / effect name
 	const char *m_pszAttachment;	// 0x458: the attachment name
 public:
-	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
-	Datamap82 vfunc82();
+	datamap_t * vfunc82();
 };

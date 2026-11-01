@@ -39,6 +39,5 @@ public:
 	int m_n478;	// 0x478
 	int m_n47c;	// 0x47c
 public:
-	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
-	Datamap82 vfunc82();
+	datamap_t * vfunc82();
 };

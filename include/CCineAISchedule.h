@@ -15,7 +15,6 @@ public:
 	int m_n6090;	// 0x6090
 	int m_n6094;	// 0x6094
 public:
-	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
-	Datamap82 vfunc82();
+	datamap_t * vfunc82();
 	bool vfunc585();
 };

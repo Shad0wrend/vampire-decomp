@@ -13,6 +13,5 @@ public:
 	char m_pad0000[0x450];
 	const char *m_pszCode;	// 0x450
 public:
-	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
-	Datamap82 vfunc82();
+	datamap_t * vfunc82();
 };

@@ -18,7 +18,6 @@ public:
 	CBaseMoneyObject *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_10013a57();	// as in CPhysForce (transplant)
 public:
-	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
-	Datamap82 vfunc82();
+	datamap_t * vfunc82();
 	int vfunc298(int, int);
 };

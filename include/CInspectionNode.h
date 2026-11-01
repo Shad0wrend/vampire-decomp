@@ -15,6 +15,5 @@ public:
 	void sub_100fc1e0(int pOwner);	// stub 0x10013ee9
 	void vfunc104();	// slot 104: precaches the "Inspection_Emitter" and "Inspection_Insight_Emitter" particle systems (the first index is kept in the global at 0x10708e3c and in the field at +0x454)
 public:
-	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
-	Datamap82 vfunc82();
+	datamap_t * vfunc82();
 };

@@ -56,6 +56,5 @@ public:
     int m_nBreakMode;    // 0x76c: 0, 1 or 2 (anything else warns and becomes 2)
     float m_flFadeTime770;    // 0x770
 public:
-    typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
-    Datamap82 vfunc82();
+    datamap_t * vfunc82();
 };

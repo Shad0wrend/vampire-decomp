@@ -9,6 +9,5 @@ class CLogicBranch
 public:
 	CLogicBranch *vfunc5(unsigned int flags);
 public:
-	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
-	Datamap82 vfunc82();
+	datamap_t * vfunc82();
 };

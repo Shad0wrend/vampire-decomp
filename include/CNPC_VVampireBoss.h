@@ -62,8 +62,7 @@ public:
 	void sub_103c6570(CEntityVSlots *pHint, const Vector *pPoint);	// "CNPC_VVampireBoss::DistToHintCenterLine2D_2": scope trace, the hint's origin with z = 0 and its facing direction (AngleVectors of slot 219, z = 0, normalised) are handed with pPoint to sub_103c6680 (the distance of the point to the hint's centre line)
 	void sub_103c6680(const Vector *pOrigin, const Vector *pDirection, const Vector *pPoint);	// "CNPC_VVampireBoss::DistToHintCenterLine2D": the 2D distance of pPoint to the line (stub 0x1000314d)
 public:
-	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
-	Datamap82 vfunc82();
+	datamap_t * vfunc82();
 	bool vfunc378(int, int);
 	int vfunc451();
 	bool vfunc452();

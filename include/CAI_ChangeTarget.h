@@ -10,7 +10,6 @@ public:
 	CAI_ChangeTarget *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
 public:
-	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
-	Datamap82 vfunc82();
+	datamap_t * vfunc82();
 	char vfunc117();
 };

@@ -24,8 +24,7 @@ public:
 public:
 	int vfunc80();
 	int vfunc81();
-	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
-	Datamap82 vfunc82();
+	datamap_t * vfunc82();
 	int vfunc362();
 	int vfunc363();
 	void vfunc180();	// as in CNPC_VBach (transplant)

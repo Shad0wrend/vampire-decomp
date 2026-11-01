@@ -131,8 +131,7 @@ public:
 	char sub_10269aa0(int condition);	// "HasCondition" (stub 0x10014df8)
 public:
 	bool vfunc70();
-	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
-	Datamap82 vfunc82();
+	datamap_t * vfunc82();
 	int vfunc451();
 	bool vfunc452();
 	int vfunc580();

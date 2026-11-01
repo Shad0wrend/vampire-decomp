@@ -29,6 +29,5 @@ public:
 	CPathKeyFrame *m_pPrev;	// 0x484
 	float m_flSpeed;	// 0x488
 public:
-	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
-	Datamap82 vfunc82();
+	datamap_t * vfunc82();
 };

@@ -31,8 +31,7 @@ public:
 	char m_b6660;	// 0x6660
 public:
 	bool vfunc72(int);
-	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
-	Datamap82 vfunc82();
+	datamap_t * vfunc82();
 	int vfunc138();
 	int vfunc142(int);
 	void vfunc144(int);

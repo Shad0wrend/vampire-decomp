@@ -38,7 +38,6 @@ public:
 	void sub_1021da40();	// "CPropKeypad::LoadTextStrings": sets the title to "##ERROR##", loads vdata/HackTerminals/prop_keypad.txt and takes the TitleText of the "keypad" entry whose TextID is a prefix match of the text id at +0x884; Warning "Error in CPropKeypad::LoadTextStrings for %s" when the file does not load
 public:
 	int vfunc33();
-	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
-	Datamap82 vfunc82();
+	datamap_t * vfunc82();
 	void vfunc113();
 };

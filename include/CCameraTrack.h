@@ -54,8 +54,7 @@ public:
 	unsigned int m_hHandle;	// 0x04d8
 	char m_bStarted;	// 0x04dc
 public:
-	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
-	virtual Datamap82 vfunc82();
+	virtual datamap_t * vfunc82();
 public:
 	virtual float vfunc48();
 	virtual float vfunc49();

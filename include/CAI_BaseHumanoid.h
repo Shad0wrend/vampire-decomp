@@ -57,6 +57,5 @@ public:
 	char vfunc588(const Vector &vecPos);	// slot 588 (plain member): like slot 587 with the vector of slot 369 (dot above -0.5) and the vertical part of the normalised direction under 0.7 in magnitude
 	void vfunc463(int a, int b);	// slot 463: sets the scene name from slot 589(b) through sub_10260670, then CAI_BaseNPC::vfunc463(a, b)
 public:
-	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
-	Datamap82 vfunc82();
+	datamap_t * vfunc82();
 };

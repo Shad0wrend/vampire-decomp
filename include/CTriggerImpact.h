@@ -22,8 +22,7 @@ public:
 	float m_flRandomness;	// 0x5b4
 	float m_f5b8;	// 0x5b8
 public:
-	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
-	Datamap82 vfunc82();
+	datamap_t * vfunc82();
 	int vfunc103();
 	void vfunc171();
 };
