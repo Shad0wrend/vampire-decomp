@@ -2067,6 +2067,7 @@
 0x1000491c func   ?vfunc324@CNPC_VTzimisceHeadClaw@@UAE_NXZ CNPC_VTzimisceHeadClaw::vfunc324
 0x10004921 func   ?sub_10073760@CUnknown100735a0@@QAEXXZ CUnknown100735a0::sub_10073760
 0x10004926 func   ?vfunc376@CNPC_VMingXiao@@QAEHH@Z CNPC_VMingXiao::vfunc376
+0x10004930 func   ?sub_101f4600@CVSoundList@@QAEPBDPAVCVSoundEnt@@H@Z CVSoundList::sub_101f4600
 0x10004935 func   ?sub_101d7bf0@@YAXXZ sub_101d7bf0
 0x1000493a func   ?vfunc2@CTEInspectionFX@@UAEPAV1@I@Z CTEInspectionFX::vfunc2
 0x10004944 func   ?sub_103e1cf0@@YAXPAUCUnk1032f770@@HH@Z sub_103e1cf0

@@ -93383,6 +93383,46 @@ void TSeg::sub_101f4570(int target, int *outIndex, int *outOffset)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f4600 size=0x291
+#include "CVSoundActivityTable_t.h"
+#include "Ent.h"
+#include <stdio.h>
+
+Ent *sub_101cd9e0(int);
+extern char g_1074b288[];
+
+// TARGET: CVSoundList::sub_101f4600
+const char *CVSoundList::sub_101f4600(CVSoundEnt *pEnt, int a)
+{
+	if (!pEnt)
+		return "NULL.WAV";
+	int r = pEnt->sub_1009d6a0();
+	Ent *pChar = sub_101cd9e0(1);
+	if (pChar && !pChar->sub_10336920() && pEnt->sub_1009d760() > -1)
+		r = pEnt->sub_1009d760();
+	if (m_pModes[a] == 1) {
+		CUnknown101f4c80Table *pDir = (CUnknown101f4c80Table *)sub_101f42d0(r, a, 0);
+		if (pDir) {
+			sprintf(g_1074b288, "%s\\%s.wav", pDir->m_directory.Get(), m_pTable->Find(a)->m_folder.Get());
+			return g_1074b288;
+		}
+	} else {
+		int mode = m_pModes[a];
+		if (m_pTable) {
+			if (mode > m_pTable->Find(a)->m_nMaxRange)
+				mode = m_pTable->Find(a)->m_nMaxRange;
+		}
+		int rnd = enginerandom->vfunc2(1, mode);
+		CUnknown101f4c80Table *pDir = (CUnknown101f4c80Table *)sub_101f42d0(r, a, rnd);
+		if (pDir) {
+			sprintf(g_1074b288, "%s\\%s_%d.wav", pDir->m_directory.Get(), m_pTable->Find(a)->m_folder.Get(), rnd);
+			return g_1074b288;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f4950 size=0x168
 #include "CUnknown101f4c80.h"
 #include "CUnknown101f4370.h"
