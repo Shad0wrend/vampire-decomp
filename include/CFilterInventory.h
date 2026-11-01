@@ -16,6 +16,6 @@ public:
 	unsigned int m_hLastEnt;	// 0x048c: handle of the last entity tested
 	int m_nLastFrame;	// 0x0490: slot 120 of the global at 0x1070b22c when m_hLastEnt was cached
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 };

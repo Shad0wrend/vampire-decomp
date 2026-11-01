@@ -4,7 +4,7 @@
 class CLogicalEntity
 {
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	virtual void vfunc0();
 	virtual void vfunc1();
 	virtual void vfunc2();

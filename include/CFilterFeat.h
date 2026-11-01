@@ -12,6 +12,6 @@ public:
 	const char *m_pszFeat;	// 0x484
 	int m_nMinCost;	// 0x488
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 };

@@ -8,6 +8,6 @@ public:
 	CFilterClass *vfunc5(unsigned int flags);
 	bool vfunc241(void *pEntity);
 public:
-	typedef int Datamap82;	// staged: becomes datamap_t *
+	typedef datamap_t *Datamap82;	// staged: becomes datamap_t *
 	Datamap82 vfunc82();
 };
