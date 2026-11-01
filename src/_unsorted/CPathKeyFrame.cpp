@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_1057a308;
 }
-CPathKeyFrame::Datamap82 CPathKeyFrame::vfunc82()
+datamap_t *CPathKeyFrame::vfunc82()
 {
-    return (CPathKeyFrame::Datamap82)&lifted::g_1057a308;
+    return (datamap_t *)&lifted::g_1057a308;
 }
 // END FUNCTION
 
