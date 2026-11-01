@@ -89343,6 +89343,29 @@ void __stdcall sub_101e94d0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e9570 size=0x1e
+struct CUnk101d8230 {
+	void sub_101d8230();
+};
+
+struct CUnk101e9570 {
+	int m_00;
+	char m_pad04[0x1c];
+	int m_20;
+	int m_24;
+	CUnk101e9570 *sub_101e9570(int a);
+};
+
+// TARGET: CUnk101e9570::sub_101e9570
+CUnk101e9570 *CUnk101e9570::sub_101e9570(int a)
+{
+	((CUnk101d8230 *)((char *)this + 0x1c))->sub_101d8230();
+	m_24 = 0;
+	m_00 = a;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e9640 size=0x96
 #include "CUnknown101e98c0.h"
 

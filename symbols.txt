@@ -8377,6 +8377,7 @@
 0x1000f6c8 func   _npc_VWolfMorph npc_VWolfMorph
 0x1000f6cd func   ?vfunc54@CBaseEntity@@UAE_NH@Z CBaseEntity::vfunc54
 0x1000f6d2 func   ?vfunc5@CItemGWerewolfBlood@@QAEPAV1@I@Z CItemGWerewolfBlood::vfunc5
+0x1000f6d7 func   ?sub_101e9570@CUnk101e9570@@QAEPAU1@H@Z CUnk101e9570::sub_101e9570
 0x1000f6dc func   ?vfunc440@CNPC_VZombie@@QAEHH@Z CNPC_VZombie::vfunc440
 0x1000f6e6 func   ?sub_1042b710@CFloatOwner_1042b710@@QAEXM@Z CFloatOwner_1042b710::sub_1042b710
 0x1000f6eb func   ?sub_10210830@V10210830@@QAEPAXI@Z V10210830::sub_10210830
