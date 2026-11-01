@@ -152306,6 +152306,31 @@ extern "C" CBaseEntity *npc_VBach()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10362c10 size=0x27
+struct CGenericBaseCtorCall_10362c10
+{
+	void sub_103c48e0();
+};
+
+struct CGenericMemberCtorCall_10362c10
+{
+	void sub_100141c3();
+};
+
+extern void *vt_104a9f2c[];
+extern void *vt_104a9f00[];
+
+// TARGET: sub_10362c10
+void *__fastcall sub_10362c10(char *self)
+{
+	((CGenericBaseCtorCall_10362c10 *)self)->sub_103c48e0();
+	((CGenericMemberCtorCall_10362c10 *)(self + 0x66a9))->sub_100141c3();
+	*(void ***)self = vt_104a9f2c;
+	*(void ***)(self + 0x19b0) = vt_104a9f00;
+	return self;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10362d20 size=0xc
 void __fastcall sub_10362d40(void *pThis);
 void * __fastcall sub_10362d20(void *pThis)
