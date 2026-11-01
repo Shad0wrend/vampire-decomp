@@ -80076,6 +80076,28 @@ CTriggerPush *CTriggerPush::sub_101c88c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c8980 size=0x23
+#include "CUnknown100bc0f0.h"
+
+class CUnknown101c8980
+{
+public:
+	char pad0[0x164];
+	int m_unk164;
+
+	void sub_101c8980(CInputData100bc0f0 *data);
+};
+
+// TARGET: CUnknown101c8980::sub_101c8980
+void CUnknown101c8980::sub_101c8980(CInputData100bc0f0 *data)
+{
+	if (data->m_type == 1)
+		m_unk164 = data->m_value;
+	else
+		m_unk164 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c8b60 size=0xa3
 float sub_102283a0(float a, float b, float c, float d);
 
