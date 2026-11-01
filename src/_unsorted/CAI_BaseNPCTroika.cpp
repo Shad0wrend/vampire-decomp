@@ -271,6 +271,20 @@ void CAI_BaseNPCTroika::vfunc532(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10293e50 size=0x1d
+#include "CAI_BaseNPCTroika.h"
+
+struct CAI_TroikaSoundPlaceholder {
+	void sub_10289ee0(int a);
+};
+
+void CAI_BaseNPCTroika::vfunc588()
+{
+	if (vfunc251())
+		((CAI_TroikaSoundPlaceholder *)this)->sub_10289ee0(0xf1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10293e80 size=0x24
 #include "CAI_BaseNPCTroika.h"
 
