@@ -55597,6 +55597,35 @@ int *sub_10130c90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130e50 size=0x71
+extern void *vt_104475c4[];
+extern void *vt_10465b24[];
+struct CConstraintAnchorBaseView {
+	void sub_100090fc(int);
+};
+void *sub_100aa720(unsigned int);
+void __fastcall sub_100cd2a0(void *);
+
+// TARGET: logic_multicompare
+extern "C" void *logic_multicompare()
+{
+	char *p = (char *)sub_100aa720(0x490);
+	if (p) {
+		((CConstraintAnchorBaseView *)p)->sub_100090fc(0);
+		*(void **)p = vt_104475c4;
+		sub_100cd2a0(p + 0x450);
+		sub_100cd2a0(p + 0x468);
+		*(int *)(p + 0x488) = 0;
+		*(void **)p = vt_10465b24;
+	}
+	if (!p) {
+		p = 0;
+	}
+	((CBaseEntity *)p)->vfunc106("logic_multicompare");
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10131260 size=0x67
 #include "CUnknown10131260.h"
 #include "CEventQueue.h"
