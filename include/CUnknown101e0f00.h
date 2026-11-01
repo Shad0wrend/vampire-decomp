@@ -57,8 +57,13 @@ struct CUnknown101e0f00Src	// the 0x1c byte source descriptions at +0xa4 / +0xc0
 
 struct CUnknown101e0f00Fx	// the object the tail's callback worker hands back
 {
-	char m_pad0000[0x36c];
-	int m_n36c;	// 0x36c: handed to sub_101f9a40
+	int m_nDamage0;	// 0x00: handed to AddDiscFlag as the extra value by the hit worker 0x101dfc20
+	const char *m_pszHitGroup;	// 0x04: the hit group name (DevMsg "Discipline<%s>: HitGroup: <%s> Hit Triggered on <%s> (%s)")
+	char m_sub08[0x364 - 0x08];	// 0x08: an object whose sub_101de660(pSource, pTarget, id, value) (stub 0x1001554b) the hit worker runs
+	char m_sub364[8];	// 0x364: a CUnknown101ddaf0 (sub_101ddaf0(value) scales the damage)
+	int m_n36c;	// 0x36c: handed to sub_101f9a40 / sub_101f9a00
+	char m_b370;	// 0x370: supernatural flag A (sub_102c51a0 on the target's AI object)
+	char m_b371;	// 0x371: supernatural flag B (sub_102c5310)
 	void sub_101dfe80(S1033d380 *pChar, int id, char bFlag);	// finishes the callback of a discipline (stub 0x10009372)
 	void sub_101dfe20();	// finishes the callback (stub 0x100156ea)
 	void sub_101dfe50();	// finishes the callback of a character (stub 0x1000328d)
