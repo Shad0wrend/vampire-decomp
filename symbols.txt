@@ -9339,6 +9339,7 @@
 0x10011068 func   ?sub_1036e580@CNPC_VChangBros@@QAEHH@Z CNPC_VChangBros::sub_1036e580
 0x10011072 func   ?vfunc80@CWeaponRanged_Pistol_Glock@@QAEHXZ CWeaponRanged_Pistol_Glock::vfunc80
 0x10011077 func   ?sub_100d2290@@YAXPBD@Z sub_100d2290
+0x1001107c func   ?sub_1011bd60@CUnk1011bd60@@QAEPAXE@Z CUnk1011bd60::sub_1011bd60
 0x10011086 func   ?sub_10088620@@YAXXZ sub_10088620
 0x10011090 func   ?sub_102f7c00@@YAIHID@Z sub_102f7c00
 0x1001109a func   ?vfunc490@CNPC_VNewscaster@@UAEXXZ CNPC_VNewscaster::vfunc490
