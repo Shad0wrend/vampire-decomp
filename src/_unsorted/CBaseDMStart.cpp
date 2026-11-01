@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_1059b680;
 }
-CBaseDMStart::Datamap82 CBaseDMStart::vfunc82()
+datamap_t *CBaseDMStart::vfunc82()
 {
-    return (CBaseDMStart::Datamap82)&lifted::g_1059b680;
+    return (datamap_t *)&lifted::g_1059b680;
 }
 // END FUNCTION
 
