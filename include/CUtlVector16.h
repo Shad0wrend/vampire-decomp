@@ -25,6 +25,7 @@ public:
 	void sub_102c8b10();	// 0x102c8b10: the same Purge as sub_1007ee60
 	void sub_102c8b60();	// 0x102c8b60: the same Purge as sub_1007ee60
 	void sub_102c8bb0();	// 0x102c8bb0: the same Purge as sub_1007ee60
+	void sub_102f9040();	// 0x102f9040: the same Purge as sub_1007ee60
 
 	char *Element(int i) { return m_pMemory + i * 16; }	// operator[] for the 16 byte elements
 };
