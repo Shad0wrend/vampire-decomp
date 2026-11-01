@@ -93561,6 +93561,34 @@ int CUnk101f42d0::sub_101f42d0(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f4300 size=0x20
+#include "vampire.h"
+struct CUnk101f4300
+{
+    char m_pad0000[8];
+    char *m_pObj;  // 0x08
+    int *m_pArr;   // 0x0c
+    int sub_101f4300();
+};
+// TARGET: CUnk101f4300::sub_101f4300
+int CUnk101f4300::sub_101f4300()
+{
+    int sum = 0;
+    if (m_pObj != 0) {
+        int n = *(int *)(m_pObj + 0x14);
+        if (n > 0) {
+            int *p = m_pArr;
+            do {
+                sum += *p;
+                p++;
+                n--;
+            } while (n != 0);
+        }
+    }
+    return sum;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f4330 size=0x2c
 struct CUnkSub101f4330
 {

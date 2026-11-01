@@ -7823,6 +7823,7 @@
 0x1000e674 func   ?vfunc81@CWeaponMelee_Knife@@QAEHXZ CWeaponMelee_Knife::vfunc81
 0x1000e679 func   ?sub_10288670@CAI_Motor@@QAEXM@Z CAI_Motor::sub_10288670
 0x1000e683 func   ?vfunc362@CWeaponMelee_MingXiaoTentacle@@UAEHXZ CWeaponMelee_MingXiaoTentacle::vfunc362
+0x1000e692 func   ?sub_101f4300@CUnk101f4300@@QAEHXZ CUnk101f4300::sub_101f4300
 0x1000e697 func   ?sub_10397b40@CNPC_VMingXiao@@QAE_NPAX@Z CNPC_VMingXiao::sub_10397b40
 0x1000e6a1 func   ?vfunc105@CSprite@@UAEXPBD@Z CSprite::vfunc105
 0x1000e6a6 func   ?sub_101a8ac0@CCineNPC@@QAEDXZ CCineNPC::sub_101a8ac0
