@@ -126,7 +126,11 @@ public:
 	EHANDLE m_hEnt6684;
 	char m_posBuf2[4];
 	int m_state;
-	char m_pad6690[0x66a4 - 0x6690];
+	int *m_pMem6690;	// 0x6690: second vector (memory, alloc count, grow size, size, element pointer); the constructor sets grow 8 and allocates 0x40 bytes
+	int m_nAlloc6694;	// 0x6694
+	int m_nGrow6698;	// 0x6698
+	int m_nSize669c;	// 0x669c
+	int *m_pElems66a0;	// 0x66a0
 	float m_fl66a4;	// 0x66a4
 	char m_pad66a8[0x66b4 - 0x66a8];
 	char m_b66b4;	// 0x66b4
