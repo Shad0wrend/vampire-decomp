@@ -70322,6 +70322,64 @@ extern "C" GP *prop_slashable()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101934e0 size=0x313
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1058dc3c[2];
+void sub_10004949();
+void sub_10009c46();
+void sub_10005b64();
+
+int *sub_101934e0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 0x10, "m_DmgModels[0]", {0x794, 0}, 1, 6, "dmg_model_0" },
+        { 0x10, "m_DmgModels[1]", {0x798, 0}, 1, 6, "dmg_model_1" },
+        { 0x10, "m_DmgModels[2]", {0x79c, 0}, 1, 6, "dmg_model_2" },
+        { 0x10, "m_DmgModels[3]", {0x7a0, 0}, 1, 6, "dmg_model_3" },
+        { 0x10, "m_DmgModels[4]", {0x7a4, 0}, 1, 6, "dmg_model_4" },
+        { 0x10, "m_DmgModels[5]", {0x7a8, 0}, 1, 6, "dmg_model_5" },
+        { 0x10, "m_DmgModels[6]", {0x7ac, 0}, 1, 6, "dmg_model_6" },
+        { 0x10, "m_DmgModels[7]", {0x7b0, 0}, 1, 6, "dmg_model_7" },
+        { 4, "m_nPhysicsMoveOnLevel", {0x788, 0}, 1, 6, "physics_level" },
+        { 4, "m_nDamageAbsorbtion", {0x78c, 0}, 1, 6, "damage_absorption" },
+        { 5, "m_bBreakOnEnd", {0x790, 0}, 1, 6, "break_on_end" },
+        { 5, "m_bOnlyDmgOnInput", {0x791, 0}, 1, 6, "only_dmg_on_input" },
+        { 4, "m_nCurrentLevel", {0x784, 0}, 1, 2 },
+        { 4, "InputRemoveHealth", {0, 0}, 1, 8, "RemoveHealth", 0, (void *)sub_10004949 },
+        { 4, "InputSetToDamageLevel", {0, 0}, 1, 8, "SetToDamageLevel", 0, (void *)sub_10009c46 },
+        { 2, "InputPlayAnimation", {0, 0}, 1, 8, "PlayAnimation", 0, (void *)sub_10005b64 },
+        { 10, "m_OnBreakLevel[0]", {0x7b4, 0}, 1, 0x16, "OnBreakLevel1", g_1055dc70 },
+        { 10, "m_OnBreakLevel[1]", {0x7cc, 0}, 1, 0x16, "OnBreakLevel2", g_1055dc70 },
+        { 10, "m_OnBreakLevel[2]", {0x7e4, 0}, 1, 0x16, "OnBreakLevel3", g_1055dc70 },
+        { 10, "m_OnBreakLevel[3]", {0x7fc, 0}, 1, 0x16, "OnBreakLevel4", g_1055dc70 },
+        { 10, "m_OnBreakLevel[4]", {0x814, 0}, 1, 0x16, "OnBreakLevel5", g_1055dc70 },
+        { 10, "m_OnBreakLevel[5]", {0x82c, 0}, 1, 0x16, "OnBreakLevel6", g_1055dc70 },
+        { 10, "m_OnBreakLevel[6]", {0x844, 0}, 1, 0x16, "OnBreakLevel7", g_1055dc70 },
+        { 10, "m_OnBreakLevel[7]", {0x85c, 0}, 1, 0x16, "OnBreakLevel8", g_1055dc70 },
+        { 10, "m_OnBreakLastLevel", {0x874, 0}, 1, 0x16, "OnBreakLastLevel", g_1055dc70 },
+    };
+    g_1058dc3c[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1058dc3c[0] = (int)&dataDesc[1];
+    return g_1058dc3c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101938d0 size=0x43
 #include "CPropDestructable.h"
 void *sub_100aa720(int size);
