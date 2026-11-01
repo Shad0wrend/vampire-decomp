@@ -62,6 +62,16 @@ public:
 	}
 
 	const Links_t &sub_10055520(int i) const;	// "CUtlRBTree::Links"
+	// the SDK's accessors over the out-of-line Links above (tier1 utlrbtree.h)
+	int Parent(int i) const { return sub_10055520(i).m_Parent; }
+	int LeftChild(int i) const { return sub_10055520(i).m_Left; }
+	int RightChild(int i) const { return sub_10055520(i).m_Right; }
+	bool IsRoot(int i) const { return i == m_Root; }
+	bool IsLeftChild(int i) const { return LeftChild(Parent(i)) == i; }
+	bool IsRightChild(int i) const { return RightChild(Parent(i)) == i; }
+	bool IsRed(int i) const { return sub_10055520(i).m_Tag == 0; }
+	int Color(int i) const { return sub_10055520(i).m_Tag; }
+	void SetColor(int i, int c) { Links(i).m_Tag = c; }
 	int sub_10055050();	// "CUtlRBTree::NewNode": takes the first free node (or grows the node memory by one and uses the next unused one) and returns its index
 	void sub_1007f250(const void *pInsert, int *pParent, bool *pLeftChild);	// "CUtlRBTree::FindInsertionPosition": walks down from the root with the less function, stores the last visited node in *pParent and whether the new element goes to its left in *pLeftChild
 	void sub_10055170(int elem, int parent, bool isLeft);	// "CUtlRBTree::LinkToParent" with InsertRebalance inlined (Links stays the out-of-line sub_10055520, rotations the out-of-line sub_10055f50 / sub_100561a0)
