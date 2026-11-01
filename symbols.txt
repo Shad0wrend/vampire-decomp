@@ -2033,6 +2033,7 @@
 0x10004601 func   ?sub_102ce9f0@@YAXPAHPBH@Z sub_102ce9f0
 0x10004606 func   ?vfunc292@CNPC_VGargoyle@@QAEXPAUCGargoyleDmgInfo@@HH@Z CNPC_VGargoyle::vfunc292
 0x1000460b func   ?sub_1014f380@SOwner@@QAEXXZ SOwner::sub_1014f380
+0x10004610 func   ?sub_100501f0@@YIPAXPAD@Z sub_100501f0
 0x10004615 func   ?sub_101e9020@CUnknown101e9020@@QAEMXZ CUnknown101e9020::sub_101e9020
 0x1000461a func   ?sub_10248bb0@CKeyValuesX@@QAEHPBDH@Z CKeyValuesX::sub_10248bb0
 0x1000461f func   ?sub_101d7e90@CUnknown101d7e90@@QAEDH@Z CUnknown101d7e90::sub_101d7e90

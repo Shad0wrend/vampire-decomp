@@ -8560,6 +8560,28 @@ int *sub_10050170()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100501f0 size=0x3d
+extern void *vt_1044b584[];
+extern void *vt_1044b0f4[];
+struct CPhysConvertBaseView {
+	void sub_100090fc(int);
+};
+void __fastcall sub_100cd2a0(void *);
+
+// TARGET: sub_100501f0
+void *__fastcall sub_100501f0(char *p)
+{
+	((CPhysConvertBaseView *)p)->sub_100090fc(0);
+	*(void **)p = vt_1044b584;
+	sub_100cd2a0(p + 0x450);
+	*(void **)p = vt_1044b0f4;
+	*(int *)(p + 0x468) = 0;
+	*(char *)(p + 0x46c) = 0;
+	*(char *)(p + 0x46d) = 0;
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050720 size=0x59
 #include "SendProp.h"
 struct CUnknown10247240 { void sub_10247240(int a, int b, int c); };
