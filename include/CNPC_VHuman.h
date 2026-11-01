@@ -39,6 +39,7 @@ public:
 	// Slot 438 (SelectSchedule) implementation (function 0x10384ee0, stub 0x10015ad2), called directly by the subclasses' override.
 	int vfunc438();
 	int sub_103851e0();	// slot 461 (SelectIdealState) implementation of the human NPCs (stub 0x10011225), called directly (tail jump) by the combatants' override
+	int sub_102ad660();	// CAI_BaseNPCTroika::vfunc461 (stub 0x1000e49e), tail called
 public:
     virtual CAI_CondOwner * vfunc580();
     virtual const char * vfunc451();
