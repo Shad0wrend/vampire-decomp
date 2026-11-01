@@ -45,6 +45,7 @@ struct VKeyValues
 	VKeyValues *sub_100122c4(const char *pszName);	// the stub of sub_101f2d70 (the recursion goes through it)
 	VKeyValuesInterface *NameOf() { return (VKeyValuesInterface *)((char *)this + m_pVbTable[2]); }
 
+	void sub_101f2090(const char *pszName);	// the constructor body (stub 0x10013a8e): the name copy at +0x14, the fields +0xc / +0x10 / +0x18 / +0x1c / +0x20 cleared, the global byte 0x1073aa40 cleared
 	VKeyValues *sub_101f1f50(const char *pszName, int bMostDerived);	// the constructor (stub 0x100056a0)
 	char sub_101f2180(const char *pszName, int pathID);	// opens and parses the file (stub 0x10001cdf)
 
