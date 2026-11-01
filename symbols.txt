@@ -12366,6 +12366,7 @@
 0x10015aa0 func   ?vfunc5@CAreaPortal@@UAEPAV1@I@Z CAreaPortal::vfunc5
 0x10015aa5 func   ?vfunc243@CRotDoor@@UAEXDD@Z CRotDoor::vfunc243
 0x10015aaa func   ?sub_103bde40@CNPC_VTzimisce@@QAEHH@Z CNPC_VTzimisce::sub_103bde40
+0x10015ab4 func   ?GrowVector@?$CUtlVector@VCBaseHandle@@V?$CUtlMemory@VCBaseHandle@@@@@@QAEXH@Z CUtlVector<CBaseHandle,CUtlMemory<CBaseHandle> >::GrowVector
 0x10015ab4 func   ?sub_102c6c30@CUtlVector4@@QAEXH@Z CUtlVector4::sub_102c6c30
 0x10015ab9 func   ?sub_10136b40@@YAXPAPAVCBaseEntity@@PAD@Z sub_10136b40
 0x10015abe func   ?sub_100d6d40@@YAXXZ sub_100d6d40
