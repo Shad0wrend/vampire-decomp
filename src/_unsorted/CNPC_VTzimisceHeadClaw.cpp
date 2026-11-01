@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_1065ca84;
 }
-CNPC_VTzimisceHeadClaw::Datamap82 CNPC_VTzimisceHeadClaw::vfunc82()
+datamap_t *CNPC_VTzimisceHeadClaw::vfunc82()
 {
-    return (CNPC_VTzimisceHeadClaw::Datamap82)&lifted::g_1065ca84;
+    return (datamap_t *)&lifted::g_1065ca84;
 }
 // END FUNCTION
 
