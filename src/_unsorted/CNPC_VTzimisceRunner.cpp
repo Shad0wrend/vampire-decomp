@@ -144,6 +144,18 @@ bool CNPC_VTzimisceRunner::vfunc70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c35a0 size=0x1c
+#include "CNPC_VTzimisceRunner.h"
+
+// TARGET: CNPC_VTzimisceRunner::vfunc433
+void CNPC_VTzimisceRunner::vfunc433()
+{
+	sub_102b27f0();
+	sub_10269b50(0xf);
+	sub_10269b50(0xe);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c3870 size=0xc0
 #include "CNPC_VTzimisceRunner.h"
 #include "CAI_Motor.h"
