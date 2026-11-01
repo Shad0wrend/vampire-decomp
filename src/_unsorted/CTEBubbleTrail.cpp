@@ -56,6 +56,17 @@ void CTEBubbleTrail::vfunc3(const Vector &origin, const QAngle &angles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005fec0 size=0x39
+#include "CTEBubbleTrail.h"
+#include "CTEMetalSparks.h"
+#include "IVEngineServerFull.h"
+
+void CTEBubbleTrail::vfunc4(CRecipientFilter &filter, float delay)
+{
+	engine->vfunc103((int)&filter, *(int *)&delay, this, ((CTEMetalSparks *)this)->vfunc0()->m_pTable, ((CTEMetalSparks *)this)->vfunc0()->m_ClassID);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005ff80 size=0x6
 #include "CTEBubbleTrail.h"
 namespace lifted {

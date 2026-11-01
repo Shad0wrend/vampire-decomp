@@ -9239,6 +9239,7 @@
 0x1001097e func   ?sub_101f40f0@@YIPAXPAD@Z sub_101f40f0
 0x10010983 func   ?sub_101dc1f0@CPtrList101dc1f0@@QAEXXZ CPtrList101dc1f0::sub_101dc1f0
 0x1001098d func   ?sub_10210ac0@CTriggerDisciplineContext@@QAEXPAX@Z CTriggerDisciplineContext::sub_10210ac0
+0x10010992 func   ?vfunc4@CTEBubbleTrail@@UAEXAAVCRecipientFilter@@M@Z CTEBubbleTrail::vfunc4
 0x100109a6 func   ?vfunc16@CSingleplayRules@@UAEXXZ CSingleplayRules::vfunc16
 0x100109ab func   ?vfunc203@CBaseEntity@@QAEMXZ CBaseEntity::vfunc203
 0x100109b0 func   ?sub_102c6bf0@UtlMem@@QAEXXZ UtlMem::sub_102c6bf0
