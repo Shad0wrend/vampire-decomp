@@ -57,7 +57,9 @@ public:
 	char m_b5f2c;	// +0x5f2c
 	char pad5f2d[0x6078 - 0x5f2d];
 	char m_b6078;	// +0x6078
-	char pad6079[0x6330 - 0x6079];
+	char pad6079[0x6268 - 0x6079];
+	float m_f6268;	// +0x6268
+	char pad626c[0x6330 - 0x626c];
 	float m_f6330;	// +0x6330: a delay
 	char pad6334[0x63ac - 0x6334];
 	const char *m_pszName63ac;	// +0x63ac
