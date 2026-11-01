@@ -6818,6 +6818,7 @@
 0x1000cce8 func   ?sub_10189660@@YAXPAVCBaseEntity@@HH@Z sub_10189660
 0x1000ccf2 func   ?sub_100c3240@@YAXPAUStudioBoneView@@HPAUmatrix3x4_view@@PAM2@Z sub_100c3240
 0x1000ccf7 func   ?vfunc0@CAI_HumanoidMotor@@QAEPAV1@I@Z CAI_HumanoidMotor::vfunc0
+0x1000ccfc func   ?vfunc117@CMomentaryRotButton@@UAEEXZ CMomentaryRotButton::vfunc117
 0x1000cd01 func   ?sub_102c34b0@CFlagOwnerView@@QAEXPAUCFlagArgView@@@Z CFlagOwnerView::sub_102c34b0
 0x1000cd06 func   ?sub_10196de0@@YAPAXPAX0@Z sub_10196de0
 0x1000cd10 func   ?vfunc5@CBaseNetworkable@@UAEHXZ CBaseNetworkable::vfunc5

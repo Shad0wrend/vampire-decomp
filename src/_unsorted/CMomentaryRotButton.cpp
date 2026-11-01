@@ -12,6 +12,23 @@ int CMomentaryRotButton::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ca0e0 size=0x1e
+// TARGET: CMomentaryRotButton::vfunc117
+#include "CMomentaryRotButton.h"
+
+unsigned char CMomentaryRotButton::vfunc117()
+{
+	unsigned char r = (unsigned char)((CBaseEntity *)this)->CBaseEntity::vfunc117();
+	unsigned int flags = m_nSpawnFlags204;
+	r &= 0xfd;
+	if (flags & 1)
+		return r;
+	if (flags & 2)
+		return r;
+	return r | 0x10;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ca5f0 size=0xe
 #include "CMomentaryRotButton.h"
 namespace lifted {
