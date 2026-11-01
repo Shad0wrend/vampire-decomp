@@ -69,3 +69,15 @@ int CNPC_VStalker::vfunc546(int x)
     return g_10936c74.sub_1000aed4(g_1093c738.sub_10012300(x));
 }
 // END FUNCTION
+
+// FUNCTION: 0x103b2e60 size=0x1d
+// TARGET: sub_103b2e60
+int __stdcall sub_103b2e60(int a)
+{
+    if (a == 9 || a == 0x13 || a == 0x1115)
+    {
+        a = 0x1121;
+    }
+    return a;
+}
+// END FUNCTION
