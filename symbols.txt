@@ -8213,6 +8213,7 @@
 0x1000f2b3 func   ?vfunc379@CAI_BaseNPCTroika@@UAE_NPAVCBaseEntity@@HHHHHH@Z CAI_BaseNPCTroika::vfunc379
 0x1000f2bd func   _item_w_tzimisce_melee item_w_tzimisce_melee
 0x1000f2c2 func   ?sub_1024eda0@@YAXXZ sub_1024eda0
+0x1000f2c7 func   ?sub_10109dc0@CUnk10109dc0@@QAEXH@Z CUnk10109dc0::sub_10109dc0
 0x1000f2cc func   ?sub_100ea0d0@@YI_NPAUHandlePairHolder@@HPADH@Z sub_100ea0d0
 0x1000f2d1 func   ?vfunc241@CTriggerWind@@UAEXH@Z CTriggerWind::vfunc241
 0x1000f2d6 func   ?sub_10074160@CUnknown10074070@@QAEPAMHH@Z CUnknown10074070::sub_10074160

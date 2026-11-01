@@ -47702,6 +47702,26 @@ void __fastcall sub_10109da0(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10109dc0 size=0x1e
+// TARGET: CUnk10109dc0::sub_10109dc0
+struct CUnk10109dc0
+{
+    char pad[0x490];
+    char m_490;
+    char sub_1010a8d0();
+    void sub_1010b9d0();
+    void sub_10109dc0(int a);
+};
+void CUnk10109dc0::sub_10109dc0(int a)
+{
+    m_490 = 0;
+    if (sub_1010a8d0())
+    {
+        sub_1010b9d0();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109df0 size=0x3f
 #include "vampire.h"
 
