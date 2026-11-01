@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10575e50;
 }
-CTimerEntity::Datamap82 CTimerEntity::vfunc82()
+datamap_t *CTimerEntity::vfunc82()
 {
-    return (CTimerEntity::Datamap82)&lifted::g_10575e50;
+    return (datamap_t *)&lifted::g_10575e50;
 }
 // END FUNCTION
 
