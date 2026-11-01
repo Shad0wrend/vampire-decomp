@@ -19,6 +19,7 @@ public:
 	void sub_1003c2e0(int elem, int num);	// 0x1003c2e0: memmove of the tail behind elem + num (the Remove-like shift, 16 byte elements)
 	void sub_100b48c0(int elem, int num);	// 0x100b48c0: the same memmove shift as sub_1003c2e0
 	void sub_10349e10(int elem, int num);	// 0x10349e10: the same memmove shift as sub_1003c2e0
+	void sub_1007ee60();	// 0x1007ee60: Purge-like (size = 0, frees the memory when growSize != -1)
 
 	char *Element(int i) { return m_pMemory + i * 16; }	// operator[] for the 16 byte elements
 };
