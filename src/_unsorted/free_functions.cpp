@@ -119131,6 +119131,28 @@ int *CBaseCombatWeapon::sub_102517e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10251d30 size=0x3f
+#include "vampire.h"
+
+struct CWeaponIdxView
+{
+	void *sub_102517e0();
+	char *sub_102517b0();
+};
+
+// TARGET: sub_10251d30
+char *__fastcall sub_10251d30(void *self)
+{
+	int idx = *(int *)((char *)((CWeaponIdxView *)self)->sub_102517e0() + 0x10c);
+	char *base = ((CWeaponIdxView *)self)->sub_102517b0();
+	if (idx > -1)
+	{
+		return base + 0x2668 + idx * 0x1093c;
+	}
+	return base + 0x2668;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10252120 size=0x97
 char *__fastcall sub_10010ea6(CBaseCombatWeapon *p);
 char *__fastcall sub_10008b20(CBaseCombatWeapon *p);

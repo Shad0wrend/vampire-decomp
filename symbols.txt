@@ -4581,6 +4581,7 @@
 0x10008b11 func   ?sub_103160c0@CUnknown103160c0@@QAEPAVCBaseEntity@@H@Z CUnknown103160c0::sub_103160c0
 0x10008b16 func   ?sub_10199e20@@YAXXZ sub_10199e20
 0x10008b1b func   ?sub_10312aa0@CAI_Expresser@@QAEXPBDPAVCGlobalEntityList_Ent@@@Z CAI_Expresser::sub_10312aa0
+0x10008b20 func   ?sub_10251d30@@YIPADPAX@Z sub_10251d30
 0x10008b25 func   ?sub_102ec6d0@CUtlRBTree12Unit@@QAEXG@Z CUtlRBTree12Unit::sub_102ec6d0
 0x10008b2f func   ?vfunc80@CResearchBook_LG_STEALTH@@QAEHXZ CResearchBook_LG_STEALTH::vfunc80
 0x10008b39 func   ?sub_102beae0@CUnknown102beae0@@QAEHHHH@Z CUnknown102beae0::sub_102beae0
