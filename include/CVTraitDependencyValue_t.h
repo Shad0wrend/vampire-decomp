@@ -11,6 +11,6 @@ public:
 	char m_pad0004[0x18 - 4];
 	CUnknown102056d0Sub m_18;	// 0x18
 
-	void sub_10205c70();	// the constructor body: builds m_18, stores the vftable (0x10483d00), then vfunc0 (0x10002563)
+	CVTraitDependencyValue_t *sub_10205c70();	// the constructor body: builds m_18, stores the vftable (0x10483d00), then vfunc0 (0x10002563), returns this
 	void sub_10002563();	// CVTraitDependencyValue_t::vfunc0, called directly
 };
