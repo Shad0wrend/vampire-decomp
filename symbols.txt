@@ -2402,6 +2402,7 @@
 0x100050e7 func   ?sub_10027850@@YGHH@Z sub_10027850
 0x100050ec func   ?sub_1017c900@CBasePlayer@@QAEXD@Z CBasePlayer::sub_1017c900
 0x100050fb func   ?sub_1006c7d0@CUnknown1006c7d0@@QAEXXZ CUnknown1006c7d0::sub_1006c7d0
+0x10005100 func   ?vfunc105@CPropDoorknob@@UAEXPBD@Z CPropDoorknob::vfunc105
 0x1000510f func   ?vfunc5@CWeaponHolyLight@@QAEPAV1@I@Z CWeaponHolyLight::vfunc5
 0x10005114 func   ?sub_1020a5c0@@YAXPAUArgX@@@Z sub_1020a5c0
 0x10005123 func   ?vfunc619@CNPC_VChangBros@@QAEXH@Z CNPC_VChangBros::vfunc619
