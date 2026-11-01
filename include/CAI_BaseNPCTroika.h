@@ -359,7 +359,8 @@ public:
 	char m_pad654d[3];
 	float m_f6550;	// 0x6550: the volume of the sound sub_102c2680 plays
 	unsigned int m_h6554;
-	char m_pad6558[0x65a0 - 0x6558];
+	const char *m_pszDisposition6558;	// 0x6558: the disposition name handed to sub_102c0f70 on activation (an empty string when null)
+	char m_pad655c[0x65a0 - 0x655c];
 	char m_b65a0;	// 0x65a0
 	char m_pad65a1[3];
 	float m_f65a4;	// 0x65a4: a time stamp the idle pick (0x102b7cf0) re-arms
