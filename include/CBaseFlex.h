@@ -254,4 +254,5 @@ public:
 	virtual void vfunc276();
 	virtual void vfunc277();
 	virtual char * vfunc278();
+	virtual void vfunc279_virt();
 };
