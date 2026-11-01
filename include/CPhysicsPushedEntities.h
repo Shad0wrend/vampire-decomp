@@ -70,5 +70,7 @@ public:
 	CBaseEntity *sub_10037e90(CBaseEntity *pRoot, const float *pRotation);	// "CPhysicsPushedEntities::PerformRotatePush": scope trace, VPROF scope; SetupAllInHierarchy(root), computes the rotated moves, checks them; on a block restores the entities and returns the blocked one, else finishes the push and returns 0
 	void sub_10037c10(CBaseEntity *pRoot, const float *pRotation, float *pOrigin);	// stub 0x10002c70: computes the rotation pivot / origin for the push
 	void sub_10036fb0();	// stub 0x100132b4
+	CBaseEntity *sub_10038400(CBaseEntity *pRoot, const float *pMove);	// "CPhysicsPushedEntities::PerformLinearPush": scope trace, VPROF scope; SetupAllInHierarchy(root), computes the moves, checks them; on a block restores the entities and returns the blocked one, else finishes the push and returns 0
+	void sub_10038180(CBaseEntity *pRoot, const float *pMove, float *pOut);	// stub 0x1000aa8d
 	void sub_100360a0(CBaseEntity *pEntity, const float *pRotation, float *pMove, const float *pOrigin);	// computes the move of the entity for the rotation (stub 0x1001386d)
 };
