@@ -102,6 +102,7 @@ struct CAI_NavRoute	// the object at CAI_Navigator +0x30
 	int m_i5c;
 	int m_i60;
 
+	void sub_1030bf50();	// the route's destructor body (stub 0x1000a3cb, free __fastcall in the matched sub_1030bf50): hands the waypoint pointer at +0x24 to 0x1031a050; the owner then frees the route with operator delete
 	void sub_1030bb30();	// resets the route: deletes the waypoint, vectors to vec3_origin (0x1070d1b0), flags and counters to 0 (+0x2c = 1, +0x30 = -1)
 	int sub_1030bc00();	// the route's move status (stub 0x1000f240): 0 when it has none, 2 for a finished one
 	void sub_1030ba50(int value);	// sets the flag at +0x58 and the value at +0x5c
