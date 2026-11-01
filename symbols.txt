@@ -8772,6 +8772,7 @@
 0x1000f880 func   ?vfunc610@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::vfunc610
 0x1000f88a func   _playerevents playerevents
 0x1000f88f func   ?sub_100fbc20@CBaseEntity@@QAEXXZ CBaseEntity::sub_100fbc20
+0x1000f894 func   ?sub_10158c00@@YAXHH@Z sub_10158c00
 0x1000f899 func   ?vfunc5@COccultHacking@@QAEPAV1@I@Z COccultHacking::vfunc5
 0x1000f89e func   ?sub_1030b990@@YIPAVVector@@PAUSDelta@@@Z sub_1030b990
 0x1000f8a8 func   ?vfunc5@CBaseCombatWeapon@@UAEPAV1@I@Z CBaseCombatWeapon::vfunc5
