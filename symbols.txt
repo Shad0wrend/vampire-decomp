@@ -3666,6 +3666,7 @@
 0x100073d3 func   ?sub_102ca760@@YIXPAD@Z sub_102ca760
 0x100073d8 func   ?sub_1027d030@CAI_BaseNPCUnit@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCUnit::sub_1027d030
 0x100073dd func   ?vfunc80@CBaseAnimating@@UAEHXZ CBaseAnimating::vfunc80
+0x100073dd func   ?vfunc80@CPropDoorknob@@UAEHXZ CPropDoorknob::vfunc80
 0x100073e7 func   ?vfunc109@CBaseToggle@@UAE_NPBDM@Z CBaseToggle::vfunc109
 0x100073ec func   ?sub_100f0120@CUnknown100f0120@@QAEXPAUinputdata_t@@@Z CUnknown100f0120::sub_100f0120
 0x100073f1 func   ?sub_1042c0a0@@YAHXZ sub_1042c0a0
