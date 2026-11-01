@@ -111,7 +111,10 @@ public:
 	int sub_103801d0(CNPC_VHengeyokaiInfo *pInfo);	// slot 390: CNPC_VHuman::vfunc390(pInfo), then sub_103830e0() when the entity at pInfo+0x2c has the classname "point_explosion"; returns the base's result
 	int vfunc440(int task);	// slot 440 (TranslateSchedule): schedule 0x15a for 0x5b, 0x15b for 0xea, 0x15c for 0xdc, 0x15d for 0xdd, else CNPC_VHuman::vfunc440; first calls sub_10383130() while transformed (+0x670 == 1) unless the task is 0x16e
 	int sub_103851c0(int task);	// CNPC_VHuman::vfunc440 (stub 0x10005e20), called directly
-	void sub_10383130();	// called through the stub at 0x1000ed6d
+	void sub_10383130();	// called through the stub at 0x1000ed6d: SetSkinFadeTime(0), FadeToSkin(0), then the freeze emitter attached to this NPC
+	void sub_1008d5f0(float flTime);	// CBaseAnimating::SetSkinFadeTime (stub 0x100151bd), called directly
+	void sub_1008d6d0(int nSkin);	// CBaseAnimating::FadeToSkin (stub 0x1001591f), called directly
+	void sub_102c4310(const char *pszEmitter, CNPC_VHengeyokai *pParent, int a, int b, int c);	// CAI_BaseNPCTroika attach-emitter helper (stub 0x1000aa01, ret 0x14): the emitter name first, then the parent entity and three ints
 	int vfunc124();	// slot 124 "DrawDebugTextOverlays": the base's line offset, plus one line with the NPC's name when the text overlay bit (bit 0 of +0x224) is set
 	int sub_10006f64();	// CAI_BaseNPCTroika::vfunc124 (stub 0x10006f64), called directly
 	void sub_10383470();	// once 2 seconds have passed since the time at +0x1560: zeroes the character's stat 0xf, sets the byte at +0x6694 and calls sub_10273e80(0)
