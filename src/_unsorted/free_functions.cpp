@@ -127127,6 +127127,29 @@ void sub_102cc900()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ccb50 size=0x1e
+class CAI_DynamicLink;
+
+struct CUnkDynLink {
+	char m_pad0000[0x450];
+	CUnkDynLink *m_pNext;
+	void sub_102ccce0();
+};
+
+extern CUnkDynLink *g_1092541c;
+
+// TARGET: sub_102ccb50
+void sub_102ccb50()
+{
+	CUnkDynLink *p = g_1092541c;
+	while (p != 0)
+	{
+		p->sub_102ccce0();
+		p = p->m_pNext;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ccb80 size=0x6e
 struct DynLinkX {
 	char pad[0x450];

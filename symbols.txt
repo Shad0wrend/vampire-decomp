@@ -11334,6 +11334,7 @@
 0x1001488f func   ?sub_100a8bf0@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100a8bf0
 0x10014894 func   ?vfunc81@CResearchBook_HG_MELEE@@QAEHXZ CResearchBook_HG_MELEE::vfunc81
 0x10014899 func   ?sub_10381c00@CNPC_VHengeyokai@@QAEXD@Z CNPC_VHengeyokai::sub_10381c00
+0x1001489e func   ?sub_102ccb50@@YAXXZ sub_102ccb50
 0x100148a3 func   ?sub_103a4fc0@@YAHXZ sub_103a4fc0
 0x100148a8 func   _npc_VPlayerController npc_VPlayerController
 0x100148c1 func   ?vfunc5@CItemGMercurioJournal@@QAEPAV1@I@Z CItemGMercurioJournal::vfunc5
