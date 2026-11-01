@@ -87044,6 +87044,18 @@ struct CUnknown101e22b0 { int pad[5]; int m_State; bool sub_101e22b0(); };
 bool CUnknown101e22b0::sub_101e22b0() { if (m_State == 1) return true; return false; }
 // END FUNCTION
 
+// FUNCTION: 0x101e28e0 size=0x1c
+int __stdcall sub_101e22d0(int a);
+
+int __stdcall sub_101e28e0(int a)
+{
+	int *p = (int *)sub_101e22d0(a);
+	if (p)
+		return p[0x9c / 4];
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e2da0 size=0x149
 #include "CVStatList_t.h"
 #include "CUnknown101e0f00.h"

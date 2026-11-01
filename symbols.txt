@@ -2196,6 +2196,7 @@
 0x10004d5e func   ?vfunc144@CNPC_VHengeyokai@@QAEXH@Z CNPC_VHengeyokai::vfunc144
 0x10004d63 func   ?sub_100cdc60@@YAHH@Z sub_100cdc60
 0x10004d68 func   ?vfunc298@CGargoyleTalisman@@QAEXHH@Z CGargoyleTalisman::vfunc298
+0x10004d6d func   ?sub_101e28e0@@YGHH@Z sub_101e28e0
 0x10004d72 func   ?sub_101b2420@CUnknown101b2570@@QAEXPBD@Z CUnknown101b2570::sub_101b2420
 0x10004d81 func   ?sub_101f9df0@CTraitIdListY@@QAEHHHH@Z CTraitIdListY::sub_101f9df0
 0x10004d86 func   ?sub_10032d20@UtlVec32@@QAEXHH@Z UtlVec32::sub_10032d20
