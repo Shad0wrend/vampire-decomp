@@ -8219,6 +8219,69 @@ CPhysBox *CPhysBox::sub_1004e0a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004e770 size=0x3a
+#include "CBaseEntity.h"
+
+#define CSV_ROW(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CEntSlotView
+{
+	virtual void a0();
+	virtual void a1();
+	virtual void s2();
+	virtual void a3();
+	virtual void a4();
+	virtual void a5();
+	virtual void a6();
+	virtual void a7();
+	virtual int s8();
+	virtual void a9();
+	CSV_ROW(b1)
+	CSV_ROW(b2)
+	CSV_ROW(b3)
+	CSV_ROW(b4)
+	CSV_ROW(b5)
+	CSV_ROW(b6)
+	CSV_ROW(b7)
+	CSV_ROW(b8)
+	CSV_ROW(b9)
+	CSV_ROW(b10)
+	CSV_ROW(b11)
+	CSV_ROW(b12)
+	CSV_ROW(b13)
+	CSV_ROW(b14)
+	CSV_ROW(b15)
+	CSV_ROW(b16)
+	CSV_ROW(b17)
+	CSV_ROW(b18)
+	CSV_ROW(b19)
+	CSV_ROW(b20)
+	CSV_ROW(b21)
+	CSV_ROW(b22)
+	CSV_ROW(b23)
+	virtual void a240();
+	virtual void s241(int a);
+};
+
+namespace block_1004e770 {
+	struct CEntUnit : CBaseEntity {
+		void sub_1004e770(int a);
+	};
+}
+
+// TARGET: block_1004e770::CEntUnit::sub_1004e770
+void block_1004e770::CEntUnit::sub_1004e770(int a)
+{
+	if (*(char *)((char *)this + 0x4c8) == 0)
+	{
+		sub_100a0b20();
+		*(char *)((char *)this + 0x4c8) = 1;
+		((CEntSlotView *)this)->s241(((CEntSlotView *)this)->s8());
+	}
+	((CEntSlotView *)(*(char **)((char *)this + 0x36c)))->s2();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004eab0 size=0x1a
 namespace lifted {
 extern int g_1053d12c;

@@ -914,6 +914,7 @@
 0x1000286a func   ?vfunc482@CNPC_VCamera@@UAEHHH@Z CNPC_VCamera::vfunc482
 0x1000286f func   ?sub_101ce3d0@@YAXHH@Z sub_101ce3d0
 0x10002874 func   ?sub_100a8fc0@CBaseEntity@@QAEXD@Z CBaseEntity::sub_100a8fc0
+0x10002879 func   ?sub_1004e770@CEntUnit@block_1004e770@@QAEXH@Z block_1004e770::CEntUnit::sub_1004e770
 0x10002883 func   ?sub_100fe1e0@CUnknown100fde30@@QAEXM@Z CUnknown100fde30::sub_100fe1e0
 0x10002888 func   ??0CDialogDependency@@QAE@XZ CDialogDependency::CDialogDependency
 0x1000288d func   ?vfunc5@CNPC_VHunter@@QAEPAV1@I@Z CNPC_VHunter::vfunc5
