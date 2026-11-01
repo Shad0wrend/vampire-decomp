@@ -48081,6 +48081,22 @@ int CUnknown1010c490::sub_1010c490(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010c4c0 size=0x1c
+struct CUnknown1010c4c0 {
+	char pad0000[0x458];
+	int m_458;
+	void sub_1010c5d0();
+	void sub_1010c4c0(int unused);
+};
+
+// TARGET: CUnknown1010c4c0::sub_1010c4c0
+void CUnknown1010c4c0::sub_1010c4c0(int unused)
+{
+	m_458 = m_458 != 1;
+	sub_1010c5d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010c5d0 size=0x2e
 // TARGET: sub_1010c5d0
 

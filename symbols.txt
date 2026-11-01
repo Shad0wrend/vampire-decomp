@@ -8908,6 +8908,7 @@
 0x100107df func   ?sub_100bd540@bf_write@@QAEXI@Z bf_write::sub_100bd540
 0x100107e9 func   ?sub_1042ed40@CUnit1042ed40@@QAEXHM@Z CUnit1042ed40::sub_1042ed40
 0x100107f3 func   ?vfunc80@COccultThaumDamage@@QAEHXZ COccultThaumDamage::vfunc80
+0x10010807 func   ?sub_1010c4c0@CUnknown1010c4c0@@QAEXH@Z CUnknown1010c4c0::sub_1010c4c0
 0x10010811 func   ?sub_10222da0@CUtlMemory24@@QAEXH@Z CUtlMemory24::sub_10222da0
 0x10010816 func   ?sub_102f39a0@CUnknown102f3900@@QAE_NPAUCUnknown102f3900Ent@@VVector@@1H@Z CUnknown102f3900::sub_102f39a0
 0x1001081b func   ?sub_10230700@@YGXHH@Z sub_10230700
