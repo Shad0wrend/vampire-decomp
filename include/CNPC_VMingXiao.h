@@ -422,7 +422,7 @@ public:
 	virtual void vfunc415();
 	virtual void vfunc416();
 	virtual void vfunc417();
-	virtual void vfunc418();
+	virtual float vfunc418(float a);
 	virtual void vfunc419();
 	virtual void vfunc420();
 	virtual void vfunc421();
