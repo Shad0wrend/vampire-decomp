@@ -161566,6 +161566,18 @@ float sub_103e16e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e1710 size=0x20
+#include "CUnknown103e1680.h"
+extern CUnknown103e1680 *g_109405fc;
+extern float g_104454c4;
+float sub_103e1710()
+{
+	if (g_109405fc->vfunc1())
+		return g_104454c4;
+	return g_109405fc->m_f28;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e1740 size=0x1c
 struct CUnknown1094068c {
 	virtual void vfunc0();

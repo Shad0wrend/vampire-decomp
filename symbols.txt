@@ -878,6 +878,7 @@
 0x10002801 func   ?sub_102db470@@YAHPAVCUnknown102db470@@@Z sub_102db470
 0x10002806 func   ?sub_100889b0@@YAXXZ sub_100889b0
 0x1000280b func   ?sub_103c9ed0@CHintData_WW@@QAEPAV1@PBV1@@Z CHintData_WW::sub_103c9ed0
+0x1000281a func   ?sub_103e1710@@YAMXZ sub_103e1710
 0x1000281f func   ?sub_1033d9b0@@YAHXZ sub_1033d9b0
 0x10002824 func   ?sub_10027870@@YGHH@Z sub_10027870
 0x10002829 func   ?sub_102da600@CHolder@@QAEXPADDD@Z CHolder::sub_102da600
