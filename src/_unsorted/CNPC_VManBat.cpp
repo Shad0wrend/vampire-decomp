@@ -61,9 +61,9 @@ int CNPC_VManBat::vfunc546(int x)
 namespace lifted {
 extern char g_10640d40;
 }
-CNPC_VManBat::Datamap82 CNPC_VManBat::vfunc82()
+datamap_t *CNPC_VManBat::vfunc82()
 {
-    return (CNPC_VManBat::Datamap82)&lifted::g_10640d40;
+    return (datamap_t *)&lifted::g_10640d40;
 }
 // END FUNCTION
 
