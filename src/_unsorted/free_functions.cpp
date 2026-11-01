@@ -58438,6 +58438,25 @@ void sub_1014a0e0(CUnk1014a0e0 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014a110 size=0x1e
+// TARGET: sub_1014a110
+struct CUnk1014a110
+{
+    void *sub_10335950(int a);
+};
+int sub_102587f0();
+int __cdecl sub_1014a110(int param)
+{
+    int r = sub_102587f0();
+    int *p = (int *)((CUnk1014a110 *)param)->sub_10335950(r);
+    if (p == 0)
+    {
+        return 0;
+    }
+    return ((int (__fastcall *)(int *))(*(int **)p)[0x474 / 4])(p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014c0f0 size=0xf
 namespace lifted {
 int sub_10002392();
