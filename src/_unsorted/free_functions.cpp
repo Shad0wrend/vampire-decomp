@@ -94179,6 +94179,17 @@ bool CUnknown101e9760::sub_101e9760(CBaseCombatCharacter *pChar)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e9830 size=0x35
+#include "CUnknown101e9760.h"
+#include "CBaseCombatCharacter.h"
+bool CUnknown101e9760::sub_101e9830(CBaseCombatCharacter *pChar)
+{
+	if (pChar->sub_10337860() != -1 && sub_101e9760(pChar))
+		return m_checkList.sub_101d8470(pChar);
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e9880 size=0xd
 CUnknown101e9880* CUnknown101e9880::sub_101e9880()
 {

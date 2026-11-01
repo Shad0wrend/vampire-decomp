@@ -5260,6 +5260,7 @@
 0x10009af7 func   ?sub_10342590@@YA_NPAVCBaseEntity@@0@Z sub_10342590
 0x10009afc func   ?vfunc5@CPhysSlideConstraint@@UAEPAV1@I@Z CPhysSlideConstraint::vfunc5
 0x10009b10 func   ?vfunc176@CTriggerProximity@@QAEXPAVCBaseEntity@@@Z CTriggerProximity::vfunc176
+0x10009b1a func   ?sub_101e9830@CUnknown101e9760@@QAE_NPAVCBaseCombatCharacter@@@Z CUnknown101e9760::sub_101e9830
 0x10009b1f func   ?vfunc104@CRopeKeyframe@@UAEXXZ CRopeKeyframe::vfunc104
 0x10009b24 func   ?sub_1018f700@CUnknown1018f700@@QAEXD@Z CUnknown1018f700::sub_1018f700
 0x10009b29 func   ?vfunc5@CPayphone@@QAEPAV1@I@Z CPayphone::vfunc5
