@@ -107,7 +107,8 @@ public:
 	CAI_NPC_V(426)
 	virtual CAI_Motor *vfunc427();	// creates the NPC's motor (operator new, then CAI_Motor::sub_102e0900(this))
 	CAI_NPC_V(428) CAI_NPC_V(429)
-	CAI_NPC_V(430) CAI_NPC_V(431) CAI_NPC_V(432) CAI_NPC_V(433) CAI_NPC_V(434)
+	CAI_NPC_V(430) CAI_NPC_V(431) virtual void vfunc432(char bSkip);	// CAI_BaseNPC::RunAI: profiled and scope-traced
+	CAI_NPC_V(433) CAI_NPC_V(434)
 	virtual void vfunc435(void *pSchedule);	// called with the new schedule by sub_10280e50
 	CAI_NPC_V(436)
 	virtual int vfunc437();	// "SelectFailSchedule"-like (AI_BaseNPC_Schedule.cpp): returns a schedule id picked from the failure conditions
