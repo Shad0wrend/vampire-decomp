@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_105714b0;
 }
-CGameUI::Datamap82 CGameUI::vfunc82()
+datamap_t *CGameUI::vfunc82()
 {
-    return (CGameUI::Datamap82)&lifted::g_105714b0;
+    return (datamap_t *)&lifted::g_105714b0;
 }
 // END FUNCTION
 
