@@ -51,7 +51,11 @@ public:
 	virtual void s160(); virtual void s161(); virtual void s162(); virtual void s163();
 	virtual void s164(); virtual void s165(); virtual void s166();
 	virtual CNPC_VTzimisceHelper *vfunc167();
-	VT_SLOTS10(t00) VT_SLOTS10(t01) VT_SLOTS10(t02) VT_SLOTS10(t03) VT_SLOTS10(t04) virtual void t0518(); virtual void t0519();
+	VT_SLOTS10(t00) VT_SLOTS10(t01) VT_SLOTS10(t02) VT_SLOTS10(t03)
+	virtual void t040(); virtual void t041(); virtual void t042(); virtual void t043(); virtual void t044();
+	virtual void t045(); virtual void t046(); virtual void t047(); virtual void t048();
+	virtual float *vfunc217();	// slot 217 \"GetAbsOrigin\": the position
+	virtual void t0518(); virtual void t0519();
 	virtual void *vfunc220();
 	virtual void t0521(); virtual void t0522(); virtual void t0523(); virtual void t0524();
 	virtual void t0525(); virtual void t0526(); virtual void t0527();
