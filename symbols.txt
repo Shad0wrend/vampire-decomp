@@ -2589,6 +2589,7 @@
 0x100054f2 func   ?vfunc2@CTEShowLine@@UAEPAV1@I@Z CTEShowLine::vfunc2
 0x100054f7 func   ?sub_1025d3a0@CUtlRBTreeBig@@QBE_NG@Z CUtlRBTreeBig::sub_1025d3a0
 0x10005501 func   ?sub_101a75e0@@YAXXZ sub_101a75e0
+0x10005506 func   ?sub_101a69e0@@YAXXZ sub_101a69e0
 0x1000550b func   ?sub_101aa820@CPayphoneUnit101aa820@@QAEHH@Z CPayphoneUnit101aa820::sub_101aa820
 0x10005515 func   ?sub_102c7e10@@YIXPAH@Z sub_102c7e10
 0x1000551a func   ?sub_10247220@@YAXXZ sub_10247220
