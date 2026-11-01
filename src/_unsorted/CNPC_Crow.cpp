@@ -367,6 +367,12 @@ int CNPC_Crow::vfunc473()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103591e0 size=0x6
+extern char g_10628a48;
+// TARGET: sub_103591e0
+char sub_103591e0() { return g_10628a48; }
+// END FUNCTION
+
 // FUNCTION: 0x10359240 size=0x1d
 #include "CNPC_Crow.h"
 struct A { int sub_10012300(int); };
