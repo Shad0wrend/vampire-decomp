@@ -55733,6 +55733,19 @@ void sub_10139970(const Vector &forward, QAngle &angles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10139a90 size=0x1f
+void sub_10139a90(float *p)
+{
+    for (int i = 0; i < 12; i++)
+    {
+        ((int *)p)[i] = 0;
+    }
+    ((int *)p)[0] = 0x3f800000;
+    ((int *)p)[5] = 0x3f800000;
+    ((int *)p)[10] = 0x3f800000;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10139ac0 size=0x22
 void __cdecl sub_10139b00(int a, int b);
 void __cdecl sub_10011996(int a, int b, int c);
