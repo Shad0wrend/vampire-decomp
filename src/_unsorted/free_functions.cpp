@@ -80327,6 +80327,33 @@ void CUnk101c1790::sub_101c1790()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c19e0 size=0x3c
+#include "CBaseToggle.h"
+
+extern float g_1070d9d0[3];
+
+struct COutputEventView101c19e0
+{
+	void sub_100cd660(int a, void *pEnt, int b);
+};
+
+namespace block_101c19e0 {
+	struct CBaseToggleUnit101c19e0 : CBaseToggle
+	{
+		void sub_101c19e0();
+	};
+}
+
+// TARGET: block_101c19e0::CBaseToggleUnit101c19e0::sub_101c19e0
+void block_101c19e0::CBaseToggleUnit101c19e0::sub_101c19e0()
+{
+	((CBaseEntity *)this)->vfunc64((float *)((char *)this + 0x54c));
+	((CBaseEntity *)this)->sub_100b2f50(g_1070d9d0);
+	*(float *)((char *)this + 0x3fc) = -1.0f;
+	((COutputEventView101c19e0 *)((char *)this + 0x4bc))->sub_100cd660(0, this, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c1a30 size=0x23
 // TARGET: sub_101c1a30
 float __cdecl sub_101c1a30(unsigned char flags, float *p)

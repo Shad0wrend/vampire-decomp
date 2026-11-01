@@ -3829,6 +3829,7 @@
 0x10007711 func   ?vfunc451@CNPC_VSheriffSwarm@@UAEHXZ CNPC_VSheriffSwarm::vfunc451
 0x1000771b func   ?vfunc82@CTriggerProximity@@UAEPAUdatamap_t@@XZ CTriggerProximity::vfunc82
 0x10007720 func   ?vfunc82@CScriptedSentence@@QAEHXZ CScriptedSentence::vfunc82
+0x10007725 func   ?sub_101c19e0@CBaseToggleUnit101c19e0@block_101c19e0@@QAEXXZ block_101c19e0::CBaseToggleUnit101c19e0::sub_101c19e0
 0x1000772a func   ?vfunc81@CItemGGuyMagazine@@QAEHXZ CItemGGuyMagazine::vfunc81
 0x1000772f func   ?sub_103d7420@CNPC_VWerewolf@@QAEXPAVCHintData_WW@@@Z CNPC_VWerewolf::sub_103d7420
 0x10007734 func   ?sub_100bc490@bf_write@@QAEPAV1@PBDPAXHH@Z bf_write::sub_100bc490
