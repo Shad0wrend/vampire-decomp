@@ -5,9 +5,9 @@
 namespace lifted {
 extern char g_106474f0;
 }
-int CNPC_VMingXiaoTentacle::vfunc82()
+CNPC_VMingXiaoTentacle::Datamap82 CNPC_VMingXiaoTentacle::vfunc82()
 {
-    return (int)&lifted::g_106474f0;
+    return (CNPC_VMingXiaoTentacle::Datamap82)&lifted::g_106474f0;
 }
 // END FUNCTION
 
