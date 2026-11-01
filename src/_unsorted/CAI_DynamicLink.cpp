@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10608f58;
 }
-CAI_DynamicLink::Datamap82 CAI_DynamicLink::vfunc82()
+datamap_t *CAI_DynamicLink::vfunc82()
 {
-    return (CAI_DynamicLink::Datamap82)&lifted::g_10608f58;
+    return (datamap_t *)&lifted::g_10608f58;
 }
 // END FUNCTION
 
