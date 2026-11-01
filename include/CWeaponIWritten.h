@@ -186,9 +186,9 @@ public:
 	virtual void vfunc304();
 	virtual void vfunc305();
 	virtual void vfunc306();
-	virtual void vfunc307();
+	virtual void vfunc307(int arg);
 	virtual void vfunc308();
-	virtual void vfunc309();
+	virtual bool vfunc309();
 	virtual void vfunc310();
 	virtual void vfunc311();
 	virtual void vfunc312();
