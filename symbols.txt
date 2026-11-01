@@ -414,6 +414,7 @@
 0x10001b54 func   ?vfunc5@CWeaponThrown_Chang_Energy_Ball@@QAEPAV1@I@Z CWeaponThrown_Chang_Energy_Ball::vfunc5
 0x10001b59 func   ?sub_101fb8f0@CVStatSubCost_t@@QAE_NXZ CVStatSubCost_t::sub_101fb8f0
 0x10001b5e func   ?sub_10076690@CUnknown10076690@@QAEHXZ CUnknown10076690::sub_10076690
+0x10001b6d func   ?sub_10352ed0@@YAXPAH@Z sub_10352ed0
 0x10001b72 func   ?sub_1042fed0@@YAII@Z sub_1042fed0
 0x10001b77 func   ?sub_1030b520@CUnknown1030b520@@QAEHXZ CUnknown1030b520::sub_1030b520
 0x10001b7c func   ?sub_101c48c0@CUnknown101c48c0@@QAEPAXH@Z CUnknown101c48c0::sub_101c48c0

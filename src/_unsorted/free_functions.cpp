@@ -150183,6 +150183,19 @@ void sub_10352e90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10352ed0 size=0x20
+#include "globalvars.h"
+
+// TARGET: sub_10352ed0
+void sub_10352ed0(int *p)
+{
+    if (gpGlobals->m_b31 || gpGlobals->m_b30)
+    {
+        ((void (__fastcall *)(int *))((int *)*p)[103])(p);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10352f00 size=0x4d
 struct SRules { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
     virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
