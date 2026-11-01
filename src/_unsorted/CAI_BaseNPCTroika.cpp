@@ -1333,6 +1333,49 @@ int CAI_BaseNPCTroika::vfunc127(CRestore *pRestore)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10299da0 size=0x21d
+struct Troika404View { char pad[0x98]; CAI_BaseNPCTroika *p98; CAI_BaseNPCTroika *p9c; };
+
+int CAI_BaseNPCTroika::vfunc404(CBaseEntity *pOther)
+{
+	if (pOther == (CBaseEntity *)this)
+		return 0;
+	if (!pOther)
+		return 0;
+	CAI_BaseNPCTroika *pOwner = ((Troika404View *)pOther)->p9c;
+	if (pOwner && (pOwner->m_flags14bc & 0x20000) == 0x20000 && m_h628c.Get()) {
+		if (vfunc404(m_h628c.Get()) == 1 || vfunc168() == m_h628c.Get())
+			return 1;
+	}
+	CAI_BaseNPCTroika *p98 = ((Troika404View *)pOther)->p98;
+	if (p98) {
+		CBaseEntity *pEnt = p98->m_h647c.Get();
+		if (pEnt) {
+			if (vfunc404(pEnt) == 1 || vfunc168() == pEnt)
+				return 1;
+		}
+	}
+	CBaseEntity *pFollow = m_h647c.Get();
+	if (pFollow) {
+		CAI_BaseNPCTroika *pFollowOwner = ((Troika404View *)pFollow)->p9c;
+		if (pFollowOwner) {
+			if (pFollowOwner == (CAI_BaseNPCTroika *)pOther)
+				return 3;
+			int r = pFollowOwner->vfunc404(pOther);
+			if (r == 1 || (CBaseEntity *)pFollowOwner->vfunc167() == pOther)
+				return 1;
+			if (pOwner) {
+				r = pOwner->vfunc404((CBaseEntity *)pFollowOwner);
+				if (r == 1 || pOwner->vfunc168() == (CBaseEntity *)pFollowOwner)
+					return 1;
+			}
+			return r;
+		}
+	}
+	return sub_10013016(pOther);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029a070 size=0x30
 int CAI_BaseNPCTroika::vfunc593()
 {

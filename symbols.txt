@@ -406,6 +406,7 @@
 0x10001acd func   ?sub_103b29a0@@YADXZ sub_103b29a0
 0x10001ad2 func   ?sub_1025d2b0@CUtlRBTreeBig@@QBE_NG@Z CUtlRBTreeBig::sub_1025d2b0
 0x10001ad7 func   ?vfunc363@CWeaponMelee_FireAxe@@QAEHXZ CWeaponMelee_FireAxe::vfunc363
+0x10001adc func   ?vfunc404@CAI_BaseNPCTroika@@UAEHPAVCBaseEntity@@@Z CAI_BaseNPCTroika::vfunc404
 0x10001ae1 func   ?vfunc0@CTESparks@@UAEHXZ CTESparks::vfunc0
 0x10001ae6 func   ?vfunc81@CWeaponMelee_Claws@@QAEHXZ CWeaponMelee_Claws::vfunc81
 0x10001af0 func   ?sub_102043a0@CVDmgBlock16_t@@QAEPBDXZ CVDmgBlock16_t::sub_102043a0
