@@ -2,6 +2,8 @@
 #pragma once
 
 #include "CBaseCombatWeapon.h"
+#include "CGravControllerPoint.h"
+#include "ehandle.h"
 
 class CWeaponGravityGun : public CBaseCombatWeapon
 {
