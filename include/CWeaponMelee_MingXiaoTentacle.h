@@ -10,12 +10,6 @@ public:
 	CWeaponMelee_MingXiaoTentacle *vfunc5(unsigned int flags);
 	void sub_10013a57();
 	CWeaponMelee_MingXiaoTentacle *sub_103ec870();	// as in CKeepUpright (transplant)
-	int m_n08b8;
-	int m_n08bc;
-	float m_f08c0;
-	float m_f08c4;
-	char m_pad08c8[0x910 - 0x8c8];
-	int m_n0910;
 	int vfunc367(int a, float b, float c);	// slot 367: its own (0x103ec910)
 	void *sub_102521f0();	// owner getter (thunk 0x10014fab)
 public:
