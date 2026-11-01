@@ -1389,6 +1389,7 @@
 0x100034c2 func   ?vfunc42@CGameRules@@UAEXHH@Z CGameRules::vfunc42
 0x100034cc func   ?sub_103a5bb0@@YAHXZ sub_103a5bb0
 0x100034db func   ?sub_10081e90@@YIXPAUCSlots@@HH@Z sub_10081e90
+0x100034ea func   ?sub_101a9d40@@YAEXZ sub_101a9d40
 0x100034ef func   ?sub_1006e850@@YIXPAD@Z sub_1006e850
 0x100034f4 func   ?sub_10306550@CVHalveList@@QAEXXZ CVHalveList::sub_10306550
 0x100034f9 func   ?sub_103392c0@CBaseCombatCharacter@@QAEXPAVCBaseEntity@@HH@Z CBaseCombatCharacter::sub_103392c0

@@ -12,6 +12,19 @@ int CScriptedSentence::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a9d40 size=0x8
+unsigned char sub_10001109();
+
+// TARGET: sub_101a9d40
+unsigned char sub_101a9d40()
+{
+    unsigned char bVar1;
+    bVar1 = sub_10001109();
+    bVar1 &= 0xfd;
+    return bVar1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a9d60 size=0x4c
 #include <string.h>
 #include <stdlib.h>
