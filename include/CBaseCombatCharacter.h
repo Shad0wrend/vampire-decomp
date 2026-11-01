@@ -170,6 +170,7 @@ public:
 	int vfunc393();
 	char vfunc402();	// slot 402 "CBaseCombatCharacter::Event_Gibbed": scope trace (entity name), tests the violence_hgibs / violence_agibs convars, take-damage mode 0, AddSolidFlags(4) (inlined scope trace), +0x200 = 2; gibbing calls slot 395 and returns false, else slots 66 and 394
 	void vfunc403();
+	int vfunc404(CBaseEntity *pTarget);	// "CBaseCombatCharacter::IRelationType": scope trace (entity name), 0 for itself / null, 1 / 3 from the faction flags at +0x14bc, else the disposition of the relationship record (+0x1598, count +0x15a0) of the target or of its class (slot 138), 4 when none
 	void vfunc50(int a);	// scope-traced wrapper around sub_10014eb6(a, 0)
 	void vfunc51(int unused, float *pOut);	// "CBaseCombatCharacter::GetCameraTargetPosition": scope trace (entity name), with the flag byte at +0x10d4 set sub_10014eb6(pOut, 0), else copies the vector slot 192 returns into pOut
 	virtual void vfunc105(const char *pszModel);	// slot 105 "CBaseCombatCharacter::SetModel": scope trace (entity name), CBaseFlex::vfunc105, then from the model header the legs flag (stat 0xb of the active stat list, +0x13cc), the aim_pitch / aim_yaw pose parameters (+0x106c / +0x1070) and the Bip01_Head bone with its axis (+0x1080 / +0x1074); +0xbc = -1
