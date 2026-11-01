@@ -1562,6 +1562,28 @@ void CAI_BaseNPC::vfunc487()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027a700 size=0x28
+#include "CAI_BaseNPC.h"
+#include "CAI_Navigator.h"
+
+struct CAI_BaseNPC435View : CAI_BaseNPC
+{
+	char m_pad0004[0x5cf0 - sizeof(CAI_BaseNPC)];
+	int m_n5cf0;
+	char m_pad5cf4[0x5d34 - 0x5cf4];
+	CAI_Navigator *m_pNavigator;
+};
+
+// TARGET: CAI_BaseNPC::vfunc435
+void CAI_BaseNPC::vfunc435(void *pSchedule)
+{
+	CAI_BaseNPC435View *p = (CAI_BaseNPC435View *)this;
+	p->m_pNavigator->vfunc4((int)pSchedule);
+	p->m_n5cf0 = 0;
+	sub_1028ae60();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027c160 size=0x65
 #include "CAI_BaseNPC.h"
 #include "CRestore.h"
