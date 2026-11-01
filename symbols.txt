@@ -2806,6 +2806,7 @@
 0x10005c6d func   ?vfunc2@CBaseNetworkable@@UAEHXZ CBaseNetworkable::vfunc2
 0x10005c72 func   ?vfunc0@CTEMuzzleFlash@@UAEPAUServerClass@@XZ CTEMuzzleFlash::vfunc0
 0x10005c7c func   ?sub_10378ec0@CNPC_VGargoyle@@QAE_NXZ CNPC_VGargoyle::sub_10378ec0
+0x10005c81 func   ?sub_1021e1e0@CUtlMemory60@@QAEPAU1@HH@Z CUtlMemory60::sub_1021e1e0
 0x10005c86 func   ?vfunc80@CWeaponRanged_Rifle_RemingtonBach@@QAEHXZ CWeaponRanged_Rifle_RemingtonBach::vfunc80
 0x10005c8b func   _npc_VGargoyle npc_VGargoyle
 0x10005c9f func   ?sub_101f6e20@CVTraitEffect_t@@QAEXPAVCVModInfo_t@@PAH@Z CVTraitEffect_t::sub_101f6e20

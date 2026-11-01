@@ -106494,6 +106494,26 @@ void UtlMem::sub_1021e180()
 void __fastcall sub_1021e1c0(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x1021e1e0 size=0x36
+extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
+
+struct CUtlMemory60 {
+	void *m_pMemory; int m_allocationCount; int m_growSize;
+	// TARGET: CUtlMemory60::sub_1021e1e0
+	CUtlMemory60 *sub_1021e1e0(int growSize, int allocationCount);
+};
+
+CUtlMemory60 *CUtlMemory60::sub_1021e1e0(int growSize, int allocationCount)
+{
+	m_pMemory = 0;
+	m_allocationCount = allocationCount;
+	m_growSize = growSize;
+	if (allocationCount)
+		m_pMemory = Plat_Alloc(allocationCount * 0x2c0);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021e230 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);
