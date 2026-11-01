@@ -73991,6 +73991,59 @@ void sub_1019bf80(CUnknown1019bf80List *pList)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019bfd0 size=0x3b
+struct Elem
+{
+    virtual void vfunc0();
+    virtual void vfunc1();
+    virtual void vfunc2();
+    virtual void vfunc3();
+    virtual void vfunc4();
+    virtual void vfunc5();
+    virtual void vfunc6();
+    virtual void vfunc7();
+    virtual void vfunc8();
+    virtual void vfunc9();
+    virtual void vfunc10();
+    virtual void vfunc11();
+    virtual void vfunc12();
+    virtual void vfunc13();
+    virtual void vfunc14();
+    virtual void vfunc15();
+    virtual void vfunc16();
+    virtual void vfunc17();
+    virtual void vfunc18();
+    virtual void vfunc19();
+    virtual void vfunc20();
+    virtual void vfunc21(int a);
+};
+
+struct Ent
+{
+    Elem *p;
+    int m_a[5];
+};
+
+struct Holder
+{
+    int count;
+    Elem *tail;
+    int m_pad[3];
+    Ent ents[1];
+};
+
+// TARGET: sub_1019bfd0
+void sub_1019bfd0(Holder *h)
+{
+    for (int i = 0; i < h->count; i++) {
+        h->ents[i].p->vfunc21(1);
+        h->ents[i].p->vfunc2();
+    }
+    if (h->tail)
+        h->tail->vfunc1();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019c6f0 size=0xdf
 struct V3 { float x, y, z; };
 
