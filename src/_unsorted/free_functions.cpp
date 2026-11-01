@@ -149075,6 +149075,23 @@ void sub_10356040()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10356430 size=0x1e
+struct CUnk10939f00 {
+	void sub_101874a0(int a, int b, int c);
+};
+
+extern CUnk10939f00 g_10939f00;
+
+// TARGET: sub_10356430
+void sub_10356430(int a, int b, int c)
+{
+	if (a)
+	{
+		g_10939f00.sub_101874a0(a, b, c);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10356550 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;

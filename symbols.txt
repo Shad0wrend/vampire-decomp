@@ -9319,6 +9319,7 @@
 0x100110fe func   ?sub_101ac2f0@CAmbientGeneric@@QAEIXZ CAmbientGeneric::sub_101ac2f0
 0x10011103 func   ?vfunc0@CSave@@UAEHXZ CSave::vfunc0
 0x1001110d func   ?vfunc5@CWorldEvents@@QAEPAV1@I@Z CWorldEvents::vfunc5
+0x10011117 func   ?sub_10356430@@YAXHHH@Z sub_10356430
 0x1001111c func   ?sub_10139ac0@@YAXHHH@Z sub_10139ac0
 0x10011121 func   ?sub_101e9f10@CUnknown101e9f10@@QAEDH@Z CUnknown101e9f10::sub_101e9f10
 0x10011135 func   ?sub_10223820@CBaseKeyframedMover@@QAEXPAUinputdata_t@@@Z CBaseKeyframedMover::sub_10223820
