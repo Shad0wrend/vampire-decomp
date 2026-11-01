@@ -10456,6 +10456,7 @@
 0x10012b75 func   ?vfunc171@CBaseEntity@@QAEXXZ CBaseEntity::vfunc171
 0x10012b7f func   ?sub_102cdb70@CAI_GoalEntity@@QAEXH@Z CAI_GoalEntity::sub_102cdb70
 0x10012b84 func   ?sub_1013b0d0@@YAXABUQ@@PAM@Z sub_1013b0d0
+0x10012b89 func   ?sub_103dc1d0@CUtlMemory12@@QAEPAU1@HH@Z CUtlMemory12::sub_103dc1d0
 0x10012b8e func   ?sub_10227bb0@CUnknown10227bb0@@QAEPAXXZ CUnknown10227bb0::sub_10227bb0
 0x10012b93 func   ?vfunc35@CTriggerBombSite@@QAEHPAVCBasePlayer@@@Z CTriggerBombSite::vfunc35
 0x10012b9d func   ?sub_10248a50@CUnknown10248a50@@QAEXH@Z CUnknown10248a50::sub_10248a50
