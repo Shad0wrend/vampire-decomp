@@ -4038,6 +4038,7 @@
 0x10007dab func   ?sub_102bf310@CUnkTroika102bf310@@QAEXH@Z CUnkTroika102bf310::sub_102bf310
 0x10007dba func   ?sub_10218710@CBaseTerminal@@QAEHH@Z CBaseTerminal::sub_10218710
 0x10007dbf func   ?vfunc26@CMultiplayRules@@UAE_NHHHH@Z CMultiplayRules::vfunc26
+0x10007dc4 func   ?sub_101b4ad0@@YGPBDH@Z sub_101b4ad0
 0x10007dc9 func   ?sub_103e56e0@@YAHXZ sub_103e56e0
 0x10007dce func   ?vfunc553@CAI_BaseNPC@@UAEHMM@Z CAI_BaseNPC::vfunc553
 0x10007dd3 func   ?sub_100f9940@@YIXPAUMem4@@HH@Z sub_100f9940

@@ -76947,6 +76947,24 @@ const char * __stdcall sub_101b4a80(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b4ad0 size=0x3b
+struct NameEntry { int m_key; const char *m_pName; };
+extern NameEntry g_10598c78[7];
+extern char g_1072c018[];
+extern int (__cdecl *g_109f388c)(char *, int, const char *, ...);
+const char * __stdcall sub_101b4ad0(int key)
+{
+	NameEntry *p = g_10598c78;
+	do {
+		if (p->m_key == key)
+			return p->m_pName;
+		p++;
+	} while ((int)p < (int)(g_10598c78 + 7));
+	g_109f388c(g_1072c018, 32, "%i", key);
+	return g_1072c018;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b4c00 size=0x10
 namespace lifted {
 int sub_101b24d0(int);
