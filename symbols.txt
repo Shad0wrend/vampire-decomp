@@ -1244,6 +1244,7 @@
 0x100031b6 func   ?sub_1033ca60@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_1033ca60
 0x100031bb func   ?vfunc365@CNPC_VNewscaster@@UAE_NH@Z CNPC_VNewscaster::vfunc365
 0x100031c0 func   ?vfunc82@CItemContainerLock@@QAEHXZ CItemContainerLock::vfunc82
+0x100031c0 func   ?vfunc82@CPropDoorknob@@UAEPAUdatamap_t@@XZ CPropDoorknob::vfunc82
 0x100031ca func   _trigger_hurt trigger_hurt
 0x100031cf func   ?sub_101ed0f0@CUnk101ed0f0@@QAE_NHH@Z CUnk101ed0f0::sub_101ed0f0
 0x100031d9 func   ?vfunc489@CGenericSabbat_NPC@@UAEXXZ CGenericSabbat_NPC::vfunc489
