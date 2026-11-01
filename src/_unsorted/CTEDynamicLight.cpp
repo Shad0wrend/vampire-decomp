@@ -41,6 +41,17 @@ void CTEDynamicLight::vfunc3(const Vector &origin, const QAngle &angles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10060d60 size=0x39
+#include "CTEDynamicLight.h"
+#include "CTEMetalSparks.h"
+#include "IVEngineServerFull.h"
+
+void CTEDynamicLight::vfunc4(CRecipientFilter &filter, float delay)
+{
+	engine->vfunc103((int)&filter, *(int *)&delay, this, ((CTEMetalSparks *)this)->vfunc0()->m_pTable, ((CTEMetalSparks *)this)->vfunc0()->m_ClassID);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10060e20 size=0x6
 #include "CTEDynamicLight.h"
 namespace lifted {
