@@ -25,6 +25,7 @@ public:
 	char pad_924[0x92c - 0x924];
 	int m_n92c;
 	char m_bFinished930;
+	char m_b931;
 	CWeaponThrown_Grenade_Frag *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_10013a57();	// as in CPhysForce (transplant)
 	void vfunc373(int unused);	// slot 373 (plain member, takes one stack argument that is not used): arms the think function sub_103ee6f0 (ThinkSet, stub 0x10007fe5) with no context, stamps the time at +0x91c and schedules the next think 0.01 seconds ahead
