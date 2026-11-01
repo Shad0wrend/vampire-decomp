@@ -124544,6 +124544,30 @@ void sub_102bf050()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102bf310 size=0x1e
+#define P10(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
+
+// Local view of the vtable: slot 345 is the virtual call; the other slots are placeholders.
+struct CUnkTroika102bf310 {
+	P10(p0) P10(p1) P10(p2) P10(p3) P10(p4) P10(p5) P10(p6) P10(p7) P10(p8) P10(p9)
+	P10(p10) P10(p11) P10(p12) P10(p13) P10(p14) P10(p15) P10(p16) P10(p17) P10(p18) P10(p19)
+	P10(p20) P10(p21) P10(p22) P10(p23) P10(p24) P10(p25) P10(p26) P10(p27) P10(p28) P10(p29)
+	P10(p30) P10(p31) P10(p32) P10(p33)
+	virtual void p340(); virtual void p341(); virtual void p342(); virtual void p343(); virtual void p344();
+	virtual float vfunc345(const char *pszName, float flValue, int nFlags);
+	char m_pad0004[0x63ec - 4];
+	float m_63ec;
+	void sub_102bf310(int a);
+};
+
+// TARGET: CUnkTroika102bf310::sub_102bf310
+void CUnkTroika102bf310::sub_102bf310(int a)
+{
+	float f = m_63ec;
+	vfunc345("move_yaw", f, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102bf560 size=0x4f
 struct CHandleSrc { virtual void vfunc0(); virtual unsigned int *vfunc1(); };
 CHandleSrc * __stdcall sub_102707d0(CBaseEntity *);

@@ -3940,6 +3940,7 @@
 0x10007d88 func   ?vfunc103@CPushable@@QAEXXZ CPushable::vfunc103
 0x10007d97 func   ?vfunc124@CBaseAnimating@@UAEHXZ CBaseAnimating::vfunc124
 0x10007da6 func   ?sub_10040220@CBaseEntity@@QAEXXZ CBaseEntity::sub_10040220
+0x10007dab func   ?sub_102bf310@CUnkTroika102bf310@@QAEXH@Z CUnkTroika102bf310::sub_102bf310
 0x10007dba func   ?sub_10218710@CBaseTerminal@@QAEHH@Z CBaseTerminal::sub_10218710
 0x10007dbf func   ?vfunc26@CMultiplayRules@@UAE_NHHHH@Z CMultiplayRules::vfunc26
 0x10007dc9 func   ?sub_103e56e0@@YAHXZ sub_103e56e0
