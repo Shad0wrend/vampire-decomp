@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_1067d498;
 }
-CWeaponThrown_Chang_Ghost::Datamap82 CWeaponThrown_Chang_Ghost::vfunc82()
+datamap_t *CWeaponThrown_Chang_Ghost::vfunc82()
 {
-    return (CWeaponThrown_Chang_Ghost::Datamap82)&lifted::g_1067d498;
+    return (datamap_t *)&lifted::g_1067d498;
 }
 // END FUNCTION
 
