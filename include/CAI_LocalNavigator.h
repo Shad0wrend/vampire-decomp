@@ -32,6 +32,7 @@ struct CAI_LocalNavigatorStopState	// the state object vfunc7 reads: only the fl
 
 struct CAI_LocalNavigatorHead : public CAI_Component	// the component part up to the proxy sink at +0x10
 {
+	CAI_LocalNavigatorHead(void *pOuter) { m_pOuter = pOuter; m_n0c = -1; }
 	int m_n08;	// 0x08
 	int m_n0c;	// 0x0c: -1 after construction
 };
