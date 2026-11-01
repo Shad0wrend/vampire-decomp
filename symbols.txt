@@ -4614,6 +4614,7 @@
 0x10008eef func   ?sub_100bac20@@YAHXZ sub_100bac20
 0x10008ef4 func   ?vfunc174@CBaseTrigger@@QAEXPAVCBaseEntity@@@Z CBaseTrigger::vfunc174
 0x10008f03 func   ?sub_102223f0@CExperienceTable@@QAEXXZ CExperienceTable::sub_102223f0
+0x10008f08 func   ?sub_103e16e0@@YAMXZ sub_103e16e0
 0x10008f12 func   ?sub_101ffb90@CVStatInfoList_t@@QAEHPBD@Z CVStatInfoList_t::sub_101ffb90
 0x10008f1c func   ?sub_101ffaa0@CVStatInfoList_t@@QAEHPBD@Z CVStatInfoList_t::sub_101ffaa0
 0x10008f21 func   ?vfunc103@CRopeKeyframe@@UAEXXZ CRopeKeyframe::vfunc103
