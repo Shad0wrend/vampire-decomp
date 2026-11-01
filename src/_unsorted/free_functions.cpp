@@ -60403,6 +60403,31 @@ char CAnimRangeView::sub_10160dc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10160e30 size=0x1e
+// TARGET: sub_10160e30
+struct CUnk10160e30Obj
+{
+    char pad[0x2f0];
+    float m_2f0;
+};
+CUnk10160e30Obj *__stdcall sub_1008d990(int a);
+struct CUnk10160e30
+{
+    char pad[0x6f0];
+    int m_6f0;
+    float sub_10160e30();
+};
+float CUnk10160e30::sub_10160e30()
+{
+    CUnk10160e30Obj *p = sub_1008d990(m_6f0);
+    if (p)
+    {
+        return p->m_2f0;
+    }
+    return 3.4028235e38f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160e90 size=0x18
 struct CUnk10160e90 {
     char pad[0xff0];

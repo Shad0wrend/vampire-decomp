@@ -8672,6 +8672,7 @@
 0x1000ff7e func   _item_p_research_mg_security item_p_research_mg_security
 0x1000ff83 func   ?vfunc619@CNPCMaker_Fleshpile@@UAEXH@Z CNPCMaker_Fleshpile::vfunc619
 0x1000ff8d func   ?vfunc295@CNPC_VRat@@QAE_NH@Z CNPC_VRat::vfunc295
+0x1000ff92 func   ?sub_10160e30@CUnk10160e30@@QAEMXZ CUnk10160e30::sub_10160e30
 0x1000ff97 func   ?sub_103346c0@CBaseCombatCharacter@@QAEHH@Z CBaseCombatCharacter::sub_103346c0
 0x1000ff9c func   ?vfunc82@CFilterFeat@@QAEHXZ CFilterFeat::vfunc82
 0x1000ffab func   ?vfunc5@CPointTeleport@@QAEPAV1@I@Z CPointTeleport::vfunc5
