@@ -25,9 +25,9 @@ int CPlayerResource::vfunc81()
 namespace lifted {
 extern char g_105896c0;
 }
-int CPlayerResource::vfunc82()
+CPlayerResource::Datamap82 CPlayerResource::vfunc82()
 {
-    return (int)&lifted::g_105896c0;
+    return (CPlayerResource::Datamap82)&lifted::g_105896c0;
 }
 // END FUNCTION
 
