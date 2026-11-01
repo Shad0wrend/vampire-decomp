@@ -44,6 +44,17 @@ void CTEKillPlayerAttachments::vfunc3(const float *pos, const float *ang)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10065ac0 size=0x39
+#include "CTEKillPlayerAttachments.h"
+#include "CTEMetalSparks.h"
+#include "IVEngineServerFull.h"
+
+void CTEKillPlayerAttachments::vfunc4(void *pFilter, int delay)
+{
+	engine->vfunc103((int)pFilter, delay, this, ((CTEMetalSparks *)this)->vfunc0()->m_pTable, ((CTEMetalSparks *)this)->vfunc0()->m_ClassID);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10065b80 size=0x6
 #include "CTEKillPlayerAttachments.h"
 namespace lifted {
