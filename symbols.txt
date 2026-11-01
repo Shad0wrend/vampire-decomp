@@ -11962,6 +11962,7 @@
 0x10014c9f func   ?sub_10143920@@YAXMMPBDHHHHM@Z sub_10143920
 0x10014ca9 func   ?sub_1013d900@@YA_NHHHPAH@Z sub_1013d900
 0x10014cae func   ?sub_10138600@@YAXPBUCBlock48_10138600@@PAU1@@Z sub_10138600
+0x10014cb3 func   ?sub_102e23a0@CAI_Motor@@QAEHPAUCAI_MoveRequest@@M@Z CAI_Motor::sub_102e23a0
 0x10014cc2 func   ?sub_10316fa0@@YAHH@Z sub_10316fa0
 0x10014ccc func   ?sub_101ff3e0@CVStatInfoList_t@@QAEXXZ CVStatInfoList_t::sub_101ff3e0
 0x10014cd1 func   ?sub_10299ce0@@YAHPAUCObj10299ce0@@@Z sub_10299ce0

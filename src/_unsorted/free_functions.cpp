@@ -138442,6 +138442,87 @@ void CAI_Motor::sub_102e20b0(const float *pPosition, float flWeight)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e23a0 size=0x177
+#include "CAI_Motor.h"
+#include "CVProfile.h"
+#include <string.h>
+
+struct CAI_MoveRequest { char m_pad[0x30]; int m_nSpecial30; };
+__declspec(dllimport) void vtune(bool bEnable);
+extern int g_1060e654[];
+
+struct CMoveSinkView {
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5(); virtual void a6();
+	virtual void vfunc7(CAI_MoveRequest *pMove, void *pBuf, int nResult, int *pValue);
+};
+
+struct CCycleSampleView
+{
+	unsigned __int64 m_Int64;
+	void Sample()
+	{
+		__asm {
+			mov ecx, this
+			rdtsc
+			mov dword ptr [ecx], eax
+			mov dword ptr [ecx + 4], edx
+		}
+	}
+	void End()
+	{
+		CCycleSampleView now;
+		now.m_Int64 = 0;
+		now.Sample();
+		m_Int64 = now.m_Int64 - m_Int64;
+	}
+};
+
+inline void ProfPopGroup(CVProfile *p)
+{
+	p->m_nGroupStackDepth--;
+	int d = p->m_nGroupStackDepth;
+	int cur = p->m_GroupIDStack[d + 1];
+	if (p->m_GroupIDStack[d] != cur && p->m_bVTuneGroupsEnabled && cur == p->m_nVTuneGroupID)
+		vtune(false);
+}
+
+inline bool ProfNodeExit(CVProfNode *n)
+{
+	if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0) {
+		((CCycleSampleView *)&n->m_CurFrameTime)->End();
+		n->m_TotalTime += n->m_CurFrameTime.m_Int64;
+		ProfPopGroup(g_109f3648);
+	}
+	return n->m_nRecursions == 0;
+}
+
+int CAI_Motor::sub_102e23a0(CAI_MoveRequest *pMove, float flInterval)
+{
+	g_109f3648->EnterScope("CAI_Motor_MoveNormalExecute", 0, "Unaccounted", false);
+	int buf[14];
+	memset(buf, 0, sizeof(buf));
+	int nResult;
+	if (pMove->m_nSpecial30 == 0)
+		nResult = vfunc19((int)pMove, (int)buf, *(int *)&flInterval);
+	else
+		nResult = vfunc20((int)pMove, (int)buf, *(int *)&flInterval);
+	int value = g_1060e654[nResult];
+	if (value) {
+		((CMoveSinkView *)&m_pSinkVtbl)->vfunc7(pMove, buf, nResult, &value);
+		m_30 = 0;
+	}
+	int ret = value;
+	CVProfile *p = g_109f3648;
+	if (!p->m_bAtRoot || p->m_enabled) {
+		CVProfNode *n = p->m_pCurNode;
+		if (ProfNodeExit(n))
+			p->m_pCurNode = p->m_pCurNode->m_pParent;
+		p->m_bAtRoot = (p->m_pCurNode == p->m_pRoot);
+	}
+	return ret;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e2610 size=0xa
 int CAI_Motor::sub_102e2610()
 {
