@@ -73363,6 +73363,19 @@ bool CUnknown101afba0::sub_101afdc0(CKeyValuesX *pKeys)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b0670 size=0x1c
+struct CUnk101b0670 { int sub_101b4740(int a); };
+extern CUnk101b0670 g_1072be18;
+extern void (*g_109f3630)(const char *, ...);
+
+// TARGET: sub_101b0670
+void sub_101b0670()
+{
+	int n = g_1072be18.sub_101b4740(1);
+	g_109f3630("---------------------------\nTotal missing files %i\n", n);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b0ab0 size=0xdc
 #include <string.h>
 #include "CSoundEmitterSystemBase.h"
