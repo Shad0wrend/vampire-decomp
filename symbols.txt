@@ -4853,6 +4853,7 @@
 0x10009089 func   ?sub_102cc590@@YIXPADHM@Z sub_102cc590
 0x1000908e func   ?ShiftElementsLeft@?$CUtlVector@HV?$CUtlMemory@H@@@@QAEXHH@Z CUtlVector<int,CUtlMemory<int> >::ShiftElementsLeft
 0x10009093 func   ?sub_10065930@@YAXPAVCRecipientFilter@@MPBH@Z sub_10065930
+0x10009098 func   ?sub_10177ba0@CBasePlayer@@QAEXXZ CBasePlayer::sub_10177ba0
 0x1000909d func   ?sub_101d6400@CPtrList101d6400@@QAEXXZ CPtrList101d6400::sub_101d6400
 0x100090a2 func   ?Grow@?$CUtlMemory@UWWEntry@@@@QAEXH@Z CUtlMemory<WWEntry>::Grow
 0x100090a2 func   ?sub_103dc490@S103dc490@@QAEXH@Z S103dc490::sub_103dc490

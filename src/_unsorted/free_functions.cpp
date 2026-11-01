@@ -65900,6 +65900,20 @@ void CBasePlayerUnit177b50::sub_10177b50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10177ba0 size=0x31
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+void CBasePlayer::sub_10177ba0()
+{
+	if (m_n2304) {
+		((CBaseEntity *)this)->sub_100b3640(0x4020);
+		((CEntityVSlots *)this)->slot93(3, 0);
+		m_n2304 = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101780e0 size=0x27
 // TARGET: CUnknown101780e0::sub_101780e0
 #include "CUnknown101780e0.h"
