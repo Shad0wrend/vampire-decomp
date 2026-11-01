@@ -30,6 +30,8 @@ public:
 	void sub_102beb50(UtlVec8Elem elem);	// "CUtlVector::AddToTail" (InsertBefore at the size, inlined): appends a copy of elem
 	int sub_102c6780(const UtlVec8Elem *src);	// "CUtlVector::AddToTail" taking a pointer (InsertBefore at the size, inlined): appends *src, returns its index
 	void sub_102f9000(int elem);	// "CUtlVector::FastRemove": when the vector is not empty, copies the last element over elem and shrinks the size by one
+	UtlVec8 *sub_102c66f0(int growSize, int allocationCount);	// the whole constructor (stub 0x1000f907), called out of line by the schedule registration functions
+	void sub_102c8a90();	// the whole destructor of such a vector (stub 0x10009516)
 	void GrowVector(int num);
 	void sub_101b6a50(int num);	// same shape as GrowVector (initial allocation 4)
 	void sub_1027fae0(int num);	// same shape as GrowVector (initial allocation 4)
