@@ -117919,6 +117919,18 @@ char *CBaseCombatWeapon::sub_10252120(int a, int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102521f0 size=0x38
+#include "ehandle.h"
+#include "CBaseCombatWeapon.h"
+
+// TARGET: CBaseCombatWeapon::sub_102521f0
+void *CBaseCombatWeapon::sub_102521f0()
+{
+	CBaseEntity *pOwner = ((EHANDLE *)&m_hOwner)->Get();
+	return pOwner == 0 ? 0 : *(void **)((char *)pOwner + 0x9c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10252240 size=0x38
 #include "CAI_BaseNPCTroika.h"
 
