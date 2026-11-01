@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10565940;
 }
-CGibShooter::Datamap82 CGibShooter::vfunc82()
+datamap_t *CGibShooter::vfunc82()
 {
-    return (CGibShooter::Datamap82)&lifted::g_10565940;
+    return (datamap_t *)&lifted::g_10565940;
 }
 // END FUNCTION
 
