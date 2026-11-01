@@ -5,9 +5,9 @@
 namespace lifted {
 extern char g_10589ad0;
 }
-int CSkyCamera::vfunc82()
+CSkyCamera::Datamap82 CSkyCamera::vfunc82()
 {
-    return (int)&lifted::g_10589ad0;
+    return (CSkyCamera::Datamap82)&lifted::g_10589ad0;
 }
 // END FUNCTION
 
