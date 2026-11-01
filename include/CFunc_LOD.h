@@ -18,7 +18,8 @@ public:
 public:
 	virtual int vfunc81();
 	virtual int vfunc80();
-	virtual int vfunc82();	// slot 111 for now: the stub base's slot 82 is CLogicRelay's datamap_t * one
+	typedef int Datamap82;	// staged: becomes datamap_t *
+	virtual Datamap82 vfunc82();	// slot 82 GetDataDescMap (0x10114990)
 	virtual void vfunc112();
 	virtual void vfunc113();
 	virtual void vfunc114();
