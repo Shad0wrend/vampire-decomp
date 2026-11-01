@@ -1,6 +1,25 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1011bf80 size=0x20
+#include "vampire.h"
+extern char g_104627e0;
+void sub_10430964(void *p);
+struct CUnk1011bf80
+{
+    void *sub_1011bf80(unsigned char bFree);
+};
+// TARGET: CUnk1011bf80::sub_1011bf80
+void *CUnk1011bf80::sub_1011bf80(unsigned char bFree)
+{
+    *(void **)this = &g_104627e0;
+    if (bFree & 1) {
+        sub_10430964(this);
+    }
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011c020 size=0xb
 #include "CServerGameClients.h"
 #define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
