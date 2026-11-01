@@ -8,7 +8,8 @@ class CFilterMass : public CBaseFilter
 public:
 	CFilterMass() {}
 	CFilterMass *vfunc5(unsigned int flags);
-	bool vfunc241(void *pEntity);	// passes when the physics object (+0x36c) of pEntity is heavier than m_flMass; warns when it has none
+	typedef void *Arg241;	// staged: becomes CBaseEntity *
+	bool vfunc241(Arg241 pEntity);	// passes when the physics object (+0x36c) of pEntity is heavier than m_flMass; warns when it has none
 
 	float m_flMass;	// 0x484
 public:
