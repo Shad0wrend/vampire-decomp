@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10559828;
 }
-CBaseLandmark::Datamap82 CBaseLandmark::vfunc82()
+datamap_t *CBaseLandmark::vfunc82()
 {
-    return (CBaseLandmark::Datamap82)&lifted::g_10559828;
+    return (datamap_t *)&lifted::g_10559828;
 }
 // END FUNCTION
 
