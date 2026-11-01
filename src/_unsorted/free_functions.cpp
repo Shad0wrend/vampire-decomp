@@ -128043,6 +128043,25 @@ void CAI_BaseNPCTroika::sub_102c0360()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c0aa0 size=0x89
+#include "CEHandleGet.h"
+#include "CAI_BaseNPCTroika.h"
+#include "globalvars.h"
+struct SceneView498 { char pad[0x498]; char b; };
+
+char CAI_BaseNPCTroika::sub_102c0aa0()
+{
+	if (EHandle_Get(m_h6554) != 0) {
+		SceneView498 *p = (SceneView498 *)EHandle_Get(m_h6554);
+		if (p->b)
+			return 1;
+	}
+	if (m_f64cc > gpGlobals->curtime)
+		return 1;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c0bb0 size=0xb8
 #include "CAI_BaseNPCTroika.h"
 

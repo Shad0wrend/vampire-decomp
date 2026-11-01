@@ -8987,6 +8987,7 @@
 0x1001018b func   ?sub_103324a0@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_103324a0
 0x10010190 func   ?sub_101d0b70@@YAXPAUCEnt@@0H@Z sub_101d0b70
 0x10010195 func   ?vfunc338@CBaseCombatWeapon@@UAEXHH@Z CBaseCombatWeapon::vfunc338
+0x1001019a func   ?sub_102c0aa0@CAI_BaseNPCTroika@@QAEDXZ CAI_BaseNPCTroika::sub_102c0aa0
 0x1001019f func   ?vfunc5@CGameSign@@QAEPAV1@I@Z CGameSign::vfunc5
 0x100101a9 func   ?sub_102a9ec0@CAI_BaseNPCTroika@@QAEDH@Z CAI_BaseNPCTroika::sub_102a9ec0
 0x100101bd func   ?vfunc5@CBaseToggle@@QAEPAV1@I@Z CBaseToggle::vfunc5
