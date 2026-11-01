@@ -14,8 +14,8 @@ public:
 	virtual float vfunc38(int a);
 	virtual int vfunc43(int a, int b);
 	virtual int vfunc48(int index);
-	virtual float vfunc49(Arg4950 a);
-	virtual float vfunc50(Arg4950 a);
+	virtual float vfunc49(CBaseEntity *pWeapon);
+	virtual float vfunc50(CBaseEntity *pWeapon);
 	virtual int vfunc61(int index);
 	virtual int vfunc62(int index);
 	virtual const char *vfunc63(int index);
