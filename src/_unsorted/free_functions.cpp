@@ -110873,6 +110873,18 @@ void S10222ec0::sub_10222ec0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10222f50 size=0x5c
+#include "CMoverKeyFrame.h"
+
+// TARGET: mover_keyframe
+extern "C" CBaseEntity *mover_keyframe()
+{
+	CMoverKeyFrame *p = new CMoverKeyFrame;
+	p->vfunc106("mover_keyframe");
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10223030 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
