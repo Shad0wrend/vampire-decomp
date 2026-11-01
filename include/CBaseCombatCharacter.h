@@ -208,7 +208,22 @@ public:
 	int m_nHeadTime108c;	// 0x108c: the engine time stamp (engine slot 120) of the last head matrix update
 	Vector m_vecHeadPos1090;	// 0x1090: the head bone position (CalcLookData)
 	Vector m_vecHeadDir109c;	// 0x109c: the head direction (CalcLookData)
-	char m_pad10a8[0x10d4 - 0x10a8];
+	char m_pad10a8[0x10bc - 0x10a8];
+	struct CExpressionRecord	// 0x20 bytes, appended by sub_102c1a80 (scene expression event start), faded out by sub_101063a0
+	{
+		int m_iExpression;	// 0x00: the expression index (sub_10106a40 of the event's last parameter)
+		float m_flStart;	// 0x04: curtime when it started
+		float m_flFadeTime;	// 0x08: curtime + event.sub_10075f10() - event.sub_10075e70()
+		char m_pad0c[0x18 - 0x0c];
+		void *m_pScene18;	// 0x18: the first argument of sub_102c1a80
+		void *m_pEvent1c;	// 0x1c: the scene event (second argument)
+	};
+	CExpressionRecord *m_pExpressions10bc;	// 0x10bc: a CUtlVector<CExpressionRecord> (cast the address of this member: memory +0x10bc, alloc count +0x10c0, grow size +0x10c4, size +0x10c8, element pointer +0x10cc); no inline ctor / dtor here on purpose (the base constructors are out of line)
+	int m_nExpressionAlloc10c0;
+	int m_nExpressionGrow10c4;
+	int m_nExpressionCount10c8;
+	CExpressionRecord *m_pExpressionElems10cc;
+	char m_pad10d0[0x10d4 - 0x10d0];
 	char m_b10d4;	// camera target flag
 	char m_pad10d5[0x13a0 - 0x10d5];
 	int m_field13a0;
