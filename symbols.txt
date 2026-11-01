@@ -9655,6 +9655,7 @@
 0x10011621 func   ?sub_1013d450@@YAMMMM@Z sub_1013d450
 0x10011630 func   ?sub_10130170@@YADHPAPBDPAH1@Z sub_10130170
 0x10011635 func   ?sub_1042ea40@@YAPAVCSprite@@PBDABVVector@@_N@Z sub_1042ea40
+0x1001163a func   ?sub_100b4740@CUtlMemory12@@QAEPAU1@HH@Z CUtlMemory12::sub_100b4740
 0x10011644 func   ?sub_10265a40@@YIXPAVCBaseEntity@@@Z sub_10265a40
 0x10011649 func   ?sub_101e8bd0@CUnknown101e8bd0@@QAEMXZ CUnknown101e8bd0::sub_101e8bd0
 0x1001164e func   ?sub_1032e9f0@CBaseCombatCharacter@@QAEXHPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_1032e9f0

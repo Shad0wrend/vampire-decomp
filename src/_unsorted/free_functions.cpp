@@ -30432,6 +30432,21 @@ int CUnknown100b4710::sub_100b4710()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b4740 size=0x33
+#include "CUtlMemory12.h"
+extern void *(*g_109f3634)(int);
+
+CUtlMemory12 *CUtlMemory12::sub_100b4740(int growSize, int allocationCount)
+{
+    m_pMemory = 0;
+    m_allocationCount = allocationCount;
+    m_growSize = growSize;
+    if (allocationCount)
+        m_pMemory = (char *)g_109f3634(allocationCount * 12);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b47e0 size=0x8
 void __fastcall sub_100b47e0(int *p) { p[3] = 0; }
 // END FUNCTION
