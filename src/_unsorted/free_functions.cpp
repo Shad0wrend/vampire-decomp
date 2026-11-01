@@ -77574,6 +77574,25 @@ void CUnk101c2600::sub_101c2600(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2630 size=0x1e
+struct CUnk101c2630
+{
+    char pad[0x1b1];
+    unsigned char m_1b1;
+    char pad2[0x468 - 0x1b2];
+    int m_468;
+    void sub_101c2630(int a);
+};
+void CUnk101c2630::sub_101c2630(int a)
+{
+    if (m_468 != 0)
+    {
+        m_468 = 0;
+        m_1b1 = 1;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2690 size=0x22
 // TARGET: CUnknown101c2770::sub_101c2690
 #include "CUnknown101c2770.h"
