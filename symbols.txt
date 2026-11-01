@@ -3284,6 +3284,7 @@
 0x10006942 func   ?vfunc5@CNPC_VBaseBoss@@QAEPAV1@I@Z CNPC_VBaseBoss::vfunc5
 0x10006947 func   ?sub_101df260@S101df260@@QAEPAU1@H@Z S101df260::sub_101df260
 0x1000694c func   ?sub_103be0b0@CNPC_VTzimisce@@QAEXD@Z CNPC_VTzimisce::sub_103be0b0
+0x10006951 func   ?vfunc130@CWeaponPhysCannon@@UAEXPAX@Z CWeaponPhysCannon::vfunc130
 0x10006956 func   ?vfunc20@CSingleplayRules@@UAEPAVCBaseEntity@@PAV2@0@Z CSingleplayRules::vfunc20
 0x10006960 func   ?sub_10138a90@@YAXABVVector@@AAV1@1@Z sub_10138a90
 0x10006965 func   ?vfunc2@CTEBeamLaser@@UAEPAV1@I@Z CTEBeamLaser::vfunc2
