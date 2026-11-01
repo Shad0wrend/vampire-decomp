@@ -25215,6 +25215,21 @@ void CUnk10099360::sub_10099360(int index, float flValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10099390 size=0x1d
+struct CUnk10099390
+{
+	void sub_10099390(int index, float flValue);
+};
+
+// TARGET: CUnk10099390::sub_10099390
+void CUnk10099390::sub_10099390(int index, float flValue)
+{
+	if (index != -1) {
+		*(float *)((char *)this + index * 0x30 + 0x754) = flValue;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100993c0 size=0x23
 // TARGET: sub_100993c0
 char __fastcall sub_100993c0(void *pSelf, int unused, int index)
