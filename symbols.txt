@@ -5372,6 +5372,7 @@
 0x1000a04c func   ?vfunc81@CWeaponMelee_MingXiaoTentacle@@UAEHXZ CWeaponMelee_MingXiaoTentacle::vfunc81
 0x1000a056 func   ?sub_103f8e30@@YAHXZ sub_103f8e30
 0x1000a060 func   ?sub_102906c0@CUnknown102906c0@@QAEHXZ CUnknown102906c0::sub_102906c0
+0x1000a065 func   ?vfunc126@CVampireProjectile@@UAEHH@Z CVampireProjectile::vfunc126
 0x1000a074 func   _player_manager player_manager
 0x1000a079 func   ?sub_10279cc0@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_10279cc0
 0x1000a083 func   ?vfunc363@CWeaponMelee_Baton@@QAEHXZ CWeaponMelee_Baton::vfunc363
