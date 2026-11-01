@@ -115070,6 +115070,44 @@ int sub_1023bd00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023bd20 size=0x253
+void sub_101d0f10(const char *dir, const char *ext, int a, int b);
+
+void sub_1023bd20()
+{
+	sub_101d0f10("sound/Surfaces", ".wav", 0, 0);
+	sub_101d0f10("sound/Surfaces/bottle", ".wav", 0, 0);
+	sub_101d0f10("sound/Surfaces/can_pop", ".wav", 0, 0);
+	sub_101d0f10("sound/Surfaces/can_pop_crushed", ".wav", 0, 0);
+	sub_101d0f10("sound/Surfaces/Cardboard", ".wav", 0, 0);
+	sub_101d0f10("sound/Surfaces/Carpet", ".wav", 0, 0);
+	sub_101d0f10("sound/Surfaces/Ceramic", ".wav", 0, 0);
+	sub_101d0f10("sound/Surfaces/Concrete", ".wav", 0, 0);
+	sub_101d0f10("sound/Surfaces/Dirt", ".wav", 0, 0);
+	sub_101d0f10("sound/Surfaces/Flesh", ".wav", 0, 0);
+	sub_101d0f10("sound/Surfaces/Grass", ".wav", 0, 0);
+	sub_101d0f10("sound/Surfaces/Gravel", ".wav", 0, 0);
+	sub_101d0f10("sound/Surfaces/Kitchen_Pan", ".wav", 0, 0);
+	sub_101d0f10("sound/Surfaces/Kitchen_Pot", ".wav", 0, 0);
+	sub_101d0f10("sound/Surfaces/Kitchen_Utensils", ".wav", 0, 0);
+	sub_101d0f10("sound/Surfaces/Ladder", ".wav", 0, 0);
+	sub_101d0f10("sound/Surfaces/Metal", ".wav", 0, 0);
+	sub_101d0f10("sound/Surfaces/MetalGrate", ".wav", 0, 0);
+	sub_101d0f10("sound/Surfaces/MetalVent", ".wav", 0, 0);
+	sub_101d0f10("sound/Surfaces/Metal_Barrel", ".wav", 0, 0);
+	sub_101d0f10("sound/Surfaces/Mud", ".wav", 0, 0);
+	sub_101d0f10("sound/Surfaces/Paper", ".wav", 0, 0);
+	sub_101d0f10("sound/Surfaces/Plater", ".wav", 0, 0);
+	sub_101d0f10("sound/Surfaces/Rivet", ".wav", 0, 0);
+	sub_101d0f10("sound/Surfaces/Sand", ".wav", 0, 0);
+	sub_101d0f10("sound/Surfaces/Tile", ".wav", 0, 0);
+	sub_101d0f10("sound/Surfaces/Tin", ".wav", 0, 0);
+	sub_101d0f10("sound/Surfaces/Wade", ".wav", 0, 0);
+	sub_101d0f10("sound/Surfaces/Water", ".wav", 0, 0);
+	sub_101d0f10("sound/Surfaces/Wood", ".wav", 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023c430 size=0xe
 // TARGET: sub_1023c430
 float sub_1023c430()

@@ -2349,6 +2349,7 @@
 0x10004e99 func   ?sub_10428e60@@YAIPAD@Z sub_10428e60
 0x10004e9e func   ?sub_1022d260@CUnknown1022d260@@QAEXH@Z CUnknown1022d260::sub_1022d260
 0x10004ea8 func   ?sub_100f3dd0@CRotDoor@@QAEXPBM@Z CRotDoor::sub_100f3dd0
+0x10004ead func   ?sub_1023bd20@@YAXXZ sub_1023bd20
 0x10004ebc func   ?sub_10123c70@CGameMovementUnit@@QAEXXZ CGameMovementUnit::sub_10123c70
 0x10004ec1 func   ?sub_1008dd30@CBaseAnimating@@QAEHHH@Z CBaseAnimating::sub_1008dd30
 0x10004ec6 func   ?vfunc69@CNPC_VWerewolf@@QAEDPAX@Z CNPC_VWerewolf::vfunc69
