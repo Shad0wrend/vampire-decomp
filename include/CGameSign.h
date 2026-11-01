@@ -33,4 +33,7 @@ public:
 public:
     virtual bool vfunc44(int);
     virtual float vfunc37();
+public:
+	virtual void vfunc103();	// slot 103: 0x101c0820 in the game's CGameSign vtable (link audit, CGameSign)
+	virtual int vfunc117();	// slot 117: 0x100b4340 in the game's CGameSign vtable (link audit, CGameSign)
 };
