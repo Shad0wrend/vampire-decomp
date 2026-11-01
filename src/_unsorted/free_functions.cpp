@@ -122076,6 +122076,24 @@ void CAI_BaseNPC::sub_102801e0(int a, CBaseEntity *pEnt, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10280a20 size=0x20
+#include "globalvars.h"
+
+// TARGET: CUnk10280a20::sub_10280a20
+struct CUnk10280a20
+{
+    char pad[0x5cf0];
+    float m_5cf0;
+    int sub_10280a20();
+};
+int CUnk10280a20::sub_10280a20()
+{
+    if (m_5cf0 > gpGlobals->curtime)
+        return 1;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10280a50 size=0x10e
 #include "CAI_BaseNPC.h"
 #include "CAI_Motor.h"
