@@ -5,9 +5,9 @@
 namespace lifted {
 extern char g_1063949c;
 }
-CNPC_VGargoyle::Datamap82 CNPC_VGargoyle::vfunc82()
+datamap_t *CNPC_VGargoyle::vfunc82()
 {
-    return (CNPC_VGargoyle::Datamap82)&lifted::g_1063949c;
+    return (datamap_t *)&lifted::g_1063949c;
 }
 // END FUNCTION
 
