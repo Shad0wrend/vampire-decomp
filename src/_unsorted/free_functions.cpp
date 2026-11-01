@@ -157527,6 +157527,31 @@ extern "C" CBaseEntity *npc_VSabbatGunman()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a5060 size=0x27
+struct CGenericBaseCtorCall_103a5060
+{
+	void sub_10386aa0();
+};
+
+struct CGenericMemberCtorCall_103a5060
+{
+	void sub_10003053();
+};
+
+extern void *vt_104c311c[];
+extern void *vt_104c30ec[];
+
+// TARGET: sub_103a5060
+void *__fastcall sub_103a5060(char *self)
+{
+	((CGenericBaseCtorCall_103a5060 *)self)->sub_10386aa0();
+	((CGenericMemberCtorCall_103a5060 *)(self + 0x6664))->sub_10003053();
+	*(void ***)self = vt_104c311c;
+	*(void ***)(self + 0x19b0) = vt_104c30ec;
+	return self;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a5170 size=0xc
 void __fastcall sub_103a5190(void *pThis);
 
