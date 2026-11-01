@@ -4132,6 +4132,7 @@
 0x10007fae func   ?sub_10032180@@YAXPAUImpactEvent_t@@H@Z sub_10032180
 0x10007fb3 func   ?sub_1017e5f0@CBasePlayer@@QAEXPAUinputdata_t@@@Z CBasePlayer::sub_1017e5f0
 0x10007fb8 func   ?sub_102210f0@QuestJournal@@QAEXXZ QuestJournal::sub_102210f0
+0x10007fbd func   ?vfunc113@CVampireProjectile_MingXiaoSpit@@UAEXXZ CVampireProjectile_MingXiaoSpit::vfunc113
 0x10007fc2 func   ?sub_10175400@CBasePlayer@@QAEXD@Z CBasePlayer::sub_10175400
 0x10007fdb func   ?sub_1025cb70@CUtlRBTreeBig@@QAEAAULinks_t@1@G@Z CUtlRBTreeBig::sub_1025cb70
 0x10007fe5 func   ?sub_100ac4e0@CBaseEntity@@QAEHHHPBD@Z CBaseEntity::sub_100ac4e0
