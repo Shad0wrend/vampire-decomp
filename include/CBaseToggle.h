@@ -14,6 +14,7 @@ public:
 	bool sub_1000fc86(const char *szKeyName, const char *szValue);	// CBaseEntity::vfunc110 (jump stub)
 	virtual void vfunc31(int pDump);	// slot 31 \"CBaseToggle::Dump\": the toggle state, distance, wait, lip, the two positions and angles, height, activator, final destination / angle and movement type, then CBaseEntity::vfunc31 (stub 0x10012161)
 	virtual void vfunc103();	// slot 103 "CBaseToggle::Spawn": move type 8, CBaseEntity::vfunc103, caches the origin (slot 220) at +0x450 and the angles (slot 221) at +0x468 / +0x474 (+ offset along the move axis), copies the state at +0x4a0 to +0x49c
+	void sub_101c1cb0();	// not virtual: no game vtable holds it (CBaseToggle's slot 103 is CBaseEntity's 0x100aae50); called directly (stub 0x1000748c)
 	virtual bool vfunc108(const char *key, float x, float y, float z);	// slot 108 (0x1004fbb0, in the vtable of every class built on it): passes its four dwords on to CBaseEntity::vfunc108 (stub 0x1001216b); the last three are the vector given by value
 	void sub_101c1bc0(int state);	// "CBaseToggle::SetToggleState": state 0 / 1 move the entity to position 1 / 2 (sub_101c1520 with the speed at +0x480), 2 / 3 turn it to angle 1 / 2 (sub_101c17e0 with the speed at +0x490); the state is stored at +0x494
 	void sub_101c1dc0(int a, int b, int c, int d);	// four unused stack arguments (a use-style input): with the mode at +0x49c 1 it flips the state at +0x498 between 0 and 1, with 2 between 2 and 3 (sub_101c1bc0)
