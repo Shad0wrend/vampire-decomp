@@ -129678,6 +129678,19 @@ SNode *sub_102d2840(int unused, const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d2900 size=0x21
+int sub_102d2840(int a, int b);
+
+// TARGET: sub_102d2900
+int sub_102d2900(int a, int b)
+{
+    int *p = (int *)sub_102d2840(a, b);
+    if (p)
+        return p[0x5e4 / 4];
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d2940 size=0x24
 void sub_1000a1e1(int a, int b, int c, int d, int e, int f);
 

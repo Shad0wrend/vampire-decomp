@@ -3880,6 +3880,7 @@
 0x10007b03 func   ?sub_1028e360@CAI_BaseNPCTroika@@QAE_NXZ CAI_BaseNPCTroika::sub_1028e360
 0x10007b08 func   ?vfunc10@ConVar@@UAE_NPAM@Z ConVar::vfunc10
 0x10007b0d func   ?sub_102f9990@@YAXXZ sub_102f9990
+0x10007b12 func   ?sub_102d2900@@YAHHH@Z sub_102d2900
 0x10007b17 func   ?sub_101bdf40@UtlVec8@@QAEXHH@Z UtlVec8::sub_101bdf40
 0x10007b1c func   ?vfunc533@CAI_BaseNPCTroika@@UAE?AVVector@@HH@Z CAI_BaseNPCTroika::vfunc533
 0x10007b21 func   ?sub_100b17f0@@YIHPAD@Z sub_100b17f0
