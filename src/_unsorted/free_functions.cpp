@@ -128676,6 +128676,16 @@ int CThunkOwnerTroika::sub_102a9710()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a9730 size=0xf
+struct CSecondaryThunkBase { virtual void vfunc0(); virtual int vfunc1(); virtual int vfunc2(); };
+struct CThunkOwnerTroika { int sub_102a9730(); };
+// TARGET: CThunkOwnerTroika::sub_102a9730
+int CThunkOwnerTroika::sub_102a9730()
+{
+    return ((CSecondaryThunkBase *)((char *)this + 0x270))->vfunc2();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a9750 size=0xd
 void CUnknown102a9750::sub_102a9750(int value)
 {
