@@ -515,7 +515,7 @@ public:
 	virtual int vfunc437();
 	virtual void vfunc438();
 	virtual void vfunc439();
-	virtual void vfunc440();
+	virtual int vfunc440(int a);	// slot 440 override: 0xc7 -> 0xc8, 0x147 -> 0x16d, else the base's slot 440 (sub_102b12f0, tail call)
 	virtual void vfunc441();
 	virtual void vfunc442();
 	virtual void vfunc443();
