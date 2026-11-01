@@ -34,6 +34,7 @@ public:
 	char m_bUseHandles;	// 0x08
 	char m_pad0009[3];
 	CUnknown102dfaa0_Record *m_pHead;	// 0x0c
+	float m_flDecay10;	// 0x10: how long a record keeps following its entity
 
 	void sub_102dfaa0(void *pEnt, int c);	// removes the record of pEnt (found through its handle), after telling the target (slot 56) or the handle array (sub_103169a0) about it
 };
