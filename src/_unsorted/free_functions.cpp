@@ -46955,6 +46955,22 @@ void CThis10103f80::sub_10103f80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10104160 size=0x23
+#include "globalvars.h"
+struct CThinkCall_10104160
+{
+    void sub_100ac4e0(void *fn, int a, int b);
+};
+void sub_10002126();
+
+// TARGET: sub_10104160
+void __fastcall sub_10104160(char *self, int dummy, int arg)
+{
+    ((CThinkCall_10104160 *)self)->sub_100ac4e0((void *)sub_10002126, 0, 0);
+    *(float *)(self + 0x17c) = gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101041a0 size=0x16
 struct CThis10103f80 { void sub_10103f80(); };
 

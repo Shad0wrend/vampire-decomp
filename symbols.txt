@@ -862,6 +862,7 @@
 0x10002784 func   ?sub_101030e0@CUnknown101030e0@@QAEXH@Z CUnknown101030e0::sub_101030e0
 0x10002789 func   _npc_VAsianVampire npc_VAsianVampire
 0x1000278e func   ?vfunc10@CEffectsServer@@UAE_NXZ CEffectsServer::vfunc10
+0x1000279d func   ?sub_10104160@@YIXPADHH@Z sub_10104160
 0x100027a2 func   ?sub_10359ba0@@YIXPAH@Z sub_10359ba0
 0x100027ac func   ?sub_1012d480@@YIXPAUS@@@Z sub_1012d480
 0x100027b6 func   ?vfunc71@CPropButton@@UAEXXZ CPropButton::vfunc71
