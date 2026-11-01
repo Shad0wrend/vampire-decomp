@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+#include "CUnknown102f7970.h"
+
 class CAI_NetworkManager : public CBaseEntity
 {
 public:
