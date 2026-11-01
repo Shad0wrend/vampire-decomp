@@ -37,6 +37,8 @@ struct StatDefault3
 	int *m_dc;	// 0xdc: heap array freed by the destructor
 	StatDefault3(int);
 	~StatDefault3();
+	const char **sub_101d4e70(const char **pOut, int n);	// the n-th (clamped 0..5) name of the dword array at +0x40, stored to *pOut and returned
+	const char **sub_101d4eb0(const char **pOut, int n);	// like sub_101d4e70 for the array at +0x58
 	int sub_101d4f60(int n);	// stub 0x1000295a: index of the n-th used slot
 	int sub_101d4d80();	// stub 0x100054ca
 	void sub_101d3a10();	// stub 0x10012a12: resets the item before it is loaded from a data node
