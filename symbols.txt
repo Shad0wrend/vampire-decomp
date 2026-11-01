@@ -6327,6 +6327,7 @@
 0x1000b7cb func   ?sub_101c7d90@CChangeLevel@@QAEXPAVCBaseEntity@@@Z CChangeLevel::sub_101c7d90
 0x1000b7d0 func   ?sub_1012d740@CUnknown1012d740@@QAEXXZ CUnknown1012d740::sub_1012d740
 0x1000b7d5 func   ?vfunc76@CBaseEntity@@UAEXXZ CBaseEntity::vfunc76
+0x1000b7da func   ?sub_10388010@@YIPAXPAD@Z sub_10388010
 0x1000b7df func   _info_node_chang_column info_node_chang_column
 0x1000b7e4 func   ?sub_100fe610@@YAHXZ sub_100fe610
 0x1000b7e9 func   ?vfunc363@CWeaponMelee_HengeyokaiFist@@QAEHXZ CWeaponMelee_HengeyokaiFist::vfunc363

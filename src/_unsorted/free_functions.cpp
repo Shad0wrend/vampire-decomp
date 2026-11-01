@@ -160249,6 +160249,25 @@ void sub_10387fd0(CUnknown10387fd0 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10388010 size=0x3a
+extern void *vt_104b9784[];
+extern void *vt_104b9754[];
+void __fastcall sub_10386aa0(void *);
+void __fastcall sub_10388130(void *);
+
+// TARGET: sub_10388010
+void *__fastcall sub_10388010(char *p)
+{
+	sub_10386aa0(p);
+	*(int *)(p + 0x6664) = -1;
+	sub_10388130(p + 0x6668);
+	*(void **)p = vt_104b9784;
+	*(unsigned int *)(p + 0x4c) |= 0x100;
+	*(void **)(p + 0x19b0) = vt_104b9754;
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10388130 size=0xc
 void __fastcall sub_10388150(void *p);
 
