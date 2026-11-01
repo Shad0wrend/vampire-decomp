@@ -171532,6 +171532,27 @@ void *CWeaponIArmorUnit::sub_103f3f00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f42b0 size=0x4b
+extern int *g_1070b228;
+extern int vt_104e6fbc[];
+void __fastcall sub_10011b8f(void *);
+int __fastcall sub_103f42b0(void *this_)
+{
+    char *p = (char *)this_;
+    sub_10011b8f(p);
+    *(char *)(p + 0x8c8) = 0;
+    *(int *)p = (int)vt_104e6fbc;
+    int curtime = g_1070b228[3];
+    *(int *)(p + 0x910) = curtime;
+    *(int *)(p + 0x8b8) = 0;
+    *(int *)(p + 0x8c0) = 0;
+    *(int *)(p + 0x8bc) = 0;
+    *(int *)(p + 0x778) = 3;
+    *(int *)(p + 0x8c4) = 0;
+    return (int)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f4780 size=0x6f
 #include "CEntityVSlots.h"
 
