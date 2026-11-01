@@ -8384,6 +8384,7 @@
 0x1000ed1d func   ?sub_10073220@S10073220@@QAEHH@Z S10073220::sub_10073220
 0x1000ed27 func   ?vfunc5@CWeaponRanged_Rifle_Crossbow_Flaming@@QAEPAV1@I@Z CWeaponRanged_Rifle_Crossbow_Flaming::vfunc5
 0x1000ed2c func   ?sub_101e1930@@YGMH@Z sub_101e1930
+0x1000ed36 func   ?vfunc440@CNPC_VTzimisceRunner@@UAEHH@Z CNPC_VTzimisceRunner::vfunc440
 0x1000ed3b func   ?vfunc5@CSteamJet@@UAEPAV1@I@Z CSteamJet::vfunc5
 0x1000ed40 func   ?vfunc6@ConVar@@UAEXPBD@Z ConVar::vfunc6
 0x1000ed45 func   ?sub_100bb900@CBeam@@QAEXHPBM@Z CBeam::sub_100bb900

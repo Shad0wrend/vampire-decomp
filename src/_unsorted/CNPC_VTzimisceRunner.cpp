@@ -144,6 +144,20 @@ bool CNPC_VTzimisceRunner::vfunc70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c3560 size=0x2b
+#include "CNPC_VTzimisceRunner.h"
+int CNPC_VTzimisceRunner::vfunc440(int schedule)
+{
+	switch (schedule) {
+	case 199:
+		return 200;
+	case 231:
+		return 0x156;
+	}
+	return sub_102b12f0(schedule);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c35a0 size=0x1c
 #include "CNPC_VTzimisceRunner.h"
 
