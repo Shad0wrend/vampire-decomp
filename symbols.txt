@@ -3798,6 +3798,7 @@
 0x1000762b func   _item_k_lilly_key item_k_lilly_key
 0x10007630 func   ?sub_103fcee0@@YAHXZ sub_103fcee0
 0x10007635 func   ?sub_100741f0@CUnknown10074070@@QAEMMH@Z CUnknown10074070::sub_100741f0
+0x1000763a func   ?sub_101c53d0@@YG_NPAX@Z sub_101c53d0
 0x1000763f func   ?sub_10105e20@CBaseCombatCharacter@@QAEXPAMPAD@Z CBaseCombatCharacter::sub_10105e20
 0x10007644 func   ?sub_10076730@@YAHPBD@Z sub_10076730
 0x10007653 func   ?sub_1006c6a0@CUnknown1006c6a0@@QAEXHH@Z CUnknown1006c6a0::sub_1006c6a0

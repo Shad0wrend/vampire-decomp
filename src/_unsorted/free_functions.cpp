@@ -81518,6 +81518,47 @@ void CBaseTrigger::sub_101c4dd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c53d0 size=0x3f
+#include "vampire.h"
+
+#define CSV_ROW(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CEntSlot94View
+{
+	CSV_ROW(r0)
+	CSV_ROW(r1)
+	CSV_ROW(r2)
+	CSV_ROW(r3)
+	CSV_ROW(r4)
+	CSV_ROW(r5)
+	CSV_ROW(r6)
+	CSV_ROW(r7)
+	CSV_ROW(r8)
+	virtual void r90();
+	virtual void r91();
+	virtual int vfunc92();
+	virtual void r93();
+	virtual int vfunc94();
+};
+
+// TARGET: sub_101c53d0
+bool __stdcall sub_101c53d0(void *pEnt)
+{
+	if ((unsigned char)(*(unsigned int *)((char *)pEnt + 0x4c) >> 3) & 1)
+	{
+		return true;
+	}
+	if (((CEntSlot94View *)pEnt)->vfunc92() == 1)
+	{
+		if (((CEntSlot94View *)pEnt)->vfunc94() == 8)
+		{
+			return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c5460 size=0xe2
 #include "CBaseTrigger.h"
 #include "CGlobalEntityList.h"
