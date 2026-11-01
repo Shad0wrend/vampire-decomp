@@ -63,6 +63,7 @@ public:
 	int m_64;
 	int m_68;
 
+	int sub_102e23a0(struct CAI_MoveRequest *pMove, float flInterval);	// "CAI_Motor::MoveNormalExecute"-named VPROF scope: runs slot 19 (slot 20 when the request's field at +0x30 is set) into a zeroed 0x38 byte buffer, and when the table 0x1060e654 has a value for the result tells the movement sink (slot 7) and clears the wanted speed; returns the table value
 	void sub_102e09c0();	// the destructor body (vfunc0 0x102e0990 calls it): both vtables, empties the facing queue (+0x54, CUtlVector<CAI_InterestTarget>) twice, then the CAI_Component vftable
 	int sub_102e2610();
 	CAI_Motor *sub_102e0900(int outer);
