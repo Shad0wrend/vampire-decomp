@@ -181,6 +181,24 @@ void CNPC_VMingXiaoTentacle::vfunc22(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039e860 size=0x1d
+#include "CNPC_VMingXiaoTentacle.h"
+
+struct CUnk10397dd0 {
+	void sub_10397dd0(CNPC_VMingXiaoTentacle *pSelf, int arg);
+};
+
+// TARGET: CNPC_VMingXiaoTentacle::vfunc23
+void CNPC_VMingXiaoTentacle::vfunc23(int arg)
+{
+	void *pPlayer = sub_1039ede0();
+	if (pPlayer)
+	{
+		((CUnk10397dd0 *)pPlayer)->sub_10397dd0(this, arg);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039e8e0 size=0x5
 bool CNPC_VMingXiaoTentacle::vfunc366(int a0, int a1, int a2)
 {
