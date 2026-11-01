@@ -38,6 +38,17 @@ void CTESmoke::vfunc3(const Vector *pOrigin, const Vector *pAngles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10067200 size=0x39
+#include "CTESmoke.h"
+#include "CTEMetalSparks.h"
+#include "IVEngineServerFull.h"
+
+void CTESmoke::vfunc4(void *pFilter, int delay)
+{
+	engine->vfunc103((int)pFilter, delay, this, ((CTEMetalSparks *)this)->vfunc0()->m_pTable, ((CTEMetalSparks *)this)->vfunc0()->m_ClassID);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100672c0 size=0x6
 #include "CTESmoke.h"
 namespace lifted {
