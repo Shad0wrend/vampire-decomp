@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10538ea8;
 }
-int CPhysSlideConstraint::vfunc82()
+CPhysSlideConstraint::Datamap82 CPhysSlideConstraint::vfunc82()
 {
-    return (int)&lifted::g_10538ea8;
+    return (CPhysSlideConstraint::Datamap82)&lifted::g_10538ea8;
 }
 // END FUNCTION
 
