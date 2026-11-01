@@ -25,6 +25,8 @@ class CPhysForceController
 public:
 	virtual void vfunc0();
 	virtual void vfunc1(CPhysForceMotion *pMotion);
+	virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4(); virtual void vfunc5(); virtual void vfunc6();
+	virtual void vfunc7();	// slot 7: run after the motion record has been rescaled by the input handler 0x10027b60
 };
 
 class CPhysForce : public CBaseEntity
