@@ -13,6 +13,16 @@ struct VKeyValuesCacheable	// the IKeyCacheable part: slot 2 is the scalar delet
 struct VKeyValuesInterface	// the IKeyValues part: slot 0 is the key's name
 {
 	virtual const char *vfunc0();
+	virtual void vfunc1();
+	virtual VKeyValuesInterface *vfunc2(const char *pszName);	// slot 2: the sub key of that name (FindKey), 0 when none
+	virtual VKeyValuesInterface *vfunc3();	// slot 3: the next key of the same level
+	virtual void vfunc4(); virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
+	virtual int vfunc10(const char *pszKey, int nDefault);	// slot 10: GetInt
+	virtual float vfunc11(const char *pszKey, float flDefault);
+	virtual char vfunc12(const char *pszKey, int nDefault);
+	virtual const char *vfunc13(const char *pszKey, const char *pszDefault);	// slot 13: GetString
+
+	char sub_101f2b00(const char *pszName, int nMax, const char *pszFormat, int **ppValues, int *pnCount);	// stdcall, ret 0x14, this = the IKeyValues part (VKeyValues + 0x30): FindKey(pszName) dynamic_cast to VKeyValues; counts the keys sprintf(pszFormat, i) (\"%s%d\"-style, i = 0..nMax-1) that have a non-empty string, stores the count in *pnCount, allocates int[count] into *ppValues and fills it with GetInt(key, 0); false (and *pnCount = 0) when nothing is found
 
 	int sub_101f28e0(const char *pszName, const char **ppszChoices, int nChoices, int nDefault);	// the index of the choice (case-insensitive) equal to the named sub key's string value, nDefault when none
 	float sub_101f2830(const char *pszName, float flDefault);	// the float getter: atof of the string, the int as a float, the float, else 0
