@@ -42186,6 +42186,58 @@ void CUnknown100e4ef0::sub_100e4ef0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e4f30 size=0x265
+#include "CDialog.h"
+#include "CDialogDependency.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+#include <string.h>
+
+struct CDialogDebugVar
+{
+	virtual bool vfunc0();
+	virtual bool vfunc1();
+	char m_pad[0x28];
+	int m_n2c;
+};
+extern CDialogDebugVar *g_106e8764;
+void sub_100dfaf0(int flags, const char *fmt, ...);
+void sub_100ea2d0(const char *pszLine, void *pNPC, void *pSpeaker, int nMax, int a);
+__declspec(dllimport) char *Q_stristr(const char *s, const char *sub);
+__declspec(dllimport) char *Q_strncpy(char *dst, const char *src, int n);
+
+void CDialog::sub_100e4f30(char *pszScript)
+{
+	ScopeTrace trace("CDialog::CallEventScript", g_106b8540);
+	if (pszScript && strlen(pszScript) && EHandle_Get(m_hNPC) && EHandle_Get(m_hSpeaker)) {
+		CDialogDependency dep;
+		dep.sub_100e8ef0((int)this);
+		char szLine[0x100];
+		Q_strncpy(szLine, pszScript, 0x100);
+		sub_100dfaf0((g_106e8764->vfunc1() ? 0 : g_106e8764->m_n2c) != 0 ? 3 : 1, "\n\n[ Parsing event script line: %s ]\n", pszScript);
+		char *pLine = szLine;
+		for (;;) {
+			char *pEnd = Q_stristr(pLine, ";");
+			if (!pEnd) {
+				pEnd = Q_stristr(pLine, "&");
+				if (pEnd)
+					*pEnd = 0;
+			} else {
+				*pEnd = 0;
+			}
+			sub_100dfaf0((g_106e8764->vfunc1() ? 0 : g_106e8764->m_n2c) != 0 ? 3 : 1, "[ Calling event script: %s ]\n", pLine);
+			void *pSpeaker = EHandle_Get(m_hSpeaker);
+			void *pNPC = EHandle_Get(m_hNPC);
+			sub_100ea2d0(pLine, pNPC, pSpeaker, 0x100, 0);
+			if (!pEnd)
+				break;
+			pLine = pEnd + 1;
+		}
+		sub_100dfaf0((g_106e8764->vfunc1() ? 0 : g_106e8764->m_n2c) != 0 ? 3 : 1, "[ Done Calling Event Scripts. ]\n\n");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e5240 size=0x170
 #include "CDialog.h"
 #include "CEHandleGet.h"
