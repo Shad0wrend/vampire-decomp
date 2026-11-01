@@ -3,7 +3,11 @@
 
 // FUNCTION: 0x10149b70 size=0x63
 #include "CWeaponGravityGun.h"
-CGravControllerPoint::CGravControllerPoint() {}
+CGravControllerPoint::CGravControllerPoint()
+{
+    m_hAttached78.Set(0);
+    m_hOther7c.Set(0);
+}
 // TARGET: CWeaponGravityGun::CWeaponGravityGun
 CWeaponGravityGun::CWeaponGravityGun()
 {
