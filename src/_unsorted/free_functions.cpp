@@ -73670,6 +73670,22 @@ extern "C" GP *aiscripted_schedule()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a9b30 size=0x23
+#include "globalvars.h"
+struct CThinkCall_101a9b30
+{
+    void sub_100ac4e0(void *fn, int a, int b);
+};
+void sub_1000556f();
+
+// TARGET: sub_101a9b30
+void __fastcall sub_101a9b30(char *self, int dummy, int arg)
+{
+    ((CThinkCall_101a9b30 *)self)->sub_100ac4e0((void *)sub_1000556f, 0, 0);
+    *(float *)(self + 0x17c) = gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a9bd0 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
