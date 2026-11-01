@@ -35,6 +35,17 @@ void CTEInspectionFX::vfunc3(const float *pOrigin, const float *pAngles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10065620 size=0x39
+#include "CTEInspectionFX.h"
+#include "CTEMetalSparks.h"
+#include "IVEngineServerFull.h"
+
+void CTEInspectionFX::vfunc4(CRecipientFilter *pFilter, float flDelay)
+{
+	engine->vfunc103((int)pFilter, *(int *)&flDelay, this, ((CTEMetalSparks *)this)->vfunc0()->m_pTable, ((CTEMetalSparks *)this)->vfunc0()->m_ClassID);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100656e0 size=0x6
 #include "CTEInspectionFX.h"
 namespace lifted {
