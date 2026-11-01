@@ -1,6 +1,21 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10149b70 size=0x63
+#include "CWeaponGravityGun.h"
+CGravControllerPoint::CGravControllerPoint() {}
+// TARGET: CWeaponGravityGun::CWeaponGravityGun
+CWeaponGravityGun::CWeaponGravityGun()
+{
+	m_n910 = 0;
+	m_bB25 = 0;
+	m_b914 = 0;
+	m_b8b4 = 1;
+	m_hB1c = -1;
+	m_hB18 = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10149ee0 size=0x1a
 #include "CWeaponGravityGun.h"
 char CWeaponGravityGun::vfunc316(int a)
