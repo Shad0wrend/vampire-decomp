@@ -51,6 +51,7 @@ struct S101ddec0	// 0xac byte item
 	int m_na8;	// the flag bits it sets in (and takes from) the character's NPC object: bits of +0x14b8, or of +0x14bc when negative
 
 	S101ddec0 *sub_101ddec0();	// constructor body (stub 0x1000eeb2), returns this
+	bool sub_101ddfb0(IKVNodeView *pKV, const char *pszKeyName);	// loads the item from the sub key of that name of pKV (a null or empty name: the key itself); false without a key (stub 0x1000852b)
 	void sub_101def10(int unused, void *pChar, int id);	// ends the effect on the character: ends both sources, takes the flag bits back from the NPC object, the character's sub_10323770 when m_b1e is set, and, for a named schedule (+0x34) while the NPC object (+0x98) is flagged 0x800000 / has a current task of 0xe1 or 0xe3, cancels it
 };
 
