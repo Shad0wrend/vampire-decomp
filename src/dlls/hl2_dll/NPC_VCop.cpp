@@ -91,6 +91,59 @@ LPursue:
 }
 // END FUNCTION
 
+// FUNCTION: 0x103726c0 size=0x302
+#include "CNPC_VCop.h"
+#include "CEHandleGet.h"
+
+// TARGET: CNPC_VCop::vfunc461
+int CNPC_VCop::vfunc461()
+{
+	m_n1b38 = 0xc;
+	switch (m_n5cc0) {
+	case 0xc:
+		if (sub_10269d30(0x21)) {
+			((CNPC_VCopSlots *)this)->slot597((CNPC_VCopPlayer *)EHandle_Get(m_h628c), 10);
+			((CNPC_VCopSlots *)this)->slot596(EHandle_Get(m_h628c));
+			m_pszFile1b3c = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VCop.cpp";
+			m_nLine1b40 = 0x5e1;
+			return m_n5cc4 = 8;
+		}
+		if (sub_10269d30(0x1f)) {
+			((CNPC_VCopSlots *)this)->slot597((CNPC_VCopPlayer *)EHandle_Get(m_h628c), 10);
+			((CNPC_VCopSlots *)this)->slot596(EHandle_Get(m_h628c));
+			m_pszFile1b3c = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VCop.cpp";
+			m_nLine1b40 = 0x5f1;
+			return m_n5cc4 = 8;
+		}
+		if (sub_10269d30(0x22)) {
+			((CNPC_VCopSlots *)this)->slot597((CNPC_VCopPlayer *)EHandle_Get(m_h628c), 10);
+			((CNPC_VCopSlots *)this)->slot596(EHandle_Get(m_h628c));
+			m_pszFile1b3c = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VCop.cpp";
+			m_nLine1b40 = 0x601;
+			return m_n5cc4 = 2;
+		}
+		if (sub_10269d30(0x20)) {
+			((CNPC_VCopSlots *)this)->slot597((CNPC_VCopPlayer *)EHandle_Get(m_h628c), 10);
+			((CNPC_VCopSlots *)this)->slot596(EHandle_Get(m_h628c));
+			m_pszFile1b3c = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VCop.cpp";
+			m_nLine1b40 = 0x611;
+			return m_n5cc4 = 2;
+		}
+		m_pszFile1b3c = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VCop.cpp";
+		m_nLine1b40 = 0x616;
+		return m_n5cc4 = 1;
+	case 1:
+	case 3: {
+		int nIdeal = sub_103723f0();
+		if (nIdeal)
+			return m_n5cc4 = nIdeal;
+		break;
+	}
+	}
+	return CNPC_VHumanCombatant::vfunc461();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10372dd0 size=0xee
 #include "CNPC_VCop.h"
 #include "CAI_BaseNPCTroika.h"

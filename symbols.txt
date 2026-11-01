@@ -8582,6 +8582,7 @@
 0x1000f66e func   ?sub_10245860@CUnknown10245860@@QAEHXZ CUnknown10245860::sub_10245860
 0x1000f673 func   ?sub_103c7150@CNPC_VVampireBoss@@QAEXXZ CNPC_VVampireBoss::sub_103c7150
 0x1000f678 func   ?sub_1040e880@CWeaponPhysCannon@@QAE_NPAVCBaseEntity@@@Z CWeaponPhysCannon::sub_1040e880
+0x1000f67d func   ?vfunc461@CNPC_VCop@@QAEHXZ CNPC_VCop::vfunc461
 0x1000f682 func   ?vfunc63@CMultiplayRules@@UAEPBDH@Z CMultiplayRules::vfunc63
 0x1000f687 func   ?sub_100fdf40@CUnknown100fde30@@QAEXXZ CUnknown100fde30::sub_100fdf40
 0x1000f68c func   ?sub_1006fde0@@YAXXZ sub_1006fde0
