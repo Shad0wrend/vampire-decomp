@@ -231,7 +231,7 @@ public:
 	char m_pad1591[0x1b30 - 0x1591];
 	const char *m_pszFile1b30;	// 0x1b30: source file stamp of the last schedule pick
 	int m_nLine1b34;	// 0x1b34: its line
-	char m_pad1b38[0x1b3c - 0x1b38];
+	int m_n1b38;	// 0x1b38: set to 0x14 by the ideal state pick (SelectIdealState)
 	const char *m_pszFile1b3c;	// 0x1b3c: source file stamp of the last ideal state change
 	int m_nLine1b40;	// 0x1b40: its line
 	const char *m_pszFile1b44;	// 0x1b44: source file stamp (third pair)
