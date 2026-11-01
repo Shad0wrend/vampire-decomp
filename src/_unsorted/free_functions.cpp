@@ -7670,9 +7670,20 @@ void __fastcall sub_10049da0(Mem *self, int, int num)
 
 // FUNCTION: 0x10049e40 size=0x1b2
 #include "CUtlRBTree16.h"
-
-struct CUtlRBTree16Unit : CUtlRBTree16At<0x106bdb38>
+#include "utlrbtree.h"
+#include "CRBTree16Entry8.h"
+// the instance's sentinel (0x106bdb38) is CUtlRBTree<CRBTree16Entry8, unsigned short>'s Links static; inline here VC6 compiled its body as
+// CUtlRBTree16At's (the out-of-line copy is 0x10047930)
+template <> inline CUtlRBTree<CRBTree16Entry8, unsigned short>::Links_t const &CUtlRBTree<CRBTree16Entry8, unsigned short>::Links(unsigned short i) const
 {
+	static Links_t s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
+	return i != InvalidIndex() ? *(Links_t *)&m_Elements[i] : s_Sentinel;
+}
+
+struct CUtlRBTree16Unit : CUtlRBTree16
+{
+    const Links_t &Links(unsigned short i) const { return (const Links_t &)((const CUtlRBTree<CRBTree16Entry8, unsigned short> *)this)->Links(i); }
+    unsigned short Parent(unsigned short i) const { return Links(i).m_Parent; }
     const Links_t *sub_10047930(unsigned short i) const;
     void sub_10049e40(unsigned short i);
 
