@@ -105821,6 +105821,20 @@ int sub_1020e260()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020e3a0 size=0xf
+struct CGameTextUnitFwd;
+struct CGameTextUnitFwd {
+    void sub_1020e3a0(int a);
+    void sub_1020e6b0(int a);
+};
+
+// TARGET: sub_1020e3a0
+void CGameTextUnitFwd::sub_1020e3a0(int a)
+{
+    this->sub_1020e6b0((*(volatile int *)a));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020e3c0 size=0xee
 #include "CReliableSingleUserRecipientFilter.h"
 struct S1020e3c0Arg { struct S1020e3c0Ent *pEnt; };

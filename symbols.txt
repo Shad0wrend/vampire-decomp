@@ -9593,6 +9593,7 @@
 0x10010ee2 func   ?vfunc11@CServerGameDLL@@UAEXXZ CServerGameDLL::vfunc11
 0x10010ee7 func   ?vfunc4@CTEShatterSurface@@QAEXHH@Z CTEShatterSurface::vfunc4
 0x10010eec func   ?sub_10044a70@@YGXH@Z sub_10044a70
+0x10010ef1 func   ?sub_1020e3a0@CGameTextUnitFwd@@QAEXH@Z CGameTextUnitFwd::sub_1020e3a0
 0x10010ef6 func   ?sub_101d7bc0@CUnknown101d7bc0@@QAEPAXXZ CUnknown101d7bc0::sub_101d7bc0
 0x10010efb func   ?sub_1010be40@@YAPAHXZ sub_1010be40
 0x10010f0a func   ?sub_10064aa0@CUnknown10064aa0@@QAEHXZ CUnknown10064aa0::sub_10064aa0
