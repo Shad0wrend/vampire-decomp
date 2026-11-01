@@ -7,6 +7,7 @@ class CUnknown1007a060Elem
 public:
 	char m_data[0x194];
 	CUnknown1007a060Elem();	// 0x10072b60 (stub 0x100113dd)
+	void sub_10073260(const char *psz);	// strcpy of psz into the buffer at +0x94 (stub 0x10007d24)
 };
 
 class CUnknown1007a060
