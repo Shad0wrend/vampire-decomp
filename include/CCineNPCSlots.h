@@ -15,7 +15,7 @@ public:
 	CCS_V(c221) CCS_V(c222) CCS_V(c223) CCS_V(c224) CCS_V(c225) CCS_V(c226) CCS_V(c227) CCS_V(c228) CCS_V(c229)
 	CCS_V10(c3) CCS_V10(c4) CCS_V10(c5) CCS_V10(c6) CCS_V10(c7) CCS_V10(c8) CCS_V10(c9)
 	CCS_V100(d)
-	CCS_V10(e0) CCS_V10(e1) CCS_V10(e2) CCS_V10(e3) CCS_V10(e4) CCS_V10(e5) CCS_V10(e6) CCS_V10(e7)
+	CCS_V10(e0) CCS_V10(e1) CCS_V10(e2) CCS_V10(e3) CCS_V10(e4) CCS_V10(e5) CCS_V(e460) CCS_V(e461) CCS_V(e462) CCS_V(e463) virtual int slot464(); CCS_V(e465) CCS_V(e466) CCS_V(e467) CCS_V(e468) CCS_V(e469) CCS_V10(e7)
 	CCS_V(e480) CCS_V(e481)
 	virtual int slot482(int a);	// asked of the NPC with the value slot 585 returns: 1 accepts, 2 accepts as a fallback
 	CCS_V(e483) CCS_V(e484) CCS_V(e485) CCS_V(e486) CCS_V(e487) CCS_V(e488) CCS_V(e489)
