@@ -13764,6 +13764,7 @@
 0x109f3874 data   __imp_?CommandLine@@YAPAUICommandLine@@XZ _imp_?CommandLine
 0x109f3880 data   ?Q_strcasecmp@@YAHPBD0@Z Q_strcasecmp
 0x109f3880 data   _Q_strcasecmp Q_strcasecmp
+0x109f3888 data   __imp_?Q_trimspace@@YAXPBDPADH@Z _imp_?Q_trimspace
 0x109f388c data   ?Q_snprintf@@YAHPADHPBDZZ Q_snprintf
 0x109f388c data   Q_snprintf Q_snprintf
 0x109f388c data   __imp_?Q_snprintf@@YAHPADHPBDZZ _imp_?Q_snprintf
