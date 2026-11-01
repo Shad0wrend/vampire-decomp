@@ -3339,6 +3339,7 @@
 0x10006c2b func   ?sub_10156d90@CRagdollPropAttached@@QAEXXZ CRagdollPropAttached::sub_10156d90
 0x10006c30 func   ?vfunc81@COccultObfuscate@@QAEHXZ COccultObfuscate::vfunc81
 0x10006c3a func   ?sub_101d0ec0@@YAXPBD@Z sub_101d0ec0
+0x10006c3f func   ?sub_10073560@@YIHPADHH@Z sub_10073560
 0x10006c44 func   ?vfunc80@CItemGKeyring@@UAEHXZ CItemGKeyring::vfunc80
 0x10006c49 func   ?sub_1033d970@@YAHXZ sub_1033d970
 0x10006c4e func   ?vfunc0@CTraceFilterManBatNoIBeamEntity@@UAE_NPAXH@Z CTraceFilterManBatNoIBeamEntity::vfunc0

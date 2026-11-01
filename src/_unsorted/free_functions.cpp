@@ -15093,6 +15093,16 @@ int CUnknown10073540::sub_10073540()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10073560 size=0x21
+// TARGET: sub_10073560
+int __fastcall sub_10073560(char *self, int dummy, int index)
+{
+    if (index >= 0 && index < *(int *)(self + 0x90))
+        return ((int **)(self + 0x84))[0][index];
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100735a0 size=0xce
 #include "CUnknown100735a0.h"
 
