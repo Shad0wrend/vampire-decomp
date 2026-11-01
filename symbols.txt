@@ -3583,6 +3583,7 @@
 0x100072ed func   ?sub_10397930@CNPC_VMingXiao@@QAEXH@Z CNPC_VMingXiao::sub_10397930
 0x100072f7 func   ?sub_103228c0@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_103228c0
 0x1000730b func   ?sub_101bf550@@YA_NPAPBD0@Z sub_101bf550
+0x10007315 func   ?sub_103e16b0@@YAMXZ sub_103e16b0
 0x1000731a func   ?vfunc583@CCineAISchedule@@QAEXXZ CCineAISchedule::vfunc583
 0x1000731f func   ?sub_101b30d0@CUnknown101b30d0@@QAEPAV1@XZ CUnknown101b30d0::sub_101b30d0
 0x10007324 func   ?sub_1016bd50@CBasePlayer@@QAEXXZ CBasePlayer::sub_1016bd50
