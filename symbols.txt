@@ -4677,6 +4677,7 @@
 0x100090fc func   ??0CSimplePhysicsBrushBase@@QAE@H@Z CSimplePhysicsBrushBase::CSimplePhysicsBrushBase
 0x10009101 func   ?sub_102ccee0@CAI_DynamicLink@@QAEXXZ CAI_DynamicLink::sub_102ccee0
 0x1000910b func   ?sub_101a2020@@YGHH@Z sub_101a2020
+0x10009110 func   ?sub_10038400@CPhysicsPushedEntities@@QAEPAVCBaseEntity@@PAV2@PBM@Z CPhysicsPushedEntities::sub_10038400
 0x10009115 func   ?sub_1002c360@@YAHXZ sub_1002c360
 0x1000911a func   ?sub_10256200@@YIEPAE@Z sub_10256200
 0x1000911f func   ?sub_1028b190@CUnknown1028b190@@QAEXPAX@Z CUnknown1028b190::sub_1028b190

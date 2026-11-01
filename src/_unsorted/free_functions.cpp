@@ -3839,6 +3839,73 @@ void CPhysicsPushedEntities::sub_100379e0(CBaseEntity *pParent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10038400 size=0x26a
+#include "CPhysicsPushedEntities.h"
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+#include "CVProfile.h"
+
+#define V4(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3();
+#define V16(a) V4(a##a) V4(a##b) V4(a##c) V4(a##d)
+#define V64(a) V16(a##a) V16(a##b) V16(a##c) V16(a##d)
+struct E220 {
+    V64(p) V64(q) V64(r) V16(u) V4(x) V4(y) V4(z)
+    virtual const float *f();
+};
+struct E62 {
+    V16(p) V16(q) V16(r) V4(x) V4(y) V4(z) virtual void d0(); virtual void d1();
+    virtual void f(const float *v);
+};
+
+struct CycleView {
+    unsigned __int64 m_Int64;
+    void Sample() { __asm {
+        mov ecx, this
+        rdtsc
+        mov [ecx], eax
+        mov [ecx + 4], edx } }
+    void End() { CycleView c; c.m_Int64 = 0; c.Sample(); m_Int64 = c.m_Int64 - m_Int64; }
+};
+
+inline bool ExitNode2(CVProfNode *n)
+{
+    if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0) {
+        ((CycleView *)&n->m_CurFrameTime)->End();
+        n->m_TotalTime += n->m_CurFrameTime.m_Int64;
+        g_109f3648->PopGroup();
+    }
+    return n->m_nRecursions == 0;
+}
+
+CBaseEntity *CPhysicsPushedEntities::sub_10038400(CBaseEntity *pRoot, const float *pMove)
+{
+    ScopeTrace trace("CPhysicsPushedEntities::PerformLinearPush", g_106b8540, g_106b8540);
+    g_109f3648->EnterScope("CPhysicsPushedEntities::PerformLinearPush", 0, "Unaccounted", false);
+    m_rgPusher.m_Size = 0;
+    sub_1000497b(pRoot);
+    Vector vecStart;
+    vecStart = *(const Vector *)((E220 *)pRoot)->f();
+    float out[3];
+    sub_10038180(pRoot, pMove, out);
+    sub_10036fb0();
+    if (!sub_10036a20(out)) {
+        CBaseEntity *pBlocked = sub_10036e50();
+        ((E62 *)pRoot)->f(&vecStart.x);
+        sub_10036ef0();
+        g_109f3648->ExitScopeInlined();
+        return pBlocked;
+    }
+    sub_10036d40(0, 0);
+    CVProfile *p = g_109f3648;
+    if (!p->m_bAtRoot || p->m_enabled) {
+        if (ExitNode2(p->m_pCurNode))
+            p->m_pCurNode = p->m_pCurNode->m_pParent;
+        p->m_bAtRoot = (p->m_pCurNode == p->m_pRoot);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003b850 size=0x36
 #include "Vector.h"
 
