@@ -7780,6 +7780,7 @@
 0x1000e26e func   ?sub_102eeb70@CUnknown102eeb70@@QAEHXZ CUnknown102eeb70::sub_102eeb70
 0x1000e273 func   ?sub_1004ff40@@YAPAVCBaseEntity@@PAVCBreakableSlots@@@Z sub_1004ff40
 0x1000e278 func   ?vfunc39@CItemContainerLock@@QAEXPAVCBasePlayer@@@Z CItemContainerLock::vfunc39
+0x1000e278 func   ?vfunc39@CPropDoorknob@@UAEXPAVCBaseEntity@@@Z CPropDoorknob::vfunc39
 0x1000e27d func   ?sub_100acef0@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100acef0
 0x1000e282 func   ?sub_10041c30@@YA_NPAH0@Z sub_10041c30
 0x1000e287 func   ?vfunc241@CNPC_VTzimisce@@UAEXPADPAH@Z CNPC_VTzimisce::vfunc241
