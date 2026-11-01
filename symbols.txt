@@ -7518,6 +7518,7 @@
 0x1000d800 func   ?sub_101d9f60@CUnknown101d9f60@@QAEHXZ CUnknown101d9f60::sub_101d9f60
 0x1000d805 func   ?sub_10104590@@YAHXZ sub_10104590
 0x1000d80a func   ?vfunc376@CWeaponThrown_Grenade_Frag@@QAEHH@Z CWeaponThrown_Grenade_Frag::vfunc376
+0x1000d814 func   ?sub_101a6940@@YAXXZ sub_101a6940
 0x1000d81e func   ?vfunc437@CNPC_VPlaceholder@@UAEHXZ CNPC_VPlaceholder::vfunc437
 0x1000d823 func   ?sub_102f5120@CNodeGraphEntity@@QAEXXZ CNodeGraphEntity::sub_102f5120
 0x1000d828 func   ?vfunc124@CEnvGlobal@@UAEHXZ CEnvGlobal::vfunc124

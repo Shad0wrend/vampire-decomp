@@ -155,6 +155,13 @@ void sub_101a6920()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6940 size=0x1
+// TARGET: sub_101a6940
+void sub_101a6940()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6ce0 size=0x10
 struct CUnknownNPC101a6ce0 {
     bool sub_101a6ce0(int unused);
