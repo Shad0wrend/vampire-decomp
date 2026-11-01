@@ -68065,6 +68065,19 @@ void CDynamicProp::sub_10190750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10190810 size=0x21
+// TARGET: sub_10190810
+void __fastcall sub_10190810(char *self, int dummy, char *data)
+{
+    int v;
+    if (*(int *)(data + 0x18) == 4)
+        v = *(int *)(data + 8);
+    else
+        v = 0;
+    *(int *)(self + 0x670) = v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10190a00 size=0xd0
 #include "CDynamicProp.h"
 #include "CBaseAnimating.h"

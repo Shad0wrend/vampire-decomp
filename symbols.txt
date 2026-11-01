@@ -11344,6 +11344,7 @@
 0x10014632 func   ?vfunc18@CMultiplayRules@@UAE_NXZ CMultiplayRules::vfunc18
 0x1001463c func   ?vfunc5@CNPC_VMingXiao@@QAEPAV1@I@Z CNPC_VMingXiao::vfunc5
 0x10014641 func   ?sub_101e8ef0@CUnk101e8ef0@@QAEIPAX@Z CUnk101e8ef0::sub_101e8ef0
+0x10014646 func   ?sub_10190810@@YIXPADH0@Z sub_10190810
 0x1001464b func   ?sub_10324500@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_10324500
 0x10014650 func   ?vfunc2@CTEPlayerDecal@@UAEPAV1@I@Z CTEPlayerDecal::vfunc2
 0x1001465a func   ?vfunc130@CNPC_VMingXiaoTentacle@@UAEXH@Z CNPC_VMingXiaoTentacle::vfunc130
