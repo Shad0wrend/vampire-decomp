@@ -6270,6 +6270,7 @@
 0x1000b573 func   ?sub_103aca80@@YIHPAD@Z sub_103aca80
 0x1000b578 func   ?sub_10212790@CUnknown102126c0@@QAEXPAUinputdata_t@@@Z CUnknown102126c0::sub_10212790
 0x1000b57d func   ?sub_101bedb0@CStealthKillRules@@QAEXPAUCSKRKeyValues@@PBDPAM@Z CStealthKillRules::sub_101bedb0
+0x1000b582 func   ?vfunc86@CPropClockHand@@QAEDHHHHH@Z CPropClockHand::vfunc86
 0x1000b587 func   ?sub_10352e90@@YAXXZ sub_10352e90
 0x1000b58c func   ?sub_10248900@CKeyValuesX@@QAEPAV1@PBDD@Z CKeyValuesX::sub_10248900
 0x1000b591 func   ?sub_10205920@CUnknown10205920@@QAEHH@Z CUnknown10205920::sub_10205920

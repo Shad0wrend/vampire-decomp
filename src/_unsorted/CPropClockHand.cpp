@@ -78,6 +78,18 @@ void CPropClockHand::vfunc113()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012db80 size=0x38
+#include "CBaseEntity.h"
+#include "CPropClockHand.h"
+char CPropClockHand::vfunc86(int a, int b, int c, int d, int e)
+{
+	char bResult = sub_100ab020(a, b, c, d, e);
+	if (bResult)
+		sub_1012dbd0();
+	return bResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012ddf0 size=0x75
 #include "CBaseEntity.h"
 #include "CPropClockHand.h"
