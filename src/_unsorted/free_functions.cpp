@@ -101193,24 +101193,12 @@ int sub_10203480(int a0)
 // FUNCTION: 0x102034a0 size=0x76
 #include "CUnknown101ec4f0.h"
 extern char g_106b8540[];
-extern int g_1073a368;
-extern CUnknown101ec4f0 **g_1073a36c;
+extern char g_1073a354[];	// the string table (CUnknown101ec4f0Set)
 const char *sub_102034a0(int id)
 {
-    if (id >= 0 && id < g_1073a368) {
-        CUnknown101ec4f0 *pEntry = 0;
-        bool bFound = false;
-        for (int i = 0; i < g_1073a368; i++) {
-            if (g_1073a36c[i]->m_id == id) {
-                pEntry = g_1073a36c[i];
-                bFound = true;
-                break;
-            }
-        }
-        if (!bFound) {
-            static CUnknown101ec4f0 def(-1);
-            pEntry = &def;
-        }
+    CUnknown101ec4f0Set *pSet = (CUnknown101ec4f0Set *)g_1073a354;
+    if (id >= 0 && id < pSet->m_nEntries) {
+        CUnknown101ec4f0 *pEntry = pSet->Find(id);	// Find's default entry: one static in the game
         if (pEntry->m_pszText)
             return pEntry->m_pszText;
     }
