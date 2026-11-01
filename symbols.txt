@@ -242,6 +242,7 @@
 0x1000169f func   ?vfunc424@CAI_BaseNPC@@UAE_NXZ CAI_BaseNPC::vfunc424
 0x100016a4 func   ?sub_100b1a00@CBaseEntity@@QAEHXZ CBaseEntity::sub_100b1a00
 0x100016a9 func   ?sub_10397e00@CNPC_VMingXiao@@QAEXPAVCBaseEntity@@@Z CNPC_VMingXiao::sub_10397e00
+0x100016b3 func   ?sub_1030b5b0@CUnk1030b5b0@@QAEXH@Z CUnk1030b5b0::sub_1030b5b0
 0x100016b8 func   ?sub_10231fb0@CUnknown10231fb0@@QAEHHH@Z CUnknown10231fb0::sub_10231fb0
 0x100016c7 func   ?vfunc440@CNPC_VScurrying@@QAEHH@Z CNPC_VScurrying::vfunc440
 0x100016d6 func   ?sub_101346e0@CUnknown101346e0@@QAEHH@Z CUnknown101346e0::sub_101346e0

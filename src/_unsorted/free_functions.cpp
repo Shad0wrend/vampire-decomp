@@ -137429,6 +137429,24 @@ int CUnknown1030b580::sub_1030b580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030b5b0 size=0x1d
+// TARGET: CUnk1030b5b0::sub_1030b5b0
+int *__fastcall sub_1031a000(void *p);
+struct CUnk1030b5b0
+{
+    void sub_1030b5b0(int v);
+};
+void CUnk1030b5b0::sub_1030b5b0(int v)
+{
+    int *p = sub_1031a000((char *)this + 0x24);
+    if (p)
+    {
+        p[6] = -1;
+        p[7] = v;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030b6b0 size=0xc5
 #include "CUnknown1030b610.h"
 #include "CBaseEntity.h"
