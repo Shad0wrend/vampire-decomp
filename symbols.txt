@@ -5273,6 +5273,7 @@
 0x10009ea3 func   ?sub_10074bf0@CUnknown10074f70@@QAEXPAD@Z CUnknown10074f70::sub_10074bf0
 0x10009ea8 func   ?sub_1027da90@@YI_NPADHH@Z sub_1027da90
 0x10009ead func   ?sub_1020e260@@YAHXZ sub_1020e260
+0x10009eb2 func   ?vfunc4@CTEShowLine@@UAEXPAXH@Z CTEShowLine::vfunc4
 0x10009eb7 func   _prop_padlock prop_padlock
 0x10009ebc func   ??0CPlayerMove@@QAE@XZ CPlayerMove::CPlayerMove
 0x10009ec1 func   ?sub_1012c900@@YAXPAD@Z sub_1012c900

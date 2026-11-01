@@ -35,6 +35,17 @@ void CTEShowLine::vfunc3(const Vector *pOrigin, const Vector *pAngles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10066c60 size=0x39
+#include "CTEShowLine.h"
+#include "CTEMetalSparks.h"
+#include "IVEngineServerFull.h"
+
+void CTEShowLine::vfunc4(void *pFilter, int delay)
+{
+	engine->vfunc103((int)pFilter, delay, this, ((CTEMetalSparks *)this)->vfunc0()->m_pTable, ((CTEMetalSparks *)this)->vfunc0()->m_ClassID);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10066d20 size=0x6
 #include "CTEShowLine.h"
 namespace lifted {
