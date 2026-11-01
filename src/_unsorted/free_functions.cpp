@@ -111593,6 +111593,17 @@ char CUnknown102271b0::sub_102271b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102271d0 size=0x28
+#include "CPlayerEvents.h"
+
+// TARGET: CPlayerEvents::sub_102271d0
+void CPlayerEvents::sub_102271d0(void *pActivator, int nOutput)
+{
+	if (m_bFiring450)
+		m_Outputs[nOutput].sub_100cd660(pActivator, this, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10227210 size=0xa
 void CUnknown10227210::sub_10227210(int unused)
 {
