@@ -9706,6 +9706,7 @@
 0x100117de func   ?sub_100ca9d0@CMomentaryRotButton@@QAEXXZ CMomentaryRotButton::sub_100ca9d0
 0x100117e3 func   ?sub_1007a2c0@CUnknown1007a2c0@@QAEPAXH@Z CUnknown1007a2c0::sub_1007a2c0
 0x100117ed func   ?sub_1035dd00@CNPC_VAndreiBlood@@QAEXPAUinputdata_t@@@Z CNPC_VAndreiBlood::sub_1035dd00
+0x100117f2 func   ?sub_10102c80@CEnvShake@@QAEXXZ CEnvShake::sub_10102c80
 0x100117f7 func   ?vfunc5@CItemGWarrLedger1@@QAEPAV1@I@Z CItemGWarrLedger1::vfunc5
 0x10011806 func   ?vfunc364@CNPC_VNewscaster@@UAE_NH@Z CNPC_VNewscaster::vfunc364
 0x1001180b func   ?sub_102404e0@@YA_NABUVec3@@000M@Z sub_102404e0
