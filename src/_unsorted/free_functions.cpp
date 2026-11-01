@@ -94347,6 +94347,68 @@ bool ItemLoader::sub_101ecde0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ecf10 size=0x17f
+#include "IKeyValues.h"
+#include "CUnknown109f08c0.h"
+
+struct ItemLoader
+{
+	int m_nGrow;	// 0x00
+	int m_nNextId;	// 0x04
+	int m_n08;	// 0x08: the "InternalName" value
+	int m_n0c;	// 0x0c: the value read from the "ExcludedEquipTables" node
+	int m_nAlloc;	// 0x10
+	int m_nCount;	// 0x14
+	CUnknown109f08c0 **m_pData;	// 0x18
+
+	bool sub_101ecf10(IKeyValues *pKV);
+};
+
+int *sub_10203920(int *pOut, IKeyValues *pKV);
+int *sub_102038e0(int *pOut, IKeyValues *pKV, const char *pszName);
+
+bool ItemLoader::sub_101ecf10(IKeyValues *pKV)
+{
+	if (pKV) {
+		IKeyValues *pTables = pKV->kv2("ExcludedEquipTables");
+		if (pTables) {
+			int v;
+			m_n0c = *sub_10203920(&v, pTables);
+			m_n08 = *sub_102038e0(&v, pTables, "InternalName");
+
+			for (IKeyValues *pNode = pTables->kv2("ExcludedEquip"); pNode; pNode = pNode->kv3()) {
+				if (m_nAlloc == m_nCount) {
+					m_nAlloc += m_nGrow;
+					if (m_pData) {
+						CUnknown109f08c0 **pNew = (CUnknown109f08c0 **)operator new(m_nAlloc * 4);
+						int i = 0;
+						for (; i < m_nCount; i++)
+							pNew[i] = m_pData[i];
+						for (; i < m_nAlloc; i++)
+							pNew[i] = 0;
+						operator delete(m_pData);
+						m_nCount++;
+						m_pData = pNew;
+					} else {
+						m_pData = (CUnknown109f08c0 **)operator new(m_nAlloc * 4);
+						for (int i = 0; i < m_nAlloc; i++)
+							m_pData[i] = 0;
+						m_nCount++;
+					}
+				} else {
+					m_nCount++;
+				}
+				if (!m_pData[m_nCount - 1])
+					m_pData[m_nCount - 1] = new CUnknown109f08c0(m_nNextId++);
+				m_pData[m_nCount - 1]->sub_101ecb90((IKVNodeView *)pNode);
+			}
+			return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ed0f0 size=0x21
 extern bool (*g_1073a3b0)(void *, int, int);
 

@@ -7637,6 +7637,7 @@
 0x1000dc38 func   ?sub_10273760@CUnk10273760@@QAEXXZ CUnk10273760::sub_10273760
 0x1000dc3d func   ?sub_101e3ee0@CUnknown101e0f00@@QAEXPAUS1033d380@@@Z CUnknown101e0f00::sub_101e3ee0
 0x1000dc42 func   ?sub_101b6650@@YA_NPAG0@Z sub_101b6650
+0x1000dc47 func   ?sub_101ecf10@ItemLoader@@QAE_NPAVIKeyValues@@@Z ItemLoader::sub_101ecf10
 0x1000dc4c func   ?sub_102a1510@@YIHPAUN@@@Z sub_102a1510
 0x1000dc51 func   ?vfunc241@CPhysThruster@@UAEXPAVIPhysicsObject@@PAVVector@@1@Z CPhysThruster::vfunc241
 0x1000dc56 func   ?sub_1011f6e0@CUnknown1011f6e0@@QAEXXZ CUnknown1011f6e0::sub_1011f6e0
