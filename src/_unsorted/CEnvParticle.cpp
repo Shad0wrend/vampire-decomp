@@ -22,9 +22,9 @@ int CEnvParticle::vfunc81()
 namespace lifted {
 extern char g_105669d8;
 }
-int CEnvParticle::vfunc82()
+CEnvParticle::Datamap82 CEnvParticle::vfunc82()
 {
-    return (int)&lifted::g_105669d8;
+    return (CEnvParticle::Datamap82)&lifted::g_105669d8;
 }
 // END FUNCTION
 
