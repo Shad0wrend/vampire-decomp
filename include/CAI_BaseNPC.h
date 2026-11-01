@@ -189,6 +189,7 @@ public:
 	virtual int vfunc567(int unused);
 	virtual float vfunc568(int a);
 
+	void vfunc310(int act);	// slot 310 (plain overload of the placeholder slot, ret 4): switches the ideal activity (+0xff0) unless it is the current one (+0xfec) or the NPC is in activity 2 and act is not 0, then sub_10272130 / sub_10272490
 	int vfunc440(int schedule);	// slot 440 "TranslateSchedule" base implementation (declared as a plain member like the subclasses' overrides): schedule 0x2e (a failed scripted sequence) becomes 0x2f..0x33 by the move type at +0x5f60 of the scripted sequence entity (handle at +0x5d74), after a DevWarning when that entity is gone; unchanged otherwise
 	void sub_1027d170();	// stub 0x100119b9: run by vfunc440 when the scripted sequence entity is gone, before schedule 1 is asked for
 	void sub_10270aa0(CBaseEntity *pEnt);	// stores pEnt's entity handle at +0x5d90 (-1 for null)
