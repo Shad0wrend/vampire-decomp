@@ -8,7 +8,7 @@ public:
 	virtual bool vfunc1();
 	virtual void vfunc2();
 	virtual void vfunc3();
-	virtual void vfunc4();
+	virtual void vfunc4(int a, int b);
 	virtual bool vfunc5();
 	virtual void vfunc6();
 	virtual void vfunc7(const char *pszName, void (*pCallback)(), const char *pszHelp, int nFlags, void (*pCompletion)());	// slot 7: the constructor body of a command: stores the callback (+0x1c), the completion function (+0x20, the empty one 0x1000ad49 when null) and whether there is one (+0x24), then ConCommandBase::vfunc2(name, help, flags)
