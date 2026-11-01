@@ -199,7 +199,8 @@ public:
 	virtual void vfunc124();
 	virtual void vfunc125();
 	virtual void vfunc126();
-	virtual void vfunc127();
+	virtual int vfunc127(int a);
+	int sub_1000527c(int a);	// CAI_BaseNPCTroika::vfunc127 (stub 0x1000527c), called directly
 	virtual void vfunc128();
 	virtual void vfunc129();
 	virtual void vfunc130(int a);
