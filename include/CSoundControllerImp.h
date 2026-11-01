@@ -80,6 +80,7 @@ public:
 	virtual void vfunc17(int a);	// slot 17 (0x101bd810): the sound pointer array at +0xc, from the last element down to 0, each element's member 0x10005970 (101bc260) called with a
 	virtual void vfunc18();
 
+	void sub_101bcd20(CUnknown101bc140 **ppSound, ISoundRestoreView *pRestore);	// restore of one sound (ret 8): a new sound (0x6c bytes from the pool 0x1072c4e0: dwords +0, +4, +8, bytes +0xc, dwords +0x10, +0x14, +0x18, byte +0x1c cleared, +0x30 = -1, the filter at +0x44 constructed (sub_101bcef0), +0x2c = 0), slot 5 / slot 2(sound, "") / slot 8 of the reader; a sound that was read with its emitter-ish field +0x3c set is appended to m_Sounds (inline AddToTail: CMem4d_t::sub_101bdeb0 grow, UtlVec8::sub_101bde20); slot 5, slot 15(&count, 1, 0) for the pending command count, then per command a zeroed 0x18 byte record (pool 0x1072c4b0), slot 5 / slot 2(record, "") / slot 8, record[0] = sound and the heap at +0x20 (CUnknown101bc750::sub_101bc750) insert; finally slot 8 and *ppSound = sound
 	void sub_101bc590(void *pSound);	// stub 0x10002e00: the member called by vfunc5 after slot 4
 
 	char m_pad0004[8];	// 0x04 .. 0x0b
