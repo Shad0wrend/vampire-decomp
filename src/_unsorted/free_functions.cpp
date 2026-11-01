@@ -120239,6 +120239,21 @@ void CAI_BaseNPC::sub_10260a50(int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10263fb0 size=0x33
+#include "CUtlMemory36.h"
+extern void *(*g_109f3634)(int);
+
+CUtlMemory36 *CUtlMemory36::sub_10263fb0(int growSize, int allocationCount)
+{
+    m_pMemory = 0;
+    m_allocationCount = allocationCount;
+    m_growSize = growSize;
+    if (allocationCount)
+        m_pMemory = (char *)g_109f3634(allocationCount * 36);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10264000 size=0xe4
 #include "CUtlVector56.h"
 

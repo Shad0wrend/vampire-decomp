@@ -5745,6 +5745,7 @@
 0x1000abfa func   ?vfunc339@CWeaponIArmor@@UAEXXZ CWeaponIArmor::vfunc339
 0x1000abff func   ?sub_10245540@ConCommandBase@@QAEPAV1@PBD0H@Z ConCommandBase::sub_10245540
 0x1000ac0e func   ?vfunc373@CWeaponMelee_Tzimisce2Claw@@QAEHXZ CWeaponMelee_Tzimisce2Claw::vfunc373
+0x1000ac13 func   ?sub_10263fb0@CUtlMemory36@@QAEPAU1@HH@Z CUtlMemory36::sub_10263fb0
 0x1000ac1d func   ?vfunc82@CNPC_VAsianVampire@@QAEHXZ CNPC_VAsianVampire::vfunc82
 0x1000ac22 func   ?vfunc590@CAI_BaseNPCTroika@@UAEDXZ CAI_BaseNPCTroika::vfunc590
 0x1000ac27 func   ?vfunc101@CBatSwarm@@QAEXPAVVector@@0@Z CBatSwarm::vfunc101
