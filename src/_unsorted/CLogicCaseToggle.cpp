@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10576f80;
 }
-int CLogicCaseToggle::vfunc82()
+CLogicCaseToggle::Datamap82 CLogicCaseToggle::vfunc82()
 {
-    return (int)&lifted::g_10576f80;
+    return (CLogicCaseToggle::Datamap82)&lifted::g_10576f80;
 }
 // END FUNCTION
 
