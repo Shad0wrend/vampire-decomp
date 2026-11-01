@@ -9864,6 +9864,7 @@
 0x100118c9 func   ?sub_101171a0@CFuncMoveLinear@@QAEXAAUinputdata_t@@@Z CFuncMoveLinear::sub_101171a0
 0x100118d3 func   ?sub_101f4280@@YIHPAH@Z sub_101f4280
 0x100118dd func   ?sub_100c7900@@YAHPAUStudioHdr@@HH@Z sub_100c7900
+0x100118e2 func   ?vfunc166@CNPC_VMingXiaoTentacle@@QAEDPAVCBaseEntity@@@Z CNPC_VMingXiaoTentacle::vfunc166
 0x100118e7 func   ?sub_1031a000@CUnk1031a000@@QAEPAXXZ CUnk1031a000::sub_1031a000
 0x100118f1 func   ?vfunc436@CBasePlayer@@QAEXXZ CBasePlayer::vfunc436
 0x100118f6 func   ?sub_101dae70@S6@@QAEPAU1@H@Z S6::sub_101dae70

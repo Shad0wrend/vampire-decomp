@@ -293,6 +293,23 @@ bool CNPC_VMingXiaoTentacle::vfunc68(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039ebd0 size=0x2a
+#include "CBaseEntitySlots.h"
+// TARGET: CNPC_VMingXiaoTentacle::vfunc166
+char CNPC_VMingXiaoTentacle::vfunc166(CBaseEntity *pEnt)
+{
+    if (pEnt == (CBaseEntity *)sub_1039ede0()) {
+        return 0;
+    }
+    if (pEnt) {
+        if (!((CBaseEntitySlots *)pEnt)->slot164()) {
+            return 0;
+        }
+    }
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039ec10 size=0x94
 #include "CNPC_VMingXiaoTentacle.h"
 #include "CEntityVSlots.h"
