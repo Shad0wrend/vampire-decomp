@@ -2811,6 +2811,25 @@ bool CAI_BaseNPCTroika::vfunc295(CBaseCombatCharacter *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c2ec0 size=0x33e
+void CAI_BaseNPCTroika::vfunc589(int stat, int target)
+{
+	CVStatListSet *pSet = CVStatListSet::Of(this);
+	int cur = pSet->Find(3)->sub_10200ca0(stat);
+	if (cur < target) {
+		if (pSet->Find(2)->sub_10200ca0(stat) < target)
+			pSet->Find(2)->sub_10200be0(stat, target);
+		int diff = target - cur;
+		pSet->Find(3)->sub_10200fc0(stat, diff);
+		pSet->Find(3)->sub_10200be0(stat, target);
+	} else if (cur > target) {
+		int diff = cur - target;
+		pSet->Find(3)->sub_10200be0(stat, target);
+		pSet->Find(3)->sub_10201100(stat, diff);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c48b0 size=0x146
 #include "CAI_BaseNPCTroika.h"
 
