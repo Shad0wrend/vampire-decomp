@@ -53,6 +53,7 @@ class CRestore : public IRestore
 public:
 	virtual void vfunc0();
 	virtual void vfunc1();
+	void sub_101a14b0(int pos);	// slot 1 with the position (the same function as the slot's, called by ReadBasic-like seeks): seek within the save section
 	virtual int vfunc2(CBaseEntity *pEnt, int map);	// reads the entity's data description block
 	virtual void vfunc3(int a, int b, int c, int d, int e);	// stub 0x10004b65 for 0x101a1b70
 
