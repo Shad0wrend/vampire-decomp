@@ -13863,6 +13863,7 @@
 0x109f3650 data   ?DevMsg@@YAXHPBDZZ DevMsg
 0x109f3650 data   DevMsg DevMsg
 0x109f3650 data   __imp_?DevMsg@@YAXHPBDZZ _imp_?DevMsg
+0x109f365c data   ?ExitScopeCall@CVProfile@@QAEXXZ CVProfile::ExitScopeCall
 0x109f36cc data   __imp_?PyString_AsString@@YAPADPAUPyObject@@@Z _imp_?PyString_AsString
 0x109f36ec data   __imp__PyExc_StandardError _imp__PyExc_StandardError
 0x109f377c data   __imp__PyErr_Occurred _imp__PyErr_Occurred
