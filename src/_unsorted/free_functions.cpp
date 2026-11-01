@@ -98349,6 +98349,18 @@ int sub_10203660(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102036e0 size=0x1c
+struct CUnk102036e0Target { void sub_10202a10(int a); };
+struct CUnk102036e0Table { CUnk102036e0Target *sub_10203240(const char *name); };
+extern CUnk102036e0Table g_1074e968;
+
+// TARGET: sub_102036e0
+void sub_102036e0(int a)
+{
+	g_1074e968.sub_10203240("Gender")->sub_10202a10(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10203710 size=0x48
 #include "CUnknown10203240.h"
 #include "CUnknown10202ba0.h"
