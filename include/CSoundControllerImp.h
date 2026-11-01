@@ -43,6 +43,20 @@ struct CSoundEntHandle	// the entity index argument of the sound creators: turne
 	}
 };
 
+// The save/restore reader CSoundControllerImp's restore routine gets (vtable view; slot numbers as the code calls them).
+class ISoundRestoreView
+{
+public:
+	virtual void v0(); virtual void v1();
+	virtual int vfunc2(void *pData, const char *pszDataMap);	// slot 2: reads the fields of the record described by the named data map into pData; non-zero when it succeeded
+	virtual void v3(); virtual void v4();
+	virtual void vfunc5();	// slot 5 (+0x14): starts a block (called before every record)
+	virtual void v6(); virtual void v7();
+	virtual void vfunc8();	// slot 8 (+0x20): ends the block
+	virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void vfunc15(int *pValue, int nCount, int nMaxBytes);	// slot 15 (+0x3c): reads nCount integers (here the number of pending commands)
+};
+
 class CSoundControllerImp
 {
 public:
