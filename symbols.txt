@@ -2483,6 +2483,7 @@
 0x100051be func   ??0CUnknown100735a0@@QAE@XZ CUnknown100735a0::CUnknown100735a0
 0x100051c3 func   ?vfunc81@CPlayerResource@@QAEHXZ CPlayerResource::vfunc81
 0x100051c8 func   ?sub_1005b9b0@CUnknown1005b9b0@@QAEHXZ CUnknown1005b9b0::sub_1005b9b0
+0x100051cd func   ?vfunc330@CNPC_VTzimisceRunner@@UAEDHPAX@Z CNPC_VTzimisceRunner::vfunc330
 0x100051d2 func   ?sub_1017d460@CBasePlayer@@QAEXPAVCBaseEntity@@M@Z CBasePlayer::sub_1017d460
 0x100051d7 func   ?sub_10152400@@YAHXZ sub_10152400
 0x100051e1 func   ?vfunc81@CWeaponRanged_Tzimisce2Head@@QAEHXZ CWeaponRanged_Tzimisce2Head::vfunc81

@@ -403,6 +403,32 @@ void CNPC_VTzimisceRunner::vfunc618()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c43b0 size=0x2a
+#include "CNPC_VTzimisceRunner.h"
+
+struct CTzimisceRunnerLink
+{
+	char m_pad0000[0x9c];
+	int m_n9c;
+};
+
+struct CTzimisceRunnerEnt
+{
+	char m_pad0000[0x94];
+	CTzimisceRunnerLink *m_p94;
+};
+
+// TARGET: CNPC_VTzimisceRunner::vfunc330
+char CNPC_VTzimisceRunner::vfunc330(int unused, void *pEnt)
+{
+	CTzimisceRunnerLink *pLink = ((CTzimisceRunnerEnt *)pEnt)->m_p94;
+	int n = 0;
+	if (pLink)
+		n = pLink->m_n9c;
+	return vfunc319(n, 0x79);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c43f0 size=0xd
 // TARGET: CNPC_VTzimisceRunner::vfunc320
 #include "CNPC_VTzimisceRunner.h"
