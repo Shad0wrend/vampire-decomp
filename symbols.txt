@@ -1312,6 +1312,7 @@
 0x10003404 func   ?sub_101ab310@@YAHHHHH@Z sub_101ab310
 0x10003409 func   ?sub_100330d0@@YIXPAUMem@@HH@Z sub_100330d0
 0x1000341d func   ?vfunc580@CAI_BaseNPCTroika@@UAEPAUCAI_CondOwner@@XZ CAI_BaseNPCTroika::vfunc580
+0x10003422 func   ?sub_10279c20@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_10279c20
 0x10003427 func   _monster_generic monster_generic
 0x1000342c func   ?sub_100c8270@CUtlVector4@@QAEHHPBH@Z CUtlVector4::sub_100c8270
 0x10003436 func   ?vfunc5@CWeaponMelee_GargoyleFist@@QAEPAV1@I@Z CWeaponMelee_GargoyleFist::vfunc5

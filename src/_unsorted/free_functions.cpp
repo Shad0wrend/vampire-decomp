@@ -120488,6 +120488,17 @@ void CAI_BaseNPC::sub_10279b70(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10279c20 size=0x1f
+#include "CAI_BaseNPC.h"
+#include "CUnknown102dfd90.h"
+
+// TARGET: CAI_BaseNPC::sub_10279c20
+void CAI_BaseNPC::sub_10279c20()
+{
+    ((CUnknown102dfd90 *)vfunc541())->sub_102dfd90((CBaseEntity *)vfunc167());
+}
+// END FUNCTION
+
 // FUNCTION: 0x10279c90 size=0x1f
 #include "vampire.h"
 #include "CAI_BaseNPC.h"
