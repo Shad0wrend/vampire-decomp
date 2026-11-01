@@ -125,7 +125,8 @@ public:
 	virtual int slot268(void *pPlayer);	// vampire skill entity: the value the keyring hud message sends for the player
 	EVS(269)
 	virtual void slot270(void *pTrace, int a);	// weapon: takes a trace result and a flag (the dog's bite shot)
-	EVS(271) virtual const char *slot272();	// weapon: a model name (female variant)
+	virtual int slot271(int a);	// animating overlay: the index of the layer playing that activity / sequence, -1 for none
+	virtual const char *slot272();	// weapon: a model name (female variant)
 	virtual const char *slot273();	// weapon: a model name (male variant)
 	virtual const char *slot274();	// terminal: the name of the current screen / script
 	EVS(275) EVS(276) EVS(277) virtual void slot278(const char *pszLine);	// terminal: shows the line (CBaseTerminal::vfunc278)
