@@ -6287,6 +6287,7 @@
 0x1000ba82 func   ?sub_1002ccc0@CUtlMemory20@@QAEXH@Z CUtlMemory20::sub_1002ccc0
 0x1000ba87 func   _grenade grenade
 0x1000ba8c func   ?vfunc5@CResearchBook_HG_FIRE@@QAEPAV1@I@Z CResearchBook_HG_FIRE::vfunc5
+0x1000ba91 func   ?vfunc35@CPropDoorknob@@UAEHH@Z CPropDoorknob::vfunc35
 0x1000ba96 func   ?sub_10072eb0@CUnknown10072eb0@@QAEHXZ CUnknown10072eb0::sub_10072eb0
 0x1000ba9b func   _item_g_gargoyle_book item_g_gargoyle_book
 0x1000baa0 func   ?sub_103bfa50@CNPC_VTzimisce@@QAEHPAVCBaseEntity@@@Z CNPC_VTzimisce::sub_103bfa50
