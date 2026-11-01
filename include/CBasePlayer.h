@@ -228,9 +228,12 @@ public:
 	EHANDLE m_hFadeEnt19C0;	// 0x19C0
 	char m_pad19C4[0x19cc - 0x19c4];	// 0x19C4 .. 0x19CB
 	EHANDLE m_hFadeEnt19CC;	// 0x19CC
-	char m_pad19D0[0x19e4 - 0x19d0];	// 0x19D0 .. 0x19E3
+	float m_flFadeTime19D0;	// 0x19D0
+	float m_flFadeValue19D4;	// 0x19D4
+	char m_FadeStack19D8[0xc];	// 0x19D8: a CUtlVector<CBasePlayerFadeRec> (view FadeStack()), size at +0x19E4
 	int m_nFade19E4;	// 0x19E4
 	char m_pad19E8[0x19f6 - 0x19e8];	// 0x19E8 .. 0x19F5
+	CUtlVector<CBasePlayerFadeRec> &FadeStack() { return *(CUtlVector<CBasePlayerFadeRec> *)m_FadeStack19D8; }
 	bool m_b19F6;
 	char m_pad19F7[0x1b70 - 0x19f7];	// 0x19F7 .. 0x1B6F
 	int m_nRangeStart1B70;	// 0x1B70: low half of the value of the selected command slot (type 1)
