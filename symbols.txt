@@ -5715,6 +5715,7 @@
 0x1000aeac func   ?vfunc144@CNPC_VFrenzyShadow@@UAEXH@Z CNPC_VFrenzyShadow::vfunc144
 0x1000aeb6 func   ?sub_10042640@UtlMem@@QAEXXZ UtlMem::sub_10042640
 0x1000aebb func   ?sub_1020f700@CFuncElevator@@QAEXH@Z CFuncElevator::sub_1020f700
+0x1000aed4 func   ?sub_102ea020@CUnknown1024a230@@QAEPBDH@Z CUnknown1024a230::sub_102ea020
 0x1000aed9 func   ?sub_10386bb0@@YIPAXPAX@Z sub_10386bb0
 0x1000aede func   ?sub_100b5620@@YAHXZ sub_100b5620
 0x1000aee3 func   _item_k_hitman_ji_key item_k_hitman_ji_key

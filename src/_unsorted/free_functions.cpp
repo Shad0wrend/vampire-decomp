@@ -132416,6 +132416,18 @@ void CSymTabUnit102e9fe0::sub_102e9fe0(int a, int idx)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ea020 size=0x1c
+#include "CUnknown1024a230.h"
+
+// TARGET: CUnknown1024a230::sub_102ea020
+const char *CUnknown1024a230::sub_102ea020(int a)
+{
+	if (a == -1)
+		return "<<null>>";
+	return (const char *)m_pObj->sub_10249c70(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ea050 size=0x7
 namespace lifted {
 struct C1000cc2a { int sub_1000cc2a(); };
