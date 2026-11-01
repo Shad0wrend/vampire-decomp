@@ -9561,6 +9561,7 @@
 0x10010d02 func   ?sub_103153a0@CUtlRBTree16Unit@@QAEXG@Z CUtlRBTree16Unit::sub_103153a0
 0x10010d0c func   ?sub_100dda50@CUnknown100dda50@@QAEDXZ CUnknown100dda50::sub_100dda50
 0x10010d11 func   ?sub_101bb6f0@CFloatUnit@@QAEXM@Z CFloatUnit::sub_101bb6f0
+0x10010d16 func   ?sub_10071490@CUnk10071840@@QAEXPAUinputdata_t@@@Z CUnk10071840::sub_10071490
 0x10010d1b func   ?sub_10180e70@@YAXXZ sub_10180e70
 0x10010d2a func   ?vfunc360@CWeaponMelee_Baton@@QAEHXZ CWeaponMelee_Baton::vfunc360
 0x10010d43 func   ?sub_10161d20@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_10161d20

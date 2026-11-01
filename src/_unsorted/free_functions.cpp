@@ -15018,6 +15018,18 @@ int __stdcall sub_10071470(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10071490 size=0x46
+#include "CUnk10071840.h"
+#include "inputdata_t.h"
+
+// TARGET: CUnk10071840::sub_10071490
+void CUnk10071840::sub_10071490(inputdata_t *pInput)
+{
+	const char *psz = pInput->value.String();
+	m_pszSequence7f4 = *psz ? psz : 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10071550 size=0xc1
 #include "CUnk10071840.h"
 #include "CBasePlayer.h"
