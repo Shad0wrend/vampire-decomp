@@ -157842,6 +157842,18 @@ void CNPC_VManBat::sub_1038c250(CBaseEntity *pTarget)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1038e640 size=0x20
+#include "CNPC_VManBat.h"
+
+void __stdcall sub_10272650(int a);
+
+void CNPC_VManBat::sub_1038e640()
+{
+	sub_10272650(0x22);
+	m_f6678 = gpGlobals->curtime + 2.3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1038e720 size=0x108
 #include "CNPC_VManBat.h"
 
