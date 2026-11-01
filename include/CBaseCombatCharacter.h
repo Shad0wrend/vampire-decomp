@@ -217,11 +217,16 @@ public:
 	char m_bObfuscateReady14dc;	// 0x14dc
 	char m_pad14dd[3];
 	float m_flObfuscateTime14e0;	// 0x14e0
-	char m_pad14e4[0x1538 - 0x14e4];
+	char m_pad14e4[0x1534 - 0x14e4];
+	int m_nGrapple1534;	// 0x1534
 	EHANDLE m_hTarget1538;	// 0x1538
 	int m_nTarget153c;	// 0x153c
 	int m_nTargetMode1540;	// 0x1540
-	char m_pad1544[0x1564 - 0x1544];
+	int m_nGrapple1544;	// 0x1544
+	Vector m_vecGrapple1548;	// 0x1548
+	char m_bGrapple1554;	// 0x1554
+	EHANDLE m_hGrapple1558;	// 0x1558
+	char m_pad155c[0x1564 - 0x155c];
 	float m_flNextAttack1564;	// 0x1564: the time the weapon may attack / reload again
 	int m_field1568;	// 0x1568
 	char m_pad156c[0x1574 - 0x156c];
