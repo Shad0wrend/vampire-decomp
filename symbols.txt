@@ -1842,6 +1842,7 @@
 0x1000420a func   ?sub_101bdf90@@YIXPAUMem4@@HH@Z sub_101bdf90
 0x1000420f func   ?sub_10076670@CUnknown10076670@@QAEXH@Z CUnknown10076670::sub_10076670
 0x10004214 func   ?vfunc47@CGameRules@@UAEDPAVCBaseEntity@@0@Z CGameRules::vfunc47
+0x10004219 func   ?vfunc0@CGravControllerPoint@@UAEHPAXHMAAVVector@@1@Z CGravControllerPoint::vfunc0
 0x1000421e func   ?sub_10273790@CAI_BaseNPC@@QAEXPBDPAVCBaseEntity@@@Z CAI_BaseNPC::sub_10273790
 0x10004223 func   ?sub_1023b500@@YAXPAUSArg@@@Z sub_1023b500
 0x10004228 func   ??0CPositionInterpolator_Rope@@QAE@XZ CPositionInterpolator_Rope::CPositionInterpolator_Rope
