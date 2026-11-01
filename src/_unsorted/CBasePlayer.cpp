@@ -130,6 +130,13 @@ void __fastcall sub_1015dcf0(void *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015dd90 size=0x1
+// TARGET: sub_1015dd90
+void __fastcall sub_1015dd90(void *pThis)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015ded0 size=0x1e
 #include "CBasePlayer.h"
 

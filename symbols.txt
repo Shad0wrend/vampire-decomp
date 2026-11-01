@@ -6403,6 +6403,7 @@
 0x1000bad2 func   ?vfunc27@CSave@@UAEXPBVVector@@H@Z CSave::vfunc27
 0x1000bad7 func   ?sub_10310c10@CUnknown10310c10@@QAEPAXPAXH@Z CUnknown10310c10::sub_10310c10
 0x1000badc func   ?vfunc3@CNotifyList@@UAEXPAVCBaseEntity@@HH@Z CNotifyList::vfunc3
+0x1000bae6 func   ?sub_1015dd90@@YIXPAX@Z sub_1015dd90
 0x1000baeb func   ?vfunc294@CNPC_VGhoulCroucher@@QAEDH@Z CNPC_VGhoulCroucher::vfunc294
 0x1000baf0 func   ?vfunc104@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc104
 0x1000baf5 func   ?sub_101eaa60@@YAXH@Z sub_101eaa60
