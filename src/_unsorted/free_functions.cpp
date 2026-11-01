@@ -62178,6 +62178,50 @@ int *sub_10156a00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10156ce0 size=0x35
+#define P10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+    virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CUnk10156ce0Phys
+{
+    P10(a) P10(b) P10(c) P10(d)
+    virtual void vfunc40();
+    virtual void vfunc41();
+    virtual void vfunc42();
+    virtual void vfunc43();
+    virtual void vfunc44();
+    virtual void vfunc45();
+    virtual void vfunc46();
+    virtual void vfunc47(float *pOut, int flag);
+};
+
+struct CUnk10156ce0Owner
+{
+    P10(a) P10(b) P10(c) P10(d) P10(e) P10(f) P10(g) P10(h) P10(i) P10(j) P10(k)
+    P10(l) P10(m) P10(n) P10(o) P10(p) P10(q) P10(r) P10(s) P10(t) P10(u)
+    virtual void vfunc210();
+    virtual void vfunc211();
+    virtual void vfunc212();
+    virtual void vfunc213();
+    virtual void vfunc214();
+    virtual void vfunc215();
+    virtual void vfunc216(float *pVec);
+    char m_pad0004[0x36c - 4];
+    CUnk10156ce0Phys *m_pPhys;
+};
+
+// TARGET: sub_10156ce0
+void sub_10156ce0(CUnk10156ce0Owner *pOwner)
+{
+    if (pOwner->m_pPhys != 0)
+    {
+        float vec[3];
+        pOwner->m_pPhys->vfunc47(vec, 0);
+        pOwner->vfunc216(vec);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10156d30 size=0x8
 void __fastcall sub_10156d30(char *p) { p[0x105c] = 1; }
 // END FUNCTION
