@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10569078;
 }
-CEnvLaser::Datamap82 CEnvLaser::vfunc82()
+datamap_t *CEnvLaser::vfunc82()
 {
-    return (CEnvLaser::Datamap82)&lifted::g_10569078;
+    return (datamap_t *)&lifted::g_10569078;
 }
 // END FUNCTION
 
