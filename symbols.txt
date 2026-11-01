@@ -7190,6 +7190,7 @@
 0x1000cde2 func   ?vfunc5@CFire@@QAEPAV1@I@Z CFire::vfunc5
 0x1000cde7 func   ?sub_101d0540@@YAXHH@Z sub_101d0540
 0x1000cdf1 func   ?sub_1008fbe0@CBaseAnimating@@QAEMH@Z CBaseAnimating::sub_1008fbe0
+0x1000cdf6 func   ?vfunc8@CGameStringPool@@QAEPAV1@I@Z CGameStringPool::vfunc8
 0x1000cdfb func   ?sub_1029f120@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_1029f120
 0x1000ce00 func   _item_container item_container
 0x1000ce05 func   ?vfunc33@CRestore@@UAEHXZ CRestore::vfunc33
