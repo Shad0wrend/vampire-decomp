@@ -1843,6 +1843,7 @@
 0x10004232 func   ?sub_10158da0@@YIXPAPAX@Z sub_10158da0
 0x10004237 func   ?sub_1017df50@CBasePlayer@@QAEXHMPBD@Z CBasePlayer::sub_1017df50
 0x1000423c func   ?vfunc104@CWeaponThrown_Chang_Energy_Ball@@QAEXXZ CWeaponThrown_Chang_Energy_Ball::vfunc104
+0x10004241 func   ?sub_10062e50@CTEFootprintDecal@@QAEPAV1@PBD@Z CTEFootprintDecal::sub_10062e50
 0x10004246 func   ?sub_101ab550@CServerNetworkProperty@@QAEXXZ CServerNetworkProperty::sub_101ab550
 0x1000424b func   ?sub_103ebb10@@YAHXZ sub_103ebb10
 0x1000425a func   ?sub_103c48e0@@YIPAXPAD@Z sub_103c48e0

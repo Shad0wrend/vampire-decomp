@@ -11472,6 +11472,31 @@ int sub_10062c30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10062e50 size=0x2e
+#include "CTEFootprintDecal.h"
+
+struct CBaseTempEntityHeadUnit {
+	void sub_10015334(const char *name);
+};
+
+extern void *vt_1044deb4[];
+
+// TARGET: CTEFootprintDecal::sub_10062e50
+CTEFootprintDecal *CTEFootprintDecal::sub_10062e50(const char *name)
+{
+	((CBaseTempEntityHeadUnit *)this)->sub_10015334(name);
+	*(void ***)this = vt_1044deb4;
+	int *p = (int *)((char *)this + 0xc);
+	p[0] = 0;
+	p[1] = 0;
+	p[2] = 0;
+	p[6] = 0;
+	p[7] = 0;
+	*(char *)((char *)this + 0x2c) = 0x43;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10062ec0 size=0xb
 namespace lifted {
 extern char g_1044deb4;
