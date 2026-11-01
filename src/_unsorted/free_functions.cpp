@@ -12128,6 +12128,49 @@ int CUnknown10068c00::sub_10068c00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10068f10 size=0x291
+#include "SendTable.h"
+
+SendProp sub_10246af0(const char *, int, int, int, int, int, void *);
+SendProp sub_10246dc0(const char *, int, int, void *);
+SendProp sub_10246ca0(const char *, int, int, int, int);
+SendProp sub_10246510(const char *, int, int, int, int, float, float, int);
+void sub_10246300();
+void sub_102464b0();
+void sub_102464d0();
+extern int g_1053dfa8;
+extern const char *g_105453ac;
+extern SendTable g_106c6590;
+extern char g_105454e0[], g_105454dc[], g_105454c8[], g_105454c4[], g_105454c0[], g_105454bc[], g_105454b8[], g_105454b4[], g_105454b0[], g_105454ac[];
+
+int sub_10068f10()
+{
+	static SendProp props[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246dc0("baseclass", 0, g_1053dfa8, (void *)sub_102464d0),
+		sub_10246af0("m_nChannel", 0xc, 4, 8, 1, 0, 0),
+		sub_10246510(g_105454e0, 0x10, 4, 0x10, 8, -1.0f, 4.0f, (int)sub_10246300),
+		sub_10246510(g_105454dc, 0x14, 4, 0x10, 8, -1.0f, 4.0f, (int)sub_10246300),
+		sub_10246af0("m_nEffects", 0x18, 4, 8, 1, 0, 0),
+		sub_10246af0(g_105454c8, 0x1c, 4, 8, 1, 0, 0),
+		sub_10246af0(g_105454c4, 0x20, 4, 8, 1, 0, 0),
+		sub_10246af0(g_105454c0, 0x24, 4, 8, 1, 0, 0),
+		sub_10246af0(g_105454bc, 0x28, 4, 8, 1, 0, 0),
+		sub_10246af0(g_105454b8, 0x2c, 4, 8, 1, 0, 0),
+		sub_10246af0(g_105454b4, 0x30, 4, 8, 1, 0, 0),
+		sub_10246af0(g_105454b0, 0x34, 4, 8, 1, 0, 0),
+		sub_10246af0(g_105454ac, 0x38, 4, 8, 1, 0, 0),
+		sub_10246510("m_fFadeInTime", 0x3c, 4, 0x10, 8, 0.0f, 256.0f, (int)sub_10246300),
+		sub_10246510("m_fFadeOutTime", 0x40, 4, 0x10, 8, 0.0f, 256.0f, (int)sub_10246300),
+		sub_10246510("m_fHoldTime", 0x44, 4, 0x10, 8, 0.0f, 256.0f, (int)sub_10246300),
+		sub_10246510("m_fFxTime", 0x48, 4, 0x10, 8, 0.0f, 256.0f, (int)sub_10246300),
+		sub_10246ca0("m_szMessage", 0x4c, 0x80, 0, (int)sub_102464b0),
+	};
+	g_106c6590.sub_10247240(&props[1], 0x12, g_105453ac);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10069310 size=0xd6
 #include "CTETextMessage.h"
 
