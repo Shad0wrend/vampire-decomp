@@ -69,6 +69,16 @@ void CTETextMessage::vfunc3(const float *pOrigin, const float *pAngles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10068d50 size=0x39
+#include "CTETextMessage.h"
+#include "IVEngineServerFull.h"
+
+void CTETextMessage::vfunc4(CRecipientFilter *pFilter, float flDelay)
+{
+	engine->vfunc103((int)pFilter, *(int *)&flDelay, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10068e10 size=0x6
 #include "CTETextMessage.h"
 namespace lifted {
