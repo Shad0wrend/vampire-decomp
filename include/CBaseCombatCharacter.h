@@ -120,6 +120,7 @@ public:
 	void sub_1033f3f0(inputdata_t *data);	// "CBaseCombatCharacter::InputHungerCheck": same shape as sub_1033ea90
 	void sub_1033eb60(int value);
 	void sub_1033f4c0(int value);	// "CBaseCombatCharacter::HungerChec...": scope trace (entity name), when the dword at +0x146c is not positive calls sub_1033eb60(value) and, if it became positive, sets the byte at +0x1474
+	void sub_1033f270(inputdata_t *data);	// "CBaseCombatCharacter::InputFrenzyTrigger": scope trace (entity name), when the frenzy count at +0x146c is not positive and sub_10337f30() holds: DevMsg, slot 360, count = 10 and queues "FrenzyUpdate"
 	void sub_1033f590(inputdata_t *data);	// "CBaseCombatCharacter::InputFrenz...": scope trace (entity name), counts down the dword at +0x146c; while it stays positive queues the "FrenzyUpdate" input on itself after 1.0 / the float at +0x1488, else sub_1033f6d0()
 	void sub_1033f6d0();
 	char sub_103268e0(const float *pos, int a);	// "CBaseCombatCharacter::FInViewCone" worker of vfunc362
