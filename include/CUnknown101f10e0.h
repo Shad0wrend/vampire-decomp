@@ -14,6 +14,7 @@ public:
 	int m_rangesTable;	// 0x0050: id of the "Reaction_Ranges" table
 	int m_appearanceTable;	// 0x0054: id of the "Appearance_Reaction" table
 
+	bool sub_101f12e0(const char *pszFile);	// loads one data file of the reaction categories (stub 0x10003e8f...): opens it, parses every ReactionCategory with sub_101f10e0 (false and a Msg when the file cannot be opened or a category fails), releases the file
 	bool sub_101f10e0(void *pData);	// parses one reaction category of the data file: its InternalName (looked up in the global name table at 0x1073a9a0, registered on a miss) picks the id and every ReactionGroup key is handed to a fresh item (sub_101f0b80); false (with a Msg) for no data or when no item could be made
 	int *sub_101f1050();	// reserves one more id slot (stub 0x10006032)
 	void *sub_101f0ea0();	// the next item (stub 0x10012d64), 0 when none could be made
