@@ -128,6 +128,11 @@ bool CBaseCombatCharacter::vfunc347(int event, char *pszName, float *pA, float *
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014f930 size=0x3
+// TARGET: CBaseCombatCharacter::vfunc360
+char CBaseCombatCharacter::vfunc360() { return 0; }
+// END FUNCTION
+
 // FUNCTION: 0x1015dc20 size=0x5
 bool CBaseCombatCharacter::vfunc72(int a0)
 {

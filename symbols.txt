@@ -11414,6 +11414,7 @@
 0x10014092 func   ?sub_100ddd90@CCollisionProperty@@QAEXXZ CCollisionProperty::sub_100ddd90
 0x100140a6 func   ?vfunc3@CSoundControllerImp@@UAEXPAXMHMM@Z CSoundControllerImp::vfunc3
 0x100140ab func   ?vfunc546@CNPC_VWerewolf@@QAEHH@Z CNPC_VWerewolf::vfunc546
+0x100140b0 func   ?vfunc360@CBaseCombatCharacter@@UAEDXZ CBaseCombatCharacter::vfunc360
 0x100140bf func   ?vfunc176@CTriggerPlayerActivityLevel@@QAEXPAVCBaseEntity@@@Z CTriggerPlayerActivityLevel::vfunc176
 0x100140c4 func   ?sub_10374f40@CNPC_VDog@@QAEXXZ CNPC_VDog::sub_10374f40
 0x100140c9 func   ?sub_10197e50@@YAPAUPyObj@@PAU1@0@Z sub_10197e50
