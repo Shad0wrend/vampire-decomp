@@ -4219,6 +4219,7 @@
 0x100084ea func   ?sub_10236400@@YAHXZ sub_10236400
 0x100084f4 func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@UUnreachableEnt_t@@V?$CUtlMemory@UUnreachableEnt_t@@@@@@$08@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<UnreachableEnt_t,CUtlMemory<UnreachableEnt_t> >,9>::vfunc3
 0x100084f9 func   ?sub_100f0c00@CBaseDoor@@QAEDD@Z CBaseDoor::sub_100f0c00
+0x100084fe func   ?RotateRight@?$CUtlRBTree@UCRBEntry24@@H@@QAEXH@Z CUtlRBTree<CRBEntry24,int>::RotateRight
 0x100084fe func   ?sub_1007ffc0@CUtlRBTree24@@QAEXH@Z CUtlRBTree24::sub_1007ffc0
 0x10008503 func   ?sub_1027fc10@CUnknown1027fc10@@QAEPAXH@Z CUnknown1027fc10::sub_1027fc10
 0x10008521 func   ?vfunc617@CNPC_VHengeyokai@@QAEXXZ CNPC_VHengeyokai::vfunc617
