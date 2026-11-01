@@ -62332,6 +62332,26 @@ int *__fastcall sub_1016b9d0(int *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016ba20 size=0x28
+struct CUnknown1016ba20 {
+	char m_pad0000[0x2348];
+	int m_n2348;
+	int m_n234c;
+	int m_n2350;
+	char m_b2354;
+	void sub_1016ba20(const int *pSrc);
+};
+
+// TARGET: CUnknown1016ba20::sub_1016ba20
+void CUnknown1016ba20::sub_1016ba20(const int *pSrc)
+{
+	m_b2354 = 1;
+	m_n2348 = pSrc[0];
+	m_n234c = pSrc[1];
+	m_n2350 = pSrc[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016bb50 size=0x18f
 #include "CBasePlayer.h"
 #include "CEHandleGet.h"

@@ -1238,6 +1238,7 @@
 0x100031cf func   ?sub_101ed0f0@CUnk101ed0f0@@QAE_NHH@Z CUnk101ed0f0::sub_101ed0f0
 0x100031d9 func   ?vfunc489@CGenericSabbat_NPC@@UAEXXZ CGenericSabbat_NPC::vfunc489
 0x100031de func   ?sub_100a7d00@CBaseEntity@@QAEXHHH@Z CBaseEntity::sub_100a7d00
+0x100031e3 func   ?sub_1016ba20@CUnknown1016ba20@@QAEXPBH@Z CUnknown1016ba20::sub_1016ba20
 0x100031ed func   ?sub_1012f870@@YAHXZ sub_1012f870
 0x100031f2 func   _func_dustcloud func_dustcloud
 0x100031fc func   ?vfunc5@CWeaponIArmor_Body_Armor@@QAEPAV1@I@Z CWeaponIArmor_Body_Armor::vfunc5
