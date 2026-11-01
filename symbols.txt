@@ -4531,6 +4531,7 @@
 0x10008bd9 func   ?sub_100cb670@@YAPAHXZ sub_100cb670
 0x10008bde func   ?sub_100a8c90@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100a8c90
 0x10008be3 func   ?vfunc81@CWeaponUnarmed@@UAEHXZ CWeaponUnarmed::vfunc81
+0x10008be8 func   ?sub_1034fee0@@YAXXZ sub_1034fee0
 0x10008bf2 func   ?sub_101b3a10@CUnknown101b3a10@@QAEXPAXPBDPADH@Z CUnknown101b3a10::sub_101b3a10
 0x10008bfc func   ?sub_102e12c0@CUnknown102e12c0@@QAEXXZ CUnknown102e12c0::sub_102e12c0
 0x10008c01 func   ?sub_102373f0@@YAHXZ sub_102373f0

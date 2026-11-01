@@ -150767,6 +150767,107 @@ void CUnk1034f9e0::sub_1034f9e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034fee0 size=0x2c5
+#include "VKeyValues.h"
+#include <stdio.h>
+
+struct IStealthKV
+{
+	virtual const char *vfunc0();
+	virtual void vfunc1();
+	virtual IStealthKV *FindKey(const char *pszName);	// slot 2
+	virtual void vfunc3(); virtual void vfunc4(); virtual void vfunc5(); virtual void vfunc6();
+	virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9(); virtual void vfunc10();
+	virtual float GetFloat(const char *pszName, float flDefault);	// slot 11
+	int m_pVbPtr;
+};
+
+struct IStealthKVRelease
+{
+	virtual void vfunc0();
+	virtual void vfunc1();
+};
+
+IStealthKV *sub_101f2e20(const char *pszFile, void *pPathID);
+extern void *g_1070b238;
+__declspec(dllimport) void DevMsg(const char *, ...);
+__declspec(dllimport) void Msg(const char *, ...);
+extern float g_106262c0[11][11];
+extern float g_106264a8[11][11];
+extern float g_1062668c[11];
+extern float g_106266b8[11];
+
+void sub_1034fee0()
+{
+	char szBuf[128];
+	int i, j;
+	IStealthKV *pTable, *pLight, *pFile;
+	sprintf(szBuf, "%s%s.txt", "vdata\\system\\", "Stealth");
+	pFile = sub_101f2e20(szBuf, g_1070b238);
+	if (pFile) {
+		pTable = pFile->FindKey("StealthVisionScalarTable");
+		if (pTable) {
+			for (i = 0; i <= 10; i++) {
+				sprintf(szBuf, "Light%d", i);
+				pLight = pTable->FindKey(szBuf);
+				if (pLight) {
+					for (j = 0; j <= 10; j++) {
+						sprintf(szBuf, "Stealth%d", j);
+						g_106262c0[i][j] = pLight->GetFloat(szBuf, g_106262c0[i][j]);
+					}
+				} else {
+					DevMsg("Stealth.Txt - Missing %s section\n", szBuf);
+				}
+			}
+		} else {
+			DevMsg("Stealth.Txt - Missing StealthVisionScalarTable section\n");
+		}
+
+		pTable = pFile->FindKey("StealthVisionConeScalarTable");
+		if (pTable) {
+			for (i = 0; i <= 10; i++) {
+				sprintf(szBuf, "Light%d", i);
+				pLight = pTable->FindKey(szBuf);
+				if (pLight) {
+					for (j = 0; j <= 10; j++) {
+						sprintf(szBuf, "Stealth%d", j);
+						g_106264a8[i][j] = pLight->GetFloat(szBuf, g_106264a8[i][j]);
+					}
+				} else {
+					DevMsg("Stealth.Txt - Missing %s section\n", szBuf);
+				}
+			}
+		} else {
+			DevMsg("Stealth.Txt - Missing StealthVisionConeScalarTable section\n");
+		}
+
+		pTable = pFile->FindKey("StealthHearingDistTable");
+		if (pTable) {
+			for (i = 0; i <= 10; i++) {
+				sprintf(szBuf, "Stealth%d", i);
+				g_1062668c[i] = pTable->GetFloat(szBuf, g_1062668c[i]);
+			}
+		} else {
+			DevMsg("Stealth.Txt - Missing StealthHearingDistTable section\n");
+		}
+
+		pTable = pFile->FindKey("StealthLightRangeTable");
+		if (pTable) {
+			for (i = 0; i <= 10; i++) {
+				sprintf(szBuf, "Light%d", i);
+				g_106266b8[i] = pTable->GetFloat(szBuf, g_106266b8[i]);
+			}
+		} else {
+			DevMsg("Stealth.Txt - Missing StealthLightRangeTable section\n");
+		}
+
+		((IStealthKVRelease *)((char *)pFile + 4 + ((int *)pFile->m_pVbPtr)[1]))->vfunc1();
+	} else {
+		Msg("Unable to open [%s] data file for: Stealth Tables\n", szBuf);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10350340 size=0x20e
 #include "engineserver.h"
 
