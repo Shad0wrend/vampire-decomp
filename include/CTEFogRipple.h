@@ -15,6 +15,7 @@ public:
 	virtual void vfunc4(CRecipientFilter *pFilter, float flDelay);	// slot 4 "Create"
 
 	void sub_1000a08d();	// destructor body
+	CTEFogRipple *sub_10062500(const char *name);	// constructor body (CBaseTempEntityHead base at stub 0x10015334), then the vtable and the zeroed fields from +0xc
 
 	char m_pad0004[8];
 	Vector m_vecOrigin;	// 0x0c
