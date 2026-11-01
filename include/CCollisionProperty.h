@@ -16,7 +16,7 @@ public:
 	virtual int vfunc6();
 	virtual void vfunc7();
 	virtual void vfunc8();	// GetCollisionOrigin: returns the pointer to the three floats of the world origin (declared void: vfunc8 is matched that way)
-	virtual float *vfunc9(int a);	// GetCollisionAngles: pointer to the three floats of the world angles (takes one stack argument, 0 at the known call)
+	virtual float *vfunc9(bool bOuter);	// GetCollisionAngles: pointer to the three floats of the world angles (takes one stack argument, 0 at the known call)
 	virtual float *vfunc10();	// CollisionToWorldTransform: the matrix3x4_t (12 floats) of the collision space
 	virtual int vfunc11();
 	virtual short vfunc12();
