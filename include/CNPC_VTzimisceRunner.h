@@ -32,6 +32,8 @@ public:
 	void sub_102aacf0(int *pEvent);	// CAI_BaseNPCTroika::vfunc444 (stub 0x10015c2b), called directly
 	bool sub_10280a50();	// CAI_BaseNPC::AutoMovement (stub 0x1000cf6d), called directly
 	void sub_10273e80(int a);	// CAI_BaseNPC member (stub 0x1000ac68), called directly
+	void sub_102b27f0();	// CAI_BaseNPCTroika::vfunc433 (stub 0x10013f2f), called directly
+	void sub_10269b50(int a);	// stub 0x10015839: the sound / event call with the index a, made twice by vfunc433
 	void vfunc619(char bRight);	// slot 619 (plain member): a footstep (the left or right foot table at 0x1065d680 / 0x1065d688, random of two) and a breath (table 0x1065d690, random of four) from the edict at +0x2e0, channel 4, volume 1.0, attenuation 0.8, to the players that can hear it, reliably
 	void vfunc336();	// slot 336 (plain member): when the engine time (slot 119 of the engine) differs from the time at +0x6674: sub_10273070(1), clears the byte at +0x6672, sets the byte at +0x5f2c
 	void sub_10273070(int a);	// CAI_BaseNPC member (stub 0x1000dc29), called directly
