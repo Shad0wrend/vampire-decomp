@@ -123,6 +123,19 @@ L:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128f10 size=0x2e
+#include "CGameRules.h"
+#include "CBaseEntity.h"
+#include "CVoiceGameMgr.h"
+int __cdecl sub_10232400();
+bool CGameRules::vfunc41(const char *pcmd, CBaseEntity *pPlayer)
+{
+	if (pPlayer->m_pA8 && ((CVoiceGameMgr *)sub_10232400())->sub_102325e0(pPlayer, pcmd))
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101291f0 size=0x35
 #include "CGameRules.h"
 #include "CVoiceGameMgr.h"
