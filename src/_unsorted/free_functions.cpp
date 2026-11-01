@@ -163668,6 +163668,21 @@ int CUtlVectorHintData::sub_103dc090(int elem, const CHintData_WW *pSrc)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dc180 size=0x33
+#include "CUtlMemory72.h"
+extern void *(*g_109f3634)(int);
+
+CUtlMemory72 *CUtlMemory72::sub_103dc180(int growSize, int allocationCount)
+{
+    m_pMemory = 0;
+    m_allocationCount = allocationCount;
+    m_growSize = growSize;
+    if (allocationCount)
+        m_pMemory = (char *)g_109f3634(allocationCount * 72);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dc220 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);
