@@ -104841,6 +104841,20 @@ void CAI_BaseNPC::sub_10209ac0(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10209b00 size=0xf
+struct CItemContainerFwd;
+struct CItemContainerFwd {
+    void sub_10209b00(int a);
+    void sub_10209b20(int a);
+};
+
+// TARGET: sub_10209b00
+void CItemContainerFwd::sub_10209b00(int a)
+{
+    this->sub_10209b20((*(volatile int *)a));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10209b20 size=0xea
 #include "CItemContainer.h"
 #include "CEHandleGet.h"

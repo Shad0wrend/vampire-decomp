@@ -12515,6 +12515,7 @@
 0x10015bdb func   ?vfunc174@CTriggerBombSite@@QAEXPAX@Z CTriggerBombSite::vfunc174
 0x10015be5 func   ?sub_101e3f50@CStatusFlagList@@QAE_NPAUCStatusTarget@@@Z CStatusFlagList::sub_101e3f50
 0x10015bea func   ?sub_101cf680@@YAXAAVVector@@M@Z sub_101cf680
+0x10015bef func   ?sub_10209b00@CItemContainerFwd@@QAEXH@Z CItemContainerFwd::sub_10209b00
 0x10015bf4 func   ?Links@?$CUtlRBTree@UCRBEntry8@@H@@QBEABULinks_t@1@H@Z CUtlRBTree<CRBEntry8,int>::Links
 0x10015bf4 func   ?sub_10055520@CUtlRBTree24@@QBEABULinks_t@1@H@Z CUtlRBTree24::sub_10055520
 0x10015bf9 func   ?sub_102e0860@@YAPAHXZ sub_102e0860
