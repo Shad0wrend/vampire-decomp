@@ -8382,6 +8382,7 @@
 0x1000f5dd func   ?vfunc82@CRagdollProp@@UAEPAUdatamap_t@@XZ CRagdollProp::vfunc82
 0x1000f5e2 func   ?sub_10249960@@YIIPAPAD@Z sub_10249960
 0x1000f5e7 func   ?vfunc10@CServerGameClients@@UAEXXZ CServerGameClients::vfunc10
+0x1000f5ec func   ?sub_100c0b10@CUnk100c0b10@@QAEXH@Z CUnk100c0b10::sub_100c0b10
 0x1000f5f6 func   ?vfunc359@CPayphone@@UAEHH@Z CPayphone::vfunc359
 0x1000f600 func   ?sub_10130760@@YGHH@Z sub_10130760
 0x1000f605 func   ?vfunc82@CPhysExplosion@@UAEHXZ CPhysExplosion::vfunc82

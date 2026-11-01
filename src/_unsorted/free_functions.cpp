@@ -32595,6 +32595,25 @@ void CFloatPair3f4::sub_100c0ad0(int a, int b, int c, int d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c0b10 size=0x20
+#include "vampire.h"
+struct CUnk100c0b10
+{
+    char m_pad0000[0x164];
+    int m_n164;  // 0x164
+    void sub_100c0970(int a);
+    void sub_100c0b10(int unused);
+};
+// TARGET: CUnk100c0b10::sub_100c0b10
+void CUnk100c0b10::sub_100c0b10(int unused)
+{
+    char *p = (char *)this;
+    p[0x46c] = (p[0x46c] == 0);
+    unused = m_n164;
+    sub_100c0970(unused);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c0b40 size=0x7e
 #include <math.h>
 
