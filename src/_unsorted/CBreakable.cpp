@@ -12,9 +12,9 @@ char CBreakable::vfunc117() { char c = ((CBaseEntity *)this)->CBaseEntity::vfunc
 namespace lifted {
 extern char g_1056e590;
 }
-int CBreakable::vfunc82()
+CBreakable::Datamap82 CBreakable::vfunc82()
 {
-    return (int)&lifted::g_1056e590;
+    return (CBreakable::Datamap82)&lifted::g_1056e590;
 }
 // END FUNCTION
 
