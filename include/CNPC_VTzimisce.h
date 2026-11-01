@@ -90,7 +90,8 @@ public:
 	void vfunc487();	// slot 487 (the same slot as v487, declared under its real name for the matched functions)
 	virtual void vfunc490();
 	VT_SLOTS100(w0)
-	VT_SLOTS10(w10)
+	virtual void w100(); virtual void w101(); virtual void vfunc593(); virtual void w103(); virtual void w104();
+	virtual void w105(); virtual void w106(); virtual void w107(); virtual void w108(); virtual void w109();	// slot 593: CAI_BaseNPCTroika::vfunc593 (stub 0x10002720), then the five floats at +0x655c..+0x656c
 	VT_SLOTS10(w11)
 	virtual void w120(); virtual void w121(); virtual void w122(); virtual void w123();
 	virtual void w124(); virtual void w125(); virtual void w126();
