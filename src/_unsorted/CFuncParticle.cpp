@@ -25,9 +25,9 @@ int CFuncParticle::vfunc81()
 namespace lifted {
 extern char g_10566eec;
 }
-int CFuncParticle::vfunc82()
+CFuncParticle::Datamap82 CFuncParticle::vfunc82()
 {
-    return (int)&lifted::g_10566eec;
+    return (CFuncParticle::Datamap82)&lifted::g_10566eec;
 }
 // END FUNCTION
 
