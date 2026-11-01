@@ -1618,6 +1618,7 @@
 0x10003cb0 func   ?vfunc2@CTETParticleHUD@@UAEPAV1@I@Z CTETParticleHUD::vfunc2
 0x10003cba func   ?vfunc5@CWeaponMelee_HengeyokaiFist@@QAEPAV1@I@Z CWeaponMelee_HengeyokaiFist::vfunc5
 0x10003cbf func   ?sub_101dda30@CUnknown101dda30@@QAEPAXXZ CUnknown101dda30::sub_101dda30
+0x10003cc4 func   ?sub_100749d0@CUnk100749d0@@QAEHH@Z CUnk100749d0::sub_100749d0
 0x10003cc9 func   ?sub_102d6180@@YAMH@Z sub_102d6180
 0x10003cd3 func   ?sub_10073f60@CUnknown10073f60@@QAEXXZ CUnknown10073f60::sub_10073f60
 0x10003cd8 func   ?sub_10289fe0@CAI_BaseNPC@@QAEHXZ CAI_BaseNPC::sub_10289fe0
