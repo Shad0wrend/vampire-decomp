@@ -44209,6 +44209,21 @@ void CRotDoor::sub_100f3dd0(const float *pDir)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f3e60 size=0x2b
+#include "CRotDoor.h"
+
+// TARGET: CRotDoor::sub_100f3e60
+float CRotDoor::sub_100f3e60(float *pAngles)
+{
+	int flags = *(int *)((char *)this + 0x204);
+	if (flags & 0x40)
+		return pAngles[0];
+	if (flags & 0x80)
+		return pAngles[2];
+	return pAngles[1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f3ea0 size=0x53
 #include <math.h>
 extern float g_104546c4;
