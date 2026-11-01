@@ -130427,6 +130427,21 @@ void CUtlRBTree12::sub_102ce640(const void *insert, unsigned short &parent, bool
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ce7a0 size=0x33
+#include "CUtlMemory12.h"
+extern void *(*g_109f3634)(int);
+
+CUtlMemory12 *CUtlMemory12::sub_102ce7a0(int growSize, int allocationCount)
+{
+    m_pMemory = 0;
+    m_allocationCount = allocationCount;
+    m_growSize = growSize;
+    if (allocationCount)
+        m_pMemory = (char *)g_109f3634(allocationCount * 12);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ce7f0 size=0xb7
 #include "CUtlVector4.h"
 

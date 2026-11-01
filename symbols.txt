@@ -3700,6 +3700,7 @@
 0x10007522 func   ?vfunc82@CBaseGrenade@@UAEPAUdatamap_t@@XZ CBaseGrenade::vfunc82
 0x10007527 func   ?sub_101282b0@CGameMovement@@QAEMXZ CGameMovement::sub_101282b0
 0x1000752c func   ?sub_100ff090@CEnvBeam@@QAEXXZ CEnvBeam::sub_100ff090
+0x10007531 func   ?sub_102ce7a0@CUtlMemory12@@QAEPAU1@HH@Z CUtlMemory12::sub_102ce7a0
 0x10007536 func   ?sub_103e88b0@@YAHXZ sub_103e88b0
 0x1000753b func   ?sub_10387f30@@YAHXZ sub_10387f30
 0x10007545 func   ?sub_101d83a0@CUnknown101d82d0@@QAEXPBD@Z CUnknown101d82d0::sub_101d83a0
