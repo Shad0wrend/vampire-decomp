@@ -9464,6 +9464,7 @@
 0x10010fff func   ?vfunc68@CBaseCombatCharacter@@QAE_NPAVCBaseEntity@@@Z CBaseCombatCharacter::vfunc68
 0x10011004 func   ?sub_10206aa0@CUnknown10206c70@@QAEXHPAVCBaseCombatCharacter@@@Z CUnknown10206c70::sub_10206aa0
 0x10011009 func   ?vfunc81@CBaseAnimating@@UAEHXZ CBaseAnimating::vfunc81
+0x10011009 func   ?vfunc81@CPropDoorknob@@UAEHXZ CPropDoorknob::vfunc81
 0x1001100e func   ?vfunc326@CDisciplineWeapon@@UAEXXZ CDisciplineWeapon::vfunc326
 0x10011013 func   _worldspawn worldspawn
 0x10011018 func   ?vfunc36@CItemContainerLock@@QAEHXZ CItemContainerLock::vfunc36
