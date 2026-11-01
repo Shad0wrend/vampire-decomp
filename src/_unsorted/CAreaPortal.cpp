@@ -5,9 +5,9 @@
 namespace lifted {
 extern char g_1056dbe0;
 }
-CAreaPortal::Datamap82 CAreaPortal::vfunc82()
+datamap_t *CAreaPortal::vfunc82()
 {
-    return (CAreaPortal::Datamap82)&lifted::g_1056dbe0;
+    return (datamap_t *)&lifted::g_1056dbe0;
 }
 // END FUNCTION
 
