@@ -1585,6 +1585,7 @@
 0x10003bb6 func   ?sub_10133450@@YAPAHXZ sub_10133450
 0x10003bc0 func   ?sub_103a7760@CNPC_VSabbatLeader@@QAEXH@Z CNPC_VSabbatLeader::sub_103a7760
 0x10003bc5 func   _vampireprojectile vampireprojectile
+0x10003bca func   ?Links@?$CUtlRBTree@UCRBEntry24@@H@@QBEABULinks_t@1@H@Z CUtlRBTree<CRBEntry24,int>::Links
 0x10003bca func   ?sub_1007fc70@CUtlRBTree24@@QBEABULinks_t@1@H@Z CUtlRBTree24::sub_1007fc70
 0x10003bcf func   ?sub_1030fb90@CUnknown1030fb90@@QAE_NPAX@Z CUnknown1030fb90::sub_1030fb90
 0x10003bd4 func   ?vfunc259@CNPC_VSabbatLeader@@QAEXPAX@Z CNPC_VSabbatLeader::vfunc259
