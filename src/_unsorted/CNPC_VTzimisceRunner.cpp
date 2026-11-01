@@ -285,6 +285,16 @@ void CNPC_VTzimisceRunner::vfunc130(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c3cb0 size=0x9
+int sub_1000be92();
+
+// TARGET: sub_103c3cb0
+int sub_103c3cb0()
+{
+    return sub_1000be92() | 0x2000;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c3cd0 size=0x30
 #include "CNPC_VTzimisceRunner.h"
 #include "CAI_BaseNPC.h"
