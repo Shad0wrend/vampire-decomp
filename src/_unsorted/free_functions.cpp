@@ -38377,6 +38377,83 @@ void sub_100d5d10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d5e30 size=0x39
+#include "vampire.h"
+
+void *sub_101193b0();
+
+#define CSV_ROW(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CUnk100d5e30
+{
+	CSV_ROW(r0)
+	CSV_ROW(r1)
+	CSV_ROW(r2)
+	CSV_ROW(r3)
+	CSV_ROW(r4)
+	CSV_ROW(r5)
+	CSV_ROW(r6)
+	CSV_ROW(r7)
+	CSV_ROW(r8)
+	CSV_ROW(r9)
+	CSV_ROW(r10)
+	CSV_ROW(r11)
+	CSV_ROW(r12)
+	CSV_ROW(r13)
+	CSV_ROW(r14)
+	CSV_ROW(r15)
+	CSV_ROW(r16)
+	CSV_ROW(r17)
+	CSV_ROW(r18)
+	CSV_ROW(r19)
+	CSV_ROW(r20)
+	CSV_ROW(r21)
+	CSV_ROW(r22)
+	CSV_ROW(r23)
+	CSV_ROW(r24)
+	CSV_ROW(r25)
+	CSV_ROW(r26)
+	CSV_ROW(r27)
+	CSV_ROW(r28)
+	CSV_ROW(r29)
+	CSV_ROW(r30)
+	CSV_ROW(r31)
+	CSV_ROW(r32)
+	CSV_ROW(r33)
+	CSV_ROW(r34)
+	CSV_ROW(r35)
+	CSV_ROW(r36)
+	CSV_ROW(r37)
+	virtual void r380();
+	virtual void r381();
+	virtual void r382();
+	virtual void r383();
+	virtual void r384();
+	virtual void vfunc385(void *a, int b, int c);
+	void *sub_10007e19();
+};
+
+// TARGET: sub_100d5e30
+void sub_100d5e30()
+{
+	char *pA = (char *)sub_101193b0();
+	if (pA == 0)
+	{
+		return;
+	}
+	CUnk100d5e30 *esi = *(CUnk100d5e30 **)(pA + 0xa8);
+	if (esi == 0)
+	{
+		return;
+	}
+	if (esi->sub_10007e19() == 0)
+	{
+		return;
+	}
+	esi->vfunc385(esi->sub_10007e19(), 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d5f10 size=0xe0
 #include "CBasePlayer.h"
 #include <string.h>
