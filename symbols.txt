@@ -9318,6 +9318,7 @@
 0x1001063b func   ?sub_103ff9e0@@YAHXZ sub_103ff9e0
 0x10010640 func   ?sub_1013a7e0@@YAXABVVector@@MAAV1@@Z sub_1013a7e0
 0x10010645 func   ?sub_10299c60@@YAHPAUSObj@@@Z sub_10299c60
+0x1001064a func   ?Grow@?$CUtlMemory@UCBasePlayerFadeRec@@@@QAEXH@Z CUtlMemory<CBasePlayerFadeRec>::Grow
 0x1001064a func   ?sub_101857f0@UtlMem8@@QAEXH@Z UtlMem8::sub_101857f0
 0x1001064f func   ?sub_100df7b0@@YA_NXZ sub_100df7b0
 0x10010654 func   ?sub_1037c580@@YAHXZ sub_1037c580
