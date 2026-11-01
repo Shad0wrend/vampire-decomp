@@ -42000,6 +42000,77 @@ void CDialog::sub_100e5d00(int nIndex, char *pszText)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e5f10 size=0x22c
+#include "CDialog.h"
+#include "ScopeTrace.h"
+#include <string.h>
+
+void sub_100dfaf0(int level, const char *fmt, ...);
+int __cdecl sub_100e77f0(const void *a, const void *b);
+void __cdecl sub_104327ed(void *base, unsigned int num, unsigned int width, int (__cdecl *cmp)(const void *, const void *));
+
+char CDialog::sub_100e5f10()
+{
+	ScopeTrace trace("CDialog::read_dialog_data", g_106b8540, g_106b8540);
+	char text[0x800];
+	char alt[0x800];
+	char dep[0x800];
+	char script[0x800];
+	char clans[7][0x800];
+	DialogLine line;
+	int lineNo;
+	int i;
+	int r;
+
+	int hFile = sub_100e7230((const char *)m_pTable, (int)"rt");
+	if (hFile == 0)
+		return 0;
+	line.m_pszText = text;
+	line.m_pszAlt = alt;
+	line.m_pszDependency = dep;
+	line.m_pszScript = script;
+	for (i = 0; i < 7; i++)
+		line.m_apszClan[i] = clans[i];
+	lineNo = 1;
+	for (;;)
+	{
+		memset(text, 0, sizeof(text));
+		memset(alt, 0, sizeof(alt));
+		memset(dep, 0, sizeof(dep));
+		memset(script, 0, sizeof(script));
+		memset(clans, 0, sizeof(clans));
+		line.m_nKey = 0;
+		line.m_nResponse = 0;
+		r = sub_100e61d0((void *)hFile, &line, &lineNo);
+		if (r == 1)
+		{
+			if (m_pTable->m_nEntries == m_pTable->m_nAllocated)
+			{
+				int nNew = m_pTable->m_nAllocated + 10;
+				m_pTable->m_pEntries = (CDialogEntry_t *)sub_100e76d0(m_pTable->m_pEntries, m_pTable->m_nAllocated * sizeof(CDialogEntry_t), nNew * sizeof(CDialogEntry_t));
+				if (m_pTable->m_pEntries == 0)
+					return 0;
+				m_pTable->m_nAllocated = nNew;
+			}
+			sub_100e7890(&m_pTable->m_pEntries[m_pTable->m_nEntries], (CDialogEntry_t *)&line);
+			m_pTable->m_nEntries++;
+			continue;
+		}
+		if (r == -1)
+			break;
+		if (r == 0)
+			continue;
+		sub_100dfaf0(0xb, "Error reading line: %s\n", lineNo);
+		break;
+	}
+	sub_100e7480(hFile);
+	CDialogTable_t *pTable = m_pTable;
+	if (pTable->m_nEntries)
+		sub_104327ed(pTable->m_pEntries, pTable->m_nEntries, sizeof(CDialogEntry_t), sub_100e77f0);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e61d0 size=0x323
 #include "CDialog.h"
 #include "ScopeTrace.h"
