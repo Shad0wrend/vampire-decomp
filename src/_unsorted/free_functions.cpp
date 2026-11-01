@@ -57804,6 +57804,24 @@ void sub_10137ed0(const matrix3x4_t &matrix, QAngle &angles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10137fe0 size=0x5c
+void sub_10137fe0(const float *in1, const float *in2, float *out)
+{
+	float t = in2[2] * in1[2];
+	t += in2[1] * in1[1];
+	t += in1[0] * in2[0];
+	out[0] = t + in2[3];
+	t = in2[6] * in1[2];
+	t += in2[5] * in1[1];
+	t += in2[4] * in1[0];
+	out[1] = t + in2[7];
+	t = in2[10] * in1[2];
+	t += in2[9] * in1[1];
+	t += in2[8] * in1[0];
+	out[2] = t + in2[11];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10138130 size=0x5c
 void sub_10138130(const float *in1, const float in2[3][4], float *out)
 {

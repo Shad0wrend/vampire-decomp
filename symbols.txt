@@ -4488,6 +4488,7 @@
 0x100087ab func   ?sub_1013d600@@YAMMM@Z sub_1013d600
 0x100087b0 func   ?sub_1011e060@Vector@@QBE?AV1@ABV1@@Z Vector::sub_1011e060
 0x100087b5 func   ?vfunc1@CTEDust@@UAEHXZ CTEDust::vfunc1
+0x100087ba func   ?sub_10137fe0@@YAXPBM0PAM@Z sub_10137fe0
 0x100087bf func   ?vfunc37@CSingleplayRules@@UAE_NH@Z CSingleplayRules::vfunc37
 0x100087c4 func   ?sub_1002b1e0@@YAXPBDPAUNamedPosOut@@H@Z sub_1002b1e0
 0x100087ce func   ?sub_100579f0@@YIXPAH@Z sub_100579f0
