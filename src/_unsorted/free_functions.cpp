@@ -139475,6 +139475,25 @@ void UtlVec8::sub_102f9000(int elem)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f9040 size=0x3d
+#include "CUtlVector16.h"
+
+extern void (__cdecl *g_109f3624)(void *);
+
+void CUtlVector16::sub_102f9040()
+{
+	m_size = 0;
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+	m_pElements = m_pMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f9090 size=0x33
 // TARGET: CUnknown102f9090::sub_102f9090
 struct CUnknown102f9090Pair

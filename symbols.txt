@@ -1355,6 +1355,7 @@
 0x10003459 func   ?vfunc104@CHudEntity@@QAEXXZ CHudEntity::vfunc104
 0x1000345e func   ?sub_1035aaa0@@YAXXZ sub_1035aaa0
 0x10003463 func   ?sub_100b6510@@YAXPBDPAD@Z sub_100b6510
+0x10003468 func   ?sub_102f9040@CUtlVector16@@QAEXXZ CUtlVector16::sub_102f9040
 0x1000346d func   ?vfunc0@CThrustController@@UAEHPAXHMAAVVector@@1@Z CThrustController::vfunc0
 0x10003472 func   ?sub_10090890@CBaseAnimating@@QAEXM@Z CBaseAnimating::sub_10090890
 0x10003477 func   ?vfunc144@CNPC_VTaxiDriver@@QAEXH@Z CNPC_VTaxiDriver::vfunc144
