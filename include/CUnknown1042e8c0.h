@@ -19,5 +19,6 @@ public:
 	void sub_1042e8c0();	// "CSprite::Precache" (slot 104): precaches the model name when set, then re-resolves the aim entity (+0x37c): follows it (handle, attachment, SetAimEnt, slot 93(11, 0)) or clears the handle to -1
 	void sub_1042ee50(float frames);	// "CSprite::Animate": advances the frame; past the last frame the sprite turns off (spawn flag 2, sub_1042ef40) or wraps around with fmod when it has frames
 	void sub_1042ef40();	// "CSprite::TurnOff" (stub 0x10010dde): next think 0, effect flag 0x40 (EF_NODRAW) at +0x19c
+	void sub_1042ecf0();	// think function (stub unknown): removes the sprite once curtime passes m_flDieTime, else animates (sub_1042eca0) and stores curtime in m_flNextThink
 	void sub_1042eca0();	// stores the global time at +0x17c and +0x474 after animating by (time - the field at +0x474) * the field at +0x458
 };
