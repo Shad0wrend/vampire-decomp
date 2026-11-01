@@ -5546,6 +5546,7 @@
 0x1000a768 func   ?vfunc31@CBaseToggle@@UAEXH@Z CBaseToggle::vfunc31
 0x1000a772 func   ?sub_10215b40@CPropButtonX@@QAEHPAX@Z CPropButtonX::sub_10215b40
 0x1000a777 func   ?vfunc74@CPushable@@UAE_NH@Z CPushable::vfunc74
+0x1000a77c func   ?sub_10389520@@YIPAXPAD@Z sub_10389520
 0x1000a781 func   ?sub_1025b610@@YAXXZ sub_1025b610
 0x1000a786 func   ?sub_10139b50@@YAXPAH00@Z sub_10139b50
 0x1000a78b func   ?sub_101f8300@CUnk101f8300@@QAE_NH@Z CUnk101f8300::sub_101f8300

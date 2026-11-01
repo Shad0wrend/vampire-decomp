@@ -155709,6 +155709,31 @@ extern "C" CBaseEntity *npc_VMalkavian()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10389520 size=0x27
+struct CGenericBaseCtorCall_10389520
+{
+	void sub_103c48e0();
+};
+
+struct CGenericMemberCtorCall_10389520
+{
+	void sub_1000663b();
+};
+
+extern void *vt_104baf14[];
+extern void *vt_104baee4[];
+
+// TARGET: sub_10389520
+void *__fastcall sub_10389520(char *self)
+{
+	((CGenericBaseCtorCall_10389520 *)self)->sub_103c48e0();
+	((CGenericMemberCtorCall_10389520 *)(self + 0x6664))->sub_1000663b();
+	*(void ***)self = vt_104baf14;
+	*(void ***)(self + 0x19b0) = vt_104baee4;
+	return self;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10389630 size=0xc
 void __fastcall sub_10389650(void *p);
 
