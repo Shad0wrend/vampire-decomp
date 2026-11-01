@@ -97,3 +97,17 @@ void __stdcall sub_1019b0c0(CUnknown1019b0c0 *pObj)
 	pObj->v8(g_1058f650, 1);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1019b0f0 size=0x2b
+#include "CPython_SaveRestoreBlockHandler.h"
+
+extern short g_1058f650;
+
+// TARGET: CPython_SaveRestoreBlockHandler::vfunc6
+void CPython_SaveRestoreBlockHandler::vfunc6(IRestorePy *pRestore)
+{
+	short version;
+	pRestore->ReadShort(&version, 1, 0);
+	m_bEnabled = (version == g_1058f650);
+}
+// END FUNCTION

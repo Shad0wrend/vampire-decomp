@@ -11143,6 +11143,7 @@
 0x10013e7b func   ?sub_103fd440@@YAHXZ sub_103fd440
 0x10013e80 func   ?sub_10307bf0@CUnknown10307bf0@@QAEXH@Z CUnknown10307bf0::sub_10307bf0
 0x10013e85 func   ?vfunc420@CNPC_VVampireBoss@@QAEXXZ CNPC_VVampireBoss::vfunc420
+0x10013e8a func   ?vfunc6@CPython_SaveRestoreBlockHandler@@UAEXPAVIRestorePy@@@Z CPython_SaveRestoreBlockHandler::vfunc6
 0x10013e8f func   ?sub_1017d0b0@SBlendView@@QAEXM@Z SBlendView::sub_1017d0b0
 0x10013e99 func   ?vfunc308@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::vfunc308
 0x10013e9e func   ?sub_102eb2d0@CUnknown102eb2d0@@QAEXG@Z CUnknown102eb2d0::sub_102eb2d0
