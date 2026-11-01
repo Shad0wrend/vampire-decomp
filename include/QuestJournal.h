@@ -22,5 +22,6 @@ public:
 	void sub_10221000();	// "QuestJournal::PreCache": scope trace, once (flag +0x28): loads the four quest script files "vdata\system\<name>.txt" through sub_102212b0
 	void sub_102212b0(const char *pszFile, int index);	// "QuestJournal::LoadQuestFile": scope trace, loads the script file into a key/value tree ("QuestTable") and hands each of its top level keys to sub_102213c0 (called through the stub at 0x100125b7)
 	void sub_10221f20(void *hFile);	// dumps the quest log to the open log file (stub 0x1000be3d): per area its quests with the completion states of the player; works on the global journal
+	int sub_10221660(CKeyValuesX *pKey);	// "QuestJournal::AddCompletion": scope trace, reads one completion record (ID, Description, Event, Type, AwardMoney, AwardXP) from the key and appends it to the completion vector at +0; returns its index, -1 without an ID
 	void sub_102213c0(CKeyValuesX *pKey, int index);	// reads one quest block of the script (stub 0x10010820)
 };
