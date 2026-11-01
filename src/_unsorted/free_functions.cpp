@@ -51261,6 +51261,18 @@ void CGameMovement::sub_10121000(Vector &wishdir, float wishspeed, float accel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10121ca0 size=0x24
+#include "globalvars.h"
+
+// TARGET: sub_10121ca0
+int __fastcall sub_10121ca0(char *self)
+{
+    if (*(float *)(*(char **)(self + 4) + 0xbc) > gpGlobals->curtime)
+        return 1;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10122170 size=0x1
 void sub_10122170()
 {
