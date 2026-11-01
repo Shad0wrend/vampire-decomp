@@ -5636,6 +5636,7 @@
 0x1000aa5b func   ?vfunc5@CWeaponIGeneric@@QAEPAV1@I@Z CWeaponIGeneric::vfunc5
 0x1000aa60 func   ?sub_1019d470@CUnknown1019d470@@QAEDXZ CUnknown1019d470::sub_1019d470
 0x1000aa65 func   ?sub_1022bc30@CPropRadio@@QAEPAV1@XZ CPropRadio::sub_1022bc30
+0x1000aa6a func   ?sub_102c2bd0@@YIXPADH0@Z sub_102c2bd0
 0x1000aa6f func   ?vfunc468@CAI_BaseNPC@@UAE_NPAVCBaseEntity@@@Z CAI_BaseNPC::vfunc468
 0x1000aa74 func   ?sub_100f4340@@YAXHMMMH@Z sub_100f4340
 0x1000aa79 func   ?vfunc82@CPathCorner@@QAEHXZ CPathCorner::vfunc82
