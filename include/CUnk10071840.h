@@ -24,5 +24,7 @@ public:
 	void sub_10071660();	// fires the output at +0x810, removes the target entity, makes this entity dormant, adds flag 0x40000, clears +0x6f0 / +0x6f8 and tells the first player (when this entity has flag bit 0 of +0x204)
 	void sub_100a8060();	// CBaseEntity::MakeDormant (stub 0x10011211), called directly
 	void sub_100b3580(unsigned int flags);	// CBaseEntity::AddFlag (stub 0x10003620), called directly
+	void sub_100b3640(unsigned int flags);	// CBaseEntity member (stub 0x1001457e), called directly
+	void sub_10071550(int unused);	// the start step: base cleanup, flag fixups, tells the first player about the sequence
 	void sub_10090950();	// CBaseAnimating member (stub 0x100117b1), called directly
 };
