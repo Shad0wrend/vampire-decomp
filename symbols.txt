@@ -6632,6 +6632,7 @@
 0x1000c829 func   ?sub_1003cc80@CBaseEntity@@QAEXH@Z CBaseEntity::sub_1003cc80
 0x1000c82e func   ?vfunc546@CNPC_VChangBrosClaw@@QAEHH@Z CNPC_VChangBrosClaw::vfunc546
 0x1000c833 func   _item_w_chang_energy_ball item_w_chang_energy_ball
+0x1000c838 func   ?sub_1017e6f0@CUnknown1017e6f0@@QAEXH@Z CUnknown1017e6f0::sub_1017e6f0
 0x1000c83d func   ?sub_103377a0@CBCCUnit@@QAEHXZ CBCCUnit::sub_103377a0
 0x1000c842 func   ?vfunc0@CServerNetworkProperty@@UAEHXZ CServerNetworkProperty::vfunc0
 0x1000c84c func   ?sub_10246470@@YAXHPAGPAI@Z sub_10246470

@@ -63320,6 +63320,25 @@ void CBasePlayer::sub_1017e5f0(inputdata_t *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017e6f0 size=0x1d
+#include "ConVar.h"
+
+extern ConVar g_107250d0;
+
+struct CUnknown1017e6f0 {
+	char m_pad0000[0x1cdc];
+	int m_n1cdc;
+	void sub_1017e6f0(int a);
+};
+
+// TARGET: CUnknown1017e6f0::sub_1017e6f0
+void CUnknown1017e6f0::sub_1017e6f0(int a)
+{
+	g_107250d0.sub_10246160(-1);
+	m_n1cdc = a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017e720 size=0x7
 struct CUnknown1017e720 { int sub_1017e720(); };
 int CUnknown1017e720::sub_1017e720()
