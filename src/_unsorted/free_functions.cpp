@@ -134485,10 +134485,12 @@ void UtlMem9::sub_102cef30(int num)
 
 // FUNCTION: 0x102cefc0 size=0xbd
 #include "CUtlRBTree12.h"
+#include "utlrbtree.h"
+struct CRBTree12Entry_102cfaf0 { char data[4]; };	// the tree of sentinel 0x10925430 (RotateLeft 0x102cfaf0)
 
 bool CUtlRBTree12::sub_102cefc0(unsigned short i) const
 {
-	const CUtlRBTree12At<0x10925430> *tree = (const CUtlRBTree12At<0x10925430> *)this;
+	const CUtlRBTree<CRBTree12Entry_102cfaf0, unsigned short> *tree = (const CUtlRBTree<CRBTree12Entry_102cfaf0, unsigned short> *)this;
 	unsigned short parent = tree->Links(i).m_Parent;
 	return tree->Links(parent).m_Left == i;
 }
