@@ -56772,6 +56772,18 @@ void CUnknown10135070::sub_10135070(int a, char flag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101350c0 size=0x67
+#include "CLogicPythonCheck.h"
+
+// TARGET: logic_pythoncheck
+extern "C" CBaseEntity *logic_pythoncheck()
+{
+    CLogicPythonCheck *p = new CLogicPythonCheck;
+    p->vfunc106("logic_pythoncheck");
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101351b0 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
