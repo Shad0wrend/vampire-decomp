@@ -3703,6 +3703,7 @@
 0x1000741e func   ?vfunc1@CTEFootprintDecal@@UAEHXZ CTEFootprintDecal::vfunc1
 0x10007428 func   ?vfunc110@CBaseToggle@@UAE_NPBD0@Z CBaseToggle::vfunc110
 0x10007428 func   ?vfunc110@CPropDoorknob@@UAE_NPBD0@Z CPropDoorknob::vfunc110
+0x10007428 func   ?vfunc110@CVampireProjectile@@UAE_NPBD0@Z CVampireProjectile::vfunc110
 0x1000742d func   ?sub_10041f40@UtlHash8@@QAEPAV1@HHHP6A_NPAX0@ZP6AI0@Z@Z UtlHash8::sub_10041f40
 0x1000743c func   ?sub_1018ee60@@YAXPAVCBaseEntity@@H@Z sub_1018ee60
 0x1000744b func   ?vfunc473@CNPC_VSheriffSwarm@@UAEHXZ CNPC_VSheriffSwarm::vfunc473
