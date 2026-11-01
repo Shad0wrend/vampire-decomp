@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101abbf0 size=0x19
+#include "CSingleplayRules.h"
+
+// TARGET: ??0CSingleplayRules@@QAE@XZ
+CSingleplayRules::CSingleplayRules()
+{
+    CGameRules::vfunc15();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101abc20 size=0x3
 bool CSingleplayRules::vfunc18()
 {
