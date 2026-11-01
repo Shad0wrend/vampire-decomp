@@ -22,9 +22,9 @@ int CFireSmoke::vfunc81()
 namespace lifted {
 extern char g_1053f8b8;
 }
-int CFireSmoke::vfunc82()
+CFireSmoke::Datamap82 CFireSmoke::vfunc82()
 {
-    return (int)&lifted::g_1053f8b8;
+    return (CFireSmoke::Datamap82)&lifted::g_1053f8b8;
 }
 // END FUNCTION
 
