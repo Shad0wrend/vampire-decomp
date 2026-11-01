@@ -10,6 +10,7 @@ public:
 	bool sub_1006e6a0(int a, int b, int c, int d, int e);	// slot 86: true while the time at +0x90 is ahead of curtime, else whether the entity handle at +0x5d0 resolves and its edict (+0x2e0) is `b`, then sub_1006e890
 	bool sub_1006d9d0();	// CBaseEntity::GetFlags (as the shot mask); false when -1, else for every set bit i (0..3) the entity handle at +0x610+4*i must resolve; finally whether the handle at +0x630 is set
 	bool sub_1006e130(const char *pszName, int a, int b);	// stub 0x1000d15c: sets up the shot named pszName (here "Follow"); false when it could not be set up
+	void sub_1006e0e0();	// stub 0x100114be: resets the shot state before a new shot is set up
 	void sub_1006e8e0();	// stub 0x10009868: finishes the set up after the first shot's target handle was stored
 	void sub_1006ef50(void *pTarget, int a);	// stub 0x10005ae2: makes pTarget (the prop the camera films) the target of the first shot
 	void sub_1006e770();	// picks the think function of the shot state at +0x638 (0: none, 1..4: the shot's think functions, otherwise the function at 0x100034ef while the time at +0x55c is in the past) and schedules the next think 0.1 after curtime
