@@ -13,7 +13,7 @@ public:
 	virtual void vfunc3();
 	virtual void vfunc4();
 	virtual void vfunc5();
-	virtual void vfunc6();
+	virtual void vfunc6(IRestorePy *pRestore);	// Restore of the version: reads the version short from the stream and compares it with the game's version (m_bVersionMatches)
 	virtual void vfunc7();
 	virtual void vfunc8();
 	virtual void vfunc9();
