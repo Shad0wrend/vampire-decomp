@@ -3461,6 +3461,7 @@
 0x10006e83 func   ?sub_101cf4a0@@YAXPAUCModelEntX@@PBD@Z sub_101cf4a0
 0x10006e88 func   ?vfunc141@CNPC_VZombie@@QAEXPAUCUnknown101c2a50@@HPAD@Z CNPC_VZombie::vfunc141
 0x10006e8d func   ?sub_10185600@@YIXPAH@Z sub_10185600
+0x10006ea1 func   ?vfunc40@CPropDoorknob@@UAEXH@Z CPropDoorknob::vfunc40
 0x10006ea6 func   ?sub_1005ee50@CTEBSPDecal@@QAEPAV1@H@Z CTEBSPDecal::sub_1005ee50
 0x10006eab func   ?vfunc451@CNPC_VStalker@@UAEHXZ CNPC_VStalker::vfunc451
 0x10006eba func   ?vfunc328@CWeaponIGeneric@@QAEHXZ CWeaponIGeneric::vfunc328
