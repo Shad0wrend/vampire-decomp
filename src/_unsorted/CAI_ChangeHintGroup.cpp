@@ -18,9 +18,9 @@ unsigned char __fastcall sub_101c9ab0(void *pThis)
 namespace lifted {
 extern char g_1059e0e4;
 }
-int CAI_ChangeHintGroup::vfunc82()
+CAI_ChangeHintGroup::Datamap82 CAI_ChangeHintGroup::vfunc82()
 {
-    return (int)&lifted::g_1059e0e4;
+    return (CAI_ChangeHintGroup::Datamap82)&lifted::g_1059e0e4;
 }
 // END FUNCTION
 
