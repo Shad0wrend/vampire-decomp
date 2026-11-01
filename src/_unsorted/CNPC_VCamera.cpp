@@ -325,6 +325,23 @@ int CNPC_VCamera::vfunc376(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103690e0 size=0xd
+struct CAI_BaseNPCTroikaFwd;
+struct CNPC_VCameraFwd {
+    void sub_103690e0(int a);
+};
+struct CAI_BaseNPCTroikaFwd {
+    void sub_1028fcc0(int a);
+};
+
+// TARGET: sub_103690e0
+void CNPC_VCameraFwd::sub_103690e0(int a)
+{
+    a = *(volatile int *)&a;
+    ((CAI_BaseNPCTroikaFwd *)this)->sub_1028fcc0(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10369100 size=0x1
 #include "CNPC_VCamera.h"
 void CNPC_VCamera::vfunc434()
