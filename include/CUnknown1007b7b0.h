@@ -10,7 +10,7 @@ class CUnknown1007b7b0
 public:
 	char m_pad0000[0xa8];
 	CUnknown1007bb30Reader *m_pReader;	// 0xa8
-	char m_pad00ac[0x130 - 0xac];	// (the channel vector of CUnknown100735a0 * sits at +0x28: memory +0x28, alloc count +0x2c, grow size +0x30, size +0x34, element pointer +0x38; sub_10079f50, a __fastcall free function in the matched source, new's a 0x9c byte CUnknown100735a0 and appends it)
+	char m_pad00ac[0x12d - 0xac];	// (the channel vector of CUnknown100735a0 * sits at +0x28: memory +0x28, alloc count +0x2c, grow size +0x30, size +0x34, element pointer +0x38; sub_10079f50, a __fastcall free function in the matched source, new's a 0x9c byte CUnknown100735a0 and appends it)
 	int m_nFps130;	// 0x130: the frames per second, 10..240
 
 	CUnknown1007a060Elem *sub_1007b7b0();	// parses one "{ ... }" record: new record, its name, then a loop over "channel", "faceposermodel", "bonerename" and "active" entries until "}"; returns the record
