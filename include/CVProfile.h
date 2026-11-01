@@ -38,6 +38,7 @@ public:
 	__declspec(dllimport) void EnterScope(const char *pszName, int detailLevel, const char *pBudgetGroupName, bool bAssertAccounted);
 	__declspec(dllimport) void PopGroup();
 	__declspec(dllimport) void PushGroup(int nGroupID);
+	__declspec(dllimport) void ExitScopeCall();	// the imported CVProfile::ExitScope (0x109f365c), called by units that do not inline it
 
 	char m_bVTuneGroupsEnabled;	// 0x0000
 	char m_pad0001[3];
