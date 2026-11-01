@@ -12,6 +12,33 @@ datamap_t * CPropHaunted::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10213ae0 size=0x4e
+#include "CPropHaunted.h"
+
+struct CPropHauntedPhysObj
+{
+	virtual void p0(); virtual void p1(); virtual void p2(); virtual void p3(); virtual void p4();
+	virtual void p5(); virtual void p6(); virtual void p7(); virtual void p8(); virtual void p9();
+	virtual void p10(); virtual void p11(); virtual void p12(); virtual void p13(); virtual void p14();
+	virtual void p15(); virtual void p16(); virtual void p17(); virtual void p18(); virtual void p19();
+	virtual void p20(); virtual void p21(); virtual void p22(); virtual void p23();
+	virtual void vfunc24(int a);
+};
+
+// TARGET: CPropHaunted::vfunc103
+void CPropHaunted::vfunc103()
+{
+	sub_1018f340();
+	hsj1();
+	vfunc93(0, 0);
+	CPropHauntedPhysObj *pObj = (CPropHauntedPhysObj *)sub_100a5ea0(6, 0, 1, 0);
+	if (pObj)
+		pObj->vfunc24(0);
+	m_hGhost7d0 = 0xffffffff;
+	sub_100b3b00();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10213b50 size=0x1
 #include "CPropHaunted.h"
 void CPropHaunted::vfunc265()
