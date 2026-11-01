@@ -2803,6 +2803,7 @@
 0x10005b46 func   ?vfunc371@CNPCMaker@@UAEHH@Z CNPCMaker::vfunc371
 0x10005b4b func   ?sub_100a93d0@@YI_NPAD@Z sub_100a93d0
 0x10005b50 func   ?sub_102beb30@@YAHXZ sub_102beb30
+0x10005b55 func   ?sub_103c5210@@YADXZ sub_103c5210
 0x10005b5a func   ?vfunc334@CBaseCombatCharacter@@QAE_NHH@Z CBaseCombatCharacter::vfunc334
 0x10005b64 func   ?sub_10194160@CNPCUnit@@QAEXPAUinputdata_t@@@Z CNPCUnit::sub_10194160
 0x10005b69 func   ?vfunc300@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc300

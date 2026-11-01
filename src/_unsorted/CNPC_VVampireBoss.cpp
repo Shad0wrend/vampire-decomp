@@ -38,6 +38,12 @@ int CNPC_VVampireBoss::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c5210 size=0x6
+extern char g_1065e6c4;
+// TARGET: sub_103c5210
+char sub_103c5210() { return g_1065e6c4; }
+// END FUNCTION
+
 // FUNCTION: 0x103c5270 size=0x1d
 #include "CNPC_VVampireBoss.h"
 struct A { int sub_10012300(int); };
