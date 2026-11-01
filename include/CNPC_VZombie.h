@@ -72,11 +72,17 @@ public:
 	float m_flPlayerDist6264;	// 0x6264: the distance to the player
 	char m_pad6268[0x628c - 0x6268];
 	unsigned int m_hEnemy628c;	// 0x628c: entity handle of the target
-	char m_pad6290[0x6675 - 0x6290];
+	char m_pad6290[0x6590 - 0x6290];
+	int *m_p6590;	// 0x6590
+	char m_pad6594[0x6675 - 0x6594];
 	char m_b6675;	// 0x6675
 	char m_pad6676[0x6678 - 0x6676];
 	int m_nMode6678;	// 0x6678
-	char m_pad667c[0x66d8 - 0x667c];
+	char m_b667c;	// 0x667c
+	char m_pad667d[0x6680 - 0x667d];
+	int m_a6680[3];	// 0x6680
+	int m_a668c[3];	// 0x668c
+	char m_pad6698[0x66d8 - 0x6698];
 	float m_flNextLunge66d8;	// 0x66d8
 	float m_flMaxDist66dc;	// 0x66dc
 	char m_b66e0;	// 0x66e0: set when the hit is stronger than the zombie's two stats allow
