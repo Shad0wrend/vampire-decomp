@@ -2379,6 +2379,7 @@
 0x10005263 func   ?sub_1024b370@CUnknown1024b370@@QAEXXZ CUnknown1024b370::sub_1024b370
 0x10005268 func   ?sub_100dc220@CCollisionProperty@@QAEXH@Z CCollisionProperty::sub_100dc220
 0x1000527c func   ?vfunc127@CAI_BaseNPCTroika@@UAEHPAVCRestore@@@Z CAI_BaseNPCTroika::vfunc127
+0x10005281 func   ?vfunc1@CSave@@UAEXH@Z CSave::vfunc1
 0x10005286 func   ?sub_1035b200@@YGXHHHH@Z sub_1035b200
 0x1000528b func   ?sub_1031a0a0@@YA_NPAUCUnkList@@@Z sub_1031a0a0
 0x10005290 func   ?vfunc11@CSoundControllerImp@@UAEHHHH@Z CSoundControllerImp::vfunc11

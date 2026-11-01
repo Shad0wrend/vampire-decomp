@@ -70,6 +70,20 @@ int CSave::vfunc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019fa30 size=0x1d
+#include "CSave.h"
+
+// TARGET: CSave::vfunc1
+void CSave::vfunc1(int pos)
+{
+	int *piVar1 = (int *)m_pData;
+	if (pos >= 0 && pos < piVar1[3]) {
+		piVar1[2] = pos;
+		piVar1[1] = piVar1[0] + pos;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019fa60 size=0x10
 #include "CSave.h"
 
