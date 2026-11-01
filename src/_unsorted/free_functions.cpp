@@ -41847,6 +41847,53 @@ void CDialog::sub_100e5240()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e5410 size=0x1f7
+#include "CDialog.h"
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+#include <string.h>
+
+void sub_100dfaf0(int level, const char *fmt, ...);
+extern void (__cdecl *g_109f3890)(char *dst, const char *src, int n);
+const char *__fastcall sub_100ab4f0(void *pEntity);
+void *__cdecl operator new(unsigned int);
+
+char CDialog::sub_100e5410(char *pszFilename)
+{
+	ScopeTrace trace("CDialog::load", g_106b8540, g_106b8540);
+
+	if (m_pTable)
+		sub_100e5770();
+	sub_100dfaf0(9, "|--------------------------------------------------------------------|\n\n");
+	sub_100dfaf0(9, "Loading dialog file %s for NPC %s\n", pszFilename, sub_100ab4f0(EHandle_Get(m_hSpeaker)));
+	m_pTable = (CDialogTable_t *)operator new(0x110);
+	if (!m_pTable)
+	{
+		sub_100dfaf0(0xb, "CDialog::load could not allocate new data!");
+		return 0;
+	}
+	m_pTable->m_nEntries = 0;
+	m_pTable->m_nAllocated = 0;
+	m_pTable->m_pEntries = 0;
+	memset(m_pTable, 0, 0x104);
+	g_109f3890((char *)m_pTable, pszFilename, 0x104);
+	memset(&m_aChoices[0], 0, 16);
+	memset((char *)this + 0xc, 0, 0xa09 * 4);
+	memset((char *)this + 0x2848, 0, 0x228 * 4);
+	memset((char *)this + 0x30ea, 0, 0x40 * 4);
+	memset((char *)this + 0x31ea, 0, 0x40 * 4);
+	memset(&m_szWhisper[0], 0, 0x41 * 4);
+	sub_100e5f10();
+	if (!m_pTable->m_nEntries)
+	{
+		sub_100dfaf0(0xb, "Could not load dialog file: %s for %s\n", pszFilename, sub_100ab4f0(EHandle_Get(m_hSpeaker)));
+		sub_100e5770();
+		return 0;
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e5690 size=0xa7
 #include "CDialog.h"
 
