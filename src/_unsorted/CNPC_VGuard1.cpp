@@ -134,6 +134,23 @@ int CNPC_VGuard1::vfunc440(int schedule)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037e1e0 size=0xd
+struct CNPC_VHumanFwd;
+struct CNPC_VGuard1Fwd {
+    void sub_1037e1e0(int a);
+};
+struct CNPC_VHumanFwd {
+    void sub_10385a10(int a);
+};
+
+// TARGET: sub_1037e1e0
+void CNPC_VGuard1Fwd::sub_1037e1e0(int a)
+{
+    a = *(volatile int *)&a;
+    ((CNPC_VHumanFwd *)this)->sub_10385a10(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037e240 size=0x3c
 #include "CNPC_VGuard1.h"
 

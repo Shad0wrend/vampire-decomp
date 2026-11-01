@@ -5352,6 +5352,7 @@
 0x10009e80 func   ?ShiftElementsRight@?$CUtlVector@UPQ_Elem@@V?$CUtlMemory@UPQ_Elem@@@@@@QAEXHH@Z CUtlVector<PQ_Elem,CUtlMemory<PQ_Elem> >::ShiftElementsRight
 0x10009e85 func   ?vfunc480@CHL2_Player@@UAEMXZ CHL2_Player::vfunc480
 0x10009e8a func   ?vfunc326@CWeaponHolyLight@@QAEXXZ CWeaponHolyLight::vfunc326
+0x10009e8f func   ?sub_1037e1e0@CNPC_VGuard1Fwd@@QAEXH@Z CNPC_VGuard1Fwd::sub_1037e1e0
 0x10009e94 func   ?vfunc154@CBreakable@@QAEHHH@Z CBreakable::vfunc154
 0x10009e99 func   ?vfunc80@CDynamicLight@@UAEHXZ CDynamicLight::vfunc80
 0x10009ea3 func   ?sub_10074bf0@CUnknown10074f70@@QAEXPAD@Z CUnknown10074f70::sub_10074bf0
