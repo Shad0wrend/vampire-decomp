@@ -444,7 +444,7 @@ public:
 	virtual int vfunc437();	// slot 437: marks the task state (+0x1b2c = 0x19); in state 5 stamps the source file / line (+0x1b30 / +0x1b34) and answers 0x157, else sends the grabbed target (handle +0x6680) to slot 388 and answers 0
 	virtual void vfunc438();
 	virtual void vfunc439();
-	virtual void vfunc440();
+	virtual int vfunc440(int a);	// slot 440: 0x147 answers 0x16f, else the Troika base
 	virtual void vfunc441();
 	virtual void vfunc442();
 	virtual void vfunc443();
