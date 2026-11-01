@@ -5755,6 +5755,7 @@
 0x1000aee3 func   _item_k_hitman_ji_key item_k_hitman_ji_key
 0x1000aee8 func   ?sub_1012e4f0@@YAHXZ sub_1012e4f0
 0x1000aef2 func   ?vfunc5@CNPC_VTest@@QAEPAV1@I@Z CNPC_VTest::vfunc5
+0x1000aef7 func   ?sub_1035fcf0@CUnk1035fcf0@@QAEXH@Z CUnk1035fcf0::sub_1035fcf0
 0x1000af0b func   ?vfunc3@CVariantSaveDataOps@@UAEXH@Z CVariantSaveDataOps::vfunc3
 0x1000af10 func   ??0CTEBreakModel@@QAE@PBD@Z CTEBreakModel::CTEBreakModel
 0x1000af1a func   ?vfunc13@CSoundControllerImp@@UAEHH@Z CSoundControllerImp::vfunc13
