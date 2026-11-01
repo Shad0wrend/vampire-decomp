@@ -128301,9 +128301,14 @@ namespace block_102c1400 {
 struct CTroikaUnit : CAI_BaseNPCTroika { char sub_102c0aa0(); };
 char CTroikaUnit::sub_102c0aa0()
 {
-	if (EHandle_Get(m_h6554) && ((SceneView498 *)EHandle_Get(m_h6554))->b)
+	if (EHandle_Get(m_h6554) != 0) {
+		SceneView498 *p = (SceneView498 *)EHandle_Get(m_h6554);
+		if (p->b)
+			return 1;
+	}
+	if (m_f64cc > gpGlobals->curtime)
 		return 1;
-	return m_f64cc > gpGlobals->curtime;
+	return 0;
 }
 }
 using namespace block_102c1400;
