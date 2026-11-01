@@ -103966,6 +103966,21 @@ int CUnknown1021e8e0::sub_1021e9c0(const char *pszName, int nStart)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021eac0 size=0x1c
+int __cdecl sub_1025b5d0(int a);
+
+// TARGET: sub_1021eac0
+int __stdcall sub_1021eac0(int a)
+{
+	int r = sub_1025b5d0(a);
+	if (r != 0)
+	{
+		return r + 8;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021eaf0 size=0x94
 #include "CUnknown1021eaf0.h"
 
