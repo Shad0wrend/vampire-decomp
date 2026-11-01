@@ -15,6 +15,8 @@ public:
 	virtual int vfunc10(const char *name, int create);	// handle of the named value
 	virtual void vfunc11(); virtual void vfunc12();
 	virtual const char *vfunc13(const char *key, const char *pszDefault);	// the string value of key
+	virtual void vfunc14(); virtual void vfunc15();
+	virtual char vfunc16(const char *name, int n, const char *pszFormat, int *pOut, int *pCount);	// reads up to n values of that format (\"%d\") of the named value
 };
 
 class CUnknown101d90c0
