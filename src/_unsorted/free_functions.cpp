@@ -89828,6 +89828,25 @@ int CUnknown101e8ea0::sub_101e8ea0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e8ec0 size=0x20
+#include "vampire.h"
+struct CUnk101e8ec0
+{
+    char m_pad0000[0x368];
+    unsigned int m_n368;  // 0x368
+    unsigned int m_n36c;  // 0x36c
+    unsigned int sub_101e8ec0(void *p);
+};
+// TARGET: CUnk101e8ec0::sub_101e8ec0
+unsigned int CUnk101e8ec0::sub_101e8ec0(void *p)
+{
+    if (*(int *)((char *)p + 0xa8) != 0) {
+        return m_n368;
+    }
+    return m_n36c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e8f20 size=0x86
 #include "CUnknown101e8f20.h"
 #include "CBaseCombatCharacter.h"

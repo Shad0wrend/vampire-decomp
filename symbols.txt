@@ -5926,6 +5926,7 @@
 0x1000b2d5 func   ?sub_10048960@CUtlRBTree16Unit@@QBEPBULinks_t@CUtlRBTree16@@G@Z CUtlRBTree16Unit::sub_10048960
 0x1000b2da func   ??0CCollisionEvent@@QAE@XZ CCollisionEvent::CCollisionEvent
 0x1000b2df func   ?vfunc5@CItemGLillyDiary@@QAEPAV1@I@Z CItemGLillyDiary::vfunc5
+0x1000b2e4 func   ?sub_101e8ec0@CUnk101e8ec0@@QAEIPAX@Z CUnk101e8ec0::sub_101e8ec0
 0x1000b2ee func   ?sub_102f1dc0@CAI_Navigator@@QAE_NHH@Z CAI_Navigator::sub_102f1dc0
 0x1000b2f3 func   ?vfunc80@CResearchBook_LG_FIREARMS@@QAEHXZ CResearchBook_LG_FIREARMS::vfunc80
 0x1000b2f8 func   ?sub_102f9c70@@YAHH@Z sub_102f9c70
