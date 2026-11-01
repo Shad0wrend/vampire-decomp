@@ -7573,6 +7573,7 @@
 0x1000e098 func   ?vfunc81@CItemGLillyPhoto@@QAEHXZ CItemGLillyPhoto::vfunc81
 0x1000e09d func   ?vfunc360@CWeaponMelee_TireIron@@QAEHXZ CWeaponMelee_TireIron::vfunc360
 0x1000e0a2 func   ?vfunc580@CNPC_VVampire@@UAEHXZ CNPC_VVampire::vfunc580
+0x1000e0a7 func   ?sub_10250ea0@@YGHPBD@Z sub_10250ea0
 0x1000e0ac func   ?sub_1022bc00@@YAHXZ sub_1022bc00
 0x1000e0b6 func   ?sub_10430100@@YAXXZ sub_10430100
 0x1000e0bb func   ?sub_101f2360@CUnknown101f2360@@QAEXPAPBDPAX@Z CUnknown101f2360::sub_101f2360

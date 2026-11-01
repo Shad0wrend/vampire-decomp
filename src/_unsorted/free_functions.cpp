@@ -115707,6 +115707,20 @@ void CBaseCombatWeapon::sub_10250c50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10250ea0 size=0x1f
+#include "engineserver.h"
+
+// TARGET: sub_10250ea0
+int __stdcall sub_10250ea0(const char *pszName)
+{
+    if (*pszName)
+    {
+        return engine->vfunc13(pszName, false);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10251790 size=0xc
 namespace lifted {
 int sub_10010ea6();
