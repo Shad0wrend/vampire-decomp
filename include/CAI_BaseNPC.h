@@ -233,6 +233,7 @@ public:
 	void sub_10279c20();	// the memory list's node of the slot 167 object's id is marked (sub_102dfd90 of the list at slot 541)
 	void sub_10280d30();	// clears the schedule bookkeeping (+0x5c38..+0x5c4c); the object at +0x98 loses bit 3 of its flags (+0x14b8) and is told slot 435 with the cleared schedule
 	void sub_1026d130();	// stub 0x100050d3, run first by vfunc379
+	void sub_1026d050();	// stub 0x1000c153, called by sub_1026d130 after sub_10279a50(0)
 	bool sub_10329760(CBaseEntity *pEnt, int b, int c, int d, int e, int f, int g);	// CBaseCombatCharacter::vfunc379 (stub 0x100152da), called directly
 	void sub_10005d94();	// CBaseCombatCharacter::vfunc380 (stub 0x10005d94), called directly
 	void sub_10007ea0();	// tail-called by vfunc380 (0x10007ea0)
