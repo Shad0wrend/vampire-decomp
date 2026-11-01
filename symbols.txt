@@ -10057,6 +10057,7 @@
 0x10011e96 func   ?vfunc1@CTEUserTracer@@UAEHXZ CTEUserTracer::vfunc1
 0x10011e9b func   ?vfunc80@COccultPassiveDurations@@QAEHXZ COccultPassiveDurations::vfunc80
 0x10011ea0 func   ?sub_1009fa60@CBaseEntity@@QAEXXZ CBaseEntity::sub_1009fa60
+0x10011ea5 func   ?vfunc34@CWeaponThrown_Grenade_Frag@@UAEHPAVCBaseEntity@@@Z CWeaponThrown_Grenade_Frag::vfunc34
 0x10011eb4 func   ?sub_1039ef60@@YIXPAX@Z sub_1039ef60
 0x10011eb9 func   ?sub_1012e6a0@CUnknown1012e6a0@@QAEXH@Z CUnknown1012e6a0::sub_1012e6a0
 0x10011ebe func   ?sub_1006f010@CBaseCineCam@@QAE?AVVector@@H@Z CBaseCineCam::sub_1006f010
