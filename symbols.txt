@@ -554,6 +554,7 @@
 0x10001f23 func   ?RotateLeft@?$CUtlRBTree@HG@@QAEXG@Z CUtlRBTree<int,unsigned short>::RotateLeft
 0x10001f23 func   ?RotateLeft@?$CUtlRBTree@UCRBTree12Entry_10194f30@@G@@QAEXG@Z CUtlRBTree<CRBTree12Entry_10194f30,unsigned short>::RotateLeft
 0x10001f28 func   ?sub_101c0820@CPointEntity@@QAEXXZ CPointEntity::sub_101c0820
+0x10001f28 func   ?vfunc103@CGameSign@@UAEXXZ CGameSign::vfunc103
 0x10001f32 func   ?sub_10131680@@YIXPAX@Z sub_10131680
 0x10001f37 func   ?sub_10065e20@CTEMuzzleFlash@@QAEPAV1@PBD@Z CTEMuzzleFlash::sub_10065e20
 0x10001f3c func   ?sub_100feea0@CFieldHolder@@QAEXH@Z CFieldHolder::sub_100feea0
