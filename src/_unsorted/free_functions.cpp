@@ -60428,6 +60428,32 @@ float CUnk10160e30::sub_10160e30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10160e60 size=0x1e
+// TARGET: sub_10160e60
+struct CUnk10160e60Obj
+{
+    char pad[0x2f4];
+    float m_2f0;
+};
+CUnk10160e60Obj *__stdcall sub_1008d990(int a);
+extern float g_10470498;
+struct CUnk10160e60
+{
+    char pad[0x6f0];
+    int m_6f0;
+    float sub_10160e60();
+};
+float CUnk10160e60::sub_10160e60()
+{
+    CUnk10160e60Obj *p = sub_1008d990(m_6f0);
+    if (p)
+    {
+        return p->m_2f0;
+    }
+    return g_10470498;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160e90 size=0x18
 struct CUnk10160e90 {
     char pad[0xff0];
