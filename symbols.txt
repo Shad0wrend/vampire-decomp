@@ -1685,6 +1685,7 @@
 0x10003c83 func   _item_k_edane_key item_k_edane_key
 0x10003c8d func   ?sub_10246210@@YIDPAXHPAH@Z sub_10246210
 0x10003c92 func   ?vfunc6@CAI_StandoffBehavior@@UAEHXZ CAI_StandoffBehavior::vfunc6
+0x10003c9c func   ?sub_102f1cf0@CAI_Navigator@@QAEMXZ CAI_Navigator::sub_102f1cf0
 0x10003cab func   ?vfunc138@CNPC_VGangrel@@UAEHXZ CNPC_VGangrel::vfunc138
 0x10003cb0 func   ?vfunc2@CTETParticleHUD@@UAEPAV1@I@Z CTETParticleHUD::vfunc2
 0x10003cba func   ?vfunc5@CWeaponMelee_HengeyokaiFist@@QAEPAV1@I@Z CWeaponMelee_HengeyokaiFist::vfunc5

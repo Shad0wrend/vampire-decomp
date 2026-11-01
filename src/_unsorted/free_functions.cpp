@@ -141099,6 +141099,28 @@ char CAI_Pathfinder::sub_102f1900(int nodeNum, unsigned int collisionMask)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f1cf0 size=0x78
+#include "CAI_Navigator.h"
+#include "CAI_BaseNPC.h"
+
+float CAI_Navigator::sub_102f1cf0()
+{
+    CAI_NavRoute *pRoute = m_p30;
+    const float *pOrigin = ((CAI_BaseNPC *)m_pOuter)->vfunc220();
+    int bFlat = m_i18;
+    const float *pGoal = &pRoute->sub_1030b7c0()->x;
+    float dx = pGoal[0] - pOrigin[0];
+    float dy = pGoal[1] - pOrigin[1];
+    if (bFlat == 0) {
+        float flSum = dx * dx;
+        flSum += dy * dy;
+        return FastSqrt(flSum);
+    }
+    float dz = pGoal[2] - pOrigin[2];
+    return FastSqrt(dx * dx + dy * dy + dz * dz);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f1d90 size=0x11
 #include "CAI_Navigator.h"
 
