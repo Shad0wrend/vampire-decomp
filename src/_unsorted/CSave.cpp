@@ -182,6 +182,15 @@ void CSave::vfunc7(int a, int b, int count)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019fc50 size=0x1e
+#include "CSave.h"
+
+void CSave::vfunc9(const char *pszName, void *pData, int count)
+{
+    sub_101a05b0((int)pszName, count * 4, (int)pData);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019fc80 size=0x17
 #include "CSave.h"
 namespace lifted {
