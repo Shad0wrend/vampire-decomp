@@ -2,6 +2,7 @@
 #pragma once
 
 class CSave;
+class IRestorePy;
 
 class CAI_SaveRestoreBlockHandler
 {
