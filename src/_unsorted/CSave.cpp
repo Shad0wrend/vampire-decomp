@@ -202,6 +202,15 @@ int CSave::vfunc11(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019fcb0 size=0x1e
+#include "CSave.h"
+
+void CSave::vfunc13(const char *pszName, void *pData, int count)
+{
+    sub_101a05b0((int)pszName, count * 4, (int)pData);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019fd20 size=0x59
 #include "CSave.h"
 #include <string.h>

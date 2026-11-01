@@ -938,6 +938,7 @@
 0x100029fa func   ?sub_102f13a0@CUnk102f13a0@@QAE_NH@Z CUnk102f13a0::sub_102f13a0
 0x100029ff func   ?vfunc5@CLogicVisible@@QAEPAV1@I@Z CLogicVisible::vfunc5
 0x10002a09 func   ?sub_1013e800@CUnknown1013e7e0@@QAEXH@Z CUnknown1013e7e0::sub_1013e800
+0x10002a0e func   ?vfunc13@CSave@@UAEXPBDPAXH@Z CSave::vfunc13
 0x10002a13 func   ?sub_102e2790@CUnknown102e2790@@QAEHXZ CUnknown102e2790::sub_102e2790
 0x10002a18 func   ?sub_100deab0@CUnknown100deab0@@QAEMXZ CUnknown100deab0::sub_100deab0
 0x10002a1d func   ?sub_10399c70@@YIXPAD@Z sub_10399c70
