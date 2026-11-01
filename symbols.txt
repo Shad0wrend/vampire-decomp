@@ -11201,6 +11201,7 @@
 0x10013c46 func   ?vfunc0@CTEWorldDecal@@UAEPAUServerClass@@XZ CTEWorldDecal::vfunc0
 0x10013c50 func   ?vfunc5@CWeaponMelee_Baton@@QAEPAV1@I@Z CWeaponMelee_Baton::vfunc5
 0x10013c55 func   ?vfunc86@CInspectionBrush@@QAEDHPAUCInspectionBrushEdict@@HHH@Z CInspectionBrush::vfunc86
+0x10013c5a func   ?vfunc104@CVampireProjectile_MingXiaoSpit@@UAEXXZ CVampireProjectile_MingXiaoSpit::vfunc104
 0x10013c69 func   ?sub_1034d490@@YAPAHXZ sub_1034d490
 0x10013c6e func   ?vfunc2@CEntityListSystem@@QAEXXZ CEntityListSystem::vfunc2
 0x10013c78 func   ?vfunc618@CNPC_VHengeyokai@@QAEXXZ CNPC_VHengeyokai::vfunc618
