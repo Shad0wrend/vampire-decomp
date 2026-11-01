@@ -22,9 +22,9 @@ int CBaseCineCam::vfunc81()
 namespace lifted {
 extern char g_105463a8;
 }
-CBaseCineCam::Datamap82 CBaseCineCam::vfunc82()
+datamap_t *CBaseCineCam::vfunc82()
 {
-    return (CBaseCineCam::Datamap82)&lifted::g_105463a8;
+    return (datamap_t *)&lifted::g_105463a8;
 }
 // END FUNCTION
 
