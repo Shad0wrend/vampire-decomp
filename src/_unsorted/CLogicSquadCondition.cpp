@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_105775b0;
 }
-int CLogicSquadCondition::vfunc82()
+CLogicSquadCondition::Datamap82 CLogicSquadCondition::vfunc82()
 {
-    return (int)&lifted::g_105775b0;
+    return (CLogicSquadCondition::Datamap82)&lifted::g_105775b0;
 }
 // END FUNCTION
 
