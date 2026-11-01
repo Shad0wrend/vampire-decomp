@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_1055ce68;
 }
-CCameraKeyFrame::Datamap82 CCameraKeyFrame::vfunc82()
+datamap_t *CCameraKeyFrame::vfunc82()
 {
-    return (CCameraKeyFrame::Datamap82)&lifted::g_1055ce68;
+    return (datamap_t *)&lifted::g_1055ce68;
 }
 // END FUNCTION
 
