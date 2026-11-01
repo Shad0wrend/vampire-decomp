@@ -77229,6 +77229,16 @@ void CThunkOwner::sub_101aff20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aff40 size=0xf
+struct CSecondaryThunkBase { virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); };
+struct CThunkOwner { void sub_101aff40(); };
+// TARGET: CThunkOwner::sub_101aff40
+void CThunkOwner::sub_101aff40()
+{
+    ((CSecondaryThunkBase *)((char *)this - 0xdc))->vfunc2();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b0670 size=0x1c
 struct CUnk101b0670 { int sub_101b4740(int a); };
 extern CUnk101b0670 g_1072be18;

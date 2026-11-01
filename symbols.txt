@@ -9965,6 +9965,7 @@
 0x10011874 func   ?vfunc362@CWeaponMelee_ChangClaw@@QAEHXZ CWeaponMelee_ChangClaw::vfunc362
 0x10011879 func   ?sub_101b6b90@UtlMem@@QAEXXZ UtlMem::sub_101b6b90
 0x1001187e func   ?sub_101941d0@CPropDestructableUnit@@QAEHXZ CPropDestructableUnit::sub_101941d0
+0x10011883 func   ?sub_101aff40@CThunkOwner@@QAEXXZ CThunkOwner::sub_101aff40
 0x10011888 func   ?sub_100fce70@@YAXPAVCBaseEntity@@PBD@Z sub_100fce70
 0x1001188d func   ?vfunc9@IPhysicsCollisionEvent@@UAEXPAX0@Z IPhysicsCollisionEvent::vfunc9
 0x10011892 func   ?sub_101a0830@CSave@@QAEHPAUCSaveEdict@@@Z CSave::sub_101a0830
