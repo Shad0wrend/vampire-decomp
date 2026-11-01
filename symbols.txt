@@ -8939,6 +8939,7 @@
 0x1000fcf4 func   ?vfunc5@CCameraTrack@@UAEPAV1@I@Z CCameraTrack::vfunc5
 0x1000fcf9 func   ?vfunc367@CWeaponMelee_MingXiaoTentacle@@QAEHHMM@Z CWeaponMelee_MingXiaoTentacle::vfunc367
 0x1000fcfe func   ?vfunc510@CNPC_VCamera@@UAE_NXZ CNPC_VCamera::vfunc510
+0x1000fd03 func   ??0CUnknown101c4790@@QAE@H@Z CUnknown101c4790::CUnknown101c4790
 0x1000fd03 func   ?sub_101c4790@CUnknown101c4790@@QAEPAU1@H@Z CUnknown101c4790::sub_101c4790
 0x1000fd08 func   ?vfunc103@CNPC_VLasombra@@UAEXXZ CNPC_VLasombra::vfunc103
 0x1000fd0d func   ?sub_102c6590@CUnknown102c6590@@QAEPAHH@Z CUnknown102c6590::sub_102c6590
