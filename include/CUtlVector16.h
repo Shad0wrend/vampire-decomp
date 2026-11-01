@@ -20,6 +20,7 @@ public:
 	void sub_100b48c0(int elem, int num);	// 0x100b48c0: the same memmove shift as sub_1003c2e0
 	void sub_10349e10(int elem, int num);	// 0x10349e10: the same memmove shift as sub_1003c2e0
 	void sub_1007ee60();	// 0x1007ee60: Purge-like (size = 0, frees the memory when growSize != -1)
+	void sub_1007eeb0();	// 0x1007eeb0: the same Purge as sub_1007ee60
 
 	char *Element(int i) { return m_pMemory + i * 16; }	// operator[] for the 16 byte elements
 };
