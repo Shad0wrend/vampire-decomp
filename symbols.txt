@@ -7718,6 +7718,7 @@
 0x1000e4a3 func   ?vfunc82@CTriggerBombSite@@QAEHXZ CTriggerBombSite::vfunc82
 0x1000e4a8 func   ?vfunc1@CTESpriteSpray@@UAEHXZ CTESpriteSpray::vfunc1
 0x1000e4ad func   ?vfunc5@CWeaponMelee_Claws_Protean5@@QAEPAV1@I@Z CWeaponMelee_Claws_Protean5::vfunc5
+0x1000e4b2 func   ?sub_101cda90@@YAXHHH@Z sub_101cda90
 0x1000e4b7 func   ?vfunc6@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEXXZ CAI_Behavior<CAI_BaseNPC,100000>::vfunc6
 0x1000e4bc func   ?sub_102ee550@CVecUnit102ee550@@QAEXH@Z CVecUnit102ee550::sub_102ee550
 0x1000e4cb func   ?sub_102193c0@CPropHacking@@QAEXH@Z CPropHacking::sub_102193c0

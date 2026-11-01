@@ -80369,6 +80369,15 @@ int sub_101cda50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cda90 size=0x1e
+#include "engineserver.h"
+
+void sub_101cda90(int a, int b, int c)
+{
+    engine->vfunc41(a, b, c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cdac0 size=0xa7
 extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
 int sub_100104d8(const char *pszName);
