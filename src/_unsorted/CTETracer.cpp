@@ -35,6 +35,17 @@ void CTETracer::vfunc3(const Vector *pOrigin, const Vector *pAngles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006a5f0 size=0x39
+#include "CTETracer.h"
+#include "CTEMetalSparks.h"
+#include "IVEngineServerFull.h"
+
+void CTETracer::vfunc4(void *pFilter, int delay)
+{
+	engine->vfunc103((int)pFilter, delay, this, ((CTEMetalSparks *)this)->vfunc0()->m_pTable, ((CTEMetalSparks *)this)->vfunc0()->m_ClassID);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006a6b0 size=0x6
 #include "CTETracer.h"
 namespace lifted {
