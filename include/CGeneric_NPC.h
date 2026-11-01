@@ -6,6 +6,7 @@
 class CGeneric_NPC : public CAI_BaseNPCTroika
 {
 public:
+	CGeneric_NPC *sub_10359ec0();	// constructor: CAI_BaseNPCTroika's constructor, the member at +0x665c's constructor (sub_10002937), then the vtables at +0x0 and +0x19b0
 	virtual float vfunc516();	// float constant picked by the state at +0xfec (0x13, 0x3b..0x3c, other)
 	virtual void vfunc104();	// slot 104 "CGeneric_NPC::Precache": when the model name (slot 9) is empty sets the default model, precaches the model and the sounds, then CAI_BaseNPCTroika::vfunc104
 	void sub_100097b4();	// CAI_BaseNPCTroika::vfunc104, called directly
