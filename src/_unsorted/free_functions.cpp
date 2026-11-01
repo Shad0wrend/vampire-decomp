@@ -30446,6 +30446,44 @@ void __fastcall sub_100b7130(Mem4 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7220 size=0x2be
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_10559828[2];
+
+int *sub_100b7220()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 10, "m_OnSpawnNoCopCars", {0x450, 0}, 1, 0x16, "OnSpawnNoCopCars", g_1055dc70 },
+        { 10, "m_OnSpawnOneCopCar", {0x468, 0}, 1, 0x16, "OnSpawnOneCopCar", g_1055dc70 },
+        { 10, "m_OnSpawnTwoCopCars", {0x480, 0}, 1, 0x16, "OnSpawnTwoCopCars", g_1055dc70 },
+        { 10, "m_OnDelaySpawnOneCopCar", {0x498, 0}, 1, 0x16, "OnDelaySpawnOneCopCar", g_1055dc70 },
+        { 10, "m_OnDelaySpawnTwoCopCars", {0x4b0, 0}, 1, 0x16, "OnDelaySpawnTwoCopCars", g_1055dc70 },
+        { 10, "m_OnCopsInPursuit", {0x4c8, 0}, 1, 0x16, "OnCopsInPursuit", g_1055dc70 },
+        { 10, "m_OnHeightenedAlert", {0x4e0, 0}, 1, 0x16, "OnHeightenedAlert", g_1055dc70 },
+        { 10, "m_OnEnterMapHere", {0x4f8, 0}, 1, 0x16, "OnEnterMapHere", g_1055dc70 },
+    };
+    g_10559828[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_10559828[0] = (int)&dataDesc[1];
+    return g_10559828;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7590 size=0xad
 #include "CBaseLandmark.h"
 #include "CBaseEntity.h"
