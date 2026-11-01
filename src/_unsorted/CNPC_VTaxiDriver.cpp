@@ -42,6 +42,12 @@ int CNPC_VTaxiDriver::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b3110 size=0x6
+extern char g_10651f48;
+// TARGET: sub_103b3110
+char sub_103b3110() { return g_10651f48; }
+// END FUNCTION
+
 // FUNCTION: 0x103b3170 size=0x1d
 #include "CNPC_VTaxiDriver.h"
 struct A { int sub_10012300(int); };

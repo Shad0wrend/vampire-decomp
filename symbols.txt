@@ -3228,6 +3228,7 @@
 0x10006712 func   ?sub_10198310@@YAPAUPyObj@@PAX0@Z sub_10198310
 0x1000671c func   ?sub_1033d7d0@CUnknown1033d7d0@@QAEXPAUinputdata_t@@@Z CUnknown1033d7d0::sub_1033d7d0
 0x10006721 func   ?sub_102e12e0@@YIXPAUCOwner@@@Z sub_102e12e0
+0x10006730 func   ?sub_103b3110@@YADXZ sub_103b3110
 0x10006735 func   ?vfunc175@CTriggerSave@@UAEXPAVCBaseEntity@@@Z CTriggerSave::vfunc175
 0x1000673a func   ?sub_1019cd10@@YA_NPAUCBoolListView@@@Z sub_1019cd10
 0x1000673f func   ?sub_102c6d90@CUnknown102e12c0@@QAEXXZ CUnknown102e12c0::sub_102c6d90
