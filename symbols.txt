@@ -10024,6 +10024,7 @@
 0x10011d83 func   ?sub_101d6750@CUnknown101d6750@@QAEPAUS101d61e0@@XZ CUnknown101d6750::sub_101d6750
 0x10011d8d func   ?vfunc114@CBaseEntity@@UAEXXZ CBaseEntity::vfunc114
 0x10011d97 func   ?vfunc5@CWeaponRanged_Rifle_Remington@@QAEPAV1@I@Z CWeaponRanged_Rifle_Remington::vfunc5
+0x10011db0 func   ?sub_1038e6e0@CNPC_VManBat@@QAEXXZ CNPC_VManBat::sub_1038e6e0
 0x10011db5 func   ?vfunc103@CNPC_VSabbatLeader@@QAEXXZ CNPC_VSabbatLeader::vfunc103
 0x10011dba func   ?vfunc5@CNPC_VHumanCombatant@@QAEPAV1@I@Z CNPC_VHumanCombatant::vfunc5
 0x10011dce func   ?sub_10057660@CUnknown10057680@@QAEPAV1@XZ CUnknown10057680::sub_10057660

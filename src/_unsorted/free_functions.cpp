@@ -157878,6 +157878,18 @@ void CNPC_VManBat::sub_1038e6a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1038e6e0 size=0x23
+#include "CNPC_VManBat.h"
+
+void __stdcall sub_10272650(int a);
+
+void CNPC_VManBat::sub_1038e6e0()
+{
+	sub_10272650(0x116e);
+	m_f6678 = gpGlobals->curtime + 0.2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1038e720 size=0x108
 #include "CNPC_VManBat.h"
 
