@@ -127858,6 +127858,16 @@ IHandleEntity *CBaseHandle::sub_102c6420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c64d0 size=0x29
+#include "ehandle.h"
+
+// TARGET: CBaseHandle::sub_102c64d0
+IHandleEntity *CBaseHandle::sub_102c64d0()
+{
+	return Get();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c6590 size=0xc
 int *CUnknown102c6590::sub_102c6590(int index)
 {

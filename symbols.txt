@@ -11288,6 +11288,7 @@
 0x10014277 func   ?vfunc14@CAI_Navigator@@UAEHH@Z CAI_Navigator::vfunc14
 0x1001427c func   ?sub_1012ca50@@YA_NPAUEnt@@0@Z sub_1012ca50
 0x10014281 func   ?sub_1009b640@CBaseEntity@@QAEXHHH@Z CBaseEntity::sub_1009b640
+0x10014286 func   ?sub_102c64d0@CBaseHandle@@QAEPAVIHandleEntity@@XZ CBaseHandle::sub_102c64d0
 0x1001428b func   ?vfunc316@CBaseCombatWeapon@@UAEDH@Z CBaseCombatWeapon::vfunc316
 0x10014290 func   ?sub_102042a0@CUnknown102042a0@@QAEHHH@Z CUnknown102042a0::sub_102042a0
 0x10014295 func   ?vfunc246@CSceneEntity@@UAEXXZ CSceneEntity::vfunc246
