@@ -9537,6 +9537,7 @@
 0x10010e0b func   _npc_bullseye npc_bullseye
 0x10010e10 func   ?sub_102564b0@CBaseCombatWeapon@@QAEXXZ CBaseCombatWeapon::sub_102564b0
 0x10010e15 func   ?sub_10068c00@CUnknown10068c00@@QAEHXZ CUnknown10068c00::sub_10068c00
+0x10010e1a func   ?sub_101a68e0@@YAXXZ sub_101a68e0
 0x10010e1f func   ?sub_101978b0@@YAPAUPyObject@@PAU1@0@Z sub_101978b0
 0x10010e24 func   ?vfunc363@CBaseCombatCharacter@@QAEDPAVCBaseEntity@@@Z CBaseCombatCharacter::vfunc363
 0x10010e29 func   ?sub_10289d10@CAI_BaseNPCUnit@@QAEXXZ CAI_BaseNPCUnit::sub_10289d10
