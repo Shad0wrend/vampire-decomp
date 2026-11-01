@@ -54,9 +54,9 @@ bool CPhysicsCannister::vfunc72(int a0)
 namespace lifted {
 extern char g_1057c8b8;
 }
-int CPhysicsCannister::vfunc82()
+CPhysicsCannister::Datamap82 CPhysicsCannister::vfunc82()
 {
-    return (int)&lifted::g_1057c8b8;
+    return (CPhysicsCannister::Datamap82)&lifted::g_1057c8b8;
 }
 // END FUNCTION
 
