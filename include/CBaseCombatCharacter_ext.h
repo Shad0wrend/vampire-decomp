@@ -89,4 +89,6 @@
 	char sub_103261f0(Vector pos, float flScale, int a);	// FInViewCone variant used while the global at 0x10936f74 holds the value 2 (stub 0x1000556a)
 	char sub_103264d0(Vector pos, float flScale, int a);	// the default FInViewCone variant (stub 0x100072a7)
 	char vfunc363(CBaseEntity *pTarget);	// slot 363 "CBaseCombatCharacter::FInViewCone" (entity version): scope trace (entity name), pTarget's center (slot 192) and its scale (slot 29, asked with the field at +0x1574) go to sub_103261f0 (with that field) while the global at 0x10936f74 holds 2 and its slot 1 is false, else to sub_103264d0
+	void vfunc383(CBaseCombatWeapon *pWeapon, char bNoEquip);	// slot 383 "CBaseCombatCharacter::Weapon_Equip"
+	void sub_10334e70(CBaseCombatWeapon *pWeapon);	// called first by Weapon_Equip
 	void vfunc180();	// slot 180 "CBaseCombatCharacter::UpdateOnRemove" (declared as a plain member): scope trace (entity name), tells the owner entity (slot 97 -> its slot 139), frees the relationship table (+0x1598 / +0x159c / +0x15a0), removes every weapon (GetWeapon over 0..0xdf), runs sub_10052030 / sub_103234a0 / sub_10323770, removes the entity behind the handle at +0x5a8 and ends with CBaseEntity::vfunc180
