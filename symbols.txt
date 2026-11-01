@@ -6642,6 +6642,7 @@
 0x1000c1a8 func   ?sub_10065030@CUnknown10065030@@QAEHXZ CUnknown10065030::sub_10065030
 0x1000c1ad func   ?vfunc1@CSaveRestoreBlockSet@@QAEXPAX@Z CSaveRestoreBlockSet::vfunc1
 0x1000c1b2 func   ?sub_101316e0@CTimerEntity@@QAEXXZ CTimerEntity::sub_101316e0
+0x1000c1bc func   ?vfunc104@CDebugEntity@@UAEXXZ CDebugEntity::vfunc104
 0x1000c1c1 func   ?sub_1006ede0@CUnknown1006ede0@@QAEHXZ CUnknown1006ede0::sub_1006ede0
 0x1000c1c6 func   ?sub_103a9340@CNPC_VSabbatLeader@@QAEDPAUCNPC_VSabbatLeaderHint@@@Z CNPC_VSabbatLeader::sub_103a9340
 0x1000c1cb func   ?sub_100ce630@CUnknown100ce630@@QAE_NM@Z CUnknown100ce630::sub_100ce630
