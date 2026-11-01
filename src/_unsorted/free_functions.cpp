@@ -51258,6 +51258,18 @@ void sub_10119900(CUnkVT10119900 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10119940 size=0x2d
+#include "ehandle.h"
+
+extern CBaseHandle g_1070b070;
+
+// TARGET: sub_10119940
+IHandleEntity *sub_10119940()
+{
+	return g_1070b070.Get();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011a0a0 size=0x6
 namespace lifted {
 extern char g_1070b17c;
