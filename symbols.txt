@@ -10918,6 +10918,7 @@
 0x10012fe9 func   ?vfunc81@CTestTraceline@@UAEHXZ CTestTraceline::vfunc81
 0x10012fee func   ?vfunc80@COccultPresence@@QAEHXZ COccultPresence::vfunc80
 0x10012ff3 func   ?vfunc5@CBatSwarm_Teleport@@QAEPAV1@I@Z CBatSwarm_Teleport::vfunc5
+0x10012ff8 func   ?sub_101a2410@CRestore@@QAEPAUCRestoreSaveEnt@@H@Z CRestore::sub_101a2410
 0x10012ffd func   ?vfunc103@CFuncBrush@@QAEXXZ CFuncBrush::vfunc103
 0x10013007 func   ?sub_1013bef0@@YAXABVVector@@000MAAV1@@Z sub_1013bef0
 0x1001300c func   ?sub_102c2c10@@YIXPADH0@Z sub_102c2c10

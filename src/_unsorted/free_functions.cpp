@@ -75712,6 +75712,29 @@ CBaseEntity *CRestore::sub_101a2390(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a2410 size=0x34
+#include "CRestore.h"
+struct CRestoreSaveRecord30 { int m_nId; char m_pad04[0x2c]; };
+struct CRestoreSaveTable { char m_pad0000[0x1318]; int m_nRecords; CRestoreSaveRecord30 *m_pRecords; };
+CRestoreSaveEnt *CRestore::sub_101a2410(int index)
+{
+	CRestoreSaveTable *pTable = (CRestoreSaveTable *)m_pData2;
+	if (pTable && index >= 0) {
+		int i = 0;
+		if (pTable->m_nRecords > 0) {
+			CRestoreSaveRecord30 *pRec = pTable->m_pRecords;
+			do {
+				if (pRec->m_nId == index)
+					return (CRestoreSaveEnt *)pRec;
+				i++;
+				pRec++;
+			} while (i < pTable->m_nRecords);
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2820 size=0x198
 #include "CRestore.h"
 #include "CUnknown1070b248.h"
