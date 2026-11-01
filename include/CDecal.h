@@ -10,6 +10,7 @@ public:
 	class CTraceFilterValidForDecal : public CTraceFilterSimple	// RTTI .?AVCTraceFilterValidForDecal@CDecal@@, vtable 0x10496618
 	{
 	public:
+		CTraceFilterValidForDecal(void *pPassEnt, int collisionGroup);	// 0x1023ac90
 		virtual bool vfunc0(void *pHandleEntity, int contentsMask);	// ShouldHitEntity: false for an entity whose classname matches one of the six names (with '*' wildcards) in the table at 0x105c2648, else CTraceFilterSimple::vfunc0
 	};
 
