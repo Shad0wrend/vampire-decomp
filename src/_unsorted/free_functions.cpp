@@ -12962,6 +12962,31 @@ void __cdecl sub_1006a370(CUnknown1019d130 *pFilter, int a, TERecipientX *pTarge
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006a400 size=0x2d
+#include "CTETracer.h"
+
+struct CBaseTempEntityHeadUnit {
+	void sub_10015334(const char *name);
+};
+
+extern void *vt_1044e160[];
+
+// TARGET: CTETracer::sub_1006a400
+CTETracer *CTETracer::sub_1006a400(const char *name)
+{
+	((CBaseTempEntityHeadUnit *)this)->sub_10015334(name);
+	*(void ***)this = vt_1044e160;
+	int *p = (int *)((char *)this + 0xc);
+	p[0] = 0;
+	p[1] = 0;
+	p[2] = 0;
+	p[3] = 0;
+	p[4] = 0;
+	p[5] = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006a470 size=0xb
 namespace lifted {
 extern char g_1044e160;
