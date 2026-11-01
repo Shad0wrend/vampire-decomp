@@ -159111,6 +159111,21 @@ void CUtlVector12::sub_103dc280(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dc390 size=0x1d
+// TARGET: sub_103dc390
+struct Vec3Copy
+{
+    int x, y, z;
+};
+void sub_103dc390(Vec3Copy *dst, Vec3Copy *src)
+{
+    if (dst)
+    {
+        *dst = *src;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dc3c0 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);

@@ -5781,6 +5781,7 @@
 0x1000b014 func   ?sub_10201fa0@CVStatListManager_t@@QAEDH@Z CVStatListManager_t::sub_10201fa0
 0x1000b019 func   ?vfunc81@CItemGBadluckTalisman@@QAEHXZ CItemGBadluckTalisman::vfunc81
 0x1000b01e func   ?sub_10400a00@@YAHXZ sub_10400a00
+0x1000b023 func   ?sub_103dc390@@YAXPAUVec3Copy@@0@Z sub_103dc390
 0x1000b028 func   ?vfunc82@CFuncElevator@@UAEHXZ CFuncElevator::vfunc82
 0x1000b02d func   ?vfunc274@CRagdollProp@@UAE_NH@Z CRagdollProp::vfunc274
 0x1000b037 func   _npc_VHunter npc_VHunter
