@@ -39581,6 +39581,29 @@ char CUnknown100dda50::sub_100dda50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ddbd0 size=0x20
+#include "vampire.h"
+struct CUnk100ddbd0Vt
+{
+    virtual unsigned int vfunc0();
+    virtual void vfunc1();
+    virtual short vfunc2(unsigned int a);
+};
+extern CUnk100ddbd0Vt *g_1070b24c;
+struct CUnk100ddbd0
+{
+    virtual unsigned int vfunc0();
+    char m_pad0004[0x42];
+    short m_n46;  // 0x46
+    void sub_100ddbd0();
+};
+// TARGET: CUnk100ddbd0::sub_100ddbd0
+void CUnk100ddbd0::sub_100ddbd0()
+{
+    m_n46 = g_1070b24c->vfunc2(vfunc0());
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ddc00 size=0x21
 struct CUnkVT100ddc00
 {

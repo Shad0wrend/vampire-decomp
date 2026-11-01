@@ -3307,6 +3307,7 @@
 0x10006b95 func   ?sub_100422e0@UtlVec8@@QAEHHPBUUtlVec8Elem@@@Z UtlVec8::sub_100422e0
 0x10006b9a func   ?sub_1011cc10@SInit@@QAEXXZ SInit::sub_1011cc10
 0x10006b9f func   ?sub_103f7630@@YAHXZ sub_103f7630
+0x10006ba4 func   ?sub_100ddbd0@CUnk100ddbd0@@QAEXXZ CUnk100ddbd0::sub_100ddbd0
 0x10006ba9 func   ?sub_1020aea0@CUnknown1020aea0@@QAEMPAX@Z CUnknown1020aea0::sub_1020aea0
 0x10006bbd func   ?vfunc176@CSmallHullTrigger@@QAEXPAVCBaseEntity@@@Z CSmallHullTrigger::vfunc176
 0x10006bc2 func   ?sub_1017e720@CUnknown1017e720@@QAEHXZ CUnknown1017e720::sub_1017e720
