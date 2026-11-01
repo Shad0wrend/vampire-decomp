@@ -136756,6 +136756,15 @@ void __stdcall sub_10309120(float flAngle, float flStep, int nCount, float *pFir
 }
 // END FUNCTION
 
+// FUNCTION: 0x10309620 size=0x1c
+// TARGET: sub_10309620
+void __cdecl sub_10309620(float *a, float *b, float *out)
+{
+	out[0] = a[0] - b[0];
+	out[1] = a[1] - b[1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10309650 size=0x120
 #include "CAI_PlaneSolver.h"
 #include "CEntityVSlots.h"
