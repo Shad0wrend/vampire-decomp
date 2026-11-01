@@ -165081,6 +165081,26 @@ int sub_103f17a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f17d0 size=0x23
+#include "CVampireProjectile_MingXiaoSpit.h"
+
+extern int vt_104e3284[];
+struct CVampireProjectileCtorCall_103f17d0
+{
+    void sub_10013b56();
+};
+
+// TARGET: CVampireProjectile_MingXiaoSpit::sub_103f17d0
+CVampireProjectile_MingXiaoSpit *CVampireProjectile_MingXiaoSpit::sub_103f17d0()
+{
+    ((CVampireProjectileCtorCall_103f17d0 *)this)->sub_10013b56();
+    m_hTarget = -1;
+    *(int *)this = (int)vt_104e3284;
+    m_bImpactDone = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f1cb0 size=0x1e
 extern int vt_104e37ac[];
 

@@ -6345,6 +6345,7 @@
 0x1000bdf2 func   ?sub_1006b7a0@@YAHXZ sub_1006b7a0
 0x1000bdfc func   _func_keyframed_mover func_keyframed_mover
 0x1000be06 func   ?sub_1027dc80@@YG_NPAUFObj@@PAUIObj@@MPAH@Z sub_1027dc80
+0x1000be0b func   ?sub_103f17d0@CVampireProjectile_MingXiaoSpit@@QAEPAV1@XZ CVampireProjectile_MingXiaoSpit::sub_103f17d0
 0x1000be10 func   ?vfunc420@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc420
 0x1000be15 func   ?sub_102f8ec0@CUnk102f8ec0@@QAEXXZ CUnk102f8ec0::sub_102f8ec0
 0x1000be1a func   _vampire_skill vampire_skill
