@@ -49681,6 +49681,18 @@ void Mem400::sub_10107550(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10107670 size=0x67
+#include "CBaseFilter.h"
+
+// TARGET: filter_base
+extern "C" CBaseEntity *filter_base()
+{
+    CBaseFilter *p = new CBaseFilter;
+    p->vfunc106("filter_base");
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107760 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
