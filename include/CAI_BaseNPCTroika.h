@@ -41,6 +41,7 @@ class CAI_BaseNPCTroika : public CAI_BaseNPC
 {
 public:
 	virtual int vfunc127(CRestore *pRestore);	// "CAI_BaseNPCTroika::Restore": CAI_BaseNPC::vfunc127, a flag byte (slot 17 of the restore) that gates two ints (slot 15), then the float fix-ups of the fields at +0x607c .. +0x657c and the nine 0x2c byte timers at +0x60b0 .. +0x6210
+	virtual void vfunc113();	// slot 113 override: CBaseEntity::vfunc113, then when slot 138 answers non-zero applies the disposition (sub_102c0f70(+0x6558 or "", 1))
 	virtual void vfunc78();	// slot 78: with the script recording flag (+0x5d78) set and its entity (+0x5d74) alive the entity's slots 94 / 95 / 92 / 211 are asked and the answers and the flags (+0x19c, +0x14b8) are stored at +0x5f78.. of the script entity after CBaseEntity::vfunc78, slot 614 and the active weapon's slot 78
 	virtual int vfunc293();	// the dword at +0x9c of the entity the handle at +0x647c resolves to (0 when stale)
 	virtual int vfunc142(int a);	// slot 142 override: with the byte at +0x63d8 set fires the output at +0x5e0c (this, this, 0 delay) once per time stamp (+0x5d98) and answers 0, else CAI_BaseNPC::vfunc142
