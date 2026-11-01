@@ -190,6 +190,17 @@ float CSoundControllerImp::vfunc16(void *pSound, int command, envelopePoint_t *p
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bd7e0 size=0x1f
+#include "vampire.h"
+#include "CSoundControllerImp.h"
+#include "CSoundEnvelopeController.h"
+// TARGET: CSoundControllerImp::vfunc15
+void CSoundControllerImp::vfunc15(void *pSound, int command, int *pPoints)
+{
+    ((CSoundEnvelopeController *)this)->vfunc16(pSound, command, (void *)pPoints[0], pPoints[1]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bd810 size=0x24
 #include "CSoundControllerImp.h"
 
