@@ -128146,6 +128146,31 @@ void CAI_KeyedList::sub_102cc6c0(int key, float a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cc730 size=0x20
+struct CUnknown102cc5d0
+{
+    void sub_102cc5d0(char *p);
+};
+struct CUnk102cc730
+{
+    char pad[0x40];
+    int m_40;
+    void sub_102cc730(CUnknown102cc5d0 *p);
+};
+void CUnk102cc730::sub_102cc730(CUnknown102cc5d0 *p)
+{
+    m_40--;
+    if (m_40 != 0)
+    {
+        char *e = (char *)this + m_40 * 8;
+        if ((char *)p != e)
+        {
+            p->sub_102cc5d0(e);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cc760 size=0x60
 #include "CAIPendingCondList.h"
 #include "globalvars.h"

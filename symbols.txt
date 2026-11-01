@@ -7803,6 +7803,7 @@
 0x1000e59d func   ?sub_1015f090@CUnitP@@QAEXD@Z CUnitP::sub_1015f090
 0x1000e5a2 func   ?sub_100deb80@CUtlLinkedList12@@QAEXH@Z CUtlLinkedList12::sub_100deb80
 0x1000e5a7 func   _item_p_research_hg_firearms item_p_research_hg_firearms
+0x1000e5ac func   ?sub_102cc730@CUnk102cc730@@QAEXPAUCUnknown102cc5d0@@@Z CUnk102cc730::sub_102cc730
 0x1000e5b1 func   ?sub_10278090@CAI_BaseNPC@@QAEHDH@Z CAI_BaseNPC::sub_10278090
 0x1000e5b6 func   ?sub_10377c00@@YIPAXPAX@Z sub_10377c00
 0x1000e5c0 func   _item_w_supershotgun item_w_supershotgun
