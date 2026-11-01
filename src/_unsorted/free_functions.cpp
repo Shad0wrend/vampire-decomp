@@ -56078,6 +56078,18 @@ void CMathRemap::sub_101321f0(inputdata_t &inputdata)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10132300 size=0x5c
+#include "CMathColorBlend.h"
+
+// TARGET: math_colorblend
+extern "C" CBaseEntity *math_colorblend()
+{
+	CMathColorBlend *p = new CMathColorBlend;
+	p->vfunc106("math_colorblend");
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10132680 size=0x190
 #include "CMathColorBlend.h"
 #include "inputdata_t.h"
