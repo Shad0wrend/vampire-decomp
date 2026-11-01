@@ -10838,6 +10838,30 @@ int CUnknown1005eec0::sub_1005eec0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005f190 size=0x1b
+struct CSubObj1005f190 {
+	virtual int v0();
+	virtual char v1();
+	char pad[0x28];
+	int m_n2c;
+};
+
+struct CFoo1005f190 {
+	char pad[4];
+	CSubObj1005f190 *m_pSub;
+	int sub_1005f190();
+};
+
+// TARGET: sub_1005f190
+int CFoo1005f190::sub_1005f190()
+{
+	if (m_pSub->v1()) {
+		return 0;
+	}
+	return m_pSub->m_n2c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005f380 size=0xd5
 #include "SendProp.h"
 
