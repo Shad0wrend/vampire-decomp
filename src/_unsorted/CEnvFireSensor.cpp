@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_1056d1ac;
 }
-CEnvFireSensor::Datamap82 CEnvFireSensor::vfunc82()
+datamap_t *CEnvFireSensor::vfunc82()
 {
-    return (CEnvFireSensor::Datamap82)&lifted::g_1056d1ac;
+    return (datamap_t *)&lifted::g_1056d1ac;
 }
 // END FUNCTION
 
