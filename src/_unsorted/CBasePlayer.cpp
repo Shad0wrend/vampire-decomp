@@ -1880,3 +1880,14 @@ void CBasePlayer::vfunc24(CBaseEntity *pOther)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x10183090 size=0x34
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+void CBasePlayer::vfunc26(CBaseEntity *pOther)
+{
+	if (pOther) {
+		m_hEnt1C60 = (CBaseEntity *)pOther->m_p9c;
+	}
+}
+// END FUNCTION
