@@ -14,7 +14,9 @@ public:
 	void sub_10133950(void *pActivator, float flNewValue);	// "CMathCounter::SetValue"-like (stub 0x1000206d): clamps and fires the outputs
 	void sub_10134d30(void *pActivator, float flNewValue);	// "CMathCounter::UpdateOutValue": a value equal to the maximum (+0x454) fires the output at +0x470; any other value fires the output at +0x488, then the one at +0x4a0 when it is above the maximum, else the one at +0x458 (each output gets the value as a float variant)
 
+#ifndef CLOGICALENTITY_BASED
 	char m_pad0004[0x450 - 4];
+#endif
 	float m_flMin;	// 0x450
 	float m_flMax;	// 0x454
 	char m_pad0458[4];
