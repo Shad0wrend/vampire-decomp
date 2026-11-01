@@ -104984,6 +104984,23 @@ void CSecCamera::sub_1020cbf0(const char *pszSequence)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020cc60 size=0x7a
+#include "CSecCamera.h"
+void sub_10139610(float *pAngles, float *pForward, float *pRight, float *pUp);
+float sub_101d1120(float *a, const Vector &b, const Vector &c);
+// TARGET: CSecCamera::sub_1020cc60
+bool CSecCamera::sub_1020cc60(CBaseEntity *pTarget)
+{
+	if (pTarget->m_pA8) {
+		Vector vecForward;
+		sub_10139610(vfunc221(), (float *)&vecForward, 0, 0);
+		if (sub_101d1120(vfunc217(), ((CSecCamera *)pTarget)->vfunc192(), vecForward) > m_flF798)
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020cd00 size=0x12
 #include "vampire.h"
 
