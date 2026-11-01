@@ -29,9 +29,9 @@ CDisciplineWeapon *CDisciplineWeapon::vfunc5(unsigned int flags)
 namespace lifted {
 extern char g_1067e538;
 }
-CDisciplineWeapon::Datamap82 CDisciplineWeapon::vfunc82()
+datamap_t *CDisciplineWeapon::vfunc82()
 {
-    return (CDisciplineWeapon::Datamap82)&lifted::g_1067e538;
+    return (datamap_t *)&lifted::g_1067e538;
 }
 // END FUNCTION
 
