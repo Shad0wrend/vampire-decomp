@@ -14,6 +14,10 @@ public:
 	virtual float vfunc278();	// the pull strength of the held object (handle at +0x918): the owner's stat 0x1a divided by the physics object's mass (slot 12), -1.0f without a held object
 
 	virtual void vfunc326();
+	CBaseCombatWeapon *vfunc5(unsigned int flags);	// slot 5 override: the game's 0x10149fc0 (scalar deleting destructor)
+	unsigned int vfunc117();	// slot 117 override: the game's 0x10149f50
+	void vfunc300();	// slot 300 override: the game's 0x10149f30
+	void vfunc327();	// slot 327 override: the game's 0x1014e160
 	virtual void vfunc103();	// slot 103: slot 104 (Precache), then slot 105 with slot 343's result, clears the bytes at +0x914 and +0xb25
 	virtual void vfunc104();	// slot 104 (Precache): base slot 104, the sounds at 0x1057b8a0 and the six physgun loop sounds at 0x1057b888, then the model of \"hud/PhysicsHand_Closed.vmt\" into the global at 0x1071a36c
 	void sub_1014d110();
