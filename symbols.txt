@@ -5590,6 +5590,7 @@
 0x1000a3f3 func   ??0CRestore@@QAE@PAX@Z CRestore::CRestore
 0x1000a3f8 func   ?sub_10319f70@CUnknown10319f70@@QAEXHHH@Z CUnknown10319f70::sub_10319f70
 0x1000a402 func   ?sub_100aacd0@@YIHPAD@Z sub_100aacd0
+0x1000a407 func   ?sub_102159f0@CUnk102159f0@@QAEXPAH@Z CUnk102159f0::sub_102159f0
 0x1000a40c func   ?sub_101fb180@@YAXH@Z sub_101fb180
 0x1000a411 func   ?vfunc562@CAI_BaseNPC@@UAEDHHD@Z CAI_BaseNPC::vfunc562
 0x1000a416 func   ?sub_10199990@@YAHHH@Z sub_10199990
