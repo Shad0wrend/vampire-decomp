@@ -65340,6 +65340,54 @@ int sub_10179430()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10179680 size=0x3b
+#define CSV_ROW(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CSlot217View
+{
+	CSV_ROW(r0)
+	CSV_ROW(r1)
+	CSV_ROW(r2)
+	CSV_ROW(r3)
+	CSV_ROW(r4)
+	CSV_ROW(r5)
+	CSV_ROW(r6)
+	CSV_ROW(r7)
+	CSV_ROW(r8)
+	CSV_ROW(r9)
+	CSV_ROW(r10)
+	CSV_ROW(r11)
+	CSV_ROW(r12)
+	CSV_ROW(r13)
+	CSV_ROW(r14)
+	CSV_ROW(r15)
+	CSV_ROW(r16)
+	CSV_ROW(r17)
+	CSV_ROW(r18)
+	CSV_ROW(r19)
+	CSV_ROW(r20)
+	virtual void r210();
+	virtual void r211();
+	virtual void r212();
+	virtual void r213();
+	virtual void r214();
+	virtual void r215();
+	virtual void r216();
+	virtual float *s217();
+};
+
+// TARGET: sub_10179680
+void sub_10179680(void *pEnt, int unused, float *out)
+{
+	float x = ((CSlot217View *)pEnt)->s217()[0];
+	out[0] = x;
+	float y = ((CSlot217View *)pEnt)->s217()[1];
+	out[1] = y;
+	float z = ((CSlot217View *)pEnt)->s217()[2];
+	out[2] = z;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017a270 size=0xe
 // TARGET: sub_1017a270
 struct StatMaskView

@@ -289,6 +289,7 @@
 0x10001799 func   ?sub_100c81b0@CUnknown100c81b0@@QAEXPBUCBitVecWords@@HPBUCBoneRecord@@PBUCStudioBoneCount@@@Z CUnknown100c81b0::sub_100c81b0
 0x100017a3 func   ?sub_102ad2d0@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::sub_102ad2d0
 0x100017ad func   ?sub_102035c0@@YAPBDH@Z sub_102035c0
+0x100017b2 func   ?sub_10179680@@YAXPAXHPAM@Z sub_10179680
 0x100017b7 func   ?sub_10112420@CUnknown10112420@@QAEMHH@Z CUnknown10112420::sub_10112420
 0x100017bc func   ?sub_100bd090@bf_write@@QAEXMH@Z bf_write::sub_100bd090
 0x100017c1 func   ?sub_1013c090@@YAXMMMH@Z sub_1013c090
