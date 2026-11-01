@@ -55,7 +55,11 @@ public:
 	virtual void c320(); virtual void c321(); virtual void c322();
 	virtual int vfunc323(const Vector *pDirection);	// slot 323: which side of the character a horizontal direction is on: 0 when the direction has no horizontal length, else by the angle (0..360) between the character's yaw (slot 219) and the direction's yaw: 2 for 316..360 and up to 45, 3 up to 135, 0 up to 225, 1 beyond
 	virtual void c324(); virtual void c325(); virtual void c326(); virtual void c327(); virtual void c328(); virtual void c329();
-	CBCC_SLOTS10(c33) CBCC_SLOTS10(c34) CBCC_SLOTS10(c35) CBCC_SLOTS10(c36)
+	CBCC_SLOTS10(c33)
+	virtual void c340(); virtual void c341(); virtual void c342(); virtual void c343(); virtual void c344(); virtual void c345(); virtual void c346(); virtual void c347();
+	virtual int c348();	// slot 348 (see vfunc348, the plain member, for what it does)
+	virtual void c349();
+	CBCC_SLOTS10(c35) CBCC_SLOTS10(c36)
 	virtual void c370(); virtual void c371(); virtual void c372(); virtual void c373();
 	virtual int vfunc374(int count, int ammoIndex, int unused);	// slot 374 "CBaseCombatCharacter::GiveAmmo" by index
 
