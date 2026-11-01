@@ -11,6 +11,12 @@ int CNPC_VSheriffMan::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103adc50 size=0x6
+extern char g_10650710;
+// TARGET: sub_103adc50
+char sub_103adc50() { return g_10650710; }
+// END FUNCTION
+
 // FUNCTION: 0x103adcb0 size=0x1d
 #include "CNPC_VSheriffMan.h"
 struct A { int sub_10012300(int); };

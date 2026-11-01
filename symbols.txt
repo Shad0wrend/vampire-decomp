@@ -1180,6 +1180,7 @@
 0x10002f63 func   ?sub_102fa510@CAI_Node@@QAEXXZ CAI_Node::sub_102fa510
 0x10002f68 func   ?vfunc79@CBaseGrenade@@UAEHXZ CBaseGrenade::vfunc79
 0x10002f6d func   ?sub_10408060@CKeyringUnit@@QAEXH@Z CKeyringUnit::sub_10408060
+0x10002f72 func   ?sub_103adc50@@YADXZ sub_103adc50
 0x10002f77 func   ?sub_102d4120@@YIPADPAD@Z sub_102d4120
 0x10002f7c func   ?sub_10088ce0@@YAXXZ sub_10088ce0
 0x10002f81 func   ?vfunc107@CNPCMaker@@UAEXPAVCEntityMapData@@@Z CNPCMaker::vfunc107
