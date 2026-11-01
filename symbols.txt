@@ -11534,6 +11534,7 @@
 0x10014d30 func   ?sub_10325e70@@YAHXZ sub_10325e70
 0x10014d35 func   _item_a_hvy_cloth item_a_hvy_cloth
 0x10014d3a func   ?sub_102f6cd0@@YIXPAD@Z sub_102f6cd0
+0x10014d3f func   ?sub_102a9640@CUnk102a9640@@QAEMXZ CUnk102a9640::sub_102a9640
 0x10014d44 func   ?vfunc620@CNPCMaker_Zombie@@UAEXH@Z CNPCMaker_Zombie::vfunc620
 0x10014d49 func   ?sub_100fa600@S100fa600@@QAEXH@Z S100fa600::sub_100fa600
 0x10014d4e func   ?vfunc82@CSkyCamera@@UAEHXZ CSkyCamera::vfunc82

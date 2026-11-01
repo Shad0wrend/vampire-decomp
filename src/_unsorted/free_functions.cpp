@@ -124179,6 +124179,30 @@ int CUnknown102a9620::sub_102a9620()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a9640 size=0x1f
+struct CUnk102a9640Obj
+{
+    virtual void vfunc0();
+    virtual char vfunc1();
+    char pad[0x28 - 4];
+    float m_28;
+};
+struct CUnk102a9640
+{
+    char pad[4];
+    CUnk102a9640Obj *m_4;
+    float sub_102a9640();
+};
+float CUnk102a9640::sub_102a9640()
+{
+    if (m_4->vfunc1())
+    {
+        return 0.0f;
+    }
+    return m_4->m_28;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a9670 size=0x3
 struct CUnknown102a9670 { void * sub_102a9670(); };
 void * CUnknown102a9670::sub_102a9670()
