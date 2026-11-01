@@ -90914,6 +90914,123 @@ void CUnknown101e0f00::sub_101e2da0(void *pChar, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e2f50 size=0x2f1
+#include "CUnknown101e0f00.h"
+#include "CVStatList_t.h"
+#include "ehandle.h"
+#include "UtlMem.h"
+#include <stdio.h>
+
+struct CPlayerV : CBasePlayer {
+	void sub_1017e150(int a, float t, const char *s);
+};
+struct EntryV {
+	char m_pad0000[4];
+	const char *m_pszName;	// 0x04
+	char m_pad0008[4];
+	unsigned int m_nMask;	// 0x0c
+	int m_n10;
+	int m_n14;
+	char m_pad0018[0xc];
+	char m_bOvert;	// 0x24
+	char m_pad0025[3];
+	int m_nLevel;	// 0x28
+	char m_pad002c[0x14];
+	int m_n40;
+};
+struct CharV {
+	char m_pad0000[0xa8];
+	CPlayerV *m_pPlayer;
+	char m_pad00ac[0xfb0 - 0xac];
+	int m_nFb0;
+	char m_pad0fb4[0xfcc - 0xfb4];
+	int m_nFcc;
+};
+struct LoaderV : CUnknown101e0f00 {
+	char m_pad000c[8];
+	int m_n14;
+	void sub_101e2990(EntryV *pEntry, CharV *pChar, void *pList);
+	void sub_101e3560(CharV *pChar, unsigned int mask);
+};
+struct HandleList {
+	UtlMem m_mem;
+	int m_nSize;
+	int *m_pElems;
+};
+struct SList2 {
+	void sub_10227a30(void *pPlayer, int id);
+};
+extern HandleList g_107399f4;
+extern int g_105a1b28;
+extern SList2 g_10750cb4;
+extern char g_106b8540[];
+void sub_101cebc0(void *pPlayer, int a, int b);
+void sub_101cecf0(void *pPlayer, int a, const char *s);
+
+void CUnknown101e0f00::sub_101e2f50(void *pChar, CUnknown101e0f00Entry *pEntry, int nCost)
+{
+	char buf[128];
+	LoaderV *self = (LoaderV *)this;
+	CharV *ch = (CharV *)pChar;
+	EntryV *en = (EntryV *)pEntry;
+	unsigned int mask = en->m_nMask;
+	self->sub_101e2990(en, ch, &g_107399f4);
+	if (g_107399f4.m_nSize > 0) {
+		if (nCost > 0) {
+			if (!(char)CVStatListSet::Of(pChar)->Find(0)->sub_10201100(0xc, nCost))
+				return;
+		}
+		self->sub_101e3560(ch, mask);
+		ch->m_nFb0++;
+		g_105a1b28++;
+		ch->m_nFcc = 0;
+		int nTargets = g_107399f4.m_nSize;
+		for (int i = 0; i < nTargets; i++) {
+			CBaseEntity *pTarget = ((EHANDLE *)g_107399f4.m_mem.m_pMemory)[i].Get();
+			self->sub_101e3730(pChar, pTarget, mask, -1);
+		}
+		g_107399f4.m_nSize = 0;
+		g_107399f4.m_mem.sub_101e48b0();
+		g_107399f4.m_pElems = g_107399f4.m_mem.m_pMemory;
+		CPlayerV *pPlayer = ch->m_pPlayer;
+		if (pPlayer) {
+			pPlayer->sub_1017df50(en->m_nLevel, -1.0f, "CVTgt_DisciplineFXMgr_t::ActivateEffect_Trigger");
+			if (en->m_bOvert)
+				pPlayer->sub_1017e150(3, -1.0f, "CVTgt_DisciplineFXMgr_t::ActivateEffect_Trigger");
+			const char *name = en->m_pszName;
+			int nType = en->m_n14;
+			if (!name)
+				name = g_106b8540;
+			sprintf(buf, "%s (%d)\n", name, nType);
+			sub_101cecf0(pPlayer, 0x39, buf);
+			int n = en->m_n14;
+			if (n == 1 || n == 2) {
+				switch (en->m_n10) {
+				case 0: g_10750cb4.sub_10227a30(pPlayer, n + 0xe); break;
+				case 5: g_10750cb4.sub_10227a30(pPlayer, n + 0x10); break;
+				case 6: g_10750cb4.sub_10227a30(pPlayer, n + 0x12); break;
+				case 0xc: g_10750cb4.sub_10227a30(pPlayer, n + 0x14); break;
+				}
+			}
+		}
+	} else if (pChar) {
+		CPlayerV *pPlayer = ch->m_pPlayer;
+		if (pPlayer) {
+			int id = 0x2c;
+			if (en->m_n40 == 2)
+				id = 0x2d;
+			else if (en->m_n40 == 3)
+				id = 0x2e;
+			else if (self->m_n14 == 1)
+				id = 0x50;
+			else if (self->m_n14 == 2)
+				id = 0x51;
+			sub_101cebc0(pPlayer, id, 0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e3310 size=0x41
 #include "CNamedListX.h"
 __declspec(dllimport) void DevMsg(const char *fmt, ...);
