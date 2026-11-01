@@ -2159,6 +2159,7 @@
 0x10004b7e func   ??0CVDmgBlock16_t@@QAE@XZ CVDmgBlock16_t::CVDmgBlock16_t
 0x10004b88 func   ?sub_1019b0c0@@YGXPAUCUnknown1019b0c0@@@Z sub_1019b0c0
 0x10004b8d func   ?sub_10004b8d@CNPC_VAsianVampire@@QAE_NPBM@Z CNPC_VAsianVampire::sub_10004b8d
+0x10004b92 func   ?sub_100a6150@CBaseEntity@@QAEHHHH@Z CBaseEntity::sub_100a6150
 0x10004b97 func   ?vfunc82@CScriptedTarget@@UAEPAUdatamap_t@@XZ CScriptedTarget::vfunc82
 0x10004b9c func   ?sub_10134f10@@YAPAHXZ sub_10134f10
 0x10004ba1 func   ?vfunc546@CGeneric_NPC_bathack@@QAEHH@Z CGeneric_NPC_bathack::vfunc546

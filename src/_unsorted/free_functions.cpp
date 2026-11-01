@@ -27100,6 +27100,76 @@ void *CBaseEntity::sub_100a5ea0(int solidType, int solidFlags, int createAsleep,
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a6150 size=0x284
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "IPhysicsObject.h"
+#include "ScopeTrace.h"
+#include "globalvars.h"
+#include "engineserver.h"
+
+struct CVShadowConVar { virtual void vfunc0(); virtual bool vfunc1(); char m_pad[0x28]; int m_n2c; };
+struct CVShadowHolder { char m_pad[4]; CVShadowConVar *m_p4; };
+extern CVShadowHolder *g_1070af4c;
+extern int sub_1002e3a0(CBaseEntity *pEnt, int nModel, float *pOrigin, float *pAngles, int c);
+extern int sub_100a5d80(CBaseEntity *pEnt, void *a, void *b, void *c, int d);
+extern const char *sub_101d3730(const char *fmt, const char *name);
+extern const char *sub_1020a0a0(const char *psz, float *a, float *b);
+extern void sub_101cf390(const char *psz, void *a, void *b);
+extern void sub_101cd940(CBaseEntity *pEnt);
+extern void sub_1002edd0(CBaseEntity *pEnt);
+extern char *(__cdecl *g_109f386c)(const char *a, const char *b);
+
+#define SLOT_PTR(n) ((float *(__fastcall *)(CBaseEntity *))(*(void ***)this)[n])(this)
+
+// TARGET: CBaseEntity::sub_100a6150
+int CBaseEntity::sub_100a6150(int a, int b, int c)
+{
+	ScopeTrace trace("CBaseEntity::VPhysicsInitShadow", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!sub_100a5ad0())
+		return 0;
+	if (!vfunc92())
+		return 0;
+	float *pOrigin = SLOT_PTR(217);
+	Vector angles = *(Vector *)SLOT_PTR(219);
+	int pObject;
+	if (vfunc92() == 2) {
+		CCollisionProperty *pCol = (CCollisionProperty *)((char *)this + 0x270);
+		void *pMins = pCol->vfunc1();
+		pObject = sub_100a5d80(this, pMins, pCol->vfunc2(), pOrigin, 0);
+	} else {
+		pObject = sub_1002e3a0(this, vfunc8(), pOrigin, (float *)&angles, c);
+	}
+	if (!pObject) {
+		const char *pszModel = *vfunc9(&c);
+		if (!pszModel)
+			pszModel = g_106b8540;
+		int nModel = engine->vfunc20(pszModel);
+		if (engine->vfunc21(nModel) == 1) {
+			CVShadowHolder *pHolder = g_1070af4c;
+			if (!pHolder->m_p4->vfunc1() && pHolder->m_p4->m_n2c > 0) {
+				const char *psz = sub_1020a0a0(sub_101d3730("%s: BAD COLLISION DATA", sub_100ab4f0()), SLOT_PTR(220), SLOT_PTR(219));
+				CCollisionProperty *pCol = (CCollisionProperty *)((char *)this + 0x270);
+				void *pMins = pCol->vfunc1();
+				sub_101cf390(psz, pMins, pCol->vfunc2());
+			}
+			const char *pszMap = gpGlobals->mapname;
+			if (!pszMap)
+				pszMap = g_106b8540;
+			if (!g_109f386c("sm_oceanhouse_2", pszMap))
+				sub_101cd940(this);
+		}
+		return 0;
+	}
+	sub_100a6490(pObject);
+	IPhysicsObject *pPhys = (IPhysicsObject *)pObject;
+	pPhys->vfunc45(10000.0f, 10000.0f, a, b);
+	pPhys->vfunc46(pOrigin, (float *)&angles, 0, 0);
+	sub_1002edd0(this);
+	return pObject;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a6490 size=0xc3
 extern int *g_109f3680;
 extern const char **g_109f3620;
