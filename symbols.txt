@@ -9333,6 +9333,7 @@
 0x100107c1 func   ?sub_102ca080@@YAXXZ sub_102ca080
 0x100107c6 func   ?sub_10387fd0@@YAXPAUCUnknown10387fd0@@@Z sub_10387fd0
 0x100107d0 func   ?sub_103f7f30@@YAHXZ sub_103f7f30
+0x100107d5 func   ??1CStatDefault60List@@QAE@XZ CStatDefault60List::~CStatDefault60List
 0x100107da func   ?vfunc82@CPhysImpact@@UAEHXZ CPhysImpact::vfunc82
 0x100107df func   ?sub_100bd540@bf_write@@QAEXI@Z bf_write::sub_100bd540
 0x100107e9 func   ?sub_1042ed40@CUnit1042ed40@@QAEXHM@Z CUnit1042ed40::sub_1042ed40
