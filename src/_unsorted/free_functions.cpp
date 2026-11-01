@@ -117008,11 +117008,11 @@ void __fastcall sub_1024c050(Mem4 *self, int, int num)
 // FUNCTION: 0x1024c0e0 size=0xbd
 #include "CUtlRBTree12.h"
 #include "utlrbtree.h"
-struct CRBEntry4_1024b9e0 { int a; };
+struct CRBTree12Entry_1024c1d0 { char data[4]; };	// the tree of its sentinel (one T per game instance)
 
 bool CUtlRBTree12::sub_1024c0e0(unsigned short i) const
 {
-	const CUtlRBTree<CRBEntry4_1024b9e0, unsigned short> *tree = (const CUtlRBTree<CRBEntry4_1024b9e0, unsigned short> *)this;
+	const CUtlRBTree<CRBTree12Entry_1024c1d0, unsigned short> *tree = (const CUtlRBTree<CRBTree12Entry_1024c1d0, unsigned short> *)this;
 	unsigned short parent = tree->Links(i).m_Parent;
 	return tree->Links(parent).m_Left == i;
 }
