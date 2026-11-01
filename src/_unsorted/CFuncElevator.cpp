@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_105aadf0;
 }
-CFuncElevator::Datamap82 CFuncElevator::vfunc82()
+datamap_t *CFuncElevator::vfunc82()
 {
-    return (CFuncElevator::Datamap82)&lifted::g_105aadf0;
+    return (datamap_t *)&lifted::g_105aadf0;
 }
 // END FUNCTION
 
