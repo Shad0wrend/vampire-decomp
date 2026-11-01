@@ -38,6 +38,12 @@ CNPC_VManBat *CNPC_VManBat::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10389ef0 size=0x6
+extern char g_10640d34;
+// TARGET: sub_10389ef0
+char sub_10389ef0() { return g_10640d34; }
+// END FUNCTION
+
 // FUNCTION: 0x10389f50 size=0x1d
 #include "CNPC_VManBat.h"
 struct A { int sub_10012300(int); };

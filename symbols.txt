@@ -6592,6 +6592,7 @@
 0x1000c068 func   ?sub_10116e80@CFuncMoveLinear@@QAEXM@Z CFuncMoveLinear::sub_10116e80
 0x1000c06d func   ?vfunc0@CEventsSaveDataOps@@QAEXPAXPAVCSave@@@Z CEventsSaveDataOps::vfunc0
 0x1000c072 func   _item_g_mercurio_journal item_g_mercurio_journal
+0x1000c077 func   ?sub_10389ef0@@YADXZ sub_10389ef0
 0x1000c07c func   ?sub_1017d900@CBasePlayer@@QAEMXZ CBasePlayer::sub_1017d900
 0x1000c090 func   ?vfunc241@CFilterInventory@@QAE_NPAVCBaseEntity@@@Z CFilterInventory::vfunc241
 0x1000c09a func   ?vfunc214@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc214
