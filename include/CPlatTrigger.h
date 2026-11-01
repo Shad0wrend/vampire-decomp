@@ -6,6 +6,8 @@
 #include "CFuncPlat.h"
 #include "CBaseEntity.h"
 
+void *sub_100aa720(unsigned int size);	// the entities' operator new (stub 0x1000db89)
+
 // the engine edict as the factory reads it: +0x40 holds the unknown whose slot 4 (+0x10) gives the entity
 struct CPlatEdictUnknown
 {
