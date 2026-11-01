@@ -155613,6 +155613,31 @@ extern "C" CBaseEntity *npc_VLasombra()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10388da0 size=0x27
+struct CGenericBaseCtorCall_10388da0
+{
+	void sub_103c48e0();
+};
+
+struct CGenericMemberCtorCall_10388da0
+{
+	void sub_10005a1f();
+};
+
+extern void *vt_104ba34c[];
+extern void *vt_104ba31c[];
+
+// TARGET: sub_10388da0
+void *__fastcall sub_10388da0(char *self)
+{
+	((CGenericBaseCtorCall_10388da0 *)self)->sub_103c48e0();
+	((CGenericMemberCtorCall_10388da0 *)(self + 0x6668))->sub_10005a1f();
+	*(void ***)self = vt_104ba34c;
+	*(void ***)(self + 0x19b0) = vt_104ba31c;
+	return self;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10388eb0 size=0xc
 void __fastcall sub_10388ed0(void *pThis);
 

@@ -11620,6 +11620,7 @@
 0x10014c5e func   ?sub_100fb1f0@CEnvParticle@@QAEXPAVCBaseEntity@@HH@Z CEnvParticle::sub_100fb1f0
 0x10014c63 func   ?sub_10381ba0@CUnknown10381ba0@@QAEXD@Z CUnknown10381ba0::sub_10381ba0
 0x10014c72 func   ??1CVFeat_t@@QAE@XZ CVFeat_t::~CVFeat_t
+0x10014c8b func   ?sub_10388da0@@YIPAXPAD@Z sub_10388da0
 0x10014c95 func   ?sub_101f0740@@YIXPAUHolder@@HPBD@Z sub_101f0740
 0x10014c9a func   ?vfunc259@CNPC_VAnimal@@UAEXPAH@Z CNPC_VAnimal::vfunc259
 0x10014c9f func   ?sub_10143920@@YAXMMPBDHHHHM@Z sub_10143920
