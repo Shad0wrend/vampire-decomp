@@ -129610,6 +129610,25 @@ void CUtlVector16::sub_102c8b10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c8b60 size=0x3d
+#include "CUtlVector16.h"
+
+extern void (__cdecl *g_109f3624)(void *);
+
+void CUtlVector16::sub_102c8b60()
+{
+	m_size = 0;
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+	m_pElements = m_pMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c8c00 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);

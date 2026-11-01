@@ -8730,6 +8730,7 @@
 0x1000fb19 func   ?sub_1016aa00@CPlayerAccum_1016aa00@@QAEXHD@Z CPlayerAccum_1016aa00::sub_1016aa00
 0x1000fb1e func   _trigger_transition trigger_transition
 0x1000fb23 func   ?sub_100fbbb0@CBaseEntity@@QAEXM@Z CBaseEntity::sub_100fbbb0
+0x1000fb2d func   ?sub_102c8b60@CUtlVector16@@QAEXXZ CUtlVector16::sub_102c8b60
 0x1000fb32 func   ?sub_102dda70@@YIPAHPAH@Z sub_102dda70
 0x1000fb37 func   ?sub_101041d0@@YGHH@Z sub_101041d0
 0x1000fb3c func   ?vfunc5@CVampireProjectile_MingXiaoSpit@@QAEPAV1@I@Z CVampireProjectile_MingXiaoSpit::vfunc5
