@@ -9813,6 +9813,7 @@
 0x1001129d func   ?sub_1012f640@@YA?AUSFloatPair@@PBD@Z sub_1012f640
 0x100112a2 func   ?vfunc70@CNPC_VTzimisceRunner@@UAE_NXZ CNPC_VTzimisceRunner::vfunc70
 0x100112a7 func   ?vfunc81@CFunc_Dust@@QAEHXZ CFunc_Dust::vfunc81
+0x100112b6 func   ?vfunc593@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc593
 0x100112bb func   ?vfunc443@CBasePlayer@@UAEXH@Z CBasePlayer::vfunc443
 0x100112c0 func   ?sub_10035a70@CBaseEntity@@QAE_NPAPAV1@@Z CBaseEntity::sub_10035a70
 0x100112c5 func   ?sub_103708c0@@YAXXZ sub_103708c0

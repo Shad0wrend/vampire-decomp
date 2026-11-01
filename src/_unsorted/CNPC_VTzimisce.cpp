@@ -173,6 +173,19 @@ float CNPC_VTzimisce::vfunc418(float a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b9180 size=0x36
+#include "CNPC_VTzimisce.h"
+void CNPC_VTzimisce::vfunc593()
+{
+	sub_1029a070();
+	m_f655c = 0.01f;
+	m_f6560 = 1.0f;
+	m_f6564 = 50.0f;
+	m_f6568 = 50.0f;
+	m_f656c = 0.01f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b91d0 size=0x71
 #include "CNPC_VTzimisce.h"
 #include "CNPC_VBaseBoss.h"
