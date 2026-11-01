@@ -17,4 +17,5 @@ public:
 	Vector m_vecEnd;	// 0x18
 
 	void sub_1001527b();	// destructor body
+	CTEShowLine *sub_10066a70(const char *name);	// constructor body (CBaseTempEntityHead base at stub 0x10015334), zeroes m_vecStart / m_vecEnd around the vtable store
 };
