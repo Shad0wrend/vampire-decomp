@@ -4498,6 +4498,7 @@
 0x10008c9c func   ?vfunc563@CNPC_VMingXiao@@QAEXPAVCBaseEntity@@PAVVector@@PAH2@Z CNPC_VMingXiao::vfunc563
 0x10008ca1 func   ?sub_102da860@CUnknown102d9ed0@@QAEXPAVCBaseEntity@@PBVVector@@11@Z CUnknown102d9ed0::sub_102da860
 0x10008ca6 func   ?vfunc363@CWeaponRanged_Pistol_DesertEagle@@QAEHXZ CWeaponRanged_Pistol_DesertEagle::vfunc363
+0x10008cab func   ?sub_1030d3d0@@YGIH@Z sub_1030d3d0
 0x10008cb0 func   ?vfunc134@CLogicAuto@@QAEXXZ CLogicAuto::vfunc134
 0x10008cc9 func   ?sub_1042c420@@YAXPAX@Z sub_1042c420
 0x10008cce func   ?sub_101f1b70@@YGHHH@Z sub_101f1b70

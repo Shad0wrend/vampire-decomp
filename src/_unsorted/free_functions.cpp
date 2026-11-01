@@ -138610,6 +138610,21 @@ int sub_1030d390(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030d3d0 size=0x1e
+struct CUnk10936b74 {
+	unsigned short *sub_1024b5e0(int *pArg, int value);
+};
+
+extern CUnk10936b74 g_10936b74;
+
+// TARGET: sub_1030d3d0
+unsigned int __stdcall sub_1030d3d0(int a)
+{
+	unsigned short *p = g_10936b74.sub_1024b5e0(&a, a);
+	return *p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030d400 size=0x5f
 struct sub_Name { const char *m_name; const char *Get() const { return m_name ? m_name : ""; } };
 struct sub_Rec { int m_id; sub_Name m_n; };
