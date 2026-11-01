@@ -64,7 +64,7 @@ public:
 	virtual float vfunc38(int a);
 	virtual CBaseEntity *vfunc39(CBaseEntity *pPlayer);	// \"GetPlayerSpawnSpot\": puts the player on the spawn spot it selects (the origin one unit up, the spot's angles; the middle of the world model's bounds and zero angles without a spot), clears its velocity and the two vectors at +0x1efc / +0x1f08, sets +0x207c to 1 and returns the spot
 	virtual bool vfunc40();
-	virtual void vfunc41();
+	virtual bool vfunc41(const char *pcmd, CBaseEntity *pPlayer);	// "ClientCommand" (0x10128f10): false without a player object (+0xa8); else the voice manager (global 0x10751750, sub_10232400) handles the command (CVoiceGameMgr::sub_102325e0(pPlayer, pcmd)); true when it did
 	virtual void vfunc42(int, int);
 	virtual int vfunc43(int a, int b);
 	virtual void vfunc44(CBaseEntity *pVictim, CMPDamageInfo *pInfo);	// "PlayerKilled"
