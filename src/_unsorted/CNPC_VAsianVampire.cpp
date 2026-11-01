@@ -28,9 +28,9 @@ int CNPC_VAsianVampire::vfunc451()
 namespace lifted {
 extern char g_1062c498;
 }
-CNPC_VAsianVampire::Datamap82 CNPC_VAsianVampire::vfunc82()
+datamap_t *CNPC_VAsianVampire::vfunc82()
 {
-    return (CNPC_VAsianVampire::Datamap82)&lifted::g_1062c498;
+    return (datamap_t *)&lifted::g_1062c498;
 }
 // END FUNCTION
 
