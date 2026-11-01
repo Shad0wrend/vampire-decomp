@@ -40,6 +40,21 @@ void CVTSDependencySaveRestoreDataOps::vfunc1(CVTSDependencyField *pField, CVTSD
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d0320 size=0x20
+#include "vampire.h"
+char __fastcall sub_10204250(void *p);
+// TARGET: sub_100d0320
+int __stdcall sub_100d0320(void **p)
+{
+    if (*p != 0) {
+        if (sub_10204250(*p) != 0) {
+            return 1;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d0350 size=0xe
 #include "CVTSDependencySaveRestoreDataOps.h"
 namespace lifted {
