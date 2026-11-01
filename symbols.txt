@@ -2191,6 +2191,7 @@
 0x10004b65 func   ?vfunc3@CRestore@@UAEXHHHHH@Z CRestore::vfunc3
 0x10004b6a func   ?sub_1009b500@CBaseEntity@@QAEXPBD@Z CBaseEntity::sub_1009b500
 0x10004b6f func   ?sub_102653f0@@YIXPAV?$CUtlVector@HV?$CUtlMemory@H@@@@HH@Z sub_102653f0
+0x10004b74 func   ?sub_10184f20@CUtlMemory60@@QAEPAU1@HH@Z CUtlMemory60::sub_10184f20
 0x10004b79 func   ?sub_1036fbe0@@YIPAXPAX@Z sub_1036fbe0
 0x10004b7e func   ??0CVDmgBlock16_t@@QAE@XZ CVDmgBlock16_t::CVDmgBlock16_t
 0x10004b88 func   ?sub_1019b0c0@@YGXPAUCUnknown1019b0c0@@@Z sub_1019b0c0
