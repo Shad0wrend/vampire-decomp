@@ -50,6 +50,22 @@ TFilterX *TFilterX::sub_1019ce40(unsigned char flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019ced0 size=0x1e
+// TARGET: Reset
+#include "CRecipientFilter.h"
+void CRecipientFilter::Reset()
+{
+    m_bReliable = false;
+    m_bInitMessage = false;
+    m_1c = 0;
+    m_20 = -1;
+    m_24 = -1;
+    m_Recipients.m_Size = 0;
+    m_bUsingPredictionRules = false;
+    m_bIgnorePredictionCull = false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019cf50 size=0x5
 void CRecipientFilter::MakeReliable()
 {
