@@ -36,6 +36,8 @@ public:
 	CKeyValuesX *sub_10004c8c();	// stub 0x10004c8c: the first sub key
 	CKeyValuesX *sub_1000fa65();	// stub 0x1000fa65: the next key of the same level
 	const char *sub_102480b0();	// "GetName" (stub 0x1000fec0): the key's name
+	bool sub_102480f0(const char *pszFile, void *pFileSystem, const char *pszPathID, bool bRefresh);	// "LoadFromFile" (stub 0x100108b6, same as CUnknown10248a50::sub_102480f0); the object is made by `new CUnknown10248a50(name)` (ctor stub 0x1000e363)
+	void sub_10248090();	// the destructor body (stub 0x100046f1), called before `delete`
 	void sub_10248730(CUtlBuffer *pBuf, int nIndent);	// "RecursiveSaveToFile": writes this key and its sub keys as text, one level deeper per sub key
 	void sub_1001152c(CUtlBuffer *pBuf, int nIndent);	// the stub of sub_10248730 (the recursion goes through it)
 	CKeyValuesX *sub_10248af0(const char *pszName);	// "FindKey" without create (stub 0x1000c9fa): the sub key of that name, 0 when there is none
