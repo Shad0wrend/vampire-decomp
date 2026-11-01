@@ -23,6 +23,7 @@ public:
 
 	CFlameCluster *sub_103e1e20();
 	void sub_103e2000(CBaseEntity *pEntity, int index);	// burns pEntity: a CVDmg_t record and a damage info (type 8, 1.0f) from the owner, applied to pEntity
+	virtual void vfunc123();	// slot 123: debug overlay, one box and text line per flame record of the list at +0x450 (count +0x45c, 0x1c byte records, the flame strength float at +0x18)
 	void vfunc103();	// as in CPhysConstraint (transplant)
 	void vfunc104();	// as in CPhysConstraint (transplant)
 	CFlameCluster *vfunc5(unsigned int flags);	// as in CNPC_VMingXiao (transplant)
