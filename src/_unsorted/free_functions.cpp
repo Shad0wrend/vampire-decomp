@@ -89676,6 +89676,21 @@ void CKeyHolder::sub_101ebff0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ec450 size=0x1c
+struct CUnk101ec450 {
+	void sub_101ec450(int a, int b);
+};
+extern void (__cdecl *g_1073a390)(void *, int, int);
+
+// TARGET: CUnk101ec450::sub_101ec450
+void CUnk101ec450::sub_101ec450(int a, int b)
+{
+	if (g_1073a390) {
+		g_1073a390(this, a, b);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ec550 size=0xf6
 #include "CUnknown101ec6f0.h"
 extern "C" int __cdecl _strcmpi(const char *, const char *);

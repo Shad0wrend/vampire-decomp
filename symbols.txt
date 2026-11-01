@@ -8394,6 +8394,7 @@
 0x1000f939 func   ?sub_10339b50@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10339b50
 0x1000f93e func   ?sub_101fd090@@YAXH@Z sub_101fd090
 0x1000f943 func   ?vfunc142@CAI_BaseNPC@@UAEHH@Z CAI_BaseNPC::vfunc142
+0x1000f952 func   ?sub_101ec450@CUnk101ec450@@QAEXHH@Z CUnk101ec450::sub_101ec450
 0x1000f957 func   ?vfunc12@CMoveHelperServer@@UAEXXZ CMoveHelperServer::vfunc12
 0x1000f95c func   ?sub_101eddb0@@YAXH@Z sub_101eddb0
 0x1000f961 func   ?sub_1014e3f0@@YAXPAUCEntityMatrixView@@0PAUmatrix3x4_t@@@Z sub_1014e3f0
