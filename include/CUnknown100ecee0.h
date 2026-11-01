@@ -58,6 +58,7 @@ public:
 	char m_pad0020[0x30 - 0x20];
 	int *m_pRecordIndex;	// 0x30
 
+	int sub_100ec640(class CBaseAnimating *pEnt);	// stub 0x1000db02: the table index of the NPC's model (looked up by slot 8 of the entity, \"Precaching disposition sequences for %s\" when new), the stance sequences (\"stance_%s_idle_%d\", \"_fidget_\", \"_trans_\") appended as a 0x44 byte record when it is not known yet
 	void sub_100eb5a0(CTableEntry264_t *pSrc);	// stub 0x10001686: appends the entry (a default entry when null) to the entry vector at +8
 
 	CTableRecord44_t *sub_100ecee0(CTableNpc_t *pNpc, int *pOutA, int *pOutB, int *pOutC);	// record for the NPC, and three values from its entry (A and B depend on the flag at +0x64c0)
