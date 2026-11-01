@@ -358,7 +358,9 @@ public:
 	unsigned int m_h6554;
 	char m_pad6558[0x65a0 - 0x6558];
 	char m_b65a0;	// 0x65a0
-	char m_pad65a1[0x65a8 - 0x65a1];
+	char m_pad65a1[3];
+	float m_f65a4;	// 0x65a4: a time stamp the idle pick (0x102b7cf0) re-arms
+
 	struct CTakeDamageInfo *m_pDamageRecords;	// 0x65a8: the NPC's damage record vector (memory pointer), count at +0x65b4
 	char m_pad65ac[0x65b4 - 0x65ac];
 	int m_nDamageRecords;	// 0x65b4
