@@ -73384,6 +73384,20 @@ void *sub_101ab360(void *pSelf, int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ab3a0 size=0x1f
+#include "vampire.h"
+unsigned int __fastcall sub_1042da60(void *p);
+// TARGET: sub_101ab3a0
+void sub_101ab3a0(void *a, void *b, unsigned int *out)
+{
+    if (b != 0) {
+        *out = sub_1042da60(b);
+        return;
+    }
+    *out = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab550 size=0x24
 #include "CServerNetworkProperty.h"
 
