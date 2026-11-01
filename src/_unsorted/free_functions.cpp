@@ -60099,6 +60099,16 @@ bool __stdcall sub_1013eb90(CBaseEntity *ent, unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013ecd0 size=0x33
+class CMoveHelperServer;
+// TARGET: sub_1013ecd0
+CMoveHelperServer *sub_1013ecd0()
+{
+    static CMoveHelperServer s_helper;
+    return &s_helper;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013ee40 size=0x5f
 extern int g_1071a278;
 extern void *vt_1046af0c[];
