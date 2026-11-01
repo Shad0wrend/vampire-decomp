@@ -5951,6 +5951,7 @@
 0x1000adb7 func   ?sub_1013ad40@@YAMPAM@Z sub_1013ad40
 0x1000adbc func   ?vfunc492@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc492
 0x1000adc1 func   ?sub_101fb980@CVStatSubCost_t@@QAEXPBD@Z CVStatSubCost_t::sub_101fb980
+0x1000adc6 func   ?sub_10158bc0@@YAXHH@Z sub_10158bc0
 0x1000adcb func   ?sub_101ab590@CInitPair101ab590@@QAEXH@Z CInitPair101ab590::sub_101ab590
 0x1000add0 func   ??1CUnknown10248a50@@QAE@XZ CUnknown10248a50::~CUnknown10248a50
 0x1000add5 func   ?vfunc32@CFuncMonitor@@QAE_NPAX@Z CFuncMonitor::vfunc32

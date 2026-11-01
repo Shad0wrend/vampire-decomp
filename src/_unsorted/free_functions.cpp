@@ -62431,6 +62431,25 @@ void sub_10158b90(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10158bc0 size=0x24
+class IPlaceholder10158bc0
+{
+public:
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual void vfunc2(int a, int b);
+};
+extern IPlaceholder10158bc0 *g_10723948;
+void sub_10158ab0(int a, int b);
+
+// TARGET: sub_10158bc0
+void sub_10158bc0(int a, int b)
+{
+    g_10723948->vfunc2(a, b);
+    sub_10158ab0(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10158c40 size=0x6
 namespace lifted {
 extern char g_10580418;
