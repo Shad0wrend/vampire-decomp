@@ -157106,6 +157106,20 @@ CNPC_VTzimisceHeadClaw *CNPC_VTzimisceHeadClaw::sub_103c1220()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c24a0 size=0x1e
+struct CUnk103c24a0 {
+	char m_pad0000[0x6678];
+	float m_6678;
+	bool sub_103c24a0();
+};
+
+// TARGET: CUnk103c24a0::sub_103c24a0
+bool CUnk103c24a0::sub_103c24a0()
+{
+	return m_6678 > 0.0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c2900 size=0x1a
 namespace lifted {
 extern int g_1065d6ac;
