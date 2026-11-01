@@ -109,6 +109,24 @@ int CNPC_VPedestrian::vfunc138()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a2930 size=0x3a
+#include "CNPC_VPedestrian.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VPedestrian::vfunc404
+int CNPC_VPedestrian::vfunc404(CBaseEntity *pEntity)
+{
+    if (pEntity == 0) {
+        return 0;
+    }
+    int nCharacter = *(int *)((char *)pEntity + 0x9c);
+    if (nCharacter != 0 && (*(int *)(nCharacter + 0x14bc) & 0x20000) == 0x20000) {
+        return 2;
+    }
+    return ((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc404(pEntity);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a2980 size=0x1e
 #include "CNPC_VPedestrian.h"
 

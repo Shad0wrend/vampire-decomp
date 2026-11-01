@@ -978,6 +978,7 @@
 0x10002a1d func   ?sub_10399c70@@YIXPAD@Z sub_10399c70
 0x10002a27 func   ?sub_102d08e0@CPhysBox@@QAEXH@Z CPhysBox::sub_102d08e0
 0x10002a2c func   ?sub_103facd0@@YAHXZ sub_103facd0
+0x10002a36 func   ?vfunc404@CNPC_VPedestrian@@QAEHPAVCBaseEntity@@@Z CNPC_VPedestrian::vfunc404
 0x10002a3b func   ?sub_1024c680@@YAXAAVVMatrix@@ABVVector@@@Z sub_1024c680
 0x10002a40 func   ?vfunc104@CSoundEnt@@UAEXXZ CSoundEnt::vfunc104
 0x10002a45 func   ?sub_100e5690@CDialog@@QAEHPAUCDialogEntry_t@@@Z CDialog::sub_100e5690
