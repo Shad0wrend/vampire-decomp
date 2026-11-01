@@ -84675,6 +84675,47 @@ void sub_101d0ec0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d0f10 size=0x104
+#include <string.h>
+#include "IFileSystemFind.h"
+#include "engineiface.h"
+
+extern IFileSystemFind *g_1070b238;
+char *sub_101d3730(const char *fmt, ...);
+char *sub_101cf720(const char *fmt, ...);
+__declspec(dllimport) int Q_strnicmp(const char *a, const char *b, int n);
+
+// TARGET: sub_101d0f10
+int sub_101d0f10(const char *pName, const char *pExt, char bFlag, int preload)
+{
+	int nCount = 0;
+	if (!pName)
+		return 0;
+	const char *name = pName;
+	if (strlen(name) == 0)
+		return 0;
+	if (Q_strnicmp(name, "..", 3) == 0)
+		return 0;
+	if (Q_strnicmp(name, ".", 1) == 0)
+		return 0;
+	const char *pFile = g_1070b238->vfunc22(sub_101d3730("%s/*%s", name, pExt), (int *)&pName);
+	while (pFile) {
+		if (!g_1070b238->vfunc16(pFile)) {
+			char *pSound;
+			if (bFlag)
+				pSound = sub_101cf720("*%s/%s", name + 6, pFile);
+			else
+				pSound = sub_101cf720("%s/%s", name + 6, pFile);
+			enginesound->vfunc0(pSound, preload);
+			nCount++;
+		}
+		pFile = g_1070b238->vfunc23(*(int *)&pName);
+	}
+	g_1070b238->vfunc25(*(int *)&pName);
+	return nCount;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d1070 size=0x45
 #include <time.h>
 __declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);

@@ -6391,6 +6391,7 @@
 0x1000baf5 func   ?sub_101eaa60@@YAXH@Z sub_101eaa60
 0x1000bafa func   ?sub_101d02a0@@YAXXZ sub_101d02a0
 0x1000baff func   ?sub_1020dce0@CPropSwitchUnit@@QAEXD@Z CPropSwitchUnit::sub_1020dce0
+0x1000bb04 func   ?sub_101d0f10@@YAHPBD0DH@Z sub_101d0f10
 0x1000bb09 func   ?vfunc336@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc336
 0x1000bb13 func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@UDisciplineSrc@@V?$CUtlMemory@UDisciplineSrc@@@@@@$08@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<DisciplineSrc,CUtlMemory<DisciplineSrc> >,9>::vfunc3
 0x1000bb1d func   ?sub_1012c600@@YAXPAVCBaseEntity@@PAX@Z sub_1012c600
