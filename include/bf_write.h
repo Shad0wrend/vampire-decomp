@@ -88,6 +88,26 @@ public:
 			m_iCurBit += numbits;
 		}
 	}
+	void WriteUBitLongIndexed(unsigned int curData, int numbits)	// as WriteUBitLongUnchecked, with the dwords addressed as m_pData[iDWord] in each statement (WriteBits inlines this one)
+	{
+		int iCurBit = m_iCurBit;
+		if (iCurBit + numbits > m_nDataBits) {
+			m_iCurBit = m_nDataBits;
+			m_bOverflow = true;
+		} else {
+			int iDWord = iCurBit >> 5;
+			int iCurBitMasked = iCurBit & 31;
+			m_pData[iDWord] &= g_106d1990[iCurBitMasked][numbits];
+			m_pData[iDWord] |= curData << iCurBitMasked;
+			int nBitsWritten = 32 - iCurBitMasked;
+			if (nBitsWritten < numbits) {
+				iCurBitMasked = (iCurBit + nBitsWritten) & 31;
+				m_pData[iDWord + 1] &= g_106d1990[iCurBitMasked][numbits - nBitsWritten];
+				m_pData[iDWord + 1] |= (curData >> nBitsWritten) << iCurBitMasked;
+			}
+			m_iCurBit += numbits;
+		}
+	}
 	bool sub_100bc980(const void *pInData, int nBits);	// "WriteBits": copies nBits bits from the buffer (bytes until it is dword aligned, then dwords, then bytes, then the remaining bits); true unless the writer overflowed
 	bool sub_100bcd70(class bf_read *pIn, int nBits);	// "WriteBitsFromBuffer": copies nBits bits from pIn, 32 at a time; true unless either side overflowed
 	bf_write *sub_100bdf50(const char *pDebugName, void *pData, int nBytes, int nBits);	// provisional, like sub_100bc490 (transplant)
