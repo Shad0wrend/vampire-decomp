@@ -126,6 +126,7 @@
 0x10001352 func   ?vfunc1@CSafeDiscSaveRestoreOps_6@@QAEXPAPAHPAUCSafeDiscReader@@@Z CSafeDiscSaveRestoreOps_6::vfunc1
 0x10001357 func   ?vfunc53@CBaseEntity@@UAEMXZ CBaseEntity::vfunc53
 0x1000135c func   ?vfunc363@CWeaponIArmor@@UAEHXZ CWeaponIArmor::vfunc363
+0x10001361 func   ?sub_101c47b0@@YAPAXXZ sub_101c47b0
 0x1000136b func   ?sub_103ab110@CNPC_VSabbatLeader@@QAEXPBDPAVCEntityVSlots@@@Z CNPC_VSabbatLeader::sub_103ab110
 0x10001370 func   ?sub_1042c640@@YAXXZ sub_1042c640
 0x10001375 func   ?sub_1034b460@CUnknown1034b4d0@@QAEXXZ CUnknown1034b4d0::sub_1034b460

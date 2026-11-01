@@ -81853,6 +81853,17 @@ struct CUnknown101c4790 { CUnknown101c4790 *a; CUnknown101c4790 *b; CUnknown101c
 CUnknown101c4790* CUnknown101c4790::sub_101c4790(int x) { b = this; a = this; return this; }
 // END FUNCTION
 
+// FUNCTION: 0x101c47b0 size=0x35
+#include "CUnknown101c4790.h"
+
+// TARGET: sub_101c47b0
+void *sub_101c47b0()
+{
+    static CUnknown101c4790 s_obj(1);
+    return &s_obj;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c4820 size=0x9
 struct CUnknown101c4760 { int a; int b; int c; void sub_101c4760(); };
 // TARGET: sub_101c4820
