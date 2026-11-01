@@ -40939,6 +40939,99 @@ void CDialog::sub_100e5d00(int nIndex, char *pszText)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e6ed0 size=0x2a2
+#include "CDialog.h"
+#include "ScopeTrace.h"
+#include <string.h>
+
+extern void sub_100dfaf0(int level, const char *fmt, ...);
+extern void (*g_109f3888)(const char *, char *, int);
+
+int CDialog::sub_100e6ed0(void *pFile, char *pszOut, int *pLine, char bStripBrackets)
+{
+    ScopeTrace trace("CDialog::read_str_data", g_106b8540);
+    char buf[0x800];
+    int prev = 0;
+    int c = sub_100e7510(pFile);
+    while (c != '{') {
+        if (c == -1)
+            return 0;
+        if (c == '\n') {
+            ++*pLine;
+            return -1;
+        }
+        if (c == '}') {
+            sub_100dfaf0(11, "Warning! Possible missing left brace { on or before line %d\n", *pLine);
+        } else if (c == '/' && prev == '/') {
+            c = sub_100e7510(pFile);
+            while (c != '\n') {
+                if (c == -1)
+                    return 0;
+                c = sub_100e7510(pFile);
+            }
+            int line = *pLine + 1;
+            *pLine = line;
+            prev = 0;
+        } else {
+            prev = c;
+        }
+        c = sub_100e7510(pFile);
+    }
+    int len = 0;
+    bool bTooLong = false;
+    bool bInBracket = false;
+    if (*((char *)this + 0x33ac))
+        bStripBrackets = 0;
+    for (c = sub_100e7510(pFile); c != '}'; c = sub_100e7510(pFile)) {
+        if (c == -1) {
+            sub_100dfaf0(11, "Expected right bracket }, reached end of file at line %d.\n", *pLine);
+            return 0;
+        }
+        if (c == '\n') {
+            ++*pLine;
+            return -1;
+        }
+        if (c == '{') {
+            sub_100dfaf0(11, "Warning! Possible missing right brace } on or before line %d\n", *pLine);
+        } else if (c == '\t') {
+            continue;
+        }
+        if (len > 0x7ff) {
+            bTooLong = true;
+            break;
+        }
+        if (bStripBrackets) {
+            if (c == '[') {
+                bInBracket = true;
+            } else {
+                if (!bInBracket)
+                    buf[len++] = (char)c;
+                if (c == ']')
+                    bInBracket = false;
+            }
+        } else {
+            buf[len++] = (char)c;
+        }
+    }
+    buf[len] = 0;
+    g_109f3888(buf, pszOut, 0x800);
+    int n = strlen(pszOut);
+    for (int i = 0; i < n; i++) {
+        if ((unsigned char)pszOut[i] == 0x93)
+            pszOut[i] = '"';
+        if ((unsigned char)pszOut[i] == 0x94)
+            pszOut[i] = '"';
+        if (pszOut[i] == '\t')
+            pszOut[i] = ' ';
+        if ((unsigned char)pszOut[i] == 0x92)
+            *(pszOut + i) = '\'';
+    }
+    if (bTooLong)
+        sub_100dfaf0(11, "String too long on line: %d\n", *pLine);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e7230 size=0xaf
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
