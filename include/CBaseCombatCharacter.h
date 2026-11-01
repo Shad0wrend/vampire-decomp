@@ -25,7 +25,9 @@ public:
 	virtual char vfunc158();	// slot 158 (CBaseEntity::vfunc158 is the same slot, declared there as a plain member)
 	virtual void a25(); virtual void a26(); virtual void a27(); virtual void a28(); virtual void a29();
 	CBCC_SLOTS10(a3) CBCC_SLOTS10(a4)
-	CBCC_SLOTS10(a5) CBCC_SLOTS10(a6) CBCC_SLOTS10(a7) CBCC_SLOTS10(a8)
+	CBCC_SLOTS10(a5) CBCC_SLOTS10(a6) CBCC_SLOTS10(a7)
+	virtual void a80(); virtual void a81(); virtual void a82(); virtual void a83(); virtual void a84();
+	virtual void a85(); virtual float *a86(); virtual void a87(); virtual void a88(); virtual void a89();
 	virtual void a90(); virtual void a91(); virtual void a92(); virtual void a93();
 	virtual void vfunc228(int a, int b);	// "CBaseCombatCharacter::VPhysicsShadowCollision"-like: scope trace, forwards to slot 75(a, b)
 	virtual void a95(); virtual void a96(); virtual void a97(); virtual void a98(); virtual void a99();
