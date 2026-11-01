@@ -9,7 +9,7 @@
 	virtual int vfunc35(int a);	// slot 35 (claimed, not matched): false while sub_102c1170 holds; else a virtual call of slot 295 (vfunc295) with a, and when that holds answers 14 + (the bool of Ent::sub_10336920), else 0
 	virtual Vector vfunc533(int a, int b);	// slot 533 override: while the NPC works at a hint node (+0x5ddc) and a is one of the hint activities (0x1119..0x111c, 0x111f, 0x1120) the hint's position relative to the NPC's origin plus the eye offset (+0x5d60); else CAI_BaseNPC::vfunc533(a, b)
 	void sub_102c33f0(inputdata_t *pInput);	// input handler: the input as text, unless it is empty-less or starts with '-', is looked up as a schedule (sub_102c47e0) and stored at +0x65c8 (sub_102ae7f0); always sets bits 0x82000000 of +0x14bc
-	void vfunc105(int a);	// slot 105 (plain member): CBaseCombatCharacter::vfunc105(a), sub_10273070(1) (hull precache check), CAI_BaseNPC::sub_10274ca0, then m_n64e8 = the table at 0x10924980 (CUnknown100ecee0::sub_100ec640(this))
+	void vfunc105(const char *pszName);	// slot 105 (plain member): CBaseCombatCharacter::vfunc105(pszName), sub_10273070(1) (hull precache check), CAI_BaseNPC::sub_10274ca0, then m_n64e8 = the table at 0x10924980 (CUnknown100ecee0::sub_100ec640(this))
 	void sub_10273070(char bForce);	// CAI_BaseNPC member (stub 0x1000dc29): hull precache check, re-applies the hull when the byte at +0x5f2d or bForce is set
 	void sub_10272f40();	// CAI_BaseNPC member (stub 0x100081c0), run by sub_10273070 when the dword at +0x36c is set
 	void sub_102ae7f0(int schedule);	// stores the schedule at +0x65c8 (stub 0x10001041)
