@@ -3336,6 +3336,7 @@
 0x10006b9f func   ?sub_103f7630@@YAHXZ sub_103f7630
 0x10006ba4 func   ?sub_100ddbd0@CUnk100ddbd0@@QAEXXZ CUnk100ddbd0::sub_100ddbd0
 0x10006ba9 func   ?sub_1020aea0@CUnknown1020aea0@@QAEMPAX@Z CUnknown1020aea0::sub_1020aea0
+0x10006bb8 func   ?sub_103b5a90@@YIPAXPAD@Z sub_103b5a90
 0x10006bbd func   ?vfunc176@CSmallHullTrigger@@QAEXPAVCBaseEntity@@@Z CSmallHullTrigger::vfunc176
 0x10006bc2 func   ?sub_1017e720@CUnknown1017e720@@QAEHXZ CUnknown1017e720::sub_1017e720
 0x10006bc7 func   ?vfunc363@CWeaponMelee_Sledgehammer@@QAEHXZ CWeaponMelee_Sledgehammer::vfunc363

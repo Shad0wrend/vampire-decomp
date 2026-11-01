@@ -159124,6 +159124,31 @@ extern "C" CBaseEntity *npc_VTremere()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b5a90 size=0x27
+struct CGenericBaseCtorCall_103b5a90
+{
+	void sub_103c48e0();
+};
+
+struct CGenericMemberCtorCall_103b5a90
+{
+	void sub_1000b393();
+};
+
+extern void *vt_104cad6c[];
+extern void *vt_104cad3c[];
+
+// TARGET: sub_103b5a90
+void *__fastcall sub_103b5a90(char *self)
+{
+	((CGenericBaseCtorCall_103b5a90 *)self)->sub_103c48e0();
+	((CGenericMemberCtorCall_103b5a90 *)(self + 0x6664))->sub_1000b393();
+	*(void ***)self = vt_104cad6c;
+	*(void ***)(self + 0x19b0) = vt_104cad3c;
+	return self;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b5ba0 size=0xc
 void __fastcall sub_103b5bc0(void *p);
 
