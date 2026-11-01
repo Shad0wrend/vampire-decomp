@@ -16879,6 +16879,21 @@ void CUnknown100779b0::sub_100779b0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100779d0 size=0x1e
+// TARGET: sub_100779d0
+const char *__cdecl sub_100779d0(int type)
+{
+    switch (type)
+    {
+    case 0:
+        return "playback_time";
+    case 1:
+        return "shifted_time";
+    }
+    return "AbsTagType(unknown)";
+}
+// END FUNCTION
+
 // FUNCTION: 0x10077a50 size=0x4e
 #include "CUnknown10077430.h"
 void CUnknown10077430::sub_10077a50(int index)
