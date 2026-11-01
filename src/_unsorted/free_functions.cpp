@@ -124447,6 +124447,17 @@ void CUnknown10289cc0::sub_10289cc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10289ee0 size=0x21
+#include "CAI_BaseNPC.h"
+
+void CAI_BaseNPC::sub_10289ee0(int activity)
+{
+	if (*(int *)((char *)this + 0xfec) == activity)
+		*(int *)((char *)this + 0xfec) = 0;
+	sub_10272650(activity);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10289fe0 size=0x11b
 #include "CGlobalEntityList.h"
 extern CGlobalEntityList *g_10566458;
