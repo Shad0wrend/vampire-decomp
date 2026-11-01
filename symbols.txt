@@ -7700,6 +7700,7 @@
 0x1000e534 func   ?vfunc126@CBaseCombatCharacter@@UAEHH@Z CBaseCombatCharacter::vfunc126
 0x1000e539 func   ?sub_1033cb50@@YAPADH@Z sub_1033cb50
 0x1000e543 func   ?sub_101e1a20@@YGHH@Z sub_101e1a20
+0x1000e548 func   ?sub_101c29e0@CUnknown101c29e0@@QAEXPBH@Z CUnknown101c29e0::sub_101c29e0
 0x1000e552 func   ?sub_1035e5f0@CNPC_VAndreiBlood@@QAEXXZ CNPC_VAndreiBlood::sub_1035e5f0
 0x1000e557 func   ?sub_10191830@@YGXH@Z sub_10191830
 0x1000e55c func   ?sub_103de400@@YIPAXPAX@Z sub_103de400

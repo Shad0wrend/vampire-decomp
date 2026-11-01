@@ -77397,6 +77397,26 @@ void CAnimParams::sub_101c2910(int a, int b, const float *v1, const float *v2, i
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c29e0 size=0x1d
+struct CUnknown101c29e0 {
+	char m_pad0000[0x1c];
+	int m_n001c;
+	int m_n0020;
+	int m_n0024;
+	void sub_101c29e0(const int *pSrc);
+};
+
+// TARGET: CUnknown101c29e0::sub_101c29e0
+void CUnknown101c29e0::sub_101c29e0(const int *pSrc)
+{
+	if (pSrc) {
+		m_n001c = pSrc[3];
+		m_n0020 = pSrc[4];
+		m_n0024 = pSrc[5];
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2a10 size=0xa
 struct CUnknown101c2a10 { char p[0x40]; int a; void sub_101c2a10(int v); };
 // TARGET: CUnknown101c2a10::sub_101c2a10
