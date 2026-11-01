@@ -331,6 +331,7 @@
 0x10001947 func   ?sub_100d4160@@YAXPAXPAVCVStatList_t@@HH@Z sub_100d4160
 0x10001956 func   ?vfunc520@CAI_BaseNPC@@UAEMH@Z CAI_BaseNPC::vfunc520
 0x1000195b func   ?sub_101855c0@UtlMem@@QAEXXZ UtlMem::sub_101855c0
+0x10001960 func   ?sub_101f1bb0@CUnk101f1bb0@@QAEXXZ CUnk101f1bb0::sub_101f1bb0
 0x10001965 func   ?vfunc82@CWeaponThrown_Chang_Ghost@@QAEHXZ CWeaponThrown_Chang_Ghost::vfunc82
 0x1000196a func   ?sub_101d2e60@@YAMPBUmatrix3x4_t@@PBVVector@@@Z sub_101d2e60
 0x1000196f func   ?sub_1009c110@CBaseEntity@@QAEXHHPAV1@@Z CBaseEntity::sub_1009c110

@@ -91375,6 +91375,23 @@ void * CUnknown101f1b90::sub_101f1b90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f1bb0 size=0x1c
+struct CUnk101f1bb0 {
+	void *m_00;
+	void *m_04;
+	void sub_101f1bb0();
+};
+
+// TARGET: CUnk101f1bb0::sub_101f1bb0
+void CUnk101f1bb0::sub_101f1bb0()
+{
+	if (m_00) {
+		operator delete(m_04);
+		m_00 = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f1be0 size=0x6c
 #include "CUnknown10227c90.h"
 #include "CUnknown101f0e50.h"
