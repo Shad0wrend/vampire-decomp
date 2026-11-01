@@ -80647,6 +80647,28 @@ int *sub_101cb130()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cb550 size=0x23
+#include "CUnknown100bc0f0.h"
+
+class CUnknown101cb550
+{
+public:
+	char pad0[0x5b0];
+	int m_unk5b0;
+
+	void sub_101cb550(CInputData100bc0f0 *data);
+};
+
+// TARGET: CUnknown101cb550::sub_101cb550
+void CUnknown101cb550::sub_101cb550(CInputData100bc0f0 *data)
+{
+	if (data->m_type == 1)
+		m_unk5b0 = data->m_value;
+	else
+		m_unk5b0 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cb6b0 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
