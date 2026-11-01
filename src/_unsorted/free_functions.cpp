@@ -158058,6 +158058,18 @@ bool CUnknown10381be0::sub_103be130()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103be150 size=0x20
+#include "globalvars.h"
+
+// TARGET: sub_103be150
+int __fastcall sub_103be150(char *self)
+{
+    if (gpGlobals->curtime >= *(float *)(self + 0x66a4))
+        return 1;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103be3d0 size=0x108
 #include "CRagdollProp.h"
 extern const char *g_106530e8[];
