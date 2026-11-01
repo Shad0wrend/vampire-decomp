@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_105b5960;
 }
-int CTriggerElectricBugaloo::vfunc82()
+CTriggerElectricBugaloo::Datamap82 CTriggerElectricBugaloo::vfunc82()
 {
-    return (int)&lifted::g_105b5960;
+    return (CTriggerElectricBugaloo::Datamap82)&lifted::g_105b5960;
 }
 // END FUNCTION
 
