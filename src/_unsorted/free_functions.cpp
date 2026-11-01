@@ -21631,6 +21631,82 @@ void CSceneEntity::sub_10084260(void *pScene)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100843d0 size=0x168
+#include "CSceneEntity.h"
+#include "CBaseEntity.h"
+#include "CBaseAnimating.h"
+#include "Ent.h"
+
+#define AV(n) virtual void a##n();
+#define AV10(p) AV(p##0) AV(p##1) AV(p##2) AV(p##3) AV(p##4) AV(p##5) AV(p##6) AV(p##7) AV(p##8) AV(p##9)
+struct AnimSlots	// the vtable of an animating entity up to slot 245
+{
+	AV(0) AV(1) AV(2) AV(3) AV(4) AV(5) AV(6) AV(7) AV(8) AV(9)
+	AV10(1) AV10(2) AV10(3) AV10(4) AV10(5) AV10(6) AV10(7) AV10(8) AV10(9) AV10(10) AV10(11) AV10(12) AV10(13) AV10(14) AV10(15) AV10(16) AV10(17) AV10(18) AV10(19)
+	AV10(20) AV10(21) AV10(22) AV10(23) AV(240) AV(241) AV(242) AV(243) AV(244)
+	virtual void slot245(CSceneEntity *pScene, const char *pszA, const char *pszB, int n1, int n2);
+};
+
+struct SceneActorView
+{
+	const char *sub_10072d90();
+	const char *sub_10072e20();
+	const char *sub_10072e40();
+};
+struct SceneObjView;
+struct SceneEventView : CSceneEvent
+{
+};
+struct SceneObjView
+{
+	int sub_1007a2a0();
+	SceneActorView *sub_1007a2c0(int index);
+	int sub_1007a250();
+	SceneEventView *sub_1007a270(int index);
+	char sub_1007ed10();
+};
+struct SceneStub : CSceneEntity
+{
+	void sub_10008a8f(SceneObjView *p);
+};
+
+Ent *sub_101cda50();
+void sub_10081190(const char *fmt, ...);
+
+void CSceneEntity::sub_100843d0(void *pSceneArg)
+{
+	SceneObjView *pScene = (SceneObjView *)pSceneArg;
+	if (!pScene)
+		return;
+	int nValue = m_n490;
+	Ent *pEnt = sub_101cda50();
+	if (pEnt && !pEnt->sub_10336920())
+		nValue = m_n494;
+	int i;
+	for (i = 0; i < pScene->sub_1007a2a0(); i++) {
+		SceneActorView *pActor = pScene->sub_1007a2c0(i);
+		if (!pActor)
+			continue;
+		CBaseEntity *pTarget = vfunc268(pActor->sub_10072d90(), 0);
+		if (!pTarget)
+			continue;
+		CBaseAnimating *pAnim = dynamic_cast<CBaseAnimating *>(pTarget);
+		if (!pAnim)
+			continue;
+		sub_10081190("Adding extra animations for: %s. (%-5s -> %-5s) \n", pAnim->sub_1000b5cd(), pActor->sub_10072e20(), pActor->sub_10072e40());
+		((AnimSlots *)pAnim)->slot245(this, pActor->sub_10072e20(), pActor->sub_10072e40(), nValue, m_n48c);
+	}
+	for (i = 0; i < pScene->sub_1007a250(); i++) {
+		SceneEventView *pEvent = pScene->sub_1007a270(i);
+		if (pEvent && pEvent->sub_100029c8() == 0xb && !pScene->sub_1007ed10()) {
+			void *pSub = pEvent->sub_10076710();
+			if (pSub)
+				((SceneStub *)this)->sub_10008a8f((SceneObjView *)pSub);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100845a0 size=0xd4
 #include "CSceneEntity.h"
 #include "CUnknown1007a2c0.h"
