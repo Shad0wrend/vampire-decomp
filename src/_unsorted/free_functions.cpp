@@ -43388,6 +43388,22 @@ int sub_100f4620()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f4770 size=0x23
+#include "globalvars.h"
+struct CThinkCall_100f4770
+{
+    void sub_100ac4e0(void *fn, int a, int b);
+};
+void sub_1000913d();
+
+// TARGET: sub_100f4770
+void __fastcall sub_100f4770(char *self, int dummy, int arg)
+{
+    ((CThinkCall_100f4770 *)self)->sub_100ac4e0((void *)sub_1000913d, 0, 0);
+    *(float *)(self + 0x17c) = gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f5140 size=0x1a
 namespace lifted {
 extern int g_10565b94;
