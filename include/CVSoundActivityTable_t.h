@@ -28,6 +28,8 @@ struct CVSoundEdict	// the engine's edict of an entity (+0x2e0)
 class CVSoundEnt : public CEntitySoundOriginView	// a sound-emitting entity: the sound table calls GetSoundEmissionOrigin on it
 {
 public:
+	int sub_1009d6a0();	// CBaseEntity::sub_1009d6a0 (stub 0x100128cd)
+	int sub_1009d760();	// CBaseEntity::sub_1009d760 (stub 0x1001320a)
 	int sub_1009d5e0();	// CBaseEntity::sub_1009d5e0 (stub 0x10008922): the index of the entity's sound table row
 
 	char m_pad0004[0x2e0 - 4];
