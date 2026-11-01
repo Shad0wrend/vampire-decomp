@@ -5,6 +5,7 @@
 struct datamap_t;
 
 #include "CCollisionProperty.h"
+#include "COutputEvent.h"
 
 class CBaseEntity;
 class CBasePlayer;
