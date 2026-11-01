@@ -4,6 +4,7 @@
 class CTEKillPlayerAttachments
 {
 public:
+	CTEKillPlayerAttachments(const char *name);  // 0x10065980
 	virtual int vfunc0();
 	virtual int vfunc1();
 	virtual CTEKillPlayerAttachments *vfunc2(unsigned int flags);	// scalar deleting destructor
