@@ -36,9 +36,9 @@ int CNPC_VTaxiDriver::vfunc451()
 namespace lifted {
 extern char g_10651ed8;
 }
-CNPC_VTaxiDriver::Datamap82 CNPC_VTaxiDriver::vfunc82()
+datamap_t *CNPC_VTaxiDriver::vfunc82()
 {
-    return (CNPC_VTaxiDriver::Datamap82)&lifted::g_10651ed8;
+    return (datamap_t *)&lifted::g_10651ed8;
 }
 // END FUNCTION
 
