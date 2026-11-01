@@ -1,6 +1,21 @@
 // CBaseFlex: entity with flex animation (CBaseAnimatingOverlay -> CBaseAnimating -> ... -> CBaseEntity). Bases flattened.
 #pragma once
 #include "CBaseEntity.h"
+#include "utlvector.h"
+
+struct CBaseFlexFileData	// a loaded expression file; only the tables the flex cache patches are named
+{
+	char m_pad00[0xa0];
+	int m_nControllers;	// 0xa0
+	int m_nNameTable;	// 0xa4: byte offset of the table of name offsets
+	int m_nIndexTable;	// 0xa8: byte offset of the table that receives the controller indices
+};
+
+struct CBaseFlexFileRec	// 0x84 byte cache record
+{
+	char m_szName[0x80];
+	CBaseFlexFileData *m_pData;	// 0x80
+};
 
 struct CBaseFlexItemObject	// the object an item at +0xa58 refers to
 {
