@@ -9698,6 +9698,7 @@
 0x1001193c func   ?sub_1033c830@CBaseCombatCharacter@@QAEXI@Z CBaseCombatCharacter::sub_1033c830
 0x10011941 func   ?vfunc80@CWeaponUnarmed@@UAEHXZ CWeaponUnarmed::vfunc80
 0x10011950 func   ?sub_1004bd40@CUtlRBTree16Unit@@QAEXG@Z CUtlRBTree16Unit::sub_1004bd40
+0x10011955 func   ?sub_102e06f0@@YIPAHPAH@Z sub_102e06f0
 0x1001195f func   ?vfunc56@CHalfLife2@@UAEXXZ CHalfLife2::vfunc56
 0x1001196e func   _npc_VFrenzyShadow npc_VFrenzyShadow
 0x10011973 func   ?sub_102ecc20@@YIHPAD@Z sub_102ecc20

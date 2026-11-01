@@ -133322,6 +133322,27 @@ int CUnknown102e0630::sub_102e0630(void *enemy)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e06f0 size=0x21
+struct CUnknown101e8c30Call_102e06f0
+{
+    float sub_101e8c30();
+};
+extern int g_10739d08[];
+
+// TARGET: sub_102e06f0
+int *__fastcall sub_102e06f0(int *self)
+{
+    float f = ((CUnknown101e8c30Call_102e06f0 *)g_10739d08)->sub_101e8c30();
+    int z = 0;
+    ((float *)self)[4] = f;
+    self[3] = z;
+    self[0] = z;
+    self[1] = z;
+    *((char *)self + 8) = 0;
+    return self;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e0770 size=0x4f
 struct CNode102e0770 {
 	char m_pad00[0x24];
