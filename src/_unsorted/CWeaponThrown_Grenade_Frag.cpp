@@ -261,6 +261,20 @@ void CWeaponThrown_Grenade_Frag::vfunc373(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103eec80 size=0x20
+#include "CWeaponThrown_Grenade_Frag.h"
+
+// TARGET: CWeaponThrown_Grenade_Frag::vfunc35
+int CWeaponThrown_Grenade_Frag::vfunc35(CBaseEntity *pOther)
+{
+	if (!m_b931) {
+		if (sub_102521f0() == 0)
+			return 0x49;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103eece0 size=0x2c
 struct CGrenadeUnit103eece0 {
     char pad[0x931];
