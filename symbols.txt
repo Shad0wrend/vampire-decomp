@@ -10627,6 +10627,7 @@
 0x10013395 func   ?vfunc82@CEnvSpark@@UAEPAUdatamap_t@@XZ CEnvSpark::vfunc82
 0x1001339f func   ?sub_1002f0e0@@YGDH@Z sub_1002f0e0
 0x100133a9 func   ?vfunc271@CInstancedSceneEntity@@QAEXHH@Z CInstancedSceneEntity::vfunc271
+0x100133ae func   ?RotateLeft@?$CUtlRBTree@UCRBEntry24@@H@@QAEXH@Z CUtlRBTree<CRBEntry24,int>::RotateLeft
 0x100133ae func   ?sub_1007fd70@CUtlRBTree24@@QAEXH@Z CUtlRBTree24::sub_1007fd70
 0x100133b3 func   ?vfunc1@CTEEnergySplash@@UAEHXZ CTEEnergySplash::vfunc1
 0x100133b8 func   ?sub_1006e6a0@CBaseCineCam@@QAE_NHHHHH@Z CBaseCineCam::sub_1006e6a0
