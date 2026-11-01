@@ -63853,6 +63853,24 @@ void CUnknown1017fa40::sub_1017fa40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017fa70 size=0x1d
+#include "COutputEvent.h"
+
+char *sub_1023dcd0();
+
+struct CUnknown1017fa70 {
+	void sub_1017fa70();
+};
+
+// TARGET: CUnknown1017fa70::sub_1017fa70
+void CUnknown1017fa70::sub_1017fa70()
+{
+	char *p = sub_1023dcd0();
+	if (p)
+		((COutputEvent *)(p + 0x4f8))->sub_100cd660(this, this, 0.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017faa0 size=0x65
 struct CMsgPlayerView;
 struct CPlayerLookup { char pad[0x49c]; int m_nState; };
