@@ -74,9 +74,9 @@ bool CFilterInventory::vfunc241(CBaseEntity *pEnt)
 namespace lifted {
 extern char g_1056c580;
 }
-CFilterInventory::Datamap82 CFilterInventory::vfunc82()
+datamap_t *CFilterInventory::vfunc82()
 {
-    return (CFilterInventory::Datamap82)&lifted::g_1056c580;
+    return (datamap_t *)&lifted::g_1056c580;
 }
 // END FUNCTION
 
