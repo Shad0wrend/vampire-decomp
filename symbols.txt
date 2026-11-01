@@ -1355,6 +1355,7 @@
 0x1000355d func   ?sub_1023e6b0@@YAXXZ sub_1023e6b0
 0x10003562 func   ?sub_101b4c20@CIdxTable@@QAEPADH@Z CIdxTable::sub_101b4c20
 0x10003571 func   ?sub_102469b0@@YA?AVSendProp@@PBDHHHHH@Z sub_102469b0
+0x10003576 func   ?Purge@?$CUtlVector@HV?$CUtlMemory@H@@@@QAEXXZ CUtlVector<int,CUtlMemory<int> >::Purge
 0x10003580 func   ?sub_10058200@CUnknown10058200@@QAEXH@Z CUnknown10058200::sub_10058200
 0x1000358f func   ?vfunc103@CTriggerPlayerActivityLevel@@UAEXXZ CTriggerPlayerActivityLevel::vfunc103
 0x10003594 func   ?sub_101eb9f0@CEntryXTable@@QAEDXZ CEntryXTable::sub_101eb9f0
