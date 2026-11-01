@@ -32,9 +32,9 @@ int CNPC_VVampireBoss::vfunc451()
 namespace lifted {
 extern char g_1065e418;
 }
-int CNPC_VVampireBoss::vfunc82()
+CNPC_VVampireBoss::Datamap82 CNPC_VVampireBoss::vfunc82()
 {
-    return (int)&lifted::g_1065e418;
+    return (CNPC_VVampireBoss::Datamap82)&lifted::g_1065e418;
 }
 // END FUNCTION
 
