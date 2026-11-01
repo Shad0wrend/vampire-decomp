@@ -76090,6 +76090,24 @@ const char *CRangeView::sub_101b2250()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b22d0 size=0x37
+struct NameEntry { int m_key; const char *m_pName; };
+extern NameEntry g_10598cd0[30];
+extern char g_1072bf50[];
+extern int (__cdecl *g_109f388c)(char *, int, const char *, ...);
+const char *sub_101b22d0(int key)
+{
+	NameEntry *p = g_10598cd0;
+	do {
+		if (p->m_key == key)
+			return p->m_pName;
+		p++;
+	} while ((int)p < (int)(g_10598cd0 + 30));
+	g_109f388c(g_1072bf50, 32, "%i", key);
+	return g_1072bf50;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2320 size=0x65
 #include "CUnknown101b2570.h"
 
