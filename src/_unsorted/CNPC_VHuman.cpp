@@ -108,6 +108,79 @@ int CNPC_VHuman::vfunc482(char bDisregardState, int interruptLevel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103854f0 size=0x2fa
+#include "CNPC_VHuman.h"
+struct CVH375Obj { virtual bool vfunc0(); virtual bool vfunc1(); char m_pad[0x28]; int m_n2c; };
+struct CVH375Wpn { char m_pad[0x19c]; unsigned int m_flags19c; };
+struct CVH375View { char m_pad[0x6410]; bool m_b6410; };
+extern CVH375Obj *g_10924f74;
+extern CVH375Obj *g_10924034;
+extern CVH375Obj *g_10923f5c;
+
+// TARGET: CNPC_VHuman::vfunc375
+int CNPC_VHuman::vfunc375(int act)
+{
+	CVH375View *v = (CVH375View *)this;
+	if (vfunc513() & 0x40) {
+		switch (act) {
+		case 0x11: act = 9; break;
+		case 0x15: act = 0x13; break;
+		}
+	}
+	if (sub_10007e19() && (((CVH375Wpn *)sub_10007e19())->m_flags19c & 0x40) != 0x40) {
+		if ((vfunc513() & 0x40) && !g_10924f74->vfunc1() && g_10924f74->m_n2c && (m_flags14bc & 0x400) == 0x400) {
+			v->m_b6410 = true;
+		} else if ((m_flags14b8 & 0x10000) == 0x10000) {
+			v->m_b6410 = false;
+		} else if ((m_flags5b84 & 0x200) == 0x200) {
+			v->m_b6410 = true;
+		} else {
+			v->m_b6410 = false;
+			switch (m_n5cc0) {
+			case 2:
+				v->m_b6410 = true;
+				break;
+			case 3:
+				if ((g_10923f5c->vfunc1() || !g_10923f5c->m_n2c) && !(m_flags5d8c & 0x8000000))
+					break;
+				v->m_b6410 = true;
+				break;
+			case 0xb:
+				if ((g_10924034->vfunc1() || !g_10924034->m_n2c) && !(m_flags5d8c & 0x8000000))
+					break;
+				v->m_b6410 = true;
+				break;
+			}
+		}
+		if (v->m_b6410) {
+			switch (act) {
+			case 1:
+				if (sub_10007e19()) {
+					void *w = (void *)sub_10007e19();
+					if (((unsigned int (__fastcall *)(void *))(*(void ***)w)[360])(w) & 0x6000)
+						act = 5;
+				}
+				break;
+			case 0x3b: act = 0x3d; break;
+			case 0x3c: act = 0x3e; break;
+			case 0x9d: act = 0x9f; break;
+			case 0x9e: act = 0xa0; break;
+			case 0xa1: act = 0xa3; break;
+			case 0xa2: act = 0xa4; break;
+			}
+		} else {
+			switch (act) {
+			case 9: act = 0x16; break;
+			case 0x13: act = 0x17; break;
+			}
+		}
+	} else {
+		v->m_b6410 = false;
+	}
+	return sub_10295590(act);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103858b0 size=0x108
 #include "CNPC_VHuman.h"
 
