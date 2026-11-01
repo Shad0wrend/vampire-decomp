@@ -1181,6 +1181,7 @@
 0x10003021 func   ?vfunc363@CBaseCombatWeapon@@UAEHXZ CBaseCombatWeapon::vfunc363
 0x10003026 func   ?vfunc5@CEnvParticleHUD@@QAEPAV1@I@Z CEnvParticleHUD::vfunc5
 0x10003030 func   ?sub_10076af0@CUnknown10076af0@@QAEXD@Z CUnknown10076af0::sub_10076af0
+0x1000303f func   ?sub_10189c00@@YAHXZ sub_10189c00
 0x10003049 func   ?sub_100a0990@matrix3x4_t@@QAEPAU1@MMMMMMMMMMMM@Z matrix3x4_t::sub_100a0990
 0x1000304e func   ?sub_10428f10@@YAHPAUCStudioHdrView@@PBD@Z sub_10428f10
 0x10003053 func   ?sub_103a5170@@YIPAXPAX@Z sub_103a5170

@@ -67045,6 +67045,47 @@ char sub_10189a10(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10189c00 size=0x2d9
+#include "SendTable.h"
+SendProp sub_10246af0(const char *, int, int, int, int, int, void *);
+SendProp sub_10246ef0(int, int, const char *, int);
+extern SendTable g_1072849c;
+extern const char *g_105896bc;
+
+int sub_10189c00()
+{
+	static SendProp s_props[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246af0("m_iPing[0]", 0x450, 4, 10, 1, 0, 0),
+		sub_10246ef0(0x21, 4, "m_iPing", 0),
+		sub_10246af0("m_iPacketloss[0]", 0x4d4, 4, 8, 1, 0, 0),
+		sub_10246ef0(0x21, 4, "m_iPacketloss", 0),
+		sub_10246af0("m_iScore[0]", 0x558, 4, 0xc, 0, 0, 0),
+		sub_10246ef0(0x21, 4, "m_iScore", 0),
+		sub_10246af0("m_iVScore[0]", 0x5dc, 4, 0xc, 0, 0, 0),
+		sub_10246ef0(0x21, 4, "m_iVScore", 0),
+		sub_10246af0("m_iVDmgReward[0]", 0x660, 4, 0xc, 0, 0, 0),
+		sub_10246ef0(0x21, 4, "m_iVDmgReward", 0),
+		sub_10246af0("m_iVTeamWin[0]", 0x6e4, 4, 0xc, 0, 0, 0),
+		sub_10246ef0(0x21, 4, "m_iVTeamWin", 0),
+		sub_10246af0("m_iVTeamLoss[0]", 0x768, 4, 0xc, 0, 0, 0),
+		sub_10246ef0(0x21, 4, "m_iVTeamLoss", 0),
+		sub_10246af0("m_iVRoundGoal[0]", 0x7ec, 4, 0xc, 0, 0, 0),
+		sub_10246ef0(0x21, 4, "m_iVRoundGoal", 0),
+		sub_10246af0("m_iVSubGoal[0]", 0x870, 4, 0xc, 0, 0, 0),
+		sub_10246ef0(0x21, 4, "m_iVSubGoal", 0),
+		sub_10246af0("m_iDeaths[0]", 0x8f4, 4, 0xc, 0, 0, 0),
+		sub_10246ef0(0x21, 4, "m_iDeaths", 0),
+		sub_10246af0("m_bConnected[0]", 0x978, 4, 1, 1, 0, 0),
+		sub_10246ef0(0x21, 4, "m_bConnected", 0),
+		sub_10246af0("m_bSpectating[0]", 0x9fc, 4, 1, 1, 0, 0),
+		sub_10246ef0(0x21, 4, "m_bSpectating", 0),
+	};
+	g_1072849c.sub_10247240(&s_props[1], 0x18, g_105896bc);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018a030 size=0x1a
 namespace lifted {
 extern int g_105896c0;
