@@ -72181,6 +72181,28 @@ void CRopeKeyframe::sub_1019f1f0(int nBit)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019f500 size=0x23
+#include "CUnknown100bc0f0.h"
+
+class CUnknown1019f500
+{
+public:
+	char pad0[0x484];
+	int m_unk484;
+
+	void sub_1019f500(CInputData100bc0f0 *data);
+};
+
+// TARGET: CUnknown1019f500::sub_1019f500
+void CUnknown1019f500::sub_1019f500(CInputData100bc0f0 *data)
+{
+	if (data->m_type == 1)
+		m_unk484 = data->m_value;
+	else
+		m_unk484 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019f760 size=0x4d
 struct SFuncField {
     int fieldType;
