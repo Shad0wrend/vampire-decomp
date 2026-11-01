@@ -88752,6 +88752,30 @@ S6 *CUnknown101db210::sub_101db210()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101db350 size=0x81
+#include "CUnknown101db210.h"
+#include "CStatDefault60List.h"
+
+void CUnknown101db210::sub_101db350()
+{
+	if (m_pItems) {
+		for (int i = 0; i < m_count; i++) {
+			if (m_pItems[i])
+				delete m_pItems[i];
+			m_pItems[i] = 0;
+		}
+		delete[] m_pItems;
+		m_pItems = 0;
+	}
+	m_count = 0;
+	m_allocCount = 0;
+	if (m_pSub) {
+		((CStatDefault60List *)m_pSub)->sub_101db7e0();
+		delete (CStatDefault60List *)m_pSub;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101db410 size=0x8
 namespace lifted {
 struct C10003986 { int sub_10003986(); };
