@@ -20,6 +20,5 @@ public:
 	COutputEvent m_OnFail[1];	// 0x46c
 public:
 	virtual datamap_t *vfunc82();
-	typedef CBaseEntity *Arg241;	// staged: becomes CBaseEntity *
-	virtual bool vfunc241(Arg241);
+	virtual bool vfunc241(CBaseEntity *pEntity);
 };

@@ -8,8 +8,7 @@ class CFilterClass : public CBaseFilter
 public:
 	CFilterClass() {}
 	CFilterClass *vfunc5(unsigned int flags);
-	typedef CBaseEntity *Arg241;	// staged: becomes CBaseEntity *
-	bool vfunc241(Arg241 pEntity);
+	bool vfunc241(CBaseEntity *pEntity);
 public:
 	datamap_t *vfunc82();
 
