@@ -11976,6 +11976,7 @@
 0x1001517c func   ?sub_1025d730@@YAHH@Z sub_1025d730
 0x10015181 func   ?sub_1007e290@CChoreoScene1007e220@@QAEXPAUCChoreoSceneChannel1007e970@@@Z CChoreoScene1007e220::sub_1007e290
 0x10015186 func   ?sub_10177b50@CBasePlayerUnit177b50@@QAEXXZ CBasePlayerUnit177b50::sub_10177b50
+0x1001518b func   ?sub_103e8c90@CWeaponMelee_TzimisceMelee@@QAEXXZ CWeaponMelee_TzimisceMelee::sub_103e8c90
 0x10015190 func   ?sub_10387630@@YAHXZ sub_10387630
 0x10015195 func   ?sub_10335950@CBaseCombatCharacter@@QAEPAXPBD@Z CBaseCombatCharacter::sub_10335950
 0x1001519f func   ?vfunc249@CBaseAnimating@@QAEMXZ CBaseAnimating::vfunc249

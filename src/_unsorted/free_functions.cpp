@@ -166984,6 +166984,18 @@ void CWeaponMelee_TzimisceMelee::sub_103e8c50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e8c90 size=0x27
+#include "CWeaponMelee_TzimisceMelee.h"
+
+// TARGET: CWeaponMelee_TzimisceMelee::sub_103e8c90
+void CWeaponMelee_TzimisceMelee::sub_103e8c90()
+{
+	m_n0910 = 2;
+	vfunc372(0x4b, 1, 0);
+	m_n0910 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e8f30 size=0x72
 #include "SendProp.h"
 
