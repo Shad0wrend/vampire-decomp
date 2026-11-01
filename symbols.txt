@@ -144,6 +144,7 @@
 0x100013f7 func   ?vfunc104@CNPC_VHuman@@UAEXXZ CNPC_VHuman::vfunc104
 0x100013fc func   ?sub_1016a660@@YA_NPAUCEntitySizeView@@MM@Z sub_1016a660
 0x10001401 func   ?sub_1007ed70@CUnknown1007ed70@@QAEDXZ CUnknown1007ed70::sub_1007ed70
+0x10001406 func   ?sub_102ccc80@CAI_DynamicLink@@QAEXH@Z CAI_DynamicLink::sub_102ccc80
 0x1000140b func   ?vfunc0@CTEBeamSpline@@UAEHXZ CTEBeamSpline::vfunc0
 0x10001410 func   ?vfunc241@CBaseParticleEntity@@QAE_NHPAUCParticleTransmitInfo_t@@HH@Z CBaseParticleEntity::vfunc241
 0x1000141a func   ?vfunc6@CBaseNetworkable@@UAEXPAUCBaseNetworkableBits_t@@@Z CBaseNetworkable::vfunc6

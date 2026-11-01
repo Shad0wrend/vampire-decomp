@@ -126433,6 +126433,19 @@ bool CAI_DynamicLink::sub_102ccc10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ccc80 size=0x1c
+#include "CAI_DynamicLink.h"
+
+// TARGET: CAI_DynamicLink::sub_102ccc80
+void CAI_DynamicLink::sub_102ccc80(int a)
+{
+	if (m_nLinkState == 0) {
+		m_nLinkState = 1;
+		sub_102ccce0();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cccb0 size=0x1b
 // TARGET: sub_102cccb0
 struct CUnk102cccb0 {
