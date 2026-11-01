@@ -1572,6 +1572,20 @@ void CBaseEntity::vfunc39(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a5030 size=0x21
+struct COutputEventCall_100a5030
+{
+    void sub_100cd660(int a, int b, int c);
+};
+
+// TARGET: CBaseEntity::vfunc42
+void CBaseEntity::vfunc42(void *arg)
+{
+    ((COutputEventCall_100a5030 *)((char *)this + 0x74))->sub_100cd660((int)arg, (int)this, 0);
+    *(int *)((char *)this + 0x8c) = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a65a0 size=0x71
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
