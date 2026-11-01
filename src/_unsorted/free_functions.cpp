@@ -43,6 +43,40 @@ void CPhysForceMotion::sub_10025f80(float flScale)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100276c0 size=0x2a
+#include "CPhysForce.h"
+
+struct IPhysicsEnvironmentStub
+{
+	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4();
+	virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
+	virtual void vfunc10(); virtual void vfunc11(); virtual void vfunc12(); virtual void vfunc13(); virtual void vfunc14();
+	virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17(); virtual void vfunc18(); virtual void vfunc19();
+	virtual void vfunc20(); virtual void vfunc21(); virtual void vfunc22(); virtual void vfunc23(); virtual void vfunc24();
+	virtual void vfunc25(); virtual void vfunc26(); virtual void vfunc27(); virtual void vfunc28(); virtual void vfunc29();
+	virtual void vfunc30(); virtual void vfunc31(); virtual void vfunc32(); virtual void vfunc33(); virtual void vfunc34();
+	virtual void vfunc35(); virtual void vfunc36(); virtual void vfunc37(); virtual void vfunc38(); virtual void vfunc39();
+	virtual void DestroySpring(void *pSpring);
+};
+
+struct CBaseEntityDtor
+{
+	void sub_1009df20();	// CBaseEntity destructor body
+};
+
+extern IPhysicsEnvironmentStub *g_10723940;
+extern void *vt_10445024[];
+
+// TARGET: CPhysForce::sub_100276c0
+void CPhysForce::sub_100276c0()
+{
+	*(void ***)this = vt_10445024;
+	if (m_pController)
+		g_10723940->DestroySpring(m_pController);
+	((CBaseEntityDtor *)this)->sub_1009df20();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027850 size=0x8
 namespace lifted {
 int sub_1000b5d2();

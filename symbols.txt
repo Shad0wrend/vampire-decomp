@@ -11357,6 +11357,7 @@
 0x10014452 func   ?sub_1004bb10@CUtlRBTree16Unit@@QAEXG@Z CUtlRBTree16Unit::sub_1004bb10
 0x10014461 func   ?sub_1018a210@@YIXPAX@Z sub_1018a210
 0x10014466 func   ?vfunc82@CFogController@@QAEHXZ CFogController::vfunc82
+0x10014470 func   ?sub_100276c0@CPhysForce@@QAEXXZ CPhysForce::sub_100276c0
 0x10014475 func   ?sub_10124120@CGameMovement@@QAEHAAVVector@@00M@Z CGameMovement::sub_10124120
 0x1001447f func   ?vfunc103@CVampireProjectile_MingXiaoSpit@@UAEXXZ CVampireProjectile_MingXiaoSpit::vfunc103
 0x10014489 func   ?sub_1022eab0@@YAXPAUCUnknown1022eab0@@@Z sub_1022eab0
