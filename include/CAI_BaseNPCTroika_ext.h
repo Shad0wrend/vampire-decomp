@@ -89,6 +89,7 @@
 	void sub_102c2ab0(inputdata_t *pInput);	// "SetInvestigateMode" input handler: an integer 0..6 goes to +0x6338, else DevMsg
 	void sub_102c2b20(inputdata_t *pInput);	// "SetInvestigateModeCombat" input handler: an integer 0..6 goes to +0x633c, else DevMsg
 	virtual void vfunc448(int a);	// slot 448 "TaskFail" override: clears the follow/hint state (times at +0x6240.., hint handle +0x643c, vector +0x65d0), ClearHintNode(5.0f), then CAI_BaseNPC::vfunc448(a)
+	int vfunc460();	// slot 460 "SelectIdealState" (plain member): a queued state (+0x65cc) wins; else the condition driven picks (0x21, 0x1f, 0x44, 0x22, 0x20), each stamping the source file / line at +0x1b3c / +0x1b40 and setting the ideal state +0x5cc4; 0 when none
 	int sub_102ad260();	// SelectIdealState helper: with condition 0x21 set stamps the source file / line 0x4468 (+0x1b3c / +0x1b40), sets the ideal state +0x5cc4 to 8 (flag 0x100 of +0x14b8 unless the state is already 8) and returns 8; else 0
 	void *sub_1032e7b0();	// CBaseCombatCharacter::GetActiveWeapon (stub 0x10007e19), called directly
 	bool sub_10278c60();	// CAI_BaseNPC::vfunc575 (stub 0x1000c135), tail called by vfunc575
