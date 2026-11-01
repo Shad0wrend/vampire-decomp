@@ -5440,6 +5440,7 @@
 0x1000a781 func   ?sub_1025b610@@YAXXZ sub_1025b610
 0x1000a786 func   ?sub_10139b50@@YAXPAH00@Z sub_10139b50
 0x1000a78b func   ?sub_101f8300@CUnk101f8300@@QAE_NH@Z CUnk101f8300::sub_101f8300
+0x1000a790 func   ?sub_101c4760@CUnk101c4760@@QAEXXZ CUnk101c4760::sub_101c4760
 0x1000a795 func   ?vfunc22@CSingleplayRules@@UAE_NXZ CSingleplayRules::vfunc22
 0x1000a79a func   ?sub_10102030@CMessage@@QAEXPAUinputdata_t@@@Z CMessage::sub_10102030
 0x1000a79f func   ?sub_10057510@CFireSmokeUnit10057510@@QAEXH@Z CFireSmokeUnit10057510::sub_10057510

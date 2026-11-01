@@ -77716,6 +77716,25 @@ void * CUnknown101c4690::sub_101c4690()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c4760 size=0x1c
+struct CUnk101c4760 {
+	CUnk101c4760 *m_prev;
+	CUnk101c4760 *m_next;
+	int m_8;
+	void sub_101c4760();
+};
+
+// TARGET: CUnk101c4760::sub_101c4760
+void CUnk101c4760::sub_101c4760()
+{
+	m_prev->m_next = m_next;
+	m_next->m_prev = m_prev;
+	m_next = this;
+	m_prev = this;
+	m_8 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c4790 size=0xa
 struct CUnknown101c4790 { CUnknown101c4790 *a; CUnknown101c4790 *b; CUnknown101c4790* sub_101c4790(int x); };
 // TARGET: CUnknown101c4790::sub_101c4790
