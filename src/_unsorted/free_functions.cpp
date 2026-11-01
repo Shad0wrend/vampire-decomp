@@ -163212,6 +163212,27 @@ int sub_103f17a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f1cb0 size=0x1e
+extern int vt_104e37ac[];
+
+struct CUnkDisciplineWeapon {
+	void *m_vptr;
+	char m_pad0004[0x910 - 4];
+	int m_910;
+	void sub_10011b8f();
+	CUnkDisciplineWeapon *sub_103f1cb0(int a);
+};
+
+// TARGET: CUnkDisciplineWeapon::sub_103f1cb0
+CUnkDisciplineWeapon *CUnkDisciplineWeapon::sub_103f1cb0(int a)
+{
+	sub_10011b8f();
+	m_vptr = vt_104e37ac;
+	m_910 = a;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f1d90 size=0x1a
 namespace lifted {
 extern int g_1067e538;

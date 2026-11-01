@@ -10053,6 +10053,7 @@
 0x100124f9 func   ?vfunc390@CNPC_VTaxiDriver@@QAEHH@Z CNPC_VTaxiDriver::vfunc390
 0x100124fe func   ?sub_101f5e80@CEntryTable_101f5e80@@QAEXXZ CEntryTable_101f5e80::sub_101f5e80
 0x10012503 func   ?sub_101618e0@CBasePlayer@@QAEXHH@Z CBasePlayer::sub_101618e0
+0x1001250d func   ?sub_103f1cb0@CUnkDisciplineWeapon@@QAEPAU1@H@Z CUnkDisciplineWeapon::sub_103f1cb0
 0x10012512 func   ?sub_100c5d10@@YA_NPAXHMMPBMAAVVector@@2@Z sub_100c5d10
 0x10012517 func   ?sub_10046930@CUtlRBTree36@@QBEGPBX@Z CUtlRBTree36::sub_10046930
 0x1001251c func   ?sub_103b3c10@@YADXZ sub_103b3c10
