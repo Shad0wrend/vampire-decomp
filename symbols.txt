@@ -6880,6 +6880,7 @@
 0x1000c842 func   ?vfunc0@CServerNetworkProperty@@UAEHXZ CServerNetworkProperty::vfunc0
 0x1000c84c func   ?sub_10246470@@YAXHPAGPAI@Z sub_10246470
 0x1000c851 func   ?sub_101f5b60@CVActivitySound@@QAEXHHH@Z CVActivitySound::sub_101f5b60
+0x1000c85b func   ?ShiftElementsRight@?$CUtlVector@VCBaseHandle@@V?$CUtlMemory@VCBaseHandle@@@@@@QAEXHH@Z CUtlVector<CBaseHandle,CUtlMemory<CBaseHandle> >::ShiftElementsRight
 0x1000c85b func   ?sub_102c6cf0@UtlVec8@@QAEXHH@Z UtlVec8::sub_102c6cf0
 0x1000c860 func   ?vfunc81@CItemGBachJournal@@QAEHXZ CItemGBachJournal::vfunc81
 0x1000c865 func   ?vfunc0@CHangRope@@UAEHHHH@Z CHangRope::vfunc0
