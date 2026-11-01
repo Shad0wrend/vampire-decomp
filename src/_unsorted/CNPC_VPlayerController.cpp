@@ -148,6 +148,23 @@ void CNPC_VPlayerController::vfunc497()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a4870 size=0xd
+struct CNPC_VHumanFwd;
+struct CNPC_VPlayerControllerFwd {
+    void sub_103a4870(int a);
+};
+struct CNPC_VHumanFwd {
+    void sub_10385a10(int a);
+};
+
+// TARGET: sub_103a4870
+void CNPC_VPlayerControllerFwd::sub_103a4870(int a)
+{
+    a = *(volatile int *)&a;
+    ((CNPC_VHumanFwd *)this)->sub_10385a10(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a4890 size=0x6
 #include "CNPC_VPlayerController.h"
 int CNPC_VPlayerController::vfunc138()

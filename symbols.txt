@@ -4889,6 +4889,7 @@
 0x1000921e func   ?vfunc451@CNPC_VChangBrosClaw@@QAEHXZ CNPC_VChangBrosClaw::vfunc451
 0x10009223 func   ?sub_101953b0@@YAHXZ sub_101953b0
 0x10009228 func   ?sub_101eab20@@YAXH@Z sub_101eab20
+0x1000922d func   ?sub_103a4870@CNPC_VPlayerControllerFwd@@QAEXH@Z CNPC_VPlayerControllerFwd::sub_103a4870
 0x10009232 func   ?sub_10273720@@YIDPAX@Z sub_10273720
 0x1000923c func   ?sub_10349d10@CUtlMemory16@@QAEPAV1@HH@Z CUtlMemory16::sub_10349d10
 0x10009246 func   ?sub_100c3090@@YAXXZ sub_100c3090
