@@ -96,6 +96,23 @@ bool CUnknownNPC101a6ce0::sub_101a6ce0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10265e90 size=0x21
+struct CBaseCombatCharacterCall_10265e90
+{
+    int sub_1000e854(int a);
+};
+
+// TARGET: CAI_BaseNPC::vfunc142
+int CAI_BaseNPC::vfunc142(int arg)
+{
+    int *vt;
+    int r = ((CBaseCombatCharacterCall_10265e90 *)this)->sub_1000e854(arg);
+    vt = *(int **)this;
+    ((void (__fastcall *)(CAI_BaseNPC *, int *))vt[459])(this, vt);
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026a8a0 size=0x16
 float CAI_BaseNPC::vfunc471()
 {
