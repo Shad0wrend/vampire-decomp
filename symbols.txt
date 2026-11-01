@@ -4995,6 +4995,7 @@
 0x100098a9 func   ?sub_103c24a0@CUnk103c24a0@@QAE_NXZ CUnk103c24a0::sub_103c24a0
 0x100098b3 func   ?sub_10199100@@YAPAUPyObject@@PAU1@0@Z sub_10199100
 0x100098b8 func   ?vfunc4@CTEFizz@@UAEXAAVCRecipientFilter@@M@Z CTEFizz::vfunc4
+0x100098cc func   ?sub_103b52f0@@YIPAXPAD@Z sub_103b52f0
 0x100098d1 func   ?vfunc173@CFuncMoveLinear@@QAEXPAX0HM@Z CFuncMoveLinear::vfunc173
 0x100098d6 func   ?sub_100a6bb0@@YIHPADHH@Z sub_100a6bb0
 0x100098db func   ?vfunc35@CSave@@UAEXPBDPAXH@Z CSave::vfunc35
