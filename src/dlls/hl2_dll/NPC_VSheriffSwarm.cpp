@@ -1,6 +1,23 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103b2530 size=0xd
+struct CAI_BaseNPCFwd;
+struct CNPC_VSheriffSwarmFwd {
+    void sub_103b2530(int a, int b);
+};
+struct CAI_BaseNPCFwd {
+    void sub_1026dd10(int a, int b);
+};
+
+// TARGET: sub_103b2530
+void CNPC_VSheriffSwarmFwd::sub_103b2530(int a, int b)
+{
+    b = *(volatile int *)&b;
+    ((CAI_BaseNPCFwd *)this)->sub_1026dd10(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b2630 size=0x5c
 #include "CNPC_VSheriffSwarm.h"
 

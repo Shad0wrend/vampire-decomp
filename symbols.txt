@@ -4270,6 +4270,7 @@
 0x10008265 func   ?sub_1030f780@@YAHXZ sub_1030f780
 0x1000826a func   ?sub_100295d0@CUnknown100295d0@@QAEXH@Z CUnknown100295d0::sub_100295d0
 0x1000826f func   ?sub_100622d0@@YAHXZ sub_100622d0
+0x10008274 func   ?sub_103b2530@CNPC_VSheriffSwarmFwd@@QAEXHH@Z CNPC_VSheriffSwarmFwd::sub_103b2530
 0x10008279 func   ?sub_10406ac0@@YAHXZ sub_10406ac0
 0x10008283 func   ?sub_1013c050@@YAXHHHHH@Z sub_1013c050
 0x10008288 func   ?sub_103822a0@CNPC_VHengeyokai@@QAE_NPAVCBaseEntity@@@Z CNPC_VHengeyokai::sub_103822a0
