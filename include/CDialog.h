@@ -90,6 +90,9 @@ public:
 	void sub_100e4f30(char *pszScript);
 	int sub_100e61d0(void *pFile, DialogLine *pLine, int *pLineNo);	// "CDialog::read_line_data": scope trace, reads one dialog line (key, text, gender, response, dependency, script, seven clan texts); 1 ok, 0 empty line, -1 missing field
 	char sub_100e5f10();	// "CDialog::read_dialog_data": scope trace, opens the dialog file, reads every line into the table (growing it by 10 entries), closes the file and sorts the entries; 1 ok, 0 when the file or memory failed
+	int sub_100e7230(const char *pszName, int nMode);	// "CDialog::dopen" (this unused; the caller still loads ecx)
+	void *sub_100e76d0(void *pOld, int nOld, int nNew);	// "CDialog::drealloc" (this unused)
+	void sub_100e7480(int hFile);	// closes the dialog file (this unused)
 	void sub_100e7630(void *pFile);	// "CDialog::eat_line": scope trace, reads characters from the file until a newline or EOF
 	int sub_100e7510(void *pFile);	// reads one character (-1 at end of file)
 	int sub_100e6ed0(void *pFile, char *pszOut, int *pLine, char bStripBrackets);	// "CDialog::read_str_data": scope trace; skips to the opening { (// comments, warns about a stray }), then reads up to the closing } into pszOut (trimmed, curly quotes straightened, [..] dropped when bStripBrackets); 1 ok, 0 at end of file, -1 on a newline before the brace
