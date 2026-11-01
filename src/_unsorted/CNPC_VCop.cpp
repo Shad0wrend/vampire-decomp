@@ -201,6 +201,23 @@ int CNPC_VCop::vfunc440(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10372aa0 size=0xd
+struct CNPC_VHumanCombatantFwd;
+struct CNPC_VCopFwd {
+    void sub_10372aa0(int a);
+};
+struct CNPC_VHumanCombatantFwd {
+    void sub_10387500(int a);
+};
+
+// TARGET: sub_10372aa0
+void CNPC_VCopFwd::sub_10372aa0(int a)
+{
+    a = *(volatile int *)&a;
+    ((CNPC_VHumanCombatantFwd *)this)->sub_10387500(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10372b70 size=0xaa
 #include "CNPC_VCop.h"
 extern unsigned int g_1093ac3c;
