@@ -133,7 +133,8 @@ public:
 	CAI_Navigator(int pOuter);	// 0x102eca50: allocates the 0x84 byte object at +0x30
 
 	virtual CAI_Navigator *vfunc0(unsigned int flags); virtual void vfunc1(); virtual void vfunc2(int a); virtual void vfunc3(int a); virtual void vfunc4(int);
-	virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8();
+	virtual void vfunc5(float flInterval, int a);	// slot 5 "CAI_Navigator::Move": scope trace; does nothing while sub_102ee2e0 holds or the owner's slot 525 accepts the interval; with the owner's flag byte +0x1a40 set stamps the components and steps the route (slots 12 / 13 / 14 by the route's move type, at most 16 times), else stops the motor (+0x20)
+	virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8();
 	virtual void vfunc9(int a, float b);
 	virtual void vfunc10(int a, float b);
 	virtual void vfunc11(int a); virtual int vfunc12(int a); virtual int vfunc13(int a); virtual int vfunc14(int a);
