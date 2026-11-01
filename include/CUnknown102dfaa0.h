@@ -11,7 +11,7 @@ class CUnknown102dfaa0_Target	// the entity at +0x00, viewed as a plain list of 
 {
 public:
 	CCS_V10(a0) CCS_V10(a1) CCS_V10(a2) CCS_V10(a3) CCS_V10(a4)
-	CCS_V(a50) CCS_V(a51) CCS_V(a52) CCS_V(a53) CCS_V(a54) CCS_V(a55)
+	CCS_V(a50) CCS_V(a51) CCS_V(a52) CCS_V(a53) virtual char slot54(void *pEnt); CCS_V(a55)
 	virtual void slot56(void *pEnt, Vector a, Vector b, int c);
 };
 
