@@ -89,6 +89,9 @@ public:
 	CUnknown1024b2d0 m_listb0;	// 0xb0
 
 	CSoundEmitterSystemBase *sub_101b26c0();
+	bool sub_101b2c60();	// slot 1 (0x101b2c60, stub 0x10005597), "BaseInit"-like: when the count at +0xa8 is positive calls slot 2 (the class has no real virtuals yet: call (*(void (__fastcall **)(CSoundEmitterSystemBase *))((char *)m_vtbl + 8))(this)), sub_101b3b70(), loads "scripts/game_sounds_manifest.txt" into a new CUnknown10248a50 (g_1070b238, 0, true), for each sub key: name "precache_file" -> sub_101b4240(key->GetString(0, ""), true), "declare_file" -> sub_101b4240(key->GetString(0, ""), false), else DevWarning("CSoundEmitterSystemBase::BaseInit:  Manifest '%s' with bogus file type '%s', expecting 'declare_file' or 'precache_file'\n"); Error-like message when the file is missing; deletes the tree; DevMsg(1, "Registered %i sounds ( %i missing )") using sub_101b4740(false); returns true
+	void sub_101b3b70();	// empty (a plain ret), called by slot 1 before the manifest load
+	void sub_101b4240(const char *pszScriptFile, bool bPrecache);	// stub 0x1000924b, AddSoundsFromFile: grows the script file table (0x82 byte entries, memory +0x9c, count +0xa8), loads the script file into a CUnknown10248a50 and adds each sound record (tree at +0x50); DevMsg "No such file" (and removes the table entry again) / "Entry '%s' already exists" cases
 	CSoundEmitterSystemBase *sub_101b0200(unsigned char flags);	// slot 0, scalar deleting destructor: purges the lists at +0xb0, +0x70, +0x24 and the memory blocks at +0x9c, +0x54, +0x8; deletes this when bit 0 of flags is set
 	void sub_101b3770(void *pTable, const char *pszName, int value);	// interns pszName in the string table at +0xb0 and appends the 8 byte record (16 bit symbol, value) to the vector (memory at +0x20, size at +0x2c) of pTable
 	int sub_101b2f60(const char *pszName);	// index of the sound record (0xe8 bytes each, table at +0x54) named pszName, -1 when unknown
