@@ -43642,6 +43642,23 @@ void CBaseDoor::sub_100f0210(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f02b0 size=0x3a
+#include "CUnknown100f02b0.h"
+#include "CBaseEntity.h"
+
+void __fastcall sub_100f0320(char *p);
+
+void CUnknown100f02b0::sub_100f02b0(inputdata_t *inputdata)
+{
+	CBaseEntity *pEnt = (CBaseEntity *)inputdata->pActivator;
+	if (pEnt)
+		m_hEntity = *pEnt->vfunc1();
+	else
+		m_hEntity = 0xffffffff;
+	sub_100f0320((char *)this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0300 size=0x8
 void __fastcall sub_100f0300(char *p) { p[0x55c] = 1; }
 // END FUNCTION

@@ -4804,6 +4804,7 @@
 0x100091e7 func   ?vfunc1@CSafeDiscSaveRestoreOps_2@@QAEXPAPAHPAUCSafeDiscReader@@@Z CSafeDiscSaveRestoreOps_2::vfunc1
 0x100091ec func   ?sub_10312580@CUnknown10312580@@QAEMH@Z CUnknown10312580::sub_10312580
 0x100091f1 func   ?sub_101f3d80@CUnknown101f3d80@@QAEXHH@Z CUnknown101f3d80::sub_101f3d80
+0x100091f6 func   ?sub_100f02b0@CUnknown100f02b0@@QAEXPAUinputdata_t@@@Z CUnknown100f02b0::sub_100f02b0
 0x100091fb func   ?sub_1013de70@@YAHXZ sub_1013de70
 0x10009200 func   ?sub_10345980@CBaseCombatCharacter@@QAEPADPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_10345980
 0x10009205 func   ?sub_103121a0@CAI_Expresser@@QAEXMM@Z CAI_Expresser::sub_103121a0
