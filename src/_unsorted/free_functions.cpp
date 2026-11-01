@@ -48883,6 +48883,27 @@ extern "C" CBaseEntity *env_spark()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10103d70 size=0x36
+extern void *vt_1044b584[];
+extern void *vt_1045a404[];
+struct CEnvSparkBaseView {
+	void sub_100090fc(int);
+};
+void __fastcall sub_100cd2a0(void *);
+
+// TARGET: sub_10103d70
+void *__fastcall sub_10103d70(char *p)
+{
+	((CEnvSparkBaseView *)p)->sub_100090fc(0);
+	*(void **)p = vt_1044b584;
+	sub_100cd2a0(p + 0x460);
+	*(void **)p = vt_1045a404;
+	*(int *)(p + 0x458) = 1;
+	*(int *)(p + 0x45c) = 1;
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10103f80 size=0x174
 #include "CEntityVSlots.h"
 #include "CUnknown1070b244.h"

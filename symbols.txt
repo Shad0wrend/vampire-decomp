@@ -10690,6 +10690,7 @@
 0x10012977 func   ?vfunc5@CWeaponMelee_ManBatClaw@@QAEPAV1@I@Z CWeaponMelee_ManBatClaw::vfunc5
 0x10012986 func   ?sub_102dd740@@YA_NPBD@Z sub_102dd740
 0x1001298b func   ?vfunc223@CFunc_LOD@@UAE_NXZ CFunc_LOD::vfunc223
+0x10012990 func   ?sub_10103d70@@YIPAXPAD@Z sub_10103d70
 0x1001299f func   ?sub_10338950@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10338950
 0x100129a4 func   ?sub_101f4150@CUnknown101f4150@@QAEHXZ CUnknown101f4150::sub_101f4150
 0x100129a9 func   ?sub_10138460@@YAXPBMQAY03$$CBMPAM@Z sub_10138460
