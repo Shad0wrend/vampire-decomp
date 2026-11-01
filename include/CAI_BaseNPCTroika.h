@@ -354,7 +354,8 @@ public:
 	char m_b64e0;
 	char m_pad64e1[3];
 	float m_f64e4;	// 0x64e4: curtime of the last stance change
-	char m_pad64e8[0x64ec - 0x64e8];
+	int m_n64e8;	// 0x64e8: the table index (disposition) the slot 105 / 104 precache found
+
 	char m_b64ec;	// 0x64ec: the second talking flag (sub_102c1170)
 	char m_pad64ed[0x654c - 0x64ed];
 	char m_b654c;
