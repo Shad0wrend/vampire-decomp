@@ -56002,6 +56002,18 @@ int *sub_10131a40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10131e70 size=0x5c
+#include "CMathRemap.h"
+
+// TARGET: math_remap
+extern "C" CBaseEntity *math_remap()
+{
+	CMathRemap *p = new CMathRemap;
+	p->vfunc106("math_remap");
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10131f50 size=0x1a6
 struct ISaveRestoreOps;
 struct datamap_t;
