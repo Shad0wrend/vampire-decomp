@@ -1288,6 +1288,7 @@
 0x10003305 func   ?sub_1030fe50@CUnknown1030fe50@@QAEXXZ CUnknown1030fe50::sub_1030fe50
 0x1000330a func   ?vfunc564@CAI_BaseNPCTroika@@UAE_NXZ CAI_BaseNPCTroika::vfunc564
 0x1000330f func   ?sub_1013dce0@CUnk1013dce0@@QAEXPAH@Z CUnk1013dce0::sub_1013dce0
+0x10003314 func   ?sub_1035b520@@YIPAXPAD@Z sub_1035b520
 0x10003319 func   ?sub_100beba0@bf_read@@QAEMXZ bf_read::sub_100beba0
 0x1000331e func   ?sub_1022c750@CPropRadio@@QAEXH@Z CPropRadio::sub_1022c750
 0x10003323 func   ?sub_101b9140@CUnknown101b9140@@QAEHHHPBUCUnknown101b9140Elem@@@Z CUnknown101b9140::sub_101b9140

@@ -151613,6 +151613,31 @@ char sub_1035b440()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035b520 size=0x27
+struct CGenericBaseCtorCall_1035b520
+{
+	void sub_1027c300();
+};
+
+struct CGenericMemberCtorCall_1035b520
+{
+	void sub_10014d9e();
+};
+
+extern void *vt_104a648c[];
+extern void *vt_104a6460[];
+
+// TARGET: sub_1035b520
+void *__fastcall sub_1035b520(char *self)
+{
+	((CGenericBaseCtorCall_1035b520 *)self)->sub_1027c300();
+	((CGenericMemberCtorCall_1035b520 *)(self + 0x5f44))->sub_10014d9e();
+	*(void ***)self = vt_104a648c;
+	*(void ***)(self + 0x19b0) = vt_104a6460;
+	return self;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035bee0 size=0x12
 #define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
 #define V100(n) V10(n##a) V10(n##b) V10(n##c) V10(n##d) V10(n##e) V10(n##f) V10(n##g) V10(n##h) V10(n##i) V10(n##j)
