@@ -15,6 +15,7 @@ public:
 	virtual void vfunc3(const Vector &origin, const QAngle &angles);	// "CTEBubbles::Test": the box at the origin lifted 24 units and moved 100 units along the flat facing, 256 units wide, 50 bubbles, height 256, speed 2.0, sent to every player
 	virtual void vfunc4(CRecipientFilter &filter, float delay);	// "Create"
 
+	CTEBubbles(const char *name);	// 0x1005f5c0 (stub 0x10012b39): the CBaseTempEntityHead constructor with the name, the vtable, the ten zeroed dwords
 	void sub_1000e2c8();	// destructor body
 	void sub_1005f7e0(int a, int b);	// "CTEBubbles::Create" (called through the stub at 0x10011897)
 
