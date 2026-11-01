@@ -139342,6 +139342,22 @@ void CAI_Expresser::sub_103121a0(float a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10312230 size=0x1d
+// TARGET: CUnk10312230::sub_10312230
+struct CUnk10312230
+{
+    char pad[0x4c];
+    float m_4c;
+    int sub_10312230();
+};
+int CUnk10312230::sub_10312230()
+{
+    if (m_4c > gpGlobals->curtime)
+        return 1;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10312260 size=0x56
 #include "CUnknown10311a20.h"
 struct Rec8 { int a0, a6, a1, a2, a7, a3, a4, a5; };
