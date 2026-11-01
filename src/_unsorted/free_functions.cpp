@@ -107898,6 +107898,45 @@ void CUnk1021c390::sub_1021c390(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021c6d0 size=0x15e
+#include "CBaseEntity.h"
+#include "CPropHacking.h"
+#include "CUnknown10217f50.h"
+#include "COutputEvent.h"
+
+struct CPropHackingEntry	// 0x2b4 byte element of the array at +0x9b4
+{
+	char m_pad0000[0x30];
+	char m_szName[0x240];	// 0x30
+	char m_bScript270;	// 0x270: the first byte of the script string
+	char m_pad0271[0x2b0 - 0x271];
+	int m_nOutput;	// 0x2b0
+};
+
+void sub_100ea2d0(char *pszScript, CBaseEntity *pEnt, CPropHacking *pHacking, int a, int b);
+
+#define ENTRY(i) (((CPropHackingEntry *)m_p09b4)[i])
+
+char CPropHacking::sub_1021c6d0(int a)
+{
+	CUnknown10217f50 *t = (CUnknown10217f50 *)this;
+	if (a < 0 || a > m_n09c0)
+		return 0;
+	sub_1021b140((char *)&m_pRecords09a0[m_n09dc] + 0x10);
+	t->sub_10217ac0("\n");
+	t->sub_10217ac0(ENTRY(a).m_szName);
+	int nOutput = ENTRY(a).m_nOutput;
+	if (nOutput >= 0 && nOutput < 8)
+		((COutputEvent *)((char *)this + 0x840))[nOutput].sub_100cd660(t->m_hUser.Get(), this, 0);
+	if (ENTRY(a).m_bScript270)
+		sub_100ea2d0(&ENTRY(a).m_bScript270, t->m_hUser.Get(), this, 0x100, 0);
+	sub_10218ff0(0, m_n0814 - 1);
+	t->sub_10217ac0(sub_10219400(0x12));
+	sub_10219270();
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021d730 size=0x103
 struct ISaveRestoreOps;
 struct datamap_t;

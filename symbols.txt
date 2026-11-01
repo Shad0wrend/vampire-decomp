@@ -7831,6 +7831,7 @@
 0x1000e160 func   ?sub_101945f0@CUtlRBTree12@@QAEXPBXAAGAA_N@Z CUtlRBTree12::sub_101945f0
 0x1000e165 func   ?vfunc5@CPropRadio@@QAEPAV1@I@Z CPropRadio::vfunc5
 0x1000e16f func   ?vfunc82@CParamsParticle@@QAEHXZ CParamsParticle::vfunc82
+0x1000e174 func   ?sub_1021c6d0@CPropHacking@@QAEDH@Z CPropHacking::sub_1021c6d0
 0x1000e17e func   ?vfunc126@CPointAngleSensor@@UAEHH@Z CPointAngleSensor::vfunc126
 0x1000e183 func   ?sub_10324430@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_10324430
 0x1000e188 func   ?sub_10042900@UtlMem@@QAEXXZ UtlMem::sub_10042900
