@@ -25,9 +25,9 @@ int CBaseTerminal::vfunc81()
 namespace lifted {
 extern char g_105af268;
 }
-int CBaseTerminal::vfunc82()
+CBaseTerminal::Datamap82 CBaseTerminal::vfunc82()
 {
-    return (int)&lifted::g_105af268;
+    return (CBaseTerminal::Datamap82)&lifted::g_105af268;
 }
 // END FUNCTION
 
