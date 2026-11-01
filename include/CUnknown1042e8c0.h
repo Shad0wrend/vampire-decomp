@@ -12,7 +12,8 @@ public:
 	int m_nAttachment;	// 0x454
 	char m_pad0458[4];
 	float m_flFrame;	// 0x45c: the current animation frame
-	char m_pad0460[0x478 - 0x460];
+	float m_flDieTime;	// 0x460: the sprite removes itself (CBaseEntity::sub_100ae150) once curtime passes it (0x1042ecf0)
+	char m_pad0464[0x478 - 0x464];
 	float m_flMaxFrame;	// 0x478: the last frame
 
 	void sub_1042e8c0();	// "CSprite::Precache" (slot 104): precaches the model name when set, then re-resolves the aim entity (+0x37c): follows it (handle, attachment, SetAimEnt, slot 93(11, 0)) or clears the handle to -1
