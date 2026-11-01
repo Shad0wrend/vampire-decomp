@@ -16,7 +16,7 @@ public:
 	virtual void vfunc0();
 	virtual void vfunc1();
 	virtual void vfunc2(int);
-	virtual void vfunc3();
+	virtual void vfunc3(void *pEdict);	// "CServerGameClients::ClientDisconnect": scope trace, the player entity of the edict (CBaseEntity::Instance; edict 0 resolved through the engine) is announced (\"- %s has left the game\" text message to everybody) unless the global byte 0x1070ba2c is set, then made non-solid-ish (flags), removed from the global list at 0x1070ba0c and torn down
 	virtual int vfunc4(int, int);
 	virtual void vfunc5();
 	virtual void vfunc6(CServerGameClients_Edict *pEdict, int clientIndex);	// "ClientSettingsChanged": logs a name change of the player entity of the edict and stores the new name
