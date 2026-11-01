@@ -31,11 +31,13 @@ public:
 	int m_n910;
 	char m_b914;	// 0x914
 	char m_pad915[0x918 - 0x915];
-	unsigned int m_hHeld918;	// 0x918
+	EHANDLE m_hHeld918;	// 0x918
 	char m_pad91c[0x928 - 0x91c];
 	int m_nSoundState;	// 0x928
-	char m_pad92c[0x9dc - 0x92c];	// 0x93c: the CGravControllerPoint sub-object (constructor stub 0x10148750)
-	struct CSlot9dc { int a; int b; int pad[3]; } m_slots9dc[16];	// 0x9dc: two handles (-1) per entry; the last entry's pad[2] is the handle at 0xb18
+	char m_pad92c[0x93c - 0x92c];
+	CGravControllerPoint m_controller93c;	// 0x93c
+	char m_pad9d0[0x9dc - 0x93c - sizeof(CGravControllerPoint)];
+	struct CSlot9dc { EHANDLE a; EHANDLE b; int pad[3]; } m_slots9dc[16];	// 0x9dc: two handles per entry; the last entry's pad[2] is the handle at 0xb18
 	unsigned int m_hB1c;	// 0xb1c
 	char m_padb20[0xb25 - 0xb20];
 	char m_bB25;	// 0xb25
