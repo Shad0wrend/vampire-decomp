@@ -50217,6 +50217,28 @@ void CFuncMoveLinear::sub_10116e80(float flFraction)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10116fb0 size=0x23
+#include "CUnknown100bc0f0.h"
+
+class CUnknown10116fb0
+{
+public:
+	char pad0[0x164];
+	int m_unk164;
+
+	void sub_10116fb0(CInputData100bc0f0 *data);
+};
+
+// TARGET: CUnknown10116fb0::sub_10116fb0
+void CUnknown10116fb0::sub_10116fb0(CInputData100bc0f0 *data)
+{
+	if (data->m_type == 1)
+		m_unk164 = data->m_value;
+	else
+		m_unk164 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10116ff0 size=0x147
 #include "CFuncMoveLinear.h"
 
