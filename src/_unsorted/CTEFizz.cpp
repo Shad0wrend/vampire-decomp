@@ -39,6 +39,17 @@ void CTEFizz::vfunc5()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10062110 size=0x39
+#include "CTEFizz.h"
+#include "CTEMetalSparks.h"
+#include "IVEngineServerFull.h"
+
+void CTEFizz::vfunc4(CRecipientFilter &filter, float delay)
+{
+	engine->vfunc103((int)&filter, *(int *)&delay, this, ((CTEMetalSparks *)this)->vfunc0()->m_pTable, ((CTEMetalSparks *)this)->vfunc0()->m_ClassID);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100621d0 size=0x6
 #include "CTEFizz.h"
 namespace lifted {
