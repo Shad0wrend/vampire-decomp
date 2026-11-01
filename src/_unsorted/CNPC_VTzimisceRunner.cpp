@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_1065d6ac;
 }
-CNPC_VTzimisceRunner::Datamap82 CNPC_VTzimisceRunner::vfunc82()
+datamap_t *CNPC_VTzimisceRunner::vfunc82()
 {
-    return (CNPC_VTzimisceRunner::Datamap82)&lifted::g_1065d6ac;
+    return (datamap_t *)&lifted::g_1065d6ac;
 }
 // END FUNCTION
 
