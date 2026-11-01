@@ -54603,6 +54603,28 @@ int *sub_10134a80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10134c40 size=0x23
+#include "CUnknown100bc0f0.h"
+
+class CUnknown10134c40
+{
+public:
+	char pad0[0x450];
+	int m_unk450;
+
+	void sub_10134c40(CInputData100bc0f0 *data);
+};
+
+// TARGET: CUnknown10134c40::sub_10134c40
+void CUnknown10134c40::sub_10134c40(CInputData100bc0f0 *data)
+{
+	if (data->m_type == 1)
+		m_unk450 = data->m_value;
+	else
+		m_unk450 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10134d00 size=0x16
 namespace lifted {
 struct C100061b3 { int sub_100061b3(int, int); };
