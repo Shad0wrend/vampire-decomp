@@ -49834,6 +49834,18 @@ int sub_10107d50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10107d80 size=0x67
+#include "CFilterClass.h"
+
+// TARGET: filter_activator_class
+extern "C" CBaseEntity *filter_activator_class()
+{
+    CFilterClass *p = new CFilterClass;
+    p->vfunc106("filter_activator_class");
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107ec0 size=0x1a
 namespace lifted {
 extern int g_1056c4a0;
