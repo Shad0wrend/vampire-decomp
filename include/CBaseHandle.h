@@ -31,6 +31,7 @@ public:
 	IHandleEntity *sub_102c6370();	// Get() as an out-of-line copy (the same lookup), 0x102c6370
 	IHandleEntity *sub_102c6420();	// Get() as an out-of-line copy (the same lookup), 0x102c6420
 	IHandleEntity *sub_102c64d0();	// Get() as an out-of-line copy (the same lookup), 0x102c64d0
+	IHandleEntity *sub_100d15d0();	// Get() as an out-of-line copy (the same lookup), 0x100d15d0
 	inline const CBaseHandle &Set(const IHandleEntity *pEntity);	// ehandle.h
 
 	unsigned long m_Index;
