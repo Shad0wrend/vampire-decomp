@@ -160289,6 +160289,31 @@ extern "C" CBaseEntity *npc_VVentrue()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c7770 size=0x27
+struct CGenericBaseCtorCall_103c7770
+{
+	void sub_103c48e0();
+};
+
+struct CGenericMemberCtorCall_103c7770
+{
+	void sub_10005e52();
+};
+
+extern void *vt_104ce8fc[];
+extern void *vt_104ce8cc[];
+
+// TARGET: sub_103c7770
+void *__fastcall sub_103c7770(char *self)
+{
+	((CGenericBaseCtorCall_103c7770 *)self)->sub_103c48e0();
+	((CGenericMemberCtorCall_103c7770 *)(self + 0x6664))->sub_10005e52();
+	*(void ***)self = vt_104ce8fc;
+	*(void ***)(self + 0x19b0) = vt_104ce8cc;
+	return self;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c7880 size=0xc
 void __fastcall sub_103c78a0(void *p);
 
