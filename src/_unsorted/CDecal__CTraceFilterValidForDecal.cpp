@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1023ac90 size=0x20
+#include "vampire.h"
+#include "CDecal.h"
+// TARGET: CDecal::CTraceFilterValidForDecal::CTraceFilterValidForDecal
+CDecal::CTraceFilterValidForDecal::CTraceFilterValidForDecal(void *pPassEnt, int collisionGroup)
+    : CTraceFilterSimple(pPassEnt, collisionGroup)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023acc0 size=0xbb
 #include "CBaseEntity.h"
 #include "CDecal.h"
