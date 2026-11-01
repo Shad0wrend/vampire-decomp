@@ -144178,6 +144178,21 @@ int CUnknown10303f80::sub_10303f80(int a0, int a1, int a2, int a3, int a4, int a
 }
 // END FUNCTION
 
+// FUNCTION: 0x10303fd0 size=0x34
+#include "CAI_Pathfinder.h"
+#include "CEntityVSlots.h"
+struct CPathfinderEntView { char m_pad0000[0x94]; CEntityVSlots *m_pNPC94; };
+struct CPathfinderNpcView { char m_pad0000[0x2e0]; int m_nEdict2e0; };
+char CAI_Pathfinder::sub_10303fd0(const float *vecStart, const float *vecEnd, CBaseEntity *pEnt)
+{
+	CEntityVSlots *pNPC = ((CPathfinderEntView *)pEnt)->m_pNPC94;
+	if (pNPC && ((CPathfinderNpcView *)pNPC)->m_nEdict2e0) {
+		return pNPC->slot404(m_pOuter) == 3;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10304020 size=0xc6
 #include "CAI_Pathfinder.h"
 #include "CAI_Waypoint.h"
