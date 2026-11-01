@@ -163,6 +163,24 @@ void CTentacleUnit::sub_1039e800(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039e830 size=0x1d
+// TARGET: CNPC_VMingXiaoTentacle::vfunc22
+struct CUnk10397dd0
+{
+    char pad[0x66c0];
+    int m_66c0;
+    void sub_10397dd0(int a, int b);
+};
+void CNPC_VMingXiaoTentacle::vfunc22(int arg)
+{
+    CUnk10397dd0 *pPlayer = (CUnk10397dd0 *)sub_1039ede0();
+    if (pPlayer)
+    {
+        pPlayer->sub_10397dd0((int)this, arg);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039e8e0 size=0x5
 bool CNPC_VMingXiaoTentacle::vfunc366(int a0, int a1, int a2)
 {
