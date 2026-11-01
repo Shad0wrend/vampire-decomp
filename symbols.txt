@@ -2754,6 +2754,7 @@
 0x10005b9b func   ?sub_10042f20@CMem8c_t@@QAEHHHPBUE8@@@Z CMem8c_t::sub_10042f20
 0x10005ba0 func   ??0CVModInfo_t@@QAE@HHH@Z CVModInfo_t::CVModInfo_t
 0x10005baf func   ?sub_1008d320@CBaseAnimating@@QAEXPAUinputdata_t@@@Z CBaseAnimating::sub_1008d320
+0x10005bb4 func   ?sub_103734f0@@YIPAXPAD@Z sub_103734f0
 0x10005bb9 func   ?sub_101a17c0@CRestore@@QAEPAUCRestoreField@@PBDPAU2@HPAH@Z CRestore::sub_101a17c0
 0x10005bbe func   ?vfunc0@CTEMetalSparks@@UAEPAUServerClass@@XZ CTEMetalSparks::vfunc0
 0x10005bc3 func   ?sub_102dc2c0@CUnknown102dc2c0@@QAEXXZ CUnknown102dc2c0::sub_102dc2c0
