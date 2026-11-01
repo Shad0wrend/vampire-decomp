@@ -1446,6 +1446,7 @@
 0x100036d9 func   _trigger_look trigger_look
 0x100036de func   ?vfunc82@CFilterInventory@@QAEHXZ CFilterInventory::vfunc82
 0x100036e3 func   ?vfunc86@CBaseViewModel@@QAE_NHHHHH@Z CBaseViewModel::vfunc86
+0x100036e8 func   ?sub_1038e670@CNPC_VManBat@@QAEXXZ CNPC_VManBat::sub_1038e670
 0x100036ed func   ?sub_10407e10@CItemGKeyring@@QAEHPBD@Z CItemGKeyring::sub_10407e10
 0x100036f2 func   ?sub_1008cfc0@CBaseAnimating@@QAEXHPAX@Z CBaseAnimating::sub_1008cfc0
 0x100036f7 func   ?vfunc80@CWeaponMelee_Sledgehammer@@QAEHXZ CWeaponMelee_Sledgehammer::vfunc80
