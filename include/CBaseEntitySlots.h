@@ -39,7 +39,7 @@ public:
 	virtual void slot145(); virtual void slot146(); virtual void slot147(); virtual void slot148(); virtual void slot149();
 	virtual void slot150(); virtual void slot151(); virtual void slot152(); virtual void slot153(); virtual void slot154();
 	virtual void slot155(); virtual void slot156(); virtual void slot157(); virtual void slot158(); virtual void slot159();
-	virtual void slot160(); virtual void slot161(); virtual void slot162(); virtual void slot163(); virtual void slot164();
+	virtual void slot160(); virtual void slot161(); virtual void slot162(); virtual void slot163(); virtual char slot164();
 	virtual void slot165(); virtual void slot166(); virtual void slot167(); virtual void slot168(); virtual void slot169();
 	virtual void slot170(); virtual void slot171(); virtual void slot172(); virtual void slot173(); virtual void slot174();
 	virtual void slot175(); virtual void slot176(); virtual void slot177(); virtual void slot178(); virtual void slot179();
