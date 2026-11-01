@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_1059e5f0;
 }
-int CTriggerImpact::vfunc82()
+CTriggerImpact::Datamap82 CTriggerImpact::vfunc82()
 {
-    return (int)&lifted::g_1059e5f0;
+    return (CTriggerImpact::Datamap82)&lifted::g_1059e5f0;
 }
 // END FUNCTION
 
