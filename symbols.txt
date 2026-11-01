@@ -5572,6 +5572,7 @@
 0x1000a84e func   ?sub_1019ebc0@CRopeKeyframe@@QAEXHHPAV1@HHH@Z CRopeKeyframe::sub_1019ebc0
 0x1000a853 func   ?sub_102cc7e0@@YIXPAH@Z sub_102cc7e0
 0x1000a858 func   ?vfunc7@CAutoGameSystem@@UAEXXZ CAutoGameSystem::vfunc7
+0x1000a862 func   ?sub_1019e0d0@CUnknown1019e0d0@@QAEXD@Z CUnknown1019e0d0::sub_1019e0d0
 0x1000a867 func   ?sub_102886f0@CUnknown102886f0@@QAEXH@Z CUnknown102886f0::sub_102886f0
 0x1000a86c func   ?vfunc117@CBaseViewModel@@UAEHXZ CBaseViewModel::vfunc117
 0x1000a871 func   ?sub_102ca6c0@Obj@@QAEXPAUEntX@@0@Z Obj::sub_102ca6c0

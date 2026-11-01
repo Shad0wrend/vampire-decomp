@@ -71955,6 +71955,26 @@ CRopeKeyframe *CRopeKeyframe::sub_1019dfb0(CBaseEntity *pStartEnt, int iStartAtt
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019e0d0 size=0x24
+class CUnknown1019e0d0
+{
+public:
+	char pad0[0x478];
+	unsigned int m_flags478;
+
+	void sub_1019e0d0(char on);
+};
+
+// TARGET: CUnknown1019e0d0::sub_1019e0d0
+void CUnknown1019e0d0::sub_1019e0d0(char on)
+{
+	if (on)
+		m_flags478 |= 8;
+	else
+		m_flags478 &= ~8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019e310 size=0xdc
 #include "CRopeKeyframe.h"
 #include "CUnknown101466e0.h"
