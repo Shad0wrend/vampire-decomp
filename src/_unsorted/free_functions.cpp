@@ -157262,6 +157262,22 @@ char sub_103abc90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103aca80 size=0x21
+int sub_101cd9e0(int a);
+struct CNPC_VScurryingCall_103aca80
+{
+    char sub_103acac0(int a);
+};
+
+// TARGET: sub_103aca80
+int __fastcall sub_103aca80(char *self)
+{
+    int v = sub_101cd9e0(1);
+    char c = ((CNPC_VScurryingCall_103aca80 *)self)->sub_103acac0(v);
+    return (c != 0 ? -1 : 0) & v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103acac0 size=0xa1
 #include "CBaseEntity.h"
 #include "CNPC_VScurrying.h"
