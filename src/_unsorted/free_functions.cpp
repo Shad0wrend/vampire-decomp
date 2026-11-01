@@ -66917,8 +66917,7 @@ StatDefault2 *StatOwner2::sub_10183910(int id)
         if (m_items[i]->id == id)
             return (StatDefault2 *)m_items[i];
     }
-    static StatDefault2 s_default(-1);
-    return &s_default;
+    return StatDefault2_Default();	// the shared default record: one static in the game
 }
 // END FUNCTION
 
