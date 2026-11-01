@@ -66,5 +66,6 @@ public:
 			m_iCurBit += numbits;
 		}
 	}
+	bool sub_100bcd70(class bf_read *pIn, int nBits);	// "WriteBitsFromBuffer": copies nBits bits from pIn, 32 at a time; true unless either side overflowed
 	bf_write *sub_100bdf50(const char *pDebugName, void *pData, int nBytes, int nBits);	// provisional, like sub_100bc490 (transplant)
 };
