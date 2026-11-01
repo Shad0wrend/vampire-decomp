@@ -2186,6 +2186,7 @@
 0x10004d2c func   ?sub_1022b480@S1022b480@@QAEXAAUinputdata_t@@@Z S1022b480::sub_1022b480
 0x10004d31 func   ?vfunc268@CRagdollProp@@UAEXPAVCBaseEntity@@@Z CRagdollProp::vfunc268
 0x10004d36 func   ?vfunc103@CChangeLevel@@UAEXXZ CChangeLevel::vfunc103
+0x10004d3b func   ?vfunc13@CRestore@@UAEFXZ CRestore::vfunc13
 0x10004d40 func   ?sub_100eb000@CUnknown100eb000@@QAEPAXH@Z CUnknown100eb000::sub_100eb000
 0x10004d45 func   ?vfunc0@CSceneTokenProcessor@@QAEPADXZ CSceneTokenProcessor::vfunc0
 0x10004d4a func   ?sub_100c7560@@YAPADPAUCStudioHdr@@HPAPAU1@@Z sub_100c7560
