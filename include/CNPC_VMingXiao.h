@@ -445,6 +445,7 @@ public:
 	virtual void vfunc438();
 	virtual void vfunc439();
 	virtual int vfunc440(int a);	// slot 440: 0x147 answers 0x16f, else the Troika base
+	int sub_102b12f0(int a);	// CAI_BaseNPCTroika::vfunc440 (stub 0x10001997), called directly
 	virtual void vfunc441();
 	virtual void vfunc442();
 	virtual void vfunc443();
