@@ -5045,6 +5045,7 @@
 0x1000981d func   ?vfunc77@CLight@@QAEXXZ CLight::vfunc77
 0x10009822 func   ?sub_1028e870@CUnknown1028e870@@QAEHXZ CUnknown1028e870::sub_1028e870
 0x10009827 func   ?vfunc37@CBaseEntity@@UAEMXZ CBaseEntity::vfunc37
+0x1000982c func   ?vfunc103@CWeaponPhysCannon@@UAEXXZ CWeaponPhysCannon::vfunc103
 0x10009831 func   ?sub_100bc080@CBeam@@QAEXAAUinputdata_t@@@Z CBeam::sub_100bc080
 0x10009836 func   ?sub_10326360@CBaseCombatCharacter@@QAE_NVVector@@MM@Z CBaseCombatCharacter::sub_10326360
 0x1000983b func   ?sub_10146b20@CBaseCombatCharacter@@QAE_NPAV1@@Z CBaseCombatCharacter::sub_10146b20

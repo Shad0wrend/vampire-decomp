@@ -46,6 +46,20 @@ CBaseCombatWeapon *CWeaponPhysCannon::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040db00 size=0x19
+#include "CWeaponPhysCannon.h"
+
+struct CPhysCannonGrabPlaceholder {
+	void sub_100dc8d0(int a, int b);
+};
+
+void CWeaponPhysCannon::vfunc103()
+{
+	CBaseCombatWeapon::vfunc103();
+	((CPhysCannonGrabPlaceholder *)((char *)this + 0x270))->sub_100dc8d0(0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040dc40 size=0x18
 #include "CWeaponPhysCannon.h"
 
