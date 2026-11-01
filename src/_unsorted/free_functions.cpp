@@ -19292,6 +19292,65 @@ int __stdcall sub_1007bfc0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007bff0 size=0x16c
+#include "CUtlBuffer.h"
+#include "FileSystemViews.h"
+#include "CChoreoScene1007e970.h"
+
+extern IFileSystemView *g_1070b238;
+extern "C" void __cdecl sub_1007bf70(void *pBuf, int nIndent, const char *pszFmt, ...);
+struct CChoreoActorView;
+struct CChoreoEventView { int sub_10076690(); };
+
+struct CChoreoSaverView
+{
+	CChoreoEventView **m_ppEvents;	// 0x0
+	char m_pad04[8];
+	int m_nEvents;	// 0xc
+	char m_pad10[4];
+	CChoreoSceneActor1007e970 **m_ppActors;	// 0x14
+	char m_pad18[8];
+	int m_nActors;	// 0x20
+	char m_pad24[0xac - 0x24];
+	char m_szMapName[0x81];	// 0xac
+	bool m_bSnap;	// 0x12d
+	char m_pad12e[2];
+	int m_nFps;	// 0x130
+
+	void sub_10009818(void *pBuf);
+	void sub_1007c600(void *pBuf, int nIndent, CChoreoEventView *pEvent, float flOffset);
+	void sub_1007ccc0(void *pBuf, int nIndent, CChoreoActorView *pActor);
+	bool sub_1007bff0(const char *pszFile);
+};
+
+bool CChoreoSaverView::sub_1007bff0(const char *pszFile)
+{
+	CUtlBuffer buf(0, 0, 1);
+	sub_10009818(&buf);
+	for (int i = 0; i < m_nEvents; i++) {
+		CChoreoEventView *pEvent = m_ppEvents[i];
+		if (!pEvent->sub_10076690())
+			sub_1007c600(&buf, 0, pEvent, 0);
+	}
+	for (int j = 0; j < m_nActors; j++) {
+		CChoreoSceneActor1007e970 *pActor = m_ppActors[j];
+		if (pActor)
+			sub_1007ccc0(&buf, 0, (CChoreoActorView *)pActor);
+	}
+	if (m_szMapName[0])
+		sub_1007bf70(&buf, 0, "mapname \"%s\"\n", m_szMapName);
+	sub_1007bf70(&buf, 0, "fps %i\n", m_nFps);
+	sub_1007bf70(&buf, 0, "snap %s\n", m_bSnap ? "on" : "off");
+	int hFile = g_1070b238->vfunc0(pszFile, "wt", 0);
+	if (hFile) {
+		g_1070b238->vfunc3((const char *)buf.m_pBuffer, buf.m_nPut, hFile);
+		g_1070b238->vfunc1(hFile);
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007c1c0 size=0x84
 #include "CUnknown10078540.h"
 #include "CFlexAnimationTrack.h"

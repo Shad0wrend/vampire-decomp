@@ -5595,6 +5595,7 @@
 0x1000a5ab func   ?sub_100d6820@@YAXXZ sub_100d6820
 0x1000a5b0 func   ?vfunc3@CTEBloodStream@@UAEXABVVector@@ABVQAngle@@@Z CTEBloodStream::vfunc3
 0x1000a5ba func   ?sub_1007e5c0@CUnknown1007e5c0@@QAEXPAH0@Z CUnknown1007e5c0::sub_1007e5c0
+0x1000a5c4 func   ?sub_1007bff0@CChoreoSaverView@@QAE_NPBD@Z CChoreoSaverView::sub_1007bff0
 0x1000a5ce func   ?vfunc103@CGravityPellet@@QAEXXZ CGravityPellet::vfunc103
 0x1000a5d8 func   ?sub_10132db0@@YAPAHXZ sub_10132db0
 0x1000a5dd func   ?sub_1012c5b0@@YGHHHH@Z sub_1012c5b0
