@@ -1005,6 +1005,7 @@
 0x10002b58 func   ?sub_103c6830@CNPC_VVampireBossUnit@@QAEMXZ CNPC_VVampireBossUnit::sub_103c6830
 0x10002b5d func   ?sub_101e8c50@CUnknown101e8c50@@QAEMXZ CUnknown101e8c50::sub_101e8c50
 0x10002b62 func   ?vfunc30@CRestore@@UAEHPAIHH@Z CRestore::vfunc30
+0x10002b67 func   ?sub_10185010@CUtlMemory72@@QAEPAU1@HH@Z CUtlMemory72::sub_10185010
 0x10002b6c func   ?vfunc442@CNPC_VTaxiDriver@@QAEXPBH@Z CNPC_VTaxiDriver::vfunc442
 0x10002b71 func   ?vfunc438@CNPC_VAnimal@@QAEHXZ CNPC_VAnimal::vfunc438
 0x10002b76 func   ?sub_102dc420@CUnknown102dc2c0@@QAEXXZ CUnknown102dc2c0::sub_102dc420
