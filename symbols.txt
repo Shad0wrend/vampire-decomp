@@ -11662,6 +11662,7 @@
 0x100145e7 func   ?vfunc574@CNPC_VMingXiao@@QAE?AVVector@@ABV2@HH@Z CNPC_VMingXiao::vfunc574
 0x100145ec func   ?sub_10098cd0@CAnimationLayerAdvance@@QAEXHPAX0@Z CAnimationLayerAdvance::sub_10098cd0
 0x100145f6 func   ?sub_101e8a90@CUnknown101e8a90@@QAEMXZ CUnknown101e8a90::sub_101e8a90
+0x100145fb func   ?sub_101a6a20@@YAXXZ sub_101a6a20
 0x10014600 func   ?vfunc268@CDisciplineProjectile@@QAEXXZ CDisciplineProjectile::vfunc268
 0x10014605 func   ?sub_102237c0@CUnknown102237c0@@QAEXH@Z CUnknown102237c0::sub_102237c0
 0x1001460a func   ?sub_102101d0@CUnit10210250@@QAE_NPAVCEntityVSlots@@0@Z CUnit10210250::sub_102101d0
