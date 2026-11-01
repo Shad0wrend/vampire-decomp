@@ -27,4 +27,5 @@ public:
 	unsigned int m_flags45c;
 	void sub_100575a0(int on);	// provisional, like vfunc243 (transplant)
 	void sub_100575e0(int on);	// provisional, like vfunc243 (transplant)
+	void sub_1019e090(char on);
 };
