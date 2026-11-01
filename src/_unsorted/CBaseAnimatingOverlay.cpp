@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_105509f8;
 }
-CBaseAnimatingOverlay::Datamap82 CBaseAnimatingOverlay::vfunc82()
+datamap_t *CBaseAnimatingOverlay::vfunc82()
 {
-    return (CBaseAnimatingOverlay::Datamap82)&lifted::g_105509f8;
+    return (datamap_t *)&lifted::g_105509f8;
 }
 // END FUNCTION
 
