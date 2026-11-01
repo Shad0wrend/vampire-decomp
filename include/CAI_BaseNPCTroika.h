@@ -210,7 +210,7 @@ public:
 	float sub_10014655(int pWeapon);	// stub 0x10014655 (0x102c57c0), called directly
 	int sub_102b7690(int a, int b, int c, int d);	// stub 0x10005dd0, called directly by the idle pick 0x102b7cf0
 	int sub_102b7cf0();	// the idle-state schedule pick: condition 0x47 -> 0x10, else (enemy, slot 592) sub_102b7690, then the 0x800 flag / roll branches
-	void sub_102c5570(struct CAI_RangeRec *pRec, float flValue);	// float-returning scale helper (st0), see the definition
+	float sub_102c5570(struct CAI_RangeRec *pRec, float flValue);	// float-returning scale helper (st0), see the definition
 	void sub_100041b0(int task);	// stub 0x100041b0 for 0x10269a20: sets a task (the inverse of sub_10015839)
 
 #include "CAI_BaseNPCTroika_ext.h"
