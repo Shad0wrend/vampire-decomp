@@ -133,3 +133,44 @@ int CNPC_VGuard1::vfunc440(int schedule)
 	return ((m_flags14bc & 0x80000) == 0x80000) ? 0x132 : 0x15a;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1037e240 size=0x3c
+#include "CNPC_VGuard1.h"
+
+#define CSV_ROW(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CSlot66View
+{
+	CSV_ROW(r0)
+	CSV_ROW(r1)
+	CSV_ROW(r2)
+	CSV_ROW(r3)
+	CSV_ROW(r4)
+	CSV_ROW(r5)
+	virtual void r60();
+	virtual void r61();
+	virtual void r62();
+	virtual void r63();
+	virtual void r64();
+	virtual void r65();
+	virtual void vfunc66();
+};
+
+struct CGuard1CallView
+{
+	void sub_10273790(const char *pszName, int b);
+	void *sub_1032e7b0();
+};
+
+// TARGET: CNPC_VGuard1::vfunc420
+void CNPC_VGuard1::vfunc420()
+{
+	*(char *)((char *)this + 0x6660) = 0;
+	((CGuard1CallView *)this)->sub_10273790("player D_NU 0", 0);
+	((CAI_BaseNPC *)this)->CAI_BaseNPC::vfunc420();
+	if (((CGuard1CallView *)this)->sub_1032e7b0() != 0)
+	{
+		((CSlot66View *)((CGuard1CallView *)this)->sub_1032e7b0())->vfunc66();
+	}
+}
+// END FUNCTION
