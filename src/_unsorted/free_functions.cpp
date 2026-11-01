@@ -172488,6 +172488,24 @@ void * CUnknown1042d570::sub_1042d570(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042d5a0 size=0x1d
+// TARGET: sub_1042d5a0
+struct CUnk1042d5a0
+{
+    void (__cdecl *fn)(int);
+    int arg;
+    CUnk1042d5a0 *next;
+};
+extern CUnk1042d5a0 *g_109ef58c;
+void __cdecl sub_1042d5a0()
+{
+    for (CUnk1042d5a0 *p = g_109ef58c; p != 0; p = p->next)
+    {
+        p->fn(p->arg);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042d650 size=0x9
 struct CUnknown1042d650 { int a; CUnknown1042d650* sub_1042d650(); };
 // TARGET: CUnknown1042d650::sub_1042d650
