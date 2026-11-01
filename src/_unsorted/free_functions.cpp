@@ -169824,6 +169824,32 @@ void COccultRegen::sub_103f91d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f9240 size=0x29
+extern char g_10620048[];
+char *sub_101193b0();
+
+struct CBCCPlaceholder {
+	char *sub_10335950(const char *pszName);
+};
+
+struct COccultPlaceholder {
+	void sub_103f91d0();
+};
+
+void sub_103f9240()
+{
+	char *p = sub_101193b0();
+	if (p) {
+		char *o = *(char **)(p + 0xa8);
+		if (o) {
+			char *q = ((CBCCPlaceholder *)o)->sub_10335950(g_10620048);
+			if (q)
+				((COccultPlaceholder *)q)->sub_103f91d0();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f9480 size=0xb5
 #include "SendProp.h"
 
