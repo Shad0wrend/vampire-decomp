@@ -107,7 +107,8 @@ public:
 	char m_b09ec;	// 0x9ec
 	char m_pad09ed[0x9f4 - 0x9ed];
 	int m_nSelected09f4;	// 0x9f4: the selected record
-	char m_pad09f8[0xa04 - 0x9f8];
+	int *m_pnList09f8;	// 0x9f8: the screen list (m_n0a04 entries)
+	char m_pad09fc[0xa04 - 0x9fc];
 	int m_n0a04;	// 0xa04: the count of the screen list (the lines of the selected record divided by 10 in sub_1021c000)
 	char m_pad0a08[0xa0c - 0xa08];
 	int m_n0a0c;	// 0xa0c: the current screen line, clamped to m_n0a04 / 10 by sub_1021c000
