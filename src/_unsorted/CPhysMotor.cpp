@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_105372ac;
 }
-CPhysMotor::Datamap82 CPhysMotor::vfunc82()
+datamap_t *CPhysMotor::vfunc82()
 {
-    return (CPhysMotor::Datamap82)&lifted::g_105372ac;
+    return (datamap_t *)&lifted::g_105372ac;
 }
 // END FUNCTION
 
