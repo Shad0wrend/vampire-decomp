@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10565c44;
 }
-int CEnvShooter::vfunc82()
+CEnvShooter::Datamap82 CEnvShooter::vfunc82()
 {
-    return (int)&lifted::g_10565c44;
+    return (CEnvShooter::Datamap82)&lifted::g_10565c44;
 }
 // END FUNCTION
 
