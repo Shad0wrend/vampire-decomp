@@ -18,7 +18,12 @@ class CPropHaunted : public CBaseEntity
 {
 public:
 	HAUNTED_SLOTS10(hsa) HAUNTED_SLOTS10(hsb) HAUNTED_SLOTS10(hsc) HAUNTED_SLOTS10(hsd) HAUNTED_SLOTS10(hse)	// slots 134..183
-	HAUNTED_SLOTS10(hsf) HAUNTED_SLOTS10(hsg) HAUNTED_SLOTS10(hsh) HAUNTED_SLOTS10(hsi) HAUNTED_SLOTS10(hsj)	// slots 184..233
+	virtual void hsf0(); virtual void hsf1(); virtual void hsf2(); virtual void hsf3(); virtual void hsf4();	// slots 184..193
+	virtual void hsf5(); virtual void hsf6(); virtual void hsf7(); virtual const float *vfunc192(); virtual void hsf9();	// slot 192: a position (pointer to three floats)
+	HAUNTED_SLOTS10(hsg) HAUNTED_SLOTS10(hsh)
+	virtual void hsi0(); virtual void hsi1(); virtual void hsi2(); virtual void hsi3(); virtual void hsi4();	// slots 214..223
+	virtual unsigned int vfunc219(float a); virtual void hsi6(); virtual void hsi7(); virtual void hsi8(); virtual void hsi9();
+	HAUNTED_SLOTS10(hsj)	// slots 224..233
 	HAUNTED_SLOTS10(hsk)	// slots 234..253
 	virtual void hsl0(); virtual void hsl1(); virtual void hsl2(); virtual void hsl3(); virtual void hsl4();
 	virtual void hsl5(); virtual void hsl6(int a); virtual void hsl7(); virtual void hsl8(); virtual void hsl9();
