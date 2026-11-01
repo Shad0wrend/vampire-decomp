@@ -75,6 +75,16 @@ bool CAI_BaseNPC::vfunc468(CBaseEntity * a0)
 void __stdcall sub_101a67a0(int) {}
 // END FUNCTION
 
+// FUNCTION: 0x101a67e0 size=0x2d
+#include "ehandle.h"
+
+// TARGET: CAI_BaseNPC::vfunc167
+int CAI_BaseNPC::vfunc167()
+{
+	return (int)((CBaseHandle *)((char *)this + 0x5ce0))->Get();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6840 size=0xb
 void CAI_BaseNPC::vfunc483(int unused)
 {

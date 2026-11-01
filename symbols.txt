@@ -11730,6 +11730,7 @@
 0x10014e34 func   ?sub_101931c0@@YAPAHXZ sub_101931c0
 0x10014e39 func   ?sub_102525e0@CBaseCombatWeapon@@QAEDPAVCBaseCombatCharacter@@@Z CBaseCombatWeapon::sub_102525e0
 0x10014e3e func   ?sub_10068ab0@@YAXHHPBH0HHHH@Z sub_10068ab0
+0x10014e43 func   ?vfunc167@CAI_BaseNPC@@UAEHXZ CAI_BaseNPC::vfunc167
 0x10014e4d func   ?sub_103158f0@CUnknown103158f0@@QAEXPAVCBaseEntity@@@Z CUnknown103158f0::sub_103158f0
 0x10014e52 func   ?sub_101c1dc0@CBaseToggle@@QAEXHHHH@Z CBaseToggle::sub_101c1dc0
 0x10014e57 func   ?sub_101d5e80@CStatDefault3List@@QAEPAUStatDefault3@@H@Z CStatDefault3List::sub_101d5e80
