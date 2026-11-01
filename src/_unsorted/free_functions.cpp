@@ -45897,6 +45897,56 @@ void CUnknown10081e70::sub_100fa6b0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fa840 size=0x309
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+SendProp sub_10003404(const char *pVarName, int offset, int sizeofVar);	// SendPropTime
+SendProp sub_10006cc1(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLowValue, float fHighValue, void *proxy);	// SendPropFloat
+void sub_10009539();
+void sub_10006aeb();
+
+extern SendTable g_10708dcc;
+extern SendTable *g_1055282c;
+
+// TARGET: sub_100fa840
+int sub_100fa840()
+{
+	static const char *pTableName = "DT_EnvParticle";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_1055282c, (void *)sub_10009539),
+		sub_10007bfd("m_nParticle", 0x454, 4, 10, 1, 0, 0),
+		sub_10007bfd("m_bActive", 0x484, 4, 1, 1, 0, 0),
+		sub_10007bfd("m_nAttachType", 0x458, 4, 5, 1, 0, 0),
+		sub_10007bfd("m_nAttachPoint", 0x460, 4, 9, 0, 0, 0),
+		sub_10003404("m_flActivationTime", 0x488, 4),
+		sub_10006cc1("m_fRateScaleTarget", 0x48c, 4, -1, 4, 0.0f, -121121.121094f, (void *)sub_10006aeb),
+		sub_10006cc1("m_fRampTime", 0x490, 4, -1, 4, 0.0f, -121121.121094f, (void *)sub_10006aeb),
+		sub_10006cc1("m_nRampFrame", 0x494, 4, 4, 1, 0.0f, -121121.121094f, (void *)sub_10006aeb),
+		sub_10006cc1("m_fRedScale", 0x464, 4, 5, 0, 0.0f, 1.0f, (void *)sub_10006aeb),
+		sub_10006cc1("m_fGreenScale", 0x468, 4, 5, 0, 0.0f, 1.0f, (void *)sub_10006aeb),
+		sub_10006cc1("m_fBlueScale", 0x46c, 4, 5, 0, 0.0f, 1.0f, (void *)sub_10006aeb),
+		sub_10006cc1("m_fMaskScale", 0x470, 4, 5, 0, 0.0f, 1.0f, (void *)sub_10006aeb),
+		sub_10006cc1("m_fSizeScale", 0x474, 4, 8, 0, 0.0f, 4.0f, (void *)sub_10006aeb),
+		sub_10006cc1("m_fSecondaryRed", 0x478, 4, 5, 0, 0.0f, 1.0f, (void *)sub_10006aeb),
+		sub_10006cc1("m_fSecondaryGreen", 0x47c, 4, 5, 0, 0.0f, 1.0f, (void *)sub_10006aeb),
+		sub_10006cc1("m_fSecondaryBlue", 0x480, 4, 5, 0, 0.0f, 1.0f, (void *)sub_10006aeb),
+		sub_10006cc1("m_fSpawnBounds", 0x49c, 4, 0x10, 0x10, 0.0f, 4096.0f, (void *)sub_10006aeb),
+		sub_10007bfd("m_bHUDDrawThird", 0x4a0, 1, 1, 1, 0, 0),
+	};
+	g_10708dcc.sub_1000e8fe(props + 1, 0x13, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fad20 size=0x1a
 namespace lifted {
 extern int g_105669d8;

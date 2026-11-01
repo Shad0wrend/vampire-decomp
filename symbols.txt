@@ -6313,6 +6313,7 @@
 0x1000b992 func   ?vfunc563@CAI_BaseNPCTroika@@UAEXPAVCBaseEntity@@PBX11@Z CAI_BaseNPCTroika::vfunc563
 0x1000b9a1 func   ?sub_1007dfa0@CUnknown1007dfa0@@QAEMXZ CUnknown1007dfa0::sub_1007dfa0
 0x1000b9a6 func   ?sub_102e2d40@@YAHXZ sub_102e2d40
+0x1000b9ab func   ?sub_100fa840@@YAHXZ sub_100fa840
 0x1000b9b0 func   ?sub_100f7f20@@YGXPAVCBaseEntity@@PBD00@Z sub_100f7f20
 0x1000b9b5 func   ?sub_100976e0@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_100976e0
 0x1000b9bf func   ?sub_1040cef0@@YAPAHXZ sub_1040cef0
