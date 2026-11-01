@@ -19,6 +19,7 @@ public:
 	// Placeholder slots 134..251 (the base declares slots up to 133).
 	virtual void a00(); virtual void a01(); virtual void a02(); virtual void a03(); virtual void a04();
 	virtual void a05(); virtual void a06(); virtual void a07(); virtual void a08();
+	virtual int vfunc124();	// slot 124 "CBaseCombatCharacter::DrawDebugTextOverlays": scope trace (entity name), CBaseEntity::vfunc124's next free line, then with overlay flag 0x400 (+0x224) one line per stat (0..0x22) of the owner's (+0x9c) stat list and a "Reaction: %s" line, then the discipline lines and "NPC: %s" when the AI object (+0x94) exists; returns the next free line
 	virtual int vfunc143(float flHealth, int bitsDamageType);	// "CBaseCombatCharacter::TakeHealth": scope trace (entity name), 0 when the take-damage mode at +0x1fc is zero, else CBaseEntity::vfunc143
 	CBCC_SLOTS10(a1)
 	virtual void a20(); virtual void a21(); virtual void a22(); virtual void a23();
