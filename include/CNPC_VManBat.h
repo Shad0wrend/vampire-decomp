@@ -59,6 +59,7 @@ public:
 	void sub_1038f020(char bForce);	// stub 0x10015591, called by vfunc144 first: lets go of the carried character and removes the three attached entities (unless the delay at +0x6684 has not run out and bForce is clear)
 	void sub_1038f660();	// stub 0x10005ca9: while carried (flag 5 of +0x14b8), lets the ragdoll of the handle at +0x668c go (with the byte at +0x6694), removes the entity of the handle at +0x6690 and clears the carry flag (sub_1038f600(0))
 	void sub_103c4f40(int arg);	// CNPC_VVampire::vfunc144 (stub 0x1000b8a2), called directly
+	bool sub_1038f430(CBaseAnimating *pProp, int nArg);	// attaches the thrown prop to the bat: creates a "phys_animlink" between the bat's "Bip01 R Foot" bone and the prop's physics object (slot 265), keeps its handle at +0x6690, sets the carry flag and the prop's byte flag
 	void sub_1038f600(char bOn);	// sets / clears bit 5 of the flags at +0x14b8
 	void sub_1038e720(Vector vecDir);	// picks the reaction to a hit from the direction: a downward-pointing hit (z of 30 or more) and a hit from the side other than the front arc (30..330 degrees from the facing) run sub_1038e640 / sub_1038e6a0 / sub_1038e6e0 / sub_1038e670 (none in the states 0x28, 0x30, 0xb0, 0x4b, 0x1171)
 	void vfunc259(int *pEvent);	// slot 259: handles the animation events 1 / 2 / 3 (man-bat screech / sound tables at 0x10640d10, 0x10642b2c, 0x10640d1c), else CNPC_VHuman::vfunc259
