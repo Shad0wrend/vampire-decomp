@@ -21334,6 +21334,19 @@ void CSceneEntity::sub_100821f0(int mode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100823c0 size=0x35
+#include "CSceneEntity.h"
+#include "CBaseEntity.h"
+#include "CUnknown1007a2c0.h"
+CBaseEntity *CSceneEntity::sub_100823c0(int iActor)
+{
+	CSceneEventActor *pActor = (CSceneEventActor *)((CUnknown1007a2c0 *)m_pScene4bc)->sub_1007a2c0(iActor);
+	if (!pActor)
+		return 0;
+	return vfunc268(pActor->sub_10008a99(), 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10082520 size=0x135
 #include "CBaseEntity.h"
 #include "CEHandleGet.h"
