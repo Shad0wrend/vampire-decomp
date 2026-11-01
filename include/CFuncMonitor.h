@@ -17,6 +17,7 @@ public:
 
 	// Slot 32, called directly so far; declared as a plain member.
 	bool vfunc32(void *pEntity);	// true if pEntity is the camera or no camera is set
+	void vfunc41(class CBasePlayer *pPlayer);	// slot 41 (plain member): hands the center (slot 192, a Vector by value) to the player's sub_10178590
 	void vfunc39(void *pArg);	// slot 39: CBaseEntity::vfunc39(pArg), then the entity found by "FuncMonitor" (sub_10070470) gets its byte at +0x5e8 cleared and pArg's sub_1017cef0 / sub_1015ef40 run
 	void vfunc42(void *pCamera);	// slot 42: CBaseEntity::vfunc42(pCamera) on this, then pCamera's sub_1017cef0 / sub_1015ef60 / sub_101815b0 run
 	CFuncMonitor *vfunc5(unsigned int flags);	// as in CLogicalEntity (transplant)
