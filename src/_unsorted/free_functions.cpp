@@ -95281,6 +95281,57 @@ bool CUnknown101ed6c0::sub_101ed6c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ed800 size=0x17f
+#include "IKeyValues.h"
+#include "CUnknown101ed6c0.h"
+#include "StatDefault2.h"
+
+int *sub_10203920(int *pOut, IKeyValues *pKV);
+int *sub_102038e0(int *pOut, IKeyValues *pKV, const char *pszName);
+
+bool CUnknown101ed6c0::sub_101ed800(void *pFile)
+{
+	IKeyValues *pKV = (IKeyValues *)pFile;
+	if (pKV) {
+		IKeyValues *pTables = pKV->kv2("MPEquipTables");
+		if (pTables) {
+			int v;
+			m_n0c = *sub_10203920(&v, pTables);
+			m_n08 = *sub_102038e0(&v, pTables, "InternalName");
+
+			for (IKeyValues *pNode = pTables->kv2("MPEquip"); pNode; pNode = pNode->kv3()) {
+				if (m_n10 == m_nRecords) {
+					m_n10 += m_nGrow;
+					if (m_pRecords) {
+						StatDefault2 **pNew = (StatDefault2 **)operator new(m_n10 * 4);
+						int i = 0;
+						for (; i < m_nRecords; i++)
+							pNew[i] = ((StatDefault2 **)m_pRecords)[i];
+						for (; i < m_n10; i++)
+							pNew[i] = 0;
+						operator delete(m_pRecords);
+						m_nRecords++;
+						m_pRecords = (CUnknown101ed170 **)pNew;
+					} else {
+						m_pRecords = (CUnknown101ed170 **)operator new(m_n10 * 4);
+						for (int i = 0; i < m_n10; i++)
+							m_pRecords[i] = 0;
+						m_nRecords++;
+					}
+				} else {
+					m_nRecords++;
+				}
+				if (!((StatDefault2 **)m_pRecords)[m_nRecords - 1])
+					((StatDefault2 **)m_pRecords)[m_nRecords - 1] = new StatDefault2(m_n04++);
+				((StatDefault2 **)m_pRecords)[m_nRecords - 1]->sub_101ed210((CVFeatKV *)pNode);
+			}
+			return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ed9e0 size=0xb
 CUnknown101ed9e0 *CUnknown101ed9e0::sub_101ed9e0(int value)
 {
