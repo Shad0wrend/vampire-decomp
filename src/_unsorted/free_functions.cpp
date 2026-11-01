@@ -110173,6 +110173,18 @@ void sub_1022d1e0(CBlock4k *dst, const CBlock4k *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022d210 size=0x3a
+#include "UtlVec256.h"
+
+void UtlVec256::sub_1022d210(int elem, int num)
+{
+	int numToMove = m_Size - elem - num;
+	if (numToMove > 0 && num > 0) {
+		memmove(m_pMemory + (elem + num) * 256, m_pMemory + elem * 256, numToMove * 256);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022d260 size=0x6a
 #include "CUnknown1022d260.h"
 
