@@ -15,6 +15,7 @@ public:
 	virtual void vfunc3(const Vector &origin, const QAngle &angles);	// "Test": a yellow light of radius 200 for 2 seconds at the origin (raised, then 50 units along the flat direction of the angles), created for everybody
 	virtual void vfunc4(CRecipientFilter &filter, float delay);	// "Create" (stub 0x1001229c)
 
+	CTEDynamicLight *sub_10060b60(const char *name);	// constructor body (0x10060b60): the CBaseTempEntityHead constructor with the name, the vtable, the ten zeroed dwords; returns this
 	void sub_10005f51();	// destructor body
 
 	char m_pad0004[8];
