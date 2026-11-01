@@ -2395,6 +2395,7 @@
 0x100051eb func   ?sub_1018e910@@YAXPAVCBaseEntity@@@Z sub_1018e910
 0x100051f0 func   ?sub_10204250@@YI_NPAH@Z sub_10204250
 0x100051f5 func   ?vfunc56@CAI_BaseNPCTroika@@QAEXPAVCBaseEntity@@HHHHHHH@Z CAI_BaseNPCTroika::vfunc56
+0x100051fa func   ?sub_10311b60@@YAHXZ sub_10311b60
 0x100051ff func   ?vfunc278@CBaseTerminal@@QAEHH@Z CBaseTerminal::vfunc278
 0x10005204 func   ?vfunc420@CNPC_VAndreiBlood@@UAEXXZ CNPC_VAndreiBlood::vfunc420
 0x10005209 func   ?sub_103f3770@@YAHXZ sub_103f3770

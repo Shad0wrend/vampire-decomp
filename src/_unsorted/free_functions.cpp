@@ -141153,6 +141153,18 @@ void CUnknown10311a20::sub_10311a20(int key, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10311b60 size=0x20
+#include "globalvars.h"
+
+// TARGET: sub_10311b60
+int sub_10311b60()
+{
+    if (gpGlobals->curtime > 0.0f)
+        return 1;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10311b90 size=0x19
 #include "CAI_Expresser.h"
 
