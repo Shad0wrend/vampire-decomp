@@ -7093,6 +7093,7 @@
 0x1000d3af func   ?sub_1017ce70@CUnknown1017ce70@@QAEXH@Z CUnknown1017ce70::sub_1017ce70
 0x1000d3b4 func   _item_g_edane_report item_g_edane_report
 0x1000d3b9 func   ?vfunc126@CNPC_VMingXiao@@UAEHH@Z CNPC_VMingXiao::vfunc126
+0x1000d3be func   ?sub_102c7360@CUnk102c7360@@QAEXD@Z CUnk102c7360::sub_102c7360
 0x1000d3c3 func   ?vfunc2@CTEDynamicLight@@UAEPAV1@I@Z CTEDynamicLight::vfunc2
 0x1000d3cd func   ?sub_10379e80@@YIXPAUE@@HH@Z sub_10379e80
 0x1000d3d2 func   ?sub_102353a0@@YAHXZ sub_102353a0

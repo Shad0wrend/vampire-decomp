@@ -126294,6 +126294,25 @@ void * CUnknown102c71a0::sub_102c71a0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c7360 size=0x1e
+struct CUnk102c7360 {
+	char m_pad0000[0x19];
+	char m_19;
+	void sub_102c7360(char a);
+	void sub_102c6ff0(int a);
+};
+
+// TARGET: CUnk102c7360::sub_102c7360
+void CUnk102c7360::sub_102c7360(char a)
+{
+	if (a != m_19)
+	{
+		m_19 = a;
+		sub_102c6ff0(0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c7390 size=0xa
 void CUnknown102c7390::sub_102c7390(char value)
 {
