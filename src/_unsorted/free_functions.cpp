@@ -36259,6 +36259,16 @@ void CUnknown106b89bc::sub_100d13d0(CBaseEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d1590 size=0x29
+#include "ehandle.h"
+
+// TARGET: CBaseHandle::sub_100d1590
+IHandleEntity *CBaseHandle::sub_100d1590()
+{
+	return Get();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d1d50 size=0x1af
 #include "CStatDefault3List.h"
 #include "CUnknown1070b22c.h"

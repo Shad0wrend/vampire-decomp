@@ -6845,6 +6845,7 @@
 0x1000ca8b func   _npc_VNosferatu npc_VNosferatu
 0x1000ca9a func   ?sub_101b1880@@YAXHHPBD@Z sub_101b1880
 0x1000ca9f func   ?vfunc80@CMultiplayRules@@UAEXXZ CMultiplayRules::vfunc80
+0x1000caa4 func   ?sub_100d1590@CBaseHandle@@QAEPAVIHandleEntity@@XZ CBaseHandle::sub_100d1590
 0x1000caae func   ?sub_1033e2b0@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_1033e2b0
 0x1000cab3 func   _events_player events_player
 0x1000cab8 func   ?sub_101f02b0@CHolder101f02b0@@QAE_NPAUCSource101f02b0@@@Z CHolder101f02b0::sub_101f02b0
