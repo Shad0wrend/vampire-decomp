@@ -119923,6 +119923,18 @@ void __fastcall sub_1026d0c0(char* p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026d130 size=0x20
+#include "vampire.h"
+#include "CAI_BaseNPC.h"
+// TARGET: CAI_BaseNPC::sub_1026d130
+void CAI_BaseNPC::sub_1026d130()
+{
+    sub_10279a50(0);
+    sub_1026d050();
+    (*(int *)((char *)this + 0x5bb4))++;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026d160 size=0x1e
 struct CUnk1026d160 {
 	char m_pad0000[0x5bb4];

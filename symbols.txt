@@ -2365,6 +2365,7 @@
 0x100050b5 func   ?vfunc47@CMultiplayRules@@UAEDPAVCBaseEntity@@0@Z CMultiplayRules::vfunc47
 0x100050ba func   ?sub_1040bea0@@YAHXZ sub_1040bea0
 0x100050c4 func   ?sub_101cfe10@@YAXPAXHH@Z sub_101cfe10
+0x100050d3 func   ?sub_1026d130@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_1026d130
 0x100050d8 func   ?vfunc1@CTempEntsSystem@@QAEXHHH@Z CTempEntsSystem::vfunc1
 0x100050dd func   ?vfunc104@CInspectionNode@@QAEXXZ CInspectionNode::vfunc104
 0x100050e2 func   _item_p_research_mg_brawl item_p_research_mg_brawl
