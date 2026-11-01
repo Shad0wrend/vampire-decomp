@@ -176,6 +176,7 @@
 0x100014a6 func   ?sub_100d3160@@YAXXZ sub_100d3160
 0x100014ab func   ?vfunc492@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc492
 0x100014b0 func   ?sub_1029b180@CAI_BaseNPCTroika@@QAE_NPAX@Z CAI_BaseNPCTroika::sub_1029b180
+0x100014b5 func   ?vfunc4@CTESpriteSpray@@UAEXPAVCRecipientFilter@@M@Z CTESpriteSpray::vfunc4
 0x100014bf func   ?vfunc2@CPositionInterpolator_Rope@@UAEXHPBVVector@@@Z CPositionInterpolator_Rope::vfunc2
 0x100014d8 func   ?vfunc11@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc11
 0x100014e2 func   ?sub_102d1540@CAI_BaseNPCTroika@@QAE_NPAX@Z CAI_BaseNPCTroika::sub_102d1540

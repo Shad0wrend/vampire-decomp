@@ -67,6 +67,17 @@ void CTESpriteSpray::vfunc3(const Vector *pOrigin, const Vector *pAngles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100686b0 size=0x39
+#include "CTESpriteSpray.h"
+#include "CTEMetalSparks.h"
+#include "IVEngineServerFull.h"
+
+void CTESpriteSpray::vfunc4(CRecipientFilter *pFilter, float flDelay)
+{
+	engine->vfunc103((int)pFilter, *(int *)&flDelay, this, ((CTEMetalSparks *)this)->vfunc0()->m_pTable, ((CTEMetalSparks *)this)->vfunc0()->m_ClassID);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10068770 size=0x6
 #include "CTESpriteSpray.h"
 namespace lifted {
