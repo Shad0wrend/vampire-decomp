@@ -5762,6 +5762,7 @@
 0x1000aa83 func   ?sub_103ee020@@YAHXZ sub_103ee020
 0x1000aa92 func   ?sub_10172410@@YAPAVCBaseEntity@@PAVCBasePlayer@@@Z sub_10172410
 0x1000aa97 func   ?sub_10074a50@CUnknown10074a50@@QAEDXZ CUnknown10074a50::sub_10074a50
+0x1000aa9c func   ??0CUnknown10206400@@QAE@H@Z CUnknown10206400::CUnknown10206400
 0x1000aa9c func   ?sub_10206400@CUnknown10206400@@QAEPAXH@Z CUnknown10206400::sub_10206400
 0x1000aaa1 func   ?sub_10160e60@CUnk10160e60@@QAEMXZ CUnk10160e60::sub_10160e60
 0x1000aaa6 func   ?vfunc0@CAI_NPCPatrolPathSaveRestoreOps@@UAEXPAUSaveRestoreFieldInfo_t@@PAVCSave@@@Z CAI_NPCPatrolPathSaveRestoreOps::vfunc0
