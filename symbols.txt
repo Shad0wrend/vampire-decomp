@@ -3451,6 +3451,7 @@
 0x10007095 func   ?vfunc5@CItemGVampyrApocrypha@@QAEPAV1@I@Z CItemGVampyrApocrypha::vfunc5
 0x1000709a func   ?sub_1007e050@S1007e050@@QAEHH@Z S1007e050::sub_1007e050
 0x1000709f func   ?sub_1039f6f0@@YADXZ sub_1039f6f0
+0x100070a4 func   ?sub_104276d0@CUnknown104276d0@@QAEHH@Z CUnknown104276d0::sub_104276d0
 0x100070a9 func   ?sub_101b3220@CUnknown101b3220@@QAEHXZ CUnknown101b3220::sub_101b3220
 0x100070b3 func   ?sub_10107860@CBaseFilter@@QAEXPAUinputdata_t@@@Z CBaseFilter::sub_10107860
 0x100070b8 func   ?vfunc580@CNPC_VChangBrosClaw@@QAEHXZ CNPC_VChangBrosClaw::vfunc580

@@ -170570,6 +170570,21 @@ int CUnknown104276a0::sub_104276a0(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x104276d0 size=0x1c
+struct CUnknown104276d0 {
+	int m_nCount;	// 0x00
+	int sub_104276d0(int i);
+};
+
+// TARGET: CUnknown104276d0::sub_104276d0
+int CUnknown104276d0::sub_104276d0(int i)
+{
+	if (i >= 1 && i < m_nCount)
+		return *(int *)((char *)this + i * 36 + 12);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10427700 size=0x69
 #include "CUnknown10427700.h"
 #include <string.h>
