@@ -344,6 +344,7 @@
 0x1000197e func   ?sub_101520a0@@YAXPAUgamevcollisionevent_t@@HPAVVector@@1@Z sub_101520a0
 0x10001983 func   ?vfunc33@CSave@@UAEXPBDPAXH@Z CSave::vfunc33
 0x10001988 func   ?sub_102f8fc0@CUnknown102f8fc0@@QAEPAXHH@Z CUnknown102f8fc0::sub_102f8fc0
+0x1000198d func   ?sub_102ae750@CUnk102ae750@@QAEXHH@Z CUnk102ae750::sub_102ae750
 0x10001992 func   ?vfunc241@CFilterClass@@QAE_NPAX@Z CFilterClass::vfunc241
 0x10001997 func   ?vfunc440@CAI_BaseNPCTroika@@QAEHH@Z CAI_BaseNPCTroika::vfunc440
 0x10001997 func   ?vfunc440@CAI_BaseNPCTroika@@UAEHH@Z CAI_BaseNPCTroika::vfunc440

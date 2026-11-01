@@ -124020,6 +124020,21 @@ void CAI_BaseNPCTroika::sub_102ae490(int a, char b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ae750 size=0x1e
+struct CUnk102ae750 {
+	int sub_102cc1f0(int a);
+	void sub_102ae780(int a, int b);
+	void sub_102ae750(int a, int b);
+};
+
+// TARGET: CUnk102ae750::sub_102ae750
+void CUnk102ae750::sub_102ae750(int a, int b)
+{
+	int r = sub_102cc1f0(a);
+	sub_102ae780(r, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ae780 size=0x49
 void CAI_BaseNPCTroika::sub_102ae780(int a, char b)
 {
