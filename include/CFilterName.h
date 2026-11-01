@@ -1,14 +1,16 @@
-// CFilterName: declared by pcdecomp transplant for 0x101085d0 from CBaseCineCam (0x1006d950);
-// only what matched code needs, as plain members.
+// CFilterName (RTTI CFilterName : CBaseFilter), vtable 0x1045bae4, size 0x488.
 #pragma once
 
-class CBaseEntity;
+#include "CBaseFilter.h"
 
-class CFilterName
+class CFilterName : public CBaseFilter
 {
 public:
+	CFilterName() {}
 	CFilterName *vfunc5(unsigned int flags);
 	bool vfunc241(CBaseEntity *pEnt);	// "CFilterName::PassesFilterImpl": the entity's name matches the filter name at +0x484 (case-insensitive; a trailing '*' makes it a prefix match)
 public:
 	datamap_t *vfunc82();
+
+	const char *m_iFilterName;	// 0x484
 };
