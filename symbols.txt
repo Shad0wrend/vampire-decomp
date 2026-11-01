@@ -10567,6 +10567,7 @@
 0x100135c0 func   ?sub_10224150@@YIXPAUCSlots@@HH@Z sub_10224150
 0x100135cf func   ?sub_1034db70@CUnknown1034d620@@QAEPAVCBaseEntity@@XZ CUnknown1034d620::sub_1034db70
 0x100135d4 func   ?sub_102a96f0@@YIXPAUTroikaStub@@@Z sub_102a96f0
+0x100135d9 func   ?sub_10205c70@CVTraitDependencyValue_t@@QAEPAV1@XZ CVTraitDependencyValue_t::sub_10205c70
 0x100135e3 func   ?sub_10088b30@@YAXXZ sub_10088b30
 0x100135e8 func   ?sub_10028b20@CPhysMotor@@QAEXXZ CPhysMotor::sub_10028b20
 0x100135f2 func   ?sub_103a1ef0@@YADXZ sub_103a1ef0

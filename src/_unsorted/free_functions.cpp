@@ -99462,6 +99462,21 @@ const char *CUnknown10205ba0::sub_10205ba0(CUnknown10204bf0 *pNames)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10205c70 size=0x1c
+#include "CVTraitDependencyValue_t.h"
+
+extern int vt_10483d00[];
+
+// TARGET: CVTraitDependencyValue_t::sub_10205c70
+CVTraitDependencyValue_t *CVTraitDependencyValue_t::sub_10205c70()
+{
+	m_18.sub_102056d0();
+	m_vptr = vt_10483d00;
+	sub_10002563();
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10205dc0 size=0x7e
 #include "vampire.h"
 #include "CUnknown10205dc0.h"
