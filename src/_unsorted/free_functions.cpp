@@ -143567,10 +143567,12 @@ void CUnknown10311a20::sub_10311a20(int key, int value)
 // FUNCTION: 0x10311b60 size=0x20
 #include "globalvars.h"
 
+extern float g_10936c40;	// the time the next speech may start (CAI_Expresser::sub_103121a0 sets it), .bss
+
 // TARGET: sub_10311b60
 int sub_10311b60()
 {
-    if (gpGlobals->curtime > 0.0f)
+    if (gpGlobals->curtime > g_10936c40)
         return 1;
     return 0;
 }
