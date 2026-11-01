@@ -25,6 +25,19 @@ public:
 	void vfunc133();	// slot 133: the think timer and the sound: sub_1020c890, sub_10007725, then the global 0x1070b228's +0xc as the next state time at +0x7a0, then sub_1020c3d0
 	void sub_10007725();	// the member called by vfunc133 after sub_1020c890 (stub 0x10007725)
 
+	// Placeholder slots 134..191, then the slots the camera's code calls (192 WorldSpaceCenter, 217 GetAbsOrigin, 221 GetAngles).
+#define CSC_V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+	virtual void s134(); virtual void s135(); virtual void s136(); virtual void s137(); virtual void s138(); virtual void s139();
+	CSC_V10(s14) CSC_V10(s15) CSC_V10(s16) CSC_V10(s17) CSC_V10(s18)
+	virtual void s190(); virtual void s191();
+	virtual Vector vfunc192();	// slot 192 \"WorldSpaceCenter\" (by value, hidden result pointer)
+	virtual void s193(); virtual void s194(); virtual void s195(); virtual void s196(); virtual void s197(); virtual void s198(); virtual void s199();
+	CSC_V10(s20) virtual void s210(); virtual void s211(); virtual void s212(); virtual void s213(); virtual void s214(); virtual void s215(); virtual void s216();
+	virtual float *vfunc217();	// slot 217 \"GetAbsOrigin\"
+	virtual void s218(); virtual void s219(); virtual void s220();
+	virtual float *vfunc221();	// slot 221 \"GetAngles\"
+
 	char m_pad03e0[0x6f0 - 0x3e0];
 	int m_nSequence6f0;	// 0x6f0: the current sequence
 	char m_pad06f4[0x77c - 0x6f4];
