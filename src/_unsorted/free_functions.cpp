@@ -24854,6 +24854,27 @@ void CBaseTransmitProxy::sub_10097bd0()
 void __fastcall sub_10097c90(short *p) { (*(p + 4))++; }
 // END FUNCTION
 
+// FUNCTION: 0x10097cb0 size=0x1d
+struct CUnknown10097cb0 {
+	virtual void vfunc0(int a);
+	char m_pad0004[8 - 4];
+	unsigned short m_us0008;
+	void sub_10097cb0();
+};
+
+// TARGET: CUnknown10097cb0::sub_10097cb0
+void CUnknown10097cb0::sub_10097cb0()
+{
+	if (m_us0008 != 0xffff) {
+		if (m_us0008 <= 1) {
+			vfunc0(1);
+			return;
+		}
+		m_us0008 = m_us0008 - 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10097d40 size=0x1a
 namespace lifted {
 extern int g_105509f8;
