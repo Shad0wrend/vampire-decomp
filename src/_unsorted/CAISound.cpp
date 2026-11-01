@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10599f48;
 }
-CAISound::Datamap82 CAISound::vfunc82()
+datamap_t *CAISound::vfunc82()
 {
-    return (CAISound::Datamap82)&lifted::g_10599f48;
+    return (datamap_t *)&lifted::g_10599f48;
 }
 // END FUNCTION
 
