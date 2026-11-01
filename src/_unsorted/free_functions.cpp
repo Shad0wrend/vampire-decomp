@@ -146554,6 +146554,25 @@ void CBaseCombatCharacter::sub_1033d8a0(inputdata_t *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033d940 size=0x1f
+#include "CStatusFlagList.h"
+
+extern CStatusFlagList g_10739a4c;
+
+struct CUnk1033d940
+{
+    float sub_1033d940(float flValue);
+};
+float CUnk1033d940::sub_1033d940(float flValue)
+{
+    if (g_10739a4c.sub_101e3f50((CStatusTarget *)this))
+    {
+        return flValue + flValue;
+    }
+    return flValue;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033d970 size=0xb
 namespace lifted {
 int __stdcall sub_100153a7(int);

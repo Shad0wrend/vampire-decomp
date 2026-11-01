@@ -3836,6 +3836,7 @@
 0x10007a45 func   ?sub_1030b100@CUtlVector280@@QAEXH@Z CUtlVector280::sub_1030b100
 0x10007a4a func   ?sub_102cc760@CAIPendingCondList@@QAEXPAVCAI_BaseNPCCondTarget@@@Z CAIPendingCondList::sub_102cc760
 0x10007a54 func   ?sub_101c75a0@@YAXXZ sub_101c75a0
+0x10007a59 func   ?sub_1033d940@CUnk1033d940@@QAEMM@Z CUnk1033d940::sub_1033d940
 0x10007a5e func   ?sub_100b7c20@@YAXXZ sub_100b7c20
 0x10007a68 func   ?sub_100b4e80@@YAXH@Z sub_100b4e80
 0x10007a6d func   ?sub_10315a80@CUnknown103160c0@@QAEPAVCBaseEntity@@PBVVector@@M@Z CUnknown103160c0::sub_10315a80
