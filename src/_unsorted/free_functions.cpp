@@ -161986,6 +161986,18 @@ bool CWeaponRanged_FlameThrower::sub_103e3490(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e3900 size=0x20
+#include "CUnknown103e1680.h"
+extern CUnknown103e1680 *g_10940954;
+extern float g_104454c4;
+float sub_103e3900()
+{
+	if (g_10940954->vfunc1())
+		return g_104454c4;
+	return g_10940954->m_f28;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e3930 size=0x264
 #include "CWeaponRanged_FlameThrower.h"
 #include "CBaseEntity.h"

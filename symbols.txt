@@ -2478,6 +2478,7 @@
 0x10005407 func   ?sub_101cba00@CStealthUnit101cba00@@QAEXPAX@Z CStealthUnit101cba00::sub_101cba00
 0x10005411 func   ?sub_100f5620@CUnknown100f5600@@QAEXXZ CUnknown100f5600::sub_100f5620
 0x10005420 func   ?sub_1004c060@CUtlRBTree16Unit@@QAEXG@Z CUtlRBTree16Unit::sub_1004c060
+0x10005425 func   ?sub_103e3900@@YAMXZ sub_103e3900
 0x1000542a func   ?vfunc546@CNPC_VMingXiao@@QAEHH@Z CNPC_VMingXiao::vfunc546
 0x1000542f func   ?sub_102ec3b0@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_102ec3b0
 0x10005434 func   _item_g_hannahs_appt_book item_g_hannahs_appt_book
