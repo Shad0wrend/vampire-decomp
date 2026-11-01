@@ -61,7 +61,7 @@ public:
 	virtual void vfunc12();
 	virtual int vfunc13(int);
 	virtual int vfunc14(int);
-	virtual void vfunc15();
+	virtual void vfunc15(void *pSound, int command, int *pPoints);  // slot 15: slot 16 with the pair at pPoints as its last two arguments
 	virtual float vfunc16(void *pSound, int command, envelopePoint_t *points, int numPoints);	// "SoundPlayEnvelope": clears the commands, adds one per point with random amplitude and duration, returns the total duration
 	virtual void vfunc17(int a);	// slot 17 (0x101bd810): the sound pointer array at +0xc, from the last element down to 0, each element's member 0x10005970 (101bc260) called with a
 	virtual void vfunc18();
