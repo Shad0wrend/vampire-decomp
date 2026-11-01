@@ -172435,6 +172435,21 @@ unsigned int sub_10428e60(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10428e80 size=0x1e
+void *sub_100c7480(int a, int b);
+
+// TARGET: sub_10428e80
+int sub_10428e80(int a, int b)
+{
+	int *p = (int *)sub_100c7480(a, b);
+	if (!p)
+	{
+		return -1;
+	}
+	return p[3];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10428eb0 size=0xd
 int sub_10428eb0(char *p)
 {
