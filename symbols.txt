@@ -5100,6 +5100,7 @@
 0x10009b29 func   ?vfunc5@CPayphone@@QAEPAV1@I@Z CPayphone::vfunc5
 0x10009b33 func   ?sub_101d2300@@YA_NPAVCEntityVSlots@@0@Z sub_101d2300
 0x10009b38 func   ?vfunc82@CPhysTorque@@UAEHXZ CPhysTorque::vfunc82
+0x10009b3d func   ?sub_102c6370@CBaseHandle@@QAEPAVIHandleEntity@@XZ CBaseHandle::sub_102c6370
 0x10009b42 func   ?sub_102a0b90@CUnknown102a0b90@@QAEHH@Z CUnknown102a0b90::sub_102a0b90
 0x10009b47 func   ?sub_101cd340@@YAHPAVCBaseEntity@@@Z sub_101cd340
 0x10009b51 func   ?Links@?$CUtlRBTree@UCRBTree36Entry_1004c5b0@@G@@QBEABULinks_t@1@G@Z CUtlRBTree<CRBTree36Entry_1004c5b0,unsigned short>::Links

@@ -127720,6 +127720,16 @@ unsigned int __stdcall sub_102c62f0(unsigned int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c6370 size=0x29
+#include "ehandle.h"
+
+// TARGET: CBaseHandle::sub_102c6370
+IHandleEntity *CBaseHandle::sub_102c6370()
+{
+	return Get();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c63b0 size=0x47
 #include "CUnknown102c63b0.h"
 bool CUnknown102c63b0::sub_102c63b0(void *pEntity) const
