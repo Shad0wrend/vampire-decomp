@@ -107,3 +107,18 @@ void __stdcall sub_1030c1a0(CUnknown1030c1a0 *pObj)
 	pObj->v8(g_10612968, 1);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1030c1d0 size=0x2b
+#include "CPython_SaveRestoreBlockHandler.h"
+#include "CAI_SaveRestoreBlockHandler.h"
+
+extern short g_10612968;
+
+// TARGET: CAI_SaveRestoreBlockHandler::vfunc6
+void CAI_SaveRestoreBlockHandler::vfunc6(IRestorePy *pRestore)
+{
+	short version;
+	pRestore->ReadShort(&version, 1, 0);
+	*(bool *)((char *)this + 4) = (version == g_10612968);
+}
+// END FUNCTION
