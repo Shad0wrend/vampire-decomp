@@ -157162,6 +157162,21 @@ bool sub_103ad0f0(CBaseCombatCharacter *pChar)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ad540 size=0x20
+extern int vt_104c552c;
+extern int vt_104c5500;
+struct CAI_LocalNavigatorBase_103ad540 { void sub_102ddab0(int arg); };
+
+// TARGET: sub_103ad540
+int *__fastcall sub_103ad540(int *self, int dummy, int arg)
+{
+    ((CAI_LocalNavigatorBase_103ad540 *)self)->sub_102ddab0(arg);
+    self[0] = (int)&vt_104c552c;
+    self[4] = (int)&vt_104c5500;
+    return self;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ad5a0 size=0x12
 namespace lifted {
 extern char g_104c5500;

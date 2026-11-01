@@ -7532,6 +7532,7 @@
 0x1000deb3 func   ?vfunc451@CNPC_VHuman@@UAEPBDXZ CNPC_VHuman::vfunc451
 0x1000debd func   ?sub_1010c780@@YIPAVCFuncAreaPortalBase@@PAV1@@Z sub_1010c780
 0x1000dec2 func   ?sub_1004ea30@@YAEXZ sub_1004ea30
+0x1000dec7 func   ?sub_103ad540@@YIPAHPAHHH@Z sub_103ad540
 0x1000decc func   ?vfunc604@CNPC_VBach@@QAEHH@Z CNPC_VBach::vfunc604
 0x1000ded1 func   ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z CBaseEntityX::sub_10027370
 0x1000dedb func   ?vfunc411@CBaseGrenade@@UAEMXZ CBaseGrenade::vfunc411
