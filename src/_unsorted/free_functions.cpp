@@ -66577,6 +66577,99 @@ void __stdcall sub_10185f90(CBasePlayer *pPlayer, double flFrame)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10186f00 size=0x24a
+#include "CVProfile.h"
+#include "CPlayerMove.h"
+#include "CBasePlayer.h"
+#include "CGameRules.h"
+
+extern CGameRules *g_1070ba0c;
+__declspec(dllimport) void vtune(bool);
+
+struct CPlayerSlots436 {
+	CBP_V100(xa) CBP_V100(xb) CBP_V100(xc) CBP_V100(xf) CBP_V10(xd0) CBP_V10(xd1) CBP_V10(xd2)
+	CBP_V1(xe0) CBP_V1(xe1) CBP_V1(xe2) CBP_V1(xe3) CBP_V1(xe4) CBP_V1(xe5)
+	virtual void vfunc436();
+};
+
+struct CCycleCountV {
+	unsigned __int64 m_Int64;
+	CCycleCountV() { m_Int64 = 0; }
+	void Sample() {
+		unsigned int *pSt = (unsigned int *)&m_Int64;
+		__asm {
+			mov ecx, pSt
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+	void End() {
+		CCycleCountV stamp;
+		stamp.Sample();
+		m_Int64 = stamp.m_Int64 - m_Int64;
+	}
+	void Add(const CCycleCountV &r) { m_Int64 += r.m_Int64; }
+};
+
+struct CVProfNodeV {
+	char m_pad[8];
+	CCycleCountV m_CurFrameTime;
+	int m_nRecursions;
+	int m_nCurFrameCalls;
+	CCycleCountV m_TotalTime;
+	char m_pad2[0x48 - 0x20];
+	CVProfNodeV *m_pParent;
+	bool Exit() {
+		if (--m_nRecursions == 0 && m_nCurFrameCalls != 0) {
+			m_CurFrameTime.End();
+			m_TotalTime.Add(m_CurFrameTime);
+			g_109f3648->PopGroup();
+		}
+		return m_nRecursions == 0;
+	}
+};
+
+struct CVProfScopeV {
+	CVProfScopeV() {
+		CVProfile *p = g_109f3648;
+		if (p->m_enabled || !p->m_bAtRoot) {
+			if (p->m_pCurNode->m_pszName != "CPlayerMove::RunPreThink")
+				p->m_pCurNode = p->m_pCurNode->GetSubNode("CPlayerMove::RunPreThink", 0, "Unaccounted");
+			CVProfNode *n = p->m_pCurNode;
+			n->m_nCurFrameCalls++;
+			if (n->m_nRecursions++ == 0) {
+				((CCycleCountV *)&n->m_CurFrameTime)->Sample();
+				CVProfile *q = g_109f3648;
+				int g = n->m_nBudgetGroupID;
+				q->m_GroupIDStack[q->m_nGroupStackDepth] = g;
+				q->m_nGroupStackDepth++;
+				if (q->m_GroupIDStack[q->m_nGroupStackDepth - 2] != g && q->m_bVTuneGroupsEnabled && g == q->m_nVTuneGroupID)
+					vtune(true);
+			}
+			p->m_bAtRoot = false;
+		}
+	}
+	~CVProfScopeV() {
+		CVProfile *p = g_109f3648;
+		if (!p->m_bAtRoot || p->m_enabled) {
+			if (((CVProfNodeV *)p->m_pCurNode)->Exit())
+				p->m_pCurNode = p->m_pCurNode->m_pParent;
+			p->m_bAtRoot = (p->m_pCurNode == p->m_pRoot);
+		}
+	}
+};
+
+void CPlayerMove::sub_10186f00(CBasePlayer *pPlayer)
+{
+	CVProfScopeV scope;
+	if (!((CBaseEntity *)pPlayer)->sub_10033f60(0))
+		return;
+	g_1070ba0c->vfunc36((CBaseEntity *)pPlayer);
+	((CPlayerSlots436 *)pPlayer)->vfunc436();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101871f0 size=0x69
 #define PV1(p) virtual void p();
 #define PV10(p) PV1(p##0) PV1(p##1) PV1(p##2) PV1(p##3) PV1(p##4) PV1(p##5) PV1(p##6) PV1(p##7) PV1(p##8) PV1(p##9)
