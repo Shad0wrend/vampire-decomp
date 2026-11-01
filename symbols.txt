@@ -3260,6 +3260,7 @@
 0x10006901 func   ?vfunc5@CWeaponRanged_Smg_Uzi@@QAEPAV1@I@Z CWeaponRanged_Smg_Uzi::vfunc5
 0x10006906 func   ?sub_101f25a0@@YIHPAD@Z sub_101f25a0
 0x10006910 func   ?sub_100eb030@CUnknown100eb030@@QAEPAXH@Z CUnknown100eb030::sub_100eb030
+0x10006915 func   ?sub_1005fca0@CTEBubbleTrail@@QAEPAV1@PBD@Z CTEBubbleTrail::sub_1005fca0
 0x1000691a func   ?vfunc438@CNPC_VCop@@QAEHXZ CNPC_VCop::vfunc438
 0x10006929 func   ?vfunc485@CHL2_Player@@UAE_NH@Z CHL2_Player::vfunc485
 0x10006933 func   ?vfunc362@CWeaponThrown_Chang_Energy_Ball@@QAEHXZ CWeaponThrown_Chang_Energy_Ball::vfunc362

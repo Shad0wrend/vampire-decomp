@@ -10868,6 +10868,34 @@ void sub_1005fc00(int a, int b, const int *mins, const int *maxs, int p5, int p6
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005fca0 size=0x39
+#include "CTEBubbleTrail.h"
+
+extern int vt_1044ddb8[];
+
+struct CBaseTempEntityHeadPlaceholder {
+    void sub_100507e0(const char *name);
+};
+
+// TARGET: CTEBubbleTrail::sub_1005fca0
+CTEBubbleTrail *CTEBubbleTrail::sub_1005fca0(const char *name)
+{
+	((CBaseTempEntityHeadPlaceholder *)this)->sub_100507e0(name);
+	*(int **)this = vt_1044ddb8;
+	*(int *)((char *)this + 0x0c) = 0;
+	*(int *)((char *)this + 0x10) = 0;
+	*(int *)((char *)this + 0x14) = 0;
+	*(int *)((char *)this + 0x18) = 0;
+	*(int *)((char *)this + 0x1c) = 0;
+	*(int *)((char *)this + 0x20) = 0;
+	*(int *)((char *)this + 0x24) = 0;
+	*(int *)((char *)this + 0x28) = 0;
+	*(int *)((char *)this + 0x2c) = 0;
+	*(int *)((char *)this + 0x30) = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005fd20 size=0xb
 namespace lifted {
 extern char g_1044ddb8;
