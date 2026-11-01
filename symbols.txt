@@ -7577,6 +7577,7 @@
 0x1000da2b func   ?sub_101bf6a0@CUtlRBTree12@@QAEHH@Z CUtlRBTree12::sub_101bf6a0
 0x1000da30 func   ?sub_1003c3a0@CUnknown1003c3a0@@QAEPAXXZ CUnknown1003c3a0::sub_1003c3a0
 0x1000da35 func   ?vfunc80@CWeaponMelee_Tzimisce3Claw@@QAEHXZ CWeaponMelee_Tzimisce3Claw::vfunc80
+0x1000da44 func   ?vfunc117@CFunc_Dust@@QAEDXZ CFunc_Dust::vfunc117
 0x1000da49 func   ?vfunc370@CBaseCombatCharacter@@QAE?AVVector@@XZ CBaseCombatCharacter::vfunc370
 0x1000da4e func   ?vfunc580@CNPC_VLasombra@@UAEHXZ CNPC_VLasombra::vfunc580
 0x1000da58 func   _aiscripted_schedule aiscripted_schedule

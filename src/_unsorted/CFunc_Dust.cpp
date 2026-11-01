@@ -31,6 +31,12 @@ int CFunc_Dust::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10113c10 size=0x8
+#include "CFunc_Dust.h"
+// TARGET: CFunc_Dust::vfunc117
+char CFunc_Dust::vfunc117() { char c = ((CBaseEntity *)this)->CBaseEntity::vfunc117(); return c & (char)0xfd; }
+// END FUNCTION
+
 // FUNCTION: 0x10113cc0 size=0x1e
 #include "CFunc_Dust.h"
 
