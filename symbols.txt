@@ -4059,6 +4059,7 @@
 0x10007f4f func   ?sub_10319f30@CUnknown10319f30@@QAE_NH@Z CUnknown10319f30::sub_10319f30
 0x10007f54 func   ?vfunc134@CEnvFireSensor@@QAEXXZ CEnvFireSensor::vfunc134
 0x10007f77 func   ?vfunc80@CWeaponMelee_Claws@@QAEHXZ CWeaponMelee_Claws::vfunc80
+0x10007f7c func   ?sub_1007f8c0@CUtlRBTree24@@QAEXHH_N@Z CUtlRBTree24::sub_1007f8c0
 0x10007f81 func   ?sub_1005d2a0@CUnknown1005d2a0@@QAEHXZ CUnknown1005d2a0::sub_1005d2a0
 0x10007f86 func   ?sub_102c29a0@CTroikaInputUnit@@QAEXPAUinputdata_t@@@Z CTroikaInputUnit::sub_102c29a0
 0x10007f90 func   ?sub_100bdf10@bf_write@@QAEPAV1@PAXHH@Z bf_write::sub_100bdf10
