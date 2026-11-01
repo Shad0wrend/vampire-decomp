@@ -20271,6 +20271,23 @@ void *CSceneEntity::sub_100839c0(const char *pszScene)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10083a30 size=0x1e
+// TARGET: CUnk10083a30::sub_10083a30
+struct CUnk10083a30
+{
+    char pad[0x4bc];
+    int m_4bc;
+    void sub_10083a60();
+    int sub_100839c0(int a);
+    void sub_10083a30(int a);
+};
+void CUnk10083a30::sub_10083a30(int a)
+{
+    sub_10083a60();
+    m_4bc = sub_100839c0(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10083a60 size=0x49
 #include "CSceneEntity.h"
 struct SceneView { char m_pad[4]; void sub_100799b0(); };
