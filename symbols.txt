@@ -9252,6 +9252,7 @@
 0x10010cd0 func   ?sub_101f0b80@CUnknown101f0b80@@QAEXHH@Z CUnknown101f0b80::sub_101f0b80
 0x10010cd5 func   ?sub_101b2320@CUnknown101b2570@@QAEPBDXZ CUnknown101b2570::sub_101b2320
 0x10010cda func   ?sub_102ea090@CUnknown102ea090@@QAEPAU1@D@Z CUnknown102ea090::sub_102ea090
+0x10010ce4 func   ?sub_10429f40@@YIXPADHHHHH@Z sub_10429f40
 0x10010ce9 func   _env_soundscape env_soundscape
 0x10010cee func   ?vfunc420@CNPC_VGhoulCroucher@@QAEXXZ CNPC_VGhoulCroucher::vfunc420
 0x10010cf3 func   ?sub_101d9210@CUnknown101d9210@@QAEXXZ CUnknown101d9210::sub_101d9210

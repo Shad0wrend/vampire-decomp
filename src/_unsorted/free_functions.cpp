@@ -174523,6 +174523,22 @@ extern "C" CBaseEntity *grenade()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10429f40 size=0x23
+#include "globalvars.h"
+struct CThinkCall_10429f40
+{
+    void sub_100ac4e0(void *fn, int a, int b);
+};
+void sub_1000f57e();
+
+// TARGET: sub_10429f40
+void __fastcall sub_10429f40(char *self, int dummy, int a, int b, int c, int d)
+{
+    ((CThinkCall_10429f40 *)self)->sub_100ac4e0((void *)sub_1000f57e, 0, 0);
+    *(float *)(self + 0x17c) = gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10429f80 size=0x49
 #define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 struct CSlot220View
