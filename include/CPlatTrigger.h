@@ -24,7 +24,7 @@ class CPlatTrigger : public CBaseEntity
 {
 public:
 	CPlatTrigger() : CBaseEntity(0) {}
-	void *operator new(unsigned int size);	// the entities' operator new (stub 0x1000db89)
+	void *operator new(unsigned int size) { return sub_100aa720(size); }	// the entities' operator new (stub 0x1000db89)
 	CPlatTrigger *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
 	void vfunc175(CBaseEntity *pOther);	// slot 175 "CPlatTrigger::Touch": for a living entity with an edict, a platform at the bottom (state 1) is sent up (slot 242), one at the top (state 0) gets its move done time pushed back by one second
