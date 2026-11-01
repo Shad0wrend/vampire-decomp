@@ -5,9 +5,9 @@
 namespace lifted {
 extern char g_106504e8;
 }
-int CNPC_VSheriffMan::vfunc82()
+CNPC_VSheriffMan::Datamap82 CNPC_VSheriffMan::vfunc82()
 {
-    return (int)&lifted::g_106504e8;
+    return (CNPC_VSheriffMan::Datamap82)&lifted::g_106504e8;
 }
 // END FUNCTION
 
