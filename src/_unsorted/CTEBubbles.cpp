@@ -1,6 +1,34 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1005f5c0 size=0x39
+#include "CTEBubbles.h"
+
+extern int vt_1044dd90[];
+
+struct CBaseTempEntityHeadPlaceholder {
+    void sub_100507e0(const char *name);
+};
+
+// TARGET: CTEBubbles::sub_1005f5c0
+CTEBubbles *CTEBubbles::sub_1005f5c0(const char *name)
+{
+	((CBaseTempEntityHeadPlaceholder *)this)->sub_100507e0(name);
+	*(int **)this = vt_1044dd90;
+	*(int *)((char *)this + 0x0c) = 0;
+	*(int *)((char *)this + 0x10) = 0;
+	*(int *)((char *)this + 0x14) = 0;
+	*(int *)((char *)this + 0x18) = 0;
+	*(int *)((char *)this + 0x1c) = 0;
+	*(int *)((char *)this + 0x20) = 0;
+	*(int *)((char *)this + 0x24) = 0;
+	*(int *)((char *)this + 0x28) = 0;
+	*(int *)((char *)this + 0x2c) = 0;
+	*(int *)((char *)this + 0x30) = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005f610 size=0x1e
 #include "CTEBubbles.h"
 
