@@ -310,7 +310,9 @@ public:
 	char m_b63da;
 	char m_pad63db[0x63f0 - 0x63db];
 	char m_b63f0;	// 0x63f0
-	char m_pad63f1[0x6420 - 0x63f1];
+	char m_pad63f1[0x63f8 - 0x63f1];
+	int m_n63f8;	// 0x63f8
+	char m_pad63fc[0x6420 - 0x63fc];
 	int m_nRoll6420;	// 0x6420 .. 0x642c: the roll thresholds of slot 606
 	int m_nRoll6424;
 	int m_nRoll6428;
