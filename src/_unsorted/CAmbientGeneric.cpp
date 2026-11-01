@@ -5,9 +5,9 @@
 namespace lifted {
 extern char g_105969a4;
 }
-int CAmbientGeneric::vfunc82()
+CAmbientGeneric::Datamap82 CAmbientGeneric::vfunc82()
 {
-    return (int)&lifted::g_105969a4;
+    return (CAmbientGeneric::Datamap82)&lifted::g_105969a4;
 }
 // END FUNCTION
 
