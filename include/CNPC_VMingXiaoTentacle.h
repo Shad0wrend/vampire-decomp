@@ -15,6 +15,7 @@ public:
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	void *vfunc408(int condition);	// slot 408 override: the address of the state's data for the conditions 0x77 / 0x78 / 0x79 (0x1064a42c / 0x1064a430 / 0x1064a434), else the base's slot 408 (sub_1027ede0, tail call)
 	void *sub_1027ede0(int condition);	// CAI_BaseNPC::vfunc408 (stub 0x10011590), called directly
+	int sub_102b12f0(int a);	// CAI_BaseNPCTroika::vfunc440 (stub 0x10001997), the tail call of vfunc440
 	int vfunc461();	// "CNPC_VMingXiaoTentacle::SelectIdealState": picks the ideal state (1, 2 or 7) and its schedule from slot 167
 	void sub_1039ea60();	// stub 0x10007266, run by the NPC's Event_Killed on every tentacle
 	void sub_10395ce0();	// stub 0x1000d9fe, run on every live tentacle of the new-slot handles (+0x668c)
