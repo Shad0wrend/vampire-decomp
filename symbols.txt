@@ -2269,6 +2269,7 @@
 0x10004e03 func   ?sub_10196d10@@YAPAXPAX0@Z sub_10196d10
 0x10004e08 func   ?sub_101d13a0@@YAIPAUTEnt@@@Z sub_101d13a0
 0x10004e0d func   ?vfunc0@CTraceFilterPlayerMovement@@UAE_NPAXH@Z CTraceFilterPlayerMovement::vfunc0
+0x10004e1c func   ?sub_101486e0@CGravityPellet@@QAEXXZ CGravityPellet::sub_101486e0
 0x10004e21 func   ?vfunc362@CWeaponMelee_FireAxe@@QAEHXZ CWeaponMelee_FireAxe::vfunc362
 0x10004e2b func   ?sub_101f73f0@CVTraitEffectGroup_t@@QAEXPAUCVStatKV@@@Z CVTraitEffectGroup_t::sub_101f73f0
 0x10004e30 func   ?sub_101e3e70@CUnknown101e0f00@@QAEXPAUS1033d380@@PBD@Z CUnknown101e0f00::sub_101e3e70

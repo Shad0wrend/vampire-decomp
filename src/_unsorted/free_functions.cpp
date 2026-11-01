@@ -59048,6 +59048,37 @@ void CFooUnit_101486c0::sub_101486c0(int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101486e0 size=0x27
+#include "CGravityPellet.h"
+
+struct IPhysicsEnvironmentStub
+{
+	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4();
+	virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
+	virtual void vfunc10(); virtual void vfunc11(); virtual void vfunc12(); virtual void vfunc13(); virtual void vfunc14();
+	virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17(); virtual void vfunc18(); virtual void vfunc19();
+	virtual void vfunc20(); virtual void vfunc21(); virtual void vfunc22();
+	virtual void DestroySpring(void *pSpring);
+};
+
+struct CBaseEntityDtor
+{
+	void sub_1008b3c0();	// CBaseEntity destructor body
+};
+
+extern IPhysicsEnvironmentStub *g_10723940;
+extern void *vt_1046c424[];
+
+// TARGET: CGravityPellet::sub_101486e0
+void CGravityPellet::sub_101486e0()
+{
+	*(void ***)this = vt_1046c424;
+	if (m_pSpring)
+		g_10723940->DestroySpring(m_pSpring);
+	((CBaseEntityDtor *)this)->sub_1008b3c0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10148780 size=0xb
 namespace lifted {
 extern char g_1046c920;
