@@ -10,7 +10,7 @@ public:
 
 	char m_pad0000[8];
 	Vector m_vOrigin;	// 0x0008
-	float m_fHeight[0x14];	// 0x0014: per-index heights (type 2)
+	float m_fHeight[22];	// 0x0014: per-index heights (type 2)
 	float m_fAngle;	// 0x006c: yaw in degrees
 	int m_nType;	// 0x0070
 	unsigned int m_nFlags;	// 0x0074
