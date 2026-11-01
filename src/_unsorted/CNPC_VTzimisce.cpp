@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10653130;
 }
-int CNPC_VTzimisce::vfunc82()
+CNPC_VTzimisce::Datamap82 CNPC_VTzimisce::vfunc82()
 {
-    return (int)&lifted::g_10653130;
+    return (CNPC_VTzimisce::Datamap82)&lifted::g_10653130;
 }
 // END FUNCTION
 
