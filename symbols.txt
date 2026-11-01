@@ -1521,6 +1521,7 @@
 0x10003837 func   ?sub_1010e620@CBreakable@@QAEXXZ CBreakable::sub_1010e620
 0x1000383c func   ?vfunc81@CWeaponMelee_ChangClaw@@QAEHXZ CWeaponMelee_ChangClaw::vfunc81
 0x10003841 func   ?vfunc103@CNPC_Crow@@QAEXXZ CNPC_Crow::vfunc103
+0x10003846 func   ?sub_10271d10@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_10271d10
 0x1000384b func   ?vfunc243@CBaseDoor@@UAEXDH@Z CBaseDoor::vfunc243
 0x10003850 func   ?vfunc500@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc500
 0x10003855 func   ?vfunc29@CSave@@UAEXPBDPAXH@Z CSave::vfunc29

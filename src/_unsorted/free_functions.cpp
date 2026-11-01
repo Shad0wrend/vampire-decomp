@@ -124746,6 +124746,83 @@ void __fastcall sub_10271b10(CAI_BaseNPC *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10271d10 size=0x1a2
+#include "CAI_BaseNPC.h"
+#include "CVProfile.h"
+#include "ehandle.h"
+
+extern CAI_BaseNPC *g_10924a6c;
+extern "C" __declspec(dllimport) void vtune(int);
+
+struct CCycleCountX {
+	unsigned __int64 m_Int64;
+	void Sample() {
+		unsigned long *pSample = (unsigned long *)&m_Int64;
+		__asm {
+			mov ecx, pSample
+			rdtsc
+			mov [ecx], eax
+			mov [ecx+4], edx
+		}
+	}
+	void End() {
+		CCycleCountX t;
+		t.m_Int64 = 0;
+		t.Sample();
+		m_Int64 = t.m_Int64 - m_Int64;
+	}
+	void Add(const CCycleCountX &r) {
+		m_Int64 += r.m_Int64;
+	}
+};
+
+struct CNodeExit : CVProfNode {
+	void Exit() {
+		if (--m_nRecursions == 0 && m_nCurFrameCalls != 0) {
+			CCycleCountX *cur = (CCycleCountX *)&m_CurFrameTime;
+			cur->End();
+			((CCycleCountX *)&m_TotalTime)->Add(*cur);
+			CVProfile *p = g_109f3648;
+			p->m_nGroupStackDepth--;
+			int a = p->m_GroupIDStack[p->m_nGroupStackDepth + 1];
+			int b = p->m_GroupIDStack[p->m_nGroupStackDepth];
+			if (b != a && p->m_bVTuneGroupsEnabled && a == p->m_nVTuneGroupID)
+				vtune(0);
+		}
+	}
+};
+
+// TARGET: CAI_BaseNPC::sub_10271d10
+void CAI_BaseNPC::sub_10271d10(CBaseEntity *pTarget)
+{
+	CVProfile *p = g_109f3648;
+	if (p->m_enabled || !p->m_bAtRoot) {
+		if (p->m_pCurNode->m_pszName != "CAI_Memory_CheckTarget")
+			p->m_pCurNode = p->m_pCurNode->GetSubNode("CAI_Memory_CheckTarget", 0, "Unaccounted");
+		p->m_pCurNode->EnterScope();
+		p->m_bAtRoot = false;
+	}
+	sub_10269b50(0x4b);
+	sub_10269b50(0x49);
+	if (!vfunc201(pTarget, 0x2804091, 0, 0)) {
+		g_10924a6c->vfunc1();
+		sub_10269a20(0x49);
+	} else {
+		g_10924a6c->vfunc1();
+		sub_10269a20(0x4b);
+	}
+	sub_10271b10();
+	p = g_109f3648;
+	if (!p->m_bAtRoot || p->m_enabled) {
+		CNodeExit *n = (CNodeExit *)p->m_pCurNode;
+		n->Exit();
+		if (n->m_nRecursions == 0)
+			p->m_pCurNode = p->m_pCurNode->m_pParent;
+		p->m_bAtRoot = (p->m_pCurNode == p->m_pRoot);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10271f30 size=0x3
 void __stdcall sub_10271f30(int a0)
 {
