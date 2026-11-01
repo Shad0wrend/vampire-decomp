@@ -123,6 +123,24 @@ L:
 }
 // END FUNCTION
 
+// FUNCTION: 0x101291f0 size=0x35
+#include "CGameRules.h"
+#include "CVoiceGameMgr.h"
+#include "globalvars.h"
+
+extern int g_10627728;
+CVoiceGameMgr *sub_10232400();
+void sub_101c2c30();
+
+// TARGET: ??0CGameRules@@QAE@XZ
+CGameRules::CGameRules()
+{
+    *(int *)((char *)this + 4) = 0;
+    sub_10232400()->sub_102324a0((void *)g_10627728, gpGlobals->maxClients);
+    sub_101c2c30();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10129240 size=0x3
 int CGameRules::vfunc1()
 {
