@@ -7,10 +7,15 @@
 class IFileSystemView
 {
 public:
-	VIEW_SLOT(0) VIEW_SLOT(1) VIEW_SLOT(2)
+	virtual int vfunc0(const char *pszFile, const char *pszMode, int arg);	// slot 0: opens a file, returns its handle (0 on failure)
+	virtual void vfunc1(int hFile);	// slot 1 (+0x4): closes the handle
+	VIEW_SLOT(2)
 	virtual void vfunc3(const char *pszFile, int length, int arg);	// slot 3 (+0xc): takes a file name with its length and an argument
 	VIEW_SLOT(4) VIEW_SLOT(5) VIEW_SLOT(6) VIEW_SLOT(7) VIEW_SLOT(8) VIEW_SLOT(9)
-	VIEW_SLOT10(1) VIEW_SLOT(20) VIEW_SLOT(21)
+	VIEW_SLOT(10) VIEW_SLOT(11) VIEW_SLOT(12) VIEW_SLOT(13)
+	virtual void vfunc14(const char *pszFile, int arg);	// slot 14 (+0x38): removes a file
+	VIEW_SLOT(15) VIEW_SLOT(16) VIEW_SLOT(17) VIEW_SLOT(18) VIEW_SLOT(19)
+	VIEW_SLOT(20) VIEW_SLOT(21)
 	virtual const char *FindFirst(const char *pWildCard, int *pHandle);	// slot 22 (+0x58)
 	virtual const char *FindNext(int handle);	// slot 23 (+0x5c)
 	virtual bool FindIsDirectory(int handle);	// slot 24 (+0x60)
