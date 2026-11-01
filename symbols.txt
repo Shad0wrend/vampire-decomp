@@ -2023,6 +2023,7 @@
 0x100046c4 func   ?sub_1021a560@CUnk1021a560@@QAEXH@Z CUnk1021a560::sub_1021a560
 0x100046dd func   ?sub_10078860@@YIXPAD@Z sub_10078860
 0x100046e2 func   ?sub_103c4840@@YAHXZ sub_103c4840
+0x100046ec func   ?sub_10185260@UtlVec64@@QAEXHH@Z UtlVec64::sub_10185260
 0x100046f6 func   ?vfunc291@CWeaponRanged_FlameThrower@@UAEXXZ CWeaponRanged_FlameThrower::vfunc291
 0x100046fb func   ?sub_1018c4d0@CUnknown1018c4d0@@QAEXD@Z CUnknown1018c4d0::sub_1018c4d0
 0x10004705 func   ?sub_10158520@@YAXH@Z sub_10158520

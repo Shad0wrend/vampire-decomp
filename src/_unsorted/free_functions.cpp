@@ -67062,6 +67062,18 @@ void CUtlVector64::sub_101851a0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10185260 size=0x3a
+#include "UtlVec64.h"
+
+void UtlVec64::sub_10185260(int elem, int num)
+{
+	int numToMove = m_Size - elem - num;
+	if (numToMove > 0 && num > 0) {
+		memmove(m_pMemory + (elem + num) * 64, m_pMemory + elem * 64, numToMove * 64);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101852b0 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);
