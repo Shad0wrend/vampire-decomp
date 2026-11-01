@@ -26,7 +26,11 @@ public:
     virtual void vfunc4();
     virtual CWeaponRanged *vfunc5(unsigned int flags);
     CWR_V(6) CWR_V(7) CWR_V(8) CWR_V(9)
-    CWR_V10(1) CWR_V10(2) CWR_V10(3) CWR_V10(4) CWR_V10(5) CWR_V10(6) CWR_V10(7) CWR_V10(8) CWR_V10(9)
+    CWR_V10(1) CWR_V10(2) CWR_V10(3) CWR_V10(4) CWR_V10(5) CWR_V10(6) CWR_V10(7)
+    virtual int vfunc80();  // slot 80: int result (CWeaponRanged_MingXiao_Spit 0x1023...)
+    virtual int vfunc81();
+    CWR_V(82) CWR_V(83) CWR_V(84) CWR_V(85) CWR_V(86) CWR_V(87) CWR_V(88) CWR_V(89)
+    CWR_V10(9)
     CWR_V10(10) CWR_V10(11) CWR_V10(12) CWR_V10(13) CWR_V10(14) CWR_V10(15) CWR_V10(16) CWR_V10(17) CWR_V10(18) CWR_V10(19)
     CWR_V10(20) CWR_V10(21) CWR_V10(22) CWR_V10(23) CWR_V10(24) CWR_V10(25) CWR_V10(26) CWR_V10(27) CWR_V10(28) CWR_V10(29)
     CWR_V(300) CWR_V(301) CWR_V(302) CWR_V(303) CWR_V(304) CWR_V(305) CWR_V(306)
