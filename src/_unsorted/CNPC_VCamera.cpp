@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_1062f650;
 }
-int CNPC_VCamera::vfunc82()
+CNPC_VCamera::Datamap82 CNPC_VCamera::vfunc82()
 {
-    return (int)&lifted::g_1062f650;
+    return (CNPC_VCamera::Datamap82)&lifted::g_1062f650;
 }
 // END FUNCTION
 
