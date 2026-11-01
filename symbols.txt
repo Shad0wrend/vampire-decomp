@@ -5370,6 +5370,7 @@
 0x1000a461 func   ?vfunc291@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc291
 0x1000a466 func   ?sub_1013eb90@@YG_NPAVCBaseEntity@@I@Z sub_1013eb90
 0x1000a46b func   ?sub_101753e0@CUnknown101753e0@@QAEHXZ CUnknown101753e0::sub_101753e0
+0x1000a470 func   ?sub_1007a310@CUnk1007a310@@QAEHH@Z CUnk1007a310::sub_1007a310
 0x1000a47a func   ?sub_102c62c0@CUnknown102c62c0@@QAEPAXH@Z CUnknown102c62c0::sub_102c62c0
 0x1000a47f func   ?sub_1018c2b0@CPointCamera@@QAEXXZ CPointCamera::sub_1018c2b0
 0x1000a484 func   ?sub_1042df50@@YAHXZ sub_1042df50

@@ -18162,6 +18162,41 @@ int CUnknown1007a2f0::sub_1007a2f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007a310 size=0x1f
+struct CUnk1007a310 {
+	char m_pad0000[0x28];
+	int *m_p28;
+	char m_pad002c[0x34 - 0x2c];
+	int m_34;
+	int sub_1007a310(int index);
+};
+
+namespace block_1007a2f0 {
+	struct CUnk1007a310Unit : CUnk1007a310 {
+		int sub_1007a2f0();
+	};
+	int CUnk1007a310Unit::sub_1007a2f0()
+	{
+		return m_34;
+	}
+}
+using namespace block_1007a2f0;
+
+// TARGET: CUnk1007a310::sub_1007a310
+int CUnk1007a310::sub_1007a310(int index)
+{
+	if (index >= 0)
+	{
+		int count = ((block_1007a2f0::CUnk1007a310Unit *)this)->sub_1007a2f0();
+		if (index < count)
+		{
+			return m_p28[index];
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007a340 size=0x33
 int __stdcall sub_1000d701();
 int __stdcall sub_1000a470(int i);
