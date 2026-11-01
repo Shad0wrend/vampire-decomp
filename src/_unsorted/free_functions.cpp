@@ -128196,6 +128196,18 @@ void __fastcall sub_102cc560(void *pThis, int, float flDelay)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cc590 size=0x21
+#include "globalvars.h"
+
+// TARGET: sub_102cc590
+void __fastcall sub_102cc590(char *self, int dummy, float t)
+{
+    float v = t + gpGlobals->curtime;
+    if (v < *(float *)(self + 4))
+        *(float *)(self + 4) = v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cc5d0 size=0x11
 #include "vampire.h"
 
