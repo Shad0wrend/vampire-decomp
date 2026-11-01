@@ -7123,6 +7123,7 @@
 0x1000cf13 func   ?sub_1005b6c0@@YAHXZ sub_1005b6c0
 0x1000cf18 func   ?sub_101dbdf0@@YAXXZ sub_101dbdf0
 0x1000cf1d func   ?sub_102e8a80@@YIXPAHHH@Z sub_102e8a80
+0x1000cf22 func   ?sub_102b8cd0@CAI_BaseNPCTroikaUnit@block_102b8cd0@@QAEEPAX@Z block_102b8cd0::CAI_BaseNPCTroikaUnit::sub_102b8cd0
 0x1000cf27 func   ?sub_104287d0@@YAPBDHH@Z sub_104287d0
 0x1000cf2c func   ?sub_10078880@@YIXPAD@Z sub_10078880
 0x1000cf31 func   ?sub_100eb310@CUnknown100eb310@@QAEXH@Z CUnknown100eb310::sub_100eb310

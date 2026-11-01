@@ -128039,6 +128039,85 @@ bool CAI_BaseNPCTroika::sub_102b7f40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b8cd0 size=0x38
+#include "CAI_BaseNPCTroika.h"
+
+#define CSV_ROW(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CNPCSlotView
+{
+	CSV_ROW(r0)
+	CSV_ROW(r1)
+	CSV_ROW(r2)
+	CSV_ROW(r3)
+	CSV_ROW(r4)
+	CSV_ROW(r5)
+	CSV_ROW(r6)
+	CSV_ROW(r7)
+	CSV_ROW(r8)
+	CSV_ROW(r9)
+	CSV_ROW(r10)
+	CSV_ROW(r11)
+	CSV_ROW(r12)
+	CSV_ROW(r13)
+	CSV_ROW(r14)
+	CSV_ROW(r15)
+	CSV_ROW(r16)
+	CSV_ROW(r17)
+	CSV_ROW(r18)
+	CSV_ROW(r19)
+	CSV_ROW(r20)
+	CSV_ROW(r21)
+	CSV_ROW(r22)
+	CSV_ROW(r23)
+	CSV_ROW(r24)
+	CSV_ROW(r25)
+	CSV_ROW(r26)
+	CSV_ROW(r27)
+	CSV_ROW(r28)
+	CSV_ROW(r29)
+	CSV_ROW(r30)
+	CSV_ROW(r31)
+	CSV_ROW(r32)
+	CSV_ROW(r33)
+	CSV_ROW(r34)
+	CSV_ROW(r35)
+	CSV_ROW(r36)
+	CSV_ROW(r37)
+	CSV_ROW(r38)
+	CSV_ROW(r39)
+	virtual void r400();
+	virtual void r401();
+	virtual void r402();
+	virtual void r403();
+	virtual int vfunc404(void *pEnt);
+};
+
+namespace block_102b8cd0 {
+	struct CAI_BaseNPCTroikaUnit : CAI_BaseNPCTroika
+	{
+		unsigned char sub_102b8cd0(void *pEnt);
+	};
+
+	// TARGET: block_102b8cd0::CAI_BaseNPCTroikaUnit::sub_102b8cd0
+	unsigned char CAI_BaseNPCTroikaUnit::sub_102b8cd0(void *pEnt)
+	{
+		if (pEnt != 0)
+		{
+			if (((CNPCSlotView *)this)->vfunc404(pEnt) != 1)
+			{
+				if (((CNPCSlotView *)this)->vfunc404(pEnt) != 2)
+				{
+					return 1;
+				}
+			}
+		}
+		return 0;
+	}
+}
+using namespace block_102b8cd0;
+// END FUNCTION
+
 // FUNCTION: 0x102b9780 size=0xc
 void __fastcall sub_102b97a0(void *pThis);
 void * __fastcall sub_102b9780(void *pThis)
