@@ -3,6 +3,7 @@
 #pragma once
 
 class CConstraintAnchor;
+struct datamap_t;
 
 class CConstraintAnchorBase
 {
@@ -29,7 +30,7 @@ public:
 	virtual void s65(); virtual void s66(); virtual void s67(); virtual void s68(); virtual void s69();
 	virtual void s70(); virtual void s71(); virtual void s72(); virtual void s73(); virtual void s74();
 	virtual void s75(); virtual void s76(); virtual void s77(); virtual void s78(); virtual void s79();
-	virtual int vfunc80(); virtual int vfunc81(); virtual void s82(); virtual void s83(); virtual void s84();
+	virtual int vfunc80(); virtual int vfunc81(); virtual datamap_t *vfunc82(); virtual void s83(); virtual void s84();
 	virtual void s85(); virtual void s86(); virtual void s87(); virtual void s88(); virtual void s89();
 	virtual void s90(); virtual void s91(); virtual void s92(); virtual void s93(); virtual void s94();
 	virtual void s95(); virtual void s96(); virtual void s97(); virtual void s98(); virtual void s99();
