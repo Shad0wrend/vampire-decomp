@@ -67,6 +67,7 @@ public:
 	virtual int vfunc374(int count, int ammoIndex, int unused);	// slot 374 "CBaseCombatCharacter::GiveAmmo" by index
 
 	bool sub_1032db60(void *pWeapon);	// "CBaseCombatCharacter::Weapon_CanSwitchTo": scope trace (entity name); false when the new weapon refuses (slots 312, 314) or the active weapon cannot be holstered (slot 313); then, for a player that is in a state sub_101681a0 / the switch lock describes, false (the \"item_w_unarmed\" message 0x3d is sent unless the new weapon is the unarmed one); else true (stub 0x10014c77)
+	bool sub_1033d2f0(int nFlags);	// "HasDiscFlag": stub-less member (ret 4); a flag >= 0 is tested against the mask at +0xeb0, a negative flag (sign bit stripped) against +0xeb4; called by 0x101e3560 / 0x101e3730 (the old CUnknown1033d2f0.h view has the same body, score 8 on the js)
 	bool sub_10336920();	// "CBaseCombatCharacter::IsMale" (matched under the provisional class name Ent)
 	void sub_103326b0(float amount);
 	void sub_10339560();
