@@ -25,9 +25,9 @@ int CSteamJet::vfunc81()
 namespace lifted {
 extern char g_1053ff38;
 }
-CSteamJet::Datamap82 CSteamJet::vfunc82()
+datamap_t *CSteamJet::vfunc82()
 {
-    return (CSteamJet::Datamap82)&lifted::g_1053ff38;
+    return (datamap_t *)&lifted::g_1053ff38;
 }
 // END FUNCTION
 
