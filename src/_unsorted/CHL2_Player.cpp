@@ -5,9 +5,9 @@
 namespace lifted {
 extern char g_106266e4;
 }
-int CHL2_Player::vfunc82()
+CHL2_Player::Datamap82 CHL2_Player::vfunc82()
 {
-    return (int)&lifted::g_106266e4;
+    return (CHL2_Player::Datamap82)&lifted::g_106266e4;
 }
 // END FUNCTION
 
