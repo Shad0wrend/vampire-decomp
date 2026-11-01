@@ -70,6 +70,24 @@ int CNPC_VVampire::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c4ef0 size=0x20
+struct CNPC_VVampireCall_103c4ef0
+{
+    void sub_10332aa0(int a, int b, int c);
+    void sub_10384690();
+    void sub_1026dc00(int a);
+    void sub_103c4ef0();
+};
+
+// TARGET: CNPC_VVampireCall_103c4ef0::sub_103c4ef0
+void CNPC_VVampireCall_103c4ef0::sub_103c4ef0()
+{
+    sub_10332aa0(1, 1, 0);
+    sub_10384690();
+    sub_1026dc00(0x40);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c4f20 size=0x6
 #include "CNPC_VVampire.h"
 int CNPC_VVampire::vfunc138()

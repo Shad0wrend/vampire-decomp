@@ -11414,6 +11414,7 @@
 0x10014849 func   ?sub_101d9840@CUnknown101d9840@@QAEDH@Z CUnknown101d9840::sub_101d9840
 0x10014853 func   ?vfunc5@CAI_ExpressiveNPC@@QAEPAV1@I@Z CAI_ExpressiveNPC::vfunc5
 0x10014858 func   ?sub_100e82d0@CDialog@@QAEHPAH@Z CDialog::sub_100e82d0
+0x10014876 func   ?sub_103c4ef0@CNPC_VVampireCall_103c4ef0@@QAEXXZ CNPC_VVampireCall_103c4ef0::sub_103c4ef0
 0x1001487b func   ?sub_10248d90@CKeyValuesX@@QAEHPBDPAPBDHH@Z CKeyValuesX::sub_10248d90
 0x1001488a func   ?sub_100ba1b0@@YA_NPAVCBaseEntity@@@Z sub_100ba1b0
 0x1001488f func   ?sub_100a8bf0@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100a8bf0
