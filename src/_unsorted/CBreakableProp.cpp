@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_1058d1c8;
 }
-int CBreakableProp::vfunc82()
+CBreakableProp::Datamap82 CBreakableProp::vfunc82()
 {
-    return (int)&lifted::g_1058d1c8;
+    return (CBreakableProp::Datamap82)&lifted::g_1058d1c8;
 }
 // END FUNCTION
 
