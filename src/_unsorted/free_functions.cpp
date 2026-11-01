@@ -12119,6 +12119,31 @@ void sub_10066290(int a, int b, const Vector *pOrigin, const Vector *pAngles, in
 }
 // END FUNCTION
 
+// FUNCTION: 0x10066320 size=0x2d
+#include "CTEPlayerDecal.h"
+
+struct CBaseTempEntityHeadUnit {
+	void sub_10015334(const char *name);
+};
+
+extern void *vt_1044dff8[];
+
+// TARGET: CTEPlayerDecal::sub_10066320
+CTEPlayerDecal *CTEPlayerDecal::sub_10066320(const char *name)
+{
+	((CBaseTempEntityHeadUnit *)this)->sub_10015334(name);
+	*(void ***)this = vt_1044dff8;
+	int *p = (int *)((char *)this + 0xc);
+	p[0] = 0;
+	p[1] = 0;
+	p[2] = 0;
+	p[3] = 0;
+	p[4] = 0;
+	p[5] = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10066390 size=0xb
 namespace lifted {
 extern char g_1044dff8;

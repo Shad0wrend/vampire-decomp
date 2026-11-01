@@ -1875,6 +1875,7 @@
 0x10004327 func   ?sub_101f5d60@CUnknown101f5d60@@QAEPBDXZ CUnknown101f5d60::sub_101f5d60
 0x1000432c func   ?sub_1010f4e0@@YIXPAPAX@Z sub_1010f4e0
 0x10004331 func   ?vfunc10@CSave@@UAE_NPBXH@Z CSave::vfunc10
+0x10004336 func   ?sub_10066320@CTEPlayerDecal@@QAEPAV1@PBD@Z CTEPlayerDecal::sub_10066320
 0x1000433b func   _info_node_werewolf info_node_werewolf
 0x10004345 func   ?vfunc266@CBaseViewModel@@UAEXPBD@Z CBaseViewModel::vfunc266
 0x1000434a func   ?vfunc77@CFuncMonitor@@QAEXXZ CFuncMonitor::vfunc77
