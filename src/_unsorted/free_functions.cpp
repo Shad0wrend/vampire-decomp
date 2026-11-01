@@ -56700,6 +56700,18 @@ int CUnknown10134d00::sub_10134d00(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10134e20 size=0x67
+#include "CLogicBranch.h"
+
+// TARGET: logic_branch
+extern "C" CBaseEntity *logic_branch()
+{
+    CLogicBranch *p = new CLogicBranch;
+    p->vfunc106("logic_branch");
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10134f10 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
