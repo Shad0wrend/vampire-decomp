@@ -2090,6 +2090,7 @@
 0x10004796 func   ?sub_1025df20@CUnknown1025df20@@QAEHXZ CUnknown1025df20::sub_1025df20
 0x1000479b func   ?sub_100b9970@CUnknown100b9970@@QAEXHPBH@Z CUnknown100b9970::sub_100b9970
 0x100047a0 func   ?vfunc74@CBaseEntity@@UAE_NH@Z CBaseEntity::vfunc74
+0x100047a5 func   ?sub_1034ad80@@YIPAXPAD@Z sub_1034ad80
 0x100047aa func   ?RemoveAll@?$CUtlVector@HV?$CUtlMemory@H@@@@QAEXXZ CUtlVector<int,CUtlMemory<int> >::RemoveAll
 0x100047aa func   ?sub_10032b00@@YIXPAH@Z sub_10032b00
 0x100047af func   ?vfunc5@CAI_StandoffBehavior@@UAEXXZ CAI_StandoffBehavior::vfunc5

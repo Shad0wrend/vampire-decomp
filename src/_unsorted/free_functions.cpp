@@ -154283,6 +154283,27 @@ int *sub_1034abb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034ad80 size=0x4b
+extern void *vt_1049f404[];
+extern void *vt_1049f3d8[];
+void __fastcall sub_1028d230(void *);
+void __fastcall sub_100cd2a0(void *);
+
+// TARGET: sub_1034ad80
+void *__fastcall sub_1034ad80(char *p)
+{
+	sub_1028d230(p);
+	sub_100cd2a0(p + 0x6668);
+	sub_100cd2a0(p + 0x6680);
+	sub_100cd2a0(p + 0x6698);
+	*(void **)p = vt_1049f404;
+	*(int *)(p + 0x5dec) = 0;
+	*(int *)(p + 0x1a98) = 0;
+	*(void **)(p + 0x19b0) = vt_1049f3d8;
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034b430 size=0x1a
 // TARGET: CNPCMaker::sub_1034b430
 #include "CNPCMaker.h"
