@@ -124746,6 +124746,16 @@ struct CUnknown102a9690 { int p[3]; int a; void sub_102a9690(int v); };
 void CUnknown102a9690::sub_102a9690(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x102a96b0 size=0x21
+// TARGET: sub_102a96b0
+void __fastcall sub_102a96b0(char *self, int dummy, const int *v)
+{
+    *(int *)(self + 0x3d4) = v[0];
+    *(int *)(self + 0x3d8) = v[1];
+    *(int *)(self + 0x3dc) = v[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a96f0 size=0x8
 struct TroikaStub;
 struct TroikaStubVtbl { void (__fastcall *f[256])(TroikaStub *); };

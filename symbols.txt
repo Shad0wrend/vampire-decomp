@@ -10736,6 +10736,7 @@
 0x100135f2 func   ?sub_103a1ef0@@YADXZ sub_103a1ef0
 0x100135f7 func   ?sub_10289cc0@CUnknown10289cc0@@QAEXXZ CUnknown10289cc0::sub_10289cc0
 0x10013601 func   ?sub_10335470@CBaseCombatCharacter@@QAEXPAX@Z CBaseCombatCharacter::sub_10335470
+0x10013606 func   ?sub_102a96b0@@YIXPADHPBH@Z sub_102a96b0
 0x1001360b func   ?sub_101eb050@CUnknown101eb050@@QAE_NPAUCVFeatKV@@@Z CUnknown101eb050::sub_101eb050
 0x1001361f func   ?sub_10116ff0@CFuncMoveLinear@@QAEXAAUinputdata_t@@@Z CFuncMoveLinear::sub_10116ff0
 0x10013624 func   ?sub_10361990@CNPC_VAsianVampire@@QAEXPAVCBaseEntity@@@Z CNPC_VAsianVampire::sub_10361990
