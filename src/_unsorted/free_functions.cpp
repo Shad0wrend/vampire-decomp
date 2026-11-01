@@ -109418,6 +109418,24 @@ void sub_10233c80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10233d60 size=0x1f
+#include "engineserver.h"
+
+int sub_10119390();
+void sub_100018c0();
+extern int g_10552810;
+
+// TARGET: sub_10233d60
+void sub_10233d60()
+{
+    if (engine->vfunc12())
+    {
+        g_10552810 = sub_10119390();
+        sub_100018c0();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10233ee0 size=0x2b
 extern unsigned char g_109340dc;
 extern float g_106102fc;
