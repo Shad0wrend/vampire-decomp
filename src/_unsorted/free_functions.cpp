@@ -78951,6 +78951,19 @@ int *sub_101c67e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c68b0 size=0x1f
+#include "CTriggerMultiple.h"
+
+// TARGET: CTriggerMultiple::sub_101c68b0
+void CTriggerMultiple::sub_101c68b0(CBaseEntity *pOther)
+{
+    if (sub_101c5460(pOther))
+    {
+        sub_101c68e0(pOther);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c68e0 size=0xe8
 #include "CTriggerMultiple.h"
 #include "CEHandleGet.h"

@@ -11688,6 +11688,7 @@
 0x100151f9 func   ?sub_1032fab0@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::sub_1032fab0
 0x10015203 func   ?sub_102a9830@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_102a9830
 0x1001520d func   ?sub_100640b0@CUnknown100640b0@@QAEHXZ CUnknown100640b0::sub_100640b0
+0x10015212 func   ?sub_101c68b0@CTriggerMultiple@@QAEXPAVCBaseEntity@@@Z CTriggerMultiple::sub_101c68b0
 0x10015217 func   ?sub_10223700@CBaseKeyframedMover@@QAEPAUCKeyframeX@@XZ CBaseKeyframedMover::sub_10223700
 0x1001521c func   ?sub_100e8100@CDialog@@QAEHPAD@Z CDialog::sub_100e8100
 0x10015221 func   _npc_sabbat npc_sabbat
