@@ -76,6 +76,14 @@ struct CBasePlayerQuestRecord	// a saved quest record (0x40 bytes)
 	char m_pad3D[3];
 };
 
+struct CBasePlayerFadeRec	// a saved fade (0x10 bytes)
+{
+	char m_bType;
+	EHANDLE m_hEnt;
+	float m_flTime;
+	float m_flValue;
+};
+
 class CBasePlayer
 {
 public:
