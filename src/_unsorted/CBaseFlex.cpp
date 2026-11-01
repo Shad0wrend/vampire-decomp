@@ -57,6 +57,72 @@ CBaseFlex *CBaseFlex::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b5ab0 size=0x39
+#include "CBaseFlex.h"
+#include "CBaseAnimating.h"
+
+#define CSV_ROW(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CFlexSlotView
+{
+	CSV_ROW(r0)
+	CSV_ROW(r1)
+	CSV_ROW(r2)
+	CSV_ROW(r3)
+	CSV_ROW(r4)
+	CSV_ROW(r5)
+	CSV_ROW(r6)
+	CSV_ROW(r7)
+	CSV_ROW(r8)
+	CSV_ROW(r9)
+	CSV_ROW(r10)
+	CSV_ROW(r11)
+	CSV_ROW(r12)
+	CSV_ROW(r13)
+	CSV_ROW(r14)
+	CSV_ROW(r15)
+	CSV_ROW(r16)
+	CSV_ROW(r17)
+	CSV_ROW(r18)
+	CSV_ROW(r19)
+	CSV_ROW(r20)
+	CSV_ROW(r21)
+	CSV_ROW(r22)
+	CSV_ROW(r23)
+	CSV_ROW(r24)
+	CSV_ROW(r25)
+	CSV_ROW(r26)
+	virtual void r270();
+	virtual void r271();
+	virtual void r272();
+	virtual void r273();
+	virtual void r274();
+	virtual void r275();
+	virtual void r276();
+	virtual void r277();
+	virtual void r278();
+	virtual void vfunc279(int a, int b);
+};
+
+namespace block_100b5ab0 {
+	struct CBaseFlexUnit : CBaseFlex
+	{
+		void sub_10005100(const char *pszModel);
+	};
+}
+
+// TARGET: CBaseFlex::vfunc105
+void CBaseFlex::vfunc105(const char *pszModel)
+{
+	((block_100b5ab0::CBaseFlexUnit *)this)->sub_10005100(pszModel);
+	int nCount = ((CBaseAnimating *)this)->sub_10094520();
+	for (int i = 0; i < nCount; i++) {
+		((CFlexSlotView *)this)->vfunc279(i, 0);
+		nCount = ((CBaseAnimating *)this)->sub_10094520();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b5b00 size=0x21
 #include "CBaseFlex.h"
 
