@@ -50,6 +50,7 @@ struct CVActivitySound	// the table of the sound rows (+0x20, count +0x1c)
 	CVSoundList **m_ppLists;	// 0x20
 
 	void sub_101f5b60(int hControl, int nSound, int nMode);	// "VSnd::Play" (stub 0x1000c851); hControl is the sound-emitting entity (CVSoundEnt *), nSound the channel, nMode the pick argument: plays the sound of the entity's row at the entity, DevMsg "ERROR: VSnd::Play: %s Table out of range" when the row index is past the table
+	void sub_101f58e0(CVSoundEnt *pEnt);	// precaches every sound of the entity's row
 	void sub_101f5950(int hControl, int nSound, int nMode, float flVolume, float flPitch);	// starts the sound (stub 0x100119fa)
 };
 
