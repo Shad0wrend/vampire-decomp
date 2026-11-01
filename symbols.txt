@@ -11172,6 +11172,7 @@
 0x10014489 func   ?sub_1022eab0@@YAXPAUCUnknown1022eab0@@@Z sub_1022eab0
 0x1001448e func   ?sub_1021b330@CUnknown10217f50@@QAEXPBDH@Z CUnknown10217f50::sub_1021b330
 0x10014493 func   ?vfunc441@CBasePlayer@@UAEXXZ CBasePlayer::vfunc441
+0x100144a2 func   ?sub_100cd970@CUnk100cd970@@QAEPAUCUnk100cd970Node@@H@Z CUnk100cd970::sub_100cd970
 0x100144ac func   ?sub_1007f650@UtlMem@@QAEXXZ UtlMem::sub_1007f650
 0x100144b6 func   ?vfunc362@CWeaponMelee_OccultBlade@@QAEHXZ CWeaponMelee_OccultBlade::vfunc362
 0x100144bb func   ?vfunc5@CBasePlayer@@QAEPAV1@I@Z CBasePlayer::vfunc5

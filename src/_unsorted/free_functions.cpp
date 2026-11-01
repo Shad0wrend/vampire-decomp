@@ -34947,6 +34947,36 @@ int __fastcall sub_100cd940(CListNode100cd940 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd970 size=0x1e
+// TARGET: CUnk100cd970::sub_100cd970
+struct CUnk100cd970Node
+{
+    char pad[0x1c];
+    CUnk100cd970Node *m_next;
+};
+struct CUnk100cd970
+{
+    char pad[0x14];
+    CUnk100cd970Node *m_head;
+    CUnk100cd970Node *sub_100cd970(int index);
+};
+CUnk100cd970Node *CUnk100cd970::sub_100cd970(int index)
+{
+    int i; i = 0;
+    CUnk100cd970Node *p = m_head;
+    while (p != 0)
+    {
+        if (i == index)
+        {
+            return p;
+        }
+        p = p->m_next;
+        i++;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cdb50 size=0x3a
 struct CListNode100cdb50 {
 	char pad[0x18];
