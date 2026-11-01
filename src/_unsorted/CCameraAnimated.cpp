@@ -5,9 +5,9 @@
 namespace lifted {
 extern char g_10546654;
 }
-int CCameraAnimated::vfunc82()
+CCameraAnimated::Datamap82 CCameraAnimated::vfunc82()
 {
-    return (int)&lifted::g_10546654;
+    return (CCameraAnimated::Datamap82)&lifted::g_10546654;
 }
 // END FUNCTION
 
