@@ -53102,6 +53102,17 @@ void sub_10130100(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130120 size=0x20
+#include "vampire.h"
+extern char *g_1057519c;
+void sub_1013ab70(void *a, void *b, int c, int d);
+// TARGET: sub_10130120
+void sub_10130120(int a, int b)
+{
+    sub_1013ab70(g_1057519c + 0xc, g_1057519c + 0x28, a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130150 size=0x6
 int sub_10130150()
 {

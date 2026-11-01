@@ -5553,6 +5553,7 @@
 0x1000a894 func   ?vfunc130@CNPC_VTzimisceRunner@@QAEXH@Z CNPC_VTzimisceRunner::vfunc130
 0x1000a899 func   _npc_VSabbatGunman npc_VSabbatGunman
 0x1000a89e func   ?sub_10185880@@YIXPAUMem@@HH@Z sub_10185880
+0x1000a8a3 func   ?sub_10130120@@YAXHH@Z sub_10130120
 0x1000a8a8 func   ?sub_10316720@CSquadUnit10316720@@QAEXH@Z CSquadUnit10316720::sub_10316720
 0x1000a8ad func   ?vfunc81@CPointCamera@@UAEHXZ CPointCamera::vfunc81
 0x1000a8b2 func   ?vfunc8@CCollisionEvent@@UAEXPAX0@Z CCollisionEvent::vfunc8
