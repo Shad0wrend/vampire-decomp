@@ -1,0 +1,16 @@
+// CVTraitDependencyValue_t (RTTI .?AVCVTraitDependencyValue_t@@): the value dependency of a trait. Base
+// CVTraitSubDependency_t at +0x4 is not modelled; the member at +0x18 is built by sub_102056d0 (0x10003440).
+#pragma once
+
+struct CUnknown102056d0Sub { void sub_102056d0(); };
+
+class CVTraitDependencyValue_t
+{
+public:
+	void *m_vptr;	// 0x0
+	char m_pad0004[0x18 - 4];
+	CUnknown102056d0Sub m_18;	// 0x18
+
+	void sub_10205c70();	// the constructor body: builds m_18, stores the vftable (0x10483d00), then vfunc0 (0x10002563)
+	void sub_10002563();	// CVTraitDependencyValue_t::vfunc0, called directly
+};
