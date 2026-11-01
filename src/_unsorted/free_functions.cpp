@@ -17740,6 +17740,19 @@ int CUnknown100778b0::sub_100778b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10077960 size=0x1f
+struct CUnknown1007edb0Obj { void sub_1007edb0(float x); };
+int __cdecl sub_10077990(void);
+// TARGET: sub_10077960
+float __stdcall sub_10077960(float x)
+{
+    CUnknown1007edb0Obj *p = (CUnknown1007edb0Obj *)sub_10077990();
+    if (!p)
+        return x;
+    p->sub_1007edb0(x);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10077990 size=0x7
 struct CUnknown10077990 { int sub_10077990(); };
 int CUnknown10077990::sub_10077990()

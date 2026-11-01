@@ -10619,6 +10619,7 @@
 0x100129bd func   ?sub_100855f0@@YAXXZ sub_100855f0
 0x100129c2 func   _npc_generic npc_generic
 0x100129c7 func   ?sub_100c65d0@@YAHXZ sub_100c65d0
+0x100129cc func   ?sub_10077960@@YGMM@Z sub_10077960
 0x100129d1 func   ?vfunc219@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc219
 0x100129d6 func   ?sub_103282e0@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::sub_103282e0
 0x100129db func   ?vfunc7@CAI_ProxyMovementSink@@QAE_NHHHH@Z CAI_ProxyMovementSink::vfunc7
