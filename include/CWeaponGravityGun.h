@@ -33,7 +33,10 @@ public:
 	unsigned int m_hHeld918;	// 0x918
 	char m_pad91c[0x928 - 0x91c];
 	int m_nSoundState;	// 0x928
-	char m_pad92c[0xb25 - 0x92c];
+	char m_pad92c[0x9dc - 0x92c];	// 0x93c: the CGravControllerPoint sub-object (constructor stub 0x10148750)
+	struct CSlot9dc { int a; int b; int pad[3]; } m_slots9dc[16];	// 0x9dc: two handles (-1) per entry; the last entry's pad[2] is the handle at 0xb18
+	unsigned int m_hB1c;	// 0xb1c
+	char m_padb20[0xb25 - 0xb20];
 	char m_bB25;	// 0xb25
 public:
 	virtual void vfunc298(CBaseEntity *pOwner, int unused);	// slot 298: forwards to CBaseCombatWeapon::vfunc298 (jump stub 0x100131ec) with the first argument as it is
