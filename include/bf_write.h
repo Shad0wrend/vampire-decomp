@@ -66,6 +66,26 @@ public:
 			m_iCurBit += numbits;
 		}
 	}
+	void WriteUBitLongUnchecked(unsigned int curData, int numbits)	// the 2003 SDK WriteUBitLong body (dword at a time), as WriteBitsFromBuffer inlines it
+	{
+		if (m_iCurBit + numbits > m_nDataBits) {
+			m_iCurBit = m_nDataBits;
+			m_bOverflow = true;
+		} else {
+			int iCurBitMasked = m_iCurBit & 31;
+			int iDWord = m_iCurBit >> 5;
+			m_pData[iDWord] &= g_106d1990[iCurBitMasked][numbits];
+			m_pData[iDWord] |= curData << iCurBitMasked;
+			int nBitsWritten = 32 - iCurBitMasked;
+			if (nBitsWritten < numbits) {
+				curData >>= nBitsWritten;
+				iCurBitMasked = (m_iCurBit + nBitsWritten) & 31;
+				m_pData[iDWord + 1] &= g_106d1990[iCurBitMasked][numbits - nBitsWritten];
+				m_pData[iDWord + 1] |= curData << iCurBitMasked;
+			}
+			m_iCurBit += numbits;
+		}
+	}
 	bool sub_100bcd70(class bf_read *pIn, int nBits);	// "WriteBitsFromBuffer": copies nBits bits from pIn, 32 at a time; true unless either side overflowed
 	bf_write *sub_100bdf50(const char *pDebugName, void *pData, int nBytes, int nBits);	// provisional, like sub_100bc490 (transplant)
 };
