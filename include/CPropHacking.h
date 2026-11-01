@@ -113,7 +113,9 @@ public:
 	char m_bEmailState;	// 0xa10
 	char m_pad0a11[0xa14 - 0xa11];
 	CPropHackingScreenRecord *m_pScreenRecords0a14;	// 0xa14
-	char m_pad0a18[0xa28 - 0xa18];
+	char m_pad0a18[0xa20 - 0xa18];
+	int m_n0a20;	// 0xa20: the index of sub_1021bbf0 must be below it
+	char m_pad0a24[0xa28 - 0xa24];
 	char m_szEmailState[0x80];	// 0xa28
 	char m_pad0aa8[0xc28 - 0xaa8];
 	int m_n0c28;	// 0xc28
