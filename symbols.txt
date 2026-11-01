@@ -10546,6 +10546,7 @@
 0x100128fa func   ?sub_101f1be0@CUnknown10227c90@@QAEXH@Z CUnknown10227c90::sub_101f1be0
 0x10012904 func   ?vfunc5@CWeaponRanged_Tzimisce2Head@@QAEPAV1@I@Z CWeaponRanged_Tzimisce2Head::vfunc5
 0x10012909 func   ?vfunc373@CWeaponMelee_ChangBlade@@QAEHXZ CWeaponMelee_ChangBlade::vfunc373
+0x1001290e func   ?sub_10100f70@@YIXPAX@Z sub_10100f70
 0x10012918 func   ?vfunc546@CGenericSabbat_NPC@@QAEHH@Z CGenericSabbat_NPC::vfunc546
 0x1001291d func   ?sub_1009bc30@CBaseEntity@@QAEXHPADH@Z CBaseEntity::sub_1009bc30
 0x1001292c func   ?vfunc615@CNPC_VWerewolf@@UAE_NXZ CNPC_VWerewolf::vfunc615
