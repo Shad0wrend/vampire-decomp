@@ -1,4 +1,4 @@
-	void sub_10103800();	// sets the byte at +0x45c to 1, then sub_10103860(sub_10103790()) (stub 0x1000b663 for sub_10103860)
+	void sub_10103800(int unused);	// sets the byte at +0x45c to 1, then sub_10103860(sub_10103790()) (stub 0x1000b663 for sub_10103860)
 	int sub_10103790();	// stub 0x100102d0, returns a value (in eax)
 	void sub_10103860(int a);	// stub 0x1000b663, one stack argument
 	void sub_1009fe40();	// "CBaseEntity::DrawTimedOverlays": scope trace (entity name); with bit 4 of the overlay flags (byte at +0x224) the text "[" + debug name + "]" as an entity text overlay, then walks the timed overlay list (+0x228; message, end time, start time, next): expired entries (or past the tenth line) are unlinked and freed, the others drawn as lines 1.. with a colour and a fade alpha
