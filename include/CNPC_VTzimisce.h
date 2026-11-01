@@ -126,7 +126,13 @@ public:
 	unsigned int m_flags5d8c;
 	char m_pad5d90[0x6078 - 0x5d90];
 	char m_b6078;	// 0x6078: set in Spawn
-	char m_pad6079[0x65f9 - 0x6079];
+	char m_pad6079[0x655c - 0x6079];
+	float m_f655c;	// 0x655c: 0.01f in vfunc593
+	float m_f6560;	// 1.0f
+	float m_f6564;	// 50.0f
+	float m_f6568;	// 50.0f
+	float m_f656c;	// 0.01f
+	char m_pad6570[0x65f9 - 0x6570];
 	char m_b65f9;	// 0x65f9: 1 in the constructor
 	char m_pad65fa[0x665c - 0x65fa];
 	int *m_pMem665c;	// 0x665c: CNPC_VBaseBoss record vector (memory, alloc count, grow size, size, element pointer); constructed by UtlMem::sub_1039ae10(0, 0) then size 0 / elements = memory
