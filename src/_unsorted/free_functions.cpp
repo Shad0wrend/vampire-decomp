@@ -20127,6 +20127,25 @@ void __fastcall sub_1007ee20(int *p)
 void __fastcall sub_1007ee40(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x1007ee60 size=0x3d
+#include "CUtlVector16.h"
+
+extern void (__cdecl *g_109f3624)(void *);
+
+void CUtlVector16::sub_1007ee60()
+{
+	m_size = 0;
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+	m_pElements = m_pMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007f250 size=0xf0
 #include "CUtlRBTree24.h"
 #include "utlrbtree.h"

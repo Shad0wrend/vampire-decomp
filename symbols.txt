@@ -8834,6 +8834,7 @@
 0x1000fdda func   ?sub_101c8b60@CView101c8b60@@QAEXXZ CView101c8b60::sub_101c8b60
 0x1000fde4 func   ?sub_10199ce0@@YAPAUPyObject@@PAU1@0@Z sub_10199ce0
 0x1000fde9 func   ?vfunc3@CVTSDependencySaveRestoreDataOps@@UAEHH@Z CVTSDependencySaveRestoreDataOps::vfunc3
+0x1000fdee func   ?sub_1007ee60@CUtlVector16@@QAEXXZ CUtlVector16::sub_1007ee60
 0x1000fdfd func   ?sub_10042a00@UtlMem@@QAEXXZ UtlMem::sub_10042a00
 0x1000fe02 func   ?sub_102df2f0@@YAHXZ sub_102df2f0
 0x1000fe11 func   ?sub_103c67f0@CUnknown103c67f0@@QAEDM@Z CUnknown103c67f0::sub_103c67f0
