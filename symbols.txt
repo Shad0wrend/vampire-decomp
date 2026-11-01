@@ -3591,6 +3591,7 @@
 0x1000713a func   ?sub_10117230@CEnt10117230@@QAEXH@Z CEnt10117230::sub_10117230
 0x10007144 func   ?vfunc31@CBaseAnimating@@UAEXH@Z CBaseAnimating::vfunc31
 0x10007144 func   ?vfunc31@CPropDoorknob@@UAEXH@Z CPropDoorknob::vfunc31
+0x10007144 func   ?vfunc31@CVampireProjectile@@UAEXH@Z CVampireProjectile::vfunc31
 0x10007149 func   ?sub_1013ca00@@YAXABVVector@@00AAV1@PAM@Z sub_1013ca00
 0x1000714e func   ?sub_10377160@@YADXZ sub_10377160
 0x10007153 func   ?sub_100b0f60@@YAXXZ sub_100b0f60
