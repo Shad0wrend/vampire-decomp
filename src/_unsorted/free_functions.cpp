@@ -155492,6 +155492,26 @@ bool CNPC_VManBat::sub_1038f290()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1038f600 size=0x24
+class CUnknown1038f600
+{
+public:
+	char pad0[0x14b8];
+	unsigned int m_flags14b8;
+
+	void sub_1038f600(char on);
+};
+
+// TARGET: CUnknown1038f600::sub_1038f600
+void CUnknown1038f600::sub_1038f600(char on)
+{
+	if (on)
+		m_flags14b8 |= 32;
+	else
+		m_flags14b8 &= ~32;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1038f640 size=0xc
 unsigned char __fastcall sub_1038f640(char *self)
 {
