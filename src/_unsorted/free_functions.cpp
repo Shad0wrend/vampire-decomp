@@ -137156,6 +137156,18 @@ void CUnknown1030a6e0::sub_10309f60(const Vector *pPos, float flUnused, Vector *
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030a0a0 size=0x1d
+// TARGET: sub_1030a0a0
+int __stdcall sub_1030a0a0(int unused, int *p)
+{
+    if (*p == -2)
+    {
+        return 0;
+    }
+    return *p == -3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030a610 size=0x21
 struct CUnknown1030a610 { void * sub_1030a610(); };
 void * CUnknown1030a610::sub_1030a610()
