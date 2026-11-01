@@ -25,6 +25,18 @@ void CUnknown103830e0::sub_103830e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10383130 size=0x28
+#include "CNPC_VHengeyokai.h"
+
+// TARGET: CNPC_VHengeyokai::sub_10383130
+void CNPC_VHengeyokai::sub_10383130()
+{
+	sub_1008d5f0(0);
+	sub_1008d6d0(0);
+	sub_102c4310("Hengeyokai_freeze_emitter", this, 1, -1, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10383170 size=0x34
 extern char g_1063f48c[];
 

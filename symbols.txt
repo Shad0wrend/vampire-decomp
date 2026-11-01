@@ -8384,6 +8384,7 @@
 0x1000ed45 func   ?sub_100bb900@CBeam@@QAEXHPBM@Z CBeam::sub_100bb900
 0x1000ed4a func   ?vfunc81@CWeaponMelee_OccultBlade@@QAEHXZ CWeaponMelee_OccultBlade::vfunc81
 0x1000ed68 func   ?sub_10045110@CUnknown10045110@@QAEXH@Z CUnknown10045110::sub_10045110
+0x1000ed6d func   ?sub_10383130@CNPC_VHengeyokai@@QAEXXZ CNPC_VHengeyokai::sub_10383130
 0x1000ed72 func   ?sub_10412520@@YAHH@Z sub_10412520
 0x1000ed7c func   ?sub_101384e0@@YA?AVQAngle@@ABV1@0@Z sub_101384e0
 0x1000ed81 func   ?vfunc15@CAI_Motor@@UAEMAAVVector@@@Z CAI_Motor::vfunc15
