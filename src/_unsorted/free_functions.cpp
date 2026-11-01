@@ -178333,6 +178333,23 @@ void sub_1040d970(CUnkCombatChar *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040d9a0 size=0x2a
+class CBaseCombatCharacter;
+int sub_102587f0();
+void __fastcall sub_1040dbb0(void *p);
+typedef void (__fastcall *VirtFn)(CBaseCombatCharacter *p);
+
+// TARGET: sub_1040d9a0
+void sub_1040d9a0(CBaseCombatCharacter *pChar)
+{
+    void *pEnt = pChar->sub_10335950((const char *)sub_102587f0());
+    if (pEnt) {
+        sub_1040dbb0(pEnt);
+        ((VirtFn)(*(void ***)pChar)[456])(pChar);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040dbb0 size=0xa
 namespace lifted {
 int __stdcall sub_10005092(int, int);
