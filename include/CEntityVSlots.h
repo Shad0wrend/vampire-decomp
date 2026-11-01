@@ -126,7 +126,8 @@ public:
 	EVS(271) virtual const char *slot272();	// weapon: a model name (female variant)
 	virtual const char *slot273();	// weapon: a model name (male variant)
 	virtual const char *slot274();	// terminal: the name of the current screen / script
-	EVS(275) EVS(276) EVS(277) EVS(278) EVS(279)
+	EVS(275) EVS(276) EVS(277) virtual void slot278(const char *pszLine);	// terminal: shows the line (CBaseTerminal::vfunc278)
+	EVS(279)
 	EVS(280) EVS(281) EVS(282) EVS(283) EVS(284)
 	virtual int slot285();	// weapon: its owner (a character pointer)
 	EVS(286) EVS(287) EVS(288) EVS(289)
