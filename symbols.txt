@@ -221,6 +221,7 @@
 0x100015fa func   ?sub_102beb10@@YAHXZ sub_102beb10
 0x10001604 func   _filter_multi filter_multi
 0x10001609 func   ?vfunc34@CItemContainerLock@@QAEHH@Z CItemContainerLock::vfunc34
+0x10001609 func   ?vfunc34@CPropDoorknob@@UAEHH@Z CPropDoorknob::vfunc34
 0x10001613 func   ?sub_10349ec0@CUtlVector16@@QAEXH@Z CUtlVector16::sub_10349ec0
 0x1000161d func   ?sub_1011bc70@@YAHH@Z sub_1011bc70
 0x10001622 func   ?sub_1002edd0@@YAXPAX@Z sub_1002edd0
