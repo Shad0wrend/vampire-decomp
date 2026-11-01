@@ -5536,6 +5536,7 @@
 0x1000a5d8 func   ?sub_10132db0@@YAPAHXZ sub_10132db0
 0x1000a5dd func   ?sub_1012c5b0@@YGHHHH@Z sub_1012c5b0
 0x1000a5e2 func   ?sub_103f5800@CUnknown103f5800@@QAEHXZ CUnknown103f5800::sub_103f5800
+0x1000a5e7 func   ?vfunc108@CPropDoorknob@@UAE_NPBDMMM@Z CPropDoorknob::vfunc108
 0x1000a5ec func   ?vfunc134@CEnvMicrophone@@UAEXXZ CEnvMicrophone::vfunc134
 0x1000a5f1 func   _npc_VCombatman npc_VCombatman
 0x1000a5f6 func   ?vfunc230@CRagdollPropSpecial@@QAEXHPAX@Z CRagdollPropSpecial::vfunc230
