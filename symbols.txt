@@ -7636,6 +7636,7 @@
 0x1000dd23 func   ?vfunc157@CPlayerPickupController@@UAE_NH@Z CPlayerPickupController::vfunc157
 0x1000dd28 func   ?sub_101f28e0@VKeyValuesInterface@@QAEHPBDPAPBDHH@Z VKeyValuesInterface::sub_101f28e0
 0x1000dd2d func   ?sub_103d9f90@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103d9f90
+0x1000dd32 func   ?vfunc371@CBaseCombatWeapon@@UAEDXZ CBaseCombatWeapon::vfunc371
 0x1000dd37 func   ?sub_101d7ec0@CClanNames@@QAEHPBDPAH@Z CClanNames::sub_101d7ec0
 0x1000dd3c func   ?sub_101d16c0@@YAPADPAD0D@Z sub_101d16c0
 0x1000dd46 func   ?vfunc363@CWeaponMelee_Katana@@QAEHXZ CWeaponMelee_Katana::vfunc363

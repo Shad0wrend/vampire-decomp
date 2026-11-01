@@ -866,6 +866,24 @@ void CBaseCombatWeapon::vfunc327()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10255bf0 size=0x29
+#include "CBaseCombatWeapon.h"
+
+struct CBaseCombatWeaponOwnerPlaceholder {
+	char *sub_10010ea6();
+};
+
+char CBaseCombatWeapon::vfunc371()
+{
+	char r = 0;
+	if (((CBaseCombatWeaponOwnerPlaceholder *)this)->sub_10010ea6()) {
+		int n = *(int *)(((char *)((CBaseCombatWeaponOwnerPlaceholder *)this)->sub_10010ea6()) + 0x4fea0);
+		r = n != 0;
+	}
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10256560 size=0xda
 #include "CCollisionProperty.h"
 
