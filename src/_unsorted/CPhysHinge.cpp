@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10538ddc;
 }
-int CPhysHinge::vfunc82()
+CPhysHinge::Datamap82 CPhysHinge::vfunc82()
 {
-    return (int)&lifted::g_10538ddc;
+    return (CPhysHinge::Datamap82)&lifted::g_10538ddc;
 }
 // END FUNCTION
 
