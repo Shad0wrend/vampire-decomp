@@ -74,14 +74,18 @@ public:
 		} else {
 			int iCurBitMasked = m_iCurBit & 31;
 			int iDWord = m_iCurBit >> 5;
-			m_pData[iDWord] &= g_106d1990[iCurBitMasked][numbits];
-			m_pData[iDWord] |= curData << iCurBitMasked;
+			unsigned long *pOut = m_pData + iDWord;
+			*pOut &= g_106d1990[iCurBitMasked][numbits];
+			pOut = m_pData + iDWord;
+			*pOut |= curData << iCurBitMasked;
 			int nBitsWritten = 32 - iCurBitMasked;
 			if (nBitsWritten < numbits) {
 				curData >>= nBitsWritten;
 				iCurBitMasked = (m_iCurBit + nBitsWritten) & 31;
-				m_pData[iDWord + 1] &= g_106d1990[iCurBitMasked][numbits - nBitsWritten];
-				m_pData[iDWord + 1] |= curData << iCurBitMasked;
+				pOut = m_pData + iDWord + 1;
+				*pOut &= g_106d1990[iCurBitMasked][numbits - nBitsWritten];
+				pOut = m_pData + iDWord + 1;
+				*pOut |= curData << iCurBitMasked;
 			}
 			m_iCurBit += numbits;
 		}
