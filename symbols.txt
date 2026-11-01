@@ -924,6 +924,7 @@
 0x100028ec func   ?sub_10339930@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10339930
 0x100028f1 func   ?vfunc5@CSprayCan@@QAEPAV1@I@Z CSprayCan::vfunc5
 0x100028fb func   ?vfunc230@CBreakableProp@@QAEXHH@Z CBreakableProp::vfunc230
+0x10002905 func   ?sub_10349e10@CUtlVector16@@QAEXHH@Z CUtlVector16::sub_10349e10
 0x1000290f func   ?sub_101672d0@CUnk101672d0@@QAE_NXZ CUnk101672d0::sub_101672d0
 0x10002919 func   ?sub_101cb130@@YAPAHXZ sub_101cb130
 0x10002923 func   ?vfunc23@CNPC_VMingXiaoTentacle@@UAEXH@Z CNPC_VMingXiaoTentacle::vfunc23
