@@ -84533,6 +84533,58 @@ void sub_101cdac0(int entindex, int pos, const char *pszSample, int volume, int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cdba0 size=0x210
+#include "CSingleUserRecipientFilter.h"
+
+CBaseEntity *sub_101cd9e0(int index);
+extern int g_1072600c;
+
+#define V10_(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct CEntView101cdba0
+{
+	V10_(a0) V10_(a1) V10_(a2) V10_(a3) V10_(a4) V10_(a5) V10_(a6) V10_(a7) V10_(a8) V10_(a9)
+	V10_(b0) V10_(b1) V10_(b2) V10_(b3) V10_(b4) V10_(b5) V10_(b6) V10_(b7) V10_(b8)
+	virtual void c0(); virtual void c1();
+	virtual Vector vfunc192();
+};
+
+// TARGET: sub_101cdba0
+void sub_101cdba0(const Vector *pOrigin, float flScale, float f3, float f4, float flRadius, int nMode, bool bAny)
+{
+	for (int i = 1; i <= gpGlobals->maxClients; i++) {
+		CBaseEntity *pPlayer = sub_101cd9e0(i);
+		if (!pPlayer)
+			continue;
+		if (!bAny && !(pPlayer->sub_100b3700() & 1))
+			continue;
+		float flVal = 0;
+		if (nMode != 1) {
+			if (flRadius <= 0.0f) {
+				flVal = flScale;
+			} else {
+				float flDist = (*pOrigin - ((CEntView101cdba0 *)pPlayer)->vfunc192()).Length();
+				if (flDist < flRadius)
+					flVal = (1.0 - flDist / flRadius) * flScale;
+				else
+					continue;
+			}
+			if (!(flVal > 0.0f))
+				continue;
+		}
+		CSingleUserRecipientFilter filter(pPlayer);
+		filter.MakeReliable();
+		engine->vfunc65(&filter, g_1072600c);
+		engine->vfunc67(nMode);
+		engine->vfunc72(flVal);
+		engine->vfunc72(f3);
+		engine->vfunc72(f4);
+		engine->vfunc72(0);
+		engine->vfunc66();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cde40 size=0x101
 #include "CSingleUserRecipientFilter.h"
 
