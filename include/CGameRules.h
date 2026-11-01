@@ -22,6 +22,7 @@ public:
 class CGameRules
 {
 public:
+	CGameRules();
 	virtual CGameRules *vfunc0(unsigned int flags);
 	virtual int vfunc1();
 	virtual void vfunc2();
