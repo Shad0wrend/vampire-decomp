@@ -17,7 +17,7 @@ struct CGlobalVars {
 	int mapversion;           // 0x28: passed beside the map name
 	int m_n2c;                // 0x2c
 	bool m_b30;               // 0x30
-	char m_pad31[1];
+	bool m_b31;               // 0x31
 	bool m_b32;               // 0x32
 	char m_pad33[1];
 	int m_n34;                // 0x34
