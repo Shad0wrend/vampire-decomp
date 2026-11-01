@@ -1251,6 +1251,7 @@
 0x10003229 func   ?sub_100a0420@CBaseEntity@@QAEXPBD@Z CBaseEntity::sub_100a0420
 0x1000322e func   ?vfunc438@CNPC_VCombatman@@QAEHXZ CNPC_VCombatman::vfunc438
 0x10003233 func   ?vfunc81@COccultHacking@@QAEHXZ COccultHacking::vfunc81
+0x10003238 func   ?sub_103b3ae0@@YIPAXPAD@Z sub_103b3ae0
 0x1000323d func   ?vfunc473@CNPC_VGargoyle@@UAEHXZ CNPC_VGargoyle::vfunc473
 0x10003242 func   ?sub_10231970@@YAHXZ sub_10231970
 0x10003247 func   ?sub_10070990@CEnt10070990@@QAEXPAUCBasePlayerV@@@Z CEnt10070990::sub_10070990
