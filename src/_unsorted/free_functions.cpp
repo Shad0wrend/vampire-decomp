@@ -20395,6 +20395,18 @@ void CUtlVector12::sub_1007f690(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007f750 size=0x3e
+#include "UtlVec12.h"
+
+void UtlVec12::sub_1007f750(int elem, int num)
+{
+	int numToMove = m_Size - elem - num;
+	if (numToMove > 0 && num > 0) {
+		memmove(m_pMemory + (elem + num) * 12, m_pMemory + elem * 12, numToMove * 12);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007f8c0 size=0x2ef
 #include "CUtlRBTree24.h"
 

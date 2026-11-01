@@ -11655,6 +11655,7 @@
 0x100149b6 func   ?sub_102c7390@CUnknown102c7390@@QAEXD@Z CUnknown102c7390::sub_102c7390
 0x100149bb func   ?sub_10256920@@YAPAUEntL@@HPAU1@PAI@Z sub_10256920
 0x100149c5 func   ?vfunc5@CBaseCombatCharacter@@QAEPAV1@I@Z CBaseCombatCharacter::vfunc5
+0x100149ca func   ?sub_1007f750@UtlVec12@@QAEXHH@Z UtlVec12::sub_1007f750
 0x100149cf func   _phys_spring phys_spring
 0x100149d4 func   ?sub_10170e80@CUnk10170e80@@QAEXPBD@Z CUnk10170e80::sub_10170e80
 0x100149d9 func   ?sub_101bb730@CUnk101bb730@@QAEEXZ CUnk101bb730::sub_101bb730
