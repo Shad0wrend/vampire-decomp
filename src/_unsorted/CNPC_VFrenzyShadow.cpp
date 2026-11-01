@@ -96,6 +96,20 @@ void CNPC_VFrenzyShadow::vfunc433()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10375f20 size=0x1f
+#include "CNPC_VHuman.h"
+#include "CNPC_VFrenzyShadow.h"
+
+// TARGET: CNPC_VFrenzyShadow::vfunc440
+void CNPC_VFrenzyShadow::vfunc440(int a)
+{
+    if (((CAI_BaseNPCTroika *)this)->sub_102b11c0(a) == 0)
+    {
+        ((CNPC_VHuman *)this)->vfunc440(a);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10376b50 size=0x3
 void CNPC_VFrenzyShadow::vfunc144(int a0)
 {

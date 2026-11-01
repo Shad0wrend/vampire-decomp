@@ -2320,6 +2320,7 @@
 0x10004fc5 func   ?sub_102f67a0@@YA_NPBD@Z sub_102f67a0
 0x10004fca func   ?sub_10113cf0@CUnknown10113cf0@@QAEHXZ CUnknown10113cf0::sub_10113cf0
 0x10004fd4 func   ?sub_1012f8e0@@YA_NHHPAM@Z sub_1012f8e0
+0x10004fd9 func   ?vfunc440@CNPC_VFrenzyShadow@@UAEXH@Z CNPC_VFrenzyShadow::vfunc440
 0x10004fde func   ?sub_1007f510@@YAXPAHPBH@Z sub_1007f510
 0x10004fe3 func   ?sub_10032a20@@YIXPAH@Z sub_10032a20
 0x10004fe8 func   ?vfunc5@CWeaponMelee_Tzimisce3Claw@@QAEPAV1@I@Z CWeaponMelee_Tzimisce3Claw::vfunc5
