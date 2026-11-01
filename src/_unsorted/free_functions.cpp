@@ -142632,6 +142632,39 @@ void *CUnknown10310c10::sub_10310cf0(Vector vecOrigin)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10311490 size=0x30
+void sub_10002c39();
+void sub_10001096();
+
+struct CUnknown10311490 {
+	void *m_pVtbl;
+	int m_n0004;
+	int m_n0008;
+	int m_n000c;
+	unsigned short m_w0010;
+	unsigned short m_w0012;
+	unsigned short m_w0014;
+	unsigned short m_w0016;
+	void *m_pfn0018;
+	void *sub_10311490();
+};
+
+// TARGET: CUnknown10311490::sub_10311490
+void *CUnknown10311490::sub_10311490()
+{
+	m_pVtbl = (void *)sub_10002c39;
+	m_n0004 = 0;
+	m_n0008 = 0;
+	m_n000c = 0;
+	m_w0010 = 0xffff;
+	m_w0012 = 0;
+	m_w0014 = 0xffff;
+	m_w0016 = 0;
+	m_pfn0018 = (void *)sub_10001096;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103114d0 size=0x20
 #include <string.h>
 
