@@ -123791,6 +123791,38 @@ void sub_102699e0(Vector vec, int a, float t)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10269a20 size=0x59
+#include "CAI_BaseNPCTroika.h"
+struct CAI_BaseNPC580 : CAI_BaseNPC {
+	virtual void s569(); virtual void s570(); virtual void s571(); virtual void s572(); virtual void s573();
+	virtual void s574(); virtual void s575(); virtual void s576(); virtual void s577(); virtual void s578();
+	virtual void s579();
+	virtual CAI_CondOwner *Slot580();
+};
+// TARGET: CAI_BaseNPC::sub_10269a20
+void CAI_BaseNPC::sub_10269a20(int condition)
+{
+	int id;
+	if (condition < 1000000000)
+		goto translate;
+	if (condition == -1)
+		goto translate;
+	id = condition;
+	goto check;
+translate:
+	{
+		CAI_CondOwner *pOwner = ((CAI_BaseNPC580 *)this)->Slot580();
+		id = pOwner->m_table.sub_102ea2d0(condition);
+	}
+check:
+	if (id != -1) {
+		int bit = id - 1000000000;
+		if (bit != -1)
+			((unsigned int *)((char *)this + 0x5c5c))[bit >> 5] |= 1 << (bit & 0x1f);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10269b30 size=0xd
 namespace lifted {
 int __stdcall sub_10014df8(int);
