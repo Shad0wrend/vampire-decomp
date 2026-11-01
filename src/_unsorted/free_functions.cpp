@@ -36764,6 +36764,72 @@ void CEventQueue::sub_100cf080()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cf160 size=0x221
+#include "CEventQueue.h"
+#include "CBaseCombatCharacter.h"
+#include "CVStatList_t.h"
+#include "CUnk10230f00.h"
+#include "CEHandleGet.h"
+
+extern void (__cdecl *g_109f364c)(const char *fmt, ...);
+void sub_10230910(CVDmgBlock16_t *pBlock, void *pCharacter, int nValue, int nFlag);
+
+void CEventQueue::sub_100cf160(CBaseEntity *pEntity, int nStat)
+{
+	unsigned int hEntity;
+	if (pEntity)
+		hEntity = *pEntity->vfunc1();
+	else
+		hEntity = -1;
+	CEQEvent *pEvent = m_pHead;
+	if (pEvent) {
+		CUnk10230f00 block;
+		block.sub_10230f00(3, nStat);
+		if (pEntity) {
+			CBaseCombatCharacter *pChar = (CBaseCombatCharacter *)pEntity->m_p9c;
+			if (pChar) {
+				if (pChar->vfunc296(nStat)) {
+					g_109f364c("%s cannot remove discipline: %s\n", pChar->sub_100ab4f0(), block.Block()->sub_102043a0());
+					return;
+				}
+				if (nStat == 0xb)
+					*(int *)((char *)pChar + 0x10d8) = CVStatListSet::Of(pChar)->Find(3)->sub_10010609(0xb);
+				do {
+					if (pEvent->m_n34 == 2 && ((CVDmgBlock16_t *)pEvent->m_block40)->sub_10204360(block.Block())) {
+						void *pSelf = EHandle_Get(hEntity);
+						void *pOther = EHandle_Get((unsigned int &)pEvent->m_hTarget);
+						if (pOther != pSelf) {
+							pEvent = pEvent->m_pNext;
+						} else {
+							int nValue = pEvent->m_n30 == 4 ? pEvent->m_n20 : 0;
+							CBaseEntity *pTarget = (CBaseEntity *)EHandle_Get((unsigned int &)pEvent->m_hTarget);
+							void *pTargetChar;
+							if (!pTarget)
+								pTargetChar = 0;
+							else
+								pTargetChar = pTarget->m_p9c;
+							sub_10230910(block.Block(), pTargetChar, nValue, 0);
+							CEQEvent *pLink = (CEQEvent *)this;
+							do {
+								if (pLink->m_pNext == pEvent) {
+									pLink->m_pNext = pEvent->m_pNext;
+									delete pEvent;
+								}
+								pLink = pLink->m_pNext;
+							} while (pLink);
+							pEvent = m_pHead;
+						}
+					} else {
+						pEvent = pEvent->m_pNext;
+					}
+				} while (pEvent);
+				*(int *)((char *)pChar + 0x10d8) = -1;
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cf420 size=0x1e0
 #include "CEventQueue.h"
 #include "CBaseEntity.h"

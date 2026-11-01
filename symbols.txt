@@ -12309,6 +12309,7 @@
 0x10015b31 func   ?sub_101bb7e0@@YAPAHXZ sub_101bb7e0
 0x10015b3b func   ?sub_101a9680@@YAHXZ sub_101a9680
 0x10015b40 func   ?sub_1012b080@CGib@@QAEXPBD@Z CGib::sub_1012b080
+0x10015b45 func   ?sub_100cf160@CEventQueue@@QAEXPAVCBaseEntity@@H@Z CEventQueue::sub_100cf160
 0x10015b4f func   ?sub_102e9a00@CUnknown102e9a00@@QAE_NPAX@Z CUnknown102e9a00::sub_102e9a00
 0x10015b54 func   ?sub_102c68e0@CUnknown102c68e0@@QAEPAHH@Z CUnknown102c68e0::sub_102c68e0
 0x10015b59 func   ?sub_100ecc10@CUnknown100ecc10@@QAEPADH@Z CUnknown100ecc10::sub_100ecc10
