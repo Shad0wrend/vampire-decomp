@@ -141347,6 +141347,37 @@ void CNodeGraphEntity::sub_102f5120()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f5190 size=0x2f
+#include "CUnknown102f7970.h"
+
+struct CUnk102f4be0Obj
+{
+    void sub_102f4be0();
+};
+
+void sub_102ccb80();
+void sub_102ccb50();
+
+struct CUnk102f5190
+{
+    char m_pad0000[0x454];
+    CUnknown102f7970 *m_p454;
+    CUnk102f4be0Obj m_obj458;
+
+    void sub_102f5190();
+};
+
+// TARGET: ?sub_102f5190@CUnk102f5190@@QAEXXZ
+void CUnk102f5190::sub_102f5190()
+{
+    m_obj458.sub_102f4be0();
+    sub_102ccb80();
+    sub_102ccb50();
+    m_p454->sub_102f7a90();
+    m_p454->sub_102f7970();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f5b30 size=0x7b
 #include <string.h>
 
