@@ -167983,6 +167983,31 @@ extern "C" CWeaponIArmor_Hvy_Cloth* item_a_body_armor()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f3f00 size=0x3c
+extern int vt_104e68bc[];
+
+struct CWeaponRangedBasePlaceholder {
+    void sub_10011b8f();
+};
+
+struct CWeaponIArmorUnit {
+    void *sub_103f3f00();
+};
+
+void *CWeaponIArmorUnit::sub_103f3f00()
+{
+	((CWeaponRangedBasePlaceholder *)this)->sub_10011b8f();
+	*(int **)this = vt_104e68bc;
+	*((char *)this + 0x8c8) = 0;
+	*(int *)((char *)this + 0x8b8) = 0;
+	*(int *)((char *)this + 0x8c0) = 0;
+	*(int *)((char *)this + 0x8bc) = 0;
+	*(int *)((char *)this + 0x8c4) = 0;
+	*(int *)((char *)this + 0x778) = 5;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f4780 size=0x6f
 #include "CEntityVSlots.h"
 
