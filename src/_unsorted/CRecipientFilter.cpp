@@ -78,6 +78,14 @@ void CRecipientFilter::MakeReliable()
 char __fastcall sub_1019cf70(CRecipientFilter *p) { return p->m_bReliable; }
 // END FUNCTION
 
+// FUNCTION: 0x1019cf90 size=0x4
+// TARGET: sub_1019cf90
+int __fastcall sub_1019cf90(void *pFilter)
+{
+	return *(int *)((char *)pFilter + 0x14);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019cff0 size=0x3e
 #include "vampire.h"
 #include "CRecipientFilter.h"
