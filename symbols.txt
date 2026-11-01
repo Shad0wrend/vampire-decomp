@@ -9600,6 +9600,7 @@
 0x10011a18 func   ?vfunc5@CEnvFloatingCamera@@QAEPAV1@I@Z CEnvFloatingCamera::vfunc5
 0x10011a1d func   ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z CBaseEntity::vfunc120
 0x10011a27 func   ?sub_102c51a0@CAI_BaseNPCTroika@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPCTroika::sub_102c51a0
+0x10011a31 func   ?sub_102c4e80@@YIXPAVCBaseEntity@@@Z sub_102c4e80
 0x10011a36 func   ?vfunc0@CAI_InterestingPlaceMarkersSaveRestoreOps@@UAEXPAUSaveRestoreFieldInfo_t@@PAVCSave@@@Z CAI_InterestingPlaceMarkersSaveRestoreOps::vfunc0
 0x10011a3b func   _entityflame entityflame
 0x10011a40 func   ?sub_100a19c0@Vector@@QBE?AV1@M@Z Vector::sub_100a19c0

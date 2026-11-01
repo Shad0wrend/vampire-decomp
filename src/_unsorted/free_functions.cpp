@@ -125312,6 +125312,17 @@ void CAI_BaseNPCTroika::sub_102c4c50(CAI_ArcRecord *pRec, float flTime, int a, i
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c4e80 size=0x1d
+// TARGET: sub_102c4e80
+void __fastcall sub_102c4e80(CBaseEntity *p)
+{
+    p->vfunc93(4, 0);
+    float *f = (float *)p;
+    float t = f[0x64b8 / 4];
+    f[0x3ec / 4] = t;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c54c0 size=0x2b
 #include "CUnknown1070b244.h"
 
