@@ -3,7 +3,16 @@
 
 #include "utlvector.h"
 
-struct DialogLine;
+struct DialogLine
+{
+	int m_nKey;	// 0x00
+	char *m_pszText;	// 0x04
+	char *m_pszAlt;	// 0x08
+	int m_nResponse;	// 0x0c
+	char *m_pszDependency;	// 0x10
+	char *m_pszScript;	// 0x14
+	char *m_apszClan[7];	// 0x18: the per-clan texts
+};
 class CBaseEntity;
 
 struct CDialogVec : CUtlVector<int>
