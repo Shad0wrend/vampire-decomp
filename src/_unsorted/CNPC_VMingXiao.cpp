@@ -278,6 +278,18 @@ void CNPC_VMingXiao::vfunc448(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10394570 size=0x1c
+#include "CNPC_VMingXiao.h"
+
+// TARGET: CNPC_VMingXiao::vfunc440
+int CNPC_VMingXiao::vfunc440(int a)
+{
+	if (a != 0x147)
+		return sub_102b12f0(a);
+	return 0x16f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10394690 size=0xe0
 #include "CNPC_VMingXiao.h"
 int CNPC_VMingXiao::vfunc376(int act)

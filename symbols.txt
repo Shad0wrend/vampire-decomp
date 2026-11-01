@@ -2433,6 +2433,7 @@
 0x100053f3 func   ?sub_102e0630@CUnknown102e0630@@QAEHPAX@Z CUnknown102e0630::sub_102e0630
 0x100053f8 func   ?vfunc2@CTEArmorRicochet@@UAEPAV1@I@Z CTEArmorRicochet::vfunc2
 0x100053fd func   ?sub_100dcd90@CCollisionProperty@@QAEXPBM0PAM1@Z CCollisionProperty::sub_100dcd90
+0x10005402 func   ?vfunc440@CNPC_VMingXiao@@UAEHH@Z CNPC_VMingXiao::vfunc440
 0x10005407 func   ?sub_101cba00@CStealthUnit101cba00@@QAEXPAX@Z CStealthUnit101cba00::sub_101cba00
 0x10005411 func   ?sub_100f5620@CUnknown100f5600@@QAEXXZ CUnknown100f5600::sub_100f5620
 0x10005420 func   ?sub_1004c060@CUtlRBTree16Unit@@QAEXG@Z CUtlRBTree16Unit::sub_1004c060
