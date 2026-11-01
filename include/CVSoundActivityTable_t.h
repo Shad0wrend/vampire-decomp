@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CEntitySoundOriginView.h"
+#include "CUnk101f42d0.h"
 
 class CBaseCombatCharacter;
 
