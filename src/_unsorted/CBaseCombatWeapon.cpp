@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10149c00 size=0x1
+// TARGET: sub_10149c00
+void __fastcall sub_10149c00(void *pThis)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10149ca0 size=0x5
 bool CBaseCombatWeapon::vfunc283(CBaseEntity * a0)
 {
