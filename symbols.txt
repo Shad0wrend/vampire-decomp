@@ -2026,6 +2026,7 @@
 0x10004697 func   ?sub_103008f0@CUnknown103008f0@@QAEHPBVVector@@MH@Z CUnknown103008f0::sub_103008f0
 0x1000469c func   ?vfunc364@CNPCMaker@@UAE_NH@Z CNPCMaker::vfunc364
 0x100046a6 func   ?vfunc52@CBaseEntity@@UAEMXZ CBaseEntity::vfunc52
+0x100046ab func   ?sub_10376b10@CUnk10376b10@@QAEHH@Z CUnk10376b10::sub_10376b10
 0x100046b0 func   ?sub_102b11c0@CAI_BaseNPCTroika@@QAEHH@Z CAI_BaseNPCTroika::sub_102b11c0
 0x100046b5 func   ?vfunc80@CItemGWirelessCamera3@@QAEHXZ CItemGWirelessCamera3::vfunc80
 0x100046ba func   ?vfunc2@CTESparks@@UAEPAV1@I@Z CTESparks::vfunc2
