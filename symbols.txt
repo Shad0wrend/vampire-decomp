@@ -10960,6 +10960,7 @@
 0x10013f39 func   ?sub_10377c20@@YADXZ sub_10377c20
 0x10013f3e func   ?sub_101f41b0@CUnknown101f40f0@@QAEXXZ CUnknown101f40f0::sub_101f41b0
 0x10013f43 func   ?vfunc451@CNPC_VScurrying@@UAEHXZ CNPC_VScurrying::vfunc451
+0x10013f48 func   ?sub_10273aa0@@YIXPAH@Z sub_10273aa0
 0x10013f52 func   ?sub_100d2990@@YAXXZ sub_100d2990
 0x10013f57 func   ?sub_10072d20@CUnk10072d20@@QAEXXZ CUnk10072d20::sub_10072d20
 0x10013f61 func   ?sub_103b9f90@CNPC_VTzimisce@@QAEXHM@Z CNPC_VTzimisce::sub_103b9f90

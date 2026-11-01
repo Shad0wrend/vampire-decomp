@@ -119192,6 +119192,17 @@ void CAI_BaseNPC::sub_10273790(const char *pszRelationship, CBaseEntity *pActiva
 }
 // END FUNCTION
 
+// FUNCTION: 0x10273aa0 size=0x1d
+// TARGET: sub_10273aa0
+void __fastcall sub_10273760(int *p);
+void __fastcall sub_10273aa0(int *p)
+{
+    sub_10273760(p);
+    ((void (__fastcall *)(int *))(*(int **)p)[0x698 / 4])(p);
+    ((void (__fastcall *)(int *))(*(int **)p)[0x694 / 4])(p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10273e80 size=0x24
 #include "CAI_BaseNPC.h"
 
