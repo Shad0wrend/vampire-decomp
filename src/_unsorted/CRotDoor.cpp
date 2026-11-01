@@ -235,6 +235,44 @@ float CRotDoor::vfunc247()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f3030 size=0x2a2
+#include "CRotDoor.h"
+#include "CGlobalEntityList.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+
+extern int g_106eb3e0;
+extern int g_106eb3e8;
+
+void CRotDoor::vfunc243(char bChain, char bOpenAway)
+{
+    ScopeTrace trace("CRotDoor::DoorGoUp", g_106b8540, g_106b8540);
+    if (bChain) {
+        CGlobalEntityList *pGlobal = g_10566458;
+        EHandleEntityList *pList = (EHandleEntityList *)pGlobal;
+        if (pGlobal->sub_100290c0((const unsigned int *)&m_hLinked630)) {
+            CBaseEntity *pOldActivator = (CBaseEntity *)pList->LookupEntity(((CRotDoor *)pList->LookupEntity(m_hLinked630))->m_hActivator53c);
+            ((CRotDoor *)pList->LookupEntity(m_hLinked630))->m_hActivator53c = m_hActivator53c;
+            m_hLinked630.Get()->vfunc243(0, 1);
+            m_hLinked630.Get()->m_hActivator53c = pOldActivator;
+        }
+    }
+    sub_100ee4e0(g_106eb3e0, 0);
+    sub_100ee4e0(g_106eb3e8, 0);
+    ((CBaseDoor *)this)->sub_100ee810();
+    ((CBaseDoor *)this)->sub_100efbf0(1);
+    m_nState4f8 = 2;
+    m_pfn0114 = (void (CBaseEntity::*)())&CRotDoor::sub_100f0860;
+    if (m_hActivator53c.Get() && !(m_flags204 & 0x10)) {
+        if (bOpenAway)
+            sub_100f3390(m_hActivator53c.Get());
+    } else {
+        sub_101c17e0(&m_angRotation52c, m_flSpeed164);
+    }
+    m_items564[7].sub_100cd660(m_hActivator53c.Get(), this, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f35a0 size=0x22d
 #include "CRotDoor.h"
 #include "ScopeTrace.h"
