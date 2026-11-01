@@ -18,4 +18,5 @@ public:
 	int m_n24;	// 0x24
 
 	void sub_1000f236();	// destructor body
+	CTETracer *sub_1006a400(const char *name);	// constructor body (CBaseTempEntityHead base at stub 0x10015334), then the vtable and the zeroed m_vecStart / m_vecEnd
 };
