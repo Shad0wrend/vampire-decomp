@@ -60627,6 +60627,40 @@ void sub_10146500()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146570 size=0x93
+struct V3 {
+	float x, y, z;
+};
+void sub_10142e90(V3 *a, V3 *b, int p2, int p3, int p4, int p5, int p6);
+
+static inline V3 Raised(const V3 &v)
+{
+	V3 r;
+	r.x = v.x;
+	r.y = v.y;
+	r.z = v.z;
+	r.z += 0.1f;
+	return r;
+}
+
+static inline V3 Raised2(const V3 &v)
+{
+	V3 r;
+	r.z = v.z + 0.1f;
+	r.x = v.x;
+	r.y = v.y;
+	return r;
+}
+
+void sub_10146570(V3 *pStart, V3 *pEnd, int p2, int p3, int p4, int p5, int p6)
+{
+	V3 vStart, vEnd;
+	vEnd = Raised(*pEnd);
+	vStart = Raised2(*pStart);
+	sub_10142e90(&vStart, &vEnd, p2, p3, p4, p5, p6);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146640 size=0x15
 struct CUnknown10146640 { void * sub_10146640(); };
 void * CUnknown10146640::sub_10146640()

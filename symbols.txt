@@ -12618,6 +12618,7 @@
 0x10015dde func   ?sub_1037e990@@YIPAXPAX@Z sub_1037e990
 0x10015de3 func   ?sub_101bd650@@YGXPAUS@@H@Z sub_101bd650
 0x10015ded func   ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z CBaseCombatWeapon::vfunc35
+0x10015df2 func   ?sub_10146570@@YAXPAUV3@@0HHHHH@Z sub_10146570
 0x10015dfc func   ??0CUnknown101f4c80@@QAE@H@Z CUnknown101f4c80::CUnknown101f4c80
 0x10015dfc func   ?sub_101f4c80@CUnknown101f4c80@@QAEPAU1@H@Z CUnknown101f4c80::sub_101f4c80
 0x10015e01 func   ?vfunc15@CSoundControllerImp@@UAEXPAXHPAH@Z CSoundControllerImp::vfunc15
