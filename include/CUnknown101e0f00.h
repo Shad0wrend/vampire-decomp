@@ -12,7 +12,7 @@ class CUnknown101e0f00;
 struct CUnknown101e0f00SrcA	// an element of the first list of a source description: one particle effect
 {
 	int m_bFirstPerson;	// 0x00
-	char m_pad0004;
+	char m_bMarkParticle;	// 0x04: the created particle gets its byte at +0x4c5 set
 	char m_bDiscipline;	// 0x05
 	char m_pad0006[2];
 	const char *m_pszEntity;	// 0x08: the parameter block (CUnknown100eb420) starts here
