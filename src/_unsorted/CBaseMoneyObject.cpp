@@ -27,6 +27,23 @@ CBaseMoneyObject *CBaseMoneyObject::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f57e0 size=0xd
+struct CBaseCombatWeaponFwd;
+struct CBaseMoneyObjectFwd {
+    void sub_103f57e0(int a, int b);
+};
+struct CBaseCombatWeaponFwd {
+    void sub_10252ea0(int a, int b);
+};
+
+// TARGET: sub_103f57e0
+void CBaseMoneyObjectFwd::sub_103f57e0(int a, int b)
+{
+    b = *(volatile int *)&b;
+    ((CBaseCombatWeaponFwd *)this)->sub_10252ea0(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f5860 size=0xb
 #include "CBaseMoneyObject.h"
 
