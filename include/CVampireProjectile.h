@@ -1,6 +1,7 @@
 // class CVampireProjectile (RTTI .?AVCVampireProjectile@@), primary vtable 0x1048357c, 273 slots.
 // Modelled as a direct CBaseEntity subclass (the real bases CBaseAnimating, CBaseToggle are not declared);
 // slots 117..264 are placeholders that keep slot 265 right.
+// slots 118, 120-122 are CBaseEntity's (not declared here: a placeholder with other parameters is a new virtual); 126 / 127 are the class's own 0x101ee770 / 0x101ee790.
 #pragma once
 
 #include "CBaseEntity.h"
@@ -9,9 +10,9 @@ class CVampireProjectile : public CBaseEntity
 {
 public:
 	virtual void vfunc103();	// slot 103 "CVampireProjectile::Spawn": slot 104, SetSolid(2), SetSize(zero vector, zero vector), SetMoveType(13, 0), effects |= 0xa0, the touch function, the spawn time at +0x884, the model name (+0x87c) through slot 105, and the think function
-	virtual int vfunc117(); virtual void vfunc118(); virtual void vfunc119();
-	virtual void vfunc120(); virtual void vfunc121(); virtual void vfunc122(); virtual void vfunc123();
-	virtual void vfunc125(); virtual void vfunc126(); virtual void vfunc127(); virtual bool vfunc128(); virtual void vfunc129();
+	virtual int vfunc117(); virtual void vfunc119();
+	virtual void vfunc123();
+	virtual void vfunc125(); virtual int vfunc126(int a); virtual int vfunc127(int a); virtual bool vfunc128(); virtual void vfunc129();
 	virtual void vfunc130(int a); virtual int vfunc131(); virtual void vfunc132(); virtual void vfunc133(); virtual void vfunc134();
 	virtual void vfunc135(); virtual void vfunc136(); virtual void vfunc137(); virtual void vfunc138(); virtual void vfunc139();
 	virtual void vfunc140(); virtual void vfunc141(); virtual void vfunc142(); virtual void vfunc143(); virtual void vfunc144();
