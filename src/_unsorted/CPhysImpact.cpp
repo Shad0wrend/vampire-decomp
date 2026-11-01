@@ -17,9 +17,9 @@ unsigned char sub_1004ee90()
 namespace lifted {
 extern char g_1053d224;
 }
-CPhysImpact::Datamap82 CPhysImpact::vfunc82()
+datamap_t *CPhysImpact::vfunc82()
 {
-    return (CPhysImpact::Datamap82)&lifted::g_1053d224;
+    return (datamap_t *)&lifted::g_1053d224;
 }
 // END FUNCTION
 
