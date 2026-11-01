@@ -15464,6 +15464,25 @@ int CUnknown10074980::sub_10074980()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100749a0 size=0x1f
+struct CUnk100749a0 {
+	char m_pad0000[0x3c];
+	int m_3c[1];
+	bool sub_10074a50();
+	int sub_100749a0(int a);
+};
+
+// TARGET: CUnk100749a0::sub_100749a0
+int CUnk100749a0::sub_100749a0(int a)
+{
+	if (sub_10074a50())
+	{
+		return m_3c[a];
+	}
+	return m_3c[0];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10074a00 size=0x17
 struct CUnknown10074a00
 {
