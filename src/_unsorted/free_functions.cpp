@@ -99170,6 +99170,28 @@ void CUnknown101fa0e0::sub_101fa180(void *pFile)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fa680 size=0x56
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+
+// TARGET: sub_101fa680
+void sub_101fa680()
+{
+	g_109f3620[*g_109f3680].m_pszFunc = "CVDmg_t::~CVDmg_t";
+	g_109f3620[*g_109f3680].m_pszName = "";
+	g_109f3620[*g_109f3680].m_pszExtra = "";
+	(*g_109f3680)++;
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fa700 size=0xc1
 #include "CVDmg_t.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
