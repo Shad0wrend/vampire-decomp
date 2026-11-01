@@ -70075,10 +70075,11 @@ extern "C" GP *prop_largehull_ignore()
 // FUNCTION: 0x10194330 size=0x109
 #include "CUtlRBTree12.h"
 #include "utlrbtree.h"
+struct CRBTree12Entry_10194f30 { char data[4]; };	// the tree of its sentinel (one T per game instance)
 
 unsigned short CUtlRBTree12::sub_10194330(const void *search) const
 {
-	const CUtlRBTree<int, unsigned short> *tree = (const CUtlRBTree<int, unsigned short> *)this;
+	const CUtlRBTree<CRBTree12Entry_10194f30, unsigned short> *tree = (const CUtlRBTree<CRBTree12Entry_10194f30, unsigned short> *)this;
 	unsigned short i = m_Root;
 	while (i != InvalidIndex()) {
 		if (m_LessFunc(search, m_pElements[i].m_Data)) {
