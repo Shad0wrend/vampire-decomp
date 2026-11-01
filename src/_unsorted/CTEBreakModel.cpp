@@ -81,6 +81,16 @@ void CTEBreakModel::vfunc3(const Vector &origin, const QAngle &angles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005e930 size=0x39
+#include "CTEBreakModel.h"
+#include "IVEngineServerFull.h"
+
+void CTEBreakModel::vfunc4(void *pFilter, int delay)
+{
+	engine->vfunc103((int)pFilter, delay, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005e9f0 size=0x6
 #include "CTEBreakModel.h"
 namespace lifted {
