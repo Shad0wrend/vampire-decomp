@@ -120836,6 +120836,18 @@ struct CUnknown102886f0 { char p[0x40]; int a; void sub_102886f0(int v); };
 void CUnknown102886f0::sub_102886f0(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x10289c90 size=0x1d
+// TARGET: sub_10289c90
+void __fastcall sub_102e8560(int *p);
+void __fastcall sub_10289c90(int *p)
+{
+    if (((char (__fastcall *)(int *))(*(int **)p)[0x844 / 4])(p))
+    {
+        sub_102e8560((int *)((char *)p + 0x5cf4));
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10289cc0 size=0xb
 void CUnknown10289cc0::sub_10289cc0()
 {
