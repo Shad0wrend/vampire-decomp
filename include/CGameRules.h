@@ -50,7 +50,7 @@ public:
 	virtual bool vfunc24();
 	virtual int vfunc25();
 	virtual bool vfunc26(int, int, int, int);
-	virtual void vfunc27();
+	virtual void vfunc27(void *pPlayer);
 	virtual void vfunc28(void *pEdict);	// "ClientDisconnected": the edict of the leaving player
 	virtual void vfunc29(void *pPlayer);	// sends a user message (no payload byte) to the player
 	virtual float vfunc30(int a);
@@ -59,7 +59,7 @@ public:
 	virtual void vfunc33(void *pInfo, void *a, float flDamage, int b, int c);
 	virtual bool vfunc34(int);
 	virtual void vfunc35(CBaseEntity *pPlayer);	// "EquipPlayer"-like: gives the player its starting items
-	virtual void vfunc36(CBaseEntity *pPlayer);
+	virtual void vfunc36(void *pPlayer);
 	virtual bool vfunc37(int);
 	virtual float vfunc38(int a);
 	virtual CBaseEntity *vfunc39(CBaseEntity *pPlayer);	// \"GetPlayerSpawnSpot\": puts the player on the spawn spot it selects (the origin one unit up, the spot's angles; the middle of the world model's bounds and zero angles without a spot), clears its velocity and the two vectors at +0x1efc / +0x1f08, sets +0x207c to 1 and returns the spot
@@ -72,7 +72,7 @@ public:
 	virtual int vfunc46(int);
 	virtual char vfunc47(CBaseEntity *pPlayer, CBaseEntity *pItem);	// "CanHavePlayerItem"
 	virtual int vfunc48(int index);
-	typedef int Arg4950;	// staged: becomes CBaseEntity *
+	typedef CBaseEntity *Arg4950;	// staged: becomes CBaseEntity *
 	virtual float vfunc49(Arg4950 a);
 	virtual float vfunc50(Arg4950 a);
 	virtual Vector vfunc51(CBaseEntity *pEnt);	// returns a copy of the entity's origin
@@ -103,8 +103,6 @@ public:
 	virtual float vfunc76(const Vector &vecStart, const Vector &vecEnd, const Vector &vecMins, const Vector &vecMaxs, unsigned int fMask, CBaseEntity *pPassEnt, int collisionGroup, int unused, CGameTrace *pTrace);	// slot 76: a hull trace from vecStart to vecEnd through the engine trace object (the trace filter ignores pPassEnt); when the debug switch of the global at 0x10738964 is on draws the traced line; always answers 1.0f; this is unused
 	virtual char vfunc77(void *pPassEnt, int collisionGroup);	// slot 77: whether the collision group of a trace (the pass entity) collides with the given group
 	virtual float vfunc78(int a, int b, int c, int d, int e);	// 0x10129700: passes the five arguments on to sub_10009863 and answers the constant at 0x104454c0
-	virtual void vfunc79();
-	virtual void vfunc80();
 	void sub_1000d189();	// as in CDataObjectAccessSystem (transplant)
 	void *sub_10128400();	// the object at +4, created by vfunc56 when it is still null
 };
