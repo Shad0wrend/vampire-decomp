@@ -33,6 +33,7 @@ public:
 class CPhysForce : public CBaseEntity
 {
 public:
+	CPhysForce();	// 0x100264e0: CBaseEntity(0), handle -1 (+0x460), the motion record's vftable (+0x464), own vftable, controller null
 	CPhysForce *vfunc5(unsigned int flags);	// scalar deleting destructor
 	void vfunc130(int a);	// slot 130: CBaseEntity::vfunc130(a), then the controller's slot 1 with the motion record
 
