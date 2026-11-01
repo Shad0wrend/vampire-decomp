@@ -8314,6 +8314,7 @@
 0x1000f236 func   ?sub_1006a470@CUnknown1006a470@@QAEHXZ CUnknown1006a470::sub_1006a470
 0x1000f23b func   ?vfunc29@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HH@Z CTempEntsSystem::vfunc29
 0x1000f240 func   ?sub_1030bc00@@YIHPAD@Z sub_1030bc00
+0x1000f245 func   ?sub_103b1be0@@YIPAXPAD@Z sub_103b1be0
 0x1000f24f func   ?sub_100949e0@CBaseAnimating@@QAEMM@Z CBaseAnimating::sub_100949e0
 0x1000f254 func   ?sub_1034f300@@YAHXZ sub_1034f300
 0x1000f259 func   ?vfunc81@CBatSwarm@@UAEHXZ CBatSwarm::vfunc81
