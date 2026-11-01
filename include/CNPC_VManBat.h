@@ -4,6 +4,7 @@
 #include "Vector.h"
 
 class CBaseEntity;
+class CBaseAnimating;
 
 class CNPC_VManBat
 {
