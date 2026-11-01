@@ -522,7 +522,7 @@ public:
 	virtual void vfunc437();
 	virtual void vfunc438();
 	virtual void vfunc439();
-	virtual void vfunc440();
+	virtual int vfunc440(int schedule);	// the game's slot 440 \"TranslateSchedule\" override (0x103c3560: 199 -> 200, 231 -> 0x156, else CAI_BaseNPCTroika::vfunc440 via sub_102b12f0); this header's numbering is one ahead, so this placeholder stands for game slot 441: fix the numbering before relying on it
 	virtual void vfunc441();
 	virtual void vfunc442();
 	virtual void vfunc443();
