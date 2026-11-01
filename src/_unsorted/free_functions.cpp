@@ -182607,6 +182607,20 @@ void CUnknown1042e8c0::sub_1042eca0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042ecf0 size=0x36
+#include "CUnknown1042e8c0.h"
+void CUnknown1042e8c0::sub_1042ecf0()
+{
+	if (gpGlobals->curtime > m_flDieTime)
+	{
+		sub_100ae150();
+		return;
+	}
+	sub_1042eca0();
+	m_flNextThink = gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042ed40 size=0x4d
 #include "CBaseEntity.h"
 #include "globalvars.h"
