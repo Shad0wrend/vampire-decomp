@@ -163388,6 +163388,32 @@ extern "C" CBaseEntity *npc_VDialogPedestrian()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a1d90 size=0x31
+struct CGenericBaseCtorCall_103a1d90
+{
+	void sub_10384010();
+};
+
+struct CGenericMemberCtorCall_103a1d90
+{
+	void sub_103a1ed0();
+};
+
+extern void *vt_104c0dc4[];
+extern void *vt_104c0d94[];
+
+// TARGET: sub_103a1d90
+void *__fastcall sub_103a1d90(char *self)
+{
+	((CGenericBaseCtorCall_103a1d90 *)self)->sub_10384010();
+	((CGenericMemberCtorCall_103a1d90 *)(self + 0x6680))->sub_103a1ed0();
+	*(void ***)self = vt_104c0dc4;
+	*(void ***)(self + 0x19b0) = vt_104c0d94;
+	*(int *)(self + 0x667c) = 0;
+	return self;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a1ed0 size=0xc
 void __fastcall sub_103a1ef0(void *pThis);
 
