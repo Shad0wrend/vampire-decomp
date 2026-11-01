@@ -5,9 +5,9 @@
 namespace lifted {
 extern char g_105b21e8;
 }
-CItemContainerLock::Datamap82 CItemContainerLock::vfunc82()
+datamap_t *CItemContainerLock::vfunc82()
 {
-    return (CItemContainerLock::Datamap82)&lifted::g_105b21e8;
+    return (datamap_t *)&lifted::g_105b21e8;
 }
 // END FUNCTION
 
