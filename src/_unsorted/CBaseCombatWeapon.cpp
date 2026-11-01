@@ -8,6 +8,13 @@ void __fastcall sub_10149c00(void *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10149c20 size=0x1
+// TARGET: sub_10149c20
+void __fastcall sub_10149c20(void *pThis)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10149ca0 size=0x5
 bool CBaseCombatWeapon::vfunc283(CBaseEntity * a0)
 {

@@ -2901,6 +2901,7 @@
 0x10005dc1 func   ?sub_10264300@@YAXPAUCBlock4k@@PBU1@@Z sub_10264300
 0x10005dc6 func   ?vfunc3@CAI_InterestingPlaceMarkersSaveRestoreOps@@UAEXH@Z CAI_InterestingPlaceMarkersSaveRestoreOps::vfunc3
 0x10005dcb func   ?vfunc80@CWeaponWallet@@QAEHXZ CWeaponWallet::vfunc80
+0x10005dda func   ?sub_10149c20@@YIXPAX@Z sub_10149c20
 0x10005ddf func   ?sub_100f11b0@CBaseDoor@@QAEXXZ CBaseDoor::sub_100f11b0
 0x10005de9 func   ?sub_10201870@CVStatListUnit@@QAEPAVCVStatInfo_t@@H@Z CVStatListUnit::sub_10201870
 0x10005dee func   ?vfunc333@CAI_BaseNPCTroika@@QAEXM@Z CAI_BaseNPCTroika::vfunc333
