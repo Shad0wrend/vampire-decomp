@@ -50011,6 +50011,18 @@ void sub_1011a710(char flag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011bc40 size=0x1c
+struct CUnk1011bc40Iface { virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(int, int, int, int); };
+extern CUnk1011bc40Iface *g_1070b23c;
+extern int g_10571c24;
+
+// TARGET: sub_1011bc40
+void sub_1011bc40(int a)
+{
+	g_1070b23c->a3(g_10571c24, a, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011bc70 size=0x21
 struct CUnkVT1011bc70
 {
