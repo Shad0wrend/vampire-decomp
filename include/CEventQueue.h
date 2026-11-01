@@ -37,6 +37,32 @@ struct CEQEvent	// a "PEvent" record as the queue restores it (0x50 bytes); the 
 	}
 };
 
+struct CEQBlock16	// the 16 byte block at +0x40 of a queued event, copied as four dwords
+{
+	int m_a, m_b, m_c, m_d;
+};
+
+// The queued event as the game's copy constructor 0x100d14b0 (stub 0x10002252, one caller: sub_100ce1c0) sees it, 0x50 bytes:
+// the variant is a CVariantCopy at +0x20 (its inline member-wise copy is the odd byte / dword / vector sequence there,
+// the same as CVariantCopy::CVariantCopy 0x1002ca10), +0x38 is zeroed by the copy.
+struct CEQEventFull
+{
+	float m_flFireTime;	// 0x00
+	int m_iTarget;	// 0x04
+	int m_iTargetInput;	// 0x08
+	int m_hActivator;	// 0x0c
+	int m_hCaller;	// 0x10
+	int m_iOutputID;	// 0x14
+	int m_hTarget;	// 0x18
+	int m_n1c;	// 0x1c
+	CVariantCopy m_Variant;	// 0x20 .. 0x34
+	int m_n34;	// 0x34
+	int m_n38;	// 0x38: 0 in a copy (the queue link)
+	int m_n3c;	// 0x3c
+	CEQBlock16 m_Block;	// 0x40
+	CEQEventFull(const CEQEventFull &other);	// 0x100d14b0: member-wise copy, m_n38 = 0
+};
+
 class IEQRestore	// the restore interface the queue reads its tables through (slot 3)
 {
 public:
