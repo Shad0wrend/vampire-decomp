@@ -4209,6 +4209,7 @@
 0x10008292 func   ?vfunc5@CAI_InterestingPlace@@QAEPAV1@I@Z CAI_InterestingPlace::vfunc5
 0x1000829c func   ?sub_102a9600@CUnknown102a9600@@QAEMH@Z CUnknown102a9600::sub_102a9600
 0x100082a1 func   ?sub_101f1e20@CUnknown101f1e20@@QAEXXZ CUnknown101f1e20::sub_101f1e20
+0x100082a6 func   ?sub_101b4a80@@YGPBDH@Z sub_101b4a80
 0x100082ab func   ??0StatItem56@@QAE@H@Z StatItem56::StatItem56
 0x100082b5 func   ?vfunc180@CWeaponMelee_Torch@@QAEXXZ CWeaponMelee_Torch::vfunc180
 0x100082ba func   ?sub_1026a2a0@CUnknown1026a2a0@@QAEXH@Z CUnknown1026a2a0::sub_1026a2a0
