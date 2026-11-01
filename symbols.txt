@@ -8123,6 +8123,7 @@
 0x1000e5ed func   ?vfunc80@CWeaponMelee_SeveredArm@@QAEHXZ CWeaponMelee_SeveredArm::vfunc80
 0x1000e5f2 func   _item_g_bailbond_receipt item_g_bailbond_receipt
 0x1000e5f7 func   ?sub_1033e0a0@CBaseCombatCharacter@@QAEXHHPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_1033e0a0
+0x1000e601 func   ?vfunc9@CCollisionProperty@@UAEPAM_N@Z CCollisionProperty::vfunc9
 0x1000e606 func   ?sub_103e77f0@CWeaponMelee_Torch@@QAEXXZ CWeaponMelee_Torch::sub_103e77f0
 0x1000e610 func   ?sub_1019fbd0@@YIXPAXHHH@Z sub_1019fbd0
 0x1000e615 func   ?sub_10202780@@YAHH@Z sub_10202780

@@ -81,6 +81,18 @@ void CCollisionProperty::vfunc8()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dc630 size=0x31
+#include "CCollisionProperty.h"
+#include "CEntityVSlots.h"
+extern float g_1070d9d0[3];
+float *CCollisionProperty::vfunc9(bool bOuter)
+{
+	if (!bOuter && ((m_usSolidFlags & 0x80) || m_nSolidType == 2 || m_nSolidType == 0))
+		return g_1070d9d0;
+	return (float *)((CEntityVSlots *)m_pOuter)->slot219();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dc680 size=0x96
 #include "CCollisionProperty.h"
 
