@@ -124593,6 +124593,19 @@ char CAI_BaseNPCTroika::sub_1028a190()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028a260 size=0x26
+#include "CAI_BaseNPC.h"
+
+int CAI_BaseNPC::sub_1028a260()
+{
+	*(int *)((char *)this + 0x1b2c) = 0;
+	int r = vfunc437();
+	if (r == 0)
+		return vfunc438();
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028ac10 size=0x47
 #include "ehandle.h"
 static bool (CHandle<CBaseEntity>::*s_ne)(CBaseEntity *) const = &CHandle<CBaseEntity>::operator!=;

@@ -4734,6 +4734,7 @@
 0x10008f6c func   ?sub_1004fae0@@YAEXZ sub_1004fae0
 0x10008f71 func   ?vfunc5@CWeaponMelee_ZombieFists@@QAEPAV1@I@Z CWeaponMelee_ZombieFists::vfunc5
 0x10008f7b func   ?vfunc492@CNPC_VPlayerController@@QAEXXZ CNPC_VPlayerController::vfunc492
+0x10008f80 func   ?sub_1028a260@CAI_BaseNPC@@QAEHXZ CAI_BaseNPC::sub_1028a260
 0x10008f85 func   ?sub_10033040@CUtlMemory36@@QAEXH@Z CUtlMemory36::sub_10033040
 0x10008f8a func   ?sub_103e3d80@CWeaponRanged_FlameThrower@@QAEXPAM0@Z CWeaponRanged_FlameThrower::sub_103e3d80
 0x10008f8f func   ?vfunc0@CMeasureSection@@UAEPAV1@I@Z CMeasureSection::vfunc0
