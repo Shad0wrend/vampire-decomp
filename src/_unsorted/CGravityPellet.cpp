@@ -50,9 +50,9 @@ void CGravityPellet::vfunc103()
 namespace lifted {
 extern char g_1057b7c0;
 }
-CGravityPellet::Datamap82 CGravityPellet::vfunc82()
+datamap_t *CGravityPellet::vfunc82()
 {
-    return (CGravityPellet::Datamap82)&lifted::g_1057b7c0;
+    return (datamap_t *)&lifted::g_1057b7c0;
 }
 // END FUNCTION
 
