@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10625e58;
 }
-int CFogController::vfunc82()
+CFogController::Datamap82 CFogController::vfunc82()
 {
-    return (int)&lifted::g_10625e58;
+    return (CFogController::Datamap82)&lifted::g_10625e58;
 }
 // END FUNCTION
 
