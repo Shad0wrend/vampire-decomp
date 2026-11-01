@@ -157,6 +157,7 @@ public:
 	char m_pad66b5[0x66b8 - 0x66b5];
 	int m_n66b8;
 
+	void sub_1029a070();	// CAI_BaseNPCTroika::vfunc593 (stub 0x10002720), called directly by vfunc593
 	void sub_1029b290(int *pEvent);	// CAI_BaseNPCTroika::vfunc259 (stub 0x100146e1), called directly
 	void sub_103bef20(CBaseEntity *pEnt, const char *pszBone);	// stub 0x10010082
 	void sub_103bea90(void *pObj);	// stub 0x10014687
