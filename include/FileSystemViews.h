@@ -11,7 +11,9 @@ public:
 	virtual void vfunc1(int hFile);	// slot 1 (+0x4): closes the handle
 	virtual void vfunc2(void *pBuffer, int nBytes, int hFile);	// slot 2 (+8): reads nBytes from the handle into the buffer
 	virtual void vfunc3(const char *pszFile, int length, int arg);	// slot 3 (+0xc): takes a file name with its length and an argument
-	VIEW_SLOT(4) VIEW_SLOT(5) VIEW_SLOT(6) VIEW_SLOT(7) VIEW_SLOT(8) VIEW_SLOT(9)
+	VIEW_SLOT(4) VIEW_SLOT(5)
+	virtual int vfunc6(int hFile);	// slot 6 (+0x18): the size of the open file
+	VIEW_SLOT(7) VIEW_SLOT(8) VIEW_SLOT(9)
 	VIEW_SLOT(10) VIEW_SLOT(11) VIEW_SLOT(12) VIEW_SLOT(13)
 	virtual void vfunc14(const char *pszFile, int arg);	// slot 14 (+0x38): removes a file
 	VIEW_SLOT(15) VIEW_SLOT(16) VIEW_SLOT(17) VIEW_SLOT(18) VIEW_SLOT(19)
