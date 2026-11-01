@@ -152627,6 +152627,31 @@ extern "C" CBaseEntity *npc_VBatSwarm()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10366c30 size=0x27
+struct CGenericBaseCtorCall_10366c30
+{
+	void sub_103c48e0();
+};
+
+struct CGenericMemberCtorCall_10366c30
+{
+	void sub_10013e58();
+};
+
+extern void *vt_104aab04[];
+extern void *vt_104aaad8[];
+
+// TARGET: sub_10366c30
+void *__fastcall sub_10366c30(char *self)
+{
+	((CGenericBaseCtorCall_10366c30 *)self)->sub_103c48e0();
+	((CGenericMemberCtorCall_10366c30 *)(self + 0x6664))->sub_10013e58();
+	*(void ***)self = vt_104aab04;
+	*(void ***)(self + 0x19b0) = vt_104aaad8;
+	return self;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10366d40 size=0xc
 void __fastcall sub_10366d60(void *pThis);
 
