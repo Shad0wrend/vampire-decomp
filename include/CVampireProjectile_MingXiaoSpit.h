@@ -24,4 +24,10 @@ public:
 public:
     virtual int vfunc81();
     virtual int vfunc80();
+public:
+	virtual char vfunc91(void *, int);	// slot 91: 0x103f1b20 in the game's CVampireProjectile_MingXiaoSpit vtable (link audit, CVampireProjectile_MingXiaoSpit)
+	virtual void vfunc104();	// slot 104: 0x103f18c0 in the game's CVampireProjectile_MingXiaoSpit vtable (link audit, CVampireProjectile_MingXiaoSpit)
+	virtual void vfunc113();	// slot 113: 0x103f1930 in the game's CVampireProjectile_MingXiaoSpit vtable (link audit, CVampireProjectile_MingXiaoSpit)
+	virtual bool vfunc265();	// slot 265: 0x103f1910 in the game's CVampireProjectile_MingXiaoSpit vtable (link audit, CVampireProjectile_MingXiaoSpit)
+	virtual void vfunc272(const Vector *, const Vector *, CBaseEntity *, int, float, const char *, const char *);	// slot 272: 0x103f1c90 in the game's CVampireProjectile_MingXiaoSpit vtable (link audit, CVampireProjectile_MingXiaoSpit)
 };
