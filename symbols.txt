@@ -3318,6 +3318,7 @@
 0x10006adc func   ?sub_101e9a80@HOwner@@QAEDPBD@Z HOwner::sub_101e9a80
 0x10006ae1 func   ?vfunc8@PyServerSystem@@UAEPAV1@I@Z PyServerSystem::vfunc8
 0x10006aeb func   ?sub_10246300@@YAXHPAH0@Z sub_10246300
+0x10006af0 func   ?sub_100d15d0@CBaseHandle@@QAEPAVIHandleEntity@@XZ CBaseHandle::sub_100d15d0
 0x10006af5 func   ?vfunc5@COccultDexterity@@QAEPAV1@I@Z COccultDexterity::vfunc5
 0x10006afa func   ?vfunc371@CAI_BaseHumanoid@@QAE?AVVector@@XZ CAI_BaseHumanoid::vfunc371
 0x10006b04 func   ?sub_10337f30@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10337f30

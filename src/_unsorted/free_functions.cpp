@@ -36887,6 +36887,16 @@ IHandleEntity *CBaseHandle::sub_100d1590()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d15d0 size=0x29
+#include "ehandle.h"
+
+// TARGET: CBaseHandle::sub_100d15d0
+IHandleEntity *CBaseHandle::sub_100d15d0()
+{
+	return Get();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d1d50 size=0x1af
 #include "CStatDefault3List.h"
 #include "CUnknown1070b22c.h"
