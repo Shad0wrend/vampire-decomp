@@ -57157,6 +57157,20 @@ int sub_1013a600(float f)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013a650 size=0x31
+extern int g_10713df0[];
+
+int sub_1013a650(float f)
+{
+	int i = (int)(f * 1024.0f);
+	if (i < 0)
+		i = 0;
+	else if (i > 0xfff)
+		i = 0xfff;
+	return g_10713df0[i];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013a6a0 size=0x31
 extern int g_10711de0[];
 
