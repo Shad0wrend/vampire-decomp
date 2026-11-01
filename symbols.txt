@@ -5724,6 +5724,7 @@
 0x1000ae2a func   ?vfunc104@CPropSwitch@@UAEXXZ CPropSwitch::vfunc104
 0x1000ae34 func   ?vfunc124@CPropClockHand@@UAEHXZ CPropClockHand::vfunc124
 0x1000ae39 func   ?vfunc601@CNPC_VTzimisceHeadClaw@@QAEXH@Z CNPC_VTzimisceHeadClaw::vfunc601
+0x1000ae3e func   ?sub_1017f8d0@CUnk1017f8d0@@QAE_NXZ CUnk1017f8d0::sub_1017f8d0
 0x1000ae48 func   _item_p_occult_blood_buff item_p_occult_blood_buff
 0x1000ae4d func   ?vfunc618@CNPCMaker@@QAEDD@Z CNPCMaker::vfunc618
 0x1000ae52 func   ?sub_100733c0@CUnknown100733c0@@QAEPAU1@H@Z CUnknown100733c0::sub_100733c0

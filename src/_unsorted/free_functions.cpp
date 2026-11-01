@@ -64035,6 +64035,20 @@ int CUnknown1017f8b0::sub_1017f8b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017f8d0 size=0x1e
+// TARGET: sub_1017f8d0
+struct CUnk1017f8d0
+{
+    char pad[0x1d1c];
+    float m_1d1c;
+    bool sub_1017f8d0();
+};
+bool CUnk1017f8d0::sub_1017f8d0()
+{
+    return gpGlobals->curtime < m_1d1c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017f900 size=0x30
 struct CMsgPlayerView;
 struct COutputEvent_Unit { void sub_100cd660(void *a, void *b, float c); };
