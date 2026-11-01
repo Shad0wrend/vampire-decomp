@@ -120,6 +120,13 @@ void __fastcall sub_101a6880(void *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a68a0 size=0x1
+// TARGET: sub_101a68a0
+void sub_101a68a0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6ce0 size=0x10
 struct CUnknownNPC101a6ce0 {
     bool sub_101a6ce0(int unused);

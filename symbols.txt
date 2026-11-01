@@ -1319,6 +1319,7 @@
 0x100032e2 func   ?sub_10105cb0@@YIXPAVCBaseEntity@@HPAMPBM2MH@Z sub_10105cb0
 0x100032e7 func   ?vfunc325@CWeaponIWritten@@UAE_NXZ CWeaponIWritten::vfunc325
 0x100032ec func   ?sub_101ccc80@@YAHPAPAVCBaseEntity@@HPBM1IH@Z sub_101ccc80
+0x100032f1 func   ?sub_101a68a0@@YAXXZ sub_101a68a0
 0x100032f6 func   ?vfunc5@CEntityFlame@@QAEPAV1@I@Z CEntityFlame::vfunc5
 0x100032fb func   ?sub_100cae90@CMomentaryRotButton@@QAEXXZ CMomentaryRotButton::sub_100cae90
 0x10003300 func   ?vfunc80@CItemGEyes@@QAEHXZ CItemGEyes::vfunc80
