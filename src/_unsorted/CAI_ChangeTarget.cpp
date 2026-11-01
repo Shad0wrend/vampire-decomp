@@ -12,9 +12,9 @@ char CAI_ChangeTarget::vfunc117() { char c = ((CBaseEntity *)this)->CBaseEntity:
 namespace lifted {
 extern char g_1059e044;
 }
-int CAI_ChangeTarget::vfunc82()
+CAI_ChangeTarget::Datamap82 CAI_ChangeTarget::vfunc82()
 {
-    return (int)&lifted::g_1059e044;
+    return (CAI_ChangeTarget::Datamap82)&lifted::g_1059e044;
 }
 // END FUNCTION
 
