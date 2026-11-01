@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_1056c1e8;
 }
-int CBaseFilter::vfunc82()
+CBaseFilter::Datamap82 CBaseFilter::vfunc82()
 {
-    return (int)&lifted::g_1056c1e8;
+    return (CBaseFilter::Datamap82)&lifted::g_1056c1e8;
 }
 // END FUNCTION
 
