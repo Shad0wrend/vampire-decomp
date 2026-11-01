@@ -89908,6 +89908,22 @@ char CUnknown109f08c0::sub_101ecb90(IKVNodeView *pKV)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ecca0 size=0x1c
+struct CUnk101ecca0 {
+	char sub_101ecca0(int a);
+};
+extern char (__cdecl *g_1073a3ac)(void *, int);
+
+// TARGET: CUnk101ecca0::sub_101ecca0
+char CUnk101ecca0::sub_101ecca0(int a)
+{
+	if (g_1073a3ac) {
+		return g_1073a3ac(this, a);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101eccd0 size=0xcb
 #include "CUnknown101eccd0.h"
 extern char g_106b8540[];

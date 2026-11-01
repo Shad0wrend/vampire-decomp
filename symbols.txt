@@ -4973,6 +4973,7 @@
 0x10009ab1 func   ?sub_101fc0d0@CVStatCost_t@@QAEXXZ CVStatCost_t::sub_101fc0d0
 0x10009ab6 func   ?sub_10185790@@YIXPAH@Z sub_10185790
 0x10009abb func   ?vfunc80@CItemGGarysCD@@QAEHXZ CItemGGarysCD::vfunc80
+0x10009ac0 func   ?sub_101ecca0@CUnk101ecca0@@QAEDH@Z CUnk101ecca0::sub_101ecca0
 0x10009ac5 func   ?sub_10092270@CBaseAnimating@@QAEHPBD@Z CBaseAnimating::sub_10092270
 0x10009aca func   ?vfunc265@CSceneEntity@@UAEXPAX0@Z CSceneEntity::vfunc265
 0x10009acf func   ?sub_10230f30@CUnk10230f30@@QAEPAU1@H@Z CUnk10230f30::sub_10230f30
