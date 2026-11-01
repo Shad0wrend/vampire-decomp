@@ -131677,6 +131677,14 @@ float CUnk102e13f0::sub_102e13f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e1470 size=0x1d
+// TARGET: sub_102e1470
+float __cdecl sub_102e1470(float a, float b, float c)
+{
+    return (b * b - a * a) * 0.5 / c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e1c10 size=0xa9
 #include "CAI_Motor.h"
 
