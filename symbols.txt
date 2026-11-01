@@ -7013,6 +7013,7 @@
 0x1000cb35 func   ?sub_1033d580@CBaseCombatCharacter@@QAEDH@Z CBaseCombatCharacter::sub_1033d580
 0x1000cb3f func   ?sub_101a1140@CSave@@QAE_NHPAX0PAUtypedescription_t@@@Z CSave::sub_101a1140
 0x1000cb49 func   ?sub_10309e80@CUnknown1030a6e0@@QAEXPBVVector@@0@Z CUnknown1030a6e0::sub_10309e80
+0x1000cb4e func   ?vfunc117@CBreakable@@QAEDXZ CBreakable::vfunc117
 0x1000cb53 func   ?vfunc119@CAI_Hint@@UAEXXZ CAI_Hint::vfunc119
 0x1000cb58 func   ?sub_102a9ee0@CUnknown102a9ee0@@QAEHXZ CUnknown102a9ee0::sub_102a9ee0
 0x1000cb5d func   ?vfunc427@CAI_BaseNPC@@UAEPAVCAI_Motor@@XZ CAI_BaseNPC::vfunc427

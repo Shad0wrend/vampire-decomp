@@ -1,6 +1,12 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1010d430 size=0x8
+#include "CBreakable.h"
+// TARGET: CBreakable::vfunc117
+char CBreakable::vfunc117() { char c = ((CBaseEntity *)this)->CBaseEntity::vfunc117(); return c & (char)0xfd; }
+// END FUNCTION
+
 // FUNCTION: 0x1010d450 size=0x6
 #include "CBreakable.h"
 namespace lifted {
