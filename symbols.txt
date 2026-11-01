@@ -13770,3 +13770,4 @@
 0x109f3890 data   ?Q_strncpy@@YAPADPADPBDH@Z Q_strncpy
 0x109f3890 data   ?Q_strncpy@@YAXPADPBDH@Z Q_strncpy
 0x109f3890 data   __imp_?Q_strncpy@@YAPADPADPBDH@Z _imp_?Q_strncpy
+0x109f3890 data   __imp_?Q_strncpy@@YAXPADPBDH@Z _imp_?Q_strncpy
