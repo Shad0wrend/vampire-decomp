@@ -159534,6 +159534,31 @@ extern "C" CBaseEntity *npc_VVampire()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c48e0 size=0x27
+struct CGenericBaseCtorCall_103c48e0
+{
+	void sub_10384010();
+};
+
+struct CGenericMemberCtorCall_103c48e0
+{
+	void sub_1000e2cd();
+};
+
+extern void *vt_104cdd24[];
+extern void *vt_104cdcf8[];
+
+// TARGET: sub_103c48e0
+void *__fastcall sub_103c48e0(char *self)
+{
+	((CGenericBaseCtorCall_103c48e0 *)self)->sub_10384010();
+	((CGenericMemberCtorCall_103c48e0 *)(self + 0x6660))->sub_1000e2cd();
+	*(void ***)self = vt_104cdd24;
+	*(void ***)(self + 0x19b0) = vt_104cdcf8;
+	return self;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c49b0 size=0xc
 void __fastcall sub_103c49d0(void *p);
 
