@@ -46,6 +46,7 @@ public:
 	char vfunc166(CBaseEntity *pEnt);	// slot 166: false for the player (sub_1039ede0) or a null entity; else true unless the entity's slot 164 answers false
 	void vfunc144(int a);	// slot 144 "Event_Killed"-like: while the byte at +0x6699 is clear sets +0x200 = 1 and starts the state schedule (sub_1039e970); else tells the player-side owner (sub_1039ede0) to free this tentacle's slot (sub_103979d0), then the Troika base
 	void sub_102bf340(int a);	// CAI_BaseNPCTroika::vfunc144 (stub 0x1000a62d), called directly
+	bool sub_1039ef10();	// think-like worker (called by vfunc442): with an owner (sub_1039ede0, a CNPC_VMingXiao) false after sub_101cd940(this) when there is none, else CNPC_VMingXiao::sub_10397c70(this) != 0 after sub_101cd940(this)
 	void *sub_1039ede0();
 	char sub_1039eee0();	// the player's CNPC_VMingXiao slot (sub_10397b40) for this tentacle, or 0 when there is no player	// CBasePlayer::sub_1039ede0 (stub 0x1001105e), called directly: the player entity
 
