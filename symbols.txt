@@ -9142,6 +9142,7 @@
 0x100109b5 func   ?sub_103f8b30@@YAHXZ sub_103f8b30
 0x100109ba func   _prop_switch prop_switch
 0x100109c9 func   _item_g_garys_photo item_g_garys_photo
+0x100109ce func   ?sub_10134cc0@CUnknown10134cc0@@QAEXPAUCInputData100bc0f0@@@Z CUnknown10134cc0::sub_10134cc0
 0x100109dd func   ?vfunc0@CFlaggedEntitiesEnum@@UAEHPAVCBaseEntity@@@Z CFlaggedEntitiesEnum::vfunc0
 0x100109e2 func   ?sub_100b4950@CUtlVectorBase@@QAEXXZ CUtlVectorBase::sub_100b4950
 0x100109e7 func   ?sub_1009d850@CBaseEntity@@QAEMPAXPAM@Z CBaseEntity::sub_1009d850
