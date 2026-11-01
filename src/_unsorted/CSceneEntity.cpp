@@ -183,6 +183,25 @@ void CSceneEntity::vfunc265(void *pTarget, void *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10081480 size=0x14
+struct CVirtObj10081480
+{
+	void v0(int a);
+};
+
+// TARGET: sub_10081480
+void __stdcall sub_10081480(int a1, CVirtObj10081480 *pObj, int a3)
+{
+	void **vt = *(void ***)pObj;
+	union {
+		void *p;
+		void (CVirtObj10081480::*pm)(int);
+	} u;
+	u.p = vt[287];
+	(pObj->*u.pm)(a3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10081510 size=0x62
 #include "CSceneEntity.h"
 #include "CBaseAnimating.h"
