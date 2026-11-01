@@ -36,5 +36,6 @@ public:
 	CUnknown102dfaa0_Record *m_pHead;	// 0x0c
 	float m_flDecay10;	// 0x10: how long a record keeps following its entity
 
+	void sub_102df320();	// "CAI_Memory::RefreshMemories": scope trace + profiler scope; for each record: the entity of its handle; a record whose entity is gone, or is of AI state 7 and accepted by the target (slot 54) / handle list, is unlinked after the target is told (slot 56 / sub_103169a0) and freed; otherwise its first position follows the entity while curtime < time + decay
 	void sub_102dfaa0(void *pEnt, int c);	// removes the record of pEnt (found through its handle), after telling the target (slot 56) or the handle array (sub_103169a0) about it
 };
