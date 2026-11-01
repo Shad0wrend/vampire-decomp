@@ -40,6 +40,17 @@ void CTEBeamEnts::vfunc3(const float *pOrigin, const float *pAngles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005b500 size=0x39
+#include "CTEBeamEnts.h"
+#include "CTEMetalSparks.h"
+#include "IVEngineServerFull.h"
+
+void CTEBeamEnts::vfunc4(CRecipientFilter *pFilter, float flDelay)
+{
+	engine->vfunc103((int)pFilter, *(int *)&flDelay, this, ((CTEMetalSparks *)this)->vfunc0()->m_pTable, ((CTEMetalSparks *)this)->vfunc0()->m_ClassID);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005b5c0 size=0x6
 #include "CTEBeamEnts.h"
 namespace lifted {

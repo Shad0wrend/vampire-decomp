@@ -7576,6 +7576,7 @@
 0x1000dd3c func   ?sub_101d16c0@@YAPADPAD0D@Z sub_101d16c0
 0x1000dd46 func   ?vfunc363@CWeaponMelee_Katana@@QAEHXZ CWeaponMelee_Katana::vfunc363
 0x1000dd4b func   ?sub_100b5b00@CBaseFlex@@QAEXPBM@Z CBaseFlex::sub_100b5b00
+0x1000dd55 func   ?vfunc4@CTEBeamEnts@@UAEXPAVCRecipientFilter@@M@Z CTEBeamEnts::vfunc4
 0x1000dd5a func   ?sub_10385ab0@CNPC_VHumanUnit@@QAEDH@Z CNPC_VHumanUnit::sub_10385ab0
 0x1000dd5f func   ?sub_1019c950@@YAXPAH@Z sub_1019c950
 0x1000dd69 func   ?sub_10359de0@@YADXZ sub_10359de0
