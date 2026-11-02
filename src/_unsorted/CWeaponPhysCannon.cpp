@@ -60,6 +60,22 @@ void CWeaponPhysCannon::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040db30 size=0x1c
+#include "CWeaponPhysCannon.h"
+
+struct CUnit1040bf90
+{
+	void sub_1040bf90();
+};
+
+// TARGET: CWeaponPhysCannon::vfunc130
+void CWeaponPhysCannon::vfunc130(void *pArg)
+{
+	CBaseCombatWeapon::vfunc130(pArg);
+	((CUnit1040bf90 *)((char *)this + 0x96c))->sub_1040bf90();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040dc40 size=0x18
 #include "CWeaponPhysCannon.h"
 
