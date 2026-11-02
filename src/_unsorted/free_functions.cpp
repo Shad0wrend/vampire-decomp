@@ -51700,6 +51700,25 @@ int __stdcall sub_1010c200(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010c2a0 size=0x43
+#include "CAreaPortal.h"
+void *sub_100aa720(int size);
+extern char g_10565398[];
+
+// TARGET: func_areaportal
+extern "C" CBaseEntity *func_areaportal()
+{
+	void *mem = sub_100aa720(0x45c);
+	CAreaPortal *p;
+	if (mem)
+		p = ((CAreaPortal *)mem)->sub_1010c3a0();
+	else
+		p = 0;
+	((CBaseEntity *)p)->vfunc106(g_10565398);
+	return (CBaseEntity *)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010c370 size=0x1a
 namespace lifted {
 extern int g_1056dbe0;
