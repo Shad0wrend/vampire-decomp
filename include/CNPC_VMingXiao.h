@@ -182,7 +182,7 @@ public:
 	virtual void vfunc164();
 	virtual void vfunc165();
 	virtual void vfunc166_slot();
-	virtual void vfunc167();
+	virtual CBaseEntity *vfunc167();	// slot 167 (+0x29c): the entity the NPC is after (an object with a value at +0x9c), 0 when none
 	virtual void vfunc168_slot();
 	virtual void vfunc169();
 	virtual void vfunc170();
