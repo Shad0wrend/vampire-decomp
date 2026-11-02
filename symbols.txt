@@ -6564,6 +6564,7 @@
 0x1000bba4 func   ?sub_103bcb60@CTzimisceScheduleUnit@@QAEHH@Z CTzimisceScheduleUnit::sub_103bcb60
 0x1000bba9 func   _item_w_bush_hook item_w_bush_hook
 0x1000bbae func   ?vfunc438@CNPC_VSheriffSwarm@@UAEHXZ CNPC_VSheriffSwarm::vfunc438
+0x1000bbb3 func   ?vfunc407@CAI_BaseNPC@@UAEPBDH@Z CAI_BaseNPC::vfunc407
 0x1000bbb8 func   ?sub_100931d0@CBaseAnimating@@QAEDHHH@Z CBaseAnimating::sub_100931d0
 0x1000bbbd func   ?vfunc19@CSingleplayRules@@UAEDPAVCBaseEntity@@0@Z CSingleplayRules::vfunc19
 0x1000bbc2 func   ?vfunc2@CCollisionProperty@@UAEPAMXZ CCollisionProperty::vfunc2

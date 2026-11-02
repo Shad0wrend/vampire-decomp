@@ -1843,6 +1843,16 @@ unsigned int CAI_BaseNPC::vfunc423()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027e7d0 size=0x10
+namespace lifted {
+int sub_10004c96(int);
+}
+const char * CAI_BaseNPC::vfunc407(int a0)
+{
+    return (const char *)(lifted::sub_10004c96(a0));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10280330 size=0x20
 #include "CAI_BaseNPC.h"
 
