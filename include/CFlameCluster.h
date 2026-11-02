@@ -3,11 +3,30 @@
 #pragma once
 #include "CBaseEntity.h"
 
+struct CFlameRecord	// 0x1c byte element of the burn list
+{
+	char m_pad00[0x18];
+	float m_flStrength;	// 0x18
+};
+
+// debug overlay helpers (cdecl, no class known): a box around the record and a text line at it
+void sub_10144290(CFlameRecord *pRec, const Vector &vecColor, const Vector &vecSize, int a, int b, int c, int d, float flTime);	// stub 0x1000513c
+void sub_10143710(CFlameRecord *pRec, const char *pszText, int a, float flTime);	// stub 0x10011e5a
+
 class CFlameCluster : public CBaseEntity
 {
 public:
 	char m_pad_cluster[0x450 - sizeof(CBaseEntity)];
-	int m_aList450[5];	// 0x450: the burn list (a vector, zeroed)
+	union {
+		int m_aList450[5];	// 0x450: the burn list (a vector, zeroed)
+		struct {
+			CFlameRecord *m_pRecords450;	// 0x450: the records (0x1c bytes each)
+			int m_nGrow454;
+			int m_nAlloc458;
+			int m_nRecords45c;	// 0x45c: the number of records
+			int m_pad460;
+		};
+	};
 	int m_aBurn464[7];	// 0x464
 	int m_n480;	// 0x480
 	unsigned int m_hOwner;	// 0x484
