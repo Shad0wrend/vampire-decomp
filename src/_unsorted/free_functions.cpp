@@ -80425,6 +80425,19 @@ void CUnknown101bbbf0::sub_101bbbf0(float flValue, float flTime)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bbc20 size=0x3b
+#include "CUnknown101bc140.h"
+#include "CFloatUnit.h"
+// TARGET: CUnknown101bc140::sub_101bbc20
+void CUnknown101bc140::sub_101bbc20(float flTarget, float flTime)
+{
+	m_n38 |= 1;
+	if (flTarget > 1.0)
+		flTarget = 1.0f;
+	((CFloatUnit *)&m_flPitchScale)->sub_101bb650(flTarget, flTime);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bbcb0 size=0x3
 struct CUnknown101bbcb0 { float sub_101bbcb0(); };
 float CUnknown101bbcb0::sub_101bbcb0()

@@ -11328,6 +11328,7 @@
 0x100139d0 func   ?sub_10100ef0@@YAPAHXZ sub_10100ef0
 0x100139d5 func   ?sub_1024aed0@@YAXXZ sub_1024aed0
 0x100139df func   ?sub_10077890@CUnknown10077890@@QAEXH@Z CUnknown10077890::sub_10077890
+0x100139e4 func   ?sub_101bbc20@CUnknown101bc140@@QAEXMM@Z CUnknown101bc140::sub_101bbc20
 0x100139e9 func   ?sub_103c6e80@CNPC_VVampireBoss@@QAEXPBD@Z CNPC_VVampireBoss::sub_103c6e80
 0x100139ee func   ?sub_102f97c0@CRelSetUnit@@QAEXD@Z CRelSetUnit::sub_102f97c0
 0x100139f8 func   ?sub_100c8990@CBaseButton@@QAE_NH@Z CBaseButton::sub_100c8990
