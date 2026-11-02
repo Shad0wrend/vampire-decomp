@@ -11,6 +11,15 @@ int __cdecl sub_1004fc30() { return 0; }
 void *__fastcall sub_1004fc50(void *p) { return p; }
 // END FUNCTION
 
+// FUNCTION: 0x1004fc70 size=0x7
+#include "CBaseAnimating.h"
+
+char CBaseAnimating::vfunc251()
+{
+	return *(char *)((char *)this + 0x65c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008a760 size=0x6
 #include "CBaseAnimating.h"
 namespace lifted {

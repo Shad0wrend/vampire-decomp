@@ -7355,6 +7355,7 @@
 0x1000ca04 func   ?vfunc5@CWeaponMelee_Claws_Protean4@@QAEPAV1@I@Z CWeaponMelee_Claws_Protean4::vfunc5
 0x1000ca09 func   ?sub_10222ad0@@YAXXZ sub_10222ad0
 0x1000ca0e func   ?sub_104123a0@@YA_NPBD0@Z sub_104123a0
+0x1000ca13 func   ?vfunc251@CBaseAnimating@@QAEDXZ CBaseAnimating::vfunc251
 0x1000ca18 func   ?vfunc1@CTEDynamicLight@@UAEHXZ CTEDynamicLight::vfunc1
 0x1000ca22 func   ?vfunc451@CGenericSabbat_NPC@@UAEPBDXZ CGenericSabbat_NPC::vfunc451
 0x1000ca27 func   ?sub_100bf8e0@CFuncRotating@@QAEEXZ CFuncRotating::sub_100bf8e0
