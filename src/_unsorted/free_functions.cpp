@@ -48632,6 +48632,21 @@ void __fastcall sub_10101970(void *, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101019a0 size=0x19
+int sub_10101910();
+void sub_101019d0();
+void sub_10101a20();
+
+// TARGET: sub_101019a0
+void __fastcall sub_101019a0(void *pThis, int a, int b)
+{
+	if (sub_10101910())
+		sub_101019d0();
+	else
+		sub_10101a20();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101019d0 size=0x3a
 #include "CBaseEntity.h"
 

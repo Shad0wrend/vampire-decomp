@@ -7706,6 +7706,7 @@
 0x1000d657 func   ?vfunc5@CWeaponMelee_AVampBlade@@QAEPAV1@I@Z CWeaponMelee_AVampBlade::vfunc5
 0x1000d661 func   ?vfunc70@CNPC_VTzimisce@@UAE_NXZ CNPC_VTzimisce::vfunc70
 0x1000d666 func   _item_g_astrolite item_g_astrolite
+0x1000d66b func   ?sub_101019a0@@YIXPAXHH@Z sub_101019a0
 0x1000d670 func   ?vfunc5@CNPC_VCop@@QAEPAV1@I@Z CNPC_VCop::vfunc5
 0x1000d67a func   _item_g_lilly_photo item_g_lilly_photo
 0x1000d67f func   ?sub_1020c3d0@CSecCamera@@QAEXXZ CSecCamera::sub_1020c3d0
