@@ -310,7 +310,9 @@ public:
 	unsigned int m_hOwner364;	// owner entity handle
 	int m_field368;
 	int m_obj36c;	// physics object (pointer)
-	char m_pad0370[0x4c];
+	char m_pad0370[0xc];
+	EHANDLE m_hAimEnt37c;	// 0x037c: the aim entity (SetAimEnt, PhysicsFollow / PhysicsCarried)
+	char m_pad0380[0x3bc - 0x380];
 	Vector m_vecVelocity3bc;	// 0x03bc
 	float m_angVel3c8[3];	// 0x03c8: the angular velocity SimulateAngles integrates
 	float m_vel3d4[3];
