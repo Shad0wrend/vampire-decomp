@@ -1914,6 +1914,16 @@ int CBasePlayer::vfunc359(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10179740 size=0x6
+extern char g_10725674[];
+
+// TARGET: sub_10179740
+void *sub_10179740()
+{
+	return g_10725674;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10179760 size=0x3
 // TARGET: sub_10179760
 int sub_10179760() {

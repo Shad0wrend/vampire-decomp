@@ -12073,6 +12073,7 @@
 0x100142a4 func   ?sub_101e1250@CUnknown101e0f00@@QAEHHH@Z CUnknown101e0f00::sub_101e1250
 0x100142a9 func   ?sub_1028d860@CAI_BaseNPCTroika@@QAEXPBVVector@@@Z CAI_BaseNPCTroika::sub_1028d860
 0x100142ae func   ?vfunc1@CVTSDependencySaveRestoreDataOps@@UAEXPAUCVTSDependencyField@@PAVCVTSDependencyRestore@@@Z CVTSDependencySaveRestoreDataOps::vfunc1
+0x100142b3 func   ?sub_10179740@@YAPAXXZ sub_10179740
 0x100142b8 func   ?sub_10061fe0@CUnknown10061fe0@@QAEHXZ CUnknown10061fe0::sub_10061fe0
 0x100142bd func   ?vfunc362@CWeaponMelee_Tzimisce3Claw@@QAEHXZ CWeaponMelee_Tzimisce3Claw::vfunc362
 0x100142c2 func   ?vfunc103@CAI_InterestingPlace@@UAEXXZ CAI_InterestingPlace::vfunc103
