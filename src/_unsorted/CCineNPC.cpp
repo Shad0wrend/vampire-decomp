@@ -17,6 +17,16 @@ bool CCineNPC::vfunc362(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6de0 size=0x5
+#include "CCineNPC.h"
+
+// TARGET: CCineNPC::vfunc365
+bool CCineNPC::vfunc365(int unused)
+{
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6e00 size=0x5
 // TARGET: CCineNPC::vfunc364
 bool CCineNPC::vfunc364(int unused)
