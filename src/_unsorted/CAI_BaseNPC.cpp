@@ -375,6 +375,16 @@ bool CUnknownNPC101a6ce0::sub_101a6ce0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6d00 size=0x6
+extern char g_1090ff08[];
+
+// TARGET: sub_101a6d00
+void *sub_101a6d00()
+{
+	return g_1090ff08;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10265e90 size=0x21
 struct CBaseCombatCharacterCall_10265e90
 {
