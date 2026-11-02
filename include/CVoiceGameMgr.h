@@ -18,3 +18,9 @@ public:
 	void *m_pHelper;	// 0x10
 	int m_nMaxPlayers;	// 0x14
 };
+
+class CVoiceGameMgrHelper
+{
+public:
+	virtual bool vfunc1(int a, int b);	// slot 1 (+0x4): always true
+};
