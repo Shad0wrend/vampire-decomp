@@ -76370,6 +76370,41 @@ int sub_101a4760()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a5290 size=0x59
+struct CUnknown101a5290 {
+    void *m_pMemory;
+    int m_allocationCount;
+    int m_growSize;
+    int m_size;
+    void *m_pElements;
+    void sub_101a5290();
+};
+
+extern void (__cdecl *g_109f3624)(void *);
+
+// TARGET: sub_101a5290
+void CUnknown101a5290::sub_101a5290()
+{
+    void (__cdecl *pFree)(void *) = g_109f3624;
+    m_size = 0;
+    if (m_growSize != -1) {
+        if (m_pMemory) {
+            pFree(m_pMemory);
+            m_pMemory = 0;
+        }
+        m_allocationCount = 0;
+    }
+    m_pElements = m_pMemory;
+    if (m_growSize != -1) {
+        if (m_pMemory) {
+            pFree(m_pMemory);
+            m_pMemory = 0;
+        }
+        m_allocationCount = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a55a0 size=0xaa
 #include "CUtlVector4.h"
 
