@@ -22,13 +22,13 @@ public:
 	unsigned int m_flags;	// 0x0c: bit 0 = disabled
 	int m_pad0010;
 	int m_iName;	// 0x14
-	char m_pad0018[0x20 - 0x18];
-	char *m_p20;	// 0x20: a table freed by the destructor
-	int m_nEffects;	// 0x24
+	union { char m_pad0018[0x20 - 0x18]; struct { int m_nMaxValue; int m_nBase; }; };	// 0x18: "MaxValue" (default 10); 0x1c: the count of the "Base%d" keys
+	char *m_p20;	// 0x20: the "Base%d" blocks (m_nBase blocks of 16 bytes); a table freed by the destructor
+	int m_nEffects;	// 0x24: the count of the "Automatic%d" keys
 	CVDmgBlock16_t *m_pEffects;	// 0x28: m_nEffects blocks of 16 bytes (kind, stat, ?, multiplier)
-	int m_pad002c;
-	char *m_p30;	// 0x30: a table freed by the destructor
-	char m_pad0034[8];	// 0x34: the object is 0x3c bytes (CVFeatMgr allocates 0x3c)
+	union { int m_pad002c; int m_nDisplay2nd; };	// 0x2c: the count of the "Display2nd%d" keys
+	char *m_p30;	// 0x30: the "Display2nd%d" blocks; a table freed by the destructor
+	union { char m_pad0034[8]; struct { int m_nPCWeighting; int m_nNPCWeighting; }; };	// 0x34: the "PCWeighting" / 0x38 "NPCWeighting" entries of the global named list 0x10739194 (the object is 0x3c bytes, CVFeatMgr allocates 0x3c)
 
 	CVFeat_t(int a);	// 0x101e4f30: the default feat (id a at +0 and +0x10, +0x18 = 10, the rest cleared)
 	~CVFeat_t();	// 0x101e4f70 (stub 0x10014c72): frees the tables at +0x20 / +0x28 / +0x30; the exit destroy of the static default feat (0x100dba10, stub 0x1001509b) runs it
