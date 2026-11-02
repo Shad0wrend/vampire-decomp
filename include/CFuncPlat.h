@@ -19,7 +19,8 @@ public:
 	FP_V10(7) FP_V10(8) FP_V10(9)
 	FP_V10(10) virtual bool vfunc110(const char *pszKey, const char *pszValue);	// slot 110 \"KeyValue\": \"rotation\" sets the float at +0x54c, else CBaseToggle::vfunc110
 	FP_V(111) FP_V(112) FP_V(113) FP_V(114) FP_V(115) FP_V(116) FP_V(117) FP_V(118) FP_V(119)
-	FP_V10(12) FP_V10(13) FP_V10(14) FP_V10(15) FP_V10(16)
+	FP_V(120) FP_V(121) FP_V(122) FP_V(123) FP_V(124) FP_V(125) FP_V(126) FP_V(127) virtual char vfunc128(); FP_V(129)
+	FP_V10(13) FP_V10(14) FP_V10(15) FP_V10(16)
 	FP_V(170) FP_V(171) FP_V(172) FP_V(173) FP_V(174) FP_V(175) FP_V(176) FP_V(177)
 	virtual void vfunc178(CBaseEntity *pOther);	// slot 178 "CFuncPlat::Blocked": DevMsg "%s Blocked by %s" (the class names of both edicts), damages pOther by 1 (CTakeDamageInfo built by sub_101c26d0), stops the sound named at +0x570 (sound system slot 7 with the entity index and channel 6), then calls slot 243 when the toggle state (+0x4f8) is 2 or slot 242 when it is 3
 	FP_V(179)
