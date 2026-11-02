@@ -30,6 +30,15 @@ const char * CNPC_VChangBros::vfunc451()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036a230 size=0x6
+extern void *g_1062fbc0;
+
+void *sub_1036a230(void)
+{
+    return &g_1062fbc0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036a3f0 size=0x1d
 #include "CNPC_VChangBros.h"
 struct A { int sub_10012300(int); };
