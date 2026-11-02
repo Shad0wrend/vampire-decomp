@@ -6,7 +6,7 @@
 class CFilterInventory : public CBaseFilter
 {
 public:
-	CFilterInventory() {}
+	CFilterInventory() : m_hLastEnt(0xffffffff) {}
 	CFilterInventory *vfunc5(unsigned int flags);
 	bool vfunc241(CBaseEntity *pEnt);	// "CFilterInventory::PassesFilterImpl" (slot 241): caches per entity and frame whether the entity's inventory (object at +0x9c) holds an item whose classname is the filter's item name (+0x484)
 
