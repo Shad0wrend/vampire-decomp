@@ -42,6 +42,17 @@ int CWeaponIArmor::vfunc328()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f4040 size=0x20
+#include "CWeaponIArmor.h"
+
+// TARGET: CWeaponIArmor::vfunc321
+void CWeaponIArmor::vfunc321()
+{
+	if (vfunc309())
+		vfunc307(0xb6);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f4090 size=0x4e
 #include "CWeaponIArmor.h"
 extern char g_106b8540[];
