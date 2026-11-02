@@ -16,4 +16,5 @@ public:
 	virtual void vfunc137();
 	virtual int vfunc138();
 	void *sub_10389560();
+	const char *sub_10389580();
 };
