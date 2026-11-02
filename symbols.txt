@@ -7990,6 +7990,7 @@
 0x1000db52 func   ?sub_10316560@CUnknown103164c0@@QAEPAV1@XZ CUnknown103164c0::sub_10316560
 0x1000db57 func   ?sub_10033740@CPhysicsMovedEntities@@QAE_NPAVCBaseEntity@@@Z CPhysicsMovedEntities::sub_10033740
 0x1000db5c func   ?sub_10247840@CUnknown10247840@@QAEPADXZ CUnknown10247840::sub_10247840
+0x1000db61 func   ?sub_102b4070@@YAHXZ sub_102b4070
 0x1000db66 func   ?vfunc321@CWeaponIGeneric@@QAEXXZ CWeaponIGeneric::vfunc321
 0x1000db6b func   ?sub_1006aeb0@@YAXHHPBM0HHD@Z sub_1006aeb0
 0x1000db70 func   ?sub_104121d0@@YAXXZ sub_104121d0

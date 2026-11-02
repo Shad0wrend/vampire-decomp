@@ -2035,6 +2035,13 @@ void CAI_BaseNPCTroika::vfunc472(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b4070 size=0x6
+int sub_102b4070(void)
+{
+    return 0x81f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b4540 size=0xb4
 #include "CAI_BaseNPCTroika.h"
 #include "CGlobalEntityList.h"
