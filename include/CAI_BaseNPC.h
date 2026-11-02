@@ -214,6 +214,7 @@ public:
 	void *&Owned5d40() { return *(void **)((char *)this + 0x5d40); }	// move probe
 	void *&Owned5cdc() { return *(void **)((char *)this + 0x5cdc); }	// senses
 	void sub_1027d170();	// stub 0x100119b9: run by vfunc440 when the scripted sequence entity is gone, before schedule 1 is asked for
+	void sub_1027f270(int nState);	// stub 0x10005cc2, ret 4: called by CCineNPC::sub_101a8640 with 2 right before the movement state at +0x5d70 is set to 2
 	void sub_10270aa0(CBaseEntity *pEnt);	// stores pEnt's entity handle at +0x5d90 (-1 for null)
 	void sub_10269a20(int a);	// stub 0x100041b0, run by TaskFail with 0x5c
 	void sub_1026d460(int nSide);	// footstep: picks volume / sound level from the surface data or convars by nSide, emits the sound the sound table gives for the record at +0x5b90 to a CPASAttenuationFilter (called by vfunc259)
