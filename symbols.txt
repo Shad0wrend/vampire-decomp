@@ -6157,6 +6157,7 @@
 0x1000b1cc func   ?vfunc25@CHalfLife2@@UAEHXZ CHalfLife2::vfunc25
 0x1000b1d1 func   ?vfunc1@ConVar@@UAEDXZ ConVar::vfunc1
 0x1000b1d6 func   ?sub_10279260@@YIXPAVCBaseEntity@@@Z sub_10279260
+0x1000b1db func   ?vfunc5@CPlayerEvents@@QAEPAV1@I@Z CPlayerEvents::vfunc5
 0x1000b1e0 func   ?sub_102ecd00@CUnknown102ecd00@@QAEXH@Z CUnknown102ecd00::sub_102ecd00
 0x1000b1ef func   ?sub_100809f0@CSceneEntity@@QAEXXZ CSceneEntity::sub_100809f0
 0x1000b1f9 func   ?vfunc212@CBaseEntity@@QAEXH@Z CBaseEntity::vfunc212

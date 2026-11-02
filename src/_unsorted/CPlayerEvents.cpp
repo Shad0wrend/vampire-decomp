@@ -18,3 +18,23 @@ CPlayerEvents::CPlayerEvents() : CBaseEntity(0)
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x102270f0 size=0x3c
+#include "CPlayerEvents.h"
+
+void sub_100aa7b0(void *p);
+
+CPlayerEvents *CPlayerEvents::vfunc5(unsigned int flags)
+{
+	COutputEvent *p = m_Outputs + 23;
+	int n = 23;
+	do {
+		p--;
+		p->sub_100cd2d0();
+	} while (--n);
+	sub_1000cb8a();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
