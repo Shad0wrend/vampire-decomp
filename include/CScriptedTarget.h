@@ -23,4 +23,8 @@ public:
     virtual datamap_t * vfunc82();
 public:
     virtual int vfunc117();
+    int sub_1000d279(int a);	// as in CNPC_VMingXiaoTentacle (transplant)
+    int vfunc126(int a);	// as in CNPC_VMingXiaoTentacle (transplant)
+    int vfunc127(int a);	// as in CNPC_VMingXiaoTentacle (transplant)
+    int sub_1000b163(int a);	// as in CNPC_VMingXiaoTentacle (transplant)
 };

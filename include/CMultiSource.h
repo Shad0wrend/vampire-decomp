@@ -21,4 +21,5 @@ public:
     virtual datamap_t * vfunc82();
 public:
     virtual int vfunc117();
+    CMultiSource *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
 };

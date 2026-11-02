@@ -35,4 +35,8 @@ public:
 public:
 	virtual void vfunc291();
 	virtual void vfunc326();
+	void vfunc319();	// as in CWeaponIWritten (transplant)
+	void vfunc307(int arg);	// as in CWeaponIWritten (transplant)
+	bool vfunc309();	// as in CWeaponIWritten (transplant)
+	void vfunc321();	// as in CWeaponIWritten (transplant)
 };

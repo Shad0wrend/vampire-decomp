@@ -17,4 +17,5 @@ public:
 public:
 	virtual datamap_t * vfunc82();
 	virtual void vfunc103();
+	CEnvFade *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
 };

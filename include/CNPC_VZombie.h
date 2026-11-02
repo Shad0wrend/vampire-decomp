@@ -556,4 +556,5 @@ public:
 	virtual void vfunc578();
 	virtual void vfunc579();
 	virtual int vfunc580();
+	CNPC_VZombie *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
 };

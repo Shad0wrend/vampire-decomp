@@ -55,4 +55,5 @@ public:
 	// bodies were written with these signatures, which here add overloads rather than overrides.
 	virtual int vfunc50(int);
 	virtual int vfunc51(int, int);
+	CCameraTrack *sub_100cbe60();	// as in CKeepUpright (transplant)
 };

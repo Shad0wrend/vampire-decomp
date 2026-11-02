@@ -15,4 +15,5 @@ public:
 	void sub_100ac4e0(void *pFunc, int a, int b);	// sets a think function (called through the stub at 0x10007fe5)
 public:
     virtual datamap_t * vfunc82();
+    CEnvSpark *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
 };

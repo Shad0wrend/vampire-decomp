@@ -59,4 +59,6 @@ public:
 	COutputEvent m_Output80c;	// 0x80c
 public:
     virtual datamap_t * vfunc82();
+    void vfunc266(const float *pVelocity);	// as in CWeaponPhysCannon (transplant)
+    void sub_10015208(const float *pVelocity);	// as in CWeaponPhysCannon (transplant)
 };

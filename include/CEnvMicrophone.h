@@ -25,4 +25,5 @@ public:
 	COutputFloat m_SoundLevel;	// 0x464
 public:
     virtual datamap_t * vfunc82();
+    CEnvMicrophone *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
 };

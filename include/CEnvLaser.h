@@ -39,4 +39,5 @@ public:
 	const char *m_pszTexture4fc;	// 0x4fc: the sprite texture name (null when unset)
 
 	virtual datamap_t * vfunc82();
+	CEnvLaser *sub_10101480();	// as in CKeepUpright (transplant)
 };

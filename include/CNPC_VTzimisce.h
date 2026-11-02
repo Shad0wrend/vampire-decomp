@@ -230,4 +230,5 @@ public:
 	virtual float vfunc522();
 	virtual float vfunc523();
 	virtual float vfunc550();
+	void vfunc431();	// as in CLight (transplant)
 };

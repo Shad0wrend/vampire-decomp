@@ -82,4 +82,11 @@ public:
 public:
 	virtual int vfunc451();
 	virtual char vfunc602();	// slot 602: true when the NPC may carry on (difficulty-scaled timer at +0x6268, then the behaviour object at +0x65e8 must not hold this entity)
+	int sub_100025cc(int a);	// as in CNPC_VMingXiaoTentacle (transplant)
+	int vfunc126(int a);	// as in CNPC_VMingXiaoTentacle (transplant)
+	int vfunc127(int a);	// as in CNPC_VMingXiaoTentacle (transplant)
+	int sub_1000527c(int a);	// as in CNPC_VMingXiaoTentacle (transplant)
+	void sub_102b27f0();	// as in CNPC_VTzimisceRunner (transplant)
+	void sub_10269b50(int a);	// as in CNPC_VTzimisceRunner (transplant)
+	void vfunc433();	// as in CNPC_VTzimisceRunner (transplant)
 };

@@ -18,4 +18,5 @@ public:
 	const char *m_swapModel468;	// 0x468: the name of the swap entity
 	char m_bFlag46c;	// 0x46c: set the collision group 1 on the new entity
 	char m_bFlag46d;	// 0x46d: add (else remove) flag2 bit 2 on the new entity
+	CPhysConvert *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
 };

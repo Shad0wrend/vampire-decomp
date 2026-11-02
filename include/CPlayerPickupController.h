@@ -121,4 +121,5 @@ public:
 	virtual void vfunc227();
 	virtual void vfunc228_slot();
 	virtual void vfunc229(int);
+	CPlayerPickupController *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
 };
