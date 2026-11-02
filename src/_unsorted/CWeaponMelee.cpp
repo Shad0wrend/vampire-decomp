@@ -10,6 +10,16 @@ bool CWeaponMelee::vfunc282()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e4430 size=0x6
+#include "CWeaponMelee.h"
+
+// TARGET: CWeaponMelee::vfunc373
+int CWeaponMelee::vfunc373()
+{
+	return 6;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e9b40 size=0x1e
 #include "CWeaponMelee_TzimisceMelee.h"
 

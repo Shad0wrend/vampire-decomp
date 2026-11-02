@@ -4667,6 +4667,7 @@
 0x100086b6 func   ?sub_1042f0c0@CUnk1042f0c0@@QAEXH@Z CUnk1042f0c0::sub_1042f0c0
 0x100086c0 func   ?sub_102e0150@CUnknown102e0150@@QAEMPAX@Z CUnknown102e0150::sub_102e0150
 0x100086c5 func   ?sub_102d00e0@@YGXPAVS102d4390@@PBMM@Z sub_102d00e0
+0x100086ca func   ?vfunc373@CWeaponMelee@@UAEHXZ CWeaponMelee::vfunc373
 0x100086cf func   ?vfunc4@CTEBSPDecal@@QAEXHH@Z CTEBSPDecal::vfunc4
 0x100086d4 func   ?sub_1003c950@@YIXPAUSys@@@Z sub_1003c950
 0x100086de func   ?sub_10065c80@@YAHXZ sub_10065c80
