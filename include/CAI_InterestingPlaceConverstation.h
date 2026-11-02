@@ -36,7 +36,8 @@ class CAI_InterestingPlaceConverstation : public CPointEntity
 public:
 	CAI_InterestingPlaceConverstation();	// 0x102dbb00
 
-	char pad4[0x454 - 4];
+	char pad4[0x450 - 4];
+	const char *m_pszTarget450;	// 0x450: the targetname of the interesting places to link ("" when null); Activate loops FindEntityByName over it
 	const char *m_pszSound1;	// 0x454
 	const char *m_pszSound2;	// 0x458
 	CAI_IPItemsView m_items46c;	// 0x45c, indexes the items below
