@@ -8,3 +8,11 @@ bool CTraceFilterWorldOnly::vfunc0(void * a0, int a1)
     return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100a1a50 size=0x6
+#include "CTraceFilterWorldOnly.h"
+int CTraceFilterWorldOnly::vfunc1()
+{
+    return 1;
+}
+// END FUNCTION

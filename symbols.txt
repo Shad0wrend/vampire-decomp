@@ -10929,6 +10929,7 @@
 0x100129fe func   ?sub_100dcd00@CUnknown100dcd00@@QAEXPBM0H@Z CUnknown100dcd00::sub_100dcd00
 0x10012a03 func   ?sub_103fdf00@@YAHXZ sub_103fdf00
 0x10012a08 func   ?sub_101bb310@@YAII@Z sub_101bb310
+0x10012a21 func   ?vfunc1@CTraceFilterWorldOnly@@UAEHXZ CTraceFilterWorldOnly::vfunc1
 0x10012a26 func   ?vfunc80@CPhysBox@@UAEHXZ CPhysBox::vfunc80
 0x10012a2b func   ?sub_1007ee20@@YIXPAH@Z sub_1007ee20
 0x10012a3a func   ?sub_10119750@@YAXPBDZZ sub_10119750
