@@ -25,5 +25,5 @@ struct CPhysObjectDesc
 	int m_nKey;	// 0x08
 	int m_nItems;	// 0x0c
 	char m_pad10[0x34 - 0x10];
-	int **m_ppItems;	// 0x34: pointer to the item array (callee 0x100443e0 tests **m_ppItems == 0)
+	void **m_pItems;	// 0x34: item array (dword stride); callee 0x100443e0 tests m_pItems[0] (physics object slot)
 };
