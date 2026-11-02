@@ -13,10 +13,17 @@ class CNPC_VManBat
 public:
 	char m_pad0000[0xfec];
 	int m_nState;	// 0xfec: the activity the bat is in
-	char m_pad0ff0[0x628c - 0xff0];
+	char m_pad0ff0[0x1568 - 0xff0];
+	int m_n1568;	// 0x1568: set to 0x14 by the constructor (0x10389cc0), as is m_n156c
+	int m_n156c;	// 0x156c
+	char m_pad1570[0x628c - 0x1570];
 	unsigned int m_h628c;	// entity handle of the bat's target
-	char m_pad6290[0x6670 - 0x6290];
-	unsigned int m_n6670;
+	char m_pad6290[0x6668 - 0x6290];
+	void *m_pSecure6668;	// 0x6668: vptr of an embedded MvsnSec::CSecureTypeBase<CPfnTraits0,int,...> (vftable 0x104bc684, slot 0 = 0x10390060); the constructor stores it, then the scrambled value (+0x6670) and the two bytes +0x666c / +0x666d come from sub_103908c0 and a stack temp
+	char m_bSecure666c;	// 0x666c
+	char m_bSecure666d;	// 0x666d
+	char m_pad666e[2];
+	unsigned int m_n6670;	// 0x6670: the scrambled value of that member
 	int m_n6674;
 	float m_f6678;	// 0x6678
 	float m_f667c;	// 0x667c
