@@ -11784,6 +11784,7 @@
 0x100142b8 func   ?sub_10061fe0@CUnknown10061fe0@@QAEHXZ CUnknown10061fe0::sub_10061fe0
 0x100142bd func   ?vfunc362@CWeaponMelee_Tzimisce3Claw@@QAEHXZ CWeaponMelee_Tzimisce3Claw::vfunc362
 0x100142c2 func   ?vfunc103@CAI_InterestingPlace@@UAEXXZ CAI_InterestingPlace::vfunc103
+0x100142c7 func   ?LinkToParent@?$CUtlRBTree@UCRBTree12Entry_101c03c0@@G@@QAEXGG_N@Z CUtlRBTree<CRBTree12Entry_101c03c0,unsigned short>::LinkToParent
 0x100142cc func   ?vfunc1@CMoveHelperServer@@UAEXXZ CMoveHelperServer::vfunc1
 0x100142d1 func   ?sub_102d2e30@CAI_Hint@@QAEPAV1@XZ CAI_Hint::sub_102d2e30
 0x100142db func   ?sub_1012fc70@@YAPAVIPositionInterpolator@@XZ sub_1012fc70
