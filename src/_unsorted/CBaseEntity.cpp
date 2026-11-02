@@ -415,6 +415,14 @@ void __stdcall sub_10026d70(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026d90 size=0x4
+// TARGET: sub_10026d90
+int sub_10026d90()
+{
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026dd0 size=0x3
 // TARGET: sub_10026dd0
 void __stdcall sub_10026dd0(int a, int b)
