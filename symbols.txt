@@ -12244,6 +12244,7 @@
 0x10015000 func   ?sub_103345d0@CZeroFields103345d0@@QAEXXZ CZeroFields103345d0::sub_103345d0
 0x10015005 func   ?vfunc80@CItemGIdolDragon@@QAEHXZ CItemGIdolDragon::vfunc80
 0x1001500a func   ?sub_10310130@CAI_Senses@@QAEHH@Z CAI_Senses::sub_10310130
+0x1001500f func   ?vfunc5@CPathCorner@@QAEPAV1@I@Z CPathCorner::vfunc5
 0x10015014 func   ?sub_1010dcf0@CBreakable@@QAEXPAUinputdata_t@@@Z CBreakable::sub_1010dcf0
 0x10015019 func   ?sub_10366d60@@YADXZ sub_10366d60
 0x1001501e func   ?vfunc82@CNPC_VPlaceholder@@UAEPAUdatamap_t@@XZ CNPC_VPlaceholder::vfunc82
