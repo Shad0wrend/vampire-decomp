@@ -12,4 +12,5 @@ public:
 	SVec3 m_vCached;
 
 	SVec3 *sub_102d8a90();	// resolves the handle and caches the entity's slot 193 result (position-like vector); returns the cache
+	bool sub_102d8a20(void *pEntity) const;
 };
