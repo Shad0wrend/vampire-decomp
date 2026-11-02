@@ -65,6 +65,12 @@ void CTriggerDisciplineContext::vfunc174(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10210e30 size=0x3
+// TARGET: sub_10210e30
+void __stdcall sub_10210e30(int a) {
+}
+// END FUNCTION
+
 // FUNCTION: 0x10210e50 size=0x44
 #include "CTriggerDisciplineContext.h"
 struct SDiscView598 { char pad[0x598]; int m598; };

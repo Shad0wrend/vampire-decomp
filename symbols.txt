@@ -10002,6 +10002,7 @@
 0x100112d4 func   ?vfunc362@CWeaponRanged_MingXiao_Spit@@QAEHXZ CWeaponRanged_MingXiao_Spit::vfunc362
 0x100112d9 func   ?sub_10334c20@CBaseCombatCharacter@@QAE_NPAVCBaseCombatWeapon@@@Z CBaseCombatCharacter::sub_10334c20
 0x100112e3 func   ?sub_102673f0@@YAHHH@Z sub_102673f0
+0x100112e8 func   ?sub_10210e30@@YGXH@Z sub_10210e30
 0x100112ed func   ?vfunc77@CNPC_VGhoulCroucher@@UAEXXZ CNPC_VGhoulCroucher::vfunc77
 0x100112f2 func   ?vfunc103@CNPCMaker@@UAEXXZ CNPCMaker::vfunc103
 0x100112f7 func   ?sub_1027cda0@CFloatPair1027cda0@@QAEXM_N@Z CFloatPair1027cda0::sub_1027cda0
