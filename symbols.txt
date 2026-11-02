@@ -12420,6 +12420,7 @@
 0x100151cc func   ?vfunc80@CItemGHattersScreenplay@@QAEHXZ CItemGHattersScreenplay::vfunc80
 0x100151d1 func   ?vfunc41@CPhysicsPropContested@@QAEXPAVCBaseEntity@@@Z CPhysicsPropContested::vfunc41
 0x100151d6 func   _func_areaportal func_areaportal
+0x100151db func   ?sub_1014f7f0@@YA_NXZ sub_1014f7f0
 0x100151e0 func   _logic_case logic_case
 0x100151e5 func   ?sub_10250830@CUnknown10250830@@QAEXG@Z CUnknown10250830::sub_10250830
 0x100151ea func   ?vfunc32@CPropKeypad@@QAEDH@Z CPropKeypad::vfunc32
