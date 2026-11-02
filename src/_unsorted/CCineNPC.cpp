@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101a6da0 size=0x5
+// TARGET: sub_101a6da0
+bool __stdcall sub_101a6da0(int a)
+{
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6e40 size=0x52
 #include "CCineNPC.h"
 void sub_100aa7b0(void *);
