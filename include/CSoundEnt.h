@@ -7,6 +7,7 @@ struct datamap_t;
 #include "Vector.h"
 
 struct CSound;
+class CBaseEntity;
 
 struct CSoundEntSlot	// one 0x2c byte entry of the sound pool at +0x464
 {
