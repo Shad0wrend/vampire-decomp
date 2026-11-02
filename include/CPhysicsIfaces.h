@@ -37,7 +37,8 @@ public:
 	virtual void v4();
 	virtual void v5();
 	virtual void v6();
-	virtual void v7();
+	// slot 7 (+0x1c): the same five arguments as slot 8 (CRagdoll creation 0x1019c330 calls it with (pCollide, surfaceIndex, &vec3_origin, &vec3_angle, params))
+	virtual CPhysObjectIface *CreatePolyObjectAt7(void *pCollide, int materialIndex, const float *pOrigin, const float *pAngles, const void *pParams);
 	// slot 8 (+0x20): CreatePolyObject(pCollide, materialIndex, const float *origin, const float *angles, const void *pParams)
 	virtual CPhysObjectIface *CreatePolyObject(void *pCollide, int materialIndex, const float *pOrigin, const float *pAngles, const void *pParams);
 	virtual void v9();
