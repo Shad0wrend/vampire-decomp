@@ -13,6 +13,7 @@ public:
 	char m_bSyncs;	// 0x0d
 	char m_pad000e[2];
 
+	void sub_101dd620(void *pSource, void *pTarget, int nMask, int nRange, int nExtra);	// fires the projectile at the target (ret 0x14, stub 0x10002068)
 	char sub_101dd4f0();	// stub 0x100047ff: whether the projectile description is in use
 	void sub_101dd910();	// prints the description with Msg ("[Projectile]:", speed, model, particle, "ParticleDiesOnHit: True"); nothing when sub_101dd4f0() is false
 	void sub_101dd480();	// the constructor body (stub 0x10008ec7)
