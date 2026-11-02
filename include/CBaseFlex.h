@@ -85,6 +85,7 @@ public:
 	void sub_100b5b00(const float *v);	// slot 277 override: stores three floats at +0x848
 	void sub_100b5ce0();	// slot 276 override: toggles the int at +0x854
 	float sub_10091080(int sequence);	// CBaseAnimating member (stub 0x10009813), returns a float
+	void sub_10090b20();	// CBaseAnimating::RepositionOnAnimationExit (stub 0x10012ada): scope trace (entity name), sets the byte at +0x5b4
 
 	char m_pad03e0[0x848 - 0x3e0];
 	float m_vec848[3];
