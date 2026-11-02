@@ -140943,6 +140943,25 @@ int sub_102eca20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ecb90 size=0x31
+void __fastcall sub_1030bf50(void *pThis);
+extern int vt_1049d9c4;
+extern int vt_1049d994;
+extern int vt_1049a0f8;
+// TARGET: sub_102ecb90
+void __fastcall sub_102ecb90(int *pThis)
+{
+    int iVar1 = pThis[0xc];
+    pThis[0] = (int)&vt_1049d9c4;
+    pThis[4] = (int)&vt_1049d994;
+    if (iVar1 != 0) {
+        sub_1030bf50((void *)iVar1);
+        operator delete((void *)iVar1);
+    }
+    pThis[0] = (int)&vt_1049a0f8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ecbe0 size=0xd
 bool sub_102ecbe0(int a)
 {
