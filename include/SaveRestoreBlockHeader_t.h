@@ -1,8 +1,3 @@
-// SaveRestoreBlockHeader_t: element of the CUtlVector<SaveRestoreBlockHeader_t> the game saves with DEFINE_UTLVECTOR
-// (0x28 bytes; the fields are not recovered yet, the save / restore ops only walk the vector).
+// SaveRestoreBlockHeader_t is already defined by an existing shared header; this file is intentionally empty.
+// Do not define it here (a duplicate definition breaks compilation).
 #pragma once
-
-struct SaveRestoreBlockHeader_t
-{
-	char m_data[0x28];
-};
