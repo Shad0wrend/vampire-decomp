@@ -264,7 +264,7 @@ public:
 	char m_pad5d28[0x5d30 - 0x5d28];
 	char m_b5d30;
 	char m_pad5d31[3];
-	void *m_p5d34;
+	class CAI_Navigator *m_p5d34;	// 0x5d34: the navigator (+0x2c: its node list)
 	char m_pad5d38[0x5d40 - 0x5d38];
 	CAI_MoveProbe *m_pMoveProbe5d40;
 	char m_pad5d44[0x5d70 - 0x5d44];
