@@ -122,6 +122,7 @@ public:
 	virtual void vfunc109();
 	virtual bool vfunc110(const char *key, const char *value);	// "KeyValue": StartOpen goes to +0x458, the rest to CBaseEntity::vfunc110
 	CAreaPortal();
+	CAreaPortal *sub_1010c3a0();	// constructor stub (0x1010c3a0)
 	void sub_100156b8();	// as in CPhysForce (transplant)
 	bool sub_1009e430(const char *key, const char *value);	// CBaseEntity::vfunc110 (stub 0x1000fc86), called directly
 
