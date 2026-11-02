@@ -12013,6 +12013,7 @@
 0x10014a83 func   ?sub_102702b0@CUnknown102702b0@@QAEHXZ CUnknown102702b0::sub_102702b0
 0x10014a92 func   _info_node_hint info_node_hint
 0x10014a97 func   ?sub_100d5d10@@YAXXZ sub_100d5d10
+0x10014a9c func   ?sub_10086220@@YAXXZ sub_10086220
 0x10014aa1 func   ?vfunc178@CFuncElevator@@UAEXH@Z CFuncElevator::vfunc178
 0x10014aa6 func   ?sub_101dcb50@@YIXPAX@Z sub_101dcb50
 0x10014aab func   ?sub_1014f8d0@@YIXPAX@Z sub_1014f8d0
