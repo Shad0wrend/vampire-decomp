@@ -168798,6 +168798,28 @@ extern "C" CBaseEntity *npc_VYukie()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dd000 size=0x39
+#include "CBaseEntity.h"
+#include "CNPC_VYukie.h"
+
+extern void *vt_104d116c[];
+extern void *vt_104d113c[];
+void __fastcall sub_10386aa0(void *);
+void __fastcall sub_103dd120(void *);
+
+CNPC_VYukie *CNPC_VYukie::sub_103dd000()
+{
+	char *p = (char *)this;
+	sub_10386aa0(p);
+	*(int *)(p + 0x6664) = -1;
+	sub_103dd120(p + 0x6668);
+	*(void **)p = vt_104d116c;
+	*(unsigned int *)(p + 0x4c) |= 0x40;
+	*(void **)(p + 0x19b0) = vt_104d113c;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dd120 size=0xc
 void __fastcall sub_103dd140(void *pThis);
 

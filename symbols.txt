@@ -12133,6 +12133,7 @@
 0x10014f29 func   ?vfunc26@CNPC_VZombie@@UAEXH@Z CNPC_VZombie::vfunc26
 0x10014f33 func   ?sub_1018c9a0@@YAHXZ sub_1018c9a0
 0x10014f3d func   ?sub_101bc000@@YIXPAH@Z sub_101bc000
+0x10014f42 func   ?sub_103dd000@CNPC_VYukie@@QAEPAV1@XZ CNPC_VYukie::sub_103dd000
 0x10014f4c func   ?sub_1020aa70@CBaseVampireSkillEntity@@QAEPAV1@XZ CBaseVampireSkillEntity::sub_1020aa70
 0x10014f51 func   ?sub_101b2570@CUnknown101b2570@@QAEXPBD@Z CUnknown101b2570::sub_101b2570
 0x10014f56 func   ?vfunc305@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc305
