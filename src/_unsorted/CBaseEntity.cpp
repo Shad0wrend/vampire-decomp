@@ -443,6 +443,13 @@ int CBaseEntity::vfunc153()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026ee0 size=0x3
+// TARGET: sub_10026ee0
+void __stdcall sub_10026ee0(int a)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026f20 size=0x21
 bool __fastcall sub_100117d9(void *p);
 

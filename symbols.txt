@@ -6383,6 +6383,7 @@
 0x1000b663 func   ?sub_10103860@CUnk10103860Unit@block_10103860@@QAEXH@Z block_10103860::CUnk10103860Unit::sub_10103860
 0x1000b668 func   ?sub_1042d740@CBits1042d740@@QAEXH@Z CBits1042d740::sub_1042d740
 0x1000b672 func   ?sub_1033c9c0@@YIHPAD@Z sub_1033c9c0
+0x1000b677 func   ?sub_10026ee0@@YGXH@Z sub_10026ee0
 0x1000b67c func   ?sub_1020e060@CUnknown1020e060@@QAEXH@Z CUnknown1020e060::sub_1020e060
 0x1000b681 func   ?sub_10155a30@CRagdollProp@@QAEXXZ CRagdollProp::sub_10155a30
 0x1000b68b func   ?vfunc563@CNPC_VHuman@@QAEXPAVCEntityVSlots@@PAVVector@@HH@Z CNPC_VHuman::vfunc563
