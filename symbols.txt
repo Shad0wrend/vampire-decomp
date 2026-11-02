@@ -10705,6 +10705,7 @@
 0x10012323 func   ?sub_1034ca50@@YAHXZ sub_1034ca50
 0x10012328 func   ?sub_101d2530@@YAXHHHH@Z sub_101d2530
 0x1001232d func   ?sub_101dc1c0@CUnknown101dc1c0@@QAEPAXXZ CUnknown101dc1c0::sub_101dc1c0
+0x10012337 func   ?sub_1010f710@@YIXPAXHPAVCBaseEntity@@@Z sub_1010f710
 0x10012341 func   ?vfunc5@CTestTraceline@@UAEPAV1@I@Z CTestTraceline::vfunc5
 0x10012346 func   ?vfunc0@CTEGunshotDecal@@UAEPAUServerClass@@XZ CTEGunshotDecal::vfunc0
 0x1001234b func   ?vfunc81@CResearchBook_HG_DODGE@@QAEHXZ CResearchBook_HG_DODGE::vfunc81

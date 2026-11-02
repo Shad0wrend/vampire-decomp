@@ -52138,6 +52138,19 @@ int sub_1010f5c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010f710 size=0x19
+#include "CBaseEntity.h"
+
+void sub_1010f740();
+
+// TARGET: sub_1010f710
+void __fastcall sub_1010f710(void *pThis, int a, CBaseEntity *pEnt)
+{
+	if (pEnt && pEnt->m_field368 != 4)
+		sub_1010f740();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f9f0 size=0x6b
 #include "CBreakableSurface.h"
 
