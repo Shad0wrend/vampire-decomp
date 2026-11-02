@@ -153,6 +153,13 @@ int CNPC_VAnimal::vfunc482(char bDisregardState, int interruptLevel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10360180 size=0x1
+// TARGET: sub_10360180
+void sub_10360180()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x103601a0 size=0x30
 #include "CAI_BaseNPCTroika.h"
 #include "CNPC_VAnimal.h"
