@@ -414,7 +414,7 @@ public:
 	virtual void vfunc439();
 	virtual void vfunc440_slot();
 	virtual void vfunc441();
-	virtual void vfunc442();
+	virtual void vfunc442(int *pTask);	// slot 442 "StartTask" override (ret 4): switch on *pTask (0x36, 0x14c, 0x14e..0x153), default CNPC_VAnimal::vfunc442 (stub 0x10009b06)
 	virtual void vfunc443();
 	virtual void vfunc444_slot();
 	virtual void vfunc445();
