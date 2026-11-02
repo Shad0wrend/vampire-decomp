@@ -161845,6 +161845,26 @@ void sub_1035b2b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035b350 size=0x43
+#include "CGenericSabbat_NPC.h"
+void *sub_100aa720(int size);
+void *__fastcall sub_1035b520(char *p);
+extern char g_1062a0b0[];
+
+// TARGET: npc_sabbat
+extern "C" void *npc_sabbat()
+{
+	void *mem = sub_100aa720(0x5f48);
+	CGenericSabbat_NPC *p;
+	if (mem)
+		p = (CGenericSabbat_NPC *)sub_1035b520((char *)mem);
+	else
+		p = 0;
+	p->vfunc106(g_1062a0b0);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035b420 size=0xc
 void __fastcall sub_1035b440(void *pThis);
 
