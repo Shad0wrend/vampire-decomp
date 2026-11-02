@@ -12,6 +12,8 @@ public:
 
 	virtual CWeaponRanged *vfunc5(unsigned int flags);	// slot 5: its own (0x103e2b90); VC6 has no covariant returns
 	virtual void vfunc104();
+	int vfunc80();	// slot 80 override: the game's 0x103e2740
+	int vfunc81();	// slot 81 override: the game's 0x103e2760
 	virtual void vfunc265();	// slot 265: stops the flame sound when the burning list is not empty (the deactivate sample at channel 1 when the flag at +0x1519 is set), clears that flag, then sets the flag byte at +0x1520
 	virtual void vfunc326();	// slot 326: with a loaded clip (+0x74c) and the flag at +0x1519 clear plays the activate sample and stamps +0x151c, sets the flag, then sets the byte at +0x1520 and tail calls sub_102382f0
 	virtual void vfunc291();	// slot 291: its own (0x103e3240)

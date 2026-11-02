@@ -1,17 +1,9 @@
 // ConVar (RTTI .?AVConVar@@): base ConCommandBase at +0x0 is not modelled; primary vtable 0x104974a0 has 13 slots.
 #pragma once
 
-// ConCommandBase as far as the constructors show: its constructor (function 0x102454e0, stub 0x10007f3b) runs first, the
-// ConVar vftable is stored after it. Modelled as an empty base so VC6 orders the constructor like the game; its fields
-// are still declared in ConVar below.
-class ConVar;
-
-class ConCommandBase
-{
-public:
-	ConCommandBase();	// stub 0x10007f3b
-	virtual ConVar *vfunc0(unsigned int flags);	// slot 0 (the destructor); the base carries the vftable pointer at +0
-};
+// ConCommandBase (ConCommandBase.h): its constructor (function 0x102454e0, stub 0x10007f3b) runs first, the
+// ConVar vftable is stored after it.
+#include "ConCommandBase.h"
 
 class ConVar : public ConCommandBase
 {
@@ -23,7 +15,7 @@ public:
 	ConVar *sub_10245bd0(const char *pName, const char *pDefaultValue, int flags, const char *pHelpString, bool bMin, float fMin, bool bMax, float fMax, void (*pCallback)(ConVar *, const char *));	// the full constructor written as a plain member (the real one stores the vftable after the base constructor call): the ConCommandBase constructor, the vftable, then Create with everything
 	~ConVar();	// "ConVar::~ConVar" (stub 0x100108bb): the atexit destroy of such a static jumps to it
 
-	typedef ConVar *Vfunc0Ret;	// slot 0's return type (ConCommandBase * once the base is ConCommandBase.h's)
+	typedef ConCommandBase *Vfunc0Ret;	// slot 0 returns the base's type (VC6 has no covariant returns)
 	virtual Vfunc0Ret vfunc0(unsigned int flags);
 	virtual char vfunc1();	// "IsCommand"-like test (a boolean answer in al)
 	virtual void vfunc2();

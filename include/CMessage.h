@@ -10,6 +10,7 @@ struct inputdata_t;
 class CMessage : public CPointEntity
 {
 public:
+	void vfunc104();	// slot 104 override: the game's 0x10101ff0
 	void vfunc103();	// slot 103: slot 104(), then the "CBaseEntity::SetSolid" scope trace around the collision property's SetSolid(0), SetMoveType(0, 0) (slot 93), then picks the float at +0x45c from the int at +0x458 (1: 1.25, 2: 0.8, 3: 0, else 60.0), clears it and scales the float at +0x454 by 0.1 (1.0 when not above 0)
 	void sub_10102030(inputdata_t *inputdata);	// "CMessage::InputShowMessage": shows the message text to the activator (the local player when it has none), or to everyone with spawn flag 2, plays the sound from this entity's position and fires the output; removes the entity with spawn flag 1
 

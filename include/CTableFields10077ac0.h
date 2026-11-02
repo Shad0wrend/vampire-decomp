@@ -15,8 +15,4 @@ public:
 	char *sub_10077af0(int a, int b);	// stub 0x10013886: record b (0x88 bytes) of the table a
 };
 
-class CUnknown10073b00
-{
-public:
-	float sub_10073b00();	// stub 0x10003f17: the sample value of a record
-};
+#include "CUnknown10073b00.h"

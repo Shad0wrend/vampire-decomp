@@ -13,12 +13,7 @@ struct datamap_t
 	datamap_t *baseMap;
 };
 
-struct SaveRestoreFieldInfo_t
-{
-	void *pField;	// the field's address in the object
-	void *pOwner;	// the object
-	typedescription_t *pTypeDesc;
-};
+#include "SaveRestoreFieldInfo_t.h"
 
 struct ISaveRestoreOps
 {
