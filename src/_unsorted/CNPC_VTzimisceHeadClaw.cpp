@@ -248,6 +248,18 @@ int CNPC_VTzimisceHeadClaw::vfunc440(int act)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c17f0 size=0x1c
+#include "CNPC_VTzimisceHeadClaw.h"
+
+// TARGET: CNPC_VTzimisceHeadClaw::vfunc433
+void CNPC_VTzimisceHeadClaw::vfunc433()
+{
+	sub_102b27f0();
+	sub_10269b50(0xf);
+	sub_10269b50(0xe);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c1820 size=0x15f
 #include "CAI_BaseNPCTroika.h"
 
