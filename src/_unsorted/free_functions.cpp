@@ -108018,6 +108018,26 @@ void CItemContainerAnimated::sub_10209e30(const char *pszLabel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10209ef0 size=0x43
+#include "CItemContainerOneItemFiltered.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(int size);
+extern char g_105a9c58[];
+
+// TARGET: item_container_one_item_filtered
+extern "C" CBaseEntity *item_container_one_item_filtered()
+{
+	void *mem = sub_100aa720(0x1a38);
+	CItemContainerOneItemFiltered *p;
+	if (mem)
+		p = ((CItemContainerOneItemFiltered *)mem)->sub_10209f60();
+	else
+		p = 0;
+	((CBaseEntity *)p)->vfunc106(g_105a9c58);
+	return (CBaseEntity *)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10209f60 size=0x1c
 void __fastcall sub_102087e0(void *p);
 extern int vt_10484c84[];
