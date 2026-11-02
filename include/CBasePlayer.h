@@ -225,9 +225,14 @@ public:
 	float m_f147C;	// 0x147C
 	char m_pad1480[0x148c - 0x1480];	// 0x1480 .. 0x148B
 	float m_f148C;	// 0x148C
-	char m_pad1490[0x14a8 - 0x1490];	// 0x1490 .. 0x14A7
+	char m_pad1490[0x149c - 0x1490];	// 0x1490 .. 0x149B
+	int m_h149C;	// 0x149C: the feeding target handle (-1 on death, vfunc144; CBaseCombatCharacter::m_h149c)
+	char m_pad14A0[0x14a8 - 0x14a0];	// 0x14A0 .. 0x14A7
 	char m_b14A8;
-	char m_pad14A9[0x14b0 - 0x14a9];	// 0x14A9 .. 0x14AF
+	char m_pad14A9;
+	char m_b14AA;	// 0x14AA: cleared by the death handler (vfunc144)
+	char m_pad14AB;
+	int m_n14AC;	// 0x14AC: -1 on death (vfunc144)
 	int m_n14B0;	// 0x14B0
 	int m_n14B4;	// 0x14B4
 	char m_pad14B8[0x1538 - 0x14b8];	// 0x14B8 .. 0x1537
