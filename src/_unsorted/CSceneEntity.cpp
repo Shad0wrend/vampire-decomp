@@ -1,6 +1,15 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100803c0 size=0x6
+extern datamap_t g_10548180;
+
+datamap_t *CSceneEntity::vfunc82()
+{
+	return &g_10548180;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100809c0 size=0x1e
 #include "CSceneEntity.h"
 
