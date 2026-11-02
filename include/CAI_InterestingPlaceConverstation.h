@@ -43,7 +43,8 @@ public:
 	CAI_IPItemsView m_items46c;	// 0x45c, indexes the items below
 	char pad45d[0x46c - 0x45d];
 	CAI_IPItem m_item46c, m_item484, m_item49c, m_item4b4, m_item4cc, m_item4e4;	// 0x46c, six items
-	char pad4fc[0x515 - 0x4fc];
+	int m_n4fc;	// 0x4fc: cleared by Activate (vfunc113)
+	char pad500[0x515 - 0x500];
 	char m_b515;
 	char m_b516;
 	char pad517;
