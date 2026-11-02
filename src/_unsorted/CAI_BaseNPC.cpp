@@ -21,6 +21,13 @@ void __fastcall sub_101a6500(void *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6520 size=0x3
+// TARGET: CAI_BaseNPC::vfunc128
+char CAI_BaseNPC::vfunc128() {
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6540 size=0x1
 // TARGET: sub_101a6540
 void __fastcall sub_101a6540(void *pThis)
