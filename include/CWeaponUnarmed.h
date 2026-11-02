@@ -15,4 +15,5 @@ public:
 public:
     virtual int vfunc81();
     virtual int vfunc80();
+	int vfunc360();	// slot 360 (plain member; the model derives from CBaseEntity): returns 0
 };
