@@ -1962,6 +1962,7 @@
 0x100042cd func   ?vfunc294@CItemContainer@@QAE_NH@Z CItemContainer::vfunc294
 0x100042d2 func   ?vfunc538@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc538
 0x100042e1 func   ?vfunc2@CTETParticle@@UAEPAV1@I@Z CTETParticle::vfunc2
+0x100042e6 func   ?vfunc0@?$CUtlVectorDataOps@V?$CUtlVector@UGLOBAL_EMAIL@@V?$CUtlMemory@UGLOBAL_EMAIL@@@@@@$08@@UAEXPAX0@Z CUtlVectorDataOps<CUtlVector<GLOBAL_EMAIL,CUtlMemory<GLOBAL_EMAIL> >,9>::vfunc0
 0x100042eb func   ?sub_100fb8a0@S100fb8a0@@QAEXAAUinputdata_t@@@Z S100fb8a0::sub_100fb8a0
 0x100042f5 func   ?sub_1021e580@CUnknown1021e580@@QAEXH@Z CUnknown1021e580::sub_1021e580
 0x100042fa func   ?sub_101df8d0@SoundRecX@@QAEPAU1@PBU1@@Z SoundRecX::sub_101df8d0
