@@ -9,6 +9,7 @@ class CConstraintAnchorBase
 {
 public:
 	CConstraintAnchorBase(int a);
+	void sub_1009d980(int a);	// the shared entity base constructor (0x1009d980) as a plain member
 	virtual void vfunc0();
 	virtual void vfunc1();
 	virtual void vfunc2();
