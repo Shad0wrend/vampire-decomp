@@ -146074,6 +146074,26 @@ bool CUnknown1030f480::sub_1030f220(const char *pszName, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030f300 size=0x39
+#include "CUnknown10936b68.h"
+#include "CUnknown1024a230.h"
+
+__declspec(dllimport) void DevMsg(const char *, ...);
+extern CUnknown1024a230 g_109203cc;
+
+int CUnknown10936b68::sub_1030f300(int value)
+{
+	CAI_ScheduleNode *pNode = m_pFirst;
+	while (pNode) {
+		if (pNode->m_id == value)
+			return (int)pNode;
+		pNode = pNode->m_pNext;
+	}
+	DevMsg("Couldn't find schedule %d (%s)\n", value, g_109203cc.sub_102ea020(value));
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030f350 size=0x33
 // TARGET: sub_1030f350
 int __cdecl _strcmpi(const char *, const char *);

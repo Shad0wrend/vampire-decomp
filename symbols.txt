@@ -5290,6 +5290,7 @@
 0x10009b9c func   ?vfunc5@CPropLargeHullIgnore@@QAEPAV1@I@Z CPropLargeHullIgnore::vfunc5
 0x10009bab func   ?sub_10091f10@CBaseAnimating@@QAEXPBDM@Z CBaseAnimating::sub_10091f10
 0x10009bb0 func   ?sub_1032e210@CBaseCombatCharacter@@QAEXPAX@Z CBaseCombatCharacter::sub_1032e210
+0x10009bb5 func   ?sub_1030f300@CUnknown10936b68@@QAEHH@Z CUnknown10936b68::sub_1030f300
 0x10009bba func   ?sub_10204300@CUnknown10204300@@QAEHHH@Z CUnknown10204300::sub_10204300
 0x10009bc9 func   ?vfunc80@CItemGMercurioJournal@@QAEHXZ CItemGMercurioJournal::vfunc80
 0x10009bd8 func   ?sub_10094eb0@CBaseAnimating@@QAE_NH@Z CBaseAnimating::sub_10094eb0
