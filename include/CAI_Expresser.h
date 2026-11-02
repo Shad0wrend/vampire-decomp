@@ -31,6 +31,22 @@ struct CAI_ExpresserTree	// an inlined CUtlRBTree16 at +0x14, followed by the ca
 	}
 };
 
+#include "utlrbtree.h"
+
+struct CAI_ExpresserUse	// element of the tree at +0x14: a sentence key and the time it was last used (a CUtlMap<unsigned int, float, unsigned short> pair)
+{
+	unsigned int m_nKey;
+	float m_flTime;
+};
+
+// The same tree as CAI_ExpresserTree, typed: sentinel (Links) at 0x10936c54, guard 0x109f076a; the less function (stub
+// 0x1000186b) is called as less(a, b) through [tree+0]; the context pointer after the tree (+0x18) is copied to the global
+// 0x109f075c before each search (CUtlMap's s_pLessContext). View it with CAI_Expresser::UseTree().
+struct CAI_ExpresserUseTree : public CUtlRBTree<CAI_ExpresserUse, unsigned short>
+{
+	void *m_pLessContext;	// 0x18 of the tree (+0x2c of the expresser)
+};
+
 struct CAI_ExpresserSub	// 0x1c byte member at +0x30
 {
 	char m_pad[0x1c];
