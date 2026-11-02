@@ -8,6 +8,7 @@
 #define SCENE_V10(p) SCENE_V(p##0) SCENE_V(p##1) SCENE_V(p##2) SCENE_V(p##3) SCENE_V(p##4) SCENE_V(p##5) SCENE_V(p##6) SCENE_V(p##7) SCENE_V(p##8) SCENE_V(p##9)
 
 class CBaseEntity;
+class CBaseFlex;
 class CUnknown1007ce20;
 class CUnknown1007ed10;
 
