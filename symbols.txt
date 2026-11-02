@@ -9864,6 +9864,7 @@
 0x100113ba func   ?sub_1023a2a0@CWeaponRanged@@QAEXXZ CWeaponRanged::sub_1023a2a0
 0x100113bf func   ?vfunc81@CItemGWarrLedger2@@QAEHXZ CItemGWarrLedger2::vfunc81
 0x100113c4 func   ?vfunc81@COccultLockpicking@@QAEHXZ COccultLockpicking::vfunc81
+0x100113c9 func   ?sub_103e7530@CWeaponMelee_Torch@@QAEXXZ CWeaponMelee_Torch::sub_103e7530
 0x100113ce func   _trigger_electric_bugaloo trigger_electric_bugaloo
 0x100113d3 func   _npc_VChangBrosBlade npc_VChangBrosBlade
 0x100113d8 func   ?sub_1030ba70@CUnknown1030ba70@@QAEHXZ CUnknown1030ba70::sub_1030ba70

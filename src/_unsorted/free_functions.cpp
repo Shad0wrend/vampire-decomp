@@ -170424,6 +170424,25 @@ int sub_103e7470()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e7530 size=0x38
+#include "CWeaponMelee_Torch.h"
+#include "CBaseCombatWeapon.h"
+#include "CEntityVSlots.h"
+
+void CWeaponMelee_Torch::sub_103e7530()
+{
+	CBaseCombatWeapon *pWeapon = (CBaseCombatWeapon *)this;
+	if (pWeapon->sub_102521f0()) {
+		CEntityVSlots *pOwner = (CEntityVSlots *)pWeapon->sub_102521f0();
+		if (pOwner->slot158()) {
+			sub_103e77f0();
+			sub_103e7680();
+			m_b914 = 1;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e7680 size=0xff
 #include "CWeaponMelee_Torch.h"
 #include "CPASAttenuationFilter.h"
