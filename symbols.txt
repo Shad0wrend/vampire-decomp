@@ -9251,6 +9251,7 @@
 0x1000fc7c func   ?sub_101dcc10@CRecListUnit@@QAEXPBU1@@Z CRecListUnit::sub_101dcc10
 0x1000fc81 func   ?sub_100cdda0@CEventQueue@@QAEXXZ CEventQueue::sub_100cdda0
 0x1000fc86 func   ?vfunc110@CBaseEntity@@UAE_NPBD0@Z CBaseEntity::vfunc110
+0x1000fc8b func   ?sub_10026e10@@YG_NH@Z sub_10026e10
 0x1000fc90 func   ?vfunc143@CBaseCombatCharacter@@UAEHMH@Z CBaseCombatCharacter::vfunc143
 0x1000fc95 func   ?sub_1011bf80@CUnk1011bf80@@QAEPAXE@Z CUnk1011bf80::sub_1011bf80
 0x1000fca4 func   ?sub_102f91b0@UtlMem@@QAEXXZ UtlMem::sub_102f91b0
