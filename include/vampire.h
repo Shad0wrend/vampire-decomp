@@ -102,6 +102,7 @@
 #include "CUnknownAuto.h"
 #include "CVampireProjectile.h"
 #include "CWeaponRanged.h"
+#include "CWeaponIThrown.h"
 #include "CWeaponThrown_Grenade_Frag.h"
 #include "ConCommand.h"
 #include "CPhysicsHook.h"

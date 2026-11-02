@@ -11,6 +11,7 @@ public:
 	CWeaponIThrown *vfunc5(unsigned int flags);
 	void sub_10013a57();
 	int vfunc328();	// slot 328: returns 0xb9 + 1 when the pointer at +0x86c is set, else 0xb9
+	datamap_t *vfunc82();	// slot 82
 	char pad_0004[0x778 - 4];
 	int m_i778;	// 0x778
 	char pad_077c[0x86c - 0x77c];
