@@ -743,6 +743,7 @@
 0x10002351 func   ?sub_10181600@@YIXPAD@Z sub_10181600
 0x10002356 func   ?sub_1026a930@CAI_BaseNPC@@QAEPAVCBaseEntity@@XZ CAI_BaseNPC::sub_1026a930
 0x1000235b func   ?sub_101edfe0@@YAHXZ sub_101edfe0
+0x10002365 func   ?vfunc82@CEnvFade@@UAEPAUdatamap_t@@XZ CEnvFade::vfunc82
 0x1000236f func   ?sub_101cb6b0@@YAPAHXZ sub_101cb6b0
 0x10002374 func   ?vfunc0@CTEBeamRingPoint@@UAEPAUServerClass@@XZ CTEBeamRingPoint::vfunc0
 0x10002379 func   ?vfunc82@CNPCMaker_Zombie@@UAEPAUdatamap_t@@XZ CNPCMaker_Zombie::vfunc82
