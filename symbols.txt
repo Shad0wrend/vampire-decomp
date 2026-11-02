@@ -6562,6 +6562,7 @@
 0x1000b947 func   ?sub_10247280@@YAPADPAD00@Z sub_10247280
 0x1000b95b func   ?sub_10087fb0@@YAXXZ sub_10087fb0
 0x1000b960 func   ?vfunc362@CWeaponMelee_TireIron@@QAEHXZ CWeaponMelee_TireIron::vfunc362
+0x1000b965 func   ?sub_101cb250@CTriggerImpact@@QAEXPAUinputdata_t@@@Z CTriggerImpact::sub_101cb250
 0x1000b96a func   ?sub_101c2bc0@CAnimParams@@QAEXPAVCBaseEntity@@HHPBMHHH@Z CAnimParams::sub_101c2bc0
 0x1000b96f func   ?sub_101c2480@@YAHXZ sub_101c2480
 0x1000b974 func   ?sub_10279a50@CAI_BaseNPC@@QAEXH@Z CAI_BaseNPC::sub_10279a50

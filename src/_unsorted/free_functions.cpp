@@ -84794,6 +84794,31 @@ int *sub_101cb130()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cb250 size=0xb2
+#include "CTriggerImpact.h"
+#include "CBaseTrigger.h"
+#include "CEntityVSlots.h"
+#include "inputdata_t.h"
+#include "globalvars.h"
+
+void sub_10139610(const float *pAngles, Vector *pForward, Vector *pRight, Vector *pUp);
+
+void CTriggerImpact::sub_101cb250(inputdata_t *pInput)
+{
+	Vector vecDir;
+	sub_10139610((float *)((CEntityVSlots *)this)->slot221(), &vecDir, 0, 0);
+	void *pCaller = pInput->pCaller;
+	void *pActivator = pInput->pActivator;
+	m_out5bc.SetVector3D(vecDir * m_flMagnitude);
+	m_out5bc.sub_100cd300(*(CVariantCopy *)&m_out5bc, pActivator, pCaller, 0);
+	((CBaseTrigger *)this)->sub_101c4bf0();
+	m_flNextThink = gpGlobals->curtime + 0.1;
+	union { void (CBaseTrigger::*pmf)(); int addr; } u;
+	u.pmf = &CBaseTrigger::sub_101c4dd0;
+	((CBaseEntity *)this)->sub_100ac4e0(u.addr, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cb550 size=0x23
 #include "CUnknown100bc0f0.h"
 
