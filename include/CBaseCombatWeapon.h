@@ -71,7 +71,7 @@ public:
 	CBCW_V(274) virtual int vfunc275(int a); virtual int vfunc276(unsigned int index);	// slot 276: the int in the 0x1093c byte record `index` of the table at +0x2670 of the object 0x10010ea6 returns
 	virtual bool vfunc277(int a);	// asked by vfunc280 with the ammo slot index
 	virtual float vfunc278();	// CWeaponGravityGun: the pull strength of the held object (the owner's stat 0x1a divided by the physics object's mass), -1.0f without one
-	CBCW_V(279)
+	virtual char vfunc279();
 	// slots 280..371
 	virtual bool vfunc280(int a);	// asked by CBaseCombatCharacter::GetBestRangedWeapon with 0
 	CBCW_V(281) CBCW_V(282)
