@@ -2532,6 +2532,7 @@
 0x100050fb func   ?sub_1006c7d0@CUnknown1006c7d0@@QAEXXZ CUnknown1006c7d0::sub_1006c7d0
 0x10005100 func   ?vfunc105@CPropDoorknob@@UAEXPBD@Z CPropDoorknob::vfunc105
 0x10005100 func   ?vfunc105@CVampireProjectile@@UAEXPBD@Z CVampireProjectile::vfunc105
+0x10005105 func   ?vfunc3@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAE_NXZ CAI_Behavior<CAI_BaseNPC,100000>::vfunc3
 0x1000510f func   ?vfunc5@CWeaponHolyLight@@QAEPAV1@I@Z CWeaponHolyLight::vfunc5
 0x10005114 func   ?sub_1020a5c0@@YAXPAUArgX@@@Z sub_1020a5c0
 0x10005123 func   ?vfunc619@CNPC_VChangBros@@QAEXH@Z CNPC_VChangBros::vfunc619

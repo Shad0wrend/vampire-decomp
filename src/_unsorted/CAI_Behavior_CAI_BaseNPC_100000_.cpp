@@ -88,6 +88,15 @@ char CAI_Behavior<CAI_BaseNPC,100000>::vfunc24(int a) { m_flag10 = 0; return 0; 
 char CAI_Behavior<CAI_BaseNPC,100000>::vfunc25(int a) { m_flag10 = 0; return 1; }
 // END FUNCTION
 
+// FUNCTION: 0x102c71d0 size=0x3
+#include "CAI_Behavior.h"
+
+bool CAI_Behavior<CAI_BaseNPC,100000>::vfunc3()
+{
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c71f0 size=0x1
 // TARGET: sub_102c71f0
 void sub_102c71f0()
