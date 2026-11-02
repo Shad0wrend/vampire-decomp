@@ -875,6 +875,23 @@ void CPhysConstraint::sub_1002af90(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002b130 size=0x2e
+#include "CPhysConstraint.h"
+#include "IPhysicsEnvironment.h"
+
+extern IPhysicsEnvironment *g_10723940;
+extern char g_10447134[];
+
+// TARGET: CPhysConstraint::sub_1002b130
+void CPhysConstraint::sub_1002b130()
+{
+	*(void **)this = g_10447134;
+	g_10723940->vfunc23(m_pConstraint450);
+	m_OnBreak470.sub_100cd2d0();
+	sub_1000cb8a();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002b1e0 size=0x12d
 #include "CGlobalEntityList.h"
 extern "C" int __cdecl _strcmpi(const char *, const char *);
