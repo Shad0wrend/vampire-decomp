@@ -2605,6 +2605,7 @@
 0x1000524f func   ?vfunc245@CNPC_VPlayerController@@QAEXHHHHH@Z CNPC_VPlayerController::vfunc245
 0x10005254 func   ?sub_1033df80@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_1033df80
 0x10005259 func   ?vfunc82@CTimerEntity@@QAEPAUdatamap_t@@XZ CTimerEntity::vfunc82
+0x1000525e func   ?vfunc452@CNPC_VHumanCombatant@@QAEDXZ CNPC_VHumanCombatant::vfunc452
 0x10005263 func   ?sub_1024b370@CUnknown1024b370@@QAEXXZ CUnknown1024b370::sub_1024b370
 0x10005268 func   ?sub_100dc220@CCollisionProperty@@QAEXH@Z CCollisionProperty::sub_100dc220
 0x1000527c func   ?vfunc127@CAI_BaseNPCTroika@@UAEHPAVCRestore@@@Z CAI_BaseNPCTroika::vfunc127

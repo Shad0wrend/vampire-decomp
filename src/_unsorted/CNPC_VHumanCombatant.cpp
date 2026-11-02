@@ -49,6 +49,17 @@ CNPC_VHumanCombatant *CNPC_VHumanCombatant::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10386c20 size=0x6
+#include "CNPC_VHumanCombatant.h"
+
+extern char g_1063f8b8;
+
+char CNPC_VHumanCombatant::vfunc452()
+{
+	return g_1063f8b8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10386c80 size=0x1d
 #include "CNPC_VHumanCombatant.h"
 struct A { int sub_10012300(int); };
