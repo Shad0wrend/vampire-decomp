@@ -234,6 +234,9 @@ public:
 	EVS(602) EVS(603)
 	virtual int slot604(int a);	// NPC: schedule selection (SelectFailSchedule-like), takes the task argument and returns a schedule id
 	virtual int slot605(int a);	// NPC: schedule selection helper, takes the task argument and returns a schedule id
-	EVS(606) EVS(607) EVS(608) EVS(609) EVS(610) EVS(611) EVS(612) EVS(613) EVS(614) EVS(615) EVS(616)
+	virtual int slot606(int a);	// NPC: schedule pick for the idle mood (CAI_BaseNPCTroika::vfunc606), takes the task argument
+	EVS(607) EVS(608)
+	virtual CEntityVSlots *slot609(char bForce);	// NPC: the target at +0x6444 (CAI_BaseNPCTroika::vfunc609), a pointer or 0
+	EVS(610) EVS(611) EVS(612) EVS(613) EVS(614) EVS(615) EVS(616)
 	virtual void slot617();	// the gargoyle's roar sound
 };
