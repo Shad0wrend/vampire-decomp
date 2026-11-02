@@ -267,7 +267,9 @@ public:
 	struct CBasePlayerQuestRecord *m_pQuestRecords1D68;	// 0x1D68: the saved quest records (0x40 bytes each)
 	char m_pad1D6C[0x1d74 - 0x1d6c];
 	int m_nQuestRecords1D74;	// 0x1D74: their count
-	char m_pad1D78[0x1da4 - 0x1d78];	// 0x1D78 .. 0x1DA3
+	char m_pad1D78[4];	// 0x1D78 .. 0x1D7B
+	CUtlVector<CBasePlayerAward> m_Awards1d7c;	// 0x1D7C: the experience awards the player was given (memory +0, size +0x0c, elements +0x10)
+	char m_pad1D90[0x1da4 - 0x1d90];	// 0x1D90 .. 0x1DA3
 	EHANDLE m_hPlaceholder1da4;
 
 	float m_f1DA8;	// 0x1DA8: when the next random view punch is due
