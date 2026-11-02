@@ -4,6 +4,7 @@
 #pragma once
 
 #include "CAI_BaseNPC.h"
+#include "CAI_TroikaLink.h"
 
 struct inputdata_t;
 struct CAI_ArcRecord;
