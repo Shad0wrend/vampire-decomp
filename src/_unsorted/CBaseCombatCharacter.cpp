@@ -2746,6 +2746,13 @@ int CBaseCombatCharacter::vfunc323(const Vector *pDirection)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10345460 size=0x3
+bool CBaseCombatCharacter::vfunc327()
+{
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103482e0 size=0xaa
 #include "CBaseCombatCharacter.h"
 #include "CStatDefault3List.h"
