@@ -1163,6 +1163,7 @@
 0x10002e32 func   ?sub_10136580@@YAPAXPBD@Z sub_10136580
 0x10002e37 func   ?sub_10430050@@YAXXZ sub_10430050
 0x10002e3c func   ?sub_102c2910@CTroikaStringInputUnit@@QAEXPAUinputdata_t@@@Z CTroikaStringInputUnit::sub_102c2910
+0x10002e41 func   ?sub_1015dd70@@YAHXZ sub_1015dd70
 0x10002e46 func   ?sub_10135720@CLogicNPCCondition@@QAEPAVCBaseEntity@@XZ CLogicNPCCondition::sub_10135720
 0x10002e4b func   _item_g_watch_fancy item_g_watch_fancy
 0x10002e55 func   ?sub_101402b0@CBaseMoveBehavior@@QAEHH@Z CBaseMoveBehavior::sub_101402b0
