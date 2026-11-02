@@ -1886,6 +1886,12 @@ int sub_10179760() {
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017b880 size=0x3
+// TARGET: sub_1017b880
+void __stdcall sub_1017b880(int a) {
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017be50 size=0x8f
 int sub_1002dfe0(int a, int b);
 
