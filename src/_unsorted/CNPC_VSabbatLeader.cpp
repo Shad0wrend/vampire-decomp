@@ -42,6 +42,30 @@ int CNPC_VSabbatLeader::vfunc451()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a5ce0 size=0x2b
+#include "CNPC_VSabbatLeader.h"
+
+struct CGargoyleMemberUnit {
+	void sub_10015708();
+};
+
+struct CGargoyleBaseUnit {
+	void sub_100123af();
+};
+
+void __cdecl sub_10009fc5(void *p);
+
+// TARGET: CNPC_VSabbatLeader::vfunc5
+CNPC_VSabbatLeader *CNPC_VSabbatLeader::vfunc5(unsigned int flags)
+{
+	((CGargoyleMemberUnit *)((char *)this + 0x6664))->sub_10015708();
+	((CGargoyleBaseUnit *)this)->sub_100123af();
+	if (flags & 1)
+		sub_10009fc5(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a5df0 size=0x6
 extern char g_1064c7ac;
 // TARGET: sub_103a5df0
