@@ -6606,6 +6606,7 @@
 0x1000bc5d func   ?vfunc444@CNPC_VTaxiDriver@@QAEXPBH@Z CNPC_VTaxiDriver::vfunc444
 0x1000bc62 func   ?vfunc339@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc339
 0x1000bc6c func   ?vfunc5@CNPC_VPlayerController@@QAEPAV1@I@Z CNPC_VPlayerController::vfunc5
+0x1000bc71 func   ?sub_102c7270@@YAXXZ sub_102c7270
 0x1000bc7b func   ?sub_100684c0@CUnknown100684c0@@QAEHXZ CUnknown100684c0::sub_100684c0
 0x1000bc80 func   ?vfunc49@CCameraTrack@@UAEMXZ CCameraTrack::vfunc49
 0x1000bc85 func   ?vfunc408@CNPC_VMingXiao@@QAEPBDH@Z CNPC_VMingXiao::vfunc408
