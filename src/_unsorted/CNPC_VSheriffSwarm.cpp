@@ -137,3 +137,18 @@ void CNPC_VSheriffSwarmFwd::sub_103b2470(int a)
     ((CNPC_VHumanFwd *)this)->sub_10385a10(a);
 }
 // END FUNCTION
+
+// FUNCTION: 0x103b2590 size=0x15
+#include "CNPC_VSheriffSwarm.h"
+
+struct CAI_BaseNPC_Fwd
+{
+	int sub_1026d890(float a, float b);
+};
+
+// TARGET: CNPC_VSheriffSwarm::vfunc553
+int CNPC_VSheriffSwarm::vfunc553(float a, float b)
+{
+	return ((CAI_BaseNPC_Fwd *)this)->sub_1026d890(a, b);
+}
+// END FUNCTION
