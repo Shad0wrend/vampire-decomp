@@ -12517,6 +12517,7 @@
 0x100153ed func   ?sub_101ff270@CVStatInfo_t@@QAEHH@Z CVStatInfo_t::sub_101ff270
 0x100153f2 func   ?sub_100f2a00@CRotDoorUnit@@QAEXPAVVector@@0@Z CRotDoorUnit::sub_100f2a00
 0x100153f7 func   ?Links@?$CUtlRBTree@HG@@QBEABULinks_t@1@G@Z CUtlRBTree<int,unsigned short>::Links
+0x100153f7 func   ?Links@?$CUtlRBTree@UCRBTree12Entry_102ec4a0@@G@@QBEABULinks_t@1@G@Z CUtlRBTree<CRBTree12Entry_102ec4a0,unsigned short>::Links
 0x100153fc func   ?sub_1012f700@@YAMPAUCUnknown1012f700@@@Z sub_1012f700
 0x10015406 func   _trigger_autosave trigger_autosave
 0x1001540b func   ?sub_10194e40@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_10194e40
