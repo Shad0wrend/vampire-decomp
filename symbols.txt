@@ -9708,6 +9708,7 @@
 0x10010f9b func   _npc_VStalker npc_VStalker
 0x10010fa0 func   ?vfunc1@CSolidSetDefaults@@UAEXPAX@Z CSolidSetDefaults::vfunc1
 0x10010fa5 func   ?vfunc4@CPhysicsHook@@QAEXXZ CPhysicsHook::vfunc4
+0x10010faa func   ?sub_101038b0@CUnk101038b0Unit@block_101038b0@@QAEXH@Z block_101038b0::CUnk101038b0Unit::sub_101038b0
 0x10010faf func   ?sub_1006be50@CUtlMemUnit1006be50@@QAEXH@Z CUtlMemUnit1006be50::sub_1006be50
 0x10010fb4 func   ?sub_10248c20@CKeyValuesX@@QAEHPBDH@Z CKeyValuesX::sub_10248c20
 0x10010fb9 func   ?sub_101bb760@@YIXPAXHM@Z sub_101bb760

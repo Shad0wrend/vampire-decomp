@@ -48820,6 +48820,27 @@ void block_10103860::CUnk10103860Unit::sub_10103860(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101038b0 size=0x3a
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+
+namespace block_101038b0 {
+	struct CUnk101038b0Unit : CBaseEntity {
+		void sub_101038b0(int a);
+	};
+}
+
+void sub_101cde40(int a, int b, int c, int d, float e, int f);
+
+// TARGET: block_101038b0::CUnk101038b0Unit::sub_101038b0
+void block_101038b0::CUnk101038b0Unit::sub_101038b0(int a)
+{
+	Vector *pRes = ((CEntityVSlots *)this)->slot219();
+	float fVal = pRes->y;
+	sub_101cde40(a, *(int *)((char *)this + 0x450), *(int *)((char *)this + 0x454), *(int *)((char *)this + 0x458), fVal, 6);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10103c80 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
