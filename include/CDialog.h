@@ -65,7 +65,10 @@ public:
 	CDialogDependency m_aDeps2848[4];	// 0x2848: the four dependency records (0x228 bytes each), constructed first by the constructor
 	char m_b30e8;	// 0x30e8: cleared by the constructor
 	char m_bNoReply;	// 0x30e9: set when a response could not be built
-	char m_pad30ea[0x32f8 - 0x30ea];
+	char m_pad30ea[0x32ec - 0x30ea];
+	void *m_pSecure32ec;	// 0x32ec: vptr of MvsnSec::CSecureTypeBase<CPfnTraits3,int,...> (0x1045467c), an embedded secure int (+0x32ec .. +0x32f7)
+	int m_nSecure32f0;	// 0x32f0: its encoded value (set by CUnknown100eb030::sub_100eb030 from sub_100eb060(~0 via 0x100eb0a0))
+	int m_n32f4;	// 0x32f4: cleared before the secure value is set
 	CUtlVector<int> m_vec32f8;	// 0x32f8 (the game's type differs: own RemoveAll 0x100eb130 / Purge 0x100eb1a0)
 	CUtlVector<int> m_vec330c;	// 0x330c
 	CUtlVector<int> m_vec3320;	// 0x3320
