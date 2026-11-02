@@ -34,13 +34,19 @@ public:
 	char m_pad004[0x44c];
 	const char *m_pszModelName;	// 0x450
 	int m_nModelIndex;	// 0x454
-	char m_pad458[0x4a1 - 0x458];
+	char m_pad458[0x464 - 0x458];
+	float m_flColor464;	// 0x464: the four floats Update sets to 0.0f / 1.0f or lerps toward m_n4ac (only when m_b4c4 is set)
+	float m_flColor468;	// 0x468
+	float m_flColor46c;	// 0x46c
+	float m_flColor470;	// 0x470
+	float m_flAlpha474;	// 0x474: set / lerped from m_n4b0
+	char m_pad478[0x4a1 - 0x478];
 	char m_b4a1;	// 0x4a1
 	char m_pad4a2[2];
-	int m_n4a4;	// 0x4a4
-	int m_n4a8;	// 0x4a8
-	int m_n4ac;	// 0x4ac
-	int m_n4b0;	// 0x4b0
+	int m_n4a4;	// 0x4a4: the discipline stat index (0..16): Update looks it up in the user's stat lists
+	union { int m_n4a8; float m_fl4a8; };	// 0x4a8: float in Update (start value for sub_100fbac0, compared with 1.0f)
+	union { int m_n4ac; float m_fl4ac; };	// 0x4ac: float colour target
+	union { int m_n4b0; float m_fl4b0; };	// 0x4b0: float alpha target
 	char m_b4b4;	// 0x4b4
 	char m_pad4b5[3];
 	EHANDLE m_hUser;	// 0x4b8
