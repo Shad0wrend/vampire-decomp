@@ -278,7 +278,9 @@ public:
 	float m_f5d98;	// 0x5d98: the time of the last output fired by vfunc142
 	char m_pad5d9c[0x5db4 - 0x5d9c];
 	float m_f5db4;	// 0x5db4: a time (curtime + the parameter's value, or + 1000.0f for a non-positive one)
-	char m_pad5db8[0x6010 - 0x5db8];
+	char m_pad5db8[0x5f8c - 0x5db8];
+	char m_Output5f8c[0x18];	// 0x5f8c: a COutputEvent (0x18 bytes, view with (COutputEvent *)m_Output5f8c; fired with (m_p62ec, this, 0) by sub_102b53d0)
+	char m_pad5fa4[0x6010 - 0x5fa4];
 	unsigned int m_h6010;
 	char m_pad6014[0x6074 - 0x6014];
 	float m_f6074;	// 0x6074: the next time slot 600 may ask again
