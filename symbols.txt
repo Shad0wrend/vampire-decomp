@@ -12359,6 +12359,7 @@
 0x10014eed func   _item_g_warr_clipboard item_g_warr_clipboard
 0x10014ef7 func   ?sub_101b6bd0@CUtlRBTree232@@QAEHH_N@Z CUtlRBTree232::sub_101b6bd0
 0x10014efc func   ?vfunc82@CPhysicsSpring@@UAEPAUdatamap_t@@XZ CPhysicsSpring::vfunc82
+0x10014f01 func   ?vfunc80@CWeaponRanged_FlameThrower@@UAEHXZ CWeaponRanged_FlameThrower::vfunc80
 0x10014f06 func   ?vfunc82@CRopeKeyframe@@UAEPAUdatamap_t@@XZ CRopeKeyframe::vfunc82
 0x10014f0b func   ?sub_102e2750@CUnknown102e12c0@@QAEXXZ CUnknown102e12c0::sub_102e2750
 0x10014f10 func   ?sub_102b6fe0@CAI_BaseNPCTroika@@QAEHH@Z CAI_BaseNPCTroika::sub_102b6fe0
