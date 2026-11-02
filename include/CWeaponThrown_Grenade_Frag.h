@@ -21,7 +21,9 @@ public:
 	int m_nAmmoType744[2];
 	char pad_74c[0x86c - 0x74c];
 	int m_n86c;
-	char pad_870[0x918 - 0x870];
+	char pad_870[0x910 - 0x870];
+	int m_n910;	// +0x910: the roll / ammo index handed to the emitter, slot 220 and slot 217 (CWeaponIThrown's m_i910)
+	char pad_914[0x918 - 0x914];
 	bool m_bFlag918;
 	char pad_919[3];
 	float m_flTimer91c;
