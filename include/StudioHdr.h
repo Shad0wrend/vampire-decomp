@@ -59,6 +59,7 @@ struct StudioHdr
 	int m_nIncludeModels;	// 0x194
 	int m_nIncludeIndex;	// 0x198: offset of the include model records
 
+	StudioBone *Bone(int i) { return (StudioBone *)((char *)this + m_nBoneIndex) + i; }
 	StudioIncludeModel *IncludeModel(int i) { return (StudioIncludeModel *)((char *)this + m_nIncludeIndex) + i; }
 	StudioSeqDesc *LocalSeq(int i) { return (StudioSeqDesc *)((char *)this + m_nLocalSeqIndex) + i; }
 };
