@@ -58689,6 +58689,30 @@ void __fastcall sub_10137480(void *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101374a0 size=0x40
+// TARGET: sub_101374a0
+float __cdecl sub_101374a0(float *p)
+{
+	float f = 1.0f;
+	__asm {
+		mov eax, dword ptr [p]
+		femms
+		movq mm0, qword ptr [eax]
+		movd mm1, dword ptr [eax + 8]
+		movd mm2, dword ptr [f]
+		pfmul mm0, mm0
+		pfmul mm1, mm1
+		pfacc mm0, mm0
+		pfadd mm1, mm0
+		pfmax mm1, mm2
+		pfrcp mm0, mm1
+		movd dword ptr [f], mm0
+		femms
+		fld dword ptr [f]
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101374f0 size=0x1b
 // TARGET: sub_101374f0
 float __cdecl sub_101374f0(float x)
