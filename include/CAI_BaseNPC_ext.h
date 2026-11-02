@@ -13,5 +13,4 @@
 	void vfunc504();	// slot 504 (plain member): does nothing, a bare ret
 	void vfunc558();	// slot 558 (plain member): does nothing, a bare ret
 	void vfunc411();	// slot 411 (plain member): does nothing, a bare ret
-	char vfunc417();	// slot 417 (plain member): returns 0
 	void vfunc511();	// slot 511 (plain member): sends the edict at +0x2e0 to the engine (IndexOfEdict-style slot 35 of 0x1070b22c with a 1) and gives the index to the sound system's slot 5
