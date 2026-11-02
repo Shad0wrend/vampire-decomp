@@ -21,16 +21,30 @@ public:
 	void sub_102d9b10();	// the destructor body (stub 0x1000a25e): stores the vtable, frees the slot records (+0x580), unlinks the place from the global chain (head 0x10927194, next pointer at +0x540, count 0x10927198), then destroys the outputs: the eight at +0x480 (last first), then +0x468 and +0x450, and runs the base destructor body (sub_1000cb8a)
 	void sub_1000cb8a();	// base class destructor body (stub 0x1000cb8a), tail called
 
-	char m_pad03e0[0x544 - 0x3e0];
+	char m_pad03e0[0x450 - 0x3e0];
+	COutputEvent m_Output450;	// 0x450: the constructor 0x102d99d0 builds the outputs (stub 0x10002ddd) before it stores the vtable
+	COutputEvent m_Output468;	// 0x468
+	COutputEvent m_Outputs480[8];	// 0x480 .. 0x540: built in a loop, destroyed last first
+	CAI_InterestingPlace *m_pNext540;	// 0x540: the previous head of the global chain (head 0x10927194, count 0x10927198)
 	const char *m_pszTypeName;	// 0x544
 	int m_pType;	// 0x548: the place type record, found by name
-	char m_pad054c[0x574 - 0x54c];
+	char m_pad054c[0x564 - 0x54c];
+	int m_n564;	// 0x564: cleared by the constructor
+	char m_pad0568[0x574 - 0x568];
 	int m_nGroup;	// 0x574: 1..32 on load, then a single bit mask
 	int m_nPriority;	// 0x578: clamped to 0..5
-	char m_pad057c[4];
+	char m_b57c;	// 0x57c: set to 1 by the constructor
+	char m_b57d;	// 0x57d: cleared by the constructor
+	char m_b57e;	// 0x57e: cleared by the constructor
+	char m_pad057f;
 	CAI_IPSlot *m_pSlots;	// 0x580
 	int m_nSlots;	// 0x584
 	int m_n588;	// 0x588
+	int m_n58c;	// 0x58c: cleared by the constructor
+	int m_n590;	// 0x590: cleared by the constructor
+	CAI_IPSlot m_Slots594[4];	// 0x594 .. 0x604: the constructor clears the first dword of each in a loop
+	int m_n604;	// 0x604: cleared by the constructor
+	int m_n608;	// 0x608: cleared by the constructor (object size 0x60c)
 public:
     virtual datamap_t * vfunc82();
 };
