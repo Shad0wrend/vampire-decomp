@@ -95807,6 +95807,44 @@ int CUnk101e9f40::sub_101e9f40(void *pParam)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e9f90 size=0x26
+class CUnknown101e9760
+{
+public:
+	char sub_101e9830(int a);
+};
+
+class CUnknown101e9f10
+{
+public:
+	char m_pad0000[4];
+	int m_f04;
+	CUnknown101e9760 **m_f08;
+
+	char sub_101e9f90(int a, int b);
+};
+
+struct CUnknown101e9f10U : CUnknown101e9f10
+{
+	bool sub_101e9f10(int index);
+};
+
+bool CUnknown101e9f10U::sub_101e9f10(int index)
+{
+	if (index != -1 && index < m_f04)
+		return true;
+	return false;
+}
+
+// TARGET: CUnknown101e9f10::sub_101e9f90
+char CUnknown101e9f10::sub_101e9f90(int a, int b)
+{
+	if (((CUnknown101e9f10U *)this)->sub_101e9f10(b))
+		return m_f08[b]->sub_101e9830(a);
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e9fd0 size=0x4d
 extern "C" int __cdecl _strcmpi(const char *, const char *);
 struct CNamePtr {

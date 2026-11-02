@@ -6032,6 +6032,7 @@
 0x1000aadd func   ?sub_102d01e0@CUnknown102d01e0@@QAE_NPBM@Z CUnknown102d01e0::sub_102d01e0
 0x1000aaec func   ?sub_100850a0@@YAHXZ sub_100850a0
 0x1000aaf6 func   ?sub_103eeec0@@YAXXZ sub_103eeec0
+0x1000aafb func   ?sub_101e9f90@CUnknown101e9f10@@QAEDHH@Z CUnknown101e9f10::sub_101e9f90
 0x1000ab0a func   ??0CWeaponRanged@@QAE@XZ CWeaponRanged::CWeaponRanged
 0x1000ab0f func   ?vfunc6@CMoveHelperServer@@UAEXHHHHHHHHHHHH@Z CMoveHelperServer::vfunc6
 0x1000ab14 func   ?vfunc0@CTEInspectionFX@@UAEHXZ CTEInspectionFX::vfunc0
