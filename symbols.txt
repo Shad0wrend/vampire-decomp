@@ -12546,6 +12546,7 @@
 0x10015785 func   ?vfunc81@CBaseParticleEntity@@QAEHXZ CBaseParticleEntity::vfunc81
 0x1001578a func   ?vfunc460@CNPC_VDog@@QAEHXZ CNPC_VDog::vfunc460
 0x1001578f func   ?vfunc82@CEnvMicrophone@@UAEPAUdatamap_t@@XZ CEnvMicrophone::vfunc82
+0x10015794 func   ?vfunc5@CNPC_VAsianVampire@@QAEPAV1@I@Z CNPC_VAsianVampire::vfunc5
 0x10015799 func   ?vfunc173@CRevertSaved@@QAEXHHHH@Z CRevertSaved::vfunc173
 0x1001579e func   ?vfunc491@CGenericSabbat_NPC@@UAEXXZ CGenericSabbat_NPC::vfunc491
 0x100157a3 func   ?sub_1015ef80@CUnknown1015ef80@@QAEDXZ CUnknown1015ef80::sub_1015ef80
