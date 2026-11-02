@@ -1879,6 +1879,13 @@ int CBasePlayer::vfunc359(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10179760 size=0x3
+// TARGET: sub_10179760
+int sub_10179760() {
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017be50 size=0x8f
 int sub_1002dfe0(int a, int b);
 

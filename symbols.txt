@@ -6359,6 +6359,7 @@
 0x1000b4f1 func   ?vfunc82@CBaseButton@@UAEPAUdatamap_t@@XZ CBaseButton::vfunc82
 0x1000b4f6 func   ?sub_1008d990@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_1008d990
 0x1000b4fb func   ?vfunc5@CItemGBertramsCD@@QAEPAV1@I@Z CItemGBertramsCD::vfunc5
+0x1000b505 func   ?sub_10179760@@YAHXZ sub_10179760
 0x1000b50f func   ?sub_101daea0@@YAXXZ sub_101daea0
 0x1000b514 func   ?vfunc80@CGargoyleTalisman@@QAEHXZ CGargoyleTalisman::vfunc80
 0x1000b51e func   ?sub_102cce60@CAI_DynamicLink@@QAEPAV1@XZ CAI_DynamicLink::sub_102cce60
