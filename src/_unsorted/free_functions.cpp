@@ -105474,6 +105474,18 @@ int CVStatInfo_t::sub_101fee50(int level)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fef10 size=0x5d
+#include "CVStatInfo_t.h"
+#include "ScopeTrace.h"
+
+// TARGET: CVStatInfo_t::sub_101fef10
+bool CVStatInfo_t::sub_101fef10(int a)
+{
+	ScopeTrace trace("CVStatInfo_t::PassesIncPreDependencyTest", g_106b8540);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fef90 size=0x58
 #include "CVStatInfo_t.h"
 #include "ScopeTrace.h"

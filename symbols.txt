@@ -7548,6 +7548,7 @@
 0x1000d116 func   ?sub_10280e50@CAI_BaseNPC@@QAEXPAX@Z CAI_BaseNPC::sub_10280e50
 0x1000d11b func   ?vfunc81@CResearchBook_MG_FIN@@QAEHXZ CResearchBook_MG_FIN::vfunc81
 0x1000d125 func   ?ShiftElementsRight@?$CUtlVector@UCElem1021e2a0@@V?$CUtlMemory@UCElem1021e2a0@@@@@@QAEXHH@Z CUtlVector<CElem1021e2a0,CUtlMemory<CElem1021e2a0> >::ShiftElementsRight
+0x1000d12a func   ?sub_101fef10@CVStatInfo_t@@QAE_NH@Z CVStatInfo_t::sub_101fef10
 0x1000d12f func   ?sub_10138ba0@@YAXABVVector@@AAVQAngle@@@Z sub_10138ba0
 0x1000d134 func   ?vfunc621@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc621
 0x1000d139 func   ??1QuestJournal@@QAE@XZ QuestJournal::~QuestJournal
