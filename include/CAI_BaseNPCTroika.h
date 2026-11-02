@@ -255,7 +255,18 @@ public:
 	float m_f5bc0;
 	char m_b5bc4;
 	char m_b5bc5;
-	char m_pad5bc6[0x5cc0 - 0x5bc6];
+	char m_pad5bc6[2];
+	union {
+		char m_pad5bc8[0x5cc0 - 0x5bc8];
+		struct {
+			char m_pad5bc8b[0x5c38 - 0x5bc8];
+			struct CAI_ScheduleView *m_pSchedule5c38;	// 0x5c38: the current schedule (null = none); its byte +0x18 bit 0 is the "interruptible" flag
+			char m_pad5c3c[0x5c5c - 0x5c3c];
+			unsigned int m_Conditions5c5c[6];	// 0x5c5c: the condition bit set (192 bits; sub_10269aa0 / HasCondition tests it)
+			unsigned int m_ConditionsIgnore5c74[6];	// 0x5c74: the second bit set (conditions the NPC ignores / sets for the break test)
+			unsigned int m_ConditionsBreak5c8c[6];	// 0x5c8c: the third bit set (the schedule's interrupt mask)
+		};
+	};
 	int m_n5cc0;
 	int m_n5cc4;
 	char m_pad5cc8[0x5cdc - 0x5cc8];
