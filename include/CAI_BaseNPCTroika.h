@@ -306,13 +306,15 @@ public:
 	char m_pad626c[0x628c - 0x626c];
 	EHANDLE m_h628c;
 	Vector m_vec6290;
-	char m_pad629c[0x62e9 - 0x629c];
+	char m_pad629c[0x62e8 - 0x629c];
+	char m_b62e8;	// 0x62e8: set while the entity m_p62ec is held (cleared at the end of sub_102b53d0; vfunc103 clears it, vfunc444 reads it)
 	char m_b62e9;	// 0x62e9: set by vfunc130 after the reload
 	char m_pad62ea[0x62ec - 0x62ea];
 	CBaseEntity *m_p62ec;	// 0x62ec: entity found by the free cdecl sub_102db5e0(this) (stub 0x100105b4); validated by sub_10299a80
 	char m_pad62f0[0x6300 - 0x62f0];
 	int m_n6300;	// 0x6300: cached value (lazily looked up by sub_1029f780)
-	char m_pad6304[0x630c - 0x6304];
+	int m_n6304;	// 0x6304: cleared when the held entity m_p62ec is let go (sub_102b53d0)
+	char m_pad6308[0x630c - 0x6308];
 	char *m_p630c;	// 0x630c: an object with a flag dword at +0x64
 	int m_n6310;	// 0x6310: node index (-1 none), bounds checked in the navigator's net (+0x5d34 -> +0x2c) by vfunc130
 	int m_n6314;	// 0x6314: id handed to the node's sub_102f96e0 (-1 none); result goes to m_p630c
