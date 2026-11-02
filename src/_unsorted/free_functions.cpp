@@ -12562,6 +12562,29 @@ int sub_10066e20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10066fa0 size=0x4f
+namespace lifted {
+extern char g_106c50dc;
+extern int g_106c50e8;
+extern int g_106c50ec;
+extern int g_106c50f0;
+extern int g_106c50f4;
+extern int g_106c50f8;
+extern int g_106c50fc;
+struct C10009eb2 { int sub_10009eb2(int, int); };
+}
+int sub_10066fa0(int a0, int a1, int a2, int a3)
+{
+    lifted::g_106c50e8 = *(int *)((char *)a2);
+    lifted::g_106c50ec = *(int *)((char *)a2 + 4);
+    lifted::g_106c50f0 = *(int *)((char *)a2 + 8);
+    lifted::g_106c50f4 = *(int *)((char *)a3);
+    lifted::g_106c50f8 = *(int *)((char *)a3 + 4);
+    lifted::g_106c50fc = *(int *)((char *)a3 + 8);
+    return ((lifted::C10009eb2 *)((int)&lifted::g_106c50dc))->sub_10009eb2(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10067010 size=0x2d
 #include "CTESmoke.h"
 
