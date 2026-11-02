@@ -9353,6 +9353,7 @@
 0x10010005 func   ?vfunc24@CBasePlayer@@UAEXPAVCBaseEntity@@@Z CBasePlayer::vfunc24
 0x1001000a func   ?vfunc113@CFire@@UAEXXZ CFire::vfunc113
 0x1001000f func   _item_k_museum_office_key item_k_museum_office_key
+0x10010014 func   ?vfunc126@CAI_InterestingPlaceConverstation@@UAEHH@Z CAI_InterestingPlaceConverstation::vfunc126
 0x10010019 func   ?vfunc176@CTriggerHurt@@QAEXPAVCBaseEntity@@@Z CTriggerHurt::vfunc176
 0x1001001e func   ?sub_100b4e60@@YAHXZ sub_100b4e60
 0x10010023 func   ?sub_1013a6f0@@YA_NMMMAAM0@Z sub_1013a6f0

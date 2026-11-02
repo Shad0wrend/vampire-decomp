@@ -60,6 +60,23 @@ void CAI_InterestingPlaceConverstation::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dbd50 size=0x35
+#include "CAI_InterestingPlaceConverstation.h"
+
+void sub_1009d940(void *p, int n);
+void sub_1009d960(void *p, int n);
+
+// TARGET: CAI_InterestingPlaceConverstation::vfunc126
+int CAI_InterestingPlaceConverstation::vfunc126(int a)
+{
+	void *member = (char *)this + 0x460;
+	sub_1009d940(member, 3);
+	int r = CBaseEntity::vfunc126(a);
+	sub_1009d960(member, 3);
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dbda0 size=0x28
 #include "CAI_InterestingPlaceConverstation.h"
 
