@@ -52399,6 +52399,22 @@ extern "C" GP *func_dustcloud()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10113c30 size=0x20
+#include "CFunc_DustMotes.h"
+
+void __fastcall sub_10113c90(void *self);
+extern char g_104604dc[];
+
+// TARGET: CFunc_DustMotes::sub_10113c30
+CFunc_DustMotes *CFunc_DustMotes::sub_10113c30()
+{
+	sub_10113c90(this);
+	*(void **)this = g_104604dc;
+	*(unsigned int *)((char *)this + 0x474) |= 2;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10113cf0 size=0xb
 namespace lifted {
 extern char g_1046096c;
