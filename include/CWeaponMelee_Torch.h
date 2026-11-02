@@ -11,6 +11,8 @@ class CWeaponMelee_Torch
 public:
 	char m_pad0000[0x910];
 	EHANDLE m_hEmitter910;	// 0x910: the "TorchWeaponEmitter" particle entity
+	char m_b914;	// 0x914: set by sub_103e7530 once the owner answers slot 158
+	void sub_103e7530();	// 0x103e7530: with an owner (CBaseCombatWeapon::sub_102521f0) that answers slot 158: creates the emitter (sub_103e77f0), starts the fire loop (sub_103e7680), sets +0x914. The class is still modelled flat (its vfunc5 returns CWeaponMelee_Torch *, which a CWeaponMelee base would reject), so reach the base through a (CBaseCombatWeapon *)this cast
 	void vfunc130(void *pArg);	// slot 130: plays the fire loop while the emitter lives, then the base weapon's slot 130
 	void sub_10258440(void *pArg);	// CBaseCombatWeapon::vfunc130 (stub 0x10013593), called directly
 	CWeaponMelee_Torch *vfunc5(unsigned int flags);
