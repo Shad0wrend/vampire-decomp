@@ -11676,6 +11676,7 @@
 0x10013b1f func   ?vfunc451@CNPC_VWolfMorph@@UAEHXZ CNPC_VWolfMorph::vfunc451
 0x10013b29 func   ?vfunc80@CHudEntity@@QAEHXZ CHudEntity::vfunc80
 0x10013b2e func   ?sub_101d1280@@YAHPAVCBaseEntity@@@Z sub_101d1280
+0x10013b33 func   ?sub_10028bb0@CPhysMotor@@QAEXXZ CPhysMotor::sub_10028bb0
 0x10013b38 func   ?sub_1038ace0@@YAHXZ sub_1038ace0
 0x10013b4c func   ?sub_1042b6d0@CBaseEntity@@QAEXH@Z CBaseEntity::sub_1042b6d0
 0x10013b51 func   ?sub_100265f0@@YGXH@Z sub_100265f0

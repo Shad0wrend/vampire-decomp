@@ -583,6 +583,23 @@ int CUnknown10028b80::sub_10028b80(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10028bb0 size=0x38
+#include "CPhysMotor.h"
+#include "IPhysicsEnvironment.h"
+
+extern IPhysicsEnvironment *g_10723940;
+extern char g_10445e1c[];
+
+// TARGET: CPhysMotor::sub_10028bb0
+void CPhysMotor::sub_10028bb0()
+{
+	*(void **)this = g_10445e1c;
+	g_10723940->vfunc23(m_pPhysObject46c);
+	g_10723940->vfunc40(m_pController470);
+	sub_1000cb8a();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10028ca0 size=0x54
 #include "CBaseEntity.h"
 #include "CPhysMotor.h"
