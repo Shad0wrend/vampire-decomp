@@ -153,6 +153,11 @@ bool __cdecl sub_1014f7f0() { return true; }
 bool __cdecl sub_1014f810() { return true; }
 // END FUNCTION
 
+// FUNCTION: 0x1014f830 size=0x3
+// TARGET: sub_1014f830
+bool __cdecl sub_1014f830() { return false; }
+// END FUNCTION
+
 // FUNCTION: 0x1014f8d0 size=0x1
 // TARGET: sub_1014f8d0
 void __fastcall sub_1014f8d0(void *pThis)
