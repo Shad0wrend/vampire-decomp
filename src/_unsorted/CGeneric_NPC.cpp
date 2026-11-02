@@ -214,6 +214,13 @@ float CGeneric_NPC::vfunc516()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035a850 size=0x6
+int sub_1035a850(void)
+{
+    return 4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035a920 size=0x1
 #include "CGeneric_NPC.h"
 void CGeneric_NPC::vfunc434()

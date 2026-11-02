@@ -8160,6 +8160,7 @@
 0x1000df9e func   ?sub_10128400@CGameRules@@QAEPAXXZ CGameRules::sub_10128400
 0x1000dfa3 func   ?Filter@CPASAttenuationFilter@@QAEXABVVector@@M@Z CPASAttenuationFilter::Filter
 0x1000dfa8 func   _item_k_netcafe_office_key item_k_netcafe_office_key
+0x1000dfad func   ?sub_1035a850@@YAHXZ sub_1035a850
 0x1000dfb2 func   ??0CVStatInfo_t@@QAE@XZ CVStatInfo_t::CVStatInfo_t
 0x1000dfb2 func   ?sub_101fdaf0@CVStatInfo_t@@QAEPAV1@XZ CVStatInfo_t::sub_101fdaf0
 0x1000dfb7 func   ?vfunc103@CAreaPortal@@UAEXXZ CAreaPortal::vfunc103
