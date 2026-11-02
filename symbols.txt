@@ -7723,6 +7723,7 @@
 0x1000d71f func   ?vfunc81@CWeaponMelee_BaseballBat@@QAEHXZ CWeaponMelee_BaseballBat::vfunc81
 0x1000d724 func   ?sub_101ce060@@YAXPBUCMsgShortsBytes@@PAVCEntityVSlots@@@Z sub_101ce060
 0x1000d729 func   ?vfunc267@CBaseAnimatingOverlay@@QAEHXZ CBaseAnimatingOverlay::vfunc267
+0x1000d72e func   ?vfunc57@CAI_BaseNPCTroika@@QAEXHHHHHHH@Z CAI_BaseNPCTroika::vfunc57
 0x1000d733 func   ?vfunc201@CNPC_VCameraSecurity@@QAE_NPAVCBaseEntity@@HHH@Z CNPC_VCameraSecurity::vfunc201
 0x1000d73d func   _move_keyframed move_keyframed
 0x1000d747 func   ?sub_10348560@@YAXXZ sub_10348560
