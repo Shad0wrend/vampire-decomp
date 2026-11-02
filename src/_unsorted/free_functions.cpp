@@ -34457,6 +34457,17 @@ void CUnknown100c0be0::sub_100c0be0(int v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c0c30 size=0x16
+#include "CFloatPair3f4.h"
+
+// TARGET: CFloatPair3f4::sub_100c0c30
+void CFloatPair3f4::sub_100c0c30(float flUnused)
+{
+	m_b46c = 1;
+	sub_100c0970(m_f460);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c0c60 size=0xd
 void CUnknown100c0c60::sub_100c0c60(float value)
 {
