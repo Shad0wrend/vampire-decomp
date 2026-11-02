@@ -22,6 +22,15 @@ bool CNPC_VAnimal::vfunc587(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035ec10 size=0x6
+extern void *g_1093a4a8;
+
+void *sub_1035ec10(void)
+{
+    return &g_1093a4a8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035ec50 size=0x1e
 #include "CNPC_VAnimal.h"
 

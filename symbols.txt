@@ -6195,6 +6195,7 @@
 0x1000ad67 func   ?vfunc2@CCollisionEvent@@UAEXPAXMHH0@Z CCollisionEvent::vfunc2
 0x1000ad6c func   _npc_VTaxiDriver npc_VTaxiDriver
 0x1000ad76 func   ?sub_10199800@@YAPAXPAX0@Z sub_10199800
+0x1000ad80 func   ?sub_1035ec10@@YAPAXXZ sub_1035ec10
 0x1000ad85 func   ?sub_100b2150@CBaseEntity@@QAEPAMPAM@Z CBaseEntity::sub_100b2150
 0x1000ad8a func   ?sub_100ad100@@YIXPAVCBaseEntity@@HH@Z sub_100ad100
 0x1000ad8f func   ?sub_101d6500@@YGDHH@Z sub_101d6500
