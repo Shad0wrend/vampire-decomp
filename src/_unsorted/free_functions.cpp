@@ -62628,6 +62628,31 @@ extern "C" GP *physics_cannister()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10150530 size=0xc6
+#include "CPhysicsCannister.h"
+#include "CBaseAnimating.h"
+#include "CEntityVSlots.h"
+#include "matrix3x4_t.h"
+
+extern char g_1057cf34[];
+
+void sub_10138720(float *pMatrix, int column, Vector *pOut);
+
+Vector CPhysicsCannister::sub_10150530(const Vector *pDir)
+{
+	matrix3x4_t mat;
+	((CEntityVSlots *)this)->slot262(((CBaseAnimating *)this)->sub_10092d50((int)g_1057cf34), (void *)&mat);
+
+	Vector vecDir;
+	sub_10138720((float *)&mat, 2, &vecDir);
+	sub_10138720((float *)&mat, 3, &m_vec19b0);
+
+	vecDir = vecDir * -5.0f + *pDir;
+	VectorNormalize(vecDir);
+	return vecDir;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10150e10 size=0x8
 namespace lifted {
 int sub_10001fa0();
