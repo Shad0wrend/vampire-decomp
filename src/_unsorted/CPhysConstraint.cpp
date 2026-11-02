@@ -39,6 +39,21 @@ void CPhysConstraint::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002b420 size=0x1e
+#include "CPhysConstraint.h"
+
+void __fastcall sub_10001226(CPhysConstraint *self);
+void __cdecl sub_101cd940(void *p);
+
+// TARGET: CPhysConstraint::vfunc113
+void CPhysConstraint::vfunc113()
+{
+	sub_10001226(this);
+	if (!sub_1002b4c0())
+		sub_101cd940(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002b680 size=0x5d
 #include "CPhysConstraint.h"
 #include "Vector.h"

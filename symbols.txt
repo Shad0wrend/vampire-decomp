@@ -9088,6 +9088,7 @@
 0x1000f9ca func   ?sub_100f8420@CGlobalEntityList@@QAEPAVCBaseEntity@@PAV2@@Z CGlobalEntityList::sub_100f8420
 0x1000f9cf func   ?sub_1019fb20@CSaveFwd2@@QAEXPBD@Z CSaveFwd2::sub_1019fb20
 0x1000f9de func   ?vfunc68@CAI_BaseNPCTroika@@QAE_NPAX@Z CAI_BaseNPCTroika::vfunc68
+0x1000f9e3 func   ?vfunc113@CPhysConstraint@@UAEXXZ CPhysConstraint::vfunc113
 0x1000f9e8 func   ?sub_1002af70@@YGHH@Z sub_1002af70
 0x1000f9f7 func   ?sub_103acac0@CNPC_VScurrying@@QAEDPAVCBaseEntity@@@Z CNPC_VScurrying::sub_103acac0
 0x1000f9fc func   ?vfunc337@CNPC_VMingXiaoTentacle@@UAEHXZ CNPC_VMingXiaoTentacle::vfunc337
