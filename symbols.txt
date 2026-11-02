@@ -10462,6 +10462,7 @@
 0x10011bc1 func   ?sub_10081e50@@YIXPAUCSlots@@HH@Z sub_10081e50
 0x10011bcb func   ?sub_1028d770@@YAXXZ sub_1028d770
 0x10011bd0 func   ?sub_100b79c0@@YIPADPAD@Z sub_100b79c0
+0x10011bd5 func   ??0CUnknown101e0f00Entry@@QAE@H@Z CUnknown101e0f00Entry::CUnknown101e0f00Entry
 0x10011bd5 func   ?sub_101e0520@CUnknown101e0f00Entry@@QAEPAU1@H@Z CUnknown101e0f00Entry::sub_101e0520
 0x10011bda func   ?vfunc3@CEventsSaveDataOps@@QAEXH@Z CEventsSaveDataOps::vfunc3
 0x10011bdf func   ?vfunc365@CNPCMaker_Zombie@@UAE_NH@Z CNPCMaker_Zombie::vfunc365
