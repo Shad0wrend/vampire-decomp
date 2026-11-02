@@ -55,6 +55,5 @@ struct CRagdollParams		// ragdollparams_t, the stack record built by CRagdollPro
 	int m_n34, m_n38;		// +0x34 / +0x38
 	int m_n3c;			// +0x3c
 	float m_flScale;		// +0x40 >0 scales the +0x3c? vectors in the constraint loop
-	int m_pad44;			// +0x44: the velocity Vector below starts here? (0b0 reads +0x44/+0x48/+0x4c as a vec compared with vec3_origin)
-	// +0x44..+0x4f is Vector m_vecVelocity (reads +0x44,+0x48,+0x4c); keep as raw until a function needs it
+	Vector m_vecVelocity;		// +0x44 compared with vec3_origin (g_1070d1b0) by 0x1019c0b0, added to every body
 };
