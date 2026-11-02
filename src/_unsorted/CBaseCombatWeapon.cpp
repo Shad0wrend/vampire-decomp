@@ -47,6 +47,13 @@ bool __cdecl sub_10149cc0() { return false; }
 bool __cdecl sub_10149ce0() { return false; }
 // END FUNCTION
 
+// FUNCTION: 0x10149d00 size=0x4
+int CBaseCombatWeapon::vfunc289()
+{
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10149d40 size=0x3
 // TARGET: sub_10149d40
 void __stdcall sub_10149d40(void *p) {}
