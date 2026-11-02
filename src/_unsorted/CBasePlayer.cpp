@@ -115,6 +115,13 @@ void *sub_1015d660()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015dc40 size=0x6
+int CBasePlayer::vfunc409()
+{
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015dc60 size=0x2d
 #include "CBasePlayer.h"
 

@@ -7808,6 +7808,7 @@
 0x1000d5ee func   ??0CBaseToggle@@QAE@XZ CBaseToggle::CBaseToggle
 0x1000d5f8 func   ?vfunc98@CBaseEntity@@UAEXXZ CBaseEntity::vfunc98
 0x1000d5fd func   ?vfunc138@CNPC_VTzimisce@@UAEHXZ CNPC_VTzimisce::vfunc138
+0x1000d602 func   ?vfunc409@CBasePlayer@@UAEHXZ CBasePlayer::vfunc409
 0x1000d607 func   ?sub_100977f0@CBaseAnimating@@QAEXH@Z CBaseAnimating::sub_100977f0
 0x1000d60c func   ?sub_10077080@CUnk10077080@@QAEPADH@Z CUnk10077080::sub_10077080
 0x1000d611 func   ?vfunc81@CItemGGarysCD@@QAEHXZ CItemGGarysCD::vfunc81
