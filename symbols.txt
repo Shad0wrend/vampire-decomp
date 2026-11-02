@@ -5991,6 +5991,7 @@
 0x1000aa38 func   ?vfunc451@CNPC_VVampireBoss@@QAEHXZ CNPC_VVampireBoss::vfunc451
 0x1000aa42 func   ?sub_100b0ad0@@YAXXZ sub_100b0ad0
 0x1000aa47 func   ?vfunc3@CChoreoEventCallback@@UAEDMHPAUCSceneEvent@@@Z CChoreoEventCallback::vfunc3
+0x1000aa4c func   ?vfunc554@CNPC_VSheriffSwarm@@UAEHMM@Z CNPC_VSheriffSwarm::vfunc554
 0x1000aa51 func   ?sub_10312c80@@YIXPAUCAI_ExpressiveNPCDtorView@@@Z sub_10312c80
 0x1000aa56 func   ?sub_102b57c0@CAI_BaseNPCTroika@@QAEDH@Z CAI_BaseNPCTroika::sub_102b57c0
 0x1000aa5b func   ?vfunc5@CWeaponIGeneric@@QAEPAV1@I@Z CWeaponIGeneric::vfunc5
