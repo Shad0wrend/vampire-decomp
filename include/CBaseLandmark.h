@@ -28,6 +28,7 @@ public:
 	COutputEvent m_Output4e0;
 	COutputEvent m_Output4f8;
 public:
+#ifndef CPOINTENTITY_BASED
 	virtual void vfunc6();
 	virtual void vfunc7();
 	virtual void vfunc8();
@@ -104,5 +105,6 @@ public:
 	virtual void vfunc79();
 	virtual void vfunc80();
 	virtual void vfunc81();
+#endif
 	virtual datamap_t * vfunc82();
 };
