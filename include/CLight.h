@@ -12,6 +12,7 @@ class CLight
 {
 public:
 	CLight *vfunc5(unsigned int flags);
+	CLight *sub_10130360();	// constructor: base ctor sub_100090fc(0), vptr = CLight::vftable (0x10464d74), m_flFadeTime = 0.05f
 	void sub_1000cb8a();
 	void sub_101308d0();	// "CLight::FadeThink": steps the current light level at +0x458 toward the target at +0x459, sets the light style, re-arms the think (+0x17c)
 	bool vfunc110(const char *szKeyName, const char *szValue);	// "CLight::KeyValue": "pitch" sets the pitch of the angles (slots 221 / 218), anything else goes to the base
