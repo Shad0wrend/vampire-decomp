@@ -171,6 +171,13 @@ char sub_1015de10() {
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015de90 size=0x3
+// TARGET: sub_1015de90
+char sub_1015de90() {
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015ded0 size=0x1e
 #include "CBasePlayer.h"
 
