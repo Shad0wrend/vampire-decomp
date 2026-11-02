@@ -6718,6 +6718,7 @@
 0x1000bb6d func   ?sub_1021fb50@@YAXPAUCEquipList@@H@Z sub_1021fb50
 0x1000bb72 func   ?sub_1017f9c0@CNPC_VCopUnit@@QAEXXZ CNPC_VCopUnit::sub_1017f9c0
 0x1000bb77 func   ?sub_10143d80@@YAXABVVector@@MHHHHM@Z sub_10143d80
+0x1000bb7c func   ?vfunc82@CLogicCompareInteger@@UAEPAUdatamap_t@@XZ CLogicCompareInteger::vfunc82
 0x1000bb81 func   ?vfunc2@CPhysicsHook@@QAEXXZ CPhysicsHook::vfunc2
 0x1000bb86 func   ?sub_101aa7d0@CPayphone@@QAEEXZ CPayphone::sub_101aa7d0
 0x1000bb95 func   ?sub_10401f80@@YAHXZ sub_10401f80
