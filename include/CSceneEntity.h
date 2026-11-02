@@ -128,7 +128,7 @@ public:
 	void sub_100847e0(void *pScene);	// stub 0x1000d97c: the twin of sub_10084260 that wakes each actor NPC of the scene (recursive over the sub-scenes)
 	void sub_1000d97c(void *pScene);	// the jump stub of sub_100847e0
 	void sub_100843d0(void *pScene);	// stub 0x10008a8f, run on the scene when it starts
-	void sub_10081ed0();	// stub 0x100114b4, run when the scene starts
+	void sub_10081ed0();	// stub 0x100114b4, run when the scene starts (CSceneEntity::vfunc242): for every actor record i of the scene at +0x4bc (count sub_1007a2a0, record sub_1007a2c0(i) = CSceneActorRecord) whose entity (vfunc268(sub_10072d90(0) = name, 0), RTDynamicCast CBaseEntity -> CBaseAnimating) exists: record.sub_10072e60(entity slot 217 origin, slot 219 angles by value, 6 dwords), record +0 = sub_1029f2e0() of the entity's NPC (+0x98) when it has one, +4 = slot 94, +8 = slot 95, +0x10 = slot 211, +0xc = slot 92; then with m_n574 == 1: entity slot 216(this slot 217), slot 218(this slot 219), NPC sub_1029f300(1), AddEffectsForNextSequence(0x10) (CBaseAnimating::sub_10090bc0), slot 93(0, 0), inlined SetSolid(0) (CCollisionProperty::sub_100dc480 on entity +0x270, scope trace "CBaseEntity::SetSolid") and AddSolidFlags(4) (sub_100dc580(word at +0x2b4 | 4), trace "CBaseEntity::AddSolidFlags")
 	void sub_10082c90();	// stub 0x10003080, run when the scene starts
 	CBaseEntity *sub_100823c0(int iActor);	// stub 0x10010294: the entity of the iActor-th actor of the scene at +0x4bc (vfunc268 of its name), null when there is none
 
