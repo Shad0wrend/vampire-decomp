@@ -133629,6 +133629,37 @@ void CUnk102c5730::sub_102c5730(void *pObj)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c5970 size=0xb5
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+void sub_10009539();
+
+extern SendTable g_10924338;
+extern SendTable *g_10619d54;
+
+// TARGET: sub_102c5970
+int sub_102c5970()
+{
+	static const char *pTableName = "DT_AI_BaseNPCTroika";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_10619d54, (void *)sub_10009539),
+		sub_10007bfd("m_iVDisciplinesBase[v_discipline_obfuscate]", 0x12a0, 4, 4, 0, 0, 0),
+		sub_10007bfd("m_iVActiveDisciplinesBase[v_discipline_obfuscate]", 0x1330, 4, 4, 0, 0, 0),
+	};
+	g_10924338.sub_1000e8fe(props + 1, 3, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c6290 size=0x19
 struct CUnknown102c6290 { void * sub_102c6290(int); };
 void * CUnknown102c6290::sub_102c6290(int a0)

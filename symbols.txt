@@ -3116,6 +3116,7 @@
 0x100060dc func   ?sub_101e1610@CStatusFlagList@@QAEIH@Z CStatusFlagList::sub_101e1610
 0x100060e1 func   ?sub_101eda90@CUnknown101eda90@@QAEXXZ CUnknown101eda90::sub_101eda90
 0x100060e6 func   ?sub_1039e970@CNPC_VMingXiaoTentacle@@QAEXXZ CNPC_VMingXiaoTentacle::sub_1039e970
+0x100060eb func   ?sub_102c5970@@YAHXZ sub_102c5970
 0x100060f0 func   ?RotateLeft@?$CUtlRBTree@UCRBTree12Entry_101c03c0@@G@@QAEXG@Z CUtlRBTree<CRBTree12Entry_101c03c0,unsigned short>::RotateLeft
 0x100060f5 func   ?sub_102db740@CAI_InterestingPlaceConverstation@@QAEXH@Z CAI_InterestingPlaceConverstation::sub_102db740
 0x100060fa func   ?sub_101358e0@CUnknown101358e0@@QAEXPAH@Z CUnknown101358e0::sub_101358e0
