@@ -10820,6 +10820,7 @@
 0x100125d0 func   ?vfunc82@CMathColorBlend@@UAEPAUdatamap_t@@XZ CMathColorBlend::vfunc82
 0x100125da func   ?sub_101d7c50@@YIXPAH@Z sub_101d7c50
 0x100125df func   ?vfunc269@CWeaponMelee_MingXiaoTentacle@@UAEXPAVCBaseCombatWeapon@@VVector@@@Z CWeaponMelee_MingXiaoTentacle::vfunc269
+0x100125e4 func   ?sub_101374f0@@YAMM@Z sub_101374f0
 0x100125e9 func   ?sub_10174550@CFlagSet10174550@@QAEX_N@Z CFlagSet10174550::sub_10174550
 0x100125ee func   ?vfunc2@CTEFogRipple@@UAEPAV1@I@Z CTEFogRipple::vfunc2
 0x100125f3 func   ?vfunc5@CWeaponMelee_WerewolfAttacks@@QAEPAV1@I@Z CWeaponMelee_WerewolfAttacks::vfunc5

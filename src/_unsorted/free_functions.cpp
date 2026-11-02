@@ -58580,6 +58580,19 @@ void __fastcall sub_10137480(void *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101374f0 size=0x1b
+// TARGET: sub_101374f0
+float __cdecl sub_101374f0(float x)
+{
+	float f = 0.0f;
+	__asm {
+		sqrtss xmm0, dword ptr [x]
+		movss dword ptr [f], xmm0
+		fld dword ptr [f]
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10137c30 size=0x28
 #include <math.h>
 extern float g_1070c8ac[];
