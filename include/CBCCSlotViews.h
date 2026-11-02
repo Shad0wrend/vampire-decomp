@@ -49,6 +49,15 @@ public:
 	virtual void vfunc208(void *pEnt);
 };
 
+class CFileParserSlotView	// slots 15 / 18 of the file parser used by the VStringTable loader (sub_102037f0)
+{
+public:
+	VIEW_SLOT10(0) VIEW_SLOT(10) VIEW_SLOT(11) VIEW_SLOT(12) VIEW_SLOT(13) VIEW_SLOT(14)
+	virtual char vfunc15(const char *pszName, int a3, const char *pszError, void **ppObject, void **ppList, int *pCount);
+	VIEW_SLOT(16) VIEW_SLOT(17)
+	virtual bool vfunc18(void *pList);
+};
+
 class CServerUnknownSlotView	// slot 4: IServerUnknown::GetBaseEntity
 {
 public:
