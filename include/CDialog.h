@@ -61,7 +61,9 @@ public:
 	int m_nChoices;	// 0x2830: number of player choices
 	int m_nResponses;	// 0x2834: number of player responses filled into the packet
 	int m_aChoices[1];	// 0x2838: the dialog entry key of each player choice
-	char m_pad283c[0x30e9 - 0x283c];
+	char m_pad283c[0x2848 - 0x283c];
+	CDialogDependency m_aDeps2848[4];	// 0x2848: the four dependency records (0x228 bytes each), constructed first by the constructor
+	char m_b30e8;	// 0x30e8: cleared by the constructor
 	char m_bNoReply;	// 0x30e9: set when a response could not be built
 	char m_pad30ea[0x32f8 - 0x30ea];
 	CUtlVector<int> m_vec32f8;	// 0x32f8 (the game's type differs: own RemoveAll 0x100eb130 / Purge 0x100eb1a0)
