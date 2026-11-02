@@ -3509,6 +3509,7 @@
 0x10006a28 func   ?sub_10072b10@CCameraShotTable@@QAEPAUCCameraShot_t@@H@Z CCameraShotTable::sub_10072b10
 0x10006a32 func   ?vfunc365@CNPC_VPlaceholder@@UAE_NH@Z CNPC_VPlaceholder::vfunc365
 0x10006a37 func   ?sub_1030a0a0@@YGHHPAH@Z sub_1030a0a0
+0x10006a3c func   ?sub_1035c400@@YADXZ sub_1035c400
 0x10006a41 func   ?sub_101da8b0@@YAXXZ sub_101da8b0
 0x10006a46 func   ?sub_101251b0@CHolderOuter8@@QAE_NXZ CHolderOuter8::sub_101251b0
 0x10006a4b func   ?sub_1008de20@CBaseAnimating@@QAEHHH@Z CBaseAnimating::sub_1008de20

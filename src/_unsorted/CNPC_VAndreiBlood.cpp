@@ -47,6 +47,15 @@ void *sub_1035c2a0(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035c400 size=0x6
+extern char g_1062a458;
+
+char sub_1035c400(void)
+{
+    return g_1062a458;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035c460 size=0x1d
 #include "CNPC_VAndreiBlood.h"
 struct A { int sub_10012300(int); };
