@@ -109129,6 +109129,21 @@ int sub_10212500()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10212650 size=0x20
+#include "CGameSign.h"
+
+extern char g_10488d7c[];
+void __fastcall sub_1009df20(CGameSign *self);
+
+// TARGET: CGameSign::sub_10212650
+void CGameSign::sub_10212650()
+{
+	*(void **)this = g_10488d7c;
+	operator delete(m_pszFile450);
+	sub_1009df20(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10212790 size=0x5f
 #include "CUnknown102126c0.h"
 #include "inputdata_t.h"

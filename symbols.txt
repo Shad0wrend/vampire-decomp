@@ -3796,6 +3796,7 @@
 0x1000725c func   ?sub_103e3ec0@Mem1c@@QAEXH@Z Mem1c::sub_103e3ec0
 0x10007261 func   ?sub_10074050@CUnknown10074050@@QAEPBDXZ CUnknown10074050::sub_10074050
 0x10007266 func   ?sub_1039ea60@@YIXPAX@Z sub_1039ea60
+0x1000726b func   ?sub_10212650@CGameSign@@QAEXXZ CGameSign::sub_10212650
 0x10007270 func   ?sub_10061e80@@YAXPAXHPBMHHHHHH1D@Z sub_10061e80
 0x10007275 func   ?Purge@?$CUtlMemory@H@@QAEXXZ CUtlMemory<int>::Purge
 0x10007275 func   ?sub_1002cbd0@UtlMem@@QAEXXZ UtlMem::sub_1002cbd0
