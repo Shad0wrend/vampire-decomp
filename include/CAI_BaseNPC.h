@@ -73,7 +73,8 @@ public:
 	CAI_NPC_V(310)
 	virtual void vfunc311(int a, int b, int c);	// when c >= 0: stores the activity-like triple a (+0xfec/+0xff0, slot 465(a) first when it changes), b (+0x5cd0/+0x5cd4/+0xff4) and c (+0x5ccc, sub_10260a50(c)), then clears +0x6f8 and +0x170
 	CAI_NPC_V(312) CAI_NPC_V(313) CAI_NPC_V(314) CAI_NPC_V(315) virtual void vfunc316(void *pEnt, char bFlagA, char bFlagB); virtual bool vfunc317(int unused); CAI_NPC_V(318) virtual bool vfunc319(int a, CBaseEntity *pOther, int c);	// slot 319 (ret 0xc: three arguments, true): the Troika override re-arms the timer at +0x1564
-	CAI_NPC_V10(32) CAI_NPC_V10(33)
+	CAI_NPC_V(320) CAI_NPC_V(321) CAI_NPC_V(322) CAI_NPC_V(323) virtual char vfunc324(); virtual char vfunc325(); CAI_NPC_V(326) CAI_NPC_V(327) CAI_NPC_V(328) CAI_NPC_V(329)	// slots 324 / 325 (+0x510 / +0x514): boolean answers in al, asked by the Troika slot 316
+	CAI_NPC_V10(33)
 	CAI_NPC_V(340) CAI_NPC_V(341) CAI_NPC_V(342) CAI_NPC_V(343) CAI_NPC_V(344)
 	virtual float vfunc345(const char *pszName, float flValue, int a);	// slot 345 (+0x564, ret 0xc): sets a pose parameter by name, returns a float
 	CAI_NPC_V(346) CAI_NPC_V(347) CAI_NPC_V(348) CAI_NPC_V(349)
