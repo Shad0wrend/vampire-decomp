@@ -117,7 +117,7 @@ public:
 	virtual void vfunc223();
 	virtual void vfunc224();
 	virtual void vfunc225();
-	virtual void vfunc226_slot();
+	virtual void vfunc226(int a);	// slot 226 (ret 4: one unused stack argument; empty body)
 	virtual void vfunc227();
 	virtual void vfunc228_slot();
 	virtual void vfunc229(int);
