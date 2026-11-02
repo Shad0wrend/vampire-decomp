@@ -10256,6 +10256,7 @@
 0x10011b44 func   ?vfunc252@CBaseAnimating@@QAEHHHH@Z CBaseAnimating::vfunc252
 0x10011b4e func   ?sub_102d6230@@YAHH@Z sub_102d6230
 0x10011b53 func   ?sub_1030cb00@@YGHPBD@Z sub_1030cb00
+0x10011b58 func   ?vfunc558@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc558
 0x10011b5d func   ?sub_100dc1e0@@YIIPAX@Z sub_100dc1e0
 0x10011b67 func   ?sub_10046050@PQ@@QAEXABUElem@@@Z PQ::sub_10046050
 0x10011b6c func   ?sub_1019dd70@CRopeKeyframe@@QAEEXZ CRopeKeyframe::sub_1019dd70

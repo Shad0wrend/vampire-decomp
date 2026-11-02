@@ -259,6 +259,12 @@ bool CAI_BaseNPC::vfunc527(CAI_NavProvider * a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6c80 size=0x1
+// TARGET: CAI_BaseNPC::vfunc558
+void CAI_BaseNPC::vfunc558() {
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6ca0 size=0x1
 // TARGET: sub_101a6ca0
 void sub_101a6ca0()
