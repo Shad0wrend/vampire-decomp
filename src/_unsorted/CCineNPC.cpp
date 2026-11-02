@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101a5db0 size=0x6
+extern char g_10593628[];
+
+// TARGET: sub_101a5db0
+void *sub_101a5db0()
+{
+	return g_10593628;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6da0 size=0x5
 // TARGET: sub_101a6da0
 bool __stdcall sub_101a6da0(int a)

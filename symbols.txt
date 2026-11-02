@@ -6816,6 +6816,7 @@
 0x1000bdbb func   ?vfunc463@CAI_BaseNPC@@UAEXHH@Z CAI_BaseNPC::vfunc463
 0x1000bdc0 func   ?vfunc82@CHudEntity@@QAEPAUdatamap_t@@XZ CHudEntity::vfunc82
 0x1000bdc5 func   ?vfunc5@CItemGEDaneReport@@QAEPAV1@I@Z CItemGEDaneReport::vfunc5
+0x1000bdca func   ?sub_101a5db0@@YAPAXXZ sub_101a5db0
 0x1000bdcf func   ?vfunc516@CNPC_VDog@@QAEMXZ CNPC_VDog::vfunc516
 0x1000bdd4 func   ?sub_100bc5a0@CUnknown100bc5a0@@QAEHXZ CUnknown100bc5a0::sub_100bc5a0
 0x1000bdde func   ?vfunc2@CTeamManager@@QAEHXZ CTeamManager::vfunc2
