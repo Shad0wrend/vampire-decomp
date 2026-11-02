@@ -4845,6 +4845,7 @@
 0x10008f26 func   ?vfunc2@CTEBeamSpline@@UAEPAV1@I@Z CTEBeamSpline::vfunc2
 0x10008f30 func   ?sub_100c96a0@CUnknown100c96a0@@QAEXXZ CUnknown100c96a0::sub_100c96a0
 0x10008f35 func   ?sub_100bde70@CStrParser@@QAE_NPBD@Z CStrParser::sub_100bde70
+0x10008f3a func   ?vfunc5@CLogicRelay@@QAEPAV1@I@Z CLogicRelay::vfunc5
 0x10008f3f func   ?sub_100bba90@CBeam@@QAEXPAVCBaseEntity@@0@Z CBeam::sub_100bba90
 0x10008f44 func   ?sub_10142e20@@YAXPAVCBaseEntity@@HHHHH@Z sub_10142e20
 0x10008f49 func   ?vfunc72@CNPC_VPlaceholder@@UAE_NH@Z CNPC_VPlaceholder::vfunc72
