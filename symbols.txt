@@ -12346,6 +12346,7 @@
 0x10014eca func   ?sub_10206320@@YAXXZ sub_10206320
 0x10014ed4 func   ?sub_101b40a0@@YGPADPADH@Z sub_101b40a0
 0x10014ed9 func   ?sub_10198640@@YAPAUPyObj@@PAU1@0@Z sub_10198640
+0x10014ede func   ?vfunc302@CBaseCombatWeapon@@UAEDXZ CBaseCombatWeapon::vfunc302
 0x10014ee3 func   ?sub_101da9e0@CUnknown101da9e0@@QAEPAXH@Z CUnknown101da9e0::sub_101da9e0
 0x10014eed func   _item_g_warr_clipboard item_g_warr_clipboard
 0x10014ef7 func   ?sub_101b6bd0@CUtlRBTree232@@QAEHH_N@Z CUtlRBTree232::sub_101b6bd0

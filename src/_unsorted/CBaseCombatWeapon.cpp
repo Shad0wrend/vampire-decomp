@@ -561,6 +561,13 @@ int CBaseCombatWeapon::vfunc347(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102524b0 size=0x3
+// TARGET: CBaseCombatWeapon::vfunc302
+char CBaseCombatWeapon::vfunc302() {
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102526c0 size=0x1d
 #include "CBaseCombatWeapon.h"
 
