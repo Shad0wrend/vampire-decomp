@@ -123432,6 +123432,29 @@ void sub_1025d940()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025d9d0 size=0x3b
+#include "CUnknown1025ddd0.h"
+__declspec(dllimport) void Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+struct VecInit
+{
+	unsigned int *m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	int m_size;
+	unsigned int *m_pElements;
+	void Init() { m_pMemory = 0; m_allocationCount = 0; m_growSize = 0; m_size = 0; m_pElements = 0; }
+};
+// TARGET: CUnknown1025ddd0::sub_1025d9d0
+CUnknown1025ddd0 *CUnknown1025ddd0::sub_1025d9d0(int nLimit, const char *pszName)
+{
+	((VecInit *)&m_pMemory)->Init();
+	m_growSize = 8;
+	m_limit = nLimit;
+	Q_strncpy(m_szName, pszName, 15);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025da20 size=0x50
 #include "utlvector.h"
 struct CList1025da20 {

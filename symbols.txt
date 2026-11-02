@@ -3820,6 +3820,7 @@
 0x10007554 func   ?sub_101fed90@CVStatInfo_t@@QAEHH@Z CVStatInfo_t::sub_101fed90
 0x10007559 func   ?sub_100428c0@UtlMem@@QAEXXZ UtlMem::sub_100428c0
 0x1000755e func   ?sub_101dda70@SRange@@QAEXPBD@Z SRange::sub_101dda70
+0x10007563 func   ?sub_1025d9d0@CUnknown1025ddd0@@QAEPAV1@HPBD@Z CUnknown1025ddd0::sub_1025d9d0
 0x10007568 func   ?vfunc80@CResearchBook_MG_FIN@@QAEHXZ CResearchBook_MG_FIN::vfunc80
 0x1000756d func   ?sub_101d8820@CUnknown101d8a70@@QAEPAV1@HPAVCBaseCombatWeapon@@PAXH@Z CUnknown101d8a70::sub_101d8820
 0x10007572 func   ?sub_100509b0@SFilter@@QAEPAU1@E@Z SFilter::sub_100509b0
