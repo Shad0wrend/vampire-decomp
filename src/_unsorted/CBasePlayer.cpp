@@ -1152,6 +1152,14 @@ void CBasePlayer::vfunc434()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016a9e0 size=0x6
+// TARGET: CBasePlayer::vfunc138
+int CBasePlayer::vfunc138()
+{
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016aa00 size=0x31
 // TARGET: sub_1016aa00
 struct CPlayerAccum_1016aa00 {
