@@ -95,7 +95,7 @@ public:
 	virtual void vfunc36();
 	virtual void vfunc37();
 	virtual void vfunc38();
-	virtual void vfunc39();
+	virtual void vfunc39(CBasePlayer *pPlayer);	// slot 39 override (0x10211db0): CBaseEntity::vfunc39 (sub_100a4fe0, stub 0x10015262), fires the output at +0x734 (player, this, 0), sends the sign text (sub_10211f10), then sub_1015ef40 and sub_10181580(1) on the player
 	virtual void vfunc40();
 	virtual void vfunc41(CBasePlayer *pPlayer);
 	virtual void vfunc42(CBasePlayer *pPlayer);	// slot 42 override: CBaseEntity::vfunc42, registers the player with the user list at +0x74c, sub_102120c0, then slot 192 (the center) is handed to the player (sub_10178590), sub_1015ef40 / sub_1015ef60 and clears flag bit 1 (sub_101815b0(1)) of the player
