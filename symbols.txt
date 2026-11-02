@@ -2844,6 +2844,7 @@
 0x100059de func   ?vfunc473@CHL2_Player@@UAE_NM@Z CHL2_Player::vfunc473
 0x100059e3 func   ?vfunc113@CPropClockHand@@UAEXXZ CPropClockHand::vfunc113
 0x100059e8 func   ?vfunc7@CSave@@UAEXHHH@Z CSave::vfunc7
+0x100059ed func   ?sub_101abe30@@YGXH@Z sub_101abe30
 0x100059f7 func   ?vfunc5@CItemGWarrClipboard@@QAEPAV1@I@Z CItemGWarrClipboard::vfunc5
 0x100059fc func   ?sub_102a9750@CUnknown102a9750@@QAEXH@Z CUnknown102a9750::sub_102a9750
 0x10005a01 func   ?sub_102c2a30@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_102c2a30

@@ -117,6 +117,12 @@ bool CSingleplayRules::vfunc26(int a0, int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101abe30 size=0x3
+// TARGET: sub_101abe30
+void __stdcall sub_101abe30(int a) {
+}
+// END FUNCTION
+
 // FUNCTION: 0x101abe50 size=0x3
 void CSingleplayRules::vfunc28(void * a0)
 {
