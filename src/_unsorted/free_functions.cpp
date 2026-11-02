@@ -134995,6 +134995,15 @@ IHandleEntity *CBaseHandle::sub_102c6420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c6460 size=0x47
+#include "CUnknown102c6460.h"
+
+bool CUnknown102c6460::sub_102c6460(void *pEntity) const
+{
+	return Get() == pEntity;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c64d0 size=0x29
 #include "ehandle.h"
 

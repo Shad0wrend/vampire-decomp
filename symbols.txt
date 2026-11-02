@@ -9431,6 +9431,7 @@
 0x100101cc func   ?vfunc81@CItemGGarysTape@@QAEHXZ CItemGGarysTape::vfunc81
 0x100101d1 func   ?sub_1013db10@CUnknown1013db10@@QAEPADXZ CUnknown1013db10::sub_1013db10
 0x100101d6 func   ?sub_1019bb10@@YAPAUCPyObjWrap@@PAUCPyObjVirt@@H@Z sub_1019bb10
+0x100101db func   ?sub_102c6460@CUnknown102c6460@@QBE_NPAX@Z CUnknown102c6460::sub_102c6460
 0x100101e0 func   ?sub_1037a5b0@@YIXPAX@Z sub_1037a5b0
 0x100101ea func   ?sub_1032a910@CBaseCombatCharacter@@QAEXHH@Z CBaseCombatCharacter::sub_1032a910
 0x100101f4 func   ?vfunc5@CSoundScheme@@QAEPAV1@I@Z CSoundScheme::vfunc5
