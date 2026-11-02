@@ -71665,6 +71665,30 @@ extern "C" CBaseEntity *player_manager()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018a4e0 size=0x4b
+#include "CConstraintAnchor.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(unsigned int size);
+extern char g_10471c54[];	// CSkyCamera vftable
+extern const char g_1058b594[];
+
+// TARGET: sky_camera
+extern "C" CBaseEntity *sky_camera()
+{
+	void *mem = sub_100aa720(0x488);
+	CBaseEntity *p;
+	if (mem) {
+		((CConstraintAnchorBase *)mem)->sub_1009d980(0);
+		*(void **)mem = g_10471c54;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_1058b594);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018a5b0 size=0x1a
 namespace lifted {
 extern int g_10589ad0;
