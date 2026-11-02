@@ -56764,6 +56764,23 @@ int sub_1012f340(const char *a, const char *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012f5a0 size=0x4b
+#include "CInfoIntermission.h"
+
+void *sub_100aa720(unsigned int size);
+inline void *operator new(unsigned int, void *p) { return p; }
+extern const char g_10575184[];
+
+// TARGET: info_intermission
+extern "C" CInfoIntermission *info_intermission()
+{
+	void *mem = sub_100aa720(0x450);
+	CInfoIntermission *p = mem ? new(mem) CInfoIntermission : 0;
+	p->vfunc106(g_10575184);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012f640 size=0x81
 struct SFloatPair { float lo; float range; };
 
