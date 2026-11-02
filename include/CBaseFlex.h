@@ -256,7 +256,7 @@ public:
 	virtual void vfunc279(int nController, float flValue);	// CBaseAnimating's flex controller setter
 	virtual void vfunc280(int a, int b);
 	virtual float vfunc281(int index);	// "GetFlexWeight"-like: the flex controller index's value at +0x858 scaled from 0..1 into the controller's range, 0.0f outside the model's controllers
-	virtual void vfunc282(const char *pszName);	// slot 282: vfunc281(sub_100b5d10(pszName))
+	virtual float vfunc282(const char *pszName);	// slot 282: vfunc281(sub_100b5d10(pszName))
 	virtual void vfunc283();
 	virtual void vfunc284();	// walks the items at +0xa58 and dispatches on their type through slots 288-291
 	virtual void vfunc285(int nKey);	// clears the item vector when nKey is 0, else removes every item whose second field (+4) equals nKey
