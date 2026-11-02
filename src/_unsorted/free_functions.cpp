@@ -182432,6 +182432,16 @@ int sub_1042b470()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042b6d0 size=0x2e
+extern float g_1070d1b0[3];
+void CBaseEntity::sub_1042b6d0(int index)
+{
+	vfunc93(11, 0);
+	sub_1009ef50(index);
+	vfunc62(g_1070d1b0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042b710 size=0x33
 // TARGET: sub_1042b710
 
