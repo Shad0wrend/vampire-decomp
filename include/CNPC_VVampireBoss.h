@@ -12,9 +12,15 @@ class CEntityVSlots;
 class CNPC_VVampireBoss
 {
 public:
-	char pad0[0x17c];
+	char pad0[0x168];
+	int m_n168;	// +0x168
+	int m_n16c;	// +0x16c
+	char pad170[0x17c - 0x170];
 	float m_flNextThink;	// +0x17c
-	char pad180[0x1b44 - 0x180];
+	char pad180[0x155c - 0x180];
+	unsigned int m_h155c;	// +0x155c: entity handle (the partner boss; written with slot 1 GetRefEHandle's value)
+	float m_flTime1560;	// +0x1560: curtime stamp of the transformation start
+	char pad1564[0x1b44 - 0x1564];
 	const char *m_pszSourceFile;	// +0x1b44: source file / line stamp of the last failure
 	int m_nSourceLine;	// +0x1b48
 	char pad1b4c[0x5ddc - 0x1b4c];
