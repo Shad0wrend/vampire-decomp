@@ -36875,6 +36875,17 @@ void CEventQueue::sub_100cdf10(CBaseEntity *pTarget, const char *pszAction, CVar
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ce1c0 size=0x37
+#include "CEventQueue.h"
+
+// TARGET: CEventQueue::sub_100ce1c0
+void CEventQueue::sub_100ce1c0(CEQEvent *pEvent)
+{
+	CEQEvent *pCopy = (CEQEvent *)new CEQEventFull(*(const CEQEventFull *)pEvent);
+	sub_100ce210(pCopy);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ce210 size=0x79
 #include "CEventQueue.h"
 

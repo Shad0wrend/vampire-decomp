@@ -10575,6 +10575,7 @@
 0x1001252b func   _info_node_chang_ledge info_node_chang_ledge
 0x10012530 func   ?sub_10094520@CBaseAnimating@@QAEHXZ CBaseAnimating::sub_10094520
 0x1001253a func   ?sub_103a5060@@YIPAXPAD@Z sub_103a5060
+0x1001253f func   ?sub_100ce1c0@CEventQueue@@QAEXPAUCEQEvent@@@Z CEventQueue::sub_100ce1c0
 0x10012544 func   ?sub_100307f0@CCollisionEvent@@QAEXPAUCFrictionEntry_t@@@Z CCollisionEvent::sub_100307f0
 0x10012549 func   ?sub_10319d30@@YAXXZ sub_10319d30
 0x10012558 func   ?sub_1030ff10@CUnknown1030fe50Unit@@QAEXH@Z CUnknown1030fe50Unit::sub_1030ff10
