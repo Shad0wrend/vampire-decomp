@@ -197,6 +197,11 @@ char CBaseCombatCharacter::vfunc360() { return 0; }
 bool __cdecl sub_1014f950() { return false; }
 // END FUNCTION
 
+// FUNCTION: 0x1014fa30 size=0x3
+// TARGET: sub_1014fa30
+bool __cdecl sub_1014fa30() { return false; }
+// END FUNCTION
+
 // FUNCTION: 0x1015dc20 size=0x5
 bool CBaseCombatCharacter::vfunc72(int a0)
 {

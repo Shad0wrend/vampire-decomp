@@ -1453,6 +1453,7 @@
 0x100035a8 func   ?sub_1035fc70@@YGHH@Z sub_1035fc70
 0x100035ad func   ?vfunc270@CRagdollProp@@UAEXHH@Z CRagdollProp::vfunc270
 0x100035b2 func   ?vfunc420@CNPC_VSabbatLeader@@QAEXXZ CNPC_VSabbatLeader::vfunc420
+0x100035bc func   ?sub_1014fa30@@YA_NXZ sub_1014fa30
 0x100035c1 func   ?sub_102c4680@CAI_BaseNPCTroika@@QAE_NPBD@Z CAI_BaseNPCTroika::sub_102c4680
 0x100035d0 func   ?sub_102e2610@CAI_Motor@@QAEHXZ CAI_Motor::sub_102e2610
 0x100035d5 func   ??0CRecipientFilter@@QAE@XZ CRecipientFilter::CRecipientFilter
