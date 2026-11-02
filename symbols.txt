@@ -9086,6 +9086,7 @@
 0x1000fb82 func   ?vfunc4@CEffectsServer@@UAEXPBMHHH@Z CEffectsServer::vfunc4
 0x1000fb8c func   ?sub_1034e7e0@@YGXH@Z sub_1034e7e0
 0x1000fb91 func   ?LinkToParent@?$CUtlRBTree@UCAI_ExpresserUse@@G@@QAEXGG_N@Z CUtlRBTree<CAI_ExpresserUse,unsigned short>::LinkToParent
+0x1000fb96 func   ?sub_1014fa50@@YA_NXZ sub_1014fa50
 0x1000fb9b func   ?sub_103330f0@CBaseCombatCharacter@@QAEXPAVCBaseEntity@@H@Z CBaseCombatCharacter::sub_103330f0
 0x1000fba0 func   ?sub_10190be0@@YAHXZ sub_10190be0
 0x1000fba5 func   ?sub_10146150@@YAMPBVVector@@@Z sub_10146150
