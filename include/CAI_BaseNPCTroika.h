@@ -222,7 +222,7 @@ public:
 	unsigned int m_flags19c;
 	char m_pad01a0[0x204 - 0x1a0];
 	unsigned int m_flags204;
-	char m_pad0208[0x65c - 0x208];
+	union { char m_pad0208[0x65c - 0x208]; struct { char m_pad0208b[0x224 - 0x208]; unsigned int m_fDebugOverlays224; }; };	// 0x224: the debug overlay flags (bit 27 = print the schedule debug text)
 	char m_b065c;
 	char m_pad065d[0x6f8 - 0x65d];
 	int m_n06f8;
