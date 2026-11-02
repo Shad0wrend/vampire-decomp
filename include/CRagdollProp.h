@@ -3,6 +3,8 @@
 #pragma once
 
 #include "CBaseEntity.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
 
 struct CRagdollPropDamageInfo	// a CTakeDamageInfo (0x4c bytes), copied by value
 {
