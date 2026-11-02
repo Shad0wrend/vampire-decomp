@@ -48,3 +48,12 @@ void sub_103f5480()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x103f56d0 size=0x3
+#include "CWeaponUnarmed.h"
+
+int CWeaponUnarmed::vfunc360()
+{
+	return 0;
+}
+// END FUNCTION
