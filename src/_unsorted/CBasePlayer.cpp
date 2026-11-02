@@ -248,6 +248,15 @@ char sub_1015de90() {
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015deb0 size=0x7
+#include "CBasePlayer.h"
+
+void *CBasePlayer::vfunc198()
+{
+	return (char *)this + 0x211c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015ded0 size=0x1e
 #include "CBasePlayer.h"
 
