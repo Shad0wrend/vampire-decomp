@@ -53,7 +53,9 @@ public:
 	char sub_10379040();	// stub 0x10014777, answers in al
 	void sub_1029adb0(int a);	// CAI_BaseNPCTroika::vfunc448 (stub 0x100054bb), called directly
 
-	char m_pad0004[0x14b8 - 4];
+	char m_pad0004[0xfd0 - 4];
+	int m_nFd0;	// 0x0fd0: the constructor sets it to 3
+	char m_padfd4[0x14b8 - 0xfd4];
 	unsigned int m_nFlags14b8;	// 0x14b8
 	char m_pad14bc[0x5cc0 - 0x14bc];
 	int m_nState5cc0;	// 0x5cc0
