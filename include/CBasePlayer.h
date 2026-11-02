@@ -235,7 +235,9 @@ public:
 	int m_n14AC;	// 0x14AC: -1 on death (vfunc144)
 	int m_n14B0;	// 0x14B0
 	int m_n14B4;	// 0x14B4
-	char m_pad14B8[0x1538 - 0x14b8];	// 0x14B8 .. 0x1537
+	char m_pad14B8[0x14dc - 0x14b8];	// 0x14B8 .. 0x14DB
+	char m_b14DC;	// 0x14DC: cleared by the death handler (vfunc144)
+	char m_pad14DD[0x1538 - 0x14dd];	// 0x14DD .. 0x1537
 	unsigned int m_h1538;	// entity handle
 	int m_n153C;
 	int m_n1540;
