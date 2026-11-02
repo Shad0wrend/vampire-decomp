@@ -3,6 +3,7 @@
 #pragma once
 
 #include "Vector.h"
+#include "CTakeDamageInfo.h"
 
 struct CUnknown101c2a50;
 class CBaseCombatCharacter;
