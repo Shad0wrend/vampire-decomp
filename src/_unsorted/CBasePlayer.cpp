@@ -130,6 +130,11 @@ void __fastcall sub_1015dcf0(void *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015dd10 size=0x3
+// TARGET: CBasePlayer::vfunc439
+char CBasePlayer::vfunc439() { return 0; }
+// END FUNCTION
+
 // FUNCTION: 0x1015dd30 size=0x3
 // TARGET: CBasePlayer::vfunc162
 char CBasePlayer::vfunc162() { return 1; }
