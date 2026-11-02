@@ -14,6 +14,15 @@ ConVar *ConVar::vfunc0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10245ac0 size=0x39
+#include "ConVar.h"
+
+ConVar::ConVar(const char *pName, const char *pDefaultValue, int flags, const char *pHelpString)
+{
+	vfunc12(pName, pDefaultValue, flags, pHelpString, 0, 0.0f, 0, 0.0f, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10245c40 size=0x28
 #include "ConVar.h"
 ConVar::~ConVar()
