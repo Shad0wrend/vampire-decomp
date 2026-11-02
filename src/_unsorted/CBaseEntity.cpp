@@ -494,6 +494,13 @@ void CBaseEntity::vfunc168()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10027040 size=0x3
+// TARGET: sub_10027040
+void __stdcall sub_10027040(int a)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100270a0 size=0x1
 // TARGET: sub_100270a0
 void sub_100270a0()
