@@ -27,6 +27,16 @@ void sub_10390ff0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10391010 size=0x5
+#include "CNPC_VBaseBoss.h"
+
+// TARGET: CNPC_VBaseBoss::vfunc587
+bool CNPC_VBaseBoss::vfunc587(int a)
+{
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10391170 size=0x86
 #include "CNPC_VBaseBoss.h"
 #include "utlvector.h"
