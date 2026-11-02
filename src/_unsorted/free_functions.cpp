@@ -184444,6 +184444,17 @@ void CPlayerPickupController::sub_1040d0a0(char bThrow)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040d440 size=0x4b
+#include "CPlayerPickupController.h"
+#include "CEHandleGet.h"
+
+// TARGET: CPlayerPickupController::sub_1040d440
+bool CPlayerPickupController::sub_1040d440(void *pEntity)
+{
+	return EHandle_Get(m_Carry.m_hEntity) == pEntity;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040d4b0 size=0x42
 #include "CPlayerPickupController.h"
 #include "CEntitySoundOriginView.h"
