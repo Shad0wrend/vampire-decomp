@@ -854,6 +854,7 @@
 0x10002603 func   ?sub_10214080@CPropHaunted@@QAEXPBD@Z CPropHaunted::sub_10214080
 0x10002608 func   ?sub_10087600@@YAXXZ sub_10087600
 0x1000260d func   ?sub_101ed210@StatDefault2@@QAE_NPAUCVFeatKV@@@Z StatDefault2::sub_101ed210
+0x10002612 func   ?vfunc0@?$CUtlVectorDataOps@V?$CUtlVector@UKEYRING_ENTRY@@V?$CUtlMemory@UKEYRING_ENTRY@@@@@@$08@@UAEXPAX0@Z CUtlVectorDataOps<CUtlVector<KEYRING_ENTRY,CUtlMemory<KEYRING_ENTRY> >,9>::vfunc0
 0x1000261c func   ?sub_10204f60@CUnknown10204f60@@QAEHH@Z CUnknown10204f60::sub_10204f60
 0x10002621 func   _item_p_occult_strength item_p_occult_strength
 0x1000262b func   ?vfunc328@CWeaponIWritten@@UAEHXZ CWeaponIWritten::vfunc328
