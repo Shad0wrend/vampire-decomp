@@ -4985,6 +4985,7 @@
 0x100092c3 func   ?sub_1020a0a0@@YAPAVCBaseEntity@@PBDPBM1@Z sub_1020a0a0
 0x100092c8 func   ?vfunc103@CHL2_Player@@UAEXXZ CHL2_Player::vfunc103
 0x100092cd func   ?sub_101a1860@CUnknown101a1860@@QAE_NPAUCUnknown101a1860_Record@@@Z CUnknown101a1860::sub_101a1860
+0x100092d2 func   ?vfunc5@CLogicLineToEntity@@QAEPAV1@I@Z CLogicLineToEntity::vfunc5
 0x100092d7 func   ?sub_10057850@SaveList@@QAEHPAUIVisitor@@@Z SaveList::sub_10057850
 0x100092dc func   ?sub_101b2490@CUnknown101b2570@@QAEXPBD@Z CUnknown101b2570::sub_101b2490
 0x100092e1 func   ?sub_101f76e0@CDebugListEntry@@QAEXXZ CDebugListEntry::sub_101f76e0
