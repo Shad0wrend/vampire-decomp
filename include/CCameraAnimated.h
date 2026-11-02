@@ -20,6 +20,7 @@ public:
 	CCameraAnimatedItem m_item7f8;
 	CCameraAnimatedItem m_item810;
 
+	CCameraAnimated *sub_10071220();	// constructor body (camera_animated)
 	void sub_1008b3c0(); // base class destructor
 	CCameraAnimated *vfunc5(unsigned char flags); // scalar deleting destructor
 	void vfunc104(); // slot 104: precaches the model
