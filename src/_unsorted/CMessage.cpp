@@ -38,3 +38,27 @@ void CMessage::vfunc103()
         m_f454 = 1.0f;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101022e0 size=0x2b
+#include "CMessage.h"
+
+struct CGargoyleMemberUnit {
+	void sub_10015708();
+};
+
+struct CGargoyleBaseUnit {
+	void sub_1000cb8a();
+};
+
+void __cdecl sub_10009fc5(void *p);
+
+// TARGET: CMessage::vfunc5
+CMessage *CMessage::vfunc5(unsigned int flags)
+{
+	((CGargoyleMemberUnit *)((char *)this + 0x464))->sub_10015708();
+	((CGargoyleBaseUnit *)this)->sub_1000cb8a();
+	if (flags & 1)
+		sub_10009fc5(this);
+	return this;
+}
+// END FUNCTION

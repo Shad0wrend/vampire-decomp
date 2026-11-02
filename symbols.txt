@@ -7155,6 +7155,7 @@
 0x1000cb5d func   ?vfunc427@CAI_BaseNPC@@UAEPAVCAI_Motor@@XZ CAI_BaseNPC::vfunc427
 0x1000cb62 func   ?sub_101d26b0@@YAXVVector@@HHHHH@Z sub_101d26b0
 0x1000cb6c func   ?vfunc5@CDisciplineWeapon@@QAEPAV1@I@Z CDisciplineWeapon::vfunc5
+0x1000cb71 func   ?vfunc5@CMessage@@QAEPAV1@I@Z CMessage::vfunc5
 0x1000cb80 func   ?sub_1024aa70@CUtlRBTree16Unit@@QAEXG@Z CUtlRBTree16Unit::sub_1024aa70
 0x1000cb94 func   ?vfunc180@CBaseEntity@@QAEXXZ CBaseEntity::vfunc180
 0x1000cb9e func   ?sub_103f7330@@YAHXZ sub_103f7330
