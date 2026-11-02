@@ -26,6 +26,15 @@ CNPC_VMoleman *CNPC_VMoleman::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039f740 size=0x6
+extern char g_1064a580;
+
+char CNPC_VMoleman::vfunc452()
+{
+	return g_1064a580;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039f7a0 size=0x1d
 #include "CNPC_VMoleman.h"
 struct A { int sub_10012300(int); };
