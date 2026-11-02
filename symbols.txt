@@ -10933,6 +10933,7 @@
 0x1001249f func   ?sub_102189e0@CPropHacking@@QAEXPBD@Z CPropHacking::sub_102189e0
 0x100124a4 func   _point_camera point_camera
 0x100124a9 func   ?sub_101bcef0@CUnknown101bcef0@@QAEPAXXZ CUnknown101bcef0::sub_101bcef0
+0x100124ae func   ?sub_10389580@CNPC_VMalkavian@@QAEPBDXZ CNPC_VMalkavian::sub_10389580
 0x100124b3 func   _CreateInterface CreateInterface
 0x100124b8 func   ?sub_10248430@CUnknown10248a50@@QAE_NHPBDH@Z CUnknown10248a50::sub_10248430
 0x100124bd func   ?sub_101cf250@@YAXPAMH@Z sub_101cf250

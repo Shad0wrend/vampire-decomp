@@ -12,6 +12,17 @@ void *CNPC_VMalkavian::sub_10389560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10389580 size=0x6
+#include "CNPC_VMalkavian.h"
+
+extern char *g_106408f0;
+
+const char *CNPC_VMalkavian::sub_10389580()
+{
+	return g_106408f0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103895a0 size=0x1e
 #include "CNPC_VMalkavian.h"
 
