@@ -12110,6 +12110,7 @@
 0x10014b5a func   ?vfunc138@CNPC_VBrujah@@UAEHXZ CNPC_VBrujah::vfunc138
 0x10014b5f func   ?vfunc5@CFilterFeat@@QAEPAV1@I@Z CFilterFeat::vfunc5
 0x10014b64 func   ?sub_101ddc10@@YAXXZ sub_101ddc10
+0x10014b69 func   ?sub_100270a0@@YAXXZ sub_100270a0
 0x10014b73 func   ?vfunc113@CCineNPC@@QAEXXZ CCineNPC::vfunc113
 0x10014b7d func   ?vfunc138@CNPC_VBatSwarm@@UAEHXZ CNPC_VBatSwarm::vfunc138
 0x10014b82 func   ?sub_1021a740@CPropHacking@@QAEXXZ CPropHacking::sub_1021a740

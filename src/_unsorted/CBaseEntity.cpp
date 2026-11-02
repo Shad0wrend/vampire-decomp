@@ -442,6 +442,13 @@ void CBaseEntity::vfunc168()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100270a0 size=0x1
+// TARGET: sub_100270a0
+void sub_100270a0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027160 size=0x14e
 #include "TempVector.h"
 
