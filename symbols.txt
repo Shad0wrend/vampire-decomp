@@ -4582,6 +4582,7 @@
 0x100085df func   ?sub_101f2550@@YIHPAX@Z sub_101f2550
 0x100085e4 func   ?vfunc481@CHL2_Player@@UAEMXZ CHL2_Player::vfunc481
 0x100085e9 func   ?sub_1002d560@@YGXH@Z sub_1002d560
+0x100085ee func   ?sub_101a6380@@YG_NHHH@Z sub_101a6380
 0x100085f3 func   ?sub_1028eb30@Holder@@QAEXHPAUVec3@@PAUHandleObj@@D@Z Holder::sub_1028eb30
 0x100085f8 func   ?sub_102d12e0@@YIMPAX@Z sub_102d12e0
 0x10008607 func   ?vfunc103@CNPC_VMingXiaoTentacle@@QAEXXZ CNPC_VMingXiaoTentacle::vfunc103
