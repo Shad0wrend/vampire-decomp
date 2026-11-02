@@ -225,6 +225,7 @@
 0x100015c8 func   ?sub_100745d0@CUnknown10074a30@@QAEMM@Z CUnknown10074a30::sub_100745d0
 0x100015cd func   ?sub_1017cef0@CBasePlayer@@QAEXPAVCBaseEntity@@@Z CBasePlayer::sub_1017cef0
 0x100015d2 func   ?sub_100b7a20@@YAHXZ sub_100b7a20
+0x100015d7 func   ?vfunc117@CBeam@@UAEHXZ CBeam::vfunc117
 0x100015e1 func   ?sub_103fd9a0@@YAHXZ sub_103fd9a0
 0x100015e6 func   ?sub_1034e520@@YGXPAUInputLike@@@Z sub_1034e520
 0x100015f0 func   ?vfunc0@ConVar@@UAEPAVConCommandBase@@I@Z ConVar::vfunc0

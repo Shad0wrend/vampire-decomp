@@ -41,6 +41,19 @@ CBeam::CBeam() : CBaseEntity(0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bac90 size=0x20
+#include "CBeam.h"
+
+// TARGET: CBeam::vfunc117
+int CBeam::vfunc117()
+{
+	unsigned int flags = 0;
+	if ((unsigned char)(m_flags204 >> 0xf) & 1)
+		flags = 0x80000000;
+	return (CBaseEntity::vfunc117() & 0xfffffffd) | flags;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bacc0 size=0x90
 #include "CBeam.h"
 #include "TempVector.h"
