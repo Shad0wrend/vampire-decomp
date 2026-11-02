@@ -703,6 +703,16 @@ void __stdcall sub_10027410(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10027430 size=0x6
+extern int g_1072b36c;
+
+// TARGET: CBaseEntity::vfunc240
+int CBaseEntity::vfunc240()
+{
+	return g_1072b36c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027450 size=0xf
 int CBaseEntity::vfunc0(int a0)
 {

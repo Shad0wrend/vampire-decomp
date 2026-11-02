@@ -4881,6 +4881,7 @@
 0x10008ca6 func   ?vfunc363@CWeaponRanged_Pistol_DesertEagle@@QAEHXZ CWeaponRanged_Pistol_DesertEagle::vfunc363
 0x10008cab func   ?sub_1030d3d0@@YGIH@Z sub_1030d3d0
 0x10008cb0 func   ?vfunc134@CLogicAuto@@QAEXXZ CLogicAuto::vfunc134
+0x10008cb5 func   ?vfunc240@CBaseEntity@@QAEHXZ CBaseEntity::vfunc240
 0x10008cc9 func   ?sub_1042c420@@YAXPAX@Z sub_1042c420
 0x10008cce func   ?sub_101f1b70@@YGHHH@Z sub_101f1b70
 0x10008cd3 func   ?vfunc369@CBaseCombatCharacter@@QAE?AVVector@@XZ CBaseCombatCharacter::vfunc369
