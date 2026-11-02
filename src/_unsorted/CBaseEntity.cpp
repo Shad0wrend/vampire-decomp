@@ -546,6 +546,13 @@ unsigned char __stdcall sub_10027100()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10027140 size=0x3
+// TARGET: sub_10027140
+void __stdcall sub_10027140(int a)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027160 size=0x14e
 #include "TempVector.h"
 

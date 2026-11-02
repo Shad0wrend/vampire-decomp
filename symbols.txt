@@ -3700,6 +3700,7 @@
 0x10007108 func   ?sub_102d00a0@CUnknown102d00a0@@QAEXI@Z CUnknown102d00a0::sub_102d00a0
 0x1000710d func   ?vfunc2@CVFeatList_t@@UAEMH@Z CVFeatList_t::vfunc2
 0x10007112 func   ?sub_101ec6f0@CUnknown101ec6f0@@QAEXXZ CUnknown101ec6f0::sub_101ec6f0
+0x10007117 func   ?sub_10027140@@YGXH@Z sub_10027140
 0x10007121 func   ?sub_10112a10@CBreakableSurface@@QAEXXZ CBreakableSurface::sub_10112a10
 0x10007126 func   ?sub_1042b860@CUnknown1042b860@@QAEHXZ CUnknown1042b860::sub_1042b860
 0x1000712b func   ?vfunc0@CTETextMessage@@UAEPAUServerClass@@XZ CTETextMessage::vfunc0
