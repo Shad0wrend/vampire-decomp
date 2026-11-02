@@ -57,7 +57,10 @@ public:
 	int m_nFd0;	// 0x0fd0: the constructor sets it to 3
 	char m_padfd4[0x14b8 - 0xfd4];
 	unsigned int m_nFlags14b8;	// 0x14b8
-	char m_pad14bc[0x5cc0 - 0x14bc];
+	char m_pad14bc[0x1568 - 0x14bc];
+	int m_n1568;	// 0x1568: the constructor sets both to 0xe
+	int m_n156c;	// 0x156c
+	char m_pad1570[0x5cc0 - 0x1570];
 	int m_nState5cc0;	// 0x5cc0
 	char m_pad5cc4[0x5d44 - 0x5cc4];
 	void *m_pObj5d44;	// 0x5d44
