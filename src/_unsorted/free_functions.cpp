@@ -8421,6 +8421,30 @@ int sub_1004eab0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004ee20 size=0x4b
+#include "CConstraintAnchor.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(unsigned int size);
+extern char g_1044a2c4[];	// CPhysImpact vftable
+extern const char g_1053dc78[];
+
+// TARGET: env_physimpact
+extern "C" CBaseEntity *env_physimpact()
+{
+	void *mem = sub_100aa720(0x464);
+	CBaseEntity *p;
+	if (mem) {
+		((CConstraintAnchorBase *)mem)->sub_1009d980(0);
+		*(void **)mem = g_1044a2c4;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_1053dc78);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004ef10 size=0x1a
 namespace lifted {
 extern int g_1053d224;
