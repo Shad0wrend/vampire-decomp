@@ -18,6 +18,7 @@ public:
 	short m_w450;	// 0x450: the hint type (0 = none; "WARNING: Hint node with no hint type!")
 	char m_pad0452[2];
 	int m_nId454;	// 0x454: the node's world-editor id (stored in the network's id table)
+	int m_n458;	// 0x458: a second hint selector (with m_w450 it decides whether the node registers a hint through sub_102d2f30)
 public:
     virtual datamap_t * vfunc82();
 };
