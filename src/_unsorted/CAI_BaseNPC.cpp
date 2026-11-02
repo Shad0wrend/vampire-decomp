@@ -429,6 +429,13 @@ extern float g_104454c4;
 float CAI_BaseNPC::vfunc568(int a) { return g_104454c4; }
 // END FUNCTION
 
+// FUNCTION: 0x1026ae90 size=0x6
+int sub_1026ae90(void)
+{
+    return 7;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026af30 size=0x26
 #include "CAI_Senses.h"
 

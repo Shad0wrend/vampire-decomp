@@ -9142,6 +9142,7 @@
 0x1000f876 func   ?sub_1020f990@CLogicVisible@@QAEPAV1@XZ CLogicVisible::sub_1020f990
 0x1000f87b func   ?vfunc130@CEnvPlayerSurfaceTrigger@@QAEXH@Z CEnvPlayerSurfaceTrigger::vfunc130
 0x1000f880 func   ?vfunc610@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::vfunc610
+0x1000f885 func   ?sub_1026ae90@@YAHXZ sub_1026ae90
 0x1000f88a func   _playerevents playerevents
 0x1000f88f func   ?sub_100fbc20@CBaseEntity@@QAEXXZ CBaseEntity::sub_100fbc20
 0x1000f894 func   ?sub_10158c00@@YAXHH@Z sub_10158c00
