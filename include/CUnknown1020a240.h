@@ -63,4 +63,5 @@ public:
 	}
 
 	void sub_1020a240(const char *text, int a, int b, int c, int d);	// appends a message record (text truncated to 0x80 chars)
+	void sub_1020a3f0();	// clears the vector at +0x450 (frees the memory unless the grow size is -1)
 };
