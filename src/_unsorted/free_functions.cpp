@@ -48499,6 +48499,25 @@ void sub_101012c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10101380 size=0x43
+#include "CEnvLaser.h"
+void *sub_100aa720(int size);
+extern char g_1056932c[];
+
+// TARGET: env_laser
+extern "C" CBaseEntity *env_laser()
+{
+	void *mem = sub_100aa720(0x504);
+	CEnvLaser *p;
+	if (mem)
+		p = ((CEnvLaser *)mem)->sub_10101480();
+	else
+		p = 0;
+	p->vfunc106(g_1056932c);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10101450 size=0x1a
 namespace lifted {
 extern int g_10569078;
