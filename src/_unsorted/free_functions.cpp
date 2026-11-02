@@ -32990,6 +32990,30 @@ void CUnknown100ba120::sub_100ba120(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ba140 size=0x4b
+#include "CConstraintAnchor.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(unsigned int size);
+extern char g_1044b584[];	// CPointEntity vftable
+extern const char g_1055afd4[];
+
+// TARGET: info_target
+extern "C" CBaseEntity *info_target()
+{
+	void *mem = sub_100aa720(0x450);
+	CBaseEntity *p;
+	if (mem) {
+		((CConstraintAnchorBase *)mem)->sub_1009d980(0);
+		*(void **)mem = g_1044b584;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_1055afd4);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ba1b0 size=0xac
 #include "CBaseEntity.h"
 
