@@ -52,7 +52,9 @@ public:
 	int m_iHealth;	// 0x210
 	char m_pad0214[0x36c - 0x214];
 	void *m_pPhysObj36c;	// 0x36c: the physics object
-	char m_pad0370[0x19e4 - 0x370];
+	char m_pad0370[0x19b0 - 0x370];
+	Vector m_vec19b0;	// 0x19b0: the nozzle attachment's translation (column 3), set by sub_10150530
+	char m_pad19bc[0x19e4 - 0x19bc];
 	char m_bLeaking;	// 0x19e4
 	char m_pad19e5[0x19f4 - 0x19e5];
 	float m_flLeakStart;	// 0x19f4
