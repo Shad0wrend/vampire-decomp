@@ -40,6 +40,7 @@
 0x100010e6 func   ?sub_102e0b80@@YIXPAD@Z sub_102e0b80
 0x100010eb func   ?vfunc271@CRagdollProp@@UAEXHH@Z CRagdollProp::vfunc271
 0x100010f5 func   ?sub_101b65e0@CUtlVector16@@QAEXXZ CUtlVector16::sub_101b65e0
+0x100010fa func   ?sub_101728b0@CBasePlayer@@QAEXXZ CBasePlayer::sub_101728b0
 0x100010ff func   ?vfunc3@CTEMuzzleFlash@@UAEXHH@Z CTEMuzzleFlash::vfunc3
 0x10001109 func   ?vfunc117@CGameSign@@UAEHXZ CGameSign::vfunc117
 0x1000110e func   ?vfunc448@CNPC_VAsianVampire@@QAEXH@Z CNPC_VAsianVampire::vfunc448

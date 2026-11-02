@@ -66632,6 +66632,20 @@ int sub_10172830(CEntView *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101728b0 size=0x26
+#include "CBasePlayer.h"
+
+// TARGET: CBasePlayer::sub_101728b0
+void CBasePlayer::sub_101728b0()
+{
+	m_n20E8 = -1;
+	m_b229A = 0;
+	m_n1A84 = 0;
+	m_n1A94 = 0;
+	vfunc444();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10174550 size=0x12
 struct CFlagSet10174550 {
     char pad0[0x1f14];
