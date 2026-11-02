@@ -30,6 +30,30 @@ char CWeaponGravityGun::vfunc316(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10149fc0 size=0x2b
+#include "CWeaponGravityGun.h"
+
+struct CGargoyleMemberUnit {
+	void sub_1000a123();
+};
+
+struct CGargoyleBaseUnit {
+	void sub_10013a57();
+};
+
+void __cdecl sub_10009fc5(void *p);
+
+// TARGET: CWeaponGravityGun::vfunc5
+CBaseCombatWeapon *CWeaponGravityGun::vfunc5(unsigned int flags)
+{
+	((CGargoyleMemberUnit *)((char *)this + 0x93c))->sub_1000a123();
+	((CGargoyleBaseUnit *)this)->sub_10013a57();
+	if (flags & 1)
+		sub_10009fc5(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014a000 size=0x30
 #include "CWeaponGravityGun.h"
 void CWeaponGravityGun::vfunc103()

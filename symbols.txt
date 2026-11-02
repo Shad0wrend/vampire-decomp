@@ -521,6 +521,7 @@
 0x10001d9d func   ?sub_103f4bf0@@YAHXZ sub_103f4bf0
 0x10001da2 func   ?vfunc498@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc498
 0x10001da7 func   ?sub_1019f1f0@CRopeKeyframe@@QAEXH@Z CRopeKeyframe::sub_1019f1f0
+0x10001dac func   ?vfunc5@CWeaponGravityGun@@UAEPAVCBaseCombatWeapon@@I@Z CWeaponGravityGun::vfunc5
 0x10001db1 func   ?sub_10265800@@YAEXZ sub_10265800
 0x10001db6 func   ?vfunc272@CVampireProjectile_MingXiaoSpit@@UAEXPBVVector@@0PAVCBaseEntity@@HMPBD2@Z CVampireProjectile_MingXiaoSpit::vfunc272
 0x10001dbb func   ?sub_10389ea0@@YADXZ sub_10389ea0
