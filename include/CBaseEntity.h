@@ -322,4 +322,5 @@ public:
 	float m_angVel3c8[3];	// 0x03c8: the angular velocity SimulateAngles integrates
 	float m_vel3d4[3];
 	void vfunc212(int set);	// as in CBaseAnimating (transplant)
+	int vfunc240();	// slot 240
 };
