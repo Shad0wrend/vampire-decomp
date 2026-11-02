@@ -839,6 +839,7 @@
 0x100025f9 func   ?sub_1029e840@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_1029e840
 0x100025fe func   ?vfunc103@CMultiSource@@UAEXXZ CMultiSource::vfunc103
 0x10002603 func   ?sub_10214080@CPropHaunted@@QAEXPBD@Z CPropHaunted::sub_10214080
+0x10002608 func   ?sub_10087600@@YAXXZ sub_10087600
 0x1000260d func   ?sub_101ed210@StatDefault2@@QAE_NPAUCVFeatKV@@@Z StatDefault2::sub_101ed210
 0x1000261c func   ?sub_10204f60@CUnknown10204f60@@QAEHH@Z CUnknown10204f60::sub_10204f60
 0x10002621 func   _item_p_occult_strength item_p_occult_strength
