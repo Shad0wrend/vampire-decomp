@@ -75,7 +75,8 @@ public:
 	const char *m_str560;
 	int m_field564;
 	const char *m_str568;
-	char m_pad056c[0x578 - 0x56c];
+	float m_flBlockDamage56c;	// 0x56c: the damage dealt to an entity that blocks the movement (vfunc178)
+	char m_pad0570[0x578 - 0x570];
 	COutputEvent m_Output578;	// 0x578
 	COutputEvent m_Output590;	// 0x590: OnFullyClosed-like
 	COutputEvent m_Output5a8;	// 0x5a8
