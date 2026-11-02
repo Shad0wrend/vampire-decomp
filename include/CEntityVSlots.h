@@ -227,7 +227,8 @@ public:
 	virtual CUnknown10359c50 *slot580();	// NPC: the id space that translates a global condition / schedule id to the local one
 	EVS(581) EVS(582) EVS(583)
 	virtual char slot584(CEntityVSlots *pNpc, const char *pszSequence, char bLoop);	// scripted sequence: starts the sequence on the NPC (CCineNPC::vfunc584)
-	EVS(585) EVS(586) EVS(587) EVS(588) EVS(589)
+	EVS(585) virtual void slot586(CEntityVSlots *pNpc);	// scripted sequence: hands the NPC over (CCineNPC::sub_101a8640 calls it with the NPC after the sequence finished; other callers pass a handle slot, same one-argument shape)
+	EVS(587) EVS(588) EVS(589)
 	EVS(590) EVS(591) EVS(592) EVS(593) EVS(594) EVS(595) EVS(596) EVS(597)
 	virtual void slot598(CEntityVSlots *pEntity);	// NPC: told about an entity (the witness clear-out hands it the entity that went away)
 	virtual char slot599(CEntityVSlots *pEnemy);	// NPC: may take a ranged position now (CNPC_VHuman::vfunc605 passes slot 167's entity), a boolean answer in al
