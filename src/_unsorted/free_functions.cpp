@@ -159836,6 +159836,40 @@ void sub_10359c50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10359cf0 size=0x43
+#include "CGeneric_NPC.h"
+
+void *sub_100aa720(int size);
+extern char g_10629bd0[];
+
+#define VD10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CGenericNpcVt
+{
+	VD10(a) VD10(b) VD10(c) VD10(d) VD10(e) VD10(f) VD10(g) VD10(h) VD10(i) VD10(j)
+	virtual void s100(); virtual void s101(); virtual void s102(); virtual void s103(); virtual void s104(); virtual void s105();
+	virtual void vfunc106(const char *pszName);
+};
+
+struct CGenericNpcCtor
+{
+	CGeneric_NPC *sub_10359ec0();
+};
+
+// TARGET: npc_generic
+extern "C" CBaseEntity *npc_generic()
+{
+	void *mem = sub_100aa720(0x6660);
+	CGeneric_NPC *p;
+	if (mem)
+		p = ((CGenericNpcCtor *)mem)->sub_10359ec0();
+	else
+		p = 0;
+	((CGenericNpcVt *)p)->vfunc106(g_10629bd0);
+	return (CBaseEntity *)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10359dc0 size=0xc
 void __fastcall sub_10359de0(void *pThis);
 void * __fastcall sub_10359dc0(void *pThis)
