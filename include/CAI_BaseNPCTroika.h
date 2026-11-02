@@ -369,7 +369,10 @@ public:
 	float m_f6550;	// 0x6550: the volume of the sound sub_102c2680 plays
 	unsigned int m_h6554;
 	const char *m_pszDisposition6558;	// 0x6558: the disposition name handed to sub_102c0f70 on activation (an empty string when null)
-	char m_pad655c[0x65a0 - 0x655c];
+	char m_pad655c[0x658c - 0x655c];
+	CTroikaPatrolRef m_ref658c;	// 0x658c: first patrol path holder (CTroikaReqHolder layout: record at +4)
+	CTroikaPatrolRef m_ref6594;	// 0x6594: second patrol path holder
+	char m_pad659c[0x65a0 - 0x659c];
 	char m_b65a0;	// 0x65a0
 	char m_pad65a1[3];
 	float m_f65a4;	// 0x65a4: a time stamp the idle pick (0x102b7cf0) re-arms
