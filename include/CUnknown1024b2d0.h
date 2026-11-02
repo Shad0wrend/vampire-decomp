@@ -29,5 +29,6 @@ public:
 	CUnknown1024b2d0 *sub_1024b2d0(int arg, int count, char flag);
 	void sub_1024b880();	// removes all elements (stub 0x10010785)
 	const char *sub_1024b830(CUnknown1024b2d0Id id);	// the string of the 12 byte element id (empty string for 0xffff); called through the stub at 0x10002202
+	CUnknown1024b2d0Id *sub_1024b5e0(CUnknown1024b2d0Id *pOut, const char *pszName);	// "AddString"-like (ret 8, stub 0x10005c95): interns the string, stores its id in *pOut and returns pOut; called on CSoundEmitterSystemBase +0x70 by RenameSound
 	CUnknown1024b2d0Id sub_1024b400(const char *pszName);	// the id of the element with this string (0xffff when there is none); returned through a hidden pointer (stub 0x10008db4)
 };
