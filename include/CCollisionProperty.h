@@ -74,7 +74,7 @@ public:
 	void sub_100dd630(Vector *pOutMins, Vector *pOutMaxs);	// the bounds as stored (solid type 0 / 2 or flag bit 7), else the symmetric box that holds them: per axis the larger absolute value of mins / maxs, negated for the mins
 	void sub_100dd450(Vector *pMins, Vector *pMaxs);	// "CCollisionProperty::WorldSpaceSurroundingBounds"-like: the world bounds of the outer entity (from its physics object, slot 49 of it through the global at 0x1072393c slot 18, else the collision origin twice), grown by the trigger bounds (slot 3) when bit 8 of the solid flags is set
 	void sub_100dd740(bool bWorld, Vector *pMins, Vector *pMaxs);	// stub-less member: bWorld gives sub_100dd450(pMins, pMaxs), else the virtual slot 3 (vfunc3) with the same two vectors
-	void sub_100dd600(Vector *pMins, Vector *pMaxs);	// stub 0x10011f54, run for surround type 2
+	bool sub_100dd600(Vector *pMins, Vector *pMaxs);	// stub 0x10011f54, run for surround type 2
 	void sub_100dd780(Vector *pMins, Vector *pMaxs);	// stub 0x10012c9c: recomputes the surrounding bounds, called by slot 15 when the dirty flag is set
 	Vector *sub_104103c0(const Vector &in, Vector *pResult);	// "CCollisionProperty::CollisionToWorldSpace": the entity-space bounds (solid type neither 0 nor 2, flag bit 7 clear) with non-zero angles go through the collision transform (VectorTransform), else collision origin + in
 	float *sub_100dcc20(const float *pPoint, float *pOut);	// "CCollisionProperty::WorldToNormalizedSpace" (plain member): the point in collision space (entity-space bounds with non-zero angles go through the inverse collision transform, else the point minus the collision origin), normalised by the bounds (sub_100dc9f0); returns pOut
