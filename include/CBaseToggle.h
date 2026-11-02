@@ -20,6 +20,7 @@ public:
 	void sub_101c1520(Vector *pPosition, float flSpeed);	// "CBaseToggle::LinearMove", stub 0x10008076, called directly
 	void sub_101c17e0(Vector *pAngles, int speed);	// stub 0x1000dab2, called directly
 	void vfunc133();	// slot 133: ends the running move (linear / angular by the state at +0x558), then calls the think function at +0x114
+	float vfunc152();	// slot 152: the toggle wait time (float at +0x500)
 	void sub_10013728(Vector *pVelocity);	// stub 0x10013728: sets the local velocity
 
 	char m_pad03e0[0x3f4 - sizeof(CBaseEntity)];
