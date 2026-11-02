@@ -212,6 +212,22 @@ int CAI_Motor::vfunc10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e2150 size=0x20
+#include "CAI_Motor.h"
+
+class CUnknown102d9040
+{
+public:
+	void sub_102d8f20(CBaseEntity *pEnt, const char *pszName, float a, float b, float c);
+};
+
+// TARGET: CAI_Motor::vfunc12
+void CAI_Motor::vfunc12(CBaseEntity *pEnt, const char *pszName, float a, float b, float c)
+{
+	((CUnknown102d9040 *)((char *)this + 0x54))->sub_102d8f20(pEnt, pszName, a, b, c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e2180 size=0x1a6
 #include "CAI_Motor.h"
 #include "CEntityVSlots.h"
