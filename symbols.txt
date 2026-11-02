@@ -11408,6 +11408,7 @@
 0x10013188 func   ?sub_103f7030@@YAHXZ sub_103f7030
 0x1001319c func   ?vfunc497@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc497
 0x100131a1 func   ?vfunc461@CNPC_VTest@@QAEHXZ CNPC_VTest::vfunc461
+0x100131a6 func   ?sub_102c5870@@YAPAXXZ sub_102c5870
 0x100131ab func   ?vfunc5@CFuncPlatRot@@QAEPAV1@I@Z CFuncPlatRot::vfunc5
 0x100131b0 func   ?vfunc103@CPropMover@@UAEXXZ CPropMover::vfunc103
 0x100131ba func   ??0CTEBloodSprite@@QAE@PBD@Z CTEBloodSprite::CTEBloodSprite

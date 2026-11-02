@@ -3016,6 +3016,15 @@ void CAI_BaseNPCTroika::vfunc419()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c5870 size=0x6
+extern void *g_109248d4;
+
+void *sub_102c5870(void)
+{
+    return &g_109248d4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c5890 size=0x3
 #include "CAI_BaseNPCTroika.h"
 
