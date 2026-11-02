@@ -2,6 +2,7 @@
 #pragma once
 
 #include "utlvector.h"
+#include "CDialogDependency.h"
 
 struct DialogLine
 {
