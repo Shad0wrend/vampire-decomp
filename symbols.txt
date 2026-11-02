@@ -1253,6 +1253,7 @@
 0x1000304e func   ?sub_10428f10@@YAHPAUCStudioHdrView@@PBD@Z sub_10428f10
 0x10003053 func   ?sub_103a5170@@YIPAXPAX@Z sub_103a5170
 0x10003058 func   _item_k_museum_storeroom_key item_k_museum_storeroom_key
+0x1000305d func   ?vfunc0@?$CUtlVectorDataOps@V?$CUtlVector@UEXPERIENCE_ENTRY@@V?$CUtlMemory@UEXPERIENCE_ENTRY@@@@@@$08@@UAEXPAX0@Z CUtlVectorDataOps<CUtlVector<EXPERIENCE_ENTRY,CUtlMemory<EXPERIENCE_ENTRY> >,9>::vfunc0
 0x10003062 func   ?sub_10079230@CUnknown10079230@@QAEPAXXZ CUnknown10079230::sub_10079230
 0x1000306c func   ?sub_1017cf90@@YIPAXPAUHolder@@@Z sub_1017cf90
 0x10003071 func   ?sub_103adbe0@@YIPAXPAX@Z sub_103adbe0
