@@ -4635,6 +4635,7 @@
 0x1000893b func   ?sub_101d6bd0@CUnknown101d6bd0@@QAEPAXXZ CUnknown101d6bd0::sub_101d6bd0
 0x10008940 func   ?vfunc5@CPhysImpact@@UAEPAV1@I@Z CPhysImpact::vfunc5
 0x10008945 func   ?sub_100deb30@CUnknown100deb30@@QAEDXZ CUnknown100deb30::sub_100deb30
+0x1000894a func   ?vfunc434@CNPC_VHuman@@UAEXXZ CNPC_VHuman::vfunc434
 0x1000894f func   ?sub_10248b60@@YIPADPAD@Z sub_10248b60
 0x10008954 func   ?sub_10232570@@YGXH@Z sub_10232570
 0x10008959 func   ?sub_1012e650@CEdictHolder1012e650@@QAEXPAUCEdictSrc1012e650@@@Z CEdictHolder1012e650::sub_1012e650

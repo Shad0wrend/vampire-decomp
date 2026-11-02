@@ -210,6 +210,13 @@ int CNPC_VHuman::vfunc376(int act)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10385a30 size=0x1
+#include "CNPC_VHuman.h"
+// TARGET: CNPC_VHuman::vfunc434
+void CNPC_VHuman::vfunc434() {
+}
+// END FUNCTION
+
 // FUNCTION: 0x10385ab0 size=0x12c
 #include "CNPC_VHuman.h"
 #include "CUnknown1025ddd0.h"
