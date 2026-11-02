@@ -12510,6 +12510,7 @@
 0x10014fb5 func   ?sub_101e8fe0@CUnknown101e8fe0@@QAEMXZ CUnknown101e8fe0::sub_101e8fe0
 0x10014fba func   ?vfunc5@CEnvParticle@@QAEPAV1@I@Z CEnvParticle::vfunc5
 0x10014fbf func   ?RemoveRebalance@?$CUtlRBTree@UCRBTree16Entry8@@G@@QAEXG@Z CUtlRBTree<CRBTree16Entry8,unsigned short>::RemoveRebalance
+0x10014fc9 func   ?sub_100ed460@CUtlVector68@@QAEXHH@Z CUtlVector68::sub_100ed460
 0x10014fce func   ?sub_1013e3a0@@YIXPAXHH@Z sub_1013e3a0
 0x10014fd8 func   ?sub_100db5c0@@YAXXZ sub_100db5c0
 0x10014fe2 func   ?vfunc130@CAI_Hint@@UAEXH@Z CAI_Hint::vfunc130

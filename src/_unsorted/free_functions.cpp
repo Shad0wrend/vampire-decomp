@@ -45095,6 +45095,18 @@ int sub_100ed3b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ed460 size=0x4c
+#include "CUtlVector68.h"
+
+// TARGET: CUtlVector68::sub_100ed460
+void CUtlVector68::sub_100ed460(int elem, int num)
+{
+	int toMove = m_size - elem - num;
+	if (toMove > 0 && num > 0)
+		memmove(&m_pMemory[elem + num], &m_pMemory[elem], toMove * sizeof(CUtlVector68Elem));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ed4d0 size=0x18
 struct CBlock4k
 {
