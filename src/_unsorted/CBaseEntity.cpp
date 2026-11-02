@@ -179,6 +179,17 @@ float CBaseEntity::vfunc49()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026850 size=0x2a
+#include "CBaseEntity.h"
+#include "CEntitySoundOriginView.h"
+
+// TARGET: CBaseEntity::vfunc50
+void CBaseEntity::vfunc50(Vector *pOut)
+{
+	*pOut = ((CEntitySoundOriginView *)this)->WorldSpaceCenter();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026890 size=0x2a
 #include "CBaseEntity.h"
 #include "CEntitySoundOriginView.h"
