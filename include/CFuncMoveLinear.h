@@ -40,7 +40,7 @@ public:
 
 	// Slot 223, declared as a plain member.
 	bool vfunc223();	// "CBaseEntity::IsSolidFlagSet" (slot 223): scope trace, reports when bit 2 of the byte at +0x2b4 is clear, returns true
-	void vfunc178(CBaseEntity *pOther);	// slot 178 \"CFuncMoveLinear::Blocked\" (plain member): with a damage value at +0x56c a damage info (this as attacker and inflictor, the value, bits 1, 0, 0, -1) is handed to pOther (CBaseEntity::sub_100a1250)
+	void vfunc178(CBaseEntity *pOther);	// slot 178 "CFuncMoveLinear::Blocked" (plain member): with a damage value at +0x56c a damage info (this as attacker and inflictor, the value, bits 1, 0, 0, -1) is handed to pOther (CBaseEntity::sub_100a1250)
 	void vfunc173(void *pActivator, void *pCaller, int useType, float flValue);	// slot 173 "CFuncMoveLinear::Use" (plain member): only for USE_SET (2): the value (capped at 1.0) is the fraction of the way from position 1 to position 2; MoveTo it at ten times its distance from the local origin (slot 220)
 	void sub_100a6150(int a, int b, int c);	// reports a message
 	void sub_10116570(Vector vecPosition, float flSpeed);	// "CFuncMoveLinear::MoveTo" (stub 0x1000c7c5): starts the movement towards vecPosition at flSpeed
