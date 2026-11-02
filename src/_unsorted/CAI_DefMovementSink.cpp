@@ -48,3 +48,11 @@ bool __stdcall sub_101a6400(int a, int b, int c, int d)
 	return false;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1027c770 size=0x5
+// TARGET: CAI_DefMovementSink::vfunc1
+bool CAI_DefMovementSink::vfunc1(int a, int b, int c)
+{
+	return false;
+}
+// END FUNCTION

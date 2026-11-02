@@ -9917,6 +9917,7 @@
 0x10010d16 func   ?sub_10071490@CUnk10071840@@QAEXPAUinputdata_t@@@Z CUnk10071840::sub_10071490
 0x10010d1b func   ?sub_10180e70@@YAXXZ sub_10180e70
 0x10010d2a func   ?vfunc360@CWeaponMelee_Baton@@QAEHXZ CWeaponMelee_Baton::vfunc360
+0x10010d34 func   ?vfunc1@CAI_DefMovementSink@@UAE_NHHH@Z CAI_DefMovementSink::vfunc1
 0x10010d43 func   ?sub_10161d20@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_10161d20
 0x10010d48 func   ?vfunc127@CBaseCombatCharacter@@UAEHH@Z CBaseCombatCharacter::vfunc127
 0x10010d4d func   ?sub_101b72e0@CMem8_t@@QAEXH@Z CMem8_t::sub_101b72e0
