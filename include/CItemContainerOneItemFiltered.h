@@ -9,6 +9,7 @@ public:
 	char pad0004[0x158c - 4];
 	int m_n158c;
 
+	CItemContainerOneItemFiltered *sub_10209f60();	// constructor stub (0x10209f60)
 	void sub_10209350();	// CItemContainer::vfunc103
 	void sub_100b3b00();	// CBaseEntity::sub_100b3b00
 	CItemContainerOneItemFiltered *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
