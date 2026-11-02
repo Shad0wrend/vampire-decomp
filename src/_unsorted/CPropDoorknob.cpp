@@ -1,6 +1,26 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1020ac70 size=0x21
+#include "CPropDoorknob.h"
+
+struct CPropDoorknobHelper
+{
+	void sub_10009e6c(int bFlag);
+};
+
+// TARGET: CPropDoorknob::vfunc130
+void CPropDoorknob::vfunc130(int bFlag)
+{
+	((CPropDoorknobHelper *)this)->sub_10009e6c(bFlag);
+	if ((char)bFlag)
+	{
+		void (__fastcall *pfn)(void *) = (void (__fastcall *)(void *))(*(void ***)this)[0x440 / 4];
+		pfn(this);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10225930 size=0x8
 #include "CPropDoorknob.h"
 // TARGET: CPropDoorknob::sub_10225930
