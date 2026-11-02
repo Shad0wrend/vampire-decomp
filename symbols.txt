@@ -12817,6 +12817,7 @@
 0x10015d02 func   ?vfunc230@CWorld@@UAEXHH@Z CWorld::vfunc230
 0x10015d07 func   ?sub_101fc5b0@CVStatCost_t@@QAEPBDXZ CVStatCost_t::sub_101fc5b0
 0x10015d0c func   ?vfunc461@CNPC_VSheriffMan@@QAEHXZ CNPC_VSheriffMan::vfunc461
+0x10015d11 func   ?sub_102c7250@@YAXXZ sub_102c7250
 0x10015d16 func   ?sub_101f0440@CFoo@@QAEPADH@Z CFoo::sub_101f0440
 0x10015d1b func   ?sub_1042fce0@@YAII@Z sub_1042fce0
 0x10015d20 func   ?vfunc5@CGenericNPC@@QAEPAV1@I@Z CGenericNPC::vfunc5
