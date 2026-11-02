@@ -63,6 +63,9 @@ public:
 	void sub_10013110(float flSpeed);	// stub 0x10013110 for 0x102c43b0
 	void sub_1039aa20();	// when the time at +0x1560 plus a constant lies in the past: sets stat 0xf of the active stat list to 0 and runs sub_10273e80(0)
 	CNPC_VMingXiaoTentacle *sub_10397c70(CNPC_VMingXiaoTentacle *pTentacle);	// replaces a tentacle: when pTentacle is the entity of its slot's handle (+0x66a8[index]) and the slot's flag byte (+0x6684[index]) is set, spawns a new tentacle at its absolute origin (the NPC maker behind the global 0x1093bc54), stores its handle at +0x668c[index], gives it the old one's angles, its index (+0x6674), this NPC as owner (+0x6670) and the flag byte +0x6678, then slot 614 and sub_10397380; returns the new tentacle (null when there is none)
+	CBaseEntity *sub_10398b20(int *pSide, int *pOut1, int *pOut2);	// stub 0x10004a2a (function 0x10398b20, ret 12), unmatched: the target search, called with (&m_nSide671c, &m_n6720, &m_n672c); its result's slot 1 (GetRefEHandle) is stored at m_h6718, null stores -1
+	void sub_10396bc0();	// the target-switch step (called by vfunc438); returns 0 or 0x167 (int in eax)
+	void sub_102c4380(CBaseEntity *pEnt);	// stub 0x10008a94, ret 4 (CAI_BaseNPCTroika), called with the target entity
 	void sub_10397380(CNPC_VMingXiaoTentacle *pTentacle);	// stub 0x1000394f, called with the new tentacle
 	bool vfunc100(int a, int b, int c);	// slot 100 "CNPC_VMingXiao::TestHitboxes": scope trace (entity name or "NULL_ENTITY"), false without a studio header, without the flag byte at +0x6678 or with fewer than 7 hitbox sets; otherwise true after the first hitbox set (0, then 1..6 whose availability test sub_10398000 passes) that sub_10399ef0 accepts
 	bool sub_10399ef0(int a, int b, int c, void *pHdr, void *pSet, int pCache);	// the per-set hitbox test (stdcall, 6 arguments; the caller loads ecx with this)
