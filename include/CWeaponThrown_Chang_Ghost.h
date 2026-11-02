@@ -29,7 +29,13 @@ public:
 	int m_nTakeDamage;	// 0x1fc
 	char m_pad0200[0x210 - 0x200];
 	int m_iHealth;	// 0x210
-	char m_pad0214[0x6f0 - 0x214];
+	char m_pad0214[0x268 - 0x214];
+	unsigned int m_flags268;	// 0x268: bit 11 = abs transform dirty (CBaseEntity::sub_100b1d10 refreshes it)
+	char m_pad026c[0x36c - 0x26c];
+	void *m_pPhysObj36c;	// 0x36c: the physics object
+	char m_pad0370[0x3bc - 0x370];
+	float m_vecVelocity3bc[3];	// 0x3bc: the entity's velocity (x, y, z), read after sub_100b1d10
+	char m_pad03c8[0x6f0 - 0x3c8];
 	int m_nSequence;	// 0x6f0
 	char m_pad06f4[4];
 	int m_n06f8;	// 0x6f8
