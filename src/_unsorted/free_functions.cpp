@@ -119545,6 +119545,29 @@ void CUnknown102461b0::sub_102461b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102461d0 size=0x26
+struct CNode102461d0
+{
+	virtual bool vfunc0();
+	virtual bool vfunc1();
+	int m_unk4;	// +4
+	CNode102461d0 *m_pNext8;	// +8
+	void sub_102461b0();
+};
+
+extern CNode102461d0 *g_10753434;
+
+// TARGET: sub_102461d0
+void sub_102461d0()
+{
+	for (CNode102461d0 *p = g_10753434; p; p = p->m_pNext8)
+	{
+		if (!p->vfunc1())
+			p->sub_102461b0();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10246210 size=0x12
 #include "vampire.h"
 
