@@ -9087,6 +9087,7 @@
 0x1000fde4 func   ?sub_10199ce0@@YAPAUPyObject@@PAU1@0@Z sub_10199ce0
 0x1000fde9 func   ?vfunc3@CVTSDependencySaveRestoreDataOps@@UAEHH@Z CVTSDependencySaveRestoreDataOps::vfunc3
 0x1000fdee func   ?sub_1007ee60@CUtlVector16@@QAEXXZ CUtlVector16::sub_1007ee60
+0x1000fdf3 func   ?sub_10087aa0@@YAXXZ sub_10087aa0
 0x1000fdfd func   ?sub_10042a00@UtlMem@@QAEXXZ UtlMem::sub_10042a00
 0x1000fe02 func   ?sub_102df2f0@@YAHXZ sub_102df2f0
 0x1000fe0c func   ?sub_10303fd0@CAI_Pathfinder@@QAEDPBM0PAVCBaseEntity@@@Z CAI_Pathfinder::sub_10303fd0
