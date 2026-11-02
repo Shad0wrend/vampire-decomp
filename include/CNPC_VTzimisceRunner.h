@@ -686,5 +686,5 @@ public:
 	virtual void x605(); virtual void x606(); virtual void x607(); virtual void x608(); virtual void x609();
 	virtual void x610(); virtual void x611(); virtual void x612(); virtual void x613(); virtual void x614();
 	virtual void x615(); virtual void x616(); virtual void x617();
-	virtual void slot618();	// the sound step called by the anim event handler (vfunc618 is its plain member twin)
+	virtual void slot618(char bRight);	// game slot 619 (this header counts one behind from slot 319 on): the footstep sound step, called by the anim event handlers with 1 (right) / 0 (left); vfunc619 is its plain member twin
 };
