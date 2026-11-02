@@ -422,6 +422,13 @@ void __stdcall sub_10026dd0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026df0 size=0x3
+// TARGET: sub_10026df0
+void __stdcall sub_10026df0(int a, int b)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026e70 size=0x4c
 extern Vector g_1070d1b0;
 inline int VecNe(const Vector &a, const Vector &b)
