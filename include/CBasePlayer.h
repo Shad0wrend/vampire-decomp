@@ -219,7 +219,8 @@ public:
 	int m_n146c;	// 0x146c: the frenzy count
 	char m_pad1470[0x1475 - 0x1470];
 	char m_b1475;
-	char m_pad1476[0x1478 - 0x1476];
+	char m_b1476;	// 0x1476: cleared by the death handler (vfunc144)
+	char m_pad1477;
 	float m_f1478;	// 0x1478: the time the fade of the feeding started / ends
 	float m_f147C;	// 0x147C
 	char m_pad1480[0x148c - 0x1480];	// 0x1480 .. 0x148B
