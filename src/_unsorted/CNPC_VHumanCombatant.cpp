@@ -12,6 +12,17 @@ datamap_t * CNPC_VHumanCombatant::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10386ae0 size=0x6
+#include "CNPC_VHumanCombatant.h"
+
+extern int g_1093b498;
+
+void *CNPC_VHumanCombatant::vfunc580()
+{
+	return (void *)&g_1093b498;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10386b20 size=0x1e
 #include "CNPC_VHumanCombatant.h"
 

@@ -11108,6 +11108,7 @@
 0x1001291d func   ?sub_1009bc30@CBaseEntity@@QAEXHPADH@Z CBaseEntity::sub_1009bc30
 0x10012927 func   ?vfunc330@CBaseCombatWeapon@@UAEHXZ CBaseCombatWeapon::vfunc330
 0x1001292c func   ?vfunc615@CNPC_VWerewolf@@UAE_NXZ CNPC_VWerewolf::vfunc615
+0x10012931 func   ?vfunc580@CNPC_VHumanCombatant@@QAEPAXXZ CNPC_VHumanCombatant::vfunc580
 0x10012936 func   ?vfunc461@CNPC_VAsianVampire@@QAEHXZ CNPC_VAsianVampire::vfunc461
 0x1001293b func   ?vfunc81@CBaseCombatCharacter@@UAEHXZ CBaseCombatCharacter::vfunc81
 0x10012940 func   ?vfunc0@CEffectsServer@@UAEPAV1@I@Z CEffectsServer::vfunc0
