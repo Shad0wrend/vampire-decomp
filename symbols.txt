@@ -10296,6 +10296,7 @@
 0x10011482 func   ?sub_101ab3d0@CServerNetworkProperty@@QAEPAV1@XZ CServerNetworkProperty::sub_101ab3d0
 0x10011487 func   ?sub_10077370@CUnknown10077290@@QAEPAUCUnknown10077290Entry@@PBD@Z CUnknown10077290::sub_10077370
 0x10011496 func   ?sub_101a6820@@YG_NH@Z sub_101a6820
+0x100114a0 func   ?vfunc452@CNPC_VVentrue@@UAEDXZ CNPC_VVentrue::vfunc452
 0x100114aa func   ?sub_102e7e40@@YIXPAUCOwner@@@Z sub_102e7e40
 0x100114af func   ?sub_100d6210@@YAXXZ sub_100d6210
 0x100114b9 func   ?sub_10185450@UtlMem@@QAEXXZ UtlMem::sub_10185450

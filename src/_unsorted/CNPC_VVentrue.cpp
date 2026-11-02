@@ -40,6 +40,18 @@ CNPC_VVentrue *CNPC_VVentrue::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c78f0 size=0x6
+#include "CNPC_VVentrue.h"
+
+extern char g_1065f0e0;
+
+// TARGET: CNPC_VVentrue::vfunc452
+char CNPC_VVentrue::vfunc452()
+{
+	return g_1065f0e0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c7950 size=0x1d
 #include "CNPC_VVentrue.h"
 struct A { int sub_10012300(int); };
