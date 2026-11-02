@@ -22,7 +22,10 @@ struct CTakeDamageInfo
 	void *m_pInflictor;	// 0x2c
 	float m_flDamage;	// 0x30
 	float m_flDamage34;	// 0x34
-	int m_n38;	// 0x38
+	union {
+		int m_n38;	// 0x38
+		unsigned int m_nFlags38;	// 0x38: or-ed with the VDmg's +0x10 field; bit 25 = 0x2000000, bit 1 / bit 26 (0x4000002) tested by VPhysicsTakeDamage
+	};
 	int m_n3c;	// 0x3c
 	int m_bitsDamageType;	// 0x40
 	float m_fl44;	// 0x44: 1.0f
