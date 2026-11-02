@@ -1083,6 +1083,7 @@
 0x10002c1b func   ?sub_102dfa20@SListOwner@@QAE_NPAVCBaseEntity@@@Z SListOwner::sub_102dfa20
 0x10002c20 func   ?vfunc272@CVampireProjectile@@UAEXPBVVector@@0PAVCBaseEntity@@HMPBD2@Z CVampireProjectile::vfunc272
 0x10002c2a func   ?sub_100785d0@CUnknown100785d0@@QAEHXZ CUnknown100785d0::sub_100785d0
+0x10002c34 func   ?sub_1004fc30@@YAHXZ sub_1004fc30
 0x10002c39 func   ?sub_10312f30@@YAXXZ sub_10312f30
 0x10002c3e func   ?sub_101ee2b0@@YAHXZ sub_101ee2b0
 0x10002c48 func   ?sub_101bb500@@YAHXZ sub_101bb500

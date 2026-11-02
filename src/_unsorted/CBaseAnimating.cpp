@@ -1,6 +1,11 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1004fc30 size=0x3
+// TARGET: sub_1004fc30
+int __cdecl sub_1004fc30() { return 0; }
+// END FUNCTION
+
 // FUNCTION: 0x1008a760 size=0x6
 #include "CBaseAnimating.h"
 namespace lifted {
