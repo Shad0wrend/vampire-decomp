@@ -98,9 +98,11 @@ public:
 	void *m_pEdict2e0;	// 0x2e0: the edict (IndexOfEdict takes it)
 	char m_pad02e4[0x450 - 0x2e4];
 	CPhysConstraintObj *m_pConstraint450;	// 0x450: the physics constraint object
-	char m_pad0454[0x45c - 0x454];
+	const char *m_pszAttach1454;	// 0x454: name of the first attached entity (string_t; "" in the warning when null)
+	const char *m_pszAttach2458;	// 0x458: name of the second attached entity (null = the world)
 	const char *m_psz45c;	// 0x045c: a name passed to the sound system's slot 0 by vfunc104 (the empty string when it is null)
-	char m_pad0460[0x46c - 0x460];
+	const char *m_pszSystem460;	// 0x460: name of the physics constraint system entity sub_1002b450 looks up
+	char m_pad0464[0x46c - 0x464];
 	int m_n46c;	// 0x46c: the engine counter (gpGlobals +0x18) seen last by vfunc183
 	COutputEvent m_OnBreak470;	// 0x470: the output fired when the constraint breaks (0x18 bytes; its destructor body is COutputEvent::sub_100cd2d0)
 	void sub_1002b130();	// 0x1002b130: the destructor body (same function as the stub sub_100121ac): vptr 0x10447134, g_10723940->vfunc23(m_pConstraint450), m_OnBreak470 destructor, tail jump to sub_1000cb8a
