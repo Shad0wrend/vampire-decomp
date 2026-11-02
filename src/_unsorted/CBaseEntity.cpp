@@ -482,6 +482,14 @@ void __stdcall sub_10026ee0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026f00 size=0x5
+// TARGET: sub_10026f00
+bool __stdcall sub_10026f00(int a)
+{
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026f20 size=0x21
 bool __fastcall sub_100117d9(void *p);
 

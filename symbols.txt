@@ -5119,6 +5119,7 @@
 0x10009304 func   ?vfunc372@CAI_BaseHumanoid@@QAE?AVVector@@XZ CAI_BaseHumanoid::vfunc372
 0x10009309 func   ?sub_101b0110@CSoundEmitterSystem@@QAEPAV1@E@Z CSoundEmitterSystem::sub_101b0110
 0x1000930e func   ?sub_10293df0@CUnknown10293df0@@QAEXM@Z CUnknown10293df0::sub_10293df0
+0x10009318 func   ?sub_10026f00@@YG_NH@Z sub_10026f00
 0x1000931d func   ?sub_101e8ea0@CUnknown101e8ea0@@QAEHXZ CUnknown101e8ea0::sub_101e8ea0
 0x10009322 func   ?sub_102ecc40@CAI_Navigator@@QAEPAXXZ CAI_Navigator::sub_102ecc40
 0x1000932c func   ?vfunc326@CWeaponPhysCannon@@UAEXXZ CWeaponPhysCannon::vfunc326
