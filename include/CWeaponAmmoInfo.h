@@ -15,26 +15,39 @@ struct IKVNode
 	virtual IKVNode *vfunc4();
 	virtual IKVNode *vfunc5();
 	virtual IKVNode *vfunc6(const char *pszName);	// slot 6 (+0x18): used on the file object: FindKey("Magazine")
-	virtual IKVNode *vfunc7();	// slot 7 (+0x1c): the next section after vfunc6's (loop 'GetNextKey')
+	virtual IKVNode *vfunc7();	// slot 7 (+0x1c): the next section after vfunc6's
 	virtual void vfunc8();
 	virtual void vfunc9();
 	virtual int vfunc10(const char *pszKey, int nDefault);	// GetInt
 	virtual float vfunc11(const char *pszKey, float flDefault);	// GetFloat
 	virtual void vfunc12();
-	virtual const char *vfunc13(const char *pszKey, const char *pszDefault);	// GetString (the string comes back as a pointer, the loaders strncpy it)
+	virtual const char *vfunc13(const char *pszKey, const char *pszDefault);	// GetString (the loaders strncpy the returned pointer)
 };
 
-struct CWeaponSoundData;	// 0x10258c30's WeaponSoundInfo (0x39d0 + 0x19 dwords)
+// 0x10258c30's WeaponSoundInfo, 0xe7a4 bytes (0x39d0 dwords of sound slots, 0x19 dwords of counters); the sound loader
+// is sub_10258c30(IKVNode *pKV, void *pSoundInfo, const char *pszWeaponName) (cdecl, matched).
 
-// One magazine / ammo record, 0x1093c bytes, three of them at CWeaponInfoFile::m_Mags (stride 0x1093c).
+// One magazine / ammo record, 0x1093c bytes, three of them at CWeaponAmmoInfo::m_Mags.
 struct CWeaponMagazineRec
 {
-	int m_nSize;	// 0x00: "Size" (default 0); read back as the default of Default_Size and Dropped_Ammo
+	int m_nSize;	// 0x00: "Size" (default 0); also the default of Default_Size and Dropped_Ammo
 	int m_nAmmoWorth;	// 0x04: "ammo_worth" (default 0x7b)
-	int m_nDefaultSize;	// 0x08: "Default_Size" (default m_nSize)
-	int m_nDroppedAmmo;	// 0x0c: "Dropped_Ammo" (default m_nSize)
+	int m_nDefaultSize;	// 0x08: "Default_Size"
+	int m_nDroppedAmmo;	// 0x0c: "Dropped_Ammo"
 	float m_flReloadTime;	// 0x10: "ReloadTime" (default 0)
-	char m_szType[0x80];	// 0x14: "Type" string, "" when it is "None"
-	char m_szInfoModel[0x80];	// 0x94: "ammoinfomodel" (default: the info object's m_szDefaultModel)
-	char m_szPrintName[0x80];	// 0x118 - 0x80 .. : see below (the print name sits at 0x118)
+	char m_szType[0x80];	// 0x14: "Type" string, left "" when it is "None" (the loader then skips print name and description)
+	char m_szInfoModel[0x80];	// 0x94: "ammoinfomodel" (default: m_szDefaultModel of the info object)
+	char m_pad0114[4];
+	char m_szPrintName[0x80];	// 0x118: "ammoprintname" (default "!!! Missing printname on weapon")
+	char m_szDescription[0x2000];	// 0x198: "ammodescription" (same default; strncpy length 0x2000)
+	char m_SoundInfo[0xe7a4];	// 0x2198: filled by sub_10258c30(pKV node, m_SoundInfo, name)
+};
+
+// The weapon-info object the magazine loader fills (only what 0x10258ef0 touches).
+struct CWeaponAmmoInfo
+{
+	char m_pad0000[0x2388];
+	char m_szDefaultModel[0x80];	// 0x2388: the default string of "ammoinfomodel" (the loader passes its address)
+	char m_pad2408[0x2668 - 0x2408];
+	CWeaponMagazineRec m_Mags[3];	// 0x2668, stride 0x1093c
 };
