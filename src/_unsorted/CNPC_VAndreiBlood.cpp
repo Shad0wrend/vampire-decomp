@@ -38,6 +38,15 @@ CAI_BaseNPC *CNPC_VAndreiBlood::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035c2a0 size=0x6
+extern void *g_1062a230;
+
+void *sub_1035c2a0(void)
+{
+    return &g_1062a230;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035c460 size=0x1d
 #include "CNPC_VAndreiBlood.h"
 struct A { int sub_10012300(int); };
