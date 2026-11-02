@@ -22,6 +22,7 @@ public:
 	void vfunc103();	// slot 103 (Spawn): the "CBaseEntity::SetSolid" scope trace around the collision property's SetSolid(0), SetMoveType(0, 0), clears the material (+0x454) and disabled flag (+0x458), then appends this entity's handle to the global handle list at 0x1070906c
 	void vfunc130(int a);	// slot 130: base implementation, then appends this entity's handle to a global handle list
 	void sub_100fdc00(void *pActivator, char material);	// "...::UpdateMaterial": unless disabled (byte at +0x458) and when the material changes, logs "Player changed material to %d (was %d)" and fires the output at +0x45c (new material is the trigger material) or +0x474 (old material was the trigger material)
+	virtual void *vfunc82();	// slot 82: the class's datamap	// "...::UpdateMaterial": unless disabled (byte at +0x458) and when the material changes, logs "Player changed material to %d (was %d)" and fires the output at +0x45c (new material is the trigger material) or +0x474 (old material was the trigger material)
 
 	char m_pad0004[0x450 - 4];
 	int m_nTriggerMaterial;	// 0x0450
