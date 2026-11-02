@@ -35,6 +35,8 @@ public:
 
 	void vfunc1(void *pSave);	// slot 1: rebuilds the entry table from the handlers' block names, then calls slot 1 of every handler
 	void vfunc2(void *pSave);
+	void vfunc3(void *pSave);	// slot 3 (Save, 0x101a4970, ret 4): the stream (ISave-like, slots 0 tell / 1 seek / 10 WriteInt(const int *, int)); a local CUtlVector<SaveRestoreBlockHeader_t> sized like BlockHeaders() and memset 0xff; WriteInt(&sizeOfHeaderTable) then the local vector through a guarded static CUtlVectorDataOps<CUtlVector<SaveRestoreBlockHeader_t>, 9> (guard 0x109f0a02, object 0x109f0a0c, Save = vfunc0(&SaveRestoreFieldInfo_t{&vec, 0, 0}, pSave)); every handler's slot 3 (Save(pSave), vtable +0xc) stamping its header's m_nLocHeader (position - start); the position then goes to m_nSize (+0x38), the stream seeks back to the start, writes m_nSize (+0x38) and +0x3c, and the real BlockHeaders() vector through the same static ops
+	CUtlVector<SaveRestoreBlockHeader_t> &BlockHeaders() { return *(CUtlVector<SaveRestoreBlockHeader_t> *)&m_pEntries; }	// 0x40: memory +0x40, allocation +0x44, grow +0x48, count +0x4c, elements +0x50 (the members above are views of the same vector)
 	void vfunc4();	// slot 4: calls slot 4 of every handler, then empties the entry table (CUtlVector Purge)
 	void vfunc5();	// slot 5: calls slot 5 of every handler in the list (CUtlVector<void *> at +0x24, count at +0x30)
 	void vfunc7(void *pSave, int a, int b);	// for every handler whose block name is found in the entry table (name at +0, offset at +0x24 unless -1) seeks the save/restore stream to base + offset and forwards (pSave, a, b) to the handler's slot 7; finally seeks to base + m_nSize
