@@ -137,7 +137,7 @@ public:
 	CAI_NPC_V(458) CAI_NPC_V(459)
 	virtual int vfunc460();	// SelectIdealState helper: the NPC's current state, 0 when unset
 	virtual int vfunc461();	// SelectIdealState
-	CAI_NPC_V(462)
+	virtual char vfunc462();
 	virtual void vfunc463(int a, int type);	// "CAI_BaseNPC::SetIdealActivityForType": stores a value picked by `type` (0..14) at +0x5b64
 	virtual int vfunc464();	// GetState: the NPC state (7 is dead; used by CAI_GoalEntity::PruneActors)
 	virtual void vfunc465(int a);	// called by vfunc311 when the value at +0xfec changes
