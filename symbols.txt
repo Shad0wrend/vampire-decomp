@@ -10722,6 +10722,7 @@
 0x10012571 func   ?sub_103ba780@@YG_NPAD@Z sub_103ba780
 0x10012576 func   ?vfunc555@CAI_BaseNPC@@UAEHMM@Z CAI_BaseNPC::vfunc555
 0x1001257b func   ?vfunc482@CNPC_VHuman@@QAEHDH@Z CNPC_VHuman::vfunc482
+0x10012580 func   ?vfunc128@CFuncPlat@@UAEDXZ CFuncPlat::vfunc128
 0x10012585 func   ?vfunc128@CBaseDoor@@UAE_NXZ CBaseDoor::vfunc128
 0x1001258a func   ?sub_100d2880@@YAXXZ sub_100d2880
 0x1001258f func   ?sub_10377970@@YAPAHXZ sub_10377970
