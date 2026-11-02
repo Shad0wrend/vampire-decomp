@@ -110,4 +110,9 @@
 	void sub_1032c580(CBaseEntity *pVictim, int b, char bQuiet);	// CBaseCombatCharacter::vfunc300 (stub 0x100051b9), called directly first by vfunc300 with its own arguments
 	char sub_1033d580(CBasePlayer *pOther);	// CBaseCombatCharacter member (stub 0x1000cb35): called on the victim (pVictim, ecx) with the player as argument by vfunc300: cast `((CBasePlayer *)pVictim)->sub_1033d580(this)`
 	void sub_10177ba0();	// releases the held state: when the field at +0x2304 is set, RemoveFlag(0x4020), SetMoveType(3, 0) (slot 93) and the field cleared
+	void vfunc380();	// slot 380 (plain member) "end of the feeding": CBaseCombatCharacter::vfunc380 (sub_10329a70), sub_101815b0(1), m_b1B6C = 0, sub_1017cef0(0); with the grapple target (m_h1538 when m_n153C != -1) slot 306(target, 0) and by the blood pool m_n14A0 the feeding reactions (sub_101cebc0(this, 0x4a / 0x11 / 0x35, 0), slot 449(0xc, 1))
+	void sub_10329a70();	// CBaseCombatCharacter::vfunc380 (stub 0x10005d94), called directly
+	char sub_10339cd0();	// CBaseCombatCharacter member (stub 0x1000150a): blue-blood-only check, called directly
+	char sub_10339b50();	// CBaseCombatCharacter member (stub 0x1000f939), called on the target
+	char sub_10339c10();	// CBaseCombatCharacter member (stub 0x100144d9), called on the target
 	char vfunc321(int unused);	// slot 321 (plain member): re-arms the random view punch timer (+0x1da8) when it is due, then punches the view by a random angle scaled by the player and punch convars (slot 169)
