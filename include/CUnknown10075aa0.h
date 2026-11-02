@@ -57,6 +57,7 @@ public:
 	char m_b33c;	// 0x33c
 	char m_pad33d[3];
 
+	void sub_10077bd0(int index, int a, int b);	// stub 0x10006717-built record (CUnknown10073b00 ctor with this, a, b) appended to the vector m_vec2e4[index] (inline AddToTail: grow sub_10079100, CUtlVector136::sub_10078f20, copy constructor sub_10073a90 when the slot is non null), then a second temp (1, "", 0) is built and the vector is bubble sorted: for i < count, for j = i + 1 < count, swap the 0x88 byte records i, j (through a 0x88 byte stack temp) when rec[j].sub_10073b00() compares above rec[i].sub_10073b00() (fcompp, test ah,5, jp); the per-index counts mirror at +0x2f0 + 0x14 * index
 	CUnknown10075aa0 *sub_10075040(int arg);	// constructor: clears the vectors, then sub_10075aa0(arg); returns this
 	CUnknown10075aa0 *sub_10075120(int a, int b, int c);	// constructor overload: clears the vectors, then sub_10075aa0(a), sub_10075b90(b), S10075bd0::sub_10075bd0(c); returns this
 	CUnknown10075aa0 *sub_10075230(int a, int b, int c, int d);	// constructor overload: as sub_10075120, then S10075c20::sub_10075c20(d); returns this
