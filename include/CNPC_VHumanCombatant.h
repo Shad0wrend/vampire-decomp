@@ -37,6 +37,7 @@ public:
 	void sub_102ad140();	// CAI_BaseNPCTroika::vfunc453 (stub 0x10011b35), called directly
 	void sub_10269eb0(int condition);	// CAI_BaseNPC SetCondition (stub 0x100123f5), called directly
 	void *vfunc580();	// slot 580 (plain member; the model derives from CBaseEntity): returns the address of the global object g_1093b498 (the condition-table owner, CAI_CondOwner in the NPC hierarchy)
+	char vfunc452();	// slot 452 (plain member): the raw byte global at 0x1063f8b8 (a char, as other matched sources declare it)
 public:
     virtual datamap_t * vfunc82();
 	const char *sub_10386b00();
