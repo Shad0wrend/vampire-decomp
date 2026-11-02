@@ -271,7 +271,7 @@ public:
 	virtual void vfunc216();
 	virtual void vfunc217();
 	virtual void vfunc218();
-	virtual void vfunc219();
+	virtual float *vfunc219();	// slot 219 (+0x36c): returns a pointer to floats (sub_103f0a00 reads [+4] as the second component of the angle)
 	virtual void vfunc220();
 	virtual void vfunc221();
 	virtual void vfunc222();
