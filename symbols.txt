@@ -12222,6 +12222,7 @@
 0x100147d1 func   ?sub_10160d00@CBasePlayerUnit@@QAE_NHPAUmelee_dice_roll_result@@H@Z CBasePlayerUnit::sub_10160d00
 0x100147d6 func   ?sub_102d7860@@YAHXZ sub_102d7860
 0x100147db func   ?sub_1028e060@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_1028e060
+0x100147e0 func   ?sub_101dba70@@YAHH@Z sub_101dba70
 0x100147ea func   ?sub_101b66b0@CUnk101b66b0@@QAEPADH@Z CUnk101b66b0::sub_101b66b0
 0x100147ef func   ?sub_1042daa0@CUnknown1042d9a0@@QAEDPAV1@@Z CUnknown1042d9a0::sub_1042daa0
 0x100147f4 func   ?NewNode@?$CUtlRBTree@UCRBEntry8@@H@@QAEHXZ CUtlRBTree<CRBEntry8,int>::NewNode

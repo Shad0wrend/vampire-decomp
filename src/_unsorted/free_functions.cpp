@@ -92958,6 +92958,23 @@ const char *sub_101dba50(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dba70 size=0x63
+#include <string.h>
+extern const char *g_105a1c20[4];
+const char *sub_10203d60(int);
+
+// TARGET: sub_101dba70
+int sub_101dba70(int a)
+{
+    const char *s = sub_10203d60(a);
+    for (int i = 0; i < 4; i++) {
+        if (strcmp(g_105a1c20[i], s) == 0)
+            return i;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dbb00 size=0xc
 extern const char *g_105a1c20[];
 const char *sub_101dbb00(int index)
