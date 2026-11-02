@@ -48398,6 +48398,30 @@ int sub_100fcd30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fcd60 size=0x4b
+#include "CConstraintAnchor.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(unsigned int size);
+extern char g_1045719c[];	// CParamsParticle vftable
+extern const char g_10567888[];
+
+// TARGET: params_particle
+extern "C" CBaseEntity *params_particle()
+{
+	void *mem = sub_100aa720(0x45c);
+	CBaseEntity *p;
+	if (mem) {
+		((CConstraintAnchorBase *)mem)->sub_1009d980(0);
+		*(void **)mem = g_1045719c;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_10567888);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fce70 size=0x133
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
