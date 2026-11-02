@@ -50,4 +50,5 @@ public:
 	void sub_1024d810(VMatrix &out, const Vector &vScale) const;	// out = this with its columns 0..2 scaled by vScale (the fourth column of the first three rows is copied, the corner is 1.0f)
 	VMatrix *sub_1024da80(VMatrix &out) const;	// ecx = this, dst on the stack (ret 4): out[c][r] = m[r][c] for a 4x4 float copy that reads all 16 floats before any store (8 via fld, 8 via integer moves, frame 0x20); 0x1024d630 calls it with this = its dst and out = a local, then copies the local back with CBlock64_t::sub_1024cef0
 	Vector sub_1024d670() const;	// "VMatrix::GetScale": the lengths of the three columns (returned through a hidden pointer)
+	void sub_1024ddf0(const Vector &origin, const QAngle &angles);	// "SetupMatrixOrgAngles": the rotation matrix from the angles (degrees) with origin in the fourth column
 };
