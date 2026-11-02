@@ -213,6 +213,15 @@ void __stdcall sub_1014f870(void *a, void *b) {}
 void __stdcall sub_1014f890(void *p) {}
 // END FUNCTION
 
+// FUNCTION: 0x1014f8b0 size=0x6
+extern int g_1072b360;
+
+int CBaseCombatCharacter::vfunc240()
+{
+	return g_1072b360;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014f8d0 size=0x1
 // TARGET: sub_1014f8d0
 void __fastcall sub_1014f8d0(void *pThis)

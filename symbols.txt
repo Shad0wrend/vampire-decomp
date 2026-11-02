@@ -10452,6 +10452,7 @@
 0x10011a36 func   ?vfunc0@CAI_InterestingPlaceMarkersSaveRestoreOps@@UAEXPAUSaveRestoreFieldInfo_t@@PAVCSave@@@Z CAI_InterestingPlaceMarkersSaveRestoreOps::vfunc0
 0x10011a3b func   _entityflame entityflame
 0x10011a40 func   ?sub_100a19c0@Vector@@QBE?AV1@M@Z Vector::sub_100a19c0
+0x10011a45 func   ?vfunc240@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::vfunc240
 0x10011a4f func   ?sub_102f1fa0@CAI_Navigator@@QAEXMPAUCAI_NavSource@@@Z CAI_Navigator::sub_102f1fa0
 0x10011a54 func   ?sub_100b37a0@CBaseEntity@@QAEXXZ CBaseEntity::sub_100b37a0
 0x10011a59 func   ?vfunc2@CEQ_SaveRestoreBlockHandler@@UAEXXZ CEQ_SaveRestoreBlockHandler::vfunc2
