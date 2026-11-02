@@ -12080,6 +12080,7 @@
 0x100143d5 func   ?vfunc438@CNPC_VAsianVampire@@QAEHXZ CNPC_VAsianVampire::vfunc438
 0x100143da func   ?sub_101a01f0@CSave@@QAEHPBXPAUtypedescription_t@@H@Z CSave::sub_101a01f0
 0x100143df func   ?sub_10072e20@CUnknown10072e20@@QAEPADXZ CUnknown10072e20::sub_10072e20
+0x100143e4 func   ?sub_1014f7b0@@YG_NH@Z sub_1014f7b0
 0x100143f3 func   ?sub_102bfdf0@@YGXH@Z sub_102bfdf0
 0x10014402 func   _env_particle env_particle
 0x10014407 func   ?sub_100c30b0@@YAXPAUS100c30b0Hdr@@ABUmatrix3x4_t@@PBVVector@@PBVQuaternion@@HPAU2@@Z sub_100c30b0
