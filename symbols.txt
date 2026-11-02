@@ -7907,6 +7907,7 @@
 0x1000da8a func   ?sub_10389e80@@YIPAXPAX@Z sub_10389e80
 0x1000da8f func   ?vfunc451@CNPC_VTaxiDriver@@QAEHXZ CNPC_VTaxiDriver::vfunc451
 0x1000da94 func   ?sub_100f0ec0@CUnit100f0ec0@@QAE_NI@Z CUnit100f0ec0::sub_100f0ec0
+0x1000da99 func   ?sub_101b4b20@@YGPBDM@Z sub_101b4b20
 0x1000daa8 func   ?vfunc7@CSoundSchemeManager@@UAEXXZ CSoundSchemeManager::vfunc7
 0x1000dab7 func   ?sub_103e9b70@@YG_NHPAM@Z sub_103e9b70
 0x1000dabc func   ?sub_10246270@CUnknown10246270@@QAEHXZ CUnknown10246270::sub_10246270
