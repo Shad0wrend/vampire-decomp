@@ -37,11 +37,14 @@ struct CUnknown101dff00List	// the list of hit groups: count at +4, pointer arra
 	class CUnknown101dff00 **m_ppGroups;	// 0x8
 
 	void sub_101e04a0();	// Debug_Display: prints "[[Hit_Group_List]]:" and then every hit group
+	CUnknown101dff00 *sub_101e0410(int index);	// the hit group at index, or a lazily created default group when out of range
 };
 
 class CUnknown101dff00
 {
 public:
+	CUnknown101dff00(int id);
+	~CUnknown101dff00();
 	char m_pad0000[4];
 	const char *m_pszName;	// 0x04
 	char m_pad0008[0x364 - 0x08];	// five 0xac byte CUnknown101df000 records at +0x08, +0xb4, +0x160, +0x20c, +0x2b8
