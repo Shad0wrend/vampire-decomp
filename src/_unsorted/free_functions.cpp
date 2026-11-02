@@ -71131,6 +71131,25 @@ int sub_10190440()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10190510 size=0x3a
+#include "CDynamicProp.h"
+#include "CBreakableProp.h"
+#include "COutputEvent.h"
+
+extern void *vt_10474234[];
+
+CDynamicProp *CDynamicProp::sub_10190510()
+{
+	((CBreakableProp *)this)->sub_1018f1c0();
+	((COutputEvent *)&m_slotC)->sub_100cd2a0();
+	((COutputEvent *)&m_slotD)->sub_100cd2a0();
+	((COutputEvent *)&m_slotE)->sub_100cd2a0();
+	*(void **)this = vt_10474234;
+	sub_1008b490();
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10190750 size=0x62
 #include "CDynamicProp.h"
 void sub_1000d2ce();

@@ -557,6 +557,7 @@
 0x10001ea6 func   _item_p_occult_presence item_p_occult_presence
 0x10001eab func   ?sub_10255cf0@CBaseCombatWeapon@@QAEHXZ CBaseCombatWeapon::sub_10255cf0
 0x10001eb0 func   _math_remap math_remap
+0x10001eba func   ?sub_10190510@CDynamicProp@@QAEPAV1@XZ CDynamicProp::sub_10190510
 0x10001ec4 func   ?sub_10223b90@CUnknown10223b90@@QAEXXZ CUnknown10223b90::sub_10223b90
 0x10001ec9 func   ?sub_101fc410@CVStatCost_t@@QAEHH_N@Z CVStatCost_t::sub_101fc410
 0x10001ece func   ?sub_103de420@@YADXZ sub_103de420
