@@ -9916,6 +9916,7 @@
 0x10011504 func   ?vfunc5@CAnchorList@@UAEXXZ CAnchorList::vfunc5
 0x10011509 func   ?sub_1042fb50@@YAII@Z sub_1042fb50
 0x1001150e func   ?sub_10430080@@YAII@Z sub_10430080
+0x10011518 func   ?vfunc39@CPropSign@@UAEXPAVCBasePlayer@@@Z CPropSign::vfunc39
 0x1001151d func   _intersting_place intersting_place
 0x10011522 func   ?sub_103e3490@CWeaponRanged_FlameThrower@@QAE_NPAVCBaseEntity@@@Z CWeaponRanged_FlameThrower::sub_103e3490
 0x10011527 func   ?sub_102f2fe0@CUnknown102ee120@@QAEXH@Z CUnknown102ee120::sub_102f2fe0
