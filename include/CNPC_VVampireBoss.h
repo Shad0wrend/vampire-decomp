@@ -42,6 +42,8 @@ public:
 	float m_HealthPercentRecord; // +0x6698
 	char pad669c[0x66a0 - 0x669c];
 	unsigned int m_hParticleEmitters[4];	// +0x66a0
+	unsigned int m_hTransformPartner;	// +0x66b0: handle, -1 from the factory (the code uses +0x66b0 as the partner)
+	int m_n66b4;	// +0x66b4: 4-byte member built by sub_103c51a0 (stub 0x100044d5); object size 0x66b8
 
 	bool vfunc525(int unused);
 	void sub_103c6df0(int index, const char *name);
