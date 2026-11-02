@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10178fa0 size=0x6
+#include "CRevertSaved.h"
+
+extern datamap_t g_105836dc;
+
+// TARGET: CRevertSaved::vfunc82
+datamap_t *CRevertSaved::vfunc82()
+{
+	return &g_105836dc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10179030 size=0x53
 #include "CRevertSaved.h"
 

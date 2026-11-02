@@ -2315,6 +2315,7 @@
 0x10004b10 func   ?sub_1017bf10@CBasePlayer@@QAEXH@Z CBasePlayer::sub_1017bf10
 0x10004b1a func   ?vfunc127@CNPC_VAndreiBlood@@QAEHH@Z CNPC_VAndreiBlood::vfunc127
 0x10004b1f func   ?sub_101db8e0@CUnknown101dbc60Tail@@QAEXXZ CUnknown101dbc60Tail::sub_101db8e0
+0x10004b24 func   ?vfunc82@CRevertSaved@@UAEPAUdatamap_t@@XZ CRevertSaved::vfunc82
 0x10004b29 func   ?sub_101bc140@CUnknown101bc140@@QAEXXZ CUnknown101bc140::sub_101bc140
 0x10004b33 func   ?sub_100d27b0@@YAXXZ sub_100d27b0
 0x10004b38 func   ?sub_100d0320@@YGHPAPAX@Z sub_100d0320
