@@ -23,6 +23,19 @@ int CAI_StandoffBehavior::vfunc19()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c7330 size=0x20
+#include "CAI_Component.h"
+
+struct DummyComponent : CAI_Component
+{
+	void vfunc1() {}
+	void vfunc2(int a) {}
+};
+
+DummyComponent g_dummyComp;
+// TARGET: ??_GCAI_Component@@UAEPAXI@Z
+// END FUNCTION
+
 // FUNCTION: 0x102c73f0 size=0x1
 #include "CAI_StandoffBehavior.h"
 void CAI_StandoffBehavior::vfunc8()
