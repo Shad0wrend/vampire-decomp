@@ -15,6 +15,17 @@ bool CFuncPlat::vfunc110(const char *pszKey, const char *pszValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10158dc0 size=0x6
+#include "CFuncPlat.h"
+
+extern int g_10580538;
+
+datamap_t *CFuncPlat::vfunc82()
+{
+	return (datamap_t *)&g_10580538;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10158ee0 size=0x9
 unsigned char CFuncPlat::vfunc241() { unsigned char r = m_spawnflags; r &= 1; return r; }
 // END FUNCTION

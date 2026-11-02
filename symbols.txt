@@ -1705,6 +1705,7 @@
 0x10003b5c func   ?sub_100c9e10@@YAPAHXZ sub_100c9e10
 0x10003b6b func   ?sub_101fd940@CVStatActionList_t@@QAEXPAXHH@Z CVStatActionList_t::sub_101fd940
 0x10003b70 func   ?sub_103aaa80@CNPC_VSabbatLeader@@QAEXXZ CNPC_VSabbatLeader::sub_103aaa80
+0x10003b75 func   ?vfunc82@CFuncPlat@@UAEPAUdatamap_t@@XZ CFuncPlat::vfunc82
 0x10003b7a func   ?sub_102f9970@@YADXZ sub_102f9970
 0x10003b7f func   ?sub_1030f350@SNamedList_1030f350@@QAEPAUSNamedEntry_1030f350@@PBD@Z SNamedList_1030f350::sub_1030f350
 0x10003b84 func   ?sub_10223030@@YAPAHXZ sub_10223030
