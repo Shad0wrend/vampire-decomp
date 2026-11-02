@@ -42,6 +42,7 @@ public:
 	void sub_10150e80();	// removes the physics object at +0x19dc (sub-object slot 3 with the object at +0x36c, then slot 40 of the global at 0x10723940), clears the fields at +0x17c / +0x19e8 / +0x19e4, calls sub_101510c0() when +0x19e0 is set, then slot 7 of the global at 0x1070b248 with the edict's (+0x2e0) index (engine slot 35) for the string at +0x19f8
 	void sub_101510c0();	// called through the stub at 0x1000abeb
 	void sub_10150910(int a, void *b);	// stub 0x1000c08b
+	void sub_10150530(Vector *pOut, const Vector *pDir);	// nozzle direction: attachment column 2 * -5.0f + pDir, normalized; stores attachment column 3 at +0x19b0
 	void sub_10150f50();	// stub 0x1000201d: "CPhysicsCannister::Explode": no more damage taken, removes the physics object, breaks the model into gibs (velocity of the physics object) and creates the explosion named by the string at +0x1a14 (Warning "%s could not find explosion parameters" when there is none), then removes itself
 
 	char m_pad0000[0x1fc];
