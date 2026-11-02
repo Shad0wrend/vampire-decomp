@@ -10081,6 +10081,7 @@
 0x10011176 func   ?sub_1027d9f0@@YI_NPADHHH@Z sub_1027d9f0
 0x1001117b func   ?sub_101563b0@CRagdollProp@@QAEXHH@Z CRagdollProp::sub_101563b0
 0x10011180 func   ?sub_1006d560@@YAHXZ sub_1006d560
+0x10011185 func   ?sub_101a63c0@@YG_NH@Z sub_101a63c0
 0x1001118a func   ?sub_101a6ca0@@YAXXZ sub_101a6ca0
 0x1001118f func   ?vfunc461@CNPC_VChangBros@@UAEHXZ CNPC_VChangBros::vfunc461
 0x10011194 func   ?vfunc370@CNPCMaker_Zombie@@UAEHH@Z CNPCMaker_Zombie::vfunc370
