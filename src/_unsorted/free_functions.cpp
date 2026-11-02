@@ -21104,6 +21104,25 @@ void CUtlRBTree24::sub_1007ffc0(int elem)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100802e0 size=0x43
+#include "CSceneEntity.h"
+void *sub_100aa720(int size);
+extern char g_10548ca8[];
+
+// TARGET: logic_choreographed_scene
+extern "C" CBaseEntity *logic_choreographed_scene()
+{
+	void *mem = sub_100aa720(0x580);
+	CSceneEntity *p;
+	if (mem)
+		p = ((CSceneEntity *)mem)->sub_10080830();
+	else
+		p = 0;
+	((CBaseEntity *)p)->vfunc106(g_10548ca8);
+	return (CBaseEntity *)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10080420 size=0x269
 struct ISaveRestoreOps;
 struct datamap_t;
