@@ -218,6 +218,15 @@ void CWeaponMelee::vfunc327()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103eaea0 size=0x6
+#include "CWeaponMelee.h"
+
+unsigned int CWeaponMelee::vfunc360()
+{
+	return 0x40018000;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103eaec0 size=0x5f
 #include "CWeaponMelee.h"
 #include "CUnknown1015ef20.h"

@@ -2239,6 +2239,7 @@
 0x100048ea func   ?vfunc564@CAI_BaseNPC@@UAE_NXZ CAI_BaseNPC::vfunc564
 0x100048ef func   ?vfunc103@CTriggerMultiple@@UAEXXZ CTriggerMultiple::vfunc103
 0x100048f4 func   ?GetPercentage@CUnknown10076da0TimingTag@@QBEMXZ CUnknown10076da0TimingTag::GetPercentage
+0x100048fe func   ?vfunc360@CWeaponMelee@@UAEIXZ CWeaponMelee::vfunc360
 0x10004903 func   _vdisciplineprojectile vdisciplineprojectile
 0x10004908 func   ?sub_101bcff0@@YIDPAX@Z sub_101bcff0
 0x1000490d func   ?sub_1015ad30@@YAHXZ sub_1015ad30
