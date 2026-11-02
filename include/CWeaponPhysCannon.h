@@ -57,4 +57,5 @@ public:
     virtual char vfunc316(int a);    // its own (0x1040dc90)
     void sub_1040dbb0();    // stub-less member, called directly (0x1040dbb0)
     void sub_1001089d(const float *pVelocity);    // CBaseCombatWeapon::vfunc299 (stub 0x1001089d), called directly
+	void *sub_1040d590();
 };
