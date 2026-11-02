@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103a14a0 size=0x6
+// TARGET: CNPC_VNosferatu::vfunc580
+extern char g_1093bee8;
+
+char *CNPC_VNosferatu::vfunc580()
+{
+	return &g_1093bee8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a14c0 size=0x6
 #include "CNPC_VNosferatu.h"
 

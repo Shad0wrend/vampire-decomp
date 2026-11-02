@@ -10643,6 +10643,7 @@
 0x10011ce8 func   ?sub_1013e7e0@CUnknown1013e7e0@@QAEXH@Z CUnknown1013e7e0::sub_1013e7e0
 0x10011cf2 func   ?vfunc81@CWeaponMelee_Baton@@QAEHXZ CWeaponMelee_Baton::vfunc81
 0x10011cf7 func   ?vfunc465@CNPC_VWerewolf@@QAEXPBD@Z CNPC_VWerewolf::vfunc465
+0x10011cfc func   ?vfunc580@CNPC_VNosferatu@@QAEPADXZ CNPC_VNosferatu::vfunc580
 0x10011d06 func   ?sub_102ccc10@CAI_DynamicLink@@QAE_NXZ CAI_DynamicLink::sub_102ccc10
 0x10011d0b func   ?vfunc5@CNPC_VSabbatLeader@@QAEPAV1@I@Z CNPC_VSabbatLeader::vfunc5
 0x10011d10 func   ?vfunc619@CNPC_VTzimisceHeadClaw@@UAEXD@Z CNPC_VTzimisceHeadClaw::vfunc619
