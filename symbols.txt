@@ -10074,6 +10074,7 @@
 0x10011563 func   ?sub_10074070@CUnknown10074070@@QAEHH@Z CUnknown10074070::sub_10074070
 0x1001156d func   ?sub_10032f50@UtlMem@@QAEXXZ UtlMem::sub_10032f50
 0x10011572 func   ?sub_10336000@@YI_NPADHH@Z sub_10336000
+0x10011577 func   ?sub_1014f870@@YGXPAX0@Z sub_1014f870
 0x10011581 func   ?sub_1036dc60@CNPC_VChangBros@@QAEMXZ CNPC_VChangBros::sub_1036dc60
 0x10011586 func   ?sub_100c0880@CFuncRotating@@QAEXXZ CFuncRotating::sub_100c0880
 0x1001158b func   ?vfunc404@CNPC_VCop@@QAEHPAUCNPC_VCopTarget@@@Z CNPC_VCop::vfunc404
