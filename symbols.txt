@@ -4505,6 +4505,7 @@
 0x100083c3 func   ?sub_10200a70@CVStatList_t@@QAEXHH@Z CVStatList_t::sub_10200a70
 0x100083c8 func   ?vfunc580@CNPC_VPlaceholder@@UAEHXZ CNPC_VPlaceholder::vfunc580
 0x100083cd func   ?sub_1013d6c0@@YAXABVVector@@0MAAV1@@Z sub_1013d6c0
+0x100083d7 func   ?vfunc0@CNodePosFilter@@UAE_NPAX@Z CNodePosFilter::vfunc0
 0x100083dc func   ?sub_100eb400@@YIXPAH@Z sub_100eb400
 0x100083e1 func   ??0CUnknown101d88b0@@QAE@PAUCVDmgSource_t@@0HH@Z CUnknown101d88b0::CUnknown101d88b0
 0x100083e6 func   ?sub_101b98d0@@YIXPAH@Z sub_101b98d0

@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x102f44b0 size=0x5
+#include "CNodeNPCFilter.h"
+
+// TARGET: CNodePosFilter::vfunc0
+bool CNodePosFilter::vfunc0(void *pEnt)
+{
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f44d0 size=0x31
 // TARGET: sub_102f44d0
 struct CPosArg_102f44d0 {
