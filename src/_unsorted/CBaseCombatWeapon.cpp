@@ -348,6 +348,14 @@ int CBaseCombatWeapon::vfunc365(int a, float b, float c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024f730 size=0x5
+// TARGET: CBaseCombatWeapon::vfunc366
+int CBaseCombatWeapon::vfunc366(int a, int b, int c)
+{
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024f750 size=0x5
 int CBaseCombatWeapon::vfunc367(int a0, float a1, float a2)
 {

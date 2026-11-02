@@ -1691,6 +1691,7 @@
 0x10003b25 func   ?sub_100c4640@@YADXZ sub_100c4640
 0x10003b2a func   ?sub_103b30a0@@YIPAXPAX@Z sub_103b30a0
 0x10003b39 func   ?sub_102eccc0@CUnknown102eccc0@@QAEHXZ CUnknown102eccc0::sub_102eccc0
+0x10003b48 func   ?vfunc366@CBaseCombatWeapon@@UAEHHHH@Z CBaseCombatWeapon::vfunc366
 0x10003b4d func   ?sub_100ba0c0@CBatSwarm@@QAE_NPAX@Z CBatSwarm::sub_100ba0c0
 0x10003b52 func   ?sub_10306200@CSlotList@@QAEXH@Z CSlotList::sub_10306200
 0x10003b57 func   ?sub_10376b70@CNPC_VFrenzyShadow@@QAEDH@Z CNPC_VFrenzyShadow::sub_10376b70
