@@ -20,6 +20,7 @@ public:
 	virtual void vfunc19(); virtual void vfunc20(); virtual void vfunc21(); virtual void vfunc22(); virtual void vfunc23();
 	virtual char vfunc24(int a);
 	virtual char vfunc25(int a);
+	virtual void vfunc26(int a, int b);	// slot 26 (ret 8: two stack arguments, unused); slot 27 follows
 
 	void *m_p0004;
 	char m_pad0008[8];
