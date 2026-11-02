@@ -3143,6 +3143,7 @@
 0x100061c2 func   ?vfunc272@CInstancedSceneEntity@@QAEXH@Z CInstancedSceneEntity::vfunc272
 0x100061d1 func   ?vfunc26@CBasePlayer@@QAEXPAVCBaseEntity@@@Z CBasePlayer::vfunc26
 0x100061d6 func   ?sub_10428ce0@@YAHPAUSeqHdr@@HH@Z sub_10428ce0
+0x100061db func   ?vfunc293@CBaseCombatWeapon@@UAEHXZ CBaseCombatWeapon::vfunc293
 0x100061e5 func   ?vfunc451@CNPC_VManBat@@QAEHXZ CNPC_VManBat::vfunc451
 0x100061ea func   ?sub_102036e0@@YAXH@Z sub_102036e0
 0x100061f4 func   ?vfunc440@CAI_BaseNPC@@QAEHH@Z CAI_BaseNPC::vfunc440

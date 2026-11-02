@@ -1212,6 +1212,11 @@ void CBaseCombatWeapon::vfunc130(void *pArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10258520 size=0x3
+// TARGET: CBaseCombatWeapon::vfunc293
+int CBaseCombatWeapon::vfunc293() { return 0; }
+// END FUNCTION
+
 // FUNCTION: 0x10258540 size=0x1
 // TARGET: sub_10258540
 void sub_10258540()
