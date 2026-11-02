@@ -8213,6 +8213,24 @@ void CPhysicsSpring::sub_1004d140(inputdata_t *inputdata)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004d1b0 size=0x4c
+#include "CPhysicsSpring.h"
+
+extern float g_104454c4;
+
+inline float variant_t::Float() const
+{
+	return (fieldType == 1) ? flValue : g_104454c4;
+}
+
+// TARGET: CPhysicsSpring::sub_1004d1b0
+void CPhysicsSpring::sub_1004d1b0(inputdata_t *inputdata)
+{
+	m_flDamping = inputdata->value.Float();
+	m_pSpring->SetSpringDamping((inputdata->value.fieldType == 1) ? inputdata->value.flValue : 0.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004d590 size=0x8f
 #include "Vector.h"
 

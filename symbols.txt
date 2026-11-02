@@ -13056,6 +13056,7 @@
 0x10015d2f func   ?sub_104072d0@@YAHXZ sub_104072d0
 0x10015d34 func   ?sub_1013add0@@YAXPBMMPAM@Z sub_1013add0
 0x10015d39 func   ?sub_101c30c0@@YAHXZ sub_101c30c0
+0x10015d4d func   ?sub_1004d1b0@CPhysicsSpring@@QAEXPAUinputdata_t@@@Z CPhysicsSpring::sub_1004d1b0
 0x10015d57 func   ?sub_10081480@@YGXHPAUCVirtObj10081480@@H@Z sub_10081480
 0x10015d5c func   ?sub_1042fd80@@YAII@Z sub_1042fd80
 0x10015d66 func   ?sub_101dd3c0@CUnknown101e0f00Src@@QAEXPBD@Z CUnknown101e0f00Src::sub_101dd3c0
