@@ -78752,6 +78752,26 @@ int sub_101abbc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ac130 size=0x43
+#include "CAmbientGeneric.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(int size);
+extern char g_105977cc[];
+
+// TARGET: ambient_generic
+extern "C" CBaseEntity *ambient_generic()
+{
+	void *mem = sub_100aa720(0x4e4);
+	CAmbientGeneric *p;
+	if (mem)
+		p = ((CAmbientGeneric *)mem)->sub_101ac230();
+	else
+		p = 0;
+	((CBaseEntity *)p)->vfunc106(g_105977cc);
+	return (CBaseEntity *)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ac200 size=0x1a
 namespace lifted {
 extern int g_105969a4;
