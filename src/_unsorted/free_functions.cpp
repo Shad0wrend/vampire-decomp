@@ -94277,6 +94277,19 @@ int CNamedList9fd0::sub_101e03a0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e0410 size=0x4b
+#include "CUnknown101dff00.h"
+
+// TARGET: CUnknown101dff00List::sub_101e0410
+CUnknown101dff00 *CUnknown101dff00List::sub_101e0410(int index)
+{
+	if (index >= 0 && index < m_nCount)
+		return m_ppGroups[index];
+	static CUnknown101dff00 s_default(-1);
+	return &s_default;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e04a0 size=0x57
 #include "CUnknown101dff00.h"
 
