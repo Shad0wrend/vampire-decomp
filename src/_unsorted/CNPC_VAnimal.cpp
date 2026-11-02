@@ -12,6 +12,16 @@ datamap_t * CNPC_VAnimal::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035ebf0 size=0x5
+#include "CNPC_VAnimal.h"
+
+// TARGET: CNPC_VAnimal::vfunc587
+bool CNPC_VAnimal::vfunc587(int a)
+{
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035ec50 size=0x1e
 #include "CNPC_VAnimal.h"
 
