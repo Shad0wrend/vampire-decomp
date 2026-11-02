@@ -136269,6 +136269,35 @@ void CAIPendingCondList::sub_102cc760(CAI_BaseNPCCondTarget *pNPC)
 void __fastcall sub_102cc7e0(int *p) { p[16] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x102cc800 size=0x43
+#include "CAI_DynamicLink.h"
+
+void *sub_100aa720(int size);
+extern char g_105b6510[];
+
+#define VD10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CLightVt
+{
+	VD10(a) VD10(b) VD10(c) VD10(d) VD10(e) VD10(f) VD10(g) VD10(h) VD10(i) VD10(j)
+	virtual void s100(); virtual void s101(); virtual void s102(); virtual void s103(); virtual void s104(); virtual void s105();
+	virtual void vfunc106(const char *pszName);
+};
+
+// TARGET: info_node_link
+extern "C" CAI_DynamicLink *info_node_link()
+{
+	void *mem = sub_100aa720(0x460);
+	CAI_DynamicLink *p;
+	if (mem)
+		p = ((CAI_DynamicLink *)mem)->sub_102cce60();
+	else
+		p = 0;
+	((CLightVt *)p)->vfunc106(g_105b6510);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cc8d0 size=0x1a
 namespace lifted {
 extern int g_10608f58;
