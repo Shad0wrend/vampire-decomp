@@ -63,6 +63,7 @@ public:
 	CUnknown10075aa0 *sub_10075230(int a, int b, int c, int d);	// constructor overload: as sub_10075120, then S10075c20::sub_10075c20(d); returns this
 	void sub_10075aa0(int arg);	// base constructor body: clears the fields, then sub_10076f10(0, 0, 0), stores arg at +0x330
 	void sub_10076b60();	// clears the vector at +0x2bc (frees the memory unless the grow size is -1)
+	void sub_10076fe0();	// clears the vector at +0x2d0 (frees the memory unless the grow size is -1)
 	void sub_10076f10(char c, const char *a, const char *b);	// stores c at +0x1b1 and copies the strings (the empty string for null) to +0x1b2 / +0x232 (stub 0x1000e822)
 	float sub_10076b30();	// the event's remaining length: 0.0f unless it has a time range (stub 0x10014835)
 	void sub_100754e0(CUnknown10077990 *pSource);	// copies the data of pSource into this event (stub 0x10014637)
