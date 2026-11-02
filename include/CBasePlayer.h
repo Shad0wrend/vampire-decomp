@@ -335,6 +335,15 @@ public:
 	char m_pad2455[0x245c - 0x2455];	// 0x2455 .. 0x245B
 	void *m_pInventory;	// 0x245C: the 5-dword inventory object (created by sub_101835e0)
 
+	// ~CBasePlayer body (sub_1015df00, called by vfunc5 via stub 0x100017d5): views of the members it tears down, in destruction order.
+	// Layout stays padding; the element types of the vectors are not known (CUtlVector<int> stands in), see the note on 0x1015df00.
+	void sub_1015df00();	// destructor body: vptr 0x1046fbb4, delete [+0x1d24] (dtor stub 0x1000546b), delete [+0x245c] (CUtlVector, RemoveAll 0x10185790 + Purge 0x101857b0), vectors at +0x23bc, +0x1e28 (vptrs CUserCmd 0x10462854 at +0x235c, CPlayerLocalPredictedData 0x10470490 at +0x1e40), +0x1e10, +0x1d90, +0x1d7c, +0x1d68, object +0x1a1c (sub_1017a290), +0x19d8; tail jmp 0x100078c4 -> CBaseCombatCharacter body 0x103274d0
+	void *&Ptr1d24() { return *(void **)((char *)this + 0x1d24); }	// deleted object (inside m_pad1CE4)
+	CUtlVector<int> &Vec1e10() { return *(CUtlVector<int> *)((char *)this + 0x1e10); }	// inside m_pad1E10
+	CUtlVector<int> &Vec1d90() { return *(CUtlVector<int> *)((char *)this + 0x1d90); }	// inside m_pad1D90
+	CUtlVector<int> &Vec1d68() { return *(CUtlVector<int> *)((char *)this + 0x1d68); }	// overlaps m_pQuestRecords1D68 (its memory pointer) and m_nQuestRecords1D74 (its size)
+	CUtlVector<int> &Vec23bc() { return *(CUtlVector<int> *)((char *)this + 0x23bc); }	// same storage as m_SimulationList
+	void *Obj1a1c() { return (char *)this + 0x1a1c; }	// object destroyed by sub_1017a290 (no ecx-typed member known), inside m_pad1A00
 	float sub_1017d900();	// fade progress 0..1 of the timer at +0x19b8 / +0x19bc (needs a live entity at +0x19c0 or +0x19cc), resets the fade fields when it has ended
 	void sub_10177120();
 	void sub_101835e0();	// "CBasePlayer::Inventory_CreateKey": scope trace (entity name), then allocates the 5-dword inventory object at +0x245c when it is not there yet
