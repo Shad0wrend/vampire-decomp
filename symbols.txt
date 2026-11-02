@@ -9923,6 +9923,7 @@
 0x10010e83 func   ?vfunc438@CNPC_VTzimisceHeadClaw@@QAEHXZ CNPC_VTzimisceHeadClaw::vfunc438
 0x10010e88 func   ?sub_1018d210@CPointAngleSensor@@QAEXPAUinputdata_t@@@Z CPointAngleSensor::sub_1018d210
 0x10010e92 func   ?sub_10256350@CBaseCombatWeapon@@QAE?AUCWeaponRollValue@@XZ CBaseCombatWeapon::sub_10256350
+0x10010e97 func   ?vfunc81@CWeaponMelee_MingXiaoMelee@@UAEHXZ CWeaponMelee_MingXiaoMelee::vfunc81
 0x10010e9c func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@V?$CHandle@VCAI_BaseNPC@@@@V?$CUtlMemory@V?$CHandle@VCAI_BaseNPC@@@@@@@@$0M@@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<CHandle<CAI_BaseNPC>,CUtlMemory<CHandle<CAI_BaseNPC> > >,12>::vfunc3
 0x10010ea1 func   ?sub_1019b360@@YAHXZ sub_1019b360
 0x10010ea6 func   ?sub_102517b0@@YIHPAX@Z sub_102517b0
