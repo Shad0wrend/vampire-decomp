@@ -4,10 +4,24 @@
 // padding, so code that needs the secondary vtable has to spell the bases out.
 #pragma once
 
-struct CLagCompensationRecord
+#include "Vector.h"
+
+struct CLagCompensationPlayerRecord	// 0x3c bytes, one per player slot (32); built by the constructor stub 0x100159b0 (CUnknown10188280::sub_10188280)
+{
+	unsigned char m_bValid;	// 0x00: set to 1 when the player slot holds an entity
+	char m_pad01[3];
+	int m_nEdictIndex;	// 0x04: engine slot 35 of the entity's edict (+0x2e0)
+	unsigned int m_nFlags;	// 0x08: bit 0 = slot 158 of the entity
+	Vector m_vecOrigin;	// 0x0c: slot 220
+	Vector m_angAngles;	// 0x18: slot 221 (QAngle; copied by Vector::sub_1011d2e0)
+	Vector m_vecMins;	// 0x24: slot 1 of the collision property (+0x270)
+	Vector m_vecMaxs;	// 0x30: slot 2 of the collision property
+};
+
+struct CLagCompensationRecord	// 0x784 bytes: the element of the manager's vector (Mem784)
 {
 	float m_flSimulationTime;	// 0x0000
-	char m_pad0004[0x784 - 4];
+	CLagCompensationPlayerRecord m_aPlayers[32];	// 0x0004
 };
 
 class CLagCompensationManager
