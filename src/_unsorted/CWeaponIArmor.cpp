@@ -63,6 +63,15 @@ int CWeaponIArmor::vfunc328()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f4020 size=0x6
+#include "CWeaponIArmor.h"
+
+int CWeaponIArmor::sub_103f4020()
+{
+	return 0xbc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f4040 size=0x20
 #include "CWeaponIArmor.h"
 
