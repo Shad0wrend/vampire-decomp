@@ -225,6 +225,12 @@ void sub_101a6a60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6a80 size=0x1
+// TARGET: CAI_BaseNPC::vfunc504
+void CAI_BaseNPC::vfunc504() {
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6aa0 size=0x1
 // TARGET: sub_101a6aa0
 void sub_101a6aa0()

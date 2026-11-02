@@ -5875,6 +5875,7 @@
 0x1000a902 func   ?sub_10403a60@@YAHXZ sub_10403a60
 0x1000a907 func   ?sub_100b0720@@YAXXZ sub_100b0720
 0x1000a911 func   ?vfunc110@CPointAngleSensor@@UAE_NPBD0@Z CPointAngleSensor::vfunc110
+0x1000a916 func   ?vfunc504@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc504
 0x1000a91b func   ?vfunc103@CEnvWind@@UAEXXZ CEnvWind::vfunc103
 0x1000a920 func   ?vfunc464@CNPC_VManBat@@QAEHXZ CNPC_VManBat::vfunc464
 0x1000a92a func   ?sub_10297430@CAI_BaseNPCTroika@@QAE_NPAV1@@Z CAI_BaseNPCTroika::sub_10297430
