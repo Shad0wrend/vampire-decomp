@@ -541,6 +541,7 @@
 0x10001dc0 func   _npc_TestBaseHumanoid npc_TestBaseHumanoid
 0x10001dc5 func   ?sub_10185310@CUtlVector52@@QAEXH@Z CUtlVector52::sub_10185310
 0x10001dca func   ?vfunc34@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHH@Z CTempEntsSystem::vfunc34
+0x10001dcf func   ?sub_101a6400@@YG_NHHHH@Z sub_101a6400
 0x10001dd4 func   ?sub_10137290@@YIXPAVVector@@@Z sub_10137290
 0x10001dd9 func   ?sub_1007e5a0@CUnknown1007e5a0@@QAEXM@Z CUnknown1007e5a0::sub_1007e5a0
 0x10001dde func   ?vfunc3@CTEBeamRing@@UAEXHH@Z CTEBeamRing::vfunc3
