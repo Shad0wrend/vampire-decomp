@@ -8,6 +8,7 @@ class CWeaponMelee_MingXiaoMelee : public CWeaponMelee
 {
 public:
 	CWeaponMelee_MingXiaoMelee();	// constructor (0x103ec2b0): the base constructor, vtable, the float fields 500.0f
+	virtual int vfunc81();	// slot 81 override: returns 0
 	int vfunc367(int a, float b, float c);	// slot 367: its own (0x103ec350)
 	virtual void vfunc370(int *event, CBaseCombatWeapon *other);	// slot 370: ignores event type 0xbbb (a CWeaponMeleeEvent), else the base handler
 	void vfunc269(CBaseCombatWeapon *pOther, Vector vecDir);	// slot 269: its own (0x103ec490), pushes pOther along -vecDir scaled by the mathlib value while the state at +0x910 is 1 or 2
