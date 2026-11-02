@@ -8671,6 +8671,7 @@
 0x1000f358 func   ?sub_101f8e20@CUnknown101f0e50@@QAEXPAVCTraitOwnerX@@H@Z CUnknown101f0e50::sub_101f8e20
 0x1000f35d func   ?sub_1004ef10@@YAHXZ sub_1004ef10
 0x1000f367 func   ?vfunc5@CFuncKeyframedMover@@QAEPAV1@I@Z CFuncKeyframedMover::vfunc5
+0x1000f376 func   ?vfunc316@CAI_BaseNPCTroika@@UAEXPAXDD@Z CAI_BaseNPCTroika::vfunc316
 0x1000f37b func   ??0CBaseButton@@QAE@XZ CBaseButton::CBaseButton
 0x1000f380 func   ?sub_102dcc20@CUnk102dcc20@@QAEHXZ CUnk102dcc20::sub_102dcc20
 0x1000f399 func   ?vfunc81@CWeaponMelee_BushHook@@QAEHXZ CWeaponMelee_BushHook::vfunc81

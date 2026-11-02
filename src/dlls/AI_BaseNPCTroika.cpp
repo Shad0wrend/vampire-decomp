@@ -328,6 +328,34 @@ void CAI_BaseNPCTroika::sub_1029f460(void *pHolder, int a, int b, int c, int *pN
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029fa50 size=0xd9
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseCombatCharacter.h"
+#include "CDevFlagObj.h"
+extern CDevFlagObj *g_10924a6c;
+// TARGET: CAI_BaseNPCTroika::vfunc316
+void CAI_BaseNPCTroika::vfunc316(void *pEnt, char bFlagA, char bFlagB)
+{
+	g_10924a6c->vfunc1();
+	sub_10269a20(10);
+	if (pEnt) {
+		if (bFlagA && ((CBaseCombatCharacter *)pEnt)->sub_10345760((const Vector *)vfunc217()) && ((CBaseCombatCharacter *)this)->sub_10345d00() && vfunc325()) {
+			g_10924a6c->vfunc1();
+			sub_10269a20(12);
+			if (vfunc590()) {
+				m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+				m_nLine1b34 = 0x28e0;
+				sub_102ae750(0xd5, 0);
+			}
+		}
+		if (bFlagB && ((CBaseCombatCharacter *)this)->sub_10345d00() && vfunc324()) {
+			g_10924a6c->vfunc1();
+			sub_10269a20(13);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029fbe0 size=0xcd
 #include "CBaseCombatWeapon.h"
 #include "CEntityVSlots.h"
