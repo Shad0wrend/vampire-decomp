@@ -166289,6 +166289,35 @@ char sub_103c29b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c2fa0 size=0x7a
+extern int vt_104bd2cc;
+extern int vt_104bd2a0;
+extern int vt_104cd144;
+extern int vt_104cd118;
+void __fastcall sub_1028d230(void *pThis);
+void __fastcall sub_103c2990(void *pThis);
+// TARGET: sub_103c2fa0
+int *__fastcall sub_103c2fa0(int *pThis)
+{
+	sub_1028d230(pThis);
+	pThis[0x1997] = 0;
+	pThis[0x1998] = 0;
+	pThis[0x1999] = 0;
+	pThis[0x199a] = 0;
+	pThis[0x199b] = 0;
+	pThis[0] = (int)&vt_104bd2cc;
+	pThis[0x66c] = (int)&vt_104bd2a0;
+	sub_103c2990((char *)pThis + 0x6670);
+	pThis[0x199e] = -1;
+	pThis[0x55a] = 0xd;
+	pThis[0x55b] = 0xd;
+	pThis[0] = (int)&vt_104cd144;
+	pThis[0x66c] = (int)&vt_104cd118;
+	*((char *)pThis + 0x6671) = 0;
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c4840 size=0x1a
 namespace lifted {
 extern int g_1065e070;
