@@ -10,8 +10,6 @@ struct datamap_t;
 
 class CGlobalEntityList_Ent;
 
-struct CCameraKeyFrameOutput : COutputEvent {};	// the output at +0x498: its constructor is an out-of-line function (0x100cc020) in CCameraTrack's constructor
-
 class CCameraKeyFrame : public CLogicalEntity
 {
 public:
