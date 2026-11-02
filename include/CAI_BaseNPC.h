@@ -107,7 +107,7 @@ public:
 	// slots 410..482
 	CAI_NPC_V(410) CAI_NPC_V(411) CAI_NPC_V(412) CAI_NPC_V(413) CAI_NPC_V(414) CAI_NPC_V(415)
 	virtual void vfunc416(char value);
-	CAI_NPC_V(417)
+	virtual char vfunc417();	// slot 417 (plain member): returns 0
 	virtual float vfunc418(float a);	// float lookup keyed by magic values (-1000005..-1000008 in the Troika override), else the base value
 	CAI_NPC_V(419) CAI_NPC_V(420) CAI_NPC_V(421) CAI_NPC_V(422)
 	virtual unsigned int vfunc423();
