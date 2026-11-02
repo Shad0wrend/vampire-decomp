@@ -12,7 +12,10 @@ struct CTakeDamageAttacker	// the entity the +0x28 pointer of the record designa
 
 struct CTakeDamageInfo
 {
-	int m_nZero00;	// 0x00: cleared by the constructor
+	union {
+		int m_nZero00;	// 0x00: cleared by the constructor
+		class CVDmg_t *m_pVDmg00;	// 0x00: the damage record of the hit (VPhysicsTakeDamage reads its GetDmg (sub_101faa70) and flags at +0x10)
+	};
 	float m_fl04, m_fl08, m_fl0c;	// 0x04..0x0c: 1.0f
 	char m_pad0010[0x28 - 0x10];
 	CTakeDamageAttacker *m_pAttacker;	// 0x28
