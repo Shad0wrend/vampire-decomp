@@ -116,7 +116,7 @@ public:
 	virtual Vector vfunc192();	// "EyePosition"-like getter returning the vector by value (hidden pointer, ret 4)
 	virtual Vector vfunc193();	// slot 193 \"EyePosition\" (by value, hidden result pointer)
 	virtual float *vfunc194();	// slot 194 "GetAbsAngles"-like: the player's angles (+0x206c) in world space: with a live move parent (handle at +0x25c) its matrix (+0x130, slot 98 first when bit 11 of its flags +0x268 is set) times the angles' matrix, turned back into angles in a static; else the angles themselves
-	CBP_V10(sc3) CBP_V1(sc40) CBP_V1(sc41) CBP_V1(sc42) CBP_V1(sc43)
+	virtual float *vfunc195(); CBP_V1(sc31) CBP_V1(sc32) CBP_V1(sc33) CBP_V1(sc34) CBP_V1(sc35) CBP_V1(sc36) CBP_V1(sc37) CBP_V1(sc38) CBP_V1(sc39) CBP_V1(sc40) CBP_V1(sc41) CBP_V1(sc42) CBP_V1(sc43)
 	virtual CBaseEntity *vfunc209();	// slot 209: an entity (the player's ground / move parent entity); null when none
 	CBP_V1(sc45) CBP_V1(sc46) CBP_V1(sc47) CBP_V1(sc48) CBP_V1(sc49)
 	CBP_V1(sd0) CBP_V1(sd1)
