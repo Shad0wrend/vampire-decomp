@@ -46,3 +46,16 @@ CPointEntity *CAI_InterestingPlaceConverstation::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x102dbc80 size=0x13
+#include "CAI_InterestingPlaceConverstation.h"
+
+void __fastcall sub_10001f28(CAI_InterestingPlaceConverstation *self);
+
+// TARGET: CAI_InterestingPlaceConverstation::vfunc103
+void CAI_InterestingPlaceConverstation::vfunc103()
+{
+	sub_10001f28(this);
+	vfunc104();
+}
+// END FUNCTION
