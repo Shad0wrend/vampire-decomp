@@ -109662,6 +109662,26 @@ void CUnknown1020a240::sub_1020a240(const char *text, int a, int b, int c, int d
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020a3f0 size=0x5c
+#include "CUnknown1020a240.h"
+
+extern void (__cdecl *g_109f3624)(void *);	// Plat_Free
+
+// TARGET: CUnknown1020a240::sub_1020a3f0
+void CUnknown1020a240::sub_1020a3f0()
+{
+	m_size = 0;
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624((void *)m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+	m_pElements = m_pMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020a5c0 size=0x141
 #include "CBaseEntity.h"
 #include "CVStatList_t.h"
