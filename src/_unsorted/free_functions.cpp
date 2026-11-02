@@ -108220,6 +108220,26 @@ int *sub_1020a7d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020aa00 size=0x43
+#include "CBaseVampireSkillEntity.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(int size);
+extern char g_105addbc[];
+
+// TARGET: vampire_skill
+extern "C" CBaseEntity *vampire_skill()
+{
+	void *mem = sub_100aa720(0x80c);
+	CBaseVampireSkillEntity *p;
+	if (mem)
+		p = ((CBaseVampireSkillEntity *)mem)->sub_1020aa70();
+	else
+		p = 0;
+	((CBaseEntity *)p)->vfunc106(g_105addbc);
+	return (CBaseEntity *)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020aa70 size=0x64
 #include "CBaseVampireSkillEntity.h"
 
