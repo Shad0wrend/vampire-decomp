@@ -18,6 +18,13 @@ int CWeaponRanged::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10234800 size=0x3
+// TARGET: sub_10234800
+char sub_10234800() {
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10238110 size=0x1e
 #include "CWeaponRanged.h"
 
