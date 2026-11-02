@@ -1,6 +1,15 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1040d5b0 size=0x3
+#include "CWeaponPhysCannon.h"
+
+int CWeaponPhysCannon::vfunc81()
+{
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040d9e0 size=0x7d
 #include "CWeaponPhysCannon.h"
 
