@@ -227,7 +227,8 @@ public:
 	float m_f148C;	// 0x148C
 	char m_pad1490[0x149c - 0x1490];	// 0x1490 .. 0x149B
 	int m_h149C;	// 0x149C: the feeding target handle (-1 on death, vfunc144; CBaseCombatCharacter::m_h149c)
-	char m_pad14A0[0x14a8 - 0x14a0];	// 0x14A0 .. 0x14A7
+	int m_n14A0;	// 0x14A0: the blood pool (checked > 0 after the feeding steps)
+	char m_pad14A4[4];	// 0x14A4 .. 0x14A7
 	char m_b14A8;
 	char m_pad14A9;
 	char m_b14AA;	// 0x14AA: cleared by the death handler (vfunc144)
