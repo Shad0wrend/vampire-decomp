@@ -106,3 +106,4 @@
 	void vfunc225();	// slot 225 (plain member): unless the physics object at +0x36c is null, calls sub_1002ee60(this), sub_10158520(object, this) and clears +0x36c
 	float vfunc135(float f);	// slot 135: returns its argument
 	float vfunc152();	// slot 152: the constant 0.0f
+	float vfunc190();	// slot 190: the constant 0.0f
