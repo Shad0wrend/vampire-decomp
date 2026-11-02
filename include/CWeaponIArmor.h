@@ -26,6 +26,7 @@ class CWeaponIArmor : public CBaseCombatWeapon
 public:
 	virtual int vfunc81();	// slot 81 override: returns 0
 	virtual bool vfunc315();	// slot 315: names the weapon's model (the name at +0x754, "" when null), then CBaseCombatWeapon::sub_10253b70 with the results of slots 342, 343 (the cost chain) and 0xb4, 344
+	virtual bool vfunc325();	// slot 325 override: returns false
 	virtual void vfunc339();	// kicks the owner's target with a random vector
 
 	CWeaponIArmorOwner *sub_102521f0();
