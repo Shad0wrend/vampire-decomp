@@ -1146,6 +1146,7 @@
 0x10002dbf func   _item_w_thirtyeight item_w_thirtyeight
 0x10002dc4 func   ?vfunc242@CFuncPlat@@UAEXXZ CFuncPlat::vfunc242
 0x10002dc9 func   ?sub_1042fb20@@YAXXZ sub_1042fb20
+0x10002dd3 func   ?sub_10149e20@@YA_NXZ sub_10149e20
 0x10002dd8 func   ?sub_100738e0@CUnknown100738e0@@QAEXH@Z CUnknown100738e0::sub_100738e0
 0x10002ddd func   ??0COutputEvent@@QAE@XZ COutputEvent::COutputEvent
 0x10002de2 func   ?sub_1033d460@CLookupUnit1033d460@@QAEHH@Z CLookupUnit1033d460::sub_1033d460
