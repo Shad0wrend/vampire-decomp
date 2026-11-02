@@ -9474,6 +9474,24 @@ int sub_10057440()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057470 size=0x4b
+#include "engineserver.h"
+extern int vt_1044d17c;
+void __fastcall sub_10006bd1(void *pThis);
+// TARGET: sub_10057470
+int *__fastcall sub_10057470(int *pThis)
+{
+	sub_10006bd1(pThis);
+	pThis[0] = (int)&vt_1044d17c;
+	pThis[0x115] = 0;
+	pThis[0x116] = 0;
+	pThis[0x117] = 0;
+	pThis[0x118] = engine->vfunc13("sprites/fire1.vmt", 0);
+	pThis[0x9a] |= 0x80;
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057550 size=0xb
 namespace lifted {
 extern char g_1044d17c;

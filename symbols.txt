@@ -5378,6 +5378,7 @@
 0x10009d54 func   ?sub_1024c6f0@@YAXAAVVMatrix@@ABVVector@@@Z sub_1024c6f0
 0x10009d6d func   ?vfunc133@CBaseEntity@@UAEXXZ CBaseEntity::vfunc133
 0x10009d72 func   ?vfunc5@CPropClockHand@@QAEPAV1@I@Z CPropClockHand::vfunc5
+0x10009d77 func   ?sub_10057470@@YIPAHPAH@Z sub_10057470
 0x10009d7c func   ?sub_10158b40@@YAXPAX0@Z sub_10158b40
 0x10009d81 func   ?sub_1042d670@@YAXXZ sub_1042d670
 0x10009d86 func   ?vfunc241@CFuncPlat@@UAEEXZ CFuncPlat::vfunc241
