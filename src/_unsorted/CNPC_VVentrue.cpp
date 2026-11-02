@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103c77b0 size=0x6
+#include "CNPC_VVentrue.h"
+
+extern int g_1093d3b0;
+
+// TARGET: CNPC_VVentrue::vfunc580
+void *CNPC_VVentrue::vfunc580()
+{
+	return &g_1093d3b0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c77f0 size=0x1e
 #include "CNPC_VVentrue.h"
 

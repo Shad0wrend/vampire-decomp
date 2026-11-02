@@ -889,6 +889,7 @@
 0x10002685 func   ?sub_100b3c50@CBaseEntity@@QAEXI@Z CBaseEntity::sub_100b3c50
 0x1000268a func   ?sub_100926e0@CBaseAnimating@@QAEXHHH@Z CBaseAnimating::sub_100926e0
 0x1000268f func   ?vfunc7@CAI_Motor@@UAEHXZ CAI_Motor::vfunc7
+0x10002694 func   ?vfunc580@CNPC_VVentrue@@UAEPAXXZ CNPC_VVentrue::vfunc580
 0x1000269e func   _info_node_chang_teleport info_node_chang_teleport
 0x100026a3 func   ?sub_10200ea0@CVStatList_t@@QAE_NH@Z CVStatList_t::sub_10200ea0
 0x100026a8 func   ?sub_10146640@CUnknown10146640@@QAEPAXXZ CUnknown10146640::sub_10146640
