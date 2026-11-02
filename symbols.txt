@@ -1016,6 +1016,7 @@
 0x100029b9 func   ?vfunc174@CPropHaunted@@QAEXPAVCBaseEntity@@@Z CPropHaunted::vfunc174
 0x100029c3 func   ?vfunc280@CBaseCombatWeapon@@UAE_NH@Z CBaseCombatWeapon::vfunc280
 0x100029c8 func   ?sub_10075b70@CUnknown10075b70@@QAEHXZ CUnknown10075b70::sub_10075b70
+0x100029cd func   ?vfunc152@CBaseToggle@@QAEMXZ CBaseToggle::vfunc152
 0x100029d2 func   ?vfunc337@CNPC_VMingXiao@@UAEHXZ CNPC_VMingXiao::vfunc337
 0x100029dc func   ?sub_100ae1f0@@YAXPAVCBaseEntity@@PBD@Z sub_100ae1f0
 0x100029e1 func   ?vfunc5@CNPC_VAndreiBlood@@UAEPAVCAI_BaseNPC@@I@Z CNPC_VAndreiBlood::vfunc5

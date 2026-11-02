@@ -11,6 +11,15 @@ bool CBaseToggle::vfunc109(const char *a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004fc10 size=0x7
+#include "CBaseToggle.h"
+
+float CBaseToggle::vfunc152()
+{
+	return *(float *)((char *)this + 0x500);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0c60 size=0x6
 #include "CBaseToggle.h"
 namespace lifted {
