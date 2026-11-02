@@ -2513,6 +2513,7 @@
 0x10005178 func   _trigger_checkvolume trigger_checkvolume
 0x1000517d func   ?sub_10197430@@YAPAHPAXPAUPyObj@@@Z sub_10197430
 0x10005182 func   ?sub_101613b0@CBasePlayerUnit326@@QAEDXZ CBasePlayerUnit326::sub_101613b0
+0x10005187 func   ?sub_100270e0@@YGHXZ sub_100270e0
 0x10005191 func   ?sub_10225af0@CUnknown10225af0@@QAEXXZ CUnknown10225af0::sub_10225af0
 0x10005191 func   ?vfunc113@CPropDoorknob@@UAEXXZ CPropDoorknob::vfunc113
 0x10005196 func   _npc_VTzimisceHeadClaw npc_VTzimisceHeadClaw
