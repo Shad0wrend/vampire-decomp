@@ -121,6 +121,20 @@ void CFuncMoveLinear::vfunc173(void *pActivator, void *pCaller, int useType, flo
 }
 // END FUNCTION
 
+// FUNCTION: 0x101174a0 size=0x40
+#include "CFuncMoveLinear.h"
+#include "CBaseEntity.h"
+#include "CUnknown101c26d0.h"
+// TARGET: CFuncMoveLinear::vfunc178
+void CFuncMoveLinear::vfunc178(CBaseEntity *pOther)
+{
+	if (m_flBlockDamage56c != 0.0f) {
+		CUnknown101c26d0 info;
+		pOther->sub_100a1250(info.sub_101c26d0(this, this, m_flBlockDamage56c, 1, 0, 0, -1));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101174f0 size=0x1c4
 #include "CFuncMoveLinear.h"
 #include "CEntityVSlots.h"

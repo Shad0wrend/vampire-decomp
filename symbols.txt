@@ -2753,6 +2753,7 @@
 0x100058a3 func   ?sub_101d5660@S101d5660@@QAEXXZ S101d5660::sub_101d5660
 0x100058ad func   ?vfunc420@CNPC_VBatSwarm@@UAEXXZ CNPC_VBatSwarm::vfunc420
 0x100058b2 func   ?vfunc75@CMultiplayRules@@UAEXXZ CMultiplayRules::vfunc75
+0x100058bc func   ?vfunc178@CFuncMoveLinear@@QAEXPAVCBaseEntity@@@Z CFuncMoveLinear::vfunc178
 0x100058c1 func   ?sub_10412260@@YAPAUActEntry@@PBDH_N@Z sub_10412260
 0x100058cb func   ?vfunc580@CNPC_VBach@@UAEHXZ CNPC_VBach::vfunc580
 0x100058d0 func   ?sub_1013eec0@CMoveHelperServer@@QAEXPAVCBaseEntity@@@Z CMoveHelperServer::sub_1013eec0
