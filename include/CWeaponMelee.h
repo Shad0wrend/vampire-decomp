@@ -14,6 +14,7 @@ class CWeaponMelee : public CBaseCombatWeapon
 {
 public:
 	CWeaponMelee();
+	virtual bool vfunc282();	// slot 282 override: returns false (CBaseCombatWeapon::vfunc282 is a boolean slot)
 	bool vfunc283(CBaseEntity *pTarget);	// slot 283: its own (0x103ea6d0), true when pTarget answers slot 158, the weapon has an owner other than pTarget and the owner's centre (slot 192) is within the melee range of pTarget's
 	bool vfunc315();	// when the weapon has an owner: plays the swing, picks a sound name by the owner state (slots 272 / 273), and queries the animation (slots 342, 343, 344)
 	void vfunc319();	// slot 319: its own (0x103eaec0), runs slot 326 when the owner's player object has flag bit 0 and the time at +0x730 has passed, else slot 321
