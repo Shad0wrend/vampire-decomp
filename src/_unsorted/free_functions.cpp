@@ -17913,6 +17913,26 @@ char * CUnknown10076fc0::sub_10076fc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10076fe0 size=0x5c
+#include "CUnknown10075aa0.h"
+
+extern void (__cdecl *g_109f3624)(void *);	// Plat_Free
+
+// TARGET: CUnknown10075aa0::sub_10076fe0
+void CUnknown10075aa0::sub_10076fe0()
+{
+	m_vec2d0.m_size = 0;
+	if (m_vec2d0.m_growSize != -1) {
+		if (m_vec2d0.m_pMemory) {
+			g_109f3624((void *)m_vec2d0.m_pMemory);
+			m_vec2d0.m_pMemory = 0;
+		}
+		m_vec2d0.m_allocationCount = 0;
+	}
+	m_vec2d0.m_pElements = m_vec2d0.m_pMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10077060 size=0x7
 struct CUnknown10077060 { int sub_10077060(); };
 int CUnknown10077060::sub_10077060()
