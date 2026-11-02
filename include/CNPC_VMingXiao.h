@@ -104,7 +104,13 @@ public:
 	char m_pad6268[0x6290 - 0x6268];
 	Vector m_vecAxis6290;	// +0x6290
 	Vector m_vecExtent629c;	// +0x629c
-	char m_pad62a8[0x6670 - 0x62a8];
+	char m_pad62a8[0x6348 - 0x62a8];
+	int m_a6348[5];	// +0x6348: five dwords copied to the twin by sub_1039a750
+	char m_pad635c[0x63b4 - 0x635c];
+	float m_f63b4;	// +0x63b4: set to 4096.0f on the twin
+	char m_pad63b8[0x6420 - 0x63b8];
+	int m_a6420[5];	// +0x6420: five dwords copied to the twin by sub_1039a750
+	char m_pad6434[0x6670 - 0x6434];
 	unsigned int m_hOwner6670;	// +0x6670: the handle of the owner entity
 	int m_n6674;	// +0x6674: the slot index of a tentacle
 	char m_b6678;	// +0x6678
