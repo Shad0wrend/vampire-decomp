@@ -67,7 +67,12 @@ public:
 	int m_n670;	// 0x670: state, 1 while transformed
 	char m_pad0674[0x14b8 - 0x674];
 	unsigned int m_flags14b8;	// 0x14b8: bit 5 set while hiding
-	char m_pad14bc[0x1b2c - 0x14bc];
+	char m_pad14bc[0x1568 - 0x14bc];
+	int m_n1568;	// 0x1568: zeroed by the constructor
+	int m_n156c;	// 0x156c: 0x12 after the constructor
+	char m_pad1570[0x19b0 - 0x1570];
+	void *m_vptr19b0;	// 0x19b0: the CAI_DefMovementSink vptr (0x104b6810), stored by the constructor
+	char m_pad19b4[0x1b2c - 0x19b4];
 	int m_n1b2c;	// 0x1b2c
 	char m_pad1b30[0x5b80 - 0x1b30];
 	char m_b5b80;	// 0x5b80
