@@ -42,6 +42,7 @@ public:
 	// slot 8 (+0x20): CreatePolyObject(pCollide, materialIndex, const float *origin, const float *angles, const void *pParams)
 	virtual CPhysObjectIface *CreatePolyObject(void *pCollide, int materialIndex, const float *pOrigin, const float *pAngles, const void *pParams);
 	virtual void v9();
+	// (slots 12 and 19 below are used by the ragdoll code, see CRagdoll.h)
 	// slot 10 (+0x28): (CPhysObjectIface *, buffer) - a per-object setup called after the flags are changed
 	virtual void vfunc10(CPhysObjectIface *pObject, void *pBuffer);
 };
