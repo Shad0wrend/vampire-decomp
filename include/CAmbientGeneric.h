@@ -56,7 +56,7 @@ public:
 	const char *m_pszSoundEntName;	// 0x4c4: name of the entity the sound is attached to
 	unsigned int m_hSoundEnt;	// 0x4c8: entity handle of the entity the sound is attached to
 	char pad04cc[0x4d8 - 0x4cc];
-	unsigned int m_hAttached4d8;	// 0x4d8: -1 at construction (an entity handle, set by the sound code)
+	EHANDLE m_hAttached4d8;	// 0x4d8: an entity handle (-1 from its constructor, which runs before the vtable store)
 	char m_b04dc;
 	char m_b04dd;
 	char m_b04de;
