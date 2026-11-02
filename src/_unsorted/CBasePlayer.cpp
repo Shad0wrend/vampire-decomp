@@ -1931,6 +1931,14 @@ void CBasePlayer::vfunc468()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10182f10 size=0x5
+// TARGET: sub_10182f10
+bool __stdcall sub_10182f10(int a)
+{
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10182f30 size=0x11
 // TARGET: CBasePlayer::vfunc21
 void CBasePlayer::vfunc21(int a)

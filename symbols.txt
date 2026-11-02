@@ -6944,6 +6944,7 @@
 0x1000c1c6 func   ?sub_103a9340@CNPC_VSabbatLeader@@QAEDPAUCNPC_VSabbatLeaderHint@@@Z CNPC_VSabbatLeader::sub_103a9340
 0x1000c1cb func   ?sub_100ce630@CUnknown100ce630@@QAE_NM@Z CUnknown100ce630::sub_100ce630
 0x1000c1d0 func   ?vfunc597@CAI_BaseNPCTroika@@UAEHHH@Z CAI_BaseNPCTroika::vfunc597
+0x1000c1d5 func   ?sub_10182f10@@YG_NH@Z sub_10182f10
 0x1000c1da func   ?sub_1007dfe0@CUnknown1007dfe0@@QAEXH@Z CUnknown1007dfe0::sub_1007dfe0
 0x1000c1df func   ?vfunc266@CRagdollProp@@UAEXHH@Z CRagdollProp::vfunc266
 0x1000c1e9 func   ?sub_101f0d40@CUnknown101f0d40@@QAEXPAH@Z CUnknown101f0d40::sub_101f0d40
