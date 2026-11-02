@@ -5720,6 +5720,7 @@
 0x1000a303 func   ?sub_100b7bc0@@YIXPAHH0@Z sub_100b7bc0
 0x1000a308 func   ?vfunc5@CItemGWirelessCamera1@@QAEPAV1@I@Z CItemGWirelessCamera1::vfunc5
 0x1000a30d func   ?vfunc496@CNPC_VNewscaster@@UAEXXZ CNPC_VNewscaster::vfunc496
+0x1000a312 func   ?vfunc12@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEXH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc12
 0x1000a317 func   ?sub_101ceef0@@YAXMVVector@@000M@Z sub_101ceef0
 0x1000a31c func   ?vfunc80@CVampireProjectile_MingXiaoSpit@@UAEHXZ CVampireProjectile_MingXiaoSpit::vfunc80
 0x1000a326 func   ?vfunc82@CWindowPane@@UAEPAUdatamap_t@@XZ CWindowPane::vfunc82

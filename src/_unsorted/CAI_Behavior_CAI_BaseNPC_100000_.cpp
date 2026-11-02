@@ -8,6 +8,14 @@ void sub_102c6dd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c6df0 size=0x3
+#include "CAI_Behavior.h"
+
+void CAI_Behavior<CAI_BaseNPC,100000>::vfunc12(int a)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c6e30 size=0x9
 #include "CAI_Behavior.h"
 // TARGET: CAI_Behavior<CAI_BaseNPC,100000>::vfunc14
