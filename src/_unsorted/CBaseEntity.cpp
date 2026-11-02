@@ -400,6 +400,15 @@ void CBaseEntity::sub_10026c70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026d10 size=0x7
+#include "CBaseEntity.h"
+
+float CBaseEntity::vfunc135(float f)
+{
+	return f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026d30 size=0x3
 // TARGET: sub_10026d30
 unsigned char sub_10026d30()
