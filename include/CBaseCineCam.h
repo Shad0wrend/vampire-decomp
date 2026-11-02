@@ -40,7 +40,7 @@ public:
 	const char *m_psz5e4;
 	char m_pad05e8[4];
 	Vector m_vecShot5ec;	// 0x05ec: the first shot position
-	char m_pad05f8[0x604 - 0x5f8];
+	Vector m_vecLook5f8;	// 0x05f8: sub_1006f670 result
 	Vector m_vecShot604;	// 0x0604: the second shot position
 	unsigned int m_hShot610[4];	// 0x0610: entity handles, one per flag bit
 	char m_pad0620[0x630 - 0x620];
