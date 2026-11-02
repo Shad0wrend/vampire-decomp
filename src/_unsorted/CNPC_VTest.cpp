@@ -13,6 +13,18 @@ void *CNPC_VTest::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b3b40 size=0x6
+#include "CNPC_VTest.h"
+
+extern const char *g_106521c0;
+
+// TARGET: CNPC_VTest::vfunc451
+const char *CNPC_VTest::vfunc451()
+{
+	return g_106521c0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b3b60 size=0x1e
 #include "CNPC_VTest.h"
 
