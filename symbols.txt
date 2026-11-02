@@ -265,6 +265,7 @@
 0x100016b8 func   ?sub_10231fb0@CUnknown10231fb0@@QAEHHH@Z CUnknown10231fb0::sub_10231fb0
 0x100016bd func   ?vfunc265@CVampireProjectile_MingXiaoSpit@@UAE_NXZ CVampireProjectile_MingXiaoSpit::vfunc265
 0x100016c7 func   ?vfunc440@CNPC_VScurrying@@QAEHH@Z CNPC_VScurrying::vfunc440
+0x100016d1 func   ?sub_101a6580@@YGXH@Z sub_101a6580
 0x100016d6 func   ?sub_101346e0@CUnknown101346e0@@QAEHH@Z CUnknown101346e0::sub_101346e0
 0x100016db func   _logic_choreographed_scene logic_choreographed_scene
 0x100016e0 func   ?vfunc55@CBaseEntity@@UAEXHHHHHHH@Z CBaseEntity::vfunc55
