@@ -6,7 +6,9 @@ struct CHolderInner24_Node
 {
 	char m_pad00[0x10];
 	int m_i10;
-	char m_pad14[0x28 - 0x14];
+	char m_pad14[0x20 - 0x14];
+	unsigned int m_h20;	// 0x20: entity handle, looked up through the entity list (sub_100290c0(&m_h20)) by CAI_Navigator::sub_102f0400 for the "InPass" input
+	EHANDLE m_h24;	// 0x24: entity handle of the door the node passes (resolved inline, null-checked); flags bit 4 set
 	int m_flags28;	// bit 2 = has a value at +0x10, bit 3 = ended
 	int m_i2c;	// 0x2c
 	CHolderInner24_Node *m_pNext;	// 0x30
