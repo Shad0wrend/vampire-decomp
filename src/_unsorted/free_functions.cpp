@@ -141824,6 +141824,37 @@ void CUnknown102e83e0::sub_102e84a0(char flag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e8a40 size=0x27
+#include "CAI_BaseNPC.h"
+
+struct DrawHelperB
+{
+	virtual void vfunc0();
+	virtual void vfunc1();
+};
+
+extern DrawHelperB *g_10924ab4;
+
+struct CComp
+{
+	char m_pad0000[4];
+	CAI_BaseNPC *m_pOuter;	// 0x04
+	char m_pad0008[8];
+	char m_b10;		// 0x10
+};
+
+// TARGET: sub_102e8a40
+void __fastcall sub_102e8a40(CComp *pThis)
+{
+	g_10924ab4->vfunc1();
+	if (pThis->m_b10)
+	{
+		pThis->m_b10 = 0;
+		pThis->m_pOuter->vfunc558();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e8a80 size=0xa
 void __fastcall sub_102e8a80(int *self, int, int value)
 {

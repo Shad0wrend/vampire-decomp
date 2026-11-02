@@ -706,6 +706,7 @@
 0x10002225 func   ?sub_101a6ec0@@YAXXZ sub_101a6ec0
 0x1000222a func   _item_g_garys_tape item_g_garys_tape
 0x1000222f func   ?vfunc510@CNPC_VZombie@@QAE_NXZ CNPC_VZombie::vfunc510
+0x1000223e func   ?sub_102e8a40@@YIXPAUCComp@@@Z sub_102e8a40
 0x10002243 func   ?sub_10025ed0@@YAHXZ sub_10025ed0
 0x10002248 func   ?vfunc103@CSecCamera@@UAEXXZ CSecCamera::vfunc103
 0x1000224d func   ?sub_100d30a0@@YAXXZ sub_100d30a0
