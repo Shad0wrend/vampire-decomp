@@ -34593,6 +34593,30 @@ extern "C" CBaseEntity *func_illusionary()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bf870 size=0x4b
+#include "CConstraintAnchor.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(unsigned int size);
+extern char g_1045243c[];	// CFuncRotating vftable
+extern const char g_1055bc1c[];
+
+// TARGET: func_rotating
+extern "C" CBaseEntity *func_rotating()
+{
+	void *mem = sub_100aa720(0x470);
+	CBaseEntity *p;
+	if (mem) {
+		((CConstraintAnchorBase *)mem)->sub_1009d980(0);
+		*(void **)mem = g_1045243c;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_1055bc1c);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bf980 size=0x1a
 namespace lifted {
 extern int g_1055b4c0;
