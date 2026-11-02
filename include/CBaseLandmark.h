@@ -16,7 +16,9 @@ public:
 
 	virtual CPointEntity *vfunc5(unsigned int flags);	// scalar deleting destructor: the eight outputs, then the base body
 
+#ifndef CPOINTENTITY_BASED
 	char m_pad0004[0x450 - 4];
+#endif
 	COutputEvent m_Output450;
 	COutputEvent m_Output468;
 	COutputEvent m_Output480;
