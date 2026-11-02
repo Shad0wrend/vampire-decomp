@@ -3686,6 +3686,7 @@
 0x10006ea1 func   ?vfunc40@CPropDoorknob@@UAEXH@Z CPropDoorknob::vfunc40
 0x10006ea6 func   ?sub_1005ee50@CTEBSPDecal@@QAEPAV1@H@Z CTEBSPDecal::sub_1005ee50
 0x10006eab func   ?vfunc451@CNPC_VStalker@@UAEHXZ CNPC_VStalker::vfunc451
+0x10006eb0 func   ?sub_1036a390@@YADXZ sub_1036a390
 0x10006eba func   ?vfunc328@CWeaponIGeneric@@QAEHXZ CWeaponIGeneric::vfunc328
 0x10006ebf func   ?vfunc456@CAI_BaseNPC@@UAEPAPAVCAI_BehaviorBase@@XZ CAI_BaseNPC::vfunc456
 0x10006ec4 func   ?sub_10071220@CCameraAnimatedUnit@@QAEPAU1@XZ CCameraAnimatedUnit::sub_10071220

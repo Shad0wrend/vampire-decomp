@@ -39,6 +39,15 @@ void *sub_1036a230(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036a390 size=0x6
+extern char g_1062fe14;
+
+char sub_1036a390(void)
+{
+    return g_1062fe14;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036a3f0 size=0x1d
 #include "CNPC_VChangBros.h"
 struct A { int sub_10012300(int); };
