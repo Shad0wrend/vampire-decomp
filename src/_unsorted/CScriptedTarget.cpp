@@ -150,3 +150,19 @@ void CScriptedTarget::vfunc123()
 	CBaseEntity::vfunc123();
 }
 // END FUNCTION
+
+// FUNCTION: 0x1034e320 size=0x35
+#include "CScriptedTarget.h"
+
+void sub_1009d940(void *p, int n);
+void sub_1009d960(void *p, int n);
+
+int CScriptedTarget::vfunc126(int a)
+{
+	void *member = (char *)this + 0x5f64;
+	sub_1009d940(member, 3);
+	int r = sub_1000d279(a);
+	sub_1009d960(member, 3);
+	return r;
+}
+// END FUNCTION
