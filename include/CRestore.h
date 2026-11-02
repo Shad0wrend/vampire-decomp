@@ -91,6 +91,7 @@ public:
 	// Searches the field table starting from the remembered position, wrapping around.
 	CRestoreField *sub_101a17c0(const char *name, CRestoreField *fields, int count, int *pStart);
 	void sub_101a2820(unsigned short *pSize, int *pValues, void *pBase, typedescription_t *pField);	// "CRestore::ReadField": dispatches on the field type (0xb..0x13) to the matching read slot, "Bad field type" warning otherwise (stub 0x10001f5a)
+	bool sub_101a1750(const char *pszName, void *pData, void *pRootMap, typedescription_t *pField);	// dispatches on the field type: <= 10 CSave::sub_101a1520 (basic write), else sub_101a2820 (ReadField)
 	char sub_101a1860(typedescription_t *pField);	// "CRestore::ShouldReadField" (stub 0x100092cd)
 	void sub_101a1990(unsigned short *pValue);	// slot 7: calls slot 9(pValue), then appends slot 0() + *pValue to the vector at +4
 	void sub_101a1f90(void *pData, int size);	// reads size bytes into pData
