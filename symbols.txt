@@ -1892,6 +1892,7 @@
 0x10003fe9 func   ?sub_1012f030@@YAPAXPBD@Z sub_1012f030
 0x10003fee func   ?sub_1011ffe0@CGameMovement@@QAEXXZ CGameMovement::sub_1011ffe0
 0x10003ff3 func   ?sub_1025c670@@YA_NPAG0@Z sub_1025c670
+0x10003ff8 func   ?vfunc465@CBasePlayer@@QAEMXZ CBasePlayer::vfunc465
 0x10004002 func   ?sub_101e83d0@CUnknown101e83d0@@QAEXPAHPAXH@Z CUnknown101e83d0::sub_101e83d0
 0x10004007 func   ?sub_10203f10@@YAHPAVCBaseCombatCharacter@@D@Z sub_10203f10
 0x1000400c func   ?vfunc10@CCollisionProperty@@UAEPAMXZ CCollisionProperty::vfunc10
