@@ -106077,6 +106077,20 @@ bool __stdcall sub_10207df0(CBaseCombatCharacter *pChar)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10208b00 size=0x32
+#include "CItemContainer.h"
+extern char g_10483d14;
+void __fastcall sub_103274d0(CItemContainer *p);
+void CItemContainer::sub_10208b00()
+{
+	*(void **)this = &g_10483d14;
+	m_Output19e0.sub_100cd2d0();
+	m_Output19c8.sub_100cd2d0();
+	m_Output19b0.sub_100cd2d0();
+	sub_103274d0(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10208c90 size=0x15c
 #include "CUnknown10208c90.h"
 #include "CBaseCombatCharacter.h"
