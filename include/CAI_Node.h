@@ -21,6 +21,7 @@ public:
 	int m_n94;	// 0x94: set to 3 on the nodes the pass marks
 	class CAI_NodeGraph *m_pGraph98;	// 0x98: the node list (CAI_NodeGraph, count at +0, node pointers at +4) the node belongs to; a failed index check bumps the global counter 0x106c994c (read as a null node)
 
+	void sub_102fc6b0();	// stub 0x1000358a: the destructor body / link teardown (called by SPtrList::sub_102f31f0 before the node is deleted): for every link i < m_n78 that is set and whose far end (CPairFields102dda40::sub_102dda40(m_nIndex)) has a higher index than this node, walks that node's links (the node of m_pGraph98, bounds checked) and nulls every slot whose link has m_nIndex as its source (+4) or destination (+8) end, then deletes the link and nulls the slot; then deletes the bit string (m_pBits, via sub_100bf6a0), sets m_n88 = 0 and purges the link memory (+0x7c: Plat_Free when m_n84 != -1, twice)
 	void sub_102fa510();	// checks the node: a type 4 node goes to sub_102f9cd0, a type 2 node finds the first hull of the global hull mask (sub_102f9950) and, when its height is below -200, prints "Node %.0f %.0f %.0f too low" with the WC id and marks the hull in m_nHullMask; type 1 / 3 are fine, anything else prints "Bad node type!"
 	void sub_102f9cd0();	// stub 0x100066fe
 	void sub_102fa170();	// stub 0x100037ec
