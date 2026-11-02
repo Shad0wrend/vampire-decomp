@@ -26,6 +26,8 @@ public:
 	virtual CFlexAnimationTrack *vfunc0(unsigned int flags);	// scalar deleting destructor
 
 	CFlexAnimationTrack(CUnknown10075aa0 *pEvent);	// 0x10073b80
+	CFlexAnimationTrack(const CFlexAnimationTrack *pSrc);	// 0x10073c20: the copy constructor (ret 4, returns this): see sub_10074000, the two lists are Purge()d and filled by AddToTail of the source's samples
+	void sub_10074000(const char *pszName);	// stub 0x1000d391, called by the copy constructor with the source's name (+4) or "" (0x106b8540) when null
 	void sub_1000fbaa();	// destructor body
 	void sub_10073e70();	// destructor body (real address behind the stub)
 	void sub_10074b10(int nList);	// removes the samples of list nList (0 or 1) whose time is negative or past the event's length
