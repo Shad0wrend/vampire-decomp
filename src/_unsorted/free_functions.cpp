@@ -51115,6 +51115,18 @@ void CFire::sub_1010b3c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010b430 size=0x22
+#include "CFire.h"
+#include "globalvars.h"
+
+// TARGET: CFire::sub_1010b430
+void CFire::sub_1010b430()
+{
+	m_flNextThink = gpGlobals->curtime + 0.1;
+	vfunc241(0.1f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010b470 size=0x82
 #include "CBaseEntity.h"
 #include "CFire.h"

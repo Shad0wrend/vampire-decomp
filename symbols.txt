@@ -7596,6 +7596,7 @@
 0x1000d32d func   ?vfunc21@CRestore@@UAEXPADHH@Z CRestore::vfunc21
 0x1000d332 func   ?vfunc0@CBaseTransmitProxy@@QAEPAV1@I@Z CBaseTransmitProxy::vfunc0
 0x1000d337 func   ?sub_1007ed90@CUnknown1007ed90@@QAEXD@Z CUnknown1007ed90::sub_1007ed90
+0x1000d33c func   ?sub_1010b430@CFire@@QAEXXZ CFire::sub_1010b430
 0x1000d346 func   ?vfunc82@CCameraAnimated@@QAEPAUdatamap_t@@XZ CCameraAnimated::vfunc82
 0x1000d34b func   ?sub_1009b5a0@CBaseEntity@@QAEXPBD@Z CBaseEntity::sub_1009b5a0
 0x1000d35a func   ?vfunc580@CNPC_VTzimisceRunner@@UAEHXZ CNPC_VTzimisceRunner::vfunc580
