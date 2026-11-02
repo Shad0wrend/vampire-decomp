@@ -23,6 +23,17 @@ void *CNPC_VHumanCombatant::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10386b00 size=0x6
+#include "CNPC_VHumanCombatant.h"
+
+extern char *g_1063f8c0;
+
+const char *CNPC_VHumanCombatant::sub_10386b00()
+{
+	return g_1063f8c0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10386b20 size=0x1e
 #include "CNPC_VHumanCombatant.h"
 
