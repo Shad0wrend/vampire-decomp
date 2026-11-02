@@ -3783,6 +3783,7 @@
 0x10007176 func   ?vfunc5@CPointHurt@@QAEPAV1@I@Z CPointHurt::vfunc5
 0x10007185 func   ?sub_103b9f50@CNPC_VTzimisce@@QAEXH@Z CNPC_VTzimisce::sub_103b9f50
 0x10007194 func   ?sub_1018e9d0@@YAXHH@Z sub_1018e9d0
+0x10007199 func   ?sub_101db9c0@@YAHH@Z sub_101db9c0
 0x1000719e func   ?vfunc82@CLogicVisible@@UAEPAUdatamap_t@@XZ CLogicVisible::vfunc82
 0x100071a8 func   ?sub_10073920@CUnknown10073920@@QAEXH@Z CUnknown10073920::sub_10073920
 0x100071ad func   ?vfunc363@CWeaponIArmor_Lt_Cloth@@QAEHXZ CWeaponIArmor_Lt_Cloth::vfunc363

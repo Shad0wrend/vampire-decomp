@@ -92933,6 +92933,23 @@ void __fastcall sub_100107d5(char *p);
 void __fastcall sub_101db9a0(char *p) { sub_100107d5(p + 0x24); }
 // END FUNCTION
 
+// FUNCTION: 0x101db9c0 size=0x63
+#include <string.h>
+extern const char *g_105a1c18[2];
+const char *sub_10203d60(int);
+
+// TARGET: sub_101db9c0
+int sub_101db9c0(int a)
+{
+    const char *s = sub_10203d60(a);
+    for (int i = 0; i < 2; i++) {
+        if (strcmp(g_105a1c18[i], s) == 0)
+            return i;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dba50 size=0xc
 extern const char *g_105a1c18[];
 const char *sub_101dba50(int index)
