@@ -40,6 +40,18 @@ CNPC_VTremere *CNPC_VTremere::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b5c10 size=0x6
+#include "CNPC_VTremere.h"
+
+extern char g_10652cf8;
+
+// TARGET: CNPC_VTremere::vfunc452
+char CNPC_VTremere::vfunc452()
+{
+	return g_10652cf8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b5c70 size=0x1d
 #include "CNPC_VTremere.h"
 struct A { int sub_10012300(int); };
