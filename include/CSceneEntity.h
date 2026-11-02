@@ -7,6 +7,7 @@
 #define SCENE_V(n) virtual void vfunc##n();
 #define SCENE_V10(p) SCENE_V(p##0) SCENE_V(p##1) SCENE_V(p##2) SCENE_V(p##3) SCENE_V(p##4) SCENE_V(p##5) SCENE_V(p##6) SCENE_V(p##7) SCENE_V(p##8) SCENE_V(p##9)
 
+struct datamap_t;
 class CBaseEntity;
 class CBaseFlex;
 class CUnknown1007ce20;
@@ -91,7 +92,7 @@ public:
 	virtual void vfunc7();
 	virtual void vfunc8();
 	virtual void vfunc9();
-	SCENE_V10(1) SCENE_V10(2) SCENE_V10(3) SCENE_V10(4) SCENE_V10(5) SCENE_V10(6) SCENE_V10(7) SCENE_V10(8) SCENE_V10(9)
+	SCENE_V10(1) SCENE_V10(2) SCENE_V10(3) SCENE_V10(4) SCENE_V10(5) SCENE_V10(6) SCENE_V10(7) SCENE_V(80) SCENE_V(81) virtual datamap_t *vfunc82(); SCENE_V(83) SCENE_V(84) SCENE_V(85) SCENE_V(86) SCENE_V(87) SCENE_V(88) SCENE_V(89) SCENE_V10(9)
 	SCENE_V10(10) SCENE_V10(11) SCENE_V10(12) SCENE_V10(13) SCENE_V10(14) SCENE_V10(15) SCENE_V10(16) SCENE_V10(17) SCENE_V10(18) SCENE_V10(19)
 	SCENE_V10(20) SCENE_V10(21) SCENE_V10(22) SCENE_V10(23)
 	SCENE_V(240) SCENE_V(241)
