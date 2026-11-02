@@ -125997,6 +125997,58 @@ void CAI_BaseNPC::sub_1026e4f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026e940 size=0x241
+#include "ScopeTrace.h"
+#include "Ray_t.h"
+#include <math.h>
+struct HullTrace { Vector startpos; Vector endpos; char rest[0x54 - 0x18]; };
+struct IHullTrace { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void TraceRay(const Ray_t &ray, unsigned mask, void *filter, HullTrace *tr); };
+struct IHullClient { virtual void v0(); virtual bool v1(); char pad[0x28]; void *m2c; };
+extern IHullTrace *g_1070b254;
+extern IHullClient *g_10738964;
+void sub_10146570(void *, void *, int, int, int, int, float);
+// m_Extents (+0x18) here is the game's start offset and m_StartOffset (+0x24) its extents
+struct HullRay : Ray_t
+{
+	void InitHull(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs)
+	{
+		Vector &offset = *(Vector *)m_Extents;
+		Vector &extents = *(Vector *)m_StartOffset;
+		m_Delta[0] = end.x - start.x;
+		m_Delta[1] = end.y - start.y;
+		m_Delta[2] = end.z - start.z;
+		m_IsSwept = (m_Delta[0] * m_Delta[0] + m_Delta[1] * m_Delta[1] + m_Delta[2] * m_Delta[2]) != 0;
+		VectorSubtract(maxs, mins, extents);
+		extents *= 0.5f;
+		m_IsRay = (extents.z * extents.z + extents.y * extents.y + extents.x * extents.x) < 1e-6;
+		VectorAdd(mins, maxs, offset);
+		offset *= 0.5f;
+		m_Start[0] = offset.x + start.x;
+		m_Start[1] = offset.y + start.y;
+		m_Start[2] = offset.z + start.z;
+		offset *= -1.0f;
+		m_b32 = 0;
+		m_b33 = 0;
+		m_n34 = 0;
+	}
+};
+void sub_1026e940(const Vector &vecStart, const Vector &vecEnd, const Vector &hullMin, const Vector &hullMax, unsigned mask, void *filter, HullTrace *ptr, char bTraceOffset)
+{
+	ScopeTrace trace("UTIL_TraceHull", g_106b8540, g_106b8540);
+	HullRay ray;
+	ray.InitHull(vecStart, vecEnd, hullMin, hullMax);
+	if (bTraceOffset && !ray.m_IsRay) {
+		float f = sqrt(ray.m_StartOffset[1] * ray.m_StartOffset[1] + ray.m_StartOffset[0] * ray.m_StartOffset[0]);
+		*(float *)&ray.m_n34 = f;
+		if (f > 1e-6)
+			ray.m_b33 = 1;
+	}
+	g_1070b254->TraceRay(ray, mask, filter, ptr);
+	if (!g_10738964->v1() && g_10738964->m2c)
+		sub_10146570(ptr, (char *)ptr + 0xc, 0xff, 0xff, 0, 1, -1.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026fb40 size=0x7b
 #include "CAI_BaseNPC.h"
 extern float g_10452dc4;

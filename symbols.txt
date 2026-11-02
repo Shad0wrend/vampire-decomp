@@ -1223,6 +1223,7 @@
 0x10002fd6 func   _info_node_sabbat_dive info_node_sabbat_dive
 0x10002fdb func   ?sub_1009ad70@@YIPADPAD@Z sub_1009ad70
 0x10002fe0 func   ?vfunc82@CBaseFlex@@UAEPAUdatamap_t@@XZ CBaseFlex::vfunc82
+0x10002fef func   ?sub_1026e940@@YAXABVVector@@000IPAXPAUHullTrace@@D@Z sub_1026e940
 0x10002ff4 func   ?sub_101fee50@CVStatInfo_t@@QAEHH@Z CVStatInfo_t::sub_101fee50
 0x10002ff9 func   ?vfunc4@CTEBloodStream@@QAEXHH@Z CTEBloodStream::vfunc4
 0x1000300d func   ?vfunc82@CInspectionNode@@QAEPAUdatamap_t@@XZ CInspectionNode::vfunc82
