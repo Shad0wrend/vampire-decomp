@@ -13,4 +13,5 @@
 	void sub_100b2770(const float *pVelocity);	// the absolute velocity setter (stub 0x1000489a), called directly by vfunc299
 	void sub_100ac610(float time, const char *szContext);	// "CBaseEntity::SetNextThink" (stub 0x1000326f), called directly
 	void sub_1024f840();	// stub 0x1000aec5: the weapon's world setup (bounds, solid flags, think), run by vfunc103 and vfunc299
+	void sub_10252e30(CBaseEntity *pPlayer);	// 0x10252e30: with a player whose character (+0xa8) accepts this weapon (CBaseCombatCharacter::sub_10173f90(this, 0, 0, 0)), slot 341 picks it up
 	bool sub_10239170();	// true when the weapon's current roll slot (sub_102517e0) has a loaded clip (+0x74c + 4 * the slot's ammo index at +0x10c) and vfunc277(0) holds
