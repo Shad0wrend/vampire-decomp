@@ -164560,66 +164560,6 @@ char sub_1039f6f0()
 }
 // END FUNCTION
 
-// FUNCTION: 0x103a0ab0 size=0x20d
-#include "CNPC_VNewscaster.h"
-#include "CUnknown103a1320.h"
-
-struct CKVNode {
-	virtual void vfunc0();
-	virtual void vfunc1();
-	virtual void vfunc2();
-	virtual void vfunc3();
-	virtual CKVNode *vfunc4();
-	virtual CKVNode *vfunc5();
-};
-
-char *sub_101d3730(const char *fmt, const char *prefix);
-CKVNode *sub_101f2e20(const char *name, int x);
-extern int g_1070b238;
-struct CNewscasterView : CNPC_VNewscaster {
-	bool sub_103a07f0(CKVNode *node, CNewscasterEntry *out);
-};
-
-struct CKVFile : CKVNode {
-	int *m_pVBTable;
-	void Close()
-	{
-		int disp = m_pVBTable[1];
-		CKVNode *b = (CKVNode *)((char *)this + disp + 4);
-		b->vfunc1();
-	}
-};
-
-// TARGET: CNPC_VNewscaster::sub_103a0ab0
-void CNPC_VNewscaster::sub_103a0ab0()
-{
-	CNewscasterEntry e;
-	int *p = (int *)&e;
-	sub_103a0d50();
-	char *name = sub_101d3730("%sNewscaster_Main.txt", "vdata\\system\\");
-	CKVFile *f = (CKVFile *)sub_101f2e20(name, g_1070b238);
-	if (f) {
-		for (CKVNode *n = f->vfunc4(); n; n = n->vfunc5()) {
-			for (int i = 0; i < 10; i++) p[i] = 0;
-			if (((CNewscasterView *)this)->sub_103a07f0(n, &e))
-				m_listA.AddToTail(e);
-		}
-	}
-	f->Close();
-	name = sub_101d3730("%sNewscaster_Side.txt", "vdata\\system\\");
-	f = (CKVFile *)sub_101f2e20(name, g_1070b238);
-	if (f) {
-		for (CKVNode *n = f->vfunc4(); n; n = n->vfunc5()) {
-			for (int i = 0; i < 10; i++) p[i] = 0;
-			if (((CNewscasterView *)this)->sub_103a07f0(n, &e))
-				m_listB.AddToTail(e);
-		}
-	}
-	f->Close();
-	m_bFlag6690 = 1;
-}
-// END FUNCTION
-
 // FUNCTION: 0x103a0d50 size=0x10e
 #include "CNPC_VNewscaster.h"
 
