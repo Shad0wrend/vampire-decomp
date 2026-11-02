@@ -153,6 +153,7 @@ public:
 
 	// Slots called directly so far; declared as plain members.
 	int vfunc240();	// slot 240: returns the int global at 0x1072b360 (read by 0x1014f8b0, written by PyServerSystem::vfunc0)
+	int vfunc145();	// slot 145: the blood color at +0x1570
 	bool vfunc73(CBaseEntity *pOther);	// "CBaseCombatCharacter::CausesImpactDamage": scope trace, (pOther's flags at +0x434 & 0x20000000) != 0
 	bool vfunc295(int a);
 	void *vfunc309();	// returns the best ranged weapon (or null)
