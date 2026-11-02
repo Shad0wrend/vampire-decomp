@@ -33,7 +33,9 @@ public:
     int vfunc124();    // slot 124 "DrawDebugTextOverlays": the base's line offset, plus one line "Health: %d" when the text overlay bit (bit 0 of +0x224) is set
     int sub_10096100();    // CBaseAnimating::vfunc124 (stub 0x10007d97), called directly
 
-    char m_pad0000[0x16c];
+    char m_pad0000[0xdc];
+    int m_nDC;    // 0xdc: the gib parameter pushed (arg 4) by Break's gib spawner chain (CBaseEntity::m_nDC "energy scale")
+    char m_pad00e0[0x16c - 0xe0];
     int m_nRenderFX;    // 0x16c
     char m_pad0170[0x178 - 0x170];
     float m_flFadeStart178;    // 0x178
