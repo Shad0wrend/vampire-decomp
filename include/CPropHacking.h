@@ -75,6 +75,7 @@ public:
 	char sub_1021b750(int a, const char *pszName);	// looks the screen named pszName up (first in the records at +0x9a0, then through the index list of the selected record in the records at +0x9b4) and switches to it
 	void sub_1021c390(int a);	// stub 0x1000137a
 	char sub_1021c6d0(int a);	// stub 0x1000e174
+	void sub_10219fa0();	// destructor body (called by vfunc5 through the stub at 0x1000befb): vptr 0x1048a5f4, delete every element of the vector at +0x9c8, then the six vectors (+0x9c8, +0xa14, +0x9f8, +0x9b4, +0x9a0, +0x98c) are torn down with their inlined RemoveAll / Purge (+0x9c8 and +0x9a0 purged twice / with Plat_Free), the eight COutputEvents +0x8e8 down by 0x18 and the seven at +0x7f4, +0x7dc, +0x7c4, +0x7ac, +0x794, +0x748, +0x730 (sub_100cd2d0), then the tail jump to CBaseAnimating::sub_1008b3c0
 	void sub_1021c000();	// stub-less member: m_n0a0c = min(m_n0a04 / 10, m_n0a0c + 1), then sub_1021c040()
 
 	char m_pad03e0[0x814 - 0x3e0];
