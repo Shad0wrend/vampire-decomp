@@ -139830,6 +139830,38 @@ void CAI_LocalNavigator::sub_102ddb30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ddc00 size=0x22
+class CFoo102ddc00
+{
+public:
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual int vfunc8();
+
+	char *m_pOuter;	// 0x04
+	char m_pad08[0x14 - 0x08];
+	int m_14;	// 0x14
+	int m_18;	// 0x18
+	int m_1c;	// 0x1c
+
+	void sub_102ddc00(int a);
+};
+
+// TARGET: CFoo102ddc00::sub_102ddc00
+void CFoo102ddc00::sub_102ddc00(int a)
+{
+	m_18 = vfunc8();
+	m_14 = a;
+	m_1c = *(int *)(m_pOuter + 0x5d40);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ddc40 size=0x2a
 struct CUnknown102ddc40 {
 	char m_pad0000[0x18];

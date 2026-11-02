@@ -10926,6 +10926,7 @@
 0x10012869 func   ?sub_102beab0@CUnknown102beab0@@QAEHHHH@Z CUnknown102beab0::sub_102beab0
 0x1001286e func   ?sub_103cca80@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103cca80
 0x10012873 func   ?sub_101b36f0@CUnknown101b36f0@@QAEPAXH@Z CUnknown101b36f0::sub_101b36f0
+0x10012878 func   ?sub_102ddc00@CFoo102ddc00@@QAEXH@Z CFoo102ddc00::sub_102ddc00
 0x1001287d func   ?vfunc80@CItemGIdolElephant@@QAEHXZ CItemGIdolElephant::vfunc80
 0x10012882 func   ?sub_101854b0@CUtlVector72@@QAEXH@Z CUtlVector72::sub_101854b0
 0x10012887 func   ?sub_100b39c0@@YIHPAD@Z sub_100b39c0
