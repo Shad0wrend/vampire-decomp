@@ -9501,6 +9501,26 @@ int CUnknown10056f80::sub_10056f80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057050 size=0x43
+#include "CFireSmoke.h"
+
+void *sub_100aa720(int size);
+extern char g_1053faa0[];
+
+// TARGET: _firesmoke
+extern "C" CBaseEntity *_firesmoke()
+{
+	void *mem = sub_100aa720(0x464);
+	CFireSmoke *p;
+	if (mem)
+		p = ((CFireSmoke *)mem)->sub_10057470();
+	else
+		p = 0;
+	p->vfunc106(g_1053faa0);
+	return (CBaseEntity *)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057230 size=0x12d
 #include "SendProp.h"
 
