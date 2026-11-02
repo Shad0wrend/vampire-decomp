@@ -7367,6 +7367,7 @@
 0x1000ce3c func   ?sub_101e8c30@CUnknown101e8c30@@QAEMXZ CUnknown101e8c30::sub_101e8c30
 0x1000ce41 func   ?sub_101a9bd0@@YAPAHXZ sub_101a9bd0
 0x1000ce4b func   ?sub_10142af0@@YAXHHHHHHHHH@Z sub_10142af0
+0x1000ce50 func   ?vfunc1@?$CUtlVectorDataOps@V?$CUtlVector@USaveRestoreBlockHeader_t@@V?$CUtlMemory@USaveRestoreBlockHeader_t@@@@@@$08@@UAEXPAX0@Z CUtlVectorDataOps<CUtlVector<SaveRestoreBlockHeader_t,CUtlMemory<SaveRestoreBlockHeader_t> >,9>::vfunc1
 0x1000ce55 func   ?vfunc80@CDynamicProp@@UAEHXZ CDynamicProp::vfunc80
 0x1000ce5a func   ?sub_100d3d20@@YAXXZ sub_100d3d20
 0x1000ce69 func   ?sub_1025da20@CList1025da20@@QAEXXZ CList1025da20::sub_1025da20
