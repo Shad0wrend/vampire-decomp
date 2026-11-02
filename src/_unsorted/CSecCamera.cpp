@@ -54,6 +54,17 @@ void CSecCamera::vfunc113()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020c7f0 size=0x18
+#include "CSecCamera.h"
+
+// TARGET: CSecCamera::vfunc266
+void CSecCamera::vfunc266(const float *pVelocity)
+{
+	sub_1020c890();
+	sub_10015208(pVelocity);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020c850 size=0x25
 #include "CSecCamera.h"
 
