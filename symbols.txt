@@ -2253,6 +2253,7 @@
 0x10004b33 func   ?sub_100d27b0@@YAXXZ sub_100d27b0
 0x10004b38 func   ?sub_100d0320@@YGHPAPAX@Z sub_100d0320
 0x10004b3d func   ?sub_100bbe70@CBeam@@QAEXHH@Z CBeam::sub_100bbe70
+0x10004b42 func   ?sub_100876d0@@YAXXZ sub_100876d0
 0x10004b47 func   ?vfunc362@CWeaponThrown_Grenade_Frag@@UAEHXZ CWeaponThrown_Grenade_Frag::vfunc362
 0x10004b4c func   ?sub_102cccb0@CUnk102cccb0@@QAEXH@Z CUnk102cccb0::sub_102cccb0
 0x10004b51 func   ?sub_1013e400@@YGHH@Z sub_1013e400
