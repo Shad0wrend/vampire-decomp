@@ -70136,6 +70136,18 @@ void CUtlVector52::sub_10185310(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101853e0 size=0x49
+#include "CUtlVector88.h"
+void *sub_10430fa0(void *, const void *, unsigned int);
+
+void CUtlVector88::sub_101853e0(int elem, int num)
+{
+	int numToMove = m_size - elem - num;
+	if (numToMove > 0 && num > 0)
+		sub_10430fa0(m_pMemory + (elem + num) * 52, m_pMemory + elem * 52, numToMove * 52);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10185450 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);

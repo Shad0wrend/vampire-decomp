@@ -8665,6 +8665,7 @@
 0x1000edc7 func   ?sub_100f4260@@YAXHHMMMH@Z sub_100f4260
 0x1000edd1 func   ?vfunc72@CBaseGrenade@@UAE_NH@Z CBaseGrenade::vfunc72
 0x1000ede0 func   ?vfunc246@CBaseAnimating@@QAEXXZ CBaseAnimating::vfunc246
+0x1000ede5 func   ?sub_101853e0@CUtlVector88@@QAEXHH@Z CUtlVector88::sub_101853e0
 0x1000edea func   ?sub_1014ee10@@YAPAHXZ sub_1014ee10
 0x1000edef func   ?vfunc8@IPhysicsCollisionEvent@@UAEXPAX0@Z IPhysicsCollisionEvent::vfunc8
 0x1000edf4 func   ?vfunc130@CAI_InterestingPlace@@UAEXH@Z CAI_InterestingPlace::vfunc130
