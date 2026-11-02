@@ -453,6 +453,14 @@ bool __stdcall sub_10026e10(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026e30 size=0x5
+// TARGET: sub_10026e30
+bool __stdcall sub_10026e30(int a)
+{
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026e70 size=0x4c
 extern Vector g_1070d1b0;
 inline int VecNe(const Vector &a, const Vector &b)
