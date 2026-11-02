@@ -62301,6 +62301,23 @@ int CBaseMoveBehavior::sub_101402f0(int nIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140460 size=0x4b
+#include "CBaseMoveBehavior.h"
+
+void *sub_100aa720(unsigned int size);
+inline void *operator new(unsigned int, void *p) { return p; }
+extern const char g_1057a8f0[];
+
+// TARGET: move_keyframed
+extern "C" CBaseMoveBehavior *move_keyframed()
+{
+	void *mem = sub_100aa720(0x4b8);
+	CBaseMoveBehavior *p = mem ? new(mem) CBaseMoveBehavior : 0;
+	p->vfunc106(g_1057a8f0);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140550 size=0x1a
 namespace lifted {
 extern int g_1057a3fc;
