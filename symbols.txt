@@ -3796,6 +3796,7 @@
 0x10007374 func   ?vfunc494@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc494
 0x1000737e func   ?sub_1034abb0@@YAPAHXZ sub_1034abb0
 0x10007383 func   ?vfunc5@CKeepUpright@@QAEPAV1@I@Z CKeepUpright::vfunc5
+0x10007388 func   ?sub_100a7a80@@YAHXZ sub_100a7a80
 0x1000738d func   ?vfunc80@CFireSmoke@@UAEHXZ CFireSmoke::vfunc80
 0x10007392 func   ?sub_10430220@@YAII@Z sub_10430220
 0x10007397 func   ?vfunc80@CResearchBook_LG_COMP@@QAEHXZ CResearchBook_LG_COMP::vfunc80

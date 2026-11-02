@@ -1902,6 +1902,11 @@ int CBaseEntity::vfunc233(int *pList, int maxObjects)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a7a80 size=0x3
+// TARGET: sub_100a7a80
+int __cdecl sub_100a7a80() { return 0; }
+// END FUNCTION
+
 // FUNCTION: 0x100a7aa0 size=0xef
 #include "CBaseEntity.h"
 struct TraceEntry { const char *a, *b, *c; };
