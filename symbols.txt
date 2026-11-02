@@ -9870,6 +9870,7 @@
 0x10010bae func   ?sub_1019ed90@CRopeKeyframe@@QAEXPAURopeArg@@@Z CRopeKeyframe::sub_1019ed90
 0x10010bb3 func   ?vfunc313@CNPC_VSabbatLeader@@QAEXXZ CNPC_VSabbatLeader::vfunc313
 0x10010bbd func   ?sub_101123b0@CBreakableSurface@@QAE_NHH@Z CBreakableSurface::sub_101123b0
+0x10010bc2 func   ?vfunc86@CNPCMaker@@UAE_NHPAXHHH@Z CNPCMaker::vfunc86
 0x10010bcc func   ?sub_1009c1e0@CBaseEntity@@QAEXHHPAH@Z CBaseEntity::sub_1009c1e0
 0x10010bd6 func   ?sub_100839c0@CSceneEntity@@QAEPAXPBD@Z CSceneEntity::sub_100839c0
 0x10010bdb func   ?sub_1006bb00@@YAHXZ sub_1006bb00

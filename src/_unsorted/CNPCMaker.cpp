@@ -94,6 +94,16 @@ bool CNPCMaker::vfunc72(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034af10 size=0x5
+#include "CNPCMaker.h"
+
+// TARGET: CNPCMaker::vfunc86
+bool CNPCMaker::vfunc86(int a, void *pEdict, int c, int d, int e)
+{
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034af30 size=0x3
 #include "CNPCMaker.h"
 void CNPCMaker::vfunc619(int a0)
