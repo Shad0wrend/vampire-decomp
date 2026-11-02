@@ -49803,6 +49803,30 @@ void sub_101034f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10103670 size=0x4b
+#include "CConstraintAnchor.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(unsigned int size);
+extern char g_10459f64[];	// CEnvFloatingCamera vftable
+extern const char g_1056a414[];
+
+// TARGET: env_floating_camera
+extern "C" CBaseEntity *env_floating_camera()
+{
+	void *mem = sub_100aa720(0x460);
+	CBaseEntity *p;
+	if (mem) {
+		((CConstraintAnchorBase *)mem)->sub_1009d980(0);
+		*(void **)mem = g_10459f64;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_1056a414);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10103740 size=0x1a
 namespace lifted {
 extern int g_10569fd4;
