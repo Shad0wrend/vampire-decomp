@@ -6393,6 +6393,7 @@
 0x1000b2ee func   ?sub_102f1dc0@CAI_Navigator@@QAE_NHH@Z CAI_Navigator::sub_102f1dc0
 0x1000b2f3 func   ?vfunc80@CResearchBook_LG_FIREARMS@@QAEHXZ CResearchBook_LG_FIREARMS::vfunc80
 0x1000b2f8 func   ?sub_102f9c70@@YAHH@Z sub_102f9c70
+0x1000b307 func   ?vfunc514@CAI_BaseNPC@@QAE_NHHHH@Z CAI_BaseNPC::vfunc514
 0x1000b30c func   ?sub_1003d300@CBaseEntity@@QAEXXZ CBaseEntity::sub_1003d300
 0x1000b316 func   ?vfunc1@CSafeDiscSaveRestoreOps_0@@UAEXPAPAHPAUCSafeDiscReader@@@Z CSafeDiscSaveRestoreOps_0::vfunc1
 0x1000b31b func   ?sub_101c4160@@YAXXZ sub_101c4160

@@ -2004,6 +2004,16 @@ CAI_MoveProbe *__fastcall sub_1027cef0(void *pOuter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027d9d0 size=0x5
+#include "CAI_BaseNPC.h"
+
+// TARGET: CAI_BaseNPC::vfunc514
+bool CAI_BaseNPC::vfunc514(int a, int b, int c, int d)
+{
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027d9f0 size=0x76
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
