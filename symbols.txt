@@ -8185,6 +8185,7 @@
 0x1000dfcb func   ?sub_10388d00@@YAHXZ sub_10388d00
 0x1000dfda func   ?vfunc104@CBreakable@@QAEXXZ CBreakable::vfunc104
 0x1000dfdf func   ?sub_10076e70@CChoreoEvent10076e70@@QAEPAUCUnknown100738a0@@PBD@Z CChoreoEvent10076e70::sub_10076e70
+0x1000dfe4 func   ?sub_103841a0@@YADXZ sub_103841a0
 0x1000dfe9 func   ?sub_10293dc0@CUnknown10293dc0@@QAEXM@Z CUnknown10293dc0::sub_10293dc0
 0x1000dfee func   ?sub_1023f3d0@@YAPAUSOut1023f3d0@@PBUSVec3@@0PAU1@@Z sub_1023f3d0
 0x1000dff3 func   ?sub_10184f70@@YIXPAH@Z sub_10184f70

@@ -32,6 +32,15 @@ const char * CNPC_VHuman::vfunc451()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103841a0 size=0x6
+extern char g_1063f628;
+
+char sub_103841a0(void)
+{
+    return g_1063f628;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10384200 size=0x1d
 #include "CNPC_VHuman.h"
 struct A { int sub_10012300(int); };
