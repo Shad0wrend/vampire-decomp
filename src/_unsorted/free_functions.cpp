@@ -64388,6 +64388,31 @@ int CUnk1015fd50::sub_1015fd50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015fd80 size=0x25
+#include "CCharacter1015fbb0.h"
+
+int sub_1015fdc0();
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CCharSlots
+{
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	V10(k) V10(l) V10(m) V10(n) V10(o) V10(p) V10(q) V10(r) V10(s) V10(t)
+	V10(u) V10(v) V10(w) V10(x) V10(y) V10(z)
+	virtual void s260(); virtual void s261(); virtual void s262(); virtual void s263();
+	virtual void s264(); virtual void s265(); virtual void s266(); virtual void s267();
+	virtual void vfunc268(int a, int b, int c, int d);
+};
+
+// TARGET: CCharacter1015fbb0::sub_1015fd80
+void CCharacter1015fbb0::sub_1015fd80(int a)
+{
+	if (sub_1015fdc0() != a)
+		((CCharSlots *)this)->vfunc268(0, -1, a, 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015fdc0 size=0x1e
 // TARGET: sub_1015fdc0
 struct CUnk1015fdc0

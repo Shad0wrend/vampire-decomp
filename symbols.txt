@@ -3131,6 +3131,7 @@
 0x100060f5 func   ?sub_102db740@CAI_InterestingPlaceConverstation@@QAEXH@Z CAI_InterestingPlaceConverstation::sub_102db740
 0x100060fa func   ?sub_101358e0@CUnknown101358e0@@QAEXPAH@Z CUnknown101358e0::sub_101358e0
 0x100060ff func   ?vfunc3@CGameMovement@@QAEPAMDH@Z CGameMovement::vfunc3
+0x10006104 func   ?sub_1015fd80@CCharacter1015fbb0@@QAEXH@Z CCharacter1015fbb0::sub_1015fd80
 0x10006109 func   ?vfunc126@CScriptedTarget@@UAEHH@Z CScriptedTarget::vfunc126
 0x1000610e func   ?sub_101db410@CUnknown101db410@@QAEHXZ CUnknown101db410::sub_101db410
 0x10006113 func   ?sub_10355740@CHalfLife2@@QAEPAV1@XZ CHalfLife2::sub_10355740
