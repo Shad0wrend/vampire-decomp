@@ -21,6 +21,7 @@ public:
 	char m_pad0041[0x98 - 0x41];
 	char m_data98[0x10];	// 0x98: the sub-object the source is handed to (slot 2 of the source's vtable)
 
+	void vfunc2(CSave *pSave);	// slot 2 (0x10043c70, stub 0x1000b474, ret 4): m_data98 dword 0 = the queue size at +0x18, dword 1 = the global 0x10723938; then pops the queue (heap, smallest first) until empty: for a record whose entity handle (+4) resolves, pSave slot 2(record, 0x1053c410), slot 4, per item (+0xc count, items at +0x34) slot 4, the item handed with the save to the object at 0x10723940 slot 48 (a 0x10 byte block {pSave, item, record key}), slot 6; finally slot 6. PopMin = memmove of the last record to the front, --size, sift-down via less(+0x20) with S47190::sub_10047190 / SPhysRecordX::sub_10046a90 / Vector::sub_1003e4b0 swaps.
 	void vfunc3(CSave *pSave);	// slot 3 "save": calls slot 8 of the save (the global at 0x1053c340 with 1), then slot 2 of it with this + 0x98 and the empty name at 0x1053c344
 	void vfunc5();	// slot 5: hands this + 8 (or 0 without a block) to the global at 0x106eb5d8, then calls slot 49 of the object at 0x10723940 with a zeroed dword
 	void vfunc6(void *pSource);	// stores whether the source's slot 13 short equals 0x1053c340 at +0x40, then forwards the block at +0x98 with the string 0x1053c344 to the source's slot 2
