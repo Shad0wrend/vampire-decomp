@@ -8659,6 +8659,7 @@
 0x1000ec37 func   ?vfunc82@CNPC_VTaxiDriver@@QAEPAUdatamap_t@@XZ CNPC_VTaxiDriver::vfunc82
 0x1000ec3c func   ?sub_100436c0@CUtlMemory20@@QAEXH@Z CUtlMemory20::sub_100436c0
 0x1000ec46 func   ?sub_103b1300@CNPC_VAsianVampireUnit@@QAEXPAX@Z CNPC_VAsianVampireUnit::sub_103b1300
+0x1000ec4b func   ?sub_102343a0@@YAPAXXZ sub_102343a0
 0x1000ec50 func   ?vfunc5@CResearchBook_MG_FIN@@QAEPAV1@I@Z CResearchBook_MG_FIN::vfunc5
 0x1000ec55 func   ?vfunc5@CWeaponWallet@@QAEPAV1@I@Z CWeaponWallet::vfunc5
 0x1000ec5a func   ?vfunc82@CBreakableSurface@@UAEPAUdatamap_t@@XZ CBreakableSurface::vfunc82

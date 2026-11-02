@@ -18,6 +18,16 @@ int CWeaponRanged::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102343a0 size=0x6
+extern char g_105b6bc8[];
+
+// TARGET: sub_102343a0
+void *sub_102343a0()
+{
+	return g_105b6bc8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10234800 size=0x3
 // TARGET: sub_10234800
 char sub_10234800() {
