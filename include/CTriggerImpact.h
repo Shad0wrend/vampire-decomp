@@ -2,11 +2,15 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+#include "COutputEvent.h"
+
 struct datamap_t;
+struct inputdata_t;
 
 class CTriggerImpact
 {
 public:
+	void sub_101cb250(inputdata_t *pInput);	// "CTriggerImpact::InputImpact"-like: the output at +0x5bc is set to the angles vector scaled by the magnitude, fired for the input's activator / caller, the trigger is enabled and thinks again in 0.1s (disables via sub_101c4dd0)
 	CTriggerImpact *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
 	int vfunc124();	// "CTriggerImpact::DrawDebugTextOverlays": the base overlay lines, then (with bit 0 of the flags at +0x224) a "Magnitude: %3.2f" line below them; returns the line count
