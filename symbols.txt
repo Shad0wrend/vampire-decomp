@@ -8829,6 +8829,7 @@
 0x1000f5b5 func   ?sub_10333700@CBaseCombatCharacter@@QAEHPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_10333700
 0x1000f5ba func   ?sub_100bdf90@bf_write@@QAEXPAXHHH@Z bf_write::sub_100bdf90
 0x1000f5bf func   ?sub_10200730@CVStatList_t@@QAEXXZ CVStatList_t::sub_10200730
+0x1000f5c4 func   ?sub_10258540@@YAXXZ sub_10258540
 0x1000f5c9 func   ?vfunc337@CNPC_VGargoyle@@UAEHXZ CNPC_VGargoyle::vfunc337
 0x1000f5d8 func   ?sub_101d2780@@YAXVVector@@HHHHH@Z sub_101d2780
 0x1000f5dd func   ?vfunc82@CRagdollProp@@UAEPAUdatamap_t@@XZ CRagdollProp::vfunc82
