@@ -30,6 +30,11 @@ char CWeaponGravityGun::vfunc316(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10149f80 size=0x3
+// TARGET: sub_10149f80
+bool __cdecl sub_10149f80() { return true; }
+// END FUNCTION
+
 // FUNCTION: 0x10149fc0 size=0x2b
 #include "CWeaponGravityGun.h"
 
