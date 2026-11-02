@@ -5505,6 +5505,7 @@
 0x10009d0e func   ?sub_100ac9f0@CBaseEntity@@QAEXPAUinputdata_t@@@Z CBaseEntity::sub_100ac9f0
 0x10009d13 func   ?sub_1002af90@CPhysConstraint@@QAEXH@Z CPhysConstraint::sub_1002af90
 0x10009d1d func   ?sub_103dc280@CUtlVector12@@QAEXH@Z CUtlVector12::sub_103dc280
+0x10009d22 func   ?sub_10076b60@CUnknown10075aa0@@QAEXXZ CUnknown10075aa0::sub_10076b60
 0x10009d27 func   ?vfunc21@CAI_StandoffBehavior@@UAEXXZ CAI_StandoffBehavior::vfunc21
 0x10009d2c func   ?sub_101d57c0@CStatDefault3List@@QAEDPBDH@Z CStatDefault3List::sub_101d57c0
 0x10009d31 func   ?sub_1017f7b0@CHunterChar@@QAEXXZ CHunterChar::sub_1017f7b0
