@@ -252,7 +252,9 @@ public:
 	void (CBaseEntity::*m_pfn0114)();
 	void (CBaseEntity::*m_pfnThink)();
 	const char *m_classname11c;
-	char m_pad0120[0x164 - 0x120];
+	char m_pad0120[0x124 - 0x120];
+	const char *m_pParentName124;	// 0x0124: the parent's targetname (MapEntity_ParseAllEntities / SetParent store it; null = no parent to attach)
+	char m_pad0128[0x164 - 0x128];
 	float m_flSpeed164;	// 0x0164
 	int m_n168;
 	int m_n16c;
