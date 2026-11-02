@@ -7834,6 +7834,7 @@
 0x1000dc10 func   ?sub_10067690@CUnknown10067690@@QAEHXZ CUnknown10067690::sub_10067690
 0x1000dc15 func   ?sub_102e9fb0@CTreeUnit102e9fb0@@QAEXXZ CTreeUnit102e9fb0::sub_102e9fb0
 0x1000dc1a func   ?sub_100cfda0@CEventQueue@@QAEHPAVIEQRestore@@@Z CEventQueue::sub_100cfda0
+0x1000dc1f func   ?sub_102c7230@@YAXXZ sub_102c7230
 0x1000dc2e func   ?vfunc81@CWeaponMelee_Sheriff_Sword@@QAEHXZ CWeaponMelee_Sheriff_Sword::vfunc81
 0x1000dc33 func   ?sub_10220ad0@@YADHH@Z sub_10220ad0
 0x1000dc38 func   ?sub_10273760@CUnk10273760@@QAEXXZ CUnk10273760::sub_10273760
