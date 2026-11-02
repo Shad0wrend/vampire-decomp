@@ -36087,6 +36087,25 @@ int *sub_100c8490()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c8660 size=0x43
+#include "CBaseButton.h"
+void *sub_100aa720(int size);
+extern char g_1055cb18[];
+
+// TARGET: func_button
+extern "C" CBaseEntity *func_button()
+{
+	void *mem = sub_100aa720(0x5d0);
+	CBaseButton *p;
+	if (mem)
+		p = ((CBaseButton *)mem)->sub_100c86d0();
+	else
+		p = 0;
+	((CBaseEntity *)p)->vfunc106(g_1055cb18);
+	return (CBaseEntity *)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c89e0 size=0xa
 void __fastcall sub_100c89e0(char *self, int, int)
 {
