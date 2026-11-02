@@ -59979,6 +59979,23 @@ void sub_1013da70(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013da90 size=0x3c
+#include "Pool.h"
+// TARGET: Pool::sub_1013da90
+Pool *Pool::sub_1013da90(unsigned int cbItem, unsigned int nItemsPerBlock, unsigned int nMode)
+{
+	if (cbItem < 4)
+		cbItem = 4;
+	m_cbItem = cbItem;
+	m_nItemsPerBlock = nItemsPerBlock;
+	m_nMode = nMode;
+	m_nPeak = 0;
+	sub_1013db10();
+	sub_1013dbb0(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013dae0 size=0x17
 struct CUnk1013dae0 {
     char pad[0x20];
