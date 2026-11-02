@@ -76329,6 +76329,22 @@ void CSave::sub_101a1520(const unsigned short *pToken, void *pData, void *pRootM
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a1750 size=0x17
+#include "CRestore.h"
+#include "CSave.h"
+
+// TARGET: CRestore::sub_101a1750
+void CRestore::sub_101a1750(const char *pszName, void *pData, void *pRootMap, typedescription_t *pField)
+{
+	if (*(int *)pField <= 10)
+	{
+		((CSave *)this)->sub_101a1520((const unsigned short *)pszName, pData, pRootMap, pField);
+		return;
+	}
+	sub_101a2820((unsigned short *)pszName, (int *)pData, pRootMap, pField);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a1780 size=0x26
 struct CUnknown101a1780Arg {
     char m_pad0000[0x12];

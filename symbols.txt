@@ -6349,6 +6349,7 @@
 0x1000b38e func   ?vfunc0@CTEFogRipple@@UAEHXZ CTEFogRipple::vfunc0
 0x1000b393 func   ?sub_103b5ba0@@YIPAXPAX@Z sub_103b5ba0
 0x1000b398 func   ?sub_102dcd10@CUnknown102dcd10@@QAEXH@Z CUnknown102dcd10::sub_102dcd10
+0x1000b39d func   ?sub_101a1750@CRestore@@QAEXPBDPAX1PAUtypedescription_t@@@Z CRestore::sub_101a1750
 0x1000b3ac func   ?vfunc51@CSingleplayRules@@UAE?AVVector@@PAVCBaseEntity@@@Z CSingleplayRules::vfunc51
 0x1000b3b1 func   _item_m_money_envelope item_m_money_envelope
 0x1000b3b6 func   ?vfunc363@CWeaponThrown_Chang_Ghost@@QAEHXZ CWeaponThrown_Chang_Ghost::vfunc363
