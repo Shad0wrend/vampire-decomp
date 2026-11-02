@@ -158062,6 +158062,18 @@ void CUtlVector76::sub_1034a030(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034a100 size=0x49
+#include "CUtlVector76.h"
+void *sub_10430fa0(void *, const void *, unsigned int);
+
+void CUtlVector76::sub_1034a100(int elem, int num)
+{
+    int numToMove = m_size - elem - num;
+    if (numToMove > 0 && num > 0)
+        sub_10430fa0(m_pMemory + (elem + num) * 76, m_pMemory + elem * 76, numToMove * 76);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034a170 size=0x18
 struct CBlock4k
 {
