@@ -5712,6 +5712,7 @@
 0x1000a09c func   ?sub_1007c4f0@@YAXPAXHPAVCUnknown10077430@@@Z sub_1007c4f0
 0x1000a0a1 func   ?sub_10030f30@CCollisionEvent@@QAEXPAX0H00@Z CCollisionEvent::sub_10030f30
 0x1000a0a6 func   ?sub_10324080@@YIXPAVCBaseCombatCharacter@@@Z sub_10324080
+0x1000a0ab func   ?sub_1039f620@CNPC_VMoleman@@QAEPBDXZ CNPC_VMoleman::sub_1039f620
 0x1000a0b0 func   ?vfunc270@CInstancedSceneEntity@@QAEXHH@Z CInstancedSceneEntity::vfunc270
 0x1000a0ba func   _logic_squad_condition logic_squad_condition
 0x1000a0bf func   ?sub_102434d0@@YAXABVVector@@0000000HH@Z sub_102434d0

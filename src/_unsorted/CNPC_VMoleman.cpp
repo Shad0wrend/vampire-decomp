@@ -11,6 +11,17 @@ char *CNPC_VMoleman::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039f620 size=0x6
+#include "CNPC_VMoleman.h"
+
+extern char *g_1064a588;
+
+const char *CNPC_VMoleman::sub_1039f620()
+{
+	return g_1064a588;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039f640 size=0x1e
 #include "CNPC_VMoleman.h"
 
