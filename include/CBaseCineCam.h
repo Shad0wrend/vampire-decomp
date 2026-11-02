@@ -48,7 +48,7 @@ public:
 	char m_pad0634[4];
 	int m_nState638;	// 0x0638: the shot state
 	int m_n63c;	// 0x063c: engine slot 120() when the shot was set up
-	char m_b640;	// 0x0640
+	char m_b640;	// 0x0640 (flag)
 	void sub_10070780(class CBasePlayer *pPlayer);	// starts the shot for the player: finds the four target entities by name, then either sets up the player's current camera (sub_1017cf90) with the shot's name or creates a new one (sub_10070470) and makes the player watch it; Warning when that fails
 	void sub_10070720(int unused);	// starts the shot for the player found by sub_101cd9e0(1) (sub_10070780), one unused stack argument
 	void sub_10070750(int unused);	// as sub_10070720, through the entity member sub_10070990 (0x10003247)
