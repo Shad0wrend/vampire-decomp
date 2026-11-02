@@ -4171,6 +4171,7 @@
 0x10007d7e func   ?sub_1024a900@CUtlRBTree16Unit@@QBEPBULinks_t@CUtlRBTree16@@G@Z CUtlRBTree16Unit::sub_1024a900
 0x10007d83 func   ?sub_103daf10@CTriggerWWZone@@QAEXXZ CTriggerWWZone::sub_103daf10
 0x10007d88 func   ?vfunc103@CPushable@@QAEXXZ CPushable::vfunc103
+0x10007d8d func   ?sub_102c7210@@YAXXZ sub_102c7210
 0x10007d97 func   ?vfunc124@CBaseAnimating@@UAEHXZ CBaseAnimating::vfunc124
 0x10007d97 func   ?vfunc124@CVampireProjectile@@UAEHXZ CVampireProjectile::vfunc124
 0x10007da6 func   ?sub_10040220@CBaseEntity@@QAEXXZ CBaseEntity::sub_10040220
