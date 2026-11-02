@@ -58596,6 +58596,24 @@ float sub_10137300(const float *pVec)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10137350 size=0x28
+// TARGET: sub_10137350
+float __cdecl sub_10137350(float x)
+{
+	float f = 0.0f;
+	__asm {
+		femms
+		movd mm0, dword ptr [x]
+		pfrsqrt mm1, mm0
+		punpckldq mm0, mm0
+		pfmul mm0, mm1
+		movd dword ptr [f], mm0
+		femms
+		fld dword ptr [f]
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10137390 size=0x14
 float sub_10137350(int a);
 
