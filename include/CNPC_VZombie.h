@@ -92,9 +92,11 @@ public:
 	int m_nMode6678;	// 0x6678
 	char m_b667c;	// 0x667c
 	char m_pad667d[0x6680 - 0x667d];
-	int m_a6680[3];	// 0x6680
-	int m_a668c[3];	// 0x668c
-	char m_pad6698[0x66d8 - 0x6698];
+	int m_a6680[3];	// 0x6680: the damage force / direction handed to CreateCorpse (slot 301 argument 2), copied from sub_103dfbb0's first argument
+	union {
+		int m_a668c[3];	// 0x668c
+		CTakeDamageInfo m_dmgInfo668c;	// 0x668c .. 0x66d8 (0x4c bytes): the killing blow's damage record, copied from sub_103dfbb0's second argument (slot 301 argument 1)
+	};
 	float m_flNextLunge66d8;	// 0x66d8
 	float m_flMaxDist66dc;	// 0x66dc
 	char m_b66e0;	// 0x66e0: set when the hit is stronger than the zombie's two stats allow
