@@ -13,11 +13,13 @@ public:
 	int m_n74;	// 0x74
 	int m_n78;	// 0x78: cleared for every node by CAI_NodeGraph::sub_102f4e00
 	struct CAI_NodeLink **m_ppLinks;	// 0x7c: array of m_n78 link pointers
-	char m_pad0080[0x88 - 0x80];
-	int m_n88;	// 0x88: cleared together with m_n78
-	char m_pad008c[4];
+	int m_n80;	// 0x80: allocation count of the CUtlVector-shaped link memory at +0x7c (memory +0x7c, alloc +0x80, grow +0x84, size +0x88, elements +0x8c)
+	int m_n84;	// 0x84: its grow size (-1 = the memory is not owned)
+	int m_n88;	// 0x88: cleared together with m_n78 (the vector's size)
+	struct CAI_NodeLink **m_ppLinks8c;	// 0x8c: the vector's debug view of m_ppLinks
 	class CBitString *m_pBits;	// 0x90: the node's bit string, sized to the node count
 	int m_n94;	// 0x94: set to 3 on the nodes the pass marks
+	class CAI_NodeGraph *m_pGraph98;	// 0x98: the node list (CAI_NodeGraph, count at +0, node pointers at +4) the node belongs to; a failed index check bumps the global counter 0x106c994c (read as a null node)
 
 	void sub_102fa510();	// checks the node: a type 4 node goes to sub_102f9cd0, a type 2 node finds the first hull of the global hull mask (sub_102f9950) and, when its height is below -200, prints "Node %.0f %.0f %.0f too low" with the WC id and marks the hull in m_nHullMask; type 1 / 3 are fine, anything else prints "Bad node type!"
 	void sub_102f9cd0();	// stub 0x100066fe
