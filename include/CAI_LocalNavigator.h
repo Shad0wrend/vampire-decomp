@@ -44,6 +44,7 @@ public:
 	CAI_LocalNavigatorData *m_pData;	// 0x18, heap allocated
 	int m_n1c;	// 0x1c
 
+	virtual int vfunc3(const void *pGoal, int bOnlyCheck, int *pBlocker);	// slot 3 (+0xc) "CAI_LocalNavigator::MoveCalc": (goal copy = the 0x7c byte AILocalMoveGoal_t on the caller's stack, 0, &blocker); CAI_Navigator::vfunc15 passes the blocking entity it fills to CUnknown10270290::sub_10270290 and its int result (-4 = none yet) on
 	CAI_LocalNavigator *vfunc0(unsigned int flags);
 	bool vfunc7(CAI_LocalNavigatorStopState *pState, float flDist, int *pResult, int unused);	// slot 7 "CAI_LocalNavigator_MoveCalcStop" (profiler scope; this unused): flDist below the state's float at +0x28: *pResult = -4 when flDist < 0.1, else the float is set to flDist and *pResult = 0; otherwise *pResult = 0; always true
 	int vfunc4(CAI_LocalNavigatorStopState *pMove, float flDist, void *pArg);	// slot 4 "CAI_LocalNavigator_MoveCalcRaw" (profiler scope): runs slots 5, 6, 7 and the sink's slots 1-4 in turn, each may settle the result
