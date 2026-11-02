@@ -51,7 +51,7 @@ public:
 	virtual int vfunc34(int a); virtual int vfunc35(int a); virtual int vfunc36(); virtual float vfunc37(); virtual void * vfunc38(int);
 	virtual void vfunc39(CBaseEntity *pOther); virtual void vfunc40(int); virtual void vfunc41(); virtual int vfunc42(int); virtual void vfunc43(int);
 	virtual bool vfunc44(int); virtual bool vfunc45(void *pPassEnt, Vector vecStart, Vector vecEnd, unsigned int fMask); virtual void vfunc46(); virtual void vfunc47(); virtual float vfunc48();
-	virtual float vfunc49(); virtual Vector vfunc50(); virtual void vfunc51(int unused, Vector *pOut); /* slot 51 (ret 8): copies WorldSpaceCenter (slot 192) to *pOut; the first argument is unused */ virtual float vfunc52(); virtual float vfunc53();
+	virtual float vfunc49(); virtual void vfunc50(Vector *pOut);	/* slot 50 (ret 4): copies WorldSpaceCenter (slot 192) to *pOut */ virtual void vfunc51(int unused, Vector *pOut); /* slot 51 (ret 8): copies WorldSpaceCenter (slot 192) to *pOut; the first argument is unused */ virtual float vfunc52(); virtual float vfunc53();
 	virtual bool vfunc54(int); virtual void vfunc55(int, int, int, int, int, int, int); virtual void vfunc56(int, int, int, int, int, int, int, int); virtual void vfunc57(int, int, int, int, int, int, int); virtual void vfunc58(int);
 	virtual void vfunc59(int); virtual void vfunc60(int); virtual void vfunc61(int); virtual void vfunc62(); virtual void vfunc63();
 	virtual void vfunc64(const float *angles);	// "CBaseEntity::SetAngles": scope trace (entity name), when the three floats differ from the ones at +0x428 runs three helpers (0x800, 0x3000), stores them and sets the byte at +0x1b1
