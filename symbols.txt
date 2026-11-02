@@ -9326,6 +9326,7 @@
 0x1001044c func   ?vfunc93@CBaseEntity@@UAEXHH@Z CBaseEntity::vfunc93
 0x1001045b func   ?sub_1021e8e0@CUnknown1021e8e0@@QAEHPBD@Z CUnknown1021e8e0::sub_1021e8e0
 0x10010460 func   ?sub_102cdca0@CUnk102cd310@@QAEXPAH@Z CUnk102cd310::sub_102cdca0
+0x10010465 func   ?sub_10085fb0@@YAXXZ sub_10085fb0
 0x1001046a func   ?sub_101cecf0@@YAXPAUCMsgPlayerView@@HH@Z sub_101cecf0
 0x1001046f func   ?sub_1004faa0@@YGXH@Z sub_1004faa0
 0x10010479 func   ?sub_100ce600@CUnk100ce600@@QAE_NPAH@Z CUnk100ce600::sub_100ce600
