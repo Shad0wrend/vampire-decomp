@@ -60180,6 +60180,19 @@ void sub_1013d0e0(float gamma, float texGamma, float brightness, int overbright,
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013d350 size=0x13
+// TARGET: sub_1013d350
+float __cdecl sub_1013d350(float x)
+{
+	float f;
+	__asm {
+		rsqrtss xmm0, dword ptr [x]
+		movss dword ptr [f], xmm0
+		fld dword ptr [f]
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d380 size=0x6
 namespace lifted {
 extern char g_10717df8;
