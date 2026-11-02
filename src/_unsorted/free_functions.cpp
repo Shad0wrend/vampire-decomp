@@ -46381,6 +46381,30 @@ int sub_100f5770()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f57a0 size=0x4b
+#include "CConstraintAnchor.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(unsigned int size);
+extern char g_10455984[];	// CEnvShooter vftable
+extern const char g_105660f0[];
+
+// TARGET: env_shooter
+extern "C" CBaseEntity *env_shooter()
+{
+	void *mem = sub_100aa720(0x488);
+	CBaseEntity *p;
+	if (mem) {
+		((CConstraintAnchorBase *)mem)->sub_1009d980(0);
+		*(void **)mem = g_10455984;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_105660f0);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f5bd0 size=0x6
 namespace lifted {
 extern char g_106eb584;
