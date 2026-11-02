@@ -3050,6 +3050,7 @@
 0x10005dcb func   ?vfunc80@CWeaponWallet@@QAEHXZ CWeaponWallet::vfunc80
 0x10005dda func   ?sub_10149c20@@YIXPAX@Z sub_10149c20
 0x10005ddf func   ?sub_100f11b0@CBaseDoor@@QAEXXZ CBaseDoor::sub_100f11b0
+0x10005de4 func   ?sub_10389560@CNPC_VMalkavian@@QAEPAXXZ CNPC_VMalkavian::sub_10389560
 0x10005de9 func   ?sub_10201870@CVStatListUnit@@QAEPAVCVStatInfo_t@@H@Z CVStatListUnit::sub_10201870
 0x10005dee func   ?vfunc333@CAI_BaseNPCTroika@@QAEXM@Z CAI_BaseNPCTroika::vfunc333
 0x10005df8 func   ?sub_103061e0@CUnknown103061e0@@QAEHXZ CUnknown103061e0::sub_103061e0

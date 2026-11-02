@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10389560 size=0x6
+#include "CNPC_VMalkavian.h"
+
+extern char g_1093b718;
+
+void *CNPC_VMalkavian::sub_10389560()
+{
+	return &g_1093b718;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103895a0 size=0x1e
 #include "CNPC_VMalkavian.h"
 
