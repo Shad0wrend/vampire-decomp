@@ -568,6 +568,11 @@ char CBaseCombatWeapon::vfunc302() {
 }
 // END FUNCTION
 
+// FUNCTION: 0x102524d0 size=0x3
+// TARGET: CBaseCombatWeapon::vfunc279
+char CBaseCombatWeapon::vfunc279() { return 0; }
+// END FUNCTION
+
 // FUNCTION: 0x102526c0 size=0x1d
 #include "CBaseCombatWeapon.h"
 

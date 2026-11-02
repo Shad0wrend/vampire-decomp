@@ -1878,6 +1878,7 @@
 0x100040a7 func   ?sub_10078c30@@YIXPAH@Z sub_10078c30
 0x100040ac func   ?sub_1012e930@@YAHXZ sub_1012e930
 0x100040b1 func   ?sub_101d5f10@CStatDefault3List@@QAEPAUStatDefault3@@PAVCBaseCombatCharacter@@@Z CStatDefault3List::sub_101d5f10
+0x100040b6 func   ?vfunc279@CBaseCombatWeapon@@UAEDXZ CBaseCombatWeapon::vfunc279
 0x100040bb func   ?vfunc82@CFuncRotating@@UAEPAUdatamap_t@@XZ CFuncRotating::vfunc82
 0x100040c5 func   ?vfunc363@CWeaponMelee_OccultBlade@@QAEHXZ CWeaponMelee_OccultBlade::vfunc363
 0x100040cf func   ?vfunc4@CSaveRestoreBlockSet@@QAEXXZ CSaveRestoreBlockSet::vfunc4
