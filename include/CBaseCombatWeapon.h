@@ -150,7 +150,13 @@ public:
 
 #include "CBaseCombatWeapon_ext.h"
 
-	char m_pad004[0x2dc];
+	char m_pad004[0x17c - 4];
+	float m_flNextThink17c;	// 0x17c: the next think time (curtime + 0.1 for the drop sound check)
+	char m_pad180[0x19c - 0x180];
+	unsigned int m_nEffectFlags19c;	// 0x19c: bit 6 (0x40) = the "fresh" flag sub_1024fe00 plays the charge sound for and clears (sets bit 1)
+	char m_pad1a0[0x26c - 0x1a0];
+	const char *m_pszName26c;	// 0x26c: the entity name (null when empty; g_106b8540 stands in for the scope trace)
+	char m_pad270[0x2e0 - 0x270];	// 0x270: the embedded CCollisionProperty (view with (CCollisionProperty *)((char *)this + 0x270))
 	CWeaponHolder_t *m_pHolder; // 0x2e0
 	char m_pad2e4[0x65c - 0x2e4];
 	char m_b65c;
