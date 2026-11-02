@@ -25,6 +25,11 @@ bool __cdecl sub_10149c40() { return true; }
 bool __cdecl sub_10149c60() { return false; }
 // END FUNCTION
 
+// FUNCTION: 0x10149c80 size=0x3
+// TARGET: sub_10149c80
+bool __cdecl sub_10149c80() { return true; }
+// END FUNCTION
+
 // FUNCTION: 0x10149ca0 size=0x5
 bool CBaseCombatWeapon::vfunc283(CBaseEntity * a0)
 {

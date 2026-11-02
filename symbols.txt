@@ -4916,6 +4916,7 @@
 0x10008fee func   ?vfunc5@CWeaponIWritten@@QAEPAV1@I@Z CWeaponIWritten::vfunc5
 0x10009002 func   ?vfunc5@CNPC_VSheriffMan@@QAEPAV1@I@Z CNPC_VSheriffMan::vfunc5
 0x1000900c func   ?sub_100f8700@CGlobalEntityList@@QAEXI@Z CGlobalEntityList::sub_100f8700
+0x10009011 func   ?sub_10149c80@@YA_NXZ sub_10149c80
 0x10009016 func   ?sub_10312b20@@YIXPAD@Z sub_10312b20
 0x1000901b func   ?vfunc33@CTriggerBombSite@@QAEHXZ CTriggerBombSite::vfunc33
 0x10009025 func   ?vfunc103@CNPC_VScurrying@@UAEXXZ CNPC_VScurrying::vfunc103
