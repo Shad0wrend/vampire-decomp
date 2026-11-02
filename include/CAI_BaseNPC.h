@@ -24,7 +24,8 @@ public:
 	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4();
 	virtual CAI_BaseNPC *vfunc5(unsigned int flags); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual const char **vfunc9(int *pOut);
 	// slots 10..289
-	CAI_NPC_V10(1) CAI_NPC_V10(2) CAI_NPC_V10(3) CAI_NPC_V10(4) CAI_NPC_V10(5) CAI_NPC_V10(6) CAI_NPC_V10(7) CAI_NPC_V10(8) CAI_NPC_V10(9)
+	CAI_NPC_V10(1) CAI_NPC_V10(2) CAI_NPC_V10(3) CAI_NPC_V10(4) CAI_NPC_V10(5) CAI_NPC_V10(6) CAI_NPC_V10(7) CAI_NPC_V10(8) CAI_NPC_V(90) CAI_NPC_V(91) CAI_NPC_V(92) CAI_NPC_V(93) virtual int vfunc94();	// move type (5 / 6 asked by the scripted-sequence goal moves)
+	CAI_NPC_V(95) CAI_NPC_V(96) CAI_NPC_V(97) CAI_NPC_V(98) CAI_NPC_V(99)
 	CAI_NPC_V10(10) CAI_NPC_V10(11)
 	CAI_NPC_V(120) CAI_NPC_V(121) CAI_NPC_V(122) CAI_NPC_V(123) CAI_NPC_V(124) CAI_NPC_V(125) CAI_NPC_V(126)
 	virtual int vfunc127(CRestore *pRestore);	// "CAI_BaseNPC::Restore": reads the data description block at +0x19b4, CBaseCombatCharacter::vfunc127, fixes up the arrays at +0x5b8c (4) and +0x5db4 (3), the object at +0x5d44 (when set) and the member at +0x5cf4; returns the base result
