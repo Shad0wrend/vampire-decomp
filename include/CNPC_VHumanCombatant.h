@@ -41,4 +41,5 @@ public:
 public:
     virtual datamap_t * vfunc82();
 	const char *sub_10386b00();
+	int sub_10387180();
 };
