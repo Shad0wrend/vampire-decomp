@@ -94737,6 +94737,19 @@ bool CUnknown101e0f00::sub_101e10e0(const char *name, int *pIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e11c0 size=0x4b
+#include "CUnknown101e0f00.h"
+
+// TARGET: CUnknown101e0f00::sub_101e11c0
+CUnknown101e0f00Entry *CUnknown101e0f00::sub_101e11c0(int index)
+{
+	if (index >= 0 && index < m_nEntries)
+		return (CUnknown101e0f00Entry *)m_ppEntries[index];
+	static CUnknown101e0f00Entry s_default(-1);
+	return &s_default;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e1250 size=0x3b
 #include "CUnknown101e0f00.h"
 
