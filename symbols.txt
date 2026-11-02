@@ -7128,6 +7128,7 @@
 0x1000c5b3 func   ?sub_1021e320@@YAXPAUCBlock4k@@PBU1@@Z sub_1021e320
 0x1000c5b8 func   ?sub_10107550@Mem400@@QAEXH@Z Mem400::sub_10107550
 0x1000c5bd func   ?sub_103ce9b0@@YIHPAUWWRangeView@@HPAX@Z sub_103ce9b0
+0x1000c5c2 func   ?sub_10234450@@YAHXZ sub_10234450
 0x1000c5c7 func   ?sub_10179160@@YAHHHH@Z sub_10179160
 0x1000c5cc func   ?sub_10246160@ConVar@@QAEXH@Z ConVar::sub_10246160
 0x1000c5d1 func   ?sub_101f8480@CUnknown101f0e50@@QAEPAVCVTraitEffectGroup_t@@H@Z CUnknown101f0e50::sub_101f8480

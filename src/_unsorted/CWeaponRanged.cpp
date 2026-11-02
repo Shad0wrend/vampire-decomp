@@ -38,6 +38,14 @@ void *sub_10234430()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10234450 size=0x6
+// TARGET: sub_10234450
+int sub_10234450()
+{
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10234800 size=0x3
 // TARGET: sub_10234800
 char sub_10234800() {
