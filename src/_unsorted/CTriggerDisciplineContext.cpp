@@ -12,6 +12,15 @@ datamap_t * CTriggerDisciplineContext::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10210ce0 size=0x3c
+#include "CTriggerDisciplineContext.h"
+// TARGET: CTriggerDisciplineContext::CTriggerDisciplineContext
+CTriggerDisciplineContext::CTriggerDisciplineContext()
+{
+	m_nDiscipline598 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10210d30 size=0x4c
 #include "CTriggerDisciplineContext.h"
 void __fastcall sub_100cd2d0(void *p);
