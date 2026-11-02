@@ -39,7 +39,7 @@ public:
 
 	char m_pad04b0[0x4bc - 0x4b0];
 	float m_flStartTime4bc;	// 0x04bc
-	unsigned int m_hHandle4c0;	// 0x04c0
+	EHANDLE m_hHandle4c0;	// 0x04c0
 	char m_bStarted4c4;	// 0x04c4
 	char m_pad04c5[0x4d4 - 0x4c5];
 	float m_flStartTime;	// 0x04d4
