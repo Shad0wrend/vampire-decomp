@@ -41,6 +41,14 @@ public:
 	virtual float *vfunc220();
 };
 
+class CEntityClassnameSlotView	// slot 106: CBaseEntity::vfunc106(const char *pszClassname) (SetClassname-like)
+{
+public:
+	VIEW_SLOT100(0)
+	VIEW_SLOT(100) VIEW_SLOT(101) VIEW_SLOT(102) VIEW_SLOT(103) VIEW_SLOT(104) VIEW_SLOT(105)
+	virtual void vfunc106(const char *pszClassname);
+};
+
 class CEntityGroundSlotView	// slot 208: CBaseEntity::SetGroundEntity(CBaseEntity *pEnt)
 {
 public:
