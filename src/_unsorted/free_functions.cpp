@@ -108273,6 +108273,25 @@ extern "C" CBaseEntity *prop_haunted()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102139f0 size=0x4e
+extern int vt_1048920c;
+void __fastcall sub_1018f1c0(void *pThis);
+void __fastcall sub_100cd2a0(void *pThis);
+// TARGET: sub_102139f0
+int *__fastcall sub_102139f0(int *pThis)
+{
+	sub_1018f1c0(pThis);
+	pThis[0x1f4] = -1;
+	sub_100cd2a0((char *)pThis + 0x7d4);
+	sub_100cd2a0((char *)pThis + 0x7ec);
+	sub_100cd2a0((char *)pThis + 0x804);
+	pThis[0] = (int)&vt_1048920c;
+	pThis[0x1e1] = 0x3f800000;
+	*((char *)pThis + 0x7b8) = 0;
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10213ef0 size=0xbe
 #include "CPropHaunted.h"
 #include "CTakeDamageInfo.h"

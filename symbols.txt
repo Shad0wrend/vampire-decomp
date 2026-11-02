@@ -3333,6 +3333,7 @@
 0x10006861 func   ?sub_103684f0@@YAEXZ sub_103684f0
 0x1000686b func   ?vfunc373@CWeaponMelee_TzimisceMelee@@UAEHXZ CWeaponMelee_TzimisceMelee::vfunc373
 0x10006870 func   ?sub_1036fc00@@YADXZ sub_1036fc00
+0x1000687a func   ?sub_102139f0@@YIPAHPAH@Z sub_102139f0
 0x1000688e func   ?sub_102d8e50@CUnknown102d9040@@QAEXPBMHMM@Z CUnknown102d9040::sub_102d8e50
 0x10006893 func   ?sub_10062c30@@YAHXZ sub_10062c30
 0x10006898 func   ?vfunc113@CMoverKeyFrame@@UAEXXZ CMoverKeyFrame::vfunc113
