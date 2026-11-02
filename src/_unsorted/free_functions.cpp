@@ -120711,6 +120711,18 @@ bool sub_1024d2f0(const float *src, float *dst)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024d630 size=0x2b
+#include "VMatrix.h"
+struct CBlock64_t { char b[64]; CBlock64_t *sub_1024cef0(const CBlock64_t *); };
+struct VMatrixUnit : VMatrix { void sub_1024d2c0(VMatrix *q); };
+void __cdecl sub_1024d630(VMatrix *src, VMatrix *dst)
+{
+	((VMatrixUnit *)src)->sub_1024d2c0(dst);
+	VMatrix tmp;
+	((CBlock64_t *)dst)->sub_1024cef0((CBlock64_t *)dst->sub_1024da80(tmp));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024d670 size=0xf4
 #include "VMatrix.h"
 Vector VMatrix::sub_1024d670() const

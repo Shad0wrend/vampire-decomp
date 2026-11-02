@@ -707,6 +707,7 @@
 0x100022b6 func   ?sub_1040c500@CGrabController@@QAEPAVVector@@PAV2@PBV2@PAVCEntityVSlots@@@Z CGrabController::sub_1040c500
 0x100022bb func   ?sub_10339560@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_10339560
 0x100022c0 func   ?sub_10349d50@CUtlVector16@@QAEXH@Z CUtlVector16::sub_10349d50
+0x100022c5 func   ?sub_1024d630@@YAXPAVVMatrix@@0@Z sub_1024d630
 0x100022ca func   ?sub_10210250@CUnit10210250@@QAE_NPAVCEntityVSlots@@0@Z CUnit10210250::sub_10210250
 0x100022cf func   ?sub_10088540@@YAXXZ sub_10088540
 0x100022d4 func   ?vfunc42@CPropSign@@UAEXPAVCBasePlayer@@@Z CPropSign::vfunc42
