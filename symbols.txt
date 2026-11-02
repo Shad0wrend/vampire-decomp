@@ -10325,6 +10325,7 @@
 0x10011e73 func   ?vfunc15@CGameMovement@@UAEDPAXM@Z CGameMovement::vfunc15
 0x10011e78 func   ?sub_102699e0@@YAXVVector@@HM@Z sub_102699e0
 0x10011e7d func   ?sub_10203320@@YIXPAUCDumpTable10203320@@@Z sub_10203320
+0x10011e87 func   ?sub_10086080@@YAXXZ sub_10086080
 0x10011e8c func   ?sub_101dc810@CUnknown101dc810@@QAEXH@Z CUnknown101dc810::sub_101dc810
 0x10011e96 func   ?vfunc1@CTEUserTracer@@UAEHXZ CTEUserTracer::vfunc1
 0x10011e9b func   ?vfunc80@COccultPassiveDurations@@QAEHXZ COccultPassiveDurations::vfunc80
