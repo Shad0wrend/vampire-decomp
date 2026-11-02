@@ -110,3 +110,4 @@
 #include "CUnknown100dda50.h"
 #include "CUnknown101d7380.h"
 #include "CNPC_VMoleman.h"
+#include "CNPC_VNosferatu.h"

@@ -15,6 +15,7 @@ public:
 	virtual void vfunc136();
 	virtual void vfunc137();
 	virtual int vfunc138();
+	char *vfunc580();
 	virtual const char *vfunc451();	// slot 451: the class name "CNPC_VNosferatu"
 	virtual char vfunc452();	// slot 452
 };
