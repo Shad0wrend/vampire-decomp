@@ -25,4 +25,5 @@ public:
 	virtual void vfunc136();
 	virtual void vfunc137();
 	virtual int vfunc138();
+	virtual void *vfunc580();	// slot 580
 };
