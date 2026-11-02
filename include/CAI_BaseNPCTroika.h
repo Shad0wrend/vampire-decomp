@@ -289,7 +289,7 @@ public:
 	float m_f5d98;	// 0x5d98: the time of the last output fired by vfunc142
 	char m_pad5d9c[0x5db4 - 0x5d9c];
 	float m_f5db4;	// 0x5db4: a time (curtime + the parameter's value, or + 1000.0f for a non-positive one)
-	char m_pad5db8[0x5f8c - 0x5db8];
+	union { char m_pad5db8[0x5f8c - 0x5db8]; struct { char m_pad5db8b[0x5f34 - 0x5db8]; const char *m_pszBreakName5f34; int m_n5f38; struct CAI_ScheduleView *m_pSchedule5f3c; }; };	// 0x5f34: the name of the condition that broke the schedule (g_105cdd60 when unknown), 0x5f38 / 0x5f3c: the break record (0, the schedule)
 	char m_Output5f8c[0x18];	// 0x5f8c: a COutputEvent (0x18 bytes, view with (COutputEvent *)m_Output5f8c; fired with (m_p62ec, this, 0) by sub_102b53d0)
 	char m_pad5fa4[0x6010 - 0x5fa4];
 	unsigned int m_h6010;
