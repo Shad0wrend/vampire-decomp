@@ -344,6 +344,9 @@ public:
 	CUtlVector<int> &Vec1d68() { return *(CUtlVector<int> *)((char *)this + 0x1d68); }	// overlaps m_pQuestRecords1D68 (its memory pointer) and m_nQuestRecords1D74 (its size)
 	CUtlVector<int> &Vec23bc() { return *(CUtlVector<int> *)((char *)this + 0x23bc); }	// same storage as m_SimulationList
 	void *Obj1a1c() { return (char *)this + 0x1a1c; }	// object destroyed by sub_1017a290 (no ecx-typed member known), inside m_pad1A00
+	int vfunc127(CRestore *pRestore);	// slot 127 override, "CBasePlayer::Restore"/Spawn-like (plain member): +0x1e00 = 1; r = sub_10348890(pRestore); stub 0x10015311 (-> 0x1009d960, cdecl 2 args) on +0x1ce0 (2), +0x1ce4 (2), +0x1cf8 (4); on failure +0x1e00 = 0, return 0; sub_103239a0("player"); when the landmark ([gpGlobals+0x20]+0x12dc) is 0: Msg("No Landmark:%s\n", +0x12e0), the entity of slot 453 gives the spawn: slot 62(its slot 220 origin + 1.0f in z), slot 64(its slot 221); then slot 64({0, [+0x2070], [+0x2074]}), +0x2074 = 0, +0x207c = 1, +0x1570 = 0xf7, g_1070ba28 = slot 8(); with sub_100b3700() & 2: sub_1016b750(this), hull (-16,-16,0)..(16,16,36) via sub_101cf390(this, &mins, &maxs), +0x1edd = 1; else +0x1edd = 0 and the hull to 72; slot 468; sub_1017c830; +0x1dc0 = 0, +0x1e00 = 0; sub_10299ce0(pRestore); return 1
+	int sub_10348890(CRestore *pRestore);	// CBaseCombatCharacter::vfunc127 (stub 0x10010d48), called directly
+	void sub_103239a0(const char *pszName);	// CBaseCombatCharacter member (stub 0x10015bcc), called with "player"
 	float sub_1017d900();	// fade progress 0..1 of the timer at +0x19b8 / +0x19bc (needs a live entity at +0x19c0 or +0x19cc), resets the fade fields when it has ended
 	void sub_10177120();
 	void sub_101835e0();	// "CBasePlayer::Inventory_CreateKey": scope trace (entity name), then allocates the 5-dword inventory object at +0x245c when it is not there yet
