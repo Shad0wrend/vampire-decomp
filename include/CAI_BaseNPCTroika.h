@@ -218,7 +218,7 @@ public:
 
 #include "CAI_BaseNPCTroika_ext.h"
 
-	char m_pad0004[0x19c - 4];
+	union { char m_pad0004[0x19c - 4]; struct { char m_pad0004b[0x98 - 4]; CAI_BaseNPCTroika *m_pObj98; }; };	// 0x98: the controlling NPC object (the one whose flags +0x14b8 / +0x14bc the break test sets)
 	unsigned int m_flags19c;
 	char m_pad01a0[0x204 - 0x1a0];
 	unsigned int m_flags204;
