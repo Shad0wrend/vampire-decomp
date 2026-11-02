@@ -161,7 +161,7 @@ public:
 	virtual void vfunc103();
 	virtual void vfunc104();
 	virtual void vfunc105();
-	virtual void vfunc106();
+	virtual void vfunc106(const char *pszName);
 	virtual void vfunc107();
 	virtual void vfunc108();
 	virtual void vfunc109();
