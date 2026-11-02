@@ -31,6 +31,15 @@ void *sub_1035ec10(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035ec30 size=0x6
+extern char *g_1062b650;
+
+char *sub_1035ec30(void)
+{
+    return g_1062b650;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035ec50 size=0x1e
 #include "CNPC_VAnimal.h"
 

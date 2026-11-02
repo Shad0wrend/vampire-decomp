@@ -3805,6 +3805,7 @@
 0x1000719e func   ?vfunc82@CLogicVisible@@UAEPAUdatamap_t@@XZ CLogicVisible::vfunc82
 0x100071a8 func   ?sub_10073920@CUnknown10073920@@QAEXH@Z CUnknown10073920::sub_10073920
 0x100071ad func   ?vfunc363@CWeaponIArmor_Lt_Cloth@@QAEHXZ CWeaponIArmor_Lt_Cloth::vfunc363
+0x100071b2 func   ?sub_1035ec30@@YAPADXZ sub_1035ec30
 0x100071b7 func   ?sub_103b1cf0@@YIPAXPAX@Z sub_103b1cf0
 0x100071bc func   ?sub_101f1b30@@YGXHH@Z sub_101f1b30
 0x100071c1 func   ?vfunc178@CFuncRotating@@QAEXPAVCBaseEntity@@@Z CFuncRotating::vfunc178
