@@ -27,7 +27,9 @@ public:
 	CAI_NPC_V10(1) CAI_NPC_V10(2) CAI_NPC_V10(3) CAI_NPC_V10(4) CAI_NPC_V10(5) CAI_NPC_V10(6) CAI_NPC_V10(7) CAI_NPC_V10(8) CAI_NPC_V(90) CAI_NPC_V(91) CAI_NPC_V(92) CAI_NPC_V(93) virtual int vfunc94();	// move type (5 / 6 asked by the scripted-sequence goal moves)
 	CAI_NPC_V(95) CAI_NPC_V(96) CAI_NPC_V(97) CAI_NPC_V(98) CAI_NPC_V(99)
 	CAI_NPC_V10(10) CAI_NPC_V10(11)
-	CAI_NPC_V(120) CAI_NPC_V(121) CAI_NPC_V(122) CAI_NPC_V(123) CAI_NPC_V(124) CAI_NPC_V(125) CAI_NPC_V(126)
+	CAI_NPC_V(120) CAI_NPC_V(121) CAI_NPC_V(122) CAI_NPC_V(123) CAI_NPC_V(124) CAI_NPC_V(125)
+	virtual int vfunc126(class CSave *pSave);	// "CAI_BaseNPC::Save" (0x1027bc60, ret 4): pre-save: sub_101cf250(this+0x5b8c, 4) / (this+0x5db4, 3), the object at +0x5d44 (when set) sub_102e0b60, the member at +0x5cf4 sub_102e8aa0, then a stack record {short 1 (+0), flags (+4: 1 = slot 167 answers, 2 = the handle at +0x5ce4 is live, 4 = the navigator +0x5d34 answers sub_102ee6a0), name[0x80] (+8) copied from [+0x5c38]+0x40 with Q_strncpy and a CRC of [+0x5c38]+0x20 / +0x24 * 8 bits (sub_1023f040 / sub_1023f0c0 / sub_1023f060) at +0x88, both zero without a schedule} written with pSave->vfunc2(&record, 0x105cabd0), then CBaseCombatCharacter::vfunc126(pSave) (sub_10348980) and the undo calls (sub_101cf2f0 stubs 0x10015311 / sub_102e0b80 / sub_102e8ac0) as in vfunc127; returns the base result
+	int sub_10348980(class CSave *pSave);	// CBaseCombatCharacter::vfunc126 (stub 0x1000e534), called directly
 	virtual int vfunc127(CRestore *pRestore);	// "CAI_BaseNPC::Restore": reads the data description block at +0x19b4, CBaseCombatCharacter::vfunc127, fixes up the arrays at +0x5b8c (4) and +0x5db4 (3), the object at +0x5d44 (when set) and the member at +0x5cf4; returns the base result
 	CAI_NPC_V(128) CAI_NPC_V(129)
 	virtual void vfunc130(int a);	// post-restore (0x1027bf50, ret 4): re-finds the saved schedule by name/CRC (see CAI_BaseNPCSavedSched.h), then CBaseCombatCharacter::vfunc130(a)
