@@ -10,6 +10,15 @@ void *sub_1036fb10(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036fb30 size=0x6
+extern char *g_10631680;
+
+char *sub_1036fb30(void)
+{
+    return g_10631680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036fb50 size=0x1e
 #include "CNPC_VCombatman.h"
 
