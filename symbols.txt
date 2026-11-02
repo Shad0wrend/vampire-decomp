@@ -5663,6 +5663,7 @@
 0x1000a083 func   ?vfunc363@CWeaponMelee_Baton@@QAEHXZ CWeaponMelee_Baton::vfunc363
 0x1000a088 func   _sky_camera sky_camera
 0x1000a08d func   ?sub_10062570@CUnknown10062570@@QAEHXZ CUnknown10062570::sub_10062570
+0x1000a092 func   ?vfunc82@CEnvPlayerSurfaceTrigger@@UAEPAXXZ CEnvPlayerSurfaceTrigger::vfunc82
 0x1000a097 func   ?vfunc4@CTEWorldDecal@@QAEXHH@Z CTEWorldDecal::vfunc4
 0x1000a09c func   ?sub_1007c4f0@@YAXPAXHPAVCUnknown10077430@@@Z sub_1007c4f0
 0x1000a0a1 func   ?sub_10030f30@CCollisionEvent@@QAEXPAX0H00@Z CCollisionEvent::sub_10030f30

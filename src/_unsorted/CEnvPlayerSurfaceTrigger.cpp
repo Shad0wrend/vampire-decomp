@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100fd620 size=0x6
+#include "CEnvPlayerSurfaceTrigger.h"
+
+extern int g_10567a68[];
+
+// TARGET: CEnvPlayerSurfaceTrigger::vfunc82
+void *CEnvPlayerSurfaceTrigger::vfunc82()
+{
+	return g_10567a68;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fd850 size=0x9f
 #include "CEnvPlayerSurfaceTrigger.h"
 #include "CUtlVector4.h"
