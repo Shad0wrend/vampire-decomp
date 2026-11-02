@@ -12353,6 +12353,7 @@
 0x100149cf func   _phys_spring phys_spring
 0x100149d4 func   ?sub_10170e80@CUnk10170e80@@QAEXPBD@Z CUnk10170e80::sub_10170e80
 0x100149d9 func   ?sub_101bb730@CUnk101bb730@@QAEEXZ CUnk101bb730::sub_101bb730
+0x100149e3 func   ?sub_101da760@@YAHXZ sub_101da760
 0x100149ed func   ?vfunc82@CBasePlayer@@UAEPAXXZ CBasePlayer::vfunc82
 0x100149f2 func   ?vfunc4@CTETracer@@UAEXPAXH@Z CTETracer::vfunc4
 0x100149f7 func   ?vfunc460@CNPC_VCamera@@QAEHXZ CNPC_VCamera::vfunc460
