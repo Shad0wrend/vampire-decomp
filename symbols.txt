@@ -12326,6 +12326,7 @@
 0x100147ae func   ?vfunc2@CPython_SaveRestoreBlockHandler@@UAEXPAVIWritePy@@@Z CPython_SaveRestoreBlockHandler::vfunc2
 0x100147b3 func   ?sub_1006e8b0@CUnknown1006e8b0@@QAEXM@Z CUnknown1006e8b0::sub_1006e8b0
 0x100147bd func   ?sub_100bb180@CBaseEntity@@QAEXPBM@Z CBaseEntity::sub_100bb180
+0x100147c2 func   ?vfunc138@CNPC_VHumanCombatant@@QAEHXZ CNPC_VHumanCombatant::vfunc138
 0x100147cc func   ?sub_102414f0@@YAXHHPBVVector@@000HH@Z sub_102414f0
 0x100147d1 func   ?sub_10160d00@CBasePlayerUnit@@QAE_NHPAUmelee_dice_roll_result@@H@Z CBasePlayerUnit::sub_10160d00
 0x100147d6 func   ?sub_102d7860@@YAHXZ sub_102d7860
