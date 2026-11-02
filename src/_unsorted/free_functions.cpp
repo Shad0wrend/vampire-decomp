@@ -36508,6 +36508,25 @@ int *sub_100cb670()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cb910 size=0x43
+#include "CCameraTrack.h"
+void *sub_100aa720(int size);
+extern char g_10547134[];
+
+// TARGET: camera_track
+extern "C" CBaseEntity *camera_track()
+{
+	void *mem = sub_100aa720(0x50c);
+	CCameraTrack *p;
+	if (mem)
+		p = ((CCameraTrack *)mem)->sub_100cbe60();
+	else
+		p = 0;
+	p->vfunc106(g_10547134);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cc020 size=0xc
 #include "COutputEvent.h"
 
