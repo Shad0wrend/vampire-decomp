@@ -51,7 +51,11 @@ public:
 	virtual void s160(); virtual void s161(); virtual void s162(); virtual void s163();
 	virtual void s164(); virtual void s165(); virtual void s166();
 	virtual CNPC_VTzimisceHelper *vfunc167();
-	VT_SLOTS10(t00) VT_SLOTS10(t01) VT_SLOTS10(t02) VT_SLOTS10(t03)
+	VT_SLOTS10(t00) VT_SLOTS10(t01)
+	virtual void t020(); virtual void t021(); virtual void t022(); virtual void t023(); virtual void t024();
+	virtual Vector vfunc193();	// slot 193 "EyePosition": returned by value
+	virtual void t026(); virtual void t027(); virtual void t028(); virtual void t029();
+	VT_SLOTS10(t03)
 	virtual void t040(); virtual void t041(); virtual void t042(); virtual void t043(); virtual void t044();
 	virtual void t045(); virtual void t046(); virtual void t047(); virtual void t048();
 	virtual float *vfunc217();	// slot 217 \"GetAbsOrigin\": the position
