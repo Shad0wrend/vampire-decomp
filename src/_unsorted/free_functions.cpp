@@ -116183,6 +116183,36 @@ int CVDmgBlock16_t::sub_10230fc0(void *pCharacter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10231190 size=0x43
+#include "CTriggerElectricBugaloo.h"
+
+void *sub_100aa720(int size);
+extern char g_105b5a98[];
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+class CTriggerElectricBugalooVt
+{
+public:
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	virtual void k0(); virtual void k1(); virtual void k2(); virtual void k3(); virtual void k4(); virtual void k5();
+	virtual void vfunc106(const char *pszName);
+};
+
+// TARGET: trigger_electric_bugaloo
+extern "C" CTriggerElectricBugaloo *trigger_electric_bugaloo()
+{
+	void *mem = sub_100aa720(0x5a0);
+	CTriggerElectricBugaloo *p;
+	if (mem)
+		p = ((CTriggerElectricBugaloo *)mem)->sub_10231290();
+	else
+		p = 0;
+	((CTriggerElectricBugalooVt *)p)->vfunc106(g_105b5a98);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10231260 size=0x1a
 namespace lifted {
 extern int g_105b5960;
