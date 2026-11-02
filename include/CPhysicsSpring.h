@@ -135,4 +135,10 @@ public:
 	virtual void vfunc80();
 	virtual void vfunc81();
 	virtual datamap_t * vfunc82();
+	virtual void d83(); virtual void d84(); virtual void d85(); virtual void d86(); virtual void d87();
+	virtual void d88(); virtual void d89(); virtual void d90(); virtual void d91(); virtual void d92();
+	virtual void d93(); virtual void d94(); virtual void d95(); virtual void d96(); virtual void d97();
+	virtual void d98(); virtual void d99(); virtual void d100(); virtual void d101(); virtual void d102();
+	virtual void d103(); virtual void d104(); virtual void d105();
+	virtual void vfunc106(const char *pszName);
 };
