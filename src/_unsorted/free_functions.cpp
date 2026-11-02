@@ -72248,6 +72248,25 @@ void CBreakableProp::sub_10002d1f(float flDelay)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018ffd0 size=0x43
+#include "CDynamicProp.h"
+void *sub_100aa720(int size);
+extern char g_1058eed8[];
+
+// TARGET: prop_dynamic
+extern "C" CBaseEntity *prop_dynamic()
+{
+	void *mem = sub_100aa720(0x7dc);
+	CDynamicProp *p;
+	if (mem)
+		p = ((CDynamicProp *)mem)->sub_10190510();
+	else
+		p = 0;
+	((CBaseEntity *)p)->vfunc106(g_1058eed8);
+	return (CBaseEntity *)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101900a0 size=0x1b7
 struct ISaveRestoreOps;
 struct datamap_t;
