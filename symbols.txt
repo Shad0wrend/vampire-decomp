@@ -3631,6 +3631,7 @@
 0x10006df2 func   ?sub_10202fd0@CUnknown10202fd0@@QAEXPAUCSlotIter@@@Z CUnknown10202fd0::sub_10202fd0
 0x10006df7 func   ?vfunc273@CPropDoorknob@@QAEXXZ CPropDoorknob::vfunc273
 0x10006dfc func   ?vfunc80@CItemGWirelessCamera4@@QAEHXZ CItemGWirelessCamera4::vfunc80
+0x10006e01 func   ?vfunc81@CWeaponIArmor@@UAEHXZ CWeaponIArmor::vfunc81
 0x10006e06 func   ?vfunc501@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc501
 0x10006e10 func   ?sub_1040aff0@CUtlVector192@@QAEXH@Z CUtlVector192::sub_1040aff0
 0x10006e15 func   ?sub_101faa70@CVDmg_t@@QAEHXZ CVDmg_t::sub_101faa70
