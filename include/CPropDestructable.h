@@ -6,6 +6,11 @@
 
 struct inputdata_t;
 
+// 0x10192130 (stub 0x1000ea39), cdecl, caller pops 0x28: the debris spawner CPropDestructable::sub_10193cc0 calls with
+// (this->slot8(), pPhys, this->slot217(), this->slot219(), &vel, &angVel, [this+0xdc], [this+0x76c], 0, 0).
+// The three virtual calls (slots 8 / 217 / 219) take NO arguments: their results are pushed as arguments of this function.
+void sub_10192130(int nSlot8, void *pPhys, const void *pAbsOrigin, const void *pAbsAngles, const void *pVel, const void *pAngVel, int nDc, int n76c, int a8, int a9);
+
 struct CPropDestructableDamage    // the 0x4c byte damage info handed to vfunc144: the attacker at +0x28, a value at +0x2c
 {
     int m_data[19];
