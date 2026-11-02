@@ -8159,6 +8159,7 @@
 0x1000e3db func   _simple_physics_brush simple_physics_brush
 0x1000e3e0 func   ?sub_101db210@CUnknown101db210@@QAEPAUS6@@XZ CUnknown101db210::sub_101db210
 0x1000e3ea func   ?sub_103dc260@@YIXPAH@Z sub_103dc260
+0x1000e3ef func   ?sub_10043b40@@YGXPAX@Z sub_10043b40
 0x1000e3f4 func   ?vfunc5@CItemGBailbondReceipt@@QAEPAV1@I@Z CItemGBailbondReceipt::vfunc5
 0x1000e3f9 func   ?vfunc373@CAI_BaseHumanoid@@QAE?AVVector@@XZ CAI_BaseHumanoid::vfunc373
 0x1000e3fe func   ?sub_10071470@@YGHH@Z sub_10071470
