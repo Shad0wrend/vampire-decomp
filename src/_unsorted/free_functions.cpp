@@ -46165,6 +46165,30 @@ int sub_100f4620()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f4650 size=0x4b
+#include "CConstraintAnchor.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(unsigned int size);
+extern char g_1045505c[];	// CGibShooter vftable
+extern const char g_10566024[];
+
+// TARGET: gibshooter
+extern "C" CBaseEntity *gibshooter()
+{
+	void *mem = sub_100aa720(0x478);
+	CBaseEntity *p;
+	if (mem) {
+		((CConstraintAnchorBase *)mem)->sub_1009d980(0);
+		*(void **)mem = g_1045505c;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_10566024);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f4770 size=0x23
 #include "globalvars.h"
 struct CThinkCall_100f4770
