@@ -3410,6 +3410,7 @@
 0x100068ca func   ?sub_10387850@@YAEXZ sub_10387850
 0x100068d4 func   ?vfunc81@COccultFrenzy@@QAEHXZ COccultFrenzy::vfunc81
 0x100068d9 func   ?sub_101d2ce0@@YAMABVVector@@@Z sub_101d2ce0
+0x100068de func   ?vfunc0@?$CUtlVectorDataOps@V?$CUtlVector@V?$CHandle@VCAI_BaseNPC@@@@V?$CUtlMemory@V?$CHandle@VCAI_BaseNPC@@@@@@@@$0M@@@UAEXPAX0@Z CUtlVectorDataOps<CUtlVector<CHandle<CAI_BaseNPC>,CUtlMemory<CHandle<CAI_BaseNPC> > >,12>::vfunc0
 0x100068e3 func   ?vfunc81@CBaseViewModel@@UAEHXZ CBaseViewModel::vfunc81
 0x100068e8 func   ?sub_10290200@CAI_BaseNPCTroika@@QAE_NH@Z CAI_BaseNPCTroika::sub_10290200
 0x100068f2 func   ?sub_10035fd0@CPhysicsPushedEntities@@QAEXPAH@Z CPhysicsPushedEntities::sub_10035fd0
