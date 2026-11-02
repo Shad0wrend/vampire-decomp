@@ -8,5 +8,5 @@ public:
 	virtual void solverfunc1() = 0;
 	virtual void solverfunc2() = 0;
 	virtual void solverfunc3() = 0;
-	virtual void solverfunc4(void *pObject1, void *pObject2) {}
+	virtual void solverfunc4(void *pObject1, void *pObject2);
 };
