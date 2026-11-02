@@ -87,6 +87,11 @@ int __fastcall sub_10149e00(int x) { return x; }
 bool __cdecl sub_10149e20() { return false; }
 // END FUNCTION
 
+// FUNCTION: 0x10149e40 size=0x3
+// TARGET: sub_10149e40
+bool __cdecl sub_10149e40() { return false; }
+// END FUNCTION
+
 // FUNCTION: 0x10149e60 size=0x9
 extern float g_104454c4;
 float CBaseCombatWeapon::vfunc337(int a, int b) { return g_104454c4; }

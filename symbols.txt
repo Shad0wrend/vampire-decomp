@@ -12718,6 +12718,7 @@
 0x1001596f func   ?sub_1028e700@CAI_BaseNPC@@QAEXHPAM@Z CAI_BaseNPC::sub_1028e700
 0x10015974 func   ?vfunc438@CNPC_Crow@@QAEHXZ CNPC_Crow::vfunc438
 0x10015979 func   ??0CUnknown106b89bc@@QAE@XZ CUnknown106b89bc::CUnknown106b89bc
+0x10015983 func   ?sub_10149e40@@YA_NXZ sub_10149e40
 0x1001598d func   ?vfunc138@CNPC_VGuard1@@UAEHXZ CNPC_VGuard1::vfunc138
 0x10015992 func   ?sub_10247c50@CUnk10247c50@@QAEPAU1@HHHHH@Z CUnk10247c50::sub_10247c50
 0x10015997 func   ?vfunc8@CSoundSchemeManager@@UAEPAV1@I@Z CSoundSchemeManager::vfunc8
