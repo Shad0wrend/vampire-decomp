@@ -11647,6 +11647,7 @@
 0x100141a5 func   ?vfunc74@CSingleplayRules@@UAEDXZ CSingleplayRules::vfunc74
 0x100141aa func   ?sub_10046b40@@YA_NPBI0@Z sub_10046b40
 0x100141af func   ?vfunc14@CGameRules@@UAEXXZ CGameRules::vfunc14
+0x100141b4 func   ?NewNode@?$CUtlRBTree@UCAI_ExpresserUse@@G@@QAEGXZ CUtlRBTree<CAI_ExpresserUse,unsigned short>::NewNode
 0x100141b4 func   ?sub_103134b0@CUtlRBTree16@@QAEGXZ CUtlRBTree16::sub_103134b0
 0x100141b9 func   ?sub_1024e000@@YAHHH@Z sub_1024e000
 0x100141c3 func   ?sub_10362d20@@YIPAXPAX@Z sub_10362d20
