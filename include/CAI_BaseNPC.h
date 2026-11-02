@@ -131,7 +131,7 @@ public:
 	virtual int vfunc449(int a);	// returns a task/schedule id for the argument (used by PrintTask)
 	CAI_NPC_V(450)
 	virtual const char *vfunc451();	// the NPC's name text (used in warnings)
-	CAI_NPC_V(452) CAI_NPC_V(453) virtual int vfunc454(); CAI_NPC_V(455)
+	virtual bool vfunc452(); CAI_NPC_V(453) virtual int vfunc454(); CAI_NPC_V(455)
 	virtual CAI_BehaviorBase **vfunc456();	// the list of the NPC's behaviours (CAI_StandoffGoal walks it with slot 457)
 	virtual int vfunc457();	// the number of behaviours in that list
 	CAI_NPC_V(458) CAI_NPC_V(459)
