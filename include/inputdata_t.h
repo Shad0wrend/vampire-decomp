@@ -21,6 +21,7 @@ struct variant_t
 
 	float Float() const;	// the float value, or the file-scope zero when the variant is not a float
 	int Int() const { return iValue; }	// the raw integer value
+	int IntOrZero() const { return fieldType == 4 ? iValue : 0; }	// Source's variant_t::Int(): the value of an integer variant, else 0
 	const char *sub_10008805();	// the value converted to a string (used when it is not a string)
 	const char *String()	// the string value (an empty string for a null one), else the converted value
 	{
