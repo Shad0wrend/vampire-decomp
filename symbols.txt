@@ -3685,6 +3685,7 @@
 0x10006ff0 func   ?sub_100ad6e0@@YIHPAD@Z sub_100ad6e0
 0x10006ff5 func   _phys_thruster phys_thruster
 0x10006fff func   ?vfunc82@CNPC_VGhoulCroucher@@UAEPAUdatamap_t@@XZ CNPC_VGhoulCroucher::vfunc82
+0x10007009 func   ?vfunc0@?$CUtlVectorDataOps@UCAI_InterestTarget@@$08@@UAEXPAX0@Z CUtlVectorDataOps<CAI_InterestTarget,9>::vfunc0
 0x10007013 func   ?sub_101971b0@@YAPAUPyObj@@PAXPAU1@@Z sub_101971b0
 0x10007018 func   ?vfunc5@CDisciplineProjectile@@QAEPAV1@I@Z CDisciplineProjectile::vfunc5
 0x1000701d func   ?vfunc580@CNPC_VHuman@@UAEPAUCAI_CondOwner@@XZ CNPC_VHuman::vfunc580
