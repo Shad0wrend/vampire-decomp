@@ -1513,6 +1513,7 @@
 0x10003742 func   ?vfunc451@CNPC_VChangBros@@UAEPBDXZ CNPC_VChangBros::vfunc451
 0x10003751 func   ?vfunc0@CTEArmorRicochet@@UAEHXZ CTEArmorRicochet::vfunc0
 0x10003756 func   ?sub_1007e410@List1007e410@@QAEXPAUElem1007e410@@@Z List1007e410::sub_1007e410
+0x10003760 func   ?sub_10027000@@YAHXZ sub_10027000
 0x10003765 func   ?sub_103de470@@YAEXZ sub_103de470
 0x1000376f func   ?sub_101cbae0@@YAHXZ sub_101cbae0
 0x10003779 func   ?sub_10397c70@CNPC_VMingXiao@@QAEPAVCNPC_VMingXiaoTentacle@@PAV2@@Z CNPC_VMingXiao::sub_10397c70

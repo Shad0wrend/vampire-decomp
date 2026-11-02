@@ -476,6 +476,14 @@ unsigned char __stdcall sub_10026f60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10027000 size=0x3
+// TARGET: sub_10027000
+int sub_10027000()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027020 size=0x8
 #include "CBaseEntity.h"
 
