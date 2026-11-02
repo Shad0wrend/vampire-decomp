@@ -36,7 +36,7 @@ public:
     virtual void vfunc142(const CRagdollPropDamageInfo *pInfo); virtual void vfunc143(); virtual void vfunc144();	// slot 142 "CRagdollProp::OnTakeDamage"-like: forwards a copy of the info with bit 23 of the damage type added to the entity of the handle at +0xd5c when it is live, else the base implementation
     virtual void vfunc145(); virtual void vfunc146(); virtual void vfunc147(); virtual void vfunc148(); virtual void vfunc149();
     virtual void vfunc150(); virtual void vfunc151(); virtual void vfunc152(); virtual void vfunc153(); virtual void vfunc154();
-    virtual void vfunc155(); virtual void vfunc156(); virtual void vfunc157(); virtual void vfunc158x(); virtual void vfunc159();
+    virtual void vfunc155(); virtual void vfunc156(); virtual void vfunc157(); virtual char vfunc158(); virtual void vfunc159();
     virtual void vfunc160(); virtual void vfunc161(); virtual void vfunc162(); virtual void vfunc163(); virtual void vfunc164();
     virtual void vfunc165(); virtual void vfunc166(); virtual void vfunc167(); virtual void vfunc168x(); virtual void vfunc169();
     virtual void vfunc170(); virtual void vfunc171(); virtual void vfunc172(); virtual void vfunc173(); virtual void vfunc174();
