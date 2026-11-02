@@ -47,5 +47,6 @@ public:
 public:
     virtual CAI_CondOwner * vfunc580();
     virtual const char * vfunc451();
-    int vfunc546(int arg);	// as in CNPC_Crow (transplant)
+    int vfunc546(int arg);
+	virtual bool vfunc366(int a, int b, int c);	// slot 366	// as in CNPC_Crow (transplant)
 };
