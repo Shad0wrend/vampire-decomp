@@ -2116,6 +2116,13 @@ const char * CAI_BaseNPC::vfunc407(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027ee00 size=0x6
+int sub_1027ee00(void)
+{
+    return 0x77;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10280330 size=0x20
 #include "CAI_BaseNPC.h"
 
