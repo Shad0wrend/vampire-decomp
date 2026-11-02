@@ -12733,6 +12733,7 @@
 0x100158b6 func   ?vfunc311@CBaseCombatCharacter@@QAEXHHH@Z CBaseCombatCharacter::vfunc311
 0x100158bb func   ?sub_102ca630@CUnknown102ca630@@QAEXPAVCBaseEntity@@@Z CUnknown102ca630::sub_102ca630
 0x100158c0 func   ?vfunc80@CWeaponMelee_GargoyleFist@@QAEHXZ CWeaponMelee_GargoyleFist::vfunc80
+0x100158c5 func   ?sub_101c4b90@@YGXHHH@Z sub_101c4b90
 0x100158ca func   ?sub_102f90e0@UtlVec8@@QAEHH@Z UtlVec8::sub_102f90e0
 0x100158cf func   ?sub_102f65b0@@YAXXZ sub_102f65b0
 0x100158d4 func   ?vfunc47@CBaseEntity@@UAEXXZ CBaseEntity::vfunc47

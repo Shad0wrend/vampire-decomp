@@ -30,6 +30,12 @@ void __stdcall sub_101c4b70(int a, int b, int c, int d, int e) {
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c4b90 size=0x3
+// TARGET: sub_101c4b90
+void __stdcall sub_101c4b90(int a, int b, int c) {
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c4d60 size=0x4b
 #include "CBaseTrigger.h"
 #include "CGlobalEntityList.h"
