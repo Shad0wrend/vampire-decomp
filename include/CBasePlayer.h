@@ -262,7 +262,9 @@ public:
 	char m_b19F7;	// 0x19F7: set by sub_1015ef40
 	float m_flExperience19F8;	// 0x19F8: the experience points gained (sub_1015f8b0 adds its first argument)
 	float m_flExperience19FC;	// 0x19FC: the fraction towards the next 100 points (rolls over at 100.0f, the whole hundreds go to stat 0x22)
-	char m_pad1A00[0x1b70 - 0x1a00];	// 0x1A00 .. 0x1B6F
+	char m_pad1A00[0x1b6c - 0x1a00];	// 0x1A00 .. 0x1B6B
+	char m_b1B6C;	// 0x1B6C: cleared by the feeding handlers (vfunc380, vfunc422), set by vfunc419 / vfunc423
+	char m_pad1B6D[3];
 	int m_nRangeStart1B70;	// 0x1B70: low half of the value of the selected command slot (type 1)
 	char m_bFlag1B74;	// 0x1B74
 	char m_pad1B75[3];
