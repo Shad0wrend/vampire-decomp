@@ -111,7 +111,7 @@ public:
 	virtual int vfunc343();
 	virtual int vfunc344();	// the owner object (sub_102517b0) + 0x2408
 	virtual int vfunc345();	// the weapon's weight (compared by CMultiplayRules::vfunc19)
-	CBCW_V(346) virtual int vfunc347(int a); CBCW_V(348) CBCW_V(349)
+	CBCW_V(346) virtual int vfunc347(int a); virtual const char *vfunc348();	/* slot 348: the item's name (e.g. "item_p_occult_regen"; asked by the vendor lookup sub_10324190 and compared with _strcmpi) */ CBCW_V(349)
 	CBCW_V10(35) virtual unsigned int vfunc360();	// the weapon's type flags (bits 13 and 14 mark ranged weapons)
 	CBCW_V(361)
 	virtual CWeaponActivityRecord *vfunc362();	// the weapon's activity translation table
