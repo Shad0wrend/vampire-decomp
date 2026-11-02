@@ -10995,6 +10995,7 @@
 0x10012abc func   ?vfunc117@CSimplePhysicsProp@@UAEEXZ CSimplePhysicsProp::vfunc117
 0x10012ac1 func   ?sub_103d2810@CNPC_VWerewolf@@QAE_NPAX@Z CNPC_VWerewolf::sub_103d2810
 0x10012ac6 func   ?sub_102c62f0@@YGII@Z sub_102c62f0
+0x10012acb func   ?sub_100febe0@CEnvBeam@@QAEPAV1@XZ CEnvBeam::sub_100febe0
 0x10012ad0 func   ?vfunc81@CItemGGiovanniInvitationMaria@@QAEHXZ CItemGGiovanniInvitationMaria::vfunc81
 0x10012ad5 func   ?sub_1018c600@@YAXXZ sub_1018c600
 0x10012ada func   ?sub_10090b20@@YIXPAD@Z sub_10090b20

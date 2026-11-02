@@ -48185,6 +48185,21 @@ int sub_100febb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100febe0 size=0x19
+#include "CEnvBeam.h"
+
+extern int vt_104583fc[];
+
+// TARGET: CEnvBeam::sub_100febe0
+CEnvBeam *CEnvBeam::sub_100febe0()
+{
+	sub_100bac50();
+	*(int **)(void *)this = vt_104583fc;
+	m_bFlag5a8 = 1;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100feea0 size=0x12
 void sub_10014d03();
 
