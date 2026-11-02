@@ -2034,6 +2034,7 @@
 0x1000441c func   ?vfunc82@CTriggerTeleport@@UAEPAUdatamap_t@@XZ CTriggerTeleport::vfunc82
 0x10004421 func   ?sub_100ba090@CUnknown100ba090@@QAEHH@Z CUnknown100ba090::sub_100ba090
 0x10004426 func   _item_k_chinese_theatre_key item_k_chinese_theatre_key
+0x1000442b func   ?sub_1002d750@@YAPADXZ sub_1002d750
 0x10004430 func   _item_p_research_mg_melee item_p_research_mg_melee
 0x10004435 func   ?sub_10335780@CBaseCombatCharacter@@QAEXPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_10335780
 0x1000443f func   ?sub_1019b9d0@@YAPAHPAH@Z sub_1019b9d0

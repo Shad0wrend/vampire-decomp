@@ -1441,6 +1441,19 @@ void sub_1002d070(S10032fb0 *pVec, int a, int b, int c, int d, unsigned int key,
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002d750 size=0x5e
+#include "ScopeTrace.h"
+
+extern char g_106b88ec[];	// the PhysicsGameSystem singleton
+
+// TARGET: sub_1002d750
+char *sub_1002d750()
+{
+	ScopeTrace trace("PhysicsGameSystem", g_106b8540);
+	return g_106b88ec;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002dfe0 size=0x85
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
