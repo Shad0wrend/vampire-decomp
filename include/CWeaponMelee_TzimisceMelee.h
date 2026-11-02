@@ -8,6 +8,7 @@ class CWeaponMelee_TzimisceMelee : public CWeaponMelee
 public:
 	CWeaponMelee_TzimisceMelee();
 	virtual void vfunc0();
+	virtual int vfunc81();	// slot 81 override: returns 0
 
 	int m_n08b8;
 	int m_n08bc;
