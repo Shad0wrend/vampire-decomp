@@ -96288,6 +96288,21 @@ char *CUnk101ec480::sub_101ec480(int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ec4b0 size=0x24
+typedef const char *(__cdecl *Fn1073a398)(void *pThis, int a, int b);
+
+extern Fn1073a398 g_1073a398;
+extern const char g_106b8540;
+
+// TARGET: sub_101ec4b0
+const char *__fastcall sub_101ec4b0(void *pThis, int dummy, int a, int b)
+{
+	if (g_1073a398)
+		return g_1073a398(pThis, a, b);
+	return &g_106b8540;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ec550 size=0xf6
 #include "CUnknown101ec6f0.h"
 extern "C" int __cdecl _strcmpi(const char *, const char *);

@@ -6270,6 +6270,7 @@
 0x1000b127 func   ?vfunc82@CEnvLaser@@UAEPAUdatamap_t@@XZ CEnvLaser::vfunc82
 0x1000b12c func   ?sub_100f7fe0@@YGXHHHHH@Z sub_100f7fe0
 0x1000b136 func   ?sub_1039ae10@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_1039ae10
+0x1000b13b func   ?sub_101ec4b0@@YIPBDPAXHHH@Z sub_101ec4b0
 0x1000b140 func   _camera_animated camera_animated
 0x1000b145 func   ?sub_10309f60@CUnknown1030a6e0@@QAEXPBVVector@@MPAV2@@Z CUnknown1030a6e0::sub_10309f60
 0x1000b14f func   ?vfunc103@CTriggerWind@@UAEXXZ CTriggerWind::vfunc103
