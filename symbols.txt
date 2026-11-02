@@ -8340,6 +8340,7 @@
 0x1000ea20 func   ?sub_1028b0f0@@YGHH@Z sub_1028b0f0
 0x1000ea25 func   ?sub_10082db0@CSceneEntity@@QAEXXZ CSceneEntity::sub_10082db0
 0x1000ea34 func   ?vfunc32@CSave@@UAEXPBHH@Z CSave::vfunc32
+0x1000ea43 func   ?sub_103078d0@CUnknown103078d0@@QAEXXZ CUnknown103078d0::sub_103078d0
 0x1000ea48 func   ?vfunc580@CNPC_VManBat@@QAEHXZ CNPC_VManBat::vfunc580
 0x1000ea4d func   ??9?$CHandle@VCBaseEntity@@@@QBE_NPAVCBaseEntity@@@Z ??9?$CHandle@VCBaseEntity@@@@QBE_NPAVCBaseEntity@@@Z
 0x1000ea61 func   ?vfunc31@CGameRules@@UAE_NHH@Z CGameRules::vfunc31

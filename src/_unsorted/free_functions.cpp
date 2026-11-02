@@ -145334,6 +145334,41 @@ void __fastcall sub_10307890(CUnknown10307890 *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103078d0 size=0x59
+struct CUnknown103078d0 {
+    void *m_pMemory;
+    int m_allocationCount;
+    int m_growSize;
+    int m_size;
+    void *m_pElements;
+    void sub_103078d0();
+};
+
+extern void (__cdecl *g_109f3624)(void *);
+
+// TARGET: sub_103078d0
+void CUnknown103078d0::sub_103078d0()
+{
+    void (__cdecl *pFree)(void *) = g_109f3624;
+    m_size = 0;
+    if (m_growSize != -1) {
+        if (m_pMemory) {
+            pFree(m_pMemory);
+            m_pMemory = 0;
+        }
+        m_allocationCount = 0;
+    }
+    m_pElements = m_pMemory;
+    if (m_growSize != -1) {
+        if (m_pMemory) {
+            pFree(m_pMemory);
+            m_pMemory = 0;
+        }
+        m_allocationCount = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10307990 size=0x1a
 namespace lifted {
 extern int g_106117c0;
