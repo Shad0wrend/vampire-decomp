@@ -227,6 +227,13 @@ float CBasePlayer::vfunc464()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015de70 size=0x7
+float CBasePlayer::vfunc466()
+{
+	return 18.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015de90 size=0x3
 // TARGET: sub_1015de90
 char sub_1015de90() {
