@@ -105344,6 +105344,17 @@ int CVStatInfo_t::sub_101fee50(int level)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fef90 size=0x58
+#include "CVStatInfo_t.h"
+#include "ScopeTrace.h"
+
+// TARGET: CVStatInfo_t::sub_101fef90
+void CVStatInfo_t::sub_101fef90(int a, CVStatInfoList_t *pList)
+{
+	ScopeTrace trace("CVStatInfo_t::Debug_Display", g_106b8540);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ff010 size=0x3a
 #include "CVStatInfo_t.h"
 
