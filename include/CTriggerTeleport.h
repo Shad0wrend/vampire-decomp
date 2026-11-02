@@ -1,11 +1,12 @@
 // CTriggerTeleport: declared by pcdecomp transplant for 0x101c90e0 from CKeepUpright (0x10029200);
-// only what matched code needs, as plain members.
+// CBaseTrigger -> CBaseToggle -> CBaseEntity (RTTI), only what matched code needs, as plain members.
 #pragma once
-#include "CBaseEntity.h"
+#include "CBaseTrigger.h"
 
-class CTriggerTeleport : public CBaseEntity
+class CTriggerTeleport : public CBaseTrigger
 {
 public:
+	CTriggerTeleport();	// 0x101c91e0: same shape as CTriggerDisciplineContext's constructor (CBaseTrigger inlined, the vftable, no members of its own)
 	CTriggerTeleport *sub_101c91e0();
 public:
     virtual datamap_t * vfunc82();
