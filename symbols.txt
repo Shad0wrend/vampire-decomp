@@ -6360,6 +6360,7 @@
 0x1000b5eb func   ?sub_1011a540@@YADXZ sub_1011a540
 0x1000b5f0 func   ?vfunc4@CCollisionProperty@@UAEXXZ CCollisionProperty::vfunc4
 0x1000b5f5 func   _item_g_idol_dragon item_g_idol_dragon
+0x1000b5fa func   ?sub_101a6ae0@@YAXXZ sub_101a6ae0
 0x1000b5ff func   ?sub_1005be30@@YAXHHHHHHHHHHHHHHHHHH@Z sub_1005be30
 0x1000b604 func   ?sub_101b0dc0@@YAXPBVCRecipientFilter@@HPBDPBMHPAM@Z sub_101b0dc0
 0x1000b609 func   ?sub_100d94a0@@YA_NPAVCBaseCombatCharacter@@H@Z sub_100d94a0
