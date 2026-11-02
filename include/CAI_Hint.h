@@ -14,6 +14,7 @@ struct CAI_HintItem
 	char m_pad[0x18];
 
 	void sub_100cd2a0();
+	void sub_100cd2d0();	// destroys the item (stub 0x10015708): the destructor ~CAI_Hint calls it for +0x5f4, +0x5bc and the 8 items below (+0x4fc..)
 };
 
 class CAI_Hint
