@@ -163,7 +163,7 @@ public:
 	CBP_V1(si19)
 	CBP_V1(si20) CBP_V1(si21) CBP_V1(si22) CBP_V1(si23) CBP_V1(si24) CBP_V1(si25) CBP_V1(si26) CBP_V1(si27) CBP_V1(si28)
 	virtual void vfunc438(float flArg, int flags);	// slot 438: with flag bit 2 hands the eye position, vfunc145() and flArg to sub_102699e0
-	CBP_V1(sj0) CBP_V1(sj1)
+	virtual char vfunc439(); CBP_V1(sj1)
 	virtual void vfunc441();	// slot 441: collects the player's weapons (or ammo types) the game rules (global 0x1070ba0c, slots 61 / 62) ask for into a local list, then slot 442(1)
 	virtual void vfunc442(int a);
 	virtual void vfunc443(int a);
