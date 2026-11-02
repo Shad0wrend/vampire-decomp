@@ -11,4 +11,5 @@
 	const char *sub_1027f290(int unused);	// the class name of the NPC type id at +0x1b2c (a switch over 0..0x2b returning "NONE", "AI_BASENPC", ... "NPC_VZOMBIE"; "**UNKNOWN**" otherwise); takes one unused stack argument
 	void sub_10273790(const char *pszRelationship, CBaseEntity *pActivator);	// \"CAI_BaseNPC::AddRelationship\" (stub 0x1000421e): parses \"[entityname|entityclass|player] [D_HT|D_FR|D_LI|D_NU] [priority]\" groups with strtok and adds the entity / class relationships; the activator is unused
 	void vfunc504();	// slot 504 (plain member): does nothing, a bare ret
+	void vfunc558();	// slot 558 (plain member): does nothing, a bare ret
 	void vfunc511();	// slot 511 (plain member): sends the edict at +0x2e0 to the engine (IndexOfEdict-style slot 35 of 0x1070b22c with a 1) and gives the index to the sound system's slot 5
