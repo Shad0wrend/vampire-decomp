@@ -4096,6 +4096,7 @@
 0x10007b21 func   ?sub_100b17f0@@YIHPAD@Z sub_100b17f0
 0x10007b26 func   ?vfunc35@CPropRadio@@UAEHH@Z CPropRadio::vfunc35
 0x10007b2b func   ?sub_100f5770@@YAHXZ sub_100f5770
+0x10007b35 func   ?sub_10149d40@@YGXPAX@Z sub_10149d40
 0x10007b3a func   ?sub_104110d0@@YG_NPAUHolder@@@Z sub_104110d0
 0x10007b3f func   ?vfunc103@CTriggerHurt@@UAEXXZ CTriggerHurt::vfunc103
 0x10007b49 func   ?vfunc226@CPhysicsCannister@@QAEHXZ CPhysicsCannister::vfunc226
