@@ -86181,6 +86181,30 @@ extern "C" GP *trigger_autosave()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c98a0 size=0x4b
+#include "CConstraintAnchor.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(unsigned int size);
+extern char g_10480014[];	// CAI_ChangeTarget vftable
+extern const char g_1059fcb8[];
+
+// TARGET: ai_changetarget
+extern "C" CBaseEntity *ai_changetarget()
+{
+	void *mem = sub_100aa720(0x454);
+	CBaseEntity *p;
+	if (mem) {
+		((CConstraintAnchorBase *)mem)->sub_1009d980(0);
+		*(void **)mem = g_10480014;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_1059fcb8);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c9990 size=0x1a
 namespace lifted {
 extern int g_1059e044;
