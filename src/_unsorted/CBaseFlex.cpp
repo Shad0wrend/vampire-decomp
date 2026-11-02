@@ -159,6 +159,16 @@ void CBaseFlex::vfunc279(int nController, float flValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b5c20 size=0x1e
+#include "CBaseFlex.h"
+
+// TARGET: CBaseFlex::vfunc282
+float CBaseFlex::vfunc282(const char *pszName)
+{
+	return vfunc281(sub_100b5d10(pszName));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b5c50 size=0x69
 #include "CBaseFlex.h"
 #include "CBaseAnimating.h"

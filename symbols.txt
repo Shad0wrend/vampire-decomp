@@ -9182,6 +9182,7 @@
 0x1000fc40 func   ?sub_101d77d0@@YAXXZ sub_101d77d0
 0x1000fc45 func   ?vfunc13@CAI_Navigator@@UAEHH@Z CAI_Navigator::vfunc13
 0x1000fc4a func   ?sub_10078560@CUnknown10078560@@QAEHXZ CUnknown10078560::sub_10078560
+0x1000fc4f func   ?vfunc282@CBaseFlex@@UAEMPBD@Z CBaseFlex::vfunc282
 0x1000fc54 func   ?sub_10075e90@CUnknown10075e90@@QAEXM@Z CUnknown10075e90::sub_10075e90
 0x1000fc59 func   ?vfunc0@CTEFootprintDecal@@UAEPAUServerClass@@XZ CTEFootprintDecal::vfunc0
 0x1000fc5e func   ?vfunc109@CBaseEntity@@UAE_NPBDM@Z CBaseEntity::vfunc109
