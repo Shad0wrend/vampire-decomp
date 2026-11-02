@@ -35,7 +35,10 @@ public:
 	void sub_100bbef0(CGameTrace *pTrace);	// "CBeam::DoDamage"-like: refreshes the beam (sub_100bbbf0); when the trace hit something (fraction below 1, or started / stuck in a solid) and its entity takes damage, applies a damage record of (time since +0x454) * the rate at +0x458 (at least 1) along the trace direction; then stamps the current time at +0x454
 
 	char m_pad03e0[0x454 - 0x3e0];
-	float m_flStartTime;	// 0x454: stamped with the current time by CEnvBeam::Spawn
+	union {
+		float m_flStartTime;	// 0x454: stamped with the current time by CEnvBeam::Spawn
+		float m_flLastUpdate454;	// CEnvLaser's name for it
+	};
 	float m_flDamageRate;	// 0x458
 	int m_nNumBeamEnts;	// 0x45c
 	char m_pad0460[4];
