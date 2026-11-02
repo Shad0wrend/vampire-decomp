@@ -79765,6 +79765,23 @@ const char *CUnknown101b2570::sub_101b2320()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b23b0 size=0x46
+struct Entry { float value; const char *text; };
+extern Entry g_10598cb8[3];
+extern char g_1072c328[];
+extern int (__cdecl *g_109f388c)(char *, int, const char *, ...);
+
+const char *sub_101b23b0(float value)
+{
+	for (int p = (int)g_10598cb8; p < (int)(g_10598cb8 + 3); p += sizeof(Entry)) {
+		if (((Entry *)p)->value == value)
+			return ((Entry *)p)->text;
+	}
+	g_109f388c(g_1072c328, 0x20, "%.3f", (double)value);
+	return g_1072c328;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2420 size=0x4b
 #include "CUnknown101b2570.h"
 SFloatPair sub_1012f640(const char *psz);
