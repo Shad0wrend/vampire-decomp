@@ -220,6 +220,7 @@
 0x100015aa func   ?vfunc368@CBaseCombatCharacter@@QAE?AVVector@@XZ CBaseCombatCharacter::vfunc368
 0x100015af func   ?sub_101d8090@CUnknown101d7ec0@@QAEPAUCUnknown101d7ec0_Entry@@H@Z CUnknown101d7ec0::sub_101d8090
 0x100015b4 func   ?sub_102271d0@CPlayerEvents@@QAEXPAXH@Z CPlayerEvents::sub_102271d0
+0x100015be func   ?sub_102c7290@@YAXXZ sub_102c7290
 0x100015c3 func   ?vfunc174@CTriggerElectricBugaloo@@QAEXPAX@Z CTriggerElectricBugaloo::vfunc174
 0x100015c8 func   ?sub_100745d0@CUnknown10074a30@@QAEMM@Z CUnknown10074a30::sub_100745d0
 0x100015cd func   ?sub_1017cef0@CBasePlayer@@QAEXPAVCBaseEntity@@@Z CBasePlayer::sub_1017cef0
