@@ -9995,6 +9995,7 @@
 0x1001144b func   ?vfunc5@CStripWeapons@@QAEPAV1@I@Z CStripWeapons::vfunc5
 0x10011450 func   ?sub_100602e0@@YAXHHPBH0HHHH@Z sub_100602e0
 0x10011455 func   ?sub_100dcc20@CCollisionProperty@@QAEPAMPBMPAM@Z CCollisionProperty::sub_100dcc20
+0x1001145a func   ?sub_102c72b0@@YAXXZ sub_102c72b0
 0x1001145f func   ?sub_101e1a40@@YGHH@Z sub_101e1a40
 0x10011469 func   ?sub_10131860@@YGHH@Z sub_10131860
 0x1001146e func   ?vfunc259@CNPC_VTzimisceRunner@@UAEXPAH@Z CNPC_VTzimisceRunner::vfunc259
