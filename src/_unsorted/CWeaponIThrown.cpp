@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103ed080 size=0x6
+// TARGET: CWeaponIThrown::vfunc82
+struct datamap_t;
+extern datamap_t g_1067c9e8;
+
+datamap_t *CWeaponIThrown::vfunc82()
+{
+	return &g_1067c9e8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ed160 size=0x6
 #include "CWeaponIThrown.h"
 

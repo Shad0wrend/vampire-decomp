@@ -9397,6 +9397,7 @@
 0x1000fd6c func   ?sub_100f89a0@CListEntryView@@QAEXXZ CListEntryView::sub_100f89a0
 0x1000fd71 func   ?sub_1042d700@@YIIPAI@Z sub_1042d700
 0x1000fd76 func   ?sub_10411630@CUnknown10411630@@QAEPAVCBaseEntity@@M@Z CUnknown10411630::sub_10411630
+0x1000fd7b func   ?vfunc82@CWeaponIThrown@@QAEPAUdatamap_t@@XZ CWeaponIThrown::vfunc82
 0x1000fd80 func   ?sub_100462a0@CPQ100462a0@@QAEPAU1@XZ CPQ100462a0::sub_100462a0
 0x1000fd8a func   ?vfunc138@CNPC_VCamera@@UAEHXZ CNPC_VCamera::vfunc138
 0x1000fd8f func   ?sub_10312360@CUnknown10312580@@QAE_NH@Z CUnknown10312580::sub_10312360
