@@ -6,6 +6,15 @@ struct datamap_t;
 #include "Vector.h"
 #include "CPhysConstraint.h"
 
+struct PhysObjView;
+
+struct CPhysPulleyDebugInfo	// first argument of vfunc241 (read through edi): two attached physics objects and two local-space points
+{
+	PhysObjView *m_pObj[2];	// 0x00 / 0x04: slot 38 of each fills a 3x4 matrix that sub_10137fe0 applies to the point below
+	Vector m_vecLocal0;	// 0x08: transformed by m_pObj[0]'s matrix
+	Vector m_vecLocal1;	// 0x14: transformed by m_pObj[1]'s matrix
+};
+
 class CPhysPulley
 {
 public:
