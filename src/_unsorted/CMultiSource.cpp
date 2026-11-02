@@ -162,3 +162,27 @@ fail:
 	return i & 0xffffff00;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10135f20 size=0x2b
+#include "CMultiSource.h"
+
+struct CGargoyleMemberUnit {
+	void sub_10015708();
+};
+
+struct CGargoyleBaseUnit {
+	void sub_1000cb8a();
+};
+
+void __cdecl sub_10009fc5(void *p);
+
+// TARGET: CMultiSource::vfunc5
+CMultiSource *CMultiSource::vfunc5(unsigned int flags)
+{
+	((CGargoyleMemberUnit *)((char *)this + 0x550))->sub_10015708();
+	((CGargoyleBaseUnit *)this)->sub_1000cb8a();
+	if (flags & 1)
+		sub_10009fc5(this);
+	return this;
+}
+// END FUNCTION
