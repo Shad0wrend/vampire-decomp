@@ -71,7 +71,7 @@ public:
 	virtual bool Done();	// slot 2 (+0x8): true at the end of the text
 	virtual void ParseSolid(void *pSolid, const void *pDefaults);	// slot 3 (+0xc): (0x30-byte solid record out, defaults)
 	virtual void ParseFluid(void *pFluid, int nFlags);	// slot 4 (+0x10): (fluid record, flags)
-	virtual void v5();
+	virtual void ParseConstraint(void *pConstraint, int a);	// slot 5 (+0x14): fills a 0x6c-byte-ish record (+0x14 / +0x18 child / parent indices, +0x24.. axes) read by 0x1019c330
 	virtual void ParseMaterialTable(void *pBuffer, int nFlags);	// slot 6 (+0x18)
 	virtual void v7();
 	virtual void v8();
