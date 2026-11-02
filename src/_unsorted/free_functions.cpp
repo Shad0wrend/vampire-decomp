@@ -86247,6 +86247,30 @@ void __fastcall sub_101c99c0(S101c99c0Ent *pThis, int unused, int **pArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c9a40 size=0x4b
+#include "CConstraintAnchor.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(unsigned int size);
+extern char g_104804a4[];	// CAI_ChangeHintGroup vftable
+extern const char g_1059fcf4[];
+
+// TARGET: ai_changehintgroup
+extern "C" CBaseEntity *ai_changehintgroup()
+{
+	void *mem = sub_100aa720(0x460);
+	CBaseEntity *p;
+	if (mem) {
+		((CConstraintAnchorBase *)mem)->sub_1009d980(0);
+		*(void **)mem = g_104804a4;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_1059fcf4);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c9b30 size=0x1a
 namespace lifted {
 extern int g_1059e0e4;
