@@ -137,6 +137,20 @@ bool CNPC_VTzimisce::vfunc70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b9040 size=0x10
+#include "CNPC_VTzimisce.h"
+
+void __fastcall sub_10013fbb(void *pThis);
+void __fastcall sub_10292de0(void *pThis);
+
+// TARGET: CNPC_VTzimisce::vfunc431
+void CNPC_VTzimisce::vfunc431()
+{
+	sub_10013fbb(this);
+	sub_10292de0(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b9060 size=0x84
 #include "CNPC_VTzimisce.h"
 
