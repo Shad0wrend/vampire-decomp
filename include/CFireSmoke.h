@@ -9,6 +9,7 @@ public:
 
 	void sub_1000eff7();	// destructor body
 	void sub_10057570();	// slot 104 (Precache): precaches the fire sprite through the engine interface
+	CFireSmoke *sub_10057470();	// constructor body (firesmoke): base constructor, vtable, fields
 public:
 	virtual void vfunc0();
 	virtual void vfunc1();
