@@ -2484,6 +2484,7 @@
 0x100050b0 func   ?vfunc390@CNPC_VAnimal@@QAEXPAUCVAnimalArg@@@Z CNPC_VAnimal::vfunc390
 0x100050b5 func   ?vfunc47@CMultiplayRules@@UAEDPAVCBaseEntity@@0@Z CMultiplayRules::vfunc47
 0x100050ba func   ?sub_1040bea0@@YAHXZ sub_1040bea0
+0x100050bf func   ?sub_10390ff0@@YAXXZ sub_10390ff0
 0x100050c4 func   ?sub_101cfe10@@YAXPAXHH@Z sub_101cfe10
 0x100050d3 func   ?sub_1026d130@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_1026d130
 0x100050d8 func   ?vfunc1@CTempEntsSystem@@QAEXHHH@Z CTempEntsSystem::vfunc1
