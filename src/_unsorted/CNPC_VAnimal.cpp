@@ -83,6 +83,13 @@ int sub_1035f540(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035f560 size=0x6
+int sub_1035f560(void)
+{
+    return 10;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035f5c0 size=0x64
 #include "CEntityVSlots.h"
 struct CUnknown1027d990 { int sub_1027d990(); };

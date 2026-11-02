@@ -1470,6 +1470,7 @@
 0x10003558 func   ?vfunc82@CTriggerImpact@@QAEPAUdatamap_t@@XZ CTriggerImpact::vfunc82
 0x1000355d func   ?sub_1023e6b0@@YAXXZ sub_1023e6b0
 0x10003562 func   ?sub_101b4c20@CIdxTable@@QAEPADH@Z CIdxTable::sub_101b4c20
+0x10003567 func   ?sub_1035f560@@YAHXZ sub_1035f560
 0x10003571 func   ?sub_102469b0@@YA?AVSendProp@@PBDHHHHH@Z sub_102469b0
 0x10003576 func   ?Purge@?$CUtlVector@HV?$CUtlMemory@H@@@@QAEXXZ CUtlVector<int,CUtlMemory<int> >::Purge
 0x10003580 func   ?sub_10058200@CUnknown10058200@@QAEXH@Z CUnknown10058200::sub_10058200
