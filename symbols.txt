@@ -2361,6 +2361,7 @@
 0x10004ce6 func   ?vfunc91@CVampireProjectile_MingXiaoSpit@@UAEDPAXH@Z CVampireProjectile_MingXiaoSpit::vfunc91
 0x10004ceb func   ?vfunc5@CItemGDrugsMorphineBottle@@QAEPAV1@I@Z CItemGDrugsMorphineBottle::vfunc5
 0x10004cf0 func   ?vfunc603@CNPC_VMingXiao@@QAEMPAM0@Z CNPC_VMingXiao::vfunc603
+0x10004cf5 func   ?sub_1040d690@@YAHXZ sub_1040d690
 0x10004cfa func   ?sub_104121f0@@YAXXZ sub_104121f0
 0x10004cff func   ?sub_100fef00@CUnk100fef00@@QAEXH@Z CUnk100fef00::sub_100fef00
 0x10004d04 func   ?sub_101b1dd0@@YAHHH@Z sub_101b1dd0

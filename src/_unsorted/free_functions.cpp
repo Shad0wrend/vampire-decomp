@@ -181156,6 +181156,28 @@ void sub_1040d4b0(CBaseCombatCharacter *pPlayer, CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040d690 size=0x93
+#include "SendTable.h"
+
+SendProp sub_10246af0(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int extra, void *proxy);
+SendProp sub_10246dc0(const char *pVarName, int offset, int pTable, void *proxy);
+void sub_10009539();
+extern int g_105c5bc0;
+extern const char *g_10683a74;
+extern SendTable g_1094aea8;
+
+int sub_1040d690()
+{
+	static SendProp s_Props[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246dc0("baseclass", 0, g_105c5bc0, (void *)sub_10009539),
+		sub_10246af0("m_bActive", 0x911, 1, 1, 1, 0, 0),
+	};
+	g_1094aea8.sub_10247240(&s_Props[1], 2, g_10683a74);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040d8b0 size=0x58
 struct ISaveRestoreOps;
 struct datamap_t;
