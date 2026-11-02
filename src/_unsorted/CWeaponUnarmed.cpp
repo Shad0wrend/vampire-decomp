@@ -31,6 +31,15 @@ void *CWeaponUnarmed::sub_103f52f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f5310 size=0x6
+#include "CWeaponUnarmed.h"
+
+int CWeaponUnarmed::sub_103f5310()
+{
+	return 0x29;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f5430 size=0x1e
 #include "CWeaponUnarmed.h"
 

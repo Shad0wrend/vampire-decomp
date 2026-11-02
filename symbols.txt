@@ -10029,6 +10029,7 @@
 0x10010db1 func   ?sub_100f0860@CBaseDoor@@QAEXXZ CBaseDoor::sub_100f0860
 0x10010db6 func   ?sub_102d8f20@CUnknown102d9040@@QAEXPAVCBaseEntity@@PBMMMM@Z CUnknown102d9040::sub_102d8f20
 0x10010dbb func   ?vfunc5@CItemKSarcophagusKey@@QAEPAV1@I@Z CItemKSarcophagusKey::vfunc5
+0x10010dc0 func   ?sub_103f5310@CWeaponUnarmed@@QAEHXZ CWeaponUnarmed::sub_103f5310
 0x10010dca func   ?sub_100679a0@@YAHXZ sub_100679a0
 0x10010dcf func   ?sub_10303740@CAI_Pathfinder@@QAEPAVCAI_Waypoint@@HPBM0PBVCBaseEntity@@HHHHH@Z CAI_Pathfinder::sub_10303740
 0x10010dd4 func   ?sub_1034c8b0@CUnknown1034c8b0@@QAEXXZ CUnknown1034c8b0::sub_1034c8b0
