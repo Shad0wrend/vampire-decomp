@@ -6,6 +6,7 @@
 struct datamap_t;
 
 #include "Vector.h"
+#include "MvsnSec.h"
 
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 
