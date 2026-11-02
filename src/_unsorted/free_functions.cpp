@@ -158858,6 +158858,40 @@ void __stdcall sub_1034e7e0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034f1e0 size=0x43
+#include "CHL2_Player.h"
+
+void *sub_100aa720(int size);
+extern char g_10566574[];
+
+#define VD10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CHL2Vt
+{
+	VD10(a) VD10(b) VD10(c) VD10(d) VD10(e) VD10(f) VD10(g) VD10(h) VD10(i) VD10(j)
+	virtual void s100(); virtual void s101(); virtual void s102(); virtual void s103(); virtual void s104(); virtual void s105();
+	virtual void vfunc106(const char *pszName);
+};
+
+struct CHL2Ctor
+{
+	CHL2_Player *sub_1034f330();
+};
+
+// TARGET: player
+extern "C" CBaseEntity *player()
+{
+	void *mem = sub_100aa720(0x2548);
+	CHL2_Player *p;
+	if (mem)
+		p = ((CHL2Ctor *)mem)->sub_1034f330();
+	else
+		p = 0;
+	((CHL2Vt *)p)->vfunc106(g_10566574);
+	return (CBaseEntity *)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034f300 size=0x1a
 namespace lifted {
 extern int g_106266e4;
