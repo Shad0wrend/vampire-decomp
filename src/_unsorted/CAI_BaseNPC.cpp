@@ -225,6 +225,13 @@ void sub_101a6a60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6ba0 size=0x5
+bool CAI_BaseNPC::vfunc527(CAI_NavProvider * a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6ce0 size=0x10
 struct CUnknownNPC101a6ce0 {
     bool sub_101a6ce0(int unused);

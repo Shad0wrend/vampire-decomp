@@ -3968,6 +3968,7 @@
 0x1000786f func   ?sub_101a1990@CRestore@@QAEXPAG@Z CRestore::sub_101a1990
 0x10007874 func   ?vfunc103@CParamsExplosion@@UAEXXZ CParamsExplosion::vfunc103
 0x10007879 func   ?vfunc11@CAI_Motor@@UAEMH@Z CAI_Motor::vfunc11
+0x10007888 func   ?vfunc527@CAI_BaseNPC@@UAE_NPAUCAI_NavProvider@@@Z CAI_BaseNPC::vfunc527
 0x10007892 func   ?vfunc328@CWeaponIThrown@@QAEHXZ CWeaponIThrown::vfunc328
 0x10007897 func   ?sub_103c49d0@@YADXZ sub_103c49d0
 0x100078a1 func   ?sub_1027bc30@@YAHXZ sub_1027bc30
