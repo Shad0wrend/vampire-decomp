@@ -336,6 +336,19 @@ void CSceneEntity::vfunc260(int unused, void *pEvent, const char *pszTarget, int
 }
 // END FUNCTION
 
+// FUNCTION: 0x10081900 size=0x3d
+#include "CSceneEntity.h"
+#include "CBaseFlex.h"
+// TARGET: CSceneEntity::vfunc262
+void CSceneEntity::vfunc262(int b, CBaseFlex *pActor, void *pEvent)
+{
+	sub_100843d0(m_pScene4bc);
+	pActor->vfunc286(b, pEvent);
+	if (m_n578 == 3)
+		pActor->sub_10090b20();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10081950 size=0x14
 struct CVirtObj10081950
 {
