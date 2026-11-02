@@ -162794,6 +162794,34 @@ bool CNPC_VWerewolf::sub_10366400(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10366490 size=0x5b
+#include "CNPC_VWerewolf.h"
+
+struct EntSub { void *ent; unsigned int serial; };
+struct EntInfo { int pad; EntSub s; };
+extern EntInfo *g_10566458;
+
+// TARGET: CNPC_VWerewolf::sub_10366490
+int CNPC_VWerewolf::sub_10366490(int key)
+{
+    for (int i = 0; i < m_Timers.m_size; i++) {
+        unsigned int h = m_Timers.m_pMemory[i].m_key;
+        void *ent;
+        if (h != 0xffffffff) {
+            EntSub *s = &g_10566458[h & 0x1fff].s;
+            if (s->serial == (h >> 13))
+                ent = s->ent;
+            else
+                ent = 0;
+        } else
+            ent = 0;
+        if (ent == (void *)key)
+            return i;
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10366b30 size=0x3d
 #include "CUtlVector16.h"
 
