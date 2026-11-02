@@ -25,7 +25,7 @@ public:
 	virtual void vfunc9();
 	virtual int vfunc10();
 	virtual float vfunc11(int a);
-	virtual void vfunc12();
+	virtual void vfunc12(CBaseEntity *pEnt, const char *pszName, float a, float b, float c);
 	virtual void vfunc13();
 	virtual void vfunc14(int a, int b, int c);	// forwards its arguments to the subobject at +0x54 (stub 0x1000b8ca)
 	virtual float vfunc15(Vector &vecDir);	// GetFacingDirection: drops the expired facing targets (+0x54), blends the directions to the live ones (weighted by their interest) into vecDir and returns the total interest
