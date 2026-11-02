@@ -10414,6 +10414,7 @@
 0x10011b5d func   ?sub_100dc1e0@@YIIPAX@Z sub_100dc1e0
 0x10011b67 func   ?sub_10046050@PQ@@QAEXABUElem@@@Z PQ::sub_10046050
 0x10011b6c func   ?sub_1019dd70@CRopeKeyframe@@QAEEXZ CRopeKeyframe::sub_1019dd70
+0x10011b76 func   ?vfunc127@CAI_InterestingPlaceConverstation@@UAEHH@Z CAI_InterestingPlaceConverstation::vfunc127
 0x10011b7b func   ?vfunc0@CTEBeamEnts@@UAEHXZ CTEBeamEnts::vfunc0
 0x10011b80 func   ?sub_1013a070@@YAXPBMPAM1@Z sub_1013a070
 0x10011b85 func   ?sub_10223770@CUnknownToggle10223770@@QAEXPAUCUnknownInput10223770@@@Z CUnknownToggle10223770::sub_10223770
