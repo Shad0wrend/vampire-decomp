@@ -4345,6 +4345,7 @@
 0x10007fe5 func   ?sub_100ac4e0@CBaseEntity@@QAEHHHPBD@Z CBaseEntity::sub_100ac4e0
 0x10007fea func   ?vfunc5@CAI_BaseNPC@@UAEPAV1@I@Z CAI_BaseNPC::vfunc5
 0x10007ff4 func   ?vfunc80@CWeaponIArmor_Lt_Leather@@QAEHXZ CWeaponIArmor_Lt_Leather::vfunc80
+0x10007ff9 func   ?sub_101a63e0@@YG_NH@Z sub_101a63e0
 0x10007ffe func   _item_k_clinic_stairs_key item_k_clinic_stairs_key
 0x10008003 func   ?vfunc62@CBaseEntity@@UAEXPBM@Z CBaseEntity::vfunc62
 0x1000800d func   ?sub_103fbbd0@@YAHXZ sub_103fbbd0

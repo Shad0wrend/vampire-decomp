@@ -32,3 +32,11 @@ bool __stdcall sub_101a63c0(int a)
 	return false;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101a63e0 size=0x5
+// TARGET: sub_101a63e0
+bool __stdcall sub_101a63e0(int a)
+{
+	return false;
+}
+// END FUNCTION
