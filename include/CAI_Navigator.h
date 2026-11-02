@@ -208,6 +208,7 @@ public:
 	float m_f48;
 	float m_f4c;
 	char m_b50;
+	char m_b51;	// 0x51: cleared by sub_102efd50 (the pending move)
 	int m_i54;
 	float m_f58;
 	float m_f5c;
