@@ -5,6 +5,7 @@
 #include "Vector.h"
 
 class CBaseEntity;
+struct datamap_t;
 
 #define FP_V(n) virtual void vfunc##n();
 #define FP_V10(p) FP_V(p##0) FP_V(p##1) FP_V(p##2) FP_V(p##3) FP_V(p##4) FP_V(p##5) FP_V(p##6) FP_V(p##7) FP_V(p##8) FP_V(p##9)
