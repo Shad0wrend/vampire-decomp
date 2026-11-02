@@ -2629,6 +2629,7 @@
 0x100054ed func   ?sub_1029f340@@YGHH@Z sub_1029f340
 0x100054f2 func   ?vfunc2@CTEShowLine@@UAEPAV1@I@Z CTEShowLine::vfunc2
 0x100054f7 func   ?sub_1025d3a0@CUtlRBTreeBig@@QBE_NG@Z CUtlRBTreeBig::sub_1025d3a0
+0x100054fc func   ?vfunc5@CPropSlashable@@QAEPAV1@I@Z CPropSlashable::vfunc5
 0x10005501 func   ?sub_101a75e0@@YAXXZ sub_101a75e0
 0x10005506 func   ?sub_101a69e0@@YAXXZ sub_101a69e0
 0x1000550b func   ?sub_101aa820@CPayphoneUnit101aa820@@QAEHH@Z CPayphoneUnit101aa820::sub_101aa820
