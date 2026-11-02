@@ -11,7 +11,14 @@ public:
 	char m_pad0090[0x80c - 0x90];
 	char m_b080c;	// 0x80c: the terminal is usable
 	char m_b080d;	// 0x80d: the terminal is in use
-	char m_pad080e[0x82c - 0x80e];
+	char m_pad080e[0x810 - 0x80e];
+	int m_nScreenW810;	// 0x810: clamped to [4, 0x24] by vfunc103 (Spawn)
+	int m_nScreenH814;	// 0x814: clamped to [2, 0x18] by vfunc103
+	char m_pad0818[4];
+	int m_n081c;	// 0x81c: cleared by vfunc103
+	int m_n0820;	// 0x820: cleared by vfunc103
+	char m_b0824;	// 0x824: cleared by vfunc103
+	char m_pad0825[0x82c - 0x825];
 	union {
 		char m_b082c;	// 0x82c: set while a screen is shown (the user is turned towards it)
 		int m_n082c[4];	// 0x82c: four dwords cleared together on use
