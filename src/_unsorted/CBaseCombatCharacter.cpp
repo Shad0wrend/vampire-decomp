@@ -168,6 +168,11 @@ bool __cdecl sub_1014f850() { return false; }
 void __stdcall sub_1014f870(void *a, void *b) {}
 // END FUNCTION
 
+// FUNCTION: 0x1014f890 size=0x3
+// TARGET: sub_1014f890
+void __stdcall sub_1014f890(void *p) {}
+// END FUNCTION
+
 // FUNCTION: 0x1014f8d0 size=0x1
 // TARGET: sub_1014f8d0
 void __fastcall sub_1014f8d0(void *pThis)

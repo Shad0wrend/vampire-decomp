@@ -1061,6 +1061,7 @@
 0x10002b8f func   ?sub_10043b60@@YGXPAX@Z sub_10043b60
 0x10002b94 func   ?sub_1004e1c0@CPhysBox@@QAE_NH@Z CPhysBox::sub_1004e1c0
 0x10002b9e func   _env_particle_hud env_particle_hud
+0x10002ba3 func   ?sub_1014f890@@YGXPAX@Z sub_1014f890
 0x10002bad func   ?vfunc110@CScriptedSentence@@QAE_NPBD0@Z CScriptedSentence::vfunc110
 0x10002bb7 func   ?sub_101dd910@CUnknown101dd910@@QAEXXZ CUnknown101dd910::sub_101dd910
 0x10002bbc func   ?vfunc81@CDisciplineProjectile@@UAEHXZ CDisciplineProjectile::vfunc81
