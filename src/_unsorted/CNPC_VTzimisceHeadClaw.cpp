@@ -504,3 +504,19 @@ void CNPC_VTzimisceHeadClaw::vfunc619(char bFlag)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x103c2810 size=0x35
+#include "CNPC_VTzimisceHeadClaw.h"
+
+void sub_1009d940(void *p, int n);
+void sub_1009d960(void *p, int n);
+
+int CNPC_VTzimisceHeadClaw::vfunc126(int a)
+{
+	void *member = (char *)this + 0x6678;
+	sub_1009d940(member, 3);
+	int r = sub_100025cc(a);
+	sub_1009d960(member, 3);
+	return r;
+}
+// END FUNCTION

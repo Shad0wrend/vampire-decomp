@@ -8975,6 +8975,7 @@
 0x1000fa5b func   ?sub_103fca20@CElderVitaePackUnit103fca20@@QAEXXZ CElderVitaePackUnit103fca20::sub_103fca20
 0x1000fa60 func   ?sub_100787f0@CUnknown10078540@@QAEXH@Z CUnknown10078540::sub_100787f0
 0x1000fa65 func   ?sub_10248a30@CUnknown10248a30@@QAEHXZ CUnknown10248a30::sub_10248a30
+0x1000fa6a func   ?vfunc126@CNPC_VTzimisceHeadClaw@@QAEHH@Z CNPC_VTzimisceHeadClaw::vfunc126
 0x1000fa6f func   ?sub_100bdfe0@CUnknown100bdfe0@@QAEXXZ CUnknown100bdfe0::sub_100bdfe0
 0x1000fa74 func   ?vfunc1@CTEFogRipple@@UAEHXZ CTEFogRipple::vfunc1
 0x1000fa79 func   _item_w_tzimisce3_claw item_w_tzimisce3_claw
