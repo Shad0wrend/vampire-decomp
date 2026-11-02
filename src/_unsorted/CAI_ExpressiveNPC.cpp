@@ -44,3 +44,13 @@ CAI_Expresser *CAI_ExpressiveNPC::vfunc583()
 	return new CAI_Expresser;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10312ef0 size=0x2b
+#include "CAI_ExpressiveNPC.h"
+#include "CAI_Expresser.h"
+typedef CAI_Expresser *(__fastcall *GetExpresserFn)(void *);
+int CAI_ExpressiveNPC::vfunc484(const char *pszName, float flDelay, float flVolume, int nSoundLevel, int b)
+{
+	return ((CAI_Expresser *)((GetExpresserFn)(*(void ***)this)[512])(this))->sub_10311f50(pszName, flDelay, flVolume, nSoundLevel, b);
+}
+// END FUNCTION
