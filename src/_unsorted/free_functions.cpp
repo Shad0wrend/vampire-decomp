@@ -9557,6 +9557,30 @@ void CUnknown10056a00::sub_10056a60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10056d00 size=0x4b
+#include "CConstraintAnchor.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(unsigned int size);
+extern char g_1044c854[];	// CTempEntTester vftable
+extern const char g_1053f72c[];
+
+// TARGET: te_tester
+extern "C" CBaseEntity *te_tester()
+{
+	void *mem = sub_100aa720(0x498);
+	CBaseEntity *p;
+	if (mem) {
+		((CConstraintAnchorBase *)mem)->sub_1009d980(0);
+		*(void **)mem = g_1044c854;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_1053f72c);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10056f10 size=0x2f
 // TARGET: sub_10056f10
 extern int vt_1044cce4[];
