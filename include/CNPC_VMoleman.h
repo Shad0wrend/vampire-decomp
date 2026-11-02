@@ -31,4 +31,5 @@ public:
 	virtual void vfunc136();
 	virtual void vfunc137();
 	virtual int vfunc138();
+	char *vfunc580();
 };
