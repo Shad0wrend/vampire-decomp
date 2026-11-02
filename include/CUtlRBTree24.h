@@ -62,6 +62,7 @@ public:
 	}
 
 	const Links_t &sub_10055520(int i) const;	// "CUtlRBTree::Links"
+	const Links_t &sub_101b7f00(int i) const;	// "CUtlRBTree::Links" of another instance (sentinel 0x1072c428)
 	// the SDK's accessors over the out-of-line Links above (tier1 utlrbtree.h)
 	int Parent(int i) const { return sub_10055520(i).m_Parent; }
 	int LeftChild(int i) const { return sub_10055520(i).m_Left; }
