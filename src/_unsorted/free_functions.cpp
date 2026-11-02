@@ -56367,6 +56367,23 @@ void CPropClockHand::sub_1012dbd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012de90 size=0x4b
+#include "CHudCounter.h"
+
+void *sub_100aa720(unsigned int size);
+inline void *operator new(unsigned int, void *p) { return p; }
+extern const char g_10574678[];
+
+// TARGET: hud_counter
+extern "C" CHudCounter *hud_counter()
+{
+	void *mem = sub_100aa720(0x464);
+	CHudCounter *p = mem ? new(mem) CHudCounter : 0;
+	p->vfunc106(g_10574678);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012dfb0 size=0x1a
 namespace lifted {
 extern int g_10574318;
