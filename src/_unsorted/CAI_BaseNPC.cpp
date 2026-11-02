@@ -77,6 +77,13 @@ const char * CAI_BaseNPC::vfunc451()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6680 size=0x3
+// TARGET: CAI_BaseNPC::vfunc454
+int CAI_BaseNPC::vfunc454() {
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a66c0 size=0x3
 CAI_BehaviorBase ** CAI_BaseNPC::vfunc456()
 {

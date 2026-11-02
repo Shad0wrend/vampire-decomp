@@ -9789,6 +9789,7 @@
 0x10010d98 func   ?sub_101ad410@CUnknown101ad410@@QAEHH@Z CUnknown101ad410::sub_101ad410
 0x10010d9d func   ?sub_101a56d0@CUtlVector40@@QAEHHPBX@Z CUtlVector40::sub_101a56d0
 0x10010da2 func   ?sub_100cc020@CUnit100cc020@@QAEPAXXZ CUnit100cc020::sub_100cc020
+0x10010da7 func   ?vfunc454@CAI_BaseNPC@@UAEHXZ CAI_BaseNPC::vfunc454
 0x10010db1 func   ?sub_100f0860@CBaseDoor@@QAEXXZ CBaseDoor::sub_100f0860
 0x10010db6 func   ?sub_102d8f20@CUnknown102d9040@@QAEXPAVCBaseEntity@@PBMMMM@Z CUnknown102d9040::sub_102d8f20
 0x10010dbb func   ?vfunc5@CItemKSarcophagusKey@@QAEPAV1@I@Z CItemKSarcophagusKey::vfunc5
