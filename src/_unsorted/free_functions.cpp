@@ -700,6 +700,29 @@ void CUnknown100295d0::sub_100295f0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100296b0 size=0x3e
+#include "CKeepUpright.h"
+#include "IPhysicsEnvironment.h"
+
+extern IPhysicsEnvironment *g_10723940;
+extern int vt_104462c4[];
+void __fastcall sub_1009df20(void *p);
+
+// TARGET: CKeepUpright::sub_100296b0
+void CKeepUpright::sub_100296b0()
+{
+	void *pController = m_pController;
+	*(int **)(void *)this = vt_104462c4;
+	m_motionEvent = (void *)&g_104462b4;
+	if (pController)
+	{
+		g_10723940->vfunc40(pController);
+		m_pController = 0;
+	}
+	sub_1009df20(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100298a0 size=0x7c
 #include "CKeepUpright.h"
 

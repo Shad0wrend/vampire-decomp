@@ -2787,6 +2787,7 @@
 0x100057ae func   ?sub_10223130@CUnknown10223130@@QAEHHH@Z CUnknown10223130::sub_10223130
 0x100057b3 func   ?sub_1018cc00@@YAPAHXZ sub_1018cc00
 0x100057bd func   ?vfunc291@CBaseFlex@@UAEXPAUCFlexRequest@@@Z CBaseFlex::vfunc291
+0x100057c2 func   ?sub_100296b0@CKeepUpright@@QAEXXZ CKeepUpright::sub_100296b0
 0x100057c7 func   ?sub_10332930@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_10332930
 0x100057cc func   ?sub_100db250@@YAXXZ sub_100db250
 0x100057d1 func   ?vfunc6@CCollisionProperty@@UAEHXZ CCollisionProperty::vfunc6
