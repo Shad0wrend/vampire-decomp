@@ -1,0 +1,45 @@
+// Source's datamap layer (save/restore data descriptions), as the game lays it out.
+// typedescription_t is 0x2c bytes; datamap_t is {dataDesc, dataNumFields, dataClassName, baseMap}.
+// Field flags: 0x2 FIELD, 0x4 KEY (externalName is the keyvalue name), 0x8 INPUTFUNC, 0x10 OUTPUT, 0x20 FUNCTION.
+#pragma once
+
+struct typedescription_t;
+
+struct datamap_t
+{
+	typedescription_t *dataDesc;
+	int dataNumFields;
+	const char *dataClassName;
+	datamap_t *baseMap;
+};
+
+struct SaveRestoreFieldInfo_t
+{
+	void *pField;	// the field's address in the object
+	void *pOwner;	// the object
+	typedescription_t *pTypeDesc;
+};
+
+struct ISaveRestoreOps
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void Parse(SaveRestoreFieldInfo_t &fieldInfo, const char *szValue);	// slot 4 (+0x10)
+};
+
+struct typedescription_t
+{
+	int fieldType;	// +0x00: 1,15 float; 2,16,17 string-like int; 3,14 vector; 4 int; 5 bool; 6 short; 7 char; 8 color; 9 embedded (td); 10 custom ops
+	const char *fieldName;	// +0x04
+	int fieldOffset[2];	// +0x08
+	unsigned short fieldSize;	// +0x10
+	short flags;	// +0x12
+	const char *externalName;	// +0x14
+	ISaveRestoreOps *pSaveRestoreOps;	// +0x18
+	void *inputFunc;	// +0x1c
+	datamap_t *td;	// +0x20 (embedded fields)
+	int fieldSizeInBytes;	// +0x24
+	int unk;	// +0x28
+};
