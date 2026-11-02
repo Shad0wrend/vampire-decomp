@@ -90063,6 +90063,28 @@ char CUnknown101d9840::sub_101d9840(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d9bd0 size=0x93
+#include "SendTable.h"
+
+SendProp sub_10246af0(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int extra, void *proxy);
+SendProp sub_10246dc0(const char *pVarName, int offset, int pTable, void *proxy);
+void sub_10009539();
+extern int g_105a4c50;
+extern const char *g_105a1b38;
+extern SendTable g_10739a2c;
+
+int sub_101d9bd0()
+{
+	static SendProp s_Props[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246dc0("baseclass", 0, g_105a4c50, (void *)sub_10009539),
+		sub_10246af0("m_ibFlag", 0x8bc, 4, -1, 0, 0, 0),
+	};
+	g_10739a2c.sub_10247240(&s_Props[1], 2, g_105a1b38);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d9cd0 size=0x43
 #include "CDisciplineProjectile.h"
 void *sub_100aa720(int size);

@@ -6140,6 +6140,7 @@
 0x1000ae20 func   ?sub_100ee4e0@CBaseDoor@@QAEXHD@Z CBaseDoor::sub_100ee4e0
 0x1000ae25 func   ?sub_102e37b0@CUnknown102e37b0@@QAEXPBM0I_NPAUCGameTrace@@@Z CUnknown102e37b0::sub_102e37b0
 0x1000ae2a func   ?vfunc104@CPropSwitch@@UAEXXZ CPropSwitch::vfunc104
+0x1000ae2f func   ?sub_101d9bd0@@YAHXZ sub_101d9bd0
 0x1000ae34 func   ?vfunc124@CPropClockHand@@UAEHXZ CPropClockHand::vfunc124
 0x1000ae39 func   ?vfunc601@CNPC_VTzimisceHeadClaw@@QAEXH@Z CNPC_VTzimisceHeadClaw::vfunc601
 0x1000ae3e func   ?sub_1017f8d0@CUnk1017f8d0@@QAE_NXZ CUnk1017f8d0::sub_1017f8d0
