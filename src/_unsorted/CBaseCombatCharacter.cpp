@@ -245,6 +245,14 @@ bool __stdcall sub_1014f9d0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014f9f0 size=0x5
+// TARGET: sub_1014f9f0
+bool __stdcall sub_1014f9f0(int a, int b)
+{
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014fa30 size=0x3
 // TARGET: sub_1014fa30
 bool __cdecl sub_1014fa30() { return false; }
