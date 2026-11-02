@@ -195,7 +195,8 @@ public:
 	float m_f6f8;	// 0x06F8
 	char m_pad06FC[0xea4 - 0x6fc];	// 0x06FC .. 0x0EA3
 	unsigned int m_hEnt0EA4;	// entity handle
-	char m_pad0EA8[0xfe8 - 0xea8];	// 0x0EA8 .. 0x0FE7
+	EHANDLE m_hEnt0EA8;	// 0x0EA8: a second entity handle next to +0xea4 (CWeaponUnarmed::vfunc319 resolves both)
+	char m_pad0EAC[0xfe8 - 0xeac];	// 0x0EA8 .. 0x0FE7
 	unsigned int m_hDialogPartnerFE8;	// 0x0FE8: entity handle
 	int m_nFEC;	// 0x0FEC
 	int m_nFF0;	// 0x0FF0: the activity
