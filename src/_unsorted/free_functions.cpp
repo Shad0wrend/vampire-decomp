@@ -127822,6 +127822,25 @@ void CAI_BaseNPC::sub_10279c20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10279c50 size=0x26
+struct CUnknown102dfaa0
+{
+	void sub_102dfaa0(void *p, int a);
+};
+
+struct CNpcView10279c50
+{
+	void sub_10279c50(int arg);
+};
+
+// TARGET: CNpcView10279c50::sub_10279c50
+void CNpcView10279c50::sub_10279c50(int arg)
+{
+	((CUnknown102dfaa0 *)((void *(__fastcall *)(void *))(*(void ***)this)[541])(this))->sub_102dfaa0(
+		(void *)((int (__fastcall *)(void *))(*(void ***)this)[167])(this), arg);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10279c90 size=0x1f
 #include "vampire.h"
 #include "CAI_BaseNPC.h"

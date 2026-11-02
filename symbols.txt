@@ -4611,6 +4611,7 @@
 0x1000871f func   ?vfunc2@?$CBitStringSaveRestoreOps@VCBitString@@@@UAE_NPAPAVCBitString@@@Z CBitStringSaveRestoreOps<CBitString>::vfunc2
 0x10008724 func   ?sub_100fca30@@YAHXZ sub_100fca30
 0x1000872e func   ?vfunc256@CSceneEntity@@UAEXHPAUCSceneEventActorEnt@@PAUCSceneEvent@@@Z CSceneEntity::vfunc256
+0x10008738 func   ?sub_10279c50@CNpcView10279c50@@QAEXH@Z CNpcView10279c50::sub_10279c50
 0x1000873d func   ?vfunc71@CPropSwitch@@UAEXXZ CPropSwitch::vfunc71
 0x10008742 func   ?vfunc281@CBaseFlex@@UAEMH@Z CBaseFlex::vfunc281
 0x10008747 func   ?sub_10203540@@YAHPBD@Z sub_10203540
