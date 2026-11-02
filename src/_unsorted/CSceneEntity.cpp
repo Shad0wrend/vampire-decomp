@@ -236,6 +236,24 @@ void CSceneEntity::vfunc256(int b, CSceneEventActorEnt *pActor, CSceneEvent *pEv
 }
 // END FUNCTION
 
+// FUNCTION: 0x100815a0 size=0x14
+struct CVirtObj100815a0
+{
+	void v0(int a);
+};
+
+void __stdcall sub_100815a0(int a1, CVirtObj100815a0 *pObj, int a3)
+{
+	void **vt = *(void ***)pObj;
+	union {
+		void *p;
+		void (CVirtObj100815a0::*pm)(int);
+	} u;
+	u.p = vt[287];
+	(pObj->*u.pm)(a3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10081620 size=0xad
 #include "CSceneEntity.h"
 #include "CGlobalEntityList.h"

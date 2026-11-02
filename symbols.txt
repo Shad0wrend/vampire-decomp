@@ -1119,6 +1119,7 @@
 0x10002ccf func   ?sub_10107480@UtlMem@@QAEXXZ UtlMem::sub_10107480
 0x10002cd4 func   ?sub_100c9430@CBaseButton@@QAEXPAVCBaseEntity@@@Z CBaseButton::sub_100c9430
 0x10002cd9 func   ?sub_103a1570@@YIPAXPAX@Z sub_103a1570
+0x10002cde func   ?sub_100815a0@@YGXHPAUCVirtObj100815a0@@H@Z sub_100815a0
 0x10002ce8 func   ?sub_10218ec0@CUnknown10217f50@@QAEXHH@Z CUnknown10217f50::sub_10218ec0
 0x10002ced func   ?sub_101a0980@CSave@@QAE_KH_K@Z CSave::sub_101a0980
 0x10002cf2 func   ?sub_10240ac0@@YAMPBURayView10240ac0@@PBUPlaneView10240ac0@@@Z sub_10240ac0
