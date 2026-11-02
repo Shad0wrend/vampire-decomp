@@ -8071,6 +8071,7 @@
 0x1000dc74 func   ?vfunc82@CNPCMaker_Fleshpile@@UAEPAUdatamap_t@@XZ CNPCMaker_Fleshpile::vfunc82
 0x1000dc79 func   ?sub_101f6e70@CUnknown101f6c50@@QAEXHPAUCTraitStatBlock@@PAH@Z CUnknown101f6c50::sub_101f6e70
 0x1000dc7e func   ?sub_10050a40@@YAXXZ sub_10050a40
+0x1000dc83 func   ?vfunc580@CNPC_VToreador@@UAEPAXXZ CNPC_VToreador::vfunc580
 0x1000dc88 func   ?vfunc461@CNPC_VMingXiao@@QAEHXZ CNPC_VMingXiao::vfunc461
 0x1000dc92 func   ?sub_103fdc50@@YAHXZ sub_103fdc50
 0x1000dc9c func   ?vfunc43@CSingleplayRules@@UAEHHH@Z CSingleplayRules::vfunc43
