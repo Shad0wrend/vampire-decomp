@@ -9643,6 +9643,7 @@
 0x100107e9 func   ?sub_1042ed40@CUnit1042ed40@@QAEXHM@Z CUnit1042ed40::sub_1042ed40
 0x100107f3 func   ?vfunc80@COccultThaumDamage@@QAEHXZ COccultThaumDamage::vfunc80
 0x10010807 func   ?sub_1010c4c0@CUnknown1010c4c0@@QAEXH@Z CUnknown1010c4c0::sub_1010c4c0
+0x1001080c func   ?sub_100d1610@@YAXPAX@Z sub_100d1610
 0x10010811 func   ?Grow@?$CUtlMemory@UQuestJournal_Completion@@@@QAEXH@Z CUtlMemory<QuestJournal_Completion>::Grow
 0x10010811 func   ?sub_10222da0@CUtlMemory24@@QAEXH@Z CUtlMemory24::sub_10222da0
 0x10010816 func   ?sub_102f39a0@CUnknown102f3900@@QAE_NPAUCUnknown102f3900Ent@@VVector@@1H@Z CUnknown102f3900::sub_102f39a0

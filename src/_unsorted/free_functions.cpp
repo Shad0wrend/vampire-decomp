@@ -38082,6 +38082,28 @@ IHandleEntity *CBaseHandle::sub_100d15d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d1610 size=0x24
+#include "CBasePlayer.h"
+
+struct CUnknownObj100d1610
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void *vfunc4();
+};
+
+// TARGET: sub_100d1610
+void __cdecl sub_100d1610(void *pArg)
+{
+	CBasePlayer *pPlayer = (pArg != 0 && *(void **)((char *)pArg + 0x40) != 0)
+		? (CBasePlayer *)(*(CUnknownObj100d1610 **)((char *)pArg + 0x40))->vfunc4()
+		: 0;
+	pPlayer->sub_10170d60();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d1d50 size=0x1af
 #include "CStatDefault3List.h"
 #include "CUnknown1070b22c.h"
