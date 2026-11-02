@@ -111535,6 +111535,36 @@ char CPropHacking::sub_1021c6d0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021d660 size=0x43
+#include "CPropKeypad.h"
+
+void *sub_100aa720(int size);
+extern char g_105b0894[];
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+class CPropKeypadVt
+{
+public:
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	virtual void k0(); virtual void k1(); virtual void k2(); virtual void k3(); virtual void k4(); virtual void k5();
+	virtual void vfunc106(const char *pszName);
+};
+
+// TARGET: prop_keypad
+extern "C" CPropKeypad *prop_keypad()
+{
+	void *mem = sub_100aa720(0x8bc);
+	CPropKeypad *p;
+	if (mem)
+		p = ((CPropKeypad *)mem)->sub_1021d890();
+	else
+		p = 0;
+	((CPropKeypadVt *)p)->vfunc106(g_105b0894);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021d730 size=0x103
 struct ISaveRestoreOps;
 struct datamap_t;
