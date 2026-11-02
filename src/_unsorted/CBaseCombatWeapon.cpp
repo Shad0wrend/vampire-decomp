@@ -800,6 +800,13 @@ char CBaseCombatWeapon::vfunc316(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10253e80 size=0x1
+// TARGET: sub_10253e80
+void sub_10253e80()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10254380 size=0x47
 #include "CBaseCombatWeapon.h"
 const Vector &CBaseCombatWeapon::vfunc331()
