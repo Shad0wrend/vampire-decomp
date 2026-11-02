@@ -3179,6 +3179,7 @@
 0x100062e9 func   ?sub_10097e50@@YAHXZ sub_10097e50
 0x100062ee func   ?vfunc81@CItemGDrugsDrugBox@@QAEHXZ CItemGDrugsDrugBox::vfunc81
 0x100062f3 func   ?sub_101a6900@@YAXXZ sub_101a6900
+0x100062f8 func   ?sub_1017be30@@YADXZ sub_1017be30
 0x10006302 func   ?vfunc471@CAI_BaseNPC@@UAEMXZ CAI_BaseNPC::vfunc471
 0x10006311 func   ?vfunc566@CAI_BaseNPC@@UAE_NPAVCBaseEntity@@@Z CAI_BaseNPC::vfunc566
 0x10006316 func   ?sub_10077060@CUnknown10077060@@QAEHXZ CUnknown10077060::sub_10077060

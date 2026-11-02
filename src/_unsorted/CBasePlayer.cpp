@@ -1892,6 +1892,13 @@ void __stdcall sub_1017b880(int a) {
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017be30 size=0x3
+// TARGET: sub_1017be30
+char sub_1017be30() {
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017be50 size=0x8f
 int sub_1002dfe0(int a, int b);
 
