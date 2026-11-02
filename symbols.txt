@@ -1043,6 +1043,7 @@
 0x10002af4 func   _item_g_edane_print_report item_g_edane_print_report
 0x10002af9 func   ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z CBaseEntity::vfunc216
 0x10002afe func   ?vfunc81@CGargoyleTalisman@@QAEHXZ CGargoyleTalisman::vfunc81
+0x10002b17 func   ?vfunc81@CBaseCombatWeapon@@UAEHXZ CBaseCombatWeapon::vfunc81
 0x10002b1c func   ?vfunc440@CNPC_VHumanCombatant@@QAEHH@Z CNPC_VHumanCombatant::vfunc440
 0x10002b21 func   ?sub_10156810@@YAHXZ sub_10156810
 0x10002b26 func   ?sub_100e7c20@@YGXPAUDialogLine@@@Z sub_100e7c20

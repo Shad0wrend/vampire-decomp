@@ -1039,6 +1039,11 @@ void CBaseCombatWeapon::vfunc105(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10256730 size=0x3
+// TARGET: CBaseCombatWeapon::vfunc81
+int CBaseCombatWeapon::vfunc81() { return 0; }
+// END FUNCTION
+
 // FUNCTION: 0x10257230 size=0xe
 bool CBaseCombatWeapon::vfunc303()
 {
