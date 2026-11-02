@@ -103,7 +103,7 @@ public:
 	CBP_V1(sb70) CBP_V1(sb71) CBP_V1(sb72) CBP_V1(sb73) CBP_V1(sb74) CBP_V1(sb75) CBP_V1(sb76) CBP_V1(sb77) CBP_V1(sb78)
 	virtual void vfunc144(const void *pArg);	// slot 144: takes a damage info (CUnknown101c26d0, the force vector at +4); sub_10170d60 hands it a random force
 	virtual int vfunc145();	// slot 145: the int handed to sub_102699e0 as its second argument
-	CBP_V1(sb81) CBP_V1(sb82) CBP_V1(sb83) CBP_V1(sb84) CBP_V1(sb85) CBP_V1(sb86) CBP_V1(sb87) CBP_V1(sb88) CBP_V1(sb89) CBP_V10(sb9)
+	CBP_V1(sb81) CBP_V1(sb82) CBP_V1(sb83) CBP_V1(sb84) CBP_V1(sb85) CBP_V1(sb86) CBP_V1(sb87) CBP_V1(sb88) CBP_V1(sb89) CBP_V1(sb90) CBP_V1(sb91) CBP_V1(sb92) CBP_V1(sb93) CBP_V1(sb94) CBP_V1(sb95) CBP_V1(sb96) virtual char vfunc162(); CBP_V1(sb98) CBP_V1(sb99)
 	CBP_V1(sc00) CBP_V1(sc01) CBP_V1(sc02) CBP_V1(sc03)	// slots 165..168
 	virtual void vfunc169(const Vector *pPunch);	// slot 169: takes the pointer of a view punch angle
 	virtual void vfunc170(const Vector *pOffset);	// slot 170: sub_100b3640(1), then sub_100b2e30 with the vector at +0x3d4 plus pOffset
