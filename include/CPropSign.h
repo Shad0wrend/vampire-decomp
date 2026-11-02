@@ -34,6 +34,7 @@ public:
 	    
 	    
 	    
+	void sub_100a4fe0(CBasePlayer *pPlayer);	// CBaseEntity::vfunc39 (stub 0x10015262), called directly by vfunc39
 	void sub_100a5030(CBasePlayer *pPlayer);	// CBaseEntity::vfunc42 (stub 0x10010e60), called directly
 	char m_pad0004[0x8c - 4];
 	CPropSignHandle m_hAttached;	// +0x8c
