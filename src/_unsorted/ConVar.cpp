@@ -5,7 +5,7 @@
 #include "ConVar.h"
 
 // TARGET: ConVar::vfunc0
-ConVar *ConVar::vfunc0(unsigned int flags)
+ConVar::Vfunc0Ret ConVar::vfunc0(unsigned int flags)
 {
 	sub_100108bb();
 	if (flags & 1)
