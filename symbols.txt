@@ -10915,6 +10915,7 @@
 0x10012d2d func   _item_k_kiki_key item_k_kiki_key
 0x10012d32 func   ?vfunc296@CBaseCombatCharacter@@UAEDH@Z CBaseCombatCharacter::vfunc296
 0x10012d3c func   ?sub_103566a0@CNPC_Bullseye@@QAEPAV1@XZ CNPC_Bullseye::sub_103566a0
+0x10012d41 func   ?vfunc5@CPathCornerCrash@@QAEPAV1@I@Z CPathCornerCrash::vfunc5
 0x10012d50 func   ?sub_10203020@CNamedList10203020@@QAEHPBD@Z CNamedList10203020::sub_10203020
 0x10012d55 func   ?sub_101f4b20@CUnknown101f4b20@@QAEXXZ CUnknown101f4b20::sub_101f4b20
 0x10012d5a func   ?sub_102009b0@CVStatList_t@@QAEXH@Z CVStatList_t::sub_102009b0
