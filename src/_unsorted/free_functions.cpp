@@ -121098,6 +121098,18 @@ CUnknown1024b000 *CUnknown1024b000::sub_1024b000(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024b040 size=0x16
+#include "CUnknown1024b2d0.h"
+
+int sub_1024afe0();
+
+// TARGET: sub_1024b040
+const char *__fastcall sub_1024b040(CUnknown1024b2d0Id *self)
+{
+	return ((CUnknown1024b2d0 *)sub_1024afe0())->sub_1024b830(*self);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024b070 size=0x8
 extern char g_105c5338;
 void sub_1024b070() { g_105c5338 = 0; }

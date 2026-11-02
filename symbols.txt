@@ -11363,6 +11363,7 @@
 0x1001348f func   ?sub_1033d640@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_1033d640
 0x10013499 func   ?sub_1042fc60@@YAXXZ sub_1042fc60
 0x1001349e func   ?sub_1042da60@CUnknown1042da60@@QAEHXZ CUnknown1042da60::sub_1042da60
+0x100134a3 func   ?sub_1024b040@@YIPBDPAUCUnknown1024b2d0Id@@@Z sub_1024b040
 0x100134a8 func   ?vfunc1@CTEArmorRicochet@@UAEHXZ CTEArmorRicochet::vfunc1
 0x100134ad func   ?sub_1028d800@@YAHXZ sub_1028d800
 0x100134b2 func   ?vfunc1@CTEGunshotDecal@@UAEHXZ CTEGunshotDecal::vfunc1
