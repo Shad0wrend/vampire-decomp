@@ -38,6 +38,17 @@ CNPC_VMalkavian *CNPC_VMalkavian::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103896a0 size=0x6
+#include "CNPC_VMalkavian.h"
+
+extern char g_106408e8;
+
+char CNPC_VMalkavian::sub_103896a0()
+{
+	return g_106408e8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10389700 size=0x1d
 #include "CNPC_VMalkavian.h"
 struct A { int sub_10012300(int); };
