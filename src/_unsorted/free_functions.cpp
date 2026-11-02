@@ -44522,6 +44522,18 @@ void UtlMem::sub_100eb1a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100eb1e0 size=0x4c
+#include "CUtlVector4100.h"
+
+// TARGET: CUtlVector4100::sub_100eb1e0
+void CUtlVector4100::sub_100eb1e0(int elem, int num)
+{
+	int toMove = m_size - elem - num;
+	if (toMove > 0 && num > 0)
+		memmove(&m_pMemory[elem + num], &m_pMemory[elem], toMove * sizeof(CUtlVector4100Elem));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eb250 size=0x18
 struct CBlock4k
 {

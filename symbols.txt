@@ -7664,6 +7664,7 @@
 0x1000d43b func   ?vfunc81@CBaseTerminal@@QAEHXZ CBaseTerminal::vfunc81
 0x1000d445 func   _item_w_avamp_blade item_w_avamp_blade
 0x1000d44a func   ?sub_101e94d0@@YGXH@Z sub_101e94d0
+0x1000d44f func   ?sub_100eb1e0@CUtlVector4100@@QAEXHH@Z CUtlVector4100::sub_100eb1e0
 0x1000d454 func   ?sub_1009ba60@CBaseEntity@@QAEXHPADH@Z CBaseEntity::sub_1009ba60
 0x1000d459 func   ?vfunc130@CPhysForce@@UAEXH@Z CPhysForce::vfunc130
 0x1000d45e func   ?vfunc5@CEnvShooter@@QAEPAV1@I@Z CEnvShooter::vfunc5
