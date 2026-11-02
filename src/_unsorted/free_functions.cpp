@@ -51979,6 +51979,30 @@ int sub_1010bbb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010bbe0 size=0x4b
+#include "CConstraintAnchor.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(unsigned int size);
+extern char g_1045d66c[];	// CEnvFireSource vftable
+extern const char g_1056da24[];
+
+// TARGET: env_firesource
+extern "C" CBaseEntity *env_firesource()
+{
+	void *mem = sub_100aa720(0x45c);
+	CBaseEntity *p;
+	if (mem) {
+		((CConstraintAnchorBase *)mem)->sub_1009d980(0);
+		*(void **)mem = g_1045d66c;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_1056da24);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010bd40 size=0x20
 #include "vampire.h"
 struct CUnk1010bd40
