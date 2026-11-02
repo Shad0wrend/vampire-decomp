@@ -76,6 +76,12 @@ public:
 	int m_n03e0;	// 0x3e0: an object (pointer)
 	char m_pad03e4[0x19b0 - 0x3e4];
 	unsigned int m_hHeld19b0;	// 0x19b0: handle of the entity the grenade is checked against (slot 407)
+	char m_pad19b4;	// 0x19b4
+	char m_b19b5;	// 0x19b5: cleared by the constructor
+	char m_pad19b6[2];
+	float m_f19b8;	// 0x19b8: 100.0f at construction
+	int m_n19bc;	// 0x19bc: 0 at construction
+	void sub_10326de0();	// 0x10326de0 (stub 0x100046c9): the CBaseCombatCharacter constructor body (the real base of the grenade, sets its vftable 0x1049e0dc and fields up to +0x19a8), called directly first by the constructor 0x1042b2b0
 public:
     virtual datamap_t * vfunc82();
 public:
