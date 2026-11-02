@@ -138,6 +138,11 @@ int __cdecl sub_1014f6f0() { return 0; }
 void __stdcall sub_1014f710(void *a, void *b, void *c) {}
 // END FUNCTION
 
+// FUNCTION: 0x1014f7d0 size=0x3
+// TARGET: sub_1014f7d0
+void __stdcall sub_1014f7d0(void *p) {}
+// END FUNCTION
+
 // FUNCTION: 0x1014f8d0 size=0x1
 // TARGET: sub_1014f8d0
 void __fastcall sub_1014f8d0(void *pThis)

@@ -11508,6 +11508,7 @@
 0x10013a34 func   ?vfunc546@CNPC_VGangrel@@QAEHH@Z CNPC_VGangrel::vfunc546
 0x10013a39 func   ??0CVTraitEffectGroup_t@@QAE@H@Z CVTraitEffectGroup_t::CVTraitEffectGroup_t
 0x10013a39 func   ?sub_101f7310@CUnknown101f7310@@QAEPAXH@Z CUnknown101f7310::sub_101f7310
+0x10013a3e func   ?sub_1014f7d0@@YGXPAX@Z sub_1014f7d0
 0x10013a43 func   ?sub_101f81c0@CUnknown101d5bd0@@QAEXXZ CUnknown101d5bd0::sub_101f81c0
 0x10013a48 func   ?sub_10227f60@CUnknown10227f60@@QAEXXZ CUnknown10227f60::sub_10227f60
 0x10013a4d func   ?vfunc80@CBaseViewModel@@UAEHXZ CBaseViewModel::vfunc80
