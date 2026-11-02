@@ -18,7 +18,6 @@ public:
 	float m_flMaxDist458;		// 0x458: Manhattan distance limit of sub_10210250 (sum of |dx|,|dy|,|dz| < this)
 	COutputEvent m_Output45c;	// 0x45c: fired (value, this, 0) when a pair is found
 	COutputEvent m_Output474;	// 0x474: fired when the search ends without a hit
-	char m_pad048c[0x48c - 0x474 - 0x18];
 	CUtlVector<EHANDLE> m_ListA;	// 0x48c: entities named by +0x454 (memory +0x48c, size +0x498)
 	CUtlVector<EHANDLE> m_ListB;	// 0x4a0: entities named by +0x450 (memory +0x4a0, size +0x4ac)
 	bool m_bAllValid4b4;		// 0x4b4: every target has the field at +0x9c set
