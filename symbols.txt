@@ -7157,6 +7157,7 @@
 0x1000c7d4 func   ?sub_10314e50@CUtlRBTree16Unit@@QAEXG@Z CUtlRBTree16Unit::sub_10314e50
 0x1000c7de func   ?sub_10265970@CAI_BaseNPC@@QAEHXZ CAI_BaseNPC::sub_10265970
 0x1000c7e3 func   ?sub_101df2f0@CUnknown101df2f0@@QAEXXZ CUnknown101df2f0::sub_101df2f0
+0x1000c7e8 func   ?vfunc81@CAI_BaseNPCTroika@@UAEHXZ CAI_BaseNPCTroika::vfunc81
 0x1000c7ed func   ?sub_10345de0@CBaseCombatCharacter@@QAEHPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_10345de0
 0x1000c7f2 func   ?vfunc4@CGameRules@@UAEXH@Z CGameRules::vfunc4
 0x1000c7f7 func   ?sub_101d9780@SNamedList@@QAEHPBD@Z SNamedList::sub_101d9780

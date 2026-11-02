@@ -2983,3 +2983,12 @@ void CAI_BaseNPCTroika::vfunc419()
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x102c5890 size=0x3
+#include "CAI_BaseNPCTroika.h"
+
+int CAI_BaseNPCTroika::vfunc81()
+{
+	return 0;
+}
+// END FUNCTION
