@@ -11,6 +11,11 @@ void __stdcall sub_10043b20(void *p) {}
 void __stdcall sub_10043b40(void *p) {}
 // END FUNCTION
 
+// FUNCTION: 0x10043b60 size=0x3
+// TARGET: sub_10043b60
+void __stdcall sub_10043b60(void *p) {}
+// END FUNCTION
+
 // FUNCTION: 0x10043b80 size=0x1
 // TARGET: sub_10043b80
 void __fastcall sub_10043b80(void *pThis)
