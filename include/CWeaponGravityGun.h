@@ -44,7 +44,8 @@ public:
 	struct CSlot9d8 { int pad; EHANDLE a; EHANDLE b; int pad2[2]; } m_slots9d8[16];	// 0x9d8: two handles per entry
 	int m_hB18;	// 0xb18
 	int m_hB1c;	// 0xb1c
-	char m_padb20[0xb25 - 0xb20];
+	char m_padb20[0xb24 - 0xb20];
+	char m_bB24;	// 0xb24: set while the beam to the held object exists (vfunc321 needs it)
 	char m_bB25;	// 0xb25
 public:
 	virtual void vfunc298(CBaseEntity *pOwner, int unused);	// slot 298: forwards to CBaseCombatWeapon::vfunc298 (jump stub 0x100131ec) with the first argument as it is
