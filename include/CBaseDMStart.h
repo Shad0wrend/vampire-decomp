@@ -12,4 +12,6 @@ public:
 public:
 	datamap_t * vfunc82();
 	int vfunc147(int);
+	char m_pad0000[0x450];
+	int m_field450;	// 0x450
 };
