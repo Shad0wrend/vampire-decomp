@@ -38,7 +38,7 @@ public:
 	virtual CBaseCombatWeapon *vfunc5(unsigned int flags); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
 	// slots 10..279
 	CBCW_V10(1) CBCW_V10(2) CBCW_V(30) CBCW_V(31) CBCW_V(32) CBCW_V(33) virtual int vfunc34(CBaseEntity *pOther); virtual int vfunc35(CBaseEntity *pOther); CBCW_V(36) CBCW_V(37) CBCW_V(38) CBCW_V(39) CBCW_V10(4) CBCW_V10(5) CBCW_V10(6) CBCW_V10(7)
-	CBCW_V(80) virtual int vfunc81(); CBCW_V(82) CBCW_V(83) CBCW_V(84) CBCW_V(85)
+	virtual void *vfunc80(); virtual int vfunc81(); CBCW_V(82) CBCW_V(83) CBCW_V(84) CBCW_V(85)
 	virtual bool vfunc86(int a, void *pEdict, int c, int d, int e);	// "ShouldTransmit"-like (CBaseEntity::vfunc86 for a weapon): true while the force-transmit time at +0x90 is in the future or the viewer is the owner's player / the player using the owner; false for a transmit decision on the owner's team states 0 / 1 (+0x8b0); else the entity version
 	CBCW_V(87) CBCW_V(88) CBCW_V(89)
 	CBCW_V(90) CBCW_V(91) CBCW_V(92) CBCW_V(93) CBCW_V(94) CBCW_V(95) CBCW_V(96)

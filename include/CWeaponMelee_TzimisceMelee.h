@@ -27,4 +27,5 @@ public:
     virtual int vfunc363();
 public:
 	virtual int vfunc373();
+	virtual void *vfunc80();	// slot 80: the class's datamap
 };
