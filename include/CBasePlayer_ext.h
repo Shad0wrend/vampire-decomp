@@ -119,3 +119,4 @@
 	char sub_10339b50();	// CBaseCombatCharacter member (stub 0x1000f939), called on the target
 	char sub_10339c10();	// CBaseCombatCharacter member (stub 0x100144d9), called on the target
 	char vfunc321(int unused);	// slot 321 (plain member): re-arms the random view punch timer (+0x1da8) when it is due, then punches the view by a random angle scaled by the player and punch convars (slot 169)
+	float vfunc465();	// slot 465: the constant 60.0f
