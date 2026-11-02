@@ -555,7 +555,7 @@ public:
 	virtual void vfunc527();
 	virtual void vfunc528();
 	virtual void vfunc529();
-	virtual void vfunc530();
+	virtual void vfunc530(CBaseEntity *pTarget);	// slot 530 (+0x848): told about the entity of slot 167 by sub_10396bc0 (the target-switch step)
 	virtual void vfunc531();
 	virtual void vfunc532();
 	virtual void vfunc533();
