@@ -9856,6 +9856,7 @@
 0x10010c7b func   ?vfunc5@CItemGGuyMagazine@@QAEPAV1@I@Z CItemGGuyMagazine::vfunc5
 0x10010c80 func   ?vfunc360@CWeaponIWritten@@UAEHXZ CWeaponIWritten::vfunc360
 0x10010c85 func   ?sub_102db440@CUnit102db440@@QAEXH@Z CUnit102db440::sub_102db440
+0x10010c8a func   ?sub_101d71a0@CUnknown101d76e0@@QAEPAUCUnknown101d7520Entry@@H@Z CUnknown101d76e0::sub_101d71a0
 0x10010c8f func   ?sub_10202a10@CUnknown10202ba0@@QAEPBDH@Z CUnknown10202ba0::sub_10202a10
 0x10010c94 func   ?sub_10075b90@CUnknown10075b90@@QAEXH@Z CUnknown10075b90::sub_10075b90
 0x10010c9e func   ?vfunc81@CCameraAnimated@@QAEHXZ CCameraAnimated::vfunc81

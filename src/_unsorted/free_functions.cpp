@@ -91016,6 +91016,20 @@ bool CUnknown101d7380::sub_101d70d0(const char *name, int *pIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d71a0 size=0x4b
+#include "CUnknown101d76e0.h"
+#include "CUnknown101d7520.h"
+
+// TARGET: CUnknown101d76e0::sub_101d71a0
+CUnknown101d7520Entry *CUnknown101d76e0::sub_101d71a0(int index)
+{
+	if (index >= 0 && index < m_nItems)
+		return (CUnknown101d7520Entry *)m_ppItems[index];
+	static CUnknown101d7520Entry s_default(-1);
+	return &s_default;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d72a0 size=0xa8
 extern "C" char *_strlwr(char *);
 extern "C" char *strstr(const char *, const char *);
