@@ -26,4 +26,5 @@ public:
 	int vfunc482(char bDisregardState, int interruptLevel);	// slot 482 (CanPlaySequence-like), same as CNPC_VHuman::vfunc482
 public:
     virtual datamap_t * vfunc82();
+    virtual bool vfunc587(int a);
 };
