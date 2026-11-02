@@ -34,7 +34,7 @@ public:
 class CAmbientGeneric : public CAmbientGenericBase
 {
 public:
-	CAmbientGeneric() : CAmbientGenericBase(0) {}	// 0x101ac230: base constructor, -1 at +0x4c8 / +0x4d8, vtable 0x1047a58c, bytes +0x4dc..+0x4df and dword +0x4e0 = 0
+	CAmbientGeneric();	// 0x101ac230 (called by the ambient_generic factory 0x101ac130; define it as `CAmbientGeneric::CAmbientGeneric() : CAmbientGenericBase(0) { ... }`): base constructor, -1 at +0x4c8 / +0x4d8, vtable 0x1047a58c, bytes +0x4dc..+0x4df and dword +0x4e0 = 0
 	char pad0[0x17c - 4];
 	float m_flNextThink;	// 0x17c
 	char pad180[0x1f0 - 0x180];
