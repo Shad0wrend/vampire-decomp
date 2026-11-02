@@ -4433,6 +4433,7 @@
 0x100081ca func   ?vfunc133@CSecCamera@@UAEXXZ CSecCamera::vfunc133
 0x100081d4 func   ?vfunc104@CNPCMaker_Zombie@@UAEXXZ CNPCMaker_Zombie::vfunc104
 0x100081d9 func   ?sub_1042c5b0@@YAXXZ sub_1042c5b0
+0x100081e3 func   ?sub_1027a7c0@@YAPAXXZ sub_1027a7c0
 0x100081e8 func   ?sub_100b7ca0@@YGDHHHHH@Z sub_100b7ca0
 0x100081ed func   ?sub_10096b50@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_10096b50
 0x100081f2 func   ?vfunc525@CNPC_VVampireBoss@@QAE_NH@Z CNPC_VVampireBoss::vfunc525

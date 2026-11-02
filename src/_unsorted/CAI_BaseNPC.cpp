@@ -1825,6 +1825,15 @@ void CAI_BaseNPC::vfunc435(void *pSchedule)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027a7c0 size=0x6
+extern void *g_105c9814;
+
+void *sub_1027a7c0(void)
+{
+    return &g_105c9814;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027c160 size=0x65
 #include "CAI_BaseNPC.h"
 #include "CRestore.h"
