@@ -139085,6 +139085,16 @@ int sub_102d89f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d8a20 size=0x48
+#include "CUnknown102d8a90.h"
+#include "CEHandleGet.h"
+
+bool CUnknown102d8a90::sub_102d8a20(void *pEntity) const
+{
+	return pEntity == EHandle_Get(m_hEntity);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d8a90 size=0x85
 #include "CUnknown102d8a90.h"
 
