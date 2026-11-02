@@ -13,6 +13,12 @@ struct CUnknown10075aa0Vec	// a five dword vector (memory, allocation count, gro
 	int m_pElements;
 };
 
+struct CUnknown10075aa0Sample	// 8 byte ramp sample: the value and its time (the ramp's x axis is at +4)
+{
+	float m_flValue;	// 0x00
+	float m_flTime;	// 0x04
+};
+
 class CUnknown10075aa0
 {
 public:
