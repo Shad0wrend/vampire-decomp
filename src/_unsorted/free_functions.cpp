@@ -86035,6 +86035,21 @@ void sub_101ce210(int a, int b, int c, int d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ce290 size=0x34
+#include "Vector.h"
+
+void sub_101cdfa0(Vector *p, int a, int b, int c, int d);
+void sub_101ce060(Vector *p, int a);
+
+// TARGET: sub_101ce290
+void sub_101ce290(int p1, int p2, int p3, int p4, int p5)
+{
+	Vector temp;
+	sub_101cdfa0(&temp, p2, p3, p4, p5);
+	sub_101ce060(&temp, p1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ce2e0 size=0xb4
 #include "CSingleUserRecipientFilter.h"
 #include "CEntityVSlots.h"

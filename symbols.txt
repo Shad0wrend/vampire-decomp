@@ -4978,6 +4978,7 @@
 0x10009011 func   ?sub_10149c80@@YA_NXZ sub_10149c80
 0x10009016 func   ?sub_10312b20@@YIXPAD@Z sub_10312b20
 0x1000901b func   ?vfunc33@CTriggerBombSite@@QAEHXZ CTriggerBombSite::vfunc33
+0x10009020 func   ?sub_101ce290@@YAXHHHHH@Z sub_101ce290
 0x10009025 func   ?vfunc103@CNPC_VScurrying@@UAEXXZ CNPC_VScurrying::vfunc103
 0x1000902f func   ?sub_101e8b50@CUnknown101e8b50@@QAEMXZ CUnknown101e8b50::sub_101e8b50
 0x10009039 func   ?sub_1005cbc0@CTEBeamRingPoint@@QAEPAV1@H@Z CTEBeamRingPoint::sub_1005cbc0
