@@ -53,6 +53,8 @@ public:
 	int m_unk608;
 
 	void sub_102db740(int value);
+	void vfunc113();	// slot 113 "Activate" (plain member): m_n4fc = 0, then for every entity named m_pszTarget450 (g_106eb5d8.sub_100f7770 loop) that dynamic_casts to CAI_InterestingPlace with m_nSlots (+0x584) == 1: its handle (slot 1) goes on the vector m_vec518 and sub_102db740(handle); others get a DevWarning; then the byte m_items46c.m_c (+0x45c) ? sub_102dc3e0() : sub_100ac4e0(0, 0, 0)
+	void sub_102dc3e0();	// stub 0x10006604, tail called by vfunc113
 	void vfunc104();	// Precache: precaches the two sound names, warning about an invalid first one
 	const char *sub_1000b5cd();	// the entity's name (stub of 0x100ab4f0)
 	virtual CPointEntity *vfunc5(unsigned int flags);	// slot 5 (CPointEntity's override; VC6 has no covariant returns), scalar deleting destructor: tears down the vector at +0x518 and the six items at +0x46c, the base destructor body (sub_1000cb8a), and frees the object when bit 0 of flags is set
