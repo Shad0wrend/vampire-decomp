@@ -4263,6 +4263,7 @@
 0x10008102 func   ?vfunc3@CPhysicsHook@@QAEXXZ CPhysicsHook::vfunc3
 0x10008107 func   _phys_keepupright phys_keepupright
 0x10008111 func   ?sub_101a65e0@CUnknown101a65e0View@@QAEHH@Z CUnknown101a65e0View::sub_101a65e0
+0x10008116 func   ?sub_100d3510@@YAXXZ sub_100d3510
 0x10008120 func   ?sub_101e1360@List@@QAEHPBD@Z List::sub_101e1360
 0x1000812a func   ?vfunc546@CNPC_VDog@@QAEHH@Z CNPC_VDog::vfunc546
 0x1000812f func   ?sub_102d00c0@@YIXPAHHH@Z sub_102d00c0

@@ -38249,6 +38249,24 @@ void sub_100d3160()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d3510 size=0x35
+#include "CBaseEntity.h"
+#include "engineserver.h"
+#define V10(p) virtual int p##0(); virtual int p##1(); virtual int p##2(); virtual int p##3(); virtual int p##4(); virtual int p##5(); virtual int p##6(); virtual int p##7(); virtual int p##8(); virtual int p##9();
+struct CVEngine84 { V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) virtual int i0(); virtual int i1(); virtual int i2(); virtual int i3(); virtual int i4(int, int); };
+struct CVCall457 { V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j) V10(k) V10(l) V10(m) V10(n) V10(o) V10(p) V10(q) V10(r) V10(s) V10(t) V10(u) V10(v) V10(w) V10(x) V10(y) V10(z) V10(A) V10(B) V10(C) V10(D) V10(E) V10(F) V10(G) V10(H) V10(I) V10(J) V10(K) V10(L) V10(M) V10(N) V10(O) V10(P) V10(Q) V10(R) V10(S) V10(T) virtual int T7(int); };
+CBaseEntity *sub_101193b0();
+void sub_100d3510()
+{
+	CBaseEntity *pEnt = sub_101193b0();
+	if (pEnt) {
+		CVCall457 *p = (CVCall457 *)pEnt->m_pA8;
+		if (p)
+			p->T7(((CVEngine84 *)engine)->i4(1, 0));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d3860 size=0x41
 struct Vec3;
 #define V4(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3();
