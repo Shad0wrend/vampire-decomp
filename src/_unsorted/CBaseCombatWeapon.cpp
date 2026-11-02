@@ -176,6 +176,12 @@ void CBaseCombatWeapon::vfunc370(int *event, CBaseCombatWeapon *other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024f0c0 size=0x3
+// TARGET: sub_1024f0c0
+void __stdcall sub_1024f0c0(int a) {
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024f0e0 size=0xf0
 #include "CBaseCombatWeapon.h"
 #include "CBaseEntity.h"

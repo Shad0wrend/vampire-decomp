@@ -2959,6 +2959,7 @@
 0x10005cc2 func   ?sub_1027f270@@YGXH@Z sub_1027f270
 0x10005cc7 func   ?sub_10200b10@CVStatList_t@@QAEHH@Z CVStatList_t::sub_10200b10
 0x10005ccc func   _item_k_tutorial_chopshop_stairs_key item_k_tutorial_chopshop_stairs_key
+0x10005cd1 func   ?sub_1024f0c0@@YGXH@Z sub_1024f0c0
 0x10005cd6 func   ?vfunc566@CNPC_VSheriffMan@@QAE_NH@Z CNPC_VSheriffMan::vfunc566
 0x10005ce0 func   ?UsePredictionRules@CRecipientFilter@@QAEXXZ CRecipientFilter::UsePredictionRules
 0x10005ce5 func   ?vfunc81@COccultRegen@@UAEHXZ COccultRegen::vfunc81
