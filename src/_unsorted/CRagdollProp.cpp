@@ -60,6 +60,11 @@ void CRagdollProp::vfunc180()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10155150 size=0x3
+// TARGET: CRagdollProp::vfunc158
+char CRagdollProp::vfunc158() { return 0; }
+// END FUNCTION
+
 // FUNCTION: 0x10155170 size=0x3
 bool CRagdollProp::vfunc267()
 {
