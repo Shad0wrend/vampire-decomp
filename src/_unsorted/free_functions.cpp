@@ -50062,6 +50062,18 @@ int sub_10108060()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10108090 size=0x71
+#include "CFilterInventory.h"
+
+// TARGET: filter_activator_inventory
+extern "C" CBaseEntity *filter_activator_inventory()
+{
+    CFilterInventory *p = new CFilterInventory;
+    p->vfunc106("filter_activator_inventory");
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101082a0 size=0x1a
 namespace lifted {
 extern int g_1056c580;
