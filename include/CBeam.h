@@ -43,10 +43,10 @@ public:
 	int m_nNumBeamEnts;	// 0x45c
 	char m_pad0460[4];
 	unsigned int m_nBeamType;	// 0x464, low nibble is the end type
-	unsigned int m_hEndEntity;	// 0x468
-	char m_pad046c[0x48c - 0x46c];
-	int m_nAttach[3];	// 0x48c
-	char m_pad0498[0x4b8 - 0x498];
+	EHANDLE m_hBeamEnts[10];	// 0x468: the beam's entity handles, each set to -1 by the constructor (the end entity is [0])
+	char m_pad0490[0x4b8 - 0x490];
+#define m_hEndEntity (*(unsigned int *)&m_hBeamEnts[0])	// 0x468, the name matched code uses
+#define m_nAttach (*(int (*)[3])&m_hBeamEnts[9])	// 0x48c: the attachment indices (matched code counts from 1, so [1] is 0x490)
 	union {
 		float m_fWidth;	// 0x4b8
 		float m_flWidth;	// CEnvLaser's name for it
