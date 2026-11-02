@@ -144,6 +144,25 @@ bool CNPC_VTzimisceRunner::vfunc70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c32c0 size=0x39
+#include "CNPC_VTzimisceRunner.h"
+
+void CNPC_VTzimisceRunner::vfunc259(int *pEvent)
+{
+	switch (*pEvent) {
+	case 0x802:
+		slot619(1);
+		break;
+	case 0x803:
+		slot619(0);
+		break;
+	default:
+		sub_1029b290(pEvent);
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c3560 size=0x2b
 #include "CNPC_VTzimisceRunner.h"
 int CNPC_VTzimisceRunner::vfunc440(int schedule)

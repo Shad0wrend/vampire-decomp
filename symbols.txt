@@ -9892,6 +9892,7 @@
 0x10011455 func   ?sub_100dcc20@CCollisionProperty@@QAEPAMPBMPAM@Z CCollisionProperty::sub_100dcc20
 0x1001145f func   ?sub_101e1a40@@YGHH@Z sub_101e1a40
 0x10011469 func   ?sub_10131860@@YGHH@Z sub_10131860
+0x1001146e func   ?vfunc259@CNPC_VTzimisceRunner@@UAEXPAH@Z CNPC_VTzimisceRunner::vfunc259
 0x10011473 func   ?vfunc103@CTriggerSave@@UAEXXZ CTriggerSave::vfunc103
 0x10011478 func   ?sub_101bc540@@YGXPAUCUnknown101bc540Rec@@@Z sub_101bc540
 0x1001147d func   ?sub_101f61b0@CActivityTableX@@QAEXXZ CActivityTableX::sub_101f61b0
