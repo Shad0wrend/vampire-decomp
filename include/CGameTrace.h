@@ -23,8 +23,6 @@ struct CGameTrace
 	unsigned short m_surfaceFlags;	// 0x42
 	int m_hitgroup;	// 0x44
 	short m_physicsbone;	// 0x48
-	char m_b4a;	// 0x4a: checked by the ground-snap helper sub_101cd250 (returns -1 when set)
-	char m_pad4b;
 	CBaseEntity *m_pEnt;	// 0x4c
 	int m_hitbox;	// 0x50
 };
