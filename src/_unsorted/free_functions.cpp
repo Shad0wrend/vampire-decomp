@@ -8407,6 +8407,23 @@ void block_1004e770::CEntUnit::sub_1004e770(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004e9c0 size=0x4b
+#include "CPhysExplosion.h"
+
+void *sub_100aa720(unsigned int size);
+inline void *operator new(unsigned int, void *p) { return p; }
+extern const char g_1053dc40[];
+
+// TARGET: env_physexplosion
+extern "C" CPhysExplosion *env_physexplosion()
+{
+	void *mem = sub_100aa720(0x45c);
+	CPhysExplosion *p = mem ? new(mem) CPhysExplosion : 0;
+	p->vfunc106(g_1053dc40);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004eab0 size=0x1a
 namespace lifted {
 extern int g_1053d12c;
