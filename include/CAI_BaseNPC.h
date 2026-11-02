@@ -29,7 +29,7 @@ public:
 	CAI_NPC_V(120) CAI_NPC_V(121) CAI_NPC_V(122) CAI_NPC_V(123) CAI_NPC_V(124) CAI_NPC_V(125) CAI_NPC_V(126)
 	virtual int vfunc127(CRestore *pRestore);	// "CAI_BaseNPC::Restore": reads the data description block at +0x19b4, CBaseCombatCharacter::vfunc127, fixes up the arrays at +0x5b8c (4) and +0x5db4 (3), the object at +0x5d44 (when set) and the member at +0x5cf4; returns the base result
 	CAI_NPC_V(128) CAI_NPC_V(129)
-	CAI_NPC_V(130)
+	virtual void vfunc130(int a);	// post-restore (0x1027bf50, ret 4): re-finds the saved schedule by name/CRC (see CAI_BaseNPCSavedSched.h), then CBaseCombatCharacter::vfunc130(a)
 	CAI_NPC_V(131) CAI_NPC_V(132) CAI_NPC_V(133) CAI_NPC_V(134) CAI_NPC_V(135) CAI_NPC_V(136) CAI_NPC_V(137) CAI_NPC_V(138) CAI_NPC_V(139)
 	CAI_NPC_V(140) CAI_NPC_V(141)
 	virtual int vfunc142(int a);	// slot 142 (ret 4: one argument, answers in eax)
