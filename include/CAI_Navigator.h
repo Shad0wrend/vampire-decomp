@@ -185,6 +185,7 @@ public:
 	float sub_102f1cf0();	// the distance from the owner's origin (slot 220) to the route's goal position: 2D while the flag at +0x18 is clear, else 3D
 	bool sub_102f05d0(const Vector *pTarget);	// true while the float at +0x3c is set; else asks the owner (slot 368) about the flat direction to pTarget and fails when it points away (dot with the answer's x / y at most the threshold 0x1049d984)
 	bool sub_102ede30(int a, int b);	// \"CAI_Navigator::PrependLocalAvoidance\": scope \"CAI_Navigator_PrependLocalAvoidance\"; BuildTriangulationRoute from the owner's origin (slot 220) to the route's goal position and, when there is a route, hands it to the waypoint list at route+0x24 (ret 8)
+	bool sub_102ecd20(void *pGoal, int nFlags);	// 0x102ecd20 (ret 8, returns al; called by CNPC_VZombie::vfunc442 case 0x150 with a 0x2c byte goal built on the stack: [0]=4, [1..3] position, [4..7] four -1 handles, then globals 0x104d1d00 / 0x10940390 / 0x10934060..68 at the tail; nFlags = 4): the generic "SetGoal" of the navigator: stamps +8/+0xc, applies the goal record (type [0], position, target handle [5], speed [8], flags [9] bit 1 = path to a graph node found by sub_102f3c10 / sub_102f41b0 / sub_102fd240), sets up the route (+0x30)
 	void *sub_102ecc40();	// stub 0x10009322: the entity the navigator is after, chosen by the navigation type (the owner's focus entity for types 1, 2 and 7, else the entity of the route's handle at +0x30)
 
 	// Typed views of the component pointers kept as ints below (matched code reads them as ints):
