@@ -71,6 +71,9 @@ public:
 	int sub_10076690();	// returns the dword at +0x2b4 (the scene object, stub 0x10001b5e)
 	int sub_100766d0();	// returns the dword at +0x2b8 (stub 0x100088d2)
 	char *sub_10075c00();	// returns &m_b04, the event's name (stub 0x1000b0e1)
+	float sub_10075fd0(float flTime);	// 0x10075fd0 (stub 0x10010f82 is the count): the ramp value at flTime in 0..1: 0.0f without an end time (sub_10075f30) or ramp samples; else the bracketing samples (sub_100789b0 over -1..count, clamped) go as 2D points (value, time, 0) through the Catmull-Rom spline (sub_1013bb40) with a fraction clamped to 0..1, the result clamped to 0..1. One function split by the analyser at 0x10076009 (second half, live eax = count / edi = this); 0x10076343 is the twin
+	int sub_10078630();	// the number of ramp samples (the vector at +0x19c, size at +0x1a8; stub 0x10010f82)
+	CUnknown10075aa0Sample *sub_100789b0(int index);	// stub 0x1000f47a: the ramp sample `index`; a static zero sample for index < 0, a static sample (0, sub_10076b30()) at or past the count
 	char sub_10075f30();	// whether the event has an end time (stub 0x1000695b)
 	int sub_10075b70();	// returns the type at +0x00 (stub 0x100029c8)
 	void sub_10077860();	// stub 0x10001596, run on every event by CUnknown1007ce20::sub_1007cfc0 first
