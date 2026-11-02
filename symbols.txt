@@ -12061,6 +12061,7 @@
 0x100146dc func   ?sub_10210cb0@@YAHXZ sub_10210cb0
 0x100146e6 func   ?sub_1024a310@CUtlRBTree16@@QAEGXZ CUtlRBTree16::sub_1024a310
 0x100146eb func   ?vfunc0@CTEShatterSurface@@UAEPAUServerClass@@XZ CTEShatterSurface::vfunc0
+0x100146f5 func   ?vfunc0@?$CUtlVectorDataOps@V?$CUtlVector@UMAP_ACCESS@@V?$CUtlMemory@UMAP_ACCESS@@@@@@$08@@UAEXPAX0@Z CUtlVectorDataOps<CUtlVector<MAP_ACCESS,CUtlMemory<MAP_ACCESS> >,9>::vfunc0
 0x100146fa func   ?sub_10357110@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_10357110
 0x100146ff func   ?sub_10032380@@YAXPAUgamevcollisionevent_t@@PAUSSurfaceData@@@Z sub_10032380
 0x10014704 func   ?vfunc81@CItemGWarrLedger1@@UAEHXZ CItemGWarrLedger1::vfunc81
