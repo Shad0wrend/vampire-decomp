@@ -2512,6 +2512,15 @@ int CAI_BaseNPCTroika::vfunc609(char bForce)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b97f0 size=0x6
+extern char g_105d1058;
+
+char sub_102b97f0(void)
+{
+    return g_105d1058;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102bed30 size=0x42
 #include "CAI_BaseNPCTroika.h"
 #include "COutputEvent.h"
