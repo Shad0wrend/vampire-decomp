@@ -52,6 +52,11 @@ bool __cdecl sub_10149ce0() { return false; }
 void __stdcall sub_10149d40(void *p) {}
 // END FUNCTION
 
+// FUNCTION: 0x10149d60 size=0x3
+// TARGET: sub_10149d60
+bool __cdecl sub_10149d60() { return false; }
+// END FUNCTION
+
 // FUNCTION: 0x10149da0 size=0xd
 struct WeaponField8cc { char pad[0x8cc]; int m; };
 void CBaseCombatWeapon::vfunc297(int value)
