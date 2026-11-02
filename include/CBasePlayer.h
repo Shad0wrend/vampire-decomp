@@ -148,7 +148,7 @@ public:
 	CBP_V1(sf67) CBP_V1(sf68) CBP_V1(sf69)
 	CBP_V10(sf7) CBP_V1(sg0)
 	virtual void vfunc403();
-	CBP_V1(sh0) CBP_V1(sh1) CBP_V1(sh2)
+	CBP_V1(sh0) CBP_V1(sh1) virtual char vfunc406();
 	virtual void vfunc407();
 	virtual void vfunc408();
 	// slots 409..447
