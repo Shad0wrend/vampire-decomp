@@ -164013,6 +164013,40 @@ int sub_10383f70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10383fa0 size=0x43
+#include "CNPC_VHuman.h"
+
+void *sub_100aa720(int size);
+extern char g_1063f68c[];
+
+#define VD10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CNPCVt
+{
+	VD10(a) VD10(b) VD10(c) VD10(d) VD10(e) VD10(f) VD10(g) VD10(h) VD10(i) VD10(j)
+	virtual void s100(); virtual void s101(); virtual void s102(); virtual void s103(); virtual void s104(); virtual void s105();
+	virtual void vfunc106(const char *pszName);
+};
+
+struct CNPCCtor
+{
+	CNPC_VHuman *sub_10384010();
+};
+
+// TARGET: npc_VHuman
+extern "C" CNPC_VHuman *npc_VHuman()
+{
+	void *mem = sub_100aa720(0x6660);
+	CNPC_VHuman *p;
+	if (mem)
+		p = ((CNPCCtor *)mem)->sub_10384010();
+	else
+		p = 0;
+	((CNPCVt *)p)->vfunc106(g_1063f68c);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10384010 size=0x35
 struct CGenericBaseCtorCall_10384010
 {
