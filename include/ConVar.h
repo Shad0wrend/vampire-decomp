@@ -23,7 +23,8 @@ public:
 	ConVar *sub_10245bd0(const char *pName, const char *pDefaultValue, int flags, const char *pHelpString, bool bMin, float fMin, bool bMax, float fMax, void (*pCallback)(ConVar *, const char *));	// the full constructor written as a plain member (the real one stores the vftable after the base constructor call): the ConCommandBase constructor, the vftable, then Create with everything
 	~ConVar();	// "ConVar::~ConVar" (stub 0x100108bb): the atexit destroy of such a static jumps to it
 
-	virtual ConVar *vfunc0(unsigned int flags);
+	typedef ConVar *Vfunc0Ret;	// slot 0's return type (ConCommandBase * once the base is ConCommandBase.h's)
+	virtual Vfunc0Ret vfunc0(unsigned int flags);
 	virtual char vfunc1();	// "IsCommand"-like test (a boolean answer in al)
 	virtual void vfunc2();
 	virtual void vfunc3();
