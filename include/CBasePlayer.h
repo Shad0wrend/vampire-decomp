@@ -316,7 +316,7 @@ public:
 	char m_pad1F14[0x2018 - 0x1f14];	// 0x1F14 .. 0x2017
 	int m_aSlotType2018[10];	// 0x2018: kind of each of the ten command slots (0 = unused)
 	int m_aSlotValue2040[10];	// 0x2040: value of each command slot (a name hash or packed range)
-	char m_pad2068[4];	// 0x2068 .. 0x206B
+	int m_n2068;	// 0x2068: set to 1 on death (vfunc144)
 	Vector m_vec206c;	// 0x206C: the view angles / target vector (stored by sub_10167030)
 	char m_pad2078[0x2088 - 0x2078];
 	unsigned int m_nFlags2088;	// 0x2088: the flag word (bit 0 tested by CWeaponUnarmed::vfunc319; see also vfunc436, sub_1016b090 'new buttons')
