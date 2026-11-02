@@ -686,6 +686,7 @@
 0x10002153 func   _item_g_car_stereo item_g_car_stereo
 0x1000216c func   ?vfunc529@CAI_BaseNPC@@UAE_NXZ CAI_BaseNPC::vfunc529
 0x10002176 func   ?sub_10147690@CBaseCombatCharacter@@QAEXPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_10147690
+0x1000217b func   ?vfunc451@CNPC_VNosferatu@@UAEPBDXZ CNPC_VNosferatu::vfunc451
 0x10002180 func   ?sub_103629d0@CNPC_VAsianVampire@@QAE_NPBMM@Z CNPC_VAsianVampire::sub_103629d0
 0x10002185 func   ?vfunc473@CNPC_VHengeyokai@@UAEHXZ CNPC_VHengeyokai::vfunc473
 0x1000218a func   ?sub_10237570@CWeaponRanged@@QAE_NHPAM0@Z CWeaponRanged::sub_10237570
