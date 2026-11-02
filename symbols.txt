@@ -12801,6 +12801,7 @@
 0x10015a0a func   ?vfunc39@CGameSign@@UAEXPAVCBaseEntity@@@Z CGameSign::vfunc39
 0x10015a0f func   ?sub_101c4820@@YAXPAUCUnknown101c4760@@@Z sub_101c4820
 0x10015a14 func   ?sub_10158d80@CUnknown10158d80@@QAEXXZ CUnknown10158d80::sub_10158d80
+0x10015a19 func   ?vfunc82@CLogicCompare@@QAEHXZ CLogicCompare::vfunc82
 0x10015a1e func   ?sub_101d76e0@CUnknown101d76e0@@QAEHPAX@Z CUnknown101d76e0::sub_101d76e0
 0x10015a23 func   ?vfunc448@CNPC_VChangBros@@UAEXH@Z CNPC_VChangBros::vfunc448
 0x10015a2d func   ?sub_101802e0@@YAXXZ sub_101802e0

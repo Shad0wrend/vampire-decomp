@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10134a20 size=0x6
+#include "CLogicCompare.h"
+namespace lifted {
+extern char g_10577048;
+}
+int CLogicCompare::vfunc82()
+{
+    return (int)&lifted::g_10577048;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101360b0 size=0x4c
 #include "CLogicCompare.h"
 void __fastcall sub_100cd2d0(void *p);
