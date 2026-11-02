@@ -7658,6 +7658,7 @@
 0x1000d90e func   ?sub_101c1bc0@CBaseToggle@@QAEXH@Z CBaseToggle::sub_101c1bc0
 0x1000d913 func   ?sub_10211870@CUnknown10211870@@QAEHHH@Z CUnknown10211870::sub_10211870
 0x1000d918 func   ?sub_101f5050@CUnknown101f5050@@QAEXXZ CUnknown101f5050::sub_101f5050
+0x1000d91d func   ?sub_10181680@CBasePlayer@@QAEXHH@Z CBasePlayer::sub_10181680
 0x1000d92c func   ?vfunc363@CWeaponMelee_Torch@@QAEHXZ CWeaponMelee_Torch::vfunc363
 0x1000d931 func   ?sub_1020f3f0@CFuncElevator@@QAEXPAUinputdata_t@@@Z CFuncElevator::sub_1020f3f0
 0x1000d936 func   ?vfunc82@CPathKeyFrame@@QAEPAUdatamap_t@@XZ CPathKeyFrame::vfunc82

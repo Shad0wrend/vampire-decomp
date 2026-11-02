@@ -68044,6 +68044,18 @@ bool CUnk10181650::sub_10181650(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10181680 size=0x29
+#include "CBasePlayer.h"
+
+// TARGET: CBasePlayer::sub_10181680
+void CBasePlayer::sub_10181680(int a, int b)
+{
+	m_b65c = 1;
+	sub_100b3580(0x40000000);
+	vfunc449(0, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101816c0 size=0x8f
 #include "CBasePlayer.h"
 
