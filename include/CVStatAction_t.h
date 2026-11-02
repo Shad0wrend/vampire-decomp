@@ -20,6 +20,20 @@ public:
 	void sub_10205c70();
 };
 
+struct CVStatActionRecord4	// what CVStatAction_t::m_pData (+0x3c) points to for action type 4 (the discipline-particle action): compared by the free function 0x1022f140
+{
+	char m_szName[0x80];	// +0x00: the particle (emitter) name, _strcmpi'd with CDisciplineParticle's name (+0x450)
+	int m_nAttachment80;	// +0x80: compared with the particle's int at +0x458
+	char m_szAttach84[0x80];	// +0x84: _strcmpi'd with the particle's string at +0x45c
+	char m_bViewModel104;	// +0x104: whether the particle is attached to a CBaseViewModel (handle at +0x37c)
+};
+
+// The free function 0x1022f140 (cdecl, `static void sub_1022f140(CVStatAction_t *pAction, int nEntIndex)`) acts on an action
+// (flags dword at +0 with bit 0x10 = disabled, type at +4): type 1 hands the owner's +0x9c object and the data pointer (+0x3c)
+// to sub_101f9a40 on the global 0x1074df78; type 4 finds the matching CDisciplineParticle of the owner character's emitter
+// handle vector (+0x14c0, count +0x14cc) by m_b54 == particle+0x4a4 and the CVStatActionRecord4 fields and stops it
+// (slot 242, sub_10051810, next think curtime + 10.0f, SetThink SUB_Remove); types 2 and 3 do nothing; other types Msg
+// "Unable to match StatAction type!\n".
 class CVStatAction_t
 {
 public:
