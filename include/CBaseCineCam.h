@@ -8,6 +8,7 @@ struct datamap_t;
 class CBaseCineCam
 {
 public:
+	CBaseCineCam *sub_1006d620();	// constructor body (0x1006d620), returns this
 	float *vfunc193(float *out);	// as in CBaseEntity (transplant)
 	bool sub_1006e6a0(int a, int b, int c, int d, int e);	// slot 86: true while the time at +0x90 is ahead of curtime, else whether the entity handle at +0x5d0 resolves and its edict (+0x2e0) is `b`, then sub_1006e890
 	bool sub_1006d9d0();	// CBaseEntity::GetFlags (as the shot mask); false when -1, else for every set bit i (0..3) the entity handle at +0x610+4*i must resolve; finally whether the handle at +0x630 is set
