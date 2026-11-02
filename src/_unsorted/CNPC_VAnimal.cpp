@@ -186,3 +186,13 @@ void CNPC_VAnimal::vfunc390(CVAnimalArg *pArg)
     ((CTroikaCall *)this)->sub_10012611(pArg);
 }
 // END FUNCTION
+
+// FUNCTION: 0x103601e0 size=0x5
+#include "CNPC_VAnimal.h"
+
+// TARGET: CNPC_VAnimal::vfunc366
+bool CNPC_VAnimal::vfunc366(int a, int b, int c)
+{
+	return false;
+}
+// END FUNCTION
