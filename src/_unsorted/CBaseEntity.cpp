@@ -270,6 +270,17 @@ void CBaseEntity::vfunc61(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026a10 size=0x2e
+#include "CBaseEntity.h"
+
+// TARGET: CBaseEntity::vfunc63
+void CBaseEntity::vfunc63(Vector vecOrigin)
+{
+	Vector v = vecOrigin;
+	vfunc62(&v.x);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026a90 size=0x5
 // TARGET: sub_10026a90
 char __stdcall sub_10026a90(int) { return 0; }

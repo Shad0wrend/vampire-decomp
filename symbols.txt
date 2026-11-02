@@ -7929,6 +7929,7 @@
 0x1000e02f func   ?vfunc82@CPropHacking@@UAEPAUdatamap_t@@XZ CPropHacking::vfunc82
 0x1000e034 func   _prop_largehull_ignore prop_largehull_ignore
 0x1000e039 func   ?sub_101eaa80@@YAXH@Z sub_101eaa80
+0x1000e03e func   ?vfunc63@CBaseEntity@@UAEXVVector@@@Z CBaseEntity::vfunc63
 0x1000e048 func   ?sub_102f7a10@@YAXXZ sub_102f7a10
 0x1000e052 func   ?vfunc2@CAI_ExpresserSink@@UAEXXZ CAI_ExpresserSink::vfunc2
 0x1000e057 func   ?sub_1008f7b0@CBaseAnimating@@QAEHPBD@Z CBaseAnimating::sub_1008f7b0
