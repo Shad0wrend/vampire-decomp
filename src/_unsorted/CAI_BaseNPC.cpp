@@ -98,6 +98,11 @@ int CAI_BaseNPC::vfunc457()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6700 size=0x3
+// TARGET: CAI_BaseNPC::vfunc462
+char CAI_BaseNPC::vfunc462() { return 0; }
+// END FUNCTION
+
 // FUNCTION: 0x101a6720 size=0x7
 int CAI_BaseNPC::vfunc464()
 {

@@ -4404,6 +4404,7 @@
 0x100082e7 func   ?sub_10341510@@YIPAVCBaseEntity@@PAV1@@Z sub_10341510
 0x100082ec func   ?sub_101a5e10@@YAPAHXZ sub_101a5e10
 0x100082f1 func   ?sub_102e9c00@CUtlVector280@@QAEPAV1@HH@Z CUtlVector280::sub_102e9c00
+0x100082f6 func   ?vfunc462@CAI_BaseNPC@@UAEDXZ CAI_BaseNPC::vfunc462
 0x100082fb func   ?sub_102a9e80@CUnknown102a9e80@@QAEDXZ CUnknown102a9e80::sub_102a9e80
 0x10008300 func   ?sub_101c2a50@CUnknown101c2a50@@QAEXH@Z CUnknown101c2a50::sub_101c2a50
 0x10008305 func   ?vfunc5@CItemGGarysFilm@@QAEPAV1@I@Z CItemGGarysFilm::vfunc5
