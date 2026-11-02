@@ -165670,6 +165670,32 @@ char sub_103a3ba0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a40c0 size=0x30
+#include "CNPC_VPlaceholder.h"
+
+void __fastcall sub_1028d230(void *self);
+extern char g_104c198c[];
+extern char g_104c195c[];
+
+struct CMember665c
+{
+	void sub_103a3b80();
+};
+
+// TARGET: CNPC_VPlaceholder::sub_103a40c0
+CNPC_VPlaceholder *CNPC_VPlaceholder::sub_103a40c0()
+{
+	sub_1028d230(this);
+	((CMember665c *)((char *)this + 0x665c))->sub_103a3b80();
+	unsigned int flags = *(unsigned int *)((char *)this + 0x4c);
+	*(void **)this = g_104c198c;
+	flags |= 0x400;
+	*(void **)((char *)this + 0x19b0) = g_104c195c;
+	*(unsigned int *)((char *)this + 0x4c) = flags;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a4470 size=0x53
 void *sub_1000db89(int);
 struct GP;

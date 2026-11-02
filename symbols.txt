@@ -975,6 +975,7 @@
 0x10002919 func   ?sub_101cb130@@YAPAHXZ sub_101cb130
 0x10002923 func   ?vfunc23@CNPC_VMingXiaoTentacle@@UAEXH@Z CNPC_VMingXiaoTentacle::vfunc23
 0x1000292d func   ?sub_1027a740@@YIHPAX@Z sub_1027a740
+0x10002932 func   ?sub_103a40c0@CNPC_VPlaceholder@@QAEPAV1@XZ CNPC_VPlaceholder::sub_103a40c0
 0x10002937 func   ?sub_10359dc0@@YIPAXPAX@Z sub_10359dc0
 0x1000293c func   ?vfunc113@CPointTeleport@@UAEXXZ CPointTeleport::vfunc113
 0x10002946 func   ?sub_100826b0@@YAXPAVCSceneEntity@@@Z sub_100826b0
