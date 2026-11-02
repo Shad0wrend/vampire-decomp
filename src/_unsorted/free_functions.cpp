@@ -158900,6 +158900,23 @@ CNPC_Bullseye *CNPC_Bullseye::sub_103566a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10356770 size=0x31
+#include "CNPC_Bullseye.h"
+
+extern char g_104a374c[];
+extern char g_104a371c[];
+
+// TARGET: CNPC_Bullseye::sub_10006c26
+void CNPC_Bullseye::sub_10006c26()
+{
+	*(void **)this = g_104a374c;
+	*(void **)((char *)this + 0x19b0) = g_104a371c;
+	Output5f60().sub_100cd2d0();
+	Output5f48().sub_100cd2d0();
+	sub_1000c9cd();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10357110 size=0x2a
 #include "CAI_BaseNPC.h"
 #include "CBaseEntity.h"
