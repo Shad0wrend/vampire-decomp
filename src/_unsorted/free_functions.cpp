@@ -85300,6 +85300,33 @@ Ent * __stdcall sub_101cd070(Ent *ent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cd250 size=0xbf
+#include "CBaseEntity.h"
+#include "CGameTrace.h"
+#include "CEntityVSlots.h"
+#include "CBCCSlotViews.h"
+
+void sub_101cd110(CBaseEntity *pEntity, float *pStart, Vector *pEnd, int a4, CGameTrace *pTrace);
+
+int sub_101cd250(CBaseEntity *pEntity, int a2)
+{
+	CEntityGroundSlotView *pGroundSlots = (CEntityGroundSlotView *)pEntity;
+	CEntityOriginSlotView *pOriginSlots = (CEntityOriginSlotView *)pEntity;
+	CEntityVSlots *pVSlots = (CEntityVSlots *)pEntity;
+	pGroundSlots->vfunc208(0);
+	Vector vecEnd = *(Vector *)pOriginSlots->vfunc217() - Vector(0, 0, 256.0f);
+	CGameTrace trace;
+	sub_101cd110(pEntity, pOriginSlots->vfunc217(), &vecEnd, a2, &trace);
+	if (trace.m_allsolid)
+		return -1;
+	if (trace.m_fraction == 1.0f)
+		return 0;
+	pVSlots->slot216((Vector *)trace.m_endpos);
+	pGroundSlots->vfunc208(trace.m_pEnt);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cd340 size=0x31
 #include "CBaseEntity.h"
 
