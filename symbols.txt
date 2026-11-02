@@ -13203,6 +13203,7 @@
 0x10015c80 func   ?sub_10073b60@CUnknown10073b60@@QAEXH@Z CUnknown10073b60::sub_10073b60
 0x10015c85 func   ?vfunc0@CTraceFilterSimpleTwoEnt@@UAE_NPAXH@Z CTraceFilterSimpleTwoEnt::vfunc0
 0x10015c8a func   ?sub_10428e20@@YAHPAUCTable10428e20@@H@Z sub_10428e20
+0x10015c8f func   ?vfunc80@CWeaponMelee_MingXiaoMelee@@UAEPAXXZ CWeaponMelee_MingXiaoMelee::vfunc80
 0x10015c94 func   ?vfunc81@CWeaponRanged_Smg_Uzi@@QAEHXZ CWeaponRanged_Smg_Uzi::vfunc81
 0x10015c99 func   ?vfunc5@CWeaponIArmor_Hvy_Cloth@@UAEPAV1@I@Z CWeaponIArmor_Hvy_Cloth::vfunc5
 0x10015c9e func   ??0CBaseTransmitProxy@@QAE@PAVCBaseEntity@@@Z CBaseTransmitProxy::CBaseTransmitProxy
