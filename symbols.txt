@@ -6856,6 +6856,7 @@
 0x1000c072 func   _item_g_mercurio_journal item_g_mercurio_journal
 0x1000c077 func   ?sub_10389ef0@@YADXZ sub_10389ef0
 0x1000c07c func   ?sub_1017d900@CBasePlayer@@QAEMXZ CBasePlayer::sub_1017d900
+0x1000c086 func   ?sub_101f2de0@@YIXPAXH0@Z sub_101f2de0
 0x1000c090 func   ?vfunc241@CFilterInventory@@UAE_NPAVCBaseEntity@@@Z CFilterInventory::vfunc241
 0x1000c09a func   ?vfunc214@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc214
 0x1000c09f func   ?sub_10185ae0@CUnk10185ae0@@QAEPAXE@Z CUnk10185ae0::sub_10185ae0

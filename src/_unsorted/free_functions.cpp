@@ -98813,6 +98813,17 @@ VKeyValues *VKeyValues::sub_101f2d70(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f2de0 size=0x25
+extern int g_105a5f08[];
+extern int g_105a5f28[];
+
+// TARGET: sub_101f2de0
+void __fastcall sub_101f2de0(void *pThis, int dummy, void *pKV)
+{
+	*(void **)((char *)pThis - 0x10) = __RTDynamicCast(pKV, 0, g_105a5f08, g_105a5f28, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2f00 size=0x1d
 typedef void (*PFN_109f383c)(int, void *);
 extern PFN_109f383c g_109f383c;
