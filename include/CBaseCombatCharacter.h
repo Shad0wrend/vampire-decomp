@@ -59,7 +59,7 @@ public:
 	virtual void c340(); virtual void c341(); virtual void c342(); virtual void c343(); virtual void c344(); virtual void c345(); virtual void c346(); virtual void c347();
 	virtual int c348();	// slot 348 (see vfunc348, the plain member, for what it does)
 	virtual void c349();
-	CBCC_SLOTS10(c35)
+	virtual void c350(); virtual void c351(); virtual void c352(); virtual void c353(); virtual void c354(); virtual void c355(); virtual void c356(); virtual void c357(); virtual void c358(); virtual int vfunc359(int a);
 	virtual char vfunc360();	// slot 360 (+0x5a0): a bool-like byte result, read by InputFrenzyTrigger
 	virtual void c361(); virtual void c362(); virtual void c363(); virtual void c364(); virtual void c365();
 	virtual void c366(); virtual void c367(); virtual void c368(); virtual void c369();
