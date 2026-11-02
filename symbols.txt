@@ -5353,6 +5353,7 @@
 0x10009b3d func   ?sub_102c6370@CBaseHandle@@QAEPAVIHandleEntity@@XZ CBaseHandle::sub_102c6370
 0x10009b42 func   ?sub_102a0b90@CUnknown102a0b90@@QAEHH@Z CUnknown102a0b90::sub_102a0b90
 0x10009b47 func   ?sub_101cd340@@YAHPAVCBaseEntity@@@Z sub_101cd340
+0x10009b4c func   ?sub_10149c40@@YA_NXZ sub_10149c40
 0x10009b51 func   ?Links@?$CUtlRBTree@UCRBTree36Entry_1004c5b0@@G@@QBEABULinks_t@1@G@Z CUtlRBTree<CRBTree36Entry_1004c5b0,unsigned short>::Links
 0x10009b51 func   ?sub_10049d20@CUtlRBTreeNode36@@QBEABURBTreeNode36Links@@G@Z CUtlRBTreeNode36::sub_10049d20
 0x10009b56 func   ?vfunc82@CTestTraceline@@UAEPAUdatamap_t@@XZ CTestTraceline::vfunc82
