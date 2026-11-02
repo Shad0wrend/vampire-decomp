@@ -10512,6 +10512,7 @@
 0x10011acc func   ?sub_10246870@@YA?AVSendProp@@PBDHHHHH@Z sub_10246870
 0x10011ad1 func   ?vfunc5@CDynamicProp@@UAEPAV1@I@Z CDynamicProp::vfunc5
 0x10011ad6 func   ?vfunc104@CPointHurt@@UAEXXZ CPointHurt::vfunc104
+0x10011adb func   ?sub_103679b0@@YADXZ sub_103679b0
 0x10011ae0 func   ?sub_10221e50@QuestJournal@@QAEPADH@Z QuestJournal::sub_10221e50
 0x10011aea func   ?vfunc5@CItemGDriversLicenseGimble@@QAEPAV1@I@Z CItemGDriversLicenseGimble::vfunc5
 0x10011aef func   ?sub_101ddc30@CUnknown101ddc30@@QAE_NPAUCUnknown101ddc30Kv@@@Z CUnknown101ddc30::sub_101ddc30

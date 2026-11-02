@@ -34,6 +34,15 @@ CNPC_VBrujah *CNPC_VBrujah::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103679b0 size=0x6
+extern char g_1062f278;
+
+char sub_103679b0(void)
+{
+    return g_1062f278;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10367a10 size=0x1d
 #include "CNPC_VBrujah.h"
 struct A { int sub_10012300(int); };
