@@ -6,6 +6,11 @@
 int __cdecl sub_1004fc30() { return 0; }
 // END FUNCTION
 
+// FUNCTION: 0x1004fc50 size=0x3
+// TARGET: sub_1004fc50
+void *__fastcall sub_1004fc50(void *p) { return p; }
+// END FUNCTION
+
 // FUNCTION: 0x1008a760 size=0x6
 #include "CBaseAnimating.h"
 namespace lifted {

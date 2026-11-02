@@ -6673,6 +6673,7 @@
 0x1000bda2 func   ?vfunc71@CItemContainer@@QAEXXZ CItemContainer::vfunc71
 0x1000bda7 func   ?sub_102db670@@YAXXZ sub_102db670
 0x1000bdac func   ?sub_100adfd0@CBaseEntity@@QAEHPBD@Z CBaseEntity::sub_100adfd0
+0x1000bdb1 func   ?sub_1004fc50@@YIPAXPAX@Z sub_1004fc50
 0x1000bdb6 func   ?sub_101cee20@@YAXMVVector@@VQAngle@@H@Z sub_101cee20
 0x1000bdbb func   ?vfunc463@CAI_BaseNPC@@UAEXHH@Z CAI_BaseNPC::vfunc463
 0x1000bdc0 func   ?vfunc82@CHudEntity@@QAEPAUdatamap_t@@XZ CHudEntity::vfunc82
