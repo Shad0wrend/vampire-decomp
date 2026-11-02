@@ -82748,6 +82748,25 @@ char CUnknown101c2b30::sub_101c2b30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2b90 size=0x15
+#include "CUnknown101c2770.h"
+
+struct CDerived101c2b90 : CUnknown101c2770
+{
+	char pad[0x48];
+	volatile int m_n4c;
+};
+
+// TARGET: sub_101c2b90
+int __fastcall sub_101c2b90(CDerived101c2b90 *self)
+{
+	self->sub_101c2690();
+	self->m_n4c = -1;
+	self->m_n4c = -1;
+	return (int)self;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2bc0 size=0x4e
 struct CAnimParams {
 	char pad[0x4c];

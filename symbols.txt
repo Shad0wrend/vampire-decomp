@@ -9012,6 +9012,7 @@
 0x1000f7f9 func   ?sub_103d0780@@YIHPAD@Z sub_103d0780
 0x1000f803 func   ?sub_1018b680@@YAHXZ sub_1018b680
 0x1000f808 func   ?sub_10060f20@@YAHXZ sub_10060f20
+0x1000f80d func   ?sub_101c2b90@@YIHPAUCDerived101c2b90@@@Z sub_101c2b90
 0x1000f817 func   ?sub_10136e50@CUnknown10136e50@@QAEHHH@Z CUnknown10136e50::sub_10136e50
 0x1000f826 func   ?sub_102dad60@CUnknown102db470Node@@QAE_NPAVCUnknown102db470@@PAM1@Z CUnknown102db470Node::sub_102dad60
 0x1000f82b func   ?vfunc7@CAI_LocalNavigator@@QAE_NPAUCAI_LocalNavigatorStopState@@MPAHH@Z CAI_LocalNavigator::vfunc7
