@@ -31,7 +31,10 @@ public:
     virtual int vfunc81();
     CWR_V(82) CWR_V(83) CWR_V(84) CWR_V(85) CWR_V(86) CWR_V(87) CWR_V(88) CWR_V(89)
     CWR_V10(9)
-    CWR_V10(10) CWR_V10(11) CWR_V10(12) CWR_V10(13) CWR_V10(14) CWR_V10(15) CWR_V10(16) CWR_V10(17) CWR_V10(18) CWR_V10(19)
+    CWR_V(100) CWR_V(101) CWR_V(102) CWR_V(103) CWR_V(104) CWR_V(105)
+    virtual void vfunc106(const char *pszClassname);    // slot 106: the factories (item_w_*) call it with their classname right after construction
+    CWR_V(107) CWR_V(108) CWR_V(109)
+    CWR_V10(11) CWR_V10(12) CWR_V10(13) CWR_V10(14) CWR_V10(15) CWR_V10(16) CWR_V10(17) CWR_V10(18) CWR_V10(19)
     CWR_V10(20) CWR_V10(21) CWR_V10(22) CWR_V10(23) CWR_V10(24) CWR_V10(25) CWR_V10(26) CWR_V10(27) CWR_V10(28) CWR_V10(29)
     CWR_V(300) CWR_V(301) CWR_V(302) CWR_V(303) CWR_V(304) CWR_V(305) CWR_V(306)
     virtual void vfunc307(int value);   // CBaseCombatWeapon slot 307 (called with a sound / activity id)
