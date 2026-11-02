@@ -85670,6 +85670,30 @@ int sub_101c6c20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c7060 size=0x4b
+#include "CConstraintAnchor.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(unsigned int size);
+extern char g_1047e864[];	// CTriggerVolume vftable
+extern const char g_1059f888[];
+
+// TARGET: trigger_transition
+extern "C" CBaseEntity *trigger_transition()
+{
+	void *mem = sub_100aa720(0x450);
+	CBaseEntity *p;
+	if (mem) {
+		((CConstraintAnchorBase *)mem)->sub_1009d980(0);
+		*(void **)mem = g_1047e864;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_1059f888);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c71f0 size=0x7a
 void *sub_1000db89(int);
 struct GP;
