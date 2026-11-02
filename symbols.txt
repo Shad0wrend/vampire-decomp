@@ -1383,6 +1383,7 @@
 0x100032c9 func   ?sub_103f1d90@@YAHXZ sub_103f1d90
 0x100032ce func   ?sub_100db4a0@@YAXXZ sub_100db4a0
 0x100032d3 func   ?sub_1023af10@@YAHXZ sub_1023af10
+0x100032d8 func   ?vfunc145@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::vfunc145
 0x100032dd func   ?sub_10071840@CUnk10071840@@QAEXXZ CUnk10071840::sub_10071840
 0x100032e2 func   ?sub_10105cb0@@YIXPAVCBaseEntity@@HPAMPBM2MH@Z sub_10105cb0
 0x100032e7 func   ?vfunc325@CWeaponIWritten@@UAE_NXZ CWeaponIWritten::vfunc325

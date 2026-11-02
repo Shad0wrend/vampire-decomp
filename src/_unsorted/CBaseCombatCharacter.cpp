@@ -269,6 +269,16 @@ bool __stdcall sub_1014f9f0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014fa10 size=0x7
+#include "CBaseCombatCharacter.h"
+
+int CBaseCombatCharacter::vfunc145()
+{
+	struct BloodColorView { char pad[0x1570]; int m_color; };
+	return ((BloodColorView *)this)->m_color;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014fa30 size=0x3
 // TARGET: sub_1014fa30
 bool __cdecl sub_1014fa30() { return false; }
