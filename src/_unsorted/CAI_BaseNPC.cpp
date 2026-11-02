@@ -259,6 +259,13 @@ bool CAI_BaseNPC::vfunc527(CAI_NavProvider * a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6ca0 size=0x1
+// TARGET: sub_101a6ca0
+void sub_101a6ca0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6ce0 size=0x10
 struct CUnknownNPC101a6ce0 {
     bool sub_101a6ce0(int unused);
