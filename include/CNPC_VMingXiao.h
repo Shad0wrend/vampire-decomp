@@ -346,7 +346,7 @@ public:
 	virtual void vfunc328();
 	virtual void vfunc329();
 	virtual void vfunc330();
-	virtual void vfunc331();
+	virtual char vfunc331(void *pWeapon, int a, int b, int *pOut);	// slot 331 (+0x52c, ret 0x10): asks whether the NPC can play the activity for the weapon; fills *pOut with the sequence, answers in al
 	virtual void vfunc332();
 	virtual void vfunc333();
 	virtual void vfunc334();
