@@ -19,6 +19,7 @@ public:
 	const char *m_pszAttachName;	// 0x45c: attachment name, "" when none
 	char pad460[0x484 - 0x460];
 	int m_unk484;
+	float m_fl488;	// 0x488
 
 	void vfunc242();
 	CEnvParticle *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
