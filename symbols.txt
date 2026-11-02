@@ -1110,6 +1110,7 @@
 0x10002d1a func   ?vfunc617@CPayphone@@UAE_NXZ CPayphone::vfunc617
 0x10002d1f func   ?sub_10002d1f@CBreakableProp@@QAEXM@Z CBreakableProp::sub_10002d1f
 0x10002d24 func   ?vfunc580@CNPC_VMingXiao@@UAEHXZ CNPC_VMingXiao::vfunc580
+0x10002d2e func   ?vfunc5@CHudTimer@@QAEPAV1@I@Z CHudTimer::vfunc5
 0x10002d33 func   ?sub_10129870@@YIXPAUVelClampView@@@Z sub_10129870
 0x10002d38 func   ?sub_1017deb0@@YGMHM@Z sub_1017deb0
 0x10002d3d func   ?sub_102dc350@CUnknown102dc350@@QAEXXZ CUnknown102dc350::sub_102dc350
