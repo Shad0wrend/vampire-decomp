@@ -9,7 +9,10 @@ public:
 	bool sub_10206340(void *pKeys);	// reads Name, AmmoOnly, MinStage and MinVendorState from the block
 
 	int m_field0000;
-	int m_field0004;	// Name (converted by sub_1000fc2c)
+	union {
+		int m_field0004;	// Name (converted by sub_1000fc2c)
+		const char *m_pszName;	// 0x04: the item's name (null = empty; compared with _strcmpi by CBaseCombatCharacter::sub_10324190)
+	};
 	int m_field0008;	// AmmoOnly
 	int m_field000c;	// MinStage
 	int m_field0010;	// MinVendorState
