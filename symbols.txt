@@ -8490,6 +8490,7 @@
 0x1000e87c func   ?vfunc7@CCollisionProperty@@UAEXXZ CCollisionProperty::vfunc7
 0x1000e881 func   ?sub_100b52a0@CBaseEntity@@QAEXXZ CBaseEntity::sub_100b52a0
 0x1000e886 func   ?sub_100ed2c0@@YGXHH@Z sub_100ed2c0
+0x1000e88b func   ?vfunc1@CVoiceGameMgrHelper@@UAE_NHH@Z CVoiceGameMgrHelper::vfunc1
 0x1000e890 func   ?vfunc81@CItemGIdolElephant@@QAEHXZ CItemGIdolElephant::vfunc81
 0x1000e895 func   ?sub_10386a00@@YAHXZ sub_10386a00
 0x1000e89f func   ?vfunc5@CNPC_VTaxiDriver@@QAEPAV1@I@Z CNPC_VTaxiDriver::vfunc5
