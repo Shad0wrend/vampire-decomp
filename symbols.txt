@@ -6106,6 +6106,7 @@
 0x1000acef func   ?vfunc420@CNPC_VYukie@@QAEXXZ CNPC_VYukie::vfunc420
 0x1000acf4 func   ?sub_1032aa40@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_1032aa40
 0x1000acf9 func   ?sub_103b7020@@YIPAXPAX@Z sub_103b7020
+0x1000acfe func   ?sub_10227480@@YGXH@Z sub_10227480
 0x1000ad03 func   ?sub_101710b0@CBasePlayer@@QAEXPBVVector@@@Z CBasePlayer::sub_101710b0
 0x1000ad0d func   ?vfunc363@CNPC_VPlaceholder@@UAE_NH@Z CNPC_VPlaceholder::vfunc363
 0x1000ad12 func   ?sub_100c8a20@CBaseButton@@QAEXPAVCBaseEntity@@@Z CBaseButton::sub_100c8a20
