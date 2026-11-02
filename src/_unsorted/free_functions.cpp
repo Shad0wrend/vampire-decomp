@@ -133284,6 +133284,41 @@ IHandleEntity *CBaseHandle::sub_102c64d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c6510 size=0x59
+struct CUnknown102c6510 {
+    void *m_pMemory;
+    int m_allocationCount;
+    int m_growSize;
+    int m_size;
+    void *m_pElements;
+    void sub_102c6510();
+};
+
+extern void (__cdecl *g_109f3624)(void *);
+
+// TARGET: sub_102c6510
+void CUnknown102c6510::sub_102c6510()
+{
+    void (__cdecl *pFree)(void *) = g_109f3624;
+    m_size = 0;
+    if (m_growSize != -1) {
+        if (m_pMemory) {
+            pFree(m_pMemory);
+            m_pMemory = 0;
+        }
+        m_allocationCount = 0;
+    }
+    m_pElements = m_pMemory;
+    if (m_growSize != -1) {
+        if (m_pMemory) {
+            pFree(m_pMemory);
+            m_pMemory = 0;
+        }
+        m_allocationCount = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c6590 size=0xc
 int *CUnknown102c6590::sub_102c6590(int index)
 {

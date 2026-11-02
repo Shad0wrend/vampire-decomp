@@ -2036,6 +2036,7 @@
 0x100045a7 func   ?sub_10046cd0@UtlMem@@QAEXXZ UtlMem::sub_10046cd0
 0x100045b1 func   _scripted_scene scripted_scene
 0x100045b6 func   ?vfunc3@CTETParticle@@UAEXPBM0@Z CTETParticle::vfunc3
+0x100045c0 func   ?sub_102c6510@CUnknown102c6510@@QAEXXZ CUnknown102c6510::sub_102c6510
 0x100045c5 func   ?vfunc1@CBaseTempEntity@@UAEHXZ CBaseTempEntity::vfunc1
 0x100045ca func   ?sub_10202c40@S4@@QAEPAU1@XZ S4::sub_10202c40
 0x100045cf func   ?sub_101e1720@CDiscTable_101e1720@@QAEHH@Z CDiscTable_101e1720::sub_101e1720
