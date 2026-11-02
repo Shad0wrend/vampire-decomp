@@ -5521,6 +5521,7 @@
 0x10009f52 func   ?sub_10325c10@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10325c10
 0x10009f57 func   ?sub_10245770@CFlagHolder245770@@QAE_NI@Z CFlagHolder245770::sub_10245770
 0x10009f61 func   ?sub_101be500@CStealthKillRulesUnit@@QAE_NPAVCBaseEntity@@0@Z CStealthKillRulesUnit::sub_101be500
+0x10009f6b func   ?sub_1014e500@@YA_NXZ sub_1014e500
 0x10009f70 func   ?sub_10135bd0@CUnit10135bd0@@QAEHXZ CUnit10135bd0::sub_10135bd0
 0x10009f7a func   ?sub_1007bb30@CUnknown1007bb30@@QAEXPAVCUnknown1007bb30Dest@@@Z CUnknown1007bb30::sub_1007bb30
 0x10009f7f func   ?sub_1013bd20@@YAXABVVector@@000MAAV1@@Z sub_1013bd20

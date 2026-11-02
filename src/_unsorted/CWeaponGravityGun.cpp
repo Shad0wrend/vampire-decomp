@@ -206,3 +206,8 @@ void CWeaponGravityGun::vfunc319()
         vfunc321();
 }
 // END FUNCTION
+
+// FUNCTION: 0x1014e500 size=0x3
+// TARGET: sub_1014e500
+bool __cdecl sub_1014e500() { return false; }
+// END FUNCTION
