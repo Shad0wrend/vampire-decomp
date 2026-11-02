@@ -180,7 +180,7 @@ public:
 	virtual void vfunc457(const char *pszName, int a);
 	virtual void vfunc458();	// slot 458: if the entity at +0x1538 is not set up, lets the vehicle at +0x20fc handle it, else picks the weapon call by the float at +0x1564
 	virtual CBaseEntity *vfunc459(const char *pszName, int iSubType);	// slot 459 "GiveNamedItem": unless the player owns it already, creates the entity, places it at the player, flags it, sets its sub type, spawns it and lets the player pick it up
-	CBP_V1(sl1) CBP_V1(sl2) CBP_V1(sl3) CBP_V1(sl4) virtual float vfunc464(); CBP_V1(sl6) CBP_V1(sl7) CBP_V1(sl8)
+	CBP_V1(sl1) CBP_V1(sl2) CBP_V1(sl3) CBP_V1(sl4) virtual float vfunc464(); CBP_V1(sl6) virtual float vfunc466(); CBP_V1(sl8)
 	virtual void vfunc468();	// registers the "player_stand" / "player_crouch" collision hulls (16x16x36 and -16,-16,0) for the sub-object at +0x270
 
 	char m_pad0004[0x264];	// 0x0004 .. 0x0267
