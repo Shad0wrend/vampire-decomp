@@ -654,6 +654,7 @@
 0x100020cc func   ?vfunc32@CBaseEntity@@UAE_NH@Z CBaseEntity::vfunc32
 0x100020d1 func   ?vfunc103@CBaseAnimating@@UAEXXZ CBaseAnimating::vfunc103
 0x100020d6 func   ?vfunc2@CTESpriteSpray@@UAEPAV1@I@Z CTESpriteSpray::vfunc2
+0x100020db func   ?sub_1029f2a0@CFoo1029f2a0@@QAEXPAD@Z CFoo1029f2a0::sub_1029f2a0
 0x100020e5 func   ?vfunc5@CAI_SystemHook@@QAEHXZ CAI_SystemHook::vfunc5
 0x100020ef func   ?sub_101d1800@@YAPAUCUnknown1070b22c_Edict@@PAUViewerEntity@@@Z sub_101d1800
 0x100020f4 func   ?vfunc80@CWeaponMelee_Fists@@QAEHXZ CWeaponMelee_Fists::vfunc80

@@ -130812,6 +130812,20 @@ void CAI_BaseNPCTroika::sub_1029ed90(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029f2a0 size=0x21
+struct CFoo1029f2a0
+{
+	void sub_1029f2a0(char *p);
+	void sub_1029f300(char v);
+};
+
+// TARGET: CFoo1029f2a0::sub_1029f2a0
+void CFoo1029f2a0::sub_1029f2a0(char *p)
+{
+	sub_1029f300(*(int *)(p + 0x18) == 5 ? *(char *)(p + 8) : (char)0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029f2e0 size=0x7
 struct CUnknown1029f2e0 { char sub_1029f2e0(); };
 char CUnknown1029f2e0::sub_1029f2e0()
