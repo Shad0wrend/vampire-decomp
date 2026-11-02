@@ -84,7 +84,7 @@ public:
 	virtual void vfunc298(CBaseEntity *pOwner, int unused);	// slot 298: the weapon is handed over to pOwner: move type 11, solid flag 8 removed and 4 added (scope traced), aim entity and owner handle (+0x88c) set, time stamps at +0x730 = curtime, touch function cleared, model by the owner's sex, owner's inventory told
 	virtual void vfunc299(const float *pVelocity);	// "CBaseCombatWeapon::Drop"-like: the owner gives the weapon up; the weapon becomes a physics-less dropped item (move type 6) that gets pVelocity
 	CBCW_V(300) virtual int vfunc301(CBaseEntity *pPlayer);	// always true; stores the state at +0x8b0: 0x40 or 2 when pPlayer holds this weapon as its active one (by the byte at pPlayer+0x20a8), else 1
-	CBCW_V(302)
+	virtual char vfunc302();
 	virtual bool vfunc303();
 	virtual char vfunc304();	// true when the field at +0x2444 of the owner (sub_102517b0) is set
 	CBCW_V(305)
