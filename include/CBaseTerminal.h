@@ -27,6 +27,7 @@ public:
 	void vfunc39(void *pPlayer);	// slot 39 (CBaseEntity::vfunc39 signature): the stub 0x1000f515 takes the one pointer argument
 	void vfunc41(void *pArg);	// slot 41: the stub 0x1000f321 takes the one pointer argument
 	void vfunc71();
+	void vfunc103();	// slot 103 "CBaseTerminal::Spawn" (0x10217880, plain member like the others; the slots below are called through a CBaseEntity view): CBaseVampireSkillEntity::vfunc103 (sub_1020ab90), SetSolid(2), SetSize(GetModelPtr(-1)+0xb4, GetModelPtr(-1)+0xc0), RemoveSolidFlags(0xc), slot 93 (0, 0), sub_100b3b00, +0x810 / +0x814 clamped, +0x81c / +0x820 / +0x824 cleared, then a tail jump to slot 71. Use `CBaseEntity *pEnt = (CBaseEntity *)this` for m_name26c, vfunc93, the ScopeTrace name and the collision property at +0x270
 	int vfunc34(int a);	// slot 34: false unless the byte at +0x80c is set; false while the user handle at +0x8c resolves, else sub_10218710(a) != 0
 	char sub_102180c0(int a);	// slot 32 "CBaseTerminal::CanUse"-like: false unless the byte at +0x80c is set and a (an entity with an edict at +0xa8) is given; when the user handle at +0x8c resolves to a different entity also false, else sub_10218710(a) != 0
 	CBaseTerminal *vfunc5(unsigned int flags);	// as in CMomentaryRotButton (transplant)
