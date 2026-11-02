@@ -47,5 +47,11 @@ public:
 	int m_nRecs;	// 0xa04
 
 	void sub_102ca460(CUnknown102ca630Rec *pRec);	// removes the record: with the cvar at 0x107258dc on, DevMsg "CSActs: %6.1f - External %s act level %d removed from (%f, %f, %f) (offender - %s) (owner - %s)", then the last record is moved over it
+	// 0x102ca780 (this = the act list at g_109253f8, see CAI_CsActList.h; 9 stack args, ret 0x24): drops the expired records (curtime past
+	// rec+0x18, via sub_102ca460), then for every record that pNpc->sub_1028ebc0(rec) accepts keeps, per type (m_nType 2 = supernatural
+	// else criminal), two best levels (rec+0x14) above the thresholds in the four int slots, with the position (rec+8, 3 floats) and
+	// the entity of the handle at rec+0x1c.  pNpc is the NPC that sees the acts (CAI_BaseNPCTroika::vfunc433 passes this).
+	void sub_102ca780(CBaseEntity *pNpc, int *pCrimA, int *pSuperA, int *pCrimB, int *pSuperB,
+		float *pCrimPos, float *pSuperPos, CBaseEntity **ppCrimEnt, CBaseEntity **ppSuperEnt);
 	void sub_102ca630(CBaseEntity *pEnt);	// removes every record whose handle resolves to pEnt
 };
