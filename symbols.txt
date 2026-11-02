@@ -3395,6 +3395,7 @@
 0x1000675d func   ?vfunc377@CItemContainer@@QAE_NHH@Z CItemContainer::vfunc377
 0x10006762 func   ?vfunc82@CFireSmoke@@UAEPAUdatamap_t@@XZ CFireSmoke::vfunc82
 0x10006767 func   ?sub_10312230@CUnk10312230@@QAEHXZ CUnk10312230::sub_10312230
+0x1000676c func   ?vfunc368@CBaseCombatWeapon@@UAEHHHH@Z CBaseCombatWeapon::vfunc368
 0x10006776 func   ?sub_102ea5e0@@YGXH@Z sub_102ea5e0
 0x1000677b func   ?sub_10316ab0@CUnknown10316890@@QAEXHVVector@@0@Z CUnknown10316890::sub_10316ab0
 0x10006785 func   ?vfunc309@CBaseCombatCharacter@@QAEPAXXZ CBaseCombatCharacter::vfunc309
