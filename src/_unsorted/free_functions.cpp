@@ -62172,6 +62172,30 @@ float sub_1013fe30(float a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013fea0 size=0x4b
+#include "CConstraintAnchor.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(unsigned int size);
+extern char g_1046b00c[];	// CPathKeyFrame vftable
+extern const char g_1057a8b4[];
+
+// TARGET: keyframe_track
+extern "C" CBaseEntity *keyframe_track()
+{
+	void *mem = sub_100aa720(0x48c);
+	CBaseEntity *p;
+	if (mem) {
+		((CConstraintAnchorBase *)mem)->sub_1009d980(0);
+		*(void **)mem = g_1046b00c;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_1057a8b4);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013ff70 size=0x1a
 namespace lifted {
 extern int g_1057a308;
