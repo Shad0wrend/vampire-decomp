@@ -91,7 +91,9 @@ public:
 	CBP_V10(sa0) CBP_V10(sa1) CBP_V1(sa20) CBP_V1(sa21) CBP_V1(sa22) CBP_V1(sa23) virtual void vfunc24(CBaseEntity *pOther); CBP_V1(sa25) CBP_V1(sa26) CBP_V1(sa27) CBP_V1(sa28) CBP_V1(sa29) CBP_V10(sa3) CBP_V10(sa4) CBP_V10(sa5) CBP_V1(sa6) CBP_V1(sa7) CBP_V1(sa8) CBP_V1(sa9)
 	virtual void vfunc64(float *pVec);
 	// slots 65..220
-	CBP_V10(sb0) CBP_V10(sb1) CBP_V10(sb2) CBP_V10(sb3) CBP_V10(sb4) CBP_V10(sb5) CBP_V10(sb6)
+	CBP_V10(sb0) CBP_V10(sb1) CBP_V1(sb20) CBP_V1(sb21) CBP_V1(sb22) CBP_V1(sb23) CBP_V1(sb24) CBP_V1(sb25) CBP_V1(sb26) CBP_V1(sb27) CBP_V1(sb28)
+	virtual int vfunc94();	// slot 94 (+0x178), CBaseEntity::vfunc94: the move type (10 = the value CWeaponUnarmed::vfunc319 sends the view message 0x4c for)
+	CBP_V10(sb3) CBP_V10(sb4) CBP_V10(sb5) CBP_V10(sb6)
 	CBP_V1(sb70) CBP_V1(sb71) CBP_V1(sb72) CBP_V1(sb73) CBP_V1(sb74) CBP_V1(sb75) CBP_V1(sb76) CBP_V1(sb77) CBP_V1(sb78)
 	virtual void vfunc144(const void *pArg);	// slot 144: takes a damage info (CUnknown101c26d0, the force vector at +4); sub_10170d60 hands it a random force
 	virtual int vfunc145();	// slot 145: the int handed to sub_102699e0 as its second argument
