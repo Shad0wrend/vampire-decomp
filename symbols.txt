@@ -3864,6 +3864,7 @@
 0x10007568 func   ?vfunc80@CResearchBook_MG_FIN@@QAEHXZ CResearchBook_MG_FIN::vfunc80
 0x1000756d func   ?sub_101d8820@CUnknown101d8a70@@QAEPAV1@HPAVCBaseCombatWeapon@@PAXH@Z CUnknown101d8a70::sub_101d8820
 0x10007572 func   ?sub_100509b0@SFilter@@QAEPAU1@E@Z SFilter::sub_100509b0
+0x10007577 func   ?IsLeftChild@?$CUtlRBTree@HG@@QBE_NG@Z CUtlRBTree<int,unsigned short>::IsLeftChild
 0x10007577 func   ?sub_102eb7f0@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_102eb7f0
 0x10007586 func   ?sub_101e1770@CDiscTable_101e1770@@QAEHH@Z CDiscTable_101e1770::sub_101e1770
 0x1000758b func   ?vfunc82@CRagdollPropAttached@@UAEPAUdatamap_t@@XZ CRagdollPropAttached::vfunc82
