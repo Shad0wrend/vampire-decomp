@@ -163315,6 +163315,25 @@ int sub_1039af00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039afe0 size=0x42
+extern int vt_104bdea4;
+extern int vt_104bde78;
+void __fastcall sub_1028d230(void *pThis);
+void __fastcall sub_1039b160(void *pThis);
+// TARGET: sub_1039afe0
+int *__fastcall sub_1039afe0(int *pThis)
+{
+	sub_1028d230(pThis);
+	*(int *)((char *)pThis + 0x665c) = -1;
+	sub_1039b160((char *)pThis + 0x669a);
+	pThis[0] = (int)&vt_104bdea4;
+	pThis[0x55a] = 0x11;
+	pThis[0x55b] = 0x11;
+	pThis[0x66c] = (int)&vt_104bde78;
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039b160 size=0xc
 void __fastcall sub_1039b180(void *pThis);
 

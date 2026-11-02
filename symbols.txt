@@ -7713,6 +7713,7 @@
 0x1000da44 func   ?vfunc117@CFunc_Dust@@QAEDXZ CFunc_Dust::vfunc117
 0x1000da49 func   ?vfunc370@CBaseCombatCharacter@@QAE?AVVector@@XZ CBaseCombatCharacter::vfunc370
 0x1000da4e func   ?vfunc580@CNPC_VLasombra@@UAEHXZ CNPC_VLasombra::vfunc580
+0x1000da53 func   ?sub_1039afe0@@YIPAHPAH@Z sub_1039afe0
 0x1000da58 func   _aiscripted_schedule aiscripted_schedule
 0x1000da5d func   ?sub_10075cc0@CUnknown10075cc0@@QAEDXZ CUnknown10075cc0::sub_10075cc0
 0x1000da62 func   ?sub_10139190@@YAHPBI@Z sub_10139190
