@@ -11665,6 +11665,29 @@ int sub_10062890()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10062a50 size=0x4f
+namespace lifted {
+extern char g_106c2da0;
+extern int g_106c2dac;
+extern int g_106c2db0;
+extern int g_106c2db4;
+extern int g_106c2db8;
+extern int g_106c2dbc;
+extern int g_106c2dc0;
+struct C100032c4 { int sub_100032c4(int, int); };
+}
+int sub_10062a50(int a0, int a1, int a2, int a3)
+{
+    lifted::g_106c2dac = *(int *)((char *)a2);
+    lifted::g_106c2db0 = *(int *)((char *)a2 + 4);
+    lifted::g_106c2db4 = *(int *)((char *)a2 + 8);
+    lifted::g_106c2db8 = *(int *)((char *)a3);
+    lifted::g_106c2dbc = *(int *)((char *)a3 + 4);
+    lifted::g_106c2dc0 = *(int *)((char *)a3 + 8);
+    return ((lifted::C100032c4 *)((int)&lifted::g_106c2da0))->sub_100032c4(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10062c30 size=0x11a
 #include "SendProp.h"
 

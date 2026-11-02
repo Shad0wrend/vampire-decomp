@@ -2609,6 +2609,7 @@
 0x10005367 func   ?vfunc5@CNPC_VStalker@@QAEPAV1@I@Z CNPC_VStalker::vfunc5
 0x1000536c func   ?vfunc390@CNPC_VSheriffMan@@QAEHPBX@Z CNPC_VSheriffMan::vfunc390
 0x10005371 func   ?sub_1019ee40@CRopeKeyframe@@QAE_NXZ CRopeKeyframe::sub_1019ee40
+0x10005376 func   ?sub_10062a50@@YAHHHHH@Z sub_10062a50
 0x1000537b func   ?vfunc265@CVampireProjectile@@UAE_NXZ CVampireProjectile::vfunc265
 0x10005385 func   ?sub_102116c0@CTriggerBombSite@@QAEXUCBombState@@@Z CTriggerBombSite::sub_102116c0
 0x10005394 func   ?sub_10138630@@YAXABUmatrix3x4_t@@AAU1@@Z sub_10138630
