@@ -42372,6 +42372,30 @@ extern "C" CBaseEntity *tectonic()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100de730 size=0x4b
+#include "CConstraintAnchor.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(unsigned int size);
+extern char g_104541bc[];	// CTerrainMorph vftable
+extern const char g_105615ac[];
+
+// TARGET: env_terrainmorph
+extern "C" CBaseEntity *env_terrainmorph()
+{
+	void *mem = sub_100aa720(0x48c);
+	CBaseEntity *p;
+	if (mem) {
+		((CConstraintAnchorBase *)mem)->sub_1009d980(0);
+		*(void **)mem = g_104541bc;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_105615ac);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100de7d0 size=0x14
 struct CUnknown100de7d0 { void * sub_100de7d0(); };
 void * CUnknown100de7d0::sub_100de7d0()
