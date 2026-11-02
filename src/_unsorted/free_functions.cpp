@@ -22675,6 +22675,19 @@ void sub_10087c40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10087d10 size=0x25
+#define V10(p) virtual int p##0(); virtual int p##1(); virtual int p##2(); virtual int p##3(); virtual int p##4(); virtual int p##5(); virtual int p##6(); virtual int p##7(); virtual int p##8(); virtual int p##9();
+// the engine's slots 0..83 are placeholders; slot 84 is the zero-argument call the game makes
+struct CVCall84 { V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) virtual int i0(); virtual int i1(); virtual int i2(); virtual int i3(); virtual int i4(); };
+int __stdcall sub_101193b0(int);
+void sub_100d1ff0(int, int, int);
+
+void sub_10087d10()
+{
+    sub_100d1ff0(sub_101193b0(((CVCall84 *)EngineGlobals::g_1070b22c)->i4()), 1, 0x400000);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10087de0 size=0x4c
 #include "CGlobalEntityList.h"
 

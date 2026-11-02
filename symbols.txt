@@ -4176,6 +4176,7 @@
 0x10007e5a func   ?sub_102ae310@@YIXPAUHolder@@@Z sub_102ae310
 0x10007e64 func   _phys_hinge phys_hinge
 0x10007e69 func   ?sub_10237e90@@YAXXZ sub_10237e90
+0x10007e6e func   ?sub_10087d10@@YAXXZ sub_10087d10
 0x10007e73 func   ?sub_103411c0@CBaseCombatCharacter@@QAEXHH@Z CBaseCombatCharacter::sub_103411c0
 0x10007e78 func   ?sub_10160560@CBasePlayer@@QAEXXZ CBasePlayer::sub_10160560
 0x10007e7d func   ?vfunc2@CTETextMessage@@UAEPAV1@I@Z CTETextMessage::vfunc2
