@@ -259,7 +259,7 @@ public:
 	virtual void vfunc283();
 	virtual void vfunc284();	// walks the items at +0xa58 and dispatches on their type through slots 288-291
 	virtual void vfunc285(int nKey);	// clears the item vector when nKey is 0, else removes every item whose second field (+4) equals nKey
-	virtual void vfunc286();
+	virtual void vfunc286(int a, void *pEvent);	// slot 286 (two stack arguments, thiscall): called by the scene entity's slot 262 with (b, event)
 	virtual void vfunc287(CBaseFlexItemObject *pObject);	// removes the item that refers to pObject
 	virtual void vfunc288(void *pObject, float flWeight, CBaseFlexFileData *pFile, CBaseFlexFileData *pFile2, bool bFirst);
 	virtual void vfunc289(CBaseFlexItem *pItem);
