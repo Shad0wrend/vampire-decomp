@@ -159956,6 +159956,31 @@ void CUnknown1034d620::sub_1034dd70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034e420 size=0x4b
+#include "CConstraintAnchor.h"
+#include "CBaseEntity.h"
+
+void *sub_100aa720(unsigned int size);
+extern char g_104a228c[];	// CFogController vftable
+extern const char g_106260e0[];
+
+// TARGET: env_fog_controller
+extern "C" CBaseEntity *env_fog_controller()
+{
+	void *mem = sub_100aa720(0x450);
+	CBaseEntity *p;
+	if (mem) {
+		((CConstraintAnchorBase *)mem)->sub_1009d980(0);
+		*(void **)mem = g_104a228c;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_106260e0);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034e4f0 size=0x1a
 namespace lifted {
 extern int g_10625e58;
