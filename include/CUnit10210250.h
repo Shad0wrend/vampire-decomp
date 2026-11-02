@@ -28,5 +28,6 @@ public:
 	bool sub_10210180(CBaseEntity *pA, CBaseEntity *pB);	// stub 0x1000ea70
 	bool sub_102101d0(CBaseEntity *pA, CBaseEntity *pB);	// stub 0x1001460a
 	bool sub_10210250(CBaseEntity *pA, CBaseEntity *pB);	// stub 0x100022ca
+	bool sub_102102e0(CEntityVSlots *pA, CEntityVSlots *pB);	// stub 0x10004467 (ret 8, ecx unused): visibility test A -> B, see the note on the function (three CTraceFilterSimple(pA, 0) rays, mask 0x2804091)
 	const char *sub_100ab4f0();	// CBaseEntity debug name (stub 0x1000b5cd), called directly
 };
