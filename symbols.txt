@@ -8108,6 +8108,7 @@
 0x1000e426 func   _path_corner_crash path_corner_crash
 0x1000e42b func   ?sub_100c4600@@YAXPAHPAD@Z sub_100c4600
 0x1000e430 func   ?vfunc303@CBaseCombatWeapon@@UAE_NXZ CBaseCombatWeapon::vfunc303
+0x1000e43a func   ?sub_10087b70@@YAXXZ sub_10087b70
 0x1000e43f func   ?vfunc1@CCollisionEvent@@UAEXPAX@Z CCollisionEvent::vfunc1
 0x1000e44e func   ?vfunc7@ConCommand@@UAEXPBDP6AXXZ0H1@Z ConCommand::vfunc7
 0x1000e453 func   ?sub_101a75c0@@YAHXZ sub_101a75c0
