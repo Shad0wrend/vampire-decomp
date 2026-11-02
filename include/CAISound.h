@@ -13,5 +13,5 @@ public:
 	char m_padSound[0x450 - 0x3e0];
 	int m_iSoundType;	// 0x0450: the sound type (and context) handed to InsertSound
 
-	void sub_101bb530(inputdata_t *pInput);	// \"InsertSound\" input handler: CSoundEnt::InsertSound(m_iSoundType, GetAbsOrigin(), the input's integer (0 unless its type is 4), 0.2f, 0, this)
+	void sub_101bb530(inputdata_t *pInput);	// "InsertSound" input handler: CSoundEnt::InsertSound(m_iSoundType, GetAbsOrigin(), the input's integer (0 unless its type is 4), 0.2f, 0, this)
 };
