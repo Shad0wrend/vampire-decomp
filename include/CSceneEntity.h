@@ -57,6 +57,20 @@ struct CSceneEvent	// a scene event; only what the actor checks need
 	float sub_10076280(float flTime);	// stub 0x10002900 (function 0x10076280, ret 4): the intensity of the event at flTime (0 outside the event's time span, else the spline value 0..1); slot 250 pushes the result of sub_10075ca0 before the argument and leaves it on the stack as the fifth argument of slot 258
 };
 
+struct CSceneActorRecord	// an actor record of the scene (0x14+ bytes; the scene's sub_1007a2c0(i)): the saved state of the actor's entity
+{
+	char m_bFlag00;	// 0x00: sub_1029f2e0() of the actor entity's NPC (+0x98), set only when it has one
+	char m_pad0001[3];
+	int m_n04;	// 0x04: entity slot 94 (+0x178), the move type
+	int m_n08;	// 0x08: entity slot 95 (+0x17c)
+	int m_n0c;	// 0x0c: entity slot 92 (+0x170)
+	int m_n10;	// 0x10: entity slot 211 (+0x34c)
+	// 0x14: the actor name (sub_10008a99 reads it; element + 0x14 = name for sub_100821f0), origin +0x17c, angles +0x188 (saved by sub_10072e60)
+
+	const char *sub_10072d90();	// the actor name (stub 0x10008a99), asked with the argument 0
+	void sub_10072e60(float x0, float y0, float z0, float x1, float y1, float z1);	// stub 0x10006fcd (ret 24): stores origin (x0..z0) and angles (x1..z1) by value
+};
+
 struct CSceneEntityScene	// the scene object at +0x4bc
 {
 	char sub_1007d190();	// whether the scene is finished (stub 0x10014128)
