@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101ca8f0 size=0x6
+extern char g_1059e370[];
+
+// TARGET: sub_101ca8f0
+void *sub_101ca8f0()
+{
+	return g_1059e370;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ca980 size=0x83
 #include "CTriggerWind.h"
 #define W_V(n) virtual void w##n();
