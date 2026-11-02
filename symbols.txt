@@ -2115,6 +2115,7 @@
 0x1000474b func   ?sub_1042fbf0@@YAII@Z sub_1042fbf0
 0x10004750 func   ?sub_10430130@@YAII@Z sub_10430130
 0x1000475a func   ?vfunc103@CTriggerCheckVolume@@UAEXXZ CTriggerCheckVolume::vfunc103
+0x1000475f func   ?sub_100270c0@@YGEXZ sub_100270c0
 0x10004764 func   ?sub_100b8270@@YAHXZ sub_100b8270
 0x10004769 func   ?sub_101d62b0@@YAXXZ sub_101d62b0
 0x1000476e func   ?sub_10058d70@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHH@Z CTempEntsSystem::sub_10058d70

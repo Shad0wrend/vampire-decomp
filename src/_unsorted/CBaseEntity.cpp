@@ -522,6 +522,14 @@ void sub_100270a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100270c0 size=0x3
+// TARGET: sub_100270c0
+unsigned char __stdcall sub_100270c0()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027160 size=0x14e
 #include "TempVector.h"
 
