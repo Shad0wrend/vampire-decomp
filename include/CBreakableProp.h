@@ -44,7 +44,10 @@ public:
     unsigned char m_nRenderAlpha;    // 0x1a3
     char m_pad01a4[0x1b1 - 0x1a4];
     char m_bDirty1b1;    // 0x1b1
-    char m_pad01b2[0x210 - 0x1b2];
+    char m_pad01b2[0x1fc - 0x1b2];
+    int m_nTakeDamage1fc;    // 0x1fc: take-damage mode (Break clears it to 0)
+    int m_field200;    // 0x200: Break stores 2
+    char m_pad0204[0x210 - 0x204];
     int m_iHealth;    // 0x210
     char m_pad0214[0x224 - 0x214];
     unsigned char m_fTextOverlayFlags;    // 0x224
