@@ -20,6 +20,7 @@ public:
 	void vfunc103();	// slot 103 "Spawn": axis (0, 0, 1), GetVectors into +0x454, slot 93(0, 0), flag +0x47c from bit 0 of +0x204
 	CKeepUpright *vfunc5(unsigned int flags);	// scalar deleting destructor, declared as a plain member
 	void sub_100057c2();	// destructor body
+	void sub_100296b0();	// destructor body (0x100296b0): vtables, physenv->vfunc40(m_pController), tail jmp to base dtor
 	CKeepUpright *sub_10029610();	// constructor
 
 	char m_padKU[0x450 - sizeof(CBaseEntity)];
