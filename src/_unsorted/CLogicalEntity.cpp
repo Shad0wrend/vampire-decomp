@@ -15,3 +15,12 @@ CLogicalEntity *CLogicalEntity::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100b4360 size=0xb
+#include "CLogicalEntity.h"
+
+int CLogicalEntity::vfunc117()
+{
+	return CBaseEntity::vfunc117() & ~0x2 | 0x200;
+}
+// END FUNCTION
