@@ -242,6 +242,7 @@ public:
 	void sub_1026d130();	// stub 0x100050d3, run first by vfunc379
 	void sub_1026d050();	// stub 0x1000c153, called by sub_1026d130 after sub_10279a50(0)
 	bool sub_10329760(CBaseEntity *pEnt, int b, int c, int d, int e, int f, int g);	// CBaseCombatCharacter::vfunc379 (stub 0x100152da), called directly
+	void sub_10323b60(int a);	// CBaseCombatCharacter::vfunc130 (stub 0x1000bfcd), called directly by vfunc130 with its argument
 	void sub_10005d94();	// CBaseCombatCharacter::vfunc380 (stub 0x10005d94), called directly
 	void sub_10007ea0();	// tail-called by vfunc380 (0x10007ea0)
 	void sub_10357110(CBaseEntity *pEnt);	// provisional, like sub_10270aa0 (transplant)
