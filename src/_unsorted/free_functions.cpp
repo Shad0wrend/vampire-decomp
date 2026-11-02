@@ -21123,6 +21123,25 @@ extern "C" CBaseEntity *logic_choreographed_scene()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10080350 size=0x43
+#include "CSceneEntity.h"
+void *sub_100aa720(int size);
+extern char g_10548cc8[];
+
+// TARGET: scripted_scene
+extern "C" CBaseEntity *scripted_scene()
+{
+	void *mem = sub_100aa720(0x580);
+	CSceneEntity *p;
+	if (mem)
+		p = ((CSceneEntity *)mem)->sub_10080830();
+	else
+		p = 0;
+	((CBaseEntity *)p)->vfunc106(g_10548cc8);
+	return (CBaseEntity *)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10080420 size=0x269
 struct ISaveRestoreOps;
 struct datamap_t;
