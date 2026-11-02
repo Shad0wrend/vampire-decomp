@@ -529,4 +529,5 @@ public:
 	virtual char vfunc618_slot(int bForce);	// slot 618 (+0x9a8) "CanSpawn": the plain vfunc618 below is the direct call
 	virtual void vfunc619(int);
 	virtual void vfunc620(int);
+	virtual bool vfunc86(int a, void *pEdict, int c, int d, int e);
 };
