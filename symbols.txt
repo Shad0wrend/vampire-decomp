@@ -11970,6 +11970,7 @@
 0x1001444d func   ?sub_10345f10@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::sub_10345f10
 0x10014452 func   ?sub_1004bb10@CUtlRBTree16Unit@@QAEXG@Z CUtlRBTree16Unit::sub_1004bb10
 0x10014457 func   ?sub_1015ddb0@@YIXPAX@Z sub_1015ddb0
+0x1001445c func   ?vfunc0@?$CUtlVectorDataOps@V?$CUtlVector@UDisciplineSrc@@V?$CUtlMemory@UDisciplineSrc@@@@@@$08@@UAEXPAX0@Z CUtlVectorDataOps<CUtlVector<DisciplineSrc,CUtlMemory<DisciplineSrc> >,9>::vfunc0
 0x10014461 func   ?sub_1018a210@@YIXPAX@Z sub_1018a210
 0x10014466 func   ?vfunc82@CFogController@@QAEPAUdatamap_t@@XZ CFogController::vfunc82
 0x10014470 func   ?sub_100276c0@CPhysForce@@QAEXXZ CPhysForce::sub_100276c0
