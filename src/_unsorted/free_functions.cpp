@@ -166428,6 +166428,49 @@ CTraceFilterHasThrowLOS *CTraceFilterHasThrowLOS::sub_103be530(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103be630 size=0x213
+#include "CBaseEntity.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "CTraceFilterHasThrowLOS.h"
+#include "CUnknown1070b254.h"
+#include "CNPC_VTzimisce.h"
+#include "CUnknown10738964.h"
+
+class QAngle;
+void sub_10139610(const QAngle &angles, Vector *forward, Vector *right, Vector *up);
+void sub_10146570(const float *start, const float *end, int r, int g, int b, bool test, float duration);
+extern CNPC_VTzimisceConVar *g_1093cad4;
+extern CUnknown1070b254 *g_1070b254;
+extern CUnknown10738964 *g_10738964;
+extern float g_104454c4;
+
+struct FilterStorage { int m_a[5]; };
+
+char CNPC_VTzimisce::sub_103be630(CBaseEntity *pTarget)
+{
+	if (!pTarget)
+		return 0;
+	Vector right;
+	sub_10139610(*(const QAngle *)vfunc221(), 0, &right, 0);
+	float flScale = g_1093cad4->vfunc1() ? g_104454c4 : g_1093cad4->m_f28;
+	Vector off = right * flScale;
+	Vector start = vfunc193() - off;
+	Vector end = ((CNPC_VTzimisce *)pTarget)->vfunc193();
+	FilterStorage filter;
+	((CTraceFilterHasThrowLOS *)&filter)->sub_103be530((int)this, 0);
+	Ray_t ray;
+	ray.Init(start, end);
+	CGameTrace tr;
+	g_1070b254->vfunc4(&ray, 0x400b, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10146570(tr.m_startpos, tr.m_endpos, 255, 0, 0, true, -1.0f);
+	if (tr.m_fraction != 1.0)
+		return 0;
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103bf170 size=0x63
 #include "CNPC_VTzimisce.h"
 void sub_101cd970(CBaseEntity *);

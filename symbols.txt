@@ -4256,6 +4256,7 @@
 0x10008017 func   ?vfunc10@CSoundControllerImp@@UAEHHHH@Z CSoundControllerImp::vfunc10
 0x1000801c func   ?sub_10032b20@UtlVec36@@QAEXHH@Z UtlVec36::sub_10032b20
 0x10008021 func   ?vfunc316@CDisciplineWeapon@@UAEDH@Z CDisciplineWeapon::vfunc316
+0x10008026 func   ?sub_103be630@CNPC_VTzimisce@@QAEDPAVCBaseEntity@@@Z CNPC_VTzimisce::sub_103be630
 0x10008030 func   _info_node_sabbat_nojump info_node_sabbat_nojump
 0x10008035 func   ?sub_101e94b0@@YAXH@Z sub_101e94b0
 0x1000803a func   ?sub_103fcbe0@@YAHXZ sub_103fcbe0
