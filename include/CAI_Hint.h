@@ -221,6 +221,7 @@ public:
 
 	void sub_1009d980(int a);	// entity base constructor
 	CAI_Hint *sub_102d2e30();
+	void sub_102d3040();	// body of ~CAI_Hint (vfunc5 calls it): unlinks this from the global hint list (head g_10925450, next m_pNext +0x5d8), clears g_10925454 / g_1092545c when they are this, decrements the count g_10925458, destroys m_item5f4, m_item5bc and m_items4fc[7..0] (sub_100cd2d0), then tail-jumps to the CBaseEntity destructor body 0x1009df20 (stub 0x1000cb8a); first, when the entity behind the handle +0x5e0 has an NPC (+0x98), rings g_10924a6c slot 1 and calls CAI_BaseNPC::sub_10269a20(0x29), CAI_BaseNPCTroika::sub_10295ab0(0)
 	char sub_102d14c0();	// "IsLocked": a lock owner is set, or the lock timeout at +0x5ec is still in the future, or the owner handle at +0x5e0 resolves (stub 0x1000cc39)
 	char sub_102d1450(void *pOwner);	// "IsLockedBy" (stub 0x10010154)
 	void sub_102d1420(float delay);	// "Unlock" (stub 0x10013d68)
