@@ -32,6 +32,7 @@ public:
 
 	CVFeat_t(int a);	// 0x101e4f30: the default feat (id a at +0 and +0x10, +0x18 = 10, the rest cleared)
 	~CVFeat_t();	// 0x101e4f70 (stub 0x10014c72): frees the tables at +0x20 / +0x28 / +0x30; the exit destroy of the static default feat (0x100dba10, stub 0x1001509b) runs it
+	void sub_101e50b0(CVFeatKV *pKV);	// 0x101e50b0 (ret 8 = the key and an unused...): loads MaxValue, then counts and builds the Base%d / Automatic%d / Display2nd%d block tables (operator new(n * 16) with CVDmgBlock16_t constructors, each block parsed with CVDmgBlock16_t::sub_10204570(sub_10203d60(GetString(key, "")))), then PCWeighting / NPCWeighting via the named list 0x10739194 and the default list 0x106c7c34; "Unable to load VFeat data" without a key
 	void sub_101e4fe0(CVFeatKV *pKV);	// loads the feat from its key: Name, InternalName, HelpText and the Disabled flag; Msg when there is no key
 	int sub_101e5b30(void *pCharacter);	// the sum over the effects of kind 0 / 1 of the multiplier-scaled value of the effect's stat in the character's stat list of that kind (0 without a character)
 	int sub_101e5e10(void *pEntity);	// the feat's value for an entity (stub 0x10015537), used for the dice roll bonus
