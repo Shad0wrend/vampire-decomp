@@ -3084,6 +3084,7 @@
 0x10005eb6 func   ?sub_100cc090@CUnk100cc090@@QAEXH@Z CUnk100cc090::sub_100cc090
 0x10005ebb func   ?vfunc81@COccultBloodBuff@@QAEHXZ COccultBloodBuff::vfunc81
 0x10005ec0 func   ?sub_10187c90@CLagCompensationManager@@QAEXXZ CLagCompensationManager::sub_10187c90
+0x10005ec5 func   ?vfunc452@CNPC_VToreador@@UAEDXZ CNPC_VToreador::vfunc452
 0x10005eca func   ?sub_1014f770@@YG_NHHH@Z sub_1014f770
 0x10005ed4 func   ?sub_10199a70@@YAPAUPyObject@@PAU1@0@Z sub_10199a70
 0x10005ed9 func   ?sub_10050880@CUnknown10050880@@QAEHXZ CUnknown10050880::sub_10050880

@@ -40,6 +40,18 @@ CNPC_VToreador *CNPC_VToreador::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b5470 size=0x6
+#include "CNPC_VToreador.h"
+
+extern char g_10652908;
+
+// TARGET: CNPC_VToreador::vfunc452
+char CNPC_VToreador::vfunc452()
+{
+	return g_10652908;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b54d0 size=0x1d
 #include "CNPC_VToreador.h"
 struct A { int sub_10012300(int); };
