@@ -100,7 +100,7 @@ public:
 	virtual char vfunc316(int a);	// slot 316: clears the byte at +0x898, slot 307(0xde) when a is set, arms the owner's timer at +0x1564 (curtime + the active weapon's sequence duration) and starts slot 333 with 0x12 (owner AI object) or 0x13
 	virtual int vfunc317(); CBCW_V(318) CBCW_V(319)
 	CBCW_V(320) CBCW_V(321) CBCW_V(322) virtual void vfunc323();	// "FinishReload": with an owner (sub_102521f0): a pending reload (byte at +0x8c8) is cancelled through sub_10254cd0(0xc3); else for both ammo slots the clip (+0x74c + i * 4) is refilled from the owner's ammo count (not above slot 275's capacity); then clears the bytes at +0x898 / +0x899 / +0x89a
-	CBCW_V(324) CBCW_V(325) CBCW_V(326) CBCW_V(327)
+	CBCW_V(324) virtual bool vfunc325();	/* slot 325: a boolean answer in al (CWeaponIArmor override 0x103f4070 returns false) */ CBCW_V(326) CBCW_V(327)
 	virtual int vfunc328();
 	CBCW_V(329) virtual int vfunc330(); virtual const Vector &vfunc331(); CBCW_V(332)
 	virtual void vfunc333(int a, int b, int c, int d, int e, int f);
