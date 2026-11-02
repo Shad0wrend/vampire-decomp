@@ -100,6 +100,15 @@ void CNPC_VHumanCombatant::vfunc420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10387180 size=0x6
+#include "CNPC_VHumanCombatant.h"
+
+int CNPC_VHumanCombatant::sub_10387180()
+{
+	return 0x81f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103872d0 size=0x67
 #include "CBaseEntity.h"
 #include "CNPC_VHumanCombatant.h"

@@ -6872,6 +6872,7 @@
 0x1000be6f func   ?sub_10397a50@CNPC_VMingXiao@@QAEXPAX@Z CNPC_VMingXiao::sub_10397a50
 0x1000be79 func   ?sub_101e1010@Loader@@QAE_NPBD@Z Loader::sub_101e1010
 0x1000be7e func   ?sub_100b99d0@CBatSwarm@@QAE_NXZ CBatSwarm::sub_100b99d0
+0x1000be83 func   ?sub_10387180@CNPC_VHumanCombatant@@QAEHXZ CNPC_VHumanCombatant::sub_10387180
 0x1000be8d func   ?sub_10208c90@CUnknown10208c90@@QAEXPAUinputdata_t@@@Z CUnknown10208c90::sub_10208c90
 0x1000be97 func   ?sub_10050c70@CDisciplineParticle@@SAPAV1@PAUCDisciplineParticleParams@@HHHH@Z CDisciplineParticle::sub_10050c70
 0x1000be9c func   ?vfunc5@CTriggerBombSite@@QAEPAV1@I@Z CTriggerBombSite::vfunc5
