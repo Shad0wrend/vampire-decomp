@@ -35,7 +35,9 @@ public:
 	char pad214[0x498 - 0x214];
 	int m_nState498;	// 0x498
 	int m_nState49c;	// 0x49c
-	char pad4a0[0x19e0 - 0x4a0];
+	char pad4a0[0x19b0 - 0x4a0];
+	COutputEvent m_Output19b0;	// 0x19b0: destroyed last of the three outputs
+	COutputEvent m_Output19c8;	// 0x19c8
 	COutputEvent m_Output19e0;	// 0x19e0: the break output
 	char pad19f8[0x1a28 - 0x19f8];
 	CItemContainerHandle m_hUser;	// EHANDLE at +0x1a28 (the entity using the container)
