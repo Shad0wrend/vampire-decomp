@@ -40,6 +40,18 @@ CNPC_VYukie *CNPC_VYukie::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dd190 size=0x6
+#include "CNPC_VYukie.h"
+
+extern char g_10663eb8;
+
+// TARGET: CNPC_VYukie::vfunc452
+char CNPC_VYukie::vfunc452()
+{
+	return g_10663eb8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dd1f0 size=0x1d
 #include "CNPC_VYukie.h"
 struct A { int sub_10012300(int); };
