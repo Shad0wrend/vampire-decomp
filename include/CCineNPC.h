@@ -44,6 +44,7 @@ public:
 	void vfunc103();	// slot 103 (declared as a plain member): SetSolid(0), AddSolidFlags(4), SetMoveType(0, 0), clears the bytes at +0x1480 / +0x1481, arms StartScript (sub_101a8070) when it has no name or flag bit 4 is set, sets the byte at +0x5f90 from flag bit 5, SetAbsolute-like sub_100b3b00, resets the NPC handle and search start, AddFlag2(0x10)
 	bool vfunc362(int unused);	// slot 362
 	bool vfunc364(int unused);	// slot 364
+	bool vfunc365(int unused);	// slot 365: always false
 	void vfunc113();	// slot 113 "CCineNPC::Activate" (declared as a plain member): the base work, then finds the NPC named at +0x5f54 (the first one with an NPC object at +0x94; DevMsg "Could not find NPC %s in CCineNPC::Activate for %s" when none), plays the sounds of its model for the three names at +0x5f44 / +0x5f4c / +0x5f48 (sub_10428880; DevMsg "NPC %s has no model in CCineNPC::Activate for %s" without a model), looks up the entity named at +0x5f58 and keeps its handle at +0x5f94 (the name is cleared when that is gone)
 	void sub_100a0bc0();	// CBaseEntity::vfunc113 (stub 0x10001226), called directly
 	CCineNPC *sub_101a8130();	// stub 0x1000b348: the scripted sequence entity named at +0x5f5c (found with the entity list, cast to CCineNPC), null when there is none or it has no NPC object at +0x94
