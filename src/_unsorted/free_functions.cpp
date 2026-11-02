@@ -109723,6 +109723,26 @@ int CUnknown10211870::sub_10211870(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102118a0 size=0x43
+#include "CPropSign.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(int size);
+extern char g_105ae8c8[];
+
+// TARGET: prop_sign
+extern "C" CBaseEntity *prop_sign()
+{
+	void *mem = sub_100aa720(0x770);
+	CPropSign *p;
+	if (mem)
+		p = ((CPropSign *)mem)->sub_10211a50();
+	else
+		p = 0;
+	((CBaseEntity *)p)->vfunc106(g_105ae8c8);
+	return (CBaseEntity *)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10211970 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
