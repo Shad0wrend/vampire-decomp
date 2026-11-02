@@ -31,6 +31,16 @@ datamap_t * CBeam::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bac50 size=0x2c
+#include "CBeam.h"
+
+// TARGET: CBeam::CBeam
+CBeam::CBeam() : CBaseEntity(0)
+{
+	*(int *)((char *)this + 0x4e4) = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bacc0 size=0x90
 #include "CBeam.h"
 #include "TempVector.h"
