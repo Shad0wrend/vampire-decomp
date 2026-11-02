@@ -10,4 +10,5 @@ public:
 	int m_size;
 
 	void sub_10032bb0(int elem, int num);	// "CUtlVector::ShiftElementsRight": memmove the tail up by num
+	void sub_1003c330(int elem, int num);	// "CUtlVector::ShiftElementsLeft"-like: memmove the tail down (element size 104)
 };
