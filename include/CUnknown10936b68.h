@@ -19,6 +19,7 @@ public:
 	int m_n0000;	// 0x00
 	CAI_ScheduleNode *m_pFirst;	// 0x04: the first schedule
 
+	CAI_ScheduleNode *sub_1030f350(const char *pszName);	// 0x1030f350 (stub 0x10003b7f): the schedule whose name (+0x40) equals pszName (_strcmpi), 0 when none; called by 0x1027bf50 (ecx = 0x10936b68)
 	int sub_1030f300(int value);	// 0x1030f300 (stub 0x10009bb5): the schedule (a CAI_ScheduleNode *, declared int because the matched caller 0x102c6eb0 passes it on as an int) with this id; DevMsg "Couldn't find schedule %d (%s)" (the name from the global at 0x109203cc, CUnknown1024a230::sub_102ea020) and 0 when there is none
 };
 
