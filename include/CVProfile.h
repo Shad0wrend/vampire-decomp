@@ -64,6 +64,19 @@ public:
 			vtune(false);
 	}
 
+	// CVProfile::PushGroup as a unit that inlines VPROF_ENTER_SCOPE has it (0x102e7ba0, 0x1011b300, 0x10303d10): the group is
+	// stored on the stack, the depth rises, and when the group below differs from the new one and it is the VTune group,
+	// vtune(true) is told. (Other units call the imported PushGroup instead, e.g. 0x10307ef0.) The scope's rdtsc sample
+	// (the node's m_CurFrameTime) is a CCycleCount::Sample with __asm that the unit has to write itself (no asm in headers);
+	// the enter sequence is: ++node->m_nCurFrameCalls; if (node->m_nRecursions++ == 0) { sample; g_109f3648->PushGroupInlined(node->m_nBudgetGroupID); } m_bAtRoot = false.
+	void PushGroupInlined(int nGroupID)
+	{
+		m_GroupIDStack[m_nGroupStackDepth] = nGroupID;
+		m_nGroupStackDepth++;
+		if (m_GroupIDStack[m_nGroupStackDepth - 2] != nGroupID && m_bVTuneGroupsEnabled && nGroupID == m_nVTuneGroupID)
+			vtune(true);
+	}
+
 	void ExitScope()
 	{
 		if (!m_bAtRoot || m_enabled) {
