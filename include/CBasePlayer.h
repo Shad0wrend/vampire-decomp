@@ -152,7 +152,7 @@ public:
 	virtual void vfunc407();
 	virtual void vfunc408();
 	// slots 409..447
-	CBP_V1(si0a) CBP_V1(si0b) CBP_V1(si0c)
+	virtual int vfunc409(); CBP_V1(si0b) CBP_V1(si0c)
 	virtual bool vfunc412();
 	CBP_V1(si0e) CBP_V1(si0f) CBP_V1(si0g) CBP_V1(si0h) virtual void vfunc417(int a, int b);
 	virtual char vfunc418(int unused);	// slot 418: runs sub_101644f0(-1, 0, 0), then steps the activity at +0xff0 (0xf49 -> 0xf52 when the entity of the handle at +0xfe8 is gone; with the byte at +0x65c set 0xf40 -> 0xf49), true while it is 0xf52
