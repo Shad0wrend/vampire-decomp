@@ -30,6 +30,8 @@ public:
 	int m_nRadioCount;	// 0x744
 	int m_pad0748;
 	int m_nCurrentShow;	// 0x74c: index of the selected record, -1 when none
+	int m_nVolume750;	// 0x750: the volume handed to EmitAmbientSound (engine slot 49) by Activate (bits of a float: pushed as a dword)
+	int m_nSoundLevelArg754;	// 0x754: argument of sub_10228350 (cdecl, stub 0x10004db3), whose result is the sound level argument of that call
 public:
     virtual datamap_t * vfunc82();
 public:
