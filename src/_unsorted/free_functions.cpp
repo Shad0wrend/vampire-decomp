@@ -3195,6 +3195,18 @@ CPhysicsMovedEntities *CPhysicsMovedEntities::sub_10033630()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100336c0 size=0x5e
+#include "CPhysicsMovedEntities.h"
+#include "ScopeTrace.h"
+
+// TARGET: CPhysicsMovedEntities::sub_100336c0
+void CPhysicsMovedEntities::sub_100336c0()
+{
+	ScopeTrace trace("CPhysicsMovedEntities::Reset", g_106b8540);
+	m_nCount = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10033740 size=0xab
 #include "CPhysicsMovedEntities.h"
 

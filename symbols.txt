@@ -3872,6 +3872,7 @@
 0x100073d8 func   ?sub_1027d030@CAI_BaseNPCUnit@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCUnit::sub_1027d030
 0x100073dd func   ?vfunc80@CBaseAnimating@@UAEHXZ CBaseAnimating::vfunc80
 0x100073dd func   ?vfunc80@CPropDoorknob@@UAEHXZ CPropDoorknob::vfunc80
+0x100073e2 func   ?sub_100336c0@CPhysicsMovedEntities@@QAEXXZ CPhysicsMovedEntities::sub_100336c0
 0x100073e7 func   ?vfunc109@CBaseToggle@@UAE_NPBDM@Z CBaseToggle::vfunc109
 0x100073e7 func   ?vfunc109@CPropDoorknob@@UAE_NPBDM@Z CPropDoorknob::vfunc109
 0x100073e7 func   ?vfunc109@CVampireProjectile@@UAE_NPBDM@Z CVampireProjectile::vfunc109
