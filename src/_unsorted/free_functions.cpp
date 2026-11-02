@@ -66421,6 +66421,19 @@ void CBaseCombatCharacter::sub_10174c10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10174df0 size=0x20
+#include "CBaseCombatWeapon.h"
+
+CBaseEntity *__fastcall sub_1032e7b0(void *self);
+
+// TARGET: sub_10174df0
+void __fastcall sub_10174df0(void *self)
+{
+	if (sub_1032e7b0(self))
+		((CBaseCombatWeapon *)sub_1032e7b0(self))->vfunc324();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10174f80 size=0x18e
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
