@@ -520,3 +520,16 @@ int CNPC_VTzimisceHeadClaw::vfunc126(int a)
 	return r;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103c2860 size=0x28
+#include "CNPC_VTzimisceHeadClaw.h"
+void __cdecl sub_10015311(void *p, int mode);
+
+// TARGET: CNPC_VTzimisceHeadClaw::vfunc127
+int CNPC_VTzimisceHeadClaw::vfunc127(int a)
+{
+	int r = sub_1000527c(a);
+	sub_10015311((char *)this + 0x6678, 3);
+	return r;
+}
+// END FUNCTION
