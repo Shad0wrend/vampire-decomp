@@ -51,7 +51,10 @@ public:
     int m_iHealth;    // 0x210
     char m_pad0214[0x224 - 0x214];
     unsigned char m_fTextOverlayFlags;    // 0x224
-    char m_pad0225[0x2e0 - 0x225];
+    char m_pad0225[0x268 - 0x225];
+    unsigned int m_flags268;    // 0x268: bit 11 = abs transform dirty (CalcAbsolutePosition, sub_100b1d10), bit 12 likewise tested by Break
+    const char *m_name26c;    // 0x26c: entity name (null -> g_106b8540 for the scope trace)
+    char m_collision270[0x2e0 - 0x270];    // 0x270: the collision property (AddSolidFlags: CFlagsUnit::sub_100dc580(word at +0x2b4 | 4) on this+0x270)
     int m_pEdict;    // 0x2e0
     char m_pad02e4[0x368 - 0x2e4];
     int m_nCollisionGroup;    // 0x368
