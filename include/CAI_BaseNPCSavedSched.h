@@ -22,7 +22,9 @@ struct CAI_BaseNPCSavedSched : CAI_BaseNPC
 {
 	char m_pad0004[0x19b4 - 4];
 	CAI_SavedScheduleBlock m_Saved;	// 0x19b4
-	char m_pad1a40[0x5c38 - 0x1a40];
+	char m_pad1a40[0x5b90 - 0x1a40];
+	int m_n5b90;	// 0x5b90: cleared (0) by vfunc130 after the base call
+	char m_pad5b94[0x5c38 - 0x5b94];
 	CAI_ScheduleNode *m_pSchedule;	// 0x5c38: current schedule (stub-found by name on restore)
 	char m_pad5c3c[0x5c50 - 0x5c3c];
 	int m_nTaskFail5c50;	// 0x5c50: clamped back to 1 when >= 0x2a (vfunc130)
