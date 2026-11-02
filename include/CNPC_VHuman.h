@@ -32,6 +32,8 @@ public:
 	virtual void vfunc601(int a);
 	// Slot 602 override: true when the NPC may carry on (not blocked by the flags at +0x5b84 / slot 293); without the named object check of the base.
 	virtual char vfunc602();
+	// Slot 605 override (function 0x10386560, ret 4): the schedule pick for the NPC's current state; stamps the source file / line at +0x1b30 / +0x1b34 with each answer.
+	virtual int vfunc605(int unused);
 	// Slot 463 implementation (stub 0x10011234, function 0x10384720), called directly by the Guard override; two arguments.
 	void sub_10384720(int a, int b);
 	// Slot 563 implementation (function 0x10384760): adds the offset between two position getters of pEnt to pVec.
