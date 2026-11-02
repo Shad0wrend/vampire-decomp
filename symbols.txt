@@ -11455,6 +11455,7 @@
 0x100130e8 func   ?vfunc5@CNPC_VVentrue@@QAEPAV1@I@Z CNPC_VVentrue::vfunc5
 0x100130ed func   ?sub_10078bf0@UtlMem@@QAEXXZ UtlMem::sub_10078bf0
 0x100130f7 func   ?sub_1006cd00@S1006cd00@@QAEXXZ S1006cd00::sub_1006cd00
+0x100130fc func   ?vfunc152@CBaseEntity@@QAEMXZ CBaseEntity::vfunc152
 0x10013101 func   ?sub_100c0be0@CUnknown100c0be0@@QAEXH@Z CUnknown100c0be0::sub_100c0be0
 0x10013106 func   ?vfunc319@CWeaponIArmor@@UAEXXZ CWeaponIArmor::vfunc319
 0x1001310b func   ?vfunc319@CNPC_VPlaceholder@@UAE_NHHH@Z CNPC_VPlaceholder::vfunc319

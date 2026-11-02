@@ -470,6 +470,15 @@ bool __stdcall sub_10026e30(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026e50 size=0x7
+#include "CBaseEntity.h"
+
+float CBaseEntity::vfunc152()
+{
+	return 0.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026e70 size=0x4c
 extern Vector g_1070d1b0;
 inline int VecNe(const Vector &a, const Vector &b)
