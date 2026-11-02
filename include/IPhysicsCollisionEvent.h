@@ -12,6 +12,6 @@ public:
 	virtual void vfunc5() = 0;
 	virtual void vfunc6(void *pObject, void *pFluid) = 0;
 	virtual void vfunc7() = 0;
-	virtual void vfunc8(void *pObject1, void *pObject2) {}
+	virtual void vfunc8(void *pObject1, void *pObject2);
 	virtual void vfunc9(void *pObject1, void *pObject2) {}
 };
