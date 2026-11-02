@@ -154,6 +154,14 @@ int CAI_BaseNPC::vfunc167()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6820 size=0x5
+// TARGET: sub_101a6820
+bool __stdcall sub_101a6820(int a)
+{
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6840 size=0xb
 void CAI_BaseNPC::vfunc483(int unused)
 {
