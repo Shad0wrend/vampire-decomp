@@ -3127,6 +3127,7 @@
 0x100060ff func   ?vfunc3@CGameMovement@@QAEPAMDH@Z CGameMovement::vfunc3
 0x10006109 func   ?vfunc126@CScriptedTarget@@UAEHH@Z CScriptedTarget::vfunc126
 0x1000610e func   ?sub_101db410@CUnknown101db410@@QAEHXZ CUnknown101db410::sub_101db410
+0x10006113 func   ?sub_10355740@CHalfLife2@@QAEPAV1@XZ CHalfLife2::sub_10355740
 0x10006118 func   ?sub_10408480@SSrc192@@QAEXPAUSDest192@@@Z SSrc192::sub_10408480
 0x1000611d func   ?sub_10280fb0@@YAXXZ sub_10280fb0
 0x10006122 func   ?vfunc1@CEventsSaveDataOps@@QAEXPAXPAVCRestore@@@Z CEventsSaveDataOps::vfunc1

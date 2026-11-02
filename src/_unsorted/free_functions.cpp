@@ -157983,6 +157983,25 @@ int sub_10353100()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10355740 size=0x12
+#include "CHalfLife2.h"
+
+extern int vt_104a308c[];
+
+struct CSingleplayRulesCtor
+{
+	void sub_101abbf0();
+};
+
+// TARGET: CHalfLife2::sub_10355740
+CHalfLife2 *CHalfLife2::sub_10355740()
+{
+	((CSingleplayRulesCtor *)this)->sub_101abbf0();
+	*(int *)this = (int)vt_104a308c;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10355c70 size=0x93
 #include "SendTable.h"
 
