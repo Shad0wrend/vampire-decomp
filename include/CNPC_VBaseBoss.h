@@ -9,4 +9,5 @@ public:
 
 	CNPC_VBaseBoss *vfunc5(unsigned int flags);	// slot 5 (scalar deleting destructor, plain member): the record vector at +0x665c goes, then the Troika base's destructor body (stub 0x100123af), then the delete when bit 0 of flags is set
 	void sub_1028d610();	// CAI_BaseNPCTroika destructor body (stub 0x100123af), called directly
+	virtual bool vfunc587(int a);	// slot 587
 };
