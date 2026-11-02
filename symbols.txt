@@ -8279,6 +8279,7 @@
 0x1000e6bf func   ?sub_1012ee10@@YAXPBH@Z sub_1012ee10
 0x1000e6c9 func   ?sub_100dbf50@@YAHXZ sub_100dbf50
 0x1000e6ce func   ?vfunc327@CDisciplineWeapon@@UAEXXZ CDisciplineWeapon::vfunc327
+0x1000e6e2 func   ?sub_10149c60@@YA_NXZ sub_10149c60
 0x1000e6e7 func   ?sub_102e1e20@CAI_Motor@@QAEXH@Z CAI_Motor::sub_102e1e20
 0x1000e6ec func   ?vfunc54@CSingleplayRules@@UAEXHHH@Z CSingleplayRules::vfunc54
 0x1000e6f1 func   ?vfunc4@CTEBeamSpline@@UAEXPAXM@Z CTEBeamSpline::vfunc4
