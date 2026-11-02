@@ -2829,6 +2829,7 @@
 0x10005961 func   ?vfunc317@CNPC_VRat@@QAE_NH@Z CNPC_VRat::vfunc317
 0x10005966 func   ?vfunc272@CBaseCombatWeapon@@UAEPADXZ CBaseCombatWeapon::vfunc272
 0x10005975 func   ?vfunc320@CNPC_VGargoyle@@QAE_NHH@Z CNPC_VGargoyle::vfunc320
+0x1000597a func   ?sub_101c4b70@@YGXHHHHH@Z sub_101c4b70
 0x10005984 func   _item_k_clinic_maintenance_key item_k_clinic_maintenance_key
 0x10005989 func   ?InsertAt@?$CUtlRBTree@UCRBTree12Entry_102cfaf0@@G@@QAEGG_N@Z CUtlRBTree<CRBTree12Entry_102cfaf0,unsigned short>::InsertAt
 0x1000598e func   ?vfunc5@CLight@@QAEPAV1@I@Z CLight::vfunc5
