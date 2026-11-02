@@ -87,6 +87,10 @@ public:
 	void sub_10298d30();	// CAI_BaseNPCTroika::vfunc103 (stub 0x1000303a), called directly
 	void sub_1033c6b0(int nFlags);	// CBaseCombatCharacter::sub_1033c6b0 (stub 0x100153a7), called directly
 	void sub_10398800();	// stub 0x10004160
+	void sub_103937d0(int nSlot, int a, int b);	// ret 0xc (called by vfunc442): resets the motor look state, the grabbed target's +0xa0 to slot 388, then with an active weapon (sub_1032e7b0) picks the activity for it (weapon slot 361(nSlot) -> slot 376), asks slot 331 and plays it (slot 311) or starts the plain activity (sub_10289ee0), then stamps the tentacle slot timer m_flSlotTimeA[nSlot] = curtime + sub_103983d0(nSlot); without a weapon fails the task (slot 448(0x1f))
+	void *sub_1032e7b0();	// CBaseCombatCharacter::GetActiveWeapon (stub 0x10007e19), called directly
+	void sub_10289ee0(int activity);	// CAI_BaseNPC activity setter (stub 0x10014524), called directly
+	float sub_103983d0(int nSlot);	// stub 0x10014c27: the delay for a tentacle slot's timer (st0)
 	float sub_10397f70();	// stub 0x10011d42: the delay of the next tentacle slot
 	CBaseEntity *sub_10336f20();	// CBaseCombatCharacter::sub_10336f20 (stub 0x10005dbc)
 	void sub_1009b060(Vector *pVec);	// CBaseEntity::sub_1009b060 (stub 0x10001a50), called directly with a size vector
