@@ -138,7 +138,7 @@ public:
 	virtual bool vfunc466();	// asked by MaintainActivity: whether the NPC may update its activity
 	CAI_NPC_V(467)
 	virtual bool vfunc468(CBaseEntity *pEnt);	// Troika override: false when pEnt is the NPC's own target or is ignored, true when it has the field at +0xa8 or vfunc404 gives 1 or 2
-	CAI_NPC_V(469)
+	virtual void vfunc469(int unused);	// slot 469 "CAI_BaseNPC::Look" (0x1026a2c0, ret 4, the argument is unused): ClearConditions-like sub_10269bd0(0x105c979c table, 6); the leader entity is found from the object at +0x98 (slot 586(&tmp) handle through LookupEntity sub_100290c0, else, with bit 22 of its flags +0x14b8, its handle at +0x608c); then for each entity the senses object at +0x5cdc yields (S1030fc90::sub_1030fc90 begin via sub_102707d0, sub_1030fd20 next) except the leader: type = slot 404(ent); an entity with the field +0xa8 sets condition 0x5a through the dev flag object (global 0x10924a6c slot 1) and, with +0x9c set and the byte +0x1480, calls CUnknown1017fd60::sub_1017ff40(obj98, type); type 4 stops; the slot 167 entity sets condition 0x46; type 1 (unless class flags +0x14bc bit 16): slot 405(ent) < 0 -> handle to +0x5b70, condition 0x45; > 10 -> +0x5b74, 0x5b; else +0x5b68, 0x43; then slot 544(ent, ent slot 217 of ent+0x3d4); type 2 (unless the same flag): +0x5b6c = handle, slot 544 likewise, condition 0x44; types 3, 4 nothing; other types DevWarning(2, "%s can't assess %s\n", debug names of ent and this) (jump table over type - 1, cases 1 and 2 share code)
 	CAI_NPC_V(470)
 	virtual float vfunc471();	// a random float between 0.2 and 0.9 (the engine random stream's RandomFloat)
 	virtual void vfunc472(CBaseEntity *pEnt);
