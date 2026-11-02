@@ -95,6 +95,16 @@ void CBasePlayer::vfunc457(const char *pszName, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015aeb0 size=0x6
+extern int g_10580edc[];
+
+// TARGET: CBasePlayer::vfunc82
+void *CBasePlayer::vfunc82()
+{
+	return g_10580edc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015dc60 size=0x2d
 #include "CBasePlayer.h"
 
