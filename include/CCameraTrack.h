@@ -43,7 +43,7 @@ public:
 	char m_bStarted4c4;	// 0x04c4
 	char m_pad04c5[0x4d4 - 0x4c5];
 	float m_flStartTime;	// 0x04d4
-	unsigned int m_hHandle;	// 0x04d8
+	EHANDLE m_hHandle;	// 0x04d8
 	char m_bStarted;	// 0x04dc
 	char m_pad04dd[0x4f4 - 0x4dd];
 	COutputEvent m_Output4f4;	// 0x04f4
