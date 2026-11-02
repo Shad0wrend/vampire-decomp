@@ -6,4 +6,7 @@ class CTeamManager
 {
 public:
 	CTeamManager *vfunc8(unsigned int flags);
+public:
+	int vfunc2();
+	int vfunc5();
 };

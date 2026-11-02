@@ -19,4 +19,6 @@ public:
 
 	char m_pad0000[4];	// IGameSystem vftable pointer is emitted by the compiler once the class is virtual; kept out for the plain-member form
 	CStringPool m_StringPool;	// 0x0004
+public:
+	int vfunc5();
 };

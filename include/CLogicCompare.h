@@ -6,4 +6,6 @@ class CLogicCompare
 {
 public:
 	void *vfunc5(unsigned int flags);
+public:
+	int vfunc82();
 };
