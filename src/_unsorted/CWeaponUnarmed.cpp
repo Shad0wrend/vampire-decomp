@@ -34,3 +34,10 @@ CWeaponUnarmed *CWeaponUnarmed::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103f5460 size=0x1
+// TARGET: sub_103f5460
+void sub_103f5460()
+{
+}
+// END FUNCTION
