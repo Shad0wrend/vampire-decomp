@@ -160,9 +160,15 @@ public:
 	char pad6700[0x6708 - 0x6700];
 	int m_n6708;	// 0x6708
 	int m_n670c;	// 0x670c
-	char pad6710[0x6720 - 0x6710];
+	char pad6710[0x6714 - 0x6710];
+	char *m_pHintMem6714;	// 0x6714: CUtlVector<CHintData_WW> (0x48 byte records): memory
+	int m_nHintAlloc6718;	// 0x6718: allocation count
+	int m_nHintGrow671c;	// 0x671c: grow size (-1 = memory not owned)
 	int m_n6720;	// 0x6720: count of the hint records
-	char pad6724[0x6770 - 0x6724];
+	char *m_pHintElems6724;	// 0x6724: the vector's debug view of the memory
+	char m_Out6728[0x18];	// 0x6728: a COutputEvent (destroyed by sub_100cd2d0); the holder sub_103cc890 hands the dying enemy to
+	char m_Out6740[0x18];	// 0x6740: a COutputEvent
+	char m_Out6758[0x18];	// 0x6758: a COutputEvent
 	char m_OnTeleportOut[0x18];	// 0x6770: a COutputEvent (fired with the target as activator)
 	char m_OnTeleportIn[0x18];	// 0x6788: a COutputEvent (fired with the target as activator)
 
