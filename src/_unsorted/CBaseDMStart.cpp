@@ -12,6 +12,18 @@ datamap_t *CBaseDMStart::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c0ae0 size=0x17
+#include "CBaseDMStart.h"
+
+int sub_101cf930(int a, int b);
+
+// TARGET: CBaseDMStart::vfunc147
+int CBaseDMStart::vfunc147(int a)
+{
+	return sub_101cf930(m_field450, a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2060 size=0x1e
 #include "CBaseDMStart.h"
 
