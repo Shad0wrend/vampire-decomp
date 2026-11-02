@@ -55,6 +55,15 @@ CNPC_VAnimal *CNPC_VAnimal::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035ed50 size=0x6
+extern char g_1062b648;
+
+char sub_1035ed50(void)
+{
+    return g_1062b648;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035edb0 size=0x1d
 #include "CNPC_VAnimal.h"
 struct A { int sub_10012300(int); };
