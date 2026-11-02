@@ -5,6 +5,8 @@
 #include "CRBTree16Entry8.h"
 
 class CSave;
+class CRestore;
+#include "CPhysRestoreRecords.h"
 
 class CPhysSaveRestoreBlockHandler
 {
