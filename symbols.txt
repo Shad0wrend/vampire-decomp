@@ -5059,6 +5059,7 @@
 0x10009291 func   ?sub_102ede30@CAI_Navigator@@QAE_NHH@Z CAI_Navigator::sub_102ede30
 0x10009296 func   ?sub_1011b040@@YGXH@Z sub_1011b040
 0x1000929b func   ?sub_10046b70@@YA_NPBI0@Z sub_10046b70
+0x100092a0 func   ?sub_103d1d60@CNPC_VWerewolf@@QAE_NPBD_N@Z CNPC_VWerewolf::sub_103d1d60
 0x100092af func   ?sub_1019dee0@CRopeKeyframe@@SAPAV1@PAVCBaseEntity@@0HHHPBDH@Z CRopeKeyframe::sub_1019dee0
 0x100092b9 func   ?sub_1013af60@@YAXABVQuaternion@@0AAV1@@Z sub_1013af60
 0x100092be func   ?sub_10336920@Ent@@QAE_NXZ Ent::sub_10336920

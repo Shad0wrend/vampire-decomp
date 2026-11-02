@@ -168596,6 +168596,43 @@ void CNPC_VWerewolf::sub_103d1ca0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d1d60 size=0xbe
+#include "ScopeTrace.h"
+
+#pragma pack(push, 4)
+struct CCycleCount {
+	__int64 m_Int64;
+	CCycleCount() : m_Int64(0) {}
+	void Sample() {
+		__int64 *p = &m_Int64;
+		__asm {
+			mov ecx, p
+			rdtsc
+			mov dword ptr [ecx], eax
+			mov dword ptr [ecx + 4], edx
+		}
+	}
+};
+#pragma pack(pop)
+
+inline CCycleCount GetCycleCount()
+{
+	CCycleCount cc;
+	cc.Sample();
+	return cc;
+}
+
+extern __int64 g_1093d638;
+
+bool CNPC_VWerewolf::sub_103d1d60(const char *pszName, bool bValue)
+{
+	ScopeTrace trace("CNPC_VWerewolf::ReportSearchTimer",
+		this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	g_1093d638 = GetCycleCount().m_Int64 - g_1093d638;
+	return bValue;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d2810 size=0x184
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
