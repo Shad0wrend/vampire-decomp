@@ -1,6 +1,19 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10316c70 size=0x3a
+#include "CBitStringSaveRestoreOps.h"
+#include "CSave.h"
+// TARGET: CBitStringSaveRestoreOps<CBitString>::vfunc0
+void CBitStringSaveRestoreOps<CBitString>::vfunc0(CBitString **ppBits, CSave *pSave)
+{
+	CBitString *pBits = *ppBits;
+	int nBits = pBits->m_nBits;
+	pSave->vfunc10(&nBits, 1);
+	pSave->vfunc10(pBits->m_pData, pBits->m_nDwords);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10316d10 size=0x2b
 #include "CBitStringSaveRestoreOps.h"
 
