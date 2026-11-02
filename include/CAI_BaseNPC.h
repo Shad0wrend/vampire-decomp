@@ -98,7 +98,9 @@ public:
 	CAI_NPC_V(400) CAI_NPC_V(401) virtual char vfunc402();	// slot 402: asks slot 394; when it holds either removes the NPC (slot 398 false: sub_101cd940) or, with slot 398 true, hands the field at +0xfd0 to sub_100544f0, runs slot 77 and slot 395; without it only slot 395; returns the answer of slot 394
 	CAI_NPC_V(403)
 	virtual int vfunc404(CBaseEntity *pEnt);	// classification of pEnt (vfunc468 treats 1 and 2 as true)
-	CAI_NPC_V(405) CAI_NPC_V(406) CAI_NPC_V(407) CAI_NPC_V(408) CAI_NPC_V(409)
+	CAI_NPC_V(405) virtual const char *vfunc406(int state);	// slot 406 (+0x658): the name of an NPC state (debug text "State: %s, ", asked with the state at +0x5cc0)
+	virtual const char *vfunc407(int moveType);	// slot 407 (+0x65c): the name of a move type ("Move: %s, ", asked with the result of sub_1027d990)
+	CAI_NPC_V(408) CAI_NPC_V(409)
 	// slots 410..482
 	CAI_NPC_V(410) CAI_NPC_V(411) CAI_NPC_V(412) CAI_NPC_V(413) CAI_NPC_V(414) CAI_NPC_V(415)
 	virtual void vfunc416(char value);
