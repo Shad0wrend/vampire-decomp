@@ -41,3 +41,10 @@ void sub_103f5460()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x103f5480 size=0x1
+// TARGET: sub_103f5480
+void sub_103f5480()
+{
+}
+// END FUNCTION
