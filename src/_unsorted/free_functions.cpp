@@ -183110,6 +183110,40 @@ int sub_1040d690()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040d790 size=0x43
+#include "CWeaponPhysCannon.h"
+
+void *sub_100aa720(int size);
+extern char g_1055ef2c[];
+
+#define VD10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CWepVt
+{
+	VD10(a) VD10(b) VD10(c) VD10(d) VD10(e) VD10(f) VD10(g) VD10(h) VD10(i) VD10(j)
+	virtual void s100(); virtual void s101(); virtual void s102(); virtual void s103(); virtual void s104(); virtual void s105();
+	virtual void vfunc106(const char *pszName);
+};
+
+struct CWepCtor
+{
+	CWeaponPhysCannon *sub_1040d9e0();
+};
+
+// TARGET: weapon_physcannon
+extern "C" CWeaponPhysCannon *weapon_physcannon()
+{
+	void *mem = sub_100aa720(0xae8);
+	CWeaponPhysCannon *p;
+	if (mem)
+		p = ((CWepCtor *)mem)->sub_1040d9e0();
+	else
+		p = 0;
+	((CWepVt *)p)->vfunc106(g_1055ef2c);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040d8b0 size=0x58
 struct ISaveRestoreOps;
 struct datamap_t;
