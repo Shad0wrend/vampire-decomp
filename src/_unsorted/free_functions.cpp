@@ -139367,6 +139367,17 @@ void CUnk102d1420::sub_102d1420(float flTime)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d1450 size=0x4b
+#include "CAI_Hint.h"
+#include "CUnknown102c63b0.h"
+
+// TARGET: CAI_Hint::sub_102d1450
+bool CAI_Hint::sub_102d1450(void *pOwner)
+{
+	return ((CUnknown102c63b0 *)&m_n5e0)->Get() == pOwner;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d14c0 size=0x56
 struct CNpcView14c0 {
 	char m_pad0000[0x5e0];
