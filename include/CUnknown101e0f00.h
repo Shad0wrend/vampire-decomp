@@ -79,6 +79,8 @@ struct CUnknown101e0f00Tail	// the object at +0xdc of an entry
 
 struct CUnknown101e0f00Entry	// one targeted discipline
 {
+	CUnknown101e0f00Entry(int id);
+	~CUnknown101e0f00Entry();
 	int m_id;	// 0x00
 	const char *m_pszName;	// 0x04
 	const char *m_pszInternalName;	// 0x08
