@@ -1431,6 +1431,7 @@
 0x100034a9 func   ?vfunc451@CGeneric_NPC@@UAEPBDXZ CGeneric_NPC::vfunc451
 0x100034ae func   ?vfunc499@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc499
 0x100034b3 func   ?sub_103dae50@CUnknown103dae50@@QAEXXZ CUnknown103dae50::sub_103dae50
+0x100034b8 func   ?vfunc21@CBasePlayer@@QAEXH@Z CBasePlayer::vfunc21
 0x100034c2 func   ?vfunc42@CGameRules@@UAEXHH@Z CGameRules::vfunc42
 0x100034cc func   ?sub_103a5bb0@@YAHXZ sub_103a5bb0
 0x100034db func   ?sub_10081e90@@YIXPAUCSlots@@HH@Z sub_10081e90
