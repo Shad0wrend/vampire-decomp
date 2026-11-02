@@ -58,7 +58,14 @@ public:
     int m_pEdict;    // 0x2e0
     char m_pad02e4[0x368 - 0x2e4];
     int m_nCollisionGroup;    // 0x368
-    char m_pad036c[0x764 - 0x36c];
+    void *m_pPhysObj36c;    // 0x36c: the physics object (slot 40 = GetVelocity(&vel, &angvel), 2 pointer args)
+    char m_pad0370[0x3bc - 0x370];
+    float m_vecVelocity3bc[3];    // 0x3bc
+    float m_angVel3c8[3];    // 0x3c8 (Break copies x from +0x3d0, y +0x3c8, z +0x3cc into its second stack vector)
+    char m_pad03d4[0x730 - 0x3d4];
+    char m_OnBreak730[0x18];    // 0x730: COutputEvent, fired by Break: ((COutputEvent *)m_OnBreak730)->sub_100cd660(pAttacker, this, 0)
+    char m_OnHealthChanged748[0x18];    // 0x748: COutputEvent
+    char m_pad0760[0x764 - 0x760];
     const char *m_pszExplosion764;    // 0x764: name of the explosion parameters entity (null = none; g_106b8540 stands in for messages)
     EHANDLE m_hAttacker768;    // 0x768: the attacker of the break
     void sub_1018f620();    // the break think: slot 266 with the attacker (handle +0x768), then SetThink(0, 0, 0)
