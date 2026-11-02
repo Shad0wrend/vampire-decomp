@@ -14,7 +14,7 @@ public:
 	void vfunc123();	// slot 123 (plain member) "DrawDebugGeometryOverlays": with one of the debug overlay bits 0x2c (+0x224) set, takes the origin (slot 217), transforms the two attached physics objects' matrices (slot 5 / 6 of the constraint object at +0x450, slot 38 fills the matrix) with the origin into +0x494 / +0x4a0, draws three green lines origin -> +0x488 (m_vecMid) -> ..., then CBaseEntity::vfunc123
 	void sub_100a0130();	// CBaseEntity::vfunc123 (stub 0x10005880), called directly
 
-	char m_pad0000[0x224];
+	char m_pad0004[0x224 - 4];
 	unsigned char m_debugOverlays224;	// 0x224
 	char m_pad0225[0x450 - 0x225];
 	CPhysConstraintObj *m_pConstraint450;	// 0x450: the physics constraint object (slots 5 / 6 = the two attached physics objects)
