@@ -127,6 +127,7 @@ public:
 	virtual void vfunc370(int *event, CBaseCombatWeapon *other);
 	virtual char vfunc371();	// slot 371: a boolean answer in al (asked by Inventory_Can_Insert of the weapon already owned)
 	CBaseCombatWeapon();	// 0x10250ac0 (stub 0x10011b8f): the weapon base constructor, run first by the derived weapons' constructors
+	void sub_102500d0();	// helper: when g_1070ba0c->vfunc48(this) returns 1, tail-calls vfunc187()
 	void sub_102507b0();
 	void sub_10250c50();	// the destructor body (called by vfunc5): vtable, releases the object at +0x8dc through the global at 0x10723940 (slot 23), sub_10250560(this), destroys the two lists at +0x8f8 / +0x8e0 (sub_100cd2d0) and the three 0x44 byte CVDmg_t records at +0x77c (sub_101fa680, last first), then the CBaseAnimating destructor body
 	CWeaponOwner *sub_102517b0();	// the weapon's owner (player) object
