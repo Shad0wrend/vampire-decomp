@@ -423,6 +423,14 @@ int sub_10026d90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026db0 size=0x5
+// TARGET: sub_10026db0
+bool __stdcall sub_10026db0(int a)
+{
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026dd0 size=0x3
 // TARGET: sub_10026dd0
 void __stdcall sub_10026dd0(int a, int b)
