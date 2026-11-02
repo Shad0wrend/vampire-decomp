@@ -148171,6 +148171,24 @@ bool CUnknown1030fb90::sub_1030fb90(void *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030fc50 size=0x23
+#include "CAI_Senses.h"
+#include "CAI_BaseNPC.h"
+
+struct CComponentFwd
+{
+	void sub_1030fb60(void *pEnt);
+};
+
+// TARGET: CAI_Senses::sub_1030fc50
+char CAI_Senses::sub_1030fc50(void *pEnt)
+{
+	((CAI_BaseNPC *)m_pOuter)->vfunc472((CBaseEntity *)pEnt);
+	((CComponentFwd *)this)->sub_1030fb60(pEnt);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030fc90 size=0x68
 struct SInner { void *ent; unsigned serial; };
 struct SEnt { int pad; SInner in; };

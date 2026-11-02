@@ -11535,6 +11535,7 @@
 0x1001384a func   ?vfunc202@CNodeEnt@@QAEXH@Z CNodeEnt::vfunc202
 0x1001384f func   ?vfunc546@CNPC_VScurrying@@QAEHH@Z CNPC_VScurrying::vfunc546
 0x10013854 func   ?sub_10185490@CUtlVectorBase@@QAEXXZ CUtlVectorBase::sub_10185490
+0x10013859 func   ?sub_1030fc50@CAI_Senses@@QAEDPAX@Z CAI_Senses::sub_1030fc50
 0x1001385e func   ?sub_10131750@CUnknown10131750@@QAEHXZ CUnknown10131750::sub_10131750
 0x10013863 func   ?sub_101c8820@@YAHXZ sub_101c8820
 0x1001386d func   ?sub_100360a0@CPhysicsPushedEntities@@QAEXPAVCBaseEntity@@PBMPAM1@Z CPhysicsPushedEntities::sub_100360a0
