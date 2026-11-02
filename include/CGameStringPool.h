@@ -8,6 +8,7 @@ class CStringPool
 public:
 	void sub_101bf640();	// the pool's destructor body (stub 0x1000a4b6): out-of-line CUtlRBTree RemoveAll (0x101bfb00), then CUtlMemory purge (grow at +0xc, Plat_Free of the pointer at +4)
 	char *sub_101bf860(const char *psz);	// stub 0x1000555b: find psz in the pool's tree, or _mbsdup and insert it; returns the pooled copy (ret 4). Also called on the pool at 0x1074e9a0
+	void sub_101bfb00();	// CUtlRBTree::RemoveAll (stub 0x1000c405): the tree lives at +0 of the pool
 	char m_pad0000[0x10];	// CUtlRBTree<...> of the pooled strings; real members not recovered yet
 };
 
@@ -20,5 +21,5 @@ public:
 	char m_pad0000[4];	// IGameSystem vftable pointer is emitted by the compiler once the class is virtual; kept out for the plain-member form
 	CStringPool m_StringPool;	// 0x0004
 public:
-	int vfunc5();
+	void vfunc5();
 };
