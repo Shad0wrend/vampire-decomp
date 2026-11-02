@@ -14388,6 +14388,26 @@ void __fastcall sub_1006d0a0(CDumpTable1006d0a0 *pTable)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006d110 size=0x43
+#include "CBaseCineCam.h"
+
+void *sub_100aa720(int size);
+extern char g_10546d54[];
+
+// TARGET: camera_cinematic
+extern "C" CBaseCineCam *camera_cinematic()
+{
+	CBaseCineCam *p;
+	void *mem = sub_100aa720(0x644);
+	if (mem)
+		p = ((CBaseCineCam *)mem)->sub_1006d620();
+	else
+		p = 0;
+	p->vfunc106(g_10546d54);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006d2f0 size=0x175
 #include "SendProp.h"
 
