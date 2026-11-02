@@ -2743,6 +2743,11 @@ int __fastcall sub_100ad850(CBaseEntity *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ad8f0 size=0x3
+// TARGET: sub_100ad8f0
+void __stdcall sub_100ad8f0(void *a, void *b, void *c, void *d) {}
+// END FUNCTION
+
 // FUNCTION: 0x100ada20 size=0x142
 #include "CBaseEntity.h"
 #include "ScopeTrace.h"

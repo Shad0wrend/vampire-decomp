@@ -11551,6 +11551,7 @@
 0x10013bb5 func   ?vfunc144@CNPC_VMingXiao@@UAEXH@Z CNPC_VMingXiao::vfunc144
 0x10013bba func   ?vfunc104@CPropHaunted@@UAEXXZ CPropHaunted::vfunc104
 0x10013bbf func   ?sub_100f79b0@CGlobalEntityList@@QAEPAVCBaseEntity@@PAV2@PBMM@Z CGlobalEntityList::sub_100f79b0
+0x10013bc4 func   ?sub_100ad8f0@@YGXPAX000@Z sub_100ad8f0
 0x10013bce func   ?sub_101d10e0@@YAXPBDZZ sub_101d10e0
 0x10013bd3 func   ?vfunc488@CGeneric_NPC_bathack@@UAEXXZ CGeneric_NPC_bathack::vfunc488
 0x10013bdd func   ?vfunc33@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHH@Z CTempEntsSystem::vfunc33
