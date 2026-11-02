@@ -326,7 +326,7 @@ public:
 	virtual void vfunc308();
 	virtual void vfunc309();
 	virtual void vfunc310();
-	virtual void vfunc311();
+	virtual void vfunc311(int a, int b, int c);	// slot 311 (+0x4dc, ret 0xc): sets the activity a with the sequence b / data c (CAI_BaseNPC::vfunc311)
 	virtual void vfunc312();
 	virtual void vfunc313();
 	virtual void vfunc314();
