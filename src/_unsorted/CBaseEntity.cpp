@@ -649,6 +649,14 @@ unsigned char __stdcall sub_10027330()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10027350 size=0x5
+// TARGET: sub_10027350
+bool __stdcall sub_10027350(int a, int b, int c, int d, int e)
+{
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027370 size=0x21
 #include "Vector.h"
 
