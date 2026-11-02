@@ -1815,6 +1815,16 @@ int CAI_BaseNPC::vfunc127(CRestore *pRestore)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027c2e0 size=0x3
+// TARGET: CAI_BaseNPC::vfunc452
+#include "vampire.h"
+
+bool CAI_BaseNPC::vfunc452()
+{
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027c7f0 size=0x1e
 #include "CAI_BaseNPC.h"
 

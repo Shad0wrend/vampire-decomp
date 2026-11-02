@@ -11439,6 +11439,7 @@
 0x1001379b func   _info_teleport_destination info_teleport_destination
 0x100137a5 func   ?sub_100bf350@@YAXPAIH@Z sub_100bf350
 0x100137aa func   ?sub_102b3d90@CAI_Timer2c@@QAEAAU1@ABU1@@Z CAI_Timer2c::sub_102b3d90
+0x100137af func   ?vfunc452@CAI_BaseNPC@@UAE_NXZ CAI_BaseNPC::vfunc452
 0x100137b9 func   ?sub_101d8190@CUnknown101d82d0_Elem@@QAEPBDXZ CUnknown101d82d0_Elem::sub_101d8190
 0x100137be func   ?vfunc82@CEnvFireSource@@QAEPAUdatamap_t@@XZ CEnvFireSource::vfunc82
 0x100137c3 func   ?sub_1020cd00@@YIDPAX@Z sub_1020cd00
