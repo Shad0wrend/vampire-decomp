@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103e87b0 size=0x6
+#include "CWeaponMelee_TzimisceMelee.h"
+
+extern int g_10941680;
+
+// TARGET: CWeaponMelee_TzimisceMelee::vfunc80
+void *CWeaponMelee_TzimisceMelee::vfunc80()
+{
+	return &g_10941680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e87d0 size=0x3
 #include "CWeaponMelee_TzimisceMelee.h"
 
