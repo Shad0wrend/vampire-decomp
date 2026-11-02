@@ -11321,6 +11321,7 @@
 0x10013368 func   ?sub_103394a0@CBaseCombatCharacter@@QAEXDHH@Z CBaseCombatCharacter::sub_103394a0
 0x1001336d func   ?sub_1022b4d0@S1022b4d0@@QAEXAAUinputdata_t@@@Z S1022b4d0::sub_1022b4d0
 0x1001337c func   ?sub_100b5d10@CBaseFlex@@QAEHPBD@Z CBaseFlex::sub_100b5d10
+0x10013381 func   ?sub_101041f0@@YIXPAXHH@Z sub_101041f0
 0x1001338b func   ?sub_100ee810@CBaseDoor@@QAEXXZ CBaseDoor::sub_100ee810
 0x10013395 func   ?vfunc82@CEnvSpark@@UAEPAUdatamap_t@@XZ CEnvSpark::vfunc82
 0x1001339f func   ?sub_1002f0e0@@YGDH@Z sub_1002f0e0

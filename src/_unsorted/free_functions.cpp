@@ -49433,6 +49433,31 @@ int __stdcall sub_101041d0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101041f0 size=0x16
+#include "CBaseEntity.h"
+
+class CThis10103f80 : public CBaseEntity
+{
+public:
+	void sub_10103f80();
+};
+
+typedef void (CBaseEntity::*ThinkFn)();
+
+void __fastcall sub_10104160(char *pThis, int a, int b);
+int __stdcall sub_101041d0(int b);
+
+// TARGET: sub_101041f0
+void __fastcall sub_101041f0(void *pThis, int a, int b)
+{
+	ThinkFn fn = *(ThinkFn *)((char *)pThis + 0x118);
+	if (fn == &CThis10103f80::sub_10103f80)
+		sub_10104160((char *)pThis, a, b);
+	else
+		sub_101041d0(b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10104220 size=0x43
 #include "CParamsExplosion.h"
 void *sub_100aa720(int size);
