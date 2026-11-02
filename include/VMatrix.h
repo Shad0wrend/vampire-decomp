@@ -3,6 +3,7 @@
 // through two rows are kept in source order).
 #pragma once
 #include "Vector.h"
+#include "QAngle.h"
 
 class VMatrix
 {
