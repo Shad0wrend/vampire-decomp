@@ -142,7 +142,10 @@ public:
 	char m_pad6714[4];
 	EHANDLE m_h6718;	// +0x6718: the grabbed target
 	int m_nSide671c;	// +0x671c: 4 for the right tentacle, else the left one
-	char m_pad6720[0x6738 - 0x6720];
+	int m_n6720;	// +0x6720: out argument of sub_10398b20 (the target search)
+	char m_pad6724[0x672c - 0x6724];
+	int m_n672c;	// +0x672c: out argument of sub_10398b20
+	char m_pad6730[0x6738 - 0x6730];
 	EHANDLE m_h6738;	// +0x6738: the phys_animlink
 	int m_nMode673c;	// +0x673c: the grabbing (2) / throwing (4) mode
 	int m_n6740;	// +0x6740
