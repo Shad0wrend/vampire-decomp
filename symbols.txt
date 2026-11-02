@@ -1988,6 +1988,7 @@
 0x100042c8 func   ?sub_1030fb60@CUnknown1030fb60@@QAEHH@Z CUnknown1030fb60::sub_1030fb60
 0x100042cd func   ?vfunc294@CItemContainer@@QAE_NH@Z CItemContainer::vfunc294
 0x100042d2 func   ?vfunc538@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc538
+0x100042d7 func   ?sub_1036fc50@@YADXZ sub_1036fc50
 0x100042e1 func   ?vfunc2@CTETParticle@@UAEPAV1@I@Z CTETParticle::vfunc2
 0x100042e6 func   ?vfunc0@?$CUtlVectorDataOps@V?$CUtlVector@UGLOBAL_EMAIL@@V?$CUtlMemory@UGLOBAL_EMAIL@@@@@@$08@@UAEXPAX0@Z CUtlVectorDataOps<CUtlVector<GLOBAL_EMAIL,CUtlMemory<GLOBAL_EMAIL> >,9>::vfunc0
 0x100042eb func   ?sub_100fb8a0@S100fb8a0@@QAEXAAUinputdata_t@@@Z S100fb8a0::sub_100fb8a0

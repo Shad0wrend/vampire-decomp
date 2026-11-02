@@ -34,6 +34,15 @@ CNPC_VCombatman *CNPC_VCombatman::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036fc50 size=0x6
+extern char g_10631678;
+
+char sub_1036fc50(void)
+{
+    return g_10631678;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036fcb0 size=0x1d
 #include "CNPC_VCombatman.h"
 struct A { int sub_10012300(int); };
