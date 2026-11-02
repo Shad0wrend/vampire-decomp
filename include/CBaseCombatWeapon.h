@@ -121,7 +121,7 @@ public:
 	virtual int vfunc363();	// the number of records of that table
 	virtual void vfunc364(int a, int b, int c);
 	virtual int vfunc365(int a, float b, float c);	// the activity-like index for a shot: 0x40 without a loaded clip (+0x74c), 8 below the minimum range, 0x5f below the float at +0x8b8, 0x60 above the one at +0x8c0, 0x61 for a small b, else 0x4f when sub_10252410(0) holds
-	CBCW_V(366)
+	virtual int vfunc366(int a, int b, int c);
 	virtual int vfunc367(int a, float b, float c);	// CWeaponMelee: forwards to sub_103ea7e0 with the constant 0x4b
 	CBCW_V(368) virtual void vfunc369(int a);
 	virtual void vfunc370(int *event, CBaseCombatWeapon *other);
