@@ -7,6 +7,7 @@
 class CEnvGlobal : public CBaseEntity
 {
 public:
+	CEnvGlobal() : CBaseEntity(0) {}
 	CEnvGlobal *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
 	void sub_10132a70(int unused);	// like sub_10132ae0 with state 0
