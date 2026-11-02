@@ -1,4 +1,5 @@
 0x10001005 func   ?vfunc487@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc487
+0x1000100f func   ?vfunc81@CWeaponRanged@@UAEHXZ CWeaponRanged::vfunc81
 0x10001014 func   ?sub_102e9fe0@CSymTabUnit102e9fe0@@QAEXHH@Z CSymTabUnit102e9fe0::sub_102e9fe0
 0x10001019 func   ?sub_1003d8f0@@YAXPAVCBaseEntity@@@Z sub_1003d8f0
 0x10001023 func   ?sub_102240d0@@YAHXZ sub_102240d0
