@@ -2010,6 +2010,13 @@ float CAI_BaseNPC::vfunc516()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10280fb0 size=0x1
+// TARGET: sub_10280fb0
+void sub_10280fb0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10288710 size=0x4e
 #include "CAI_BaseNPCTroika.h"
 #include "CUnknown102e83e0.h"
