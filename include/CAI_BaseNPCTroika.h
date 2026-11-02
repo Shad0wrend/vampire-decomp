@@ -345,7 +345,8 @@ public:
 	char m_pad6454[0x6478 - 0x6454];
 	const char *m_psz6478;
 	EHANDLE m_h647c;
-	char m_pad6480[0x6495 - 0x6480];
+	const char *m_psz6480;	// 0x6480: follower type name (vfunc130 passes it or the empty string 0x106b8540 to sub_102c4680)
+	char m_pad6484[0x6495 - 0x6484];
 	char m_b6495;
 	char m_b6496;
 	char m_b6497;
