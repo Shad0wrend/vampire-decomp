@@ -4586,6 +4586,7 @@
 0x10008607 func   ?vfunc103@CNPC_VMingXiaoTentacle@@QAEXXZ CNPC_VMingXiaoTentacle::vfunc103
 0x1000860c func   ?vfunc448@CNPC_VMingXiao@@QAEXH@Z CNPC_VMingXiao::vfunc448
 0x10008611 func   ?sub_10234800@@YADXZ sub_10234800
+0x10008616 func   ?sub_1014f9d0@@YG_NHH@Z sub_1014f9d0
 0x1000861b func   ?vfunc113@CEnvBeam@@UAEXXZ CEnvBeam::vfunc113
 0x10008620 func   ?sub_1029ca30@@YGMM@Z sub_1029ca30
 0x1000862a func   ?vfunc5@CAI_InterestingPlaceConverstation@@QAEPAVCPointEntity@@I@Z CAI_InterestingPlaceConverstation::vfunc5
