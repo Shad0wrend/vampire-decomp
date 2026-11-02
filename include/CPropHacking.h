@@ -99,7 +99,11 @@ public:
 	void *m_p09b4;	// 0x9b4: array of 0x2b4 byte records
 	char m_pad09b8[0x9c0 - 0x9b8];
 	int m_n09c0;	// 0x9c0: the count of the records at +0x9b4
-	char m_pad09c4[0x9dc - 0x9c4];
+	char m_pad09c4[4];
+	void **m_ppObjects09c8;	// 0x9c8: a CUtlVector<void *> of owned objects (the destructor body deletes each element, then purges it)
+	char m_pad09cc[0x9d4 - 0x9cc];
+	int m_nObjects09d4;	// 0x9d4: its count
+	char m_pad09d8[0x9dc - 0x9d8];
 	int m_n09dc;	// 0x9dc
 	int m_n09e0;	// 0x9e0
 	float m_flDelay09e4;	// 0x9e4
