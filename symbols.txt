@@ -1607,6 +1607,7 @@
 0x100038d2 func   ?vfunc37@CMultiplayRules@@UAE_NH@Z CMultiplayRules::vfunc37
 0x100038d7 func   ?sub_1007f250@CUtlRBTree24@@QAEXPBXPAHPA_N@Z CUtlRBTree24::sub_1007f250
 0x100038dc func   ?vfunc175@CTriggerElectricBugaloo@@QAEXPAX@Z CTriggerElectricBugaloo::vfunc175
+0x100038e6 func   ?sub_1035b490@@YADXZ sub_1035b490
 0x100038eb func   ?sub_100603f0@CUnknown100603f0@@QAEHXZ CUnknown100603f0::sub_100603f0
 0x100038f0 func   ?sub_102aa9e0@CAI_BaseNPCTroika@@QAEXPAX@Z CAI_BaseNPCTroika::sub_102aa9e0
 0x100038fa func   ?sub_1005df40@@YAXXZ sub_1005df40
