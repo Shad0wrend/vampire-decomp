@@ -94,4 +94,6 @@ public:
 	const char *m_psz45c;	// 0x045c: a name passed to the sound system's slot 0 by vfunc104 (the empty string when it is null)
 	char m_pad0460[0x46c - 0x460];
 	int m_n46c;	// 0x46c: the engine counter (gpGlobals +0x18) seen last by vfunc183
+	COutputEvent m_OnBreak470;	// 0x470: the output fired when the constraint breaks (0x18 bytes; its destructor body is COutputEvent::sub_100cd2d0)
+	void sub_1000cb8a();	// CBaseEntity destructor body (stub 0x1000cb8a -> 0x1009df20), the tail jump of the destructor body 0x1002b130 (sub_100121ac)
 };
