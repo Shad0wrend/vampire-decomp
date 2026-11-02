@@ -8,6 +8,12 @@ struct CNodeNPCFilterNode	// the node a filter looks at; real name not yet known
 	Vector *sub_102fb0d0(Vector *pOut, int nHull);	// the node's position for a hull (stub 0x1000d99a)
 };
 
+class CNodePosFilter
+{
+public:
+    virtual bool vfunc0(void *pEnt);	// slot 0: always true
+};
+
 class CNodeNPCFilter
 {
 public:
