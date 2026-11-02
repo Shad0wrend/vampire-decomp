@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103b5ad0 size=0x6
+#include "CNPC_VTremere.h"
+
+extern int g_1093c980;
+
+// TARGET: CNPC_VTremere::vfunc580
+void *CNPC_VTremere::vfunc580()
+{
+	return &g_1093c980;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b5b10 size=0x1e
 #include "CNPC_VTremere.h"
 

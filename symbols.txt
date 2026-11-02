@@ -3142,6 +3142,7 @@
 0x10006037 func   ?vfunc615@CPayphone@@UAE_NXZ CPayphone::vfunc615
 0x1000603c func   ?sub_1003c0e0@CUtlVector4@@QAEHHPBH@Z CUtlVector4::sub_1003c0e0
 0x10006041 func   ?vfunc451@CNPC_VTzimisceRunner@@UAEHXZ CNPC_VTzimisceRunner::vfunc451
+0x10006046 func   ?vfunc580@CNPC_VTremere@@UAEPAXXZ CNPC_VTremere::vfunc580
 0x1000604b func   _prop_physics_contested prop_physics_contested
 0x1000605a func   ?vfunc605@CNPC_VAsianVampire@@QAEHH@Z CNPC_VAsianVampire::vfunc605
 0x1000605f func   ?vfunc113@CNPC_VAndreiBlood@@UAEXXZ CNPC_VAndreiBlood::vfunc113
