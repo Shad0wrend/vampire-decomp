@@ -238,7 +238,7 @@ public:
 	int m_n153c;
 	char m_pad1540[0x1590 - 0x1540];
 	char m_b1590;
-	char m_pad1591[0x1b30 - 0x1591];
+	union { char m_pad1591[0x1b30 - 0x1591]; struct { char m_pad1591b[0x1a40 - 0x1591]; char m_b1a40; }; };	// 0x1a40: the "break condition pending" byte (cleared by the break test)
 	const char *m_pszFile1b30;	// 0x1b30: source file stamp of the last schedule pick
 	int m_nLine1b34;	// 0x1b34: its line
 	int m_n1b38;	// 0x1b38: set to 0x14 by the ideal state pick (SelectIdealState)
