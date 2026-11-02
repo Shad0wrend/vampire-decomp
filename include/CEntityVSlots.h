@@ -119,7 +119,8 @@ public:
 	virtual void slot260(int index, float value);	// "SetPoseParameter" by index
 	virtual float slot261(const char *pszName, float flValue);	// "SetPoseParameter" by name (the animating entity's slot; the float result is left on the FPU stack)
 	virtual char slot262(int attachment, void *pMatrix);	// animating: "GetAttachment" into a 3x4 matrix, a boolean answer in al
-	EVS(263) EVS(264) EVS(265)
+	EVS(263) EVS(264) virtual void *slot265(int a);	// prop: the physics object for the given index / bone (0 when none); CNPC_VManBat::sub_1038f430 hands it the argument and the result to the animlink
+	
 	virtual void slot266(int a);	// takes one argument (the player's activity-table call passes 0)
 	virtual char slot267();	// weapon: a boolean answer in al
 	virtual int slot268(void *pPlayer);	// vampire skill entity: the value the keyring hud message sends for the player
