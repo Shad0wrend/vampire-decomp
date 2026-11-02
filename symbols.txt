@@ -8768,6 +8768,7 @@
 0x1000f326 func   ?sub_101cfd80@@YA?AUTVec@@XZ sub_101cfd80
 0x1000f330 func   ?sub_1017c600@CBasePlayerUnit@@QAEXPAVCBaseEntity@@DHHH@Z CBasePlayerUnit::sub_1017c600
 0x1000f335 func   ?vfunc5@CNPC_VChangBrosClaw@@QAEPAV1@I@Z CNPC_VChangBrosClaw::vfunc5
+0x1000f33a func   ?sub_1014f710@@YGXPAX00@Z sub_1014f710
 0x1000f33f func   ?sub_1022d090@UtlMem@@QAEXXZ UtlMem::sub_1022d090
 0x1000f344 func   ?sub_100b3490@CBaseEntity@@QAEXPBM@Z CBaseEntity::sub_100b3490
 0x1000f349 func   ?sub_101d5a30@CStatDefault3List@@QAEXPBDH@Z CStatDefault3List::sub_101d5a30
