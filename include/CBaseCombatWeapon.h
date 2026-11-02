@@ -63,7 +63,7 @@ public:
 	CBCW_V(222) CBCW_V(223) CBCW_V(224) CBCW_V(225) CBCW_V(226) CBCW_V(227) CBCW_V(228) CBCW_V(229)
 	CBCW_V10(23) CBCW_V10(24)
 	virtual float vfunc250(int a); CBCW_V(251) CBCW_V(252) CBCW_V(253) CBCW_V(254) CBCW_V(255) CBCW_V(256) CBCW_V(257) virtual void vfunc258(float a, int b); CBCW_V(259)
-	CBCW_V(260) CBCW_V(261) CBCW_V(262) CBCW_V(263) CBCW_V(264) CBCW_V(265) CBCW_V(266) CBCW_V(267) CBCW_V(268)
+	CBCW_V(260) CBCW_V(261) CBCW_V(262) CBCW_V(263) CBCW_V(264) CBCW_V(265) CBCW_V(266) virtual char vfunc267(); CBCW_V(268)
 	virtual void vfunc269(CBaseCombatWeapon *pOther, Vector vecDir);	// scales vecDir by the value slot 1 of the global at 0x1070b244 reports for the current roll slot (sub_102517e0) and, when that is not zero, hands it to slot 170 of pOther
 	CBCW_V(270) CBCW_V(271)
 	virtual char *vfunc272();
