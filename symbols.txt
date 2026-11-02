@@ -1484,6 +1484,7 @@
 0x10003693 func   ?vfunc73@CRagdollPropSpecial@@UAE_NPAVCBaseEntity@@@Z CRagdollPropSpecial::vfunc73
 0x10003698 func   ?sub_100903e0@CBaseAnimating@@QAEDXZ CBaseAnimating::sub_100903e0
 0x1000369d func   ?sub_1003c9f0@CDataObjectAccessSystem@@QAEXHPAX@Z CDataObjectAccessSystem::sub_1003c9f0
+0x100036a2 func   ?sub_10027080@@YGXH@Z sub_10027080
 0x100036a7 func   ?sub_1006cd90@CStatDefaultList@@QAEPAUStatDefault@@XZ CStatDefaultList::sub_1006cd90
 0x100036ac func   _trigger_push trigger_push
 0x100036b1 func   ?vfunc438@CNPC_VGhoulCroucher@@QAEHXZ CNPC_VGhoulCroucher::vfunc438
