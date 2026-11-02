@@ -80,6 +80,7 @@ public:
 	CAI_Waypoint *sub_10303cd0(const float *vecStart, const float *vecEnd, const CBaseEntity *pTarget, int endFlags, int nodeID, int a6, int flYaw, int a9);	// BuildSimpleRoute with nodeTargetType 4 and navType 3 (ret 0x20)
 	char sub_10303fd0(const float *vecStart, const float *vecEnd, CBaseEntity *pEnt);	// stub 0x1000fe0c (ret 0xc, the first two arguments unused): true when the NPC object of pEnt (+0x94) has an edict (+0x2e0) and its slot 404 (relation to this pathfinder's outer NPC) answers 3 (D_HT?)
 	char sub_102f1900(int nodeNum, unsigned int collisionMask);	// "CAI_Pathfinder::CanFitAtNode": DevMsg "CanFitAtNode() called with no network!" without a network; for air nodes (type 2) and for climb nodes with a flag of 0x1d (type 4) the probe's stand check at the node's position must pass, then the hull test sub_102f1a20 at that position
+	int sub_10300b50(void *pVisited, const Vector *pA, float flMinDist, float flMaxZ, int a5, const Vector *pTarget, int nodeID, const Vector *pB);	// recursive node search (stub 0x10003d69, ret 0x20): marks nodeID in the visited bit set, walks its links to unvisited usable nodes farther from pA than pB is and closer to pTarget, returns the first node that passes (or -1)
 	char sub_102f1a20(const float *vecPosition, unsigned int collisionMask);	// the hull fit test at a position (stub 0x10008706)
 	int sub_102fcab0(CAI_PathfinderNode **ppNodes, int nNode, int nLink);	// stub 0x100114c3
 	CAI_Waypoint *sub_102fcbd0(int *pNext, int nNode);	// builds a chain of waypoints along pNext starting at nNode (ret 8)
