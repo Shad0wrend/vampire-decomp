@@ -89990,6 +89990,18 @@ char CUnknown101dbc60::sub_101dbb20(IKVNodeView *pKV)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dbc10 size=0x34
+#include "CUnknown101dbc60.h"
+#include "CUnknown101db210.h"
+
+int CUnknown101dbc60::sub_101dbc10(CBaseEntity *pTarget, CBaseCombatCharacter *pChar)
+{
+	if (Filter()->sub_101daad0(pTarget, pChar))
+		return ((CUnknown101db210Sub *)m_tail)->sub_101db870((int)pTarget, (int)pChar);
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dbc60 size=0x10e
 #include "CUnknown101dbc60.h"
 

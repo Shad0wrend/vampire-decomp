@@ -3236,6 +3236,7 @@
 0x100065d2 func   ?vfunc126@CBaseEntity@@UAEHH@Z CBaseEntity::vfunc126
 0x100065d7 func   ?vfunc5@CItemMMoneyClip@@QAEPAV1@I@Z CItemMMoneyClip::vfunc5
 0x100065dc func   ?sub_10148c00@@YAXPAMM0@Z sub_10148c00
+0x100065eb func   ?sub_101dbc10@CUnknown101dbc60@@QAEHPAVCBaseEntity@@PAVCBaseCombatCharacter@@@Z CUnknown101dbc60::sub_101dbc10
 0x100065f0 func   ?sub_10403500@@YAHXZ sub_10403500
 0x100065ff func   ?sub_10135290@CLogicPythonCheck@@QAE_NXZ CLogicPythonCheck::sub_10135290
 0x10006604 func   ?sub_102dc3e0@@YIXPAVCBaseEntity@@@Z sub_102dc3e0
