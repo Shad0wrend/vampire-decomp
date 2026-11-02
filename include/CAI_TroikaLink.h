@@ -60,11 +60,11 @@ struct CTroikaReqHolder	// the argument of CAI_BaseNPCTroika::sub_1029f610
 	CTroikaReq *m_pReq;	// 0x04
 };
 
-struct SNPCTroikaRef_t	// a patrol path holder embedded in the NPC (+0x658c, +0x6594): flag byte, requirement record
-{
+struct CTroikaPatrolRef	// a patrol path holder embedded in the NPC (+0x658c, +0x6594): flag byte, requirement record
+{	// (the free __stdcall sub_1029f5d0, stub 0x10009638, takes it as SNPCTroikaRef_t *, a struct its own source defines)
 	char m_bActive;	// 0x00
 	char m_pad0001[3];
-	CTroikaReq *m_pReq;	// 0x04: released by the free __stdcall sub_1029f5d0 (stub 0x10009638)
+	CTroikaReq *m_pReq;	// 0x04
 };
 
 struct CTroikaNodeObj
