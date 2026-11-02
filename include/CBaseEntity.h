@@ -290,7 +290,7 @@ public:
 	char m_pad0224[0x228 - 0x224];
 	void *m_pTimedOverlays;	// 0x0228
 	char m_pad022c[0x254 - 0x22c];
-	unsigned int m_hTouch254;	// entity handle notified by StartTouch / EndTouch
+	unsigned int m_hTouch254;	// entity handle notified by StartTouch / EndTouch (this is the move parent handle: SetParent 0x100a0670 assigns it with CBaseHandle::operator=(IHandleEntity*), byte +0x258 = the attachment index, handle +0x25c; +0x124 = the parent's name (parent +0x26c); +0x1b1 byte set by SetParent)
 	char m_pad0258[0x260 - 0x258];
 	EHANDLE m_hMoveChild260;	// 0x260: the first entity parented to this one
 	EHANDLE m_hMovePeer264;	// 0x264: the next entity parented to the same parent
