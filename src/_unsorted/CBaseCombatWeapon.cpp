@@ -454,6 +454,16 @@ int CBaseCombatWeapon::vfunc345()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10251f30 size=0x9
+namespace lifted {
+int sub_10010ea6();
+}
+const char * CBaseCombatWeapon::vfunc348()
+{
+    return (const char *)((lifted::sub_10010ea6()) + 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10252090 size=0x67
 #include "CBaseCombatWeapon.h"
 

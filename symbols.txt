@@ -799,6 +799,7 @@
 0x100024b9 func   ?sub_100963d0@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_100963d0
 0x100024be func   ?sub_101641d0@CBasePlayer@@QAEXH@Z CBasePlayer::sub_101641d0
 0x100024c3 func   ?sub_10205d00@CUnknown10205dc0@@QAEXPBD@Z CUnknown10205dc0::sub_10205d00
+0x100024c8 func   ?vfunc348@CBaseCombatWeapon@@UAEPBDXZ CBaseCombatWeapon::vfunc348
 0x100024dc func   ?sub_1029ef80@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_1029ef80
 0x100024e6 func   ?vfunc81@CItemGStake@@QAEHXZ CItemGStake::vfunc81
 0x100024eb func   _npc_VCameraSecurity npc_VCameraSecurity
