@@ -4729,6 +4729,7 @@
 0x10008b1b func   ?sub_10312aa0@CAI_Expresser@@QAEXPBDPAVCGlobalEntityList_Ent@@@Z CAI_Expresser::sub_10312aa0
 0x10008b20 func   ?sub_10251d30@@YIPADPAX@Z sub_10251d30
 0x10008b25 func   ?RotateRight@?$CUtlRBTree@HG@@QAEXG@Z CUtlRBTree<int,unsigned short>::RotateRight
+0x10008b25 func   ?RotateRight@?$CUtlRBTree@UCRBTree12Entry_102ec4a0@@G@@QAEXG@Z CUtlRBTree<CRBTree12Entry_102ec4a0,unsigned short>::RotateRight
 0x10008b25 func   ?sub_102ec6d0@CUtlRBTree12Unit@@QAEXG@Z CUtlRBTree12Unit::sub_102ec6d0
 0x10008b2f func   ?vfunc80@CResearchBook_LG_STEALTH@@QAEHXZ CResearchBook_LG_STEALTH::vfunc80
 0x10008b39 func   ?sub_102beae0@CUnknown102beae0@@QAEHHHH@Z CUnknown102beae0::sub_102beae0
