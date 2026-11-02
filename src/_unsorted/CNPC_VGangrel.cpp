@@ -10,6 +10,15 @@ void *sub_10377070(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10377090 size=0x6
+extern char *g_10639098;
+
+char *sub_10377090(void)
+{
+    return g_10639098;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103770b0 size=0x1e
 #include "CNPC_VGangrel.h"
 

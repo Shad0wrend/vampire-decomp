@@ -12237,6 +12237,7 @@
 0x100145c9 func   ?vfunc80@CItemGEDaneReport@@QAEHXZ CItemGEDaneReport::vfunc80
 0x100145ce func   _info_node_tzimisce_claw_right info_node_tzimisce_claw_right
 0x100145d3 func   ??0CWeaponMelee_MingXiaoMelee@@QAE@XZ CWeaponMelee_MingXiaoMelee::CWeaponMelee_MingXiaoMelee
+0x100145d8 func   ?sub_10377090@@YAPADXZ sub_10377090
 0x100145dd func   ?vfunc5@CItemGMilligansBuisnesscard@@QAEPAV1@I@Z CItemGMilligansBuisnesscard::vfunc5
 0x100145e2 func   ?vfunc328@CWeaponIArmor@@UAEHXZ CWeaponIArmor::vfunc328
 0x100145e7 func   ?vfunc574@CNPC_VMingXiao@@QAE?AVVector@@ABV2@HH@Z CNPC_VMingXiao::vfunc574
