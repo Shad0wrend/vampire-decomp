@@ -4342,6 +4342,18 @@ void CUtlVector16::sub_1003c2e0(int elem, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003c330 size=0x49
+#include "CUtlVector88.h"
+void *sub_10430fa0(void *, const void *, unsigned int);
+
+void CUtlVector88::sub_1003c330(int elem, int num)
+{
+	int numToMove = m_size - elem - num;
+	if (numToMove > 0 && num > 0)
+		sub_10430fa0(m_pMemory + (elem + num) * 104, m_pMemory + elem * 104, numToMove * 104);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003c3a0 size=0x3
 struct CUnknown1003c3a0 { void * sub_1003c3a0(); };
 void * CUnknown1003c3a0::sub_1003c3a0()

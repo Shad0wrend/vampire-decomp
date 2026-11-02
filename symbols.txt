@@ -1671,6 +1671,7 @@
 0x10003acb func   ?sub_103058c0@CAI_Pathfinder@@QAE_NHPBM00PBVCBaseEntity@@PAUAIMoveTrace_t@@I@Z CAI_Pathfinder::sub_103058c0
 0x10003ad0 func   ?sub_10227440@@YGXH@Z sub_10227440
 0x10003ad5 func   ?sub_1025c6a0@CUtlRBTreeBig@@QAEGPBX@Z CUtlRBTreeBig::sub_1025c6a0
+0x10003ada func   ?sub_1003c330@CUtlVector88@@QAEXHH@Z CUtlVector88::sub_1003c330
 0x10003adf func   ?sub_100de690@@YAHXZ sub_100de690
 0x10003ae4 func   ?sub_103e7e80@@YAHXZ sub_103e7e80
 0x10003ae9 func   ?sub_100735a0@CUnknown100735a0@@QAEXH@Z CUnknown100735a0::sub_100735a0
