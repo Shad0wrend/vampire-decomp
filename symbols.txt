@@ -6961,6 +6961,7 @@
 0x1000c018 func   ?sub_102fce80@CAI_Pathfinder@@QAE_NHPAUCAI_PathfinderLink@@@Z CAI_Pathfinder::sub_102fce80
 0x1000c01d func   ?sub_1026a030@CAI_BaseNPC@@QAEXH@Z CAI_BaseNPC::sub_1026a030
 0x1000c022 func   ?vfunc113@CSoundScheme@@UAEXXZ CSoundScheme::vfunc113
+0x1000c027 func   ?vfunc464@CBasePlayer@@UAEMXZ CBasePlayer::vfunc464
 0x1000c031 func   _item_p_research_lg_stealth item_p_research_lg_stealth
 0x1000c03b func   ?sub_100a8390@CBaseEntity@@QAEXPAV1@M@Z CBaseEntity::sub_100a8390
 0x1000c040 func   _npc_maker_zombie npc_maker_zombie
