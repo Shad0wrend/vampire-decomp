@@ -42,4 +42,5 @@ public:
 	bool vfunc309();	// as in CWeaponIWritten (transplant)
 	void vfunc321();	// as in CWeaponIWritten (transplant)
 	virtual void *vfunc80();	// slot 80: the class's datamap
+	int sub_103f4020();
 };
