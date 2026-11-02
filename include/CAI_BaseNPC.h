@@ -159,7 +159,7 @@ public:
 	CAI_NPC_V(500) CAI_NPC_V(501) CAI_NPC_V(502) CAI_NPC_V(503) CAI_NPC_V(504) CAI_NPC_V(505) CAI_NPC_V(506) CAI_NPC_V(507) CAI_NPC_V(508)
 	virtual bool vfunc509();	// true when the NPC may start the idle/engine request (state 1 or 3, flag bits clear, no live dialog partner, not busy)
 	virtual bool vfunc510();
-	CAI_NPC_V(511) CAI_NPC_V(512)
+	CAI_NPC_V(511) virtual int vfunc512();
 	virtual unsigned int vfunc513();	// the NPC's class flags (bit 26 marks the NPCs that must be in a squad)
 	CAI_NPC_V(514) CAI_NPC_V(515)
 	virtual float vfunc516();
