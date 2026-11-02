@@ -4017,6 +4017,7 @@
 0x10007923 func   ?vfunc8@CEntityListSystem@@QAEPAV1@I@Z CEntityListSystem::vfunc8
 0x1000792d func   ?sub_100f41e0@@YAXHMMMH@Z sub_100f41e0
 0x10007932 func   ?sub_103dad80@@YAPAXXZ sub_103dad80
+0x10007937 func   ?sub_10149de0@@YA_NXZ sub_10149de0
 0x1000793c func   ?sub_1004eab0@@YAHXZ sub_1004eab0
 0x10007941 func   ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ CBaseEntity::vfunc193
 0x1000794b func   ?GrowVector@?$CUtlVector@HV?$CUtlMemory@H@@@@QAEXH@Z CUtlVector<int,CUtlMemory<int> >::GrowVector

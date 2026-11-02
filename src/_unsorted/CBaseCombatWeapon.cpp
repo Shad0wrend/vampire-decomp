@@ -72,6 +72,11 @@ char CBaseCombatWeapon::vfunc313()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10149de0 size=0x3
+// TARGET: sub_10149de0
+bool __cdecl sub_10149de0() { return true; }
+// END FUNCTION
+
 // FUNCTION: 0x10149e00 size=0x3
 // TARGET: sub_10149e00
 int __fastcall sub_10149e00(int x) { return x; }
