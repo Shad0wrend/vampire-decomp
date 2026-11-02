@@ -11,6 +11,20 @@ datamap_t *CAmbientGeneric::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ac230 size=0x44
+#include "CAmbientGeneric.h"
+
+// TARGET: CAmbientGeneric::CAmbientGeneric
+CAmbientGeneric::CAmbientGeneric() : CAmbientGenericBase(0)
+{
+	m_b04dc = 0;
+	m_b04dd = 0;
+	m_b04de = 0;
+	m_b04df = 0;
+	m_n04e0 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ac2a0 size=0x3
 bool CAmbientGeneric::vfunc136()
 {
