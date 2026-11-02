@@ -176933,6 +176933,36 @@ int sub_103f1d90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f29d0 size=0x4b
+#include "CBaseEntity.h"
+
+void *sub_100aa720(unsigned int size);
+extern int vt_104e3eac[];	// CWeaponHolyLight vftable
+
+struct CWeaponHolyLightCtorCall_103f29d0
+{
+	void sub_103f1cb0(int a);
+};
+
+extern const char g_1062eb5c[];
+
+// TARGET: item_d_holy_light
+extern "C" CBaseEntity *item_d_holy_light()
+{
+	void *mem = sub_100aa720(0x914);
+	CBaseEntity *p;
+	if (mem) {
+		((CWeaponHolyLightCtorCall_103f29d0 *)mem)->sub_103f1cb0(15);
+		*(int *)mem = (int)vt_104e3eac;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_1062eb5c);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f2de0 size=0x72
 #include "SendProp.h"
 
