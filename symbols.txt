@@ -693,6 +693,7 @@
 0x10002243 func   ?sub_10025ed0@@YAHXZ sub_10025ed0
 0x10002248 func   ?vfunc103@CSecCamera@@UAEXXZ CSecCamera::vfunc103
 0x1000224d func   ?sub_100d30a0@@YAXXZ sub_100d30a0
+0x10002252 func   ??0CEQEventFull@@QAE@ABU0@@Z CEQEventFull::CEQEventFull
 0x10002257 func   ?sub_102f4940@CAI_NodeGraph@@QAEXPAVCAI_Node@@H@Z CAI_NodeGraph::sub_102f4940
 0x10002261 func   ?vfunc24@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc24
 0x10002266 func   ?sub_100bc5e0@@YIXPAHHH@Z sub_100bc5e0
