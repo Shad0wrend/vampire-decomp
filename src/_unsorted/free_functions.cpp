@@ -52738,6 +52738,35 @@ int CUnknown1010d0b0::sub_1010d0b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010d3a0 size=0x6b
+#include <new.h>
+#include "CBaseEntity.h"
+#include "COutputEvent.h"
+
+void *sub_100aa720(unsigned int size);
+extern char g_1045ed3c[];	// the CBreakable vtable
+
+// TARGET: func_breakable
+extern "C" CBaseEntity *func_breakable()
+{
+	void *mem = sub_100aa720(0x49c);
+	CBaseEntity *p;
+	if (mem)
+	{
+		p = (CBaseEntity *)mem;
+		new (p) CBaseEntity(0);
+		*(int *)((char *)p + 0x458) = -1;
+		((COutputEvent *)((char *)p + 0x46c))->sub_100cd2a0();
+		((COutputEvent *)((char *)p + 0x484))->sub_100cd2a0();
+		*(char **)p = g_1045ed3c;
+	}
+	else
+		p = 0;
+	p->vfunc106("func_breakable");
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010d4b0 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
