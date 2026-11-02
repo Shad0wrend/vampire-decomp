@@ -233,3 +233,88 @@ void CAI_Navigator::vfunc17(CAI_NavGoal *pGoal)
 	pGoal->m_pRoute = m_p30;
 }
 // END FUNCTION
+
+// FUNCTION: 0x102efaa0 size=0x21a
+#include "CAI_Navigator.h"
+#include "ScopeTrace.h"
+#include "globalvars.h"
+#include <string.h>
+
+#define V4(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3();
+#define V16(a) V4(a##a) V4(a##b) V4(a##c) V4(a##d)
+#define V64(a) V16(a##a) V16(a##b) V16(a##c) V16(a##d)
+
+struct NavMoveOwner {
+	V64(p) V64(q) V64(r) V16(s) V4(t) V4(u) virtual void v0();
+	virtual Vector *vfunc217();
+	V16(w) V4(x0) V4(x1) V4(x2) virtual void y0(); virtual void y1();
+	virtual float vfunc248();
+	V16(a1) V16(a2) V16(a3) V4(b1) V4(b2) V4(b3) virtual void c0();
+	virtual void vfunc310(int act);
+};
+extern float g_104454c4;
+
+struct NavMoveOwnerData {
+	char pad0[0x6f0];
+	int m6f0;
+	char pad1[0xfec - 0x6f4];
+	int mAct;
+};
+struct NavMoveTrace {
+	NavMoveTrace() { memset(this, 0, sizeof(*this)); }
+	char m_b[0x38];
+};
+struct NavMoveGoal {
+	NavMoveGoal() { memset(this, 0, sizeof(*this)); }
+	char m_pre[0x44];
+	NavMoveTrace m_trace;
+};
+
+static inline float NavLen(const Vector &v)
+{
+	return FastSqrt(v.x * v.x + (v.y * v.y + v.z * v.z));
+}
+
+namespace block_102efaa0 {
+struct CAI_NavigatorUnit : CAI_Navigator {
+	int sub_102ee3f0();
+};
+int CAI_NavigatorUnit::sub_102ee3f0() { return m_p30->m_i2c; }
+}
+using namespace block_102efaa0;
+
+#define OWNER ((NavMoveOwner *)m_pOuter)
+#define ODATA ((NavMoveOwnerData *)m_pOuter)
+
+// TARGET: CAI_Navigator::vfunc12
+int CAI_Navigator::vfunc12(int a)
+{
+	ScopeTrace trace("CAI_Navigator::MoveNormal", g_106b8540, g_106b8540);
+	if (!sub_102efd50())
+		return -4;
+	int result = -4;
+	if (vfunc16(&result))
+		return result;
+	float flDist = OWNER->vfunc248();
+	int act = ODATA->mAct;
+	int s6f0 = ODATA->m6f0;
+	Vector savedPos = *OWNER->vfunc217();
+	OWNER->vfunc310(((CAI_NavigatorUnit *)this)->sub_102ee3f0());
+	if (OWNER->vfunc248() <= g_104454c4 && ODATA->mAct == 2)
+		return 0;
+	NavMoveGoal goal;
+	vfunc17((CAI_NavGoal *)&goal);
+	result = vfunc15(&goal, a);
+	if (result == 0) {
+		if (flDist < 0.01) {
+			if (NavLen(*OWNER->vfunc217() - savedPos) < 0.01) {
+				ODATA->m6f0 = s6f0;
+				OWNER->vfunc310(act);
+			}
+		}
+		if (result == 0 && !m_b51)
+			vfunc6();
+	}
+	return result;
+}
+// END FUNCTION
