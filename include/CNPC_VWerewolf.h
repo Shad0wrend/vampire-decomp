@@ -193,6 +193,7 @@ public:
 	void sub_103d8df0();	// stub 0x10003369: the event 0x835 handler
 	void vfunc113();	// slot 113 "CNPC_VWerewolf::Activate": scope trace (entity name), then CAI_BaseNPCTroika::vfunc113
 	void sub_103d1ca0();	// "CNPC_VWerewolf::StartSearchTimer": stores the time stamp counter in a global
+	bool sub_103d1d60(const char *pszName, bool bValue);	// "CNPC_VWerewolf::ReportSearchTimer": scope trace + cycle sample; returns bValue
 	void *sub_103d7620(int key);	// "CNPC_VWerewolf::GetDataForHint": scope trace (entity name), the 0x48-byte record at +0x6714 (count at +0x6720) whose key at +4 equals the argument, or null
 	void sub_103d99a0(inputdata_t *pInput);	// "CNPC_VWerewolf::InputToggleDoorState": scope trace (entity name), stores the integer input clamped to 0..3 at +0x6680 (0 when the input is not an integer)
 	void vfunc465(const char *msg);	// slot 465, scope-traced wrapper
