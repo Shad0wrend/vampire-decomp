@@ -8807,6 +8807,7 @@
 0x1000f772 func   ?vfunc80@CWeaponMelee_Claws_Protean5@@QAEHXZ CWeaponMelee_Claws_Protean5::vfunc80
 0x1000f777 func   ?sub_10247800@CUnknown10247800@@QAEPADXZ CUnknown10247800::sub_10247800
 0x1000f77c func   ?vfunc5@CItemMMoneyEnvelope@@QAEPAV1@I@Z CItemMMoneyEnvelope::vfunc5
+0x1000f781 func   ?sub_101bb530@CAISound@@QAEXPAUinputdata_t@@@Z CAISound::sub_101bb530
 0x1000f786 func   ?sub_103499a0@CUnknown103499a0@@QAE_NXZ CUnknown103499a0::sub_103499a0
 0x1000f790 func   ?vfunc460@CAI_BaseNPC@@UAEHXZ CAI_BaseNPC::vfunc460
 0x1000f795 func   ?vfunc463@CNPC_VCamera@@UAEXHH@Z CNPC_VCamera::vfunc463

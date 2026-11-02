@@ -80257,6 +80257,18 @@ int sub_101bb500()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bb530 size=0x3b
+#include "CAISound.h"
+#include "CSoundEnt.h"
+#include "inputdata_t.h"
+#include "CEntityVSlots.h"
+// TARGET: CAISound::sub_101bb530
+void CAISound::sub_101bb530(inputdata_t *pInput)
+{
+	CSoundEnt::sub_101bac90(m_iSoundType, ((CEntityVSlots *)this)->slot217(), pInput->value.IntOrZero(), 0.2f, 0, this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bb620 size=0x1a
 namespace lifted {
 extern int g_1059a620;
