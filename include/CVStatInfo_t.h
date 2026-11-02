@@ -68,4 +68,5 @@ public:
 	void sub_101fe6a0(CVStatKV *pKV, void *pDefaults);	// "CVStatInfo_t::MidLoad": scope trace (empty entity name); Msg when there is no data, else loads the value-name hooks: a "NameMapping" id (+8), else the "NameFunc" picks the function pair at +0 / +4 (ClanNameFunc, CharTemplateNameFunc, StartingEquipFunc, ExcludedEquipFunc), else the default function at +0
 	void sub_101fe8b0(CVStatKV *pKV, void *pDefaults);	// "CVStatInfo_t::PostLoad": scope trace (empty entity name); Msg when there is no data, else loads the value records +0x4c "Min", +0x60 "Max", +0x74 "MinSell" (a copy of Min when unset), +0x88 "MaxBuy" (a copy of Max when unset), +0x9c "Default", the action list (+0x10c), the "IncPredependency" list (+0x120) and the cost (+0xb0), which is copied from pDefaults+0x30 when the cost is missing
 	void sub_101fef90(int a, CVStatInfoList_t *pList);	// "CVStatInfo_t::Debug_Display" (stub 0x1001339a), called by the list's Debug_Display with the list's dword at +0x2c
+	bool sub_101fef10(int a);	// "CVStatInfo_t::PassesIncPreDependencyTest"
 };
