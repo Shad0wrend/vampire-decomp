@@ -391,7 +391,7 @@ public:
 	virtual void vfunc373();
 	virtual void vfunc374();
 	virtual void vfunc375();
-	virtual void vfunc376_slot();
+	virtual int vfunc376_slot(int act);	// slot 376 (+0x5e0): TranslateActivity, see vfunc376
 	virtual void vfunc377();
 	virtual void vfunc378();
 	virtual void vfunc379();
