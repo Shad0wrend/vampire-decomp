@@ -10743,6 +10743,7 @@
 0x10012035 func   ?vfunc0@CTEBeamLaser@@UAEPAUServerClass@@XZ CTEBeamLaser::vfunc0
 0x1001203f func   ?sub_102276f0@@YAXXZ sub_102276f0
 0x10012044 func   ?sub_10066a00@@YAXHHPAHHHH@Z sub_10066a00
+0x10012049 func   ?sub_10377070@@YAPAXXZ sub_10377070
 0x1001204e func   ?sub_1014f830@@YA_NXZ sub_1014f830
 0x10012053 func   ?sub_100bdf50@bf_write@@QAEPAV1@PBDPAXHH@Z bf_write::sub_100bdf50
 0x10012058 func   ?vfunc5@CAuspexAura@@QAEPAV1@I@Z CAuspexAura::vfunc5
