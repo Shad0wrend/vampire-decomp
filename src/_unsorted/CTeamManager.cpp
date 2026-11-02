@@ -24,3 +24,14 @@ CTeamManager *CTeamManager::vfunc8(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10230820 size=0x8
+#include "CTeamManager.h"
+namespace lifted {
+struct C10010785 { int sub_10010785(); };
+}
+int CTeamManager::vfunc2()
+{
+    return ((lifted::C10010785 *)(this + 8))->sub_10010785();
+}
+// END FUNCTION

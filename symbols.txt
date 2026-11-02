@@ -6719,6 +6719,7 @@
 0x1000bdc5 func   ?vfunc5@CItemGEDaneReport@@QAEPAV1@I@Z CItemGEDaneReport::vfunc5
 0x1000bdcf func   ?vfunc516@CNPC_VDog@@QAEMXZ CNPC_VDog::vfunc516
 0x1000bdd4 func   ?sub_100bc5a0@CUnknown100bc5a0@@QAEHXZ CUnknown100bc5a0::sub_100bc5a0
+0x1000bdde func   ?vfunc2@CTeamManager@@QAEHXZ CTeamManager::vfunc2
 0x1000bde3 func   ?sub_1010b3c0@CFire@@QAEXXZ CFire::sub_1010b3c0
 0x1000bded func   ?sub_10170cf0@CBasePlayer@@QAEXID@Z CBasePlayer::sub_10170cf0
 0x1000bdf2 func   ?sub_1006b7a0@@YAHXZ sub_1006b7a0
