@@ -422,5 +422,6 @@ public:
 	int sub_10265ed0(struct CTakeDamageInfo *pInfo);	// CAI_BaseNPC::vfunc390 (stub 0x10001bef), called directly
 	void sub_10299a80();	// stub 0x10013714: validates the entity m_p62ec (walks the global list at 0x10927194, next at +0x540, children count at +0x584 via CUnknown102da9a0::sub_102da9a0) with DevMsg("ERROR: %s loc(...) thinks they ...") and clears m_p62ec on failure
 	void vfunc55(int, int, int, int, int, int, int);	// slot 55: empty override (ret 0x1c); declared as a plain member so the derived class's slot numbering is not shifted
+	void vfunc57(int, int, int, int, int, int, int);	// slot 57: empty override (ret 0x1c)
 	// +0x65e0 (const char *, name for sub_1029f340, empty string 0x106b8540 when null) and +0x65e4 (int result) are not declared: derived classes' members start at +0x65c0
 };
