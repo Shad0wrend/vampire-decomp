@@ -39,5 +39,5 @@ public:
 	int vfunc80();
 	int vfunc81();
 	datamap_t * vfunc82();
-	int vfunc241();
+	void vfunc241();
 };
