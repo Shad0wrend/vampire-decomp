@@ -346,7 +346,9 @@ public:
 	int m_nPartMode;	// 0x210C
 	char m_pad2110[0x2148 - 0x2110];	// 0x2110 .. 0x2147
 	float m_f2148;	// 0x2148: the next time of the random impulse (sub_10170d60)
-	char m_pad214C[0x22a8 - 0x214c];	// 0x214C .. 0x22A7
+	char m_pad214C[0x229a - 0x214c];
+	char m_b229A;	// 0x229A
+	char m_pad229B[0x22a8 - 0x229b];	// 0x229B .. 0x22A7
 	float m_f22A8;
 	float m_f22AC;
 	float m_f22B0;
