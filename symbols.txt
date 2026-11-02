@@ -8107,6 +8107,7 @@
 0x1000e061 func   ?vfunc39@CTriggerBombSite@@QAEXPAVCBaseEntity@@@Z CTriggerBombSite::vfunc39
 0x1000e066 func   ?sub_1042fbc0@@YAXXZ sub_1042fbc0
 0x1000e06b func   ?sub_1039f030@CNPC_VMingXiaoTentacle@@QAEXXZ CNPC_VMingXiaoTentacle::sub_1039f030
+0x1000e070 func   ?sub_102500d0@CBaseCombatWeapon@@QAEXXZ CBaseCombatWeapon::sub_102500d0
 0x1000e075 func   _item_g_ring_silver item_g_ring_silver
 0x1000e07a func   _trigger_stealth_mod trigger_stealth_mod
 0x1000e07f func   _env_physimpact env_physimpact

@@ -122445,6 +122445,20 @@ void CUnknown10250080::sub_10250080()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102500d0 size=0x22
+#include "CBaseCombatWeapon.h"
+#include "CGameRules.h"
+
+extern CGameRules *g_1070ba0c;
+
+// TARGET: CBaseCombatWeapon::sub_102500d0
+void CBaseCombatWeapon::sub_102500d0()
+{
+	if (g_1070ba0c->vfunc48((int)this) - 1 == 0)
+		vfunc187();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10250400 size=0x104
 #include "CUnknown10250830.h"
 extern CUnknown10250830 g_1088ae60;
