@@ -36,6 +36,7 @@ public:
 	void vfunc453();	// slot 453: CAI_BaseNPCTroika::vfunc453, then (slot 158 holds, state slot 464 is 1, flag bit 7 of +0x4c clear or byte +0x65f4 clear) sets condition 0x3e
 	void sub_102ad140();	// CAI_BaseNPCTroika::vfunc453 (stub 0x10011b35), called directly
 	void sub_10269eb0(int condition);	// CAI_BaseNPC SetCondition (stub 0x100123f5), called directly
+	void *vfunc580();	// slot 580 (plain member; the model derives from CBaseEntity): returns the address of the global object g_1093b498 (the condition-table owner, CAI_CondOwner in the NPC hierarchy)
 public:
     virtual datamap_t * vfunc82();
 };
