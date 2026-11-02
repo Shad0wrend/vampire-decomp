@@ -11013,6 +11013,7 @@
 0x10012a21 func   ?vfunc1@CTraceFilterWorldOnly@@UAEHXZ CTraceFilterWorldOnly::vfunc1
 0x10012a26 func   ?vfunc80@CPhysBox@@UAEHXZ CPhysBox::vfunc80
 0x10012a2b func   ?sub_1007ee20@@YIXPAH@Z sub_1007ee20
+0x10012a35 func   ?sub_101376c0@@YAMPAM@Z sub_101376c0
 0x10012a3a func   ?sub_10119750@@YAXPBDZZ sub_10119750
 0x10012a3f func   _func_movelinear func_movelinear
 0x10012a44 func   _info_node_werewolf_hint info_node_werewolf_hint

@@ -58726,6 +58726,30 @@ float __cdecl sub_101374f0(float x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101376c0 size=0x42
+// TARGET: sub_101376c0
+float __cdecl sub_101376c0(float *p)
+{
+	float f = 1.0f;
+	__asm {
+		mov eax, dword ptr [p]
+		movss xmm5, dword ptr [f]
+		movups xmm4, xmmword ptr [eax]
+		movaps xmm1, xmm4
+		mulps xmm1, xmm4
+		movhlps xmm3, xmm1
+		movaps xmm2, xmm1
+		shufps xmm2, xmm2, 1
+		addss xmm1, xmm2
+		addss xmm1, xmm3
+		maxss xmm1, xmm5
+		rcpss xmm0, xmm1
+		movss dword ptr [f], xmm0
+		fld dword ptr [f]
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10137c30 size=0x28
 #include <math.h>
 extern float g_1070c8ac[];
