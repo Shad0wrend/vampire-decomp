@@ -197,6 +197,13 @@ public:
 
 	void vfunc310(int act);	// slot 310 (plain overload of the placeholder slot, ret 4): switches the ideal activity (+0xff0) unless it is the current one (+0xfec) or the NPC is in activity 2 and act is not 0, then sub_10272130 / sub_10272490
 	int vfunc440(int schedule);	// slot 440 "TranslateSchedule" base implementation (declared as a plain member like the subclasses' overrides): schedule 0x2e (a failed scripted sequence) becomes 0x2f..0x33 by the move type at +0x5f60 of the scripted sequence entity (handle at +0x5d74), after a DevWarning when that entity is gone; unchanged otherwise
+	void sub_1027c820();	// destructor body (called by the vfunc5 deleting destructors and CCineNPC / CGenericNPC ...): vptr 0x104995c4, second vptr 0x10499594 at +0x19b0, sub_102653f0(this), sub_10273e40; deletes (slot 0 with 1) the owned objects at +0x5d3c, +0x5d34, +0x5d44, +0x5d38, +0x5d40, +0x5cdc in that order when set; ~COutputEvent (sub_100cd2d0) of the 12 outputs +0x5f14 down to +0x5e0c step 0x18 (descending); CUtlVector at +0x5d48 (size +0x5d54 zeroed, sub_1027faa0, Plat_Free chain); CAI_Component vptr 0x1049a0f8 at +0x5cf4; outputs +0x5c20, +0x5c08, +0x5bf0, +0x5bd8; sub_102cc6a0 on the members at +0x1ae0 and +0x1a9c; tail jmp 0x100078c4 -> CBaseCombatCharacter body 0x103274d0
+	void *&Owned5d3c() { return *(void **)((char *)this + 0x5d3c); }	// pathfinder (created by slot 430)
+	void *&Owned5d34() { return *(void **)((char *)this + 0x5d34); }	// navigator
+	void *&Owned5d44() { return *(void **)((char *)this + 0x5d44); }	// motor
+	void *&Owned5d38() { return *(void **)((char *)this + 0x5d38); }	// local navigator
+	void *&Owned5d40() { return *(void **)((char *)this + 0x5d40); }	// move probe
+	void *&Owned5cdc() { return *(void **)((char *)this + 0x5cdc); }	// senses
 	void sub_1027d170();	// stub 0x100119b9: run by vfunc440 when the scripted sequence entity is gone, before schedule 1 is asked for
 	void sub_10270aa0(CBaseEntity *pEnt);	// stores pEnt's entity handle at +0x5d90 (-1 for null)
 	void sub_10269a20(int a);	// stub 0x100041b0, run by TaskFail with 0x5c
