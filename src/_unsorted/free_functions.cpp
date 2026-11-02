@@ -181497,6 +181497,20 @@ void CUtlVector192::sub_1040aff0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040b0b0 size=0x42
+#include "CUtlVector192.h"
+
+extern "C" void *memmove(void *, const void *, unsigned int);
+
+// TARGET: CUtlVector192::sub_1040b0b0
+void CUtlVector192::sub_1040b0b0(int elem, int num)
+{
+	int numToMove = m_size - elem - num;
+	if (numToMove > 0 && num > 0)
+		memmove(&m_pMemory[(elem + num) * 192], &m_pMemory[elem * 192], numToMove * 192);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040b120 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
