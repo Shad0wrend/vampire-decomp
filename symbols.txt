@@ -9573,6 +9573,7 @@
 0x100106ae func   ?sub_101ed9e0@CUnknown101ed9e0@@QAEPAV1@H@Z CUnknown101ed9e0::sub_101ed9e0
 0x100106b3 func   ?sub_101300e0@@YAHXZ sub_101300e0
 0x100106b8 func   ?sub_10203780@@YAPBDH@Z sub_10203780
+0x100106bd func   ?sub_101abec0@@YA_NXZ sub_101abec0
 0x100106d1 func   ??0CAI_Navigator@@QAE@H@Z CAI_Navigator::CAI_Navigator
 0x100106d6 func   ?vfunc509@CNPC_VCamera@@UAE_NXZ CNPC_VCamera::vfunc509
 0x100106e0 func   ?sub_100b4e30@@YAXPAX@Z sub_100b4e30

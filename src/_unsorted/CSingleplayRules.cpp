@@ -135,6 +135,15 @@ void CSingleplayRules::vfunc35(CBaseEntity * a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101abec0 size=0xf
+extern int g_1070ba3c;
+
+bool sub_101abec0()
+{
+    return g_1070ba3c == 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101abee0 size=0x5
 bool CSingleplayRules::vfunc37(int a0)
 {
