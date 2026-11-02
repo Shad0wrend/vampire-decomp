@@ -12102,6 +12102,7 @@
 0x10014646 func   ?sub_10190810@@YIXPADH0@Z sub_10190810
 0x1001464b func   ?sub_10324500@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_10324500
 0x10014650 func   ?vfunc2@CTEPlayerDecal@@UAEPAV1@I@Z CTEPlayerDecal::vfunc2
+0x10014655 func   ?sub_102c57c0@CAI_BaseNPCTroika@@QAEMPAVCBaseCombatWeapon@@@Z CAI_BaseNPCTroika::sub_102c57c0
 0x1001465a func   ?vfunc130@CNPC_VMingXiaoTentacle@@UAEXH@Z CNPC_VMingXiaoTentacle::vfunc130
 0x1001465f func   ?vfunc79@CBaseAnimatingOverlay@@QAEHXZ CBaseAnimatingOverlay::vfunc79
 0x10014664 func   ?sub_1032f930@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_1032f930
