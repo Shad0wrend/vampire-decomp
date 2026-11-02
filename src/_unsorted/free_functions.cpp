@@ -36204,6 +36204,18 @@ void CMomentaryRotButton::sub_100cb110()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cb580 size=0x67
+#include "CCameraKeyFrame.h"
+
+// TARGET: camera_keyframe
+extern "C" CBaseEntity *camera_keyframe()
+{
+    CCameraKeyFrame *p = new CCameraKeyFrame;
+    p->vfunc106("camera_keyframe");
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cb670 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
