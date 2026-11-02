@@ -61,7 +61,8 @@ public:
 	virtual float *vfunc217();	// slot 217 \"GetAbsOrigin\": the position
 	virtual void t0518(); virtual void t0519();
 	virtual void *vfunc220();
-	virtual void t0521(); virtual void t0522(); virtual void t0523(); virtual void t0524();
+	virtual float *vfunc221();	// slot 221 "GetAngles"
+	virtual void t0522(); virtual void t0523(); virtual void t0524();
 	virtual void t0525(); virtual void t0526(); virtual void t0527();
 	VT_SLOTS10(t06)
 	virtual void t070(); virtual void t071(); virtual void t072();
