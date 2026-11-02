@@ -53391,6 +53391,30 @@ int CUnknown10114aa0::sub_10114aa0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10114d00 size=0x4b
+#include "CConstraintAnchor.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(unsigned int size);
+extern char g_1046173c[];	// CFuncMonitor vftable
+extern const char g_105706d0[];
+
+// TARGET: func_monitor
+extern "C" CBaseEntity *func_monitor()
+{
+	void *mem = sub_100aa720(0x460);
+	CBaseEntity *p;
+	if (mem) {
+		((CConstraintAnchorBase *)mem)->sub_1009d980(0);
+		*(void **)mem = g_1046173c;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_105706d0);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10114f20 size=0x93
 #include "SendTable.h"
 
