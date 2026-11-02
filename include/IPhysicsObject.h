@@ -19,7 +19,8 @@ public:
 	virtual void vfunc30(const Vector *pPosition); virtual void vfunc31(const Vector *pVelocity, const Vector *pAngVelocity);	// slot 30 SetPosition-like (one vec), slot 31 AddVelocity-like (ragdoll code 0x1019c0b0)
 	virtual void vfunc32(const Vector *pForce, const Vector *pWorldPosition, Vector *pCenterForce, Vector *pCenterTorque);	// slot 32 CalculateForceOffset
 	virtual void vfunc33(const Vector *pForce, const Vector *pWorldPosition, Vector *pCenterForce, Vector *pCenterTorque);	// slot 33: the same four arguments (CPhysThruster::vfunc241 asks it for the thruster's linear / angular parts)
-	virtual void vfunc34(); virtual void vfunc35(); virtual void vfunc36(); virtual void vfunc37();
+	virtual void vfunc34(); virtual void vfunc35(); virtual void vfunc36(const void *pMatrix, int bTeleport);	// slot 36 (+0x90): SetPositionMatrix(matrix3x4 *, 1) (0x1019c330)
+	virtual void vfunc37(Vector *pVec, int a);	// slot 37 (+0x94): (vec, 0) (0x1019c0b0)
 	virtual void vfunc38(); virtual void vfunc39(float *pPosition, float *pAngles);	// slot 39 GetPosition
 	virtual void vfunc40(float *pVelocity, float *pAngVelocity);	// slot 40 GetVelocity (either pointer may be null)
 	virtual void vfunc41(const Vector *pVelocity, const Vector *pAngVelocity);	// slot 41 AddVelocity
