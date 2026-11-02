@@ -20,6 +20,16 @@ int CWeaponRanged_Rifle_Remington::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10235f70 size=0x6
+extern char g_105bb898[];
+
+// TARGET: sub_10235f70
+void *sub_10235f70()
+{
+	return g_105bb898;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102360e0 size=0x1e
 #include "CWeaponRanged_Rifle_Remington.h"
 
