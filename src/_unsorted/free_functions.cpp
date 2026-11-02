@@ -77573,6 +77573,26 @@ int *sub_101a5e10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6260 size=0x43
+#include "CCineNPC.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(int size);
+extern char g_10594760[];
+
+// TARGET: scripted_sequence
+extern "C" CBaseEntity *scripted_sequence()
+{
+	void *mem = sub_100aa720(0x608c);
+	CCineNPC *p;
+	if (mem)
+		p = ((CCineNPC *)mem)->sub_101a62d0();
+	else
+		p = 0;
+	((CBaseEntity *)p)->vfunc106(g_10594760);
+	return (CBaseEntity *)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a62d0 size=0x61
 extern int vt_104771e4;
 extern int vt_104771b8;
