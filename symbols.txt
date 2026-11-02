@@ -6343,6 +6343,7 @@
 0x1000b0aa func   _npc_VBrujah npc_VBrujah
 0x1000b0b4 func   ?sub_1032e120@CBaseCombatCharacter@@QAEPAXPBD@Z CBaseCombatCharacter::sub_1032e120
 0x1000b0b9 func   ?sub_104280f0@@YAHHPAH0@Z sub_104280f0
+0x1000b0c3 func   ?vfunc452@CNPC_VTest@@UAEDXZ CNPC_VTest::vfunc452
 0x1000b0c8 func   ?vfunc180@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc180
 0x1000b0cd func   ?vfunc0@CPhysicsShake@@UAEHPAXHMAAVVector@@1@Z CPhysicsShake::vfunc0
 0x1000b0d7 func   ?sub_10103170@CUnknown10103170@@QAEXPAX@Z CUnknown10103170::sub_10103170

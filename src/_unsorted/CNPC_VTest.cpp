@@ -40,6 +40,18 @@ CNPC_VTest *CNPC_VTest::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b3c60 size=0x6
+#include "CNPC_VTest.h"
+
+extern char g_106521b8;
+
+// TARGET: CNPC_VTest::vfunc452
+char CNPC_VTest::vfunc452()
+{
+	return g_106521b8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b3cc0 size=0x1d
 #include "CNPC_VTest.h"
 struct A { int sub_10012300(int); };
