@@ -13423,6 +13423,7 @@
 0x104514cc vtable ??_7CBaseNetworkable@@6BIServerNetworkable@@@ CBaseNetworkable::vftable
 0x10451518 vtable ??_7CBaseNetworkable@@6B@ CBaseNetworkable::vftable
 0x10451544 vtable ??_7IServerNetworkable@@6B@ IServerNetworkable::vftable
+0x10451590 data   ??_7CBaseNetworkable@@6BIServerUnknown@@@ ??_7CBaseNetworkable@@6BIServerUnknown@@@
 0x10451590 vtable ??_7IServerUnknown@@6B@ IServerUnknown::vftable
 0x104515ac vtable ??_7CBatSwarm@@6B@ CBatSwarm::vftable
 0x10451adc vtable ??_7CBeam@@6B@ CBeam::vftable
