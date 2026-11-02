@@ -6,6 +6,15 @@ extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 extern void *(__cdecl *g_109f3634)(unsigned int);
 extern void *(__cdecl *g_109f3638)(void *, unsigned int);
 
+#include "utlvector.h"
+
+struct SaveRestoreBlockHeader_t	// one block's header record (0x28 bytes), as filled by vfunc1 and written by vfunc3
+{
+	char m_szName[0x20];	// 0x00: the handler's block name
+	int m_nLocHeader;	// 0x20: the position of the block's data relative to the save's start (written by vfunc3 per handler, from the stream's slot 0)
+	int m_nLocBody;	// 0x24: read back by vfunc7 (-1 = none; vfunc3 pre-fills the whole record with 0xff)
+};
+
 class CSaveRestoreBlockSet
 {
 public:
