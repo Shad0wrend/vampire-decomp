@@ -12177,6 +12177,7 @@
 0x10014524 func   ?sub_10289ee0@CAI_BaseNPC@@QAEXH@Z CAI_BaseNPC::sub_10289ee0
 0x10014529 func   ?vfunc28@CSingleplayRules@@UAEXPAX@Z CSingleplayRules::vfunc28
 0x1001452e func   ?sub_10053df0@@YA_NPBI0@Z sub_10053df0
+0x10014542 func   ?sub_102347c0@@YAHXZ sub_102347c0
 0x10014547 func   ?sub_10428880@@YAXPAXH@Z sub_10428880
 0x1001454c func   ?sub_101db430@CUnknown101db210@@QAEHHH@Z CUnknown101db210::sub_101db430
 0x10014551 func   ?sub_1039aca0@CNPC_VMingXiao@@QAEXXZ CNPC_VMingXiao::sub_1039aca0

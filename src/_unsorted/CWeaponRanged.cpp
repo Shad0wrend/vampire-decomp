@@ -46,6 +46,14 @@ int sub_10234450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102347c0 size=0x6
+// TARGET: sub_102347c0
+int sub_102347c0()
+{
+	return 0x2000;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10234800 size=0x3
 // TARGET: sub_10234800
 char sub_10234800() {
