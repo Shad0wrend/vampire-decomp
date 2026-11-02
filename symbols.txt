@@ -5466,6 +5466,7 @@
 0x10009de0 func   ?vfunc5@CBaseKeyframedMover@@UAEPAV1@I@Z CBaseKeyframedMover::vfunc5
 0x10009de5 func   ?sub_10041b70@@YAHH@Z sub_10041b70
 0x10009def func   ?LinkToParent@?$CUtlRBTree@HG@@QAEXGG_N@Z CUtlRBTree<int,unsigned short>::LinkToParent
+0x10009def func   ?LinkToParent@?$CUtlRBTree@UCRBTree12Entry_102ec4a0@@G@@QAEXGG_N@Z CUtlRBTree<CRBTree12Entry_102ec4a0,unsigned short>::LinkToParent
 0x10009df4 func   ?sub_102f7970@CUnknown102f7970@@QAEXXZ CUnknown102f7970::sub_102f7970
 0x10009df9 func   ?vfunc266@CPropPadlock@@QAEXH@Z CPropPadlock::vfunc266
 0x10009dfe func   ?vfunc142@CPropSlashable@@QAEHPAUCPropSlashableDamageInfo@@@Z CPropSlashable::vfunc142
