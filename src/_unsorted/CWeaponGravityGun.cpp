@@ -48,6 +48,15 @@ unsigned int CWeaponGravityGun::vfunc117()
 bool __cdecl sub_10149f80() { return true; }
 // END FUNCTION
 
+// FUNCTION: 0x10149fa0 size=0x7
+#include "CWeaponGravityGun.h"
+
+char CWeaponGravityGun::vfunc267()
+{
+	return m_bB25;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10149fc0 size=0x2b
 #include "CWeaponGravityGun.h"
 
