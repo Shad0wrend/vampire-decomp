@@ -44,6 +44,15 @@ const char * CAI_BaseNPCTroika::vfunc451()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028cd10 size=0x6
+extern void *g_105ce470;
+
+void *sub_1028cd10(void)
+{
+    return &g_105ce470;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028d6e0 size=0x66
 #include "CAI_BaseNPCTroika.h"
 
