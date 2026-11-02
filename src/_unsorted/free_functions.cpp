@@ -56074,6 +56074,26 @@ int sub_10130330()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130360 size=0x1e
+#include "CLight.h"
+
+struct CBase100090fc
+{
+	void sub_100090fc(int a);
+};
+
+extern char g_10464d74[];
+
+// TARGET: CLight::sub_10130360
+CLight *CLight::sub_10130360()
+{
+	((CBase100090fc *)this)->sub_100090fc(0);
+	*(void **)this = g_10464d74;
+	m_flFadeTime = 0.05f;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130610 size=0x57
 #include "CLight.h"
 #include <string.h>

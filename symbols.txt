@@ -10652,6 +10652,7 @@
 0x100121b6 func   ?sub_103f90c0@@YAHXZ sub_103f90c0
 0x100121bb func   ?sub_1013ccc0@@YAMABVVector@@00H@Z sub_1013ccc0
 0x100121c0 func   ?sub_1014f640@@YAHXZ sub_1014f640
+0x100121c5 func   ?sub_10130360@CLight@@QAEPAV1@XZ CLight::sub_10130360
 0x100121ca func   ?sub_1015eec0@CUnknown1015ef20@@QAE_NXZ CUnknown1015ef20::sub_1015eec0
 0x100121cf func   ?sub_102652d0@CUnknown102652d0@@QAEHXZ CUnknown102652d0::sub_102652d0
 0x100121de func   ?sub_10133910@CMathCounter@@QAEXAAUinputdata_t@@@Z CMathCounter::sub_10133910
