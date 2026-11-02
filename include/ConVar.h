@@ -14,6 +14,7 @@ class ConVar : public ConCommandBase
 {
 public:
 	ConVar(const char *pName, const char *pDefaultValue, int flags);	// "ConVar::ConVar" (stub 0x10006488, function 0x10245a40): base constructor, stores the vftable, then Create(name, default, flags, no help, no limits, no callback); a function-local static ConVar is built with it behind a guard byte
+	ConVar(const char *pName, const char *pDefaultValue, int flags, const char *pHelpString);	// function 0x10245ac0 (145 callers): base constructor, vftable, then Create(name, default, flags, help, no limits, no callback)
 	ConVar(const char *pName, const char *pDefaultValue, int flags, const char *pHelpString, void (*pCallback)(ConVar *, const char *));	// function 0x10245b80: calls the ConCommandBase constructor (sub_10007f3b), stores the vftable, then Create(name, default, flags, help, no limits, callback)
 	ConVar(const char *pName, const char *pDefaultValue, int flags, const char *pHelpString, bool bMin, float fMin, bool bMax, float fMax);	// function 0x10245b10: base constructor, vftable, then Create(..., min, max, no callback)
 	ConVar *sub_10245bd0(const char *pName, const char *pDefaultValue, int flags, const char *pHelpString, bool bMin, float fMin, bool bMax, float fMax, void (*pCallback)(ConVar *, const char *));	// the full constructor written as a plain member (the real one stores the vftable after the base constructor call): the ConCommandBase constructor, the vftable, then Create with everything
