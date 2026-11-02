@@ -4,6 +4,7 @@
 struct datamap_t;
 
 #include "Vector.h"
+#include "COutputEvent.h"
 
 struct inputdata_t;
 class CBaseEntity;
