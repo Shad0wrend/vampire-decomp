@@ -10461,6 +10461,7 @@
 0x10012193 func   ?sub_100f7c30@@YGPAVCBaseEntity@@PAV1@PBDPBVVector@@M00@Z sub_100f7c30
 0x10012198 func   ?sub_1007d230@CUnknown1007ce20@@QAEDMM@Z CUnknown1007ce20::sub_1007d230
 0x1001219d func   ?sub_1009c000@CBaseEntity@@QAEXHHI@Z CBaseEntity::sub_1009c000
+0x100121a2 func   ?sub_101b6120@CUnknown101b6120@@QAEXXZ CUnknown101b6120::sub_101b6120
 0x100121a7 func   ?sub_10203dd0@@YAXXZ sub_10203dd0
 0x100121b1 func   ?vfunc22@CSave@@UAEXPBDABVVector@@@Z CSave::vfunc22
 0x100121b6 func   ?sub_103f90c0@@YAHXZ sub_103f90c0

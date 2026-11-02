@@ -79514,6 +79514,41 @@ int CUnk101b5840::sub_101b5840(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b6120 size=0x59
+struct CUnknown101b6120 {
+    void *m_pMemory;
+    int m_allocationCount;
+    int m_growSize;
+    int m_size;
+    void *m_pElements;
+    void sub_101b6120();
+};
+
+extern void (__cdecl *g_109f3624)(void *);
+
+// TARGET: sub_101b6120
+void CUnknown101b6120::sub_101b6120()
+{
+    void (__cdecl *pFree)(void *) = g_109f3624;
+    m_size = 0;
+    if (m_growSize != -1) {
+        if (m_pMemory) {
+            pFree(m_pMemory);
+            m_pMemory = 0;
+        }
+        m_allocationCount = 0;
+    }
+    m_pElements = m_pMemory;
+    if (m_growSize != -1) {
+        if (m_pMemory) {
+            pFree(m_pMemory);
+            m_pMemory = 0;
+        }
+        m_allocationCount = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b61a0 size=0x6b
 #include "CUnknown101b61a0.h"
 
