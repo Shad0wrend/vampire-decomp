@@ -134,3 +134,18 @@ void CNPC_VBatSwarmFwd::sub_103674c0(int a)
     ((CNPC_VHumanFwd *)this)->sub_10385a10(a);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10367610 size=0x15
+#include "CNPC_VBatSwarm.h"
+
+struct CAI_BaseNPC_Fwd
+{
+	int sub_1026d920(float a, float b);
+};
+
+// TARGET: CNPC_VBatSwarm::vfunc554
+int CNPC_VBatSwarm::vfunc554(float a, float b)
+{
+	return ((CAI_BaseNPC_Fwd *)this)->sub_1026d920(a, b);
+}
+// END FUNCTION

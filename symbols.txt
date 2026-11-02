@@ -7496,6 +7496,7 @@
 0x1000d0f8 func   ?sub_101c2a90@CUnknown101c2a90@@QAEXD@Z CUnknown101c2a90::sub_101c2a90
 0x1000d0fd func   ?vfunc1@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc1
 0x1000d102 func   ?sub_1006c9d0@CFloatTable1006c9d0@@QAEHH@Z CFloatTable1006c9d0::sub_1006c9d0
+0x1000d107 func   ?vfunc554@CNPC_VBatSwarm@@UAEHMM@Z CNPC_VBatSwarm::vfunc554
 0x1000d10c func   ?sub_102cefc0@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_102cefc0
 0x1000d116 func   ?sub_10280e50@CAI_BaseNPC@@QAEXPAX@Z CAI_BaseNPC::sub_10280e50
 0x1000d11b func   ?vfunc81@CResearchBook_MG_FIN@@QAEHXZ CResearchBook_MG_FIN::vfunc81
