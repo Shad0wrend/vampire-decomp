@@ -34,6 +34,15 @@ CNPC_VGangrel *CNPC_VGangrel::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103771b0 size=0x6
+extern char g_10639090;
+
+char sub_103771b0(void)
+{
+    return g_10639090;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10377210 size=0x1d
 #include "CNPC_VGangrel.h"
 struct A { int sub_10012300(int); };
