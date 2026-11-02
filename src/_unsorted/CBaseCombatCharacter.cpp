@@ -162,6 +162,14 @@ bool __stdcall sub_1014f770(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014f790 size=0x5
+// TARGET: sub_1014f790
+bool __stdcall sub_1014f790(int a, int b)
+{
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014f7d0 size=0x3
 // TARGET: sub_1014f7d0
 void __stdcall sub_1014f7d0(void *p) {}
