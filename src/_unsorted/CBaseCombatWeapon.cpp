@@ -97,6 +97,11 @@ extern float g_104454c4;
 float CBaseCombatWeapon::vfunc337(int a, int b) { return g_104454c4; }
 // END FUNCTION
 
+// FUNCTION: 0x10149e80 size=0x3
+// TARGET: sub_10149e80
+int __cdecl sub_10149e80() { return 0; }
+// END FUNCTION
+
 // FUNCTION: 0x10149ea0 size=0x3
 CWeaponActivityRecord * CBaseCombatWeapon::vfunc362()
 {

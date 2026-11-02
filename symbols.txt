@@ -10199,6 +10199,7 @@
 0x1001188d func   ?vfunc9@IPhysicsCollisionEvent@@UAEXPAX0@Z IPhysicsCollisionEvent::vfunc9
 0x10011892 func   ?sub_101a0830@CSave@@QAEHPAUCSaveEdict@@@Z CSave::sub_101a0830
 0x10011897 func   ?vfunc4@CTEBubbles@@UAEXAAVCRecipientFilter@@M@Z CTEBubbles::vfunc4
+0x1001189c func   ?sub_10149e80@@YAHXZ sub_10149e80
 0x100118a1 func   ?sub_1027f550@CAI_BaseNPCTroika@@QAEDPAV1@@Z CAI_BaseNPCTroika::sub_1027f550
 0x100118a6 func   ?sub_10171da0@CBasePlayer@@QAEXPAUinputdata_t@@@Z CBasePlayer::sub_10171da0
 0x100118ab func   ?sub_100273d0@@YGXH@Z sub_100273d0
