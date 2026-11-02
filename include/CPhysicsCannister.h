@@ -31,6 +31,7 @@ class CPhysicsCannister
 public:
 	CPhysicsCannister *vfunc5(unsigned int flags);
 	void sub_10001ebf();
+	void sub_10150640();	// destructor body: vptr = CPhysicsCannister::vftable (0x1046d524), destroys the COutputEvent at +0x19fc (sub_100cd2d0), then tail-calls the ~CBaseCombatCharacter body 0x103274d0
 	bool vfunc99(const float *pRay, int b, int c);	// slot 99: world-space bounds of the collision property at +0x270 tested against the two vectors at pRay (sub_102404e0); when they hit returns the base slot 99 (sub_100956e0) of the same arguments, else the (false) test result
 	bool sub_100956e0(const float *pRay, int b, int c);	// CBaseAnimating::vfunc99 (stub 0x1000dd0a), called directly
 	void vfunc103();	// slot 103 (Spawn): slot 104, the model name (slot 9) through slot 105, blood color -1, the "CBaseEntity::AddSolidFlags" scope trace around SetSolidFlags(flags | 1), take-damage mode 2, think time 0, health 0x19 when not positive, stamps the creation time (+0x174), clears +0x6f0..0x6f8 and +0x19e4, AddFlag(0x20000000), then slot 223
