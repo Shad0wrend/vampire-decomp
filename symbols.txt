@@ -9648,6 +9648,7 @@
 0x10010c8f func   ?sub_10202a10@CUnknown10202ba0@@QAEPBDH@Z CUnknown10202ba0::sub_10202a10
 0x10010c94 func   ?sub_10075b90@CUnknown10075b90@@QAEXH@Z CUnknown10075b90::sub_10075b90
 0x10010c9e func   ?vfunc81@CCameraAnimated@@QAEHXZ CCameraAnimated::vfunc81
+0x10010ca3 func   ?vfunc5@CPhysConvert@@QAEPAV1@I@Z CPhysConvert::vfunc5
 0x10010cad func   ?vfunc104@CNPC_VBach@@UAEXXZ CNPC_VBach::vfunc104
 0x10010cb2 func   ?vfunc444@CNPC_VGhoulCroucher@@QAEXPAX@Z CNPC_VGhoulCroucher::vfunc444
 0x10010cbc func   ?sub_10107a00@@YAHXZ sub_10107a00
