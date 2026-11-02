@@ -4859,6 +4859,7 @@
 0x10008d1e func   ?sub_101e1990@@YGHHH@Z sub_101e1990
 0x10008d23 func   ?sub_101d91c0@CUnknown101d91c0@@QAEPAXXZ CUnknown101d91c0::sub_101d91c0
 0x10008d28 func   ?sub_1033f3f0@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_1033f3f0
+0x10008d2d func   ?vfunc241@CEnvParticle@@QAEXXZ CEnvParticle::vfunc241
 0x10008d32 func   ?vfunc5@CItemGHattersScreenplay@@QAEPAV1@I@Z CItemGHattersScreenplay::vfunc5
 0x10008d37 func   ?sub_101a2c00@@YAHXZ sub_101a2c00
 0x10008d3c func   ?vfunc80@CResearchBook_HG_MELEE@@QAEHXZ CResearchBook_HG_MELEE::vfunc80

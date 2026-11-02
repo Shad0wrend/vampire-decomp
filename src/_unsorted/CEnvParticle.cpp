@@ -89,6 +89,18 @@ void CEnvParticle::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fb7a0 size=0x19
+#include "CEnvParticle.h"
+#include "globalvars.h"
+
+// TARGET: CEnvParticle::vfunc241
+void CEnvParticle::vfunc241()
+{
+	m_unk484 = 1;
+	m_fl488 = gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fb7d0 size=0xb
 void CEnvParticle::vfunc242()
 {
