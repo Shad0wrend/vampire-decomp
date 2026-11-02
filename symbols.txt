@@ -8857,6 +8857,7 @@
 0x1000f1d7 func   ?sub_102ee4f0@CUnknown102ee4f0@@QAEXXZ CUnknown102ee4f0::sub_102ee4f0
 0x1000f1dc func   ?sub_10205ba0@CUnknown10205ba0@@QAEPBDPAVCUnknown10204bf0@@@Z CUnknown10205ba0::sub_10205ba0
 0x1000f1e6 func   ?sub_101b31a0@CSoundEmitterSystemBase@@QAEDH@Z CSoundEmitterSystemBase::sub_101b31a0
+0x1000f1eb func   ?vfunc364@CCineNPC@@QAE_NH@Z CCineNPC::vfunc364
 0x1000f1f0 func   ?vfunc265@CBreakableProp@@QAEXXZ CBreakableProp::vfunc265
 0x1000f1f5 func   ?sub_100a99d0@@YAPAVCBaseEntity@@PBDPBM1PAV1@@Z sub_100a99d0
 0x1000f1fa func   _trigger_bomb_site trigger_bomb_site
