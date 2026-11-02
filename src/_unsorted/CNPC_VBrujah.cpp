@@ -10,6 +10,15 @@ void *sub_10367870(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10367890 size=0x6
+extern char *g_1062f280;
+
+char *sub_10367890(void)
+{
+    return g_1062f280;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103678b0 size=0x1e
 #include "CNPC_VBrujah.h"
 

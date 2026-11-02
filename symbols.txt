@@ -3413,6 +3413,7 @@
 0x100067ad func   ?sub_102e5d00@@YAMPAM@Z sub_102e5d00
 0x100067b2 func   ?vfunc5@CPlatTrigger@@QAEPAV1@I@Z CPlatTrigger::vfunc5
 0x100067b7 func   ?vfunc28@CHL2_Player@@UAEMXZ CHL2_Player::vfunc28
+0x100067bc func   ?sub_10367890@@YAPADXZ sub_10367890
 0x100067c6 func   _item_g_drugs_drug_box item_g_drugs_drug_box
 0x100067cb func   ?vfunc69@CNPC_VHengeyokai@@UAEDPAX@Z CNPC_VHengeyokai::vfunc69
 0x100067d0 func   ?sub_101f27b0@CUnknown101f27b0@@QAE_NH_N@Z CUnknown101f27b0::sub_101f27b0
