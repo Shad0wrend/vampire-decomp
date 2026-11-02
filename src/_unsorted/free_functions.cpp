@@ -83634,6 +83634,30 @@ void CUtlRBTree12Unit::sub_101c05f0(unsigned short elem)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c0900 size=0x4b
+#include "CConstraintAnchor.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(unsigned int size);
+extern char g_1047be44[];	// CNullEntity vftable
+extern const char g_1059c35c[];
+
+// TARGET: info_null
+extern "C" CBaseEntity *info_null()
+{
+	void *mem = sub_100aa720(0x450);
+	CBaseEntity *p;
+	if (mem) {
+		((CConstraintAnchorBase *)mem)->sub_1009d980(0);
+		*(void **)mem = g_1047be44;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_1059c35c);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c09d0 size=0x1a
 namespace lifted {
 extern int g_1059b680;
