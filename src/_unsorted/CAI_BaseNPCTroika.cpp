@@ -2248,6 +2248,15 @@ void CAI_BaseNPCTroika::vfunc57(int, int, int, int, int, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b51c0 size=0x3
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CAI_BaseNPCTroika::vfunc58
+void CAI_BaseNPCTroika::vfunc58(int)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b5360 size=0x4b
 CBaseEntity *CAI_BaseNPCTroika::vfunc168()
 {

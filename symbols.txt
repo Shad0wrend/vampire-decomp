@@ -1335,6 +1335,7 @@
 0x10003251 func   ?vfunc566@CNPC_VAsianVampire@@QAE_NH@Z CNPC_VAsianVampire::vfunc566
 0x10003256 func   ?sub_103fa3d0@@YAHXZ sub_103fa3d0
 0x1000325b func   ?sub_10232c70@CPair10232c70@@QAE_NPAH@Z CPair10232c70::sub_10232c70
+0x10003260 func   ?vfunc58@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::vfunc58
 0x10003265 func   ?sub_1006ca50@CUnk_1006ca50@@QAEXH@Z CUnk_1006ca50::sub_1006ca50
 0x1000326a func   ?sub_1022d780@@YAXHH@Z sub_1022d780
 0x1000326f func   ?sub_100ac610@@YIXPAVCBaseEntity@@HMPBD@Z sub_100ac610
