@@ -207,6 +207,7 @@ public:
 	char sub_103bfc20(CBaseEntity *pTarget, CBaseEntity *pEnt);	// stub 0x10009953
 	void sub_103bf440();	// the facing / ideal yaw setup of the motor (at +0x5d44): the yaw of slot 221 into the motor (sub_102e0a40), turn rate 20.0f (sub_102e0a60), motor reset (sub_102e0b40); then looks at the slot 167 target's slot 220 position (stub 0x10007248) when there is one, else sets the motor's ideal yaw (+0x34) to the angle slot 221's y (flipped by 180 when the motor's byte +0x28 is set, limited by sub_102e0a80 unless the largest change is 180)
 	bool sub_103be8e0(CBaseEntity *pTarget);	// true without a target; else whether the yaw from the path-stepped point (sub_102c36d0 from the target entity's slot 220 position) toward pTarget differs from the NPC's own yaw by at most 20 degrees
+	char sub_103be630(CBaseEntity *pTarget);	// throw line-of-sight test: a trace from the eye (shifted by the side offset convar) to pTarget's eye; true when nothing is hit
 public:
 	virtual void vfunc434();
 	virtual void vfunc489();
