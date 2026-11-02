@@ -79,6 +79,15 @@ int sub_103846e0(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10384700 size=0x6
+#include "CNPC_VHuman.h"
+
+int CNPC_VHuman::sub_10384700()
+{
+	return 4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10384760 size=0x64
 #include "CNPC_VHuman.h"
 struct CUnknown1027d990 { int sub_1027d990(); };
