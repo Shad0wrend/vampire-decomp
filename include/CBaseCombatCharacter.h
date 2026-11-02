@@ -152,6 +152,7 @@ public:
 	void sub_1033e0a0(int nDiscipline, int unused1, CBaseEntity *pUnused2);	// "CBaseCombatCharacter::AddFakedDisciplineEffect": scope trace (entity name), plays the discipline's sound (the string at +0xe4 of its record in the table at 0x1074e098; precached first) from this entity's edict to the players that can hear it (a PAS attenuation filter built inline), unless the name is empty or starts with a blank; takes three stack arguments, only the first is used
 
 	// Slots called directly so far; declared as plain members.
+	int vfunc240();	// slot 240: returns the int global at 0x1072b360 (read by 0x1014f8b0, written by PyServerSystem::vfunc0)
 	bool vfunc73(CBaseEntity *pOther);	// "CBaseCombatCharacter::CausesImpactDamage": scope trace, (pOther's flags at +0x434 & 0x20000000) != 0
 	bool vfunc295(int a);
 	void *vfunc309();	// returns the best ranged weapon (or null)
