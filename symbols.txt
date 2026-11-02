@@ -11327,6 +11327,7 @@
 0x10012db4 func   ?sub_10106f90@CBaseCombatCharacter@@QAE_NH@Z CBaseCombatCharacter::sub_10106f90
 0x10012dbe func   ?vfunc4@CRelationshipSaveDataOps@@QAE_NPAX0@Z CRelationshipSaveDataOps::vfunc4
 0x10012dc3 func   ?sub_1018ecf0@@YAXPAVCBaseEntity@@M@Z sub_1018ecf0
+0x10012dc8 func   ?vfunc82@CWeaponIArmor@@UAEPAXXZ CWeaponIArmor::vfunc82
 0x10012dd2 func   ?sub_102a1620@@YI_NPAUN@@@Z sub_102a1620
 0x10012dd7 func   ?sub_10077450@CUnk10077450@@QAEHH@Z CUnk10077450::sub_10077450
 0x10012ddc func   ?sub_10042a80@CUtlVector20@@QAEHHHPBX@Z CUtlVector20::sub_10042a80

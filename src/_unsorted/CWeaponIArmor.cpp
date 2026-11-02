@@ -22,6 +22,18 @@ int CWeaponIArmor::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f2eb0 size=0x6
+#include "CWeaponIArmor.h"
+
+extern int g_1067e9f8;
+
+// TARGET: CWeaponIArmor::vfunc82
+void *CWeaponIArmor::vfunc82()
+{
+	return &g_1067e9f8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f2f40 size=0x6
 #include "CWeaponIArmor.h"
 namespace lifted {
