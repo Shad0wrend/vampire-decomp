@@ -104855,6 +104855,22 @@ TList *TList::sub_101fd430()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fd4c0 size=0x5a
+#include "ScopeTrace.h"
+#include "CVStatActionList_t.h"
+
+// TARGET: CVStatActionList_t::sub_101fd4c0
+void CVStatActionList_t::sub_101fd4c0()
+{
+	g_109f3620[*g_109f3680].name = "CVStatActionList_t::~CVStatActionList_t";
+	g_109f3620[*g_109f3680].file = g_106b8540;
+	g_109f3620[*g_109f3680].line = g_106b8540;
+	(*g_109f3680)++;
+	sub_101fd540();
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fd540 size=0xbb
 #include "CVStatActionList_t.h"
 #include "CVStatAction_t.h"

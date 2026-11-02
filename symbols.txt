@@ -12034,6 +12034,7 @@
 0x10014330 func   ?sub_101eda00@@YAXXZ sub_101eda00
 0x10014335 func   ?sub_101e8b10@CUnknown101e8b10@@QAEMXZ CUnknown101e8b10::sub_101e8b10
 0x1001433a func   ?vfunc365@CBaseCombatCharacter@@QAEHPAVCBaseEntity@@@Z CBaseCombatCharacter::vfunc365
+0x1001433f func   ?sub_101fd4c0@CVStatActionList_t@@QAEXXZ CVStatActionList_t::sub_101fd4c0
 0x10014344 func   ?vfunc103@CTriggerProximity@@UAEXXZ CTriggerProximity::vfunc103
 0x1001434e func   ?sub_100657e0@@YAHXZ sub_100657e0
 0x10014353 func   ?vfunc226@CSimplePhysicsBrush@@UAEHXZ CSimplePhysicsBrush::vfunc226
