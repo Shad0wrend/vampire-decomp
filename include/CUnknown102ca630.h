@@ -51,7 +51,7 @@ public:
 	// rec+0x18, via sub_102ca460), then for every record that pNpc->sub_1028ebc0(rec) accepts keeps, per type (m_nType 2 = supernatural
 	// else criminal), two best levels (rec+0x14) above the thresholds in the four int slots, with the position (rec+8, 3 floats) and
 	// the entity of the handle at rec+0x1c.  pNpc is the NPC that sees the acts (CAI_BaseNPCTroika::vfunc433 passes this).
-	void sub_102ca780(CBaseEntity *pNpc, int *pCrimA, int *pSuperA, int *pCrimB, int *pSuperB,
+	void sub_102ca780(class CAI_BaseNPCTroika *pNpc, int *pCrimA, int *pSuperA, int *pCrimB, int *pSuperB,
 		float *pCrimPos, float *pSuperPos, CBaseEntity **ppCrimEnt, CBaseEntity **ppSuperEnt);
 	void sub_102ca630(CBaseEntity *pEnt);	// removes every record whose handle resolves to pEnt
 };
