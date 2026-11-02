@@ -72370,6 +72370,30 @@ void CUnknown1018d8c0::sub_1018d8c0(inputdata_t *inputdata)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018d940 size=0x4b
+#include "CConstraintAnchor.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(unsigned int size);
+extern char g_10472e94[];	// CPointTeleport vftable
+extern const char g_1058cda0[];
+
+// TARGET: point_teleport
+extern "C" CBaseEntity *point_teleport()
+{
+	void *mem = sub_100aa720(0x468);
+	CBaseEntity *p;
+	if (mem) {
+		((CConstraintAnchorBase *)mem)->sub_1009d980(0);
+		*(void **)mem = g_10472e94;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_1058cda0);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018da10 size=0x1a
 namespace lifted {
 extern int g_1058cbf8;
