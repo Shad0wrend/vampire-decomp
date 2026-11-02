@@ -1102,6 +1102,15 @@ void *sub_10256710(void)
 int CBaseCombatWeapon::vfunc81() { return 0; }
 // END FUNCTION
 
+// FUNCTION: 0x10256750 size=0x6
+extern void *g_105c5bc4;
+
+void *sub_10256750(void)
+{
+    return &g_105c5bc4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10257230 size=0xe
 bool CBaseCombatWeapon::vfunc303()
 {
