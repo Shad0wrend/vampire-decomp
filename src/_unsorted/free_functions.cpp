@@ -68064,6 +68064,30 @@ extern "C" CBaseEntity *player_weaponstrip()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10178f30 size=0x4b
+#include "CConstraintAnchor.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(unsigned int size);
+extern char g_10471294[];	// CRevertSaved vftable
+extern const char g_105879b8[];
+
+// TARGET: player_loadsaved
+extern "C" CBaseEntity *player_loadsaved()
+{
+	void *mem = sub_100aa720(0x464);
+	CBaseEntity *p;
+	if (mem) {
+		((CConstraintAnchorBase *)mem)->sub_1009d980(0);
+		*(void **)mem = g_10471294;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_105879b8);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10179000 size=0x1a
 namespace lifted {
 extern int g_105836dc;
