@@ -34184,6 +34184,21 @@ void CUnknown100c0c60::sub_100c0c60(float value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c0c80 size=0x31
+#include "CFloatPair3f4.h"
+void CFloatPair3f4::sub_100c0c80(float flUnused)
+{
+	if (m_f164 > 0.0f)
+	{
+		sub_100c0970(0.0f);
+	}
+	else
+	{
+		sub_100c0970(m_f460);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c1070 size=0x153
 #include "Vector.h"
 struct mstudioanimvalue_t {

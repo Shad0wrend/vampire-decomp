@@ -167,6 +167,7 @@
 0x10001433 func   ?vfunc80@CBaseFlex@@UAEHXZ CBaseFlex::vfunc80
 0x10001438 func   ?vfunc80@COccultLockpicking@@QAEHXZ COccultLockpicking::vfunc80
 0x1000143d func   ?sub_10096490@CBaseAnimating@@QAEXH@Z CBaseAnimating::sub_10096490
+0x10001442 func   ?sub_100c0c80@CFloatPair3f4@@QAEXM@Z CFloatPair3f4::sub_100c0c80
 0x10001447 func   ?vfunc113@CPropSwitch@@UAEXXZ CPropSwitch::vfunc113
 0x10001451 func   ?vfunc2@CGameMovement@@UAEPAMDH@Z CGameMovement::vfunc2
 0x10001456 func   _logic_pythoncheck logic_pythoncheck
