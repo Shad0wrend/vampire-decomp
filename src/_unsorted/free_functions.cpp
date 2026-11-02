@@ -61822,6 +61822,30 @@ char __stdcall sub_1013dd10(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013dd30 size=0x4b
+#include "CConstraintAnchor.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(unsigned int size);
+extern char g_1046a5ec[];	// CFuncBrush vftable
+extern const char g_10579ec0[];
+
+// TARGET: func_brush
+extern "C" CBaseEntity *func_brush()
+{
+	void *mem = sub_100aa720(0x458);
+	CBaseEntity *p;
+	if (mem) {
+		((CConstraintAnchorBase *)mem)->sub_1009d980(0);
+		*(void **)mem = g_1046a5ec;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_10579ec0);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013de70 size=0x1a
 namespace lifted {
 extern int g_10579aa8;
