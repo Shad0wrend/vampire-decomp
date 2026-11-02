@@ -12,6 +12,7 @@ struct IPhysicsSpringStub
 	virtual void GetEndPoints(Vector *pStart, Vector *pEnd);
 	virtual void SetSpringConstant(float flSpringConstant);
 	virtual void SetSpringDamping(float flDamping);
+	virtual void SetSpringLength(float flLength);
 };
 
 class CPhysicsSpring
@@ -23,6 +24,7 @@ public:
 	void sub_1004d100();	// destructor body (the function behind the stub above)
 	void sub_1004d140(inputdata_t *inputdata);	// input: spring constant
 	void sub_1004d1b0(inputdata_t *inputdata);	// input: spring damping
+	void sub_1004d220(inputdata_t *inputdata);	// input: spring length
 	void sub_1004d6a0(const char *pszName1, const char *pszName2, void **ppObj1, void **ppObj2);	// looks up the physics objects of the two named entities (stub 0x1000e755); registers each with the global at 0x1056645c, or stores the other one (and the global at 0x10723938) when only one was found
 	int vfunc124();	// slot 124 "CPhysicsSpring::DrawDebugTextOverlays": the base's line offset, plus three lines (constant, length, damping) when the text overlay bit is set
 	int sub_100018cf();	// CBaseEntity::vfunc124 (stub 0x100018cf), called directly
