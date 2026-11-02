@@ -7,6 +7,13 @@ void CAI_BaseNPC::vfunc416(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a64e0 size=0x3
+// TARGET: CAI_BaseNPC::vfunc417
+char CAI_BaseNPC::vfunc417() {
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6500 size=0x1
 // TARGET: sub_101a6500
 void __fastcall sub_101a6500(void *pThis)

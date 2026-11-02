@@ -1887,6 +1887,7 @@
 0x10004101 func   ?sub_1019a940@@YGXH@Z sub_1019a940
 0x1000410b func   ?sub_101cdfa0@@YAXPAUSPacked@@PBEMMF@Z sub_101cdfa0
 0x10004110 func   ?sub_1035cd00@CNPC_VAndreiBlood@@QAEXXZ CNPC_VAndreiBlood::sub_1035cd00
+0x10004115 func   ?vfunc417@CAI_BaseNPC@@UAEDXZ CAI_BaseNPC::vfunc417
 0x1000411a func   ?sub_10252290@CBaseCombatWeapon@@QAEPAUCWeaponOwner@@XZ CBaseCombatWeapon::sub_10252290
 0x1000411f func   ?vfunc362@CWeaponRanged_Pistol_Glock@@QAEHXZ CWeaponRanged_Pistol_Glock::vfunc362
 0x10004129 func   ?vfunc30@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHH@Z CTempEntsSystem::vfunc30
