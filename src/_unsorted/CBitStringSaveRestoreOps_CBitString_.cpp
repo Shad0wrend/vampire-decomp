@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10045770 size=0x5
+// TARGET: sub_10045770
+bool __stdcall sub_10045770(int a, int b)
+{
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10316c70 size=0x3a
 #include "CBitStringSaveRestoreOps.h"
 #include "CSave.h"
