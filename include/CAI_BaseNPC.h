@@ -162,7 +162,8 @@ public:
 	virtual bool vfunc510();
 	CAI_NPC_V(511) virtual int vfunc512();
 	virtual unsigned int vfunc513();	// the NPC's class flags (bit 26 marks the NPCs that must be in a squad)
-	CAI_NPC_V(514) CAI_NPC_V(515)
+	CAI_NPC_V(514) bool vfunc514(int a, int b, int c, int d);	// slot 514: always false (ret 0x10)
+	CAI_NPC_V(515)
 	virtual float vfunc516();
 	CAI_NPC_V(517) CAI_NPC_V(518)
 	virtual void vfunc519(int a, float b, float c, float d);	// when the debug convar is set, forwards to slot 14 of the object at +0x5d44
