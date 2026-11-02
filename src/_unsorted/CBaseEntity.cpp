@@ -601,6 +601,14 @@ Vector CBaseEntity::vfunc192()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10027330 size=0x3
+// TARGET: sub_10027330
+unsigned char __stdcall sub_10027330()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027370 size=0x21
 #include "Vector.h"
 

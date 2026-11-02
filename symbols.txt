@@ -8131,6 +8131,7 @@
 0x1000e33b func   ?sub_101bde20@UtlVec8@@QAEXHH@Z UtlVec8::sub_101bde20
 0x1000e340 func   ?sub_10059e80@CUnknown10059e80@@QAEHXZ CUnknown10059e80::sub_10059e80
 0x1000e345 func   _env_steam env_steam
+0x1000e34a func   ?sub_10027330@@YGEXZ sub_10027330
 0x1000e34f func   _env_shake env_shake
 0x1000e354 func   ?sub_100f4490@@YAHPBD_N@Z sub_100f4490
 0x1000e359 func   ?sub_10391330@@YAEXZ sub_10391330
