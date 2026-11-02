@@ -104,6 +104,7 @@ public:
 	int sub_10311b90();	// the sound level of a sentence: the base level (+0x50) plus a random 0..3
 	bool sub_10311c10(int key, const char *pszScene);	// plays the sentence record of key (0x10311c10)
 	void *sub_10312340(int key);	// the record of key (m_Sub's lookup, stub 0x1000c0d1)
-	void sub_103126e0(int key);	// stub 0x10012ba7
+	void sub_103126e0(int key);	// stub 0x10012ba7: "this sentence was just used": a CUtlMap::InsertOrReplace of (key, gpGlobals->curtime) into the tree at +0x14 (typed view UseTree()): Find, node +0xc = time when present, else FindInsertionPosition + NewNode (0x103134b0) + LinkToParent (stub 0x1000fb91 -> 0x10313620) + ++count (word +0x12) + the pair at node +8; CUtlRBTree16Unit::sub_10313aa0 (0x10012189) is its out-of-line Links
+	CAI_ExpresserUseTree *UseTree() { return (CAI_ExpresserUseTree *)&m_Tree; }
 	int sub_10311f50(const char *pszName, float flDelay, float flVolume, int nSoundLevel, int b);	// starts the named sentence, -1 when it cannot (stub 0x10005745)
 };
