@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x102c6dd0 size=0x1
+// TARGET: sub_102c6dd0
+void sub_102c6dd0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c6e30 size=0x9
 #include "CAI_Behavior.h"
 // TARGET: CAI_Behavior<CAI_BaseNPC,100000>::vfunc14
