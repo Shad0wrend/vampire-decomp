@@ -228,7 +228,7 @@ public:
 	EVS(585) EVS(586) EVS(587) EVS(588) EVS(589)
 	EVS(590) EVS(591) EVS(592) EVS(593) EVS(594) EVS(595) EVS(596) EVS(597)
 	virtual void slot598(CEntityVSlots *pEntity);	// NPC: told about an entity (the witness clear-out hands it the entity that went away)
-	EVS(599)
+	virtual char slot599(CEntityVSlots *pEnemy);	// NPC: may take a ranged position now (CNPC_VHuman::vfunc605 passes slot 167's entity), a boolean answer in al
 	EVS(600)
 	virtual void slot601(int a);	// NPC: takes one argument
 	EVS(602) EVS(603)
