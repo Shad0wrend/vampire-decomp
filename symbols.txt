@@ -1943,6 +1943,7 @@
 0x10004241 func   ?sub_10062e50@CTEFootprintDecal@@QAEPAV1@PBD@Z CTEFootprintDecal::sub_10062e50
 0x10004246 func   ?sub_101ab550@CServerNetworkProperty@@QAEXXZ CServerNetworkProperty::sub_101ab550
 0x1000424b func   ?sub_103ebb10@@YAHXZ sub_103ebb10
+0x10004250 func   ?vfunc81@CWeaponRanged_FlameThrower@@UAEHXZ CWeaponRanged_FlameThrower::vfunc81
 0x1000425a func   ?sub_103c48e0@@YIPAXPAD@Z sub_103c48e0
 0x1000425f func   ?vfunc362@CWeaponHolyLight@@QAEHXZ CWeaponHolyLight::vfunc362
 0x10004269 func   _params_particle params_particle
