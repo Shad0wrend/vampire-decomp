@@ -30,6 +30,11 @@ void __fastcall sub_10043ba0(void *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10043bc0 size=0x3
+// TARGET: sub_10043bc0
+void __stdcall sub_10043bc0(void *p) {}
+// END FUNCTION
+
 // FUNCTION: 0x10043c00 size=0x1
 // TARGET: sub_10043c00
 void __fastcall sub_10043c00(void *pThis)
