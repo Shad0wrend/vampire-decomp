@@ -76,6 +76,12 @@ struct CBasePlayerQuestRecord	// a saved quest record (0x40 bytes)
 	char m_pad3D[3];
 };
 
+struct CBasePlayerAward	// an experience award the player was given (0x34 bytes: the award's name, compared with Q_strnicmp)
+{
+	char m_szName[0x30];
+	int m_n30;
+};
+
 struct CBasePlayerFadeRec	// a saved fade (0x10 bytes)
 {
 	char m_bType;
