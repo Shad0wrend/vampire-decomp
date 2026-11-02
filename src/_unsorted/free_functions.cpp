@@ -63313,6 +63313,35 @@ extern "C" CBaseEntity *path_corner()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10147b30 size=0x5c
+#include "CConstraintAnchor.h"
+#include "CBaseEntity.h"
+#include "COutputEvent.h"
+
+void *sub_100aa720(unsigned int size);
+extern int vt_1044b584;	// CPointEntity vftable
+extern int vt_1046bf94;	// CPathCornerCrash vftable
+extern char g_1057b618[];
+
+// TARGET: path_corner_crash
+extern "C" CBaseEntity *path_corner_crash()
+{
+	void *mem = sub_100aa720(0x46c);
+	CBaseEntity *p;
+	if (mem) {
+		((CConstraintAnchorBase *)mem)->sub_1009d980(0);
+		*(int **)mem = &vt_1044b584;
+		((COutputEvent *)((char *)mem + 0x454))->sub_100cd2a0();
+		*(int **)mem = &vt_1046bf94;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_1057b618);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10147c10 size=0xa6
 struct ISaveRestoreOps;
 struct datamap_t;
