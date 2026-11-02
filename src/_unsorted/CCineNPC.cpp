@@ -9,6 +9,14 @@ bool __stdcall sub_101a6da0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6dc0 size=0x5
+// TARGET: CCineNPC::vfunc362
+bool CCineNPC::vfunc362(int unused)
+{
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6e40 size=0x52
 #include "CCineNPC.h"
 void sub_100aa7b0(void *);
