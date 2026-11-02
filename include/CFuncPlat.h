@@ -17,7 +17,7 @@ public:
 	virtual CFuncPlat *vfunc5(unsigned int flags); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
 	FP_V10(1) FP_V10(2) FP_V10(3) FP_V10(4) FP_V10(5)
 	FP_V(60) FP_V(61) FP_V(62) FP_V(63) virtual void vfunc64(const void *p); FP_V(65) FP_V(66) FP_V(67) FP_V(68) FP_V(69)
-	FP_V10(7) FP_V10(8) FP_V10(9)
+	FP_V10(7) FP_V(80) FP_V(81) virtual datamap_t *vfunc82();	/* slot 82: the class's datamap, the address g_10580538 */ FP_V(83) FP_V(84) FP_V(85) FP_V(86) FP_V(87) FP_V(88) FP_V(89) FP_V10(9)
 	FP_V10(10) virtual bool vfunc110(const char *pszKey, const char *pszValue);	// slot 110 \"KeyValue\": \"rotation\" sets the float at +0x54c, else CBaseToggle::vfunc110
 	FP_V(111) FP_V(112) FP_V(113) FP_V(114) FP_V(115) FP_V(116) FP_V(117) FP_V(118) FP_V(119)
 	FP_V(120) FP_V(121) FP_V(122) FP_V(123) FP_V(124) FP_V(125) FP_V(126) FP_V(127) virtual char vfunc128(); FP_V(129)
