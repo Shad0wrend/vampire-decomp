@@ -19,3 +19,14 @@ CUnknown109f08c0::CUnknown109f08c0(int n)
     m_n10 = 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101ecb70 size=0x1
+class CUnknown109f08c0 {
+public:
+    ~CUnknown109f08c0();
+};
+
+CUnknown109f08c0::~CUnknown109f08c0()
+{
+}
+// END FUNCTION
