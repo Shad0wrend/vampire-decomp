@@ -6602,6 +6602,7 @@
 0x1000bc4e func   ?sub_101f9bf0@CUnknown101f9bf0@@QAEHHHH@Z CUnknown101f9bf0::sub_101f9bf0
 0x1000bc58 func   ?vfunc262@CSceneEntity@@UAEXHPAVCBaseFlex@@PAX@Z CSceneEntity::vfunc262
 0x1000bc5d func   ?vfunc444@CNPC_VTaxiDriver@@QAEXPBH@Z CNPC_VTaxiDriver::vfunc444
+0x1000bc62 func   ?vfunc339@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc339
 0x1000bc6c func   ?vfunc5@CNPC_VPlayerController@@QAEPAV1@I@Z CNPC_VPlayerController::vfunc5
 0x1000bc7b func   ?sub_100684c0@CUnknown100684c0@@QAEHXZ CUnknown100684c0::sub_100684c0
 0x1000bc80 func   ?vfunc49@CCameraTrack@@UAEMXZ CCameraTrack::vfunc49
