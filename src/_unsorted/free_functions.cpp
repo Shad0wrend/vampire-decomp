@@ -80452,6 +80452,23 @@ const char * __stdcall sub_101b4b20(float value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b4b90 size=0x4a
+struct Entry { float value; const char *text; };
+extern Entry g_10598cb8[3];
+extern char g_1072c038[];
+extern int (__cdecl *g_109f388c)(char *, int, const char *, ...);
+
+const char * __stdcall sub_101b4b90(float value)
+{
+	for (int p = (int)g_10598cb8; p < (int)(g_10598cb8 + 3); p += sizeof(Entry)) {
+		if (((Entry *)p)->value == value)
+			return ((Entry *)p)->text;
+	}
+	g_109f388c(g_1072c038, 0x20, "%.3f", (double)value);
+	return g_1072c038;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b4c00 size=0x10
 namespace lifted {
 int sub_101b24d0(int);
