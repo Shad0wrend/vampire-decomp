@@ -57826,6 +57826,23 @@ int sub_101328e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10132910 size=0x4b
+#include "CEnvGlobal.h"
+
+void *sub_100aa720(unsigned int size);
+inline void *operator new(unsigned int, void *p) { return p; }
+extern const char g_105787a0[];
+
+// TARGET: env_global
+extern "C" CEnvGlobal *env_global()
+{
+	void *mem = sub_100aa720(0x45c);
+	CEnvGlobal *p = mem ? new(mem) CEnvGlobal : 0;
+	p->vfunc106(g_105787a0);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10132b50 size=0x6d
 struct CGlobals1070b228 { char pad[0x24]; int m_n24; };
 extern CGlobals1070b228 *g_1070b228;
