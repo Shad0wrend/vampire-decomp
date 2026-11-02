@@ -121667,6 +121667,23 @@ void sub_10252800(CBaseAnimating *pEnt, float flSize)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10252e30 size=0x38
+#include "CBaseCombatWeapon.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+
+void CBaseCombatWeapon::sub_10252e30(CBaseEntity *pPlayer)
+{
+	if (pPlayer) {
+		CBaseCombatCharacter *pChar = (CBaseCombatCharacter *)pPlayer->m_pA8;
+		if (pChar) {
+			if (pChar->sub_10173f90(this, 0, 0, 0))
+				vfunc341((CBaseEntity *)pChar);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10253110 size=0x16
 struct CUnknown10252290 { void *sub_10252290(); };
 struct CUnknown10182e00 { void sub_10182e00(void *pOther); };

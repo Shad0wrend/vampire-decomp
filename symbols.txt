@@ -6932,6 +6932,7 @@
 0x1000c6e9 func   ?vfunc269@CDisciplineProjectile@@QAEXXZ CDisciplineProjectile::vfunc269
 0x1000c6ee func   ?sub_1016fed0@CBasePlayer@@QAEXXZ CBasePlayer::sub_1016fed0
 0x1000c6f3 func   ?sub_1030bd50@CHolderInner24@@QAEEXZ CHolderInner24::sub_1030bd50
+0x1000c6f8 func   ?sub_10252e30@CBaseCombatWeapon@@QAEXPAVCBaseEntity@@@Z CBaseCombatWeapon::sub_10252e30
 0x1000c702 func   _item_g_garys_film item_g_garys_film
 0x1000c707 func   ?vfunc5@CWeaponUnarmed@@QAEPAV1@I@Z CWeaponUnarmed::vfunc5
 0x1000c70c func   ?vfunc275@CBaseTerminal@@QAEXXZ CBaseTerminal::vfunc275
