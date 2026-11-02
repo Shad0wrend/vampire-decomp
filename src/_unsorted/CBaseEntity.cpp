@@ -400,6 +400,14 @@ void CBaseEntity::sub_10026c70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026d30 size=0x3
+// TARGET: sub_10026d30
+unsigned char sub_10026d30()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026e70 size=0x4c
 extern Vector g_1070d1b0;
 inline int VecNe(const Vector &a, const Vector &b)
