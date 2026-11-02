@@ -135,7 +135,7 @@ public:
 	CBP_V1(se97) CBP_V1(se98) CBP_V1(se99)
 	CBP_V1(sf00) CBP_V1(sf01) CBP_V1(sf02) CBP_V1(sf03)
 	virtual bool vfunc326(int a, CBaseEntity *pOther);	// slot 326: when the active weapon's type flags (slot 360) have bit 13 or 14, false unless pOther is set and its character template (default stat item) has the byte at +0xa0; else CBaseCombatCharacter::vfunc326(a, pOther)
-	CBP_V1(sf05) CBP_V1(sf06) CBP_V1(sf07) CBP_V1(sf08) CBP_V1(sf09)
+	CBP_V1(sf05) virtual char vfunc328(); CBP_V1(sf07) CBP_V1(sf08) CBP_V1(sf09)
 	CBP_V1(sf10) CBP_V1(sf11)
 	virtual bool vfunc334(int a, int b);	// slot 334: whether the player may act with the given kind of action (4 = use): the use entity answering 300 allows it; a dialog partner, a fade, the use entity, a local-player state or the discipline record forbid it; else CBaseCombatCharacter::vfunc334
 	CBP_V1(sf13) CBP_V1(sf14) CBP_V1(sf15) CBP_V1(sf16) CBP_V1(sf17) CBP_V1(sf18) CBP_V1(sf19) CBP_V10(sf2) CBP_V1(sf30) CBP_V1(sf31) CBP_V1(sf32) CBP_V1(sf33) CBP_V1(sf34) CBP_V1(sf35) CBP_V1(sf36) CBP_V1(sf37)
