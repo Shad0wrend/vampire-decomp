@@ -208,7 +208,11 @@ public:
 	int m_nFF0;	// 0x0FF0: the activity
 	char m_pad0FF4[0x1040 - 0xff4];	// 0x0FF4 .. 0x103F
 	unsigned int m_hUseEnt1040;	// 0x1040: entity handle
-	char m_pad1044[0x10dc - 0x1044];
+	int m_n1044;	// 0x1044: reset to -1 by the death handler (vfunc144)
+	int m_n1048;	// 0x1048: 0 on death
+	int m_n104C;	// 0x104C: 0 on death
+	int m_n1050;	// 0x1050: 0 on death
+	char m_pad1054[0x10dc - 0x1054];
 	EHANDLE m_hEnt10DC;	// 0x10DC: entity handle
 	EHANDLE m_hEnt10E0;	// 0x10E0: entity handle
 	char m_pad10E4[0x146c - 0x10e4];
