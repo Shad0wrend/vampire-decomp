@@ -3689,6 +3689,7 @@
 0x1000701d func   ?vfunc580@CNPC_VHuman@@UAEPAUCAI_CondOwner@@XZ CNPC_VHuman::vfunc580
 0x10007027 func   ?vfunc546@CNPC_VStalker@@QAEHH@Z CNPC_VStalker::vfunc546
 0x1000702c func   ?sub_1030d650@@YGHPBD@Z sub_1030d650
+0x10007031 func   ?vfunc0@?$CUtlVectorDataOps@V?$CUtlVector@USaveRestoreBlockHeader_t@@V?$CUtlMemory@USaveRestoreBlockHeader_t@@@@@@$08@@UAEXPAX0@Z CUtlVectorDataOps<CUtlVector<SaveRestoreBlockHeader_t,CUtlMemory<SaveRestoreBlockHeader_t> >,9>::vfunc0
 0x10007036 func   _item_g_stake item_g_stake
 0x1000703b func   ?sub_1017a290@@YAXXZ sub_1017a290
 0x10007040 func   ?sub_102dcf50@CUnknown102dcf50@@QAEPAXXZ CUnknown102dcf50::sub_102dcf50
