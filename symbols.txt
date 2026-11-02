@@ -2657,6 +2657,7 @@
 0x100055e2 func   _info_node_bach_teleport_3 info_node_bach_teleport_3
 0x100055e7 func   ?sub_101ecb10@CUnknown101ecb10@@QAEXH@Z CUnknown101ecb10::sub_101ecb10
 0x100055ec func   _info_node_bach_teleport_4 info_node_bach_teleport_4
+0x100055f1 func   ?sub_10086150@@YAXXZ sub_10086150
 0x100055f6 func   ?vfunc373@CWeaponThrown_Grenade_Frag@@QAEXH@Z CWeaponThrown_Grenade_Frag::vfunc373
 0x10005600 func   ?vfunc333@CHL2_Player@@UAEXH@Z CHL2_Player::vfunc333
 0x1000560a func   _inspection_node inspection_node
