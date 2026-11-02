@@ -11,6 +11,7 @@ class CGameSign : public CBaseEntity
 public:
 	CGameSign();	// 0x10212530
 	CGameSign *vfunc5(unsigned int flags);
+	void sub_10212650();	// destructor body: vptr = CGameSign::vftable (0x10488d7c), operator delete(m_pszFile450), tail call to the CBaseEntity destructor body 0x1009df20
 	void sub_1000726b();
 	CGameSign *sub_10212530();	// as in CKeepUpright (transplant)
 	void vfunc41(void *pPlayer);	// slot 41, declared as a plain member: looks the player at the sign's stored position (+0x464) and, once the sign is active (+0x204 bit 0) and its delay has passed, lets a player with the required flags (+0x2090) use it
