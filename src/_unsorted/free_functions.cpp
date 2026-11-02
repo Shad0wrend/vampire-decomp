@@ -149481,6 +149481,34 @@ found:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10324190 size=0x203
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+#include "CUnknown10206400.h"
+#include <string.h>
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+bool CBaseCombatCharacter::sub_10324190(CBaseCombatWeapon *pItem)
+{
+	if (!pItem) {
+		return false;
+	}
+	for (int id = 0; id < g_1074f018; id++) {
+		const char *pszName = m_name26c ? m_name26c : g_106b8540;
+		if (!_strcmpi(CUnknown10206400_FindById(id)->GetName(), pszName)) {
+			for (int j = 0; j < CUnknown10206400_FindById(id)->m_nEntries; j++) {
+				CUnknown10206340 *pEntry = CUnknown10206400_FindEntry(CUnknown10206400_FindById(id), j);
+				if (!_strcmpi(pEntry->m_pszName ? pEntry->m_pszName : g_106b8540, pItem->vfunc348())) {
+					return true;
+				}
+			}
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10324500 size=0x7e
 #include "CBaseCombatCharacter.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };

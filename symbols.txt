@@ -5011,6 +5011,7 @@
 0x10009467 func   ?sub_100b1380@@YI_NPAD@Z sub_100b1380
 0x1000946c func   ?sub_10108fd0@@YA_NHH@Z sub_10108fd0
 0x1000947b func   _item_g_milligans_businesscard item_g_milligans_businesscard
+0x10009480 func   ?sub_10324190@CBaseCombatCharacter@@QAE_NPAVCBaseCombatWeapon@@@Z CBaseCombatCharacter::sub_10324190
 0x1000948a func   ?sub_101e2f50@CUnknown101e0f00@@QAEXPAXPAUCUnknown101e0f00Entry@@H@Z CUnknown101e0f00::sub_101e2f50
 0x1000948f func   ?sub_100f5fc0@SFilter@@QAEPAU1@E@Z SFilter::sub_100f5fc0
 0x10009494 func   ?sub_100bee80@@YAHXZ sub_100bee80
