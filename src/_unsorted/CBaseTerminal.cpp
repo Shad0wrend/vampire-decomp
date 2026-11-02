@@ -85,6 +85,44 @@ void CBaseTerminal::vfunc71()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10217880 size=0x1af
+#include "CBaseTerminal.h"
+#include "CBaseVampireSkillEntity.h"
+#include "CBaseAnimating.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+// TARGET: CBaseTerminal::vfunc103
+void CBaseTerminal::vfunc103()
+{
+	((CBaseVampireSkillEntity *)this)->vfunc103();
+	CBaseEntity *pEnt = (CBaseEntity *)this;
+	CCollisionProperty *pColl;
+	{
+		ScopeTrace t("CBaseEntity::SetSolid", this ? pEnt->m_name26c ? pEnt->m_name26c : g_106b8540 : g_105387dc);
+		pColl = (CCollisionProperty *)((char *)this + 0x270);
+		pColl->sub_100dc480(2);
+	}
+	pEnt->sub_100adf10((const float *)((char *)((CBaseAnimating *)this)->sub_100952d0(-1) + 0xb4), (const float *)((char *)((CBaseAnimating *)this)->sub_100952d0(-1) + 0xc0));
+	{
+		ScopeTrace t("CBaseEntity::RemoveSolidFlags", this ? pEnt->m_name26c ? pEnt->m_name26c : g_106b8540 : g_105387dc);
+		pColl->sub_100dc580(pColl->m_usSolidFlags & ~0xc);
+	}
+	pEnt->vfunc93(0, 0);
+	pEnt->sub_100b3b00();
+	int w = m_nScreenW810;
+	if (w > 0x24) w = 0x24; else if (w < 4) w = 4;
+	m_nScreenW810 = w;
+	int h = m_nScreenH814;
+	if (h > 0x18) h = 0x18; else if (h < 2) h = 2;
+	m_nScreenH814 = h;
+	m_n081c = 0;
+	m_n0820 = 0;
+	m_b0824 = 0;
+	pEnt->vfunc71();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10217aa0 size=0x3
 #include "CBaseTerminal.h"
 void CBaseTerminal::vfunc273(int a0, int a1)

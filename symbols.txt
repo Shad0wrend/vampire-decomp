@@ -7283,6 +7283,7 @@
 0x1000cf90 func   ?sub_1007f3d0@@YAXPAUE8@@PBU1@@Z sub_1007f3d0
 0x1000cf95 func   ?vfunc80@CItemGWirelessCamera2@@QAEHXZ CItemGWirelessCamera2::vfunc80
 0x1000cf9a func   ?sub_103f6630@@YAHXZ sub_103f6630
+0x1000cf9f func   ?vfunc103@CBaseTerminal@@QAEXXZ CBaseTerminal::vfunc103
 0x1000cfa4 func   ?sub_103912e0@@YADXZ sub_103912e0
 0x1000cfa9 func   ?vfunc226@CBaseEntity@@QAEXH@Z CBaseEntity::vfunc226
 0x1000cfae func   ?vfunc5@CTriggerPush@@QAEPAXI@Z CTriggerPush::vfunc5
