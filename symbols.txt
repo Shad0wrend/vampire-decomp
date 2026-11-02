@@ -3449,6 +3449,7 @@
 0x10006938 func   ?vfunc370@CAI_BaseHumanoid@@QAE?AVVector@@XZ CAI_BaseHumanoid::vfunc370
 0x1000693d func   ?sub_102ee600@CUnknown102ee600@@QAEHXZ CUnknown102ee600::sub_102ee600
 0x10006942 func   ?vfunc5@CNPC_VBaseBoss@@QAEPAV1@I@Z CNPC_VBaseBoss::vfunc5
+0x10006947 func   ??0CUnknown101dff00@@QAE@H@Z CUnknown101dff00::CUnknown101dff00
 0x10006947 func   ?sub_101df260@S101df260@@QAEPAU1@H@Z S101df260::sub_101df260
 0x1000694c func   ?sub_103be0b0@CNPC_VTzimisce@@QAEXD@Z CNPC_VTzimisce::sub_103be0b0
 0x10006951 func   ?vfunc130@CWeaponPhysCannon@@UAEXPAX@Z CWeaponPhysCannon::vfunc130
