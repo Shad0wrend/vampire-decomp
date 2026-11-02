@@ -341,7 +341,7 @@ public:
 	virtual void vfunc256();
 	virtual void vfunc257();
 	virtual void vfunc258();
-	virtual void vfunc259();
+	virtual void vfunc259(int *pEvent);	// slot 259 (0x103c32c0): the anim event handler: events 0x802 / 0x803 run game slot 619 (slot618 here) with 1 / 0, the rest goes to the Troika base (sub_1029b290)
 	virtual void vfunc260();
 	virtual void vfunc261();
 	virtual void vfunc262();
