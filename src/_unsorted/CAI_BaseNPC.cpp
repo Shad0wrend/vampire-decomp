@@ -124,6 +124,14 @@ void CAI_BaseNPC::vfunc465(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6760 size=0x5
+// TARGET: sub_101a6760
+bool __stdcall sub_101a6760(int a)
+{
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6780 size=0x5
 bool CAI_BaseNPC::vfunc468(CBaseEntity * a0)
 {
