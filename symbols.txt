@@ -1612,6 +1612,7 @@
 0x100039e0 func   ?sub_100d23a0@@YAXXZ sub_100d23a0
 0x100039e5 func   ?sub_102c8c00@UtlMem@@QAEXXZ UtlMem::sub_102c8c00
 0x100039ef func   ?sub_100eb1a0@UtlMem@@QAEXXZ UtlMem::sub_100eb1a0
+0x100039f4 func   ?sub_101a6ac0@@YAXXZ sub_101a6ac0
 0x10003a03 func   ?sub_103fc350@@YAHXZ sub_103fc350
 0x10003a08 func   ?sub_101ff010@CVStatInfo_t@@QAEHH@Z CVStatInfo_t::sub_101ff010
 0x10003a0d func   ?sub_1035e1a0@CNPC_VAndreiBlood@@QAEXPBD@Z CNPC_VAndreiBlood::sub_1035e1a0
