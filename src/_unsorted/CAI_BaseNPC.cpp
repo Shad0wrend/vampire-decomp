@@ -2017,6 +2017,12 @@ void sub_10280fb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10280fd0 size=0x1
+// TARGET: CAI_BaseNPC::vfunc411
+void CAI_BaseNPC::vfunc411() {
+}
+// END FUNCTION
+
 // FUNCTION: 0x10288710 size=0x4e
 #include "CAI_BaseNPCTroika.h"
 #include "CUnknown102e83e0.h"

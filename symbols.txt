@@ -10743,6 +10743,7 @@
 0x1001279c func   ?sub_1013cb80@@YAXABVVector@@00AAV1@PAM@Z sub_1013cb80
 0x100127a1 func   ?vfunc3@CTEDynamicLight@@UAEXABVVector@@ABVQAngle@@@Z CTEDynamicLight::vfunc3
 0x100127a6 func   ??0CKeyHolder@@QAE@H@Z CKeyHolder::CKeyHolder
+0x100127ab func   ?vfunc411@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc411
 0x100127b5 func   ?vfunc270@CVampireProjectile@@UAE_NXZ CVampireProjectile::vfunc270
 0x100127ba func   ?sub_10360bc0@CNPC_VAsianVampire@@QAEXXZ CNPC_VAsianVampire::sub_10360bc0
 0x100127c4 func   ?sub_100295f0@CUnknown100295d0@@QAEXH@Z CUnknown100295d0::sub_100295f0
