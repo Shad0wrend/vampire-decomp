@@ -48,6 +48,7 @@ public:
 	char sub_100eef10();	// stub 0x100127ec: asked by the lock; true when the container is open (the byte at +0x1480)
 	char sub_100eedd0();	// stub 0x1000cc57: asked by the lock's slot 35 when the lock is closed (the byte at +0x1480 clear)
 	void vfunc71();
+	void vfunc103();	// slot 103 (0x10209350): see CItemContainer_vfunc103.h for the derived view with the base chain and the 12 precache strings
 	void vfunc104();	// base vfunc104, precaches the model name (slot 9) and the break model
 	CItemContainer *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_10005718();	// as in CPhysForce (transplant)
