@@ -64,6 +64,15 @@ int CAI_Behavior<CAI_BaseNPC, 100000>::vfunc18(int condition)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c6f50 size=0x6
+extern char g_10601700[];
+
+char *sub_102c6f50(void)
+{
+    return g_10601700;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c6f70 size=0x8
 struct OuterStub;
 struct OuterStubVtbl { void (__fastcall *f[16])(OuterStub *); };

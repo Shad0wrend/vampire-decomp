@@ -6108,6 +6108,7 @@
 0x1000ab64 func   ?vfunc80@CBlueBloodPack@@QAEHXZ CBlueBloodPack::vfunc80
 0x1000ab69 func   ?vfunc243@CAuspexAura@@QAEXPAVCBaseEntity@@HH@Z CAuspexAura::vfunc243
 0x1000ab6e func   ?vfunc4@CTETextMessage@@UAEXPAVCRecipientFilter@@M@Z CTETextMessage::vfunc4
+0x1000ab73 func   ?sub_102c6f50@@YAPADXZ sub_102c6f50
 0x1000ab78 func   ?sub_10273f90@@YIHPAD@Z sub_10273f90
 0x1000ab7d func   ?vfunc580@CNPC_VGuard1@@UAEHXZ CNPC_VGuard1::vfunc580
 0x1000ab82 func   ?sub_10074610@CUnknown10074a30@@QAEMMH@Z CUnknown10074a30::sub_10074610
