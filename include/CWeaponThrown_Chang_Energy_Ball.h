@@ -33,8 +33,8 @@ public:
 	char m_b928;	// 0x928: when set, the think loads the velocity override m_vecVel92c into its local velocity and clears this byte
 	char m_pad0929[0x92c - 0x929];
 	float m_vecVel92c[3];	// 0x92c: velocity override (x +0x92c, y +0x930, z +0x934)
-	float m_flLastThink938;	// 0x938: curtime at the last steering step (frame time = curtime - this)
-	float m_flStart93c;	// 0x93c: curtime of the throw (steering only for 0.65s after)
+	float m_flStart938;	// 0x938: curtime of the throw (set by vfunc103; steering only for 0.65s after)
+	float m_flLastThink93c;	// 0x93c: curtime at the last steering step (frame time = curtime - this; the think does nothing when it is not positive)
 public:
 	datamap_t * vfunc82();
 	int vfunc142(int);
