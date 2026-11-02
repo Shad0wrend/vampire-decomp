@@ -13,6 +13,13 @@ void __fastcall sub_10366290(void *pSelf)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10390fd0 size=0x1
+// TARGET: sub_10390fd0
+void sub_10390fd0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10391170 size=0x86
 #include "CNPC_VBaseBoss.h"
 #include "utlvector.h"
