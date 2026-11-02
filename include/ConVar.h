@@ -4,10 +4,13 @@
 // ConCommandBase as far as the constructors show: its constructor (function 0x102454e0, stub 0x10007f3b) runs first, the
 // ConVar vftable is stored after it. Modelled as an empty base so VC6 orders the constructor like the game; its fields
 // are still declared in ConVar below.
+class ConVar;
+
 class ConCommandBase
 {
 public:
 	ConCommandBase();	// stub 0x10007f3b
+	virtual ConVar *vfunc0(unsigned int flags);	// slot 0 (the destructor); the base carries the vftable pointer at +0
 };
 
 class ConVar : public ConCommandBase
