@@ -13,6 +13,18 @@ void *CNPC_VToreador::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b5350 size=0x6
+#include "CNPC_VToreador.h"
+
+extern const char *g_10652910;
+
+// TARGET: CNPC_VToreador::vfunc451
+const char *CNPC_VToreador::vfunc451()
+{
+	return g_10652910;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b5370 size=0x1e
 #include "CNPC_VToreador.h"
 

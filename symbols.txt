@@ -4042,6 +4042,7 @@
 0x100076f3 func   ?sub_101f82d0@CUnknown101f0e50@@QAE_NH@Z CUnknown101f0e50::sub_101f82d0
 0x100076f8 func   ?sub_101b6a30@@YIXPAH@Z sub_101b6a30
 0x100076fd func   ?sub_101e7e40@CUnknown101e7e40@@QAEMXZ CUnknown101e7e40::sub_101e7e40
+0x10007702 func   ?vfunc451@CNPC_VToreador@@UAEPBDXZ CNPC_VToreador::vfunc451
 0x10007707 func   ?sub_1019dfb0@CRopeKeyframe@@SAPAV1@PAVCBaseEntity@@HHHPBDH@Z CRopeKeyframe::sub_1019dfb0
 0x1000770c func   ?vfunc561@CNPC_VWerewolf@@QAEXHH@Z CNPC_VWerewolf::vfunc561
 0x10007711 func   ?vfunc451@CNPC_VSheriffSwarm@@UAEHXZ CNPC_VSheriffSwarm::vfunc451
