@@ -107,3 +107,4 @@
 	float vfunc135(float f);	// slot 135: returns its argument
 	float vfunc152();	// slot 152: the constant 0.0f
 	float vfunc190();	// slot 190: the constant 0.0f
+	float *vfunc198();	// slot 198: returns &field at +0x3d4 (the velocity)
