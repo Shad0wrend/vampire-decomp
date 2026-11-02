@@ -69,4 +69,6 @@ public:
 	virtual void vfunc56();
 	virtual void vfunc57();
 	virtual const char *vfunc58(int classify);	// "ClassifyText": the "CLASS_..." name of a classification id (0..0x19), "MISSING CLASS in ClassifyText()" otherwise
+
+	CHalfLife2 *sub_10355740();	// constructor body: base ctor (0x101abbf0) then the vftable
 };
