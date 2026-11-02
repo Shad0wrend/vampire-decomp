@@ -3,6 +3,13 @@
 
 struct datamap_t;
 
+struct PhysObjView	// a physics object attached to the constraint (only the slots used): the game flags word is slots 7 / 8
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
+	virtual void SetGameFlags(unsigned int flags);	// slot 7
+	virtual unsigned int GetGameFlags();	// slot 8
+};
+
 struct CPhysConstraintObj	// the physics constraint object at +0x450 (only the slots used)
 {
 	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(class CPhysConstraint *pOwner); virtual void vfunc4();
