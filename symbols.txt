@@ -2009,6 +2009,7 @@
 0x100044f8 func   ?sub_102e0a60@CUnknown102e0a60@@QAEXH@Z CUnknown102e0a60::sub_102e0a60
 0x10004502 func   ?sub_10312c20@CUnk10312c20@@QAEXH@Z CUnk10312c20::sub_10312c20
 0x1000450c func   ?vfunc546@CNPC_VSabbatGunman@@QAEHH@Z CNPC_VSabbatGunman::vfunc546
+0x10004511 func   ?sub_102c6860@CUnknown102c6860@@QAEXXZ CUnknown102c6860::sub_102c6860
 0x10004516 func   ?vfunc400@CNPC_VTzimisceRunner@@UAE_NXZ CNPC_VTzimisceRunner::vfunc400
 0x10004520 func   ?sub_100e15c0@CDialog@@QAEDPAUDialogLine@@D@Z CDialog::sub_100e15c0
 0x10004525 func   ?sub_1007c1c0@@YAXPAXHPAVCUnknown10078540@@@Z sub_1007c1c0
