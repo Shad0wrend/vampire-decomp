@@ -52881,6 +52881,21 @@ int *sub_10115d20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10116970 size=0x20
+#include "CPASFilter.h"
+
+extern char g_104470dc[];
+
+// TARGET: CPASFilter::sub_10116970
+CPASFilter *CPASFilter::sub_10116970(const float *pOrigin)
+{
+	sub_1019ce00();
+	*(void **)this = g_104470dc;
+	sub_1019d280(pOrigin);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10116e80 size=0xe4
 #include "Vector.h"
 #include "CEntityVSlots.h"

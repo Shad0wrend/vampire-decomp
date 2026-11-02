@@ -6031,6 +6031,7 @@
 0x1000ab0f func   ?vfunc6@CMoveHelperServer@@UAEXHHHHHHHHHHHH@Z CMoveHelperServer::vfunc6
 0x1000ab14 func   ?vfunc0@CTEInspectionFX@@UAEHXZ CTEInspectionFX::vfunc0
 0x1000ab19 func   ?sub_10077db0@CUnknown10077db0@@QAEXHPBD@Z CUnknown10077db0::sub_10077db0
+0x1000ab1e func   ?sub_10116970@CPASFilter@@QAEPAV1@PBM@Z CPASFilter::sub_10116970
 0x1000ab23 func   ?sub_101cda50@@YAHXZ sub_101cda50
 0x1000ab28 func   ?sub_10060ac0@@YAXHHPBH0HHHD@Z sub_10060ac0
 0x1000ab2d func   ?sub_1025b820@@YAPBDI@Z sub_1025b820
