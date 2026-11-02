@@ -30,6 +30,13 @@ void *sub_10235f70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10235f90 size=0x6
+int sub_10235f90(void)
+{
+    return 0xf5;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102360e0 size=0x1e
 #include "CWeaponRanged_Rifle_Remington.h"
 
