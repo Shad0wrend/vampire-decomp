@@ -62745,6 +62745,22 @@ Vector CPhysicsCannister::sub_10150530(const Vector *pDir)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10150640 size=0x1c
+#include "CPhysicsCannister.h"
+
+extern char g_1046d524[];
+void __fastcall sub_100cd2d0(char *p);
+void __fastcall sub_103274d0(CPhysicsCannister *self);
+
+// TARGET: CPhysicsCannister::sub_10150640
+void CPhysicsCannister::sub_10150640()
+{
+	*(void **)this = g_1046d524;
+	sub_100cd2d0((char *)this + 0x19fc);
+	sub_103274d0(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10150e10 size=0x8
 namespace lifted {
 int sub_10001fa0();
