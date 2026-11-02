@@ -1,12 +1,16 @@
-// CScriptedSentence: declared by pcdecomp transplant for 0x101ab160 from CBaseCineCam (0x1006d950);
-// only what matched code needs, as plain members.
+// CScriptedSentence (RTTI CScriptedSentence : CPointEntity : CBaseEntity), vtable 0x1047935c, size 0x4ac.
+// Constructor (the factory scripted_sentence, 0x101a9cb0): CBaseEntity(0), CPointEntity vftable, the two outputs
+// (+0x47c, +0x494), CScriptedSentence vftable.
 #pragma once
+
+#include "CPointEntity.h"
+#include "COutputEvent.h"
 
 struct datamap_t;
 
 class CBaseEntity;
 
-class CScriptedSentence
+class CScriptedSentence : public CPointEntity
 {
 public:
 	CScriptedSentence *vfunc5(unsigned int flags);
@@ -16,4 +20,8 @@ public:
 public:
 	datamap_t * vfunc82();
 	int vfunc117();
+
+	char m_pad0450[0x47c - 0x450];	// the sentence fields at +0x450..+0x47c
+	COutputEvent m_Output47c;	// 0x47c: constructed by the factory (0x10002ddd)
+	COutputEvent m_Output494;	// 0x494
 };
