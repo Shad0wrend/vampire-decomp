@@ -21,8 +21,14 @@ struct CWeaponOwner
 	char m_pad2560[0x2668 - 0x2560];
 	int m_n2668;	// 0x2668: first dword of a block of the owner's info; weapons test its address and read it
 	int m_n266c;	// 0x266c: barter sell value (variant)
-	char m_pad2670[0x238e0 - 0x2670];
+	int m_n2670;	// 0x2670: the count / level Inventory_Insert stores as the weapon's clip (at least 1)
+	char m_pad2674[0x277c - 0x2674];
+	int m_n277c;	// 0x277c: the 0x114th byte of the block at +0x2668 (Inventory_Insert hands it to slot 374 as the ammo index)
+	char m_pad2780[0x238e0 - 0x2780];
 	CWeaponAttackSlot m_Attacks[3];	// 0x238e0 .. 0x2c58c
+	char m_pad2c58c[0x5eb20 - 0x2c58c];
+	char m_Block5eb20[0x20];	// 0x5eb20: a block whose dword at +0x20 (0x5eb40) says whether Inventory_Insert has to run sub_1033d970 first
+	int m_n5eb40;	// 0x5eb40
 
 	void *sub_1015d680(int index);	// the entity behind the handle `index` of the handle array at +0x2308 (0 when stale), stub 0x10013d09
 };
