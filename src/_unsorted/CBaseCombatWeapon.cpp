@@ -54,6 +54,14 @@ int CBaseCombatWeapon::vfunc289()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10149d20 size=0x6
+// TARGET: CBaseCombatWeapon::vfunc290
+int CBaseCombatWeapon::vfunc290()
+{
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10149d40 size=0x3
 // TARGET: sub_10149d40
 void __stdcall sub_10149d40(void *p) {}

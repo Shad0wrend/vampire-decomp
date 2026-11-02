@@ -9551,6 +9551,7 @@
 0x10010334 func   ?sub_102ae8c0@CUnknown102b5dc0@@QAEXH@Z CUnknown102b5dc0::sub_102ae8c0
 0x10010339 func   ?vfunc193@CBaseCineCam@@QAEPAMPAM@Z CBaseCineCam::vfunc193
 0x1001033e func   ?vfunc286@CPayphone@@UAEXHH@Z CPayphone::vfunc286
+0x10010343 func   ?vfunc290@CBaseCombatWeapon@@UAEHXZ CBaseCombatWeapon::vfunc290
 0x10010348 func   ?sub_10037750@CPushBlockerEnum@@QAE_NPAVCBaseEntity@@@Z CPushBlockerEnum::sub_10037750
 0x1001034d func   ?vfunc82@CNPC_VAnimal@@UAEPAUdatamap_t@@XZ CNPC_VAnimal::vfunc82
 0x10010352 func   ?sub_10278c80@CUnknown10290040@@QAEDXZ CUnknown10290040::sub_10278c80
