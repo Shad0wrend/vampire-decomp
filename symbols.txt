@@ -10394,6 +10394,7 @@
 0x10011833 func   ?vfunc14@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEHHHH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc14
 0x10011838 func   ?sub_10382970@CUnknown10382970@@QAEXH@Z CUnknown10382970::sub_10382970
 0x10011838 func   ?sub_10382970@CUnknown10382970@@QAEXVCBaseHandle@@@Z CUnknown10382970::sub_10382970
+0x1001183d func   ?sub_10299d80@@YAHXZ sub_10299d80
 0x10011842 func   ?vfunc18@CAI_BaseNPCTroika@@QAEXHH@Z CAI_BaseNPCTroika::vfunc18
 0x10011847 func   ?sub_1027e140@CAI_BaseNPCUnit@@QAEHPBVVector@@H@Z CAI_BaseNPCUnit::sub_1027e140
 0x10011851 func   ?sub_103c63c0@CNPC_VVampireBoss@@QAEXXZ CNPC_VVampireBoss::sub_103c63c0

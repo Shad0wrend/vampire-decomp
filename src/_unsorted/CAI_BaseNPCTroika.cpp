@@ -1371,6 +1371,13 @@ int CAI_BaseNPCTroika::vfunc127(CRestore *pRestore)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10299d80 size=0x6
+int sub_10299d80(void)
+{
+    return 4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10299da0 size=0x21d
 struct Troika404View { char pad[0x98]; CAI_BaseNPCTroika *p98; CAI_BaseNPCTroika *p9c; };
 
