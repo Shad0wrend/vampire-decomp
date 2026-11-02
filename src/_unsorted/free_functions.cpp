@@ -125848,6 +125848,36 @@ struct CUnknown10260980 { int p; int a; CUnknown10260980* sub_10260980(); };
 CUnknown10260980* CUnknown10260980::sub_10260980() { a = -1; return this; }
 // END FUNCTION
 
+// FUNCTION: 0x102609e0 size=0x43
+#include "CAI_BaseHumanoid.h"
+
+void *sub_100aa720(int size);
+extern char g_105c907c[];
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+class CAI_BaseHumanoidVt
+{
+public:
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	virtual void k0(); virtual void k1(); virtual void k2(); virtual void k3(); virtual void k4(); virtual void k5();
+	virtual void vfunc106(const char *pszName);
+};
+
+// TARGET: npc_TestBaseHumanoid
+extern "C" CAI_BaseHumanoid *npc_TestBaseHumanoid()
+{
+	void *mem = sub_100aa720(0x6058);
+	CAI_BaseHumanoid *p;
+	if (mem)
+		p = ((CAI_BaseHumanoid *)mem)->sub_10260b30();
+	else
+		p = 0;
+	((CAI_BaseHumanoidVt *)p)->vfunc106(g_105c907c);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10260a50 size=0xaf
 #include "CBaseAnimating.h"
 
