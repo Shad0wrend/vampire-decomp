@@ -17580,6 +17580,41 @@ int CUnknown10077430::sub_10077430()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10077450 size=0x22
+struct CUnk10077450 {
+	char m_pad0000[0x30c];
+	int *m_p28;
+	char m_pad002c[0x34 - 0x2c];
+	int m_34;
+	int sub_10077450(int index);
+};
+
+namespace block_10077430 {
+	struct CUnk10077450Unit : CUnk10077450 {
+		int sub_10077430();
+	};
+	int CUnk10077450Unit::sub_10077430()
+	{
+		return m_34;
+	}
+}
+using namespace block_10077430;
+
+// TARGET: CUnk10077450::sub_10077450
+int CUnk10077450::sub_10077450(int index)
+{
+	if (index >= 0)
+	{
+		int count = ((block_10077430::CUnk10077450Unit *)this)->sub_10077430();
+		if (index < count)
+		{
+			return m_p28[index];
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10077490 size=0xf6
 #include "CUtlVector4.h"
 
