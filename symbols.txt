@@ -12635,6 +12635,7 @@
 0x1001582f func   ?sub_1039ab30@CNPC_VMingXiao@@QAEXXZ CNPC_VMingXiao::sub_1039ab30
 0x1001583e func   ?sub_1030b1d0@CUtlVector280@@QAEXHH@Z CUtlVector280::sub_1030b1d0
 0x10015848 func   ?sub_1028e790@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_1028e790
+0x1001584d func   ?sub_10026f60@@YGEXZ sub_10026f60
 0x10015852 func   _item_w_flamethrower item_w_flamethrower
 0x10015857 func   ?vfunc81@CResearchBook_LG_FIREARMS@@QAEHXZ CResearchBook_LG_FIREARMS::vfunc81
 0x1001585c func   ?sub_102e7e00@@YIXPAUCOwner@@@Z sub_102e7e00

@@ -468,6 +468,14 @@ int CBaseEntityX::sub_10026f20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026f60 size=0x3
+// TARGET: sub_10026f60
+unsigned char __stdcall sub_10026f60()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027020 size=0x8
 #include "CBaseEntity.h"
 
