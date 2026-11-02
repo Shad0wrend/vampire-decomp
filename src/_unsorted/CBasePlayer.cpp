@@ -123,6 +123,11 @@ CBaseEntity *CBasePlayer::sub_1015dc60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015dca0 size=0x3
+// TARGET: CBasePlayer::vfunc328
+char CBasePlayer::vfunc328() { return 1; }
+// END FUNCTION
+
 // FUNCTION: 0x1015dcf0 size=0x1
 // TARGET: sub_1015dcf0
 void __fastcall sub_1015dcf0(void *pThis)

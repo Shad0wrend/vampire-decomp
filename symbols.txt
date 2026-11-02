@@ -580,6 +580,7 @@
 0x10001eec func   ?sub_103dbe70@CIntHolder103dbe70@@QAEPAU1@PAUCIntObj103dbe70@@@Z CIntHolder103dbe70::sub_103dbe70
 0x10001ef6 func   ?sub_10250400@@YAXPAX@Z sub_10250400
 0x10001efb func   ?vfunc2@CTEDecal@@UAEPAV1@I@Z CTEDecal::vfunc2
+0x10001f00 func   ?vfunc328@CBasePlayer@@UAEDXZ CBasePlayer::vfunc328
 0x10001f05 func   ?sub_102ea050@CUnknown102ea050@@QAEHXZ CUnknown102ea050::sub_102ea050
 0x10001f0f func   ?vfunc80@CPlayerResource@@QAEHXZ CPlayerResource::vfunc80
 0x10001f1e func   ?sub_101a6920@@YAXXZ sub_101a6920
