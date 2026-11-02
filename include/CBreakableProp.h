@@ -56,6 +56,9 @@ public:
     void sub_1018f620();    // the break think: slot 266 with the attacker (handle +0x768), then SetThink(0, 0, 0)
     int m_nBreakMode;    // 0x76c: 0, 1 or 2 (anything else warns and becomes 2)
     float m_flFadeTime770;    // 0x770
+    int m_n774;    // 0x774: gib parameter handed to the gib spawner (sub_10192130 chain, arg 5)
+    char m_b778;    // 0x778: gib flag byte handed to the gib spawner (arg 6)
+    void vfunc266(CBaseEntity *pAttacker);    // slot 266 "CBreakableProp::Break" (ret 4): remembers the attacker's handle (+0x768, -1 for null), take-damage mode +0x200 = 2 / +0x1fc = 0, fires the output at +0x730 (pAttacker, this, 0 delay: sub_100cd660), takes the physics object's (+0x36c, slot 40) velocity pair or the +0x3bc / +0x3d0 vectors (sub_100b1d10 first when bit 12 of +0x268), AddSolidFlags(4) scope trace (name +0x26c) on the collision property at +0x270, sub_101cf600(this), explosion lookup: dynamic_cast<CParamsExplosion *>(g_106eb5d8.sub_100f7770(0, m_pszExplosion764, pAttacker, 0)) (sub_10104510 / sub_10104730 on success, Warning "%s could not find explosion parameters: %s\n" on failure), then the gib spawner chain slot 219 / 217 / 8 into the cdecl sub_10192130 (arguments: velocities, +0xdc, +0x76c, +0x774, +0x778) and sub_101cd940(this). Twin: 0x10157930
 public:
     datamap_t * vfunc82();
 };
