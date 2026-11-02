@@ -76,6 +76,13 @@ int CNPC_VAnimal::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035f540 size=0x6
+int sub_1035f540(void)
+{
+    return 0x1f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035f5c0 size=0x64
 #include "CEntityVSlots.h"
 struct CUnknown1027d990 { int sub_1027d990(); };

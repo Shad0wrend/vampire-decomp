@@ -3077,6 +3077,7 @@
 0x10005ee8 func   ?sub_1020d050@CUnit1020d080@@QAEXXZ CUnit1020d080::sub_1020d050
 0x10005eed func   ?vfunc2@CEffectsServer@@UAEXPBMHMM@Z CEffectsServer::vfunc2
 0x10005ef2 func   ?sub_1005a510@@YAHXZ sub_1005a510
+0x10005ef7 func   ?sub_1035f540@@YAHXZ sub_1035f540
 0x10005efc func   ?sub_100d9b80@@YAXXZ sub_100d9b80
 0x10005f01 func   ?vfunc5@CItemGRing03@@QAEPAV1@I@Z CItemGRing03::vfunc5
 0x10005f0b func   ?vfunc432@CNPC_VBach@@QAEXH@Z CNPC_VBach::vfunc432
