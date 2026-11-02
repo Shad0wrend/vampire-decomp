@@ -16143,6 +16143,34 @@ void CUnknown100735a0::sub_100735a0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100736b0 size=0x44
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+
+class S10073720
+{
+public:
+	char m_pad0000[0x84];
+	int *m_pElements;	// 0x84
+	char m_pad0088[0x90 - 0x88];
+	int m_size;	// 0x90
+
+	int sub_10073720(int elem);
+	void sub_100736b0(int elem);
+};
+
+// TARGET: S10073720::sub_100736b0
+void S10073720::sub_100736b0(int elem)
+{
+	int idx = sub_10073720(elem);
+	if (idx != -1) {
+		int num = m_size - idx - 1;
+		if (num > 0)
+			memmove(&m_pElements[idx], &m_pElements[idx + 1], num * sizeof(int));
+		m_size--;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10073720 size=0x2a
 struct S10073720 {
 	char m_pad[0x84];

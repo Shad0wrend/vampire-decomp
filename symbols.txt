@@ -8204,6 +8204,7 @@
 0x1000e232 func   ?sub_1042df70@@YG_NHH@Z sub_1042df70
 0x1000e237 func   _npc_VMercurio npc_VMercurio
 0x1000e23c func   ?Links@?$CUtlRBTree@UCRBTree12Entry_101c03c0@@G@@QBEABULinks_t@1@G@Z CUtlRBTree<CRBTree12Entry_101c03c0,unsigned short>::Links
+0x1000e241 func   ?sub_100736b0@S10073720@@QAEXH@Z S10073720::sub_100736b0
 0x1000e246 func   ?sub_1013d3a0@@YADXZ sub_1013d3a0
 0x1000e24b func   ?sub_100be040@CUnknown100be040@@QAEXH@Z CUnknown100be040::sub_100be040
 0x1000e250 func   _item_g_vampyr_apocrypha item_g_vampyr_apocrypha
