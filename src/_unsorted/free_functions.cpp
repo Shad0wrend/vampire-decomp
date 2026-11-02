@@ -86126,6 +86126,30 @@ int sub_101c91b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c96d0 size=0x4b
+#include "CConstraintAnchor.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(unsigned int size);
+extern char g_1044b584[];	// CPointEntity vftable
+extern const char g_1059fc3c[];
+
+// TARGET: info_teleport_destination
+extern "C" CBaseEntity *info_teleport_destination()
+{
+	void *mem = sub_100aa720(0x450);
+	CBaseEntity *p;
+	if (mem) {
+		((CConstraintAnchorBase *)mem)->sub_1009d980(0);
+		*(void **)mem = g_1044b584;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_1059fc3c);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c9740 size=0x69
 void *sub_1000db89(int);
 struct GP;
