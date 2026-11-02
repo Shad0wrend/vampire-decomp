@@ -99,9 +99,10 @@ public:
 	Vector m_vecBonePos;	// 0x6684: position of the chosen bone
 	unsigned int m_h6690;	// 0x6690: entity handle (the grabbed phys_animlink)
 	char m_b6694;	// 0x6694
-	char m_pad6695[0x66a0 - 0x6695];
-	unsigned int m_n66a0;	// 0x66a0
+	char m_pad6695[0x6698 - 0x6695];
+	MvsnSec::CSecureInt4 m_Secure6698;	// 0x6698: scrambled int (vptr 0x104b73dc, two bytes at +0x669c / +0x669d, value at +0x66a0)
 	CNPC_VHengeyokaiTimerVec m_Timers;	// 0x66a4
+	char m_obj66b8;	// 0x66b8: an embedded object of unknown size, constructed by sub_1037e990 (fastcall, ecx = &m_obj66b8; stub for 0x1037e9b0)
 
 	CNPC_VHengeyokai *vfunc5(unsigned int flags);	// slot 5 (scalar deleting destructor, plain member): the timer vector goes, then the Troika base's destructor body (stub 0x100123af), then the delete when bit 0 of flags is set
 	int sub_10382b30(int key);
