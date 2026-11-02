@@ -263,6 +263,13 @@ CBasePlayer *CBasePlayer::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015ee60 size=0x7
+char CBasePlayer::vfunc406()
+{
+	return *(char *)((char *)this + 0x19f6);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015ee80 size=0x8
 #include "CBasePlayer.h"
 
