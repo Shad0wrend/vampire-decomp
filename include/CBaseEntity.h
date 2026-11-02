@@ -289,7 +289,7 @@ public:
 	unsigned int m_hUseFilter;	// 0x0218: entity handle of the use filter
 	char m_pad021c[4];
 	unsigned int m_hDamageFilter;	// 0x0220: entity handle of the damage filter
-	char m_pad0224[0x228 - 0x224];
+	union { char m_pad0224[0x228 - 0x224]; unsigned int m_fDebugOverlays224; };	// 0x0224: the debug overlay flags (bit 24 asked by CNodeEnt::vfunc103)
 	void *m_pTimedOverlays;	// 0x0228
 	char m_pad022c[0x254 - 0x22c];
 	unsigned int m_hTouch254;	// entity handle notified by StartTouch / EndTouch (this is the move parent handle: SetParent 0x100a0670 assigns it with CBaseHandle::operator=(IHandleEntity*), byte +0x258 = the attachment index, handle +0x25c; +0x124 = the parent's name (parent +0x26c); +0x1b1 byte set by SetParent)
