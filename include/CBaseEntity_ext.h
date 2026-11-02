@@ -105,3 +105,4 @@
 	int vfunc227(struct CTakeDamageInfo *pInfo);	// slot 227 "CBaseEntity::VPhysicsTakeDamage" (0x100a1580, ret 4, always returns 1): scope trace (entity name or "NULL ENTITY"); damage = info+0x30 (or CVDmg_t::GetDmg of info+0) * 100.0f; with an attacker (info+0x28) traces from attacker slot 217 origin to this slot 217 origin (CTraceFilterWorldOnly 0x10450a58, Ray_t, engine trace global 0x1070b254 slot 4) and applies a force through the physics object (+0x36c) slot 31 (ApplyForceOffset) / slot 30; globals 0x106b8654 (slot 1 = IsPaused-like, +0x28 = frametime) and 0x10738960 (debug trace check)
 	void vfunc225();	// slot 225 (plain member): unless the physics object at +0x36c is null, calls sub_1002ee60(this), sub_10158520(object, this) and clears +0x36c
 	float vfunc135(float f);	// slot 135: returns its argument
+	float vfunc152();	// slot 152: the constant 0.0f
