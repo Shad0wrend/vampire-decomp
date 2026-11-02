@@ -164234,10 +164234,6 @@ struct CKVNode {
 	virtual CKVNode *vfunc4();
 	virtual CKVNode *vfunc5();
 };
-struct CVBase {
-	virtual void vfunc0();
-	virtual void vfunc1();
-};
 
 char *sub_101d3730(const char *fmt, const char *prefix);
 CKVNode *sub_101f2e20(const char *name, int x);
@@ -164251,7 +164247,7 @@ struct CKVFile : CKVNode {
 	void Close()
 	{
 		int disp = m_pVBTable[1];
-		CVBase *b = (CVBase *)((char *)this + disp + 4);
+		CKVNode *b = (CKVNode *)((char *)this + disp + 4);
 		b->vfunc1();
 	}
 };
