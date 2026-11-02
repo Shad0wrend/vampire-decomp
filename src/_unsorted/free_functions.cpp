@@ -172638,6 +172638,40 @@ int sub_103e2840()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e2a10 size=0x43
+#include "CWeaponRanged_FlameThrower.h"
+
+void *sub_100aa720(int size);
+extern char g_106665cc[];
+
+#define VD10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CWepVt
+{
+	VD10(a) VD10(b) VD10(c) VD10(d) VD10(e) VD10(f) VD10(g) VD10(h) VD10(i) VD10(j)
+	virtual void s100(); virtual void s101(); virtual void s102(); virtual void s103(); virtual void s104(); virtual void s105();
+	virtual void vfunc106(const char *pszName);
+};
+
+struct CWepCtor
+{
+	CWeaponRanged_FlameThrower *sub_103e2ad0();
+};
+
+// TARGET: item_w_flamethrower
+extern "C" CWeaponRanged_FlameThrower *item_w_flamethrower()
+{
+	void *mem = sub_100aa720(0x1568);
+	CWeaponRanged_FlameThrower *p;
+	if (mem)
+		p = ((CWepCtor *)mem)->sub_103e2ad0();
+	else
+		p = 0;
+	((CWepVt *)p)->vfunc106(g_106665cc);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e2d10 size=0x107
 #include "CWeaponRanged_FlameThrower.h"
 #include "CBaseEntity.h"
