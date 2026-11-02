@@ -48320,6 +48320,18 @@ void CEnvLaser::sub_10101a90(void *pTrace)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10101d50 size=0x5c
+#include "CMessage.h"
+
+// TARGET: env_message
+extern "C" CBaseEntity *env_message()
+{
+	CMessage *p = new CMessage;
+	p->vfunc106("env_message");
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10101e30 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
