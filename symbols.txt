@@ -12419,6 +12419,7 @@
 0x10015497 func   ?sub_101d6a30@@YGDHH@Z sub_101d6a30
 0x1001549c func   ?vfunc5@CInfoIntermission@@QAEPAV1@I@Z CInfoIntermission::vfunc5
 0x100154a1 func   ?sub_10167370@CPlayerTargetView@@QAEDXZ CPlayerTargetView::sub_10167370
+0x100154a6 func   ?vfunc5@CEnvSpark@@QAEPAV1@I@Z CEnvSpark::vfunc5
 0x100154ab func   ?sub_10137300@@YAMPBM@Z sub_10137300
 0x100154b0 func   ?sub_100784b0@CUnknown10077730@@QAEXM@Z CUnknown10077730::sub_100784b0
 0x100154b5 func   ?sub_102fe9a0@CBitString@@QAEPAV1@H@Z CBitString::sub_102fe9a0
