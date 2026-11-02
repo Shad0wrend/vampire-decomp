@@ -68040,6 +68040,30 @@ void CBasePlayer::sub_10178590(Vector vecPos)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10178da0 size=0x4b
+#include "CConstraintAnchor.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(unsigned int size);
+extern char g_10470e04[];	// CStripWeapons vftable
+extern const char g_10587980[];
+
+// TARGET: player_weaponstrip
+extern "C" CBaseEntity *player_weaponstrip()
+{
+	void *mem = sub_100aa720(0x450);
+	CBaseEntity *p;
+	if (mem) {
+		((CConstraintAnchorBase *)mem)->sub_1009d980(0);
+		*(void **)mem = g_10470e04;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_10587980);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10179000 size=0x1a
 namespace lifted {
 extern int g_105836dc;
