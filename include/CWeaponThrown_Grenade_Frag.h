@@ -385,7 +385,7 @@ public:
 	virtual void vfunc330();
 	virtual void vfunc331();
 	virtual void vfunc332();
-	virtual void vfunc333();
+	virtual void vfunc333(int a, int b, int c, int d, int e, int f);	// slot 333 (+0x534, ret 0x18): sub_103f0a00 calls it with (0xd, 1, 0, 0, 0, 0)
 	virtual void vfunc334();
 	virtual void vfunc335();
 	virtual void vfunc336();
