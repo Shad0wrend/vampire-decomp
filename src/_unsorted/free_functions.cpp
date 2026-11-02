@@ -108187,6 +108187,18 @@ void CUnknown1020e060::sub_1020e080(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020e0d0 size=0x19
+bool sub_1020e040();
+void __stdcall sub_1020dce0(int a);
+
+// TARGET: sub_1020e0d0
+void __fastcall sub_1020e0d0(void *pThis, int b, int a)
+{
+	if (sub_1020e040())
+		sub_1020dce0(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020e260 size=0x1a
 namespace lifted {
 extern int g_105aab6c;

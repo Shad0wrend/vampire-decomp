@@ -3030,6 +3030,7 @@
 0x10005e6b func   ?sub_10069430@CTETParticle@@QAEPAV1@H@Z CTETParticle::sub_10069430
 0x10005e70 func   ?vfunc72@CNPC_VTaxiDriver@@QAE_NH@Z CNPC_VTaxiDriver::vfunc72
 0x10005e7a func   ?sub_1023dcd0@@YAHXZ sub_1023dcd0
+0x10005e7f func   ?sub_1020e0d0@@YIXPAXHH@Z sub_1020e0d0
 0x10005e84 func   ?vfunc5@CNPC_VScurrying@@QAEPAV1@I@Z CNPC_VScurrying::vfunc5
 0x10005e89 func   ?sub_10136490@@YIXPADHH@Z sub_10136490
 0x10005e9d func   ?sub_100d1cc0@SFilter@@QAEPAU1@E@Z SFilter::sub_100d1cc0
