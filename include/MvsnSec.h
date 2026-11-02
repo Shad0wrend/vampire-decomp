@@ -30,6 +30,30 @@ struct CSecureTypeBase
 	}
 };
 
+struct CPfnTraits4 {};
+
+// The CPfnTraits4 instance (vftable 0x104b73dc, one slot 0x103835f0) used by CNPC_VHengeyokai at +0x6698: the value sits at +0x08
+// (after two bytes the constructor copies from uninitialised locals to +0x04 / +0x05). The constructor sets vptr, then
+// m_Value = Scramble(sub_10430080(0x1e)), see CNPC_VHengeyokai 0x1037e680.
+unsigned int sub_10430080(unsigned int x);	// the first scrambling step of Traits4 (cdecl; stub 0x100043e5 -> 0x10383e90 -> 0x1001150e)
+
+template <>
+struct CSecureTypeBase<CPfnTraits4, int, CSecureCoderPfn<CPfnTraits4, int>, CSecureCoderBasic<CPfnTraits4, int> >
+{
+	virtual void vfunc0();	// slot 0 (0x103835f0)
+
+	char m_b04;	// 0x04
+	char m_b05;	// 0x05
+	int m_Value;	// 0x08: the scrambled value
+
+	static int Scramble(unsigned int a)
+	{
+		return (((a & 0x3f3c1135) ^ 0x415a33ef) + 0x4ba5398d & 0xc0c3eeca) ^ a ^ 0x151a77f8;
+	}
+};
+
+typedef CSecureTypeBase<CPfnTraits4, int, CSecureCoderPfn<CPfnTraits4, int>, CSecureCoderBasic<CPfnTraits4, int> > CSecureInt4;
+
 typedef CSecureTypeBase<CPfnTraits3, int, CSecureCoderPfn<CPfnTraits3, int>, CSecureCoderBasic<CPfnTraits3, int> > CSecureInt3;
 
 }
