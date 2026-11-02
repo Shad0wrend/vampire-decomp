@@ -11,4 +11,5 @@ public:
 	CPASFilter(const Vector &origin) { AddRecipientsByPAS(origin); }
 	CPASFilter(const float *pOrigin) { sub_1019d280(pOrigin); }	// the same, origin as a float pointer (matched code)
 	CPASFilter();	// not in the game: declared for the matched source of ??_GCPASAttenuationFilter (0x1002ac40)
+	CPASFilter *sub_10116970(const float *pOrigin);	// the out-of-line copy of the float* constructor (0x10116970): base ctor, vptr, AddRecipientsByPAS(origin)
 };
