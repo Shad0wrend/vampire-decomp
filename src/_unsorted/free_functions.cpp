@@ -108119,6 +108119,26 @@ int *sub_10211970()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10211a50 size=0x46
+extern int vt_1047332c;
+extern int vt_1048887c;
+void __fastcall sub_1008b230(void *pThis);
+void __fastcall sub_100cd2a0(void *pThis);
+// TARGET: sub_10211a50
+int *__fastcall sub_10211a50(int *pThis)
+{
+	sub_1008b230(pThis);
+	pThis[0] = (int)&vt_1047332c;
+	sub_100cd2a0((char *)pThis + 0x734);
+	sub_100cd2a0((char *)pThis + 0x74c);
+	pThis[0] = (int)&vt_1048887c;
+	pThis[0x1d9] = 0;
+	*((char *)pThis + 0x76c) = 0;
+	pThis[0x1da] = 0x12;
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10211af0 size=0x36
 #include "CPropSign.h"
 #include "CBaseAnimating.h"
