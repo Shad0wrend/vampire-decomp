@@ -45,6 +45,7 @@ public:
 	COutputEvent m_Output734;	// 0x734 (fired by vfunc39, destroyed by sub_100cd2d0 in the destructor 0x10211af0)
 	CPropSignUserList m_Users74c;	// 0x74c; really an output event (0x18 bytes, destroyed by sub_100cd2d0) followed by the sign text pointer m_pText764 (+0x764, freed with operator delete in the destructor)
 	int m_field768;
+	CPropSign *sub_10211a50();	// constructor stub (0x10211a50)
 	void sub_10001a0a();	// as in CPhysForce (transplant)
 	void vfunc103();	// slot 103 "CPropSign::Spawn": CBaseProp::vfunc103, then with a studio header: stops the movement (slot 93), makes the entity solid (SetSolid 3), takes the collision bounds from the header (+0xb4 / +0xc0), sets collision group 1 and refreshes the partition (sub_100ddd90) and the entity (sub_100b3b00)
 	void sub_1018df70();	// CBaseProp::vfunc103 (stub 0x10011793), called directly
