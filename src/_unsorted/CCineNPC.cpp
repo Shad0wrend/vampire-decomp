@@ -35,6 +35,15 @@ bool CCineNPC::vfunc364(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6e20 size=0x5
+#include "CCineNPC.h"
+
+bool CCineNPC::vfunc72(int a)
+{
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6e40 size=0x52
 #include "CCineNPC.h"
 void sub_100aa7b0(void *);
