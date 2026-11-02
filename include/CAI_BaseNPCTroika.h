@@ -314,7 +314,8 @@ public:
 	int m_n6300;	// 0x6300: cached value (lazily looked up by sub_1029f780)
 	char m_pad6304[0x630c - 0x6304];
 	char *m_p630c;	// 0x630c: an object with a flag dword at +0x64
-	char m_pad6310[0x6318 - 0x6310];
+	int m_n6310;	// 0x6310: node index (-1 none), bounds checked in the navigator's net (+0x5d34 -> +0x2c) by vfunc130
+	int m_n6314;	// 0x6314: id handed to the node's sub_102f96e0 (-1 none); result goes to m_p630c
 	float m_f6318;	// 0x6318
 	char m_pad631c[0x6338 - 0x631c];
 	int m_n6338;	// 0x6338: the investigate mode (0..6)
