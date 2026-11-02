@@ -171909,6 +171909,28 @@ extern "C" GP *item_w_sledgehammer()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e7200 size=0x93
+#include "SendTable.h"
+
+SendProp sub_10246af0(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int extra, void *proxy);
+SendProp sub_10246dc0(const char *pVarName, int offset, int pTable, void *proxy);
+void sub_10009539();
+extern int g_105c5bc0;
+extern const char *g_10671600;
+extern SendTable g_10941224;
+
+int sub_103e7200()
+{
+	static SendProp s_Props[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246dc0("baseclass", 0, g_105c5bc0, (void *)sub_10009539),
+		sub_10246af0("m_bEmitLight", 0x914, 1, 1, 1, 0, 0),
+	};
+	g_10941224.sub_10247240(&s_Props[1], 2, g_10671600);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e7470 size=0x1a
 namespace lifted {
 extern int g_10672070;

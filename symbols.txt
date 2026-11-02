@@ -12837,6 +12837,7 @@
 0x10015a5f func   ?sub_101a8840@@YGXPAUCCineStateView@@@Z sub_101a8840
 0x10015a64 func   ?vfunc162@CBasePlayer@@UAEDXZ CBasePlayer::vfunc162
 0x10015a69 func   ?vfunc5@CNPC_VNewscaster@@QAEPAV1@I@Z CNPC_VNewscaster::vfunc5
+0x10015a6e func   ?sub_103e7200@@YAHXZ sub_103e7200
 0x10015a73 func   ?sub_103fa6d0@@YAHXZ sub_103fa6d0
 0x10015a78 func   ?sub_10076710@CUnknown10076710@@QAEHXZ CUnknown10076710::sub_10076710
 0x10015a7d func   ?sub_100ecbe0@CUnknown100eb870@@QAEXXZ CUnknown100eb870::sub_100ecbe0
