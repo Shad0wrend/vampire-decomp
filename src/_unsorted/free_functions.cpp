@@ -9450,6 +9450,30 @@ void CUtlRBTree24::sub_100561a0(int elem)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100563f0 size=0x4b
+#include "CConstraintAnchor.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(unsigned int size);
+extern char g_1044c3b4[];	// CDynamicLight vftable
+extern const char g_1053f534[];
+
+// TARGET: light_dynamic
+extern "C" CBaseEntity *light_dynamic()
+{
+	void *mem = sub_100aa720(0x46c);
+	CBaseEntity *p;
+	if (mem) {
+		((CConstraintAnchorBase *)mem)->sub_1009d980(0);
+		*(void **)mem = g_1044c3b4;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_1053f534);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100564c0 size=0x1a
 namespace lifted {
 extern int g_1053f0b0;
