@@ -307,6 +307,16 @@ void CNPC_VTest::vfunc495()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b4eb0 size=0x6
+#include "CNPC_VTest.h"
+
+// TARGET: CNPC_VTest::vfunc473
+int CNPC_VTest::vfunc473()
+{
+	return 0x17;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b4ed0 size=0x6
 #include "CNPC_VTest.h"
 int CNPC_VTest::vfunc138()
