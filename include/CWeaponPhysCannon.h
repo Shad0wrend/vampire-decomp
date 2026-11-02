@@ -9,6 +9,7 @@ class CUnknown101bc140;
 class CWeaponPhysCannon : public CBaseCombatWeapon
 {
 public:
+	virtual int vfunc81();	// slot 81 override: returns 0
 	virtual void vfunc130(void *pArg);	// slot 130: 0x1040db30 in the game's CWeaponPhysCannon vtable (link audit)
 	virtual void vfunc291();
 	virtual void vfunc307(int a);	// slot 307: the view model / sound call with a sequence-style code (0xc2, 0xb6, 0xbc, 0xc0 passed by the grab code)
