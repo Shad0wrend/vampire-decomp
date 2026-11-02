@@ -78145,6 +78145,33 @@ void sub_101ab3a0(void *a, void *b, unsigned int *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ab3d0 size=0x24
+#include "CServerNetworkProperty.h"
+
+extern int vt_10451544[];
+extern int vt_1047a3bc[];
+
+struct CUnknown10146640Fwd
+{
+	void sub_10146640();
+};
+
+struct CInitPair101ab590Fwd
+{
+	void sub_101ab590(int a);
+};
+
+// TARGET: CServerNetworkProperty::sub_101ab3d0
+CServerNetworkProperty *CServerNetworkProperty::sub_101ab3d0()
+{
+	*(int *)this = (int)vt_10451544;
+	((CUnknown10146640Fwd *)((char *)this + 0x10))->sub_10146640();
+	*(int *)this = (int)vt_1047a3bc;
+	((CInitPair101ab590Fwd *)this)->sub_101ab590(0);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab550 size=0x24
 #include "CServerNetworkProperty.h"
 
