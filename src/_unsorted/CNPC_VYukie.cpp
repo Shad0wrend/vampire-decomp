@@ -13,6 +13,18 @@ void *CNPC_VYukie::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dd070 size=0x6
+#include "CNPC_VYukie.h"
+
+extern const char *g_10663ec0;
+
+// TARGET: CNPC_VYukie::vfunc451
+const char *CNPC_VYukie::vfunc451()
+{
+	return g_10663ec0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dd090 size=0x1e
 #include "CNPC_VYukie.h"
 

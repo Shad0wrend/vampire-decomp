@@ -4051,6 +4051,7 @@
 0x10007707 func   ?sub_1019dfb0@CRopeKeyframe@@SAPAV1@PAVCBaseEntity@@HHHPBDH@Z CRopeKeyframe::sub_1019dfb0
 0x1000770c func   ?vfunc561@CNPC_VWerewolf@@QAEXHH@Z CNPC_VWerewolf::vfunc561
 0x10007711 func   ?vfunc451@CNPC_VSheriffSwarm@@UAEHXZ CNPC_VSheriffSwarm::vfunc451
+0x10007716 func   ?vfunc451@CNPC_VYukie@@UAEPBDXZ CNPC_VYukie::vfunc451
 0x1000771b func   ?vfunc82@CTriggerProximity@@UAEPAUdatamap_t@@XZ CTriggerProximity::vfunc82
 0x10007720 func   ?vfunc82@CScriptedSentence@@UAEPAUdatamap_t@@XZ CScriptedSentence::vfunc82
 0x10007725 func   ?sub_101c19e0@CBaseToggleUnit101c19e0@block_101c19e0@@QAEXXZ block_101c19e0::CBaseToggleUnit101c19e0::sub_101c19e0
