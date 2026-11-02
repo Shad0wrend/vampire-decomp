@@ -25,7 +25,11 @@ public:
 	int m_nSourceLine;	// +0x1b48
 	char pad1b4c[0x5ddc - 0x1b4c];
 	int m_pTarget5ddc;	// +0x5ddc: the entity found by SelectHintNode
-	char pad5de0[0x6498 - 0x5de0];
+	char pad5de0[0x6348 - 0x5de0];
+	int m_n6348[5];	// +0x6348: five dwords copied to the new form by TransformationStart
+	char pad635c[0x6420 - 0x635c];
+	int m_n6420[5];	// +0x6420: five dwords copied to the new form by TransformationStart
+	char pad6434[0x6498 - 0x6434];
 	char m_bFlag6498;
 	char pad6499[0x64b8 - 0x6499];
 	float m_f64b8;	// +0x64b8
