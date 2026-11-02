@@ -10555,6 +10555,7 @@
 0x10011f45 func   ?sub_10362d90@@YAEXZ sub_10362d90
 0x10011f4a func   ?sub_1023ef40@@YAXXZ sub_1023ef40
 0x10011f4f func   ?sub_101fb2c0@@YAXH@Z sub_101fb2c0
+0x10011f54 func   ?sub_100dd600@CCollisionProperty@@QAE_NPAVVector@@0@Z CCollisionProperty::sub_100dd600
 0x10011f59 func   ?sub_10028ca0@CPhysMotor@@QAEXXZ CPhysMotor::sub_10028ca0
 0x10011f5e func   ?vfunc46@CBaseEntity@@UAEXXZ CBaseEntity::vfunc46
 0x10011f63 func   ?sub_100bf000@@YAMXZ sub_100bf000

@@ -41497,6 +41497,35 @@ void CCollisionProperty::sub_100dd450(Vector *pMins, Vector *pMaxs)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dd600 size=0x1b
+#include "CCollisionProperty.h"
+
+#define VS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct COuter
+{
+	VS10(a) VS10(b) VS10(c) VS10(d) VS10(e) VS10(f) VS10(g) VS10(h) VS10(i) VS10(j)
+	VS10(k) VS10(l) VS10(m)
+	virtual void s130(); virtual void s131(); virtual void s132(); virtual void s133();
+	virtual void s134(); virtual void s135(); virtual void s136();
+	virtual void *slot137();
+};
+
+struct CAnim
+{
+	bool sub_10096c40(Vector *pMins, Vector *pMaxs);
+};
+
+// TARGET: CCollisionProperty::sub_100dd600
+bool CCollisionProperty::sub_100dd600(Vector *pMins, Vector *pMaxs)
+{
+	CAnim *pAnim = (CAnim *)((COuter *)m_pOuter)->slot137();
+	if (pAnim)
+		return pAnim->sub_10096c40(pMins, pMaxs);
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dd630 size=0xcf
 #include "CCollisionProperty.h"
 #include <math.h>
