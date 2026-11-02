@@ -75,7 +75,11 @@ public:
 	struct CVZombie5c38 *m_p5c38;	// 0x5c38
 	char m_pad5c3c[0x5cc0 - 0x5c3c];
 	int m_nState5cc0;	// 0x5cc0
-	char m_pad5cc4[0x6264 - 0x5cc4];
+	char m_pad5cc4[0x5d34 - 0x5cc4];
+	struct CAI_Navigator *m_pNavigator5d34;	// 0x5d34: navigator (+4 the NPC, +8 / +0xc the stamped value / frame, +0x2c the node net)
+	char m_pad5d38[0x5db4 - 0x5d38];
+	float m_flNextTime5db4;	// 0x5db4: curtime + a random value, set by the task 0x151 start
+	char m_pad5db8[0x6264 - 0x5db8];
 	float m_flPlayerDist6264;	// 0x6264: the distance to the player
 	char m_pad6268[0x628c - 0x6268];
 	unsigned int m_hEnemy628c;	// 0x628c: entity handle of the target
