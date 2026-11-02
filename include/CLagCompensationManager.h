@@ -42,6 +42,6 @@ public:
 	char m_pad0010[8];	// 0x0010 .. 0x0017
 	int m_18;	// record count
 
-	void vfunc7_body();	// placeholder note: slot 7 (0x10187fb0, "FrameUpdatePostEntityThink"-like) is declared virtual vfunc7() above: base sub_10187ef0() first; a CLagCompensationRecord and 32 CLagCompensationPlayerRecord locals (ctor stub 0x100159b0 each, then the whole array zeroed with rep stosd), simtime = engine slot 119(1) (g_1070b22c, float result), players 1..gpGlobals->maxClients through sub_101cd9e0(index), then an AddToHead on the record vector at +0xc (alloc +0x10, grow? +0x14, size +0x18, element pointer +0x1c; grow = Mem784::sub_10189510(size + 1 - alloc), memmove of the tail up by 0x784) and the copy of the locals into the new head element
+	// Note on slot 7 (0x10187fb0, "FrameUpdatePostEntityThink"-like) is declared virtual vfunc7() above: base sub_10187ef0() first; a CLagCompensationRecord and 32 CLagCompensationPlayerRecord locals (ctor stub 0x100159b0 each, then the whole array zeroed with rep stosd), simtime = engine slot 119(1) (g_1070b22c, float result), players 1..gpGlobals->maxClients through sub_101cd9e0(index), then an AddToHead on the record vector at +0xc (alloc +0x10, grow? +0x14, size +0x18, element pointer +0x1c; grow = Mem784::sub_10189510(size + 1 - alloc), memmove of the tail up by 0x784) and the copy of the locals into the new head element
 	void sub_10187ef0();	// drops the records older than one second (walking backwards, memmove'ing the tail down)
 };
