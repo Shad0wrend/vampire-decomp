@@ -21,6 +21,15 @@ public:
 	virtual void vfunc180(); virtual void vfunc181(); virtual void vfunc182(); virtual void vfunc183(); virtual void vfunc184();
 	virtual void vfunc185(); virtual void vfunc186(); virtual void vfunc187(); virtual void vfunc188(); virtual void vfunc189();
 	virtual void vfunc190(); virtual void vfunc191(int value);
+#define CRPS_V(n) virtual void vfunc##n();
+#define CRPS_V10(p) CRPS_V(p##0) CRPS_V(p##1) CRPS_V(p##2) CRPS_V(p##3) CRPS_V(p##4) CRPS_V(p##5) CRPS_V(p##6) CRPS_V(p##7) CRPS_V(p##8) CRPS_V(p##9)
+	// slots 192..264 are placeholders; slot 191 takes a float in 0x10382670 (called with fild/fstp), but is declared int by its matched definition 0x10157870
+	CRPS_V(192) CRPS_V(193) CRPS_V(194) CRPS_V(195) CRPS_V(196) CRPS_V(197) CRPS_V(198) CRPS_V(199)
+	CRPS_V10(20) CRPS_V10(21) CRPS_V10(22) CRPS_V10(23) CRPS_V10(24) CRPS_V10(25)
+	CRPS_V(260) CRPS_V(261) CRPS_V(262) CRPS_V(263) CRPS_V(264)
+	virtual void *vfunc265(int value);	// slot 265 (+0x424): called by CNPC_VHengeyokai::sub_10382670 with the same value as slot 191; returns the physics object (null on failure)
+#undef CRPS_V
+#undef CRPS_V10
 
 	char m_pad03e0[0x103c - 0x3e0];
 	char m_b103c;
