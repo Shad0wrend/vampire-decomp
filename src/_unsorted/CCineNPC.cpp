@@ -30,6 +30,12 @@ bool CCineNPC::vfunc585()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a7580 size=0x3
+// TARGET: sub_101a7580
+void __stdcall sub_101a7580(int a) {
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a82d0 size=0x13b
 #include "CBaseAnimating.h"
 #include "CEHandleGet.h"
