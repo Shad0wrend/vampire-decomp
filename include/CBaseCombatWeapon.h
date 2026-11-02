@@ -123,7 +123,7 @@ public:
 	virtual int vfunc365(int a, float b, float c);	// the activity-like index for a shot: 0x40 without a loaded clip (+0x74c), 8 below the minimum range, 0x5f below the float at +0x8b8, 0x60 above the one at +0x8c0, 0x61 for a small b, else 0x4f when sub_10252410(0) holds
 	virtual int vfunc366(int a, int b, int c);
 	virtual int vfunc367(int a, float b, float c);	// CWeaponMelee: forwards to sub_103ea7e0 with the constant 0x4b
-	CBCW_V(368) virtual void vfunc369(int a);
+	virtual int vfunc368(int a, int b, int c); virtual void vfunc369(int a);
 	virtual void vfunc370(int *event, CBaseCombatWeapon *other);
 	virtual char vfunc371();	// slot 371: a boolean answer in al (asked by Inventory_Can_Insert of the weapon already owned)
 	CBaseCombatWeapon();	// 0x10250ac0 (stub 0x10011b8f): the weapon base constructor, run first by the derived weapons' constructors
