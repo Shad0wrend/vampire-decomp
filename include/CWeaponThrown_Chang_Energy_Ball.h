@@ -20,12 +20,21 @@ public:
 	char sub_103f01b0(CBaseEntity *pEnt);	// stub 0x10014abf: whether the entity's name starts with "changcoffin"
 	void sub_103f0510();	// spawns the "chang_projectile_emitter" particle entity, attaches it to this weapon and remembers its handle at +0x924 (-1 when none)
 	void sub_103f0590();	// stub 0x1000eac5: with the entity behind the handle at +0x924, calls its slot 242 and SetNextThink(0.1f)
+	void sub_103efa30();	// the fly think (no virtual slot found in the first 300): done flag set -> sub_103ef780 (explosion); else once curtime has passed m_flLastThink938 steers the physics object (+0x36c, slot 40 GetVelocity(&vel, &angvel) / slot 39 SetVelocity(&vel, &angvel)) towards the target entity (handle +0x918, aim point = its origin + 40.0f up, VectorNormalize * 5000 * dt added for 0.65s after m_flStart93c), speed clamped to 1400.0f / m_flMaxSpeed920, next think curtime + 0.1f
+	void sub_103ef780();	// the explosion (grenade_frag_emitter effect), called by sub_103efa30 when m_b91c is set
+
 	char m_pad0000[0x914];
 	EHANDLE m_h914;
-	char m_pad0918[4];
+	EHANDLE m_h918;	// 0x918: the target entity of the fly think (LookupEntity(&m_h918))
 	char m_b91c;	// 0x91c: done flag
-	char m_pad091d[0x924 - 0x91d];
+	char m_pad091d[0x920 - 0x91d];
+	float m_flMaxSpeed920;	// 0x920: speed limit used when the velocity is between 1e-6 and 1400.0f
 	EHANDLE m_h924;	// 0x924: the entity whose think is set
+	char m_b928;	// 0x928: when set, the think loads the velocity override m_vecVel92c into its local velocity and clears this byte
+	char m_pad0929[0x92c - 0x929];
+	float m_vecVel92c[3];	// 0x92c: velocity override (x +0x92c, y +0x930, z +0x934)
+	float m_flLastThink938;	// 0x938: curtime at the last steering step (frame time = curtime - this)
+	float m_flStart93c;	// 0x93c: curtime of the throw (steering only for 0.65s after)
 public:
 	datamap_t * vfunc82();
 	int vfunc142(int);
