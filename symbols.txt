@@ -4388,6 +4388,7 @@
 0x100083af func   ?vfunc23@CServerGameDLL@@UAEXHH@Z CServerGameDLL::vfunc23
 0x100083b4 func   ?sub_100b48c0@CUtlVector16@@QAEXHH@Z CUtlVector16::sub_100b48c0
 0x100083b9 func   ?sub_100a5ad0@CBaseEntity@@QAE_NXZ CBaseEntity::sub_100a5ad0
+0x100083be func   ?vfunc8@CTeamManager@@QAEPAV1@I@Z CTeamManager::vfunc8
 0x100083c3 func   ?sub_10200a70@CVStatList_t@@QAEXHH@Z CVStatList_t::sub_10200a70
 0x100083c8 func   ?vfunc580@CNPC_VPlaceholder@@UAEHXZ CNPC_VPlaceholder::vfunc580
 0x100083cd func   ?sub_1013d6c0@@YAXABVVector@@0MAAV1@@Z sub_1013d6c0
