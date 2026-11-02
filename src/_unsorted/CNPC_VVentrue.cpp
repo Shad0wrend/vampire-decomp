@@ -13,6 +13,18 @@ void *CNPC_VVentrue::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c77d0 size=0x6
+#include "CNPC_VVentrue.h"
+
+extern const char *g_1065f0e8;
+
+// TARGET: CNPC_VVentrue::vfunc451
+const char *CNPC_VVentrue::vfunc451()
+{
+	return g_1065f0e8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c77f0 size=0x1e
 #include "CNPC_VVentrue.h"
 

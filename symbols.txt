@@ -5696,6 +5696,7 @@
 0x1000a05b func   ?sub_103c2fa0@@YIPAHPAH@Z sub_103c2fa0
 0x1000a060 func   ?sub_102906c0@CUnknown102906c0@@QAEHXZ CUnknown102906c0::sub_102906c0
 0x1000a065 func   ?vfunc126@CVampireProjectile@@UAEHH@Z CVampireProjectile::vfunc126
+0x1000a06a func   ?vfunc451@CNPC_VVentrue@@UAEPBDXZ CNPC_VVentrue::vfunc451
 0x1000a06f func   ?sub_101a5290@CUnknown101a5290@@QAEXXZ CUnknown101a5290::sub_101a5290
 0x1000a074 func   _player_manager player_manager
 0x1000a079 func   ?sub_10279cc0@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_10279cc0
