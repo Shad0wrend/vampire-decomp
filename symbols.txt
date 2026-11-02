@@ -12683,6 +12683,7 @@
 0x10015334 func   ??0CBaseTempEntityHead@@QAE@PBD@Z CBaseTempEntityHead::CBaseTempEntityHead
 0x10015339 func   ?sub_10359190@@YADXZ sub_10359190
 0x10015343 func   ?sub_1020a3f0@CUnknown1020a240@@QAEXXZ CUnknown1020a240::sub_1020a3f0
+0x10015348 func   ?sub_101a6360@@YG_NHHH@Z sub_101a6360
 0x1001534d func   ?sub_10366c30@@YIPAXPAD@Z sub_10366c30
 0x10015352 func   ?vfunc276@CPropDoorknobElectronic@@QAEXXZ CPropDoorknobElectronic::vfunc276
 0x10015357 func   ?vfunc364@CPayphone@@UAE_NH@Z CPayphone::vfunc364
