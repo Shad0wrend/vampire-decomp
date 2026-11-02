@@ -41,7 +41,9 @@ public:
 	float m_flTarget460;	// 0x0460
 	float m_flRate464;	// 0x0464
 	float m_flLastTime468;	// 0x0468
-	char m_pad046c[0x478 - 0x46c];
+	void *m_pPhysObject46c;	// 0x46c: handed to physenv slot 23 (DestroyConstraint-like) by the destructor body
+	void *m_pController470;	// 0x470: the motion controller, destroyed through physenv slot 40 (DestroyMotionController)
+	char m_pad0474[4];
 	float m_flCurrent478;	// 0x0478
 	char m_pad047c[4];
 	Vector m_vec480;	// 0x0480
