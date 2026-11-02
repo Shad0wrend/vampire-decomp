@@ -53,7 +53,9 @@ public:
 	virtual bool vfunc44(int); virtual bool vfunc45(void *pPassEnt, Vector vecStart, Vector vecEnd, unsigned int fMask); virtual void vfunc46(); virtual void vfunc47(); virtual float vfunc48();
 	virtual float vfunc49(); virtual void vfunc50(Vector *pOut);	/* slot 50 (ret 4): copies WorldSpaceCenter (slot 192) to *pOut */ virtual void vfunc51(int unused, Vector *pOut); /* slot 51 (ret 8): copies WorldSpaceCenter (slot 192) to *pOut; the first argument is unused */ virtual float vfunc52(); virtual float vfunc53();
 	virtual bool vfunc54(int); virtual void vfunc55(int, int, int, int, int, int, int); virtual void vfunc56(int, int, int, int, int, int, int, int); virtual void vfunc57(int, int, int, int, int, int, int); virtual void vfunc58(int);
-	virtual void vfunc59(int); virtual void vfunc60(int); virtual void vfunc61(int); virtual void vfunc62(); virtual void vfunc63();
+	virtual void vfunc59(int); virtual void vfunc60(int); virtual void vfunc61(int);
+#define CBASEENTITY_V62_VIRTUAL
+	virtual void vfunc62(const float *pOrigin);	/* slot 62 "SetLocalOrigin" */ virtual void vfunc63(Vector vecOrigin);	/* slot 63 (ret 0xc): copies the vector to a local and forwards it to slot 62 */
 	virtual void vfunc64(const float *angles);	// "CBaseEntity::SetAngles": scope trace (entity name), when the three floats differ from the ones at +0x428 runs three helpers (0x800, 0x3000), stores them and sets the byte at +0x1b1
 	virtual void vfunc65(int a, int b, int c); virtual void vfunc66(); virtual void vfunc67(); virtual void vfunc68();
 	virtual void vfunc69(); virtual bool vfunc70(); virtual void vfunc71(); virtual bool vfunc72(int); virtual bool vfunc73(CBaseEntity *pOther);
