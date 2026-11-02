@@ -1915,6 +1915,7 @@
 0x100041e7 func   ?sub_10130780@CLightStyleX@@QAEXPAUinputdata_t@@@Z CLightStyleX::sub_10130780
 0x100041ec func   ?vfunc18@CGameMovement@@UAEXXZ CGameMovement::vfunc18
 0x100041f1 func   ?sub_102efd50@CAI_Navigator@@QAE_NXZ CAI_Navigator::sub_102efd50
+0x100041f6 func   ?sub_10149cc0@@YA_NXZ sub_10149cc0
 0x100041fb func   ?sub_1004a2a0@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_1004a2a0
 0x10004205 func   ?sub_103105d0@CAI_Senses@@QAEPAXH@Z CAI_Senses::sub_103105d0
 0x1000420a func   ?sub_101bdf90@@YIXPAUMem4@@HH@Z sub_101bdf90
