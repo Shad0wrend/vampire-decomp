@@ -143,6 +143,14 @@ void sub_102c72b0() {
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c72d0 size=0x3
+#include "CAI_Behavior.h"
+
+void CAI_Behavior<CAI_BaseNPC,100000>::vfunc26(int a, int b)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c8a10 size=0xb
 #include "CAI_Behavior.h"
 #define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
