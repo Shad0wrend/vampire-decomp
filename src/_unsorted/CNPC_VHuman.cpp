@@ -72,6 +72,13 @@ void CNPC_VHuman::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103846e0 size=0x6
+int sub_103846e0(void)
+{
+    return 0x81f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10384760 size=0x64
 #include "CNPC_VHuman.h"
 struct CUnknown1027d990 { int sub_1027d990(); };
