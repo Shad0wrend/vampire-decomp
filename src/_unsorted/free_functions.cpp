@@ -79400,6 +79400,18 @@ int *sub_101a9bd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a9cb0 size=0x67
+#include "CScriptedSentence.h"
+
+// TARGET: scripted_sentence
+extern "C" CBaseEntity *scripted_sentence()
+{
+	CScriptedSentence *p = new CScriptedSentence;
+	p->vfunc106("scripted_sentence");
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a9dd0 size=0x3c
 #include "CBaseEntity.h"
 
