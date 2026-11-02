@@ -119612,6 +119612,30 @@ int sub_1023a6b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023a6e0 size=0x4b
+#include "CConstraintAnchor.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(unsigned int size);
+extern char g_1049618c[];	// CDecal vftable
+extern const char g_105c3fa4[];
+
+// TARGET: infodecal
+extern "C" CBaseEntity *infodecal()
+{
+	void *mem = sub_100aa720(0x454);
+	CBaseEntity *p;
+	if (mem) {
+		((CConstraintAnchorBase *)mem)->sub_1009d980(0);
+		*(void **)mem = g_1049618c;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_105c3fa4);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023ae40 size=0x43
 #include "CWorld.h"
 void *sub_100aa720(int size);
