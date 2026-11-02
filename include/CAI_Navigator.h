@@ -187,6 +187,10 @@ public:
 	bool sub_102ede30(int a, int b);	// \"CAI_Navigator::PrependLocalAvoidance\": scope \"CAI_Navigator_PrependLocalAvoidance\"; BuildTriangulationRoute from the owner's origin (slot 220) to the route's goal position and, when there is a route, hands it to the waypoint list at route+0x24 (ret 8)
 	void *sub_102ecc40();	// stub 0x10009322: the entity the navigator is after, chosen by the navigation type (the owner's focus entity for types 1, 2 and 7, else the entity of the route's handle at +0x30)
 
+	// Typed views of the component pointers kept as ints below (matched code reads them as ints):
+	class CAI_Motor *Motor() { return (class CAI_Motor *)m_i20; }	// 0x20: the NPC's motor (vfunc15 / MoveEnact: CAI_Motor::sub_102e23a0, slot 10)
+	class CAI_LocalNavigator *LocalNav() { return (class CAI_LocalNavigator *)m_i28; }	// 0x28: the local navigator (vfunc15 calls its slot 3 "MoveCalc" with a copy of the 0x7c byte goal)
+
 	int m_i14;
 	int m_i18;
 	char m_b1c;
