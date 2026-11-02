@@ -4707,6 +4707,7 @@
 0x10008959 func   ?sub_1012e650@CEdictHolder1012e650@@QAEXPAUCEdictSrc1012e650@@@Z CEdictHolder1012e650::sub_1012e650
 0x1000895e func   ?sub_100738a0@CUnknown100738a0@@QAEPAXXZ CUnknown100738a0::sub_100738a0
 0x1000896d func   ?vfunc483@CAI_BaseNPC@@UAEXH@Z CAI_BaseNPC::vfunc483
+0x10008972 func   ?sub_1024cc50@@YA?AVVMatrix@@ABVVector@@ABVQAngle@@@Z sub_1024cc50
 0x10008977 func   ?sub_103245a0@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_103245a0
 0x1000897c func   ?sub_10180d10@@YAXXZ sub_10180d10
 0x10008986 func   ?sub_10184220@@YGII@Z sub_10184220

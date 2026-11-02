@@ -121924,6 +121924,18 @@ VMatrix sub_1024cc10(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024cc50 size=0x2f
+#include "VMatrix.h"
+
+// TARGET: sub_1024cc50
+VMatrix sub_1024cc50(const Vector &origin, const QAngle &angles)
+{
+	VMatrix m;
+	m.sub_1024ddf0(origin, angles);
+	return m;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024cc90 size=0xd3
 #include "Vector.h"
 
