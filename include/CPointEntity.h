@@ -7,10 +7,13 @@
 
 #define CPOINTENTITY_BASED
 
+void *sub_100aa720(unsigned int size);	// the entities' operator new (stub 0x1000db89)
+
 class CPointEntity : public CBaseEntity
 {
 public:
 	CPointEntity() : CBaseEntity(0) {}
+	void *operator new(unsigned int size) { return sub_100aa720(size); }
 	CPointEntity *vfunc5(unsigned int flags);	// scalar deleting destructor (hides the base slot; VC6 has no covariant returns)
 
 	// slots 134..240 are CBaseEntity's in the game; our CBaseEntity.h has them as plain members, so they start here
