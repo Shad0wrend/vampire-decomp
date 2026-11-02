@@ -33,7 +33,7 @@ public:
 	char m_b47c;	// 0x47c
 	char m_pad047d[0x480 - 0x47d];
 	COutputEvent m_Output480;	// 0x480: constructed by the factory (0x10002ddd)
-	COutputEvent m_Output498;	// 0x498
+	CCameraKeyFrameOutput m_Output498;	// 0x498
 public:
 	datamap_t * vfunc82();
 };
