@@ -20,6 +20,17 @@ int CWeaponUnarmed::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f52f0 size=0x6
+#include "CWeaponUnarmed.h"
+
+extern char g_1067ef98;
+
+void *CWeaponUnarmed::sub_103f52f0()
+{
+	return &g_1067ef98;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f5430 size=0x1e
 #include "CWeaponUnarmed.h"
 
