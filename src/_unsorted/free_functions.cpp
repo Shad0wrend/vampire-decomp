@@ -110124,6 +110124,30 @@ void __fastcall sub_1020e0d0(void *pThis, int b, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020e170 size=0x4b
+#include "CConstraintAnchor.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(unsigned int size);
+extern char g_104867fc[];	// CGameText vftable
+extern const char g_105ae204[];
+
+// TARGET: game_text
+extern "C" CBaseEntity *game_text()
+{
+	void *mem = sub_100aa720(0x47c);
+	CBaseEntity *p;
+	if (mem) {
+		((CConstraintAnchorBase *)mem)->sub_1009d980(0);
+		*(void **)mem = g_104867fc;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_105ae204);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020e260 size=0x1a
 namespace lifted {
 extern int g_105aab6c;
