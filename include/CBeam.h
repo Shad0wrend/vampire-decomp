@@ -44,9 +44,16 @@ public:
 	char m_pad046c[0x48c - 0x46c];
 	int m_nAttach[3];	// 0x48c
 	char m_pad0498[0x4b8 - 0x498];
-	float m_fWidth;	// 0x4b8
+	union {
+		float m_fWidth;	// 0x4b8
+		float m_flWidth;	// CEnvLaser's name for it
+	};
 	float m_fEndWidth;	// 0x4bc
-	char m_pad04c0[0x4d8 - 0x4c0];
+	char m_pad04c0[0x4c8 - 0x4c0];
+	float m_flNoiseAmplitude;	// 0x4c8 (CEnvLaser / CEnvBeam KeyValue)
+	char m_pad04cc[0x4d0 - 0x4cc];
+	float m_flTextureScroll;	// 0x4d0 (CEnvLaser KeyValue)
+	char m_pad04d4[0x4d8 - 0x4d4];
 	float m_vecEndPos[3];	// 0x4d8
 public:
     virtual datamap_t * vfunc82();
