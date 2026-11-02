@@ -50,7 +50,8 @@ public:
     int m_pEdict;    // 0x2e0
     char m_pad02e4[0x368 - 0x2e4];
     int m_nCollisionGroup;    // 0x368
-    char m_pad036c[0x768 - 0x36c];
+    char m_pad036c[0x764 - 0x36c];
+    const char *m_pszExplosion764;    // 0x764: name of the explosion parameters entity (null = none; g_106b8540 stands in for messages)
     EHANDLE m_hAttacker768;    // 0x768: the attacker of the break
     void sub_1018f620();    // the break think: slot 266 with the attacker (handle +0x768), then SetThink(0, 0, 0)
     int m_nBreakMode;    // 0x76c: 0, 1 or 2 (anything else warns and becomes 2)
