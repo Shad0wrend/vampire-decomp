@@ -752,6 +752,14 @@ int CBaseEntity::vfunc0(int a0)
 int CBaseEntity::vfunc116() { return m_flags268 & 1; }
 // END FUNCTION
 
+// FUNCTION: 0x100274b0 size=0x7
+// TARGET: CBaseEntity::vfunc198
+float *CBaseEntity::vfunc198()
+{
+	return m_vel3d4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027570 size=0x7e
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
