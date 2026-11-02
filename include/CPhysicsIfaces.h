@@ -45,6 +45,11 @@ public:
 	// (slots 12 and 19 below are used by the ragdoll code, see CRagdoll.h)
 	// slot 10 (+0x28): (CPhysObjectIface *, buffer) - a per-object setup called after the flags are changed
 	virtual void vfunc10(CPhysObjectIface *pObject, void *pBuffer);
+	virtual void v11();
+	// slot 12 (+0x30): creates the ragdoll constraint (pChildObj, pParentObj, gameData, matrix/params buffer) and returns it (0x1019c330)
+	virtual void *CreateRagdollConstraint(CPhysObjectIface *pChild, CPhysObjectIface *pParent, int gameData, void *pParams);
+	virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18();
+	virtual int vfunc19();	// slot 19 (+0x4c): no arguments, result stored in the ragdoll list at +4 (0x1019c330)
 };
 
 class CPhysSurfacePropsIface
