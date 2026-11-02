@@ -12,7 +12,7 @@ public:
 	void sub_1000c711();	// CCineNPC::vfunc103 called directly (stub 0x1000c711)
 	void vfunc583();	// slot 583 "CCineAISchedule::...": when the NPC entity of the handle at +0x5ce4 has its AI object (+0x94) it warns (a block of DevMsg lines naming this sequence and the NPC) if that object's byte at +0x1b4c is clear, runs sub_1026d130 on it unless the byte at +0x5f90 is set, then calls slot 586 with it
 	void vfunc586(CAI_BaseNPC *pNPC);	// slot 586 (ret 4): finds the goal entity named at +0x608c (g_106eb5d8->sub_100f7f20(0, name or g_106b8540 when null, this, 0)); none: DevMsg(1, "Can't find goal entity %s\nCan't execute script %s", name, GetDebugName()); else the state at +0x6094 (1/2/3) goes to pNPC->sub_1026e340 (1/3/2), then the action at +0x6090 (1/2: sub_102800c0 move to the goal, 3: goto goal with slot 544, 4/5: sub_102801e0 follow path; DevMsg on failure unless flag 0x800 of +0x204)
-	void sub_1000b5cd();	// CBaseEntity::GetDebugName (stub 0x1000b5cd -> 0x100ab4f0), this in ecx, returns const char *
+	const char *sub_1000b5cd();	// CBaseEntity::GetDebugName (stub 0x1000b5cd -> 0x100ab4f0), this in ecx, returns const char *
 
 	char m_pad0000[0x204];
 	unsigned int m_flags204;	// 0x204: entity flags (bit 11 = 0x800 tested after a failed move)
