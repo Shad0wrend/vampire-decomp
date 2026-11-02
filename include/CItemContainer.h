@@ -58,6 +58,7 @@ public:
 	void sub_101c1720();	// CBaseToggle::vfunc133 (stub 0x10013912), called directly
 	void vfunc133();	// slot 133: after the base, acts on the user (+0x1a28) by the state pair (+0x49c, +0x498)
 	CItemContainer *sub_102087e0();	// constructor body: base constructor (stub 0x100046c9), the three embedded lists at +0x19b0 / +0x19c8 / +0x19e0, the vftable, the open flag (+0x1480), the lock and user handles (-1)
+	void sub_10208b00();	// destructor body (called by vfunc5 via stub 0x10005718): vptr = 0x10483d14, ~COutputEvent (sub_100cd2d0) of +0x19e0, +0x19c8, +0x19b0, then tail jmp to the base destructor body 0x103274d0 (CBaseCombatCharacter, stub 0x100078c4)
 	void sub_100046c9();	// base class constructor body (stub 0x100046c9)
 	int vfunc142(CItemDamageInfo *pInfo);	// slot 142 \"OnTakeDamage\": subtracts the damage from the health (+0x210); breaks the container (attacker as activator) when it reaches 0 and returns 0, else 1; 1 when it takes no damage
 	void sub_10209b20(CBaseEntity *pActivator);	// breaks the container (called by the damage slot 142): unless it is already broken switches to the break model (slot 105, slot 225, a vphysics object and its slot 24), removes flag 0x20000000, marks it broken (+0x200 = 2, +0x1fc = 0), removes the lock entity and fires the break output at +0x19e0; \"Broken container ... invalid break model\" warning for a container without one
