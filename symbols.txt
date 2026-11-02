@@ -11965,6 +11965,7 @@
 0x10014560 func   ?sub_101db5f0@CUnknown101db5f0@@QAEPAV1@XZ CUnknown101db5f0::sub_101db5f0
 0x10014565 func   ?sub_10149f80@@YA_NXZ sub_10149f80
 0x1001456a func   ?sub_10405aa0@@YAHXZ sub_10405aa0
+0x10014579 func   ?sub_1015de10@@YADXZ sub_1015de10
 0x1001457e func   ?sub_100b3640@CBaseEntity@@QAEXI@Z CBaseEntity::sub_100b3640
 0x10014583 func   ?vfunc5@COccultBloodBuff@@QAEPAV1@I@Z COccultBloodBuff::vfunc5
 0x10014588 func   ?sub_10383470@CNPC_VHengeyokai@@QAEXXZ CNPC_VHengeyokai::sub_10383470

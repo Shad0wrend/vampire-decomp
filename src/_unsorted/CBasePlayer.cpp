@@ -164,6 +164,13 @@ void __stdcall sub_1015ddf0(int a) {
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015de10 size=0x3
+// TARGET: sub_1015de10
+char sub_1015de10() {
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015ded0 size=0x1e
 #include "CBasePlayer.h"
 
