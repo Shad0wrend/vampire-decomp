@@ -10902,6 +10902,7 @@
 0x10012d73 func   ?sub_102ddb30@CAI_LocalNavigator@@QAEXXZ CAI_LocalNavigator::sub_102ddb30
 0x10012d78 func   _item_g_wallet item_g_wallet
 0x10012d7d func   ?vfunc104@CNPC_VMingXiao@@UAEXXZ CNPC_VMingXiao::vfunc104
+0x10012d82 func   ?sub_10087870@@YAXXZ sub_10087870
 0x10012d87 func   ?sub_1010f5c0@@YAHXZ sub_1010f5c0
 0x10012d96 func   ?sub_10073720@S10073720@@QAEHH@Z S10073720::sub_10073720
 0x10012d9b func   ?sub_10325a30@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10325a30
