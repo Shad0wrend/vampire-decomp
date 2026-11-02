@@ -4,6 +4,8 @@
 
 #include "CBitString.h"
 
+class CSave;
+
 template <class T>
 class CBitStringSaveRestoreOps
 {
