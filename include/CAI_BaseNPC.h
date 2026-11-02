@@ -189,7 +189,7 @@ public:
 	virtual int vfunc554(float a, float b);	// slot 554: an activity picked by the float b (< 64: 8, > 512: 0x60) else 0x61 / 0x50 by the float a against 0.5
 	virtual int vfunc555(float a, float b);	// slot 555: an activity picked by the float b (> 256: 9, > 64: 0x60) else 0 / 0x51 by the float a against 0.7, the slot 167 object and its object at +0x9c (slot 327)
 	virtual int vfunc556(float a, float b);	// slot 556: an activity picked by the float b (> 180: 9, > 64: 0x60) else 0 / 0x52 by the float a against 0.7 and the focus entity's object (slot 327)
-	CAI_NPC_V(557) CAI_NPC_V(558)
+	virtual char vfunc557(); CAI_NPC_V(558)
 	virtual CBaseEntity *vfunc559(const char *pszName);	// slot 559: the entity of that name (asked by the follow-target setter)
 	virtual void vfunc560();	// slot 560: sets the conditions 0x4f..0x52, 0x2e, 0x2f and 0x62..0x66 (sub_10269b50 each)
 	CAI_NPC_V(561)
