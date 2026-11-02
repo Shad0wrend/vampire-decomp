@@ -15815,6 +15815,34 @@ void CUnknown10072f10::sub_10072f10(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10073020 size=0x44
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+
+class S10073220
+{
+public:
+	char m_pad0000[0x164];
+	int *m_pElements;	// 0x164
+	char m_pad0168[0x170 - 0x168];
+	int m_size;	// 0x170
+
+	int sub_10073220(int elem);
+	void sub_10073020(int elem);
+};
+
+// TARGET: S10073220::sub_10073020
+void S10073220::sub_10073020(int elem)
+{
+	int idx = sub_10073220(elem);
+	if (idx != -1) {
+		int num = m_size - idx - 1;
+		if (num > 0)
+			memmove(&m_pElements[idx], &m_pElements[idx + 1], num * sizeof(int));
+		m_size--;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10073090 size=0x13b
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 

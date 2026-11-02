@@ -8476,6 +8476,7 @@
 0x1000e91c func   ??0CPropDoorknob@@QAE@XZ CPropDoorknob::CPropDoorknob
 0x1000e926 func   ?sub_1040c080@CUnknown1040cb60@@QAEMXZ CUnknown1040cb60::sub_1040c080
 0x1000e930 func   ?sub_100b4a40@UtlMem3@@QAEXH@Z UtlMem3::sub_100b4a40
+0x1000e935 func   ?sub_10073020@S10073220@@QAEXH@Z S10073220::sub_10073020
 0x1000e93f func   ?sub_1036b6b0@@YG_NH@Z sub_1036b6b0
 0x1000e949 func   ?vfunc82@CPropHaunted@@UAEPAUdatamap_t@@XZ CPropHaunted::vfunc82
 0x1000e94e func   ?vfunc491@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc491
