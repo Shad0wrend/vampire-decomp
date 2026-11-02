@@ -36,6 +36,13 @@ float *CBasePlayer::vfunc194()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7f50 size=0x7
+float *CBasePlayer::vfunc195()
+{
+	return (float *)&m_vec206c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7fe0 size=0x1bf
 #include "CBasePlayer.h"
 #include "CBaseCombatWeapon.h"
