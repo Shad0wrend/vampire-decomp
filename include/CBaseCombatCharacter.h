@@ -51,7 +51,9 @@ public:
 	virtual void c293(); virtual void c294(); virtual void c295x(); virtual char vfunc296(int a); virtual void c297();
 	virtual int vfunc298(int nSection);	// slot 298: the number of weapon slots of inventory section nSection
 	virtual void c299();
-	CBCC_SLOTS10(c30) CBCC_SLOTS10(c31)
+	virtual void c300(); virtual void c301(); virtual void c302(); virtual void c303(); virtual void c304();
+	virtual void c305(); virtual void c306(); virtual char slot307b();	/* slot 307 (+0x4cc) as a vtable call: no arguments, a boolean answer in al (the plain vfunc307 below is the direct call) */ virtual void c308(); virtual void c309();
+	CBCC_SLOTS10(c31)
 	virtual void c320(); virtual void c321(); virtual void c322();
 	virtual int vfunc323(const Vector *pDirection);	// slot 323: which side of the character a horizontal direction is on: 0 when the direction has no horizontal length, else by the angle (0..360) between the character's yaw (slot 219) and the direction's yaw: 2 for 316..360 and up to 45, 3 up to 135, 0 up to 225, 1 beyond
 	virtual void c324(); virtual void c325(); virtual void c326(); virtual void c327(); virtual void c328(); virtual void c329();
