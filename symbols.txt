@@ -9535,6 +9535,7 @@
 0x10010951 func   ?sub_102e30d0@CTraceFilterNav@@QAEPAV1@HH@Z CTraceFilterNav::sub_102e30d0
 0x10010956 func   ?sub_101fa680@@YAXXZ sub_101fa680
 0x1001095b func   ?sub_101e9060@CUnknown101e9060@@QAEHXZ CUnknown101e9060::sub_101e9060
+0x10010960 func   ?vfunc5@CMathRemap@@QAEPAV1@I@Z CMathRemap::vfunc5
 0x1001096a func   ?sub_102f9470@@YIXPAXHH@Z sub_102f9470
 0x1001096f func   ?sub_103e5380@@YAHXZ sub_103e5380
 0x10010974 func   ?sub_103e5020@@YAHXZ sub_103e5020
