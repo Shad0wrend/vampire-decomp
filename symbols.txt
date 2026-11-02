@@ -13023,6 +13023,7 @@
 0x10015e01 func   ?vfunc15@CSoundControllerImp@@UAEXPAXHPAH@Z CSoundControllerImp::vfunc15
 0x10015e0b func   ?vfunc418@CNPC_VTzimisce@@UAEMM@Z CNPC_VTzimisce::vfunc418
 0x10015e10 func   ?sub_101f2cf0@CUnknown101f2360@@QAEPAV1@PBD@Z CUnknown101f2360::sub_101f2cf0
+0x10015e24 func   ??_GCAI_Component@@UAEPAXI@Z ??_GCAI_Component@@UAEPAXI@Z
 0x10015e29 func   ?vfunc80@CSprite@@UAEHXZ CSprite::vfunc80
 0x10015e2e func   ?vfunc5@COccultStrength@@QAEPAV1@I@Z COccultStrength::vfunc5
 0x10015e33 func   ??0CAI_RatPlaneSolver@@QAE@H@Z CAI_RatPlaneSolver::CAI_RatPlaneSolver
