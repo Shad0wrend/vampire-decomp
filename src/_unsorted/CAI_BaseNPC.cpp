@@ -145,6 +145,13 @@ void CAI_BaseNPC::vfunc483(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6860 size=0x3
+// TARGET: CAI_BaseNPC::vfunc136
+char CAI_BaseNPC::vfunc136() {
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6880 size=0x1
 // TARGET: sub_101a6880
 void __fastcall sub_101a6880(void *pThis)
