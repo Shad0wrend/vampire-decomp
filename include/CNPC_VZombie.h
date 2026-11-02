@@ -64,7 +64,9 @@ public:
 	int m_nState0fec;	// 0xfec: the activity the zombie is in
 	char m_pad0ff0[0x1480 - 0xff0];
 	char m_b1480;	// 0x1480
-	char m_pad1481[0x1b2c - 0x1481];
+	char m_pad1481[0x1a40 - 0x1481];
+	char m_b1a40;	// 0x1a40: one-shot byte set by the task 0x151 start (cleared elsewhere)
+	char m_pad1a41[0x1b2c - 0x1a41];
 	int m_nType1b2c;	// 0x1b2c: the NPC type id
 
 	const char *m_pszFile1b30;	// 0x1b30: source file of the last schedule start
