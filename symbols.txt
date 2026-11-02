@@ -2249,6 +2249,7 @@
 0x10004ae8 func   ?sub_10139f90@@YA_NABVVector@@M00@Z sub_10139f90
 0x10004aed func   ?vfunc58@CGameRules@@UAEHH@Z CGameRules::vfunc58
 0x10004af2 func   ?vfunc81@CItemGGhostPendant@@QAEHXZ CItemGGhostPendant::vfunc81
+0x10004af7 func   ?vfunc5@CPlayerPickupController@@QAEPAV1@I@Z CPlayerPickupController::vfunc5
 0x10004b01 func   ?vfunc546@CNPC_Crow@@QAEHH@Z CNPC_Crow::vfunc546
 0x10004b06 func   ?sub_103c9cf0@@YADPAUEntV@@VVector@@@Z sub_103c9cf0
 0x10004b0b func   ?sub_102f46d0@CUnknown102f46d0@@QAE?AVVector@@PAXH@Z CUnknown102f46d0::sub_102f46d0
