@@ -14,6 +14,7 @@ public:
 	virtual float vfunc278();	// the pull strength of the held object (handle at +0x918): the owner's stat 0x1a divided by the physics object's mass (slot 12), -1.0f without a held object
 
 	virtual void vfunc326();
+	virtual char vfunc267();
 	CBaseCombatWeapon *vfunc5(unsigned int flags);	// slot 5 override: the game's 0x10149fc0 (scalar deleting destructor)
 	unsigned int vfunc117();	// slot 117 override: the game's 0x10149f50
 	void vfunc300();	// slot 300 override: the game's 0x10149f30
