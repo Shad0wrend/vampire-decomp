@@ -53,6 +53,17 @@ public:
 	CVProfNode *m_pCurNode;	// 0x1014
 	CVProfNode *m_pRoot;	// 0x1018
 
+	// CVProfile::PopGroup as a unit that inlines CVProfNode::ExitScope completely has it (0x102ef870): the group stack
+	// depth drops, and when the group left differs from the one now on top and was the VTune group, vtune(false) is told.
+	void PopGroupInlined()
+	{
+		--m_nGroupStackDepth;
+		int nNew = m_GroupIDStack[m_nGroupStackDepth];
+		int nOld = m_GroupIDStack[m_nGroupStackDepth + 1];
+		if (nOld != nNew && m_bVTuneGroupsEnabled && nOld == m_nVTuneGroupID)
+			vtune(false);
+	}
+
 	void ExitScope()
 	{
 		if (!m_bAtRoot || m_enabled) {
