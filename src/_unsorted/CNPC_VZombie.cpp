@@ -34,6 +34,30 @@ int CNPC_VZombie::vfunc451()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103de2f0 size=0x2b
+#include "CNPC_VZombie.h"
+
+struct CGargoyleMemberUnit {
+	void sub_10015708();
+};
+
+struct CGargoyleBaseUnit {
+	void sub_100123af();
+};
+
+void __cdecl sub_10009fc5(void *p);
+
+// TARGET: CNPC_VZombie::vfunc5
+CNPC_VZombie *CNPC_VZombie::vfunc5(unsigned int flags)
+{
+	((CGargoyleMemberUnit *)((char *)this + 0x66e8))->sub_10015708();
+	((CGargoyleBaseUnit *)this)->sub_100123af();
+	if (flags & 1)
+		sub_10009fc5(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103de470 size=0x6
 extern unsigned char g_10664260;
 // TARGET: sub_103de470

@@ -317,6 +317,7 @@
 0x10001820 func   ?sub_103f7c30@@YAHXZ sub_103f7c30
 0x1000182f func   ?vfunc8@ConVar@@UAEXM@Z ConVar::vfunc8
 0x10001834 func   ?sub_10093fb0@CBaseAnimating@@QAEHHPAM0@Z CBaseAnimating::sub_10093fb0
+0x10001839 func   ?vfunc5@CNPC_VZombie@@QAEPAV1@I@Z CNPC_VZombie::vfunc5
 0x1000183e func   ?vfunc546@CNPC_VGhoulCroucher@@QAEHH@Z CNPC_VGhoulCroucher::vfunc546
 0x10001843 func   ?sub_10158ca0@@YAHXZ sub_10158ca0
 0x10001848 func   ?vfunc5@CPhysThruster@@UAEPAV1@I@Z CPhysThruster::vfunc5
