@@ -23,6 +23,7 @@ class CBaseButton : public CBaseButtonBase
 {
 public:
 	CBaseButton();
+	CBaseButton *sub_100c86d0();	// constructor stub (0x100c86d0 -> CBaseButton::CBaseButton)
 	virtual void vfunc0();
 
 	void sub_1000cb8a();	// destructor body (the CBaseToggle/CBaseEntity part)
