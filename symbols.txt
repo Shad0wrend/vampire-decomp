@@ -440,6 +440,7 @@
 0x10001b18 func   ?vfunc82@CItemGKeyring@@UAEPAUdatamap_t@@XZ CItemGKeyring::vfunc82
 0x10001b1d func   ?sub_100d1ff0@@YAXHPBDI@Z sub_100d1ff0
 0x10001b22 func   ?vfunc438@CNPC_VBach@@UAEHXZ CNPC_VBach::vfunc438
+0x10001b27 func   ?vfunc366@CNPC_VHuman@@UAE_NHHH@Z CNPC_VHuman::vfunc366
 0x10001b2c func   ?vfunc448@CNPC_VSheriffMan@@QAEXH@Z CNPC_VSheriffMan::vfunc448
 0x10001b31 func   ?vfunc127@CPointAngleSensor@@UAEHH@Z CPointAngleSensor::vfunc127
 0x10001b3b func   ?sub_101fab10@@YAIPBD@Z sub_101fab10

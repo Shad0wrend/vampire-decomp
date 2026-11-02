@@ -217,6 +217,16 @@ void CNPC_VHuman::vfunc434() {
 }
 // END FUNCTION
 
+// FUNCTION: 0x10385a70 size=0x5
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VHuman::vfunc366
+bool CNPC_VHuman::vfunc366(int a, int b, int c)
+{
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10385ab0 size=0x12c
 #include "CNPC_VHuman.h"
 #include "CUnknown1025ddd0.h"
