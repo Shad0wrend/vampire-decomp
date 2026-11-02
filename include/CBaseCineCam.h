@@ -21,6 +21,8 @@ public:
 	Vector sub_1006f670();	// the position the shot looks at: the middle of the two shot positions (flags 4 and 8 of sub_1006edb0), or the one that is set, else the zero vector (returned by value)
 	void sub_1006ed40(Vector *pFirst, Vector *pSecond);	// copies the two shot positions to the non-null outputs
 	int sub_1006edb0();	// stub 0x10002a6d: the shot flags (bit 2 = first position, bit 3 = second)
+	void sub_1006f080(Vector *pOut, int bSecond);	// 0x1006f080 (stub 0x10012553, this in ecx, ret 8): the trace start position of the shot's target entity handle +0x610 (bSecond 0) / +0x614 (bSecond 1), written to *pOut; used by sub_1006db10's two UTIL_TraceHull checks
+	int sub_100b3700();	// CBaseEntity::GetFlags (stub 0x10008b84), called directly first thing in sub_1006db10 after sub_1006f670 (result unused)
 	Vector sub_1006f010(int index);	// stub 0x10011ebe: the position of shot `index` (2 or 3), returned by value
 
 	char m_pad0004[0x8c];
