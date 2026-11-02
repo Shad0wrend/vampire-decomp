@@ -174843,6 +174843,25 @@ extern "C" CBaseEntity *item_w_unarmed()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f53f0 size=0x27
+#include "CWeaponUnarmed.h"
+
+void __fastcall sub_10250ac0(void *p);
+extern int vt_104e7dbc[];
+
+// TARGET: CWeaponUnarmed::sub_103f53f0
+CWeaponUnarmed *CWeaponUnarmed::sub_103f53f0()
+{
+	sub_10250ac0(this);
+	char bZero = 0;
+	*(int **)(void *)this = vt_104e7dbc;
+	*(char *)((char *)this + 0x870) = bZero;
+	*(char *)((char *)this + 0x871) = bZero;
+	*(char *)((char *)this + 0x872) = 1;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f5750 size=0x1a
 namespace lifted {
 extern int g_1067f184;
