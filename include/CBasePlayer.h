@@ -305,7 +305,8 @@ public:
 	CUtlVector<GLOBAL_EMAIL> m_GlobalEmail;	// 0x1E28: the global email flag records (0x240 bytes each)
 	char m_pad1E3C[0x38];	// 0x1E3C .. 0x1E73
 	unsigned int m_flags1E74;
-	char m_pad1E78[0x40];	// 0x1E78 .. 0x1EB7
+	int m_n1E78;	// 0x1E78: 0 on death (vfunc144)
+	char m_pad1E7C[0x3c];	// 0x1E7C .. 0x1EB7
 	int m_nUseEdictIndex1EB8;	// engine index of the entity to notify (0 = none)
 	char m_pad1EBC[4];	// 0x1EBC .. 0x1EBF
 	char m_bNotifyUse1EC0;
