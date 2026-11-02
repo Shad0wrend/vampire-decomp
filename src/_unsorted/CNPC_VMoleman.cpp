@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1039f600 size=0x6
+// TARGET: CNPC_VMoleman::vfunc580
+extern char g_1093bdd8;
+
+char *CNPC_VMoleman::vfunc580()
+{
+	return &g_1093bdd8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039f640 size=0x1e
 #include "CNPC_VMoleman.h"
 
