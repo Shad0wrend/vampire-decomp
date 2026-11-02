@@ -33,7 +33,8 @@ public:
 	char m_bFlag6498;
 	char pad6499[0x64b8 - 0x6499];
 	float m_f64b8;	// +0x64b8
-	char pad64bc[0x667c - 0x64bc];
+	char pad64bc[0x6664 - 0x64bc];
+	COutputEvent m_OnTransformComplete;	// +0x6664 (0x18 bytes; ctor inlined by the factory npc_VVampireBoss 0x103c4fa0)
 	const char *m_MorphModelName;	// +0x667c
 	const char *m_pMonsterModelName;	// +0x6680
 	const char *m_pBodyEmitterNames[4];	// +0x6684
