@@ -41,6 +41,14 @@ public:
 	virtual float *vfunc220();
 };
 
+class CEntityGroundSlotView	// slot 208: CBaseEntity::SetGroundEntity(CBaseEntity *pEnt)
+{
+public:
+	VIEW_SLOT100(0) VIEW_SLOT100(1)
+	VIEW_SLOT(200) VIEW_SLOT(201) VIEW_SLOT(202) VIEW_SLOT(203) VIEW_SLOT(204) VIEW_SLOT(205) VIEW_SLOT(206) VIEW_SLOT(207)
+	virtual void vfunc208(void *pEnt);
+};
+
 class CServerUnknownSlotView	// slot 4: IServerUnknown::GetBaseEntity
 {
 public:
