@@ -309,6 +309,7 @@
 0x100017ee func   ?vfunc1@CTraceFilterNoCharacterCollide@@UAEHXZ CTraceFilterNoCharacterCollide::vfunc1
 0x100017fd func   ?sub_1009c5f0@CBaseEntity@@QAEXHPBDPBHH@Z CBaseEntity::sub_1009c5f0
 0x10001802 func   ?sub_10398000@CNPC_VMingXiao@@QAEDH@Z CNPC_VMingXiao::sub_10398000
+0x10001807 func   ?sub_101f3080@@YIPAHPAHHE@Z sub_101f3080
 0x1000180c func   ?vfunc81@CFuncMonitor@@QAEHXZ CFuncMonitor::vfunc81
 0x10001811 func   ?vfunc5@CNPC_VCameraSecurity@@QAEPAV1@I@Z CNPC_VCameraSecurity::vfunc5
 0x10001816 func   ?vfunc3@CEffectsServer@@UAEXPBMHHH@Z CEffectsServer::vfunc3

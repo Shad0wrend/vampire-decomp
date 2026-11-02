@@ -97835,6 +97835,30 @@ void __fastcall sub_10001807(char *p);
 void __fastcall sub_101f3070(char *p) { sub_10001807(p - *(int *)(p - 4)); }
 // END FUNCTION
 
+// FUNCTION: 0x101f3080 size=0x44
+extern int vt_10483b4c;
+extern int vt_10483b34;
+extern int vt_10483bb8;
+extern int g_1073d280;
+void __fastcall sub_101f20d0(void *pThis);
+struct CUnk1013dce0 { void sub_1013dce0(void *p); };
+// TARGET: sub_101f3080
+int *__fastcall sub_101f3080(int *pThis, int edx, unsigned char flags)
+{
+	int *esi = (int *)((char *)pThis - 0x28);
+	int *edi = (int *)((char *)esi + 0x28);
+	sub_101f20d0(edi);
+	esi[0xc] = (int)&vt_10483b4c;
+	int *pVb = (int *)esi[0xd];
+	*(int *)((char *)esi + pVb[1] + 0x34) = (int)&vt_10483b34;
+	edi[0] = (int)&vt_10483bb8;
+	if (flags & 1) {
+		((CUnk1013dce0 *)&g_1073d280)->sub_1013dce0(esi);
+	}
+	return esi;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f35c0 size=0xc
 void __fastcall sub_101f3650(void *pThis);
 void * __fastcall sub_101f35c0(void *pThis)
