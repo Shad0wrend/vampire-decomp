@@ -2449,6 +2449,7 @@
 0x10005042 func   ?sub_102b5be0@@YADXZ sub_102b5be0
 0x10005047 func   ?vfunc362@CWeaponMelee_ChangBlade@@QAEHXZ CWeaponMelee_ChangBlade::vfunc362
 0x1000504c func   ??0CBaseEntityList@@QAE@XZ CBaseEntityList::CBaseEntityList
+0x10005051 func   ?sub_10088ef0@@YAXXZ sub_10088ef0
 0x10005056 func   ?sub_101ca510@CTriggerUnit101ca510@@QAEXPAVCBaseEntity@@@Z CTriggerUnit101ca510::sub_101ca510
 0x10005060 func   ?vfunc490@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc490
 0x1000506a func   ?vfunc484@CAI_ExpressiveNPC@@QAEHPBDMMHH@Z CAI_ExpressiveNPC::vfunc484
