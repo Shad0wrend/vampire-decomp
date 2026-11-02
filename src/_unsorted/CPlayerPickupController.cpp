@@ -9,6 +9,14 @@ bool CPlayerPickupController::vfunc157(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040ce50 size=0x3
+#include "CPlayerPickupController.h"
+
+void CPlayerPickupController::vfunc226(int a)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040ce70 size=0x3
 #include "CPlayerPickupController.h"
 void CPlayerPickupController::vfunc229(int a0)

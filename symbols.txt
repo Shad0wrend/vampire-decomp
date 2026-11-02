@@ -12910,6 +12910,7 @@
 0x1001593d func   ?sub_101006e0@@YAXPBM0IPAXHPAUCGameTrace@@@Z sub_101006e0
 0x10015942 func   ??0CTESprite@@QAE@PBD@Z CTESprite::CTESprite
 0x10015947 func   ?sub_102305d0@CUnknown102305d0@@QAEHHPAX@Z CUnknown102305d0::sub_102305d0
+0x1001594c func   ?vfunc226@CPlayerPickupController@@UAEXH@Z CPlayerPickupController::vfunc226
 0x10015951 func   ?sub_103065d0@CUnknown103065d0@@QAEXPBUCUnknown103065d0Vec@@0HHHD@Z CUnknown103065d0::sub_103065d0
 0x10015956 func   ?sub_104276a0@CUnknown104276a0@@QAEHH@Z CUnknown104276a0::sub_104276a0
 0x1001595b func   ?sub_100737d0@CUnknown100737d0@@QAEXD@Z CUnknown100737d0::sub_100737d0
