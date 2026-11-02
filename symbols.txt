@@ -3806,6 +3806,7 @@
 0x1000721b func   ?vfunc82@CNPC_VGargoyle@@UAEPAUdatamap_t@@XZ CNPC_VGargoyle::vfunc82
 0x10007220 func   ?vfunc0@CTraceFilterNavGround@@UAE_NPAXH@Z CTraceFilterNavGround::vfunc0
 0x10007225 func   ?sub_101c4070@@YAXXZ sub_101c4070
+0x1000722a func   ?sub_100273b0@@YG_NH@Z sub_100273b0
 0x1000722f func   ?vfunc86@CHudCounter@@UAE_NHHHHH@Z CHudCounter::vfunc86
 0x10007239 func   ?sub_102066b0@@YAXXZ sub_102066b0
 0x1000723e func   ?sub_1013da90@Pool@@QAEPAU1@III@Z Pool::sub_1013da90

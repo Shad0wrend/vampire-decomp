@@ -674,6 +674,14 @@ void CBaseEntityX::sub_10027370(Vector &out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100273b0 size=0x5
+// TARGET: sub_100273b0
+bool __stdcall sub_100273b0(int a)
+{
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100273d0 size=0x3
 // TARGET: sub_100273d0
 void __stdcall sub_100273d0(int a)
