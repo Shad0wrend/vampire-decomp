@@ -80,6 +80,13 @@ char CAI_Behavior<CAI_BaseNPC,100000>::vfunc24(int a) { m_flag10 = 0; return 0; 
 char CAI_Behavior<CAI_BaseNPC,100000>::vfunc25(int a) { m_flag10 = 0; return 1; }
 // END FUNCTION
 
+// FUNCTION: 0x102c71f0 size=0x1
+// TARGET: sub_102c71f0
+void sub_102c71f0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c8a10 size=0xb
 #include "CAI_Behavior.h"
 #define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
