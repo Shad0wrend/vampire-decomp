@@ -1738,6 +1738,7 @@
 0x10003d5a func   ?sub_10337e40@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10337e40
 0x10003d5f func   ?sub_10345d00@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_10345d00
 0x10003d64 func   ?sub_10158550@@YAXXZ sub_10158550
+0x10003d69 func   ?sub_10300b50@CAI_Pathfinder@@QAEHPAXPBVVector@@MMH1H1@Z CAI_Pathfinder::sub_10300b50
 0x10003d6e func   ?sub_102e0470@CUnknown102e0150@@QAE?AVVector@@PAVCBaseEntity@@@Z CUnknown102e0150::sub_102e0470
 0x10003d73 func   ?sub_1018bfe0@@YAHXZ sub_1018bfe0
 0x10003d78 func   ?sub_10402230@@YAHXZ sub_10402230

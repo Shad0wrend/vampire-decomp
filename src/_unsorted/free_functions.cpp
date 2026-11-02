@@ -145196,6 +145196,82 @@ int CUnknown103008f0::sub_103008f0(const Vector *pPosition, float flDistance, in
 }
 // END FUNCTION
 
+// FUNCTION: 0x10300b50 size=0x265
+#include "CAI_Pathfinder.h"
+#include "Vector.h"
+#include <math.h>
+
+struct CPairFields102dda40;
+struct PfBitSet {
+	char m_pad0000[8];
+	unsigned int *m_pBits;	// 0x08
+};
+struct PfNodeView {
+	char m_pad0000[0x78];
+	int m_nLinks;	// 0x78
+	CPairFields102dda40 **m_ppLinks;	// 0x7c
+};
+struct PfOuterView {
+	char m_pad0000[0x98];
+	void *m_p98;	// 0x98
+};
+struct PfOwnerView {
+	char m_pad0000[0x5d34];
+	CAI_Pathfinder *m_pPathfinder;
+};
+struct PfTroika {
+	char sub_102a0ed0(const float *pPos, int mask, int a, int b);
+};
+struct CPairFields102dda40 {
+	int sub_102dda40(int startID);
+};
+extern int g_106c994c;
+
+static inline CAI_PathfinderNode *PfNode(CAI_PathfinderNetwork *pNet, int id)
+{
+	if (id >= 0 && id < pNet->m_nNodes)
+		return pNet->m_ppNodes[id];
+	g_106c994c++;
+	return 0;
+}
+
+// TARGET: CAI_Pathfinder::sub_10300b50
+int CAI_Pathfinder::sub_10300b50(void *pVisitedArg, const Vector *pA, float flMinDist, float flMaxZ, int a5, const Vector *pTarget, int nodeID, const Vector *pB)
+{
+	PfBitSet *pVisited = (PfBitSet *)pVisitedArg;
+	pVisited->m_pBits[nodeID >> 5] |= 1 << (nodeID & 0x1f);
+	float flDirect = (*pB - *pA).LengthSqr();
+	for (int i = 0; i < ((PfNodeView *)PfNode(((PfOwnerView *)m_pOuter)->m_pPathfinder->m_pNetwork, nodeID))->m_nLinks; i++) {
+		CPairFields102dda40 *pLink = ((PfNodeView *)PfNode(((PfOwnerView *)m_pOuter)->m_pPathfinder->m_pNetwork, nodeID))->m_ppLinks[i];
+		int id2 = pLink->sub_102dda40(nodeID);
+		if (pVisited->m_pBits[id2 >> 5] & (1 << (id2 & 0x1f)))
+			continue;
+		if (!sub_102ff960(pLink, nodeID))
+			continue;
+		Vector pos;
+		int nHull = m_unk08;
+		PfNode(((PfOwnerView *)m_pOuter)->m_pPathfinder->m_pNetwork, id2)->sub_102fb0d0(&pos.x, nHull);
+		float dz = pos.z - pTarget->z;
+		if ((float)fabs(dz) > flMaxZ)
+			continue;
+		float d1 = (pos - *pA).LengthSqr();
+		if (d1 <= flDirect)
+			continue;
+		if ((pos - *pTarget).LengthSqr() >= d1)
+			continue;
+		if (d1 >= flMinDist) {
+			void *p98 = ((PfOuterView *)m_pOuter)->m_p98;
+			if (!p98 || ((PfTroika *)p98)->sub_102a0ed0(&pos.x, 0x202400b, 0, 0))
+				return id2;
+		}
+		int r = sub_10003d69(pVisited, pA, flMinDist, flMaxZ, a5, pTarget, id2, &pos);
+		if (r != -1)
+			return r;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10300e60 size=0x14f
 #include "CUnknown10300e60.h"
 
