@@ -1396,6 +1396,7 @@
 0x10003341 func   ?sub_10079f50@@YIPAUCSceneElem9c@@PAUCSceneElemVecOwner@@@Z sub_10079f50
 0x1000334b func   ?sub_101647a0@CBasePlayer@@QAEHH@Z CBasePlayer::sub_101647a0
 0x10003350 func   ?sub_101dbdc0@CUnknown101dbdc0@@QAEPAXH@Z CUnknown101dbdc0::sub_101dbdc0
+0x1000335a func   ?sub_1036a190@@YAHXZ sub_1036a190
 0x1000336e func   ?sub_1015ef60@@YIXPAD@Z sub_1015ef60
 0x10003378 func   ?vfunc82@CNPC_VHumanCombatant@@UAEPAUdatamap_t@@XZ CNPC_VHumanCombatant::vfunc82
 0x1000337d func   ?sub_101b3830@CUnknown101b3830@@QAEXHPBD@Z CUnknown101b3830::sub_101b3830
