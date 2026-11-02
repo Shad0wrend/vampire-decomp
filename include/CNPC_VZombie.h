@@ -98,6 +98,8 @@ public:
 	float m_flMaxDist66dc;	// 0x66dc
 	char m_b66e0;	// 0x66e0: set when the hit is stronger than the zombie's two stats allow
 	char m_b66e1;	// 0x66e1: the head-hit flag
+	char m_pad66e2[2];
+	int m_nVariant66e4;	// 0x66e4: 1..3, picks the activity 0x1098 / 0x109b / 0x109e of the task 0x153
 public:
     virtual datamap_t * vfunc82();
 public:
