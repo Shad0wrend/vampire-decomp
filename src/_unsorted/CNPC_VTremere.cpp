@@ -13,6 +13,18 @@ void *CNPC_VTremere::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b5af0 size=0x6
+#include "CNPC_VTremere.h"
+
+extern const char *g_10652d00;
+
+// TARGET: CNPC_VTremere::vfunc451
+const char *CNPC_VTremere::vfunc451()
+{
+	return g_10652d00;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b5b10 size=0x1e
 #include "CNPC_VTremere.h"
 
