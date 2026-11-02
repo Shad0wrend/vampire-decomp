@@ -108084,6 +108084,20 @@ int *sub_10211970()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10211af0 size=0x36
+#include "CPropSign.h"
+#include "CBaseAnimating.h"
+extern char g_1048887c;
+void CPropSign::sub_10211af0()
+{
+	*(void **)this = &g_1048887c;
+	operator delete(*(void **)((char *)this + 0x764));
+	((COutputEvent *)((char *)this + 0x74c))->sub_100cd2d0();
+	m_Output734.sub_100cd2d0();
+	((CBaseAnimating *)this)->sub_1008b3c0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102120c0 size=0xf7
 #include "CPropSign.h"
 #include "CSingleUserRecipientFilter.h"

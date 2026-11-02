@@ -385,6 +385,7 @@
 0x100019f6 func   ?vfunc5@CBaseAnimating@@QAEPAV1@I@Z CBaseAnimating::vfunc5
 0x100019fb func   ?sub_100be3d0@bf_read@@QAEMH@Z bf_read::sub_100be3d0
 0x10001a00 func   ?vfunc60@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc60
+0x10001a0a func   ?sub_10211af0@CPropSign@@QAEXXZ CPropSign::sub_10211af0
 0x10001a19 func   ?vfunc103@CGenericSabbat_NPC@@UAEXXZ CGenericSabbat_NPC::vfunc103
 0x10001a1e func   ?vfunc82@CAI_DynamicLink@@QAEPAUdatamap_t@@XZ CAI_DynamicLink::vfunc82
 0x10001a23 func   ?sub_102cabd0@CUnknown102cabd0@@QAEHPAVCUnknown1028ebc0@@PAPAXH@Z CUnknown102cabd0::sub_102cabd0
