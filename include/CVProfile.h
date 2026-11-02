@@ -10,6 +10,8 @@ struct CUnknownCycle100335e0	// a CCycleCount: the 64 bit tick counter
 
 void __fastcall sub_100335e0(CUnknownCycle100335e0 *pCycle);	// CCycleCount::End: duration = rdtsc - start, in place
 
+__declspec(dllimport) void vtune(bool bEnable);	// tier0's vtune hook (_imp_?vtune at 0x109f3640): called by the inlined PopGroup
+
 class CVProfNode
 {
 public:
