@@ -3301,6 +3301,7 @@
 0x10006497 func   ?vfunc489@CGeneric_NPC@@UAEXXZ CGeneric_NPC::vfunc489
 0x1000649c func   ?vfunc546@CNPC_VMalkavian@@QAEHH@Z CNPC_VMalkavian::vfunc546
 0x100064a1 func   ?sub_1042fdb0@@YAXXZ sub_1042fdb0
+0x100064a6 func   ?sub_10256680@@YAPAPAXXZ sub_10256680
 0x100064b0 func   ?sub_101c63d0@CTriggerHurt@@QAEXXZ CTriggerHurt::sub_101c63d0
 0x100064ba func   ?sub_102c32d0@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_102c32d0
 0x100064bf func   ?vfunc11@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHHMHMHHHHH@Z CTempEntsSystem::vfunc11
