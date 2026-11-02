@@ -91420,6 +91420,92 @@ bool __fastcall sub_101dd4f0(int *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dd620 size=0x24f
+#include "CUnknown101dd910.h"
+#include "CUnknown101e0f00.h"
+#include "CVampireProjectile.h"
+#include "CVDmg_t.h"
+#include "Vector.h"
+
+#define V4(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3();
+#define V16(x) V4(x##a) V4(x##b) V4(x##c) V4(x##d)
+#define V64(x) V16(x##a) V16(x##b) V16(x##c) V16(x##d)
+
+struct DiscEdiView {
+	V64(a) V64(b) V16(c) V16(cc) V4(d) virtual void e0(); virtual void e1(); virtual void e2();
+	virtual int vfunc167();
+	V64(f) V64(g) V64(h) V64(i) V64(j) V64(k) V16(l) V4(m) virtual void n0(); virtual void n1();
+	virtual Vector *vfunc574(Vector *pOut, Vector *pCenter, int a, int b);
+};
+struct DiscSourceView {
+	V64(a) V64(b) V64(c)
+	virtual Vector vfunc192();
+	char m_pad0004[0x94 - 4];
+	DiscEdiView *m_p94;
+	char m_pad0098[0xa8 - 0x98];
+	void *m_pA8;
+};
+struct DiscTargetView {
+	V64(a) V64(b) V64(c) V16(d) V4(e) V4(f) V4(g)
+	virtual float *vfunc220();
+	char m_pad0004[0xfb0 - 4];
+	int m_nFb0;
+};
+struct DiscAimHelper {
+	Vector *sub_10176520(Vector *pOut, float f);
+};
+struct STarget {
+	void sub_101ef880(void *pTarget, char bSyncs, int nExtra);
+};
+
+class CProjSlots;
+CProjSlots *sub_101ef900(const float *pStart, const float *pDir, CBaseEntity *pOwner, int a, float flSpeed, const char *pszModel, const char *pszParticle, const char *pszSound, const char *pszName);
+int __fastcall sub_1032e7b0(void *pChar);
+extern char g_106b8540[];
+extern void (*g_109f3650)(int, const char *, ...);
+
+// TARGET: CUnknown101dd910::sub_101dd620
+void CUnknown101dd910::sub_101dd620(void *pSourceArg, void *pTargetArg, int nMask, int nRange, int nExtra)
+{
+	DiscSourceView *pSource = (DiscSourceView *)pSourceArg;
+	DiscTargetView *pTarget = (DiscTargetView *)pTargetArg;
+	Vector center = pSource->vfunc192();
+	void *pA8 = pSource->m_pA8;
+	DiscEdiView *pEdi = pSource->m_p94;
+	Vector dir;
+	if (pA8) {
+		Vector tmp;
+		dir = *((DiscAimHelper *)pA8)->sub_10176520(&tmp, 0.087155744f);
+	} else if (pEdi->vfunc167()) {
+		Vector tmp;
+		dir = *pEdi->vfunc574(&tmp, &center, 1, 0);
+	} else {
+		dir = center - *(Vector *)pTarget->vfunc220();
+		VectorNormalize(dir);
+	}
+	Vector end = center + dir * 2048.0f;
+	int hWeapon = sub_1032e7b0(pSource);
+	CVDmg_t dmg;
+	const char *pszParticle = m_pszParticle ? m_pszParticle : g_106b8540;
+	const char *pszModel = m_pszModel ? m_pszModel : g_106b8540;
+	CVampireProjectile *pProj = (CVampireProjectile *)sub_101ef900(&center.x, &dir.x, (CBaseEntity *)pSource, 0, (float)m_nSpeed, pszModel, pszParticle, "vdisciplineprojectile", g_106b8540);
+	if (pProj) {
+		pProj->sub_101ef540(&center, &end, 0, (int)&dmg, (CBaseEntity *)pSource, &dir, 0.0f, 0x45000000, 0xf, 1, (CBaseEntity *)pSource, 0, (CBaseEntity *)hWeapon, g_106b8540, 0x3f800000);
+		*(int *)((char *)pProj + 0x8bc) = nMask;
+		*(int *)((char *)pProj + 0x8c0) = nRange;
+		if (nExtra == -1)
+			nExtra = pTarget->m_nFb0;
+		((STarget *)pProj)->sub_101ef880(pTarget, m_bSyncs, nExtra);
+		if (m_bParticleDiesOnHit)
+			*((char *)pProj + 0x8b4) = 1;
+		((CUnknown101e0f00SrcSub *)((char *)this + 0x10))->sub_101dc790((int)pProj);
+	} else {
+		g_109f3650(1, "ERROR: Couldn't create discipline projectile!\n");
+	}
+	dmg.sub_101fa680();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dd910 size=0xde
 #include "CUnknown101dd910.h"
 #include "ScopeTrace.h"
