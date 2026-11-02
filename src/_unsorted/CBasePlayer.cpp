@@ -105,6 +105,16 @@ void *CBasePlayer::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015d660 size=0x6
+extern char g_10583618[];
+
+// TARGET: sub_1015d660
+void *sub_1015d660()
+{
+	return g_10583618;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015dc60 size=0x2d
 #include "CBasePlayer.h"
 
