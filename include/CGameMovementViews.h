@@ -36,7 +36,7 @@ struct CMoveDataView	// the entity at CGameMovement::m_pMove: vtable only; the d
 	GMV(200) GMV(201) GMV(202) GMV(203) GMV(204) GMV(205) GMV(206) GMV(207) GMV(208)
 	virtual void *vfunc209();	// slot 209 (+0x344): the ground entity (0 when none; 0x10126cb0 tests it)
 	virtual void g210();
-	virtual unsigned int vfunc211(char a);	// slot 211 (+0x34c): the entity's flag word (bit 6 = the "ducked/crouch hull" flag, passed to Ray_t::sub_1006dec0); takes one stack argument (push 0)
+	virtual unsigned int vfunc211();	// slot 211 (+0x34c): the entity's flag word (bit 6 is passed to Ray_t::sub_1006dec0 as its 5th argument); NO arguments (the `push 0` before the call is Ray_t's last argument)
 };
 
 struct CTouchNotifier	// the global at 0x1071a278 (extern CTouchNotifier *g_1071a278)
