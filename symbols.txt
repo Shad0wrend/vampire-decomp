@@ -11455,6 +11455,7 @@
 0x10013336 func   ?vfunc442@CNPC_VHuman@@QAEXPBH@Z CNPC_VHuman::vfunc442
 0x10013345 func   ?sub_1012caf0@@YAHPAUCHolder260@@PAUCOut12@@@Z sub_1012caf0
 0x1001334f func   ?sub_102edc80@CAI_Navigator@@QAE_NPBVVector@@MHHPAV2@H@Z CAI_Navigator::sub_102edc80
+0x10013359 func   ?sub_10234430@@YAPAXXZ sub_10234430
 0x1001335e func   ?sub_10065070@@YGXHH@Z sub_10065070
 0x10013363 func   ?vfunc3@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHH@Z CTempEntsSystem::vfunc3
 0x10013368 func   ?sub_103394a0@CBaseCombatCharacter@@QAEXDHH@Z CBaseCombatCharacter::sub_103394a0
