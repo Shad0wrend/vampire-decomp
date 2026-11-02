@@ -15,10 +15,27 @@ struct dynpitchvol_t
 	int vol, fadeinsav, fadeoutsav, volfrac, lfofrac, lfomult;
 };
 
-class CAmbientGeneric
+class CAmbientGeneric;
+
+// The entity base chain (CPointEntity: CBaseEntity), modelled as in CPointEntityBase / CConstraintAnchorBase: its constructor
+// (CBaseEntity::CBaseEntity body, stub 0x100090fc, arg = bAddAsDefault) is out of line and runs before the vtable store.
+class CAmbientGenericBase
 {
 public:
-	char pad0[0x17c];
+	CAmbientGenericBase(char bAddAsDefault);
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual void vfunc2();
+	virtual void vfunc3();
+	virtual void vfunc4();
+	virtual CAmbientGeneric *vfunc5(unsigned int flags);	// scalar deleting destructor (0x100141ff); VC6 has no covariant returns, so the base declares the same type
+};
+
+class CAmbientGeneric : public CAmbientGenericBase
+{
+public:
+	CAmbientGeneric() : CAmbientGenericBase(0) {}	// 0x101ac230: base constructor, -1 at +0x4c8 / +0x4d8, vtable 0x1047a58c, bytes +0x4dc..+0x4df and dword +0x4e0 = 0
+	char pad0[0x17c - 4];
 	float m_flNextThink;	// 0x17c
 	char pad180[0x1f0 - 0x180];
 	int m_pfnUse1f0;	// 0x1f0: the use function (a stub address)
