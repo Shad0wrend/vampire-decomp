@@ -11645,6 +11645,7 @@
 0x100137fa func   ?vfunc104@CWeaponRanged_FlameThrower@@UAEXXZ CWeaponRanged_FlameThrower::vfunc104
 0x100137ff func   ?sub_102e7ba0@CAI_MoveProbe@@QAEDPBMIPAM@Z CAI_MoveProbe::sub_102e7ba0
 0x10013804 func   ?sub_100c0c60@CUnknown100c0c60@@QAEXM@Z CUnknown100c0c60::sub_100c0c60
+0x10013809 func   ?sub_10256710@@YAPAXXZ sub_10256710
 0x10013813 func   ?vfunc105@CBaseFlex@@UAEXPBD@Z CBaseFlex::vfunc105
 0x10013818 func   ?vfunc525@CNPC_Crow@@QAE_NH@Z CNPC_Crow::vfunc525
 0x1001381d func   ?vfunc81@CItemKSarcophagusKey@@QAEHXZ CItemKSarcophagusKey::vfunc81
