@@ -167358,6 +167358,40 @@ extern "C" GP *npc_VRat()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ada30 size=0x43
+#include "CNPC_VSheriffMan.h"
+
+void *sub_100aa720(int size);
+extern char g_106508dc[];
+
+#define VD10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CNPCVt
+{
+	VD10(a) VD10(b) VD10(c) VD10(d) VD10(e) VD10(f) VD10(g) VD10(h) VD10(i) VD10(j)
+	virtual void s100(); virtual void s101(); virtual void s102(); virtual void s103(); virtual void s104(); virtual void s105();
+	virtual void vfunc106(const char *pszName);
+};
+
+struct CNPCCtor
+{
+	CNPC_VSheriffMan *sub_103ae3e0();
+};
+
+// TARGET: npc_VSheriffMan
+extern "C" CNPC_VSheriffMan *npc_VSheriffMan()
+{
+	void *mem = sub_100aa720(0x66fc);
+	CNPC_VSheriffMan *p;
+	if (mem)
+		p = ((CNPCCtor *)mem)->sub_103ae3e0();
+	else
+		p = 0;
+	((CNPCVt *)p)->vfunc106(g_106508dc);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103adb00 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
