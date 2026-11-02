@@ -2783,6 +2783,7 @@
 0x1000599d func   ?vfunc1@CTraceFilterHintLOS@@UAEHXZ CTraceFilterHintLOS::vfunc1
 0x100059ac func   ?sub_1007bd70@CUnknown1007b7b0@@QAE_NPAVCUnknown1007bb30Reader@@@Z CUnknown1007b7b0::sub_1007bd70
 0x100059b1 func   ?sub_10091fe0@@YIMPAVCBaseAnimating@@HHM@Z sub_10091fe0
+0x100059bb func   ??0CAmbientGeneric@@QAE@XZ CAmbientGeneric::CAmbientGeneric
 0x100059ca func   ?vfunc1@CTETextMessage@@UAEHXZ CTETextMessage::vfunc1
 0x100059cf func   ?sub_10026c70@CBaseEntity@@QAEXXZ CBaseEntity::sub_10026c70
 0x100059d4 func   ?sub_10062ec0@CUnknown10062ec0@@QAEHXZ CUnknown10062ec0::sub_10062ec0
