@@ -11634,6 +11634,7 @@
 0x10013ff2 func   ?sub_100e1680@CDialog@@QAEPADHPBDD@Z CDialog::sub_100e1680
 0x10013ff7 func   ?vfunc5@CSoundSchemeManager@@UAEXXZ CSoundSchemeManager::vfunc5
 0x10013ffc func   ?sub_10042680@UtlMem@@QAEXXZ UtlMem::sub_10042680
+0x10014001 func   ?sub_10144790@@YAXPBVVector@@0MMHHHHM@Z sub_10144790
 0x10014006 func   _item_w_crossbow_flaming item_w_crossbow_flaming
 0x10014010 func   _npc_VSheriffSwarm npc_VSheriffSwarm
 0x1001401a func   ?vfunc12@CServerGameClients@@UAEPAXPAX@Z CServerGameClients::vfunc12

@@ -61173,6 +61173,56 @@ void sub_10143d80(const Vector &position, float size, int r, int g, int b, int n
 }
 // END FUNCTION
 
+// FUNCTION: 0x10144790 size=0x206
+#include "CSingleUserRecipientFilter.h"
+#include "ScopeTrace.h"
+
+struct CEdictUnknown10144790 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual CBaseEntity *vfunc4(); };
+struct CEdict10144790 { char m_pad[0x40]; CEdictUnknown10144790 *m_pUnk40; };
+
+#define V10_(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct CEntView10144790
+{
+	V10_(a0) V10_(a1) V10_(a2) V10_(a3) V10_(a4) V10_(a5) V10_(a6) V10_(a7) V10_(a8) V10_(a9)
+	V10_(b0) V10_(b1) V10_(b2) V10_(b3) V10_(b4) V10_(b5) V10_(b6) V10_(b7) V10_(b8) V10_(b9)
+	V10_(c0) V10_(c1)
+	virtual Vector *vfunc220();
+};
+
+// TARGET: sub_10144790
+void sub_10144790(const Vector *pvA, const Vector *pvB, float f3, float f4, int i5, int i6, int i7, int i8, float f9)
+{
+	CEdict10144790 *pEdict = (CEdict10144790 *)engine->vfunc38(1);
+	CBaseEntity *pEnt;
+	{
+		ScopeTrace trace("CBaseEntity::Instance", g_106b8540, g_106b8540);
+		if (!pEdict)
+			pEdict = (CEdict10144790 *)engine->vfunc38(0);
+		if (pEdict && pEdict->m_pUnk40)
+			pEnt = pEdict->m_pUnk40->vfunc4();
+		else
+			pEnt = 0;
+	}
+	if (!pEnt)
+		return;
+	if ((*((CEntView10144790 *)pEnt)->vfunc220() - *pvA).LengthSqr() > 9e7f)
+		return;
+	CSingleUserRecipientFilter filter(pEnt);
+	engine->vfunc65(&filter, 0x39);
+	engine->vfunc75((int)pvA);
+	engine->vfunc75((int)pvB);
+	engine->vfunc72(f3);
+	engine->vfunc72(f4);
+	engine->vfunc69(i5);
+	engine->vfunc69(i6);
+	engine->vfunc69(i7);
+	engine->vfunc69(i8);
+	engine->vfunc72(f9);
+	engine->vfunc66();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10144a30 size=0x206
 #include "CSingleUserRecipientFilter.h"
 #include "ScopeTrace.h"
