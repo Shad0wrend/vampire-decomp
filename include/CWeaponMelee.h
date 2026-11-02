@@ -32,6 +32,7 @@ public:
 	void sub_103ea7e0(int kind, int a, int b, int c);
 	CBaseCombatWeapon *vfunc5(unsigned int flags);	// as in CPhysForce (transplant); VC6 has no covariant returns
 	char sub_10411160(CBaseEntity *pTarget, char bFlag);	// a melee weapon subclass member: false without a target, one that lacks bit 1 of its sub_100b39c0 flags, or the target the owner's object at +0xa8 already holds (its slot 209); else hands the target and a damage-scale float (0 / the owner's tuning value, unless bFlag) to sub_1016a660; targets in collision group 9 are refused when sub_1040d930 holds
+	virtual int vfunc373();	// slot 373: 6	// a melee weapon subclass member: false without a target, one that lacks bit 1 of its sub_100b39c0 flags, or the target the owner's object at +0xa8 already holds (its slot 209); else hands the target and a damage-scale float (0 / the owner's tuning value, unless bFlag) to sub_1016a660; targets in collision group 9 are refused when sub_1040d930 holds
 
 	char m_pad0898[0x8b8 - 0x898];
 };
