@@ -2,6 +2,8 @@
 	void sub_10253110();	// stub 0x100138fe, called directly by vfunc321
 	void sub_10257640();	// stub 0x10005d30, tail called at the end of vfunc321
 	int vfunc361(int act);	// slot 361 "CBaseCombatWeapon::ActivityOverride": looks act up in the weapon's activity translation table (slots 362 / 363); the record's weapon activity is returned when the owner's model has a sequence for it (or the owner's player object's), else act
+	void sub_1024fe00();	// 0x1024fe00 (stub 0x1000317a), no arguments: when m_nEffectFlags19c has 0x40: CPASAttenuationFilter(this, 0.8f) and enginesound->vfunc3(&filter, engine->vfunc35(edict +0x2e0), 1, "items/suitchargeok1.wav", 1.0f, 0.8f, 0, 0x96, 0, 0, 1, 0), flags = (flags & ~0x40) | 2; then ScopeTrace "CBaseEntity::SetSolid" (name +0x26c or g_106b8540) { collision(+0x270)->sub_100dc480(2) }, ScopeTrace "CBaseEntity::AddSolidFlags" { collision->AddSolidFlags(8) }, sub_100b3b00(), slot 305, sub_100ac4e0(0, 0, 0). Called by the drop think 0x1024fc20 and 0x10250080
+	void sub_100b3b00();	// CBaseEntity member (0x1001514a), called directly
 	void sub_1024f7b0();	// stub 0x10003ca1: run on a weapon the owner just gave up
 	int sub_1008dc40(int a, int b);	// CBaseAnimating::SelectWeightedSequence (stub 0x100125c1), called directly on the weapon
 	void sub_1008df10(void *pArg);	// CBaseAnimating::vfunc130 (stub 0x10009e6c), called directly by vfunc130
