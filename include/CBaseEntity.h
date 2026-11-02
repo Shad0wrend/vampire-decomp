@@ -312,7 +312,8 @@ public:
 	unsigned int m_hOwner364;	// owner entity handle
 	int m_field368;
 	int m_obj36c;	// physics object (pointer)
-	char m_pad0370[0xc];
+	char m_pad0370[8];
+	void *m_p378;	// 0x0378: freed by ~CBaseEntity through sub_10196850 when set (0x1009df20)
 	EHANDLE m_hAimEnt37c;	// 0x037c: the aim entity (SetAimEnt, PhysicsFollow / PhysicsCarried)
 	char m_pad0380[0x3bc - 0x380];
 	Vector m_vecVelocity3bc;	// 0x03bc
