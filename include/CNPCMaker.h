@@ -525,8 +525,8 @@ public:
 	virtual void vfunc614();
 	virtual void vfunc615();
 	virtual void vfunc616();
-	virtual void vfunc617();
-	virtual void vfunc618_slot();
+	virtual CBaseEntity *vfunc617(int bForce);	// slot 617 "CNPCMaker::MakeNPC" (function 0x1034b7b0, ret 4): the spawn body, returns the spawned NPC object (the entity's +0x98) or 0; see the definition
+	virtual char vfunc618_slot(int bForce);	// slot 618 (+0x9a8) "CanSpawn": the plain vfunc618 below is the direct call
 	virtual void vfunc619(int);
 	virtual void vfunc620(int);
 };
