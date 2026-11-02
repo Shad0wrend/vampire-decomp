@@ -6,7 +6,10 @@ struct CAI_ScheduleNode	// one schedule of the manager's list; only the id and t
 {
 	char m_pad0000[0x1c];
 	int m_id;	// 0x1c
-	char m_pad0020[0x44 - 0x20];
+	const void *m_pTasks;	// 0x20: the task records (8 bytes each; CRC'd by the save code 0x1027bc60 / 0x1027bf50)
+	int m_nTasks;	// 0x24: number of task records
+	char m_pad0028[0x40 - 0x28];
+	const char *m_pszName;	// 0x40: schedule name (strcmpi'd by sub_1030f350, copied by 0x1027bc60)
 	CAI_ScheduleNode *m_pNext;	// 0x44
 };
 
