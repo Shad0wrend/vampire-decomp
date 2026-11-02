@@ -62,6 +62,7 @@ public:
 	virtual CPointEntity *vfunc5(unsigned int flags);	// slot 5 (CPointEntity's override; VC6 has no covariant returns), scalar deleting destructor: tears down the vector at +0x518 and the six items at +0x46c, the base destructor body (sub_1000cb8a), and frees the object when bit 0 of flags is set
 	void sub_1000cb8a();	// base class destructor body (stub 0x1000cb8a)
 public:
+#ifndef CPOINTENTITY_BASED
 	virtual void vfunc6();
 	virtual void vfunc7();
 	virtual void vfunc8();
@@ -138,5 +139,6 @@ public:
 	virtual void vfunc79();
 	virtual void vfunc80();
 	virtual void vfunc81();
+#endif
 	virtual datamap_t * vfunc82();
 };
