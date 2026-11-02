@@ -408,7 +408,7 @@
 0x10001aa5 func   ?sub_100bb990@CBeam@@QAEXPBMPAVCBaseEntity@@@Z CBeam::sub_100bb990
 0x10001aaa func   ?sub_10428360@@YAHPADPBD@Z sub_10428360
 0x10001aaf func   ?vfunc117@CDisciplineParticle@@UAEHXZ CDisciplineParticle::vfunc117
-0x10001ab4 func   ?vfunc110@CEnvLaser@@QAE_NPBD0@Z CEnvLaser::vfunc110
+0x10001ab4 func   ?vfunc110@CEnvLaser@@UAE_NPBD0@Z CEnvLaser::vfunc110
 0x10001ab9 func   ?sub_10368f20@CNPC_VCamera@@QAEHXZ CNPC_VCamera::sub_10368f20
 0x10001abe func   ?vfunc180@CBasePlayer@@UAEXXZ CBasePlayer::vfunc180
 0x10001ac8 func   ?sub_1002c920@CUnknown1002c920@@QAEHHHH@Z CUnknown1002c920::sub_1002c920
@@ -9537,7 +9537,7 @@
 0x10010a91 func   ?vfunc103@CNPC_VPlayerController@@QAEXXZ CNPC_VPlayerController::vfunc103
 0x10010a96 func   ?vfunc80@COccultDexterity@@QAEHXZ COccultDexterity::vfunc80
 0x10010a9b func   ?sub_101bd940@@YIXPAD@Z sub_101bd940
-0x10010aa5 func   ?vfunc104@CEnvLaser@@QAEXXZ CEnvLaser::vfunc104
+0x10010aa5 func   ?vfunc104@CEnvLaser@@UAEXXZ CEnvLaser::vfunc104
 0x10010aaa func   ?Grow@?$CUtlMemory@PAUCBaseFlexFileRec@@@@QAEXH@Z CUtlMemory<CBaseFlexFileRec *>::Grow
 0x10010aaa func   ?sub_100b7130@@YIXPAUMem4@@HH@Z sub_100b7130
 0x10010aaf func   _tectonic tectonic
