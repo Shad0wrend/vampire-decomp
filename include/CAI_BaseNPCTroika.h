@@ -41,6 +41,7 @@ struct CAI_NamedThing	// one of the three global objects an NPC can be bound to 
 class CAI_BaseNPCTroika : public CAI_BaseNPC
 {
 public:
+	virtual int vfunc81();	// slot 81: an int getter returning 0 (CAI_BaseNPC declares this slot as int since 0x102c5890 answers in eax)
 	virtual int vfunc127(CRestore *pRestore);	// "CAI_BaseNPCTroika::Restore": CAI_BaseNPC::vfunc127, a flag byte (slot 17 of the restore) that gates two ints (slot 15), then the float fix-ups of the fields at +0x607c .. +0x657c and the nine 0x2c byte timers at +0x60b0 .. +0x6210
 	virtual void vfunc113();	// slot 113 override: CBaseEntity::vfunc113, then when slot 138 answers non-zero applies the disposition (sub_102c0f70(+0x6558 or "", 1))
 	void sub_100a0bc0();	// CBaseEntity::vfunc113 (stub 0x10001226), called directly
