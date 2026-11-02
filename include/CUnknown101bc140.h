@@ -32,7 +32,8 @@ public:
 	void *m_pEmitter;	// 0x3c
 	float m_flScale;	// 0x40
 	char m_Filter[4];	// 0x44: the recipient filter object
-	unsigned int m_nFlags;	// 0x48
+	unsigned int m_nFlags;	// 0x48: bit 0 set up, bit 1 filter is reliable (filter slot 1), bit 2 filter slot 7
+	CUtlVector<int> m_Recipients;	// 0x4c: entity indices of the filter's recipients (memory +0x4c, alloc +0x50, grow +0x54, size +0x58, elements +0x5c); sub_101bb990 AddToTail()s each non-negative filter slot 3(i), i < slot 2()
 
 	bool sub_101bbde0(float flTime, float flDelta);	// "CSoundPatch::Update": the sound expires (sub_101bbd10, false) once its time at +0x24 has passed; a sound whose entity is gone is removed with a warning (false); else steps its two envelopes (+0x00 volume, +0x10 pitch) by flDelta and, when one of them is active and the sound is playing (bit 0 of +0x48), emits it through the engine; true
 	void sub_101bbc70(float flValue);	// sets m_fl24 to the engine's slot 9 value plus flValue (after sub_100139e4(0, flValue))
