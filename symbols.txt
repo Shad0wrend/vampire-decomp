@@ -10414,6 +10414,7 @@
 0x1001217a func   ?vfunc80@CWeaponRanged_MingXiao_Spit@@QAEHXZ CWeaponRanged_MingXiao_Spit::vfunc80
 0x1001217f func   ?vfunc362@CBaseCombatCharacter@@QAEDPBM@Z CBaseCombatCharacter::vfunc362
 0x10012184 func   ?vfunc262@CBaseAnimating@@QAE_NHPAM@Z CBaseAnimating::vfunc262
+0x10012189 func   ?Links@?$CUtlRBTree@UCAI_ExpresserUse@@G@@QBEABULinks_t@1@G@Z CUtlRBTree<CAI_ExpresserUse,unsigned short>::Links
 0x10012189 func   ?sub_10313aa0@CUtlRBTree16Unit@@QBEPBULinks_t@CUtlRBTree16@@G@Z CUtlRBTree16Unit::sub_10313aa0
 0x1001218e func   ?sub_101c2ad0@CUnknown101c2a90@@QAEXD@Z CUnknown101c2a90::sub_101c2ad0
 0x10012193 func   ?sub_100f7c30@@YGPAVCBaseEntity@@PAV1@PBDPBVVector@@M00@Z sub_100f7c30
