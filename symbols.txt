@@ -1089,6 +1089,7 @@
 0x10002c16 func   ?sub_10101a20@CEnvLaser@@QAEXXZ CEnvLaser::sub_10101a20
 0x10002c1b func   ?sub_102dfa20@SListOwner@@QAE_NPAVCBaseEntity@@@Z SListOwner::sub_102dfa20
 0x10002c20 func   ?vfunc272@CVampireProjectile@@UAEXPBVVector@@0PAVCBaseEntity@@HMPBD2@Z CVampireProjectile::vfunc272
+0x10002c25 func   ?vfunc0@?$CUtlVectorDataOps@V?$CUtlVector@UUnreachableEnt_t@@V?$CUtlMemory@UUnreachableEnt_t@@@@@@$08@@UAEXPAX0@Z CUtlVectorDataOps<CUtlVector<UnreachableEnt_t,CUtlMemory<UnreachableEnt_t> >,9>::vfunc0
 0x10002c2a func   ?sub_100785d0@CUnknown100785d0@@QAEHXZ CUnknown100785d0::sub_100785d0
 0x10002c34 func   ?sub_1004fc30@@YAHXZ sub_1004fc30
 0x10002c39 func   ?sub_10312f30@@YAXXZ sub_10312f30
