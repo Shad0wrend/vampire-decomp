@@ -7,6 +7,7 @@
 class CHudCounter : public CBaseEntity
 {
 public:
+	CHudCounter() : CBaseEntity(0) {}
 	CHudCounter *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
 	virtual void vfunc103();	// "CBaseEntity::Spawn"-like override: slot 104, SetSolid(0) with a scope trace, slot 93(0, 0), stores -1 at +0x450, then sub_100b3b00()
