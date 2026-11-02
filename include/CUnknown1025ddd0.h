@@ -15,6 +15,9 @@ public:
 	int m_growSize;
 	int m_size;
 	unsigned int *m_pElements;	// 0x14
+	char m_szName[16];	// 0x18: the name ("Normal", "Player", "Boss"; sub_1025e120 returns its address); the whole object is 0x28 bytes, made by sub_1025d880 (globals 0x1090fbec / f0 / f4)
+
+	CUnknown1025ddd0 *sub_1025d9d0(int nLimit, const char *pszName);	// constructor body (stub 0x10007563): +4..+0x14 zeroed, grow size 8, limit nLimit, name copied (Q_strncpy, 15 chars); returns this
 
 	int Count() const { return m_size; }
 	unsigned int *Element(int i) { return &m_pMemory[i]; }
