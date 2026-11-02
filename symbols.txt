@@ -4660,6 +4660,7 @@
 0x10008a99 func   ?sub_10072d90@CUnknown10072d90@@QAEPADXZ CUnknown10072d90::sub_10072d90
 0x10008a9e func   ?vfunc1@CTEShowLine@@UAEHXZ CTEShowLine::vfunc1
 0x10008aa3 func   ?vfunc0@CRelationshipSaveDataOps@@UAEXPAX0@Z CRelationshipSaveDataOps::vfunc0
+0x10008aad func   ?sub_10087ee0@@YAXXZ sub_10087ee0
 0x10008ab2 func   ?vfunc602@CNPC_VHengeyokai@@UAE_NXZ CNPC_VHengeyokai::vfunc602
 0x10008ab7 func   ?sub_102c36b0@CAI_BaseNPCTroika@@QAEPBDH@Z CAI_BaseNPCTroika::sub_102c36b0
 0x10008ac6 func   ?sub_102a9890@@YIPAIPAI@Z sub_102a9890
