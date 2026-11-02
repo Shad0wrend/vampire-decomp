@@ -168279,6 +168279,40 @@ int sub_103b6bc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b6bf0 size=0x43
+#include "CNPC_VTzimisce.h"
+
+void *sub_100aa720(int size);
+extern char g_10653ce4[];
+
+#define VD10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CNPCVt
+{
+	VD10(a) VD10(b) VD10(c) VD10(d) VD10(e) VD10(f) VD10(g) VD10(h) VD10(i) VD10(j)
+	virtual void s100(); virtual void s101(); virtual void s102(); virtual void s103(); virtual void s104(); virtual void s105();
+	virtual void vfunc106(const char *pszName);
+};
+
+struct CNPCCtor
+{
+	CNPC_VTzimisce *sub_103b6c60();
+};
+
+// TARGET: npc_VTzimisce
+extern "C" CNPC_VTzimisce *npc_VTzimisce()
+{
+	void *mem = sub_100aa720(0x66c0);
+	CNPC_VTzimisce *p;
+	if (mem)
+		p = ((CNPCCtor *)mem)->sub_103b6c60();
+	else
+		p = 0;
+	((CNPCVt *)p)->vfunc106(g_10653ce4);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b7020 size=0xc
 void __fastcall sub_103b7040(void *pThis);
 
