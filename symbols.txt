@@ -4444,6 +4444,7 @@
 0x10008184 func   ?sub_101895d0@@YAXPAVCBaseEntity@@HH@Z sub_101895d0
 0x10008189 func   ?sub_102e2730@@YIXPAUCOwner@@@Z sub_102e2730
 0x10008198 func   ?sub_100e5770@CDialog@@QAEXXZ CDialog::sub_100e5770
+0x1000819d func   ?vfunc580@CNPC_VTest@@UAEPAXXZ CNPC_VTest::vfunc580
 0x100081a2 func   ?sub_103fef20@@YAHXZ sub_103fef20
 0x100081a7 func   ?sub_104081e0@CKeyringUnit@@QAEXXZ CKeyringUnit::sub_104081e0
 0x100081ac func   ?sub_101f1b50@@YGXHH@Z sub_101f1b50
