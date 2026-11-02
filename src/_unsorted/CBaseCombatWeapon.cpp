@@ -123,6 +123,11 @@ char CBaseCombatWeapon::vfunc267() {
 }
 // END FUNCTION
 
+// FUNCTION: 0x10234780 size=0x3
+// TARGET: CBaseCombatWeapon::vfunc268
+char CBaseCombatWeapon::vfunc268() { return 0; }
+// END FUNCTION
+
 // FUNCTION: 0x102347a0 size=0x7
 namespace lifted {
 extern float g_104492dc;
