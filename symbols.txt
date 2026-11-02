@@ -11206,6 +11206,7 @@
 0x100132d2 func   ?sub_1019cae0@@YA_NPAUCRagdollLayout@@PAUCRagdollStudio@@H@Z sub_1019cae0
 0x100132d7 func   ?sub_10151b70@@YAMPBMHMD@Z sub_10151b70
 0x100132dc func   ?sub_102f09a0@CUnknown102f09a0@@QAEXPAVCAI_Waypoint@@PBM@Z CUnknown102f09a0::sub_102f09a0
+0x100132e6 func   ?sub_100ad910@@YGXPAX00@Z sub_100ad910
 0x100132eb func   ?sub_103165f0@CUnknown103164c0@@QAEXPBD@Z CUnknown103164c0::sub_103165f0
 0x100132f0 func   ?sub_10056fa0@CBaseFire@@QAEXHH@Z CBaseFire::sub_10056fa0
 0x100132f5 func   ?sub_1042c7e0@@YIXPAX@Z sub_1042c7e0
