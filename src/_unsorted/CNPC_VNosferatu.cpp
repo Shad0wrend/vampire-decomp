@@ -28,6 +28,18 @@ CNPC_VNosferatu *CNPC_VNosferatu::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a15e0 size=0x6
+#include "CNPC_VNosferatu.h"
+
+extern char g_1064acb8;
+
+// TARGET: CNPC_VNosferatu::vfunc452
+char CNPC_VNosferatu::vfunc452()
+{
+	return g_1064acb8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a1640 size=0x1d
 #include "CNPC_VNosferatu.h"
 struct A { int sub_10012300(int); };
