@@ -52790,6 +52790,40 @@ int sub_10114820()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10114920 size=0x43
+#include "CFunc_LOD.h"
+
+void *sub_100aa720(int size);
+extern char g_105703f4[];
+
+#define VD10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CFuncLodVt
+{
+	VD10(a) VD10(b) VD10(c) VD10(d) VD10(e) VD10(f) VD10(g) VD10(h) VD10(i) VD10(j)
+	virtual void s100(); virtual void s101(); virtual void s102(); virtual void s103(); virtual void s104(); virtual void s105();
+	virtual void vfunc106(const char *pszName);
+};
+
+struct CFuncLodCtor
+{
+	CFunc_LOD *sub_10114a20();
+};
+
+// TARGET: func_lod
+extern "C" CBaseEntity *func_lod()
+{
+	void *mem = sub_100aa720(0x454);
+	CFunc_LOD *p;
+	if (mem)
+		p = ((CFuncLodCtor *)mem)->sub_10114a20();
+	else
+		p = 0;
+	((CFuncLodVt *)p)->vfunc106(g_105703f4);
+	return (CBaseEntity *)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101149f0 size=0x1a
 namespace lifted {
 extern int g_105702e8;
