@@ -435,6 +435,94 @@ void CAI_BaseNPC::vfunc538()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026ca80 size=0x283
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
+#include "CVProfile.h"
+#include "ScopeTrace.h"
+#include "globalvars.h"
+
+struct NpcThinkView {
+	char m_pad0000[0x17c];
+	float m_flNextThink;	// 0x17c
+	char m_pad0180[0x26c - 0x180];
+	const char *m_name26c;	// 0x26c
+	char m_pad0270[0x1538 - 0x270];
+	EHANDLE m_hTarget1538;	// 0x1538
+	int m_nTarget153c;	// 0x153c
+};
+struct NpcThinkCycle {
+	unsigned __int64 m_Int64;
+	NpcThinkCycle() { m_Int64 = 0; }
+	void Sample()
+	{
+		unsigned long *pSample = (unsigned long *)&m_Int64;
+		__asm {
+			mov ecx, pSample
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+	void End()
+	{
+		NpcThinkCycle Temp;
+		Temp.Sample();
+		m_Int64 = Temp.m_Int64 - m_Int64;
+	}
+};
+struct CAI_BaseNPCUnit {
+	void sub_1026a0f0();
+};
+void __fastcall sub_1027efb0(CAI_BaseNPC *pNPC);
+char __fastcall sub_1026c3d0(CAI_BaseNPC *pNPC);
+extern int g_10934088;
+
+// TARGET: CAI_BaseNPC::vfunc431
+void CAI_BaseNPC::vfunc431()
+{
+	NpcThinkView *pView = (NpcThinkView *)this;
+	ScopeTrace trace("CAI_BaseNPC::NPCThink", this ? (pView->m_name26c ? pView->m_name26c : g_106b8540) : g_105387dc, g_106b8540);
+	char *pFlag = (char *)this + 0x5b55;
+	if (*pFlag) {
+		*pFlag = 0;
+		sub_1027efb0(this);
+	}
+	((CAI_BaseNPCUnit *)this)->sub_1026a0f0();
+	pView->m_flNextThink = (float)(gpGlobals->curtime + 0.1);
+	char *pGlobal = *(char **)&g_10934088;
+	if (pGlobal && pGlobal[0x658]) {
+		CVProfile *pProf = g_109f3648;
+		if (pProf->m_enabled || !pProf->m_bAtRoot) {
+			if (pProf->m_pCurNode->m_pszName != "CAI_BaseNPC_NPCThink")
+				pProf->m_pCurNode = pProf->m_pCurNode->GetSubNode("CAI_BaseNPC_NPCThink", 0, "Unaccounted");
+			pProf->m_pCurNode->EnterScope();
+			pProf->m_bAtRoot = false;
+		}
+		if (!sub_1026c3d0(this)) {
+			g_109f3648->ExitScope();
+			return;
+		}
+		if (!pView->m_hTarget1538.Get() || pView->m_nTarget153c != 1)
+			vfunc432(0);
+		float flAdvance = sub_1026c7c0();
+		sub_1026c120(*(int *)&flAdvance, 0);
+		CVProfile *pProf2 = g_109f3648;
+		if (!pProf2->m_bAtRoot || pProf2->m_enabled) {
+			CVProfNode *pNode = pProf2->m_pCurNode;
+			if (--pNode->m_nRecursions == 0 && pNode->m_nCurFrameCalls != 0) {
+				((NpcThinkCycle *)&pNode->m_CurFrameTime)->End();
+				pNode->m_TotalTime += pNode->m_CurFrameTime.m_Int64;
+				g_109f3648->PopGroup();
+			}
+			if (pNode->m_nRecursions == 0)
+				pProf2->m_pCurNode = pProf2->m_pCurNode->m_pParent;
+			pProf2->m_bAtRoot = (pProf2->m_pCurNode == pProf2->m_pRoot);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026cdc0 size=0x47
 #include "CAI_BaseNPC.h"
 struct CAI_Container5bd8 { void sub_100cd660(CBaseEntity *pEnt, CAI_BaseNPC *pOwner, int a); };
