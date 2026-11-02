@@ -37,5 +37,7 @@ public:
 
 	CUnknown101d88b0(CVDmgSource_t *pFirst, const CVDmgBlock16_t *pBlock, int nDice, int nTotal);	// 0x101d8770: no second participant
 
+	CUnknown101d88b0(CVDmgSource_t *pFirst, CVDmgBlock16_t *pBlock, int nTotal);	// 0x101d8720 (stub 0x10010361, ret 12, returns this): constructs the block member (+0x1c, stub 0x10004b7e), then sub_101d88b0(pFirst, 0, pBlock, pBlock->sub_10204900(pFirst), nTotal, 0)
+
 	void sub_101d88b0(CVDmgSource_t *pFirst, CVDmgSource_t *pSecond, const CVDmgBlock16_t *pBlock, int nDice, int nTotal, int field04);	// initialises the roll: the count is capped at 250 (DevMsg "Dice roll count out of bounds: %d, capped at %d"), the participants' engine indices stored, the block copied, +0x2c = nTotal - 1, the global roll callback (0x1073938c) is called with this, and for a feat block (kind 4) with a first participant the feat bonus is looked up
 };
