@@ -1814,6 +1814,7 @@
 0x10003fa3 func   ?vfunc438@CNPC_VGargoyle@@QAEHXZ CNPC_VGargoyle::vfunc438
 0x10003fa8 func   ?vfunc1@CTESprite@@UAEHXZ CTESprite::vfunc1
 0x10003fb2 func   ?sub_100dbbe0@@YI_NPAD@Z sub_100dbbe0
+0x10003fb7 func   ?sub_10087c40@@YAXXZ sub_10087c40
 0x10003fbc func   ?sub_103e61c0@@YAHXZ sub_103e61c0
 0x10003fc6 func   ?sub_10075f10@CUnknown10075f10@@QAEMXZ CUnknown10075f10::sub_10075f10
 0x10003fd5 func   ?vfunc337@CNPC_VScurrying@@UAEHXZ CNPC_VScurrying::vfunc337
