@@ -8089,6 +8089,26 @@ bool CUtlRBTree36::sub_1004c4c0(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004ca10 size=0x43
+#include "CPhysicsSpring.h"
+
+void *sub_100aa720(int size);
+extern char g_1053d8e4[];
+
+// TARGET: phys_spring
+extern "C" CBaseEntity *phys_spring()
+{
+	void *mem = sub_100aa720(0x48c);
+	CPhysicsSpring *p;
+	if (mem)
+		p = ((CPhysicsSpring *)mem)->sub_1004d060();
+	else
+		p = 0;
+	p->vfunc106(g_1053d8e4);
+	return (CBaseEntity *)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004d060 size=0x4d
 #include "CPhysicsSpring.h"
 struct CPointEntityBaseView { void sub_100090fc(int a); };
