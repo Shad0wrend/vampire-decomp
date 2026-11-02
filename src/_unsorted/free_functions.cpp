@@ -82121,6 +82121,22 @@ int CUnknown101b9140::sub_101b7df0(int num, const CUnknown101b9140Elem *pToCopy)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b7f00 size=0x4f
+#include "CUtlRBTree24.h"
+#include "utlrbtree.h"
+
+struct CRBEntry8 {
+    int a;
+    int b;
+};
+
+// TARGET: CUtlRBTree24::sub_101b7f00
+const CUtlRBTree24::Links_t &CUtlRBTree24::sub_101b7f00(int i) const
+{
+	return (const Links_t &)((const CUtlRBTree<CRBEntry8, int> *)this)->Links(i);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b90a0 size=0x7c
 #include "CUnknown101b90a0.h"
 

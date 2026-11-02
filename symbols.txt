@@ -12461,6 +12461,7 @@
 0x10014e66 func   ?vfunc546@CNPC_VCombatman@@QAEHH@Z CNPC_VCombatman::vfunc546
 0x10014e6b func   ?sub_1010fc80@@YAHXZ sub_1010fc80
 0x10014e70 func   ?sub_101dc850@CUnk101dc850@@QAEPAU1@XZ CUnk101dc850::sub_101dc850
+0x10014e7a func   ?sub_101b7f00@CUtlRBTree24@@QBEABULinks_t@1@H@Z CUtlRBTree24::sub_101b7f00
 0x10014e7f func   ?vfunc421@CBasePlayer@@UAEDH@Z CBasePlayer::vfunc421
 0x10014e84 func   ?vfunc1@CTEBeamLaser@@UAEHXZ CTEBeamLaser::vfunc1
 0x10014e89 func   ?vfunc268@CBaseCombatWeapon@@UAEDXZ CBaseCombatWeapon::vfunc268
