@@ -9967,6 +9967,7 @@
 0x10010f46 func   ?sub_101fb200@CVDmg_t@@QAEHHH@Z CVDmg_t::sub_101fb200
 0x10010f4b func   ?vfunc70@CNPC_VSabbatLeader@@QAE_NXZ CNPC_VSabbatLeader::vfunc70
 0x10010f50 func   ?vfunc78@CAI_Hint@@UAEXXZ CAI_Hint::vfunc78
+0x10010f55 func   ?sub_1004d220@CPhysicsSpring@@QAEXPAUinputdata_t@@@Z CPhysicsSpring::sub_1004d220
 0x10010f5a func   ?sub_1014c0f0@CUnknown1014c0f0@@QAEHXZ CUnknown1014c0f0::sub_1014c0f0
 0x10010f5f func   ?sub_101371d0@@YANM@Z sub_101371d0
 0x10010f69 func   _gibshooter gibshooter
