@@ -1,6 +1,15 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10367870 size=0x6
+extern void *g_1093a740;
+
+void *sub_10367870(void)
+{
+    return &g_1093a740;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103678b0 size=0x1e
 #include "CNPC_VBrujah.h"
 

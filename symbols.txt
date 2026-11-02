@@ -2069,6 +2069,7 @@
 0x100044e9 func   ?sub_103b3bf0@@YIPAXPAX@Z sub_103b3bf0
 0x100044ee func   ?sub_101c72f0@@YAPAHXZ sub_101c72f0
 0x100044f8 func   ?sub_102e0a60@CUnknown102e0a60@@QAEXH@Z CUnknown102e0a60::sub_102e0a60
+0x100044fd func   ?sub_10367870@@YAPAXXZ sub_10367870
 0x10004502 func   ?sub_10312c20@CUnk10312c20@@QAEXH@Z CUnk10312c20::sub_10312c20
 0x1000450c func   ?vfunc546@CNPC_VSabbatGunman@@QAEHH@Z CNPC_VSabbatGunman::vfunc546
 0x10004511 func   ?sub_102c6860@CUnknown102c6860@@QAEXXZ CUnknown102c6860::sub_102c6860
