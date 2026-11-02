@@ -33,4 +33,5 @@ public:
 	virtual void vfunc137();
 	virtual int vfunc138();
 	char *vfunc580();
+	const char *sub_1039f620();
 };
