@@ -11,6 +11,8 @@ class CDynamicProp
 {
 public:
 
+	CDynamicProp *sub_10190510();	// 0x10190510 (stub: called by dynamic_prop / prop_dynamic / prop_dynamic_ornament): the constructor, as a plain member: CBreakableProp::sub_1018f1c0 (stub 0x100039bd), the three COutputEvents at +0x77c / +0x794 / +0x7ac (stub 0x10002ddd), the vftable 0x10474234 by hand, then sub_1008b490
+	void sub_1008b490();	// stub 0x1000bed8: run by the constructor after the vftable store
 	void sub_1008b3c0();	// base-class destructor body
 	void vfunc103();	// slot 103 "CDynamicProp::Spawn": CBreakableProp::vfunc103, classname "prop_dynamic" (slot 122), AddFlag(0x40000) ..., and with the byte at +0x7c4 set a think function and the next think time
 	void sub_10190a00(inputdata_t *pInput);	// "CDynamicProp::InputSetAnimation": looks the input's string up as a sequence name; when found sets it (cycle 0), resets the sequence info, runs sub_100963d0, fires the output at +0x77c (caller this), removes flag 0x40000, sets a think function and the next think time (curtime + 0.1); else prints "Dynamic prop no sequence named:%s" and clears the sequence
