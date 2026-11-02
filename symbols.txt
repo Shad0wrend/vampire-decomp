@@ -10025,6 +10025,7 @@
 0x10011086 func   ?sub_10088620@@YAXXZ sub_10088620
 0x1001108b func   ?sub_102c2b90@@YIXPADH0@Z sub_102c2b90
 0x10011090 func   ?sub_102f7c00@@YAIHID@Z sub_102f7c00
+0x10011095 func   ?sub_103bf3c0@CUnknown103bf330@@QAEHH@Z CUnknown103bf330::sub_103bf3c0
 0x1001109a func   ?vfunc490@CNPC_VNewscaster@@UAEXXZ CNPC_VNewscaster::vfunc490
 0x1001109f func   ?sub_100ece60@CTable100ece60@@QAEXHPAH0@Z CTable100ece60::sub_100ece60
 0x100110a4 func   ?sub_101c3bb0@@YA?AUVec3@@XZ sub_101c3bb0
