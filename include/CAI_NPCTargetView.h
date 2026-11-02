@@ -22,7 +22,6 @@ struct CAI_NPCTargetView : public CAI_BaseNPC
 	Vector m_vecGoalAngles5dc4;	// 0x5dc4: the target's angles (slot 219 result)
 };
 
-// Free functions the loop calls (all matched or stubs):
-float *sub_102d6120(int hull);	// 0x102d6120 (cdecl) hull mins, 0x102d6100 the maxs
-float *sub_102d6100(int hull);
-void sub_10280de0_stub();
+// Callees (declare in the source, signatures from the matched twins): sub_102d6120(hull) / sub_102d6100(hull) (cdecl, hull
+// extents), Ray_t::sub_1006dec0 (6 args), CTraceFilterSimple ctor 0x101d3190 (this, pEnt, 0), trace through the interface at
+// g_1070b254 slot 4, sub_10146570 (7-arg debug box, cdecl), sub_10142b80 (cdecl, 2 args: box, extents), CAI_BaseNPC::sub_10280de0(0x39).
