@@ -137242,6 +137242,26 @@ bool CUnknown102d0270::sub_102d0270(const float *pPoint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d0300 size=0x43
+#include "CAI_Hint.h"
+
+void *sub_100aa720(int size);
+extern char g_1060a388[];
+
+// TARGET: ai_hint
+extern "C" CAI_Hint *ai_hint()
+{
+	void *mem = sub_100aa720(0x60c);
+	CAI_Hint *p;
+	if (mem)
+		p = ((CAI_Hint *)mem)->sub_102d2e30();
+	else
+		p = 0;
+	p->vfunc106(g_1060a388);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d08e0 size=0x16
 #include "CPhysBox.h"
 
