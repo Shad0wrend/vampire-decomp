@@ -2730,6 +2730,7 @@
 0x10005817 func   ?sub_103f91d0@COccultRegen@@QAEXXZ COccultRegen::sub_103f91d0
 0x1000581c func   ?sub_102792b0@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_102792b0
 0x10005821 func   ?vfunc488@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc488
+0x10005835 func   ?sub_100eafb0@?$CSecureTypeBase@UCPfnTraits3@MvsnSec@@HU?$CSecureCoderPfn@UCPfnTraits3@MvsnSec@@H@2@U?$CSecureCoderBasic@UCPfnTraits3@MvsnSec@@H@2@@MvsnSec@@QAEPAU12@I@Z MvsnSec::CSecureTypeBase<MvsnSec::CPfnTraits3,int,MvsnSec::CSecureCoderPfn<MvsnSec::CPfnTraits3,int>,MvsnSec::CSecureCoderBasic<MvsnSec::CPfnTraits3,int> >::sub_100eafb0
 0x1000583a func   ?vfunc4@CVTSDependencySaveRestoreDataOps@@UAE_NHH@Z CVTSDependencySaveRestoreDataOps::vfunc4
 0x10005844 func   ?vfunc255@CBaseAnimatingOverlay@@QAEXPAX0H@Z CBaseAnimatingOverlay::vfunc255
 0x10005849 func   ?sub_10332ca0@CBaseCombatCharacter@@QAEXPAVCBaseEntity@@HH@Z CBaseCombatCharacter::sub_10332ca0

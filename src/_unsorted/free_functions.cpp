@@ -43468,6 +43468,12 @@ void CUnknown100ea1e0::sub_100ea1e0(char flag, char *pOut1, char *pOut2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100eafb0 size=0x3b
+#include "MvsnSec.h"
+// TARGET: MvsnSec::CSecureTypeBase<MvsnSec::CPfnTraits3,int,MvsnSec::CSecureCoderPfn<MvsnSec::CPfnTraits3,int>,MvsnSec::CSecureCoderBasic<MvsnSec::CPfnTraits3,int> >::sub_100eafb0
+static MvsnSec::CSecureInt3 *(MvsnSec::CSecureInt3::*s_pfn)(unsigned int) = &MvsnSec::CSecureInt3::sub_100eafb0;
+// END FUNCTION
+
 // FUNCTION: 0x100eb000 size=0x19
 struct CUnknown100eb000 { void * sub_100eb000(int); };
 void * CUnknown100eb000::sub_100eb000(int a0)
