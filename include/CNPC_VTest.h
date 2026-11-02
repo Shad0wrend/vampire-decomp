@@ -26,4 +26,5 @@ public:
 	virtual void vfunc137();
 	virtual int vfunc138();
 	virtual void *vfunc580();	// slot 580
+	virtual const char *vfunc451();	// slot 451: the class name "CNPC_VTest"
 };
