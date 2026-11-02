@@ -9,7 +9,12 @@ class CSave;
 class CPhysSaveRestoreBlockHandler
 {
 public:
-	char m_pad0000[0x24];
+	char m_pad0000[0xc];
+	// 0x0c: the priority queue of 0x38 byte records (the matched PQ of 0x10046050, defined in that block's source):
+	// CUtlVector layout memory +0xc, alloc +0x10, grow +0x14, size +0x18, elems +0x1c, then the less function pointer +0x20
+	// (called as less(a, b), returns bool in al); each record: +0 key, +4 entity handle, +0xc item count,
+	// +0x14 / +0x20 Vectors, +0x34 item array pointer.
+	char m_pq0c[0x18];
 	CUtlRBTree<CRBTree16Entry8, unsigned short> m_Tree24;	// 0x24: the tree whose elements own heap vectors
 	char m_pad003c[0x40 - 0x3c];
 	bool m_bMatch40;	// 0x40: the saved short of the source equals the global at 0x1053c340
