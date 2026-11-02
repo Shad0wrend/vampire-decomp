@@ -113,3 +113,27 @@ void CEnvMicrophone::vfunc134()
 	m_flNextThink = gpGlobals->curtime + 0.1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101029f0 size=0x2b
+#include "CEnvMicrophone.h"
+
+struct CGargoyleMemberUnit {
+	void sub_10015708();
+};
+
+struct CGargoyleBaseUnit {
+	void sub_1000cb8a();
+};
+
+void __cdecl sub_10009fc5(void *p);
+
+// TARGET: CEnvMicrophone::vfunc5
+CEnvMicrophone *CEnvMicrophone::vfunc5(unsigned int flags)
+{
+	((CGargoyleMemberUnit *)((char *)this + 0x464))->sub_10015708();
+	((CGargoyleBaseUnit *)this)->sub_1000cb8a();
+	if (flags & 1)
+		sub_10009fc5(this);
+	return this;
+}
+// END FUNCTION
