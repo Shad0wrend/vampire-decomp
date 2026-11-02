@@ -50421,6 +50421,22 @@ void CPointExplosion::sub_10104650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10104ea0 size=0x5a
+#include "ScopeTrace.h"
+#include "CExpressionTable.h"
+
+// TARGET: CExpressionTable::sub_10104ea0
+void CExpressionTable::sub_10104ea0()
+{
+	g_109f3620[*g_109f3680].name = "CExpressionTable::InitTable";
+	g_109f3620[*g_109f3680].file = g_106b8540;
+	g_109f3620[*g_109f3680].line = g_106b8540;
+	(*g_109f3680)++;
+	sub_10104f20();
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10104f20 size=0x93
 #include "CExpressionTable.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
