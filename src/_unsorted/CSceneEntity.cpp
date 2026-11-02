@@ -202,6 +202,22 @@ void __stdcall sub_10081480(int a1, CVirtObj10081480 *pObj, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100814e0 size=0x14
+#include "CSceneEntity.h"
+
+// TARGET: CSceneEntity::vfunc255
+void CSceneEntity::vfunc255(int b, CSceneEventActorEnt *pActor, CSceneEvent *pEvent)
+{
+	void **vt = *(void ***)pActor;
+	union {
+		void *p;
+		void (CSceneEventActorEnt::*pm)(CSceneEvent *);
+	} u;
+	u.p = vt[287];
+	(pActor->*u.pm)(pEvent);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10081510 size=0x62
 #include "CSceneEntity.h"
 #include "CBaseAnimating.h"

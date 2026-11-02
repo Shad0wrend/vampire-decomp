@@ -1804,6 +1804,7 @@
 0x10003e77 func   ?sub_101f10e0@CUnknown101f10e0@@QAE_NPAX@Z CUnknown101f10e0::sub_101f10e0
 0x10003e81 func   ?sub_101eabb0@@YAXXZ sub_101eabb0
 0x10003e86 func   ?sub_10099320@CBaseAnimatingOverlay@@QAEXHMH@Z CBaseAnimatingOverlay::sub_10099320
+0x10003e8b func   ?vfunc255@CSceneEntity@@UAEXHPAUCSceneEventActorEnt@@PAUCSceneEvent@@@Z CSceneEntity::vfunc255
 0x10003e90 func   ?sub_101d0ce0@@YAXHHHHEEHEEEEEEEEE@Z sub_101d0ce0
 0x10003e95 func   ?sub_102d4210@CUtlVector4@@QAEXH@Z CUtlVector4::sub_102d4210
 0x10003e9f func   ?sub_1010bd40@CUnk1010bd40@@QAEXXZ CUnk1010bd40::sub_1010bd40
