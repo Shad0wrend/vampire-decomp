@@ -11959,6 +11959,7 @@
 0x10014984 func   ?sub_101ed800@CUnknown101ed6c0@@QAE_NPAX@Z CUnknown101ed6c0::sub_101ed800
 0x1001498e func   ?vfunc2@CPositionInterpolator_Linear@@QAEXHPBVVector@@@Z CPositionInterpolator_Linear::vfunc2
 0x10014993 func   ?vfunc321@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc321
+0x10014998 func   ?sub_102379e0@@YIXPAX@Z sub_102379e0
 0x1001499d func   ?vfunc82@CActivityCopyProp@@UAEPAUdatamap_t@@XZ CActivityCopyProp::vfunc82
 0x100149a2 func   _logic_auto logic_auto
 0x100149a7 func   ?vfunc0@CTraceFilterSimple@@UAE_NPAXH@Z CTraceFilterSimple::vfunc0

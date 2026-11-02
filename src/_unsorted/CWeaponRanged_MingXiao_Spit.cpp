@@ -39,6 +39,19 @@ int CWeaponRanged_MingXiao_Spit::vfunc363()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102379e0 size=0x41
+#include "engineserver.h"
+void __fastcall sub_1001576c(void *pThis);
+// TARGET: sub_102379e0
+void __fastcall sub_102379e0(void *pThis)
+{
+	engine->vfunc17("Ming_xiao_vomit_emitter", 0);
+	engine->vfunc17("Ming_xiao_vomit_impact_emitter", 0);
+	engine->vfunc17("Ming_xiao_vomit_player_emitter", 0);
+	sub_1001576c(pThis);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a590 size=0x1e
 #include "CWeaponRanged_MingXiao_Spit.h"
 
