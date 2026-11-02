@@ -6,6 +6,7 @@
 class CBaseMoveBehavior : public CBaseEntity
 {
 public:
+	CBaseMoveBehavior() : CBaseEntity(0) {}
 	// Slot 153 of the real vtable; declared as the only virtual here so no slot numbering is implied.
 	virtual bool vfunc153();
 
