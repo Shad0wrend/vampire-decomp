@@ -166,3 +166,16 @@ int CScriptedTarget::vfunc126(int a)
 	return r;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1034e370 size=0x28
+#include "CScriptedTarget.h"
+void __cdecl sub_10015311(void *p, int mode);
+
+// TARGET: CScriptedTarget::vfunc127
+int CScriptedTarget::vfunc127(int a)
+{
+	int r = sub_1000b163(a);
+	sub_10015311((char *)this + 0x5f64, 3);
+	return r;
+}
+// END FUNCTION
