@@ -24,4 +24,10 @@ public:
 	void sub_1014f210(CBaseAnimating *pAnimating, int nBone, void *pPhysObject, int a, int b);	// "CPhysicsAnimlink::Attach": the animating entity ignores collisions with the physics object's game entity, the link remembers the animating handle (+0x478), the bone (+0x47c), the physics object (+0x4c4), a shadow controller (+0x4c0, max speeds 1e8) and the 4x4 matrix (+0x480) made from (b, a); thinks right away
 public:
     virtual datamap_t * vfunc82();
+
+	// sizeof(CBaseEntity) is 0x3e0 here; the members below are the ones the destructor body 0x1014efb0 and Attach (0x1014f210) use
+	char m_pad03e0[0x4c0 - 0x3e0];
+	void *m_pShadowController4c0;	// 0x4c0: IPhysicsShadowController, destroyed through physenv slot 36 (DestroyShadowController) and then zeroed
+	void *m_pPhysObject4c4;	// 0x4c4: the physics object (Attach)
+	CPhysicsAnimlinkPair m_Pair4c8;	// 0x4c8: destroyed by the destructor body through sub_1014eba0 (stub 0x10007c11, CUnknown1014eba0::sub_1014eba0)
 };
