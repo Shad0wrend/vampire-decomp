@@ -775,6 +775,31 @@ extern "C" CConstraintAnchor *info_constraint_anchor()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002a1a0 size=0x4b
+#include "CPhysConstraintSystem.h"
+#include "CConstraintAnchor.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(unsigned int size);
+extern char g_10446c24[];	// CPhysConstraintSystem vftable
+extern const char g_105393d4[];
+
+// TARGET: phys_constraintsystem
+extern "C" CBaseEntity *phys_constraintsystem()
+{
+	void *mem = sub_100aa720(0x454);
+	CBaseEntity *p;
+	if (mem) {
+		((CConstraintAnchorBase *)mem)->sub_1009d980(0);
+		*(void **)mem = g_10446c24;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_105393d4);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002a210 size=0x153
 #include "matrix3x4_t.h"
 #include "QAngle.h"
