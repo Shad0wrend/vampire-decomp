@@ -50793,6 +50793,59 @@ void S10109e40::sub_10109e40(inputdata_t &in)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10109e90 size=0x206
+#include "CFire.h"
+#include "CTraceFilterSimple.h"
+#include "Ray_t.h"
+struct FireTrace { float startpos[3]; float endpos[3]; char rest[0x54 - 0x18]; };
+struct IFireTrace { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void TraceRay(const Ray_t &ray, unsigned mask, CTraceFilterSimple *filter, FireTrace *tr); };
+struct IFireClient { virtual void v0(); virtual bool v1(); char pad[0x28]; void *m2c; };
+extern IFireTrace *g_1070b254;
+extern IFireClient *g_10738964;
+void sub_10146570(void *, void *, int, int, int, int, float);
+struct FireView {
+	char pad0[0x450];
+	EHANDLE m_h450;
+	int pad454;
+	int m_n458;
+	char pad45c[0x468 - 0x45c];
+	float m_f468;
+	char pad46c[0x480 - 0x46c];
+	int m_n480;
+};
+typedef const Vector *(__fastcall *FireOriginFn)(void *);
+#define FIRE_ORIGIN(p) ((*(FireOriginFn **)(p))[217](p))
+inline void FireTraceLine(const Vector &start, const Vector &end, unsigned mask, void *pass, int group, FireTrace *tr)
+{
+	Ray_t ray;
+	ray.Init(start, end);
+	CTraceFilterSimple filter(pass, group);
+	g_1070b254->TraceRay(ray, mask, &filter, tr);
+}
+void CFire::sub_10109e90()
+{
+	FireView *v = (FireView *)this;
+	if (v->m_h450.Get())
+		return;
+	Vector vecOrigin;
+	if (m_flags204 & 0x10) {
+		vecOrigin = *FIRE_ORIGIN(this);
+	} else {
+		FireTrace tr;
+		Vector end;
+		const Vector &o = *FIRE_ORIGIN(this);
+		end.x = o.x; end.y = o.y; end.z = o.z - 1024.0f;
+		FireTraceLine(*FIRE_ORIGIN(this), end, 0x4003, this, 0, &tr);
+		if (!g_10738964->v1() && g_10738964->m2c)
+			sub_10146570(&tr, tr.endpos, 0xff, 0, 0, 1, -1.0f);
+		vecOrigin.x = tr.endpos[0]; vecOrigin.y = tr.endpos[1]; vecOrigin.z = tr.endpos[2];
+	}
+	m_flags204 |= 4;
+	sub_1010a450(&vecOrigin.x, v->m_f468, v->m_n480, 0x41f00000, m_flags204, v->m_n458);
+	sub_1010a7f0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010a370 size=0xa4
 #include "CFire.h"
 #include "CBaseFire.h"
