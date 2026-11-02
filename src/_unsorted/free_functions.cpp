@@ -173129,6 +173129,38 @@ int sub_103f6630()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f6800 size=0x1ab
+#include "CItemGAstrolite.h"
+#include "CAI_BaseNPC.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+// TARGET: CItemGAstrolite::sub_103f6800
+void CItemGAstrolite::sub_103f6800(CBaseEntity *pOwner)
+{
+	m_b914 = 1;
+	m_pfnTouch = 0;
+	((CAI_BaseNPC *)this)->sub_10252470((CBaseEntity *)0);
+	sub_100a0b20();
+	sub_100ac4e0(0, 0, 0);
+	vfunc93(0, 0);
+	{
+		ScopeTrace t("CBaseEntity::SetSolid", m_name26c ? m_name26c : g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(3);
+	}
+	{
+		ScopeTrace t("CBaseEntity::ClearSolidFlags", m_name26c ? m_name26c : g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc580(0);
+	}
+	{
+		ScopeTrace t("CBaseEntity::AddSolidFlags", m_name26c ? m_name26c : g_106b8540);
+		CCollisionProperty *pColl = (CCollisionProperty *)((char *)this + 0x270);
+		pColl->sub_100dc580(pColl->m_usSolidFlags | 4);
+	}
+	sub_100b3840(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f6a20 size=0x64
 #include "CBaseEntity.h"
 #include "CTriggerBombSite.h"

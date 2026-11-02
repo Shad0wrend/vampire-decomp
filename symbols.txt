@@ -4458,6 +4458,7 @@
 0x1000864d func   ?sub_10211970@@YAPAHXZ sub_10211970
 0x10008652 func   ?sub_1017f4a0@CBasePlayer@@QAEXHPAVCBaseEntity@@PBVVector@@@Z CBasePlayer::sub_1017f4a0
 0x10008657 func   ?sub_100bbb10@CBeam@@QAEXHPAPAVCBaseEntity@@PAH@Z CBeam::sub_100bbb10
+0x1000865c func   ?sub_103f6800@CItemGAstrolite@@QAEXPAVCBaseEntity@@@Z CItemGAstrolite::sub_103f6800
 0x10008661 func   ?vfunc0@CAI_ExpresserSink@@UAE_NXZ CAI_ExpresserSink::vfunc0
 0x10008666 func   ?sub_10240670@@YA_NABVVector@@0PAUBoxObj@@M@Z sub_10240670
 0x1000866b func   ?vfunc223@CFuncKeyframedMover@@QAE_NXZ CFuncKeyframedMover::vfunc223
