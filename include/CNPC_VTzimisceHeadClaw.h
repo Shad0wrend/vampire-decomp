@@ -34,8 +34,14 @@ public:
 	int m_n6430;	// +0x6430: 100 at spawn
 	char pad6434[0x65e8 - 0x6434];
 	CUnknown1025ddd0 *m_pBehaviour65e8;	// +0x65e8
-	char pad65ec[0x6678 - 0x65ec];
-	int m_iField6678;
+	char pad65ec[0x6674 - 0x65ec];
+	EHANDLE m_h6674;	// +0x6674: entity looked up through the global entity list, set to -1 after use
+	union {
+		int m_iField6678;
+		float m_f6678;	// +0x6678: next time (sub_103c2230 compares curtime with it)
+	};
+	EHANDLE m_h667c;	// +0x667c: removed with sub_101cd940 (UTIL_Remove), then -1
+	EHANDLE m_h6680;	// +0x6680: likewise
 
 	virtual void vfunc420();
 	virtual int vfunc440(int act);	// slot 440 (the position here is not its real slot): activities 0xbf / 0xc7 / 0xe7 / 0xed / 0xef -> 0x157 / 0xc8 / 0x156 / 0xf0 / 0xf0, else the Troika base
