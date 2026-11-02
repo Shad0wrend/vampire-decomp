@@ -11228,6 +11228,7 @@
 0x10012b0c func   ?vfunc269@CWeaponMelee_MingXiaoMelee@@UAEXPAVCBaseCombatWeapon@@VVector@@@Z CWeaponMelee_MingXiaoMelee::vfunc269
 0x10012b11 func   ?sub_10101a90@CEnvLaser@@QAEXPAX@Z CEnvLaser::sub_10101a90
 0x10012b16 func   ?vfunc363@CWeaponMelee_Sheriff_Sword@@QAEHXZ CWeaponMelee_Sheriff_Sword::vfunc363
+0x10012b20 func   ?vfunc296@CBaseCombatWeapon@@UAEHXZ CBaseCombatWeapon::vfunc296
 0x10012b2f func   ?sub_100d60c0@@YAXXZ sub_100d60c0
 0x10012b34 func   ?sub_101d2fc0@@YADPAUCEntQ@@0@Z sub_101d2fc0
 0x10012b39 func   ??0CTEBubbles@@QAE@PBD@Z CTEBubbles::CTEBubbles

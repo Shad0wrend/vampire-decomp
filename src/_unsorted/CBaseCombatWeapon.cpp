@@ -72,6 +72,16 @@ void __stdcall sub_10149d40(void *p) {}
 bool __cdecl sub_10149d60() { return false; }
 // END FUNCTION
 
+// FUNCTION: 0x10149d80 size=0x7
+#include "CBaseCombatWeapon.h"
+
+int CBaseCombatWeapon::vfunc296()
+{
+	struct WeaponField8cc { char pad[0x8cc]; int m; };
+	return ((WeaponField8cc *)this)->m;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10149da0 size=0xd
 struct WeaponField8cc { char pad[0x8cc]; int m; };
 void CBaseCombatWeapon::vfunc297(int value)
