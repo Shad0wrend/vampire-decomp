@@ -39,4 +39,5 @@ public:
 	void *vfunc580();	// slot 580 (plain member; the model derives from CBaseEntity): returns the address of the global object g_1093b498 (the condition-table owner, CAI_CondOwner in the NPC hierarchy)
 public:
     virtual datamap_t * vfunc82();
+	const char *sub_10386b00();
 };
