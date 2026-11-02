@@ -21,6 +21,17 @@ int CWeaponPhysCannon::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040d850 size=0x6
+#include "CWeaponPhysCannon.h"
+
+extern char g_10683a78;
+
+datamap_t *CWeaponPhysCannon::sub_1040d850()
+{
+	return (datamap_t *)&g_10683a78;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040d9e0 size=0x7d
 #include "CWeaponPhysCannon.h"
 

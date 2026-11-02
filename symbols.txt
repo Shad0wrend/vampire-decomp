@@ -3162,6 +3162,7 @@
 0x10006087 func   ?sub_1022d0d0@CUtlVector72@@QAEXH@Z CUtlVector72::sub_1022d0d0
 0x1000608c func   ?sub_10046390@CUtlRBTreeFind16@@QAEGPBX@Z CUtlRBTreeFind16::sub_10046390
 0x10006091 func   ?vfunc5@CWeaponPhysCannon@@UAEPAVCBaseCombatWeapon@@I@Z CWeaponPhysCannon::vfunc5
+0x10006096 func   ?sub_1040d850@CWeaponPhysCannon@@QAEPAUdatamap_t@@XZ CWeaponPhysCannon::sub_1040d850
 0x1000609b func   ?sub_10103120@CUnknown10103120@@QAEXPAUCUnknown10103120Param@@@Z CUnknown10103120::sub_10103120
 0x100060a0 func   ?sub_103e6e90@@YAHXZ sub_103e6e90
 0x100060a5 func   ?sub_1019a900@@YGXHH@Z sub_1019a900
