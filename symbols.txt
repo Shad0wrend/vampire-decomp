@@ -8442,6 +8442,7 @@
 0x1000e764 func   ?vfunc318@CNPC_VRat@@QAE_NHHH@Z CNPC_VRat::vfunc318
 0x1000e769 func   ?sub_101ab610@CServerNetworkProperty@@QAEXXZ CServerNetworkProperty::sub_101ab610
 0x1000e76e func   ?sub_103801d0@CNPC_VHengeyokai@@QAEHPAUCNPC_VHengeyokaiInfo@@@Z CNPC_VHengeyokai::sub_103801d0
+0x1000e778 func   ?sub_101a66a0@@YG_NHH@Z sub_101a66a0
 0x1000e782 func   ?sub_103ee230@@YAHXZ sub_103ee230
 0x1000e78c func   ?sub_100a5ea0@CBaseEntity@@QAEPAXHHHH@Z CBaseEntity::sub_100a5ea0
 0x1000e796 func   ?sub_101f0330@CUnknown101f0330@@QAEXXZ CUnknown101f0330::sub_101f0330

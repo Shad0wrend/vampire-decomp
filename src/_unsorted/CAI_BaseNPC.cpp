@@ -84,6 +84,14 @@ int CAI_BaseNPC::vfunc454() {
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a66a0 size=0x5
+// TARGET: sub_101a66a0
+bool __stdcall sub_101a66a0(int a, int b)
+{
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a66c0 size=0x3
 CAI_BehaviorBase ** CAI_BaseNPC::vfunc456()
 {
