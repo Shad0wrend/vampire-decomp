@@ -48057,6 +48057,18 @@ void sub_101006e0(const float *pStart, const float *pEnd, unsigned int mask, voi
 }
 // END FUNCTION
 
+// FUNCTION: 0x10100e10 size=0x5c
+#include "CEnvFade.h"
+
+// TARGET: env_fade
+extern "C" CBaseEntity *env_fade()
+{
+	CEnvFade *p = new CEnvFade;
+	p->vfunc106("env_fade");
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10100ef0 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
