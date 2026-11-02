@@ -124215,6 +124215,16 @@ void CUnknown102e12c0::sub_10264450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10265290 size=0x2e
+#include "utlvector.h"
+CUtlVector<int> *__fastcall sub_10265290(CUtlVector<int> *p)
+{
+	p->CUtlVector<int>::CUtlVector(0, 0);
+	p->EnsureCapacity(0x100);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102652d0 size=0xd
 int CUnknown102652d0::sub_102652d0()
 {
