@@ -83672,6 +83672,30 @@ int sub_101c09d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c0a00 size=0x4b
+#include "CConstraintAnchor.h"
+#include "CBaseEntity.h"
+void *sub_100aa720(unsigned int size);
+extern char g_1047c2d4[];	// CBaseDMStart vftable
+extern const char g_1059c388[];
+
+// TARGET: info_player_deathmatch
+extern "C" CBaseEntity *info_player_deathmatch()
+{
+	void *mem = sub_100aa720(0x454);
+	CBaseEntity *p;
+	if (mem) {
+		((CConstraintAnchorBase *)mem)->sub_1009d980(0);
+		*(void **)mem = g_1047c2d4;
+		p = (CBaseEntity *)mem;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_1059c388);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0b10 size=0x32
 #include "CBaseEntity.h"
 
