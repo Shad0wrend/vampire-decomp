@@ -33,6 +33,7 @@ public:
 	int sub_1001337c(const char *pszName);	// CBaseFlex::sub_100b5d10 (stub): index of a flex controller
 	void vfunc105(void *p);
 
+	CAI_BaseHumanoid *sub_10260b30();	// constructor body 0x10260b30 (returns this; called by npc_TestBaseHumanoid 0x102609e0 and the derived NPC constructors): CAI_BaseNPC ctor body 0x1027c300 (stub 0x10006659); then per level (CAI_ExpresserSink at +0x5f44 / CAI_ExpressiveNPC / CAI_BaseHumanoid) the vptr stores +0 / +0x19b0 / +0x5f44 (0x1049885c / 0x10498830 / 0x10498818, finally 0x10497d04 / 0x10497cd8 / 0x10497cc0); +0x5f48 (expresser) = 0, +0x5f4c = 0; the zero vector (0x1070d1b0) copied to +0x5f50, +0x5f5c, +0x5f68; +0x5f80 = 0, +0x5f84 = -1; the 36-byte-element CUtlVector at +0x5f88 (ctor stub 0x1000ac13 = CUtlMemory36::sub_10263fb0(0, 0), then +0x5f94 = 0, +0x5f98 = the memory pointer at +0x5f88); +0x5f9c (scene name) = 0, +0x5fa0 (scene handle) = -1, +0x5fa4..+0x5fb4 = 0 (kind strings); +0x6024..+0x6048 = 0 (ten dwords: two more vectors at +0x6024 / +0x6038 of the same CUtlVector kind, see vfunc5)
 	void sub_1025efc0();	// resets the three pose parameters (slot 346(index, 0, 0)), runs CBaseAnimating::sub_100955c0 and clears bits 0 and 1 of +0x5f4c
 
 	bool vfunc586();
