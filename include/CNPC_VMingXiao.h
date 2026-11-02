@@ -464,7 +464,7 @@ public:
 	virtual void vfunc445();
 	virtual void vfunc446();
 	virtual void vfunc447();
-	virtual void vfunc448_slot();
+	virtual void vfunc448_slot(int a);	// slot 448 (+0x700): TaskFail, see vfunc448
 	virtual void vfunc449();
 	virtual void vfunc450();
 	virtual int vfunc451();
