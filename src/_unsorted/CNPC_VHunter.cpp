@@ -78,6 +78,16 @@ int CNPC_VHunter::vfunc138()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10388a20 size=0xf
+#include "CNPC_VHunter.h"
+
+int CNPC_VHunter::vfunc438()
+{
+	*(int *)((char *)this + 0x1b2c) = 0x17;
+	return CNPC_VHumanCombatant::vfunc438();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10388a40 size=0x40
 #include "vampire.h"
 #include "CNPC_VHunter.h"

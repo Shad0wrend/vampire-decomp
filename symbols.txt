@@ -839,6 +839,7 @@
 0x10002509 func   ?vfunc618@CNPC_VWerewolf@@UAE_NHHHH@Z CNPC_VWerewolf::vfunc618
 0x10002513 func   ?vfunc113@CLogicLineToEntity@@UAEXXZ CLogicLineToEntity::vfunc113
 0x10002518 func   ?sub_100718e0@CUnknown100718e0@@QAEMXZ CUnknown100718e0::sub_100718e0
+0x1000251d func   ?vfunc438@CNPC_VHunter@@QAEHXZ CNPC_VHunter::vfunc438
 0x10002522 func   ?sub_10056fd0@CBaseFire@@QAEXHHH@Z CBaseFire::sub_10056fd0
 0x10002527 func   ?sub_10107760@@YAPAHXZ sub_10107760
 0x10002531 func   ?sub_10203420@@YAHH@Z sub_10203420
