@@ -1,6 +1,28 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100fc500 size=0x4a
+#include "CEnvParticle.h"
+#include "CEnvParticleHUD.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+
+__declspec(dllimport) void Warning(const char *fmt, ...);
+void sub_101cd940(void *p);
+
+// TARGET: CEnvParticleHUD::vfunc103
+void CEnvParticleHUD::vfunc103()
+{
+	((CEntityVSlots *)this)->slot242();
+	((CEnvParticle *)this)->vfunc103();
+	int t = ((CEnvParticle *)this)->m_iAttachType;
+	if (t != 5 && t != 7 && t != 0xe && t != 0x10) {
+		Warning("%s has an invalid attach type!\n", ((CBaseEntity *)this)->sub_100ab4f0());
+		sub_101cd940(this);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fc570 size=0x3e
 #include "CEnvParticleHUD.h"
 

@@ -9681,6 +9681,7 @@
 0x1000fa79 func   _item_w_tzimisce3_claw item_w_tzimisce3_claw
 0x1000fa7e func   ?sub_102ee590@A@@QAEXPAH@Z A::sub_102ee590
 0x1000fa83 func   ?sub_102c6f70@@YIXPAUBehaviorStub@@@Z sub_102c6f70
+0x1000fa8d func   ?vfunc103@CEnvParticleHUD@@QAEXXZ CEnvParticleHUD::vfunc103
 0x1000fa92 func   ?sub_10027040@@YGXH@Z sub_10027040
 0x1000fa97 func   ?sub_101bc4d0@@YAHXZ sub_101bc4d0
 0x1000faa1 func   ??0CUtlBuffer@@QAE@HHH@Z CUtlBuffer::CUtlBuffer
