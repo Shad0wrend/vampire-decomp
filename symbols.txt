@@ -13494,6 +13494,7 @@
 0x100153f7 func   ?Links@?$CUtlRBTree@UCRBTree12Entry_102ec4a0@@G@@QBEABULinks_t@1@G@Z CUtlRBTree<CRBTree12Entry_102ec4a0,unsigned short>::Links
 0x100153fc func   ?sub_1012f700@@YAMPAUCUnknown1012f700@@@Z sub_1012f700
 0x10015406 func   _trigger_autosave trigger_autosave
+0x1001540b func   ?IsLeftChild@?$CUtlRBTree@UCRBTree12Entry_10194f30@@G@@QBE_NG@Z CUtlRBTree<CRBTree12Entry_10194f30,unsigned short>::IsLeftChild
 0x1001540b func   ?sub_10194e40@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_10194e40
 0x10015410 func   ?sub_102cc560@@YIXPAXHM@Z sub_102cc560
 0x10015415 func   ?sub_10092190@CBaseAnimating@@QAEMH@Z CBaseAnimating::sub_10092190
