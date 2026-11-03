@@ -8858,6 +8858,7 @@
 0x1000ebc4 func   ?sub_100b49b0@CMem16c_t@@QAEXH@Z CMem16c_t::sub_100b49b0
 0x1000ebc9 func   _env_glow env_glow
 0x1000ebce func   ?vfunc5@COccultFrenzy@@QAEPAV1@I@Z COccultFrenzy::vfunc5
+0x1000ebd8 func   ?vfunc0@CPhysicsPlayerCallback@@UAEHPAVIPhysicsObject@@ABVVector@@@Z CPhysicsPlayerCallback::vfunc0
 0x1000ebdd func   ?vfunc5@CNPC_VHengeyokai@@QAEPAV1@I@Z CNPC_VHengeyokai::vfunc5
 0x1000ebe2 func   ?vfunc301@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z CBaseCombatWeapon::vfunc301
 0x1000ebe7 func   ?sub_100a9080@@YI_NPAD@Z sub_100a9080
