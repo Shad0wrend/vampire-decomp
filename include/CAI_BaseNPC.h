@@ -160,7 +160,8 @@ public:
 	virtual void vfunc483(int unused);
 	// slots 484..567
 	virtual int vfunc484(const char *pszSample, int unused, float flVolume, int iSoundLevel, int unused2);	// "CAI_BaseNPC::EmitSound"-like: -1 for a null name or while slot 158 is false; a '!' name is a sentence (looked up by sub_101af070, emitted to a CPASAttenuationFilter through the engine sound object's slot 4, returns the sentence index), else the entity's edict (+0x2e0) emits the sample (sub_101aeb60); pitch 100
-	CAI_NPC_V(485) virtual bool vfunc486(); CAI_NPC_V(487) CAI_NPC_V(488) CAI_NPC_V(489)
+	virtual void vfunc485(const char *pszSample, int a, float flVolume, int b, int c, int d);	// slot 485 (ret 0x18, six arguments): forwards the first four to slot 484 with a zero fifth argument (the last two are unused)
+	virtual bool vfunc486(); CAI_NPC_V(487) CAI_NPC_V(488) CAI_NPC_V(489)
 	CAI_NPC_V10(49)
 	CAI_NPC_V(500) CAI_NPC_V(501) CAI_NPC_V(502) CAI_NPC_V(503) CAI_NPC_V(504) CAI_NPC_V(505) CAI_NPC_V(506) CAI_NPC_V(507) CAI_NPC_V(508)
 	virtual bool vfunc509();	// true when the NPC may start the idle/engine request (state 1 or 3, flag bits clear, no live dialog partner, not busy)
