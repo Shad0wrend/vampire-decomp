@@ -11730,6 +11730,7 @@
 0x1001343f func   ?sub_100c1070@@YAXPAXHMPAUmstudiobone_t@@PAUmstudioanim_t@@AAVVector@@@Z sub_100c1070
 0x10013444 func   ?vfunc194@CBasePlayer@@UAEPAMXZ CBasePlayer::vfunc194
 0x10013449 func   ?sub_104304f0@@YAXXZ sub_104304f0
+0x1001344e func   ?vfunc197@CNPC_Crow@@QAEHHHHH@Z CNPC_Crow::vfunc197
 0x10013453 func   ?sub_102ccf50@@YAHXZ sub_102ccf50
 0x10013458 func   ?vfunc242@CEnvShooter@@QAEPAVCBaseEntity@@VVector@@0@Z CEnvShooter::vfunc242
 0x1001345d func   ?sub_100b1130@@YIHPAVCBaseEntity@@@Z sub_100b1130

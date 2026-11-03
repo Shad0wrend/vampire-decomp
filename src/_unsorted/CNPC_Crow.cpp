@@ -177,6 +177,17 @@ Vector CNPC_Crow::vfunc192()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103577d0 size=0x14
+#include "CNPC_Crow.h"
+#include "CBaseEntitySlots.h"
+
+int CNPC_Crow::vfunc197(int a, int b, int c, int d)
+{
+	((CBaseEntitySlots *)this)->slot192((float *)a);
+	return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10357800 size=0xb
 #include "CNPC_Crow.h"
 namespace lifted {
