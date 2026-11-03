@@ -65,9 +65,12 @@ public:
 	char m_pad05ad[0xfe8 - 0x5ad];
 	unsigned int m_hFe8;	// 0xfe8: entity handle
 	int m_nState0fec;	// 0xfec: the activity the zombie is in
-	char m_pad0ff0[0x1480 - 0xff0];
+	int m_nIdealActivity0ff0;	// 0xff0: the ideal activity (task 0x153 compares it)
+	char m_pad0ff4[0x1480 - 0xff4];
 	char m_b1480;	// 0x1480
-	char m_pad1481[0x1a40 - 0x1481];
+	char m_pad1481[0x1568 - 0x1481];
+	int m_nHull1568;	// 0x1568: the hull index handed to CAI_NavProvider::sub_102fb0d0
+	char m_pad156c[0x1a40 - 0x156c];
 	char m_b1a40;	// 0x1a40: one-shot byte set by the task 0x151 start (cleared elsewhere)
 	char m_pad1a41[0x1b2c - 0x1a41];
 	int m_nType1b2c;	// 0x1b2c: the NPC type id
@@ -80,7 +83,9 @@ public:
 	int m_nState5cc0;	// 0x5cc0
 	char m_pad5cc4[0x5d34 - 0x5cc4];
 	class CAI_Navigator *m_pNavigator5d34;	// 0x5d34: navigator (+4 the NPC, +8 / +0xc the stamped value / frame, +0x2c the node net)
-	char m_pad5d38[0x5db4 - 0x5d38];
+	char m_pad5d38[0x5d44 - 0x5d38];
+	class CAI_Motor *m_pMotor5d44;	// 0x5d44: the NPC's motor (sub_102e0b40 / sub_102e20b0)
+	char m_pad5d48[0x5db4 - 0x5d48];
 	float m_flNextTime5db4;	// 0x5db4: curtime + a random value, set by the task 0x151 start
 	char m_pad5db8[0x6264 - 0x5db8];
 	float m_flPlayerDist6264;	// 0x6264: the distance to the player
