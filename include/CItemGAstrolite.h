@@ -24,5 +24,7 @@ public:
 	void sub_103f6800(CBaseEntity *pOwner);	// stub 0x1000865c, ret 4 (the argument is unused): m_b914 = 1, m_pfnTouch (+0x1ec) = 0, CAI_BaseNPC::sub_10252470(0) on this (stub 0x10009e3f: cast `((CAI_BaseNPC *)this)->sub_10252470(0)`, the symbol map knows it under that class), ClearParent (CBaseEntity::sub_100a0b20), ThinkSet(0, 0, 0) (sub_100ac4e0), slot 93 SetMoveType(0, 0), then three inlined ScopeTrace blocks (two-argument form, name = m_name26c ? m_name26c : g_106b8540, each popped right after its call) on the CCollisionProperty at +0x270 (CCollisionProperty.h): "CBaseEntity::SetSolid" -> sub_100dc480(3), "CBaseEntity::ClearSolidFlags" -> sub_100dc580(0), "CBaseEntity::AddSolidFlags" -> sub_100dc580(m_usSolidFlags | 4); finally sub_100b3840(1) (AddFlag2)
 
 	char m_pad03e0[0x914 - 0x3e0];	// 0x3e0 .. 0x913 (the CBaseEntity members end at 0x3e0)
+	void vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value);	// slot 173: nothing once the item was released, else the weapon's Use
+	void sub_10257980(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value);	// CBaseCombatWeapon::vfunc173, called directly
 	char m_b914;	// 0x914: set by sub_103f6800; read by vfunc34 / vfunc35 / vfunc117 / vfunc173 (0x103f6af0 / 0x103f6b20 / 0x103f6b50 / 0x103f6b90) and cleared by vfunc103 (0x103f67d0)
 };
