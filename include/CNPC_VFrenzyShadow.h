@@ -524,7 +524,7 @@ public:
 	virtual void vfunc475();
 	virtual void vfunc476();
 	virtual void vfunc477();
-	virtual void vfunc478();
+	virtual CBaseEntity *vfunc478();	// slot 478 "CNPC_VFrenzyShadow::..." (0x103766d0, returns a CBaseEntity*): the shadow's target picker (see the function note)
 	virtual void vfunc479();
 	virtual void vfunc480();
 	virtual void vfunc481();
