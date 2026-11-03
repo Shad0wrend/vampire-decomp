@@ -25,6 +25,16 @@ void CTriggerLook::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c6c80 size=0x1b
+#include "CTriggerLook.h"
+
+void CTriggerLook::vfunc176(CBaseEntity *pOther)
+{
+	CBaseTrigger::vfunc176(pOther);
+	m_flLookTimeLast = -1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c6f80 size=0xae
 #include "CTriggerLook.h"
 void sub_101434b0(int entindex, int offset, const char *text, int duration, int r, int g, int b, int a);
