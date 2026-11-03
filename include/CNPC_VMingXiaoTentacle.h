@@ -527,7 +527,7 @@ public:
 	virtual void vfunc435();
 	virtual void vfunc436();
 	virtual int vfunc437();
-	virtual void vfunc438();
+	virtual int vfunc438();	// slot 438: state worker, returns the state code (0x156..0x165)
 	virtual void vfunc439();
 	virtual int vfunc440(int a);	// slot 440 override: 0xc7 -> 0xc8, 0x147 -> 0x16d, else the base's slot 440 (sub_102b12f0, tail call)
 	virtual void vfunc441();
