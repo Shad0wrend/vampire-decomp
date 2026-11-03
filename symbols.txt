@@ -3701,6 +3701,7 @@
 0x10006b13 func   ?sub_102d61e0@@YAMH@Z sub_102d61e0
 0x10006b18 func   ?vfunc0@CBaseEntityList@@UAEXHH@Z CBaseEntityList::vfunc0
 0x10006b1d func   ?sub_100e09a0@Dialog@@QAEXPBD@Z Dialog::sub_100e09a0
+0x10006b22 func   ??0ConVar@@QAE@PBD0H0P6AXPAV0@0@Z@Z ConVar::ConVar
 0x10006b27 func   ?vfunc5@CEnvFireSensor@@QAEPAV1@I@Z CEnvFireSensor::vfunc5
 0x10006b2c func   ?sub_100d7760@@YAXXZ sub_100d7760
 0x10006b31 func   ?sub_10062890@@YAHXZ sub_10062890
