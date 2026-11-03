@@ -1538,6 +1538,7 @@
 0x100036bb func   ?sub_100ab980@CBaseEntity@@QAEXPAVCEventAction@@@Z CBaseEntity::sub_100ab980
 0x100036c0 func   ?sub_10184fd0@UtlMem@@QAEXXZ UtlMem::sub_10184fd0
 0x100036c5 func   ?sub_103dd140@@YADXZ sub_103dd140
+0x100036ca func   ?vfunc16@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEXH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc16
 0x100036d4 func   ?vfunc197@CBaseEntity@@QAEHHHHH@Z CBaseEntity::vfunc197
 0x100036d9 func   _trigger_look trigger_look
 0x100036de func   ?vfunc82@CFilterInventory@@UAEPAUdatamap_t@@XZ CFilterInventory::vfunc82

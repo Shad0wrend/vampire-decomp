@@ -42,6 +42,16 @@ void CAI_Behavior<CAI_BaseNPC, 100000>::vfunc15(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c6e70 size=0x7
+#include "CAI_Behavior.h"
+
+template <>
+void CAI_Behavior<CAI_BaseNPC, 100000>::vfunc16(int unused)
+{
+	m_flag10 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c6e90 size=0x8
 #include "CAI_Behavior.h"
 
