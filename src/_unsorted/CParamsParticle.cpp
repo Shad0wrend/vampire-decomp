@@ -12,6 +12,19 @@ datamap_t *CParamsParticle::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fcdd0 size=0x13
+#include "CParamsParticle.h"
+#include "CBaseEntity.h"
+
+void __fastcall sub_10001f28(CParamsParticle *self);
+
+void CParamsParticle::vfunc103()
+{
+	sub_10001f28(this);
+	((CBaseEntity *)this)->vfunc104();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fce00 size=0x41
 #include "CParamsParticle.h"
 

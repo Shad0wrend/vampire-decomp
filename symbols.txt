@@ -10811,6 +10811,7 @@
 0x10011e5f func   ?sub_1042d720@@YIIPAI@Z sub_1042d720
 0x10011e64 func   ?vfunc3@CPyObjStrSaveRestoreDataOps@@UAEHH@Z CPyObjStrSaveRestoreDataOps::vfunc3
 0x10011e69 func   ?sub_102296c0@CUnknown102296c0@@QAEHXZ CUnknown102296c0::sub_102296c0
+0x10011e6e func   ?vfunc103@CParamsParticle@@QAEXXZ CParamsParticle::vfunc103
 0x10011e73 func   ?vfunc15@CGameMovement@@UAEDPAXM@Z CGameMovement::vfunc15
 0x10011e78 func   ?sub_102699e0@@YAXVVector@@HM@Z sub_102699e0
 0x10011e7d func   ?sub_10203320@@YIXPAUCDumpTable10203320@@@Z sub_10203320
