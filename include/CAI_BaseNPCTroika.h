@@ -57,7 +57,8 @@ public:
 	virtual void vfunc470();	// slot 470: CAI_BaseNPC::vfunc470, then copies the sense records of the types the flags at +0x5cb4 ask for into the 0x2c byte snapshots at +0x6108 .. +0x61e4 and feeds the timers at +0x6160 / +0x6210
 	virtual int vfunc404(CBaseEntity *pOther);
 	int sub_10013016(CBaseEntity *pOther);	// CBaseCombatCharacter::vfunc404 (IRelationType, stub 0x10013016), called directly
-	virtual int vfunc359(CBaseEntity *pEnt);	// slot 359 "GetCombatState"-like: -1 when unselectable (sub_100a52a0) or state +0x5cc0 is 7, 4 while the count at +0x146c is positive, 3 with bit 19 of +0x14bc, then by state +0x5cc0: 2/0xb -> 1, 3/0xe -> 7, 5/6/8/9/0xa/0xd -> 0, else 2 when pEnt answers slot 404 with 1, else 5
+	virtual int vfunc359(CBaseEntity *pEnt);
+	virtual int vfunc376(int a);	// slot 376: the next activity of the fallback chain	// slot 359 "GetCombatState"-like: -1 when unselectable (sub_100a52a0) or state +0x5cc0 is 7, 4 while the count at +0x146c is positive, 3 with bit 19 of +0x14bc, then by state +0x5cc0: 2/0xb -> 1, 3/0xe -> 7, 5/6/8/9/0xa/0xd -> 0, else 2 when pEnt answers slot 404 with 1, else 5
 
 	// Slots 569..601 (past the end of the base class's declared slots).
 	virtual int vfunc569(CBaseEntity *pHint);	// slot 569: 8 while bit 9 of +0x14b8 is set, else the activity for the hint's type at +0x5dc (100 -> 0x1111, 101 -> 0x110d, 0x27d8 -> 0x1118) when sub_10295460(activity, 0) accepts it, else CAI_BaseNPC::sub_10274aa0(pHint)
