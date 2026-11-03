@@ -21,7 +21,7 @@ public:
 class CUnknown10074a00
 {
 public:
-	void sub_10074a00(int index, const char *pszName, int flags);	// 0x10074a00: names / sets up the track (3 args)
+	void sub_10074a00(int a, int index, int flags);	// 0x10074a00: names / sets up the track (3 args, called (0,index,0))
 };
 
 class CUnknown10077710
