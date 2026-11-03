@@ -35,4 +35,6 @@ public:
 	Elem118 *m_pElements;	// 0x10
 
 	int sub_102e9cd0(int elem, int num, const Elem118 *pToInsert);	// "CUtlVector::InsertMultipleBefore": grows by num, shifts the tail, default-constructs num elements and copies pToInsert[0..num) over them when given; returns elem
+	void sub_102e9910(Elem118 *pBegin, Elem118 *pEnd);	// 0x102e9910 (todo): sorts the [pBegin, pEnd) element range (this = the vector)
+	bool sub_102e91b0(Elem118 *pElems, int nCount, float *pOut);	// 0x102e91b0: appends nCount elements of pElems to a temporary copy of the vector, sorts it and picks the best element by a float score (+0x4 of the element), whose float at +0x8 goes to *pOut; false when nothing is picked. Fast path: nCount==1 with an empty vector and pElems[0].m_type==0 gives pElems[0].m_c
 };
