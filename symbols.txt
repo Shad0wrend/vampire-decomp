@@ -219,6 +219,7 @@
 0x10001587 func   ?vfunc362@CWeaponMelee_TzimisceMelee@@UAEPAUCWeaponActivityRecord@@XZ CWeaponMelee_TzimisceMelee::vfunc362
 0x1000158c func   ?vfunc489@CNPC_VNewscaster@@UAEXXZ CNPC_VNewscaster::vfunc489
 0x10001591 func   ?sub_1002f190@@YGHH@Z sub_1002f190
+0x1000159b func   ?vfunc103@CWeaponMelee_AVampBlade@@QAEXXZ CWeaponMelee_AVampBlade::vfunc103
 0x100015a0 func   ?sub_1030c1a0@@YGXPAUCUnknown1030c1a0@@@Z sub_1030c1a0
 0x100015a5 func   ?sub_101e9f40@CUnk101e9f40@@QAEHPAX@Z CUnk101e9f40::sub_101e9f40
 0x100015aa func   ?vfunc368@CBaseCombatCharacter@@QAE?AVVector@@XZ CBaseCombatCharacter::vfunc368
