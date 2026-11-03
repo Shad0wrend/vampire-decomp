@@ -518,6 +518,15 @@ float sub_101a6c20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6c40 size=0x3
+#include "CAI_BaseNPC.h"
+
+// TARGET: CAI_BaseNPC::vfunc551
+void CAI_BaseNPC::vfunc551(int a, int b)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6c60 size=0x3
 #include "CAI_BaseNPC.h"
 // TARGET: CAI_BaseNPC::vfunc557
