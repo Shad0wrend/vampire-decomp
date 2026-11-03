@@ -138878,6 +138878,52 @@ int CUnknown102a0b90::sub_102a0b90(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a0bc0 size=0xb2
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_TroikaLink.h"
+
+struct CGlobalVars_102a0bc0
+{
+	char m_pad0000[0xc];
+	float curtime;	// 0x0c
+};
+extern CGlobalVars_102a0bc0 *g_1070b228;
+extern int g_106c994c;
+
+static __inline CTroikaNav *NavOf(CAI_BaseNPCTroika *pNPC)
+{
+	return (CTroikaNav *)pNPC->m_p5d34;
+}
+
+// TARGET: CAI_BaseNPCTroika::sub_102a0bc0
+bool CAI_BaseNPCTroika::sub_102a0bc0(void *pLinkArg)
+{
+	CTroikaLink *pLink = (CTroikaLink *)pLinkArg;
+	if (!pLink || pLink->m_iNode < 0)
+		return false;
+	CTroikaLinkRef *pRef = pLink->m_pRef;
+	if (!pRef || !(pLink->m_nFlags & 4))
+		return false;
+	if (NavOf(this)->sub_102ee620() != 8)
+		return false;
+	CTroikaNodeNet *pNet = NavOf(this)->m_pNet;
+	CTroikaNode *pNode;
+	if (pLink->m_iNode >= 0 && pLink->m_iNode < pNet->m_nNodes)
+		pNode = pNet->m_ppNodes[pLink->m_iNode];
+	else {
+		g_106c994c++;
+		pNode = 0;
+	}
+	CTroikaCand *pCand = pNode->sub_102f96e0(pRef->m_id);
+	if (!pCand)
+		return false;
+	if (!(pCand->m_nMask & (0x10 << (((int)g_1070b228->curtime >> 4) & 3))))
+		return false;
+	sub_102a0b90(pCand);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a0cb0 size=0x46
 #include "CAI_BaseNPCTroika.h"
 struct CDevFlagObj102a0cb0 {
