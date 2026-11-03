@@ -2728,6 +2728,7 @@
 0x10005376 func   ?sub_10062a50@@YAHHHHH@Z sub_10062a50
 0x1000537b func   ?vfunc265@CVampireProjectile@@UAE_NXZ CVampireProjectile::vfunc265
 0x10005385 func   ?sub_102116c0@CTriggerBombSite@@QAEXUCBombState@@@Z CTriggerBombSite::sub_102116c0
+0x1000538a func   ?vfunc5@CTimerEntity@@QAEPAV1@I@Z CTimerEntity::vfunc5
 0x10005394 func   ?sub_10138630@@YAXABUmatrix3x4_t@@AAU1@@Z sub_10138630
 0x10005399 func   ?vfunc5@CWeaponRanged_Pistol_Glock@@QAEPAV1@I@Z CWeaponRanged_Pistol_Glock::vfunc5
 0x1000539e func   ?vfunc134@CVampireProjectile_MingXiaoSpit@@UAEXXZ CVampireProjectile_MingXiaoSpit::vfunc134
