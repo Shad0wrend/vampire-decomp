@@ -3967,6 +3967,7 @@
 0x10007428 func   ?vfunc110@CVampireProjectile@@UAE_NPBD0@Z CVampireProjectile::vfunc110
 0x1000742d func   ?sub_10041f40@UtlHash8@@QAEPAV1@HHHP6A_NPAX0@ZP6AI0@Z@Z UtlHash8::sub_10041f40
 0x1000743c func   ?sub_1018ee60@@YAXPAVCBaseEntity@@H@Z sub_1018ee60
+0x10007446 func   ?vfunc8@CDirtySpatialPartitionEntityList@@UAEPAVCAutoGameSystem@@I@Z CDirtySpatialPartitionEntityList::vfunc8
 0x1000744b func   ?vfunc473@CNPC_VSheriffSwarm@@UAEHXZ CNPC_VSheriffSwarm::vfunc473
 0x10007450 func   ?sub_10032a60@CUtlMemory20@@QAEPAV1@HH@Z CUtlMemory20::sub_10032a60
 0x10007455 func   ?sub_1007edb0@@YGMM@Z sub_1007edb0
