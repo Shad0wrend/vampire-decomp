@@ -3224,6 +3224,7 @@
 0x10005fb0 func   ?sub_100611b0@@YAXHHPAHHHHHHHH@Z sub_100611b0
 0x10005fba func   ?vfunc0@IServerGameDLL@@UAEPAXE@Z IServerGameDLL::vfunc0
 0x10005fbf func   ?sub_100dcb30@CCollisionProperty@@QAEPAVVector@@ABV2@PAV2@@Z CCollisionProperty::sub_100dcb30
+0x10005fc4 func   ?vfunc473@CGenericSabbat_NPC@@UAEHXZ CGenericSabbat_NPC::vfunc473
 0x10005fc9 func   ?sub_100cf730@CEventQueue@@QAEXXZ CEventQueue::sub_100cf730
 0x10005fd3 func   ?sub_100575a0@CBaseFire@@QAEXH@Z CBaseFire::sub_100575a0
 0x10005fe2 func   ?sub_10395650@CNPC_VMingXiao@@QAEHHPAX@Z CNPC_VMingXiao::sub_10395650

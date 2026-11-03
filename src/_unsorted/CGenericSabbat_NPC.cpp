@@ -259,6 +259,22 @@ void CGenericSabbat_NPC::vfunc491()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035be50 size=0x14
+#include "CAI_BaseNPCTroika.h"
+#include "CGenericSabbat_NPC.h"
+
+// TARGET: CGenericSabbat_NPC::vfunc473
+int CGenericSabbat_NPC::vfunc473()
+{
+	switch (((CAI_BaseNPCTroika *)this)->m_n5cc0)
+	{
+	case 1:
+		return 0x19;
+	}
+	return 0x17;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035be80 size=0x2a
 #include "CGenericSabbat_NPC.h"
 extern const float g_1044f00c;
