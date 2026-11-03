@@ -4050,6 +4050,7 @@
 0x100074a0 func   ?sub_10041e80@UtlHash8@@QAEIPAX@Z UtlHash8::sub_10041e80
 0x100074a5 func   ?vfunc557@CAI_BaseNPC@@UAEDXZ CAI_BaseNPC::vfunc557
 0x100074aa func   ?vfunc34@CSave@@UAEXPBQAUCSaveEdict@@H@Z CSave::vfunc34
+0x100074af func   ?vfunc244@CBaseTrigger@@QAEXH@Z CBaseTrigger::vfunc244
 0x100074b9 func   ?sub_10234400@@YAHXZ sub_10234400
 0x100074c3 func   _activity_copy_prop activity_copy_prop
 0x100074c8 func   ?vfunc433@CNPC_VChangBros@@UAEXXZ CNPC_VChangBros::vfunc433

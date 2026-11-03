@@ -190,6 +190,18 @@ void CBaseTrigger::vfunc243(unsigned int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c57e0 size=0x20
+#include "CBaseTrigger.h"
+
+void CBaseTrigger::vfunc244(int unused)
+{
+	if (m_flags204 & 1)
+		m_flags204 &= ~1;
+	else
+		m_flags204 |= 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c5840 size=0x15
 #include "CBaseTrigger.h"
 
