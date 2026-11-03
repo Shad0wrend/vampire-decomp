@@ -10562,6 +10562,56 @@ int SaveList::sub_10057850(IVisitor *v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100578e0 size=0x9f
+#include "CRestore.h"
+#include "CUnknown10057680.h"
+
+extern char g_1053fdd4[];
+extern char g_1053fdcc[];
+extern char g_1053fc54[];
+extern char g_1053fc80[];
+
+struct CRestoreRaw
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual int ReadFields(const char *name, void *base, void *map, void *fields, int count);
+};
+
+struct CGlobalEntRecord
+{
+	char m_name[0x40];
+	char m_value[0x20];
+	int m_state;
+	int m_next;
+};
+
+static __inline void AddGlobalState(CUnknown10057680 *pThis, CGlobalEntRecord *pRec)
+{
+	const char *pszMap = *(volatile char *)pRec->m_value ? pRec->m_value : 0;
+	const char *pszName = *(volatile char *)pRec->m_name ? pRec->m_name : 0;
+	pThis->sub_10057740(pszName, pszMap, *(volatile int *)&pRec->m_state);
+}
+
+int CUnknown10057680::sub_100578e0(CRestore *pRestore)
+{
+	CGlobalEntRecord tmp;
+	sub_100579f0();
+	CRestoreRaw *pRaw = (CRestoreRaw *)pRestore;
+	if (!pRaw->ReadFields(g_1053fdd4, this, 0, g_1053fc54, 1))
+		return 0;
+	int listCount = m_unk4;
+	m_unk4 = 0;
+	for (int i = 0; i < listCount; i++) {
+		if (!pRaw->ReadFields(g_1053fdcc, &tmp, 0, g_1053fc80, 3))
+			return 0;
+		AddGlobalState(this, &tmp);
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100579b0 size=0x2e
 #include "CUnknown10057680.h"
 
