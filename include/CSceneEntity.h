@@ -122,7 +122,7 @@ public:
 	virtual void vfunc255(int b, CSceneEventActorEnt *pActor, CSceneEvent *pEvent);	// slot 255: the finish handler of a type 10 event
 	virtual void vfunc256(int b, CSceneEventActorEnt *pActor, CSceneEvent *pEvent);	// slot 256: the gesture handler: looks the event's text parameter up as a sequence of the actor and starts it as a gesture on the actor's NPC (Warning "Could not find gesture sequence %s" when either is missing)
 	virtual void vfunc257(int b, CSceneEventActorEnt *pActor, CSceneEvent *pEvent);	// slot 257: the finish handler of a type 6 event
-	SCENE_V(258)
+	virtual void vfunc258(int a1, int a2, int a3, int a4, int a5);	// slot 258 anim event: for an actor entity a2 and scene event a3, hands (a3, a4, 0.2f, 0) to the actor's NPC (+0x94) slot 536
 	virtual void vfunc259(int unused, void *pEvent, const char *pszTarget);	// slot 259: for the actor of the scene event (object at +0x94 of pEvent) and the entity named pszTarget: sets the actor's move type (4, 0), copies the target's slot 192 vector to +0x5db8 and its slot 219 vector to +0x5dc4 of the actor, runs the actor's sub_10280de0(0x39) and stamps curtime at +0x5cf0
 	virtual void vfunc260(int unused, void *pEvent, const char *pszSound, int a4, int a5);	// slot 260: for the actor of the scene event (pointer at +0x98 of pEvent): builds "sound/<name>.mp3" and "*<name>" sound names, makes the actor's entity of this scene's player (sub_10081890) its target, and hands "*<name>" to the actor's sub_102c0520(name, a5, byte at this+0x57f)
 	virtual void vfunc261(int unused, CSceneEventActorEnt *pActor, CBaseEntity *pEnt, int d, int e);
