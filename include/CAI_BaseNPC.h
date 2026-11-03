@@ -135,7 +135,7 @@ public:
 	virtual int vfunc437();	// "SelectFailSchedule"-like (AI_BaseNPC_Schedule.cpp): returns a schedule id picked from the failure conditions
 	virtual int vfunc438();	// "SelectSchedule": returns the schedule id
 	CAI_NPC_V(439)
-	CAI_NPC_V(440) CAI_NPC_V(441) int vfunc441(int a); CAI_NPC_V(442) CAI_NPC_V(443) CAI_NPC_V(444) CAI_NPC_V(445)
+	CAI_NPC_V(440) CAI_NPC_V(441) int vfunc441(int a); CAI_NPC_V(442) CAI_NPC_V(443) virtual void vfunc444(void *pTask); CAI_NPC_V(445)
 	virtual int vfunc446(int condition);	// "SetCondition" with translation: ids below 1000000000 (and -1) go through the condition table of slot 580 first; a missing schedule warns "ERROR: %s missing schedule" and sets condition 1
 	virtual int vfunc447(int a);	// classification of a (the dword at +0x1c of the object at +0x5c38); 0x12f is the special case of vfunc509
 	virtual void vfunc448(int a);	// "CAI_BaseNPC::TaskFail": remembers the failure code (+0x5c50), name text (+0x5f30) and failing task (+0x5c38 -> +0x5f38) unless the AI system is paused, clears +0x1a40, then sub_10269a20(0x5c)
