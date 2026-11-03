@@ -20,3 +20,4 @@
 	void vfunc414();	// slot 414 (plain member): the same as slot 412
 	void vfunc415();	// slot 415 (plain member): the same as slot 412
 	void sub_10273390();	// the real body behind vtable slot 420 (stub 0x1000c531): define it under this provisional name, NOT as vfunc420 (?vfunc420@CAI_BaseNPC@@UAEXXZ is already the stub at 0x1000c531). "CAI_BaseNPC::..."-like spawn/init: see the release note
+	void sub_10266780(struct CVDmg_t *pInfo, CBaseEntity *pAttacker, struct CGameTrace *pTrace);	// the NPC damage/trace-attack handler behind vtable slot 141 (called by CNPC_Bullseye/CNPC_VWerewolf/CNPC_VZombie::vfunc141); define it under this provisional name (the slot name belongs to the stub)
