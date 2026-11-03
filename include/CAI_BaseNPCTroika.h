@@ -76,6 +76,7 @@ public:
 	virtual void vfunc579();
 	virtual CAI_CondOwner *vfunc580();	// the object that translates condition ids (sub-object at +0x30)
 	virtual void vfunc581(); virtual void vfunc582();
+	bool vfunc467(int *pOther);	// slot 467 (plain member: the base CAI_NPC_V(467) placeholder is void): the visibility test 0x102b35b0, takes the record whose +0 is an entity handle, +4 a kind, +8 an int and +0x20 a Vector
 	virtual void vfunc583();	// asked after another NPC accepted the value of slot 585
 	virtual void vfunc584(int unused);	// slot 584 (ret 4): slot 614, then stamps curtime at +0x178 and +0x6254..+0x6260
 	virtual int vfunc585(int a);	// the value offered to another NPC's slot 482
