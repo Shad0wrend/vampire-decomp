@@ -35,7 +35,8 @@ public:
 	CBCC_SLOTS10(a5) CBCC_SLOTS10(a6) CBCC_SLOTS10(a7)
 	virtual void a80(); virtual void a81(); virtual void a82(); virtual float *a83();	// slot 217 "CBaseEntity::GetAbsOrigin"
 	virtual void a84();
-	virtual void a85(); virtual float *a86(); virtual void a87(); virtual void a88(); virtual void a89();
+	virtual float *a85();	// slot 219 "CBaseEntity::GetAbsAngles"
+	virtual float *a86(); virtual void a87(); virtual void a88(); virtual void a89();
 	virtual void a90(); virtual void a91(); virtual void a92(); virtual void a93();
 	virtual void vfunc228(int a, int b);	// "CBaseCombatCharacter::VPhysicsShadowCollision"-like: scope trace, forwards to slot 75(a, b)
 	virtual void a95(); virtual void a96(); virtual void a97(); virtual void a98(); virtual void a99();
