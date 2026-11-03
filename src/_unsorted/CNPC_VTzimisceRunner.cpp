@@ -164,6 +164,57 @@ void CNPC_VTzimisceRunner::vfunc259(int *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c3310 size=0x1c4
+#include "CEHandleGet.h"
+#include "CEntityVSlots.h"
+#include "CNPC_VTzimisceRunner.h"
+#include "Vector.h"
+int CNPC_VTzimisceRunner::vfunc438()
+{
+	switch ( m_n5cc0 )
+	{
+	case 2:
+		{
+			m_b5b80 = 0;
+
+			int r;
+			if ( sub_1032e7b0() != 0 )
+				r = ((CEntityVSlots *)sub_1032e7b0())->slot360();
+			else
+				r = 0;
+			r = ((CEntityVSlots *)this)->slot604( r );
+
+			CEntityVSlots *pTarget = (CEntityVSlots *)EHandle_Get( m_h6678 );
+			if ( pTarget )
+			{
+				switch ( r )
+				{
+				case 199:
+				case 200:
+				case 228:
+				case 231:
+				case 342:
+					{
+						CEntityVSlots *pTarget2 = (CEntityVSlots *)EHandle_Get( m_h6678 );
+						Vector *a = ((CEntityVSlots *)this)->slot217();
+						Vector *b = pTarget2->slot217();
+						Vector vDelta;
+						VectorSubtract( *b, *a, vDelta );
+						if ( vDelta.Length2D() > 256.0 )
+							return 0x157;
+					}
+					break;
+				}
+			}
+			else if ( r != 0 )
+				return r;
+		}
+		break;
+	}
+	return sub_10015596();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c3560 size=0x2b
 #include "CNPC_VTzimisceRunner.h"
 int CNPC_VTzimisceRunner::vfunc440(int schedule)

@@ -11866,6 +11866,7 @@
 0x10012dd2 func   ?sub_102a1620@@YI_NPAUN@@@Z sub_102a1620
 0x10012dd7 func   ?sub_10077450@CUnk10077450@@QAEHH@Z CUnk10077450::sub_10077450
 0x10012ddc func   ?sub_10042a80@CUtlVector20@@QAEHHHPBX@Z CUtlVector20::sub_10042a80
+0x10012de1 func   ?vfunc438@CNPC_VTzimisceRunner@@UAEHXZ CNPC_VTzimisceRunner::vfunc438
 0x10012de6 func   ?vfunc429@CAI_BaseNPC@@UAEPAVCAI_Navigator@@XZ CAI_BaseNPC::vfunc429
 0x10012df0 func   _item_g_lockpick item_g_lockpick
 0x10012dfa func   ?sub_1010c190@CUnknown1010c190@@QAEXXZ CUnknown1010c190::sub_1010c190
