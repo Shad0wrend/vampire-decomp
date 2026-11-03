@@ -117811,6 +117811,27 @@ void QuestJournal::sub_102210f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10221270 size=0x2f
+#include "QuestJournal.h"
+
+// TARGET: QuestJournal::sub_10221270
+void QuestJournal::sub_10221270()
+{
+	int i = 0;
+	if (m_field[8] > 0)
+	{
+		int offset = 0;
+		do
+		{
+			*(int *)(m_field[5] + offset + 0x10) = -1;
+			i++;
+			*(int *)(offset + m_field[5] + 0xc) = 0;
+			offset += 0x68;
+		} while ((int)i < m_field[8]);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102213c0 size=0x20b
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

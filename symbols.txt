@@ -3627,6 +3627,7 @@
 0x10006974 func   ?sub_100d9e10@@YAXXZ sub_100d9e10
 0x10006979 func   ?vfunc80@CItemGWarrLedger2@@QAEHXZ CItemGWarrLedger2::vfunc80
 0x1000697e func   _npc_VTzimisceRunner npc_VTzimisceRunner
+0x10006983 func   ?sub_10221270@QuestJournal@@QAEXXZ QuestJournal::sub_10221270
 0x10006988 func   ?sub_103ad5a0@CUnknown103ad5a0@@QAEHXZ CUnknown103ad5a0::sub_103ad5a0
 0x1000698d func   ?sub_10385a10@@YAXM@Z sub_10385a10
 0x10006992 func   ?sub_102d1220@CUnknown102d1220@@QAE_NHPBD@Z CUnknown102d1220::sub_102d1220
