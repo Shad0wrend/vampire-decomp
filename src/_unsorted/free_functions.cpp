@@ -176169,6 +176169,40 @@ void CNPC_VMingXiao::sub_103998d0(CNPC_VMingXiaoTentacle *pTentacle)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103999f0 size=0x1fd
+#include "CNPC_VMingXiao.h"
+#include "CNPC_VMingXiaoTentacle.h"
+#include "CUnknown1039aaf0.h"
+
+void CNPC_VMingXiao::sub_103999f0(CNPC_VMingXiaoTentacle *pTentacle)
+{
+	CNPC_VMingXiaoTentacle *pTarget = (CNPC_VMingXiaoTentacle *)vfunc167();
+	if (!pTentacle || !pTarget)
+		return;
+
+	((CUnknown1039aaf0 *)this)->sub_1039aaf0(0);
+	((CUnknown1039aaf0 *)pTentacle)->sub_1039aaf0(0);
+
+	Vector vecThis = *(Vector *)vfunc217_slot();
+	Vector vecTentacle = *(Vector *)pTentacle->vfunc217();
+	Vector vecTarget = *(Vector *)pTarget->vfunc217();
+
+	Vector vecToTentacle = vecTentacle - vecThis;
+	Vector vecToTarget = vecTarget - vecThis;
+	Vector vecTentacleToTarget = vecTarget - vecTentacle;
+
+	float flDistTentacle = pfVectorNormalize(vecToTentacle);
+	float flDistTarget = pfVectorNormalize(vecToTarget);
+	float flDistTentacleTarget = pfVectorNormalize(vecTentacleToTarget);
+
+	if (flDistTentacle < flDistTarget && vecToTentacle.Dot(vecToTarget) > 0.965f)
+		((CUnknown1039aaf0 *)this)->sub_1039aaf0(1);
+
+	if (flDistTentacle < flDistTentacleTarget && vecToTentacle.Dot(vecTentacleToTarget) < -0.965f)
+		((CUnknown1039aaf0 *)pTentacle)->sub_1039aaf0(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10399c70 size=0x95
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 class CVProfile {
