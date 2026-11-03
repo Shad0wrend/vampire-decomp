@@ -300,7 +300,9 @@ public:
 	char m_pad1B7C[0x1c5c - 0x1b7c];	// 0x1B7C .. 0x1C5B
 	unsigned int m_h1C5C;	// 0x1C5C: entity handle (the target the player took over)
 	EHANDLE m_hEnt1C60;	// 0x1C60: entity handle (the slot 167 object)
-	char m_pad1C64[0x1cd8 - 0x1c64];	// 0x1C64 .. 0x1CD7
+	char m_pad1C64[0x1c8c - 0x1c64];	// 0x1C64 .. 0x1C8B
+	float m_f1C8C;	// 0x1C8C: a light value (CHL2_Player::vfunc471 writes 1.0f)
+	char m_pad1C90[0x1cd8 - 0x1c90];	// 0x1C90 .. 0x1CD7
 	unsigned int m_nCriminalLevelEnc;	// 0x1CD8, scrambled by the xor/and/add mask chain
 	char m_pad1CDC[4];	// 0x1CDC .. 0x1CDF
 	union {
