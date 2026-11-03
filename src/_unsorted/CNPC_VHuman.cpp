@@ -244,6 +244,15 @@ int CNPC_VHuman::vfunc376(int act)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10385a10 size=0xd
+void sub_1028fcc0(float a);
+
+void sub_10385a10(float a)
+{
+	sub_1028fcc0(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10385a30 size=0x1
 #include "CNPC_VHuman.h"
 // TARGET: CNPC_VHuman::vfunc434
