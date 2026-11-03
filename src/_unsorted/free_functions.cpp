@@ -182261,6 +182261,63 @@ void *CNPC_VWerewolf::sub_103d7620(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d7dc0 size=0x20a
+#include "CAI_Hint.h"
+#include "CNPC_VWerewolf.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CUnknown101d7520.h"
+#include "globalvars.h"
+#include "Ray_t.h"
+
+extern CNPC_VWerewolfVec3 g_1070d1b0;
+
+bool CNPC_VWerewolf::sub_103d7dc0(void *pHint)
+{
+	ScopeTrace trace("CNPC_VWerewolf::IsValidRandomMoveHint", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+
+	CAI_Hint *pHintEnt = (CAI_Hint *)pHint;
+
+	if ( pHint && !pHintEnt->sub_102d14c0() && vfunc566_slot(pHint) )
+	{
+		int nType = pHintEnt->m_n5dc;
+
+		if ( nType != 0x3aa9 )
+		{
+			if ( nType == 0x3aa8 )
+			{
+				if ( vfunc617_slot(sub_103d6650(pHint), 1, 0, g_1070d1b0) )
+					return false;
+				return true;
+			}
+			else if ( nType == 0x3a9a || nType == 0x3a9b || nType == 0x3a99 )
+			{
+				float flTime = gpGlobals->curtime - m_flTeleport66ec;
+				if ( g_104454c4 > flTime || flTime < 2.0f )
+					return true;
+				void *pNode = sub_103d0ad0();
+				if ( pNode && *(int *)((char *)pNode + 0x94) == m_n670c )
+					return true;
+			}
+			else if ( nType != 0x3aa7 && nType != 0x3aa5 && nType != 0x3a98 && nType != 0x3aa3 )
+			{
+				if ( sub_10366400((int)pHint) )
+					return false;
+				return true;
+			}
+		}
+	}
+
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d8300 size=0x1c9
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
