@@ -115,4 +115,5 @@ public:
 	char sub_1030ffa0(void *pEnt);	// stub 0x1000ae6b
 	bool sub_1030faa0(void *pEnt);	// stub 0x10002bdf
 	char sub_1030fc50(void *pEnt);	// stub 0x10013859
+	void sub_10310710();
 };
