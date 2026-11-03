@@ -39,4 +39,6 @@ public:
 	virtual int vfunc373();	// slot 373: 6	// a melee weapon subclass member: false without a target, one that lacks bit 1 of its sub_100b39c0 flags, or the target the owner's object at +0xa8 already holds (its slot 209); else hands the target and a damage-scale float (0 / the owner's tuning value, unless bFlag) to sub_1016a660; targets in collision group 9 are refused when sub_1040d930 holds
 
 	char m_pad0898[0x8b8 - 0x898];
+	float sub_1040e5b0();	// the weapon's melee range (0x1040e5b0, this in ecx, no args)
+	CBaseEntity *sub_1040f080(const Vector *pCenter, const Vector *pForward, float flMin, float flMax, char bFlag);	// the combine-ball / bFlag entity search around pCenter (0x1040f080, ret 0x14; sibling of sub_1040f550)
 };
