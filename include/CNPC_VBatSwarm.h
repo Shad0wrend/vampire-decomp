@@ -12,15 +12,20 @@ public:
 	int vfunc546(int arg); // as in CNPC_Crow (transplant)
 	void vfunc103();	// slot 103: sub_1026dc00(0x200000), then sub_103c4ef0
 	void sub_103c4ef0();	// CNPC_VVampire::vfunc103 (stub 0x10014876), called directly
-	int vfunc609(int arg); // slot 609: when the state at +0x5cc0 is 4 or 12 it tail-calls CAI_BaseNPCTroika::vfunc609 (stub 0x100075ae) with the same argument; else clears +0x6444 and answers 0
+	int vfunc609(char bForce); // slot 609: when the state at +0x5cc0 is 4 or 12 it tail-calls CAI_BaseNPCTroika::vfunc609 (stub 0x100075ae) with the same argument; else clears +0x6444 and answers 0
 	CNPC_VBatSwarm *sub_10366c30(); // as in CKeepUpright (transplant)
 	bool sub_10367680(int a, int b);	// asks sub_1000633e (cdecl, this + both arguments + 5000.0f, 0, 0) for the hint node into +0x5ddc; found: sub_1000ac68(0), true; else records its source line and fails the task with slot 448(4)
 	void sub_1000ac68(int a);	// stub of CAI_BaseNPC::sub_10273e80, called directly
 	char m_padBS[0x1b44 - sizeof(CBaseEntity)];
 	const char *m_pszFailFile;	// 0x1b44
 	int m_nFailLine;	// 0x1b48
-	char m_padBS2[0x5ddc - 0x1b4c];
+	char m_padBS2a[0x5cc0 - 0x1b4c];
+	int m_n5cc0;	// 0x5cc0: the NPC state
+	int m_n5cc4;	// 0x5cc4
+	char m_padBS2b[0x5ddc - 0x5cc8];
 	void *m_pHint5ddc;	// 0x5ddc
+	char m_padBS3[0x6444 - 0x5de0];
+	CBaseEntity *m_p6444;	// 0x6444: the target
 public:
     virtual datamap_t * vfunc82();
 public:
