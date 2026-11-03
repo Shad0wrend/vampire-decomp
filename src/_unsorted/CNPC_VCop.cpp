@@ -102,6 +102,25 @@ void CNPC_VCop::vfunc180()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10371ae0 size=0x36
+#include "CNPC_VCop.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CEntityVSlots.h"
+
+void sub_10370560(CBaseEntity *pEnt);
+
+// TARGET: CNPC_VCop::vfunc472
+void CNPC_VCop::vfunc472(int a)
+{
+	if (!m_b6081)
+	{
+		if (((CEntityVSlots *)this)->slot404((void *)a) == 1)
+			sub_10370560((CBaseEntity *)a);
+	}
+	((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc472((CBaseEntity *)a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10371b50 size=0x6
 #include "CNPC_VCop.h"
 int CNPC_VCop::vfunc138()
