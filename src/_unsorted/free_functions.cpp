@@ -80352,6 +80352,13 @@ extern void (__cdecl *g_109f372c)(int);
 void sub_1019b770(int) { g_109f372c(g_1072b370); }
 // END FUNCTION
 
+// FUNCTION: 0x1019b790 size=0xf
+extern int g_1072b370;
+extern void (__cdecl *g_109f3730)(int);
+// TARGET: sub_1019b790
+void sub_1019b790(int) { g_109f3730(g_1072b370); }
+// END FUNCTION
+
 // FUNCTION: 0x1019b7b0 size=0x1f
 #include "vampire.h"
 extern void *g_1072b370;
