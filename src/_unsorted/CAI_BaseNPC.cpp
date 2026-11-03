@@ -2034,6 +2034,18 @@ void *sub_1027a7c0(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027bb20 size=0x1b
+#include "CAI_BaseNPC.h"
+#include "CBaseCombatCharacter.h"
+
+// TARGET: CAI_BaseNPC::vfunc106
+void CAI_BaseNPC::vfunc106(const char *pszName)
+{
+	((CBaseCombatCharacter *)this)->CBaseCombatCharacter::vfunc106(pszName);
+	vfunc424();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027c160 size=0x65
 #include "CAI_BaseNPC.h"
 #include "CRestore.h"
