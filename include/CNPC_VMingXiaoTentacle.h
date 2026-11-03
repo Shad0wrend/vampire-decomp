@@ -63,7 +63,9 @@ public:
 	int m_nState5cc0;	// 0x5cc0: the NPC state
 	char m_pad5cc4[0x6078 - 0x5cc4];
 	char m_b6078;	// 0x6078: set to 1 by vfunc599
-	char m_pad6079[0x63d8 - 0x6079];
+	char m_pad6079[0x6268 - 0x6079];
+	float m_f6268;	// 0x6268: distance to the target
+	char m_pad626c[0x63d8 - 0x626c];
 	char m_b63d8;	// 0x63d8
 	char m_pad63d9[0x65c8 - 0x63d9];
 	int m_nAct65c8;	// 0x65c8
