@@ -11402,6 +11402,7 @@
 0x10012c60 func   ?sub_1036f490@@YADXZ sub_1036f490
 0x10012c65 func   ?sub_1003c1c0@@YIXPAH@Z sub_1003c1c0
 0x10012c6a func   ?vfunc111@CBaseCombatCharacter@@UAEXXZ CBaseCombatCharacter::vfunc111
+0x10012c6f func   ?vfunc431@CNPC_VPlayerController@@QAEXXZ CNPC_VPlayerController::vfunc431
 0x10012c74 func   ?sub_1019f500@CUnknown1019f500@@QAEXPAUCInputData100bc0f0@@@Z CUnknown1019f500::sub_1019f500
 0x10012c79 func   ?sub_1019d390@@YIDPAVCRecipientFilter@@@Z sub_1019d390
 0x10012c7e func   ?sub_10109e40@S10109e40@@QAEXAAUinputdata_t@@@Z S10109e40::sub_10109e40
