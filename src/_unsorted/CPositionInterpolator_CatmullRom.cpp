@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1012fac0 size=0x1a
+#include "CPositionInterpolator_CatmullRom.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+int CPositionInterpolator_CatmullRom::vfunc4(const char *pszName, int unused)
+{
+	return !_strcmpi(pszName, "Corner");
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012fb10 size=0x1
 #include "CPositionInterpolator_CatmullRom.h"
 void CPositionInterpolator_CatmullRom::vfunc0()
