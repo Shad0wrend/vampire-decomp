@@ -10099,6 +10099,7 @@
 0x100105b4 func   ?sub_102db5e0@@YAPADH@Z sub_102db5e0
 0x100105b9 func   ?sub_10365840@@YAXXZ sub_10365840
 0x100105c3 func   ?sub_100cd240@@YAHH@Z sub_100cd240
+0x100105cd func   ?sub_10311ee0@CAI_Expresser@@QAE_NHH@Z CAI_Expresser::sub_10311ee0
 0x100105d2 func   ?vfunc501@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc501
 0x100105d7 func   ??1CExpressionTable@@QAE@XZ CExpressionTable::~CExpressionTable
 0x100105dc func   ?vfunc583@CAI_ExpressiveNPC@@QAEPAVCAI_Expresser@@XZ CAI_ExpressiveNPC::vfunc583

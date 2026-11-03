@@ -156393,6 +156393,32 @@ int CAI_Expresser::sub_10311b90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10311ee0 size=0x43
+#include "vampire_all.h"
+#include "CAI_Expresser.h"
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+
+struct COuterView540
+{
+	V100(a) V100(b) V100(c) V100(d) V100(e) V10(f) V10(g) V10(h) V10(i)
+	virtual float vfunc540(int a);
+};
+
+// TARGET: CAI_Expresser::sub_10311ee0
+bool CAI_Expresser::sub_10311ee0(int a, int b)
+{
+	float flDelay = ((COuterView540 *)m_pOuter)->vfunc540(a);
+	if (flDelay > 0)
+	{
+		sub_103121a0(flDelay, *(float *)&b);
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103121a0 size=0x67
 #include "vampire_all.h"
 #include "CAI_Expresser.h"
