@@ -21,6 +21,7 @@ public:
 	virtual char vfunc24(int a);
 	virtual char vfunc25(int a);
 	virtual void vfunc26(int a, int b);	// slot 26 (ret 8: two stack arguments, unused); slot 27 follows
+	virtual int vfunc27(int id);	// slot 27: true for the ids of this behaviour's range [ID, ID + 10000)
 
 	void *m_p0004;
 	char m_pad0008[8];
