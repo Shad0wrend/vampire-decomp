@@ -9915,6 +9915,7 @@
 0x10010442 func   ?sub_1007b990@CUnknown1007b990@@QAEPADXZ CUnknown1007b990::sub_1007b990
 0x10010447 func   ?vfunc580@CNPC_VHengeyokai@@UAEHXZ CNPC_VHengeyokai::vfunc580
 0x1001044c func   ?vfunc93@CBaseEntity@@UAEXHH@Z CBaseEntity::vfunc93
+0x10010456 func   ?vfunc5@CMathCounter@@QAEPAVCLogicalEntity@@I@Z CMathCounter::vfunc5
 0x1001045b func   ?sub_1021e8e0@CUnknown1021e8e0@@QAEHPBD@Z CUnknown1021e8e0::sub_1021e8e0
 0x10010460 func   ?sub_102cdca0@CUnk102cd310@@QAEXPAH@Z CUnk102cd310::sub_102cdca0
 0x10010465 func   ?sub_10085fb0@@YAXXZ sub_10085fb0
