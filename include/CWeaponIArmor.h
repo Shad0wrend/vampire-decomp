@@ -24,6 +24,7 @@ struct CWeaponIArmorOwner
 class CWeaponIArmor : public CBaseCombatWeapon
 {
 public:
+	CWeaponIArmor *vfunc5(int flags);	// slot 5 (plain overload of the base slot; VC6 has no covariant returns): sub_10013a57 (destructor body inherited from CBaseCombatWeapon), then sub_100aa7b0(this) when flags & 1; returns this
 	virtual int vfunc81();	// slot 81 override: returns 0
 	virtual bool vfunc315();	// slot 315: names the weapon's model (the name at +0x754, "" when null), then CBaseCombatWeapon::sub_10253b70 with the results of slots 342, 343 (the cost chain) and 0xb4, 344
 	virtual bool vfunc325();	// slot 325 override: returns false
