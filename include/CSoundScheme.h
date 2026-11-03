@@ -9,7 +9,7 @@ class CAI_BaseNPC;
 
 struct CSoundSchemeList	// one of the scheme's sound lists (+0x460, +0x4f0, +0x4a8, +0x538); only the two dwords at +0x40 / +0x44 are used so far
 {
-	char m_pad0000[0x40];
+	char m_szName[0x40];	// 0x00: the parsed list's name (vfunc124 prints it, and "Invalid file: %s" for the bogus entries of the +0x594 vector)
 	int m_n40;
 	int m_n44;
 };
@@ -21,7 +21,7 @@ struct CSoundSchemeSound
 {
 	char m_szName[0x40];		// 0x00: sample name
 	float m_flVolume;			// 0x40
-	int m_iFlags;				// 0x44 (the player ORs 0x280 into it)
+	int m_iFlags;			// 0x44 (the player ORs 0x280 into it)
 	int m_n48;					// 0x48
 	float m_flDistanceMin;		// 0x4c: RandomFloat bound (distance the sound is offset)
 	float m_flDistanceMax;		// 0x50: RandomFloat bound
@@ -42,7 +42,8 @@ public:
 	char m_pad03e0[0x450 - 0x3e0];
 	string_t m_sSchemeFile;	// 0x0450
 	bool m_bStartEnabled;	// 0x0454
-	char m_pad0455[0x458 - 0x455];
+	bool m_bStarted;	// 0x0455: set once the scheme's sound lists have been queued (sub_1022b520 / sub_1022b590)
+	char m_pad0456[0x458 - 0x456];
 	int m_n458;					// 0x458: the think stops when the global queue has this many items
 	char m_pad045c[0x460 - 0x45c];
 	CSoundSchemeList m_lists460[4];	// 0x460, 0x4a8, 0x4f0, 0x538: the four sound lists (0x48 bytes each)
@@ -75,6 +76,7 @@ public:
 	void sub_10229430(CSoundSchemeList *pList, int a, int b, float flDelay, void *pDest);	// stub 0x10006663
 public:
     virtual datamap_t * vfunc82();
+    virtual int vfunc124();	// slot 124 "CSoundScheme::DrawDebugTextOverlays" (0x1022b690): CBaseEntity::vfunc124's next line, then when the debug overlay flag +0x224 bit 0 is set one line per state: "%s: Not Playing" / "INVALID SCHEME FILE: %s" when nothing plays, else Ambient loop / Music track / Combat track / Alert track lines (name at the list +0x460/+0x4f0/+0x4a8/+0x538, volume at +0x40 of the list) and "Invalid file: %s \n" for every 0x48-byte entry of the +0x594 vector
     virtual void vfunc129();
     void vfunc103();	// as in CPhysConstraint (transplant)
     void vfunc104();	// as in CPhysConstraint (transplant)
