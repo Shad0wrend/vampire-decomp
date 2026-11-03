@@ -399,6 +399,17 @@ void CSceneEntity::vfunc260(int unused, void *pEvent, const char *pszTarget, int
 }
 // END FUNCTION
 
+// FUNCTION: 0x100818d0 size=0x1f
+#include "CSceneEntity.h"
+#include "CAI_BaseNPC.h"
+
+void CSceneEntity::vfunc261(int unused, CSceneEventActorEnt *pActor, CBaseEntity *pEnt, int d, int e)
+{
+	if (pActor->m_pNPC94 && pEnt)
+		((CAI_BaseNPC *)pActor->m_pNPC94)->sub_10279cc0(pEnt);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10081900 size=0x3d
 #include "CSceneEntity.h"
 #include "CBaseFlex.h"
