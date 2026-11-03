@@ -303,6 +303,22 @@ void __stdcall sub_100815a0(int a1, CVirtObj100815a0 *pObj, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100815d0 size=0x34
+#include "CSceneEntity.h"
+#include "CAI_BaseNPC.h"
+
+// TARGET: CSceneEntity::vfunc258
+void CSceneEntity::vfunc258(int a1, int a2, int a3, int a4, int a5)
+{
+	if (a2 && a3)
+	{
+		CAI_BaseNPC *pNPC = *(CAI_BaseNPC **)(a2 + 0x94);
+		if (pNPC)
+			pNPC->vfunc536(a3, a4, 0x3e4ccccd, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10081620 size=0xad
 #include "CBaseEntity.h"
 #include "CSceneEntity.h"

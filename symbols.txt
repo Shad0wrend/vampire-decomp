@@ -4470,6 +4470,7 @@
 0x10007d8d func   ?sub_102c7210@@YAXXZ sub_102c7210
 0x10007d97 func   ?vfunc124@CBaseAnimating@@UAEHXZ CBaseAnimating::vfunc124
 0x10007d97 func   ?vfunc124@CVampireProjectile@@UAEHXZ CVampireProjectile::vfunc124
+0x10007da1 func   ?vfunc258@CSceneEntity@@UAEXHHHHH@Z CSceneEntity::vfunc258
 0x10007da6 func   ?sub_10040220@CBaseEntity@@QAEXXZ CBaseEntity::sub_10040220
 0x10007dab func   ?sub_102bf310@CUnkTroika102bf310@@QAEXH@Z CUnkTroika102bf310::sub_102bf310
 0x10007dba func   ?sub_10218710@CBaseTerminal@@QAEHH@Z CBaseTerminal::sub_10218710
