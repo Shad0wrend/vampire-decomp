@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10247ba0 size=0x19
+#include "CUnknown10248a50.h"
+
+// TARGET: CUnknown10248a50::CUnknown10248a50
+CUnknown10248a50::CUnknown10248a50(const char *pszName)
+{
+	m_pszName = 0;
+	sub_10247cf0(pszName);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10247da0 size=0x57
 #include "CUnknown10248a50.h"
 
