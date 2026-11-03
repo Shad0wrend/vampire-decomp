@@ -109,7 +109,8 @@ public:
 	EVS(231)
 	virtual void slot232(int a);	// "UpdatePhysicsShadow"
 	virtual int slot233(CEntityVSlots **pOut, int nMax);	// fills the array with the entities it touches / carries, answers their count
-	EVS(234) EVS(235) EVS(236) EVS(237) EVS(238) EVS(239)
+	EVS(234) EVS(235) EVS(236) virtual int slot237();	// PhysicsSolidMaskForEntity (the mask a trace uses)
+	EVS(238) EVS(239)
 	EVS(240) virtual char slot241(); EVS(242)
 	virtual void slot243(int a, int b);	// door: starts the open / close movement
 	virtual void slot244(int a);	// door: starts the toggle movement
