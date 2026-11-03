@@ -7,6 +7,8 @@ class CRopeKeyframe : public CBaseEntity
 public:
 	CRopeKeyframe *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
+	char vfunc86(int a, int b, int c, int d, int e);	// slot 86: sets +0x450 when clear, else CBaseEntity::vfunc86
+	char sub_100ab020(int a, int b, int c, int d, int e);	// CBaseEntity::vfunc86 (stub 0x1000e002), called directly
 	CRopeKeyframe *sub_1019dc80();	// as in CKeepUpright (transplant)
 	virtual bool vfunc110(const char *szKeyName, const char *szValue);	// slot 110 "CRopeKeyframe::KeyValue": the Breakable / Collide / Barbed keys set the rope flag bits 0x10 / 4 / 2 for a value of 1, Dangling 1 clears bit 1 of +0x478 (and answers true), Type picks the segment count (0 -> 10, 1 -> 4, else 2), RopeShader the cable material; everything else (and the flag keys) go on to CBaseEntity::KeyValue
 	virtual void vfunc104();	// slot 104 "Precache": appends ".vmt" to the material name at +0x488 when it lacks it, then precaches it (index at +0x46c)
@@ -32,7 +34,9 @@ public:
 	void sub_1000a84e(int a, int b, CRopeKeyframe *pStop, struct RopeVec3 v);
 	void sub_1000a84e(int a, int b, CRopeKeyframe *pStop, int x, int y, int z);	// the jump stub of sub_1019ebc0, used by its recursive call
 
-	char m_padRope03e0[0x454 - 0x3e0];
+	char m_padRope03e0[0x450 - 0x3e0];
+	bool m_b450;	// 0x450: set by vfunc86
+	char m_padRope0451[0x454 - 0x451];
 	unsigned int m_nRopeFlags;	// 0x0454: bit 6 (0x40) is cleared by Create
 	const char *m_pszName458;	// 0x0458: compared case-insensitively with the entity name by sub_1019ee40
 	int m_n45c;	// 0x045c
