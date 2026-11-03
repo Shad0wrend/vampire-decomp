@@ -8,6 +8,7 @@ class CPlayerEventsManager
 {
 public:
 	void vfunc2();	// slot 2: the Purge of the vector at +0x08
+	void vfunc5();	// slot 5: the same Purge of the vector at +0x08
 
 	char m_pad0000[8];
 	void *m_pMemory;	// 0x08
