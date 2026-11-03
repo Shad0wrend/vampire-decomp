@@ -12,6 +12,7 @@ public:
 	void vfunc243(unsigned int flag);
 	void vfunc246(int a);	// slot 246: sets bit 0 of the flag word at +0x204 when it is clear
 	void vfunc247(int a);	// slot 247: sets bit 1 of the flag word at +0x204 when it is clear
+	void vfunc248(int a);	// slot 248: clears bit 0 of the flag word at +0x204 when it is set
 	virtual void vfunc113();	// slot 113 (Activate): looks the filter entity (name at +0x560) up and keeps its handle at +0x564 (-1 when not found), then CBaseEntity::vfunc113
 	virtual int vfunc124();	// slot 124 (debug text overlays): adds the line "State: Enabled" / "State: Disabled" when the debug bit 0 of the byte at +0x224 is set; returns the next free line
 	void vfunc174(CBaseEntity *pOther);	// slot 174 "CBaseTrigger::StartTouch"-like: when PassesTriggerFilters(pOther) the output at +0x568 fires (activator pOther) through stub 0x10010794
