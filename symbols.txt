@@ -11258,6 +11258,7 @@
 0x1001208f func   ?sub_10193100@CContestedFields10193100@@QAEHH@Z CContestedFields10193100::sub_10193100
 0x10012094 func   ?sub_100e84e0@@YG_NHPAD@Z sub_100e84e0
 0x10012099 func   ?vfunc243@CBaseFire@@QAEXH@Z CBaseFire::vfunc243
+0x1001209e func   ?vfunc0@?$CUtlVectorDataOps@V?$CUtlVector@Uthinkfunc_t@@V?$CUtlMemory@Uthinkfunc_t@@@@@@$08@@UAEXPAX0@Z CUtlVectorDataOps<CUtlVector<thinkfunc_t,CUtlMemory<thinkfunc_t> >,9>::vfunc0
 0x100120a3 func   ?vfunc138@CNPC_VNewscaster@@UAEHXZ CNPC_VNewscaster::vfunc138
 0x100120a8 func   ?sub_101dbc60@CUnknown101dbc60@@QAEXXZ CUnknown101dbc60::sub_101dbc60
 0x100120b2 func   ?vfunc5@CMultiSource@@QAEPAV1@I@Z CMultiSource::vfunc5
