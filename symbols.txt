@@ -4380,6 +4380,7 @@
 0x10007ce8 func   ?vfunc313@CBaseCombatWeapon@@UAEDXZ CBaseCombatWeapon::vfunc313
 0x10007ced func   ?vfunc433@CNPC_VGargoyle@@QAEXXZ CNPC_VGargoyle::vfunc433
 0x10007cf2 func   ?vfunc315@CBaseCombatWeapon@@UAE_NXZ CBaseCombatWeapon::vfunc315
+0x10007cf7 func   ?sub_1027c790@Helper@@QAEPAXE@Z Helper::sub_1027c790
 0x10007cfc func   ?sub_101388c0@@YAHH@Z sub_101388c0
 0x10007d01 func   ?sub_10075d00@@YIPBDPAVCUnknown10075aa0@@@Z sub_10075d00
 0x10007d06 func   ?sub_101d15f0@CUnknown101d1460@@QAEXPAVCBaseEntity@@@Z CUnknown101d1460::sub_101d15f0
