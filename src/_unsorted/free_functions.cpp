@@ -64643,6 +64643,34 @@ void CAI_BaseNPC::sub_10156580(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101565c0 size=0x50
+void *sub_1000db89(int);
+struct GP;
+void __fastcall sub_1000d27e(GP *);
+extern int vt_1046e23c;
+extern char g_1057ffd4[];
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+struct GP {
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	virtual void k0(); virtual void k1(); virtual void k2(); virtual void k3(); virtual void k4(); virtual void k5();
+	virtual void name(const char *s);
+};
+// TARGET: prop_ragdoll_attached
+extern "C" GP *prop_ragdoll_attached()
+{
+	GP *p = (GP *)sub_1000db89(0x1064);
+	if (p) {
+		sub_1000d27e(p);
+		*(int **)p = &vt_1046e23c;
+		*((char *)p + 0x105c) = 0;
+	} else {
+		p = 0;
+	}
+	p->name(g_1057ffd4);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10156810 size=0x108
 #include "SendProp.h"
 
