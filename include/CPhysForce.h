@@ -20,6 +20,11 @@ struct CPhysForceMotion
 	CPhysForceVec3 m_vEnd2;	// 0x2c
 };
 
+// The real class of the record at +0x464 (RTTI .?AVCConstantForceController@@, vftable 0x104454b8).
+struct CConstantForceController : public CPhysForceMotion
+{
+};
+
 // The controller object whose pointer sits at +0x450 of CPhysForce (class not known): its slot 1 takes the motion record.
 class CPhysForceController
 {
@@ -53,7 +58,7 @@ public:
 	char m_pad0458[0x45c - 0x458];
 	float m_flTimeout;	// 0x45c
 	unsigned int m_hAttached;	// 0x460: handle of the attached entity
-	CPhysForceMotion m_Motion;	// 0x464
+	CConstantForceController m_Motion;	// 0x464
 public:
     virtual datamap_t * vfunc82();
 public:
