@@ -52,3 +52,34 @@ void CPositionInterpolator_Rope::vfunc2(int index, const Vector *pPos)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x1012fff0 size=0xb5
+#include "CPositionInterpolator_Rope.h"
+extern "C" {
+int _strcmpi(const char *, const char *);
+double atof(const char *);
+int atoi(const char *);
+}
+
+char CPositionInterpolator_Rope::vfunc4(const char *pKey, const char *pValue)
+{
+	if (!_strcmpi(pKey, "Slack")) {
+		float t0 = atof(pValue) - 100.0;
+		m_bChanged = 1;
+		m_flSlack = (t0);
+		return 1;
+	}
+	if (!_strcmpi(pKey, "Type")) {
+		unsigned int type = atoi(pValue);
+		if (type == 0)
+			m_nType = 10;
+		else if ((int)type == 1)
+			m_nType = 4;
+		else
+			m_nType = 2;
+		m_bChanged = 1;
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
