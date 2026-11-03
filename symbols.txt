@@ -12574,6 +12574,7 @@
 0x10013f9d func   ?sub_101f28a0@CUnk101f28a0@@QAEHHH@Z CUnk101f28a0::sub_101f28a0
 0x10013fa2 func   ?sub_103f57e0@CBaseMoneyObjectFwd@@QAEXHH@Z CBaseMoneyObjectFwd::sub_103f57e0
 0x10013fa7 func   ?sub_103bf200@CUnknown103bf200@@QAEXH@Z CUnknown103bf200::sub_103bf200
+0x10013fa7 func   ?sub_103bf200@CUnknown103bf200@@QAEXVCBaseHandle@@@Z CUnknown103bf200::sub_103bf200
 0x10013fac func   ?sub_100c56a0@@YAMHHH@Z sub_100c56a0
 0x10013fb1 func   ?sub_10063d70@@YAHXZ sub_10063d70
 0x10013fb6 func   ?vfunc516@CNPC_VMingXiao@@UAEMXZ CNPC_VMingXiao::vfunc516
