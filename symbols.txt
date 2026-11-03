@@ -7100,6 +7100,7 @@
 0x1000bb7c func   ?vfunc82@CLogicCompareInteger@@UAEPAUdatamap_t@@XZ CLogicCompareInteger::vfunc82
 0x1000bb81 func   ?vfunc2@CPhysicsHook@@QAEXXZ CPhysicsHook::vfunc2
 0x1000bb86 func   ?sub_101aa7d0@CPayphone@@QAEEXZ CPayphone::sub_101aa7d0
+0x1000bb90 func   ?vfunc314@CBaseCombatCharacter@@QAEXM@Z CBaseCombatCharacter::vfunc314
 0x1000bb95 func   ?sub_10401f80@@YAHXZ sub_10401f80
 0x1000bb9a func   ?sub_101e10e0@CUnknown101e0f00@@QAE_NPBDPAH@Z CUnknown101e0f00::sub_101e10e0
 0x1000bb9f func   ?vfunc611@CPayphone@@QAEHXZ CPayphone::vfunc611

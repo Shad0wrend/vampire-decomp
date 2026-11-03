@@ -66,6 +66,74 @@ float CBaseCombatCharacter::vfunc344()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10054060 size=0x1fd
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+
+struct ShakyHandsParam_t
+{
+	float m_flRandom[2];
+	float m_flPeriod;
+	float m_flApproachSpeed;
+};
+extern const ShakyHandsParam_t g_1053e3b8[3];
+
+float sub_1013d450(float target, float value, float speed);
+float sub_1013d650(float angle);
+
+void CBaseCombatCharacter::vfunc314(float flDeltaTime)
+{
+	ScopeTrace trace("CBaseCombatCharacter::UpdatePoseParameters",
+		this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+
+	if (m_flShakyEnd1048 > gpGlobals->curtime)
+	{
+		if (g_1053e3b8[m_nShakyIndex1044].m_flPeriod + m_flShakyTime104c < gpGlobals->curtime)
+		{
+			for (int i = 0; i < 2; i++)
+			{
+				m_flShakyOffset1054[i] = enginerandom->vfunc1(-g_1053e3b8[m_nShakyIndex1044].m_flRandom[i], g_1053e3b8[m_nShakyIndex1044].m_flRandom[i]);
+			}
+			m_flShakyTime104c = gpGlobals->curtime;
+		}
+		flDeltaTime *= g_1053e3b8[m_nShakyIndex1044].m_flApproachSpeed;
+		int nSame = 0;
+		for (int i = 0; i < 2; i++)
+		{
+			float flTarget = m_flShakyOffset1054[i] * m_flShakyIntensity1050 + m_flPoseValue[i];
+			if (flTarget != m_flPoseCurrent105c[i])
+				m_flPoseCurrent105c[i] = sub_1013d650(sub_1013d450(flTarget, m_flPoseCurrent105c[i], flDeltaTime));
+			else
+				nSame++;
+		}
+		if (nSame == 2)
+			m_flShakyTime104c = 0;
+	}
+	else
+	{
+		flDeltaTime *= 180.0f;
+		m_flShakyTime104c = 0;
+		m_nShakyIndex1044 = -1;
+		for (int i = 0; i < 2; i++)
+		{
+			if (m_flPoseValue[i] != m_flPoseCurrent105c[i])
+				m_flPoseCurrent105c[i] = sub_1013d650(sub_1013d450(m_flPoseValue[i], m_flPoseCurrent105c[i], flDeltaTime));
+		}
+	}
+
+	for (int i = 0; i < 2; i++)
+		sub_10091fe0(m_nPoseIndex[i], m_flPoseCurrent105c[i]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10105f30 size=0xd5
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
