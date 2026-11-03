@@ -3410,6 +3410,7 @@
 0x10006320 func   ?sub_102ca2a0@CAI_CsActList@@QAEXHPAVCBaseEntity@@MMMHM00D@Z CAI_CsActList::sub_102ca2a0
 0x10006325 func   ?sub_101f11f0@CUnknown101f0e50@@QAE_NPAX@Z CUnknown101f0e50::sub_101f11f0
 0x1000632f func   ?sub_1007a340@@YGHH@Z sub_1007a340
+0x10006334 func   ?sub_10307c50@CUnknown10307c50@@QAEPAU1@XZ CUnknown10307c50::sub_10307c50
 0x10006339 func   ?vfunc367@CBaseCombatCharacter@@QAE?AVQAngle@@XZ CBaseCombatCharacter::vfunc367
 0x10006343 func   ?sub_10251ff0@CBaseCombatWeapon@@QAEHXZ CBaseCombatWeapon::sub_10251ff0
 0x10006348 func   ?sub_1022c860@CPropRadio@@QAEXPAUinputdata_t@@@Z CPropRadio::sub_1022c860

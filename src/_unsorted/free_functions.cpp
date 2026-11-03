@@ -156324,6 +156324,20 @@ int CUnk10307c20::sub_10307c20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10307c50 size=0x8
+struct CUnknown10307aa0 { int sub_10307aa0(); };
+int CUnknown10307aa0::sub_10307aa0()
+{
+    *(int *)this = -1;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 0xc) = 0;
+    return 0;
+}
+struct CUnknown10307c50 : CUnknown10307aa0 { CUnknown10307c50 *sub_10307c50(); };
+// TARGET: CUnknown10307c50::sub_10307c50
+CUnknown10307c50 *CUnknown10307c50::sub_10307c50() { sub_10307aa0(); return this; }
+// END FUNCTION
+
 // FUNCTION: 0x10307d00 size=0x16
 extern int g_109363f8;
 void sub_10307e00();
