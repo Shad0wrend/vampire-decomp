@@ -4663,6 +4663,7 @@
 0x100081b1 func   ?sub_101d5d20@CUnknown101d5bd0@@QAEHPBDH@Z CUnknown101d5bd0::sub_101d5d20
 0x100081b6 func   ?sub_10075e20@CUnknown10075e20@@QAEXM@Z CUnknown10075e20::sub_10075e20
 0x100081bb func   ?sub_102e8ac0@@YIXPAD@Z sub_102e8ac0
+0x100081c0 func   ?sub_10272f40@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_10272f40
 0x100081c5 func   ?vfunc17@CSoundControllerImp@@UAEXH@Z CSoundControllerImp::vfunc17
 0x100081ca func   ?vfunc133@CSecCamera@@UAEXXZ CSecCamera::vfunc133
 0x100081d4 func   ?vfunc104@CNPCMaker_Zombie@@UAEXXZ CNPCMaker_Zombie::vfunc104

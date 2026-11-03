@@ -135115,6 +135115,50 @@ CBaseEntity *CAI_BaseNPC::sub_102729d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10272f40 size=0xe5
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
+#include "CBaseAnimating.h"
+#include "IPhysicsObject.h"
+#include "Ent.h"
+
+// TARGET: CAI_BaseNPC::sub_10272f40
+float sub_100c65b0(void *pModel);
+extern float g_104454c4;
+
+void CAI_BaseNPC::sub_10272f40()
+{
+	CBaseEntity *pEnt = (CBaseEntity *)this;
+
+	if (pEnt->vfunc94() == 7)
+		return;
+
+	if (pEnt->m_obj36c)
+		vfunc225();
+
+	pEnt->sub_100a6150(1, 0, 0);
+
+	IPhysicsObject *pPhys = (IPhysicsObject *)pEnt->m_obj36c;
+	if (!pPhys)
+		return;
+
+	float flMass = sub_100c65b0(((CBaseAnimating *)this)->sub_100952d0(-1));
+	if (flMass > g_104454c4)
+	{
+		pPhys->vfunc11(flMass);
+	}
+	else
+	{
+		float flOther = (float)(((Ent *)this)->sub_10336920() ? 0x5a : 0x41);
+		pPhys->vfunc11(flOther);
+	}
+
+	IPhysicsShadowController *pShadow = pPhys->vfunc48();
+	double flSpeed = (vfunc214()[1] + vfunc214()[0]) * 0.5;
+	pShadow->vfunc4((float)(flSpeed * 0.5));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10273180 size=0x5c
 #include "CAI_BaseNPC.h"
 
