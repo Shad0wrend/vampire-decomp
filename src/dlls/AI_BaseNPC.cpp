@@ -1,6 +1,33 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1026d050 size=0x4f
+struct SSquadView { void sub_10316700(void *pNPC); };
+struct SDbgSink { void sub_102dfc10(const char *); };
+extern SDbgSink *g_109203f0;
+char *__cdecl sub_101d3730(const char *, const char *, int);
+
+struct SNpcView5bb0 {
+    char pad[0x5bb0];
+    int m_n5bb0;
+    char pad2[0x5da4 - 0x5bb4];
+    void *m_p5da4;
+    void sub_1026d050();
+};
+
+// TARGET: SNpcView5bb0::sub_1026d050
+void SNpcView5bb0::sub_1026d050()
+{
+    if (m_n5bb0 <= 0) {
+        SSquadView *pSquad = *(SSquadView **)&m_p5da4;
+        if (pSquad)
+            pSquad->sub_10316700(this);
+        g_109203f0->sub_102dfc10(sub_101d3730("%s(%d) :", "E:\\Vampire\\main\\dlls\\AI_BaseNPC.cpp", 0xf36));
+    }
+    ++m_n5bb0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026d7b0 size=0x21
 namespace lifted {
 extern char g_105cb988;
