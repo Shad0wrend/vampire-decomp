@@ -13,6 +13,16 @@ datamap_t * CPhysForce::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100264e0 size=0x32
+#include "CPhysForce.h"
+
+// TARGET: CPhysForce::CPhysForce
+CPhysForce::CPhysForce() : CBaseEntity(0), m_hAttached(-1)
+{
+	m_pController = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027670 size=0x1
 #include "CPhysForce.h"
 void CPhysForce::vfunc242()
