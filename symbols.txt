@@ -1325,6 +1325,7 @@
 0x100030da func   ?sub_101e7d30@CUnknown101e7d30@@QAEMXZ CUnknown101e7d30::sub_101e7d30
 0x100030df func   ?vfunc404@CNPC_VHunter@@QAEHPAVCBaseEntity@@@Z CNPC_VHunter::vfunc404
 0x100030e4 func   ?sub_103360a0@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_103360a0
+0x100030e9 func   ?sub_1027d000@Helper@@QAEPAXE@Z Helper::sub_1027d000
 0x100030ee func   ?vfunc422@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc422
 0x100030f3 func   _game_ui game_ui
 0x100030f8 func   ?sub_10182c40@CAI_BaseNPC@@QAEXPBD0@Z CAI_BaseNPC::sub_10182c40
