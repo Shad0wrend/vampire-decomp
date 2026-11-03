@@ -12746,6 +12746,7 @@
 0x10014aa6 func   ?sub_101dcb50@@YIXPAX@Z sub_101dcb50
 0x10014aab func   ?sub_1014f8d0@@YIXPAX@Z sub_1014f8d0
 0x10014ab0 func   ??0CVDmg_t@@QAE@XZ CVDmg_t::CVDmg_t
+0x10014ab5 func   ?vfunc435@CBasePlayer@@QAEXXZ CBasePlayer::vfunc435
 0x10014aba func   ?sub_1042ba20@CUnknown1042ba20@@QAEHXZ CUnknown1042ba20::sub_1042ba20
 0x10014abf func   ?sub_103f01b0@@YG_NPAD@Z sub_103f01b0
 0x10014ace func   ?sub_10230280@@YAXPAUR@@H@Z sub_10230280

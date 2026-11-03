@@ -1248,6 +1248,16 @@ void CBasePlayer::vfunc434()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016a9b0 size=0x1f
+#include "CBasePlayer.h"
+
+void CBasePlayer::vfunc435()
+{
+	if ((m_nFlags2088 & 4) && m_nFEC != 0x2c)
+		vfunc449(1, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016a9e0 size=0x6
 // TARGET: CBasePlayer::vfunc138
 int CBasePlayer::vfunc138()
