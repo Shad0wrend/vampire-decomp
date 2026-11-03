@@ -53,6 +53,21 @@ int CWeaponIArmor::vfunc363()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f3f50 size=0x1e
+#include "CWeaponIArmor.h"
+
+void sub_100aa7b0(void *p);
+
+// TARGET: CWeaponIArmor::vfunc5
+CWeaponIArmor *CWeaponIArmor::vfunc5(int flags)
+{
+	sub_10013a57();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f3fc0 size=0x1
 #include "CWeaponIArmor.h"
 void CWeaponIArmor::vfunc291()

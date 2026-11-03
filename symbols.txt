@@ -11267,6 +11267,7 @@
 0x100126a2 func   ?sub_10427700@CUnknown10427700@@QAE_NPBDHH@Z CUnknown10427700::sub_10427700
 0x100126ac func   ?sub_10316400@@YGDHH@Z sub_10316400
 0x100126b1 func   ?vfunc452@CBasePlayer@@UAE_NPBD@Z CBasePlayer::vfunc452
+0x100126b6 func   ?vfunc5@CWeaponIArmor@@QAEPAV1@H@Z CWeaponIArmor::vfunc5
 0x100126bb func   ?vfunc134@CEnvShake@@UAEXXZ CEnvShake::vfunc134
 0x100126c5 func   ?vfunc117@CGeneric_NPC_bathack@@UAEHXZ CGeneric_NPC_bathack::vfunc117
 0x100126ca func   ?sub_10174f80@CPlayerUnit@@QAEHXZ CPlayerUnit::sub_10174f80
