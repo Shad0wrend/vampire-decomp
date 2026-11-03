@@ -5,6 +5,10 @@
 class CWeaponMelee_Tzimisce3Claw
 {
 public:
+	char m_pad0000[0x871];
+	char m_b871;
+	void sub_100047be();	// CBaseCombatWeapon::vfunc103 (stub), called directly
+	void vfunc103();
 	CWeaponMelee_Tzimisce3Claw *vfunc5(unsigned int flags);
 	void sub_10013a57();
 	char vfunc372(int a, int b, int c);	// slot 372 (plain member): the swing activity 0x4b becomes 0x4e while the owner's info block at +0x94 has its byte +0x5f2c clear
