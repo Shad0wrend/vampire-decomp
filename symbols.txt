@@ -5762,6 +5762,7 @@
 0x1000a178 func   ?sub_101e0040@CUnknown101e0040@@QAEPAV1@XZ CUnknown101e0040::sub_101e0040
 0x1000a182 func   ?vfunc0@CTETParticleHUD@@UAEPAUServerClass@@XZ CTETParticleHUD::vfunc0
 0x1000a187 func   ?sub_10368480@@YIPAXPAX@Z sub_10368480
+0x1000a18c func   ?vfunc413@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc413
 0x1000a191 func   ?sub_1019e310@CRopeKeyframe@@QAEXXZ CRopeKeyframe::sub_1019e310
 0x1000a196 func   ?sub_10399ef0@@YG_NPAXHPAD11H@Z sub_10399ef0
 0x1000a19b func   _ai_goal_standoff ai_goal_standoff
