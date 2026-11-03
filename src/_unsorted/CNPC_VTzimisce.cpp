@@ -873,6 +873,21 @@ void CNPC_VTzimisce::vfunc434()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103be010 size=0x2a
+#include "CNPC_VTzimisce.h"
+#include "CUnknown10381be0.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VTzimisce::vfunc144
+void CNPC_VTzimisce::vfunc144(int a)
+{
+	if (((CUnknown10381be0 *)this)->sub_103be130())
+		sub_103bf170();
+	sub_103bdfc0();
+	((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc144(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103bf580 size=0x70
 #include "CNPC_VTzimisce.h"
 
