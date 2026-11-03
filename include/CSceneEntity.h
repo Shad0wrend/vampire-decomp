@@ -103,7 +103,7 @@ public:
 	virtual void vfunc249(float a, int b, CSceneEvent *pEvent);	// slot 249 (event finished): logs "%8.4f:  finish %s", then by the event's type hands (b, actor entity of the event, pEvent) to slot 253 (type 2), 255 (10), 257 (6) or 263 (7); a type 11 event sorts the events of its sub-scene (sub_1007cfc0(1, 0, 0))
 	virtual void vfunc250(float a, int b, int c);
 	virtual char vfunc251(float a, int b, CSceneEvent *pEvent);	// slot 251: resolves the actor of the event through slot 267 (Warning "CSceneEntity unable find actor" and true when it is unknown); false when the event is of type 4 and the actor's NPC (+0x94) has its navigator (+0x5d34) answering sub_10012963, else true
-	SCENE_V(252)
+	virtual void vfunc252(int b, CBaseFlex *pActor, CSceneEvent *pEvent);
 	virtual void vfunc253(int b, CSceneEventActorEnt *pActor, CSceneEvent *pEvent);	// slot 253: the finish handler of a type 2 event
 	SCENE_V(254)
 	virtual void vfunc255(int b, CSceneEventActorEnt *pActor, CSceneEvent *pEvent);	// slot 255: the finish handler of a type 10 event
