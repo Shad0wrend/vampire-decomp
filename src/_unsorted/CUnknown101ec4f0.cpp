@@ -12,3 +12,16 @@ CUnknown101ec4f0::CUnknown101ec4f0(int id)
 	m_n14 = 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101ec520 size=0x1c
+#include "CUnknown101ec4f0.h"
+
+CUnknown101ec4f0::~CUnknown101ec4f0()
+{
+	if (m_n14)
+	{
+		::operator delete((void *)m_n14);
+		m_n14 = 0;
+	}
+}
+// END FUNCTION
