@@ -9024,6 +9024,7 @@
 0x1000e8d6 func   ??0CVStatAction_t@@QAE@HH@Z CVStatAction_t::CVStatAction_t
 0x1000e8db func   ?sub_101e3df0@CUnknown101e3df0@@QAEXPAUCUnknown101e3cfObj@@@Z CUnknown101e3df0::sub_101e3df0
 0x1000e8e0 func   ?vfunc0@CLocalDLLChain@@UAEXPAVCLocalDLLChainVisitor@@@Z CLocalDLLChain::vfunc0
+0x1000e8e5 func   ?vfunc572@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc572
 0x1000e8ea func   ?vfunc461@CNPC_VSheriffSwarm@@UAEHXZ CNPC_VSheriffSwarm::vfunc461
 0x1000e8ef func   ?sub_1027f8f0@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_1027f8f0
 0x1000e8fe func   ?sub_10247240@CUnknown10247240@@QAEXHHH@Z CUnknown10247240::sub_10247240

@@ -1459,6 +1459,93 @@ int CAI_BaseNPCTroika::vfunc569(CBaseEntity *pHint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10297640 size=0x251
+// TARGET: CAI_BaseNPCTroika::vfunc572
+
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_Motor.h"
+#include "ConVar.h"
+
+extern ConVar *g_109247ec;
+
+void CAI_BaseNPCTroika::vfunc572()
+{
+	if ((!g_109247ec->vfunc1() && g_109247ec->m_nValue != 0) || *(char *)((char *)this + 0x65f9) != 0)
+	{
+		float flValue = (*(CAI_Motor **)((char *)this + 0x5d44))->sub_102e1f90();
+
+		if (flValue <= -70.0f && flValue >= -140.0f)
+		{
+			if (sub_10295460(0xa2, 0) != -1)
+			{
+				m_flags5d8c |= 0x2000;
+				sub_10272650(0xa2);
+				return;
+			}
+		}
+		if (flValue >= 70.0f && flValue <= 140.0f)
+		{
+			if (sub_10295460(0xa1, 0) != -1)
+			{
+				m_flags5d8c |= 0x2000;
+				sub_10272650(0xa1);
+				return;
+			}
+		}
+		if (flValue < -140.0f)
+		{
+			if (sub_10295460(0x9e, 0) != -1)
+			{
+				m_flags5d8c |= 0x2000;
+				sub_10272650(0x9e);
+				return;
+			}
+			if (sub_10295460(0x9d, 0) != -1)
+			{
+				m_flags5d8c |= 0x2000;
+				sub_10272650(0x9d);
+				return;
+			}
+		}
+		if (flValue > 140.0f)
+		{
+			if (sub_10295460(0x9d, 0) != -1)
+			{
+				m_flags5d8c |= 0x2000;
+				sub_10272650(0x9d);
+				return;
+			}
+			if (sub_10295460(0x9e, 0) != -1)
+			{
+				m_flags5d8c |= 0x2000;
+				sub_10272650(0x9e);
+				return;
+			}
+		}
+		if (flValue <= -15.0f)
+		{
+			if (sub_10295460(0x3c, 0) != -1)
+			{
+				m_flags5d8c |= 0x2000;
+				sub_10272650(0x3c);
+				return;
+			}
+		}
+		if (flValue >= 15.0f)
+		{
+			if (sub_10295460(0x3b, 0) != -1)
+			{
+				m_flags5d8c |= 0x2000;
+				sub_10272650(0x3b);
+				return;
+			}
+		}
+	}
+
+	sub_10272650(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10298ce0 size=0x32
 #include "CAI_BaseNPCTroika.h"
 #include "CUnknown100ecee0.h"
