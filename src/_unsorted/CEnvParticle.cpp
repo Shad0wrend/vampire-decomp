@@ -47,6 +47,52 @@ CEnvParticle *CEnvParticle::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fb110 size=0xa2
+#include "CEnvParticle.h"
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "string_t.h"
+extern CGlobalEntityList *g_10566458;
+
+struct CHandleX {
+    unsigned int m_Index;
+    CBaseEntity *Get() const
+    {
+        if (m_Index != 0xffffffff) {
+            CGlobalEntityList_Slot *s = &g_10566458->m_Slots[m_Index & 0x1fff];
+            if (s->m_Serial == (int)(m_Index >> 13))
+                return (CBaseEntity *)s->m_pEntity;
+        }
+        return 0;
+    }
+};
+
+#define D(n) virtual void n();
+#define D10(p) D(p##0) D(p##1) D(p##2) D(p##3) D(p##4) D(p##5) D(p##6) D(p##7) D(p##8) D(p##9)
+struct CEntitySlotsX {
+    D10(a0) D10(a1) D10(a2) D10(a3) D10(a4) D10(a5) D(b60) D(b61) D(b62)
+    virtual void vfunc63(int a, int b, int c);
+};
+
+struct CBaseEntityX : CBaseEntity {
+    void sub_100a0670(CBaseEntity *pParent, int nAttachment);
+};
+
+string_t sub_10002095(const char *psz);
+int sub_100fafa0(CBaseEntity *pEnt, int nType, const char *pszName);
+
+void CEnvParticle::vfunc243(CBaseEntity *pEntArg, int nType, const char *pszName)
+{
+    ((CBaseEntityX *)this)->sub_100a0670(pEntArg, 0);
+    *(int *)((char *)this + 0x458) = nType;
+    *(string_t *)((char *)this + 0x45c) = sub_10002095(pszName);
+    ((CBaseEntity *)this)->vfunc93(0xb, 0);
+    ((CBaseEntity *)this)->sub_1009ee80(((CHandleX *)&m_hAttachEntity)->Get());
+    ((CEntitySlotsX *)this)->vfunc63(0, 0, 0);
+    *(int *)((char *)this + 0x460) = sub_100fafa0(pEntArg, nType, pszName);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fb3d0 size=0x117
 #include "CEnvParticle.h"
 #include "CEntityVSlots.h"
