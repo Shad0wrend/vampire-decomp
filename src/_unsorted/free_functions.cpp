@@ -135794,6 +135794,30 @@ char __fastcall sub_10280db0(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10280de0 size=0x46
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CAI_BaseNPC::sub_10280de0
+void CAI_BaseNPC::sub_10280de0(int condition)
+{
+	int id;
+	if (condition < 1000000000)
+		goto translate;
+	if (condition == -1)
+		goto translate;
+	id = condition;
+	goto done;
+translate:
+	{
+		CAI_CondTable *pTable = (CAI_CondTable *)((CAI_BaseNPCTroika *)this)->vfunc580();
+		id = pTable->sub_102ea2d0(condition);
+	}
+done:
+	*(int *)((char *)this + 0x5c3c) = id;
+	sub_10280e50((void *)sub_102cc1f0(condition));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10280e50 size=0xba
 #include "CAI_BaseNPC.h"
 #include "CUnknown102ee270.h"

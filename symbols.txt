@@ -7321,6 +7321,7 @@
 0x1000c26b func   ?sub_103d0db0@CNPC_VWerewolf@@QAEHUCNPC_VWerewolfVec3@@0@Z CNPC_VWerewolf::sub_103d0db0
 0x1000c270 func   ?vfunc371@CHL2_Player@@UAE?AVVector@@XZ CHL2_Player::vfunc371
 0x1000c275 func   ?sub_101e8e60@CUnknown101e8e60@@QAEHXZ CUnknown101e8e60::sub_101e8e60
+0x1000c27a func   ?sub_10280de0@CAI_BaseNPC@@QAEXH@Z CAI_BaseNPC::sub_10280de0
 0x1000c27f func   ?vfunc315@CElderVitaePack@@QAEDXZ CElderVitaePack::vfunc315
 0x1000c284 func   ?sub_103c8e70@@YAEXZ sub_103c8e70
 0x1000c28e func   ?vfunc180@CFuncMonitor@@QAEXXZ CFuncMonitor::vfunc180
