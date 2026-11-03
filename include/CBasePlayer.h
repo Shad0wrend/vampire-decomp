@@ -210,7 +210,9 @@ public:
 	float m_f6f8;	// 0x06F8
 	char m_pad06FC[0xe98 - 0x6fc];	// 0x06FC .. 0x0E97
 	unsigned int m_flags0E98;	// 0x0E98: the discipline effect mask (bit 0x8000 << i)
-	char m_pad0E9C[0xea4 - 0xe9c];	// 0x0E9C .. 0x0EA3
+	char m_pad0E9C[0xea0 - 0xe9c];
+	char m_b0EA0;	// 0x0EA0
+	char m_pad0EA1[0xea4 - 0xea1];
 	unsigned int m_hEnt0EA4;	// entity handle
 	EHANDLE m_hEnt0EA8;	// 0x0EA8: a second entity handle next to +0xea4 (CWeaponUnarmed::vfunc319 resolves both)
 	char m_pad0EAC[0xfe8 - 0xeac];	// 0x0EA8 .. 0x0FE7
