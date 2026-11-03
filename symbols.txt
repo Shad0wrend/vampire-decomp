@@ -798,6 +798,7 @@
 0x100023bf func   ?sub_101b1fb0@@YAXPBDH@Z sub_101b1fb0
 0x100023c9 func   ?sub_100daec0@@YAXXZ sub_100daec0
 0x100023ce func   ?sub_10087550@@YAHXZ sub_10087550
+0x100023d3 func   ?vfunc422@CNPC_VTzimisce@@QAEXXZ CNPC_VTzimisce::vfunc422
 0x100023dd func   ?vfunc420@CNPC_VBaseBoss@@UAEXXZ CNPC_VBaseBoss::vfunc420
 0x100023e7 func   ?sub_10175290@CBasePlayer@@QAEHXZ CBasePlayer::sub_10175290
 0x100023ec func   ?sub_103e7470@@YAHXZ sub_103e7470

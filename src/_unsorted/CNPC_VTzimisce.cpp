@@ -239,6 +239,20 @@ void CNPC_VTzimisce::vfunc420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b9270 size=0x1a
+#include "CNPC_VTzimisce.h"
+#include "CBaseEntity.h"
+
+void sub_1027fc40();
+
+// TARGET: CNPC_VTzimisce::vfunc422
+void CNPC_VTzimisce::vfunc422()
+{
+	((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc422();
+	((CBaseEntity *)this)->sub_100ac4e0((int)sub_1027fc40, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b92a0 size=0x8f
 #include "CNPC_VTzimisce.h"
 extern CNPC_VTzimisceConVar *g_1093cf94;
