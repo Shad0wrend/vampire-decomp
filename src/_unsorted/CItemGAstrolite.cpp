@@ -20,6 +20,17 @@ int CItemGAstrolite::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f67d0 size=0x11
+#include "CItemGAstrolite.h"
+
+// TARGET: CItemGAstrolite::vfunc103
+void CItemGAstrolite::vfunc103()
+{
+	sub_10008c97();
+	m_b914 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10409be0 size=0x1e
 #include "CItemGAstrolite.h"
 
