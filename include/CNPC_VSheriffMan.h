@@ -20,7 +20,13 @@ public:
 	float m_flAttackStartTime;	// +0x5d9c
 	char pad5da0[0x5ddc - 0x5da0];
 	CEntityVSlots *m_pTarget;	// +0x5ddc: the entity the teleport bats are placed around
-	char pad5de0[0x628c - 0x5de0];
+	char pad5de0[0x6078 - 0x5de0];
+	char m_b6078;	// +0x6078: the ranged-position flag (CAI_BaseNPCTroika::m_b6078)
+	char pad6079[0x626c - 0x6079];
+	float m_fl626c;	// +0x626c
+	char pad6270[0x6274 - 0x6270];
+	float m_fl6274;	// +0x6274: the melee retry timer (-1.0f when unset)
+	char pad6278[0x628c - 0x6278];
 	unsigned int m_hHeightTarget;	// +0x628c: entity handle the height categorisation looks at
 	char pad6290[0x64b8 - 0x6290];
 	float m_flJumpGravity;	// +0x64b8
