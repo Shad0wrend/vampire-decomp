@@ -2103,6 +2103,14 @@ void CBasePlayer::vfunc22(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10182f90 size=0x11
+// TARGET: CBasePlayer::vfunc23
+void CBasePlayer::vfunc23(int a)
+{
+	m_f1DD0 = gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10182fc0 size=0x52
 #include "CBasePlayer.h"
 #include "CBaseEntity.h"

@@ -6425,6 +6425,7 @@
 0x1000b087 func   ?sub_101fcf50@CVStatAction_t@@QAE_NXZ CVStatAction_t::sub_101fcf50
 0x1000b08c func   ?sub_101b5290@CUnit101b5290@@QAEPADH@Z CUnit101b5290::sub_101b5290
 0x1000b09b func   ?sub_102c63b0@CUnknown102c63b0@@QBE_NPAX@Z CUnknown102c63b0::sub_102c63b0
+0x1000b0a0 func   ?vfunc23@CBasePlayer@@QAEXH@Z CBasePlayer::vfunc23
 0x1000b0a5 func   ??0CTriggerDisciplineContext@@QAE@XZ CTriggerDisciplineContext::CTriggerDisciplineContext
 0x1000b0aa func   _npc_VBrujah npc_VBrujah
 0x1000b0b4 func   ?sub_1032e120@CBaseCombatCharacter@@QAEPAXPBD@Z CBaseCombatCharacter::sub_1032e120
