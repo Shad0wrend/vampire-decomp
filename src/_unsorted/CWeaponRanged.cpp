@@ -160,6 +160,19 @@ void sub_102382f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10238350 size=0x12
+namespace lifted {
+extern int g_1088aee4;
+int __stdcall sub_10010ab9(int);
+}
+
+void sub_10238350()
+{
+	lifted::g_1088aee4 = 1;
+	lifted::sub_10010ab9(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10239250 size=0x8
 // TARGET: CWeaponRanged::vfunc329
 void CWeaponRanged::vfunc329()

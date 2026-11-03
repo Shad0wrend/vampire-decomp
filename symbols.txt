@@ -10198,6 +10198,7 @@
 0x10010f55 func   ?sub_1004d220@CPhysicsSpring@@QAEXPAUinputdata_t@@@Z CPhysicsSpring::sub_1004d220
 0x10010f5a func   ?sub_1014c0f0@CUnknown1014c0f0@@QAEHXZ CUnknown1014c0f0::sub_1014c0f0
 0x10010f5f func   ?sub_101371d0@@YANM@Z sub_101371d0
+0x10010f64 func   ?sub_10238350@@YAXXZ sub_10238350
 0x10010f69 func   _gibshooter gibshooter
 0x10010f6e func   ?vfunc291@CWeaponIArmor@@UAEXXZ CWeaponIArmor::vfunc291
 0x10010f78 func   ?sub_100b5080@@YA_NXZ sub_100b5080
