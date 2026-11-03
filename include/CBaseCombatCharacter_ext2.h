@@ -28,7 +28,8 @@
 	int sub_10328380(int a, int b, CBaseCombatCharacter *pOther, int c);	// "CBaseCombatCharacter::TranslateBodyPosition"-like (stub 0x10008a35): scope trace (entity name), a plus bits for the grapple position
 	int sub_10328af0(CBaseCombatCharacter *pOther, int a, int b);	// "CBaseCombatCharacter::CheckAndTranslateGrapplePosition": scope trace (entity name), over two candidate positions returns the first both characters know a sequence for, else -1
 	void sub_10323770();	// "CBaseCombatCharacter::RemoveFromComfortList": scope trace (entity name), removes the entry resolving to this entity from the global handle vector at 0x10937af4 (the first match is memmoved out), then clears the dword at +0xe94
-	int vfunc348();	// slot 348 "CBaseCombatCharacter::HealthToPercent": scope trace (entity name), (a - b) * max health (+0x208) / a with a = stat 0x11 and b = stat 0xf of the active stat list (a - b) / a
+	int vfunc348();	// slot 348 "CBaseCombatCharacter::HealthToPercent": scope trace (entity name), (a - b) * max health (+0x208) / a with a = stat 0x11 and b = stat 0xf of the active stat list
+	char sub_10328df0(CBaseEntity *pTarget, int nType);	// 0x10328df0 "CBaseCombatCharacter::StartGrappleAttack" (scope string 0x1061fbd0, stub 0x1000df99): grapple attack on pTarget, nType selects the translated activity (a - b) / a
 	void sub_103352b0(struct inputdata_t &data);	// "CBaseCombatCharacter::InputInven...": scope trace (entity name), calls sub_10335470 with the entity of the EHANDLE variant (0 stale), nothing when there is none
 	void sub_10335470(void *pEnt);	// worker of sub_103352b0 (stub 0x10013601)
 	void sub_10341370(CBaseCombatCharacter *pPartner, int unused);	// "CBaseCombatCharacter::BarterEnd" (stub 0x1000e020): scope trace (entity name), with a partner: when this has the object at +0xa8 sub_10013070() and sub_10010e60(this), else sub_10013070() on the partner when it has one
