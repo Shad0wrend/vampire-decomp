@@ -72,6 +72,7 @@ public:
 	float m_vecMaxs666c[3];	// 0x666c
 	char m_b6678;	// 0x6678
 public:
+    virtual void vfunc130(int a);	// slot 130 override (0x103a25a0): re-applies the spawn position / angles and solid flags
     virtual datamap_t * vfunc82();
 public:
 	virtual void vfunc134();
