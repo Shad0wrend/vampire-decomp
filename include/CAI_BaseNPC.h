@@ -106,7 +106,8 @@ public:
 	virtual const char *vfunc407(int moveType);	// slot 407 (+0x65c): the name of a move type ("Move: %s, ", asked with the result of sub_1027d990)
 	CAI_NPC_V(408) CAI_NPC_V(409)
 	// slots 410..482
-	CAI_NPC_V(410) CAI_NPC_V(411) CAI_NPC_V(412) CAI_NPC_V(413) CAI_NPC_V(414) CAI_NPC_V(415)
+	virtual int vfunc410(int a);	// slot 410 (ret 4): returns its argument
+	CAI_NPC_V(411) CAI_NPC_V(412) CAI_NPC_V(413) CAI_NPC_V(414) CAI_NPC_V(415)
 	virtual void vfunc416(char value);
 	virtual char vfunc417();	// slot 417 (plain member): returns 0
 	virtual float vfunc418(float a);	// float lookup keyed by magic values (-1000005..-1000008 in the Troika override), else the base value
