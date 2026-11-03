@@ -8400,6 +8400,7 @@
 0x1000de90 func   ?vfunc0@CTraitEffectsListSaveDataOps@@UAEXPAUCTraitEffectsListField@@PAVCSave@@@Z CTraitEffectsListSaveDataOps::vfunc0
 0x1000de95 func   _item_g_bertrams_cd item_g_bertrams_cd
 0x1000de9a func   ?vfunc14@CCollisionProperty@@UAEHXZ CCollisionProperty::vfunc14
+0x1000de9f func   ?sub_104081c0@@YIXPAXHM@Z sub_104081c0
 0x1000dea4 func   ?sub_101f3810@CUnknown101f3d80@@QAE_NXZ CUnknown101f3d80::sub_101f3810
 0x1000dea9 func   ?sub_101fd8c0@@YAXH@Z sub_101fd8c0
 0x1000deae func   ?sub_10061250@CTEEnergySplash@@QAEPAV1@H@Z CTEEnergySplash::sub_10061250

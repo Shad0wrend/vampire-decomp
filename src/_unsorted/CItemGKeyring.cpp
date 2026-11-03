@@ -46,3 +46,13 @@ CItemGKeyring *CItemGKeyring::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x104081c0 size=0xd
+void __fastcall sub_10013593(void *pThis, int dummy, float a);
+
+// TARGET: sub_104081c0
+void __fastcall sub_104081c0(void *pThis, int dummy, float a)
+{
+	sub_10013593(pThis, dummy, a);
+}
+// END FUNCTION
