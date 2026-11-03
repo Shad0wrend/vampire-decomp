@@ -10,6 +10,7 @@ struct CBaseAnimatingRagdoll
 {
 	char m_pad0000[0x56c];
 	int m_n56c;					// 0x56c: toggled 0/1 when a ragdoll force is recorded
+	char m_pad570[4];			// 0x570: padding (m_nIndex574 really sits at 0x574)
 	int m_nIndex574[4];			// 0x574: the four entity indices (-2 unused)
 	float m_flStart584[4];		// 0x584: start times (curtime + delay; -1.0f when already running)
 	float m_flLength594[4];		// 0x594: lengths (-1.0f when already running)
