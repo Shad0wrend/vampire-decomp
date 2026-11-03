@@ -1,4 +1,5 @@
 	int vfunc131();	// slot 131: the engine's slot 35 of the entity's edict
+	void vfunc435();	// slot 435 (plain member)
 	void vfunc338(int a, char b, int c);	// slot 338: CBaseCombatCharacter::AddPreDisciplineEffect (0x1033cc30), a narrow second argument
 	void sub_1033cc30(int a, char b, int c);	// CBaseCombatCharacter::AddPreDisciplineEffect, called directly
 	void sub_101728b0();	// resets +0x20e8 to -1, clears +0x229a / +0x1a84 / +0x1a94, then slot 444
