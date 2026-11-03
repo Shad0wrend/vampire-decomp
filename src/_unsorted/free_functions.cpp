@@ -109595,6 +109595,16 @@ StatDefault3 * __stdcall sub_10207c40(CBaseCombatCharacter *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10207dd0 size=0xd
+void sub_10207c70(int a, float b);
+
+// TARGET: sub_10207dd0
+void sub_10207dd0(int a, float b)
+{
+	sub_10207c70(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10207df0 size=0x4c
 #include "CStatDefault3List.h"
 #include "CBaseCombatCharacter.h"

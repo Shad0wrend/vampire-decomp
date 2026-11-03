@@ -11989,6 +11989,7 @@
 0x100135b1 func   ?sub_1007ed50@CUnknown1007ecf0@@QAEXH@Z CUnknown1007ecf0::sub_1007ed50
 0x100135bb func   ?vfunc72@CNPC_VCamera@@UAE_NH@Z CNPC_VCamera::vfunc72
 0x100135c0 func   ?sub_10224150@@YIXPAUCSlots@@HH@Z sub_10224150
+0x100135ca func   ?sub_10207dd0@@YAXHM@Z sub_10207dd0
 0x100135cf func   ?sub_1034db70@CUnknown1034d620@@QAEPAVCBaseEntity@@XZ CUnknown1034d620::sub_1034db70
 0x100135d4 func   ?sub_102a96f0@@YIXPAUTroikaStub@@@Z sub_102a96f0
 0x100135d9 func   ?sub_10205c70@CVTraitDependencyValue_t@@QAEPAV1@XZ CVTraitDependencyValue_t::sub_10205c70
