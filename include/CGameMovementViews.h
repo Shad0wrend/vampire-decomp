@@ -44,13 +44,18 @@ struct CMoveFlagsView	// the same object as CMoveDataView, data side
 	Vector m_vec3b0;	// 0x3b0: the movement's per-frame velocity, added to / subtracted from the player's
 	char m_pad03bc[0x3e0 - 0x3bc];
 	int m_n03E0;		// 0x3e0: the move type (the same field as CBasePlayer.h's m_n03E0)
-	char m_pad03e4[0x1edc - 0x3e4];
+	char m_pad03e4[0x1488 - 0x3e4];
+	float m_fl1488;		// 0x1488: the punch-angle decay scale (CBaseCombatCharacter::m_flFrenzyRate)
+	char m_pad148c[0x1edc - 0x148c];
 	char m_b1edc;	// 0x1edc: copied by 0x10126cb0 into GetEyeOffset's second argument
 	char m_bDucked;	// 0x1edd: picks the ducked hulls (0x10126cb0 sets it to 1 during the unduck)
 	char m_b1ede;	// 0x1ede
 	char m_pad1edf;
 	float m_fl1EE0;	// 0x1ee0: 1000.0f countdown of the duck transition
-	char m_pad1ee4[0x1f28 - 0x1ee4];
+	char m_pad1ee4[0x1efc - 0x1ee4];
+	Vector m_vecPunchAngle;	// 0x1efc: the view punch angle (CBasePlayer::m_vec1EFC)
+	Vector m_vecPunchAngleVel;	// 0x1f08: its velocity (CBasePlayer::m_vec1F08)
+	char m_pad1f14[0x1f28 - 0x1f14];
 	char m_b1F28;	// 0x1f28: checked before the duck trace (sub_10126fd0)
 	char m_pad1f29[0x20f0 - 0x1f29];
 	unsigned int m_fFlags;	// 0x20f0: bit 5 = observer hull
