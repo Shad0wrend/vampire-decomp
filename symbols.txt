@@ -2882,6 +2882,7 @@
 0x100056fa func   ?sub_1026a0f0@CAI_BaseNPCUnit@@QAEXXZ CAI_BaseNPCUnit::sub_1026a0f0
 0x100056ff func   ?sub_1004dcf0@@YAHXZ sub_1004dcf0
 0x10005704 func   ?vfunc103@CKeepUpright@@UAEXXZ CKeepUpright::vfunc103
+0x10005709 func   ?sub_10279bf0@CAI_BaseNPC@@QAEMXZ CAI_BaseNPC::sub_10279bf0
 0x1000570e func   ?vfunc250@CBaseAnimatingOverlay@@QAEMM@Z CBaseAnimatingOverlay::vfunc250
 0x10005718 func   ?sub_10208b00@CItemContainer@@QAEXXZ CItemContainer::sub_10208b00
 0x1000571d func   ?sub_100b12e0@CBaseEntity@@QAEXD@Z CBaseEntity::sub_100b12e0

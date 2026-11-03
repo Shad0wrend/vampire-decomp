@@ -133885,6 +133885,18 @@ void CAI_BaseNPC::sub_10279b70(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10279bf0 size=0x1f
+#include "CBaseEntity.h"
+#include "CAI_BaseNPC.h"
+#include "CUnknown102e0150.h"
+
+// TARGET: CAI_BaseNPC::sub_10279bf0
+float CAI_BaseNPC::sub_10279bf0()
+{
+	return ((CUnknown102e0150 *)vfunc541())->sub_102e0150((CBaseEntity *)vfunc167());
+}
+// END FUNCTION
+
 // FUNCTION: 0x10279c20 size=0x1f
 #include "CBaseEntity.h"
 #include "CAI_BaseNPC.h"
