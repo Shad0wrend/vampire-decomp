@@ -86,6 +86,25 @@ void CNPC_VHunter::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103887d0 size=0x36
+#include "CNPC_VHunter.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CEntityVSlots.h"
+
+void sub_10387fd0(CBaseEntity *pEnt);
+
+// TARGET: CNPC_VHunter::vfunc472
+void CNPC_VHunter::vfunc472(int a)
+{
+	if (!*((char *)this + 0x6081))
+	{
+		if (((CEntityVSlots *)this)->slot404((void *)a) == 1)
+			sub_10387fd0((CBaseEntity *)a);
+	}
+	((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc472((CBaseEntity *)a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10388820 size=0x6
 #include "CNPC_VHunter.h"
 int CNPC_VHunter::vfunc138()
