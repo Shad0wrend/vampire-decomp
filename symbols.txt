@@ -7236,6 +7236,7 @@
 0x1000c5d1 func   ?sub_101f8480@CUnknown101f0e50@@QAEPAVCVTraitEffectGroup_t@@H@Z CUnknown101f0e50::sub_101f8480
 0x1000c5e5 func   ?vfunc82@CPlayerEvents@@UAEPAUdatamap_t@@XZ CPlayerEvents::vfunc82
 0x1000c5ea func   ?sub_1023c430@@YAMXZ sub_1023c430
+0x1000c5f4 func   ?vfunc8@CLagCompensationManager@@UAEPAV1@I@Z CLagCompensationManager::vfunc8
 0x1000c5f9 func   ?vfunc23@CGameMovement@@UAEMXZ CGameMovement::vfunc23
 0x1000c603 func   ?sub_101681a0@@YI_NPAUHolder@@@Z sub_101681a0
 0x1000c608 func   ?vfunc300@CWeaponMelee_FireAxe@@QAEXXZ CWeaponMelee_FireAxe::vfunc300

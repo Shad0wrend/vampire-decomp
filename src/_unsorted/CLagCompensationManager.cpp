@@ -27,3 +27,17 @@ void CLagCompensationManager::vfunc5()
 	m_18 = 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10187dd0 size=0x68
+#include "CLagCompensationManager.h"
+#include "utlvector.h"
+
+CLagCompensationManager *CLagCompensationManager::vfunc8(unsigned int flags)
+{
+	((CUtlVector<int> *)((char *)this + 0xc))->~CUtlVector<int>();
+	sub_1042c2c0();
+	if (flags & 1)
+		operator delete(this);
+	return this;
+}
+// END FUNCTION
