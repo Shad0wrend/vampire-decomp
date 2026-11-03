@@ -218,6 +218,17 @@ void CNPC_VCopFwd::sub_10372aa0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10372b00 size=0x11
+#include "CNPC_VCop.h"
+
+// TARGET: CNPC_VCop::vfunc420
+void CNPC_VCop::vfunc420()
+{
+	CNPC_VHumanCombatant::vfunc420();
+	m_b6670 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10372b70 size=0xaa
 #include "CNPC_VCop.h"
 extern unsigned int g_1093ac3c;

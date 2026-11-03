@@ -4015,6 +4015,7 @@
 0x10007531 func   ?sub_102ce7a0@CUtlMemory12@@QAEPAU1@HH@Z CUtlMemory12::sub_102ce7a0
 0x10007536 func   ?sub_103e88b0@@YAHXZ sub_103e88b0
 0x1000753b func   ?sub_10387f30@@YAHXZ sub_10387f30
+0x10007540 func   ?vfunc420@CNPC_VCop@@QAEXXZ CNPC_VCop::vfunc420
 0x10007545 func   ?sub_101d83a0@CUnknown101d82d0@@QAEXPBD@Z CUnknown101d82d0::sub_101d83a0
 0x1000754a func   ?sub_10078b30@UtlMem@@QAEXXZ UtlMem::sub_10078b30
 0x1000754f func   ?vfunc491@CNPC_VTzimisce@@QAEXXZ CNPC_VTzimisce::vfunc491
