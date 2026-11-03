@@ -10,6 +10,7 @@ class CPushable
 {
 public:
 	CPushable();	// 0x1010f130: the CBaseEntity constructor body, the handle at +0x458 = -1, the two outputs, the vftable and the push defaults
+	CPushable *sub_1010f130();	// constructor body (0x1010f130), called directly by the func_pushable factory
 	void sub_1009d980(char bAddAsDefault);	// "CBaseEntity::CBaseEntity" body (stub 0x100090fc), called first by the constructor
 	void vfunc103();	// slot 103 "CPushable::Spawn", declared as a plain member: CBreakable::vfunc103 for flag bit 7 of the spawn flags, else sets bit 13 of the flags at +0x4c, Precache (slot 104), SetSolid(6) (inlined scope trace), SetMoveType(8, 0), SetModel(the model name from slot 9) and slot 223
 	bool vfunc223();	// slot 223 (plain member): VPhysicsInitNormal(6, 0, 0, 0), then hands the physics object at +0x36c the values at +0x49c and +0x4a0 / +0x4a4
