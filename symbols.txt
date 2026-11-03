@@ -10649,6 +10649,7 @@
 0x100111e9 func   ?vfunc6@CAutoGameSystem@@UAEXXZ CAutoGameSystem::vfunc6
 0x100111ee func   ?vfunc4@CTEEnergySplash@@UAEXPAVCRecipientFilter@@M@Z CTEEnergySplash::vfunc4
 0x100111f3 func   ?vfunc149@CBasePlayer@@QAEXHH@Z CBasePlayer::vfunc149
+0x100111fd func   ?vfunc461@CNPC_VMingXiaoTentacle@@QAEHXZ CNPC_VMingXiaoTentacle::vfunc461
 0x10011202 func   ??0CWorldEvents@@QAE@XZ CWorldEvents::CWorldEvents
 0x10011207 func   ?vfunc103@CFuncAreaPortalWindow@@UAEXXZ CFuncAreaPortalWindow::vfunc103
 0x1001120c func   ?sub_10109990@CFire@@QAEPAV1@XZ CFire::sub_10109990

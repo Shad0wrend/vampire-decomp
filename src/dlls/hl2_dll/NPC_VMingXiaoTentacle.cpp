@@ -9,6 +9,54 @@ int CNPC_VMingXiaoTentacle::vfunc337()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039e310 size=0x90
+#include "CNPC_VMingXiaoTentacle.h"
+
+#define QV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define QV100(p) QV10(p##0) QV10(p##1) QV10(p##2) QV10(p##3) QV10(p##4) QV10(p##5) QV10(p##6) QV10(p##7) QV10(p##8) QV10(p##9)
+
+struct CVTSlots {
+	QV100(s0)
+	QV10(s10) QV10(s11) QV10(s12) QV10(s13) QV10(s14) QV10(s15)
+	virtual void s160(); virtual void s161(); virtual void s162(); virtual void s163();
+	virtual void s164(); virtual void s165(); virtual void s166();
+	virtual int vfunc167();
+};
+
+struct CVTFields {
+	char m_pad0[0x1b38];
+	int m_n1b38;
+	const char *m_pszFile1b3c;
+	int m_nLine1b40;
+	char m_pad1[0x5cc0 - 0x1b44];
+	int m_nState5cc0;
+	int m_nIdealState5cc4;
+};
+
+int CNPC_VMingXiaoTentacle::vfunc461()
+{
+	CVTFields *p = (CVTFields *)this;
+	p->m_n1b38 = 0x1a;
+	if (p->m_nState5cc0 != 7 && p->m_nIdealState5cc4 != 7) {
+		int r = ((CVTSlots *)this)->vfunc167();
+		p->m_pszFile1b3c = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiaoTentacle.cpp";
+		if (r) {
+			p->m_nIdealState5cc4 = 2;
+			p->m_nLine1b40 = 0x48d;
+			return *(volatile int *)&p->m_nIdealState5cc4;
+		}
+		p->m_nIdealState5cc4 = 1;
+		p->m_nLine1b40 = 0x491;
+		return *(volatile int *)&p->m_nIdealState5cc4;
+	}
+	p->m_pszFile1b3c = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiaoTentacle.cpp";
+	p->m_nLine1b40 = 0x486;
+	p->m_nIdealState5cc4 = 7;
+	return 7;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039e890 size=0x3d
 #include "vampire.h"
 #include "CAI_BaseNPCTroika.h"
