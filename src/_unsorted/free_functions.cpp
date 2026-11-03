@@ -29026,6 +29026,35 @@ void CBaseEntity::sub_1009b060(const Vector &vecExtents)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009b1d0 size=0xbe
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+
+// TARGET: CBaseEntity::sub_1009b1d0
+void CBaseEntity::sub_1009b1d0(int a, int b)
+{
+	ScopeTrace trace("CBaseEntity::TraceMessageBase", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+
+	char c = g_106b8540[0];
+	const char *pszMsg = (const char *)a;
+	if (!pszMsg)
+		pszMsg = &c;
+	if (b < 0)
+		b = 0;
+	DevMsg("%-20s  %6.2f : %*s %s\n", sub_1000b5cd(), gpGlobals->curtime, b, g_106b8540, pszMsg);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009b440 size=0x83
 #include "CBaseEntity.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
