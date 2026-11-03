@@ -4214,6 +4214,7 @@
 0x1000768a func   ?sub_100705d0@@YAPAVCBaseCineCam@@PAVCBaseEntity@@@Z sub_100705d0
 0x1000768f func   ?vfunc596@CAI_BaseNPCTroika@@UAEXH@Z CAI_BaseNPCTroika::vfunc596
 0x10007694 func   ?sub_1037c730@@YIPAXPAX@Z sub_1037c730
+0x1000769e func   ?sub_100ce0d0@CEventQueue@@QAEXHMH@Z CEventQueue::sub_100ce0d0
 0x100076a3 func   ?sub_100a98f0@CBaseEntity@@QAEHHH@Z CBaseEntity::sub_100a98f0
 0x100076ad func   ?sub_10026a90@@YGDH@Z sub_10026a90
 0x100076b2 func   ?vfunc104@CBaseDoor@@UAEXXZ CBaseDoor::vfunc104

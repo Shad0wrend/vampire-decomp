@@ -39319,6 +39319,43 @@ void CEventQueue::sub_100cdf10(CBaseEntity *pTarget, const char *pszAction, CVar
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ce0d0 size=0xb7
+#include "CEventQueue.h"
+#include "CVDmg_t.h"
+
+struct GlobalVarsView
+{
+	char m_pad0000[0xc];
+	float curtime;
+};
+extern GlobalVarsView *g_1070b228;
+void *operator new(unsigned int);
+extern "C" void *memset(void *, int, unsigned int);
+
+// TARGET: CEventQueue::sub_100ce0d0
+void CEventQueue::sub_100ce0d0(int a, float fireDelay, int nOutputID)
+{
+	CVariantCopy Value;
+	Value.sub_1000b320(0, 0);
+	CEQEvent *pEvent = new CEQEvent;
+	memset(pEvent, 0, sizeof(CEQEvent));
+	pEvent->m_n34 = 1;
+	float fireTime = fireDelay + g_1070b228->curtime;
+	*(volatile int *)&pEvent->m_pszTarget = 0;
+	*(volatile float *)&pEvent->m_flFireTime = fireTime;
+	*(volatile int *)&pEvent->m_hTarget = -1;
+	*(volatile int *)&pEvent->m_pszTargetInput = 0;
+	*(volatile int *)&pEvent->m_hActivator = -1;
+	*(volatile int *)&pEvent->m_hCaller = -1;
+	*(CVariantCopy *)&pEvent->m_n20 = Value;
+	pEvent->m_nOutputID = nOutputID;
+	pEvent->m_pRefCount = (int *)a;
+	pEvent->m_n3c = 0;
+	((CVDmgBlock16_t *)pEvent->m_block40)->sub_10204270();
+	sub_100ce210(pEvent);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ce1c0 size=0x37
 #include "CEventQueue.h"
 
