@@ -4514,6 +4514,7 @@
 0x10007fbd func   ?vfunc113@CVampireProjectile_MingXiaoSpit@@UAEXXZ CVampireProjectile_MingXiaoSpit::vfunc113
 0x10007fc2 func   ?sub_10175400@CBasePlayer@@QAEXD@Z CBasePlayer::sub_10175400
 0x10007fc7 func   ?sub_1039fe30@@YAXM@Z sub_1039fe30
+0x10007fcc func   ?vfunc10@CServerNetworkProperty@@UAEHXZ CServerNetworkProperty::vfunc10
 0x10007fdb func   ?sub_1025cb70@CUtlRBTreeBig@@QAEAAULinks_t@1@G@Z CUtlRBTreeBig::sub_1025cb70
 0x10007fe5 func   ?sub_100ac4e0@CBaseEntity@@QAEHHHPBD@Z CBaseEntity::sub_100ac4e0
 0x10007fea func   ?vfunc5@CAI_BaseNPC@@UAEPAV1@I@Z CAI_BaseNPC::vfunc5
