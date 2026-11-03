@@ -63,6 +63,7 @@ public:
 	void sub_103c2230(char bForce);	// 0x103c2230 (stub 0x10005fb5), called from vfunc432 (0) and vfunc144: if sub_103c24a0() and (bForce or curtime >= m_f6678): m_f6678 = 0; entity m_h6674 (LookupEntity via g_10566458 slot 0x100290c0, its +0x9c a CBaseCombatCharacter: sub_103327f0(500.0f), m_h6674 = -1, CPASAttenuationFilter(pl, 0.8f) sound \"Sluge_Affected.wav\" ch 3 via enginesound slot 7); then removes m_h667c and m_h6680 (sub_101cd940) and sets them -1
 	char sub_103c24a0();	// stub 0x100098a9: sight / range check run before the melee choice
 	void vfunc432(int a);	// slot 432: releases the effect, then the Troika base
+	void vfunc144(int a);	// slot 144: releases the effect with bForce, then the Troika base
 	int sub_102af660();	// CAI_BaseNPCTroika::vfunc438 (stub 0x10015596), called directly
 	virtual void vfunc619(char bFlag);	// slot 619 (the position here is not its real slot): emits the footstep-like sound of the claw through a reliable CPASAttenuationFilter, the sample set picked by the flag
 	virtual void vfunc310(int a);	// slot 310 "CNPC_VTzimisceHeadClaw::vfunc310": a 9 with the NPC's slot 167 value answers 0x1136 to the Troika base, else the argument goes on to the Troika base
