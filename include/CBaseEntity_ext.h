@@ -110,3 +110,4 @@
 	float vfunc152();	// slot 152: the constant 0.0f
 	float vfunc190();	// slot 190: the constant 0.0f
 	float *vfunc198();	// slot 198: returns &field at +0x3d4 (the velocity)
+	void sub_1009f4e0();	// "CBaseEntity::DrawBBoxOverlay": scope trace (entity name or NULL ENTITY); with an edict (+0x2e0): sub_10142e20(this, 0xff, 100, 0, 0, 0); with bit 0 of m_bDebug2b5 (+0x2b5) the collision bounds (slot 3 of the property at +0x270) are turned into center / half sizes and handed to sub_10142aa0 (8 args, cdecl); with slot 211 (+0x34c) & 0x40 the OBB mins / maxs (slots 1 / 2) give the center, the abs origin (slot 217, +0x364) is added and sub_10144a30 is called (9 args)
