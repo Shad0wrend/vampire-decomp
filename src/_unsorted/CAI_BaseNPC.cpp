@@ -2245,6 +2245,17 @@ unsigned int CAI_BaseNPC::vfunc423()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027e740 size=0x10
+namespace lifted {
+int sub_1027e660(int);
+}
+
+const char *CAI_BaseNPC::vfunc406(int state)
+{
+	return (const char *)(lifted::sub_1027e660(state));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027e7d0 size=0x10
 namespace lifted {
 int sub_10004c96(int);
