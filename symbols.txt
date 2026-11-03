@@ -9647,6 +9647,7 @@
 0x1000ff01 func   ?vfunc5@CFuncAreaPortalWindow@@QAEPAV1@I@Z CFuncAreaPortalWindow::vfunc5
 0x1000ff0b func   ?sub_102ee1e0@@YGHH@Z sub_102ee1e0
 0x1000ff15 func   ?sub_10079280@CUnknown10079280@@QAEXXZ CUnknown10079280::sub_10079280
+0x1000ff1a func   ?vfunc5@CGenericSabbat_NPC@@QAEPAV1@H@Z CGenericSabbat_NPC::vfunc5
 0x1000ff1f func   ?CopyConstruct@@YAXPAPAUCRandomSpawnFactory@@ABQAU1@@Z CopyConstruct
 0x1000ff1f func   ?sub_101c4460@@YAXPAHPBH@Z sub_101c4460
 0x1000ff24 func   ?sub_10231f40@CVGuiScreen@@QAEXPBD@Z CVGuiScreen::sub_10231f40

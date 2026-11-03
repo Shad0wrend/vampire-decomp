@@ -44,6 +44,21 @@ const char * CGenericSabbat_NPC::vfunc451()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035b5a0 size=0x1e
+#include "CGenericSabbat_NPC.h"
+
+void sub_100aa7b0(void *p);
+
+// TARGET: CGenericSabbat_NPC::vfunc5
+CGenericSabbat_NPC *CGenericSabbat_NPC::vfunc5(int flags)
+{
+	sub_1000c9cd();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035b5d0 size=0xe9
 #include "CGenericSabbat_NPC.h"
 
