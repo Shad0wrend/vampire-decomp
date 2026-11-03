@@ -14,3 +14,10 @@ public:
 	void *m_pPassEnt;	// +4
 	int m_collisionGroup;	// +8
 };
+
+class CDisciplineProjectileTraceFilter : public CTraceFilterSimple
+{
+public:
+	void *m_pIgnore;	// +0xc
+	virtual bool vfunc0(void *pHandleEntity, int contentsMask);	// ShouldHitEntity: the base's answer for the ignored entity, false for any other
+};
