@@ -240,6 +240,8 @@ public:
 	void sub_1027f270(int nState);	// stub 0x10005cc2, ret 4: called by CCineNPC::sub_101a8640 with 2 right before the movement state at +0x5d70 is set to 2
 	void sub_10270aa0(CBaseEntity *pEnt);	// stores pEnt's entity handle at +0x5d90 (-1 for null)
 	void sub_10269a20(int a);	// stub 0x100041b0, run by TaskFail with 0x5c
+	bool sub_10269c70(int condition);
+	bool sub_10280360();
 	void sub_1026d460(int nSide);	// footstep: picks volume / sound level from the surface data or convars by nSide, emits the sound the sound table gives for the record at +0x5b90 to a CPASAttenuationFilter (called by vfunc259)
 	bool sub_10273180(char bForce);	// sets the hull size from the hull (+0x1568) when the byte +0x5f2d is clear or bForce, sets the byte, then runs sub_10272f40 with a navigator at +0x36c; always true
 	void sub_10272f40();	// the navigator hand-over after the hull is set (stub 0x100081c0)
