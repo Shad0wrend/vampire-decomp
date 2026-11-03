@@ -6932,6 +6932,7 @@
 0x1000b93d func   ?sub_10075ca0@CUnknown10075ca0@@QAEPADXZ CUnknown10075ca0::sub_10075ca0
 0x1000b942 func   ?vfunc199@CBaseAnimating@@QAEXPAM0@Z CBaseAnimating::vfunc199
 0x1000b947 func   ?sub_10247280@@YAPADPAD00@Z sub_10247280
+0x1000b94c func   ?sub_10223a30@CKeyframedUnit@block_10223a30@@QAEXPAX@Z block_10223a30::CKeyframedUnit::sub_10223a30
 0x1000b95b func   ?sub_10087fb0@@YAXXZ sub_10087fb0
 0x1000b960 func   ?vfunc362@CWeaponMelee_TireIron@@QAEHXZ CWeaponMelee_TireIron::vfunc362
 0x1000b965 func   ?sub_101cb250@CTriggerImpact@@QAEXPAUinputdata_t@@@Z CTriggerImpact::sub_101cb250

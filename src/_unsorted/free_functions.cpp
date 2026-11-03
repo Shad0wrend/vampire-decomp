@@ -119030,6 +119030,74 @@ void CBaseKeyframedMover::sub_10223820(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10223a30 size=0x39
+#include "CBaseKeyframedMover.h"
+
+#define CSV_ROW(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CKeyframedEntView
+{
+	virtual void a00();
+	virtual void *s1();
+	virtual void a02();
+	virtual void a03();
+	virtual void a04();
+	virtual void a05();
+	virtual void a06();
+	virtual void a07();
+	virtual void a08();
+	virtual void a09();
+	CSV_ROW(a1)
+	CSV_ROW(a2)
+	CSV_ROW(a3)
+	CSV_ROW(a4)
+	CSV_ROW(a5)
+	CSV_ROW(a6)
+	CSV_ROW(a7)
+	CSV_ROW(a8)
+	CSV_ROW(a9)
+	CSV_ROW(a10)
+	CSV_ROW(a11)
+	CSV_ROW(a12)
+	CSV_ROW(a13)
+	CSV_ROW(a14)
+	CSV_ROW(a15)
+	CSV_ROW(a16)
+	CSV_ROW(a17)
+	CSV_ROW(a18)
+	CSV_ROW(a19)
+	CSV_ROW(a20)
+	virtual void a210();
+	virtual void a211();
+	virtual void a212();
+	virtual void a213();
+	virtual void a214();
+	virtual void a215();
+	virtual void a216();
+	virtual Vector *s217();
+};
+
+namespace block_10223a30
+{
+	struct CKeyframedUnit : public CBaseKeyframedMover
+	{
+		void sub_10223a30(void *pEnt);
+	};
+}
+
+// TARGET: block_10223a30::CKeyframedUnit::sub_10223a30
+void block_10223a30::CKeyframedUnit::sub_10223a30(void *pEnt)
+{
+	if (pEnt)
+	{
+		CKeyframedEntView *pE = (CKeyframedEntView *)pEnt;
+		m_n568 = *(int *)pE->s1();
+		const float *pflSpeed = (const float *)((char *)this + 0x164);
+		sub_101c1520(pE->s217(), *pflSpeed);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10223a80 size=0xd0
 #include "CBaseKeyframedMover.h"
 #include "COutputEvent.h"
