@@ -3576,6 +3576,7 @@
 0x100069d3 func   ?sub_10258880@@YAXPBD@Z sub_10258880
 0x100069d8 func   ?sub_102296e0@@YIDPADPAXHH@Z sub_102296e0
 0x100069dd func   ?sub_100f8cd0@@YGXH@Z sub_100f8cd0
+0x100069e2 func   ?vfunc103@CNPC_VSheriffSwarm@@UAEXXZ CNPC_VSheriffSwarm::vfunc103
 0x100069e7 func   ?sub_1029f730@CLazyTroikaView@@QAEHH@Z CLazyTroikaView::sub_1029f730
 0x100069ec func   ?sub_1034cef0@CNPCMaker@@QAEDXZ CNPCMaker::sub_1034cef0
 0x100069f1 func   ?vfunc515@CAI_BaseNPC@@QAEMPBVVector@@@Z CAI_BaseNPC::vfunc515

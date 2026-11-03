@@ -70,6 +70,28 @@ datamap_t * CNPC_VSheriffSwarm::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b2330 size=0x15
+#include "CNPC_VSheriffSwarm.h"
+
+struct CUnk1026dc00
+{
+	char pad[0x5cec];
+	unsigned int m_5cec;
+	unsigned int sub_1026dc00(unsigned int flags);
+};
+
+struct CVampireCallView
+{
+	void sub_103c4ef0();
+};
+
+void CNPC_VSheriffSwarm::vfunc103()
+{
+	((CUnk1026dc00 *)this)->sub_1026dc00(0x200000);
+	((CVampireCallView *)this)->sub_103c4ef0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b2360 size=0x14
 #include "CNPC_VSheriffSwarm.h"
 
