@@ -8,10 +8,11 @@ class CAI_RatPlaneSolver : public CAI_PlaneSolver
 public:
 	CAI_RatPlaneSolver(int owner);	// 0x103ad140: the CAI_PlaneSolver constructor, then zeroes +0x70 and copies the float at +0xc of the global at 0x1070b228 to +0x74
 	CAI_RatPlaneSolver *vfunc1(unsigned int flags);
+	bool vfunc0(float *pVec, int *pEnt, float a, float b, float c, int d);	// slot 0 override (0x103ad270): forwards to CAI_PlaneSolver::vfunc0 as (pVec, pEnt, a, b, b, d), then appends a steering result
 	void sub_100011ef();
 	void sub_103ad1b0();
 
 	char m_pad64[0x70 - 0x64];
-	int m_n70;	// 0x70
-	float m_f74;	// 0x74
+	float m_n70;	// 0x70: a yaw angle (the matched constructor zeroes it; read as float by slot 0)
+	float m_f74;	// 0x74: the next recompute time
 };
