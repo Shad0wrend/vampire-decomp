@@ -13531,6 +13531,7 @@
 0x10015825 func   ?vfunc3@CTETextMessage@@UAEXPBM0@Z CTETextMessage::vfunc3
 0x1001582a func   ?sub_100b9880@CBaseEntity@@QAEXPBMMMMMMM@Z CBaseEntity::sub_100b9880
 0x1001582f func   ?sub_1039ab30@CNPC_VMingXiao@@QAEXXZ CNPC_VMingXiao::sub_1039ab30
+0x10015839 func   ?sub_10269b50@CAI_BaseNPC@@QAEXH@Z CAI_BaseNPC::sub_10269b50
 0x1001583e func   ?sub_1030b1d0@CUtlVector280@@QAEXHH@Z CUtlVector280::sub_1030b1d0
 0x10015848 func   ?sub_1028e790@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_1028e790
 0x1001584d func   ?sub_10026f60@@YGEXZ sub_10026f60
