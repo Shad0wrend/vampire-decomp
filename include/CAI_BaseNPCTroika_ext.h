@@ -7,6 +7,8 @@
 	char vfunc342(int pEnt);	// slot 342 (plain member; pEnt is an entity pointer): false while the byte at +0x63d8 is set; false when slot 293's entity is pEnt and sub_1033c900(0x40000) fails; else CBaseCombatCharacter::vfunc342
 	virtual CBaseEntity *vfunc168();	// slot 168 override: the slot 167 object, else (bit 6 of +0x5b64 set) the entity of the handle at +0x1a94
 	virtual bool vfunc319(int a, CBaseEntity *pOther, int c);	// slot 319 override: the timer at +0x1564 = curtime + 0.5 (+ 1.0 when pOther answers sub_10349830 with 2)
+	virtual bool vfunc509();	// slot 509 override: false while sub_102c1170 holds, else CAI_BaseNPC::vfunc509
+	bool sub_1027a420();	// CAI_BaseNPC::vfunc509 (stub 0x100014c9), called directly
 	virtual bool vfunc510();	// slot 510 override: false while sub_102c1170 holds, with a live entity at +0x1538 and a value at +0x153c, or while sub_10341aa0 / flag 0x20000 of +0x14b8 holds; with states +0x5cc0 / +0x5cc4 both 1 and the entity of the handle at +0x628c without a dialog partner, CAI_BaseNPC::vfunc510 while the float at +0x6264 is below the "Float Sound Info" stat
 	virtual int vfunc35(int a);	// slot 35 (claimed, not matched): false while sub_102c1170 holds; else a virtual call of slot 295 (vfunc295) with a, and when that holds answers 14 + (the bool of Ent::sub_10336920), else 0
 	virtual Vector vfunc533(int a, int b);	// slot 533 override: while the NPC works at a hint node (+0x5ddc) and a is one of the hint activities (0x1119..0x111c, 0x111f, 0x1120) the hint's position relative to the NPC's origin plus the eye offset (+0x5d60); else CAI_BaseNPC::vfunc533(a, b)
