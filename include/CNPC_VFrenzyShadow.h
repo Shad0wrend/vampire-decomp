@@ -247,7 +247,7 @@ public:
 	virtual void vfunc198();
 	virtual void vfunc199();
 	virtual void vfunc200();
-	virtual void vfunc201();
+	virtual char vfunc201(CBaseEntity *pEnt, int a, int b, int c);	// slot 201 (0x324): 4 stack args, boolean in al (vfunc478 asks "is this entity acceptable"; args are (candidate, 0x2804091, 0, 0))
 	virtual void vfunc202();
 	virtual void vfunc203();
 	virtual void vfunc204();
