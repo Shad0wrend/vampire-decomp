@@ -19,11 +19,12 @@ public:
 	unsigned int vfunc117();	// slot 117 override: the game's 0x10149f50
 	void vfunc300();	// slot 300 override: the game's 0x10149f30
 	void vfunc327();	// slot 327 override: the game's 0x1014e160
-	virtual void vfunc321();	// slot 321 (0x1014e180, plain this-call, no arguments): when slot 309 holds: slot 307(0xb6); with a held object (handle m_hHeld918 resolving, m_n910 set, m_bB24 set) and the entity of the handle m_slots9d8[m_hB1c].a: the physics object of the weapon owner side (CUnknown100290c0::sub_100290c0 on EHandleEntityList *g_10566458 with entity+0x25c, its +0x36c, the default g_10723938 when absent) and that of the held entity (+0x36c) are handed to sub_1014e3f0(objA, objB, &params[0x30 bytes]) (cdecl) and to slot 14 of the physics environment g_10723940 (objA, objB, 0, &params) -> a controller stored at held->+0x730 whose slot 3 gets the held entity; both entities' colour bytes +0x1a0/+0x1a1/+0x1a2 = 0x40/0x40/0x80 and the byte +0x734 = 1; m_flTimes730[0] = curtime + 0.75 (a double constant); then (also without a held object) sub_1014d110() and sub_1014c130() = StopLoopingSounds (stub 0x10013c14 -> 0x1014c110 ... see the asm)
+	virtual void vfunc321();	// slot 321 (0x1014e180, plain this-call, no arguments): when slot 309 holds: slot 307(0xb6); with a held object (handle m_hHeld918 resolving, m_n910 set, m_bB24 set) and the entity of the handle m_slots9d0[m_hB1c].m_hA: the physics object of the weapon owner side (CUnknown100290c0::sub_100290c0 on EHandleEntityList *g_10566458 with entity+0x25c, its +0x36c, the default g_10723938 when absent) and that of the held entity (+0x36c) are handed to sub_1014e3f0(objA, objB, &params[0x30 bytes]) (cdecl) and to slot 14 of the physics environment g_10723940 (objA, objB, 0, &params) -> a controller stored at held->+0x730 whose slot 3 gets the held entity; both entities' colour bytes +0x1a0/+0x1a1/+0x1a2 = 0x40/0x40/0x80 and the byte +0x734 = 1; m_flTimes730[0] = curtime + 0.75 (a double constant); then (also without a held object) sub_1014d110() and sub_1014c130() = StopLoopingSounds (stub 0x10013c14 -> 0x1014c110 ... see the asm)
 	virtual void vfunc103();	// slot 103: slot 104 (Precache), then slot 105 with slot 343's result, clears the bytes at +0x914 and +0xb25
 	virtual void vfunc104();	// slot 104 (Precache): base slot 104, the sounds at 0x1057b8a0 and the six physgun loop sounds at 0x1057b888, then the model of \"hud/PhysicsHand_Closed.vmt\" into the global at 0x1071a36c
 	void sub_1014d110();
 	void sub_1014a0b0();
+	void sub_1014cbf0(float flRadius, float flOther);	// 0x1014cbf0 (ret 8): nearest-pair search over the 16 records at m_slots9d0 (outer index < m_nB14, inner index >= outer and < m_nB10); stores the best pair in m_hB18/m_hB1c and curtime in m_flB20, sets m_bB24 when the best squared distance is below 9.0f
 	void sub_1014abe0();
 	void sub_1014c0f0();
 	void sub_1014c2d0();
@@ -47,12 +48,13 @@ public:
 	int m_nSoundState;	// 0x928
 	char m_pad92c[0x938 - 0x92c];
 	float m_fl938;	// 0x938: the vertical offset of the held object (subtracted from its origin z)
-	CGravControllerPoint m_controller93c;	// 0x93c
-	char m_pad9d0[0x9d8 - 0x93c - sizeof(CGravControllerPoint)];
-	struct CSlot9d8 { int pad; EHANDLE a; EHANDLE b; int pad2[2]; } m_slots9d8[16];	// 0x9d8: two handles per entry
-	int m_hB18;	// 0xb18
-	int m_hB1c;	// 0xb1c
-	char m_padb20[0xb24 - 0xb20];
+	CGravControllerPoint m_controller93c;	// 0x93c (0x94 bytes, ends at 0x9d0)
+	struct CSlot9d0 { Vector m_vec; EHANDLE m_hA; EHANDLE m_hB; } m_slots9d0[16];	// 0x9d0: 16 * 0x14 records, ends at 0xb10
+	int m_nB10;	// 0xb10: count of the inner range
+	int m_nB14;	// 0xb14: count of the outer range
+	int m_hB18;	// 0xb18: best pair index (inner)
+	int m_hB1c;	// 0xb1c: best pair index (outer)
+	float m_flB20;	// 0xb20: curtime when the best pair changed
 	char m_bB24;	// 0xb24: set while the beam to the held object exists (vfunc321 needs it)
 	char m_bB25;	// 0xb25
 	char m_padB26[0xb28 - 0xb26];
