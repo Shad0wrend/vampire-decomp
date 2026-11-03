@@ -11,4 +11,5 @@ public:
 public:
 	void vfunc0();
 	int vfunc1(int, int, int);
+	int vfunc4(const char *pszName, int unused);
 };
