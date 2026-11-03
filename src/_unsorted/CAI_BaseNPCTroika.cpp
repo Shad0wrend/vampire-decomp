@@ -94,6 +94,13 @@ void CAI_BaseNPCTroika::vfunc416(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aa770 size=0x7
+char __fastcall sub_101aa770(int p)
+{
+	return *(char *)((char *)p + 0x63f0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aa790 size=0x6
 namespace lifted {
 extern char g_10924248;
