@@ -87,3 +87,12 @@ int CNPC_VMoleman::vfunc438()
 	return sub_10015ad2();
 }
 // END FUNCTION
+
+// FUNCTION: 0x1039fe30 size=0xd
+void sub_10385a10(float a);
+
+void sub_1039fe30(float a)
+{
+	sub_10385a10(a);
+}
+// END FUNCTION
