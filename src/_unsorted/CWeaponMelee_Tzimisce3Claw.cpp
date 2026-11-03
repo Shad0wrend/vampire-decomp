@@ -39,6 +39,17 @@ int CWeaponMelee_Tzimisce3Claw::vfunc363()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103eb880 size=0x11
+#include "CWeaponMelee_Tzimisce3Claw.h"
+
+// TARGET: CWeaponMelee_Tzimisce3Claw::vfunc103
+void CWeaponMelee_Tzimisce3Claw::vfunc103()
+{
+	sub_100047be();
+	m_b871 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103eb8b0 size=0x59
 #include "CWeaponMelee.h"
 #include "CWeaponMelee_Tzimisce3Claw.h"
