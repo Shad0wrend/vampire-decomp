@@ -763,6 +763,21 @@ void CBasePlayer::vfunc180()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101621a0 size=0x3d
+#include "CBasePlayer.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+
+// TARGET: CBasePlayer::vfunc430
+void CBasePlayer::vfunc430(int a, int b)
+{
+	Vector v;
+	v = vfunc193();
+	g_1070b22c->vfunc101((int)&v);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101621f0 size=0x1
 #include "CBasePlayer.h"
 void CBasePlayer::vfunc448()

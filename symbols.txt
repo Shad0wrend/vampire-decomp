@@ -4715,6 +4715,7 @@
 0x10008369 func   ?sub_100d8490@@YAXXZ sub_100d8490
 0x1000836e func   ?sub_1013ca80@@YAMABVVector@@00PAM@Z sub_1013ca80
 0x10008373 func   ?vfunc363@CNPCMaker_Zombie@@UAE_NH@Z CNPCMaker_Zombie::vfunc363
+0x10008378 func   ?vfunc430@CBasePlayer@@QAEXHH@Z CBasePlayer::vfunc430
 0x1000837d func   ?sub_1008fab0@CBaseAnimating@@QAEMH@Z CBaseAnimating::sub_1008fab0
 0x10008382 func   ?vfunc103@CItemContainerLock@@QAEXXZ CItemContainerLock::vfunc103
 0x10008387 func   ?sub_1019a980@@YAXXZ sub_1019a980
