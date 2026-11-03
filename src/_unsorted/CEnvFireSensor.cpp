@@ -12,6 +12,23 @@ datamap_t *CEnvFireSensor::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010bfb0 size=0x13
+#include "CEnvFireSensor.h"
+
+struct CEnvFireSensorView
+{
+	void sub_1010c190();
+};
+
+void CEnvFireSensor::vfunc103()
+{
+	if (*(unsigned int *)((char *)this + 0x204) & 1)
+		sub_1010c150();
+	else
+		((CEnvFireSensorView *)this)->sub_1010c190();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010bfe0 size=0x11d
 #include "CEnvFireSensor.h"
 #include "CEntityVSlots.h"

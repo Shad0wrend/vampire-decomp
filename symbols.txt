@@ -5823,6 +5823,7 @@
 0x1000a1f0 func   ?vfunc311@CBaseCombatWeapon@@UAEMXZ CBaseCombatWeapon::vfunc311
 0x1000a1f5 func   ?sub_10105a60@CUnknown10105a60@@QAEXPAMPBM1MH@Z CUnknown10105a60::sub_10105a60
 0x1000a1fa func   ?vfunc80@CItemGBadluckTalisman@@QAEHXZ CItemGBadluckTalisman::vfunc80
+0x1000a204 func   ?vfunc103@CEnvFireSensor@@QAEXXZ CEnvFireSensor::vfunc103
 0x1000a209 func   ?vfunc5@CBaseLandmark@@QAEPAVCPointEntity@@I@Z CBaseLandmark::vfunc5
 0x1000a20e func   ?vfunc243@CPhysBox@@QAEXH@Z CPhysBox::vfunc243
 0x1000a213 func   ?vfunc370@CWeaponMelee@@UAEXPAHPAVCBaseCombatWeapon@@@Z CWeaponMelee::vfunc370
