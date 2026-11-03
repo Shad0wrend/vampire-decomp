@@ -8846,6 +8846,7 @@
 0x1000e9ad func   ?sub_102f96e0@CAINodeView@@QAEPAUCPairFields102dda40@@H@Z CAINodeView::sub_102f96e0
 0x1000e9b2 func   ?sub_1036e820@CNPC_VChangBros@@QAE_NXZ CNPC_VChangBros::sub_1036e820
 0x1000e9b7 func   ?vfunc133@CBaseMoveBehavior@@UAEXXZ CBaseMoveBehavior::vfunc133
+0x1000e9c1 func   ?sub_1020bf90@Helper@@QAEPAXI@Z Helper::sub_1020bf90
 0x1000e9c6 func   ?vfunc440@CNPC_VHunter@@QAEHH@Z CNPC_VHunter::vfunc440
 0x1000e9cb func   ?vfunc113@CItemContainer@@QAEXXZ CItemContainer::vfunc113
 0x1000e9d0 func   ?sub_1022b590@CSoundScheme@@QAEXM@Z CSoundScheme::sub_1022b590
