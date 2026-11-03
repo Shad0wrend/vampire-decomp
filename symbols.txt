@@ -14750,6 +14750,7 @@
 0x10516c28 vtable ??_7CGameStringPool@@6B@ CGameStringPool::vftable
 0x10516c58 vtable ??_7CHLSharedGameRules@@6B@ CHLSharedGameRules::vftable
 0x10516c64 vtable ??_7CAutoGameSystem@@6B@ CAutoGameSystem::vftable
+0x10516c94 data   ??_7CBaseGameSystem@@6B@ ??_7CBaseGameSystem@@6B@
 0x10516c94 vtable ??_7IGameSystem@@6B@ IGameSystem::vftable
 0x10516cc4 vtable ??_7CHangRope@@6B@ CHangRope::vftable
 0x10516cd4 vtable ??_7?$CRopePhysics@$0CAA@@@6B@ CRopePhysics<512>::vftable
