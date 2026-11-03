@@ -66569,6 +66569,33 @@ int sub_10152400()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101550d0 size=0x37
+#include "CRagdollProp.h"
+
+extern char vt_1046dcec[];
+
+struct CRagdollPropBaseView
+{
+	void sub_1008b230();
+};
+
+// TARGET: CRagdollProp::sub_101550d0
+CRagdollProp *CRagdollProp::sub_101550d0()
+{
+	unsigned int flags;
+	((CRagdollPropBaseView *)this)->sub_1008b230();
+	*(int *)((char *)this + 0xd50) = -1;
+	*(int *)((char *)this + 0xd5c) = -1;
+	flags = *(volatile unsigned int *)((char *)this + 0x4c);
+	*(void *volatile *)this = vt_1046dcec;
+	flags |= 2;
+	*(unsigned int *)((char *)this + 0x4c) = flags;
+	*(int *)((char *)this + 0x730) = 0;
+	*(char *)((char *)this + 0xd58) = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155300 size=0xb
 namespace lifted {
 extern char g_1046dcec;
