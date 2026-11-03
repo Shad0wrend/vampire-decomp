@@ -6763,6 +6763,7 @@
 0x1000b604 func   ?sub_101b0dc0@@YAXPBVCRecipientFilter@@HPBDPBMHPAM@Z sub_101b0dc0
 0x1000b609 func   ?sub_100d94a0@@YA_NPAVCBaseCombatCharacter@@H@Z sub_100d94a0
 0x1000b60e func   ?sub_101ddf80@CUnk101ddf80@@QAEXXZ CUnk101ddf80::sub_101ddf80
+0x1000b618 func   ?vfunc280@CBaseFlex@@UAEXHM@Z CBaseFlex::vfunc280
 0x1000b61d func   ?sub_10357be0@CNPC_Crow@@QAEXM@Z CNPC_Crow::sub_10357be0
 0x1000b627 func   _func_wall func_wall
 0x1000b62c func   ?sub_10078650@CUnk10078650@block_10078650@@QAEHH@Z block_10078650::CUnk10078650::sub_10078650

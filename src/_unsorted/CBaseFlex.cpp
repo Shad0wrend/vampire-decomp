@@ -143,6 +143,16 @@ char * CBaseFlex::vfunc278()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b5b60 size=0x25
+#include "CBaseFlex.h"
+
+// TARGET: CBaseFlex::vfunc280
+void CBaseFlex::vfunc280(int a, float b)
+{
+	vfunc279(sub_1001337c(a), b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b5ba0 size=0x58
 #include "CBaseFlex.h"
 // TARGET: CBaseFlex::vfunc279
