@@ -20,5 +20,6 @@ public:
 	int m_i910;	// 0x910: -1 when the weapon has no entry
 	int m_i914;	// 0x914: -1 when the weapon has no entry
 	char m_b918;	// 0x918
+	void vfunc374();	// slot 374: flips the state at +0x86c
 	virtual unsigned int vfunc360();	// slot 360: the weapon's type flags (0x2000)
 };
