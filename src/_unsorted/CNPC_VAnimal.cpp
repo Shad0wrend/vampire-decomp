@@ -76,6 +76,22 @@ int CNPC_VAnimal::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035f510 size=0x15
+#include "CNPC_VAnimal.h"
+
+struct CUnk1026dc00 {
+    char pad[0x5cec];
+    unsigned int m_5cec;
+    unsigned int sub_1026dc00(unsigned int flags);
+};
+
+void CNPC_VAnimal::vfunc103()
+{
+    ((CUnk1026dc00 *)this)->sub_1026dc00(0x4000000);
+    sub_10298d30();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035f540 size=0x6
 int sub_1035f540(void)
 {
