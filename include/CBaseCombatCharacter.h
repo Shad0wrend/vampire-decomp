@@ -11,6 +11,9 @@
 struct inputdata_t;
 struct CBaseFlexItem;
 
+class CBaseCombatCharacter;
+void __fastcall sub_103234a0(CBaseCombatCharacter *pThis);	// 0x103234a0 "CBaseCombatCharacter::RemoveFromPresenceList" (free __fastcall form: ecx = this)
+
 #define CBCC_SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 
