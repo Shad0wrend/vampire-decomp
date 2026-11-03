@@ -15,6 +15,7 @@ public:
 	int sub_10015ad2();	// CNPC_VHuman::vfunc438 (stub 0x10015ad2), tail called
 	char sub_1001482b(int condition);	// CAI_BaseNPCTroika::sub_10269d30 (stub 0x1001482b), called directly
 	char vfunc452();	// slot 452: the byte global at 0x1064a580
+	int vfunc461();	// slot 461 override: the state field at +0x1b38 = 0x1b, then CNPC_VHuman's implementation
 
 	char m_pad03e0[0x14b8 - 0x3e0];
 	unsigned int m_flags14b8;
