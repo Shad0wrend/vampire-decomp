@@ -138621,6 +138621,60 @@ bool CAI_BaseNPCTroika::sub_1028e360()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028e480 size=0x1f5
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CAI_Navigator.h"
+#include "CUnknown102ee1a0.h"
+#include "CUnknown102f2fc0.h"
+#include "CUnknown102ee120.h"
+#include <math.h>
+
+extern Vector g_1070d1b0;
+
+static inline float DotProduct2D(const Vector &a, const Vector &b)
+{
+	return a.x * b.x + b.y * a.y;
+}
+
+void CAI_BaseNPC::sub_1028e480(CBaseEntity *pEnt)
+{
+	if (((CAI_Navigator *)Owned5d34())->m_i18 == 3 || ((CAI_Navigator *)Owned5d34())->m_i18 == 1)
+		return;
+
+	if (((CAI_Navigator *)Owned5d34())->sub_102ee620() != 7)
+		return;
+
+	if (pEnt != ((CAI_Navigator *)Owned5d34())->sub_102ee160())
+	{
+		((CAI_Navigator *)Owned5d34())->sub_102ed310(pEnt, &g_1070d1b0);
+		return;
+	}
+
+	Vector vecVel = *(Vector *)pEnt->m_vel3d4;
+	Vector vecDir = *(Vector *)vfunc217() - *((CEntityVSlots *)pEnt)->slot217();
+	vecDir.z = 0;
+	VectorNormalize(vecDir);
+
+	if (DotProduct2D(vecDir, vecVel) > 20.0f)
+	{
+		Vector vecOrigin = *((CEntityVSlots *)pEnt)->slot217();
+		float f = ((CUnknown102ee1a0 *)(CAI_Navigator *)Owned5d34())->sub_102ee1a0();
+		float g = ((CUnknown102f2fc0 *)(CAI_Navigator *)Owned5d34())->sub_102f2fc0();
+		vfunc563(pEnt, &vecOrigin, &f, &g);
+
+		if (VectorLength(*(Vector *)((CAI_Navigator *)Owned5d34())->sub_102ee140() - vecOrigin) > 80.0f ||
+			fabs(g - ((CUnknown102f2fc0 *)(CAI_Navigator *)Owned5d34())->sub_102f2fc0()) > 12.0)
+		{
+			((CUnknown102ee120 *)(CAI_Navigator *)Owned5d34())->sub_102ee1c0(*(int *)&f);
+			((CUnknown102ee120 *)(CAI_Navigator *)Owned5d34())->sub_102f2fe0(*(int *)&g);
+			((CAI_Navigator *)Owned5d34())->sub_102ee200();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028e700 size=0x63
 #include "CAI_BaseNPC.h"
 #include "globalvars.h"

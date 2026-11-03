@@ -1401,6 +1401,7 @@
 0x10003215 func   _func_dustmotes func_dustmotes
 0x1000321a func   ?vfunc74@CBreakable@@QAEHH@Z CBreakable::vfunc74
 0x1000321f func   ?sub_103a03a0@@YIXPAX@Z sub_103a03a0
+0x10003224 func   ?sub_1028e480@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_1028e480
 0x10003229 func   ?sub_100a0420@CBaseEntity@@QAEXPBD@Z CBaseEntity::sub_100a0420
 0x1000322e func   ?vfunc438@CNPC_VCombatman@@QAEHXZ CNPC_VCombatman::vfunc438
 0x10003233 func   ?vfunc81@COccultHacking@@QAEHXZ COccultHacking::vfunc81
