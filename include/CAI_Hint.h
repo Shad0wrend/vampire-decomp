@@ -238,3 +238,10 @@ public:
 	char *sub_102d3e60();
 	unsigned char sub_102d2ee0();	// CAI_Hint::vfunc117 body (CBaseEntity::vfunc117 & 0xfd)	// the node record this hint belongs to (stub 0x10007cca); its position is at +8 and its owner at +0xa0
 };
+
+// The view of a hint's node position (the object is a CAI_Hint passed as this).
+class CAI_VecView
+{
+public:
+	void sub_102d1180(void *pNPC, Vector *pOut);	// 0x102d1180 (ret 8): pOut = the position of this hint's node id (+0x5e4), or slot 217 when the id is -1
+};
