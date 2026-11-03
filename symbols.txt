@@ -5965,6 +5965,7 @@
 0x1000a245 func   ?sub_101d3c10@StatDefault3@@QAEXPAU1@@Z StatDefault3::sub_101d3c10
 0x1000a24a func   ?vfunc406@CBasePlayer@@UAEDXZ CBasePlayer::vfunc406
 0x1000a24f func   ?sub_10030720@CCollisionEvent@@QAEPAUCFrictionEntry_t@@H@Z CCollisionEvent::sub_10030720
+0x1000a254 func   ?sub_10279bb0@CAI_BaseNPC@@QAEPAVVector@@PAV2@@Z CAI_BaseNPC::sub_10279bb0
 0x1000a259 func   ?sub_1006a400@CTETracer@@QAEPAV1@PBD@Z CTETracer::sub_1006a400
 0x1000a263 func   ?vfunc103@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc103
 0x1000a268 func   ?sub_10072f10@CUnknown10072f10@@QAEXH@Z CUnknown10072f10::sub_10072f10
