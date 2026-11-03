@@ -116,7 +116,7 @@ public:
 	virtual float slot250(float flInterval);	// animating: StudioFrameAdvance
 	virtual char slot251();	// NPC: a boolean answer in al
 	EVS(252) EVS(253) EVS(254) EVS(255) virtual void slot256(int bone, float *pMatrix);	// animating: the bone's 3x4 matrix
-	EVS(257) EVS(258)
+	virtual void slot257(int a, int b); EVS(258)
 	virtual void slot259(void *pEvent);	// "HandleAnimEvent"
 	virtual void slot260(int index, float value);	// "SetPoseParameter" by index
 	virtual float slot261(const char *pszName, float flValue);	// "SetPoseParameter" by name (the animating entity's slot; the float result is left on the FPU stack)

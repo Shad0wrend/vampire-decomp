@@ -19,6 +19,7 @@ struct CPhysicsAnimlinkPair	// the object embedded at +0x4c8 of a CPhysicsAnimli
 class CPhysicsAnimlink : public CBaseEntity
 {
 public:
+	void sub_1014f3f0();	// the think set by Attach (0x1014f3f0)
 	void vfunc103();	// slot 103 \"CPhysicsAnimlink::Activate\": finds the animating entity (m_psz450) and the bone (m_psz454), then the physics object (the entity m_psz458, or the ragdoll body named m_psz45c), and attaches them (sub_1014f210)
 	CPhysicsAnimlink *vfunc5(unsigned int flags);
 	void sub_1000144c();
