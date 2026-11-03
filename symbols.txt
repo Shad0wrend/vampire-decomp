@@ -9706,6 +9706,7 @@
 0x1000fa15 func   ?sub_10390890@CUnknown10390890@@QAEPAXH@Z CUnknown10390890::sub_10390890
 0x1000fa1a func   ?vfunc516@CGenericSabbat_NPC@@UAEMXZ CGenericSabbat_NPC::vfunc516
 0x1000fa1f func   ?sub_1013d3e0@@YADXZ sub_1013d3e0
+0x1000fa24 func   ?sub_1019c0b0@@YA_NPAUCRagdoll@@PAUCRagdollParams@@PAVCPhysCollideIface@@PAVCPhysEnvIface@@PAVCPhysSurfacePropsIface@@@Z sub_1019c0b0
 0x1000fa2e func   ?sub_10373670@@YAEXZ sub_10373670
 0x1000fa38 func   ?vfunc5@CNPCMaker@@QAEPAV1@I@Z CNPCMaker::vfunc5
 0x1000fa3d func   ?sub_103f0740@@YAHXZ sub_103f0740

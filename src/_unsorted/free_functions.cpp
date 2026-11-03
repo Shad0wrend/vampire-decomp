@@ -80688,6 +80688,65 @@ void sub_1019bfd0(Holder *h)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019c0b0 size=0x1f4
+#include "CRagdoll.h"
+
+extern CPhysCollideIface *g_1072393c;
+extern CPhysEnvIface *g_10723940;
+extern CPhysSurfacePropsIface *g_10723944;
+extern Vector g_1070d1b0;
+
+struct IPhysTune
+{
+	virtual void v0();
+	virtual bool vfunc1();
+	char m_pad[0x24];
+	float m_fl28;
+};
+extern IPhysTune *g_1072b3ac;
+
+void __cdecl sub_1019c330(CPhysCollideIface *pCollide, CPhysEnvIface *pEnv, CPhysSurfacePropsIface *pSurf, CRagdoll *pOut, CRagdollParams *pParams);
+void __cdecl sub_1019c6f0(CRagdoll *pRagdoll, void *pA, void *pB, int n);
+
+// TARGET: sub_1019c0b0
+bool __cdecl sub_1019c0b0(CRagdoll *pRagdoll, CRagdollParams *pParams, CPhysCollideIface *pCollide, CPhysEnvIface *pEnv, CPhysSurfacePropsIface *pSurf)
+{
+	sub_1019c330(pCollide, pEnv, pSurf, pRagdoll, pParams);
+	if (pRagdoll->m_nObjects == 0)
+		return false;
+	int iForceBone = pParams->m_iForceBone;
+	float flMass = 0.0f;
+	for (int i = 0; i < pRagdoll->m_nObjects; i++)
+		flMass += pRagdoll->m_Elements[i].m_pObject->vfunc12();
+	float flTotalMass;
+	if (flMass > 1.0f)
+		flTotalMass = flMass;
+	else
+		flTotalMass = 1.0f;
+	float flScale = g_1072b3ac->vfunc1() ? 0.0f : g_1072b3ac->m_fl28;
+	flTotalMass = flTotalMass / flScale;
+	Vector vecOrigin = pParams->m_vecC;
+	Vector vecVelocity = pParams->m_vecVelocity;
+	if (iForceBone >= 0 && iForceBone < pRagdoll->m_nObjects) {
+		pRagdoll->m_Elements[iForceBone].m_pObject->vfunc30(&vecOrigin);
+		pRagdoll->m_Elements[iForceBone].m_pObject->vfunc37(&vecVelocity, 0);
+	}
+	if (vecVelocity != g_1070d1b0) {
+		for (int i = 0; i < pRagdoll->m_nObjects; i++) {
+			IPhysicsObject *pObj = pRagdoll->m_Elements[i].m_pObject;
+			unsigned int flags = pObj->vfunc8();
+			pObj->vfunc7(flags | 8);
+			if (iForceBone != i) {
+				Vector vecImpulse = vecOrigin * (pRagdoll->m_Elements[i].m_pObject->vfunc12() / flTotalMass);
+				pRagdoll->m_Elements[i].m_pObject->vfunc31(&vecImpulse, &vecVelocity);
+			}
+		}
+	}
+	sub_1019c6f0(pRagdoll, &pParams->m_pad1c, &pParams->m_n2c, pParams->m_n3c);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019c6f0 size=0xdf
 struct V3 { float x, y, z; };
 
