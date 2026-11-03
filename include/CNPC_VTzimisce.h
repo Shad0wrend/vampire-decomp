@@ -209,6 +209,7 @@ public:
 	bool sub_103be8e0(CBaseEntity *pTarget);	// true without a target; else whether the yaw from the path-stepped point (sub_102c36d0 from the target entity's slot 220 position) toward pTarget differs from the NPC's own yaw by at most 20 degrees
 	char sub_103be630(CBaseEntity *pTarget);	// throw line-of-sight test: a trace from the eye (shifted by the side offset convar) to pTarget's eye; true when nothing is hit
 public:
+	void vfunc422();	// slot 422: the Troika base, then installs sub_1027fc40 as the think function
 	virtual void vfunc434();
 	virtual void vfunc489();
 	virtual void vfunc492();
