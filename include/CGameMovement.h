@@ -41,6 +41,7 @@ public:
 	void vfunc24();	// slot 24 (plain member): counts the three timers of the move data (+0x2328, +0x1ee0, +0x232c) down by frame time * 1000, each stopping at zero
 	bool sub_101252e0();	// stub 0x1000ee85, run first by vfunc18; the movement code's SetWaterLevel: returns (m_pMove->water level at +0x3e0 > 1)
 
+	void sub_10122190();	// 0x10122190: helper called by vfunc5 (no arguments); wish/acceleration from the player's view angles and velocity
 	void *m_pPlayer;	// 0x04
 	void *m_pMove;	// 0x08
 	int m_field0c;
