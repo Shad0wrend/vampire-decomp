@@ -8976,6 +8976,7 @@
 0x1000eed0 func   ?sub_1007dfc0@CUnknown1007dfc0@@QAEXH@Z CUnknown1007dfc0::sub_1007dfc0
 0x1000eedf func   ?sub_10102c50@@YAHXZ sub_10102c50
 0x1000eee4 func   ?vfunc304@CBaseCombatWeapon@@UAEDXZ CBaseCombatWeapon::vfunc304
+0x1000eee9 func   ?vfunc65@CMultiplayRules@@UAE_NHH@Z CMultiplayRules::vfunc65
 0x1000eeee func   ?vfunc451@CNPC_VHunter@@UAEHXZ CNPC_VHunter::vfunc451
 0x1000eef3 func   ?sub_101b72b0@@YAXPAX0@Z sub_101b72b0
 0x1000eef8 func   ?sub_101d56f0@Loader@@QAE_NPBD@Z Loader::sub_101d56f0

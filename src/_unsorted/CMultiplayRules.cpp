@@ -534,6 +534,16 @@ int CMultiplayRules::vfunc62(int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101422e0 size=0x1b
+#include "CMultiplayRules.h"
+
+// TARGET: CMultiplayRules::vfunc65
+bool CMultiplayRules::vfunc65(int a, int b)
+{
+	return vfunc64(a, b) == 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10142310 size=0x5
 int CMultiplayRules::vfunc64(int a0, int a1)
 {
