@@ -20,6 +20,7 @@ public:
 	void vfunc180();	// slot 180 override: when the flags at +0x480 have bit 0, calls slot 243 with a default inputdata_t, then CBaseEntity::vfunc180
 	void vfunc103();	// slot 103: registers the goal's callback (sub_102cd310) with CBaseEntity::sub_100ac4e0, then sets the float at +0x17c to the global's +0xc field plus 0.01
 	void vfunc241(int a);	// slot 241 override: clamps the aggressiveness (valid 0..4, or 5) with a DevMsg, then CAI_GoalEntity::vfunc241(a)
+	void vfunc242(int a);	// slot 242 (0x102cd740, vtable stub 0x1001004b): prunes the actors (sub_102cd3b0), rebuilds the actor-handle tree (CUtlRBTree<CRBTree12Entry_102cfaf0,unsigned short>, comparator sub_102ce100) from m_pActors / m_nActors, runs sub_102cd4a0, then tells every actor through slot 244 or slot 245 (vtable +0x3d0 / +0x3d4)
 	void vfunc243(int a);	// slot 243 override: the same aggressiveness check, then CAI_GoalEntity::sub_102cdb70(a)
 	void vfunc244(CAI_BaseNPC *pActor);	// slot 244: like vfunc245 but sets the behaviour's flag at +0x19 and its byte at +0x1a from bit 0 of the byte at +0x204
 	void vfunc245(CAI_BaseNPC *pActor);	// slot 245: finds the actor's CAI_StandoffBehavior (slots 456/457 list the behaviours), clears its flag at +0x19 and gives it the parameter block of the aggressiveness
