@@ -612,6 +612,15 @@ int CBaseCombatWeapon::vfunc349()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10251f70 size=0xc
+int __fastcall sub_102517b0(void *pThis);
+
+int __fastcall sub_10251f70(void *pThis)
+{
+	return *(int *)((char *)sub_102517b0(pThis) + 0x5ebcc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10251f90 size=0xc
 // TARGET: CBaseCombatWeapon::sub_10251f90
 int CBaseCombatWeapon::sub_10251f90()
