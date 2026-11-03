@@ -165125,6 +165125,26 @@ int *sub_10377970()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103779f0 size=0x43
+#include "CBaseEntity.h"
+#include "CNPC_VGargoyle.h"
+void *sub_100aa720(int size);
+extern char g_106399bc[];
+
+// TARGET: npc_VGargoyle
+extern "C" CBaseEntity *npc_VGargoyle()
+{
+	void *mem = sub_100aa720(0x6690);
+	CNPC_VGargoyle *p;
+	if (mem)
+		p = ((CNPC_VGargoyle *)mem)->sub_10377a60();
+	else
+		p = 0;
+	((CBaseEntity *)p)->vfunc106(g_106399bc);
+	return (CBaseEntity *)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10377c00 size=0xc
 void __fastcall sub_10377c20(void *p);
 
