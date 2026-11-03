@@ -9,6 +9,8 @@ struct datamap_t;
 struct CSound;
 class CBaseEntity;
 
+int sub_10228350(float flDistance);	// 0x10228350: sound attenuation level from a distance (int)(20*log10(flDistance/36.0) + 40.0f); 0 when flDistance <= 0
+
 struct CSoundEntSlot	// one 0x2c byte entry of the sound pool at +0x464
 {
 	char m_pad0000[0x10];
