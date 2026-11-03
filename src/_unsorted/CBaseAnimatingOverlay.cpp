@@ -127,6 +127,27 @@ float CBaseAnimatingOverlay::vfunc250(float a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10098c80 size=0x3b
+#include "CBaseAnimatingOverlay.h"
+
+struct COverlayBase
+{
+	void sub_10091880(float flInterval, void *pListener);
+};
+
+// TARGET: CBaseAnimatingOverlay::vfunc258
+void CBaseAnimatingOverlay::vfunc258(float flInterval, void *pListener)
+{
+	((COverlayBase *)this)->sub_10091880(flInterval, pListener);
+	CAnimationLayerAdvance *pLayer = (CAnimationLayerAdvance *)((char *)this + 0x734);
+	for (int i = 0; i < 4; i++)
+	{
+		pLayer->sub_10098cd0(*(int *)&flInterval, pListener, this);
+		pLayer = (CAnimationLayerAdvance *)((char *)pLayer + 0x30);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10098eb0 size=0x11d
 #include "CBaseAnimating.h"
 #include "CBaseAnimatingOverlay.h"
