@@ -66859,6 +66859,74 @@ void SOwner::sub_1014f380()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014f3f0 size=0x1a0
+#include "CEHandleGet.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CPhysicsAnimlink.h"
+#include "CBaseAnimating.h"
+#include "IPhysicsObject.h"
+#include "CEntityVSlots.h"
+#include "matrix3x4_t.h"
+#include "QAngle.h"
+#include "Vector.h"
+#include "globalvars.h"
+#include "ehandle.h"
+
+void sub_10138df0(const matrix3x4_t &in1, const matrix3x4_t &in2, matrix3x4_t &out);
+void sub_10137ed0(const matrix3x4_t &in, QAngle &angles);
+void sub_10138720(float *pMatrix, int column, Vector *pOut);
+void sub_101cd940(void *pEnt);
+
+static __inline float flGet(const float *p) { return *p; }
+
+static __inline CBaseEntity *EHandleGet(const CBaseHandle &h)
+{
+	if (h.m_Index == 0xffffffff)
+		return 0;
+	EHandleEntInfo *pInfo = &((EHandleEntityList *)EHandleDetail::g_10566458)->m_EntPtrArray[h.m_Index & 0x1fff];
+	if (pInfo->m_SerialNumber == (h.m_Index >> 13))
+		return (CBaseEntity *)pInfo->m_pEntity;
+	return 0;
+}
+
+void CPhysicsAnimlink::sub_1014f3f0()
+{
+	matrix3x4_t boneToWorld[350];
+	if (!EHandleGet(*(CBaseHandle *)((char *)this + 0x478)) || !m_pShadowController4c0)
+	{
+		sub_101cd940(this);
+		return;
+	}
+	((CEntityVSlots *)EHandleGet(*(CBaseHandle *)((char *)this + 0x478)))->slot257((int)boneToWorld, 0xfffc);
+	matrix3x4_t linkMatrix;
+	linkMatrix.m_flMatVal[0][0] = flGet((float *)((char *)this + 0x480));
+	linkMatrix.m_flMatVal[0][1] = flGet((float *)((char *)this + 0x484));
+	linkMatrix.m_flMatVal[0][2] = flGet((float *)((char *)this + 0x488));
+	linkMatrix.m_flMatVal[0][3] = flGet((float *)((char *)this + 0x48c));
+	linkMatrix.m_flMatVal[1][0] = flGet((float *)((char *)this + 0x490));
+	linkMatrix.m_flMatVal[1][1] = flGet((float *)((char *)this + 0x494));
+	linkMatrix.m_flMatVal[1][2] = flGet((float *)((char *)this + 0x498));
+	linkMatrix.m_flMatVal[1][3] = flGet((float *)((char *)this + 0x49c));
+	linkMatrix.m_flMatVal[2][0] = flGet((float *)((char *)this + 0x4a0));
+	linkMatrix.m_flMatVal[2][1] = flGet((float *)((char *)this + 0x4a4));
+	linkMatrix.m_flMatVal[2][2] = flGet((float *)((char *)this + 0x4a8));
+	linkMatrix.m_flMatVal[2][3] = flGet((float *)((char *)this + 0x4ac));
+	matrix3x4_t worldMatrix;
+	sub_10138df0(boneToWorld[*(int *)((char *)this + 0x47c)], linkMatrix, worldMatrix);
+	QAngle angles;
+	sub_10137ed0(worldMatrix, angles);
+	Vector origin;
+	sub_10138720((float *)&worldMatrix, 3, &origin);
+	((IPhysicsShadowController *)m_pShadowController4c0)->vfunc1(origin, angles, gpGlobals->curtime - *(float *)((char *)this + 0x178));
+	((CBaseEntity *)this)->m_flNextThink = gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014f640 size=0x1a
 namespace lifted {
 extern int g_1057c7f0;
