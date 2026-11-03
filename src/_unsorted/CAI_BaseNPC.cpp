@@ -1521,6 +1521,29 @@ int CAI_BaseNPC::vfunc375(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10271f70 size=0x58
+#include "CAI_BaseNPC.h"
+
+struct CNpcView376 : public CAI_BaseNPC
+{
+	virtual int s569(int a);
+	virtual int s570(int a);
+};
+
+// TARGET: CAI_BaseNPC::vfunc376
+int CAI_BaseNPC::vfunc376(int act)
+{
+	if (!(vfunc513() & 0x8000000))
+		return act;
+	CNpcView376 *p = (CNpcView376 *)this;
+	if (act == 0x54)
+		return p->s570(*(int *)((char *)this + 0x5ddc));
+	if (act == 6 || (act == 1 && (*(unsigned char *)((char *)this + 0x5d8c) & 2)))
+		return p->s569(*(int *)((char *)this + 0x5ddc));
+	return act;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10272400 size=0x6e
 #include "CAI_BaseNPC.h"
 

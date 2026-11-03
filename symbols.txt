@@ -630,6 +630,7 @@
 0x10001f55 func   ?sub_10080420@@YAPAHXZ sub_10080420
 0x10001f5a func   ?sub_101a2820@CRestore@@QAEXPAGPAHPAXPAUtypedescription_t@@@Z CRestore::sub_101a2820
 0x10001f5f func   _item_w_zombie_fists item_w_zombie_fists
+0x10001f64 func   ?vfunc376@CAI_BaseNPC@@UAEHH@Z CAI_BaseNPC::vfunc376
 0x10001f69 func   ?sub_10310440@CUnknown10310440@@QAEHPAH@Z CUnknown10310440::sub_10310440
 0x10001f6e func   ?sub_1007e810@SScene1007e810@@QAEPAUSEvent1007e810@@PBD0@Z SScene1007e810::sub_1007e810
 0x10001f73 func   ?sub_101db6b0@CStatDefault60List@@QAEPAUStatDefault60@@XZ CStatDefault60List::sub_101db6b0
