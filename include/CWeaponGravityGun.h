@@ -38,7 +38,9 @@ public:
 	char m_b914;	// 0x914
 	char m_pad915[0x918 - 0x915];
 	EHANDLE m_hHeld918;	// 0x918
-	char m_pad91c[0x928 - 0x91c];
+	char m_pad91c[0x920 - 0x91c];
+	float m_fl920;	// 0x920: a distance parameter (remapped through sub_1014c680 with 0 / 200 / 1)
+	char m_pad924[0x928 - 0x924];
 	int m_nSoundState;	// 0x928
 	char m_pad92c[0x93c - 0x92c];
 	CGravControllerPoint m_controller93c;	// 0x93c
