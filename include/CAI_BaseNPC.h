@@ -24,6 +24,7 @@ class CAI_BaseNPC
 {
 public:
 	void sub_10266780(struct CTakeDamageInfo *pInfo, const Vector *pVecDir, struct CGameTrace *pTrace);	// slot 141 body "TraceAttack"
+	void sub_10265a90(CBaseEntity *pEnt);	// 0x10265a90: fires the "killed" output event at +0x5e24 with pEnt once (guard byte +0x5bd4), called by Event_Killed and CBaseCombatCharacter::CreateCorpse
 	// slots 0..9
 	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4();
 	virtual CAI_BaseNPC *vfunc5(unsigned int flags); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual const char **vfunc9(int *pOut);
