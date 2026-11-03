@@ -58,6 +58,18 @@ void CWeaponIGeneric::vfunc291()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f4810 size=0x1b
+#include "CWeaponIGeneric.h"
+
+// TARGET: CWeaponIGeneric::vfunc326
+void CWeaponIGeneric::vfunc326()
+{
+	float f = gpGlobals->curtime + 1.5f;
+	m_f910 = f;
+	m_f730 = f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f4840 size=0x23
 #include <string.h>
 #include "CWeaponIGeneric.h"

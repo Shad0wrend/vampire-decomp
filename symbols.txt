@@ -2444,6 +2444,7 @@
 0x10004cc8 func   ?vfunc180@CAmbientGeneric@@QAEXXZ CAmbientGeneric::vfunc180
 0x10004ccd func   ?vfunc72@CItemContainer@@QAE_NH@Z CItemContainer::vfunc72
 0x10004cd2 func   ?sub_103bcc00@CNPC_VTzimisce@@QAEHH@Z CNPC_VTzimisce::sub_103bcc00
+0x10004cdc func   ?vfunc326@CWeaponIGeneric@@QAEXXZ CWeaponIGeneric::vfunc326
 0x10004ce6 func   ?vfunc91@CVampireProjectile_MingXiaoSpit@@UAEDPAXH@Z CVampireProjectile_MingXiaoSpit::vfunc91
 0x10004ceb func   ?vfunc5@CItemGDrugsMorphineBottle@@QAEPAV1@I@Z CItemGDrugsMorphineBottle::vfunc5
 0x10004cf0 func   ?vfunc603@CNPC_VMingXiao@@QAEMPAM0@Z CNPC_VMingXiao::vfunc603
