@@ -431,6 +431,7 @@ public:
 	void sub_100017d5();	// as in CPhysForce (transplant)
 	float *vfunc367(float *out);	// as in CBaseEntity (transplant)
 	int sub_101647a0(int act);	// NPC_TranslateActivity: scope-traced, 0x16 -> 9, 0x17 -> 0x13
+	int sub_1033e4a0();	// CBaseCombatCharacter::vfunc124 (0x1033e4a0, stub 0x1000eeda): the base DrawDebugTextOverlays, called directly
 	void sub_1017c300();	// "CBasePlayer::SimulatePlayerSimulatedEntities" (stub 0x1000a5a1, called by vfunc437): two scope traces (the second "...-untouch"), loop 1 over m_SimulationList (count-1..0): dead handle -> FindAndRemove, else entity->sub_10040390(); loop 2: live entity with bit 0 of the byte at +0x26b -> sub_1003d490(), dead handle -> removed with the inline compare loop
 	void sub_1017c1d0(CBaseEntity *pEnt);	// "CBasePlayer::RemoveFromPlayerSimulationList": removes the entity from the handle vector at +0x23bc (count at +0x23c8) by shifting the tail down
 	CBaseEntity *sub_10081890();	// provisional, like sub_1015dc60 (transplant)
