@@ -2349,6 +2349,7 @@
 0x10004b06 func   ?sub_103c9cf0@@YADPAUEntV@@VVector@@@Z sub_103c9cf0
 0x10004b0b func   ?sub_102f46d0@CUnknown102f46d0@@QAE?AVVector@@PAXH@Z CUnknown102f46d0::sub_102f46d0
 0x10004b10 func   ?sub_1017bf10@CBasePlayer@@QAEXH@Z CBasePlayer::sub_1017bf10
+0x10004b15 func   ?vfunc22@CBasePlayer@@QAEXH@Z CBasePlayer::vfunc22
 0x10004b1a func   ?vfunc127@CNPC_VAndreiBlood@@QAEHH@Z CNPC_VAndreiBlood::vfunc127
 0x10004b1f func   ?sub_101db8e0@CUnknown101dbc60Tail@@QAEXXZ CUnknown101dbc60Tail::sub_101db8e0
 0x10004b24 func   ?vfunc82@CRevertSaved@@UAEPAUdatamap_t@@XZ CRevertSaved::vfunc82
