@@ -16,6 +16,7 @@ public:
 public:
 	int vfunc80();
 	int vfunc81();
+	int vfunc35(CBaseEntity *pOther);	// slot 35 (plain member): 0 when m_b914, else CBaseCombatWeapon::vfunc35(pOther)
 
 	// The item's release handling, called by CTriggerBombSite::sub_102116c0 on the astrolite it creates (after
 	// CAI_BaseNPC::sub_103f6ab0, which the symbol map names for the stub 0x10015c1c):
