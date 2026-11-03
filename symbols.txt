@@ -7903,6 +7903,7 @@
 0x1000d4e5 func   ?vfunc9@CSave@@UAEXPBDPAXH@Z CSave::vfunc9
 0x1000d4ea func   ?sub_100a91f0@@YI_NPAD@Z sub_100a91f0
 0x1000d4ef func   ?sub_10043be0@@YGXPAX0@Z sub_10043be0
+0x1000d4f4 func   ?vfunc10@CRestore@@UAEHXZ CRestore::vfunc10
 0x1000d4f9 func   ?vfunc82@CNPC_VSabbatLeader@@QAEPAUdatamap_t@@XZ CNPC_VSabbatLeader::vfunc82
 0x1000d4fe func   ?vfunc586@CAI_BaseHumanoid@@QAE_NXZ CAI_BaseHumanoid::vfunc586
 0x1000d503 func   ?sub_10107d50@@YAHXZ sub_10107d50

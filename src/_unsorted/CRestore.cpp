@@ -36,6 +36,17 @@ int CRestore::vfunc2(CBaseEntity * a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a1390 size=0x16
+#include "CRestore.h"
+
+int CRestore::vfunc10()
+{
+	int value;
+	vfunc9((unsigned short *)&value);
+	return value & 0xffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a13c0 size=0x4
 // TARGET: sub_101a13c0
 char __fastcall sub_101a13c0(CRestore *p) { return ((unsigned char *)p)[0x24]; }
