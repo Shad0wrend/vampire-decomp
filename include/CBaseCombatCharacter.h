@@ -293,4 +293,5 @@ public:
     virtual bool vfunc72(int);
     virtual int vfunc79();
     virtual int vfunc80();
+	void sub_103418f0(inputdata_t *data);
 };
