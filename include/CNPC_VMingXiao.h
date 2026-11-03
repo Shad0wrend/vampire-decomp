@@ -165,8 +165,9 @@ public:
 	char sub_10398030(int nIndex, char bFlag);	// stub 0x10398030 (called by vfunc433/vfunc438): whether the tentacle slot nIndex may attack now -- sub_10398000(nIndex) must accept, curtime must be past m_flSlotTimeA[nIndex] (+0x66c4), then by nIndex (0/1: distance at +0x6264 in 100..300 -> activity 0x112a/0x112b; 2/3: distance in 100..200 -> 0x112c/0x112d; 4/5: distance above 150 and the grabbed target handle +0x6718 live with m_nSide671c == nIndex); when bFlag is set and an activity was picked, needs the target entity from the handle at +0x667c (its object at +0xa0) and the slot 331 result on it (slot 361 of that object, slot 376 of this), the slot 167 target's +0x9c, and a non-negative output of slot 331
 	int m_n6720;	// +0x6720: out argument of sub_10398b20 (the target search)
 	char m_pad6724[0x672c - 0x6724];
-	int m_n672c;	// +0x672c: out argument of sub_10398b20
-	char m_pad6730[0x6738 - 0x6730];
+	union { int m_n672c; float m_f672c; };	// +0x672c: out argument of sub_10398b20 / x offset
+	float m_f6730;	// +0x6730: y offset
+	float m_f6734;	// +0x6734: z offset
 	EHANDLE m_h6738;	// +0x6738: the phys_animlink
 	int m_nMode673c;	// +0x673c: the grabbing (2) / throwing (4) mode
 	int m_n6740;	// +0x6740
