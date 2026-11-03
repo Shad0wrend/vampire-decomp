@@ -16,13 +16,13 @@ public:
 	int m_nLimit740;
 	char m_pad0744[0x8d8 - 0x744];
 	Vector m_vecPos[32];	// 0x8d8
-	float m_vecBatVelocity[32];	// 0x0a58
-	char m_pad0ad8[0xbd8 - 0xad8];
+	Vector m_vecBatVelocity[32];	// 0x0a58
 	bool m_bBatHittingPlayer[32];	// 0x0bd8
 	int m_nBat[32];	// 0xbf8
 
 	// Slot 141, called directly so far; declared as a plain member.
 	void vfunc141(int *pRef, int unused, void *pInfo);
+	void vfunc103();	// 0x100b87a0 (slot 103): spawn/init (model 0x1055a770, precaches Impact_Flesh_Emitter, randomises the 32 bat positions / velocities)
 
 	bool sub_100ba0c0(void *pEntity);	// slot 68: true when the entity is set and its field at +0xa8 is non-null
 	CBatSwarm *vfunc5(unsigned int flags);	// as in CSimplePhysicsProp (transplant)
