@@ -8623,6 +8623,7 @@
 0x1000e840 func   ?sub_101d60b0@CLoaderUnit101d60b0@@QAE_NPAUCSlotObject@@@Z CLoaderUnit101d60b0::sub_101d60b0
 0x1000e845 func   ?vfunc5@CWeaponRanged_Pistol_DesertEagle@@QAEPAV1@I@Z CWeaponRanged_Pistol_DesertEagle::vfunc5
 0x1000e84a func   ?sub_101ce210@@YAXHHHH@Z sub_101ce210
+0x1000e84f func   ?vfunc450@CAI_BaseNPC@@QAEHH@Z CAI_BaseNPC::vfunc450
 0x1000e859 func   ?sub_1009d1e0@CBaseEntity@@QAEXXZ CBaseEntity::sub_1009d1e0
 0x1000e85e func   ?sub_1039a6e0@CUnknown1039a6e0@@QAEXH@Z CUnknown1039a6e0::sub_1039a6e0
 0x1000e863 func   ?sub_10310cf0@CUnknown10310c10@@QAEPAXVVector@@@Z CUnknown10310c10::sub_10310cf0

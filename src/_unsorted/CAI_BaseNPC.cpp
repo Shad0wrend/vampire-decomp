@@ -123,6 +123,23 @@ int CUnknown101a65e0View::sub_101a65e0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6640 size=0x10
+#include "CAI_BaseNPC.h"
+#include "CAI_BaseNPCTroika.h"
+
+class CRangeNode_102ea280
+{
+public:
+	int sub_102ea280(int a);
+};
+
+int CAI_BaseNPC::vfunc450(int a)
+{
+	CAI_CondOwner *pCond = ((CAI_BaseNPCTroika *)this)->vfunc580();
+	return ((CRangeNode_102ea280 *)((char *)pCond + 0x18))->sub_102ea280(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6660 size=0x6
 namespace lifted {
 extern char g_10594820;
