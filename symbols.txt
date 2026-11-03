@@ -12988,6 +12988,7 @@
 0x10014a0b func   ?vfunc0@CVTraitEffectGroup_t@@UAEPAV1@I@Z CVTraitEffectGroup_t::vfunc0
 0x10014a10 func   ?vfunc463@CNPC_VHumanCombatant@@QAEXHH@Z CNPC_VHumanCombatant::vfunc463
 0x10014a15 func   ?sub_100fd0d0@@YAHXZ sub_100fd0d0
+0x10014a1a func   ?sub_101073c0@CBaseCombatCharacter@@QAEPBDH@Z CBaseCombatCharacter::sub_101073c0
 0x10014a1f func   ?sub_100bf1c0@bf_read@@QAEXHH@Z bf_read::sub_100bf1c0
 0x10014a29 func   ?sub_1003e2e0@CBaseEntity@@QAEXPAV1@PAX@Z CBaseEntity::sub_1003e2e0
 0x10014a2e func   ?vfunc617@CNPC_VWerewolf@@QAE_NUCNPC_VWerewolfVec3@@HH0@Z CNPC_VWerewolf::vfunc617

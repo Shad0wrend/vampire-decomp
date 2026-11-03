@@ -53064,6 +53064,35 @@ void CBaseCombatCharacter::sub_101072b0(int event)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101073c0 size=0x81
+#include "CBaseCombatCharacter.h"
+#include "CExpressionTable.h"
+struct TraceEnt { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern TraceEnt *g_109f3620;
+extern char g_1056be6c[];
+extern char g_105387dc[];
+extern char g_106b8540[];
+extern CExpressionTable g_10709200;
+const char *CBaseCombatCharacter::sub_101073c0(int expression)
+{
+    const char *name;
+    if (this != 0) {
+        name = m_name26c;
+        if (!name)
+            name = g_106b8540;
+    } else
+        name = g_105387dc;
+    g_109f3620[*g_109f3680].a = g_1056be6c;
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    const char *r = g_10709200.sub_10105090(expression);
+    --*g_109f3680;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107480 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);
