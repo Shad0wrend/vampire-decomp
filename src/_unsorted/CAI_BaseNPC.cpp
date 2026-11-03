@@ -1249,6 +1249,18 @@ float CAI_BaseNPC::vfunc418(float a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10270820 size=0x8
+#include "CAI_BaseNPC.h"
+#include "CBaseCombatCharacter.h"
+
+char CAI_BaseNPC::vfunc337()
+{
+	unsigned char result = ((CBaseCombatCharacter *)this)->CBaseCombatCharacter::vfunc337();
+	result |= 1;
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10270840 size=0x3b
 #include "CAI_BaseNPC.h"
 

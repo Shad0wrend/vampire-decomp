@@ -11305,6 +11305,7 @@
 0x10012c01 func   ?vfunc123@CScriptedTarget@@UAEXXZ CScriptedTarget::vfunc123
 0x10012c10 func   ?sub_1010a370@CFire@@QAEXHM@Z CFire::sub_1010a370
 0x10012c15 func   ?sub_10250560@@YAXH@Z sub_10250560
+0x10012c1a func   ?vfunc337@CAI_BaseNPC@@UAEDXZ CAI_BaseNPC::vfunc337
 0x10012c1f func   ?sub_101a6aa0@@YAXXZ sub_101a6aa0
 0x10012c24 func   ?sub_103ec6f0@@YAHXZ sub_103ec6f0
 0x10012c29 func   ?vfunc323@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc323
