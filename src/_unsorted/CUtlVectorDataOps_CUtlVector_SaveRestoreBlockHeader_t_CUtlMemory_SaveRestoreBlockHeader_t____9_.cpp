@@ -133,3 +133,17 @@ template<> int CUtlVectorDataOps<CUtlVector<SaveRestoreBlockHeader_t,CUtlMemory<
 	return (int)pVec;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101a5570 size=0x13
+#include "CUtlVectorDataOps.h"
+#include "SaveRestoreBlockHeader_t.h"
+
+// TARGET: CUtlVectorDataOps<CUtlVector<SaveRestoreBlockHeader_t,CUtlMemory<SaveRestoreBlockHeader_t> >,9>::vfunc2
+template <class VEC, int N>
+bool CUtlVectorDataOps<VEC, N>::vfunc2(void *pFieldData)
+{
+	return *(int *)(*(char **)pFieldData + 0xc) == 0;
+}
+
+template class CUtlVectorDataOps<CUtlVector<SaveRestoreBlockHeader_t,CUtlMemory<SaveRestoreBlockHeader_t> >,9>;
+// END FUNCTION

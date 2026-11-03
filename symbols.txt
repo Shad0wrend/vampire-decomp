@@ -2482,6 +2482,7 @@
 0x10004e2b func   ?sub_101f73f0@CVTraitEffectGroup_t@@QAEXPAUCVStatKV@@@Z CVTraitEffectGroup_t::sub_101f73f0
 0x10004e30 func   ?sub_101e3e70@CUnknown101e0f00@@QAEXPAUS1033d380@@PBD@Z CUnknown101e0f00::sub_101e3e70
 0x10004e3a func   ?vfunc0@CPhysicsHook@@QAE_NXZ CPhysicsHook::vfunc0
+0x10004e3f func   ?vfunc2@?$CUtlVectorDataOps@V?$CUtlVector@USaveRestoreBlockHeader_t@@V?$CUtlMemory@USaveRestoreBlockHeader_t@@@@@@$08@@UAE_NPAX@Z CUtlVectorDataOps<CUtlVector<SaveRestoreBlockHeader_t,CUtlMemory<SaveRestoreBlockHeader_t> >,9>::vfunc2
 0x10004e49 func   ?sub_10272490@CAI_BaseNPC@@QAEXHHHH@Z CAI_BaseNPC::sub_10272490
 0x10004e4e func   ?vfunc4@CAutoGameSystem@@UAEXXZ CAutoGameSystem::vfunc4
 0x10004e53 func   ?vfunc24@CNPC_VGhoulCroucher@@QAEXPAX@Z CNPC_VGhoulCroucher::vfunc24
