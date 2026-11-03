@@ -12860,6 +12860,7 @@
 0x1001471d func   ?sub_100bb270@CBeam@@QAEPAMXZ CBeam::sub_100bb270
 0x10014722 func   ?vfunc5@CItemGPishaFetish@@QAEPAV1@I@Z CItemGPishaFetish::vfunc5
 0x10014727 func   ?vfunc80@CItemGHorrorTape_2@@QAEHXZ CItemGHorrorTape_2::vfunc80
+0x10014731 func   ?sub_10177120@CBasePlayer@@QAEXXZ CBasePlayer::sub_10177120
 0x10014736 func   ?vfunc50@CCameraTrack@@UAEHH@Z CCameraTrack::vfunc50
 0x1001473b func   ?sub_101ab8f0@CUnknown101ab800@@QAE_NHPBEHH@Z CUnknown101ab800::sub_101ab8f0
 0x10014740 func   ?sub_100a4930@CBaseEntity@@QAEXXZ CBaseEntity::sub_100a4930

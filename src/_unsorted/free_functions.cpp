@@ -70567,6 +70567,31 @@ void CUnk101764a0::sub_101764a0(char b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10177120 size=0x67
+#include "CBasePlayer.h"
+
+#define V4(n) virtual void n##a(); virtual void n##b(); virtual void n##c(); virtual void n##d();
+#define V16(n) V4(n##a) V4(n##b) V4(n##c) V4(n##d)
+struct Svc
+{
+	V16(p) V16(q) V16(r) V16(s) V16(t)
+	V4(u) V4(v)
+	virtual void vfunc88(int a, int b, int c);
+};
+extern Svc *g_1070b22c;
+
+void CBasePlayer::sub_10177120()
+{
+	if (m_f22A8 || m_f22AC) {
+		*(volatile int *)&m_f22A8 = 0;
+		*(volatile int *)&m_f22AC = 0;
+		*(volatile int *)&m_f22B0 = 0;
+		g_1070b22c->vfunc88(*(volatile int *)&m_n02E0, 0, 0);
+	}
+	m_b20A8 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101771b0 size=0x23
 // TARGET: sub_101771b0
 void __fastcall sub_101771b0(void *pSelf, int unused, int value)
