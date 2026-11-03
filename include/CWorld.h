@@ -12,6 +12,7 @@ public:
 class CWorld : public CBaseEntity
 {
 public:
+    bool vfunc73(CBaseEntity *pOther);
     CWorld();    // the constructor (0x1023b840): CBaseEntity body, vftable, engine edict 0 attached, world flags, solid BSP / move type none
     ~CWorld();    // the destructor body (0x1023ba30, called by vfunc5 0x1023ba00): vtable CWorld, cleanup calls, then the CBaseEntity destructor
     virtual void vfunc113();    // "CWorld::Activate"-like: CBaseEntity::vfunc113, caches sv_cheats in the global 0x10752e9c, clamps the value at +0x49c to 0..2 and, when that changed it, refreshes every player (sub_10170750) and flags the entity (+0x1b1); resets the globals 0x109247e0 / 0x109247e4 to -1 and 0x10924fb8 to 0
