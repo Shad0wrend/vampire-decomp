@@ -592,6 +592,16 @@ bool CBasePlayer::vfunc412()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10161430 size=0x14
+// TARGET: CBasePlayer::vfunc413
+bool CBasePlayer::vfunc413()
+{
+	if (m_nFF0 == 0x32)
+		return true;
+	return vfunc412();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10161fc0 size=0x10b
 #include "CBasePlayer.h"
 #include "CEHandleGet.h"

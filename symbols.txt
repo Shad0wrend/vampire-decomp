@@ -3419,6 +3419,7 @@
 0x10006604 func   ?sub_102dc3e0@@YIXPAVCBaseEntity@@@Z sub_102dc3e0
 0x10006609 func   ?vfunc81@CWeaponRanged_Pistol_Thirtyeight@@QAEHXZ CWeaponRanged_Pistol_Thirtyeight::vfunc81
 0x10006613 func   ?sub_10379000@CUnknown10379000@@QAEXD@Z CUnknown10379000::sub_10379000
+0x10006618 func   ?vfunc413@CBasePlayer@@UAE_NXZ CBasePlayer::vfunc413
 0x1000661d func   ?vfunc362@CWeaponMelee_Sheriff_Sword@@QAEHXZ CWeaponMelee_Sheriff_Sword::vfunc362
 0x10006622 func   ?vfunc127@CNPC_VTzimisceHeadClaw@@QAEHH@Z CNPC_VTzimisceHeadClaw::vfunc127
 0x10006627 func   ?vfunc363@CWeaponMelee_Claws_Protean4@@QAEHXZ CWeaponMelee_Claws_Protean4::vfunc363
