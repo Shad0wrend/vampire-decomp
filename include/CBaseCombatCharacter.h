@@ -196,6 +196,7 @@ public:
 	void vfunc104();	// slot 104 "CBaseCombatCharacter::Precache": scope trace (entity name), the character's stat record is precached through the default item list (global 0x10738d10), then, depending on sub_102f9970, either slot 337's answer goes to sub_102f9920 or the spawn-after-links check (slot 337 masked by sub_102f9950 must equal slot 337) prints the "ERROR" DevMsg block and gives up
 
 	void sub_1033d4b0();	// "CBaseCombatCharacter::BloodExplode": scope trace; when sub_103380d0 fails activates the two Thaumaturgy_Bloodboil_Explode effects
+	int sub_10342c80(void (*pCallback)(CBaseCombatCharacter *, int, int), int nArg, bool bInvert, Vector vecCenter, float flRadius);	// "CBaseCombatCharacter::HitboxesInSphere" (scope trace)
 #include "CBaseCombatCharacter_ext.h"
 #include "CBaseCombatCharacter_ext2.h"
 
