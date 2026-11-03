@@ -61,6 +61,7 @@ public:
     virtual bool vfunc37(int);
     virtual bool vfunc17(int);
     virtual int vfunc64(int, int);
+    virtual bool vfunc65(int a, int b);	// slot 65: whether slot 64 answered 1
     virtual float vfunc59();
     virtual float vfunc60();
     virtual bool vfunc26(int, int, int, int);
