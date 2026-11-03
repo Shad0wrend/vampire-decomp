@@ -104534,6 +104534,36 @@ void __fastcall sub_101f2de0(void *pThis, int dummy, void *pKV)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f2e20 size=0x7c
+#include "VKeyValues.h"
+
+extern VKeyValuesPool g_1073d280;
+VKeyValues *sub_101f2ec0(const char *pszName);
+void sub_101f2f00(const char *pszName, VKeyValues *pFile);
+
+void *sub_101f2e20(const char *pszName, int pathID)
+{
+    VKeyValues *pFile = sub_101f2ec0(pszName);
+    if (!pFile) {
+        void *pMem = g_1073d280.sub_1013dc60(0x38);
+        if (pMem)
+            pFile = ((VKeyValues *)pMem)->sub_101f1f50(pszName, 1);
+        else
+            pFile = 0;
+        if (pFile->sub_101f2180(pszName, pathID)) {
+            sub_101f2f00(pszName, pFile);
+        } else {
+            if (pFile)
+                pFile->Cacheable()->vfunc2(1);
+            pFile = 0;
+        }
+        if (!pFile)
+            return 0;
+    }
+    return pFile->KeyValues();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2f00 size=0x1d
 typedef void (*PFN_109f383c)(int, void *);
 extern PFN_109f383c g_109f383c;
