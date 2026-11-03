@@ -4363,6 +4363,7 @@
 0x10007a6d func   ?sub_10315a80@CUnknown103160c0@@QAEPAVCBaseEntity@@PBVVector@@M@Z CUnknown103160c0::sub_10315a80
 0x10007a72 func   ?sub_101c8980@CUnknown101c8980@@QAEXPAUCInputData100bc0f0@@@Z CUnknown101c8980::sub_101c8980
 0x10007a77 func   ?vfunc103@CSceneEntity@@UAEXXZ CSceneEntity::vfunc103
+0x10007a81 func   ?vfunc448@CNPC_VTzimisce@@UAEXH@Z CNPC_VTzimisce::vfunc448
 0x10007a86 func   _item_w_glock_17c item_w_glock_17c
 0x10007a90 func   ?vfunc470@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc470
 0x10007a95 func   ?sub_10182a90@CAI_BaseNPC@@QAEHXZ CAI_BaseNPC::sub_10182a90

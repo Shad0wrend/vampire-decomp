@@ -706,6 +706,30 @@ void CNPC_VTzimisce::vfunc463(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ba350 size=0x82
+#include "CNPC_VTzimisce.h"
+#include "CUnknown10381be0.h"
+#include "CUnknown103bf200.h"
+
+unsigned char __fastcall sub_103be130(char *pNpc);
+
+void CNPC_VTzimisce::vfunc448(int a)
+{
+	if (m_nState5cc0 == 2 && sub_10269d30(0x5c))
+		m_flags5d8c &= 0x7fffffff;
+	if (((CUnknown10381be0 *)this)->sub_103be090()) {
+		((CUnknown103bf200 *)this)->sub_103bf200(CBaseHandle(*(const CBaseHandle *)&m_hTarget));
+		sub_103be050(0);
+	}
+	if (!((CUnknown10381be0 *)this)->sub_103be130()) {
+		sub_102c43b0(0.75f);
+		m_hTarget = 0xffffffff;
+	}
+	m_n66b8 = 0;
+	sub_1029adb0(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ba410 size=0x1c0
 #include "CBaseEntity.h"
 #include "CNPC_VTzimisce.h"
