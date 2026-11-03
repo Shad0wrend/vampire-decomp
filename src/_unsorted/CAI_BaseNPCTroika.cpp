@@ -1946,6 +1946,18 @@ void CAI_BaseNPCTroika::vfunc322(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ad0c0 size=0x34
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CAI_BaseNPCTroika::vfunc615
+bool CAI_BaseNPCTroika::vfunc615()
+{
+	if (sub_10014df8(0x30))
+		return false;
+	return gpGlobals->curtime > m_f65bc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ad110 size=0x20
 #include "CAI_BaseNPCTroika.h"
 void CAI_BaseNPCTroika::vfunc616()
