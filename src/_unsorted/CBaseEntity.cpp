@@ -472,6 +472,16 @@ unsigned char sub_10026d30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026d50 size=0x3
+#include "CBaseEntity.h"
+
+// TARGET: CBaseEntity::vfunc137
+int CBaseEntity::vfunc137()
+{
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026d70 size=0x3
 // TARGET: sub_10026d70
 void __stdcall sub_10026d70(int a)

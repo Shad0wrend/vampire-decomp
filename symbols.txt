@@ -9526,6 +9526,7 @@
 0x1000f961 func   ?sub_1014e3f0@@YAXPAUCEntityMatrixView@@0PAUmatrix3x4_t@@@Z sub_1014e3f0
 0x1000f966 func   ?sub_1012cdd0@@YAHXZ sub_1012cdd0
 0x1000f96b func   ?vfunc512@CAI_ExpressiveNPC@@QAEHXZ CAI_ExpressiveNPC::vfunc512
+0x1000f970 func   ?vfunc137@CBaseEntity@@QAEHXZ CBaseEntity::vfunc137
 0x1000f975 func   ?vfunc327@CWeaponMelee@@UAEXXZ CWeaponMelee::vfunc327
 0x1000f97f func   ?sub_1003d770@@YAXPAUCTouchSlots@@PAUCTouchLink@@@Z sub_1003d770
 0x1000f984 func   ?vfunc329@CWeaponIGeneric@@UAEHXZ CWeaponIGeneric::vfunc329
