@@ -8649,6 +8649,7 @@
 0x1000e039 func   ?sub_101eaa80@@YAXH@Z sub_101eaa80
 0x1000e03e func   ?vfunc63@CBaseEntity@@UAEXVVector@@@Z CBaseEntity::vfunc63
 0x1000e048 func   ?sub_102f7a10@@YAXXZ sub_102f7a10
+0x1000e04d func   ?PhysicsCheckWater@CBaseEntity@@QAE_NXZ CBaseEntity::PhysicsCheckWater
 0x1000e052 func   ?vfunc2@CAI_ExpresserSink@@UAEXXZ CAI_ExpresserSink::vfunc2
 0x1000e057 func   ?sub_1008f7b0@CBaseAnimating@@QAEHPBD@Z CBaseAnimating::sub_1008f7b0
 0x1000e05c func   ?sub_10029130@CUnknown10029130@@QAEHHHH@Z CUnknown10029130::sub_10029130
