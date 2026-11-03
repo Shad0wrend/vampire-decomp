@@ -11432,6 +11432,28 @@ int sub_1005cf30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005d220 size=0x37
+#include "CTEBeamSpline.h"
+
+extern char g_1044dcd0[];
+
+struct CBaseTempEntityHeadCtor
+{
+	void sub_100507e0(const char *name);
+};
+
+// TARGET: CTEBeamSpline::sub_1005d220
+CTEBeamSpline *CTEBeamSpline::sub_1005d220(const char *name)
+{
+	((CBaseTempEntityHeadCtor *)this)->sub_100507e0(name);
+	*(void **)this = g_1044dcd0;
+	for (int i = 0; i < 16; i++)
+		m_vecPoints[i].Init(0.0f, 0.0f, 0.0f);
+	m_nPoints = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005d2a0 size=0xb
 namespace lifted {
 extern char g_1044dcd0;

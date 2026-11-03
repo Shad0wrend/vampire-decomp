@@ -6876,6 +6876,7 @@
 0x1000b7f3 func   ?sub_101871f0@@YGXPAUCPlayerTimeStub@@N@Z sub_101871f0
 0x1000b7f8 func   ?sub_10072bf0@CUnknown10072f10@@QAEPAV1@PBV1@@Z CUnknown10072f10::sub_10072bf0
 0x1000b802 func   ?sub_1011adc0@@YAXXZ sub_1011adc0
+0x1000b807 func   ?sub_1005d220@CTEBeamSpline@@QAEPAV1@PBD@Z CTEBeamSpline::sub_1005d220
 0x1000b811 func   ?sub_1031a0e0@@YAXPAUCChainNodeStub@@0@Z sub_1031a0e0
 0x1000b81b func   ?vfunc431@CPayphone@@QAEXXZ CPayphone::vfunc431
 0x1000b82a func   ?sub_103f53f0@CWeaponUnarmed@@QAEPAV1@XZ CWeaponUnarmed::sub_103f53f0
