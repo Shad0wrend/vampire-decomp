@@ -42,7 +42,8 @@ public:
 	float m_fl920;	// 0x920: a distance parameter (remapped through sub_1014c680 with 0 / 200 / 1)
 	char m_pad924[0x928 - 0x924];
 	int m_nSoundState;	// 0x928
-	char m_pad92c[0x93c - 0x92c];
+	char m_pad92c[0x938 - 0x92c];
+	float m_fl938;	// 0x938: the vertical offset of the held object (subtracted from its origin z)
 	CGravControllerPoint m_controller93c;	// 0x93c
 	char m_pad9d0[0x9d8 - 0x93c - sizeof(CGravControllerPoint)];
 	struct CSlot9d8 { int pad; EHANDLE a; EHANDLE b; int pad2[2]; } m_slots9d8[16];	// 0x9d8: two handles per entry
