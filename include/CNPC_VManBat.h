@@ -65,6 +65,8 @@ public:
 	void sub_1038c170(int nMode);	// switches between the grounded (1: flag 0x400 set, state 2) and the flying (other: flag cleared, state 0) setup, then slot 93(4, 0)
 	void sub_1038fe30();	// when the byte at +0x66b8 is clear and the entity of the handle at +0x66ac is closer than 400 units (squared distance below 160000.0), plays one of the man-bat sounds (table 0x10640d28, picked by the sound system's slot 2) to a reliable PAS attenuation filter on channel 4 and sets the byte
 	void sub_1038fc80();	// tells every living "ManBat_Minion" NPC without a target about the bat's target (once; sets the flag at +0x66b0)
+	void vfunc432(int a);	// slot 432: releases the carried character, then the human vfunc432
+	void sub_10385a10(int a);	// CNPC_VHuman::vfunc432 (stub 0x1000698d), called directly
 	void sub_1038fd40();	// the reverse of sub_1038fc80: while the flag at +0x66b0 is set, every living "ManBat_Minion" NPC with a target count is released (sub_1026d0c0), told about the bat's target (relationship 1 / 10) and scheduled (sub_102ae840 with 2 when slot 167 of the bat answers, else 1); then clears the flag
 	void vfunc144(int arg);	// slot 144: sub_1038f020(1), sub_1038c170(2), sub_1038f660, sub_1038fd40, releases the entity behind the handle at +0x66a4, then CNPC_VVampire::vfunc144
 	void sub_1038f020(char bForce);	// stub 0x10015591, called by vfunc144 first: lets go of the carried character and removes the three attached entities (unless the delay at +0x6684 has not run out and bForce is clear)
