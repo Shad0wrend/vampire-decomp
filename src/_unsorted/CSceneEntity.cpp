@@ -25,6 +25,20 @@ CSceneEntity *CSceneEntity::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10080a80 size=0x24
+#include "CSceneEntity.h"
+#include "CBaseEntity.h"
+
+// TARGET: CSceneEntity::vfunc180
+void CSceneEntity::vfunc180()
+{
+	if (m_bPlaying498)
+		vfunc245();
+	sub_10083a60();
+	((CBaseEntity *)this)->CBaseEntity::vfunc180();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10080f60 size=0x8
 // TARGET: CSceneEntity::vfunc103
 void CSceneEntity::vfunc103()
