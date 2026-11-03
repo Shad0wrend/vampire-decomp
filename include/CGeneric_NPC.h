@@ -24,4 +24,5 @@ public:
     virtual const char * vfunc451();
 public:
 	virtual void vfunc434();
+	virtual int vfunc473();	// slot 473: 0x19 when the state at +0x5cc0 is 1, else 0x17
 };

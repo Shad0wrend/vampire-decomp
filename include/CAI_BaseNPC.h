@@ -151,7 +151,7 @@ public:
 	CAI_NPC_V(470)
 	virtual float vfunc471();	// a random float between 0.2 and 0.9 (the engine random stream's RandomFloat)
 	virtual void vfunc472(CBaseEntity *pEnt);
-	CAI_NPC_V(473) CAI_NPC_V(474) CAI_NPC_V(475) CAI_NPC_V(476) CAI_NPC_V(477) CAI_NPC_V(478) CAI_NPC_V(479)
+	virtual int vfunc473(); CAI_NPC_V(474) CAI_NPC_V(475) CAI_NPC_V(476) CAI_NPC_V(477) CAI_NPC_V(478) CAI_NPC_V(479)
 	virtual bool vfunc480();	// "CAI_BaseNPC::...": false while bit 16 of the flags at +0x14bc is set; true without a slot 167 object, when it is not usable (slot 158), or when the memory list (slot 541) flags it; else whether one of the conditions 0x43, 0x45, 0x5b, 0x58 holds
 	virtual void vfunc481(int a); virtual int vfunc482(int a);	// slot 482: asked of another NPC with the value slot 585 returns, nonzero accepts
 	virtual void vfunc483(int unused);
