@@ -7244,6 +7244,7 @@
 0x1000c3c4 func   ?sub_101fc8d0@@YAXH@Z sub_101fc8d0
 0x1000c3c9 func   ?sub_102e9f90@CUnknown102e9f90@@QAEHXZ CUnknown102e9f90::sub_102e9f90
 0x1000c3d3 func   ?sub_10099390@CUnk10099390@@QAEXHM@Z CUnk10099390::sub_10099390
+0x1000c3d8 func   ?vfunc349@CItemContainer@@QAEXPAPAVCBaseEntity@@@Z CItemContainer::vfunc349
 0x1000c3e2 func   ?vfunc82@CNPC_VBach@@UAEPAUdatamap_t@@XZ CNPC_VBach::vfunc82
 0x1000c3e7 func   ?sub_102518f0@CWeaponCopy@@QAEPAU1@PBU1@@Z CWeaponCopy::sub_102518f0
 0x1000c3ec func   ?vfunc82@CLight@@QAEPAUdatamap_t@@XZ CLight::vfunc82

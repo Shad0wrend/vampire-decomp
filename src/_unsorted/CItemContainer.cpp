@@ -263,6 +263,18 @@ void CItemContainer::vfunc407()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10208fc0 size=0x1f
+#include "CItemContainer.h"
+
+// TARGET: CItemContainer::vfunc349
+void CItemContainer::vfunc349(CBaseEntity **ppEnt)
+{
+	CBaseEntity *pEnt = *ppEnt;
+	if (pEnt && pEnt->m_p9c)
+		sub_103411c0((CBaseEntity *)pEnt->m_p9c, 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10208ff0 size=0x72
 #include "CItemContainer.h"
 #include "CGlobalEntityList.h"
