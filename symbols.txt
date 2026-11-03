@@ -3890,6 +3890,7 @@
 0x1000705e func   ?sub_10246ca0@@YA?AVSendProp@@PBDHHHH@Z sub_10246ca0
 0x10007063 func   ?sub_1030d7e0@@YGHPBD@Z sub_1030d7e0
 0x10007068 func   ?sub_102bea80@CUnknown102bea80@@QAEHHHH@Z CUnknown102bea80::sub_102bea80
+0x1000706d func   ?sub_1004e240@@YGXH@Z sub_1004e240
 0x10007077 func   ?vfunc275@CPropKeypad@@QAEXXZ CPropKeypad::vfunc275
 0x1000707c func   ?vfunc5@CBaseButton@@UAEPAV1@I@Z CBaseButton::vfunc5
 0x10007081 func   ?vfunc1@CTEExplosion@@UAEHXZ CTEExplosion::vfunc1

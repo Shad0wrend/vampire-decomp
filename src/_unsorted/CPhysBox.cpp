@@ -101,6 +101,16 @@ void CPhysBox::vfunc41(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004e240 size=0xe
+void __cdecl sub_1040d9a0(int a);
+
+// TARGET: sub_1004e240
+void __stdcall sub_1004e240(int a)
+{
+	sub_1040d9a0(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004e260 size=0x125
 #include "CPhysBox.h"
 #include "CCollisionProperty.h"
