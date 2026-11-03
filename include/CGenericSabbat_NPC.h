@@ -6,6 +6,7 @@
 class CGenericSabbat_NPC : public CAI_BaseNPC
 {
 public:
+	CGenericSabbat_NPC *vfunc5(int flags);	// slot 5 (plain overload of the base slot; VC6 has no covariant returns): sub_1000c9cd (destructor body), then sub_100aa7b0(this) when flags & 1; returns this
 	virtual void vfunc103();	// Spawn: slot 104 (Precache), SetModel from slot 9, clears +0x1568 / +0x156c, sub_10273070(0), SetSolid(2) (inlined scope trace), move type (4, 0), +0x1570 = 0xf7, flags +0x19c = 0, health from the global at 0x1093a36c, +0x1574 = 0.2f, +0x5cc0 = 0, sub_1026dc00(1) and (0x800000), then slot 420
 	virtual void vfunc104();	// Precache
 	virtual void vfunc144(int a);	// slot 144 override: sub_10090890(0), then the base implementation
