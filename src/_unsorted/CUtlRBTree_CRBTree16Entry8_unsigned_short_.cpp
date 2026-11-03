@@ -9,6 +9,25 @@
 static void (CUtlRBTree<CRBTree16Entry8, unsigned short>::*s_RemoveNode)(unsigned short) = &CUtlRBTree<CRBTree16Entry8, unsigned short>::RemoveNode;
 // END FUNCTION
 
+// FUNCTION: 0x10047930 size=0x57
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree16.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlrbtree.h"
+#include "CRBTree16Entry8.h"
+
+const CUtlRBTree<CRBTree16Entry8, unsigned short>::Links_t &CUtlRBTree<CRBTree16Entry8, unsigned short>::Links(unsigned short i) const
+{
+	static Links_t s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), CUtlRBTree<CRBTree16Entry8, unsigned short>::BLACK };
+	return (i != InvalidIndex()) ? *(Links_t *)&m_Elements[i] : *(Links_t *)&s_Sentinel;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100479b0 size=0x824
 // TARGET: ?RemoveRebalance@?$CUtlRBTree@UCRBTree16Entry8@@G@@QAEXG@Z
 #include "utlrbtree.h"
