@@ -7611,6 +7611,7 @@
 0x1000cefa func   ?sub_1008e0a0@CBaseAnimating@@QAEXPAVCBaseEntity@@PBD1HH@Z CBaseAnimating::sub_1008e0a0
 0x1000ceff func   _npc_VProneDialog npc_VProneDialog
 0x1000cf04 func   ?sub_103b22e0@@YAHXZ sub_103b22e0
+0x1000cf09 func   ?vfunc461@CNPC_VMoleman@@QAEHXZ CNPC_VMoleman::vfunc461
 0x1000cf13 func   ?sub_1005b6c0@@YAHXZ sub_1005b6c0
 0x1000cf18 func   ?sub_101dbdf0@@YAXXZ sub_101dbdf0
 0x1000cf1d func   ?sub_102e8a80@@YIXPAHHH@Z sub_102e8a80

@@ -88,6 +88,17 @@ int CNPC_VMoleman::vfunc438()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039fe10 size=0xf
+#include "CNPC_VMoleman.h"
+#include "CNPC_VHuman.h"
+
+int CNPC_VMoleman::vfunc461()
+{
+	*(int *)((char *)this + 0x1b38) = 0x1b;
+	return ((CNPC_VHuman *)this)->sub_103851e0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039fe30 size=0xd
 void sub_10385a10(float a);
 
