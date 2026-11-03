@@ -162,6 +162,29 @@ int CHL2_Player::vfunc372(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034fd60 size=0x14
+#include "CHL2_Player.h"
+
+#define QVS(n) virtual void q##n();
+#define QVS10(p) QVS(p##0) QVS(p##1) QVS(p##2) QVS(p##3) QVS(p##4) QVS(p##5) QVS(p##6) QVS(p##7) QVS(p##8) QVS(p##9)
+
+struct CHL2Slots371
+{
+	QVS10(0) QVS10(1) QVS10(2) QVS10(3) QVS10(4) QVS10(5) QVS10(6) QVS10(7) QVS10(8) QVS10(9)
+	QVS10(10) QVS10(11) QVS10(12) QVS10(13) QVS10(14) QVS10(15) QVS10(16) QVS10(17) QVS10(18) QVS10(19)
+	QVS10(20) QVS10(21) QVS10(22) QVS10(23) QVS10(24) QVS10(25) QVS10(26) QVS10(27) QVS10(28) QVS10(29)
+	QVS10(30) QVS10(31) QVS10(32) QVS10(33) QVS10(34) QVS10(35) QVS10(36)
+	QVS(370)
+	virtual void s371(int a);
+};
+
+int CHL2_Player::vfunc373(int a)
+{
+	((CHL2Slots371 *)this)->s371(a);
+	return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034fd90 size=0x39
 // TARGET: CHL2_Player::sub_1034fd90
 #include "CHL2_Player.h"
