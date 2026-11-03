@@ -29,6 +29,7 @@ public:
 
 	char m_04[4];
 	void sub_1000cfbd();	// as in CDataObjectAccessSystem (transplant)
+	void *sub_101bd980(unsigned int flags);
 };
 
 class CDirtySpatialPartitionEntityList : public CAutoGameSystem, public IPartitionQueryCallback
