@@ -32,6 +32,7 @@ public:
 
 	void sub_101b6d60(const void *pInsert, int *pParent, bool *pLeftChild);	// "CUtlRBTree::FindInsertionPosition": walks down from the root with the less function, stores the last visited node in *pParent and whether the new element goes to its left in *pLeftChild
 	int sub_101b6bd0(int parent, bool leftchild);	// "CUtlRBTree::InsertAt": NewNode (free list head, else grows the node memory to hold one more node; the first allocation is 1 element), constructs the element (first word 0xffff, sound parameter record sub_101b30d0 at +0xc of the data), links it below parent (red, no children; the root when parent is -1), InsertRebalance, ++m_NumElements; returns the node index
+	void sub_101b7450(int iNewNode, int iParent, bool bLeftChild);	// "CUtlRBTree::LinkNode + InsertRebalance" body for this 232-byte-node instance (0x101b7450, ret 12): writes the new node's links (m_Left = m_Right = -1 at +0/+4, m_Parent = iParent at +8, red tag 0 at +0xc), links it as the left (bLeftChild) or right child of iParent, or as m_Root (+0x10) when iParent is -1, then runs the red-black fix-up loop (uncle test, RotateLeft/RotateRight, recolour) reading links through Links(); the root ends black. Uses m_pElements (+4), m_Root (+0x10) and CUtlRBTree<CSoundEmitterRecord,int>::RotateLeft (0x101b9250) / RotateRight (0x101b94d0).
 	Links_t &sub_101b78f0(int i);	// "CUtlRBTree::Links" (out of line, with the sentinel static; stub 0x10005c40)
 	void sub_101b7f70(int i);	// "CUtlRBTree::InsertRebalance" (stub 0x10012d8c)
 };
