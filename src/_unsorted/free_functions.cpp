@@ -166963,6 +166963,23 @@ void CNPC_Bullseye::sub_10006c26()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10356ef0 size=0x29
+#include "CAI_BaseNPC.h"
+
+struct CNPCUnit10356ef0 : CAI_BaseNPC
+{
+	void sub_10356ef0();
+};
+
+// TARGET: CNPCUnit10356ef0::sub_10356ef0
+void CNPCUnit10356ef0::sub_10356ef0()
+{
+	*(float *)((char *)this + 0x17c) = gpGlobals->curtime + 0.1f;
+	CAI_BaseNPC::sub_10269b50(0x4c);
+	CAI_BaseNPC::sub_10269b50(0x4d);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10357110 size=0x2a
 #include "CAI_BaseNPC.h"
 #include "CBaseEntity.h"

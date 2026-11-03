@@ -5581,6 +5581,7 @@
 0x100097e1 func   ?sub_1030c600@@YGHPBD@Z sub_1030c600
 0x100097e6 func   ?sub_1013d580@@YAMMM@Z sub_1013d580
 0x100097eb func   ?sub_10397f00@CNPC_VMingXiao@@QAEXXZ CNPC_VMingXiao::sub_10397f00
+0x100097fa func   ?sub_10356ef0@CNPCUnit10356ef0@@QAEXXZ CNPCUnit10356ef0::sub_10356ef0
 0x100097ff func   ?sub_101f4530@CUnit101f4530@@QAEHHH@Z CUnit101f4530::sub_101f4530
 0x10009804 func   ?sub_104001f0@@YAHXZ sub_104001f0
 0x10009809 func   ?vfunc81@CItemGCarStereo@@QAEHXZ CItemGCarStereo::vfunc81
