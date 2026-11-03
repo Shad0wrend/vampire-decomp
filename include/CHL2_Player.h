@@ -119,6 +119,7 @@ public:
 	void sub_10014eb6(float *pFirst, float *pSecond);	// CBaseCombatCharacter::sub_10014eb6 (viewpoint query, stub 0x10014eb6), called directly by slot 333
 	int vfunc138();	// slot 138: the dword at +0x2460, or 1 when it is 0
 	int vfunc372(int a);	// slot 372: vtable slot 370 with the argument, then the argument
+	int vfunc373(int a);	// slot 373: vtable slot 371 with the argument, then the argument
 	char m_pad0004[0xe44 - 4];	// 0x0004 .. 0x0e43
 	Vector m_vecE44;	// 0x0e44
 	Vector m_vecE50;	// 0x0e50
