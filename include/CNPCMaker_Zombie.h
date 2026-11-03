@@ -8,6 +8,7 @@ class CAI_BaseNPCTroika;
 class CNPCMaker_Zombie : public CBaseEntity
 {
 public:
+	CNPCMaker_Zombie *vfunc5(unsigned int flags);	// slot 5: scalar deleting destructor (the three outputs at +0x6698 / +0x6680 / +0x6668, then the base)
 	CNPCMaker_Zombie *sub_1034ca80();
 	void vfunc103();	// slot 103 "Spawn": like CNPCMaker::vfunc103, with a randomised first think and the five counters at +0x6348 set to 999999
 	void vfunc104();	// slot 104 "Precache": like the Fleshpile one, but clears the fields +0x1a98 / +0x5dec and also precaches "item_w_zombie_fists"; without a model name warns "<name> at x y z missing modelname" and removes the entity
