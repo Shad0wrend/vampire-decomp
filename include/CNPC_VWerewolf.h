@@ -145,7 +145,7 @@ public:
 	int m_n66ac;	// 0x66ac: cleared by TeleportOut
 	CNPC_VWerewolfHint66b0 *m_pHint66b0;	// 0x66b0
 	class CBaseEntity *m_pLastUsedTeleportHint;	// 0x66b4
-	char m_pad66b8[0x66bc - 0x66b8];
+	int m_n66b8;	// 0x66b8: cleared by CheckAllRandomMoveHints
 	CNPC_VWerewolfHint66b0 *m_pHint66bc;	// 0x66bc: the move hint
 	class CBaseEntity *m_pLastUsedMoveHint;	// 0x66c0
 	CNPC_VWerewolfHint66b0 *m_pHint66c4;	// 0x66c4: the break hint
@@ -153,7 +153,9 @@ public:
 	char pad66c9[0x66cc - 0x66c9];
 	float m_f66cc;	// 0x66cc
 	float m_f66d0;	// 0x66d0
-	char pad66d4[0x66dc - 0x66d4];
+	int m_nTick66d4;	// 0x66d4: engine tick of the random-move-hint search
+	float m_fl66d8;	// 0x66d8: curtime of that search
+	bool sub_103cf770();	// "CNPC_VWerewolf::CheckAllRandomMoveHints" (0x103cf770): walks the global hint list, tests each hint with sub_103d2810 / sub_103d7dc0 and HasPath, records the hints it tried and returns the search report
 	CNPC_VWerewolfVec3 m_vSnap66dc;	// 0x66dc: set from the global vector at 0x1070d1b0 by SnapToAnimationPoint
 	unsigned int m_nFlags66e8;	// 0x66e8: attack state bits (4 and 0x100 make GatherAttackConditions compare heights)
 	float m_flTeleport66ec;	// 0x66ec
