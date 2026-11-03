@@ -2858,6 +2858,7 @@
 0x1000578b func   ?sub_10205430@CVDmgBlock16_t@@QAE_NPBU1@@Z CVDmgBlock16_t::sub_10205430
 0x1000579a func   ?sub_10249940@@YAXXZ sub_10249940
 0x1000579f func   ?sub_10099f20@@YAXPAUEntB@@HPAM@Z sub_10099f20
+0x100057a9 func   ?vfunc35@CItemGAstrolite@@QAEHPAVCBaseEntity@@@Z CItemGAstrolite::vfunc35
 0x100057ae func   ?sub_10223130@CUnknown10223130@@QAEHHH@Z CUnknown10223130::sub_10223130
 0x100057b3 func   ?sub_1018cc00@@YAPAHXZ sub_1018cc00
 0x100057bd func   ?vfunc291@CBaseFlex@@UAEXPAUCFlexRequest@@@Z CBaseFlex::vfunc291

@@ -31,6 +31,18 @@ void CItemGAstrolite::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f6af0 size=0x14
+#include "CItemGAstrolite.h"
+#include "CBaseCombatWeapon.h"
+
+int CItemGAstrolite::vfunc35(CBaseEntity *pOther)
+{
+	if (m_b914)
+		return 0;
+	return ((CBaseCombatWeapon *)this)->CBaseCombatWeapon::vfunc35(pOther);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10409be0 size=0x1e
 #include "CItemGAstrolite.h"
 
