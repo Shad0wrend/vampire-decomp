@@ -314,6 +314,17 @@ void CBaseEntity::vfunc63(Vector vecOrigin)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026a50 size=0x2e
+#include "CBaseEntity.h"
+
+// TARGET: CBaseEntity::vfunc65
+void CBaseEntity::vfunc65(Vector vecOrigin)
+{
+	Vector v = vecOrigin;
+	vfunc64(&v.x);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026a90 size=0x5
 // TARGET: sub_10026a90
 char __stdcall sub_10026a90(int) { return 0; }

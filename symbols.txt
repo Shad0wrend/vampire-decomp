@@ -6277,6 +6277,7 @@
 0x1000a9a2 func   ?sub_101f1750@CUnknown101f10e0@@QAEXXZ CUnknown101f10e0::sub_101f1750
 0x1000a9a7 func   ?sub_103f9480@@YAHXZ sub_103f9480
 0x1000a9ac func   ?sub_101ae390@@YAHXZ sub_101ae390
+0x1000a9b1 func   ?vfunc65@CBaseEntity@@QAEXVVector@@@Z CBaseEntity::vfunc65
 0x1000a9b6 func   ?sub_1025f760@CAI_BaseHumanoidUnit@@QAEXPAVCBaseEntity@@MMM@Z CAI_BaseHumanoidUnit::sub_1025f760
 0x1000a9c0 func   _camera_keyframe camera_keyframe
 0x1000a9c5 func   _item_g_idol_crane item_g_idol_crane
