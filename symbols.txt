@@ -907,6 +907,7 @@
 0x100026c6 func   ?vfunc1@CBaseEntityList@@UAEXHH@Z CBaseEntityList::vfunc1
 0x100026cb func   ?sub_10206a80@CUnknown10206a80@@QAEDXZ CUnknown10206a80::sub_10206a80
 0x100026d0 func   ?sub_10251e40@@YGHH@Z sub_10251e40
+0x100026d5 func   ?vfunc103@CWeaponMelee_WerewolfAttacks@@QAEXXZ CWeaponMelee_WerewolfAttacks::vfunc103
 0x100026df func   ?sub_1042da10@CUnk1042da10@@QAEXD@Z CUnk1042da10::sub_1042da10
 0x100026e4 func   ?sub_102491e0@CUnknown102491e0@@QAEXHH@Z CUnknown102491e0::sub_102491e0
 0x100026e9 func   ?sub_1011d490@@YIXPAXHH@Z sub_1011d490
