@@ -226,6 +226,7 @@ public:
 #include "CAI_BaseNPCTroika_ext.h"
 	virtual void vfunc21(int a);	// slot 21 override: sub_102bf5d0(a) on the unit view, ++m_n6064, the dev-flag global 0x10924a6c slot 1, then CAI_BaseNPC::sub_10269a20(0xa)
 	void vfunc22(int a);
+	virtual void vfunc27(int a);	// slot 27 override: sub_102bf5d0(a) on the unit view, the dev-flag global 0x10924a6c slot 1, task 0xa, then slot 600(a)
 	void vfunc614();
 
 	union { char m_pad0004[0x19c - 4]; struct { char m_pad0004b[0x98 - 4]; CAI_BaseNPCTroika *m_pObj98; }; };	// 0x98: the controlling NPC object (the one whose flags +0x14b8 / +0x14bc the break test sets)
