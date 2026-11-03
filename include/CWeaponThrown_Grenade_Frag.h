@@ -1,7 +1,6 @@
 // CWeaponThrown_Grenade_Frag: thrown frag grenade weapon.
-// Declared standalone for now: the vtable slots are *not* modelled here, so the
-// position of the virtual below is not its real slot (266). Give the class its
-// real base before making a virtual call through it.
+// The vtable slots 0..363 are modelled as a flat virtual list (slot index = position).
+// Slots 364..375 are placeholders that keep the index of vfunc375, the explosion effect.
 #pragma once
 
 struct datamap_t;
@@ -9,6 +8,25 @@ struct datamap_t;
 #include "Vector.h"
 
 class CBaseEntity;
+class CRecipientFilter;
+class ConVar;
+
+extern float g_1070d9d0[];	// vec3_origin: the zero vector (three floats)
+extern ConVar *g_10942f4c;	// the explosion convar (vfunc1 ? 0 : m_fValue at +0x28)
+extern ConVar *g_10942f04;	// the explosion convar
+
+class CTempEntsGrenadeView	// *g_10540528 (the temp entity system) through this class's emitter calls
+{
+public:
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual void vfunc2(CRecipientFilter *pFilter, int delay, const Vector *pOrigin, const Vector *pAngles, const char *pName);	// slot 2 (+8): the emitter lookup
+	virtual void vfunc3(); virtual void vfunc4(); virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7();
+	virtual void vfunc8(); virtual void vfunc9(); virtual void vfunc10(); virtual void vfunc11(); virtual void vfunc12();
+	virtual void vfunc13(); virtual void vfunc14(); virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17();
+	virtual void vfunc18(); virtual void vfunc19();
+	virtual void vfunc20(CRecipientFilter *pFilter, int delay, const Vector *pOrigin, int flags, int magnitude, int radius, int sound, float flDamage, float flScale, float flExtra);	// slot 20 (+0x50): the explosion temp entity
+};
 
 class CWeaponThrown_Grenade_Frag
 {
@@ -55,7 +73,7 @@ public:
 	void sub_100ac4e0(void *pFunc, int a, int b);	// CBaseEntity::ThinkSet (stub 0x10007fe5)
 	void vfunc319();	// slot 319: tells the owner's object (slot 112 with 0 and the value at +0x92c; slot 410 when the state at +0x920 is set), then the base CWeaponIThrown::vfunc319
 	void sub_103ed1e0();	// CWeaponIThrown::vfunc319 (stub 0x1000e485)
-	void sub_103f0a00();	// the explosion effect (called by 0x103f0d10): +0x1fc = 0; origin = slot 192 (Vector by value), angles' second component from slot 219; CPVSFilter filter(origin) (use the class from recipientfilter.h per CLAUDE.md); globals g_10540528 slot 2(...,"grenade_frag_emitter") and slot 20 (11 args: filter, 0, vec, 0xff, 0xb4, 0x64, 0, m_n910, cv2, cv1) with cv = (g_10942f04/g_10942f4c)->vfunc1() ? 0 : [+0x28]; slot 333(0xd, 1, 0, 0, 0, 0); g_1070ba0c slot 33 (+0x84) with sub_101c2770(sub_102517e0() + 0x198); slot 217(25.0f, 150.0f, 1.0f, m_n910, 0, 0) -> sub_101cdba0 (cdecl, 7 args); sub_100ac4e0(0, 0, 0); the entity of the handle at +0x92c: slot 242 and sub_100fbbb0(0.1f); slot 359
+	void sub_103f0a00();	// the explosion effect (called by 0x103f0d10): +0x1fc = 0; origin = slot 192 (Vector by value), angles' second component from slot 219; CPVSFilter filter(origin); globals g_10540528 slot 2(...,"grenade_frag_emitter") and slot 20 (10 args: filter, 0, vec, 0xff, 0xb4, 0x64, 0, m_n910, cv2, cv1) with cv = (g_10942f04/g_10942f4c)->vfunc1() ? 0 : m_fValue at +0x28; slot 333(0xd, 1, 0, 0, 0, 0); g_1070ba0c slot 33 (+0x84) with sub_101c2770(sub_102517e0() + 0x198), slot 220 (+0x370, GetOrigin), 2*m_n910, 0, 0; slot 217 (GetAbsOrigin) -> sub_101cdba0 (cdecl, 7 args); sub_100ac4e0(0, 0, 0); the entity of the handle at +0x92c: slot 242 and sub_100fbbb0(0.1f); slot 359
 	void sub_103ee6f0();	// the fuse tick sound: plays the tick sample ("weapons/ranged/grenade_pineapple/tic.wav", channel 1) from the weapon for everybody who hears it, runs the fuse step (sub_103ee660) and schedules the next think one second ahead
 public:
 	virtual void vfunc0();
@@ -275,10 +293,10 @@ public:
 	virtual void vfunc214();
 	virtual void vfunc215();
 	virtual void vfunc216();
-	virtual void vfunc217();
+	virtual float *vfunc217();	// slot 217 (+0x364): GetAbsOrigin (a Vector)
 	virtual void vfunc218();
-	virtual float *vfunc219();	// slot 219 (+0x36c): returns a pointer to floats (sub_103f0a00 reads [+4] as the second component of the angle)
-	virtual void vfunc220();
+	virtual float *vfunc219();	// slot 219 (+0x36c): GetAbsAngles (a Vector); sub_103f0a00 reads [+4] as the second component
+	virtual float *vfunc220();	// slot 220 (+0x370): GetOrigin (a Vector)
 	virtual void vfunc221();
 	virtual void vfunc222();
 	virtual void vfunc223();
@@ -422,4 +440,16 @@ public:
 	virtual void vfunc361();
 	virtual int vfunc362();
 	virtual int vfunc363();
+	virtual void vfunc364_slot();
+	virtual void vfunc365_slot();
+	virtual void vfunc366_slot();
+	virtual void vfunc367_slot();
+	virtual void vfunc368_slot();
+	virtual void vfunc369_slot();
+	virtual void vfunc370_slot();
+	virtual void vfunc371_slot();
+	virtual void vfunc372_slot();
+	virtual void vfunc373_slot();
+	virtual void vfunc374_slot();
+	virtual void vfunc375();	// slot 375 (+0x5dc): the frag grenade explosion effect (target 0x103ef260)
 };
