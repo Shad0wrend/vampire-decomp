@@ -357,6 +357,13 @@ void __stdcall sub_101a6be0(int a, int b, int c, int d) {
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6c20 size=0x7
+float sub_101a6c20()
+{
+	return 1024.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6c60 size=0x3
 // TARGET: CAI_BaseNPC::vfunc557
 char CAI_BaseNPC::vfunc557() {
