@@ -16,6 +16,7 @@ public:
 	void sub_100ac4e0(void *pFunc, int a, int b);	// sets a think function (called through the stub at 0x10007fe5)
 	void sub_1042e9f0(int a, int b);	// "CSprite::SpriteInit" (stub 0x10008481): sets the sprite model and origin
 	unsigned int sub_1042e040();	// slot 117: the base's vfunc117 with bit 1 cleared, bit 31 set by flag 0x8000
+	void sub_1042e550();	// slot 103 implementation: the sprite spawn setup (solid, frame range, scale)
 public:
     virtual datamap_t * vfunc82();
 public:
