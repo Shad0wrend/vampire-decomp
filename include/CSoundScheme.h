@@ -44,7 +44,8 @@ public:
 	bool m_bStartEnabled;	// 0x0454
 	char m_pad0455[0x458 - 0x455];
 	int m_n458;					// 0x458: the think stops when the global queue has this many items
-	char m_pad045c[0x580 - 0x45c];
+	char m_pad045c[0x460 - 0x45c];
+	CSoundSchemeList m_lists460[4];	// 0x460, 0x4a8, 0x4f0, 0x538: the four sound lists (0x48 bytes each)
 	CSoundSchemeSound *m_pSoundMemory;	// 0x580: the sound entry array (vector memory)
 	int m_nSoundAllocationCount;	// 0x584
 	int m_nSoundGrowSize;		// 0x588
