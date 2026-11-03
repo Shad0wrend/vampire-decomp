@@ -13909,6 +13909,7 @@
 0x10015d66 func   ?sub_101dd3c0@CUnknown101e0f00Src@@QAEXPBD@Z CUnknown101e0f00Src::sub_101dd3c0
 0x10015d6b func   ?sub_10093d70@CBaseAnimating@@QAEHPBD@Z CBaseAnimating::sub_10093d70
 0x10015d75 func   ?sub_1010c520@CUnit1010c520@@QAEXHHHH@Z CUnit1010c520::sub_1010c520
+0x10015d7f func   ?vfunc320@CBasePlayer@@UAE_NHH@Z CBasePlayer::vfunc320
 0x10015d89 func   ?vfunc5@CNPC_VWerewolf@@QAEPAV1@I@Z CNPC_VWerewolf::vfunc5
 0x10015d8e func   ??0SendProp@@QAE@XZ SendProp::SendProp
 0x10015d93 func   ?vfunc337@CBaseCombatWeapon@@UAEMHH@Z CBaseCombatWeapon::vfunc337

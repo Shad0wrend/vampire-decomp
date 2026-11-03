@@ -495,6 +495,61 @@ void CBasePlayer::vfunc181(void *p, void *a, void *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101606e0 size=0x1d6
+// TARGET: CBasePlayer::vfunc320
+#include "CBasePlayer.h"
+#include "CBaseCombatWeapon.h"
+#include "CBaseAnimating.h"
+#include "ConVar.h"
+#include "CUnknown10739d08.h"
+#include "CEHandleGet.h"
+
+extern ConVar *g_107251ac;
+extern ConVar *g_1072511c;
+extern CUnknown10739d08 g_10739d08;
+extern void (*g_109f3630)(const char *pMsg, ...);
+
+bool CBasePlayer::vfunc320(int a1, int activity)
+{
+	CBaseAnimating *pAnim = (CBaseAnimating *)(void *)this;
+
+	if (pAnim->sub_1008dc40(vfunc376(vfunc381(activity)), -1) < 0)
+		return false;
+
+	se44();
+
+	if (EHandle_Get(m_h1538) && m_n153C == 0)
+		return false;
+
+	sub_101644f0(activity, 0, 1);
+
+	CBaseCombatWeapon *pWeapon = (CBaseCombatWeapon *)sub_1032e7b0();
+	if (pWeapon && (pWeapon->vfunc360() & 0x6000)) {
+		if (sub_10335950("item_w_unarmed")) {
+			if (*((char *)pWeapon + 0x898))
+				pWeapon->vfunc323();
+			vfunc457("item_w_unarmed", 0);
+			m_b1DF4 = 1;
+		} else {
+			g_109f3630("Warning: Player does not have unarmed weapon!\n");
+		}
+	}
+
+	float flDuration = pAnim->sub_10091080(m_n6F0);
+	float flAmplitude = (g_107251ac->vfunc1() ? 0.0f : g_107251ac->m_fValue) * flDuration;
+
+	Vector vecPunch;
+	vecPunch.x = enginerandom->vfunc1(-flAmplitude, flAmplitude);
+	vecPunch.y = enginerandom->vfunc1(-flAmplitude, flAmplitude);
+	vecPunch.z = enginerandom->vfunc1(-flAmplitude, flAmplitude);
+	vfunc169(&vecPunch);
+
+	m_fNoAttackTimer = (g_1072511c->vfunc1() ? 0.0f : g_1072511c->m_fValue) + gpGlobals->curtime + flDuration;
+	m_f1DA8 = g_10739d08.sub_101e7d70() + gpGlobals->curtime;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160a60 size=0x104
 #include "CBasePlayer.h"
 #include "ConVar.h"
