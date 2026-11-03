@@ -8313,6 +8313,7 @@
 0x1000d940 func   ?sub_10332fc0@CUnknown10332fc0@@QAEHPAX@Z CUnknown10332fc0::sub_10332fc0
 0x1000d945 func   ?sub_10109770@@YAXPAMMM@Z sub_10109770
 0x1000d94a func   ?vfunc81@CEnvParticle@@QAEHXZ CEnvParticle::vfunc81
+0x1000d954 func   ?sub_101e3ff0@CUnknown101e3af0@@QAEXPAVCBaseCombatCharacter@@@Z CUnknown101e3af0::sub_101e3ff0
 0x1000d959 func   ?sub_10028a60@CUnk10028a60@@QAEXXZ CUnk10028a60::sub_10028a60
 0x1000d95e func   ?sub_10307b40@CUnknown10307b40@@QAEXH@Z CUnknown10307b40::sub_10307b40
 0x1000d968 func   _item_g_lilly_purse item_g_lilly_purse
