@@ -187,7 +187,7 @@ public:
 	char vfunc379(CBaseEntity *pTarget, int nRole, int nType, int a4, int a5, int a6, char bHolster);	// "CBaseCombatCharacter::EnterGrappleState"
 	void vfunc387();
 	char vfunc394();	// slot 394 (+0x628) "CBaseCombatCharacter::CorpseGib" (0x10327a90, declared as a plain member like its neighbours; a virtual declaration of slots 375..397 shifts the placeholder padding of a matched source, 0x100d2b30): scope trace (entity name); when slot 396 (+0x630, bool in al) holds: sub_10129dc0(this) (cdecl), a "prop_physics" gib at sub_100a9ab0(name, slot 217(slot 219(0))) named by the character's model (slot 105), flags |= 0xa0 at +0x19c, origin / angles copied (through the object at +0x36c slots 40 / 39, else the +0x3bc.. fields, then sub_100b2f50), slot 266(this) on the prop; else when slot 397 (+0x634) holds sub_1012a6e0(this, 4, 1); then with sub_10337e40() and RandomInt(1, 20) > 19 an "item_w_severed_arm" (sub_100a9ab0, slot 103); returns true (bl)
-	void vfunc388(void *weapon, int a);	// switches to the given weapon
+	char vfunc388(void *weapon, int a);	// switches to the given weapon (Weapon_Switch); true when it became active
 	int vfunc392(void *pInfo);	// "CBaseCombatCharacter::OnTakeDamage_Dead": scope trace (entity name), unless the life state at +0x1fc is 1 lowers the health at +0x210 by the info's damage (a CVDmg_t at info+0 when set, else the float at info+0x30); returns 1
 	int vfunc393();
 	char vfunc402();	// slot 402 "CBaseCombatCharacter::Event_Gibbed": scope trace (entity name), tests the violence_hgibs / violence_agibs convars, take-damage mode 0, AddSolidFlags(4) (inlined scope trace), +0x200 = 2; gibbing calls slot 395 and returns false, else slots 66 and 394
