@@ -10029,6 +10029,7 @@
 0x10010cad func   ?vfunc104@CNPC_VBach@@UAEXXZ CNPC_VBach::vfunc104
 0x10010cb2 func   ?vfunc444@CNPC_VGhoulCroucher@@QAEXPAX@Z CNPC_VGhoulCroucher::vfunc444
 0x10010cbc func   ?sub_10107a00@@YAHXZ sub_10107a00
+0x10010cc1 func   ?vfunc415@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc415
 0x10010cc6 func   ?sub_1027f990@CUtlVector20@@QAEXH@Z CUtlVector20::sub_1027f990
 0x10010cd0 func   ?sub_101f0b80@CUnknown101f0b80@@QAEXHH@Z CUnknown101f0b80::sub_101f0b80
 0x10010cd5 func   ?sub_101b2320@CUnknown101b2570@@QAEPBDXZ CUnknown101b2570::sub_101b2320
