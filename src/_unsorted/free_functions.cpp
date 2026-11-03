@@ -119277,6 +119277,31 @@ extern "C" CBaseEntity *item_w_remington_m_700()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10236070 size=0x41
+#include "CWeaponRanged_Rifle_Remington.h"
+#include "globalvars.h"
+
+extern int vt_104921fc[];
+
+CWeaponRanged_Rifle_Remington *CWeaponRanged_Rifle_Remington::sub_10236070()
+{
+	sub_10238070();
+	int *p = (int *)((char *)this + 0x920);
+	for (int i = 2; i != 0; i--)
+	{
+		p[0] = 0;
+		p[1] = 0;
+		p[2] = 0;
+		p[3] = 0;
+		p[4] = 0;
+		p += 5;
+	}
+	*(int *)this = (int)vt_104921fc;
+	m_flStamp91c = gpGlobals->curtime;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10236400 size=0x72
 #include "SendProp.h"
 
