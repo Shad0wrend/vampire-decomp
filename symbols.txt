@@ -7368,6 +7368,7 @@
 0x1000c69e func   ?sub_101e3850@CUnknown101e0f00@@QAEXHHHH@Z CUnknown101e0f00::sub_101e3850
 0x1000c6a3 func   ?sub_10056a60@CUnknown10056a00@@QAEXXZ CUnknown10056a00::sub_10056a60
 0x1000c6a8 func   ?sub_10068f10@@YAHXZ sub_10068f10
+0x1000c6ad func   ?vfunc103@CNPC_VCombatman@@UAEXXZ CNPC_VCombatman::vfunc103
 0x1000c6b7 func   ?sub_103da440@@YAHXZ sub_103da440
 0x1000c6bc func   ?sub_100d5ae0@@YAXXZ sub_100d5ae0
 0x1000c6c1 func   ?sub_101eff70@@YIXPAUProjView@@@Z sub_101eff70

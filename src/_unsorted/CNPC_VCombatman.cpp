@@ -55,6 +55,24 @@ int CNPC_VCombatman::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103701a0 size=0x1f
+#include "CNPC_VCombatman.h"
+#include "CNPC_VHuman.h"
+#include "CBaseAnimating.h"
+
+struct CUnk1026dc00
+{
+	unsigned int sub_1026dc00(unsigned int bits);
+};
+
+void CNPC_VCombatman::vfunc103()
+{
+	((CUnk1026dc00 *)this)->sub_1026dc00(0x200000);
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc103();
+	((CBaseAnimating *)this)->sub_100952d0(-1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103701d0 size=0x6
 #include "CNPC_VCombatman.h"
 int CNPC_VCombatman::vfunc138()
