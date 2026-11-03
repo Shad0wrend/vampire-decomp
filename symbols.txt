@@ -1677,6 +1677,7 @@
 0x100039c2 func   ?vfunc82@CMathRemap@@UAEPAUdatamap_t@@XZ CMathRemap::vfunc82
 0x100039c7 func   ?vfunc80@CItemGDrugsDrugBox@@QAEHXZ CItemGDrugsDrugBox::vfunc80
 0x100039cc func   ?sub_101bb220@@YAHH@Z sub_101bb220
+0x100039d1 func   ?vfunc247@CBaseTrigger@@QAEXH@Z CBaseTrigger::vfunc247
 0x100039d6 func   ?vfunc82@CBaseDMStart@@QAEPAUdatamap_t@@XZ CBaseDMStart::vfunc82
 0x100039db func   ?sub_10237860@@YAHXZ sub_10237860
 0x100039e0 func   ?sub_100d23a0@@YAXXZ sub_100d23a0

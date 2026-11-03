@@ -200,6 +200,16 @@ void CBaseTrigger::vfunc246(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c5870 size=0x15
+#include "CBaseTrigger.h"
+
+void CBaseTrigger::vfunc247(int a)
+{
+	if (!(m_flags204 & 2))
+		m_flags204 |= 2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c5e10 size=0x4c
 #include "CBaseTrigger.h"
 void __fastcall sub_100cd2d0(void *p);
