@@ -100783,6 +100783,47 @@ CUnk101e9570 *CUnk101e9570::sub_101e9570(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e95a0 size=0x75
+struct CKVString { int m_pStr; CKVString() {} };
+
+struct CKVNode {
+	virtual void v0();
+	virtual void v1();
+	virtual CKVNode *v2(const char *name);
+};
+
+CKVString sub_10203920(CKVNode *pNode);
+CKVString sub_10203950(CKVNode *pNode, const char *name);
+
+struct CHistoryItem {
+	char m_pad0000[8];
+	int m_nText;	// 0x08
+	int m_nDescription;	// 0x0c
+	int m_nShortDescription;	// 0x10
+	int m_nShortPenaltyDescription;	// 0x14
+
+	bool sub_101e95a0(CKVNode *pKeys);
+	void Load(CKVNode *p)
+	{
+		m_nText = sub_10203920(p).m_pStr;
+		m_nDescription = sub_10203950(p, "Description").m_pStr;
+		m_nShortDescription = sub_10203950(p, "ShortDescription").m_pStr;
+		m_nShortPenaltyDescription = sub_10203950(p, "ShortPenaltyDescription").m_pStr;
+	}
+};
+
+// TARGET: CHistoryItem::sub_101e95a0
+bool CHistoryItem::sub_101e95a0(CKVNode *pKeys)
+{
+	if (!pKeys)
+		return true;
+	CKVNode *p = pKeys->v2("Text");
+	if (p)
+		Load(p);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e9640 size=0x96
 #include "CUnknown101e98c0.h"
 
