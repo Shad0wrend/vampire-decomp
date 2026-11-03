@@ -1073,6 +1073,16 @@ void CAI_BaseNPC::vfunc463(int a, int type)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026e5c0 size=0xd
+// TARGET: CAI_BaseNPC::vfunc477
+extern int g_105c97dc[];
+
+void CAI_BaseNPC::vfunc477()
+{
+	sub_10269bd0(g_105c97dc, 0xe);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026f590 size=0x96
 #include "CAI_BaseNPC.h"
 
