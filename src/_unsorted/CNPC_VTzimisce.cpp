@@ -187,6 +187,19 @@ float CNPC_VTzimisce::vfunc418(float a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b9160 size=0x9
+#include "CNPC_VTzimisce.h"
+
+unsigned short __fastcall sub_1029a050(void *pThis);
+
+unsigned short CNPC_VTzimisce::sub_103b9160()
+{
+	unsigned short result = sub_1029a050(this);
+	result |= 0x400;
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b9180 size=0x36
 #include "CNPC_VTzimisce.h"
 void CNPC_VTzimisce::vfunc593()

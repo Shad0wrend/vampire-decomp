@@ -11151,6 +11151,7 @@
 0x1001282d func   ?sub_101d62d0@CUnknown101d62d0@@QAEPAUCUnknown101d62d0Record@@XZ CUnknown101d62d0::sub_101d62d0
 0x10012832 func   ?sub_1042c7a0@@YIXPAX@Z sub_1042c7a0
 0x10012837 func   ?sub_100efae0@CBaseDoor@@QAEXPAVCBaseEntity@@@Z CBaseDoor::sub_100efae0
+0x1001283c func   ?sub_103b9160@CNPC_VTzimisce@@QAEGXZ CNPC_VTzimisce::sub_103b9160
 0x10012841 func   ?vfunc482@CNPC_VAnimal@@QAEHDH@Z CNPC_VAnimal::vfunc482
 0x10012846 func   ?vfunc516@CGeneric_NPC_bathack@@QAEMXZ CGeneric_NPC_bathack::vfunc516
 0x1001284b func   ?vfunc81@CRagdollProp@@UAEHXZ CRagdollProp::vfunc81
