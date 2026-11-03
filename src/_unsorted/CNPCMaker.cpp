@@ -184,6 +184,113 @@ void CNPCMaker::vfunc113()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034b160 size=0x1d4
+#include "CNPCMaker.h"
+#include "CCollisionProperty.h"
+#include "CAI_BaseNPC.h"
+#include "engineserver.h"
+
+class CMakerGlobInner
+{
+public:
+	virtual void i0();
+	virtual bool i1();
+	char m_pad0004[0x28];
+	int m_n2c;
+};
+
+class CMakerGlob
+{
+public:
+	char m_pad0000[4];
+	CMakerGlobInner *m_pInner;
+};
+
+extern CMakerGlob *g_1070af4c;
+
+extern void (*g_109f362c)(const char *fmt, ...);
+
+void sub_101cd940(void *p);
+void sub_101cf390(void *pEnt, const float *pMins, const float *pMaxs);
+void sub_101d0ec0(const char *p);
+void *sub_101d3730(const char *fmt, const char *name);
+void *sub_1020a0a0(const char *a, const char *b, const char *c);
+
+#define CVT1(n) virtual void cvt##n();
+#define CVT10(p) CVT1(p##0) CVT1(p##1) CVT1(p##2) CVT1(p##3) CVT1(p##4) CVT1(p##5) CVT1(p##6) CVT1(p##7) CVT1(p##8) CVT1(p##9)
+
+class CEntityVt
+{
+public:
+	CVT10(0) CVT10(1) CVT10(2) CVT10(3) CVT10(4) CVT10(5) CVT10(6) CVT10(7) CVT10(8) CVT10(9)
+	CVT10(10) CVT10(11) CVT10(12) CVT10(13) CVT10(14) CVT10(15) CVT10(16) CVT10(17) CVT10(18)
+	CVT10(19) CVT10(20)
+	CVT1(210) CVT1(211) CVT1(212) CVT1(213) CVT1(214) CVT1(215) CVT1(216) CVT1(217) CVT1(218)
+	virtual void *vfunc219();
+	virtual float *vfunc220();
+};
+
+void CNPCMaker::vfunc104()
+{
+	int nDummy;
+	const char **pp = vfunc9(&nDummy);
+	const char *pszModel = *pp;
+	if ( !pszModel )
+		pszModel = "";
+
+	if ( *pszModel != 0 )
+	{
+		EngineGlobals::g_1070b22c->vfunc13(pszModel, 0);
+		((CAI_BaseNPC *)this)->CAI_BaseNPC::vfunc104();
+
+		const char *pszClass = m_pszNPCClassname665c;
+		if ( !pszClass )
+			pszClass = "";
+		if ( *pszClass != 0 )
+		{
+			sub_101d0ec0(pszClass);
+			return;
+		}
+
+		g_109f362c("%s at %.0f %.0f %0.f missing NPCClassname\n", sub_1000b5cd(),
+			(double)((CEntityVt *)this)->vfunc220()[0],
+			(double)((CEntityVt *)this)->vfunc220()[1],
+			(double)((CEntityVt *)this)->vfunc220()[2]);
+		sub_101cd940(this);
+
+		CMakerGlob *pGlob = g_1070af4c;
+		if ( !pGlob->m_pInner->i1() && pGlob->m_pInner->m_n2c > 0 )
+		{
+			void *pDBG = sub_1020a0a0((const char *)sub_101d3730("%s: BAD NPC Classname", sub_1000b5cd()),
+				(const char *)((CEntityVt *)this)->vfunc220(),
+				(const char *)((CEntityVt *)this)->vfunc219());
+			sub_101cf390(pDBG,
+				((CCollisionProperty *)((char *)this + 0x270))->vfunc1(),
+				((CCollisionProperty *)((char *)this + 0x270))->vfunc2());
+		}
+	}
+	else
+	{
+		g_109f362c("%s at %.0f %.0f %0.f missing modelname\n", sub_1000b5cd(),
+			(double)((CEntityVt *)this)->vfunc220()[0],
+			(double)((CEntityVt *)this)->vfunc220()[1],
+			(double)((CEntityVt *)this)->vfunc220()[2]);
+		sub_101cd940(this);
+
+		CMakerGlob *pGlob = g_1070af4c;
+		if ( !pGlob->m_pInner->i1() && pGlob->m_pInner->m_n2c > 0 )
+		{
+			void *pDBG = sub_1020a0a0((const char *)sub_101d3730("%s: BAD MODEL NAME", sub_1000b5cd()),
+				(const char *)((CEntityVt *)this)->vfunc220(),
+				(const char *)((CEntityVt *)this)->vfunc219());
+			sub_101cf390(pDBG,
+				((CCollisionProperty *)((char *)this + 0x270))->vfunc1(),
+				((CCollisionProperty *)((char *)this + 0x270))->vfunc2());
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034b3c0 size=0x4c
 #include "CEntityMapData.h"
 #include "CNPCMaker.h"

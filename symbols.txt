@@ -10458,6 +10458,7 @@
 0x10010c5d func   ?sub_10042140@UtlHash8@@QAEIPAX@Z UtlHash8::sub_10042140
 0x10010c62 func   ?sub_10031c70@@YA_NPAVCBaseEntity@@@Z sub_10031c70
 0x10010c67 func   ?vfunc29@CMultiplayRules@@UAEXPAX@Z CMultiplayRules::vfunc29
+0x10010c71 func   ?vfunc104@CNPCMaker@@UAEXXZ CNPCMaker::vfunc104
 0x10010c7b func   ?vfunc5@CItemGGuyMagazine@@QAEPAV1@I@Z CItemGGuyMagazine::vfunc5
 0x10010c80 func   ?vfunc360@CWeaponIWritten@@UAEHXZ CWeaponIWritten::vfunc360
 0x10010c85 func   ?sub_102db440@CUnit102db440@@QAEXH@Z CUnit102db440::sub_102db440
