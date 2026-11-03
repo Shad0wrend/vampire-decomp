@@ -54,6 +54,9 @@ public:
 	const char *sub_10011590(int index);	// CAI_BaseNPC::vfunc408 (jump stub)
 	int sub_10396dc0();	// picks a schedule (0x15c / 0x15d) while the target handle at +0x6718 is alive and the state at +0x673c is 3 or 4, from conditions 0x7b / 0x7c; stamps the source file and line at +0x1b30 / +0x1b34
 	char sub_10014df8(int condition);	// "HasCondition" (stub 0x10014df8), called directly
+	int sub_102b8620();	// stub 0x10002bf3: no arguments, returns a value
+	int sub_102b7370();	// CAI_BaseNPCTroika::sub_102b7370 (stub 0x1000cd3d), called directly
+	int sub_102b7cf0();	// stub 0x10009a11: no arguments, returns a value
 	int sub_10395650(int a, void *pWeapon);	// maps the weapon (flags from its slot 360 have bit 15 or 16) through sub_103952b0(a), else the state at +0x1594 to a small code via a jump table (1 -> -2, 4 -> 1, 5 -> 0, 6 -> 5, 7 -> 4, 8 -> 3, 9 -> 2, everything else -1)
 	int sub_103954e0(int a, void *pWeapon);	// like sub_10395650, but each state falls through a chain of availability tests (sub_10398000 / stub 0x10001802): 4 -> 1, 3, 5; 5 -> 0, 2, 4; 9 -> 2, 4; 8 -> 3, 5; 6 -> 5; 7 -> 4; 1 -> -2; -1 when a test fails at the end of the chain
 	char sub_10398000(int code);	// availability test of a result code (stub 0x10001802)
