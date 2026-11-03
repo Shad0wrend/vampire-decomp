@@ -146709,6 +146709,29 @@ int *__fastcall sub_102dda70(int *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ddab0 size=0x32
+#include "CAI_LocalNavigator.h"
+
+extern char g_1049d76c[];
+extern char g_1049d740[];
+extern char g_1049d79c[];
+
+// TARGET: CAI_LocalNavigator::sub_102ddab0
+CAI_LocalNavigator *CAI_LocalNavigator::sub_102ddab0(int pOuter)
+{
+	CAI_LocalNavigator *pThis = this;
+	*(int *volatile *)((char *)pThis + 4) = (int *)pOuter;
+	*(int *volatile *)((char *)pThis + 0xc) = (int *)-1;
+	*(int *volatile *)((char *)pThis + 0x14) = 0;
+	*(void *volatile *)((char *)pThis + 0x10) = &g_1049d79c;
+	*(void *volatile *)((char *)pThis + 0) = &g_1049d76c;
+	*(void *volatile *)((char *)pThis + 0x10) = &g_1049d740;
+	*(int *volatile *)((char *)pThis + 0x1c) = 0;
+	*(int *volatile *)((char *)pThis + 0x18) = 0;
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ddb30 size=0xa0
 #include "vampire_all.h"
 #include "CAI_LocalNavigator.h"
