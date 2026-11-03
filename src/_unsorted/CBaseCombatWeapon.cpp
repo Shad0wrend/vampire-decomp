@@ -427,6 +427,19 @@ void CBaseCombatWeapon::vfunc77()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10250800 size=0x20
+#include "CBaseCombatWeapon.h"
+#include "CBaseEntity.h"
+
+void CBaseCombatWeapon::vfunc78()
+{
+	CBaseEntity *pEnt = (CBaseEntity *)this;
+	pEnt->CBaseEntity::vfunc78();
+	if (!sub_102521f0())
+		vfunc300();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10250c20 size=0x1e
 #include "CBaseCombatWeapon.h"
 

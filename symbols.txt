@@ -7218,6 +7218,7 @@
 0x1000c298 func   ?sub_100d5920@@YAXXZ sub_100d5920
 0x1000c29d func   ?sub_1002ad20@@YGXPAUCUnkVT1002ad20@@@Z sub_1002ad20
 0x1000c2a2 func   ?sub_10272900@@YIHPAX@Z sub_10272900
+0x1000c2a7 func   ?vfunc78@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc78
 0x1000c2ac func   ?sub_1007ee40@@YIXPAH@Z sub_1007ee40
 0x1000c2b1 func   ?sub_1013b4d0@@YAXABVVector@@00H@Z sub_1013b4d0
 0x1000c2b6 func   ?vfunc584@CAI_ExpressiveNPC@@QAEHXZ CAI_ExpressiveNPC::vfunc584
