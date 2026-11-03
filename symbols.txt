@@ -7001,6 +7001,7 @@
 0x1000bd2f func   ?sub_102c2ab0@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_102c2ab0
 0x1000bd34 func   ?vfunc5@CResearchBook_HG_MELEE@@QAEPAV1@I@Z CResearchBook_HG_MELEE::vfunc5
 0x1000bd39 func   ?vfunc1@CVFeatList_t@@UAEMH@Z CVFeatList_t::vfunc1
+0x1000bd3e func   ??_GIMoveHelper@@UAEPAXI@Z ??_GIMoveHelper@@UAEPAXI@Z
 0x1000bd43 func   ?sub_10245660@@YAPAUCUnk10245660Node@@PBD@Z sub_10245660
 0x1000bd48 func   ?sub_10390040@@YIXPAD@Z sub_10390040
 0x1000bd4d func   ?sub_1030c4e0@@YAXXZ sub_1030c4e0
