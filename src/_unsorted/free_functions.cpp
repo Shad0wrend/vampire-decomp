@@ -64881,6 +64881,41 @@ CRagdollProp *sub_10157260(CRagdollProp *pAnimating, const Vector &vecForce, int
 }
 // END FUNCTION
 
+// FUNCTION: 0x10157530 size=0x53
+void *sub_100aa720(unsigned int size);
+
+extern int vt_1046e774;
+extern char g_10580018[];
+
+struct CInstancedSceneEntityCtorCall
+{
+	void sub_101550d0();
+};
+
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+
+struct GP {
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	virtual void k0(); virtual void k1(); virtual void k2(); virtual void k3(); virtual void k4(); virtual void k5();
+	virtual void name(const char *s);
+};
+
+// TARGET: prop_ragdoll_special
+extern "C" GP *prop_ragdoll_special()
+{
+	GP *p = (GP *)sub_100aa720(0x1054);
+	if (p) {
+		((CInstancedSceneEntityCtorCall *)p)->sub_101550d0();
+		*(int *)((char *)p + 0x1050) = -1;
+		*(int **)p = &vt_1046e774;
+	} else {
+		p = 0;
+	}
+	p->name(g_10580018);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10157610 size=0x1a
 namespace lifted {
 extern int g_1057e9ac;
