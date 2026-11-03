@@ -419,6 +419,7 @@
 0x10001a41 func   ?vfunc5@CNPC_VCombatman@@QAEPAV1@I@Z CNPC_VCombatman::vfunc5
 0x10001a4b func   ?vfunc5@CGibShooter@@QAEPAV1@I@Z CGibShooter::vfunc5
 0x10001a50 func   ?sub_1009b060@CBaseEntity@@QAEXABVVector@@@Z CBaseEntity::sub_1009b060
+0x10001a55 func   ?sub_101ab0e0@Helper@@QAEPAXI@Z Helper::sub_101ab0e0
 0x10001a5a func   ?IsLeftChild@?$CUtlRBTree@UCRBTree12Entry_101c03c0@@G@@QBE_NG@Z CUtlRBTree<CRBTree12Entry_101c03c0,unsigned short>::IsLeftChild
 0x10001a5a func   ?sub_101c02d0@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_101c02d0
 0x10001a5f func   ?vfunc5@CAI_BaseHumanoid@@QAEPAV1@I@Z CAI_BaseHumanoid::vfunc5
