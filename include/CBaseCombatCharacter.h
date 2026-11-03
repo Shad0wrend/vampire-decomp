@@ -227,7 +227,7 @@ public:
 	char m_pad0aa0[0xaa1 - 0xaa0];
 	bool m_bMeleeSwingIsLive;	// 0x0aa1
 	bool m_bDidSendIncomingSwingNotice;	// 0x0aa2
-	char m_pad0aa3[0xaa4 - 0xaa3];
+	bool m_bAA3;	// 0x0aa3: the melee swing's "weapon notice sent" flag
 	float m_flLastMeleeSwingUpdate;	// 0x0aa4
 	Vector m_vecLastMeleeSwingPosition;	// 0x0aa8
 	Vector m_angLastMeleeSwingAngles;	// 0x0ab4
