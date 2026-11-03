@@ -332,7 +332,10 @@ public:
 	char m_pad6260[0x6264 - 0x6260];
 	float m_f6264;
 	float m_f6268;	// 0x6268
-	char m_pad626c[0x628c - 0x626c];
+	float m_f626c;	// 0x626c
+	char m_pad6270[0x6274 - 0x6270];	// 0x6270 .. 0x6273
+	float m_fl6274;	// 0x6274: a timer (-1.0f when unset)
+	char m_pad6278[0x628c - 0x6278];	// 0x6278 .. 0x628B
 	EHANDLE m_h628c;
 	Vector m_vec6290;
 	char m_pad629c[0x62e8 - 0x629c];
