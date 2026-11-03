@@ -268,7 +268,7 @@ public:
 	virtual void vfunc218_slot();
 	virtual void vfunc219_slot();
 	virtual void vfunc220_slot();
-	virtual void vfunc221_slot();
+	virtual float *vfunc221_slot();
 	virtual void vfunc222_slot();
 	virtual void vfunc223();
 	virtual void vfunc224();
