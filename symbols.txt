@@ -366,6 +366,7 @@
 0x1000191a func   ?sub_100bc0f0@CUnknown100bc0f0@@QAEXPAUCInputData100bc0f0@@@Z CUnknown100bc0f0::sub_100bc0f0
 0x1000191f func   ?sub_103dbad0@@YAXPAUCDbgEnt@@@Z sub_103dbad0
 0x10001929 func   ?sub_10159700@CUnknown10159700@@QAEXHHHM@Z CUnknown10159700::sub_10159700
+0x1000192e func   ?vfunc10@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEXXZ CAI_Behavior<CAI_BaseNPC,100000>::vfunc10
 0x1000193d func   ?vfunc9@CEffectsServer@@UAEMXZ CEffectsServer::vfunc9
 0x10001942 func   ?vfunc6@CGameMovement@@UAEMABVQAngle@@ABVVector@@MM@Z CGameMovement::vfunc6
 0x10001947 func   ?sub_100d4160@@YAXPAXPAVCVStatList_t@@HH@Z sub_100d4160
