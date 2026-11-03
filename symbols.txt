@@ -2446,6 +2446,7 @@
 0x10004c3c func   ?sub_1008b3c0@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_1008b3c0
 0x10004c41 func   ?sub_102cc520@CUnknown102cc520@@QAEPAV1@XZ CUnknown102cc520::sub_102cc520
 0x10004c4b func   ?sub_101e7d50@CUnknown101e7d50@@QAEMXZ CUnknown101e7d50::sub_101e7d50
+0x10004c50 func   ?sub_10209d40@CItemContainerAnimated@@QAEPAV1@XZ CItemContainerAnimated::sub_10209d40
 0x10004c55 func   ?sub_101da9b0@CBitfieldSet@@QAEXI@Z CBitfieldSet::sub_101da9b0
 0x10004c5f func   ?sub_100c83a0@CMem4c_t@@QAEXH@Z CMem4c_t::sub_100c83a0
 0x10004c64 func   ?sub_103c0b30@@YAHXZ sub_103c0b30

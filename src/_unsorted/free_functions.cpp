@@ -109676,6 +109676,26 @@ extern "C" CBaseEntity *item_container_animated()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10209d40 size=0x19
+#include "CItemContainerAnimated.h"
+#include "CDynamicProp.h"
+
+extern int vt_104844cc[];
+
+struct CItemContainerCtor
+{
+	void sub_102087e0();
+};
+
+CItemContainerAnimated *CItemContainerAnimated::sub_10209d40()
+{
+	((CItemContainerCtor *)this)->sub_102087e0();
+	*(int *)this = (int)vt_104844cc;
+	((CDynamicProp *)this)->sub_1008b490();
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10209e30 size=0x89
 #include "CBaseEntity.h"
 #include "CItemContainerAnimated.h"
