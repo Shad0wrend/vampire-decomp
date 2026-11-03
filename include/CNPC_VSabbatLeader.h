@@ -143,6 +143,7 @@ public:
 	datamap_t * vfunc82();
 	int vfunc451();
 	bool vfunc452();
+	int vfunc604(int unused);	// slot 604: melee-combat schedule selection (returns the schedule id)
 	int vfunc580();
 	CNPC_VSabbatLeader *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
 };
