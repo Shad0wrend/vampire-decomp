@@ -22,6 +22,22 @@ char CCineNPC::vfunc117()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6d40 size=0x14
+#include "CCineNPC.h"
+
+int CCineNPC::vfunc370(int a)
+{
+	void **vt = *(void ***)this;
+	union {
+		void *p;
+		void (CCineNPC::*pm)(int);
+	} u;
+	u.p = vt[368];
+	(this->*u.pm)(a);
+	return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6da0 size=0x5
 // TARGET: sub_101a6da0
 bool __stdcall sub_101a6da0(int a)

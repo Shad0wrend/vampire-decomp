@@ -4917,6 +4917,7 @@
 0x10008b3e func   ?vfunc5@CWeaponIArmor_Lt_Cloth@@QAEPAV1@I@Z CWeaponIArmor_Lt_Cloth::vfunc5
 0x10008b43 func   ?sub_1006f7d0@CEnt1006f7d0@@QAE_NXZ CEnt1006f7d0::sub_1006f7d0
 0x10008b48 func   ?vfunc13@CCollisionProperty@@UAEHXZ CCollisionProperty::vfunc13
+0x10008b4d func   ?vfunc370@CCineNPC@@QAEHH@Z CCineNPC::vfunc370
 0x10008b52 func   ?vfunc464@CAI_BaseNPC@@UAEHXZ CAI_BaseNPC::vfunc464
 0x10008b5c func   ?sub_101151a0@CUnknown101151a0@@QAEIXZ CUnknown101151a0::sub_101151a0
 0x10008b61 func   ?sub_100673c0@@YAHXZ sub_100673c0
