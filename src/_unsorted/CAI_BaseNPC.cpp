@@ -2242,6 +2242,18 @@ CAI_MoveProbe *__fastcall sub_1027cef0(void *pOuter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027cf60 size=0x1f
+#include "CAI_LocalNavigator.h"
+
+CAI_LocalNavigator *CAI_BaseNPC::vfunc428()
+{
+	CAI_LocalNavigator *p = (CAI_LocalNavigator *)operator new(0x20);
+	if (p)
+		return p->sub_102ddab0((int)this);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027d9d0 size=0x5
 #include "CAI_BaseNPC.h"
 

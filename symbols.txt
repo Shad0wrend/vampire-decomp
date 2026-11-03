@@ -4108,6 +4108,7 @@
 0x1000760d func   ?sub_101daf80@CUnknown101daf60@@QAEXXZ CUnknown101daf60::sub_101daf80
 0x10007612 func   ??0CUnknown101d82d0_Elem@@QAE@XZ CUnknown101d82d0_Elem::CUnknown101d82d0_Elem
 0x10007617 func   ?vfunc80@CWeaponMelee_TireIron@@QAEHXZ CWeaponMelee_TireIron::vfunc80
+0x1000761c func   ?vfunc428@CAI_BaseNPC@@UAEPAVCAI_LocalNavigator@@XZ CAI_BaseNPC::vfunc428
 0x1000762b func   _item_k_lilly_key item_k_lilly_key
 0x10007630 func   ?sub_103fcee0@@YAHXZ sub_103fcee0
 0x10007635 func   ?sub_100741f0@CUnknown10074070@@QAEMMH@Z CUnknown10074070::sub_100741f0
