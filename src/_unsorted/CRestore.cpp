@@ -239,6 +239,17 @@ void CRestore::sub_101a1990(unsigned short *pValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a1ad0 size=0x11
+#include "CRestore.h"
+
+// TARGET: CRestore::vfunc5
+void CRestore::vfunc5()
+{
+	char buf[32];
+	vfunc6(buf);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a1e30 size=0x30
 #include "CRestore.h"
 void CRestore::vfunc9(unsigned short *pValue)
