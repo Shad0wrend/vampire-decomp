@@ -8294,6 +8294,7 @@
 0x1000ddaf func   ?vfunc366@CNPC_VSabbatLeader@@QAEHHHH@Z CNPC_VSabbatLeader::vfunc366
 0x1000ddb4 func   ?sub_10280c80@@YAXXZ sub_10280c80
 0x1000ddb9 func   ?vfunc318@CNPC_VPlaceholder@@UAE_NHHH@Z CNPC_VPlaceholder::vfunc318
+0x1000ddc3 func   ?vfunc201@CNPC_VTzimisce@@QAE_NPAVCBaseEntity@@HPAHH@Z CNPC_VTzimisce::vfunc201
 0x1000ddd2 func   ?sub_10245a20@@YIDPAX@Z sub_10245a20
 0x1000ddd7 func   ?sub_10191130@COrnamentProp@@QAEXPBDPAVCBaseEntity@@@Z COrnamentProp::sub_10191130
 0x1000dddc func   ?sub_102f1690@CUnknown102ee120_x@@QAE_NPAUHelperParams102f1690@@@Z CUnknown102ee120_x::sub_102f1690

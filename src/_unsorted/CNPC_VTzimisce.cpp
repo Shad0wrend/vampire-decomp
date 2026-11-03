@@ -623,6 +623,17 @@ int CNPC_VTzimisce::vfunc138()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ba290 size=0x1e
+#include "CNPC_VTzimisce.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VTzimisce::vfunc201
+bool CNPC_VTzimisce::vfunc201(CBaseEntity *pEnt, int a, int *pOut, int d)
+{
+	return ((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc201(pEnt, a, pOut, 0) ? true : false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ba2c0 size=0x63
 #include "CNPC_VTzimisce.h"
 // TARGET: CNPC_VTzimisce::vfunc463
