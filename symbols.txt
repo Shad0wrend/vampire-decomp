@@ -13300,6 +13300,7 @@
 0x10015a7d func   ?sub_100ecbe0@CUnknown100eb870@@QAEXXZ CUnknown100eb870::sub_100ecbe0
 0x10015a82 func   ?vfunc5@CBloodPack@@QAEPAV1@I@Z CBloodPack::vfunc5
 0x10015a87 func   ?vfunc493@CNPC_VPlayerController@@QAEXXZ CNPC_VPlayerController::vfunc493
+0x10015a8c func   ?vfunc270@CBaseAnimatingOverlay@@QAEDH@Z CBaseAnimatingOverlay::vfunc270
 0x10015a91 func   ?vfunc403@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc403
 0x10015a96 func   ?vfunc602@CNPC_VFrenzyShadow@@UAE_NXZ CNPC_VFrenzyShadow::vfunc602
 0x10015a9b func   _info_intermission info_intermission

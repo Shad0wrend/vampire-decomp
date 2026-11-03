@@ -219,6 +219,16 @@ int CBaseAnimatingOverlay::vfunc271(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10099540 size=0x16
+#include "CBaseAnimatingOverlay.h"
+#include "CEntityVSlots.h"
+
+char CBaseAnimatingOverlay::vfunc270(int activity)
+{
+	return ((CEntityVSlots *)this)->slot271(activity) != -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10099570 size=0x46
 #include "CBaseAnimatingOverlay.h"
 #define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
