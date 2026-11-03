@@ -117,6 +117,15 @@ int CNPC_VYukie::vfunc438()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dd7a0 size=0xd
+#include "CNPC_VYukie.h"
+
+void CNPC_VYukie::vfunc432(float x)
+{
+	sub_10387500(x);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dd800 size=0x27
 #include "CNPC_VYukie.h"
 
