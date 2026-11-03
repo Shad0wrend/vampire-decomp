@@ -11635,6 +11635,7 @@
 0x100132f0 func   ?sub_10056fa0@CBaseFire@@QAEXHH@Z CBaseFire::sub_10056fa0
 0x100132f5 func   ?sub_1042c7e0@@YIXPAX@Z sub_1042c7e0
 0x100132fa func   ?sub_102f0e00@CAI_Navigator@@QAE_NPBMPAD@Z CAI_Navigator::sub_102f0e00
+0x100132ff func   ?vfunc103@CWeaponMelee_SabbatLeaderAttack@@QAEXXZ CWeaponMelee_SabbatLeaderAttack::vfunc103
 0x10013304 func   ?sub_1027ee20@@YAXPAUCHandleSrc@@PBD@Z sub_1027ee20
 0x10013309 func   ?vfunc103@CPropDestructable@@UAEXXZ CPropDestructable::vfunc103
 0x1001330e func   ?sub_1042c7d0@@YIXPAX@Z sub_1042c7d0

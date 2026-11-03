@@ -39,6 +39,17 @@ int CWeaponMelee_SabbatLeaderAttack::vfunc363()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e90b0 size=0x11
+#include "CWeaponMelee_SabbatLeaderAttack.h"
+
+// TARGET: CWeaponMelee_SabbatLeaderAttack::vfunc103
+void CWeaponMelee_SabbatLeaderAttack::vfunc103()
+{
+	sub_100047be();
+	m_b871 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e90e0 size=0x6
 #include "CWeaponMelee_SabbatLeaderAttack.h"
 int CWeaponMelee_SabbatLeaderAttack::vfunc373()
