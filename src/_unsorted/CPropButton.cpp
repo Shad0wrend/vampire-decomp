@@ -12,6 +12,35 @@ datamap_t * CPropButton::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10215570 size=0x52
+#include "CCineNPC.h"
+#include "CBaseAnimating.h"
+
+void sub_100aa7b0(void *);
+
+struct Helper
+{
+	void *sub_10215570(unsigned int flags);
+};
+
+// TARGET: Helper::sub_10215570
+void *Helper::sub_10215570(unsigned int flags)
+{
+	CCineNPCSlot *p = (CCineNPCSlot *)((char *)this + 0x834);
+	int n = 8;
+	do {
+		--p;
+		p->sub_10015708();
+	} while (--n);
+	((CCineNPCSlot *)((char *)this + 0x75c))->sub_10015708();
+	((CCineNPCSlot *)((char *)this + 0x744))->sub_10015708();
+	((CBaseAnimating *)this)->sub_1008b3c0();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102155f0 size=0x1e
 #include "CPropButton.h"
 #include "CBaseProp.h"

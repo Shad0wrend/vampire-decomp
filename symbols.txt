@@ -12007,6 +12007,7 @@
 0x10013705 func   ?vfunc5@CTETParticleHUD@@UAEXXZ CTETParticleHUD::vfunc5
 0x1001370a func   ?sub_10079320@@YAXPAUSDumpOutput@@HPBDZZ sub_10079320
 0x1001370f func   ?sub_1040dcf0@CBaseCombatWeapon@@QAEXPAVCBaseEntity@@PBMPAX@Z CBaseCombatWeapon::sub_1040dcf0
+0x10013719 func   ?sub_10215570@Helper@@QAEPAXI@Z Helper::sub_10215570
 0x1001371e func   ?vfunc0@CTraceFilterHasThrowLOS@@UAE_NPAXH@Z CTraceFilterHasThrowLOS::vfunc0
 0x10013723 func   ?vfunc522@CNPC_VMingXiaoTentacle@@UAEMXZ CNPC_VMingXiaoTentacle::vfunc522
 0x10013728 func   ?sub_100b2e30@CBaseEntity@@QAEXPBM@Z CBaseEntity::sub_100b2e30
