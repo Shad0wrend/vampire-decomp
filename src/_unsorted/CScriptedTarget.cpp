@@ -179,3 +179,22 @@ int CScriptedTarget::vfunc127(int a)
 	return r;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1034e3b0 size=0x41
+#include "CScriptedTarget.h"
+#include "COutputEvent.h"
+#include "CAI_BaseNPC.h"
+
+void sub_100aa7b0(void *p);
+
+CScriptedTarget *CScriptedTarget::vfunc5(unsigned int flags)
+{
+	((COutputEvent *)((char *)this + 0x5f9c))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x5f84))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x5f6c))->sub_100cd2d0();
+	((CAI_BaseNPC *)this)->sub_1000c9cd();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
