@@ -287,7 +287,8 @@ public:
 	float m_flSpeed164;	// 0x0164
 	int m_n168;
 	int m_n16c;
-	char m_pad0170[0x17c - 0x170];
+	float m_fl170;	// 0x170: a time stamp (CBaseAnimating::vfunc250)
+	char m_pad0174[0x17c - 0x174];
 	float m_flNextThink;	// 0x017c
 	char m_pad0180[4];
 	Vector m_vecViewOffset;	// 0x0184
