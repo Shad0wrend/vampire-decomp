@@ -11,6 +11,17 @@ datamap_t *CAI_BaseHumanoid::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025e4e0 size=0x1b
+#include "CAI_BaseHumanoid.h"
+#include "CBaseAnimatingOverlay.h"
+
+float CAI_BaseHumanoid::vfunc250(float a)
+{
+	m_flags5f4c &= ~3;
+	return ((CBaseAnimatingOverlay *)this)->vfunc250(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025e510 size=0x1e5
 void CAI_BaseHumanoid::vfunc105(void *p)
 {
