@@ -56,6 +56,7 @@ public:
     virtual bool vfunc315();    // its own (0x1040db90)
     virtual char vfunc316(int a);    // its own (0x1040dc90)
     void sub_1040dbb0();    // stub-less member, called directly (0x1040dbb0)
+    void vfunc180();    // slot 180: vtable slot 372, then CBaseEntity::vfunc180
     void sub_1001089d(const float *pVelocity);    // CBaseCombatWeapon::vfunc299 (stub 0x1001089d), called directly
 	void *sub_1040d590();
 	datamap_t *sub_1040d850();
