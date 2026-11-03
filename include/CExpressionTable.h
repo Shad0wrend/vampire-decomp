@@ -3,6 +3,9 @@
 
 #include "CUnknown1024b2d0.h"
 
+class CBaseCombatCharacter;
+class CBaseAnimating;
+
 class CExpressionTable
 {
 public:
