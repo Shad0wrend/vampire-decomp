@@ -719,3 +719,18 @@ void CTempEntsSystem::vfunc43(CUnknown1019d130 *filter, int a, int b, int c, int
 	sub_10114440(filter, a, b, c, d, e);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10059de0 size=0x20
+#include "CTempEntsSystem.h"
+
+extern char g_1044db7c[];
+
+// TARGET: CTempEntsSystem::vfunc0
+void *CTempEntsSystem::vfunc0(unsigned int flags)
+{
+	*(void **)this = g_1044db7c;
+	if (flags & 1)
+		operator delete(this);
+	return this;
+}
+// END FUNCTION
