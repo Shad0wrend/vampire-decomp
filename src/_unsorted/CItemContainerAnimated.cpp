@@ -15,3 +15,12 @@ CItemContainerAnimated *CItemContainerAnimated::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10209df0 size=0xb
+#include "CItemContainerAnimated.h"
+
+void CItemContainerAnimated::vfunc406()
+{
+	sub_10209e30("open");
+}
+// END FUNCTION

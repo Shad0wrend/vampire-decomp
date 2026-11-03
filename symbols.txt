@@ -12098,6 +12098,7 @@
 0x10013fb6 func   ?vfunc516@CNPC_VMingXiao@@UAEMXZ CNPC_VMingXiao::vfunc516
 0x10013fbb func   ?sub_102c43f0@CUnk102c43f0@@QAEXXZ CUnk102c43f0::sub_102c43f0
 0x10013fc0 func   ?sub_1018b790@CUnknown1018b790@@QAEPAU1@XZ CUnknown1018b790::sub_1018b790
+0x10013fc5 func   ?vfunc406@CItemContainerAnimated@@QAEXXZ CItemContainerAnimated::vfunc406
 0x10013fca func   ?sub_100ea1e0@CUnknown100ea1e0@@QAEXDPAD0@Z CUnknown100ea1e0::sub_100ea1e0
 0x10013fcf func   ?vfunc24@CSave@@UAEXABVVector@@@Z CSave::vfunc24
 0x10013fd4 func   ?vfunc241@CFilterFeat@@UAE_NPAVCBaseEntity@@@Z CFilterFeat::vfunc241
