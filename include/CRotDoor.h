@@ -73,6 +73,9 @@ public:
 	float m_flAngle6f8;	// +0x6f8: one of the three door angles used by GetNPCOpenData
 	float m_flAngle6fc;	// +0x6fc
 	float m_flAngle700;	// +0x700
+	float m_flAngle704;	// +0x704: the angle the blocked test last saw
+	int m_nCount708;	// +0x708: blocked retry counter (reset by vfunc249, reaches 15)
+	int m_nState70c;	// +0x70c: blocked sub-state (2 or 3)
 public:
     virtual datamap_t * vfunc82();
 public:
