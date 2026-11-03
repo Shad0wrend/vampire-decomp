@@ -3,6 +3,8 @@
 
 #include "Vector.h"
 
+extern float g_104454c4;	// the float 0.0f the game shares in its constant pool
+
 struct Ray_t
 {
 	float m_Start[3];
