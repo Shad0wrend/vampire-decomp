@@ -5982,6 +5982,7 @@
 0x1000a583 func   ?sub_103a5d80@@YIPAXPAX@Z sub_103a5d80
 0x1000a588 func   ?vfunc451@CNPC_VFrenzyShadow@@UAEHXZ CNPC_VFrenzyShadow::vfunc451
 0x1000a58d func   ?vfunc364@CBaseCombatCharacter@@QAE_NPBVVector@@@Z CBaseCombatCharacter::vfunc364
+0x1000a5a6 func   ?vfunc373@CBaseCombatCharacter@@QAEHH@Z CBaseCombatCharacter::vfunc373
 0x1000a5ab func   ?sub_100d6820@@YAXXZ sub_100d6820
 0x1000a5b0 func   ?vfunc3@CTEBloodStream@@UAEXABVVector@@ABVQAngle@@@Z CTEBloodStream::vfunc3
 0x1000a5ba func   ?sub_1007e5c0@CUnknown1007e5c0@@QAEXPAH0@Z CUnknown1007e5c0::sub_1007e5c0

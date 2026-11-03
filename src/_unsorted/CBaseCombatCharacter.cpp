@@ -253,6 +253,29 @@ char CBaseCombatCharacter::vfunc360() { return 0; }
 bool __cdecl sub_1014f950() { return false; }
 // END FUNCTION
 
+// FUNCTION: 0x1014f9a0 size=0x14
+#include "CBaseCombatCharacter.h"
+
+#define CVS(n) virtual void s##n();
+#define CVS10(p) CVS(p##0) CVS(p##1) CVS(p##2) CVS(p##3) CVS(p##4) CVS(p##5) CVS(p##6) CVS(p##7) CVS(p##8) CVS(p##9)
+
+struct CCBCSlots371
+{
+	CVS10(0) CVS10(1) CVS10(2) CVS10(3) CVS10(4) CVS10(5) CVS10(6) CVS10(7) CVS10(8) CVS10(9)
+	CVS10(10) CVS10(11) CVS10(12) CVS10(13) CVS10(14) CVS10(15) CVS10(16) CVS10(17) CVS10(18) CVS10(19)
+	CVS10(20) CVS10(21) CVS10(22) CVS10(23) CVS10(24) CVS10(25) CVS10(26) CVS10(27) CVS10(28) CVS10(29)
+	CVS10(30) CVS10(31) CVS10(32) CVS10(33) CVS10(34) CVS10(35) CVS10(36)
+	CVS(370)
+	virtual void s371(int a);
+};
+
+int CBaseCombatCharacter::vfunc373(int a)
+{
+	((CCBCSlots371 *)this)->s371(a);
+	return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014f9d0 size=0x5
 // TARGET: sub_1014f9d0
 bool __stdcall sub_1014f9d0(int a, int b)
