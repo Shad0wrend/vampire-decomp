@@ -5192,6 +5192,7 @@
 0x10009205 func   ?sub_103121a0@CAI_Expresser@@QAEXMM@Z CAI_Expresser::sub_103121a0
 0x1000920a func   ?sub_102db3e0@CUnknown102db3e0@@QAEXPAVCBaseEntity@@H@Z CUnknown102db3e0::sub_102db3e0
 0x1000920f func   ?sub_101fbb60@CVStatSubCost_t@@QAEHH@Z CVStatSubCost_t::sub_101fbb60
+0x10009219 func   ?vfunc103@CWeaponMelee_Tzimisce2Claw@@QAEXXZ CWeaponMelee_Tzimisce2Claw::vfunc103
 0x1000921e func   ?vfunc451@CNPC_VChangBrosClaw@@QAEHXZ CNPC_VChangBrosClaw::vfunc451
 0x10009223 func   ?sub_101953b0@@YAHXZ sub_101953b0
 0x10009228 func   ?sub_101eab20@@YAXH@Z sub_101eab20
