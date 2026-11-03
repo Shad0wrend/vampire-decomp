@@ -5749,6 +5749,7 @@
 0x1000a12d func   _item_g_driver_license_gimble item_g_driver_license_gimble
 0x1000a132 func   ?sub_100d9820@@YAXXZ sub_100d9820
 0x1000a137 func   ?vfunc438@CNPC_VCamera@@QAEHXZ CNPC_VCamera::vfunc438
+0x1000a13c func   ?vfunc15@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEXH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc15
 0x1000a141 func   ?vfunc365@CNPCMaker_Fleshpile@@UAE_NH@Z CNPCMaker_Fleshpile::vfunc365
 0x1000a14b func   ?sub_10170d60@CBasePlayer@@QAEXXZ CBasePlayer::sub_10170d60
 0x1000a150 func   ?vfunc82@CBaseMoneyObject@@QAEPAUdatamap_t@@XZ CBaseMoneyObject::vfunc82
