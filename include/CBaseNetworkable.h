@@ -35,6 +35,7 @@ public:
 	virtual void n0() = 0; virtual void n1() = 0; virtual void n2() = 0; virtual void n3() = 0; virtual void n4() = 0;
 	virtual void n5() = 0; virtual void n6() = 0; virtual void n7() = 0; virtual void n8() = 0; virtual void n9() = 0;
 	virtual void n10() = 0; virtual void n11() = 0; virtual void n12() = 0; virtual void n13() = 0; virtual void n14() = 0;
+	void *vfunc14(char flags);	// the scalar deleting destructor (vftable store, operator delete when bit 0, returns this)
 };
 
 class CBaseNetworkable : public IServerUnknown, public IServerNetworkable
