@@ -24,17 +24,23 @@ public:
 	int m_n156c;	// 0x156c
 	char pad1570[0x1574 - 0x1570];
 	float m_f1574;	// 0x1574
-	char pad1578[0x5cc0 - 0x1578];
+	char pad1578[0x1b44 - 0x1578];
+	const char *m_psz1b44;	// 0x1b44: the debug task/file name the AI task handlers store here
+	int m_n1b48;	// 0x1b48: the debug task id / line stored next to it
+	char pad1b4c[0x5cc0 - 0x1b4c];
 	int m_n5cc0;	// 0x5cc0: schedule state
 	char pad5cc4[0x5d44 - 0x5cc4];
 	CAI_Motor *m_pMotor5d44;	// 0x5d44
-	char pad5d48[0x5ddc - 0x5d48];
+	char pad5d48[0x5dd0 - 0x5d48];
+	Vector m_vec5dd0;	// 0x5dd0: a position (its z is stored by vfunc442, all three read by vfunc259 and CAI_BaseNPC::vfunc442)
 	CBaseEntity *m_pTarget5ddc;	// 0x5ddc
 	char pad5de0[0x5f48 - 0x5de0];
 	float m_f5f48;	// 0x5f48: next think time
 	char pad5f4c[0x5f50 - 0x5f4c];
 	int m_n5f50;	// 0x5f50: morale
 	char m_b5f54;	// 0x5f54
+	char pad5f55[0x5f58 - 0x5f55];
+	float m_f5f58;	// 0x5f58: the z of the origin stored by vfunc442, compared by vfunc444
 
 	void sub_10357be0(float flSpeed);	// steers toward the target at +0x5ddc: velocity 170.0f * speed along the direction, yaw / pitch from it
 	bool sub_10357e50(const Vector &dir, float flDist, Vector *pOut);	// stub 0x1000b334, called directly
