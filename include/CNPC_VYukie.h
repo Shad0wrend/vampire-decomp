@@ -30,4 +30,6 @@ public:
 	virtual void *vfunc580();	// slot 580
 	virtual const char *vfunc451();	// slot 451: the class name "CNPC_VYukie"
 	virtual char vfunc452();	// slot 452
+	void vfunc432(float x);	// slot 432: forwards to sub_10387500
+	void sub_10387500(float x);	// forwarder target
 };
