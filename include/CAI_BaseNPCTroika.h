@@ -228,6 +228,7 @@ public:
 	void vfunc22(int a);
 	virtual void vfunc27(int a);	// slot 27 override: sub_102bf5d0(a) on the unit view, the dev-flag global 0x10924a6c slot 1, task 0xa, then slot 600(a)
 	void vfunc614();
+	bool vfunc615();	// slot 615: false while condition 0x30 holds, else whether gpGlobals->curtime is past m_f65bc
 
 	union { char m_pad0004[0x19c - 4]; struct { char m_pad0004b[0x98 - 4]; CAI_BaseNPCTroika *m_pObj98; }; };	// 0x98: the controlling NPC object (the one whose flags +0x14b8 / +0x14bc the break test sets)
 	unsigned int m_flags19c;
