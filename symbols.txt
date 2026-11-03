@@ -6808,6 +6808,7 @@
 0x1000ba19 func   ?sub_102fca10@@YAHXZ sub_102fca10
 0x1000ba1e func   ?sub_10191420@@YAHXZ sub_10191420
 0x1000ba28 func   ?sub_10272940@CAI_BaseNPC@@QAEXPBD@Z CAI_BaseNPC::sub_10272940
+0x1000ba32 func   ?vfunc404@CNPC_VYukie@@QAEHPAVCBaseEntity@@@Z CNPC_VYukie::vfunc404
 0x1000ba37 func   ?sub_102f9780@CUnknown102f9780View@@QAEHH@Z CUnknown102f9780View::sub_102f9780
 0x1000ba3c func   ?sub_101348a0@CLogicCaseToggle@@QAEXPAUinputdata_t@@@Z CLogicCaseToggle::sub_101348a0
 0x1000ba41 func   ?sub_10152060@@YAXHHHHH@Z sub_10152060

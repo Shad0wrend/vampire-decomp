@@ -156,6 +156,18 @@ void CNPC_VYukie::vfunc420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dd880 size=0x14
+#include "CNPC_VYukie.h"
+#include "CAI_BaseNPCTroika.h"
+
+int CNPC_VYukie::vfunc404(CBaseEntity *pEnt)
+{
+	if (!pEnt)
+		return 0;
+	return ((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc404(pEnt);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dd8b0 size=0x3e
 #include "CNPC_VYukie.h"
 
