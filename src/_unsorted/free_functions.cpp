@@ -76496,6 +76496,33 @@ int sub_10190d80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10190fa0 size=0xbb
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "COrnamentProp.h"
+#include "CCollisionProperty.h"
+
+void COrnamentProp::sub_10190fa0()
+{
+	sub_1009ee80(0);
+	vfunc202(0);
+	sub_100a0b20();
+	{
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", m_name26c ? m_name26c : g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->AddSolidFlags(4);
+	}
+	vfunc93(0, 0);
+	vfunc66();
+	sub_100b3b00();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101910c0 size=0x43
 #include "COrnamentProp.h"
 #include "inputdata_t.h"
