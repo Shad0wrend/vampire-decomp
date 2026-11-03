@@ -266,6 +266,32 @@ void CCollisionEvent::vfunc2(void *pObjectIn, float energy, int surfaceProps, in
 }
 // END FUNCTION
 
+// FUNCTION: 0x10030890 size=0x5a
+#include "CCollisionEvent.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+
+void sub_10030e40();
+
+// TARGET: CCollisionEvent::vfunc7
+void CCollisionEvent::vfunc7()
+{
+	g_109f3620[*g_109f3680].name = "CCollisionEvent::PostSimulationFrame";
+	g_109f3620[*g_109f3680].file = g_106b8540;
+	g_109f3620[*g_109f3680].line = g_106b8540;
+	(*g_109f3680)++;
+	sub_10030e40();
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100315c0 size=0xe5
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
