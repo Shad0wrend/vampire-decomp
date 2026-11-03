@@ -918,6 +918,25 @@ void *CNPC_VTzimisce::sub_103bf580(void *pDefault)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103bf610 size=0x39
+#include "CNPC_VTzimisce.h"
+
+// TARGET: CNPC_VTzimisce::vfunc435
+void CNPC_VTzimisce::vfunc435(int arg)
+{
+	sub_100048f9(arg);
+	if ((~m_flags14b8 & 8) != 0)
+	{
+		int n = m_n66b8;
+		m_state = 0;
+		if (n > 0)
+		{
+			m_n66b8 = n - 1;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103bfa00 size=0x18
 #include "CNPC_VTzimisce.h"
 

@@ -7740,6 +7740,7 @@
 0x1000cc66 func   ?sub_101b4200@CSoundEmitterSystemBase@@QAEDH@Z CSoundEmitterSystemBase::sub_101b4200
 0x1000cc70 func   ??1CUnknown102cff90@@QAE@XZ CUnknown102cff90::~CUnknown102cff90
 0x1000cc75 func   ?sub_10428060@@YAHHPAH0@Z sub_10428060
+0x1000cc7a func   ?vfunc435@CNPC_VTzimisce@@UAEXH@Z CNPC_VTzimisce::vfunc435
 0x1000cc7f func   ?sub_10227410@CUnknown10227410@@QAEXH@Z CUnknown10227410::sub_10227410
 0x1000cc84 func   ?sub_10203990@@YAXXZ sub_10203990
 0x1000cc89 func   ?sub_101c6390@CTriggerHurt@@QAEXXZ CTriggerHurt::sub_101c6390
