@@ -3380,6 +3380,7 @@
 0x100063e3 func   ?sub_10210790@@YAHXZ sub_10210790
 0x100063e8 func   ?sub_101828b0@CAI_BaseNPC@@QAEXPAVCBaseEntity@@M@Z CAI_BaseNPC::sub_101828b0
 0x100063f7 func   ?sub_1017f8b0@CUnknown1017f8b0@@QAEHXZ CUnknown1017f8b0::sub_1017f8b0
+0x100063fc func   ?sub_101cc350@Helper@@QAEPAXI@Z Helper::sub_101cc350
 0x10006401 func   ?sub_103f7930@@YAHXZ sub_103f7930
 0x10006406 func   ?vfunc82@CInspectionBrush@@QAEPAUdatamap_t@@XZ CInspectionBrush::vfunc82
 0x1000640b func   ?sub_103e98f0@@YAHXZ sub_103e98f0
