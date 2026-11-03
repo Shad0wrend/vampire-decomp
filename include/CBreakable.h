@@ -23,6 +23,7 @@ public:
 	void vfunc104();	// slot 104 "CBreakable::Precache" (plain member): the gib model of the material (+0x454) or the mapper's gib model (+0x460), precached through the engine, its index stored at +0x45c
 	void sub_1010e620();	// frees the entities standing on top of the breakable: the box over the collision bounds (top 1 unit lower, 8 units higher) is queried (sub_101cca80, at most 256 entities), each found entity gets RemoveFlag(1) and SetGroundEntity(0)
 
+	int sub_1010e100(void *pInfo);	// slot 142: OnTakeDamage-style, declared as a plain member (CBreakable::vfunc142)
 	char m_pad0000[0x210];
 	int m_iHealth;	// 0x210
 	char m_pad0214[0x454 - 0x214];

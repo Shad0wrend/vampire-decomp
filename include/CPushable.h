@@ -14,6 +14,7 @@ public:
 	void vfunc103();	// slot 103 "CPushable::Spawn", declared as a plain member: CBreakable::vfunc103 for flag bit 7 of the spawn flags, else sets bit 13 of the flags at +0x4c, Precache (slot 104), SetSolid(6) (inlined scope trace), SetMoveType(8, 0), SetModel(the model name from slot 9) and slot 223
 	bool vfunc223();	// slot 223 (plain member): VPhysicsInitNormal(6, 0, 0, 0), then hands the physics object at +0x36c the values at +0x49c and +0x4a0 / +0x4a4
 	void vfunc230(int index, struct gamevcollisionevent_t *pEvent);	// slot 230 "CPushable::VPhysicsCollision" (plain member): the other entity is pEvent->pEntities[index == 0]; when it has a controlling object at +0xa8 CBaseEntity::vfunc230(index, pEvent) (stub 0x10006d61), else CBreakable::vfunc230 (stub 0x1000afe7)
+	int vfunc142(void *pInfo);	// slot 142: forwards to CBreakable::vfunc142 while bit 7 of +0x204 is set, else 1
 	char m_pad[0x36c - 4];
 	void *m_pObj36c;	// 0x36c: physics object
 	char m_pad0370[0x458 - 0x370];
