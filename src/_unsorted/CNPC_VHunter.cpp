@@ -108,6 +108,16 @@ int CNPC_VHunter::vfunc440(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10388ab0 size=0xf
+#include "CNPC_VHunter.h"
+
+int CNPC_VHunter::vfunc461()
+{
+	*(int *)((char *)this + 0x1b38) = 0x17;
+	return CNPC_VHumanCombatant::vfunc461();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10388ad0 size=0xd
 struct CNPC_VHumanCombatantFwd;
 struct CNPC_VHunterFwd {

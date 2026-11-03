@@ -4791,6 +4791,7 @@
 0x100088a0 func   ?vfunc244@CFuncPlat@@UAEXXZ CFuncPlat::vfunc244
 0x100088a5 func   ?sub_1038f600@CUnknown1038f600@@QAEXD@Z CUnknown1038f600::sub_1038f600
 0x100088aa func   ?vfunc465@CAI_BaseNPCTroika@@UAEXH@Z CAI_BaseNPCTroika::vfunc465
+0x100088b9 func   ?vfunc461@CNPC_VHunter@@QAEHXZ CNPC_VHunter::vfunc461
 0x100088be func   ?sub_10196850@@YAXPAUPyInst@@@Z sub_10196850
 0x100088c3 func   ?sub_103aa510@CNPC_VSabbatLeader@@QAEHXZ CNPC_VSabbatLeader::sub_103aa510
 0x100088c8 func   ?sub_10092c90@CBaseAnimating@@QAEHXZ CBaseAnimating::sub_10092c90
