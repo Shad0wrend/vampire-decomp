@@ -55161,6 +55161,26 @@ CFunc_DustMotes *CFunc_DustMotes::sub_10113c30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10113c90 size=0x1e
+#include "CFunc_Dust.h"
+
+struct CBase100090fc
+{
+	void sub_100090fc(int a);
+};
+
+extern char g_1046096c[];
+
+// TARGET: CFunc_Dust::sub_10113c90
+CFunc_Dust *CFunc_Dust::sub_10113c90()
+{
+	((CBase100090fc *)this)->sub_100090fc(0);
+	*(void **)this = g_1046096c;
+	*(int *)((char *)this + 0x474) = 1;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10113cf0 size=0xb
 namespace lifted {
 extern char g_1046096c;

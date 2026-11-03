@@ -8397,6 +8397,7 @@
 0x1000de27 func   ?vfunc4@CTEInspectionFX@@UAEXPAVCRecipientFilter@@M@Z CTEInspectionFX::vfunc4
 0x1000de2c func   ?sub_10201100@CVStatList_t@@QAEHHH@Z CVStatList_t::sub_10201100
 0x1000de31 func   ?vfunc0@CTraceFilterFVisible@@UAE_NPAXH@Z CTraceFilterFVisible::vfunc0
+0x1000de36 func   ?sub_10113c90@CFunc_Dust@@QAEPAV1@XZ CFunc_Dust::sub_10113c90
 0x1000de40 func   ?vfunc489@CGeneric_NPC_bathack@@UAEXXZ CGeneric_NPC_bathack::vfunc489
 0x1000de4a func   ?sub_10057440@@YAHXZ sub_10057440
 0x1000de4f func   ?vfunc2@ConCommandBase@@QAEXPBD0H@Z ConCommandBase::vfunc2
