@@ -2471,6 +2471,21 @@ void Helper::sub_102b51e0(void *pNPC)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b5220 size=0x21
+struct Helper
+{
+	void sub_102b5220(void *pNPC);
+};
+
+// TARGET: Helper::sub_102b5220
+void Helper::sub_102b5220(void *pNPC)
+{
+	*(unsigned char *)((char *)this + 0x5bc4) = 0;
+	if (*(char *)((char *)pNPC + 0x57d))
+		*(unsigned char *)((char *)this + 0x1590) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b5360 size=0x4b
 CBaseEntity *CAI_BaseNPCTroika::vfunc168()
 {
