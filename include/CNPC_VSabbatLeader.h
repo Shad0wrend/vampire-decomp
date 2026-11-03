@@ -42,7 +42,14 @@ public:
 	char pad1b3c[0x5cc0 - 0x1b3c];
 	int m_nState5cc0;	// +0x5cc0
 	int m_nState5cc4;	// +0x5cc4
-	char pad5cc8[0x628c - 0x5cc8];
+	char pad5cc8[0x6078 - 0x5cc8];
+	char m_b6078;	// 0x6078 (CAI_BaseNPCTroika::m_b6078): set while slot 599 / 600 hold the ranged position
+	char pad6079[0x6268 - 0x6079];
+	float m_f6268;	// 0x6268 (CAI_BaseNPCTroika::m_f6268)
+	float m_f626c;	// 0x626c (CAI_BaseNPCTroika::m_f626c)
+	char pad6270[0x6274 - 0x6270];
+	float m_fl6274;	// 0x6274 (CAI_BaseNPCTroika::m_fl6274): a timer (-1.0f when unset)
+	char pad6278[0x628c - 0x6278];
 	unsigned int m_hPlayer;	// +0x628c: entity handle of the tracked player
 	char m_pad6290[0x6498 - 0x6290];
 	bool m_bJumping;	// 0x6498
