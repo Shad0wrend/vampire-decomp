@@ -57,6 +57,7 @@ public:
 	float GetFloat() { return m_pParent->vfunc1() ? 0.0f : m_pParent->m_fValue; }
 };
 
+extern ConVar g_106c8d38;	// the "additionalequipment" convar object: ConVar::GetString() inlined at 0x10086380 / 0x10086910 reads its m_pParent (+0x4 = 0x106c8d3c), its m_nFlags (+0x18 = 0x106c8d50) and m_pszString (+0x20)
 extern ConVar *g_109201ac;	// hitgroup 1 damage scale
 extern ConVar *g_1090fe74;	// hitgroup 2
 extern ConVar *g_109204f4;	// hitgroup 3
