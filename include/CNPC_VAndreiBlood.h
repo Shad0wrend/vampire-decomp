@@ -60,6 +60,7 @@ public:
 	unsigned int m_h66e0;
 	unsigned int m_h66e4;
 public:
+	int vfunc461();	// slot 461: sets the ideal-state stamp +0x1b38 to 4; 1 + the combat byte
     virtual CAI_CondOwner * vfunc580();
     virtual const char * vfunc451();
 public:
