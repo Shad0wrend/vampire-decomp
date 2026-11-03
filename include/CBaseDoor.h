@@ -34,6 +34,7 @@ public:
 	virtual void vfunc246(int a, int* b, int c);	// slot 246: called with the NPC that wants to use the door, a 16 byte result record and a flag byte; the record's last dword is an activity to start
 	void vfunc71();
 	void vfunc104();	// slot 104: calls slot 71, then sub_100eecf0
+	char sub_100ee3b0();	// slot 117: the base's vfunc117 with bit 1 cleared, bit 3 set when flag 0x100 is on
 	virtual void vfunc113();	// "CBaseDoor::Activate": base Activate, updates the area portals for a door at rest (state 0 opens them, 1 closes them), then looks up the two entities named at +0x634 / +0x63c and stores their handles at +0x630 (-1 when none) / +0x638 (unchanged when none)
 	void *vfunc38(int a);	// slot 38: sub_10008cba(a), or this when that finds nothing
 	void vfunc248();	// slot 248 "CBaseDoor::UpdatePosition"-like: when the absolute origin (slot 220) equals the position at +0x508 within 0.001f the state at +0x4f8 becomes 1, else when it equals the position at +0x514 it becomes 0
