@@ -8499,6 +8499,20 @@ int sub_1004eab0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004ec40 size=0xf
+struct CFwd1004ec40
+{
+	void sub_1004ec40(int *p);
+	void sub_1004ec60(int v);
+};
+
+// TARGET: CFwd1004ec40::sub_1004ec40
+void CFwd1004ec40::sub_1004ec40(int *p)
+{
+	sub_1004ec60(*p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004ee20 size=0x4b
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"

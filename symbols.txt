@@ -10851,6 +10851,7 @@
 0x10011a4f func   ?sub_102f1fa0@CAI_Navigator@@QAEXMPAUCAI_NavSource@@@Z CAI_Navigator::sub_102f1fa0
 0x10011a54 func   ?sub_100b37a0@CBaseEntity@@QAEXXZ CBaseEntity::sub_100b37a0
 0x10011a59 func   ?vfunc2@CEQ_SaveRestoreBlockHandler@@UAEXXZ CEQ_SaveRestoreBlockHandler::vfunc2
+0x10011a5e func   ?sub_1004ec40@CFwd1004ec40@@QAEXPAH@Z CFwd1004ec40::sub_1004ec40
 0x10011a63 func   ?sub_1021a2f0@CPropHacking@@QAEXPAVCRestore@@@Z CPropHacking::sub_1021a2f0
 0x10011a68 func   ?sub_100f4190@@YAXPBDHH@Z sub_100f4190
 0x10011a6d func   ?sub_10147c10@@YAPAHXZ sub_10147c10
