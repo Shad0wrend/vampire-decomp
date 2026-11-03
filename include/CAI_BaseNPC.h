@@ -346,4 +346,5 @@ public:
 	void sub_1028e980(CBaseEntity *pEnt);	// called by vfunc433: while the navigator (+0x5d34) is neither in mode 1 nor 3 and has a navigation type, hands pEnt's slot 220 position to the navigator (sub_102ee220, stub 0x1000481d) once the point the route heads for is farther than the threshold at 0x104454c8 from it
 	int vfunc546(int a);	// slot 546 (plain overload of the placeholder): the global at 0x10936c74's sub_1000aed4(a), tail called
 	char vfunc532(int unused);	// slot 532 (plain overload of the placeholder): clears the handle at +0x5d24 and the byte at +0x5d30, returns 1
+	int vfunc373(int a);	// slot 373 (plain overload of the placeholder): tells slot 371 and returns a
 };
