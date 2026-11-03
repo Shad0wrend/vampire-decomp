@@ -3878,6 +3878,7 @@
 0x10007275 func   ?sub_1002cbd0@UtlMem@@QAEXXZ UtlMem::sub_1002cbd0
 0x1000727a func   ?vfunc113@CRagdollPropSpecial@@UAEXXZ CRagdollPropSpecial::vfunc113
 0x10007284 func   ?sub_100a5bb0@CBaseEntity@@QAEPAXXZ CBaseEntity::sub_100a5bb0
+0x1000728e func   ?sub_101aa730@@YIMH@Z sub_101aa730
 0x10007293 func   ?vfunc25@CRestore@@UAEHPAVVector@@HH@Z CRestore::vfunc25
 0x10007298 func   ?sub_100f42f0@@YAXPBDHH@Z sub_100f42f0
 0x1000729d func   ?sub_101f4950@CUnknown101f4370@@QAEPBDHH@Z CUnknown101f4370::sub_101f4950
