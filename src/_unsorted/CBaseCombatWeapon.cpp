@@ -1162,6 +1162,16 @@ void CBaseCombatWeapon::vfunc323()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102556a0 size=0x14
+#include "CBaseCombatWeapon.h"
+
+void CBaseCombatWeapon::vfunc324()
+{
+	*((char *)this + 0x898) = 0;
+	vfunc334(0xa, 3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102556d0 size=0x14
 #include "CBaseCombatWeapon.h"
 #define V(n) virtual void n();

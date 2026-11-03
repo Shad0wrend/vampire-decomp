@@ -6703,6 +6703,7 @@
 0x1000b776 func   ?sub_1009b980@CBaseEntity@@QAEXHPADH@Z CBaseEntity::sub_1009b980
 0x1000b780 func   ?sub_10136ec0@CUnknown10136ec0@@QAEHXZ CUnknown10136ec0::sub_10136ec0
 0x1000b785 func   ?sub_101019d0@CUnk101019d0@@QAEXXZ CUnk101019d0::sub_101019d0
+0x1000b78a func   ?vfunc324@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc324
 0x1000b78f func   ??0CBeam@@QAE@XZ CBeam::CBeam
 0x1000b78f func   ??0CBeamHead@@QAE@XZ CBeamHead::CBeamHead
 0x1000b794 func   ?vfunc2@CTEImpact@@UAEPAV1@I@Z CTEImpact::vfunc2
