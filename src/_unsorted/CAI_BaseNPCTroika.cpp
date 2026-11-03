@@ -2305,6 +2305,20 @@ Vector CAI_BaseNPCTroika::vfunc533(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b4c10 size=0x18
+#include "CAI_BaseNPCTroika.h"
+
+int sub_102c6d80();
+
+// TARGET: CAI_BaseNPCTroika::vfunc486
+bool CAI_BaseNPCTroika::vfunc486()
+{
+	if (sub_102c1170())
+		return false;
+	return sub_102c6d80 != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b4c40 size=0x5d
 #include "CAI_BaseNPCTroika.h"
 #include "globalvars.h"
