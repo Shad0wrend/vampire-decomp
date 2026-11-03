@@ -283,6 +283,46 @@ int CNPC_VCop::vfunc404(CNPC_VCopTarget *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10372c50 size=0x48
+#include "CNPC_VCop.h"
+#include "CAI_BaseNPCTroika.h"
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+
+struct CNPCView
+{
+	S100(a) S100(b) S10(c0)
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4();
+	virtual void d5(); virtual void d6();
+	virtual Vector *vfunc217();
+	char m_pad3d4[0x3d4 - 4];
+	Vector m_vec3d4;
+};
+
+struct CThisView
+{
+	S100(a) S100(b) S100(c) S100(d) S100(e)
+	S10(f0) S10(f1) S10(f2) S10(f3)
+	virtual void g0(); virtual void g1(); virtual void g2(); virtual void g3();
+	virtual void vfunc544(CNPCView *pNPC, Vector *pOrigin, Vector *pVel);
+};
+
+CNPCView * __stdcall sub_102707d0(int a);
+
+void CNPC_VCop::vfunc596(int a)
+{
+	if (a) {
+		CNPCView *pNPC = sub_102707d0(a);
+		((CAI_BaseNPC *)this)->sub_10279a50((int)pNPC);
+		((CThisView *)this)->vfunc544(pNPC, pNPC->vfunc217(), &pNPC->m_vec3d4);
+		a = (int)pNPC;
+	}
+	((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc596(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10372cc0 size=0xc9
 #include "CNPC_VCop.h"
 
