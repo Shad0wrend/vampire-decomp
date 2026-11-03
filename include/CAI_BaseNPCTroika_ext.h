@@ -1,5 +1,6 @@
 	void sub_1029c4a0(float a, float b, float c, int d, int e, int f, int g, char h);	// 0x1029c4a0, the callee of slot 123: draws the debug sphere / beam overlays and sends the client message; 8 stack arguments (ret 0x20)
 	void sub_102aa640(struct CTroikaPickHolder *pTask);
+	void sub_102a9f40(CAI_InterestingPlace *pPlace, CAI_Hint *pHint, char bFlag);
 	void vfunc286(int a, void *pEvent);	// slot 286 body 0x102c1680 (declared as a plain member: CBaseFlex is not a declared base, so a virtual declaration would shift the later slots)
 	void sub_102c1a80(int nFlag, void *pEvent);	// 0x102c1a80: appends a CExpressionRecord (start/end from pEvent's float getters) to the vector at +0x10bc
 	void vfunc322(int a);	// slot 322 (plain member): sub_102bf5d0(a) and then vtable slot 600(a)
