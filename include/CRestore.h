@@ -72,7 +72,7 @@ public:
 	virtual void s16();
 	virtual int vfunc17(char *pValues, int count, int nBytesAvailable);	// slot 17 ("CRestore::ReadBool"-like): reads up to count bytes into pValues; its first argument is used as an int (see sub_1000fe9d)
 	virtual int vfunc18(float *pValues, int count, int nBytesAvailable);	// slot 18 ("CRestore::ReadFloat"-like): reads up to count floats into pValues, returns the number read
-	virtual void s19();
+	virtual int vfunc19(void *p, int count, int nBytesAvailable);	// slot 19: reads up to nBytesAvailable bytes into p (sub_101a1f90), skipping the rest (sub_1000910b); returns the number read
 	virtual int vfunc20(int *pValues, int count, int nBytesAvailable);	// "CRestore::ReadString" (string pool ids): reads up to count zero terminated strings from the buffer, stores the pooled id of each (0 for an empty one) in pValues, then skips the rest of the nBytesAvailable bytes; returns the number read
 	virtual void vfunc21(char *pDest, int n, int a);	// slot 21: sub_101a1f70 (the record's int at +4 as the source), sub_1000910b(a), then Q_strncpy(pDest, source, n)
 	virtual int vfunc22(Vector *pValues, int count, int nBytesAvailable);	// slot 22 "CRestore::ReadVector": reads up to count vectors, returns the number read
