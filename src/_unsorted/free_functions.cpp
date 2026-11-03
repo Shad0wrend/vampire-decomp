@@ -165347,6 +165347,27 @@ int sub_1034ca50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034ca80 size=0x3a
+#include "CNPCMaker_Zombie.h"
+#include "CNPCMaker.h"
+
+extern char g_104a0bbc[];
+extern char g_104a0b90[];
+
+// TARGET: CNPCMaker_Zombie::sub_1034ca80
+CNPCMaker_Zombie *CNPCMaker_Zombie::sub_1034ca80()
+{
+	((CNPCMaker *)this)->sub_1034ad80();
+	*(void **)this = g_104a0bbc;
+	*(int *)((char *)this + 0x5dec) = 0;
+	*(int *)((char *)this + 0x1a98) = 0;
+	*(char *)((char *)this + 0x76d4) = 0;
+	*(void **)((char *)this + 0x19b0) = g_104a0b90;
+	*(float *)((char *)this + 0x76d8) = 1024.0f;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034cef0 size=0x1a
 // TARGET: CNPCMaker::sub_1034cef0
 #include "CNPCMaker.h"
