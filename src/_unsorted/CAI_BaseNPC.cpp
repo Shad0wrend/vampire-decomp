@@ -527,6 +527,17 @@ int CAI_BaseNPC::vfunc142(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10266630 size=0x20
+#include "CAI_BaseNPC.h"
+
+int CAI_BaseNPC::vfunc576(float a, int unused)
+{
+	if (a > 0.0f)
+		return 1;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10266660 size=0x20
 bool __stdcall sub_10266660(float a, float b)
 {
