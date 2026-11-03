@@ -106,6 +106,8 @@ public:
 	void vfunc195();
 	int vfunc196(int a);	// slot 196: forwards its argument to slot 193 and returns it
 	int vfunc197(int a, int b, int c, int d);	// "CBaseEntity::BodyTarget": scope trace, calls slot 192(a), returns a
+	bool vfunc201(CBaseEntity *pEntity, int traceMask, CBaseEntity **ppBlocker, int nOrigin);	// slot 201 "CBaseEntity::FVisible" (ret 0x10): target entity, trace mask, blocker out, hit-origin kind (0..10)
+	void sub_100a72e0(CBaseEntity *pTarget, int nOrigin, Vector *pOut);	// 0x100a72e0 "CBaseEntity::FVisibleTargetOrigin": the target point for a hit-origin kind (0..10), reads the target's collision property at +0x270
 	void vfunc202(CBaseEntity *pOwner);	// "CBaseEntity::SetOwnerEntity": scope trace (entity name), when the owner behind the handle at +0x364 differs from pOwner stores pOwner's handle (-1 for null) and calls slot 25 of the object at +0x36c (when set)
 	bool vfunc207();	// "CBaseEntity::IsCurrentlyTouching": scope trace (entity name), returns HasDataObjectType(1)
 	void vfunc208(CBaseEntity *pEnt);	// "CBaseEntity::SetGroundEntity": scope trace (entity name), stores pEnt's handle at +0x384 (-1 for null), then AddFlag(1) / RemoveFlag(1)
