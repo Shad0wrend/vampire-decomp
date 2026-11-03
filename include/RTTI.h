@@ -9,3 +9,4 @@ extern char g_10538764[];	// 0x10538764: ??_R0?AVCBaseEntity@@@8
 extern char g_10560638[];	// 0x10560638: ??_R0?AVCBaseCombatCharacter@@@8
 extern char g_1053e8d0[];	// 0x1053e8d0: ??_R0?AVCDisciplineParticle@@@8
 extern char g_1053e91c[];	// 0x1053e91c: ??_R0?AVCBaseViewModel@@@8
+extern char g_1057c684[];	// 0x1057c684: ??_R0?AVCRagdollProp@@@8
