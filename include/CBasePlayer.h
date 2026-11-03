@@ -229,7 +229,8 @@ public:
 	unsigned int m_hDialogPartnerFE8;	// 0x0FE8: entity handle
 	int m_nFEC;	// 0x0FEC
 	int m_nFF0;	// 0x0FF0: the activity
-	char m_pad0FF4[0x1040 - 0xff4];	// 0x0FF4 .. 0x103F
+	int m_n0FF4;	// 0x0FF4: the translated activity
+	char m_pad0FF8[0x1040 - 0xff8];	// 0x0FF8 .. 0x103F
 	unsigned int m_hUseEnt1040;	// 0x1040: entity handle
 	int m_n1044;	// 0x1044: reset to -1 by the death handler (vfunc144)
 	int m_n1048;	// 0x1048: 0 on death
