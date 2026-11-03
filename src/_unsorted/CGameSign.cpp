@@ -118,3 +118,14 @@ void CGameSign::vfunc39(CBaseEntity *pOther)
 	m_vecToucherPos = ((CTouchSlotsView *)pOther)->vfunc368() * 2000.0f + ((CTouchSlotsView *)pOther)->vfunc193();
 }
 // END FUNCTION
+
+// FUNCTION: 0x10212d70 size=0x1b
+#include "CGameSign.h"
+
+// TARGET: CGameSign::vfunc42
+void CGameSign::vfunc42(void *pEntity)
+{
+	sub_10212a30((CBasePlayer *)pEntity);
+	sub_100a5030(pEntity);
+}
+// END FUNCTION

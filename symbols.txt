@@ -1345,6 +1345,7 @@
 0x10003161 func   ?sub_10325fa0@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10325fa0
 0x1000316b func   ?sub_1014cad0@CUnknown1014cad0@@QAEXXZ CUnknown1014cad0::sub_1014cad0
 0x10003175 func   ?sub_10091740@CBaseAnimating@@QAEMXZ CBaseAnimating::sub_10091740
+0x1000317f func   ?vfunc42@CGameSign@@QAEXPAX@Z CGameSign::vfunc42
 0x10003184 func   ?vfunc1@CTESparks@@UAEHXZ CTESparks::vfunc1
 0x10003189 func   ?sub_102f1d90@@YIMPAVCAI_Navigator@@@Z sub_102f1d90
 0x1000318e func   ?vfunc5@CAutoGameSystem@@UAEXXZ CAutoGameSystem::vfunc5
