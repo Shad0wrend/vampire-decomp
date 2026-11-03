@@ -8,6 +8,14 @@ struct CUnknown10359c50Symbols
 	void sub_102e9fe0(const char *pszSymbol, int nGlobalId);	// stub 0x10001014: stores the symbol with its global id
 };
 
+class CUnknown10359c50;
+
+// The four registry objects of one NPC class's schedule file (schedule / task / condition / squadslot kinds).
+extern CUnknown10359c50 g_1093a740;
+extern CUnknown10359c50 g_1093a758;
+extern CUnknown10359c50 g_1093a770;
+extern CUnknown10359c50 g_1093a788;
+
 class CUnknown10359c50
 {
 public:
