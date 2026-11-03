@@ -19383,6 +19383,82 @@ float CTableFields10077ac0::sub_10077e80(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10077f10 size=0x23b
+#include "CTableFields10077ac0.h"
+#include "Vector.h"
+// TARGET: CTableFields10077ac0::sub_10077f10
+
+struct S_Event
+{
+	int sub_10075b70();
+};
+
+void sub_1013bd20(const Vector &a, const Vector &b, const Vector &c, const Vector &d, float t, Vector &out);
+
+#pragma inline_depth(0)
+unsigned int CTableFields10077ac0::sub_10077ac0(int index)
+{
+	return *(unsigned int *)((char *)this + 0x2f0 + index * 0x14);
+}
+#pragma inline_depth()
+
+float CTableFields10077ac0::sub_10077f10(float x)
+{
+	if (((S_Event *)this)->sub_10075b70() != 6)
+		return x;
+	int n = (int)sub_10077ac0(0);
+	if (n != (int)sub_10077ac0(1))
+		return x;
+	if (n <= 0)
+		return x;
+
+	if (x <= 0.0f)
+		return 0.0f;
+
+	float fStart = 0.0f;
+	int i = -1;
+	float fEnd = 0.0f;
+	for (; i < n; i++) {
+		fStart = sub_10077e80(0, i);
+		fEnd = sub_10077e80(0, i + 1);
+		if (x >= fStart && x <= fEnd)
+			break;
+	}
+
+	int j0 = i - 1;
+	int i1 = i + 1;
+	int i2 = i + 2;
+	if (j0 < -2)
+		j0 = -2;
+	if (i < -1)
+		i = -1;
+	if (i1 >= n)
+		i1 = n;
+	if (i2 >= n + 1)
+		i2 = n + 1;
+
+	float fDelta = fEnd - fStart;
+
+	Vector p0(sub_10077e80(0, j0), sub_10077e80(1, j0), 0.0f);
+	Vector p1(sub_10077e80(0, i), sub_10077e80(1, i), 0.0f);
+	Vector p2(sub_10077e80(0, i1), sub_10077e80(1, i1), 0.0f);
+	Vector p3(sub_10077e80(0, i2), sub_10077e80(1, i2), 0.0f);
+
+	float t = 0.0f;
+	if (fDelta > 0.0f) {
+		t = (x - fStart) / fDelta;
+		if (t > 1.0f)
+			t = 1.0f;
+		else if (t < 0.0f)
+			t = 0.0f;
+	}
+
+	Vector out;
+	sub_1013bd20(p0, p1, p2, p3, t, out);
+	return out.y;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100784b0 size=0xd
 #include "CUnknown10077730.h"
 void CUnknown10077730::sub_100784b0(float value)
