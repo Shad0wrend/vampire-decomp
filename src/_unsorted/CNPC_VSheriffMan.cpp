@@ -203,6 +203,21 @@ int CNPC_VSheriffMan::vfunc461()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103aeb50 size=0x5a
+#include "CNPC_VSheriffMan.h"
+#include "ScopeTrace.h"
+
+void CNPC_VSheriffMan::vfunc433()
+{
+	g_109f3620[*g_109f3680].name = "CNPC_VSheriffMan::GatherConditions";
+	g_109f3620[*g_109f3680].file = g_106b8540;
+	g_109f3620[*g_109f3680].line = g_106b8540;
+	(*g_109f3680)++;
+	sub_102b27f0();
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103af780 size=0x6c
 #include "CNPC_VSheriffMan.h"
 
