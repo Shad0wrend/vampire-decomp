@@ -36,6 +36,25 @@ void CTempEntTester::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10056e50 size=0x65
+#include "CTempEntTester.h"
+#include "CUnknown10050860.h"
+
+void sub_101cd940(void *p);
+
+// TARGET: CTempEntTester::sub_10056e50
+void CTempEntTester::sub_10056e50()
+{
+	if (m_pObject) {
+		m_pObject->vfunc3(vfunc220(), vfunc221());
+		m_flNextThink = EngineGlobals::g_1070b228->curtime + 1.0f;
+		if (!(EngineGlobals::g_1070b228->curtime >= m_flEndTime))
+			return;
+	}
+	sub_101cd940(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10056ee0 size=0x1e
 #include "CTempEntTester.h"
 
