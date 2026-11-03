@@ -289,3 +289,20 @@ void CBaseAnimatingOverlay::vfunc269(int index)
 	m_Layers[index].m_nSequence = 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100997f0 size=0x2b
+#include "CBaseAnimatingOverlay.h"
+
+// TARGET: CBaseAnimatingOverlay::vfunc266
+void CBaseAnimatingOverlay::vfunc266()
+{
+	CAnimationLayer28 *pLayer = (CAnimationLayer28 *)((char *)this + 0x7f4);
+	int i = 3;
+	do
+	{
+		pLayer->m_fl18 = gpGlobals->curtime - 1.0f;
+		pLayer->m_n00 = -1;
+		pLayer++;
+	} while (--i);
+}
+// END FUNCTION
