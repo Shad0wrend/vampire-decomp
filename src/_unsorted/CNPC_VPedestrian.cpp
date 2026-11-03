@@ -81,6 +81,28 @@ int CNPC_VPedestrian::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a2540 size=0x15
+#include "CNPC_VPedestrian.h"
+
+struct CUnk1026dc00
+{
+	char pad[0x5cec];
+	unsigned int m_5cec;
+	unsigned int sub_1026dc00(unsigned int flags);
+};
+
+struct CVHumanView103
+{
+	void sub_10384690();
+};
+
+void CNPC_VPedestrian::vfunc103()
+{
+	((CUnk1026dc00 *)this)->sub_1026dc00(0x200000);
+	((CVHumanView103 *)this)->sub_10384690();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a2570 size=0x18
 // TARGET: CNPC_VPedestrian::vfunc420
 #include "CNPC_VPedestrian.h"
