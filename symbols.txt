@@ -2775,6 +2775,7 @@
 0x100053d5 func   ?sub_10043230@CMem8c_t@@QAEHHHPBUE8@@@Z CMem8c_t::sub_10043230
 0x100053df func   ?sub_101f24e0@CUnknown101f24e0@@QAEHXZ CUnknown101f24e0::sub_101f24e0
 0x100053e4 func   ?sub_100ce8a0@@YGXPBD@Z sub_100ce8a0
+0x100053e9 func   ?vfunc0@CAI_Expresser@@QAEPAV1@E@Z CAI_Expresser::vfunc0
 0x100053f3 func   ?sub_102e0630@CUnknown102e0630@@QAEHPAX@Z CUnknown102e0630::sub_102e0630
 0x100053f8 func   ?vfunc2@CTEArmorRicochet@@UAEPAV1@I@Z CTEArmorRicochet::vfunc2
 0x100053fd func   ?sub_100dcd90@CCollisionProperty@@QAEXPBM0PAM1@Z CCollisionProperty::sub_100dcd90
