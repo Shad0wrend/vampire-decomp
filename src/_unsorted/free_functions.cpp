@@ -163437,6 +163437,30 @@ int CLookupUnit1033d460::sub_1033d460(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033d4b0 size=0x9b
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "CUnknown101e3af0.h"
+#include "ScopeTrace.h"
+extern CUnknown101e3af0 g_10739a4c;
+
+void CBaseCombatCharacter::sub_1033d4b0()
+{
+	ScopeTrace trace("CBaseCombatCharacter::BloodExplode", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!sub_103380d0()) {
+		g_10739a4c.sub_101e3310(this, "Thaumaturgy_Bloodboil_Explode_Inner");
+		g_10739a4c.sub_101e3310(this, "Thaumaturgy_Bloodboil_Explode_Outer");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033d580 size=0x8d
 #include "CBaseCombatCharacter.h"
 
