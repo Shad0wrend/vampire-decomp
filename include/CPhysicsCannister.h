@@ -56,7 +56,9 @@ public:
 	void *m_pPhysObj36c;	// 0x36c: the physics object
 	char m_pad0370[0x19b0 - 0x370];
 	Vector m_vec19b0;	// 0x19b0: the nozzle attachment's translation (column 3), set by sub_10150530
-	char m_pad19bc[0x19e0 - 0x19bc];
+	char m_pad19bc[0x19d8 - 0x19bc];
+	float m_thrust;	// 0x19d8: the launch thrust (drives the steam-jet params)
+	void *m_pJetSound;	// 0x19dc: the jet sound object (global 0x10723940 slot 39)
 	class CBaseEntity *m_pJet;	// 0x19e0
 	char m_bLeaking;	// 0x19e4
 	char m_pad19e5[0x19e8 - 0x19e5];
