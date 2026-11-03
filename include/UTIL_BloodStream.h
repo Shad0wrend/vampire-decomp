@@ -9,6 +9,8 @@ struct CEffectsServerBlood	// *g_10566258: the server effects object
 {
 	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2();
 	virtual void Sparks(const Vector &origin, int nMagnitude, int nTrailLength, const Vector *pvecDir);	// slot 3 (+0xc), called with (origin, 1, 1, 0)
+	virtual void vfunc4(); virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8();
+	virtual float vfunc9();	// slot 9 (+0x24): the current game time in seconds
 };
 
 struct CTempEntsBlood	// *g_10540528: the temp entity interface; slot 14 (+0x38) is BloodStream
