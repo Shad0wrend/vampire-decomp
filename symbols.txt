@@ -11562,6 +11562,7 @@
 0x10012cc4 func   ?sub_1027fae0@UtlVec8@@QAEXH@Z UtlVec8::sub_1027fae0
 0x10012cc9 func   ?sub_103f4fe0@CItemContainerLock@@QAEXH@Z CItemContainerLock::sub_103f4fe0
 0x10012cce func   ?vfunc247@CBaseDoor@@UAEMXZ CBaseDoor::vfunc247
+0x10012cd3 func   ?sub_103531f0@Helper@@QAEPAXE@Z Helper::sub_103531f0
 0x10012cdd func   ?sub_101d7000@Loader@@QAE_NPBD@Z Loader::sub_101d7000
 0x10012cec func   ?sub_102274b0@@YGXH@Z sub_102274b0
 0x10012cf1 func   ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z sub_100ada20
