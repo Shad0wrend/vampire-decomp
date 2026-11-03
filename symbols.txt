@@ -9309,6 +9309,7 @@
 0x1000f9f7 func   ?sub_103acac0@CNPC_VScurrying@@QAEDPAVCBaseEntity@@@Z CNPC_VScurrying::sub_103acac0
 0x1000f9fc func   ?vfunc337@CNPC_VMingXiaoTentacle@@UAEHXZ CNPC_VMingXiaoTentacle::vfunc337
 0x1000fa01 func   ?sub_1007d5a0@@YA_NPAUEntryView@@0@Z sub_1007d5a0
+0x1000fa06 func   ?sub_10370340@@YAXM@Z sub_10370340
 0x1000fa0b func   ?sub_1027a310@CAI_BaseNPC@@QAEPAVCBaseEntity@@PBDVVector@@1@Z CAI_BaseNPC::sub_1027a310
 0x1000fa10 func   ?sub_10102a70@@YAHXZ sub_10102a70
 0x1000fa15 func   ?sub_10390890@CUnknown10390890@@QAEPAXH@Z CUnknown10390890::sub_10390890

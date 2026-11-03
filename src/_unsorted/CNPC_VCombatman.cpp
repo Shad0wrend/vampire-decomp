@@ -88,3 +88,12 @@ int CNPC_VCombatman::vfunc438()
 	return (sub_1001482b(0x11) ? 5 : 0) + 0x100;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10370340 size=0xd
+void sub_10385a10(float a);
+
+void sub_10370340(float a)
+{
+	sub_10385a10(a);
+}
+// END FUNCTION
