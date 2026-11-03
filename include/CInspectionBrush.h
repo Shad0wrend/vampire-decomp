@@ -24,6 +24,8 @@ public:
 	CInspectionBrush *vfunc5(unsigned int flags);
 	void sub_10011ac7();
 	void vfunc104();	// slot 104: precaches the two inspection brush emitters (the ids go to the globals at 0x10708e44 / 0x10708e48) and keeps the first one at +0x454
+	void vfunc103();	// slot 103: slot 104 of the vtable, then CFuncParticle::vfunc103
+	void sub_100fca60();	// CFuncParticle::vfunc103 (stub), called directly
 	char vfunc86(int a, CInspectionBrushEdict *pEdict, int c, int d, int e);	// slot 86 override: the CEnvParticle version, then with it true and the entity behind the edict (inlined CBaseEntity::Instance) holding an object at +0xa8, hands that object to sub_100fd270
 	void sub_100fd270(int pObject);
 	char sub_100b5190();	// stub 0x10014da8
