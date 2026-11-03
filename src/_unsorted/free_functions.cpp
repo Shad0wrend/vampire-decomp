@@ -3840,6 +3840,61 @@ void CPhysicsPushedEntities::sub_100360a0(CBaseEntity *pEntity, const float *pRo
 }
 // END FUNCTION
 
+// FUNCTION: 0x10036590 size=0x1f8
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CGameTrace.h"
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+#include "Vector.h"
+
+void sub_10036810(CBaseEntity *pEnt, const Vector *pStart, const Vector *pEnd, int mask, CGameTrace *pTrace);
+void sub_101cf210(CGameTrace *pTrace);
+
+void sub_10036590(CBaseEntity *pEnt, const Vector *pStart, const Vector *pDelta, CGameTrace *pTrace)
+{
+	ScopeTrace trace("PhysicsCheckSweep", g_106b8540);
+
+	int mask = ((CEntityVSlots *)pEnt)->slot237();
+
+	Vector vecEnd;
+	VectorAdd(*pStart, *pDelta, vecEnd);
+
+	bool bSolid;
+	{
+		ScopeTrace traceIsSolid("CBaseEntity::IsSolid", pEnt->m_name26c ? pEnt->m_name26c : g_106b8540);
+		bSolid = (pEnt->m_n2b0 != 0 && (pEnt->m_b2b4 & 4) == 0);
+	}
+
+	bool bFlagSet = false;
+	if (bSolid)
+	{
+		ScopeTrace traceFlag("CBaseEntity::IsSolidFlagSet", pEnt->m_name26c ? pEnt->m_name26c : g_106b8540);
+		bFlagSet = ((pEnt->m_b2b4 >> 5) & 1) != 0;
+	}
+
+	if (!bSolid || bFlagSet)
+	{
+		if (EHandle_Get(pEnt->m_hMoveParent))
+		{
+			sub_101cf210(pTrace);
+			return;
+		}
+		mask &= 0xfdffffff;
+	}
+
+	sub_10036810(pEnt, pStart, &vecEnd, mask, pTrace);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10036810 size=0xb2
 struct TraceEntry { const char *a, *b, *c; };
 extern int *g_109f3680;
