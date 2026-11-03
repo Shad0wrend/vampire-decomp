@@ -27,7 +27,7 @@ public:
 	FP_V(179)
 	FP_V10(18) FP_V10(19) FP_V10(20) FP_V10(21)
 	FP_V(220) virtual float *vfunc221();	// slot 221 "GetAngles": the entity's angles (+0x428)
-	FP_V(222) FP_V(223) FP_V(224) FP_V(225) FP_V(226) FP_V(227) FP_V(228) FP_V(229)
+	FP_V(222) virtual char vfunc223(); FP_V(224) FP_V(225) FP_V(226) FP_V(227) FP_V(228) FP_V(229)
 	FP_V10(23)
 	virtual void vfunc240(); virtual unsigned char vfunc241();
 	virtual void vfunc242(); virtual void vfunc243();	// 242: starts the sound named at +0x55c (if any) and moves to position 1 (state 2); 243: the same toward position 2 (state 3)
@@ -63,4 +63,5 @@ public:
 	float m_flVolume;	// 0x564
 	char m_pad0568[0x570 - 0x568];
 	const char *m_pszStopSound;	// 0x570
+	void sub_100a6150(int a, int b, int c);	// CBaseEntity helper, called with this
 };
