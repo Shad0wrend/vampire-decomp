@@ -9005,6 +9005,7 @@
 0x1000ecb9 func   _env_player_surface_trigger env_player_surface_trigger
 0x1000ecbe func   ?sub_1022cf90@UtlMem@@QAEXXZ UtlMem::sub_1022cf90
 0x1000ecc8 func   _npc_VPedestrian npc_VPedestrian
+0x1000eccd func   ?vfunc271@CBaseVampireSkillEntity@@QAEXH@Z CBaseVampireSkillEntity::vfunc271
 0x1000ecd7 func   ?sub_100f00a0@CBaseDoor@@QAEXPAUinputdata_t@@@Z CBaseDoor::sub_100f00a0
 0x1000ecdc func   ?sub_101f8290@CUnknown101f8290@@QAEPADH@Z CUnknown101f8290::sub_101f8290
 0x1000ece1 func   ?vfunc104@CWeaponThrown_Chang_Ghost@@QAEXXZ CWeaponThrown_Chang_Ghost::vfunc104
