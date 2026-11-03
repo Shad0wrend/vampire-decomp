@@ -12,6 +12,17 @@ datamap_t *CInspectionBrush::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fd100 size=0x13
+#include "CInspectionBrush.h"
+#include "CBaseEntitySlots.h"
+
+void CInspectionBrush::vfunc103()
+{
+	((CBaseEntitySlots *)this)->slot104();
+	sub_100fca60();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fd130 size=0x3e
 #include "CInspectionBrush.h"
 
