@@ -16,7 +16,7 @@ struct CMovePlayerView	// CGameMovement::m_pPlayer: the "mv" (CMoveData-like) re
 	QAngle m_vecViewAngles0c;	// 0x0c: the player's view angles (AngleVectors input)
 	char m_pad0018[0x24 - 0x18];
 	unsigned int m_fFlags24;	// 0x24: checked for 0x20000 and bit 2 by the view-punch code
-	char m_pad0028[0x2c - 0x28];
+	int m_n0028;	// 0x28: flag word tested together with m_fFlags24 (bit 2)
 	float m_flForwardMove;	// 0x2c
 	float m_flSideMove;	// 0x30
 	float m_flUpMove;	// 0x34
@@ -33,15 +33,23 @@ struct CMovePlayerView	// CGameMovement::m_pPlayer: the "mv" (CMoveData-like) re
 	float m_flRadius;	// 0x98
 	float m_flWidth;	// 0x9c
 	float m_flSpeedFactor;	// 0xa0
+	char m_pad00a4[0xc0 - 0xa4];
+	int m_n00c0;		// 0xc0: tested for zero before the duck trace (sub_10126fd0)
 };
 
 struct CMoveFlagsView	// the same object as CMoveDataView, data side
 {
-	char m_pad0000[0x1edc];
+	char m_pad0000[0x3e0];
+	int m_n03E0;		// 0x3e0: the move type (the same field as CBasePlayer.h's m_n03E0)
+	char m_pad03e4[0x1edc - 0x3e4];
 	char m_b1edc;	// 0x1edc: copied by 0x10126cb0 into GetEyeOffset's second argument
 	char m_bDucked;	// 0x1edd: picks the ducked hulls (0x10126cb0 sets it to 1 during the unduck)
 	char m_b1ede;	// 0x1ede
-	char m_pad1edf[0x20f0 - 0x1edf];
+	char m_pad1edf;
+	float m_fl1EE0;	// 0x1ee0: 1000.0f countdown of the duck transition
+	char m_pad1ee4[0x1f28 - 0x1ee4];
+	char m_b1F28;	// 0x1f28: checked before the duck trace (sub_10126fd0)
+	char m_pad1f29[0x20f0 - 0x1f29];
 	unsigned int m_fFlags;	// 0x20f0: bit 5 = observer hull
 };
 
