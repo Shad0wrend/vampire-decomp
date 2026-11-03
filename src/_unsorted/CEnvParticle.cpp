@@ -108,6 +108,22 @@ void CEnvParticle::vfunc242()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fb820 size=0x1e
+#include "CEnvParticle.h"
+#include "CEntityVSlots.h"
+
+// TARGET: CEnvParticle::vfunc78
+void CEnvParticle::vfunc78()
+{
+	if (((CBaseEntity *)this)->sub_100b5190())
+	{
+		((CEntityVSlots *)this)->slot241();
+	}
+
+	((CBaseEntity *)this)->CBaseEntity::vfunc78();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fbdc0 size=0xcf
 #include "CEnvParticle.h"
 #include "CEntityVSlots.h"
