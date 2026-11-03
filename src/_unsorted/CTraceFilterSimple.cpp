@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101d3190 size=0x19
+#include "CTraceFilterSimple.h"
+
+// TARGET: CTraceFilterSimple::CTraceFilterSimple
+CTraceFilterSimple::CTraceFilterSimple(void *pPassEnt, int collisionGroup)
+{
+	m_pPassEnt = pPassEnt;
+	m_collisionGroup = collisionGroup;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d31c0 size=0x173
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
