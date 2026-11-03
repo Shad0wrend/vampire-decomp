@@ -1,6 +1,24 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10356330 size=0x20
+extern int g_10471730;
+
+struct Helper
+{
+	void* sub_10356330(unsigned char flags);
+};
+
+// TARGET: Helper::sub_10356330
+void* Helper::sub_10356330(unsigned char flags)
+{
+	*(void**)this = &g_10471730;
+	if (flags & 1)
+		::operator delete(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103563a0 size=0x37
 #include "CHLPlayerMove.h"
 

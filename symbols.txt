@@ -7394,6 +7394,7 @@
 0x1000c6c1 func   ?sub_101eff70@@YIXPAUProjView@@@Z sub_101eff70
 0x1000c6c6 func   ?vfunc104@CBatSwarm@@UAEXXZ CBatSwarm::vfunc104
 0x1000c6cb func   ?vfunc502@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc502
+0x1000c6d0 func   ?sub_10356330@Helper@@QAEPAXE@Z Helper::sub_10356330
 0x1000c6da func   ?sub_101a8930@CCineNPC@@QAEDXZ CCineNPC::sub_101a8930
 0x1000c6df func   ?sub_103f6d30@@YAHXZ sub_103f6d30
 0x1000c6e4 func   ?vfunc461@CNPC_VBach@@UAEHXZ CNPC_VBach::vfunc461
