@@ -22,12 +22,12 @@ struct CSoundSchemeSound
 	float m_flVolume;			// 0x40
 	int m_iFlags;				// 0x44 (the player ORs 0x280 into it)
 	int m_n48;					// 0x48
-	float m_flVolumeMin;		// 0x4c: RandomFloat bound
-	float m_flVolumeMax;		// 0x50: RandomFloat bound
+	float m_flDistanceMin;		// 0x4c: RandomFloat bound (distance the sound is offset)
+	float m_flDistanceMax;		// 0x50: RandomFloat bound
 	float m_flHeightBelow;		// 0x54: origin z -= this at most
 	float m_flHeightAbove;		// 0x58: origin z += this at most
-	int m_n5c;					// 0x5c
-	int m_n60;					// 0x60
+	float m_flAngleMin;			// 0x5c: RandomFloat bound (yaw of the offset direction)
+	float m_flAngleMax;			// 0x60: RandomFloat bound
 	int m_iSoundLevel;			// 0x64
 	int m_iPitchMin;			// 0x68: RandomInt bound
 	int m_iPitchMax;			// 0x6c: RandomInt bound
