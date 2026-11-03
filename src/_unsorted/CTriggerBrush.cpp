@@ -105,3 +105,22 @@ void CTriggerBrush::vfunc173(CBaseEntity *a, CBaseEntity *b, int c, int d)
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x1013ec60 size=0x41
+#include "CTriggerBrush.h"
+#include "COutputEvent.h"
+#include "CLogicalEntity.h"
+
+void sub_100aa7b0(void *p);
+
+CTriggerBrush *CTriggerBrush::vfunc5(unsigned int flags)
+{
+	((COutputEvent *)((char *)this + 0x480))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x468))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x450))->sub_100cd2d0();
+	((CLogicalEntity *)this)->sub_1000cb8a();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION

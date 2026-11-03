@@ -6627,6 +6627,7 @@
 0x1000b37a func   ?vfunc8@CSkyList@@QAEPAV1@I@Z CSkyList::vfunc8
 0x1000b37f func   ?vfunc0@IServerGameClients@@UAEPAXE@Z IServerGameClients::vfunc0
 0x1000b384 func   ?sub_10312540@@YGHH@Z sub_10312540
+0x1000b389 func   ?vfunc5@CTriggerBrush@@QAEPAV1@I@Z CTriggerBrush::vfunc5
 0x1000b38e func   ?vfunc0@CTEFogRipple@@UAEHXZ CTEFogRipple::vfunc0
 0x1000b393 func   ?sub_103b5ba0@@YIPAXPAX@Z sub_103b5ba0
 0x1000b398 func   ?sub_102dcd10@CUnknown102dcd10@@QAEXH@Z CUnknown102dcd10::sub_102dcd10
