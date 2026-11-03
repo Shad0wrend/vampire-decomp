@@ -25,5 +25,6 @@ public:
 	CPropDoorknobElectronic *vfunc5(unsigned int flags);	// as in CMomentaryRotButton (transplant)
 	CPropDoorknobElectronic *sub_10226200();	// as in CSecCamera (transplant)
 	void vfunc276();	// as in CAI_Hint (transplant)
+	unsigned char sub_10226240();	// slot 117 body: CItemContainerLock::vfunc117 & 0xfd
 	void sub_102241b0();	// as in CAI_Hint (transplant)
 };

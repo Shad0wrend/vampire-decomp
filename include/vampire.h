@@ -35,6 +35,7 @@
 #include "CNPC_VGargoyle.h"
 #include "CNPC_VWerewolf.h"
 #include "CPropSign.h"
+#include "CPropDoorknobElectronic.h"
 #include "CPushable.h"
 #include "CRecipientFilter.h"
 #include "CSceneEntity.h"
