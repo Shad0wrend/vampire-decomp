@@ -12,6 +12,8 @@ public:
 	CNPC_VDog *vfunc5(unsigned int flags);
 	void sub_100123af();
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
+	int sub_10374ad0(int act);	// slot 375: nothing for activity 3, else sub_10360120
+	int sub_10360120(int act);	// CNPC_VAnimal::vfunc375 (stub 0x10009872), called directly
 	CNPC_VDog *sub_103734f0();	// as in CKeepUpright (transplant)
 	virtual void vfunc259(int *pEvent);	// slot 259: the dog's bite on event 0xbb9 (the dog's shot when a weapon is active, then "Gots a doggie bite!"), else CNPC_VAnimal::vfunc259
 	virtual void vfunc432(int a);	// slot 432: for a few activities (+0xfec) asks slot 310 for state 1 or 3 (sometimes at random), then CNPC_VAnimal::vfunc432(a)
