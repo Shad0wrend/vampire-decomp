@@ -140458,6 +140458,18 @@ void CUnk102c5730::sub_102c5730(void *pObj)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c5780 size=0x25
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CAI_BaseNPCTroika::sub_102c5780
+float CAI_BaseNPCTroika::sub_102c5780(CBaseCombatWeapon *pWeapon)
+{
+	struct CAI_RangeRec *p = (struct CAI_RangeRec *)pWeapon->sub_102517e0();
+	float flValue = *(float *)((char *)p + 0x264);
+	return sub_102c5570(p, flValue);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c57c0 size=0x25
 #include "CAI_BaseNPCTroika.h"
 
