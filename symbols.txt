@@ -13842,6 +13842,7 @@
 0x1013fe30 func   ?sub_1013fe30@@YAMM@Z sub_1013fe30
 0x10151ae0 func   ?sub_10151ae0@@YAHABUmatrix3x4_t@@ABVVector@@@Z sub_10151ae0
 0x10156ce0 func   ?sub_10156ce0@@YAXPAUCUnk10156ce0Owner@@@Z sub_10156ce0
+0x10159270 func   ?sub_10159270@@YAXPAUCPlatEdictView@@@Z sub_10159270
 0x1016af30 func   ?sub_1016af30@@YAMHPAUCSumElem_1016af30@@@Z sub_1016af30
 0x10183470 func   ?sub_10183470@@YAXXZ sub_10183470
 0x10188d60 func   ?sub_10188d60@@YAXMPBM0PAM@Z sub_10188d60

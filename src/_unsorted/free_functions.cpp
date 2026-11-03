@@ -67494,6 +67494,18 @@ extern "C" GP *func_plat()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10159270 size=0x60
+#include "CPlatTrigger.h"
+
+// TARGET: sub_10159270
+void sub_10159270(CPlatEdictView *pPlatEdict)
+{
+	CPlatTrigger *pTrigger = new CPlatTrigger;
+	pTrigger->vfunc106("plat_trigger");
+	pTrigger->sub_10159310((pPlatEdict && pPlatEdict->m_pUnknown) ? pPlatEdict->m_pUnknown->vfunc4() : (CFuncPlat *)0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10159700 size=0x7c
 #include "CUnknown10159700.h"
 #include "CBaseEntity.h"
