@@ -85,6 +85,17 @@ CCineNPC *CCineNPC::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a7140 size=0x13
+// TARGET: CCineNPC::vfunc180
+void sub_101a7170(void *pThis);
+
+void CCineNPC::vfunc180()
+{
+	((CAI_BaseNPC *)this)->CAI_BaseNPC::vfunc180();
+	sub_101a7170(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a7210 size=0xc
 struct CineFlags { char pad[0x204]; unsigned char m; };
 bool CCineNPC::vfunc585()
