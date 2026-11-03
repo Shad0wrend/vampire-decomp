@@ -74693,6 +74693,107 @@ void CUnknown10185a30::sub_10185a30(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10185d70 size=0x1af
+#include "CVProfile.h"
+
+struct CFinishArg
+{
+	char m_pad[0x20cc];
+	int m_n20cc;
+};
+
+struct CUnknown105892c8
+{
+	virtual void vfunc0(void *a, void *b);
+	virtual void vfunc1(void *a);
+};
+
+struct CCycleFast
+{
+	unsigned __int64 m_Int64;
+
+	inline unsigned __int64 GetDuration() const
+	{
+		return m_Int64;
+	}
+
+	inline void Add(const CCycleFast &other)
+	{
+		m_Int64 += other.GetDuration();
+	}
+};
+
+extern CUnknown105892c8 *g_105892c8;
+void sub_100b4e30(int);
+void sub_100b4e80(int);
+
+// TARGET: sub_10185d70
+void __stdcall sub_10185d70(CFinishArg *pArg)
+{
+	{
+		CVProfile *pProfile = g_109f3648;
+		if (pProfile->m_enabled != 0 || !pProfile->m_bAtRoot)
+		{
+			if (pProfile->m_pCurNode->m_pszName != "CPlayerMove::FinishCommand")
+				pProfile->m_pCurNode = pProfile->m_pCurNode->GetSubNode("CPlayerMove::FinishCommand", 0, "Unaccounted");
+			CVProfNode *pNode = pProfile->m_pCurNode;
+			pNode->m_nCurFrameCalls++;
+			if (pNode->m_nRecursions++ == 0)
+			{
+				CUnknownCycle100335e0 *pCycle = &pNode->m_CurFrameTime;
+				__asm
+				{
+					mov ecx, pCycle
+					rdtsc
+					mov dword ptr [ecx], eax
+					mov dword ptr [ecx + 4], edx
+				}
+				g_109f3648->PushGroupInlined(pNode->m_nBudgetGroupID);
+			}
+			pProfile->m_bAtRoot = false;
+		}
+	}
+
+	g_105892c8->vfunc1(pArg);
+	pArg->m_n20cc = 0;
+	sub_100b4e30(0);
+	sub_100b4e80(0);
+
+	{
+		CVProfile *pProfile = g_109f3648;
+		if (!pProfile->m_bAtRoot || pProfile->m_enabled != 0)
+		{
+			CVProfNode *pNode = pProfile->m_pCurNode;
+			if (--pNode->m_nRecursions == 0 && pNode->m_nCurFrameCalls != 0)
+			{
+				CUnknownCycle100335e0 now;
+				now.m_Int64 = 0;
+				CUnknownCycle100335e0 *pCycle = &now;
+				__asm
+				{
+					mov ecx, pCycle
+					rdtsc
+					mov dword ptr [ecx], eax
+					mov dword ptr [ecx + 4], edx
+				}
+				pNode->m_CurFrameTime.m_Int64 = now.m_Int64 - pNode->m_CurFrameTime.m_Int64;
+				((CCycleFast *)&pNode->m_TotalTime)->Add(*(CCycleFast *)&pNode->m_CurFrameTime);
+
+				CVProfile *pProf2 = g_109f3648;
+				pProf2->m_nGroupStackDepth--;
+				if (pProf2->m_GroupIDStack[pProf2->m_nGroupStackDepth] != pProf2->m_GroupIDStack[pProf2->m_nGroupStackDepth + 1]
+					&& pProf2->m_bVTuneGroupsEnabled
+					&& pProf2->m_GroupIDStack[pProf2->m_nGroupStackDepth + 1] == pProf2->m_nVTuneGroupID)
+					vtune(false);
+			}
+			if (pNode->m_nRecursions == 0)
+				pProfile->m_pCurNode = pProfile->m_pCurNode->m_pParent;
+			pProfile->m_bAtRoot = (pProfile->m_pCurNode == pProfile->m_pRoot);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10185f90 size=0x140
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"

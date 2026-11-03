@@ -12192,6 +12192,7 @@
 0x100135a2 func   ?vfunc429@CBasePlayer@@UAEXXZ CBasePlayer::vfunc429
 0x100135ac func   ?vfunc0@CMultiplayRules@@UAEPAVCGameRules@@I@Z CMultiplayRules::vfunc0
 0x100135b1 func   ?sub_1007ed50@CUnknown1007ecf0@@QAEXH@Z CUnknown1007ecf0::sub_1007ed50
+0x100135b6 func   ?sub_10185d70@@YGXPAUCFinishArg@@@Z sub_10185d70
 0x100135bb func   ?vfunc72@CNPC_VCamera@@UAE_NH@Z CNPC_VCamera::vfunc72
 0x100135c0 func   ?sub_10224150@@YIXPAUCSlots@@HH@Z sub_10224150
 0x100135ca func   ?sub_10207dd0@@YAXHM@Z sub_10207dd0
