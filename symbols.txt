@@ -3074,6 +3074,7 @@
 0x10005c86 func   ?vfunc80@CWeaponRanged_Rifle_RemingtonBach@@QAEHXZ CWeaponRanged_Rifle_RemingtonBach::vfunc80
 0x10005c8b func   _npc_VGargoyle npc_VGargoyle
 0x10005c9f func   ?sub_101f6e20@CVTraitEffect_t@@QAEXPAVCVModInfo_t@@PAH@Z CVTraitEffect_t::sub_101f6e20
+0x10005ca4 func   ?vfunc34@IRestore@@QAEPAXE@Z IRestore::vfunc34
 0x10005ca9 func   ?sub_1038f660@CNPC_VManBat@@QAEXXZ CNPC_VManBat::sub_1038f660
 0x10005cae func   ?sub_100430a0@CUtlVector20@@QAEHHHPBX@Z CUtlVector20::sub_100430a0
 0x10005cb3 func   _npc_VWerewolf npc_VWerewolf
