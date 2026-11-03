@@ -191,7 +191,7 @@ public:
 	virtual char vfunc544(CBaseEntity *pEnt, int a, int b);	// slot 544 (ret 0xc): 1 without a memory list (slot 541); false when pEnt's squad owner is this NPC's squad owner (both counts <= 0); otherwise lets the memory list note pEnt (sub_102e0210, then slot 494 on a hit) and returns the memory list's sub_102df700(object at +0x5d34's +0x2c, pEnt, a, b)
 	virtual bool vfunc545();	// finds the squad (+0x5da4) from the name at +0x5da8 when the class flags ask for one; true when it has one
 	CAI_NPC_V(546) CAI_NPC_V(547) CAI_NPC_V(548) CAI_NPC_V(549)
-	CAI_NPC_V(550) CAI_NPC_V(551)
+	CAI_NPC_V(550) virtual void vfunc551(int a, int b);
 	virtual unsigned int vfunc552();
 	virtual int vfunc553(float a, float b);	// slot 553: an activity picked by the float b (< 100: 8, < 200: 0x5f, > 1024: 0x60) else 0x4f / 0x61 by the float a against 0.5
 	virtual int vfunc554(float a, float b);	// slot 554: an activity picked by the float b (< 64: 8, > 512: 0x60) else 0x61 / 0x50 by the float a against 0.5
