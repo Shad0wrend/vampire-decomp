@@ -44,6 +44,19 @@ int CSimplePhysicsBrush::vfunc226()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004fa50 size=0x1f
+#include "CSimplePhysicsBrush.h"
+#include "CBaseEntity.h"
+
+CBaseEntity *sub_104115b0(int a, int b);
+
+// TARGET: CSimplePhysicsBrush::vfunc32
+bool CSimplePhysicsBrush::vfunc32(int a)
+{
+	return (CBaseEntity *)this == sub_104115b0(a, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004faa0 size=0xe
 void __cdecl sub_1040d950(int a);
 
