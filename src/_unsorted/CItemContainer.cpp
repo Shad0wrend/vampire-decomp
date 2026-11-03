@@ -431,6 +431,16 @@ void CItemContainer::vfunc71()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102099b0 size=0xd
+#include "CItemContainer.h"
+
+// TARGET: CItemContainer::vfunc383
+int CItemContainer::vfunc383(int a, int b)
+{
+	return sub_100032b0(a, 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102099d0 size=0x5
 #include "CItemContainer.h"
 bool CItemContainer::vfunc388(int a0, int a1)
