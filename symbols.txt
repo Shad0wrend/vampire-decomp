@@ -10499,6 +10499,7 @@
 0x10011040 func   ?sub_103b30c0@@YADXZ sub_103b30c0
 0x10011045 func   ?vfunc60@CGameRules@@UAEMXZ CGameRules::vfunc60
 0x1001104a func   ?sub_100c7a10@@YAMPAUSObj@@0M@Z sub_100c7a10
+0x1001104f func   ?vfunc10@CAI_StandoffBehavior@@UAEXXZ CAI_StandoffBehavior::vfunc10
 0x10011054 func   ?sub_101e7c50@CUnknown101e7c50@@QAEPAUCVDmgBlock16_t@@PBD@Z CUnknown101e7c50::sub_101e7c50
 0x10011059 func   ?vfunc326@CWeaponRanged_FlameThrower@@UAEXXZ CWeaponRanged_FlameThrower::vfunc326
 0x1001105e func   ?sub_1039ede0@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_1039ede0

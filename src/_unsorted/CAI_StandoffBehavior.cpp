@@ -62,6 +62,26 @@ void CAI_StandoffBehavior::vfunc5()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c75c0 size=0x2f
+#include "CAI_StandoffBehavior.h"
+#include "CAI_BaseNPC.h"
+
+extern float *g_1070b228;
+
+// TARGET: CAI_StandoffBehavior::vfunc10
+void CAI_StandoffBehavior::vfunc10()
+{
+	if (m_b54)
+	{
+		CAI_BaseNPC *&pNpc = *(CAI_BaseNPC **)&m_pOuter;
+		m_fl64 = m_fl68 + g_1070b228[3];
+		pNpc->sub_10279a50(0);
+	}
+	sub_102c6db0();
+	m_b54 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c7960 size=0x2f
 // TARGET: CAI_StandoffBehavior::vfunc20
 #include "CAI_StandoffBehavior.h"
