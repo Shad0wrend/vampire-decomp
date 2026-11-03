@@ -6600,6 +6600,7 @@
 0x1000b3ac func   ?vfunc51@CSingleplayRules@@UAE?AVVector@@PAVCBaseEntity@@@Z CSingleplayRules::vfunc51
 0x1000b3b1 func   _item_m_money_envelope item_m_money_envelope
 0x1000b3b6 func   ?vfunc363@CWeaponThrown_Chang_Ghost@@QAEHXZ CWeaponThrown_Chang_Ghost::vfunc363
+0x1000b3c5 func   ?vfunc327@CBasePlayer@@UAEDXZ CBasePlayer::vfunc327
 0x1000b3ca func   ?sub_10383170@CMingXiaoView@@QAEXH@Z CMingXiaoView::sub_10383170
 0x1000b3d4 func   _npc_VVampire npc_VVampire
 0x1000b3d9 func   ?sub_101e8640@S@@QAEXPAUP@@@Z S::sub_101e8640

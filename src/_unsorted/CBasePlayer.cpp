@@ -545,6 +545,17 @@ bool CBasePlayerUnit::sub_10160d00(int a, melee_dice_roll_result *pRoll, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10160f60 size=0x1d
+#include "CBasePlayer.h"
+
+char CBasePlayer::vfunc327()
+{
+	if (*(float *)((char *)this + 0x1dec) > gpGlobals->curtime)
+		return 0;
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10161200 size=0x12b
 struct CSequenceDescView {
 	char m_pad0000[0x2f8];
