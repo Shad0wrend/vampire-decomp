@@ -9984,6 +9984,7 @@
 0x10010a32 func   ?sub_103e2000@CFlameCluster@@QAEXPAVCBaseEntity@@H@Z CFlameCluster::sub_103e2000
 0x10010a37 func   ?sub_10203480@@YAHH@Z sub_10203480
 0x10010a3c func   ?sub_100417c0@@YIPAUHashHolder@@PAU1@HE@Z sub_100417c0
+0x10010a41 func   ?sub_101bd980@CAutoGameSystem@@QAEPAXI@Z CAutoGameSystem::sub_101bd980
 0x10010a4b func   ?vfunc366@CHL2_Player@@UAE_NHHH@Z CHL2_Player::vfunc366
 0x10010a50 func   ?sub_1028d820@@YAXH@Z sub_1028d820
 0x10010a55 func   ?vfunc451@CNPC_Crow@@QAEHXZ CNPC_Crow::vfunc451
