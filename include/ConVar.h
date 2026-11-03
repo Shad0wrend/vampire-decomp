@@ -56,3 +56,9 @@ public:
 	bool GetBool() { return GetInt() != 0; }
 	float GetFloat() { return m_pParent->vfunc1() ? 0.0f : m_pParent->m_fValue; }
 };
+
+extern ConVar *g_109201ac;	// hitgroup 1 damage scale
+extern ConVar *g_1090fe74;	// hitgroup 2
+extern ConVar *g_109204f4;	// hitgroup 3
+extern ConVar *g_1090fdc4;	// hitgroups 4 / 5
+extern ConVar *g_1092023c;	// hitgroups 6 / 7
