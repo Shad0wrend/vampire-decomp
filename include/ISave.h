@@ -6,4 +6,5 @@ class ISave
 public:
 	ISave() {}
 	virtual int vfunc0() = 0;
+	void *vfunc39(unsigned char bFree);	// scalar deleting destructor: stores the game vftable, deletes when bit 0 is set
 };
