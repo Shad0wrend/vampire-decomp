@@ -200,6 +200,17 @@ void CPropHaunted::vfunc230(int index, void *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10213fe0 size=0x13
+#include "CPropHaunted.h"
+
+char CPropHaunted::vfunc68(int a)
+{
+	if (m_field200 == 2)
+		return 1;
+	return sub_1008bfe0(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10214010 size=0x44
 #include "CPropHaunted.h"
 void CPropHaunted::vfunc266(CBaseEntity *pOther)

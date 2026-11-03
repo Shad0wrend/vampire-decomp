@@ -8447,6 +8447,7 @@
 0x1000e2fa func   ?sub_10384130@@YIPAXPAX@Z sub_10384130
 0x1000e2ff func   ?sub_100427c0@UtlMem@@QAEXXZ UtlMem::sub_100427c0
 0x1000e304 func   ?sub_1042c660@@YAXXZ sub_1042c660
+0x1000e30e func   ?vfunc68@CPropHaunted@@QAEDH@Z CPropHaunted::vfunc68
 0x1000e313 func   ?vfunc80@CItemGGargoyleBook@@QAEHXZ CItemGGargoyleBook::vfunc80
 0x1000e31d func   ?sub_1010ddc0@CBreakable@@QAEXPAX@Z CBreakable::sub_1010ddc0
 0x1000e322 func   ?sub_102a9670@CUnknown102a9670@@QAEPAXXZ CUnknown102a9670::sub_102a9670
