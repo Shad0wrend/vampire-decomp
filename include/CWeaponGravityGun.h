@@ -28,6 +28,7 @@ public:
 	void sub_1014c0f0();
 	void sub_1014c2d0();
 	void *sub_1014a1b0();
+	float sub_1014c680(float a, float b, float c, float d);	// free cdecl 4-arg float remap used by sub_1014c2d0 (0x1014c680)
 	void sub_1014c130();	// \"StopLoopingSounds\": when the weapon has an owner, stops the physgun loop sound of the owner's entity for the current state at +0x928 (state 0: loop2; state 1: loop2, loop1, loop3 and loop4)
 
 	CWeaponGravityGun();
