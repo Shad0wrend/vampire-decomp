@@ -47728,6 +47728,42 @@ float __stdcall sub_100f3860(const S100f3860 *a, const S100f3860 *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f3d80 size=0x31
+#define P10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+    virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CUnk100f3d80
+{
+    P10(a) P10(b) P10(c) P10(d) P10(e) P10(f) P10(g) P10(h) P10(i) P10(j) P10(k)
+    P10(l) P10(m) P10(n) P10(o) P10(p) P10(q) P10(r) P10(s) P10(t) P10(u)
+    virtual void vfunc210();
+    virtual void vfunc211();
+    virtual void vfunc212();
+    virtual void vfunc213();
+    virtual void vfunc214();
+    virtual void vfunc215();
+    virtual void vfunc216();
+    virtual void vfunc217();
+    virtual void vfunc218();
+    virtual float *vfunc219();
+    char m_pad0004[0x204 - 4];
+    int m_n204;
+
+    float sub_100f3d80();
+};
+
+// TARGET: CUnk100f3d80::sub_100f3d80
+float CUnk100f3d80::sub_100f3d80()
+{
+    int flags = m_n204;
+    if (flags & 0x40)
+        return vfunc219()[2];
+    if (flags & 0x80)
+        return vfunc219()[0];
+    return vfunc219()[1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f3dd0 size=0x6d
 #include "CRotDoor.h"
 #include "Vector.h"

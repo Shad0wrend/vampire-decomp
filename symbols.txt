@@ -8136,6 +8136,7 @@
 0x1000d6d9 func   ?vfunc1@CTEMuzzleFlash@@UAEHXZ CTEMuzzleFlash::vfunc1
 0x1000d6de func   ?sub_1030fff0@CUnknown1030fe50@@QAEHH@Z CUnknown1030fe50::sub_1030fff0
 0x1000d6e8 func   ?sub_10324ad0@CUnknown10324ad0@@QAE_NXZ CUnknown10324ad0::sub_10324ad0
+0x1000d6ed func   ?sub_100f3d80@CUnk100f3d80@@QAEMXZ CUnk100f3d80::sub_100f3d80
 0x1000d6f2 func   ?sub_102325e0@CVoiceGameMgr@@QAE_NPAVCBaseEntity@@PBD@Z CVoiceGameMgr::sub_102325e0
 0x1000d6f7 func   ?sub_100deb50@@YAXPAHPBH@Z sub_100deb50
 0x1000d6fc func   ?vfunc506@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc506
