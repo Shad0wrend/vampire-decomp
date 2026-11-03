@@ -1,3 +1,4 @@
+	bool vfunc331(CBaseCombatWeapon *pWeapon, int unused, int nActivity, int *pOut);	// slot 331 "ChooseMeleeAttackSequence": override of CBaseCombatCharacter::vfunc331; fills *pOut with the chosen sequence (-1 when none)
 	int vfunc131();	// slot 131: the engine's slot 35 of the entity's edict
 	void vfunc435();	// slot 435 (plain member)
 	void vfunc430(int a, int b);	// slot 430 override (two unused stack arguments): calls slot 193 (EyePosition, by value) into a temp Vector, assigns it to a local, then hands &local to slot 101 of the engine object at 0x1070b22c
