@@ -263,6 +263,15 @@ int CSingleplayRules::vfunc64(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ac0e0 size=0x1b
+#include "CSingleplayRules.h"
+
+bool CSingleplayRules::vfunc65(int a, int b)
+{
+	return vfunc64(a, b) == 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ac110 size=0x3
 char CSingleplayRules::vfunc74()
 {

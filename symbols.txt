@@ -3892,6 +3892,7 @@
 0x10007130 func   _item_p_research_lg_firearms item_p_research_lg_firearms
 0x10007135 func   ?sub_1018f960@CUnknown1018f960@@QAEXAAUinputdata_t@@@Z CUnknown1018f960::sub_1018f960
 0x1000713a func   ?sub_10117230@CEnt10117230@@QAEXH@Z CEnt10117230::sub_10117230
+0x1000713f func   ?vfunc65@CSingleplayRules@@UAE_NHH@Z CSingleplayRules::vfunc65
 0x10007144 func   ?vfunc31@CBaseAnimating@@UAEXH@Z CBaseAnimating::vfunc31
 0x10007144 func   ?vfunc31@CPropDoorknob@@UAEXH@Z CPropDoorknob::vfunc31
 0x10007144 func   ?vfunc31@CVampireProjectile@@UAEXH@Z CVampireProjectile::vfunc31
