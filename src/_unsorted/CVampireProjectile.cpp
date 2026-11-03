@@ -89,6 +89,19 @@ CVampireProjectile *CVampireProjectile::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ee3d0 size=0x1c
+#include "CVampireProjectile.h"
+
+void __fastcall sub_101fa680(char *p);
+void __fastcall sub_1008b3c0(CVampireProjectile *self);
+
+CVampireProjectile::~CVampireProjectile()
+{
+	sub_101fa680((char *)this + 0x834);
+	sub_1008b3c0(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ee710 size=0x1
 void CVampireProjectile::vfunc268()
 {
