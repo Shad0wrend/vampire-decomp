@@ -174820,6 +174820,25 @@ CNPC_VSabbatLeaderHint *CNPC_VSabbatLeader::sub_103a9540()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a9d00 size=0x6c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VSabbatLeader.h"
+#include "ScopeTrace.h"
+
+int CNPC_VSabbatLeader::sub_103a9d00()
+{
+	ScopeTrace trace("CNPC_VSabbatLeader::FlipFailureType", g_106b8540);
+	return m_nFailureType = 1 - m_nFailureType;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a9d90 size=0xa5
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
