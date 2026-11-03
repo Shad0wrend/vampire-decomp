@@ -27,6 +27,35 @@ CAI_InterestingPlace *CAI_InterestingPlace::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d9b10 size=0xc3
+#include "CAI_InterestingPlace.h"
+
+extern CAI_InterestingPlace *g_10927194;
+extern int g_10927198;
+
+// TARGET: CAI_InterestingPlace::~CAI_InterestingPlace
+CAI_InterestingPlace::~CAI_InterestingPlace()
+{
+	if (m_pSlots) {
+		sub_102d9eb0();
+		sub_102daac0(1);
+		delete m_pSlots;
+		m_pSlots = 0;
+		m_nSlots = 0;
+		m_n588 = 0;
+	}
+	if (g_10927194 == this) {
+		g_10927194 = m_pNext540;
+	} else {
+		CAI_InterestingPlace *p = g_10927194;
+		while (p->m_pNext540 != this)
+			p = p->m_pNext540;
+		p->m_pNext540 = m_pNext540;
+	}
+	g_10927198--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d9c20 size=0x150
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
