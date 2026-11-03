@@ -146724,6 +146724,42 @@ void __stdcall sub_102d99b0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d99d0 size=0xc3
+#include "CAI_InterestingPlace.h"
+
+extern int vt_1049ce04;
+extern CAI_InterestingPlace *g_10927194;
+extern int g_10927198;
+
+// TARGET: CAI_InterestingPlace::sub_102d99d0
+CAI_InterestingPlace *CAI_InterestingPlace::sub_102d99d0()
+{
+	sub_1009d980(0);
+	m_Output450.COutputEvent::COutputEvent();
+	m_Output468.COutputEvent::COutputEvent();
+	for (int i = 0; i < 8; i++)
+		m_Outputs480[i].COutputEvent::COutputEvent();
+	*(void **)this = &vt_1049ce04;
+	*(void **)((char *)this + 0xb0) = this;
+	m_pNext540 = g_10927194;
+	g_10927194 = this;
+	g_10927198++;
+	m_pSlots = 0;
+	m_n58c = 0;
+	m_b57c = 1;
+	m_b57d = 0;
+	m_b57e = 0;
+	m_n590 = 0;
+	m_n564 = 0;
+	m_n608 = 0;
+	sub_100b3580(0x40000);
+	for (int j = 0; j < 4; j++)
+		m_Slots594[j].m_first = 0;
+	m_n604 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d9eb0 size=0x1
 void sub_102d9eb0()
 {

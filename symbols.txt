@@ -12470,6 +12470,7 @@
 0x10013ca0 func   ?sub_102becb0@CUnknown102becb0@@QAEXXZ CUnknown102becb0::sub_102becb0
 0x10013ca5 func   ?vfunc1@CTEBeamRingPoint@@UAEHXZ CTEBeamRingPoint::vfunc1
 0x10013caa func   ?sub_101912d0@CPhysicsProp@@QAEEXZ CPhysicsProp::sub_101912d0
+0x10013cb4 func   ?sub_102d99d0@CAI_InterestingPlace@@QAEPAV1@XZ CAI_InterestingPlace::sub_102d99d0
 0x10013cb9 func   ?sub_101fe6a0@CVStatInfo_t@@QAEXPAUCVStatKV@@PAX@Z CVStatInfo_t::sub_101fe6a0
 0x10013cc3 func   ?sub_100ec3d0@CIndexedTableView@@QAEMH@Z CIndexedTableView::sub_100ec3d0
 0x10013cc8 func   ?sub_10204900@CUnknown10204e90@@QAEHPAX@Z CUnknown10204e90::sub_10204900
