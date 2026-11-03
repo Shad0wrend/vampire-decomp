@@ -276,6 +276,16 @@ int sub_1035bec0(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035bf70 size=0xd
+void __fastcall sub_1000a529(void *pThis, int dummy, float a);
+
+// TARGET: sub_1035bf70
+void __fastcall sub_1035bf70(void *pThis, int dummy, float a)
+{
+	sub_1000a529(pThis, dummy, a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035bfb0 size=0x1
 #include "CGenericSabbat_NPC.h"
 void CGenericSabbat_NPC::vfunc434()

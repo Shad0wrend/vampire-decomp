@@ -10978,6 +10978,7 @@
 0x10011d3d func   ?vfunc104@CFuncPlat@@UAEXXZ CFuncPlat::vfunc104
 0x10011d42 func   ?sub_10397f70@CNPC_VMingXiaoUnit@@QAEMXZ CNPC_VMingXiaoUnit::sub_10397f70
 0x10011d47 func   ?sub_103f5750@@YAHXZ sub_103f5750
+0x10011d51 func   ?sub_1035bf70@@YIXPAXHM@Z sub_1035bf70
 0x10011d56 func   ?vfunc5@CEntityListSystem@@QAEXXZ CEntityListSystem::vfunc5
 0x10011d5b func   ?sub_100f12a0@CBaseDoor@@QAEHPAPAV1@H@Z CBaseDoor::sub_100f12a0
 0x10011d60 func   ?vfunc87@CBeam@@UAEXPAX@Z CBeam::vfunc87
