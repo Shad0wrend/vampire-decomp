@@ -2397,6 +2397,7 @@
 0x10004bc9 func   ??0CItemGKeyring@@QAE@XZ CItemGKeyring::CItemGKeyring
 0x10004bce func   ?vfunc295@CBaseCombatCharacter@@QAE_NH@Z CBaseCombatCharacter::vfunc295
 0x10004bd3 func   ?sub_102d0ab0@CAI_FailView@@QAEXPBD@Z CAI_FailView::sub_102d0ab0
+0x10004bd8 func   ?sub_10374aa0@CNPC_VDog@@QAEDPAVCBaseEntity@@@Z CNPC_VDog::sub_10374aa0
 0x10004bdd func   ?sub_101c4710@CUnk101c4710@@QAEXHHH@Z CUnk101c4710::sub_101c4710
 0x10004be2 func   ?vfunc451@CNPC_VTremere@@UAEPBDXZ CNPC_VTremere::vfunc451
 0x10004be7 func   ?sub_10036bd0@CPhysicsPushedEntities@@QAEXPAVCBaseEntity@@H@Z CPhysicsPushedEntities::sub_10036bd0

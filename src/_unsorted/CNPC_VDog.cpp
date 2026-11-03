@@ -351,3 +351,12 @@ void CNPC_VDog::vfunc444(int *pTask)
 	sub_1035f940(pTask);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10374aa0 size=0x14
+#include "CNPC_VDog.h"
+
+char CNPC_VDog::sub_10374aa0(CBaseEntity *pHint)
+{
+	return *(int *)((char *)pHint + 0x5dc) == 0x2ee0;
+}
+// END FUNCTION
