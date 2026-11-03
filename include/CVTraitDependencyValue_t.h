@@ -14,4 +14,5 @@ public:
 	CVTraitDependencyValue_t *sub_10205c70();
 	CVTraitDependencyValue_t *sub_10205ca0(int a);	// the same constructor with one unused stack argument (ret 4)	// the constructor body: builds m_18, stores the vftable (0x10483d00), then vfunc0 (0x10002563), returns this
 	void sub_10002563();	// CVTraitDependencyValue_t::vfunc0, called directly
+	void vfunc0();	// the constructor body: resets the block at +4 and stores -1 at +0x14
 };
