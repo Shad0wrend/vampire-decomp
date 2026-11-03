@@ -8,6 +8,8 @@
 void *operator new(unsigned int);
 
 float sub_10146150(const Vector *pVec);	// VectorLength (0x10146150): the length of a vector (cdecl, result in st0)
+float __stdcall sub_10300010(const Vector &vecA, const Vector &vecB, const Vector &vecDir);	// 0x10300010: dot(normalise(vecA - vecB), vecDir)
+void __stdcall sub_103000a0(const Vector &vecA, const Vector &vecB, float flNumerator, float flDenominator, Vector &vecOut);	// 0x103000a0: vecOut = vecA + (vecA - vecB) * (flNumerator / flDenominator)
 
 class CBaseEntity;
 class CAI_Waypoint;
