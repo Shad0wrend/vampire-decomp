@@ -9212,6 +9212,7 @@
 0x1000f7ef func   ?vfunc366@CNPC_VMingXiao@@UAE_NHHH@Z CNPC_VMingXiao::vfunc366
 0x1000f7f4 func   _item_i_written item_i_written
 0x1000f7f9 func   ?sub_103d0780@@YIHPAD@Z sub_103d0780
+0x1000f7fe func   ?vfunc117@CCineNPC@@UAEDXZ CCineNPC::vfunc117
 0x1000f803 func   ?sub_1018b680@@YAHXZ sub_1018b680
 0x1000f808 func   ?sub_10060f20@@YAHXZ sub_10060f20
 0x1000f80d func   ?sub_101c2b90@@YIHPAUCDerived101c2b90@@@Z sub_101c2b90

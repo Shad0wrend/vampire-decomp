@@ -11,6 +11,17 @@ void *sub_101a5db0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6d20 size=0x8
+#include "CCineNPC.h"
+
+char CCineNPC::vfunc117()
+{
+	char caps = ((CBaseEntity *)this)->CBaseEntity::vfunc117();
+	caps &= 0xfd;
+	return caps;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6da0 size=0x5
 // TARGET: sub_101a6da0
 bool __stdcall sub_101a6da0(int a)
