@@ -85,6 +85,7 @@ public:
 	int vfunc383(int, int);
 	bool vfunc388(int, int);
 	void vfunc406();	// slot 406 (plain member): state +0x49c 1 -> sub_101c1bc0(state), 2 -> sub_101c1bc0(3)
+	void vfunc407();	// slot 407 (plain member): state +0x49c 1 -> sub_101c1bc0(0), 2 -> sub_101c1bc0(state)
 	void sub_101c1bc0(int a);	// CBaseToggle member (stub 0x1000d90e), called directly
 	bool vfunc408();
 	bool vfunc409();
