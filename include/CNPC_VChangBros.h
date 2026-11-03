@@ -10,6 +10,8 @@ class CNPC_VChangBros : public CNPC_VHuman
 public:
 	// Slot 440 (TranslateSchedule override); declared as a plain member.
 	int vfunc440(int schedule);
+	CBaseEntity *sub_1036cce0();
+	bool sub_1036d350(const Vector *pPos, float flRadius);
 	virtual CAI_BaseNPC *vfunc5(unsigned int flags);	// deleting destructor
 	void vfunc619(int arg);
 	void sub_1000c27a(int arg);
