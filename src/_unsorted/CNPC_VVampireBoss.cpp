@@ -182,3 +182,30 @@ void CNPC_VVampireBoss::vfunc431()
 	(*g_109f3680)--;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103c75f0 size=0x87
+#include "inputdata_t.h"
+#include "CNPC_VVampireBoss.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_1065e8dc[];
+
+void CNPC_VVampireBoss::vfunc617(inputdata_t *pInput)
+{
+	g_109f3620[*g_109f3680].a = "CNPC_VVampireBoss::InputTransformModel";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	*(const char * volatile *)((char *)this + 0x6694) = g_1065e8dc;
+	const char *model = *(const char * volatile *)((char *)this + 0x667c);
+	if (model == 0)
+		model = g_106b8540;
+	if (*model != 0) {
+		m_pMonsterModelName = model;
+		sub_102ae750(0x159, 0);
+	}
+	(*g_109f3680)--;
+}
+// END FUNCTION
