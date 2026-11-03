@@ -422,6 +422,20 @@ void __stdcall sub_101a6be0(int a, int b, int c, int d) {
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6c00 size=0xa
+struct B
+{
+	int sub_1000aed4(int a);
+};
+
+extern B g_10936c74;
+
+int CAI_BaseNPC::vfunc546(int a)
+{
+	return g_10936c74.sub_1000aed4(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6c20 size=0x7
 float sub_101a6c20()
 {
