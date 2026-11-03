@@ -123,7 +123,7 @@ public:
 	virtual void vfunc175_slot();
 	virtual void vfunc176_slot();
 	virtual void vfunc177();
-	virtual void vfunc178_slot();
+	virtual void vfunc178(CBaseEntity *pOther);	// slot 178 "CRotDoor::Blocked" (scope trace 0x10565574): the blocked-touch handling
 	virtual void vfunc179();
 	virtual void vfunc180_slot();
 	virtual void vfunc181();
