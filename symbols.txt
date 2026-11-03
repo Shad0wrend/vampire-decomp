@@ -11803,6 +11803,7 @@
 0x10013205 func   ?vfunc250@CBaseDoor@@QAEXXZ CBaseDoor::vfunc250
 0x1001320a func   ?sub_1009d760@CBaseEntity@@QAEHXZ CBaseEntity::sub_1009d760
 0x10013214 func   ?sub_1030fb10@S1030fc90@@QAE_NH@Z S1030fc90::sub_1030fb10
+0x10013219 func   ?vfunc5@CCineAI@@QAEPAV1@I@Z CCineAI::vfunc5
 0x10013223 func   ?sub_101cf640@@YAXHHH@Z sub_101cf640
 0x10013228 func   ?sub_10043630@@YIXPAUMem8@@HH@Z sub_10043630
 0x1001322d func   ?sub_102173e0@@YAHXZ sub_102173e0
