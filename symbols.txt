@@ -12457,6 +12457,7 @@
 0x10013d22 func   ?sub_100ccf60@@YAHXZ sub_100ccf60
 0x10013d27 func   ?sub_10138cc0@@YAXABUS10138cc0Mat3@@0AAU1@@Z sub_10138cc0
 0x10013d2c func   ?vfunc80@CItemGBachJournal@@QAEHXZ CItemGBachJournal::vfunc80
+0x10013d31 func   ?sub_1025ddd0@CUnknown1025ddd0@@QAEXPAX@Z CUnknown1025ddd0::sub_1025ddd0
 0x10013d36 func   ??0CVTraitEffect_t@@QAE@XZ CVTraitEffect_t::CVTraitEffect_t
 0x10013d45 func   ?sub_101e2910@CUnknown101e0f00@@QAEPAXHHH@Z CUnknown101e0f00::sub_101e2910
 0x10013d4f func   ?sub_102a95e0@CUnknown102a95e0@@QAEPAHH@Z CUnknown102a95e0::sub_102a95e0

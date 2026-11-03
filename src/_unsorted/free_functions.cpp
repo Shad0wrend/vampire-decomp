@@ -131968,6 +131968,28 @@ bool CUnknown1025ddd0::sub_1025dca0(CBaseEntity *pEntity, char bFlag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025ddd0 size=0x89
+#include "CUnknown1025ddd0.h"
+
+void CUnknown1025ddd0::sub_1025ddd0(void *pEntity)
+{
+	if (pEntity) {
+		EHANDLE *p = (EHANDLE *)m_pMemory;
+		for (int i = 0; i < m_size; i++, p++) {
+			if (p && p->Get() == pEntity) {
+				int nSize = *(volatile int *)&m_size;
+				if (nSize > 0) {
+					unsigned int *pBase = *(unsigned int *volatile *)&m_pMemory;
+					memmove(pBase + i, pBase + nSize - 1, 4);
+					m_size--;
+				}
+				return;
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025de90 size=0x61
 #include "CBaseEntity.h"
 struct CEntHandleList_1025de90 {
