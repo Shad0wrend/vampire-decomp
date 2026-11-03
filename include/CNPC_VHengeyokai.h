@@ -388,8 +388,8 @@ public:
 	virtual void vfunc215();
 	virtual void vfunc216();
 	virtual void vfunc217();
-	virtual void vfunc218();
-	virtual void vfunc219();
+	virtual float *vfunc218();	// game slot 220 (+0x370): GetOrigin (the header's names are 2 behind the game's slot here)
+	virtual void vfunc219(float *pOut, int a, int b);	// game slot 221 (+0x374): GetAngles(out, 0, 0)
 	virtual void vfunc220();
 	virtual void vfunc221();
 	virtual void vfunc222();
