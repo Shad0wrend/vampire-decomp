@@ -341,4 +341,5 @@ public:
 	void sub_10271d10(CBaseEntity *pTarget);	// profiled as CAI_Memory_CheckTarget: clears conditions 0x4b / 0x49, then sets one by slot 201 (can see pTarget), then sub_10271b10
 	void sub_10271b10();
 	void sub_1028e980(CBaseEntity *pEnt);	// called by vfunc433: while the navigator (+0x5d34) is neither in mode 1 nor 3 and has a navigation type, hands pEnt's slot 220 position to the navigator (sub_102ee220, stub 0x1000481d) once the point the route heads for is farther than the threshold at 0x104454c8 from it
+	int vfunc546(int a);	// slot 546 (plain overload of the placeholder): the global at 0x10936c74's sub_1000aed4(a), tail called
 };
