@@ -9,10 +9,15 @@ public:
 
 	char m_pad0004[0x11c - 4];
 	const char *m_pszClassname11c;	// +0x11c: classname (null when unset)
-	char m_pad0120[0x458 - 0x120];
+	char m_pad0120[0x1a0 - 0x120];
+	int m_nColor1a0;	// 0x01a0: render colour copied from the cannister at launch
+	char m_pad01a4[0x450 - 0x1a4];
+	float m_flJet450;	// 0x0450: steam speed-ish value (thrust based)
+	float m_flJet454;	// 0x0454
 	float m_StartSize;	// 0x0458
 	float m_EndSize;	// 0x045c
-	char m_pad0460[0x468 - 0x460];
+	float m_flJet460;	// 0x0460
+	float m_flJet464;	// 0x0464
 	int m_nFlag468;	// +0x468
 	bool m_bIsSteamJet46c;	// +0x46c: set when the classname is env_steamjet
 	bool m_bFlag46d;	// +0x46d
