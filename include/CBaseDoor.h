@@ -78,7 +78,9 @@ public:
 	CDoorEventList m_items4a4[2];	// +0x4a4, +0x4bc
 	char m_pad04d4[0x4f8 - 0x4d4];
 	int m_nState4f8;	// +0x4f8: door state (0 closed at rest, 1 open at rest, 2 / 3 moving)
-	char m_pad04fc[0x508 - 0x4fc];
+	char m_pad04fc[4];
+	float m_fl500;	// +0x500: the auto-return / damage gate checked by Blocked
+	char m_pad0504[4];
 	Vector m_vecPosition508;	// +0x508: one end position of the door
 	Vector m_vecPosition514;	// +0x514: the other end position
 	char m_pad0520[0x53c - 0x520];
