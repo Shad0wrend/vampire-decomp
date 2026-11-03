@@ -11722,6 +11722,7 @@
 0x10013589 func   ?sub_1018f720@CFoo1018f720@@QAEXH@Z CFoo1018f720::sub_1018f720
 0x10013593 func   ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z CBaseCombatWeapon::vfunc130
 0x10013598 func   ?sub_102ce9a0@UtlVec8@@QAEXHH@Z UtlVec8::sub_102ce9a0
+0x100135a2 func   ?vfunc429@CBasePlayer@@UAEXXZ CBasePlayer::vfunc429
 0x100135ac func   ?vfunc0@CMultiplayRules@@UAEPAVCGameRules@@I@Z CMultiplayRules::vfunc0
 0x100135b1 func   ?sub_1007ed50@CUnknown1007ecf0@@QAEXH@Z CUnknown1007ecf0::sub_1007ed50
 0x100135bb func   ?vfunc72@CNPC_VCamera@@UAE_NH@Z CNPC_VCamera::vfunc72

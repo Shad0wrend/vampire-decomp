@@ -2115,3 +2115,11 @@ void CBasePlayer::vfunc26(CBaseEntity *pOther)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x101830e0 size=0xf
+// TARGET: CBasePlayer::vfunc429
+void CBasePlayer::vfunc429()
+{
+	*(float *)((char *)this + 0x1dd4) = gpGlobals->curtime;
+}
+// END FUNCTION
