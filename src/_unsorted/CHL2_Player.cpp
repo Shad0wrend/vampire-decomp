@@ -205,6 +205,18 @@ void CHL2_Player::vfunc333(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10351050 size=0x10
+#include "CHL2_Player.h"
+
+int CHL2_Player::vfunc138()
+{
+	int n = *(int *)((char *)this + 0x2460);
+	if (!n)
+		n = 1;
+	return n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10351070 size=0x5
 bool CHL2_Player::vfunc366(int a0, int a1, int a2)
 {

@@ -3285,6 +3285,7 @@
 0x100062f3 func   ?sub_101a6900@@YAXXZ sub_101a6900
 0x100062f8 func   ?sub_1017be30@@YADXZ sub_1017be30
 0x10006302 func   ?vfunc471@CAI_BaseNPC@@UAEMXZ CAI_BaseNPC::vfunc471
+0x1000630c func   ?vfunc138@CHL2_Player@@QAEHXZ CHL2_Player::vfunc138
 0x10006311 func   ?vfunc566@CAI_BaseNPC@@UAE_NPAVCBaseEntity@@@Z CAI_BaseNPC::vfunc566
 0x10006316 func   ?sub_10077060@CUnknown10077060@@QAEHXZ CUnknown10077060::sub_10077060
 0x1000631b func   ?vfunc82@CNPC_VWolfMorph@@UAEPAUdatamap_t@@XZ CNPC_VWolfMorph::vfunc82
