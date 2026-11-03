@@ -320,7 +320,8 @@ public:
 	char m_pad13a4[0x13bc - 0x13a4];
 	int m_nStatLists;
 	CVStatList_t **m_pStatLists;
-	char m_pad13c4[0x13cc - 0x13c4];
+	char m_pad13c4[4];
+	class CUnknown101f9bf0 *m_pTraits13c8;	// 0x13c8: the owner's trait id list, the object sub_101f9bf0 applies (a == character+0x13c8 at 0x101e59e6)
 	int m_nHasLegs13cc;	// 0x13cc: the model has no flag 0x100 in its header flags (stat 0xb of the active stat list)
 	float m_flLastFaithShieldHealTime;	// 0x13d0
 	float m_flHolyLightEndTime;	// 0x13d4
