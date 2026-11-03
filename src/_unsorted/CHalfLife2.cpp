@@ -135,6 +135,22 @@ const char *CHalfLife2::vfunc58(int classify)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10356230 size=0xb
+#include "CHalfLife2.h"
+
+struct CHL2VFunc0Obj
+{
+	virtual void vfunc0();
+};
+
+int sub_1042c0a0();
+
+void CHalfLife2::vfunc77()
+{
+	((CHL2VFunc0Obj *)sub_1042c0a0())->vfunc0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10356250 size=0x3
 #include "CHalfLife2.h"
 void CHalfLife2::vfunc36(int a0)
