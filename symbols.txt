@@ -10724,6 +10724,7 @@
 0x10011207 func   ?vfunc103@CFuncAreaPortalWindow@@UAEXXZ CFuncAreaPortalWindow::vfunc103
 0x1001120c func   ?sub_10109990@CFire@@QAEPAV1@XZ CFire::sub_10109990
 0x10011211 func   ?sub_100a8060@CBaseEntity@@QAEXXZ CBaseEntity::sub_100a8060
+0x10011216 func   ?sub_100f19b0@CRotDoor@@QAEXVVector@@PAV2@1@Z CRotDoor::sub_100f19b0
 0x1001121b func   ?vfunc241@CAI_StandoffGoal@@QAEXH@Z CAI_StandoffGoal::vfunc241
 0x10011220 func   ?vfunc574@CAI_BaseNPC@@QAE?AVVector@@ABV2@HH@Z CAI_BaseNPC::vfunc574
 0x1001122a func   ?sub_1022d380@@YIXPAUMem4@@HH@Z sub_1022d380

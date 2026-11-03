@@ -48180,6 +48180,57 @@ extern "C" GP *func_door_rotating()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f19b0 size=0x217
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlmemory.h"
+// TARGET: CRotDoor::sub_100f19b0
+#include "CRotDoor.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+#include "matrix3x4_t.h"
+#include "CEntityVSlots.h"
+
+#define MIN(a,b) (((a) < (b)) ? (a) : (b))
+#define MAX(a,b) (((a) > (b)) ? (a) : (b))
+#define COLLPROP ((CCollisionProperty *)((char *)this + 0x270))
+
+void sub_10139b90(const float *pAngles, float *pMatrix);
+void sub_101381b0(const float *pIn, const float *pMatrix, float *pOut);
+
+void CRotDoor::sub_100f19b0(Vector vecAngles, Vector *pMins, Vector *pMaxs)
+{
+	ScopeTrace scope("CRotDoor::ComputeSwingData", g_106b8540);
+
+	*pMins = *(Vector *)COLLPROP->vfunc1();
+	*pMaxs = *(Vector *)COLLPROP->vfunc2();
+
+	matrix3x4_t matrix;
+	sub_10139b90(&vecAngles.x, &matrix.m_flMatVal[0][0]);
+
+	Vector vRotMins;
+	Vector vRotMaxs;
+	const float *pMinsRot = COLLPROP->vfunc1();
+	sub_101381b0(pMinsRot, &matrix.m_flMatVal[0][0], vRotMins.Base());
+	const float *pMaxsRot = COLLPROP->vfunc2();
+	sub_101381b0(pMaxsRot, &matrix.m_flMatVal[0][0], vRotMaxs.Base());
+
+	for (int i = 0; i < 3; i++)
+	{
+		(*pMins)[i] = MIN(MIN((*pMins)[i], vRotMins[i]), MIN((*pMaxs)[i], vRotMaxs[i]));
+		(*pMaxs)[i] = MAX(MAX((*pMins)[i], vRotMins[i]), MAX((*pMaxs)[i], vRotMaxs[i]));
+		(*pMins)[i] += ((CEntityVSlots *)this)->slot220()->Base()[i];
+		(*pMaxs)[i] += ((CEntityVSlots *)this)->slot220()->Base()[i];
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f2f90 size=0x19
 struct CUnknown100f2f90 { void * sub_100f2f90(int, int, int); };
 void * CUnknown100f2f90::sub_100f2f90(int a0, int a1, int a2)
