@@ -151,6 +151,16 @@ void CNPC_VBatSwarmFwd::sub_103674c0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10367580 size=0xd
+void __fastcall sub_1000ca4f(void *pThis, int dummy, int a, float b);
+
+// TARGET: sub_10367580
+void __fastcall sub_10367580(void *pThis, int dummy, int a, float b)
+{
+	sub_1000ca4f(pThis, dummy, a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10367610 size=0x15
 #include "CNPC_VBatSwarm.h"
 

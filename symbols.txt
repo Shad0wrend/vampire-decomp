@@ -4869,6 +4869,7 @@
 0x1000882d func   ?sub_10195160@CUtlRBTree12Unit@@QAEXG@Z CUtlRBTree12Unit::sub_10195160
 0x10008832 func   ?sub_102eeba0@CUnknown102eeba0@@QAEXH@Z CUnknown102eeba0::sub_102eeba0
 0x10008837 func   ?sub_103c6a90@CNPC_VVampireBoss@@QAEHPAHHHH@Z CNPC_VVampireBoss::sub_103c6a90
+0x1000883c func   ?sub_10367580@@YIXPAXHHM@Z sub_10367580
 0x10008841 func   ?sub_10366190@CNPC_VVampireBoss@@QAEXPAUinputdata_t@@@Z CNPC_VVampireBoss::sub_10366190
 0x10008846 func   ?sub_1032ab60@@YIPAVCBaseEntity@@PAUCBCCHullView@@HMABVVector@@1HH@Z sub_1032ab60
 0x1000884b func   ?Grow@CUtlMemory16@@QAEXH@Z CUtlMemory16::Grow
