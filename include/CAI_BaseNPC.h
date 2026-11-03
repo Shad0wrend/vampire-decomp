@@ -64,6 +64,7 @@ public:
 	virtual void vfunc208(int a);	// takes one argument (0 from AI_BaseNPC_Schedule's failure path)
 	virtual CBaseEntity *vfunc209();
 	void vfunc581();	// slot 581: debug text dump (DevMsg)
+	void vfunc582(float flThinkTime);	// slot 582 (0x10277d90): the slow-think report (DevWarning "%.02fms", profiler clock deltas); plain member so it can be defined
 	CAI_NPC_V(210) CAI_NPC_V(211) CAI_NPC_V(212) CAI_NPC_V(213) virtual float *vfunc214(); CAI_NPC_V(215) CAI_NPC_V(216)
 	virtual float *vfunc217();	// "CBaseEntity::GetAbsOrigin"
 	CAI_NPC_V(218) virtual float *vfunc219();
