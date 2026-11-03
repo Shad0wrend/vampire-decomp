@@ -36,6 +36,79 @@ void CTriggerLook::vfunc176(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c6cb0 size=0x235
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CTriggerLook.h"
+#include "Vector.h"
+// TARGET: CTriggerLook::vfunc175
+
+void sub_101c0b10(CBaseEntity *pEnt);
+
+void CTriggerLook::vfunc175(CBaseEntity *pOther)
+{
+	if ( !m_hLookTarget.Get() )
+	{
+		m_hLookTarget = (CBaseEntity *)((CEntityVSlots *)this)->slot172();
+
+		if ( !m_hLookTarget.Get() )
+			return;
+	}
+
+	if ( !pOther )
+		return;
+
+	CEntityVSlots *pLooker = (CEntityVSlots *)pOther->m_pA8;
+	if ( !pLooker )
+		return;
+
+	Vector vecLook;
+	pLooker->slot369(&vecLook);
+
+	CBaseEntity *pTarget = m_hLookTarget.Get();
+
+	Vector vecEyes;
+	Vector *pEyes = pLooker->slot193(&vecEyes);
+	Vector *pTargetOrigin = ((CEntityVSlots *)pTarget)->slot217();
+
+	Vector vecDelta = *pTargetOrigin - *pEyes;
+	vecDelta.NormalizeInPlace();
+
+	float flDot = DotProduct(vecLook, vecDelta);
+
+	if ( flDot > m_flFieldOfView )
+	{
+		if ( m_flLookTimeLast == -1.0f )
+		{
+			m_flLastLookTime = gpGlobals->curtime;
+			m_flLookTimeLast = 0.0f;
+		}
+		else
+		{
+			m_flLookTimeLast += gpGlobals->curtime - m_flLastLookTime;
+			m_flLastLookTime = gpGlobals->curtime;
+		}
+
+		if ( m_flLookTimeLast >= m_flLookTimeTotal )
+		{
+			m_OnTrigger.sub_100cd660(pOther, this, 0);
+
+			m_flLookTimeLast = -1.0f;
+
+			if ( m_flags204 & 0x80 )
+			{
+				sub_100ac4e0((int)sub_101c0b10, 0, 0);
+				m_flNextThink = gpGlobals->curtime;
+			}
+		}
+	}
+	else
+	{
+		m_flLookTimeLast = -1.0f;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c6f80 size=0xae
 #include "CTriggerLook.h"
 void sub_101434b0(int entindex, int offset, const char *text, int duration, int r, int g, int b, int a);
