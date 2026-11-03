@@ -96,6 +96,7 @@ public:
 	void sub_101b3770(void *pTable, const char *pszName, int value);	// interns pszName in the string table at +0xb0 and appends the 8 byte record (16 bit symbol, value) to the vector (memory at +0x20, size at +0x2c) of pTable
 	int sub_101b2f60(const char *pszName);	// index of the sound record (0xe8 bytes each, table at +0x54) named pszName, -1 when unknown
 	char sub_101b31a0(int index);	// true when index is within the sound record count at +0x64
+	char sub_101b4200(int index);	// when index is valid, the byte at +0x15 of its sound record (0xe8 bytes, table at +0x54)
 	void sub_101b50f0(const char *pszName);	// flags the sound record and its script file (record dword +0x18, flag table at +0x9c, 0x82 bytes each) as changed; DevWarning when there is no such sound
 	int sub_101b2870(int i);	// "CUtlRBTree::NextInorder" of the sound record tree at +0x50 (sentinel 0x1072c414)
 	int sub_101b3220();	// "GetSoundCount" (stub 0x100070a9)
