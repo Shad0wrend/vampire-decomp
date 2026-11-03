@@ -12,6 +12,7 @@ class CEntityMapData;
 struct inputdata_t;
 struct CVariantCopy;
 struct datamap_t;
+struct CTakeDamageInfo;
 
 struct CBaseEntityColor32	// four bytes passed by value to the Dump helpers
 {
