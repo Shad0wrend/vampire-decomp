@@ -9425,6 +9425,7 @@
 0x1000fd12 func   ?sub_10214720@@YIXPAXHH@Z sub_10214720
 0x1000fd17 func   ?vfunc103@CWeaponThrown_Chang_Energy_Ball@@QAEXXZ CWeaponThrown_Chang_Energy_Ball::vfunc103
 0x1000fd1c func   ?vfunc1@CRopeDelegate@@UAEXPAHH@Z CRopeDelegate::vfunc1
+0x1000fd26 func   ?sub_10251f90@CBaseCombatWeapon@@QAEHXZ CBaseCombatWeapon::sub_10251f90
 0x1000fd2b func   ?vfunc82@CEnvShake@@UAEPAUdatamap_t@@XZ CEnvShake::vfunc82
 0x1000fd30 func   ?vfunc2@CNotifyList@@UAEXPAVCBaseEntity@@PBD@Z CNotifyList::vfunc2
 0x1000fd35 func   ?sub_102c6760@CUnknown102c6760@@QAEHXZ CUnknown102c6760::sub_102c6760

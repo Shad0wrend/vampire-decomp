@@ -612,6 +612,14 @@ int CBaseCombatWeapon::vfunc349()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10251f90 size=0xc
+// TARGET: CBaseCombatWeapon::sub_10251f90
+int CBaseCombatWeapon::sub_10251f90()
+{
+	return *(int *)((char *)sub_102517b0() + 0x5ebd0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10252090 size=0x67
 #include "CBaseCombatWeapon.h"
 
