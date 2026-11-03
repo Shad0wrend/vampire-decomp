@@ -20,3 +20,17 @@ int sub_101da760()
 	return 2;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101da780 size=0x20
+#include "CDisciplineProjectileTraceFilter.h"
+
+extern char g_10483528[];
+
+void *CDisciplineProjectileTraceFilter::vfunc2(char flags)
+{
+	*(void **)this = g_10483528;
+	if (flags & 1)
+		::operator delete(this);
+	return this;
+}
+// END FUNCTION
