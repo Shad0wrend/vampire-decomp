@@ -6641,6 +6641,7 @@
 0x1000b4a6 func   ?sub_10340c90@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10340c90
 0x1000b4ab func   ?sub_1042ff80@@YAII@Z sub_1042ff80
 0x1000b4ba func   ?vfunc50@CSingleplayRules@@UAEMPAVCBaseEntity@@@Z CSingleplayRules::vfunc50
+0x1000b4bf func   ?vfunc2@CPhysicsGameTrace@@UAE_NPAX@Z CPhysicsGameTrace::vfunc2
 0x1000b4c4 func   ?vfunc124@CNPC_VHengeyokai@@QAEHXZ CNPC_VHengeyokai::vfunc124
 0x1000b4c9 func   ?sub_10412140@@YAHXZ sub_10412140
 0x1000b4ce func   ?sub_1006f670@CBaseCineCam@@QAE?AVVector@@XZ CBaseCineCam::sub_1006f670
