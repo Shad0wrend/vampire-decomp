@@ -8225,6 +8225,7 @@
 0x1000df4e func   ?sub_101b6d60@CUtlRBTree232@@QAEXPBXPAHPA_N@Z CUtlRBTree232::sub_101b6d60
 0x1000df53 func   ?sub_1030a610@CUnknown1030a610@@QAEPAXXZ CUnknown1030a610::sub_1030a610
 0x1000df58 func   ?sub_101f6010@CVSoundActivityTable_t@@QAEXPAVCBaseCombatCharacter@@HH@Z CVSoundActivityTable_t::sub_101f6010
+0x1000df5d func   ?vfunc117@CBaseMoveBehavior@@UAEHXZ CBaseMoveBehavior::vfunc117
 0x1000df62 func   ?vfunc68@CNPC_VMingXiaoTentacle@@QAE_NPAVCBaseEntity@@@Z CNPC_VMingXiaoTentacle::vfunc68
 0x1000df67 func   ?vfunc123@CPathCorner@@QAEXXZ CPathCorner::vfunc123
 0x1000df6c func   ?sub_103828a0@@YIXPAD@Z sub_103828a0

@@ -1,6 +1,15 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101404d0 size=0x9
+#include "CLogicalEntity.h"
+
+int CBaseMoveBehavior::vfunc117()
+{
+	return ((CLogicalEntity *)this)->CLogicalEntity::vfunc117() & ~0x200;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101404f0 size=0x6
 namespace lifted {
 extern char g_1057a3fc;
