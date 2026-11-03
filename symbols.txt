@@ -8589,6 +8589,7 @@
 0x1000e359 func   ?sub_10391330@@YAEXZ sub_10391330
 0x1000e363 func   ??0CUnknown10248a50@@QAE@PBD@Z CUnknown10248a50::CUnknown10248a50
 0x1000e36d func   ?vfunc319@CNPC_VRat@@QAE_NHHH@Z CNPC_VRat::vfunc319
+0x1000e372 func   ?sub_101cc1c0@Helper@@QAEPAXI@Z Helper::sub_101cc1c0
 0x1000e37c func   ?sub_101ca450@@YAPAXXZ sub_101ca450
 0x1000e381 func   ?sub_102477c0@CUnknown102477c0@@QAEXXZ CUnknown102477c0::sub_102477c0
 0x1000e386 func   ?sub_101128d0@CBreakableSurface@@QAEXABVVector@@PAM1@Z CBreakableSurface::sub_101128d0
