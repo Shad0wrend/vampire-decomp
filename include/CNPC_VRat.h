@@ -2,9 +2,12 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+class CAI_RatLocalNavigator;
+
 class CNPC_VRat
 {
 public:
+	CAI_RatLocalNavigator *vfunc428();
 	CNPC_VRat *vfunc5(unsigned int flags);
 	void vfunc103();	// slot 103: the scurry base implementation after picking the global's address
 	char m_pad0000[0x10e4];

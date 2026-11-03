@@ -10,6 +10,7 @@ public:
 	CAI_RatLocalNavigator *vfunc0(unsigned int flags);
 	CAI_PlaneSolver *vfunc8();	// slot 8: a new CAI_RatPlaneSolver for the owner at +0x4 (0 when the allocation fails)
 	void sub_10006988();
+	CAI_RatLocalNavigator *sub_103ad540(int owner);
 
 	char m_pad0[4];	// 0x0: the vtable pointer
 	int m_pOwner;	// 0x4: the owning NPC
