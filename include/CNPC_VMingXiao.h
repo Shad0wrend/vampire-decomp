@@ -165,7 +165,7 @@ public:
 	char m_bActive6744;	// +0x6744
 	char m_pad6745[3];
 	float m_f6748;	// +0x6748
-	int m_n674c;	// +0x674c
+	float m_f674c;	// +0x674c: a time stamp (curtime); the compiler copies it as a dword
 	char m_b6750;	// +0x6750
 public:
     virtual bool vfunc70();
