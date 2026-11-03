@@ -13,6 +13,7 @@ public:
 	void sub_100123af();	// the destructor body (stub 0x100123af -> 0x1028d610), called directly
 	// Slot 440 (TranslateSchedule), called directly; declared as a plain member.
 	int vfunc440(int schedule);
+	virtual void vfunc444(void *pTask);	// slot 444 override (0x10384ab0): state/task handler for the task types 0x89..0x91; the default falls through to CAI_BaseNPCTroika::vfunc444
 	// Slot 482 (CanPlaySequence-like, asked by the scripted sequence): 0 when the scripted sequence entity of the handle at +0x5d74 refuses
 	// or the NPC is not alive (slot 158); with the NPC state (+0x5cc0) not idle / none, not heading for idle (+0x5cc4) and not
 	// (combat with a high interrupt level) only a state of 4 may go on; declared as a plain member.
