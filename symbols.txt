@@ -1966,6 +1966,7 @@
 0x10004138 func   ?sub_101a77a0@CCineNPC@@QAEXPAX@Z CCineNPC::sub_101a77a0
 0x10004142 func   ?sub_10266710@@YGXPAUSDmgInfo@@PAXH@Z sub_10266710
 0x1000414c func   ?sub_100dd990@CUnknown100dd990@@QAEXHPBUCUnknown100dd990Vec@@0@Z CUnknown100dd990::sub_100dd990
+0x10004151 func   ?vfunc248@CBaseTrigger@@QAEXH@Z CBaseTrigger::vfunc248
 0x10004156 func   ?sub_103234a0@@YIXPAVCBaseCombatCharacter@@@Z sub_103234a0
 0x1000415b func   ?sub_101482c0@@YAHXZ sub_101482c0
 0x10004165 func   ?sub_1030b950@CUnknown1030b950@@QAEXPBM@Z CUnknown1030b950::sub_1030b950
