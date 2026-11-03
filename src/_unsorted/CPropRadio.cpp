@@ -153,6 +153,50 @@ int __fastcall sub_1022c180(char *self, int, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022c220 size=0x1f6
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CPropRadio.h"
+#include "CBaseProp.h"
+#include "CBaseAnimating.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+#define CLAMPX(val, minv, maxv) ((val) > (maxv) ? (maxv) : ((val) < (minv) ? (minv) : (val)))
+
+// TARGET: CPropRadio::vfunc103
+void CPropRadio::vfunc103()
+{
+	ScopeTrace trace("CPropRadio::Spawn", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	((CBaseProp *)this)->vfunc103();
+	m_nEffectFlags = 0xa0;
+	void *pStudioHdr = ((CBaseAnimating *)this)->sub_100952d0(-1);
+	if (pStudioHdr) {
+		{
+			ScopeTrace trace2("CBaseEntity::SetSolid", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+			((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(3);
+		}
+		sub_100adf10((float *)((char *)pStudioHdr + 0xb4), (float *)((char *)pStudioHdr + 0xc0));
+		sub_100aaa40(1);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100ddd90();
+		sub_100b3b00();
+	}
+	sub_100a9470(0);
+	if (m_flags204 & 1)
+		sub_1022c750(1);
+	else
+		sub_1022c750(0);
+	*(float *)&m_nVolume750 = CLAMPX(*(float *)&m_nVolume750, 0.01f, 1.0f);
+	*(float *)&m_nSoundLevelArg754 = CLAMPX(*(float *)&m_nSoundLevelArg754, 1.0f, 10000.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022c660 size=0x6
 #include "CPropRadio.h"
 int CPropRadio::vfunc117()

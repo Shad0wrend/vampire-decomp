@@ -11913,6 +11913,7 @@
 0x10012e8b func   ?sub_102ec320@CUnknown102ec320@@QAEXH@Z CUnknown102ec320::sub_102ec320
 0x10012e95 func   ?sub_100d3bc0@@YAXXZ sub_100d3bc0
 0x10012e9a func   ?sub_1013a870@@YAMMM@Z sub_1013a870
+0x10012e9f func   ?vfunc103@CPropRadio@@UAEXXZ CPropRadio::vfunc103
 0x10012ea4 func   ?sub_1023ee30@@YAXH@Z sub_1023ee30
 0x10012ea9 func   ?sub_101ccb60@CEdtEntitiesEnum@@QAEPAV1@PAPAVCBaseEntity@@HI@Z CEdtEntitiesEnum::sub_101ccb60
 0x10012eae func   ?sub_100777e0@CUnknown100777e0View@@QAEXPAUCUnknown100777e0Vt@@HH@Z CUnknown100777e0View::sub_100777e0
