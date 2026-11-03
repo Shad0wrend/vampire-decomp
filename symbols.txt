@@ -4509,6 +4509,7 @@
 0x10007eaa func   ?sub_100d11f0@@YAHH@Z sub_100d11f0
 0x10007eaf func   ?vfunc5@CWeaponList@@UAEXXZ CWeaponList::vfunc5
 0x10007eb9 func   ?sub_1016af80@CBasePlayer@@QAEXPAX0@Z CBasePlayer::sub_1016af80
+0x10007ebe func   ??0CTriggerTeleport@@QAE@XZ CTriggerTeleport::CTriggerTeleport
 0x10007ec8 func   ?sub_10079100@@YIXPAUMem@@HH@Z sub_10079100
 0x10007ecd func   ?sub_101ff0b0@CVStatInfo_t@@QAEHH@Z CVStatInfo_t::sub_101ff0b0
 0x10007ed2 func   ?sub_101c1af0@@YAMEPBM0@Z sub_101c1af0
