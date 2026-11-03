@@ -56,6 +56,7 @@ public:
 	void sub_10005718();	// as in CPhysForce (transplant)
 	void vfunc349(CBaseEntity **ppEnt);	// slot 349 (plain member): when *ppEnt and its object at +0x9c are set, calls sub_103411c0(that object, 1) on this
 	unsigned int vfunc35(int unused);	// slot 35: 0 while the handle at +0x1a28 names a live entity (the entity list entry's serial matches), else the dword at +0x1a34
+	unsigned int vfunc34(int unused);	// slot 34 (an identical copy of slot 35 that answers 1)
 	void vfunc350(int unused);	// when the handle at +0x1a28 resolves, sub_1000e020(that entity, 1)
 	void sub_1000e020(CBaseEntity *pEnt, int flag);
 	void sub_103411c0(CBaseEntity *pEnt, int flag);	// CBaseCombatCharacter member (stub 0x10007e73), called directly
