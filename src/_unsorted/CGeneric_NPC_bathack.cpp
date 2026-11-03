@@ -189,6 +189,16 @@ int CGeneric_NPC_bathack::vfunc138()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035b160 size=0xd
+void __fastcall sub_1000a529(void *pThis, int dummy, float a);
+
+// TARGET: sub_1035b160
+void __fastcall sub_1035b160(void *pThis, int dummy, float a)
+{
+	sub_1000a529(pThis, dummy, a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035b1a0 size=0x1
 #include "CGeneric_NPC_bathack.h"
 void CGeneric_NPC_bathack::vfunc434()
