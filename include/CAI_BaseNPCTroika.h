@@ -329,17 +329,33 @@ public:
 	float m_f60a0;
 	int m_n60a4;
 	int m_n60a8;
-	char m_pad60ac[0x624c - 0x60ac];
-	float m_f624c;	// 0x624c: the next time (curtime + const)
-	char m_pad6250[0x625c - 0x6250];
-	float m_f625c;	// 0x625c: the previous value of +0x624c
-	char m_pad6260[0x6264 - 0x6260];
+	char m_pad60ac[0x6244 - 0x60ac];
+	union {
+		float m_flCur6244[4];	// 0x6244: four think timestamps (vfunc614 stamps all four; CNPC_VCamera names them m_flCur6244)
+		struct {
+			float m_f6244;	// 0x6244: the next update-think time (CalcNextUpdateThink)
+			float m_f6248;	// 0x6248
+			float m_f624c;	// 0x624c: the next move-think time (sub_10290fc0)
+			float m_f6250;	// 0x6250: the next AI-think time (CalcNextAIThink)
+		};
+	};
+	union {
+		float m_flPrev6254[4];	// 0x6254: the previous four
+		struct {
+			float m_f6254;	// 0x6254: the previous update-think time (CalcNextUpdateThink)
+			float m_f6258;	// 0x6258
+			float m_f625c;	// 0x625c: the previous move-think time (sub_10290fc0)
+			float m_f6260;	// 0x6260: the previous AI-think time (CalcNextAIThink)
+		};
+	};
 	float m_f6264;
 	float m_f6268;	// 0x6268
 	float m_f626c;	// 0x626c
 	char m_pad6270[0x6274 - 0x6270];	// 0x6270 .. 0x6273
 	float m_fl6274;	// 0x6274: a timer (-1.0f when unset)
-	char m_pad6278[0x628c - 0x6278];	// 0x6278 .. 0x628B
+	char m_b6278;	// 0x6278
+	char m_b6279;	// 0x6279: the skip flag of the update / AI think
+	char m_pad627a[0x628c - 0x627a];	// 0x627A .. 0x628B
 	EHANDLE m_h628c;
 	Vector m_vec6290;
 	char m_pad629c[0x62e8 - 0x629c];
