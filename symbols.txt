@@ -7996,6 +7996,7 @@
 0x1000d355 func   ?vfunc10@CAI_HumanoidMotor@@QAEXXZ CAI_HumanoidMotor::vfunc10
 0x1000d35a func   ?vfunc580@CNPC_VTzimisceRunner@@UAEHXZ CNPC_VTzimisceRunner::vfunc580
 0x1000d364 func   ?sub_102db630@@YAXD@Z sub_102db630
+0x1000d373 func   ?sub_10160520@CBasePlayer@@QAEXXZ CBasePlayer::sub_10160520
 0x1000d378 func   ?sub_10074980@CUnknown10074980@@QAEHXZ CUnknown10074980::sub_10074980
 0x1000d37d func   ?sub_1002c900@CUnknown1002c900@@QAEPAXXZ CUnknown1002c900::sub_1002c900
 0x1000d387 func   ?sub_101d7380@CUnknown101d7380@@QAEHPBDH@Z CUnknown101d7380::sub_101d7380

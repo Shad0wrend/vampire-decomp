@@ -67863,6 +67863,29 @@ int CUnk1015fdc0::sub_1015fdc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10160520 size=0x30
+#include "CBasePlayer.h"
+
+extern float g_1046fb0c;
+
+inline void SetPair10160520(float *pDst, float a, float b)
+{
+	pDst[0] = a;
+	pDst[1] = b;
+}
+
+// TARGET: CBasePlayer::sub_10160520
+void CBasePlayer::sub_10160520()
+{
+	*(volatile float *)&m_f1DDC = g_1046fb0c;
+	float fA = *(volatile float *)&m_vec1EFC.x;
+	fA += *(volatile float *)&m_vec206c.x;
+	float fB = *(volatile float *)&m_vec1EFC.y;
+	fB += *(volatile float *)&m_vec206c.y;
+	SetPair10160520(&m_f1DE4, fB, fA);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160560 size=0xe0
 #include "CBasePlayer.h"
 #include "CBaseCombatWeapon.h"
