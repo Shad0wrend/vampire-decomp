@@ -34,6 +34,7 @@ public:
 	void vfunc39(CBasePlayer *pPlayer);	// slot 39: CBaseTerminal::vfunc39 on the player, rebuilds the screen, then the "Hacking" record handed to the player's sub_1017cef0
 	void vfunc41(void *pArg);	// slot 41: CBaseTerminal::vfunc41 on the argument, then unless the byte at +0x8b8 is clear, the stub 0x10014a6a with the argument in ecx
 	void vfunc275();	// slot 275: fires the output at +0x888 (activator: the entity of the handle at +0x8c), sets the byte at +0x8b8, clears +0x8b9 and rebuilds the screen (sub_1021df90)
+	void vfunc278(int a);	// slot 278: sub_10218ff0(0, the selected count - 1), then sub_10217ac0 with the screen text 0xc and the argument
 	void vfunc276();	// slot 276: fires the output at +0x8a0 (activator: the entity of the handle at +0x8c), sets the byte at +0x8b9, rebuilds the screen (sub_1021df90) and stores the id of the global record named "error" in a global (-1 when there is none)
 	void sub_1021df90();	// rebuilds the keypad screen (stub 0x1001347b), called directly
 	void vfunc273(CBasePlayer *pPlayer, const char *pszCommand);	// slot 273: unless the byte at +0x82c is set: "quit" / "exit" (first 16 characters) let the player leave (sub_10167fd0), any other non-empty command goes to sub_10217f50(0, command); the screen is rebuilt after each
