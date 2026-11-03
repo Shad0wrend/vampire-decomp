@@ -460,5 +460,8 @@ public:
 	virtual void vfunc579();
 	virtual int vfunc580();
 	void vfunc103();	// as in CAI_Hint (transplant)
+	bool vfunc592();	// slot 592: false before the time at +0x6664, else the Troika base
+	char m_pad03e0[0x6664 - 0x3e0];
+	float m_f6664;	// 0x6664: the time the check waits for
 	void sub_103c4ef0();	// as in CAI_Hint (transplant)
 };
