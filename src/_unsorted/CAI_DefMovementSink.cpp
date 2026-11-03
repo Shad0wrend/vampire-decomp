@@ -49,6 +49,13 @@ bool __stdcall sub_101a6400(int a, int b, int c, int d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027c750 size=0x7
+float sub_1027c750()
+{
+	return -1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027c770 size=0x5
 // TARGET: CAI_DefMovementSink::vfunc1
 bool CAI_DefMovementSink::vfunc1(int a, int b, int c)

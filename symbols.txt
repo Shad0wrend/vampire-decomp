@@ -8759,6 +8759,7 @@
 0x1000eca5 func   ?sub_10100080@SView@@QAEXHH@Z SView::sub_10100080
 0x1000ecaa func   ?sub_100afe70@@YAXXZ sub_100afe70
 0x1000ecaf func   ?sub_101cf210@@YAXPAH@Z sub_101cf210
+0x1000ecb4 func   ?sub_1027c750@@YAMXZ sub_1027c750
 0x1000ecb9 func   _env_player_surface_trigger env_player_surface_trigger
 0x1000ecbe func   ?sub_1022cf90@UtlMem@@QAEXXZ UtlMem::sub_1022cf90
 0x1000ecc8 func   _npc_VPedestrian npc_VPedestrian
