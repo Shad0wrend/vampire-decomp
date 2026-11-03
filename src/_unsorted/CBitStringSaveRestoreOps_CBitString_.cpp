@@ -22,6 +22,19 @@ void CBitStringSaveRestoreOps<CBitString>::vfunc0(CBitString **ppBits, CSave *pS
 }
 // END FUNCTION
 
+// FUNCTION: 0x10316cc0 size=0x34
+#include "CBitStringSaveRestoreOps.h"
+#include "CRestore.h"
+
+// TARGET: CBitStringSaveRestoreOps<CBitString>::vfunc1
+void CBitStringSaveRestoreOps<CBitString>::vfunc1(CBitString **ppBits, CRestore *pRestore)
+{
+	CBitString *pBits = *ppBits;
+	pBits->sub_100bf480(pRestore->vfunc14());
+	pRestore->vfunc15(pBits->m_pData, pBits->m_nDwords, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10316d10 size=0x2b
 #include "CBitStringSaveRestoreOps.h"
 
