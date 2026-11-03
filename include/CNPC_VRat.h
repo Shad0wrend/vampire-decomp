@@ -6,6 +6,9 @@ class CNPC_VRat
 {
 public:
 	CNPC_VRat *vfunc5(unsigned int flags);
+	void vfunc103();	// slot 103: the scurry base implementation after picking the global's address
+	char m_pad0000[0x10e4];
+	void *m_p10e4;	// 0x10e4
 	void sub_100123af();
 public:
 	int vfunc138();
