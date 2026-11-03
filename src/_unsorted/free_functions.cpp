@@ -16445,6 +16445,78 @@ void sub_10071cd0(float *out, const char *str)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10071e00 size=0x305
+#include <string.h>
+#include "vampire.h"
+#include "AttachPos_t.h"
+#include "CKeyValuesX.h"
+
+extern char *(*g_109f3888)(char *pStr, char *pOut, int nMaxLen);
+Vector sub_10071cd0(const char *pszText);
+
+// TARGET: sub_10071e00
+void __stdcall sub_10071e00(CKeyValuesX *pKV, AttachPos_t *pOut)
+{
+	const char *psz = pKV->sub_10248cd0("Position", "None");
+	if (strstr(psz, "Player"))
+		pOut->m_nFlags |= 1;
+	else if (strstr(psz, "DialogTarget"))
+		pOut->m_nFlags |= 2;
+	else if (strstr(psz, "GrappleVictim"))
+		pOut->m_nFlags |= 0x80000;
+	else if (strstr(psz, "GrappleAttacker"))
+		pOut->m_nFlags |= 0x100000;
+	else if (strstr(psz, "Named"))
+		pOut->m_nFlags |= 8;
+	else
+		pOut->m_nFlags |= 4;
+
+	psz = pKV->sub_10248cd0("AttachPos", "None");
+	if (strstr(psz, "Bone:"))
+	{
+		(*g_109f3888)((char *)psz + 5, pOut->m_szName, 0x10);
+		pOut->m_nFlags |= 0x200;
+	}
+	else if (strstr(psz, "Attachment:"))
+	{
+		(*g_109f3888)((char *)psz + 0xb, pOut->m_szName, 0x10);
+		pOut->m_nFlags |= 0x400;
+	}
+	else if (strstr(psz, "Center"))
+		pOut->m_nFlags |= 0x20;
+	else if (strstr(psz, "EyePosition"))
+		pOut->m_nFlags |= 0x40;
+	else if (strstr(psz, "Top"))
+		pOut->m_nFlags |= 0x100;
+	else if (strstr(psz, "Bottom"))
+		pOut->m_nFlags |= 0x80;
+	else if (strstr(psz, "AbsMin"))
+		pOut->m_nFlags |= 0x800;
+	else if (strstr(psz, "AbsMax"))
+		pOut->m_nFlags |= 0x1000;
+	else
+		pOut->m_nFlags |= 0x10;
+
+	const char *pszType = pKV->sub_10248cd0("AttachType", "None");
+	if (strcmp(pszType, "Follow") == 0)
+		pOut->m_nFlags |= 0x4000;
+	else if (strcmp(pszType, "FollowNoAngles") == 0)
+		pOut->m_nFlags |= 0x8000;
+	else if (strcmp(pszType, "FollowEntAngles") == 0)
+		pOut->m_nFlags |= 0x10000;
+	else
+		pOut->m_nFlags |= 0x2000;
+
+	pOut->m_vecOffsetOrigin = sub_10071cd0(pKV->sub_10248cd0("OffsetOrigin", "[0, 0, 0]"));
+	if (pOut->m_vecOffsetOrigin.Length() != 0.0f)
+		pOut->m_nFlags |= 0x20000;
+
+	pOut->m_vecOffsetAngles = sub_10071cd0(pKV->sub_10248cd0("OffsetAngles", "[0, 0, 0]"));
+	if (pOut->m_vecOffsetAngles.Length() != 0.0f)
+		pOut->m_nFlags |= 0x40000;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100727a0 size=0x3
 struct CUnknown100727a0 { void * sub_100727a0(); };
 void * CUnknown100727a0::sub_100727a0()

@@ -1359,6 +1359,7 @@
 0x10003111 func   _env_sun env_sun
 0x10003116 func   ?sub_1017e740@CUnknown1017e740@@QAEHXZ CUnknown1017e740::sub_1017e740
 0x1000311b func   ?sub_10158d60@@YIXPAPAX@Z sub_10158d60
+0x10003120 func   ?sub_10071e00@@YGXPAVCKeyValuesX@@PAUAttachPos_t@@@Z sub_10071e00
 0x10003125 func   ?vfunc451@CNPC_VAsianVampire@@QAEHXZ CNPC_VAsianVampire::vfunc451
 0x1000312a func   ?sub_100ccf90@CEventAction@@QAEPAV1@PBD@Z CEventAction::sub_100ccf90
 0x1000312f func   ?sub_103c6eb0@CNPC_VVampireBoss@@QAEXXZ CNPC_VVampireBoss::sub_103c6eb0
