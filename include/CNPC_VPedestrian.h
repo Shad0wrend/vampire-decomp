@@ -529,3 +529,8 @@ public:
 	int m_eLevelResetType;	// 0x667c
 	char m_pad6680[0x6684 - 0x6680];
 };
+
+// Callees of CNPC_VPedestrian::vfunc130 (free functions, saved symbols).
+void __cdecl sub_101cf390(int pThis, int pMins, int pMaxs);	// 0x101cf390 (?sub_101cf390@@YAXHHH@Z): forwards to 0x101cf3c0 with a trailing 0
+void __cdecl sub_101cf5c0(CBaseEntity *pEntity, int pOrigin, int bTouch);	// 0x101cf5c0 (?sub_101cf5c0@@YAXPAVCBaseEntity@@HH@Z): slot 62(pOrigin), then PhysicsTouchTriggers when bTouch
+void __cdecl sub_101cf600(void *pEntity);	// 0x101cf600: entity helper called with this
