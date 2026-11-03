@@ -224,6 +224,7 @@ public:
 	void sub_100041b0(int task);	// stub 0x100041b0 for 0x10269a20: sets a task (the inverse of sub_10015839)
 
 #include "CAI_BaseNPCTroika_ext.h"
+	virtual void vfunc21(int a);	// slot 21 override: sub_102bf5d0(a) on the unit view, ++m_n6064, the dev-flag global 0x10924a6c slot 1, then CAI_BaseNPC::sub_10269a20(0xa)
 	void vfunc22(int a);
 	void vfunc614();
 
@@ -302,7 +303,9 @@ public:
 	char m_Output5f8c[0x18];	// 0x5f8c: a COutputEvent (0x18 bytes, view with (COutputEvent *)m_Output5f8c; fired with (m_p62ec, this, 0) by sub_102b53d0)
 	char m_pad5fa4[0x6010 - 0x5fa4];
 	unsigned int m_h6010;
-	char m_pad6014[0x6074 - 0x6014];
+	char m_pad6014[0x6064 - 0x6014];
+	int m_n6064;	// 0x6064: incremented by vfunc21 (a count of the things sub_102bf5d0 was told about)
+	char m_pad6068[0x6074 - 0x6068];
 	float m_f6074;	// 0x6074: the next time slot 600 may ask again
 	char m_b6078;	// 0x6078: set while slot 599 / 600 hold the ranged position
 	char m_pad6079[0x607c - 0x6079];
