@@ -154,7 +154,8 @@ public:
 	// slots 409..447
 	virtual int vfunc409(); CBP_V1(si0b) CBP_V1(si0c)
 	virtual bool vfunc412();
-	CBP_V1(si0e) CBP_V1(si0f) CBP_V1(si0g) CBP_V1(si0h) virtual void vfunc417(int a, int b);
+	virtual bool vfunc413();	// slot 413: true in activity 0x32, else slot 412
+	CBP_V1(si0f) CBP_V1(si0g) CBP_V1(si0h) virtual void vfunc417(int a, int b);
 	virtual char vfunc418(int unused);	// slot 418: runs sub_101644f0(-1, 0, 0), then steps the activity at +0xff0 (0xf49 -> 0xf52 when the entity of the handle at +0xfe8 is gone; with the byte at +0x65c set 0xf40 -> 0xf49), true while it is 0xf52
 	virtual char vslot419(int a); virtual char vslot420(int a);
 	virtual char vfunc421(int unused);	// slot 421: false unless the byte at +0x65c is set; with a live character behind the handle at +0x1538 (and +0x153c set) builds a damage record sourced at this player and hands the character a one point damage info (stat 0xf set to the value of stat 0x11 of its active stat list), slot 144 and slot 403; true
