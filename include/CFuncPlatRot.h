@@ -10,6 +10,7 @@ class CFuncPlatRot
 {
 public:
 	CFuncPlatRot *vfunc5(unsigned int flags);
+	void vfunc103();	// slot 103: CFuncPlat::vfunc103, then sub_1015a140
 	void vfunc242();	// slot 242 of the rotating platform: the CFuncPlat slot 242, then the angular move of the final angles (+0x574) over the time left to the move's end
 	void vfunc243();	// slot 243 of the rotating platform: the CFuncPlat slot 243, then the angular move of the start angles (+0x580) over the time left to the move's end
 	void vfunc244();	// slot 244 of the rotating platform: the CFuncPlat slot 244, then SetLocalAngularVelocity(g_1070d9d0) and the think-style virtual call slot 64 with the final angles (+0x574)
