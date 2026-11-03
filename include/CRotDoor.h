@@ -63,6 +63,10 @@ public:
 	Vector m_vecMins6bc;	// +0x6bc: the volume for the opposite angles
 	Vector m_vecMaxs6c8;	// +0x6c8
 	Vector m_vecCenter6d4;	// +0x6d4
+	char m_pad06e0[0x6f8 - 0x6e0];
+	float m_flAngle6f8;	// +0x6f8: one of the three door angles used by GetNPCOpenData
+	float m_flAngle6fc;	// +0x6fc
+	float m_flAngle700;	// +0x700
 public:
     virtual datamap_t * vfunc82();
 public:
