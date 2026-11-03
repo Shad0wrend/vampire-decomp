@@ -426,6 +426,7 @@
 0x10001a5a func   ?IsLeftChild@?$CUtlRBTree@UCRBTree12Entry_101c03c0@@G@@QBE_NG@Z CUtlRBTree<CRBTree12Entry_101c03c0,unsigned short>::IsLeftChild
 0x10001a5a func   ?sub_101c02d0@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_101c02d0
 0x10001a5f func   ?vfunc5@CAI_BaseHumanoid@@QAEPAV1@I@Z CAI_BaseHumanoid::vfunc5
+0x10001a64 func   ?vfunc25@CBasePlayer@@QAEXPAVCBaseEntity@@@Z CBasePlayer::vfunc25
 0x10001a69 func   ?vfunc180@CWeaponPhysCannon@@UAEXXZ CWeaponPhysCannon::vfunc180
 0x10001a6e func   ?sub_101c2c30@@YAHXZ sub_101c2c30
 0x10001a78 func   ?sub_10397dd0@CUnk10397dd0@@QAEXHH@Z CUnk10397dd0::sub_10397dd0
