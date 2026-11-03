@@ -57,7 +57,9 @@ public:
 	unsigned char sub_10116550();	// CFuncMoveLinear::vfunc117 body (CBaseEntity::vfunc117 & 0xfd)
 	void sub_1000cb8a();	// destructor body (the CBaseToggle/CBaseEntity part, stub 0x1000cb8a), called directly
 
-	char m_pad0004[0x164 - 4];
+	char m_pad0004[0x10c - 4];
+	EHANDLE m_hActivator10c;	// 0x10c: the activator handle (CBaseEntity::m_hActivator10c; read by sub_10116570)
+	char m_pad0110[0x164 - 0x110];
 	float m_flSpeed;	// 0x164
 	char m_pad0168[0x224 - 0x168];
 	unsigned char m_bDebugOverlays224;	// 0x224: bit 0 = text overlay
