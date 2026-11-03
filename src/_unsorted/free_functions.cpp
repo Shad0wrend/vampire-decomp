@@ -59173,6 +59173,35 @@ bool sub_101301f0(float flFrac, int index, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130260 size=0x43
+#include "CLight.h"
+
+void *sub_100aa720(int size);
+extern char g_105758a0[];
+
+#define VD10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CLightVt
+{
+	VD10(a) VD10(b) VD10(c) VD10(d) VD10(e) VD10(f) VD10(g) VD10(h) VD10(i) VD10(j)
+	virtual void s100(); virtual void s101(); virtual void s102(); virtual void s103(); virtual void s104(); virtual void s105();
+	virtual void vfunc106(const char *pszName);
+};
+
+// TARGET: light
+extern "C" CBaseEntity *light()
+{
+	void *mem = sub_100aa720(0x460);
+	CLight *p;
+	if (mem)
+		p = ((CLight *)mem)->sub_10130360();
+	else
+		p = 0;
+	((CLightVt *)p)->vfunc106(g_105758a0);
+	return (CBaseEntity *)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130330 size=0x1a
 namespace lifted {
 extern int g_105754f8;
