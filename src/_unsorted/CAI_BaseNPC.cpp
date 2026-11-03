@@ -2254,6 +2254,15 @@ CAI_LocalNavigator *CAI_BaseNPC::vfunc428()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027cf90 size=0x1f
+#include "CAI_Navigator.h"
+
+CAI_Navigator *CAI_BaseNPC::vfunc429()
+{
+	return new CAI_Navigator((int)this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027d9d0 size=0x5
 #include "CAI_BaseNPC.h"
 
