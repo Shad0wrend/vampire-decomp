@@ -31,4 +31,5 @@ public:
     virtual int vfunc117();
     void *vfunc5(unsigned int flags);	// as in CTriggerElectricBugaloo (transplant)
     virtual int vfunc34(int a);	// slot 34: true when slot 35(a) is non-zero
+    virtual int vfunc35(int a);	// slot 35: the value at +0x738 when sub_1020e020() holds, else the one at +0x734
 };
