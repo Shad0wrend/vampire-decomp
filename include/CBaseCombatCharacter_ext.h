@@ -81,7 +81,9 @@
 	Vector vfunc368();	// "CBaseCombatCharacter::BodyDirection2D": scope trace (entity name), slot 369 (BodyDirection3D) into a local, z = 0, normalised through the function pointer at 0x1057966c, returned by value
 	Vector vfunc370();	// "CBaseCombatCharacter::HeadDirection2D"-like: scope trace (entity name), slot 371 into a local, z = 0, normalised through the function pointer at 0x1057966c, returned by value
 	void sub_10340c90(inputdata_t *data);	// "CBaseCombatCharacter::InputMoneyAdd": scope trace (entity name), when the input's type is 4 and its integer is non-zero calls sub_10340e50(integer)
-	void sub_10340e50(int amount);	// "CBaseCombatCharacter::MoneyAdd" worker
+	void sub_10340e50(int amount);
+	int vfunc373(int a);	// slot 373 (plain member): the virtual slot 371 of this with a, then returns a
+	//	// "CBaseCombatCharacter::MoneyAdd" worker
 	virtual void vfunc103();	// slot 103 "CBaseCombatCharacter::Spawn": scope trace (entity name), AddToTeam(name at +0x10ac) when non-empty, then CBaseAnimating::vfunc103
 	void vfunc311(int a, int b, int c);	// slot 311 "CBaseCombatCharacter::ForcePreTranslatedSequenceAndActivity": scope trace (entity name), when c >= 0 stores a / b at +0xff0 / +0xff4, sets the sequence (CAI_BaseNPC::sub_10260a50(c)), clears the float at +0x6f8, runs sub_10090950 and copies the dword at +0x1488 to +0x6f4
 	void sub_10090950();	// stub 0x100117b1, called directly by vfunc311
