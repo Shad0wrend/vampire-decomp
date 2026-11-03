@@ -34,6 +34,7 @@ struct CTakeDamageInfo
 	char m_b48, m_b49, m_b4a;	// 0x48..0x4a: cleared
 	char m_pad004b;
 
+	int sub_101c2a30();	// 0x101c2a30: the dword at +0x40 (the hitbox index the corpse / damage effect code uses to pick the bone)
 	void sub_101c2a10(int bitsDamageType);	// stub 0x10005916: stores the damage type at +0x40
 	int sub_101c29b0();	// the edict index of the inflictor (+0x2c) through the engine's IndexOfEdict
 	void sub_101c2890(void *pAttacker, void *pInflictor, float flDamage, int a, int b, int c);	// the common part of the constructors (stub 0x10013c23): fills the record, the inflictor defaults to the attacker
