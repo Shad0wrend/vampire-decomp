@@ -6,6 +6,8 @@
 class CGeneric_NPC : public CAI_BaseNPCTroika
 {
 public:
+	CGeneric_NPC *vfunc5(int flags);	// slot 5 (plain overload of the base slot; VC6 has no covariant returns): sub_100123af (destructor body, stub 0x100123af), then sub_100aa7b0(this) when flags & 1; returns this
+	void sub_100123af();	// the destructor body (stub 0x100123af -> 0x1028d610), called directly
 	CGeneric_NPC *sub_10359ec0();	// constructor: CAI_BaseNPCTroika's constructor, the member at +0x665c's constructor (sub_10002937), then the vtables at +0x0 and +0x19b0
 	virtual float vfunc516();	// float constant picked by the state at +0xfec (0x13, 0x3b..0x3c, other)
 	virtual void vfunc104();	// slot 104 "CGeneric_NPC::Precache": when the model name (slot 9) is empty sets the default model, precaches the model and the sounds, then CAI_BaseNPCTroika::vfunc104
