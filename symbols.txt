@@ -11884,6 +11884,7 @@
 0x10013011 func   ?sub_102ecc00@CUnknown102ecc00@@QAEHXZ CUnknown102ecc00::sub_102ecc00
 0x1001301b func   ?sub_10312b50@CAI_Expresser@@QAEXXZ CAI_Expresser::sub_10312b50
 0x10013020 func   ?vfunc1@ConCommand@@UAE_NXZ ConCommand::vfunc1
+0x10013025 func   ?vfunc6@CRestore@@UAEXPAX@Z CRestore::vfunc6
 0x1001302a func   ?vfunc104@CBaseViewModel@@UAEXXZ CBaseViewModel::vfunc104
 0x1001302f func   ?vfunc433@CNPC_VPedestrian@@QAEXXZ CNPC_VPedestrian::vfunc433
 0x10013034 func   ?vfunc420@CNPC_VChangBrosClaw@@QAEXXZ CNPC_VChangBrosClaw::vfunc420
