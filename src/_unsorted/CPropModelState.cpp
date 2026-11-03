@@ -12,6 +12,35 @@ datamap_t * CPropModelState::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102163e0 size=0x52
+#include "CCineNPC.h"
+#include "CBaseAnimating.h"
+
+void sub_100aa7b0(void *);
+
+struct Helper
+{
+	void *sub_102163e0(unsigned int flags);
+};
+
+// TARGET: Helper::sub_102163e0
+void *Helper::sub_102163e0(unsigned int flags)
+{
+	CCineNPCSlot *p = (CCineNPCSlot *)((char *)this + 0x850);
+	int n = 8;
+	do {
+		--p;
+		p->sub_10015708();
+	} while (--n);
+	((CCineNPCSlot *)((char *)this + 0x778))->sub_10015708();
+	((CCineNPCSlot *)((char *)this + 0x760))->sub_10015708();
+	((CBaseAnimating *)this)->sub_1008b3c0();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10216460 size=0x5e
 #include "CPropModelState.h"
 extern char g_106b8540[];
