@@ -3201,6 +3201,7 @@
 0x10005df8 func   ?sub_103061e0@CUnknown103061e0@@QAEHXZ CUnknown103061e0::sub_103061e0
 0x10005dfd func   _prop_sign prop_sign
 0x10005e02 func   ?sub_10107aa0@CFilterMultiple@@QAE_NPAVCBaseEntity@@@Z CFilterMultiple::sub_10107aa0
+0x10005e11 func   ?IsLeftChild@?$CUtlRBTree@UCRBTree12Entry_1024c1d0@@G@@QBE_NG@Z CUtlRBTree<CRBTree12Entry_1024c1d0,unsigned short>::IsLeftChild
 0x10005e11 func   ?sub_1024c0e0@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_1024c0e0
 0x10005e1b func   ?sub_103419c0@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_103419c0
 0x10005e20 func   ?vfunc440@CNPC_VHuman@@QAEHH@Z CNPC_VHuman::vfunc440
