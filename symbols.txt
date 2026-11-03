@@ -3172,6 +3172,7 @@
 0x10005e1b func   ?sub_103419c0@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_103419c0
 0x10005e20 func   ?vfunc440@CNPC_VHuman@@QAEHH@Z CNPC_VHuman::vfunc440
 0x10005e39 func   ?sub_1035bee0@S@@QAEXH@Z S::sub_1035bee0
+0x10005e43 func   ?vfunc27@CAI_BaseNPCTroika@@UAEXH@Z CAI_BaseNPCTroika::vfunc27
 0x10005e48 func   ?sub_101f0bc0@CUnknown101f0bc0@@QAEXPAX@Z CUnknown101f0bc0::sub_101f0bc0
 0x10005e4d func   ?sub_103ff730@@YAHXZ sub_103ff730
 0x10005e52 func   ?sub_103c7880@@YIPAXPAX@Z sub_103c7880
