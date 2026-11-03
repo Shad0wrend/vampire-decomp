@@ -42027,6 +42027,38 @@ void sub_100d6d40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d7040 size=0xdb
+#include <stdlib.h>
+#include "CVDmg_t.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101d88b0.h"
+#include "CUnknown101d8a70.h"
+
+// TARGET: sub_100d7040
+extern int g_1055e878;
+extern CUnknown101e7c50 g_10739d08;
+int sub_101193b0();
+
+void sub_100d7040()
+{
+	static CVDmgBlock16_t s_Block = *g_10739d08.sub_101e7c50("Close_Combat_Brawl");
+
+	if (engine->vfunc85() == 3)
+	{
+		s_Block.sub_10204570(engine->vfunc84(1));
+		g_1055e878 = atoi(engine->vfunc84(2));
+	}
+
+	char *pPlayer = (char *)sub_101193b0();
+	if (pPlayer != 0 && *(int *)(pPlayer + 0xa8) != 0)
+	{
+		int nResult;
+		CUnknown101d88b0 roll((CVDmgSource_t *)*(int *)(pPlayer + 0xa8), &s_Block, g_1055e878);
+		((CUnknown101d8a70 *)&roll)->sub_101d8b40(&nResult, 1);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d7210 size=0x7e
 #include <stdlib.h>
 

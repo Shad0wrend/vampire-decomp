@@ -5194,6 +5194,7 @@
 0x10008deb func   ?sub_102d41a0@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_102d41a0
 0x10008df0 func   ?sub_101f7bb0@CUnknown101f7bb0@@QAE_NPAX@Z CUnknown101f7bb0::sub_101f7bb0
 0x10008df5 func   ?vfunc80@CBaseCombatCharacter@@UAEHXZ CBaseCombatCharacter::vfunc80
+0x10008dfa func   ?sub_100d7040@@YAXXZ sub_100d7040
 0x10008e09 func   ?sub_10202880@@YAPBDH@Z sub_10202880
 0x10008e0e func   ?sub_10258500@@YAPBDH@Z sub_10258500
 0x10008e13 func   ??0CTraceFilterEntity@@QAE@PAXH@Z CTraceFilterEntity::CTraceFilterEntity
