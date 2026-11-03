@@ -8728,6 +8728,7 @@
 0x1000ea16 func   ?sub_10264000@CUtlVector56@@QAEHHPBX@Z CUtlVector56::sub_10264000
 0x1000ea20 func   ?sub_1028b0f0@@YGHH@Z sub_1028b0f0
 0x1000ea25 func   ?sub_10082db0@CSceneEntity@@QAEXXZ CSceneEntity::sub_10082db0
+0x1000ea2a func   ?vfunc2@?$CUtlVectorDataOps@V?$CUtlVector@V?$CHandle@VCAI_BaseNPC@@@@V?$CUtlMemory@V?$CHandle@VCAI_BaseNPC@@@@@@@@$0M@@@UAE_NPAX@Z CUtlVectorDataOps<CUtlVector<CHandle<CAI_BaseNPC>,CUtlMemory<CHandle<CAI_BaseNPC> > >,12>::vfunc2
 0x1000ea34 func   ?vfunc32@CSave@@UAEXPBHH@Z CSave::vfunc32
 0x1000ea3e func   ?sub_10026df0@@YGXHH@Z sub_10026df0
 0x1000ea43 func   ?sub_103078d0@CUnknown103078d0@@QAEXXZ CUnknown103078d0::sub_103078d0

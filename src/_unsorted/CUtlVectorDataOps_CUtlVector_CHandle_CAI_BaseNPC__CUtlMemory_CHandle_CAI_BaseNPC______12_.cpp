@@ -74,3 +74,16 @@ template<> int CUtlVectorDataOps<CUtlVector<CHandle<CAI_BaseNPC>,CUtlMemory<CHan
 	return (int)pVec;
 }
 // END FUNCTION
+
+// FUNCTION: 0x102ce0d0 size=0x13
+#include "CUtlVectorDataOps.h"
+#include "ehandle.h"
+
+class CAI_BaseNPC;
+
+template <>
+bool CUtlVectorDataOps<CUtlVector<CHandle<CAI_BaseNPC>,CUtlMemory<CHandle<CAI_BaseNPC> > >,12>::vfunc2(void *pFieldData)
+{
+	return *(int *)(*(char **)pFieldData + 0xc) == 0;
+}
+// END FUNCTION
