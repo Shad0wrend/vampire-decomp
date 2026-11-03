@@ -8,6 +8,8 @@
 #include "matrix3x4_t.h"
 
 struct StudioCacheEntry;
+struct Ray_t;
+struct CGameTrace;
 
 StudioCacheEntry *sub_100c46c0(int studiohdr, int sequence, float time, const float *angles, const float *origin, unsigned int mask);
 StudioCacheEntry *sub_100c4a20(int studiohdr, int sequence, float time, const float *angles, const float *origin, unsigned int mask, void *pBones);
@@ -16,3 +18,8 @@ void sub_100c47d0(int studiohdr, int sequence, int time, const float *angles, co
 void sub_100c4600(int *pBoneMap, void *pBoneData, StudioHdr *pStudioHdr, StudioHitboxSet *pSet);
 
 void sub_1013c0e0(const matrix3x4_t &boneToWorld, const Vector &vecMins, const Vector &vecMaxs, Vector &vecOutMins, Vector &vecOutMaxs);
+
+// matrix / box helpers called by the hitbox trace code (bone_setup.cpp):
+void sub_10137fe0(const float *pIn, const float *pMatrix, float *pOut);	// VectorTransform: pOut = pMatrix * pIn + translation
+void sub_10138130(const float *pIn, const float *pMatrix, float *pOut);	// VectorIRotate: (pIn - translation) projected on the matrix's columns
+bool sub_10240cb0(const float *pStart, const float *pDelta, const float *pMins, const float *pMaxs, float flTolerance, CGameTrace *pTrace);	// IntersectRayWithBox worker: fills pTrace and answers whether the ray hits the box
