@@ -671,6 +671,28 @@ int sub_1026ae90(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026aef0 size=0x26
+#include "CAI_BaseNPC.h"
+#include "CAI_Senses.h"
+
+extern void (__cdecl *g_109f3630)(const char *fmt, ...);
+
+struct CUnknown1026aef0View
+{
+	char m_pad0000[0x5cdc];
+	CAI_Senses *m_pSenses;	// 0x5cdc
+};
+
+// TARGET: CAI_BaseNPC::vfunc474
+void *CAI_BaseNPC::vfunc474()
+{
+	void *p = ((CUnknown1026aef0View *)this)->m_pSenses->sub_103104f0(0);
+	if (p == 0)
+		g_109f3630("Warning: NULL Return from GetBestSound\n");
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026af30 size=0x26
 #include "CAI_Senses.h"
 
