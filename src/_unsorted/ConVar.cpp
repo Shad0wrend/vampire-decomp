@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10245a40 size=0x36
+#include "ConVar.h"
+
+// TARGET: ConVar::ConVar
+ConVar::ConVar(const char *pName, const char *pDefaultValue, int flags)
+{
+	vfunc12(pName, pDefaultValue, flags, 0, 0, 0.0f, 0, 0.0f, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10245a90 size=0x1e
 #include "ConVar.h"
 
