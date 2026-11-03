@@ -17046,6 +17046,20 @@ char CUnknown100737f0::sub_100737f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10073850 size=0x35
+#include "CUnknown10076da0.h"
+#include <string.h>
+
+// TARGET: CUnknown10076da0Entry::sub_10073850
+CUnknown10076da0Entry *CUnknown10076da0Entry::sub_10073850(const CUnknown10076da0Entry *pSrc)
+{
+	strcpy((char *)this, (const char *)pSrc);
+	*(int *)((char *)this + 0x80) = *(int *)((char *)pSrc + 0x80);
+	*(int *)((char *)this + 0x84) = *(int *)((char *)pSrc + 0x84);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100738a0 size=0x3
 struct CUnknown100738a0 { void * sub_100738a0(); };
 void * CUnknown100738a0::sub_100738a0()

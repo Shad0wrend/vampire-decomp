@@ -5252,6 +5252,7 @@
 0x10009061 func   ?vfunc0@CTEBubbles@@UAEHXZ CTEBubbles::vfunc0
 0x10009066 func   ?sub_10057740@CUnknown10057680@@QAEXPBD0H@Z CUnknown10057680::sub_10057740
 0x1000906b func   ?vfunc82@CFilterName@@UAEPAUdatamap_t@@XZ CFilterName::vfunc82
+0x10009070 func   ?sub_10073850@CUnknown10076da0Entry@@QAEPAU1@PBU1@@Z CUnknown10076da0Entry::sub_10073850
 0x10009075 func   ?sub_10083910@@YAXHPBDZZ sub_10083910
 0x1000907a func   ?sub_100615e0@@YAHXZ sub_100615e0
 0x1000907f func   ?sub_104304c0@@YAII@Z sub_104304c0
