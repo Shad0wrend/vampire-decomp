@@ -11,9 +11,18 @@ struct CAI_IPSlot	// 0x1c byte record; only the first dword is touched so far
 	char m_pad[0x18];
 };
 
+class CAI_InterestingPlace;
+
+struct CAI_IPBaseDtor
+{
+	~CAI_IPBaseDtor();
+	char m_pad[0x70];
+};
+
 class CAI_InterestingPlace : public CBaseEntity
 {
 public:
+	virtual ~CAI_InterestingPlace();
 	CAI_InterestingPlace *vfunc5(unsigned int flags);
 	virtual void vfunc103();	// Spawn-like: looks up the place type by the name at +0x544 (removes the entity with a warning when unknown), allocates the slot records (+0x580, count +0x584), turns the number at +0x574 (1..32) into a bit mask, clamps the value at +0x578 to 0..5
 	virtual void vfunc130(int a);	// the base implementation (CBaseEntity::vfunc130), then, when a type name is set, looks the place type up (removing the entity with a warning when unknown), then sub_102d9eb0
@@ -24,7 +33,7 @@ public:
 	void sub_102d9b10();	// the destructor body (stub 0x1000a25e): stores the vtable, frees the slot records (+0x580), unlinks the place from the global chain (head 0x10927194, next pointer at +0x540, count 0x10927198), then destroys the outputs: the eight at +0x480 (last first), then +0x468 and +0x450, and runs the base destructor body (sub_1000cb8a)
 	void sub_1000cb8a();	// base class destructor body (stub 0x1000cb8a), tail called
 
-	char m_pad03e0[0x450 - 0x3e0];
+	CAI_IPBaseDtor m_baseDtor3e0;
 	COutputEvent m_Output450;	// 0x450: the constructor 0x102d99d0 builds the outputs (stub 0x10002ddd) before it stores the vtable
 	COutputEvent m_Output468;	// 0x468
 	COutputEvent m_Outputs480[8];	// 0x480 .. 0x540: built in a loop, destroyed last first
@@ -51,3 +60,8 @@ public:
 public:
     virtual datamap_t * vfunc82();
 };
+
+inline CAI_IPBaseDtor::~CAI_IPBaseDtor()
+{
+	((CAI_InterestingPlace *)((char *)this - 0x3e0))->sub_1000cb8a();
+}
