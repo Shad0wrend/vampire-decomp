@@ -6,6 +6,9 @@
 #include "CUtlVectorDataOps.h"
 #include "Vector.h"
 #include "CAI_InterestTarget.h"
+#include "CAI_MoveProbe.h"
+#include "CEntityVSlots.h"
+#include "IPhysicsObject.h"
 
 struct ISaveRestoreOps;
 class CBaseEntity;
@@ -69,7 +72,7 @@ public:
 	CAI_Motor *sub_102e0900(int outer);
 	void sub_102e2840(int a, int b);	// forwards (a, b) to slot 93 of the owning NPC (stub 0x1000628a)
 	void sub_102e0ba0(void *pMovementSink);	// "CAI_Motor::Init" (stub 0x10003a1c): takes the local navigator's movement sink (its secondary base at +0x10)
-	int sub_102e0bd0(void *pOut, CBaseEntity *pTarget, int a, int b, int c, int d, int e);	// stub 0x100103ca: 7 stack arguments (the AutoMovement test of a move toward pTarget); 1 when the move is possible
+	int sub_102e0bd0(void *pOut, CBaseEntity *pTarget, int a, char b, char c, AIMoveTrace_t *d, int e);	// stub 0x100103ca: 7 stack arguments (the AutoMovement test of a move toward pTarget); 1 when the move is possible
 	void sub_102e20b0(const float *pPosition, float flWeight);	// "AddFacingTarget"-like: queues a look target (position, priority) (stub 0x10007248)
 	float sub_102e2750(const float *pPosition);	// CAI_Component helper (stub 0x10014f0b): the owning NPC's slot 515 (+0x80c) answer for pPosition, a yaw
 	void sub_102e2020(const float *pPosition, int b);	// sets the ideal yaw (+0x34) to the yaw toward pPosition (sub_102e2750; flipped by 180 when the byte at +0x28 is set), limited by sub_102e0a80 unless the largest change is 180
