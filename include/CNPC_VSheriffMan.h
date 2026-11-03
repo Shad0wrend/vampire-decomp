@@ -29,7 +29,7 @@ public:
 	char pad6684[0x6694 - 0x6684];
 	const char *m_pszNpcName;	// +0x6694
 	char pad6698[0x66d0 - 0x6698];
-	unsigned int m_hTeleportBats;	// +0x66d0: entity handle of the teleport bats
+	EHANDLE m_hTeleportBats;	// +0x66d0: entity handle of the teleport bats
 	int m_nSpawnOrigin[3];	// +0x66d4: the origin at NPCInit (three float bits)
 	int m_nSpawnTime;	// +0x66e0: gpGlobals->curtime bits at NPCInit
 	char m_b66e4;	// +0x66e4
