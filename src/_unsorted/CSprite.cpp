@@ -1,6 +1,19 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1042e040 size=0x1d
+#include "CSprite.h"
+
+// TARGET: CSprite::sub_1042e040
+unsigned int CSprite::sub_1042e040()
+{
+	unsigned int flags = 0;
+	if (m_flags204 & 0x8000)
+		flags = 0x80000000;
+	return (CBaseEntity::vfunc117() & ~2) | flags;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042e0f0 size=0x6
 #include "CSprite.h"
 namespace lifted {

@@ -11733,6 +11733,7 @@
 0x10013250 func   ?vfunc546@CAI_BaseNPC@@QAEHH@Z CAI_BaseNPC::vfunc546
 0x10013255 func   ?vfunc451@CNPC_VZombie@@UAEHXZ CNPC_VZombie::vfunc451
 0x1001325a func   ?vfunc30@CBaseEntity@@UAEMXZ CBaseEntity::vfunc30
+0x1001325f func   ?sub_1042e040@CSprite@@QAEIXZ CSprite::sub_1042e040
 0x10013264 func   ?sub_1035bf90@@YGXH@Z sub_1035bf90
 0x10013269 func   ?sub_10311b90@CAI_Expresser@@QAEHXZ CAI_Expresser::sub_10311b90
 0x10013273 func   ?sub_100fea60@CUnknown100fea60@@QAEXPAVCBaseEntity@@@Z CUnknown100fea60::sub_100fea60
