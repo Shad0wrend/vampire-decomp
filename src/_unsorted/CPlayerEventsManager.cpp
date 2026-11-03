@@ -1,6 +1,23 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10227680 size=0x41
+#include "CPlayerEventsManager.h"
+
+void CPlayerEventsManager::vfunc2()
+{
+	m_Size = 0;
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+	m_pElements = m_pMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102276f0 size=0x1
 void sub_102276f0() {
 }
