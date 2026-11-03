@@ -5,5 +5,6 @@
 class IMoveHelper
 {
 public:
+	virtual ~IMoveHelper() {}
 	void *vfunc14(char flags);	// slot 14: the scalar deleting destructor (vftable store, operator delete when bit 0, returns this)
 };
