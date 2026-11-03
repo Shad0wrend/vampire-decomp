@@ -33,6 +33,7 @@ public:
 	datamap_t * vfunc82();
 	int vfunc362();
 	int vfunc363();
+	char vfunc315();	// slot 315: the melee swing when it started, then the torch's emitter setup
 	void vfunc180();	// as in CNPC_VBach (transplant)
 	void vfunc66();	// as in CNPC_VBach (transplant)
 	void vfunc67();	// as in CNPC_VBach (transplant)
