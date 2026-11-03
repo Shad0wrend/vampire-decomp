@@ -14,7 +14,9 @@ public:
 	SFloatPair m_volume;	// 0x0004
 	SFloatPair m_pitch;	// 0x000c
 	SFloatPair m_soundlevel;	// 0x0014
-	char m_pad001c[0x49 - 0x1c];
+	char m_bPlayToOwnerOnly;	// 0x1c: the "play_to_owner_only" key of the sound script block
+	char m_bPrecache;	// 0x1d: the "precache" key of the sound script block
+	char m_pad001e[0x49 - 0x1e];
 	char m_szVolume[0x20];	// 0x0049: the volume text (VOL_NORM or a number pair)
 	char m_szChannel[0x20];	// 0x0069: the channel name (copied with 32 bytes, see sub_101b2490)
 	char m_szSoundLevel[0x20];	// 0x0089
