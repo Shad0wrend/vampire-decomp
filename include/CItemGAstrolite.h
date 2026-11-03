@@ -16,6 +16,7 @@ public:
 public:
 	int vfunc80();
 	int vfunc81();
+	int vfunc117();	// slot 117: CBaseCombatWeapon::sub_102521f0() == 0 and !m_b914 ? CBaseCombatWeapon::vfunc117() | 8 : CBaseCombatWeapon::vfunc117()
 	int vfunc35(CBaseEntity *pOther);	// slot 35 (plain member): 0 when m_b914, else CBaseCombatWeapon::vfunc35(pOther)
 	int vfunc34(CBaseEntity *pOther);	// slot 34 (plain member): 0 when m_b914, else CBaseCombatWeapon::vfunc34(pOther)
 
