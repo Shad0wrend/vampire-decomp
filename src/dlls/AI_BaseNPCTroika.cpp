@@ -473,6 +473,114 @@ char CAI_BaseNPCTroika::vfunc320(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102aa640 size=0x1b0
+#include "CAI_Navigator.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_TroikaLink.h"
+#include "Vector.h"
+struct AI_NavGoal_t
+{
+	int m_iType;
+	Vector m_vecDest;
+	int m_nNodeID;
+	int m_hTarget;
+	int m_nArrivalSeq;
+	int m_nArrivalAct;
+	float m_flSpeed;
+	int m_nFlags;
+	int m_n28;
+	Vector m_vec2c;
+	int m_n38;
+	int m_n3c;
+};
+
+extern int g_106c994c;
+extern int g_10923dd8;
+extern Vector g_10934060;
+extern float g_1049a1ac;
+extern void (*g_109f3658)(int, const char *, ...);
+
+void CAI_BaseNPCTroika::sub_102aa640(CTroikaPickHolder *pTask)
+{
+	CAI_NavProvider *pNode;
+	CAI_NavProviderList *pList;
+	Vector vecPos;
+	Vector *pPos;
+	int n28;
+	float flSpeed;
+	AI_NavGoal_t goal;
+	int iNode;
+
+	if ( pTask != 0 && pTask->m_pPick != 0 )
+	{
+		iNode = pTask->m_pPick->m_aNodes[pTask->m_pPick->m_iCur];
+		if ( iNode != -1 )
+		{
+			pList = m_p5d34->m_pProviders;
+			if ( iNode < 0 || iNode >= pList->m_nCount )
+			{
+				g_106c994c++;
+				pNode = 0;
+			}
+			else
+			{
+				pNode = pList->m_ppItems[iNode];
+			}
+
+			if ( pNode != 0 )
+			{
+				n28 = g_10923dd8;
+				flSpeed = g_1049a1ac;
+				pPos = pNode->sub_102fb0d0(&vecPos, *(int *)((char *)this + 0x1568));
+
+				goal.m_iType = 4;
+				goal.m_vecDest = *pPos;
+				goal.m_nNodeID = -1;
+				goal.m_hTarget = -1;
+				goal.m_nArrivalSeq = -1;
+				goal.m_nArrivalAct = -1;
+				goal.m_flSpeed = flSpeed;
+				goal.m_nFlags = 0;
+				goal.m_n28 = n28;
+				goal.m_vec2c = g_10934060;
+				goal.m_n38 = 0;
+				goal.m_n3c = 0;
+
+				if ( m_p5d34->sub_102ecd20(&goal, 2) )
+				{
+					sub_10273e80(0);
+				}
+				else
+				{
+					g_109f3658(2, "%s can't reach patrol point\n", sub_1000b5cd());
+					m_pszFile1b44 = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+					m_nLine1b48 = 0x3d55;
+					vfunc448(0xc);
+				}
+			}
+			else
+			{
+				m_pszFile1b44 = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+				m_nLine1b48 = 0x3d60;
+				vfunc448(0x1d);
+			}
+		}
+		else
+		{
+			m_pszFile1b44 = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+			m_nLine1b48 = 0x3d65;
+			vfunc448(0x1d);
+		}
+	}
+	else
+	{
+		m_pszFile1b44 = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+		m_nLine1b48 = 0x3d39;
+		vfunc448(0x1d);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102aa860 size=0x12b
 #include "CAI_BaseNPCTroika.h"
 #include "CAI_TroikaLink.h"

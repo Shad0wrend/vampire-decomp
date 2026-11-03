@@ -11644,6 +11644,7 @@
 0x1001288c func   ?sub_100468b0@S100468b0@@QAEPAU1@HHH@Z S100468b0::sub_100468b0
 0x10012891 func   ?sub_100b7ad0@CNetSub@@QAEXXZ CNetSub::sub_100b7ad0
 0x10012896 func   ?vfunc601@CNPC_VYukie@@QAEXH@Z CNPC_VYukie::vfunc601
+0x100128a0 func   ?sub_102aa640@CAI_BaseNPCTroika@@QAEXPAUCTroikaPickHolder@@@Z CAI_BaseNPCTroika::sub_102aa640
 0x100128a5 func   ?sub_100b2010@CBaseEntity@@QAEXPBMPAM@Z CBaseEntity::sub_100b2010
 0x100128aa func   ?sub_1033d700@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_1033d700
 0x100128b4 func   ?vfunc471@CNPC_VScurrying@@UAEMXZ CNPC_VScurrying::vfunc471
