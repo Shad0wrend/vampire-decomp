@@ -56,3 +56,29 @@ public:
 	virtual void v233(); virtual void v234(); virtual void v235(); virtual void v236(); virtual void v237(); virtual void v238(); virtual void v239(); virtual void v240();
 	virtual void vfunc241(float flDelay);	// slot 241: refreshes the fire
 };
+
+// The CFire fields at +0x450 of the entity as a view over a CFire's address (use (CFireEntityFields *)this):
+// the same layout as adding members, without changing sizeof(CFire) for the matched functions that use it.
+struct CFireEntityFields
+{
+	char m_pad0000[0x450];
+	unsigned int m_hSmoke450;	// 0x450: the firesmoke entity handle
+	char m_pad0454[4];
+	int m_nType458;			// 0x458: the fire type (vfunc104 precaches by it)
+	float m_flHeat45c;		// 0x45c: the heat given to CreateFire
+	float m_flIgniteTime460;	// 0x460: the time the fire was started (sub_10109a20)
+	float m_flBurnTime464;		// 0x464: the burn-out time (0.5 s steps)
+	float m_flSize468;		// 0x468: the fire size
+	float m_flHeat46c;		// 0x46c: the current heat
+	float m_flHeatLevel470;		// 0x470: the heat level drawn / played
+	float m_flHeatRate474;		// 0x474
+	float m_flFade478;		// 0x478: the heat level the smoke fades from
+	int m_n47c;			// 0x47c
+	float m_flScale480;		// 0x480
+	char m_pad0484[8];		// 0x484..0x48b
+	float m_flBurnTime48c;		// 0x48c: the burn-out time of the think
+	unsigned char m_b490;		// 0x490: burning (the burn update runs while set)
+	char m_pad0491[3];
+	char m_Output494[0x18];		// 0x494: an entity output (cast to COutputEvent)
+	char m_Output4ac[0x18];		// 0x4ac: an entity output (cast to COutputEvent); vfunc5 destroys the two
+};
