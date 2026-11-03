@@ -17,3 +17,7 @@ void sub_10143710(const float *pPos, const char *pszText, int unused, int nValue
 
 // 0x10552810: the entity index the debug trace drawers follow (a plain int; -1 / 0 draws nothing).
 extern int g_10552810;
+
+// The swept-trace drawer: a line from pStart to pEnd stepped by flStep, with a "%i" label every nLabelStep
+// steps (0x10145300; the entity followed is g_10552810, its body direction gives the width).
+void sub_10145300(const Vector *pStart, const Vector *pEnd, float flStep, int nLabelStep, int r, int g, int b, unsigned char a, float flWidth);
