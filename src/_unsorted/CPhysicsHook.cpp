@@ -1,6 +1,22 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1002d6c0 size=0x68
+#include "CPhysicsHook.h"
+#include "utlvector.h"
+
+void __cdecl sub_10430964(void *p);
+
+CPhysicsHook *CPhysicsHook::vfunc8(unsigned int flags)
+{
+	((CUtlVector<int> *)((char *)this + 0x4))->~CUtlVector<int>();
+	sub_1000cfbd();
+	if (flags & 1)
+		sub_10430964(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002d7d0 size=0x106
 #include "ScopeTrace.h"
 #include "CBCCSlotViews.h"

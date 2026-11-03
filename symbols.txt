@@ -6755,6 +6755,7 @@
 0x1000b677 func   ?sub_10026ee0@@YGXH@Z sub_10026ee0
 0x1000b67c func   ?sub_1020e060@CUnknown1020e060@@QAEXH@Z CUnknown1020e060::sub_1020e060
 0x1000b681 func   ?sub_10155a30@CRagdollProp@@QAEXXZ CRagdollProp::sub_10155a30
+0x1000b686 func   ?vfunc8@CPhysicsHook@@QAEPAV1@I@Z CPhysicsHook::vfunc8
 0x1000b68b func   ?vfunc563@CNPC_VHuman@@QAEXPAVCEntityVSlots@@PAVVector@@HH@Z CNPC_VHuman::vfunc563
 0x1000b690 func   ?sub_10315db0@CUnknown10315db0@@QAEHPAUEntSlots201@@@Z CUnknown10315db0::sub_10315db0
 0x1000b695 func   ?sub_102c65b0@CUnknown102c65b0@@QAEHXZ CUnknown102c65b0::sub_102c65b0
