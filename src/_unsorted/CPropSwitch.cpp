@@ -195,6 +195,15 @@ void CPropSwitch::vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int us
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020dff0 size=0x16
+#include "CPropSwitch.h"
+
+int CPropSwitch::vfunc34(int a)
+{
+	return vfunc35(a) != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020e100 size=0x38
 // TARGET: CPropSwitch::vfunc130
 #include "CPropSwitch.h"
