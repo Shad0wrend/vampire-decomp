@@ -658,5 +658,10 @@ public:
 	virtual int vfunc606(int a);	// slot 606 (+0x978)
 	virtual void vfunc607_slot();
 	virtual bool vfunc608_slot(const char *pszName);
-	virtual int vfunc609(char bForce);	// slot 609 (+0x984): returns the target cached at +0x6444
+	virtual int vfunc609(char bForce);
+	virtual void vfunc610();
+	virtual void vfunc611();
+	virtual void vfunc612();
+	virtual void vfunc613();
+	virtual void vfunc614();	// slot 609 (+0x984): returns the target cached at +0x6444
 };
