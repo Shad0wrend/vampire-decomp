@@ -61,6 +61,7 @@ public:
 	virtual void vfunc31(int);	// slot 31: 0x1008b530 in the game's CVampireProjectile vtable (link audit, CVampireProjectile_MingXiaoSpit)
 	virtual int vfunc79();	// slot 79: 0x10097ae0 in the game's CVampireProjectile vtable (link audit, CVampireProjectile_MingXiaoSpit)
 	virtual bool vfunc99(int, int, int);	// slot 99: 0x100956e0 in the game's CVampireProjectile vtable (link audit, CVampireProjectile_MingXiaoSpit)
+	virtual void vfunc104();	// slot 104: precaches the Pearl of Dubai model, then sets it through slot 105
 	virtual void vfunc105(const char *);	// slot 105: 0x10095030 in the game's CVampireProjectile vtable (link audit, CVampireProjectile_MingXiaoSpit)
 	virtual bool vfunc108(const char *, float, float, float);	// slot 108: 0x1004fbb0 in the game's CVampireProjectile vtable (link audit, CVampireProjectile_MingXiaoSpit)
 	virtual bool vfunc109(const char *, float);	// slot 109: 0x1004fbf0 in the game's CVampireProjectile vtable (link audit, CVampireProjectile_MingXiaoSpit)
