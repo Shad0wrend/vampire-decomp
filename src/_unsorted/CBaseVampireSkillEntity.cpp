@@ -110,6 +110,18 @@ void CBaseVampireSkillEntity::vfunc42(void *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020b1c0 size=0x1a
+#include "CBaseVampireSkillEntity.h"
+#include "UTIL_BloodStream.h"
+
+int CBaseVampireSkillEntity::vfunc268(CBaseEntity *pEntity)
+{
+	if (g_1070ba0c->vfunc21())
+		return m_n77c;
+	return m_n77c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020b1f0 size=0x58
 #include "CBaseVampireSkillEntity.h"
 
