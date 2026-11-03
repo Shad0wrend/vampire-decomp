@@ -347,7 +347,9 @@ public:
 	unsigned char m_b208C;	// 0x208C
 	char m_pad208D[0x20a8 - 0x208d];	// 0x208D .. 0x20A7
 	char m_b20A8;
-	char m_pad20A9[0x20e8 - 0x20a9];	// 0x20A9 .. 0x20E7
+	char m_pad20A9[0x20cc - 0x20a9];
+	void *m_pCmd20cc;	// 0x20cc: the user command being run (CPlayerMove::StartCommand stores it)
+	char m_pad20D0[0x20e8 - 0x20d0];	// 0x20D0 .. 0x20E7
 	int m_n20E8;	// 0x20E8: a message value, 0 on death (vfunc144 sends it with engine slot 67 when g_10726020 is set)
 	char m_pad20EC[0x20f4 - 0x20ec];	// 0x20EC .. 0x20F3
 	char m_b20F4;	// vehicle active flag
