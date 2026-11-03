@@ -8,6 +8,7 @@
 Vector sub_101d2f40(float flYaw);		// 0x101d2f40: degrees -> (cos(flYaw), sin(flYaw), 0), returned by value; 22 callers
 float sub_101d2c70(const Vector *pVec);	// 0x101d2c70: atan2(pVec->y, pVec->x) in degrees (+360 when negative), 0 for a zero vector
 float sub_1013d580(float a, float b);	// 0x1013d580: a - b wrapped into (-180, 180]
+float sub_101d2ce0(const Vector *pVec);	// 0x101d2ce0: the pitch of a vector in degrees (atan2(-z, sqrt(x*x + y*y)) * 57.29578), +-180 for a vertical vector
 
 void sub_10139550(const QAngle &angles, Vector *pForward);	// 0x10139550 "AngleVectors": pForward = (cos(pitch)*cos(yaw), cos(pitch)*sin(yaw), -sin(pitch)) (the game symbol is ?sub_10139550@@YAXABVQAngle@@PAVVector@@@Z)
 void sub_10139500(const Vector *pStart, float flScale, const Vector *pDirection, Vector *pDest);	// 0x10139500 "VectorMA": pDest = pStart + pDirection * flScale (still todo; cdecl, 4 stack args)
