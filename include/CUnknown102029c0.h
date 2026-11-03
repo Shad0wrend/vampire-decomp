@@ -6,10 +6,12 @@ class CUnknown102029c0
 {
 public:
 	int m_id;
-	char m_pad04[8];
+	int m_n04;	// 0x04: cleared by the constructor
+	int m_n08;	// 0x08: not touched by the constructor
 	int m_nEntries;	// 0x0c: the number of texts the record holds
 	void *m_pData10;	// 0x10: freed by the destructor
-	char m_pad14[4];
+	char m_b14;	// 0x14: 1
+	char m_pad15[3];
 
 	CUnknown102029c0(int a);
 	~CUnknown102029c0();
