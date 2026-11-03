@@ -6576,6 +6576,7 @@
 0x1000af1f func   _point_explosion point_explosion
 0x1000af24 func   _env_steamjet env_steamjet
 0x1000af2e func   ?vfunc5@CCollisionProperty@@UAEXXZ CCollisionProperty::vfunc5
+0x1000af33 func   ?ComputeHitboxSurroundingBox@CBaseAnimating@@QAE_NPAVVector@@0@Z CBaseAnimating::ComputeHitboxSurroundingBox
 0x1000af38 func   ?sub_102e8aa0@@YIXPAD@Z sub_102e8aa0
 0x1000af3d func   ?vfunc7@CGameRules@@UAEXH@Z CGameRules::vfunc7
 0x1000af42 func   ?vfunc241@CFilterMass@@UAE_NPAVCBaseEntity@@@Z CFilterMass::vfunc241
