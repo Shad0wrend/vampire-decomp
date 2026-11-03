@@ -203,7 +203,9 @@ public:
 	int m_n03E0;	// 0x03E0: the move type
 	char m_pad03E4[0x65c - 0x3e4];	// 0x03E4 .. 0x065B
 	char m_b65c;	// 0x065C
-	char m_pad065D[0x6f8 - 0x65d];	// 0x065D .. 0x06F7
+	char m_pad065D[0x6f0 - 0x65d];	// 0x065D .. 0x06EF
+	int m_n6F0;	// 0x06F0: the sequence (CBaseAnimating::m_nSequence)
+	char m_pad06F4[0x6f8 - 0x6f4];	// 0x06F4 .. 0x06F7
 	float m_f6f8;	// 0x06F8
 	char m_pad06FC[0xe98 - 0x6fc];	// 0x06FC .. 0x0E97
 	unsigned int m_flags0E98;	// 0x0E98: the discipline effect mask (bit 0x8000 << i)
