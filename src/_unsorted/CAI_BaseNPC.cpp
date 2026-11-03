@@ -337,6 +337,13 @@ int CAI_BaseNPC::vfunc512() {
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6b80 size=0x7
+float sub_101a6b80()
+{
+	return 350.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6ba0 size=0x5
 bool CAI_BaseNPC::vfunc527(CAI_NavProvider * a0)
 {
