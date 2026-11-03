@@ -70,7 +70,7 @@ public:
 	EVS(163) virtual char slot164(); EVS(165) EVS(166)
 	virtual int slot167();	// the entity's target / enemy (0 when none)
 	EVS(168) EVS(169)
-	EVS(170) EVS(171) EVS(172)
+	EVS(170) EVS(171) virtual CEntityVSlots *slot172();
 	virtual void slot173(CEntityVSlots *pActivator, CEntityVSlots *pCaller, int useType, int value);	// "Use"
 	EVS(174) EVS(175) EVS(176) EVS(177) EVS(178) EVS(179)
 	EVS10(18)
