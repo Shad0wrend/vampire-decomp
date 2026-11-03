@@ -7716,6 +7716,7 @@
 0x1000c9b9 func   ?sub_1036a340@@YADXZ sub_1036a340
 0x1000c9be func   ?vfunc1@CEffectsServer@@UAEXHHHHEEHEEEEEEEEE@Z CEffectsServer::vfunc1
 0x1000c9c3 func   ?vfunc29@CHL2_Player@@UAEMXZ CHL2_Player::vfunc29
+0x1000c9cd func   ?sub_1027c820@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_1027c820
 0x1000c9d2 func   ?sub_1011d310@CUnk1011d310@@QAEDH@Z CUnk1011d310::sub_1011d310
 0x1000c9dc func   ?sub_103ad6d0@CNPC_VRatX@@QAE_NH@Z CNPC_VRatX::sub_103ad6d0
 0x1000c9e1 func   ?vfunc5@CWeaponRanged_Rifle_SteyrAug@@QAEPAV1@I@Z CWeaponRanged_Rifle_SteyrAug::vfunc5

@@ -137289,6 +137289,90 @@ char sub_1027c2c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027c820 size=0x19b
+#include "vampire_all.h"
+void __fastcall sub_10273e40(void *);
+void __fastcall sub_100cd2d0(void *);
+void __fastcall sub_1027faa0(void *);
+void __fastcall sub_102cc6a0(void *);
+void __fastcall sub_103274d0(void *);
+extern int vt_104995c4;
+extern int vt_10499594;
+extern int vt_1049a0f8;
+
+struct CDeleteHelper
+{
+	virtual void vfunc0(int a);
+};
+
+void CAI_BaseNPC::sub_1027c820()
+{
+	void *p;
+	void *v;
+
+	*(void **)this = &vt_104995c4;
+	*(void **)((char *)this + 0x19b0) = &vt_10499594;
+	g_1090fe10.sub_102653f0(this);
+	sub_10273e40(this);
+
+	p = *(void **)((char *)this + 0x5d3c);
+	if (p)
+		((CDeleteHelper *)p)->vfunc0(1);
+	p = *(void **)((char *)this + 0x5d34);
+	if (p)
+		((CDeleteHelper *)p)->vfunc0(1);
+	p = *(void **)((char *)this + 0x5d44);
+	if (p)
+		((CDeleteHelper *)p)->vfunc0(1);
+	p = *(void **)((char *)this + 0x5d38);
+	if (p)
+		((CDeleteHelper *)p)->vfunc0(1);
+	p = *(void **)((char *)this + 0x5d40);
+	if (p)
+		((CDeleteHelper *)p)->vfunc0(1);
+	p = *(void **)((char *)this + 0x5cdc);
+	if (p)
+		((CDeleteHelper *)p)->vfunc0(1);
+
+	v = (char *)this + 0x5f14; sub_100cd2d0(v);
+	v = (char *)this + 0x5efc; sub_100cd2d0(v);
+	v = (char *)this + 0x5ee4; sub_100cd2d0(v);
+	v = (char *)this + 0x5ecc; sub_100cd2d0(v);
+	v = (char *)this + 0x5eb4; sub_100cd2d0(v);
+	v = (char *)this + 0x5e9c; sub_100cd2d0(v);
+	v = (char *)this + 0x5e84; sub_100cd2d0(v);
+	v = (char *)this + 0x5e6c; sub_100cd2d0(v);
+	v = (char *)this + 0x5e54; sub_100cd2d0(v);
+	v = (char *)this + 0x5e3c; sub_100cd2d0(v);
+	v = (char *)this + 0x5e24; sub_100cd2d0(v);
+	v = (char *)this + 0x5e0c; sub_100cd2d0(v);
+
+	v = (char *)this + 0x5d48;
+	*(int *)((char *)v + 0xc) = 0;
+	sub_1027faa0(v);
+	*(void **)((char *)v + 0x10) = *(void **)v;
+	if (*(int *)((char *)v + 8) != -1) {
+		if (*(void **)v) {
+			Plat_Free(*(void **)v);
+			*(void **)v = 0;
+		}
+		*(int *)((char *)v + 4) = 0;
+	}
+
+	v = (char *)this + 0x5c20;
+	*(void **)((char *)this + 0x5cf4) = &vt_1049a0f8;
+	sub_100cd2d0(v);
+	v = (char *)this + 0x5c08; sub_100cd2d0(v);
+	v = (char *)this + 0x5bf0; sub_100cd2d0(v);
+	v = (char *)this + 0x5bd8; sub_100cd2d0(v);
+
+	sub_102cc6a0((char *)this + 0x1ae0);
+	sub_102cc6a0((char *)this + 0x1a9c);
+
+	sub_103274d0(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027cd50 size=0x34
 #include "CLogicAuto.h"
 // TARGET: CUnknown1027cd50::sub_1027cd50
