@@ -10911,6 +10911,7 @@
 0x10011a81 func   _item_k_tawni_apartment_key item_k_tawni_apartment_key
 0x10011a8b func   ?vfunc81@CBeam@@UAEHXZ CBeam::vfunc81
 0x10011a90 func   ?vfunc337@CNPC_VHengeyokai@@UAEHXZ CNPC_VHengeyokai::vfunc337
+0x10011a95 func   ?sub_1028d8d0@@YAXH@Z sub_1028d8d0
 0x10011a9a func   ?sub_100f8e20@@YAXPAUSEntV116@@@Z sub_100f8e20
 0x10011a9f func   ?sub_10085900@@YAXXZ sub_10085900
 0x10011aa4 func   ?vfunc546@CNPC_VAnimal@@QAEHH@Z CNPC_VAnimal::vfunc546
