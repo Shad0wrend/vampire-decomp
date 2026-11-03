@@ -58,3 +58,5 @@ public:
 	const char *sub_101fd250();	// "CVStatAction_t::ToDetailedStr": scope trace, formats "[ min - max ]: ..." by action type (+4: 1 name of a table entry, 2 a lookup on the pointer at +0x3c, 3 FUNC, 4 two strings of the record at +0x3c) into a static buffer and returns it ("<ERROR>" for other types)
 	void sub_101fc9e0(void *pKeyValues);	// loads the action from one "Action" key (stub 0x100114c8)
 };
+
+extern int g_1074e7c4;	// 0x1074e7c4: the "Function" action hook (call it as void (*)(CVStatAction_t *, const char *))
