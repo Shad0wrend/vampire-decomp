@@ -4242,6 +4242,7 @@
 0x100077ed func   ?Grow@CUnknown10076da0TagMemory@@QAEXH@Z CUnknown10076da0TagMemory::Grow
 0x100077ed func   ?sub_10079060@CUnknown10079060@@QAEXH@Z CUnknown10079060::sub_10079060
 0x100077f2 func   ?vfunc2@CAI_CsActList@@UAEXD@Z CAI_CsActList::vfunc2
+0x10007801 func   ?vfunc104@CPhysicsPropContested@@UAEXXZ CPhysicsPropContested::vfunc104
 0x10007806 func   ?vfunc80@CItemGVVPhoto@@QAEHXZ CItemGVVPhoto::vfunc80
 0x1000780b func   ?sub_101e1870@@YGII@Z sub_101e1870
 0x10007810 func   ??0CPhysForce@@QAE@XZ CPhysForce::CPhysForce

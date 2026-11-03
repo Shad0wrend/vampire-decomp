@@ -31,6 +31,26 @@ void CPhysicsPropContested::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10192b00 size=0x3a
+#include "CPhysicsPropContested.h"
+#include "CUnknown1070b248.h"
+
+void sub_1000978c();
+extern char g_106b8540[];
+extern CUnknown1070b248 *g_1070b248;
+
+// TARGET: CPhysicsPropContested::vfunc104
+void CPhysicsPropContested::vfunc104()
+{
+	sub_1000978c();
+	char *p = *(char * volatile *)&m_p7a8;
+	if (p == 0)
+		p = g_106b8540;
+	if (*p != 0)
+		g_1070b248->vfunc0(m_p7a8 ? m_p7a8 : g_106b8540, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10192e60 size=0xeb
 #include "utlrbtree.h"
 #include "utlsortvector.h"
