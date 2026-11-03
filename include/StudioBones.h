@@ -19,6 +19,11 @@ void sub_100c4600(int *pBoneMap, void *pBoneData, StudioHdr *pStudioHdr, StudioH
 
 void sub_1013c0e0(const matrix3x4_t &boneToWorld, const Vector &vecMins, const Vector &vecMaxs, Vector &vecOutMins, Vector &vecOutMaxs);
 
+// trace / vector helpers of the oriented-box ray tests (0x10241100 family, bone_setup.cpp):
+CGameTrace *sub_1023f3d0(const Vector *pStart, const Vector *pDelta, CGameTrace *pTrace);	// trace init: start = *pStart, end = start + *pDelta, fraction 1, allsolid / startsolid / contents 0; returns pTrace
+void sub_1011e010(Vector *pA, Vector *pB, Vector *pOut);	// CrossProduct: pOut = *pA x *pB
+
+
 // matrix / box helpers called by the hitbox trace code (bone_setup.cpp):
 void sub_10137fe0(const float *pIn, const float *pMatrix, float *pOut);	// VectorTransform: pOut = pMatrix * pIn + translation
 void sub_10138130(const float *pIn, const float *pMatrix, float *pOut);	// VectorIRotate: (pIn - translation) projected on the matrix's columns
