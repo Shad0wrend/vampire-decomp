@@ -194,3 +194,17 @@ void CPropKeypad::vfunc41(void *pArg)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x1021e0b0 size=0x33
+#include "CPropKeypad.h"
+#include "CPropHacking.h"
+
+void sub_10217ac0(CPropKeypad *p, const char *fmt, ...);
+
+// TARGET: CPropKeypad::vfunc278
+void CPropKeypad::vfunc278(int a)
+{
+	((CPropHacking *)this)->sub_10218ff0(0, m_n0814 - 1);
+	sub_10217ac0(this, "%s%s     ", ((CPropHacking *)this)->sub_10219400(0xc), a);
+}
+// END FUNCTION
