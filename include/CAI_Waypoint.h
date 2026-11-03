@@ -39,3 +39,5 @@ public:
 	CAI_Waypoint *m_pNext;	// 0x30
 	CAI_Waypoint *m_pPrev;	// 0x34
 };
+
+void sub_1031a050(CAI_Waypoint *pWaypoint);	// 0x1031a050: returns a whole chain (m_pNext +0x30 / m_pPrev +0x34) to the pool g_10936c84
