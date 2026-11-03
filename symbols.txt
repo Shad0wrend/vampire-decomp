@@ -6623,6 +6623,7 @@
 0x1000b1a4 func   ??0CTEBaseBeam@@QAE@PBD@Z CTEBaseBeam::CTEBaseBeam
 0x1000b1a9 func   ?vfunc4@CAI_Navigator@@UAEXH@Z CAI_Navigator::vfunc4
 0x1000b1ae func   ?vfunc6@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHHHHHHHHHHHH@Z CTempEntsSystem::vfunc6
+0x1000b1b8 func   ?vfunc21@CAI_BaseNPCTroika@@UAEXH@Z CAI_BaseNPCTroika::vfunc21
 0x1000b1bd func   ?vfunc8@CSave@@UAE_NPBXH@Z CSave::vfunc8
 0x1000b1c2 func   ?sub_1013a9f0@@YAXABVQuaternion@@0AAV1@@Z sub_1013a9f0
 0x1000b1c7 func   ?vfunc4@CTEKillPlayerAttachments@@UAEXPAXH@Z CTEKillPlayerAttachments::vfunc4

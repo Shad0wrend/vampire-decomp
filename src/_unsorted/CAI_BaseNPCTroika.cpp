@@ -1727,6 +1727,22 @@ bool CAI_BaseNPCTroika::sub_1029b180(void *pOtherArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029f800 size=0x32
+#include "CAI_BaseNPCTroika.h"
+#include "CDevFlagObj.h"
+
+extern CDevFlagObj *g_10924a6c;
+
+// TARGET: CAI_BaseNPCTroika::vfunc21
+void CAI_BaseNPCTroika::vfunc21(int a)
+{
+	sub_102bf5d0(a);
+	++m_n6064;
+	g_10924a6c->vfunc1();
+	sub_10269a20(0xa);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029f850 size=0x25
 #include "CAI_BaseNPCTroika.h"
 
