@@ -197,6 +197,7 @@ public:
 
 	void sub_1033d4b0();	// "CBaseCombatCharacter::BloodExplode": scope trace; when sub_103380d0 fails activates the two Thaumaturgy_Bloodboil_Explode effects
 	int sub_10342c80(void (*pCallback)(CBaseCombatCharacter *, int, int), int nArg, bool bInvert, Vector vecCenter, float flRadius);	// "CBaseCombatCharacter::HitboxesInSphere" (scope trace)
+	void vfunc314(float flDeltaTime);	// slot 314 "CBaseCombatCharacter::UpdatePoseParameters": scope trace, the shaky-hands pose smoothing
 #include "CBaseCombatCharacter_ext.h"
 #include "CBaseCombatCharacter_ext2.h"
 
@@ -209,7 +210,13 @@ public:
 	EHANDLE m_hDialogPartnerFE8;	// 0xfe8: the dialog partner (SetDialogPartner)
 	char m_pad0fec[0xff8 - 0xfec];
 	EHANDLE m_hFireEmitters[18];	// 0xff8: the body fire emitters, one per hit box
-	char m_pad1040[0x1064 - 0x1040];
+	char m_pad1040[0x1044 - 0x1040];
+	int m_nShakyIndex1044;	// 0x1044: the shaky-hands profile index (-1 when off)
+	float m_flShakyEnd1048;	// 0x1048: the time the shaky hands end
+	float m_flShakyTime104c;	// 0x104c: the last time the shake offsets were randomised
+	float m_flShakyIntensity1050;	// 0x1050: the shaky-hands intensity
+	float m_flShakyOffset1054[2];	// 0x1054: the current random shake offsets
+	float m_flPoseCurrent105c[2];	// 0x105c: the smoothed pose parameter values
 	float m_flPoseValue[2];	// 0x1064: last pose parameter values set through slot 346
 	int m_nPoseIndex[2];	// 0x106c: the pose parameter indices they belong to
 	Vector m_vecHeadAxis1074;	// 0x1074: the head bone's axis (0, -1, 0) rotated by the bone's pose-to-bone matrix
