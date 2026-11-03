@@ -17,3 +17,14 @@ CUnknown10076da0TimingTag::CUnknown10076da0TimingTag(int pOwner, const char *nam
 	m_bLocked = locked;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100739d0 size=0x21
+#include "CUnknown10076da0.h"
+
+// TARGET: CUnknown10076da0TimingTag::CUnknown10076da0TimingTag
+CUnknown10076da0TimingTag::CUnknown10076da0TimingTag(const CUnknown10076da0TimingTag &src)
+{
+	((CUnknown10076da0Entry *)this)->sub_10073850((const CUnknown10076da0Entry *)&src);
+	m_bLocked = src.m_bLocked;
+}
+// END FUNCTION
