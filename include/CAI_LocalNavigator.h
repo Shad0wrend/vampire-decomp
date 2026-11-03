@@ -49,6 +49,7 @@ public:
 	bool vfunc7(CAI_LocalNavigatorStopState *pState, float flDist, int *pResult, int unused);	// slot 7 "CAI_LocalNavigator_MoveCalcStop" (profiler scope; this unused): flDist below the state's float at +0x28: *pResult = -4 when flDist < 0.1, else the float is set to flDist and *pResult = 0; otherwise *pResult = 0; always true
 	int vfunc4(CAI_LocalNavigatorStopState *pMove, float flDist, void *pArg);	// slot 4 "CAI_LocalNavigator_MoveCalcRaw" (profiler scope): runs slots 5, 6, 7 and the sink's slots 1-4 in turn, each may settle the result
 	void sub_10012d73();
+	CAI_LocalNavigator *sub_102ddab0(int pOuter);	// constructor body (0x102ddab0) as a plain member: outer at +4, +0xc = -1, proxy sink at +0x10 (vftables 0x1049d76c / 0x1049d740), +0x14..+0x1c cleared; returns this
 	void sub_102ddb30();	// destructor body: frees the data object at +0x18 and resets the vtable pointers
 	void sub_102ddc00(void *pMovementSink);	// "CAI_LocalNavigator::Init" (stub 0x10012878): takes the navigator's movement sink (its secondary base at +0x10)
 };
