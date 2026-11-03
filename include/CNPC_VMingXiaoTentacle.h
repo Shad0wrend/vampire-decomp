@@ -57,7 +57,11 @@ public:
 	int m_n1b2c;	// 0x1b2c: state index set to 0x1a by vfunc438
 	const char *m_pszFile1b30;	// 0x1b30: source file of the last schedule selection
 	int m_nLine1b34;	// 0x1b34: its line
-	char m_pad1b38[0x6078 - 0x1b38];
+	char m_pad1b38[0x5b80 - 0x1b38];
+	char m_b5b80;	// 0x5b80
+	char m_pad5b81[0x5cc0 - 0x5b81];
+	int m_nState5cc0;	// 0x5cc0: the NPC state
+	char m_pad5cc4[0x6078 - 0x5cc4];
 	char m_b6078;	// 0x6078: set to 1 by vfunc599
 	char m_pad6079[0x63d8 - 0x6079];
 	char m_b63d8;	// 0x63d8
