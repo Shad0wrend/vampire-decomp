@@ -60,6 +60,19 @@ void CRagdollProp::vfunc180()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10155120 size=0x1c
+// TARGET: CRagdollProp::vfunc123
+void CRagdollProp::vfunc123()
+{
+	if (m_fDebugOverlays224 & 4)
+	{
+		vfunc264();
+	}
+
+	CBaseEntity::vfunc123();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155150 size=0x3
 // TARGET: CRagdollProp::vfunc158
 char CRagdollProp::vfunc158() { return 0; }

@@ -2030,6 +2030,7 @@
 0x1000429b func   ?sub_101cc800@CUnknown101cc800@@QAEXXZ CUnknown101cc800::sub_101cc800
 0x100042a0 func   ?sub_101cc7b0@@YIXPAPAX@Z sub_101cc7b0
 0x100042a5 func   ?sub_102c6d80@CUnknown102c6d80@@QAEXXZ CUnknown102c6d80::sub_102c6d80
+0x100042aa func   ?vfunc123@CRagdollProp@@UAEXXZ CRagdollProp::vfunc123
 0x100042af func   ?sub_10079450@Obj@@QAEPAU1@H@Z Obj::sub_10079450
 0x100042b9 func   ?vfunc174@CTriggerBrush@@QAEXPAVCBaseEntity@@@Z CTriggerBrush::vfunc174
 0x100042be func   ?vfunc408@CNPC_VWerewolf@@QAEPBDH@Z CNPC_VWerewolf::vfunc408
