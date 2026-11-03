@@ -258,6 +258,20 @@ int __stdcall sub_10364550(float a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10365800 size=0x26
+#include "CNPC_VBach.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VBach::vfunc566
+bool CNPC_VBach::vfunc566(CBaseEntity *pHint)
+{
+	int nType = *(int *)((char *)pHint + 0x5dc);
+	if (nType >= 0x4268 && nType <= 0x426d)
+		return true;
+	return ((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc566(pHint);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10365a70 size=0x10
 #include "CNPC_VBach.h"
 
