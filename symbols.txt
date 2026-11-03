@@ -12366,6 +12366,7 @@
 0x100145a6 func   ?sub_1017c580@CUnitP3@@QAEXXZ CUnitP3::sub_1017c580
 0x100145ab func   ?sub_10316700@@YGXH@Z sub_10316700
 0x100145b0 func   ?sub_100766b0@CUnknown10076670@@QAEXH@Z CUnknown10076670::sub_100766b0
+0x100145b5 func   ?vfunc223@CFuncPlat@@UAEDXZ CFuncPlat::vfunc223
 0x100145ba func   ?sub_1013da70@@YAXH@Z sub_1013da70
 0x100145c9 func   ?vfunc80@CItemGEDaneReport@@QAEHXZ CItemGEDaneReport::vfunc80
 0x100145ce func   _info_node_tzimisce_claw_right info_node_tzimisce_claw_right

@@ -72,6 +72,16 @@ void CFuncPlat::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10159250 size=0xe
+#include "CFuncPlat.h"
+
+char CFuncPlat::vfunc223()
+{
+	sub_100a6150(0, 0, 0);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101597a0 size=0x156
 #include "CFuncPlat.h"
 #include "CBaseToggle.h"
