@@ -39,6 +39,17 @@ int CWeaponMelee_Fists::vfunc363()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e5860 size=0x11
+#include "CWeaponMelee_Fists.h"
+
+// TARGET: CWeaponMelee_Fists::vfunc103
+void CWeaponMelee_Fists::vfunc103()
+{
+	sub_100047be();
+	m_b871 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e5890 size=0x6
 #include "CWeaponMelee_Fists.h"
 int CWeaponMelee_Fists::vfunc373()
