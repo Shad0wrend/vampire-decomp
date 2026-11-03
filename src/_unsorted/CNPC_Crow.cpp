@@ -250,6 +250,15 @@ bool CNPC_Crow::vfunc394()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10358c60 size=0x16
+#include "CNPC_Crow.h"
+
+bool CNPC_Crow::vfunc566(CBaseEntity *pHint)
+{
+	return *(int *)((char *)pHint + 0x5dc) == 0x2bc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10358ce0 size=0x17a
 #include "CNPC_Crow.h"
 #include "CUnknown1070b244.h"

@@ -7053,6 +7053,7 @@
 0x1000bfc3 func   _info_node_cover_med info_node_cover_med
 0x1000bfc8 func   ?vfunc0@SendProp@@QAEPAV1@I@Z SendProp::vfunc0
 0x1000bfcd func   ?vfunc130@CBaseCombatCharacter@@UAEXH@Z CBaseCombatCharacter::vfunc130
+0x1000bfdc func   ?vfunc566@CNPC_Crow@@QAE_NPAVCBaseEntity@@@Z CNPC_Crow::vfunc566
 0x1000bfe1 func   ?sub_10355c70@@YAHXZ sub_10355c70
 0x1000bfe6 func   ?sub_101b7170@CUtlVector130@@QAEXH@Z CUtlVector130::sub_101b7170
 0x1000bfeb func   ?sub_101d4e30@CUnit101d4e30@@QAE_NH@Z CUnit101d4e30::sub_101d4e30
