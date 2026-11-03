@@ -54974,6 +54974,32 @@ int sub_1010f100()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010f130 size=0x59
+#include "CPushable.h"
+
+struct COutputEventCtor
+{
+	void sub_10002ddd();
+};
+
+extern char g_1045f1cc[];
+
+// TARGET: CPushable::sub_1010f130
+CPushable *CPushable::sub_1010f130()
+{
+	sub_1009d980(0);
+	*(int *)((char *)this + 0x458) = -1;
+	((COutputEventCtor *)((char *)this + 0x46c))->sub_10002ddd();
+	((COutputEventCtor *)((char *)this + 0x484))->sub_10002ddd();
+	*(void **)this = g_1045f1cc;
+	*(int *)((char *)this + 0x4a0) = 0x3dcccccd;
+	*(int *)((char *)this + 0x4a4) = 0x3dcccccd;
+	*(int *)((char *)this + 0x49c) = 0x41f00000;
+	*(int *)((char *)this + 0x4a8) = 0x48;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f4e0 size=0x8
 typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_1010f4e0(void **p) { ((Fn *)*p)[241](p); }

@@ -12152,6 +12152,7 @@
 0x100136ab func   ?sub_1023e1c0@@YGXPAUCParam@@@Z sub_1023e1c0
 0x100136b0 func   ??0CRopeSimBase@@QAE@PAXH0@Z CRopeSimBase::CRopeSimBase
 0x100136b5 func   ?sub_101f0270@@YIPAHPAHHH@Z sub_101f0270
+0x100136bf func   ?sub_1010f130@CPushable@@QAEPAV1@XZ CPushable::sub_1010f130
 0x100136c4 func   ?sub_1025e140@@YIXPAUMem4@@HH@Z sub_1025e140
 0x100136c9 func   ?sub_101e1520@CStatusFlagList@@QAEIHH@Z CStatusFlagList::sub_101e1520
 0x100136ce func   ?sub_100821f0@CSceneEntity@@QAEXH@Z CSceneEntity::sub_100821f0
