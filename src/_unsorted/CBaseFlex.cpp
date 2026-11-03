@@ -278,6 +278,18 @@ found:
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b6250 size=0x34
+#include "CBaseFlex.h"
+
+// TARGET: CBaseFlex::vfunc283
+void CBaseFlex::vfunc283()
+{
+	for (int i = 0; i < sub_10094520(); i++)
+		vfunc279(i, 0);
+	vfunc284();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7040 size=0x75
 #include "CBaseFlex.h"
 

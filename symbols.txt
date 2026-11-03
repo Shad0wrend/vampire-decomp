@@ -11486,6 +11486,7 @@
 0x100127ec func   ?sub_100eef10@CUnknown100eef10@@QAE_NXZ CUnknown100eef10::sub_100eef10
 0x100127f1 func   ?vfunc0@CTEBeamPoints@@UAEPAUServerClass@@XZ CTEBeamPoints::vfunc0
 0x100127f6 func   ?sub_1020d0b0@CUnit1020d080@@QAEXH@Z CUnit1020d080::sub_1020d0b0
+0x10012800 func   ?vfunc283@CBaseFlex@@UAEXXZ CBaseFlex::vfunc283
 0x10012805 func   ?sub_1030b7c0@CUnknown1030bc20@@QAEPAUCUnknown1030bc20_Record@@XZ CUnknown1030bc20::sub_1030b7c0
 0x1001280a func   ?vfunc80@CWeaponRanged_Rifle_Crossbow_Flaming@@QAEHXZ CWeaponRanged_Rifle_Crossbow_Flaming::vfunc80
 0x1001280f func   ?vfunc82@CFuncBrush@@QAEPAUdatamap_t@@XZ CFuncBrush::vfunc82
