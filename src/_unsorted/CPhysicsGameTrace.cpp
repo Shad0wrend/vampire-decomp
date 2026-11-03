@@ -19,6 +19,24 @@ void CPhysicsGameTrace::vfunc0(Ray_t *pRay, void *pPassEnt, CGameTrace *pTrace)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10158a30 size=0x38
+#include "CGameTrace.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "Ray_t.h"
+#include "CPhysicsGameTrace.h"
+#include "CUnknown1070b254.h"
+#include "CTraceFilterSimple.h"
+
+extern CUnknown1070b254 *g_1070b254;
+
+// TARGET: CPhysicsGameTrace::vfunc1
+void CPhysicsGameTrace::vfunc1(Ray_t *pRay, void *pPassEnt, CGameTrace *pTrace)
+{
+	CTraceFilterSimple filter(pPassEnt, 0);
+	g_1070b254->vfunc4(pRay, 0x200403b, (CTraceFilterNoCharacterCollide *)&filter, pTrace);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10158a80 size=0x1f
 #include "CPhysicsGameTrace.h"
 

@@ -4265,6 +4265,7 @@
 0x10007847 func   ?sub_101b6b60@@YAXPAUE101b6b60@@PBU1@@Z sub_101b6b60
 0x1000784c func   ?vfunc5@CEffectsServer@@UAEXPBMHHH@Z CEffectsServer::vfunc5
 0x10007851 func   ?sub_101bbcf0@@YIMPAD@Z sub_101bbcf0
+0x10007856 func   ?vfunc1@CPhysicsGameTrace@@UAEXPAURay_t@@PAXPAUCGameTrace@@@Z CPhysicsGameTrace::vfunc1
 0x1000785b func   ?sub_1025d820@CUnknown1025d820@@QAEPAU1@XZ CUnknown1025d820::sub_1025d820
 0x10007860 func   ?sub_10428280@@YAHHHHHH@Z sub_10428280
 0x10007865 func   _item_g_ring03 item_g_ring03
