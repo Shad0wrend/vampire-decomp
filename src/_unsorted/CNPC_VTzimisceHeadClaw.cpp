@@ -412,6 +412,19 @@ void CNPC_VTzimisceHeadClaw::vfunc420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c1cb0 size=0x9
+#include "CNPC_VTzimisceHeadClaw.h"
+
+unsigned short __fastcall sub_1029a050(void *pThis);
+
+unsigned short CNPC_VTzimisceHeadClaw::sub_103c1cb0()
+{
+	unsigned short result = sub_1029a050(this);
+	result |= 0x800;
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c1cd0 size=0x37
 // TARGET: CNPC_VTzimisceHeadClaw::vfunc310
 #include "CNPC_VTzimisceHeadClaw.h"
