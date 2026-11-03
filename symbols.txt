@@ -10622,6 +10622,7 @@
 0x10011072 func   ?vfunc80@CWeaponRanged_Pistol_Glock@@QAEHXZ CWeaponRanged_Pistol_Glock::vfunc80
 0x10011077 func   ?sub_100d2290@@YAXPBD@Z sub_100d2290
 0x1001107c func   ?sub_1011bd60@CUnk1011bd60@@QAEPAXE@Z CUnk1011bd60::sub_1011bd60
+0x10011081 func   ?sub_1010d990@CBreakable@@QAEXPAVCBaseEntity@@@Z CBreakable::sub_1010d990
 0x10011086 func   ?sub_10088620@@YAXXZ sub_10088620
 0x1001108b func   ?sub_102c2b90@@YIXPADH0@Z sub_102c2b90
 0x10011090 func   ?sub_102f7c00@@YAIHID@Z sub_102f7c00

@@ -54977,6 +54977,62 @@ int *sub_1010d4b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010d990 size=0x18e
+#include "CBreakable.h"
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "CUnknown101c26d0.h"
+#include "CBaseEntitySlots.h"
+#include "globalvars.h"
+#include "Vector.h"
+
+void sub_1010f4e0();
+
+void CBreakable::sub_1010d990(CBaseEntity *pOther)
+{
+	CBaseEntity *pAttacker = pOther->m_pEdict2e0
+		? (*(CBaseEntity **)(pOther->m_pEdict2e0 + 0x40)
+			? (CBaseEntity *)(*(CBaseEntity **)(pOther->m_pEdict2e0 + 0x40))->vfunc4()
+			: 0)
+		: 0;
+	CBaseEntity *pThis = (CBaseEntity *)this;
+	if (!pOther->m_pA8)
+		return;
+	if (!sub_1010efc0())
+		return;
+	if (pThis->m_flags204 & 2)
+	{
+		float flSpeed = ((const Vector *)(const void *)pOther->m_vel3d4)->Length() * 0.01;
+		if (flSpeed >= pThis->m_iHealth)
+		{
+			*(int *)((char *)this + 0x1ec) = 0;
+			{
+				CUnknown101c26d0 info;
+				((CBaseEntitySlots *)this)->slot142(info.sub_101c26d0(pAttacker, pAttacker, flSpeed, 1, 0, 0, -1));
+			}
+			{
+				CUnknown101c26d0 info;
+				pOther->sub_100a1250(info.sub_101c26d0(pAttacker, pAttacker, flSpeed * 0.25f, 4, 0, 0, -1));
+			}
+		}
+	}
+	CCollisionProperty *pCol = (CCollisionProperty *)((char *)pAttacker + 0x270);
+	Vector vecMins, vecMaxs;
+	pCol->sub_100dcd90(&pCol->m_vecMins.x, &pCol->m_vecMaxs.x, &vecMins.x, &vecMaxs.x);
+	if (pThis->m_flags204 & 4)
+	{
+		CCollisionProperty *pMyCol = (CCollisionProperty *)((char *)this + 0x270);
+		if (pMyCol->vfunc2()[2] - 2.0f <= vecMins.z)
+		{
+			*(int *)((char *)this + 0x458) = *pOther->vfunc1();
+			pThis->sub_100ac4e0((int)sub_1010f4e0, 0, 0);
+			*(int *)((char *)this + 0x1ec) = 0;
+			pThis->m_flNextThink = *(float *)((char *)this + 0x464) + gpGlobals->curtime;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010db90 size=0x74
 #include "CBreakable.h"
 #include "inputdata_t.h"
