@@ -13,4 +13,5 @@ public:
 	void sub_10090950();	// stub 0x100117b1, called directly
 	void sub_100963d0();	// CBaseAnimating::ResetClientsideFrame (stub 0x100024b9), called directly
 	void vfunc406();	// slot 406: plays the "open" animation
+	void vfunc407();	// slot 407: plays the "close" animation
 };
