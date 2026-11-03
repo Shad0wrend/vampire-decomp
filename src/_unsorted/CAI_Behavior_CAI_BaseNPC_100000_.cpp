@@ -26,6 +26,14 @@ void CAI_Behavior<CAI_BaseNPC,100000>::vfunc12(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c6e10 size=0x7
+int __fastcall sub_102c6e10(int p)
+{
+	*(char *)((char *)p + 0x10) = 0;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c6e30 size=0x9
 #include "CAI_Behavior.h"
 // TARGET: CAI_Behavior<CAI_BaseNPC,100000>::vfunc14
