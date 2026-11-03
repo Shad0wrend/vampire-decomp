@@ -2752,6 +2752,7 @@
 0x1000549d func   ?sub_1022ea60@@YAXXZ sub_1022ea60
 0x100054a2 func   ?vfunc5@CFunc_Dust@@QAEPAV1@I@Z CFunc_Dust::vfunc5
 0x100054a7 func   ?sub_1036fad0@@YIPAXPAD@Z sub_1036fad0
+0x100054b6 func   ?vfunc298@CBasePlayer@@UAEHH@Z CBasePlayer::vfunc298
 0x100054c0 func   ?vfunc37@CItemContainerLock@@QAEMXZ CItemContainerLock::vfunc37
 0x100054c0 func   ?vfunc37@CPropDoorknob@@UAEMXZ CPropDoorknob::vfunc37
 0x100054c5 func   ?sub_10098c40@CUnknown10098c40@@QAEHXZ CUnknown10098c40::sub_10098c40

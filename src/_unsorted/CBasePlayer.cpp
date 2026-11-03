@@ -2074,6 +2074,15 @@ void CBasePlayer::vfunc468()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101821e0 size=0x1b
+#include "CBasePlayer.h"
+
+int CBasePlayer::vfunc298(int a)
+{
+	return (a == 4 || a == 5) ? 0x18 : 7;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101824c0 size=0xd
 void CBasePlayer::vfunc338(int a, char b, int c)
 {
