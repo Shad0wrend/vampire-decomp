@@ -642,6 +642,14 @@ int __fastcall sub_10251fd0(CBaseCombatWeapon *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10251ff0 size=0xc
+// TARGET: CBaseCombatWeapon::sub_10251ff0
+int CBaseCombatWeapon::sub_10251ff0()
+{
+	return *(int *)((char *)sub_102517b0() + 0x5ebdc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10252030 size=0xc
 int __fastcall sub_10252030(CBaseCombatWeapon *p)
 {
