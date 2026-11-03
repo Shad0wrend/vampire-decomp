@@ -12325,6 +12325,7 @@
 0x10014001 func   ?sub_10144790@@YAXPBVVector@@0MMHHHHM@Z sub_10144790
 0x10014006 func   _item_w_crossbow_flaming item_w_crossbow_flaming
 0x10014010 func   _npc_VSheriffSwarm npc_VSheriffSwarm
+0x10014015 func   ?vfunc27@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEHH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc27
 0x1001401a func   ?vfunc12@CServerGameClients@@UAEPAXPAX@Z CServerGameClients::vfunc12
 0x10014024 func   ?sub_101e7e80@CUnknown101e7e80@@QAEMXZ CUnknown101e7e80::sub_101e7e80
 0x10014029 func   ?sub_10032d70@UtlMem@@QAEXXZ UtlMem::sub_10032d70

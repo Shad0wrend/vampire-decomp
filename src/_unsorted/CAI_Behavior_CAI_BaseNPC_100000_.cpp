@@ -225,3 +225,14 @@ void CAI_Behavior<CAI_BaseNPC,100000>::vfunc6()
 	((CSlots *)m_p0004)->target();
 }
 // END FUNCTION
+
+// FUNCTION: 0x102c8a30 size=0x1f
+#include "CAI_Behavior.h"
+
+// TARGET: CAI_Behavior<CAI_BaseNPC,100000>::vfunc27
+template <>
+int CAI_Behavior<CAI_BaseNPC, 100000>::vfunc27(int id)
+{
+	return id >= 100000 && id < 110000;
+}
+// END FUNCTION
