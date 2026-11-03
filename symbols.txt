@@ -10000,6 +10000,7 @@
 0x10010069 func   ?sub_102c7ef0@@YAEXZ sub_102c7ef0
 0x10010078 func   ?vfunc124@CNPC_VZombie@@UAEHXZ CNPC_VZombie::vfunc124
 0x1001007d func   ?sub_10382f60@CNPC_VHengeyokai@@QAEHXZ CNPC_VHengeyokai::sub_10382f60
+0x10010087 func   ?PhysicsPushMove@CBaseEntity@@QAEHM@Z CBaseEntity::PhysicsPushMove
 0x1001008c func   ?vfunc103@CWorld@@UAEXXZ CWorld::vfunc103
 0x10010091 func   ?vfunc261@CSceneEntity@@UAEXHPAUCSceneEventActorEnt@@PAVCBaseEntity@@HH@Z CSceneEntity::vfunc261
 0x1001009b func   ?vfunc298@CWeaponGravityGun@@QAEXPAVCBaseEntity@@M@Z CWeaponGravityGun::vfunc298
