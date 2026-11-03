@@ -47,7 +47,7 @@ public:
 	virtual int vfunc145();	// slot 145 "BloodColor" (the blood color at +0x1570)
 	virtual void vfunc146(class CVDmg_t *pDmg, const Vector *pVecDir, struct CGameTrace *pTrace);	// slot 146 "TraceBleed"
 	CAI_NPC_V(147) CAI_NPC_V(148) CAI_NPC_V(149)
-	CAI_NPC_V(150) CAI_NPC_V(151) CAI_NPC_V(152) CAI_NPC_V(153) CAI_NPC_V(154) CAI_NPC_V(155) CAI_NPC_V(156) CAI_NPC_V(157)
+	CAI_NPC_V(150) CAI_NPC_V(151) CAI_NPC_V(152) virtual int vfunc153(); CAI_NPC_V(154) CAI_NPC_V(155) CAI_NPC_V(156) CAI_NPC_V(157)
 	virtual bool vfunc158();	// asked by the Troika schedule code ("slot 158 holds")
 	CAI_NPC_V(159)
 	CAI_NPC_V(160) CAI_NPC_V(161) CAI_NPC_V(162) CAI_NPC_V(163) CAI_NPC_V(164) CAI_NPC_V(165) CAI_NPC_V(166)
@@ -62,7 +62,8 @@ public:
 	virtual bool vfunc201(CBaseEntity *pEnt, int a, int *pOut, int d);	// check whether the NPC may act on pEnt (CBaseEntity::vfunc201 = sub_100a6fa0 at the end of the Troika override)
 	CAI_NPC_V(202) CAI_NPC_V(203) CAI_NPC_V(204) CAI_NPC_V(205) CAI_NPC_V(206) CAI_NPC_V(207)
 	virtual void vfunc208(int a);	// takes one argument (0 from AI_BaseNPC_Schedule's failure path)
-	CAI_NPC_V(209)
+	virtual CBaseEntity *vfunc209();
+	void vfunc581();	// slot 581: debug text dump (DevMsg)
 	CAI_NPC_V(210) CAI_NPC_V(211) CAI_NPC_V(212) CAI_NPC_V(213) virtual float *vfunc214(); CAI_NPC_V(215) CAI_NPC_V(216)
 	virtual float *vfunc217();	// "CBaseEntity::GetAbsOrigin"
 	CAI_NPC_V(218) virtual float *vfunc219();
