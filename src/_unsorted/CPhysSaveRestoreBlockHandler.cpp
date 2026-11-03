@@ -40,6 +40,24 @@ void CPhysSaveRestoreBlockHandler::vfunc3(CSave *pSave) {
 }
 // END FUNCTION
 
+// FUNCTION: 0x10043fb0 size=0x41
+#include "CPhysSaveRestoreBlockHandler.h"
+#include "CAnchorList.h"
+
+void CPhysSaveRestoreBlockHandler::vfunc4()
+{
+	m_pqSize = 0;
+	if (m_pqGrowSize != -1) {
+		if (m_pqMemory) {
+			g_109f3624(m_pqMemory);
+			m_pqMemory = 0;
+		}
+		m_pqAllocationCount = 0;
+	}
+	m_pqElements = m_pqMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10044020 size=0x3c
 #include "CPhysSaveRestoreBlockHandler.h"
 #include "CUnknown100f6d80.h"

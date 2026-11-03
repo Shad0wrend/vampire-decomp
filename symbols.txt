@@ -10345,6 +10345,7 @@
 0x10010ef1 func   ?sub_1020e3a0@CGameTextUnitFwd@@QAEXH@Z CGameTextUnitFwd::sub_1020e3a0
 0x10010ef6 func   ?sub_101d7bc0@CUnknown101d7bc0@@QAEPAXXZ CUnknown101d7bc0::sub_101d7bc0
 0x10010efb func   ?sub_1010be40@@YAPAHXZ sub_1010be40
+0x10010f00 func   ?vfunc4@CPhysSaveRestoreBlockHandler@@QAEXXZ CPhysSaveRestoreBlockHandler::vfunc4
 0x10010f0a func   ?sub_10064aa0@CUnknown10064aa0@@QAEHXZ CUnknown10064aa0::sub_10064aa0
 0x10010f14 func   _beam beam
 0x10010f19 func   ?vfunc82@CPushable@@UAEPAUdatamap_t@@XZ CPushable::vfunc82
