@@ -19,7 +19,8 @@ class CPropSign;
 
 struct CPropSignUserList	// the 0x1c byte object embedded at +0x74c
 {
-	char m_pad0000[0x1c];
+	char m_pad0000[0x18];
+	char *m_pText764;	// 0x764: the sign text, a copy of the data file's "filename" (freed with operator delete)
 	void sub_100cd660(CBasePlayer *pPlayer, CPropSign *pOwner, int a);	// stub 0x10010794
 };
 
@@ -41,7 +42,8 @@ public:
 	char m_pad0090[0x26c - 0x90];
 	const char *m_name26c;	// 0x26c
 	CCollisionProperty m_Collision;	// 0x270
-	char m_pad02b8[0x734 - 0x270 - sizeof(CCollisionProperty)];
+	char m_pad02b8[0x730 - 0x270 - sizeof(CCollisionProperty)];
+	const char *m_psz730;	// 0x730: the sign data file to load
 	COutputEvent m_Output734;	// 0x734 (fired by vfunc39, destroyed by sub_100cd2d0 in the destructor 0x10211af0)
 	CPropSignUserList m_Users74c;	// 0x74c; really an output event (0x18 bytes, destroyed by sub_100cd2d0) followed by the sign text pointer m_pText764 (+0x764, freed with operator delete in the destructor)
 	int m_field768;
@@ -56,7 +58,7 @@ public:
 	void sub_102120c0(CBaseEntity *pPlayer);	// sends the user message 0x10726088 to pPlayer (when set): a zero value, the float 0.5f and the engine index of this entity (edict at +0x2e0)
 	void sub_10211f10(CBaseEntity *pPlayer);	// like sub_102120c0 with the value 1, followed by the sign's flag byte (+0x76c) and its text (the string at +0x764, else the one at +0x730, else ""); first runs sub_10212200
 	void sub_10211af0();	// destructor body (called by vfunc5): vptr, operator delete of the text at +0x764, sub_100cd2d0 on +0x74c and +0x734, then jmp CBaseAnimating::sub_1008b3c0
-	void sub_10212200();	// stub 0x10014074, run before the sign text is sent to a player
+	bool sub_10212200();	// "CPropSign::LoadSignData": reloads the sign data file at +0x730 into a copy of its "Sign"/"filename" text at +0x764; true when no text came out
 public:
 	virtual void vfunc0();
 	virtual void vfunc1();
