@@ -35,6 +35,7 @@ public:
 	void vfunc71();
 	void vfunc104();	// slot 104: calls slot 71, then sub_100eecf0
 	virtual void vfunc113();	// "CBaseDoor::Activate": base Activate, updates the area portals for a door at rest (state 0 opens them, 1 closes them), then looks up the two entities named at +0x634 / +0x63c and stores their handles at +0x630 (-1 when none) / +0x638 (unchanged when none)
+	void *vfunc38(int a);	// slot 38: sub_10008cba(a), or this when that finds nothing
 	void vfunc248();	// slot 248 "CBaseDoor::UpdatePosition"-like: when the absolute origin (slot 220) equals the position at +0x508 within 0.001f the state at +0x4f8 becomes 1, else when it equals the position at +0x514 it becomes 0
 	int vfunc35(int a);	// slot 35: 0x3a when sub_100127ec; else the slot 35 answer of the entity behind the handle at +0x638, or of the entity sub_10008cba(a) finds; else (flags +0x204 has bit 8 or 10) the value at +0x650 when the byte at +0x55c is set, else 0x3b when sub_1000cc57 else the value at +0x64c; 0 without those flag bits
 	char sub_100127ec();	// stub 0x100127ec for 0x100eef10, called directly
