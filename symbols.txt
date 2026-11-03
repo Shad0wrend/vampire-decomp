@@ -11085,6 +11085,7 @@
 0x10011b8f func   ??0CBaseCombatWeapon@@QAE@XZ CBaseCombatWeapon::CBaseCombatWeapon
 0x10011b8f func   ??0CWeaponRangedBase@@QAE@XZ CWeaponRangedBase::CWeaponRangedBase
 0x10011b94 func   ?vfunc422@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc422
+0x10011b99 func   ?sub_103be180@CNPC_VTzimisce@@QAE_NXZ CNPC_VTzimisce::sub_103be180
 0x10011b9e func   ?sub_1022f580@@YAHPAVCBaseCombatCharacter@@HEH@Z sub_1022f580
 0x10011ba3 func   ?vfunc82@CSoundEnt@@UAEPAUdatamap_t@@XZ CSoundEnt::vfunc82
 0x10011ba8 func   ?sub_101391c0@@YAIPAM@Z sub_101391c0

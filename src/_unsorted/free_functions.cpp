@@ -178315,6 +178315,102 @@ int __fastcall sub_103be150(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103be180 size=0x1c9
+#include "CBaseEntity.h"
+#include "utlmemory.h"
+#include <math.h>
+#include "CNPC_VTzimisce.h"
+#include "CUnknown103bf330.h"
+#include "CEHandleGet.h"
+
+class CObj1093cf4c
+{
+public:
+	virtual void vfunc0();
+	virtual bool vfunc1();
+	char m_pad0004[0x28];
+	int m_n2c;
+};
+
+extern CObj1093cf4c *g_1093cf4c;
+
+struct CGlobalList8490
+{
+	CBaseEntity *sub_100f8490(CBaseEntity *pStart, unsigned int a, const Vector *pOrigin, float flRadius);
+};
+
+extern CGlobalList8490 g_106eb5d8;
+extern Vector g_1070d1b0;
+
+#define CVT1(n) virtual void cvt##n();
+#define CVT10(p) CVT1(p##0) CVT1(p##1) CVT1(p##2) CVT1(p##3) CVT1(p##4) CVT1(p##5) CVT1(p##6) CVT1(p##7) CVT1(p##8) CVT1(p##9)
+
+class CEntityVt
+{
+public:
+	CVT10(0) CVT10(1) CVT10(2) CVT10(3) CVT10(4) CVT10(5) CVT10(6) CVT10(7) CVT10(8) CVT10(9)
+	CVT10(10) CVT10(11) CVT10(12) CVT10(13) CVT10(14) CVT10(15) CVT10(16) CVT10(17) CVT10(18)
+	CVT1(190) CVT1(191) CVT1(192) CVT1(193) CVT1(194) CVT1(195) CVT1(196) CVT1(197) CVT1(198)
+	virtual void vfunc199(float *pVel, float *pAngVel);
+	CVT10(20) CVT10(21)
+	virtual Vector *vfunc220();
+};
+
+bool CNPC_VTzimisce::sub_103be180()
+{
+	if ( !g_1093cf4c->vfunc1() && g_1093cf4c->m_n2c != 0 )
+	{
+		CBaseEntity *pEnt = 0;
+		CBaseEntity *pBest = 0;
+		float flBest = 1050625.0f;
+
+		while ( true )
+		{
+			pEnt = g_106eb5d8.sub_100f8490(pEnt, 2, (const Vector *)vfunc220(), 1024.0f);
+			if ( !pEnt )
+				break;
+
+			if ( ((CUnknown103bf330 *)this)->sub_103bf330((int)pEnt) )
+				continue;
+
+			Vector vecVel;
+			Vector vecAng;
+			((CEntityVt *)pEnt)->vfunc199(vecVel.Base(), vecAng.Base());
+
+			if ( (float)fabs(vecVel.x - g_1070d1b0.x) > 0.1f )
+				continue;
+			if ( (float)fabs(vecVel.y - g_1070d1b0.y) > 0.1f )
+				continue;
+			if ( (float)fabs(vecVel.z - g_1070d1b0.z) <= 0.1f )
+			{
+				Vector *pOther = ((CEntityVt *)pEnt)->vfunc220();
+				Vector *pSelf = (Vector *)vfunc220();
+				float flDist = (*pSelf - *pOther).LengthSqr();
+
+				if ( flDist < flBest )
+				{
+					flBest = flDist;
+					pBest = pEnt;
+				}
+			}
+		}
+
+		if ( pBest )
+			m_hTarget = *pBest->vfunc1();
+		else
+			m_hTarget = 0xffffffff;
+
+		if ( EHandle_Get(m_hTarget) )
+			sub_102c4380((CBaseEntity *)EHandle_Get(m_hTarget));
+
+		if ( pBest )
+			return sub_103be3d0(pBest);
+	}
+
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103be3d0 size=0x108
 #include "CRagdollProp.h"
 extern const char *g_106530e8[];
