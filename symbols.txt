@@ -10346,6 +10346,7 @@
 0x10010af5 func   ?vfunc11@ConVar@@UAEXPBD@Z ConVar::vfunc11
 0x10010afa func   ?sub_102402f0@@YA_NABVVector@@000@Z sub_102402f0
 0x10010aff func   ?sub_1040b4f0@CWeaponIWritten@@QAEXXZ CWeaponIWritten::sub_1040b4f0
+0x10010b04 func   ?vfunc339@CWeaponIGeneric@@UAEXXZ CWeaponIGeneric::vfunc339
 0x10010b09 func   ?vfunc116@CBaseEntity@@UAEHXZ CBaseEntity::vfunc116
 0x10010b0e func   ??0CTraceFilterSimpleTwoEnt@@QAE@PBX0H@Z CTraceFilterSimpleTwoEnt::CTraceFilterSimpleTwoEnt
 0x10010b13 func   ?sub_10097000@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_10097000
