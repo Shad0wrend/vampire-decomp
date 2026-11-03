@@ -56,4 +56,5 @@ class CAnchorList : public CBaseGameSystem, public CAnchorListVec
 {
 public:
 	virtual void vfunc5();
+	void *sub_10029e10(unsigned int flags);	// slot 8 scalar deleting destructor (0x10029e10): the vector at +0x08, ~CBaseGameSystem, then the delete
 };
