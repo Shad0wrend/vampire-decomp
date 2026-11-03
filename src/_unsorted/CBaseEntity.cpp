@@ -2434,6 +2434,56 @@ void CBaseEntity::vfunc78()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a9510 size=0x246
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CEntityVSlots.h"
+#include "CBaseEntity.h"
+
+bool CBaseEntity::IsInWorld()
+{
+	ScopeTrace trace("CBaseEntity::IsInWorld", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+
+	if (m_pEdict2e0)
+	{
+		if (((CEntityVSlots *)this)->slot217()->x >= 16384.0f)
+			return false;
+		if (((CEntityVSlots *)this)->slot217()->y >= 16384.0f)
+			return false;
+		if (((CEntityVSlots *)this)->slot217()->z >= 16384.0f)
+			return false;
+		if (((CEntityVSlots *)this)->slot217()->x <= -16384.0f)
+			return false;
+		if (((CEntityVSlots *)this)->slot217()->y <= -16384.0f)
+			return false;
+		if (((CEntityVSlots *)this)->slot217()->z <= -16384.0f)
+			return false;
+
+		if (m_vel3d4[0] >= 2000.0f)
+			return false;
+		if (m_vel3d4[1] >= 2000.0f)
+			return false;
+		if (m_vel3d4[2] >= 2000.0f)
+			return false;
+		if (m_vel3d4[0] <= -2000.0f)
+			return false;
+		if (m_vel3d4[1] <= -2000.0f)
+			return false;
+		if (m_vel3d4[2] <= -2000.0f)
+			return false;
+	}
+
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9800 size=0xc0
 #include "CBaseEntity.h"
 #include "CBCCSlotViews.h"
