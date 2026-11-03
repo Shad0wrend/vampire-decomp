@@ -47958,6 +47958,25 @@ int sub_100fa840()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fac50 size=0x43
+#include "CEnvParticle.h"
+
+void *sub_100aa720(int size);
+extern char g_105675a4[];
+
+extern "C" CBaseEntity *env_particle()
+{
+	void *mem = sub_100aa720(0x4a4);
+	CEnvParticle *p;
+	if (mem)
+		p = ((CEnvParticle *)mem)->sub_100fad50();
+	else
+		p = 0;
+	((CBaseEntity *)p)->vfunc106(g_105675a4);
+	return (CBaseEntity *)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fad20 size=0x1a
 namespace lifted {
 extern int g_105669d8;
