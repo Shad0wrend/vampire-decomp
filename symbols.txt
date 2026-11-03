@@ -2566,6 +2566,7 @@
 0x10004eee func   ?sub_10248870@CLinkList@@QAEPAUCLinkNode1c@@H@Z CLinkList::sub_10248870
 0x10004ef8 func   ?sub_1011bc40@@YAXH@Z sub_1011bc40
 0x10004efd func   ?sub_1007e000@S1007e050@@QAEXH@Z S1007e050::sub_1007e000
+0x10004f07 func   ?sub_102ee970@CAI_Pathfinder@@QAEXXZ CAI_Pathfinder::sub_102ee970
 0x10004f0c func   ?sub_10356040@@YAXXZ sub_10356040
 0x10004f1b func   ?sub_1035b2b0@@YAXXZ sub_1035b2b0
 0x10004f20 func   ?sub_10247bd0@CUnk10247bd0@@QAEPAU1@HHH@Z CUnk10247bd0::sub_10247bd0

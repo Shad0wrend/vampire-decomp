@@ -149960,6 +149960,36 @@ float CUnk102ee940::sub_102ee940()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ee970 size=0x33
+#include "CAI_Pathfinder.h"
+#include "CBaseEntity.h"
+#include "CBaseEntitySlots.h"
+
+extern int *g_1070b228;
+
+struct CEntitySlots220 : public CBaseEntitySlots
+{
+	virtual void s194(); virtual void s195(); virtual void s196(); virtual void s197(); virtual void s198();
+	virtual void s199(); virtual void s200(); virtual void s201(); virtual void s202(); virtual void s203();
+	virtual void s204(); virtual void s205(); virtual void s206(); virtual void s207(); virtual void s208();
+	virtual void s209(); virtual void s210(); virtual void s211(); virtual void s212(); virtual void s213();
+	virtual void s214(); virtual void s215(); virtual void s216(); virtual void s217(); virtual void s218();
+	virtual void s219();
+	virtual float *slot220();
+};
+
+// TARGET: CAI_Pathfinder::sub_102ee970
+void CAI_Pathfinder::sub_102ee970()
+{
+	CBaseEntity *pOwner = (CBaseEntity *)m_pOuter;
+	CAI_PathfinderNetwork *pNetwork = m_pNetwork;
+	m_unk08 = *(int *)((char *)pOwner + 0x156c);
+	m_unk0c = g_1070b228[1];
+	float *pPosition = ((CEntitySlots220 *)pOwner)->slot220();
+	pNetwork->sub_102f3c10(pOwner, pPosition);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ee9c0 size=0x4c
 #include "CAI_Navigator.h"
 #include "Vector.h"
