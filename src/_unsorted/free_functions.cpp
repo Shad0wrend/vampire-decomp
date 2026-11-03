@@ -98639,6 +98639,28 @@ int __stdcall sub_101e28e0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e2910 size=0x5c
+#include "CUnknown101e0f00.h"
+
+extern CUnknown101e0f00 g_10739a4c;
+
+// TARGET: CUnknown101e0f00::sub_101e2910
+void *CUnknown101e0f00::sub_101e2910(int a, int b, int c)
+{
+	int index = g_10739a4c.sub_101e1250(b, c);
+	if (index != -1)
+	{
+		void *pTarget = sub_101e28e0((void *)a);
+		if (pTarget)
+		{
+			if (sub_101e1a60((CUnknown101e0f00Entry *)m_ppEntries[index], (void *)a, (void *)a, pTarget, 1))
+				return pTarget;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e2da0 size=0x149
 #include "utlrbtree.h"
 #include "utlsortvector.h"
