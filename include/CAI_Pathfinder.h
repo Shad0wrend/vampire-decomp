@@ -62,6 +62,9 @@ public:
 	CAI_PathfinderNetwork *m_pNetwork;	// 0x2c
 
 	char sub_10300140(int a, int b, int c, int d, int e);	// stub 0x10010fc8, called by CAI_Navigator::sub_102ee300; the result is tested (true when the route can be built)
+	CAI_Waypoint *sub_103007e0(const float *pOrigin, unsigned int flags, int nodeIndex, int a4, int a5);
+	CAI_Waypoint *sub_102ffbd0(int a, int index);
+	CAI_Waypoint *sub_10304130(const float *pLocal, const float *pOrigin, int a, int b, int c, unsigned int flags, int d, int e);
 	CAI_Waypoint *sub_10304e00(int a1, void *pRoute, int a3, int a4, int a5, const float *pOrigin, int a7, int a8);	// stub 0x10004507 (ret 0x20): builds the node route from the route record the check filled in
 	CAI_Waypoint *sub_103055b0(int a1, int a2, int a3, int a4, int a5, int a6);	// "CAI_Pathfinder_BuildExtrapolationNodeRoute" (ret 0x18): profiler scope, sub_10300140([this+4], a2, a4, a5, route) then sub_10304e00(a1, route, a3, 0, 0, zero vector, 0, a6); 0 when the check fails
 	void sub_102ee970();	// copies the NPC's field at +0x156c and the global at 0x1070b228 + 4 into m_unk08 / m_unk0c, then the network's nearest node query for the NPC's position (vfunc220)
