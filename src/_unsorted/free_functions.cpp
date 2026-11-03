@@ -99830,6 +99830,49 @@ bool CStatusFlagList::sub_101e3f50(CStatusTarget *pTarget)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e40b0 size=0x80
+#include "CBaseCombatCharacter.h"
+#include "CUnknown101e3af0.h"
+
+struct CDiscView
+{
+	char m_pad0000[0xeb0];
+	unsigned int m_nActive;
+};
+
+extern unsigned char g_10739a48;
+extern unsigned int g_10739414;
+extern unsigned int g_10739404;
+
+void CUnknown101e3af0::sub_101e40b0(CBaseCombatCharacter *pCharacter)
+{
+	unsigned char nGuard = g_10739a48;
+	if (!(nGuard & 1)) {
+		nGuard |= 1;
+		g_10739a48 = nGuard;
+		g_10739414 = sub_101e1610(10);
+	}
+	if (!(nGuard & 2)) {
+		nGuard |= 2;
+		g_10739a48 = nGuard;
+		g_10739404 = sub_101e1520(10, 0);
+	}
+	if (g_10739414 & ((CDiscView *)pCharacter)->m_nActive) {
+		unsigned int nBit = g_10739404;
+		int i = 0;
+		while (true) {
+			if (nBit & ((CDiscView *)pCharacter)->m_nActive) {
+				sub_101e3af0(pCharacter, nBit, 0);
+				return;
+			}
+			nBit += nBit;
+			if (++i >= 5)
+				return;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e4150 size=0x9c
 #include "CUnknown101e4150.h"
 #include "CUnknown10739d08.h"
