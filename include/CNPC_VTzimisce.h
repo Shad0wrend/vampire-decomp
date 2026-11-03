@@ -145,7 +145,9 @@ public:
 	CAI_Motor *m_pMotor5d44;	// 0x5d44
 	char m_pad5d48[0x5d8c - 0x5d48];
 	unsigned int m_flags5d8c;
-	char m_pad5d90[0x6078 - 0x5d90];
+	char m_pad5d90[0x5ddc - 0x5d90];
+	CBaseEntity *m_p5ddc;	// 0x5ddc: the "target type 0x36b0 / 0x36b1" entity (only its +0x5dc dword is read)
+	char m_pad5de0[0x6078 - 0x5de0];
 	char m_b6078;	// 0x6078: set in Spawn
 	char m_pad6079[0x655c - 0x6079];
 	float m_f655c;	// 0x655c: 0.01f in vfunc593
