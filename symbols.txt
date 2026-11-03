@@ -12386,6 +12386,7 @@
 0x10013b3d func   ?vfunc142@CRopeKeyframe@@QAEHH@Z CRopeKeyframe::vfunc142
 0x10013b4c func   ?sub_1042b6d0@CBaseEntity@@QAEXH@Z CBaseEntity::sub_1042b6d0
 0x10013b51 func   ?sub_100265f0@@YGXH@Z sub_100265f0
+0x10013b56 func   ?sub_101ee2e0@CVampireProjectile@@QAEPAV1@XZ CVampireProjectile::sub_101ee2e0
 0x10013b65 func   ?sub_10071660@CUnk10071840@@QAEXXZ CUnk10071840::sub_10071660
 0x10013b6a func   ?sub_1018e1c0@CActivityCopyProp@@QAEPAV1@XZ CActivityCopyProp::sub_1018e1c0
 0x10013b6f func   ?vfunc291@CWeaponIGeneric@@UAEXXZ CWeaponIGeneric::vfunc291

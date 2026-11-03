@@ -102864,6 +102864,42 @@ int sub_101ee2b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ee2e0 size=0x8e
+#include "CVampireProjectile.h"
+#include "CVDmg_t.h"
+
+void __fastcall sub_100103fc(void *p);
+void __fastcall sub_101fa5b0(void *p);
+extern char vt_1048357c[];
+
+CVampireProjectile *CVampireProjectile::sub_101ee2e0()
+{
+	int *p = (int *)this;
+	sub_100103fc(this);
+	p[0x1cc] = -1;
+	*(p + 0x1d5) = -1;
+	p[0x1de] = -1;
+	p[0x1df] = -1;
+	unsigned char zero;
+	p[0x1e7] = -1;
+	sub_101fa5b0((char *)this + 0x834);
+	*(int volatile *)((char *)this + 0x8a8) = -1; zero = 0;
+	p[0x1cd] = -1;
+	p[0x1ce] = zero;
+	*(int volatile *)((char *)this + 0x8b8) = -1;
+	*(void *volatile *)this = vt_1048357c;
+	*((char *)this + 0x758) = zero;
+	*(0x8a4 + (char *)this) = zero;
+	0x759[(char *)this] = zero;
+	*(int volatile *)((char *)this + 0x8a8) = -1;
+	*((char *)this + 0x8ac) = zero;
+	*(p + 0x22c) = -1;
+	0x8b4[(char *)this] = zero;
+	*(float *)((char *)this + 0x830) = 1.0f;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ee5a0 size=0x11f
 #include "CGlobalEntityList.h"
 #include "CEntityVSlots.h"
