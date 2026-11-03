@@ -23,6 +23,7 @@ struct CAI_NavProvider;
 class CAI_BaseNPC
 {
 public:
+	void sub_10266780(struct CTakeDamageInfo *pInfo, const Vector *pVecDir, struct CGameTrace *pTrace);	// slot 141 body "TraceAttack"
 	// slots 0..9
 	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4();
 	virtual CAI_BaseNPC *vfunc5(unsigned int flags); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual const char **vfunc9(int *pOut);
