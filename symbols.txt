@@ -10566,6 +10566,7 @@
 0x10011356 func   ?vfunc1@CAI_CsActList@@UAEXPAUCsActRestoreIface@@@Z CAI_CsActList::vfunc1
 0x1001135b func   ?sub_101fa960@CVDmg_t@@QAEXPAUCVDmgSource_t@@@Z CVDmg_t::sub_101fa960
 0x10011365 func   ?vfunc113@CSun@@UAEXXZ CSun::vfunc113
+0x1001136a func   ?sub_10394970@@YIXPAXHM@Z sub_10394970
 0x10011374 func   ?vfunc82@CVampireProjectile_MingXiaoSpit@@UAEPAUdatamap_t@@XZ CVampireProjectile_MingXiaoSpit::vfunc82
 0x10011379 func   ?vfunc195@CBaseEntity@@QAEXXZ CBaseEntity::vfunc195
 0x10011383 func   ?sub_1024b230@@YA_NPBUStrRef@@0@Z sub_1024b230

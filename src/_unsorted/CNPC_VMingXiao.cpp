@@ -355,6 +355,16 @@ float CNPC_VMingXiao::vfunc516()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10394970 size=0xd
+void __fastcall sub_1000704f(void *pThis, int dummy, float a);
+
+// TARGET: sub_10394970
+void __fastcall sub_10394970(void *pThis, int dummy, float a)
+{
+	sub_1000704f(pThis, dummy, a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103951d0 size=0x7c
 #include "CBaseEntity.h"
 #include "CNPC_VMingXiao.h"
