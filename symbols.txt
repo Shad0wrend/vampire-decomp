@@ -4120,6 +4120,7 @@
 0x10007658 func   ?sub_101a63a0@@YG_NHHH@Z sub_101a63a0
 0x1000765d func   _npc_maker npc_maker
 0x10007662 func   ?sub_100ddf60@CBaseEntity@@QAEXPBH@Z CBaseEntity::sub_100ddf60
+0x10007667 func   ?vfunc77@CEnvParticle@@QAEXXZ CEnvParticle::vfunc77
 0x1000766c func   ?sub_101dbed0@CUnknown101dbe30@@QAEXPAVCBaseEntity@@@Z CUnknown101dbe30::sub_101dbed0
 0x10007671 func   ?sub_10081eb0@@YIXPAUCSlots@@HH@Z sub_10081eb0
 0x10007676 func   ?sub_1029fcf0@CAI_BaseNPCTroika@@QAEDHPAVCBaseEntity@@H@Z CAI_BaseNPCTroika::sub_1029fcf0
