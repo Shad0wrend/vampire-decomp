@@ -233,7 +233,8 @@ public:
 
 	char m_pad0004[0x8c];
 	float m_flForceTransmitTime;	// 0x0090
-	char m_pad0094[0x9c - 0x94];
+	char m_pad0094[4];
+	class CAI_BaseNPCTroika *m_pNPC98;	// 0x0098: the controlling NPC object (CAI_BaseNPCTroika::m_pObj98); null for a plain entity
 	void *m_p9c;	// 0x009c: the owning object (the character behind a hand / weapon)
 	int m_n00a0;	// 0x00a0
 	char m_pad00a4[4];
