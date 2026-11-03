@@ -8269,6 +8269,7 @@
 0x1000dada func   ?sub_1023e4b0@@YAXPAVCBaseEntity@@H@Z sub_1023e4b0
 0x1000dae4 func   ?vfunc40@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHH@Z CTempEntsSystem::vfunc40
 0x1000daee func   ?sub_103912c0@@YIPAXPAX@Z sub_103912c0
+0x1000daf3 func   ?vfunc13@CAI_Motor@@UAEXPAVCBaseEntity@@MMM@Z CAI_Motor::vfunc13
 0x1000daf8 func   ?vfunc277@CPropHacking@@QAEXXZ CPropHacking::vfunc277
 0x1000dafd func   ?sub_10108e00@CUnknown10108e00@@QAE_NH@Z CUnknown10108e00::sub_10108e00
 0x1000db07 func   ?vfunc500@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc500

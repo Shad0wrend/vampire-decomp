@@ -231,6 +231,23 @@ void CAI_Motor::vfunc14(CBaseEntity *pEnt, float flValue, float duration, float 
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e2120 size=0x20
+#include "CBaseEntity.h"
+#include "CAI_Motor.h"
+
+class CUnknown102d9040
+{
+public:
+	void sub_102d8e50(CBaseEntity *pEnt, float flValue, float duration, float amount);
+};
+
+// TARGET: CAI_Motor::vfunc13
+void CAI_Motor::vfunc13(CBaseEntity *pEnt, float flValue, float duration, float amount)
+{
+	((CUnknown102d9040 *)((char *)this + 0x54))->sub_102d8e50(pEnt, flValue, duration, amount);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e2150 size=0x20
 #include "CBaseEntity.h"
 #include "CAI_Motor.h"
