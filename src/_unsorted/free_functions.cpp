@@ -173696,6 +173696,52 @@ int __fastcall sub_10381ca0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10382020 size=0x1f7
+#include "CNPC_VHengeyokai.h"
+#include "CEntityVSlots.h"
+#include "QAngle.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "CTraceFilterSimple.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738964.h"
+#include "AITrace.h"
+
+void sub_10139610(const QAngle &angles, Vector *pForward, Vector *pRight, Vector *pUp);
+
+bool CNPC_VHengeyokai::sub_10382020(void *pTarget)
+{
+	if (!pTarget)
+		return false;
+
+	CGameTrace trace;
+	Vector eye;
+	Vector vecForward;
+	Vector vecEnd;
+	Ray_t ray;
+
+	sub_10139610(*(QAngle *)((CEntityVSlots *)this)->slot221(), 0, &vecForward, 0);
+
+	{
+		Vector vecStart = *((CEntityVSlots *)this)->slot193(&eye) - vecForward * -80.0f;
+		((CEntityVSlots *)pTarget)->slot193(&vecEnd);
+		ray.Init(vecStart, vecEnd);
+	}
+	{
+		CTraceFilterSimple filter(this, 0);
+		g_1070b254->vfunc4(&ray, 0x600400b, (CTraceFilterNoCharacterCollide *)&filter, &trace);
+
+		if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+			sub_10146570((const Vector *)&trace.m_startpos, (const Vector *)&trace.m_endpos, 0xff, 0, 0, 1, -1.0f);
+
+		if (trace.m_fraction != 1.0)
+			return false;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103822a0 size=0x10e
 #include "CBaseEntity.h"
 #include "Vector.h"

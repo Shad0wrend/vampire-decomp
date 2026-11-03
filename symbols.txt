@@ -13639,6 +13639,7 @@
 0x100157fd func   ?sub_10146670@CNetStateUnit@@QAEXM@Z CNetStateUnit::sub_10146670
 0x10015802 func   ?vfunc5@CNodeEnt@@QAEPAV1@I@Z CNodeEnt::vfunc5
 0x10015807 func   ?sub_101fceb0@CVStatAction_t@@QAE_NH@Z CVStatAction_t::sub_101fceb0
+0x1001580c func   ?sub_10382020@CNPC_VHengeyokai@@QAE_NPAX@Z CNPC_VHengeyokai::sub_10382020
 0x10015811 func   ?vfunc22@CNPC_VMingXiaoTentacle@@UAEXH@Z CNPC_VMingXiaoTentacle::vfunc22
 0x10015816 func   ?vfunc158@CPhysicsCannister@@QAE_NXZ CPhysicsCannister::vfunc158
 0x1001581b func   _npc_VBatSwarm npc_VBatSwarm
