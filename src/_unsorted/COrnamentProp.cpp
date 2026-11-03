@@ -59,3 +59,29 @@ void COrnamentProp::vfunc113()
 		sub_10191130(m_name7dc.String(), this);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10194490 size=0x57
+#include "CCineNPC.h"
+#include "CBaseAnimating.h"
+
+void sub_100aa7b0(void *);
+
+struct Helper
+{
+	void *sub_10194490(unsigned int flags);
+};
+
+// TARGET: Helper::sub_10194490
+void *Helper::sub_10194490(unsigned int flags)
+{
+	((CCineNPCSlot *)((char *)this + 0x7ac))->sub_10015708();
+	((CCineNPCSlot *)((char *)this + 0x794))->sub_10015708();
+	((CCineNPCSlot *)((char *)this + 0x77c))->sub_10015708();
+	((CCineNPCSlot *)((char *)this + 0x748))->sub_10015708();
+	((CCineNPCSlot *)((char *)this + 0x730))->sub_10015708();
+	((CBaseAnimating *)this)->sub_1008b3c0();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
