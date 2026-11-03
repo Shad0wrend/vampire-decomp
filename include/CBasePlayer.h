@@ -123,7 +123,8 @@ public:
 	CBP_V1(sc45) CBP_V1(sc46) CBP_V1(sc47) CBP_V1(sc48) CBP_V1(sc49)
 	CBP_V1(sd0) CBP_V1(sd1)
 	virtual int vfunc217(const void *pName, int a);
-	CBP_V1(sd3) CBP_V1(sd4)
+	virtual void vfunc218(float *pAngles);	// slot 218: SetAbsAngles (the teleport_player command 0x101803a0 passes the vector it wrote to +0x206c)
+	CBP_V1(sd4)
 	virtual float *vfunc220();	// "CBaseEntity::GetOrigin"
 	virtual float *vfunc221();
 	// slots 222..402
