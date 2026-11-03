@@ -51,6 +51,7 @@ public:
 	float vfunc250(float a);	// slot 250: clears the stale flags and advances the animation (CBaseAnimatingOverlay::vfunc250)
 	bool vfunc586();
 	float vfunc516();
+	void vfunc537(const Vector *pPos, float flValue);	// slot 537 (ret 8): updates the head / neck / body pose parameters (m_nPose5fe0[3] then m_nPose5fb8[10]) from the "eyes" attachment, the given position and the yaw derived from flValue; only when slot 513 (&0x1000) holds
 	const char *vfunc589(int type);	// returns the string registered for the given kind (1, 2, 3, 5/7 at +0x5fa8/+0x5fb0/+0x5fac/+0x5fb4), or the override string at +0x5fa4 when set (and the kind is not 7); null when unset
 	Vector vfunc193();	// returns the vector at +0x5f50 (hidden result pointer), after sub_10010be5()
 	Vector vfunc373();	// returns the vector at +0x5f5c (hidden result pointer), after sub_10010be5()
