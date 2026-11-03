@@ -76,3 +76,15 @@ template<> int CUtlVectorDataOps<CUtlVector<KEYRING_ENTRY,CUtlMemory<KEYRING_ENT
 	return (int)pVec;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1040afc0 size=0x13
+#include "CUtlVectorDataOps.h"
+
+struct KEYRING_ENTRY;
+
+template <>
+bool CUtlVectorDataOps<CUtlVector<KEYRING_ENTRY,CUtlMemory<KEYRING_ENTRY> >,9>::vfunc2(void *pFieldData)
+{
+	return *(int *)(*(char **)pFieldData + 0xc) == 0;
+}
+// END FUNCTION
