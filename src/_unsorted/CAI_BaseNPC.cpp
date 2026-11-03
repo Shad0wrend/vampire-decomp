@@ -1856,6 +1856,49 @@ void CAI_BaseNPC::vfunc448(int code)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10274820 size=0x1f2
+#include "AITrace.h"
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CGameTrace.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738964.h"
+#include "Ray_t.h"
+#include "Vector.h"
+int CAI_BaseNPC::vfunc570(CBaseEntity *pHint)
+{
+	int result = 0x54;
+	if (pHint && vfunc167() && *(int *)((char *)pHint + 0x5dc) >= 100 && *(int *)((char *)pHint + 0x5dc) <= 101)
+	{
+		if (sub_1008dc40(0x57, -1) != -1)
+		{
+			Ray_t ray;
+			{
+				Vector vecStart = *(Vector *)vfunc217() + vfunc533(0x57, 0x57);
+				Vector vecEnd;
+				Vector *pVecEnd = ((CEntityVSlots *)vfunc167())->slot193(&vecEnd);
+				ray.Init(vecStart, *pVecEnd);
+			}
+			{
+				CTraceFilterSimple filter(this, 0);
+				CGameTrace trace;
+				g_1070b254->vfunc4(&ray, 0x2804091, (CTraceFilterNoCharacterCollide *)&filter, &trace);
+
+				if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+					sub_10146570((const Vector *)&trace.m_startpos, (const Vector *)&trace.m_endpos, 0xff, 0, 0, 1, -1.0f);
+
+				if (trace.m_fraction != 1.0)
+					result = 0x57;
+			}
+		}
+	}
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10274aa0 size=0x64
 #include "CBaseAnimating.h"
 #include "CAI_BaseNPC.h"

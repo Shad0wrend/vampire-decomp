@@ -4778,6 +4778,7 @@
 0x10008427 func   ?sub_101bc500@@YAHPAPAD0@Z sub_101bc500
 0x1000842c func   ?vfunc1@CDebugSaveRestoreOps@@UAEXHH@Z CDebugSaveRestoreOps::vfunc1
 0x10008431 func   ?sub_1009a500@@YAHXZ sub_1009a500
+0x1000843b func   ?vfunc570@CAI_BaseNPC@@QAEHPAVCBaseEntity@@@Z CAI_BaseNPC::vfunc570
 0x10008440 func   ?sub_10071440@CUnk10071440@@QAEXPAX@Z CUnk10071440::sub_10071440
 0x10008445 func   ?sub_1024afe0@@YAHXZ sub_1024afe0
 0x1000844f func   ?sub_101bd0f0@SFilter@@QAEPAU1@E@Z SFilter::sub_101bd0f0
