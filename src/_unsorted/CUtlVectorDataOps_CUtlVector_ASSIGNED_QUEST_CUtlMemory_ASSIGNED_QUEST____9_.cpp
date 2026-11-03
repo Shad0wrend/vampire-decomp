@@ -134,3 +134,17 @@ template<> int CUtlVectorDataOps<CUtlVector<ASSIGNED_QUEST,CUtlMemory<ASSIGNED_Q
 	return (int)pVec;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10184720 size=0x13
+#include "CUtlVectorDataOps.h"
+#include "ASSIGNED_QUEST.h"
+
+// TARGET: CUtlVectorDataOps<CUtlVector<ASSIGNED_QUEST,CUtlMemory<ASSIGNED_QUEST> >,9>::vfunc2
+template <class VEC, int N>
+bool CUtlVectorDataOps<VEC, N>::vfunc2(void *pFieldData)
+{
+	return *(int *)(*(char **)pFieldData + 0xc) == 0;
+}
+
+template class CUtlVectorDataOps<CUtlVector<ASSIGNED_QUEST,CUtlMemory<ASSIGNED_QUEST> >,9>;
+// END FUNCTION
