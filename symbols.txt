@@ -12293,6 +12293,7 @@
 0x100141e1 func   ?sub_101b6550@UtlVec8@@QAEXPBUSElem8@@H@Z UtlVec8::sub_101b6550
 0x100141e6 func   ?vfunc241@CAI_GoalEntity@@QAEXH@Z CAI_GoalEntity::vfunc241
 0x100141f0 func   ?vfunc82@CMomentaryRotButton@@UAEPAUdatamap_t@@XZ CMomentaryRotButton::vfunc82
+0x100141f5 func   ?vfunc372@CHL2_Player@@QAEHH@Z CHL2_Player::vfunc372
 0x100141fa func   ?vfunc9@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc9
 0x100141ff func   ?vfunc5@CAmbientGeneric@@UAEPAV1@I@Z CAmbientGeneric::vfunc5
 0x10014209 func   ?vfunc580@CNPC_VTzimisce@@UAEHXZ CNPC_VTzimisce::vfunc580
