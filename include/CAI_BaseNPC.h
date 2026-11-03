@@ -43,7 +43,9 @@ public:
 	virtual int vfunc142(int a);	// slot 142 (ret 4: one argument, answers in eax)
 	CAI_NPC_V(143)
 	virtual void vfunc144(int a);
-	CAI_NPC_V(145) CAI_NPC_V(146) CAI_NPC_V(147) CAI_NPC_V(148) CAI_NPC_V(149)
+	virtual int vfunc145();	// slot 145 "BloodColor" (the blood color at +0x1570)
+	virtual void vfunc146(class CVDmg_t *pDmg, const Vector *pVecDir, struct CGameTrace *pTrace);	// slot 146 "TraceBleed"
+	CAI_NPC_V(147) CAI_NPC_V(148) CAI_NPC_V(149)
 	CAI_NPC_V(150) CAI_NPC_V(151) CAI_NPC_V(152) CAI_NPC_V(153) CAI_NPC_V(154) CAI_NPC_V(155) CAI_NPC_V(156) CAI_NPC_V(157)
 	virtual bool vfunc158();	// asked by the Troika schedule code ("slot 158 holds")
 	CAI_NPC_V(159)
