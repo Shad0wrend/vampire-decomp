@@ -1,11 +1,5 @@
-// CBaseGameSystem: base of the registered game systems (RTTI-less in the game,
-// but the game's linker names its destructor ??1CBaseGameSystem@@UAE@XZ).
-// Its destructor stores the IGameSystem vftable (0x10516c94) and removes the
-// object from the global game-system list through sub_1042c420.
+// CBaseGameSystem is declared in CAnchorList.h (9-slot game-system vtable at
+// 0x10516c94). This file only exists so that #include "CBaseGameSystem.h" resolves.
 #pragma once
 
-class CBaseGameSystem
-{
-public:
-	virtual ~CBaseGameSystem();
-};
+#include "CAnchorList.h"
