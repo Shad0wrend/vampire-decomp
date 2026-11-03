@@ -1598,6 +1598,7 @@
 0x1000379c func   ?vfunc138@CPayphone@@UAEHXZ CPayphone::vfunc138
 0x100037a1 func   ?vfunc348@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::vfunc348
 0x100037a6 func   ?sub_10105870@CExpressionTable@@QAEHHH@Z CExpressionTable::sub_10105870
+0x100037ab func   ?vfunc0@CTempEntsSystem@@QAEPAXI@Z CTempEntsSystem::vfunc0
 0x100037b5 func   ?sub_1042a540@CBaseGrenade@@QAEXXZ CBaseGrenade::sub_1042a540
 0x100037ba func   ?sub_101c8a60@CUnknown101c8a60@@QAEXPAUCInputData100bc0f0@@@Z CUnknown101c8a60::sub_101c8a60
 0x100037bf func   ?sub_101f0a60@CUnknown101f0960@@QAEXPAX@Z CUnknown101f0960::sub_101f0a60
