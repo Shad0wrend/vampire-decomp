@@ -20,3 +20,4 @@
 	bool sub_10239170();	// true when the weapon's current roll slot (sub_102517e0) has a loaded clip (+0x74c + 4 * the slot's ammo index at +0x10c) and vfunc277(0) holds
 	int sub_10251f10();	// slot 346: the dword at +0x2428 of the owner object
 	int sub_10251e00();	// slot 274 body: the owner object (sub_102517b0) + 0x2388
+	int sub_10251f90();	// slot 351: the dword at +0x5ebd0 of the owner object
