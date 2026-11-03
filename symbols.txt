@@ -5620,6 +5620,7 @@
 0x10009b79 func   ?sub_103404f0@@YI_NPADHH@Z sub_103404f0
 0x10009b7e func   ?vfunc317@CNPC_VPlaceholder@@UAE_NH@Z CNPC_VPlaceholder::vfunc317
 0x10009b83 func   ?sub_1004d060@CPhysicsSpring@@QAEPAV1@XZ CPhysicsSpring::sub_1004d060
+0x10009b88 func   ?vfunc104@CPropButton@@UAEXXZ CPropButton::vfunc104
 0x10009b8d func   ?sub_100f7b20@@YGPAVCBaseEntity@@PBDPBVVector@@MPAV1@2@Z sub_100f7b20
 0x10009b92 func   ?sub_10079400@@YAPAVCUnknown1007b7b0@@HHH@Z sub_10079400
 0x10009b97 func   _npc_VToreador npc_VToreador

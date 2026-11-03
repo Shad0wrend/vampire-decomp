@@ -12,6 +12,21 @@ datamap_t * CPropButton::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102155f0 size=0x1e
+#include "CPropButton.h"
+#include "CBaseProp.h"
+
+void sub_1000f506();
+
+// TARGET: CPropButton::vfunc104
+void CPropButton::vfunc104()
+{
+	vfunc71();
+	((CBaseProp *)this)->vfunc104();
+	*(void **)((char *)this + 0x1f0) = (void *)sub_1000f506;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10215620 size=0xe5
 #include "CPropButton.h"
 #include "CUnknown1073dc28.h"
