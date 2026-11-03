@@ -11218,6 +11218,7 @@
 0x10011f8b func   ?sub_100e4ef0@CUnknown100e4ef0@@QAEXXZ CUnknown100e4ef0::sub_100e4ef0
 0x10011f90 func   ?sub_10404270@@YAHXZ sub_10404270
 0x10011f95 func   ?sub_1020e080@CUnknown1020e060@@QAEXH@Z CUnknown1020e060::sub_1020e080
+0x10011f9a func   ?sub_10223330@CFuncKeyframedMover@@QAEPAV1@XZ CFuncKeyframedMover::sub_10223330
 0x10011fa4 func   ?sub_102491a0@CUnknown102491a0@@QAEXHH@Z CUnknown102491a0::sub_102491a0
 0x10011fa9 func   ?sub_101074c0@@YIXPAUMem32@@HH@Z sub_101074c0
 0x10011fb8 func   ?vfunc1@CTETParticleHUD@@UAEHXZ CTETParticleHUD::vfunc1

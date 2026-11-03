@@ -119192,6 +119192,46 @@ int *sub_102231c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10223330 size=0x78
+#include "CFuncKeyframedMover.h"
+
+extern void *vt_1048ba44[];
+
+struct CKeyframedMoverUnit : CFuncKeyframedMover {
+	CBaseEntity *sub_1000d5ee();
+};
+
+struct CKeyframedMoverSub { void sub_10002ddd(); };
+
+struct CKeyframedMoverFields {
+	char m_pad[0x564];
+	char m_b564;
+	char m_pad565[3];
+	int m_n568;
+	int m_n56c;
+};
+
+CFuncKeyframedMover *CFuncKeyframedMover::sub_10223330()
+{
+	char *p = (char *)this;
+	CKeyframedMoverFields *f = (CKeyframedMoverFields *)this;
+	((CKeyframedMoverUnit *)this)->sub_1000d5ee();
+	f->m_n568 = -1;
+	f->m_n56c = -1;
+	((CKeyframedMoverSub *)(p + 0x570))->sub_10002ddd();
+	((CKeyframedMoverSub *)(p + 0x588))->sub_10002ddd();
+	((CKeyframedMoverSub *)(p + 0x5a0))->sub_10002ddd();
+	((CKeyframedMoverSub *)(p + 0x5b8))->sub_10002ddd();
+	((CKeyframedMoverSub *)(p + 0x5d0))->sub_10002ddd();
+	((CKeyframedMoverSub *)(p + 0x5e8))->sub_10002ddd();
+	*(void * volatile *)this = (void *)vt_1048ba44;
+	*(volatile char *)((char *)this + 0x564) = 0;
+	*(volatile int *)((char *)this + 0x56c) = -1;
+	*(volatile int *)((char *)this + 0x568) = -1;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10223470 size=0x133
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
