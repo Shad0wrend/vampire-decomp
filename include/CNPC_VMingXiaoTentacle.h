@@ -511,7 +511,7 @@ public:
 	virtual void vfunc429();
 	virtual void vfunc430();
 	virtual void vfunc431();
-	virtual void vfunc432();
+	virtual void vfunc432(int a);	// slot 432 override of CAI_BaseNPCTroika::vfunc432 (RunAI), ret 4 (body 0x1039e3d0)
 	virtual void vfunc433_slot();
 	virtual void vfunc434();
 	virtual void vfunc435();
