@@ -20,4 +20,5 @@ public:
 	int vfunc79();
 	int vfunc80();
 	int vfunc81();
+	void vfunc113();	// slot 113 (plain member): sub_10008c5b(this), then CBaseEntity::vfunc113
 };
