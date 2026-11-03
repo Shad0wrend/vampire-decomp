@@ -129,6 +129,18 @@ void CSingleplayRules::vfunc28(void * a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101abe70 size=0x18
+#include "CSingleplayRules.h"
+#include "CUnknown10739d08.h"
+
+extern CUnknown10739d08 g_10739d08;
+
+float CSingleplayRules::vfunc30(int a)
+{
+	return g_10739d08.sub_101e7dd0(*(float *)((char *)a + 0x1ee8));
+}
+// END FUNCTION
+
 // FUNCTION: 0x101abea0 size=0x3
 void CSingleplayRules::vfunc35(CBaseEntity * a0)
 {

@@ -11415,6 +11415,7 @@
 0x10012b5c func   ?sub_100454d0@@YA_NPBUSortItem@@0@Z sub_100454d0
 0x10012b61 func   ?sub_1033c900@CBaseCombatCharacter@@QAE_NI@Z CBaseCombatCharacter::sub_1033c900
 0x10012b66 func   ?sub_1004f860@CUnknown1004f860@@QAEPAXXZ CUnknown1004f860::sub_1004f860
+0x10012b6b func   ?vfunc30@CSingleplayRules@@UAEMH@Z CSingleplayRules::vfunc30
 0x10012b75 func   ?vfunc171@CBaseEntity@@QAEXXZ CBaseEntity::vfunc171
 0x10012b7f func   ?sub_102cdb70@CAI_GoalEntity@@QAEXH@Z CAI_GoalEntity::sub_102cdb70
 0x10012b84 func   ?sub_1013b0d0@@YAXABUQ@@PAM@Z sub_1013b0d0
