@@ -43,6 +43,13 @@ void CPropSwitch::vfunc104()
 // END FUNCTION
 
 // FUNCTION: 0x1020d720 size=0xe5
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "ScopeTrace.h"
 #include "CPropSwitch.h"
 #include "CUnknown1073dc28.h"
 
@@ -79,6 +86,14 @@ void CPropSwitch::vfunc71()
 // END FUNCTION
 
 // FUNCTION: 0x1020d850 size=0x11f
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CPropSwitch.h"
 #include "CCollisionProperty.h"
 #include "ScopeTrace.h"
@@ -117,6 +132,14 @@ void CPropSwitch::vfunc103()
 // END FUNCTION
 
 // FUNCTION: 0x1020d9c0 size=0xf5
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"

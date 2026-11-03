@@ -3,6 +3,7 @@
 // at +0x14 (data pointer, allocation count, grow size, then the size at +0x20).
 // Only what decompiled code needs.
 #pragma once
+#include "Vector.h"
 
 class CBaseEntity;
 

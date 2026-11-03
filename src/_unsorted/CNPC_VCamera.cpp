@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10367f60 size=0x6
+#include "datamap.h"
 #include "CNPC_VCamera.h"
 namespace lifted {
 extern char g_1062f650;
@@ -487,6 +488,7 @@ void CNPC_VCamera::vfunc422()
 // END FUNCTION
 
 // FUNCTION: 0x10369bd0 size=0xa5
+#include "CBaseEntity.h"
 #include "CNPC_VCamera.h"
 class CBaseEntity;
 #include "CUnknown103158f0.h"

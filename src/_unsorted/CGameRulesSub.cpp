@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10427940 size=0x19
+#include "CGameRules.h"
 // TARGET: CGameRulesSub::CGameRulesSub
 CGameRulesSub::CGameRulesSub()
 {

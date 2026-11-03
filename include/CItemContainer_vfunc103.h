@@ -14,6 +14,7 @@
 // The inlined scope traces are CBaseEntity::sub_1016e500(6) SetSolid / the RemoveSolidFlags on the collision property
 // at +0x270 (CCollisionProperty::sub_100dc480, CFlagsUnit::sub_100dc580 with the flags word at +0x2b4 & 0xbf).
 #pragma once
+#include "CBaseCombatWeapon.h"
 
 #include "CBaseCombatCharacter.h"
 #include "COutputEvent.h"

@@ -132,6 +132,9 @@ void CUtlVectorDataOps<KeyringVec, 9>::vfunc1(void *fieldInfo, void *pRestore)
 // END FUNCTION
 
 // FUNCTION: 0x1040afa0 size=0x10
+#include "KEYRING_ENTRY.h"
+#include "utlmemory.h"
+#include "utlvector.h"
 #include "CUtlVectorDataOps.h"
 struct KEYRING_ENTRY;
 struct thinkfunc_t;
@@ -148,6 +151,9 @@ template<> int CUtlVectorDataOps<CUtlVector<KEYRING_ENTRY,CUtlMemory<KEYRING_ENT
 // END FUNCTION
 
 // FUNCTION: 0x1040afc0 size=0x13
+#include "KEYRING_ENTRY.h"
+#include "utlmemory.h"
+#include "utlvector.h"
 #include "CUtlVectorDataOps.h"
 
 struct KEYRING_ENTRY;

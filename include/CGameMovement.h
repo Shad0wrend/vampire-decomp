@@ -1,5 +1,6 @@
 // CGameMovement (RTTI .?AVCGameMovement@@): player movement. Declared flat; only the vtable head is modelled.
 #pragma once
+#include "QAngle.h"
 
 #include "Vector.h"
 #include "CGameTrace.h"

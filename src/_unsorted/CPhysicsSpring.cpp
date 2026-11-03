@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1004ca80 size=0x6
+#include "datamap.h"
 #include "CPhysicsSpring.h"
 namespace lifted {
 extern char g_1053cca0;
@@ -76,6 +77,14 @@ void CPhysicsSpring::vfunc123()
 // END FUNCTION
 
 // FUNCTION: 0x1004d9a0 size=0x107
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CPhysicsSpring.h"
 #include "CCollisionProperty.h"
 #include "CEntityVSlots.h"

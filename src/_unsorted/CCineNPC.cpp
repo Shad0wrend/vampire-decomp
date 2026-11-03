@@ -12,6 +12,7 @@ void *sub_101a5db0()
 // END FUNCTION
 
 // FUNCTION: 0x101a6d20 size=0x8
+#include "CBaseEntity.h"
 #include "CCineNPC.h"
 
 char CCineNPC::vfunc117()
@@ -63,6 +64,7 @@ bool __stdcall sub_101a6da0(int a)
 // END FUNCTION
 
 // FUNCTION: 0x101a6dc0 size=0x5
+#include "CCineNPC.h"
 // TARGET: CCineNPC::vfunc362
 bool CCineNPC::vfunc362(int unused)
 {
@@ -81,6 +83,7 @@ bool CCineNPC::vfunc365(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x101a6e00 size=0x5
+#include "CCineNPC.h"
 // TARGET: CCineNPC::vfunc364
 bool CCineNPC::vfunc364(int unused)
 {
@@ -118,6 +121,8 @@ CCineNPC *CCineNPC::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x101a7140 size=0x13
+#include "CAI_BaseNPC.h"
+#include "CCineNPC.h"
 // TARGET: CCineNPC::vfunc180
 void sub_101a7170(void *pThis);
 
@@ -129,6 +134,7 @@ void CCineNPC::vfunc180()
 // END FUNCTION
 
 // FUNCTION: 0x101a7210 size=0xc
+#include "CCineNPC.h"
 struct CineFlags { char pad[0x204]; unsigned char m; };
 bool CCineNPC::vfunc585()
 {
@@ -150,6 +156,7 @@ void __stdcall sub_101a75a0(int a) {
 // END FUNCTION
 
 // FUNCTION: 0x101a82d0 size=0x13b
+#include "CCineNPC.h"
 #include "CBaseAnimating.h"
 #include "CEHandleGet.h"
 
@@ -242,6 +249,14 @@ void CCineNPC::vfunc459()
 // END FUNCTION
 
 // FUNCTION: 0x101a8de0 size=0x186
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CCineNPC.h"
 #include "CBaseAnimating.h"
 #include "CGlobalEntityList.h"

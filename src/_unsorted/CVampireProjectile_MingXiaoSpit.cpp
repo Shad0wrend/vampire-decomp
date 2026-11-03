@@ -21,6 +21,7 @@ int CVampireProjectile_MingXiaoSpit::vfunc81()
 // END FUNCTION
 
 // FUNCTION: 0x103f1740 size=0x6
+#include "datamap.h"
 #include "CVampireProjectile_MingXiaoSpit.h"
 namespace lifted {
 extern char g_1067e1c8;
@@ -139,6 +140,14 @@ void CVampireProjectile_MingXiaoSpit::vfunc266(CBaseEntity *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x103f1b60 size=0xec
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseCombatCharacter.h"
 #include "CVampireProjectile_MingXiaoSpit.h"

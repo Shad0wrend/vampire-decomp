@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10375c80 size=0xb5
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
 #include "CNPC_VFrenzyShadow.h"
 #include "CNPC_VPlayerController.h"
 

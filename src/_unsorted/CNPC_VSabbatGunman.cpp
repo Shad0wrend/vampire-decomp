@@ -71,6 +71,7 @@ int CNPC_VSabbatGunman::vfunc546(int x)
 // END FUNCTION
 
 // FUNCTION: 0x103a56f0 size=0xa0
+#include "CLogicAuto.h"
 #include "CNPC_VSabbatGunman.h"
 #include "CBaseAnimating.h"
 #include "ConVar.h"

@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1005d8f0 size=0x39
+#include "CBaseTempEntity.h"
+#include "CTEBloodSprite.h"
 CTEBloodSprite::CTEBloodSprite(const char *name) : CBaseTempEntityHead(name)
 {
 	m_c[0] = 0; m_c[1] = 0; m_c[2] = 0;
@@ -65,6 +67,8 @@ void CTEBloodSprite::vfunc4(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x1005dbc0 size=0x6
+#include "CTEBloodSprite.h"
+#include "ServerClass.h"
 namespace lifted {
 extern char g_106c0890;
 }
@@ -75,6 +79,7 @@ ServerClass * CTEBloodSprite::vfunc0()
 // END FUNCTION
 
 // FUNCTION: 0x1005dbe0 size=0x3
+#include "CTEBloodSprite.h"
 int CTEBloodSprite::vfunc1()
 {
     return 0;

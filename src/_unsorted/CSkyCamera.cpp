@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1018a550 size=0x6
+#include "CSkyCamera.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_10589ad0;
 }
@@ -12,6 +14,7 @@ datamap_t *CSkyCamera::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x1018a5e0 size=0x8
+#include "CSkyCamera.h"
 // TARGET: CSkyCamera::vfunc103
 void CSkyCamera::vfunc103()
 {
@@ -20,6 +23,7 @@ void CSkyCamera::vfunc103()
 // END FUNCTION
 
 // FUNCTION: 0x1018a600 size=0x4a
+#include "CSkyCamera.h"
 extern CSkyCamera *g_1072a498;
 
 void CSkyCamera::vfunc104()

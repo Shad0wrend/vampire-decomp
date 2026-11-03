@@ -21,6 +21,7 @@ int CTestTraceline::vfunc81()
 // END FUNCTION
 
 // FUNCTION: 0x1006baa0 size=0x6
+#include "datamap.h"
 #include "CTestTraceline.h"
 namespace lifted {
 extern char g_10545fc8;

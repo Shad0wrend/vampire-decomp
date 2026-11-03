@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1002cca0 size=0x3
+#include "Vector.h"
 // TARGET: ?Base@?$CUtlMemory@H@@QAEPAHXZ
 #include "utlmemory.h"
 int *CUtlMemory<int>::Base()

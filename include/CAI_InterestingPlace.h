@@ -1,6 +1,9 @@
 // CAI_InterestingPlace: declared by pcdecomp transplant for 0x102d9ae0 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CBaseEntity.h"
+#include "COutputEvent.h"
+#include "datamap.h"
 
 struct CAI_IPSlot	// 0x1c byte record; only the first dword is touched so far
 {

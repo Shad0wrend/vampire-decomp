@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x101da730 size=0x19
+#include "vampire_all.h"
 #include "CTraceFilterSimple.h"
 
 // TARGET: CDisciplineProjectileTraceFilter::vfunc0
@@ -22,6 +23,7 @@ int sub_101da760()
 // END FUNCTION
 
 // FUNCTION: 0x101da780 size=0x20
+#include "vampire_all.h"
 #include "CDisciplineProjectileTraceFilter.h"
 
 extern char g_10483528[];

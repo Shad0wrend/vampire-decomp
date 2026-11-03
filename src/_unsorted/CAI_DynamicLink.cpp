@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x102cc870 size=0x6
+#include "datamap.h"
 #include "CAI_DynamicLink.h"
 namespace lifted {
 extern char g_10608f58;

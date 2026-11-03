@@ -24,6 +24,7 @@ int CNPC_VVampire::vfunc451()
 // END FUNCTION
 
 // FUNCTION: 0x103c47e0 size=0x6
+#include "datamap.h"
 #include "CNPC_VVampire.h"
 namespace lifted {
 extern char g_1065e070;

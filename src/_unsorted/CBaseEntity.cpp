@@ -2,35 +2,41 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10026530 size=0x3
+#include "CBaseEntity.h"
 void CBaseEntity::vfunc21(int a0)
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x10026550 size=0x3
+#include "CBaseEntity.h"
 void CBaseEntity::vfunc22(int a0)
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x10026570 size=0x3
+#include "CBaseEntity.h"
 void CBaseEntity::vfunc23(int a0)
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x10026590 size=0x3
+#include "CBaseEntity.h"
 // TARGET: CBaseEntity::vfunc24
 void CBaseEntity::vfunc24(int) { }
 // END FUNCTION
 
 // FUNCTION: 0x100265b0 size=0x3
+#include "CBaseEntity.h"
 void CBaseEntity::vfunc25(int a0)
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x100265d0 size=0x3
+#include "CBaseEntity.h"
 void CBaseEntity::vfunc26(int a0)
 {
 }
@@ -42,6 +48,7 @@ void __stdcall sub_100265f0(int) {}
 // END FUNCTION
 
 // FUNCTION: 0x10026610 size=0x7
+#include "CBaseEntity.h"
 namespace lifted {
 extern float g_104454c0;
 }
@@ -52,6 +59,7 @@ float CBaseEntity::vfunc28()
 // END FUNCTION
 
 // FUNCTION: 0x10026630 size=0x7
+#include "CBaseEntity.h"
 namespace lifted {
 extern float g_104454c0;
 }
@@ -62,6 +70,7 @@ float CBaseEntity::vfunc29()
 // END FUNCTION
 
 // FUNCTION: 0x10026650 size=0x7
+#include "CBaseEntity.h"
 namespace lifted {
 extern float g_104454c4;
 }
@@ -72,6 +81,7 @@ float CBaseEntity::vfunc30()
 // END FUNCTION
 
 // FUNCTION: 0x10026670 size=0x5
+#include "CBaseEntity.h"
 bool CBaseEntity::vfunc32(int a0)
 {
     return 0;
@@ -79,6 +89,7 @@ bool CBaseEntity::vfunc32(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x10026690 size=0x4
+#include "CBaseEntity.h"
 int CBaseEntity::vfunc33()
 {
     return -1;
@@ -86,6 +97,7 @@ int CBaseEntity::vfunc33()
 // END FUNCTION
 
 // FUNCTION: 0x100266b0 size=0x5
+#include "CBaseEntity.h"
 int CBaseEntity::vfunc34(int a0)
 {
     return 0;
@@ -93,6 +105,7 @@ int CBaseEntity::vfunc34(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x100266d0 size=0x5
+#include "CBaseEntity.h"
 int CBaseEntity::vfunc35(int a0)
 {
     return 0;
@@ -100,6 +113,7 @@ int CBaseEntity::vfunc35(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x100266f0 size=0x3
+#include "CBaseEntity.h"
 int CBaseEntity::vfunc36()
 {
     return 0;
@@ -107,6 +121,7 @@ int CBaseEntity::vfunc36()
 // END FUNCTION
 
 // FUNCTION: 0x10026710 size=0x7
+#include "CBaseEntity.h"
 namespace lifted {
 extern float g_104454c8;
 }
@@ -117,6 +132,7 @@ float CBaseEntity::vfunc37()
 // END FUNCTION
 
 // FUNCTION: 0x10026730 size=0x5
+#include "CBaseEntity.h"
 void * CBaseEntity::vfunc38(int a0)
 {
     return this;
@@ -124,6 +140,7 @@ void * CBaseEntity::vfunc38(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x10026750 size=0x3
+#include "CBaseEntity.h"
 void CBaseEntity::vfunc40(int a0)
 {
 }
@@ -135,12 +152,14 @@ void __stdcall sub_10026770(int) {}
 // END FUNCTION
 
 // FUNCTION: 0x10026790 size=0x3
+#include "CBaseEntity.h"
 void CBaseEntity::vfunc43(int a0)
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x100267b0 size=0x5
+#include "CBaseEntity.h"
 bool CBaseEntity::vfunc44(int a0)
 {
     return 1;
@@ -148,18 +167,21 @@ bool CBaseEntity::vfunc44(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x100267d0 size=0x1
+#include "CBaseEntity.h"
 void CBaseEntity::vfunc46()
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x100267f0 size=0x1
+#include "CBaseEntity.h"
 void CBaseEntity::vfunc47()
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x10026810 size=0x7
+#include "CBaseEntity.h"
 namespace lifted {
 extern float g_104454c4;
 }
@@ -170,6 +192,7 @@ float CBaseEntity::vfunc48()
 // END FUNCTION
 
 // FUNCTION: 0x10026830 size=0x7
+#include "CBaseEntity.h"
 namespace lifted {
 extern float g_104454cc;
 }
@@ -202,6 +225,7 @@ void CBaseEntity::vfunc51(int unused, Vector *pOut)
 // END FUNCTION
 
 // FUNCTION: 0x100268d0 size=0x7
+#include "CBaseEntity.h"
 namespace lifted {
 extern float g_104454c4;
 }
@@ -212,6 +236,7 @@ float CBaseEntity::vfunc52()
 // END FUNCTION
 
 // FUNCTION: 0x100268f0 size=0x7
+#include "CBaseEntity.h"
 namespace lifted {
 extern float g_104454c4;
 }
@@ -222,6 +247,7 @@ float CBaseEntity::vfunc53()
 // END FUNCTION
 
 // FUNCTION: 0x10026910 size=0x5
+#include "CBaseEntity.h"
 bool CBaseEntity::vfunc54(int a0)
 {
     return 0;
@@ -229,42 +255,49 @@ bool CBaseEntity::vfunc54(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x10026930 size=0x3
+#include "CBaseEntity.h"
 void CBaseEntity::vfunc55(int a0, int a1, int a2, int a3, int a4, int a5, int a6)
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x10026950 size=0x3
+#include "CBaseEntity.h"
 void CBaseEntity::vfunc56(int a0, int a1, int a2, int a3, int a4, int a5, int a6, int a7)
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x10026970 size=0x3
+#include "CBaseEntity.h"
 void CBaseEntity::vfunc57(int a0, int a1, int a2, int a3, int a4, int a5, int a6)
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x10026990 size=0x3
+#include "CBaseEntity.h"
 void CBaseEntity::vfunc58(int a0)
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x100269b0 size=0x3
+#include "CBaseEntity.h"
 void CBaseEntity::vfunc59(int a0)
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x100269d0 size=0x3
+#include "CBaseEntity.h"
 void CBaseEntity::vfunc60(int a0)
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x100269f0 size=0x3
+#include "CBaseEntity.h"
 void CBaseEntity::vfunc61(int a0)
 {
 }
@@ -292,6 +325,7 @@ char __stdcall sub_10026ab0(int) { return 0; }
 // END FUNCTION
 
 // FUNCTION: 0x10026ad0 size=0x5
+#include "CBaseEntity.h"
 bool CBaseEntity::vfunc72(int a0)
 {
     return 0;
@@ -304,6 +338,7 @@ char __stdcall sub_10026af0(int) { return 0; }
 // END FUNCTION
 
 // FUNCTION: 0x10026b10 size=0x5
+#include "CBaseEntity.h"
 bool CBaseEntity::vfunc74(int a0)
 {
     return 0;
@@ -311,6 +346,7 @@ bool CBaseEntity::vfunc74(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x10026b30 size=0x1
+#include "CBaseEntity.h"
 void CBaseEntity::vfunc76()
 {
 }
@@ -327,6 +363,7 @@ int CBaseEntity::vfunc88()
 // END FUNCTION
 
 // FUNCTION: 0x10026b70 size=0xb
+#include "CBaseEntity.h"
 struct CUnknown10146790 {
 	char m_unk0;
 	char m_unk1;
@@ -341,30 +378,35 @@ void CBaseEntity::vfunc89()
 // END FUNCTION
 
 // FUNCTION: 0x10026b90 size=0x1
+#include "CBaseEntity.h"
 void CBaseEntity::vfunc104()
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x10026bb0 size=0x1
+#include "CBaseEntity.h"
 void CBaseEntity::vfunc111()
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x10026bd0 size=0x3
+#include "CBaseEntity.h"
 void CBaseEntity::vfunc112(int a0, int a1)
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x10026bf0 size=0x3
+#include "CBaseEntity.h"
 void CBaseEntity::vfunc115(int a0)
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x10026c10 size=0x4
+#include "CBaseEntity.h"
 int CBaseEntity::vfunc131()
 {
     return -1;
@@ -372,12 +414,14 @@ int CBaseEntity::vfunc131()
 // END FUNCTION
 
 // FUNCTION: 0x10026c30 size=0x1
+#include "CBaseEntity.h"
 void CBaseEntity::vfunc132()
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x10026c50 size=0xd
+#include "CBaseEntity.h"
 void CBaseEntity::vfunc133()
 {
 	if (m_pfn0114)
@@ -386,6 +430,7 @@ void CBaseEntity::vfunc133()
 // END FUNCTION
 
 // FUNCTION: 0x10026c70 size=0x7e
+#include "CBaseEntity.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
 extern int *g_109f3680;
@@ -490,6 +535,8 @@ float CBaseEntity::vfunc152()
 // END FUNCTION
 
 // FUNCTION: 0x10026e70 size=0x4c
+#include "CBaseEntity.h"
+#include "Vector.h"
 extern Vector g_1070d1b0;
 inline int VecNe(const Vector &a, const Vector &b)
 {
@@ -628,6 +675,7 @@ unsigned char __stdcall sub_10027100()
 // END FUNCTION
 
 // FUNCTION: 0x10027120 size=0x7
+#include "CBaseEntity.h"
 float CBaseEntity::vfunc190()
 {
 	return 0.0f;
@@ -642,6 +690,7 @@ void __stdcall sub_10027140(int a)
 // END FUNCTION
 
 // FUNCTION: 0x10027160 size=0x14e
+#include "CBaseEntity.h"
 #include "TempVector.h"
 
 struct CColView
@@ -752,6 +801,7 @@ void __stdcall sub_10027410(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x10027430 size=0x6
+#include "CBaseEntity.h"
 extern int g_1072b36c;
 
 // TARGET: CBaseEntity::vfunc240
@@ -762,6 +812,7 @@ int CBaseEntity::vfunc240()
 // END FUNCTION
 
 // FUNCTION: 0x10027450 size=0xf
+#include "CBaseEntity.h"
 int CBaseEntity::vfunc0(int a0)
 {
     *(int *)((char *)this + 0x448) = *(int *)((char *)a0);
@@ -776,6 +827,7 @@ int CBaseEntity::vfunc116() { return m_flags268 & 1; }
 // END FUNCTION
 
 // FUNCTION: 0x100274b0 size=0x7
+#include "CBaseEntity.h"
 // TARGET: CBaseEntity::vfunc198
 float *CBaseEntity::vfunc198()
 {
@@ -784,6 +836,14 @@ float *CBaseEntity::vfunc198()
 // END FUNCTION
 
 // FUNCTION: 0x100274d0 size=0x7e
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "ScopeTrace.h"
 
@@ -815,6 +875,7 @@ int __fastcall sub_100274d0(CBaseEntity *self)
 // END FUNCTION
 
 // FUNCTION: 0x10027570 size=0x7e
+#include "CBaseEntity.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
 extern int *g_109f3680;
@@ -847,6 +908,7 @@ int CBaseEntity::sub_10027570()
 // END FUNCTION
 
 // FUNCTION: 0x10027610 size=0x7
+#include "CBaseEntity.h"
 char * CBaseEntity::vfunc2()
 {
     return (char *)this + 0x270;
@@ -854,6 +916,7 @@ char * CBaseEntity::vfunc2()
 // END FUNCTION
 
 // FUNCTION: 0x10027630 size=0x7
+#include "CBaseEntity.h"
 char * CBaseEntity::vfunc3()
 {
     return (char *)this + 0x2d4;
@@ -861,6 +924,7 @@ char * CBaseEntity::vfunc3()
 // END FUNCTION
 
 // FUNCTION: 0x10027650 size=0x3
+#include "CBaseEntity.h"
 void * CBaseEntity::vfunc4()
 {
     return this;
@@ -868,6 +932,7 @@ void * CBaseEntity::vfunc4()
 // END FUNCTION
 
 // FUNCTION: 0x10039ff0 size=0x71
+#include "CBaseEntity.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
 extern int *g_109f3680;
@@ -953,6 +1018,7 @@ int CBaseEntity::vfunc237()
 // END FUNCTION
 
 // FUNCTION: 0x1009a660 size=0x6
+#include "CBaseEntity.h"
 namespace lifted {
 extern char g_106cfe10;
 }
@@ -963,6 +1029,7 @@ int CBaseEntity::vfunc80()
 // END FUNCTION
 
 // FUNCTION: 0x1009a680 size=0x3
+#include "CBaseEntity.h"
 int CBaseEntity::vfunc81()
 {
     return 0;
@@ -970,6 +1037,7 @@ int CBaseEntity::vfunc81()
 // END FUNCTION
 
 // FUNCTION: 0x1009ac80 size=0xb4
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -1011,6 +1079,7 @@ char * __fastcall sub_1009ad70(char *self)
 // END FUNCTION
 
 // FUNCTION: 0x1009ae10 size=0xb7
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -1042,6 +1111,7 @@ void CBaseEntity::vfunc13(const char *classname)
 // END FUNCTION
 
 // FUNCTION: 0x1009af00 size=0x4
+#include "CBaseEntity.h"
 char * CBaseEntity::vfunc14()
 {
     return (char *)this + 0x24;
@@ -1049,6 +1119,14 @@ char * CBaseEntity::vfunc14()
 // END FUNCTION
 
 // FUNCTION: 0x1009af40 size=0xc0
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CCollisionProperty.h"
 
@@ -1123,6 +1201,7 @@ void CBaseEntity::vfunc17(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x1009b500 size=0x7e
+#include "CBaseEntity.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
 extern int *g_109f3680;
@@ -1147,6 +1226,7 @@ void CBaseEntity::sub_1009b500(const char *msg)
 // END FUNCTION
 
 // FUNCTION: 0x1009b5a0 size=0x7e
+#include "CBaseEntity.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
 extern int *g_109f3680;
@@ -1171,6 +1251,7 @@ void CBaseEntity::sub_1009b5a0(const char *msg)
 // END FUNCTION
 
 // FUNCTION: 0x1009d380 size=0xa2
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -1194,6 +1275,12 @@ void CBaseEntity::vfunc67()
 // END FUNCTION
 
 // FUNCTION: 0x1009d460 size=0x122
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
 #include "CBaseEntity.h"
 #include "CBaseCombatCharacter.h"
 #include "CUnknown1073dc28.h"
@@ -1274,6 +1361,7 @@ void *__fastcall sub_1009def0(void *pThis, int edx_unused, unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x1009e100 size=0x6
+#include "CBaseEntity.h"
 namespace lifted {
 extern char g_10552d34;
 }
@@ -1284,6 +1372,15 @@ int CBaseEntity::vfunc79()
 // END FUNCTION
 
 // FUNCTION: 0x1009e120 size=0x105
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CUnknown1070b22c.h"
 struct CEngX { U22C_SLOTS10(a0) U22C_SLOTS10(b0) U22C_SLOTS10(c0) virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4(); virtual int vfunc35(int edict, int a); };
@@ -1314,6 +1411,14 @@ void CBaseEntity::vfunc106(const char *classname)
 // END FUNCTION
 
 // FUNCTION: 0x1009e280 size=0xd1
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CEntityMapData.h"
 #include "ScopeTrace.h"
@@ -1425,6 +1530,7 @@ int CBaseEntity::vfunc197(int a, int b, int c, int d)
 // END FUNCTION
 
 // FUNCTION: 0x1009faf0 size=0x6f
+#include "CBaseEntity.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
 extern int *g_109f3680;
@@ -1448,6 +1554,14 @@ void CBaseEntity::vfunc125()
 // END FUNCTION
 
 // FUNCTION: 0x100a02b0 size=0x115
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
 
@@ -1472,6 +1586,7 @@ int CBaseEntity::vfunc124()
 // END FUNCTION
 
 // FUNCTION: 0x100a0d20 size=0xd7
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -1502,6 +1617,14 @@ int CBaseEntity::vfunc143(float flHealth, int bitsDamageType)
 // END FUNCTION
 
 // FUNCTION: 0x100a1360 size=0xcb
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "ScopeTrace.h"
 
@@ -1533,6 +1656,14 @@ float CBaseEntity::vfunc203()
 // END FUNCTION
 
 // FUNCTION: 0x100a1470 size=0xcb
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
 
@@ -1563,6 +1694,7 @@ float CBaseEntity::vfunc204()
 // END FUNCTION
 
 // FUNCTION: 0x100a1a70 size=0x94
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
 extern int *g_109f3680;
@@ -1623,6 +1755,8 @@ void *CUnknown100a1d20::sub_100a1d20()
 // END FUNCTION
 
 // FUNCTION: 0x100a2290 size=0x6
+#include "CBaseEntity.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_10552e18;
 }
@@ -1633,6 +1767,7 @@ datamap_t * CBaseEntity::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x100a49d0 size=0xde
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -1684,6 +1819,7 @@ void CBaseEntity::vfunc174(CBaseEntity *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x100a4af0 size=0xed
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -1738,6 +1874,7 @@ void CBaseEntity::vfunc175(CBaseEntity *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x100a4c20 size=0xde
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -1841,6 +1978,13 @@ void CBaseEntity::vfunc178(CBaseEntity *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x100a4e70 size=0x118
+#include "CBaseEntity.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
 #include "CEHandleGet.h"
 
 struct ScopeEntry_t { const char *m_pszName; const char *m_pszEnt; const char *m_pszExtra; };
@@ -1890,6 +2034,7 @@ void CBaseEntity::vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int us
 // END FUNCTION
 
 // FUNCTION: 0x100a4fe0 size=0x3b
+#include "CBaseEntity.h"
 struct CBaseEntityUnit5c {
     void sub_10010794(CBaseEntity *pOther, CBaseEntity *pThis, int flags);
 };
@@ -1913,6 +2058,7 @@ void CBaseEntity::vfunc39(CBaseEntity *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x100a5030 size=0x21
+#include "CBaseEntity.h"
 struct COutputEventCall_100a5030
 {
     void sub_100cd660(int a, int b, int c);
@@ -1927,6 +2073,7 @@ void CBaseEntity::vfunc42(void *arg)
 // END FUNCTION
 
 // FUNCTION: 0x100a65a0 size=0x71
+#include "CBaseEntity.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
 extern int *g_109f3680;
@@ -1950,6 +2097,15 @@ void CBaseEntity::vfunc228(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x100a6640 size=0x152
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 struct CollisionEventView
 {
@@ -2037,6 +2193,7 @@ void CBaseEntity::vfunc231(void *pObject, float energy, int surfaceProps, int su
 // END FUNCTION
 
 // FUNCTION: 0x100a6ad0 size=0xa3
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -2127,6 +2284,14 @@ bool CBaseEntity::vfunc140(CBaseEntity *pAttacker)
 // END FUNCTION
 
 // FUNCTION: 0x100a8710 size=0x1fe
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CCollisionProperty.h"
 #include "CEntityVSlots.h"
 #include "ScopeTrace.h"
@@ -2161,6 +2326,14 @@ void CBaseEntity::vfunc77()
 // END FUNCTION
 
 // FUNCTION: 0x100a8990 size=0x1d8
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CCollisionProperty.h"
 
@@ -2254,6 +2427,7 @@ char __fastcall sub_100a9800(CBaseEntity *self)
 // END FUNCTION
 
 // FUNCTION: 0x100a9ba0 size=0xb4
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 struct EntEntry { void *pEnt; int serial; int pad; };
 struct EntTable { int hdr; EntEntry entries[1]; };
@@ -2287,6 +2461,15 @@ int CBaseEntity::vfunc96()
 // END FUNCTION
 
 // FUNCTION: 0x100a9c90 size=0xa8
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CEHandleGet.h"
 
@@ -2327,6 +2510,7 @@ int CBaseEntity::vfunc222(int a)
 // END FUNCTION
 
 // FUNCTION: 0x100a9f70 size=0xcc
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -2402,6 +2586,7 @@ void CBaseEntity::vfunc129()
 // END FUNCTION
 
 // FUNCTION: 0x100aa5a0 size=0xd
+#include "CBaseEntity.h"
 void CBaseEntity::vfunc130(int a)
 {
 	vfunc6(0);
@@ -2428,6 +2613,7 @@ bool __fastcall sub_100aa680(CBaseEntity *self)
 // END FUNCTION
 
 // FUNCTION: 0x100aa840 size=0x81
+#include "CBaseEntity.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
 extern int *g_109f3680;
@@ -2459,6 +2645,7 @@ char CBaseEntity::sub_100aa840()
 // END FUNCTION
 
 // FUNCTION: 0x100aa900 size=0x76
+#include "CBaseEntity.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern TraceEnt *g_109f3620;
@@ -2503,6 +2690,7 @@ bool __fastcall sub_100aa9a0(CBaseEntity *self, int, int a, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x100aab10 size=0xd7
+#include "CBaseEntity.h"
 struct SEntityEntry
 {
     int m_pad;
@@ -2604,6 +2792,7 @@ int __fastcall sub_100aacd0(char *self)
 // END FUNCTION
 
 // FUNCTION: 0x100aad70 size=0xa1
+#include "CBaseEntity.h"
 #define PV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 
@@ -2654,6 +2843,7 @@ void __stdcall sub_100ab430(int, int) {}
 // END FUNCTION
 
 // FUNCTION: 0x100ab450 size=0x79
+#include "CBaseEntity.h"
 extern char g_106b8540[];
 struct ScopeTraceEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
@@ -2671,6 +2861,14 @@ void CBaseEntity::sub_100ab450(int a, int b, int c, int d, int e)
 // END FUNCTION
 
 // FUNCTION: 0x100acab0 size=0x111
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "ScopeTrace.h"
 #include "CVariantCopy.h"
@@ -2715,6 +2913,7 @@ bool CBaseEntity::vfunc121(const char *szKeyName, CVariantCopy *pVariant)
 // END FUNCTION
 
 // FUNCTION: 0x100ace00 size=0xb1
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -2814,6 +3013,14 @@ void CBaseEntity::vfunc105(const char *pszModel)
 // END FUNCTION
 
 // FUNCTION: 0x100ad550 size=0x13a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
 #include "ScopeTrace.h"
@@ -2921,6 +3128,17 @@ void __stdcall sub_100ad910(void *a, void *b, void *c) {}
 // END FUNCTION
 
 // FUNCTION: 0x100ada20 size=0x142
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseEntity.h"
 #include "ScopeTrace.h"
 
@@ -2979,6 +3197,7 @@ void __fastcall sub_100ada20(CBaseEntity *pThis, int unused, const float *pOrigi
 // END FUNCTION
 
 // FUNCTION: 0x100b11d0 size=0xc1
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -3013,6 +3232,7 @@ void CBaseEntity::vfunc6(bool check)
 // END FUNCTION
 
 // FUNCTION: 0x100b12e0 size=0x7e
+#include "CBaseEntity.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
 extern int *g_109f3680;
@@ -3037,6 +3257,7 @@ void CBaseEntity::sub_100b12e0(char value)
 // END FUNCTION
 
 // FUNCTION: 0x100b1420 size=0xb1
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -3061,6 +3282,15 @@ void CBaseEntity::vfunc208(CBaseEntity *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x100b1510 size=0xa8
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CEHandleGet.h"
 
@@ -3098,6 +3328,7 @@ void CBaseEntity::vfunc212(int set)
 // END FUNCTION
 
 // FUNCTION: 0x100b1750 size=0x7e
+#include "CBaseEntity.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
 extern int *g_109f3680;
@@ -3164,6 +3395,7 @@ void CBaseEntity::vfunc213(const float *size)
 // END FUNCTION
 
 // FUNCTION: 0x100b1960 size=0x7b
+#include "CBaseEntity.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern TraceEnt *g_109f3620;
@@ -3189,6 +3421,15 @@ float *CBaseEntity::vfunc214()
 // END FUNCTION
 
 // FUNCTION: 0x100b1ac0 size=0x1c8
+#include "CGlobalEntityList.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
 #include "ScopeTrace.h"
@@ -3247,6 +3488,14 @@ void CBaseEntity::vfunc98()
 // END FUNCTION
 
 // FUNCTION: 0x100b2300 size=0x194
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CEHandleGet.h"
 #include "ScopeTrace.h"
@@ -3297,6 +3546,15 @@ void CBaseEntity::vfunc216(const Vector &absOrigin)
 // END FUNCTION
 
 // FUNCTION: 0x100b2510 size=0x1d3
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "TestBit.h"
 #include "matrix3x4_t.h"
@@ -3360,6 +3618,15 @@ void CBaseEntity::vfunc218(const float *absAngles)
 // END FUNCTION
 
 // FUNCTION: 0x100b2be0 size=0xdd
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 
 struct EntView100b2be0 {
@@ -3385,6 +3652,15 @@ void CBaseEntity::vfunc62(const float *pOrigin)
 // END FUNCTION
 
 // FUNCTION: 0x100b2d00 size=0xe7
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 
 struct CBaseEntityUnit : CBaseEntity {
@@ -3410,6 +3686,7 @@ void CBaseEntity::vfunc64(const float *angles)
 // END FUNCTION
 
 // FUNCTION: 0x100b3070 size=0x7b
+#include "CBaseEntity.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
 extern int *g_109f3680;
@@ -3434,6 +3711,7 @@ float *CBaseEntity::vfunc220()
 // END FUNCTION
 
 // FUNCTION: 0x100b3110 size=0x7b
+#include "CBaseEntity.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern TraceEnt *g_109f3620;
@@ -3495,6 +3773,7 @@ float *CBaseEntity::vfunc217()
 // END FUNCTION
 
 // FUNCTION: 0x100b3280 size=0x93
+#include "CBaseEntity.h"
 struct ScopeEntry {
 	const char *fn;
 	const char *name;
@@ -3530,6 +3809,7 @@ float *CBaseEntity::vfunc219()
 // END FUNCTION
 
 // FUNCTION: 0x100b3d10 size=0x79
+#include "CBaseEntity.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
 extern int *g_109f3680;
@@ -3555,6 +3835,7 @@ int CBaseEntity::sub_100b3d10()
 // END FUNCTION
 
 // FUNCTION: 0x100b4320 size=0x6
+#include "CBaseEntity.h"
 int CBaseEntity::vfunc117()
 {
     return 2;
@@ -3646,6 +3927,7 @@ float * __fastcall sub_100b4c30(CBaseEntity *pThis)
 // END FUNCTION
 
 // FUNCTION: 0x100b4dc0 size=0xe
+#include "CBaseEntity.h"
 // TARGET: CBaseEntity::vfunc158
 bool CBaseEntity::vfunc158()
 {
@@ -3667,6 +3949,7 @@ char CBaseEntity::vfunc91(void *pPassEnt, int contentsMask)
 // END FUNCTION
 
 // FUNCTION: 0x100b4ef0 size=0x7
+#include "CBaseEntity.h"
 int CBaseEntity::vfunc83()
 {
     return *(int *)((char *)this + 0x268);
@@ -3674,6 +3957,7 @@ int CBaseEntity::vfunc83()
 // END FUNCTION
 
 // FUNCTION: 0x100b4f10 size=0xd
+#include "CBaseEntity.h"
 void CBaseEntity::vfunc84(int flags)
 {
 	m_flags268 = flags;
@@ -3737,6 +4021,7 @@ void CBaseEntity::vfunc226(int a)
 // END FUNCTION
 
 // FUNCTION: 0x100b5040 size=0x2f
+#include "CBaseEntity.h"
 // TARGET: CBaseEntity::vfunc225
 void sub_1002ee60(CBaseEntity *pEnt);
 void sub_10004705(int pObject, CBaseEntity *pEnt);
@@ -3757,6 +4042,7 @@ bool __cdecl sub_100b5080() { return false; }
 // END FUNCTION
 
 // FUNCTION: 0x100b50a0 size=0x4c
+#include "CBaseEntity.h"
 #define R10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 
 struct CEntSlot211View

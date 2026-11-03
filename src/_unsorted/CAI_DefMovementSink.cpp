@@ -57,6 +57,7 @@ float sub_1027c750()
 // END FUNCTION
 
 // FUNCTION: 0x1027c770 size=0x5
+#include "CAI_DefMovementSink.h"
 // TARGET: CAI_DefMovementSink::vfunc1
 bool CAI_DefMovementSink::vfunc1(int a, int b, int c)
 {

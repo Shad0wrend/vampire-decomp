@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10215c40 size=0x6
+#include "datamap.h"
 #include "CPropModelState.h"
 namespace lifted {
 extern char g_105ac430;

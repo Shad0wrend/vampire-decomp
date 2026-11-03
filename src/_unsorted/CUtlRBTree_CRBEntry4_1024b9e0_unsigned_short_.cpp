@@ -2,6 +2,14 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1024b9e0 size=0xfa
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree16.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
 // TARGET: ?NewNode@?$CUtlRBTree@UCRBEntry4_1024b9e0@@G@@QAEGXZ
 #include "utlrbtree.h"
 struct CRBEntry4_1024b9e0 { int a; };

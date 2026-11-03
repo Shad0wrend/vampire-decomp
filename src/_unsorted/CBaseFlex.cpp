@@ -21,6 +21,7 @@ int CBaseFlex::vfunc81()
 // END FUNCTION
 
 // FUNCTION: 0x100b57b0 size=0x6
+#include "datamap.h"
 #include "CBaseFlex.h"
 namespace lifted {
 extern char g_10559360;

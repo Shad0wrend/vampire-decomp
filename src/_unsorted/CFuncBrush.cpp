@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10114d70 size=0xa
+#include "CBaseEntity.h"
 #include "CFuncBrush.h"
 // TARGET: CFuncBrush::vfunc117
 char CFuncBrush::vfunc117() { char c = ((CBaseEntity *)this)->CBaseEntity::vfunc117(); return (c & (char)0xfd) | 8; }
@@ -16,6 +17,7 @@ bool CFuncBrush::vfunc128()
 // END FUNCTION
 
 // FUNCTION: 0x1013de10 size=0x6
+#include "datamap.h"
 #include "CFuncBrush.h"
 namespace lifted {
 extern char g_10579aa8;
@@ -27,6 +29,14 @@ datamap_t *CFuncBrush::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x1013dea0 size=0x16d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CFuncBrush.h"
 #include "CCollisionProperty.h"
 #include "ScopeTrace.h"

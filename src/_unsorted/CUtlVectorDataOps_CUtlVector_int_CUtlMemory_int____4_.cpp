@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x101bdd90 size=0x10
+#include "utlmemory.h"
+#include "utlvector.h"
 #include "CUtlVectorDataOps.h"
 struct thinkfunc_t;
 
@@ -17,6 +19,8 @@ template<> int CUtlVectorDataOps<CUtlVector<int,CUtlMemory<int> >,4>::vfunc3(voi
 // END FUNCTION
 
 // FUNCTION: 0x101bddb0 size=0x13
+#include "utlmemory.h"
+#include "utlvector.h"
 #include "CUtlVectorDataOps.h"
 
 // TARGET: CUtlVectorDataOps<CUtlVector<int,CUtlMemory<int> >,4>::vfunc2

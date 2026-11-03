@@ -61,6 +61,7 @@ CSun *CSun::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x101c2560 size=0x7e
+#include "CGlobalEntityList.h"
 #include "CSun.h"
 struct CSunView {
 	char m_pad0[0x1b1];

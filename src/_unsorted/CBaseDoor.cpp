@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x100ed720 size=0x6
+#include "CBaseDoor.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_10564578;
 }
@@ -12,6 +14,7 @@ datamap_t * CBaseDoor::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x100ee390 size=0x3
+#include "CBaseDoor.h"
 bool CBaseDoor::vfunc241()
 {
     return 0;
@@ -31,6 +34,7 @@ char CBaseDoor::sub_100ee3b0()
 // END FUNCTION
 
 // FUNCTION: 0x100ee3e0 size=0x3
+#include "CBaseDoor.h"
 bool CBaseDoor::vfunc128()
 {
     return 0;
@@ -38,6 +42,7 @@ bool CBaseDoor::vfunc128()
 // END FUNCTION
 
 // FUNCTION: 0x100ee400 size=0x1
+#include "CBaseDoor.h"
 void CBaseDoor::vfunc249()
 {
 }
@@ -68,6 +73,12 @@ CBaseDoor *CBaseDoor::vfunc5(unsigned char flags)
 // END FUNCTION
 
 // FUNCTION: 0x100eedf0 size=0xdb
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
 #include "CBaseDoor.h"
 #include "CEHandleGet.h"
 struct CDoorView_100eedf0 { char m_pad0[0x204]; unsigned int m_nFlags; char m_pad1[0x55c - 0x208]; char m_b55c; char m_pad2[0x64c - 0x55d]; int m_n64c; int m_n650; };
@@ -269,6 +280,15 @@ void CBaseDoor::vfunc104()
 // END FUNCTION
 
 // FUNCTION: 0x100efc90 size=0x257
+#include "CBaseCombatCharacter.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseDoor.h"
 #include "ScopeTrace.h"
 #include "CEntityVSlots.h"
@@ -335,6 +355,7 @@ void CBaseDoor::vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useT
 // END FUNCTION
 
 // FUNCTION: 0x100eff90 size=0xc7
+#include "CBaseDoor.h"
 #include <math.h>
 #include "CEntityVSlots.h"
 #pragma intrinsic(fabs)
@@ -397,6 +418,7 @@ void CBaseDoor::vfunc243(char bChain, int bLinked)
 // END FUNCTION
 
 // FUNCTION: 0x100f0ef0 size=0xe
+#include "CBaseDoor.h"
 void CBaseDoor::vfunc246(int a, int* b, int c)
 {
 	b[6] = -1;
@@ -404,6 +426,7 @@ void CBaseDoor::vfunc246(int a, int* b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x100f0f10 size=0x7
+#include "CBaseDoor.h"
 namespace lifted {
 extern float g_104454c4;
 }
@@ -437,6 +460,16 @@ void CBaseDoor::vfunc244(char bChain)
 // END FUNCTION
 
 // FUNCTION: 0x100f1340 size=0x107
+#include "CBaseDoor.h"
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CEHandleGet.h"
 #include "ScopeTrace.h"
 

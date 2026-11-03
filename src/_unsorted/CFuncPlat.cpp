@@ -16,6 +16,7 @@ bool CFuncPlat::vfunc110(const char *pszKey, const char *pszValue)
 // END FUNCTION
 
 // FUNCTION: 0x10158dc0 size=0x6
+#include "datamap.h"
 #include "CFuncPlat.h"
 
 extern int g_10580538;
@@ -27,6 +28,7 @@ datamap_t *CFuncPlat::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x10158ec0 size=0x8
+#include "CBaseEntity.h"
 #include "CFuncPlat.h"
 
 char CFuncPlat::vfunc117()
@@ -38,6 +40,7 @@ char CFuncPlat::vfunc117()
 // END FUNCTION
 
 // FUNCTION: 0x10158ee0 size=0x9
+#include "CFuncPlat.h"
 unsigned char CFuncPlat::vfunc241() { unsigned char r = m_spawnflags; r &= 1; return r; }
 // END FUNCTION
 

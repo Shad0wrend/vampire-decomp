@@ -1,6 +1,7 @@
 // CNPC_VHunter: declared by pcdecomp transplant for 0x103880a0 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "datamap.h"
 
 #include "CNPC_VHumanCombatant.h"
 

@@ -1,6 +1,7 @@
 // CPhysicsPropContested: physics prop that can be contested (derived from CPhysicsProp at +0x0).
 // Only the members that decompiled code needs are declared. The modelled part of CBaseEntity ends at +0x3e0.
 #pragma once
+#include "COutputEvent.h"
 
 #include "CPhysicsProp.h"
 

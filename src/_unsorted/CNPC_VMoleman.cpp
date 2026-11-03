@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1039f600 size=0x6
+#include "CNPC_VMoleman.h"
 // TARGET: CNPC_VMoleman::vfunc580
 extern char g_1093bdd8;
 
@@ -38,6 +39,7 @@ CNPC_VMoleman *CNPC_VMoleman::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x1039f740 size=0x6
+#include "CNPC_VMoleman.h"
 extern char g_1064a580;
 
 char CNPC_VMoleman::vfunc452()
@@ -75,6 +77,7 @@ void CNPC_VMoleman::vfunc103()
 // END FUNCTION
 
 // FUNCTION: 0x1039fcc0 size=0x6
+#include "CNPC_VMoleman.h"
 int CNPC_VMoleman::vfunc138()
 {
     return 4;
@@ -82,6 +85,7 @@ int CNPC_VMoleman::vfunc138()
 // END FUNCTION
 
 // FUNCTION: 0x1039fd20 size=0x9d
+#include "CNPC_VMoleman.h"
 // TARGET: CNPC_VMoleman::vfunc438
 int CNPC_VMoleman::vfunc438()
 {

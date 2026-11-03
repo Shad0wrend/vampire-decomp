@@ -42,6 +42,7 @@ void CTEGlowSprite::vfunc3(const Vector &origin, const QAngle &angles)
 // END FUNCTION
 
 // FUNCTION: 0x10063bb0 size=0x39
+#include "CRecipientFilter.h"
 #include "CTEGlowSprite.h"
 #include "CTEMetalSparks.h"
 #include "IVEngineServerFull.h"

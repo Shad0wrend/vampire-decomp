@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1019ce00 size=0x23
+#include "CRecipientFilter.h"
 CRecipientFilter::CRecipientFilter()
 {
 	Reset();
@@ -67,6 +68,7 @@ void CRecipientFilter::Reset()
 // END FUNCTION
 
 // FUNCTION: 0x1019cf50 size=0x5
+#include "CRecipientFilter.h"
 void CRecipientFilter::MakeReliable()
 {
     *(char *)((char *)this + 4) = 1;
@@ -74,6 +76,7 @@ void CRecipientFilter::MakeReliable()
 // END FUNCTION
 
 // FUNCTION: 0x1019cf70 size=0x4
+#include "CRecipientFilter.h"
 // TARGET: sub_1019cf70
 char __fastcall sub_1019cf70(CRecipientFilter *p) { return p->m_bReliable; }
 // END FUNCTION
@@ -87,6 +90,8 @@ int __fastcall sub_1019cf90(void *pFilter)
 // END FUNCTION
 
 // FUNCTION: 0x1019cff0 size=0x3e
+#include "CBasePlayer.h"
+#include "utlrbtree.h"
 #include "vampire.h"
 #include "CRecipientFilter.h"
 
@@ -122,6 +127,8 @@ void CRecipientFilter::AddRecipientsByPVS(const Vector &origin)
 // END FUNCTION
 
 // FUNCTION: 0x1019d280 size=0x4e
+#include "CRecipientFilter.h"
+#include "Vector.h"
 void CRecipientFilter::AddRecipientsByPAS(const Vector &origin)
 {
 	if (gpGlobals->maxClients == 1) {
@@ -144,6 +151,7 @@ char CRecipientFilter::vfunc4()
 // END FUNCTION
 
 // FUNCTION: 0x1019d340 size=0x4
+#include "CRecipientFilter.h"
 // TARGET: sub_1019d340
 int __fastcall sub_1019d340(CRecipientFilter *p) { return p->m_20; }
 // END FUNCTION
@@ -160,11 +168,13 @@ char __fastcall sub_1019d360(CRecipientFilter *p)
 // END FUNCTION
 
 // FUNCTION: 0x1019d390 size=0x4
+#include "CRecipientFilter.h"
 // TARGET: sub_1019d390
 char __fastcall sub_1019d390(CRecipientFilter *p) { return p->m_bInitMessage; }
 // END FUNCTION
 
 // FUNCTION: 0x1019d3d0 size=0x5c
+#include "CBaseEntity.h"
 #include "CRecipientFilter.h"
 #include "CUnknown1019d130.h"
 

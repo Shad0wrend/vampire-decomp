@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x101cc9e0 size=0x75
+#include "CBaseEntity.h"
 #include "CFlaggedEntitiesEnum.h"
 #include "CGlobalEntityList.h"
 extern CGlobalEntityList g_106eb5d8;

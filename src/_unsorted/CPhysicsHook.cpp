@@ -18,6 +18,15 @@ CPhysicsHook *CPhysicsHook::vfunc8(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x1002d7d0 size=0x106
+#include "CPhysicsHook.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBCCSlotViews.h"
 
@@ -63,6 +72,14 @@ bool CPhysicsHook::vfunc0()
 // END FUNCTION
 
 // FUNCTION: 0x1002d930 size=0x19f
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CPhysicsHook.h"
 #include "CUnknown106b89bc.h"
 #include "ScopeTrace.h"
@@ -171,6 +188,7 @@ void CPhysicsHook::vfunc3()
 // END FUNCTION
 
 // FUNCTION: 0x1002dbc0 size=0x6a
+#include "CPhysicsHook.h"
 struct ScopeEntry {
     const char *a;
     const char *b;
@@ -206,6 +224,7 @@ void CPhysicsHook::vfunc4()
 // END FUNCTION
 
 // FUNCTION: 0x1002dd70 size=0x1ec
+#include "CPhysicsHook.h"
 struct ScopeTraceEntry_ { const char *name; const char *a; const char *b; };
 extern ScopeTraceEntry_ *g_109f3620;
 extern int *g_109f3680;

@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1023a650 size=0x6
+#include "datamap.h"
 #include "CDecal.h"
 namespace lifted {
 extern char g_105c2580;

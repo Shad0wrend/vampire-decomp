@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x103c87d0 size=0x6
+#include "CNPC_VWerewolf.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_1065f4e0;
 }
@@ -33,6 +35,7 @@ int CNPC_VWerewolf::vfunc546(int x)
 // END FUNCTION
 
 // FUNCTION: 0x103ca690 size=0x5
+#include "CNPC_VWerewolf.h"
 bool CNPC_VWerewolf::vfunc618(int a0, int a1, int a2, int a3)
 {
     return 1;
@@ -40,6 +43,7 @@ bool CNPC_VWerewolf::vfunc618(int a0, int a1, int a2, int a3)
 // END FUNCTION
 
 // FUNCTION: 0x103ca6b0 size=0x3
+#include "CNPC_VWerewolf.h"
 bool CNPC_VWerewolf::vfunc615()
 {
     return 0;
@@ -47,12 +51,14 @@ bool CNPC_VWerewolf::vfunc615()
 // END FUNCTION
 
 // FUNCTION: 0x103ca6d0 size=0x3
+#include "CNPC_VWerewolf.h"
 void CNPC_VWerewolf::vfunc316(int a0, int a1, int a2)
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x103ca6f0 size=0x5
+#include "CNPC_VWerewolf.h"
 bool CNPC_VWerewolf::vfunc318(int a0, int a1, int a2)
 {
     return 0;
@@ -60,6 +66,7 @@ bool CNPC_VWerewolf::vfunc318(int a0, int a1, int a2)
 // END FUNCTION
 
 // FUNCTION: 0x103ca710 size=0x5
+#include "CNPC_VWerewolf.h"
 bool CNPC_VWerewolf::vfunc319(int a0, int a1, int a2)
 {
     return 0;
@@ -67,6 +74,7 @@ bool CNPC_VWerewolf::vfunc319(int a0, int a1, int a2)
 // END FUNCTION
 
 // FUNCTION: 0x103ca730 size=0x3
+#include "CNPC_VWerewolf.h"
 bool CNPC_VWerewolf::vfunc328()
 {
     return 1;
@@ -74,6 +82,7 @@ bool CNPC_VWerewolf::vfunc328()
 // END FUNCTION
 
 // FUNCTION: 0x103ca750 size=0x6
+#include "CNPC_VWerewolf.h"
 namespace lifted {
 extern char g_1093f9e8;
 }
@@ -84,6 +93,7 @@ int CNPC_VWerewolf::vfunc580()
 // END FUNCTION
 
 // FUNCTION: 0x103ca770 size=0x6
+#include "CNPC_VWerewolf.h"
 namespace lifted {
 extern int g_1065f794;
 }
@@ -109,6 +119,14 @@ CNPC_VWerewolf *CNPC_VWerewolf::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x103caa30 size=0xd9
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CNPC_VWerewolf.h"
 
@@ -161,6 +179,7 @@ void CNPC_VWerewolf::vfunc130(int a)
 // END FUNCTION
 
 // FUNCTION: 0x103cb170 size=0x6f
+#include "CNPC_VWerewolf.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -199,6 +218,7 @@ void CNPC_VWerewolf::vfunc113()
 // END FUNCTION
 
 // FUNCTION: 0x103cb7f0 size=0xb
+#include "CNPC_VWerewolf.h"
 struct W {
 	char pad[0x6078];
 	bool m;
@@ -210,6 +230,7 @@ bool CNPC_VWerewolf::vfunc600(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x103cb900 size=0x5
+#include "CNPC_VWerewolf.h"
 int CNPC_VWerewolf::vfunc619(int a0)
 {
     return 0;
@@ -294,6 +315,7 @@ bool __fastcall sub_103ccb50(CBaseEntity *self)
 // END FUNCTION
 
 // FUNCTION: 0x103ccbf0 size=0x96
+#include "CNPC_VWerewolf.h"
 #include "CUnknown101c2a50.h"
 
 struct ScopeEntry { const char *a; const char *b; const char *c; };
@@ -321,6 +343,14 @@ void CNPC_VWerewolf::vfunc141(CUnknown101c2a50 *pInfo, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x103cccc0 size=0xaf
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VWerewolf.h"
 #include "CUnknown101c2a50.h"
 #include "ScopeTrace.h"
@@ -345,6 +375,16 @@ int CNPC_VWerewolf::vfunc142(CUnknown101c2a50 *pInfo)
 // END FUNCTION
 
 // FUNCTION: 0x103ced10 size=0x10c
+#include "CNPC_VWerewolf.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
 #include "ScopeTrace.h"
 #include "utlvector.h"
 struct WWBase { void sub_102a0940(int a); };
@@ -363,6 +403,14 @@ void CNPC_VWerewolf::vfunc435(int arg)
 // END FUNCTION
 
 // FUNCTION: 0x103d02b0 size=0x108
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
 #include "CEntityVSlots.h"
@@ -388,6 +436,14 @@ void CNPC_VWerewolf::vfunc561(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x103d0410 size=0x1c0
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
 #include "CEntityVSlots.h"
@@ -466,6 +522,14 @@ void CNPC_VWerewolf::vfunc433()
 // END FUNCTION
 
 // FUNCTION: 0x103d0640 size=0xfc
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
 
@@ -548,6 +612,14 @@ void CWerewolfUnit103d4a20::sub_103d4a20()
 // END FUNCTION
 
 // FUNCTION: 0x103d5050 size=0xa4
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
 void sub_10008f44(CNPC_VWerewolf *pEnt, int a, int b, int c, int d, int e);
@@ -619,6 +691,13 @@ bool CNPC_VWerewolf::vfunc566(void *pHint)
 // END FUNCTION
 
 // FUNCTION: 0x103d8660 size=0xf5
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
 #include "CNPC_VWerewolf.h"
 #include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
@@ -645,6 +724,13 @@ void CNPC_VWerewolf::vfunc500()
 // END FUNCTION
 
 // FUNCTION: 0x103d87a0 size=0xf5
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
 #include "CNPC_VWerewolf.h"
 #include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
@@ -729,6 +815,14 @@ char CNPC_VWerewolf::vfunc69(void *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x103d9e00 size=0x140
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CAI_BaseNPCTroika.h"
 #include "CEntityVSlots.h"
 #include "ScopeTrace.h"
@@ -775,6 +869,14 @@ void CNPC_VWerewolfUnit::sub_103d9e00(CEntityVSlots *pEnt, Vector *pGoal, float 
 // END FUNCTION
 
 // FUNCTION: 0x103da230 size=0x11b
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VWerewolf.h"
 #include "CWerewolfSlots.h"
 #include "ScopeTrace.h"

@@ -21,6 +21,7 @@ int CFunc_LOD::vfunc81()
 // END FUNCTION
 
 // FUNCTION: 0x10114990 size=0x6
+#include "datamap.h"
 #include "CFunc_LOD.h"
 namespace lifted {
 extern char g_105702e8;
@@ -40,6 +41,7 @@ CFunc_LOD::CFunc_LOD() : CConstraintAnchorBase(0)
 // END FUNCTION
 
 // FUNCTION: 0x10114a50 size=0x8
+#include "CBaseEntity.h"
 #include "CFunc_LOD.h"
 // TARGET: CFunc_LOD::sub_10114a50
 unsigned char CFunc_LOD::sub_10114a50()
@@ -66,6 +68,14 @@ void *__fastcall sub_10114a70(void *pThis, int edx_unused, unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x10114ac0 size=0xb4
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CFunc_LOD.h"
 #include "CBaseEntity.h"
 #include "CCollisionProperty.h"
@@ -115,6 +125,14 @@ bool CFunc_LOD::vfunc223()
 // END FUNCTION
 
 // FUNCTION: 0x10114bf0 size=0xcd
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CFunc_LOD.h"
 #include "CBaseEntity.h"
 #include "CCollisionProperty.h"

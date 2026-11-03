@@ -135,6 +135,7 @@ void *CWeaponGravityGun::vfunc285()
 // END FUNCTION
 
 // FUNCTION: 0x1014ab10 size=0x9c
+#include "CBaseCombatCharacter.h"
 #include "CWeaponGravityGun.h"
 
 class CBaseCombatCharacter;

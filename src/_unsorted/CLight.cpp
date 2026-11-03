@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x101302d0 size=0x6
+#include "datamap.h"
 #include "CLight.h"
 namespace lifted {
 extern char g_105754f8;
@@ -63,6 +64,14 @@ bool CLight::vfunc110(const char *szKeyName, const char *szValue)
 // END FUNCTION
 
 // FUNCTION: 0x10130460 size=0xd4
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CLight.h"
 #include "ScopeTrace.h"
 

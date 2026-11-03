@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x101575b0 size=0x6
+#include "CRagdollPropSpecial.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_1057e9ac;
 }
@@ -37,6 +39,8 @@ bool CRagdollPropSpecial::vfunc73(CBaseEntity *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x101576c0 size=0x14e
+#include "CBaseEntity.h"
+#include "CRagdollPropSpecial.h"
 struct CPhysObjStub {
 	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
 	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
@@ -91,6 +95,7 @@ void CRagdollPropSpecial::vfunc174(CBaseEntity *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x10157870 size=0xd
+#include "CRagdollPropSpecial.h"
 struct RagdollField1040 { char pad[0x1040]; int m; };
 void CRagdollPropSpecial::vfunc191(int value)
 {

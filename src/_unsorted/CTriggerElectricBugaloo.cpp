@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10231200 size=0x6
+#include "datamap.h"
 #include "CTriggerElectricBugaloo.h"
 namespace lifted {
 extern char g_105b5960;

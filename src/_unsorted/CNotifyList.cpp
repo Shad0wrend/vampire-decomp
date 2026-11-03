@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x100f8780 size=0x78
+#include "CBaseEntity.h"
+#include "utlrbtree.h"
 #include "CNotifyList.h"
 #include "utlvector.h"
 
@@ -24,6 +26,7 @@ void *CNotifyList::vfunc0(CBaseEntity *pNotify, CBaseEntity *pWatched)
 // END FUNCTION
 
 // FUNCTION: 0x100f88a0 size=0x81
+#include "CBaseEntity.h"
 #include "CNotifyList.h"
 #include "CEntityVSlots.h"
 struct S100f88a0Flags {

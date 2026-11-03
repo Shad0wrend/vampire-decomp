@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x103f06e0 size=0x6
+#include "datamap.h"
 #include "CWeaponThrown_Chang_Ghost.h"
 namespace lifted {
 extern char g_1067d498;
@@ -13,6 +14,14 @@ datamap_t *CWeaponThrown_Chang_Ghost::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x103f0770 size=0x194
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CWeaponThrown_Chang_Ghost.h"
 #include "CBaseEntity.h"
 #include "CCollisionProperty.h"

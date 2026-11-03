@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x100f5710 size=0x6
+#include "datamap.h"
 #include "CEnvShooter.h"
 namespace lifted {
 extern char g_10565c44;
@@ -82,6 +83,14 @@ void CEnvShooter::vfunc104()
 // END FUNCTION
 
 // FUNCTION: 0x100f5880 size=0x10f
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CEnvShooter.h"
 #include "CGib.h"
 #include "CUnknown100f5600.h"
@@ -156,6 +165,7 @@ CGib *CEnvShooter::vfunc241()
 // END FUNCTION
 
 // FUNCTION: 0x100f59e0 size=0x90
+#include "CBaseEntity.h"
 #include "CEnvShooter.h"
 #include "CEntityVSlots.h"
 

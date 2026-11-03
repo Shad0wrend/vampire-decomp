@@ -58,6 +58,7 @@ void CUtlVectorDataOps<DisciplineVec, 9>::vfunc0(void *fieldInfo, void *pSave)
 // END FUNCTION
 
 // FUNCTION: 0x10349ba0 size=0xe0
+#include "utlvector.h"
 #include "CUtlVectorDataOps.h"
 #include "CUtlVector16.h"
 
@@ -128,6 +129,9 @@ template<> void CUtlVectorDataOps<CUtlVector<DisciplineSrc,CUtlMemory<Discipline
 // END FUNCTION
 
 // FUNCTION: 0x10349cc0 size=0x10
+#include "DisciplineSrc.h"
+#include "utlmemory.h"
+#include "utlvector.h"
 #include "CUtlVectorDataOps.h"
 struct DisciplineSrc;
 struct thinkfunc_t;
@@ -144,6 +148,8 @@ template<> int CUtlVectorDataOps<CUtlVector<DisciplineSrc,CUtlMemory<DisciplineS
 // END FUNCTION
 
 // FUNCTION: 0x10349ce0 size=0x13
+#include "utlmemory.h"
+#include "utlvector.h"
 #include "CUtlVectorDataOps.h"
 #include "DisciplineSrc.h"
 

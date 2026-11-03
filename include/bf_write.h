@@ -1,5 +1,6 @@
 // bf_write: engine bit buffer writer.
 #pragma once
+#include "Vector.h"
 
 extern unsigned long g_106d1990[32][33];	// bit write masks: [first bit in the dword][number of bits]
 

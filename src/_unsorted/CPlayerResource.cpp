@@ -21,6 +21,7 @@ int CPlayerResource::vfunc81()
 // END FUNCTION
 
 // FUNCTION: 0x10189fd0 size=0x6
+#include "datamap.h"
 #include "CPlayerResource.h"
 namespace lifted {
 extern char g_105896c0;

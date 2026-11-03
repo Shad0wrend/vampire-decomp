@@ -13,6 +13,7 @@ int CGameText::vfunc173(int a0, int a1, int a2, int a3)
 // END FUNCTION
 
 // FUNCTION: 0x1020e200 size=0x6
+#include "datamap.h"
 #include "CGameText.h"
 namespace lifted {
 extern char g_105aab6c;

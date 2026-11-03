@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1006d1f0 size=0x6
+#include "CBaseCineCam.h"
 namespace lifted {
 extern char g_106c816c;
 }
@@ -12,6 +13,7 @@ int CBaseCineCam::vfunc80()
 // END FUNCTION
 
 // FUNCTION: 0x1006d210 size=0x3
+#include "CBaseCineCam.h"
 int CBaseCineCam::vfunc81()
 {
     return 0;
@@ -19,6 +21,8 @@ int CBaseCineCam::vfunc81()
 // END FUNCTION
 
 // FUNCTION: 0x1006d500 size=0x6
+#include "CBaseCineCam.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_105463a8;
 }
@@ -29,6 +33,8 @@ datamap_t *CBaseCineCam::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x1006d8f0 size=0x8
+#include "CBaseCineCam.h"
+#include "CBaseEntity.h"
 #include "vampire.h"
 // TARGET: CBaseCineCam::vfunc117
 unsigned char CBaseCineCam::vfunc117()

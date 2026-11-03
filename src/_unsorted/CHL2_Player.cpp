@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1034f2a0 size=0x6
+#include "CHL2_Player.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_106266e4;
 }
@@ -21,6 +23,7 @@ CHL2_Player::CHL2_Player()
 // END FUNCTION
 
 // FUNCTION: 0x1034f370 size=0x7
+#include "CHL2_Player.h"
 float CHL2_Player::vfunc28()
 {
     return *(float *)((char *)this + 0x1c70);
@@ -28,6 +31,7 @@ float CHL2_Player::vfunc28()
 // END FUNCTION
 
 // FUNCTION: 0x1034f390 size=0x7
+#include "CHL2_Player.h"
 float CHL2_Player::vfunc29()
 {
     return *(float *)((char *)this + 0x1c74);
@@ -35,6 +39,7 @@ float CHL2_Player::vfunc29()
 // END FUNCTION
 
 // FUNCTION: 0x1034f3b0 size=0x7
+#include "CHL2_Player.h"
 float CHL2_Player::vfunc30()
 {
     return *(float *)((char *)this + 0x1c78);
@@ -42,6 +47,7 @@ float CHL2_Player::vfunc30()
 // END FUNCTION
 
 // FUNCTION: 0x1034f3d0 size=0xd
+#include "CHL2_Player.h"
 struct HL2PlayerField2464 { char pad[0x2464]; int m; };
 void CHL2_Player::vfunc475(int value)
 {
@@ -50,6 +56,7 @@ void CHL2_Player::vfunc475(int value)
 // END FUNCTION
 
 // FUNCTION: 0x1034f430 size=0xd
+#include "CHL2_Player.h"
 struct HL2PlayerFloats { char pad[0x2534]; float a; float b; };
 float CHL2_Player::vfunc480()
 {
@@ -59,6 +66,7 @@ float CHL2_Player::vfunc480()
 // END FUNCTION
 
 // FUNCTION: 0x1034f450 size=0xd
+#include "CHL2_Player.h"
 struct HL2PlayerFloats { char pad[0x2534]; float a; float b; };
 float CHL2_Player::vfunc481()
 {
@@ -68,6 +76,7 @@ float CHL2_Player::vfunc481()
 // END FUNCTION
 
 // FUNCTION: 0x1034f470 size=0x7
+#include "CHL2_Player.h"
 float CHL2_Player::vfunc482()
 {
     return *(float *)((char *)this + 0x253c);
@@ -75,6 +84,7 @@ float CHL2_Player::vfunc482()
 // END FUNCTION
 
 // FUNCTION: 0x1034f490 size=0xb
+#include "CHL2_Player.h"
 namespace lifted {
 int sub_10008b84();
 }
@@ -100,6 +110,7 @@ CHL2_Player *CHL2_Player::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x1034f5f0 size=0x6
+#include "CHL2_Player.h"
 namespace lifted {
 extern char g_109383e4;
 }
@@ -110,6 +121,7 @@ int CHL2_Player::vfunc80()
 // END FUNCTION
 
 // FUNCTION: 0x1034f610 size=0x3
+#include "CHL2_Player.h"
 int CHL2_Player::vfunc81()
 {
     return 0;
@@ -117,6 +129,7 @@ int CHL2_Player::vfunc81()
 // END FUNCTION
 
 // FUNCTION: 0x1034f7f0 size=0x4f
+#include "CHL2_Player.h"
 // TARGET: CHL2_Player::vfunc31
 void CHL2_Player::vfunc31(int pDump)
 {
@@ -128,6 +141,8 @@ void CHL2_Player::vfunc31(int pDump)
 // END FUNCTION
 
 // FUNCTION: 0x1034f970 size=0x4a
+#include "CBaseEntity.h"
+#include "CHL2_Player.h"
 // TARGET: CHL2_Player::vfunc144
 void CHL2_Player::vfunc144(int a)
 {
@@ -263,6 +278,7 @@ int CHL2_Player::vfunc138()
 // END FUNCTION
 
 // FUNCTION: 0x10351070 size=0x5
+#include "CHL2_Player.h"
 bool CHL2_Player::vfunc366(int a0, int a1, int a2)
 {
     return 0;
@@ -270,6 +286,8 @@ bool CHL2_Player::vfunc366(int a0, int a1, int a2)
 // END FUNCTION
 
 // FUNCTION: 0x103512a0 size=0x51
+#include "CBaseEntity.h"
+#include "CHL2_Player.h"
 struct SSub36c {
 	virtual void v0();
 	virtual bool vfunc1();
@@ -387,6 +405,7 @@ void CHL2_Player::vfunc472()
 // END FUNCTION
 
 // FUNCTION: 0x10352960 size=0x19
+#include "CHL2_Player.h"
 int CHL2_Player::vfunc476()
 {
     *(int *)((char *)this + 0x2464) = 0x42c80000;
@@ -463,6 +482,7 @@ void CHL2_Player::vfunc478(unsigned int *pPower)
 // END FUNCTION
 
 // FUNCTION: 0x10352b50 size=0xf2
+#include "CTakeDamageInfo.h"
 #include "CHL2_Player.h"
 #include "CVDmg_t.h"
 #include "ConVar.h"
@@ -491,12 +511,14 @@ int CHL2_Player::vfunc142(const CTakeDamageInfo *pInfo)
 // END FUNCTION
 
 // FUNCTION: 0x10352c90 size=0x1
+#include "CHL2_Player.h"
 void CHL2_Player::vfunc484()
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x10352cb0 size=0x5
+#include "CHL2_Player.h"
 bool CHL2_Player::vfunc485(int a0)
 {
     return 0;

@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x101404d0 size=0x9
+#include "CBaseMoveBehavior.h"
 #include "CLogicalEntity.h"
 
 int CBaseMoveBehavior::vfunc117()
@@ -11,6 +12,8 @@ int CBaseMoveBehavior::vfunc117()
 // END FUNCTION
 
 // FUNCTION: 0x101404f0 size=0x6
+#include "CBaseMoveBehavior.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_1057a3fc;
 }
@@ -21,6 +24,7 @@ datamap_t * CBaseMoveBehavior::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x10140750 size=0xe
+#include "CBaseMoveBehavior.h"
 bool CBaseMoveBehavior::vfunc153()
 {
 	return m_unk4b4 != 0;
@@ -28,6 +32,7 @@ bool CBaseMoveBehavior::vfunc153()
 // END FUNCTION
 
 // FUNCTION: 0x10140a60 size=0xb7
+#include "CBaseMoveBehavior.h"
 struct MoveView10140a60 {
 	char pad0[0x3f4];
 	float m_f3f4;

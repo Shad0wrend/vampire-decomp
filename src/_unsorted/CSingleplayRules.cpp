@@ -12,6 +12,7 @@ CSingleplayRules::CSingleplayRules()
 // END FUNCTION
 
 // FUNCTION: 0x101abc20 size=0x3
+#include "CSingleplayRules.h"
 bool CSingleplayRules::vfunc18()
 {
     return 0;
@@ -19,6 +20,7 @@ bool CSingleplayRules::vfunc18()
 // END FUNCTION
 
 // FUNCTION: 0x101abc40 size=0x8
+#include "CSingleplayRules.h"
 extern char g_106b8540[];
 
 // TARGET: CSingleplayRules::vfunc63
@@ -46,12 +48,14 @@ CGameRules *CSingleplayRules::vfunc0(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x101abca0 size=0x1
+#include "CSingleplayRules.h"
 void CSingleplayRules::vfunc16()
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x101abcc0 size=0x3
+#include "CSingleplayRules.h"
 bool CSingleplayRules::vfunc21()
 {
     return 0;
@@ -59,6 +63,7 @@ bool CSingleplayRules::vfunc21()
 // END FUNCTION
 
 // FUNCTION: 0x101abce0 size=0x3
+#include "CSingleplayRules.h"
 bool CSingleplayRules::vfunc22()
 {
     return 0;
@@ -66,6 +71,7 @@ bool CSingleplayRules::vfunc22()
 // END FUNCTION
 
 // FUNCTION: 0x101abd00 size=0x3
+#include "CSingleplayRules.h"
 bool CSingleplayRules::vfunc24()
 {
     return 0;
@@ -73,6 +79,8 @@ bool CSingleplayRules::vfunc24()
 // END FUNCTION
 
 // FUNCTION: 0x101abd20 size=0x5
+#include "CBaseEntity.h"
+#include "CSingleplayRules.h"
 char CSingleplayRules::vfunc19(CBaseEntity * a0, CBaseEntity * a1)
 {
     return 0;
@@ -111,6 +119,7 @@ CBaseEntity *CSingleplayRules::vfunc20(CBaseEntity *pPlayer, CBaseEntity *pCurre
 // END FUNCTION
 
 // FUNCTION: 0x101abe10 size=0x5
+#include "CSingleplayRules.h"
 bool CSingleplayRules::vfunc26(int a0, int a1, int a2, int a3)
 {
     return 1;
@@ -124,6 +133,7 @@ void __stdcall sub_101abe30(int a) {
 // END FUNCTION
 
 // FUNCTION: 0x101abe50 size=0x3
+#include "CSingleplayRules.h"
 void CSingleplayRules::vfunc28(void * a0)
 {
 }
@@ -142,6 +152,8 @@ float CSingleplayRules::vfunc30(int a)
 // END FUNCTION
 
 // FUNCTION: 0x101abea0 size=0x3
+#include "CBaseEntity.h"
+#include "CSingleplayRules.h"
 void CSingleplayRules::vfunc35(CBaseEntity * a0)
 {
 }
@@ -157,6 +169,7 @@ bool sub_101abec0()
 // END FUNCTION
 
 // FUNCTION: 0x101abee0 size=0x5
+#include "CSingleplayRules.h"
 bool CSingleplayRules::vfunc37(int a0)
 {
     return 1;
@@ -164,6 +177,7 @@ bool CSingleplayRules::vfunc37(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x101abf00 size=0xb
+#include "CSingleplayRules.h"
 float CSingleplayRules::vfunc38(int a)
 {
 	return gpGlobals->curtime;
@@ -171,6 +185,7 @@ float CSingleplayRules::vfunc38(int a)
 // END FUNCTION
 
 // FUNCTION: 0x101abf20 size=0x8
+#include "CSingleplayRules.h"
 // TARGET: CSingleplayRules::vfunc43
 int CSingleplayRules::vfunc43(int a, int b)
 {
@@ -179,28 +194,37 @@ int CSingleplayRules::vfunc43(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x101abf40 size=0x3
+#include "CBaseEntity.h"
+#include "CSingleplayRules.h"
 void CSingleplayRules::vfunc44(CBaseEntity * a0, CMPDamageInfo * a1)
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x101abf60 size=0x3
+#include "CBaseEntity.h"
+#include "CSingleplayRules.h"
 void CSingleplayRules::vfunc45(CBaseEntity * a0, CMPDamageInfo * a1)
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x101abf80 size=0x9
+#include "CBaseEntity.h"
+#include "CSingleplayRules.h"
 extern float g_104492dc;
 float CSingleplayRules::vfunc49(CBaseEntity *a) { return g_104492dc; }
 // END FUNCTION
 
 // FUNCTION: 0x101abfa0 size=0x9
+#include "CBaseEntity.h"
+#include "CSingleplayRules.h"
 extern float g_104454c4;
 float CSingleplayRules::vfunc50(CBaseEntity *a) { return g_104454c4; }
 // END FUNCTION
 
 // FUNCTION: 0x101abfc0 size=0x29
+#include "CSingleplayRules.h"
 #include "CBaseEntity.h"
 Vector CSingleplayRules::vfunc51(CBaseEntity *pEnt)
 {
@@ -210,6 +234,7 @@ Vector CSingleplayRules::vfunc51(CBaseEntity *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x101ac000 size=0x8
+#include "CSingleplayRules.h"
 // TARGET: CSingleplayRules::vfunc48
 int CSingleplayRules::vfunc48(int index)
 {
@@ -218,6 +243,7 @@ int CSingleplayRules::vfunc48(int index)
 // END FUNCTION
 
 // FUNCTION: 0x101ac020 size=0x5
+#include "CSingleplayRules.h"
 bool CSingleplayRules::vfunc17(int a0)
 {
     return 1;
@@ -225,12 +251,14 @@ bool CSingleplayRules::vfunc17(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x101ac040 size=0x3
+#include "CSingleplayRules.h"
 void CSingleplayRules::vfunc54(int a0, int a1, int a2)
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x101ac060 size=0x7
+#include "CSingleplayRules.h"
 namespace lifted {
 extern float g_104454c4;
 }
@@ -241,6 +269,7 @@ float CSingleplayRules::vfunc59()
 // END FUNCTION
 
 // FUNCTION: 0x101ac080 size=0x8
+#include "CSingleplayRules.h"
 // TARGET: CSingleplayRules::vfunc61
 int CSingleplayRules::vfunc61(int index)
 {
@@ -249,6 +278,7 @@ int CSingleplayRules::vfunc61(int index)
 // END FUNCTION
 
 // FUNCTION: 0x101ac0a0 size=0x8
+#include "CSingleplayRules.h"
 // TARGET: CSingleplayRules::vfunc62
 int CSingleplayRules::vfunc62(int index)
 {
@@ -257,6 +287,7 @@ int CSingleplayRules::vfunc62(int index)
 // END FUNCTION
 
 // FUNCTION: 0x101ac0c0 size=0x5
+#include "CSingleplayRules.h"
 int CSingleplayRules::vfunc64(int a0, int a1)
 {
     return 0;
@@ -273,6 +304,7 @@ bool CSingleplayRules::vfunc65(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x101ac110 size=0x3
+#include "CSingleplayRules.h"
 char CSingleplayRules::vfunc74()
 {
     return 1;

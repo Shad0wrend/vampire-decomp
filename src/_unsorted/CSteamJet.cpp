@@ -21,6 +21,7 @@ int CSteamJet::vfunc81()
 // END FUNCTION
 
 // FUNCTION: 0x10058050 size=0x6
+#include "datamap.h"
 #include "CSteamJet.h"
 namespace lifted {
 extern char g_1053ff38;

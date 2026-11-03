@@ -158,6 +158,7 @@ void CNPC_VYukie::vfunc432(float x)
 // END FUNCTION
 
 // FUNCTION: 0x103dd800 size=0x27
+#include "CEntityVSlots.h"
 #include "CNPC_VYukie.h"
 
 struct CAI_BaseNPCTroikaPlaceholder {

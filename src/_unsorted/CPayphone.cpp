@@ -127,6 +127,14 @@ int CPayphone::vfunc35(int a)
 // END FUNCTION
 
 // FUNCTION: 0x101aa9c0 size=0x165
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CPayphone.h"
 #include "CCollisionProperty.h"
@@ -169,6 +177,8 @@ int CPayphone::vfunc138()
 // END FUNCTION
 
 // FUNCTION: 0x101aabf0 size=0xcd
+#include "CAI_BaseNPC.h"
+#include "CGlobalEntityList.h"
 #include "CPayphone.h"
 
 extern CGlobalEntityList *g_10566458;

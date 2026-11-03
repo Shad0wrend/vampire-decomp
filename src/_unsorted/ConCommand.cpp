@@ -15,6 +15,7 @@ ConCommand *ConCommand::vfunc0(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x10245940 size=0x3
+#include "ConCommand.h"
 bool ConCommand::vfunc1()
 {
     return 1;
@@ -22,6 +23,7 @@ bool ConCommand::vfunc1()
 // END FUNCTION
 
 // FUNCTION: 0x10245960 size=0xa
+#include "ConCommand.h"
 void ConCommand::vfunc6()
 {
 	if (m_pfnCallback)

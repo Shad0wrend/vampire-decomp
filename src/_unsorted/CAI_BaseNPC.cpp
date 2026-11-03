@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x101a6420 size=0x7
+#include "CAI_BaseNPC.h"
 // TARGET: CAI_BaseNPC::vfunc410
 int CAI_BaseNPC::vfunc410(int a)
 {
@@ -10,6 +11,7 @@ int CAI_BaseNPC::vfunc410(int a)
 // END FUNCTION
 
 // FUNCTION: 0x101a6440 size=0x8
+#include "CAI_BaseNPC.h"
 struct CBaseEntityView
 {
 	void sub_100ac720(const char *context);
@@ -22,6 +24,7 @@ void CAI_BaseNPC::vfunc412()
 // END FUNCTION
 
 // FUNCTION: 0x101a6460 size=0x8
+#include "CAI_BaseNPC.h"
 struct CBaseEntityView
 {
 	void sub_100ac720(const char *context);
@@ -34,6 +37,7 @@ void CAI_BaseNPC::vfunc413()
 // END FUNCTION
 
 // FUNCTION: 0x101a6480 size=0x8
+#include "CAI_BaseNPC.h"
 struct CBaseEntityView
 {
 	void sub_100ac720(const char *context);
@@ -46,6 +50,7 @@ void CAI_BaseNPC::vfunc414()
 // END FUNCTION
 
 // FUNCTION: 0x101a64a0 size=0x8
+#include "CAI_BaseNPC.h"
 struct CBaseEntityView
 {
 	void sub_100ac720(const char *context);
@@ -58,12 +63,14 @@ void CAI_BaseNPC::vfunc415()
 // END FUNCTION
 
 // FUNCTION: 0x101a64c0 size=0x3
+#include "CAI_BaseNPC.h"
 void CAI_BaseNPC::vfunc416(char a0)
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x101a64e0 size=0x3
+#include "CAI_BaseNPC.h"
 // TARGET: CAI_BaseNPC::vfunc417
 char CAI_BaseNPC::vfunc417() {
 	return 0;
@@ -78,6 +85,7 @@ void __fastcall sub_101a6500(void *pThis)
 // END FUNCTION
 
 // FUNCTION: 0x101a6520 size=0x3
+#include "CAI_BaseNPC.h"
 // TARGET: CAI_BaseNPC::vfunc128
 char CAI_BaseNPC::vfunc128() {
 	return 0;
@@ -156,6 +164,7 @@ int CAI_BaseNPC::vfunc450(int a)
 // END FUNCTION
 
 // FUNCTION: 0x101a6660 size=0x6
+#include "CAI_BaseNPC.h"
 namespace lifted {
 extern char g_10594820;
 }
@@ -166,6 +175,7 @@ const char * CAI_BaseNPC::vfunc451()
 // END FUNCTION
 
 // FUNCTION: 0x101a6680 size=0x3
+#include "CAI_BaseNPC.h"
 // TARGET: CAI_BaseNPC::vfunc454
 int CAI_BaseNPC::vfunc454() {
 	return 0;
@@ -181,6 +191,8 @@ bool __stdcall sub_101a66a0(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x101a66c0 size=0x3
+#include "CAI_BaseNPC.h"
+#include "CAI_StandoffBehavior.h"
 CAI_BehaviorBase ** CAI_BaseNPC::vfunc456()
 {
     return 0;
@@ -188,6 +200,7 @@ CAI_BehaviorBase ** CAI_BaseNPC::vfunc456()
 // END FUNCTION
 
 // FUNCTION: 0x101a66e0 size=0x3
+#include "CAI_BaseNPC.h"
 int CAI_BaseNPC::vfunc457()
 {
     return 0;
@@ -195,11 +208,13 @@ int CAI_BaseNPC::vfunc457()
 // END FUNCTION
 
 // FUNCTION: 0x101a6700 size=0x3
+#include "CAI_BaseNPC.h"
 // TARGET: CAI_BaseNPC::vfunc462
 char CAI_BaseNPC::vfunc462() { return 0; }
 // END FUNCTION
 
 // FUNCTION: 0x101a6720 size=0x7
+#include "CAI_BaseNPC.h"
 int CAI_BaseNPC::vfunc464()
 {
     return *(int *)((char *)this + 0x5cc0);
@@ -207,6 +222,7 @@ int CAI_BaseNPC::vfunc464()
 // END FUNCTION
 
 // FUNCTION: 0x101a6740 size=0x3
+#include "CAI_BaseNPC.h"
 void CAI_BaseNPC::vfunc465(int a0)
 {
 }
@@ -221,6 +237,8 @@ bool __stdcall sub_101a6760(int a)
 // END FUNCTION
 
 // FUNCTION: 0x101a6780 size=0x5
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
 bool CAI_BaseNPC::vfunc468(CBaseEntity * a0)
 {
     return 1;
@@ -240,6 +258,7 @@ float sub_101a67c0()
 // END FUNCTION
 
 // FUNCTION: 0x101a67e0 size=0x2d
+#include "CAI_BaseNPC.h"
 #include "ehandle.h"
 
 // TARGET: CAI_BaseNPC::vfunc167
@@ -258,6 +277,7 @@ bool __stdcall sub_101a6820(int a)
 // END FUNCTION
 
 // FUNCTION: 0x101a6840 size=0xb
+#include "CAI_BaseNPC.h"
 void CAI_BaseNPC::vfunc483(int unused)
 {
 	vfunc158();
@@ -265,6 +285,7 @@ void CAI_BaseNPC::vfunc483(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x101a6860 size=0x3
+#include "CAI_BaseNPC.h"
 // TARGET: CAI_BaseNPC::vfunc136
 char CAI_BaseNPC::vfunc136() {
 	return 1;
@@ -384,6 +405,7 @@ void sub_101a6a60()
 // END FUNCTION
 
 // FUNCTION: 0x101a6a80 size=0x1
+#include "CAI_BaseNPC.h"
 // TARGET: CAI_BaseNPC::vfunc504
 void CAI_BaseNPC::vfunc504() {
 }
@@ -411,6 +433,7 @@ void sub_101a6ae0()
 // END FUNCTION
 
 // FUNCTION: 0x101a6b20 size=0x3
+#include "CAI_BaseNPC.h"
 // TARGET: CAI_BaseNPC::vfunc512
 int CAI_BaseNPC::vfunc512() {
 	return 0;
@@ -442,6 +465,7 @@ float sub_101a6b80()
 // END FUNCTION
 
 // FUNCTION: 0x101a6ba0 size=0x5
+#include "CAI_BaseNPC.h"
 bool CAI_BaseNPC::vfunc527(CAI_NavProvider * a0)
 {
     return 0;
@@ -455,6 +479,7 @@ void __stdcall sub_101a6be0(int a, int b, int c, int d) {
 // END FUNCTION
 
 // FUNCTION: 0x101a6c00 size=0xa
+#include "CAI_BaseNPC.h"
 struct B
 {
 	int sub_1000aed4(int a);
@@ -476,6 +501,7 @@ float sub_101a6c20()
 // END FUNCTION
 
 // FUNCTION: 0x101a6c60 size=0x3
+#include "CAI_BaseNPC.h"
 // TARGET: CAI_BaseNPC::vfunc557
 char CAI_BaseNPC::vfunc557() {
 	return 1;
@@ -483,6 +509,7 @@ char CAI_BaseNPC::vfunc557() {
 // END FUNCTION
 
 // FUNCTION: 0x101a6c80 size=0x1
+#include "CAI_BaseNPC.h"
 // TARGET: CAI_BaseNPC::vfunc558
 void CAI_BaseNPC::vfunc558() {
 }
@@ -526,6 +553,7 @@ void *sub_101a6d00()
 // END FUNCTION
 
 // FUNCTION: 0x10265e90 size=0x21
+#include "CAI_BaseNPC.h"
 struct CBaseCombatCharacterCall_10265e90
 {
     int sub_1000e854(int a);
@@ -561,6 +589,7 @@ bool __stdcall sub_10266660(float a, float b)
 // END FUNCTION
 
 // FUNCTION: 0x1026a8a0 size=0x16
+#include "CAI_BaseNPC.h"
 float CAI_BaseNPC::vfunc471()
 {
 	return enginerandom->vfunc1(0.2f, 0.9f);
@@ -568,6 +597,8 @@ float CAI_BaseNPC::vfunc471()
 // END FUNCTION
 
 // FUNCTION: 0x1026a8d0 size=0x5
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
 bool CAI_BaseNPC::vfunc566(CBaseEntity * a0)
 {
     return 0;
@@ -575,6 +606,7 @@ bool CAI_BaseNPC::vfunc566(CBaseEntity * a0)
 // END FUNCTION
 
 // FUNCTION: 0x1026a8f0 size=0x8
+#include "CAI_BaseNPC.h"
 // TARGET: CAI_BaseNPC::vfunc567
 int CAI_BaseNPC::vfunc567(int unused)
 {
@@ -583,6 +615,7 @@ int CAI_BaseNPC::vfunc567(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x1026a910 size=0x9
+#include "CAI_BaseNPC.h"
 extern float g_104454c4;
 float CAI_BaseNPC::vfunc568(int a) { return g_104454c4; }
 // END FUNCTION
@@ -773,6 +806,14 @@ void CAI_BaseNPC::vfunc538()
 // END FUNCTION
 
 // FUNCTION: 0x1026ca80 size=0x283
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CAI_BaseNPC.h"
 #include "CBaseEntity.h"
 #include "CVProfile.h"
@@ -861,6 +902,7 @@ void CAI_BaseNPC::vfunc431()
 // END FUNCTION
 
 // FUNCTION: 0x1026cdc0 size=0x47
+#include "CBaseEntity.h"
 #include "CAI_BaseNPC.h"
 struct CAI_Container5bd8 { void sub_100cd660(CBaseEntity *pEnt, CAI_BaseNPC *pOwner, int a); };
 bool CAI_BaseNPC::vfunc379(CBaseEntity *pEnt, int b, int c, int d, int e, int f, int g)
@@ -896,6 +938,7 @@ void CAI_BaseNPC::vfunc380()
 // END FUNCTION
 
 // FUNCTION: 0x1026d7f0 size=0x75
+#include "CAI_BaseNPC.h"
 struct SHandleEntry { void *p; unsigned serial; int pad; };
 struct SEntList { int pad; SHandleEntry e[1]; };
 extern SEntList *g_10566458;
@@ -963,6 +1006,7 @@ int CAI_BaseNPC::vfunc554(float a, float b)
 // END FUNCTION
 
 // FUNCTION: 0x1026d9a0 size=0xb7
+#include "CAI_BaseNPC.h"
 #include "CBaseEntity.h"
 
 #define SV1(n) virtual void f##n();
@@ -1046,6 +1090,7 @@ int CAI_BaseNPC::vfunc556(float a, float b)
 // END FUNCTION
 
 // FUNCTION: 0x1026db30 size=0x9e
+#include "CAI_BaseNPC.h"
 struct ScopeTraceEntry_t
 {
 	const char *m_pszFunc;
@@ -1157,6 +1202,7 @@ void CAI_BaseNPC::vfunc463(int a, int type)
 // END FUNCTION
 
 // FUNCTION: 0x1026e5c0 size=0xd
+#include "CAI_BaseNPC.h"
 // TARGET: CAI_BaseNPC::vfunc477
 extern int g_105c97dc[];
 
@@ -1199,6 +1245,7 @@ int CAI_BaseNPC::vfunc460()
 // END FUNCTION
 
 // FUNCTION: 0x1026fbe0 size=0xc6
+#include "CAI_BaseNPC.h"
 #define SV(n) virtual void s##n();
 #define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
 #define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
@@ -1256,6 +1303,7 @@ char CAI_BaseNPC::vfunc562(int a, int b, char bFlag)
 // END FUNCTION
 
 // FUNCTION: 0x1026fcf0 size=0x195
+#include "CBaseEntity.h"
 #include "CAI_BaseNPC.h"
 #include "Ray_t.h"
 #include "CTraceFilterSimple.h"
@@ -1332,6 +1380,7 @@ char CAI_BaseNPC::vfunc573(const Vector *pOffset, const float *pEnd, char bSetCo
 // END FUNCTION
 
 // FUNCTION: 0x102702d0 size=0x63
+#include "CAI_BaseNPC.h"
 struct SDifficultyView {
     virtual void s0();
     virtual bool s1();
@@ -1399,6 +1448,7 @@ bool CAI_BaseNPC::vfunc564()
 // END FUNCTION
 
 // FUNCTION: 0x10271f50 size=0x7
+#include "CAI_BaseNPC.h"
 int CAI_BaseNPC::vfunc375(int a0)
 {
     return a0;
@@ -1457,6 +1507,7 @@ void CAI_BaseNPC::vfunc310(int act)
 // END FUNCTION
 
 // FUNCTION: 0x10272790 size=0x21
+#include "CAI_BaseNPC.h"
 // TARGET: CAI_BaseNPC::vfunc466
 bool CAI_BaseNPC::vfunc466()
 {
@@ -1495,6 +1546,7 @@ char __fastcall sub_10273720(void *pSelf)
 // END FUNCTION
 
 // FUNCTION: 0x10273ad0 size=0x1d8
+#include "CBaseEntity.h"
 #include "CAI_BaseNPC.h"
 #include "CAI_MoveProbe.h"
 #include "CEntityVSlots.h"
@@ -1763,6 +1815,8 @@ float CAI_BaseNPC::vfunc515(const Vector *pTarget)
 // END FUNCTION
 
 // FUNCTION: 0x10274db0 size=0x5c
+#include "CAI_BaseNPC.h"
+#include "Vector.h"
 Vector CAI_BaseNPC::vfunc533(int a, int b)
 {
 	if ((vfunc513() & 0x8000000) && (a == 0x57 || a == 8))
@@ -1840,6 +1894,7 @@ bool CAI_BaseNPC::vfunc575()
 // END FUNCTION
 
 // FUNCTION: 0x10278cb0 size=0x47
+#include "CAI_BaseNPC.h"
 struct ConVarLike {
 	virtual void vfunc0();
 	virtual bool vfunc1();
@@ -1930,6 +1985,7 @@ float CAI_BaseNPC::vfunc520(int a)
 // END FUNCTION
 
 // FUNCTION: 0x10279000 size=0x21
+#include "CAI_BaseNPC.h"
 void CAI_BaseNPC::vfunc485(const char *pszSample, int a, float flVolume, int b, int c, int d)
 {
 	vfunc484(pszSample, a, flVolume, b, 0);
@@ -1937,6 +1993,7 @@ void CAI_BaseNPC::vfunc485(const char *pszSample, int a, float flVolume, int b, 
 // END FUNCTION
 
 // FUNCTION: 0x10279060 size=0x13
+#include "CAI_BaseNPC.h"
 namespace lifted {
 void sub_10084b40(void *pEntity, const char *pszScene, unsigned int *pOut);
 }
@@ -1948,6 +2005,7 @@ void CAI_BaseNPC::vfunc540(const char *pszScene)
 // END FUNCTION
 
 // FUNCTION: 0x10279090 size=0x16e
+#include "CBaseEntity.h"
 #include "CAI_BaseNPC.h"
 #include "CBasePlayer.h"
 #include "CGlobalEntityList.h"
@@ -2019,6 +2077,7 @@ bool CAI_BaseNPC::vfunc480()
 // END FUNCTION
 
 // FUNCTION: 0x1027a400 size=0xd
+#include "CAI_BaseNPC.h"
 struct NpcFlags204 { char pad[0x204]; unsigned int m; };
 unsigned int CAI_BaseNPC::vfunc552()
 {
@@ -2027,6 +2086,7 @@ unsigned int CAI_BaseNPC::vfunc552()
 // END FUNCTION
 
 // FUNCTION: 0x1027a530 size=0x6d
+#include "CAI_BaseNPC.h"
 #define TEN(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 struct S0 { TEN(a) };
 struct S1 : S0 { TEN(b) };
@@ -2060,6 +2120,8 @@ bool CAI_BaseNPC::vfunc510()
 // END FUNCTION
 
 // FUNCTION: 0x1027a5c0 size=0x58
+#include "CAI_BaseNPC.h"
+#include "CLogicAuto.h"
 struct SSquad60 { char pad[0x60]; float m_flTime; };
 static inline bool Bit1(unsigned int v) { return ((v >> 1) & 1) != 0; }
 bool CAI_BaseNPC::vfunc486()
@@ -2137,6 +2199,7 @@ void CAI_BaseNPC::vfunc106(const char *pszName)
 // END FUNCTION
 
 // FUNCTION: 0x1027c160 size=0x65
+#include "CBaseEntity.h"
 #include "CAI_BaseNPC.h"
 #include "CRestore.h"
 
@@ -2168,6 +2231,7 @@ int CAI_BaseNPC::vfunc127(CRestore *pRestore)
 // END FUNCTION
 
 // FUNCTION: 0x1027c2e0 size=0x3
+#include "CAI_BaseNPC.h"
 // TARGET: CAI_BaseNPC::vfunc452
 #include "vampire.h"
 
@@ -2193,6 +2257,8 @@ CAI_BaseNPC *CAI_BaseNPC::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x1027ca30 size=0x50
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
 #include "CUnknown10315ec0.h"
 #include "CUnknown103158f0.h"
 struct CHint5ddc { void sub_102d1420(int a); };
@@ -2213,6 +2279,7 @@ void CAI_BaseNPC::vfunc180()
 // END FUNCTION
 
 // FUNCTION: 0x1027caa0 size=0x2c
+#include "CAI_BaseNPC.h"
 #include "vampire.h"
 #include "CUnknown1070b248.h"
 
@@ -2312,6 +2379,7 @@ CAI_Senses *CAI_BaseNPC::vfunc425()
 // END FUNCTION
 
 // FUNCTION: 0x1027cec0 size=0x1f
+#include "CAI_BaseNPC.h"
 #include "CAI_Motor.h"
 CAI_Motor *CAI_BaseNPC::vfunc427()
 {
@@ -2333,6 +2401,7 @@ CAI_MoveProbe *__fastcall sub_1027cef0(void *pOuter)
 // END FUNCTION
 
 // FUNCTION: 0x1027cf60 size=0x1f
+#include "CAI_BaseNPC.h"
 #include "CAI_LocalNavigator.h"
 
 CAI_LocalNavigator *CAI_BaseNPC::vfunc428()
@@ -2345,6 +2414,7 @@ CAI_LocalNavigator *CAI_BaseNPC::vfunc428()
 // END FUNCTION
 
 // FUNCTION: 0x1027cf90 size=0x1f
+#include "CAI_BaseNPC.h"
 #include "CAI_Navigator.h"
 
 CAI_Navigator *CAI_BaseNPC::vfunc429()
@@ -2433,6 +2503,7 @@ char CAI_BaseNPC::vfunc532(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x1027e120 size=0xd
+#include "CAI_BaseNPC.h"
 struct NpcFlags204 { char pad[0x204]; unsigned int m; };
 unsigned int CAI_BaseNPC::vfunc423()
 {
@@ -2441,6 +2512,7 @@ unsigned int CAI_BaseNPC::vfunc423()
 // END FUNCTION
 
 // FUNCTION: 0x1027e740 size=0x10
+#include "CAI_BaseNPC.h"
 namespace lifted {
 int sub_1027e660(int);
 }
@@ -2452,6 +2524,7 @@ const char *CAI_BaseNPC::vfunc406(int state)
 // END FUNCTION
 
 // FUNCTION: 0x1027e7d0 size=0x10
+#include "CAI_BaseNPC.h"
 namespace lifted {
 int sub_10004c96(int);
 }
@@ -2462,6 +2535,7 @@ const char * CAI_BaseNPC::vfunc407(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x1027ede0 size=0x10
+#include "CAI_BaseNPC.h"
 namespace lifted {
 int sub_1027e7f0(int);
 }
@@ -2509,6 +2583,7 @@ bool CAI_BaseNPC::vfunc529()
 // END FUNCTION
 
 // FUNCTION: 0x10280bb0 size=0x7
+#include "CAI_BaseNPC.h"
 namespace lifted {
 extern float g_1049949c;
 }
@@ -2526,6 +2601,7 @@ void sub_10280fb0()
 // END FUNCTION
 
 // FUNCTION: 0x10280fd0 size=0x1
+#include "CAI_BaseNPC.h"
 // TARGET: CAI_BaseNPC::vfunc411
 void CAI_BaseNPC::vfunc411() {
 }
@@ -2550,6 +2626,7 @@ void CAI_BaseNPC::vfunc445()
 // END FUNCTION
 
 // FUNCTION: 0x10289ce0 size=0x1e
+#include "CAI_BaseNPC.h"
 // TARGET: CAI_BaseNPC::vfunc571
 int CAI_BaseNPC::vfunc571(float f)
 {
@@ -2618,6 +2695,7 @@ void CAI_BaseNPCUnit::sub_10289d10()
 // END FUNCTION
 
 // FUNCTION: 0x10289f20 size=0x8e
+#include "CBaseEntity.h"
 #include "CAI_BaseNPC.h"
 #include "CUnknown1027d990.h"
 

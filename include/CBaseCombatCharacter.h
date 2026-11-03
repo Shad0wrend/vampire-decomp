@@ -2,6 +2,7 @@
 // Only the members the recovered code needs are declared.
 // New method declarations can go into CBaseCombatCharacter_ext.h / CBaseCombatCharacter_ext2.h (included at the end of the class body).
 #pragma once
+#include "CBaseCombatWeapon.h"
 
 #include "CBaseEntity.h"
 #include "CVStatList_t.h"

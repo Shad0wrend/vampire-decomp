@@ -2,6 +2,9 @@
 #include "vampire.h"
 
 // FUNCTION: 0x103fc940 size=0xa1
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CElderVitaePack.h"
 #include "CAI_BaseNPCTroika.h"
 #include "CBaseCombatCharacter.h"

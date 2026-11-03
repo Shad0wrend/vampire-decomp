@@ -59,6 +59,7 @@ CWeaponRanged_FlameThrower::CWeaponRanged_FlameThrower() : m_n1530(-1), m_n1554(
 // END FUNCTION
 
 // FUNCTION: 0x103e2b90 size=0x86
+#include "CBaseCombatWeapon.h"
 #include "CWeaponRanged_FlameThrower.h"
 #include "utlvector.h"
 

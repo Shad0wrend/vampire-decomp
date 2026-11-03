@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x100fa740 size=0x6
+#include "CEnvParticle.h"
 namespace lifted {
 extern char g_10708e20;
 }
@@ -12,6 +13,7 @@ int CEnvParticle::vfunc80()
 // END FUNCTION
 
 // FUNCTION: 0x100fa760 size=0x3
+#include "CEnvParticle.h"
 int CEnvParticle::vfunc81()
 {
     return 0;
@@ -19,6 +21,8 @@ int CEnvParticle::vfunc81()
 // END FUNCTION
 
 // FUNCTION: 0x100facc0 size=0x6
+#include "CEnvParticle.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_105669d8;
 }
@@ -102,6 +106,7 @@ void CEnvParticle::vfunc241()
 // END FUNCTION
 
 // FUNCTION: 0x100fb7d0 size=0xb
+#include "CEnvParticle.h"
 void CEnvParticle::vfunc242()
 {
 	m_unk484 = 0;
@@ -123,6 +128,7 @@ void CEnvParticle::vfunc77()
 // END FUNCTION
 
 // FUNCTION: 0x100fb820 size=0x1e
+#include "CBaseEntity.h"
 #include "CEnvParticle.h"
 #include "CEntityVSlots.h"
 

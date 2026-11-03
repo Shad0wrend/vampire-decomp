@@ -2,6 +2,9 @@
 // New method declarations can go into CAI_BaseNPCTroika_ext.h (included at the end of the class body) so that
 // workers do not overwrite each other's edits of this large file.
 #pragma once
+#include "CBaseAnimating.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
 
 #include "CAI_BaseNPC.h"
 #include "CAI_TroikaLink.h"

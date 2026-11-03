@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10107700 size=0x6
+#include "datamap.h"
 #include "CBaseFilter.h"
 namespace lifted {
 extern char g_1056c1e8;

@@ -41,6 +41,7 @@ int CRagdollPropAttached::vfunc81()
 // END FUNCTION
 
 // FUNCTION: 0x101569a0 size=0x6
+#include "datamap.h"
 #include "CRagdollPropAttached.h"
 namespace lifted {
 extern char g_1057e860;

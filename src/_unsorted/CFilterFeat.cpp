@@ -2,6 +2,17 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10108360 size=0xfa
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CFilterFeat.h"
 #include "CUnknown101e56e0.h"
 extern "C" int __cdecl _strcmpi(const char *, const char *);
@@ -33,6 +44,7 @@ bool CFilterFeat::vfunc241(CBaseEntity *pEntity)
 // END FUNCTION
 
 // FUNCTION: 0x101084a0 size=0x6
+#include "datamap.h"
 #include "CFilterFeat.h"
 namespace lifted {
 extern char g_1056c5f0;

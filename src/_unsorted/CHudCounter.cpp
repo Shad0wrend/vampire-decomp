@@ -15,6 +15,7 @@ bool CHudCounter::vfunc86(int unused, int edict, int c, int d, int e)
 // END FUNCTION
 
 // FUNCTION: 0x1012df50 size=0x6
+#include "datamap.h"
 #include "CHudCounter.h"
 namespace lifted {
 extern char g_10574318;

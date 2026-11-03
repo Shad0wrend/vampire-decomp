@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10222fd0 size=0x6
+#include "datamap.h"
 #include "CMoverKeyFrame.h"
 namespace lifted {
 extern char g_105b19d0;

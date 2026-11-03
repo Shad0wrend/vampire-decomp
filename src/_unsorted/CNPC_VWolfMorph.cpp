@@ -24,6 +24,7 @@ int CNPC_VWolfMorph::vfunc451()
 // END FUNCTION
 
 // FUNCTION: 0x103dc790 size=0x6
+#include "datamap.h"
 #include "CNPC_VWolfMorph.h"
 namespace lifted {
 extern char g_10663b38;

@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x102cff90 size=0xbd
+#include "utlrbtree.h"
 #include "CUnknown102cff90.h"
 
 CUnknown102cff90::~CUnknown102cff90()

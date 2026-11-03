@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x100fccd0 size=0x6
+#include "datamap.h"
 #include "CParamsParticle.h"
 namespace lifted {
 extern char g_10566f60;

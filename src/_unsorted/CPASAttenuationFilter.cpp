@@ -9,6 +9,16 @@ CPASAttenuationFilter::CPASAttenuationFilter() {}
 // END FUNCTION
 
 // FUNCTION: 0x1019d4b0 size=0x165
+#include "CBaseEntity.h"
+#include "CUnknown101cf0a0.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CPASAttenuationFilter.h"
 #include "CUnknown1070b22c.h"
 #include "CUnknown1019d130.h"

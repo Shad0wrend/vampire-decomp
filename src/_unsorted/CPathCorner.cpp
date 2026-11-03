@@ -10,6 +10,7 @@ float CPathCorner::vfunc152()
 // END FUNCTION
 
 // FUNCTION: 0x10147bb0 size=0x6
+#include "datamap.h"
 #include "CPathCorner.h"
 namespace lifted {
 extern char g_1057b410;
@@ -28,6 +29,9 @@ void CPathCorner::vfunc103()
 // END FUNCTION
 
 // FUNCTION: 0x10147e60 size=0xc3
+#include "CBasePlayer.h"
+#include "CGlobalEntityList.h"
+#include "Vector.h"
 #include "CPathCorner.h"
 
 struct CEntityOriginView	// the entity's virtual table up to slot 220

@@ -25,6 +25,7 @@ CDisciplineWeapon *CDisciplineWeapon::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x103f1d30 size=0x6
+#include "datamap.h"
 #include "CDisciplineWeapon.h"
 namespace lifted {
 extern char g_1067e538;
@@ -36,6 +37,9 @@ datamap_t *CDisciplineWeapon::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x103f2020 size=0x18b
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CDisciplineWeapon.h"
 #include "CVStatList_t.h"
 
@@ -58,6 +62,9 @@ char CDisciplineWeapon::vfunc316(int a)
 // END FUNCTION
 
 // FUNCTION: 0x103f2220 size=0xf7
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseCombatCharacter.h"
 #include "CAI_BaseNPCTroika.h"
 #include "CGlobalEntityList.h"

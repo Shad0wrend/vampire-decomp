@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x101c5950 size=0x6
+#include "datamap.h"
 #include "CTriggerHurt.h"
 namespace lifted {
 extern char g_1059d7f0;
@@ -13,6 +14,7 @@ datamap_t * CTriggerHurt::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x101c5d40 size=0xa0
+#include "utlmemory.h"
 #include "CTriggerHurt.h"
 #include "UtlMem.h"
 
@@ -83,6 +85,8 @@ void CTriggerHurt::vfunc103()
 // END FUNCTION
 
 // FUNCTION: 0x101c6410 size=0xfb
+#include "utlrbtree.h"
+#include "utlsortvector.h"
 #include "CTriggerHurt.h"
 #include "utlvector.h"
 

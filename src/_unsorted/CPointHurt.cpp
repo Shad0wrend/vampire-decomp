@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1018d3d0 size=0x6
+#include "datamap.h"
 #include "CPointHurt.h"
 namespace lifted {
 extern char g_1058c6f0;

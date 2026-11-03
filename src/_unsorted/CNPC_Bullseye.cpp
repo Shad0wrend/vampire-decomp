@@ -28,6 +28,15 @@ CNPC_Bullseye *CNPC_Bullseye::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x103567e0 size=0x296
+#include "CBaseCombatCharacter.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_Bullseye.h"
 #include "CCollisionProperty.h"
 #include "ScopeTrace.h"
@@ -89,6 +98,14 @@ void CNPC_Bullseye::vfunc103()
 // END FUNCTION
 
 // FUNCTION: 0x10356b50 size=0xa9
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CNPC_Bullseye.h"
 #include "CCollisionProperty.h"

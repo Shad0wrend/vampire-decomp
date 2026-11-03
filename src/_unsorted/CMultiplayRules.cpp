@@ -11,6 +11,7 @@ const char *CMultiplayRules::vfunc63(int)
 // END FUNCTION
 
 // FUNCTION: 0x101410b0 size=0x3
+#include "CMultiplayRules.h"
 bool CMultiplayRules::vfunc72()
 {
     return 0;
@@ -95,6 +96,7 @@ void CMultiplayRules::vfunc16()
 // END FUNCTION
 
 // FUNCTION: 0x101412e0 size=0x3
+#include "CMultiplayRules.h"
 bool CMultiplayRules::vfunc21()
 {
     return 1;
@@ -102,6 +104,7 @@ bool CMultiplayRules::vfunc21()
 // END FUNCTION
 
 // FUNCTION: 0x10141300 size=0x3
+#include "CMultiplayRules.h"
 bool CMultiplayRules::vfunc22()
 {
     return 1;
@@ -189,6 +192,7 @@ CBaseEntity *CMultiplayRules::vfunc20(CBaseEntity *pPlayer, CBaseEntity *pCurren
 // END FUNCTION
 
 // FUNCTION: 0x10141550 size=0x16
+#include "CMultiplayRules.h"
 namespace lifted {
 int __stdcall sub_100052ea(int);
 struct C10008954 { int sub_10008954(); };
@@ -217,6 +221,16 @@ void CMultiplayRules::vfunc29(void *pPlayer)
 // END FUNCTION
 
 // FUNCTION: 0x10141820 size=0xd6
+#include "CBasePlayer.h"
+#include "CMultiplayRules.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 
 void sub_101c0b80(const char *pszTarget, void *pActivator, void *pCaller, int useType, int value);
@@ -273,11 +287,13 @@ void CMultiplayRules::vfunc28(void *pEdict)
 // END FUNCTION
 
 // FUNCTION: 0x10141940 size=0x9
+#include "CMultiplayRules.h"
 extern float g_104454c0;
 float CMultiplayRules::vfunc30(int a) { return g_104454c0; }
 // END FUNCTION
 
 // FUNCTION: 0x10141960 size=0x5
+#include "CMultiplayRules.h"
 bool CMultiplayRules::vfunc31(int a0, int a1)
 {
     return 1;
@@ -285,6 +301,7 @@ bool CMultiplayRules::vfunc31(int a0, int a1)
 // END FUNCTION
 
 // FUNCTION: 0x10141980 size=0x34
+#include "CMultiplayRules.h"
 extern unsigned char g_1070ba2c;
 
 // TARGET: CMultiplayRules::vfunc36
@@ -343,6 +360,7 @@ void CMultiplayRules::vfunc35(CBaseEntity *pPlayer)
 // END FUNCTION
 
 // FUNCTION: 0x10141a70 size=0x5
+#include "CMultiplayRules.h"
 bool CMultiplayRules::vfunc37(int a0)
 {
     return 1;
@@ -350,6 +368,7 @@ bool CMultiplayRules::vfunc37(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x10141a90 size=0xb
+#include "CMultiplayRules.h"
 float CMultiplayRules::vfunc38(int a)
 {
 	return gpGlobals->curtime;
@@ -366,6 +385,7 @@ int CMultiplayRules::vfunc43(int, int)
 // END FUNCTION
 
 // FUNCTION: 0x10141bb0 size=0x9d
+#include "CBaseEntity.h"
 #include "CMultiplayRules.h"
 
 void __cdecl sub_1000c3f6(const char *pszName, CBaseEntity *pActivator, CBaseEntity *pCaller, int nUseType, int nValue);
@@ -400,6 +420,8 @@ void CMultiplayRules::vfunc44(CBaseEntity *pVictim, CMPDamageInfo *pInfo)
 // END FUNCTION
 
 // FUNCTION: 0x10142010 size=0x49
+#include "CBaseEntity.h"
+#include "CMultiplayRules.h"
 #include "ConVar.h"
 #define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 struct CSlot346View
@@ -449,6 +471,7 @@ float CMultiplayRules::vfunc50(CBaseEntity *pPlayer)
 // END FUNCTION
 
 // FUNCTION: 0x101420f0 size=0x29
+#include "CMultiplayRules.h"
 #include "CBaseEntity.h"
 Vector CMultiplayRules::vfunc51(CBaseEntity *pEnt)
 {
@@ -458,6 +481,8 @@ Vector CMultiplayRules::vfunc51(CBaseEntity *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x10142130 size=0x19
+#include "CBaseEntity.h"
+#include "CMultiplayRules.h"
 // TARGET: CMultiplayRules::vfunc48
 int CMultiplayRules::vfunc48(CBaseEntity *pPlayer)
 {
@@ -466,6 +491,8 @@ int CMultiplayRules::vfunc48(CBaseEntity *pPlayer)
 // END FUNCTION
 
 // FUNCTION: 0x10142160 size=0x7a
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
 #include "CMultiplayRules.h"
 #include "ConVar.h"
 #include "CEntityVSlots.h"
@@ -485,12 +512,14 @@ char CMultiplayRules::vfunc47(CBaseEntity *pPlayer, CBaseEntity *pItem)
 // END FUNCTION
 
 // FUNCTION: 0x10142200 size=0x3
+#include "CMultiplayRules.h"
 void CMultiplayRules::vfunc54(int a0, int a1, int a2)
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x10142220 size=0x5
+#include "CMultiplayRules.h"
 bool CMultiplayRules::vfunc17(int a0)
 {
     return 1;
@@ -498,6 +527,7 @@ bool CMultiplayRules::vfunc17(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x10142240 size=0x7
+#include "CMultiplayRules.h"
 namespace lifted {
 extern float g_104492a4;
 }
@@ -508,6 +538,7 @@ float CMultiplayRules::vfunc59()
 // END FUNCTION
 
 // FUNCTION: 0x10142260 size=0x7
+#include "CMultiplayRules.h"
 namespace lifted {
 extern float g_104492a8;
 }
@@ -518,6 +549,7 @@ float CMultiplayRules::vfunc60()
 // END FUNCTION
 
 // FUNCTION: 0x10142280 size=0x8
+#include "CMultiplayRules.h"
 // TARGET: CMultiplayRules::vfunc61
 int CMultiplayRules::vfunc61(int index)
 {
@@ -545,6 +577,7 @@ bool CMultiplayRules::vfunc65(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x10142310 size=0x5
+#include "CMultiplayRules.h"
 int CMultiplayRules::vfunc64(int a0, int a1)
 {
     return 0;
@@ -552,6 +585,7 @@ int CMultiplayRules::vfunc64(int a0, int a1)
 // END FUNCTION
 
 // FUNCTION: 0x101423d0 size=0x3
+#include "CMultiplayRules.h"
 bool CMultiplayRules::vfunc18()
 {
     return 0;
@@ -559,6 +593,7 @@ bool CMultiplayRules::vfunc18()
 // END FUNCTION
 
 // FUNCTION: 0x101423f0 size=0x3
+#include "CMultiplayRules.h"
 char CMultiplayRules::vfunc74()
 {
     return 1;

@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x100803c0 size=0x6
+#include "CSceneEntity.h"
+#include "datamap.h"
 extern datamap_t g_10548180;
 
 datamap_t *CSceneEntity::vfunc82()
@@ -40,6 +42,7 @@ void CSceneEntity::vfunc180()
 // END FUNCTION
 
 // FUNCTION: 0x10080f60 size=0x8
+#include "CSceneEntity.h"
 // TARGET: CSceneEntity::vfunc103
 void CSceneEntity::vfunc103()
 {
@@ -48,6 +51,8 @@ void CSceneEntity::vfunc103()
 // END FUNCTION
 
 // FUNCTION: 0x10080f80 size=0x76
+#include "CBaseEntity.h"
+#include "CSceneEntity.h"
 #include "CGlobalEntityList.h"
 extern CGlobalEntityList *g_10566458;
 extern CGlobalEntityList g_106eb5d8;
@@ -141,6 +146,7 @@ void CSceneEntity::vfunc241()
 // END FUNCTION
 
 // FUNCTION: 0x10081210 size=0x113
+#include "CSceneEntity.h"
 #include "IVEngineServerFull.h"
 
 extern IVEngineServerFull *g_1070b22c;
@@ -298,6 +304,7 @@ void __stdcall sub_100815a0(int a1, CVirtObj100815a0 *pObj, int a3)
 // END FUNCTION
 
 // FUNCTION: 0x10081620 size=0xad
+#include "CBaseEntity.h"
 #include "CSceneEntity.h"
 #include "CGlobalEntityList.h"
 
@@ -366,6 +373,8 @@ void CSceneEntity::vfunc259(int unused, void *pEvent, const char *pszTarget)
 // END FUNCTION
 
 // FUNCTION: 0x10081700 size=0x13f
+#include "CBasePlayer.h"
+#include "CSceneEntity.h"
 #include "CAI_BaseNPCTroika.h"
 extern "C" __declspec(dllimport) int __cdecl Q_snprintf(char *, int, const char *, ...);
 extern "C" __declspec(dllimport) void __cdecl Q_SetExtension(char *, const char *, int);
@@ -414,6 +423,7 @@ void CSceneEntity::vfunc260(int unused, void *pEvent, const char *pszTarget, int
 // END FUNCTION
 
 // FUNCTION: 0x100818d0 size=0x1f
+#include "CBaseEntity.h"
 #include "CSceneEntity.h"
 #include "CAI_BaseNPC.h"
 
@@ -504,6 +514,14 @@ void CSceneEntity::vfunc134()
 // END FUNCTION
 
 // FUNCTION: 0x10081b60 size=0x20c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CSceneEntity.h"
 #include "CBaseEntity.h"
 #include "CCollisionProperty.h"
@@ -766,6 +784,7 @@ char CSceneEntity::vfunc251(float a, int b, CSceneEvent *pEvent)
 // END FUNCTION
 
 // FUNCTION: 0x10083c90 size=0x30
+#include "CBaseEntity.h"
 #include "CSceneEntity.h"
 extern "C" void *__cdecl __RTDynamicCast(void *, long, void *, void *, int);
 extern char g_10538764[];
@@ -780,6 +799,7 @@ CSceneEventActorEnt *CSceneEntity::vfunc267(const char *pszName)
 // END FUNCTION
 
 // FUNCTION: 0x100847e0 size=0x16d
+#include "CSceneEntity.h"
 #define NV(n) virtual void vfunc##n();
 #define NV10(p) NV(p##0) NV(p##1) NV(p##2) NV(p##3) NV(p##4) NV(p##5) NV(p##6) NV(p##7) NV(p##8) NV(p##9)
 #define NV100(p) NV10(p##0) NV10(p##1) NV10(p##2) NV10(p##3) NV10(p##4) NV10(p##5) NV10(p##6) NV10(p##7) NV10(p##8) NV10(p##9)

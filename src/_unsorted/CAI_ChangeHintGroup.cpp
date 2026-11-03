@@ -14,6 +14,7 @@ unsigned char __fastcall sub_101c9ab0(void *pThis)
 // END FUNCTION
 
 // FUNCTION: 0x101c9ad0 size=0x6
+#include "datamap.h"
 #include "CAI_ChangeHintGroup.h"
 namespace lifted {
 extern char g_1059e0e4;

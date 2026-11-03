@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10223160 size=0x6
+#include "datamap.h"
 #include "CBaseKeyframedMover.h"
 namespace lifted {
 extern char g_105b1a6c;
@@ -53,6 +54,8 @@ void CBaseKeyframedMover::vfunc113()
 // END FUNCTION
 
 // FUNCTION: 0x10223a10 size=0x10
+#include "CBaseKeyframedMover.h"
+#include "CBaseToggle.h"
 // TARGET: CBaseKeyframedMover::vfunc133
 void CBaseKeyframedMover::vfunc133()
 {

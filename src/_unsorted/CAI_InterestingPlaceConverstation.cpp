@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x102db7f0 size=0x6
+#include "CAI_InterestingPlaceConverstation.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_1060c2c0;
 }

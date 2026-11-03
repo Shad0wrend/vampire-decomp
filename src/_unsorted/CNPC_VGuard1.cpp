@@ -164,6 +164,7 @@ void CNPC_VGuard1Fwd::sub_1037e1e0(int a)
 // END FUNCTION
 
 // FUNCTION: 0x1037e240 size=0x3c
+#include "CAI_BaseNPC.h"
 #include "CNPC_VGuard1.h"
 
 #define CSV_ROW(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();

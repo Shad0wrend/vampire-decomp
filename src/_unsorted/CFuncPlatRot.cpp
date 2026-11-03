@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1015a0b0 size=0x6
+#include "datamap.h"
 #include "CFuncPlatRot.h"
 namespace lifted {
 extern char g_10580658;

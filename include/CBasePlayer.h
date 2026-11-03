@@ -5,6 +5,7 @@
 // New method declarations can go into CBasePlayer_ext.h (included at the end of the method list) so that
 // workers do not overwrite each other's edits of this large file.
 #pragma once
+#include "CRestore.h"
 
 #include "Vector.h"
 #include "utlvector.h"

@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10027c20 size=0x6
+#include "datamap.h"
 #include "CPhysThruster.h"
 namespace lifted {
 extern char g_10537024;
@@ -48,6 +49,7 @@ void CPhysThruster::vfunc242()
 // END FUNCTION
 
 // FUNCTION: 0x10027de0 size=0x18c
+#include "CBaseEntity.h"
 #include "CPhysThruster.h"
 #include "IPhysicsObject.h"
 #include "CEntityVSlots.h"

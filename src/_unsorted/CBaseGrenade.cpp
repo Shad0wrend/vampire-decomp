@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10429260 size=0x6
+#include "CBaseGrenade.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_106acc78;
 }
@@ -12,6 +14,7 @@ datamap_t * CBaseGrenade::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x10429360 size=0x6
+#include "CBaseGrenade.h"
 namespace lifted {
 extern char g_109ee728;
 }
@@ -22,6 +25,7 @@ int CBaseGrenade::vfunc80()
 // END FUNCTION
 
 // FUNCTION: 0x10429380 size=0x3
+#include "CBaseGrenade.h"
 int CBaseGrenade::vfunc81()
 {
     return 0;
@@ -29,6 +33,7 @@ int CBaseGrenade::vfunc81()
 // END FUNCTION
 
 // FUNCTION: 0x104296c0 size=0x6
+#include "CBaseGrenade.h"
 namespace lifted {
 extern char g_106ad03c;
 }
@@ -39,6 +44,7 @@ int CBaseGrenade::vfunc79()
 // END FUNCTION
 
 // FUNCTION: 0x10429f20 size=0xb
+#include "CBaseGrenade.h"
 void CBaseGrenade::vfunc144(int unused)
 {
 	vfunc407();
@@ -46,6 +52,14 @@ void CBaseGrenade::vfunc144(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x1042ace0 size=0x121
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseGrenade.h"
 #include "CRecipientFilter.h"
 #include "CPASAttenuationFilter.h"
@@ -146,6 +160,7 @@ void CBaseGrenade::vfunc104()
 // END FUNCTION
 
 // FUNCTION: 0x1042b180 size=0x4
+#include "CBaseGrenade.h"
 int CBaseGrenade::vfunc145()
 {
     return -1;
@@ -153,6 +168,7 @@ int CBaseGrenade::vfunc145()
 // END FUNCTION
 
 // FUNCTION: 0x1042b1a0 size=0x7
+#include "CBaseGrenade.h"
 namespace lifted {
 extern float g_10462994;
 }
@@ -163,6 +179,7 @@ float CBaseGrenade::vfunc409()
 // END FUNCTION
 
 // FUNCTION: 0x1042b1c0 size=0x7
+#include "CBaseGrenade.h"
 namespace lifted {
 extern float g_10516284;
 }
@@ -173,6 +190,7 @@ float CBaseGrenade::vfunc410()
 // END FUNCTION
 
 // FUNCTION: 0x1042b1e0 size=0x5
+#include "CBaseGrenade.h"
 bool CBaseGrenade::vfunc72(int a0)
 {
     return 0;
@@ -180,6 +198,7 @@ bool CBaseGrenade::vfunc72(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x1042b200 size=0x7
+#include "CBaseGrenade.h"
 float CBaseGrenade::vfunc190()
 {
     return *(float *)((char *)this + 0x19c0);
@@ -187,6 +206,7 @@ float CBaseGrenade::vfunc190()
 // END FUNCTION
 
 // FUNCTION: 0x1042b220 size=0x7
+#include "CBaseGrenade.h"
 float CBaseGrenade::vfunc411()
 {
     return *(float *)((char *)this + 0x19b8);
@@ -194,6 +214,7 @@ float CBaseGrenade::vfunc411()
 // END FUNCTION
 
 // FUNCTION: 0x1042b240 size=0xd
+#include "CBaseGrenade.h"
 struct GrenadeField19c0 { char pad[0x19c0]; int m; };
 void CBaseGrenade::vfunc191(int value)
 {
@@ -202,6 +223,7 @@ void CBaseGrenade::vfunc191(int value)
 // END FUNCTION
 
 // FUNCTION: 0x1042b260 size=0xd
+#include "CBaseGrenade.h"
 struct GrenadeField19b8 { char pad[0x19b8]; int m; };
 void CBaseGrenade::vfunc412(int value)
 {

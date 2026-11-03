@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10213040 size=0x6
+#include "datamap.h"
 #include "CPropHaunted.h"
 namespace lifted {
 extern char g_105abb0c;

@@ -1,5 +1,7 @@
 // CGeneric_NPC: generic NPC (derived from CAI_BaseNPCTroika at +0x0).
 #pragma once
+#include "CBaseAnimating.h"
+#include "CBaseCombatCharacter.h"
 
 #include "CAI_BaseNPCTroika.h"
 

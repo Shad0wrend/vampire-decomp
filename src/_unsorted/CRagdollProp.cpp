@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10152300 size=0x6
+#include "CRagdollProp.h"
 namespace lifted {
 extern char g_10723498;
 }
@@ -12,6 +13,7 @@ int CRagdollProp::vfunc80()
 // END FUNCTION
 
 // FUNCTION: 0x10152320 size=0x3
+#include "CRagdollProp.h"
 int CRagdollProp::vfunc81()
 {
     return 0;
@@ -19,6 +21,8 @@ int CRagdollProp::vfunc81()
 // END FUNCTION
 
 // FUNCTION: 0x101525e0 size=0x6
+#include "CRagdollProp.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_1057d5a8;
 }
@@ -40,6 +44,7 @@ void CRagdollProp::vfunc129()
 // END FUNCTION
 
 // FUNCTION: 0x10154fa0 size=0x4a
+#include "CRagdollProp.h"
 void __cdecl sub_1019bf80(void *p);
 
 void CRagdollProp::vfunc130(int a)
@@ -72,6 +77,8 @@ void CRagdollProp::vfunc180()
 // END FUNCTION
 
 // FUNCTION: 0x10155120 size=0x1c
+#include "CBaseEntity.h"
+#include "CRagdollProp.h"
 // TARGET: CRagdollProp::vfunc123
 void CRagdollProp::vfunc123()
 {
@@ -85,11 +92,13 @@ void CRagdollProp::vfunc123()
 // END FUNCTION
 
 // FUNCTION: 0x10155150 size=0x3
+#include "CRagdollProp.h"
 // TARGET: CRagdollProp::vfunc158
 char CRagdollProp::vfunc158() { return 0; }
 // END FUNCTION
 
 // FUNCTION: 0x10155170 size=0x3
+#include "CRagdollProp.h"
 bool CRagdollProp::vfunc267()
 {
     return 1;
@@ -97,6 +106,7 @@ bool CRagdollProp::vfunc267()
 // END FUNCTION
 
 // FUNCTION: 0x10155190 size=0x5
+#include "CRagdollProp.h"
 bool CRagdollProp::vfunc269(int a0, int a1)
 {
     return 1;
@@ -104,6 +114,7 @@ bool CRagdollProp::vfunc269(int a0, int a1)
 // END FUNCTION
 
 // FUNCTION: 0x101551b0 size=0x5
+#include "CRagdollProp.h"
 bool CRagdollProp::vfunc272(int a0)
 {
     return 0;
@@ -111,6 +122,7 @@ bool CRagdollProp::vfunc272(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x101551d0 size=0x6
+#include "CRagdollProp.h"
 namespace lifted {
 extern char g_1070d9d0;
 }
@@ -121,6 +133,7 @@ int CRagdollProp::vfunc273()
 // END FUNCTION
 
 // FUNCTION: 0x101551f0 size=0x5
+#include "CRagdollProp.h"
 bool CRagdollProp::vfunc274(int a0)
 {
     return 0;
@@ -142,6 +155,7 @@ Vector CRagdollProp::vfunc275()
 // END FUNCTION
 
 // FUNCTION: 0x101552b0 size=0x3
+#include "CRagdollProp.h"
 char CRagdollProp::vfunc276()
 {
     return 0;
@@ -182,6 +196,7 @@ void CRagdollProp::vfunc104()
 // END FUNCTION
 
 // FUNCTION: 0x10155360 size=0x3
+#include "CRagdollProp.h"
 bool CRagdollProp::vfunc128()
 {
     return 1;
@@ -216,6 +231,7 @@ void CRagdollProp::vfunc270(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x10155440 size=0x3
+#include "CRagdollProp.h"
 void CRagdollProp::vfunc271(int a0, int a1)
 {
 }
@@ -458,6 +474,8 @@ bool CRagdollProp::vfunc32(int a)
 // END FUNCTION
 
 // FUNCTION: 0x101580c0 size=0xe
+#include "CBaseEntity.h"
+#include "CRagdollProp.h"
 namespace lifted {
 int sub_10010ec9(int);
 }

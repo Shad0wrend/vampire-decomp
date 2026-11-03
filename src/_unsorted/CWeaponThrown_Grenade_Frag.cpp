@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x103ee1d0 size=0x6
+#include "CWeaponThrown_Grenade_Frag.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_1067caec;
 }
@@ -96,6 +98,7 @@ void CWeaponThrown_Grenade_Frag::vfunc319()
 // END FUNCTION
 
 // FUNCTION: 0x103ee4f0 size=0xf
+#include "CWeaponThrown_Grenade_Frag.h"
 namespace lifted {
 int sub_10007cf2();
 }
@@ -107,6 +110,7 @@ int CWeaponThrown_Grenade_Frag::vfunc315()
 // END FUNCTION
 
 // FUNCTION: 0x103ee510 size=0xdb
+#include "CWeaponThrown_Grenade_Frag.h"
 #include "CBaseEntity.h"
 void sub_1000dcd8();
 
@@ -181,6 +185,7 @@ void __fastcall sub_103ee630(CUnkGrenade103ee630 *pThis)
 // END FUNCTION
 
 // FUNCTION: 0x103ee990 size=0xb4
+#include "vampire_all.h"
 #include "CWeaponThrown_Grenade_Frag.h"
 #include "CBaseEntity.h"
 
@@ -241,6 +246,7 @@ void CWeaponThrown_Grenade_Frag::vfunc265()
 // END FUNCTION
 
 // FUNCTION: 0x103eea80 size=0x8
+#include "CWeaponThrown_Grenade_Frag.h"
 void CWeaponThrown_Grenade_Frag::vfunc266()
 {
 	m_bFlag918 = true;
@@ -262,6 +268,7 @@ void CWeaponThrown_Grenade_Frag::vfunc373(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x103eec80 size=0x20
+#include "CBaseEntity.h"
 #include "CWeaponThrown_Grenade_Frag.h"
 
 // TARGET: CWeaponThrown_Grenade_Frag::vfunc35
@@ -276,6 +283,7 @@ int CWeaponThrown_Grenade_Frag::vfunc35(CBaseEntity *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x103eecb0 size=0x20
+#include "CBaseEntity.h"
 #include "CWeaponThrown_Grenade_Frag.h"
 
 int CWeaponThrown_Grenade_Frag::vfunc34(CBaseEntity *pOther)
@@ -313,6 +321,14 @@ unsigned char CGrenadeUnit103eece0::sub_103eece0()
 // END FUNCTION
 
 // FUNCTION: 0x103eed20 size=0xf6
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CWeaponThrown_Grenade_Frag.h"
 #include "CBaseEntity.h"
 #include "ScopeTrace.h"
@@ -408,6 +424,7 @@ int CWeaponThrown_Grenade_Frag::vfunc376(int a)
 // END FUNCTION
 
 // FUNCTION: 0x103eef70 size=0x6
+#include "CWeaponThrown_Grenade_Frag.h"
 namespace lifted {
 extern char g_10942e0c;
 }
@@ -418,6 +435,7 @@ int CWeaponThrown_Grenade_Frag::vfunc80()
 // END FUNCTION
 
 // FUNCTION: 0x103eef90 size=0x3
+#include "CWeaponThrown_Grenade_Frag.h"
 int CWeaponThrown_Grenade_Frag::vfunc81()
 {
     return 0;
@@ -425,6 +443,7 @@ int CWeaponThrown_Grenade_Frag::vfunc81()
 // END FUNCTION
 
 // FUNCTION: 0x103ef510 size=0x6
+#include "CWeaponThrown_Grenade_Frag.h"
 namespace lifted {
 extern char g_1067ccd0;
 }
@@ -435,6 +454,7 @@ int CWeaponThrown_Grenade_Frag::vfunc362()
 // END FUNCTION
 
 // FUNCTION: 0x103ef530 size=0x6
+#include "CWeaponThrown_Grenade_Frag.h"
 int CWeaponThrown_Grenade_Frag::vfunc363()
 {
     return 0x73;
@@ -442,6 +462,7 @@ int CWeaponThrown_Grenade_Frag::vfunc363()
 // END FUNCTION
 
 // FUNCTION: 0x103ef5c0 size=0x6
+#include "CWeaponThrown_Grenade_Frag.h"
 int CWeaponThrown_Grenade_Frag::vfunc290()
 {
     return 2;

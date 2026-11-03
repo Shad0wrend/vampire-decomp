@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x101d9e50 size=0x3
+#include "CVampireProjectile.h"
 bool CVampireProjectile::vfunc270()
 {
     return 1;
@@ -9,6 +10,7 @@ bool CVampireProjectile::vfunc270()
 // END FUNCTION
 
 // FUNCTION: 0x101d9e70 size=0x7
+#include "CVampireProjectile.h"
 namespace lifted {
 extern float g_1046bac0;
 }
@@ -48,6 +50,7 @@ void CVampireProjectile::vfunc134()
 // END FUNCTION
 
 // FUNCTION: 0x101edee0 size=0x6
+#include "CVampireProjectile.h"
 namespace lifted {
 extern char g_1073a6ac;
 }
@@ -58,6 +61,7 @@ int CVampireProjectile::vfunc80()
 // END FUNCTION
 
 // FUNCTION: 0x101edf00 size=0x3
+#include "CVampireProjectile.h"
 int CVampireProjectile::vfunc81()
 {
     return 0;
@@ -65,6 +69,8 @@ int CVampireProjectile::vfunc81()
 // END FUNCTION
 
 // FUNCTION: 0x101ee250 size=0x6
+#include "CVampireProjectile.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_105a4c58;
 }
@@ -103,12 +109,14 @@ CVampireProjectile::~CVampireProjectile()
 // END FUNCTION
 
 // FUNCTION: 0x101ee710 size=0x1
+#include "CVampireProjectile.h"
 void CVampireProjectile::vfunc268()
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x101ee750 size=0xb
+#include "CVampireProjectile.h"
 struct S168 { char pad[0x168]; int v; };
 bool CVampireProjectile::vfunc265()
 {
@@ -118,6 +126,7 @@ bool CVampireProjectile::vfunc265()
 // END FUNCTION
 
 // FUNCTION: 0x101eec10 size=0x1
+#include "CVampireProjectile.h"
 void CVampireProjectile::vfunc269()
 {
 }

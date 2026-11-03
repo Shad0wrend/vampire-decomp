@@ -1,6 +1,7 @@
 // CWeaponIThrown: declared by pcdecomp transplant for 0x103ed180 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "datamap.h"
 
 #include "CWeaponRanged.h"
 

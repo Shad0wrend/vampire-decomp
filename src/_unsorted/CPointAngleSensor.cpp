@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1018cba0 size=0x6
+#include "datamap.h"
 #include "CPointAngleSensor.h"
 namespace lifted {
 extern char g_1058c1c8;

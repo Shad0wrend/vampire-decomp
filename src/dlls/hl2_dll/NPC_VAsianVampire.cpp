@@ -23,6 +23,14 @@ int CNPC_VAsianVampire::vfunc461()
 // END FUNCTION
 
 // FUNCTION: 0x103611a0 size=0xf3
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VAsianVampire.h"
 #include "ScopeTrace.h"
 #include "CEntityVSlots.h"
@@ -60,6 +68,14 @@ void CNPC_VAsianVampire::vfunc442(const CVAsianVampireTask_t *pTask)
 // END FUNCTION
 
 // FUNCTION: 0x10361a70 size=0x11c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VAsianVampire.h"
 #include "CEntityVSlots.h"
 #include "ScopeTrace.h"
@@ -99,6 +115,14 @@ void CNPC_VAsianVampireUnit::sub_10361a70(void *pHint)
 // END FUNCTION
 
 // FUNCTION: 0x103620d0 size=0x222
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CAI_BaseNPCTroika.h"
 #include "CNPC_VAsianVampire.h"
 #include "ScopeTrace.h"

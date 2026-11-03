@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10224070 size=0x6
+#include "CItemContainerLock.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_105b21e8;
 }
@@ -12,6 +14,7 @@ datamap_t *CItemContainerLock::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x10224130 size=0x8
+#include "CItemContainerLock.h"
 namespace lifted {
 int sub_10006703();
 }
@@ -22,6 +25,7 @@ int CItemContainerLock::vfunc117()
 // END FUNCTION
 
 // FUNCTION: 0x10224190 size=0xb
+#include "CItemContainerLock.h"
 void CItemContainerLock::vfunc275()
 {
 	m_unk780 = 1;
@@ -57,6 +61,7 @@ Vector CItemContainerLock::vfunc193()
 // END FUNCTION
 
 // FUNCTION: 0x10224ae0 size=0x154
+#include "CItemContainerLock.h"
 #include "CEHandleGet.h"
 #include "CItemContainer.h"
 #include "CBaseCombatCharacter.h"
@@ -102,6 +107,7 @@ bool CItemContainerLock::vfunc32(int a)
 // END FUNCTION
 
 // FUNCTION: 0x10224ca0 size=0x6
+#include "CItemContainerLock.h"
 namespace lifted {
 extern char g_105876fc;
 }
@@ -112,6 +118,7 @@ int CItemContainerLock::vfunc36()
 // END FUNCTION
 
 // FUNCTION: 0x10224eb0 size=0x7
+#include "CItemContainerLock.h"
 namespace lifted {
 extern float g_104454c8;
 }
@@ -156,6 +163,7 @@ int CItemContainerLock::vfunc34(int a)
 // END FUNCTION
 
 // FUNCTION: 0x10225070 size=0x61
+#include "CBaseEntity.h"
 #include "CBasePlayer.h"
 #include "CBaseVampireSkillEntity.h"
 #include "CItemContainerLock.h"
@@ -176,6 +184,10 @@ void CItemContainerLock::vfunc39(CBasePlayer *pPlayer)
 // END FUNCTION
 
 // FUNCTION: 0x10225140 size=0x146
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "CBaseVampireSkillEntity.h"
+#include "CItemContainerLock.h"
 #include "CReliableSingleUserRecipientFilter.h"
 #include "CEntityVSlots.h"
 extern int g_1072607c;
@@ -196,12 +208,14 @@ void CItemContainerLock::vfunc42(CBasePlayer *pPlayer)
 // END FUNCTION
 
 // FUNCTION: 0x10225910 size=0x1
+#include "CItemContainerLock.h"
 void CItemContainerLock::vfunc274()
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x10225ce0 size=0x1
+#include "CItemContainerLock.h"
 void CItemContainerLock::vfunc273()
 {
 }

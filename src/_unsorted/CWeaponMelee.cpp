@@ -36,6 +36,9 @@ CBaseCombatWeapon *CWeaponMelee::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x103e9bf0 size=0x133
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CWeaponMelee.h"
 #include "CVStatList_t.h"
 #include "CUnknown1070b244.h"
@@ -142,6 +145,7 @@ void CWeaponMelee::vfunc370(int *event, CBaseCombatWeapon *other)
 // END FUNCTION
 
 // FUNCTION: 0x103ea6d0 size=0xc1
+#include "CBaseEntity.h"
 #include "CWeaponMelee.h"
 #include "CEntityVSlots.h"
 
@@ -228,6 +232,7 @@ unsigned int CWeaponMelee::vfunc360()
 // END FUNCTION
 
 // FUNCTION: 0x103eaec0 size=0x5f
+#include "CLogicAuto.h"
 #include "CWeaponMelee.h"
 #include "CUnknown1015ef20.h"
 #include "globalvars.h"

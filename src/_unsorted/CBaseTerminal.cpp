@@ -21,6 +21,7 @@ int CBaseTerminal::vfunc81()
 // END FUNCTION
 
 // FUNCTION: 0x102175f0 size=0x6
+#include "datamap.h"
 #include "CBaseTerminal.h"
 namespace lifted {
 extern char g_105af268;
@@ -86,6 +87,14 @@ void CBaseTerminal::vfunc71()
 // END FUNCTION
 
 // FUNCTION: 0x10217880 size=0x1af
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseTerminal.h"
 #include "CBaseVampireSkillEntity.h"
 #include "CBaseAnimating.h"

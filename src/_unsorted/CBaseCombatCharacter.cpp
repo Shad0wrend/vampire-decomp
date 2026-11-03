@@ -2,6 +2,16 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10053e20 size=0x127
+#include "CBaseEntity.h"
+#include "CLogicAuto.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 struct ShakyFields {
     char pad[0x1044];
@@ -57,6 +67,14 @@ float CBaseCombatCharacter::vfunc344()
 // END FUNCTION
 
 // FUNCTION: 0x10105f30 size=0xd5
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "CBaseFlex.h"
 #include "ScopeTrace.h"
@@ -214,6 +232,7 @@ void __stdcall sub_1014f890(void *p) {}
 // END FUNCTION
 
 // FUNCTION: 0x1014f8b0 size=0x6
+#include "CBaseCombatCharacter.h"
 extern int g_1072b360;
 
 int CBaseCombatCharacter::vfunc240()
@@ -237,6 +256,7 @@ void __fastcall sub_1014f8f0(void *pThis)
 // END FUNCTION
 
 // FUNCTION: 0x1014f910 size=0x6
+#include "CBaseCombatCharacter.h"
 int CBaseCombatCharacter::vfunc359(int a)
 {
 	return -1;
@@ -244,6 +264,7 @@ int CBaseCombatCharacter::vfunc359(int a)
 // END FUNCTION
 
 // FUNCTION: 0x1014f930 size=0x3
+#include "CBaseCombatCharacter.h"
 // TARGET: CBaseCombatCharacter::vfunc360
 char CBaseCombatCharacter::vfunc360() { return 0; }
 // END FUNCTION
@@ -335,6 +356,7 @@ bool __cdecl sub_1014fa50() { return false; }
 // END FUNCTION
 
 // FUNCTION: 0x1015dc20 size=0x5
+#include "CBaseCombatCharacter.h"
 bool CBaseCombatCharacter::vfunc72(int a0)
 {
     return 1;
@@ -342,6 +364,8 @@ bool CBaseCombatCharacter::vfunc72(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x1031a5a0 size=0x6
+#include "CBaseCombatCharacter.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_1061664c;
 }
@@ -352,6 +376,7 @@ datamap_t * CBaseCombatCharacter::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x10321670 size=0x6
+#include "CBaseCombatCharacter.h"
 namespace lifted {
 extern char g_10619d10;
 }
@@ -362,6 +387,7 @@ int CBaseCombatCharacter::vfunc79()
 // END FUNCTION
 
 // FUNCTION: 0x10321960 size=0x6
+#include "CBaseCombatCharacter.h"
 namespace lifted {
 extern char g_10936d54;
 }
@@ -372,6 +398,7 @@ int CBaseCombatCharacter::vfunc80()
 // END FUNCTION
 
 // FUNCTION: 0x10321980 size=0x3
+#include "CBaseCombatCharacter.h"
 int CBaseCombatCharacter::vfunc81()
 {
     return 0;
@@ -403,6 +430,9 @@ void CBaseCombatCharacter::vfunc103()
 // END FUNCTION
 
 // FUNCTION: 0x10323b60 size=0x84
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseCombatCharacter.h"
 
 // TARGET: CBaseCombatCharacter::vfunc130
@@ -466,6 +496,14 @@ void CBaseCombatCharacter::sub_10324430(int activity)
 // END FUNCTION
 
 // FUNCTION: 0x103250d0 size=0xb6
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "CAI_BaseNPC.h"
 #include "ScopeTrace.h"
@@ -485,6 +523,11 @@ void CBaseCombatCharacter::vfunc311(int a, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x103251c0 size=0xff
+#include "CBaseCombatCharacter.h"
+#include "CVStatList_t.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseAnimating.h"
 
 struct ScopeEntry { const char *a; const char *b; const char *c; };
@@ -519,6 +562,11 @@ int CBaseCombatCharacter::vfunc252(int a, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x10325300 size=0xff
+#include "CBaseCombatCharacter.h"
+#include "CVStatList_t.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseAnimating.h"
 
 struct ScopeEntry { const char *a; const char *b; const char *c; };
@@ -553,6 +601,9 @@ int CBaseCombatCharacter::vfunc254(int a, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x10325440 size=0xff
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseAnimating.h"
 #include "CBaseCombatCharacter.h"
 
@@ -673,6 +724,14 @@ char CBaseCombatCharacter::sub_10325fa0()
 // END FUNCTION
 
 // FUNCTION: 0x10326040 size=0xc8
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
 
@@ -694,6 +753,14 @@ void CBaseCombatCharacter::vfunc395()
 // END FUNCTION
 
 // FUNCTION: 0x10326750 size=0x132
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "CUnknown10738964.h"
 #include "ScopeTrace.h"
@@ -749,6 +816,8 @@ char CBaseCombatCharacter::vfunc362(const float *pos)
 // END FUNCTION
 
 // FUNCTION: 0x10326ae0 size=0xb5
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -797,6 +866,14 @@ int CBaseCombatCharacter::vfunc365(CBaseEntity *pTarget)
 // END FUNCTION
 
 // FUNCTION: 0x10326bd0 size=0x11b
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "Vector.h"
 #include "CEntityVSlots.h"
@@ -851,6 +928,14 @@ CBaseCombatCharacter *CBaseCombatCharacter::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x10327790 size=0x161
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "CEHandleGet.h"
 #include "ScopeTrace.h"
@@ -938,6 +1023,14 @@ int CBaseCombatCharacter::vfunc393()
 // END FUNCTION
 
 // FUNCTION: 0x10328030 size=0xa5
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
 
@@ -979,6 +1072,14 @@ int CBaseCombatCharacter::vfunc376(int a)
 // END FUNCTION
 
 // FUNCTION: 0x10329760 size=0x270
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "CStatDefault3List.h"
 #include "ScopeTrace.h"
@@ -1037,6 +1138,14 @@ char CBaseCombatCharacter::vfunc379(CBaseEntity *pTarget, int nRole, int nType, 
 // END FUNCTION
 
 // FUNCTION: 0x1032af40 size=0x1b7
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CCollisionProperty.h"
 #include "CBaseCombatCharacter.h"
@@ -1096,6 +1205,14 @@ void CBaseCombatCharacter::vfunc403()
 // END FUNCTION
 
 // FUNCTION: 0x1032c580 size=0xd4
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
 
@@ -1161,6 +1278,16 @@ void CBaseCombatCharacter::vfunc387()
 // END FUNCTION
 
 // FUNCTION: 0x1032d380 size=0x2aa
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseCombatWeapon.h"
 bool __fastcall sub_10256280(void *p);
@@ -1368,6 +1495,8 @@ bool CBaseCombatCharacter::sub_1032d9b0(void *pWeapon)
 // END FUNCTION
 
 // FUNCTION: 0x1032ebc0 size=0x9d
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
 extern int *g_109f3680;
@@ -1396,6 +1525,7 @@ int CBaseCombatCharacter::vfunc143(float flHealth, int bitsDamageType)
 // END FUNCTION
 
 // FUNCTION: 0x1032fb80 size=0x98
+#include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
 extern int *g_109f3680;
@@ -1430,6 +1560,14 @@ void CBaseCombatCharacter::vfunc345(const char *pszName, int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x1032fe60 size=0x158
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseCombatCharacter.h"
 
@@ -1494,6 +1632,7 @@ int __fastcall sub_103315e0(char *self, int, int a)
 // END FUNCTION
 
 // FUNCTION: 0x10331680 size=0xb9
+#include "CBaseCombatCharacter.h"
 #include "CVDmg_t.h"
 
 struct ScopeEntry { const char *a; const char *b; const char *c; };
@@ -1717,6 +1856,14 @@ void CBaseCombatCharacter::vfunc50(int a)
 // END FUNCTION
 
 // FUNCTION: 0x103320b0 size=0xbe
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "CBaseEntitySlots.h"
 #include "ScopeTrace.h"
@@ -1849,6 +1996,14 @@ int CBaseCombatCharacter::sub_10333700(CBaseEntity *pTarget)
 // END FUNCTION
 
 // FUNCTION: 0x103338c0 size=0x19c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "CBaseAnimating.h"
 #include "CEntityVSlots.h"
@@ -2036,6 +2191,7 @@ bool CBaseCombatCharacter::vfunc308()
 // END FUNCTION
 
 // FUNCTION: 0x10337080 size=0x149
+#include "CBaseCombatCharacter.h"
 #include "CBaseCombatWeapon.h"
 
 #define S1(p, n) virtual void p##n();
@@ -2190,6 +2346,14 @@ char CBaseCombatCharacter::vfunc342(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x1033b500 size=0xbf
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
 
@@ -2290,6 +2454,7 @@ void CBaseCombatCharacter::vfunc339(int a, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x1033cef0 size=0x86
+#include "CBaseCombatCharacter.h"
 #include "CUnknown101e3af0.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
@@ -2365,6 +2530,14 @@ void CBaseCombatCharacter::vfunc305()
 // END FUNCTION
 
 // FUNCTION: 0x1033e370 size=0xea
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseCombatCharacter.h"
 
@@ -2414,6 +2587,14 @@ void CBaseCombatCharacter::vfunc306(CBaseCombatCharacter *pTarget, char bUseEyes
 // END FUNCTION
 
 // FUNCTION: 0x1033e7e0 size=0x121
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
@@ -2444,6 +2625,14 @@ void CBaseCombatCharacter::vfunc125()
 // END FUNCTION
 
 // FUNCTION: 0x10340360 size=0x139
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
 #include "CStatDefault3List.h"
@@ -2546,6 +2735,14 @@ bool CBaseCombatCharacter::vfunc73(CBaseEntity *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x10340650 size=0x10c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "CBaseEntitySlots.h"
 #include "ScopeTrace.h"
@@ -2569,6 +2766,14 @@ bool CBaseCombatCharacter::vfunc68(CBaseEntity *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x103407b0 size=0xec
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
 
@@ -2611,6 +2816,14 @@ const char *CBaseCombatCharacter::vfunc244()
 // END FUNCTION
 
 // FUNCTION: 0x103409a0 size=0x1b8
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "CBaseAnimating.h"
 #include "CBCCSlotViews.h"
@@ -2651,6 +2864,7 @@ void CBaseCombatCharacter::vfunc105(const char *pszModel)
 // END FUNCTION
 
 // FUNCTION: 0x103412b0 size=0x8c
+#include "CBaseCombatCharacter.h"
 #include "inputdata_t.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
@@ -2808,6 +3022,14 @@ bool __fastcall sub_10341850(char *self, int, int a)
 // END FUNCTION
 
 // FUNCTION: 0x10342800 size=0xcb
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "CEntityVSlots.h"
 #include "ScopeTrace.h"
@@ -2874,6 +3096,7 @@ int CBaseCombatCharacter::vfunc323(const Vector *pDirection)
 // END FUNCTION
 
 // FUNCTION: 0x10345460 size=0x3
+#include "CBaseCombatCharacter.h"
 bool CBaseCombatCharacter::vfunc327()
 {
 	return true;
@@ -2881,6 +3104,9 @@ bool CBaseCombatCharacter::vfunc327()
 // END FUNCTION
 
 // FUNCTION: 0x103482e0 size=0xaa
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseCombatCharacter.h"
 #include "CStatDefault3List.h"
 #include "CVStatList_t.h"
@@ -2928,6 +3154,8 @@ int CBaseCombatCharacter::vfunc127(int a)
 // END FUNCTION
 
 // FUNCTION: 0x10348980 size=0xb0
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
 extern int *g_109f3680;

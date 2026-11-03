@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1034c9f0 size=0x6
+#include "datamap.h"
 #include "CNPCMaker_Zombie.h"
 namespace lifted {
 extern char g_106253e8;
@@ -112,6 +113,14 @@ CNPCMaker_Zombie *CNPCMaker_Zombie::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x1034cc60 size=0x127
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPCMaker_Zombie.h"
 #include "CCollisionProperty.h"
 #include "ScopeTrace.h"

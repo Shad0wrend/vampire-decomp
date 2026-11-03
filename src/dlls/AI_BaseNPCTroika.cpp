@@ -159,6 +159,7 @@ void CAI_BaseNPCTroika::sub_1029f060(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x1029f120 size=0xbd
+#include "CBasePlayer.h"
 #include "CEHandleGet.h"
 #include "CAI_BaseNPCTroika.h"
 #include "CBaseCombatCharacter.h"
@@ -672,6 +673,9 @@ int CAI_BaseNPCTroika::sub_102b6fe0(int a)
 // END FUNCTION
 
 // FUNCTION: 0x102b7370 size=0x27f
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseEntity.h"
+#include "CLogicAuto.h"
 #include "CEntitySoundOriginView.h"
 #include "globalvars.h"
 

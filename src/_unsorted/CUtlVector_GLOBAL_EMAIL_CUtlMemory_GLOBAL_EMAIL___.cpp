@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x101856e0 size=0x42
+#include "utlrbtree.h"
 #include "utlvector.h"
 #include "CGlobalEmailRec.h"
 

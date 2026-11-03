@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1020f850 size=0x6
+#include "datamap.h"
 #include "CLogicVisible.h"
 namespace lifted {
 extern char g_105ab490;

@@ -57,6 +57,7 @@ int CNPC_VManBat::vfunc546(int x)
 // END FUNCTION
 
 // FUNCTION: 0x1038ac80 size=0x6
+#include "datamap.h"
 #include "CNPC_VManBat.h"
 namespace lifted {
 extern char g_10640d40;

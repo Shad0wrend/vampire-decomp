@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x101cbc60 size=0x6
+#include "datamap.h"
 #include "CSmallHullTrigger.h"
 namespace lifted {
 extern char g_1059e8e8;

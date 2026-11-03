@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x101ab410 size=0x3
+#include "CServerNetworkProperty.h"
 int CServerNetworkProperty::vfunc12()
 {
     return 0;
@@ -9,6 +10,7 @@ int CServerNetworkProperty::vfunc12()
 // END FUNCTION
 
 // FUNCTION: 0x101ab430 size=0x4
+#include "CServerNetworkProperty.h"
 int CServerNetworkProperty::vfunc13()
 {
     return *(int *)((char *)this + 4);
@@ -26,12 +28,14 @@ int CServerNetworkProperty::vfunc10()
 // END FUNCTION
 
 // FUNCTION: 0x101ab470 size=0x8
+#include "CServerNetworkProperty.h"
 struct CUnknown10146790 { char a; char b; char c; void sub_10146790(); };
 // TARGET: CServerNetworkProperty::vfunc11
 void CServerNetworkProperty::vfunc11() { ((CUnknown10146790*)m_unk10)->sub_10146790(); }
 // END FUNCTION
 
 // FUNCTION: 0x101ab490 size=0x4
+#include "CServerNetworkProperty.h"
 int CServerNetworkProperty::vfunc4()
 {
     return *(int *)((char *)this + 0xc);
@@ -66,6 +70,7 @@ CServerNetworkProperty *CServerNetworkProperty::vfunc14(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x101ab650 size=0x4
+#include "CServerNetworkProperty.h"
 int CServerNetworkProperty::vfunc0()
 {
     return *(int *)((char *)this + 4);
@@ -97,6 +102,7 @@ void CServerNetworkProperty::vfunc6()
 // END FUNCTION
 
 // FUNCTION: 0x101ab690 size=0xb
+#include "CServerNetworkProperty.h"
 #define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 struct CSlots
 {
@@ -113,6 +119,7 @@ void CServerNetworkProperty::vfunc2()
 // END FUNCTION
 
 // FUNCTION: 0x101ab6b0 size=0xb
+#include "CServerNetworkProperty.h"
 #define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 struct CSlots
 {
@@ -129,6 +136,7 @@ void CServerNetworkProperty::vfunc3()
 // END FUNCTION
 
 // FUNCTION: 0x101ab6d0 size=0xb
+#include "CServerNetworkProperty.h"
 #define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 struct CSlots
 {
@@ -193,6 +201,8 @@ void CServerNetworkProperty::vfunc8(const int *pBox)
 // END FUNCTION
 
 // FUNCTION: 0x101ab7e0 size=0xb
+#include "CBaseEntity.h"
+#include "CServerNetworkProperty.h"
 void CServerNetworkProperty::vfunc9()
 {
 	((CBaseEntity *)m_pOuter)->vfunc86();

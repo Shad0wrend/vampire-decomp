@@ -141,6 +141,7 @@ void CSoundSchemeManager::vfunc5()
 // END FUNCTION
 
 // FUNCTION: 0x10228d00 size=0x123
+#include "utlrbtree.h"
 #include "CSoundSchemeManager.h"
 #include "utlvector.h"
 

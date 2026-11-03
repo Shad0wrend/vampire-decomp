@@ -120,6 +120,7 @@ void CGameSign::vfunc39(CBaseEntity *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x10212d70 size=0x1b
+#include "CBasePlayer.h"
 #include "CGameSign.h"
 
 // TARGET: CGameSign::vfunc42

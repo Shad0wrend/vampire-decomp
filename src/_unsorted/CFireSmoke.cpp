@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10057130 size=0x6
+#include "CFireSmoke.h"
 namespace lifted {
 extern char g_106be494;
 }
@@ -12,6 +13,7 @@ int CFireSmoke::vfunc80()
 // END FUNCTION
 
 // FUNCTION: 0x10057150 size=0x3
+#include "CFireSmoke.h"
 int CFireSmoke::vfunc81()
 {
     return 0;
@@ -19,6 +21,8 @@ int CFireSmoke::vfunc81()
 // END FUNCTION
 
 // FUNCTION: 0x100573e0 size=0x6
+#include "CFireSmoke.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_1053f8b8;
 }
@@ -62,6 +66,7 @@ void CFireSmokeUnit10057510::sub_10057510(int a)
 // END FUNCTION
 
 // FUNCTION: 0x10057570 size=0x13
+#include "CFireSmoke.h"
 void CFireSmoke::sub_10057570()
 {
 	engine->vfunc13("sprites/fire1.vmt", 0);

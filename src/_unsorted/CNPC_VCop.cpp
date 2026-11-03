@@ -85,6 +85,7 @@ void CNPC_VCop::vfunc103()
 // END FUNCTION
 
 // FUNCTION: 0x10371a90 size=0x33
+#include "CAI_BaseNPCTroika.h"
 #include "CNPC_VCop.h"
 extern int g_1093acac;
 extern int g_1093acb0;
@@ -230,6 +231,7 @@ void CNPC_VCop::vfunc420()
 // END FUNCTION
 
 // FUNCTION: 0x10372b70 size=0xaa
+#include "CGlobalEntityList.h"
 #include "CNPC_VCop.h"
 extern unsigned int g_1093ac3c;
 extern float g_1093aca8;

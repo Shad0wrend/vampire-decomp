@@ -102,6 +102,7 @@ int CNPC_VMingXiao::sub_10396dc0()
 // END FUNCTION
 
 // FUNCTION: 0x1039a6e0 size=0xd
+#include "CUnknown1039a6e0.h"
 void CUnknown1039a6e0::sub_1039a6e0(int value)
 {
 	m_unk1594 = value;

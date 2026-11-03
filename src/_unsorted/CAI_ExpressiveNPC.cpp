@@ -36,6 +36,7 @@ int CAI_ExpressiveNPC::vfunc584()
 // END FUNCTION
 
 // FUNCTION: 0x10312d40 size=0x90
+#include "vampire_all.h"
 #include "CAI_ExpressiveNPC.h"
 #include "CAI_Expresser.h"
 
@@ -46,6 +47,7 @@ CAI_Expresser *CAI_ExpressiveNPC::vfunc583()
 // END FUNCTION
 
 // FUNCTION: 0x10312ef0 size=0x2b
+#include "vampire_all.h"
 #include "CAI_ExpressiveNPC.h"
 #include "CAI_Expresser.h"
 typedef CAI_Expresser *(__fastcall *GetExpresserFn)(void *);

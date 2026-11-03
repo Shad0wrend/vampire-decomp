@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10101dd0 size=0x6
+#include "datamap.h"
 #include "CMessage.h"
 namespace lifted {
 extern char g_105694a8;
@@ -13,6 +14,14 @@ datamap_t * CMessage::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x10101eb0 size=0xfe
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CMessage.h"
 #include "CCollisionProperty.h"
 #include "ScopeTrace.h"

@@ -465,6 +465,8 @@ int *sub_10028720()
 // END FUNCTION
 
 // FUNCTION: 0x100289e0 size=0x5f
+#include "CHumanoidRec.h"
+#include "utlmemory.h"
 extern int vt_104462a8[];
 extern int vt_10445e1c[];
 void *sub_100aa720(int size);
@@ -687,6 +689,7 @@ extern "C" CBaseEntity *phys_keepupright()
 // END FUNCTION
 
 // FUNCTION: 0x100295d0 size=0xa
+#include "CUnknown100295d0.h"
 void CUnknown100295d0::sub_100295d0(int unused)
 {
 	m_bFlag = 1;
@@ -694,6 +697,7 @@ void CUnknown100295d0::sub_100295d0(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x100295f0 size=0xa
+#include "CUnknown100295d0.h"
 void CUnknown100295d0::sub_100295f0(int unused)
 {
 	m_bFlag = 0;
@@ -1074,6 +1078,7 @@ void __fastcall sub_1002b360(S1002b360 *self, int unused, SInfo1002b360 *pInfo)
 // END FUNCTION
 
 // FUNCTION: 0x1002b450 size=0x47
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 #include "CPhysConstraintSystem.h"
 extern char g_106b8540[];
@@ -1371,6 +1376,9 @@ void CUtlMemory20::sub_1002ccc0(int num)
 // END FUNCTION
 
 // FUNCTION: 0x1002d070 size=0xfb
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 
 struct SImpactRec {
@@ -1442,6 +1450,14 @@ void sub_1002d070(S10032fb0 *pVec, int a, int b, int c, int d, unsigned int key,
 // END FUNCTION
 
 // FUNCTION: 0x1002d750 size=0x5e
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 
 extern char g_106b88ec[];	// the PhysicsGameSystem singleton
@@ -1563,6 +1579,14 @@ void *sub_1002e140(void *pBuffer)
 // END FUNCTION
 
 // FUNCTION: 0x1002e580 size=0x1de
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "ScopeTrace.h"
 #include "engineserver.h"
@@ -1693,6 +1717,15 @@ void *sub_1002e580(CBaseEntity *pEntity, int modelIndex, const Vector *origin, c
 // END FUNCTION
 
 // FUNCTION: 0x1002e7e0 size=0x13d
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 
 class CBaseEntity;
@@ -1934,6 +1967,15 @@ bool sub_1002f820(WheelObj_t *pObj, WheelEnt_t *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x1002fb00 size=0xf0
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CCollisionEvent.h"
 
@@ -1981,6 +2023,7 @@ int CCollisionEventSolver::sub_1002fb00(void *pObject0, void *pObject1, CBaseEnt
 // END FUNCTION
 
 // FUNCTION: 0x1002fc30 size=0xac
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
 extern int *g_109f3680;
@@ -2070,6 +2113,14 @@ void CCollisionEvent::sub_100307f0(CFrictionEntry_t *pEntry)
 // END FUNCTION
 
 // FUNCTION: 0x10030910 size=0x6c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CCollisionEvent.h"
 #include "ScopeTrace.h"
 
@@ -2204,6 +2255,14 @@ void CCollisionEvent::sub_10030d50()
 // END FUNCTION
 
 // FUNCTION: 0x10030f30 size=0xfc
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
 #include "CUtlVector36.h"
@@ -2250,6 +2309,14 @@ void CCollisionEvent::sub_10030f30(void *a, void *b, int c, void *pData1, void *
 // END FUNCTION
 
 // FUNCTION: 0x10031070 size=0x189
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CCollisionEvent.h"
 #include "CUtlVector88.h"
 #include "ScopeTrace.h"
@@ -2375,6 +2442,14 @@ int CCollisionEvent::sub_10031270(int inflictor)
 // END FUNCTION
 
 // FUNCTION: 0x10031340 size=0x175
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CCollisionEvent.h"
 #include "CUtlVector32.h"
 #include "UtlVec32.h"
@@ -2672,6 +2747,14 @@ void sub_10032660(void *a1, void *a2, int *p, int sel)
 // END FUNCTION
 
 // FUNCTION: 0x10032720 size=0x10a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
 #include "CCollisionEvent.h"
@@ -3158,6 +3241,7 @@ void CMem8b_t::sub_10033160(int num)
 // END FUNCTION
 
 // FUNCTION: 0x100335e0 size=0x3e
+#include "vampire_all.h"
 struct CUnknownCycle100335e0 {
     unsigned int lo;
     unsigned int hi;
@@ -3185,6 +3269,14 @@ void __fastcall sub_100335e0(CUnknownCycle100335e0 *self)
 // END FUNCTION
 
 // FUNCTION: 0x10033630 size=0x63
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CPhysicsMovedEntities.h"
 CPhysicsMovedEntities *CPhysicsMovedEntities::sub_10033630()
@@ -3196,6 +3288,14 @@ CPhysicsMovedEntities *CPhysicsMovedEntities::sub_10033630()
 // END FUNCTION
 
 // FUNCTION: 0x100336c0 size=0x5e
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CPhysicsMovedEntities.h"
 #include "ScopeTrace.h"
 
@@ -3208,6 +3308,7 @@ void CPhysicsMovedEntities::sub_100336c0()
 // END FUNCTION
 
 // FUNCTION: 0x10033740 size=0xab
+#include "CBaseEntity.h"
 #include "CPhysicsMovedEntities.h"
 
 struct ScopeEntry { const char *a; const char *b; const char *c; };
@@ -3255,6 +3356,14 @@ bool CPhysicsMovedEntities::sub_10033740(CBaseEntity *pEntity)
 // END FUNCTION
 
 // FUNCTION: 0x10033820 size=0x136
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CPhysicsMovedEntities.h"
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
@@ -3318,6 +3427,7 @@ void __fastcall sub_100339b0(SEntView *p, int, float *forward, float *right, flo
 // END FUNCTION
 
 // FUNCTION: 0x10033aa0 size=0xad
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -3340,6 +3450,15 @@ void CBaseEntity::sub_10033aa0(float *a, float *b, float *c)
 // END FUNCTION
 
 // FUNCTION: 0x10033b80 size=0x1d1
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "type_info.h"
 #include "ScopeTrace.h"
 #include "ConVar.h"
@@ -3404,6 +3523,14 @@ void CBaseEntity::sub_10033b80(void (CBaseEntity::*pfnThink)())
 // END FUNCTION
 
 // FUNCTION: 0x10033de0 size=0x122
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
 #include "ScopeTrace.h"
@@ -3457,6 +3584,15 @@ CUnknown100353c0 *CUnknown100353c0::sub_100353c0(const CUnknown100353c0 *o)
 // END FUNCTION
 
 // FUNCTION: 0x10035a70 size=0xfb
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
 struct PTEPColl { virtual void v0(); virtual float *GetMins(); virtual float *GetMaxs(); };
@@ -3493,6 +3629,15 @@ bool CBaseEntity::sub_10035a70(CBaseEntity **ppEntity)
 // END FUNCTION
 
 // FUNCTION: 0x10035df0 size=0xca
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CPhysicsPushedEntities.h"
 
@@ -3589,6 +3734,14 @@ void CPhysicsPushedEntities::sub_10035fd0(int *pHandles)
 // END FUNCTION
 
 // FUNCTION: 0x100360a0 size=0x16b
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CCollisionProperty.h"
 #include "matrix3x4_t.h"
@@ -3740,6 +3893,14 @@ void CPhysicsPushedEntities::sub_10036b10()
 // END FUNCTION
 
 // FUNCTION: 0x10036bd0 size=0x11a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CPhysicsPushedEntities.h"
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
@@ -3812,6 +3973,7 @@ void CPhysicsPushedEntities::sub_10036d40(char bFlag, int a)
 // END FUNCTION
 
 // FUNCTION: 0x10036e50 size=0x7e
+#include "CBaseEntity.h"
 #include "CPhysicsPushedEntities.h"
 extern char g_106b8540[];
 struct ScopeTraceEntry { const char *a; const char *b; const char *c; };
@@ -3833,6 +3995,9 @@ CBaseEntity *CPhysicsPushedEntities::sub_10036e50()
 // END FUNCTION
 
 // FUNCTION: 0x10036ef0 size=0x8b
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
 #include "CPhysicsPushedEntities.h"
 
 #define PV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
@@ -3960,6 +4125,15 @@ void * CUnknown10037950::sub_10037950()
 // END FUNCTION
 
 // FUNCTION: 0x100379e0 size=0x1bc
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
 #include "CPhysicsPushedEntities.h"
@@ -4004,6 +4178,14 @@ void CPhysicsPushedEntities::sub_100379e0(CBaseEntity *pParent)
 // END FUNCTION
 
 // FUNCTION: 0x10038400 size=0x26a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CPhysicsPushedEntities.h"
 #include "CBaseEntity.h"
 #include "ScopeTrace.h"
@@ -4071,6 +4253,14 @@ CBaseEntity *CPhysicsPushedEntities::sub_10038400(CBaseEntity *pRoot, const floa
 // END FUNCTION
 
 // FUNCTION: 0x100397c0 size=0x255
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
 #include "CVProfile.h"
@@ -4165,6 +4355,14 @@ bool Vector::sub_1003b850(const Vector &v) const
 // END FUNCTION
 
 // FUNCTION: 0x1003b8a0 size=0x1b9
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "engineserver.h"
 #include "globalvars.h"
@@ -4220,6 +4418,14 @@ void sub_1003b8a0()
 // END FUNCTION
 
 // FUNCTION: 0x1003bdd0 size=0x26a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CVProfile.h"
 #include "globalvars.h"
@@ -4381,6 +4587,7 @@ void CUtlVector16::sub_1003c220(int num)
 // END FUNCTION
 
 // FUNCTION: 0x1003c2e0 size=0x3a
+#include "vampire_all.h"
 #include "CUtlVector16.h"
 
 void CUtlVector16::sub_1003c2e0(int elem, int num)
@@ -4532,6 +4739,14 @@ void CBaseEntity::sub_1003cc80(int type)
 // END FUNCTION
 
 // FUNCTION: 0x1003d130 size=0x169
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "ScopeTrace.h"
 
@@ -4602,6 +4817,14 @@ void CBaseEntity::sub_1003d300()
 // END FUNCTION
 
 // FUNCTION: 0x1003d490 size=0x146
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 #include "ScopeTrace.h"
@@ -4652,6 +4875,14 @@ void CBaseEntity::sub_1003d490()
 // END FUNCTION
 
 // FUNCTION: 0x1003d640 size=0xe7
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
@@ -4698,6 +4929,14 @@ void sub_1003d640(CBaseEntity *pOther, CBaseEntity *pThis)
 // END FUNCTION
 
 // FUNCTION: 0x1003d770 size=0x125
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CCineNPCSlots.h"
 #include "CGlobalEntityList.h"
 #include "ScopeTrace.h"
@@ -4772,6 +5011,14 @@ void sub_1003d770(CTouchSlots *pEntity, CTouchLink *pLink)
 // END FUNCTION
 
 // FUNCTION: 0x1003d8f0 size=0x14d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "ScopeTrace.h"
 #include "CEHandleGet.h"
@@ -4814,6 +5061,7 @@ void sub_1003d8f0(CBaseEntity *pEntity)
 // END FUNCTION
 
 // FUNCTION: 0x1003daa0 size=0xa6
+#include "CBaseEntity.h"
 #define PV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define PV100(p) PV10(p##0) PV10(p##1) PV10(p##2) PV10(p##3) PV10(p##4) PV10(p##5) PV10(p##6) PV10(p##7) PV10(p##8) PV10(p##9)
@@ -4863,6 +5111,7 @@ void CBaseEntity::sub_1003daa0(CBaseEntity *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x1003db80 size=0xb1
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -4926,6 +5175,14 @@ trace21 *sub_1003e250(trace21 *out)
 // END FUNCTION
 
 // FUNCTION: 0x1003e2e0 size=0x16a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
 #include "Vector.h"
@@ -4995,6 +5252,14 @@ Vector &Vector::sub_1003e4b0(const Vector &v)
 // END FUNCTION
 
 // FUNCTION: 0x1003e4e0 size=0x17b
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
 #include "Vector.h"
@@ -5084,6 +5349,7 @@ void CBaseEntity::sub_1003e6c0(CBaseEntity *pOther, void *pTrace)
 // END FUNCTION
 
 // FUNCTION: 0x1003eb50 size=0x1b3
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 struct MaxVel { virtual void v0(); virtual bool v1(); char pad[0x24]; float val; };
 
@@ -5160,6 +5426,16 @@ void CBaseEntity::sub_1003eb50()
 // END FUNCTION
 
 // FUNCTION: 0x1003ed80 size=0x126
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "Vector.h"
 #include "ScopeTrace.h"
 #include "ConVar.h"
 
@@ -5186,6 +5462,16 @@ void CBaseEntity::sub_1003ed80(Vector &move)
 // END FUNCTION
 
 // FUNCTION: 0x1003ef00 size=0x118
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "Vector.h"
 #include "ScopeTrace.h"
 int __fastcall sub_1003ef00(CBaseEntity *self, int unused, const Vector &in, const Vector &normal, Vector &out, float overbounce)
 {
@@ -5208,6 +5494,14 @@ int __fastcall sub_1003ef00(CBaseEntity *self, int unused, const Vector &in, con
 // END FUNCTION
 
 // FUNCTION: 0x1003f810 size=0xc6
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "ScopeTrace.h"
 
@@ -5243,6 +5537,14 @@ void * CUnknown1003ff80::sub_1003ff80()
 // END FUNCTION
 
 // FUNCTION: 0x1003ffa0 size=0x1f1
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CVProfile.h"
 #include "ScopeTrace.h"
@@ -5288,6 +5590,15 @@ void CBaseEntity::sub_1003ffa0()
 // END FUNCTION
 
 // FUNCTION: 0x10040220 size=0x114
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CEntityVSlots.h"
 
@@ -5403,6 +5714,9 @@ UtlHash8 *UtlHash8::sub_10041c80(int nBuckets, int growSize, int initSize, bool 
 // END FUNCTION
 
 // FUNCTION: 0x10041d20 size=0x85
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
 #include "UtlHash8.h"
 
 unsigned int UtlHash8::sub_10041d20(void *pData)
@@ -5467,6 +5781,9 @@ UtlHash8 *UtlHash8::sub_10041de0(int nBuckets, int growSize, int initSize, bool 
 // END FUNCTION
 
 // FUNCTION: 0x10041e80 size=0x85
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
 #include "UtlHash8.h"
 
 unsigned int UtlHash8::sub_10041e80(void *pData)
@@ -5531,6 +5848,9 @@ UtlHash8 *UtlHash8::sub_10041f40(int nBuckets, int growSize, int initSize, bool 
 // END FUNCTION
 
 // FUNCTION: 0x10041fe0 size=0x85
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
 #include "UtlHash8.h"
 
 unsigned int UtlHash8::sub_10041fe0(void *pData)
@@ -5595,6 +5915,9 @@ UtlHash8 *UtlHash8::sub_100420a0(int nBuckets, int growSize, int initSize, bool 
 // END FUNCTION
 
 // FUNCTION: 0x10042140 size=0x85
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
 #include "UtlHash8.h"
 
 unsigned int UtlHash8::sub_10042140(void *pData)
@@ -6690,6 +7013,14 @@ void CUnknown10044a90::sub_10044a90(unsigned int key)
 // END FUNCTION
 
 // FUNCTION: 0x10044db0 size=0x14b
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlrbtree.h"
 #include "CUtlMap16.h"
 
 extern void *g_109f0b6c;
@@ -6752,6 +7083,14 @@ void CUtlMap16::sub_10044db0(unsigned int key, unsigned int elem)
 // END FUNCTION
 
 // FUNCTION: 0x10044f60 size=0x14b
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlrbtree.h"
 #include "CUtlMap16.h"
 
 extern void *g_109f0b64;
@@ -6814,6 +7153,7 @@ void CUtlMap16::sub_10044f60(unsigned int key, unsigned int elem)
 // END FUNCTION
 
 // FUNCTION: 0x10045110 size=0x1c9
+#include "utlvector.h"
 struct Node8 { int key; int val; };
 struct Links_t { unsigned short left, right, parent, tag; };
 struct RBNode { Links_t links; Node8 data; };
@@ -6943,6 +7283,8 @@ void CUnknown10045110::sub_10045110(int key)
 // END FUNCTION
 
 // FUNCTION: 0x10045360 size=0x112
+#include "utlrbtree.h"
+#include "utlvector.h"
 struct RBLinks { unsigned short m_Left, m_Right, m_Parent, m_Tag; };
 struct RBNode16 { RBLinks m_Links; char m_Data[8]; };
 struct RBNode36 { RBLinks m_Links; char m_Data[28]; };
@@ -7156,6 +7498,7 @@ void sub_10045fc0(void) { g_109f0b74(); }
 // END FUNCTION
 
 // FUNCTION: 0x10045fe0 size=0x45
+#include "vampire_all.h"
 struct S10045fe0 {
     char *m_pMemory;
     int m_nAllocationCount;
@@ -7178,6 +7521,9 @@ S10045fe0 *S10045fe0::sub_10045fe0(int growSize, int initSize)
 // END FUNCTION
 
 // FUNCTION: 0x10046050 size=0x1d0
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
 struct Vec { int x, y, z; void sub_1003e4b0(const Vec &o); };
 struct Box {
 	Vec a, b;
@@ -7364,6 +7710,7 @@ S100464f0 *S100464f0::sub_100464f0(int c, int count, int a)
 // END FUNCTION
 
 // FUNCTION: 0x10046570 size=0x108
+#include "utlrbtree.h"
 #include "CUtlRBTreeFind16.h"
 
 unsigned short CUtlRBTreeFind16::sub_10046570(const void *search)
@@ -7409,6 +7756,7 @@ S100466d0 *S100466d0::sub_100466d0(int c, int count, int a)
 // END FUNCTION
 
 // FUNCTION: 0x10046750 size=0x108
+#include "utlrbtree.h"
 #include "CUtlRBTreeFind16.h"
 
 unsigned short CUtlRBTreeFind16::sub_10046750(const void *search)
@@ -7622,6 +7970,14 @@ S47190 &S47190::sub_10047190(const S47190 &o)
 // END FUNCTION
 
 // FUNCTION: 0x100473c0 size=0x381
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlrbtree.h"
 #include "CUtlRBTree16.h"
 
 struct CUtlRBTree16Unit : CUtlRBTree16At<0x106bdb38>
@@ -7749,6 +8105,14 @@ bool CUtlRBTree16::sub_100483f0(unsigned short i) const
 // END FUNCTION
 
 // FUNCTION: 0x10048960 size=0x57
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlrbtree.h"
 #include "CUtlRBTree16.h"
 
 struct CUtlRBTree16Unit : CUtlRBTree16At<0x106bdb44>
@@ -7763,6 +8127,14 @@ const CUtlRBTree16::Links_t *CUtlRBTree16Unit::sub_10048960(unsigned short i) co
 // END FUNCTION
 
 // FUNCTION: 0x100492b0 size=0x57
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlrbtree.h"
 #include "CUtlRBTree16.h"
 
 struct CUtlRBTree16Unit : CUtlRBTree16At<0x106bdb50>
@@ -7823,6 +8195,13 @@ void __fastcall sub_10049da0(Mem *self, int, int num)
 // END FUNCTION
 
 // FUNCTION: 0x10049e40 size=0x1b2
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
 #include "CUtlRBTree16.h"
 #include "utlrbtree.h"
 #include "CRBTree16Entry8.h"
@@ -7873,6 +8252,7 @@ void CUtlRBTree16Unit::sub_10049e40(unsigned short elem)
 // END FUNCTION
 
 // FUNCTION: 0x1004a2a0 size=0xb9
+#include "utlrbtree.h"
 #include "CUtlRBTree16.h"
 
 bool CUtlRBTree16::sub_1004a2a0(unsigned short i) const
@@ -7918,6 +8298,7 @@ void CMem16_t::sub_1004add0(int num)
 // END FUNCTION
 
 // FUNCTION: 0x1004ae60 size=0xb9
+#include "utlrbtree.h"
 #include "CUtlRBTree16.h"
 
 bool CUtlRBTree16::sub_1004ae60(unsigned short i) const
@@ -7963,6 +8344,7 @@ void CMem16b_t::sub_1004b990(int num)
 // END FUNCTION
 
 // FUNCTION: 0x1004ba20 size=0xbb
+#include "utlrbtree.h"
 #include "CUtlRBTree16.h"
 
 bool CUtlRBTree16::sub_1004ba20(unsigned short i) const
@@ -7973,6 +8355,14 @@ bool CUtlRBTree16::sub_1004ba20(unsigned short i) const
 // END FUNCTION
 
 // FUNCTION: 0x1004bb10 size=0x1b2
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlrbtree.h"
 #include "CUtlRBTree16.h"
 
 struct CUtlRBTree16Unit : CUtlRBTree16At<0x106bdb44>
@@ -8012,6 +8402,14 @@ void CUtlRBTree16Unit::sub_1004bb10(unsigned short elem)
 // END FUNCTION
 
 // FUNCTION: 0x1004bd40 size=0x1b5
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlrbtree.h"
 #include "CUtlRBTree16.h"
 
 struct CUtlRBTree16Unit : CUtlRBTree16At<0x106bdb44>
@@ -8051,6 +8449,7 @@ void CUtlRBTree16Unit::sub_1004bd40(unsigned short elem)
 // END FUNCTION
 
 // FUNCTION: 0x1004bf70 size=0xbb
+#include "utlrbtree.h"
 #include "CUtlRBTree16.h"
 
 bool CUtlRBTree16::sub_1004bf70(unsigned short i) const
@@ -8061,6 +8460,14 @@ bool CUtlRBTree16::sub_1004bf70(unsigned short i) const
 // END FUNCTION
 
 // FUNCTION: 0x1004c060 size=0x1b2
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlrbtree.h"
 #include "CUtlRBTree16.h"
 
 struct CUtlRBTree16Unit : CUtlRBTree16At<0x106bdb50>
@@ -8100,6 +8507,14 @@ void CUtlRBTree16Unit::sub_1004c060(unsigned short elem)
 // END FUNCTION
 
 // FUNCTION: 0x1004c290 size=0x1b5
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlrbtree.h"
 #include "CUtlRBTree16.h"
 
 struct CUtlRBTree16Unit : CUtlRBTree16At<0x106bdb50>
@@ -8152,6 +8567,7 @@ bool CUtlRBTree36::sub_1004c4c0(unsigned short i) const
 // END FUNCTION
 
 // FUNCTION: 0x1004ca10 size=0x43
+#include "CBaseEntity.h"
 #include "CPhysicsSpring.h"
 
 void *sub_100aa720(int size);
@@ -8623,6 +9039,7 @@ extern "C" CBaseAnimating *simple_physics_prop()
 // END FUNCTION
 
 // FUNCTION: 0x1004feb0 size=0x70
+#include "CBaseEntity.h"
 #define SV(n) virtual void v##n();
 #define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
 
@@ -8681,6 +9098,14 @@ bool sub_1004feb0(CBaseEntity *pEnt, CBaseEntity *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x1004ff40 size=0x10d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
 
@@ -8983,6 +9408,14 @@ CDisciplineParticle *CDisciplineParticle::sub_10050b90(CDisciplineParticleParams
 // END FUNCTION
 
 // FUNCTION: 0x10050c70 size=0xd6
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CDisciplineParticle.h"
 #include "CUnknown100eb420.h"
@@ -9023,6 +9456,14 @@ CDisciplineParticle *CDisciplineParticle::sub_10050d90(int a1, int a2, int a3, i
 // END FUNCTION
 
 // FUNCTION: 0x10050e70 size=0x193
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CDisciplineParticle.h"
 #include "CBaseEntity.h"
 #include "CBaseViewModel.h"
@@ -9076,6 +9517,16 @@ CDisciplineParticle *CDisciplineParticle::sub_10050e70(const char *pszClassname,
 // END FUNCTION
 
 // FUNCTION: 0x10051810 size=0x1b5
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
 #include "CDisciplineParticle.h"
 #include "ScopeTrace.h"
 #include "utlvector.h"
@@ -9102,6 +9553,14 @@ void CDisciplineParticle::sub_10051810()
 // END FUNCTION
 
 // FUNCTION: 0x10051a40 size=0x6d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CDisciplineParticle.h"
 #include "ScopeTrace.h"
 extern void *vt_1044ba64[];
@@ -9130,6 +9589,14 @@ bool sub_10053df0(const unsigned int *a, const unsigned int *b)
 // END FUNCTION
 
 // FUNCTION: 0x100542e0 size=0x5b
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 
 int sub_100542e0()
@@ -9195,6 +9662,14 @@ void sub_10054400()
 // END FUNCTION
 
 // FUNCTION: 0x100544f0 size=0x154
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "CDisciplineParticle.h"
 #include "CBasePlayer.h"
@@ -9256,6 +9731,17 @@ void CBaseCombatCharacter::sub_100544f0(int which)
 // END FUNCTION
 
 // FUNCTION: 0x100546b0 size=0x11b
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseCombatCharacter.h"
 #include "CVStatList_t.h"
 #include "CVDmg_t.h"
@@ -9297,6 +9783,17 @@ void sub_100546b0()
 // END FUNCTION
 
 // FUNCTION: 0x100548b0 size=0x117
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseCombatCharacter.h"
 #include "CVStatList_t.h"
 #include "CVDmg_t.h"
@@ -9379,6 +9876,14 @@ void UtlVec8::sub_10055000(int elem, int num)
 // END FUNCTION
 
 // FUNCTION: 0x10055170 size=0x2ef
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree16.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlrbtree.h"
 #include "CUtlRBTree24.h"
 
 // TARGET: CUtlRBTree24::sub_10055170
@@ -9460,6 +9965,13 @@ void CUtlRBTree24::sub_10055170(int elem, int parent, bool isLeft)
 // END FUNCTION
 
 // FUNCTION: 0x10055520 size=0x4f
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree16.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
 #include "CUtlRBTree24.h"
 #include "utlrbtree.h"
 struct CRBEntry8 {
@@ -9709,6 +10221,7 @@ extern "C" CBaseEntity *te_tester()
 // END FUNCTION
 
 // FUNCTION: 0x10056f10 size=0x2f
+#include "CBaseFire.h"
 // TARGET: sub_10056f10
 extern int vt_1044cce4[];
 
@@ -9738,6 +10251,7 @@ int CUnknown10056f80::sub_10056f80()
 // END FUNCTION
 
 // FUNCTION: 0x10057050 size=0x43
+#include "CBaseEntity.h"
 #include "CFireSmoke.h"
 
 void *sub_100aa720(int size);
@@ -9863,6 +10377,7 @@ void CBaseFire::sub_100575e0(int on)
 // END FUNCTION
 
 // FUNCTION: 0x10057660 size=0xc
+#include "CUnknown10057680.h"
 CUnknown10057680 *CUnknown10057680::sub_10057660()
 {
 	sub_10057680();
@@ -9871,6 +10386,7 @@ CUnknown10057680 *CUnknown10057680::sub_10057660()
 // END FUNCTION
 
 // FUNCTION: 0x10057680 size=0xe
+#include "CUnknown10057680.h"
 void CUnknown10057680::sub_10057680()
 {
 	m_unk0 = 0;
@@ -10200,6 +10716,7 @@ void __fastcall sub_100581d0(char *pThis, int, int)
 // END FUNCTION
 
 // FUNCTION: 0x10058200 size=0xd
+#include "CUnknown10058200.h"
 // TARGET: CUnknown10058200::sub_10058200
 void CUnknown10058200::sub_10058200(int unused)
 {
@@ -10208,6 +10725,7 @@ void CUnknown10058200::sub_10058200(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x10058220 size=0xd
+#include "CUnknown10058220.h"
 void CUnknown10058220::sub_10058220(int unused)
 {
 	m_unk468 = 0;
@@ -10257,6 +10775,7 @@ int sub_1005a1a0()
 // END FUNCTION
 
 // FUNCTION: 0x1005a330 size=0x4f
+#include "CTEMetalSparks.h"
 extern CTEMetalSparks g_106beadc;
 
 void sub_1005a330(int a, int b, const int *pos, const int *dir)
@@ -10301,6 +10820,7 @@ int sub_1005a510()
 // END FUNCTION
 
 // FUNCTION: 0x1005a6a0 size=0x4f
+#include "CTEMetalSparks.h"
 extern CTEMetalSparks g_106beb04;
 
 void sub_1005a6a0(int a, int b, const int *pos, const int *dir)
@@ -11752,6 +12272,7 @@ int sub_100615e0()
 // END FUNCTION
 
 // FUNCTION: 0x100617a0 size=0x59
+#include "CRecipientFilter.h"
 #include "CTEEnergySplash.h"
 extern CTEEnergySplash g_106c2620;
 void sub_100617a0(CRecipientFilter *pFilter, float flDelay, const Vector *pPos, const Vector *pDir, char bFlag)
@@ -11914,6 +12435,7 @@ int sub_100622d0()
 // END FUNCTION
 
 // FUNCTION: 0x10062490 size=0x46
+#include "CRecipientFilter.h"
 #include "CTEFizz.h"
 #include "CBaseEntity.h"
 extern CTEFizz g_106c2d1c;
@@ -12269,6 +12791,7 @@ int sub_10063d70()
 // END FUNCTION
 
 // FUNCTION: 0x10063f90 size=0x59
+#include "CRecipientFilter.h"
 #include "CTEGlowSprite.h"
 extern CTEGlowSprite g_106c3a14;
 void sub_10063f90(CRecipientFilter &filter, float delay, const Vector *origin, int model, float life, float scale, int brightness)
@@ -12374,6 +12897,14 @@ int sub_10064ca0()
 // END FUNCTION
 
 // FUNCTION: 0x10064df0 size=0x164
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CTEExplosiveGunshotDecal.h"
 #include "ScopeTrace.h"
@@ -12569,6 +13100,7 @@ int sub_100657e0()
 // END FUNCTION
 
 // FUNCTION: 0x10065930 size=0x32
+#include "CRecipientFilter.h"
 #include "CTEInspectionFX.h"
 
 extern char g_106c4828;
@@ -13054,6 +13586,7 @@ int sub_100679a0()
 // END FUNCTION
 
 // FUNCTION: 0x10067b70 size=0x86
+#include "CUnknown1019d130.h"
 #include "CTESparks.h"
 
 extern CTESparks g_106c5618;
@@ -14182,6 +14715,7 @@ void __cdecl sub_1006c470(CUnit1006c470 *pObj, int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x1006c4a0 size=0x3e
+#include "vampire_all.h"
 #include "vampire.h"
 #include "CUtlBuffer.h"
 
@@ -14457,6 +14991,7 @@ void Dump::sub_1006cc20()
 // END FUNCTION
 
 // FUNCTION: 0x1006ccc0 size=0xd
+#include "CUnknown1006ccc0.h"
 CUnknown1006ccc0 *CUnknown1006ccc0::sub_1006ccc0()
 {
 	m_unk0 = 0;
@@ -14717,6 +15252,8 @@ int sub_1006d560()
 // END FUNCTION
 
 // FUNCTION: 0x1006d9d0 size=0xfb
+#include "CBaseCineCam.h"
+#include "CBaseEntity.h"
 struct EntInfo { void *pEnt; unsigned int serial; int pad; };
 struct EntTable { int pad; EntInfo info[1]; };
 extern EntTable *g_10566458;
@@ -14873,6 +15410,7 @@ bool CBaseCineCam::sub_1006e4c0(const char *pszPrefix, int unused)
 // END FUNCTION
 
 // FUNCTION: 0x1006e770 size=0xb0
+#include "CBaseEntity.h"
 #include "CBaseCineCam.h"
 
 void sub_100079eb();
@@ -14920,6 +15458,7 @@ void __fastcall sub_1006e850(char *p)
 // END FUNCTION
 
 // FUNCTION: 0x1006e890 size=0xe
+#include "CUnknown1006e890.h"
 bool CUnknown1006e890::sub_1006e890()
 {
 	return m_unk638 != 0;
@@ -14945,6 +15484,7 @@ void CUnknown1006e8b0::sub_1006e8b0(float flDelay)
 // END FUNCTION
 
 // FUNCTION: 0x1006ed20 size=0xd
+#include "CUnknown1006ed20.h"
 void CUnknown1006ed20::sub_1006ed20(int value)
 {
 	m_unk594 = value;
@@ -15081,6 +15621,7 @@ Vector CBaseCineCam::sub_1006f670()
 // END FUNCTION
 
 // FUNCTION: 0x1006f7d0 size=0x53
+#include "CBaseEntity.h"
 void sub_1006e850();
 struct CEnt1006f7d0 : CBaseEntity {
 	char m_pad0004[0x55c - sizeof(CBaseEntity)];
@@ -15189,6 +15730,7 @@ void __fastcall sub_1006fe00(FollowObj *pThis)
 // END FUNCTION
 
 // FUNCTION: 0x10070470 size=0xa3
+#include "CBaseEntity.h"
 #include "CBaseCineCam.h"
 
 extern float g_1070d1b0[3];
@@ -15288,6 +15830,7 @@ CBaseCineCam *sub_100705d0(CBaseEntity *pTarget)
 // END FUNCTION
 
 // FUNCTION: 0x10070690 size=0x69
+#include "CBaseEntity.h"
 #include "CBaseCineCam.h"
 
 CBaseEntity *sub_100a99d0(const char *pszClassname, const float *pOrigin, const float *pAngles, CBaseEntity *pOwner);
@@ -15314,6 +15857,7 @@ CBaseCineCam *sub_10070690(void *pOwner)
 // END FUNCTION
 
 // FUNCTION: 0x10070720 size=0x19
+#include "CBasePlayer.h"
 #include "CBaseCineCam.h"
 
 void *sub_101cd9e0(int a);
@@ -15382,6 +15926,7 @@ void CEnt10070990::sub_10070990(CBasePlayerV *pPlayer)
 // END FUNCTION
 
 // FUNCTION: 0x10070a10 size=0x43
+#include "CBaseEntity.h"
 #include "CCameraAnimated.h"
 
 void *sub_100aa720(int size);
@@ -15547,6 +16092,7 @@ void CUnk10071840::sub_10071550(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x10071660 size=0xc5
+#include "CBasePlayer.h"
 #include "CUnk10071840.h"
 #include "CEHandleGet.h"
 #include "CBaseEntity.h"
@@ -15797,6 +16343,7 @@ int *__fastcall sub_100727c0(int *p)
 // END FUNCTION
 
 // FUNCTION: 0x100729e0 size=0x44
+#include "utlrbtree.h"
 #include "utlvector.h"
 struct SVecHolder {
     CUtlVector<int> m_List;
@@ -16104,6 +16651,8 @@ void S10073220::sub_10073020(int elem)
 // END FUNCTION
 
 // FUNCTION: 0x10073090 size=0x13b
+#include "utlrbtree.h"
+#include "utlvector.h"
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 
 struct S100732f0 {
@@ -16208,6 +16757,7 @@ char * CUnknown10073290::sub_10073290()
 // END FUNCTION
 
 // FUNCTION: 0x100732b0 size=0xd
+#include "CUnknown100732b0.h"
 void CUnknown100732b0::sub_100732b0(char value)
 {
 	m_unk178 = value;
@@ -16505,6 +17055,7 @@ void * CUnknown100738a0::sub_100738a0()
 // END FUNCTION
 
 // FUNCTION: 0x100738e0 size=0xd
+#include "CUnknown100738e0.h"
 // TARGET: CUnknown100738e0::sub_100738e0
 void CUnknown100738e0::sub_100738e0(int value)
 {
@@ -16560,6 +17111,7 @@ char CUnknown10073a10::sub_10073a10()
 // END FUNCTION
 
 // FUNCTION: 0x10073a30 size=0xd
+#include "CUnknown10073a30.h"
 void CUnknown10073a30::sub_10073a30(char value)
 {
 	m_bFlag88 = value;
@@ -16583,6 +17135,7 @@ float CUnknown10073b00::sub_10073b00()
 // END FUNCTION
 
 // FUNCTION: 0x10073b20 size=0xd
+#include "CUnknown10073b20.h"
 // TARGET: CUnknown10073b20::sub_10073b20
 void CUnknown10073b20::sub_10073b20(int value)
 {
@@ -16599,6 +17152,7 @@ int CUnknown10073b40::sub_10073b40()
 // END FUNCTION
 
 // FUNCTION: 0x10073b60 size=0xd
+#include "CUnknown10073b60.h"
 void CUnknown10073b60::sub_10073b60(int value)
 {
 	m_unk84 = value;
@@ -16606,6 +17160,7 @@ void CUnknown10073b60::sub_10073b60(int value)
 // END FUNCTION
 
 // FUNCTION: 0x10073e70 size=0xa0
+#include "utlrbtree.h"
 #include "CFlexAnimationTrack.h"
 #include "utlvector.h"
 extern char vt_1044f014[];
@@ -16662,6 +17217,7 @@ void CUnknown10073f60::sub_10073f60()
 // END FUNCTION
 
 // FUNCTION: 0x10073f90 size=0x45
+#include "utlrbtree.h"
 #include "utlvector.h"
 struct Elem12 { int a, b, c; };
 struct VecHolder {
@@ -16676,6 +17232,7 @@ void VecHolder::sub_10073f90(int elem, int list)
 // END FUNCTION
 
 // FUNCTION: 0x10074050 size=0xd
+#include "CUnknown10074050.h"
 extern char g_106b8540[];
 
 const char *CUnknown10074050::sub_10074050()
@@ -16839,6 +17396,7 @@ float CUnknown10074a30::sub_10074610(float flValue, int nMode)
 // END FUNCTION
 
 // FUNCTION: 0x100746e0 size=0xf6
+#include "CLogicAuto.h"
 #include "CFlexAnimationTrack.h"
 #include "utlvector.h"
 
@@ -16854,6 +17412,7 @@ void CFlexAnimationTrack::sub_100746e0(float flTime, float flValue, int nList)
 // END FUNCTION
 
 // FUNCTION: 0x10074820 size=0x10e
+#include "CLogicAuto.h"
 #include "CFlexAnimationTrack.h"
 
 // TARGET: CFlexAnimationTrack::sub_10074820
@@ -16938,6 +17497,7 @@ void CUnknown10074a00::sub_10074a00(int a, int b, int idx)
 // END FUNCTION
 
 // FUNCTION: 0x10074a30 size=0xa
+#include "CUnknown10074a30.h"
 void CUnknown10074a30::sub_10074a30(char value)
 {
 	m_bFlag = value;
@@ -17005,6 +17565,7 @@ float CUnknown10074ae0::sub_10074ae0(int a)
 // END FUNCTION
 
 // FUNCTION: 0x10074b10 size=0xa8
+#include "CLogicAuto.h"
 #include "CFlexAnimationTrack.h"
 #include "CUnknown10075aa0.h"
 #include <string.h>
@@ -17661,6 +18222,7 @@ void __stdcall sub_10076600(float v)
 // END FUNCTION
 
 // FUNCTION: 0x10076670 size=0xd
+#include "CUnknown10076670.h"
 void CUnknown10076670::sub_10076670(int value)
 {
 	m_unk2b4 = value;
@@ -17676,6 +18238,7 @@ int CUnknown10076690::sub_10076690()
 // END FUNCTION
 
 // FUNCTION: 0x100766b0 size=0xd
+#include "CUnknown10076670.h"
 void CUnknown10076670::sub_100766b0(int value)
 {
 	m_unk2b8 = value;
@@ -17691,6 +18254,7 @@ int CUnknown100766d0::sub_100766d0()
 // END FUNCTION
 
 // FUNCTION: 0x100766f0 size=0xd
+#include "CUnknown100766f0.h"
 void CUnknown100766f0::sub_100766f0(int value)
 {
 	m_unk324 = value;
@@ -17804,6 +18368,7 @@ void CUnknown10077730::sub_10076ad0(char value)
 // END FUNCTION
 
 // FUNCTION: 0x10076af0 size=0xd
+#include "CUnknown10076af0.h"
 void CUnknown10076af0::sub_10076af0(char value)
 {
 	m_unk1b0 = value;
@@ -18032,6 +18597,7 @@ char *CUnk10077080::sub_10077080(int index)
 // END FUNCTION
 
 // FUNCTION: 0x100770b0 size=0x17f
+#include "utlrbtree.h"
 // TARGET: ?sub_100770b0@CUnknown10076da0@@QAEXPBDM_N@Z
 #include "CUnknown10076da0.h"
 
@@ -18164,6 +18730,7 @@ int CUnk10077450::sub_10077450(int index)
 // END FUNCTION
 
 // FUNCTION: 0x10077490 size=0xf6
+#include "utlmemory.h"
 #include "CUtlVector4.h"
 
 extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned int size);
@@ -18229,6 +18796,7 @@ CFlexTrack *CFlexTrackParent::sub_10077490(const char *pszName)
 // END FUNCTION
 
 // FUNCTION: 0x100775d0 size=0x58
+#include "utlrbtree.h"
 #include "CUnknown10077430.h"
 class CUnknown10077430Track { public: virtual ~CUnknown10077430Track(); };
 // TARGET: CUnknown10077430::sub_100775d0
@@ -18384,6 +18952,7 @@ char CUnknown10077820::sub_10077820(CUnknownSlot3Obj *pObj, int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x10077890 size=0xd
+#include "CUnknown10077890.h"
 void CUnknown10077890::sub_10077890(int value)
 {
 	m_unk32c = value;
@@ -18420,6 +18989,7 @@ int CUnknown10077990::sub_10077990()
 // END FUNCTION
 
 // FUNCTION: 0x100779b0 size=0xd
+#include "CUnknown100779b0.h"
 void CUnknown100779b0::sub_100779b0(int value)
 {
 	m_unk330 = value;
@@ -18442,6 +19012,7 @@ const char *__cdecl sub_100779d0(int type)
 // END FUNCTION
 
 // FUNCTION: 0x10077a50 size=0x4e
+#include "utlrbtree.h"
 #include "CUnknown10077430.h"
 void CUnknown10077430::sub_10077a50(int index)
 {
@@ -18489,6 +19060,7 @@ CUnknown10073ae0 *CUnknown10077b30::sub_10077b30(int index, const char *name)
 // END FUNCTION
 
 // FUNCTION: 0x10077db0 size=0x9f
+#include "vampire_all.h"
 #include "CUnknown10077db0.h"
 
 extern "C" int __cdecl _strcmpi(const char *, const char *);
@@ -18543,6 +19115,7 @@ float CTableFields10077ac0::sub_10077e80(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x100784b0 size=0xd
+#include "CUnknown10077730.h"
 void CUnknown10077730::sub_100784b0(float value)
 {
 	m_flSequenceDuration = value;
@@ -18558,6 +19131,7 @@ int CUnknown10078520::sub_10078520()
 // END FUNCTION
 
 // FUNCTION: 0x10078540 size=0xd
+#include "CUnknown10078540.h"
 void CUnknown10078540::sub_10078540(int value)
 {
 	m_unk334 = value;
@@ -18573,6 +19147,7 @@ int CUnknown10078560::sub_10078560()
 // END FUNCTION
 
 // FUNCTION: 0x10078580 size=0xd
+#include "CUnknown10078540.h"
 void CUnknown10078540::sub_10078580(int value)
 {
 	m_unk338 = value;
@@ -18608,6 +19183,7 @@ int CUnknown100785d0::sub_100785d0()
 // END FUNCTION
 
 // FUNCTION: 0x100785f0 size=0xd
+#include "CUnknown10078540.h"
 void CUnknown10078540::sub_100785f0(int value)
 {
 	m_unk194 = value;
@@ -18661,6 +19237,7 @@ int CUnk10078650::sub_10078650(int i)
 // END FUNCTION
 
 // FUNCTION: 0x100787f0 size=0x4f
+#include "CUnknown10078540.h"
 #include <string.h>
 struct CRampView10078540 { char pad0[0x19c]; char *m_pSamples; char pad1a0[8]; int m_nSamples; };
 namespace block_100787f0 {
@@ -19088,6 +19665,7 @@ int CUnknown100792a0::sub_100792a0()
 // END FUNCTION
 
 // FUNCTION: 0x100792c0 size=0xa
+#include "CUnknown100792c0.h"
 void CUnknown100792c0::sub_100792c0(int value)
 {
 	m_unk8 = value;
@@ -19095,6 +19673,7 @@ void CUnknown100792c0::sub_100792c0(int value)
 // END FUNCTION
 
 // FUNCTION: 0x100792e0 size=0xa
+#include "CUnknown100792c0.h"
 void CUnknown100792c0::sub_100792e0(int value)
 {
 	m_unk4 = value;
@@ -19320,6 +19899,7 @@ void SceneView::sub_100799b0()
 // END FUNCTION
 
 // FUNCTION: 0x10079b70 size=0xd
+#include "CUnknown10079b70.h"
 void CUnknown10079b70::sub_10079b70(int value)
 {
 	m_unkA4 = value;
@@ -19427,6 +20007,8 @@ void SDumpOutput::sub_10079de0()
 // END FUNCTION
 
 // FUNCTION: 0x10079e60 size=0xc0
+#include "utlmemory.h"
+#include "utlvector.h"
 #include "CUnknown10075aa0.h"
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
@@ -19488,6 +20070,8 @@ CUnknown10075aa0 * __fastcall sub_10079e60(SceneEventVec *v)
 // END FUNCTION
 
 // FUNCTION: 0x10079f50 size=0xc3
+#include "utlmemory.h"
+#include "utlvector.h"
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
 __declspec(dllimport) void* Plat_Realloc(void* p, int size);
@@ -20068,6 +20652,7 @@ bool CChoreoSaverView::sub_1007bff0(const char *pszFile)
 // END FUNCTION
 
 // FUNCTION: 0x1007c1c0 size=0x84
+#include "CLogicAuto.h"
 #include "CUnknown10078540.h"
 #include "CFlexAnimationTrack.h"
 
@@ -20482,6 +21067,7 @@ void CUnknown1007dfc0::sub_1007dfc0(int v) { a = v; }
 // END FUNCTION
 
 // FUNCTION: 0x1007dfe0 size=0xd
+#include "CUnknown1007dfe0.h"
 void CUnknown1007dfe0::sub_1007dfe0(int value)
 {
 	m_unkA0 = value;
@@ -20524,6 +21110,8 @@ int S1007e050::sub_1007e050(int value)
 // END FUNCTION
 
 // FUNCTION: 0x1007e090 size=0x135
+#include "utlrbtree.h"
+#include "utlvector.h"
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 
 struct S1007f580 {
@@ -20608,6 +21196,7 @@ void CChoreoScene1007e220::sub_1007e290(CChoreoSceneChannel1007e970 *pChannel)
 // END FUNCTION
 
 // FUNCTION: 0x1007e320 size=0xbe
+#include "utlrbtree.h"
 #include "CUnknown1007e320.h"
 #include "utlvector.h"
 
@@ -20635,6 +21224,7 @@ void List1007e320::sub_1007e320(Elem1007e320 *pElem)
 // END FUNCTION
 
 // FUNCTION: 0x1007e410 size=0xbe
+#include "utlrbtree.h"
 #include "CUnknown1007e320.h"
 #include "utlvector.h"
 
@@ -20662,6 +21252,7 @@ void List1007e410::sub_1007e410(Elem1007e410 *pElem)
 // END FUNCTION
 
 // FUNCTION: 0x1007e500 size=0x57
+#include "utlrbtree.h"
 #include "CUnknown1007ce20.h"
 #include "utlvector.h"
 void operator delete(void *);
@@ -20966,6 +21557,7 @@ done:
 // END FUNCTION
 
 // FUNCTION: 0x1007ecf0 size=0xd
+#include "CUnknown1007ecf0.h"
 void CUnknown1007ecf0::sub_1007ecf0(char value)
 {
 	m_unk12c = value;
@@ -20989,6 +21581,7 @@ int CUnknown1007ed30::sub_1007ed30()
 // END FUNCTION
 
 // FUNCTION: 0x1007ed50 size=0xd
+#include "CUnknown1007ecf0.h"
 void CUnknown1007ecf0::sub_1007ed50(int value)
 {
 	m_unk130 = value;
@@ -21004,6 +21597,7 @@ char CUnknown1007ed70::sub_1007ed70()
 // END FUNCTION
 
 // FUNCTION: 0x1007ed90 size=0xd
+#include "CUnknown1007ed90.h"
 void CUnknown1007ed90::sub_1007ed90(char value)
 {
 	m_bFlag12d = value;
@@ -21311,6 +21905,14 @@ void UtlVec12::sub_1007f750(int elem, int num)
 // END FUNCTION
 
 // FUNCTION: 0x1007f8c0 size=0x2ef
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree16.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlrbtree.h"
 #include "CUtlRBTree24.h"
 
 // TARGET: CUtlRBTree24::sub_1007f8c0
@@ -21392,6 +21994,13 @@ void CUtlRBTree24::sub_1007f8c0(int elem, int parent, bool isLeft)
 // END FUNCTION
 
 // FUNCTION: 0x1007fc70 size=0x4f
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree16.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
 #include "CUtlRBTree24.h"
 #include "utlrbtree.h"
 struct CRBEntry24 {
@@ -21510,6 +22119,7 @@ void CUtlRBTree24::sub_1007ffc0(int elem)
 // END FUNCTION
 
 // FUNCTION: 0x100802e0 size=0x43
+#include "CBaseEntity.h"
 #include "CSceneEntity.h"
 void *sub_100aa720(int size);
 extern char g_10548ca8[];
@@ -21529,6 +22139,7 @@ extern "C" CBaseEntity *logic_choreographed_scene()
 // END FUNCTION
 
 // FUNCTION: 0x10080350 size=0x43
+#include "CBaseEntity.h"
 #include "CSceneEntity.h"
 void *sub_100aa720(int size);
 extern char g_10548cc8[];
@@ -21629,6 +22240,7 @@ void * CUnknown10080730::sub_10080730()
 // END FUNCTION
 
 // FUNCTION: 0x10080750 size=0xa
+#include "CUnknown10080750.h"
 void CUnknown10080750::sub_10080750(int value)
 {
 	m_unk4 = value;
@@ -21668,6 +22280,7 @@ void CSceneEntity::sub_100809f0()
 // END FUNCTION
 
 // FUNCTION: 0x10080ac0 size=0x2f
+#include "CSceneEntity.h"
 // TARGET: CSceneEntity::sub_10080ac0
 #include "ConVar.h"
 
@@ -21684,6 +22297,14 @@ float CSceneEntity::sub_10080ac0() {
 // END FUNCTION
 
 // FUNCTION: 0x10080b00 size=0x143
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CSceneEntity.h"
 #include "ScopeTrace.h"
 #include <string.h>
@@ -21812,6 +22433,7 @@ void sub_10081190(const char *pszFormat, ...)
 // END FUNCTION
 
 // FUNCTION: 0x10081890 size=0x2d
+#include "CBaseEntity.h"
 #include "CBasePlayer.h"
 
 struct EntInfo {
@@ -21888,6 +22510,7 @@ void __fastcall sub_10081e50(CSlots *self, int, int)
 // END FUNCTION
 
 // FUNCTION: 0x10081e70 size=0xb
+#include "CUnknown10081e70.h"
 void CUnknown10081e70::sub_10081e70(int unused)
 {
 	vfunc244();
@@ -21927,6 +22550,7 @@ void __fastcall sub_10081eb0(CSlots *self, int, int)
 // END FUNCTION
 
 // FUNCTION: 0x100821f0 size=0x169
+#include "CSceneEntity.h"
 #include "CBaseAnimating.h"
 #include "CEntityVSlots.h"
 #include "CUnknown1007a2c0.h"
@@ -22056,6 +22680,8 @@ char sub_10082520(CBaseEntity *pEnt, CSceneView82520 *pScene)
 // END FUNCTION
 
 // FUNCTION: 0x100826b0 size=0x1ae
+#include "utlrbtree.h"
+#include "utlsortvector.h"
 #include "CGlobalEntityList.h"
 #include "CBaseEntity.h"
 #include "CSceneEntity.h"
@@ -22206,6 +22832,7 @@ void CSceneEntity::sub_10082db0()
 // END FUNCTION
 
 // FUNCTION: 0x10082e40 size=0xe
+#include "CUnknown10082e40.h"
 bool CUnknown10082e40::sub_10082e40()
 {
 	return m_unk4bc != 0;
@@ -22340,6 +22967,7 @@ void CSceneEntity::sub_10084170(void *pScene)
 // END FUNCTION
 
 // FUNCTION: 0x10084260 size=0x114
+#include "CUnknown1007ce20.h"
 #include "CSceneEntity.h"
 #include "CUnknown1007a2c0.h"
 #include "CBaseAnimating.h"
@@ -22494,6 +23122,7 @@ void CSceneEntity::sub_100843d0(void *pSceneArg)
 // END FUNCTION
 
 // FUNCTION: 0x100845a0 size=0xd4
+#include "CBaseEntity.h"
 #include "CSceneEntity.h"
 #include "CUnknown1007a2c0.h"
 #include "CEntityVSlots.h"
@@ -23138,6 +23767,7 @@ void sub_10086220()
 // END FUNCTION
 
 // FUNCTION: 0x10086e50 size=0x9b
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 extern CGlobalEntityList g_106eb5d8;
 extern char g_10538764[];
@@ -23345,6 +23975,7 @@ void sub_10087d10()
 // END FUNCTION
 
 // FUNCTION: 0x10087de0 size=0x4c
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 
 extern CGlobalEntityList g_106eb5d8;
@@ -23736,6 +24367,7 @@ void sub_100891c0()
 // END FUNCTION
 
 // FUNCTION: 0x100892e0 size=0x8b
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 #include "CAI_BaseNPC.h"
 extern CGlobalEntityList g_106eb5d8;
@@ -23790,6 +24422,7 @@ void sub_10089430()
 // END FUNCTION
 
 // FUNCTION: 0x10089550 size=0xb0
+#include "CBasePlayer.h"
 #include "IVEngineServer.h"
 #include "CGlobalEntityList.h"
 extern "C" int __cdecl atoi(const char *);
@@ -24214,6 +24847,14 @@ int sub_1008a8b0()
 // END FUNCTION
 
 // FUNCTION: 0x1008b230 size=0x106
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "CUtlMemory60.h"
 #include "ScopeTrace.h"
@@ -24443,6 +25084,15 @@ bool CBaseAnimating::sub_1008be20(CBaseEntity *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x1008bf00 size=0xa8
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CEHandleGet.h"
 
@@ -24454,6 +25104,7 @@ CBaseEntity *__fastcall sub_1008bf00(CBaseEntity *pThis)
 // END FUNCTION
 
 // FUNCTION: 0x1008cfc0 size=0xed
+#include "CLogicAuto.h"
 #include "CBaseAnimating.h"
 #include <stdio.h>
 
@@ -24590,6 +25241,14 @@ void CBaseAnimating::sub_1008d230(float rate)
 // END FUNCTION
 
 // FUNCTION: 0x1008d320 size=0xe6
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseAnimating.h"
 
@@ -24740,6 +25399,14 @@ int CBaseAnimating::sub_1008d7c0(int a, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x1008d8b0 size=0xa3
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
 
@@ -24759,6 +25426,14 @@ void CBaseAnimating::sub_1008d8b0(inputdata_t *pInput)
 // END FUNCTION
 
 // FUNCTION: 0x1008d990 size=0xf0
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseAnimating.h"
 
@@ -24965,6 +25640,14 @@ clear:
 // END FUNCTION
 
 // FUNCTION: 0x1008eec0 size=0x1dd
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "CEntityVSlots.h"
 #include "matrix3x4_t.h"
@@ -25090,6 +25773,14 @@ int CBaseAnimating::sub_1008f6c0(int activity)
 // END FUNCTION
 
 // FUNCTION: 0x1008f7b0 size=0xf5
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseAnimating.h"
 #include "StudioHdr.h"
@@ -25119,6 +25810,14 @@ int CBaseAnimating::sub_1008f7b0(const char *pszLabel)
 // END FUNCTION
 
 // FUNCTION: 0x1008fab0 size=0xe1
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
 
@@ -25136,6 +25835,14 @@ float CBaseAnimating::sub_1008fab0(int sequence)
 // END FUNCTION
 
 // FUNCTION: 0x1008fbe0 size=0xb5
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
 
@@ -25200,6 +25907,14 @@ const char *CBaseAnimating::sub_1008ff50(int sequence)
 // END FUNCTION
 
 // FUNCTION: 0x10090020 size=0x10a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
 #include "StudioHdr.h"
@@ -25326,6 +26041,14 @@ void CBaseAnimating::sub_10090890(float delay)
 // END FUNCTION
 
 // FUNCTION: 0x10090950 size=0x170
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
 #include "CEHandleGet.h"
@@ -25494,6 +26217,14 @@ float CBaseAnimating::sub_10091230(int sequence)
 // END FUNCTION
 
 // FUNCTION: 0x10091310 size=0xba
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
 extern float g_104454c4;
@@ -25626,6 +26357,14 @@ int CBaseAnimating::sub_10092270(const char *name)
 // END FUNCTION
 
 // FUNCTION: 0x10092380 size=0xa4
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
 
@@ -25642,6 +26381,14 @@ bool CBaseAnimating::sub_10092380(int sequence, const char *name)
 // END FUNCTION
 
 // FUNCTION: 0x10092460 size=0xbb
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
 
@@ -25659,6 +26406,14 @@ bool CBaseAnimating::sub_10092460(int sequence, int node)
 // END FUNCTION
 
 // FUNCTION: 0x10092550 size=0x8d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
 
@@ -25692,6 +26447,14 @@ void CBaseAnimating::sub_10092610(int a, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x100926e0 size=0xcb
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
 
@@ -25803,6 +26566,14 @@ int CBaseAnimating::sub_10092e20(int a, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x10092ef0 size=0xca
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "CEntityVSlots.h"
 #include "ScopeTrace.h"
@@ -25844,6 +26615,14 @@ char CBaseAnimating::sub_100931d0(int a, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x100932a0 size=0xc7
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
 
@@ -25865,6 +26644,14 @@ char CBaseAnimating::sub_100932a0(int attachment, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x100933b0 size=0xea
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
 
@@ -26053,6 +26840,14 @@ int CBaseAnimating::sub_10093be0(int a)
 // END FUNCTION
 
 // FUNCTION: 0x10093cb0 size=0x8d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
 
@@ -26067,6 +26862,14 @@ int CBaseAnimating::sub_10093cb0(int group)
 // END FUNCTION
 
 // FUNCTION: 0x10093d70 size=0x8d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
 
@@ -26081,6 +26884,14 @@ int CBaseAnimating::sub_10093d70(const char *pszName)
 // END FUNCTION
 
 // FUNCTION: 0x10093e30 size=0x8d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
 
@@ -26127,6 +26938,14 @@ int CBaseAnimating::sub_10093ef0()
 // END FUNCTION
 
 // FUNCTION: 0x10093fb0 size=0xe0
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
 extern char g_1054fe04[];
@@ -26180,6 +26999,14 @@ int CFakeEnt::sub_10094370(int a)
 // END FUNCTION
 
 // FUNCTION: 0x10094410 size=0xc8
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
 extern void (__cdecl *g_109f3628)(const char *fmt, ...);
@@ -26335,6 +27162,14 @@ int CBaseAnimating::sub_10094790(int index)
 // END FUNCTION
 
 // FUNCTION: 0x100949e0 size=0x135
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "Vector.h"
 #include "CBaseAnimating.h"
@@ -26367,6 +27202,14 @@ float CBaseAnimating::sub_100949e0(float flInterval)
 // END FUNCTION
 
 // FUNCTION: 0x10094b70 size=0x1c9
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "CEntityVSlots.h"
 #include "ScopeTrace.h"
@@ -26432,6 +27275,14 @@ float CBaseAnimating::sub_10094dc0(float flCycle)
 // END FUNCTION
 
 // FUNCTION: 0x10094eb0 size=0x121
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "QAngle.h"
 #include "ScopeTrace.h"
@@ -26508,6 +27359,14 @@ void *CBaseAnimating::sub_100952d0(int idx)
 // END FUNCTION
 
 // FUNCTION: 0x10095460 size=0x109
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
 extern char g_10550100[];
@@ -26543,6 +27402,14 @@ int CBaseAnimating::sub_10095460()
 // END FUNCTION
 
 // FUNCTION: 0x100955c0 size=0xd6
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
 #define AV(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
@@ -26762,6 +27629,14 @@ int __fastcall sub_10096600(char *self)
 // END FUNCTION
 
 // FUNCTION: 0x100966a0 size=0x8d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
 
@@ -26975,6 +27850,14 @@ bool CBaseAnimating::sub_10097200(const char *name, int *pSet, int *pHitbox)
 // END FUNCTION
 
 // FUNCTION: 0x10097480 size=0x1de
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "CEntityVSlots.h"
 #include "ScopeTrace.h"
@@ -27140,6 +28023,7 @@ CUtlMemory60 *CUtlMemory60::sub_10097b00(int growSize, int allocationCount)
 // END FUNCTION
 
 // FUNCTION: 0x10097bd0 size=0x7e
+#include "CGlobalEntityList.h"
 #include "CBaseTransmitProxy.h"
 struct S_sub { void sub_1000fe7f(int); };
 extern CGlobalEntityList *g_10566458;
@@ -27238,6 +28122,7 @@ int sub_10097e50()
 // END FUNCTION
 
 // FUNCTION: 0x10098810 size=0xb
+#include "CUnknown10098810.h"
 CUnknown10098810 *CUnknown10098810::sub_10098810()
 {
 	m_unk14 = 0;
@@ -27560,6 +28445,9 @@ char __fastcall sub_100993c0(void *pSelf, int unused, int index)
 // END FUNCTION
 
 // FUNCTION: 0x10099b00 size=0xe8
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CUnknown10099b00.h"
 #include "CBaseEntity.h"
 #include "CEHandleGet.h"
@@ -27679,6 +28567,14 @@ int sub_10099d40(SEntV137 *ent, int value)
 // END FUNCTION
 
 // FUNCTION: 0x10099e00 size=0xd9
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include <math.h>
 #include "CEntityVSlots.h"
 #include "ScopeTrace.h"
@@ -27920,6 +28816,14 @@ void sub_1009af20()
 // END FUNCTION
 
 // FUNCTION: 0x1009b060 size=0x11f
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
 #include "CCollisionProperty.h"
@@ -27944,6 +28848,7 @@ void CBaseEntity::sub_1009b060(const Vector &vecExtents)
 // END FUNCTION
 
 // FUNCTION: 0x1009b440 size=0x83
+#include "CBaseEntity.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
 extern int *g_109f3680;
@@ -28020,6 +28925,7 @@ void CBaseEntity::sub_1009b700(int a, int b, const char *c)
 // END FUNCTION
 
 // FUNCTION: 0x1009b7d0 size=0xa0
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -28066,6 +28972,7 @@ void CBaseEntity::sub_1009b8a0(int a, int b, char value)
 // END FUNCTION
 
 // FUNCTION: 0x1009b980 size=0xa2
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -28110,6 +29017,7 @@ void CBaseEntity::sub_1009ba60(int a, char *text, int value)
 // END FUNCTION
 
 // FUNCTION: 0x1009bb40 size=0xbf
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -28230,6 +29138,7 @@ void CBaseEntity::sub_1009be00(int a, int b, float x, float y, float z)
 // END FUNCTION
 
 // FUNCTION: 0x1009bef0 size=0xc7
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -28258,6 +29167,7 @@ void CBaseEntity::sub_1009bef0(int a, int b, CBaseEntityColor32 color)
 // END FUNCTION
 
 // FUNCTION: 0x1009c000 size=0xc9
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
@@ -28297,6 +29207,7 @@ void CBaseEntity::sub_1009c000(int a, int b, unsigned int hEntity)
 // END FUNCTION
 
 // FUNCTION: 0x1009c110 size=0x96
+#include "CBaseEntity.h"
 extern int *g_109f3680;
 extern int *g_109f3620;
 
@@ -28313,6 +29224,7 @@ void CBaseEntity::sub_1009c110(int a, int b, CBaseEntity *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x1009c1e0 size=0xb2
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -28337,6 +29249,7 @@ void CBaseEntity::sub_1009c1e0(int a, int b, int *pSerial)
 // END FUNCTION
 
 // FUNCTION: 0x1009c2d0 size=0x88
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
 extern int *g_109f3680;
@@ -28438,6 +29351,7 @@ void CBaseEntity::sub_1009c5f0(int a, const char *fmt, const int *array, int cou
 // END FUNCTION
 
 // FUNCTION: 0x1009c720 size=0xe9
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
 extern int *g_109f3680;
@@ -28736,6 +29650,7 @@ void CBaseEntity::sub_1009ef50(int index)
 // END FUNCTION
 
 // FUNCTION: 0x1009f200 size=0x85
+#include "CBaseEntity.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
 extern int *g_109f3680;
@@ -28778,6 +29693,7 @@ void __fastcall sub_1009f380(char *self, int dummy, const int *v)
 // END FUNCTION
 
 // FUNCTION: 0x1009f3c0 size=0xdf
+#include "CBaseEntity.h"
 extern int *g_109f3680;
 extern const char **g_109f3620;
 extern const char g_105387dc[];
@@ -28869,6 +29785,15 @@ void CBaseEntity::sub_100a0420(const char *name)
 // END FUNCTION
 
 // FUNCTION: 0x100a04e0 size=0x13b
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CGlobalEntityList.h"
 #include "ScopeTrace.h"
 
@@ -28939,6 +29864,15 @@ void CBaseEntity::sub_100a0b20()
 // END FUNCTION
 
 // FUNCTION: 0x100a1250 size=0xd0
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CEntityVSlots.h"
 #include "ScopeTrace.h"
 
@@ -29043,6 +29977,14 @@ void CBaseEntity::sub_100a4930()
 // END FUNCTION
 
 // FUNCTION: 0x100a52a0 size=0xe5
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CUnknown100a8220.h"
 #include "ScopeTrace.h"
@@ -29064,6 +30006,7 @@ bool CBaseEntity::sub_100a52a0()
 // END FUNCTION
 
 // FUNCTION: 0x100a53d0 size=0x92
+#include "CBaseEntity.h"
 struct ScopeEntry {
 	const char *fn;
 	const char *name;
@@ -29094,6 +30037,14 @@ void CBaseEntity::sub_100a53d0(int a)
 // END FUNCTION
 
 // FUNCTION: 0x100a54a0 size=0xc2
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "Quaternion.h"
 
@@ -29155,6 +30106,14 @@ bool CBaseEntity::sub_100a5ad0()
 // END FUNCTION
 
 // FUNCTION: 0x100a5bb0 size=0x167
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CCollisionProperty.h"
 #include "CGlobalEntityList.h"
@@ -29223,6 +30182,14 @@ void *CBaseEntity::sub_100a5bb0()
 // END FUNCTION
 
 // FUNCTION: 0x100a5d80 size=0xe0
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
 
@@ -29246,6 +30213,15 @@ int sub_100a5d80(CBaseEntity *pEntity, int a2, int a3, int a4, int a5)
 // END FUNCTION
 
 // FUNCTION: 0x100a5ea0 size=0x211
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "IPhysicsObject.h"
 #include "ScopeTrace.h"
 #include "CCollisionProperty.h"
 #include "CEntityVSlots.h"
@@ -29287,6 +30263,14 @@ void *CBaseEntity::sub_100a5ea0(int solidType, int solidFlags, int createAsleep,
 // END FUNCTION
 
 // FUNCTION: 0x100a6150 size=0x284
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CCollisionProperty.h"
 #include "IPhysicsObject.h"
@@ -29357,6 +30341,7 @@ int CBaseEntity::sub_100a6150(int a, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x100a6490 size=0xc3
+#include "CBaseEntity.h"
 extern int *g_109f3680;
 extern const char **g_109f3620;
 extern const char g_105387dc[];
@@ -29497,6 +30482,7 @@ bool CBaseEntity::sub_100a7bd0(CBaseEntity *pActivator)
 // END FUNCTION
 
 // FUNCTION: 0x100a7d00 size=0xa2
+#include "CBaseEntity.h"
 #define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
@@ -29529,6 +30515,14 @@ void CBaseEntity::sub_100a7d00(int info, int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x100a8060 size=0x154
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CCollisionProperty.h"
 #include "ScopeTrace.h"
@@ -29557,6 +30551,7 @@ void CBaseEntity::sub_100a8060()
 // END FUNCTION
 
 // FUNCTION: 0x100a8220 size=0xa
+#include "CUnknown100a8220.h"
 unsigned int CUnknown100a8220::sub_100a8220()
 {
 	return m_nFlags & 2;
@@ -29577,6 +30572,7 @@ CBaseEntity *CUnknown100a8340::sub_100a8240()
 // END FUNCTION
 
 // FUNCTION: 0x100a82c0 size=0x59
+#include "CBaseEntity.h"
 CBaseEntity *CBaseEntity::sub_100a82c0()
 {
 	if (gpGlobals->curtime > m_flD8) {
@@ -29603,6 +30599,7 @@ void CUnknown100a8340::sub_100a8340(CBaseEntity *pEnt, float flTime)
 // END FUNCTION
 
 // FUNCTION: 0x100a8390 size=0x4e
+#include "CBaseEntity.h"
 void CBaseEntity::sub_100a8390(CBaseEntity *pEnt, float flDelay)
 {
 	m_hD0 = pEnt;
@@ -29612,6 +30609,7 @@ void CBaseEntity::sub_100a8390(CBaseEntity *pEnt, float flDelay)
 // END FUNCTION
 
 // FUNCTION: 0x100a8bf0 size=0x7c
+#include "CBaseEntity.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
 extern int *g_109f3680;
@@ -29636,6 +30634,7 @@ void CBaseEntity::sub_100a8bf0(int a)
 // END FUNCTION
 
 // FUNCTION: 0x100a8c90 size=0x7c
+#include "CBaseEntity.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern TraceEnt *g_109f3620;
@@ -29683,6 +30682,7 @@ void CBaseEntity::sub_100a8d30(CBaseEntity *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x100a8fc0 size=0x83
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -29740,6 +30740,7 @@ bool __fastcall sub_100a91f0(char *self)
 // END FUNCTION
 
 // FUNCTION: 0x100a9290 size=0x7e
+#include "CBaseEntity.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern TraceEnt *g_109f3620;
@@ -29803,6 +30804,7 @@ bool __fastcall sub_100a93d0(char *self)
 // END FUNCTION
 
 // FUNCTION: 0x100a9470 size=0x7e
+#include "CBaseEntity.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
 extern int *g_109f3680;
@@ -29827,6 +30829,7 @@ void CBaseEntity::sub_100a9470(char value)
 // END FUNCTION
 
 // FUNCTION: 0x100a98f0 size=0xa7
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -29851,6 +30854,14 @@ int CBaseEntity::sub_100a98f0(int useType, int currentState)
 // END FUNCTION
 
 // FUNCTION: 0x100a99d0 size=0xa1
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "ScopeTrace.h"
 
@@ -29901,6 +30912,14 @@ CEntityVSlots *sub_100a9ab0(const char *pszClassName, const float *pOrigin, cons
 // END FUNCTION
 
 // FUNCTION: 0x100a9d70 size=0xf2
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CCollisionProperty.h"
 #include "ScopeTrace.h"
 
@@ -29982,6 +31001,13 @@ int CBaseEntity::sub_100aa5c0(CRestore *pRestore, int map)
 // END FUNCTION
 
 // FUNCTION: 0x100aa720 size=0x6a
+#include "CBaseLandmark.h"
+#include "CBreakableSurface.h"
+#include "CLogicAuto.h"
+#include "CLogicalEntity.h"
+#include "CPlatTrigger.h"
+#include "CPlayerPickupController.h"
+#include "CPointEntity.h"
 struct TScope {
 	const char *name;
 	void *a;
@@ -30031,6 +31057,7 @@ void sub_100aa7b0(void *p)
 // END FUNCTION
 
 // FUNCTION: 0x100aaa40 size=0x97
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -30128,6 +31155,14 @@ int sub_100ab250(CUnknown100ab250 *p)
 // END FUNCTION
 
 // FUNCTION: 0x100ab5c0 size=0x2f2
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CVariantCopy.h"
 #include "CUnknown10738964.h"
@@ -30167,6 +31202,14 @@ void CBaseEntity::sub_100ab5c0(const char *szInputName, CBaseEntity *pActivator,
 // END FUNCTION
 
 // FUNCTION: 0x100ab980 size=0x1ee
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CEventAction.h"
 #include "ScopeTrace.h"
@@ -30198,6 +31241,7 @@ void CBaseEntity::sub_100ab980(CEventAction *pAction)
 // END FUNCTION
 
 // FUNCTION: 0x100abbf0 size=0x71
+#include "CBaseEntity.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
 extern int *g_109f3680;
@@ -30221,6 +31265,7 @@ void CBaseEntity::sub_100abbf0(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x100ac250 size=0xcd
+#include "CBaseEntity.h"
 #include <string.h>
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
@@ -30257,6 +31302,14 @@ int CBaseEntity::sub_100ac250(const char *context)
 // END FUNCTION
 
 // FUNCTION: 0x100ac4e0 size=0xe2
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "ScopeTrace.h"
 
@@ -30316,6 +31369,7 @@ void __fastcall sub_100ac610(CBaseEntity *self, int, float thinkTime, const char
 // END FUNCTION
 
 // FUNCTION: 0x100ac720 size=0xb1
+#include "CBaseEntity.h"
 struct ScopeEntry_t { const char *m_pszName; const char *m_pszEnt; const char *m_pszExtra; };
 extern ScopeEntry_t *g_109f3620;
 extern int *g_109f3680;
@@ -30352,6 +31406,7 @@ float CBaseEntity::sub_100ac720(const char *context)
 // END FUNCTION
 
 // FUNCTION: 0x100ac810 size=0xd0
+#include "CBaseEntity.h"
 #include "inputdata_t.h"
 
 struct ScopeEntry { const char *a; const char *b; const char *c; };
@@ -30394,6 +31449,7 @@ void CBaseEntity::sub_100ac810(inputdata_t *pInput)
 // END FUNCTION
 
 // FUNCTION: 0x100ac920 size=0x95
+#include "CBaseEntity.h"
 #include "inputdata_t.h"
 
 struct ScopeEntry { const char *a; const char *b; const char *c; };
@@ -30452,6 +31508,14 @@ void CBaseEntity::sub_100ac9f0(inputdata_t *pInput)
 // END FUNCTION
 
 // FUNCTION: 0x100acc20 size=0xd3
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "inputdata_t.h"
 #include "ScopeTrace.h"
@@ -30515,6 +31579,7 @@ void CBaseEntity::sub_100acd40(inputdata_t *pInput)
 // END FUNCTION
 
 // FUNCTION: 0x100acef0 size=0x7c
+#include "CBaseEntity.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
 extern int *g_109f3680;
@@ -30559,6 +31624,14 @@ void __fastcall sub_100ad100(CBaseEntity *self, int, int a)
 // END FUNCTION
 
 // FUNCTION: 0x100ad320 size=0xf2
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "ScopeTrace.h"
 
@@ -30626,6 +31699,7 @@ void CBaseEntity::sub_100adf10(const float *mins, const float *maxs)
 // END FUNCTION
 
 // FUNCTION: 0x100adfd0 size=0x84
+#include "CBaseEntity.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
 extern int *g_109f3680;
@@ -30658,6 +31732,7 @@ int CBaseEntity::sub_100adfd0(const char *name)
 // END FUNCTION
 
 // FUNCTION: 0x100ae090 size=0x83
+#include "CBaseEntity.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
 extern int *g_109f3680;
@@ -30711,6 +31786,14 @@ void CBaseEntity::sub_100ae150()
 // END FUNCTION
 
 // FUNCTION: 0x100ae1f0 size=0xe1
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "ScopeTrace.h"
 extern "C" int __cdecl _strcmpi(const char *, const char *);
@@ -30852,6 +31935,16 @@ void sub_100ae7e0()
 // END FUNCTION
 
 // FUNCTION: 0x100aeb50 size=0x6e
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 
 class CBasePlayer;
@@ -30891,6 +31984,14 @@ void sub_100aec70()
 // END FUNCTION
 
 // FUNCTION: 0x100afa60 size=0x75
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
@@ -30911,6 +32012,14 @@ void sub_100afa60()
 // END FUNCTION
 
 // FUNCTION: 0x100afe70 size=0x6f
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 
 struct CEntBreakTarget { char m_pad[0xa8]; int m_pObj; };
@@ -31063,6 +32172,14 @@ void sub_100b0850()
 // END FUNCTION
 
 // FUNCTION: 0x100b0980 size=0x86
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CTakeDamageInfo.h"
 
@@ -31148,6 +32265,14 @@ void sub_100b0c00()
 // END FUNCTION
 
 // FUNCTION: 0x100b0df0 size=0xa4
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "IVEngineServer.h"
 #include "ScopeTrace.h"
 struct CUnk100b0df0_Target
@@ -31251,6 +32376,16 @@ int CBaseEntity::sub_100b1a00()
 // END FUNCTION
 
 // FUNCTION: 0x100b1d10 size=0x15d
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "Vector.h"
 #include "ScopeTrace.h"
 #include "CEHandleGet.h"
 
@@ -31307,6 +32442,14 @@ void CBaseEntity::sub_100b1d10()
 // END FUNCTION
 
 // FUNCTION: 0x100b1ed0 size=0xf9
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
 
@@ -31344,6 +32487,14 @@ void CBaseEntity::sub_100b1ed0(const float *pLocal, float *pAbs)
 // END FUNCTION
 
 // FUNCTION: 0x100b2010 size=0xf9
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
 
@@ -31381,6 +32532,14 @@ void CBaseEntity::sub_100b2010(const float *pIn, float *pOut)
 // END FUNCTION
 
 // FUNCTION: 0x100b2150 size=0x14e
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CBaseAnimating.h"
 #include "CGlobalEntityList.h"
@@ -31430,6 +32589,16 @@ float *CBaseEntity::sub_100b2150(float *pOut)
 // END FUNCTION
 
 // FUNCTION: 0x100b2770 size=0x185
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "Vector.h"
 #include "ScopeTrace.h"
 #include "CEHandleGet.h"
 
@@ -31466,6 +32635,16 @@ void CBaseEntity::sub_100b2770(const Vector &vecAbsVelocity)
 // END FUNCTION
 
 // FUNCTION: 0x100b2aa0 size=0xf3
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "Vector.h"
 #include "ScopeTrace.h"
 
 extern Vector g_1070d1b0;
@@ -31500,6 +32679,14 @@ void CBaseEntity::sub_100b2aa0(const Vector &inVecImpulse)
 // END FUNCTION
 
 // FUNCTION: 0x100b2e30 size=0xd6
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "ScopeTrace.h"
 
@@ -31517,6 +32704,14 @@ void CBaseEntity::sub_100b2e30(const float *pVel)
 // END FUNCTION
 
 // FUNCTION: 0x100b2f50 size=0xd6
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "ScopeTrace.h"
 
@@ -31534,6 +32729,7 @@ void CBaseEntity::sub_100b2f50(const float *pVel)
 // END FUNCTION
 
 // FUNCTION: 0x100b3350 size=0xf9
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -31577,6 +32773,15 @@ bool CBaseEntity::sub_100b3350()
 // END FUNCTION
 
 // FUNCTION: 0x100b3490 size=0xba
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CEntityVSlots.h"
 
@@ -31644,6 +32849,7 @@ void CBaseEntity::sub_100b3640(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x100b3700 size=0x79
+#include "CBaseEntity.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern TraceEnt *g_109f3620;
@@ -31670,6 +32876,7 @@ int CBaseEntity::sub_100b3700()
 // END FUNCTION
 
 // FUNCTION: 0x100b37a0 size=0x7c
+#include "CBaseEntity.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern TraceEnt *g_109f3620;
@@ -31762,6 +32969,7 @@ int __fastcall sub_100b39c0(char *self)
 // END FUNCTION
 
 // FUNCTION: 0x100b3a60 size=0x7c
+#include "CBaseEntity.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
 extern int *g_109f3680;
@@ -31786,6 +32994,7 @@ void CBaseEntity::sub_100b3a60()
 // END FUNCTION
 
 // FUNCTION: 0x100b3b00 size=0x6f
+#include "CBaseEntity.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
 extern int *g_109f3680;
@@ -31847,6 +33056,14 @@ void CBaseEntity::sub_100b3c50(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x100b3ee0 size=0xe4
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
 #include "CGlobalEntityList.h"
@@ -31878,6 +33095,15 @@ void CBaseEntity::sub_100b3ee0()
 // END FUNCTION
 
 // FUNCTION: 0x100b4010 size=0xa8
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CEHandleGet.h"
 
@@ -31889,6 +33115,7 @@ CBaseEntity *__fastcall sub_100b4010(CBaseEntity *pThis)
 // END FUNCTION
 
 // FUNCTION: 0x100b40f0 size=0x71
+#include "CBaseEntity.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern TraceEnt *g_109f3620;
@@ -32047,6 +33274,7 @@ void CUtlVector16::sub_100b4800(int num)
 // END FUNCTION
 
 // FUNCTION: 0x100b48c0 size=0x3a
+#include "vampire_all.h"
 #include "CUtlVector16.h"
 
 void CUtlVector16::sub_100b48c0(int elem, int num)
@@ -32243,6 +33471,7 @@ void sub_100b4e80(int v) { g_106cff54 = v; }
 // END FUNCTION
 
 // FUNCTION: 0x100b5110 size=0x5b
+#include "CBaseEntity.h"
 struct SPhysLike5110 {
     virtual void v0();
     virtual void v1();
@@ -32800,6 +34029,7 @@ int CUnknown100b7c40::sub_100b7c40()
 // END FUNCTION
 
 // FUNCTION: 0x100b7c60 size=0xa
+#include "CUnknown100b7c60.h"
 void CUnknown100b7c60::sub_100b7c60(int value)
 {
 	m_unkc = value;
@@ -33131,6 +34361,7 @@ void CUnknown100b9970::sub_100b9970(int index, const int *src)
 // END FUNCTION
 
 // FUNCTION: 0x100b99b0 size=0xd
+#include "CUnknown100b99b0.h"
 void CUnknown100b99b0::sub_100b99b0(char value)
 {
 	m_unk8d4 = value;
@@ -33185,6 +34416,7 @@ int CUnknown100ba090::sub_100ba090(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x100ba120 size=0xd
+#include "CUnknown100ba120.h"
 // TARGET: CUnknown100ba120::sub_100ba120
 void CUnknown100ba120::sub_100ba120(char value)
 {
@@ -33399,6 +34631,7 @@ void CBeam::sub_100bb0b0(const float *pPos)
 // END FUNCTION
 
 // FUNCTION: 0x100bb180 size=0xbc
+#include "CBaseEntity.h"
 struct EntInfo { CBaseEntity *m_pEntity; int m_serial; int m_unused; };
 struct EntInfoList { int m_unused; EntInfo m_entries[1]; };
 extern EntInfoList *g_10566458;
@@ -33548,6 +34781,7 @@ CBeam *sub_100bb6b0(const char *a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x100bb720 size=0x4c
+#include "CBaseEntity.h"
 struct CFoo { void sub_100b4ad0(int *p); };
 CBaseEntity *sub_100b3db0(const char *classname, const char *module, int line);
 
@@ -33915,6 +35149,7 @@ void CUnknown100bc560::sub_100bc560() { a = 0; b = 0; }
 // END FUNCTION
 
 // FUNCTION: 0x100bc580 size=0xa
+#include "CUnknown100bc580.h"
 void CUnknown100bc580::sub_100bc580(char value)
 {
 	m_unk11 = value;
@@ -33930,6 +35165,7 @@ int CUnknown100bc5a0::sub_100bc5a0()
 // END FUNCTION
 
 // FUNCTION: 0x100bc5c0 size=0xa
+#include "CUnknown100bc5c0.h"
 void CUnknown100bc5c0::sub_100bc5c0(int value)
 {
 	m_unk14 = value;
@@ -34329,6 +35565,7 @@ int CUnknown100be020::sub_100be020()
 // END FUNCTION
 
 // FUNCTION: 0x100be040 size=0xa
+#include "CUnknown100be040.h"
 void CUnknown100be040::sub_100be040(int value)
 {
 	m_unk14 = value;
@@ -34834,6 +36071,14 @@ int sub_100bf980()
 // END FUNCTION
 
 // FUNCTION: 0x100c01d0 size=0x1c5
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CFuncRotating.h"
 #include "CPASAttenuationFilter.h"
 #include "ScopeTrace.h"
@@ -35127,6 +36372,7 @@ void CFloatPair3f4::sub_100c0c30(float flUnused)
 // END FUNCTION
 
 // FUNCTION: 0x100c0c60 size=0xd
+#include "CUnknown100c0c60.h"
 void CUnknown100c0c60::sub_100c0c60(float value)
 {
 	value = 0.0f;
@@ -35737,6 +36983,7 @@ CacheEntry *sub_100c46c0(int a, int b, float c, const float *v1, const float *v2
 // END FUNCTION
 
 // FUNCTION: 0x100c47d0 size=0x143
+#include "Vector.h"
 struct Item48 { int d[12]; };
 struct Node { int idx; Item48 item; Node *next; };
 struct Rec { int a; int b; int c; Vector v1; Vector v2; unsigned flags; Node *head; };
@@ -35921,6 +37168,7 @@ float sub_100c5720(int a, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x100c5b00 size=0xb1
+#include "Vector.h"
 struct CBoneOwner { int pad[4]; int m_p; };
 void sub_10011b62(CBoneOwner *p, int idx, Vector *pos, Vector *ang);
 void sub_1013a7e0(Vector *v, float f, Vector *out);
@@ -36042,6 +37290,7 @@ int sub_100c6280(char *pHdr, const char *pszName)
 // END FUNCTION
 
 // FUNCTION: 0x100c6370 size=0x148
+#include "utlrbtree.h"
 #include "utlvector.h"
 
 extern int (*g_109f3868)(int lo, int hi);	// RandomInt
@@ -36621,6 +37870,7 @@ int *sub_100c8490()
 // END FUNCTION
 
 // FUNCTION: 0x100c8660 size=0x43
+#include "CBaseEntity.h"
 #include "CBaseButton.h"
 void *sub_100aa720(int size);
 extern char g_1055cb18[];
@@ -36654,6 +37904,7 @@ void __fastcall sub_100c8a00(char *self, int, int)
 // END FUNCTION
 
 // FUNCTION: 0x100c8a20 size=0x105
+#include "CBaseButton.h"
 #include "CBaseEntity.h"
 #include "CEHandleGet.h"
 
@@ -36675,6 +37926,7 @@ void CBaseButton::sub_100c8a20(CBaseEntity *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x100c9250 size=0x104
+#include "CBaseButton.h"
 #include "CBaseEntity.h"
 #include "CEHandleGet.h"
 
@@ -36701,6 +37953,8 @@ void CBaseButton::sub_100c9250(CBaseEntity *pActivator, CBaseEntity *pCaller, in
 // END FUNCTION
 
 // FUNCTION: 0x100c9430 size=0xec
+#include "CBaseButton.h"
+#include "CBaseEntity.h"
 #include "CEHandleGet.h"
 
 struct CButtonToucherView {
@@ -37109,6 +38363,7 @@ void CMomentaryRotButton::sub_100cae20(float flValue, void *pActivator)
 // END FUNCTION
 
 // FUNCTION: 0x100cae90 size=0xda
+#include "CBaseEntity.h"
 #include "CMomentaryRotButton.h"
 #include "CEntityVSlots.h"
 #include "CEHandleGet.h"
@@ -37542,6 +38797,7 @@ void __fastcall sub_100cd2d0(char *p)
 // END FUNCTION
 
 // FUNCTION: 0x100cd640 size=0xc
+#include "CUnknown100cd640.h"
 extern char g_106b8540[];
 char *CUnknown100cd640::sub_100cd640()
 {
@@ -37650,6 +38906,7 @@ int TOutput::sub_100cd7e0(TSave *save)
 // END FUNCTION
 
 // FUNCTION: 0x100cd870 size=0x9e
+#include "CBaseEntity.h"
 #include "COutputEvent.h"
 #include "CEventAction.h"
 #include "CRestore.h"
@@ -38321,6 +39578,7 @@ void __stdcall sub_100ce990(const char *pszFunction, int a, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x100cf080 size=0xb0
+#include "CBaseEntity.h"
 #include "CEventQueue.h"
 #include "CGlobalEntityList.h"
 
@@ -38375,6 +39633,9 @@ void CEventQueue::sub_100cf080()
 // END FUNCTION
 
 // FUNCTION: 0x100cf160 size=0x221
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CEventQueue.h"
 #include "CBaseCombatCharacter.h"
 #include "CVStatList_t.h"
@@ -38441,6 +39702,9 @@ void CEventQueue::sub_100cf160(CBaseEntity *pEntity, int nStat)
 // END FUNCTION
 
 // FUNCTION: 0x100cf420 size=0x1e0
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CEventQueue.h"
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
@@ -38617,6 +39881,7 @@ int sub_100cffa0()
 // END FUNCTION
 
 // FUNCTION: 0x100d0a00 size=0x1c4
+#include "CBaseEntity.h"
 #include "CVariantCopy.h"
 #include "CEHandleGet.h"
 
@@ -38711,6 +39976,7 @@ void __fastcall sub_100d1250(SListOwner_t *pThis)
 // END FUNCTION
 
 // FUNCTION: 0x100d13d0 size=0xab
+#include "CBaseEntity.h"
 #include "CUnknown106b89bc.h"
 #include "CGlobalEntityList.h"
 
@@ -38955,6 +40221,7 @@ CBaseEntity *sub_100d2070(int a1, const char *pszName, CBaseEntity *pStart)
 // END FUNCTION
 
 // FUNCTION: 0x100d2290 size=0x70
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 extern "C" __declspec(dllimport) void DevMsg(int level, const char *fmt, ...);
 extern CGlobalEntityList g_106eb5d8;
@@ -39098,6 +40365,14 @@ void sub_100d2a60()
 // END FUNCTION
 
 // FUNCTION: 0x100d2b30 size=0x7b
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "IVEngineServer.h"
 #include "ScopeTrace.h"
@@ -39442,6 +40717,9 @@ void sub_100d3bc0()
 // END FUNCTION
 
 // FUNCTION: 0x100d3d20 size=0xa6
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CVStatList_t.h"
 
 extern char *sub_10008d8c();
@@ -39538,6 +40816,10 @@ void sub_100d46c0(CVStatList_t *pList, int nMinValue, int nArg)
 // END FUNCTION
 
 // FUNCTION: 0x100d4b40 size=0x1fc
+#include "CBaseEntity.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CVStatList_t.h"
 #include "CUnknown101fa0e0.h"
 #include "engineserver.h"
@@ -39563,6 +40845,9 @@ void sub_100d4b40()
 // END FUNCTION
 
 // FUNCTION: 0x100d4e50 size=0xdf
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include <stdio.h>
 #include "CVFeat_t.h"
 
@@ -39593,6 +40878,14 @@ void sub_100d4e50()
 // END FUNCTION
 
 // FUNCTION: 0x100d5000 size=0xdc
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBasePlayer.h"
 #include "COutputEvent.h"
 #include "ScopeTrace.h"
@@ -39650,6 +40943,12 @@ void sub_100d5000()
 // END FUNCTION
 
 // FUNCTION: 0x100d51b0 size=0xd2
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+#include "CVStatList_t.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include <stdlib.h>
 
 CBaseEntity *sub_101193b0();
@@ -39673,6 +40972,9 @@ void sub_100d51b0()
 // END FUNCTION
 
 // FUNCTION: 0x100d5360 size=0xd2
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseCombatCharacter.h"
 #include "CVStatList_t.h"
 
@@ -39711,6 +41013,9 @@ void sub_100d5360()
 // END FUNCTION
 
 // FUNCTION: 0x100d5510 size=0xc3
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CVFeat_t.h"
 
 extern "C" int sprintf(char *, const char *, ...);
@@ -39744,6 +41049,9 @@ void sub_100d5510()
 // END FUNCTION
 
 // FUNCTION: 0x100d56b0 size=0xdf
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include <stdio.h>
 #include "CVFeat_t.h"
 
@@ -39849,6 +41157,7 @@ void sub_100d5ae0()
 // END FUNCTION
 
 // FUNCTION: 0x100d5be0 size=0x77
+#include "CBaseCombatCharacter.h"
 #include "CEntityVSlots.h"
 extern "C" int __cdecl atoi(const char *);
 extern char g_106b8540[];
@@ -40073,6 +41382,7 @@ void sub_100d5f10()
 // END FUNCTION
 
 // FUNCTION: 0x100d60c0 size=0x85
+#include "CBasePlayer.h"
 #include "CWeaponRanged.h"
 #include "CFlagSet10174550.h"
 
@@ -40121,6 +41431,10 @@ void sub_100d60c0()
 // END FUNCTION
 
 // FUNCTION: 0x100d6210 size=0x243
+#include "CBaseCombatCharacter.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CStatDefault3List.h"
 #include "CUnknown10206c70.h"
 #include "CVStatInfoList_t.h"
@@ -40689,6 +42003,14 @@ void sub_100d7b30()
 // END FUNCTION
 
 // FUNCTION: 0x100d7c40 size=0xea
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 
 extern "C" int atoi(const char *);
@@ -40841,6 +42163,8 @@ void sub_100d8120()
 // END FUNCTION
 
 // FUNCTION: 0x100d8490 size=0x265
+#include "utlrbtree.h"
+#include "utlsortvector.h"
 #include "CBasePlayer.h"
 #include "CBaseCombatCharacter.h"
 #include "CVStatList_t.h"
@@ -40907,6 +42231,9 @@ done:
 // END FUNCTION
 
 // FUNCTION: 0x100d94a0 size=0x118
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseCombatCharacter.h"
 #include "CVStatList_t.h"
 #include "CVStatInfo_t.h"
@@ -41154,6 +42481,9 @@ void sub_100d9ec0()
 // END FUNCTION
 
 // FUNCTION: 0x100da040 size=0x10f
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CVStatList_t.h"
 #include "CUnknown10203240.h"
 #include "ConVar.h"
@@ -42403,6 +43733,7 @@ void CUnk100ddc00::sub_100ddc00()
 // END FUNCTION
 
 // FUNCTION: 0x100ddc40 size=0xb0
+#include "CUnknown100dda50.h"
 struct S24c {
 	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
 	virtual void f4(int a, unsigned short b); virtual void f5(unsigned short a);
@@ -42524,6 +43855,7 @@ void CCollisionProperty::sub_100ddd90()
 // END FUNCTION
 
 // FUNCTION: 0x100ddf40 size=0xc
+#include "CUnknown100ddf40.h"
 int *CUnknown100ddf40::sub_100ddf40(int index)
 {
 	return &m_pMemory[index];
@@ -42531,6 +43863,7 @@ int *CUnknown100ddf40::sub_100ddf40(int index)
 // END FUNCTION
 
 // FUNCTION: 0x100ddf60 size=0x8f
+#include "CBaseEntity.h"
 void CBaseEntity::sub_100ddf60(const int *pData)
 {
 	int *p = (int *)((char *)this + 0x450);
@@ -42631,6 +43964,9 @@ void * CUnknown100de7d0::sub_100de7d0()
 // END FUNCTION
 
 // FUNCTION: 0x100de930 size=0x10e
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CUnknown100de930.h"
 #include "CGlobalEntityList.h"
 extern CGlobalEntityList *g_10566458;
@@ -42697,6 +44033,7 @@ void CUnknown100de930::sub_100de930()
 // END FUNCTION
 
 // FUNCTION: 0x100dea90 size=0x9
+#include "CUnknown100dea90.h"
 void CUnknown100dea90::sub_100dea90(int value)
 {
 	m_unk0 = value;
@@ -42712,6 +44049,7 @@ float CUnknown100deab0::sub_100deab0()
 // END FUNCTION
 
 // FUNCTION: 0x100dead0 size=0x2a
+#include "CBaseEntity.h"
 #include "CBasePlayer.h"
 
 struct EntInfo {
@@ -43036,6 +44374,7 @@ void Dialog::sub_100e09a0(const char *name)
 // END FUNCTION
 
 // FUNCTION: 0x100e0a40 size=0x9d
+#include "CAI_BaseNPC.h"
 #include "CDialog.h"
 #include "CGlobalEntityList.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
@@ -43067,6 +44406,14 @@ void CDialog::sub_100e0a40(const char *pszSound)
 // END FUNCTION
 
 // FUNCTION: 0x100e0f90 size=0x150
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CDialog.h"
 #include "ScopeTrace.h"
 #include "CEHandleGet.h"
@@ -43087,6 +44434,14 @@ void CDialog::sub_100e0f90(unsigned char value)
 // END FUNCTION
 
 // FUNCTION: 0x100e1220 size=0x150
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CDialog.h"
 #include "ScopeTrace.h"
 #include "CEHandleGet.h"
@@ -43107,6 +44462,14 @@ void CDialog::sub_100e1220(unsigned char value)
 // END FUNCTION
 
 // FUNCTION: 0x100e13d0 size=0x150
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CDialog.h"
 #include "ScopeTrace.h"
 #include "CEHandleGet.h"
@@ -43171,6 +44534,14 @@ char CDialog::sub_100e15c0(DialogLine *pLine, char bExtended)
 // END FUNCTION
 
 // FUNCTION: 0x100e1680 size=0x186
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include <string.h>
 #include "ScopeTrace.h"
 #include "CDialog.h"
@@ -43202,6 +44573,14 @@ char *CDialog::sub_100e1680(int index, const char *pszExtension, char bCreate)
 // END FUNCTION
 
 // FUNCTION: 0x100e1880 size=0x11a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CDialog.h"
 #include "ScopeTrace.h"
 
@@ -43237,6 +44616,14 @@ char *CDialog::sub_100e1880(int index)
 // END FUNCTION
 
 // FUNCTION: 0x100e1ad0 size=0x119
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CDialog.h"
 #include "CGlobalEntityList.h"
 #include "ScopeTrace.h"
@@ -43367,6 +44754,14 @@ char *CUnknown100e3400::sub_100e3400(int line, char col, const char *ext, bool i
 // END FUNCTION
 
 // FUNCTION: 0x100e4780 size=0x8f
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CDialog.h"
 #include "ScopeTrace.h"
 
@@ -43437,6 +44832,7 @@ int CDialog::sub_100e4840(int choice)
 // END FUNCTION
 
 // FUNCTION: 0x100e49b0 size=0x1ab
+#include "CBaseEntity.h"
 #include "CDialog.h"
 #include "CEHandleGet.h"
 #include "CEntityVSlots.h"
@@ -43493,6 +44889,14 @@ void CUnknown100e4ef0::sub_100e4ef0()
 // END FUNCTION
 
 // FUNCTION: 0x100e4f30 size=0x265
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CDialog.h"
 #include "CDialogDependency.h"
 #include "CEHandleGet.h"
@@ -43545,6 +44949,14 @@ void CDialog::sub_100e4f30(char *pszScript)
 // END FUNCTION
 
 // FUNCTION: 0x100e5240 size=0x170
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CDialog.h"
 #include "CEHandleGet.h"
 #include "CBaseEntity.h"
@@ -43591,6 +45003,14 @@ void CDialog::sub_100e5240()
 // END FUNCTION
 
 // FUNCTION: 0x100e5410 size=0x1f7
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CDialog.h"
 #include "ScopeTrace.h"
 #include "CEHandleGet.h"
@@ -43756,6 +45176,14 @@ void CDialog::sub_100e5c70()
 // END FUNCTION
 
 // FUNCTION: 0x100e5d00 size=0x19b
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include <string.h>
 #include "CDialog.h"
 #include "ScopeTrace.h"
@@ -43791,6 +45219,14 @@ void CDialog::sub_100e5d00(int nIndex, char *pszText)
 // END FUNCTION
 
 // FUNCTION: 0x100e5f10 size=0x22c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CDialog.h"
 #include "ScopeTrace.h"
 #include <string.h>
@@ -43862,6 +45298,14 @@ char CDialog::sub_100e5f10()
 // END FUNCTION
 
 // FUNCTION: 0x100e61d0 size=0x323
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CDialog.h"
 #include "ScopeTrace.h"
 #include <string.h>
@@ -43950,6 +45394,14 @@ int CDialog::sub_100e61d0(void *pFile, DialogLine *pLine, int *pLineNo)
 // END FUNCTION
 
 // FUNCTION: 0x100e6ed0 size=0x2a2
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CDialog.h"
 #include "ScopeTrace.h"
 #include <string.h>
@@ -44209,6 +45661,14 @@ int sub_100e77f0(const int *a, const int *b)
 // END FUNCTION
 
 // FUNCTION: 0x100e7890 size=0x104
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CDialog.h"
 
@@ -44226,6 +45686,14 @@ void CDialog::sub_100e7890(CDialogEntry_t *pDest, const CDialogEntry_t *pSource)
 // END FUNCTION
 
 // FUNCTION: 0x100e79f0 size=0x1be
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CDialog.h"
 #include "ScopeTrace.h"
 #include <string.h>
@@ -44340,6 +45808,14 @@ bool sub_100e7f70(char *str, int maxLen, const char *find, const char *replace)
 // END FUNCTION
 
 // FUNCTION: 0x100e8100 size=0x165
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CDialog.h"
 #include "CBaseCombatCharacter.h"
 #include "CGlobalEntityList.h"
@@ -44387,6 +45863,14 @@ int CDialog::sub_100e8100(char *pPacket)
 // END FUNCTION
 
 // FUNCTION: 0x100e82d0 size=0x198
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CDialog.h"
 #include "ScopeTrace.h"
 
@@ -44473,6 +45957,15 @@ void CDialogDependency::sub_100e8ef0(int a)
 // END FUNCTION
 
 // FUNCTION: 0x100e94e0 size=0x1f8
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CDialogDependency.h"
 #include "ScopeTrace.h"
 
@@ -44998,6 +46491,7 @@ int __stdcall sub_100ecb10(CBaseAnimating *pAnim)
 // END FUNCTION
 
 // FUNCTION: 0x100ecb40 size=0x7f
+#include "utlrbtree.h"
 #include "utlvector.h"
 struct CThreeVecs {
     char m_flag;
@@ -45722,6 +47216,8 @@ void CBaseDoor::sub_100efae0(CBaseEntity *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x100efbf0 size=0x79
+#include "CBaseDoor.h"
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 #include "CEntityVSlots.h"
 extern CGlobalEntityList g_106eb5d8;
@@ -45936,6 +47432,14 @@ void CBaseDoor::sub_100f09d0()
 // END FUNCTION
 
 // FUNCTION: 0x100f0c00 size=0x1ba
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseDoor.h"
 #include "CCollisionProperty.h"
@@ -46169,6 +47673,14 @@ void * CUnknown100f2f90::sub_100f2f90(int a0, int a1, int a2)
 // END FUNCTION
 
 // FUNCTION: 0x100f3390 size=0x195
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CRotDoor.h"
 #include "CEntitySoundOriginView.h"
 #include "ScopeTrace.h"
@@ -46705,6 +48217,7 @@ CGlobalEntityList *CGlobalEntityList::sub_100f6b40()
 // END FUNCTION
 
 // FUNCTION: 0x100f6bb0 size=0xed
+#include "utlvector.h"
 extern "C" void *memmove(void *, const void *, unsigned int);
 extern void *(__cdecl *g_109f3634)(unsigned int);
 extern void *(__cdecl *g_109f3638)(void *, unsigned int);
@@ -46854,6 +48367,7 @@ void SBlockSetView::sub_100f6e40(int elem)
 // END FUNCTION
 
 // FUNCTION: 0x100f6ec0 size=0x123
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 
 extern "C" __declspec(dllimport) void Plat_Free(void *p);
@@ -46937,6 +48451,10 @@ int CUnknown100f7040::sub_100f7040()
 // END FUNCTION
 
 // FUNCTION: 0x100f71c0 size=0x115
+#include "Vector.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 inline void *operator new(unsigned int, void *p) { return p; }
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 
@@ -47111,6 +48629,7 @@ CBaseEntity *CGlobalEntityList::sub_100f79b0(CBaseEntity *pStart, const float *p
 // END FUNCTION
 
 // FUNCTION: 0x100f7b20 size=0xc6
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 #include "Vector.h"
 
@@ -47151,6 +48670,7 @@ CBaseEntity * __stdcall sub_100f7b20(const char *pszName, const Vector *pCenter,
 // END FUNCTION
 
 // FUNCTION: 0x100f7c30 size=0xd9
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 #include "Vector.h"
 
@@ -47258,6 +48778,8 @@ void __stdcall sub_100f7f20(CBaseEntity *pStart, const char *szName, CBaseEntity
 // END FUNCTION
 
 // FUNCTION: 0x100f7f70 size=0x45
+#include "CBaseEntity.h"
+#include "Vector.h"
 #include "CGlobalEntityList.h"
 extern CGlobalEntityList g_106eb5d8;
 void __stdcall sub_100f7f70(CBaseEntity *pStart, const char *szName, const Vector *pCenter, float flRadius, CBaseEntity *pSearching, CBaseEntity *pActivator)
@@ -47286,6 +48808,7 @@ void __stdcall sub_100f7fe0(int a, int b, int c, int d, int e)
 // END FUNCTION
 
 // FUNCTION: 0x100f8030 size=0x153
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 #include "CEntityVSlots.h"
 #include "Vector.h"
@@ -47375,6 +48898,7 @@ CBaseEntity *CGlobalEntityList::sub_100f81f0(const Vector *pOrigin, const Vector
 // END FUNCTION
 
 // FUNCTION: 0x100f8370 size=0x2e
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 // TARGET: CGlobalEntityList::sub_100f8370
 
@@ -47428,6 +48952,7 @@ CBaseEntity *CGlobalEntityList::sub_100f8420(CBaseEntity *pCurrent)
 // END FUNCTION
 
 // FUNCTION: 0x100f8490 size=0xbf
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 #include "Vector.h"
 
@@ -47466,6 +48991,7 @@ CBaseEntity * __stdcall sub_100f8490(CBaseEntity *pStart, unsigned int nFlags, c
 // END FUNCTION
 
 // FUNCTION: 0x100f8580 size=0xa6
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 #include "Vector.h"
 
@@ -47506,6 +49032,8 @@ CBaseEntity * __stdcall sub_100f8580(const Vector *pPos, float flRadius)
 // END FUNCTION
 
 // FUNCTION: 0x100f8700 size=0x59
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
 void CGlobalEntityList::sub_100f8700(unsigned int hEnt)
 {
 	if (hEnt != 0xffffffff) {
@@ -47543,6 +49071,7 @@ void __fastcall sub_100f8960(int p)
 // END FUNCTION
 
 // FUNCTION: 0x100f89a0 size=0x57
+#include "utlrbtree.h"
 #include "utlvector.h"
 
 struct SBlockSetView {
@@ -47656,6 +49185,7 @@ void CUtlVectorBase::sub_100f9790() { m_Size = 0; }
 // END FUNCTION
 
 // FUNCTION: 0x100f97b0 size=0xc
+#include "CUnknown100f97b0.h"
 CUnknown100f97b0_Elem *CUnknown100f97b0::sub_100f97b0(int index)
 {
 	return &m_pMemory[index];
@@ -47772,6 +49302,7 @@ void CMem8e_t::sub_100f99d0(int num)
 // END FUNCTION
 
 // FUNCTION: 0x100f9c40 size=0x144
+#include "utlrbtree.h"
 #include "CBaseEntityList.h"
 
 extern void *vt_10455f0c[];
@@ -47972,6 +49503,7 @@ void __fastcall sub_100fa690(CSlots *self, int, int)
 // END FUNCTION
 
 // FUNCTION: 0x100fa6b0 size=0xb
+#include "CUnknown10081e70.h"
 void CUnknown10081e70::sub_100fa6b0(int unused)
 {
 	vfunc242();
@@ -48029,6 +49561,7 @@ int sub_100fa840()
 // END FUNCTION
 
 // FUNCTION: 0x100fac50 size=0x43
+#include "CBaseEntity.h"
 #include "CEnvParticle.h"
 
 void *sub_100aa720(int size);
@@ -48491,6 +50024,7 @@ CEntityVSlots *sub_100fbc90(const char *pszEffect, const float *pOrigin, const f
 // END FUNCTION
 
 // FUNCTION: 0x100fbd50 size=0x49
+#include "CBaseEntity.h"
 #include "CEntityVSlots.h"
 CEntityVSlots *sub_100a9ab0(const char *name, const float *origin, const float *angles, CEntityVSlots *owner);
 void sub_101d1280(CEntityVSlots *p);
@@ -48689,6 +50223,14 @@ extern "C" CBaseEntity *params_particle()
 // END FUNCTION
 
 // FUNCTION: 0x100fce70 size=0x133
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 #include "CParamsParticle.h"
@@ -48775,6 +50317,9 @@ int sub_100fd0d0()
 // END FUNCTION
 
 // FUNCTION: 0x100fd270 size=0x1b3
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CInspectionBrush.h"
 #include "CEntityVSlots.h"
 #include "CEnvParticle.h"
@@ -48873,6 +50418,7 @@ int *sub_100fd680()
 // END FUNCTION
 
 // FUNCTION: 0x100fdb80 size=0x59
+#include "utlrbtree.h"
 #include "CEnvPlayerSurfaceTrigger.h"
 #include "utlvector.h"
 extern CUtlVector<EHANDLE> g_1070906c;
@@ -48892,6 +50438,7 @@ void __fastcall sub_100fdcc0(char *self, int, int)
 // END FUNCTION
 
 // FUNCTION: 0x100fdce0 size=0xa
+#include "CUnknown100fdce0.h"
 void CUnknown100fdce0::sub_100fdce0(int unused)
 {
 	m_unk458 = 0;
@@ -48939,6 +50486,7 @@ void UtlMem7::sub_100fdd50(int num)
 // END FUNCTION
 
 // FUNCTION: 0x100fdf40 size=0x129
+#include "utlrbtree.h"
 #include "CUnknown100fde30.h"
 
 extern CUnknown100fde30Owner *sub_101bdb50();
@@ -49232,6 +50780,14 @@ void CEnvBeam::sub_100ff020()
 // END FUNCTION
 
 // FUNCTION: 0x100ff090 size=0xd5
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CEnvBeam.h"
 #include "CEntityVSlots.h"
 #include "CUnknown1070b244.h"
@@ -49318,6 +50874,7 @@ void SView::sub_10100080(int x, int y)
 // END FUNCTION
 
 // FUNCTION: 0x101006e0 size=0x125
+#include "CTraceFilterNoCharacterCollide.h"
 #include "Ray_t.h"
 #include "CTraceFilterSimple.h"
 #include "CUnknown1070b254.h"
@@ -49700,6 +51257,14 @@ int *sub_10101e30()
 // END FUNCTION
 
 // FUNCTION: 0x10102030 size=0x216
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CMessage.h"
 #include "inputdata_t.h"
@@ -49949,6 +51514,7 @@ void CEnvShake::sub_10102c80()
 // END FUNCTION
 
 // FUNCTION: 0x101030e0 size=0xd
+#include "CUnknown101030e0.h"
 void CUnknown101030e0::sub_101030e0(int mode)
 {
 	mode = 0;
@@ -50576,6 +52142,14 @@ void CPointExplosion::sub_10104650()
 // END FUNCTION
 
 // FUNCTION: 0x10104ea0 size=0x5a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CExpressionTable.h"
 
@@ -50689,6 +52263,14 @@ void CExpressionTable::sub_10105170()
 // END FUNCTION
 
 // FUNCTION: 0x101051b0 size=0x88
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CExpressionTable.h"
 #include "ScopeTrace.h"
 
@@ -50714,6 +52296,14 @@ int CExpressionTable::sub_101051b0(int index)
 // END FUNCTION
 
 // FUNCTION: 0x10105270 size=0xe6
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
 #include "CExpressionTable.h"
@@ -50783,6 +52373,14 @@ int CExpressionTable::sub_10105870(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x10105950 size=0x5d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 
 struct CExpressionTables
@@ -50799,6 +52397,14 @@ void sub_10105950()
 // END FUNCTION
 
 // FUNCTION: 0x10105a60 size=0xe1
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CUnknown10105a60.h"
 #include "ScopeTrace.h"
 
@@ -50815,6 +52421,14 @@ void CUnknown10105a60::sub_10105a60(float *pOut, const float *pFrom, const float
 // END FUNCTION
 
 // FUNCTION: 0x10105b90 size=0xde
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
 
@@ -50837,6 +52451,15 @@ void __fastcall sub_10105b90(CBaseCombatCharacter *pThis, int, float *pOut, cons
 // END FUNCTION
 
 // FUNCTION: 0x10105cb0 size=0x115
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 void __fastcall sub_10105cb0(CBaseEntity *self, int unused, float *out, const float *cur, const float *target, float rate, int n)
 {
@@ -50860,6 +52483,7 @@ void __fastcall sub_10105cb0(CBaseEntity *self, int unused, float *out, const fl
 // END FUNCTION
 
 // FUNCTION: 0x10105e20 size=0xcd
+#include "CBaseCombatCharacter.h"
 extern int *g_109f3680;
 extern const char **g_109f3620;
 extern const char g_105387dc[];
@@ -50910,6 +52534,8 @@ void CBaseCombatCharacter::sub_10105e20(float *weights, char *pExpression)
 // END FUNCTION
 
 // FUNCTION: 0x101063a0 size=0xbf
+#include "CBaseCombatCharacter.h"
+#include "CLogicAuto.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -51049,6 +52675,14 @@ void CBaseCombatCharacter::sub_10106b30(const char *pszName, char *pDest, int si
 // END FUNCTION
 
 // FUNCTION: 0x10106c40 size=0x17d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include <stdio.h>
 #include "ScopeTrace.h"
 #include "CBaseCombatCharacter.h"
@@ -51110,6 +52744,15 @@ void CBCCReloadUnit::sub_10106c40()
 // END FUNCTION
 
 // FUNCTION: 0x10106e20 size=0x114
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 struct ExprCurve {
     int pad0;
@@ -51189,6 +52832,14 @@ void CBaseCombatCharacter::sub_10107050(CBaseEntity *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x101072b0 size=0xc9
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
 
@@ -52480,6 +54131,7 @@ int __stdcall sub_1010c200(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x1010c2a0 size=0x43
+#include "CBaseEntity.h"
 #include "CAreaPortal.h"
 void *sub_100aa720(int size);
 extern char g_10565398[];
@@ -53075,6 +54727,7 @@ void CBreakable::sub_1010ddc0(void *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x1010e530 size=0x62
+#include "Vector.h"
 #include <stdlib.h>
 // TARGET: Vector::sub_1010e530
 void Vector::sub_1010e530(float minVal, float maxVal)
@@ -53152,6 +54805,7 @@ bool CUnknown1010efc0::sub_1010efc0()
 // END FUNCTION
 
 // FUNCTION: 0x1010f030 size=0x43
+#include "CBaseEntity.h"
 #include "CPushable.h"
 
 void *sub_100aa720(int size);
@@ -53661,6 +55315,7 @@ int sub_10114820()
 // END FUNCTION
 
 // FUNCTION: 0x10114920 size=0x43
+#include "CBaseEntity.h"
 #include "CFunc_LOD.h"
 
 void *sub_100aa720(int size);
@@ -53842,6 +55497,8 @@ void S::sub_101153a0(inputdata_t *data)
 // END FUNCTION
 
 // FUNCTION: 0x10115660 size=0x109
+#include "utlrbtree.h"
+#include "utlsortvector.h"
 #include "CEHandleGet.h"
 #include "utlvector.h"
 
@@ -54106,6 +55763,7 @@ void CUnknown10116fb0::sub_10116fb0(CInputData100bc0f0 *data)
 // END FUNCTION
 
 // FUNCTION: 0x10116ff0 size=0x147
+#include "inputdata_t.h"
 #include "CFuncMoveLinear.h"
 
 #define EV(n) virtual void ev##n();
@@ -54131,6 +55789,7 @@ void CFuncMoveLinear::sub_10116ff0(inputdata_t &inputdata)
 // END FUNCTION
 
 // FUNCTION: 0x101171a0 size=0x6d
+#include "inputdata_t.h"
 #include "CFuncMoveLinear.h"
 #include "CEntityVSlots.h"
 
@@ -54293,6 +55952,7 @@ void CUnknown10118b20::sub_10118b20(int *p)
 // END FUNCTION
 
 // FUNCTION: 0x10118b40 size=0x12e
+#include "CBaseEntity.h"
 #include "CGameUI.h"
 #include "COutputEvent.h"
 #include "CVariantCopy.h"
@@ -54422,6 +56082,9 @@ int sub_101193b0()
 // END FUNCTION
 
 // FUNCTION: 0x10119750 size=0x145
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
 extern "C" char *__cdecl strncpy(char *, const char *, unsigned int);
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 
@@ -54919,6 +56582,9 @@ char __stdcall sub_1011e290(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x1011e8f0 size=0x39
+#include "CGameTrace.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "Ray_t.h"
 #include "CTraceFilterSimple.h"
 #include "CUnknown1070b254.h"
 
@@ -55033,6 +56699,7 @@ void CGameMovement::sub_1011fa80()
 // END FUNCTION
 
 // FUNCTION: 0x1011ffe0 size=0xa9
+#include "CBaseEntity.h"
 #include "CGameMovement.h"
 
 
@@ -55331,6 +56998,7 @@ int CGameMovement::sub_10124120(Vector &in, Vector &normal, Vector &out, float o
 // END FUNCTION
 
 // FUNCTION: 0x10124ba0 size=0x14f
+#include "CTraceFilterNoCharacterCollide.h"
 #include "CGameMovement.h"
 #include "CGlobalEntityList.h"
 #include "CTraceFilterSimple.h"
@@ -55845,6 +57513,14 @@ void sub_1012a6e0(CBaseEntity *pOwner, int nCount, int nType)
 // END FUNCTION
 
 // FUNCTION: 0x1012b080 size=0x1a0
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CGib.h"
 #include "CCollisionProperty.h"
 #include "ScopeTrace.h"
@@ -55911,6 +57587,14 @@ extern "C" GP *gib()
 // END FUNCTION
 
 // FUNCTION: 0x1012b370 size=0x232
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CCollisionProperty.h"
 #include "ScopeTrace.h"
@@ -56015,6 +57699,7 @@ void sub_1012c600(CBaseEntity *pParent, void *pArg)
 // END FUNCTION
 
 // FUNCTION: 0x1012c6c0 size=0xa2
+#include "CBaseEntity.h"
 struct CMoveEnt
 {
 	char m_pad0000[0x260];
@@ -56171,6 +57856,7 @@ bool sub_1012ca50(Ent *target, Ent *ent)
 // END FUNCTION
 
 // FUNCTION: 0x1012caf0 size=0x88
+#include "CBaseEntity.h"
 struct CHolder260 {
 	char pad[0x260];
 	EHANDLE m_h;
@@ -56192,6 +57878,7 @@ int sub_1012caf0(CHolder260 *p, COut12 *pOut)
 // END FUNCTION
 
 // FUNCTION: 0x1012cbb0 size=0x105
+#include "utlvector.h"
 #include "CUtlVector4.h"
 #include "CEHandleGet.h"
 
@@ -56282,6 +57969,7 @@ int sub_1012cee0()
 // END FUNCTION
 
 // FUNCTION: 0x1012cf10 size=0x9
+#include "CUnknown1012cf10.h"
 CUnknown1012cf10 *CUnknown1012cf10::sub_1012cf10()
 {
 	m_unk0 = 0;
@@ -56304,6 +57992,7 @@ void CUnknown1012cf50::sub_1012cf50(int value)
 // END FUNCTION
 
 // FUNCTION: 0x1012cf70 size=0xd
+#include "CUnknown1012cf70.h"
 void CUnknown1012cf70::sub_1012cf70(int flags)
 {
 	flags = 0;
@@ -56798,6 +58487,7 @@ void CEdictHolder1012e650::sub_1012e650(CEdictSrc1012e650 *p)
 // END FUNCTION
 
 // FUNCTION: 0x1012e6a0 size=0xd
+#include "CUnknown1012e6a0.h"
 void CUnknown1012e6a0::sub_1012e6a0(int unused)
 {
 	m_unk450 = -1;
@@ -57039,6 +58729,14 @@ int sub_1012f190(int hModule)
 // END FUNCTION
 
 // FUNCTION: 0x1012f230 size=0x5e
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 
 extern char g_100124b3[];	// CreateInterface
@@ -57622,6 +59320,7 @@ int *sub_10130c90()
 // END FUNCTION
 
 // FUNCTION: 0x10130e50 size=0x71
+#include "CBaseEntity.h"
 extern void *vt_104475c4[];
 extern void *vt_10465b24[];
 struct CConstraintAnchorBaseView {
@@ -58431,6 +60130,14 @@ extern "C" GP *logic_case()
 // END FUNCTION
 
 // FUNCTION: 0x10134310 size=0xc2
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CLogicCase.h"
 #include "ScopeTrace.h"
 
@@ -59066,6 +60773,7 @@ CBaseEntity *CLogicNPCCondition::sub_10135720()
 // END FUNCTION
 
 // FUNCTION: 0x10135840 size=0x7c
+#include "CBaseEntity.h"
 #include "CLogicNPCCondition.h"
 #include "CAI_BaseNPC.h"
 
@@ -59430,6 +61138,7 @@ void sub_10136600(CUnknown10136600 *p)
 // END FUNCTION
 
 // FUNCTION: 0x10136860 size=0x23
+#include "CMapEntityLoad.h"
 // TARGET: sub_10136860
 int sub_10136860(int *pA, int *pB)
 {
@@ -59441,6 +61150,7 @@ int sub_10136860(int *pA, int *pB)
 // END FUNCTION
 
 // FUNCTION: 0x101368a0 size=0x43
+#include "CMapEntityLoad.h"
 #include "CUnknown100a8220.h"
 struct ParentEntityView;
 int __cdecl sub_10136910(ParentEntityView *p);
@@ -59522,6 +61232,8 @@ bool sub_10136a30(const char *pData, const char *pKey, char *pOut)
 // END FUNCTION
 
 // FUNCTION: 0x10136b40 size=0xc1
+#include "CBaseEntity.h"
+#include "CMapEntityLoad.h"
 #include "CEntityMapData.h"
 #include <string.h>
 
@@ -59576,6 +61288,7 @@ const char *sub_10136c50(const char *pData)
 // END FUNCTION
 
 // FUNCTION: 0x10136ce0 size=0x116
+#include "CMapEntityLoad.h"
 extern "C" void *__cdecl memset(void *, int, unsigned int);
 extern const char *g_1070c840;
 extern char g_1070c640[256];
@@ -59784,6 +61497,7 @@ float sub_101371f0(int a)
 // END FUNCTION
 
 // FUNCTION: 0x10137220 size=0x43
+#include "Vector.h"
 #include <math.h>
 float Vector::sub_10137220()
 {
@@ -60234,6 +61948,7 @@ void sub_10138a90(const Vector &forward, Vector &right, Vector &up)
 // END FUNCTION
 
 // FUNCTION: 0x10138ba0 size=0xd5
+#include "Vector.h"
 #include <math.h>
 #include "QAngle.h"
 #pragma intrinsic(atan2, sqrt)
@@ -60503,6 +62218,7 @@ void sub_101397c0(const QAngle &angles, Vector *forward, Vector *right, Vector *
 // END FUNCTION
 
 // FUNCTION: 0x10139970 size=0xd7
+#include "Vector.h"
 #include <math.h>
 #include "QAngle.h"
 void sub_10139970(const Vector &forward, QAngle &angles)
@@ -61068,6 +62784,8 @@ void sub_1013b0d0(const Q &q, float *m)
 // END FUNCTION
 
 // FUNCTION: 0x1013b240 size=0x25
+#include "QAngle.h"
+#include "matrix3x4_t.h"
 struct Q;
 struct matrix3x4_t;
 class QAngle;
@@ -61209,6 +62927,7 @@ void sub_1013b5a0(const float *q, float *angles)
 // END FUNCTION
 
 // FUNCTION: 0x1013bb40 size=0x17c
+#include "Vector.h"
 void sub_1000cfb3(const Vector &p1, const Vector &p2, const Vector &p3, const Vector &p4, float t, Vector &output);
 
 // TARGET: sub_1013bb40
@@ -61247,6 +62966,7 @@ void sub_1013bd20(const Vector &p1, const Vector &p2, const Vector &p3, const Ve
 // END FUNCTION
 
 // FUNCTION: 0x1013bef0 size=0xa2
+#include "Vector.h"
 void sub_10139500(const Vector &start, float scale, const Vector &direction, Vector &dest);
 
 // TARGET: sub_1013bef0
@@ -61416,6 +63136,7 @@ void sub_1013c620(const matrix3x4_t &transform, const Vector &vecMinsIn, const V
 // END FUNCTION
 
 // FUNCTION: 0x1013c7e0 size=0xab
+#include "Vector.h"
 // TARGET: sub_1013c7e0
 float sub_1013c7e0(const Vector &mins, const Vector &maxs, const Vector &point)
 {
@@ -61447,6 +63168,7 @@ float sub_1013c7e0(const Vector &mins, const Vector &maxs, const Vector &point)
 // END FUNCTION
 
 // FUNCTION: 0x1013c940 size=0x88
+#include "Vector.h"
 // TARGET: sub_1013c940
 float sub_1013c940(const Vector &P, const Vector &vLineA, const Vector &vLineB, Vector &vDir)
 {
@@ -61459,6 +63181,7 @@ float sub_1013c940(const Vector &P, const Vector &vLineA, const Vector &vLineB, 
 // END FUNCTION
 
 // FUNCTION: 0x1013ca00 size=0x57
+#include "Vector.h"
 float sub_1013c940(const Vector &a, const Vector &b, const Vector &c, Vector &out);
 
 void sub_1013ca00(const Vector &a, const Vector &b, const Vector &c, Vector &out, float *pT)
@@ -61472,6 +63195,7 @@ void sub_1013ca00(const Vector &a, const Vector &b, const Vector &c, Vector &out
 // END FUNCTION
 
 // FUNCTION: 0x1013ca80 size=0x60
+#include "Vector.h"
 void sub_1013ca00(const Vector &a, const Vector &b, const Vector &c, Vector &out, float *pT);
 float sub_1013ca80(const Vector &a, const Vector &b, const Vector &c, float *pT)
 {
@@ -61482,6 +63206,7 @@ float sub_1013ca80(const Vector &a, const Vector &b, const Vector &c, float *pT)
 // END FUNCTION
 
 // FUNCTION: 0x1013cb00 size=0x54
+#include "Vector.h"
 void sub_1013ca00(const Vector &p, const Vector &a, const Vector &b, Vector &out, float *pT);
 // TARGET: sub_1013cb00
 float __cdecl sub_1013cb00(const Vector &p, const Vector &a, const Vector &b, float *pT)
@@ -61512,6 +63237,7 @@ void sub_1013cb80(const Vector &a, const Vector &b, const Vector &c, Vector &out
 // END FUNCTION
 
 // FUNCTION: 0x1013cc40 size=0x60
+#include "Vector.h"
 void sub_1013cb80(const Vector &a, const Vector &b, const Vector &c, Vector &out, float *pT);
 float sub_1013cc40(const Vector &a, const Vector &b, const Vector &c, float *pT)
 {
@@ -61522,6 +63248,7 @@ float sub_1013cc40(const Vector &a, const Vector &b, const Vector &c, float *pT)
 // END FUNCTION
 
 // FUNCTION: 0x1013ccc0 size=0x54
+#include "Vector.h"
 void sub_1013cb80(const Vector &p, const Vector &a, const Vector &b, Vector &out, int flags);
 // TARGET: sub_1013ccc0
 float __cdecl sub_1013ccc0(const Vector &p, const Vector &a, const Vector &b, int flags)
@@ -61824,6 +63551,7 @@ float sub_1013d650(float angle)
 // END FUNCTION
 
 // FUNCTION: 0x1013d6c0 size=0xa8
+#include "Vector.h"
 extern float g_104454c4;
 
 namespace block_1013d6c0 {
@@ -62345,6 +64073,7 @@ void CUnknown1013e7e0::sub_1013e800(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x1013eb90 size=0x7a
+#include "CBaseEntity.h"
 extern "C" int _strcmpi(const char *, const char *);
 extern char g_106b8540[];
 extern char g_1056eeec[];
@@ -62370,6 +64099,7 @@ bool __stdcall sub_1013eb90(CBaseEntity *ent, unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x1013ecd0 size=0x33
+#include "CMoveHelperServer.h"
 class CMoveHelperServer;
 // TARGET: sub_1013ecd0
 CMoveHelperServer *sub_1013ecd0()
@@ -62380,6 +64110,7 @@ CMoveHelperServer *sub_1013ecd0()
 // END FUNCTION
 
 // FUNCTION: 0x1013ee40 size=0x5f
+#include "vampire_all.h"
 extern int g_1071a278;
 extern void *vt_1046af0c[];
 extern void *vt_1046afbc[];
@@ -62487,6 +64218,7 @@ int sub_1013fdb0(int index)
 // END FUNCTION
 
 // FUNCTION: 0x1013fdf0 size=0x2c
+#include "CPathKeyFrame.h"
 float sub_1013fe30(float f);
 
 // TARGET: sub_1013fdf0
@@ -62743,6 +64475,7 @@ float CScaleFields10140bd0::sub_10140bd0(float a, float b)
 // END FUNCTION
 
 // FUNCTION: 0x10141b10 size=0x72
+#include "CBaseEntity.h"
 #include "IScorer.h"
 
 #define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
@@ -62810,6 +64543,7 @@ void sub_10142af0(int a, int b, int c, int d, int e, int f, int g, int h, int i)
 // END FUNCTION
 
 // FUNCTION: 0x10142e20 size=0x50
+#include "CBaseEntity.h"
 struct CColView10142e20	// the collision property at +0x270 as its slot users see it
 {
 	virtual void s0();
@@ -62830,6 +64564,15 @@ void sub_10142e20(CBaseEntity *pEntity, int r, int g, int b, int a, int duration
 // END FUNCTION
 
 // FUNCTION: 0x10142e90 size=0x21a
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CSingleUserRecipientFilter.h"
 #include "CEntitySoundOriginView.h"
@@ -62899,6 +64642,15 @@ void sub_10143630(const Vector *pVec)
 // END FUNCTION
 
 // FUNCTION: 0x10143920 size=0x1c8
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CSingleUserRecipientFilter.h"
 
@@ -62961,6 +64713,15 @@ void sub_10143d80(const Vector &position, float size, int r, int g, int b, int n
 // END FUNCTION
 
 // FUNCTION: 0x10144790 size=0x206
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CSingleUserRecipientFilter.h"
 #include "ScopeTrace.h"
 
@@ -63011,6 +64772,15 @@ void sub_10144790(const Vector *pvA, const Vector *pvB, float f3, float f4, int 
 // END FUNCTION
 
 // FUNCTION: 0x10144a30 size=0x206
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CSingleUserRecipientFilter.h"
 #include "ScopeTrace.h"
 
@@ -63240,6 +65010,8 @@ void CUnknown10146790::sub_10146790() { c = 0; b = 0; }
 // END FUNCTION
 
 // FUNCTION: 0x101467b0 size=0x240
+#include "utlrbtree.h"
+#include "utlsortvector.h"
 #include "CBaseCombatCharacter.h"
 #include "CVStatList_t.h"
 #include "CVStatInfoList_t.h"
@@ -63270,6 +65042,11 @@ int sub_101467b0(CBaseCombatCharacter *pChar)
 // END FUNCTION
 
 // FUNCTION: 0x10146a80 size=0x7f
+#include "CBaseCombatCharacter.h"
+#include "CVStatList_t.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 char CBaseCombatCharacter::sub_10146a80()
 {
     CVStatList_t *pList = CVStatListSet::Of(this)->Find(3);
@@ -63280,6 +65057,9 @@ char CBaseCombatCharacter::sub_10146a80()
 // END FUNCTION
 
 // FUNCTION: 0x10146b20 size=0x1b5
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseCombatCharacter.h"
 #include "CEntityVSlots.h"
 #include "CStatDefault3List.h"
@@ -63317,6 +65097,9 @@ bool CBaseCombatCharacter::sub_10146b20(CBaseCombatCharacter *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x10146d50 size=0x9a
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseCombatCharacter.h"
 extern int g_1046bae8[];
 
@@ -63364,6 +65147,9 @@ void CBaseCombatCharacter::sub_10147690(CBaseEntity *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x10147710 size=0x1c4
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseCombatCharacter.h"
 #include "CBaseEntityUnit100fbaf0.h"
 #include "CUnknown101e8fe0.h"
@@ -63421,6 +65207,7 @@ void CBaseCombatCharacter::sub_10147710(int disciplineLevel)
 // END FUNCTION
 
 // FUNCTION: 0x10147960 size=0x9b
+#include "CBaseCombatCharacter.h"
 extern char g_106b8540[];
 void sub_10050d90(CBaseCombatCharacter *pThis, int arg, float a, float b, float c, const char *pszSound, int d, const char *pszEmpty, int e, int f);
 
@@ -63452,6 +65239,8 @@ int CUnknown10147a30::sub_10147a30(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x10147a60 size=0x1d
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
 #include "CEventQueue.h"
 #include "CUnknown101e3af0.h"
 
@@ -63935,6 +65724,7 @@ void CUnknown1014ca10::sub_1014ca10(unsigned char r, unsigned char g, unsigned c
 // END FUNCTION
 
 // FUNCTION: 0x1014cad0 size=0xd3
+#include "CBaseEntity.h"
 #include "CUnknown1014cad0.h"
 
 struct EntInfo { CBaseEntity *m_pEntity; int m_serial; int m_unused; };
@@ -64023,6 +65813,7 @@ void CUnk1014d110::sub_1014d110()
 // END FUNCTION
 
 // FUNCTION: 0x1014e3f0 size=0x5b
+#include "CBaseEntity.h"
 struct matrix3x4_t;
 class CBaseEntity;
 void sub_10138630(const matrix3x4_t &in, matrix3x4_t &out);
@@ -64405,6 +66196,14 @@ void CHolderPtr36c::sub_10150e50(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x10150f50 size=0x117
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CPhysicsCannister.h"
 #include "CParamsExplosion.h"
 #include "CGlobalEntityList.h"
@@ -64470,6 +66269,7 @@ void CPhysicsCannister::sub_10150f50()
 // END FUNCTION
 
 // FUNCTION: 0x101510c0 size=0x4b
+#include "CBaseEntity.h"
 #include "CPhysicsCannister.h"
 #include "CEventQueue.h"
 extern CEventQueue g_106e7050;
@@ -64727,6 +66527,7 @@ void CRagdollProp::sub_10155a30()
 // END FUNCTION
 
 // FUNCTION: 0x101563b0 size=0x88
+#include "CRagdollProp.h"
 struct CRagdollBody { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
 	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
 	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
@@ -65025,6 +66826,7 @@ void CUnknown101578b0::sub_10157890(char value)
 // END FUNCTION
 
 // FUNCTION: 0x101578b0 size=0xc
+#include "CUnknown101578b0.h"
 bool CUnknown101578b0::sub_101578b0()
 {
 	bool r = (m_flags204 >> 4) & 1;
@@ -65053,6 +66855,7 @@ void CUnknown101578d0::sub_101578d0(char on)
 // END FUNCTION
 
 // FUNCTION: 0x10157910 size=0xd
+#include "CUnknown101578b0.h"
 void CUnknown101578b0::sub_10157910(int value)
 {
 	m_unk104c = value;
@@ -65078,6 +66881,7 @@ void CRagdollPropSpecial::sub_10157ca0(CBaseEntity *pOwner)
 // END FUNCTION
 
 // FUNCTION: 0x10157d30 size=0x48
+#include "CBaseEntity.h"
 struct CUnitEnt : CBaseEntity {
     char pad[0x1050 - sizeof(CBaseEntity)];
     EHANDLE m_h1050;
@@ -65562,6 +67366,7 @@ int sub_1015ae80()
 // END FUNCTION
 
 // FUNCTION: 0x1015d680 size=0x37
+#include "CBaseEntity.h"
 #include "CBasePlayer.h"
 #include "CEHandleGet.h"
 
@@ -65630,6 +67435,7 @@ int sub_1015d790(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x1015eec0 size=0xe
+#include "CUnknown1015ef20.h"
 bool CUnknown1015ef20::sub_1015eec0()
 {
 	return m_unk19f5 == 0;
@@ -65646,6 +67452,7 @@ void CUnknown1015ef00::sub_1015ef00() { m_Flag = 1; }
 // END FUNCTION
 
 // FUNCTION: 0x1015ef20 size=0xe
+#include "CUnknown1015ef20.h"
 bool CUnknown1015ef20::sub_1015ef20()
 {
 	return m_unk19f7 == 0;
@@ -65672,6 +67479,7 @@ char CUnknown1015ef80::sub_1015ef80()
 // END FUNCTION
 
 // FUNCTION: 0x1015f090 size=0x4f
+#include "CBasePlayer.h"
 struct CUnk101c26d0 {
     int m_n0; char pad[0x48];
     CUnk101c26d0 *sub_101c26d0(int a, int b, int c, int d, int e, int f, int g);
@@ -65711,6 +67519,7 @@ void S::sub_1015f100(inputdata_t *data)
 // END FUNCTION
 
 // FUNCTION: 0x1015f510 size=0xd3
+#include "inputdata_t.h"
 #include "CBaseCombatCharacter.h"
 
 struct ScopeTraceEntry_t
@@ -65764,6 +67573,8 @@ void CBaseCombatCharacter::sub_1015f510(inputdata_t *data)
 // END FUNCTION
 
 // FUNCTION: 0x1015f8b0 size=0xeb
+#include "utlrbtree.h"
+#include "utlsortvector.h"
 #include "CBasePlayer.h"
 #include "CVStatList_t.h"
 
@@ -65794,6 +67605,8 @@ void CBasePlayerUnit::sub_1015f8b0(float flAmount, char bFlag)
 // END FUNCTION
 
 // FUNCTION: 0x1015f9e0 size=0x169
+#include "utlrbtree.h"
+#include "utlsortvector.h"
 #include "CBasePlayer.h"
 #include "CVStatList_t.h"
 
@@ -66015,6 +67828,7 @@ void CBasePlayer::sub_10160560()
 // END FUNCTION
 
 // FUNCTION: 0x10160680 size=0xd
+#include "CUnknown10160680.h"
 extern float g_10725c9c;
 // TARGET: CUnknown10160680::sub_10160680
 float CUnknown10160680::sub_10160680()
@@ -66177,6 +67991,7 @@ char CBasePlayerUnit326::sub_101613b0()
 // END FUNCTION
 
 // FUNCTION: 0x101618a0 size=0x2d
+#include "CBaseEntity.h"
 #include "CBasePlayer.h"
 
 struct EntInfo {
@@ -66270,6 +68085,14 @@ void CBasePlayer::sub_101618e0(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x10161a70 size=0x216
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBasePlayer.h"
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
@@ -66343,6 +68166,7 @@ void *CBasePlayer::sub_10161a70(const char *pszClass)
 // END FUNCTION
 
 // FUNCTION: 0x10161d20 size=0x14d
+#include "CBaseEntity.h"
 #include "CBasePlayer.h"
 #include "CEHandleGet.h"
 #include "CEntityVSlots.h"
@@ -66407,6 +68231,7 @@ CBaseEntity *CBasePlayer::sub_10161d20()
 // END FUNCTION
 
 // FUNCTION: 0x10161ed0 size=0x2d
+#include "CBaseEntity.h"
 #include "CBasePlayer.h"
 
 struct EntInfo {
@@ -66567,6 +68392,7 @@ done:
 // END FUNCTION
 
 // FUNCTION: 0x101641d0 size=0x4a
+#include "CBasePlayer.h"
 // TARGET: CBasePlayer::sub_101641d0
 void CBasePlayer::sub_101641d0(int type)
 {
@@ -66581,6 +68407,16 @@ void CBasePlayer::sub_101641d0(int type)
 // END FUNCTION
 
 // FUNCTION: 0x10165790 size=0x1e2
+#include "CBaseEntity.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBasePlayer.h"
 #include "CEntityVSlots.h"
 #include "CTraceFilterSimpleTwoEnt.h"
@@ -66736,6 +68572,15 @@ bool __fastcall sub_101664d0(CVirtSlots94 *p)
 // END FUNCTION
 
 // FUNCTION: 0x10167030 size=0x11e
+#include "CBasePlayer.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CCollisionProperty.h"
 
@@ -66813,6 +68658,7 @@ bool CBaseCombatCharacter::sub_101671a0()
 // END FUNCTION
 
 // FUNCTION: 0x10167240 size=0x63
+#include "CBaseCombatCharacter.h"
 char CBaseCombatCharacter::sub_10167240()
 {
 	if (sub_10146a80())
@@ -66874,6 +68720,7 @@ char CPlayerTargetView::sub_10167370()
 // END FUNCTION
 
 // FUNCTION: 0x10167d70 size=0x63
+#include "CBaseEntity.h"
 #include "CBasePlayer.h"
 
 inline void SetH(unsigned int &h, CBaseEntity *p)
@@ -67348,6 +69195,15 @@ void sub_1016ebb0()
 // END FUNCTION
 
 // FUNCTION: 0x1016eec0 size=0x1ba
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
 #include "CBasePlayer.h"
 #include "ScopeTrace.h"
 
@@ -67386,6 +69242,7 @@ void CBasePlayer::sub_1016eec0(const char *pszName, int *pOut, int nDwords)
 // END FUNCTION
 
 // FUNCTION: 0x1016fed0 size=0x15b
+#include "CBasePlayer.h"
 #include "ConVar.h"
 #include "CChangeLevel.h"
 #include "CGlobalEntityList.h"
@@ -67456,6 +69313,7 @@ void CBasePlayer::sub_1016fed0()
 // END FUNCTION
 
 // FUNCTION: 0x10170750 size=0x44
+#include "CBasePlayer.h"
 extern int sub_1023bd00();
 struct S1023bd00 { char pad[0x49c]; int m49c; };
 void CBasePlayer::sub_10170750()
@@ -67769,6 +69627,8 @@ void CBasePlayer::sub_101713c0()
 // END FUNCTION
 
 // FUNCTION: 0x101719d0 size=0x94
+#include "CBaseEntity.h"
+#include "CBloodSplat.h"
 #define V4(x) virtual void x##a(); virtual void x##b(); virtual void x##c(); virtual void x##d();
 #define V16(x) V4(x##a) V4(x##b) V4(x##c) V4(x##d)
 #define V64(x) V16(x##a) V16(x##b) V16(x##c) V16(x##d)
@@ -67838,6 +69698,14 @@ void __fastcall sub_10171d10(CHandlerView *self, int edx, CInputData *pData)
 // END FUNCTION
 
 // FUNCTION: 0x10171da0 size=0x116
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBasePlayer.h"
 #include "inputdata_t.h"
 #include "CDialog.h"
@@ -67893,6 +69761,8 @@ void CUnknown10171f10::sub_10171f10(int unk4)
 // END FUNCTION
 
 // FUNCTION: 0x10172410 size=0x1dc
+#include "CBaseEntity.h"
+#include "CTraceFilterNoCharacterCollide.h"
 #include "CBasePlayer.h"
 #include "QAngle.h"
 #include "Ray_t.h"
@@ -68005,6 +69875,7 @@ void sub_101727a0(CPlayerVecSlotsX *pPlayer, int arg)
 // END FUNCTION
 
 // FUNCTION: 0x10172830 size=0x5f
+#include "Vector.h"
 #define V4(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3();
 #define V16(a) V4(a##a) V4(a##b) V4(a##c) V4(a##d)
 #define V64(a) V16(a##a) V16(a##b) V16(a##c) V16(a##d)
@@ -68074,6 +69945,7 @@ void CBaseCombatCharacter::sub_10174c10()
 // END FUNCTION
 
 // FUNCTION: 0x10174df0 size=0x20
+#include "CBaseEntity.h"
 #include "CBaseCombatWeapon.h"
 
 CBaseEntity *__fastcall sub_1032e7b0(void *self);
@@ -68441,6 +70313,7 @@ int CUnknown10178120::sub_10178120()
 // END FUNCTION
 
 // FUNCTION: 0x10178170 size=0xcc
+#include "CBasePlayer.h"
 #include "CUnknown101800e0.h"
 
 
@@ -68514,6 +70387,7 @@ int CUnknown10178550::sub_10178550(int a0, int a1, int a2)
 // END FUNCTION
 
 // FUNCTION: 0x10178590 size=0x91
+#include "CBasePlayer.h"
 #include "CEntityVSlots.h"
 #include "QAngle.h"
 void sub_10139970(const Vector &vecForward, QAngle &angles);
@@ -68886,6 +70760,8 @@ void CBasePlayer::sub_1017c1d0(CBaseEntity *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x1017c580 size=0x53
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
 struct CUnitP3 : CBasePlayer {
     void sub_1017c580();
 };
@@ -68954,6 +70830,14 @@ char CUnk1017c6a0::sub_1017c6a0()
 // END FUNCTION
 
 // FUNCTION: 0x1017c6d0 size=0x10c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBasePlayer.h"
 #include "CBaseEntity.h"
 #include "ScopeTrace.h"
@@ -68992,6 +70876,7 @@ void CBasePlayer::sub_1017c6d0()
 // END FUNCTION
 
 // FUNCTION: 0x1017c830 size=0x9a
+#include "CBasePlayer.h"
 #include "QuestJournal.h"
 #include <string.h>
 extern QuestJournal g_1074f8f8;
@@ -69155,6 +71040,8 @@ void * __fastcall sub_1017cf90(Holder *self)
 // END FUNCTION
 
 // FUNCTION: 0x1017d020 size=0x6d
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
 struct CUseTargetView {
     char sub_1000d15c(const char *pszName, int a, int b);
 };
@@ -69233,6 +71120,7 @@ void SBlendView::sub_1017d0b0(float flRate)
 // END FUNCTION
 
 // FUNCTION: 0x1017d460 size=0x170
+#include "vampire_all.h"
 void CBasePlayer::sub_1017d460(CBaseEntity *pEnt, float flBlend)
 {
 	if (0.0f > flBlend)
@@ -69300,6 +71188,7 @@ CGlobalEntityList_Ent *CUnknown1017d680::sub_1017d680()
 // END FUNCTION
 
 // FUNCTION: 0x1017d900 size=0x1a0
+#include "CBaseEntity.h"
 #include "CBasePlayer.h"
 #include "CUnknown1070b22c.h"
 #include "ehandle.h"
@@ -69496,6 +71385,8 @@ int CUnknown1017e740::sub_1017e740()
 // END FUNCTION
 
 // FUNCTION: 0x1017e760 size=0xa1
+#include "CBasePlayer.h"
+#include "Vector.h"
 struct PlayerView1017e760 {
 	char pad[0x3c8];
 	Vector m_vec3c8;
@@ -69537,6 +71428,7 @@ void __stdcall sub_1017e840(int level)
 // END FUNCTION
 
 // FUNCTION: 0x1017e900 size=0x53
+#include "CBasePlayer.h"
 #include "globalvars.h"
 void CBasePlayer::sub_1017e900(int a, int b)
 {
@@ -69675,6 +71567,9 @@ void CBasePlayer::sub_1017f170(void *pSpawnerVoid)
 // END FUNCTION
 
 // FUNCTION: 0x1017f2a0 size=0xa9
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "Vector.h"
 struct CMsgPlayerView;
 void sub_101cebc0(CMsgPlayerView *pPlayer, int a, int b);
 __declspec(dllimport) void DevMsg(const char *pMsg, ...);
@@ -69721,6 +71616,7 @@ void CBasePlayer::sub_1017f2a0(int priority, CBaseEntity *pEntity, const Vector 
 // END FUNCTION
 
 // FUNCTION: 0x1017f4a0 size=0x10b
+#include "CBaseEntity.h"
 #include "CBasePlayer.h"
 #include "ConVar.h"
 
@@ -69945,6 +71841,7 @@ void __fastcall sub_1017f940(void *pThis)
 // END FUNCTION
 
 // FUNCTION: 0x1017f980 size=0x27
+#include "CBaseEntity.h"
 // TARGET: CUnknown1017f980::sub_1017f980
 #include "CUnknown1017f980.h"
 #include "CDoorEventList.h"
@@ -70052,6 +71949,7 @@ void __fastcall sub_1017faa0(CMsgPlayerView *pPlayer)
 // END FUNCTION
 
 // FUNCTION: 0x1017ff40 size=0x106
+#include "CBaseEntity.h"
 #include "CUnknown1017fd60.h"
 #include "CEHandleGet.h"
 #include "Vector.h"
@@ -70107,6 +72005,7 @@ float CUnknown101800e0::sub_101800e0(int index)
 // END FUNCTION
 
 // FUNCTION: 0x10180100 size=0x37
+#include "CBaseEntity.h"
 #include "CBasePlayer.h"
 #include "CEHandleGet.h"
 
@@ -70226,6 +72125,7 @@ void sub_101809e0()
 // END FUNCTION
 
 // FUNCTION: 0x10180af0 size=0x139
+#include "CBaseEntity.h"
 #include <string.h>
 #include "CGlobalEntityList.h"
 #include "ConVar.h"
@@ -70259,6 +72159,7 @@ void sub_10180af0()
 // END FUNCTION
 
 // FUNCTION: 0x10180d10 size=0x9a
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 #include <string.h>
 extern CGlobalEntityList g_106eb5d8;
@@ -70290,6 +72191,7 @@ void sub_10180d10()
 // END FUNCTION
 
 // FUNCTION: 0x10180e70 size=0xf8
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 extern CGlobalEntityList g_106eb5d8;
 extern char g_106b8540[];
@@ -70571,6 +72473,8 @@ int CUnknown10182810::sub_10182810()
 // END FUNCTION
 
 // FUNCTION: 0x101828b0 size=0x178
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 
 extern CGlobalEntityList *g_10566458;
@@ -70809,6 +72713,8 @@ void CUnknown10183100::sub_10183100(int value)
 // END FUNCTION
 
 // FUNCTION: 0x101832b0 size=0x60
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
 struct CUnitP4 : CBasePlayer {
     bool sub_101832b0();
 };
@@ -70828,6 +72734,8 @@ bool CUnitP4::sub_101832b0()
 // END FUNCTION
 
 // FUNCTION: 0x10183330 size=0xbe
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
 extern char g_106b8540[];
 
 // TARGET: CBasePlayer::sub_10183330
@@ -70905,6 +72813,14 @@ void CBasePlayer::sub_101835e0()
 // END FUNCTION
 
 // FUNCTION: 0x101836d0 size=0x149
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBasePlayer.h"
 #include "CBaseEntity.h"
 #include "CBaseCombatWeapon.h"
@@ -70961,6 +72877,9 @@ void CBasePlayer::sub_101836d0(void *pKeyring)
 // END FUNCTION
 
 // FUNCTION: 0x10183880 size=0x67
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CVStatList_t.h"
 struct StatInfoRef { char pad[0x10]; int id; };
 struct StatOwner {
@@ -71683,6 +73602,7 @@ void __stdcall sub_10185f90(CBasePlayer *pPlayer, double flFrame)
 // END FUNCTION
 
 // FUNCTION: 0x10186f00 size=0x24a
+#include "CBaseEntity.h"
 #include "CVProfile.h"
 #include "CPlayerMove.h"
 #include "CBasePlayer.h"
@@ -71776,6 +73696,7 @@ void CPlayerMove::sub_10186f00(CBasePlayer *pPlayer)
 // END FUNCTION
 
 // FUNCTION: 0x101871f0 size=0x69
+#include "CLogicAuto.h"
 #define PV1(p) virtual void p();
 #define PV10(p) PV1(p##0) PV1(p##1) PV1(p##2) PV1(p##3) PV1(p##4) PV1(p##5) PV1(p##6) PV1(p##7) PV1(p##8) PV1(p##9)
 #define PV100(p) PV10(p##0) PV10(p##1) PV10(p##2) PV10(p##3) PV10(p##4) PV10(p##5) PV10(p##6) PV10(p##7) PV10(p##8) PV10(p##9)
@@ -71860,6 +73781,9 @@ void *sub_101878d0(SEdict *pent)
 // END FUNCTION
 
 // FUNCTION: 0x10187ef0 size=0x86
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
 #include "CLagCompensationManager.h"
 
 
@@ -71982,6 +73906,8 @@ void sub_101895d0(CBaseEntity *ent, int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x10189660 size=0x64
+#include "CBaseEntity.h"
+#include "CRagdollProp.h"
 struct IPlayerPickupVPhysics {
     virtual void vf0();
     virtual void vf1(int a, int b);
@@ -72471,6 +74397,7 @@ void CPointCamera::sub_1018c2b0()
 // END FUNCTION
 
 // FUNCTION: 0x1018c4d0 size=0xd
+#include "CUnknown1018c4d0.h"
 void CUnknown1018c4d0::sub_1018c4d0(char value)
 {
 	m_bFlag458 = value;
@@ -72858,6 +74785,7 @@ void CUnknown1018d7f0::sub_1018d7f0(CBaseEntity **ppEnt)
 // END FUNCTION
 
 // FUNCTION: 0x1018d840 size=0x52
+#include "CBaseEntity.h"
 struct SInputActivator {
 	CBaseEntity *pActivator;
 };
@@ -73260,6 +75188,7 @@ void sub_1018ecf0(CBaseEntity *pOwner, float flScale)
 // END FUNCTION
 
 // FUNCTION: 0x1018ee60 size=0x9c
+#include "CGlobalEntityList.h"
 #include "CActivityCopyProp.h"
 
 extern CGlobalEntityList g_106eb5d8;
@@ -73442,6 +75371,7 @@ void CBreakableProp::sub_1018f690(int mode)
 // END FUNCTION
 
 // FUNCTION: 0x1018f700 size=0xd
+#include "CUnknown1018f700.h"
 void CUnknown1018f700::sub_1018f700(char value)
 {
 	m_unk778 = value;
@@ -73618,6 +75548,7 @@ void CBreakableProp::sub_10002d1f(float flDelay)
 // END FUNCTION
 
 // FUNCTION: 0x1018ff60 size=0x43
+#include "CBaseEntity.h"
 #include "CDynamicProp.h"
 
 void *sub_100aa720(int size);
@@ -73638,6 +75569,7 @@ extern "C" CBaseEntity *dynamic_prop()
 // END FUNCTION
 
 // FUNCTION: 0x1018ffd0 size=0x43
+#include "CBaseEntity.h"
 #include "CDynamicProp.h"
 void *sub_100aa720(int size);
 extern char g_1058eed8[];
@@ -74115,6 +76047,7 @@ bool sub_101918e0(char **pa, char **pb)
 // END FUNCTION
 
 // FUNCTION: 0x10191cc0 size=0x16c
+#include "utlrbtree.h"
 #include "utlvector.h"
 #include "CBreakParser.h"
 
@@ -74757,6 +76690,13 @@ bool CUtlRBTree12::sub_10194e40(unsigned short i) const
 // END FUNCTION
 
 // FUNCTION: 0x10195160 size=0x1c0
+#include "CUtlRBTree16.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
 #include "CUtlRBTree12.h"
 #include "utlrbtree.h"
 struct CRBTree12Entry_10194f30 { char data[4]; };	// the tree of its sentinel (one T per game instance)
@@ -75073,6 +77013,8 @@ int sub_10196940()
 // END FUNCTION
 
 // FUNCTION: 0x10196970 size=0x98
+#include "CBaseEntity.h"
+#include "exception.h"
 #include "CGlobalEntityList.h"
 extern CGlobalEntityList g_106eb5d8;
 
@@ -75105,6 +77047,15 @@ PyObject *sub_10196970(PyObject *self, PyObject *args)
 // END FUNCTION
 
 // FUNCTION: 0x10196a40 size=0x114
+#include "CUnknown101cf0a0.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CUnknown1070b22c.h"
 #include "ScopeTrace.h"
 extern CUnknown1070b22c *g_1070b22c;
@@ -75196,6 +77147,7 @@ PyObj *sub_10196c50(PyObj *self, PyObj *args)
 // END FUNCTION
 
 // FUNCTION: 0x10196d10 size=0x9a
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 
 extern "C" __declspec(dllimport) int __cdecl PyArg_ParseTuple(void *pArgs, const char *pszFormat, ...);
@@ -75226,6 +77178,7 @@ void *sub_10196d10(void *pSelf, void *pArgs)
 // END FUNCTION
 
 // FUNCTION: 0x10196de0 size=0x8c
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 
 extern "C" {
@@ -75278,6 +77231,7 @@ SPyObj *sub_10196ea0(void *self, void *args)
 // END FUNCTION
 
 // FUNCTION: 0x10196f30 size=0xdb
+#include "CBaseEntity.h"
 #include <string.h>
 #include "CGlobalEntityList.h"
 
@@ -75572,6 +77526,7 @@ int *sub_10197430(void *self, PyObj *args)
 // END FUNCTION
 
 // FUNCTION: 0x10197510 size=0x8f
+#include "CBaseEntity.h"
 extern int (*g_109f37a0)(int, const char *, ...);
 extern int (*g_109f377c)();
 extern int **g_109f36ec;
@@ -75602,6 +77557,7 @@ int *sub_10197510(int self, int args)
 // END FUNCTION
 
 // FUNCTION: 0x101975d0 size=0xa3
+#include "exception.h"
 #include "Vector.h"
 
 struct PyObj
@@ -76032,6 +77988,7 @@ PyObj *sub_10198310(void *self, void *args)
 // END FUNCTION
 
 // FUNCTION: 0x101984c0 size=0x130
+#include "CBaseEntity.h"
 struct PyObj { int m_refcnt; };
 
 extern "C" {
@@ -76198,6 +78155,9 @@ PyObject *sub_10199100(PyObject *self, PyObject *args)
 // END FUNCTION
 
 // FUNCTION: 0x10199240 size=0x127
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
 #include "CEntityVSlots.h"
 struct PyObj { int ob_refcnt; PyObj *ob_type; };
 extern "C" {
@@ -76259,6 +78219,7 @@ PyObj *sub_10199240(PyObj *self, PyObj *args)
 // END FUNCTION
 
 // FUNCTION: 0x101993c0 size=0x10e
+#include "CBaseEntity.h"
 struct PyObj;
 struct CBasePlayerUnit
 {
@@ -76304,6 +78265,7 @@ int *sub_101993c0(void *self, PyObj *args)
 // END FUNCTION
 
 // FUNCTION: 0x10199800 size=0x88
+#include "exception.h"
 struct CQuestPlayer { void sub_1017cc20(const char *pszQuest, int nState); };
 CQuestPlayer *sub_101cd9e0(int index);
 extern "C" {
@@ -76332,6 +78294,8 @@ void *sub_10199800(void *self, void *args)
 // END FUNCTION
 
 // FUNCTION: 0x10199990 size=0xad
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
 extern int (*g_109f37a0)(int, const char *, ...);
 extern int (*g_109f377c)();
 extern int **g_109f3780;
@@ -76366,6 +78330,10 @@ int sub_10199990(int self, int args)
 // END FUNCTION
 
 // FUNCTION: 0x10199a70 size=0x1ef
+#include "exception.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseCombatCharacter.h"
 #include "CVDmg_t.h"
 #include "CVStatList_t.h"
@@ -76437,6 +78405,9 @@ bad_args:
 // END FUNCTION
 
 // FUNCTION: 0x10199ce0 size=0xf6
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseCombatCharacter.h"
 #include "CVStatList_t.h"
 struct PyObject { int ob_refcnt; };
@@ -76537,6 +78508,7 @@ char __stdcall sub_1019a960(int a0, int a1)
 // END FUNCTION
 
 // FUNCTION: 0x1019a980 size=0xe8
+#include "CBasePlayer.h"
 #include "CAI_BaseNPCTroika.h"
 
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
@@ -77374,6 +79346,7 @@ void CRecipientFilter::sub_1019cf00()
 // END FUNCTION
 
 // FUNCTION: 0x1019d130 size=0x6c
+#include "CBaseEntity.h"
 #include "CUnknown1019d130.h"
 void sub_10430fa0(void *, const void *, unsigned);
 
@@ -77399,6 +79372,7 @@ found:
 // END FUNCTION
 
 // FUNCTION: 0x1019d1c0 size=0x3c
+#include "CBasePlayer.h"
 #include "CRecipientFilter.h"
 
 CBasePlayer *sub_1000ac8b(int);
@@ -77458,6 +79432,7 @@ char CUnknown1019d470::sub_1019d470()
 // END FUNCTION
 
 // FUNCTION: 0x1019d490 size=0xa
+#include "CUnknown1019d490.h"
 void CUnknown1019d490::sub_1019d490(char value)
 {
 	m_unk29 = value;
@@ -77854,6 +79829,14 @@ int __stdcall sub_1019ee20(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x1019ee40 size=0x113
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CRopeKeyframe.h"
 #include "ScopeTrace.h"
@@ -78002,6 +79985,7 @@ const char *sub_1019f760(SFuncMap *pMap, int pFunc)
 // END FUNCTION
 
 // FUNCTION: 0x101a01c0 size=0x17
+#include "datamap.h"
 #include "CSave.h"
 
 // TARGET: CSave::sub_101a01c0
@@ -78246,6 +80230,7 @@ bool CSave::sub_101a1140(int a, void *pData, void *pBase, typedescription_t *pFi
 // END FUNCTION
 
 // FUNCTION: 0x101a1520 size=0x1bc
+#include "datamap.h"
 #include "CSave.h"
 #include "SaveRestoreFieldInfo_t.h"
 
@@ -78336,6 +80321,7 @@ void CSave::sub_101a1520(const unsigned short *pToken, void *pData, void *pRootM
 // END FUNCTION
 
 // FUNCTION: 0x101a1750 size=0x17
+#include "datamap.h"
 #include "CRestore.h"
 #include "CSave.h"
 
@@ -78426,6 +80412,7 @@ int CRestore::sub_101a1f00(int a, int b, CRestoreDesc *p)
 // END FUNCTION
 
 // FUNCTION: 0x101a1f70 size=0xc
+#include "CUnknown101a1f70.h"
 int CUnknown101a1f70::sub_101a1f70()
 {
 	if (m_unk18 == 0)
@@ -78503,6 +80490,8 @@ CRestoreSaveEnt *CRestore::sub_101a2410(int index)
 // END FUNCTION
 
 // FUNCTION: 0x101a2820 size=0x198
+#include "CBaseEntity.h"
+#include "datamap.h"
 #include "CRestore.h"
 #include "CUnknown1070b248.h"
 
@@ -78575,6 +80564,7 @@ int sub_101a2c00()
 // END FUNCTION
 
 // FUNCTION: 0x101a2d50 size=0xbd
+#include "CBaseEntity.h"
 #include "CEntitySaveRestoreBlockHandler.h"
 #include "CGlobalEntityList.h"
 
@@ -79055,6 +81045,7 @@ void sub_101a6ec0()
 // END FUNCTION
 
 // FUNCTION: 0x101a7170 size=0x78
+#include "CAI_BaseNPC.h"
 #include "CGlobalEntityList.h"
 #include "CCineNPC.h"
 extern CGlobalEntityList *g_10566458;
@@ -79083,6 +81074,8 @@ void sub_101a7170(CCineNPC *pScript)
 // END FUNCTION
 
 // FUNCTION: 0x101a7230 size=0x58
+#include "CBaseEntity.h"
+#include "CCineNPC.h"
 #include "CEHandleGet.h"
 void CCineNPC::sub_101a7230(int slot)
 {
@@ -79214,6 +81207,7 @@ void sub_101a75e0()
 // END FUNCTION
 
 // FUNCTION: 0x101a7760 size=0x2e
+#include "CBaseEntity.h"
 // TARGET: CCineNPC::sub_101a7760
 #include "CAI_BaseNPC.h"
 #include "CCineNPC.h"
@@ -79360,6 +81354,8 @@ void CCineNPC::sub_101a81a0()
 // END FUNCTION
 
 // FUNCTION: 0x101a8460 size=0x173
+#include "CBaseAnimating.h"
+#include "CBaseEntity.h"
 #include "CCineNPC.h"
 #include "CEntityVSlots.h"
 #include "CEHandleGet.h"
@@ -79471,6 +81467,7 @@ char CCineNPC::sub_101a8ac0()
 // END FUNCTION
 
 // FUNCTION: 0x101a8c30 size=0x82
+#include "CBaseEntity.h"
 #include "CCineNPC.h"
 #include "CGlobalEntityList.h"
 extern CGlobalEntityList g_106eb5d8;
@@ -79490,6 +81487,7 @@ void CCineNPC::sub_101a8c30()
 // END FUNCTION
 
 // FUNCTION: 0x101a8cf0 size=0xc0
+#include "CLogicAuto.h"
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 extern char g_106b8540[];
@@ -79776,6 +81774,15 @@ void __fastcall sub_101aa0e0(CThinkOwnerView *p)
 // END FUNCTION
 
 // FUNCTION: 0x101aa210 size=0x127
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CUnknown101aa210.h"
 #include "CGlobalEntityList.h"
 #include "ScopeTrace.h"
@@ -79899,6 +81906,7 @@ void *sub_101ab220(void *pSelf, int a, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x101ab260 size=0x63
+#include "CBaseEntity.h"
 void sub_101ab260(int unused, EHANDLE *pHandle, int *pOut)
 {
     if (pHandle) {
@@ -80217,6 +82225,7 @@ int sub_101ac200()
 // END FUNCTION
 
 // FUNCTION: 0x101ac2f0 size=0xa
+#include "CAmbientGeneric.h"
 unsigned int CAmbientGeneric::sub_101ac2f0()
 {
 	return m_spawnflags & 1;
@@ -80804,6 +82813,14 @@ void CUnknown101b0d80::sub_101b0d80(int a)
 // END FUNCTION
 
 // FUNCTION: 0x101b0dc0 size=0x1ff
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CSoundEmitterSystemBase.h"
 #include "ScopeTrace.h"
 #include "CRecipientFilter.h"
@@ -80946,6 +82963,7 @@ void sub_101b1880(int a, int b, const char *name)
 // END FUNCTION
 
 // FUNCTION: 0x101b19e0 size=0x10
+#include "CPASAttenuationFilter.h"
 namespace lifted {
 extern char g_1072be18;
 struct C10001780 { int sub_10001780(int); };
@@ -81312,6 +83330,7 @@ CSoundEmitterSystemBase *CSoundEmitterSystemBase::sub_101b26c0()
 // END FUNCTION
 
 // FUNCTION: 0x101b2790 size=0xaf
+#include "utlrbtree.h"
 #include "CUnknown101b2790.h"
 #include "CUtlRBTree232.h"
 
@@ -81363,6 +83382,7 @@ int sub_101b2b10()
 // END FUNCTION
 
 // FUNCTION: 0x101b2b30 size=0xe8
+#include "utlvector.h"
 #include "CSoundEmitterSystemBase.h"
 #include "UtlMem2.h"
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
@@ -82267,6 +84287,7 @@ char *CUnk101b66b0::sub_101b66b0(int index)
 // END FUNCTION
 
 // FUNCTION: 0x101b68f0 size=0xf3
+#include "utlrbtree.h"
 #include "CUtlRBTreeFind232.h"
 
 int CUtlRBTreeFind232::sub_101b68f0(const void *search)
@@ -82287,6 +84308,7 @@ int CUtlRBTreeFind232::sub_101b68f0(const void *search)
 // END FUNCTION
 
 // FUNCTION: 0x101b6a30 size=0x8
+#include "CUnknown101b7370.h"
 void __fastcall sub_101b6a30(int *p) { p[3] = 0; }
 // END FUNCTION
 
@@ -82362,6 +84384,15 @@ void UtlMem::sub_101b6b90()
 // END FUNCTION
 
 // FUNCTION: 0x101b6bd0 size=0x134
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree16.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlmemory.h"
+#include "utlrbtree.h"
 #include "CUtlRBTree232.h"
 #include "CUnknown101b30d0.h"
 
@@ -82435,6 +84466,7 @@ int CUtlRBTree232::sub_101b6bd0(int parent, bool leftchild)
 // END FUNCTION
 
 // FUNCTION: 0x101b6d60 size=0xf9
+#include "utlrbtree.h"
 #include "CUtlRBTree232.h"
 
 void CUtlRBTree232::sub_101b6d60(const void *pInsert, int *pParent, bool *pLeftChild)
@@ -82595,6 +84627,14 @@ int CUnknown101b7430::sub_101b7430()
 // END FUNCTION
 
 // FUNCTION: 0x101b78f0 size=0x58
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree16.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlrbtree.h"
 #include "CUtlRBTree232.h"
 CUtlRBTree232::Links_t &CUtlRBTree232::sub_101b78f0(int i)
 {
@@ -82643,6 +84683,13 @@ int CUnknown101b9140::sub_101b7df0(int num, const CUnknown101b9140Elem *pToCopy)
 // END FUNCTION
 
 // FUNCTION: 0x101b7f00 size=0x4f
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree16.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
 #include "CUtlRBTree24.h"
 #include "utlrbtree.h"
 
@@ -83319,6 +85366,8 @@ void __fastcall sub_101bb760(void *pSelf, int unused, float scale)
 // END FUNCTION
 
 // FUNCTION: 0x101bb7e0 size=0x80
+#include "utlmemory.h"
+#include "utlvector.h"
 #include "CUtlVectorDataOps.h"
 struct ISaveRestoreOps;
 struct datamap_t;
@@ -83424,6 +85473,7 @@ float __fastcall sub_101bbcf0(char *pThis)
 // END FUNCTION
 
 // FUNCTION: 0x101bbd10 size=0x9e
+#include "CBaseEntity.h"
 #include "CUnknown101bbd10.h"
 #include "CGlobalEntityList.h"
 extern CGlobalEntityList *g_10566458;
@@ -83469,6 +85519,7 @@ void __fastcall sub_101bc000(int *p)
 // END FUNCTION
 
 // FUNCTION: 0x101bc020 size=0xd9
+#include "CBaseEntity.h"
 #include "CUnknown101bc140.h"
 #include "CGlobalEntityList.h"
 
@@ -83519,6 +85570,7 @@ void CUnknown101bc140::sub_101bc020()
 // END FUNCTION
 
 // FUNCTION: 0x101bc140 size=0xd5
+#include "CBaseEntity.h"
 #include "CUnknown101bc140.h"
 
 struct EntInfo { CBaseEntity *m_pEntity; int m_serial; int m_unused; };
@@ -83865,6 +85917,8 @@ void CStealthKillRules::sub_101be0e0()
 // END FUNCTION
 
 // FUNCTION: 0x101be1d0 size=0x9
+#include "CBaseEntity.h"
+#include "CStealthKillRules.h"
 float CStealthKillRules::sub_101be1d0(CBaseEntity *pEntity)
 {
 	return m_flRange;
@@ -83872,6 +85926,15 @@ float CStealthKillRules::sub_101be1d0(CBaseEntity *pEntity)
 // END FUNCTION
 
 // FUNCTION: 0x101be500 size=0x121
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CStealthKillRules.h"
 #include "Vector.h"
 #include "ScopeTrace.h"
@@ -83914,6 +85977,14 @@ bool CStealthKillRulesUnit::sub_101be500(CBaseEntity *pKiller, CBaseEntity *pVic
 // END FUNCTION
 
 // FUNCTION: 0x101be710 size=0x1ad
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CStealthKillRules.h"
 #include "CBaseCombatCharacter.h"
 #include "CEntityVSlots.h"
@@ -83956,6 +86027,18 @@ bool CStealthKillRules::sub_101be710(CBaseEntity *pListener, CBaseEntity *pTarge
 // END FUNCTION
 
 // FUNCTION: 0x101be930 size=0x10d
+#include "CStealthKillRules.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseCombatCharacter.h"
 #include "CBaseCombatWeapon.h"
 #include "CVFeat_t.h"
@@ -83989,6 +86072,18 @@ float CStealthKillRules::sub_101be930(CBaseEntity *pEntity)
 // END FUNCTION
 
 // FUNCTION: 0x101bea90 size=0x10c
+#include "CStealthKillRules.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseCombatCharacter.h"
 #include "CBaseCombatWeapon.h"
 #include "CVFeat_t.h"
@@ -84022,6 +86117,14 @@ float CStealthKillRules::sub_101bea90(CBaseEntity *pEntity)
 // END FUNCTION
 
 // FUNCTION: 0x101bedb0 size=0xd7
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CStealthKillRules.h"
 #include "ScopeTrace.h"
 
@@ -84066,6 +86169,18 @@ float sub_101beed0(float x, float lo, float hi)
 // END FUNCTION
 
 // FUNCTION: 0x101bf060 size=0x192
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CStealthKillRules.h"
 #include "CVFeat_t.h"
 #include "CUnknown1006cf30.h"
@@ -84116,6 +86231,14 @@ float CStealthKillRules::sub_101bf060(CBaseEntity *pListener, CBaseEntity *pTarg
 // END FUNCTION
 
 // FUNCTION: 0x101bf270 size=0x1c2
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CStealthKillRules.h"
 #include "ScopeTrace.h"
 
@@ -84238,6 +86361,13 @@ bool CUtlRBTree12::sub_101c02d0(unsigned short i) const
 // END FUNCTION
 
 // FUNCTION: 0x101c05f0 size=0x1c0
+#include "CUtlRBTree16.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
 #include "CUtlRBTree12.h"
 #include "utlrbtree.h"
 struct CRBTree12Entry_101c03c0 { char data[4]; };	// the tree of its sentinel (one T per game instance)
@@ -84391,6 +86521,7 @@ void sub_101c0b60()
 // END FUNCTION
 
 // FUNCTION: 0x101c0b80 size=0xa3
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 extern CGlobalEntityList g_106eb5d8;
 extern unsigned int g_1070ba38;
@@ -84645,6 +86776,7 @@ float sub_101c1af0(unsigned char flags, const float *pA, const float *pB)
 // END FUNCTION
 
 // FUNCTION: 0x101c1b40 size=0xd
+#include "CUnknown101c1b40.h"
 void CUnknown101c1b40::sub_101c1b40(int mode)
 {
 	mode = 0;
@@ -84653,6 +86785,7 @@ void CUnknown101c1b40::sub_101c1b40(int mode)
 // END FUNCTION
 
 // FUNCTION: 0x101c1b60 size=0xd
+#include "CUnknown101c1b60.h"
 void CUnknown101c1b60::sub_101c1b60(int value)
 {
 	value = 1;
@@ -84661,6 +86794,7 @@ void CUnknown101c1b60::sub_101c1b60(int value)
 // END FUNCTION
 
 // FUNCTION: 0x101c1b80 size=0xd
+#include "CUnknown101c1b40.h"
 void CUnknown101c1b40::sub_101c1b80(int mode)
 {
 	mode = 2;
@@ -84669,6 +86803,7 @@ void CUnknown101c1b40::sub_101c1b80(int mode)
 // END FUNCTION
 
 // FUNCTION: 0x101c1ba0 size=0xd
+#include "CUnknown101c1b60.h"
 void CUnknown101c1b60::sub_101c1ba0(int value)
 {
 	value = 3;
@@ -84721,6 +86856,7 @@ void CBaseToggle::sub_101c1dc0(int a, int b, int c, int d)
 // END FUNCTION
 
 // FUNCTION: 0x101c1e50 size=0x175
+#include "CTraceFilterNoCharacterCollide.h"
 #include "Ray_t.h"
 #include "CGameTrace.h"
 #include "CTraceFilterSimple.h"
@@ -84932,6 +87068,14 @@ CSubHost *CSubHost::sub_101c2720(int a1, int a2, int a3, int a4, int a5, int a6,
 // END FUNCTION
 
 // FUNCTION: 0x101c2770 size=0xda
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CUnknown101c2770.h"
 #include "CVDmg_t.h"
 #include "ScopeTrace.h"
@@ -85093,6 +87237,7 @@ float CUnknown101c2a90::sub_101c2a70()
 // END FUNCTION
 
 // FUNCTION: 0x101c2a90 size=0xa
+#include "CUnknown101c2a90.h"
 void CUnknown101c2a90::sub_101c2a90(char value)
 {
 	m_bFlag = value;
@@ -85108,6 +87253,7 @@ char CUnknown101c2ab0::sub_101c2ab0()
 // END FUNCTION
 
 // FUNCTION: 0x101c2ad0 size=0xa
+#include "CUnknown101c2a90.h"
 void CUnknown101c2a90::sub_101c2ad0(char value)
 {
 	m_bFlag2 = value;
@@ -85156,6 +87302,7 @@ int __fastcall sub_101c2b90(CDerived101c2b90 *self)
 // END FUNCTION
 
 // FUNCTION: 0x101c2bc0 size=0x4e
+#include "CBaseEntity.h"
 struct CAnimParams {
 	char pad[0x4c];
 	EHANDLE m_hEnt;
@@ -85316,6 +87463,15 @@ void sub_101c31f0(unsigned char type, int *v1, int *v2, unsigned short s, int f,
 // END FUNCTION
 
 // FUNCTION: 0x101c3a70 size=0xf6
+#include "CUnknown101cf0a0.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CUnknown1070b22c.h"
 extern CUnknown1070b22c *g_1070b22c;
@@ -85422,6 +87578,7 @@ void sub_101c4070()
 // END FUNCTION
 
 // FUNCTION: 0x101c4160 size=0x89
+#include "utlrbtree.h"
 #include "utlvector.h"
 #include "ehandle.h"
 #include "CBaseEntity.h"
@@ -85800,6 +87957,14 @@ extern "C" GP *trigger()
 // END FUNCTION
 
 // FUNCTION: 0x101c4bf0 size=0x113
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseTrigger.h"
 #include "CCollisionProperty.h"
 #include "ScopeTrace.h"
@@ -85834,6 +87999,14 @@ void CBaseTrigger::sub_101c4bf0()
 // END FUNCTION
 
 // FUNCTION: 0x101c4dd0 size=0x113
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseTrigger.h"
 #include "CCollisionProperty.h"
 #include "ScopeTrace.h"
@@ -86479,6 +88652,14 @@ int __stdcall sub_101c7870(int a0, int a1, int a2, int a3)
 // END FUNCTION
 
 // FUNCTION: 0x101c7b80 size=0x195
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
 #include "CGlobalEntityList.h"
@@ -86712,6 +88893,7 @@ void CUnknown101c8a60::sub_101c8a60(CInputData100bc0f0 *data)
 // END FUNCTION
 
 // FUNCTION: 0x101c8b60 size=0xa3
+#include "CBaseEntity.h"
 float sub_102283a0(float a, float b, float c, float d);
 
 struct CView101c8b60 {
@@ -86867,6 +89049,7 @@ int sub_101c9990()
 // END FUNCTION
 
 // FUNCTION: 0x101c99c0 size=0x55
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 extern CGlobalEntityList g_106eb5d8;
 extern char g_106b8540[];
@@ -86933,6 +89116,14 @@ int sub_101c9b30()
 // END FUNCTION
 
 // FUNCTION: 0x101c9b60 size=0xe9
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
 #include "CBaseEntity_ext.h"
@@ -87655,6 +89846,7 @@ void __fastcall sub_101cc810(void **p) { ((Fn *)*p)[246](p); }
 // END FUNCTION
 
 // FUNCTION: 0x101cc950 size=0x3e
+#include "CBaseEntity.h"
 #include "CFlaggedEntitiesEnum.h"
 
 extern int vt_10482f48[];
@@ -87697,6 +89889,7 @@ bool CUnknown101cc9a0::sub_101cc9a0(int value)
 // END FUNCTION
 
 // FUNCTION: 0x101cca80 size=0x46
+#include "CBaseEntity.h"
 #include "CFlaggedEntitiesEnum.h"
 struct CSpatialPartition101cca80 {
     virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
@@ -87716,6 +89909,7 @@ int sub_101cca80(CBaseEntity **pList, int nMax, const float *mins, const float *
 // END FUNCTION
 
 // FUNCTION: 0x101ccaf0 size=0x46
+#include "CBaseEntity.h"
 #include "CFlaggedEntitiesEnum.h"
 struct CSpatialPartition101ccaf0 {
     virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
@@ -87736,6 +89930,7 @@ int sub_101ccaf0(CBaseEntity **pList, int nMax, const float *mins, const float *
 // END FUNCTION
 
 // FUNCTION: 0x101ccb60 size=0x3e
+#include "CBaseEntity.h"
 #include "vampire.h"
 #include "CEdtEntitiesEnum.h"
 
@@ -87779,6 +89974,7 @@ bool CUnknown101ccbb0::sub_101ccbb0(int value)
 // END FUNCTION
 
 // FUNCTION: 0x101ccc80 size=0x46
+#include "CBaseEntity.h"
 #include "CEdtEntitiesEnum.h"
 struct CSpatialPartition101ccc80 {
     virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
@@ -87969,6 +90165,7 @@ void sub_101cd970(CEntRemoveView *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x101cd9e0 size=0x47
+#include "CBaseEntity.h"
 #include "globalvars.h"
 #include "engineserver.h"
 class CBaseEntity;
@@ -88033,6 +90230,7 @@ void sub_101cdac0(int entindex, int pos, const char *pszSample, int volume, int 
 // END FUNCTION
 
 // FUNCTION: 0x101cdba0 size=0x210
+#include "CBaseEntity.h"
 #include "CSingleUserRecipientFilter.h"
 
 CBaseEntity *sub_101cd9e0(int index);
@@ -88256,6 +90454,7 @@ void sub_101ce2e0(PlayerSlots162 *pPlayer, int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x101ce3d0 size=0x42
+#include "CBaseEntity.h"
 #include "globalvars.h"
 class CBaseEntity;
 CBaseEntity *sub_101cd9e0(int index);
@@ -88290,6 +90489,14 @@ void sub_101ce440(int a, const char *s1, const char *s2, const char *s3, const c
 // END FUNCTION
 
 // FUNCTION: 0x101ce620 size=0x169
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CSingleUserRecipientFilter.h"
 extern int g_1072604c;
@@ -88323,6 +90530,7 @@ void sub_101ce620(void *pPlayer, int value, const char *s1, const char *s2, cons
 // END FUNCTION
 
 // FUNCTION: 0x101ce7f0 size=0xe5
+#include "CBaseEntity.h"
 #include "CEntityVSlots.h"
 #include "CSingleUserRecipientFilter.h"
 #include "IVEngineServer.h"
@@ -88366,6 +90574,7 @@ void sub_101ce920(int nValue, CEdictHolder *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x101cea60 size=0xcf
+#include "CAI_BaseNPC.h"
 #include "IVEngineServer.h"
 #include "CSingleUserRecipientFilter.h"
 
@@ -88500,6 +90709,15 @@ void sub_101ceef0(float size, Vector position, Vector xvec, Vector yvec, Vector 
 // END FUNCTION
 
 // FUNCTION: 0x101cf0a0 size=0x120
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CUnknown101cf0a0.h"
 #include "ScopeTrace.h"
 
@@ -88617,6 +90835,7 @@ void sub_101cf390(int a, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x101cf4a0 size=0xd8
+#include "Vector.h"
 #define SV(n) virtual void s##n();
 #define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
 #define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
@@ -88710,6 +90929,7 @@ void sub_101cf640(int a, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x101cf680 size=0x74
+#include "Vector.h"
 #include <math.h>
 // TARGET: sub_101cf680
 void sub_101cf680(Vector &direction, float epsilon)
@@ -88782,6 +91002,9 @@ bool __cdecl sub_101cf930(const char *pszMaster, CBaseEntity *pActivator)
 // END FUNCTION
 
 // FUNCTION: 0x101cf9b0 size=0x6f
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 struct IInner {
     virtual void v0();
     virtual bool IsFlagged();
@@ -88991,6 +91214,7 @@ void sub_101d0410(int a, int b, const char *str)
 // END FUNCTION
 
 // FUNCTION: 0x101d04d0 size=0x4a
+#include "Vector.h"
 void sub_101d0410(const Vector &a, Vector &out, int c);
 void sub_101d04d0(const Vector &vecStart, Vector &vecDir, int c)
 {
@@ -89056,6 +91280,7 @@ void sub_101d0630(unsigned char *pOut, const char *psz)
 // END FUNCTION
 
 // FUNCTION: 0x101d0680 size=0x111
+#include "Vector.h"
 extern float (__fastcall *g_1057966c)(Vector *);
 
 Vector sub_101d0680(const Vector &a, const Vector &b)
@@ -89100,6 +91325,7 @@ void sub_101d07f0(Vector *pA, const Vector *pB, const Vector *pLimit)
 // END FUNCTION
 
 // FUNCTION: 0x101d08e0 size=0xdb
+#include "Vector.h"
 #include "CUnknown1070b254.h"
 
 extern CUnknown1070b254 *g_1070b254;
@@ -89305,6 +91531,7 @@ void sub_101d1240(const char *pszFormat, ...) {
 // END FUNCTION
 
 // FUNCTION: 0x101d1280 size=0xe0
+#include "CMapEntityLoad.h"
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 
@@ -90134,6 +92361,7 @@ char sub_101d2fc0(CEntQ *a, CEntQ *b)
 // END FUNCTION
 
 // FUNCTION: 0x101d3080 size=0xc2
+#include "CBaseEntity.h"
 class CBaseEntity;
 char __fastcall sub_100a9330(CBaseEntity *pEnt);
 
@@ -90235,6 +92463,7 @@ void CTraceEntList::sub_101d3430(int value)
 // END FUNCTION
 
 // FUNCTION: 0x101d3510 size=0x1ad
+#include "CBaseEntity.h"
 #include "CEntityVSlots.h"
 #include "CUnknown1070b254.h"
 #include "CGameTrace.h"
@@ -90463,6 +92692,7 @@ bool CUnit101d4e30::sub_101d4e30(int a)
 // END FUNCTION
 
 // FUNCTION: 0x101d4f20 size=0xc
+#include "CUnknown101d4f20.h"
 void CUnknown101d4f20::sub_101d4f20(CUnknown101d4f20_Value *out)
 {
 	CUnknown101d4f20_Value v = m_unk78;
@@ -90471,6 +92701,7 @@ void CUnknown101d4f20::sub_101d4f20(CUnknown101d4f20_Value *out)
 // END FUNCTION
 
 // FUNCTION: 0x101d4f40 size=0xc
+#include "CUnknown101d4f20.h"
 void CUnknown101d4f20::sub_101d4f40(CUnknown101d4f20_Value *out)
 {
 	CUnknown101d4f20_Value v = m_unk7c;
@@ -90501,6 +92732,7 @@ int StatDefault3::sub_101d4f60(int n)
 // END FUNCTION
 
 // FUNCTION: 0x101d54f0 size=0xd
+#include "CUnknown101d54f0.h"
 // TARGET: CUnknown101d54f0::sub_101d54f0
 CUnknown101d54f0 *CUnknown101d54f0::sub_101d54f0()
 {
@@ -91490,6 +93722,7 @@ void S101d6d50::sub_101d6d50()
 // END FUNCTION
 
 // FUNCTION: 0x101d6de0 size=0xc5
+#include "CUnknown101d5bd0.h"
 struct S101d6d50 { void sub_101d6d50(); };
 struct Loader { bool sub_101d7000(const char *path); };
 
@@ -91622,6 +93855,10 @@ bool Loader::sub_101d7000(const char *file)
 // END FUNCTION
 
 // FUNCTION: 0x101d70d0 size=0x9b
+#include "CUnknown101d7380.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 struct DFNode {
 	virtual void n0();
 	virtual void n1();
@@ -91746,6 +93983,9 @@ int CUnknown101d7380::sub_101d7380(const char *name, int start)
 // END FUNCTION
 
 // FUNCTION: 0x101d7460 size=0x89
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CUnknown101d7460.h"
 #include "CVStatList_t.h"
 
@@ -91870,6 +94110,9 @@ int __fastcall sub_101d7780(CUnknownList101d7780 *p, void *unused, int arg)
 // END FUNCTION
 
 // FUNCTION: 0x101d77d0 size=0x128
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CVStatList_t.h"
 #include "CUnknown101d7460.h"
 
@@ -91917,6 +94160,15 @@ void sub_101d77d0()
 // END FUNCTION
 
 // FUNCTION: 0x101d79e0 size=0x9c
+#include "CBaseEntity.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
 #include "CUnknown101d76e0.h"
 #include "CUnknown101d7520.h"
 
@@ -92096,6 +94348,7 @@ int CClanNames::sub_101d7ec0(const char *pszName, int *pSubId)
 // END FUNCTION
 
 // FUNCTION: 0x101d7fb0 size=0xa5
+#include "CBaseCombatCharacter.h"
 #include "CUnknown101d7ec0.h"
 #include "CStatDefault3List.h"
 extern CStatDefault3List g_10738d10;
@@ -92271,6 +94524,7 @@ void CUnknown101d82d0::sub_101d83a0(const char *pszList)
 // END FUNCTION
 
 // FUNCTION: 0x101d8470 size=0x41
+#include "CBaseCombatCharacter.h"
 #include "CUnknown101d7ec0.h"
 struct CCheckList {
 	int m_nCount;
@@ -92383,6 +94637,7 @@ CUnknown101d86d0 *CUnknown101d86d0::sub_101d86d0(int a, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x101d8820 size=0x46
+#include "CBaseCombatWeapon.h"
 #include "CUnknown101d8a70.h"
 #include "CVDmg_t.h"
 void __fastcall sub_10205380(CVDmgBlock16_t *p);
@@ -92589,6 +94844,14 @@ int CUnknown101d96d0::sub_101d96d0(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x101d9700 size=0x52
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
 #include <string.h>
 #include "CUnknown101d7520.h"
 struct SStr {
@@ -92619,6 +94882,14 @@ int SNamedList::sub_101d9700(const char *pszName)
 // END FUNCTION
 
 // FUNCTION: 0x101d9780 size=0x52
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
 #include <string.h>
 #include "CUnknown101d7520.h"
 struct SStr {
@@ -92845,6 +95116,14 @@ void * CUnknown101da9e0::sub_101da9e0(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x101daa10 size=0x89
+#include "CUnknown101d7520.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
 #include "CUnknown101daec0.h"
 #include "CStatDefault3List.h"
 #include "CUnknown101da960.h"
@@ -92927,6 +95206,14 @@ void sub_101daea0()
 // END FUNCTION
 
 // FUNCTION: 0x101daec0 size=0x73
+#include "CUnknown101d7520.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
 #include "CUnknown101daec0.h"
 #include "CUnknown101e0940.h"
 extern CUnknown101e0940 *g_10739a74;
@@ -92946,6 +95233,7 @@ char CUnknown101daec0::sub_101daec0(IKVNodeView *pKV, const char *pszName)
 // END FUNCTION
 
 // FUNCTION: 0x101daf60 size=0x9
+#include "CUnknown101daf60.h"
 bool CUnknown101daf60::sub_101daf60()
 {
 	if (m_pData)
@@ -93126,6 +95414,7 @@ void CUnknown101db210::sub_101db560()
 // END FUNCTION
 
 // FUNCTION: 0x101db5f0 size=0xd
+#include "CUnknown101db5f0.h"
 CUnknown101db5f0* CUnknown101db5f0::sub_101db5f0()
 {
 	m_unk8 = 0;
@@ -93324,6 +95613,14 @@ const char *sub_101dbb00(int index)
 // END FUNCTION
 
 // FUNCTION: 0x101dbb20 size=0xb4
+#include "CUnknown101d7520.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
 #include "CUnknown101dbc60.h"
 #include "CUnknown101daec0.h"
 
@@ -93350,6 +95647,8 @@ char CUnknown101dbc60::sub_101dbb20(IKVNodeView *pKV)
 // END FUNCTION
 
 // FUNCTION: 0x101dbc10 size=0x34
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
 #include "CUnknown101dbc60.h"
 #include "CUnknown101db210.h"
 
@@ -93814,6 +96113,14 @@ void sub_101dc880()
 // END FUNCTION
 
 // FUNCTION: 0x101dc8a0 size=0x1fb
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CUnknown101e0f00.h"
 #include "CUnknown100eb420.h"
 #include "ScopeTrace.h"
@@ -94035,6 +96342,14 @@ bool CUnknown101dce30::sub_101dce30(CUnknown101dc5a0Keys *pKeys, const char *psz
 // END FUNCTION
 
 // FUNCTION: 0x101dd090 size=0x26e
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CUnknown101e0f00.h"
 #include "CUnknown100eb420.h"
 #include "CDisciplineParticle.h"
@@ -94290,6 +96605,14 @@ void CUnknown101dd910::sub_101dd620(void *pSourceArg, void *pTargetArg, int nMas
 // END FUNCTION
 
 // FUNCTION: 0x101dd910 size=0xde
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CUnknown101dd910.h"
 #include "ScopeTrace.h"
 
@@ -94740,6 +97063,14 @@ SoundRecX *SoundRecX::sub_101df8d0(const SoundRecX *o)
 // END FUNCTION
 
 // FUNCTION: 0x101dfa00 size=0x12b
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CUnknown101dff00.h"
 #include "ScopeTrace.h"
 
@@ -94784,6 +97115,7 @@ bool CUnknown101dff00::sub_101dfa00(int a, void *pKV_, const char *pszName)
 // END FUNCTION
 
 // FUNCTION: 0x101dfb80 size=0x7f
+#include "CBaseEntity.h"
 #include "CUnknown101dfb80.h"
 #include "CUnknown101e0940.h"
 extern char g_106b8540[];
@@ -94826,6 +97158,7 @@ int CUnknown101dfe50::sub_101dfe50(int a0, int a1, int a2)
 // END FUNCTION
 
 // FUNCTION: 0x101dfe80 size=0x5a
+#include "CBaseEntity.h"
 #include "CUnknown101e0f00.h"
 #include "S1033d380.h"
 class CBaseEntity;
@@ -94887,6 +97220,7 @@ void CUnknown101dff00::sub_101dff00()
 // END FUNCTION
 
 // FUNCTION: 0x101e0040 size=0xd
+#include "CUnknown101e0040.h"
 CUnknown101e0040* CUnknown101e0040::sub_101e0040()
 {
 	m_unk8 = 0;
@@ -95268,6 +97602,7 @@ void CUnknown101d5bd0::sub_101e0d60()
 // END FUNCTION
 
 // FUNCTION: 0x101e0df0 size=0xc5
+#include "CUnknown101d5bd0.h"
 struct S101e0d60 { void sub_101e0d60(); };
 struct Loader { bool sub_101e1010(const char *path); };
 
@@ -95645,6 +97980,9 @@ unsigned int CStatusFlagList::sub_101e1610(int nKey)
 // END FUNCTION
 
 // FUNCTION: 0x101e1650 size=0xa0
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseCombatCharacter.h"
 #include "CUnknown101e1650.h"
 
@@ -95828,6 +98166,9 @@ int __stdcall sub_101e28e0(int a)
 // END FUNCTION
 
 // FUNCTION: 0x101e2da0 size=0x149
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CVStatList_t.h"
 #include "CUnknown101e0f00.h"
 struct CMsgPlayerView;
@@ -95856,6 +98197,11 @@ void CUnknown101e0f00::sub_101e2da0(void *pChar, int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x101e2f50 size=0x2f1
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CUnknown101e0f00.h"
 #include "CVStatList_t.h"
 #include "ehandle.h"
@@ -96142,6 +98488,14 @@ void CUnknown101e0f00::sub_101e3850(int a, int b, int id, int d)
 // END FUNCTION
 
 // FUNCTION: 0x101e3910 size=0x77
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CUnknown101e0f00.h"
 #include "ScopeTrace.h"
 
@@ -96162,6 +98516,14 @@ void CUnknown101e0f00::sub_101e3910(int a, int b, int c, int d)
 // END FUNCTION
 
 // FUNCTION: 0x101e39b0 size=0x52
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
 #include "CUnknown101d7520.h"
 extern void (*g_109f3650)(int level, const char *fmt, ...);
 struct SDiscSub {
@@ -96242,6 +98604,7 @@ void CNamedListXRem::sub_101e3c10(int a, const char *name)
 // END FUNCTION
 
 // FUNCTION: 0x101e3c80 size=0x47
+#include "CBaseCombatCharacter.h"
 #include "CUnknown101e3af0.h"
 #include "S1033d380.h"
 namespace block_101e3c80 {
@@ -96536,6 +98899,8 @@ void CUnknown101e4150::sub_101e4150(CUnknown101e4150Char *pChar)
 // END FUNCTION
 
 // FUNCTION: 0x101e4220 size=0xa5
+#include "utlrbtree.h"
+#include "utlsortvector.h"
 #include "CUnknown101e0f00.h"
 #include "CBasePlayer.h"
 #include "CVStatList_t.h"
@@ -96569,6 +98934,14 @@ void CUnknown101e0f00::sub_101e4300(int a, char *pFlag, int *pRef, unsigned int 
 // END FUNCTION
 
 // FUNCTION: 0x101e4380 size=0xfb
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CUnknown101e0f00.h"
 #include "ScopeTrace.h"
 
@@ -96602,6 +98975,9 @@ void CUnknown101e0f00::sub_101e4380(const char *pszName)
 // END FUNCTION
 
 // FUNCTION: 0x101e45b0 size=0x25e
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CUnknown101e44c0.h"
 #include "CBaseCombatCharacter.h"
 #include "CVStatList_t.h"
@@ -96833,6 +99209,14 @@ int CLookupOwner_101e5e10::sub_101e5e10(CLookupArg_101e5e10 *p)
 // END FUNCTION
 
 // FUNCTION: 0x101e5e60 size=0x174
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
 #include "CUnknown101e56e0.h"
 #include "CUnknown102043a0.h"
 
@@ -97063,6 +99447,9 @@ float CUnknown101e7e80::sub_101e7e80()
 // END FUNCTION
 
 // FUNCTION: 0x101e7fb0 size=0x93
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CUnknown101e56e0.h"
 
 int CUnknown101e7fb0::sub_101e7fb0(CBaseCombatCharacter *pCharacter, CBaseCombatCharacter *pTarget)
@@ -97074,6 +99461,7 @@ int CUnknown101e7fb0::sub_101e7fb0(CBaseCombatCharacter *pCharacter, CBaseCombat
 // END FUNCTION
 
 // FUNCTION: 0x101e8080 size=0xd
+#include "CUnknown101e8080.h"
 // TARGET: CUnknown101e8080::sub_101e8080
 void CUnknown101e8080::sub_101e8080(int *out, void *ent, float dist, int flags)
 {
@@ -97177,6 +99565,9 @@ void CUnknown101e8480::sub_101e8480(CBaseCombatCharacter *pChar)
 // END FUNCTION
 
 // FUNCTION: 0x101e85a0 size=0x78
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CVStatList_t.h"
 struct P {
 	char pad[0x13bc];
@@ -97196,6 +99587,9 @@ void S::sub_101e85a0(P *p)
 // END FUNCTION
 
 // FUNCTION: 0x101e8640 size=0x78
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CVStatList_t.h"
 struct P {
 	char pad[0x13bc];
@@ -97216,6 +99610,9 @@ void S::sub_101e8640(P *p)
 // END FUNCTION
 
 // FUNCTION: 0x101e86e0 size=0x78
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CVStatList_t.h"
 struct P {
 	char pad[0x13bc];
@@ -97237,6 +99634,9 @@ void S::sub_101e86e0(P *p)
 // END FUNCTION
 
 // FUNCTION: 0x101e8780 size=0x78
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CVStatList_t.h"
 struct P {
 	char pad[0x13bc];
@@ -97420,6 +99820,7 @@ float CUnknown101e8c70::sub_101e8c70()
 // END FUNCTION
 
 // FUNCTION: 0x101e8c90 size=0xc4
+#include "CUnknown101e8080.h"
 extern int (*g_109f3630)(const char *, ...);
 extern const char g_105a43f0[];
 extern const char g_105a4448[];
@@ -97563,6 +99964,9 @@ unsigned int CUnk101e8ef0::sub_101e8ef0(void *p)
 // END FUNCTION
 
 // FUNCTION: 0x101e8f20 size=0x86
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CUnknown101e8f20.h"
 #include "CBaseCombatCharacter.h"
 
@@ -97649,6 +100053,9 @@ float CUnknown10739d08::sub_101e90f0(CBaseCombatCharacter *pChar)
 // END FUNCTION
 
 // FUNCTION: 0x101e9170 size=0xd9
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CVStatList_t.h"
 #include "CUnknown101e9170.h"
 
@@ -97677,6 +100084,9 @@ int CUnknown101e9170::sub_101e9170(CUnknown101e9170Char *pChar, int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x101e9290 size=0x173
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CVStatList_t.h"
 struct CBloodAmountUnit {
     char m_pad0000[0x3c0];
@@ -97794,6 +100204,9 @@ void sub_101e9710(unsigned int *pFlags, const char *pStr)
 // END FUNCTION
 
 // FUNCTION: 0x101e9760 size=0x97
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CUnknown101e9760.h"
 #include "CBaseCombatCharacter.h"
 
@@ -97825,6 +100238,7 @@ bool CUnknown101e9760::sub_101e9830(CBaseCombatCharacter *pChar)
 // END FUNCTION
 
 // FUNCTION: 0x101e9880 size=0xd
+#include "CUnknown101e9880.h"
 CUnknown101e9880* CUnknown101e9880::sub_101e9880()
 {
 	m_unk0 = 0;
@@ -97903,6 +100317,9 @@ S101e9570 *CUnknown101e9950::sub_101e9950()
 // END FUNCTION
 
 // FUNCTION: 0x101e9a80 size=0xac
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 struct HNode { virtual void v0(); virtual void v1(); virtual HNode* Find(const char*); virtual HNode* Next(); };
 struct HStream { virtual void v0(); virtual void Close(); };
 struct HFile { virtual void v0(); virtual void v1(); virtual HNode* Find(const char*); int* vb; };
@@ -97939,6 +100356,9 @@ char HOwner::sub_101e9a80(const char* name)
 // END FUNCTION
 
 // FUNCTION: 0x101e9b60 size=0xb3
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CHistoryList.h"
 
 struct CKVBase
@@ -98512,6 +100932,9 @@ void CUnknown101eb820::sub_101eb820()
 // END FUNCTION
 
 // FUNCTION: 0x101eb9f0 size=0x246
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CEntryXTable.h"
 #include <stdio.h>
 
@@ -98940,6 +101363,14 @@ void CUnknown101ecb10::sub_101ecb10(int arg)
 // END FUNCTION
 
 // FUNCTION: 0x101ecb90 size=0xd0
+#include "CUnknown101d7520.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
 #include "CUnknown109f08c0.h"
 #include "CUnknown101daec0.h"
 
@@ -99096,6 +101527,7 @@ bool ItemLoader::sub_101ecde0()
 // END FUNCTION
 
 // FUNCTION: 0x101ecf10 size=0x17f
+#include "CUnknown101daec0.h"
 #include "IKeyValues.h"
 #include "CUnknown109f08c0.h"
 
@@ -99332,6 +101764,7 @@ bool CUnknown101ed6c0::sub_101ed6c0()
 // END FUNCTION
 
 // FUNCTION: 0x101ed800 size=0x17f
+#include "CUnknown101ed170.h"
 #include "IKeyValues.h"
 #include "CUnknown101ed6c0.h"
 #include "StatDefault2.h"
@@ -99383,6 +101816,7 @@ bool CUnknown101ed6c0::sub_101ed800(void *pFile)
 // END FUNCTION
 
 // FUNCTION: 0x101ed9e0 size=0xb
+#include "CUnknown101ed9e0.h"
 CUnknown101ed9e0 *CUnknown101ed9e0::sub_101ed9e0(int value)
 {
 	m_unk0 = value;
@@ -99752,6 +102186,7 @@ void CVampireProjectile::sub_101ef3d0()
 // END FUNCTION
 
 // FUNCTION: 0x101ef880 size=0x52
+#include "CBaseEntity.h"
 struct STarget {
 	char pad0[0x8a8];
 	EHANDLE m_hEnt;
@@ -100152,6 +102587,7 @@ void CUnknown101f0bc0::sub_101f0bc0(void *pKeyValues)
 // END FUNCTION
 
 // FUNCTION: 0x101f0d40 size=0xd
+#include "CUnknown101f0d40.h"
 void CUnknown101f0d40::sub_101f0d40(int* dest)
 {
 	dest[13] = m_unk8;
@@ -101547,6 +103983,9 @@ void CUnknown101f3d80::sub_101f3d80(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x101f3e50 size=0x203
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CUnknown101f3e50.h"
 
 extern "C" int __cdecl sprintf(char *, const char *, ...);
@@ -101807,6 +104246,9 @@ void TSeg::sub_101f4570(int target, int *outIndex, int *outOffset)
 // END FUNCTION
 
 // FUNCTION: 0x101f4600 size=0x291
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CVSoundActivityTable_t.h"
 #include "Ent.h"
 #include <stdio.h>
@@ -101847,6 +104289,9 @@ const char *CVSoundList::sub_101f4600(CVSoundEnt *pEnt, int a)
 // END FUNCTION
 
 // FUNCTION: 0x101f4950 size=0x168
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CUnknown101f4c80.h"
 #include "CUnknown101f4370.h"
 extern "C" int sprintf(char *, const char *, ...);
@@ -101867,6 +104312,9 @@ const char *CUnknown101f4370::sub_101f4950(int index, int number)
 // END FUNCTION
 
 // FUNCTION: 0x101f4b20 size=0x104
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include <stdio.h>
 #include "CUnknown101f4b20.h"
 extern "C" __declspec(dllimport) void __cdecl DevMsg(int level, const char *pszFormat, ...);
@@ -101910,6 +104358,14 @@ CUnknown101f4c80 *CUnknown101f4c80::sub_101f4c80(int n)
 // END FUNCTION
 
 // FUNCTION: 0x101f4ce0 size=0x165
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
 #include "CUnknown101f4c80.h"
 #include "CUnknown101f5d60.h"
 #include "CUnknown101f5f00.h"
@@ -102200,6 +104656,13 @@ void CVActivitySound::sub_101f58e0(CVSoundEnt *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x101f5950 size=0x198
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CVSoundActivityTable_t.h"
 #include "CPASAttenuationFilter.h"
 #include "CUnknown1070b248.h"
@@ -102265,6 +104728,7 @@ void CVActivitySound::sub_101f5b60(int hControl, int nMode, int nChannel)
 // END FUNCTION
 
 // FUNCTION: 0x101f5d60 size=0xd
+#include "CUnknown101f5d60.h"
 extern char g_106b8540[];
 // TARGET: CUnknown101f5d60::sub_101f5d60
 const char *CUnknown101f5d60::sub_101f5d60()
@@ -102404,6 +104868,7 @@ void CUnknown101f5f00::sub_101f5f00(int first, int key, int second)
 // END FUNCTION
 
 // FUNCTION: 0x101f6010 size=0xd6
+#include "CBaseCombatCharacter.h"
 #include "CVSoundActivityTable_t.h"
 
 extern void (__cdecl *g_109f3628)(const char *fmt, ...);
@@ -102453,6 +104918,9 @@ void CVSoundActivityTable_t::sub_101f6130(CBaseCombatCharacter *pCharacter, int 
 // END FUNCTION
 
 // FUNCTION: 0x101f61b0 size=0x15f
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include <stdio.h>
 #include "CUnknown101f4c80.h"
 extern "C" __declspec(dllimport) void __cdecl DevMsg(int level, const char *pszFormat, ...);
@@ -102669,6 +105137,7 @@ void CVTraitEffect_t::sub_101f6b90(CVStatKV *pKV)
 // END FUNCTION
 
 // FUNCTION: 0x101f6c30 size=0x9
+#include "CUnknown101f6c30.h"
 bool CUnknown101f6c30::sub_101f6c30()
 {
 	if (m_nCount == 0)
@@ -102758,6 +105227,7 @@ void CUnknown101f6c50::sub_101f6c50(CTraitStatBlock *pBlock)
 // END FUNCTION
 
 // FUNCTION: 0x101f6e20 size=0x32
+#include "CVModInfo_t.h"
 #include "CVTraitEffect_t.h"
 
 char __stdcall sub_1000578b(void *p);
@@ -103807,6 +106277,7 @@ void sub_101f9650(int value)
 // END FUNCTION
 
 // FUNCTION: 0x101f9670 size=0x9
+#include "CUnknown101f9670.h"
 CUnknown101f9670 *CUnknown101f9670::sub_101f9670()
 {
 	m_unk0 = 0;
@@ -103815,6 +106286,7 @@ CUnknown101f9670 *CUnknown101f9670::sub_101f9670()
 // END FUNCTION
 
 // FUNCTION: 0x101f9690 size=0xc
+#include "CUnknown101f9670.h"
 void CUnknown101f9670::sub_101f9690()
 {
 	if (m_unk0 != 0)
@@ -103970,6 +106442,7 @@ void __stdcall sub_101f9a00(CTraitOwner *pObj, int a)
 // END FUNCTION
 
 // FUNCTION: 0x101f9a40 size=0x28
+#include "CUnknown101f0e50.h"
 #include "CBaseEntity.h"
 #include "CUnknown101f9c70.h"
 // TARGET: sub_101f9a40
@@ -103984,6 +106457,8 @@ void __stdcall sub_101f9a40(CBaseEntity *p, int x)
 // END FUNCTION
 
 // FUNCTION: 0x101f9a80 size=0x46
+#include "CBaseCombatWeapon.h"
+#include "CBaseEntity.h"
 #include "CBasePlayer.h"
 void __fastcall sub_1024f7b0(void *pWeapon);
 void __stdcall sub_101f9a80(CBasePlayer *pChar, const char *pszName)
@@ -104042,6 +106517,7 @@ int CUnknown101f9b70::sub_101f9b70(int index)
 // END FUNCTION
 
 // FUNCTION: 0x101f9bf0 size=0x60
+#include "CUnknown101f6c50.h"
 #include "CUnknown101f9bf0.h"
 #include "CUnknown101f0e50.h"
 #include "CVTraitEffectGroup_t.h"
@@ -104085,6 +106561,7 @@ int CUnknown101f9c70::sub_101f9c70(int a, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x101f9d60 size=0x63
+#include "CUnknown101f6c50.h"
 #include "CVModInfo_t.h"
 #include "CVTraitEffectGroup_t.h"
 #include "CUnknown101f0e50.h"
@@ -104107,6 +106584,7 @@ int CTraitIdListX::sub_101f9d60(int a, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x101f9df0 size=0x63
+#include "CUnknown101f6c50.h"
 #include "CVModInfo_t.h"
 #include "CVTraitEffectGroup_t.h"
 #include "CUnknown101f0e50.h"
@@ -104129,6 +106607,14 @@ int CTraitIdListY::sub_101f9df0(int a, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x101f9ff0 size=0xb5
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CUnknown101f9c70.h"
 #include "CUnknown101f0e50.h"
@@ -104299,6 +106785,14 @@ void __fastcall sub_101fa8d0(CVDmg_t *self, int, int a, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x101fa960 size=0xc7
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CVDmg_t.h"
 #include "ScopeTrace.h"
 
@@ -104405,6 +106899,14 @@ unsigned int sub_101fab10(const char *pszFlags)
 // END FUNCTION
 
 // FUNCTION: 0x101facf0 size=0x270
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 
 extern char g_1074e6f8[128];
@@ -104441,6 +106943,14 @@ char *sub_101facf0(int flags)
 // END FUNCTION
 
 // FUNCTION: 0x101fb000 size=0x12f
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CVDmg_t.h"
 #include "ScopeTrace.h"
 #include "StatOwner2.h"
@@ -104598,6 +107108,14 @@ void CVDmg_t::sub_101fb3e0(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x101fb470 size=0x191
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CVDmg_t.h"
 #include "ScopeTrace.h"
 #include "StatOwner2.h"
@@ -104633,6 +107151,14 @@ char *CVDmg_t::sub_101fb470()
 // END FUNCTION
 
 // FUNCTION: 0x101fb680 size=0xd8
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include <stdio.h>
 #include "ScopeTrace.h"
 #include "CVDmg_t.h"
@@ -104878,6 +107404,14 @@ int CVStatSubCost_t::sub_101fbc40(int level, bool bForce)
 // END FUNCTION
 
 // FUNCTION: 0x101fbd30 size=0x1cb
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -105479,6 +108013,14 @@ TList *TList::sub_101fd430()
 // END FUNCTION
 
 // FUNCTION: 0x101fd4c0 size=0x5a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CVStatActionList_t.h"
 
@@ -105524,6 +108066,14 @@ void CVStatActionList_t::sub_101fd540()
 // END FUNCTION
 
 // FUNCTION: 0x101fd7e0 size=0xa7
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CVStatActionList_t.h"
 #include "CVStatAction_t.h"
 #include "ScopeTrace.h"
@@ -105746,6 +108296,14 @@ bool TInfo::sub_101fdf40()
 // END FUNCTION
 
 // FUNCTION: 0x101fe6a0 size=0x198
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CVStatInfo_t.h"
 #include "ScopeTrace.h"
 #include <string.h>
@@ -105809,6 +108367,14 @@ void CVStatInfo_t::sub_101fe6a0(CVStatKV *pKV, void *pDefaults)
 // END FUNCTION
 
 // FUNCTION: 0x101fe8b0 size=0x13a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CVStatInfo_t.h"
 #include "CVStatValue_t.h"
 #include "CVStatCost_t.h"
@@ -106000,6 +108566,14 @@ int CVStatInfo_t::sub_101fee50(int level)
 // END FUNCTION
 
 // FUNCTION: 0x101fef10 size=0x5d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CVStatInfo_t.h"
 #include "ScopeTrace.h"
 
@@ -106012,6 +108586,15 @@ bool CVStatInfo_t::sub_101fef10(int a)
 // END FUNCTION
 
 // FUNCTION: 0x101fef90 size=0x58
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CVStatInfoList_t.h"
 #include "CVStatInfo_t.h"
 #include "ScopeTrace.h"
 
@@ -106067,6 +108650,14 @@ int CVStatInfo_t::sub_101ff060(int arg)
 // END FUNCTION
 
 // FUNCTION: 0x101ff0b0 size=0xa4
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CVStatInfo_t.h"
 #include "CVStatValue_t.h"
 #include "ScopeTrace.h"
@@ -106082,6 +108673,14 @@ int CVStatInfo_t::sub_101ff0b0(int arg)
 // END FUNCTION
 
 // FUNCTION: 0x101ff190 size=0xa7
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CVStatInfo_t.h"
 #include "CVStatValue_t.h"
 #include "ScopeTrace.h"
@@ -106185,6 +108784,14 @@ void CVStatInfoList_t::sub_101ff3e0()
 // END FUNCTION
 
 // FUNCTION: 0x101ff850 size=0x1cc
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include <stdio.h>
 #include "ScopeTrace.h"
 #include "CVStatInfoList_t.h"
@@ -106435,6 +109042,14 @@ int CVStatInfoList_t::sub_101ffdf0(const char *name)
 // END FUNCTION
 
 // FUNCTION: 0x10200260 size=0xb5
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CVStatInfoList_t.h"
 #include "ScopeTrace.h"
 
@@ -106466,6 +109081,14 @@ CVStatInfo_t *CVStatInfoList_t::sub_10200370(int idx)
 // END FUNCTION
 
 // FUNCTION: 0x10200410 size=0x189
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include <stdio.h>
 #include "CVStatInfoList_t.h"
 #include "StatOwner2.h"
@@ -106496,6 +109119,14 @@ void CVStatInfoList_t::sub_10200410()
 // END FUNCTION
 
 // FUNCTION: 0x10200730 size=0x8a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CVStatList_t.h"
 #include "ScopeTrace.h"
 
@@ -106562,6 +109193,14 @@ char CVStatList_t::sub_102008b0(int stat)
 // END FUNCTION
 
 // FUNCTION: 0x102008e0 size=0x9f
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CVStatList_t.h"
 #include "CVStatInfoList_t.h"
 #include "CVStatActionList_t.h"
@@ -106582,6 +109221,14 @@ void CVStatList_t::sub_102008e0(int stat, int value)
 // END FUNCTION
 
 // FUNCTION: 0x102009b0 size=0x8f
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CVStatList_t.h"
 #include "CVStatInfoList_t.h"
 #include "CUnknown10202060.h"
@@ -106596,6 +109243,14 @@ void CVStatList_t::sub_102009b0(int stat)
 // END FUNCTION
 
 // FUNCTION: 0x10200a70 size=0x75
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CVStatList_t.h"
 #include "ScopeTrace.h"
 
@@ -106607,6 +109262,14 @@ void CVStatList_t::sub_10200a70(int stat, int source)
 // END FUNCTION
 
 // FUNCTION: 0x10200b10 size=0x99
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CVStatList_t.h"
 #include "CUnknown10205030.h"
 #include "CUnknown10202060.h"
@@ -106638,6 +109301,14 @@ int CVStatList_t::sub_10200b10(int stat)
 // END FUNCTION
 
 // FUNCTION: 0x10200be0 size=0x88
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CVStatList_t.h"
 #include "ScopeTrace.h"
 
@@ -106719,6 +109390,14 @@ int CVStatList_t::sub_10200ca0(int stat)
 // END FUNCTION
 
 // FUNCTION: 0x10200d60 size=0xfe
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CVStatList_t.h"
 #include "CVStatInfoList_t.h"
 #include "CVStatActionList_t.h"
@@ -106751,6 +109430,14 @@ char CVStatList_t::sub_10200d60(int stat)
 // END FUNCTION
 
 // FUNCTION: 0x10200ea0 size=0xd8
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CVStatList_t.h"
 #include "CVStatInfoList_t.h"
 #include "CVStatActionList_t.h"
@@ -106798,6 +109485,14 @@ int CVStatList_t::sub_10201100(int stat, int amount)
 // END FUNCTION
 
 // FUNCTION: 0x10201190 size=0xff
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CVStatList_t.h"
 #include "CVStatInfoList_t.h"
@@ -106848,6 +109543,14 @@ int CVStatList_t::sub_102012d0(int stat)
 // END FUNCTION
 
 // FUNCTION: 0x102013a0 size=0x97
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CVStatList_t.h"
 #include "CUnknown10205030.h"
 #include "ScopeTrace.h"
@@ -106878,6 +109581,14 @@ const char *CVStatList_t::sub_102013a0(int stat)
 // END FUNCTION
 
 // FUNCTION: 0x10201470 size=0x97
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CVStatList_t.h"
 #include "CUnknown10205030.h"
 #include "ScopeTrace.h"
@@ -106908,6 +109619,7 @@ const char *CVStatList_t::sub_10201470(int stat)
 // END FUNCTION
 
 // FUNCTION: 0x10201540 size=0x3a
+#include "CVStatList_t.h"
 // TARGET: CVStatList_t::sub_10201540
 char CVStatList_t::sub_10201540()
 {
@@ -106929,6 +109641,14 @@ char CVStatList_t::sub_10201540()
 // END FUNCTION
 
 // FUNCTION: 0x10201590 size=0xc5
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CVStatList_t.h"
 #include "CVStatInfoList_t.h"
@@ -106962,6 +109682,14 @@ void CVStatList_t::sub_10201590(int stat)
 // END FUNCTION
 
 // FUNCTION: 0x102016a0 size=0xc5
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CVStatList_t.h"
 #include "CVStatInfoList_t.h"
@@ -107019,6 +109747,14 @@ bool CVStatList_t::sub_102017b0(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x10201870 size=0xb1
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CVStatList_t.h"
 #include "CVStatInfoList_t.h"
 #include "ScopeTrace.h"
@@ -107254,6 +109990,14 @@ int CUnknown10202060::sub_10202060()
 // END FUNCTION
 
 // FUNCTION: 0x10202140 size=0xee
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CUnknown1074e098.h"
 #include "ScopeTrace.h"
 
@@ -107399,6 +110143,14 @@ error:
 // END FUNCTION
 
 // FUNCTION: 0x10202460 size=0x13c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CVDmg_t.h"
 #include "CVStatInfo_t.h"
 #include "CUnknown1074e098.h"
@@ -107974,6 +110726,9 @@ int sub_10203480(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x102034a0 size=0x76
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CUnknown101ec4f0.h"
 extern char g_106b8540[];
 extern char g_1073a354[];	// the string table (CUnknown101ec4f0Set)
@@ -108175,6 +110930,7 @@ int __cdecl sub_10203920(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x10203990 size=0x1a9
+#include "vampire_all.h"
 extern int g_1074edd4;
 extern char g_1074e968[], g_1074e658[], g_1074e4f0[], g_1074e098[], g_1074e5f8[], g_10739d08[], g_10738d10[];
 extern char g_10739140[], g_1073a9a0[], g_1074df78[], g_1073a28c[], g_10739194[], g_1073a2c8[], g_1073a31c[];
@@ -108345,6 +111101,7 @@ char *sub_10203cf0(const char *p)
 // END FUNCTION
 
 // FUNCTION: 0x10203d60 size=0x4e
+#include "CParsedValue.h"
 #include <string.h>
 extern int g_1074eddc;
 extern char g_1074ebd0[2][256];
@@ -108394,6 +111151,9 @@ void sub_10203e30(int value)
 // END FUNCTION
 
 // FUNCTION: 0x10203f10 size=0xa0
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseCombatCharacter.h"
 #include "CVStatList_t.h"
 
@@ -108413,6 +111173,9 @@ int sub_10203f10(CBaseCombatCharacter *pChar, char bFlag)
 // END FUNCTION
 
 // FUNCTION: 0x10204100 size=0xc6
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseCombatCharacter.h"
 
 extern int g_1074e2a8[];
@@ -108515,6 +111278,9 @@ bool CVDmgBlock16_t::sub_10204360(const CVDmgBlock16_t *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x102043a0 size=0x148
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CVDmg_t.h"
 #include "CVStatInfoList_t.h"
 #include "CVFeat_t.h"
@@ -108621,6 +111387,9 @@ void CUnknown102047d0::sub_102047d0(const char *pszName, int *pGender, int *pVal
 // END FUNCTION
 
 // FUNCTION: 0x10204900 size=0x166
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CUnknown10204e90.h"
 #include "CVStatList_t.h"
 #include "CVFeat_t.h"
@@ -108655,6 +111424,9 @@ int CUnknown10204e90::sub_10204900(void *pCharacter)
 // END FUNCTION
 
 // FUNCTION: 0x10204ad0 size=0x9e
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CVDmg_t.h"
 #include "CUnknown101e56e0.h"
 
@@ -108893,6 +111665,9 @@ int CUnknown10205030::sub_10205030(int param)
 // END FUNCTION
 
 // FUNCTION: 0x10205100 size=0xfa
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CUnknown10204e90.h"
 #include "CVStatList_t.h"
 
@@ -108935,6 +111710,10 @@ int CUnknown10204e90::sub_10205100(void *pCharacter)
 // END FUNCTION
 
 // FUNCTION: 0x10205240 size=0xfa
+#include "CBaseCombatCharacter.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CUnknown10205030.h"
 #include "CVStatList_t.h"
 int sub_10202780(int kind);
@@ -109153,6 +111932,14 @@ void CParsedValue::sub_10205ac0(void *pOwner, const char *pszText)
 // END FUNCTION
 
 // FUNCTION: 0x10205ba0 size=0x98
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CUnknown10205ba0.h"
 #include "CUnknown102043a0.h"
 #include "CUnknown10204bf0.h"
@@ -109545,6 +112332,14 @@ char CUnknown10206a80::sub_10206a80()
 // END FUNCTION
 
 // FUNCTION: 0x10206aa0 size=0x13c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CUnknown10206c70.h"
 #include "CBaseCombatCharacter.h"
 #include "CUnknown101ecae0.h"
@@ -109636,6 +112431,7 @@ void CUnknown10206c70::sub_10206aa0(int nTemplate, CBaseCombatCharacter *pChar)
 // END FUNCTION
 
 // FUNCTION: 0x10206c30 size=0x28
+#include "CBaseCombatCharacter.h"
 #include "CUnknown10206c70.h"
 #include "CUnknown101d5bd0.h"
 
@@ -109651,6 +112447,9 @@ void CUnknown10206c70::sub_10206c30(const char *pszName, CBaseCombatCharacter *p
 // END FUNCTION
 
 // FUNCTION: 0x10206c70 size=0xe6
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CUnknown10206c70.h"
 #include "CBaseCombatCharacter.h"
 extern char g_105a9230;
@@ -109724,6 +112523,7 @@ bool __stdcall sub_10207df0(CBaseCombatCharacter *pChar)
 // END FUNCTION
 
 // FUNCTION: 0x10207eb0 size=0x43
+#include "CBaseEntity.h"
 #include "CItemContainer.h"
 void *sub_100aa720(int size);
 extern char g_105a9a2c[];
@@ -109757,6 +112557,7 @@ void CItemContainer::sub_10208b00()
 // END FUNCTION
 
 // FUNCTION: 0x10208c90 size=0x15c
+#include "inputdata_t.h"
 #include "CUnknown10208c90.h"
 #include "CBaseCombatCharacter.h"
 #include "CGlobalEntityList.h"
@@ -109848,6 +112649,15 @@ void CUnknown10208c90::sub_10208c90(inputdata_t *pInput)
 // END FUNCTION
 
 // FUNCTION: 0x10208e50 size=0xa5
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CUnknown10208e50.h"
 #include "inputdata_t.h"
 #include "CGlobalEntityList.h"
@@ -109908,6 +112718,8 @@ void CUnknown10208e50::sub_10208e50(inputdata_t *pInput)
 // END FUNCTION
 
 // FUNCTION: 0x10208f30 size=0x42
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
 #include "inputdata_t.h"
 class CBaseCombatCharacter;
 class CBaseCombatWeapon;
@@ -110002,6 +112814,8 @@ void CItemContainerFwd::sub_10209b00(int a)
 // END FUNCTION
 
 // FUNCTION: 0x10209b20 size=0xea
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
 #include "CItemContainer.h"
 #include "CEHandleGet.h"
 
@@ -110164,6 +112978,7 @@ void *__fastcall sub_10209f60(void *p)
 // END FUNCTION
 
 // FUNCTION: 0x10209ff0 size=0x6d
+#include "CBaseEntity.h"
 void *sub_100aa720(int size);
 extern char g_105a9e64[];
 extern void *vt_1048543c[];
@@ -110222,6 +113037,7 @@ CBaseEntity *sub_1020a0a0(const char *pszName, const float *pOrigin, const float
 // END FUNCTION
 
 // FUNCTION: 0x1020a240 size=0x14f
+#include "utlvector.h"
 #include "CUnknown1020a240.h"
 
 extern char *(*g_109f3890)(char *, const char *, int);	// Q_strncpy
@@ -110269,6 +113085,18 @@ void CUnknown1020a240::sub_1020a3f0()
 // END FUNCTION
 
 // FUNCTION: 0x1020a5c0 size=0x141
+#include "CUnknown101cf0a0.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseEntity.h"
 #include "CVStatList_t.h"
 #include "CUnknown1070b22c.h"
@@ -110431,6 +113259,9 @@ void CUnknown1020ac00::sub_1020ac00(int value)
 // END FUNCTION
 
 // FUNCTION: 0x1020aea0 size=0x10d
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CUnknown1020aea0.h"
 #include "CVFeat_t.h"
 
@@ -110451,6 +113282,8 @@ float CUnknown1020aea0::sub_1020aea0(void *pPlayer)
 // END FUNCTION
 
 // FUNCTION: 0x1020b000 size=0x9
+#include "CBaseEntity.h"
+#include "CBaseVampireSkillEntity.h"
 int CBaseVampireSkillEntity::sub_1020b000(CBaseEntity *pPlayer)
 {
 	return m_unk78c;
@@ -111036,6 +113869,7 @@ char CUnknown1020e040::sub_1020e040()
 // END FUNCTION
 
 // FUNCTION: 0x1020e060 size=0xa
+#include "CUnknown1020e060.h"
 void CUnknown1020e060::sub_1020e060(int unused)
 {
 	m_bFlag = 1;
@@ -111043,6 +113877,7 @@ void CUnknown1020e060::sub_1020e060(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x1020e080 size=0xa
+#include "CUnknown1020e060.h"
 void CUnknown1020e060::sub_1020e080(int unused)
 {
 	m_bFlag = 0;
@@ -111751,6 +114586,7 @@ void CTriggerBombSite::sub_10211550(CBombState state, CBombState newState)
 // END FUNCTION
 
 // FUNCTION: 0x102116c0 size=0x145
+#include "CBaseEntity.h"
 #include "CTriggerBombSite.h"
 #include "CEntityVSlots.h"
 #include "CAI_BaseNPC.h"
@@ -111995,6 +114831,7 @@ void CGameSign::sub_10212650()
 // END FUNCTION
 
 // FUNCTION: 0x10212790 size=0x5f
+#include "CBaseEntity.h"
 #include "CUnknown102126c0.h"
 #include "inputdata_t.h"
 struct CPlayerObjView
@@ -112203,6 +115040,15 @@ void __fastcall sub_10214750(void *pThis, int, int)
 // END FUNCTION
 
 // FUNCTION: 0x10214780 size=0x11f
+#include "CEnvParticle.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CPropHaunted.h"
 #include "CEHandleGet.h"
 #include "ScopeTrace.h"
@@ -112342,6 +115188,7 @@ void __fastcall sub_102158f0(char *self, int, int)
 // END FUNCTION
 
 // FUNCTION: 0x10215910 size=0xa
+#include "CUnknown10215910.h"
 void CUnknown10215910::sub_10215910(int unused)
 {
 	m_unk738 = 0;
@@ -112517,6 +115364,7 @@ void CPropModelState::sub_102168a0(inputdata_t *pData)
 // END FUNCTION
 
 // FUNCTION: 0x10216930 size=0x2e
+#include "CBaseEntity.h"
 #define P10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
     virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 
@@ -112782,6 +115630,10 @@ void sub_10217ac0(CPropHacking *self, const char *fmt, ...)
 // END FUNCTION
 
 // FUNCTION: 0x10217b30 size=0x1b6
+#include "CBaseEntity.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CUnknown10217f50.h"
 #include "COutputEvent.h"
 #include "CVFeat_t.h"
@@ -113315,6 +116167,14 @@ void CPropHacking::sub_1021b030()
 // END FUNCTION
 
 // FUNCTION: 0x1021b140 size=0x117
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CUnknown10217f50.h"
 #include "ScopeTrace.h"
 
@@ -114323,6 +117183,14 @@ void CUnknown1021eaf0::sub_1021eaf0()
 // END FUNCTION
 
 // FUNCTION: 0x1021fb50 size=0xff
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
 #include "CBaseCombatCharacter.h"
@@ -114406,6 +117274,17 @@ CBaseCombatWeapon *sub_1021fe50(CBaseCombatCharacter *pChar, const char *pszName
 // END FUNCTION
 
 // FUNCTION: 0x1021ff20 size=0x20a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseEntity.h"
 #include "CVStatList_t.h"
 #include "CUnknown101ec4f0.h"
@@ -114452,6 +117331,17 @@ void sub_1021ff20(CUnknown101ec4f0Set *pSet, int nEntIndex)
 // END FUNCTION
 
 // FUNCTION: 0x102201c0 size=0x20a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseEntity.h"
 #include "CVStatList_t.h"
 #include "CUnknown101ec4f0.h"
@@ -114498,6 +117388,14 @@ void sub_102201c0(CUnknown101ec4f0Set *pSet, int nEntIndex)
 // END FUNCTION
 
 // FUNCTION: 0x10220830 size=0x210
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CWeaponRanged.h"
 #include "ScopeTrace.h"
@@ -114581,6 +117479,14 @@ char sub_10220830(int nPlayerIndex, int nOtherIndex)
 // END FUNCTION
 
 // FUNCTION: 0x10220ad0 size=0x210
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CWeaponRanged.h"
 #include "ScopeTrace.h"
@@ -114798,6 +117704,14 @@ void QuestJournal::sub_102210f0()
 // END FUNCTION
 
 // FUNCTION: 0x102213c0 size=0x20b
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "QuestJournal.h"
 #include "CKeyValuesX.h"
 #include "ScopeTrace.h"
@@ -114850,6 +117764,14 @@ void QuestJournal::sub_102213c0(CKeyValuesX *pKey, int index)
 // END FUNCTION
 
 // FUNCTION: 0x10221660 size=0x2e0
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "QuestJournal.h"
 #include "CKeyValuesX.h"
 #include "ScopeTrace.h"
@@ -115145,6 +118067,7 @@ void CExperienceTable::sub_10222210()
 // END FUNCTION
 
 // FUNCTION: 0x102223f0 size=0xc3
+#include "CExperienceTable.h"
 extern int *g_109f3680;
 extern const char **g_109f3620;
 extern const char g_106b8540[];
@@ -115525,6 +118448,14 @@ int *sub_102231c0()
 // END FUNCTION
 
 // FUNCTION: 0x10223470 size=0x133
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseKeyframedMover.h"
 #include "CMoverKeyFrame.h"
 #include "CEHandleGet.h"
@@ -115642,6 +118573,7 @@ void CUnknownToggle10223770::sub_10223770(CUnknownInput10223770 *pInput)
 // END FUNCTION
 
 // FUNCTION: 0x102237c0 size=0xd
+#include "CUnknown102237c0.h"
 void CUnknown102237c0::sub_102237c0(int value)
 {
 	value = 1;
@@ -115650,6 +118582,7 @@ void CUnknown102237c0::sub_102237c0(int value)
 // END FUNCTION
 
 // FUNCTION: 0x102237e0 size=0xd
+#include "CUnknown102237e0.h"
 void CUnknown102237e0::sub_102237e0(int index)
 {
 	index = -1;
@@ -115667,6 +118600,14 @@ void CUnknown10223800::sub_10223800(int value)
 // END FUNCTION
 
 // FUNCTION: 0x10223820 size=0xd8
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseKeyframedMover.h"
 #include "CEntityVSlots.h"
 #include "CEHandleGet.h"
@@ -116142,6 +119083,7 @@ void CPlayerEvents::sub_102271d0(void *pActivator, int nOutput)
 // END FUNCTION
 
 // FUNCTION: 0x10227210 size=0xa
+#include "CUnknown10227210.h"
 void CUnknown10227210::sub_10227210(int unused)
 {
 	m_unk450 = 1;
@@ -116168,6 +119110,7 @@ void CUnknown10227250::sub_10227250(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x102272b0 size=0x4c
+#include "CBaseEntity.h"
 #include "CBasePlayer.h"
 #include <string.h>
 extern char g_106b8540[];
@@ -116320,6 +119263,9 @@ void __stdcall sub_102274b0(int a)
 // END FUNCTION
 
 // FUNCTION: 0x102277a0 size=0x111
+#include "CBasePlayer.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
 #include "CUnknown10750cb4.h"
 
 // TARGET: CUnknown10750cb4::sub_102277a0
@@ -116332,6 +119278,7 @@ void CUnknown10750cb4::sub_102277a0(CBaseEntity *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x10227a30 size=0xb6
+#include "utlrbtree.h"
 #include "utlvector.h"
 #include "CEHandleGet.h"
 
@@ -117186,6 +120133,14 @@ CPropRadio *CPropRadio::sub_1022bc30()
 // END FUNCTION
 
 // FUNCTION: 0x1022c750 size=0xc7
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CPropRadio.h"
 #include "ScopeTrace.h"
 extern char g_105b4a5c[];
@@ -117209,6 +120164,7 @@ void CPropRadio::sub_1022c750(int a)
 // END FUNCTION
 
 // FUNCTION: 0x1022c860 size=0x85
+#include "inputdata_t.h"
 #include "CPropRadio.h"
 
 struct ScopeTraceEntry_t
@@ -117239,6 +120195,7 @@ void CPropRadio::sub_1022c860(inputdata_t *pInput)
 // END FUNCTION
 
 // FUNCTION: 0x1022c920 size=0x85
+#include "inputdata_t.h"
 #include "CPropRadio.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
@@ -117563,6 +120520,14 @@ void __fastcall sub_1022d410(Mem256 *self, int, int num)
 // END FUNCTION
 
 // FUNCTION: 0x1022d780 size=0xe0
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 
 
@@ -117614,6 +120579,14 @@ void sub_1022d780(int index, int arg2)
 // END FUNCTION
 
 // FUNCTION: 0x1022d8a0 size=0xf0
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBasePlayer.h"
 #include "CBaseCombatWeapon.h"
 #include "CGlobalEntityList.h"
@@ -117665,6 +120638,9 @@ void sub_1022d8a0(int index, const char *pszName)
 // END FUNCTION
 
 // FUNCTION: 0x1022d9d0 size=0x1d2
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseCombatCharacter.h"
 #include "CVStatList_t.h"
 
@@ -117697,6 +120673,9 @@ void sub_1022d9d0(CBaseCombatCharacter *pChar, int nTarget)
 // END FUNCTION
 
 // FUNCTION: 0x1022dc30 size=0x1ed
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseCombatCharacter.h"
 #include "CVStatList_t.h"
 #include "CVStatInfoList_t.h"
@@ -117734,6 +120713,7 @@ void sub_1022dc30(CBaseCombatCharacter *pChar, int nAmount)
 // END FUNCTION
 
 // FUNCTION: 0x1022e9d0 size=0x4b
+#include "CBasePlayer.h"
 #include <stdlib.h>
 class CBasePlayer;
 CBasePlayer *sub_101193b0();
@@ -117843,6 +120823,14 @@ void sub_1022eb60(TStat *stat, const char *name)
 // END FUNCTION
 
 // FUNCTION: 0x1022ec20 size=0x1bb
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "engineserver.h"
 #include "CBaseEntity.h"
@@ -117915,6 +120903,8 @@ void sub_1022ec20(CVStatActionList_t *pList, int iEntIndex, int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x1022f4f0 size=0x6b
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
 #include "CUnknown101e8080.h"
 #include "CUnknown101d8a70.h"
 #include "CVDmg_t.h"
@@ -117933,6 +120923,7 @@ int sub_1022f4f0(CBaseCombatCharacter *pChar, int nStat, unsigned char flags)
 // END FUNCTION
 
 // FUNCTION: 0x1022f580 size=0x82
+#include "CBaseCombatCharacter.h"
 #include "CVDmg_t.h"
 #include "CUnknown10739d08.h"
 #include "CUnknown101d8a70.h"
@@ -118338,6 +121329,9 @@ void * CUnknown10230f90::sub_10230f90(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x10230fc0 size=0x166
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CVDmg_t.h"
 #include "CVStatList_t.h"
 #include "CVFeat_t.h"
@@ -118555,6 +121549,7 @@ unsigned int __fastcall sub_10231e60(char *self)
 // END FUNCTION
 
 // FUNCTION: 0x10231ed0 size=0xc
+#include "CUnknown10231ed0.h"
 unsigned int CUnknown10231ed0::sub_10231ed0()
 {
 	return (m_flags464 >> 1) & 1;
@@ -121236,6 +124231,7 @@ void __stdcall sub_1023e2d0(inputdata_t *pInput)
 // END FUNCTION
 
 // FUNCTION: 0x1023e4b0 size=0x184
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 
 struct SeqNode {
@@ -121388,6 +124384,8 @@ void sub_1023ea20()
 // END FUNCTION
 
 // FUNCTION: 0x1023ed10 size=0xde
+#include "utlmemory.h"
+#include "utlvector.h"
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned long size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *pMem, unsigned long size);
@@ -121504,6 +124502,7 @@ void sub_1023ee30(int src)
 // END FUNCTION
 
 // FUNCTION: 0x1023ef40 size=0x5d
+#include "utlrbtree.h"
 #include "utlvector.h"
 #include "engineserver.h"
 #include "engineiface.h"
@@ -121725,6 +124724,7 @@ int sub_1023ffa0(const Vector *pStart, const Vector *pDir, const Vector *pPoint,
 // END FUNCTION
 
 // FUNCTION: 0x102400e0 size=0x71
+#include "Vector.h"
 // TARGET: sub_102400e0
 bool sub_102400e0(const Vector *p, const Vector *mins, const Vector *maxs)
 {
@@ -121863,6 +124863,7 @@ bool sub_10240670(const Vector &a, const Vector &b, BoxObj *obj, float margin)
 // END FUNCTION
 
 // FUNCTION: 0x10240ac0 size=0x57
+#include "Vector.h"
 struct RayView10240ac0 { Vector m_vecStart; Vector m_vecDelta; };
 struct PlaneView10240ac0 { Vector m_vecNormal; float m_flDist; };
 
@@ -122251,6 +125252,7 @@ bool CFlagHolder245770::sub_10245770(unsigned int mask)
 // END FUNCTION
 
 // FUNCTION: 0x10245790 size=0xd
+#include "CUnknown10245790.h"
 void CUnknown10245790::sub_10245790(unsigned int flags)
 {
 	m_unk4->m_flags |= flags;
@@ -122266,6 +125268,7 @@ int CUnknown102457b0::sub_102457b0()
 // END FUNCTION
 
 // FUNCTION: 0x102457d0 size=0xa
+#include "CUnknown102457d0.h"
 void CUnknown102457d0::sub_102457d0(int value)
 {
 	m_unk8 = value;
@@ -122341,6 +125344,7 @@ void CUnk10245c80::sub_10245c80(void (__cdecl *fn)(void *, int))
 // END FUNCTION
 
 // FUNCTION: 0x102461b0 size=0xd
+#include "CUnknown102461b0.h"
 void CUnknown102461b0::sub_102461b0()
 {
 	m_pTarget->vfunc6(m_pTarget->m_unk1c);
@@ -123157,6 +126161,7 @@ int CUnknown102480d0::sub_102480d0()
 // END FUNCTION
 
 // FUNCTION: 0x102480f0 size=0x159
+#include "utlvector.h"
 struct IFileSys
 {
 	virtual int Open(const char *name, const char *mode, const char *path);
@@ -123360,6 +126365,7 @@ void CKeyValuesX::sub_10248690(const char *pszFile, IKeyValuesFileView *pFileSys
 // END FUNCTION
 
 // FUNCTION: 0x10248730 size=0xb0
+#include "CUtlBuffer.h"
 #include "CKeyValuesX.h"
 
 void sub_10248810(CUtlBuffer *pBuf, int nIndent);
@@ -123403,6 +126409,7 @@ void sub_10248810(void *p, int n)
 // END FUNCTION
 
 // FUNCTION: 0x10248850 size=0xa
+#include "CUnknown10248850.h"
 void CUnknown10248850::sub_10248850(int value)
 {
 	m_unk18 = value;
@@ -123856,6 +126863,7 @@ float CUnknown10249400::sub_10249400()
 // END FUNCTION
 
 // FUNCTION: 0x10249450 size=0xa
+#include "CUnknown10249450.h"
 void CUnknown10249450::sub_10249450(int value)
 {
 	m_unk4 = value;
@@ -124007,6 +127015,7 @@ unsigned short SymMap::sub_10249980(unsigned int key, int value)
 // END FUNCTION
 
 // FUNCTION: 0x10249fc0 size=0x89
+#include "utlrbtree.h"
 #include "CUnknown10249fc0.h"
 int CUnknown10249fc0::sub_10249fc0(unsigned short i)
 {
@@ -124052,6 +127061,7 @@ int NodeHolder::sub_1024a080(unsigned short idx)
 // END FUNCTION
 
 // FUNCTION: 0x1024a120 size=0x85
+#include "utlrbtree.h"
 #include "CUtlRBTree16.h"
 
 struct CTreeHolder1024a120
@@ -124078,6 +127088,7 @@ void __fastcall sub_1024a120(CTreeHolder1024a120 *p)
 // END FUNCTION
 
 // FUNCTION: 0x1024a1e0 size=0x3f
+#include "vampire_all.h"
 #include "CUnknown1024b370.h"
 
 struct CUnknownObj1024a1e0 {
@@ -124123,6 +127134,8 @@ int CUnknown1024a2e0::sub_1024a2e0(unsigned int a)
 // END FUNCTION
 
 // FUNCTION: 0x1024a310 size=0x116
+#include "utlmemory.h"
+#include "utlrbtree.h"
 #include "CUtlRBTree16.h"
 extern void *(*g_109f3638)(void *, unsigned int);
 extern void *(*g_109f3634)(unsigned int);
@@ -124174,6 +127187,14 @@ unsigned short CUtlRBTree16::sub_1024a310()
 // END FUNCTION
 
 // FUNCTION: 0x1024a900 size=0x57
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlrbtree.h"
 #include "CUtlRBTree16.h"
 
 struct CUtlRBTree16Unit : CUtlRBTree16At<0x1088ae24>
@@ -124188,6 +127209,7 @@ const CUtlRBTree16::Links_t *CUtlRBTree16Unit::sub_1024a900(unsigned short i) co
 // END FUNCTION
 
 // FUNCTION: 0x1024a980 size=0xb9
+#include "utlrbtree.h"
 #include "CUtlRBTree16.h"
 
 bool CUtlRBTree16::sub_1024a980(unsigned short i) const
@@ -124198,6 +127220,14 @@ bool CUtlRBTree16::sub_1024a980(unsigned short i) const
 // END FUNCTION
 
 // FUNCTION: 0x1024aa70 size=0x1b2
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlrbtree.h"
 #include "CUtlRBTree16.h"
 
 struct CUtlRBTree16Unit : CUtlRBTree16At<0x1088ae24>
@@ -124237,6 +127267,14 @@ void CUtlRBTree16Unit::sub_1024aa70(unsigned short elem)
 // END FUNCTION
 
 // FUNCTION: 0x1024aca0 size=0x1b5
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlrbtree.h"
 #include "CUtlRBTree16.h"
 
 struct CUtlRBTree16Unit : CUtlRBTree16At<0x1088ae24>
@@ -124591,6 +127629,13 @@ bool CUtlRBTree12::sub_1024c0e0(unsigned short i) const
 // END FUNCTION
 
 // FUNCTION: 0x1024c400 size=0x1c0
+#include "CUtlRBTree16.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
 #include "CUtlRBTree12.h"
 #include "utlrbtree.h"
 struct CRBTree12Entry_1024c1d0 { char data[4]; };	// the tree of its sentinel (one T per game instance)
@@ -125379,6 +128424,7 @@ found:
 // END FUNCTION
 
 // FUNCTION: 0x102506a0 size=0xc4
+#include "CBaseCombatWeapon.h"
 #include "CBaseAnimating.h"
 #include "CGlobalEntityList.h"
 extern CGlobalEntityList *g_10566458;
@@ -125409,6 +128455,7 @@ char __fastcall sub_102506a0(CBaseCombatWeapon *thiz)
 // END FUNCTION
 
 // FUNCTION: 0x102507b0 size=0x8
+#include "CBaseCombatWeapon.h"
 void CBaseCombatWeapon::sub_102507b0() { vfunc361(); }
 // END FUNCTION
 
@@ -125435,6 +128482,7 @@ void CUnknown10250830::sub_10250830(unsigned short elem)
 // END FUNCTION
 
 // FUNCTION: 0x102508f0 size=0xc
+#include "CUnknown102508f0.h"
 CUnknown102508f0_Elem *CUnknown102508f0::sub_102508f0(int index)
 {
 	return &m_pMemory[index];
@@ -125474,6 +128522,7 @@ void __fastcall sub_10250910(Mem8 *self, int, int num)
 // END FUNCTION
 
 // FUNCTION: 0x10250c50 size=0x6c
+#include "CBaseCombatWeapon.h"
 #include "CBaseAnimating.h"
 
 struct CWeaponHandleOwner
@@ -125550,6 +128599,7 @@ int __fastcall sub_102517b0(void *pThis)
 // END FUNCTION
 
 // FUNCTION: 0x102517e0 size=0xb4
+#include "CBaseCombatWeapon.h"
 #include "CVDmg_t.h"
 
 struct CRollRecord_102517e0
@@ -125672,6 +128722,7 @@ char *__fastcall sub_10251d30(void *self)
 // END FUNCTION
 
 // FUNCTION: 0x10252120 size=0x97
+#include "CBaseCombatWeapon.h"
 char *__fastcall sub_10010ea6(CBaseCombatWeapon *p);
 char *__fastcall sub_10008b20(CBaseCombatWeapon *p);
 char *__fastcall sub_10003d91(CBaseCombatWeapon *p);
@@ -125693,6 +128744,7 @@ char *CBaseCombatWeapon::sub_10252120(int a, int index)
 // END FUNCTION
 
 // FUNCTION: 0x102521f0 size=0x38
+#include "CBaseEntity.h"
 #include "ehandle.h"
 #include "CBaseCombatWeapon.h"
 
@@ -125736,6 +128788,8 @@ int CAI_BaseNPCTroika::sub_10252240()
 // END FUNCTION
 
 // FUNCTION: 0x10252290 size=0x38
+#include "CBaseEntity.h"
+#include "CWeaponOwner.h"
 #include "ehandle.h"
 #include "CBaseCombatWeapon.h"
 
@@ -125820,6 +128874,7 @@ bool CUnk10252410::sub_10252410(unsigned int i)
 // END FUNCTION
 
 // FUNCTION: 0x10252450 size=0xe
+#include "CUnknown10252450.h"
 float CUnknown10252450::sub_10252450(int index)
 {
 	return m_unk730[index];
@@ -126095,6 +129150,7 @@ bool CBaseCombatWeapon::sub_10254b00(int a)
 // END FUNCTION
 
 // FUNCTION: 0x10255c30 size=0x8b
+#include "CBaseCombatWeapon.h"
 #include "CUnknown1073dc28.h"
 
 extern "C" char *__cdecl strtok(char *str, const char *delim);
@@ -126129,6 +129185,7 @@ void CBaseCombatWeapon::sub_10255c30(void *pKeys)
 // END FUNCTION
 
 // FUNCTION: 0x10255cf0 size=0xa6
+#include "CBaseCombatWeapon.h"
 #include "CWeaponOwner.h"
 #include "CEntryZ.h"
 
@@ -126273,6 +129330,7 @@ void CUnknown10256300::sub_10256300()
 // END FUNCTION
 
 // FUNCTION: 0x10256350 size=0x73
+#include "CBaseCombatWeapon.h"
 #include "CUnknown101d8a70.h"
 
 struct CRollRecord { int a, b, c, d; };
@@ -126342,6 +129400,7 @@ void CBaseCombatWeapon::sub_102564b0()
 // END FUNCTION
 
 // FUNCTION: 0x102564f0 size=0x42
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 extern CGlobalEntityList g_106eb5d8;
 struct SubObj { virtual void v(); char pad[0x8b0 - 4]; int m8b0; };
@@ -126443,6 +129502,7 @@ int *sub_102567b0()
 // END FUNCTION
 
 // FUNCTION: 0x10256890 size=0x6b
+#include "CBaseEntity.h"
 #include "CBaseCombatWeapon.h"
 
 struct OwnerEnt {
@@ -126615,6 +129675,9 @@ char CBaseCombatWeapon::sub_10257200()
 // END FUNCTION
 
 // FUNCTION: 0x10257280 size=0xdb
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CWeaponRanged.h"
 #include "CWeaponOwner.h"
 #include "CVFeat_t.h"
@@ -126642,6 +129705,7 @@ int CWeaponRanged::sub_10257280(void *pFrom, void *pTo, int a)
 // END FUNCTION
 
 // FUNCTION: 0x10257560 size=0x41
+#include "CBaseEntity.h"
 void sub_101eddf0(int, int);
 void CBaseEntity::sub_10257560(CBaseEntity *pOther, int a, int b)
 {
@@ -126654,6 +129718,7 @@ void CBaseEntity::sub_10257560(CBaseEntity *pOther, int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x102575d0 size=0x41
+#include "CBaseEntity.h"
 #include "engineserver.h"
 using namespace EngineGlobals;
 
@@ -126670,6 +129735,14 @@ void CBaseEntity::sub_102575d0(CBaseEntity *pOther, int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x10257640 size=0x12c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CWeaponRanged.h"
 #include "CGlobalEntityList.h"
 #include "ScopeTrace.h"
@@ -127204,6 +130277,7 @@ CHolderVDmg198 *CHolderVDmg198::sub_1025b390()
 // END FUNCTION
 
 // FUNCTION: 0x1025b3e0 size=0x16b
+#include "utlrbtree.h"
 #include "CUtlRBTreeBig.h"
 #include "CVDmg_t.h"
 
@@ -127376,6 +130450,7 @@ bool sub_1025c670(unsigned short *a, unsigned short *b)
 // END FUNCTION
 
 // FUNCTION: 0x1025c6a0 size=0x10b
+#include "utlrbtree.h"
 #include "CUtlRBTreeBig.h"
 
 unsigned short CUtlRBTreeBig::sub_1025c6a0(const void *search)
@@ -127394,6 +130469,15 @@ unsigned short CUtlRBTreeBig::sub_1025c6a0(const void *search)
 // END FUNCTION
 
 // FUNCTION: 0x1025c800 size=0x169
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree16.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlmemory.h"
+#include "utlrbtree.h"
 #include "CUtlRBTreeBig.h"
 
 extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned int nSize);
@@ -127473,6 +130557,7 @@ unsigned short CUtlRBTreeBig::sub_1025c800(unsigned short parent, bool leftchild
 // END FUNCTION
 
 // FUNCTION: 0x1025c9d0 size=0x10e
+#include "utlrbtree.h"
 #include "CUtlRBTreeBig.h"
 
 void CUtlRBTreeBig::sub_1025c9d0(const void *insert, unsigned short &parent, bool &leftchild)
@@ -127506,6 +130591,14 @@ void sub_1025cb30(unsigned short *dst, unsigned short *src)
 // END FUNCTION
 
 // FUNCTION: 0x1025cb70 size=0x5a
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree16.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlrbtree.h"
 #include "CUtlRBTreeBig.h"
 
 CUtlRBTreeBig::Links_t &CUtlRBTreeBig::sub_1025cb70(unsigned short i)
@@ -127515,6 +130608,7 @@ CUtlRBTreeBig::Links_t &CUtlRBTreeBig::sub_1025cb70(unsigned short i)
 // END FUNCTION
 
 // FUNCTION: 0x1025d2b0 size=0xbf
+#include "utlrbtree.h"
 #include "CUtlRBTreeBig.h"
 
 bool CUtlRBTreeBig::sub_1025d2b0(unsigned short i) const
@@ -127524,6 +130618,7 @@ bool CUtlRBTreeBig::sub_1025d2b0(unsigned short i) const
 // END FUNCTION
 
 // FUNCTION: 0x1025d3a0 size=0xc1
+#include "utlrbtree.h"
 #include "CUtlRBTreeBig.h"
 
 bool CUtlRBTreeBig::sub_1025d3a0(unsigned short i) const
@@ -127678,6 +130773,7 @@ void sub_1025d940()
 // END FUNCTION
 
 // FUNCTION: 0x1025d9d0 size=0x3b
+#include "Vector.h"
 #include "CUnknown1025ddd0.h"
 __declspec(dllimport) void Q_strncpy(char *pDest, const char *pSrc, int maxLen);
 struct VecInit
@@ -127701,6 +130797,7 @@ CUnknown1025ddd0 *CUnknown1025ddd0::sub_1025d9d0(int nLimit, const char *pszName
 // END FUNCTION
 
 // FUNCTION: 0x1025da20 size=0x50
+#include "utlrbtree.h"
 #include "utlvector.h"
 struct CList1025da20 {
 	int m_n0;
@@ -127780,6 +130877,8 @@ char __fastcall sub_1025db50(int *self)
 // END FUNCTION
 
 // FUNCTION: 0x1025db70 size=0xe1
+#include "CBaseEntity.h"
+#include "utlvector.h"
 #include "CUnknown1025ddd0.h"
 
 struct EntInfo { CBaseEntity *m_pEntity; int m_serial; int m_unused; };
@@ -127852,6 +130951,7 @@ bool CUnknown1025ddd0::sub_1025db70(CBaseEntity *pEntity)
 // END FUNCTION
 
 // FUNCTION: 0x1025dca0 size=0xe9
+#include "CBaseEntity.h"
 #include "CUnknown1025ddd0.h"
 #include "CEHandleGet.h"
 
@@ -127886,6 +130986,7 @@ bool CUnknown1025ddd0::sub_1025dca0(CBaseEntity *pEntity, char bFlag)
 // END FUNCTION
 
 // FUNCTION: 0x1025de90 size=0x61
+#include "CBaseEntity.h"
 struct CEntHandleList_1025de90 {
 	char pad0[4];
 	EHANDLE *m_pElements;
@@ -128013,6 +131114,7 @@ void CAI_BaseHumanoid::sub_1025e7b0()
 // END FUNCTION
 
 // FUNCTION: 0x1025efc0 size=0x5f
+#include "CAI_BaseHumanoid.h"
 #include "CBaseAnimating.h"
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
@@ -128142,6 +131244,7 @@ extern "C" CAI_BaseHumanoid *npc_TestBaseHumanoid()
 // END FUNCTION
 
 // FUNCTION: 0x10260a50 size=0xaf
+#include "CAI_BaseNPC.h"
 #include "CBaseAnimating.h"
 
 #define NV1(n) virtual void nv##n();
@@ -128383,6 +131486,7 @@ void Mem38::sub_10264370(int num)
 // END FUNCTION
 
 // FUNCTION: 0x10264450 size=0xb
+#include "CUnknown102e12c0.h"
 void CUnknown102e12c0::sub_10264450()
 {
 	m_pOuter->vfunc310();
@@ -128400,6 +131504,7 @@ CUtlVector<int> *__fastcall sub_10265290(CUtlVector<int> *p)
 // END FUNCTION
 
 // FUNCTION: 0x102652d0 size=0xd
+#include "CUnknown102652d0.h"
 int CUnknown102652d0::sub_102652d0()
 {
 	if (m_unkC != 0)
@@ -128454,6 +131559,10 @@ void CUtlVector4::sub_10265310(int value)
 // END FUNCTION
 
 // FUNCTION: 0x102653f0 size=0x51
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 void __fastcall sub_102653f0(CUtlVector<int> *v, int unused, int x)
 {
 	int elem = v->Find(x);
@@ -128467,6 +131576,7 @@ void __fastcall sub_102653f0(CUtlVector<int> *v, int unused, int x)
 // END FUNCTION
 
 // FUNCTION: 0x10265680 size=0x124
+#include "CBaseEntity.h"
 #include "CBCCSlotViews.h"
 __declspec(dllimport) void DevMsg(const char *fmt, ...);
 
@@ -128536,6 +131646,7 @@ unsigned char sub_10265800()
 // END FUNCTION
 
 // FUNCTION: 0x10265820 size=0x94
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 #include "CAI_BaseNPC.h"
 #include "CUnknown102ee270.h"
@@ -128568,6 +131679,7 @@ void sub_10265820()
 // END FUNCTION
 
 // FUNCTION: 0x10265970 size=0x9c
+#include "CAI_BaseNPC.h"
 void sub_10139610(const float *pAngles, float *pForward, float *pRight, float *pUp);
 
 // TARGET: CAI_BaseNPC::sub_10265970
@@ -128780,6 +131892,17 @@ int sub_102673f0(int id, int list)
 // END FUNCTION
 
 // FUNCTION: 0x102695d0 size=0xd2
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 
 struct CEntFields102695d0
@@ -129083,6 +132206,14 @@ void CUnk1026a0b0::sub_1026a0b0()
 // END FUNCTION
 
 // FUNCTION: 0x1026a0f0 size=0x143
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CAI_BaseNPC.h"
 #include "ScopeTrace.h"
 
@@ -129216,6 +132347,14 @@ Vector Vector::sub_1026b7a0(const Vector &v) const
 // END FUNCTION
 
 // FUNCTION: 0x1026c120 size=0x218
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
 #include "CAI_BaseNPC.h"
@@ -129449,6 +132588,7 @@ unsigned int CUnk1026dc30::sub_1026dc30(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x1026dc60 size=0xb
+#include "CUnknown1026dc60.h"
 void CUnknown1026dc60::sub_1026dc60()
 {
 	m_unk5cec = 0;
@@ -129483,6 +132623,7 @@ void CAI_BaseNPC::sub_1026e340(int newState)
 // END FUNCTION
 
 // FUNCTION: 0x1026e4f0 size=0x92
+#include "CAI_BaseNPC.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
 extern int *g_109f3680;
@@ -129511,6 +132652,14 @@ void CAI_BaseNPC::sub_1026e4f0()
 // END FUNCTION
 
 // FUNCTION: 0x1026e940 size=0x241
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "Ray_t.h"
 #include <math.h>
@@ -129584,6 +132733,7 @@ bool CAI_BaseNPC::sub_1026fb40()
 // END FUNCTION
 
 // FUNCTION: 0x1026ff00 size=0x5b
+#include "CBaseEntity.h"
 #include "Vector.h"
 class CBaseEntity;
 struct CUnitHelper
@@ -129601,6 +132751,8 @@ void CUnitHelper::sub_1026ff00(const Vector *pOffset, const float *pTo)
 // END FUNCTION
 
 // FUNCTION: 0x1026ff80 size=0x18b
+#include "CBaseEntity.h"
+#include "CTraceFilterNoCharacterCollide.h"
 #include "CTraceFilterSimple.h"
 #include "CGameTrace.h"
 #include "Ray_t.h"
@@ -129709,6 +132861,7 @@ void CAI_BaseNPC::sub_10270180(void *pObject, char bTrack)
 // END FUNCTION
 
 // FUNCTION: 0x10270290 size=0xd
+#include "CUnknown10270290.h"
 void CUnknown10270290::sub_10270290(int value)
 {
 	m_unk5b90 = value;
@@ -129756,6 +132909,7 @@ void CAI_BaseNPC::sub_10270aa0(CBaseEntity *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x10270ae0 size=0x2d
+#include "CBaseEntity.h"
 #include "CBasePlayer.h"
 
 struct EntInfo {
@@ -129784,6 +132938,7 @@ CBaseEntity *CBasePlayer::sub_10270ae0()
 // END FUNCTION
 
 // FUNCTION: 0x102718e0 size=0xd
+#include "CUnknown102718e0.h"
 CUnknown102718e0 *CUnknown102718e0::sub_102718e0(const CUnknown102718e0 *other)
 {
 	m_unk0 = other->m_unk0;
@@ -129862,6 +133017,7 @@ void __fastcall sub_10271b10(CAI_BaseNPC *self)
 // END FUNCTION
 
 // FUNCTION: 0x10271d10 size=0x1a2
+#include "CBaseEntity.h"
 #include "CAI_BaseNPC.h"
 #include "CVProfile.h"
 #include "ehandle.h"
@@ -129990,6 +133146,14 @@ int CAI_BaseNPC::sub_10271ff0(int act, int *pOut)
 // END FUNCTION
 
 // FUNCTION: 0x10272130 size=0x240
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CAI_BaseNPC.h"
 #include "CEHandleGet.h"
 #include "ScopeTrace.h"
@@ -130070,6 +133234,7 @@ check:
 // END FUNCTION
 
 // FUNCTION: 0x10272490 size=0xf3
+#include "CBaseCombatCharacter.h"
 #include "CAI_BaseNPC.h"
 #include "CVSoundActivityTable_t.h"
 
@@ -130186,6 +133351,14 @@ void block_10272650::CAI_BaseNPCUnit10272650::sub_10272650(int nValue)
 // END FUNCTION
 
 // FUNCTION: 0x102727d0 size=0xe6
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CAI_BaseNPC.h"
 #include "ScopeTrace.h"
 
@@ -130235,6 +133408,7 @@ void CAI_BaseNPC::sub_10272940(const char *label)
 // END FUNCTION
 
 // FUNCTION: 0x102729d0 size=0xad
+#include "CBaseEntity.h"
 #include "CAI_BaseNPC.h"
 #include "CGlobalEntityList.h"
 
@@ -130328,6 +133502,7 @@ void CUnk10273760::sub_10273760()
 // END FUNCTION
 
 // FUNCTION: 0x10273790 size=0x269
+#include "CBaseEntity.h"
 #include "CAI_BaseNPC.h"
 #include "CGlobalEntityList.h"
 #include "CBasePlayer.h"
@@ -130474,6 +133649,8 @@ int __fastcall sub_10273f90(char *pThis)
 // END FUNCTION
 
 // FUNCTION: 0x10274ca0 size=0xc7
+#include "CAI_BaseNPC.h"
+#include "Vector.h"
 extern Vector g_1070d1b0;
 void sub_10428310(void *pStudioHdr, Vector *pOut);
 __declspec(dllimport) void DevMsg(const char *pMsg, ...);
@@ -130578,6 +133755,14 @@ void __fastcall sub_10279260(CBaseEntity *param_1)
 // END FUNCTION
 
 // FUNCTION: 0x102792b0 size=0x114
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CAI_BaseNPC.h"
 #include "CBaseAnimating.h"
 #include "CCollisionProperty.h"
@@ -130619,6 +133804,7 @@ void CAI_BaseNPC::sub_102792b0()
 // END FUNCTION
 
 // FUNCTION: 0x10279a50 size=0xd5
+#include "CBaseEntity.h"
 #include "CAI_BaseNPC.h"
 #include "CGlobalEntityList.h"
 extern CGlobalEntityList *g_10566458;
@@ -130670,6 +133856,7 @@ void CAI_BaseNPC::sub_10279b70(CBaseEntity *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x10279c20 size=0x1f
+#include "CBaseEntity.h"
 #include "CAI_BaseNPC.h"
 #include "CUnknown102dfd90.h"
 
@@ -130725,6 +133912,9 @@ void CAI_BaseNPC::sub_10279cc0(CBaseEntity *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x1027a310 size=0xb7
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
+#include "Vector.h"
 extern void (__cdecl *g_109f3630)(const char *fmt, ...);	// DevMsg
 
 struct CRandomStreamX
@@ -130767,6 +133957,7 @@ CBaseEntity *CAI_BaseNPC::sub_1027a310(const char *pszItemName, Vector vecPos, V
 // END FUNCTION
 
 // FUNCTION: 0x1027a6c0 size=0x29
+#include "CAI_BaseNPC.h"
 #include "CUnknown102ee270.h"
 int __fastcall sub_102ee510(void *p);
 // TARGET: CAI_BaseNPC::sub_1027a6c0
@@ -130857,6 +134048,7 @@ char sub_1027c2c0()
 // END FUNCTION
 
 // FUNCTION: 0x1027cd50 size=0x34
+#include "CLogicAuto.h"
 // TARGET: CUnknown1027cd50::sub_1027cd50
 extern double g_10499408;
 
@@ -130902,6 +134094,7 @@ void CFloatPair1027cda0::sub_1027cda0(float f, bool b)
 // END FUNCTION
 
 // FUNCTION: 0x1027d030 size=0x43
+#include "CBaseEntity.h"
 #include "CAI_BaseNPC.h"
 #include "inputdata_t.h"
 extern char g_106b8540[];
@@ -131050,6 +134243,8 @@ bool CSub::sub_1027dc10(CPEnt *pEnt, int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x1027dd10 size=0xb3
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 
 extern CGlobalEntityList *g_10566458;
@@ -131726,6 +134921,7 @@ void CUnknown1027fc40::sub_1027fc40() { slot431(); }
 // END FUNCTION
 
 // FUNCTION: 0x1027ffe0 size=0xa7
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 #include "CUnknown102ee120.h"
 
@@ -131867,6 +135063,14 @@ int CUnk10280a20::sub_10280a20()
 // END FUNCTION
 
 // FUNCTION: 0x10280a50 size=0x10e
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CAI_BaseNPC.h"
 #include "CAI_Motor.h"
 #include "ScopeTrace.h"
@@ -131931,6 +135135,7 @@ void sub_10280c80()
 // END FUNCTION
 
 // FUNCTION: 0x10280d10 size=0xc
+#include "CUnknown10280d10.h"
 bool CUnknown10280d10::sub_10280d10()
 {
 	bool r = m_unk5c38 != 0;
@@ -132150,6 +135355,7 @@ void __fastcall sub_10289c90(int *p)
 // END FUNCTION
 
 // FUNCTION: 0x10289cc0 size=0xb
+#include "CUnknown10289cc0.h"
 void CUnknown10289cc0::sub_10289cc0()
 {
 	m_unk5cf4.sub_102e8a40();
@@ -132168,6 +135374,7 @@ void CAI_BaseNPC::sub_10289ee0(int activity)
 // END FUNCTION
 
 // FUNCTION: 0x10289fe0 size=0x11b
+#include "CAI_BaseNPC.h"
 #include "CGlobalEntityList.h"
 extern CGlobalEntityList *g_10566458;
 
@@ -132272,6 +135479,7 @@ int CAI_BaseNPC::sub_1028a260()
 // END FUNCTION
 
 // FUNCTION: 0x1028ac10 size=0x47
+#include "CBaseEntity.h"
 #include "ehandle.h"
 static bool (CHandle<CBaseEntity>::*s_ne)(CBaseEntity *) const = &CHandle<CBaseEntity>::operator!=;
 // END FUNCTION
@@ -132449,6 +135657,7 @@ float CMinSet1028b420::sub_1028b420()
 // END FUNCTION
 
 // FUNCTION: 0x1028d610 size=0x9a
+#include "CAI_BaseNPCTroika.h"
 #include "UtlMem.h"
 extern void *vt_1049a25c;
 extern void *vt_1049a22c;
@@ -132517,6 +135726,7 @@ int sub_1028d800()
 // END FUNCTION
 
 // FUNCTION: 0x1028d820 size=0x2f
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 
 #define P10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
@@ -132841,6 +136051,14 @@ int CUnknown1028fc90::sub_1028fc90()
 // END FUNCTION
 
 // FUNCTION: 0x1028fd80 size=0x224
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CAI_BaseNPCTroika.h"
 #include "CBaseEntity.h"
 #include "ScopeTrace.h"
@@ -132921,6 +136139,7 @@ bool CAI_BaseNPCTroika::sub_10290200(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x102902e0 size=0x49
+#include "CAI_BaseNPCTroika.h"
 bool CAI_BaseNPCTroika::sub_102902e0(int unused)
 {
 	sub_102727d0();
@@ -133286,6 +136505,14 @@ void __fastcall sub_10295a80(int *p, int dummy, int s1, unsigned int *out, int s
 // END FUNCTION
 
 // FUNCTION: 0x10295ab0 size=0x111
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CAI_BaseNPCTroika.h"
 #include "CAI_Hint.h"
 #include "ScopeTrace.h"
@@ -133376,6 +136603,8 @@ bool CAI_BaseNPCTroika::sub_10297430(CAI_BaseNPCTroika *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x102974f0 size=0x49
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseEntity.h"
 #include "CEHandleGet.h"
 void CAI_BaseNPCTroika::sub_102974f0(CAI_BaseNPCTroika *pOther)
 {
@@ -133495,6 +136724,7 @@ int CUnknown10298800::sub_10298800(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x10298910 size=0x9f
+#include "CAI_BaseNPCTroika.h"
 extern "C" int atoi(const char *);
 
 void CAI_BaseNPCTroika::sub_10298910(const char *str)
@@ -134027,6 +137257,7 @@ bool CAI_BaseNPCTroika::sub_1029f610(void *pHolder)
 // END FUNCTION
 
 // FUNCTION: 0x1029f650 size=0x44
+#include "CAI_BaseNPCTroika.h"
 struct CAI_NavNodeView { char m_pad[0x46c]; int m_n46c; };
 char CAI_BaseNPCTroika::sub_1029f650(void *pHolder)
 {
@@ -134161,6 +137392,14 @@ void __fastcall sub_102a0eb0(char *self)
 // END FUNCTION
 
 // FUNCTION: 0x102a0ed0 size=0xa7
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CAI_BaseNPCTroika.h"
 #include "ScopeTrace.h"
 
@@ -134507,6 +137746,7 @@ bool __fastcall sub_102a1620(N *p)
 // END FUNCTION
 
 // FUNCTION: 0x102a18a0 size=0x42
+#include "CAI_BaseNPCTroika.h"
 struct CAI_FloatParam { int m_n0; float m_flValue; };
 void CAI_BaseNPCTroika::sub_102a18a0(const CAI_FloatParam *pParam)
 {
@@ -134653,6 +137893,7 @@ int CThunkOwnerTroika::sub_102a9730()
 // END FUNCTION
 
 // FUNCTION: 0x102a9750 size=0xd
+#include "CUnknown102a9750.h"
 void CUnknown102a9750::sub_102a9750(int value)
 {
 	m_unk3ec = value;
@@ -134749,6 +137990,7 @@ int CAI_BaseNPCTroika::sub_102a9910()
 // END FUNCTION
 
 // FUNCTION: 0x102a9940 size=0xd
+#include "CUnknown102a9750.h"
 void CUnknown102a9750::sub_102a9940(int value)
 {
 	m_unk63ec = value;
@@ -134756,6 +137998,7 @@ void CUnknown102a9750::sub_102a9940(int value)
 // END FUNCTION
 
 // FUNCTION: 0x102a9960 size=0x2d
+#include "CBaseEntity.h"
 #include "CBasePlayer.h"
 
 struct EntInfo {
@@ -134784,6 +138027,7 @@ CBaseEntity *CBasePlayer::sub_102a9960()
 // END FUNCTION
 
 // FUNCTION: 0x102a99a0 size=0xd
+#include "CUnknown102a9750.h"
 void CUnknown102a9750::sub_102a99a0(char value)
 {
 	m_unk6498 = value;
@@ -134791,6 +138035,7 @@ void CUnknown102a9750::sub_102a99a0(char value)
 // END FUNCTION
 
 // FUNCTION: 0x102a99c0 size=0xa
+#include "CUnknown102a99c0.h"
 void CUnknown102a99c0::sub_102a99c0(char value)
 {
 	m_bFlag = value;
@@ -134926,6 +138171,7 @@ int CUnknown102a9ea0::sub_102a9ea0(int i) { return a[i]; }
 // END FUNCTION
 
 // FUNCTION: 0x102a9ec0 size=0xe
+#include "CAI_BaseNPCTroika.h"
 char CAI_BaseNPCTroika::sub_102a9ec0(int index)
 {
 	return *((char *)this + index + 0x88);
@@ -134996,6 +138242,7 @@ void CAI_BaseNPCTroika::sub_102aab70(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x102ae310 size=0x130
+#include "CBaseEntity.h"
 #include "CBasePlayer.h"
 #include "CAI_BaseNPC.h"
 #include "CBaseCombatWeapon.h"
@@ -135112,6 +138359,7 @@ void CUnk102ae750::sub_102ae750(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x102ae780 size=0x49
+#include "CAI_BaseNPCTroika.h"
 void CAI_BaseNPCTroika::sub_102ae780(int a, char b)
 {
 	if (m_n5cc0 != 7 && m_n5cc4 != 7) {
@@ -135124,6 +138372,7 @@ void CAI_BaseNPCTroika::sub_102ae780(int a, char b)
 // END FUNCTION
 
 // FUNCTION: 0x102ae7f0 size=0xd
+#include "CUnknown102b5dc0.h"
 void CUnknown102b5dc0::sub_102ae7f0(int value)
 {
 	m_unk65c8 = value;
@@ -135161,6 +138410,7 @@ void CAI_BaseNPCTroika::sub_102ae840(int a, char b)
 // END FUNCTION
 
 // FUNCTION: 0x102ae8c0 size=0xd
+#include "CUnknown102b5dc0.h"
 void CUnknown102b5dc0::sub_102ae8c0(int value)
 {
 	m_unk65cc = value;
@@ -135361,6 +138611,7 @@ char sub_102b5be0()
 // END FUNCTION
 
 // FUNCTION: 0x102b5dc0 size=0xd
+#include "CUnknown102b5dc0.h"
 void CUnknown102b5dc0::sub_102b5dc0(int value)
 {
 	m_unk63f4 = value;
@@ -135724,6 +138975,8 @@ void CUnkTroika102bf310::sub_102bf310(int a)
 // END FUNCTION
 
 // FUNCTION: 0x102bf560 size=0x4f
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseEntity.h"
 struct CHandleSrc { virtual void vfunc0(); virtual unsigned int *vfunc1(); };
 CHandleSrc * __stdcall sub_102707d0(CBaseEntity *);
 struct TroikaView { char pad[0x65c0]; unsigned int h65c0; float f65c4; char pad2[0x65f5 - 0x65c8]; char b65f5; };
@@ -136115,6 +139368,14 @@ void CAI_BaseNPCTroika::sub_102c0bb0()
 // END FUNCTION
 
 // FUNCTION: 0x102c0ca0 size=0x23d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CAI_BaseNPCTroika.h"
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
@@ -136258,6 +139519,7 @@ char CAI_BaseNPCTroika::sub_102c1170()
 // END FUNCTION
 
 // FUNCTION: 0x102c1230 size=0x46
+#include "CAI_BaseNPCTroika.h"
 #include "CUnknown100ecee0.h"
 extern int (__cdecl *g_109f3868)(int lo, int hi);
 extern CUnknown100ecee0 g_10924980;
@@ -136278,6 +139540,7 @@ int CAI_BaseNPCTroika::sub_102c1230()
 // END FUNCTION
 
 // FUNCTION: 0x102c1400 size=0x1fa
+#include "CAI_BaseNPCTroika.h"
 #include "CEHandleGet.h"
 #include "CDialog.h"
 #include "CBasePlayer.h"
@@ -136366,6 +139629,8 @@ char CAI_BaseNPCTroika::sub_102c2430()
 // END FUNCTION
 
 // FUNCTION: 0x102c24a0 size=0x17e
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 #include "inputdata_t.h"
 
@@ -136570,6 +139835,7 @@ void __fastcall sub_102c2c10(char *self, int dummy, char *data)
 // END FUNCTION
 
 // FUNCTION: 0x102c2c50 size=0x1ea
+#include "CAI_BaseNPCTroika.h"
 #include "inputdata_t.h"
 extern "C" char *__cdecl _strlwr(char *);
 extern "C" char *__cdecl strstr(const char *, const char *);
@@ -136613,6 +139879,8 @@ bad:
 // END FUNCTION
 
 // FUNCTION: 0x102c32d0 size=0x52
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseCombatCharacter.h"
 #include "inputdata_t.h"
 #include "CUnknown101e0f00.h"
 #include "CUnknown101e3af0.h"
@@ -136777,6 +140045,7 @@ void CUnk102c3540::sub_102c3540(const CVariantArg102c3540 *d)
 // END FUNCTION
 
 // FUNCTION: 0x102c3690 size=0xe
+#include "CAI_BaseNPCTroika.h"
 extern const char *g_105d1068[];
 
 const char *CAI_BaseNPCTroika::sub_102c3690(int task)
@@ -136786,6 +140055,7 @@ const char *CAI_BaseNPCTroika::sub_102c3690(int task)
 // END FUNCTION
 
 // FUNCTION: 0x102c36b0 size=0xe
+#include "CAI_BaseNPCTroika.h"
 extern const char* g_105d1488[];
 
 const char* CAI_BaseNPCTroika::sub_102c36b0(int schedule)
@@ -136804,6 +140074,8 @@ void CAI_BaseNPCTroika::sub_102c42a0(int a, CBaseAnimating *pEnt, int pszBone, i
 // END FUNCTION
 
 // FUNCTION: 0x102c4310 size=0x49
+#include "CAI_BaseNPCTroika.h"
+#include "Vector.h"
 void sub_101d26b0(Vector pos, int a, int b, int c, int d, int e);
 void CAI_BaseNPCTroika::sub_102c4310(int a, int b, int c, int d, int e)
 {
@@ -136868,6 +140140,8 @@ void CUnk102c43f0::sub_102c43f0()
 // END FUNCTION
 
 // FUNCTION: 0x102c4470 size=0x43
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseEntity.h"
 extern const char g_106b8540[];
 bool CAI_BaseNPCTroika::sub_102c4470(CBaseEntity *pEnt)
 {
@@ -137024,6 +140298,7 @@ void CAI_BaseNPCTroika::sub_102c4ad0(CEntityVSlots *pTarget, float flHeight, flo
 // END FUNCTION
 
 // FUNCTION: 0x102c4c50 size=0x4e
+#include "CAI_BaseNPCTroika.h"
 #include <math.h>
 struct SGravVar109ef2d4 { virtual void vfunc0(); virtual char vfunc1(); char m_pad04[0x28 - 4]; float m_f28; };
 struct CAI_ArcRecord { char m_pad00[8]; float m_f08; };
@@ -137037,6 +140312,7 @@ void CAI_BaseNPCTroika::sub_102c4c50(CAI_ArcRecord *pRec, float flTime, int a, i
 // END FUNCTION
 
 // FUNCTION: 0x102c4e80 size=0x1d
+#include "CBaseEntity.h"
 // TARGET: sub_102c4e80
 void __fastcall sub_102c4e80(CBaseEntity *p)
 {
@@ -137260,6 +140536,7 @@ void CUnknown102c6510::sub_102c6510()
 // END FUNCTION
 
 // FUNCTION: 0x102c6590 size=0xc
+#include "CUnknown102c6590.h"
 int *CUnknown102c6590::sub_102c6590(int index)
 {
 	return &m_pMemory[index];
@@ -137350,6 +140627,7 @@ UtlVec8 *UtlVec8::sub_102c66f0(int growSize, int allocationCount)
 // END FUNCTION
 
 // FUNCTION: 0x102c6740 size=0xc
+#include "CUnknown102c6740.h"
 CUnknown102c6740_Elem *CUnknown102c6740::sub_102c6740(int index)
 {
 	return &m_pMemory[index];
@@ -137437,6 +140715,7 @@ void CUnknown102c6860::sub_102c6860()
 // END FUNCTION
 
 // FUNCTION: 0x102c68e0 size=0xc
+#include "CUnknown102c68e0.h"
 int *CUnknown102c68e0::sub_102c68e0(int index)
 {
 	return &m_pMemory[index];
@@ -137664,6 +140943,8 @@ void CUnknown102c6d80::sub_102c6d80() { slot486(); }
 // END FUNCTION
 
 // FUNCTION: 0x102c6d90 size=0xb
+#include "CAI_BaseNPC.h"
+#include "CUnknown102e12c0.h"
 struct CAI_BaseNPC_Ext : public CAI_BaseNPC {
 	virtual void vfunc569(); virtual void vfunc570(); virtual void vfunc571(); virtual void vfunc572();
 	virtual void vfunc573(); virtual void vfunc574(); virtual void vfunc575(); virtual void vfunc576();
@@ -137710,6 +140991,7 @@ void CUnk102c7360::sub_102c7360(char a)
 // END FUNCTION
 
 // FUNCTION: 0x102c7390 size=0xa
+#include "CUnknown102c7390.h"
 void CUnknown102c7390::sub_102c7390(char value)
 {
 	m_bFlag = value;
@@ -138210,6 +141492,7 @@ void CUnknown102ca630::sub_102ca460(CUnknown102ca630Rec *pRec)
 // END FUNCTION
 
 // FUNCTION: 0x102ca630 size=0x6b
+#include "CBaseEntity.h"
 #include "CUnknown102ca630.h"
 
 void CUnknown102ca630::sub_102ca630(CBaseEntity *pEnt)
@@ -138405,6 +141688,7 @@ int sub_102cc4f0()
 // END FUNCTION
 
 // FUNCTION: 0x102cc520 size=0x9
+#include "CUnknown102cc520.h"
 CUnknown102cc520 *CUnknown102cc520::sub_102cc520()
 {
 	m_unk0 = 0;
@@ -138479,6 +141763,7 @@ void sub_102cc6a0()
 // END FUNCTION
 
 // FUNCTION: 0x102cc6c0 size=0x4c
+#include "CLogicAuto.h"
 namespace block_102cc6c0 {
 
 struct CAI_KeyedEntry
@@ -138682,6 +141967,7 @@ void sub_102cc900()
 // END FUNCTION
 
 // FUNCTION: 0x102ccb50 size=0x1e
+#include "CAI_DynamicLink.h"
 class CAI_DynamicLink;
 
 struct CUnkDynLink {
@@ -138958,6 +142244,7 @@ void CUnk102cd310::sub_102cd310()
 // END FUNCTION
 
 // FUNCTION: 0x102cd3b0 size=0xb9
+#include "CAI_BaseNPC.h"
 #include "CAI_GoalEntity.h"
 
 struct HandleEntry { CAI_BaseNPC *ent; unsigned int serial; int pad; };
@@ -139387,6 +142674,13 @@ bool CUtlRBTree12::sub_102cefc0(unsigned short i) const
 // END FUNCTION
 
 // FUNCTION: 0x102cfd20 size=0x1c0
+#include "CUtlRBTree16.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
 #include "CUtlRBTree12.h"
 #include "utlrbtree.h"
 struct CRBTree12Entry_102cfaf0 { char data[4]; };	// the tree of sentinel 0x10925430 (RotateLeft 0x102cfaf0)
@@ -139478,6 +142772,7 @@ void __fastcall sub_102d0080(int *self, int, int value)
 // END FUNCTION
 
 // FUNCTION: 0x102d00a0 size=0xd
+#include "CUnknown102d00a0.h"
 void CUnknown102d00a0::sub_102d00a0(unsigned int mask)
 {
 	m_flags |= mask;
@@ -139737,6 +143032,8 @@ void CUnknown102d0b20::sub_102d0b20()
 // END FUNCTION
 
 // FUNCTION: 0x102d1180 size=0x48
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
 #include "CUnknown102f46d0.h"
 class CBaseEntity;
 extern CUnknown102f46d0 *g_1093407c;
@@ -139904,6 +143201,7 @@ bool CAI_Hint::sub_102d1450(void *pOwner)
 // END FUNCTION
 
 // FUNCTION: 0x102d14c0 size=0x56
+#include "CAI_BaseNPCTroika.h"
 struct CNpcView14c0 {
 	char m_pad0000[0x5e0];
 	EHANDLE m_h5e0;
@@ -139926,6 +143224,7 @@ bool CAI_BaseNPCTroika::sub_102d14c0()
 // END FUNCTION
 
 // FUNCTION: 0x102d1540 size=0x8b
+#include "CLogicAuto.h"
 #include "CAI_BaseNPCTroika.h"
 
 struct EntSub { void *ent; unsigned int serial; };
@@ -140020,6 +143319,7 @@ void sub_102d2940(int a, int b, int c, int d, int e)
 // END FUNCTION
 
 // FUNCTION: 0x102d2e30 size=0x6b
+#include "CAI_Hint.h"
 extern CAI_Hint *g_10925450;
 extern void *vt_1049b9a4[];
 
@@ -141139,6 +144439,14 @@ extern "C" GP *aitesthull()
 // END FUNCTION
 
 // FUNCTION: 0x102d74c0 size=0x12a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CCollisionProperty.h"
 #include "ScopeTrace.h"
@@ -141182,6 +144490,14 @@ CEnt5f44 *sub_102d74c0()
 // END FUNCTION
 
 // FUNCTION: 0x102d7640 size=0xbe
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CCollisionProperty.h"
 #include "ScopeTrace.h"
@@ -141424,6 +144740,7 @@ void CUnknown102d9040::sub_102d8e50(const float *vec, int arg4, float duration, 
 // END FUNCTION
 
 // FUNCTION: 0x102d8f20 size=0xd6
+#include "CBaseEntity.h"
 #include <string.h>
 #include "CUnknown102d9040.h"
 #include "CEHandleGet.h"
@@ -141464,6 +144781,7 @@ void CUnknown102d9040::sub_102d8f20(CBaseEntity *pEnt, const float *vec, float f
 // END FUNCTION
 
 // FUNCTION: 0x102d9040 size=0xcf
+#include "CBaseEntity.h"
 #include "CUnknown102d9040.h"
 
 
@@ -141510,6 +144828,7 @@ void CUnknown102d9040::sub_102d9040(int a, CBaseEntity *pEnt, const float *vec, 
 // END FUNCTION
 
 // FUNCTION: 0x102d9150 size=0xa
+#include "CUnknown102d9150.h"
 CUnknown102d9150 *CUnknown102d9150::sub_102d9150()
 {
 	m_unk4 = -1;
@@ -141961,6 +145280,7 @@ void CUnknown102db3e0::sub_102db3e0(CBaseEntity *pOther, int i)
 // END FUNCTION
 
 // FUNCTION: 0x102db420 size=0xa
+#include "CUnknown102db420.h"
 void CUnknown102db420::sub_102db420(int unused)
 {
 	m_bFlag = 1;
@@ -142126,6 +145446,7 @@ void sub_102db670()
 // END FUNCTION
 
 // FUNCTION: 0x102db740 size=0xd
+#include "CAI_InterestingPlaceConverstation.h"
 void CAI_InterestingPlaceConverstation::sub_102db740(int value)
 {
 	m_unk608 = value;
@@ -142436,6 +145757,15 @@ void CUnknown102dca60::sub_102dc520()
 // END FUNCTION
 
 // FUNCTION: 0x102dc6a0 size=0x1c8
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include <string.h>
 #include "ScopeTrace.h"
 #include "CUnknown102dca60.h"
@@ -142608,6 +145938,7 @@ void CUnk102dcce0::sub_102dcce0(int a)
 // END FUNCTION
 
 // FUNCTION: 0x102dcd10 size=0xa
+#include "CUnknown102dcd10.h"
 void CUnknown102dcd10::sub_102dcd10(int unused)
 {
 	m_unk45d = 1;
@@ -142781,6 +146112,7 @@ bool CUnk102dd0a0::sub_102dd0a0(void *p)
 // END FUNCTION
 
 // FUNCTION: 0x102dd450 size=0x9
+#include "CUnknown102dd450.h"
 bool CUnknown102dd450::sub_102dd450()
 {
 	if (m_nCount > 0)
@@ -143012,6 +146344,7 @@ int *__fastcall sub_102dda70(int *pThis)
 // END FUNCTION
 
 // FUNCTION: 0x102ddb30 size=0xa0
+#include "vampire_all.h"
 #include "CAI_LocalNavigator.h"
 
 extern void *vt_1049d76c[];
@@ -143109,6 +146442,7 @@ void CUnknown102ddc40::sub_102ddc40()
 // END FUNCTION
 
 // FUNCTION: 0x102deea0 size=0x8
+#include "CAI_LocalNavigator.h"
 void __fastcall sub_102deea0(int *p)
 {
 	p[3] = 0;
@@ -143148,6 +146482,7 @@ void UtlMem::sub_102def00()
 // END FUNCTION
 
 // FUNCTION: 0x102df130 size=0x53
+#include "Vector.h"
 struct CUnknown1013dc40 { int sub_1013dc40(); };
 struct Node {
     Vector a;
@@ -143216,6 +146551,7 @@ int sub_102df2f0()
 // END FUNCTION
 
 // FUNCTION: 0x102dfa20 size=0x57
+#include "CBaseEntity.h"
 struct SListNode {
     char m_pad0000[0x24];
     EHANDLE m_hEnt;
@@ -143323,6 +146659,7 @@ void CUnknown102dfc10::sub_102dfc10(int c)
 // END FUNCTION
 
 // FUNCTION: 0x102dfd90 size=0xfa
+#include "CBaseEntity.h"
 #include "CUnknown102dfd90.h"
 
 extern char *g_10566458;
@@ -143468,6 +146805,7 @@ int CUnknown102e0090::sub_102e0090(void *enemy)
 // END FUNCTION
 
 // FUNCTION: 0x102e0150 size=0x90
+#include "CLogicAuto.h"
 #include "CUnknown102e0150.h"
 
 struct EntSub { void *ent; unsigned int serial; };
@@ -143526,6 +146864,7 @@ float CUnknown102e0150::sub_102e0150(void *pEnemy)
 // END FUNCTION
 
 // FUNCTION: 0x102e0210 size=0x58
+#include "CBaseEntity.h"
 #include "CUnknown102e0150.h"
 #include "CAI_MemoryListSaveRestoreOps.h"
 #include "ehandle.h"
@@ -143762,6 +147101,7 @@ int *__fastcall sub_102e06f0(int *self)
 // END FUNCTION
 
 // FUNCTION: 0x102e0770 size=0x4f
+#include "CBaseEntity.h"
 struct CNode102e0770 {
 	char m_pad00[0x24];
 	EHANDLE m_hEnt;	// 0x24
@@ -143785,6 +147125,7 @@ CNode102e0770 * __fastcall sub_102e0770(CList102e0770 *list, int edx, CBaseEntit
 // END FUNCTION
 
 // FUNCTION: 0x102e0860 size=0x80
+#include "CAI_InterestTarget.h"
 #include "CUtlVectorDataOps.h"
 struct CAI_InterestTarget;
 struct ISaveRestoreOps;
@@ -143826,6 +147167,7 @@ int *sub_102e0860()
 // END FUNCTION
 
 // FUNCTION: 0x102e0900 size=0x64
+#include "CAI_Motor.h"
 extern int vt_1049d79c[];
 extern int vt_1049d854[];
 extern int vt_1049d824[];
@@ -143960,6 +147302,7 @@ void __fastcall sub_102e0ba0(char *pThis, int, int a)
 // END FUNCTION
 
 // FUNCTION: 0x102e12c0 size=0xb
+#include "CUnknown102e12c0.h"
 void CUnknown102e12c0::sub_102e12c0()
 {
 	m_pOuter->vfunc248();
@@ -144138,6 +147481,7 @@ void CAI_Motor::sub_102e2020(const float *pPosition, int b)
 // END FUNCTION
 
 // FUNCTION: 0x102e20b0 size=0x23
+#include "CAI_Motor.h"
 // TARGET: CAI_Motor::sub_102e20b0
 void CAI_Motor::sub_102e20b0(const float *pPosition, float flWeight)
 {
@@ -144227,6 +147571,7 @@ int CAI_Motor::sub_102e23a0(CAI_MoveRequest *pMove, float flInterval)
 // END FUNCTION
 
 // FUNCTION: 0x102e2610 size=0xa
+#include "CAI_Motor.h"
 int CAI_Motor::sub_102e2610()
 {
 	return *(int *)(m_pOuter + 0x5d34);
@@ -144265,6 +147610,7 @@ int CUnknown102e2690::sub_102e2690()
 // END FUNCTION
 
 // FUNCTION: 0x102e26b0 size=0x28
+#include "Vector.h"
 struct CUnknown102e26b0 {
 	char m_pad0000[4];
 	void *m_pInner;
@@ -144343,6 +147689,7 @@ void __fastcall sub_102e2730(COwner *self)
 // END FUNCTION
 
 // FUNCTION: 0x102e2750 size=0xb
+#include "CUnknown102e12c0.h"
 void CUnknown102e12c0::sub_102e2750()
 {
 	m_pOuter->vfunc515();
@@ -144525,6 +147872,7 @@ CTraceFilterNavGround102e3290 *CTraceFilterNavGround102e3290::sub_102e3290(int a
 // END FUNCTION
 
 // FUNCTION: 0x102e37b0 size=0x136
+#include "CTraceFilterNoCharacterCollide.h"
 #include "CUnknown102e37b0.h"
 #include "CTraceFilterNav.h"
 #include "CUnknown1070b254.h"
@@ -144578,6 +147926,7 @@ void * CUnknown102e4f20::sub_102e4f20(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x102e5d00 size=0x57
+#include "Vector.h"
 float sub_102e5d00(float *v)
 {
     float len = FastSqrt(v[1] * v[1] + v[0] * v[0]);
@@ -144718,6 +148067,7 @@ void __fastcall sub_102e7e00(COwner *self)
 // END FUNCTION
 
 // FUNCTION: 0x102e7e20 size=0xb
+#include "CUnknown102e12c0.h"
 void CUnknown102e12c0::sub_102e7e20()
 {
 	m_pOuter->vfunc523();
@@ -144746,6 +148096,7 @@ void __fastcall sub_102e7e40(COwner *self)
 // END FUNCTION
 
 // FUNCTION: 0x102e7e60 size=0xb
+#include "CUnknown102e12c0.h"
 void CUnknown102e12c0::sub_102e7e60()
 {
 	m_pOuter->vfunc521();
@@ -144834,6 +148185,8 @@ void CUnknown102e83e0::sub_102e8270(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x102e84a0 size=0x8d
+#include "CUnknown102e83e0.h"
+#include "CUnknown102ee120.h"
 // TARGET: CUnknown102e83e0::sub_102e84a0
 void CUnknown102e83e0::sub_102e84a0(char flag)
 {
@@ -145333,6 +148686,7 @@ void __stdcall sub_102ea5e0(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x102eb170 size=0x107
+#include "utlrbtree.h"
 #include "CUtlRBTree12.h"
 extern CUtlRBTree12 g_10934014;
 bool sub_102eb170(int key)
@@ -145384,6 +148738,7 @@ void CUnknown102eb2d0::sub_102eb2d0(unsigned short elem)
 // END FUNCTION
 
 // FUNCTION: 0x102eb7f0 size=0xbd
+#include "utlrbtree.h"
 #include "CUtlRBTree12.h"
 
 bool CUtlRBTree12::sub_102eb7f0(unsigned short i) const
@@ -145426,6 +148781,7 @@ void CUnknown102ec320::sub_102ec320(int num)
 // END FUNCTION
 
 // FUNCTION: 0x102ec3b0 size=0xbf
+#include "utlrbtree.h"
 #include "CUtlRBTree12.h"
 
 bool CUtlRBTree12::sub_102ec3b0(unsigned short i) const
@@ -145437,6 +148793,14 @@ bool CUtlRBTree12::sub_102ec3b0(unsigned short i) const
 // END FUNCTION
 
 // FUNCTION: 0x102ec6d0 size=0x1c0
+#include "CUtlRBTree16.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlrbtree.h"
 #include "CUtlRBTree12.h"
 
 struct CUtlRBTree12Unit : CUtlRBTree12At<0x10934040>
@@ -145531,6 +148895,8 @@ int __fastcall sub_102ecc20(char *self)
 // END FUNCTION
 
 // FUNCTION: 0x102ecc40 size=0x60
+#include "CAI_BaseNPC.h"
+#include "CAI_Navigator.h"
 #include "CEHandleGet.h"
 void *CAI_Navigator::sub_102ecc40()
 {
@@ -145589,6 +148955,7 @@ void CUnknown102ecd00::sub_102ecd00(int a)
 // END FUNCTION
 
 // FUNCTION: 0x102ed940 size=0x60
+#include "CAI_Navigator.h"
 #include "CAI_BaseNPC.h"
 bool CAI_Navigator::sub_102ed940(float f, const Vector *pVec, int c)
 {
@@ -145735,6 +149102,7 @@ bool CAI_Navigator::sub_102edd50(const Vector *pPosition, float flDistance, int 
 // END FUNCTION
 
 // FUNCTION: 0x102ede30 size=0x245
+#include "CAI_Waypoint.h"
 #include "CAI_Navigator.h"
 #include "CAI_Pathfinder.h"
 #include "CVProfile.h"
@@ -145811,6 +149179,7 @@ bool CAI_Navigator::sub_102ede30(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x102ee120 size=0xb
+#include "CUnknown102ee120.h"
 void CUnknown102ee120::sub_102ee120(int a, int b, int c)
 {
 	m_unk30->m_unk24.sub_10319f70(a, b, c);
@@ -145846,6 +149215,7 @@ float CUnknown102ee1a0::sub_102ee1a0()
 // END FUNCTION
 
 // FUNCTION: 0x102ee1c0 size=0xd
+#include "CUnknown102ee120.h"
 void CUnknown102ee120::sub_102ee1c0(int value)
 {
 	m_unk30->m_unk28 = value;
@@ -145889,6 +149259,7 @@ void CAI_Navigator::sub_102ee220(const Vector *pPosition)
 // END FUNCTION
 
 // FUNCTION: 0x102ee250 size=0xd
+#include "CUnknown102ee120.h"
 __declspec(naked) void CUnknown102ee120::sub_102ee250(int value)
 {
 	__asm {
@@ -145963,6 +149334,7 @@ void CAI_Navigator::sub_102ee300(int a, int b, int c, int d, int e)
 // END FUNCTION
 
 // FUNCTION: 0x102ee380 size=0x4d
+#include "CAI_Navigator.h"
 struct CAI_PathfinderView { void sub_102fdcc0(int a, int b); };
 namespace block_102ee380 {
 struct CAI_NavigatorUnit : CAI_Navigator { int sub_102ecc00(); };
@@ -146002,6 +149374,7 @@ int CUnknown102ee410::sub_102ee410()
 // END FUNCTION
 
 // FUNCTION: 0x102ee430 size=0x8d
+#include "CAI_BaseNPC.h"
 #include "CAI_Navigator.h"
 #include "CBaseAnimating.h"
 
@@ -146107,6 +149480,8 @@ int CUnknown102ee5b0::sub_102ee5b0(int a)
 // END FUNCTION
 
 // FUNCTION: 0x102ee5e0 size=0x8
+#include "CUnknown102ee120.h"
+#include "CUnknown1030bc20.h"
 CUnknown1030bc20_Record *CUnknown102ee120::sub_102ee5e0()
 {
 	return ((CUnknown1030bc20 *)m_unk30)->sub_1030b7c0();
@@ -146197,6 +149572,8 @@ float CUnk102ee940::sub_102ee940()
 // END FUNCTION
 
 // FUNCTION: 0x102ee9c0 size=0x4c
+#include "CAI_Navigator.h"
+#include "Vector.h"
 extern int g_106c994c;
 
 Vector *CAI_Navigator::sub_102ee9c0(Vector *pOut, int index)
@@ -146854,6 +150231,7 @@ bool CAI_Navigator::sub_102f1dc0(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x102f1fa0 size=0x90
+#include "CLogicAuto.h"
 #include "CAI_Navigator.h"
 extern int g_106c994c;
 
@@ -146983,6 +150361,7 @@ float CUnknown102f2fc0::sub_102f2fc0()
 // END FUNCTION
 
 // FUNCTION: 0x102f2fe0 size=0xd
+#include "CUnknown102ee120.h"
 void CUnknown102ee120::sub_102f2fe0(int value)
 {
 	m_unk30->m_unk20 = value;
@@ -147169,6 +150548,7 @@ bool CUnknown102f3900::sub_102f39a0(CUnknown102f3900Ent *pEnt, Vector vecA, Vect
 // END FUNCTION
 
 // FUNCTION: 0x102f4520 size=0x91
+#include "CLogicAuto.h"
 #include "CUnknown102f45f0.h"
 #include "Vector.h"
 
@@ -147188,6 +150568,7 @@ int CUnknown102f45f0::sub_102f4520(const CachedPos_t *pPos)
 // END FUNCTION
 
 // FUNCTION: 0x102f45f0 size=0xa9
+#include "CLogicAuto.h"
 #include "CUnknown102f45f0.h"
 
 extern void (*g_109f3630)(const char *fmt, ...);
@@ -147320,6 +150701,7 @@ void CAI_NodeGraph::sub_102f4940(CAI_Node *pNode, int nGroup)
 // END FUNCTION
 
 // FUNCTION: 0x102f49c0 size=0x1af
+#include "utlvector.h"
 #include "CAI_NodeGraph.h"
 #include "UtlVec8.h"
 #include "CMem4_t.h"
@@ -147516,6 +150898,7 @@ void CAI_NetworkManager::sub_102f50e0()
 // END FUNCTION
 
 // FUNCTION: 0x102f5120 size=0x4c
+#include "CBaseEntity.h"
 void sub_101ce440(int a, const char *s1, const char *s2, const char *s3, const char *s4, const char *s5);
 void sub_1000993a();
 
@@ -148653,6 +152036,7 @@ void sub_102fc540(int a, int b, const char *fmt, ...)
 // END FUNCTION
 
 // FUNCTION: 0x102fc5d0 size=0xa2
+#include "vampire_all.h"
 #include "CUnknown102fc5d0.h"
 
 extern "C" void *__cdecl memset(void *, int, unsigned int);
@@ -149096,6 +152480,7 @@ bool CUnknown10300e60::sub_10300e60(Vector vecMins, Vector vecMaxs, Vector vecPo
 // END FUNCTION
 
 // FUNCTION: 0x103021b0 size=0x111
+#include "CTraceFilterNoCharacterCollide.h"
 #include "Vector.h"
 #include "Ray_t.h"
 #include "CUnknown1070b254.h"
@@ -149127,6 +152512,7 @@ void sub_103021b0(const Vector &start, const Vector &end, unsigned int fMask, CT
 // END FUNCTION
 
 // FUNCTION: 0x10303740 size=0xcb
+#include "CBaseEntity.h"
 #include "CAI_Pathfinder.h"
 
 inline void *operator new(unsigned int, void *p) { return p; }
@@ -149196,6 +152582,8 @@ CAI_Waypoint *CAI_Pathfinder::sub_10303740(int navType, const float *vecStart, c
 // END FUNCTION
 
 // FUNCTION: 0x10303c90 size=0x2f
+#include "CAI_Waypoint.h"
+#include "CBaseEntity.h"
 // TARGET: CAI_Pathfinder::sub_10303c90
 #include "CAI_Pathfinder.h"
 
@@ -149205,6 +152593,8 @@ CAI_Waypoint *CAI_Pathfinder::sub_10303c90(const float *vecStart, const float *v
 // END FUNCTION
 
 // FUNCTION: 0x10303cd0 size=0x2f
+#include "CAI_Waypoint.h"
+#include "CBaseEntity.h"
 #include "CAI_Pathfinder.h"
 // TARGET: sub_10303cd0
 
@@ -149226,6 +152616,7 @@ int CUnknown10303f80::sub_10303f80(int a0, int a1, int a2, int a3, int a4, int a
 // END FUNCTION
 
 // FUNCTION: 0x10303fd0 size=0x34
+#include "CBaseEntity.h"
 #include "CAI_Pathfinder.h"
 #include "CEntityVSlots.h"
 struct CPathfinderEntView { char m_pad0000[0x94]; CEntityVSlots *m_pNPC94; };
@@ -149283,6 +152674,7 @@ bool CAI_Pathfinder::sub_103048d0(int navType, const float *vecStart, const floa
 // END FUNCTION
 
 // FUNCTION: 0x103055b0 size=0x26b
+#include "CAI_Waypoint.h"
 #include "CAI_Pathfinder.h"
 #include "CVProfile.h"
 
@@ -149381,6 +152773,7 @@ CAI_Waypoint *CAI_Pathfinder::sub_103055b0(int a1, int a2, int a3, int a4, int a
 // END FUNCTION
 
 // FUNCTION: 0x103058c0 size=0xc6
+#include "CBaseEntity.h"
 #include "CAI_Pathfinder.h"
 
 bool CAI_Pathfinder::sub_103058c0(int navType, const float *vecStart, const float *vecApex, const float *vecEnd, const CBaseEntity *pTarget, AIMoveTrace_t *pStartTrace, unsigned int collisionMask)
@@ -150261,6 +153654,7 @@ Vector CUnknown1030b610::sub_1030b6b0()
 // END FUNCTION
 
 // FUNCTION: 0x1030b7c0 size=0xd
+#include "CUnknown1030bc20.h"
 extern CUnknown1030bc20_Record g_10936afc;
 CUnknown1030bc20_Record *CUnknown1030bc20::sub_1030b7c0()
 {
@@ -150352,6 +153746,7 @@ void CUnknown1030b950::sub_1030b950(const float *pAdd)
 // END FUNCTION
 
 // FUNCTION: 0x1030b990 size=0x51
+#include "Vector.h"
 struct SDelta { char pad[0x34]; Vector a; char pad2[0xc]; Vector b; };
 Vector * __fastcall sub_1030b990(SDelta *p)
 {
@@ -150372,6 +153767,7 @@ char * CUnknown1030ba30::sub_1030ba30()
 // END FUNCTION
 
 // FUNCTION: 0x1030ba50 size=0xe
+#include "CUnknown1030ba50.h"
 void CUnknown1030ba50::sub_1030ba50(int value)
 {
 	m_bSet58 = 1;
@@ -150464,6 +153860,7 @@ int __fastcall sub_1030bc00(char *pThis)
 // END FUNCTION
 
 // FUNCTION: 0x1030bc20 size=0xc
+#include "CUnknown1030bc20.h"
 int CUnknown1030bc20::sub_1030bc20()
 {
 	if (m_unk24 == 0)
@@ -151207,6 +154604,12 @@ int sub_1030f780()
 // END FUNCTION
 
 // FUNCTION: 0x1030f7b0 size=0x132
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
 #include "CUnknown1030f940.h"
 #include "CBaseEntity.h"
 #include "CEHandleGet.h"
@@ -151318,6 +154721,8 @@ void CUnknown1030f940::sub_1030f940()
 // END FUNCTION
 
 // FUNCTION: 0x1030fa00 size=0x75
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
 #include "CAI_Senses.h"
 #include "CEntityVSlots.h"
 struct S1030fa00Owner { char m_pad[0x1480]; char m_b1480; };
@@ -151346,6 +154751,7 @@ char CAI_Senses::sub_1030fa00(CBaseEntity *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x1030faa0 size=0x42
+#include "CBaseEntity.h"
 #include "CAI_Senses.h"
 #include "CAI_BaseNPC.h"
 bool CAI_Senses::sub_1030faa0(void *pEnt)
@@ -151426,6 +154832,7 @@ bool CUnknown1030fb90::sub_1030fb90(void *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x1030fc50 size=0x23
+#include "CBaseEntity.h"
 #include "CAI_Senses.h"
 #include "CAI_BaseNPC.h"
 
@@ -151572,6 +154979,7 @@ void CUnknown1030fe50::sub_1030fe70(int count, CUtlVector4 *pVec)
 // END FUNCTION
 
 // FUNCTION: 0x1030ff10 size=0x64
+#include "CLogicAuto.h"
 #define OV(n) virtual void o##n();
 #define OV10(p) OV(p##0) OV(p##1) OV(p##2) OV(p##3) OV(p##4) OV(p##5) OV(p##6) OV(p##7) OV(p##8) OV(p##9)
 #define OV100(p) OV10(p##0) OV10(p##1) OV10(p##2) OV10(p##3) OV10(p##4) OV10(p##5) OV10(p##6) OV10(p##7) OV10(p##8) OV10(p##9)
@@ -151613,6 +155021,7 @@ void CUnknown1030fe50Unit::sub_1030ff10(int radius)
 // END FUNCTION
 
 // FUNCTION: 0x1030ffa0 size=0x3e
+#include "CBaseEntity.h"
 #include "CAI_Senses.h"
 #include "CUnknown1030fb90.h"
 
@@ -151717,6 +155126,7 @@ int CAI_Senses::sub_10310130(int radius)
 // END FUNCTION
 
 // FUNCTION: 0x10310290 size=0x147
+#include "CBaseEntity.h"
 #include "CAI_Senses.h"
 #include "CEntityVSlots.h"
 #include "Vector.h"
@@ -151960,6 +155370,8 @@ void __fastcall sub_10310bc0(CNPCMakerOwnerView *p)
 // END FUNCTION
 
 // FUNCTION: 0x10310c10 size=0xb0
+#include "CAI_BaseNPC.h"
+#include "CBasePlayer.h"
 #include "CUnknown10310c10.h"
 
 struct CNpcFactoryView	// the factory's virtual table up to slot 617
@@ -152095,6 +155507,8 @@ bool sub_103114d0(int *pA, int *pB)
 // END FUNCTION
 
 // FUNCTION: 0x10311710 size=0x16e
+#include "utlmemory.h"
+#include "utlrbtree.h"
 #include "CUnknown10311a20.h"
 #include "CUtlMemory16.h"
 
@@ -152139,6 +155553,7 @@ bool CUnknown10311a20::sub_10311710(const CUnknown10311a20_Record *rec)
 // END FUNCTION
 
 // FUNCTION: 0x103118e0 size=0xf5
+#include "utlrbtree.h"
 #include "CUnknown10311a20.h"
 
 extern int g_109f076c;
@@ -152168,6 +155583,7 @@ void *CUnknown10311a20::sub_103118e0(int key)
 // END FUNCTION
 
 // FUNCTION: 0x10311a20 size=0xfa
+#include "utlrbtree.h"
 #include "CUnknown10311a20.h"
 
 extern int g_109f076c;
@@ -152216,6 +155632,7 @@ int sub_10311b60()
 // END FUNCTION
 
 // FUNCTION: 0x10311b90 size=0x19
+#include "vampire_all.h"
 #include "CAI_Expresser.h"
 
 int CAI_Expresser::sub_10311b90()
@@ -152225,6 +155642,7 @@ int CAI_Expresser::sub_10311b90()
 // END FUNCTION
 
 // FUNCTION: 0x103121a0 size=0x67
+#include "vampire_all.h"
 #include "CAI_Expresser.h"
 
 extern float g_10936c40;
@@ -152302,6 +155720,7 @@ int CUnknown10312340::sub_10312340()
 // END FUNCTION
 
 // FUNCTION: 0x10312360 size=0x17d
+#include "utlrbtree.h"
 #include "CUnknown10312580.h"
 
 struct DiscRecord { int m_0; int m_4; int m_8; int m_c; int m_10; float m_f14; int m_18; unsigned char m_b1c; };
@@ -152357,6 +155776,9 @@ int __stdcall sub_10312540(int a)
 // END FUNCTION
 
 // FUNCTION: 0x10312580 size=0x106
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CUnknown10312580.h"
 extern const char *g_109f075c;
 extern float g_104492dc;
@@ -152395,6 +155817,7 @@ float CUnknown10312580::sub_10312580(int key)
 // END FUNCTION
 
 // FUNCTION: 0x10312930 size=0x113
+#include "utlrbtree.h"
 #include "CUnknown10312580.h"
 
 extern const char *g_109f075c;
@@ -152466,6 +155889,7 @@ void __fastcall sub_10312b20(char *p)
 // END FUNCTION
 
 // FUNCTION: 0x10312b50 size=0x9c
+#include "vampire_all.h"
 #include "CAI_Expresser.h"
 
 extern "C" __declspec(dllimport) int __cdecl Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
@@ -152528,6 +155952,7 @@ void CUnk10312c20::sub_10312c20(int a)
 // END FUNCTION
 
 // FUNCTION: 0x10312c50 size=0x1c
+#include "vampire_all.h"
 #include "CAI_Expresser.h"
 
 // TARGET: CAI_Expresser::sub_10312c50
@@ -152541,6 +155966,7 @@ void CAI_Expresser::sub_10312c50()
 // END FUNCTION
 
 // FUNCTION: 0x10312c80 size=0x35
+#include "vampire_all.h"
 #include "CAI_Expresser.h"
 
 extern void *vt_1049885c[];
@@ -152612,6 +156038,8 @@ CUtlMemory16 *CUtlMemory16::sub_10312f70(int growSize, int allocationCount)
 // END FUNCTION
 
 // FUNCTION: 0x103134b0 size=0x118
+#include "utlmemory.h"
+#include "utlrbtree.h"
 #include "CUtlRBTree16.h"
 extern void *(*g_109f3638)(void *, unsigned int);
 extern void *(*g_109f3634)(unsigned int);
@@ -152663,6 +156091,14 @@ unsigned short CUtlRBTree16::sub_103134b0()
 // END FUNCTION
 
 // FUNCTION: 0x10313aa0 size=0x57
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlrbtree.h"
 #include "CUtlRBTree16.h"
 
 struct CUtlRBTree16Unit : CUtlRBTree16At<0x10936c54>
@@ -152709,6 +156145,7 @@ void __fastcall sub_10313f70(Mem16 *self, int, int num)
 // END FUNCTION
 
 // FUNCTION: 0x10314000 size=0xb9
+#include "utlrbtree.h"
 #include "CUtlRBTree16.h"
 
 bool CUtlRBTree16::sub_10314000(unsigned short i) const
@@ -152719,6 +156156,7 @@ bool CUtlRBTree16::sub_10314000(unsigned short i) const
 // END FUNCTION
 
 // FUNCTION: 0x10314b30 size=0xb9
+#include "utlrbtree.h"
 #include "CUtlRBTree16.h"
 
 bool CUtlRBTree16::sub_10314b30(unsigned short i) const
@@ -152729,6 +156167,14 @@ bool CUtlRBTree16::sub_10314b30(unsigned short i) const
 // END FUNCTION
 
 // FUNCTION: 0x10314c20 size=0x1b2
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlrbtree.h"
 #include "CUtlRBTree16.h"
 
 struct CUtlRBTree16Unit : CUtlRBTree16At<0x10936c48>
@@ -152768,6 +156214,14 @@ void CUtlRBTree16Unit::sub_10314c20(unsigned short elem)
 // END FUNCTION
 
 // FUNCTION: 0x10314e50 size=0x1b5
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlrbtree.h"
 #include "CUtlRBTree16.h"
 
 struct CUtlRBTree16Unit : CUtlRBTree16At<0x10936c48>
@@ -152807,6 +156261,7 @@ void CUtlRBTree16Unit::sub_10314e50(unsigned short elem)
 // END FUNCTION
 
 // FUNCTION: 0x10315080 size=0xbb
+#include "utlrbtree.h"
 #include "CUtlRBTree16.h"
 
 bool CUtlRBTree16::sub_10315080(unsigned short i) const
@@ -152817,6 +156272,14 @@ bool CUtlRBTree16::sub_10315080(unsigned short i) const
 // END FUNCTION
 
 // FUNCTION: 0x10315170 size=0x1b2
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlrbtree.h"
 #include "CUtlRBTree16.h"
 
 struct CUtlRBTree16Unit : CUtlRBTree16At<0x10936c54>
@@ -152856,6 +156319,14 @@ void CUtlRBTree16Unit::sub_10315170(unsigned short elem)
 // END FUNCTION
 
 // FUNCTION: 0x103153a0 size=0x1b5
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlrbtree.h"
 #include "CUtlRBTree16.h"
 
 struct CUtlRBTree16Unit : CUtlRBTree16At<0x10936c54>
@@ -152948,6 +156419,7 @@ CUnknown103164c0 *sub_10315800(CBaseEntity *pMember, const char *pszName)
 // END FUNCTION
 
 // FUNCTION: 0x103158f0 size=0xab
+#include "CBaseEntity.h"
 #include "CUnknown103158f0.h"
 #include "CGlobalEntityList.h"
 
@@ -153189,6 +156661,7 @@ int CUnknown103160a0::sub_103160a0()
 // END FUNCTION
 
 // FUNCTION: 0x103160c0 size=0xaa
+#include "CBaseEntity.h"
 #include "CUnknown103160c0.h"
 
 struct EntInfo {
@@ -153725,6 +157198,7 @@ void __fastcall sub_10319ee0(int *pThis)
 // END FUNCTION
 
 // FUNCTION: 0x10319f10 size=0xc
+#include "CUnknown10319f10.h"
 bool sub_1000528b(void *);
 bool CUnknown10319f10::sub_10319f10()
 {
@@ -154022,6 +157496,14 @@ void CBaseCombatCharacter::sub_10322800(unsigned int flags, int a)
 // END FUNCTION
 
 // FUNCTION: 0x103228c0 size=0xc7
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
 
@@ -154122,6 +157604,15 @@ int CBaseCombatCharacter::sub_103232b0()
 // END FUNCTION
 
 // FUNCTION: 0x10323370 size=0xe8
+#include "CBaseCombatCharacter.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "utlvector.h"
 
@@ -154145,6 +157636,14 @@ void CBaseCombatCharacter::sub_10323370()
 // END FUNCTION
 
 // FUNCTION: 0x103234a0 size=0x13d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "CUtlVector4.h"
 #include "CGlobalEntityList.h"
@@ -154199,6 +157698,14 @@ void __fastcall sub_103234a0(CBaseCombatCharacter *pThis)
 // END FUNCTION
 
 // FUNCTION: 0x10323630 size=0xf7
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "utlvector.h"
 #include "ScopeTrace.h"
@@ -154332,6 +157839,14 @@ found:
 // END FUNCTION
 
 // FUNCTION: 0x10324190 size=0x203
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
 #include "CBaseCombatCharacter.h"
 #include "CBaseCombatWeapon.h"
 #include "CUnknown10206400.h"
@@ -154462,6 +157977,17 @@ void CBaseCombatCharacter::sub_10324ba0()
 // END FUNCTION
 
 // FUNCTION: 0x10324ea0 size=0x1be
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseCombatCharacter.h"
 #include "CVStatList_t.h"
 #include "CUnknown10324ad0.h"
@@ -154491,6 +158017,7 @@ void CBaseCombatCharacter::sub_10324ea0()
 // END FUNCTION
 
 // FUNCTION: 0x10325940 size=0xb8
+#include "CBaseCombatCharacter.h"
 #include "inputdata_t.h"
 
 struct ScopeEntry { const char *a; const char *b; const char *c; };
@@ -154582,6 +158109,7 @@ void CBaseCombatCharacter::sub_10325a30(inputdata_t *data)
 // END FUNCTION
 
 // FUNCTION: 0x10325b20 size=0xb8
+#include "CBaseCombatCharacter.h"
 #include "inputdata_t.h"
 
 struct ScopeEntry { const char *a; const char *b; const char *c; };
@@ -154627,6 +158155,7 @@ void CBaseCombatCharacter::sub_10325b20(inputdata_t *data)
 // END FUNCTION
 
 // FUNCTION: 0x10325c10 size=0x7a
+#include "inputdata_t.h"
 #include "CBaseCombatCharacter.h"
 struct SScope { const char *a; const char *b; const char *c; };
 extern "C" __declspec(dllimport) SScope g_ScopeTraceStack[];
@@ -154709,6 +158238,14 @@ bool CBaseCombatCharacter::sub_10325da0(const Vector *pTarget)
 // END FUNCTION
 
 // FUNCTION: 0x10325e70 size=0x62
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 extern int g_10937ccc;
 int sub_10325e70()
@@ -154719,6 +158256,14 @@ int sub_10325e70()
 // END FUNCTION
 
 // FUNCTION: 0x103261f0 size=0x120
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
 
@@ -154754,6 +158299,14 @@ bool CBaseCombatCharacter::sub_103261f0(Vector vecPos, float flScale, float flCo
 // END FUNCTION
 
 // FUNCTION: 0x10326360 size=0x118
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "Vector.h"
 #include "CEntityVSlots.h"
@@ -154775,6 +158328,14 @@ bool CBaseCombatCharacter::sub_10326360(Vector vecPos, float flScale, float flCo
 // END FUNCTION
 
 // FUNCTION: 0x103268e0 size=0xf1
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "ConVar.h"
 #include "ScopeTrace.h"
@@ -154851,6 +158412,15 @@ int CBaseCombatCharacter::sub_103282e0()
 // END FUNCTION
 
 // FUNCTION: 0x10328380 size=0x1a4
+#include "CBaseCombatCharacter.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CEHandleGet.h"
 #include "ScopeTrace.h"
 
@@ -154891,6 +158461,14 @@ int CBaseCombatCharacter::sub_10328380(int a, int b, CBaseCombatCharacter *pOthe
 // END FUNCTION
 
 // FUNCTION: 0x10328af0 size=0x139
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CEntityVSlots.h"
 #include "CBaseAnimating.h"
@@ -154920,6 +158498,7 @@ int CBaseCombatCharacter::sub_10328af0(CBaseCombatCharacter *pOther, int a, int 
 // END FUNCTION
 
 // FUNCTION: 0x10328c80 size=0x118
+#include "CBaseCombatCharacter.h"
 extern int *g_109f3680;
 extern int *g_109f3620;
 extern char g_106b8540[];
@@ -154967,6 +158546,14 @@ int CBaseCombatCharacter::sub_10328c80(int type)
 // END FUNCTION
 
 // FUNCTION: 0x10329560 size=0x189
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseCombatCharacter.h"
 #include "CGlobalEntityList.h"
@@ -155091,6 +158678,8 @@ void CBaseCombatCharacter::sub_1032a910(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x1032aa40 size=0xd7
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -155144,6 +158733,14 @@ void CBaseCombatCharacter::sub_1032aa40()
 // END FUNCTION
 
 // FUNCTION: 0x1032ab60 size=0x167
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CEntityVSlots.h"
 #include "CBaseEntity.h"
 #include "ScopeTrace.h"
@@ -155182,6 +158779,14 @@ Vector *sub_1032b960()
 // END FUNCTION
 
 // FUNCTION: 0x1032be80 size=0x1db
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "CBaseAnimating.h"
 #include "CCollisionProperty.h"
@@ -155276,6 +158881,14 @@ void *CBaseCombatCharacter::sub_1032d890(const char *pszClassname, int unused)
 // END FUNCTION
 
 // FUNCTION: 0x1032e120 size=0xbf
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include <string.h>
 #include "CBaseCombatCharacter.h"
 #include "CEntityVSlots.h"
@@ -155296,6 +158909,8 @@ void *CBaseCombatCharacter::sub_1032e120(const char *pszName)
 // END FUNCTION
 
 // FUNCTION: 0x1032e210 size=0xde
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -155349,6 +158964,15 @@ void CBaseCombatCharacter::sub_1032e210(void *pEvent)
 // END FUNCTION
 
 // FUNCTION: 0x1032e7b0 size=0xa8
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CEHandleGet.h"
 
@@ -155421,6 +159045,8 @@ void *CBaseCombatCharacter::sub_1032e8b0(int index)
 // END FUNCTION
 
 // FUNCTION: 0x1032e9f0 size=0xa8
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -155459,6 +159085,7 @@ void CBaseCombatCharacter::sub_1032e9f0(int index, CBaseEntity *pWeapon)
 // END FUNCTION
 
 // FUNCTION: 0x1032ead0 size=0xb2
+#include "CBaseCombatCharacter.h"
 #include "CBaseCombatWeapon.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
@@ -155489,6 +159116,14 @@ void CBaseCombatCharacter::sub_1032ead0()
 // END FUNCTION
 
 // FUNCTION: 0x1032ec90 size=0x239
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "CBaseAnimating.h"
 #include "CEnvParticle.h"
@@ -155573,6 +159208,7 @@ void CBaseCombatCharacter::sub_1032f930(int amount)
 // END FUNCTION
 
 // FUNCTION: 0x1032fab0 size=0x96
+#include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -155643,6 +159279,14 @@ void CUnknown10330ce0::sub_10330ce0(char value)
 // END FUNCTION
 
 // FUNCTION: 0x10331770 size=0xca
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "CEntityVSlots.h"
 #include "ScopeTrace.h"
@@ -155660,6 +159304,15 @@ float __fastcall sub_10331770(CBaseCombatCharacter *pThis, int, float flDamage)
 // END FUNCTION
 
 // FUNCTION: 0x10331da0 size=0x1eb
+#include "CBaseCombatCharacter.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "matrix3x4_t.h"
 #include "CEntityVSlots.h"
@@ -155708,6 +159361,14 @@ char CBaseCombatCharacter::sub_10331da0(Vector *pOrigin, Vector *pForward)
 // END FUNCTION
 
 // FUNCTION: 0x103322e0 size=0xbd
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseCombatCharacter.h"
 #include "CBasePlayer.h"
@@ -155759,6 +159420,7 @@ void CUnknown103323d0::sub_103323d0(inputdata_t *pInput)
 // END FUNCTION
 
 // FUNCTION: 0x103324a0 size=0x9b
+#include "CBaseCombatCharacter.h"
 #include "inputdata_t.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
@@ -155790,6 +159452,7 @@ void CBaseCombatCharacter::sub_103324a0(inputdata_t *data)
 // END FUNCTION
 
 // FUNCTION: 0x10332570 size=0x7a
+#include "inputdata_t.h"
 #include "CBaseCombatCharacter.h"
 struct SScope { const char *a; const char *b; const char *c; };
 extern "C" __declspec(dllimport) SScope g_ScopeTraceStack[];
@@ -155815,6 +159478,7 @@ void CBaseCombatCharacter::sub_10332570(inputdata_t *data)
 // END FUNCTION
 
 // FUNCTION: 0x10332610 size=0x7a
+#include "inputdata_t.h"
 #include "CBaseCombatCharacter.h"
 struct SScope { const char *a; const char *b; const char *c; };
 extern "C" __declspec(dllimport) SScope g_ScopeTraceStack[];
@@ -155840,6 +159504,7 @@ void CBaseCombatCharacter::sub_10332610(inputdata_t *data)
 // END FUNCTION
 
 // FUNCTION: 0x103326b0 size=0xf9
+#include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *name; const char *ent; const char *extra; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -155906,6 +159571,9 @@ done:
 // END FUNCTION
 
 // FUNCTION: 0x103327f0 size=0xf9
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseCombatCharacter.h"
 
 struct ScopeTraceEntry_t
@@ -155940,6 +159608,7 @@ void CBaseCombatCharacter::sub_103327f0(float amount)
 // END FUNCTION
 
 // FUNCTION: 0x10332930 size=0x11d
+#include "CBaseCombatCharacter.h"
 extern int *g_109f3680;
 extern int *g_109f3620;
 extern char g_106b8540[];
@@ -155991,6 +159660,14 @@ bool CBaseCombatCharacter::sub_10332930()
 // END FUNCTION
 
 // FUNCTION: 0x10332ca0 size=0x1c3
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
 
@@ -156086,6 +159763,14 @@ int CUnknown10332fc0::sub_10332fc0(void *pSpeaker)
 // END FUNCTION
 
 // FUNCTION: 0x103330f0 size=0x1cd
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "CEntityVSlots.h"
 #include "ScopeTrace.h"
@@ -156131,6 +159816,14 @@ void CBaseCombatCharacter::sub_103330f0(CBaseEntity *pEntity, int nModifier)
 // END FUNCTION
 
 // FUNCTION: 0x103343f0 size=0xc9
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
 extern char g_10620e54[];
@@ -156299,6 +159992,7 @@ int CBaseCombatCharacter::sub_10334790(const char *pszAmmoName)
 // END FUNCTION
 
 // FUNCTION: 0x10334860 size=0xaf
+#include "CBaseCombatCharacter.h"
 #define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
@@ -156337,6 +160031,14 @@ char CBaseCombatCharacter::sub_10334860(void *pCurrent)
 // END FUNCTION
 
 // FUNCTION: 0x10334940 size=0xc4
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "Vector.h"
 
@@ -156365,6 +160067,14 @@ float sub_10334940(const float *pTable, int nEntries, float flValue)
 // END FUNCTION
 
 // FUNCTION: 0x10334b10 size=0xc8
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
 
@@ -156389,6 +160099,14 @@ void CBaseCombatCharacter::sub_10334b10()
 // END FUNCTION
 
 // FUNCTION: 0x10334c20 size=0x1c4
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "CBaseCombatWeapon.h"
 #include "ScopeTrace.h"
@@ -156463,6 +160181,14 @@ bool CBaseCombatCharacter::sub_10334c20(CBaseCombatWeapon *pWeapon)
 // END FUNCTION
 
 // FUNCTION: 0x103352b0 size=0x15e
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "inputdata_t.h"
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
@@ -156480,6 +160206,14 @@ void CBaseCombatCharacter::sub_103352b0(inputdata_t &data)
 // END FUNCTION
 
 // FUNCTION: 0x10335470 size=0x266
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "CBaseCombatWeapon.h"
 #include "ScopeTrace.h"
@@ -156547,6 +160281,14 @@ void CBaseCombatCharacter::sub_10335470(void *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x10335780 size=0x16c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
 
@@ -156603,6 +160345,8 @@ void CBaseCombatCharacter::sub_10335780(CBaseEntity *pWeapon)
 // END FUNCTION
 
 // FUNCTION: 0x10335950 size=0xd5
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
 extern int *g_109f3680;
@@ -156640,6 +160384,14 @@ void *CBaseCombatCharacter::sub_10335950(const char *pszClassname)
 // END FUNCTION
 
 // FUNCTION: 0x10335a70 size=0xc7
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
 
@@ -156668,6 +160420,14 @@ bool CBaseCombatCharacter::sub_10335a70(CBaseEntity *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x10335de0 size=0x8f
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
 
@@ -156686,6 +160446,14 @@ void CBaseCombatCharacter::sub_10335de0(CBaseEntity *pWeapon)
 // END FUNCTION
 
 // FUNCTION: 0x10335ea0 size=0x8f
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
@@ -156707,6 +160475,7 @@ void CBaseCombatCharacter::sub_10335ea0(CBaseEntity *pWeapon)
 // END FUNCTION
 
 // FUNCTION: 0x103360a0 size=0xa0
+#include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
 extern int *g_109f3680;
@@ -156736,6 +160505,14 @@ bool CBaseCombatCharacter::sub_103360a0()
 // END FUNCTION
 
 // FUNCTION: 0x10336170 size=0x1af
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "CBasePlayer.h"
 #include "CEntityVSlots.h"
@@ -156863,6 +160640,7 @@ call:
 // END FUNCTION
 
 // FUNCTION: 0x10336b90 size=0xfa
+#include "CBaseCombatCharacter.h"
 #include "CBaseCombatWeapon.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
@@ -156912,6 +160690,7 @@ bool CBaseCombatCharacter::sub_10336b90()
 // END FUNCTION
 
 // FUNCTION: 0x10336f20 size=0x103
+#include "CBaseCombatCharacter.h"
 #include "CBCCSlotViews.h"
 
 extern int *g_109f3680;
@@ -156990,6 +160769,7 @@ char CBaseCombatCharacter::sub_10337230()
 // END FUNCTION
 
 // FUNCTION: 0x10337300 size=0xa1
+#include "CBaseCombatCharacter.h"
 #define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
@@ -157027,6 +160807,9 @@ char CBaseCombatCharacter::sub_10337300()
 // END FUNCTION
 
 // FUNCTION: 0x103373e0 size=0x2fb
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CHL2_Player.h"
 #include "CVStatList_t.h"
 #include "CVStatInfoList_t.h"
@@ -157048,6 +160831,14 @@ void CHL2_Player::sub_103373e0()
 // END FUNCTION
 
 // FUNCTION: 0x103377a0 size=0x87
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
 #include "CStatDefault3List.h"
@@ -157067,6 +160858,17 @@ int CBCCUnit::sub_103377a0()
 // END FUNCTION
 
 // FUNCTION: 0x10337860 size=0xde
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
 
@@ -157200,6 +161002,7 @@ char CBaseCombatCharacter::sub_10337e40()
 // END FUNCTION
 
 // FUNCTION: 0x10337f30 size=0x86
+#include "CBaseCombatCharacter.h"
 #include "CStatDefault3List.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
@@ -157269,6 +161072,17 @@ char CBaseCombatCharacter::sub_103380d0()
 // END FUNCTION
 
 // FUNCTION: 0x10338190 size=0x213
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "ScopeTrace.h"
 #include "CBaseCombatCharacter.h"
 #include "CVStatList_t.h"
@@ -157295,6 +161109,17 @@ bool CBaseCombatCharacter::sub_10338190(CUnknown10204e90 *pRef)
 // END FUNCTION
 
 // FUNCTION: 0x10338440 size=0xf0
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
 
@@ -157311,6 +161136,17 @@ void CBaseCombatCharacter::sub_10338440(const int *pStat)
 // END FUNCTION
 
 // FUNCTION: 0x10338570 size=0x1b1
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseCombatCharacter.h"
 #include "CUnknown10205030.h"
 #include "CUnknown102043a0.h"
@@ -157337,6 +161173,19 @@ bool CBaseCombatCharacter::sub_10338570(const int *pStat)
 // END FUNCTION
 
 // FUNCTION: 0x103387a0 size=0xf9
+#include "CBaseCombatCharacter.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CVStatList_t.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "ScopeTrace.h"
 void sub_100138c2(void *p, int a, int b);
 void CBaseCombatCharacter::sub_103387a0(int value)
@@ -157386,6 +161235,15 @@ void CUnk10338920::sub_10338920()
 // END FUNCTION
 
 // FUNCTION: 0x10338950 size=0x150
+#include "CBaseCombatCharacter.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 char CBaseCombatCharacter::sub_10338950()
 {
@@ -157398,6 +161256,14 @@ char CBaseCombatCharacter::sub_10338950()
 // END FUNCTION
 
 // FUNCTION: 0x10338cb0 size=0xf1
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseCombatCharacter.h"
 
@@ -157433,6 +161299,17 @@ char CBaseCombatCharacter::sub_10338cb0()
 // END FUNCTION
 
 // FUNCTION: 0x103392c0 size=0x17f
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseCombatCharacter.h"
 #include "CVDmg_t.h"
 #include "CUnknown101c26d0.h"
@@ -157527,6 +161404,17 @@ void CBaseCombatCharacter::sub_10339560()
 // END FUNCTION
 
 // FUNCTION: 0x103395f0 size=0x199
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseCombatCharacter.h"
 #include "CVStatList_t.h"
 #include "CEHandleGet.h"
@@ -157545,6 +161433,14 @@ bool CBaseCombatCharacter::sub_103395f0()
 // END FUNCTION
 
 // FUNCTION: 0x10339930 size=0x106
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseCombatCharacter.h"
 #include "CAI_BaseNPC.h"
@@ -157744,6 +161640,17 @@ bool CBaseCombatCharacter::sub_1033b7c0()
 // END FUNCTION
 
 // FUNCTION: 0x1033b980 size=0x17c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "ScopeTrace.h"
 #include "CBaseCombatCharacter.h"
 
@@ -157768,6 +161675,17 @@ float CUnknown1033b980::sub_1033b980()
 // END FUNCTION
 
 // FUNCTION: 0x1033bf50 size=0x31c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
 #include "CVStatList_t.h"
@@ -157794,6 +161712,14 @@ void CBaseCombatCharacter::sub_1033bf50(int nAmount)
 // END FUNCTION
 
 // FUNCTION: 0x1033c340 size=0x2b1
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
 
@@ -158006,6 +161932,7 @@ char *sub_1033cb50(int nBits)
 // END FUNCTION
 
 // FUNCTION: 0x1033ce10 size=0xaa
+#include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -158177,6 +162104,7 @@ char CBaseCombatCharacter::sub_1033d580(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x1033d640 size=0x8f
+#include "CBaseCombatCharacter.h"
 #include "inputdata_t.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
@@ -158204,6 +162132,7 @@ void CBaseCombatCharacter::sub_1033d640(inputdata_t *data)
 // END FUNCTION
 
 // FUNCTION: 0x1033d700 size=0x9a
+#include "CBaseCombatCharacter.h"
 #include "inputdata_t.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
@@ -158259,6 +162188,7 @@ void CUnknown1033d7d0::sub_1033d7d0(inputdata_t *pInput)
 // END FUNCTION
 
 // FUNCTION: 0x1033d8a0 size=0x76
+#include "inputdata_t.h"
 #include "CBaseCombatCharacter.h"
 
 struct ScopeEntry { const char *a; const char *b; const char *c; };
@@ -158328,6 +162258,16 @@ int sub_1033d9b0()
 // END FUNCTION
 
 // FUNCTION: 0x1033d9d0 size=0x107
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 extern "C" int __cdecl _strcmpi(const char *, const char *);
 
@@ -158371,6 +162311,7 @@ int CBaseCombatCharacter::sub_1033d9d0(CBaseEntity *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x1033df80 size=0xdb
+#include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -158405,6 +162346,14 @@ void CBaseCombatCharacter::sub_1033df80()
 // END FUNCTION
 
 // FUNCTION: 0x1033e0a0 size=0x196
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "CEntitySoundOriginView.h"
 #include "CPASAttenuationFilter.h"
@@ -158465,6 +162414,14 @@ bool CBaseCombatCharacter::sub_1033e2b0()
 // END FUNCTION
 
 // FUNCTION: 0x1033e960 size=0x7c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 struct CFrenzyPlayerData { char pad[0x146c]; int m_nField146c; void sub_1033eb60(int a); };
 struct CFrenzyLocalPlayer { char pad[0xa8]; CFrenzyPlayerData *m_pData; };
@@ -158514,6 +162471,7 @@ void CBaseCombatCharacter::sub_1033ea90(inputdata_t *inputdata)
 // END FUNCTION
 
 // FUNCTION: 0x1033f1a0 size=0x98
+#include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
 extern int *g_109f3680;
@@ -158574,6 +162532,7 @@ void CBaseCombatCharacter::sub_1033f3f0(inputdata_t *inputdata)
 // END FUNCTION
 
 // FUNCTION: 0x1033f4c0 size=0x9c
+#include "CBaseCombatCharacter.h"
 struct ScopeTraceEntry_t
 {
 	const char *m_pszFunc;
@@ -158606,6 +162565,9 @@ void CBaseCombatCharacter::sub_1033f4c0(int value)
 // END FUNCTION
 
 // FUNCTION: 0x1033f6d0 size=0x5a
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
 #include "CStatDefault3List.h"
 
 extern CStatDefault3List g_10738d10;
@@ -158713,6 +162675,7 @@ void sub_10340180()
 // END FUNCTION
 
 // FUNCTION: 0x10340bd0 size=0x86
+#include "inputdata_t.h"
 #include "CBaseCombatCharacter.h"
 
 #define PV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
@@ -158817,6 +162780,14 @@ void CBaseCombatCharacter::sub_10340d70(inputdata_t *pInput)
 // END FUNCTION
 
 // FUNCTION: 0x10340e50 size=0x172
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
 
@@ -158959,6 +162930,14 @@ void CBaseCombatCharacter::sub_103411c0(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x10341370 size=0xb0
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseCombatCharacter.h"
 
@@ -158978,6 +162957,15 @@ void CBaseCombatCharacter::sub_10341370(CBaseCombatCharacter *pPartner, int unus
 // END FUNCTION
 
 // FUNCTION: 0x10341510 size=0xa8
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CEHandleGet.h"
 
@@ -158989,6 +162977,7 @@ CBaseEntity *__fastcall sub_10341510(CBaseEntity *pThis)
 // END FUNCTION
 
 // FUNCTION: 0x103419c0 size=0xa8
+#include "CBaseCombatCharacter.h"
 #include "inputdata_t.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
@@ -159387,6 +163376,14 @@ void CBaseCombatCharacter::sub_103455a0(CBaseEntity *pTarget, void *pInfo, Vecto
 // END FUNCTION
 
 // FUNCTION: 0x10345890 size=0xb6
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 
 void sub_10345890(const float *a, const float *b, float frac, float *out)
@@ -159400,6 +163397,8 @@ void sub_10345890(const float *a, const float *b, float frac, float *out)
 // END FUNCTION
 
 // FUNCTION: 0x10345980 size=0xe3
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
 struct SEntityEntry
 {
     int m_pad;
@@ -159464,6 +163463,16 @@ char *CBaseCombatCharacter::sub_10345980(CBaseEntity *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x10345ab0 size=0x1c8
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "Vector.h"
 void sub_10139550(const float *ang, Vector *out);
@@ -159538,6 +163547,8 @@ bool CBaseCombatCharacter::sub_10345d00()
 // END FUNCTION
 
 // FUNCTION: 0x10345de0 size=0xe5
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
 struct SEntityEntry
 {
     int m_pad;
@@ -159603,6 +163614,8 @@ int CBaseCombatCharacter::sub_10345de0(CBaseEntity *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x10345f10 size=0x9d
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
 struct ScopeTraceEntry_t
 {
 	const char *m_pszFunc;
@@ -159640,6 +163653,14 @@ int CBaseCombatCharacter::sub_10345f10()
 // END FUNCTION
 
 // FUNCTION: 0x10346220 size=0x98
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CBaseCombatCharacter.h"
 #include "CVDmg_t.h"
@@ -159735,6 +163756,7 @@ int sub_10348100(int count, int *values, int *weights, unsigned int *flags, unsi
 // END FUNCTION
 
 // FUNCTION: 0x103483c0 size=0x9c
+#include "CBaseCombatCharacter.h"
 #include "CBaseAnimating.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
@@ -159757,6 +163779,7 @@ void CBaseCombatCharacter::sub_103483c0(int a, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x10348490 size=0x9c
+#include "CBaseCombatCharacter.h"
 #include "CBaseAnimating.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
@@ -159779,6 +163802,14 @@ void CBaseCombatCharacter::sub_10348490(int a, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x10348560 size=0xe4
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "ScopeTrace.h"
 
@@ -159829,6 +163860,14 @@ void sub_10348560()
 // END FUNCTION
 
 // FUNCTION: 0x10348720 size=0xa7
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseCombatCharacter.h"
 #include "CBaseAnimating.h"
@@ -159898,6 +163937,14 @@ bool CUnknown10349590::sub_10349650()
 // END FUNCTION
 
 // FUNCTION: 0x10349710 size=0xd2
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "melee_dice_roll_result.h"
 #include "ScopeTrace.h"
 extern "C" int __cdecl sprintf(char *, const char *, ...);
@@ -160098,6 +164145,7 @@ void CUtlVector16::sub_10349d50(int num)
 // END FUNCTION
 
 // FUNCTION: 0x10349e10 size=0x3a
+#include "vampire_all.h"
 #include "CUtlVector16.h"
 
 void CUtlVector16::sub_10349e10(int elem, int num)
@@ -160162,6 +164210,7 @@ void CUtlVector16::sub_10349ec0(int num)
 // END FUNCTION
 
 // FUNCTION: 0x10349f80 size=0x3a
+#include "vampire_all.h"
 #include "CUtlVector16.h"
 
 void CUtlVector16::sub_10349f80(int elem, int num)
@@ -160749,6 +164798,7 @@ void CNPCMaker_Zombie::sub_1034d2d0()
 // END FUNCTION
 
 // FUNCTION: 0x1034d370 size=0x74
+#include "CBaseEntity.h"
 #include "CAI_BaseNPC.h"
 
 extern void *vt_104a1794[];
@@ -161249,6 +165299,7 @@ void __stdcall sub_1034e7e0(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x1034f1e0 size=0x43
+#include "CBaseEntity.h"
 #include "CHL2_Player.h"
 
 void *sub_100aa720(int size);
@@ -161641,6 +165692,7 @@ void sub_10352f00()
 // END FUNCTION
 
 // FUNCTION: 0x10352f70 size=0x63
+#include "CBaseEntity.h"
 class CBaseEntity;
 CBaseEntity *sub_100a99d0(const char *pszClass, const float *pOrigin, const float *pAngles, CBaseEntity *pOwner);
 extern float g_1070d1b0[3];
@@ -161995,6 +166047,8 @@ int CUnknown10357180::sub_10357180(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x103572d0 size=0x5e
+#include "CHumanoidRec.h"
+#include "utlmemory.h"
 #include "CNPC_Crow.h"
 extern int vt_104a426c[];
 extern int vt_104a4240[];
@@ -162089,6 +166143,7 @@ void CNPC_Crow::sub_10357be0(float flSpeed)
 // END FUNCTION
 
 // FUNCTION: 0x103580d0 size=0xaf
+#include "CBaseEntity.h"
 #include "CNPC_Crow.h"
 
 void CNPC_Crow::sub_103580d0(int mode)
@@ -162121,6 +166176,7 @@ void CNPC_Crow::sub_103580d0(int mode)
 // END FUNCTION
 
 // FUNCTION: 0x103581b0 size=0x10e
+#include "CBaseEntity.h"
 #include "CNPC_Crow.h"
 
 #define SV1(n) virtual void n();
@@ -162630,6 +166686,14 @@ char sub_1035c3b0()
 // END FUNCTION
 
 // FUNCTION: 0x1035cd00 size=0x156
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VAndreiBlood.h"
 #include "ScopeTrace.h"
 #include "CEHandleGet.h"
@@ -162661,6 +166725,14 @@ void CNPC_VAndreiBlood::sub_1035cd00()
 // END FUNCTION
 
 // FUNCTION: 0x1035e030 size=0x114
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VAndreiBlood.h"
 #include "ScopeTrace.h"
 
@@ -162686,6 +166758,14 @@ bool CNPC_VAndreiBlood::sub_1035e030(const Vector *pPos, float flMinDistance)
 // END FUNCTION
 
 // FUNCTION: 0x1035e1a0 size=0x1ac
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VAndreiBlood.h"
 #include "CEntityVSlots.h"
 #include "CEHandleGet.h"
@@ -162726,6 +166806,14 @@ void CNPC_VAndreiBlood::sub_1035e1a0(const char *pszEmitter)
 // END FUNCTION
 
 // FUNCTION: 0x1035e3c0 size=0x1b6
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VAndreiBlood.h"
 #include "CEHandleGet.h"
 #include "ScopeTrace.h"
@@ -163076,6 +167164,14 @@ char sub_10360560()
 // END FUNCTION
 
 // FUNCTION: 0x103615c0 size=0x11f
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VAsianVampire.h"
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
@@ -163119,6 +167215,14 @@ void *CNPC_VAsianVampire::sub_103615c0()
 // END FUNCTION
 
 // FUNCTION: 0x10361730 size=0x11f
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VAsianVampire.h"
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
@@ -163162,6 +167266,14 @@ void *CNPC_VAsianVampire::sub_10361730()
 // END FUNCTION
 
 // FUNCTION: 0x103618a0 size=0xbc
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CNPC_VAsianVampire.h"
 bool CNPC_VAsianVampire::sub_10004b8d(const float *pos)
@@ -163180,6 +167292,7 @@ bool CNPC_VAsianVampire::sub_10004b8d(const float *pos)
 // END FUNCTION
 
 // FUNCTION: 0x10361990 size=0xaa
+#include "CBaseEntity.h"
 #include "CNPC_VAsianVampire.h"
 
 #define PV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
@@ -163219,6 +167332,14 @@ void CNPC_VAsianVampire::sub_10361990(CBaseEntity *pHint)
 // END FUNCTION
 
 // FUNCTION: 0x10362540 size=0xe3
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CNPC_VAsianVampire.h"
 #include "CEntityVSlots.h"
@@ -163260,6 +167381,14 @@ bool CNPC_VAsianVampire::sub_10362670()
 // END FUNCTION
 
 // FUNCTION: 0x103629d0 size=0x13e
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VAsianVampire.h"
 #include "ScopeTrace.h"
 
@@ -163539,6 +167668,8 @@ void __fastcall sub_103661d0(char *self, int, int)
 // END FUNCTION
 
 // FUNCTION: 0x103662d0 size=0xeb
+#include "utlmemory.h"
+#include "utlvector.h"
 #include "CUnknown103662d0.h"
 
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
@@ -163612,6 +167743,9 @@ void CUnknown103662d0::sub_103662d0(int id, float delay)
 // END FUNCTION
 
 // FUNCTION: 0x10366400 size=0x69
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
 #include "CNPC_VWerewolf.h"
 bool CNPC_VWerewolf::sub_10366400(int key)
 {
@@ -164050,6 +168184,7 @@ char sub_1036a340()
 // END FUNCTION
 
 // FUNCTION: 0x1036c7f0 size=0xd
+#include "CUnknown1036c7f0.h"
 void CUnknown1036c7f0::sub_1036c7f0(int value)
 {
 	m_unk66b8 = value;
@@ -164083,6 +168218,14 @@ void CNPC_VChangBros::sub_1036c810(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x1036cab0 size=0xd9
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VChangBros.h"
 #include "ScopeTrace.h"
 struct CChangBrosUnit : CNPC_VChangBros {
@@ -164108,6 +168251,14 @@ bool CChangBrosUnit::sub_1036cab0()
 // END FUNCTION
 
 // FUNCTION: 0x1036cbd0 size=0xc4
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VChangBros.h"
 #include "ScopeTrace.h"
 
@@ -164134,6 +168285,14 @@ bool CNPC_VChangBros::sub_1036cbd0()
 // END FUNCTION
 
 // FUNCTION: 0x1036cfa0 size=0x105
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VChangBros.h"
 #include "CEntityVSlots.h"
 #include "ScopeTrace.h"
@@ -164213,6 +168372,7 @@ void *CNPC_VChangBros::sub_1036d100()
 // END FUNCTION
 
 // FUNCTION: 0x1036d270 size=0xaa
+#include "CLogicAuto.h"
 #include "CNPC_VChangBros.h"
 
 struct ScopeEntry { const char *a; const char *b; const char *c; };
@@ -164275,6 +168435,14 @@ float CNPC_VChangBros::sub_1036dc60()
 // END FUNCTION
 
 // FUNCTION: 0x1036e160 size=0x13e
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VChangBros.h"
 #include "ScopeTrace.h"
 #include "CEntityVSlots.h"
@@ -164312,6 +168480,14 @@ void CNPC_VChangBros::sub_1036e160(int bSetup)
 // END FUNCTION
 
 // FUNCTION: 0x1036e2f0 size=0xc7
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VChangBros.h"
 #include "CUnknown103160c0.h"
 #include "ScopeTrace.h"
@@ -164380,6 +168556,14 @@ void CNPC_VChangBros::sub_1036e400()
 // END FUNCTION
 
 // FUNCTION: 0x1036e580 size=0x111
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CNPC_VChangBros.h"
 extern float g_1093aa88;
@@ -164761,6 +168945,7 @@ int sub_10370680(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x103706b0 size=0xe9
+#include "CBaseEntity.h"
 #include "CEntityVSlots.h"
 #include "CEHandleGet.h"
 
@@ -165419,6 +169604,7 @@ void CUnknown10379000::sub_10379000(char on)
 // END FUNCTION
 
 // FUNCTION: 0x10379040 size=0xc
+#include "CUnknown10381be0.h"
 bool CUnknown10381be0::sub_10379040()
 {
 	bool r = (m_flags14b8 >> 4) & 1;
@@ -165534,6 +169720,14 @@ char sub_1037a8a0()
 // END FUNCTION
 
 // FUNCTION: 0x1037aea0 size=0xd0
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VGhoulCroucher.h"
 #include "CBaseVampireSkillEntity.h"
 #include "ScopeTrace.h"
@@ -165566,6 +169760,14 @@ CNPC_VGhoulCroucher *CNPC_VGhoulCroucher::sub_1037aea0()
 // END FUNCTION
 
 // FUNCTION: 0x1037b6e0 size=0x132
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CNPC_VGhoulCroucher.h"
 #include "CEHandleGet.h"
@@ -165656,6 +169858,14 @@ bool __fastcall sub_1037bb20(char *self)
 // END FUNCTION
 
 // FUNCTION: 0x1037c090 size=0xe4
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VGhoulCroucher.h"
 #include "CTakeDamageInfo.h"
 #include "ScopeTrace.h"
@@ -165938,6 +170148,7 @@ void CUnknown10381ba0::sub_10381ba0(char on)
 // END FUNCTION
 
 // FUNCTION: 0x10381be0 size=0xc
+#include "CUnknown10381be0.h"
 bool CUnknown10381be0::sub_10381be0()
 {
 	bool r = (m_flags14b8 >> 4) & 1;
@@ -165982,6 +170193,7 @@ int __fastcall sub_10381ca0(char *self)
 // END FUNCTION
 
 // FUNCTION: 0x103822a0 size=0x10e
+#include "CBaseEntity.h"
 #include "Vector.h"
 #include "CEntityVSlots.h"
 #include "CEHandleGet.h"
@@ -166010,6 +170222,12 @@ bool CNPC_VHengeyokai::sub_103822a0(CBaseEntity *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x10382400 size=0x1ee
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
 #include "CBaseEntity.h"
 #include "CEHandleGet.h"
 #include "IPhysicsObject.h"
@@ -166055,6 +170273,7 @@ void CNPC_VHengeyokai::sub_10382400(void *pArg)
 // END FUNCTION
 
 // FUNCTION: 0x103828a0 size=0x9c
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 extern CGlobalEntityList *g_10566458;
 namespace block_103828a0 {
@@ -166107,6 +170326,8 @@ void __fastcall sub_103828a0(char *p)
 // END FUNCTION
 
 // FUNCTION: 0x10382970 size=0xed
+#include "utlmemory.h"
+#include "utlvector.h"
 #include "CUnknown10382970.h"
 
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
@@ -166180,6 +170401,9 @@ void CUnknown10382970::sub_10382970(int id)
 // END FUNCTION
 
 // FUNCTION: 0x10382aa0 size=0x69
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
 #include "CNPC_VHengeyokai.h"
 bool CNPC_VHengeyokai::sub_10382aa0(int key)
 {
@@ -166290,6 +170514,7 @@ int CUnknown10382d20::sub_10382d20()
 // END FUNCTION
 
 // FUNCTION: 0x10382d40 size=0x1a2
+#include "CBaseEntity.h"
 #include "CNPC_VHengeyokai.h"
 #include "CEntityVSlots.h"
 #include "CEHandleGet.h"
@@ -166392,6 +170617,9 @@ int CNPC_VHengeyokai::sub_10382f60()
 // END FUNCTION
 
 // FUNCTION: 0x10383470 size=0x96
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CNPC_VHengeyokai.h"
 #include "CVStatList_t.h"
 
@@ -166920,6 +171148,7 @@ char sub_10388ed0()
 // END FUNCTION
 
 // FUNCTION: 0x103893f0 size=0x5b
+#include "CLogicAuto.h"
 #include "CAI_BaseNPCTroika.h"
 #include "globalvars.h"
 struct SArg389 { char pad[8]; float m_flTime; char pad2[0x18 - 0xc]; int m_nType; };
@@ -167132,6 +171361,7 @@ void CNPC_VManBat::sub_1038c170(int nMode)
 // END FUNCTION
 
 // FUNCTION: 0x1038c250 size=0xfb
+#include "CBaseEntity.h"
 #include "CNPC_VManBat.h"
 #include "CEntityVSlots.h"
 
@@ -167359,6 +171589,8 @@ void CNPC_VManBat::sub_1038fc80()
 // END FUNCTION
 
 // FUNCTION: 0x1038fd40 size=0xbf
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
 #include "CNPC_VManBat.h"
 #include "CEntityVSlots.h"
 
@@ -167708,6 +171940,7 @@ bool CNPC_VMingXiao::sub_10397b40(void *pTentacle)
 // END FUNCTION
 
 // FUNCTION: 0x10397c70 size=0x110
+#include "CNPC_VMingXiaoTentacle.h"
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 #include "CNPC_VMingXiao.h"
@@ -168002,6 +172235,7 @@ bool __fastcall sub_103989b0(MingTurnView *pThis, int unused, const Vector &vecT
 // END FUNCTION
 
 // FUNCTION: 0x10398d90 size=0xd
+#include "CUnknown10398d90.h"
 void CUnknown10398d90::sub_10398d90(int value)
 {
 	m_unk673c = value;
@@ -168009,6 +172243,7 @@ void CUnknown10398d90::sub_10398d90(int value)
 // END FUNCTION
 
 // FUNCTION: 0x10398db0 size=0x1a5
+#include "CBaseAnimating.h"
 #include "CBaseEntity.h"
 #include "CNPC_VMingXiao.h"
 #include "CEntityVSlots.h"
@@ -168090,6 +172325,15 @@ void CNPC_VMingXiao::sub_10398fd0()
 // END FUNCTION
 
 // FUNCTION: 0x10399610 size=0x22b
+#include "CNPC_VMingXiaoTentacle.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VMingXiao.h"
 #include "CEHandleGet.h"
 #include "CVProfile.h"
@@ -168238,6 +172482,7 @@ void CNPC_VMingXiao::sub_1039aa20()
 // END FUNCTION
 
 // FUNCTION: 0x1039aaf0 size=0xd
+#include "CUnknown1039aaf0.h"
 // TARGET: CUnknown1039aaf0::sub_1039aaf0
 void CUnknown1039aaf0::sub_1039aaf0(char value)
 {
@@ -168422,6 +172667,7 @@ void __fastcall sub_1039ea60(void *pThis)
 // END FUNCTION
 
 // FUNCTION: 0x1039ede0 size=0x2d
+#include "CBaseEntity.h"
 #include "CBasePlayer.h"
 
 struct EntInfo {
@@ -169370,6 +173616,14 @@ char sub_103a5da0()
 // END FUNCTION
 
 // FUNCTION: 0x103a9540 size=0x1a9
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include <math.h>
 #include "CNPC_VSabbatLeader.h"
 #include "CEntityVSlots.h"
@@ -169415,6 +173669,14 @@ CNPC_VSabbatLeaderHint *CNPC_VSabbatLeader::sub_103a9540()
 // END FUNCTION
 
 // FUNCTION: 0x103a9d90 size=0xa5
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VSabbatLeader.h"
 #include "ScopeTrace.h"
 
@@ -169434,6 +173696,14 @@ bool CNPC_VSabbatLeader::sub_103a9d90()
 // END FUNCTION
 
 // FUNCTION: 0x103aa960 size=0xd4
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CNPC_VSabbatLeader.h"
 
@@ -169455,6 +173725,17 @@ void CNPC_VSabbatLeader::sub_103aa960()
 // END FUNCTION
 
 // FUNCTION: 0x103aaa80 size=0xff
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseCombatCharacter.h"
 #include "CNPC_VSabbatLeader.h"
 #include "CGlobalEntityList.h"
@@ -169484,6 +173765,14 @@ void CNPC_VSabbatLeader::sub_103aaa80()
 // END FUNCTION
 
 // FUNCTION: 0x103aabc0 size=0x12d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VSabbatLeader.h"
 #include "CBaseCombatCharacter.h"
 #include "CGlobalEntityList.h"
@@ -169513,6 +173802,14 @@ bool CNPC_VSabbatLeader::sub_103aabc0()
 // END FUNCTION
 
 // FUNCTION: 0x103aaf50 size=0x15d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "Vector.h"
 #include "CEntityVSlots.h"
@@ -169539,6 +173836,14 @@ bool CNPC_VSabbatLeader::sub_103aaf50()
 // END FUNCTION
 
 // FUNCTION: 0x103ab110 size=0x10e
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CNPC_VSabbatLeader.h"
 #include "CEntityVSlots.h"
@@ -169971,6 +174276,14 @@ CNPC_VSheriffMan *CNPC_VSheriffMan::sub_103ae3e0()
 // END FUNCTION
 
 // FUNCTION: 0x103b0930 size=0x12b
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "Vector.h"
 #include "CEntityVSlots.h"
@@ -170010,6 +174323,14 @@ CEntityVSlots *CNPC_VSheriffMan::sub_103b0930()
 // END FUNCTION
 
 // FUNCTION: 0x103b0ab0 size=0x152
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VSheriffMan.h"
 #include "CEntityVSlots.h"
 #include "CEHandleGet.h"
@@ -170054,6 +174375,14 @@ CEntityVSlots *CNPC_VSheriffMan::sub_103b0ab0(char bUseSelf)
 // END FUNCTION
 
 // FUNCTION: 0x103b0c70 size=0x1a2
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VSheriffMan.h"
 #include "CEntityVSlots.h"
 #include "CEHandleGet.h"
@@ -170076,6 +174405,14 @@ bool CNPC_VSheriffMan::sub_103b0c70(const Vector *pPos, float flMinDist)
 // END FUNCTION
 
 // FUNCTION: 0x103b10f0 size=0x199
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VSheriffMan.h"
 #include "CLogicRelay.h"
 #include "CBaseCombatCharacter.h"
@@ -170121,6 +174458,14 @@ void CNPC_VSheriffMan::sub_103b10f0()
 // END FUNCTION
 
 // FUNCTION: 0x103b1300 size=0x11c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VAsianVampire.h"
 #include "CEntityVSlots.h"
 #include "ScopeTrace.h"
@@ -170182,6 +174527,14 @@ void CNPC_VSheriffMan::sub_103b1470(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x103b1790 size=0x9c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VSheriffMan.h"
 #include "ScopeTrace.h"
 #include <math.h>
@@ -170197,6 +174550,14 @@ void CNPC_VSheriffMan::sub_103b1790(float flHeight, int *pOut)
 // END FUNCTION
 
 // FUNCTION: 0x103b1860 size=0x116
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CNPC_VSheriffMan.h"
 #include "CEntityVSlots.h"
@@ -170443,6 +174804,8 @@ char sub_103b29a0()
 // END FUNCTION
 
 // FUNCTION: 0x103b2ed0 size=0x5e
+#include "CHumanoidRec.h"
+#include "utlmemory.h"
 extern int vt_104c8a14[];
 extern int vt_104c89e4[];
 void *sub_100aa720(int size);
@@ -170866,6 +175229,7 @@ void CUnknown103be050::sub_103be050(char on)
 // END FUNCTION
 
 // FUNCTION: 0x103be090 size=0xc
+#include "CUnknown10381be0.h"
 bool CUnknown10381be0::sub_103be090()
 {
 	bool r = (m_flags14b8 >> 4) & 1;
@@ -170889,6 +175253,7 @@ void CNPC_VTzimisce::sub_103be0b0(char bOn)
 // END FUNCTION
 
 // FUNCTION: 0x103be130 size=0xc
+#include "CUnknown10381be0.h"
 bool CUnknown10381be0::sub_103be130()
 {
 	bool r = (m_flags14b8 >> 5) & 1;
@@ -170988,6 +175353,8 @@ CTraceFilterHasThrowLOS *CTraceFilterHasThrowLOS::sub_103be530(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x103be630 size=0x213
+#include "CTraceFilterNoCharacterCollide.h"
+#include "QAngle.h"
 #include "CBaseEntity.h"
 #include "Ray_t.h"
 #include "CGameTrace.h"
@@ -171031,6 +175398,7 @@ char CNPC_VTzimisce::sub_103be630(CBaseEntity *pTarget)
 // END FUNCTION
 
 // FUNCTION: 0x103bf170 size=0x63
+#include "CBaseEntity.h"
 #include "CNPC_VTzimisce.h"
 void sub_101cd970(CBaseEntity *);
 void CNPC_VTzimisce::sub_103bf170()
@@ -171044,6 +175412,8 @@ void CNPC_VTzimisce::sub_103bf170()
 // END FUNCTION
 
 // FUNCTION: 0x103bf200 size=0xed
+#include "utlmemory.h"
+#include "utlvector.h"
 #include "CUnknown103bf200.h"
 
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
@@ -171117,6 +175487,9 @@ void CUnknown103bf200::sub_103bf200(int id)
 // END FUNCTION
 
 // FUNCTION: 0x103bf330 size=0x69
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
 #include "CUnknown103bf330.h"
 bool CUnknown103bf330::sub_103bf330(int key)
 {
@@ -171224,6 +175597,7 @@ int CUnknown103bf560::sub_103bf560()
 // END FUNCTION
 
 // FUNCTION: 0x103bfa50 size=0x166
+#include "CBaseEntity.h"
 #include "CNPC_VTzimisce.h"
 #include "CEntityVSlots.h"
 
@@ -171686,6 +176060,17 @@ char sub_103c51c0()
 // END FUNCTION
 
 // FUNCTION: 0x103c63c0 size=0x14d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CNPC_VVampireBoss.h"
 #include "CVStatList_t.h"
 #include "COutputEvent.h"
@@ -171731,6 +176116,17 @@ char CUnknown103c67f0::sub_103c67f0(float f)
 // END FUNCTION
 
 // FUNCTION: 0x103c6830 size=0x164
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include <math.h>
 #include "CNPC_VVampireBoss.h"
 #include "CVStatList_t.h"
@@ -171766,6 +176162,7 @@ void __fastcall sub_103c6a00(void *pThis)
 // END FUNCTION
 
 // FUNCTION: 0x103c6a20 size=0x16
+#include "CNPC_VVampireBoss.h"
 struct CNPC_VVampireBossUnit
 {
 	float sub_103c6830();
@@ -171888,6 +176285,7 @@ void CNPC_VVampireBoss::sub_103c6e80(const char *name)
 // END FUNCTION
 
 // FUNCTION: 0x103c6eb0 size=0x6b
+#include "CNPC_VVampireBoss.h"
 struct ScopeEntry {
     const char *a;
     const char *b;
@@ -171938,6 +176336,15 @@ void CNPC_VVampireBoss::sub_103c6f40()
 // END FUNCTION
 
 // FUNCTION: 0x103c7010 size=0xf1
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VVampireBoss.h"
 #include "ScopeTrace.h"
 
@@ -172170,6 +176577,15 @@ char sub_103c8e20()
 // END FUNCTION
 
 // FUNCTION: 0x103c9cf0 size=0x159
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "Vector.h"
 #include "ScopeTrace.h"
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
@@ -172245,6 +176661,7 @@ CHintData_WW *CHintData_WW::sub_103c9ed0(const CHintData_WW *pSrc)
 // END FUNCTION
 
 // FUNCTION: 0x103ca1a0 size=0xd3
+#include "utlvector.h"
 #include "CHintData_WW.h"
 #include "CMem4b_t.h"
 
@@ -172304,6 +176721,9 @@ done:
 // END FUNCTION
 
 // FUNCTION: 0x103ca2c0 size=0xa0
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CUnknown103ca2c0.h"
 
 struct ScopeEntry { const char *a; const char *b; const char *c; };
@@ -172328,6 +176748,7 @@ bool CUnknown103ca2c0::sub_103ca2c0(int value)
 // END FUNCTION
 
 // FUNCTION: 0x103ca390 size=0xd3
+#include "utlvector.h"
 #include "CHintData_WW.h"
 #include "CMem4b_t.h"
 
@@ -172382,6 +176803,7 @@ void CHintData_WW::sub_103ca390(int hint)
 // END FUNCTION
 
 // FUNCTION: 0x103cade0 size=0xcc
+#include "CNPC_VWerewolf.h"
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 extern CGlobalEntityList g_106eb5d8;
@@ -172418,6 +176840,14 @@ void CNPC_VWerewolf::sub_103cade0()
 // END FUNCTION
 
 // FUNCTION: 0x103cc0d0 size=0x1c1
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
 #include "globalvars.h"
@@ -172476,6 +176906,14 @@ void CNPC_VWerewolf::sub_103cc0d0()
 // END FUNCTION
 
 // FUNCTION: 0x103cc320 size=0xef
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
 
@@ -172507,6 +176945,14 @@ void CNPC_VWerewolf::sub_103cc320()
 // END FUNCTION
 
 // FUNCTION: 0x103cc450 size=0x119
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
 
@@ -172551,6 +176997,14 @@ void CNPC_VWerewolf::sub_103cc450()
 // END FUNCTION
 
 // FUNCTION: 0x103cc5c0 size=0x238
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
 
@@ -172607,6 +177061,15 @@ void CNPC_VWerewolf::sub_103cc5c0()
 // END FUNCTION
 
 // FUNCTION: 0x103cc890 size=0xda
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
 
@@ -172645,6 +177108,14 @@ void CNPC_VWerewolf::sub_103cc890()
 // END FUNCTION
 
 // FUNCTION: 0x103ce9b0 size=0x14e
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VWerewolf.h"
 #include "CEntityVSlots.h"
 #include "ScopeTrace.h"
@@ -172736,6 +177207,15 @@ void CTriggerWWZone::sub_103cecd0(CBaseEntity *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x103cf5f0 size=0x124
+#include "CNPC_VWerewolf.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "ConVar.h"
 
@@ -172858,6 +177338,7 @@ void *__fastcall sub_103d0bf0(Holder *p)
 // END FUNCTION
 
 // FUNCTION: 0x103d0db0 size=0x8a
+#include "CNPC_VWerewolf.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
 extern int *g_109f3680;
@@ -172898,6 +177379,15 @@ bool __stdcall sub_103d0e70(void *pArg)
 // END FUNCTION
 
 // FUNCTION: 0x103d1200 size=0x245
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
 extern CNPC_VWerewolfHint66b0 *g_10925450;
@@ -172974,6 +177464,15 @@ void CNPC_VWerewolf::sub_103d1ca0()
 // END FUNCTION
 
 // FUNCTION: 0x103d1d60 size=0xbe
+#include "CNPC_VWerewolf.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 
 #pragma pack(push, 4)
@@ -173011,6 +177510,14 @@ bool CNPC_VWerewolf::sub_103d1d60(const char *pszName, bool bValue)
 // END FUNCTION
 
 // FUNCTION: 0x103d2810 size=0x184
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
 
@@ -173126,6 +177633,14 @@ bool CBaseEntity::sub_103d3a40(const char *pszNameOrWildcard)
 // END FUNCTION
 
 // FUNCTION: 0x103d44e0 size=0xae
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
 
@@ -173150,6 +177665,7 @@ void CNPC_VWerewolf::sub_103d44e0(CNPC_VWerewolfHint66b0 *pHint, char flag)
 // END FUNCTION
 
 // FUNCTION: 0x103d45c0 size=0x97
+#include "CNPC_VWerewolf.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
 extern int *g_109f3680;
@@ -173177,6 +177693,14 @@ void CNPC_VWerewolf::sub_103d45c0(CNPC_VWerewolfHint66b0 *pHint)
 // END FUNCTION
 
 // FUNCTION: 0x103d4690 size=0x97
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
 
@@ -173219,6 +177743,14 @@ void CNPC_VWerewolf::sub_103d4760()
 // END FUNCTION
 
 // FUNCTION: 0x103d4a60 size=0x253
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VWerewolf.h"
 #include "CCollisionProperty.h"
 #include "COutputEvent.h"
@@ -173273,6 +177805,14 @@ void CNPC_VWerewolf::sub_103d4a60()
 // END FUNCTION
 
 // FUNCTION: 0x103d6280 size=0xce
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
 #define WV(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
@@ -173314,6 +177854,15 @@ void CNPC_VWerewolf::sub_103d6280(void *pHint)
 // END FUNCTION
 
 // FUNCTION: 0x103d6390 size=0x132
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
 #include "CGlobalEntityList.h"
@@ -173368,6 +177917,14 @@ CBaseEntity *CNPC_VWerewolf::sub_103d6390(void *pHint)
 // END FUNCTION
 
 // FUNCTION: 0x103d6520 size=0xe8
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VWerewolf.h"
 #include "CGlobalEntityList.h"
 #include "ScopeTrace.h"
@@ -173395,6 +177952,14 @@ void *CNPC_VWerewolf::sub_103d6520(void *pHint)
 // END FUNCTION
 
 // FUNCTION: 0x103d6650 size=0xd3
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
 
@@ -173424,6 +177989,14 @@ CNPC_VWerewolfVec3 CNPC_VWerewolf::sub_103d6650(void *pHint)
 // END FUNCTION
 
 // FUNCTION: 0x103d6770 size=0x10f
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
@@ -173454,6 +178027,14 @@ CNPC_VWerewolfVec3 *CNPC_VWerewolf::sub_103d6770(CNPC_VWerewolfVec3 *pOut, void 
 // END FUNCTION
 
 // FUNCTION: 0x103d68d0 size=0x11b
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
 
@@ -173483,6 +178064,15 @@ CNPC_VWerewolfVec3 *CNPC_VWerewolf::sub_103d68d0(CNPC_VWerewolfVec3 *pOut, void 
 // END FUNCTION
 
 // FUNCTION: 0x103d7090 size=0x12f
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
 __declspec(dllimport) void DevWarning(const char *pszFormat, ...);
@@ -173532,6 +178122,14 @@ CForwardHintX *CWerewolfUnit::sub_103d7090(CForwardHintX *pHint)
 // END FUNCTION
 
 // FUNCTION: 0x103d7210 size=0x19c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VWerewolf.h"
 #include "CBaseEntity.h"
 #include "ScopeTrace.h"
@@ -173597,6 +178195,15 @@ float CNPC_VWerewolf::sub_103d7210(CBaseEntity *pHint)
 // END FUNCTION
 
 // FUNCTION: 0x103d7420 size=0x189
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VWerewolf.h"
 #include "CHintData_WW.h"
 #include "ScopeTrace.h"
@@ -173635,6 +178242,7 @@ void CNPC_VWerewolf::sub_103d7420(CHintData_WW *pData)
 // END FUNCTION
 
 // FUNCTION: 0x103d7620 size=0xb6
+#include "CNPC_VWerewolf.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -173674,6 +178282,14 @@ void *CNPC_VWerewolf::sub_103d7620(int key)
 // END FUNCTION
 
 // FUNCTION: 0x103d8300 size=0x1c9
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VWerewolf.h"
 #include "CAI_Hint.h"
 #include "CEntityVSlots.h"
@@ -173784,6 +178400,7 @@ void CNPC_VWerewolf::sub_103d8c10()
 // END FUNCTION
 
 // FUNCTION: 0x103d99a0 size=0xcd
+#include "CNPC_VWerewolf.h"
 #include "inputdata_t.h"
 
 struct ScopeEntry { const char *a; const char *b; const char *c; };
@@ -173825,6 +178442,15 @@ void CNPC_VWerewolf::sub_103d99a0(inputdata_t *pInput)
 // END FUNCTION
 
 // FUNCTION: 0x103d9f90 size=0xc5
+#include "CNPC_VWerewolf.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 extern CNPC_VWerewolfVec3 g_1070d1b0;
 
@@ -173843,6 +178469,14 @@ void CNPC_VWerewolf::sub_103d9f90()
 // END FUNCTION
 
 // FUNCTION: 0x103da0a0 size=0x132
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VWerewolf.h"
 #include "CWerewolfEnemySlots.h"
 #include "ScopeTrace.h"
@@ -173938,6 +178572,8 @@ extern "C" CBaseEntity *trigger_werewolf_zone()
 // END FUNCTION
 
 // FUNCTION: 0x103dad80 size=0x9f
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
 struct SEntB { void *pEnt; unsigned serial; int pad; };
 extern char *g_10566458;
 extern unsigned int g_1093f80c;
@@ -174026,6 +178662,14 @@ void CTriggerWWZone::sub_103daf10()
 // END FUNCTION
 
 // FUNCTION: 0x103dbad0 size=0x1f3
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 struct CDbgEnt { char pad[0x224]; unsigned int m_nFlags; };
 struct CConVarView { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void SetInt(int n); virtual void SetFloat(float f); };
@@ -174905,6 +179549,7 @@ int sub_103e1bb0(int *p, int arg)
 // END FUNCTION
 
 // FUNCTION: 0x103e1c00 size=0x59
+#include "CLogicAuto.h"
 extern "C" __declspec(dllimport) void Msg(const char *pszFormat, ...);
 
 struct CFlameEntry
@@ -175041,6 +179686,7 @@ void CFlameCluster::sub_103e2000(CBaseEntity *pEntity, int index)
 // END FUNCTION
 
 // FUNCTION: 0x103e2470 size=0xe1
+#include "utlvector.h"
 #include "CUnknown103e2470.h"
 #include "Mem1c.h"
 
@@ -175190,6 +179836,7 @@ void CWeaponRanged_FlameThrower::sub_103e2d10(const char *pszSample, int channel
 // END FUNCTION
 
 // FUNCTION: 0x103e3130 size=0x61
+#include "CBaseEntity.h"
 #include "CWeaponRanged_FlameThrower.h"
 CBaseEntity *CWeaponRanged_FlameThrower::sub_103e3130()
 {
@@ -175200,6 +179847,9 @@ CBaseEntity *CWeaponRanged_FlameThrower::sub_103e3130()
 // END FUNCTION
 
 // FUNCTION: 0x103e3490 size=0xa6
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "CLogicAuto.h"
 #include "CWeaponRanged_FlameThrower.h"
 
 struct SBurnRecord
@@ -175261,6 +179911,7 @@ float sub_103e3900()
 // END FUNCTION
 
 // FUNCTION: 0x103e3930 size=0x264
+#include "CLogicAuto.h"
 #include "CWeaponRanged_FlameThrower.h"
 #include "CBaseEntity.h"
 #include "CCollisionProperty.h"
@@ -176408,6 +181059,7 @@ void CWeaponMelee_Torch::sub_103e77f0()
 // END FUNCTION
 
 // FUNCTION: 0x103e78b0 size=0x46
+#include "CBaseEntity.h"
 #include "CWeaponMelee_Torch.h"
 struct CTorchEmitterView { char pad[0x910]; EHANDLE m_hEmitter; };
 void sub_101cd940(CBaseEntity *);
@@ -177480,6 +182132,7 @@ void CUnk103ed8f0::sub_103ed8f0()
 // END FUNCTION
 
 // FUNCTION: 0x103ed920 size=0x68
+#include "CBaseCombatWeapon.h"
 struct OwnerX { char pad[0xa8]; void *p; };
 void sub_1000d5f3();
 struct CWeaponUnit : CBaseCombatWeapon {
@@ -177501,6 +182154,7 @@ void CWeaponUnit::sub_103ed920()
 // END FUNCTION
 
 // FUNCTION: 0x103edf20 size=0x50
+#include "CBaseEntity.h"
 class CBaseEntity;
 void sub_101cd970(CBaseEntity *pEnt);
 void sub_101cd940(void *pEnt);
@@ -177700,6 +182354,7 @@ void CWeaponThrown_Grenade_Frag::sub_103ee870()
 // END FUNCTION
 
 // FUNCTION: 0x103eec60 size=0xd
+#include "CUnknown103eec60.h"
 void CUnknown103eec60::sub_103eec60(char value)
 {
 	m_unk931 = value;
@@ -177810,6 +182465,7 @@ int sub_103ef640()
 // END FUNCTION
 
 // FUNCTION: 0x103efdd0 size=0x45
+#include "CBaseEntity.h"
 #include "CWeaponThrown_Chang_Energy_Ball.h"
 void CWeaponThrown_Chang_Energy_Ball::sub_103efdd0(CBaseEntity *pEnt)
 {
@@ -177819,6 +182475,7 @@ void CWeaponThrown_Chang_Energy_Ball::sub_103efdd0(CBaseEntity *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x103f00c0 size=0xbf
+#include "CBaseEntity.h"
 #include "CWeaponThrown_Chang_Energy_Ball.h"
 
 #define PHYS_SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
@@ -177889,6 +182546,15 @@ bool __stdcall sub_103f01b0(char *self)
 // END FUNCTION
 
 // FUNCTION: 0x103f0200 size=0x17d
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CWeaponThrown_Chang_Energy_Ball.h"
 #include "CEntityVSlots.h"
 #include "ScopeTrace.h"
@@ -177945,6 +182611,7 @@ CBaseEntity *CWeaponThrown_Chang_Energy_Ball::sub_103f0200()
 // END FUNCTION
 
 // FUNCTION: 0x103f04f0 size=0xd
+#include "CUnknown103f04f0.h"
 CUnknown103f04f0* CUnknown103f04f0::sub_103f04f0(const CUnknown103f04f0& other)
 {
 	m_unk0 = other.m_unk0;
@@ -179016,6 +183683,14 @@ extern "C" GP *item_g_astrolite()
 // END FUNCTION
 
 // FUNCTION: 0x103f6800 size=0x1ab
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CItemGAstrolite.h"
 #include "CAI_BaseNPC.h"
 #include "CCollisionProperty.h"
@@ -183985,6 +188660,8 @@ extern "C" CBaseEntity *item_g_keyring()
 // END FUNCTION
 
 // FUNCTION: 0x10407c40 size=0x16e
+#include "utlmemory.h"
+#include "utlvector.h"
 #include "CItemGKeyring.h"
 extern "C" __declspec(dllimport) int __cdecl Q_strnicmp(const char *s1, const char *s2, int n);
 extern "C" __declspec(dllimport) char *__cdecl Q_strncpy(char *pDest, const char *pSrc, int maxLen);
@@ -184178,6 +188855,7 @@ void CKeyringUnit::sub_104081e0()
 // END FUNCTION
 
 // FUNCTION: 0x10408480 size=0x111
+#include "utlvector.h"
 #include "CUtlMemory192.h"
 
 __declspec(dllimport) char *Q_strncpy(char *dest, const char *src, int n);
@@ -185816,6 +190494,7 @@ void sub_1040d950()
 // END FUNCTION
 
 // FUNCTION: 0x1040d970 size=0x1e
+#include "CUnkCombatChar.h"
 #define P10(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
 
 // Local view of the vtable: slot 327 is the virtual call; the other slots are placeholders.
@@ -185847,6 +190526,7 @@ void sub_1040d970(CUnkCombatChar *pThis)
 // END FUNCTION
 
 // FUNCTION: 0x1040d9a0 size=0x2a
+#include "CBaseCombatCharacter.h"
 class CBaseCombatCharacter;
 int sub_102587f0();
 void __fastcall sub_1040dbb0(void *p);
@@ -186099,6 +190779,7 @@ bool sub_10410490(SEnt *pEnt, int a)
 // END FUNCTION
 
 // FUNCTION: 0x104106a0 size=0x95
+#include "CBaseEntity.h"
 #include "CWeaponPhysCannon.h"
 #include "CGlobalEntityList.h"
 
@@ -186175,6 +190856,7 @@ bool __stdcall sub_104110d0(Holder *h)
 // END FUNCTION
 
 // FUNCTION: 0x10411160 size=0xb8
+#include "CBaseEntity.h"
 #include "CWeaponMelee.h"
 
 #define AD_V(n) virtual void v##n();
@@ -186251,6 +190933,8 @@ float __fastcall sub_10411250(CObj10411250 *p)
 // END FUNCTION
 
 // FUNCTION: 0x104112d0 size=0x11d
+#include "CBaseEntity.h"
+#include "CUnknown101bc140.h"
 #include "CWeaponPhysCannon.h"
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
@@ -186283,6 +190967,7 @@ bool sub_104114d0(CBaseEntity *pEntity, void *pOther) {
 // END FUNCTION
 
 // FUNCTION: 0x10411630 size=0x73
+#include "CBaseEntity.h"
 #include "CUnknown10411630.h"
 #include "CGlobalEntityList.h"
 
@@ -186459,6 +191144,7 @@ void sub_104121d0()
 // END FUNCTION
 
 // FUNCTION: 0x104121f0 size=0x48
+#include "utlrbtree.h"
 #include "utlvector.h"
 struct CTreeHolder1024a120;
 void __fastcall sub_1024a120(CTreeHolder1024a120 *p);
@@ -186472,6 +191158,9 @@ void sub_104121f0()
 // END FUNCTION
 
 // FUNCTION: 0x10412260 size=0xf4
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
 #include "UtlVec8.h"
 
 extern "C" __declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
@@ -187469,6 +192158,7 @@ int __cdecl sub_10428970(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x104289a0 size=0xe1
+#include "CLogicAuto.h"
 struct CTimeTableRec
 {
 	float m_flTime;	// 0x00
@@ -187880,6 +192570,7 @@ void __fastcall sub_10429f40(char *self, int dummy, int a, int b, int c, int d)
 // END FUNCTION
 
 // FUNCTION: 0x10429f80 size=0x49
+#include "CBaseEntity.h"
 #define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 struct CSlot220View
 {
@@ -188032,6 +192723,7 @@ int sub_1042b470()
 // END FUNCTION
 
 // FUNCTION: 0x1042b6d0 size=0x2e
+#include "CBaseEntity.h"
 extern float g_1070d1b0[3];
 void CBaseEntity::sub_1042b6d0(int index)
 {
@@ -188110,6 +192802,7 @@ void CAI_BaseNPC::sub_1042b9c0(CBaseEntity *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x1042ba00 size=0xd
+#include "CUnknown1042ba00.h"
 // TARGET: CUnknown1042ba00::sub_1042ba00
 void CUnknown1042ba00::sub_1042ba00(int value)
 {
@@ -188288,6 +192981,7 @@ int sub_1042c4c0()
 // END FUNCTION
 
 // FUNCTION: 0x1042c4e0 size=0x94
+#include "Vector.h"
 struct AutoSys {
 	virtual bool Init();
 	AutoSys *m_pNext;
@@ -188600,6 +193294,7 @@ unsigned long sub_1042d890(const char *pszA, const char *pszB, int nValue)
 // END FUNCTION
 
 // FUNCTION: 0x1042d9a0 size=0xa
+#include "CUnknown1042d9a0.h"
 unsigned short CUnknown1042d9a0::sub_1042d9a0()
 {
 	return m_unk2 & 0xfff;
@@ -188652,6 +193347,7 @@ int CUnknown1042da60::sub_1042da60()
 // END FUNCTION
 
 // FUNCTION: 0x1042da80 size=0x9
+#include "CUnknown1042da80.h"
 void CUnknown1042da80::sub_1042da80(int value)
 {
 	m_unk0 = value;
@@ -188816,6 +193512,14 @@ int sub_1042e310()
 // END FUNCTION
 
 // FUNCTION: 0x1042ea40 size=0xf9
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CSprite.h"
 #include "CCollisionProperty.h"
 #include "ScopeTrace.h"
@@ -188847,6 +193551,14 @@ CSprite *sub_1042ea40(const char *pSpriteName, const Vector &origin, bool animat
 // END FUNCTION
 
 // FUNCTION: 0x1042eb80 size=0xdb
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CSprite.h"
 #include "CCollisionProperty.h"
 #include "ScopeTrace.h"
@@ -189253,6 +193965,7 @@ void sub_1042ff00()
 // END FUNCTION
 
 // FUNCTION: 0x1042ff30 size=0x36
+#include "MvsnSec.h"
 #pragma optimize("", off)
 unsigned int sub_1042ff30(unsigned int a)
 {
@@ -189315,6 +194028,7 @@ void sub_10430050()
 // END FUNCTION
 
 // FUNCTION: 0x10430080 size=0x36
+#include "MvsnSec.h"
 #pragma optimize("", off)
 unsigned int sub_10430080(unsigned int a)
 {

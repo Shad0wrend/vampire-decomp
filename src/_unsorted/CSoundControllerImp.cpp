@@ -15,6 +15,7 @@ void CSoundControllerImp::sub_101bc590(void *pSound)
 // END FUNCTION
 
 // FUNCTION: 0x101bc7f0 size=0x5f
+#include "CLogicAuto.h"
 #include "CSoundControllerImp.h"
 #include "CUnknown101bc750.h"
 #define V4(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3();
@@ -37,6 +38,7 @@ void CSoundControllerImp::vfunc3(void *pSound, float executeDeltaTime, int comma
 // END FUNCTION
 
 // FUNCTION: 0x101bc870 size=0x48
+#include "utlrbtree.h"
 #include "CSoundControllerImp.h"
 #include "CUnknown101bbd10.h"
 #include "utlvector.h"
@@ -68,6 +70,7 @@ void CSoundControllerImp::vfunc5(void *pSound)
 // END FUNCTION
 
 // FUNCTION: 0x101bd510 size=0x75
+#include "utlrbtree.h"
 #include "CPASAttenuationFilter.h"
 #include "UtlMem.h"
 #include "CSoundControllerImp.h"

@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x101333f0 size=0x6
+#include "datamap.h"
 #include "CMathCounter.h"
 namespace lifted {
 extern char g_105766dc;

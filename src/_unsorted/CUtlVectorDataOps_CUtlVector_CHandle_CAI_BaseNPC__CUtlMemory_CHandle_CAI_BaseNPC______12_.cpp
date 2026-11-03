@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x102cde90 size=0xc0
+#include "CAI_BaseNPC.h"
 #include "utlvector.h"
 #include "CUtlVectorDataOps.h"
 #include "CBaseHandle.h"
@@ -61,6 +62,9 @@ void CUtlVectorDataOps<NpcHandleVec, 12>::vfunc0(void *fieldInfo, void *pSave)
 // END FUNCTION
 
 // FUNCTION: 0x102ce0b0 size=0x10
+#include "CAI_BaseNPC.h"
+#include "utlmemory.h"
+#include "utlvector.h"
 #include "CUtlVectorDataOps.h"
 struct thinkfunc_t;
 
@@ -76,6 +80,9 @@ template<> int CUtlVectorDataOps<CUtlVector<CHandle<CAI_BaseNPC>,CUtlMemory<CHan
 // END FUNCTION
 
 // FUNCTION: 0x102ce0d0 size=0x13
+#include "CAI_BaseNPC.h"
+#include "utlmemory.h"
+#include "utlvector.h"
 #include "CUtlVectorDataOps.h"
 #include "ehandle.h"
 

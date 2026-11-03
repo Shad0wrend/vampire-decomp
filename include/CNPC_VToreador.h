@@ -1,6 +1,7 @@
 // CNPC_VToreador: declared by pcdecomp transplant for 0x103b5370 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CBaseEntity.h"
 
 class CNPC_VToreador : public CBaseEntity
 {

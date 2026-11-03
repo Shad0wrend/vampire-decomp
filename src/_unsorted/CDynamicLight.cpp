@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10056460 size=0x6
+#include "datamap.h"
 #include "CDynamicLight.h"
 namespace lifted {
 extern char g_1053f0b0;
@@ -71,6 +72,14 @@ bool CDynamicLight::vfunc110(const char *szKeyName, const char *szValue)
 // END FUNCTION
 
 // FUNCTION: 0x10056a90 size=0xaf
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CDynamicLight.h"
 #include "CCollisionProperty.h"

@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10407730 size=0x6
+#include "datamap.h"
 #include "CItemGKeyring.h"
 namespace lifted {
 extern char g_1067f9fc;
@@ -32,6 +33,7 @@ int CItemGKeyring::vfunc81()
 // END FUNCTION
 
 // FUNCTION: 0x10407b80 size=0x86
+#include "CBaseCombatWeapon.h"
 #include "CItemGKeyring.h"
 #include "utlvector.h"
 

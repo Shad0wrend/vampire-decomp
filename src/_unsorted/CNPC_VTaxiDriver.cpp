@@ -32,6 +32,7 @@ int CNPC_VTaxiDriver::vfunc451()
 // END FUNCTION
 
 // FUNCTION: 0x103b2fb0 size=0x6
+#include "datamap.h"
 #include "CNPC_VTaxiDriver.h"
 namespace lifted {
 extern char g_10651ed8;

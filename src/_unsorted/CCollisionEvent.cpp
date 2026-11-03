@@ -2,6 +2,14 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1002eef0 size=0x11c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CCollisionEvent.h"
 #include "ScopeTrace.h"
 
@@ -87,6 +95,15 @@ void CCollisionEvent::vfunc0(void *pEventArg)
 // END FUNCTION
 
 // FUNCTION: 0x10030210 size=0x257
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CCollisionEvent.h"
 #include "ScopeTrace.h"
 #include "CEntityVSlots.h"
@@ -156,6 +173,14 @@ void CCollisionEvent::vfunc1(void *pEventArg)
 // END FUNCTION
 
 // FUNCTION: 0x10030510 size=0x19a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CCollisionEvent.h"
 #include "Vector.h"
 #include "ScopeTrace.h"
@@ -242,6 +267,14 @@ void CCollisionEvent::vfunc2(void *pObjectIn, float energy, int surfaceProps, in
 // END FUNCTION
 
 // FUNCTION: 0x100315c0 size=0xe5
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CCollisionEvent.h"
 #include "ScopeTrace.h"
 
@@ -278,6 +311,15 @@ void CCollisionEvent::vfunc3(void *pObject1, void *pObject2, void *pData)
 // END FUNCTION
 
 // FUNCTION: 0x100316f0 size=0xd9
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CCollisionEvent.h"
 #include "ScopeTrace.h"
 

@@ -36,6 +36,7 @@ void CTESparks::vfunc3(const float *pOrigin, const float *pAngles)
 // END FUNCTION
 
 // FUNCTION: 0x100677e0 size=0x39
+#include "CRecipientFilter.h"
 #include "CTESparks.h"
 #include "CTEMetalSparks.h"
 #include "IVEngineServerFull.h"

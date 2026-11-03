@@ -40,6 +40,7 @@ void CTEEnergySplash::vfunc3(const Vector *pOrigin, const Vector *pAngles)
 // END FUNCTION
 
 // FUNCTION: 0x10061420 size=0x39
+#include "CRecipientFilter.h"
 #include "CTEEnergySplash.h"
 #include "CTEMetalSparks.h"
 #include "IVEngineServerFull.h"

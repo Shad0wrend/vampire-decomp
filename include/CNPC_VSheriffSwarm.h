@@ -1,6 +1,8 @@
 // CNPC_VSheriffSwarm: declared by pcdecomp transplant for 0x103b1c60 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CBaseEntity.h"
+#include "datamap.h"
 
 class CNPC_VSheriffSwarm : public CBaseEntity
 {

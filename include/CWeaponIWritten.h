@@ -1,6 +1,7 @@
 // CWeaponIWritten: declared by pcdecomp transplant for 0x1040b300 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CBaseEntity.h"
 
 #include "CWeaponIArmor.h"	// CWeaponIArmorOwner / CWeaponIArmorTarget
 

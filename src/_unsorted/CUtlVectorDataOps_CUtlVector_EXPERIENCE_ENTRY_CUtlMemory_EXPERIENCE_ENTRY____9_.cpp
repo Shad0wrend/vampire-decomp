@@ -121,6 +121,9 @@ void CUtlVectorDataOps<ExpVec, 9>::vfunc1(void *fieldInfo, void *pRestore)
 // END FUNCTION
 
 // FUNCTION: 0x10184970 size=0x10
+#include "EXPERIENCE_ENTRY.h"
+#include "utlmemory.h"
+#include "utlvector.h"
 #include "CUtlVectorDataOps.h"
 struct EXPERIENCE_ENTRY;
 struct thinkfunc_t;
@@ -137,6 +140,9 @@ template<> int CUtlVectorDataOps<CUtlVector<EXPERIENCE_ENTRY,CUtlMemory<EXPERIEN
 // END FUNCTION
 
 // FUNCTION: 0x10184990 size=0x13
+#include "EXPERIENCE_ENTRY.h"
+#include "utlmemory.h"
+#include "utlvector.h"
 #include "CUtlVectorDataOps.h"
 
 struct EXPERIENCE_ENTRY;

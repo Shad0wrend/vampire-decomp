@@ -38,6 +38,7 @@ void CTEFogRipple::vfunc3(const Vector *pOrigin, const Vector *pAngles)
 // END FUNCTION
 
 // FUNCTION: 0x100626d0 size=0x39
+#include "CRecipientFilter.h"
 #include "CTEFogRipple.h"
 #include "CTEMetalSparks.h"
 #include "IVEngineServerFull.h"

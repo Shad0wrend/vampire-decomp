@@ -108,6 +108,7 @@ void CWeaponPhysCannon::vfunc130(void *pArg)
 // END FUNCTION
 
 // FUNCTION: 0x1040db60 size=0x13
+#include "CBaseEntity.h"
 #include "CWeaponPhysCannon.h"
 
 #define VT(n) virtual void vt##n();

@@ -15,6 +15,7 @@ CMoveHelperServer *CMoveHelperServer::vfunc14(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x1013eec0 size=0xf
+#include "CBaseEntity.h"
 #include "CMoveHelperServer.h"
 
 // TARGET: CMoveHelperServer::sub_1013eec0
@@ -26,6 +27,15 @@ void CMoveHelperServer::sub_1013eec0(CBaseEntity *pHost)
 // END FUNCTION
 
 // FUNCTION: 0x1013eee0 size=0x139
+#include "CUnknown101cf0a0.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CBaseEntitySlots.h"
 #include "CGlobalEntityList.h"
@@ -86,6 +96,7 @@ void CMoveHelperServer::vfunc1()
 // END FUNCTION
 
 // FUNCTION: 0x1013f090 size=0x127
+#include "utlvector.h"
 #include "CMoveHelperServer.h"
 #include "Vector.h"
 
@@ -199,12 +210,14 @@ bool CMoveHelperServer::vfunc2(const void *pTrace, const float *pVelocity)
 // END FUNCTION
 
 // FUNCTION: 0x1013f720 size=0x3
+#include "CMoveHelperServer.h"
 void CMoveHelperServer::vfunc6(int a0, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11)
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x1013f740 size=0x6
+#include "CMoveHelperServer.h"
 namespace lifted {
 extern int g_10723944;
 }
@@ -215,6 +228,7 @@ int CMoveHelperServer::vfunc9()
 // END FUNCTION
 
 // FUNCTION: 0x1013f760 size=0x4c
+#include "CMoveHelperServer.h"
 #include <stdarg.h>
 
 extern int (__cdecl *g_109f387c)(char *pDest, int maxLen, const char *pFormat, va_list params);
@@ -276,12 +290,21 @@ bool CMoveHelperServer::vfunc7()
 // END FUNCTION
 
 // FUNCTION: 0x1013f930 size=0x3
+#include "CMoveHelperServer.h"
 void CMoveHelperServer::vfunc8(int a0)
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x1013f950 size=0x131
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CMoveHelperServer.h"
 #include "ScopeTrace.h"
 #include "ehandle.h"

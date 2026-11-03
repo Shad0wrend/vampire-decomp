@@ -1,6 +1,8 @@
 // CNPC_VZombie: declared by pcdecomp transplant for 0x103de4d0 from CNPC_Crow (0x10359240);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CBaseEntity.h"
+#include "datamap.h"
 
 #include "Vector.h"
 #include "CTakeDamageInfo.h"

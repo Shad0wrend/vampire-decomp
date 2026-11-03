@@ -1,6 +1,8 @@
 // CNPC_VGhoulCroucher: declared by pcdecomp transplant for 0x1037a950 from CNPC_Crow (0x10359240);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CBaseEntity.h"
+#include "datamap.h"
 
 #include "COutputEvent.h"
 

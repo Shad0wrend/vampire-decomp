@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10135150 size=0x6
+#include "datamap.h"
 #include "CLogicPythonCheck.h"
 namespace lifted {
 extern char g_10577394;

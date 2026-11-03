@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x100c9db0 size=0x6
+#include "datamap.h"
 #include "CMomentaryRotButton.h"
 namespace lifted {
 extern char g_1055c264;
@@ -13,6 +14,7 @@ datamap_t *CMomentaryRotButton::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x100ca0e0 size=0x1e
+#include "CBaseEntity.h"
 // TARGET: CMomentaryRotButton::vfunc117
 #include "CMomentaryRotButton.h"
 

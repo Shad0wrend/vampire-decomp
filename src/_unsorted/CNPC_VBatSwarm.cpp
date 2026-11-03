@@ -84,6 +84,7 @@ void CNPC_VBatSwarm::vfunc103()
 // END FUNCTION
 
 // FUNCTION: 0x103673b0 size=0x14
+#include "CAI_BaseNPC.h"
 #include "CNPC_VBatSwarm.h"
 
 // TARGET: CNPC_VBatSwarm::vfunc420

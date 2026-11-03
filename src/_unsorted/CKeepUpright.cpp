@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10029270 size=0x6
+#include "CKeepUpright.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_10537530;
 }
@@ -47,6 +49,8 @@ void CKeepUpright::vfunc103()
 // END FUNCTION
 
 // FUNCTION: 0x10029780 size=0xdc
+#include "CBaseEntity.h"
+#include "CKeepUpright.h"
 struct Handle_10029780
 {
 	unsigned int m_Index;

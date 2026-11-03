@@ -29,12 +29,14 @@ void CAI_Navigator::vfunc3(int a)
 // END FUNCTION
 
 // FUNCTION: 0x102eea30 size=0x3
+#include "CAI_Navigator.h"
 void CAI_Navigator::vfunc4(int a0)
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x102eea50 size=0x1
+#include "CAI_Navigator.h"
 void CAI_Navigator::vfunc6()
 {
 }
@@ -69,6 +71,7 @@ void CAI_Navigator::vfunc8()
 // END FUNCTION
 
 // FUNCTION: 0x102eeac0 size=0x10
+#include "CAI_Navigator.h"
 #include "vampire.h"
 
 // TARGET: CAI_Navigator::vfunc11
@@ -235,6 +238,14 @@ void CAI_Navigator::vfunc17(CAI_NavGoal *pGoal)
 // END FUNCTION
 
 // FUNCTION: 0x102efaa0 size=0x21a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CAI_Navigator.h"
 #include "ScopeTrace.h"
 #include "globalvars.h"

@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1039aea0 size=0x6
+#include "CNPC_VMingXiaoTentacle.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_106474f0;
 }
@@ -12,6 +14,7 @@ datamap_t *CNPC_VMingXiaoTentacle::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x1039b050 size=0x7
+#include "CNPC_VMingXiaoTentacle.h"
 namespace lifted {
 extern float g_1044c3a4;
 }
@@ -22,6 +25,7 @@ float CNPC_VMingXiaoTentacle::vfunc522()
 // END FUNCTION
 
 // FUNCTION: 0x1039b070 size=0x7
+#include "CNPC_VMingXiaoTentacle.h"
 namespace lifted {
 extern float g_104492a8;
 }
@@ -32,6 +36,7 @@ float CNPC_VMingXiaoTentacle::vfunc523()
 // END FUNCTION
 
 // FUNCTION: 0x1039b090 size=0x6
+#include "CNPC_VMingXiaoTentacle.h"
 namespace lifted {
 extern char g_1093bd38;
 }
@@ -42,6 +47,7 @@ int CNPC_VMingXiaoTentacle::vfunc580()
 // END FUNCTION
 
 // FUNCTION: 0x1039b0b0 size=0x6
+#include "CNPC_VMingXiaoTentacle.h"
 namespace lifted {
 extern int g_106477d8;
 }
@@ -113,6 +119,7 @@ void CNPC_VMingXiaoTentacle::vfunc103()
 // END FUNCTION
 
 // FUNCTION: 0x1039c440 size=0x6
+#include "CNPC_VMingXiaoTentacle.h"
 int CNPC_VMingXiaoTentacle::vfunc473()
 {
     return 0x81f;
@@ -120,6 +127,7 @@ int CNPC_VMingXiaoTentacle::vfunc473()
 // END FUNCTION
 
 // FUNCTION: 0x1039c460 size=0x6
+#include "CNPC_VMingXiaoTentacle.h"
 int CNPC_VMingXiaoTentacle::vfunc138()
 {
     return 4;
@@ -127,6 +135,7 @@ int CNPC_VMingXiaoTentacle::vfunc138()
 // END FUNCTION
 
 // FUNCTION: 0x1039de00 size=0xd
+#include "CNPC_VMingXiaoTentacle.h"
 struct TentacleField1b2c { char pad[0x1b2c]; int m; };
 int CNPC_VMingXiaoTentacle::vfunc437()
 {
@@ -153,6 +162,7 @@ int CNPC_VMingXiaoTentacle::vfunc440(int a)
 // END FUNCTION
 
 // FUNCTION: 0x1039e7e0 size=0x1
+#include "CNPC_VMingXiaoTentacle.h"
 void CNPC_VMingXiaoTentacle::vfunc434()
 {
 }
@@ -181,6 +191,7 @@ void CTentacleUnit::sub_1039e800(int arg)
 // END FUNCTION
 
 // FUNCTION: 0x1039e830 size=0x1d
+#include "CNPC_VMingXiaoTentacle.h"
 // TARGET: CNPC_VMingXiaoTentacle::vfunc22
 struct CUnk10397dd0
 {
@@ -217,6 +228,7 @@ void CNPC_VMingXiaoTentacle::vfunc23(int arg)
 // END FUNCTION
 
 // FUNCTION: 0x1039e8e0 size=0x5
+#include "CNPC_VMingXiaoTentacle.h"
 bool CNPC_VMingXiaoTentacle::vfunc366(int a0, int a1, int a2)
 {
     return 0;
@@ -283,6 +295,7 @@ void CNPC_VMingXiaoTentacle::vfunc601(int a)
 // END FUNCTION
 
 // FUNCTION: 0x1039eb10 size=0x3
+#include "CNPC_VMingXiaoTentacle.h"
 bool CNPC_VMingXiaoTentacle::vfunc602()
 {
     return 0;
@@ -290,6 +303,7 @@ bool CNPC_VMingXiaoTentacle::vfunc602()
 // END FUNCTION
 
 // FUNCTION: 0x1039eb30 size=0x3
+#include "CNPC_VMingXiaoTentacle.h"
 bool CNPC_VMingXiaoTentacle::vfunc70()
 {
     return 1;
@@ -311,6 +325,8 @@ bool CNPC_VMingXiaoTentacle::vfunc68(CBaseEntity *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x1039ebd0 size=0x2a
+#include "CBaseEntity.h"
+#include "CNPC_VMingXiaoTentacle.h"
 #include "CBaseEntitySlots.h"
 // TARGET: CNPC_VMingXiaoTentacle::vfunc166
 char CNPC_VMingXiaoTentacle::vfunc166(CBaseEntity *pEnt)
@@ -387,6 +403,7 @@ void *CNPC_VMingXiaoTentacle::vfunc408(int condition)
 // END FUNCTION
 
 // FUNCTION: 0x1039ed30 size=0x6
+#include "CNPC_VMingXiaoTentacle.h"
 int CNPC_VMingXiaoTentacle::vfunc409()
 {
     return 0x7a;
@@ -410,6 +427,7 @@ int CNPC_VMingXiaoTentacle::vfunc126(int a)
 // END FUNCTION
 
 // FUNCTION: 0x1039eda0 size=0x28
+#include "CNPC_VMingXiaoTentacle.h"
 void __cdecl sub_10015311(void *p, int mode);
 
 // TARGET: CNPC_VMingXiaoTentacle::vfunc127

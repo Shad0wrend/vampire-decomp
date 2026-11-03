@@ -2,6 +2,14 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10194780 size=0xfa
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree16.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
 // TARGET: ?NewNode@?$CUtlRBTree@HG@@QAEGXZ
 #include "utlrbtree.h"
 struct CRBTree12Entry_10194f30 { char data[4]; };	// the tree of its sentinel (one T per game instance)

@@ -21,6 +21,7 @@ int CVGuiScreen::vfunc81()
 // END FUNCTION
 
 // FUNCTION: 0x10231c10 size=0x6
+#include "datamap.h"
 #include "CVGuiScreen.h"
 namespace lifted {
 extern char g_105b5c40;

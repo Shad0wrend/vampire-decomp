@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10190040 size=0x6
+#include "CDynamicProp.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_1058d4f8;
 }
@@ -12,6 +14,7 @@ datamap_t *CDynamicProp::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x10190340 size=0x6
+#include "CDynamicProp.h"
 namespace lifted {
 extern char g_1072b040;
 }
@@ -22,6 +25,7 @@ int CDynamicProp::vfunc80()
 // END FUNCTION
 
 // FUNCTION: 0x10190360 size=0x3
+#include "CDynamicProp.h"
 int CDynamicProp::vfunc81()
 {
     return 0;
@@ -29,6 +33,7 @@ int CDynamicProp::vfunc81()
 // END FUNCTION
 
 // FUNCTION: 0x10190560 size=0x57
+#include "CDynamicProp.h"
 void sub_100aa7b0(void *);
 CDynamicProp *CDynamicProp::vfunc5(unsigned int flags)
 {
@@ -45,6 +50,7 @@ CDynamicProp *CDynamicProp::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x101905e0 size=0xa6
+#include "CBaseEntity.h"
 #include "CDynamicProp.h"
 #include "CBreakableProp.h"
 #include "CUnknown101466e0.h"

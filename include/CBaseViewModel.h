@@ -1,6 +1,8 @@
 // CBaseViewModel: declared by pcdecomp transplant for 0x1042b830 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CBaseEntity.h"
+#include "datamap.h"
 
 struct CViewModelPlayer	// the object at +0xa8 of the viewmodel's owner entity (the controlling player)
 {

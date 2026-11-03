@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x101cc520 size=0xc0
+#include "CBaseEntity.h"
 #include "utlvector.h"
 #include "CUtlVectorDataOps.h"
 #include "CBaseHandle.h"
@@ -64,6 +65,9 @@ void CUtlVectorDataOps<HandleVec, 12>::vfunc0(void *fieldInfo, void *pSave)
 // END FUNCTION
 
 // FUNCTION: 0x101cc740 size=0x10
+#include "CBaseEntity.h"
+#include "utlmemory.h"
+#include "utlvector.h"
 #include "CUtlVectorDataOps.h"
 struct thinkfunc_t;
 
@@ -79,6 +83,9 @@ template<> int CUtlVectorDataOps<CUtlVector<CHandle<CBaseEntity>,CUtlMemory<CHan
 // END FUNCTION
 
 // FUNCTION: 0x101cc760 size=0x13
+#include "CBaseEntity.h"
+#include "utlmemory.h"
+#include "utlvector.h"
 #include "CUtlVectorDataOps.h"
 
 template <class T> class CHandle;

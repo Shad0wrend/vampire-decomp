@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1013ff10 size=0x6
+#include "datamap.h"
 #include "CPathKeyFrame.h"
 namespace lifted {
 extern char g_1057a308;

@@ -10,6 +10,7 @@ bool CFuncMoveLinear::vfunc128()
 // END FUNCTION
 
 // FUNCTION: 0x10115cc0 size=0x6
+#include "datamap.h"
 #include "CFuncMoveLinear.h"
 namespace lifted {
 extern char g_10570868;
@@ -53,6 +54,7 @@ bool CFuncMoveLinear::vfunc223()
 // END FUNCTION
 
 // FUNCTION: 0x10116550 size=0x8
+#include "CBaseEntity.h"
 #include "CFuncMoveLinear.h"
 // TARGET: CFuncMoveLinear::sub_10116550
 unsigned char CFuncMoveLinear::sub_10116550()

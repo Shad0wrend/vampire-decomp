@@ -1,6 +1,7 @@
 // CPropMover: declared by pcdecomp transplant for 0x101928c0 from CSimplePhysicsProp (0x1004fe80);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CBaseEntity.h"
 
 class CPropMover : public CBaseEntity
 {

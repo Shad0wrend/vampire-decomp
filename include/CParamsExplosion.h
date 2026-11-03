@@ -1,6 +1,8 @@
 // CParamsExplosion: declared by pcdecomp transplant for 0x10104370 from CLogicalEntity (0x1002b100);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CBaseEntity.h"
+#include "datamap.h"
 
 class CParamsExplosion : public CBaseEntity
 {

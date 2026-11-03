@@ -66,6 +66,7 @@ void CUtlVectorDataOps<CAI_InterestTarget, 9>::vfunc0(void *fieldInfo, void *pSa
 // END FUNCTION
 
 // FUNCTION: 0x102e2ac0 size=0x10
+#include "CAI_InterestTarget.h"
 #include "CUtlVectorDataOps.h"
 struct thinkfunc_t;
 

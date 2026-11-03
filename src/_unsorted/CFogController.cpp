@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1034e490 size=0x6
+#include "datamap.h"
 #include "CFogController.h"
 namespace lifted {
 extern char g_10625e58;

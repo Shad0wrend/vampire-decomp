@@ -225,6 +225,7 @@ void CEffectsServer::vfunc6(const float *pOrigin, int a)
 // END FUNCTION
 
 // FUNCTION: 0x100f64d0 size=0xd8
+#include "CBaseEntity.h"
 #include "CEffectsServer.h"
 #include "CPVSFilter.h"
 #include "CUnknown1019d130.h"
@@ -293,10 +294,12 @@ void CEffectsServer::vfunc8(const float *pOrigin, int a)
 // END FUNCTION
 
 // FUNCTION: 0x100f6710 size=0x9
+#include "CEffectsServer.h"
 float CEffectsServer::vfunc9() { return gpGlobals->curtime; }
 // END FUNCTION
 
 // FUNCTION: 0x100f6730 size=0x3
+#include "CEffectsServer.h"
 bool CEffectsServer::vfunc10()
 {
     return 1;

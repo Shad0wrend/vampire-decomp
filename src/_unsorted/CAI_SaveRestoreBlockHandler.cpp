@@ -13,6 +13,7 @@ int CAI_SaveRestoreBlockHandler::vfunc0()
 // END FUNCTION
 
 // FUNCTION: 0x1030bfd0 size=0x163
+#include "CSave.h"
 #include "CAI_SaveRestoreBlockHandler.h"
 #include "CUnknown102652d0.h"
 

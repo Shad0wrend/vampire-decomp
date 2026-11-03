@@ -42,6 +42,7 @@ void CTEDynamicLight::vfunc3(const Vector &origin, const QAngle &angles)
 // END FUNCTION
 
 // FUNCTION: 0x10060d60 size=0x39
+#include "CRecipientFilter.h"
 #include "CTEDynamicLight.h"
 #include "CTEMetalSparks.h"
 #include "IVEngineServerFull.h"

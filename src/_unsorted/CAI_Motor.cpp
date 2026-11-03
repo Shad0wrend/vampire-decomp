@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x102623e0 size=0x9
+#include "CAI_Motor.h"
 extern float g_104492dc;
 float CAI_Motor::vfunc11(int a) { return g_104492dc; }
 // END FUNCTION
@@ -191,6 +192,7 @@ float CAI_Motor::vfunc16()
 // END FUNCTION
 
 // FUNCTION: 0x102e1420 size=0x1
+#include "CAI_Motor.h"
 void CAI_Motor::vfunc9()
 {
 }
@@ -213,6 +215,7 @@ int CAI_Motor::vfunc10()
 // END FUNCTION
 
 // FUNCTION: 0x102e2150 size=0x20
+#include "CBaseEntity.h"
 #include "CAI_Motor.h"
 
 class CUnknown102d9040
@@ -229,6 +232,7 @@ void CAI_Motor::vfunc12(CBaseEntity *pEnt, const char *pszName, float a, float b
 // END FUNCTION
 
 // FUNCTION: 0x102e2180 size=0x1a6
+#include "utlrbtree.h"
 #include "CAI_Motor.h"
 #include "CEntityVSlots.h"
 #include "globalvars.h"

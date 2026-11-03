@@ -1,5 +1,6 @@
 // CSoundscapeSystem: soundscape game system (base chain simplified). Only what decompiled code needs.
 #pragma once
+#include "CAnchorList.h"
 
 struct CSoundscapeSystemMember8
 {

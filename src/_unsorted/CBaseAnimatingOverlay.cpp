@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10097ce0 size=0x6
+#include "datamap.h"
 #include "CBaseAnimatingOverlay.h"
 namespace lifted {
 extern char g_105509f8;

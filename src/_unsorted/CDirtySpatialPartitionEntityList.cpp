@@ -48,6 +48,7 @@ bool __fastcall sub_100dbbe0(char *p)
 // END FUNCTION
 
 // FUNCTION: 0x100dbd50 size=0x8
+#include "CDirtySpatialPartitionEntityList.h"
 // TARGET: CDirtySpatialPartitionEntityList::vfunc5
 void CDirtySpatialPartitionEntityList::vfunc5()
 {

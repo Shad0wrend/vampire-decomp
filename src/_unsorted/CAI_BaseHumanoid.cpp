@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1025e450 size=0x6
+#include "CAI_BaseHumanoid.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_105c8b78;
 }
@@ -23,6 +25,7 @@ float CAI_BaseHumanoid::vfunc250(float a)
 // END FUNCTION
 
 // FUNCTION: 0x1025e510 size=0x1e5
+#include "CAI_BaseHumanoid.h"
 void CAI_BaseHumanoid::vfunc105(void *p)
 {
     sub_1000245f(p);
@@ -56,6 +59,7 @@ void CAI_BaseHumanoid::vfunc105(void *p)
 // END FUNCTION
 
 // FUNCTION: 0x1025e780 size=0x13
+#include "CAI_BaseHumanoid.h"
 #include "CBaseFlex.h"
 
 // TARGET: CAI_BaseHumanoid::vfunc277
@@ -199,6 +203,7 @@ Vector CAI_BaseHumanoid::vfunc371()
 // END FUNCTION
 
 // FUNCTION: 0x1025f1a0 size=0xe
+#include "CAI_BaseHumanoid.h"
 bool CAI_BaseHumanoid::vfunc586()
 {
 	return m_unk5f94 != 0;
@@ -206,6 +211,9 @@ bool CAI_BaseHumanoid::vfunc586()
 // END FUNCTION
 
 // FUNCTION: 0x1025f760 size=0x125
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
 #include "CAI_BaseHumanoid.h"
 #include "CBaseEntity.h"
 #include "CUtlVector36.h"
@@ -385,6 +393,9 @@ CAI_BaseHumanoid *CAI_BaseHumanoid::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x10260f40 size=0x3a
+#include "CAI_BaseHumanoid.h"
+#include "CAI_HumanoidMotor.h"
+#include "CAI_Motor.h"
 extern char vt_1049939c[];
 extern char vt_10499370[];
 

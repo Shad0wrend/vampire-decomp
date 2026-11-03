@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1002a3d0 size=0x6
+#include "datamap.h"
 #include "CPhysConstraint.h"
 namespace lifted {
 extern char g_10538b88;
@@ -55,6 +56,7 @@ void CPhysConstraint::vfunc113()
 // END FUNCTION
 
 // FUNCTION: 0x1002b680 size=0x5d
+#include "QAngle.h"
 #include "CPhysConstraint.h"
 #include "Vector.h"
 

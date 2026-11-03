@@ -1,6 +1,9 @@
 // CBeam: declared by pcdecomp transplant for 0x100bad80 from CLogicalEntity (0x1002b100);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CBaseEntity.h"
+#include "datamap.h"
+#include "inputdata_t.h"
 #include "CGlobalEntityList.h"
 
 struct CGameTrace;

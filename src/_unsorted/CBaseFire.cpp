@@ -17,6 +17,7 @@ CBaseFire *CBaseFire::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x10056fa0 size=0x17
+#include "CBaseFire.h"
 void CBaseFire::sub_10056fa0(int a, int b)
 {
 	m_field454 = a;

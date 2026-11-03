@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10042940 size=0x8b
+#include "utlrbtree.h"
 #include "utlvector.h"
 #include "CEntityDataInstantiator.h"
 

@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10070a80 size=0x6
+#include "CCameraAnimated.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_10546654;
 }
@@ -12,6 +14,7 @@ datamap_t *CCameraAnimated::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x10071000 size=0x6
+#include "CCameraAnimated.h"
 namespace lifted {
 extern char g_106c7f88;
 }
@@ -22,6 +25,7 @@ int CCameraAnimated::vfunc80()
 // END FUNCTION
 
 // FUNCTION: 0x10071020 size=0x3
+#include "CCameraAnimated.h"
 int CCameraAnimated::vfunc81()
 {
     return 0;
@@ -29,6 +33,7 @@ int CCameraAnimated::vfunc81()
 // END FUNCTION
 
 // FUNCTION: 0x100712b0 size=0x52
+#include "CCameraAnimated.h"
 void sub_100aa7b0(void *p);
 
 CCameraAnimated *CCameraAnimated::vfunc5(unsigned char flags)

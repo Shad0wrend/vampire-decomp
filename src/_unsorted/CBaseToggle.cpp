@@ -21,6 +21,7 @@ float CBaseToggle::vfunc152()
 // END FUNCTION
 
 // FUNCTION: 0x101c0c60 size=0x6
+#include "datamap.h"
 #include "CBaseToggle.h"
 namespace lifted {
 extern char g_1059b6f0;

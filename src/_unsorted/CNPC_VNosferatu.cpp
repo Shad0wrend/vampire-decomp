@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x103a14a0 size=0x6
+#include "CNPC_VNosferatu.h"
 // TARGET: CNPC_VNosferatu::vfunc580
 extern char g_1093bee8;
 

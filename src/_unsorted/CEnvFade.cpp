@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10100e90 size=0x6
+#include "datamap.h"
 #include "CEnvFade.h"
 namespace lifted {
 extern char g_10568c10;

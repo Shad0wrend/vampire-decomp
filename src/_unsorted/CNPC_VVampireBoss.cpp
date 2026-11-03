@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1035c190 size=0x5
+#include "CNPC_VVampireBoss.h"
 bool CNPC_VVampireBoss::vfunc378(int a0, int a1)
 {
     return 0;
@@ -9,6 +10,7 @@ bool CNPC_VVampireBoss::vfunc378(int a0, int a1)
 // END FUNCTION
 
 // FUNCTION: 0x1035c1b0 size=0x6
+#include "CNPC_VVampireBoss.h"
 namespace lifted {
 extern char g_1093d330;
 }
@@ -19,6 +21,7 @@ int CNPC_VVampireBoss::vfunc580()
 // END FUNCTION
 
 // FUNCTION: 0x1035c1d0 size=0x6
+#include "CNPC_VVampireBoss.h"
 namespace lifted {
 extern int g_1065e6cc;
 }
@@ -53,6 +56,8 @@ CNPC_VVampireBoss *CNPC_VVampireBoss::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x103c5060 size=0x6
+#include "CNPC_VVampireBoss.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_1065e418;
 }
@@ -81,6 +86,14 @@ int CNPC_VVampireBoss::vfunc546(int x)
 // END FUNCTION
 
 // FUNCTION: 0x103c5840 size=0x91
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VVampireBoss.h"
 #include "ScopeTrace.h"
 
@@ -121,6 +134,14 @@ int CNPC_VVampireBoss::vfunc127(int a)
 // END FUNCTION
 
 // FUNCTION: 0x103c5f40 size=0x7b
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VVampireBoss.h"
 #include "ScopeTrace.h"
 void CNPC_VVampireBoss::vfunc444(int *pTask)
@@ -134,6 +155,7 @@ void CNPC_VVampireBoss::vfunc444(int *pTask)
 // END FUNCTION
 
 // FUNCTION: 0x103c5fe0 size=0xe
+#include "CNPC_VVampireBoss.h"
 bool CNPC_VVampireBoss::vfunc525(int unused)
 {
 	return m_bFlag6498 ? true : false;

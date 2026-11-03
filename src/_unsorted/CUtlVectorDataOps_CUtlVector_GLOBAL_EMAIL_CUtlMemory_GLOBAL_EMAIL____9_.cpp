@@ -128,6 +128,9 @@ void CUtlVectorDataOps<EmailVec, 9>::vfunc1(void *fieldInfo, void *pRestore)
 // END FUNCTION
 
 // FUNCTION: 0x10184e50 size=0x10
+#include "CGlobalEmailRec.h"
+#include "utlmemory.h"
+#include "utlvector.h"
 #include "CUtlVectorDataOps.h"
 struct GLOBAL_EMAIL;
 struct thinkfunc_t;
@@ -144,6 +147,9 @@ template<> int CUtlVectorDataOps<CUtlVector<GLOBAL_EMAIL,CUtlMemory<GLOBAL_EMAIL
 // END FUNCTION
 
 // FUNCTION: 0x10184e70 size=0x13
+#include "CGlobalEmailRec.h"
+#include "utlmemory.h"
+#include "utlvector.h"
 #include "CUtlVectorDataOps.h"
 
 struct GLOBAL_EMAIL;

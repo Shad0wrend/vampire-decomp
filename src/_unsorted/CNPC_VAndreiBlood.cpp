@@ -87,6 +87,14 @@ void CNPC_VAndreiBlood::vfunc104()
 // END FUNCTION
 
 // FUNCTION: 0x1035cc20 size=0xb0
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VAndreiBlood.h"
 #include "ScopeTrace.h"
 
@@ -153,6 +161,14 @@ int CNPC_VAndreiBlood::vfunc127(int arg)
 // END FUNCTION
 
 // FUNCTION: 0x1035d010 size=0xda
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CNPC_VAndreiBlood.h"
 
@@ -195,6 +211,14 @@ void CNPC_VAndreiBlood::vfunc433()
 // END FUNCTION
 
 // FUNCTION: 0x1035d8b0 size=0x1cc
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VAndreiBlood.h"
 #include "ScopeTrace.h"
 
@@ -256,6 +280,14 @@ bool CNPC_VAndreiBlood::vfunc566(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x1035db20 size=0x5a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CNPC_VAndreiBlood.h"
 #include "CNPC_VVampireBoss.h"
@@ -292,6 +324,17 @@ void CNPC_VAndreiBlood::vfunc619(int arg)
 // END FUNCTION
 
 // FUNCTION: 0x1035e6d0 size=0x1c4
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CNPC_VAndreiBlood.h"
 #include "ScopeTrace.h"
 #include "CVDmg_t.h"

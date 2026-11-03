@@ -121,6 +121,9 @@ void CUtlVectorDataOps<MapAccessVec, 9>::vfunc1(void *fieldInfo, void *pRestore)
 // END FUNCTION
 
 // FUNCTION: 0x10184be0 size=0x10
+#include "MAP_ACCESS.h"
+#include "utlmemory.h"
+#include "utlvector.h"
 #include "CUtlVectorDataOps.h"
 struct MAP_ACCESS;
 struct thinkfunc_t;
@@ -137,6 +140,8 @@ template<> int CUtlVectorDataOps<CUtlVector<MAP_ACCESS,CUtlMemory<MAP_ACCESS> >,
 // END FUNCTION
 
 // FUNCTION: 0x10184c00 size=0x13
+#include "utlmemory.h"
+#include "utlvector.h"
 #include "CUtlVectorDataOps.h"
 #include "MAP_ACCESS.h"
 

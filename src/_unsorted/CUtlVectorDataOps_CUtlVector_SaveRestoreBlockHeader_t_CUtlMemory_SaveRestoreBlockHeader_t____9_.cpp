@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x101a5330 size=0xc4
+#include "vampire_all.h"
 #include "utlvector.h"
 #include "CUtlVectorDataOps.h"
 #include "SaveRestoreFieldInfo_t.h"
@@ -57,6 +58,7 @@ void CUtlVectorDataOps<BlockHeaderVec, 9>::vfunc0(void *fieldInfo, void *pSave)
 // END FUNCTION
 
 // FUNCTION: 0x101a5440 size=0xc4
+#include "vampire_all.h"
 #include "utlvector.h"
 #include "CUtlVectorDataOps.h"
 #include "SaveRestoreFieldInfo_t.h"
@@ -119,6 +121,8 @@ void CUtlVectorDataOps<BlockHeaderVec, 9>::vfunc1(void *fieldInfo, void *pRestor
 // END FUNCTION
 
 // FUNCTION: 0x101a5550 size=0x10
+#include "utlmemory.h"
+#include "utlvector.h"
 #include "CUtlVectorDataOps.h"
 struct SaveRestoreBlockHeader_t;
 struct thinkfunc_t;
@@ -135,6 +139,7 @@ template<> int CUtlVectorDataOps<CUtlVector<SaveRestoreBlockHeader_t,CUtlMemory<
 // END FUNCTION
 
 // FUNCTION: 0x101a5570 size=0x13
+#include "vampire_all.h"
 #include "CUtlVectorDataOps.h"
 #include "SaveRestoreBlockHeader_t.h"
 

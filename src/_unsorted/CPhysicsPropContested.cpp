@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x101929d0 size=0x6
+#include "datamap.h"
 #include "CPhysicsPropContested.h"
 namespace lifted {
 extern char g_1058da80;
@@ -31,6 +32,9 @@ void CPhysicsPropContested::vfunc103()
 // END FUNCTION
 
 // FUNCTION: 0x10192e60 size=0xeb
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CPhysicsPropContested.h"
 #include "CEntityVSlots.h"
 #include "CVStatList_t.h"
@@ -68,6 +72,9 @@ void CPhysicsPropContested::vfunc39(CBaseEntity *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x10192f90 size=0xde
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CPhysicsPropContested.h"
 #include "CVStatList_t.h"
 

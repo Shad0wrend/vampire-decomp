@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10190b80 size=0x6
+#include "datamap.h"
 #include "COrnamentProp.h"
 namespace lifted {
 extern char g_1058d75c;

@@ -2,6 +2,9 @@
 #include "vampire.h"
 
 // FUNCTION: 0x103788d0 size=0x107
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CNPC_VGargoyle.h"
 #include "CAI_BaseNPC.h"
 #include "CEntityVSlots.h"

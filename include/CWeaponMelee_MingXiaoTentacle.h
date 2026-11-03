@@ -1,6 +1,7 @@
 // CWeaponMelee_MingXiaoTentacle: declared by pcdecomp transplant for 0x103ec8e0 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CBaseEntity.h"
 
 #include "CBaseCombatWeapon.h"
 

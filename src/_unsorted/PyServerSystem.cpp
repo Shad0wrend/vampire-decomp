@@ -74,6 +74,14 @@ void sub_1019a490()
 // END FUNCTION
 
 // FUNCTION: 0x1019a4e0 size=0x307
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include <string.h>
 #include "PyServerSystem.h"
 #include "ScopeTrace.h"

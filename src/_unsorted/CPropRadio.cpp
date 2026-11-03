@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1022bba0 size=0x6
+#include "datamap.h"
 #include "CPropRadio.h"
 namespace lifted {
 extern char g_105b41b0;
@@ -33,6 +34,15 @@ CPropRadio *CPropRadio::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x1022bf10 size=0x161
+#include "CEntryX.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CPropRadio.h"
 #include "CUnknown1073dc00.h"
 #include "ScopeTrace.h"

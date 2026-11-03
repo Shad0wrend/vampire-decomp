@@ -1,6 +1,9 @@
 // CNPC_VMingXiao: declared by pcdecomp transplant for 0x10391390 from CNPC_Crow (0x10359240);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CBaseEntity.h"
+#include "Vector.h"
+#include "datamap.h"
 
 #include "CTakeDamageInfo.h"
 

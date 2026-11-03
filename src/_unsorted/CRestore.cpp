@@ -26,6 +26,7 @@ CRestore::CRestore(void *pData) : m_pData(pData), m_pData2(pData ? (char *)pData
 // END FUNCTION
 
 // FUNCTION: 0x101a1360 size=0x13
+#include "CBaseEntity.h"
 #include "CRestore.h"
 namespace lifted {
 int __stdcall sub_10004f70(int, int, int);
@@ -48,6 +49,7 @@ int CRestore::vfunc10()
 // END FUNCTION
 
 // FUNCTION: 0x101a13c0 size=0x4
+#include "CRestore.h"
 // TARGET: sub_101a13c0
 char __fastcall sub_101a13c0(CRestore *p) { return ((unsigned char *)p)[0x24]; }
 // END FUNCTION
@@ -364,6 +366,7 @@ int CRestore::vfunc23(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x101a2460 size=0x96
+#include "CBaseEntity.h"
 #include "CRestore.h"
 #include <string.h>
 

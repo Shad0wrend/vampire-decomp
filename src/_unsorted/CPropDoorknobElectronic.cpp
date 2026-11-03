@@ -13,6 +13,7 @@ CPropDoorknobElectronic::CPropDoorknobElectronic()
 // END FUNCTION
 
 // FUNCTION: 0x10226240 size=0x8
+#include "CPropDoorknobElectronic.h"
 // TARGET: CPropDoorknobElectronic::sub_10226240
 unsigned char CPropDoorknobElectronic::sub_10226240()
 {

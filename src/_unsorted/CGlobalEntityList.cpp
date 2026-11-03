@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x100f8660 size=0x56
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 void CGlobalEntityList::vfunc0(CGlobalEntityList_Ent *pEnt, unsigned int handle)
 {
@@ -16,5 +17,6 @@ void CGlobalEntityList::vfunc0(CGlobalEntityList_Ent *pEnt, unsigned int handle)
 // END FUNCTION
 
 // FUNCTION: 0x100f86e0 size=0x9
+#include "CGlobalEntityList.h"
 void CGlobalEntityList::vfunc1(int a, int b) { m_iNumEnts--; }
 // END FUNCTION

@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x101aa5d0 size=0xf
+#include "CAI_BaseNPCTroika.h"
 int CAI_BaseNPCTroika::vfunc586(int a0)
 {
     *(int *)((char *)a0) = *(int *)((char *)this + 0x6088);
@@ -45,6 +46,7 @@ float sub_101aa670()
 // END FUNCTION
 
 // FUNCTION: 0x101aa690 size=0x3
+#include "CAI_BaseNPCTroika.h"
 bool CAI_BaseNPCTroika::vfunc591()
 {
     return 1;
@@ -87,6 +89,7 @@ float __fastcall sub_101aa730(int p)
 // END FUNCTION
 
 // FUNCTION: 0x101aa750 size=0xd
+#include "CAI_BaseNPCTroika.h"
 struct TroikaField63f0 { char pad[0x63f0]; char m; };
 void CAI_BaseNPCTroika::vfunc416(char value)
 {
@@ -102,6 +105,7 @@ char __fastcall sub_101aa770(int p)
 // END FUNCTION
 
 // FUNCTION: 0x101aa790 size=0x6
+#include "CAI_BaseNPCTroika.h"
 namespace lifted {
 extern char g_10924248;
 }
@@ -112,6 +116,7 @@ CAI_CondOwner * CAI_BaseNPCTroika::vfunc580()
 // END FUNCTION
 
 // FUNCTION: 0x101aa7b0 size=0x6
+#include "CAI_BaseNPCTroika.h"
 namespace lifted {
 extern int g_105d1060;
 }
@@ -163,6 +168,9 @@ void CAI_BaseNPCTroika::vfunc180()
 // END FUNCTION
 
 // FUNCTION: 0x1028d860 size=0x50
+#include "CAI_BaseNPC.h"
+#include "CAI_BaseNPCTroika.h"
+#include "Vector.h"
 #define V100(p) CAI_NPC_V10(p##0) CAI_NPC_V10(p##1) CAI_NPC_V10(p##2) CAI_NPC_V10(p##3) CAI_NPC_V10(p##4) CAI_NPC_V10(p##5) CAI_NPC_V10(p##6) CAI_NPC_V10(p##7) CAI_NPC_V10(p##8) CAI_NPC_V10(p##9)
 struct CTroikaSlot614 {
 	V100(0) V100(1) V100(2) V100(3) V100(4) V100(5)
@@ -181,6 +189,7 @@ void CAI_BaseNPCTroika::sub_1028d860(const Vector *pPos)
 // END FUNCTION
 
 // FUNCTION: 0x1028d910 size=0x58
+#include "CAI_BaseNPCTroika.h"
 #define V(n) virtual void v##n();
 #define V10(p) V(p##0) V(p##1) V(p##2) V(p##3) V(p##4) V(p##5) V(p##6) V(p##7) V(p##8) V(p##9)
 #define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
@@ -253,6 +262,7 @@ void CAI_BaseNPCTroika::vfunc17(const char *pszFormat, int arg)
 // END FUNCTION
 
 // FUNCTION: 0x1028df30 size=0x59
+#include "CAI_BaseNPCTroika.h"
 #include "CUnknown1027ef20.h"
 extern char g_10920534;
 __declspec(dllimport) void DevMsg(const char *fmt, ...);
@@ -275,6 +285,7 @@ void CAI_BaseNPCTroika::vfunc20(const char *pszMessage)
 // END FUNCTION
 
 // FUNCTION: 0x1028dfb0 size=0x58
+#include "CAI_BaseNPCTroika.h"
 extern char g_10920534;
 extern "C" __declspec(dllimport) char *Q_strncpy(char *dest, const char *src, int maxLen);
 __declspec(dllimport) void DevMsg(const char *fmt, ...);
@@ -330,6 +341,14 @@ char CAI_BaseNPCTroika::vfunc587(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x1028fcc0 size=0x8d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CAI_BaseNPCTroika.h"
 
@@ -735,6 +754,9 @@ void CAI_BaseNPCTroika::vfunc493()
 // END FUNCTION
 
 // FUNCTION: 0x10294590 size=0x93
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CAI_BaseNPCTroika.h"
 extern char g_106b8540[];
 extern "C" int __cdecl _strcmpi(const char *, const char *);
@@ -1314,6 +1336,7 @@ bool CAI_BaseNPCTroika::vfunc564()
 // END FUNCTION
 
 // FUNCTION: 0x102953e0 size=0x59
+#include "CAI_BaseNPCTroika.h"
 // TARGET: CAI_BaseNPCTroika::vfunc592
 bool CAI_BaseNPCTroika::vfunc592()
 {
@@ -1386,6 +1409,7 @@ translated:
 // END FUNCTION
 
 // FUNCTION: 0x10295a60 size=0x3
+#include "CAI_BaseNPCTroika.h"
 void CAI_BaseNPCTroika::vfunc465(int a0)
 {
 }
@@ -1482,6 +1506,8 @@ int sub_10299d80(void)
 // END FUNCTION
 
 // FUNCTION: 0x10299da0 size=0x21d
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseEntity.h"
 struct Troika404View { char pad[0x98]; CAI_BaseNPCTroika *p98; CAI_BaseNPCTroika *p9c; };
 
 int CAI_BaseNPCTroika::vfunc404(CBaseEntity *pOther)
@@ -1537,6 +1563,7 @@ char CAI_BaseNPCTroika::sub_1029a050()
 // END FUNCTION
 
 // FUNCTION: 0x1029a070 size=0x30
+#include "CAI_BaseNPCTroika.h"
 int CAI_BaseNPCTroika::vfunc593()
 {
     *(int *)((char *)this + 0x655c) = 0x3dcccccd;
@@ -1549,6 +1576,8 @@ int CAI_BaseNPCTroika::vfunc593()
 // END FUNCTION
 
 // FUNCTION: 0x1029a8b0 size=0x51
+#include "CAI_BaseNPC.h"
+#include "CAI_BaseNPCTroika.h"
 extern char g_106b8540[];
 void sub_1000f4e8();
 float __fastcall sub_10293a80(CAI_BaseNPCTroika *p);
@@ -2097,6 +2126,12 @@ void CAI_BaseNPCTroikaCallee::sub_102b39a0(int arg)
 // END FUNCTION
 
 // FUNCTION: 0x102b39e0 size=0x2e4
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
 #include "CAI_BaseNPCTroika.h"
 #include "CAI_Senses.h"
 #include "CEHandleGet.h"
@@ -2140,6 +2175,12 @@ void CAI_BaseNPCTroika::vfunc470()
 // END FUNCTION
 
 // FUNCTION: 0x102b3e00 size=0x1e5
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
 #include "CAI_BaseNPCTroika.h"
 #include "CUnknown100290c0.h"
 #include "CDevFlagObj.h"
@@ -2309,6 +2350,8 @@ bool CAI_BaseNPCTroika::vfunc201(CBaseEntity *pEnt, int a, int *pOut, int d)
 // END FUNCTION
 
 // FUNCTION: 0x102b4ab0 size=0x104
+#include "CAI_BaseNPC.h"
+#include "CAI_BaseNPCTroika.h"
 #include "CEntityVSlots.h"
 
 struct CTroikaHint533
@@ -2386,6 +2429,7 @@ void CAI_BaseNPCTroika::vfunc487()
 // END FUNCTION
 
 // FUNCTION: 0x102b4fb0 size=0x14
+#include "CAI_BaseNPCTroika.h"
 namespace lifted {
 struct C10005849 { int sub_10005849(int, int, int); };
 }
@@ -2429,6 +2473,8 @@ void CAI_BaseNPCTroika::vfunc55(int, int, int, int, int, int, int)
 // END FUNCTION
 
 // FUNCTION: 0x102b5120 size=0x53
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseEntity.h"
 void CAI_BaseNPCTroika::vfunc56(CBaseEntity *pEnt, int b, int c, int d, int e, int f, int g, int h)
 {
     if (pEnt && pEnt->m_field200) {
@@ -2502,6 +2548,8 @@ void Helper::sub_102b5260(void *pNPC)
 // END FUNCTION
 
 // FUNCTION: 0x102b5360 size=0x4b
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseEntity.h"
 CBaseEntity *CAI_BaseNPCTroika::vfunc168()
 {
 	CBaseEntity *pEnt = (CBaseEntity *)vfunc167();
@@ -2840,6 +2888,7 @@ void CAI_BaseNPCTroika::vfunc144(int a)
 // END FUNCTION
 
 // FUNCTION: 0x102bf4a0 size=0x50
+#include "CAI_BaseNPCTroika.h"
 #include "CBaseCombatWeapon.h"
 bool CAI_BaseNPCTroika::vfunc575()
 {
@@ -2876,6 +2925,7 @@ float CAI_BaseNPCTroika::vfunc418(float a)
 // END FUNCTION
 
 // FUNCTION: 0x102bff20 size=0xb6
+#include "CAI_BaseNPCTroika.h"
 #include "CEHandleGet.h"
 #include "CUnknown1070b244.h"
 
@@ -2910,6 +2960,7 @@ void CAI_BaseNPCTroika::vfunc333(float flInterval)
 // END FUNCTION
 
 // FUNCTION: 0x102c04b0 size=0x4e
+#include "CAI_BaseNPCTroika.h"
 #include "CEHandleGet.h"
 // TARGET: CAI_BaseNPCTroika::vfunc612
 int CAI_BaseNPCTroika::vfunc612()
@@ -2935,6 +2986,7 @@ bool __fastcall sub_102c0b60(void *self)
 // END FUNCTION
 
 // FUNCTION: 0x102c12a0 size=0x10b
+#include "CAI_BaseNPCTroika.h"
 #include "CUnknown100ecee0.h"
 
 extern CUnknown100ecee0 g_10924980;
@@ -3031,6 +3083,7 @@ void CAI_BaseNPCTroika::vfunc77()
 // END FUNCTION
 
 // FUNCTION: 0x102c1ec0 size=0x255
+#include "CAI_BaseNPCTroika.h"
 #include "CEHandleGet.h"
 #include "CBaseCombatCharacter.h"
 #include "CNPCSlots614.h"
@@ -3163,6 +3216,11 @@ bool CAI_BaseNPCTroika::vfunc295(CBaseCombatCharacter *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x102c2ec0 size=0x33e
+#include "CAI_BaseNPCTroika.h"
+#include "CVStatList_t.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 void CAI_BaseNPCTroika::vfunc589(int stat, int target)
 {
 	CVStatListSet *pSet = CVStatListSet::Of(this);
@@ -3220,6 +3278,8 @@ done:
 // END FUNCTION
 
 // FUNCTION: 0x102c4a60 size=0x4d
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseCombatCharacter.h"
 // TARGET: CAI_BaseNPCTroika::vfunc342
 char CAI_BaseNPCTroika::vfunc342(int pEnt)
 {

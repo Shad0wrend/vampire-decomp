@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x102eeae0 size=0x4b
+#include "CAI_BaseNPC.h"
+#include "CAI_Navigator.h"
 struct CNavNPCView : CAI_BaseNPC
 {
 	char m_pad[0x1b44 - 4];

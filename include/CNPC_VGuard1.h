@@ -1,6 +1,8 @@
 // CNPC_VGuard1: declared by pcdecomp transplant for 0x1037c6a0 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CBaseEntity.h"
+#include "datamap.h"
 
 class CEntityVSlots;
 

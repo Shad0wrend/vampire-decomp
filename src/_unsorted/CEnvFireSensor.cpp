@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1010bde0 size=0x6
+#include "datamap.h"
 #include "CEnvFireSensor.h"
 namespace lifted {
 extern char g_1056d1ac;
@@ -30,6 +31,7 @@ void CEnvFireSensor::vfunc103()
 // END FUNCTION
 
 // FUNCTION: 0x1010bfe0 size=0x11d
+#include "vampire_all.h"
 #include "CEnvFireSensor.h"
 #include "CEntityVSlots.h"
 #include "COutputEvent.h"

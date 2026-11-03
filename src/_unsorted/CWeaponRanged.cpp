@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x102341d0 size=0x6
+#include "CWeaponRanged.h"
 namespace lifted {
 extern char g_10751cf0;
 }
@@ -12,6 +13,7 @@ int CWeaponRanged::vfunc80()
 // END FUNCTION
 
 // FUNCTION: 0x102341f0 size=0x3
+#include "CWeaponRanged.h"
 int CWeaponRanged::vfunc81()
 {
     return 0;
@@ -174,6 +176,7 @@ void sub_10238350()
 // END FUNCTION
 
 // FUNCTION: 0x10239250 size=0x8
+#include "CWeaponRanged.h"
 // TARGET: CWeaponRanged::vfunc329
 void CWeaponRanged::vfunc329()
 {

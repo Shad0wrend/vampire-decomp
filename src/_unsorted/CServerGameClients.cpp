@@ -72,6 +72,7 @@ void CServerGameClients::vfunc9(CServerGameClients_Edict *pEdict, int a)
 // END FUNCTION
 
 // FUNCTION: 0x1011d450 size=0x30
+#include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 #include "CServerGameClients.h"
 extern CGlobalEntityList g_106eb5d8;

@@ -1,6 +1,7 @@
 // CGeneric_NPC_bathack: declared by pcdecomp transplant for 0x1035adb0 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CBaseEntity.h"
 
 class CGeneric_NPC_bathack : public CBaseEntity
 {

@@ -22,6 +22,7 @@ void CPhysicsAnimlinkEntityDeleteProxy::vfunc0(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x1014ec70 size=0x93
+#include "CBaseEntity.h"
 #include "CPhysicsAnimlinkEntityDeleteProxy.h"
 #include "CGlobalEntityList.h"
 

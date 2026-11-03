@@ -14,6 +14,7 @@ void *CEnvPlayerSurfaceTrigger::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x100fd850 size=0x9f
+#include "CBaseEntity.h"
 #include "CEnvPlayerSurfaceTrigger.h"
 #include "CUtlVector4.h"
 extern CGlobalEntityList *g_10566458;
@@ -57,6 +58,8 @@ CEnvPlayerSurfaceTrigger *CEnvPlayerSurfaceTrigger::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x100fdac0 size=0x89
+#include "CBaseEntity.h"
+#include "utlvector.h"
 #include "CEnvPlayerSurfaceTrigger.h"
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 

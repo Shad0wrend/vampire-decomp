@@ -31,6 +31,8 @@ bool __cdecl sub_10149c80() { return true; }
 // END FUNCTION
 
 // FUNCTION: 0x10149ca0 size=0x5
+#include "CBaseCombatWeapon.h"
+#include "CBaseEntity.h"
 bool CBaseCombatWeapon::vfunc283(CBaseEntity * a0)
 {
     return 0;
@@ -48,6 +50,7 @@ bool __cdecl sub_10149ce0() { return false; }
 // END FUNCTION
 
 // FUNCTION: 0x10149d00 size=0x4
+#include "CBaseCombatWeapon.h"
 int CBaseCombatWeapon::vfunc289()
 {
 	return -1;
@@ -55,6 +58,7 @@ int CBaseCombatWeapon::vfunc289()
 // END FUNCTION
 
 // FUNCTION: 0x10149d20 size=0x6
+#include "CBaseCombatWeapon.h"
 // TARGET: CBaseCombatWeapon::vfunc290
 int CBaseCombatWeapon::vfunc290()
 {
@@ -83,6 +87,7 @@ int CBaseCombatWeapon::vfunc296()
 // END FUNCTION
 
 // FUNCTION: 0x10149da0 size=0xd
+#include "CBaseCombatWeapon.h"
 struct WeaponField8cc { char pad[0x8cc]; int m; };
 void CBaseCombatWeapon::vfunc297(int value)
 {
@@ -91,6 +96,7 @@ void CBaseCombatWeapon::vfunc297(int value)
 // END FUNCTION
 
 // FUNCTION: 0x10149dc0 size=0x3
+#include "CBaseCombatWeapon.h"
 char CBaseCombatWeapon::vfunc313()
 {
     return 1;
@@ -118,6 +124,7 @@ bool __cdecl sub_10149e40() { return false; }
 // END FUNCTION
 
 // FUNCTION: 0x10149e60 size=0x9
+#include "CBaseCombatWeapon.h"
 extern float g_104454c4;
 float CBaseCombatWeapon::vfunc337(int a, int b) { return g_104454c4; }
 // END FUNCTION
@@ -128,6 +135,7 @@ int __cdecl sub_10149e80() { return 0; }
 // END FUNCTION
 
 // FUNCTION: 0x10149ea0 size=0x3
+#include "CBaseCombatWeapon.h"
 CWeaponActivityRecord * CBaseCombatWeapon::vfunc362()
 {
     return 0;
@@ -135,6 +143,7 @@ CWeaponActivityRecord * CBaseCombatWeapon::vfunc362()
 // END FUNCTION
 
 // FUNCTION: 0x10149ec0 size=0x3
+#include "CBaseCombatWeapon.h"
 int CBaseCombatWeapon::vfunc363()
 {
     return 0;
@@ -142,6 +151,7 @@ int CBaseCombatWeapon::vfunc363()
 // END FUNCTION
 
 // FUNCTION: 0x10234760 size=0x3
+#include "CBaseCombatWeapon.h"
 // TARGET: CBaseCombatWeapon::vfunc267
 char CBaseCombatWeapon::vfunc267() {
 	return 0;
@@ -149,11 +159,13 @@ char CBaseCombatWeapon::vfunc267() {
 // END FUNCTION
 
 // FUNCTION: 0x10234780 size=0x3
+#include "CBaseCombatWeapon.h"
 // TARGET: CBaseCombatWeapon::vfunc268
 char CBaseCombatWeapon::vfunc268() { return 0; }
 // END FUNCTION
 
 // FUNCTION: 0x102347a0 size=0x7
+#include "CBaseCombatWeapon.h"
 namespace lifted {
 extern float g_104492dc;
 }
@@ -182,6 +194,7 @@ void CBaseCombatWeapon::vfunc369(int a)
 // END FUNCTION
 
 // FUNCTION: 0x1024f030 size=0x64
+#include "CBaseCombatWeapon.h"
 struct CNameObj_t { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual const char *GetName(); };
 struct CNameSrc_t { virtual void v0(); virtual void v1(); virtual void v2(); virtual CNameObj_t *Get(); };
 extern const char g_106b8540[];
@@ -266,6 +279,7 @@ CBaseEntity *CBaseCombatWeapon::vfunc187()
 // END FUNCTION
 
 // FUNCTION: 0x1024f210 size=0xdb
+#include "CBaseCombatWeapon.h"
 #include "CBaseAnimating.h"
 #include "CEntityVSlots.h"
 #include "CWeaponOwner.h"
@@ -367,6 +381,7 @@ int CBaseCombatWeapon::vfunc365(int a, float b, float c)
 // END FUNCTION
 
 // FUNCTION: 0x1024f730 size=0x5
+#include "CBaseCombatWeapon.h"
 // TARGET: CBaseCombatWeapon::vfunc366
 int CBaseCombatWeapon::vfunc366(int a, int b, int c)
 {
@@ -375,6 +390,7 @@ int CBaseCombatWeapon::vfunc366(int a, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x1024f750 size=0x5
+#include "CBaseCombatWeapon.h"
 int CBaseCombatWeapon::vfunc367(int a0, float a1, float a2)
 {
     return 0;
@@ -401,6 +417,7 @@ void CBaseCombatWeapon::vfunc359()
 // END FUNCTION
 
 // FUNCTION: 0x1024f7f0 size=0x31
+#include "CBaseEntity.h"
 #include "CBaseCombatWeapon.h"
 
 extern float *g_1070b228;
@@ -456,6 +473,14 @@ CBaseCombatWeapon *CBaseCombatWeapon::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x10250ce0 size=0x15c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatWeapon.h"
 #include "CBaseEntity.h"
 #include "CCollisionProperty.h"
@@ -504,6 +529,7 @@ void CBaseCombatWeapon::vfunc103()
 // END FUNCTION
 
 // FUNCTION: 0x10251d80 size=0xd
+#include "CBaseCombatWeapon.h"
 namespace lifted {
 int sub_10010ea6();
 }
@@ -514,6 +540,7 @@ int CBaseCombatWeapon::vfunc342(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x10251da0 size=0xb
+#include "CBaseCombatWeapon.h"
 namespace lifted {
 int sub_10010ea6();
 }
@@ -524,6 +551,7 @@ int CBaseCombatWeapon::vfunc343()
 // END FUNCTION
 
 // FUNCTION: 0x10251dc0 size=0xb
+#include "CBaseCombatWeapon.h"
 namespace lifted {
 int sub_10010ea6();
 }
@@ -534,6 +562,7 @@ char * CBaseCombatWeapon::vfunc272()
 // END FUNCTION
 
 // FUNCTION: 0x10251de0 size=0xb
+#include "CBaseCombatWeapon.h"
 namespace lifted {
 int sub_10010ea6();
 }
@@ -544,6 +573,7 @@ char * CBaseCombatWeapon::vfunc273()
 // END FUNCTION
 
 // FUNCTION: 0x10251e00 size=0xb
+#include "CBaseCombatWeapon.h"
 // TARGET: CBaseCombatWeapon::sub_10251e00
 int CBaseCombatWeapon::sub_10251e00()
 {
@@ -552,6 +582,7 @@ int CBaseCombatWeapon::sub_10251e00()
 // END FUNCTION
 
 // FUNCTION: 0x10251e20 size=0xb
+#include "CBaseCombatWeapon.h"
 namespace lifted {
 int sub_10010ea6();
 }
@@ -562,6 +593,7 @@ int CBaseCombatWeapon::vfunc344()
 // END FUNCTION
 
 // FUNCTION: 0x10251e40 size=0x27
+#include "CWeaponOwner.h"
 struct CWeaponOwner;
 CWeaponOwner *sub_102517b0();
 
@@ -594,6 +626,7 @@ bool CBaseCombatWeapon::vfunc277(int a)
 // END FUNCTION
 
 // FUNCTION: 0x10251ef0 size=0xc
+#include "CBaseCombatWeapon.h"
 namespace lifted {
 int sub_10010ea6();
 }
@@ -613,6 +646,7 @@ int CBaseCombatWeapon::sub_10251f10()
 // END FUNCTION
 
 // FUNCTION: 0x10251f30 size=0x9
+#include "CBaseCombatWeapon.h"
 namespace lifted {
 int sub_10010ea6();
 }
@@ -647,6 +681,7 @@ int __fastcall sub_10251f70(void *pThis)
 // END FUNCTION
 
 // FUNCTION: 0x10251f90 size=0xc
+#include "CBaseCombatWeapon.h"
 // TARGET: CBaseCombatWeapon::sub_10251f90
 int CBaseCombatWeapon::sub_10251f90()
 {
@@ -670,6 +705,7 @@ int CBaseCombatWeapon::vfunc352()
 // END FUNCTION
 
 // FUNCTION: 0x10251fd0 size=0xc
+#include "CBaseCombatWeapon.h"
 int __fastcall sub_10251fd0(CBaseCombatWeapon *p)
 {
 	return *(int *)((char *)p->sub_102517b0() + 0x5ebd8);
@@ -677,6 +713,7 @@ int __fastcall sub_10251fd0(CBaseCombatWeapon *p)
 // END FUNCTION
 
 // FUNCTION: 0x10251ff0 size=0xc
+#include "CBaseCombatWeapon.h"
 // TARGET: CBaseCombatWeapon::sub_10251ff0
 int CBaseCombatWeapon::sub_10251ff0()
 {
@@ -700,6 +737,7 @@ int CBaseCombatWeapon::vfunc355()
 // END FUNCTION
 
 // FUNCTION: 0x10252030 size=0xc
+#include "CBaseCombatWeapon.h"
 int __fastcall sub_10252030(CBaseCombatWeapon *p)
 {
 	return *(int *)((char *)p->sub_102517b0() + 0x5ebe4);
@@ -707,6 +745,7 @@ int __fastcall sub_10252030(CBaseCombatWeapon *p)
 // END FUNCTION
 
 // FUNCTION: 0x10252050 size=0xc
+#include "CBaseCombatWeapon.h"
 int __fastcall sub_10252050(CBaseCombatWeapon *p)
 {
 	return *(int *)((char *)p->sub_102517b0() + 0x5ebe8);
@@ -714,6 +753,7 @@ int __fastcall sub_10252050(CBaseCombatWeapon *p)
 // END FUNCTION
 
 // FUNCTION: 0x10252070 size=0xc
+#include "CBaseCombatWeapon.h"
 int __fastcall sub_10252070(CBaseCombatWeapon *p)
 {
 	return *(int *)((char *)p->sub_102517b0() + 0x5ebec);
@@ -745,6 +785,7 @@ int CBaseCombatWeapon::vfunc347(int a)
 // END FUNCTION
 
 // FUNCTION: 0x102524b0 size=0x3
+#include "CBaseCombatWeapon.h"
 // TARGET: CBaseCombatWeapon::vfunc302
 char CBaseCombatWeapon::vfunc302() {
 	return 1;
@@ -752,6 +793,7 @@ char CBaseCombatWeapon::vfunc302() {
 // END FUNCTION
 
 // FUNCTION: 0x102524d0 size=0x3
+#include "CBaseCombatWeapon.h"
 // TARGET: CBaseCombatWeapon::vfunc279
 char CBaseCombatWeapon::vfunc279() { return 0; }
 // END FUNCTION
@@ -813,6 +855,7 @@ void CBaseCombatWeapon::vfunc310(float time)
 // END FUNCTION
 
 // FUNCTION: 0x102527e0 size=0x7
+#include "CBaseCombatWeapon.h"
 float CBaseCombatWeapon::vfunc311()
 {
     return *(float *)((char *)this + 0x894);
@@ -888,6 +931,7 @@ void CBaseCombatWeapon::vfunc299(const float *pVelocity)
 // END FUNCTION
 
 // FUNCTION: 0x10252e80 size=0xb
+#include "CBaseCombatWeapon.h"
 void sub_1000c6f8();
 
 void CBaseCombatWeapon::vfunc305()
@@ -922,6 +966,7 @@ void CBaseCombatWeapon::vfunc338(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x10253210 size=0x50
+#include "CBaseEntity.h"
 #include "CBaseCombatWeapon.h"
 struct SPlayerView20a8 { char pad[0x20a8]; bool m_b20a8; };
 CBaseEntity *__fastcall sub_1032e7b0(CBaseEntity *);
@@ -942,6 +987,7 @@ int CBaseCombatWeapon::vfunc301(CBaseEntity *pPlayer)
 // END FUNCTION
 
 // FUNCTION: 0x10253280 size=0xd
+#include "CBaseCombatWeapon.h"
 struct WeaponField890 { char pad[0x890]; int m; };
 void CBaseCombatWeapon::vfunc306(int value)
 {
@@ -950,6 +996,7 @@ void CBaseCombatWeapon::vfunc306(int value)
 // END FUNCTION
 
 // FUNCTION: 0x102532a0 size=0xb9
+#include "CBasePlayer.h"
 #include "CBaseCombatWeapon.h"
 
 #define VV1(n) virtual void vv##n();
@@ -1008,6 +1055,7 @@ bool CBaseCombatWeapon::vfunc280(int a)
 // END FUNCTION
 
 // FUNCTION: 0x10253c50 size=0x32
+#include "CBaseCombatWeapon.h"
 #pragma warning(disable : 4716)
 bool CBaseCombatWeapon::vfunc315()
 {
@@ -1016,6 +1064,8 @@ bool CBaseCombatWeapon::vfunc315()
 // END FUNCTION
 
 // FUNCTION: 0x10253ca0 size=0x17c
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
 #include "CBaseAnimating.h"
 
 struct EntSlot { void *ent; int serial; int pad; };
@@ -1076,6 +1126,7 @@ void sub_10253e80()
 // END FUNCTION
 
 // FUNCTION: 0x10254360 size=0x3
+#include "CBaseCombatWeapon.h"
 // TARGET: CBaseCombatWeapon::vfunc330
 int CBaseCombatWeapon::vfunc330() {
 	return 0;
@@ -1092,6 +1143,8 @@ const Vector &CBaseCombatWeapon::vfunc331()
 // END FUNCTION
 
 // FUNCTION: 0x10254410 size=0x29
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseCombatWeapon.h"
 void __fastcall sub_1033d940(int p, float f);
 // TARGET: CBaseCombatWeapon::vfunc332
 void CBaseCombatWeapon::vfunc332()
@@ -1112,6 +1165,7 @@ bool CBaseCombatWeapon::vfunc325()
 // END FUNCTION
 
 // FUNCTION: 0x10254fd0 size=0x6
+#include "CBaseCombatWeapon.h"
 int CBaseCombatWeapon::vfunc328()
 {
     return 0xbc;
@@ -1126,6 +1180,7 @@ int sub_10254ff0(void)
 // END FUNCTION
 
 // FUNCTION: 0x10255010 size=0x1
+#include "CBaseCombatWeapon.h"
 // TARGET: CBaseCombatWeapon::vfunc339
 void CBaseCombatWeapon::vfunc339() {
 }
@@ -1223,6 +1278,7 @@ char CBaseCombatWeapon::vfunc371()
 // END FUNCTION
 
 // FUNCTION: 0x10256560 size=0xda
+#include "CBaseCombatWeapon.h"
 #include "CCollisionProperty.h"
 
 struct WeaponView10256560 {
@@ -1267,6 +1323,7 @@ void *sub_10256710(void)
 // END FUNCTION
 
 // FUNCTION: 0x10256730 size=0x3
+#include "CBaseCombatWeapon.h"
 // TARGET: CBaseCombatWeapon::vfunc81
 int CBaseCombatWeapon::vfunc81() { return 0; }
 // END FUNCTION
@@ -1281,6 +1338,7 @@ void *sub_10256750(void)
 // END FUNCTION
 
 // FUNCTION: 0x10257230 size=0xe
+#include "CBaseCombatWeapon.h"
 bool CBaseCombatWeapon::vfunc303()
 {
 	return vfunc304() ? true : false;
@@ -1302,6 +1360,7 @@ char CBaseCombatWeapon::vfunc304()
 // END FUNCTION
 
 // FUNCTION: 0x102577c0 size=0x8
+#include "CBaseCombatWeapon.h"
 // TARGET: CBaseCombatWeapon::vfunc288
 void CBaseCombatWeapon::vfunc288()
 {
@@ -1310,6 +1369,8 @@ void CBaseCombatWeapon::vfunc288()
 // END FUNCTION
 
 // FUNCTION: 0x10257850 size=0x50
+#include "CBaseCombatWeapon.h"
+#include "CBaseEntity.h"
 #include "CEHandleGet.h"
 #define V100(p) CBCW_V10(p##0) CBCW_V10(p##1) CBCW_V10(p##2) CBCW_V10(p##3) CBCW_V10(p##4) CBCW_V10(p##5) CBCW_V10(p##6) CBCW_V10(p##7) CBCW_V10(p##8) CBCW_V10(p##9)
 struct CPlayerView382 {
@@ -1329,6 +1390,7 @@ int CBaseCombatWeapon::vfunc35(CBaseEntity *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x102578c0 size=0x50
+#include "CBaseEntity.h"
 #include "CBaseCombatWeapon.h"
 #include "CEHandleGet.h"
 
@@ -1351,6 +1413,7 @@ int CBaseCombatWeapon::vfunc34(CBaseEntity *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x10257930 size=0x3d
+#include "CBaseCombatWeapon.h"
 #include "CEHandleGet.h"
 unsigned int __fastcall sub_10006703(CBaseCombatWeapon *p);
 
@@ -1364,6 +1427,7 @@ unsigned int CBaseCombatWeapon::vfunc117()
 // END FUNCTION
 
 // FUNCTION: 0x10257980 size=0x41
+#include "CBaseEntity.h"
 #include "CBaseCombatWeapon.h"
 struct CWeaponUserView {
 	char m_pad[0xa8];
@@ -1383,6 +1447,8 @@ void CBaseCombatWeapon::vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, 
 // END FUNCTION
 
 // FUNCTION: 0x10258320 size=0x82
+#include "CBaseCombatWeapon.h"
+#include "Vector.h"
 struct CRollTable {
 	virtual void vfunc0();
 	virtual float vfunc1(int lo, int hi);
@@ -1449,6 +1515,7 @@ void CBaseCombatWeapon::vfunc130(void *pArg)
 // END FUNCTION
 
 // FUNCTION: 0x10258520 size=0x3
+#include "CBaseCombatWeapon.h"
 // TARGET: CBaseCombatWeapon::vfunc293
 int CBaseCombatWeapon::vfunc293() { return 0; }
 // END FUNCTION
@@ -1461,6 +1528,7 @@ void sub_10258540()
 // END FUNCTION
 
 // FUNCTION: 0x10258560 size=0xe
+#include "CBaseCombatWeapon.h"
 // TARGET: CBaseCombatWeapon::vfunc291
 void CBaseCombatWeapon::vfunc291()
 {

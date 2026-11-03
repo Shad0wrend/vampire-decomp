@@ -73,6 +73,7 @@ CNPC_VMingXiao *CNPC_VMingXiao::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x10391230 size=0x1a
+#include "CAI_BaseNPCTroika.h"
 #include "CNPC_VMingXiao.h"
 
 // TARGET: CNPC_VMingXiao::vfunc180
@@ -282,6 +283,7 @@ void CNPC_VMingXiao::vfunc563(CBaseEntity *pEnt, Vector *pPos, int *pOut1, int *
 // END FUNCTION
 
 // FUNCTION: 0x10394090 size=0x6c
+#include "CUnknown10398d90.h"
 #include "CNPC_VMingXiao.h"
 struct CUnknown102e0a60 { void sub_102e0a60(int); };
 void CNPC_VMingXiao::vfunc448(int a)

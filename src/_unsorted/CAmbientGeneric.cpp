@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x101ac1a0 size=0x6
+#include "CAmbientGeneric.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_105969a4;
 }
@@ -26,6 +28,7 @@ CAmbientGeneric::CAmbientGeneric() : CAmbientGenericBase(0)
 // END FUNCTION
 
 // FUNCTION: 0x101ac2a0 size=0x3
+#include "CAmbientGeneric.h"
 bool CAmbientGeneric::vfunc136()
 {
     return 1;

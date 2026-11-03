@@ -7,10 +7,17 @@ sha1 = "3fe64bc0d9d7eca64976adc668617ca2814e5e4a"
 cl = "G:\\decomp\\tools\\vc6\\VC98\\BIN\\CL.EXE"
 vcvars = "G:\\decomp\\tools\\vc6\\vcvars32.bat"
 prelude = "vampire.h"
+prelude_core = ["ehandle.h", "globalvars.h", "engineserver.h", "engineiface.h"]
 flags = ["/O2"]
 timeout_s = 30
 
 [agents]
 claim_expiry_min = 30
 max_attempts_per_claim = 20
-vector_calls = [0x10579660, 0x1057966c]  # pfSqrt, pfVectorNormalize: Vector math (claim order)
+prefer_sizes = [100, 400]
+x87_heavy = 8
+vector_calls = [0x10579660, 0x1057966c]
+
+[cache]
+prune_every_hours = 1
+keep_hours = 2

@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10260cf0 size=0x3
+#include "vampire_all.h"
 #include "CAI_Expresser.h"
 bool CAI_ExpresserSink::vfunc0()
 {
@@ -10,6 +11,7 @@ bool CAI_ExpresserSink::vfunc0()
 // END FUNCTION
 
 // FUNCTION: 0x10260d10 size=0x3
+#include "vampire_all.h"
 #include "CAI_Expresser.h"
 bool CAI_ExpresserSink::vfunc1()
 {
@@ -18,6 +20,7 @@ bool CAI_ExpresserSink::vfunc1()
 // END FUNCTION
 
 // FUNCTION: 0x10260d30 size=0x1
+#include "vampire_all.h"
 #include "CAI_Expresser.h"
 void CAI_ExpresserSink::vfunc2()
 {
@@ -25,6 +28,7 @@ void CAI_ExpresserSink::vfunc2()
 // END FUNCTION
 
 // FUNCTION: 0x10260d50 size=0x1
+#include "vampire_all.h"
 #include "CAI_Expresser.h"
 void CAI_ExpresserSink::vfunc3()
 {

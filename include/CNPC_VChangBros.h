@@ -1,5 +1,7 @@
 // CNPC_VChangBros: the Chang brothers NPC. Only what decompiled code needs.
 #pragma once
+#include "CBaseAnimating.h"
+#include "CBaseCombatCharacter.h"
 
 #include "CNPC_VHuman.h"
 

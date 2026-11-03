@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x103ef5e0 size=0x6
+#include "datamap.h"
 #include "CWeaponThrown_Chang_Energy_Ball.h"
 namespace lifted {
 extern char g_1067d234;

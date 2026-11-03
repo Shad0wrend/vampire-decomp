@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10260930 size=0x3e
+#include "utlrbtree.h"
 #include "utlvector.h"
 #include "CHumanoidRec.h"
 

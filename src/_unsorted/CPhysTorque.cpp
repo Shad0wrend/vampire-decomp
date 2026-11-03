@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10028160 size=0x6
+#include "datamap.h"
 #include "CPhysTorque.h"
 namespace lifted {
 extern char g_10537098;

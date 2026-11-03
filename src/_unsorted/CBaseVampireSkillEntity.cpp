@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1020a770 size=0x6
+#include "CBaseVampireSkillEntity.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_105aa150;
 }
@@ -54,6 +56,7 @@ void CBaseVampireSkillEntity::vfunc103()
 // END FUNCTION
 
 // FUNCTION: 0x1020ac50 size=0xb
+#include "CBaseVampireSkillEntity.h"
 void CBaseVampireSkillEntity::vfunc272()
 {
 	m_unk78c = 0;
@@ -61,6 +64,10 @@ void CBaseVampireSkillEntity::vfunc272()
 // END FUNCTION
 
 // FUNCTION: 0x1020acb0 size=0xc8
+#include "CAI_BaseNPC.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseVampireSkillEntity.h"
 #include "CVFeat_t.h"
 
@@ -97,6 +104,9 @@ void CBaseVampireSkillEntity::vfunc39(void *pEntity)
 // END FUNCTION
 
 // FUNCTION: 0x1020adc0 size=0xae
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseVampireSkillEntity.h"
 #include "CVFeat_t.h"
 
@@ -111,6 +121,7 @@ void CBaseVampireSkillEntity::vfunc42(void *pEntity)
 // END FUNCTION
 
 // FUNCTION: 0x1020b1c0 size=0x1a
+#include "CBaseEntity.h"
 #include "CBaseVampireSkillEntity.h"
 #include "UTIL_BloodStream.h"
 

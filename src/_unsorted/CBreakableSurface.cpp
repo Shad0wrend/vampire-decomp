@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1010fa80 size=0x6
+#include "datamap.h"
 #include "CBreakableSurface.h"
 namespace lifted {
 extern char g_1056f0fc;

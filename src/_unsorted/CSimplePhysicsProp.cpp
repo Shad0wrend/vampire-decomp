@@ -2,6 +2,14 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1004fcb0 size=0xab
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CSimplePhysicsProp.h"
 #include "CCollisionProperty.h"
@@ -68,6 +76,7 @@ void __stdcall sub_1004fe40(int x)
 // END FUNCTION
 
 // FUNCTION: 0x1004fe60 size=0x8
+#include "CBaseEntity.h"
 #include "CSimplePhysicsProp.h"
 // TARGET: CSimplePhysicsProp::vfunc117
 unsigned char CSimplePhysicsProp::vfunc117()

@@ -1,5 +1,7 @@
 // CNPC_VAndreiBlood (RTTI .?AVCNPC_VAndreiBlood@@): base CNPC_VHuman (CNPC_VHuman.h).
 #pragma once
+#include "CBaseAnimating.h"
+#include "CBaseCombatCharacter.h"
 
 #include "CNPC_VHuman.h"
 #include "COutputEvent.h"

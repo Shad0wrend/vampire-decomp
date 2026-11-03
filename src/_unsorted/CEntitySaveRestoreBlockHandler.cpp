@@ -13,6 +13,7 @@ int CEntitySaveRestoreBlockHandler::vfunc0()
 // END FUNCTION
 
 // FUNCTION: 0x101a37c0 size=0x123
+#include "CSave.h"
 #include "CEntitySaveRestoreBlockHandler.h"
 #include "CGlobalEntityList.h"
 #include "CBaseEntity.h"
@@ -73,6 +74,7 @@ void CEntitySaveRestoreBlockHandler::vfunc2(CSave *pSaveArg)
 // END FUNCTION
 
 // FUNCTION: 0x101a3940 size=0x73
+#include "CSave.h"
 #include "CEntitySaveRestoreBlockHandler.h"
 
 struct SEntityBlock {

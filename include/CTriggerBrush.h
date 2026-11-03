@@ -1,5 +1,6 @@
 // CTriggerBrush (RTTI .?AVCTriggerBrush@@): a brush entity that only triggers; bases: CBaseEntity at +0x0.
 #pragma once
+#include "COutputEvent.h"
 
 #include "CBaseEntity.h"
 

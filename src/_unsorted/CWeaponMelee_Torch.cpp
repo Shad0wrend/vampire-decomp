@@ -40,6 +40,7 @@ int CWeaponMelee_Torch::vfunc363()
 // END FUNCTION
 
 // FUNCTION: 0x103e7410 size=0x6
+#include "datamap.h"
 #include "CWeaponMelee_Torch.h"
 namespace lifted {
 extern char g_10672070;

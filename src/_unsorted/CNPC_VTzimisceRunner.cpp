@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x103c28a0 size=0x6
+#include "datamap.h"
 #include "CNPC_VTzimisceRunner.h"
 namespace lifted {
 extern char g_1065d6ac;
@@ -282,6 +283,7 @@ bool CNPC_VTzimisceRunner::vfunc600(void *pEntity)
 // END FUNCTION
 
 // FUNCTION: 0x103c3a70 size=0x2f
+#include "CBaseEntity.h"
 #include "CNPC_VTzimisceRunner.h"
 #include "CUnknown1025ddd0.h"
 

@@ -13,6 +13,7 @@ unsigned char sub_1004ea30()
 // END FUNCTION
 
 // FUNCTION: 0x1004ea50 size=0x6
+#include "datamap.h"
 #include "CPhysExplosion.h"
 namespace lifted {
 extern char g_1053d12c;

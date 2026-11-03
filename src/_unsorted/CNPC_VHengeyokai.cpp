@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1037e4f0 size=0x6
+#include "datamap.h"
 #include "CNPC_VHengeyokai.h"
 namespace lifted {
 extern char g_1063bdb0;
@@ -202,6 +203,8 @@ void CNPC_VHengeyokai::vfunc259(CNPC_VHengeyokaiEvent *pEvent)
 // END FUNCTION
 
 // FUNCTION: 0x1037fca0 size=0x25c
+#include "CBaseEntity.h"
+#include "CUnknown10381be0.h"
 #include "CNPC_VHengeyokai.h"
 #include "CEntityVSlots.h"
 #include "engineiface.h"

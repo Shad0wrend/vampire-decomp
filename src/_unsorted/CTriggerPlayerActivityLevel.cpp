@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10210730 size=0x6
+#include "datamap.h"
 #include "CTriggerPlayerActivityLevel.h"
 namespace lifted {
 extern char g_105ab5dc;
@@ -55,6 +56,7 @@ void CTriggerPlayerActivityLevel::vfunc103()
 // END FUNCTION
 
 // FUNCTION: 0x102108e0 size=0x9a
+#include "CBasePlayer.h"
 #include "CTriggerPlayerActivityLevel.h"
 
 struct CPlayerLevel : CBasePlayer

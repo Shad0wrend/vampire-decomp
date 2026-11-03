@@ -1,6 +1,8 @@
 // CNPC_VHumanCombatant: declared by pcdecomp transplant for 0x10386b20 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CBaseEntity.h"
+#include "datamap.h"
 
 #define CVHW_V(n) virtual void vfunc##n();
 #define CVHW_V10(p) CVHW_V(p##0) CVHW_V(p##1) CVHW_V(p##2) CVHW_V(p##3) CVHW_V(p##4) CVHW_V(p##5) CVHW_V(p##6) CVHW_V(p##7) CVHW_V(p##8) CVHW_V(p##9)

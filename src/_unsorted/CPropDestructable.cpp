@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10193480 size=0x6
+#include "datamap.h"
 #include "CPropDestructable.h"
 namespace lifted {
 extern char g_1058dc3c;
@@ -20,6 +21,14 @@ void CPropDestructable::vfunc265()
 // END FUNCTION
 
 // FUNCTION: 0x10193a50 size=0xf7
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CPropDestructable.h"
 #include "CBreakableProp.h"
 #include "CCollisionProperty.h"

@@ -85,6 +85,14 @@ int CNPC_VChangBros::vfunc546(int x)
 // END FUNCTION
 
 // FUNCTION: 0x1036ae60 size=0x106
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VChangBros.h"
 #include "ScopeTrace.h"
 void sub_101d0ec0(const char *name);
@@ -152,6 +160,20 @@ int CNPC_VChangBros::vfunc127(int a)
 // END FUNCTION
 
 // FUNCTION: 0x1036b250 size=0x193
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VChangBros.h"
 #include "CEHandleGet.h"
 #include "CUnknown100290c0.h"
@@ -246,6 +268,14 @@ int CNPC_VChangBros::vfunc461()
 // END FUNCTION
 
 // FUNCTION: 0x1036b590 size=0xd7
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VChangBros.h"
 #include "ScopeTrace.h"
 struct CUnk10924a6c { virtual void vf0(); virtual int vf1(); };
@@ -344,6 +374,14 @@ void CNPC_VChangBros::vfunc448(int code)
 // END FUNCTION
 
 // FUNCTION: 0x1036e6f0 size=0xea
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CNPC_VChangBros.h"
 #include "CBasePlayer.h"

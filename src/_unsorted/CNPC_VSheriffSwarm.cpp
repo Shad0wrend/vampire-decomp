@@ -93,6 +93,7 @@ void CNPC_VSheriffSwarm::vfunc103()
 // END FUNCTION
 
 // FUNCTION: 0x103b2360 size=0x14
+#include "CAI_BaseNPC.h"
 #include "CNPC_VSheriffSwarm.h"
 
 // TARGET: CNPC_VSheriffSwarm::vfunc420

@@ -21,6 +21,7 @@ int CFuncParticle::vfunc81()
 // END FUNCTION
 
 // FUNCTION: 0x100fc9d0 size=0x6
+#include "datamap.h"
 #include "CFuncParticle.h"
 namespace lifted {
 extern char g_10566eec;
@@ -32,6 +33,14 @@ datamap_t *CFuncParticle::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x100fca60 size=0xb6
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CFuncParticle.h"
 #include "CEnvParticle.h"
 #include "CBaseEntity.h"

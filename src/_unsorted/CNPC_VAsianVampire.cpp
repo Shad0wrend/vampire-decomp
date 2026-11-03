@@ -48,6 +48,7 @@ CNPC_VAsianVampire *CNPC_VAsianVampire::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x10360450 size=0x6
+#include "datamap.h"
 #include "CNPC_VAsianVampire.h"
 namespace lifted {
 extern char g_1062c498;
@@ -119,6 +120,14 @@ void CNPC_VAsianVampire::vfunc103()
 // END FUNCTION
 
 // FUNCTION: 0x10360ce0 size=0xea
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VAsianVampire.h"
 #include "ScopeTrace.h"
 #define AV(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
@@ -150,6 +159,14 @@ void CNPC_VAsianVampire::vfunc420()
 // END FUNCTION
 
 // FUNCTION: 0x10360eb0 size=0x146
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VAsianVampire.h"
 #include "ScopeTrace.h"
 #include "CEHandleGet.h"
@@ -188,6 +205,14 @@ int CNPC_VAsianVampire::vfunc438()
 // END FUNCTION
 
 // FUNCTION: 0x10361110 size=0x6f
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CNPC_VAsianVampire.h"
 
@@ -200,6 +225,14 @@ void CNPC_VAsianVampire::vfunc432(int arg)
 // END FUNCTION
 
 // FUNCTION: 0x103612e0 size=0x139
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VAsianVampire.h"
 #include "CEntityVSlots.h"
 #include "ScopeTrace.h"

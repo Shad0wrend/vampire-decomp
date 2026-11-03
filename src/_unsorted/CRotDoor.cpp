@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x100f1870 size=0x6
+#include "datamap.h"
 #include "CRotDoor.h"
 namespace lifted {
 extern char g_10564ae4;
@@ -236,6 +237,21 @@ float CRotDoor::vfunc247()
 // END FUNCTION
 
 // FUNCTION: 0x100f3030 size=0x2a2
+#include "CBaseDoor.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
 #include "CRotDoor.h"
 #include "CGlobalEntityList.h"
 #include "CEHandleGet.h"
@@ -274,6 +290,14 @@ void CRotDoor::vfunc243(char bChain, char bOpenAway)
 // END FUNCTION
 
 // FUNCTION: 0x100f35a0 size=0x22d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CRotDoor.h"
 #include "ScopeTrace.h"
 

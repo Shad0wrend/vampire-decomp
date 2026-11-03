@@ -13,6 +13,7 @@ int CHalfLife2::vfunc25()
 // END FUNCTION
 
 // FUNCTION: 0x10355790 size=0x24
+#include "CGameRules.h"
 #include "CHalfLife2.h"
 
 extern int vt_1047a40c[];

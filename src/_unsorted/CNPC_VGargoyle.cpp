@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10377910 size=0x6
+#include "CNPC_VGargoyle.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_1063949c;
 }
@@ -12,6 +14,7 @@ datamap_t *CNPC_VGargoyle::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x10377ae0 size=0x3
+#include "CNPC_VGargoyle.h"
 bool CNPC_VGargoyle::vfunc615()
 {
     return 0;
@@ -19,6 +22,7 @@ bool CNPC_VGargoyle::vfunc615()
 // END FUNCTION
 
 // FUNCTION: 0x10377b00 size=0x5
+#include "CNPC_VGargoyle.h"
 bool CNPC_VGargoyle::vfunc378(int a0, int a1)
 {
     return 0;
@@ -26,6 +30,7 @@ bool CNPC_VGargoyle::vfunc378(int a0, int a1)
 // END FUNCTION
 
 // FUNCTION: 0x10377b20 size=0x6
+#include "CNPC_VGargoyle.h"
 namespace lifted {
 extern char g_1093aff0;
 }
@@ -36,6 +41,7 @@ int CNPC_VGargoyle::vfunc580()
 // END FUNCTION
 
 // FUNCTION: 0x10377b40 size=0x6
+#include "CNPC_VGargoyle.h"
 namespace lifted {
 extern int g_106395c8;
 }
@@ -148,6 +154,7 @@ void CNPC_VGargoyle::vfunc420()
 // END FUNCTION
 
 // FUNCTION: 0x10378640 size=0x6
+#include "CNPC_VGargoyle.h"
 int CNPC_VGargoyle::vfunc473()
 {
     return 0x17;
@@ -155,6 +162,7 @@ int CNPC_VGargoyle::vfunc473()
 // END FUNCTION
 
 // FUNCTION: 0x10378660 size=0x6
+#include "CNPC_VGargoyle.h"
 int CNPC_VGargoyle::vfunc138()
 {
     return 0x1b;
@@ -162,6 +170,7 @@ int CNPC_VGargoyle::vfunc138()
 // END FUNCTION
 
 // FUNCTION: 0x10378680 size=0x6
+#include "CNPC_VGargoyle.h"
 int CNPC_VGargoyle::vfunc337()
 {
     return 0x4000;
@@ -214,6 +223,7 @@ void CNPC_VGargoyle::vfunc259(void *pEvent)
 // END FUNCTION
 
 // FUNCTION: 0x10378a30 size=0xf0
+#include "CNPC_VGargoyle.h"
 #include "CNPC_VHuman.h"
 
 int CNPC_VGargoyle::vfunc440(int schedule)
@@ -229,6 +239,7 @@ int CNPC_VGargoyle::vfunc440(int schedule)
 // END FUNCTION
 
 // FUNCTION: 0x10378b60 size=0xf
+#include "CNPC_VGargoyle.h"
 namespace lifted {
 int sub_10011225();
 }
@@ -240,6 +251,7 @@ int CNPC_VGargoyle::vfunc461()
 // END FUNCTION
 
 // FUNCTION: 0x10378c10 size=0x7c
+#include "CBaseEntity.h"
 #include "CNPC_VGargoyle.h"
 #include "CGlobalEntityList.h"
 extern CGlobalEntityList *g_10566458;
@@ -273,6 +285,7 @@ int CNPC_VGargoyle::vfunc390(void *pInfo)
 // END FUNCTION
 
 // FUNCTION: 0x10378cb0 size=0x5c
+#include "CNPC_VGargoyle.h"
 #include "CVDmg_t.h"
 struct CGargoyleDmgInfo
 {
@@ -327,6 +340,7 @@ bool CNPC_VGargoyle::vfunc320(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x10378df0 size=0x93
+#include "CNPC_VGargoyle.h"
 #include "CEntityVSlots.h"
 
 void CNPC_VGargoyle::vfunc433()
@@ -369,6 +383,7 @@ void CNPC_VGargoyle::vfunc435(int a)
 // END FUNCTION
 
 // FUNCTION: 0x10379060 size=0x4d
+#include "CNPC_VGargoyle.h"
 namespace block_10379060 {
 struct CNPC_VGargoyleUnit : CNPC_VGargoyle { bool sub_10379040(); };
 bool CNPC_VGargoyleUnit::sub_10379040()
@@ -391,6 +406,7 @@ void CNPC_VGargoyle::vfunc448(int a)
 // END FUNCTION
 
 // FUNCTION: 0x10379470 size=0x3
+#include "CNPC_VGargoyle.h"
 bool CNPC_VGargoyle::vfunc70()
 {
     return 1;
@@ -429,6 +445,7 @@ bool CNPC_VGargoyle::vfunc600(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x10379f50 size=0xe
+#include "CNPC_VGargoyle.h"
 struct CUnk10924edc
 {
 	virtual void v0();
@@ -443,6 +460,7 @@ void CNPC_VGargoyle::vfunc601(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x10379f70 size=0x3
+#include "CNPC_VGargoyle.h"
 bool CNPC_VGargoyle::vfunc602()
 {
     return 0;
@@ -492,6 +510,8 @@ void CNPC_VGargoyle::vfunc618()
 // END FUNCTION
 
 // FUNCTION: 0x1037a270 size=0x174
+#include "CBaseEntity.h"
+#include "CNPC_VGargoyle.h"
 #include "CVDmg_t.h"
 #include "CUnknown101c26d0.h"
 
@@ -549,6 +569,7 @@ void CNPC_VGargoyle::vfunc175(CBaseEntity *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x1037a450 size=0x108
+#include "CBaseEntity.h"
 #include "CNPC_VGargoyle.h"
 
 extern "C" int _strcmpi(const char *, const char *);
@@ -612,6 +633,7 @@ void __fastcall sub_1037a5b0(void *pSelf)
 // END FUNCTION
 
 // FUNCTION: 0x1037a5f0 size=0x8
+#include "CNPC_VGargoyle.h"
 // TARGET: CNPC_VGargoyle::vfunc359
 int CNPC_VGargoyle::vfunc359(int index)
 {
@@ -620,6 +642,7 @@ int CNPC_VGargoyle::vfunc359(int index)
 // END FUNCTION
 
 // FUNCTION: 0x1037a610 size=0x5
+#include "CNPC_VGargoyle.h"
 bool CNPC_VGargoyle::vfunc74(int a0)
 {
     return 0;

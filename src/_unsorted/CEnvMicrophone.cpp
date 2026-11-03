@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x101023b0 size=0x6
+#include "datamap.h"
 #include "CEnvMicrophone.h"
 namespace lifted {
 extern char g_105698f8;
@@ -35,6 +36,7 @@ void CEnvMicrophone::vfunc103()
 // END FUNCTION
 
 // FUNCTION: 0x101025b0 size=0xc9
+#include "CGlobalEntityList.h"
 #include "CEnvMicrophone.h"
 
 extern CGlobalEntityList g_106eb5d8;
@@ -72,6 +74,7 @@ void CEnvMicrophone::vfunc113()
 // END FUNCTION
 
 // FUNCTION: 0x10102890 size=0x10a
+#include "CSound.h"
 #include "CEnvMicrophone.h"
 #include "CSoundEnt.h"
 #include <math.h>

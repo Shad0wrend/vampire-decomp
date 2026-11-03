@@ -1,5 +1,8 @@
 // CBaseDoor: door entity family. Only slots that decompiled code needs are declared, as plain members.
 #pragma once
+#include "CBaseEntity.h"
+#include "Vector.h"
+#include "datamap.h"
 
 #include "CDoorEventList.h"
 

@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10171aa0 size=0x1e5
+#include "CBaseEntity.h"
+#include "CBloodSplat.h"
 struct Vec
 {
 	float x, y, z;

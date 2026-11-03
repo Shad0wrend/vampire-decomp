@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x102c8570 size=0xd4
+#include "CAI_BaseNPC.h"
 // TARGET: CAI_StandoffGoal::vfunc244
 #include "CAI_StandoffGoal.h"
 #include "CUnknown102c7390.h"
@@ -49,6 +50,7 @@ void CAI_StandoffGoal::vfunc244(CAI_BaseNPC *pActor)
 // END FUNCTION
 
 // FUNCTION: 0x102c8690 size=0xc4
+#include "CAI_BaseNPC.h"
 #include "CAI_StandoffGoal.h"
 extern CStandoffParams g_10601880[];
 extern int g_10601db0, g_10601e70;
@@ -123,6 +125,7 @@ CAI_StandoffGoal *CAI_StandoffGoal::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x102c8980 size=0x6
+#include "datamap.h"
 #include "CAI_StandoffGoal.h"
 namespace lifted {
 extern char g_1060190c;

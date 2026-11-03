@@ -2,6 +2,7 @@
 // the matched members 0x10210180 / 0x102101d0 / 0x10210250 are mangled under this name). Only offsets, nothing derives.
 // Layout seen in 0x1020fad0 (lazy resolve of the two target names) and 0x1020fe70 (the search tick, ret 4):
 #pragma once
+#include "utlvector.h"
 
 #include "COutputEvent.h"
 #include "ehandle.h"

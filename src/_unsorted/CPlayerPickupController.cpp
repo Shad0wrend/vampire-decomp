@@ -25,6 +25,7 @@ void CPlayerPickupController::vfunc229(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x1040ce90 size=0x6
+#include "datamap.h"
 #include "CPlayerPickupController.h"
 namespace lifted {
 extern char g_106839a0;

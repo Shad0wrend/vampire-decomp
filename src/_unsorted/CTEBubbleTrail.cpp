@@ -57,6 +57,7 @@ void CTEBubbleTrail::vfunc3(const Vector &origin, const QAngle &angles)
 // END FUNCTION
 
 // FUNCTION: 0x1005fec0 size=0x39
+#include "CRecipientFilter.h"
 #include "CTEBubbleTrail.h"
 #include "CTEMetalSparks.h"
 #include "IVEngineServerFull.h"

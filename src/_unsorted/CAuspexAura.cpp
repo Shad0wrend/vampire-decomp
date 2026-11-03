@@ -2,6 +2,14 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10051d50 size=0xe2
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CAuspexAura.h"
 #include "CGlobalEntityList.h"
 #include "ScopeTrace.h"
@@ -35,6 +43,14 @@ void CAuspexAura::vfunc243(CBaseEntity *pEnt, int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x10051e80 size=0x14c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CAuspexAura.h"
 #include "CGlobalEntityList.h"
 #include "ScopeTrace.h"

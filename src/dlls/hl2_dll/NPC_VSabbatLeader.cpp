@@ -2,6 +2,14 @@
 #include "vampire.h"
 
 // FUNCTION: 0x103a9400 size=0xf1
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VSabbatLeader.h"
 #include "ScopeTrace.h"
 
@@ -29,6 +37,14 @@ void CNPC_VSabbatLeader::vfunc448(int a)
 // END FUNCTION
 
 // FUNCTION: 0x103a9e70 size=0x105
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CNPC_VSabbatLeader.h"
 #include "CGlobalEntityList.h"
@@ -80,6 +96,14 @@ bool CNPC_VSabbatLeader::sub_103a9e70()
 // END FUNCTION
 
 // FUNCTION: 0x103aa3b0 size=0x92
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VSabbatLeader.h"
 #include "ScopeTrace.h"
 

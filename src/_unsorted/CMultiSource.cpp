@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10132d50 size=0x6
+#include "datamap.h"
 #include "CMultiSource.h"
 namespace lifted {
 extern char g_1057658c;

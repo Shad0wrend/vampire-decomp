@@ -120,6 +120,9 @@ void CUtlVectorDataOps<QuestVec, 9>::vfunc1(void *fieldInfo, void *pRestore)
 // END FUNCTION
 
 // FUNCTION: 0x10184700 size=0x10
+#include "ASSIGNED_QUEST.h"
+#include "utlmemory.h"
+#include "utlvector.h"
 #include "CUtlVectorDataOps.h"
 struct ASSIGNED_QUEST;
 struct thinkfunc_t;
@@ -136,6 +139,8 @@ template<> int CUtlVectorDataOps<CUtlVector<ASSIGNED_QUEST,CUtlMemory<ASSIGNED_Q
 // END FUNCTION
 
 // FUNCTION: 0x10184720 size=0x13
+#include "utlmemory.h"
+#include "utlvector.h"
 #include "CUtlVectorDataOps.h"
 #include "ASSIGNED_QUEST.h"
 

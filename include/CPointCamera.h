@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members.
 // The object at +0x2d4 is the entity's CServerNetworkProperty-like object (CUnknown101ab800, edict pointer at +0x2e0).
 #pragma once
+#include "CBaseEntity.h"
+#include "datamap.h"
 
 class CPointCamera : public CBaseEntity
 {

@@ -85,6 +85,7 @@ void CTEBubbles::vfunc3(const Vector &origin, const QAngle &angles)
 // END FUNCTION
 
 // FUNCTION: 0x1005f7e0 size=0x39
+#include "CRecipientFilter.h"
 #include "CTEBubbles.h"
 #include "CTEMetalSparks.h"
 #include "IVEngineServerFull.h"

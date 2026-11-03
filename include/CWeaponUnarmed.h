@@ -4,6 +4,7 @@
 // CBaseEntity subclass. For the CBaseCombatWeapon members and slots (owner getter sub_102521f0, the time at +0x730,
 // slots 319 / 321 ...) cast `this`: `((CBaseCombatWeapon *)this)->sub_102521f0()`.
 #pragma once
+#include "CBaseEntity.h"
 
 class CWeaponUnarmed : public CBaseEntity
 {

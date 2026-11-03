@@ -25,6 +25,7 @@ bool CNavPropertyDatabase::vfunc0()
 // END FUNCTION
 
 // FUNCTION: 0x102ea4d0 size=0x99
+#include "utlrbtree.h"
 #include "CNavPropertyDatabase.h"
 #include "CUtlRBTree12.h"
 

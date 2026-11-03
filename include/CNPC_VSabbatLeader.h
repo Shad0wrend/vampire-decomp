@@ -1,5 +1,6 @@
 // CNPC_VSabbatLeader: Sabbat leader NPC. Only the members that decompiled code needs are declared.
 #pragma once
+#include "Vector.h"
 
 struct datamap_t;
 

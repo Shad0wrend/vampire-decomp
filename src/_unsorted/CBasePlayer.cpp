@@ -2,6 +2,10 @@
 #include "vampire.h"
 
 // FUNCTION: 0x100b7e40 size=0xbd
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "CGlobalEntityList.h"
+#include "Vector.h"
 extern CGlobalEntityList *g_10566458;
 
 struct CMat3x4X
@@ -37,6 +41,7 @@ float *CBasePlayer::vfunc194()
 // END FUNCTION
 
 // FUNCTION: 0x100b7f50 size=0x7
+#include "CBasePlayer.h"
 float *CBasePlayer::vfunc195()
 {
 	return (float *)&m_vec206c;
@@ -44,6 +49,7 @@ float *CBasePlayer::vfunc195()
 // END FUNCTION
 
 // FUNCTION: 0x100b7fe0 size=0x1bf
+#include "CBaseEntity.h"
 #include "CBasePlayer.h"
 #include "CBaseCombatWeapon.h"
 #include "CEHandleGet.h"
@@ -103,6 +109,7 @@ void CBasePlayer::vfunc457(const char *pszName, int a)
 // END FUNCTION
 
 // FUNCTION: 0x1015aeb0 size=0x6
+#include "CBasePlayer.h"
 extern int g_10580edc[];
 
 // TARGET: CBasePlayer::vfunc82
@@ -123,6 +130,7 @@ void *sub_1015d660()
 // END FUNCTION
 
 // FUNCTION: 0x1015dc40 size=0x6
+#include "CBasePlayer.h"
 int CBasePlayer::vfunc409()
 {
 	return 1;
@@ -130,6 +138,7 @@ int CBasePlayer::vfunc409()
 // END FUNCTION
 
 // FUNCTION: 0x1015dc60 size=0x2d
+#include "CBaseEntity.h"
 #include "CBasePlayer.h"
 
 struct EntInfo {
@@ -158,6 +167,7 @@ CBaseEntity *CBasePlayer::sub_1015dc60()
 // END FUNCTION
 
 // FUNCTION: 0x1015dca0 size=0x3
+#include "CBasePlayer.h"
 // TARGET: CBasePlayer::vfunc328
 char CBasePlayer::vfunc328() { return 1; }
 // END FUNCTION
@@ -181,16 +191,19 @@ void __fastcall sub_1015dcf0(void *pThis)
 // END FUNCTION
 
 // FUNCTION: 0x1015dd10 size=0x3
+#include "CBasePlayer.h"
 // TARGET: CBasePlayer::vfunc439
 char CBasePlayer::vfunc439() { return 0; }
 // END FUNCTION
 
 // FUNCTION: 0x1015dd30 size=0x3
+#include "CBasePlayer.h"
 // TARGET: CBasePlayer::vfunc162
 char CBasePlayer::vfunc162() { return 1; }
 // END FUNCTION
 
 // FUNCTION: 0x1015dd50 size=0x8
+#include "CBaseEntity.h"
 #include "CBasePlayer.h"
 
 char CBasePlayer::sub_1015dd50()
@@ -243,6 +256,7 @@ char sub_1015de10() {
 // END FUNCTION
 
 // FUNCTION: 0x1015de30 size=0x7
+#include "CBasePlayer.h"
 float CBasePlayer::vfunc464()
 {
 	return 36.0f;
@@ -250,6 +264,7 @@ float CBasePlayer::vfunc464()
 // END FUNCTION
 
 // FUNCTION: 0x1015de50 size=0x7
+#include "CBasePlayer.h"
 float CBasePlayer::vfunc465()
 {
 	return 60.0f;
@@ -257,6 +272,7 @@ float CBasePlayer::vfunc465()
 // END FUNCTION
 
 // FUNCTION: 0x1015de70 size=0x7
+#include "CBasePlayer.h"
 float CBasePlayer::vfunc466()
 {
 	return 18.0f;
@@ -295,6 +311,7 @@ CBasePlayer *CBasePlayer::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x1015ee60 size=0x7
+#include "CBasePlayer.h"
 char CBasePlayer::vfunc406()
 {
 	return *(char *)((char *)this + 0x19f6);
@@ -311,6 +328,7 @@ void CBasePlayer::vfunc407()
 // END FUNCTION
 
 // FUNCTION: 0x1015eea0 size=0x8
+#include "CBasePlayer.h"
 // TARGET: CBasePlayer::vfunc408
 void CBasePlayer::vfunc408()
 {
@@ -319,6 +337,14 @@ void CBasePlayer::vfunc408()
 // END FUNCTION
 
 // FUNCTION: 0x1015efa0 size=0xb8
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBasePlayer.h"
 #include "CBaseEntity.h"
 #include "CCollisionProperty.h"
@@ -410,6 +436,7 @@ void CBasePlayer::vfunc316(CGlobalEntityList_Ent *pEnt, int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x1015ff40 size=0xc3
+#include "CBasePlayer.h"
 struct HandleEntry { void *ent; unsigned int serial; int pad; };
 struct HandleList { int pad; HandleEntry e[1]; };
 extern HandleList *g_10566458;
@@ -478,6 +505,8 @@ char CBasePlayer::vfunc321(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x10160bc0 size=0xfc
+#include "utlrbtree.h"
+#include "utlsortvector.h"
 #include "CBasePlayer.h"
 #include "melee_dice_roll_result.h"
 #include "CUnknown10349590.h"
@@ -509,6 +538,7 @@ bool CBasePlayer::vfunc318(int a, melee_dice_roll_result *pRoll, int c)
 // END FUNCTION
 
 // FUNCTION: 0x10160d00 size=0x8f
+#include "melee_dice_roll_result.h"
 #include "CBasePlayer.h"
 
 struct melee_dice_roll_result_view
@@ -557,6 +587,7 @@ char CBasePlayer::vfunc327()
 // END FUNCTION
 
 // FUNCTION: 0x10161200 size=0x12b
+#include "CBasePlayer.h"
 struct CSequenceDescView {
 	char m_pad0000[0x2f8];
 	float m_f2f8;
@@ -615,6 +646,7 @@ bool CBasePlayer::vfunc412()
 // END FUNCTION
 
 // FUNCTION: 0x10161430 size=0x14
+#include "CBasePlayer.h"
 // TARGET: CBasePlayer::vfunc413
 bool CBasePlayer::vfunc413()
 {
@@ -713,6 +745,7 @@ void CBasePlayer::vfunc180()
 // END FUNCTION
 
 // FUNCTION: 0x101621f0 size=0x1
+#include "CBasePlayer.h"
 void CBasePlayer::vfunc448()
 {
 }
@@ -936,6 +969,7 @@ void CBasePlayer::vfunc449(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x101647a0 size=0x9b
+#include "CBasePlayer.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
 extern int *g_109f3680;
@@ -1029,6 +1063,7 @@ char CBasePlayer::vfunc418(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x10165a00 size=0x47
+#include "CBaseEntity.h"
 #include "CBasePlayer.h"
 #include "CEHandleGet.h"
 // TARGET: CBasePlayer::vfunc426
@@ -1044,6 +1079,7 @@ void CBasePlayer::vfunc426()
 // END FUNCTION
 
 // FUNCTION: 0x10165a70 size=0x47
+#include "CBaseEntity.h"
 #include "CBasePlayer.h"
 #include "CEHandleGet.h"
 void CBasePlayer::vfunc427()
@@ -1174,6 +1210,7 @@ done:
 // END FUNCTION
 
 // FUNCTION: 0x10168e10 size=0x32
+#include "CBaseEntity.h"
 #include "CBasePlayer.h"
 
 struct EntInfo {
@@ -1259,6 +1296,7 @@ void CBasePlayer::vfunc435()
 // END FUNCTION
 
 // FUNCTION: 0x1016a9e0 size=0x6
+#include "CBasePlayer.h"
 // TARGET: CBasePlayer::vfunc138
 int CBasePlayer::vfunc138()
 {
@@ -1393,6 +1431,7 @@ void CBasePlayer::sub_1016af80(void *pCmd, void *pHelper)
 // END FUNCTION
 
 // FUNCTION: 0x1016b130 size=0xff
+#include "CBasePlayer.h"
 #include "CBaseEntity.h"
 #include "TestBit.h"
 
@@ -1523,6 +1562,7 @@ void CBasePlayer::vfunc104()
 // END FUNCTION
 
 // FUNCTION: 0x1016eb20 size=0x6f
+#include "CBasePlayer.h"
 #include "CBaseCombatCharacter.h"
 #include "CBaseCombatWeapon.h"
 #include "CStatDefault3List.h"
@@ -1581,6 +1621,7 @@ void CBasePlayer::vfunc170(const Vector *pOffset)
 // END FUNCTION
 
 // FUNCTION: 0x10171f50 size=0x1a9
+#include "CBaseEntity.h"
 #include "CBasePlayer.h"
 #include "CEntityVSlots.h"
 #include "ehandle.h"
@@ -1772,6 +1813,7 @@ Vector CBasePlayer::vfunc197(const Vector &posSrc, char bRandom, char bAddViewOf
 // END FUNCTION
 
 // FUNCTION: 0x10177210 size=0x73
+#include "CBasePlayer.h"
 #include "CBaseCombatCharacter.h"
 #include "CBaseCombatWeapon.h"
 extern char g_106b8540[];
@@ -1810,6 +1852,7 @@ bool CBasePlayer::vfunc382(CBaseCombatWeapon *pWeapon)
 // END FUNCTION
 
 // FUNCTION: 0x10177760 size=0x55
+#include "CBasePlayer.h"
 struct CEntView443 {
 	CBP_V1(a0)
 	virtual unsigned int *vfunc1();
@@ -1843,6 +1886,7 @@ void CBasePlayer::vfunc443(int a)
 // END FUNCTION
 
 // FUNCTION: 0x101777e0 size=0xd1
+#include "CBasePlayer.h"
 #include <string.h>
 #include "CBaseCombatCharacter.h"
 
@@ -1898,6 +1942,14 @@ skipRemove:
 // END FUNCTION
 
 // FUNCTION: 0x10177900 size=0x141
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBasePlayer.h"
 #include "CBaseEntity.h"
 #include "CGameRules.h"
@@ -1957,6 +2009,7 @@ void CBasePlayer::vfunc383(CBaseEntity *pWeapon, char bNoSwitch)
 // END FUNCTION
 
 // FUNCTION: 0x10177bf0 size=0x7
+#include "CBasePlayer.h"
 struct CBasePlayerView233c
 {
 	char m_pad[0x233c];
@@ -1970,6 +2023,8 @@ int CBasePlayer::vfunc200()
 // END FUNCTION
 
 // FUNCTION: 0x10178400 size=0x42
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
 void sub_101cd940(CBaseEntity *);
 void sub_100828d0();
 namespace block_10178400 {
@@ -1992,6 +2047,7 @@ void CUnitP2::sub_10178400()
 // END FUNCTION
 
 // FUNCTION: 0x10178660 size=0xf6
+#include "CBaseEntity.h"
 #include "CBasePlayer.h"
 #include "CEntityVSlots.h"
 
@@ -2028,6 +2084,8 @@ void CBasePlayer::sub_10178660(CBaseEntity *pEnt, char bCenter)
 // END FUNCTION
 
 // FUNCTION: 0x10178d10 size=0x63
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
 #include "CGameRules.h"
 extern CGameRules *g_1070ba0c;
 // TARGET: CBasePlayer::vfunc359
@@ -2079,6 +2137,7 @@ char sub_1017be30() {
 // END FUNCTION
 
 // FUNCTION: 0x1017be50 size=0x8f
+#include "CBasePlayer.h"
 int sub_1002dfe0(int a, int b);
 
 // TARGET: CBasePlayer::vfunc468
@@ -2105,6 +2164,7 @@ int CBasePlayer::vfunc298(int a)
 // END FUNCTION
 
 // FUNCTION: 0x101824c0 size=0xd
+#include "CBasePlayer.h"
 void CBasePlayer::vfunc338(int a, char b, int c)
 {
 	sub_1033cc30(a, b, c);
@@ -2112,6 +2172,8 @@ void CBasePlayer::vfunc338(int a, char b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x101824e0 size=0xd
+#include "CBaseCombatCharacter.h"
+#include "CBasePlayer.h"
 // TARGET: CBasePlayer::vfunc339
 void CBasePlayer::vfunc339(int a, float b, int c)
 {
@@ -2151,6 +2213,7 @@ bool __stdcall sub_10182f10(int a)
 // END FUNCTION
 
 // FUNCTION: 0x10182f30 size=0x11
+#include "CBasePlayer.h"
 // TARGET: CBasePlayer::vfunc21
 void CBasePlayer::vfunc21(int a)
 {
@@ -2159,6 +2222,7 @@ void CBasePlayer::vfunc21(int a)
 // END FUNCTION
 
 // FUNCTION: 0x10182f60 size=0x11
+#include "CBasePlayer.h"
 #include "CBasePlayer_ext.h"
 
 // TARGET: CBasePlayer::vfunc22
@@ -2169,6 +2233,7 @@ void CBasePlayer::vfunc22(int a)
 // END FUNCTION
 
 // FUNCTION: 0x10182f90 size=0x11
+#include "CBasePlayer.h"
 // TARGET: CBasePlayer::vfunc23
 void CBasePlayer::vfunc23(int a)
 {
@@ -2200,6 +2265,7 @@ void CBasePlayer::vfunc26(CBaseEntity *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x101830e0 size=0xf
+#include "CBasePlayer.h"
 // TARGET: CBasePlayer::vfunc429
 void CBasePlayer::vfunc429()
 {

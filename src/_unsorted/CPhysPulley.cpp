@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1002c300 size=0x6
+#include "datamap.h"
 #include "CPhysPulley.h"
 namespace lifted {
 extern char g_10538f44;

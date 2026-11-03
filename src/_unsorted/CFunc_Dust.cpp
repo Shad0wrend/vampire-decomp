@@ -21,6 +21,7 @@ int CFunc_Dust::vfunc81()
 // END FUNCTION
 
 // FUNCTION: 0x10113aa0 size=0x6
+#include "datamap.h"
 #include "CFunc_Dust.h"
 namespace lifted {
 extern char g_1056fac0;
@@ -32,6 +33,7 @@ datamap_t *CFunc_Dust::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x10113c10 size=0x8
+#include "CBaseEntity.h"
 #include "CFunc_Dust.h"
 // TARGET: CFunc_Dust::vfunc117
 char CFunc_Dust::vfunc117() { char c = ((CBaseEntity *)this)->CBaseEntity::vfunc117(); return c & (char)0xfd; }
@@ -53,6 +55,16 @@ CFunc_Dust *CFunc_Dust::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x10113d10 size=0xf5
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CFunc_Dust.h"
 #include "CUnknown101466e0.h"
 #include "ScopeTrace.h"

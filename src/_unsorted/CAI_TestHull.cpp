@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x102d7290 size=0x8
+#include "CBaseEntity.h"
 #include "CAI_TestHull.h"
 // TARGET: CAI_TestHull::vfunc117
 char CAI_TestHull::vfunc117() { char c = ((CBaseEntity *)this)->CBaseEntity::vfunc117(); return c & (char)0xfd; }
@@ -30,6 +31,14 @@ float CAI_TestHull::vfunc523()
 // END FUNCTION
 
 // FUNCTION: 0x102d72f0 size=0x16b
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CCollisionProperty.h"
 #include "CAI_TestHull.h"

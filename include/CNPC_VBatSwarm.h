@@ -1,6 +1,8 @@
 // CNPC_VBatSwarm: declared by pcdecomp transplant for 0x10366cb0 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CBaseEntity.h"
+#include "datamap.h"
 
 class CNPC_VBatSwarm : public CBaseEntity
 {

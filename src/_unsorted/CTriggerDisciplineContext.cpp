@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10210c50 size=0x6
+#include "datamap.h"
 #include "CTriggerDisciplineContext.h"
 namespace lifted {
 extern char g_105ab72c;

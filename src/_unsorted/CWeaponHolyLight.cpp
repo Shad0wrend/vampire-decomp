@@ -36,6 +36,9 @@ CWeaponHolyLight *CWeaponHolyLight::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x103f2ae0 size=0x120
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CWeaponHolyLight.h"
 #include "CDisciplineWeapon.h"
 #include "CBaseCombatCharacter.h"

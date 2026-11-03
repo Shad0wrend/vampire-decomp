@@ -45,6 +45,14 @@ CPropPadlock *CPropPadlock::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x10225db0 size=0x10e
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CCollisionProperty.h"
 #include "CPropPadlock.h"
@@ -85,6 +93,14 @@ void CPropPadlock::vfunc113()
 // END FUNCTION
 
 // FUNCTION: 0x10225f60 size=0x139
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CPropPadlock.h"
 #include "CUnknown100ee750.h"

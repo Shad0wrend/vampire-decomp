@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10210f80 size=0x6
+#include "datamap.h"
 #include "CTriggerBombSite.h"
 namespace lifted {
 extern char g_105ab7a0;
@@ -91,6 +92,8 @@ int CTriggerBombSite::vfunc33()
 // END FUNCTION
 
 // FUNCTION: 0x10211210 size=0x50
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
 #include "CTriggerBombSite.h"
 int CTriggerBombSite::vfunc35(CBasePlayer *pPlayer)
 {

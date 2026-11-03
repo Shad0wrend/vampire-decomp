@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x103b6b60 size=0x6
+#include "datamap.h"
 #include "CNPC_VTzimisce.h"
 namespace lifted {
 extern char g_10653130;
@@ -92,6 +93,7 @@ int CNPC_VTzimisce::vfunc451()
 // END FUNCTION
 
 // FUNCTION: 0x103b6e90 size=0xe1
+#include "utlmemory.h"
 #include "CNPC_VNewscaster.h"
 #include "CNPC_VTzimisce.h"
 
@@ -267,6 +269,7 @@ void CNPC_VTzimisce::vfunc420()
 // END FUNCTION
 
 // FUNCTION: 0x103b9270 size=0x1a
+#include "CAI_BaseNPCTroika.h"
 #include "CNPC_VTzimisce.h"
 #include "CBaseEntity.h"
 
@@ -704,6 +707,7 @@ void CNPC_VTzimisce::vfunc463(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x103ba410 size=0x1c0
+#include "CBaseEntity.h"
 #include "CNPC_VTzimisce.h"
 #include "CUnknown10381be0.h"
 #include "CEHandleGet.h"

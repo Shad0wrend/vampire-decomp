@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x103da3e0 size=0x6
+#include "datamap.h"
 #include "CTriggerWWZone.h"
 namespace lifted {
 extern char g_1065f7ac;
@@ -13,6 +14,14 @@ datamap_t * CTriggerWWZone::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x103da540 size=0x7e
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CTriggerWWZone.h"
 #include "ScopeTrace.h"
 void CTriggerWWZone::vfunc113()
@@ -46,6 +55,14 @@ void CTriggerWWZone::vfunc251()
 // END FUNCTION
 
 // FUNCTION: 0x103da660 size=0x9b
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseTrigger.h"
 #include "CTriggerWWZone.h"
@@ -63,6 +80,9 @@ void CTriggerWWZone::vfunc119()
 // END FUNCTION
 
 // FUNCTION: 0x103dbf50 size=0xb2
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
 #include "CTriggerWWZone.h"
 #include "CDoorEventList.h"
 

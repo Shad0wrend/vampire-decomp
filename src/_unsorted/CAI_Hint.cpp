@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x102d0370 size=0x6
+#include "CAI_Hint.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_106099f0;
 }
@@ -34,6 +36,7 @@ void CAI_Hint::vfunc78()
 // END FUNCTION
 
 // FUNCTION: 0x102d08c0 size=0x8
+#include "CAI_Hint.h"
 // TARGET: CAI_Hint::vfunc119
 void CAI_Hint::vfunc119()
 {
@@ -89,6 +92,7 @@ int CAI_Hint::vfunc124()
 // END FUNCTION
 
 // FUNCTION: 0x102d2ee0 size=0x8
+#include "CBaseEntity.h"
 #include "CAI_Hint.h"
 // TARGET: CAI_Hint::sub_102d2ee0
 unsigned char CAI_Hint::sub_102d2ee0()

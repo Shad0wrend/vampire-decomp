@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10375240 size=0x6
+#include "CNPC_VFrenzyShadow.h"
 namespace lifted {
 extern char g_1093ae48;
 }
@@ -12,6 +13,7 @@ int CNPC_VFrenzyShadow::vfunc580()
 // END FUNCTION
 
 // FUNCTION: 0x10375260 size=0x6
+#include "CNPC_VFrenzyShadow.h"
 namespace lifted {
 extern int g_10637b4c;
 }
@@ -22,6 +24,8 @@ int CNPC_VFrenzyShadow::vfunc451()
 // END FUNCTION
 
 // FUNCTION: 0x10375280 size=0x6
+#include "CNPC_VFrenzyShadow.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_10637aa8;
 }
@@ -70,6 +74,7 @@ void CNPC_VFrenzyShadow::vfunc103()
 // END FUNCTION
 
 // FUNCTION: 0x10375d70 size=0x6
+#include "CNPC_VFrenzyShadow.h"
 int CNPC_VFrenzyShadow::vfunc138()
 {
     return 3;
@@ -145,6 +150,7 @@ int CUnk10376b10::sub_10376b10(int a)
 // END FUNCTION
 
 // FUNCTION: 0x10376b50 size=0x3
+#include "CNPC_VFrenzyShadow.h"
 void CNPC_VFrenzyShadow::vfunc144(int a0)
 {
 }
@@ -174,6 +180,7 @@ bool CNPC_VFrenzyShadow::sub_10376ba0(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x10376bd0 size=0xe
+#include "CNPC_VFrenzyShadow.h"
 struct CUnknown10924edc
 {
 	virtual void slot0();
@@ -188,6 +195,7 @@ void CNPC_VFrenzyShadow::vfunc601(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x10376bf0 size=0x3
+#include "CNPC_VFrenzyShadow.h"
 bool CNPC_VFrenzyShadow::vfunc602()
 {
     return 0;

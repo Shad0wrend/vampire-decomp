@@ -59,6 +59,7 @@ void CFuncAreaPortalWindow::vfunc103()
 // END FUNCTION
 
 // FUNCTION: 0x1010d110 size=0xce
+#include "CGlobalEntityList.h"
 #include "CFuncAreaPortalWindow.h"
 
 extern CGlobalEntityList g_106eb5d8;

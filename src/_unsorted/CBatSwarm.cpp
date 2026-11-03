@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x100b8320 size=0x6
+#include "datamap.h"
 #include "CBatSwarm.h"
 namespace lifted {
 extern char g_1055a430;

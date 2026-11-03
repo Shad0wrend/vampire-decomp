@@ -80,6 +80,14 @@ void CDisciplineProjectile::vfunc269()
 // END FUNCTION
 
 // FUNCTION: 0x101da020 size=0x235
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CDisciplineProjectile.h"
 #include "CUnknown101e0f00.h"
 #include "ScopeTrace.h"

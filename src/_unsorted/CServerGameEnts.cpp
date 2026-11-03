@@ -29,6 +29,7 @@ void __fastcall sub_1011be00(void *, int, int value)
 // END FUNCTION
 
 // FUNCTION: 0x1011be20 size=0x69
+#include "CBaseEntity.h"
 #include "CServerGameEnts.h"
 struct CServerGameEntsUnknown {
     virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3();

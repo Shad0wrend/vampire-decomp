@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10247a00 size=0x6c
+#include "CMeasureSectionInstance.h"
 struct ConVarA { virtual void v0(); virtual bool v1(); int pad[10]; int m_n; };
 extern ConVarA *g_1075329c;
 extern ConVarA *g_107536ac;

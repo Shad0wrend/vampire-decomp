@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x101bb4a0 size=0x6
+#include "datamap.h"
 #include "CAISound.h"
 namespace lifted {
 extern char g_10599f48;

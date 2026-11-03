@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1018efa0 size=0x6
+#include "datamap.h"
 #include "CBreakableProp.h"
 namespace lifted {
 extern char g_1058d1c8;
@@ -62,6 +63,7 @@ void CBreakableProp::vfunc265()
 // END FUNCTION
 
 // FUNCTION: 0x1018f340 size=0x73
+#include "CBaseEntity.h"
 #include "CBreakableProp.h"
 
 #define SV(n) virtual void v##n();

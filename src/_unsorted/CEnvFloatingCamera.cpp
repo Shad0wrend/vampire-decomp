@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x101036e0 size=0x6
+#include "datamap.h"
 #include "CEnvFloatingCamera.h"
 namespace lifted {
 extern char g_10569fd4;

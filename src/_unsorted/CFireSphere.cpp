@@ -16,6 +16,7 @@ CFireSphere::CFireSphere(int *pList, int nCapacity, char bCheckVisible, const Ve
 // END FUNCTION
 
 // FUNCTION: 0x10108e40 size=0xe0
+#include "CBaseEntity.h"
 #include "CFireSphere.h"
 #include "CUnknown10108e00.h"
 #include "CGlobalEntityList.h"

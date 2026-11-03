@@ -42,6 +42,7 @@ void ZView103defc0::sub_103defc0()
 // END FUNCTION
 
 // FUNCTION: 0x103df2e0 size=0x20c
+#include "CBaseCombatCharacter.h"
 #include "CNPC_VZombie.h"
 
 struct CZombieEnemy167 {
@@ -207,6 +208,9 @@ void CNPC_VZombie::sub_103e05e0(int nSound)
 // END FUNCTION
 
 // FUNCTION: 0x103e06d0 size=0x1eb
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CNPC_VZombie.h"
 #include "CVStatList_t.h"
 #include "CVDmg_t.h"

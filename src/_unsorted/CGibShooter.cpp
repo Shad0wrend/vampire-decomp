@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x100f45c0 size=0x6
+#include "datamap.h"
 #include "CGibShooter.h"
 namespace lifted {
 extern char g_10565940;
@@ -50,6 +51,14 @@ void CGibShooter::sub_100f4730(int a, int b, int c, int d)
 // END FUNCTION
 
 // FUNCTION: 0x100f47b0 size=0xf2
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CGibShooter.h"
 #include "ScopeTrace.h"

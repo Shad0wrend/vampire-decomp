@@ -70,6 +70,7 @@ void CTETextMessage::vfunc3(const float *pOrigin, const float *pAngles)
 // END FUNCTION
 
 // FUNCTION: 0x10068d50 size=0x39
+#include "CRecipientFilter.h"
 #include "CTETextMessage.h"
 #include "IVEngineServerFull.h"
 

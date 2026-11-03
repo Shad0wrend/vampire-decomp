@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x100f9a60 size=0x17f
+#include "utlvector.h"
 #include "CBaseEntityList.h"
 
 struct S100fa600 { void sub_100fa600(int num); };

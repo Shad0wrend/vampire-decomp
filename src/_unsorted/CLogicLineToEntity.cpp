@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x101319e0 size=0x6
+#include "datamap.h"
 #include "CLogicLineToEntity.h"
 namespace lifted {
 extern char g_105760fc;
@@ -13,6 +14,12 @@ datamap_t * CLogicLineToEntity::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x10131ac0 size=0x151
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
 #include "CLogicLineToEntity.h"
 #include "CGlobalEntityList.h"
 #include "CEHandleGet.h"

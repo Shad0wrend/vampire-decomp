@@ -35,6 +35,7 @@ int CNPC_Crow::vfunc451()
 // END FUNCTION
 
 // FUNCTION: 0x103573b0 size=0x6
+#include "datamap.h"
 #include "CNPC_Crow.h"
 namespace lifted {
 extern char g_10628928;
@@ -46,6 +47,14 @@ datamap_t *CNPC_Crow::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x10357440 size=0x1a6
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_Crow.h"
 #include "CEntityVSlots.h"
 #include "CCollisionProperty.h"
@@ -106,6 +115,7 @@ int CNPC_Crow::vfunc138()
 // END FUNCTION
 
 // FUNCTION: 0x10357680 size=0xac
+#include "CBaseEntity.h"
 #include "CNPC_Crow.h"
 
 #define SV1(n) virtual void n();
@@ -251,6 +261,7 @@ bool CNPC_Crow::vfunc394()
 // END FUNCTION
 
 // FUNCTION: 0x10358c60 size=0x16
+#include "CBaseEntity.h"
 #include "CNPC_Crow.h"
 
 bool CNPC_Crow::vfunc566(CBaseEntity *pHint)
@@ -377,6 +388,8 @@ int CNPC_Crow::vfunc488()
 // END FUNCTION
 
 // FUNCTION: 0x10358f90 size=0x103
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
 #include "CNPC_Crow.h"
 extern "C" __declspec(dllimport) int __cdecl Q_snprintf(char *, int, const char *, ...);
 extern char g_10628c84[];

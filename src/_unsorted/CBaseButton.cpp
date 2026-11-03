@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x100c8430 size=0x6
+#include "CBaseButton.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_1055beb0;
 }
@@ -21,6 +23,7 @@ CBaseButton::CBaseButton()
 // END FUNCTION
 
 // FUNCTION: 0x100c8740 size=0x3
+#include "CBaseButton.h"
 bool CBaseButton::vfunc128()
 {
     return 0;
@@ -58,6 +61,14 @@ void CBaseButton::vfunc104()
 // END FUNCTION
 
 // FUNCTION: 0x100c8810 size=0xe5
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "ScopeTrace.h"
 #include "CBaseButton.h"
 #include "CUnknown1073dc28.h"
 
@@ -94,6 +105,7 @@ void CBaseButton::vfunc71()
 // END FUNCTION
 
 // FUNCTION: 0x100c8940 size=0x3b
+#include "CBaseEntity.h"
 #include "CBaseButton.h"
 
 // TARGET: CBaseButton::vfunc35
@@ -121,6 +133,7 @@ bool CBaseButton::sub_100c8990(int a)
 // END FUNCTION
 
 // FUNCTION: 0x100c8b80 size=0x175
+#include "CBaseButton.h"
 #include "CEHandleGet.h"
 
 struct CButtonAttackerView {
@@ -162,6 +175,7 @@ int CBaseButton::vfunc142(void *pInfo)
 // END FUNCTION
 
 // FUNCTION: 0x100c9170 size=0xe
+#include "CBaseButton.h"
 namespace lifted {
 int __stdcall sub_10004b92(int, int, int);
 }

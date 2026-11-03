@@ -2,10 +2,12 @@
 #include "vampire.h"
 
 // FUNCTION: 0x101bcf30 size=0x9
+#include "CCopyRecipientFilter.h"
 unsigned int CCopyRecipientFilter::vfunc1() { return m_flags >> 1 & 1; }
 // END FUNCTION
 
 // FUNCTION: 0x101bcf50 size=0x4
+#include "CCopyRecipientFilter.h"
 int CCopyRecipientFilter::vfunc2()
 {
     return *(int *)((char *)this + 0x14);
@@ -13,6 +15,7 @@ int CCopyRecipientFilter::vfunc2()
 // END FUNCTION
 
 // FUNCTION: 0x101bcf70 size=0xd
+#include "CCopyRecipientFilter.h"
 int CCopyRecipientFilter::vfunc3(int index)
 {
 	return m_pRecipients[index];
@@ -20,6 +23,7 @@ int CCopyRecipientFilter::vfunc3(int index)
 // END FUNCTION
 
 // FUNCTION: 0x101bcf90 size=0xa
+#include "CCopyRecipientFilter.h"
 unsigned int CCopyRecipientFilter::vfunc7()
 {
 	return (m_flags >> 2) & 1;
@@ -32,6 +36,7 @@ char __fastcall sub_101bcfb0(void *p) { return ((unsigned char *)p)[0x1c]; }
 // END FUNCTION
 
 // FUNCTION: 0x101bcfd0 size=0x4
+#include "CCopyRecipientFilter.h"
 int CCopyRecipientFilter::vfunc5()
 {
     return *(int *)((char *)this + 0x20);
@@ -44,6 +49,8 @@ char __fastcall sub_101bcff0(void *p) { return ((unsigned char *)p)[0x24]; }
 // END FUNCTION
 
 // FUNCTION: 0x101bd010 size=0xaf
+#include "utlrbtree.h"
+#include "utlsortvector.h"
 #include "CRecipientFilter.h"
 
 

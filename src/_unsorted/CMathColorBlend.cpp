@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10132380 size=0x6
+#include "datamap.h"
 #include "CMathColorBlend.h"
 namespace lifted {
 extern char g_105762ec;

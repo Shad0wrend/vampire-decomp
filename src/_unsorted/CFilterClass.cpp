@@ -23,6 +23,7 @@ bool CFilterClass::vfunc241(CBaseEntity *pEntity)
 // END FUNCTION
 
 // FUNCTION: 0x10107e60 size=0x6
+#include "datamap.h"
 #include "CFilterClass.h"
 namespace lifted {
 extern char g_1056c4a0;

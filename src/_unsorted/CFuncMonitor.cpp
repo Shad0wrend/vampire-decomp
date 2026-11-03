@@ -21,6 +21,7 @@ int CFuncMonitor::vfunc81()
 // END FUNCTION
 
 // FUNCTION: 0x10115020 size=0x6
+#include "datamap.h"
 #include "CFuncMonitor.h"
 namespace lifted {
 extern char g_10570580;
@@ -32,6 +33,7 @@ datamap_t *CFuncMonitor::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x101150b0 size=0x2a
+#include "CBaseEntity.h"
 #include "CFuncMonitor.h"
 
 extern char g_106b8540[];
@@ -133,6 +135,7 @@ void CFuncMonitor::vfunc42(void *pCamera)
 // END FUNCTION
 
 // FUNCTION: 0x10115350 size=0x39
+#include "CBaseEntity.h"
 #include "CFuncMonitor.h"
 
 struct EntInfo {

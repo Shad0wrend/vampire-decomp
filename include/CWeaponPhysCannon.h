@@ -1,5 +1,6 @@
 // CWeaponPhysCannon: the physics cannon weapon (derived from CBaseCombatWeapon).
 #pragma once
+#include "datamap.h"
 #include "CBaseCombatWeapon.h"
 #include "CUnknown1040cb60.h"
 

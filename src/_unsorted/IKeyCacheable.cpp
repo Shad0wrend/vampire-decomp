@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x101f2010 size=0x20
+#include "vampire_all.h"
 #include "IKeyCacheable.h"
 
 struct DummyKeyCacheable : IKeyCacheable

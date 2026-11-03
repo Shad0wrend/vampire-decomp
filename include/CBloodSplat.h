@@ -1,5 +1,6 @@
 // CBloodSplat: point entity that traces forward and leaves a blood decal.
 #pragma once
+#include "CBaseEntity.h"
 
 class CBloodSplat : public CBaseEntity
 {

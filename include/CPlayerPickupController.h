@@ -1,6 +1,7 @@
 // CPlayerPickupController (RTTI .?AVCPlayerPickupController@@): base CBaseEntity at +0x0.
 // Holds the carry state (object at +0x450, its entity handle at +0x59c) and the player at +0x5cc.
 #pragma once
+#include "CBaseCombatWeapon.h"
 
 #include "CBaseEntity.h"
 #include "CUnknown1040cb60.h"

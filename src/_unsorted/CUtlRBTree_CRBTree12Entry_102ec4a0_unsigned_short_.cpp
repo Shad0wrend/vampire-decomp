@@ -9,6 +9,14 @@ static void (CUtlRBTree<CRBTree12Entry_102ec4a0, unsigned short>::*s_LinkToParen
 // END FUNCTION
 
 // FUNCTION: 0x102eb770 size=0x58
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree16.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
 #include "CRBTree12Entry_102ec4a0.h"
 #include "utlrbtree.h"
 

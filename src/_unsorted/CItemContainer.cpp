@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10207f20 size=0x6
+#include "datamap.h"
 #include "CItemContainer.h"
 namespace lifted {
 extern char g_105a93d0;
@@ -188,6 +189,7 @@ CItemContainer *CItemContainer::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x10208b50 size=0x39
+#include "CBaseEntity.h"
 #include "CItemContainer.h"
 
 struct EntInfo {
@@ -292,6 +294,7 @@ void CItemContainer::vfunc407()
 // END FUNCTION
 
 // FUNCTION: 0x10208fc0 size=0x1f
+#include "CBaseEntity.h"
 #include "CItemContainer.h"
 
 // TARGET: CItemContainer::vfunc349
@@ -304,6 +307,7 @@ void CItemContainer::vfunc349(CBaseEntity **ppEnt)
 // END FUNCTION
 
 // FUNCTION: 0x10208ff0 size=0x72
+#include "CBaseEntity.h"
 #include "CItemContainer.h"
 #include "CGlobalEntityList.h"
 

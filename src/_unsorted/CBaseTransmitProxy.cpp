@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10097b50 size=0x3c
+#include "CBaseEntity.h"
 #include "CBaseTransmitProxy.h"
 
 extern int vt_10450004[];

@@ -14,6 +14,7 @@ unsigned char CLogicAuto::sub_10130c10()
 // END FUNCTION
 
 // FUNCTION: 0x10130c30 size=0x6
+#include "datamap.h"
 #include "CLogicAuto.h"
 namespace lifted {
 extern char g_10575a68;

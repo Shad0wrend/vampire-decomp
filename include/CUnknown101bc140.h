@@ -1,6 +1,7 @@
 // CUnknown101bc140: a playing sound object (real name not yet known; "CSoundPatch"-like) that the sound envelope
 // controller (CSoundControllerImp) drives.
 #pragma once
+#include "utlvector.h"
 
 class CBaseEntity;
 

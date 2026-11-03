@@ -21,6 +21,7 @@ void CAI_MemoryListSaveRestoreOps::vfunc0(SaveRestoreFieldInfo_t *fieldInfo, CSa
 // END FUNCTION
 
 // FUNCTION: 0x102df090 size=0x7b
+#include "CBaseEntity.h"
 #include "CAI_MemoryListSaveRestoreOps.h"
 #include "CAI_InterestingPlaceMarkersSaveRestoreOps.h"
 #include "CGlobalEntityList.h"

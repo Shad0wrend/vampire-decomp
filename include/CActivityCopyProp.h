@@ -1,6 +1,8 @@
 // CActivityCopyProp: declared by pcdecomp transplant for 0x1018e210 from CSimplePhysicsProp (0x1004fe80);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CBaseEntity.h"
+#include "datamap.h"
 
 class CActivityCopyProp : public CBaseEntity
 {

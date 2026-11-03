@@ -21,6 +21,7 @@ char CBaseAnimating::vfunc251()
 // END FUNCTION
 
 // FUNCTION: 0x1008a760 size=0x6
+#include "datamap.h"
 #include "CBaseAnimating.h"
 namespace lifted {
 extern char g_1054cd70;
@@ -66,6 +67,14 @@ CBaseAnimating *CBaseAnimating::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x1008b530 size=0x23f
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "CBaseToggle.h"
 #include "ScopeTrace.h"
@@ -157,6 +166,14 @@ void CBaseAnimating::vfunc103()
 // END FUNCTION
 
 // FUNCTION: 0x1008df10 size=0x136
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CGlobalEntityList.h"
 #include "CEntityVSlots.h"
@@ -184,6 +201,14 @@ void CBaseAnimating::vfunc130(int a)
 // END FUNCTION
 
 // FUNCTION: 0x1008e0a0 size=0x1ee
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
 #include "ehandle.h"
@@ -233,6 +258,14 @@ void CBaseAnimating::sub_1008e0a0(CBaseEntity *pModel, const char *pszA, const c
 // END FUNCTION
 
 // FUNCTION: 0x1008e310 size=0x11e
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include <string.h>
 #include "ScopeTrace.h"
 #include "CBaseAnimating.h"
@@ -351,6 +384,14 @@ int CBaseAnimating::vfunc253(int a, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x10090c80 size=0x142
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include <math.h>
 #include "ScopeTrace.h"
 #include "CBaseAnimating.h"
@@ -473,6 +514,14 @@ float CBaseAnimating::vfunc249()
 // END FUNCTION
 
 // FUNCTION: 0x10091da0 size=0x11d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
 
@@ -565,6 +614,14 @@ float __fastcall sub_10091fe0(CBaseAnimating *self, int unused, int iParameter, 
 // END FUNCTION
 
 // FUNCTION: 0x10092b50 size=0xfb
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
 #include "CUnknown100c7f30.h"
@@ -604,6 +661,14 @@ void CBaseAnimating::vfunc257(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x10093000 size=0x162
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
 #include "CGlobalEntityList.h"
@@ -665,6 +730,14 @@ Done:
 // END FUNCTION
 
 // FUNCTION: 0x10095a20 size=0x159
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
 
@@ -705,6 +778,14 @@ bool CBaseAnimating::vfunc100(int a, int b, char *pTrace)
 // END FUNCTION
 
 // FUNCTION: 0x10095e50 size=0x13a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "matrix3x4_t.h"
 #include "ScopeTrace.h"
@@ -754,6 +835,14 @@ void CBaseAnimating::vfunc199(float *vVelocity, float *vAngVelocity)
 // END FUNCTION
 
 // FUNCTION: 0x10095fe0 size=0xdb
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
 
@@ -773,6 +862,14 @@ void CBaseAnimating::vfunc255(void *pPos, void *pAng, int mask)
 // END FUNCTION
 
 // FUNCTION: 0x10096100 size=0x240
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
 #include <string.h>
@@ -818,6 +915,14 @@ int CBaseAnimating::vfunc124()
 // END FUNCTION
 
 // FUNCTION: 0x10096980 size=0x163
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
 

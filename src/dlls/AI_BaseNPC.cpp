@@ -48,6 +48,7 @@ int CAI_BaseNPC::sub_1026f4d0()
 // END FUNCTION
 
 // FUNCTION: 0x1027be60 size=0xb5
+#include "CAI_BaseNPC.h"
 #include "CUnknown102ee270.h"
 #include "CGlobalEntityList.h"
 

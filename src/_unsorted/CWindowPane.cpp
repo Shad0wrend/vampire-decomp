@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1010f560 size=0x6
+#include "datamap.h"
 #include "CWindowPane.h"
 namespace lifted {
 extern char g_1056f060;

@@ -66,6 +66,8 @@ void CTEMetalSparks::sub_10059fe0(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x1005a0a0 size=0x6
+#include "CTEMetalSparks.h"
+#include "ServerClass.h"
 namespace lifted {
 extern char g_106beaa8;
 }
@@ -76,6 +78,7 @@ ServerClass * CTEMetalSparks::vfunc0()
 // END FUNCTION
 
 // FUNCTION: 0x1005a0c0 size=0x3
+#include "CTEMetalSparks.h"
 int CTEMetalSparks::vfunc1()
 {
     return 0;

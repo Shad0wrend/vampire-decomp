@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10130ef0 size=0x6
+#include "datamap.h"
 #include "CLogicCompare.h"
 
 extern datamap_t g_10575cd8;

@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10135510 size=0x6
+#include "datamap.h"
 #include "CLogicNPCCondition.h"
 namespace lifted {
 extern char g_1057748c;
@@ -13,6 +14,14 @@ datamap_t *CLogicNPCCondition::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x10135650 size=0x98
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CLogicNPCCondition.h"
 #include "CEntityVSlots.h"
 #include "ScopeTrace.h"

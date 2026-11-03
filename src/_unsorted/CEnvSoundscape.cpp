@@ -17,6 +17,7 @@ CEnvSoundscape *CEnvSoundscape::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x101ae330 size=0x6
+#include "datamap.h"
 #include "CEnvSoundscape.h"
 namespace lifted {
 extern char g_10596db4;

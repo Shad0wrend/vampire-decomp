@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1039c480 size=0x6
+#include "CNPC_VMingXiaoTentacle.h"
 int CNPC_VMingXiaoTentacle::vfunc337()
 {
     return 0x38000;

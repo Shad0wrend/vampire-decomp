@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x101a4830 size=0x4
+#include "CSaveRestoreBlockSet.h"
 char * CSaveRestoreBlockSet::vfunc0()
 {
     return (char *)this + 4;
@@ -9,6 +10,7 @@ char * CSaveRestoreBlockSet::vfunc0()
 // END FUNCTION
 
 // FUNCTION: 0x101a4850 size=0x61
+#include "CSaveRestoreBlockSet.h"
 #include "CUnknown101a5800.h"
 struct IHandlerView {
 	virtual const char *GetBlockName() = 0;
@@ -30,6 +32,7 @@ void CSaveRestoreBlockSet::vfunc1(void *pSave)
 // END FUNCTION
 
 // FUNCTION: 0x101a48e0 size=0x67
+#include "CSaveRestoreBlockSet.h"
 struct SaveStream { virtual int vfunc0(); };
 struct BlockHandler { virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(SaveStream *s); };
 

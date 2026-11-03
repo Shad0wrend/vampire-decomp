@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1021d6d0 size=0x6
+#include "datamap.h"
 #include "CPropKeypad.h"
 namespace lifted {
 extern char g_105af80c;
@@ -152,6 +153,7 @@ char CPropKeypad::vfunc32(int a)
 // END FUNCTION
 
 // FUNCTION: 0x1021ddf0 size=0x35
+#include "CBaseEntity.h"
 #include "CPropKeypad.h"
 #include "CBaseTerminal.h"
 #include "CBasePlayer.h"

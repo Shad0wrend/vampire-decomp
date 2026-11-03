@@ -39,6 +39,7 @@ int __fastcall sub_100b1130(CBaseEntity *self)
 // END FUNCTION
 
 // FUNCTION: 0x102d7800 size=0x6
+#include "datamap.h"
 #include "CNodeEnt.h"
 namespace lifted {
 extern char g_1060aaf8;

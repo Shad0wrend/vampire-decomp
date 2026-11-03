@@ -1,5 +1,6 @@
 // CTEBSPDecal: BSP decal temp entity. Declared flat (bases not recovered); only the vtable head is modelled.
 #pragma once
+#include "ServerClass.h"
 
 class CTEBSPDecal
 {

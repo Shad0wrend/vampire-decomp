@@ -15,6 +15,7 @@ unsigned int CSprite::sub_1042e040()
 // END FUNCTION
 
 // FUNCTION: 0x1042e0f0 size=0x6
+#include "datamap.h"
 #include "CSprite.h"
 namespace lifted {
 extern char g_106aeaf8;

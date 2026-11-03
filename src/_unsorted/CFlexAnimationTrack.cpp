@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10073b80 size=0x50
+#include "CUnknown10075aa0.h"
 #include "CFlexAnimationTrack.h"
 CFlexAnimationTrack::CFlexAnimationTrack(CUnknown10075aa0 *pEvent)
 {

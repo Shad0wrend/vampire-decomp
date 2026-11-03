@@ -142,6 +142,14 @@ void CNPC_VGhoulCroucher::vfunc104()
 // END FUNCTION
 
 // FUNCTION: 0x1037b290 size=0x107
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VGhoulCroucher.h"
 #include "ScopeTrace.h"
 
@@ -241,6 +249,14 @@ char CNPC_VGhoulCroucher::vfunc379(void *pEnt, int b, int c, int d, int e, float
 // END FUNCTION
 
 // FUNCTION: 0x1037b570 size=0x120
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VGhoulCroucher.h"
 #include "ScopeTrace.h"
 #include "CEntityVSlots.h"
@@ -272,6 +288,14 @@ void CNPC_VGhoulCroucher::vfunc433()
 // END FUNCTION
 
 // FUNCTION: 0x1037b8b0 size=0xfa
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VGhoulCroucher.h"
 #include "ScopeTrace.h"
 
@@ -412,6 +436,14 @@ int CNPC_VGhoulCroucher::vfunc390(void *pInfo)
 // END FUNCTION
 
 // FUNCTION: 0x1037be80 size=0xac
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CNPC_VGhoulCroucher.h"
 
@@ -430,6 +462,14 @@ void CNPC_VGhoulCroucher::vfunc24(void *pVictim)
 // END FUNCTION
 
 // FUNCTION: 0x1037bf60 size=0xe8
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VGhoulCroucher.h"
 #include "ScopeTrace.h"
 
@@ -457,6 +497,14 @@ void CNPC_VGhoulCroucher::vfunc174(CBaseEntity *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x1037c1c0 size=0xe8
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
 #include "CNPC_VGhoulCroucher.h"
@@ -484,6 +532,14 @@ void CNPC_VGhoulCroucher::vfunc77()
 // END FUNCTION
 
 // FUNCTION: 0x1037c2f0 size=0xe8
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
 #include "CNPC_VGhoulCroucher.h"

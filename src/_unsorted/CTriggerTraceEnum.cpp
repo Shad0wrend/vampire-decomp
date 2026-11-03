@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10267170 size=0xbb
+#include "CBaseEntity.h"
 #include "CTriggerTraceEnum.h"
 #include "CUnknown1070b254.h"
 #include "CGameTrace.h"

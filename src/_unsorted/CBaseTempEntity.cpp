@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10050620 size=0x6
+#include "CBaseTempEntity.h"
+#include "ServerClass.h"
 namespace lifted {
 extern char g_106bdca0;
 }
@@ -12,6 +14,7 @@ ServerClass * CBaseTempEntity::vfunc0()
 // END FUNCTION
 
 // FUNCTION: 0x10050640 size=0x3
+#include "CBaseTempEntity.h"
 int CBaseTempEntity::vfunc1()
 {
     return 0;
@@ -32,6 +35,7 @@ CBaseTempEntity *CBaseTempEntity::vfunc2(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x100508a0 size=0x1
+#include "CBaseTempEntity.h"
 void CBaseTempEntity::vfunc5()
 {
 }

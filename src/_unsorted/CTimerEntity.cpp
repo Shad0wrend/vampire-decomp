@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10131430 size=0x6
+#include "datamap.h"
 #include "CTimerEntity.h"
 namespace lifted {
 extern char g_10575e50;

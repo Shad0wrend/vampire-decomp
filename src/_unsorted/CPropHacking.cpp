@@ -92,6 +92,8 @@ int CPropHacking::vfunc33()
 // END FUNCTION
 
 // FUNCTION: 0x1021a5b0 size=0xc2
+#include "utlrbtree.h"
+#include "utlsortvector.h"
 #include "CPropHacking.h"
 #include "CBasePlayer.h"
 #include "CVFeat_t.h"
@@ -111,6 +113,7 @@ void CPropHacking::sub_1021a5b0(CBaseEntity *pPlayer)
 // END FUNCTION
 
 // FUNCTION: 0x1021a6c0 size=0x60
+#include "CSave.h"
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
 #include "CPropHacking.h"

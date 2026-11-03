@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10178fa0 size=0x6
+#include "datamap.h"
 #include "CRevertSaved.h"
 
 extern datamap_t g_105836dc;

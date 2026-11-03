@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x100dbe00 size=0x6
+#include "CCollisionProperty.h"
 namespace lifted {
 extern char g_10560c20;
 }
@@ -25,6 +26,7 @@ CCollisionProperty::CCollisionProperty()
 // END FUNCTION
 
 // FUNCTION: 0x100dc1c0 size=0x1
+#include "CCollisionProperty.h"
 void CCollisionProperty::vfunc17()
 {
 }
@@ -39,6 +41,7 @@ unsigned int __fastcall sub_100dc1e0(void *pThis)
 // END FUNCTION
 
 // FUNCTION: 0x100dc3a0 size=0x4
+#include "CCollisionProperty.h"
 int CCollisionProperty::vfunc0()
 {
     return *(int *)((char *)this + 0x3c);
@@ -65,6 +68,7 @@ bool CCollisionProperty::vfunc16()
 // END FUNCTION
 
 // FUNCTION: 0x100dc410 size=0x3
+#include "CCollisionProperty.h"
 int CCollisionProperty::vfunc13()
 {
     return 0;
@@ -72,6 +76,7 @@ int CCollisionProperty::vfunc13()
 // END FUNCTION
 
 // FUNCTION: 0x100dc560 size=0x4
+#include "CCollisionProperty.h"
 int CCollisionProperty::vfunc11()
 {
     return *(int *)((char *)this + 0x40);
@@ -79,6 +84,7 @@ int CCollisionProperty::vfunc11()
 // END FUNCTION
 
 // FUNCTION: 0x100dc610 size=0xb
+#include "CCollisionProperty.h"
 #define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define H(p) T(p##0) T(p##1) T(p##2) T(p##3) T(p##4) T(p##5) T(p##6) T(p##7) T(p##8) T(p##9)
 struct CEntSlots
@@ -138,6 +144,7 @@ float *CCollisionProperty::vfunc10()
 // END FUNCTION
 
 // FUNCTION: 0x100dc810 size=0x4
+#include "CCollisionProperty.h"
 float * CCollisionProperty::vfunc1()
 {
     return (float *)((char *)this + 4);
@@ -145,6 +152,7 @@ float * CCollisionProperty::vfunc1()
 // END FUNCTION
 
 // FUNCTION: 0x100dc830 size=0x4
+#include "CCollisionProperty.h"
 float * CCollisionProperty::vfunc2()
 {
     return (float *)((char *)this + 0x10);
@@ -168,6 +176,7 @@ void CCollisionProperty::vfunc3(Vector *pMins, Vector *pMaxs)
 // END FUNCTION
 
 // FUNCTION: 0x100dc920 size=0x8
+#include "CCollisionProperty.h"
 // TARGET: CCollisionProperty::vfunc6
 int CCollisionProperty::vfunc6()
 {
@@ -176,6 +185,7 @@ int CCollisionProperty::vfunc6()
 // END FUNCTION
 
 // FUNCTION: 0x100dc940 size=0x8
+#include "CCollisionProperty.h"
 namespace lifted {
 struct C100016a4 { int sub_100016a4(); };
 }
@@ -186,6 +196,7 @@ void CCollisionProperty::vfunc7()
 // END FUNCTION
 
 // FUNCTION: 0x100dc960 size=0xb
+#include "CCollisionProperty.h"
 #define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 struct CEntSlots
 {
@@ -202,6 +213,7 @@ void CCollisionProperty::vfunc4()
 // END FUNCTION
 
 // FUNCTION: 0x100dc980 size=0xb
+#include "CCollisionProperty.h"
 void CCollisionProperty::vfunc5()
 {
 	m_pOuter->vfunc100();

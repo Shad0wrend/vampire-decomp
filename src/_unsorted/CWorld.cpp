@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1023aeb0 size=0x6
+#include "CWorld.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_105c2660;
 }
@@ -12,6 +14,7 @@ datamap_t * CWorld::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x1023afb0 size=0x6
+#include "CWorld.h"
 namespace lifted {
 extern char g_10752d44;
 }
@@ -22,6 +25,7 @@ int CWorld::vfunc80()
 // END FUNCTION
 
 // FUNCTION: 0x1023afd0 size=0x3
+#include "CWorld.h"
 int CWorld::vfunc81()
 {
     return 0;
@@ -29,6 +33,8 @@ int CWorld::vfunc81()
 // END FUNCTION
 
 // FUNCTION: 0x1023b620 size=0xd
+#include "CBaseEntity.h"
+#include "CWorld.h"
 void CWorld::vfunc130(int a)
 {
 	volatile int *p = &a;
@@ -38,6 +44,14 @@ void CWorld::vfunc130(int a)
 // END FUNCTION
 
 // FUNCTION: 0x1023b840 size=0x10b
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CWorld.h"
 #include "CCollisionProperty.h"
 #include "CServerNetworkProperty.h"
@@ -72,6 +86,7 @@ CWorld::CWorld() : CBaseEntity(0)
 // END FUNCTION
 
 // FUNCTION: 0x1023b9a0 size=0x3
+#include "CWorld.h"
 int CWorld::vfunc131()
 {
     return 0;
@@ -79,12 +94,14 @@ int CWorld::vfunc131()
 // END FUNCTION
 
 // FUNCTION: 0x1023b9c0 size=0x3
+#include "CWorld.h"
 void CWorld::vfunc230(int a0, int a1)
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x1023b9e0 size=0x3
+#include "CWorld.h"
 void CWorld::vfunc231(int a0, int a1, int a2, int a3)
 {
 }

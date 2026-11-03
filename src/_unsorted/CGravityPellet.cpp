@@ -9,6 +9,14 @@ void CGravityPellet::vfunc104()
 // END FUNCTION
 
 // FUNCTION: 0x10148390 size=0xdc
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CGravityPellet.h"
 #include "ScopeTrace.h"
@@ -46,6 +54,7 @@ void CGravityPellet::vfunc103()
 // END FUNCTION
 
 // FUNCTION: 0x10148500 size=0x6
+#include "datamap.h"
 #include "CGravityPellet.h"
 namespace lifted {
 extern char g_1057b7c0;

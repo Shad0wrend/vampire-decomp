@@ -236,6 +236,7 @@ void CSave::vfunc22(const char *pszName, const Vector &value)
 // END FUNCTION
 
 // FUNCTION: 0x101a0260 size=0x8a
+#include "datamap.h"
 #include "CSave.h"
 
 struct CFieldView	// the 0x2c byte typedescription_t, only the offset

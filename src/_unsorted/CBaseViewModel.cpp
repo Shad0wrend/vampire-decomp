@@ -88,6 +88,14 @@ void CBaseViewModel::vfunc104()
 // END FUNCTION
 
 // FUNCTION: 0x1042b8a0 size=0xd8
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CBaseViewModel.h"
 #include "ScopeTrace.h"

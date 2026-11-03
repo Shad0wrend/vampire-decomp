@@ -1,6 +1,7 @@
 // CUnknown101e56e0: a cost record of a stat-based skill (a table of 16 byte entries at +0x20, count at +0x1c, kind at +0x10);
 // real name not yet known. Also the holder class that points to it (the owner of the skill functions at 0x101e7fb0 ...).
 #pragma once
+#include "CBaseCombatWeapon.h"
 
 #include "CBaseCombatCharacter.h"
 #include "CVFeat_t.h"

@@ -70,6 +70,7 @@ bool CFilterInventory::vfunc241(CBaseEntity *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x10108240 size=0x6
+#include "datamap.h"
 #include "CFilterInventory.h"
 namespace lifted {
 extern char g_1056c580;

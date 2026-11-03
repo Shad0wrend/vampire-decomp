@@ -3,6 +3,8 @@
 // virtuals below carries no meaning -- add the padding slots before using a
 // virtual call through this class.
 #pragma once
+#include "CAI_Hint.h"
+#include "Vector.h"
 
 struct datamap_t;
 

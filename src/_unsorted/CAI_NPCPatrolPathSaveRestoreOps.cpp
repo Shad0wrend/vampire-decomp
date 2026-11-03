@@ -27,6 +27,7 @@ void CAI_NPCPatrolPathSaveRestoreOps::vfunc0(SaveRestoreFieldInfo_t *fieldInfo, 
 // END FUNCTION
 
 // FUNCTION: 0x1028cc80 size=0x62
+#include "CBaseEntity.h"
 #include "CAI_NPCPatrolPathSaveRestoreOps.h"
 #include "CRestore.h"
 struct SNPCTroikaRef_t;

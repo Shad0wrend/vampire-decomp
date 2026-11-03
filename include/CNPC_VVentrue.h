@@ -1,6 +1,7 @@
 // CNPC_VVentrue: declared by pcdecomp transplant for 0x103c77f0 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CBaseEntity.h"
 
 class CNPC_VVentrue : public CBaseEntity
 {

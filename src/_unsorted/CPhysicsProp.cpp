@@ -50,6 +50,7 @@ CPhysicsProp *CPhysicsProp::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x101913c0 size=0x6
+#include "datamap.h"
 #include "CPhysicsProp.h"
 namespace lifted {
 extern char g_1058d864;
@@ -90,6 +91,14 @@ bool CPhysicsProp::vfunc68(void *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x10191510 size=0x17a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CPhysicsProp.h"
 #include "CCollisionProperty.h"
 #include "ScopeTrace.h"

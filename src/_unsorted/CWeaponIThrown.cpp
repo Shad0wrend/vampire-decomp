@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x103ed080 size=0x6
+#include "CWeaponIThrown.h"
+#include "datamap.h"
 // TARGET: CWeaponIThrown::vfunc82
 struct datamap_t;
 extern datamap_t g_1067c9e8;

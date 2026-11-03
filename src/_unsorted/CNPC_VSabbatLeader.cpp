@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x103a5b50 size=0x6
+#include "datamap.h"
 #include "CNPC_VSabbatLeader.h"
 namespace lifted {
 extern char g_1064c4a8;
@@ -85,6 +86,14 @@ int CNPC_VSabbatLeader::vfunc546(int x)
 // END FUNCTION
 
 // FUNCTION: 0x103a6c80 size=0x81
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VSabbatLeader.h"
 #include "ScopeTrace.h"
 
@@ -98,6 +107,14 @@ void CNPC_VSabbatLeader::vfunc103()
 // END FUNCTION
 
 // FUNCTION: 0x103a6d40 size=0xf2
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CNPC_VSabbatLeader.h"
 
@@ -224,6 +241,20 @@ void CNPC_VSabbatLeader::vfunc259(void *pEvent)
 // END FUNCTION
 
 // FUNCTION: 0x103a70c0 size=0x234
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VSabbatLeader.h"
 #include "ScopeTrace.h"
 #include "ConVar.h"
@@ -316,6 +347,14 @@ int CNPC_VSabbatLeader::sub_103a7390(int schedule)
 // END FUNCTION
 
 // FUNCTION: 0x103a7450 size=0x113
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VSabbatLeader.h"
 #include "CAI_BaseNPC.h"
 #include "CGlobalEntityList.h"
@@ -382,6 +421,14 @@ void CNPC_VSabbatLeader::vfunc432(int arg)
 // END FUNCTION
 
 // FUNCTION: 0x103a7650 size=0x5a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VSabbatLeader.h"
 #include "CNPC_VHuman.h"
 #include "ScopeTrace.h"
@@ -439,6 +486,14 @@ void CNPC_VSabbatLeader::sub_103a7760(int arg)
 // END FUNCTION
 
 // FUNCTION: 0x103a77f0 size=0x98
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VSabbatLeader.h"
 #include "ScopeTrace.h"
 
@@ -565,6 +620,14 @@ int CNPC_VSabbatLeader::sub_103aa510()
 // END FUNCTION
 
 // FUNCTION: 0x103aa5e0 size=0x15c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VSabbatLeader.h"
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
@@ -589,6 +652,14 @@ void CNPC_VSabbatLeader::vfunc620()
 // END FUNCTION
 
 // FUNCTION: 0x103aa7a0 size=0x15c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VSabbatLeader.h"
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
@@ -636,6 +707,15 @@ void CNPC_VSabbatLeader::vfunc313()
 // END FUNCTION
 
 // FUNCTION: 0x103ab310 size=0xb7
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VSabbatLeader.h"
 #include "ScopeTrace.h"
 

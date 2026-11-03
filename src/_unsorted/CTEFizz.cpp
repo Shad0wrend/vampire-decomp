@@ -40,6 +40,7 @@ void CTEFizz::vfunc5()
 // END FUNCTION
 
 // FUNCTION: 0x10062110 size=0x39
+#include "CRecipientFilter.h"
 #include "CTEFizz.h"
 #include "CTEMetalSparks.h"
 #include "IVEngineServerFull.h"

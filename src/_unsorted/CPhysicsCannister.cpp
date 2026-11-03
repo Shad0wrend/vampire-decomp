@@ -50,6 +50,7 @@ bool CPhysicsCannister::vfunc72(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x1014fbb0 size=0x6
+#include "datamap.h"
 #include "CPhysicsCannister.h"
 namespace lifted {
 extern char g_1057c8b8;
@@ -61,6 +62,14 @@ datamap_t *CPhysicsCannister::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x10150380 size=0x120
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CPhysicsCannister.h"
 #include "CBaseCombatCharacter.h"
 #include "CCollisionProperty.h"

@@ -1,5 +1,6 @@
 // CPhysMotor: physics motor entity. Declared flat (bases not recovered); only the vtable head is modelled.
 #pragma once
+#include "inputdata_t.h"
 
 struct datamap_t;
 #include "Vector.h"

@@ -48,6 +48,7 @@ CNPC_VChangBrosClaw *CNPC_VChangBrosClaw::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x1036f330 size=0x6
+#include "datamap.h"
 #include "CNPC_VChangBrosClaw.h"
 namespace lifted {
 extern char g_1062fe44;
@@ -77,6 +78,14 @@ int CNPC_VChangBrosClaw::vfunc546(int x)
 // END FUNCTION
 
 // FUNCTION: 0x1036f900 size=0x61
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VChangBrosClaw.h"
 #include "CUnknown1036c7f0.h"
 #include "ScopeTrace.h"

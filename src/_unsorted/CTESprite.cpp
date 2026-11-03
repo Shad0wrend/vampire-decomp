@@ -35,6 +35,7 @@ CTESprite *CTESprite::vfunc2(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x10067cd0 size=0xc7
+#include "CTESprite.h"
 #include "IVEngineServerFull.h"
 
 // TARGET: CTESprite::vfunc5
@@ -81,6 +82,7 @@ void CTESprite::vfunc3(const Vector &origin, const QAngle &angles)
 // END FUNCTION
 
 // FUNCTION: 0x10067f50 size=0x39
+#include "CTESprite.h"
 #include "CTEMetalSparks.h"
 #include "IVEngineServerFull.h"
 
@@ -92,6 +94,8 @@ void CTESprite::vfunc4(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x10068010 size=0x6
+#include "CTESprite.h"
+#include "ServerClass.h"
 namespace lifted {
 extern char g_106c59cc;
 }
@@ -102,6 +106,7 @@ ServerClass * CTESprite::vfunc0()
 // END FUNCTION
 
 // FUNCTION: 0x10068030 size=0x3
+#include "CTESprite.h"
 int CTESprite::vfunc1()
 {
     return 0;

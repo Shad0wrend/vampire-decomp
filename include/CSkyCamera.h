@@ -3,6 +3,7 @@
 // known the slots they contribute are only declared here so that the slot numbers of the
 // members we do define are right.
 #pragma once
+#include "Vector.h"
 
 struct datamap_t;
 

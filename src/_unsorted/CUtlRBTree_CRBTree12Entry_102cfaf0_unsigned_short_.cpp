@@ -2,6 +2,14 @@
 #include "vampire.h"
 
 // FUNCTION: 0x102cea60 size=0x58
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree16.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
 #include "utlrbtree.h"
 
 struct CRBTree12Entry_102cfaf0

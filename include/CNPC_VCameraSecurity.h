@@ -1,6 +1,8 @@
 // CNPC_VCameraSecurity: declared by pcdecomp transplant for 0x10369e40 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CBaseEntity.h"
+#include "datamap.h"
 
 class CNPC_VCameraSecurity : public CBaseEntity
 {

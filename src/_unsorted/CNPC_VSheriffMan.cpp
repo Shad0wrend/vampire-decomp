@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x103adaa0 size=0x6
+#include "CNPC_VSheriffMan.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_106504e8;
 }
@@ -30,6 +32,7 @@ int CNPC_VSheriffMan::vfunc546(int x)
 // END FUNCTION
 
 // FUNCTION: 0x103ae4b0 size=0x6
+#include "CNPC_VSheriffMan.h"
 namespace lifted {
 extern char g_1093c520;
 }
@@ -40,6 +43,7 @@ int CNPC_VSheriffMan::vfunc580()
 // END FUNCTION
 
 // FUNCTION: 0x103ae4d0 size=0x6
+#include "CNPC_VSheriffMan.h"
 namespace lifted {
 extern int g_10650718;
 }
@@ -135,6 +139,14 @@ int CNPC_VSheriffMan::vfunc337()
 // END FUNCTION
 
 // FUNCTION: 0x103ae8c0 size=0x18a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VSheriffMan.h"
 #include "ScopeTrace.h"
 #include "ConVar.h"
@@ -204,6 +216,14 @@ int CNPC_VSheriffMan::vfunc461()
 // END FUNCTION
 
 // FUNCTION: 0x103aeb50 size=0x5a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPC_VSheriffMan.h"
 #include "ScopeTrace.h"
 
@@ -251,6 +271,7 @@ void CNPC_VSheriffMan::vfunc444(int *pTask)
 // END FUNCTION
 
 // FUNCTION: 0x103af810 size=0x5
+#include "CNPC_VSheriffMan.h"
 bool CNPC_VSheriffMan::vfunc566(int a0)
 {
     return 1;
@@ -299,6 +320,7 @@ void CNPC_VSheriffMan::vfunc448(int arg)
 // END FUNCTION
 
 // FUNCTION: 0x103b0320 size=0x65
+#include "CNPC_VSheriffMan.h"
 struct ScopeEntry { const char *name; const void *a; const void *b; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
@@ -318,6 +340,17 @@ int CNPC_VSheriffMan::vfunc440(int a)
 // END FUNCTION
 
 // FUNCTION: 0x103b0e90 size=0x1d7
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CNPC_VSheriffMan.h"
 #include "ScopeTrace.h"
 #include "CVDmg_t.h"

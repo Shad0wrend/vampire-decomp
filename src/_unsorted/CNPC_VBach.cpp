@@ -123,6 +123,7 @@ void CNPC_VBach::vfunc103()
 // END FUNCTION
 
 // FUNCTION: 0x10363940 size=0x14
+#include "CAI_BaseNPC.h"
 #include "CNPC_VBach.h"
 
 // TARGET: CNPC_VBach::vfunc420
@@ -197,6 +198,9 @@ int CNPC_VBach::vfunc461()
 // END FUNCTION
 
 // FUNCTION: 0x10363b60 size=0xba
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CBaseEntity.h"
 #include "CNPC_VBach.h"
 #include "CVStatList_t.h"

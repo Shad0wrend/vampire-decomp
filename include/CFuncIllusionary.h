@@ -1,6 +1,7 @@
 // CFuncIllusionary: declared by pcdecomp transplant for 0x100c0df0 from CLogicalEntity (0x1002b100);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CBaseEntity.h"
 
 class CFuncIllusionary : public CBaseEntity
 {

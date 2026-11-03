@@ -1,5 +1,7 @@
 // CNPC_VHuman: human NPC base of the Troika NPCs (base chain not modelled). Only what decompiled code needs.
 #pragma once
+#include "CBaseAnimating.h"
+#include "CBaseCombatCharacter.h"
 
 #include "CAI_BaseNPCTroika.h"
 #include "CEntityVSlots.h"

@@ -2,12 +2,14 @@
 #include "vampire.h"
 
 // FUNCTION: 0x101c9910 size=0x8
+#include "CBaseEntity.h"
 #include "CAI_ChangeTarget.h"
 // TARGET: CAI_ChangeTarget::vfunc117
 char CAI_ChangeTarget::vfunc117() { char c = ((CBaseEntity *)this)->CBaseEntity::vfunc117(); return c & (char)0xfd; }
 // END FUNCTION
 
 // FUNCTION: 0x101c9930 size=0x6
+#include "datamap.h"
 #include "CAI_ChangeTarget.h"
 namespace lifted {
 extern char g_1059e044;

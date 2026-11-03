@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x103c0ad0 size=0x6
+#include "datamap.h"
 #include "CNPC_VTzimisceHeadClaw.h"
 namespace lifted {
 extern char g_1065ca84;
@@ -168,6 +169,8 @@ void CNPC_VTzimisceHeadClaw::vfunc259(void *pEvent)
 // END FUNCTION
 
 // FUNCTION: 0x103c1610 size=0xa6
+#include "CAI_BaseNPC.h"
+#include "CBasePlayer.h"
 #include "CNPC_VTzimisceHeadClaw.h"
 #include "CUnknown1070b244.h"
 
@@ -309,6 +312,7 @@ void HeadClawView::sub_103c1820(EventData *pEvent)
 // END FUNCTION
 
 // FUNCTION: 0x103c19e0 size=0x5b
+#include "CBaseEntity.h"
 #include "CNPC_VTzimisceHeadClaw.h"
 #include "CUnknown1025ddd0.h"
 #include "globalvars.h"
@@ -329,6 +333,7 @@ bool CNPC_VTzimisceHeadClaw::vfunc599(CBaseEntity *pEntity)
 // END FUNCTION
 
 // FUNCTION: 0x103c1a60 size=0x43
+#include "CBaseEntity.h"
 #include "CNPC_VTzimisceHeadClaw.h"
 #include "CUnknown1025ddd0.h"
 struct S10924edc
@@ -481,6 +486,7 @@ void CNPC_VTzimisceHeadClaw::vfunc310(int a)
 // END FUNCTION
 
 // FUNCTION: 0x103c1d20 size=0x1a
+#include "CAI_BaseNPCTroika.h"
 #include "CNPC_VTzimisceHeadClaw.h"
 
 // TARGET: CNPC_VTzimisceHeadClaw::vfunc432
@@ -492,6 +498,7 @@ void CNPC_VTzimisceHeadClaw::vfunc432(int a)
 // END FUNCTION
 
 // FUNCTION: 0x103c1d50 size=0x1a
+#include "CAI_BaseNPCTroika.h"
 #include "CNPC_VTzimisceHeadClaw.h"
 
 // TARGET: CNPC_VTzimisceHeadClaw::vfunc144

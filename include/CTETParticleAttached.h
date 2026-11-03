@@ -1,5 +1,6 @@
 // CTETParticleAttached: attached particle temp entity. Declared flat (bases not recovered).
 #pragma once
+#include "ServerClass.h"
 
 class CTETParticleAttached
 {

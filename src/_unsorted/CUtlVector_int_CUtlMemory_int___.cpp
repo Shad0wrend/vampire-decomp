@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x100b4790 size=0x3d
+#include "utlrbtree.h"
 #include "utlvector.h"
 
 void CUtlVector<int,CUtlMemory<int> >::Purge()
@@ -13,6 +14,7 @@ void CUtlVector<int,CUtlMemory<int> >::Purge()
 // END FUNCTION
 
 // FUNCTION: 0x101850b0 size=0x35
+#include "utlrbtree.h"
 #include "utlvector.h"
 // TARGET: ShiftElementsLeft
 void CUtlVector<int>::ShiftElementsLeft(int elem, int num)

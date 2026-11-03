@@ -4,6 +4,7 @@
 // placeholder to keep the slot numbers right. CWeaponRangedBase stands for the whole
 // base chain: its constructor (CBaseCombatWeapon's, 0x10250ac0) is called out of line.
 #pragma once
+#include "Vector.h"
 
 #define CWR_V(n) virtual void vfunc##n();
 #define CWR_V10(p) CWR_V(p##0) CWR_V(p##1) CWR_V(p##2) CWR_V(p##3) CWR_V(p##4) CWR_V(p##5) CWR_V(p##6) CWR_V(p##7) CWR_V(p##8) CWR_V(p##9)

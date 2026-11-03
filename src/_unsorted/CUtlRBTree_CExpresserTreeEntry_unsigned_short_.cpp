@@ -2,6 +2,14 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10313430 size=0x57
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree16.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
 #include "CExpresserTreeEntry.h"
 
 typedef CUtlRBTree<CExpresserTreeEntry, unsigned short> ExpresserTree;

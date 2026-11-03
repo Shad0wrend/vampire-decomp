@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x100fe5b0 size=0x6
+#include "datamap.h"
 #include "CEnvWind.h"
 namespace lifted {
 extern char g_105680f8;
@@ -48,6 +49,14 @@ void CEnvWind::vfunc141(int a0, int a1, int a2)
 // END FUNCTION
 
 // FUNCTION: 0x100fe740 size=0x208
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CEnvWind.h"
 #include "CCollisionProperty.h"
 #include "CEHandleGet.h"

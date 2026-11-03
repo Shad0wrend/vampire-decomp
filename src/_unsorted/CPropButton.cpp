@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10214dd0 size=0x6
+#include "datamap.h"
 #include "CPropButton.h"
 namespace lifted {
 extern char g_105ac050;
@@ -87,6 +88,14 @@ void CPropButton::vfunc71()
 // END FUNCTION
 
 // FUNCTION: 0x10215750 size=0x12e
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CPropButton.h"
 #include "CBaseProp.h"
 #include "CBaseAnimating.h"

@@ -1,6 +1,8 @@
 // CFire: declared by pcdecomp transplant for 0x10109c10 from CBaseCineCam (0x1006d950);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CBaseEntity.h"
+#include "datamap.h"
 
 struct CFireIntPair { int a; int b; };	// two dwords passed by value
 

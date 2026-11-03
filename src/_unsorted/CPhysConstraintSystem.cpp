@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1002a090 size=0x6
+#include "datamap.h"
 #include "CPhysConstraintSystem.h"
 namespace lifted {
 extern char g_10538b18;

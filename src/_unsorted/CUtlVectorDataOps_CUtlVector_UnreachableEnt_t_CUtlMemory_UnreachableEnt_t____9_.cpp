@@ -58,6 +58,9 @@ void CUtlVectorDataOps<UnreachableVec, 9>::vfunc0(void *fieldInfo, void *pSave)
 // END FUNCTION
 
 // FUNCTION: 0x1027f8a0 size=0x10
+#include "UnreachableEnt_t.h"
+#include "utlmemory.h"
+#include "utlvector.h"
 #include "CUtlVectorDataOps.h"
 struct UnreachableEnt_t;
 struct thinkfunc_t;
@@ -74,6 +77,9 @@ template<> int CUtlVectorDataOps<CUtlVector<UnreachableEnt_t,CUtlMemory<Unreacha
 // END FUNCTION
 
 // FUNCTION: 0x1027f8c0 size=0x13
+#include "UnreachableEnt_t.h"
+#include "utlmemory.h"
+#include "utlvector.h"
 #include "CUtlVectorDataOps.h"
 
 struct UnreachableEnt_t;

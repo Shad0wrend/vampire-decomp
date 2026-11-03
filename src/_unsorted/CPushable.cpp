@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1010f0a0 size=0x6
+#include "CPushable.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_1056e868;
 }
@@ -12,6 +14,7 @@ datamap_t *CPushable::vfunc82()
 // END FUNCTION
 
 // FUNCTION: 0x1010f1b0 size=0x5
+#include "CPushable.h"
 bool CPushable::vfunc73(int a0)
 {
     return 0;
@@ -19,6 +22,7 @@ bool CPushable::vfunc73(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x1010f1d0 size=0x5
+#include "CPushable.h"
 bool CPushable::vfunc74(int a0)
 {
     return 0;
@@ -52,6 +56,14 @@ CPushable *CPushable::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x1010f290 size=0xdc
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CPushable.h"
 #include "CBreakable.h"
 #include "CEntityVSlots.h"
@@ -136,5 +148,6 @@ void CPushable::vfunc230(int index, gamevcollisionevent_t *pEvent)
 // END FUNCTION
 
 // FUNCTION: 0x1010f4c0 size=0x9
+#include "CPushable.h"
 int CPushable::vfunc35(int a) { return m_field4a8; }
 // END FUNCTION

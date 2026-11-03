@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x100de630 size=0x6
+#include "datamap.h"
 #include "CTerrainMorph.h"
 namespace lifted {
 extern char g_10561290;

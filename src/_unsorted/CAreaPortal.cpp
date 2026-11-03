@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1010c310 size=0x6
+#include "CAreaPortal.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_1056dbe0;
 }
@@ -73,6 +75,7 @@ void CUnit1010c520::sub_1010c520(int a, int b, int c, int d)
 // END FUNCTION
 
 // FUNCTION: 0x1010c560 size=0x4c
+#include "CAreaPortal.h"
 #include <string.h>
 #include <stdlib.h>
 
@@ -88,6 +91,7 @@ bool CAreaPortal::vfunc110(const char *key, const char *value)
 // END FUNCTION
 
 // FUNCTION: 0x1010c610 size=0x5
+#include "CAreaPortal.h"
 bool CAreaPortal::vfunc86(int a0, int a1, int a2, int a3, int a4)
 {
     return 0;

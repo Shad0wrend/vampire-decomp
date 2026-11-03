@@ -2,6 +2,7 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1034ab50 size=0x6
+#include "datamap.h"
 #include "CNPCMaker.h"
 namespace lifted {
 extern char g_10624718;
@@ -138,6 +139,14 @@ CNPCMaker *CNPCMaker::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x1034afe0 size=0x105
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CNPCMaker.h"
 #include "CCollisionProperty.h"
 #include "ScopeTrace.h"
@@ -176,6 +185,7 @@ void CNPCMaker::vfunc113()
 // END FUNCTION
 
 // FUNCTION: 0x1034b3c0 size=0x4c
+#include "CEntityMapData.h"
 #include "CNPCMaker.h"
 #include "CUnknown10136ec0.h"
 // TARGET: CNPCMaker::vfunc107

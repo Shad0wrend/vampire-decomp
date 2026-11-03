@@ -2,6 +2,8 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10211910 size=0x6
+#include "CPropSign.h"
+#include "datamap.h"
 namespace lifted {
 extern char g_105ab83c;
 }
@@ -27,6 +29,14 @@ CPropSign *CPropSign::vfunc5(unsigned int flags)
 // END FUNCTION
 
 // FUNCTION: 0x10211b40 size=0xd2
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CPropSign.h"
 #include "ScopeTrace.h"
 
@@ -79,6 +89,7 @@ bool CPropSign::vfunc32(void *pEntity)
 // END FUNCTION
 
 // FUNCTION: 0x10211d00 size=0x6
+#include "CPropSign.h"
 int CPropSign::vfunc33()
 {
     return 1;
@@ -86,6 +97,7 @@ int CPropSign::vfunc33()
 // END FUNCTION
 
 // FUNCTION: 0x10211d20 size=0x9
+#include "CPropSign.h"
 int CPropSign::vfunc35(int a) { return m_field768; }
 // END FUNCTION
 
@@ -113,6 +125,7 @@ void CPropSign::vfunc39(CBasePlayer *pPlayer)
 // END FUNCTION
 
 // FUNCTION: 0x10211e00 size=0x50
+#include "CPropSign.h"
 #include "CBasePlayer.h"
 struct CBasePlayerView208c { char pad[0x208c]; int m_n208c; };
 

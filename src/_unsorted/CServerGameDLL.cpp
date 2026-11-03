@@ -21,6 +21,7 @@ void *CUnk1011a020::sub_1011a020(unsigned char bFree)
 // END FUNCTION
 
 // FUNCTION: 0x1011a0c0 size=0x1e6
+#include "IVEngineServer.h"
 #include "CServerGameDLL.h"
 #include "globalvars.h"
 struct CFactoryTable { CreateInterfaceFn engineFn; CreateInterfaceFn physicsFn; CreateInterfaceFn fileSystemFn; };
@@ -131,6 +132,7 @@ void CServerGameDLL::vfunc8()
 // END FUNCTION
 
 // FUNCTION: 0x1011a3f0 size=0x8
+#include "CServerGameDLL.h"
 namespace lifted {
 int sub_1000da08();
 }
@@ -203,6 +205,7 @@ void sub_1011adc0()
 // END FUNCTION
 
 // FUNCTION: 0x1011ae10 size=0x6
+#include "CServerGameDLL.h"
 namespace lifted {
 extern int g_1072bbd8;
 }
@@ -238,6 +241,7 @@ void CServerGameDLL::vfunc11()
 // END FUNCTION
 
 // FUNCTION: 0x1011aea0 size=0x10
+#include "CServerGameDLL.h"
 namespace lifted {
 int sub_10004afc(int);
 }
@@ -300,6 +304,7 @@ void __stdcall sub_1011b060(int x)
 // END FUNCTION
 
 // FUNCTION: 0x1011b890 size=0xb
+#include "CServerGameDLL.h"
 struct IUnk10592db0 {
 	virtual void v0();
 	virtual void v1();
@@ -358,6 +363,7 @@ void CServerGameDLL::vfunc19(void *pArg)
 // END FUNCTION
 
 // FUNCTION: 0x1011b950 size=0x7e
+#include "CServerGameDLL.h"
 #include "CRestore.h"
 
 struct CSaveRestoreMgr
