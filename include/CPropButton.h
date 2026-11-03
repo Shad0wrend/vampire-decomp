@@ -10,6 +10,7 @@ class CPropButton : public CBaseEntity
 {
 public:
 	CPropButton *sub_102154f0();
+	virtual void vfunc104();	// slot 104 "Precache": slot 71 (sound set lookup), CBaseProp::vfunc104, then sets the use function at +0x1f0 to the vcall thunk 0x1000f506 (slot 265)
 	virtual void vfunc71();	// slot 71 (sound set lookup): clears +0xbc, looks up the sound set named by the string at +0xc0 (+0xb4), then caches the sound ids of "on" and "off" in two globals
 	virtual void vfunc103();	// slot 103 "CPropButton::Spawn": CBaseProp::vfunc103, clamps the position count (+0x740) to 0..7 and the start position (+0x73c) to 0..count, stores the latter at +0x670, flag 0x40000, effects |= 0xa0, no sound occlusion; with a studio header SetSolid(3), the collision bounds of the header, collision group 1, the partition handle and sub_100b3b00()
 	void sub_10215960(inputdata_t *pData);	// input handler: takes the input's integer (0 unless its type is 4) minus one, clamps it to [0, m_nPositions - 1] and passes it with the activator to sub_10215ad0
