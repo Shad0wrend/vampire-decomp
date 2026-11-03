@@ -79,6 +79,7 @@ public:
 	virtual void vfunc604(); virtual int vfunc605(int unused); virtual int vfunc606(int unused);	/* slot 606: schedule pick for the NPC's idle mood: condition 0x48 required; condition 0x59, flag 0x100 of +0x5b84, 0x40000 of +0x14bc and 0x10000000 of +0x14b8 pick fixed schedules (0xaa, 0xb4, 0xb6 / 0xb4 by a roll), otherwise a roll against the four thresholds at +0x6420.. (condition 0x31 picks the other table); stamps the source file / line at +0x1b30 / +0x1b34 */ virtual void vfunc607();
 	virtual bool vfunc608(const char *pszName);	// slot 608: binds the NPC to the first of the three global named objects whose name equals pszName (case-sensitive; false for null / empty / no match), stores it at +0x65e8 and its name (null when empty) at +0x65ec
 
+	bool vfunc486();	// slot 486: false while sub_102c1170 reports talking / busy, else whether sub_102c6d80 is present
 	void sub_102a18a0(const struct CAI_FloatParam *pParam);	// stamps +0x5db4 with curtime plus the parameter's float (1000.0f when it is not positive)
 	void vfunc487();	// slot 487: random 0.25..0.75 second delay + curtime at +0x5ce8 and, without a pending count (+0x5bb0), at +0x60 of the squad object (+0x5da4)
 	void vfunc488();	// slot 488: plays the "Death" sound
