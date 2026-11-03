@@ -363,6 +363,18 @@ bool CItemContainer::vfunc388(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102099f0 size=0x14
+#include "CItemContainer.h"
+
+void sub_101c1dc0();
+
+void CItemContainer::vfunc113()
+{
+	sub_100a0bc0();
+	*(void **)((char *)this + 0x1f0) = (void *)&sub_101c1dc0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10209c50 size=0x5f
 #include "CItemContainer.h"
 #include "CVDmg_t.h"
