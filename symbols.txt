@@ -7628,6 +7628,7 @@
 0x1000cecd func   ?vfunc103@CTestTraceline@@UAEXXZ CTestTraceline::vfunc103
 0x1000ced7 func   ?vfunc294@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc294
 0x1000cedc func   ?sub_100dd2e0@CCollisionProperty@@QAEMPBM@Z CCollisionProperty::sub_100dd2e0
+0x1000cee1 func   ?vfunc103@CActivityCopyProp@@UAEXXZ CActivityCopyProp::vfunc103
 0x1000cee6 func   ?vfunc82@CHudCounter@@UAEPAUdatamap_t@@XZ CHudCounter::vfunc82
 0x1000cef0 func   ?sub_1005ac10@CTEBeamEntPoint@@QAEPAV1@H@Z CTEBeamEntPoint::sub_1005ac10
 0x1000cef5 func   ?vfunc80@CHudCounter@@UAEHXZ CHudCounter::vfunc80

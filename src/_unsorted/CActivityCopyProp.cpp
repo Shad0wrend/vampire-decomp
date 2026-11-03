@@ -33,3 +33,19 @@ CActivityCopyProp *CActivityCopyProp::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1018e270 size=0x13
+#include "CActivityCopyProp.h"
+#include "CBaseEntitySlots.h"
+
+struct CActivityCopyPropView2
+{
+	void sub_1018df70();
+};
+
+void CActivityCopyProp::vfunc103()
+{
+	((CBaseEntitySlots *)this)->slot66();
+	((CActivityCopyPropView2 *)this)->sub_1018df70();
+}
+// END FUNCTION
