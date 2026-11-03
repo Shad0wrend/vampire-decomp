@@ -191486,6 +191486,26 @@ int sub_1040dbb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040dbd0 size=0x4f
+#include "CBaseEntity.h"
+#include "CWeaponPhysCannon.h"
+#include "CEHandleGet.h"
+
+// TARGET: CWeaponPhysCannon::sub_1040dbd0
+bool CWeaponPhysCannon::sub_1040dbd0(CBaseEntity *pEnt)
+{
+	if (!pEnt)
+		return false;
+	CBaseEntity *pGrabbed = (CBaseEntity *)EHandle_Get(m_grab.m_hEntity);
+	if (pGrabbed && pGrabbed == pEnt)
+	{
+		sub_1040dbb0();
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040dcf0 size=0xb3
 #include "CBaseEntity.h"
 #include "CBaseCombatWeapon.h"

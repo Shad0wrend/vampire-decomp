@@ -13592,6 +13592,7 @@
 0x100159bf func   ?sub_1020e3c0@@YGXPAUS1020e3c0Arg@@@Z sub_1020e3c0
 0x100159c4 func   ?sub_10265290@@YIPAV?$CUtlVector@HV?$CUtlMemory@H@@@@PAV1@@Z sub_10265290
 0x100159c9 func   ?sub_100acc20@CBaseEntity@@QAEXPAUinputdata_t@@@Z CBaseEntity::sub_100acc20
+0x100159ce func   ?sub_1040dbd0@CWeaponPhysCannon@@QAE_NPAVCBaseEntity@@@Z CWeaponPhysCannon::sub_1040dbd0
 0x100159d3 func   _npc_VDialogPedestrian npc_VDialogPedestrian
 0x100159d8 func   ?vfunc14@CBaseEntity@@UAEPADXZ CBaseEntity::vfunc14
 0x100159dd func   ?sub_1042b470@@YAHXZ sub_1042b470
