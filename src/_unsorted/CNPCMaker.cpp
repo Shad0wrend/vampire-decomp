@@ -118,6 +118,25 @@ void CNPCMaker::vfunc620(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034af70 size=0x41
+#include "CNPCMaker.h"
+#include "COutputEvent.h"
+
+struct CGargoyleBaseUnit { void sub_100123af(); };
+void sub_100aa7b0(void *p);
+
+CNPCMaker *CNPCMaker::vfunc5(unsigned int flags)
+{
+	((COutputEvent *)((char *)this + 0x6698))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x6680))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x6668))->sub_100cd2d0();
+	((CGargoyleBaseUnit *)this)->sub_100123af();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034afe0 size=0x105
 #include "CNPCMaker.h"
 #include "CCollisionProperty.h"
