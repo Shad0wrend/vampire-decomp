@@ -101129,6 +101129,38 @@ int CNamedListY::sub_101ea040(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ea0b0 size=0x4c
+#include "CUnknown101f0e50.h"
+#include "CVTraitEffectGroup_t.h"
+#include "CUnk101e9570.h"
+
+namespace block_101ea0b0
+{
+struct CUnknown101f0e50U : CUnknown101f0e50
+{
+	bool sub_101e9f10(int index);
+};
+
+bool CUnknown101f0e50U::sub_101e9f10(int index)
+{
+	if (index != -1 && index < m_f04)
+		return true;
+	return false;
+}
+}
+
+using namespace block_101ea0b0;
+
+// TARGET: CUnknown101f0e50::sub_101ea0b0
+CVTraitEffectGroup_t *CUnknown101f0e50::sub_101ea0b0(int index)
+{
+	if (((CUnknown101f0e50U *)this)->sub_101e9f10(index))
+		return ((CVTraitEffectGroup_t **)m_f08)[index];
+	static CUnk101e9570 s_default(-1);
+	return (CVTraitEffectGroup_t *)&s_default;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101eaa40 size=0xa
 extern int g_1073a38c;
 
