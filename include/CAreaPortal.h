@@ -125,6 +125,7 @@ public:
 	CAreaPortal *sub_1010c3a0();	// constructor stub (0x1010c3a0)
 	void sub_100156b8();	// as in CPhysForce (transplant)
 	bool sub_1009e430(const char *key, const char *value);	// CBaseEntity::vfunc110 (stub 0x1000fc86), called directly
+	void vfunc241(const float *pViewOrigin);	// slot 241 override: base visibility update, then the portal refresh when it says the view moved into the portal
 
 	char m_pad0004[0x458 - 4];
 	int m_bStartOpen;	// 0x458
