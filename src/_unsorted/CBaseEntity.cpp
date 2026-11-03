@@ -316,6 +316,16 @@ void CBaseEntity::vfunc76()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026b50 size=0xb
+#include "CBaseEntity.h"
+#include "CUnknown10146700.h"
+
+int CBaseEntity::vfunc88()
+{
+	return ((CUnknown10146700 *)((char *)this + 0x1b0))->sub_10146700();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026b70 size=0xb
 struct CUnknown10146790 {
 	char m_unk0;
