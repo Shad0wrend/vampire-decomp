@@ -84,6 +84,16 @@ struct CAI_NavVec3
 	float x, y, z;
 };
 
+struct CAI_NavPathNode	// provisional: the object held by CAI_NavRoute::m_pWaypoint (+0x24); used by sub_102f0fe0
+{
+	CAI_NavVec3 m_v3Pos;		// 0x00
+	char m_pad0c[0x28 - 0xc];
+	unsigned int m_flags28;		// 0x28 (bit 2 is tested)
+	CAI_NavPathNode *m_p2c;		// 0x2c (must be null)
+	CAI_NavPathNode *m_p30;		// 0x30: one link (the next / previous node)
+	CAI_NavPathNode *m_p34;		// 0x34: the other link
+};
+
 struct CAI_NavRoute	// the object at CAI_Navigator +0x30
 {
 	char m_b00;
