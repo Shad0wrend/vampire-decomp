@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10205cd0 size=0x14
+#include "CVTraitDependencyValue_t.h"
+#include "CVDmg_t.h"
+
+void CVTraitDependencyValue_t::vfunc0()
+{
+	((CVDmgBlock16_t *)((char *)this + 4))->sub_10204270();
+	*(int *)((char *)this + 0x14) = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10205d00 size=0x87
 #include <string.h>
 #include "CUnknown10205dc0.h"
