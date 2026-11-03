@@ -202,6 +202,18 @@ void CBaseTrigger::vfunc244(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c5810 size=0x20
+#include "CBaseTrigger.h"
+
+void CBaseTrigger::vfunc245(int unused)
+{
+	if (m_flags204 & 2)
+		m_flags204 &= ~2;
+	else
+		m_flags204 |= 2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c5840 size=0x15
 #include "CBaseTrigger.h"
 

@@ -6049,6 +6049,7 @@
 0x1000a5ba func   ?sub_1007e5c0@CUnknown1007e5c0@@QAEXPAH0@Z CUnknown1007e5c0::sub_1007e5c0
 0x1000a5c4 func   ?sub_1007bff0@CChoreoSaverView@@QAE_NPBD@Z CChoreoSaverView::sub_1007bff0
 0x1000a5ce func   ?vfunc103@CGravityPellet@@QAEXXZ CGravityPellet::vfunc103
+0x1000a5d3 func   ?vfunc245@CBaseTrigger@@QAEXH@Z CBaseTrigger::vfunc245
 0x1000a5d8 func   ?sub_10132db0@@YAPAHXZ sub_10132db0
 0x1000a5dd func   ?sub_1012c5b0@@YGHHHH@Z sub_1012c5b0
 0x1000a5e2 func   ?sub_103f5800@CUnknown103f5800@@QAEHXZ CUnknown103f5800::sub_103f5800
