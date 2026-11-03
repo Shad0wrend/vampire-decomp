@@ -7520,6 +7520,7 @@
 0x1000cd5b func   ?sub_103989b0@@YI_NPAUMingTurnView@@HABVVector@@PAH@Z sub_103989b0
 0x1000cd60 func   ?sub_1003daa0@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::sub_1003daa0
 0x1000cd65 func   ?vfunc103@CGibShooter@@QAEXXZ CGibShooter::vfunc103
+0x1000cd6a func   ?vfunc331@CWeaponRanged@@UAEABVVector@@XZ CWeaponRanged::vfunc331
 0x1000cd6f func   ?sub_10227250@CUnknown10227250@@QAEXH@Z CUnknown10227250::sub_10227250
 0x1000cd74 func   ?vfunc431@CNPC_VCamera@@QAEXXZ CNPC_VCamera::vfunc431
 0x1000cd7e func   ?vfunc138@CNPC_VVentrue@@UAEHXZ CNPC_VVentrue::vfunc138

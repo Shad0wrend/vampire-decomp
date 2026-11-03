@@ -54,6 +54,15 @@ int sub_102347c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102347e0 size=0xb
+#include "CWeaponRanged.h"
+
+const Vector &CWeaponRanged::vfunc331()
+{
+	return *(const Vector *)((char *)sub_102517e0() + 0x3ac);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10234800 size=0x3
 // TARGET: sub_10234800
 char sub_10234800() {
