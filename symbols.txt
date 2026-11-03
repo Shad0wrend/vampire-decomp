@@ -7076,6 +7076,7 @@
 0x1000bb13 func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@UDisciplineSrc@@V?$CUtlMemory@UDisciplineSrc@@@@@@$08@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<DisciplineSrc,CUtlMemory<DisciplineSrc> >,9>::vfunc3
 0x1000bb1d func   ?sub_1012c600@@YAXPAVCBaseEntity@@PAX@Z sub_1012c600
 0x1000bb27 func   ?RotateLeft@?$CUtlRBTree@UCRBTree12Entry_102ec4a0@@G@@QAEXG@Z CUtlRBTree<CRBTree12Entry_102ec4a0,unsigned short>::RotateLeft
+0x1000bb2c func   ?CalcNextAIThink@CAI_BaseNPCTroika@@QAE_NPAM@Z CAI_BaseNPCTroika::CalcNextAIThink
 0x1000bb31 func   ?sub_102b51e0@Helper@@QAEXPAX@Z Helper::sub_102b51e0
 0x1000bb36 func   ?vfunc448@CAI_BaseNPC@@UAEXH@Z CAI_BaseNPC::vfunc448
 0x1000bb40 func   ?sub_100778b0@CUnknown100778b0@@QAEHXZ CUnknown100778b0::sub_100778b0
