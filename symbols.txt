@@ -6834,6 +6834,7 @@
 0x1000b843 func   ?sub_100a8220@CUnknown100a8220@@QAEIXZ CUnknown100a8220::sub_100a8220
 0x1000b84d func   ?sub_101312f0@CUnk101312f0@@QAEXPAH@Z CUnk101312f0::sub_101312f0
 0x1000b852 func   ?sub_100ecee0@CUnknown100ecee0@@QAEPAUCTableRecord44_t@@PAUCTableNpc_t@@PAH11@Z CUnknown100ecee0::sub_100ecee0
+0x1000b85c func   ?sub_100274d0@@YIHPAVCBaseEntity@@@Z sub_100274d0
 0x1000b861 func   ?sub_1042eb80@@YAPAVCSprite@@HHHH_N@Z sub_1042eb80
 0x1000b866 func   ?sub_103fb5d0@@YAHXZ sub_103fb5d0
 0x1000b86b func   ?sub_101b5270@CUnknown101b5270@@QAEHXZ CUnknown101b5270::sub_101b5270

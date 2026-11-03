@@ -773,6 +773,37 @@ float *CBaseEntity::vfunc198()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100274d0 size=0x7e
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+
+struct ICollSolid12
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual int GetSolidFlags();
+};
+
+int __fastcall sub_100274d0(CBaseEntity *self)
+{
+	const char *n;
+	if (self) {
+		n = self->m_name26c;
+		if (!n)
+			n = g_106b8540;
+	} else
+		n = "NULL ENTITY";
+	g_109f3620[*g_109f3680].name = "CBaseEntity::GetSolidFlags";
+	g_109f3620[*g_109f3680].file = n;
+	g_109f3620[*g_109f3680].line = g_106b8540;
+	++*g_109f3680;
+	int solid = ((ICollSolid12 *)((char *)self + 0x270))->GetSolidFlags();
+	--*g_109f3680;
+	return solid;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027570 size=0x7e
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
