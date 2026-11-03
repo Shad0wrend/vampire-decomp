@@ -3148,6 +3148,7 @@
 0x10006005 func   ?vfunc5@CNPC_VToreador@@QAEPAV1@I@Z CNPC_VToreador::vfunc5
 0x1000600a func   ?sub_10337230@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10337230
 0x10006014 func   ?sub_10230240@@YAHH@Z sub_10230240
+0x1000601e func   ?sub_102b4520@@YIHH@Z sub_102b4520
 0x10006023 func   ?sub_100b1ed0@CBaseEntity@@QAEXPBMPAM@Z CBaseEntity::sub_100b1ed0
 0x10006028 func   ?vfunc327@CWeaponPhysCannon@@UAEXXZ CWeaponPhysCannon::vfunc327
 0x1000602d func   ?sub_10270ae0@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_10270ae0

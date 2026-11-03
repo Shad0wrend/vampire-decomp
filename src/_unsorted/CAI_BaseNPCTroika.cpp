@@ -2119,6 +2119,13 @@ int sub_102b4070(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b4520 size=0x7
+int __fastcall sub_102b4520(int p)
+{
+	return p + 0x60b0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b4540 size=0xb4
 #include "CAI_BaseNPCTroika.h"
 #include "CGlobalEntityList.h"
