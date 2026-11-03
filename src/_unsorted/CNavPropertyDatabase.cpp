@@ -56,6 +56,27 @@ void CNavPropertyDatabase::vfunc4()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ea5a0 size=0x21
+struct CUnknown100f6e40X
+{
+	void sub_100f6e40(void *p);
+};
+
+extern CUnknown100f6e40X g_106eb5d8;
+
+// TARGET: sub_102ea5a0
+void __fastcall sub_102ea5a0(int p)
+{
+	int a;
+	if (p) {
+		a = p + 8;
+	} else {
+		a = 0;
+	}
+	g_106eb5d8.sub_100f6e40((void *)a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102eaac0 size=0x1e
 #include "CNavPropertyDatabase.h"
 

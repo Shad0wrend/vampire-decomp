@@ -1742,6 +1742,7 @@
 0x10003b20 func   ?sub_1013ecd0@@YAPAVCMoveHelperServer@@XZ sub_1013ecd0
 0x10003b25 func   ?sub_100c4640@@YADXZ sub_100c4640
 0x10003b2a func   ?sub_103b30a0@@YIPAXPAX@Z sub_103b30a0
+0x10003b2f func   ?sub_102ea5a0@@YIXH@Z sub_102ea5a0
 0x10003b39 func   ?sub_102eccc0@CUnknown102eccc0@@QAEHXZ CUnknown102eccc0::sub_102eccc0
 0x10003b48 func   ?vfunc366@CBaseCombatWeapon@@UAEHHHH@Z CBaseCombatWeapon::vfunc366
 0x10003b4d func   ?sub_100ba0c0@CBatSwarm@@QAE_NPAX@Z CBatSwarm::sub_100ba0c0
