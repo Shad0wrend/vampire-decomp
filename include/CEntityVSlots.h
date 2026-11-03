@@ -65,7 +65,7 @@ public:
 	EVS(159) EVS(160)
 	virtual char slot161(const char *pszName);	// "HasLinkedDoor"-like name test
 	virtual char slot162();	// "IsPlayer"-like: a boolean answer in al
-	EVS(163) EVS(164) EVS(165) EVS(166)
+	EVS(163) virtual char slot164(); EVS(165) EVS(166)
 	virtual int slot167();	// the entity's target / enemy (0 when none)
 	EVS(168) EVS(169)
 	EVS(170) EVS(171) EVS(172)
