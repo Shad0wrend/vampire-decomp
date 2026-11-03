@@ -89,5 +89,6 @@ public:
     virtual bool vfunc72(int);
     virtual int vfunc80();
     virtual int vfunc79();
-	char m_pad19c0[0x19c8 - 0x19c0];
+	float m_flDamage;	// 0x19c0
+	string_t m_iszBounceSound;	// 0x19c4
 };

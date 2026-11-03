@@ -143,5 +143,6 @@ public:
 	virtual void vfunc80();
 	virtual void vfunc81();
 	virtual datamap_t * vfunc82();
-	char m_pad076c[0x770 - 0x76c];
+	bool m_bPause;	// 0x076c
+	char m_pad076d[0x770 - 0x76d];
 };

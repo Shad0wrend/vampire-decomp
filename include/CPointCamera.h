@@ -19,5 +19,9 @@ public:
 public:
     virtual int vfunc81();
     virtual int vfunc80();
-	char m_pad03e0[0x468 - 0x3e0];
+	char m_pad03e0[0x450 - 0x3e0];
+	float m_FOV;	// 0x0450
+	float m_Resolution;	// 0x0454
+	char m_pad0458[0x45c - 0x458];
+	Vector m_vecLookDest;	// 0x045c
 };

@@ -17,5 +17,11 @@ public:
 public:
     virtual int vfunc81();
     virtual int vfunc80();
-	char m_pad03e0[0x468 - 0x3e0];
+	char m_pad03e0[0x450 - 0x3e0];
+	float m_flWidth;	// 0x0450
+	float m_flHeight;	// 0x0454
+	int m_nPanelName;	// 0x0458
+	int m_nAttachmentIndex;	// 0x045c
+	int m_nOverlayMaterial;	// 0x0460
+	int m_fScreenFlags;	// 0x0464
 };

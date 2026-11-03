@@ -35,5 +35,5 @@ public:
 public:
     datamap_t * vfunc82();
     int vfunc242(int, int, int, int, int, int);
-    char m_pad0474[0x478 - 0x474];
+    float m_flDelay;	// 0x0474
 };

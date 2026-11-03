@@ -34,5 +34,6 @@ public:
 	int vfunc80();
 	int vfunc81();
 	datamap_t * vfunc82();
-	char m_pad0470[0x474 - 0x470];
+	bool m_bIsAdditive;	// 0x0470
+	char m_pad0471[0x474 - 0x471];
 };

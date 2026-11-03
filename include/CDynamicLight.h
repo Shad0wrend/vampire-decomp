@@ -95,5 +95,10 @@ public:
 	virtual int vfunc80();
 	virtual int vfunc81();
 	virtual datamap_t * vfunc82();
-	char m_pad0004[0x46c - 0x4];
+	char m_pad0004[0x450 - 0x4];
+	char m_ActualFlags;	// 0x0450
+	char m_Flags;	// 0x0451
+	char m_pad0452[0x453 - 0x452];
+	bool m_On;	// 0x0453
+	char m_pad0454[0x46c - 0x454];
 };

@@ -126,5 +126,9 @@ public:
 	virtual void vfunc239();
 	virtual void vfunc240();
 	virtual void vfunc241(int, int, int, int, int);
-	char m_pad03e0[0x460 - 0x3e0];
+	char m_pad03e0[0x450 - 0x3e0];
+	float m_flWindAngle;	// 0x0450
+	float m_flWindChangesPerSecond;	// 0x0454
+	float m_flWindMinSpeed;	// 0x0458
+	float m_flWindMaxSpeed;	// 0x045c
 };

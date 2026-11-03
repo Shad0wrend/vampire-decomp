@@ -64,5 +64,19 @@ public:
     virtual const char * vfunc451();
 public:
 	virtual bool vfunc566(int);
-	char m_pad65c0[0x66fc - 0x65c0];
+	char m_pad65c0[0x66b8 - 0x65c0];
+	int m_ChangType;	// 0x66b8
+	Vector m_vLastTeleportPosition;	// 0x66bc
+	float m_fLastTeleportTime;	// 0x66c8
+	float m_fLastJumpTime;	// 0x66cc
+	float m_fFacingTime;	// 0x66d0
+	float m_fUnitedTime;	// 0x66d4
+	float m_bEnergyBallSpawned;	// 0x66d8
+	Vector m_vArenaCenter;	// 0x66dc
+	bool m_bCenterStored;	// 0x66e8
+	char m_pad66e9[0x66ec - 0x66e9];
+	float m_fLastUnitedAttackTime;	// 0x66ec
+	float m_fEnergyChargeTime;	// 0x66f0
+	EHANDLE m_hCenterEmitter;	// 0x66f4
+	char m_pad66f8[0x66fc - 0x66f8];
 };

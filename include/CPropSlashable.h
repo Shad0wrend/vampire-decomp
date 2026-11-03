@@ -23,5 +23,7 @@ public:
 public:
     virtual datamap_t * vfunc82();
     CPropSlashable *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
-	char m_pad03e0[0x74c - 0x3e0];
+	char m_pad03e0[0x730 - 0x3e0];
+	int m_nDamagedSkin;	// 0x0730
+	char m_pad0734[0x74c - 0x734];
 };

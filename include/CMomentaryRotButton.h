@@ -278,5 +278,6 @@ public:
 	virtual void vfunc221();
 	virtual void vfunc222();
 	virtual bool vfunc223();
-	char m_pad0600[0x608 - 0x600];
+	float m_flStartPosition;	// 0x0600
+	float m_flTimeDelta;	// 0x0604
 };

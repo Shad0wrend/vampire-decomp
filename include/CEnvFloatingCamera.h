@@ -11,5 +11,10 @@ public:
 	void sub_1000cb8a();
 public:
 	datamap_t * vfunc82();
-	char m_pad0000[0x460 - 0x0];
+	char m_pad0000[0x450 - 0x0];
+	float m_flAmplitude;	// 0x0450
+	float m_flFrequency;	// 0x0454
+	float m_flDuration;	// 0x0458
+	bool m_bEnabled;	// 0x045c
+	char m_pad045d[0x460 - 0x45d];
 };

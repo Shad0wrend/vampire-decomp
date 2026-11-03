@@ -15,5 +15,14 @@ public:
     virtual int vfunc81();
     virtual int vfunc80();
     CHudTimer *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
-	char m_pad03e0[0x48c - 0x3e0];
+	char m_pad03e0[0x46c - 0x3e0];
+	int m_nCountType;	// 0x046c
+	bool m_bIsPaused;	// 0x0470
+	char m_pad0471[0x478 - 0x471];
+	bool m_bShowTimer;	// 0x0478
+	char m_pad0479[0x47c - 0x479];
+	float m_flLastTime;	// 0x047c
+	float m_flRemainingTime;	// 0x0480
+	char m_pad0484[0x488 - 0x484];
+	int m_nTimerFlags;	// 0x0488
 };

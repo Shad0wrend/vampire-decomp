@@ -25,5 +25,8 @@ public:
 	char m_szLandmarkName[32];	// 0x05b8
 public:
     virtual datamap_t * vfunc82();
-	char m_pad05d8[0x5fc - 0x5d8];
+	char m_pad05d8[0x5dc - 0x5d8];
+	string_t m_sTip_BkgImage;	// 0x05dc
+	int m_iTip_Size;	// 0x05e0
+	char m_pad05e4[0x5fc - 0x5e4];
 };

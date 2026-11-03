@@ -125,5 +125,6 @@ public:
 	virtual void vfunc101();
 	virtual void vfunc102();
 	virtual void vfunc103();
-	char m_pad0004[0x454 - 0x4];
+	char m_pad0004[0x450 - 0x4];
+	int m_nTexture;	// 0x0450
 };

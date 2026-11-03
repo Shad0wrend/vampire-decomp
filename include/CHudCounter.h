@@ -18,5 +18,9 @@ public:
 public:
     virtual int vfunc81();
     virtual int vfunc80();
-	char m_pad03e0[0x464 - 0x3e0];
+	char m_pad03e0[0x454 - 0x3e0];
+	int m_nValue;	// 0x0454
+	float m_flXPos;	// 0x0458
+	float m_flYPos;	// 0x045c
+	int m_nSize;	// 0x0460
 };

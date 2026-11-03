@@ -22,5 +22,16 @@ public:
     virtual int vfunc81();
     virtual int vfunc79();
     virtual int vfunc80();
-	char m_pad03e0[0x494 - 0x3e0];
+	char m_pad03e0[0x450 - 0x3e0];
+	EHANDLE m_hAttachedToEntity;	// 0x0450
+	int m_nAttachment;	// 0x0454
+	float m_flSpriteFramerate;	// 0x0458
+	float m_flFrame;	// 0x045c
+	float m_flDieTime;	// 0x0460
+	char m_pad0464[0x46c - 0x464];
+	float m_flSpriteScale;	// 0x046c
+	char m_pad0470[0x474 - 0x470];
+	float m_flLastTime;	// 0x0474
+	float m_flMaxFrame;	// 0x0478
+	char m_pad047c[0x494 - 0x47c];
 };

@@ -37,5 +37,5 @@ public:
 public:
     virtual int vfunc81();
     virtual int vfunc80();
-	char m_pad07e0[0x8e4 - 0x7e0];
+	char m_szOrnamentModel[260];	// 0x07e0
 };

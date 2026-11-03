@@ -28,5 +28,11 @@ public:
     int vfunc126(int a);	// as in CNPC_VMingXiaoTentacle (transplant)
     int vfunc127(int a);	// as in CNPC_VMingXiaoTentacle (transplant)
     int sub_1000b163(int a);	// as in CNPC_VMingXiaoTentacle (transplant)
-	char m_pad5f54[0x5fb4 - 0x5f54];
+	string_t m_iszEntity;	// 0x5f54
+	float m_flRadius;	// 0x5f58
+	int m_nMoveSpeed;	// 0x5f5c
+	float m_flPauseDuration;	// 0x5f60
+	float m_flPauseDoneTime;	// 0x5f64
+	float m_flEffectDuration;	// 0x5f68
+	char m_pad5f6c[0x5fb4 - 0x5f6c];
 };

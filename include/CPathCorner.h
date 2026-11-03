@@ -23,5 +23,7 @@ public:
 	void vfunc103();
 	float vfunc152();
 	CPathCorner *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
-	char m_pad02e4[0x46c - 0x2e4];
+	char m_pad02e4[0x450 - 0x2e4];
+	float m_flWait;	// 0x0450
+	char m_pad0454[0x46c - 0x454];
 };

@@ -41,5 +41,8 @@ public:
 	virtual datamap_t * vfunc82();
 public:
 	virtual int vfunc117();
-	char m_pad02d4[0x464 - 0x2d4];
+	char m_pad02d4[0x450 - 0x2d4];
+	float m_damage;	// 0x0450
+	string_t m_directionEntityName;	// 0x0454
+	Vector m_vecTarget;	// 0x0458
 };

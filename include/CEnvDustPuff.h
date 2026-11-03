@@ -11,5 +11,7 @@ public:
 	void sub_1000cb8a();
 public:
 	datamap_t * vfunc82();
-	char m_pad0000[0x458 - 0x0];
+	char m_pad0000[0x450 - 0x0];
+	float m_flScale;	// 0x0450
+	unsigned int m_rgbaColor;	// 0x0454
 };

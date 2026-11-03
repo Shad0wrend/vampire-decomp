@@ -20,5 +20,8 @@ public:
 public:
     virtual int vfunc81();
     virtual int vfunc80();
-	char m_pad045c[0x46c - 0x45c];
+	int m_nLayers;	// 0x045c
+	int m_HorzSize;	// 0x0460
+	int m_VertSize;	// 0x0464
+	int m_bOn;	// 0x0468
 };

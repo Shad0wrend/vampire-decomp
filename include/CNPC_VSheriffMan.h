@@ -103,5 +103,6 @@ public:
 	bool vfunc566(int);
 	int vfunc580();
 	void vfunc127(int a);	// slot 127 override ("Restore"-like, plain member like the other slots of this class): the CNPC_VVampireBoss base, then the manbat model / npc names, the jump gravity 2.0f and the global 0x109340d8 = 0x15
-	char m_pad66f4[0x66fc - 0x66f4];
+	float m_fTeleportStartTime;	// 0x66f4
+	char m_pad66f8[0x66fc - 0x66f8];
 };

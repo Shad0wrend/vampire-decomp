@@ -1,6 +1,7 @@
 // CEnvShooter: declared by pcdecomp transplant for 0x100f5ad0 from CLogicalEntity (0x1002b100);
 // only what matched code needs, as plain members.
 #pragma once
+#include "string_t.h"
 
 struct datamap_t;
 
@@ -40,5 +41,6 @@ public:
 	int m_n47c;	// 0x47c
 public:
 	datamap_t * vfunc82();
-	char m_pad0480[0x488 - 0x480];
+	string_t m_iszShootModel;	// 0x0480
+	char m_pad0484[0x488 - 0x484];
 };

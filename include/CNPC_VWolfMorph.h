@@ -611,5 +611,9 @@ public:
 	virtual void vfunc586();
 	virtual void vfunc587();
 	virtual void vfunc588();
-	char m_pad5cc8[0x6670 - 0x5cc8];
+	char m_pad5cc8[0x6664 - 0x5cc8];
+	bool m_bFirstThink;	// 0x6664
+	char m_pad6665[0x6668 - 0x6665];
+	float m_flNextFleeSoundTime;	// 0x6668
+	char m_pad666c[0x6670 - 0x666c];
 };

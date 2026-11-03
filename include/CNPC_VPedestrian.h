@@ -521,5 +521,7 @@ public:
 	virtual void vfunc578();
 	virtual void vfunc579();
 	virtual int vfunc580();
-	char m_pad6679[0x6684 - 0x6679];
+	char m_pad6679[0x667c - 0x6679];
+	int m_eLevelResetType;	// 0x667c
+	char m_pad6680[0x6684 - 0x6680];
 };

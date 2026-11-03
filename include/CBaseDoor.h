@@ -110,5 +110,10 @@ public:
 	virtual float vfunc247();
 public:
     virtual bool vfunc128();
-	char m_pad0644[0x658 - 0x644];
+	int m_bfNpcFailedFlags;	// 0x0644
+	bool m_bNoOpenWanted;	// 0x0648
+	char m_pad0649[0x64c - 0x649];
+	int m_UseIcon;	// 0x064c
+	int m_LockedIcon;	// 0x0650
+	char m_pad0654[0x658 - 0x654];
 };

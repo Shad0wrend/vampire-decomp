@@ -16,5 +16,7 @@ public:
 public:
     virtual datamap_t * vfunc82();
     CEnvSpark *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
-	char m_pad0458[0x478 - 0x458];
+	int m_nMagnitude;	// 0x0458
+	int m_nTrailLength;	// 0x045c
+	char m_pad0460[0x478 - 0x460];
 };
