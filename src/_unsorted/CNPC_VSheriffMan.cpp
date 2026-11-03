@@ -121,6 +121,29 @@ void CNPC_VSheriffMan::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ae7f0 size=0x3b
+#include "CNPC_VSheriffMan.h"
+
+struct CSheriffBossCall
+{
+	void sub_103c5910(int a);
+};
+
+extern int g_109340d8;
+extern float g_104c6148;
+
+// TARGET: CNPC_VSheriffMan::vfunc127
+void CNPC_VSheriffMan::vfunc127(int a)
+{
+	((CSheriffBossCall *)this)->sub_103c5910(a);
+	m_pszMonsterModelName = "models/character/monster/manbat/manbat.mdl";
+	m_pszNpcName = "npc_VSheriffMan";
+	float f = g_104c6148;
+	m_flJumpGravity = f + 0.0f;
+	g_109340d8 = 0x15;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ae840 size=0x5e
 #include "CNPC_VSheriffMan.h"
 struct SScope { const char *a; const char *b; const char *c; };
