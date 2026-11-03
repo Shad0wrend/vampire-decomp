@@ -112,5 +112,7 @@
 	float *vfunc198();	// slot 198: returns &field at +0x3d4 (the velocity)
 	void sub_1009f4e0();
 	void sub_1009f850();
-	void vfunc234(struct CGameTrace *pResult, const Vector *pDelta);
+	struct CGameTrace *vfunc234(struct CGameTrace *pResult, const Vector *pDelta);
+	void sub_1003a090();	// "CBaseEntity::PhysicsCustom" (called by PhysicsSimulate sub_10040390): the custom move-type physics step (MOVETYPE_CUSTOM)
+	void sub_1003f4d0();	// "CBaseEntity::PhysicsCustom" tail (stub 0x100066c2 -> 0x1003f4d0): the custom physics finish step, run when the entity has no edict
 	bool vfunc239(float flDelta);	// slot 239 "CBaseEntity::PhysicsPushRotate": adds flDelta to the accumulator at +0x3f4 (access it as *(float *)((char *)this + 0x3f4); it is the CBaseToggle/CBaseEntity local-time field), returns false when the angular velocity (+0x3c8..0x3d0) is zero, else PerformRotatePush through the global CPhysicsPushedEntities object at 0x106bbae4 and returns its result	// slot 234 "CBaseEntity::PhysicsPushEntity": scope trace, warns when the move parent is set, hull-traces the entity from its origin to origin+pDelta (sub_10035030 / PhysicsTrace.h) and fills the 0x54-byte CGameTrace; then moves the entity and dispatches the impact	// "CBaseEntity::DrawAbsBoxOverlay"	// "CBaseEntity::DrawBBoxOverlay": scope trace (entity name or NULL ENTITY); with an edict (+0x2e0): sub_10142e20(this, 0xff, 100, 0, 0, 0); with bit 0 of m_bDebug2b5 (+0x2b5) the collision bounds (slot 3 of the property at +0x270) are turned into center / half sizes and handed to sub_10142aa0 (8 args, cdecl); with slot 211 (+0x34c) & 0x40 the OBB mins / maxs (slots 1 / 2) give the center, the abs origin (slot 217, +0x364) is added and sub_10144a30 is called (9 args)
