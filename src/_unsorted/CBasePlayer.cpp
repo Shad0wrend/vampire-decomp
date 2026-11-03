@@ -352,6 +352,15 @@ void CBasePlayer::vfunc112(int unused, int nArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015fdf0 size=0xf
+#include "CBasePlayer.h"
+
+void CBasePlayer::vfunc410()
+{
+	*(float *)((char *)this + 0x19b0) = gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015fe10 size=0xeb
 #include "CBasePlayer.h"
 #include "CGlobalEntityList.h"
