@@ -1436,6 +1436,7 @@
 0x10003323 func   ?sub_101b9140@CUnknown101b9140@@QAEHHHPBUCUnknown101b9140Elem@@@Z CUnknown101b9140::sub_101b9140
 0x10003328 func   _gib gib
 0x1000332d func   _item_g_junkyard_businesscard item_g_junkyard_businesscard
+0x10003332 func   ?sub_102623c0@@YIXPAXHD@Z sub_102623c0
 0x10003337 func   ?sub_101d7520@CUnknown101d7520@@QAEXPBD@Z CUnknown101d7520::sub_101d7520
 0x1000333c func   ?sub_10279b70@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_10279b70
 0x10003341 func   ?sub_10079f50@@YIPAUCSceneElem9c@@PAUCSceneElemVecOwner@@@Z sub_10079f50

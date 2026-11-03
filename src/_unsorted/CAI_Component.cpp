@@ -19,6 +19,16 @@ void CAI_Component::vfunc1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102623c0 size=0x10
+#include "CAI_BaseNPC.h"
+
+// TARGET: sub_102623c0
+void __fastcall sub_102623c0(void *pThis, int dummy, char a)
+{
+	((CAI_BaseNPC *)*(void **)((char *)pThis + 4))->sub_10273e80(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027c7c0 size=0x20
 extern int g_1049a0f8;
 
