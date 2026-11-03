@@ -11523,6 +11523,7 @@
 0x100129e5 func   ?vfunc24@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEDH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc24
 0x100129ea func   ?sub_10136c50@@YAPBDPBD@Z sub_10136c50
 0x100129ef func   ?vfunc103@CNPC_VBach@@UAEXXZ CNPC_VBach::vfunc103
+0x100129f4 func   ?sub_100c0c00@CFloatPair3f4@@QAEXM@Z CFloatPair3f4::sub_100c0c00
 0x100129f9 func   ?sub_1006bd90@CInitView@@QAEPAU1@HHE@Z CInitView::sub_1006bd90
 0x100129fe func   ?sub_100dcd00@CUnknown100dcd00@@QAEXPBM0H@Z CUnknown100dcd00::sub_100dcd00
 0x10012a03 func   ?sub_103fdf00@@YAHXZ sub_103fdf00
