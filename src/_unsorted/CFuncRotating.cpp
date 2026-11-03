@@ -86,6 +86,39 @@ bool CFuncRotating::vfunc223()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bff50 size=0x8a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CFuncRotating.h"
+#include "engineiface.h"
+#include "ScopeTrace.h"
+
+extern Vector g_1070d9d0;
+
+void CFuncRotating::vfunc104()
+{
+	const char *pszFirst = m_pszNoiseRunning ? m_pszNoiseRunning : g_106b8540;
+	if (pszFirst[0])
+	{
+		const char *pszSecond = *(const char *volatile *)&m_pszNoiseRunning;
+		if (!pszSecond)
+			pszSecond = g_106b8540;
+		enginesound->vfunc0(pszSecond, 0);
+	}
+	if (*(Vector *)((char *)this + 0x3c8) != g_1070d9d0)
+	{
+		m_pfn0114 = (void (CBaseEntity::*)())&CFuncRotating::sub_100c0690;
+		*(float *)((char *)this + 0x3fc) = *(float *)((char *)this + 0x3f4) + 1.5;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c0cd0 size=0x2d
 // TARGET: CFuncRotating::vfunc178
 #include "CFuncRotating.h"

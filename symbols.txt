@@ -11286,6 +11286,7 @@
 0x100120fd func   ?sub_10383e20@CUnknown10383e20@@QAEPAXH@Z CUnknown10383e20::sub_10383e20
 0x10012102 func   ?sub_10412590@@YAXHH@Z sub_10412590
 0x10012107 func   ?vfunc5@CEnvMicrophone@@QAEPAV1@I@Z CEnvMicrophone::vfunc5
+0x10012111 func   ?vfunc104@CFuncRotating@@UAEXXZ CFuncRotating::vfunc104
 0x1001211b func   ?vfunc3@CTraitDependencyDataDescSaveDataOps@@UAEXH@Z CTraitDependencyDataDescSaveDataOps::vfunc3
 0x10012120 func   ?sub_101bb0f0@@YAHXZ sub_101bb0f0
 0x10012125 func   ?sub_10088a80@@YAXXZ sub_10088a80
