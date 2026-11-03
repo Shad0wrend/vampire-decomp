@@ -405,6 +405,35 @@ void CNPC_VGargoyle::vfunc448(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103793e0 size=0x67
+#include "CEntityVSlots.h"
+#include "CAI_BaseNPC.h"
+#include "CNPC_VGargoyle.h"
+
+struct CNavObj5d44 { void sub_1000e6e7(int a); };
+
+// TARGET: CNPC_VGargoyle::vfunc444
+void CNPC_VGargoyle::vfunc444(int *pTask)
+{
+	switch (*pTask) {
+	case 0x31:
+		if (!(m_nFlags5d8c & 0x2000))
+			((CEntityVSlots *)this)->slot572();
+		((CNavObj5d44 *)m_pObj5d44)->sub_1000e6e7(-1);
+		if (sub_10010352())
+			((CAI_BaseNPC *)this)->sub_10273e80(0);
+		break;
+	case 0x12f:
+		if (((CEntityVSlots *)this)->slot251())
+			((CAI_BaseNPC *)this)->sub_10273e80(0);
+		break;
+	default:
+		sub_10011928(pTask);
+		return;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10379470 size=0x3
 #include "CNPC_VGargoyle.h"
 bool CNPC_VGargoyle::vfunc70()
