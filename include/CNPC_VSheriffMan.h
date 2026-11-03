@@ -53,6 +53,8 @@ public:
 	void sub_10269a20(int condition);	// CAI_BaseNPC member (stub 0x100041b0): sets the condition
 	void vfunc431();	// "CNPC_VSheriffMan::NPCThink": scope trace around the base think, then schedules the next think
 	void sub_100052d6();	// CNPC_VVampireBoss::vfunc431, called directly
+	void vfunc433();	// slot 433 override (GatherConditions): scope trace around CAI_BaseNPCTroika::vfunc433
+	void sub_102b27f0();	// CAI_BaseNPCTroika::vfunc433 (stub 0x10013f2f), called directly
 	int vfunc461();	// "CNPC_VSheriffMan::SelectIdealSchedule": scope trace, sets the ideal state to 0x21, then the base implementation
 	int sub_10011225();	// CNPC_VHuman::vfunc461, called directly
 	void sub_10012855(int flags);	// sets the solid flags, called with 0x201000
