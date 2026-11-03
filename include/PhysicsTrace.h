@@ -12,3 +12,9 @@ struct CGameTrace;
 
 void sub_10035030(CBaseEntity *pEntity, const Vector *pStart, const Vector *pEnd, const Vector *pMins,
                   const Vector *pMaxs, unsigned int fMask, CGameTrace *pTrace);
+
+// sub_1012b750 (0x1012b750, __cdecl, bool): a random-offset hull trace against another entity (up to 5 tries).
+// Both entities are players: their move type is the dword at +0x3e0 (CBasePlayer::m_n03E0). pResult receives the
+// found origin (three floats).
+class CBasePlayer;
+bool sub_1012b750(CBasePlayer *pPlayer, CBasePlayer *pOther, Vector *pResult, float flRadius);
