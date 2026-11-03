@@ -11544,6 +11544,7 @@
 0x10013264 func   ?sub_1035bf90@@YGXH@Z sub_1035bf90
 0x10013269 func   ?sub_10311b90@CAI_Expresser@@QAEHXZ CAI_Expresser::sub_10311b90
 0x10013273 func   ?sub_100fea60@CUnknown100fea60@@QAEXPAVCBaseEntity@@@Z CUnknown100fea60::sub_100fea60
+0x10013278 func   ?vfunc414@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc414
 0x1001327d func   ?sub_10160ec0@@YI_NPAUPlayerView@@@Z sub_10160ec0
 0x10013282 func   ?sub_10090e30@CBaseAnimating@@QAE_NH@Z CBaseAnimating::sub_10090e30
 0x10013287 func   ?sub_1042c780@@YIXPAX@Z sub_1042c780
