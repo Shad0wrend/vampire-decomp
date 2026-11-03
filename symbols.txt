@@ -9974,6 +9974,7 @@
 0x1001057d func   ?sub_102ccce0@CAI_DynamicLink@@QAEXXZ CAI_DynamicLink::sub_102ccce0
 0x10010582 func   ?vfunc2@CPositionInterpolator_CatmullRom@@QAEXHPBVVector@@@Z CPositionInterpolator_CatmullRom::vfunc2
 0x1001058c func   ?sub_102168a0@CPropModelState@@QAEXPAUinputdata_t@@@Z CPropModelState::sub_102168a0
+0x10010591 func   ?sub_101cbec0@Helper@@QAEPAXI@Z Helper::sub_101cbec0
 0x10010596 func   ?sub_1025d700@@YAXIH@Z sub_1025d700
 0x1001059b func   ?vfunc5@CItemGJunkyardBusinesscard@@QAEPAV1@I@Z CItemGJunkyardBusinesscard::vfunc5
 0x100105a0 func   ?sub_10090020@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_10090020
