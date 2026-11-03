@@ -11262,6 +11262,7 @@
 0x100128be func   ?vfunc173@CGameText@@QAEHHHHH@Z CGameText::vfunc173
 0x100128c8 func   ?vfunc431@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc431
 0x100128cd func   ?sub_1009d6a0@CBaseEntity@@QAEHXZ CBaseEntity::sub_1009d6a0
+0x100128d2 func   ?vfunc103@CTriggerFog@@QAEXXZ CTriggerFog::vfunc103
 0x100128dc func   ?sub_1005aff0@@YAHXZ sub_1005aff0
 0x100128e1 func   ?sub_1003ffa0@CBaseEntity@@QAEXXZ CBaseEntity::sub_1003ffa0
 0x100128e6 func   ?sub_102f9ca0@@YAMH@Z sub_102f9ca0
