@@ -215,7 +215,11 @@ public:
 
 	char m_pad03e0[0x5a8 - 0x3e0];
 	EHANDLE m_hAnimFollowModel;	// 0x05a8
-	char m_pad05ac[0xa80 - 0x5ac];
+	char m_pad05ac[0x6f0 - 0x5ac];
+	int m_nSequence6f0;	// 0x6f0: the animation sequence (CBaseAnimating)
+	float m_flPlaybackRate6f4;	// 0x6f4: the playback rate
+	float m_fl6f8;	// 0x6f8: the sequence start time used by the melee swing
+	char m_pad06fc[0xa80 - 0x6fc];
 	float m_flLastBCCUpdate;	// 0x0a80
 	float m_flNextVampHeal;	// 0xa84: the time of the next vampire heal-over-time tick
 	char m_pad0a88[0xa9c - 0xa88];
