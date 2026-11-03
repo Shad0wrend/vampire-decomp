@@ -460,5 +460,8 @@ public:
 	virtual int vfunc138();	// slot 138	// slot 26 override (plain member beside the placeholder sa26; twin of slot 25): with an entity, the handle at +0x1c60 becomes the handle of its owning object (+0x9c, -1 when none)
 	void vfunc339(int a, float b, int c);	// slot 339: forwards to CBaseCombatCharacter::vfunc339 (float second argument)
 	int vfunc340(int a, float b, float c);	// slot 340 (plain member): forwards unchanged to CBaseCombatCharacter::vfunc340
+	int sub_10345480();	// CBaseAnimating member (transplant): handle at +0x6f0 -> sequence descriptor -> its +0x2e8 offset, -1 when none
+	char sub_10160dc0();	// CBaseAnimating member (transplant): the float at +0x6f8 lies in the sequence descriptor's +0x2f0..+0x2f4
+	char sub_101611e0(void *pEnt);	// stub 0x10008cfb: always false (xor al,al; ret 4)
 #include "CBasePlayer_ext.h"
 };
