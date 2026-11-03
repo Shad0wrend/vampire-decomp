@@ -1,6 +1,10 @@
 // CTEDecal: decal temp entity. Declared flat (bases not recovered); only the vtable head is modelled.
 #pragma once
 #include "ServerClass.h"
+#include "Vector.h"
+#include "QAngle.h"
+
+class CRecipientFilter;
 
 class CTEDecal
 {
@@ -14,11 +18,17 @@ public:
 	CTEDecal *sub_10060380(int a);	// 0x10060380: the base temp entity's constructor (0x10015334), then the vtable and the zeroed fields at +0xc, +0x10, +0x14, +0x24, +0x2c
 
 	char m_pad0004[8];
-	int m_mins[3];	// 0x000c
+	union
+	{
+		int m_mins[3];	// 0x000c
+		struct { float x, y, z; } m_vecOrigin;
+	};
 	int m_maxs[3];	// 0x0018
 	int m_f24;
 	int m_f28;
 	int m_f2c;
 	char m_f30;
+	virtual void vfunc3(const Vector &origin, const QAngle &angles);
+	virtual void vfunc4(CRecipientFilter &filter, float delay);
 	void vfunc4(int a, int b);	// as in CTEMetalSparks (transplant)
 };

@@ -6,7 +6,7 @@
 class CFoo1005f190
 {
 public:
-	char sub_1005f190();	// 0x1005f190 (matched): the debug switch
+	int sub_1005f190();	// 0x1005f190 (matched): the debug switch
 };
 
 extern CFoo1005f190 g_10738960;
