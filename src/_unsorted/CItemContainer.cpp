@@ -245,6 +245,24 @@ void CItemContainer::vfunc406()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10208c60 size=0x1f
+#include "CItemContainer.h"
+
+// TARGET: CItemContainer::vfunc407
+void CItemContainer::vfunc407()
+{
+	int state = m_nState49c;
+	if (state == 1)
+	{
+		sub_101c1bc0(0);
+	}
+	else if (state == 2)
+	{
+		sub_101c1bc0(state);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10208ff0 size=0x72
 #include "CItemContainer.h"
 #include "CGlobalEntityList.h"

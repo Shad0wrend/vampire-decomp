@@ -10065,6 +10065,7 @@
 0x10010906 func   ?sub_101aa630@@YIMH@Z sub_101aa630
 0x1001090b func   ?vfunc80@CWeaponIArmor_Hvy_Leather@@QAEHXZ CWeaponIArmor_Hvy_Leather::vfunc80
 0x10010910 func   ?sub_1012f230@@YAPADXZ sub_1012f230
+0x10010915 func   ?vfunc407@CItemContainer@@QAEXXZ CItemContainer::vfunc407
 0x1001091a func   ?sub_10237f90@@YAXXZ sub_10237f90
 0x1001091f func   ?sub_100e4780@CDialog@@QAEXXZ CDialog::sub_100e4780
 0x10010924 func   ?sub_102dfd90@CUnknown102dfd90@@QAEXPAVCBaseEntity@@@Z CUnknown102dfd90::sub_102dfd90
