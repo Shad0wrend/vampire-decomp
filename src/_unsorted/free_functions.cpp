@@ -133010,6 +133010,98 @@ void *sub_10259de0(unsigned short index)
 unsigned short __cdecl sub_10259e20(void) { return 0xffff; }
 // END FUNCTION
 
+// FUNCTION: 0x1025afe0 size=0x19e
+#include "CUtlRBTreeBig.h"
+#include "CUnknown1024b370.h"
+#include "CVDmg_t.h"
+#include <string.h>
+
+struct CHolderX
+{
+	char m_pad0000[0x198];
+	CVDmg_t m_Dmg;
+	char m_pad01dc[0xec84 - 0x198 - sizeof(CVDmg_t)];
+};
+
+struct CInfoLocal
+{
+	char m_pad0000[0x238e0];
+	CHolderX m_holders[3];
+	char m_padTail[0x5f318 - 0x238e0 - 3 * 0xec84];
+};
+
+struct CSymKey
+{
+	unsigned short m_Id;
+	CSymKey() : m_Id(0xffff) {}
+};
+
+struct CValRaw
+{
+	int m_align0;
+	char m_bytes[0x5f318 - 4];
+	void sub_1025b1f0();
+	void sub_1025b930(const void *pSrc);
+};
+
+struct CElemX
+{
+	CSymKey m_Key;
+	CValRaw m_Value;
+};
+
+extern CUtlRBTreeBig g_1089d7c8;
+extern CUnknown1024b370 g_1089d7e0;
+
+void sub_1025cb30(unsigned short *pDst, unsigned short *pSrc);
+void __fastcall sub_101fa680(void *p);
+
+#define DESTROY_VAL(pv) \
+	do { \
+		char *q_ = (char *)(pv) + 0x23a78 + 3 * 0xec84; \
+		int n_ = 3; \
+		do { \
+			q_ -= 0xec84; \
+			sub_101fa680(q_); \
+		} while (--n_ != 0); \
+	} while (0)
+
+// TARGET: sub_1025afe0
+unsigned short sub_1025afe0(const char *pszName)
+{
+	unsigned short index;
+	{
+		CElemX search;
+		search.m_Value.sub_1025b1f0();
+		search.m_Key.m_Id = g_1089d7e0.sub_1024b5e0(pszName).m_Id;
+		index = g_1089d7c8.sub_1025c6a0(&search);
+		DESTROY_VAL(&search.m_Value);
+	}
+	if (index != 0xffff)
+		return index;
+
+	{
+		CInfoLocal info;
+		memset(&info, 0, sizeof(info));
+		((unsigned char *)&info)[0] = 0;
+
+		CElemX insert;
+		insert.m_Value.sub_1025b1f0();
+		insert.m_Key.m_Id = g_1089d7e0.sub_1024b5e0(pszName).m_Id;
+		unsigned short parent;
+		bool leftchild;
+		g_1089d7c8.sub_1025c9d0(&insert, parent, leftchild);
+		index = g_1089d7c8.sub_1025c800(parent, leftchild);
+
+		sub_1025cb30((unsigned short *)g_1089d7c8.m_pElements[index].m_Data, (unsigned short *)&insert);
+		((CValRaw *)(g_1089d7c8.m_pElements[index].m_Data + 4))->sub_1025b930(&info);
+		DESTROY_VAL(&insert.m_Value);
+		DESTROY_VAL(&info);
+	}
+	return index;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025b390 size=0x12
 struct CVDmg_t {
     CVDmg_t();

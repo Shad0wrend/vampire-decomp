@@ -14045,6 +14045,7 @@
 0x102482b0 func   ?sub_102482b0@@YAPAXPAHH@Z sub_102482b0
 0x102482f0 func   ?sub_102482f0@@YAPADPBDPAVIFileSys@@@Z sub_102482f0
 0x10248810 func   ?sub_10248810@@YAXPAXH@Z sub_10248810
+0x1025afe0 func   ?sub_1025afe0@@YAGPBD@Z sub_1025afe0
 0x1025b630 func   ?sub_1025b630@@YAXPBDPAI0@Z sub_1025b630
 0x102df130 func   ?sub_102df130@@YAPAUNode@@XZ sub_102df130
 0x102df1b0 func   ?sub_102df1b0@@YAHH@Z sub_102df1b0
