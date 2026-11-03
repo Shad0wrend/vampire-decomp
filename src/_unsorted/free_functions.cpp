@@ -46179,6 +46179,28 @@ UtlMem *UtlMem::sub_100eb0e0(int growSize, int allocationCount)
 void __fastcall sub_100eb130(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x100eb150 size=0x37
+#include "utlmemory.h"
+
+struct CUtlMemoryBig
+{
+	void *m_pMemory;	// 0x00
+	int m_nAllocationCount;	// 0x04
+	int m_nGrowSize;	// 0x08
+};
+
+// TARGET: sub_100eb150
+CUtlMemoryBig *__fastcall sub_100eb150(CUtlMemoryBig *pThis, int, int nGrowSize, int nInitAllocationCount)
+{
+	pThis->m_pMemory = 0;
+	pThis->m_nAllocationCount = nInitAllocationCount;
+	pThis->m_nGrowSize = nGrowSize;
+	if (nInitAllocationCount)
+		pThis->m_pMemory = _imp__Plat_Alloc(nInitAllocationCount * 0x1004);
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eb1a0 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);

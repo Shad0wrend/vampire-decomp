@@ -9267,6 +9267,7 @@
 0x1000f1fa func   _trigger_bomb_site trigger_bomb_site
 0x1000f1ff func   ?vfunc5@CCineNPC@@QAEPAV1@I@Z CCineNPC::vfunc5
 0x1000f204 func   ?sub_100ef5f0@CBaseDoorX@@QAEX_N@Z CBaseDoorX::sub_100ef5f0
+0x1000f20e func   ?sub_100eb150@@YIPAUCUtlMemoryBig@@PAU1@HHH@Z sub_100eb150
 0x1000f213 func   ?vfunc5@CResearchBook_LG_DODGE@@QAEPAV1@I@Z CResearchBook_LG_DODGE::vfunc5
 0x1000f21d func   ?vfunc111@CBaseEntity@@UAEXXZ CBaseEntity::vfunc111
 0x1000f222 func   ?sub_100f0f30@@YIXPAUCSlots@@@Z sub_100f0f30
