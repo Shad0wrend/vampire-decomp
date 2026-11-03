@@ -4708,6 +4708,7 @@
 0x100086a2 func   ?sub_10112390@@YGXHHHH@Z sub_10112390
 0x100086a7 func   ?sub_10249710@CUnknown102496a0@@QAEXPAUCRopeNode@@HPAVCBaseRopePhysics@@MM@Z CUnknown102496a0::sub_10249710
 0x100086b6 func   ?sub_1042f0c0@CUnk1042f0c0@@QAEXH@Z CUnk1042f0c0::sub_1042f0c0
+0x100086bb func   ?vfunc103@CWeaponMelee_FireAxe@@QAEXXZ CWeaponMelee_FireAxe::vfunc103
 0x100086c0 func   ?sub_102e0150@CUnknown102e0150@@QAEMPAX@Z CUnknown102e0150::sub_102e0150
 0x100086c5 func   ?sub_102d00e0@@YGXPAVS102d4390@@PBMM@Z sub_102d00e0
 0x100086ca func   ?vfunc373@CWeaponMelee@@UAEHXZ CWeaponMelee::vfunc373

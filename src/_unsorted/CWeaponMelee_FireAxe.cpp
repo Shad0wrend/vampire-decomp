@@ -39,6 +39,17 @@ int CWeaponMelee_FireAxe::vfunc363()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e5f30 size=0x11
+#include "CWeaponMelee_FireAxe.h"
+
+// TARGET: CWeaponMelee_FireAxe::vfunc103
+void CWeaponMelee_FireAxe::vfunc103()
+{
+	sub_100047be();
+	m_b871 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e5f60 size=0x3f
 #include "CWeaponMelee_FireAxe.h"
 
