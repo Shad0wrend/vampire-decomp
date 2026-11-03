@@ -7,6 +7,7 @@ struct datamap_t;
 class CFunc_Dust
 {
 public:
+	CFunc_Dust *sub_10113c90();
 	CFunc_Dust *vfunc5(unsigned int flags);
 	void sub_10004fca();
 	void vfunc103();	// slot 103 "CFunc_Dust::Activate"-like: asks slot 9 for the model name and sets it (slot 105), defaults the sprite name at +0x470 to the sparkles material, AddSolidFlags(0x20) on the collision property at +0x270 (inlined scope trace), sets the bool at +0x1b0 and the byte at +0x1b1, then CBaseEntity::vfunc103
