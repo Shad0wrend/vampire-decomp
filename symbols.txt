@@ -12918,6 +12918,7 @@
 0x10014cfe func   ?vfunc81@CBaseCineCam@@UAEHXZ CBaseCineCam::vfunc81
 0x10014d03 func   ?sub_100fef50@CEnvBeam@@QAEXXZ CEnvBeam::sub_100fef50
 0x10014d08 func   ?sub_100f9df0@CUnk100f9df0@@QAEHHHHH@Z CUnk100f9df0::sub_100f9df0
+0x10014d0d func   ?vfunc5@CPropHaunted@@QAEPAV1@I@Z CPropHaunted::vfunc5
 0x10014d12 func   ?sub_10370a70@@YAEXZ sub_10370a70
 0x10014d17 func   ?sub_102a97d0@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_102a97d0
 0x10014d1c func   ?vfunc5@CBaseDMStart@@QAEPAV1@I@Z CBaseDMStart::vfunc5

@@ -12,6 +12,26 @@ datamap_t * CPropHaunted::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10213a60 size=0x57
+#include "CPropHaunted.h"
+#include "COutputEvent.h"
+
+void sub_100aa7b0(void *);
+
+CPropHaunted *CPropHaunted::vfunc5(unsigned int flags)
+{
+	((COutputEvent *)((char *)this + 0x804))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x7ec))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x7d4))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x748))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x730))->sub_100cd2d0();
+	sub_1008b3c0();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10213ae0 size=0x4e
 #include "CPropHaunted.h"
 
