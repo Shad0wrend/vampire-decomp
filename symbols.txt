@@ -8911,6 +8911,7 @@
 0x1000ec64 func   ?sub_100bc580@CUnknown100bc580@@QAEXD@Z CUnknown100bc580::sub_100bc580
 0x1000ec69 func   ?sub_100aa840@CBaseEntity@@QAEDXZ CBaseEntity::sub_100aa840
 0x1000ec6e func   ?sub_100be000@@YIXPADHD@Z sub_100be000
+0x1000ec73 func   ?vfunc406@CItemContainer@@QAEXXZ CItemContainer::vfunc406
 0x1000ec7d func   ?vfunc82@CAI_BaseHumanoid@@QAEPAUdatamap_t@@XZ CAI_BaseHumanoid::vfunc82
 0x1000ec82 func   ?vfunc259@CNPC_VTzimisceHeadClaw@@QAEXPAX@Z CNPC_VTzimisceHeadClaw::vfunc259
 0x1000ec87 func   ?sub_1006aa10@CTEUserTracer@@QAEPAV1@PBD@Z CTEUserTracer::sub_1006aa10

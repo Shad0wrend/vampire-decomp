@@ -227,6 +227,24 @@ void *__fastcall sub_10208bf0(void *pSelf, int unused, int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10208c30 size=0x1f
+#include "CItemContainer.h"
+
+// TARGET: CItemContainer::vfunc406
+void CItemContainer::vfunc406()
+{
+	int state = m_nState49c;
+	if (state == 1)
+	{
+		sub_101c1bc0(state);
+	}
+	else if (state == 2)
+	{
+		sub_101c1bc0(3);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10208ff0 size=0x72
 #include "CItemContainer.h"
 #include "CGlobalEntityList.h"
