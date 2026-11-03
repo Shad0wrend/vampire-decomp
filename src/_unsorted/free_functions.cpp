@@ -86507,6 +86507,33 @@ void __fastcall sub_101bdf90(Mem4 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101be020 size=0x85
+#include "CStealthKillRules.h"
+extern "C" double __cdecl cos(double);
+#pragma intrinsic(cos)
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern float g_1044eb08;
+extern double g_10449270;
+
+void CStealthKillRules::sub_101be020()
+{
+	g_109f3620[*g_109f3680].a = "CStealthKillRules::InitTable";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	sub_101be0e0();
+	sub_101bebf0();
+	for (int i = 0; i < 20; i++) {
+		float half = ((float *)m_aTable0)[i] * g_10449270;
+		((float *)m_aTable1)[i] = (float)cos(half * g_1044eb08);
+	}
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101be0e0 size=0xb9
 #include "CStealthKillRules.h"
 

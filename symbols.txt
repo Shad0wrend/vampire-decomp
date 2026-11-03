@@ -4611,6 +4611,7 @@
 0x100080a3 func   ?vfunc80@CWeaponMelee_ChangBlade@@QAEHXZ CWeaponMelee_ChangBlade::vfunc80
 0x100080a8 func   ?vfunc35@CBaseButton@@UAEHH@Z CBaseButton::vfunc35
 0x100080ad func   ?vfunc7@CEntityListSystem@@QAEHXZ CEntityListSystem::vfunc7
+0x100080b2 func   ?sub_101be020@CStealthKillRules@@QAEXXZ CStealthKillRules::sub_101be020
 0x100080b7 func   ?sub_1020dd70@CPropSwitch@@QAEXXZ CPropSwitch::sub_1020dd70
 0x100080bc func   ?sub_103ffc90@@YAHXZ sub_103ffc90
 0x100080c1 func   ?sub_10430250@@YAXXZ sub_10430250
