@@ -93,6 +93,7 @@ public:
 	void vfunc146(void *pInfo, const Vector &vecDir, void *pTrace);	// slot 146 "CBaseEntity::TraceAttack" (0x10268ef0, ret 0xc): skipped when slot 145 (returns -1) is -1 / 0x14, when the info's int damage at +0x4 is 0.0f or when its byte damage type at +0x10 & 0xc7 is 0; then if !slot 158(), +0x208 must be positive and is decremented (or return); shot count / spread from the damage (damage < 10: 1 shot 0.1f, < 25: 2 shots 0.2f, else 4 shots 0.3f); per shot: random spread via the engine random object 0x1070b244 slot 1, direction = -vecDir, a ray built from trace->m_endpos (+0xc), CTraceFilterSimple(this, 0), g_1070b254->vfunc4(ray, 0x400b, filter, &trace), debug sub_10146570 when g_10738964 slot 1 is false and +0x2c is set, and on a partial hit sub_101cfe10(&trace, slot145(1), 1)
 	int vfunc153();	// true when the velocity at +0x3d4 differs from the zero vector
 	int vfunc154(int a, int b);	// slot 154: -1 in state 4; 0x34 when the state is set and b == 0x47; else the engine random stream's RandomInt(0, 4)
+	void vfunc155(struct CGameTrace *pTrace, int decalIndex, char bFlag, int a4, class CBasePlayer *pPlayer, int nType, char bTrace);	// slot 155 "CBaseEntity::DecalTrace" (ret 0x1c): trace fields +0xc endpos, +0x40 surface props, +0x4c entity, +0x50 hitbox
 	bool vfunc158();
 	bool vfunc161(const char *name);	// "CBaseEntity::HasLinkedDoor": scope trace (entity name), true when the string at +0x20c is set and equals name (case-insensitive)
 	void vfunc168();
