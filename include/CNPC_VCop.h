@@ -40,6 +40,7 @@ public:
 	int vfunc461();	// slot 461 (plain member): state 1 / 3 -> sub_103723f0's ideal state or the base; state 0xc picks the ideal state (8 / 2 / 1) by the conditions 0x21 / 0x1f / 0x22 / 0x20, telling the pursuit target (slots 597, 596) first; else the base
 	void vfunc463(int a, int type);	// slot 463 (plain member like the others): tells the controlling players about the pursuit state change, then CNPC_VHumanCombatant::vfunc463
 	void vfunc180();	// slot 180: clears the two per-NPC counter flags at +0x6671 / +0x6672 (decrementing the globals 0x1093acac / 0x1093acb0 for each one that was set), then CAI_BaseNPCTroika::vfunc180
+	void vfunc420();	// slot 420 (plain member): CNPC_VHumanCombatant::vfunc420 then clears +0x6670
 
 	char m_pad03e0[0x14bc - 0x3e0];
 	unsigned int m_flags14bc;	// 0x14bc
