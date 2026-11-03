@@ -212,6 +212,7 @@ public:
 	int vfunc576(float a, int unused);	// slot 576: true when the float is above 0.0f
 	void vfunc518(int a, float b, float c, float d);	// slot 518 (plain overload of the placeholder): forwards to slot 13 of the motor at +0x5d44 when the global at 0x10924f74 allows
 	int vfunc450(int a);	// slot 450 (plain overload of the placeholder slot): translates a schedule id through slot 580 + 0x18
+	void vfunc517(int a, int b, float c, float d, float e);	// slot 517 (plain overload): forwards the five arguments to slot 12 of the motor at +0x5d44 when the convar-like global 0x10924f74 allows it
 
 	void vfunc310(int act);	// slot 310 (plain overload of the placeholder slot, ret 4): switches the ideal activity (+0xff0) unless it is the current one (+0xfec) or the NPC is in activity 2 and act is not 0, then sub_10272130 / sub_10272490
 	int vfunc440(int schedule);	// slot 440 "TranslateSchedule" base implementation (declared as a plain member like the subclasses' overrides): schedule 0x2e (a failed scripted sequence) becomes 0x2f..0x33 by the move type at +0x5f60 of the scripted sequence entity (handle at +0x5d74), after a DevWarning when that entity is gone; unchanged otherwise
