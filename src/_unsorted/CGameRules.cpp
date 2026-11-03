@@ -141,6 +141,14 @@ bool CGameRules::vfunc41(const char *pcmd, CBaseEntity *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128f80 size=0xb
+#include "CGameRules.h"
+struct CIface10128f80 { virtual char f0(void *pPassEnt, int collisionGroup); };
+int sub_1042df50();
+// TARGET: CGameRules::vfunc77
+char CGameRules::vfunc77(void *pPassEnt, int collisionGroup) { return ((CIface10128f80 *)sub_1042df50())->f0(pPassEnt, collisionGroup); }
+// END FUNCTION
+
 // FUNCTION: 0x101291f0 size=0x35
 #include "CGameRules.h"
 #include "CVoiceGameMgr.h"
