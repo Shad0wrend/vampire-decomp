@@ -103247,6 +103247,62 @@ bool CUnknown101f7bb0::sub_101f7db0(const char *pszFile)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f7e90 size=0xa5
+#include "CUnknown101f7cc0.h"
+
+extern "C" __declspec(dllimport) void __cdecl Msg(const char *pMsg, ...);
+
+struct DfCacheable
+{
+	virtual void a0();
+	virtual void Release();
+};
+
+struct DfNode
+{
+	virtual void a0();
+	virtual void a1();
+	virtual void a2();
+	virtual DfNode *NextKey();
+};
+
+struct DfFile
+{
+	virtual void a0();
+	virtual void a1();
+	virtual DfNode *FindKey(const char *pszName);
+	int *m_pVbTable;
+
+	DfCacheable *Cacheable() { return (DfCacheable *)((char *)this + 4 + m_pVbTable[1]); }
+};
+
+extern int g_1070b238;
+DfFile *sub_101f2e20(const char *pszName, int pathID);
+
+bool CUnknown101f7cc0::sub_101f7e90(const char *pszFile)
+{
+	DfFile *pFile = sub_101f2e20(pszFile, g_1070b238);
+	if (!pFile)
+	{
+		Msg("Unable to open data file for: %s\n", pszFile);
+		return false;
+	}
+	DfNode *pKey = pFile->FindKey("TraitEffectCategory");
+	while (pKey)
+	{
+		if (!sub_101f7cc0(pKey))
+		{
+			Msg("Unable to parse category from data file for: %s.  Memory allocation ERROR!\n", pszFile);
+			pFile->Cacheable()->Release();
+			return false;
+		}
+		pKey = pKey->NextKey();
+	}
+	pFile->Cacheable()->Release();
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f7f70 size=0x1c7
 #include "CUnknown101f7bb0.h"
 #include "CVFeat_t.h"
