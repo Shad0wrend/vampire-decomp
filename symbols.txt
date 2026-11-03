@@ -8223,6 +8223,7 @@
 0x1000dbd9 func   ?vfunc41@CFuncMonitor@@QAEXPAVCBasePlayer@@@Z CFuncMonitor::vfunc41
 0x1000dbe3 func   ?sub_10149c00@@YIXPAX@Z sub_10149c00
 0x1000dbed func   ?sub_1011a710@@YAXD@Z sub_1011a710
+0x1000dbf2 func   ?vfunc32@CSimplePhysicsProp@@QAE_NH@Z CSimplePhysicsProp::vfunc32
 0x1000dbf7 func   ?vfunc117@CGib@@UAEHXZ CGib::vfunc117
 0x1000dc01 func   ?sub_1007ceb0@CUnknown1007ce20@@QAEMXZ CUnknown1007ce20::sub_1007ceb0
 0x1000dc06 func   ?sub_1042fe90@@YAII@Z sub_1042fe90

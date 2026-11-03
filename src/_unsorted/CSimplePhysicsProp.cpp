@@ -34,6 +34,19 @@ int CSimplePhysicsProp::vfunc226()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004fdd0 size=0x1f
+#include "CSimplePhysicsProp.h"
+#include "CBaseEntity.h"
+
+CBaseEntity *sub_104115b0(int a, int b);
+
+// TARGET: CSimplePhysicsProp::vfunc32
+bool CSimplePhysicsProp::vfunc32(int a)
+{
+	return (CBaseEntity *)this == sub_104115b0(a, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004fe20 size=0xe
 // TARGET: sub_1004fe20
 void sub_1040d950(int x);
