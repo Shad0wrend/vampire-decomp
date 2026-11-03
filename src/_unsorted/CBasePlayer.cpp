@@ -2276,6 +2276,36 @@ void sub_10182530(int a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10182ec0 size=0x40
+struct CPlayerAcc
+{
+	char sub_102585c0();
+};
+
+struct CUnk10725fbc
+{
+	virtual void vfunc0();
+	virtual char vfunc1();
+	char m_pad0004[0x2c - 4];
+	int m_n2c;
+};
+
+extern CUnk10725fbc *g_10725fbc;
+
+// TARGET: sub_10182ec0
+char __stdcall sub_10182ec0(void *pPlayer, char bForce)
+{
+	if (bForce)
+		return 1;
+	if (((CPlayerAcc *)pPlayer)->sub_102585c0())
+	{
+		if (!g_10725fbc->vfunc1() && g_10725fbc->m_n2c != 0)
+			return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10182f10 size=0x5
 // TARGET: sub_10182f10
 bool __stdcall sub_10182f10(int a)
