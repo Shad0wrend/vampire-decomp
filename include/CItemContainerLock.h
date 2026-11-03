@@ -53,6 +53,7 @@ public:
 public:
 	int vfunc36();
 	float vfunc37();
+	void vfunc41(CBasePlayer *pPlayer);	// slot 41 (plain member): the use/close handler; calls slot 192 for the eye position, the active weapon's sub_10252410(0) / slot 292, the feat-0 value (CVFeatSet::Find(0)->sub_101e56e0), the clamp 100 - (sub_1020b040/sub_1020aea0)*100 into +0x816, and sends the g_1072607c HUD message (+0x816, sub_1020b000, feat value) to pPlayer only
 	datamap_t * vfunc82();
 	int vfunc117();
 	void vfunc273();
