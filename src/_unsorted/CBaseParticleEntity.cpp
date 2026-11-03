@@ -104,3 +104,16 @@ bool CBaseParticleEntity::vfunc241(int a, CParticleTransmitInfo_t *pInfo, int c,
 	return bResult;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1042b680 size=0x14
+#include "CBaseParticleEntity.h"
+#include "CBaseEntity.h"
+
+int sub_10008c5b(int);
+
+void CBaseParticleEntity::vfunc113()
+{
+	sub_10008c5b((int)this);
+	((CBaseEntity *)this)->CBaseEntity::vfunc113();
+}
+// END FUNCTION
