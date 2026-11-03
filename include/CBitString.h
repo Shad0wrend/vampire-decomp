@@ -30,3 +30,5 @@ public:
 	void sub_100bf6a0();	// releases the dword storage
 	void sub_100bf480(int nBits);	// "CBitString::Resize": sets the bit count; reallocates when the dword count changes (new dwords cleared; when growing the stale bits above the old bit count in the last old dword are cleared with the mask table at 0x1055b298)
 };
+
+void __fastcall sub_10307890(CBitString *pBits);	// 0x10307890: zeroes the m_nDwords dwords at m_pData (+0x08 / +0x02)
