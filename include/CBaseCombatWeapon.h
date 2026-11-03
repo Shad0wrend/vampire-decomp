@@ -136,6 +136,7 @@ public:
 	CWeaponOwner *sub_10252290();	// resolves the owner handle at +0x88c (0 when stale)
 	void sub_102564b0();	// when the owner handle resolves twice, slot 385(this, 0, 0) of the object at +0xa8 of the resolved owner
 	void *sub_102521f0();	// the dword at +0x9c of the entity the owner handle at +0x88c resolves to (0 when stale)
+	CBaseEntity *sub_1040f080(const Vector *pCenter, const Vector *pForward, float flMin, float flMax, char bFlag);	// 0x1040f080 (ret 0x14): searches the 256 entities in the box around pCenter for a "prop_combine_ball" in view (dot with pForward, trace mask 0x46004003) and returns the closest, 0 when none
 	int sub_10252240();	// same as sub_102521f0 (stub 0x100011f4)
 	char *sub_10252120(int a, int index);	// stub 0x1000aaba: the record `index` of the list slot 347(a) counts
 	void sub_10254cd0(int a);	// stub 0x100074f5
