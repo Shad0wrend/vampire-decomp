@@ -141621,6 +141621,126 @@ int CAI_BaseNPCTroika::sub_102b11c0(int activity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b1a20 size=0x21e
+#include "CEHandleGet.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CAI_BaseNPCTroika.h"
+#include "Vector.h"
+#include "ehandle.h"
+
+struct CTroikaComfortView
+{
+	char m_pad0000[0xe90];
+	float m_flNextCheck;	// 0xe90
+	int m_nComfortCount;	// 0xe94
+	char m_pad0e98[0x5bb0 - 0xe98];
+	int m_n5bb0;		// 0x5bb0
+	char m_pad5bb4[0x5ce4 - 0x5bb4];
+	EHANDLE m_h5ce4;	// 0x5ce4
+	char m_pad5ce8[0x5da4 - 0x5ce8];
+	void *m_p5da4;		// 0x5da4
+};
+
+struct CTroikaComfortBest
+{
+	char m_pad0000[0x94];
+	void *m_p94;		// 0x94
+};
+
+struct CScheduleTypeView
+{
+	char m_pad0000[0x1c];
+	int m_n1c;		// 0x1c
+};
+
+struct CComfortVector
+{
+	unsigned int *m_pMemory;	// +0
+	int m_nAllocationCount;		// +4
+	int m_nGrowSize;		// +8
+	int m_nSize;			// +0xc
+};
+extern CComfortVector g_10937af4;
+
+struct CDevFlagObj { virtual void vfunc0(); virtual void vfunc1(); };
+extern CDevFlagObj *g_10924a6c;
+
+void CAI_BaseNPCTroika::sub_102b1a20()
+{
+	if ( gpGlobals->curtime >= ((CTroikaComfortView *)this)->m_flNextCheck )
+	{
+		((CTroikaComfortView *)this)->m_flNextCheck = enginerandom->vfunc1(0.2f, 0.4f) + gpGlobals->curtime;
+
+		if ( this->m_n5cc0 == 1 )
+		{
+			CAI_BaseNPCTroika *pBest;
+			float flBestDist;
+			int nCount;
+
+			nCount = g_10937af4.m_nSize;
+			pBest = 0;
+			flBestDist = 1024.0f;
+
+			for ( int i = 0; i < nCount; i++ )
+			{
+				CAI_BaseNPCTroika *pOther = (CAI_BaseNPCTroika *)g_10566458->sub_100290c0(&g_10937af4.m_pMemory[i]);
+				if ( pOther == this )
+					continue;
+
+				Vector vecDelta;
+				VectorSubtract(*(Vector *)vfunc220(), *(Vector *)pOther->vfunc220(), vecDelta);
+				float flDist = vecDelta.Length();
+				if ( flDist <= flBestDist )
+				{
+					flBestDist = flDist;
+					pBest = pOther;
+				}
+			}
+
+			if ( pBest != 0 && !sub_1033e2b0() && this->m_pSchedule5c38 != 0 )
+			{
+				int nType = ((CScheduleTypeView *)this->m_pSchedule5c38)->m_n1c;
+				if ( vfunc447(nType) != 0x12f )
+				{
+					void *pOwner = ((CTroikaComfortBest *)pBest)->m_p94;
+					if ( pOwner != 0 )
+					{
+						void *pSquadA = (((CTroikaComfortView *)this)->m_n5bb0 <= 0) ? ((CTroikaComfortView *)this)->m_p5da4 : 0;
+						void *pSquadB = (((CTroikaComfortView *)pOwner)->m_n5bb0 <= 0) ? ((CTroikaComfortView *)pOwner)->m_p5da4 : 0;
+						if ( pSquadA != pSquadB )
+							return;
+					}
+
+					CTroikaComfortView *pBestView = (CTroikaComfortView *)pBest;
+					if ( pBestView->m_nComfortCount >= 3 )
+						return;
+					pBestView->m_nComfortCount++;
+
+					g_10924a6c->vfunc1();
+					sub_10269a20(0x27);
+					sub_10279cc0((CBaseEntity *)pBest);
+					return;
+				}
+
+				if ( (CAI_BaseNPCTroika *)((CTroikaComfortView *)this)->m_h5ce4.Get() == pBest )
+					return;
+				sub_10273e80(0);
+				return;
+			}
+		}
+
+		if ( this->m_pSchedule5c38 != 0
+		     && vfunc447(((CScheduleTypeView *)this->m_pSchedule5c38)->m_n1c) == 0x12f )
+			sub_10273e80(0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b2570 size=0x15e
 #include "CAI_BaseNPCTroika.h"
 #include "CEntityVSlots.h"

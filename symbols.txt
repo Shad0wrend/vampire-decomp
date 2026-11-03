@@ -6763,6 +6763,7 @@
 0x1000b2fd func   ?sub_103846e0@@YAHXZ sub_103846e0
 0x1000b307 func   ?vfunc514@CAI_BaseNPC@@QAE_NHHHH@Z CAI_BaseNPC::vfunc514
 0x1000b30c func   ?sub_1003d300@CBaseEntity@@QAEXXZ CBaseEntity::sub_1003d300
+0x1000b311 func   ?sub_102b1a20@CAI_BaseNPCTroika@@QAEXXZ CAI_BaseNPCTroika::sub_102b1a20
 0x1000b316 func   ?vfunc1@CSafeDiscSaveRestoreOps_0@@UAEXPAPAHPAUCSafeDiscReader@@@Z CSafeDiscSaveRestoreOps_0::vfunc1
 0x1000b31b func   ?sub_101c4160@@YAXXZ sub_101c4160
 0x1000b325 func   ?sub_10066fa0@@YAHHHHH@Z sub_10066fa0
