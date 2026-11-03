@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1010c3d0 size=0x8
+#include "CBaseEntity.h"
+#include "CFuncAreaPortalBase.h"
+// TARGET: CFuncAreaPortalBase::vfunc117
+char CFuncAreaPortalBase::vfunc117() { return ((CBaseEntity *)this)->CBaseEntity::vfunc117() & ~2; }
+// END FUNCTION
+
 // FUNCTION: 0x1010c900 size=0x1e
 #include "CFuncAreaPortalBase.h"
 
