@@ -275,7 +275,9 @@ public:
 	unsigned int m_flags5b84;	// 0x5b84: bit 1 keeps the NPC from carrying on (slot 602)
 	char m_pad5b88[0x5ba8 - 0x5b88];
 	EHANDLE m_h5ba8;	// 0x5ba8: a handle to an entity (distance target of sub_102c5570)
-	char m_pad5bac[0x5bbc - 0x5bac];
+	char m_pad5bac[0x5bb0 - 0x5bac];
+	int m_n5bb0;	// 0x5bb0: the squad's pending count (0 or less = none)
+	char m_pad5bb4[0x5bbc - 0x5bb4];
 	float m_f5bbc;
 	float m_f5bc0;
 	char m_b5bc4;
