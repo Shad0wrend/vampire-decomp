@@ -8007,6 +8007,7 @@
 0x1000d733 func   ?vfunc201@CNPC_VCameraSecurity@@QAE_NPAVCBaseEntity@@HHH@Z CNPC_VCameraSecurity::vfunc201
 0x1000d738 func   ?sub_10384700@CNPC_VHuman@@QAEHXZ CNPC_VHuman::sub_10384700
 0x1000d73d func   _move_keyframed move_keyframed
+0x1000d742 func   ?vfunc142@CPushable@@QAEHPAX@Z CPushable::vfunc142
 0x1000d747 func   ?sub_10348560@@YAXXZ sub_10348560
 0x1000d74c func   ?sub_101e3910@CUnknown101e0f00@@QAEXHHHH@Z CUnknown101e0f00::sub_101e3910
 0x1000d751 func   ?vfunc5@CNPC_VAnimal@@QAEPAV1@I@Z CNPC_VAnimal::vfunc5

@@ -107,6 +107,19 @@ bool CPushable::vfunc223()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010f440 size=0x17
+#include "CPushable.h"
+#include "CBreakable.h"
+
+// TARGET: CPushable::vfunc142
+int CPushable::vfunc142(void *pInfo)
+{
+	if (*(char *)((char *)this + 0x204) & 0x80)
+		return ((CBreakable *)this)->sub_1010e100(pInfo);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f470 size=0x35
 #include "CPushable.h"
 #include "CBreakable.h"
