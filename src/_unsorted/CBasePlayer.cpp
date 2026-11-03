@@ -476,6 +476,25 @@ bool CBasePlayer::sub_1015ff40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101606a0 size=0x26
+#include "CBasePlayer.h"
+
+struct CTPHelper
+{
+	void sub_100ada20(void *p, void *a, void *b);
+};
+
+void __cdecl sub_1028d820(void *p);
+
+// TARGET: CBasePlayer::vfunc181
+void CBasePlayer::vfunc181(void *p, void *a, void *b)
+{
+	((CTPHelper *)this)->sub_100ada20(p, a, b);
+	if (p != 0)
+		sub_1028d820(p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160a60 size=0x104
 #include "CBasePlayer.h"
 #include "ConVar.h"
