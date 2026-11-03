@@ -133,4 +133,5 @@ public:
 	virtual void d98(); virtual void d99(); virtual void d100(); virtual void d101(); virtual void d102();
 	virtual void d103(); virtual void d104(); virtual void d105();
 	virtual void vfunc106(const char *pszName);
+	bool vfunc223();	// slot 223 (plain member): VPhysicsInitStatic when the solid type is set; always true
 };
