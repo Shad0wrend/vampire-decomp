@@ -537,7 +537,7 @@ public:
 	float m_flMaxEyeFidget;	// 0x6588
 	CTroikaPatrolRef m_ref658c;	// 0x658c: first patrol path holder (CTroikaReqHolder layout: record at +4)
 	CTroikaPatrolRef m_ref6594;	// 0x6594: second patrol path holder
-	char m_pad659c[0x65a0 - 0x659c];
+	int m_n659c;	// 0x659c: cleared by vfunc435
 	char m_b65a0;	// 0x65a0
 	char m_pad65a1[3];
 	float m_f65a4;	// 0x65a4: a time stamp the idle pick (0x102b7cf0) re-arms
