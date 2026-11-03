@@ -6,6 +6,16 @@
 
 #include "Vector.h"
 
+class CAI_Hint;
+
+extern CAI_Hint *g_10925450;	// 0x10925450: head of the global AI hint list (next link at CAI_Hint::m_pNext +0x5d8; m_n5dc +0x5dc = hint type)
+extern CAI_Hint *g_10925454;	// 0x10925454: the hint the last hint search picked
+
+// The hint search's temporary list is a CUtlVector of 4-byte elements whose out-of-line instantiations are
+// UtlMem::sub_102d41a0 (constructor, grow 0), CUtlVector4::sub_102d4210 (grow), UtlVec8::sub_102d42d0
+// (ShiftElementsRight), sub_102d4320 (element store, cdecl), UtlMem::sub_102d4350 (purge) and
+// sub_102d41f0; use those exact classes/addresses rather than a generic CUtlVector<CAI_Hint*> to get the same calls.
+
 typedef const Vector *(__fastcall *CAIHintSlotGetVector)(void *pThis, void *pEdx);
 typedef char (__fastcall *CAIHintSlotValidate)(void *pThis, void *pEdx, void *pHint);
 typedef const Vector *(__fastcall *CAIHintSlotGetVectorOut)(void *pThis, void *pEdx, Vector *pOut);
