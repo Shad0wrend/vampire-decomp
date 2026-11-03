@@ -457,6 +457,14 @@ Vector CMultiplayRules::vfunc51(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10142130 size=0x19
+// TARGET: CMultiplayRules::vfunc48
+int CMultiplayRules::vfunc48(CBaseEntity *pPlayer)
+{
+	return (pPlayer->m_flags204 & 0x40000000) ? 2 : 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10142160 size=0x7a
 #include "CMultiplayRules.h"
 #include "ConVar.h"

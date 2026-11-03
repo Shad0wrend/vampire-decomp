@@ -1207,6 +1207,7 @@
 0x10002e14 func   ?vfunc410@CBaseGrenade@@UAEMXZ CBaseGrenade::vfunc410
 0x10002e19 func   ?vfunc277@CBaseCombatWeapon@@UAE_NH@Z CBaseCombatWeapon::vfunc277
 0x10002e1e func   ??0CCollisionProperty@@QAE@XZ CCollisionProperty::CCollisionProperty
+0x10002e23 func   ?vfunc48@CMultiplayRules@@UAEHPAVCBaseEntity@@@Z CMultiplayRules::vfunc48
 0x10002e28 func   ?vfunc599@CNPC_VTzimisceHeadClaw@@QAE_NPAVCBaseEntity@@@Z CNPC_VTzimisceHeadClaw::vfunc599
 0x10002e2d func   ?sub_101dda50@@YAXXZ sub_101dda50
 0x10002e32 func   ?sub_10136580@@YAPAXPBD@Z sub_10136580
