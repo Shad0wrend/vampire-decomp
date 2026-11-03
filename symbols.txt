@@ -6828,6 +6828,7 @@
 0x1000b79e func   ?sub_1021e7e0@CUnknown1021e7e0@@QAEXHPAVCBaseEntity@@@Z CUnknown1021e7e0::sub_1021e7e0
 0x1000b7a3 func   ?vfunc11@CBaseEntity@@UAEXPBD@Z CBaseEntity::vfunc11
 0x1000b7a8 func   ?vfunc168@CBaseEntity@@QAEXXZ CBaseEntity::vfunc168
+0x1000b7b2 func   ?sub_1021bfd0@CPropHacking@@QAEXXZ CPropHacking::sub_1021bfd0
 0x1000b7b7 func   ?sub_100b40f0@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100b40f0
 0x1000b7cb func   ?sub_101c7d90@CChangeLevel@@QAEXPAVCBaseEntity@@@Z CChangeLevel::sub_101c7d90
 0x1000b7d0 func   ?sub_1012d740@CUnknown1012d740@@QAEXXZ CUnknown1012d740::sub_1012d740

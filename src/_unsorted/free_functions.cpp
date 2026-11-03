@@ -113586,6 +113586,17 @@ bool CUnknown1021bec0::sub_1021bec0(const char *pszExpression)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021bfd0 size=0x1c
+#include "CPropHacking.h"
+
+// TARGET: CPropHacking::sub_1021bfd0
+void CPropHacking::sub_1021bfd0()
+{
+	m_n0a0c = (m_n0a0c - 1) < 0 ? 0 : (m_n0a0c - 1);
+	sub_1021c040();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021c000 size=0x2f
 #include "CPropHacking.h"
 
