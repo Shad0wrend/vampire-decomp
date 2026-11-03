@@ -271,7 +271,9 @@ public:
 	unsigned int m_h155C;	// 0x155C: entity handle
 	char m_pad1560[4];	// 0x1560 .. 0x1563
 	float m_f1564;
-	char m_pad1568[0x19b0 - 0x1568];
+	char m_pad1568[0x1588 - 0x1568];
+	bool m_bCanSwitchWeapons;	// 0x1588: weapons may be switched (CBaseCombatCharacter)
+	char m_pad1589[0x19b0 - 0x1589];
 	float m_flLastCombatAnimTime;	// 0x19b0
 	char m_pad19b4[0x19b8 - 0x19b4];	// 0x1568 .. 0x19B7
 	float m_flFadeStart19B8;	// 0x19B8: when the fade began
