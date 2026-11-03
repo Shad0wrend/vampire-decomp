@@ -3969,6 +3969,23 @@ char CBaseEntity::vfunc91(void *pPassEnt, int contentsMask)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b4ea0 size=0x3f
+#include "CBaseEntity.h"
+#include "CUnknown1070b244.h"
+
+extern CUnknown1070b244 *g_1070b244;
+
+// TARGET: CBaseEntity::vfunc154
+int CBaseEntity::vfunc154(int a, int b)
+{
+	if (m_n16c == 4)
+		return -1;
+	if (m_n16c != 0 && b == 0x47)
+		return 0x34;
+	return g_1070b244->vfunc2(0, 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4ef0 size=0x7
 #include "CBaseEntity.h"
 int CBaseEntity::vfunc83()

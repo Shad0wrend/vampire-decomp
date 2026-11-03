@@ -6981,6 +6981,7 @@
 0x1000b9c9 func   ?vfunc617@CNPCMaker_Zombie@@QAEPAVCAI_BaseNPCTroika@@H@Z CNPCMaker_Zombie::vfunc617
 0x1000b9ce func   ?vfunc71@CGameRules@@UAEXH@Z CGameRules::vfunc71
 0x1000b9d8 func   ?sub_103dc040@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_103dc040
+0x1000b9e2 func   ?vfunc154@CBaseEntity@@QAEHHH@Z CBaseEntity::vfunc154
 0x1000b9e7 func   ?sub_1040b120@CUtlMemory192@@QAEXH@Z CUtlMemory192::sub_1040b120
 0x1000b9f1 func   _item_k_shrekhub_four_key item_k_shrekhub_four_key
 0x1000b9fb func   ?vfunc81@CRagdollPropAttached@@UAEHXZ CRagdollPropAttached::vfunc81
