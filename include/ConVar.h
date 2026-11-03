@@ -66,3 +66,6 @@ extern ConVar *g_1092023c;	// hitgroups 6 / 7
 extern ConVar *g_1093ca8c;	// 0x1093ca8c: the vertical (z) speed convar used by the VTzimisce throw / enemy checks (vfunc1 = unset, else m_fValue at +0x28)
 extern ConVar *g_1093ca44;	// 0x1093ca44: the gravity convar used by the VTzimisce throw (vfunc1 = unset, else m_fValue at +0x28)
 extern ConVar *g_109ef28c;	// 0x109ef28c: the player movement friction convar read by CGameMovement::sub_10127dd0 / vfunc11 and 0x101200c0
+extern ConVar *g_1094a944;	// 0x1094a944: the PhysCannon reach convar (vfunc1 = unset, else m_fValue +0x28)
+extern ConVar *g_1094aa7c;	// 0x1094aa7c: the PhysCannon max-mass convar (vfunc1 = unset, else m_fValue +0x28)
+extern ConVar *g_1094ab14;	// 0x1094ab14: the PhysCannon mass-scale convar (vfunc1 = unset, else m_fValue +0x28)
