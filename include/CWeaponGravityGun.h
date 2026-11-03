@@ -55,6 +55,8 @@ public:
 	char m_padb20[0xb24 - 0xb20];
 	char m_bB24;	// 0xb24: set while the beam to the held object exists (vfunc321 needs it)
 	char m_bB25;	// 0xb25
+	char m_padB26[0xb28 - 0xb26];
+	int m_nB28;	// 0xb28: the criminal-act priority of a physics throw (the CSActs notice runs only when > 0)
 public:
 	void vfunc298(CBaseEntity *pOwner, float unused);	// slot 298: forwards to CBaseCombatWeapon::vfunc298 (jump stub 0x100131ec) with the first argument as it is
 };
