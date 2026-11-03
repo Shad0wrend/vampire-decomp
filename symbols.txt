@@ -5499,6 +5499,7 @@
 0x10009917 func   ?sub_101ccaf0@@YAHPAPAVCBaseEntity@@HPBM1IH@Z sub_101ccaf0
 0x10009926 func   ?vfunc5@CSceneEntity@@UAEPAV1@I@Z CSceneEntity::vfunc5
 0x1000992b func   ?sub_1042fd40@@YAII@Z sub_1042fd40
+0x10009930 func   ?vfunc0@CTraceFilterEntityIgnoreOther@@UAE_NPAXH@Z CTraceFilterEntityIgnoreOther::vfunc0
 0x10009935 func   ?sub_1003d130@CBaseEntity@@QAEXH@Z CBaseEntity::sub_1003d130
 0x1000993a func   ?sub_102f50e0@CAI_NetworkManager@@QAEXXZ CAI_NetworkManager::sub_102f50e0
 0x1000993f func   ?vfunc2@CTEEnergySplash@@UAEPAV1@I@Z CTEEnergySplash::vfunc2
