@@ -237,6 +237,67 @@ int CAI_Motor::vfunc10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e19e0 size=0x1b4
+#include "CAI_Motor.h"
+#include "CAI_BaseNPC.h"
+
+struct CAIGoal
+{
+	char m_pad[0xc];
+	Vector m_vecDir;
+	Vector m_vecTarget;
+};
+
+struct CMotorNodeA
+{
+	float sub_102e2790(int h);
+};
+
+struct CMotorNodeB
+{
+	char sub_102e2820(int h, const char *name);
+};
+
+float sub_101d2c70(const Vector *pVec);
+float sub_1013d580(float a, float b);
+
+void CAI_Motor::vfunc18(int a)
+{
+	CAIGoal *pGoal = (CAIGoal *)a;
+	float flInterval = m_30;
+	if (((CAI_BaseNPC *)m_pOuter)->vfunc526(pGoal, flInterval))
+		return;
+
+	float flGoalYaw = sub_101d2c70(&pGoal->m_vecDir);
+	int h = *(int *)(m_pOuter + 0x6f0);
+	((CMotorNodeA *)this)->sub_102e2790(h);
+	if (!((CMotorNodeB *)this)->sub_102e2820(h, "move_yaw"))
+	{
+		sub_102e1c10((float)((int)(flGoalYaw * 182.04445f) & 0xFFFF) * 0.005493164f, -1.0f);
+		return;
+	}
+
+	Vector vecDir;
+	float flInterest = vfunc15(vecDir);
+	Vector vecScaledDir = vecDir * flInterest;
+	vecDir = vecScaledDir + pGoal->m_vecTarget * (1.0f - flInterest);
+	VectorNormalize(vecDir);
+	float flBlendYaw = sub_101d2c70(&vecDir);
+	float flNewYaw = (float)((int)(flBlendYaw * 182.04445f) & 0xFFFF) * 0.005493164f;
+	sub_102e1c10(flNewYaw, -1.0f);
+
+	float *pAngles = ((CAI_BaseNPC *)m_pOuter)->vfunc221();
+	float flCurYaw = pAngles[1];
+	float flDiff = sub_1013d580(flGoalYaw, flCurYaw);
+	float flNegDiff = -flDiff;
+	char *pObj = *(char **)(m_pOuter + 0x98);
+	if (pObj)
+		*(float *)(pObj + 0x63ec) = flNegDiff;
+	else
+		sub_102e27d0("move_yaw", flNegDiff);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e20f0 size=0x20
 #include "CBaseEntity.h"
 #include "CAI_Motor.h"
