@@ -10959,6 +10959,7 @@
 0x1001226f func   ?vfunc580@CNPC_VHumanCombatPatrol@@UAEHXZ CNPC_VHumanCombatPatrol::vfunc580
 0x10012274 func   ?sub_101b1d60@@YAPADPADH@Z sub_101b1d60
 0x1001227e func   ?vfunc82@CNPC_VSabbatGunman@@UAEPAUdatamap_t@@XZ CNPC_VSabbatGunman::vfunc82
+0x10012288 func   ?vfunc103@CFuncPlatRot@@QAEXXZ CFuncPlatRot::vfunc103
 0x1001228d func   ?sub_10310480@@YGHPAH@Z sub_10310480
 0x10012292 func   ?vfunc568@CAI_BaseNPC@@UAEMH@Z CAI_BaseNPC::vfunc568
 0x10012297 func   ?sub_101318c0@@YGHH@Z sub_101318c0

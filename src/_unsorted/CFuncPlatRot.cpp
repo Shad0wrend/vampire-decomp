@@ -12,6 +12,17 @@ datamap_t *CFuncPlatRot::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015a2a0 size=0x10
+#include "CFuncPlatRot.h"
+#include "CFuncPlat.h"
+
+void CFuncPlatRot::vfunc103()
+{
+	((CFuncPlat *)this)->CFuncPlat::vfunc103();
+	sub_1015a140();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015a2c0 size=0x28
 #include "CFuncPlatRot.h"
 #include "CFuncPlat.h"
