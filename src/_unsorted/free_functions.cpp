@@ -140156,6 +140156,120 @@ void CAI_BaseNPCTroika::sub_1029a930(const char *pszSquad)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029bd40 size=0x23b
+#include "Vector.h"
+#include "CBaseEntity.h"
+#include "ehandle.h"
+#include "globalvars.h"
+#include <stdio.h>
+
+struct SConVarX
+{
+	virtual void vfunc0();
+	virtual char IsZero();
+	char m_pad0004[0x28 - 4];
+	float m_flValue;	// 0x28
+	int m_n2c;	// 0x2c
+};
+
+extern SConVarX *g_10923fec;
+extern SConVarX *g_10923dec;
+extern SConVarX *g_10923e3c;
+
+void sub_10143920(float a, float b, const char *text, int r, int g, int b2, int alpha, float t);
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct CEntVt
+{
+	V10(v0) V10(v1) V10(v2) V10(v3) V10(v4) V10(v5) V10(v6) V10(v7) V10(v8) V10(v9)
+	V10(v10) V10(v11) V10(v12) V10(v13) V10(v14) V10(v15) V10(v16) V10(v17) V10(v18) V10(v19)
+	V10(v20)
+	virtual void v210(); virtual void v211(); virtual void v212(); virtual void v213();
+	virtual void v214(); virtual void v215(); virtual void v216();
+	virtual float *vfunc217();
+};
+
+struct CView
+{
+	char m_pad0000[0x17c];
+	float m_fl17c;	// 0x17c
+	char m_pad0180[0x6264 - 0x180];
+	float m_fl6264;	// 0x6264
+	char m_pad6268[0x6278 - 0x6268];
+	unsigned char m_b6278;	// 0x6278
+	unsigned char m_b6279;	// 0x6279
+	char m_pad627a[0x628c - 0x627a];
+	EHANDLE m_h628c;	// 0x628c
+};
+
+#define MAXIMUM(a, b) ((a) > (b) ? (a) : (b))
+
+// TARGET: sub_1029bd40
+void __fastcall sub_1029bd40(CView *pThis)
+{
+	if (g_10923fec->IsZero())
+		return;
+	if (g_10923fec->m_n2c == 0)
+		return;
+
+	float flScaleX = 1.0f / (g_10923dec->IsZero() ? 0.0f : g_10923dec->m_flValue);
+	float flScaleY = 1.0f / (g_10923e3c->IsZero() ? 0.0f : g_10923e3c->m_flValue);
+
+	Vector vecTarget(0.0f, 0.0f, 0.0f);
+	if (pThis->m_h628c)
+	{
+		float *pTargetOrigin = ((CEntVt *)pThis->m_h628c.Get())->vfunc217();
+		vecTarget = *(Vector *)pTargetOrigin;
+	}
+
+	float *pOrigin = ((CEntVt *)pThis)->vfunc217();
+	Vector vecDelta = *(Vector *)pOrigin - vecTarget;
+
+	float flX = vecDelta.x * flScaleX + 0.5f;
+	float flY = 0.5f - vecDelta.y * flScaleY;
+	float flDist = VectorLength(vecDelta) * 0.001f;
+
+	char szText[4];
+	sprintf(szText, "%d", (int)flDist);
+
+	int r, g, b;
+	if (pThis->m_b6278)
+	{
+		if (pThis->m_b6279)
+		{
+			if (pThis->m_fl6264 <= 512.0f)
+			{
+				r = 0xff;
+				g = 0xff;
+				b = 0xff;
+			}
+			else
+			{
+				r = 0x9b;
+				g = 0x9b;
+				b = 0x9b;
+			}
+		}
+		else
+		{
+			r = 0x80;
+			g = 0x80;
+			b = 0xff;
+		}
+	}
+	else
+	{
+		r = 0xff;
+		g = 0x80;
+		b = 0x80;
+	}
+
+	float flTime = MAXIMUM(0.0f, pThis->m_fl17c - gpGlobals->curtime);
+
+	sub_10143920(flX, flY, szText, r, g, b, 0xff, flTime);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029c970 size=0x53
 #include "CAI_BaseNPCTroika.h"
 #include "globalvars.h"

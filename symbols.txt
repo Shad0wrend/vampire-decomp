@@ -3752,6 +3752,7 @@
 0x10006b36 func   ?vfunc81@CWeaponMelee_Claws_Protean5@@QAEHXZ CWeaponMelee_Claws_Protean5::vfunc81
 0x10006b3b func   ?sub_103fb8d0@@YAHXZ sub_103fb8d0
 0x10006b40 func   ?vfunc375@CNPC_VHuman@@UAEHH@Z CNPC_VHuman::vfunc375
+0x10006b45 func   ?sub_1029bd40@@YIXPAUCView@@@Z sub_1029bd40
 0x10006b4a func   ?sub_1014eb40@CUnknown1014eb40@@QAEPAXXZ CUnknown1014eb40::sub_1014eb40
 0x10006b4f func   ?sub_100a9330@@YI_NPAD@Z sub_100a9330
 0x10006b54 func   ?sub_1009c4c0@CBaseEntity@@QAEXHPBD0H@Z CBaseEntity::sub_1009c4c0
