@@ -1734,6 +1734,7 @@
 0x10003a1c func   ?sub_102e0ba0@@YIXPADHH@Z sub_102e0ba0
 0x10003a21 func   ?sub_101edae0@CUnknown101edae0@@QAE_NXZ CUnknown101edae0::sub_101edae0
 0x10003a26 func   ?sub_10104630@@YGXH@Z sub_10104630
+0x10003a2b func   ?CalcNextNormalThink@CAI_BaseNPCTroika@@QAE_NPAM@Z CAI_BaseNPCTroika::CalcNextNormalThink
 0x10003a30 func   ?vfunc337@CNPC_VManBat@@QAEHXZ CNPC_VManBat::vfunc337
 0x10003a35 func   ?sub_103684a0@@YADXZ sub_103684a0
 0x10003a3a func   ?sub_1021e1c0@@YIXPAH@Z sub_1021e1c0
