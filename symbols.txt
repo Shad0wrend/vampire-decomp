@@ -4164,6 +4164,7 @@
 0x1000763a func   ?sub_101c53d0@@YG_NPAX@Z sub_101c53d0
 0x1000763f func   ?sub_10105e20@CBaseCombatCharacter@@QAEXPAMPAD@Z CBaseCombatCharacter::sub_10105e20
 0x10007644 func   ?sub_10076730@@YAHPBD@Z sub_10076730
+0x10007649 func   ?vfunc463@CAI_BaseHumanoid@@QAEXHH@Z CAI_BaseHumanoid::vfunc463
 0x10007653 func   ?sub_1006c6a0@CUnknown1006c6a0@@QAEXHH@Z CUnknown1006c6a0::sub_1006c6a0
 0x10007658 func   ?sub_101a63a0@@YG_NHHH@Z sub_101a63a0
 0x1000765d func   _npc_maker npc_maker

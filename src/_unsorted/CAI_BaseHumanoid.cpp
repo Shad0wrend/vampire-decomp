@@ -307,6 +307,44 @@ void CAI_BaseHumanoidUnit::sub_1025f760(CBaseEntity *pTarget, float flWeight, fl
 }
 // END FUNCTION
 
+// FUNCTION: 0x10260630 size=0x2b
+#include "CAI_BaseHumanoid.h"
+#include "CAI_BaseNPC.h"
+
+class CHumanoidSlot589 : public CAI_BaseNPC
+{
+public:
+	virtual void s569();
+	virtual void s570();
+	virtual void s571();
+	virtual void s572();
+	virtual void s573();
+	virtual void s574();
+	virtual void s575();
+	virtual void s576();
+	virtual void s577();
+	virtual void s578();
+	virtual void s579();
+	virtual void s580();
+	virtual void s581();
+	virtual void s582();
+	virtual void s583();
+	virtual void s584();
+	virtual void s585();
+	virtual void s586();
+	virtual void s587();
+	virtual void s588();
+	virtual const char *s589(int type);
+};
+
+// TARGET: CAI_BaseHumanoid::vfunc463
+void CAI_BaseHumanoid::vfunc463(int a, int b)
+{
+	sub_10260670(((CHumanoidSlot589 *)this)->s589(b));
+	((CAI_BaseNPC *)this)->CAI_BaseNPC::vfunc463(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10260de0 size=0x10e
 #include "CAI_BaseHumanoid.h"
 #include "UtlMem.h"
