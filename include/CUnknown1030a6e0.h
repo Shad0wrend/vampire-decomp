@@ -75,7 +75,8 @@ public:
 
 	void sub_10309e40();	// debug: with bit 26 of the NPC's flags (+0x224) set, hands the NPC's slot 192 position to the object at +0x50
 
-	void sub_1030a6e0(const float *pos, int a, CBaseEntity *pEnt, int b);	// appends a record {*pos, a, b, handle of pEnt (-1 for null)} to the list (AddToTail inlined)
+	void sub_1030a6e0(const Vector &vPos, float flRadius, CBaseEntity *pEnt, int nType);	// appends a record {vPos, bits of flRadius, nType, handle of pEnt (-1 for null)} to the list (AddToTail inlined)
+	void sub_10309230(void *pGoal, float flTolerance);	// gathers entities into the obstacle list (this+0x3c): arg1 is the move-goal whose pointer at +0x3c (object's handle at +0x30) is skipped; arg2 is an extra horizontal tolerance. Waits in the same object as CAI_PlaneSolver (same layout: +4 NPC, +0x3c obstacle list, +0x50 sample vector)
 	void sub_10309e80(const Vector *pDirA, const Vector *pDirB);	// debug draw: with bit 26 of the NPC's flags (+0x224) set, draws a white line from slot 192 of the NPC along pDirA (length 20) and a yellow one along pDirB, each for 0.1 s
 	void sub_10309f60(const Vector *pPos, float flUnused, Vector *pOut);	// direction from the NPC's origin to pPos, with the vertical part pushed away from a flat result
 	bool sub_10308190(const Vector *pGoal);	// stuck test (stub 0x10008e4f): a new goal restarts the measurement; once the 2D distance to the goal stops shrinking for 0.75 s the NPC counts as stuck
