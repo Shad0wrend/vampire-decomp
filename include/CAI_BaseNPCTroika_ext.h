@@ -103,6 +103,7 @@
 	int sub_102906a0();	// 0x102906a0: sub_10290660(the float at +0x6244)
 	bool CalcNextNormalThink(float *pOut);	// "CAI_BaseNPCTroika_CalcNextNormalThink" (0x10290b60, vprof scope string 0x105d89ac): the normal-think sibling: *pOut = +0x6248 - +0x6258, +0x6258 = +0x6248, +0x6248 = max(+0x6248, curtime) + delay
 	int sub_102906c0();	// 0x102906c0: sub_10290660(the float at +0x6248)
+	bool sub_102a11d0(const Vector *pTarget);	// 0x102a11d0: melee reach test on the collision box at +0x270 (half extents doubled, z -6..6), a Ray_t from slot 192 to pTarget with mask 0x2000000; true on a hit against an entity with an AI object (+0x94) whose slot 404 is not 1
 	virtual bool vfunc317(int unused);	// slot 317 override: tells the global 0x10924a6c (slot 1), sets the task 10, then, when condition 12 holds, tells it again, sets the task 12 and answers true
 	void sub_102c2ab0(inputdata_t *pInput);	// "SetInvestigateMode" input handler: an integer 0..6 goes to +0x6338, else DevMsg
 	void sub_102c2b20(inputdata_t *pInput);	// "SetInvestigateModeCombat" input handler: an integer 0..6 goes to +0x633c, else DevMsg
