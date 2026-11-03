@@ -449,5 +449,6 @@ public:
 	virtual void *vfunc82();	// slot 82: the class's datamap
 	virtual int vfunc138();	// slot 138	// slot 26 override (plain member beside the placeholder sa26; twin of slot 25): with an entity, the handle at +0x1c60 becomes the handle of its owning object (+0x9c, -1 when none)
 	void vfunc339(int a, float b, int c);	// slot 339: forwards to CBaseCombatCharacter::vfunc339 (float second argument)
+	int vfunc340(int a, float b, float c);	// slot 340 (plain member): forwards unchanged to CBaseCombatCharacter::vfunc340
 #include "CBasePlayer_ext.h"
 };
