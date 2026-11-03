@@ -12,7 +12,7 @@ struct CUnknown10076da0Entry
 
 	const char *sub_100738a0();	// returns the entry's name (the entry itself)
 	void sub_10073810(CUnknown10076da0 *pOwner, int a, int b);	// constructor body (stub 0x100095b6)
-	void sub_10073850(const CUnknown10076da0Entry *pSrc);	// copy constructor body (stub 0x10009070)
+	CUnknown10076da0Entry *sub_10073850(const CUnknown10076da0Entry *pSrc);	// copy constructor body (stub 0x10009070)
 };
 
 // a timing tag: name (0x80 bytes), percentage +0x80, owner +0x84, locked flag +0x88
