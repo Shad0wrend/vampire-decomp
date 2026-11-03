@@ -83757,6 +83757,28 @@ int CSoundEmitterSystemBase::sub_101b4170(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b4200 size=0x27
+#include "CSoundEmitterSystemBase.h"
+
+char CSoundEmitterSystemBase::sub_101b31a0(int index)
+{
+	if (index < 0)
+		return 0;
+	if (index >= m_i64)
+		return 0;
+	return 1;
+}
+
+// TARGET: CSoundEmitterSystemBase::sub_101b4200
+char CSoundEmitterSystemBase::sub_101b4200(int index)
+{
+	char bValid = sub_101b31a0(index);
+	if (!bValid)
+		return bValid;
+	return *(char *)(*(char **)((char *)this + 0x54) + index * 0xe8 + 0x15);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b45b0 size=0x99
 #include "CUnknown101b45b0.h"
 extern "C" __declspec(dllimport) char *Q_strncpy(char *dest, const char *src, int maxLen);
