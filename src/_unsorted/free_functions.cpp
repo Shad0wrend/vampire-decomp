@@ -197670,6 +197670,54 @@ void CBaseGrenade::sub_1042ab80(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042ae60 size=0x1a6
+#include "CBaseGrenade.h"
+#include "CEntityVSlots.h"
+
+void sub_1000f57e();
+void __cdecl sub_101babc0(int a, Vector *pPos, int b, float c, int d);
+
+void CBaseGrenade::sub_1042ae60()
+{
+	if (!CBaseEntity::IsInWorld())
+	{
+		sub_100ae150();
+		return;
+	}
+
+	((CEntityVSlots *)this)->slot250(0.0f);
+	m_flNextThink = gpGlobals->curtime + 0.1;
+
+	if (*(float *)((char *)this + 0x19bc) - 1.0f < gpGlobals->curtime)
+	{
+		bool bDirty = ((m_flags268 >> 12) & 1) != 0;
+		if (bDirty)
+			sub_100b1d10();
+
+		Vector vecOffset = m_vecVelocity3bc * (*(float *)((char *)this + 0x19bc) - gpGlobals->curtime);
+		Vector *pOrigin = ((CEntityVSlots *)this)->slot220();
+		Vector vecPos = vecOffset + *pOrigin;
+		sub_101babc0(8, &vecPos, 400, 0.1f, 0);
+	}
+
+	if (*(float *)((char *)this + 0x19bc) <= gpGlobals->curtime)
+	{
+		sub_100ac4e0((int)sub_1000f57e, 0, 0);
+	}
+
+	if (m_n03e0)
+	{
+		bool bDirty = ((m_flags268 >> 12) & 1) != 0;
+		if (bDirty)
+			sub_100b1d10();
+
+		Vector vecVel = m_vecVelocity3bc * 0.5f;
+		sub_100b2e30((const float *)&vecVel);
+		*(float *)((char *)this + 0x6f4) = 0.2f;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042b110 size=0x38
 #include "CAI_BaseNPCTroika.h"
 

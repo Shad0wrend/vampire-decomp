@@ -9943,6 +9943,7 @@
 0x1000fed4 func   ?sub_1010ce30@@YAHXZ sub_1010ce30
 0x1000fed9 func   ?sub_1006c1c0@CUnknown1006c1c0@@QAEXHH@Z CUnknown1006c1c0::sub_1006c1c0
 0x1000fee3 func   ?sub_101cde40@@YAXPAXMMMMH@Z sub_101cde40
+0x1000fee8 func   ?sub_1042ae60@CBaseGrenade@@QAEXXZ CBaseGrenade::sub_1042ae60
 0x1000feed func   ?sub_103f17a0@@YAHXZ sub_103f17a0
 0x1000fef2 func   ?vfunc507@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc507
 0x1000fef7 func   ?vfunc44@CBaseEntity@@UAE_NH@Z CBaseEntity::vfunc44
