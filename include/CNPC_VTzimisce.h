@@ -74,7 +74,11 @@ public:
 	virtual void vfunc144(int a);	// slot 144: when the 0x14b8 bit 5 flag is set runs sub_103bf170, then sub_103bdfc0 (removes the entities around the NPC), then CAI_BaseNPCTroika::vfunc144(a)
 	virtual void t145(); virtual void t146(); virtual void t147(); virtual void t148(); virtual void t149();
 	VT_SLOTS10(t15) VT_SLOTS10(t16) VT_SLOTS10(t17) VT_SLOTS10(t18) VT_SLOTS10(t19)
-	VT_SLOTS10(t20) VT_SLOTS10(t21) VT_SLOTS10(t22) VT_SLOTS10(t23) VT_SLOTS10(t24)
+	VT_SLOTS10(t20) VT_SLOTS10(t21)
+	virtual void t220();	// slot 388
+	virtual Vector vfunc389(const Vector &vecSrc);	// slot 389 "CNPC_VTzimisce::Weapon_ShootPosition": the shoot position, offset from vecSrc by the forward / right / up vectors times the three convar values; activity 0x106 returns it directly, 0x107 rotates the offset by 90 degrees
+	virtual void t222(); virtual void t223(); virtual void t224(); virtual void t225(); virtual void t226(); virtual void t227(); virtual void t228(); virtual void t229();
+	VT_SLOTS10(t23) VT_SLOTS10(t24)
 	virtual float vfunc418(float a);	// slot 418 (0x103b9120): (int)a == -1000001 gives 150.0f, else CAI_BaseNPCTroika::vfunc418(a)
 	virtual void t251();
 	virtual void vfunc420();	// slot 420: base boss reset, then the state flag at +0x6689, the timers at +0x66ac / +0x66b0 (curtime + 3), the target handle at +0x6670 = -1
