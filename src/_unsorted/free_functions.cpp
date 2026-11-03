@@ -99392,6 +99392,120 @@ void CUnknown101dfb80::sub_101dfb80(int unused, CBaseEntity *pEnt, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dfc20 size=0x185
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+#include "CSoundEnt.h"
+#include "CUnknown101e0f00.h"
+#include "Vector.h"
+// TARGET: CUnknown101e0f00Fx::sub_101dfc20
+
+extern CUnknown101e0f00Entry *g_10739a74;
+extern int g_1072bc58;
+extern char g_1072bcb6;
+extern void (*g_109f3650)(int nLevel, const char *pszFormat, ...);
+extern CUnknown101e0f00 g_10739a4c;
+
+class CDiscTable_101e1720
+{
+public:
+	int sub_101e1720(int id);
+};
+
+class CUnknown101ddaf0
+{
+public:
+	int sub_101ddaf0(int value);
+};
+
+class CTraitList13dc
+{
+public:
+	void sub_101f9ff0(int a, int b, int c, int d);
+};
+
+class CTraitTable1074df78
+{
+public:
+	void sub_101f9a00(void *pOwner, int id);
+};
+
+extern CTraitTable1074df78 g_1074df78;
+
+class CObj8
+{
+public:
+	void sub_101de660(void *pSource, void *pTarget, int id, float value);
+};
+
+void CUnknown101e0f00Fx::sub_101dfc20(CBaseEntity *pSource, CBaseCombatCharacter *pTarget, int id)
+{
+	const char *pszName;
+	if (g_10739a74)
+	{
+		if (g_10739a74->m_pszName != 0)
+			pszName = g_10739a74->m_pszName;
+		else
+			pszName = "";
+	}
+	else
+	{
+		pszName = "NULL";
+	}
+
+	const char *pszTarget;
+	if (pTarget->m_name26c != 0)
+		pszTarget = pTarget->m_name26c;
+	else
+		pszTarget = "";
+
+	const char *pszHitGroup;
+	if (m_pszHitGroup == 0)
+		pszHitGroup = "";
+	else
+		pszHitGroup = m_pszHitGroup;
+
+	g_109f3650(3, "Discipline<%s>: HitGroup: <%s> Hit Triggered on %s (%s)\n",
+		   pszName, pszHitGroup, pszTarget, pTarget->sub_1009f200());
+
+	int idx = g_10739a4c.sub_101e12a0(id);
+	if (idx == -1)
+		return;
+
+	CUnknown101e0f00Entry *pEntry = g_10739a4c.sub_101e11c0(idx);
+	int value = 100;
+	if (pSource)
+	{
+		((CTraitList13dc *)((char *)pSource + 0x13dc))->sub_101f9ff0(10, 2,
+			((CDiscTable_101e1720 *)&g_10739a4c)->sub_101e1720(id), (int)&value);
+	}
+
+	float flDamage = (float)((CUnknown101ddaf0 *)((char *)this + 0x364))->sub_101ddaf0(value);
+	pTarget->sub_1033cfb0(id, flDamage, pSource, m_nDamage0);
+
+	if (pEntry->m_b35)
+	{
+		int nVolume = g_1072bc58;
+		char bFlag = g_1072bcb6;
+		CSoundEnt::sub_101bac90(0x10, (const Vector *)pTarget->a86(), nVolume, 0.2f, bFlag, pTarget);
+	}
+
+	((CObj8 *)((char *)this + 8))->sub_101de660(pSource, pTarget, id, flDamage);
+
+	CAI_BaseNPCTroika *pNPC = (CAI_BaseNPCTroika *)pTarget->m_pNPC98;
+	if (pNPC)
+	{
+		if (m_b370)
+			pNPC->sub_102c51a0(pSource);
+		else if (m_b371)
+			pNPC->sub_102c5310(pSource);
+	}
+
+	g_1074df78.sub_101f9a00(pTarget, m_n36c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dfe20 size=0x1f
 namespace lifted {
 struct C1001554b { int sub_1001554b(int, int, int, int); };

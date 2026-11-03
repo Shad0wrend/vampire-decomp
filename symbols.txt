@@ -4912,6 +4912,7 @@
 0x100086ca func   ?vfunc373@CWeaponMelee@@UAEHXZ CWeaponMelee::vfunc373
 0x100086cf func   ?vfunc4@CTEBSPDecal@@QAEXHH@Z CTEBSPDecal::vfunc4
 0x100086d4 func   ?sub_1003c950@@YIXPAUSys@@@Z sub_1003c950
+0x100086d9 func   ?sub_101dfc20@CUnknown101e0f00Fx@@QAEXPAVCBaseEntity@@PAVCBaseCombatCharacter@@H@Z CUnknown101e0f00Fx::sub_101dfc20
 0x100086de func   ?sub_10065c80@@YAHXZ sub_10065c80
 0x100086e3 func   _game_text game_text
 0x100086e8 func   ?sub_10191200@@YGHH@Z sub_10191200
