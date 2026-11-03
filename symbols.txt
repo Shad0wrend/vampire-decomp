@@ -1898,6 +1898,7 @@
 0x10003edb func   ?sub_10235060@@YAHXZ sub_10235060
 0x10003ee0 func   ?vfunc81@CWeaponIArmor_Body_Armor@@QAEHXZ CWeaponIArmor_Body_Armor::vfunc81
 0x10003ee5 func   ?sub_101e1650@CUnknown101e1650@@QAEHPAVCBaseCombatCharacter@@H@Z CUnknown101e1650::sub_101e1650
+0x10003eea func   ?vfunc5@CTriggerInventory@@QAEPAXI@Z CTriggerInventory::vfunc5
 0x10003eef func   ?vfunc480@CAI_BaseNPC@@UAE_NXZ CAI_BaseNPC::vfunc480
 0x10003ef4 func   ?vfunc319@CWeaponLockpick@@UAEXXZ CWeaponLockpick::vfunc319
 0x10003efe func   ?sub_10259120@@YA_NPAUSKeyValues@@PADPBD@Z sub_10259120
