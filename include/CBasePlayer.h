@@ -388,7 +388,9 @@ public:
 	int m_n2324;	// 0x2324: set from the command's impulse when there is no vehicle
 	char m_pad2328[0x2344 - 0x2328];	// 0x2328 .. 0x2343
 	int m_n2344;	// 0x2344: the effect-4 damage counter (clamped to 5)
-	char m_pad2348[0x23bc - 0x2348];	// 0x2348 .. 0x23BB
+	char m_pad2348[0x2358 - 0x2348];	// 0x2348 .. 0x2357
+	float m_f2358;	// 0x2358: the command clock (rounded to milliseconds)
+	char m_pad235C[0x23bc - 0x235c];	// 0x235C .. 0x23BB
 	CBasePlayerHandleVec m_SimulationList;	// 0x23BC (count at +0x23C8)
 	char m_pad23D0[0x2454 - 0x23d0];	// 0x23D0 .. 0x2453
 	unsigned char m_b2454;	// 0x2454
