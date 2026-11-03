@@ -7,10 +7,13 @@
 
 void *sub_100aa720(unsigned int size);	// the entities' operator new (stub 0x1000db89)
 
+struct CTakeDamageInfo;
+
 class CBreakableSurface : public CBaseEntity
 {
 public:
     CBreakableSurface() : CBaseEntity(0) {}
+    int vfunc142(CTakeDamageInfo *pInfo);
     void *operator new(unsigned int size) { return sub_100aa720(size); }
     CBreakableSurface *vfunc5(unsigned int flags);
     void vfunc103();    // slot 103 (Spawn): CBreakable::vfunc103, then rejects the surface (Warning + remove) when its face check (+0x904) found several faces (1) or a face that is not a quad (2), else sets collision group 4 and clears the byte at +0x4c4 and the dword at +0x454; finally sets flag 0x20000000 and SetOccludesSound(1)
