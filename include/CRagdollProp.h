@@ -53,7 +53,7 @@ public:
     virtual void vfunc210(); virtual void vfunc211(); virtual void vfunc212(); virtual void vfunc213(); virtual void vfunc214();
     virtual void vfunc215(); virtual void vfunc216(float *p); virtual float *vfunc217(); virtual void vfunc218(const float *absAngles); virtual void vfunc219();
     virtual void vfunc220(); virtual void vfunc221(); virtual void vfunc222(); virtual void vfunc223(); virtual void vfunc224();
-    virtual void vfunc225(); virtual void vfunc226(); virtual void vfunc227(); virtual void vfunc228(); virtual void vfunc229();
+    virtual void vfunc225(); virtual void vfunc226(void *pPhysics); virtual void vfunc227(); virtual void vfunc228(); virtual void vfunc229();	// slot 226 "VPhysicsUpdate" (real arg is IPhysicsObject*, unused): refreshes every ragdoll body's transform, the entity bounds/position and the collision flags; the body is 0x10155fb0
     virtual void vfunc230(); virtual void vfunc231(); virtual void vfunc232(); virtual int vfunc233(int *pOut, int nMax); virtual void vfunc234();	// slot 233: copies the first nMax dwords of the element at +0x744 (one per 0x18 bytes, count at +0x730) into pOut and returns the count
     virtual void vfunc235(); virtual void vfunc236(); virtual void vfunc237(); virtual void vfunc238(); virtual void vfunc239();
     virtual void vfunc240(); virtual void vfunc241(); virtual void vfunc242(); virtual void vfunc243(); virtual void vfunc244();
