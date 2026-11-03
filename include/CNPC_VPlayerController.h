@@ -20,6 +20,7 @@ public:
 	void sub_100b3840(unsigned int flags);	// CBaseEntity::AddFlag2 (stub 0x100027bb), called directly
 	void sub_1000c531();	// CAI_BaseNPCTroika::vfunc420, called directly
 	void sub_103a4580();	// the same function as vfunc420 (stub 0x100155aa), as the subclasses call it directly
+	void vfunc431();	// slot 431: CAI_BaseNPCTroika::vfunc431, then vtable slot 614
 public:
 	bool vfunc72(int);
 	int vfunc138();
