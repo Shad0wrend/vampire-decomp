@@ -34007,6 +34007,16 @@ void CNetSub::sub_100b7ad0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7b40 size=0x1d
+void __fastcall sub_100b7b40(int this_)
+{
+    char *p = (char *)EngineGlobals::g_1070b22c->vfunc43();
+    *(char **)(this_ + 8) = p;
+    *(int *)(p + 0x40) = this_;
+    p[0x44] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7c00 size=0x3
 int sub_100b7c00()
 {
