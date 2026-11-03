@@ -5530,6 +5530,7 @@
 0x10009af2 func   ?vfunc82@CPhysConstraint@@UAEPAUdatamap_t@@XZ CPhysConstraint::vfunc82
 0x10009af7 func   ?sub_10342590@@YA_NPAVCBaseEntity@@0@Z sub_10342590
 0x10009afc func   ?vfunc5@CPhysSlideConstraint@@UAEPAV1@I@Z CPhysSlideConstraint::vfunc5
+0x10009b0b func   ?vfunc461@CNPC_VCombatman@@QAEHXZ CNPC_VCombatman::vfunc461
 0x10009b10 func   ?vfunc176@CTriggerProximity@@QAEXPAVCBaseEntity@@@Z CTriggerProximity::vfunc176
 0x10009b1a func   ?sub_101e9830@CUnknown101e9760@@QAE_NPAVCBaseCombatCharacter@@@Z CUnknown101e9760::sub_101e9830
 0x10009b1f func   ?vfunc104@CRopeKeyframe@@UAEXXZ CRopeKeyframe::vfunc104

@@ -89,6 +89,17 @@ int CNPC_VCombatman::vfunc438()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10370320 size=0xf
+#include "CNPC_VCombatman.h"
+#include "CNPC_VHuman.h"
+
+int CNPC_VCombatman::vfunc461()
+{
+	*(int *)((char *)this + 0x1b38) = 0xb;
+	return ((CNPC_VHuman *)this)->sub_103851e0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10370340 size=0xd
 void sub_10385a10(float a);
 
