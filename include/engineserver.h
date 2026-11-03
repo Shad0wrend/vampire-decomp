@@ -37,7 +37,7 @@ public:
 	virtual void vfunc37();
 	virtual void *vfunc38(int index);	// PEntityOfEntIndex: the edict (its IServerUnknown is at +0x40)
 	virtual int vfunc39();	// the number of edicts
-	virtual void vfunc40(); virtual void vfunc41(int a, int b, int c); virtual void vfunc42(); virtual void vfunc43();
+	virtual void vfunc40(); virtual void vfunc41(int a, int b, int c); virtual void vfunc42(); virtual void *vfunc43();
 	virtual void vfunc44(void *pEdict);
 	virtual void vfunc45();
 	virtual void vfunc46(void *p);
