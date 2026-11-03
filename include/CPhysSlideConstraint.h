@@ -1,6 +1,8 @@
 // CPhysSlideConstraint: physics slide constraint. Declared flat (bases not recovered); only the vtable head is modelled.
 #pragma once
 
+#include "Vector.h"
+
 struct datamap_t;
 
 class CPhysSlideConstraint
