@@ -743,6 +743,7 @@
 0x10002266 func   ?sub_100bc5e0@@YIXPAHHH@Z sub_100bc5e0
 0x1000226b func   ?vfunc81@CElderVitaePack@@QAEHXZ CElderVitaePack::vfunc81
 0x10002275 func   ?vfunc267@CSceneEntity@@UAEPAUCSceneEventActorEnt@@PBD@Z CSceneEntity::vfunc267
+0x1000227a func   ?sub_102d7890@Helper@@QAEXPAVCEntityMapData@@@Z Helper::sub_102d7890
 0x10002284 func   ?vfunc435@CNPC_VWerewolf@@QAEXH@Z CNPC_VWerewolf::vfunc435
 0x10002289 func   _viewmodel viewmodel
 0x1000228e func   ?vfunc546@CGeneric_NPC@@QAEHH@Z CGeneric_NPC::vfunc546

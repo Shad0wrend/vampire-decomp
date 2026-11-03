@@ -49,6 +49,26 @@ datamap_t * CNodeEnt::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d7890 size=0x21
+#include "CBaseEntity.h"
+#include "CEntityMapData.h"
+#include "CUnknown10136ec0.h"
+
+extern int g_10926a38;
+
+struct Helper
+{
+	void sub_102d7890(CEntityMapData *pArg);
+};
+
+// TARGET: Helper::sub_102d7890
+void Helper::sub_102d7890(CEntityMapData *pArg)
+{
+	g_10926a38 = ((CUnknown10136ec0 *)pArg)->sub_10136ec0();
+	((CBaseEntity *)this)->CBaseEntity::vfunc107(pArg);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d7d00 size=0x1e
 #include "CNodeEnt.h"
 
