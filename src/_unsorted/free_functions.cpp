@@ -141635,6 +141635,109 @@ int CUnknown102a9f20::sub_102a9f20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a9f40 size=0x23c
+#include "CAI_BaseNPC.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_InterestingPlace.h"
+#include "CAI_Motor.h"
+#include "CAI_Hint.h"
+#include "COutputEvent.h"
+#include "CEntityVSlots.h"
+
+class CUnk102da7c0
+{
+public:
+	void sub_102da7c0(void *p, char a, char b);
+};
+
+class CUnknown102dae70
+{
+public:
+	void *sub_102dae70();
+};
+
+struct COwnerView;
+void * __fastcall sub_102daea0(COwnerView *p);
+float __fastcall sub_102d12e0(void *p);
+int __cdecl sub_10412520(int n);
+void __cdecl sub_10411f90();
+void __fastcall sub_102e0b40(float *p);
+
+extern void (*g_109f364c)(const char *pszFmt, ...);
+
+void CAI_BaseNPCTroika::sub_102a9f40(CAI_InterestingPlace *pPlace, CAI_Hint *pHint, char bFlag)
+{
+	((CUnk102da7c0 *)pPlace)->sub_102da7c0(this, bFlag, 1);
+	((COutputEvent *)((char *)this + 0x5f74))->sub_100cd660(pPlace, this, 0);
+	m_b62e8 = 1;
+	const char *pszName = (const char *)((CUnknown102dae70 *)pPlace)->sub_102dae70();
+	if (*pszName)
+	{
+		int activity = sub_10412520((int)pszName);
+		if (activity == -1)
+		{
+			sub_10411f90();
+			g_109f364c("Can not find interest into activity '%s' in the activity list.  Defaulting to ACT_IDLE.\n", pszName);
+			activity = 1;
+		}
+		m_flags14b8 |= 0x20000000;
+		m_n6304 = 1;
+		CAI_BaseNPC::sub_10289ee0(activity);
+		m_flNextInterestChangeTime = -1.0f;
+	}
+	else
+	{
+		const char *pszActivity = (const char *)sub_102daea0((COwnerView *)pPlace);
+		int activity = sub_10412520((int)pszActivity);
+		if (activity == -1)
+		{
+			sub_10411f90();
+			g_109f364c("Can not find interest activity '%s' in the activity list.  Defaulting to ACT_IDLE.\n", pszActivity);
+			activity = 1;
+		}
+		m_n6304 = 2;
+		CAI_BaseNPC::sub_10289ee0(activity);
+		m_flNextInterestChangeTime = enginerandom->vfunc1(2.0f, 10.0f) + gpGlobals->curtime;
+	}
+	m_f5db4 = enginerandom->vfunc1(pPlace->m_fMinStayTime, pPlace->m_fMaxStayTime) + gpGlobals->curtime;
+	sub_102e0b40((float *)*(void **)((char *)this + 0x5d44));
+	if (pPlace->m_bMatchOrientation)
+	{
+		if (pHint)
+		{
+			CAI_Motor *pMotor = *(CAI_Motor **)((char *)this + 0x5d44);
+			float flYaw = sub_102d12e0(pHint);
+			if (pMotor->m_28)
+			{
+				if (flYaw >= 180.0f)
+					flYaw -= 180.0f;
+				else
+					flYaw += 180.0f;
+			}
+			if (pMotor->m_1c == 0x43340000)
+				pMotor->m_34 = flYaw;
+			else
+				pMotor->m_34 = pMotor->sub_102e0a80(flYaw);
+			return;
+		}
+		Vector *pAngles = ((CEntityVSlots *)pPlace)->slot221();
+		float flYaw = (float)(unsigned short)(int)(pAngles->y * 182.04445f) * 0.005493164f;
+		CAI_Motor *pMotor = *(CAI_Motor **)((char *)this + 0x5d44);
+		if (pMotor->m_28)
+		{
+			if ((float)(unsigned short)(int)(pAngles->y * 182.04445f) * 0.005493164f >= 180.0f)
+				flYaw = (float)(unsigned short)(int)(pAngles->y * 182.04445f) * 0.005493164f - 180.0f;
+			else
+				flYaw = (float)(unsigned short)(int)(pAngles->y * 182.04445f) * 0.005493164f + 180.0f;
+		}
+		if (pMotor->m_1c == 0x43340000)
+			pMotor->m_34 = flYaw;
+		else
+			pMotor->m_34 = pMotor->sub_102e0a80(flYaw);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102aab70 size=0x126
 #include "CAI_BaseNPCTroika.h"
 #include "CAI_Motor.h"
