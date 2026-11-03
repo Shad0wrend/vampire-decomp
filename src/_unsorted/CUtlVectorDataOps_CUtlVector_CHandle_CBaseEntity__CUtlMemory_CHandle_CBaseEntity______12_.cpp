@@ -77,3 +77,19 @@ template<> int CUtlVectorDataOps<CUtlVector<CHandle<CBaseEntity>,CUtlMemory<CHan
 	return (int)pVec;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101cc760 size=0x13
+#include "CUtlVectorDataOps.h"
+
+template <class T> class CHandle;
+class CBaseEntity;
+
+// TARGET: CUtlVectorDataOps<CUtlVector<CHandle<CBaseEntity>,CUtlMemory<CHandle<CBaseEntity> > >,12>::vfunc2
+template <class VEC, int N>
+bool CUtlVectorDataOps<VEC, N>::vfunc2(void *pFieldData)
+{
+	return *(int *)(*(char **)pFieldData + 0xc) == 0;
+}
+
+template class CUtlVectorDataOps<CUtlVector<CHandle<CBaseEntity>,CUtlMemory<CHandle<CBaseEntity> > >,12>;
+// END FUNCTION
