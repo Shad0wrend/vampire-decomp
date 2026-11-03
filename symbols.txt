@@ -4938,6 +4938,7 @@
 0x10008c15 func   ?sub_1019cf00@CRecipientFilter@@QAEXXZ CRecipientFilter::sub_1019cf00
 0x10008c1a func   ?sub_10114440@@YAXHHPBVVector@@0HH@Z sub_10114440
 0x10008c1f func   _item_g_eldervitaepack item_g_eldervitaepack
+0x10008c24 func   ?vfunc103@CWeaponMelee_BushHook@@QAEXXZ CWeaponMelee_BushHook::vfunc103
 0x10008c29 func   ?sub_100b7220@@YAPAHXZ sub_100b7220
 0x10008c2e func   ?sub_1007bf70@@YAXPAXHHH@Z sub_1007bf70
 0x10008c33 func   ?sub_101b6b10@UtlVec8@@QAEXHH@Z UtlVec8::sub_101b6b10

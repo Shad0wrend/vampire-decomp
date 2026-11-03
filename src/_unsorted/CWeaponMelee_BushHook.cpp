@@ -39,6 +39,17 @@ int CWeaponMelee_BushHook::vfunc363()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e47c0 size=0x11
+#include "CWeaponMelee_BushHook.h"
+
+// TARGET: CWeaponMelee_BushHook::vfunc103
+void CWeaponMelee_BushHook::vfunc103()
+{
+	sub_100047be();
+	m_b871 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecb70 size=0x1e
 #include "CWeaponMelee_BushHook.h"
 
