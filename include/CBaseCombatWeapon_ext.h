@@ -23,3 +23,4 @@
 	int sub_10251f90();	// slot 351: the dword at +0x5ebd0 of the owner object
 	int sub_10251ff0();	// slot 354: the dword at +0x5ebdc of the owner object
 	bool sub_102577e0();	// true when the owner's field at +0x2444 is set and the current roll slot's field at +0x25c is set
+	char sub_100b5190();	// CUnknown100b5190::sub_100b5190 (0x100b5190): the byte at +0xf4
