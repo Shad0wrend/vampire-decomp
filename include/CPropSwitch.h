@@ -30,4 +30,5 @@ public:
 public:
     virtual int vfunc117();
     void *vfunc5(unsigned int flags);	// as in CTriggerElectricBugaloo (transplant)
+    virtual int vfunc34(int a);	// slot 34: true when slot 35(a) is non-zero
 };
