@@ -89320,6 +89320,58 @@ CBaseEntity *sub_101c7690(const char *pLandmarkName, CChangeLevel *pCaller)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c77d0 size=0x7c
+#include "CChangeLevel.h"
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "inputdata_t.h"
+
+struct CPlayerLink
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual CBaseEntity *v4();
+};
+
+extern CGlobalEntityList *g_10566458;
+
+__declspec(dllimport) void Warning(const char *fmt, ...);
+
+static inline CBaseEntity *EHandle_GetEntity(unsigned int h)
+{
+	if (h == 0xffffffff)
+		return 0;
+	CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+	if (pSlot->m_Serial != (int)(h >> 13))
+		return 0;
+	return (CBaseEntity *)pSlot->m_pEntity;
+}
+
+static inline CPlayerLink *PlayerOfOwner(CBaseEntity *pEntity)
+{
+	if (!pEntity)
+		return 0;
+	CBaseEntity *pOwner = EHandle_GetEntity(*(unsigned int *)((char *)pEntity + 0x8c));
+	if (!pOwner)
+		return 0;
+	return (CPlayerLink *)pOwner->m_pA8;
+}
+
+// TARGET: CChangeLevel::sub_101c77d0
+void CChangeLevel::sub_101c77d0(inputdata_t *pInput)
+{
+	CBaseEntity *pActivator = (CBaseEntity *)pInput->pActivator;
+	CPlayerLink *pPlayer = pActivator ? (CPlayerLink *)pActivator->m_pA8 : 0;
+
+	if (!pPlayer)
+		pPlayer = PlayerOfOwner((CBaseEntity *)pInput->pActivator);
+
+	if (pPlayer)
+		sub_101c7890(pPlayer->v4());
+	else
+		Warning("%s recieved ChangeNow input from non-player activator!\n", sub_1000b5cd());
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c7870 size=0xd
 namespace lifted {
 int __stdcall sub_1000faba(int);
