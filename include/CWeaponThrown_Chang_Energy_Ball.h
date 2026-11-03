@@ -31,7 +31,8 @@ public:
 	void sub_103efa30();	// the fly think (no virtual slot found in the first 300): done flag set -> sub_103ef780 (explosion); else once curtime has passed m_flLastThink938 steers the physics object (+0x36c, slot 40 GetVelocity(&vel, &angvel) / slot 39 SetVelocity(&vel, &angvel)) towards the target entity (handle +0x918, aim point = its origin + 40.0f up, VectorNormalize * 5000 * dt added for 0.65s after m_flStart93c), speed clamped to 1400.0f / m_flMaxSpeed920, next think curtime + 0.1f
 	void sub_103ef780();	// the explosion (grenade_frag_emitter effect), called by sub_103efa30 when m_b91c is set
 
-	char m_pad0000[0x914];
+	char m_pad0000[0x910 - 0x0];
+	float m_flDmgRadius;	// 0x0910
 	EHANDLE m_h914;
 	EHANDLE m_h918;	// 0x918: the target entity of the fly think (LookupEntity(&m_h918))
 	char m_b91c;	// 0x91c: done flag

@@ -85,7 +85,8 @@ public:
 	int m_n6430;	// +0x6430: 100 at spawn
 	char pad6434[0x65e8 - 0x6434];
 	CUnknown1025ddd0 *m_pBehaviour65e8;	// +0x65e8
-	char pad65ec[0x6672 - 0x65ec];
+	char m_pad65ec[0x6671 - 0x65ec];
+	bool m_bDeathNoticeProcessed;	// 0x6671
 	char m_b6672;	// +0x6672
 	char pad6673[1];
 	float m_f6674;	// +0x6674: an engine time

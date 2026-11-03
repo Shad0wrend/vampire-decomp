@@ -1,6 +1,7 @@
 // CBreakable: declared by pcdecomp transplant for 0x1010f240 from CBaseCineCam (0x1006d950);
 // only what matched code needs, as plain members.
 #pragma once
+#include "string_t.h"
 
 struct datamap_t;
 
@@ -34,7 +35,9 @@ public:
 	unsigned int m_h458;	// 0x458: entity handle of the inflictor stored by the damage handler
 	int m_nGibModelIndex;	// 0x45c: the precached gib model
 	int m_iszGibModel;	// 0x460
-	char m_pad0464[0x484 - 0x464];
+	float m_flPressureDelay;	// 0x0464
+	string_t m_iszExplosionParamEnt;	// 0x0468
+	char m_pad046c[0x484 - 0x46c];
 	char m_out0484[0x18];	// OnHealthChanged: a variant output (the variant value first, then the event)
 public:
 	int vfunc74(int);

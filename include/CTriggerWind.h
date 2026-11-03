@@ -41,13 +41,15 @@ public:
 
 	char m_pad0004[0x5b0 - 4];
 	int m_n05b0;	// 0x5b0
-	char m_pad05b4[4];
+	int m_nSpeedNoise;	// 0x05b4
 	int m_n05b8;	// 0x5b8
-	char m_pad05bc[4];
+	int m_nSpeedTarget;	// 0x05bc
 	int m_n05c0;	// 0x5c0
-	char m_pad05c4[4];
+	int m_nDirNoise;	// 0x05c4
 	int m_n05c8;	// 0x5c8
-	char m_pad05cc[0x5d8 - 0x5cc];
+	int m_nDirTarget;	// 0x05cc
+	int m_nHoldBase;	// 0x05d0
+	int m_nHoldNoise;	// 0x05d4
 	char m_b05d8;	// 0x5d8
 	char m_pad05d9[3];
 	int m_n05dc;	// 0x5dc

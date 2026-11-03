@@ -20,7 +20,9 @@ public:
 #endif
 	float m_flMin;	// 0x450
 	float m_flMax;	// 0x454
-	char m_pad0458[4];
+	bool m_bHitMin;	// 0x0458
+	bool m_bHitMax;	// 0x0459
+	char m_pad045a[0x45c - 0x45a];
 	variant_t m_OutValue;	// 0x45c
 public:
     virtual datamap_t *vfunc82();

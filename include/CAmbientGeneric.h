@@ -1,6 +1,7 @@
 // CAmbientGeneric: only the members that decompiled code needs are declared.
 // Layout is declared flat (vptr and base members are padding) until the bases are recovered.
 #pragma once
+#include "string_t.h"
 
 struct datamap_t;
 
@@ -56,7 +57,9 @@ public:
 	const char *volatile m_pszSoundFile;	// 0x4c0 (volatile: the game's code reads it again for the null check)
 	const char *m_pszSoundEntName;	// 0x4c4: name of the entity the sound is attached to
 	EHANDLE m_hSoundEnt;	// 0x4c8: entity handle of the entity the sound is attached to (-1 from its constructor)
-	char pad04cc[0x4d8 - 0x4cc];
+	int m_nSoundEvent;	// 0x04cc
+	int m_nSoundEventLevel;	// 0x04d0
+	string_t m_iszSoundEventOwner;	// 0x04d4
 	EHANDLE m_hAttached4d8;	// 0x4d8: an entity handle (-1 from its constructor, which runs before the vtable store)
 	char m_b04dc;
 	char m_b04dd;

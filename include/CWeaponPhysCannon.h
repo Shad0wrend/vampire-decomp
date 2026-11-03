@@ -35,9 +35,13 @@ public:
 	char m_pad0898[0x910 - 0x898];
 	char m_b910;	// 0x910
 	char m_bGrab911;	// 0x911
-	char m_pad0912[0x918 - 0x912];
+	char m_pad0912[0x914 - 0x912];
+	int m_nChangeState;	// 0x0914
 	int m_n918;	// 0x918
-	char m_pad091c[0x928 - 0x91c];
+	int m_nAttack2Debounce;	// 0x091c
+	bool m_bIsCurrentlyUpgrading;	// 0x0920
+	char m_pad0921[0x924 - 0x921];
+	float m_flElementDebounce;	// 0x0924
 	float m_flGlow928;	// 0x928: the glow value, eased towards m_flGlowTarget92c
 	float m_flGlowTarget92c;	// 0x92c
 	EHANDLE m_ah930[4];	// 0x930 .. 0x967: fourteen handles

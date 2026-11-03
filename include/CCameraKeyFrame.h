@@ -24,10 +24,12 @@ public:
 	float m_fl45c;	// 0x45c
 	float m_fl460;	// 0x460
 	char m_b464;	// 0x464
-	char m_pad0465[0x46c - 0x465];
+	char m_pad0465[0x468 - 0x465];
+	float m_flMoveSpeed;	// 0x0468
 	float m_flDelay46c;	// 0x46c
 	float m_fl470;	// 0x470
-	char m_pad0474[0x47c - 0x474];
+	float m_flRateIn;	// 0x0474
+	float m_flRateOut;	// 0x0478
 	char m_b47c;	// 0x47c
 	char m_pad047d[0x480 - 0x47d];
 	COutputEvent m_Output480;	// 0x480: constructed by the factory (0x10002ddd)

@@ -1,6 +1,7 @@
 // CPhysicsAnimlink: declared by pcdecomp transplant for 0x1014ef80 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "string_t.h"
 #include "CBaseEntity.h"
 #include "datamap.h"
 
@@ -30,7 +31,16 @@ public:
     virtual datamap_t * vfunc82();
 
 	// sizeof(CBaseEntity) is 0x3e0 here; the members below are the ones the destructor body 0x1014efb0 and Attach (0x1014f210) use
-	char m_pad03e0[0x4c0 - 0x3e0];
+	char m_pad03e0[0x450 - 0x3e0];
+	string_t m_nameAnimator;	// 0x0450
+	string_t m_nameAnimatorBone;	// 0x0454
+	string_t m_nameAttached;	// 0x0458
+	string_t m_nameAttachedBone;	// 0x045c
+	Vector m_attachmentOffset;	// 0x0460
+	Vector m_attachmentAngle;	// 0x046c
+	EHANDLE m_hAnimator;	// 0x0478
+	int m_nAnimatorBone;	// 0x047c
+	char m_pad0480[0x4c0 - 0x480];
 	void *m_pShadowController4c0;	// 0x4c0: IPhysicsShadowController, destroyed through physenv slot 36 (DestroyShadowController) and then zeroed
 	void *m_pPhysObject4c4;	// 0x4c4: the physics object (Attach)
 	CPhysicsAnimlinkPair m_Pair4c8;	// 0x4c8: destroyed by the destructor body through sub_1014eba0 (stub 0x10007c11, CUnknown1014eba0::sub_1014eba0)

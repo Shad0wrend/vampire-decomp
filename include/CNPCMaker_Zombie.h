@@ -35,7 +35,8 @@ public:
 	char m_b66c3;	// 0x66c3
 	char m_pad66c4[0x76d0 - 0x66c4];
 	int m_n76d0;	// 0x76d0
-	char m_pad76d4[4];
+	bool m_bShouldRagdoll;	// 0x76d4
+	char m_pad76d5[0x76d8 - 0x76d5];
 	float m_flRange;	// 0x76d8
 public:
     virtual datamap_t * vfunc82();

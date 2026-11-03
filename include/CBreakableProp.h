@@ -65,7 +65,7 @@ public:
     char m_pad03d4[0x730 - 0x3d4];
     char m_OnBreak730[0x18];    // 0x730: COutputEvent, fired by Break: ((COutputEvent *)m_OnBreak730)->sub_100cd660(pAttacker, this, 0)
     char m_OnHealthChanged748[0x18];    // 0x748: COutputEvent
-    char m_pad0760[0x764 - 0x760];
+    int m_createFrame;	// 0x0760
     const char *m_pszExplosion764;    // 0x764: name of the explosion parameters entity (null = none; g_106b8540 stands in for messages)
     EHANDLE m_hAttacker768;    // 0x768: the attacker of the break
     void sub_1018f620();    // the break think: slot 266 with the attacker (handle +0x768), then SetThink(0, 0, 0)

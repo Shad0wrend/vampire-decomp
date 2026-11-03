@@ -1,6 +1,7 @@
 // CPropHacking: declared by pcdecomp transplant for 0x10219ee0 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "string_t.h"
 #include "CBaseEntity.h"
 #include "datamap.h"
 
@@ -86,7 +87,8 @@ public:
 	unsigned int m_flags081c;	// 0x81c
 	char m_pad0820[0x83c - 0x820];
 	char m_b083c;	// 0x83c
-	char m_pad083d[0x904 - 0x83d];
+	char m_pad083d[0x900 - 0x83d];
+	string_t m_sHackFile;	// 0x0900
 	char m_szText0904[0x984 - 0x904];	// 0x904: the text line
 	char m_b0984;	// 0x984
 	char m_b0985;	// 0x985

@@ -56,9 +56,13 @@ public:
 	void *m_pPhysObj36c;	// 0x36c: the physics object
 	char m_pad0370[0x19b0 - 0x370];
 	Vector m_vec19b0;	// 0x19b0: the nozzle attachment's translation (column 3), set by sub_10150530
-	char m_pad19bc[0x19e4 - 0x19bc];
+	char m_pad19bc[0x19e0 - 0x19bc];
+	class CBaseEntity *m_pJet;	// 0x19e0
 	char m_bLeaking;	// 0x19e4
-	char m_pad19e5[0x19f4 - 0x19e5];
+	char m_pad19e5[0x19e8 - 0x19e5];
+	float m_thrustTime;	// 0x19e8
+	float m_damage;	// 0x19ec
+	float m_damageRadius;	// 0x19f0
 	float m_flLeakStart;	// 0x19f4
 	const char *m_pszSound19f8;	// 0x19f8: sound name stopped by slot 104
 	char m_pad19fc[0x1a14 - 0x19fc];

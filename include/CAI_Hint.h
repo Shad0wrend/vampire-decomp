@@ -3,6 +3,7 @@
 // the others are placeholders that keep the slot indices of the game's primary
 // vtable (the slots up to 181 are declared so far).
 #pragma once
+#include "string_t.h"
 
 struct datamap_t;
 
@@ -209,14 +210,14 @@ public:
 	char m_pad0004[0x4f8];
 	CAI_HintItem m_items4fc[8];
 	CAI_HintItem m_item5bc;
-	char m_pad05d4[4];
+	string_t m_iszUserData;	// 0x05d4
 	CAI_Hint *m_pNext;	// +0x5d8: previous head of the global hint list
 	int m_n5dc;
 	int m_n5e0;
-	char m_pad05e4[4];
+	int m_nNodeID;	// 0x05e4
 	int m_n5e8;
 	int m_n5ec;
-	char m_pad05f0[4];
+	string_t m_strGroup;	// 0x05f0
 	CAI_HintItem m_item5f4;
 
 	void sub_1009d980(int a);	// entity base constructor

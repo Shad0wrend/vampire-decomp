@@ -2,6 +2,7 @@
 // Only the members the recovered code needs are declared.
 // New method declarations can go into CBaseCombatCharacter_ext.h / CBaseCombatCharacter_ext2.h (included at the end of the class body).
 #pragma once
+#include "string_t.h"
 #include "CBaseCombatWeapon.h"
 
 #include "CBaseEntity.h"
@@ -208,19 +209,69 @@ public:
 #include "CBaseCombatCharacter_ext.h"
 #include "CBaseCombatCharacter_ext2.h"
 
-	char m_pad03e0[0xa84 - 0x3e0];
+	char m_pad03e0[0x5a8 - 0x3e0];
+	EHANDLE m_hAnimFollowModel;	// 0x05a8
+	char m_pad05ac[0xa80 - 0x5ac];
+	float m_flLastBCCUpdate;	// 0x0a80
 	float m_flNextVampHeal;	// 0xa84: the time of the next vampire heal-over-time tick
-	char m_pad0a88[0xe30 - 0xa88];
+	char m_pad0a88[0xaa1 - 0xa88];
+	bool m_bMeleeSwingIsLive;	// 0x0aa1
+	bool m_bDidSendIncomingSwingNotice;	// 0x0aa2
+	char m_pad0aa3[0xaa4 - 0xaa3];
+	float m_flLastMeleeSwingUpdate;	// 0x0aa4
+	Vector m_vecLastMeleeSwingPosition;	// 0x0aa8
+	Vector m_angLastMeleeSwingAngles;	// 0x0ab4
+	char m_pad0ac0[0xe30 - 0xac0];
 	int m_nVendorE30;	// 0x0e30: index of this character's vendor in the vendor table (SyncVendorInventory)
 	int m_nVendorSettingE34;	// 0x0e34
-	char m_pad0e38[0xea4 - 0xe38];
+	int m_iOccultPowerFlags;	// 0x0e38
+	float m_flEyeIntegRate;	// 0x0e3c
+	float m_flNextEyeLookTime;	// 0x0e40
+	Vector m_vEyeLookTarget;	// 0x0e44
+	Vector m_vCurEyeTarget;	// 0x0e50
+	float m_flHeadYaw;	// 0x0e5c
+	float m_flHeadPitch;	// 0x0e60
+	EHANDLE m_hEyeLookTarget;	// 0x0e64
+	char m_pad0e68[0xe6c - 0xe68];
+	bool m_bAimWeaponAtTarget;	// 0x0e6c
+	char m_pad0e6d[0xe70 - 0xe6d];
+	EHANDLE m_hWeaponAimTarget;	// 0x0e70
+	Vector m_vWeaponAimOffset;	// 0x0e74
+	int m_iFriendPresenceEffect;	// 0x0e80
+	float m_flEnemeyPresencePercent;	// 0x0e84
+	int m_iEnemyPresenceEffect;	// 0x0e88
+	float m_flNextPresenceCheckTime;	// 0x0e8c
+	float m_flNextComfortCheckTime;	// 0x0e90
+	int m_iComfortingCount;	// 0x0e94
+	int m_bitsDamageType;	// 0x0e98
+	char m_rgbTimeBasedDamage[8];	// 0x0e9c
 	CHandle<CBaseCombatWeapon> m_hEa4;	// 0xea4
 	CHandle<CBaseCombatWeapon> m_hEa8;	// 0xea8
-	char m_pad0eac[0xfe8 - 0xeac];
+	int m_iDisciplineContextTgtFlags;	// 0x0eac
+	int m_iDisciplineFlags;	// 0x0eb0
+	int m_iDisciplineFlags2;	// 0x0eb4
+	int m_iDisciplinePreFlags;	// 0x0eb8
+	int m_iDisciplinePreFlags2;	// 0x0ebc
+	float m_fDisciplineTimers[60];	// 0x0ec0
+	int m_iDisciplineCastCounter;	// 0x0fb0
+	char m_pad0fb4[0xfc8 - 0xfb4];
+	bool m_bIsUnkillable;	// 0x0fc8
+	char m_pad0fc9[0xfcc - 0xfc9];
+	float m_flMoveStartTime;	// 0x0fcc
+	int m_vDiscBloodType;	// 0x0fd0
+	int m_iLastDisciplineHitBy;	// 0x0fd4
+	bool m_bLastDisciplineResist;	// 0x0fd8
+	char m_pad0fd9[0xfdc - 0xfd9];
+	int m_iLastStoredDmg;	// 0x0fdc
+	bool m_bAllowsInterpenetratingAttacks;	// 0x0fe0
+	char m_pad0fe1[0xfe4 - 0xfe1];
+	int m_iMiscFlags;	// 0x0fe4
 	EHANDLE m_hDialogPartnerFE8;	// 0xfe8: the dialog partner (SetDialogPartner)
-	char m_pad0fec[0xff8 - 0xfec];
+	int m_Activity;	// 0x0fec
+	int m_IdealActivity;	// 0x0ff0
+	int m_TranslatedActivity;	// 0x0ff4
 	EHANDLE m_hFireEmitters[18];	// 0xff8: the body fire emitters, one per hit box
-	char m_pad1040[0x1044 - 0x1040];
+	EHANDLE m_hInteractiveUseTarget;	// 0x1040
 	int m_nShakyIndex1044;	// 0x1044: the shaky-hands profile index (-1 when off)
 	float m_flShakyEnd1048;	// 0x1048: the time the shaky hands end
 	float m_flShakyTime104c;	// 0x104c: the last time the shake offsets were randomised
@@ -232,11 +283,16 @@ public:
 	Vector m_vecHeadAxis1074;	// 0x1074: the head bone's axis (0, -1, 0) rotated by the bone's pose-to-bone matrix
 	int m_nHeadBone1080;	// 0x1080: the Bip01_Head bone index
 	int m_nStealthModifier;	// 0x1084
-	char m_pad1088[0x108c - 0x1088];
+	bool m_bWillTalk;	// 0x1088
+	char m_pad1089[0x108c - 0x1089];
 	int m_nHeadTime108c;	// 0x108c: the engine time stamp (engine slot 120) of the last head matrix update
 	Vector m_vecHeadPos1090;	// 0x1090: the head bone position (CalcLookData)
 	Vector m_vecHeadDir109c;	// 0x109c: the head direction (CalcLookData)
-	char m_pad10a8[0x10bc - 0x10a8];
+	float m_flDebugSlowedScale;	// 0x10a8
+	string_t m_sTeamName;	// 0x10ac
+	char m_pad10b0[0x10b4 - 0x10b0];
+	int m_idxDefExpression;	// 0x10b4
+	float m_flDefExpressionIntensity;	// 0x10b8
 	struct CExpressionRecord	// 0x20 bytes, appended by sub_102c1a80 (scene expression event start), faded out by sub_101063a0
 	{
 		int m_iExpression;	// 0x00: the expression index (sub_10106a40 of the event's last parameter)
@@ -251,32 +307,58 @@ public:
 	int m_nExpressionGrow10c4;
 	int m_nExpressionCount10c8;
 	CExpressionRecord *m_pExpressionElems10cc;
-	char m_pad10d0[0x10d4 - 0x10d0];
+	float m_flCameraOverrideFadeTime;	// 0x10d0
 	char m_b10d4;	// camera target flag
-	char m_pad10d5[0x13a0 - 0x10d5];
+	char m_pad10d5[0x10dc - 0x10d5];
+	EHANDLE m_hActiveIArmor;	// 0x10dc
+	EHANDLE m_hLastIArmor;	// 0x10e0
+	string_t m_statTemplate;	// 0x10e4
+	int m_iFloatSoundFrequency;	// 0x10e8
+	float m_flNextFloatSoundTime;	// 0x10ec
+	char m_pad10f0[0x13a0 - 0x10f0];
 	int m_field13a0;
 	char m_pad13a4[0x13bc - 0x13a4];
 	int m_nStatLists;
 	CVStatList_t **m_pStatLists;
 	char m_pad13c4[0x13cc - 0x13c4];
 	int m_nHasLegs13cc;	// 0x13cc: the model has no flag 0x100 in its header flags (stat 0xb of the active stat list)
-	char m_pad13d0[0x146c - 0x13d0];
+	float m_flLastFaithShieldHealTime;	// 0x13d0
+	float m_flHolyLightEndTime;	// 0x13d4
+	int m_iMoney;	// 0x13d8
+	char m_pad13dc[0x1468 - 0x13dc];
+	int m_iCurVReaction;	// 0x1468
 	int m_field146c;
-	char m_pad1470[0x1474 - 0x1470];
+	float m_flNextFrenzyTimeThreshhold;	// 0x1470
 	char m_flag1474;
-	char m_pad1475[0x1480 - 0x1475];
+	bool m_bCantBreakGrapple;	// 0x1475
+	bool m_bIsFrenzyGrapple;	// 0x1476
+	char m_pad1477[0x1478 - 0x1477];
+	float m_flBreakGrappleTimer;	// 0x1478
+	float m_flGrappleDamageTimer;	// 0x147c
 	char m_b1480;	// burning flag
-	char m_pad1481[0x1488 - 0x1481];
+	bool m_bIsAlive;	// 0x1481
+	bool m_bNeverMeleeOpponent;	// 0x1482
+	char m_pad1483[0x1484 - 0x1483];
+	int m_nMotionTrail;	// 0x1484
 	float m_flFrenzyRate;	// 0x1488
 	bool sub_103395f0();	// "CBaseCombatCharacter::CanFeed": scope trace (entity name); needs sub_10337f30, then true without a live target (handle +0x149c), else true when the target's stat list 0 gives a non-zero bounded stat 12 and the target's slot 158 holds
 	char m_pad148c[0x149c - 0x148c];
 	EHANDLE m_h149c;	// 0x149c: the feeding target
-	char m_pad14a0[0x14d8 - 0x14a0];
+	int m_iBloodStolen;	// 0x14a0
+	int m_iCurBloodStolenMod;	// 0x14a4
+	char m_pad14a8[0x14b0 - 0x14a8];
+	int m_aCurWpnActivity;	// 0x14b0
+	int m_aNextWpnActivity;	// 0x14b4
+	int m_bfAINPCFlags;	// 0x14b8
+	int m_bfAINPCFlags2;	// 0x14bc
+	char m_pad14c0[0x14d4 - 0x14c0];
+	int m_nLastObfuscateLevel;	// 0x14d4
 	unsigned int m_nObfuscateMask14d8;	// 0x14d8: the obfuscate bits (one per level) the character has
 	char m_bObfuscateReady14dc;	// 0x14dc
 	char m_pad14dd[3];
 	float m_flObfuscateTime14e0;	// 0x14e0
-	char m_pad14e4[0x1534 - 0x14e4];
+	char m_clientAuraCount[32];	// 0x14e4
+	char m_pad1504[0x1534 - 0x1504];
 	int m_nGrapple1534;	// 0x1534
 	EHANDLE m_hTarget1538;	// 0x1538
 	int m_nTarget153c;	// 0x153c
@@ -285,7 +367,8 @@ public:
 	Vector m_vecGrapple1548;	// 0x1548
 	char m_bGrapple1554;	// 0x1554
 	EHANDLE m_hGrapple1558;	// 0x1558
-	char m_pad155c[0x1564 - 0x155c];
+	EHANDLE m_hProteanTransformOther;	// 0x155c
+	float m_flProteanTransformStartTime;	// 0x1560
 	float m_flNextAttack1564;	// 0x1564: the time the weapon may attack / reload again
 	int m_field1568;	// 0x1568
 	char m_pad156c[0x1574 - 0x156c];
@@ -293,13 +376,18 @@ public:
 	float m_f1578;	// 0x1578: gun position offset along the right vector
 	float m_f157c;	// 0x157c: along the forward vector
 	float m_f1580;	// 0x1580: along the up vector
-	char m_pad1584[0x1594 - 0x1584];
+	string_t m_RelationshipString;	// 0x1584
+	bool m_bCanSwitchWeapons;	// 0x1588
+	bool m_bCantDropWeapons;	// 0x1589
+	char m_pad158a[0x158c - 0x158a];
+	int m_LootableType;	// 0x158c
+	char m_pad1590[0x1594 - 0x1590];
 	int m_nHitBoxSet1594;	// 0x1594: the index of the record read from the studio header's table (potence hit effect)
 	struct CRelationRecord **m_ppRelationships1598;	// 0x1598: the relationship table (array of pointers to records)
 	char m_pad159c[4];
 	int m_nRelationships15a0;	// 0x15a0: its size
 	int m_iAmmo[32];	// 0x15a4: the ammo count per ammo index
-	char m_pad1624[0x19a4 - 0x1624];
+	EHANDLE m_hMyWeapons[224];	// 0x1624
 	EHANDLE m_hActiveWeapon19a4;	// 0x19a4: the active weapon
 	Vector vfunc389(const Vector &vecSrc);	// "CBaseCombatCharacter::Weapon_ShootPosition": scope trace (entity name), the active weapon's "muzzleflash" attachment, else vecSrc plus the gun position offsets (+0x157c forward, +0x1578 right, +0x1580 up) along the angles of slot 221; returned by value
 	CBaseCombatCharacter *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)

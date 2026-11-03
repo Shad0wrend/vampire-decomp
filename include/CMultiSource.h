@@ -12,7 +12,8 @@ public:
 	void sub_100ac4e0(int func, int thinkTime, const char *szContext);	// CBaseEntity::ThinkSet (stub 0x10007fe5)
 	unsigned char vfunc147(CBaseEntity *pActivator);	// slot 147 "CMultiSource::IsTriggered": false while disabled (flag bit 0 of +0x204), true when every member entry of the list is set and the global state (when named) is on
 
-	char m_pad03e0[0x4d0 - 0x3e0];
+	char m_pad03e0[0x450 - 0x3e0];
+	EHANDLE m_rgEntities[32];	// 0x0450
 	int m_aMemberTriggered[32];	// 0x4d0: per member of the list (count at +0x568) the triggered flag
 	char m_pad0550[0x568 - 0x550];
 	int m_nMembers;	// 0x568

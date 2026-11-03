@@ -17,7 +17,10 @@ public:
 	char m_pad180[0x450 - 0x180];
 	unsigned char m_bEnabled450;
 	unsigned char m_b451;
-	char m_pad452[0x460 - 0x452];
+	char m_pad0452[0x454 - 0x452];
+	float m_radius;	// 0x0454
+	float m_targetLevel;	// 0x0458
+	float m_targetTime;	// 0x045c
 	int m_field460;
 public:
 	datamap_t * vfunc82();

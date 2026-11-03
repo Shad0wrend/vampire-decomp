@@ -34,14 +34,15 @@ public:
 	int m_iszEndEntity;	// 0x4fc
 	float m_flLife;	// 0x500
 	int m_nBoltWidth;	// 0x504
-	char m_pad0508[0x510 - 0x508];
+	int m_noiseAmplitude;	// 0x0508
+	int m_speed;	// 0x050c
 	float m_flRestrike;	// 0x510
 	char m_pad0514[0x518 - 0x514];
 	const char *m_iszSpriteName;	// 0x518
-	char m_pad051c[4];
+	int m_frameStart;	// 0x051c
 	const char *m_iszFileName;	// 0x520: the beam's file / sound name (vfunc104 precaches it, sub_100ff1b0 plays it)
 	char m_szFileName[0x80];	// 0x524: the file / sound path buffer vfunc104 fills
-	char m_pad05a4[0x5a8 - 0x5a4];
+	float m_radius;	// 0x05a4
 	char m_bFlag5a8;	// 0x5a8
 public:
     virtual datamap_t * vfunc82();

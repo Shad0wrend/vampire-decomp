@@ -28,9 +28,10 @@ public:
 	CAI_IPItem m_item5c0;
 	CAI_IPItem m_item5d8;
 	CAI_IPItem m_item5f0;
-	char m_pad608[0x630 - 0x608];
+	char m_pad0608[0x62c - 0x608];
+	int m_nNumFloors;	// 0x062c
 	int m_nFloor630;	// 0x630: the floor the elevator is at (-1 while it moves)
-	char m_pad634[0x638 - 0x634];
+	int m_nTargetFloor;	// 0x0634
 	CAI_IPItem m_item638;
 	CAI_IPItem m_item650;
 	CAI_IPItem m_item668;

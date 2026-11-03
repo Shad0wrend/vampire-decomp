@@ -127,13 +127,15 @@ public:
 	Vector m_vecE44;	// 0x0e44
 	Vector m_vecE50;	// 0x0e50
 	float m_fe5c;	// 0x0e5c: added to the forward y of slot 367 (slot 370)
-	char m_pad0e60[0x2464 - 0xe60];	// 0x0e60 .. 0x2463
+	char m_pad0e60[0x2460 - 0xe60];
+	int m_nControlClass;	// 0x2460	// 0x0e60 .. 0x2463
 	CHL2_PlayerMember2464 m_u2464;
-	char m_pad2468[0xC0];	// 0x2468 .. 0x2527
+	Vector m_vecMissPositions[16];	// 0x2468	// 0x2468 .. 0x2527
 	int m_n2528;
 	int m_n252c;
 	float m_f2530;
-	char m_pad2534[0x253c - 0x2534];
+	float m_flIdleTime;	// 0x2534
+	float m_flMoveTime;	// 0x2538
 	float m_flLastDamageTime;	// 0x253c: when the player last took damage
 	CHL2_Player *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_100140f1();	// as in CPhysForce (transplant)

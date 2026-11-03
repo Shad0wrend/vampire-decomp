@@ -34,7 +34,10 @@ public:
 	int m_n6420[5];	// +0x6420: five dwords copied to the new form by TransformationStart
 	char pad6434[0x6498 - 0x6434];
 	char m_bFlag6498;
-	char pad6499[0x64b8 - 0x6499];
+	char m_pad6499[0x649c - 0x6499];
+	Vector m_vJumpOrigin;	// 0x649c
+	Vector m_vJumpTarget;	// 0x64a8
+	float m_fJumpHeight;	// 0x64b4
 	float m_f64b8;	// +0x64b8
 	char pad64bc[0x6664 - 0x64bc];
 	COutputEvent m_OnTransformComplete;	// +0x6664 (0x18 bytes; ctor inlined by the factory npc_VVampireBoss 0x103c4fa0)
@@ -43,7 +46,7 @@ public:
 	const char *m_pBodyEmitterNames[4];	// +0x6684
 	const char *m_pDefaultNPCName;	// +0x6694
 	float m_HealthPercentRecord; // +0x6698
-	char pad669c[0x66a0 - 0x669c];
+	float m_fTaskStartTime;	// 0x669c
 	unsigned int m_hParticleEmitters[4];	// +0x66a0
 	EHANDLE m_hTransformPartner;	// +0x66b0: handle (default ctor stores -1 as an immediate, as the factories do)
 	int m_n66b4;	// +0x66b4: 4-byte member built by sub_103c51a0 (stub 0x100044d5); object size 0x66b8

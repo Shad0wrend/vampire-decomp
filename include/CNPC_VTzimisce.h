@@ -149,7 +149,9 @@ public:
 	CBaseEntity *m_p5ddc;	// 0x5ddc: the "target type 0x36b0 / 0x36b1" entity (only its +0x5dc dword is read)
 	char m_pad5de0[0x6078 - 0x5de0];
 	char m_b6078;	// 0x6078: set in Spawn
-	char m_pad6079[0x655c - 0x6079];
+	char m_pad6079[0x6458 - 0x6079];
+	float m_flIgnoreCollisionTimer;	// 0x6458
+	char m_pad645c[0x655c - 0x645c];
 	float m_f655c;	// 0x655c: 0.01f in vfunc593
 	float m_f6560;	// 1.0f
 	float m_f6564;	// 50.0f
@@ -175,7 +177,7 @@ public:
 	int m_nSize669c;	// 0x669c
 	int *m_pElems66a0;	// 0x66a0
 	float m_fl66a4;	// 0x66a4
-	char m_pad66a8[0x66ac - 0x66a8];
+	float m_flTaskFailTimer;	// 0x66a8
 	float m_fl66ac;	// 0x66ac: next-allowed timer (curtime + 2.5f)
 	float m_fl66b0;	// 0x66b0: next-allowed timer (curtime + 10.0f)
 	char m_b66b4;	// 0x66b4

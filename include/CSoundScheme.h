@@ -1,6 +1,7 @@
 // CSoundScheme: declared by pcdecomp transplant for 0x1022a1d0 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "string_t.h"
 #include "CBaseEntity.h"
 #include "datamap.h"
 
@@ -38,7 +39,10 @@ class CSoundScheme : public CBaseEntity
 {
 public:
 	// data after CBaseEntity (0x3e0); the raw fields follow the CUtlVector layout of utlvector.h
-	char m_pad03e0[0x458 - 0x3e0];
+	char m_pad03e0[0x450 - 0x3e0];
+	string_t m_sSchemeFile;	// 0x0450
+	bool m_bStartEnabled;	// 0x0454
+	char m_pad0455[0x458 - 0x455];
 	int m_n458;					// 0x458: the think stops when the global queue has this many items
 	char m_pad045c[0x580 - 0x45c];
 	CSoundSchemeSound *m_pSoundMemory;	// 0x580: the sound entry array (vector memory)

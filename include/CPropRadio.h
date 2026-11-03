@@ -24,7 +24,10 @@ public:
 	int sub_10096100();	// CBaseAnimating::vfunc124 (stub 0x10007d97), called directly
 	bool sub_1022c9e0();	// "CPropRadio::LoadRadioData" (stub 0x1000c8f1): reads the radio data file into the record vector at +0x738; true when it holds a record
 
-	char m_pad03e0[0x738 - 0x3e0];
+	char m_pad03e0[0x730 - 0x3e0];
+	int m_UseIcon;	// 0x0730
+	bool m_bActivated;	// 0x0734
+	char m_pad0735[0x738 - 0x735];
 	char *m_pRadioData;	// 0x738: records of 0x100 bytes (script string, sound name at +0x80)
 	int m_nRadioAlloc;	// 0x73c
 	int m_pad0740;

@@ -3,6 +3,7 @@
 // slots 117..264 are placeholders that keep slot 265 right.
 // slots 118, 120-122 are CBaseEntity's (not declared here: a placeholder with other parameters is a new virtual); 126 / 127 are the class's own 0x101ee770 / 0x101ee790.
 #pragma once
+#include "QAngle.h"
 
 #include "CBaseEntity.h"
 
@@ -78,11 +79,15 @@ public:
 	EHANDLE m_h730;	// 0x730: the entity the projectile retargets to / follows (resolved through the entity list)
 	int m_n734;	// 0x734: -1 when there is no such entity
 	float m_fl738;	// 0x738: the projectile's expiry / despawn time (0 = none)
-	char m_pad073c[0x758 - 0x73c];
+	Vector m_vecAttachOrigin;	// 0x073c
+	QAngle m_angAttachAngle;	// 0x0748
+	EHANDLE m_hOwner;	// 0x0754
 	unsigned char m_b758;	// 0x758: set by CVampireProjectile::vfunc91 (touch / damage path)
-	char m_pad0759[0x778 - 0x759];
+	bool m_bBulletParamSet;	// 0x0759
+	char m_pad075a[0x778 - 0x75a];
 	EHANDLE m_h778;	// 0x778: the entity the effect is attached to (CVampireProjectile::vfunc269)
-	char m_pad077c[0x87c - 0x77c];
+	char m_pad077c[0x878 - 0x77c];
+	int m_iProjectileFlags;	// 0x0878
 	const char *m_pszModel87c;	// 0x87c: the model name (null when none)
 	const char *m_pszSound880;	// 0x880: the sound name (null when none)
 	float m_fl884;	// 0x884: the spawn time (gpGlobals->curtime in vfunc103)

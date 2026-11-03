@@ -1,5 +1,6 @@
 // CAI_BaseHumanoid: humanoid NPC base. Only the members and slots that decompiled code needs are declared (slots as plain members).
 #pragma once
+#include "string_t.h"
 
 struct datamap_t;
 
@@ -26,7 +27,8 @@ public:
 	int m_pad5f98;
 	const char *m_pSceneName;	// 0x5f9c
 	unsigned int m_hScene;	// 0x5fa0
-	char pad3[0x5fb8 - 0x5fa4];
+	string_t m_iszExpressionOverride;	// 0x5fa4
+	char m_pad5fa8[0x5fb8 - 0x5fa8];
 	int m_nPose5fb8[10];	// 0x5fb8: pose parameter indices (body_trans_Y .. neck_trans)
 	int m_nPose5fe0[3];	// 0x5fe0: pose parameter indices reset by sub_1025efc0
 	int m_nPose5fec[13];	// 0x5fec: pose parameter indices (move_rightleft .. head_tilt)

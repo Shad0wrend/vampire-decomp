@@ -1,5 +1,6 @@
 // class CWorld: the world entity (derived from CBaseEntity); only the overridden slots needed so far are declared.
 #pragma once
+#include "string_t.h"
 
 #include "CBaseEntity.h"
 
@@ -31,7 +32,7 @@ public:
     char m_padWorld[0x450 - 0x3e0];
     const char *m_psz450;    // 0x0450: the chapter title string (DevMsg "Chapter title: %s", moved to the env_message entity's +0x450)
     const char *m_psz454;    // 0x0454: a string field handed to the object at 0x1070b248 (vtable slot 0)
-    char m_pad0458[0x45c - 0x458];
+    string_t m_iszLevelScript;	// 0x0458
     float m_flWaveHeight;    // 0x045c
     float m_vecWorldMins[3];    // 0x0460
     float m_vecWorldMaxs[3];    // 0x046c
@@ -41,7 +42,12 @@ public:
     char m_bColdWorld;    // 0x047c
     char m_pad047d[0x49c - 0x47d];
     int m_n49c;    // 0x049c: 0..2
-    char m_pad04a0[0x518 - 0x4a0];
+    bool m_bCopWaitArea;	// 0x04a0
+    char m_pad04a1[0x4a4 - 0x4a1];
+    float m_flCopWaitGrace;	// 0x04a4
+    bool m_bNosferatuTolerant;	// 0x04a8
+    bool m_bNoFrenzyArea;	// 0x04a9
+    char m_pad04aa[0x518 - 0x4aa];
     int m_n518;    // 0x0518
     float m_f51c;    // 0x051c
     float m_f520;    // 0x0520

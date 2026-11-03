@@ -38,7 +38,8 @@ public:
 	void sub_100bb0b0(const float *pPos);	// "CBeam::SetAbsStartPos"-like: without a (live) move parent at +0x25c hands pPos to slot 62; else brings the world position into the parent's space first (recalculating the absolute transform when dirty)
 	void sub_100bbef0(CGameTrace *pTrace);	// "CBeam::DoDamage"-like: refreshes the beam (sub_100bbbf0); when the trace hit something (fraction below 1, or started / stuck in a solid) and its entity takes damage, applies a damage record of (time since +0x454) * the rate at +0x458 (at least 1) along the trace direction; then stamps the current time at +0x454
 
-	char m_pad03e0[0x454 - 0x3e0];
+	char m_pad03e0[0x450 - 0x3e0];
+	float m_flFrameRate;	// 0x0450
 	union {
 		float m_flStartTime;	// 0x454: stamped with the current time by CEnvBeam::Spawn
 		float m_flLastUpdate454;	// CEnvLaser's name for it
@@ -48,7 +49,7 @@ public:
 	char m_pad0460[4];
 	unsigned int m_nBeamType;	// 0x464, low nibble is the end type
 	EHANDLE m_hBeamEnts[10];	// 0x468: the beam's entity handles, each set to -1 by the constructor (the end entity is [0])
-	char m_pad0490[0x4b8 - 0x490];
+	int m_nAttachIndex[10];	// 0x0490
 #define m_hEndEntity (*(unsigned int *)&m_hBeamEnts[0])	// 0x468, the name matched code uses
 #define m_nAttach (*(int (*)[3])&m_hBeamEnts[9])	// 0x48c: the attachment indices (matched code counts from 1, so [1] is 0x490)
 	union {
@@ -56,11 +57,12 @@ public:
 		float m_flWidth;	// CEnvLaser's name for it
 	};
 	float m_fEndWidth;	// 0x4bc
-	char m_pad04c0[0x4c8 - 0x4c0];
+	float m_fFadeLength;	// 0x04c0
+	float m_fHaloScale;	// 0x04c4
 	float m_flNoiseAmplitude;	// 0x4c8 (CEnvLaser / CEnvBeam KeyValue)
-	char m_pad04cc[0x4d0 - 0x4cc];
+	float m_fStartFrame;	// 0x04cc
 	float m_flTextureScroll;	// 0x4d0 (CEnvLaser KeyValue)
-	char m_pad04d4[0x4d8 - 0x4d4];
+	float m_flFrame;	// 0x04d4
 	float m_vecEndPos[3];	// 0x4d8
 public:
     virtual datamap_t * vfunc82();

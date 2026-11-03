@@ -28,7 +28,8 @@ public:
 	char pad_919[3];
 	float m_flTimer91c;
 	int m_nState920;
-	char pad_924[0x92c - 0x924];
+	float m_flAttackStartTime;	// 0x0924
+	float m_flDmgRadius;	// 0x0928
 	int m_n92c;
 	char m_bFinished930;
 	char m_b931;

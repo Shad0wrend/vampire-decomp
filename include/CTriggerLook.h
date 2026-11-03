@@ -11,7 +11,9 @@ public:
 
 	int sub_101c4f40();	// CBaseTrigger::vfunc124 (stub 0x100104e2), called directly
 
-	char m_pad0598[0x5b8 - 0x598];
+	char m_pad0598[0x5b0 - 0x598];
+	EHANDLE m_hLookTarget;	// 0x05b0
+	char m_pad05b4[0x5b8 - 0x5b4];
 	float m_flLookTimeTotal;	// 0x5b8
 	float m_flLookTimeLast;	// 0x5bc
 	void vfunc176(CBaseEntity *pOther);	// slot 176: the trigger's EndTouch, then the lookup time reset to -1

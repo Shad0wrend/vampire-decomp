@@ -44,7 +44,8 @@ public:
 	float m_flRange6690;	// 0x6690: the largest distance of a pick
 	char m_b6694;	// 0x6694
 	char m_b6695;	// 0x6695
-	char m_pad6696[0x669c - 0x6696];
+	char m_pad6696[0x6698 - 0x6696];
+	float m_flFrightDistance;	// 0x6698
 	float m_flDelay669c;	// 0x669c
 public:
     virtual datamap_t * vfunc82();

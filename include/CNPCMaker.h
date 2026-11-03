@@ -30,7 +30,7 @@ public:
 	char m_b66c1;	// 0x66c1
 	char m_b66c2;	// 0x66c2
 	char m_b66c3;	// 0x66c3
-	char m_pad66c4;
+	bool m_bNoDrop;	// 0x66c4
 	char m_b66c5;	// 0x66c5
 	char m_pad66c6[2];
 	int m_n66c8;	// 0x66c8: minimum distance of the player (0 = none)

@@ -9,7 +9,10 @@ public:
 
 	char m_pad0004[0x11c - 4];
 	const char *m_pszClassname11c;	// +0x11c: classname (null when unset)
-	char m_pad0120[0x468 - 0x120];
+	char m_pad0120[0x458 - 0x120];
+	float m_StartSize;	// 0x0458
+	float m_EndSize;	// 0x045c
+	char m_pad0460[0x468 - 0x460];
 	int m_nFlag468;	// +0x468
 	bool m_bIsSteamJet46c;	// +0x46c: set when the classname is env_steamjet
 	bool m_bFlag46d;	// +0x46d

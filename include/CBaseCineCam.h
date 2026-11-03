@@ -39,7 +39,8 @@ public:
 	const char *m_psz5dc;
 	const char *m_psz5e0;
 	const char *m_psz5e4;
-	char m_pad05e8[4];
+	bool m_bForcePlayerLook;	// 0x05e8
+	char m_pad05e9[0x5ec - 0x5e9];
 	Vector m_vecShot5ec;	// 0x05ec: the first shot position
 	Vector m_vecLook5f8;	// 0x05f8: sub_1006f670 result
 	Vector m_vecShot604;	// 0x0604: the second shot position

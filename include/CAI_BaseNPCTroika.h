@@ -2,6 +2,7 @@
 // New method declarations can go into CAI_BaseNPCTroika_ext.h (included at the end of the class body) so that
 // workers do not overwrite each other's edits of this large file.
 #pragma once
+#include "string_t.h"
 #include "CBaseAnimating.h"
 #include "CBaseCombatCharacter.h"
 #include "CBaseCombatWeapon.h"
@@ -309,11 +310,17 @@ public:
 	float m_f5db4;	// 0x5db4: a time (curtime + the parameter's value, or + 1000.0f for a non-positive one)
 	union { char m_pad5db8[0x5f8c - 0x5db8]; struct { char m_pad5db8b[0x5f34 - 0x5db8]; const char *m_pszBreakName5f34; int m_n5f38; struct CAI_ScheduleView *m_pSchedule5f3c; }; };	// 0x5f34: the name of the condition that broke the schedule (g_105cdd60 when unknown), 0x5f38 / 0x5f3c: the break record (0, the schedule)
 	char m_Output5f8c[0x18];	// 0x5f8c: a COutputEvent (0x18 bytes, view with (COutputEvent *)m_Output5f8c; fired with (m_p62ec, this, 0) by sub_102b53d0)
-	char m_pad5fa4[0x6010 - 0x5fa4];
+	char m_pad5fa4[0x6004 - 0x5fa4];
+	Vector m_KnockbackVelocity;	// 0x6004
 	unsigned int m_h6010;
-	char m_pad6014[0x6064 - 0x6014];
+	float m_fKnockbackWallHitFallTime;	// 0x6014
+	float m_fFinishingMoveBoneTrackLastTime;	// 0x6018
+	Vector m_vFinishingMoveBoneTrackLastPos;	// 0x601c
+	char m_pad6028[0x6064 - 0x6028];
 	int m_n6064;	// 0x6064: incremented by vfunc21 (a count of the things sub_102bf5d0 was told about)
-	char m_pad6068[0x6074 - 0x6068];
+	int m_knockbackType;	// 0x6068
+	float m_flLastMeleeStepbackTime;	// 0x606c
+	float m_flMeleeCanEnterTimer;	// 0x6070
 	float m_f6074;	// 0x6074: the next time slot 600 may ask again
 	char m_b6078;	// 0x6078: set while slot 599 / 600 hold the ranged position
 	char m_pad6079[0x607c - 0x6079];
@@ -329,7 +336,10 @@ public:
 	float m_f60a0;
 	int m_n60a4;
 	int m_n60a8;
-	char m_pad60ac[0x6244 - 0x60ac];
+	EHANDLE m_hFriendPlayer;	// 0x60ac
+	char m_pad60b0[0x623c - 0x60b0];
+	float m_flNextInvestigateSoundTime;	// 0x623c
+	EHANDLE m_hMoveTargetEnt;	// 0x6240
 	union {
 		float m_flCur6244[4];	// 0x6244: four think timestamps (vfunc614 stamps all four; CNPC_VCamera names them m_flCur6244)
 		struct {
@@ -355,10 +365,26 @@ public:
 	float m_fl6274;	// 0x6274: a timer (-1.0f when unset)
 	char m_b6278;	// 0x6278
 	char m_b6279;	// 0x6279: the skip flag of the update / AI think
-	char m_pad627a[0x628c - 0x627a];	// 0x627A .. 0x628B
+	char m_pad627a[0x627c - 0x627a];
+	float m_flLastInPlayerPVS;	// 0x627c
+	float m_flLastInPlayerLOS;	// 0x6280
+	float m_flNextPlayerLOS;	// 0x6284
+	float m_flNextCheckEnterPVSTime;	// 0x6288	// 0x627A .. 0x628B
 	EHANDLE m_h628c;
 	Vector m_vec6290;
-	char m_pad629c[0x62e8 - 0x629c];
+	Vector m_vecRight;	// 0x629c
+	Vector m_vecInitialPosition;	// 0x62a8
+	Vector m_qaInitialAngles;	// 0x62b4
+	float m_flOccludedDelayNormal;	// 0x62c0
+	float m_flOccludedDelayCover;	// 0x62c4
+	float m_flOccludedDelay;	// 0x62c8
+	float m_flOccludedReportTimeE;	// 0x62cc
+	float m_flOccludedReportTimeT;	// 0x62d0
+	float m_flOccludedReportTimeW;	// 0x62d4
+	string_t m_sInterestingPlaceGroups;	// 0x62d8
+	int m_iInterestingPlaceGroups;	// 0x62dc
+	string_t m_sHintGroups;	// 0x62e0
+	int m_iHintGroups;	// 0x62e4
 	char m_b62e8;	// 0x62e8: set while the entity m_p62ec is held (cleared at the end of sub_102b53d0; vfunc103 clears it, vfunc444 reads it)
 	char m_b62e9;	// 0x62e9: set by vfunc130 after the reload
 	char m_pad62ea[0x62ec - 0x62ea];
@@ -367,54 +393,126 @@ public:
 	int m_n6300;	// 0x6300: cached value (lazily looked up by sub_1029f780)
 	int m_n6304;	// 0x6304: cleared when the held entity m_p62ec is let go (sub_102b53d0)
 	char sub_102aa210(void *pInterest);	// 0x102aa210 "CAI_BaseNPCTroika" interest-activity helper called by vfunc444 (ret 4, returns a char): reads +0x63d4 (float next time), +0x65c / +0x65d bytes, m_n6304, m_flags14b8, +0x14bc flags, m_f5db4, m_nState0fec, +0x5d44 motor; figures the "interest activity" / "outof activity" from the pInterest object (sub_102daea0 / sub_102daef0 names, activity table 0x1094afe8, stride 0x44)
-	char m_pad6308[0x630c - 0x6308];
+	int m_iInterestingDeathActivity;	// 0x6308
 	char *m_p630c;	// 0x630c: an object with a flag dword at +0x64
 	int m_n6310;	// 0x6310: node index (-1 none), bounds checked in the navigator's net (+0x5d34 -> +0x2c) by vfunc130
 	int m_n6314;	// 0x6314: id handed to the node's sub_102f96e0 (-1 none); result goes to m_p630c
 	float m_f6318;	// 0x6318
-	char m_pad631c[0x6338 - 0x631c];
+	float m_flNextPedInteractTime;	// 0x631c
+	float m_flGoalTolerance;	// 0x6320
+	float m_flInsideInterruptDistanceSqr;	// 0x6324
+	float m_flOutsideInterruptDistanceSqr;	// 0x6328
+	float m_flInterruptTime;	// 0x632c
+	float m_flWaitFinishedDelta;	// 0x6330
+	bool m_bWaitFinishedSet;	// 0x6334
+	char m_pad6335[0x6338 - 0x6335];
 	int m_n6338;	// 0x6338: the investigate mode (0..6)
 	int m_n633c;	// 0x633c: the combat investigate mode (0..6)
-	char m_pad6340[0x63b8 - 0x6340];
+	bool m_bFullInvestigate;	// 0x6340
+	char m_pad6341[0x6344 - 0x6341];
+	int m_iBrightRoutePenalty;	// 0x6344
+	char m_pad6348[0x6368 - 0x6348];
+	int m_iPLSupernaturalLevelWitnessed;	// 0x6368
+	int m_iPLCriminalActProcessed;	// 0x636c
+	int m_iPLSupernaturalActProcessed;	// 0x6370
+	Vector m_vecPLSupernaturalLocation;	// 0x6374
+	Vector m_vecPLCriminalLocation;	// 0x6380
+	EHANDLE m_hCriminalOffender;	// 0x638c
+	EHANDLE m_hSupernaturalOffender;	// 0x6390
+	bool m_bPLSupernaturalActFleeOnly;	// 0x6394
+	char m_pad6395[0x6398 - 0x6395];
+	float m_flCriminalIgnoreTimer;	// 0x6398
+	float m_flSupernaturalIgnoreTimer;	// 0x639c
+	float m_flNosferatuIgnoreTimer;	// 0x63a0
+	float m_flCriminalWitnessedTimer;	// 0x63a4
+	float m_flSupernaturalWitnessedTimer;	// 0x63a8
+	string_t m_sPlayerReaction;	// 0x63ac
+	int m_iNPCPerception;	// 0x63b0
+	float m_flSeekDistBase;	// 0x63b4
 	float m_f63b8;
-	char m_pad63bc[0x63d8 - 0x63bc];
+	float m_flHearingScalarBase;	// 0x63bc
+	float m_flHearingScalarInspection;	// 0x63c0
+	float m_flStealthVisionScalar;	// 0x63c4
+	float m_flStealthVisionCone;	// 0x63c8
+	float m_flStealthHearingDist;	// 0x63cc
+	float m_flNextListenTime;	// 0x63d0
+	float m_flNextInterestChangeTime;	// 0x63d4
 	char m_b63d8;
-	char m_pad63d9;
+	bool m_bUseInteresting;	// 0x63d9
 	char m_b63da;
-	char m_pad63db[0x63f0 - 0x63db];
+	char m_pad63db[0x63dc - 0x63db];
+	float m_flWeaponScareTime;	// 0x63dc
+	bool m_fSavePositionWalk;	// 0x63e0
+	char m_pad63e1[0x63e4 - 0x63e1];
+	int m_eFaceAnim;	// 0x63e4
+	float m_flFaceYawDiff;	// 0x63e8
+	float m_flDesiredMoveYaw;	// 0x63ec
 	char m_b63f0;	// 0x63f0
-	char m_pad63f1[0x63f8 - 0x63f1];
+	char m_pad63f1[0x63f4 - 0x63f1];
+	int m_eAlertLevel;	// 0x63f4
 	int m_n63f8;	// 0x63f8
-	char m_pad63fc[0x6420 - 0x63fc];
+	bool m_bGoToIdleState;	// 0x63fc
+	bool m_bLeaningLeft;	// 0x63fd
+	char m_pad63fe[0x6400 - 0x63fe];
+	float m_flNextCoverLOSCheck;	// 0x6400
+	int m_iFailedCoverLOSChecks;	// 0x6404
+	bool m_bForceCoverLOSCheck;	// 0x6408
+	char m_pad6409[0x640c - 0x6409];
+	int m_iPeekOutCount;	// 0x640c
+	bool m_bAggressiveAnims;	// 0x6410
+	char m_pad6411[0x6414 - 0x6411];
+	int m_iCowerAnimOffset;	// 0x6414
+	float m_flNextSeeSoundSourceTime;	// 0x6418
+	float m_flNextFleeSoundTime;	// 0x641c
 	int m_nRoll6420;	// 0x6420 .. 0x642c: the roll thresholds of slot 606
 	int m_nRoll6424;
 	int m_nRoll6428;
 	int m_nRoll642c;
-	char m_pad6430[5];
+	int m_iPercentOccludedChase;	// 0x6430
+	bool m_bAllowAlertLookaround;	// 0x6434
 	char m_b6435;
-	char m_pad6436[0x6440 - 0x6436];
+	bool m_bAllowKickHintUse;	// 0x6436
+	char m_pad6437[0x6438 - 0x6437];
+	float m_flKickPhysicsPropSearchTimer;	// 0x6438
+	EHANDLE m_hKickPhysicsProp;	// 0x643c
 	float m_f6440;
 	CBaseEntity *m_p6444;
 	unsigned int m_h6448;
 	int m_n644c;
 	float m_f6450;
-	char m_pad6454[0x6478 - 0x6454];
+	int m_actPreOpenDoor;	// 0x6454
+	float m_flIgnoreCollisionTimer;	// 0x6458
+	Vector m_vecHuntPatrolTarget;	// 0x645c
+	Vector m_vecHeldPosition;	// 0x6468
+	float m_flHuntExpireTimer;	// 0x6474
 	const char *m_psz6478;
 	EHANDLE m_h647c;
 	const char *m_psz6480;	// 0x6480: follower type name (vfunc130 passes it or the empty string 0x106b8540 to sub_102c4680)
-	char m_pad6484[0x6495 - 0x6484];
+	char m_pad6484[0x6490 - 0x6484];
+	int m_iBurstFireCount;	// 0x6490
+	bool m_bReturnToInitialPos;	// 0x6494
 	char m_b6495;
 	char m_b6496;
 	char m_b6497;
-	char m_pad6498[0x64bc - 0x6498];
+	bool m_bJumping;	// 0x6498
+	char m_pad6499[0x649c - 0x6499];
+	Vector m_vJumpOrigin;	// 0x649c
+	Vector m_vJumpTarget;	// 0x64a8
+	float m_fJumpHeight;	// 0x64b4
+	float m_fJumpGravity;	// 0x64b8
 	int m_n64bc;
 	char m_b64c0;
-	char m_pad64c1[0x64c8 - 0x64c1];
+	char m_pad64c1[0x64c4 - 0x64c1];
+	string_t m_sDefaultCamera;	// 0x64c4
 	int m_n64c8;	// 0x64c8: the table index (stance) the NPC is in
 	float m_f64cc;
-	char m_pad64d0[0x64e0 - 0x64d0];
+	char m_pad64d0[0x64d4 - 0x64d0];
+	int m_nCurrDisposition;	// 0x64d4
+	float m_flMinBlink;	// 0x64d8
+	float m_flMaxBlink;	// 0x64dc
 	char m_b64e0;
-	char m_pad64e1[3];
+	bool m_bInStanceChange;	// 0x64e1
+	char m_pad64e2[0x64e4 - 0x64e2];
 	float m_f64e4;	// 0x64e4: curtime of the last stance change
 	int m_n64e8;	// 0x64e8: the table index (disposition) the slot 105 / 104 precache found
 
@@ -425,7 +523,14 @@ public:
 	float m_f6550;	// 0x6550: the volume of the sound sub_102c2680 plays
 	unsigned int m_h6554;
 	const char *m_pszDisposition6558;	// 0x6558: the disposition name handed to sub_102c0f70 on activation (an empty string when null)
-	char m_pad655c[0x658c - 0x655c];
+	char m_pad655c[0x6570 - 0x655c];
+	float m_blinkTimer;	// 0x6570
+	float m_flLoudExpressionTime;	// 0x6574
+	int m_nEyeFidgetStep;	// 0x6578
+	float m_flEyeFidgetTime;	// 0x657c
+	float m_flEyeFidgetStepTime;	// 0x6580
+	float m_flMinEyeFidget;	// 0x6584
+	float m_flMaxEyeFidget;	// 0x6588
 	CTroikaPatrolRef m_ref658c;	// 0x658c: first patrol path holder (CTroikaReqHolder layout: record at +4)
 	CTroikaPatrolRef m_ref6594;	// 0x6594: second patrol path holder
 	char m_pad659c[0x65a0 - 0x659c];

@@ -1,5 +1,6 @@
 // CRotDoor: rotating door entity (CBaseEntity based); only what decompiled code needs.
 #pragma once
+#include "QAngle.h"
 
 #include "CBaseEntity.h"
 #include "CDoorEventList.h"
@@ -54,9 +55,13 @@ public:
 	CHandle<CRotDoor> m_hLinked630;	// +0x630: the linked door
 	char m_pad0634[0x655 - 0x634];
 	bool m_bReverse655;	// +0x655: opens away from the activator
-	char m_pad0656[0x674 - 0x656];
+	char m_pad0656[0x658 - 0x656];
+	Vector m_vecAxis;	// 0x0658
+	float m_flDistance;	// 0x0664
+	QAngle m_angRotationClosed;	// 0x0668
 	Vector m_angTarget674;	// +0x674: the angles the door is turning to
-	char m_pad0680[0x698 - 0x680];
+	QAngle m_angRotationOpenBack;	// 0x0680
+	QAngle m_angGoal;	// 0x068c
 	Vector m_vecMins698;	// +0x698: the volume for the +0x52c angles
 	Vector m_vecMaxs6a4;	// +0x6a4
 	Vector m_vecCenter6b0;	// +0x6b0: its centre

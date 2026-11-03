@@ -11,7 +11,10 @@ class CGibShooter
 public:
     char m_pad0000[0x17c];
     int m_nNextThink;    // 0x17c (raw bits of the float)
-    char m_pad0180[0x45c - 0x180];
+    char m_pad0180[0x450 - 0x180];
+    int m_iGibs;	// 0x0450
+    int m_iGibCapacity;	// 0x0454
+    int m_iGibMaterial;	// 0x0458
     int m_nGibModel45c;    // 0x45c: the model index of the gib model (engine slot 13, see vfunc104)
     float m_flGibVelocity;    // 0x460: the speed the gibs are shot with
     float m_flVariance;    // 0x464

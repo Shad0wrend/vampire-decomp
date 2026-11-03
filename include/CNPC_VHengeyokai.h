@@ -85,7 +85,9 @@ public:
 	unsigned int m_flags5d8c;	// 0x5d8c: bit 31 is cleared by the cancel path
 	char m_pad5d90[0x6078 - 0x5d90];
 	char m_b6078; // 0x6078: set by slot 600
-	char m_pad6079[0x6664 - 0x6079];
+	char m_pad6079[0x6458 - 0x6079];
+	float m_flIgnoreCollisionTimer;	// 0x6458
+	char m_pad645c[0x6664 - 0x645c];
 	unsigned int m_h6664;	// 0x6664: entity handle (the target of the bone attack)
 	int m_n6668;	// 0x6668: index of the bone name used by the attack
 	float m_fl666c;	// 0x666c

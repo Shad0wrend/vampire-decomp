@@ -14,7 +14,7 @@ public:
 	char m_pad080e[0x810 - 0x80e];
 	int m_nScreenW810;	// 0x810: clamped to [4, 0x24] by vfunc103 (Spawn)
 	int m_nScreenH814;	// 0x814: clamped to [2, 0x18] by vfunc103
-	char m_pad0818[4];
+	int m_nColorScheme;	// 0x0818
 	int m_n081c;	// 0x81c: cleared by vfunc103
 	int m_n0820;	// 0x820: cleared by vfunc103
 	char m_b0824;	// 0x824: cleared by vfunc103

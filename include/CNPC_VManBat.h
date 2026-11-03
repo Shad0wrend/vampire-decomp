@@ -18,7 +18,9 @@ public:
 	int m_n156c;	// 0x156c
 	char m_pad1570[0x628c - 0x1570];
 	unsigned int m_h628c;	// entity handle of the bat's target
-	char m_pad6290[0x6668 - 0x6290];
+	char m_pad6290[0x6664 - 0x6290];
+	bool m_bReachedMoveGoal;	// 0x6664
+	char m_pad6665[0x6668 - 0x6665];
 	void *m_pSecure6668;	// 0x6668: vptr of an embedded MvsnSec::CSecureTypeBase<CPfnTraits0,int,...> (vftable 0x104bc684, slot 0 = 0x10390060); the constructor stores it, then the scrambled value (+0x6670) and the two bytes +0x666c / +0x666d come from sub_103908c0 and a stack temp
 	char m_bSecure666c;	// 0x666c
 	char m_bSecure666d;	// 0x666d
@@ -29,7 +31,7 @@ public:
 	float m_f667c;	// 0x667c
 	EHANDLE m_h6680;	// 0x6680: entity handle (the bat's carried character, released by sub_1038f020)
 	float m_f6684;
-	char m_pad6688[0x668c - 0x6688];
+	class CBaseEntity *m_pFlyNode;	// 0x6688
 	unsigned int m_h668c;	// entity handle of the ragdoll the bat holds (released by sub_1038f660)
 	unsigned int m_h6690;	// entity handle released by sub_1038f660
 	char m_b6694;	// handed to the ragdoll when it is let go
@@ -39,9 +41,10 @@ public:
 	EHANDLE m_h66a0;	// 0x66a0: entity handle removed by sub_1038f020
 	unsigned int m_h66a4;	// entity handle released by vfunc144
 	EHANDLE m_h66a8;	// 0x66a8: entity handle removed by sub_1038f020
-	char m_pad66ac[0x66b0 - 0x66ac];
+	EHANDLE m_hFlyByTarget;	// 0x66ac
 	char m_b66b0;	// set once the minions have been told about the target
-	char m_pad66b1[7];
+	char m_pad66b1[0x66b4 - 0x66b1];
+	float m_flCoastTimer;	// 0x66b4
 	char m_b66b8;
 	void vfunc420();	// slot 420 (plain member): stamps +0x6678 / +0x667c with curtime + 2.3 / 0.1, clears the bytes +0x66b0 / +0x66b8, CAI_BaseNPC::vfunc420, then sets the global 0x109340d8 to 0x14
 	void sub_1029a0b0();	// CAI_BaseNPC::vfunc420 (stub 0x1000c531), called directly

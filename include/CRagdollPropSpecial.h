@@ -31,7 +31,9 @@ public:
 #undef CRPS_V
 #undef CRPS_V10
 
-	char m_pad03e0[0x103c - 0x3e0];
+	char m_pad03e0[0x768 - 0x3e0];
+	EHANDLE m_hBreaker;	// 0x0768
+	char m_pad076c[0x103c - 0x76c];
 	char m_b103c;
 	char m_pad103d[0x1040 - 0x103d];
 	float m_f1040;

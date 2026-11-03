@@ -1,6 +1,7 @@
 // CSecCamera: declared by pcdecomp transplant for 0x1020b370 from CKeepUpright (0x10029200);
 // only what matched code needs, as plain members.
 #pragma once
+#include "string_t.h"
 #include "CBaseEntity.h"
 #include "COutputEvent.h"
 
@@ -44,17 +45,25 @@ public:
 	char m_b77c;	// 0x77c
 	char m_pad77d[0x780 - 0x77d];
 	float m_flF780;	// 0x780: divisor of the sweep length
-	char m_pad784[0x788 - 0x784];
+	float m_fPauseTime;	// 0x0784
 	float m_flF788;	// 0x788: the sweep distance (truncated, made positive)
 	float m_flF78c;	// 0x78c: m_flF788 as a fraction of m_flF780
-	char m_pad790[0x798 - 0x790];
+	float m_fBlindDist;	// 0x0790
+	float m_fVisRange;	// 0x0794
 	float m_flF798;	// 0x798: the swing angle in degrees (becomes its cosine at Spawn)
 	int m_nState79c;	// 0x79c
 	float m_flNextStateTime7a0;	// 0x7a0
-	char m_pad07a4[0x7a8 - 0x7a4];
+	float m_nLookTimer;	// 0x07a4
 	Vector m_vecStart7a8;	// 0x7a8: the angles at Spawn
 	Vector m_vecEnd7b4;	// 0x7b4: those angles plus the sweep along the movedir
-	char m_pad07c0[0x7f4 - 0x7c0];
+	float m_fZoomTime;	// 0x07c0
+	string_t m_sPanSnd;	// 0x07c4
+	string_t m_sZoomInSnd;	// 0x07c8
+	string_t m_sZoomOutSnd;	// 0x07cc
+	string_t m_sAlarmSnd;	// 0x07d0
+	char m_pad07d4[0x7d8 - 0x7d4];
+	bool m_bPlayerSpotted;	// 0x07d8
+	char m_pad07d9[0x7f4 - 0x7d9];
 	COutputEvent m_Output7f4;	// 0x7f4
 	COutputEvent m_Output80c;	// 0x80c
 public:

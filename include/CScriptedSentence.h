@@ -2,6 +2,7 @@
 // Constructor (the factory scripted_sentence, 0x101a9cb0): CBaseEntity(0), CPointEntity vftable, the two outputs
 // (+0x47c, +0x494), CScriptedSentence vftable.
 #pragma once
+#include "string_t.h"
 
 #include "CPointEntity.h"
 #include "COutputEvent.h"
@@ -21,7 +22,18 @@ public:
 	datamap_t * vfunc82();
 	int vfunc117();
 
-	char m_pad0450[0x47c - 0x450];	// the sentence fields at +0x450..+0x47c
+	string_t m_iszSentence;	// 0x0450
+	string_t m_iszEntity;	// 0x0454
+	float m_flRadius;	// 0x0458
+	float m_flDelay;	// 0x045c
+	float m_flRepeat;	// 0x0460
+	int m_iSoundLevel;	// 0x0464
+	int m_TempAttenuation;	// 0x0468
+	float m_flVolume;	// 0x046c
+	bool m_active;	// 0x0470
+	char m_pad0471[0x474 - 0x471];
+	string_t m_iszListener;	// 0x0474
+	unsigned int m_pActivator;	// 0x0478	// the sentence fields at +0x450..+0x47c
 	COutputEvent m_Output47c;	// 0x47c: constructed by the factory (0x10002ddd)
 	COutputEvent m_Output494;	// 0x494
 };

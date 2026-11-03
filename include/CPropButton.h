@@ -20,7 +20,9 @@ public:
 
 	char m_pad03e0[0x670 - 0x3e0];
 	int m_nCurrent670;	// 0x670: the current position index
-	char m_pad0674[0x738 - 0x674];
+	char m_pad0674[0x730 - 0x674];
+	int m_UseIcon;	// 0x0730
+	int m_LockedIcon;	// 0x0734
 	char m_bLocked;	// 0x738
 	char m_pad0739[3];
 	int m_nPosition;	// 0x73c

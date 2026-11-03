@@ -5,6 +5,7 @@
 // New method declarations can go into CBasePlayer_ext.h (included at the end of the method list) so that
 // workers do not overwrite each other's edits of this large file.
 #pragma once
+#include "string_t.h"
 #include "CRestore.h"
 
 #include "Vector.h"
@@ -270,7 +271,9 @@ public:
 	unsigned int m_h155C;	// 0x155C: entity handle
 	char m_pad1560[4];	// 0x1560 .. 0x1563
 	float m_f1564;
-	char m_pad1568[0x19b8 - 0x1568];	// 0x1568 .. 0x19B7
+	char m_pad1568[0x19b0 - 0x1568];
+	float m_flLastCombatAnimTime;	// 0x19b0
+	char m_pad19b4[0x19b8 - 0x19b4];	// 0x1568 .. 0x19B7
 	float m_flFadeStart19B8;	// 0x19B8: when the fade began
 	float m_flFadeDuration19BC;	// 0x19BC: its length (negative fades out)
 	EHANDLE m_hFadeEnt19C0;	// 0x19C0
@@ -280,42 +283,95 @@ public:
 	float m_flFadeValue19D4;	// 0x19D4
 	char m_FadeStack19D8[0xc];	// 0x19D8: a CUtlVector<CBasePlayerFadeRec> (view FadeStack()), size at +0x19E4
 	int m_nFade19E4;	// 0x19E4
-	char m_pad19E8[0x19f6 - 0x19e8];	// 0x19E8 .. 0x19F5
+	char m_pad19e8[0x19f4 - 0x19e8];
+	bool m_bObfWasMoving;	// 0x19f4
+	char m_pad19f5[0x19f6 - 0x19f5];	// 0x19E8 .. 0x19F5
 	CUtlVector<CBasePlayerFadeRec> &FadeStack() { return *(CUtlVector<CBasePlayerFadeRec> *)m_FadeStack19D8; }
 	bool m_b19F6;
 	char m_b19F7;	// 0x19F7: set by sub_1015ef40
 	float m_flExperience19F8;	// 0x19F8: the experience points gained (sub_1015f8b0 adds its first argument)
 	float m_flExperience19FC;	// 0x19FC: the fraction towards the next 100 points (rolls over at 100.0f, the whole hundreds go to stat 0x22)
-	char m_pad1A00[0x1a84 - 0x1a00];
+	char m_pad1a00[0x1a80 - 0x1a00];
+	bool m_bDrawViewmodel;	// 0x1a80
+	char m_pad1a81[0x1a84 - 0x1a81];
 	int m_n1A84;	// 0x1A84
 	char m_pad1A88[0x1a94 - 0x1a88];
 	int m_n1A94;	// 0x1A94
-	char m_pad1A98[0x1b6c - 0x1a98];	// 0x1A98 .. 0x1B6B
+	char m_pad1a98[0x1adc - 0x1a98];
+	float m_flClientVActiveDisciplineDurations[17];	// 0x1adc
+	float m_flClientBeginVActiveDisciplineTimers[17];	// 0x1b20
+	float m_flActiveObfuscateUpdateTimer;	// 0x1b64
+	char m_pad1b68[0x1b6c - 0x1b68];	// 0x1A98 .. 0x1B6B
 	char m_b1B6C;	// 0x1B6C: cleared by the feeding handlers (vfunc380, vfunc422), set by vfunc419 / vfunc423
-	char m_pad1B6D[3];
+	bool m_bAllowResyncHandsOffset;	// 0x1b6d
+	char m_pad1b6e[0x1b70 - 0x1b6e];
 	int m_nRangeStart1B70;	// 0x1B70: low half of the value of the selected command slot (type 1)
 	char m_bFlag1B74;	// 0x1B74
 	char m_pad1B75[3];
 	int m_nRangeEnd1B78;	// 0x1B78: high half of that value, minus one
-	char m_pad1B7C[0x1c5c - 0x1b7c];	// 0x1B7C .. 0x1C5B
+	char m_pad1b7c[0x1b84 - 0x1b7c];
+	float m_flRunForwardSpeeds[8];	// 0x1b84
+	float m_flRunSideSpeeds[8];	// 0x1ba4
+	float m_flWalkForwardSpeeds[8];	// 0x1bc4
+	float m_flWalkSideSpeeds[8];	// 0x1be4
+	float m_flSneakForwardSpeeds[8];	// 0x1c04
+	float m_flSneakSideSpeeds[8];	// 0x1c24
+	int m_nDefaultTargetModel;	// 0x1c44
+	int m_nDefaultSpreadLModel;	// 0x1c48
+	int m_nDefaultSpreadRModel;	// 0x1c4c
+	string_t m_sTargetmodel;	// 0x1c50
+	string_t m_sPlayerName;	// 0x1c54
+	EHANDLE m_hMeleeOpponent;	// 0x1c58	// 0x1B7C .. 0x1C5B
 	unsigned int m_h1C5C;	// 0x1C5C: entity handle (the target the player took over)
 	EHANDLE m_hEnt1C60;	// 0x1C60: entity handle (the slot 167 object)
-	char m_pad1C64[0x1c8c - 0x1c64];	// 0x1C64 .. 0x1C8B
+	EHANDLE m_pViewWeapon;	// 0x1c64
+	char m_pad1c68[0x1c70 - 0x1c68];
+	float m_flStealthVisionScalar;	// 0x1c70
+	float m_flStealthVisionCone;	// 0x1c74
+	float m_flStealthHearingDist;	// 0x1c78
+	int m_nNextLightPositionTest;	// 0x1c7c
+	float m_flLightOnFeet;	// 0x1c80
+	float m_flLightOnCenter;	// 0x1c84
+	float m_flLightOnHead;	// 0x1c88	// 0x1C64 .. 0x1C8B
 	float m_f1C8C;	// 0x1C8C: a light value (CHL2_Player::vfunc471 writes 1.0f)
-	char m_pad1C90[0x1cb8 - 0x1c90];
+	char m_pad1c90[0x1cb0 - 0x1c90];
+	bool m_bPlayerAnimCyclePlaying;	// 0x1cb0
+	bool m_bPlayerAnimIdleFinished;	// 0x1cb1
+	char m_pad1cb2[0x1cb4 - 0x1cb2];
+	int m_aLastplayerAnim;	// 0x1cb4
 	unsigned int m_h1CB8;	// 0x1cb8: entity handle compared with the use entity in sub_10181780
 	unsigned int m_h1CBC;	// 0x1cbc: second entity handle compared in sub_10181780
-	char m_pad1CC0[0x1cd8 - 0x1cc0];	// 0x1CC0 .. 0x1CD7
+	EHANDLE m_hClosestNPC;	// 0x1cc0
+	float m_flClosestNPCDist;	// 0x1cc4
+	int m_iClosestNPCSense;	// 0x1cc8
+	int m_LevelSupernaturalAct;	// 0x1ccc
+	char m_pad1cd0[0x1cd8 - 0x1cd0];	// 0x1CC0 .. 0x1CD7
 	unsigned int m_nCriminalLevelEnc;	// 0x1CD8, scrambled by the xor/and/add mask chain
-	char m_pad1CDC[4];	// 0x1CDC .. 0x1CDF
+	int m_LevelInvestigateAct;	// 0x1cdc	// 0x1CDC .. 0x1CDF
 	union {
 		int m_n1CE0;
 		float m_f1CE0;	// 0x1CE0: time the criminal level lapses (-1.0f bits = none)
 	};
-	char m_pad1CE4[0x1d40 - 0x1ce4];
+	float m_flSupernaturalActTimer;	// 0x1ce4
+	int m_iCriminalActCount;	// 0x1ce8
+	int m_iSupernaturalActCount;	// 0x1cec
+	char m_pad1cf0[0x1cf8 - 0x1cf0];
+	float m_flSpawnResponseCopsTimer;	// 0x1cf8
+	int m_iSpawnResponseCopsLevel;	// 0x1cfc
+	EHANDLE m_hSpawnResponseCopsNPC;	// 0x1d00
+	Vector m_vecSpawnResponseCopsLocation;	// 0x1d04
+	int m_iCopsInPursuitCount;	// 0x1d10
+	int m_iHuntersInPursuitCount;	// 0x1d14
+	bool m_bInHeightenedAlert;	// 0x1d18
+	char m_pad1d19[0x1d1c - 0x1d19];
+	float m_flHeightenedAlertExpireTimer;	// 0x1d1c
+	float m_flSetOnHeadTimer;	// 0x1d20
+	char m_pad1d24[0x1d40 - 0x1d24];
 	unsigned int m_h1D40;	// 0x1d40: entity handle that sets bit 0x40 of the flag dword in sub_10181780
 	unsigned int m_h1D44;	// 0x1d44: the second entity handle of that test
-	char m_pad1D48[0x1d68 - 0x1d48];	// 0x1D48 .. 0x1D67
+	char m_pad1d48[0x1d60 - 0x1d48];
+	int m_iVFlags;	// 0x1d60
+	char m_pad1d64[0x1d68 - 0x1d64];	// 0x1D48 .. 0x1D67
 	struct CBasePlayerQuestRecord *m_pQuestRecords1D68;	// 0x1D68: the saved quest records (0x40 bytes each)
 	char m_pad1D6C[0x1d74 - 0x1d6c];
 	int m_nQuestRecords1D74;	// 0x1D74: their count
@@ -327,23 +383,32 @@ public:
 	float m_f1DA8;	// 0x1DA8: when the next random view punch is due
 	int m_n1DAC;	// 0x1DAC: sent with the quest journal message
 	EHANDLE m_hControllerNPC1db0;	// 0x1DB0: the NPC the player controls (GetControllerNPC)
-	char m_pad1DB4[0x1dd0 - 0x1db4];	// 0x1DB4 .. 0x1DCF
+	char m_pad1db4[0x1dbc - 0x1db4];
+	float m_flMasqueradeTimerNext;	// 0x1dbc
+	bool m_bDebugSaved;	// 0x1dc0
+	char m_pad1dc1[0x1dc8 - 0x1dc1];
+	bool m_bCopWaitDelayed;	// 0x1dc8
+	char m_pad1dc9[0x1dcc - 0x1dc9];
+	int m_iCopWaitCount;	// 0x1dcc	// 0x1DB4 .. 0x1DCF
 	float m_f1DD0;	// 0x1DD0: curtime stamp (vfunc21 / vfunc22 / vfunc23, reset by sub_10178140)
-	char m_pad1DD4[4];	// 0x1DD4 .. 0x1DD7
+	float m_flLastTimeAttackTriggered;	// 0x1dd4	// 0x1DD4 .. 0x1DD7
 	float m_f1DD8;	// 0x1DD8: curtime stamp of the last slot 24 call
 	float m_f1DDC;	// 0x1DDC: the attack meter (0..99)
-	char m_pad1DE0[4];	// 0x1DE0 .. 0x1DE3
+	float m_fClientCurrentRangedAccuracy;	// 0x1de0	// 0x1DE0 .. 0x1DE3
 	float m_f1DE4;	// 0x1DE4
 	float m_f1DE8;	// 0x1DE8
-	char m_pad1DEC[0x1df4 - 0x1dec];	// 0x1DEC .. 0x1DF3
+	float m_fNoAttackTimer;	// 0x1dec
+	EHANDLE m_hLastRangedWeapon;	// 0x1df0	// 0x1DEC .. 0x1DF3
 	char m_b1DF4;
-	char m_pad1DF5[0x1dfc - 0x1df5];	// 0x1DF5 .. 0x1DFB
+	char m_pad1df5[0x1df8 - 0x1df5];
+	int m_iForceCameraType;	// 0x1df8	// 0x1DF5 .. 0x1DFB
 	EHANDLE m_hEnt1DFC;	// 0x1DFC: entity handle, cleared by sub_10183330
 	char m_pad1E00[4];	// 0x1E00 .. 0x1E03
 	unsigned int m_hEnt1E04;	// entity handle
 	int m_n1E08;
 	int m_n1E0C;
-	char m_pad1E10[0x18];	// 0x1E10 .. 0x1E27
+	char m_pad1e10[0x1e24 - 0x1e10];
+	int m_lBirthday;	// 0x1e24	// 0x1E10 .. 0x1E27
 	CUtlVector<GLOBAL_EMAIL> m_GlobalEmail;	// 0x1E28: the global email flag records (0x240 bytes each)
 	char m_pad1E3C[0x38];	// 0x1E3C .. 0x1E73
 	unsigned int m_flags1E74;
@@ -370,13 +435,19 @@ public:
 	unsigned int m_nFlags2088;	// 0x2088: the flag word (bit 0 tested by CWeaponUnarmed::vfunc319; see also vfunc436, sub_1016b090 'new buttons')
 	void sub_1016b090(unsigned int buttons);	// button-state update: prev buttons -> +0x2094, new buttons -> +0x2088	// 0x2078 .. 0x208B
 	unsigned char m_b208C;	// 0x208C
-	char m_pad208D[0x20a8 - 0x208d];	// 0x208D .. 0x20A7
+	char m_pad208d[0x2090 - 0x208d];
+	int m_afButtonReleased;	// 0x2090
+	int m_afButtonLast;	// 0x2094
+	char m_pad2098[0x20a8 - 0x2098];	// 0x208D .. 0x20A7
 	char m_b20A8;
-	char m_pad20A9[0x20cc - 0x20a9];
+	char m_szAnimExtension[32];	// 0x20a9
+	char m_pad20c9[0x20cc - 0x20c9];
 	void *m_pCmd20cc;	// 0x20cc: the user command being run (CPlayerMove::StartCommand stores it)
-	char m_pad20D0[0x20e8 - 0x20d0];	// 0x20D0 .. 0x20E7
+	Vector m_vecAdditionalPVSOrigin;	// 0x20d0
+	Vector m_vecCameraPVSOrigin;	// 0x20dc	// 0x20D0 .. 0x20E7
 	int m_n20E8;	// 0x20E8: a message value, 0 on death (vfunc144 sends it with engine slot 67 when g_10726020 is set)
-	char m_pad20EC[0x20f4 - 0x20ec];	// 0x20EC .. 0x20F3
+	float m_iRespawnFrames;	// 0x20ec
+	int m_afPhysicsFlags;	// 0x20f0	// 0x20EC .. 0x20F3
 	char m_b20F4;	// vehicle active flag
 	char m_pad20F5[3];	// 0x20F5 .. 0x20F7
 	unsigned int m_hVehicle;	// 0x20F8: handle of the vehicle's entity (-1 when none)
@@ -385,32 +456,65 @@ public:
 	CBasePlayerPart *m_pPart2104;	// 0x2104
 	CBasePlayerPart *m_pPart2108;	// 0x2108
 	int m_nPartMode;	// 0x210C
-	char m_pad2110[0x2148 - 0x2110];	// 0x2110 .. 0x2147
+	Vector m_oldOrigin;	// 0x2110
+	Vector m_vecSmoothedVelocity;	// 0x211c
+	char m_pad2128[0x2130 - 0x2128];
+	int m_iTargetVolume;	// 0x2130
+	int m_rgItems[5];	// 0x2134	// 0x2110 .. 0x2147
 	float m_f2148;	// 0x2148: the next time of the random impulse (sub_10170d60)
-	char m_pad214C[0x2284 - 0x214c];
+	float m_flTimeStepSound;	// 0x214c
+	float m_flSwimTime;	// 0x2150
+	float m_flDuckTime;	// 0x2154
+	float m_flWallJumpTime;	// 0x2158
+	float m_flSuitUpdate;	// 0x215c
+	int m_rgSuitPlayList[4];	// 0x2160
+	int m_iSuitPlayNext;	// 0x2170
+	int m_rgiSuitNoRepeat[32];	// 0x2174
+	float m_rgflSuitNoRepeatTime[32];	// 0x21f4
+	int m_lastDamageAmount;	// 0x2274
+	float m_tbdPrev;	// 0x2278
+	char m_pad227c[0x2284 - 0x227c];
 	int m_n2284;	// 0x2284: effect-4 counter (discipline tick)
 	int m_n2288;	// 0x2288: effect-4 target count
-	char m_pad228C[0x229a - 0x228c];
+	int m_nPoisonDmg;	// 0x228c
+	int m_nPoisonRestored;	// 0x2290
+	int m_bitsHUDDamage;	// 0x2294
+	bool m_fInitHUD;	// 0x2298
+	char m_pad2299[0x229a - 0x2299];
 	char m_b229A;	// 0x229A
 	char m_pad229B[0x22a8 - 0x229b];	// 0x229B .. 0x22A7
 	float m_f22A8;
 	float m_f22AC;
 	float m_f22B0;
-	char m_pad22B4[0x22fc - 0x22b4];	// 0x22B4 .. 0x22FB
+	char m_pad22b4[0x22bc - 0x22b4];
+	int m_iFrags;	// 0x22bc
+	int m_iDeaths;	// 0x22c0
+	char m_pad22c4[0x22e0 - 0x22c4];
+	EHANDLE m_hTargetEnt;	// 0x22e0
+	int m_ArmorValue;	// 0x22e4
+	Vector m_DmgOrigin;	// 0x22e8
+	float m_DmgTake;	// 0x22f4
+	float m_DmgSave;	// 0x22f8	// 0x22B4 .. 0x22FB
 	float m_fl22FC;	// 0x22FC: a time stamp (curtime + 12)
 	float m_fl2300;	// 0x2300: the next effect-4 tick time (curtime + 1)
 	int m_n2304;	// 0x2304: set while the player is held (sub_10177ba0 clears it after restoring the move type)
-	char m_pad2308[0x2314 - 0x2308];	// 0x2308 .. 0x2313
+	EHANDLE m_hViewModel[2];	// 0x2308
+	float m_flMaxspeed;	// 0x2310	// 0x2308 .. 0x2313
 	float m_fl2314;	// 0x2314: a time stamp (curtime + 2)
 	char m_pad2318[0x2324 - 0x2318];	// 0x2318 .. 0x2323
 	int m_n2324;	// 0x2324: set from the command's impulse when there is no vehicle
-	char m_pad2328[0x2344 - 0x2328];	// 0x2328 .. 0x2343
+	float m_flStepSoundTime;	// 0x2328
+	float m_flSwimSoundTime;	// 0x232c
+	Vector m_vecLadderNormal;	// 0x2330
+	float m_nLightLevel;	// 0x233c
+	float m_flFlashTime;	// 0x2340	// 0x2328 .. 0x2343
 	int m_n2344;	// 0x2344: the effect-4 damage counter (clamped to 5)
 	char m_pad2348[0x2358 - 0x2348];	// 0x2348 .. 0x2357
 	float m_f2358;	// 0x2358: the command clock (rounded to milliseconds)
 	CUserCmd m_Cmd235c;	// 0x235C: the user command the command run processes (0x60 bytes, vptr 0x10462854)
 	CBasePlayerHandleVec m_SimulationList;	// 0x23BC (count at +0x23C8)
-	char m_pad23D0[0x2454 - 0x23d0];	// 0x23D0 .. 0x2453
+	int m_iBarterTgtEntIdx;	// 0x23d0
+	char m_szWolfBackupName[128];	// 0x23d4	// 0x23D0 .. 0x2453
 	unsigned char m_b2454;	// 0x2454
 	char m_pad2455[0x245c - 0x2455];	// 0x2455 .. 0x245B
 	void *m_pInventory;	// 0x245C: the 5-dword inventory object (created by sub_101835e0)

@@ -44,7 +44,9 @@ public:
 	int m_nState5cc4;	// +0x5cc4
 	char pad5cc8[0x628c - 0x5cc8];
 	unsigned int m_hPlayer;	// +0x628c: entity handle of the tracked player
-	char pad6290[0x6680 - 0x6290];
+	char m_pad6290[0x6498 - 0x6290];
+	bool m_bJumping;	// 0x6498
+	char m_pad6499[0x6680 - 0x6499];
 	const char *m_pMonsterModelName;	// +0x6680
 	char pad6684[0x6694 - 0x6684];
 	const char *m_pDefaultNPCName;	// +0x6694
@@ -56,11 +58,15 @@ public:
 	int m_n66c4;	// +0x66c4: last health seen by UpdateBloodSplash
 	float m_f66c8;	// +0x66c8: time of last splash
 	int m_nPlayerHealth;	// +0x66cc: the player's stat 0xf, recorded by RecordPlayerHealth
-	char pad66d0[0x66d5 - 0x66d0];
+	char m_pad66d0[0x66d4 - 0x66d0];
+	bool m_bTrackPlayer;	// 0x66d4
 	char m_b66d5;	// +0x66d5
-	char pad66d6[0x66e0 - 0x66d6];
+	bool m_bLargeSplashSpawned;	// 0x66d6
+	char m_pad66d7[0x66d8 - 0x66d7];
+	int m_JumpBloodBalanceCount;	// 0x66d8
+	float m_fWarningFinishTime;	// 0x66dc
 	int m_n66e0;	// +0x66e0: the victim-hit counter
-	char pad66e4;
+	bool m_bParticleSpawned;	// 0x66e4
 	char m_b66e5;	// +0x66e5
 
 	void sub_103a7760(int arg);

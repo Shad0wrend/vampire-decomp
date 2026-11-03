@@ -16,7 +16,9 @@ public:
 	int m_nLimit740;
 	char m_pad0744[0x8d8 - 0x744];
 	Vector m_vecPos[32];	// 0x8d8
-	char m_pad0a58[0xbf8 - 0xa58];
+	float m_vecBatVelocity[32];	// 0x0a58
+	char m_pad0ad8[0xbd8 - 0xad8];
+	bool m_bBatHittingPlayer[32];	// 0x0bd8
 	int m_nBat[32];	// 0xbf8
 
 	// Slot 141, called directly so far; declared as a plain member.

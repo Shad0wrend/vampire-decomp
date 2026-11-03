@@ -1,6 +1,7 @@
 // CPropHaunted: declared by pcdecomp transplant for 0x10212fd0 from CKeepUpright (0x10029200);
 // only what matched code needs, as plain members.
 #pragma once
+#include "string_t.h"
 #include "CBaseEntity.h"
 
 class CEnvParticle;
@@ -63,15 +64,21 @@ public:
 	float m_flTime77c;	// 0x77c: the next spin time
 	float m_flStart780;	// 0x780: the time the spin sound started
 	float m_flDuration784;	// 0x784: its length
-	char m_pad0788[0x78c - 0x788];
+	float m_flFlingVelocity;	// 0x0788
 	float m_flMin78c;	// 0x78c: the shortest wait between spins
 	float m_flMax790;	// 0x790: the longest wait between spins
 	float m_flDamage794;	// 0x794: the damage the impact does
-	char m_pad0798[0x7b8 - 0x798];
+	char m_pad0798[0x79c - 0x798];
+	bool m_bTargetPlayer;	// 0x079c
+	char m_pad079d[0x7a0 - 0x79d];
+	Vector m_vecFlingDest;	// 0x07a0
+	char m_pad07ac[0x7b8 - 0x7ac];
 	char m_bArmed7b8;	// 0x7b8: set while the prop reacts to impacts
-	char m_pad07b9[0x7c0 - 0x7b9];
+	char m_pad07b9[0x7bc - 0x7b9];
+	string_t m_sFlingParticle;	// 0x07bc
 	int m_iszGhost7c0;	// 0x7c0
-	char m_pad07c4[0x7cc - 0x7c4];
+	string_t m_sFlingSound;	// 0x07c4
+	string_t m_sBreakSound;	// 0x07c8
 	int m_iszSound7cc;	// 0x7cc
 	unsigned int m_hGhost7d0;	// 0x7d0: the ghost particle entity handle, -1 when none
 	char m_pad07d4[0x7ec - 0x7d4];

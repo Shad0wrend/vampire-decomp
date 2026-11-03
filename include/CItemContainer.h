@@ -1,5 +1,6 @@
 // CItemContainer: lootable container. Layout declared flat (vptr and base members are padding) until the bases are recovered.
 #pragma once
+#include "string_t.h"
 
 struct datamap_t;
 
@@ -39,7 +40,18 @@ public:
 	COutputEvent m_Output19b0;	// 0x19b0: destroyed last of the three outputs
 	COutputEvent m_Output19c8;	// 0x19c8
 	COutputEvent m_Output19e0;	// 0x19e0: the break output
-	char pad19f8[0x1a28 - 0x19f8];
+	string_t m_sEquip0;	// 0x19f8
+	string_t m_sEquip1;	// 0x19fc
+	string_t m_sEquip2;	// 0x1a00
+	string_t m_sEquip3;	// 0x1a04
+	string_t m_sEquip4;	// 0x1a08
+	string_t m_sEquip5;	// 0x1a0c
+	string_t m_sEquip6;	// 0x1a10
+	string_t m_sEquip7;	// 0x1a14
+	string_t m_sEquip8;	// 0x1a18
+	string_t m_sEquip9;	// 0x1a1c
+	string_t m_sEquip10;	// 0x1a20
+	string_t m_sEquip11;	// 0x1a24
 	CItemContainerHandle m_hUser;	// EHANDLE at +0x1a28 (the entity using the container)
 	CItemContainerHandle m_hLock;	// EHANDLE to the CItemContainerLock
 	const char *m_pszBreakModel1a30;	// 0x1a30: the model of the broken container

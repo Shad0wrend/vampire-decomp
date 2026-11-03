@@ -37,15 +37,22 @@ public:
 	int sub_100ac4e0(int func, int thinkTime, const char *szContext);	// CBaseEntity::ThinkSet (stub 0x10007fe5)
 	void sub_100ac610(float time, const char *szContext);	// CBaseEntity::SetNextThink (stub 0x1000326f)
 
-	char m_pad04b0[0x4bc - 0x4b0];
+	bool m_bHoldAtEnd;	// 0x04b0
+	char m_pad04b1[0x4b4 - 0x4b1];
+	float m_flFromPlayerTime;	// 0x04b4
+	float m_flToPlayerTime;	// 0x04b8
 	float m_flStartTime4bc;	// 0x04bc
 	EHANDLE m_hHandle4c0;	// 0x04c0
 	char m_bStarted4c4;	// 0x04c4
-	char m_pad04c5[0x4d4 - 0x4c5];
+	char m_pad04c5[0x4c8 - 0x4c5];
+	Vector m_vecTargetPos;	// 0x04c8
 	float m_flStartTime;	// 0x04d4
 	EHANDLE m_hHandle;	// 0x04d8
 	char m_bStarted;	// 0x04dc
-	char m_pad04dd[0x4f4 - 0x4dd];
+	char m_pad04dd[0x4e0 - 0x4dd];
+	Vector m_vecViewPos;	// 0x04e0
+	float m_flViewFOV;	// 0x04ec
+	float m_flViewRoll;	// 0x04f0
 	COutputEvent m_Output4f4;	// 0x04f4
 public:
 	datamap_t * vfunc82();

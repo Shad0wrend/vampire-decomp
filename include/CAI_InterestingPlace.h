@@ -44,7 +44,11 @@ public:
 	Vector m_vec54c;	// 0x54c: the debug box mins (sub_10142aa0 first vector)
 	Vector m_vec558;	// 0x558: the debug box maxs (sub_10142aa0 second vector)
 	int m_n564;	// 0x564: cleared by the constructor
-	char m_pad0568[0x574 - 0x568];
+	float m_fMinStayTime;	// 0x0568
+	float m_fMaxStayTime;	// 0x056c
+	bool m_bMatchOrientation;	// 0x0570
+	bool m_bHolsterWeapon;	// 0x0571
+	char m_pad0572[0x574 - 0x572];
 	int m_nGroup;	// 0x574: 1..32 on load, then a single bit mask
 	int m_nPriority;	// 0x578: clamped to 0..5
 	char m_b57c;	// 0x57c: set to 1 by the constructor

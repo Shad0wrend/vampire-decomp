@@ -13,7 +13,8 @@ public:
 	char m_pad0180[0x498 - 0x180];
 	int m_n498;	// 0x498: nonzero while the timer is disabled
 	float m_fInterval;	// 0x49c: the refire interval
-	char m_pad04a0[4];
+	bool m_bUpDownState;	// 0x04a0
+	char m_pad04a1[0x4a4 - 0x4a1];
 	int m_n4a4;	// 0x4a4: nonzero for a random-interval timer (the interval is a range)
 	float m_fLowerRandomBound;	// 0x4a8
 	float m_fUpperRandomBound;	// 0x4ac

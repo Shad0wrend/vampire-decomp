@@ -17,7 +17,15 @@ public:
 	int m_iParticleIndex;	// 0x454
 	int m_iAttachType;	// 0x458: attachment type (0..18)
 	const char *m_pszAttachName;	// 0x45c: attachment name, "" when none
-	char pad460[0x484 - 0x460];
+	int m_nAttachPoint;	// 0x0460
+	float m_fRedScale;	// 0x0464
+	float m_fGreenScale;	// 0x0468
+	float m_fBlueScale;	// 0x046c
+	float m_fMaskScale;	// 0x0470
+	float m_fSizeScale;	// 0x0474
+	float m_fSecondaryRed;	// 0x0478
+	float m_fSecondaryGreen;	// 0x047c
+	float m_fSecondaryBlue;	// 0x0480
 	int m_unk484;
 	float m_fl488;	// 0x488
 

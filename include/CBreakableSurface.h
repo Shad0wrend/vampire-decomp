@@ -41,7 +41,11 @@ public:
     int m_nSurfaceType4c8;    // 0x4c8: 1 = glass (tinted, force reversed and shortened)
     int m_nPanes4cc;    // 0x4cc
     float m_aflPanes[16][16];    // 0x4d0: the pane grid, 0x40 bytes per row
-    char m_pad08d0[0x904 - 0x8d0];
+    int m_nFragility;	// 0x08d0
+    Vector m_vLLVertex;	// 0x08d4
+    Vector m_vULVertex;	// 0x08e0
+    Vector m_vLRVertex;	// 0x08ec
+    Vector m_vURVertex;	// 0x08f8
     int m_nFaceCheck;    // 0x904
 public:
     virtual datamap_t * vfunc82();

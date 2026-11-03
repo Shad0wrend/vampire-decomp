@@ -55,7 +55,7 @@ public:
 	char m_pad03e0[0x450 - 0x3e0];
 	void *m_pController;	// 0x450
 	const char *m_pszAttachName;	// 0x454: name of the entity to attach to
-	char m_pad0458[0x45c - 0x458];
+	float m_force;	// 0x0458
 	float m_flTimeout;	// 0x45c
 	unsigned int m_hAttached;	// 0x460: handle of the attached entity
 	CConstantForceController m_Motion;	// 0x464

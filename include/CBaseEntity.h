@@ -4,6 +4,7 @@
 // New method declarations can go into CBaseEntity_ext.h (included at the end of the class body) so that
 // workers do not overwrite each other's edits of this large file.
 #pragma once
+#include "string_t.h"
 
 #include "Vector.h"
 
@@ -241,7 +242,8 @@ public:
 	int m_nVSoundGroup;	// 0x00b4
 	int m_nVSoundGroupFemale;	// 0x00b8
 	int m_nVSoundTableIdx;	// 0x00bc
-	char m_pad00c0[0xc8 - 0xc0];
+	string_t m_iszVSoundGroup;	// 0x00c0
+	char m_pad00c4[0xc8 - 0xc4];
 	EHANDLE m_hC8;	// 0x00c8
 	float m_flCC;	// 0x00cc: the time the handle at +0xc8 expires
 	EHANDLE m_hD0;	// 0x00d0
@@ -257,7 +259,14 @@ public:
 	char m_pad00f5;
 	short m_nSavedSlot211_00f6;	// 0x00f6
 	unsigned int m_nSavedEffects00f8;	// 0x00f8
-	char m_pad00fc[0x10c - 0xfc];
+	bool m_bNPCTransparent;	// 0x00fc
+	bool m_bBlocksTraces;	// 0x00fd
+	bool m_bOccludesSound;	// 0x00fe
+	char m_pad00ff[0x100 - 0xff];
+	EHANDLE m_hSoundOverrideEnt;	// 0x0100
+	bool m_bFakeSilence;	// 0x0104
+	char m_pad0105[0x108 - 0x105];
+	string_t m_iszScriptedSoundOverrideEnt;	// 0x0108
 	EHANDLE m_hActivator10c;	// 0x010c: the activator of the entity's current input
 	EHANDLE m_hCaller110;	// 0x0110: the caller of the entity's current input
 	void (CBaseEntity::*m_pfn0114)();
@@ -265,7 +274,11 @@ public:
 	const char *m_classname11c;
 	char m_pad0120[0x124 - 0x120];
 	const char *m_pParentName124;	// 0x0124: the parent's targetname (MapEntity_ParseAllEntities / SetParent store it; null = no parent to attach)
-	char m_pad0128[0x164 - 0x128];
+	string_t m_iDialog;	// 0x0128
+	bool m_bBlocked;	// 0x012c
+	char m_pad012d[0x130 - 0x12d];
+	float m_rgflCoordinateFrame[12];	// 0x0130
+	float m_flStartFrameLocalTime;	// 0x0160
 	float m_flSpeed164;	// 0x0164
 	int m_n168;
 	int m_n16c;
@@ -298,13 +311,15 @@ public:
 	int m_iHealth;	// 0x0210
 	char m_pad0214[4];
 	unsigned int m_hUseFilter;	// 0x0218: entity handle of the use filter
-	char m_pad021c[4];
+	string_t m_iszDamageFilterName;	// 0x021c
 	unsigned int m_hDamageFilter;	// 0x0220: entity handle of the damage filter
 	union { char m_pad0224[0x228 - 0x224]; unsigned int m_fDebugOverlays224; };	// 0x0224: the debug overlay flags (bit 24 asked by CNodeEnt::vfunc103)
 	void *m_pTimedOverlays;	// 0x0228
-	char m_pad022c[0x254 - 0x22c];
+	int m_nSimulationTick;	// 0x022c
+	char m_pad0230[0x254 - 0x230];
 	unsigned int m_hTouch254;	// entity handle notified by StartTouch / EndTouch (SetParent 0x100a0670 assigns the move parent handle at +0x25c with CBaseHandle::operator=(IHandleEntity*), byte +0x258 = the attachment index; +0x124 = the parent's name (parent +0x26c); +0x1b1 byte set by SetParent)
-	char m_pad0258[0x25c - 0x258];
+	char m_iParentAttachment;	// 0x0258
+	char m_pad0259[0x25c - 0x259];
 	unsigned int m_hMoveParent;	// 0x25c: the move parent handle (EHandle_Get(m_hMoveParent) / CHandle<CBaseEntity>)
 	EHANDLE m_hMoveChild260;	// 0x260: the first entity parented to this one
 	EHANDLE m_hMovePeer264;	// 0x264: the next entity parented to the same parent
@@ -322,10 +337,16 @@ public:
 	unsigned int m_hOwner364;	// owner entity handle
 	int m_field368;
 	int m_obj36c;	// physics object (pointer)
-	char m_pad0370[8];
+	float m_flElasticity;	// 0x0370
+	string_t m_iszUseScript;	// 0x0374
 	void *m_p378;	// 0x0378: freed by ~CBaseEntity through sub_10196850 when set (0x1009df20)
 	EHANDLE m_hAimEnt37c;	// 0x037c: the aim entity (SetAimEnt, PhysicsFollow / PhysicsCarried)
-	char m_pad0380[0x3bc - 0x380];
+	char m_pad0380[0x384 - 0x380];
+	EHANDLE m_hGroundEntity;	// 0x0384
+	string_t m_ModelName;	// 0x0388
+	Vector m_vecSize;	// 0x038c
+	char m_pad0398[0x3b0 - 0x398];
+	Vector m_vecBaseVelocity;	// 0x03b0
 	Vector m_vecVelocity3bc;	// 0x03bc
 	float m_angVel3c8[3];	// 0x03c8: the angular velocity SimulateAngles integrates
 	float m_vel3d4[3];

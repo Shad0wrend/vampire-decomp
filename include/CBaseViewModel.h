@@ -30,7 +30,8 @@ public:
 	virtual void vfunc265(int value);	// slot 265: if slot 8 says yes, stores value at +0x6f0, bumps the count at +0x740 (and 7), clears +0x6f8, then CBaseAnimating::sub_10090950
 	virtual void vfunc266(const char *pszName);	// slot 266: the name (or 0 when empty / null) is kept at +0x744; when it changes, slot 105 gets the name (or the default string g_106b8540)
 public:
-	char m_pad03e0[0x734 - 0x3e0];
+	char m_pad03e0[0x730 - 0x3e0];
+	int m_nViewModelIndex;	// 0x0730
 	EHANDLE m_hOwner734;	// 0x734
     virtual void vfunc104();
     virtual datamap_t * vfunc82();

@@ -61,7 +61,9 @@ public:
 	float sub_10091230(int sequence);	// CBaseAnimating::sub_10091230 (stub 0x10001429): the cycles per second of the sequence, called by the layer advance
 	char sub_10090ef0(int sequence);	// CBaseAnimating::sub_10090ef0 (stub 0x10014ffb): whether the sequence loops (bit 0 of the answer), called by the layer advance
 
-	char m_pad0000[0x738];
+	char m_pad0000[0x730 - 0x0];
+	bool m_bNoFlinch;	// 0x0730
+	char m_pad0731[0x738 - 0x731];
 	CAnimationLayer m_Layers[15];	// 0x738
 public:
 	int vfunc79();

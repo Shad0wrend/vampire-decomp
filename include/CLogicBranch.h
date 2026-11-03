@@ -13,7 +13,8 @@ public:
 	CLogicBranch *vfunc5(unsigned int flags);
 	virtual datamap_t * vfunc82();
 
-	char m_pad0450[4];	// CLogicalEntity.h ends at 0x450 but the outputs start at 0x454
+	bool m_bInValue;	// 0x0450
+	char m_pad0451[0x454 - 0x451];	// CLogicalEntity.h ends at 0x450 but the outputs start at 0x454
 	COutputEvent m_Out454;	// 0x454 (names unknown: the branch's two outputs, e.g. OnTrue / OnFalse)
 	COutputEvent m_Out46c;	// 0x46c
 };

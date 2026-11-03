@@ -12,7 +12,8 @@ struct datamap_t;
 class CEnvFade : public CLogicalEntity
 {
 public:
-	char m_pad0450[8];	// 0x450: the fade settings (not recovered yet)
+	float m_Duration;	// 0x0450
+	float m_HoldTime;	// 0x0454	// 0x450: the fade settings (not recovered yet)
 	COutputEvent m_OnBeginFade;	// 0x458
 public:
 	virtual datamap_t * vfunc82();

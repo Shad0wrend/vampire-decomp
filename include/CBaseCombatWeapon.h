@@ -176,7 +176,7 @@ public:
 	int m_nAmmoType;	// 0x744
 	union { char m_pad748[0x88c - 0x748]; struct { char m_pad748b[0x77c - 0x748]; char m_Dmg77c[3][0x44]; }; };	// 0x77c: three CVDmg_t records of 0x44 bytes (view with (CVDmg_t *)m_Dmg77c)
 	unsigned int m_hOwner; // 0x88c
-	char m_pad890[4];
+	int m_nViewModelIndex;	// 0x0890
 	float m_f894;
 	void sub_10013a57();	// as in CPhysForce (transplant)
 	char sub_10256220();	// provisional, like vfunc304 (transplant)

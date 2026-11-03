@@ -13,7 +13,8 @@ public:
     int m_ragdollAttachedObjectIndex;	// 0x1040: the ragdoll body that is attached (the model's table entry for the bone argument, 0 when it is not > 0)
     Vector m_attachmentPointBoneSpace;	// 0x1044: copy of the attach point (argument 10)
     Vector m_attachmentPointRagdollSpace;	// 0x1050: the attach point transformed into the attached body's space (sub_10138720)
-    char m_pad105c[4];
+    bool m_bShouldDetach;	// 0x105c
+    char m_pad105d[0x1060 - 0x105d];
     void *m_pPhysObj1060;	// 0x1060: the constraint made by the physics environment (g_10723940 slot 12)
     void sub_10156d90();	// releases the physics object at +0x1060 (called when the attachment ends)
     // 0x10156e10 (ret 0x30, twelve stack arguments; called with ecx = the new prop_ragdoll_attached by 0x10157260, whose own

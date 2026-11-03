@@ -21,7 +21,7 @@ public:
 	int m_pEdict2e0;	// 0x02e0
 	char m_pad02e4[0x450 - 0x2e4];
 	const char *m_pszName450;	// 0x0450: the sentence (or sentence group) name
-	char m_pad0454[4];
+	float m_radius;	// 0x0454
 	int m_nSoundLevel458;	// 0x0458
 	int m_nRule45c;	// 0x045c: 1..12 pick the fixed sentence group of that chapter, 0 uses the name
 	float m_flDelayMin460;	// 0x0460

@@ -45,9 +45,11 @@ public:
     int m_n77c;    // 0x77c: the stage count / index of the last model entry
     char m_pad0780[0x784 - 0x780];
     int m_nStage784;    // 0x784: the stage counter
-    int m_pad0788;
+    int m_nPhysicsMoveOnLevel;	// 0x0788
     int m_nStageHealth78c;    // 0x78c
-    char m_pad0790[0x794 - 0x790];
+    bool m_bBreakOnEnd;	// 0x0790
+    bool m_bOnlyDmgOnInput;	// 0x0791
+    char m_pad0792[0x794 - 0x792];
     int m_hModels794[8];    // 0x794: the model names' indices of the stages, zero ends the list
     COutputEvent m_Outputs7b4[8];    // 0x7b4: one output per stage
     COutputEvent m_Output874;    // 0x874: fired when the last stage is reached

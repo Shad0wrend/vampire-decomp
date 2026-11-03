@@ -3,6 +3,7 @@
 // known the slots they contribute are only declared here so that the slot numbers of the
 // members we do define are right.
 #pragma once
+#include "string_t.h"
 
 #define SCENE_V(n) virtual void vfunc##n();
 #define SCENE_V10(p) SCENE_V(p##0) SCENE_V(p##1) SCENE_V(p##2) SCENE_V(p##3) SCENE_V(p##4) SCENE_V(p##5) SCENE_V(p##6) SCENE_V(p##7) SCENE_V(p##8) SCENE_V(p##9)
@@ -166,7 +167,16 @@ public:
 	float m_flNextThink;	// 0x17c
 	char m_pad0180[0x450 - 0x180];
 	const char *m_pszSceneFile450;	// 0x450: the scene file name (null when unset)
-	char m_pad0454[0x48c - 0x454];
+	char m_pad0454[0x458 - 0x454];
+	string_t m_iszTarget1;	// 0x0458
+	string_t m_iszTarget2;	// 0x045c
+	string_t m_iszTarget3;	// 0x0460
+	string_t m_iszTarget4;	// 0x0464
+	string_t m_iszOverrideSpeechTarget;	// 0x0468
+	char m_pad046c[0x480 - 0x46c];
+	string_t m_iszBaseAnimSet;	// 0x0480
+	string_t m_iszAnimSetForMalePlayer;	// 0x0484
+	string_t m_iszAnimSetForFemalePlayer;	// 0x0488
 	int m_n48c;	// 0x48c
 	int m_n490;	// 0x490: the value handed to the extra animation slot, replaced by m_n494 for a character that is not male
 	int m_n494;	// 0x494
@@ -191,8 +201,8 @@ public:
 	int m_n574;	// 0x574
 	int m_n578;	// 0x578: the actor move mode handed to sub_100821f0
 	char m_b57c;	// 0x57c
-	char m_pad057d[1];
+	bool m_bForceLOD;	// 0x057d
 	char m_b57e;	// 0x57e
-	char m_pad057f[1];
+	bool m_bFullSound;	// 0x057f
 	unsigned int m_h580;	// 0x580: handle of the entity an instanced scene follows
 };

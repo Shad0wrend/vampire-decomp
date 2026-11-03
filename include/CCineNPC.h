@@ -3,6 +3,7 @@
 // virtuals below carries no meaning -- add the padding slots before using a
 // virtual call through this class.
 #pragma once
+#include "string_t.h"
 
 class CBaseEntity;
 class CBaseAnimating;
@@ -65,17 +66,26 @@ public:
 	char m_b1481;	// 0x1481
 	char m_pad1482[0x5ce4 - 0x1482];
 	unsigned int m_hTarget5ce4;	// 0x5ce4: entity handle of the entity the script targets
-	char m_pad5ce8[0x5f48 - 0x5ce8];
+	char m_pad5ce8[0x5f44 - 0x5ce8];
+	string_t m_iszPreIdle;	// 0x5f44
 	const char *m_pszScript5f48;	// 0x5f48: the script's name
 	const char *m_pszSequence5f4c;	// 0x5f4c: the follow-up sequence name
-	char m_pad5f50[0x5f54 - 0x5f50];
+	string_t m_iszCustomMove;	// 0x5f50
 	const char *m_pszTarget5f54;	// 0x5f54: the name of the NPC the script plays on
 	int m_n5f58;	// 0x5f58
-	char m_pad5f5c[0x5f68 - 0x5f5c];
+	string_t m_iszLinkedSequence;	// 0x5f5c
+	int m_fMoveTo;	// 0x5f60
+	int m_iFinishSchedule;	// 0x5f64
 	int m_n5f68;	// 0x5f68
-	char m_pad5f6c[0x5f74 - 0x5f6c];
+	float m_flRepeat;	// 0x5f6c
+	int m_iDelay;	// 0x5f70
 	float m_flTime5f74;	// 0x5f74
-	char m_pad5f78[0x5f90 - 0x5f78];
+	int m_saved_movetype;	// 0x5f78
+	int m_saved_movecollide;	// 0x5f7c
+	int m_saved_solid;	// 0x5f80
+	int m_saved_solidflags;	// 0x5f84
+	int m_saved_effects;	// 0x5f88
+	int m_saved_troika_flags;	// 0x5f8c
 	char m_b5f90;	// 0x5f90
 	char m_b5f91;	// 0x5f91
 	char m_pad5f92[0x5f94 - 0x5f92];
