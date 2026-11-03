@@ -3073,6 +3073,22 @@ void CAI_BaseNPCTroika::vfunc333(float flInterval)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c0220 size=0x39
+#include "CAI_BaseNPCTroika.h"
+#include "Ent.h"
+
+// TARGET: CAI_BaseNPCTroika::vfunc35
+int CAI_BaseNPCTroika::vfunc35(int a)
+{
+	if (!sub_102c1170()) {
+		if (vfunc295((CBaseCombatCharacter *)a)) {
+			return 14 + (((Ent *)this)->sub_10336920() ? 1 : 0);
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c0420 size=0x36
 #include "CAI_BaseNPCTroika.h"
 #include "CBaseCombatCharacter.h"
