@@ -9872,6 +9872,7 @@
 0x100108f2 func   ?sub_100c0c30@CFloatPair3f4@@QAEXM@Z CFloatPair3f4::sub_100c0c30
 0x100108f7 func   ?sub_1024b000@CUnknown1024b000@@QAEPAU1@H@Z CUnknown1024b000::sub_1024b000
 0x100108fc func   ?sub_101a59f0@CUnknown101a59f0@@QAEXH@Z CUnknown101a59f0::sub_101a59f0
+0x10010901 func   ?sub_101aa6b0@@YIDH@Z sub_101aa6b0
 0x10010906 func   ?sub_101aa630@@YIMH@Z sub_101aa630
 0x1001090b func   ?vfunc80@CWeaponIArmor_Hvy_Leather@@QAEHXZ CWeaponIArmor_Hvy_Leather::vfunc80
 0x10010910 func   ?sub_1012f230@@YAPADXZ sub_1012f230

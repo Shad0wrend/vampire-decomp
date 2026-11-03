@@ -51,6 +51,13 @@ bool CAI_BaseNPCTroika::vfunc591()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aa6b0 size=0x7
+char __fastcall sub_101aa6b0(int p)
+{
+	return *(char *)((char *)p + 0x63fc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aa750 size=0xd
 struct TroikaField63f0 { char pad[0x63f0]; char m; };
 void CAI_BaseNPCTroika::vfunc416(char value)
