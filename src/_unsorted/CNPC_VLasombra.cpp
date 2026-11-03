@@ -80,3 +80,16 @@ void CNPC_VLasombra::vfunc103()
 	*(int *)((char *)this + 0x6664) = 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103893c0 size=0x1d
+#include "CNPC_VLasombra.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VLasombra::vfunc592
+bool CNPC_VLasombra::vfunc592()
+{
+	if (gpGlobals->curtime < m_f6664)
+		return false;
+	return ((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc592();
+}
+// END FUNCTION

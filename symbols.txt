@@ -11774,6 +11774,7 @@
 0x10013363 func   ?vfunc3@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHH@Z CTempEntsSystem::vfunc3
 0x10013368 func   ?sub_103394a0@CBaseCombatCharacter@@QAEXDHH@Z CBaseCombatCharacter::sub_103394a0
 0x1001336d func   ?sub_1022b4d0@S1022b4d0@@QAEXAAUinputdata_t@@@Z S1022b4d0::sub_1022b4d0
+0x10013372 func   ?vfunc592@CNPC_VLasombra@@QAE_NXZ CNPC_VLasombra::vfunc592
 0x1001337c func   ?sub_100b5d10@CBaseFlex@@QAEHPBD@Z CBaseFlex::sub_100b5d10
 0x10013381 func   ?sub_101041f0@@YIXPAXHH@Z sub_101041f0
 0x1001338b func   ?sub_100ee810@CBaseDoor@@QAEXXZ CBaseDoor::sub_100ee810
