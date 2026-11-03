@@ -10639,6 +10639,7 @@
 0x10011c4d func   ?vfunc266@CPropHaunted@@UAEXPAVCBaseEntity@@@Z CPropHaunted::vfunc266
 0x10011c52 func   ?vfunc4@CGameMovement@@QAEPAMDH@Z CGameMovement::vfunc4
 0x10011c57 func   ?vfunc362@CWeaponMelee_BaseballBat@@QAEHXZ CWeaponMelee_BaseballBat::vfunc362
+0x10011c61 func   ?sub_101a67c0@@YAMXZ sub_101a67c0
 0x10011c66 func   ?sub_10183330@CBasePlayer@@QAEXXZ CBasePlayer::sub_10183330
 0x10011c6b func   ?vfunc82@CFuncMonitor@@QAEPAUdatamap_t@@XZ CFuncMonitor::vfunc82
 0x10011c70 func   ?sub_103e0960@CUnknown103e0960@@QAEHXZ CUnknown103e0960::sub_103e0960

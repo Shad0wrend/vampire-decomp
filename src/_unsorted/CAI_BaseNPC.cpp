@@ -152,6 +152,13 @@ bool CAI_BaseNPC::vfunc468(CBaseEntity * a0)
 void __stdcall sub_101a67a0(int) {}
 // END FUNCTION
 
+// FUNCTION: 0x101a67c0 size=0x7
+float sub_101a67c0()
+{
+	return 1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a67e0 size=0x2d
 #include "ehandle.h"
 
