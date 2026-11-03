@@ -68,6 +68,7 @@ struct CNPC_VWerewolfNodeNet
 struct CNPC_VWerewolfNodeOwner
 {
 	char m_pad0000[0x156c];
+	bool sub_103d6d00(Vector vecPos);	// "CNPC_VWerewolf::HullInSolid": scope trace (entity name or NULL ENTITY); takes the hull from m_field1568 (CBaseCombatCharacter.h +0x1568), its mins (sub_102d6100) and maxs (sub_102d6120), and traces that box at vecPos with CTraceFilterSimple(this, 7), engine trace 0x1070b254 slot 4, mask 0x202400b; the debug line goes through sub_10146570 when 0x10738960 answers; returns trace.allsolid (byte at trace+0x36)
 	int m_n156c;
 };
 
