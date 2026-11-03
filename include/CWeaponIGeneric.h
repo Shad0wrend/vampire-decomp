@@ -44,6 +44,11 @@ public:
 	virtual int vfunc344();
 
 	CWeaponIGeneric *vfunc5(unsigned int flags);
+	void vfunc326();	// slot 326: stamps the times at +0x730 / +0x910 with curtime + 1.5f
+	char m_pad0000[0x72c];
+	float m_f730;	// 0x730
+	char m_pad0734[0x1dc];
+	float m_f910;	// 0x910
 	int vfunc328();	// slot 328: the constant 0xbc, after a strcmpi of the name at +0x11c (or the empty string) with "item_g_lockpick" (result ignored)
 	void sub_10013a57();
 	void sub_100138fe();
