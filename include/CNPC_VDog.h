@@ -11,6 +11,8 @@ class CNPC_VDog : public CNPC_VAnimal
 public:
 	CNPC_VDog *vfunc5(unsigned int flags);
 	void sub_100123af();
+	void vfunc433();	// slot 433 "RunTask"-like dog check (scope: none)
+	void sub_102b27f0();	// CAI_BaseNPCTroika::vfunc433 (stub 0x10013f2f), called directly
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	int sub_10374ad0(int act);	// slot 375: nothing for activity 3, else sub_10360120
 	int sub_10360120(int act);	// CNPC_VAnimal::vfunc375 (stub 0x10009872), called directly
