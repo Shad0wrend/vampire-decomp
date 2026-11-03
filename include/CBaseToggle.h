@@ -21,6 +21,7 @@ public:
 	void sub_101c17e0(Vector *pAngles, int speed);	// stub 0x1000dab2, called directly
 	void vfunc133();	// slot 133: ends the running move (linear / angular by the state at +0x558), then calls the think function at +0x114
 	float vfunc152();	// slot 152: the toggle wait time (float at +0x500)
+	float vfunc135(float flTime);	// slot 135 (0x101c10d0): the eased velocity step of a linear/angular toggle move (returns flTime in ST0). Reads the floats at +0x3f4 / +0x3fc / +0x4d4 / +0x4dc, the velocity vectors +0x4e0..+0x4e8 and +0x4ec..+0x4f4 and the offset vectors +0x540..+0x548 / +0x54c..+0x554 - all with raw casts (do NOT add them as members: the CBaseToggle subclasses add their data after +0x4a4 and would shift). Calls CBaseEntity::sub_100b2e30(slot220 origin) and CBaseEntity::sub_100b2f50(slot221 angles) with the computed velocity vectors.
 	void sub_10013728(Vector *pVelocity);	// stub 0x10013728: sets the local velocity
 
 	char m_pad03e0[0x3f4 - sizeof(CBaseEntity)];
