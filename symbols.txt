@@ -2413,6 +2413,7 @@
 0x10004acf func   ?sub_10204360@CVDmgBlock16_t@@QAE_NPBU1@@Z CVDmgBlock16_t::sub_10204360
 0x10004ad4 func   ?sub_1015ddf0@@YGXH@Z sub_1015ddf0
 0x10004ad9 func   ?vfunc245@CFuncPlatRot@@QAEXXZ CFuncPlatRot::vfunc245
+0x10004ade func   ?sub_100b51b0@CBaseEntity@@QAEXXZ CBaseEntity::sub_100b51b0
 0x10004ae8 func   ?sub_10139f90@@YA_NABVVector@@M00@Z sub_10139f90
 0x10004aed func   ?vfunc58@CGameRules@@UAEHH@Z CGameRules::vfunc58
 0x10004af2 func   ?vfunc81@CItemGGhostPendant@@QAEHXZ CItemGGhostPendant::vfunc81

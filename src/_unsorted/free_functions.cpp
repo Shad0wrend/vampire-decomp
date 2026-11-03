@@ -33710,6 +33710,49 @@ char CUnknown100b5190::sub_100b5190()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b51b0 size=0xc0
+#include "CCollisionProperty.h"
+#include "CBaseEntity_ext.h"
+
+struct CStub10004ade
+{
+	void sub_10004ade();
+};
+
+// TARGET: CBaseEntity::sub_100b51b0
+void CBaseEntity::sub_100b51b0()
+{
+	CCollisionProperty *pCollision = (CCollisionProperty *)((char *)this + 0x270);
+	switch (*(unsigned char *)((char *)this + 0x28c)) {
+	case 0:
+	case 1:
+	case 6:
+		if ((*(unsigned char *)&pCollision->m_usSolidFlags & 0x80) || pCollision->m_nSolidType == 2 || pCollision->m_nSolidType == 0)
+			break;
+		pCollision->sub_100dda20();
+		break;
+	case 2:
+		pCollision->sub_100dda20();
+		break;
+	case 3:
+		break;
+	case 4:
+		pCollision->sub_100dda20();
+		break;
+	case 5:
+		break;
+	default:
+		pCollision->sub_100dda20();
+		break;
+	}
+	CBaseEntity *pChild = m_hMoveChild260.Get();
+	while (pChild) {
+		((CStub10004ade *)pChild)->sub_10004ade();
+		pChild = pChild->m_hMovePeer264.Get();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b52a0 size=0x7d
 #include "CCollisionProperty.h"
 #include "CGlobalEntityList.h"
