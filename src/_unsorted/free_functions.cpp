@@ -150959,6 +150959,99 @@ void __fastcall sub_102e0ba0(char *pThis, int, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e0bd0 size=0x238
+#include "CAI_Motor.h"
+#include "CAI_MoveProbe.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "IPhysicsObject.h"
+#include "Vector.h"
+struct IShadowFloat
+{
+	virtual void s0();
+	virtual void s1();
+	virtual void s2();
+	virtual void s3(float f);
+};
+
+void sub_101cf5c0(CBaseEntity *pEntity, int pOrigin, int bTouch);
+float __fastcall sub_102e26f0(void *pComponent);
+
+int CAI_Motor::sub_102e0bd0(void *pOut, CBaseEntity *pTarget, int a, char b, char c, AIMoveTrace_t *d, int e)
+{
+	AIMoveTrace_t trace;
+	int nFlags = 1;
+	if (!c)
+		nFlags = 5;
+
+	m_08 = *(int *)((char *)m_pOuter + 0x156c);
+	m_0c = gpGlobals->framecount;
+
+	CAI_MoveProbe *pWrite = (CAI_MoveProbe *)m_68;
+	pWrite->m_pad08 = *(int *)((char *)pWrite->m_pOuter + 0x156c);
+	pWrite->m_nUnk0c = gpGlobals->framecount;
+
+	CAI_MoveProbe *pProbe = (CAI_MoveProbe *)m_68;
+	Vector *pStart = ((CEntityVSlots *)m_pOuter)->slot220();
+	pProbe->sub_102e4f50((const float *)pStart, (const float *)pOut, 0x202400b, 100.0f, nFlags, &trace, e, 0);
+
+	if (d)
+	{
+		d->fStatus = trace.fStatus;
+		*(Vector *)&d->m_fields.e0 = *(Vector *)&trace.m_fields.e0;
+		((Vector *)&d->m_fields.n0)->sub_1003e4b0(*(Vector *)&trace.m_fields.n0);
+		d->m_fields.nHit = trace.m_fields.nHit;
+		d->m_fields.f20 = trace.m_fields.f20;
+		d->m_fields.f24 = trace.m_fields.f24;
+		((Vector *)&d->m_fields.s0)->sub_1003e4b0(*(Vector *)&trace.m_fields.s0);
+		d->m_fields.fDist = trace.m_fields.fDist;
+	}
+
+	bool bHit = (trace.m_fields.nHit != 0 && (int)pTarget == trace.m_fields.nHit);
+	bool bBlocked = (trace.fStatus < 0);
+
+	if (bBlocked && !b && !bHit)
+		return 0;
+
+	sub_101cf5c0((CBaseEntity *)m_pOuter, (int)&trace.m_fields.e0, 1);
+
+	if (trace.m_fields.fDist > 0.1f)
+	{
+		float fMax = sub_102e26f0(this);
+		float fValue;
+		if (fMax < trace.m_fields.fDist)
+		{
+			fValue = sub_102e26f0(this);
+		}
+		else
+		{
+			fValue = (trace.m_fields.fDist < 0.0f) ? 0.0f : trace.m_fields.fDist;
+		}
+
+		IPhysicsObject *pPhys = (IPhysicsObject *)((CBaseEntity *)m_pOuter)->m_obj36c;
+		if (pPhys)
+		{
+			IPhysicsShadowController *pShadow = pPhys->vfunc48();
+			if (pShadow)
+				((IShadowFloat *)pShadow)->s3(fValue);
+		}
+	}
+
+	if (*(float *)&a != -1.0f)
+	{
+		Vector vecAngles = *((CEntityVSlots *)m_pOuter)->slot221();
+		vecAngles.y = *(float *)&a;
+		((CEntityVSlots *)m_pOuter)->slot64((const float *)&vecAngles);
+	}
+
+	if (bHit)
+		return 4;
+	if (!bBlocked)
+		return 1;
+	return (trace.fStatus != -3) + 2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e12c0 size=0xb
 #include "CUnknown102e12c0.h"
 void CUnknown102e12c0::sub_102e12c0()
