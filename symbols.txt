@@ -7787,6 +7787,7 @@
 0x1000cc02 func   ?sub_10080750@CUnknown10080750@@QAEXH@Z CUnknown10080750::sub_10080750
 0x1000cc07 func   ?sub_10157260@@YAPAVCRagdollProp@@PAV1@ABVVector@@HHPAX2H1H1@Z sub_10157260
 0x1000cc0c func   ?sub_10140200@CPathKeyFrame@@QAEXXZ CPathKeyFrame::sub_10140200
+0x1000cc11 func   ?AttemptFeed@CBasePlayer@@QAEDPAVCBaseEntity@@@Z CBasePlayer::AttemptFeed
 0x1000cc16 func   ?vfunc367@CWeaponMelee@@QAEXHHH@Z CWeaponMelee::vfunc367
 0x1000cc1b func   ?vfunc82@CNPC_VVampireBoss@@QAEPAUdatamap_t@@XZ CNPC_VVampireBoss::vfunc82
 0x1000cc20 func   ?vfunc82@CLogicSquadCondition@@UAEPAUdatamap_t@@XZ CLogicSquadCondition::vfunc82
