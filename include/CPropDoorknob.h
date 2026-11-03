@@ -44,4 +44,5 @@ public:
 	virtual int vfunc124();	// slot 124: 0x1018fec0 in the game's CPropDoorknob vtable (link audit, CPropDoorknobElectronic)
 	virtual void vfunc130(int);	// slot 130: 0x1020ac70 in the game's CPropDoorknob vtable (link audit, CPropDoorknobElectronic)
 	virtual void vfunc133();	// slot 133: 0x101c1720 in the game's CPropDoorknob vtable (link audit, CPropDoorknobElectronic)
+	void sub_10224440(CBaseEntity *pEntity);	// 0x10224440 (ret 4): positions / validates the doorknob lockpick spot for the given entity; uses the "camera_position" / "camera_target" attachments and traces down to the ground
 };
