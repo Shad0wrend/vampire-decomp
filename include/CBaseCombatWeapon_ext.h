@@ -18,3 +18,4 @@
 	void sub_1024f840();	// stub 0x1000aec5: the weapon's world setup (bounds, solid flags, think), run by vfunc103 and vfunc299
 	void sub_10252e30(CBaseEntity *pPlayer);	// 0x10252e30: with a player whose character (+0xa8) accepts this weapon (CBaseCombatCharacter::sub_10173f90(this, 0, 0, 0)), slot 341 picks it up
 	bool sub_10239170();	// true when the weapon's current roll slot (sub_102517e0) has a loaded clip (+0x74c + 4 * the slot's ammo index at +0x10c) and vfunc277(0) holds
+	int sub_10251f10();	// slot 346: the dword at +0x2428 of the owner object
