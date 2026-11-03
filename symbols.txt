@@ -6769,6 +6769,7 @@
 0x1000b8fc func   ?vfunc103@CTriggerBombSite@@QAEXXZ CTriggerBombSite::vfunc103
 0x1000b901 func   ?sub_10098810@CUnknown10098810@@QAEPAV1@XZ CUnknown10098810::sub_10098810
 0x1000b906 func   ?vfunc376@CNPC_VHuman@@UAEHH@Z CNPC_VHuman::vfunc376
+0x1000b90b func   ?vfunc246@CBaseTrigger@@QAEXH@Z CBaseTrigger::vfunc246
 0x1000b910 func   ?sub_10373600@@YIPAXPAX@Z sub_10373600
 0x1000b915 func   ?sub_10259e20@@YAGXZ sub_10259e20
 0x1000b91f func   ?sub_10372aa0@CNPC_VCopFwd@@QAEXH@Z CNPC_VCopFwd::sub_10372aa0
