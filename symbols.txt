@@ -2974,6 +2974,7 @@
 0x1000587b func   ?vfunc14@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHH@Z CTempEntsSystem::vfunc14
 0x10005880 func   ?vfunc123@CBaseEntity@@UAEXXZ CBaseEntity::vfunc123
 0x10005885 func   ?sub_10099ca0@@YAXPAUAnimEnt@@HPAI@Z sub_10099ca0
+0x1000588a func   ?vfunc66@CBaseEntity@@UAEXXZ CBaseEntity::vfunc66
 0x1000588f func   ?vfunc273@CRagdollProp@@UAEHXZ CRagdollProp::vfunc273
 0x10005894 func   ?vfunc31@CMultiplayRules@@UAE_NHH@Z CMultiplayRules::vfunc31
 0x10005899 func   ?sub_10399610@CNPC_VMingXiao@@QAEXXZ CNPC_VMingXiao::sub_10399610

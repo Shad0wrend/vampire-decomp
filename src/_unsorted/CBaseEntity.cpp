@@ -1271,6 +1271,39 @@ void CBaseEntity::sub_1009b5a0(const char *msg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009d2a0 size=0xaa
+#include "CBaseEntity.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CBaseEntity::vfunc66()
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseEntity::Hide";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (*((char *)this + 0xf4)) {
+		volatile unsigned int *pFlags = (volatile unsigned int *)((char *)this + 0xf8);
+		unsigned int flags = *pFlags;
+		flags |= 0x40;
+		*pFlags = flags;
+		sub_1009d1e0();
+		(*g_109f3680)--;
+		return;
+	}
+	volatile unsigned int *pFlags = (volatile unsigned int *)((char *)this + 0x19c);
+	unsigned int flags = *pFlags;
+	flags |= 0x40;
+	*pFlags = flags;
+	sub_1009d1e0();
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009d380 size=0xa2
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
