@@ -8810,6 +8810,7 @@
 0x1000e9d5 func   ?vfunc80@CItemGPishaFetish@@QAEHXZ CItemGPishaFetish::vfunc80
 0x1000e9df func   ?sub_1006afb0@CUnknown1006afb0@@QAEHXZ CUnknown1006afb0::sub_1006afb0
 0x1000e9e9 func   _window_pane window_pane
+0x1000e9ee func   ??_GCUserCmd@@UAEPAXI@Z ??_GCUserCmd@@UAEPAXI@Z
 0x1000e9f3 func   ?vfunc32@CSimplePhysicsBrush@@QAE_NH@Z CSimplePhysicsBrush::vfunc32
 0x1000e9f8 func   ?vfunc319@CItemContainer@@QAE_NHHH@Z CItemContainer::vfunc319
 0x1000e9fd func   ?sub_102e2710@@YIXPAUCOwner@@@Z sub_102e2710
