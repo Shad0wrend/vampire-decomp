@@ -24,11 +24,16 @@ struct CUnknown1030f940Npc	// the NPC: only the slots 470 and 473 are typed
 
 struct CUnknown1030f940Rec	// a record of the global table
 {
-	int m_unk0;
+	int m_unk0;		// 0x00: the sound owner entity handle
 	unsigned int m_nMask;	// 0x04
-	char m_pad08[0x18 - 8];
+	int m_nVolume;		// 0x08
+	float m_flTime;		// 0x0c
+	int m_n10;		// 0x10
+	unsigned char m_bOcclude;	// 0x14: run the sound occlusion check on this record (the flag read by sub_1030f7b0)
+	char m_pad15[3];
 	int m_iNext;	// 0x18
 	int m_iPrev;	// 0x1c: the next link of the sensor's list
+	float m_vecOrigin[3];	// 0x20: the sound origin (the record is 0x2c bytes)
 };
 
 class CUnknown1030f940
