@@ -39,6 +39,7 @@
 0x100010e1 func   ?sub_103d99a0@CNPC_VWerewolf@@QAEXPAUinputdata_t@@@Z CNPC_VWerewolf::sub_103d99a0
 0x100010e6 func   ?sub_102e0b80@@YIXPAD@Z sub_102e0b80
 0x100010eb func   ?vfunc271@CRagdollProp@@UAEXHH@Z CRagdollProp::vfunc271
+0x100010f0 func   ?sub_101d9610@@YIPBDPAH@Z sub_101d9610
 0x100010f5 func   ?sub_101b65e0@CUtlVector16@@QAEXXZ CUtlVector16::sub_101b65e0
 0x100010fa func   ?sub_101728b0@CBasePlayer@@QAEXXZ CBasePlayer::sub_101728b0
 0x100010ff func   ?vfunc3@CTEMuzzleFlash@@UAEXHH@Z CTEMuzzleFlash::vfunc3
