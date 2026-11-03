@@ -74266,6 +74266,25 @@ extern "C" CBaseEntity *prop_mover()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10192870 size=0x12
+#include "CPropMover.h"
+
+extern int vt_1047518c[];
+
+struct CPropMoverBaseCtor
+{
+	void sub_1008b230();
+};
+
+// TARGET: CPropMover::sub_10192870
+CPropMover *CPropMover::sub_10192870()
+{
+	((CPropMoverBaseCtor *)this)->sub_1008b230();
+	*(int *)this = (int)vt_1047518c;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10192940 size=0x6f
 #include "CBaseEntity.h"
 #include "CUnknown101466e0.h"
