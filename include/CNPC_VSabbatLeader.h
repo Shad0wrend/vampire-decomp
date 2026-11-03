@@ -111,6 +111,7 @@ public:
 	float sub_103c6a20();	// stub 0x100010d2, a measure returned in ST0
 	void vfunc433();	// "CNPC_VSabbatLeader::GatherConditions" (slot 433 override): scope trace, CAI_BaseNPCTroika::vfunc433, on a jump (CheckForJump) the global object 0x10924a6c is asked (slot 1) and condition 0x79 is set; conditions 0xf, 0xc and 0xe are cleared
 	void sub_102b27f0();	// CAI_BaseNPCTroika::vfunc433 (stub 0x10013f2f), called directly
+	void vfunc434();	// slot 434 (plain member): CNPC_VHuman::vfunc434 (0x10385a30)
 	void sub_10269a20(int condition);	// "SetCondition" (stub 0x100041b0)
 	void sub_10269b50(int condition);	// "ClearCondition" (stub 0x10015839)
 	void vfunc448(int a);	// "CNPC_VSabbatLeader::TaskFail" (slot 448 override): scope trace (no entity name); for the failure codes 0xc..0xf counts them at +0x66bc and from the sixth on flips the failure type (sub_103a9d00) and starts schedule 0x161 (line 0x3f4) or 0x160 (line 0x3f9); else CAI_BaseNPCTroika::vfunc448
