@@ -8649,6 +8649,7 @@
 0x1000e827 func   ?sub_10267350@@YAXXZ sub_10267350
 0x1000e831 func   ?vfunc147@CBaseDMStart@@QAEHH@Z CBaseDMStart::vfunc147
 0x1000e836 func   ?vfunc461@CNPC_VZombie@@UAEHXZ CNPC_VZombie::vfunc461
+0x1000e83b func   ?vfunc2@?$CUtlVectorDataOps@V?$CUtlVector@UUnreachableEnt_t@@V?$CUtlMemory@UUnreachableEnt_t@@@@@@$08@@UAE_NPAX@Z CUtlVectorDataOps<CUtlVector<UnreachableEnt_t,CUtlMemory<UnreachableEnt_t> >,9>::vfunc2
 0x1000e840 func   ?sub_101d60b0@CLoaderUnit101d60b0@@QAE_NPAUCSlotObject@@@Z CLoaderUnit101d60b0::sub_101d60b0
 0x1000e845 func   ?vfunc5@CWeaponRanged_Pistol_DesertEagle@@QAEPAV1@I@Z CWeaponRanged_Pistol_DesertEagle::vfunc5
 0x1000e84a func   ?sub_101ce210@@YAXHHHH@Z sub_101ce210

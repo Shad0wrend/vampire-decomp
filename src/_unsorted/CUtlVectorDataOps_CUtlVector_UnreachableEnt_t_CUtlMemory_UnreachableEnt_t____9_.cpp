@@ -72,3 +72,18 @@ template<> int CUtlVectorDataOps<CUtlVector<UnreachableEnt_t,CUtlMemory<Unreacha
 	return (int)pVec;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1027f8c0 size=0x13
+#include "CUtlVectorDataOps.h"
+
+struct UnreachableEnt_t;
+
+// TARGET: CUtlVectorDataOps<CUtlVector<UnreachableEnt_t,CUtlMemory<UnreachableEnt_t> >,9>::vfunc2
+template <class VEC, int N>
+bool CUtlVectorDataOps<VEC, N>::vfunc2(void *pFieldData)
+{
+	return *(int *)(*(char **)pFieldData + 0xc) == 0;
+}
+
+template class CUtlVectorDataOps<CUtlVector<UnreachableEnt_t,CUtlMemory<UnreachableEnt_t> >,9>;
+// END FUNCTION
