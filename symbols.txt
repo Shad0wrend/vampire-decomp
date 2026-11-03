@@ -9804,6 +9804,7 @@
 0x100103ac func   ?vfunc110@CAreaPortal@@UAE_NPBD0@Z CAreaPortal::vfunc110
 0x100103b1 func   _funCBaseFlex funCBaseFlex
 0x100103bb func   ?sub_10150530@CPhysicsCannister@@QAE?AVVector@@PBV2@@Z CPhysicsCannister::sub_10150530
+0x100103c0 func   ?vfunc103@CNPC_VRat@@QAEXXZ CNPC_VRat::vfunc103
 0x100103d4 func   ?vfunc80@CWeaponMelee_TzimisceMelee@@UAEPAXXZ CWeaponMelee_TzimisceMelee::vfunc80
 0x100103d9 func   ?sub_101eaac0@@YAXH@Z sub_101eaac0
 0x100103de func   ?sub_10138580@@YA?AUQAngleView@@ABU1@0@Z sub_10138580

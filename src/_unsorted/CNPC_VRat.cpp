@@ -1,6 +1,20 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103ad630 size=0x19
+#include "CNPC_VRat.h"
+#include "CNPC_VScurrying.h"
+
+extern char g_10650370;
+
+// TARGET: CNPC_VRat::vfunc103
+void CNPC_VRat::vfunc103()
+{
+	m_p10e4 = g_10650370 ? &g_10650370 : 0;
+	((CNPC_VScurrying *)this)->CNPC_VScurrying::vfunc103();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ad660 size=0x6
 #include "CNPC_VRat.h"
 int CNPC_VRat::vfunc138()
