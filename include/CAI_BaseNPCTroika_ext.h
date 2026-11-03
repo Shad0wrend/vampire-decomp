@@ -129,6 +129,7 @@
 	virtual bool vfunc566(CBaseEntity *pHint);	// slot 566 "CAI_BaseNPCTroika::FValidateHintType": scope trace; a hint whose group mask (+0x470) meets the NPC's mask (+0x62e4) is validated by its type (+0x5dc)
 	bool sub_10295ed0(CBaseEntity *pHint);	// stub 0x10006050, hint types 0x283c / 0x283d
 	bool sub_102961a0(CBaseEntity *pHint);	// stub 0x100036cf, hint type 0x28a0
+	void sub_102b1a20();
 	void sub_102bf770();
 	void sub_102b7110(int a);	// finds a hint node (+0x5ddc) for the NPC, stub 0x1000bfaa
 	int sub_102b7370();	// schedule pick that looks for a hint node / enemy to approach (called by slots 604 / 605)
