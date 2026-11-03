@@ -39,6 +39,7 @@ public:
 	int sub_10011225();	// CNPC_VHuman::vfunc461, called directly
 	void sub_100052d6();	// CNPC_VVampireBoss::vfunc431, called directly
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
+	int vfunc604(int arg);	// 0x1036d800 "CNPC_VChangBros::SelectScheduleMeleeCombat" (plain member override of CAI_BaseNPCTroika's slot 604): melee schedule pick, stamps m_pszFile1b30 / m_nLine1b34
 	void sub_100054bb(int code);	// CAI_BaseNPCTroika::vfunc448, called directly
 	int *sub_1028a150();	// the NPC's current schedule record (first dword is the schedule id), 0 when none
 	void sub_1036e8c0();	// "CNPC_VChangBros::KillCenterEmitter": scope trace (no entity name), when the entity behind the handle at +0x66f4 resolves calls its slot 242 and SetNextThink(0.1f)
