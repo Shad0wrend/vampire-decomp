@@ -337,7 +337,8 @@ public:
 	int m_nUseEdictIndex1EB8;	// engine index of the entity to notify (0 = none)
 	char m_pad1EBC[4];	// 0x1EBC .. 0x1EBF
 	char m_bNotifyUse1EC0;
-	char m_pad1EC1[0x1efc - 0x1ec1];	// 0x1EC1 .. 0x1EFB
+	char m_pad1EC1[0x1ef0 - 0x1ec1];	// 0x1EC1 .. 0x1EEF
+	Vector m_vec1EF0;	// 0x1EF0: the velocity the command run last saw (copied from +0x3b0 when non-zero)
 	Vector m_vec1EFC;	// 0x1EFC: a vector pair (reset together by sub_101711e0)
 	Vector m_vec1F08;	// 0x1F08
 	char m_pad1F14[0x2018 - 0x1f14];	// 0x1F14 .. 0x2017
