@@ -4766,6 +4766,7 @@
 0x10008751 func   _item_container_one_item_filtered item_container_one_item_filtered
 0x1000875b func   ?vfunc363@CWeaponRanged_Rifle_M37@@QAEHXZ CWeaponRanged_Rifle_M37::vfunc363
 0x10008760 func   ?sub_10171d10@@YIXPAUCHandlerView@@HPAUCInputData@@@Z sub_10171d10
+0x1000876a func   ?vfunc103@CNPC_VTest@@UAEXXZ CNPC_VTest::vfunc103
 0x1000876f func   ?vfunc580@CNPC_VVampireBoss@@QAEHXZ CNPC_VVampireBoss::vfunc580
 0x10008774 func   ?sub_102f3270@@YAHPAUCBitVecView@@PBMH@Z sub_102f3270
 0x1000877e func   ?sub_10396000@CUnknown10396000@@QAEHH@Z CUnknown10396000::sub_10396000

@@ -99,6 +99,28 @@ void CNPC_VTest::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b42f0 size=0x15
+#include "CNPC_VTest.h"
+
+struct CUnk1026dc00
+{
+	char pad[0x5cec];
+	unsigned int m_5cec;
+	unsigned int sub_1026dc00(unsigned int flags);
+};
+
+struct CVampireCallView
+{
+	void sub_103c4ef0();
+};
+
+void CNPC_VTest::vfunc103()
+{
+	((CUnk1026dc00 *)this)->sub_1026dc00(0x200000);
+	((CVampireCallView *)this)->sub_103c4ef0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b4320 size=0x11f
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
