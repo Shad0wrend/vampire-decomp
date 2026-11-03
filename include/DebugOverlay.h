@@ -19,6 +19,11 @@ void sub_10144db0(const Vector *pPos, int a2, int a3, int a4, int a5, int a6, in
 // A debug overlay text at a position (nValue is an extra integer, unused by the shell callers).
 void sub_10143710(const float *pPos, const char *pszText, int unused, int nValue);
 
+// 0x101434b0: the debug text overlay network message (builds a CBroadcastRecipientFilter, UserMessageBegin 0x2e,
+// writes the arguments, MessageEnd). The game's callers reach it with the variadic engine slot 35 leaving its
+// arguments on the stack; declared with the game's own 8-argument signature.
+void sub_101434b0(int a, int b, const char *pszText, int d, int e, int f, int g, int h);
+
 // 0x10552810: the entity index the debug trace drawers follow (a plain int; -1 / 0 draws nothing).
 extern int g_10552810;
 
