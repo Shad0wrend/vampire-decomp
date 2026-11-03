@@ -99597,6 +99597,40 @@ unsigned int COwner::sub_101e8250(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e8270 size=0x2e
+struct CWorker101e8270
+{
+	int sub_101e56e0(int a);
+};
+
+struct CInner101e8270
+{
+	char m_pad0000[0x18];
+	CWorker101e8270 *m_pWorker;
+};
+
+struct COwner101e8270
+{
+	char m_pad0000[0x1c];
+	CInner101e8270 *m_pInner;
+
+	int *sub_101e8270(int *pResult, int a, int unused, int limit);
+};
+
+// TARGET: COwner101e8270::sub_101e8270
+int *COwner101e8270::sub_101e8270(int *pResult, int a, int unused, int limit)
+{
+	int v = m_pInner->m_pWorker->sub_101e56e0(a);
+	if (v >= limit)
+	{
+		*pResult = 3;
+		return pResult;
+	}
+	*pResult = 1;
+	return pResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e83d0 size=0xd
 #include "CUnknown101e83d0.h"
 // TARGET: CUnknown101e83d0::sub_101e83d0
