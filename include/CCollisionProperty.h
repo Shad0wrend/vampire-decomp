@@ -66,6 +66,7 @@ public:
 	void sub_100dda20();	// stub 0x100121f7, called by SetSolid before the type changes
 	void sub_100ddc40();	// stub 0x10001906, called by SetSolid after the type changed
 	void sub_100dc430();	// stub 0x1000c1e4, called by SetSolid when the solidity changed
+	void sub_100ddc00();	// 0x100ddc00: removes the partition handle (m_hPartition +0x46) through the partition object 0x1070b24c slot 3 and sets it to 0xffff
 	void AddSolidFlags(int flags) { sub_100dc580(m_usSolidFlags | flags); }
 	int IsSolid() const { return m_nSolidType != 0 && !(m_usSolidFlags & 4); }	// the solid type is set and the not-solid flag (bit 2) is clear
 	void sub_100dc220(int a);	// partition update: with the partition object at 0x1070b24c (DevMsg "partition not initialized" otherwise) makes sure the handle at +0x46 exists (sub_100ddd90, stub 0x10014092; DevMsg "m_Partition failed to initialize" when it still does not) and calls slot 0 of the partition object with (handle, a)
