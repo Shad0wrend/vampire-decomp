@@ -5780,6 +5780,7 @@
 0x10009f98 func   ?sub_10297940@CAI_BaseNPCTroika@@QAEXPBM@Z CAI_BaseNPCTroika::sub_10297940
 0x10009f9d func   ?sub_101ebd10@@YAXXZ sub_101ebd10
 0x10009fa2 func   ?sub_100caa40@CMomentaryRotButton@@QAEXXZ CMomentaryRotButton::sub_100caa40
+0x10009fac func   ?vfunc86@CHL2_Player@@UAEDHHHHH@Z CHL2_Player::vfunc86
 0x10009fb1 func   ?sub_1006ee10@CUnk1006ee10@@QAEHH@Z CUnk1006ee10::sub_1006ee10
 0x10009fb6 func   ?sub_103f9ad0@@YAHXZ sub_103f9ad0
 0x10009fbb func   ?sub_101d0570@@YAXPAHHPBD@Z sub_101d0570

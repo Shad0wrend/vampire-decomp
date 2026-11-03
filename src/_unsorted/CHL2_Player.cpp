@@ -358,6 +358,18 @@ void CHL2_Player::vfunc468()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10351550 size=0x1c
+#include "CHL2_Player.h"
+#include "CBaseCombatCharacter.h"
+
+char CHL2_Player::vfunc86(int a, int b, int c, int d, int e)
+{
+	if (b == *(int *)((char *)this + 0x2e0))
+		return 1;
+	return ((CBaseCombatCharacter *)this)->vfunc86(a, b, c, d, e);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103528d0 size=0x70
 #include "CHL2_Player.h"
 
