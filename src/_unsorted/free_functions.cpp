@@ -76618,6 +76618,50 @@ void __fastcall sub_10190810(char *self, int dummy, char *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10190850 size=0x145
+#include "CBaseEntity.h"
+#include "CCineNPC.h"
+#include "CDynamicProp.h"
+#include "CEntityVSlots.h"
+void CDynamicProp::sub_10190850()
+{
+	if ( m_bRandomAnimate && m_flNextAnimTime < gpGlobals->curtime )
+	{
+		m_nSequence = sub_1008dc40( 1, -1 );
+		sub_10090950();
+		sub_100963d0();
+		m_slotC.sub_100cd660( 0, (CCineNPC *)this, 0 );
+		m_flNextAnimTime = enginerandom->vfunc1( m_flAnimDelayMin, m_flAnimDelayMax ) + gpGlobals->curtime;
+	}
+	else if ( m_n07d8 > -1 && m_bSequenceFinished && !m_bSequenceLoops )
+	{
+		m_nSequence = m_n07d8;
+		sub_10090950();
+		sub_100963d0();
+	}
+
+	((CEntityVSlots *)this)->slot250( 0 );
+
+	if ( m_bSequenceFinished )
+	{
+		if ( !m_bSequenceLoops )
+		{
+			m_slotD.sub_100cd660( (CBaseEntity *)this, (CCineNPC *)this, 0 );
+			if ( m_bRandomAnimate )
+				m_flNextThink17c = m_flNextAnimTime + 0.1;
+			return;
+		}
+	}
+	if ( m_bSequenceFinished && m_bSequenceLoops )
+	{
+		m_slotE.sub_100cd660( (CBaseEntity *)this, (CCineNPC *)this, 0 );
+		m_flNextThink17c = gpGlobals->curtime + 0.1;
+		return;
+	}
+	m_flNextThink17c = gpGlobals->curtime + 0.1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10190a00 size=0xd0
 #include "CDynamicProp.h"
 #include "CBaseAnimating.h"

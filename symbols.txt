@@ -8054,6 +8054,7 @@
 0x1000d2bf func   ?vfunc580@CNPC_VZombie@@UAEHXZ CNPC_VZombie::vfunc580
 0x1000d2c4 func   ?sub_1028b3e0@@YIMPAH@Z sub_1028b3e0
 0x1000d2c9 func   ?vfunc39@CBaseVampireSkillEntity@@QAEXPAX@Z CBaseVampireSkillEntity::vfunc39
+0x1000d2ce func   ?sub_10190850@CDynamicProp@@QAEXXZ CDynamicProp::sub_10190850
 0x1000d2d3 func   ?sub_1027e590@@YAXPAVCBaseEntity@@PBDZZ sub_1027e590
 0x1000d2dd func   ?sub_101f25d0@@YIHPAD@Z sub_101f25d0
 0x1000d2e2 func   ?sub_10160680@CUnknown10160680@@QAEMXZ CUnknown10160680::sub_10160680
