@@ -5410,6 +5410,7 @@
 0x10009368 func   ?vfunc362@CWeaponRanged_Smg_Uzi@@QAEHXZ CWeaponRanged_Smg_Uzi::vfunc362
 0x1000936d func   ?vfunc249@CSceneEntity@@UAEXMHPAUCSceneEvent@@@Z CSceneEntity::vfunc249
 0x10009372 func   ?sub_101dfe80@CUnknown101e0f00Fx@@QAEXPAUS1033d380@@HD@Z CUnknown101e0f00Fx::sub_101dfe80
+0x10009377 func   ?vfunc0@?$CUtlVectorDataOps@V?$CUtlVector@HV?$CUtlMemory@H@@@@$03@@UAEXPAX0@Z CUtlVectorDataOps<CUtlVector<int,CUtlMemory<int> >,4>::vfunc0
 0x10009381 func   _camera_track camera_track
 0x1000938b func   ?sub_101f6c30@CUnknown101f6c30@@QAE_NXZ CUnknown101f6c30::sub_101f6c30
 0x10009390 func   ?sub_102c6290@CUnknown102c6290@@QAEPAXH@Z CUnknown102c6290::sub_102c6290
