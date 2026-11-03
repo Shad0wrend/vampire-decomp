@@ -5428,6 +5428,7 @@
 0x100098e0 func   _point_hurt point_hurt
 0x100098e5 func   ??0CTEMetalSparks@@QAE@PBD@Z CTEMetalSparks::CTEMetalSparks
 0x100098ea func   ?sub_10310b40@CVDmgBlock16_t@@QAEPAU1@PBD@Z CVDmgBlock16_t::sub_10310b40
+0x100098f4 func   ?sub_10252050@@YIHPAVCBaseCombatWeapon@@@Z sub_10252050
 0x100098f9 func   ?vfunc2@CTEMuzzleFlash@@UAEPAV1@I@Z CTEMuzzleFlash::vfunc2
 0x100098fe func   ?sub_102433a0@@YAXABVVector@@00HHPAV1@@Z sub_102433a0
 0x10009903 func   ?vfunc363@CWeaponRanged_Rifle_SteyrAug@@QAEHXZ CWeaponRanged_Rifle_SteyrAug::vfunc363
