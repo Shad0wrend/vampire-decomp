@@ -14,6 +14,8 @@ struct inputdata_t;
 struct CAI_ArcRecord;
 class CAI_MoveProbe;
 class CAI_BaseNPCTroika;
+class CAI_InterestingPlace;
+class CAI_Hint;
 
 struct CAI_SensesView	// the component at +0x5cdc of an NPC
 {
