@@ -8004,6 +8004,7 @@
 0x1000d495 func   ?vfunc164@CBaseEntity@@QAE_NXZ CBaseEntity::vfunc164
 0x1000d49a func   ?sub_104126a0@@YA_NH@Z sub_104126a0
 0x1000d49f func   ?sub_10288540@CUnknown10288540@@QAEPAU1@XZ CUnknown10288540::sub_10288540
+0x1000d4a4 func   ?vfunc447@CAI_BaseNPC@@UAEHH@Z CAI_BaseNPC::vfunc447
 0x1000d4a9 func   ?vfunc363@CWeaponMelee_Tzimisce3Claw@@QAEHXZ CWeaponMelee_Tzimisce3Claw::vfunc363
 0x1000d4ae func   ?vfunc513@CAI_BaseNPC@@UAEIXZ CAI_BaseNPC::vfunc513
 0x1000d4b3 func   ?vfunc0@CTEBloodStream@@UAEPAUServerClass@@XZ CTEBloodStream::vfunc0

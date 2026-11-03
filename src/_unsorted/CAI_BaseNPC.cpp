@@ -123,6 +123,21 @@ int CUnknown101a65e0View::sub_101a65e0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6620 size=0xf
+#include "CAI_BaseNPC.h"
+
+struct CRangeNode_102ea280 {
+	int sub_102ea280(int a);
+};
+
+// TARGET: CAI_BaseNPC::vfunc447
+int CAI_BaseNPC::vfunc447(int a)
+{
+	void *p = ((void *(__fastcall *)(void *))(*(void ***)this)[580])(this);
+	return ((CRangeNode_102ea280 *)p)->sub_102ea280(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6640 size=0x10
 #include "CAI_BaseNPC.h"
 #include "CAI_BaseNPCTroika.h"
