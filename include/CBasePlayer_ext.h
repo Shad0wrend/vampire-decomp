@@ -1,3 +1,5 @@
+	void vfunc338(int a, char b, int c);	// slot 338: CBaseCombatCharacter::AddPreDisciplineEffect (0x1033cc30), a narrow second argument
+	void sub_1033cc30(int a, char b, int c);	// CBaseCombatCharacter::AddPreDisciplineEffect, called directly
 	void sub_101728b0();	// resets +0x20e8 to -1, clears +0x229a / +0x1a84 / +0x1a94, then slot 444
 	void vfunc21(int a);	// slot 21 (plain member): stamps m_f1DD0 with gpGlobals->curtime
 	void vfunc130(char bFlag);	// slot 130: CBaseCombatCharacter::vfunc130, then resets the vector pair at +0x1efc / +0x1f08, the stat-bound fields (+0x1adc.. / +0x1b20..) and the keyring
