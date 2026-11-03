@@ -117,6 +117,7 @@ public:
 	void sub_1015e140(int pDump);	// CBasePlayer::vfunc31 (stub 0x10001555), called directly
 	int sub_1034fd90(int a);	// slot 370 (called through the vtable): stores the forward y (slot 367's y + +0xe5c) through sub_1000ecd2(a, y) and answers a
 	void sub_10014eb6(float *pFirst, float *pSecond);	// CBaseCombatCharacter::sub_10014eb6 (viewpoint query, stub 0x10014eb6), called directly by slot 333
+	int vfunc138();	// slot 138: the dword at +0x2460, or 1 when it is 0
 	char m_pad0004[0xe44 - 4];	// 0x0004 .. 0x0e43
 	Vector m_vecE44;	// 0x0e44
 	Vector m_vecE50;	// 0x0e50
