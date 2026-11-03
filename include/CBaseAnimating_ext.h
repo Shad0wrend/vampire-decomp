@@ -1,3 +1,4 @@
+	float vfunc250(float flInterval);
 	virtual void vfunc31(int pDump);	// slot 31 "CBaseAnimating::Dump": scope trace (entity name), dumps the animation fields (yaw speed, ground speed, force, skin, body, hitbox set, scale, colours, pose parameters, sequence, playback rate, cycle, effect start time, encoded controllers, client side animation), then CBaseToggle::vfunc31
 	virtual int vfunc124();	// slot 124 "CBaseAnimating::DrawDebugTextOverlays": scope trace (entity name), CBaseEntity::vfunc124's next free line, then with the overlay flag (bit 0 of the byte at +0x224) the lines "Model:%s", "Sequence: (%3d) %s", "Activity %s" (when the sequence has an activity name) and "Cycle: %.5f" as entity text overlays; returns the next free line
 	int sub_100ab4f0();	// stub 0x1000b5cd, thiscall without stack arguments: its result is the first argument of DisplayAnimEvent (sub_1008cfc0)
