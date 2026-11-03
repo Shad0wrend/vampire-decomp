@@ -29,6 +29,7 @@ public:
 	void vfunc273(int a, char bAdd, int b);	// slot 273 (plain member): the layer slot 271(a) finds gets its dword at +8 cleared; with none and bAdd set, AddGesture(a, b)
 	void vfunc274(int a);	// slot 274 (plain member): the layer slot 271(a) finds gets its weight (+0x10) and sequence (+4) cleared; nothing when there is none
 	char vfunc270(int activity);	// slot 270: true when slot 271 finds a layer for the activity
+	void vfunc269(int index);	// slot 269: clears the layer's weight (+0x10) and sequence (+4)
 	int vfunc271(int a);	// slot 271: the first layer from slot 267's start index with weight (+0x10) set and activity (+0x20) a; -1 when none
 	int vfunc272();	// slot 272: the first free overlay layer among the first four (its weight at +0x10 is 0), slot 267 is asked first for the start index; -1 when none
 	bool sub_100992d0(int index, float flDivisor, int nValue);	// the layer [index] (-1 = none): its rate at +0xc = sub_10091080(its sequence) / flDivisor, its dword at +0x14 = nValue; true when the layer exists
