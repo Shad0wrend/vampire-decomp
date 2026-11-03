@@ -164455,6 +164455,36 @@ CBaseEntity *__fastcall sub_10341510(CBaseEntity *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103418f0 size=0x9d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "inputdata_t.h"
+#include "ScopeTrace.h"
+
+static __inline bool WillTalk(inputdata_t *pData)
+{
+	return pData->value.fieldType == 4 && pData->value.iValue != 0;
+}
+
+void CBaseCombatCharacter::sub_103418f0(inputdata_t *pData)
+{
+	ScopeTrace trace("CBaseCombatCharacter::InputWillTalk",
+		this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+
+	if (!WillTalk(pData))
+		*((char *)this + 0x1088) = 0;
+	else
+		*((char *)this + 0x1088) = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103419c0 size=0xa8
 #include "CBaseCombatCharacter.h"
 #include "inputdata_t.h"

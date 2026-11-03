@@ -7294,6 +7294,7 @@
 0x1000c121 func   ?sub_102d8b50@CAI_MotorTimerView@@QAE_NXZ CAI_MotorTimerView::sub_102d8b50
 0x1000c126 func   _info_node_cover_low info_node_cover_low
 0x1000c12b func   _weapon_physcannon weapon_physcannon
+0x1000c130 func   ?sub_103418f0@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_103418f0
 0x1000c135 func   ?vfunc575@CAI_BaseNPC@@QAE_NXZ CAI_BaseNPC::vfunc575
 0x1000c144 func   ?sub_10185140@UtlMem@@QAEXXZ UtlMem::sub_10185140
 0x1000c153 func   ?sub_1026d050@SNpcView5bb0@@QAEXXZ SNpcView5bb0::sub_1026d050
