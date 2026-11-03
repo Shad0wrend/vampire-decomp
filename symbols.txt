@@ -2383,6 +2383,7 @@
 0x10004a16 func   ?sub_101082a0@@YAHXZ sub_101082a0
 0x10004a1b func   ?sub_100bd840@bf_write@@QAEXM@Z bf_write::sub_100bd840
 0x10004a25 func   ?vfunc5@CRagdollPropAttached@@QAEPAVCRagdollProp@@I@Z CRagdollPropAttached::vfunc5
+0x10004a2a func   ?sub_10398b20@CNPC_VMingXiao@@QAEPAVCBaseEntity@@PAHPAVVector@@1@Z CNPC_VMingXiao::sub_10398b20
 0x10004a34 func   ?sub_102906e0@@YADXZ sub_102906e0
 0x10004a39 func   ?vfunc362@CWeaponRanged_Rifle_Crossbow_Flaming@@QAEHXZ CWeaponRanged_Rifle_Crossbow_Flaming::vfunc362
 0x10004a3e func   ?sub_10081980@@YIMPAD@Z sub_10081980

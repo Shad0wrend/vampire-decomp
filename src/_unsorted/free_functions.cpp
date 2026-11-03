@@ -175597,6 +175597,75 @@ bool __fastcall sub_103989b0(MingTurnView *pThis, int unused, const Vector &vecT
 }
 // END FUNCTION
 
+// FUNCTION: 0x10398b20 size=0x1eb
+#include "CNPC_VMingXiao.h"
+#include "CNPC_VWerewolf.h"
+#include "CGlobalEntityList.h"
+#include "CEntityVSlots.h"
+#include <math.h>
+
+extern CGlobalEntityList g_106eb5d8;
+extern Vector g_1070d1b0;
+extern char g_106b8540[];
+extern "C" int __cdecl _strnicmp(const char *, const char *, unsigned int);
+
+struct IGameClientsX
+{
+	virtual void v0();
+	virtual bool vfunc1();
+	char m_pad[0x28];
+	int m_n2c;
+};
+extern IGameClientsX *g_1093ba8c;
+
+// TARGET: CNPC_VMingXiao::sub_10398b20
+CBaseEntity *CNPC_VMingXiao::sub_10398b20(int *pSide, Vector *pOutPoint, Vector *pOutAxis)
+{
+	if (!(m_f6264 < 150.0f)) {
+		if (sub_10398000(4) || sub_10398000(5)) {
+			if (!g_1093ba8c->vfunc1() && g_1093ba8c->m_n2c) {
+				CBaseEntity *pEnt = 0;
+				CBaseEntity *pBest = 0;
+				float flRadius = 257.0f;
+				Vector vecCenter = *((CEntityVSlots *)this)->slot217();
+				do {
+					pEnt = g_106eb5d8.sub_100f8490(pEnt, 6, &vecCenter, flRadius);
+					if (!pEnt)
+						break;
+					if (((CNPC_VWerewolf *)this)->sub_10366400((int)pEnt))
+						continue;
+					const char *pszName = pEnt->m_name26c ? pEnt->m_name26c : g_106b8540;
+					if (_strnicmp(pszName, "Pedestal", 8) != 0)
+						continue;
+					Vector vVel;
+					Vector vAng;
+					((CEntityVSlots *)pEnt)->slot199(&vVel, &vAng);
+					if ((float)fabs(vVel.x - g_1070d1b0.x) > 0.1f)
+						continue;
+					if ((float)fabs(vVel.y - g_1070d1b0.y) > 0.1f)
+						continue;
+					if ((float)fabs(vVel.z - g_1070d1b0.z) <= 0.1f) {
+						if (!sub_103989b0(((CEntityVSlots *)pEnt)->slot217(), pSide))
+							continue;
+						Vector *pOrigin = ((CEntityVSlots *)pEnt)->slot217();
+						float dx = vecCenter.x - pOrigin->x;
+						float dy = vecCenter.y - pOrigin->y;
+						float dz = vecCenter.z - pOrigin->z;
+						flRadius = pfSqrt(dx * dx + dy * dy + dz * dz);
+						pBest = pEnt;
+					}
+				} while (1);
+				if (pBest) {
+					sub_10398890((const float *)((CEntityVSlots *)pBest)->slot217(), *pSide, pOutPoint, pOutAxis);
+					return pBest;
+				}
+			}
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10398d90 size=0xd
 #include "CUnknown10398d90.h"
 void CUnknown10398d90::sub_10398d90(int value)
