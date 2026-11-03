@@ -1,6 +1,23 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x102275f0 size=0x68
+#include "CPlayerEventsManager.h"
+#include "CDirtySpatialPartitionEntityList.h"
+#include "utlvector.h"
+
+void __cdecl sub_10430964(void *p);
+
+void *CPlayerEventsManager::vfunc8(unsigned int flags)
+{
+	((CUtlVector<int> *)((char *)this + 8))->~CUtlVector<int>();
+	((CAutoGameSystem *)this)->sub_1000cfbd();
+	if (flags & 1)
+		sub_10430964(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10227680 size=0x41
 #include "CPlayerEventsManager.h"
 

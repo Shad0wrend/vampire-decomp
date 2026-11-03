@@ -728,6 +728,7 @@
 0x100021f8 func   ?vfunc174@CTriggerProximity@@QAEXPAVCBaseEntity@@@Z CTriggerProximity::vfunc174
 0x100021fd func   ?sub_10204100@@YAHPAVCBaseCombatCharacter@@HD@Z sub_10204100
 0x10002202 func   ?sub_1024b830@CUnknown1024b2d0@@QAEPBDUCUnknown1024b2d0Id@@@Z CUnknown1024b2d0::sub_1024b830
+0x10002207 func   ?vfunc8@CPlayerEventsManager@@QAEPAXI@Z CPlayerEventsManager::vfunc8
 0x1000220c func   ?sub_103fe460@@YAHXZ sub_103fe460
 0x10002211 func   ?sub_10160dc0@CAnimRangeView@@QAEDXZ CAnimRangeView::sub_10160dc0
 0x10002220 func   ?sub_102478b0@CUnknown102478b0@@QAEHXZ CUnknown102478b0::sub_102478b0
