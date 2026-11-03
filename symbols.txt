@@ -9555,6 +9555,7 @@
 0x1000fdf8 func   ?vfunc103@CAI_InterestingPlaceConverstation@@UAEXXZ CAI_InterestingPlaceConverstation::vfunc103
 0x1000fdfd func   ?sub_10042a00@UtlMem@@QAEXXZ UtlMem::sub_10042a00
 0x1000fe02 func   ?sub_102df2f0@@YAHXZ sub_102df2f0
+0x1000fe07 func   ?vfunc103@CNPC_VBatSwarm@@UAEXXZ CNPC_VBatSwarm::vfunc103
 0x1000fe0c func   ?sub_10303fd0@CAI_Pathfinder@@QAEDPBM0PAVCBaseEntity@@@Z CAI_Pathfinder::sub_10303fd0
 0x1000fe11 func   ?sub_103c67f0@CUnknown103c67f0@@QAEDM@Z CUnknown103c67f0::sub_103c67f0
 0x1000fe16 func   ?sub_103221b0@CBaseCombatCharacter@@QAEXPBD@Z CBaseCombatCharacter::sub_103221b0

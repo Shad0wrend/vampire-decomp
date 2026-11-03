@@ -67,6 +67,22 @@ datamap_t * CNPC_VBatSwarm::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10367380 size=0x15
+#include "CNPC_VBatSwarm.h"
+
+struct CUnk1026dc00 {
+    char pad[0x5cec];
+    unsigned int m_5cec;
+    unsigned int sub_1026dc00(unsigned int flags);
+};
+
+void CNPC_VBatSwarm::vfunc103()
+{
+    ((CUnk1026dc00 *)this)->sub_1026dc00(0x200000);
+    sub_103c4ef0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103673b0 size=0x14
 #include "CNPC_VBatSwarm.h"
 
