@@ -253,6 +253,28 @@ char CBaseCombatCharacter::vfunc360() { return 0; }
 bool __cdecl sub_1014f950() { return false; }
 // END FUNCTION
 
+// FUNCTION: 0x1014f970 size=0x14
+#include "CBaseCombatCharacter.h"
+
+#define VT(n) virtual void vt##n();
+#define VT10(p) VT(p##0) VT(p##1) VT(p##2) VT(p##3) VT(p##4) VT(p##5) VT(p##6) VT(p##7) VT(p##8) VT(p##9)
+
+struct CBaseCombatCharacterVtbl
+{
+	VT10(0) VT10(1) VT10(2) VT10(3) VT10(4) VT10(5) VT10(6) VT10(7) VT10(8) VT10(9)
+	VT10(10) VT10(11) VT10(12) VT10(13) VT10(14) VT10(15) VT10(16) VT10(17) VT10(18) VT10(19)
+	VT10(20) VT10(21) VT10(22) VT10(23) VT10(24) VT10(25) VT10(26) VT10(27) VT10(28) VT10(29)
+	VT10(30) VT10(31) VT10(32) VT10(33) VT10(34) VT10(35) VT10(36)
+	virtual void vt370(int a);
+};
+
+int CBaseCombatCharacter::vfunc372(int a)
+{
+	((CBaseCombatCharacterVtbl *)this)->vt370(a);
+	return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014f9a0 size=0x14
 #include "CBaseCombatCharacter.h"
 
