@@ -6,5 +6,6 @@
 class CSafeDiscSaveRestoreOps_3
 {
 public:
+	void vfunc0(int **ppObject, CSafeDiscWriter *pSave);
 	void vfunc1(int **ppObject, CSafeDiscReader *pRestore);
 };
