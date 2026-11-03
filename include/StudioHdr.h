@@ -1,6 +1,8 @@
 // StudioHdr: the fields of the studio model header (the object CBaseAnimating::GetModelPtr returns) that
-// decompiled code reads. Only what the sequence lookups need.
+// decompiled code reads. Only what the sequence / hitbox lookups need.
 #pragma once
+
+#include "Vector.h"
 
 struct StudioHdr;
 
@@ -46,12 +48,33 @@ struct StudioBoneMask	// the bit list of bones to build (0x100c3600's last argum
 	unsigned int m_bits[1];	// 0x04
 };
 
+struct StudioHitbox	// 0x20 bytes each: a hitbox of a hitbox set
+{
+	int m_iBone;	// 0x00: the bone the box is attached to (index into the bone array)
+	int m_iGroup;	// 0x04
+	Vector m_vecMins;	// 0x08: the box in bone space
+	Vector m_vecMaxs;	// 0x14
+};
+
+struct StudioHitboxSet	// 0xc bytes each (the table at header + m_nHitboxSetIndex)
+{
+	int m_iName;	// 0x00: offset of the set's name string
+	int m_nHitboxes;	// 0x04: number of StudioHitbox records
+	int m_iHitboxIndex;	// 0x08: offset of the records from the start of the set
+	StudioHitbox *Hitbox(int i) { return (StudioHitbox *)((char *)this + m_iHitboxIndex) + i; }
+};
+
 struct StudioHdr
 {
-	char m_pad0000[0xf0];
+	char m_pad0000[0x0c];
+	char m_name[64];	// 0x0c: the model's path ("error/missing.mdl" when the model failed to load)
+	char m_pad004c[0xf0 - 0x4c];
 	int m_nBones;	// 0xf0: number of bones
 	int m_nBoneIndex;	// 0xf4: offset of the bone records (StudioBone, 0xa0 bytes each)
-	char m_pad00f8[0x110 - 0xf8];
+	char m_pad00f8[0x100 - 0xf8];
+	int m_nHitboxSets;	// 0x100: number of hitbox sets
+	int m_nHitboxSetIndex;	// 0x104: offset of the hitbox set records (StudioHitboxSet, 0xc bytes each)
+	char m_pad0108[0x110 - 0x108];
 	int m_nLocalSeq;	// 0x110: number of local sequences
 	int m_nLocalSeqIndex;	// 0x114: offset of the local sequence descriptors (StudioSeqDesc, 0x2fc bytes each)
 	void *m_pSeqCache118;	// 0x118: zero until sub_10427a70 (0x1000.. stub 0x100115f4) has built the sequence data (sub_10427dc0 calls it)
@@ -62,4 +85,5 @@ struct StudioHdr
 	StudioBone *Bone(int i) { return (StudioBone *)((char *)this + m_nBoneIndex) + i; }
 	StudioIncludeModel *IncludeModel(int i) { return (StudioIncludeModel *)((char *)this + m_nIncludeIndex) + i; }
 	StudioSeqDesc *LocalSeq(int i) { return (StudioSeqDesc *)((char *)this + m_nLocalSeqIndex) + i; }
+	StudioHitboxSet *HitboxSet(int i) { return (StudioHitboxSet *)((char *)this + m_nHitboxSetIndex) + i; }
 };
