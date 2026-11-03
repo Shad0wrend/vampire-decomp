@@ -59,7 +59,7 @@ public:
 	CAI_NPC_V(202) CAI_NPC_V(203) CAI_NPC_V(204) CAI_NPC_V(205) CAI_NPC_V(206) CAI_NPC_V(207)
 	virtual void vfunc208(int a);	// takes one argument (0 from AI_BaseNPC_Schedule's failure path)
 	CAI_NPC_V(209)
-	CAI_NPC_V(210) CAI_NPC_V(211) CAI_NPC_V(212) CAI_NPC_V(213) CAI_NPC_V(214) CAI_NPC_V(215) CAI_NPC_V(216)
+	CAI_NPC_V(210) CAI_NPC_V(211) CAI_NPC_V(212) CAI_NPC_V(213) virtual float *vfunc214(); CAI_NPC_V(215) CAI_NPC_V(216)
 	virtual float *vfunc217();	// "CBaseEntity::GetAbsOrigin"
 	CAI_NPC_V(218) CAI_NPC_V(219)
 	virtual float *vfunc220();	// "CBaseEntity::GetOrigin": the pointer to the three origin floats at +0x41c

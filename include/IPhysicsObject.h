@@ -3,6 +3,13 @@
 
 class Vector;
 
+class IPhysicsShadowController
+{
+public:
+	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3();
+	virtual void vfunc4(float flValue);
+};
+
 class IPhysicsObject
 {
 public:
@@ -29,7 +36,7 @@ public:
 	virtual char vfunc44(Vector *pContactPoint, IPhysicsObject **ppObject);	// slot 44 GetContactPoint
 	virtual void vfunc45(float flMaxSpeed, float flMaxAngularSpeed, int a, int b);	// slot 45 SetShadow
 	virtual void vfunc46(const float *pPosition, const float *pAngles, int a, int b);	// slot 46 UpdateShadow
-	virtual void vfunc47(); virtual void vfunc48(); virtual int vfunc49(const Vector *pOrigin, const Vector *pAngles);	// slot 49 (+0xc4): handed (&vec3_origin, &vec3_angle) by CRagdollProp 0x101554a0, result goes to collision slot 18
+	virtual void vfunc47(); virtual IPhysicsShadowController *vfunc48(); virtual int vfunc49(const Vector *pOrigin, const Vector *pAngles);	// slot 49 (+0xc4): handed (&vec3_origin, &vec3_angle) by CRagdollProp 0x101554a0, result goes to collision slot 18
 	virtual void vfunc50(); virtual void vfunc51(); virtual void vfunc52();
 	virtual float vfunc53(void *pShadowParams, float flSecondsToArrive, float flDeltaTime);	// slot 53 ComputeShadowControl
 };
