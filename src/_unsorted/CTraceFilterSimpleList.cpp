@@ -14,3 +14,29 @@ CTraceFilterSimpleList::CTraceFilterSimpleList(int collisionGroup) : CTraceFilte
     m_i1c = 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101d33e0 size=0x3a
+#include "CTraceFilterSimpleList.h"
+
+// TARGET: CTraceFilterSimpleList::vfunc0
+bool CTraceFilterSimpleList::vfunc0(void *pHandleEntity, int contentsMask)
+{
+	int i = 0;
+	if (m_i18 > 0)
+	{
+		int *pItem = (int *)m_i0c;
+		do
+		{
+			if (*pItem == (int)pHandleEntity)
+			{
+				if (i != -1)
+					return 0;
+				break;
+			}
+			i++;
+			pItem++;
+		} while (i < m_i18);
+	}
+	return sub_101d31c0(pHandleEntity, contentsMask);
+}
+// END FUNCTION
