@@ -119,6 +119,7 @@
 0x100012ee func   ?sub_101c2630@CUnk101c2630@@QAEXH@Z CUnk101c2630::sub_101c2630
 0x100012f3 func   ?sub_10273ec0@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_10273ec0
 0x100012f8 func   ?vfunc80@CWeaponIArmor@@UAEPAXXZ CWeaponIArmor::vfunc80
+0x100012fd func   ?sub_10356f30@@YG_NMM@Z sub_10356f30
 0x10001302 func   ?sub_101e0be0@CUnknown101e0be0@@QAEPAXXZ CUnknown101e0be0::sub_101e0be0
 0x10001307 func   ?sub_10032ec0@UtlMem@@QAEXXZ UtlMem::sub_10032ec0
 0x1000130c func   ?vfunc600@CNPC_VWerewolf@@UAE_NH@Z CNPC_VWerewolf::vfunc600

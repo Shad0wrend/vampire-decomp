@@ -110,6 +110,13 @@ void CNPC_Bullseye::vfunc144(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10356f30 size=0x20
+bool __stdcall sub_10356f30(float a, float b)
+{
+	return a > 0.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10356f60 size=0x6e
 #include "CNPC_Bullseye.h"
 
