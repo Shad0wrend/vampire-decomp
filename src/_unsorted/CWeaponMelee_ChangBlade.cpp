@@ -39,6 +39,17 @@ int CWeaponMelee_ChangBlade::vfunc363()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e9730 size=0x11
+#include "CWeaponMelee_ChangBlade.h"
+
+// TARGET: CWeaponMelee_ChangBlade::vfunc103
+void CWeaponMelee_ChangBlade::vfunc103()
+{
+	sub_100047be();
+	m_b871 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e9760 size=0x6
 #include "CWeaponMelee_ChangBlade.h"
 int CWeaponMelee_ChangBlade::vfunc373()

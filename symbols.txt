@@ -8328,6 +8328,7 @@
 0x1000e0b6 func   ?sub_10430100@@YAXXZ sub_10430100
 0x1000e0bb func   ?sub_101f2360@CUnknown101f2360@@QAEXPAPBDPAX@Z CUnknown101f2360::sub_101f2360
 0x1000e0c0 func   _item_g_hatters_screenplay item_g_hatters_screenplay
+0x1000e0c5 func   ?vfunc103@CWeaponMelee_ChangBlade@@QAEXXZ CWeaponMelee_ChangBlade::vfunc103
 0x1000e0ca func   ?sub_10170cb0@CUnknown10170cb0@@QAEXHH@Z CUnknown10170cb0::sub_10170cb0
 0x1000e0cf func   ?vfunc272@CRagdollProp@@UAE_NH@Z CRagdollProp::vfunc272
 0x1000e0d4 func   ?sub_102456b0@@YAHXZ sub_102456b0
