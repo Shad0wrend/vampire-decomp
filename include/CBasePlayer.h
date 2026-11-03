@@ -10,6 +10,7 @@
 #include "Vector.h"
 #include "utlvector.h"
 #include "CGlobalEmailRec.h"
+#include "CUserCmd.h"
 
 class CBaseEntity;
 class CBaseCombatWeapon;
@@ -189,12 +190,17 @@ public:
 	virtual void vfunc457(const char *pszName, int a);
 	virtual void vfunc458();	// slot 458: if the entity at +0x1538 is not set up, lets the vehicle at +0x20fc handle it, else picks the weapon call by the float at +0x1564
 	virtual CBaseEntity *vfunc459(const char *pszName, int iSubType);	// slot 459 "GiveNamedItem": unless the player owns it already, creates the entity, places it at the player, flags it, sets its sub type, spawns it and lets the player pick it up
-	CBP_V1(sl1) CBP_V1(sl2) CBP_V1(sl3) CBP_V1(sl4) virtual float vfunc464(); CBP_V1(sl6) virtual float vfunc466(); CBP_V1(sl8)
+	CBP_V1(sl1)
+	virtual void vfunc461(CUserCmd *pCmds, int numcmds, int totalcmds, int dropped_packets, char paused);	// slot 461 "RunCommand": processes the command batch
+	virtual void vfunc462(CUserCmd *pCmd, void *pHelper);	// slot 462 "PlayerRunCommand"-like (implementation sub_1016af80)
+	CBP_V1(sl4) virtual float vfunc464(); CBP_V1(sl6) virtual float vfunc466(); CBP_V1(sl8)
 	virtual void vfunc468();	// registers the "player_stand" / "player_crouch" collision hulls (16x16x36 and -16,-16,0) for the sub-object at +0x270
 
 	char m_pad0004[0x1fc - 0x4];	// 0x0004 .. 0x01FB
 	int m_nTakeDamage1FC;	// 0x01FC: the take-damage mode (CBaseEntity::m_nTakeDamage)
-	char m_pad0200[0x268 - 0x200];	// 0x0200 .. 0x0267
+	char m_pad0200[0x22c - 0x200];	// 0x0200 .. 0x022B
+	int m_n22C;	// 0x022C: set to -1 when the command run is paused
+	char m_pad0230[0x268 - 0x230];	// 0x0230 .. 0x0267
 	unsigned int m_fFlags268;	// 0x0268: the entity flag word (bit 12 = attached to a parent)
 	char m_pad026C[4];	// 0x026C .. 0x026F
 	CBasePlayerSub270 m_sub270;	// 0x0270
@@ -348,7 +354,8 @@ public:
 	Vector m_vec206c;	// 0x206C: the view angles / target vector (stored by sub_10167030)
 	char m_pad2078[0x207c - 0x2078];
 	int m_n207C;	// 0x207C: non-zero skips the view-angle copy in the command run
-	char m_pad2080[0x2088 - 0x2080];
+	char m_pad2080[0x2084 - 0x2080];	// 0x2080 .. 0x2083
+	int m_n2084;	// 0x2084: the command clock error in milliseconds, clamped to -1000..1000
 	unsigned int m_nFlags2088;	// 0x2088: the flag word (bit 0 tested by CWeaponUnarmed::vfunc319; see also vfunc436, sub_1016b090 'new buttons')
 	void sub_1016b090(unsigned int buttons);	// button-state update: prev buttons -> +0x2094, new buttons -> +0x2088	// 0x2078 .. 0x208B
 	unsigned char m_b208C;	// 0x208C
@@ -390,7 +397,7 @@ public:
 	int m_n2344;	// 0x2344: the effect-4 damage counter (clamped to 5)
 	char m_pad2348[0x2358 - 0x2348];	// 0x2348 .. 0x2357
 	float m_f2358;	// 0x2358: the command clock (rounded to milliseconds)
-	char m_pad235C[0x23bc - 0x235c];	// 0x235C .. 0x23BB
+	CUserCmd m_Cmd235c;	// 0x235C: the user command the command run processes (0x60 bytes, vptr 0x10462854)
 	CBasePlayerHandleVec m_SimulationList;	// 0x23BC (count at +0x23C8)
 	char m_pad23D0[0x2454 - 0x23d0];	// 0x23D0 .. 0x2453
 	unsigned char m_b2454;	// 0x2454
