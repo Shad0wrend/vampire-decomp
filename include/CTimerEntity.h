@@ -19,6 +19,7 @@ public:
 	float m_fUpperRandomBound;	// 0x4ac
 
 	void vfunc103();	// slot 103 "CTimerEntity::Spawn": clamps the interval to 0.01f unless random, then arms the timer (sub_10131750) or leaves it disabled (sub_10131770)
+	CTimerEntity *vfunc5(unsigned int flags);	// slot 5: scalar deleting destructor
 	void sub_10131750();	// stub 0x1001385e
 	void sub_10131770();	// stub 0x1000ce28
 
