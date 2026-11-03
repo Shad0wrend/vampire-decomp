@@ -59,9 +59,13 @@ struct CSoundEmitterDict
 	}
 };
 
+class CUnknown10248a50;
+class CUnknown101b2570;
+
 class CSoundEmitterSystemBase
 {
 public:
+	void sub_101b3bb0(const char *pszSoundName, CUnknown10248a50 *pKeys, CUnknown101b2570 *pParams);	// 0x101b3bb0: applies one sound-script block (channel/volume/pitch/wave/rndwave/attenuation/soundlevel/play_to_owner_only/precache) to the parameter record
 	void *m_vtbl;	// 0x00
 	void *m_pfn04;
 	int m_i08;
