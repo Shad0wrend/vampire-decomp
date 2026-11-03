@@ -35,6 +35,23 @@ void CAreaPortal::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010c4f0 size=0x20
+#include "CAreaPortal.h"
+#include "CFuncAreaPortalBase.h"
+
+struct CUnknown1010c5d0
+{
+	bool sub_1010c5d0();
+};
+
+bool CAreaPortal::vfunc241(const float *pViewOrigin)
+{
+	if (!((CFuncAreaPortalBase *)this)->vfunc241(pViewOrigin))
+		return false;
+	return ((CUnknown1010c5d0 *)this)->sub_1010c5d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010c520 size=0x29
 struct CUnit1010c520 {
     void sub_1010c520(int a, int b, int c, int d);
