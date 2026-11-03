@@ -9,6 +9,8 @@ public:
 	CTEShatterSurface(const char *name);	// 0x10062fd0
 
 	virtual CTEShatterSurface *vfunc2(unsigned int flags);	// scalar deleting destructor
+	virtual void vfunc3();	// slot 3 (0x0c)
+	virtual void vfunc4v(void *pFilter, int a);	// slot 4 (+0x10): the temp entity's Send; vfunc3 calls it virtually at 0x10063270 (the plain vfunc4 below is the direct-call form)
 
 	void sub_100021d0();	// destructor body
 	void sub_10063340(int a, int b);	// slot 4 (stub 0x10010ee7): sends the message; called directly on the global instance at 0x106c3870 with the recipient filter and a second argument
