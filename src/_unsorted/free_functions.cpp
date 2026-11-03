@@ -103822,6 +103822,71 @@ bool CUnknown101f10e0::sub_101f10e0(void *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f11f0 size=0xb4
+#include "CUnknown101f0e50.h"
+
+extern "C" __declspec(dllimport) void __cdecl Msg(const char *pMsg, ...);
+
+struct DfKeys
+{
+	virtual void a0();
+	virtual void a1();
+	virtual DfKeys *FindKey(const char *pszName);
+	virtual DfKeys *NextKey();
+	virtual void a4(); virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8();
+	virtual void a9(); virtual void a10(); virtual void a11(); virtual void a12();
+	virtual const char *GetString(const char *pszKey, const char *pszDefault);
+};
+
+struct CReactionCategory
+{
+	char m_pad[8];
+	int m_id;
+	void sub_101f0bc0(void *pKeys);
+};
+
+struct CReactionNames
+{
+	int sub_101f1a30(const char *pszName);
+};
+extern CReactionNames g_1073a9a0;
+
+bool CUnknown101f0e50::sub_101f11f0(void *pData)
+{
+	DfKeys *pKeys = (DfKeys *)pData;
+	if (pKeys) {
+		CReactionCategory *pCur;
+		int id = g_1073a9a0.sub_101f1a30(pKeys->GetString("InternalName", ""));
+		int i = 0;
+		if (m_f04 > 0) {
+			CReactionCategory **pp = (CReactionCategory **)m_f08;
+			do {
+				pCur = *pp;
+				if (pCur->m_id == id)
+					break;
+				i++;
+				pp++;
+			} while (i < m_f04);
+		}
+		DfKeys *pGroup = pKeys->FindKey("ReactionGroup");
+		if (pGroup) {
+			do {
+				CReactionCategory *pEntry = ((CReactionCategory **)m_f08)[i++];
+				if (!pEntry) {
+					Msg("Unable to parse data file ReactionInfoList.  Memory allocation ERROR!\n");
+					return false;
+				}
+				pEntry->sub_101f0bc0(pGroup);
+				pGroup = pGroup->NextKey();
+			} while (pGroup);
+		}
+		return true;
+	}
+	Msg("Unable to parse data file for ReactionInfoList.\n");
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f12e0 size=0xa5
 #include "CUnknown101f10e0.h"
 
