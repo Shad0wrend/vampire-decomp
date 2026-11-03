@@ -83,6 +83,9 @@ public:
 	CAI_PathfinderNetwork *m_pNetwork;	// 0x2c
 
 	char sub_10300140(int a, int b, int c, int d, int e);	// stub 0x10010fc8, called by CAI_Navigator::sub_102ee300; the result is tested (true when the route can be built)
+	bool sub_102fdcc0(const float *pStart, const float *pEnd);	// "CAI_Pathfinder_HasPathOuter" (0x102fdcc0)
+	CAI_Waypoint *sub_103005f0(const float *pVec, unsigned int flags, int index, int a4, int a5);	// node route from a node index (0x103005f0)
+	bool sub_102fe150(int startNode, int endNode);	// "CAI_Pathfinder_HasPathInner" (0x102fe150)
 	CAI_Waypoint *sub_103007e0(const float *pOrigin, unsigned int flags, int nodeIndex, int a4, int a5);
 	CAI_Waypoint *sub_102ffbd0(int a, int index);
 	CAI_Waypoint *sub_10304130(const float *pLocal, const float *pOrigin, int a, int b, int c, unsigned int flags, int d, int e);
