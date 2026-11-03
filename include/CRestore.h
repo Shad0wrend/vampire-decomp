@@ -63,7 +63,7 @@ public:
 
 	// Slots 4..28 (slot 7 and slot 16 are the plain members below).
 	virtual void vfunc4(void *pBaseData, typedescription_t *pFields, int fieldCount);	// "CRestore::EmptyFields": clears every readable field (custom ops Empty, embedded tables recursively, else zero fill)
-	virtual void vfunc5(); virtual void vfunc6(void *pData); virtual void s7(); virtual void vfunc8(); virtual void vfunc9(unsigned short *pValue);	// slot 9: reads two shorts (slot 13) into pValue, or the short-read tail when null
+	virtual void vfunc5(); virtual void vfunc6(void *pData); virtual void vfunc7(unsigned short *pValue); virtual void vfunc8(); virtual void vfunc9(unsigned short *pValue);	// slot 9: reads two shorts (slot 13) into pValue, or the short-read tail when null
 	
 	virtual int vfunc10(); virtual const char *vfunc11(int token);	// slot 11: the token string at index `token` of the table behind m_pData (+0x10 count, +0x14 array of const char*); "<<illegal>>" out of range, the empty string (0x106b8540) for a null entry
 	virtual unsigned int vfunc12(int a, int b, int c);	// slot 12: halves the count min(2*b, c) (when c is set) after 0x1000fe9d(a, n) and, when short of c, 0x1000910b(c - n)
