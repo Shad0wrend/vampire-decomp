@@ -12717,6 +12717,7 @@
 0x10014772 func   ?sub_10122170@@YAXXZ sub_10122170
 0x10014777 func   ?sub_10379040@CUnknown10381be0@@QAE_NXZ CUnknown10381be0::sub_10379040
 0x1001477c func   ?sub_100bf180@bf_read@@QAE_NH@Z bf_read::sub_100bf180
+0x10014781 func   ?vfunc517@CAI_BaseNPC@@QAEXHHMMM@Z CAI_BaseNPC::vfunc517
 0x10014786 func   ?vfunc124@CHudEntity@@QAEHXZ CHudEntity::vfunc124
 0x1001478b func   ?sub_10202350@@YAPBDHH@Z sub_10202350
 0x10014790 func   ?sub_10230f90@CUnknown10230f90@@QAEPAXH@Z CUnknown10230f90::sub_10230f90
