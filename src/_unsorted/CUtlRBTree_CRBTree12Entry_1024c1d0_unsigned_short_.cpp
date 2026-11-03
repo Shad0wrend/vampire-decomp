@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1024bb20 size=0x37f
+// TARGET: ?LinkToParent@?$CUtlRBTree@UCRBTree12Entry_1024c1d0@@G@@QAEXGG_N@Z
+#include "utlrbtree.h"
+#include "CRBTree12Entry_1024c1d0.h"
+
+static void (CUtlRBTree<CRBTree12Entry_1024c1d0, unsigned short>::*s_LinkToParent)(unsigned short, unsigned short, bool) = &CUtlRBTree<CRBTree12Entry_1024c1d0, unsigned short>::LinkToParent;
+// END FUNCTION
+
 // FUNCTION: 0x1024bf80 size=0x58
 #include "CUtlRBTree12.h"
 #include "CUtlRBTree16.h"
