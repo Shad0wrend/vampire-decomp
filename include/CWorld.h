@@ -28,11 +28,16 @@ public:
     virtual bool vfunc110(const char *key, const char *value);    // "CWorld::KeyValue": skyname / sounds / WaveHeight / newunit / world_mins / world_maxs, else CBaseEntity::KeyValue
     void vfunc241(void *pSource, int nSound, int unused1, int unused2);    // slot 241 (declared as a plain member): plays the sound of the table entry nSound (global table at 0x105c230c, 8 bytes each, skipped when negative) to every player from the position at +0xc of pSource, through the engine object at 0x10540528 (slot 41)
 
-    char m_padWorld[0x45c - 0x3e0];
+    char m_padWorld[0x450 - 0x3e0];
+    const char *m_psz450;    // 0x0450: the chapter title string (DevMsg "Chapter title: %s", moved to the env_message entity's +0x450)
+    const char *m_psz454;    // 0x0454: a string field handed to the object at 0x1070b248 (vtable slot 0)
+    char m_pad0458[0x45c - 0x458];
     float m_flWaveHeight;    // 0x045c
     float m_vecWorldMins[3];    // 0x0460
     float m_vecWorldMaxs[3];    // 0x046c
-    char m_pad0478[4];    // 0x0478
+    char m_b478;    // 0x0478: nonzero sets the v_dark convar to true
+    char m_b479;    // 0x0479: nonzero copied to the global 0x1070ba24
+    char m_pad047a[0x47c - 0x47a];
     char m_bColdWorld;    // 0x047c
     char m_pad047d[0x49c - 0x47d];
     int m_n49c;    // 0x049c: 0..2
