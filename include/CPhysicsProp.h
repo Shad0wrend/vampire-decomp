@@ -21,5 +21,6 @@ public:
     virtual void vfunc39(CBaseEntity *);
 public:
     virtual int vfunc117();
+    void vfunc41(int a);	// slot 41 (plain member): forwards a to sub_1040d950 (an empty function in this build)
     virtual int vfunc42(int);
 };
