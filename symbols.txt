@@ -7119,6 +7119,7 @@
 0x1000bbf4 func   ?sub_101f8510@CUnknown101f0e50@@QAEXPAVCTraitOwnerX@@H@Z CUnknown101f0e50::sub_101f8510
 0x1000bbf9 func   ?sub_10135570@@YAPAHXZ sub_10135570
 0x1000bbfe func   ?sub_1007a2a0@CUnknown1007a2a0@@QAEHXZ CUnknown1007a2a0::sub_1007a2a0
+0x1000bc03 func   ?vfunc286@CBaseFlex@@UAEXHPAX@Z CBaseFlex::vfunc286
 0x1000bc08 func   ?vfunc103@CNPC_VHumanCombatant@@UAEXXZ CNPC_VHumanCombatant::vfunc103
 0x1000bc0d func   ?sub_101cdac0@@YAXHHPBDHHIH@Z sub_101cdac0
 0x1000bc12 func   ?sub_10216aa0@CPropModelState@@QAEXHPAX@Z CPropModelState::sub_10216aa0
