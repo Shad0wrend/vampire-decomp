@@ -5302,6 +5302,7 @@
 0x10009250 func   ?vfunc294@CPayphone@@UAE_NH@Z CPayphone::vfunc294
 0x1000925f func   ?sub_103d1200@CNPC_VWerewolf@@QAE_NXZ CNPC_VWerewolf::sub_103d1200
 0x10009264 func   ?vfunc305@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc305
+0x10009269 func   ?sub_100c4a20@@YAPAXHHMHHHH@Z sub_100c4a20
 0x1000926e func   ?vfunc5@CItemGGargoyleBook@@QAEPAV1@I@Z CItemGGargoyleBook::vfunc5
 0x10009273 func   ?sub_101e9080@CDiscValues_101e9080@@QAEXPAH000@Z CDiscValues_101e9080::sub_101e9080
 0x10009278 func   ?sub_100dad50@@YAXXZ sub_100dad50

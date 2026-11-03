@@ -35818,6 +35818,16 @@ void sub_100c49d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c4a20 size=0xd
+void *__cdecl sub_100c47d0(int a, int b, float c, int d, int e, int f, int g);
+
+// TARGET: sub_100c4a20
+void *sub_100c4a20(int a, int b, float c, int d, int e, int f, int g)
+{
+	return sub_100c47d0(a, b, c, d, e, f, g);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c5600 size=0x71
 struct S100c5600 { int pad[3]; int m_n; };
 
