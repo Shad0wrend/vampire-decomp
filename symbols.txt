@@ -10903,6 +10903,7 @@
 0x10011d2e func   ?vfunc615@CNPC_VGargoyle@@UAE_NXZ CNPC_VGargoyle::vfunc615
 0x10011d33 func   _prop_doorknob prop_doorknob
 0x10011d38 func   ?sub_10028b60@@YGHH@Z sub_10028b60
+0x10011d3d func   ?vfunc104@CFuncPlat@@UAEXXZ CFuncPlat::vfunc104
 0x10011d42 func   ?sub_10397f70@CNPC_VMingXiaoUnit@@QAEMXZ CNPC_VMingXiaoUnit::sub_10397f70
 0x10011d47 func   ?sub_103f5750@@YAHXZ sub_103f5750
 0x10011d56 func   ?vfunc5@CEntityListSystem@@QAEXXZ CEntityListSystem::vfunc5

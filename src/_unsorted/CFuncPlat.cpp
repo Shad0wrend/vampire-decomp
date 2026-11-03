@@ -49,6 +49,18 @@ char CFuncPlat::vfunc128() {
 }
 // END FUNCTION
 
+// FUNCTION: 0x10159190 size=0x20
+#include "CFuncPlat.h"
+
+void __cdecl sub_10159270(int edict);
+
+void CFuncPlat::vfunc104()
+{
+	if (!vfunc241())
+		sub_10159270((int)m_pEdict);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101591c0 size=0x66
 #include "CFuncPlat.h"
 
