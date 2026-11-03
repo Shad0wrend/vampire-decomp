@@ -160,6 +160,15 @@ bool CPhysicsProp::vfunc223()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10191770 size=0x15
+#include "CPhysicsProp.h"
+
+bool CPhysicsProp::vfunc73(CBaseEntity *pOther)
+{
+	return (m_flags204 & 2) == 2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101917c0 size=0x1f
 #include "CPhysicsProp.h"
 
