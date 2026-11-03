@@ -151697,6 +151697,87 @@ struct CUnknown102eeba0 { int p[6]; int a; void sub_102eeba0(int v); };
 void CUnknown102eeba0::sub_102eeba0(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x102eefb0 size=0xe1
+#include "CAI_DefMovementSink.h"
+#include "CAI_Navigator.h"
+#include "CBaseEntitySlots.h"
+struct Info102eefb0
+{
+	char m_pad00[0x28];
+	float m_f28;
+	char m_pad2c[0x38 - 0x2c];
+	unsigned int m_uFlags;
+	char m_pad3c[0x44 - 0x3c];
+	int m_i44;
+	char m_pad48[0x60 - 0x48];
+	CBaseEntitySlots *m_p60;
+};
+
+struct CNavRoute102eefb0
+{
+	char m_pad00[0x28];
+	float m_f28;
+	char m_pad2c[0x40 - 0x2c];
+	float m_f40;
+};
+
+struct CSinkDispatch102eefb0
+{
+	virtual void slot0();
+	virtual char vfunc1(void *pGoal, float flValue, int *pOut);
+};
+
+#define NAV102EEFB0 ((CAI_Navigator *)((char *)this - 0x10))
+#define ROUTE102EEFB0 ((CNavRoute102eefb0 *)NAV102EEFB0->m_p30)
+
+bool CAI_DefMovementSink::sub_102eefb0(void *pGoal, float flValue, int *pOut)
+{
+	bool bSet = false;
+	Info102eefb0 *pInfo = (Info102eefb0 *)pGoal;
+	unsigned int uFlags = pInfo->m_uFlags;
+	unsigned int flag1 = uFlags & 1;
+	float flLimit;
+	if ( flag1 )
+	{
+		flLimit = ROUTE102EEFB0->m_f28;
+	}
+	else if ( uFlags & 4 )
+	{
+		goto Delegate;
+	}
+	else
+	{
+		bSet = true;
+		flLimit = ROUTE102EEFB0->m_f40;
+	}
+	if ( flValue > pInfo->m_f28 )
+	{
+		*pOut = 0;
+		return true;
+	}
+	if ( flLimit > pInfo->m_f28 )
+	{
+		if ( flag1 && pInfo->m_i44 == -3 )
+		{
+			if ( pInfo->m_p60->slot153() != 0 )
+				goto Delegate;
+		}
+		pInfo->m_f28 = flValue;
+		*pOut = 0;
+		if ( bSet )
+		{
+			NAV102EEFB0->sub_102f0400();
+			return true;
+		}
+		if ( flValue < 0.01 )
+			*pOut = pInfo->m_i44;
+		return true;
+	}
+Delegate:
+	return ((CSinkDispatch102eefb0 *)((char *)NAV102EEFB0->m_pOuter + 0x19b0))->vfunc1(pGoal, flValue, pOut);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ef0e0 size=0x8a
 struct Info102ef0e0
 {

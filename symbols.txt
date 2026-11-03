@@ -290,6 +290,7 @@
 0x10001703 func   ?vfunc575@CAI_BaseNPCTroika@@UAE_NXZ CAI_BaseNPCTroika::vfunc575
 0x10001708 func   ?sub_1007ba30@CUnknown1007b7b0@@QAEXXZ CUnknown1007b7b0::sub_1007ba30
 0x1000170d func   ?sub_102478d0@@YAHXZ sub_102478d0
+0x10001717 func   ?sub_102eefb0@CAI_DefMovementSink@@QAE_NPAXMPAH@Z CAI_DefMovementSink::sub_102eefb0
 0x1000171c func   ?vfunc103@CLogicCase@@QAEXXZ CLogicCase::vfunc103
 0x10001721 func   ?vfunc130@CAI_BaseNPC@@UAEXH@Z CAI_BaseNPC::vfunc130
 0x10001726 func   _filter_activator_name filter_activator_name
