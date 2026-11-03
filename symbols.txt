@@ -9378,6 +9378,7 @@
 0x1000f6fa func   ?sub_100cdba0@CUnknown100cdba0@@QAEXUCUnknown100cdba0Data@@H@Z CUnknown100cdba0::sub_100cdba0
 0x1000f704 func   ?vfunc4@CTraitDependencyDataDescSaveDataOps@@UAE_NHH@Z CTraitDependencyDataDescSaveDataOps::vfunc4
 0x1000f709 func   ?sub_100ab430@@YGXHH@Z sub_100ab430
+0x1000f713 func   ?vfunc34@CItemContainer@@QAEIH@Z CItemContainer::vfunc34
 0x1000f718 func   ?vfunc367@CWeaponMelee_MingXiaoMelee@@UAEHHMM@Z CWeaponMelee_MingXiaoMelee::vfunc367
 0x1000f71d func   ?sub_1035bec0@@YAHXZ sub_1035bec0
 0x1000f722 func   ?sub_10315a60@@YGHH@Z sub_10315a60

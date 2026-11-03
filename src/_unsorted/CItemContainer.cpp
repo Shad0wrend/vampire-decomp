@@ -187,6 +187,34 @@ CItemContainer *CItemContainer::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10208b50 size=0x39
+#include "CItemContainer.h"
+
+struct EntInfo {
+	CBaseEntity *m_pEntity;
+	unsigned int m_serial;
+	int m_pad;
+};
+
+struct EntList {
+	int m_hdr;
+	EntInfo m_entries[1];
+};
+
+extern EntList *g_10566458;
+
+unsigned int CItemContainer::vfunc34(int unused)
+{
+	unsigned int h = *(unsigned int *)((char *)this + 0x1a28);
+	if (h != 0xffffffff) {
+		EntInfo *info = &g_10566458->m_entries[h & 0x1fff];
+		if (info->m_serial == (h >> 13) && info->m_pEntity)
+			return 0;
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10208ba0 size=0x3e
 #include "CItemContainer.h"
 
