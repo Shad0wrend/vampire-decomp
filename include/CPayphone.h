@@ -16,6 +16,7 @@ public:
 	int vfunc611();	// slot 611: the sequence selected for the followed NPC's activity (+0xff0), or for activity 1 without one; 0 when none
 	CPayphone *vfunc5(unsigned int flags);
 	bool vfunc45(CBaseEntity *pOther, int a, int b, int c, int d, int e, int f, int g); // slot 45: true when pOther is within the Manhattan distance of the position (slot 193) and the collision bounds (+0x270) of both are equal
+	virtual int vfunc35(int a);	// slot 35: 0x2f when slot 295(a) holds, else 0
 	void sub_100123af();
 	int sub_10002c0c(const char *pszName);	// stub of CBaseAnimating::sub_10092550 (LookupBone)
 	void sub_1000268a(int bone, Vector *pOrigin, Vector *pAngles);	// stub of CBaseAnimating::sub_100926e0 (GetBonePosition)
@@ -200,7 +201,7 @@ public:
 	virtual void vfunc292();
 	virtual void vfunc293();
 	virtual bool vfunc294(int);
-	virtual void vfunc295_slot();
+	virtual char vfunc295_slot(void *pOther);
 	virtual void vfunc296();
 	virtual void vfunc297();
 	virtual void vfunc298();
