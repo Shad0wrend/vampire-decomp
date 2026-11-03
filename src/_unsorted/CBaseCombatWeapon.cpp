@@ -962,6 +962,15 @@ void CBaseCombatWeapon::vfunc332()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10254e90 size=0xb
+#include "CBaseCombatWeapon.h"
+
+bool CBaseCombatWeapon::vfunc325()
+{
+	return sub_10254b00(0xc2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10254fd0 size=0x6
 int CBaseCombatWeapon::vfunc328()
 {
