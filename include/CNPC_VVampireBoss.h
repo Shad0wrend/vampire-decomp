@@ -26,7 +26,9 @@ public:
 	int m_nSourceLine;	// +0x1b48
 	char pad1b4c[0x5ddc - 0x1b4c];
 	int m_pTarget5ddc;	// +0x5ddc: the entity found by SelectHintNode
-	char pad5de0[0x6348 - 0x5de0];
+	char pad5de0[0x628c - 0x5de0];
+	EHANDLE m_h628c;	// +0x628c: the entity the AOE damage is centered on / tested against (handle)
+	char pad6290[0x6348 - 0x6290];
 	int m_n6348[5];	// +0x6348: five dwords copied to the new form by TransformationStart
 	char pad635c[0x6420 - 0x635c];
 	int m_n6420[5];	// +0x6420: five dwords copied to the new form by TransformationStart
