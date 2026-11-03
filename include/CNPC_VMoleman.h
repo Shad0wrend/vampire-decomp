@@ -10,6 +10,8 @@ public:
 	CNPC_VMoleman *vfunc5(unsigned int flags);
 	void sub_100123af();
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
+	void vfunc103();	// slot 103: sub_1026dc00(0x200000), then sub_10384690
+	void sub_10384690();	// CNPC_VHuman::vfunc103 (stub 0x1000d83c), called directly
 	CNPC_VMoleman *sub_1039f5c0();	// as in CKeepUpright (transplant)
 	int vfunc438();	// slot 438 "SelectSchedule": clears the flag 2 at +0x14b8 (schedule 0xf1), else by state 1 and the navigator / conditions 0x13, 0x10, 0x11, or CNPC_VHuman::vfunc438
 	int sub_10015ad2();	// CNPC_VHuman::vfunc438 (stub 0x10015ad2), tail called
