@@ -4,6 +4,7 @@
 struct datamap_t;
 
 #include "Vector.h"
+#include "CUtlVector56.h"
 
 class CAI_HumanoidMotor;
 class CAI_Navigator;
