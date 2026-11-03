@@ -308,7 +308,8 @@ public:
 	char m_pad0270[0x2b0 - 0x270];
 	int m_n2b0;	// 0x02b0: tested by IsSolid
 	unsigned char m_b2b4;	// 0x02b4: bit 2 clears IsSolid, bit 3 is IsSolidFlagSet
-	char m_pad02b5[0x2e0 - 0x2b5];
+	unsigned char m_bDebug2b5;	// 0x02b5: bit 0 enables the collision-box / capsule overlay (DrawBBoxOverlay)
+	char m_pad02b6[0x2e0 - 0x2b6];
 	int m_pEdict2e0;	// 0x02e0
 	char m_pad02e4[0x35c - 0x2e4];
 	int m_nMoveType35c;	// 0x035c
