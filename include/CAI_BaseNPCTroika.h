@@ -427,5 +427,6 @@ public:
 	void vfunc55(int, int, int, int, int, int, int);	// slot 55: empty override (ret 0x1c); declared as a plain member so the derived class's slot numbering is not shifted
 	void vfunc57(int, int, int, int, int, int, int);	// slot 57: empty override (ret 0x1c)
 	void vfunc58(int);	// slot 58: empty override (ret 4)
+	virtual CAI_BaseNPC *vfunc5(unsigned int flags);	// deleting destructor (same return type as the base slot)
 	// +0x65e0 (const char *, name for sub_1029f340, empty string 0x106b8540 when null) and +0x65e4 (int result) are not declared: derived classes' members start at +0x65c0
 };
