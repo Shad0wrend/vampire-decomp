@@ -70,6 +70,18 @@ int CNPC_VGuard1::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037cda0 size=0x1c
+#include "CNPC_VGuard1.h"
+
+// TARGET: CNPC_VGuard1::vfunc103
+void CNPC_VGuard1::vfunc103()
+{
+	sub_1026dc00(0x200d00);
+	m_b6660 = 0;
+	sub_10384690();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037cdd0 size=0x6
 #include "CNPC_VGuard1.h"
 int CNPC_VGuard1::vfunc138()
