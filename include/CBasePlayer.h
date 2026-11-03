@@ -384,7 +384,9 @@ public:
 	int m_n2304;	// 0x2304: set while the player is held (sub_10177ba0 clears it after restoring the move type)
 	char m_pad2308[0x2314 - 0x2308];	// 0x2308 .. 0x2313
 	float m_fl2314;	// 0x2314: a time stamp (curtime + 2)
-	char m_pad2318[0x2344 - 0x2318];	// 0x2318 .. 0x2343
+	char m_pad2318[0x2324 - 0x2318];	// 0x2318 .. 0x2323
+	int m_n2324;	// 0x2324: set from the command's impulse when there is no vehicle
+	char m_pad2328[0x2344 - 0x2328];	// 0x2328 .. 0x2343
 	int m_n2344;	// 0x2344: the effect-4 damage counter (clamped to 5)
 	char m_pad2348[0x23bc - 0x2348];	// 0x2348 .. 0x23BB
 	CBasePlayerHandleVec m_SimulationList;	// 0x23BC (count at +0x23C8)
