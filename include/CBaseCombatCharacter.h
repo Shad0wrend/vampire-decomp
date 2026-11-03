@@ -57,7 +57,10 @@ public:
 	virtual void c293(); virtual void c294(); virtual void c295x(); virtual char vfunc296(int a); virtual void c297();
 	virtual int vfunc298(int nSection);	// slot 298: the number of weapon slots of inventory section nSection
 	virtual void c299();
-	CBCC_SLOTS10(c30) CBCC_SLOTS10(c31)
+	CBCC_SLOTS10(c30)
+	virtual void c310(); virtual void c311(); virtual void c312(); virtual void c313(); virtual void c314();
+	virtual void vfunc315();	// slot 315 (+0x4ec) "CBaseCombatCharacter::MeleeSwingUpdate"
+	virtual void c316(); virtual void c317(); virtual void c318(); virtual void c319();
 	virtual void c320(); virtual void c321(); virtual void c322();
 	virtual int vfunc323(const Vector *pDirection);	// slot 323: which side of the character a horizontal direction is on: 0 when the direction has no horizontal length, else by the angle (0..360) between the character's yaw (slot 219) and the direction's yaw: 2 for 316..360 and up to 45, 3 up to 135, 0 up to 225, 1 beyond
 	virtual void c324(); virtual void c325(); virtual void c326(); virtual bool vfunc327(); virtual void c328(); virtual void c329();
