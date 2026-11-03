@@ -23,6 +23,7 @@ public:
 public:
     virtual void vfunc16();
     virtual void vfunc28(void *);
+    virtual float vfunc30(int a);	// slot 30: g_10739d08.sub_101e7dd0(the float at +0x1ee8 of the argument)
     virtual void vfunc35(CBaseEntity *);
     virtual void vfunc44(CBaseEntity *, CMPDamageInfo *);
     virtual void vfunc45(CBaseEntity *, CMPDamageInfo *);
