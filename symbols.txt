@@ -206,6 +206,7 @@
 0x10001505 func   ?vfunc382@CBasePlayer@@UAE_NPAVCBaseCombatWeapon@@@Z CBasePlayer::vfunc382
 0x1000150a func   ?sub_10339cd0@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10339cd0
 0x1000150f func   ?vfunc580@CNPC_VSheriffMan@@QAEHXZ CNPC_VSheriffMan::vfunc580
+0x10001514 func   ?vfunc3@CTEPlayerDecal@@UAEXABVVector@@ABVQAngle@@@Z CTEPlayerDecal::vfunc3
 0x10001519 func   ?vfunc180@CCineNPC@@QAEXXZ CCineNPC::vfunc180
 0x10001523 func   ?vfunc546@CNPC_VGuard1@@QAEHH@Z CNPC_VGuard1::vfunc546
 0x10001528 func   ?sub_101c2690@CUnknown101c2770@@QAEPAV1@XZ CUnknown101c2770::sub_101c2690
