@@ -116,6 +116,7 @@ public:
 
 class CBitString;
 int sub_102f3270(CBitString *pBits, const float *pDist, int n);	// the index with the lowest pDist among the bits set in pBits (-1 when none); the A* node pick
+extern unsigned int g_1055b298[];	// 0x1055b298: the bit-clear mask table used by the A* visited-set trim (index is the bit number % 32)
 
 // NOTE: CAI_PathfinderOuter::m_pPathfinder (+0x5d34) is really the owning NPC's CAI_Navigator
 // (CAI_BaseNPC's Owned5d34), NOT a CAI_Pathfinder. Its +0x2c is the CAI_NavProviderList used
