@@ -8189,6 +8189,7 @@
 0x1000d9b8 func   ?sub_10266c80@@YG_NPBVVector@@M@Z sub_10266c80
 0x1000d9c7 func   ?sub_102d11f0@@YGHH@Z sub_102d11f0
 0x1000d9cc func   ?sub_100d6680@@YAXXZ sub_100d6680
+0x1000d9d1 func   ?sub_101cbf40@Helper@@QAEPAXI@Z Helper::sub_101cbf40
 0x1000d9d6 func   _npc_VPlaceholder npc_VPlaceholder
 0x1000d9db func   ?vfunc5@CSave@@UAEXPBX@Z CSave::vfunc5
 0x1000d9e0 func   ?vfunc488@CNPC_VPlayerController@@QAEXXZ CNPC_VPlayerController::vfunc488
