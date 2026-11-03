@@ -55,6 +55,18 @@ int CItemGAstrolite::vfunc34(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f6b90 size=0x1a
+#include "CItemGAstrolite.h"
+
+// TARGET: CItemGAstrolite::vfunc173
+void CItemGAstrolite::vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value)
+{
+	if (m_b914)
+		return;
+	sub_10257980(pActivator, pCaller, useType, value);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10409be0 size=0x1e
 #include "CItemGAstrolite.h"
 
