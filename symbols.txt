@@ -7850,6 +7850,7 @@
 0x1000d1cf func   ?sub_10324ba0@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_10324ba0
 0x1000d1d4 func   ?vfunc241@CWorld@@QAEXPAXHHH@Z CWorld::vfunc241
 0x1000d1d9 func   ?vfunc82@CLogicCaseToggle@@QAEPAUdatamap_t@@XZ CLogicCaseToggle::vfunc82
+0x1000d1e8 func   ?sub_1027c7c0@Helper@@QAEPAXE@Z Helper::sub_1027c7c0
 0x1000d1f2 func   ?sub_1039ef90@CUnknown1039ef90@@QAEXPBH@Z CUnknown1039ef90::sub_1039ef90
 0x1000d201 func   ?vfunc546@CNPC_VHuman@@QAEHH@Z CNPC_VHuman::vfunc546
 0x1000d206 func   ?vfunc363@CWeaponRanged_Rifle_Crossbow@@QAEHXZ CWeaponRanged_Rifle_Crossbow::vfunc363
