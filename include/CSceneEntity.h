@@ -10,6 +10,19 @@
 struct datamap_t;
 class CBaseEntity;
 class CBaseFlex;
+
+#define SCENE_ACT_V(n) virtual void a##n();
+#define SCENE_ACT_V10(p) SCENE_ACT_V(p##0) SCENE_ACT_V(p##1) SCENE_ACT_V(p##2) SCENE_ACT_V(p##3) SCENE_ACT_V(p##4) SCENE_ACT_V(p##5) SCENE_ACT_V(p##6) SCENE_ACT_V(p##7) SCENE_ACT_V(p##8) SCENE_ACT_V(p##9)
+#define SCENE_ACT_V100(p) SCENE_ACT_V10(p##0) SCENE_ACT_V10(p##1) SCENE_ACT_V10(p##2) SCENE_ACT_V10(p##3) SCENE_ACT_V10(p##4) SCENE_ACT_V10(p##5) SCENE_ACT_V10(p##6) SCENE_ACT_V10(p##7) SCENE_ACT_V10(p##8) SCENE_ACT_V10(p##9)
+
+struct CSceneActorSlots	// an actor entity's primary vtable; only slot 286 is typed
+{
+	SCENE_ACT_V100(a0)
+	SCENE_ACT_V100(a1)
+	SCENE_ACT_V10(a20) SCENE_ACT_V10(a21) SCENE_ACT_V10(a22) SCENE_ACT_V10(a23) SCENE_ACT_V10(a24) SCENE_ACT_V10(a25) SCENE_ACT_V10(a26) SCENE_ACT_V10(a27)
+	SCENE_ACT_V(280) SCENE_ACT_V(281) SCENE_ACT_V(282) SCENE_ACT_V(283) SCENE_ACT_V(284) SCENE_ACT_V(285)
+	virtual void vfunc286(void *pScene, void *pEvent);	// 0x478: the scene hands (its scene object, the event) to the actor
+};
 class CUnknown1007ce20;
 class CUnknown1007ed10;
 
@@ -105,7 +118,7 @@ public:
 	virtual char vfunc251(float a, int b, CSceneEvent *pEvent);	// slot 251: resolves the actor of the event through slot 267 (Warning "CSceneEntity unable find actor" and true when it is unknown); false when the event is of type 4 and the actor's NPC (+0x94) has its navigator (+0x5d34) answering sub_10012963, else true
 	virtual void vfunc252(int b, CBaseFlex *pActor, CSceneEvent *pEvent);
 	virtual void vfunc253(int b, CSceneEventActorEnt *pActor, CSceneEvent *pEvent);	// slot 253: the finish handler of a type 2 event
-	SCENE_V(254)
+	virtual void vfunc254(int unused, CSceneActorSlots *pActor, void *pEvent);	// slot 254: hands (the scene object at +0x4bc, pEvent) to the actor's slot 286
 	virtual void vfunc255(int b, CSceneEventActorEnt *pActor, CSceneEvent *pEvent);	// slot 255: the finish handler of a type 10 event
 	virtual void vfunc256(int b, CSceneEventActorEnt *pActor, CSceneEvent *pEvent);	// slot 256: the gesture handler: looks the event's text parameter up as a sequence of the actor and starts it as a gesture on the actor's NPC (Warning "Could not find gesture sequence %s" when either is missing)
 	virtual void vfunc257(int b, CSceneEventActorEnt *pActor, CSceneEvent *pEvent);	// slot 257: the finish handler of a type 6 event
