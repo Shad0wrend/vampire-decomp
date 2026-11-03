@@ -41,7 +41,8 @@ public:
 	CAI_InterestingPlace *m_pNext540;	// 0x540: the previous head of the global chain (head 0x10927194, count 0x10927198)
 	const char *m_pszTypeName;	// 0x544
 	int m_pType;	// 0x548: the place type record, found by name
-	char m_pad054c[0x564 - 0x54c];
+	Vector m_vec54c;	// 0x54c: the debug box mins (sub_10142aa0 first vector)
+	Vector m_vec558;	// 0x558: the debug box maxs (sub_10142aa0 second vector)
 	int m_n564;	// 0x564: cleared by the constructor
 	char m_pad0568[0x574 - 0x568];
 	int m_nGroup;	// 0x574: 1..32 on load, then a single bit mask
