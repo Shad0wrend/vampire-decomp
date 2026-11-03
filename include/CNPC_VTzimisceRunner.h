@@ -11,6 +11,7 @@ class CUnknown1025ddd0;
 class CNPC_VTzimisceRunner
 {
 public:
+	CNPC_VTzimisceRunner *sub_103c2fa0();	// constructor body (0x103c2fa0, returns this)
 	CNPC_VTzimisceRunner *vfunc5(unsigned int flags);	// slot 5 (scalar deleting destructor, plain member): the record vector at +0x665c goes, then the Troika base's destructor body (stub 0x100123af), then the delete when bit 0 of flags is set
 	void sub_1028d610();	// CAI_BaseNPCTroika destructor body (stub 0x100123af), called directly
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
