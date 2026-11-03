@@ -1,51 +1,63 @@
-// CNPC_VBach: declared by pcdecomp transplant for 0x10362c90 from CPhysForce (0x10027690);
-// only what matched code needs, as plain members.
+// CNPC_VBach: the Bach boss NPC. Members are declared at their real offsets; the virtual slots 134..580 keep
+// the numbering of the game's primary vtable (slots 0..133 come from CBaseEntity).
 #pragma once
 #include "CBaseEntity.h"
 #include "datamap.h"
+
+class CAI_Motor;
+class CUnknown102e0150;
 
 class CNPC_VBach : public CBaseEntity
 {
 public:
 	CNPC_VBach *vfunc5(unsigned int flags);
 	void sub_100123af();
-	virtual void vfunc103();	// slot 103 "CNPC_VBach::Spawn": sub_1026dc00(0x200000), sub_1026dc30(1), the CNPC_VVampire version (sub_103c4ef0), then sets the byte at +0x66a1 and clears the other fight state fields (+0x6664 .. +0x66a8, +0x5db4)
+	virtual void vfunc103();	// slot 103 "Spawn"
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
-	int vfunc606(int arg);	// slot 606: when HasCondition(0x48) and the byte at +0x66a3 is set forwards arg to CAI_BaseNPCTroika::vfunc606, else toggles the byte
-	int sub_102b8320(int arg);	// CAI_BaseNPCTroika::vfunc606 (stub 0x100026b7), called directly
-	int vfunc609(char arg);	// slot 609: when the dword at +0x5cc0 is 4 or 0xc forwards arg to CAI_BaseNPCTroika::vfunc609 (stub 0x100075ae), else clears +0x6444 and returns 0
-	int sub_10363c70(void *info);	// slot 390 override: when the byte at +0x66a8 is set, flags the hit at +0x66a6 and clears one of the dwords +0x6688/+0x6690 (or passes a zeroed copy of the damage info), then calls CNPC_VHuman::vfunc390
+	int vfunc606(int arg);	// slot 606
+	int sub_102b8320(int arg);	// CAI_BaseNPCTroika::vfunc606 (stub), called directly
+	int vfunc609(char arg);	// slot 609
+	int sub_10363c70(void *info);	// slot 390 override (damage info)
 	CNPC_VBach *sub_10362c10();	// as in CKeepUpright (transplant)
-	void vfunc104();	// slot 104 "Precache": the base Precache, three weapon items and the boss sounds
-	void sub_100013f7();	// CNPC_VHuman::vfunc104 (Precache), called directly
-	void vfunc432(int arg);	// slot 432: when the byte at +0x66a5 is set and its time at +0x6684 has passed, clears stat 0xd of the stat list with id 3 (shared default list when absent) and the byte; then CNPC_VHuman::vfunc432
-	void sub_10279a50(int a);	// CAI_BaseNPC::sub_10279a50 (stub 0x1000b974), called directly
-	void sub_10385a10(int arg);	// CNPC_VHuman::vfunc432 (stub 0x1000698d), called directly
-	int vfunc440(int schedule);	// slot 440 "TranslateSchedule": schedules 0x17 / 0xed / 0x15f become 0x15f (0x160 when the active weapon is the katana with a sequence for 0x10 and condition 0x2c is clear) while the byte at +0x66a7 is clear, 0xb1 / 0xef become 0x15f, 0xdc becomes 0x15e, everything else goes to CNPC_VHuman::vfunc440
+	void vfunc104();	// slot 104 "Precache"
+	void sub_100013f7();	// CNPC_VHuman::vfunc104, called directly
+	void vfunc432(int arg);	// slot 432
+	void sub_10279a50(int a);	// CAI_BaseNPC::sub_10279a50, called directly
+	void sub_10385a10(int arg);	// CNPC_VHuman::vfunc432, called directly
+	int vfunc440(int schedule);	// slot 440 "TranslateSchedule"
 	int sub_103851c0(int schedule);	// CNPC_VHuman::vfunc440 (stub 0x10005e20), called directly
-	CBaseEntity *sub_10007e19();	// CBaseCombatCharacter member (the stub at 0x10007e19 for 0x1032e7b0): the active weapon, called directly
-	int sub_1008dc40(int a, int b);	// CBaseAnimating::SelectWeightedSequence (stub 0x100125c1), called directly
-	bool sub_10269aa0(int condition);	// CAI_BaseNPC::HasCondition (stub 0x10014df8), called directly
+	CBaseEntity *sub_10007e19();	// the active weapon (CBaseCombatCharacter, stub 0x10007e19)
+	int sub_1008dc40(int a, int b);	// CBaseAnimating::SelectWeightedSequence, called directly
+	bool sub_10269aa0(int condition);	// CAI_BaseNPC::HasCondition, called directly
 	void sub_1026dc00(unsigned int flags);	// stub 0x10012855, called directly by Spawn with 0x200000
 	void sub_1026dc30(int a);	// stub 0x1001005f, called directly by Spawn with 1
-	void sub_103c4ef0();	// CNPC_VVampire::vfunc103 (stub 0x10014876), called directly
-	int vfunc604(int arg);	// slot 604 "CNPC_VBach::SelectFailSchedule"-like: picks a schedule from the conditions 0x7b / 0x7a / 0x79 and the active weapon (katana / "item_w_rem_m_700_bach"), recording the source line (+0x1b34) and file (+0x1b30) of the choice; the rest goes to CNPC_VHuman::vfunc604
-	int vfunc605(int arg);	// slot 605: schedule choice by the conditions 0x7b / 0x7a / 0x79 / 0x46 and the active weapon (katana / "item_w_rem_m_700_bach"), recording the source line (+0x1b34) and file (+0x1b30) of the choice; the rest goes to CNPC_VHuman::vfunc605
-	int sub_10386560(int arg);	// CNPC_VHuman::vfunc605 (stub 0x100107b2), called directly
-	int sub_10385e40(int arg);	// CNPC_VHuman::vfunc604 (stub 0x10004462), called directly
-	void sub_103656a0();	// gives the NPC the "item_d_holy_light" discipline weapon (finds it in the inventory or creates and adds it, "Error: Couldn't find space in inventory for Discipline weapon!" otherwise), selects it and completes the task (sub_10272650(5))
-	void *sub_1032e120(const char *pszName);	// stub 0x1000b0b4: creates the named item for the character
-	char sub_10334c20(void *pItem);	// stub 0x100112d9: adds the item to the character's inventory, false when there is no room
-	void sub_10365860(const char *pszTarget, float flSpeed);	// throws an "item_w_grenade_frag" from the origin of the entity named pszTarget (at most every 5 seconds, time at +0x6680) with its forward vector scaled by flSpeed; clears the byte at +0x66a0
+	void sub_103c4ef0();	// CNPC_VVampire::vfunc103, called directly
+	int vfunc604(int arg);	// slot 604
+	int vfunc605(int arg);	// slot 605
+	int sub_10386560(int arg);	// CNPC_VHuman::vfunc605, called directly
+	int sub_10385e40(int arg);	// CNPC_VHuman::vfunc604, called directly
+	void sub_103656a0();	// gives the NPC the "item_d_holy_light" discipline weapon
+	void *sub_1032e120(const char *pszName);	// creates the named item for the character
+	char sub_10334c20(void *pItem);	// adds the item to the character's inventory
+	void sub_10365860(const char *pszTarget, float flSpeed);	// throws "item_w_grenade_frag" at the named target
 	void sub_10272650(int code);	// stub 0x100097d2, called directly with 5 to end the task
+	void sub_10384ab0(void *pTask);	// CNPC_VHuman::vfunc444 (stub 0x10011928), called directly
+	void sub_10365840();	// empty body (stub 0x100105b9), called directly
 
 	char m_pad03e0[0x1b30 - 0x3e0];
 	const char *m_pszSchedFile;	// 0x1b30: source file of the last schedule choice
 	int m_nSchedLine;	// 0x1b34: source line of the last schedule choice
-	char m_pad1b38[0x5cc0 - 0x1b38];
+	char m_pad1b38[0x1b44 - 0x1b38];
+	const char *m_pszFile1b44;	// 0x1b44: source file stamp (third pair)
+	int m_nLine1b48;	// 0x1b48: its line
+	char m_pad1b4c[0x5ba8 - 0x1b4c];
+	EHANDLE m_h5ba8;	// 0x5ba8: a handle to an entity (the current distance target)
+	char m_pad5bac[0x5cc0 - 0x5bac];
 	int m_n5cc0;
-	char m_pad5cc4[0x5db4 - 0x5cc4];
-	int m_n5db4;
+	char m_pad5cc4[0x5d44 - 0x5cc4];
+	CAI_Motor *m_pMotor5d44;	// 0x5d44: the NPC's motor
+	char m_pad5d48[0x5db4 - 0x5d48];
+	union { int m_n5db4; float m_fl5db4; };	// 0x5db4: a time
 	char m_pad5db8[0x6444 - 0x5db8];
 	int m_n6444;
 	char m_pad6448[0x6664 - 0x6448];
@@ -60,8 +72,8 @@ public:
 	int m_n6684;	// the time of the byte at +0x66a5
 	int m_n6688;
 	int m_n668c;
-	int m_n6690;	// a time stamp (curtime + 15.0f, stored as a float)
-	int m_n6694;
+	int m_n6690;
+	union { int m_n6694; float m_fl6694; };	// 0x6694: a time
 	int m_n6698;
 	int m_n669c;
 	char m_b66a0;
@@ -71,11 +83,11 @@ public:
 	char m_b66a4;
 	char m_b66a5;
 	char m_b66a6;
-	char m_b66a7;	// 0x66a7
+	char m_b66a7;
 	char m_b66a8;
+
 public:
-    virtual datamap_t * vfunc82();
-public:
+	virtual datamap_t *vfunc82();
 	virtual void vfunc134();
 	virtual void vfunc135();
 	virtual void vfunc136();
@@ -109,7 +121,7 @@ public:
 	virtual void vfunc164();
 	virtual void vfunc165();
 	virtual void vfunc166();
-	virtual void vfunc167();
+	virtual CBaseEntity *vfunc167();	// slot 167: the enemy (CAI_BaseNPC::GetEnemy 0x101a67e0)
 	virtual void vfunc168_slot();
 	virtual void vfunc169();
 	virtual void vfunc170();
@@ -164,7 +176,7 @@ public:
 	virtual void vfunc219_slot();
 	virtual void vfunc220_slot();
 	virtual void vfunc221_slot();
-	virtual void vfunc222_slot();
+	virtual Vector GetSoundEmissionOrigin();	// slot 222 (CBaseEntity::vfunc222): fills and returns the vector
 	virtual void vfunc223();
 	virtual void vfunc224();
 	virtual void vfunc225();
@@ -386,11 +398,11 @@ public:
 	virtual void vfunc441();
 	virtual void vfunc442();
 	virtual void vfunc443();
-	virtual void vfunc444();
+	virtual void vfunc444(void *pTask);	// slot 444 "StartTask"
 	virtual void vfunc445();
 	virtual void vfunc446();
 	virtual void vfunc447();
-	virtual void vfunc448();
+	virtual void vfunc448(int a);	// slot 448 "TaskFail"
 	virtual void vfunc449();
 	virtual void vfunc450();
 	virtual int vfunc451();
@@ -483,7 +495,7 @@ public:
 	virtual void vfunc538();
 	virtual void vfunc539();
 	virtual void vfunc540();
-	virtual void vfunc541();
+	virtual CUnknown102e0150 *vfunc541();	// slot 541: the NPC's enemy memory list
 	virtual void vfunc542();
 	virtual void vfunc543();
 	virtual void vfunc544();
