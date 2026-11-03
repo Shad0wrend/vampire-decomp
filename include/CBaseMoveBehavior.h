@@ -9,6 +9,7 @@ public:
 	CBaseMoveBehavior() : CBaseEntity(0) {}
 	// Slot 153 of the real vtable; declared as the only virtual here so no slot numbering is implied.
 	virtual bool vfunc153();
+	virtual int vfunc117();	// slot 117: the logical entity's ObjectCaps with bit 9 cleared
 
 	char m_pad0004b[0x480 - sizeof(CBaseEntity)];
 	int m_unk480;	// +0x480: the entry sub_101402b0 returns for index 1
