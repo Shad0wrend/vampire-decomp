@@ -10114,6 +10114,7 @@
 0x1001076c func   ?sub_1023e250@@YGXH@Z sub_1023e250
 0x10010771 func   ?sub_102356e0@@YAHXZ sub_102356e0
 0x10010776 func   ?vfunc80@COccultExperience@@QAEHXZ COccultExperience::vfunc80
+0x1001077b func   ?vfunc566@CAI_BaseNPCTroika@@UAE_NPAVCBaseEntity@@@Z CAI_BaseNPCTroika::vfunc566
 0x10010780 func   ?vfunc80@CResearchBook_MG_MELEE@@QAEHXZ CResearchBook_MG_MELEE::vfunc80
 0x1001078a func   ?vfunc80@CItemKSarcophagusKey@@QAEHXZ CItemKSarcophagusKey::vfunc80
 0x1001078f func   ?vfunc365@CItemContainer@@QAE_NH@Z CItemContainer::vfunc365
