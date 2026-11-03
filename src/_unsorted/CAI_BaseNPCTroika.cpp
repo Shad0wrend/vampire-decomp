@@ -2995,6 +2995,61 @@ int CAI_BaseNPCTroika::vfunc142(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102bf070 size=0x210
+// TARGET: CAI_BaseNPCTroika::vfunc314
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_BaseNPC.h"
+#include "CBaseCombatCharacter.h"
+#include "CGlobalEntityList.h"
+#include "CEHandleGet.h"
+#include "QAngle.h"
+
+extern CGlobalEntityList *g_10566458;
+float sub_1013d650(float flAngle);
+void sub_10139970(const Vector &vec, QAngle &ang);
+
+void CAI_BaseNPCTroika::vfunc314(float flDeltaTime)
+{
+	CBaseCombatCharacter *pChar = (CBaseCombatCharacter *)(void *)this;
+	CBaseEntity *pEnt = g_10566458->sub_100290c0((const unsigned int *)&m_h5ba8);
+	float flRel, flAbs;
+
+	if (!pEnt)
+		pEnt = (CBaseEntity *)vfunc167();
+
+	if (pEnt && *(int *)((char *)this + 0x5bb4) <= 0) {
+		Vector vecEye = vfunc193();
+		Vector vecPos = sub_10278650(vecEye, 0, 1);
+		Vector vecDir = vecPos - vecEye;
+		VectorNormalize(vecDir);
+
+		pChar->m_bAimWeaponAtTarget = true;
+		pChar->m_hWeaponAimTarget = pEnt;
+		pChar->m_vWeaponAimOffset = vecPos - *(Vector *)((CAI_BaseNPC *)(void *)pEnt)->vfunc217();
+
+		QAngle angDir;
+		sub_10139970(vecDir, angDir);
+		angDir.y += 7.5f;
+
+		QAngle angAbs = *(QAngle *)vfunc219();
+		flRel = sub_1013d650(angDir.y - angAbs.y);
+		flAbs = sub_1013d650(angDir.x);
+
+		if (-45.0f > flRel) flRel = -45.0f;
+		else if (45.0f < flRel) flRel = 45.0f;
+		if (-45.0f > flAbs) flAbs = -45.0f;
+		else if (45.0f < flAbs) flAbs = 45.0f;
+	} else {
+		flRel = 0.0f;
+		flAbs = 0.0f;
+		pChar->m_bAimWeaponAtTarget = false;
+	}
+	pChar->m_flPoseValue[0] = flAbs;
+	pChar->m_flPoseValue[1] = flRel;
+	pChar->CBaseCombatCharacter::vfunc314(flDeltaTime);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102bf340 size=0x105
 #include "CAI_BaseNPCTroika.h"
 #include "CAI_CsActList.h"
