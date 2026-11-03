@@ -10738,6 +10738,7 @@
 0x100111bc func   _trigger_small_hull trigger_small_hull
 0x100111c6 func   ?vfunc495@CGeneric_NPC@@UAEXXZ CGeneric_NPC::vfunc495
 0x100111cb func   ?sub_10280d10@CUnknown10280d10@@QAE_NXZ CUnknown10280d10::sub_10280d10
+0x100111d0 func   ?sub_1039a750@CNPC_VMingXiao@@QAEXXZ CNPC_VMingXiao::sub_1039a750
 0x100111d5 func   ?vfunc438@CNPC_VHumanCombatPatrol@@QAEHXZ CNPC_VHumanCombatPatrol::vfunc438
 0x100111da func   ?sub_100c9250@CBaseButton@@QAEXPAVCBaseEntity@@0HM@Z CBaseButton::sub_100c9250
 0x100111df func   ?vfunc433@CNPC_VSheriffMan@@QAEXXZ CNPC_VSheriffMan::vfunc433

@@ -130,3 +130,112 @@ void CMingXiaoView::sub_1039a700(int unused)
     sub_1000198d(0x156, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1039a750 size=0x23a
+// TARGET: CNPC_VMingXiao::sub_1039a750
+
+#include "CNPC_VMingXiao.h"
+
+class CUnknown10097310
+{
+public:
+	void sub_10097310(void *pEnt);
+};
+
+class CUnk102ae750
+{
+public:
+	void sub_102ae750(int a, int b);
+};
+
+void sub_101cf600(void *p);
+CBaseEntity *sub_10136580(const char *pszName);
+void sub_101d1280(void *p);
+
+void CNPC_VMingXiao::sub_1039a750()
+{
+	this->sub_10272650(1);
+	m_nEffectFlags |= 0x10;
+	m_n168 = 0;
+	m_n16c = 0;
+	*(int *)((char *)this + 0x1568) = 0xf;
+	this->sub_10273070(1);
+	sub_101cf600(this);
+
+	CNPC_VMingXiao *pTwin = 0;
+	CBaseEntity *pFound = sub_10136580("npc_VMingXiao");
+	if (pFound)
+		pTwin = (CNPC_VMingXiao *)pFound->m_pNPC98;
+
+	pTwin->m_flags204 |= 4;
+	pTwin->vfunc62(this->vfunc217_slot());
+	pTwin->vfunc64(this->vfunc221_slot());
+	pTwin->vfunc202_slot(this);
+	((CUnknown10097310 *)pTwin)->sub_10097310(this);
+	pTwin->m_f63b4 = 4096.0f;
+	sub_101d1280(pTwin);
+	pTwin->m_nEffectFlags |= 0x60;
+	pTwin->vfunc614();
+	pTwin->vfunc105("models/character/monster/MingXiao/MingXiao.mdl");
+	pTwin->m_nEffectFlags &= 0xffffff9f;
+	pTwin->m_bAlpha1a3 = 1;
+	pTwin->m_n168 = 0x1f;
+	pTwin->m_n16c = 2;
+	*(int *)((char *)pTwin + 0x155c) = (int)*this->vfunc1();
+
+	const char *pszFile = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiao.cpp";
+
+	float flTime; flTime = gpGlobals->curtime;
+	*(float *)((char *)this + 0x1560) = flTime;
+	pTwin->m_nState5cc0 = 5;
+
+	*(float *)((char *)pTwin + 0x1560) = flTime;
+	*(char *)((char *)pTwin + 0x1480) = 1;
+	*(const char **)((char *)pTwin + 0x1b3c) = pszFile;
+
+	*(int *)((char *)pTwin + 0x5cc4) = 5;
+	*(int *)((char *)pTwin + 0x1b40) = 0x14df;
+	*(const char **)((char *)pTwin + 0x1b30) = pszFile;
+	*(int *)(0x1b34 + (char *)pTwin) = 0x14e0;
+
+	((CUnk102ae750 *)pTwin)->sub_102ae750(0x157, 0);
+
+	*(pTwin->m_a6348 + 0) = this->m_a6348[0];
+	pTwin->m_a6348[1] = this->m_a6348[1];
+	*(pTwin->m_a6348 + 2) = this->m_a6348[2];
+	pTwin->m_a6348[3] = this->m_a6348[3];
+	pTwin->m_a6348[4] = *(4 + this->m_a6348);
+	pTwin->m_a6420[0] = this->m_a6420[0];
+	pTwin->m_a6420[1] = *(this->m_a6420 + 1);
+	pTwin->m_a6420[2] = this->m_a6420[2];
+	*(pTwin->m_a6420 + 3) = this->m_a6420[3];
+	pTwin->m_a6420[4] = this->m_a6420[4];
+
+	m_n168 = 0x1e;
+	m_n16c = 2;
+	*(int *)((char *)this + 0x155c) = (int)*pTwin->vfunc1();
+
+	this->sub_102c4310("Ming_xiao_transform_emitter", this, 1, -1, 0);
+	this->sub_102c4310("Ming_xiao_transform_emitter2", (CBaseEntity *)this, 0, -1, 0);
+}
+
+/* judged with these header patches (not saved):
+[
+ {
+  "path": "CNPC_VMingXiao.h",
+  "old": "virtual void vfunc202_slot();",
+  "new": "virtual void vfunc202_slot(CBaseEntity *pOwner);"
+ },
+ {
+  "path": "CNPC_VMingXiao.h",
+  "old": "virtual void vfunc221_slot();",
+  "new": "virtual float *vfunc221_slot();"
+ },
+ {
+  "path": "CNPC_VMingXiao.h",
+  "old": "virtual int vfunc609(char bForce);",
+  "new": "virtual int vfunc609(char bForce);\n\tvirtual void vfunc610();\n\tvirtual void vfunc611();\n\tvirtual void vfunc612();\n\tvirtual void vfunc613();\n\tvirtual void vfunc614();"
+ }
+]
+*/
+// END FUNCTION
