@@ -39,5 +39,6 @@ public:
     virtual bool vfunc37(int);
     virtual bool vfunc17(int);
     virtual int vfunc64(int, int);
+    virtual bool vfunc65(int a, int b);
     virtual float vfunc59();
 };
