@@ -17,7 +17,7 @@ public:
 	virtual int vfunc14(int a, int b, int c);
 	virtual void vfunc15(int unused); virtual void vfunc16(int unused); virtual void vfunc17();
 	virtual int vfunc18(int condition);	// "SetCondition" with translation (like CAI_BaseNPC::vfunc446): 0 for an untranslatable id, else the result of the condition set
-	virtual void vfunc19(); virtual void vfunc20(); virtual void vfunc21(); virtual void vfunc22(); virtual void vfunc23();
+	virtual void vfunc19(); virtual void vfunc20(); virtual void vfunc21(); virtual void vfunc22(); virtual char vfunc23();
 	virtual char vfunc24(int a);
 	virtual char vfunc25(int a);
 	virtual void vfunc26(int a, int b);	// slot 26 (ret 8: two stack arguments, unused); slot 27 follows
