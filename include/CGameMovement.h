@@ -55,9 +55,10 @@ public:
 	Vector m_vecDuckView;	// 0x68
 	char m_pad0074[0x98 - 0x74];
 	int m_field98;
-	char m_pad009c[4];
-	float m_fieldA0;
-	char m_pad00a4[4];
+	void *m_pSurface9c;	// 0x9c: the surface-props record (slot 5 of 0x1071a278)
+	float m_fieldA0;	// 0xa0: the surface friction sub_1011e560 stores (scaled by 1.25, clamped to 1.0)
+	unsigned char m_bA4;	// 0xa4: byte +0x70 of the surface record
+	char m_pad00a5[3];
 	float m_fieldA8;
 	int m_nCachedContents;	// 0xac: the cached point contents (-9999 when none)
 	Vector m_vecCachedPoint;	// 0xb0: the point the cached contents belong to
