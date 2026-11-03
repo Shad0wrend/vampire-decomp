@@ -23,7 +23,7 @@ public:
 	virtual int vfunc13();
 	virtual int vfunc14();
 	virtual void vfunc15(Vector *pMins, Vector *pMaxs);	// WorldSpaceSurroundingBounds
-	virtual void vfunc16();
+	virtual bool vfunc16();
 	virtual void vfunc17();
 	virtual int vfunc18();
 };
@@ -84,6 +84,7 @@ public:
 	void sub_100dd000(const Vector &in, Vector &out);	// "CCollisionProperty::ClampToBounds"-like: the point into collision space (like sub_100dcc20), clamped to the box (mins at +4, maxs at +0x10) by sub_1013c8c0 (stub 0x100044e4), and back to world space (like sub_100dcb30)
 	float sub_100dd1b0(const Vector &point);	// distance from the point to the box in collision space: the point into collision space (like sub_100dd000), clamped by sub_1013c8c0, length of the difference
 public:
+    virtual bool vfunc16();	// slot 16: false when solid flag bit 3 is set or slot 14 answers 1, else true
     virtual void vfunc17();
     virtual float * vfunc1();
     virtual float * vfunc2();
