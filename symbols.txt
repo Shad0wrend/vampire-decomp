@@ -6094,6 +6094,7 @@
 0x1000a70e func   ?vfunc266@CSceneEntity@@UAEXHPBD@Z CSceneEntity::vfunc266
 0x1000a718 func   ?sub_1011a620@@YAXXZ sub_1011a620
 0x1000a71d func   ?vfunc2@CBaseEntity@@UAEPADXZ CBaseEntity::vfunc2
+0x1000a727 func   ?vfunc428@CNPC_VRat@@QAEPAVCAI_RatLocalNavigator@@XZ CNPC_VRat::vfunc428
 0x1000a72c func   ?sub_10230880@CNameSymbolTable@@QAEGPBD@Z CNameSymbolTable::sub_10230880
 0x1000a731 func   ?sub_100675b0@@YAXPAXHPBVVector@@HMH@Z sub_100675b0
 0x1000a73b func   ?sub_102dae70@CUnknown102dae70@@QAEPAXXZ CUnknown102dae70::sub_102dae70

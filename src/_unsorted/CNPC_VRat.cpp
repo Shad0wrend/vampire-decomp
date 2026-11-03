@@ -31,6 +31,19 @@ bool CNPC_VRat::vfunc294(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ad6a0 size=0x1f
+#include "CNPC_VRat.h"
+#include "CAI_RatLocalNavigator.h"
+
+CAI_RatLocalNavigator *CNPC_VRat::vfunc428()
+{
+	CAI_RatLocalNavigator *p = (CAI_RatLocalNavigator *)operator new(0x20);
+	if (p)
+		return p->sub_103ad540((int)this);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ad6d0 size=0x22
 struct CNPC_VRatX
 {
