@@ -81815,6 +81815,64 @@ bool __stdcall sub_1019e740(EntVt *pEnt, int attachment, float *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019e8b0 size=0x269
+#include "utlmemory.h"
+#include "CRopeKeyframe.h"
+#include "CCollisionProperty.h"
+
+void __cdecl sub_101cf390(int pThis, int pMins, int pMaxs);
+
+#define VT10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define VT7(p)  virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6();
+
+struct COriginVt
+{
+	VT10(a) VT10(b) VT10(c) VT10(d) VT10(e) VT10(f) VT10(g) VT10(h) VT10(i) VT10(j)
+	VT10(k) VT10(l) VT10(m) VT10(n) VT10(o) VT10(p) VT10(q) VT10(r) VT10(s) VT10(t)
+	VT10(u) VT7(v)
+	virtual float *GetAbsOrigin();
+};
+
+void CRopeKeyframe::sub_1019e8b0(bool a)
+{
+	Vector vecEnd, vecStart;
+	Vector vecMins, vecMaxs;
+
+	if ( sub_1019e7d0(0, vecStart.Base()) )
+	{
+		if ( sub_1019e7d0(1, vecEnd.Base()) )
+		{
+			VectorMin( vecStart, vecEnd, vecMins );
+			VectorMax( vecStart, vecEnd, vecMaxs );
+			vecMins -= *(Vector *)((COriginVt *)this)->GetAbsOrigin();
+			vecMaxs -= *(Vector *)((COriginVt *)this)->GetAbsOrigin();
+		}
+		else
+		{
+			vecMaxs = vecStart - *(Vector *)((COriginVt *)this)->GetAbsOrigin();
+			vecMins = vecMaxs;
+		}
+	}
+	else
+	{
+		vecMaxs.Init();
+		vecMins.Init();
+	}
+
+	CCollisionProperty *pCollision = (CCollisionProperty *)((char *)this + 0x270);
+	if ( *(Vector *)pCollision->vfunc1() == vecMins &&
+	     *(Vector *)pCollision->vfunc2() == vecMaxs )
+	{
+		if ( a )
+			sub_100b3b00();
+	}
+	else
+	{
+		sub_101cf390( (int)this, (int)vecMins.Base(), (int)vecMaxs.Base() );
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019ebc0 size=0x161
 #include "CRopeKeyframe.h"
 #include "CEntityMessageFilter.h"
