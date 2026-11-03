@@ -474,4 +474,5 @@ public:
 	virtual void vfunc588();
 	virtual void vfunc589();
 	virtual bool vfunc590();
+	char m_pad03e0[0x6660 - 0x3e0];
 };

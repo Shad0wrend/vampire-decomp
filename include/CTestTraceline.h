@@ -36,4 +36,5 @@ public:
 
 	void sub_1000cb8a();	// destructor body
 	void sub_100ac4e0(void *pFunc, int a, int b);	// CBaseEntity::sub_100ac4e0 (stub 0x10007fe5): sets a think function
+	char m_pad0004[0x450 - 0x4];
 };

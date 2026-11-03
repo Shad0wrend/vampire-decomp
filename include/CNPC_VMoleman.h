@@ -38,4 +38,5 @@ public:
 	virtual int vfunc138();
 	char *vfunc580();
 	const char *sub_1039f620();
+	char m_pad62f0[0x6664 - 0x62f0];
 };

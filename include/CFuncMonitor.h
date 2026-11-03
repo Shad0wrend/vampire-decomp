@@ -35,4 +35,5 @@ public:
 	int vfunc80();
 	int vfunc81();
 	datamap_t * vfunc82();
+	char m_pad0090[0x460 - 0x90];
 };

@@ -110,4 +110,5 @@ public:
 	virtual float vfunc247();
 public:
     virtual bool vfunc128();
+	char m_pad0644[0x658 - 0x644];
 };

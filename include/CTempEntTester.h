@@ -37,4 +37,5 @@ public:
 	CUnknown10050860 *m_pObject;	// 0x0450
 	float m_flEndTime;	// 0x0454
 	char m_szFilter[1];	// 0x0458
+	char m_pad0459[0x498 - 0x459];
 };

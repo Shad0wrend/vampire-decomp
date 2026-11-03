@@ -30,4 +30,5 @@ public:
 	void sub_102f6a50();	// InitializeAINetworks-like: rebuilds the node graph or loads it, then thinks / loads the map	// 0x659
 public:
     virtual datamap_t * vfunc82();
+	char m_pad065b[0x75c - 0x65b];
 };

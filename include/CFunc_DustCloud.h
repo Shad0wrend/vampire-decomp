@@ -7,4 +7,5 @@ class CFunc_DustCloud
 public:
 	CFunc_DustCloud *vfunc5(unsigned int flags);
 	void sub_10004fca();
+	char m_pad0000[0x478 - 0x0];
 };

@@ -40,4 +40,5 @@ public:
 	int m_n47c;	// 0x47c
 public:
 	datamap_t * vfunc82();
+	char m_pad0480[0x488 - 0x480];
 };

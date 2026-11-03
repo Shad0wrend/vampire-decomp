@@ -930,4 +930,5 @@ public:
 	virtual bool vfunc617_slot(CNPC_VWerewolfVec3 a, int b, int c, CNPC_VWerewolfVec3 d);
 	virtual bool vfunc618(int, int, int, int);
 	virtual int vfunc619(int);
+	char m_pad67a0[0x67a4 - 0x67a0];
 };

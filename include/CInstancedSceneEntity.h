@@ -17,4 +17,5 @@ public:
 	void vfunc270(int, int);
 	void vfunc271(int, int);
 	void vfunc272(int);
+	char m_pad0000[0x584 - 0x0];
 };

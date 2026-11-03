@@ -14,4 +14,5 @@ public:
 public:
     virtual datamap_t * vfunc82();
     void *vfunc5(unsigned int flags);	// as in CTriggerElectricBugaloo (transplant)
+	char m_pad03e0[0x5a4 - 0x3e0];
 };

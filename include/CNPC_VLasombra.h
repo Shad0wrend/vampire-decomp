@@ -466,4 +466,5 @@ public:
 	char m_pad03e0[0x6664 - 0x3e0];
 	float m_f6664;	// 0x6664: the time the check waits for
 	void sub_103c4ef0();	// as in CAI_Hint (transplant)
+	char m_pad6668[0x666c - 0x6668];
 };

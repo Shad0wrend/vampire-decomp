@@ -257,4 +257,5 @@ public:
 	virtual void vfunc371();
 	virtual void vfunc372();
 	virtual int vfunc373();
+	char m_pad03e0[0x914 - 0x3e0];
 };

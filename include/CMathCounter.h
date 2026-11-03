@@ -26,4 +26,5 @@ public:
 	variant_t m_OutValue;	// 0x45c
 public:
     virtual datamap_t *vfunc82();
+	char m_pad0470[0x4a4 - 0x470];
 };

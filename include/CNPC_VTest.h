@@ -31,4 +31,5 @@ public:
 	virtual const char *vfunc451();	// slot 451: the class name "CNPC_VTest"
 	virtual char vfunc452();	// slot 452
 	virtual int vfunc473();	// slot 473: 0x17
+	char m_pad03e0[0x6668 - 0x3e0];
 };

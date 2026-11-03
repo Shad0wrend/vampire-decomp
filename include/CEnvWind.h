@@ -126,4 +126,5 @@ public:
 	virtual void vfunc239();
 	virtual void vfunc240();
 	virtual void vfunc241(int, int, int, int, int);
+	char m_pad03e0[0x460 - 0x3e0];
 };

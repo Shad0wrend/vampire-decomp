@@ -19,4 +19,5 @@ public:
 	int vfunc360();	// slot 360 (plain member; the model derives from CBaseEntity): returns 0
 	void *sub_103f52f0();
 	int sub_103f5310();
+	char m_pad03e0[0x910 - 0x3e0];
 };

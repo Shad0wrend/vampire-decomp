@@ -10,4 +10,5 @@ public:
 	void *m_pfnTouch1ec;	// 0x1ec
 	void vfunc103();	// slot 103: CTriggerMultiple::vfunc103, then the touch function at +0x1ec = sub_101ca510
 	void sub_101c6860();	// CTriggerMultiple::vfunc103 (stub 0x100048ef), called directly
+	char m_pad01f0[0x5b0 - 0x1f0];
 };

@@ -393,4 +393,5 @@ public:
 	virtual void vfunc361();
 	virtual int vfunc362();
 	virtual int vfunc363();
+	char m_pad0004[0x910 - 0x4];
 };

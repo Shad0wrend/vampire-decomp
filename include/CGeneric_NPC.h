@@ -29,4 +29,5 @@ public:
 public:
 	virtual void vfunc434();
 	virtual int vfunc473();	// slot 473: 0x19 when the state at +0x5cc0 is 1, else 0x17
+	char m_pad65c0[0x6660 - 0x65c0];
 };

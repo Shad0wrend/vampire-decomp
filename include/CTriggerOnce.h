@@ -8,4 +8,5 @@ class CTriggerOnce
 public:
 	void vfunc103();
 	void sub_101c6860();
+	char m_pad0000[0x5b0 - 0x0];
 };

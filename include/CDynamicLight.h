@@ -95,4 +95,5 @@ public:
 	virtual int vfunc80();
 	virtual int vfunc81();
 	virtual datamap_t * vfunc82();
+	char m_pad0004[0x46c - 0x4];
 };

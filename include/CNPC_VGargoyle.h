@@ -692,4 +692,5 @@ public:
 	virtual void vfunc613();
 	virtual void vfunc614();
 	virtual bool vfunc615();
+	char m_pad668c[0x6690 - 0x668c];
 };

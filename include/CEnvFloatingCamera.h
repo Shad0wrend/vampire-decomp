@@ -11,4 +11,5 @@ public:
 	void sub_1000cb8a();
 public:
 	datamap_t * vfunc82();
+	char m_pad0000[0x460 - 0x0];
 };

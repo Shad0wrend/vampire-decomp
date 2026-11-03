@@ -9,4 +9,5 @@ public:
 	void sub_1000cb8a();
 public:
 	void vfunc103();
+	char m_pad0000[0x450 - 0x0];
 };

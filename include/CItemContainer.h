@@ -106,4 +106,5 @@ public:
 	bool vfunc409();
 	int vfunc370(int a);	// as in CNPCMaker (transplant)
 	int vfunc371(int a);	// as in CNPCMaker (transplant)
+	char m_pad1a34[0x1a38 - 0x1a34];
 };

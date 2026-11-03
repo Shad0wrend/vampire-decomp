@@ -16,4 +16,5 @@ public:
 	void vfunc406();	// slot 406: plays the "open" animation
 	void vfunc407();	// slot 407: plays the "close" animation
 	void vfunc103();	// slot 103: the container's Spawn, then RemoveFlag(0x40000) and sub_100b3b00
+	char m_pad03e0[0x1a38 - 0x3e0];
 };

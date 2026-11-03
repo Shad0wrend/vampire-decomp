@@ -12,4 +12,5 @@ public:
 	virtual void vfunc113();	// "CPointTeleport::Activate": saves origin / angles (+0x450 / +0x45c), warns on a parented or missing target
 public:
     virtual datamap_t * vfunc82();
+	char m_pad03e0[0x468 - 0x3e0];
 };

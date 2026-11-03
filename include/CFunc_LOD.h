@@ -133,4 +133,5 @@ public:
 	virtual void vfunc221();
 	virtual void vfunc222();
 	virtual bool vfunc223();
+	char m_pad0004[0x454 - 0x4];
 };

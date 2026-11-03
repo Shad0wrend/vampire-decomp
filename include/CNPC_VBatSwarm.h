@@ -477,4 +477,5 @@ public:
 	virtual void vfunc579();
 	virtual int vfunc580();
 	bool sub_10365780(int a, int b);	// provisional, like sub_10367680 (transplant)
+	char m_pad6448[0x6668 - 0x6448];
 };

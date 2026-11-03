@@ -32,4 +32,5 @@ public:
 	bool vfunc128();
 	bool vfunc223();
 	int vfunc241();
+	char m_pad0000[0x458 - 0x0];
 };

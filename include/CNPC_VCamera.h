@@ -653,4 +653,5 @@ public:
 	virtual void vfunc578();
 	virtual void vfunc579();
 	virtual int vfunc580();
+	char m_pad62e0[0x6660 - 0x62e0];
 };

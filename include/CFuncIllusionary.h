@@ -12,4 +12,5 @@ public:
 	virtual void vfunc103();	// slot 103 "CFuncIllusionary::Spawn": slot 64(angles), slot 93(0, 0), inlined SetSolid(0) with scope trace, then SetModel(the model name from slot 9) and the bool object at +0x1b0 set to 1
 public:
     virtual int vfunc117();
+	char m_pad03e0[0x450 - 0x3e0];
 };

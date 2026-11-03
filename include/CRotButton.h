@@ -40,4 +40,5 @@ public:
 	char m_pad0538[0x55c - 0x538];
 	char m_b55c;			// 0x55c: m_fl500 == -1.0f
 	char m_b55d;			// 0x55d: set to 1
+	char m_pad055e[0x5d0 - 0x55e];
 };

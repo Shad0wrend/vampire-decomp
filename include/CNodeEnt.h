@@ -21,4 +21,5 @@ public:
 	int m_n458;	// 0x458: a second hint selector (with m_w450 it decides whether the node registers a hint through sub_102d2f30)
 public:
     virtual datamap_t * vfunc82();
+	char m_pad045c[0x46c - 0x45c];
 };

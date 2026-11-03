@@ -16,4 +16,5 @@ public:
 	virtual void vfunc136();
 	virtual void vfunc137();
 	virtual int vfunc138();
+	char m_pad03e0[0x6668 - 0x3e0];
 };

@@ -44,4 +44,5 @@ public:
     virtual int vfunc117();
     virtual int vfunc42(int);
     void *vfunc5(unsigned int flags);	// as in CTriggerElectricBugaloo (transplant)
+	char m_pad0468[0x4cc - 0x468];
 };

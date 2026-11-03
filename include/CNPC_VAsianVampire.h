@@ -102,4 +102,5 @@ public:
 	bool vfunc566(int);
 	int vfunc580();
 	CNPC_VAsianVampire *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
+	char m_pad66e8[0x66ec - 0x66e8];
 };

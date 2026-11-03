@@ -29,4 +29,5 @@ public:
 public:
     virtual datamap_t * vfunc82();
     void vfunc103();	// as in CPhysConstraint (transplant)
+	char m_pad0591[0x5a0 - 0x591];
 };

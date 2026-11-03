@@ -611,4 +611,5 @@ public:
 	virtual void vfunc586();
 	virtual void vfunc587();
 	virtual void vfunc588();
+	char m_pad5cc8[0x6670 - 0x5cc8];
 };

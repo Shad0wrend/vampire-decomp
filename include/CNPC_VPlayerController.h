@@ -39,4 +39,5 @@ public:
 	void vfunc495();
 	void vfunc496();
 	void vfunc497();
+	char m_pad0000[0x6664 - 0x0];
 };

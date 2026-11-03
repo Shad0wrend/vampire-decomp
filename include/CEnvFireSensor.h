@@ -24,4 +24,5 @@ public:
 	int m_field460;
 public:
 	datamap_t * vfunc82();
+	char m_pad0464[0x494 - 0x464];
 };

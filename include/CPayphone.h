@@ -524,4 +524,5 @@ public:
 	virtual bool vfunc615();
 	virtual void vfunc616();
 	virtual bool vfunc617();
+	char m_pad0fec[0x665c - 0xfec];
 };

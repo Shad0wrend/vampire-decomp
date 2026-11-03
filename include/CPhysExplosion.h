@@ -16,4 +16,5 @@ public:
 	void sub_1004eae0();	// slot 103 (Spawn): slot 93(0, 0), SetSolid(SOLID_NONE) on the collision property at +0x270 (scope trace "CBaseEntity::SetSolid"), then slot 212(0)
 	datamap_t *vfunc82();	// slot 82 override: the game's 0x1004ea50
 	CPhysExplosion *vfunc5(unsigned int flags);	// scalar deleting destructor (hides the base slot: VC6 has no covariant returns); the game's 0x10050550
+	char m_pad03e0[0x45c - 0x3e0];
 };

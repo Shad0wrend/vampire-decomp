@@ -16,4 +16,5 @@ public:
 	char vfunc117();
 	float vfunc522();
 	float vfunc523();
+	char m_pad0000[0x5f48 - 0x0];
 };

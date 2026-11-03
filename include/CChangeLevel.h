@@ -25,4 +25,5 @@ public:
 	char m_szLandmarkName[32];	// 0x05b8
 public:
     virtual datamap_t * vfunc82();
+	char m_pad05d8[0x5fc - 0x5d8];
 };

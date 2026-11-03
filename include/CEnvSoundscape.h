@@ -31,4 +31,5 @@ public:
 	char sub_101ae440(void *pPlayer);	// whether the player is inside this soundscape's range (stub 0x1000a669)
 public:
 	datamap_t * vfunc82();
+	char m_pad045c[0x46c - 0x45c];
 };

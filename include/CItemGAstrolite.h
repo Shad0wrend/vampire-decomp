@@ -28,4 +28,5 @@ public:
 	void vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value);	// slot 173: nothing once the item was released, else the weapon's Use
 	void sub_10257980(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value);	// CBaseCombatWeapon::vfunc173, called directly
 	char m_b914;	// 0x914: set by sub_103f6800; read by vfunc34 / vfunc35 / vfunc117 / vfunc173 (0x103f6af0 / 0x103f6b20 / 0x103f6b50 / 0x103f6b90) and cleared by vfunc103 (0x103f67d0)
+	char m_pad0915[0x91c - 0x915];
 };

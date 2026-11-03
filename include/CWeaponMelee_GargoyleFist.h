@@ -13,4 +13,5 @@ public:
 	int vfunc362();
 	int vfunc363();
 	int vfunc373();
+	char m_pad0000[0x910 - 0x0];
 };

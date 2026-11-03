@@ -7,4 +7,5 @@ class CPointTarget
 public:
 	CPointTarget *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
+	char m_pad0000[0x450 - 0x0];
 };

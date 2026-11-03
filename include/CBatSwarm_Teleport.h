@@ -12,4 +12,5 @@ public:
 	CBatSwarm_Teleport *sub_103b1ad0();	// as in CKeepUpright (transplant)
 public:
     virtual datamap_t * vfunc82();
+	char m_pad03e0[0xc78 - 0x3e0];
 };

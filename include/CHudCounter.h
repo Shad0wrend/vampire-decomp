@@ -18,4 +18,5 @@ public:
 public:
     virtual int vfunc81();
     virtual int vfunc80();
+	char m_pad03e0[0x464 - 0x3e0];
 };

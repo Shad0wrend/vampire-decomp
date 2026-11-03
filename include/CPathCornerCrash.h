@@ -6,4 +6,5 @@ class CPathCornerCrash
 {
 public:
 	CPathCornerCrash *vfunc5(unsigned int flags);
+	char m_pad0000[0x46c - 0x0];
 };

@@ -13,4 +13,5 @@ public:
 	virtual void vfunc103();	// slot 103 "CWindowPane::Spawn": slot 104, SetSolid(2) with a scope trace, SetMoveType(6, 0), take-damage mode 2, collision group 4, model "models/gibs/brokenglass_piece.mdl" (slot 105)
 public:
     virtual datamap_t * vfunc82();
+	char m_pad03e0[0x730 - 0x3e0];
 };

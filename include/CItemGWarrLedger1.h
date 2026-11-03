@@ -21,4 +21,5 @@ public:
 	virtual int vfunc81();
 public:
 	virtual int vfunc80();
+	char m_pad0004[0x914 - 0x4];
 };

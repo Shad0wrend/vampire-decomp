@@ -42,4 +42,5 @@ public:
 	int vfunc36();
 	datamap_t * vfunc82();
 	void vfunc103();	// as in CNPC_VBach (transplant)
+	char m_pad059d[0x5d0 - 0x59d];
 };

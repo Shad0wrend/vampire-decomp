@@ -9,6 +9,7 @@ class CLogicCompareInteger : public CLogicalEntity
 public:
 	CLogicalEntity *vfunc5(unsigned int flags);	// slot 5: scalar deleting destructor (destroys the three outputs at +0x488 / +0x468 / +0x450, then the base)
 	virtual datamap_t *vfunc82();	// slot 82: the class's datamap
+	char m_pad0450[0x490 - 0x450];
 };
 
 class CLogicCompare
@@ -17,4 +18,5 @@ public:
 	void *vfunc5(unsigned int flags);
 public:
 	int vfunc82();
+	char m_pad0000[0x4b8 - 0x0];
 };

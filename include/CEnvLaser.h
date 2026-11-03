@@ -40,4 +40,5 @@ public:
 
 	virtual datamap_t * vfunc82();
 	CEnvLaser *sub_10101480();	// as in CKeepUpright (transplant)
+	char m_pad0500[0x504 - 0x500];
 };

@@ -72,4 +72,5 @@ public:
 	void vfunc463(int a, int b);	// slot 463: sets the scene name from slot 589(b) through sub_10260670, then CAI_BaseNPC::vfunc463(a, b)
 public:
 	datamap_t * vfunc82();
+	char m_pad604c[0x6058 - 0x604c];
 };

@@ -26,4 +26,5 @@ public:
 	CDebugEntityRecord *m_pRecords450;	// 0x450
 	char m_pad454[0x45c - 0x454];
 	int m_nRecords45c;	// 0x45c
+	char m_pad0460[0x464 - 0x460];
 };

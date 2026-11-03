@@ -28,4 +28,5 @@ public:
 	bool vfunc615();
 	int vfunc370(int a);	// as in CNPCMaker (transplant)
 	int vfunc371(int a);	// as in CNPCMaker (transplant)
+	char m_pad10e8[0x66a0 - 0x10e8];
 };

@@ -33,4 +33,5 @@ public:
 	float m_flAngularLimit;     // 0x478
 public:
     virtual datamap_t * vfunc82();
+	char m_pad047c[0x480 - 0x47c];
 };

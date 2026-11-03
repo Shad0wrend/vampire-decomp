@@ -36,4 +36,5 @@ public:
 	char m_pad0208[0x464 - 0x208];
 	float m_flForceLimit;	// 0x464
 	float m_flTorqueLimit;	// 0x468
+	char m_pad046c[0x488 - 0x46c];
 };

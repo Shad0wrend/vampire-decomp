@@ -463,4 +463,5 @@ public:
 	virtual void vfunc578();
 	virtual void vfunc579();
 	virtual int vfunc580();
+	char m_pad03e0[0x6664 - 0x3e0];
 };

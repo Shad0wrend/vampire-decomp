@@ -17,4 +17,5 @@ public:
 	void vfunc103();	// slot 103: precaches through slot 104, stores 9 at +0x458, then CEnvParticle::vfunc103
 public:
 	datamap_t * vfunc82();
+	char m_pad048c[0x4a8 - 0x48c];
 };

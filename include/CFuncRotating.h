@@ -42,4 +42,5 @@ public:
 public:
     virtual bool vfunc128();
     virtual int vfunc117();
+	char m_pad046c[0x470 - 0x46c];
 };

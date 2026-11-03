@@ -16,4 +16,5 @@ public:
 	bool vfunc452();
 	int vfunc580();
 	CNPC_VChangBrosClaw *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
+	char m_pad0000[0x6700 - 0x0];
 };

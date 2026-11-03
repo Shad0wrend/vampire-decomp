@@ -89,4 +89,5 @@ public:
     virtual bool vfunc72(int);
     virtual int vfunc80();
     virtual int vfunc79();
+	char m_pad19c0[0x19c8 - 0x19c0];
 };

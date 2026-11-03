@@ -13,4 +13,5 @@ public:
     virtual int vfunc117();
     void vfunc103();	// as in CNPC_VBach (transplant)
     virtual void vfunc113();	// slot 113: CBaseEntity::vfunc113, then sets the use function (+0x1f0) to CBaseToggle::sub_101c1dc0
+	char m_pad03e0[0x730 - 0x3e0];
 };

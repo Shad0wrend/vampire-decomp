@@ -35,4 +35,5 @@ public:
 	virtual int vfunc39(int);
 	virtual int vfunc41(int);
 	virtual int vfunc42(int);
+	char m_pad0004[0x730 - 0x4];
 };

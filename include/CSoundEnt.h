@@ -172,4 +172,5 @@ public:
 	virtual void vfunc115();
 	virtual void vfunc116();
 	virtual int vfunc117();
+	char m_pad0490[0xf64 - 0x490];
 };

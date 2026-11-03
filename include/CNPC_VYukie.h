@@ -36,4 +36,5 @@ public:
 	virtual char vfunc452();	// slot 452
 	void vfunc432(float x);	// slot 432: forwards to sub_10387500
 	void sub_10387500(float x);	// forwarder target
+	char m_pad03e0[0x666c - 0x3e0];
 };

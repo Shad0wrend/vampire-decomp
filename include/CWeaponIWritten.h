@@ -241,4 +241,5 @@ public:
 	virtual void vfunc358();
 	virtual void vfunc359();
 	virtual int vfunc360();
+	char m_pad03e0[0x914 - 0x3e0];
 };

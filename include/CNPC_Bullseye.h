@@ -27,4 +27,5 @@ public:
 	void sub_1000c9cd();	// CAI_BaseNPC destructor body (stub 0x1000c9cd -> 0x1027c820), tail called
 public:
     virtual datamap_t * vfunc82();
+	char m_pad03e0[0x5f78 - 0x3e0];
 };

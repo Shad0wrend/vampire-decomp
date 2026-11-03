@@ -20,4 +20,5 @@ public:
 public:
     virtual datamap_t * vfunc82();
     virtual void vfunc103();
+	char m_pad05c0[0x5c4 - 0x5c0];
 };

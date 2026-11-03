@@ -87,4 +87,5 @@ public:
     virtual datamap_t * vfunc82();
 public:
 	virtual void vfunc265();
+	char m_pad07f0[0x81c - 0x7f0];
 };

@@ -67,4 +67,5 @@ public:
     virtual const char * vfunc451();
 public:
 	virtual bool vfunc566(int);
+	char m_pad66e8[0x66ec - 0x66e8];
 };

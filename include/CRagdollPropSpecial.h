@@ -49,4 +49,5 @@ public:
 	void vfunc230(int index, void *pEvent);	// slot 230 "VPhysicsCollision" override (plain member): the base implementation, then for the other entity of the collision event (entities at +0x68 of the event, picked by the index) that is not this entity: when this entity's physics object moves faster than 150 units/s, sub_10157ca0(other)
 public:
     virtual datamap_t * vfunc82();
+	char m_pad104c[0x1054 - 0x104c];
 };

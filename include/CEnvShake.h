@@ -26,4 +26,5 @@ public:
 	COutputEvent m_Output458;	// 0x458
 public:
     virtual datamap_t * vfunc82();
+	char m_pad0470[0x48c - 0x470];
 };

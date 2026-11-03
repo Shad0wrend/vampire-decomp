@@ -17,4 +17,5 @@ public:
 public:
 	datamap_t * vfunc82();
 	void vfunc104();
+	char m_pad0734[0x738 - 0x734];
 };
