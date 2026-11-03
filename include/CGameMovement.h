@@ -13,7 +13,7 @@ public:
 	virtual void vfunc1(void *pMove, void *pPlayer);	// slot 1 "ProcessMovement": stores the arguments at +8 / +4, picks the frame time from the global at 0x109ef04c, runs slot 5 and sub_1011f6e0, and restores the global time step (+0x10 of 0x1070b228)
 	virtual float *vfunc2(char flag, int unused);	// returns the sub-object at +0x2c when flag is set, else the one at +0x14
 	virtual void slot3();
-	virtual void slot4();
+	virtual float *slot4(int which, char flag);	// slot 4 (stub 0x10011c52 -> 0x1011e390): the hull view offsets; `which` picks ducked / standing
 	virtual void vfunc5();
 	virtual float vfunc6(const QAngle &angles, const Vector &vec, float scale, float threshold);	// slot 6: sign(vec . right of angles) * scale, ramped by |dot| / threshold below the threshold
 	virtual void slot7();
@@ -21,7 +21,7 @@ public:
 	virtual char vfunc9();	// slot 9 "CanAccelerate"
 	virtual void vfunc10(Vector &wishdir, float wishspeed, float accel);	// slot 10 "Accelerate": when slot 9 allows, adds up to min(frametime * surface friction (+0xa0) * wishspeed * accel, wishspeed - velocity . wishdir) along wishdir to the velocity (the vector at +0x40 of the object at +0x4); nothing when the velocity already reaches wishspeed
 	virtual void slot11();
-	virtual void slot12();
+	virtual void vfunc12();	// 0x10121ce0 (vtable slot 12): the per-frame move worker
 	virtual void vfunc13(int);
 	virtual int vfunc14(int type);	// slot 14: maps type 0 to 0x14, 1 to 0x1a, 2 to 0xd and any other to 1
 	virtual char vfunc15(void *pSurface, float volume);	// slot 15: in multiplayer with m_field10 clear, true only when the player's horizontal speed is above 195.0f
@@ -96,6 +96,8 @@ public:
 	void sub_1011fb50();	// "CGameMovement::CheckWaterJump" (0x1011fb50, this in ecx, no args): only while the move data's waterjump time (+0x2314 of m_pMove) is 0 and the player's pitch (+0x48 of m_pPlayer) is below -180.0f; takes the player's flat view forward (+0x40/+0x44) normalised, checks it against the wish direction (+0x54/+0x58) and, on a hit, traces 8 units down (Ray_t from the player origin +0x70, mask 0x1400b, CTraceFilterSimple(player handle at +4)); on a clear trace sets the player's velocity z (+0x48) to 260.0f, ORs 2 into the player flags (+0x28), calls CBaseEntity::sub_100b3580(4) and sets m_pMove->+0x2314 to 2000.0f. Helpers: sub_10139550 (free cdecl, 2 args, at 0x10139550), sub_10139500 (free cdecl, 4 args, at 0x10139500), Vector::sub_10137220, and 0x1011e310 (hull mins, already declared). Globals: pfVectorNormalize 0x1057966c, g_1070b254 (engine trace slot 4), g_10738964 (debug object), g_10566458 (entity list).
 	void sub_10127dd0();	// "CGameMovement::WalkMove"-like ground move (0x10127dd0, this in ecx, no args), called by vfunc5 (0x101274a0): SetWaterLevel (sub_101252e0); when the player's wish velocity (+0x2c/+0x30/+0x34) is not all zero, splits the wish direction into the friction plane (sub_10139610 on player+0x0c, two normals + a third vector), builds the acceleration direction, clamps the speed to the player's +0x38, scales by the global 0x109ef28c (slot 1 unset -> +0x28), and calls slot 10 (Accelerate); clears the ground entity (sub_101256d0(0)) when the player's +0x48 (z velocity) is positive; for move type 6 (move data slot 94) runs sub_10123e20; adds the move data's +0x3b0 velocity to the player's +0x40 velocity, runs sub_10123c70 (CGameMovementUnit stub of 0x10004ebc), then traces the scaled frame step with sub_10123f40 (TracePlayerBBox), and on a non-startsolid partial hit sets the ground entity from the trace normal's entity (+0x38 of the trace) and calls sub_10127b00(&start, &end) (0x10127b00); finishes with SetWaterLevel. Uses m_pPlayer (+4) and m_pMove (+8).
 	void sub_10127b00(Vector *pStart, Vector *pEnd);	// 0x10127b00 (this in ecx, ret 8, void): the slide/step fix-up after a blocked TracePlayerBBox; declared as a plain member so the ground move can call it
+	void sub_101200c0();	// 0x101200c0: the ground-move worker called by vfunc12 (slot 12)
+	void sub_10125db0();	// 0x10125db0: the duck-state machine's per-frame worker called by vfunc12 (slot 12)
 	void sub_10120ba0();	// "CGameMovement" stuck/velocity worker called by vfunc12 (slot 12): reads m_pMove (+8) +0x2314 (water jump time, must be 0) and m_pPlayer (+4) velocity (+0x40); with |velocity| > 0.1 it traces the hull (sub_1011e310 / sub_1011e350, Ray_t::sub_1006dec0, sub_1011e8f0 + engine trace global 0x1070b254 slot 4, obj +0x70), computes a frictional loss from the surface friction at +0xa0 and the convars 0x109eefbc / 0x109ef16c, scales the velocity (+0x40) by the remaining fraction and subtracts the removed part from the vector at +0x80 (CMovePlayerView, CGameMovementViews.h)
 	void sub_10124ba0();	// a zero length hull trace at the player's origin (ducked hull, pass entity the move data, group from its +0x368): the line is drawn by the movement debug convar, and for a start solid hit on an entity the engine knows (slot 35 of the engine) sub_10124630 handles it (with the second convar set at once, else only when the entity's flags (slot 211) have bit 6)
 	void sub_10124630(void *pEnt);	// stub 0x10005e93: the stuck entity handler
