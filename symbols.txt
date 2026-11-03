@@ -2388,6 +2388,7 @@
 0x10004a84 func   ?vfunc82@CFunc_Dust@@QAEPAUdatamap_t@@XZ CFunc_Dust::vfunc82
 0x10004a89 func   ?sub_10085130@CUnknown10085130@@QAEXH@Z CUnknown10085130::sub_10085130
 0x10004a8e func   ?vfunc174@CTriggerWind@@UAEXPAVCBaseEntity@@@Z CTriggerWind::vfunc174
+0x10004a93 func   ??0ConVar@@QAE@PBD0H0_NM1M@Z ConVar::ConVar
 0x10004a9d func   ?sub_10213ef0@CPropHaunted@@QAEXHPAXPAVCBaseEntity@@@Z CPropHaunted::sub_10213ef0
 0x10004aa2 func   ?vfunc580@CNPC_VTzimisceHeadClaw@@UAEHXZ CNPC_VTzimisceHeadClaw::vfunc580
 0x10004aa7 func   ?sub_102241b0@@YIXPAH@Z sub_102241b0
