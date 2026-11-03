@@ -6894,6 +6894,7 @@
 0x1000bcee func   ?vfunc18@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEHH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc18
 0x1000bcf3 func   ?sub_102305a0@@YGHHH@Z sub_102305a0
 0x1000bcf8 func   ?vfunc241@CSceneEntity@@UAEXXZ CSceneEntity::vfunc241
+0x1000bd02 func   ?vfunc103@CWeaponMelee_SeveredArm@@QAEXXZ CWeaponMelee_SeveredArm::vfunc103
 0x1000bd07 func   ?sub_1012a610@@YAXPAVCBaseEntity@@HPAX1PBDM@Z sub_1012a610
 0x1000bd0c func   ?sub_1012cfb0@@YGHH@Z sub_1012cfb0
 0x1000bd11 func   ?sub_100e4f30@CDialog@@QAEXPAD@Z CDialog::sub_100e4f30

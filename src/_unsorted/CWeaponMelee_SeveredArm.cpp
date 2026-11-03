@@ -39,6 +39,17 @@ int CWeaponMelee_SeveredArm::vfunc363()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e7c90 size=0x11
+#include "CWeaponMelee_SeveredArm.h"
+
+// TARGET: CWeaponMelee_SeveredArm::vfunc103
+void CWeaponMelee_SeveredArm::vfunc103()
+{
+	sub_100047be();
+	m_b871 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ece10 size=0x1e
 #include "CWeaponMelee_SeveredArm.h"
 
