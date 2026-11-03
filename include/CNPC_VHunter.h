@@ -27,6 +27,7 @@ public:
 	int sub_10299da0(CBaseEntity *pEnt);	// CAI_BaseNPCTroika::vfunc404, called directly
 	int vfunc440(int arg);	// slot 440: 0x6b gives 0x132 or 0x15b by bit 0x80000 of +0x14bc, 0x103 gives 0x15a, else CNPC_VHumanCombatant::vfunc440
 	int vfunc438();	// slot 438 override: the state field at +0x1b2c = 0x17, then CNPC_VHumanCombatant's implementation
+	int vfunc461();	// slot 461 override: the state field at +0x1b38 = 0x17, then CNPC_VHumanCombatant's implementation
 	void vfunc420();	// slot 420: the Troika base's slot 420 (stub 0x1000dcba), then the active weapon's slot 66 when it has one (a tail jump)
 	CHunterMate *sub_1032e7b0();	// the active weapon object (stub 0x10007e19), called directly
 	void vfunc463(int nOld, int nNew);	// slot 463 (state change): entering state 2 takes the hold on the enemy's character (sub_10388c40, sub_1017f7b0, handle at +0x6664), leaving it drops the hold (sub_1017f830); states 1 / 2 / 3 / 0xb tell the active weapon slot 66 / 67; then CNPC_VHumanCombatant::vfunc463
