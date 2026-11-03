@@ -60,3 +60,7 @@ struct CVStatListSet
 		return &s_default;
 	}
 };
+
+// The one-time-init guard of that lazy default list (the game shares it at 0x109f0b2a):
+// use it (and a local `extern CVStatList_t g_109f0b40;`) instead of the inline static, whose COMDAT alias does not link here.
+extern unsigned char g_109f0b2a;
