@@ -120,7 +120,8 @@ public:
 	CAI_NPC_V(426)
 	virtual CAI_Motor *vfunc427();	// creates the NPC's motor (operator new, then CAI_Motor::sub_102e0900(this))
 	virtual class CAI_LocalNavigator *vfunc428();	// "CreateLocalNavigator": operator new(0x20), then the CAI_LocalNavigator constructor at 0x102ddab0 with this as outer
-	CAI_NPC_V(429)
+	virtual class CAI_Navigator *vfunc429();	// "CreateNavigator": operator new(0x68), then the CAI_Navigator constructor at 0x102eca50 with this as outer
+	
 	CAI_NPC_V(430) virtual void vfunc431();	// slot 431 "CAI_BaseNPC::NPCThink" (0x1026ca80, no stack arguments): scope trace (entity name or "NULL ENTITY" for a null this); byte +0x5b55 set -> cleared and sub_1027efb0(); sub_1026a0f0() (CAI_BaseNPCUnit, stub 0x100056fa); next think +0x17c = (float)(curtime + 0.1) (double constant 0x104493d0); only when the global 0x10934088 is set and its byte +0x658: VPROF scope "CAI_BaseNPC_NPCThink" (group "Unaccounted") on g_109f3648, entered with the imported CVProfNode::EnterScope (call [0x109f3664], not inlined); if !sub_1026c3d0() (stub 0x100155d7, char) the scope is left with the imported ExitScope (call [0x109f3654]) and the function returns; else unless the handle at +0x1538 resolves to a non-null entity with +0x153c == 1 slot 432(0) runs, then sub_1026c120(sub_1026c7c0() (PostRun, float in st0), 0) (PerformMovement) and the profile scope is left with the inlined rdtsc ExitScope tail (same idiom as the matched sub_1026c120)
 	virtual void vfunc432(char bSkip);	// CAI_BaseNPC::RunAI: profiled and scope-traced
 	CAI_NPC_V(433) CAI_NPC_V(434)
