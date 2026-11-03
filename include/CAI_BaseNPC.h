@@ -87,7 +87,7 @@ public:
 	virtual char vfunc363(CBaseEntity *pEnt);	// slot 363: asked about an entity (a boolean answer in al; the alarmed check of sub_102bf5d0 passes the entity)
 	virtual bool vfunc364(const float *pPosition);	// asked about a look position (true accepts it; the "FInViewCone"-like test)
 	CAI_NPC_V(365) CAI_NPC_V(366) CAI_NPC_V(367) CAI_NPC_V(368) CAI_NPC_V(369)
-	CAI_NPC_V(370) CAI_NPC_V(371) CAI_NPC_V(372) CAI_NPC_V(373) CAI_NPC_V(374)
+	virtual void vfunc370(int a); CAI_NPC_V(371) virtual int vfunc372(int a); CAI_NPC_V(373) CAI_NPC_V(374)
 	virtual int vfunc375(int act);	// TranslateActivity step 1: the activity the NPC wants for act
 	virtual int vfunc376(int act);	// the next activity of the fallback chain
 	CAI_NPC_V(377) CAI_NPC_V(378)
