@@ -125,7 +125,7 @@ public:
 	virtual float *vfunc220();	// "CBaseEntity::GetOrigin"
 	virtual float *vfunc221();
 	// slots 222..402
-	CBP_V10(se0) CBP_V10(se1) CBP_V10(se2) CBP_V10(se3) CBP_V10(se4) CBP_V10(se5) CBP_V10(se6) CBP_V1(se70) CBP_V1(se71) CBP_V1(se72) CBP_V1(se73) CBP_V1(se74) CBP_V1(se75) CBP_V1(se76) CBP_V1(se77)
+	CBP_V10(se0) CBP_V10(se1) CBP_V10(se2) CBP_V10(se3) CBP_V10(se4) CBP_V10(se5) CBP_V10(se6) CBP_V1(se70) CBP_V1(se71) CBP_V1(se72) CBP_V1(se73) CBP_V1(se74) CBP_V1(se75) virtual int vfunc298(int a); CBP_V1(se77)
 	virtual void vfunc300(CBaseEntity *pVictim, int b, char bQuiet);	// slot 300 (ret 0xc), CBaseCombatCharacter::vfunc300 (sub_1032c580 stub 0x100051b9) first with the same arguments; then, when pVictim says sub_1033d580(this), sub_1022d9d0(this, 3); with the active weapon's slot 360 flags having 0x18000 and the character's stat list of type 3 value of stat 9 above 0 the Potence death blow effect (two D_Potence_DeathBlow emitters through CDisciplineParticle::sub_10050d90); then, unless bQuiet, a criminal level step: sub_1017e150(4, -1.0f, sub_101d3730("Event_TookLife %s", pVictim ? pVictim->GetDebugName() : "UNKNOWN"))
 	CBP_V1(se79) CBP_V10(se8)
 	CBP_V1(se90) CBP_V1(se91) CBP_V1(se92) CBP_V1(se93)
