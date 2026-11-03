@@ -27,6 +27,7 @@ public:
 	void vfunc41(int a);	// slot 41 (plain member): forwards a to sub_1040d950 (an empty function in this build)
 	char sub_100b39c0();
 	unsigned char sub_1004e110();	// CPhysBox::vfunc117 body (CBaseEntity::vfunc117 & 0xfd | 8)	// the object check of vfunc68 (stub 0x10012887), called directly on this
+	virtual bool vfunc73(CBaseEntity *pOther);	// slot 73: true when bit 3 of m_flags204 is set
 
 	char m_pad03e0[0x450 - 0x3e0];
 	int m_nMaterial0450;	// 0x450: 1 sets the game flag 1 on the physics object
