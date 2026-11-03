@@ -2088,6 +2088,7 @@
 0x10004471 func   ?sub_10093a40@CBaseAnimating@@QAEMH@Z CBaseAnimating::sub_10093a40
 0x10004476 func   ??0CAI_InterestingPlaceConverstation@@QAE@XZ CAI_InterestingPlaceConverstation::CAI_InterestingPlaceConverstation
 0x10004480 func   ?sub_101b19e0@@YAHH@Z sub_101b19e0
+0x1000448f func   ?sub_1028abe0@@YIHPAXHHHH@Z sub_1028abe0
 0x100044a3 func   ?sub_1036a230@@YAPAXXZ sub_1036a230
 0x100044a8 func   ?sub_103c0c30@@YAEXZ sub_103c0c30
 0x100044ad func   ?sub_101f3060@@YIXPAD@Z sub_101f3060

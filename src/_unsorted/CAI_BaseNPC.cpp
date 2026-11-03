@@ -2464,6 +2464,14 @@ void CAI_BaseNPC::vfunc563(CBaseEntity *pEnt, const void *pGoal, const void *pPa
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028abe0 size=0x12
+int __fastcall sub_1028abe0(void *self, int dummy, int a, int b, int c)
+{
+	int v = *(int *)((char *)self + 0x5c54);
+	return v ? v : 0x43;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028b0b0 size=0x24
 // TARGET: sub_1028b0b0
 char __fastcall sub_1028b0b0(void *pSelf, int edxUnused, int unused, int *pOther)
