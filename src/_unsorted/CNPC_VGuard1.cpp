@@ -90,6 +90,35 @@ int CNPC_VGuard1::vfunc138()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037d020 size=0xbb
+#include "CBaseEntity.h"
+#include "CNPC_VGuard1.h"
+#include "CNPC_VHuman.h"
+#include "CEntityVSlots.h"
+
+void CNPC_VGuard1::vfunc463(int a, int b)
+{
+	CEntityVSlots *self = (CEntityVSlots *)this;
+	if (self->slot167() && *(int *)(self->slot167() + 0xa8))
+		sub_1037e2d0();
+	switch (b) {
+	case 1:
+		if (sub_1032e7b0()) {
+			sub_1032e7b0()->slot66();
+			((CNPC_VHuman *)this)->sub_10384720(a, b);
+			return;
+		}
+		break;
+	case 2:
+	case 3:
+	case 11:
+		if (sub_1032e7b0())
+			sub_1032e7b0()->slot67();
+	}
+	(this)->sub_10384720(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037d130 size=0xcb
 #include "CNPC_VGuard1.h"
 #include "CGlobalEntityList.h"
