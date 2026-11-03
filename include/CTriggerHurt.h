@@ -23,7 +23,7 @@ public:
 
 	float m_flDamage;	// 0x598
 	float m_flLastDmgTime;	// 0x59c
-	char m_pad05a0[4];
+	int m_nDamageType5a0;	// 0x5a0: the damage type (the second argument of slot 143; bit 3 gates the secondary hurt block of sub_101c5f40)
 	float m_flSpeed5a4;	// 0x5a4
 	Vector m_vecTarget5a8;	// 0x5a8
 	Vector m_vecPushDir5b4;	// 0x5b4
