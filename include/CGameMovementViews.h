@@ -5,6 +5,7 @@
 #pragma once
 
 #include "Vector.h"
+#include "QAngle.h"
 #include "CGameTrace.h"
 
 struct CMovePlayerView	// CGameMovement::m_pPlayer: the "mv" (CMoveData-like) record
