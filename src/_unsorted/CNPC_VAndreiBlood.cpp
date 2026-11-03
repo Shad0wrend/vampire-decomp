@@ -173,6 +173,18 @@ int CNPC_VAndreiBlood::vfunc438()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035d150 size=0x19
+#include "CNPC_VAndreiBlood.h"
+
+// TARGET: CNPC_VAndreiBlood::vfunc461
+int CNPC_VAndreiBlood::vfunc461()
+{
+	int n = m_b66cc != 0;
+	m_n1b38 = 4;
+	return n + 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035d180 size=0x13
 #include "CNPC_VAndreiBlood.h"
 void CNPC_VAndreiBlood::vfunc433()

@@ -11490,6 +11490,7 @@
 0x10012d28 func   ?vfunc17@CAI_BaseNPCTroika@@QAEXPBDH@Z CAI_BaseNPCTroika::vfunc17
 0x10012d2d func   _item_k_kiki_key item_k_kiki_key
 0x10012d32 func   ?vfunc296@CBaseCombatCharacter@@UAEDH@Z CBaseCombatCharacter::vfunc296
+0x10012d37 func   ?vfunc461@CNPC_VAndreiBlood@@UAEHXZ CNPC_VAndreiBlood::vfunc461
 0x10012d3c func   ?sub_103566a0@CNPC_Bullseye@@QAEPAV1@XZ CNPC_Bullseye::sub_103566a0
 0x10012d41 func   ?vfunc5@CPathCornerCrash@@QAEPAV1@I@Z CPathCornerCrash::vfunc5
 0x10012d50 func   ?sub_10203020@CNamedList10203020@@QAEHPBD@Z CNamedList10203020::sub_10203020
