@@ -3252,6 +3252,22 @@ bool CAI_BaseNPCTroika::vfunc295(CBaseCombatCharacter *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c23f0 size=0x27
+#include "CAI_BaseNPCTroika.h"
+#include "globalvars.h"
+
+// TARGET: CAI_BaseNPCTroika::vfunc614
+void CAI_BaseNPCTroika::vfunc614()
+{
+	float t = gpGlobals->curtime;
+	*(float *)((char *)this + 0x17c) = t;
+	*(float *)((char *)this + 0x6244) = t;
+	*(float *)((char *)this + 0x6248) = t;
+	*(float *)((char *)this + 0x624c) = t;
+	*(float *)((char *)this + 0x6250) = t;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c2ec0 size=0x33e
 #include "CAI_BaseNPCTroika.h"
 #include "CVStatList_t.h"

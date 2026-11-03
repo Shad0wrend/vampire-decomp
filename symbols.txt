@@ -10442,6 +10442,7 @@
 0x10010efb func   ?sub_1010be40@@YAPAHXZ sub_1010be40
 0x10010f00 func   ?vfunc4@CPhysSaveRestoreBlockHandler@@QAEXXZ CPhysSaveRestoreBlockHandler::vfunc4
 0x10010f0a func   ?sub_10064aa0@CUnknown10064aa0@@QAEHXZ CUnknown10064aa0::sub_10064aa0
+0x10010f0f func   ?vfunc614@CAI_BaseNPCTroika@@QAEXXZ CAI_BaseNPCTroika::vfunc614
 0x10010f14 func   _beam beam
 0x10010f19 func   ?vfunc82@CPushable@@UAEPAUdatamap_t@@XZ CPushable::vfunc82
 0x10010f1e func   ?vfunc81@CItemGLillyDiary@@QAEHXZ CItemGLillyDiary::vfunc81
