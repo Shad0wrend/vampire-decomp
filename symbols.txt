@@ -345,6 +345,7 @@
 0x1000187f func   ?vfunc0@CTETParticle@@UAEPAUServerClass@@XZ CTETParticle::vfunc0
 0x10001884 func   ?vfunc299@CWeaponPhysCannon@@UAEXPBM@Z CWeaponPhysCannon::vfunc299
 0x1000188e func   ?sub_1006cfb0@CUnknown1006cfb0@@QAE_NH@Z CUnknown1006cfb0::sub_1006cfb0
+0x10001893 func   ?sub_101aa610@@YIMH@Z sub_101aa610
 0x10001898 func   ?sub_100ba120@CUnknown100ba120@@QAEXD@Z CUnknown100ba120::sub_100ba120
 0x1000189d func   ?vfunc5@CScriptedSentence@@QAEPAV1@I@Z CScriptedSentence::vfunc5
 0x100018a2 func   ?sub_1018d8c0@CUnknown1018d8c0@@QAEXPAUinputdata_t@@@Z CUnknown1018d8c0::sub_1018d8c0
