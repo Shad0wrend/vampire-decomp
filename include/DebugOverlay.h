@@ -12,6 +12,10 @@ CBaseEntity *sub_101cd9e0(int index);
 // A debug overlay line between the two points; the colour is (r,g,b,a) and the width flWidth (0 = the default).
 void sub_10142e90(const Vector *pStart, const Vector *pEnd, int r, int g, int b, unsigned char a, float flWidth);
 
+// The client debug user message of type 0x3b (0x10144db0): pPos plus nine int / float dwords, written through the
+// engine interface (UserMessageBegin slot 65, several message writes, MessageEnd).
+void sub_10144db0(const Vector *pPos, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10);
+
 // A debug overlay text at a position (nValue is an extra integer, unused by the shell callers).
 void sub_10143710(const float *pPos, const char *pszText, int unused, int nValue);
 
