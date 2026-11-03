@@ -468,7 +468,9 @@ public:
 	void *sub_10335950(const char *pszName);	// CBaseCombatCharacter::Inventory_FindWeapon (stub 0x10015195): the carried weapon whose classname matches, 0 when none; called directly
 	void sub_101784c0(CBaseEntity *pOther);	// adds the keyring item the player carries to the inventory object at +0x245c: lets the keyring look at pOther, creates the inventory when needed, hands it the loose keys and copies the keyring's records into it
 	void sub_10182e00(CBaseCombatWeapon *pWeapon);	// "CBasePlayer::SetViewModel"-like: the model name of the character's default stat item for the weapon (or none when the weapon is not a ranged / usable one) is precached and handed to slot 266 of the second view model
-	void sub_101711e0(float flThreshold);	// resets the vector pair at +0x1efc / +0x1f08 to the zero vector unless the threshold is non-zero and the pair's squared length is above flThreshold squared
+	void sub_101711e0(float flThreshold);
+	Vector *sub_10176520(Vector *pOut, int nFlag);	// 0x10176520: the view-angles helper called by vfunc436 / weapon code; returns pOut
+	void sub_10176930(Vector *pOut, Vector *pAngles, float flScale, int nFlag);	// 0x10176930 (ret 16): the trace/aim helper called by sub_10176520	// resets the vector pair at +0x1efc / +0x1f08 to the zero vector unless the threshold is non-zero and the pair's squared length is above flThreshold squared
 	void sub_10170d60();	// the random impulse: once curtime passes the float at +0x2148 (5 seconds ahead again), clears the field at +0x210, builds a damage info (this, this, 10.0f, 0x1000) and hands slot 144 a random force vector (each component rand() * 9.155653e-5 + 2.0)
 	void sub_100b1d10();	// CBaseEntity member (stub 0x1000d486), called directly by slot 434
 	void vfunc434();	// slot 434 (plain member): with the player on the ground (flags bit 0, not bit 2, move type below 2): slot 449(2, 0), stamps the time at +0x148c and, when the entity of slot 209 has flag bit 12, hands the velocity plus the base velocity to sub_100b2e30
