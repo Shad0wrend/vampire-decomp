@@ -9778,6 +9778,7 @@
 0x100102ee func   ?vfunc17@CSingleplayRules@@UAE_NH@Z CSingleplayRules::vfunc17
 0x100102f3 func   ?sub_1011e200@CUnknown1011e200@@QAEXXZ CUnknown1011e200::sub_1011e200
 0x100102f8 func   ?vfunc285@CBaseFlex@@UAEXH@Z CBaseFlex::vfunc285
+0x100102fd func   ?vfunc180@CNPC_VMingXiao@@QAEXXZ CNPC_VMingXiao::vfunc180
 0x10010302 func   ?sub_10182210@CBasePlayerUnit10182210@@QAEHH@Z CBasePlayerUnit10182210::sub_10182210
 0x10010307 func   ?sub_1005bf10@CTEBeamPoints@@QAEPAV1@PBD@Z CTEBeamPoints::sub_1005bf10
 0x1001030c func   ?vfunc24@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHH@Z CTempEntsSystem::vfunc24

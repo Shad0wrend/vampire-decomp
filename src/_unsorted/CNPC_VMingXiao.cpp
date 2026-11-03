@@ -72,6 +72,18 @@ CNPC_VMingXiao *CNPC_VMingXiao::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10391230 size=0x1a
+#include "CNPC_VMingXiao.h"
+
+// TARGET: CNPC_VMingXiao::vfunc180
+void CNPC_VMingXiao::vfunc180()
+{
+	if (m_nMode673c)
+		sub_10398fd0();
+	((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc180();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10391330 size=0x6
 extern unsigned char g_106433a0;
 // TARGET: sub_10391330
