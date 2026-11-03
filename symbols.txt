@@ -11444,6 +11444,7 @@
 0x100128f0 func   ?vfunc5@CNPC_VMalkavian@@QAEPAV1@I@Z CNPC_VMalkavian::vfunc5
 0x100128f5 func   ?sub_101c3a70@@YAPAXPAX@Z sub_101c3a70
 0x100128fa func   ?sub_101f1be0@CUnknown10227c90@@QAEXH@Z CUnknown10227c90::sub_101f1be0
+0x100128ff func   ?vfunc518@CAI_BaseNPC@@QAEXHMMM@Z CAI_BaseNPC::vfunc518
 0x10012904 func   ?vfunc5@CWeaponRanged_Tzimisce2Head@@QAEPAV1@I@Z CWeaponRanged_Tzimisce2Head::vfunc5
 0x10012909 func   ?vfunc373@CWeaponMelee_ChangBlade@@QAEHXZ CWeaponMelee_ChangBlade::vfunc373
 0x1001290e func   ?sub_10100f70@@YIXPAX@Z sub_10100f70

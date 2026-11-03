@@ -1847,6 +1847,31 @@ void CAI_BaseNPC::vfunc519(int a, float b, float c, float d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10278d20 size=0x47
+#include "CAI_BaseNPC.h"
+
+struct ConVarLike {
+	virtual void vfunc0();
+	virtual bool vfunc1();
+	char m_pad0004[0x24];
+	float m_f28;
+	int m_n2c;
+};
+struct NpcHelper {
+	virtual void h0(); virtual void h1(); virtual void h2(); virtual void h3(); virtual void h4();
+	virtual void h5(); virtual void h6(); virtual void h7(); virtual void h8(); virtual void h9();
+	virtual void h10(); virtual void h11(); virtual void h12();
+	virtual void vfunc13(int a, float b, float c, float d);
+};
+extern ConVarLike *g_10924f74;
+
+void CAI_BaseNPC::vfunc518(int a, float b, float c, float d)
+{
+	if (!g_10924f74->vfunc1() && g_10924f74->m_n2c)
+		(*(NpcHelper **)((char *)this + 0x5d44))->vfunc13(a, b, c, d);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10278e00 size=0x13
 #include "CAI_BaseNPC.h"
 
