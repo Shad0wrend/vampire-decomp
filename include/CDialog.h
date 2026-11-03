@@ -84,7 +84,8 @@ public:
 	~CDialog();	// "CDialog::~CDialog": scope trace, unload (sub_100e5770), then the eight vectors are purged
 
 	void sub_100e49b0(int nIndex);	// plays the domination (response type 6) / dementation (type 5) victim emitter on the speaker's head for response nIndex when it is flagged (bit 0 of the flags at +0x2810 + nIndex * 4)
-	int sub_100e5690(CDialogEntry_t *pEntry);	// "CDialog::get": scope trace, bsearch for the entry matching *pEntry in the table; copies the found entry over *pEntry and returns 1, else 0
+	int sub_100e5690(CDialogEntry_t *pEntry);
+	int sub_100e0b10();	// "CDialog::GetStartingLine": the first table line whose dependency passes, else the state	// "CDialog::get": scope trace, bsearch for the entry matching *pEntry in the table; copies the found entry over *pEntry and returns 1, else 0
 	void sub_100e0a40(const char *pszSound);	// "CDialog::PlayWhisper": scope trace, when a whisper is pending hands it and pszSound to the NPC behind the handle at +4 and clears it
 	void sub_100e09a0(const char *pszText);	// "CDialog::Acquire": scope trace, copies the text (0x104 bytes) to the pending whisper buffer at +0x33ad
 	void sub_100e8b90(class CDialogDependency *pDep);	// "CDialog::pc_charge_dependency": scope trace; with a dependency that has a cost (m_nIndent) lowers stat 0xc of the NPC (handle at +4) by it, and for type 2 hands the speaker (handle at +0) the dependency's argument, the cost and the NPC (sub_1033e0a0)
