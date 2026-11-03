@@ -32,6 +32,21 @@ const char * CNPC_VHuman::vfunc451()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103840a0 size=0x1e
+#include "CNPC_VHuman.h"
+
+void sub_100aa7b0(void *p);
+
+// TARGET: CNPC_VHuman::vfunc5
+CNPC_VHuman *CNPC_VHuman::vfunc5(int flags)
+{
+	sub_100123af();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103841a0 size=0x6
 extern char g_1063f628;
 
