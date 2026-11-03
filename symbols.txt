@@ -1700,6 +1700,7 @@
 0x10003968 func   ?sub_1010d050@@YIPAXPAX@Z sub_1010d050
 0x10003977 func   ?sub_10180100@CBasePlayer@@QAEPAVCBaseEntity@@H@Z CBasePlayer::sub_10180100
 0x1000397c func   ?sub_103e3930@CWeaponRanged_FlameThrower@@QAEXXZ CWeaponRanged_FlameThrower::sub_103e3930
+0x10003981 func   ?sub_102c41d0@CAI_BaseNPCTroika@@QAEXHPBVVector@@0H@Z CAI_BaseNPCTroika::sub_102c41d0
 0x1000398b func   ?sub_10103100@CUnknown10103100@@QAEXH@Z CUnknown10103100::sub_10103100
 0x10003990 func   ?sub_10028b80@CUnknown10028b80@@QAEHH@Z CUnknown10028b80::sub_10028b80
 0x10003995 func   ?sub_10072ba0@CUnknown10072ba0@@QAEPAU1@H@Z CUnknown10072ba0::sub_10072ba0

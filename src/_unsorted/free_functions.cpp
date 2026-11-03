@@ -141458,6 +141458,29 @@ const char* CAI_BaseNPCTroika::sub_102c36b0(int schedule)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c41d0 size=0xa0
+#include "CAI_BaseNPCTroika.h"
+#include "Vector.h"
+
+extern Vector g_1070d9d0;
+void sub_10001a8c(Vector pos, int a, Vector *p2, Vector *p3, int c);
+
+// TARGET: CAI_BaseNPCTroika::sub_102c41d0
+void CAI_BaseNPCTroika::sub_102c41d0(int a, const Vector *pFrom, const Vector *pTo, int c)
+{
+	Vector v2, v3;
+	if (pFrom)
+		v2 = *pFrom;
+	else
+		v2 = *(const Vector *)((CAI_BaseNPC *)this)->vfunc217();
+	if (pTo)
+		v3 = *pTo;
+	else
+		v3 = g_1070d9d0;
+	sub_10001a8c(vfunc192(), a, &v2, &v3, c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c42a0 size=0x44
 #include "CAI_BaseNPCTroika.h"
 void sub_101d2640(Vector vecOrigin, int a, CBaseAnimating *pEnt, int pszBone, int b);
