@@ -7,8 +7,7 @@
 #include "engineiface.h"
 #include "CBaseEntity.h"
 
-struct CUnkCombatChar;
-void sub_1040d970(CUnkCombatChar *pOther);	// vfunc39 helper shared by CPhysBox / CSimplePhysicsBrush / CSimplePhysicsProp / CRagdollProp / CPhysicsProp: resolves the combat character of the edict behind pOther (sub_102587f0 / CBaseCombatCharacter::sub_10335950) and calls its slot 327
+#include "CUnkCombatChar.h"
 #include "CAI_BaseNPC.h"
 #include "CAI_Hint.h"
 #include "CAI_Motor.h"
