@@ -137317,6 +137317,31 @@ char CUnknown1029f2e0::sub_1029f2e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029f300 size=0x28
+struct CUnknown1029f300Vtbl
+{
+	void *m_slots[0x998 / 4];
+	void (__fastcall *m_pfn998)(void *pThis);
+};
+
+struct CUnknown1029f300View
+{
+	char m_pad0000[0x6080];
+	char m_b6080;
+};
+
+// TARGET: sub_1029f300
+void __fastcall sub_1029f300(CUnknown1029f300View *self, int, char bEnabled)
+{
+	if (!bEnabled && self->m_b6080 == 1)
+	{
+		CUnknown1029f300Vtbl *pVtbl = *(CUnknown1029f300Vtbl **)self;
+		pVtbl->m_pfn998(self);
+	}
+	self->m_b6080 = bEnabled;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029f340 size=0x1a
 int sub_10412520(int a);
 

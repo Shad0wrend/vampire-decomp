@@ -4930,6 +4930,7 @@
 0x10008922 func   ?sub_1009d5e0@CBaseEntity@@QAEHXZ CBaseEntity::sub_1009d5e0
 0x10008927 func   ?vfunc2@CAI_SystemHook@@QAEHXZ CAI_SystemHook::vfunc2
 0x1000892c func   ?sub_10230f00@CUnk10230f00@@QAEPAU1@HH@Z CUnk10230f00::sub_10230f00
+0x10008931 func   ?sub_1029f300@@YIXPAUCUnknown1029f300View@@HD@Z sub_1029f300
 0x10008936 func   ?sub_10073ae0@CUnknown10073ae0@@QAEPAXXZ CUnknown10073ae0::sub_10073ae0
 0x1000893b func   ?sub_101d6bd0@CUnknown101d6bd0@@QAEPAXXZ CUnknown101d6bd0::sub_101d6bd0
 0x10008940 func   ?vfunc5@CPhysImpact@@UAEPAV1@I@Z CPhysImpact::vfunc5
