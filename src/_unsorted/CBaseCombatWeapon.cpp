@@ -659,6 +659,21 @@ int CBaseCombatWeapon::sub_10251ff0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10252010 size=0xc
+#include "CBaseCombatWeapon.h"
+
+struct CWeaponOwnerView5ebe0
+{
+	char m_pad[0x5ebe0];
+	int m_n5ebe0;
+};
+
+int CBaseCombatWeapon::vfunc355()
+{
+	return ((CWeaponOwnerView5ebe0 *)sub_102517b0())->m_n5ebe0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10252030 size=0xc
 int __fastcall sub_10252030(CBaseCombatWeapon *p)
 {
