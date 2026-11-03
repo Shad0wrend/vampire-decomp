@@ -58,6 +58,22 @@ int CNPC_VMoleman::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039fc90 size=0x15
+#include "CNPC_VMoleman.h"
+
+struct CUnk1026dc00 {
+    char pad[0x5cec];
+    unsigned int m_5cec;
+    unsigned int sub_1026dc00(unsigned int flags);
+};
+
+void CNPC_VMoleman::vfunc103()
+{
+    ((CUnk1026dc00 *)this)->sub_1026dc00(0x200000);
+    sub_10384690();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039fcc0 size=0x6
 int CNPC_VMoleman::vfunc138()
 {
