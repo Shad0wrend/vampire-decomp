@@ -193088,6 +193088,24 @@ int sub_1042bfd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042bff0 size=0x2e
+#include "CGameStringPool.h"
+#include "string_t.h"
+
+extern CStringPool g_109eed2c;
+
+// TARGET: sub_1042bff0
+string_t sub_1042bff0(const char *psz)
+{
+	if (*psz)
+	{
+		char *p = g_109eed2c.sub_101bf860(psz);
+		return string_t(*p ? p : 0);
+	}
+	return string_t(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042c0a0 size=0x6
 namespace lifted {
 extern char g_109eed4c;

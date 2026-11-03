@@ -672,6 +672,7 @@
 0x10002086 func   ?sub_100fdb80@@YAXPAXD@Z sub_100fdb80
 0x1000208b func   ?sub_100b6850@@YGPAUStudioNamedRec24@@PAUStudioHdr8c@@PBD@Z sub_100b6850
 0x10002090 func   ?sub_101c2720@CSubHost@@QAEPAU1@HHHHHHH@Z CSubHost::sub_101c2720
+0x10002095 func   ?sub_1042bff0@@YA?AUstring_t@@PBD@Z sub_1042bff0
 0x1000209a func   ?sub_100437e0@CUnknown100437e0@@QAEXH@Z CUnknown100437e0::sub_100437e0
 0x1000209f func   ?sub_1009f3c0@CBaseEntity@@QAEXPBDH@Z CBaseEntity::sub_1009f3c0
 0x100020a9 func   ?sub_102e2c20@UtlVec36@@QAEXHH@Z UtlVec36::sub_102e2c20
