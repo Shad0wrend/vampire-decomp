@@ -84,4 +84,5 @@ public:
 	CCineNPCSlot m_slotA;	// 0x5f9c
 	CCineNPCSlot m_slotB;	// 0x5fb4
 	CCineNPCSlot m_slots[8];	// 0x5fcc
+	void vfunc180();	// slot 180: CAI_BaseNPC::vfunc180, then sub_101a7170(this)
 };
