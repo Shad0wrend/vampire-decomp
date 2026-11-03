@@ -12,7 +12,7 @@ public:
     char m_pad0004[0x450 - sizeof(CBaseEntity)];
     COutputEvent m_Output450;
     COutputEvent m_Output468;
-    char m_pad0480[0x498 - 0x480];
+    COutputEvent m_Output480;
     unsigned int m_nFilter498;
     int m_n49c;
     void vfunc174(CBaseEntity *pOther);
