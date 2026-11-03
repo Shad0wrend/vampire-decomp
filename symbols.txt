@@ -5105,6 +5105,7 @@
 0x10008e4f func   ?sub_10308190@CUnknown1030a6e0@@QAE_NPBVVector@@@Z CUnknown1030a6e0::sub_10308190
 0x10008e54 func   ?sub_103e1d90@@YAPAVCBaseEntity@@PAVCEntityVSlots@@@Z sub_103e1d90
 0x10008e59 func   ?sub_103bca20@CNPC_VTzimisce@@QAEHH@Z CNPC_VTzimisce::sub_103bca20
+0x10008e63 func   ?vfunc35@CPropSwitch@@UAEHH@Z CPropSwitch::vfunc35
 0x10008e6d func   ?vfunc104@CBreakableSurface@@UAEXXZ CBreakableSurface::vfunc104
 0x10008e72 func   ?sub_10109840@@YAPAHXZ sub_10109840
 0x10008e7c func   ?sub_101e8da0@CUnknown101e8da0@@QAEPADXZ CUnknown101e8da0::sub_101e8da0
