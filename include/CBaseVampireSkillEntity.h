@@ -18,7 +18,8 @@ class CBaseVampireSkillEntity
 {
 public:
 	virtual int vfunc0(int);
-	char pad0[0x780 - 4];
+	char pad0[0x77c - 4];
+	int m_n77c;
 	int m_n780;
 	int m_n784;
 	int m_unk788;	// creation time, copied from the globals
@@ -41,7 +42,8 @@ public:
 	CBaseVampireSkillEntity *sub_1020aa70();	// "CBaseVampireSkillEntity::CBaseVampireSkillEntity" body: base constructor, the five member objects, vftable, +0x780 / +0x784 = 1, +0x790 = 0; returns this
 	void sub_102256f0(const char *pszDoorName);	// finds the door (CBaseDoor) of that name, stores its handle at +0x80c (-1 when none) and hands this knob to it (CBaseDoor::AddDoorknob); a missing door is warned about ("attached to non-existent door") and this entity removed (stub of the two door skill entities' slot 113)
 	const char *sub_1000b5cd();	// CBaseEntity::sub_100ab4f0 (stub 0x1000b5cd): the debug name text
-	int *vfunc267(int *pOut, CBaseEntity *pPlayer);	// slot 267 (plain member): stamps the time at +0x788, tests the player's skill of the kind +0x784 (1 or 2) with the tuning block at 0x10739d08 into +0x780, fires the output at +0x7f4 with the player, then by the outcome (3 or more: slot 270, 0: the player view message 2 and slot 269, else slot 271); stores the outcome in *pOut and returns pOut
+	int *vfunc267(int *pOut, CBaseEntity *pPlayer);
+	int vfunc268(CBaseEntity *pPlayer);	// slot 267 (plain member): stamps the time at +0x788, tests the player's skill of the kind +0x784 (1 or 2) with the tuning block at 0x10739d08 into +0x780, fires the output at +0x7f4 with the player, then by the outcome (3 or more: slot 270, 0: the player view message 2 and slot 269, else slot 271); stores the outcome in *pOut and returns pOut
 public:
 	datamap_t * vfunc82();
 };
