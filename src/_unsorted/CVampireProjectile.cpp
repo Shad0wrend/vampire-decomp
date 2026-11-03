@@ -147,6 +147,33 @@ void CVampireProjectile::vfunc269()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ef350 size=0x58
+#include "CVampireProjectile.h"
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+
+struct CEntView332
+{
+	V100(a) V100(b) V100(c) V10(d) V10(e) V10(f)
+	virtual void g0();
+	virtual void g1();
+	virtual void vfunc332(int a);
+};
+
+// TARGET: CVampireProjectile::vfunc267
+void CVampireProjectile::vfunc267(int a)
+{
+	sub_101ef3d0();
+	EHANDLE &h = *(EHANDLE *)((char *)this + 0x778);
+	CBaseEntity *pEnt = h.Get();
+	if (pEnt)
+		((CEntView332 *)pEnt)->vfunc332(a);
+	if (*((char *)this + 0x7a4))
+		sub_101efcf0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101efa30 size=0x120
 #include "CVampireProjectile.h"
 #include "CEntityVSlots.h"

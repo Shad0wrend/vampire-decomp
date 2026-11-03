@@ -11162,6 +11162,7 @@
 0x10011ee6 func   ?sub_102dce10@@YIXPAH@Z sub_102dce10
 0x10011eeb func   ?vfunc580@CNPC_VWolfMorph@@UAEHXZ CNPC_VWolfMorph::vfunc580
 0x10011ef0 func   ?sub_103a7390@CNPC_VSabbatLeader@@QAEHH@Z CNPC_VSabbatLeader::sub_103a7390
+0x10011ef5 func   ?vfunc267@CVampireProjectile@@UAEXH@Z CVampireProjectile::vfunc267
 0x10011efa func   ?sub_10078f90@UtlMem@@QAEXXZ UtlMem::sub_10078f90
 0x10011eff func   ?vfunc138@CNPC_VPedestrian@@UAEHXZ CNPC_VPedestrian::vfunc138
 0x10011f04 func   ?sub_100f97b0@CUnknown100f97b0@@QAEPAUCUnknown100f97b0_Elem@@H@Z CUnknown100f97b0::sub_100f97b0
