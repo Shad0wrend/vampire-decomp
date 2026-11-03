@@ -65,3 +65,4 @@ extern ConVar *g_1090fdc4;	// hitgroups 4 / 5
 extern ConVar *g_1092023c;	// hitgroups 6 / 7
 extern ConVar *g_1093ca8c;	// 0x1093ca8c: the vertical (z) speed convar used by the VTzimisce throw / enemy checks (vfunc1 = unset, else m_fValue at +0x28)
 extern ConVar *g_1093ca44;	// 0x1093ca44: the gravity convar used by the VTzimisce throw (vfunc1 = unset, else m_fValue at +0x28)
+extern ConVar *g_109ef28c;	// 0x109ef28c: the player movement friction convar read by CGameMovement::sub_10127dd0 / vfunc11 and 0x101200c0
