@@ -6246,6 +6246,7 @@
 0x1000a8b2 func   ?vfunc8@CCollisionEvent@@UAEXPAX0@Z CCollisionEvent::vfunc8
 0x1000a8b7 func   ?vfunc0@?$CBitStringSaveRestoreOps@VCBitString@@@@UAEXPAPAVCBitString@@PAVCSave@@@Z CBitStringSaveRestoreOps<CBitString>::vfunc0
 0x1000a8bc func   ?vfunc39@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHH@Z CTempEntsSystem::vfunc39
+0x1000a8d0 func   ?sub_10025f80@CConstantForceController@@QAEXM@Z CConstantForceController::sub_10025f80
 0x1000a8d0 func   ?sub_10025f80@CPhysForceMotion@@QAEXM@Z CPhysForceMotion::sub_10025f80
 0x1000a8d5 func   ?sub_10269b30@@YGHHH@Z sub_10269b30
 0x1000a8da func   ?sub_1009be00@CBaseEntity@@QAEXHHMMM@Z CBaseEntity::sub_1009be00
