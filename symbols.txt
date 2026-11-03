@@ -8318,6 +8318,7 @@
 0x1000e138 func   ?vfunc103@CTriggerBrush@@UAEXXZ CTriggerBrush::vfunc103
 0x1000e142 func   ?sub_1010db90@CBreakable@@QAEXPAUinputdata_t@@@Z CBreakable::sub_1010db90
 0x1000e147 func   ?sub_101d4f40@CUnknown101d4f20@@QAEXPAUCUnknown101d4f20_Value@@@Z CUnknown101d4f20::sub_101d4f40
+0x1000e14c func   ?sub_10182530@@YAXHM@Z sub_10182530
 0x1000e156 func   ?vfunc5@CEntitySaveRestoreBlockHandler@@UAEXXZ CEntitySaveRestoreBlockHandler::vfunc5
 0x1000e160 func   ?sub_101945f0@CUtlRBTree12@@QAEXPBXAAGAA_N@Z CUtlRBTree12::sub_101945f0
 0x1000e165 func   ?vfunc5@CPropRadio@@QAEPAV1@I@Z CPropRadio::vfunc5

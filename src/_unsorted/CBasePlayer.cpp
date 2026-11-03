@@ -2044,6 +2044,15 @@ void CBasePlayer::vfunc468()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10182530 size=0xd
+void sub_1033cef0(int a, float b);
+
+void sub_10182530(int a, float b)
+{
+	sub_1033cef0(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10182f10 size=0x5
 // TARGET: sub_10182f10
 bool __stdcall sub_10182f10(int a)
