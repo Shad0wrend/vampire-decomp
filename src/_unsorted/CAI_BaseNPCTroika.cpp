@@ -2189,6 +2189,53 @@ int CAI_BaseNPCTroika::vfunc440(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b38b0 size=0xb4
+#include "CAI_BaseNPCTroika.h"
+
+struct EntA8 { char pad[0xa8]; int f; };
+struct HandleEntry { void *ent; unsigned int serial; int pad; };
+struct HandleList { int pad; HandleEntry e[1]; };
+extern char g_10924fba;
+extern char g_10924fb9;
+extern HandleList *g_10566458;
+
+bool CAI_BaseNPCTroika::vfunc468(CBaseEntity *pEnt)
+{
+	if (g_10924fba)
+		return false;
+	if (g_10924fb9 && pEnt && ((EntA8 *)pEnt)->f)
+		return false;
+	if ((*(unsigned int *)((char *)this + 0x5b84) & 0x800) == 0x800 && pEnt) {
+		unsigned int h = *(unsigned int *)((char *)this + 0x60ac);
+		void *other;
+		if (h != 0xffffffff) {
+			HandleEntry *p = &g_10566458->e[h & 0x1fff];
+			if (p->serial == (h >> 13))
+				other = p->ent;
+			else
+				other = 0;
+		} else
+			other = 0;
+		if (pEnt == other)
+			return false;
+	}
+	if (((EntA8 *)pEnt)->f)
+		return true;
+	switch (vfunc404(pEnt)) {
+	case 0:
+		return false;
+	case 1:
+	case 2:
+		return true;
+	case 3:
+	case 4:
+		return false;
+	default:
+		return false;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b39a0 size=0x24
 struct CAI_BaseNPCTroikaCallee {
     void sub_10007bdf(int a);
