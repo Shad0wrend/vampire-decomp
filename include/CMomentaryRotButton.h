@@ -275,7 +275,7 @@ public:
 	virtual void vfunc218();
 	virtual void vfunc219();
 	virtual void vfunc220();
-	virtual void vfunc221();
+	virtual float *vfunc221();
 	virtual void vfunc222();
 	virtual bool vfunc223();
 	float m_flStartPosition;	// 0x0600
