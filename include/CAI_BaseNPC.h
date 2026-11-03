@@ -210,6 +210,7 @@ public:
 	int vfunc571(float f);	// slot 571 (plain member so the derived slots keep their numbers): 9 when f < 190.0f, else 0x13
 	bool vfunc575();	// slot 575: bit 6 of the class flags (plain member so the declared base slots do not shift)
 	int vfunc576(float a, int unused);	// slot 576: true when the float is above 0.0f
+	void vfunc518(int a, float b, float c, float d);	// slot 518 (plain overload of the placeholder): forwards to slot 13 of the motor at +0x5d44 when the global at 0x10924f74 allows
 	int vfunc450(int a);	// slot 450 (plain overload of the placeholder slot): translates a schedule id through slot 580 + 0x18
 
 	void vfunc310(int act);	// slot 310 (plain overload of the placeholder slot, ret 4): switches the ideal activity (+0xff0) unless it is the current one (+0xfec) or the NPC is in activity 2 and act is not 0, then sub_10272130 / sub_10272490
