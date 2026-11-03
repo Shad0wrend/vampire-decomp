@@ -68729,6 +68729,114 @@ int sub_1015d790(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015df00 size=0x191
+#include "CBasePlayer.h"
+void __fastcall sub_100df590(void *);
+void __cdecl sub_10430964(void *);
+void __fastcall sub_1017a290(void *);
+void __fastcall sub_10184360(void *);
+void __fastcall sub_10184380(void *);
+void __fastcall sub_10184f70(void *);
+void __fastcall sub_10184fd0(void *);
+void __fastcall sub_10185100(void *);
+void __fastcall sub_10185140(void *);
+void __fastcall sub_10185180(void *);
+void __fastcall sub_101852b0(void *);
+void __fastcall sub_101852f0(void *);
+void __fastcall sub_10185450(void *);
+void __fastcall sub_10185490(void *);
+void __fastcall sub_101855c0(void *);
+void __fastcall sub_10185600(void *);
+void __fastcall sub_10185750(void *);
+void __fastcall sub_10185790(void *);
+void __fastcall sub_101857b0(void *);
+void __fastcall sub_103274d0(void *);
+extern int vt_1046fbb4;
+extern int vt_10462854;
+extern int vt_10470490;
+
+void CBasePlayer::sub_1015df00()
+{
+	void *p = *(void **)((char *)this + 0x1d24);
+	void *v;
+	*(void **)this = &vt_1046fbb4;
+	if (p) {
+		sub_100df590(p);
+		sub_10430964(p);
+	}
+	p = *(void **)((char *)this + 0x245c);
+	*(void **)((char *)this + 0x1d24) = 0;
+	if (p) {
+		sub_10185790(p);
+		sub_101857b0(p);
+		*(void **)((char *)p + 0x10) = *(void **)p;
+		sub_101857b0(p);
+		sub_10430964(p);
+	}
+	*(void **)((char *)this + 0x245c) = 0;
+
+	v = (char *)this + 0x23bc;
+	sub_10184360(v);
+	sub_10185100(v);
+	*(void **)((char *)v + 0x10) = *(void **)v;
+	sub_10185100(v);
+
+	v = (char *)this + 0x1e28;
+	*(void **)((char *)this + 0x235c) = &vt_10462854;
+	*(void **)((char *)this + 0x1e40) = &vt_10470490;
+	sub_10185600(v);
+	sub_10185750(v);
+	*(void **)((char *)v + 0x10) = *(void **)v;
+	sub_10185750(v);
+
+	v = (char *)this + 0x1e10;
+	sub_10185490(v);
+	sub_101855c0(v);
+	*(void **)((char *)v + 0x10) = *(void **)v;
+	if (*(int *)((char *)v + 8) != -1) {
+		if (*(void **)v) {
+			Plat_Free(*(void **)v);
+			*(void **)v = 0;
+		}
+		*(int *)((char *)v + 4) = 0;
+	}
+
+	v = (char *)this + 0x1d90;
+	sub_10184f70(v);
+	sub_10184fd0(v);
+	*(void **)((char *)v + 0x10) = *(void **)v;
+	sub_10184fd0(v);
+
+	v = (char *)this + 0x1d7c;
+	sub_101852f0(v);
+	sub_10185450(v);
+	*(void **)((char *)v + 0x10) = *(void **)v;
+	sub_10185450(v);
+
+	v = (char *)this + 0x1d68;
+	sub_10185180(v);
+	sub_101852b0(v);
+	*(void **)((char *)v + 0x10) = *(void **)v;
+	if (*(int *)((char *)v + 8) != -1) {
+		if (*(void **)v) {
+			Plat_Free(*(void **)v);
+			*(void **)v = 0;
+		}
+		*(int *)((char *)v + 4) = 0;
+	}
+
+	sub_1017a290((char *)this + 0x1a1c);
+
+	v = (char *)this + 0x19d8;
+	sub_10184380(v);
+	sub_10185140(v);
+	*(void **)((char *)v + 0x10) = *(void **)v;
+	sub_10185140(v);
+
+	sub_103274d0(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015eec0 size=0xe
 #include "CUnknown1015ef20.h"
 bool CUnknown1015ef20::sub_1015eec0()
