@@ -12427,6 +12427,7 @@
 0x1001422c func   ?vfunc5@CItemGLillyPhoto@@QAEPAV1@I@Z CItemGLillyPhoto::vfunc5
 0x10014231 func   ?sub_102c2c50@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_102c2c50
 0x10014236 func   ?sub_101ba6c0@@YAHXZ sub_101ba6c0
+0x1001423b func   ?vfunc14@IServerNetworkable@@QAEPAXD@Z IServerNetworkable::vfunc14
 0x10014245 func   ?vfunc80@CItemKeyGeneric@@QAEHXZ CItemKeyGeneric::vfunc80
 0x1001424f func   ?vfunc431@CNPC_VNewscaster@@QAEXXZ CNPC_VNewscaster::vfunc431
 0x10014254 func   ?vfunc257@CRagdollProp@@UAEXPAXH@Z CRagdollProp::vfunc257
