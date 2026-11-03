@@ -62247,6 +62247,17 @@ int __stdcall sub_1013e400(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013e450 size=0x1c
+#include "CEntityVSlots.h"
+
+// TARGET: sub_1013e450
+void __fastcall sub_1013e450(CEntityVSlots *p)
+{
+	if (!p->slot241())
+		p->slot78();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013e4a0 size=0x6c
 #include "CBaseEntity.h"
 
