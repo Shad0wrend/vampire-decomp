@@ -4964,6 +4964,7 @@
 0x10008b25 func   ?RotateRight@?$CUtlRBTree@HG@@QAEXG@Z CUtlRBTree<int,unsigned short>::RotateRight
 0x10008b25 func   ?RotateRight@?$CUtlRBTree@UCRBTree12Entry_102ec4a0@@G@@QAEXG@Z CUtlRBTree<CRBTree12Entry_102ec4a0,unsigned short>::RotateRight
 0x10008b25 func   ?sub_102ec6d0@CUtlRBTree12Unit@@QAEXG@Z CUtlRBTree12Unit::sub_102ec6d0
+0x10008b2a func   ?vfunc14@IMoveHelper@@QAEPAXD@Z IMoveHelper::vfunc14
 0x10008b2f func   ?vfunc80@CResearchBook_LG_STEALTH@@QAEHXZ CResearchBook_LG_STEALTH::vfunc80
 0x10008b39 func   ?sub_102beae0@CUnknown102beae0@@QAEHHHH@Z CUnknown102beae0::sub_102beae0
 0x10008b3e func   ?vfunc5@CWeaponIArmor_Lt_Cloth@@QAEPAV1@I@Z CWeaponIArmor_Lt_Cloth::vfunc5
