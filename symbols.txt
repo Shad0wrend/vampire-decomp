@@ -2154,6 +2154,7 @@
 0x100044d5 func   ?sub_103c51a0@@YIPAXPAX@Z sub_103c51a0
 0x100044e9 func   ?sub_103b3bf0@@YIPAXPAX@Z sub_103b3bf0
 0x100044ee func   ?sub_101c72f0@@YAPAHXZ sub_101c72f0
+0x100044f3 func   ?vfunc466@CAI_BaseNPCTroika@@UAE_NXZ CAI_BaseNPCTroika::vfunc466
 0x100044f8 func   ?sub_102e0a60@CUnknown102e0a60@@QAEXH@Z CUnknown102e0a60::sub_102e0a60
 0x100044fd func   ?sub_10367870@@YAPAXXZ sub_10367870
 0x10004502 func   ?sub_10312c20@CUnk10312c20@@QAEXH@Z CUnk10312c20::sub_10312c20

@@ -2981,6 +2981,20 @@ bool CAI_BaseNPCTroika::vfunc575()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102bf510 size=0x35
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CAI_BaseNPCTroika::vfunc466
+bool CAI_BaseNPCTroika::vfunc466()
+{
+	if (sub_1028a150() != 0 && *sub_1028a150() == 0xb9)
+		return false;
+	if (*(char *)((char *)this + 0x65fa))
+		return true;
+	return CAI_BaseNPC::vfunc466();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102bf6e0 size=0x68
 #include "CAI_BaseNPCTroika.h"
 
