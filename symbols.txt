@@ -5974,6 +5974,7 @@
 0x1000a04c func   ?vfunc81@CWeaponMelee_MingXiaoTentacle@@UAEHXZ CWeaponMelee_MingXiaoTentacle::vfunc81
 0x1000a056 func   ?sub_103f8e30@@YAHXZ sub_103f8e30
 0x1000a05b func   ?sub_103c2fa0@@YIPAHPAH@Z sub_103c2fa0
+0x1000a060 func   ?sub_102906c0@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::sub_102906c0
 0x1000a060 func   ?sub_102906c0@CUnknown102906c0@@QAEHXZ CUnknown102906c0::sub_102906c0
 0x1000a065 func   ?vfunc126@CVampireProjectile@@UAEHH@Z CVampireProjectile::vfunc126
 0x1000a06a func   ?vfunc451@CNPC_VVentrue@@UAEPBDXZ CNPC_VVentrue::vfunc451
