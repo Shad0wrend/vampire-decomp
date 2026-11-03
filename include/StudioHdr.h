@@ -87,3 +87,5 @@ struct StudioHdr
 	StudioSeqDesc *LocalSeq(int i) { return (StudioSeqDesc *)((char *)this + m_nLocalSeqIndex) + i; }
 	StudioHitboxSet *HitboxSet(int i) { return (StudioHitboxSet *)((char *)this + m_nHitboxSetIndex) + i; }
 };
+
+int sub_100c6350(void *pStudioHdr, const char *pName);	// CStudioHdr::LookupBone thunk (jmp sub_100c6280): index of the bone / attachment named pName, -1 when missing
