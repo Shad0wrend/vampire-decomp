@@ -129950,6 +129950,20 @@ void CWeaponRanged::sub_10257640()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102577e0 size=0x2a
+#include "CWeaponOwner.h"
+#include "CBaseCombatWeapon.h"
+
+// TARGET: CBaseCombatWeapon::sub_102577e0
+bool CBaseCombatWeapon::sub_102577e0()
+{
+	CWeaponOwner *pOwner = sub_102517b0();
+	if (*(int *)((char *)pOwner + 0x2444) == 0)
+		return false;
+	return *(int *)((char *)sub_102517e0() + 0x25c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10257820 size=0x16
 struct CUnknown102517e0 { char *sub_102517e0(); };
 

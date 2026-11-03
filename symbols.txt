@@ -546,6 +546,7 @@
 0x10001d61 func   ?sub_10201980@CVStatList_t@@QAEHXZ CVStatList_t::sub_10201980
 0x10001d6b func   ?vfunc335@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc335
 0x10001d70 func   ?sub_1039e800@CTentacleUnit@@QAEXH@Z CTentacleUnit::sub_1039e800
+0x10001d75 func   ?sub_102577e0@CBaseCombatWeapon@@QAE_NXZ CBaseCombatWeapon::sub_102577e0
 0x10001d7a func   ?sub_10249220@SList@@QAEXXZ SList::sub_10249220
 0x10001d7f func   ?sub_1007f540@UtlMem@@QAEXXZ UtlMem::sub_1007f540
 0x10001d84 func   ?sub_102d89f0@@YAHXZ sub_102d89f0
