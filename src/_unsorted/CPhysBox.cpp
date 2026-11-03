@@ -74,6 +74,17 @@ bool CPhysBox::sub_1004e1c0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004e220 size=0xe
+#include "CPhysBox.h"
+
+void sub_1040d950(int a);
+
+void CPhysBox::vfunc41(int a)
+{
+	sub_1040d950(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004e260 size=0x125
 #include "CPhysBox.h"
 #include "CCollisionProperty.h"

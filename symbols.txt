@@ -6177,6 +6177,7 @@
 0x1000ab23 func   ?sub_101cda50@@YAHXZ sub_101cda50
 0x1000ab28 func   ?sub_10060ac0@@YAXHHPBH0HHHD@Z sub_10060ac0
 0x1000ab2d func   ?sub_1025b820@@YAPBDI@Z sub_1025b820
+0x1000ab37 func   ?vfunc41@CPhysBox@@QAEXH@Z CPhysBox::vfunc41
 0x1000ab3c func   ?vfunc50@CMultiplayRules@@UAEMPAVCBaseEntity@@@Z CMultiplayRules::vfunc50
 0x1000ab41 func   _ai_hint ai_hint
 0x1000ab4b func   ?sub_100ad320@CBaseEntityVectorsUnit@@QAEXPAM00@Z CBaseEntityVectorsUnit::sub_100ad320
