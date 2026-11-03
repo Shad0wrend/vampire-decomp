@@ -203,6 +203,7 @@ public:
 	virtual bool vfunc566(CBaseEntity *pHint);	// "FValidateHintType": whether the hint (its groups at +0x470 against the NPC's usable groups, its type at +0x5dc) is one this NPC can use
 	virtual int vfunc567(int unused);
 	virtual float vfunc568(int a);
+	bool vfunc575();	// slot 575: bit 6 of the class flags (plain member so the declared base slots do not shift)
 
 	void vfunc310(int act);	// slot 310 (plain overload of the placeholder slot, ret 4): switches the ideal activity (+0xff0) unless it is the current one (+0xfec) or the NPC is in activity 2 and act is not 0, then sub_10272130 / sub_10272490
 	int vfunc440(int schedule);	// slot 440 "TranslateSchedule" base implementation (declared as a plain member like the subclasses' overrides): schedule 0x2e (a failed scripted sequence) becomes 0x2f..0x33 by the move type at +0x5f60 of the scripted sequence entity (handle at +0x5d74), after a DevWarning when that entity is gone; unchanged otherwise
