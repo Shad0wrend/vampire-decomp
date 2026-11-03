@@ -22,6 +22,7 @@ public:
 	float m_fl488;	// 0x488
 
 	void vfunc78();	// slot 78: when CBaseEntity::sub_100b5190() holds calls slot 241, then CBaseEntity::vfunc78
+	void vfunc77();	// slot 77: when CBaseEntity::sub_100b5190() does not hold calls slot 242, then CBaseEntity::vfunc77
 	void vfunc242();
 	CEnvParticle *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_10011ac7();	// as in CPhysForce (transplant)
