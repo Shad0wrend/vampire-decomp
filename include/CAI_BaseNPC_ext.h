@@ -17,3 +17,4 @@
 	void vfunc412();	// slot 412 (plain member): GetLastThink of the default context (sub_100ac720(0)), result unused
 	void vfunc413();	// slot 413 (plain member): the same as slot 412
 	void vfunc414();	// slot 414 (plain member): the same as slot 412
+	void vfunc415();	// slot 415 (plain member): the same as slot 412
