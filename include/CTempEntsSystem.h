@@ -7,6 +7,7 @@ class CTempEntsSystem
 {
 public:
 	char m_pad0000[0xc];
+	void *vfunc0(unsigned int flags);	// slot 0 (the deleting-destructor-shaped body at 0x10059de0)
 	CBaseEntity *m_pSuppressHost;	// 0x000c
 	int m_nSuppressCount;			// 0x0010
 
