@@ -9282,6 +9282,7 @@
 0x1000f7bd func   ?sub_1005f380@@YAHXZ sub_1005f380
 0x1000f7c2 func   ?vfunc588@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc588
 0x1000f7c7 func   ?sub_10311710@CUnknown10311a20@@QAE_NPBUCUnknown10311a20_Record@@@Z CUnknown10311a20::sub_10311710
+0x1000f7cc func   ?vfunc380@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc380
 0x1000f7d1 func   ?sub_100c0900@CFuncRotating@@QAEMM@Z CFuncRotating::sub_100c0900
 0x1000f7e5 func   ?vfunc117@CLogicalEntity@@UAEHXZ CLogicalEntity::vfunc117
 0x1000f7ef func   ?vfunc366@CNPC_VMingXiao@@UAE_NHHH@Z CNPC_VMingXiao::vfunc366

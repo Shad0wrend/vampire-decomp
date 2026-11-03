@@ -2576,6 +2576,25 @@ bool CAI_BaseNPCTroika::vfunc379(CBaseEntity *pEnt, int b, int c, int d, int e, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b5d90 size=0x13
+#include "CAI_BaseNPCTroika.h"
+
+struct CAI_BaseNPCTroikaSlotsView : public CAI_BaseNPCTroika
+{
+	virtual void pad610();
+	virtual void pad611();
+	virtual void pad612();
+	virtual void pad613();
+	virtual void slot614();
+};
+
+void CAI_BaseNPCTroika::vfunc380()
+{
+	CAI_BaseNPC::vfunc380();
+	((CAI_BaseNPCTroikaSlotsView *)this)->slot614();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b6b50 size=0xaa
 #include "CAI_BaseNPCTroika.h"
 
