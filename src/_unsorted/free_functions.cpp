@@ -128286,6 +128286,29 @@ void sub_1024eda0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024f7b0 size=0x22
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+
+struct CCharView151
+{
+	S100(s) S10(t) S10(u) S10(v) S10(w) S10(x)
+	virtual void y0();
+	virtual void slot151(CBaseCombatWeapon *pWeapon);
+};
+
+// TARGET: CBaseCombatWeapon::sub_1024f7b0
+void CBaseCombatWeapon::sub_1024f7b0()
+{
+	CBaseCombatCharacter *pChar = (CBaseCombatCharacter *)sub_10252240();
+	if (pChar)
+		((CCharView151 *)pChar)->slot151(this);
+	vfunc119();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024fc20 size=0x174
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
