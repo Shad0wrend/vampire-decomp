@@ -5472,6 +5472,7 @@
 0x1000943a func   ?vfunc5@CTEImpact@@UAEXXZ CTEImpact::vfunc5
 0x1000943f func   ?sub_103f5220@@YAHXZ sub_103f5220
 0x10009449 func   ?vfunc81@CItemGPishaFetish@@QAEHXZ CItemGPishaFetish::vfunc81
+0x1000944e func   ?sub_1028e090@CBaseAnimating@@QAEXPAX@Z CBaseAnimating::sub_1028e090
 0x10009453 func   ?sub_102f94b0@CBitOwner102f94b0@@QAE_NH@Z CBitOwner102f94b0::sub_102f94b0
 0x10009458 func   ?sub_1009af40@CBaseEntity@@QAEXPBM@Z CBaseEntity::sub_1009af40
 0x1000945d func   ?vfunc2@CAutoGameSystem@@UAEXXZ CAutoGameSystem::vfunc2

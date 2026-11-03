@@ -138652,6 +138652,50 @@ void CAI_BaseNPC::sub_1028e060()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028e090 size=0x1ff
+#include "CBaseAnimating.h"
+#include "matrix3x4_t.h"
+#include "QAngle.h"
+#include "Vector.h"
+#include "CEntityVSlots.h"
+
+void __cdecl sub_10137ed0(const matrix3x4_t &m, QAngle &angles);
+void __cdecl sub_10138720(int *pMatrix, int nCol, int *pOut);
+void __cdecl sub_10139610(const QAngle *pAngles, Vector *pForward, Vector *pRight, Vector *pUp);
+void __cdecl sub_10142e90(const Vector *pStart, const Vector *pEnd, int r, int g, int b, unsigned char a, float flDuration);
+
+// TARGET: CBaseAnimating::sub_1028e090
+void CBaseAnimating::sub_1028e090(void *pStudioHdr)
+{
+	if (!pStudioHdr)
+		return;
+
+	int nCount = *(int *)((char *)pStudioHdr + 0xf0);
+	for (int i = 0; i < nCount; i++)
+	{
+		matrix3x4_t mat;
+		((CEntityVSlots *)this)->slot256(i, (float *)&mat);
+
+		QAngle angles;
+		sub_10137ed0(mat, angles);
+
+		Vector vecOrigin;
+		sub_10138720((int *)&mat, 3, (int *)&vecOrigin);
+
+		Vector vecForward, vecRight, vecUp;
+		sub_10139610(&angles, &vecForward, &vecRight, &vecUp);
+
+		vecForward = vecOrigin + vecForward * 16.0f;
+		vecRight = vecOrigin + vecRight * 16.0f;
+		vecUp = vecOrigin + vecUp * 16.0f;
+
+		sub_10142e90(&vecOrigin, &vecForward, 0xff, 0x40, 0x40, 1, 0.2f);
+		sub_10142e90(&vecOrigin, &vecRight, 0x40, 0xff, 0x40, 1, 0.2f);
+		sub_10142e90(&vecOrigin, &vecUp, 0x40, 0x40, 0xff, 1, 0.2f);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028e360 size=0xd7
 #include "CAI_BaseNPCTroika.h"
 struct EntInfo { CBaseEntity *ent; int serial; int pad; };
