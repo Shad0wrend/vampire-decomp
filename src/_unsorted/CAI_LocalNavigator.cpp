@@ -100,6 +100,102 @@ bool CAI_LocalNavigator::vfunc7(CAI_LocalNavigatorStopState *pState, float flDis
 }
 // END FUNCTION
 
+// FUNCTION: 0x102debe0 size=0x1f7
+#include <math.h>
+#include "CAI_LocalNavigator.h"
+#include "CAI_Motor.h"
+#include "CAI_BaseNPC.h"
+#include "CVProfile.h"
+
+struct CycleSampleV {
+	unsigned __int64 m_Int64;
+	void Sample() {
+		unsigned int *p = (unsigned int *)this;
+		__asm {
+			mov ecx, p
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+	void End() {
+		CycleSampleV now;
+		now.m_Int64 = 0;
+		now.Sample();
+		m_Int64 = now.m_Int64 - m_Int64;
+	}
+	CycleSampleV &operator+=(const CycleSampleV &other) {
+		m_Int64 += other.m_Int64;
+		return *this;
+	}
+};
+
+struct CAILocalMoveGoalV {
+	char m_pad[0x18];
+	Vector m_vec18;
+};
+
+inline float AngleModV(float a)
+{
+	return (360.0f / 65536.0f) * (float)((int)(a * (65536.0f / 360.0f)) & 0xffff);
+}
+
+struct LocalNavVtbl {
+	virtual int s0();
+	virtual int s1();
+	virtual int s2();
+	virtual int s3(const void *pGoal, bool bOnlyCheck, int *pBlocker);
+	virtual int s4(const void *pGoal, bool bOnlyCheck, int *pBlocker);
+};
+
+float sub_101d2c70(const Vector *pVec);
+float sub_1013d580(float a, float b);
+float sub_102e1d10(float a, float b, float c, float d);
+Vector sub_101d2f40(float flYaw);
+
+int CAI_LocalNavigator::vfunc3(const void *pGoal, bool bOnlyCheck, int *pBlocker)
+{
+	g_109f3648->EnterScope("CAI_LocalNavigator_MoveCalc", 0, "Unaccounted", false);
+	CAILocalMoveGoalV *pMoveGoal = (CAILocalMoveGoalV *)pGoal;
+	int result = ((LocalNavVtbl *)this)->s4(pGoal, bOnlyCheck, pBlocker);
+	if (!result && !bOnlyCheck)
+	{
+		CAI_BaseNPC *pOuter = (CAI_BaseNPC *)m_pOuter;
+		CAI_Motor *pMotor = *(CAI_Motor **)((char *)pOuter + 0x5d44);
+		float flSpeed = pMotor->m_30;
+		float flYaw = AngleModV(pOuter->vfunc221()[1]);
+		float flGoalYaw = sub_101d2c70(&pMoveGoal->m_vec18);
+		float flDelta = fabs(sub_1013d580(flGoalYaw, flYaw));
+		if (flDelta > 15.0f)
+		{
+			float flNewYaw = sub_102e1d10(flDelta * 4.0, flYaw, flGoalYaw, flSpeed);
+			if (flNewYaw != flGoalYaw)
+				pMoveGoal->m_vec18 = sub_101d2f40(flNewYaw);
+		}
+	}
+	CVProfile *pProfile = g_109f3648;
+	if (!pProfile->m_bAtRoot || pProfile->m_enabled)
+	{
+		CVProfNode *pNode = pProfile->m_pCurNode;
+		if (--pNode->m_nRecursions == 0 && pNode->m_nCurFrameCalls != 0)
+		{
+			((CycleSampleV *)&pNode->m_CurFrameTime)->End();
+			*(CycleSampleV *)&pNode->m_TotalTime += *(CycleSampleV *)&pNode->m_CurFrameTime;
+			CVProfile *pProfile2 = g_109f3648;
+			int nDepth = --pProfile2->m_nGroupStackDepth;
+			int nNew = pProfile2->m_GroupIDStack[nDepth];
+			int nOld = pProfile2->m_GroupIDStack[nDepth + 1];
+			if (nNew != nOld && pProfile2->m_bVTuneGroupsEnabled && nOld == pProfile2->m_nVTuneGroupID)
+				vtune(false);
+		}
+		if (pNode->m_nRecursions == 0)
+			pProfile->m_pCurNode = pProfile->m_pCurNode->m_pParent;
+		pProfile->m_bAtRoot = (pProfile->m_pCurNode == pProfile->m_pRoot);
+	}
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dee60 size=0x22
 #include "CAI_PlaneSolver.h"
 
