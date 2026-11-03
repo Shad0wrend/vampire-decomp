@@ -2438,6 +2438,14 @@ void CAI_BaseNPC::vfunc445()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10289ce0 size=0x1e
+// TARGET: CAI_BaseNPC::vfunc571
+int CAI_BaseNPC::vfunc571(float f)
+{
+	return f < 190.0f ? 9 : 0x13;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10289d10 size=0x167
 #include "CAI_BaseNPC.h"
 #include "CAI_Motor.h"
