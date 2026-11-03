@@ -66117,6 +66117,30 @@ CPhysicsAnimlink *CPhysicsAnimlink::sub_1014eef0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014efb0 size=0x3f
+#include "CPhysicsAnimlink.h"
+#include "IPhysicsEnvironment.h"
+
+extern IPhysicsEnvironment *g_10723940;
+extern char vt_1046d094[];
+
+struct CUnknown1014eba0View { void sub_1014eba0(); };
+struct CBaseEntityDtorView { void sub_1000cb8a(); };
+
+// TARGET: CPhysicsAnimlink::sub_1000144c
+void CPhysicsAnimlink::sub_1000144c()
+{
+	*(void **)this = vt_1046d094;
+	if (m_pShadowController4c0)
+	{
+		g_10723940->vfunc36(m_pShadowController4c0);
+		m_pShadowController4c0 = 0;
+	}
+	((CUnknown1014eba0View *)&m_Pair4c8)->sub_1014eba0();
+	((CBaseEntityDtorView *)this)->sub_1000cb8a();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014f210 size=0x111
 #include "CBaseAnimating.h"
 #include "CPhysicsAnimlink.h"
