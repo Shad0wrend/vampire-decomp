@@ -151,7 +151,8 @@ public:
 	virtual void vfunc383(CBaseEntity *pWeapon, char bNoSwitch);	// slot 383 "Weapon_Equip": CBaseCombatCharacter::vfunc383, and (unless bNoSwitch) a new holder entity for the weapon's class (handle at +0x1c64) plus the game rules' FShouldSwitchWeapon / slot 388 switch
 	CBP_V1(sf62) CBP_V1(sf63) CBP_V1(sf64) CBP_V1(sf65)
 	virtual char vfunc388(CBaseEntity *pWeapon, int a);	// slot 388: switches to the given weapon (answers in al: false when it could not, CWeaponUnarmed::vfunc319 tests it)
-	CBP_V1(sf67) CBP_V1(sf68) CBP_V1(sf69)
+	virtual void vfunc389(Vector *pOut, const Vector *pOrigin);	// slot 389 (+0x614): fills pOut with the view angles for pOrigin
+	CBP_V1(sf68) CBP_V1(sf69)
 	CBP_V10(sf7) CBP_V1(sg0)
 	virtual void vfunc403();
 	CBP_V1(sh0) CBP_V1(sh1) virtual char vfunc406();
