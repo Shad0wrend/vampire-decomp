@@ -46,7 +46,8 @@ public:
     CWR_V(317) CWR_V(318) CWR_V(319)
     CWR_V(320) CWR_V(321) CWR_V(322) CWR_V(323) CWR_V(324) CWR_V(325) CWR_V(326) CWR_V(327)
     virtual int vfunc328();     // 0x10239210: 0xe0 or 0xbc plus a 0x1f / 0xfc mask on sub_102391c0 (the caller's flag), the 0xe0 form when the state at +0x86c is 1
-    CWR_V(329)
+    CWR_V(329) CWR_V(330)
+    virtual const Vector &vfunc331();    // slot 331: a vector inside the current roll slot record
     void sub_10013a57();    // as in CPhysForce (transplant)
 
     // Slot 370 (animation events), declared as a plain member for now: the slots between 32x and 370 are not modelled.

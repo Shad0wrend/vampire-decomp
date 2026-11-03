@@ -57,7 +57,7 @@ public:
 	int m_n1564;
 public:
 	virtual void vfunc330();
-	virtual void vfunc331();
+	virtual const Vector &vfunc331();
 	virtual void vfunc332();
 	virtual void vfunc333();
 	virtual void vfunc334();
