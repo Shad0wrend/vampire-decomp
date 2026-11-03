@@ -170,3 +170,23 @@ void CVampireProjectile::vfunc272(const Vector *pOrigin, const Vector *pDir, CBa
     p->sub_100963d0();
 }
 // END FUNCTION
+
+// FUNCTION: 0x101efba0 size=0x1e
+#include "CVampireProjectile.h"
+
+struct VProjView91
+{
+	char pad[0x758];
+	unsigned char m_b758;
+	char pad2[0x8a4 - 0x759];
+	unsigned char m_b8a4;
+};
+
+char CVampireProjectile::vfunc91(void *pPassEnt, int contentsMask)
+{
+	VProjView91 *p = (VProjView91 *)this;
+	if (p->m_b758 || p->m_b8a4)
+		return 0;
+	return CBaseEntity::vfunc91(pPassEnt, contentsMask);
+}
+// END FUNCTION
