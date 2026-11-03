@@ -85,7 +85,8 @@ public:
 	virtual void t253(); virtual void t254(); virtual void t255(); virtual void t256(); virtual void t257(); virtual void t258(); virtual void vfunc259(int *pEvent);
 	virtual void t260(); virtual void t261(); virtual void t262(); virtual void t263();
 	virtual void vfunc432(int a);	// slot 432: asks sub_103c0160 for an object and its kind; kind 1 goes to sub_103c0860, others to sub_103c05e0; then CAI_BaseNPCTroika::vfunc432(a)
-	virtual void t265(); virtual void t266(); virtual void vfunc435(int arg);	// slot 435: the Troika base's vfunc435(arg), then the flags at +0x14b8 bit 3 clear: 0 at +0x668c and the count at +0x66b8 drops by one while above 0
+	virtual void vfunc433();	// slot 433 (0x103bce40): the rail-run / enemy-distance check and the 0x1c / 0x1d / 0x77 / 0x1b / 0x78 / 0x23 schedule conditions
+	virtual void t266(); virtual void vfunc435(int arg);	// slot 435: the Troika base's vfunc435(arg), then the flags at +0x14b8 bit 3 clear: 0 at +0x668c and the count at +0x66b8 drops by one while above 0
 	virtual void t268(); virtual void t269();
 	void sub_100048f9(int arg);	// CAI_BaseNPCTroika::vfunc435 (stub 0x100048f9), called directly
 	virtual void t270(); virtual void t271(); virtual int vfunc440(int a);	// slot 440: maps an NPC schedule type to this NPC's schedule id (source line recorded at +0x1b30 / +0x1b34), the base mapping otherwise
