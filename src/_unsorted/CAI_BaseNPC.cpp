@@ -1914,6 +1914,13 @@ float CAI_BaseNPC::vfunc520(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10279000 size=0x21
+void CAI_BaseNPC::vfunc485(const char *pszSample, int a, float flVolume, int b, int c, int d)
+{
+	vfunc484(pszSample, a, flVolume, b, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10279060 size=0x13
 namespace lifted {
 void sub_10084b40(void *pEntity, const char *pszScene, unsigned int *pOut);

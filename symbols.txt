@@ -2255,6 +2255,7 @@
 0x100047be func   ?vfunc103@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc103
 0x100047c3 func   _item_w_tzimisce2_head item_w_tzimisce2_head
 0x100047c8 func   ?sub_101ad440@CUnknown101ad440@@QAEHH@Z CUnknown101ad440::sub_101ad440
+0x100047cd func   ?vfunc485@CAI_BaseNPC@@UAEXPBDHMHHH@Z CAI_BaseNPC::vfunc485
 0x100047d2 func   ?vfunc5@CNPC_VChangBros@@UAEPAVCAI_BaseNPC@@I@Z CNPC_VChangBros::vfunc5
 0x100047dc func   ?sub_101d20a0@@YAXPAUEntV@@0@Z sub_101d20a0
 0x100047e6 func   ?vfunc141@CPhysicsCannister@@QAEXPAUCCannisterTakeInfo@@PBVVector@@PAUCGameTrace@@@Z CPhysicsCannister::vfunc141
