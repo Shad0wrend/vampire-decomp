@@ -92,6 +92,25 @@ void CNPCMaker_Zombie::vfunc620(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034cbf0 size=0x41
+#include "CNPCMaker_Zombie.h"
+#include "COutputEvent.h"
+
+struct CGargoyleBaseUnit { void sub_100123af(); };
+void sub_100aa7b0(void *p);
+
+CNPCMaker_Zombie *CNPCMaker_Zombie::vfunc5(unsigned int flags)
+{
+	((COutputEvent *)((char *)this + 0x6698))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x6680))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x6668))->sub_100cd2d0();
+	((CGargoyleBaseUnit *)this)->sub_100123af();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034cc60 size=0x127
 #include "CNPCMaker_Zombie.h"
 #include "CCollisionProperty.h"
