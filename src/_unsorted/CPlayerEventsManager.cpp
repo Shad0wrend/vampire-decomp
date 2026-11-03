@@ -22,3 +22,20 @@ void CPlayerEventsManager::vfunc2()
 void sub_102276f0() {
 }
 // END FUNCTION
+
+// FUNCTION: 0x10227730 size=0x41
+#include "CPlayerEventsManager.h"
+
+void CPlayerEventsManager::vfunc5()
+{
+	m_Size = 0;
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+	m_pElements = m_pMemory;
+}
+// END FUNCTION
