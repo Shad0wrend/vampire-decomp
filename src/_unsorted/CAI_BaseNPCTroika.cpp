@@ -65,6 +65,13 @@ float __fastcall sub_101aa6d0(int p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aa6f0 size=0x7
+float __fastcall sub_101aa6f0(int p)
+{
+	return *(float *)((char *)p + 0x6258);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aa750 size=0xd
 struct TroikaField63f0 { char pad[0x63f0]; char m; };
 void CAI_BaseNPCTroika::vfunc416(char value)
