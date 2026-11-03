@@ -10169,6 +10169,7 @@
 0x10010cf3 func   ?sub_101d9210@CUnknown101d9210@@QAEXXZ CUnknown101d9210::sub_101d9210
 0x10010cfd func   ?vfunc82@CFire@@UAEPAUdatamap_t@@XZ CFire::vfunc82
 0x10010d02 func   ?sub_103153a0@CUtlRBTree16Unit@@QAEXG@Z CUtlRBTree16Unit::sub_103153a0
+0x10010d07 func   ?vfunc0@CDisciplineProjectileTraceFilter@@UAE_NPAXH@Z CDisciplineProjectileTraceFilter::vfunc0
 0x10010d0c func   ?sub_100dda50@CUnknown100dda50@@QAEDXZ CUnknown100dda50::sub_100dda50
 0x10010d11 func   ?sub_101bb6f0@CFloatUnit@@QAEXM@Z CFloatUnit::sub_101bb6f0
 0x10010d16 func   ?sub_10071490@CUnk10071840@@QAEXPAUinputdata_t@@@Z CUnk10071840::sub_10071490
