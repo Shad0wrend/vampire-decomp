@@ -130,6 +130,21 @@ void *sub_1028cd10(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028d5e0 size=0x1e
+#include "CAI_BaseNPCTroika.h"
+
+void sub_100123af();
+void sub_100aa7b0(void *p);
+
+CAI_BaseNPC *CAI_BaseNPCTroika::vfunc5(unsigned int flags)
+{
+	sub_100123af();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028d6e0 size=0x66
 #include "CAI_BaseNPCTroika.h"
 

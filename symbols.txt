@@ -3851,6 +3851,7 @@
 0x10007036 func   _item_g_stake item_g_stake
 0x1000703b func   ?sub_1017a290@@YAXXZ sub_1017a290
 0x10007040 func   ?sub_102dcf50@CUnknown102dcf50@@QAEPAXXZ CUnknown102dcf50::sub_102dcf50
+0x10007045 func   ?vfunc5@CAI_BaseNPCTroika@@UAEPAVCAI_BaseNPC@@I@Z CAI_BaseNPCTroika::vfunc5
 0x1000704a func   ?sub_100ecdf0@SHolder@@QAEMH_N@Z SHolder::sub_100ecdf0
 0x1000704f func   ?vfunc432@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::vfunc432
 0x10007054 func   ?sub_1028e890@CUnknown1028e890@@QAEHXZ CUnknown1028e890::sub_1028e890
