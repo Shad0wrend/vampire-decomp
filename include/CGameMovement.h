@@ -51,9 +51,12 @@ public:
 	Vector m_vecDuckHullMax;	// 0x38
 	Vector m_vecObsHullMin;	// 0x44
 	Vector m_vecObsHullMax;	// 0x50
+	float sub_1011ef20();	// the constraint speed factor: 1.0f unless the origin lies outside the inner constraint sphere and the wish velocity points away from its center
 	Vector m_vecView;	// 0x5c
 	Vector m_vecDuckView;	// 0x68
-	char m_pad0074[0x98 - 0x74];
+	Vector m_vecForward;	// 0x74
+	Vector m_vecRight;	// 0x80
+	Vector m_vecUp;	// 0x8c
 	int m_field98;
 	void *m_pSurface9c;	// 0x9c: the surface-props record (slot 5 of 0x1071a278)
 	float m_fieldA0;	// 0xa0: the surface friction sub_1011e560 stores (scaled by 1.25, clamped to 1.0)

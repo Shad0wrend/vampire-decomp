@@ -11,12 +11,21 @@ struct CMovePlayerView	// CGameMovement::m_pPlayer: the "mv" (CMoveData-like) re
 {
 	char m_pad0000[4];
 	unsigned int m_hRef;	// 0x04 (the pass entity handle for LookupEntity, address passed as &m_hRef)
-	char m_pad0008[0x40 - 8];
+	char m_pad0008[0x2c - 8];
+	float m_flForwardMove;	// 0x2c
+	float m_flSideMove;	// 0x30
+	float m_flUpMove;	// 0x34
+	float m_flMaxSpeed;	// 0x38
+	float m_flClientMaxSpeed;	// 0x3c
 	Vector m_vecVelocity;	// 0x40
 	char m_pad004c[0x70 - 0x4c];
 	Vector m_vecOrigin;	// 0x70
 	char m_pad007c[0x80 - 0x7c];
 	Vector m_vec80;		// 0x80: a velocity-like vector sub_10120ba0 subtracts a scaled amount from
+	Vector m_vecCenter;	// 0x8c: the constraint sphere's center
+	float m_flRadius;	// 0x98
+	float m_flWidth;	// 0x9c
+	float m_flSpeedFactor;	// 0xa0
 };
 
 struct CMoveFlagsView	// the same object as CMoveDataView, data side
