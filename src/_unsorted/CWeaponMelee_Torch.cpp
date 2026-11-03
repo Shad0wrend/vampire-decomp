@@ -118,6 +118,22 @@ char __fastcall sub_103e7640(void *pSelf, int unused, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e77c0 size=0x1b
+#include "CWeaponMelee_Torch.h"
+#include "CWeaponMelee.h"
+
+// TARGET: CWeaponMelee_Torch::vfunc315
+char CWeaponMelee_Torch::vfunc315()
+{
+	if (((CWeaponMelee *)this)->CWeaponMelee::vfunc315())
+	{
+		sub_103e7530();
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e7920 size=0x22
 void __fastcall sub_10008512(void *p);
 
