@@ -16,6 +16,7 @@ public:
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	CNPC_VCombatman *sub_1036fad0();	// as in CKeepUpright (transplant)
 	int vfunc438();	// slot 438 (TranslateSchedule-like): see the body
+	int vfunc461();	// slot 461 override: the state field at +0x1b38 = 0xb, then CNPC_VHuman's implementation
 	int sub_10015ad2();	// CNPC_VHuman::vfunc438 (stub 0x10015ad2), tail called
 	char sub_1001482b(int a);	// condition test, called with 0x10 / 0x11 / 0x13
 public:
