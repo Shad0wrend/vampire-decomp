@@ -4323,6 +4323,7 @@
 0x10007897 func   ?sub_103c49d0@@YADXZ sub_103c49d0
 0x100078a1 func   ?sub_1027bc30@@YAHXZ sub_1027bc30
 0x100078a6 func   _vgui_screen vgui_screen
+0x100078ab func   ?sub_10100860@CEnvBeam@@QAEXPBM@Z CEnvBeam::sub_10100860
 0x100078b0 func   ?sub_102ee2a0@CUnknown102ee2a0@@QAEHXZ CUnknown102ee2a0::sub_102ee2a0
 0x100078b5 func   ?sub_103a0ab0@CNPC_VNewscaster@@QAEXXZ CNPC_VNewscaster::sub_103a0ab0
 0x100078bf func   ?vfunc82@CHudTimer@@UAEPAUdatamap_t@@XZ CHudTimer::vfunc82

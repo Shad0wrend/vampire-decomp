@@ -51591,6 +51591,79 @@ void sub_101006e0(const float *pStart, const float *pEnd, unsigned int mask, voi
 }
 // END FUNCTION
 
+// FUNCTION: 0x10100860 size=0x259
+#include "CTraceFilterNoCharacterCollide.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738960.h"
+#include "engineiface.h"
+#include "CEnvBeam.h"
+
+struct V3 { float x, y, z; };
+void __cdecl sub_10146570(V3 *a, V3 *b, int c, int d, int e, int f, int g);
+
+struct SView { void sub_10100080(int a, int b); };
+
+struct RayX
+{
+	float m_Start[3];
+	float m_Delta[3];
+	float m_Extents[3];
+	float m_StartOffset[3];
+	bool m_IsRay;
+	bool m_IsSwept;
+	char m_b32;
+	char m_b33;
+	float m_n34;
+
+	void Init(const Vector &start, const Vector &end)
+	{
+		m_Delta[0] = end.x - start.x;
+		m_Delta[1] = end.y - start.y;
+		m_Delta[2] = end.z - start.z;
+		m_IsSwept = (m_Delta[0] * m_Delta[0] + m_Delta[1] * m_Delta[1] + m_Delta[2] * m_Delta[2]) != g_104454c4;
+		m_StartOffset[0] = m_StartOffset[1] = m_StartOffset[2] = 0.0f;
+		m_IsRay = true;
+		m_Extents[0] = m_Extents[1] = m_Extents[2] = 0.0f;
+		m_Start[0] = start.x;
+		m_Start[1] = start.y;
+		m_Start[2] = start.z;
+		m_b32 = 0;
+		m_n34 = 0;
+		m_b33 = 0;
+	}
+};
+
+void CEnvBeam::sub_10100860(const float *pPos)
+{
+	Vector *pSrc = (Vector *)pPos;
+
+	for (int i = 0; i < 10; i++) {
+		Vector dir(enginerandom->vfunc1(-1.0f, 1.0f), enginerandom->vfunc1(-1.0f, 1.0f), enginerandom->vfunc1(-1.0f, 1.0f));
+		VectorNormalize(dir);
+
+		RayX ray;
+		ray.Init(*pSrc, *pSrc + dir * m_radius);
+
+		CTraceFilterSimple filter(this, 0);
+		CGameTrace trace;
+		g_1070b254->vfunc4((Ray_t *)&ray, 0x400b, (CTraceFilterNoCharacterCollide *)&filter, &trace);
+
+		if (g_10738960.sub_1005f190())
+			sub_10146570((V3 *)&trace, (V3 *)&trace.m_endpos, 0xff, 0, 0, 1, (int)0xbf800000);
+
+		float flDist = (*(Vector *)&trace.m_endpos - *pSrc).Length();
+
+		if (!(flDist < m_radius * 0.1) && trace.m_fraction != 1.0) {
+			((SView *)this)->sub_10100080((int)pPos, (int)&trace.m_endpos);
+			return;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10100e10 size=0x5c
 #include "CEnvFade.h"
 
