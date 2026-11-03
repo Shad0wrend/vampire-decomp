@@ -37,6 +37,13 @@ float __fastcall sub_101aa650(int p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aa670 size=0x7
+float sub_101aa670()
+{
+	return 36.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aa690 size=0x3
 bool CAI_BaseNPCTroika::vfunc591()
 {

@@ -1412,6 +1412,7 @@
 0x10003378 func   ?vfunc82@CNPC_VHumanCombatant@@UAEPAUdatamap_t@@XZ CNPC_VHumanCombatant::vfunc82
 0x1000337d func   ?sub_101b3830@CUnknown101b3830@@QAEXHPBD@Z CUnknown101b3830::sub_101b3830
 0x10003387 func   ?vfunc3@CTETParticleHUD@@UAEXHH@Z CTETParticleHUD::vfunc3
+0x1000338c func   ?sub_101aa670@@YAMXZ sub_101aa670
 0x10003396 func   ?sub_103327f0@CBaseCombatCharacter@@QAEXM@Z CBaseCombatCharacter::sub_103327f0
 0x1000339b func   ?sub_102906a0@CUnknown102906a0@@QAEHXZ CUnknown102906a0::sub_102906a0
 0x100033a0 func   ?sub_102d77a0@CUnknown102d77a0@@QAEHXZ CUnknown102d77a0::sub_102d77a0
