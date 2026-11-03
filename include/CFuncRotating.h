@@ -12,6 +12,7 @@ public:
 	void sub_1000cb8a();	// as in CLogicalEntity (transplant)
 	float sub_100c0900(float flSpeed);	// scales flSpeed by the first non-zero of the floats at +0x190, +0x194, +0x198
 	int vfunc124();	// "DrawDebugTextOverlays": the base's line offset, plus one line ("Speed cur (target)": floats at +0x164 and +0x45c through sub_100c0900) when the text overlay bit (byte at +0x224) is set
+	virtual void vfunc103();	// slot 103 "CFuncRotating::Spawn" (0x100bfaa0): volume/attenuation defaults from m_flags204 (0x80 -> 2.0f, 0x100 -> 1.25f, else 0.8f), fan friction default 1.0f, the rotation axis m_vecMovedir from flags 4 (z) / 8 (x) / else y, negated when flag 2 set; scope-traced SetSolid(1); scope-traced AddSolidFlags(4) / RemoveSolidFlags(4) by flag 0x40; slot 93(8,0); sub_100b3b00(); the model name from slot 9 -> slot 105; m_f460 = |m_f460| (100.0f when 0) and m_pfnUse = 0x100130ac; flag 1 -> ThinkSet(sub_100a47b0,0,0) and m_flNextThink = curtime + 1.5; flag 0x20 -> m_pfnTouch = 0x100140ec; m_flSpeed164 = 0; vfunc104(); slot 223()
 	virtual void vfunc104();	// slot 104 "CFuncRotating::Precache": precaches the running noise (name at +0x468) when it is set, and with non-zero angles (+0x3c8) schedules the move done function 1.5 seconds on
 	void sub_100c0690();	// the move done function installed by Precache (stub 0x1000b884)
 	bool vfunc110(const char *szKeyName, const char *szValue);	// slot 110 "CFuncRotating::KeyValue": "fanfriction" (percent) and "Volume" (tenths, clamped to 0..1), else CBaseEntity::vfunc110
