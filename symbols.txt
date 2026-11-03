@@ -661,6 +661,7 @@
 0x10002072 func   ?sub_100f7330@CUnk_100f7330@@QAE_NH@Z CUnk_100f7330::sub_100f7330
 0x10002077 func   ?sub_103000a0@@YGXABVVector@@0MMAAV1@@Z sub_103000a0
 0x1000207c func   ?sub_101711e0@CBasePlayer@@QAEXM@Z CBasePlayer::sub_101711e0
+0x10002081 func   ?vfunc266@CBatSwarm@@QAEXH@Z CBatSwarm::vfunc266
 0x10002086 func   ?sub_100fdb80@@YAXPAXD@Z sub_100fdb80
 0x1000208b func   ?sub_100b6850@@YGPAUStudioNamedRec24@@PAUStudioHdr8c@@PBD@Z sub_100b6850
 0x10002090 func   ?sub_101c2720@CSubHost@@QAEPAU1@HHHHHHH@Z CSubHost::sub_101c2720

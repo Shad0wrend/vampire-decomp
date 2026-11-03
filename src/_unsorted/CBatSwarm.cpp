@@ -168,6 +168,21 @@ void CBatSwarm::vfunc265(int iBat)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ba000 size=0x1a
+#include "CBatSwarm.h"
+#include "CEntityVSlots.h"
+
+CBaseEntity *sub_101cda50();
+
+// TARGET: CBatSwarm::vfunc266
+void CBatSwarm::vfunc266(int a)
+{
+	CEntityVSlots *p = (CEntityVSlots *)sub_101cda50();
+	if (p)
+		p->slot320(0, 0x76);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ba0c0 size=0x1c
 #include "CBatSwarm.h"
 
