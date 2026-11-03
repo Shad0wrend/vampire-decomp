@@ -221,6 +221,15 @@ int sub_1035a850(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035a900 size=0xd
+void sub_1028fcc0(float a);
+
+void sub_1035a900(float a)
+{
+	sub_1028fcc0(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035a920 size=0x1
 #include "CGeneric_NPC.h"
 void CGeneric_NPC::vfunc434()
