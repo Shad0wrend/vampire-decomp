@@ -39,7 +39,7 @@ public:
 	float *vfunc4(char flag, int unused);	// as in CGameMovement (transplant)
 	void vfunc16(void *pSurface, float volume, char bForce);	// slot 16 "PlayStepSound"-like: in multiplayer returns when slot 1 of the global at 0x109ef094 is set or its value (+0x28) is zero; unless bForce asks slot 15(pSurface, volume); alternates the flag at +0x1ee4 of the move data, picks the surface's short at +0x2c or +0x2e and plays that step sound (channel 4, level 75, pitch 95 + rand(0, 10)) at the player's origin
 	void vfunc24();	// slot 24 (plain member): counts the three timers of the move data (+0x2328, +0x1ee0, +0x232c) down by frame time * 1000, each stopping at zero
-	void sub_101252e0();	// stub 0x1000ee85, run first by vfunc18
+	bool sub_101252e0();	// stub 0x1000ee85, run first by vfunc18; the movement code's SetWaterLevel: returns (m_pMove->water level at +0x3e0 > 1)
 
 	void *m_pPlayer;	// 0x04
 	void *m_pMove;	// 0x08
