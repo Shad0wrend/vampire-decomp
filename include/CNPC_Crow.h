@@ -70,6 +70,8 @@ public:
 	bool vfunc525(int a);	// slot 525: when the navigator state (sub_1027d990) is 2, sub_1000b61d(a) and true; else false
 	void sub_1000b61d(int a);	// the member called by vfunc525 (stub 0x1000b61d)
 	void vfunc103();	// slot 103 "Spawn": CAI_BaseNPC::vfunc103, model models/crow.mdl, solid 2, flight setup and a random think delay / morale
+	void vfunc104();	// slot 104 "Precache": CAI_BaseNPC::vfunc104, then precaches models/crow.mdl through the engine
+	void sub_1027bb50();	// CAI_BaseNPC::vfunc104 (stub 0x1000eaf7), called directly
 	void sub_10273200();	// CAI_BaseNPC::vfunc103 (stub 0x100026da), called directly
 	void sub_10273070(int a);	// CAI_BaseNPC member (stub 0x1000dc29), called directly
 	void sub_1009f380(const Vector *pOffset);	// CBaseEntity view offset setter (stub 0x10015bfe), called directly
