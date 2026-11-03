@@ -110,7 +110,9 @@ public:
 
 	char m_pad03e0[0x1482 - 0x3e0];
 	char m_b1482;	// +0x1482
-	char m_pad1483[0x1574 - 0x1483];
+	char m_pad1483[0x14bc - 0x1483];
+	unsigned int m_flags14bc;	// +0x14bc: AI NPC flag word (0x400 cleared / 0x80000400 set by the think)
+	char m_pad14c0[0x1574 - 0x14c0];
 	float m_f1574;	// +0x1574
 	char m_pad1578[0x1b2c - 0x1578];
 	int m_n1b2c;	// +0x1b2c
