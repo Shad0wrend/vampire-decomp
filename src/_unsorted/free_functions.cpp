@@ -85733,6 +85733,39 @@ int sub_101bb120()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bb150 size=0x9d
+#include "CSound.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CSoundEnt.h"
+#include "ScopeTrace.h"
+
+extern char *g_1072c464;
+extern void (__cdecl *g_109f3630)(const char *pszFormat, ...);
+
+CSound *CSoundEnt::sub_101bb150(int index)
+{
+	ScopeTrace trace("CSoundEnt::SoundPointerForIndex", g_106b8540);
+	if (!g_1072c464)
+		return 0;
+	if (index > 63) {
+		g_109f3630("SoundPointerForIndex() - Index too large!\n");
+		return 0;
+	}
+	if (index < 0) {
+		g_109f3630("SoundPointerForIndex() - Index < 0!\n");
+		return 0;
+	}
+	return (CSound *)(g_1072c464 + 0x464 + index * 0x2c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bb220 size=0x6b
 struct ScopeEntry {
     const char *a;
