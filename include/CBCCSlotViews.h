@@ -84,3 +84,12 @@ public:
 	virtual char vfunc396();	// gibs allowed for humans
 	virtual char vfunc397();	// gibs allowed for aliens
 };
+
+class CNpcVFunc476SlotView	// slot 476: CAI_BaseNPCTroika::sub_101aa5f0 (a float getter of +0x63c0)
+{
+public:
+	VIEW_SLOT100(0) VIEW_SLOT100(1) VIEW_SLOT100(2) VIEW_SLOT100(3)
+	VIEW_SLOT10(40) VIEW_SLOT10(41) VIEW_SLOT10(42) VIEW_SLOT10(43) VIEW_SLOT10(44) VIEW_SLOT10(45) VIEW_SLOT10(46)
+	VIEW_SLOT(470) VIEW_SLOT(471) VIEW_SLOT(472) VIEW_SLOT(473) VIEW_SLOT(474) VIEW_SLOT(475)
+	virtual float vfunc476();
+};
