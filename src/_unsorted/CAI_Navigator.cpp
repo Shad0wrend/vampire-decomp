@@ -1,6 +1,35 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x102eca50 size=0x93
+#include "CAI_Navigator.h"
+
+struct TObj {
+	char m_pad[0x84];
+	TObj *sub_1030bec0();
+};
+void *operator new(unsigned int);
+
+CAI_Navigator::CAI_Navigator(int pOuter) :
+	CAI_NavComponentData(pOuter),
+	m_i54(-1)
+{
+	TObj *p = (TObj *)operator new(0x84);
+	m_p30 = (CAI_NavRoute *)(p ? p->sub_1030bec0() : 0);
+	m_pProviders = 0;
+	m_b34 = 0;
+	m_i38 = 0;
+	m_i18 = 0;
+	m_b1c = 0;
+	m_b50 = 1;
+	m_pair58.Set(0.25f);
+	m_pair60.Set(3.0f);
+	m_i20 = 0;
+	m_i24 = 0;
+	m_i28 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ecb20 size=0x1e
 #include "CAI_Navigator.h"
 
