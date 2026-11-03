@@ -69,7 +69,11 @@ public:
 	virtual void vfunc241(char *pszOut, int *pEvent);	// slot 241 "CNPC_VTzimisce::GetAnimEventName": the sound / event name for the anim event ids 2..8 (START_IDLE, START_FIDGET, START_RUN, START_LANDHARD, START_ATTACK, START_ATTACKBIG, START_POUNCE) copied to pszOut, the base implementation for the other ids
 	virtual void t074(); virtual void t075(); virtual void t076(); virtual void t077(); virtual void t078(); virtual void t079();
 	VT_SLOTS10(t08) VT_SLOTS10(t09)
-	VT_SLOTS100(t1)
+	VT_SLOTS10(t10) VT_SLOTS10(t11) VT_SLOTS10(t12) VT_SLOTS10(t13)
+	virtual void t140(); virtual void t141(); virtual void t142(); virtual void t143();
+	virtual void vfunc144(int a);	// slot 144: when the 0x14b8 bit 5 flag is set runs sub_103bf170, then sub_103bdfc0 (removes the entities around the NPC), then CAI_BaseNPCTroika::vfunc144(a)
+	virtual void t145(); virtual void t146(); virtual void t147(); virtual void t148(); virtual void t149();
+	VT_SLOTS10(t15) VT_SLOTS10(t16) VT_SLOTS10(t17) VT_SLOTS10(t18) VT_SLOTS10(t19)
 	VT_SLOTS10(t20) VT_SLOTS10(t21) VT_SLOTS10(t22) VT_SLOTS10(t23) VT_SLOTS10(t24)
 	virtual float vfunc418(float a);	// slot 418 (0x103b9120): (int)a == -1000001 gives 150.0f, else CAI_BaseNPCTroika::vfunc418(a)
 	virtual void t251();
