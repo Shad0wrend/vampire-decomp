@@ -489,6 +489,17 @@ void CAI_BaseNPCTroika::vfunc489()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10294040 size=0x18
+#include "CAI_BaseNPCTroika.h"
+
+bool CAI_BaseNPCTroika::vfunc509()
+{
+	if (sub_102c1170())
+		return false;
+	return sub_1027a420();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10294070 size=0x19a
 #include "CAI_BaseNPCTroika.h"
 #include "StatDefault.h"

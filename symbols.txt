@@ -10134,6 +10134,7 @@
 0x10010bdb func   ?sub_1006bb00@@YAHXZ sub_1006bb00
 0x10010be0 func   ?vfunc3@CTEBeamPoints@@UAEXABVVector@@ABVQAngle@@@Z CTEBeamPoints::vfunc3
 0x10010be5 func   ?sub_1025e7b0@CAI_BaseHumanoid@@QAEXXZ CAI_BaseHumanoid::sub_1025e7b0
+0x10010bea func   ?vfunc509@CAI_BaseNPCTroika@@UAE_NXZ CAI_BaseNPCTroika::vfunc509
 0x10010bf9 func   ?vfunc54@CMultiplayRules@@UAEXHHH@Z CMultiplayRules::vfunc54
 0x10010c03 func   ?sub_10249980@SymMap@@QAEGIH@Z SymMap::sub_10249980
 0x10010c08 func   ?sub_10158570@@YAXHPAUIFieldSink@@PAUIRestoreSrc@@@Z sub_10158570
