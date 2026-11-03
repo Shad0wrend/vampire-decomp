@@ -1747,6 +1747,15 @@ Vector CAI_BaseNPC::vfunc574(const Vector &vecPos, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10278c60 size=0xf
+#include "CAI_BaseNPC.h"
+
+bool CAI_BaseNPC::vfunc575()
+{
+	return (vfunc513() >> 6) & 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10278cb0 size=0x47
 struct ConVarLike {
 	virtual void vfunc0();
