@@ -204,6 +204,22 @@ int CNPC_VAnimal::vfunc482(char bDisregardState, int interruptLevel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10360160 size=0xd
+#include "CNPC_VAnimal.h"
+
+struct CAI_BaseNPCTroikaProxy
+{
+	void sub_1000704f(float a);
+};
+
+// TARGET: CNPC_VAnimal::vfunc432
+void CNPC_VAnimal::vfunc432(int a)
+{
+	*(volatile int *)&a = a;
+	((CAI_BaseNPCTroikaProxy *)this)->sub_1000704f(*(float *)&a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10360180 size=0x1
 // TARGET: sub_10360180
 void sub_10360180()
