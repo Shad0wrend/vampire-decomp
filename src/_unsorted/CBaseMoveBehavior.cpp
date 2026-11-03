@@ -23,6 +23,41 @@ datamap_t * CBaseMoveBehavior::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140620 size=0x49
+#include "CBaseMoveBehavior.h"
+#include <string.h>
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+
+struct CMoveBehaviorView
+{
+	S100(a) S100(b)
+	S10(c0) S10(c1) S10(c2) S10(c3)
+	virtual void d0();
+	virtual void vfunc241(int a);
+	char m_pad0004[0x3f4 - 4];
+	float m_f3f4;
+	char m_pad3f8[4];
+	float m_f3fc;
+	void sub_10140040();	// CPathKeyFrame::vfunc113 (stub 0x10006924)
+};
+
+// TARGET: CBaseMoveBehavior::vfunc113
+void CBaseMoveBehavior::vfunc113()
+{
+	CMoveBehaviorView *p = (CMoveBehaviorView *)this;
+	p->sub_10140040();
+	*(volatile float *)&p->m_f3fc = p->m_f3f4 + 0.5;
+	const char *pszClass = *(const char * volatile *)&m_classname11c;
+	if (!pszClass)
+		pszClass = "";
+	if (!_strcmpi(pszClass, "move_keyframed"))
+		p->vfunc241(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140750 size=0xe
 #include "CBaseMoveBehavior.h"
 bool CBaseMoveBehavior::vfunc153()
