@@ -14,6 +14,18 @@ datamap_t *CWeaponIThrown::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ed110 size=0x3c
+#include "CWeaponIThrown.h"
+
+// TARGET: CWeaponIThrown::CWeaponIThrown
+CWeaponIThrown::CWeaponIThrown()
+{
+	m_i778 = 3;
+	m_p86c = 0;
+	m_b918 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ed160 size=0x6
 #include "CWeaponIThrown.h"
 
