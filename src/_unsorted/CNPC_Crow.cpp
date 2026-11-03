@@ -317,6 +317,17 @@ int CNPC_Crow::vfunc438()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10358ec0 size=0x18
+#include "CNPC_Crow.h"
+#include "engineserver.h"
+
+void CNPC_Crow::vfunc104()
+{
+	sub_1027bb50();
+	EngineGlobals::g_1070b22c->vfunc13("models/crow.mdl", 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10358ef0 size=0xb
 #include "CNPC_Crow.h"
 namespace lifted {

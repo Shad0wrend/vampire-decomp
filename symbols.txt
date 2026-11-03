@@ -5604,6 +5604,7 @@
 0x10009a16 func   ?sub_10248850@CUnknown10248850@@QAEXH@Z CUnknown10248850::sub_10248850
 0x10009a1b func   ?sub_1007ccc0@CChoreoSaverView@@QAEXPAXHPAUCChoreoActorView@@@Z CChoreoSaverView::sub_1007ccc0
 0x10009a20 func   ?vfunc106@CBaseEntity@@UAEXPBD@Z CBaseEntity::vfunc106
+0x10009a25 func   ?vfunc104@CNPC_Crow@@QAEXXZ CNPC_Crow::vfunc104
 0x10009a2a func   ?vfunc241@CBaseFilter@@UAE_NPAVCBaseEntity@@@Z CBaseFilter::vfunc241
 0x10009a2f func   ?sub_10316420@@YGDHH@Z sub_10316420
 0x10009a34 func   ?sub_10182810@CUnknown10182810@@QAEHXZ CUnknown10182810::sub_10182810
