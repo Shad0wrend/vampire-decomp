@@ -23,6 +23,7 @@ public:
 	virtual void s100(); virtual void s101(); virtual void s102();
 	virtual void vfunc103();	// "Spawn": base prop spawn, move type 7, solid 6 (scope traced SetSolid), take-damage mode 1, clears the bool at +0x1b0 and flag 2 of +0x438
 
+	bool vfunc32(int a);	// slot 32 (plain member): true when the entity looked up from a (sub_104115b0(a, 0)) is this
 	void sub_10004c3c();	// destructor body
 	void sub_10011793();	// CBaseProp::vfunc103 (jump stub)
 	void sub_100b3900(unsigned int flags);	// "CBaseEntity::RemoveFlag2"
