@@ -7849,6 +7849,7 @@
 0x1000d33c func   ?sub_1010b430@CFire@@QAEXXZ CFire::sub_1010b430
 0x1000d346 func   ?vfunc82@CCameraAnimated@@QAEPAUdatamap_t@@XZ CCameraAnimated::vfunc82
 0x1000d34b func   ?sub_1009b5a0@CBaseEntity@@QAEXPBD@Z CBaseEntity::sub_1009b5a0
+0x1000d355 func   ?vfunc10@CAI_HumanoidMotor@@QAEXXZ CAI_HumanoidMotor::vfunc10
 0x1000d35a func   ?vfunc580@CNPC_VTzimisceRunner@@UAEHXZ CNPC_VTzimisceRunner::vfunc580
 0x1000d364 func   ?sub_102db630@@YAXD@Z sub_102db630
 0x1000d378 func   ?sub_10074980@CUnknown10074980@@QAEHXZ CUnknown10074980::sub_10074980

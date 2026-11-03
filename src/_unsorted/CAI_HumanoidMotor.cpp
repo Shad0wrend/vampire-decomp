@@ -13,3 +13,15 @@ CAI_HumanoidMotor *CAI_HumanoidMotor::vfunc0(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10264650 size=0x17
+#include "CAI_HumanoidMotor.h"
+#include "CAI_Motor.h"
+
+void CAI_HumanoidMotor::vfunc10()
+{
+	((CAI_Motor *)this)->CAI_Motor::vfunc10();
+	if (m_n6c != -1)
+		m_n6c = -1;
+}
+// END FUNCTION
