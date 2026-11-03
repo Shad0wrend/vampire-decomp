@@ -64,6 +64,59 @@ void CWeaponThrown_Chang_Energy_Ball::vfunc230(int bFirst, CEnergyBallThrowInfo 
 }
 // END FUNCTION
 
+// FUNCTION: 0x103efe40 size=0x1f1
+#include "CWeaponThrown_Chang_Energy_Ball.h"
+#include "CBaseEntity.h"
+#include "IPhysicsObject.h"
+#include "CEntityVSlots.h"
+#include "Vector.h"
+#include "QAngle.h"
+#include "globalvars.h"
+#include "engineiface.h"
+#include "ehandle.h"
+
+void sub_10139550(const QAngle &angles, Vector *pForward);
+void sub_1000aaf1();
+void sub_1000f26d();
+
+void CWeaponThrown_Chang_Energy_Ball::vfunc372(CBaseEntity *pOther, float flSpeed, EHANDLE hTarget)
+{
+	IPhysicsObject *pPhys = (IPhysicsObject *)((CBaseEntity *)this)->m_obj36c;
+	((CBaseEntity *)this)->m_nTakeDamage = 2;
+	((CBaseEntity *)this)->m_iHealth = 1;
+	if (!pPhys)
+		return;
+	m_h914 = pOther;
+	m_h918 = hTarget;
+	enginerandom->vfunc2(-30, 30);
+	enginerandom->vfunc2(-30, 30);
+	enginerandom->vfunc2(-30, 30);
+	Vector vecDir(0, 0, 0);
+	if (m_h918)
+	{
+		if (pOther)
+		{
+			QAngle ang = *(const QAngle *)((CEntityVSlots *)pOther)->slot219();
+			ang.x -= 45.0f;
+			Vector vecForward;
+			sub_10139550(ang, &vecForward);
+			vecDir = vecForward;
+		}
+		if (VectorNormalize(vecDir) > 1e-6f)
+			vecDir *= flSpeed;
+	}
+	m_flMaxSpeed920 = flSpeed;
+	*(Vector *)m_vecVel92c = vecDir;
+	((CBaseEntity *)this)->sub_100b2770(vecDir);
+	pPhys->vfunc22(0);
+	pPhys->vfunc21(1);
+	*(void **)((char *)this + 0x1ec) = (void *)sub_1000f26d;
+	((CBaseEntity *)this)->sub_100ac4e0((int)sub_1000aaf1, 0, 0);
+	sub_103f0510();
+	((CBaseEntity *)this)->m_flNextThink = gpGlobals->curtime + 0.1f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f0600 size=0xc
 #include "CWeaponThrown_Chang_Energy_Ball.h"
 namespace lifted {
