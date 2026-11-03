@@ -38,18 +38,26 @@ public:
 	void sub_100ac610(float time, const char *szContext);	// CBaseEntity::SetNextThink (stub 0x1000326f)
 
 	void sub_10028ca0();
-	char m_pad0004[0x454 - 4];
-	EHANDLE m_h454;
-	char m_pad0458[0x460 - 0x458];
+	void sub_10028a60();	// "CPhysMotor::UpdateRate"-like (renamed from CUnk10028a60): m_flRate464 = m_flTarget460 when m_fl458 is 0, else |m_flTarget460 / m_fl458|
+	char m_pad0004[0x204 - 4];
+	unsigned int m_flags204;	// 0x0204: the entity flags word the vfunc113 code tests (bit 2 = no target, bit 1, bit 0)
+	char m_pad0208[0x450 - 0x208];
+	const char *m_pszTargetName450;	// 0x0450: the target entity name handed to FindEntityByName
+	EHANDLE m_h454;	// 0x0454: the target entity handle
+	float m_fl458;	// 0x0458
+	float m_fl45c;	// 0x045c
 	float m_flTarget460;	// 0x0460
 	float m_flRate464;	// 0x0464
 	float m_flLastTime468;	// 0x0468
 	void *m_pPhysObject46c;	// 0x46c: handed to physenv slot 23 (DestroyConstraint-like) by the destructor body
 	void *m_pController470;	// 0x470: the motion controller, destroyed through physenv slot 40 (DestroyMotionController)
-	char m_pad0474[4];
+	char m_ctrl474[4];	// 0x0474: passed by address to the motion controller (slot 1 and physenv slot 0x9c)
 	float m_flCurrent478;	// 0x0478
-	char m_pad047c[4];
-	Vector m_vec480;	// 0x0480
+	float m_fl47c;	// 0x047c
+	Vector m_vec480;	// 0x0480: the three axis scales
+	float m_fl48c;	// 0x048c
+	char m_pad0490[0xc];	// 0x0490..0x049b
+	float m_fl49c;	// 0x049c: set to 1.0f by vfunc113
 public:
 	virtual datamap_t * vfunc82();
 };
