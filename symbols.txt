@@ -11903,6 +11903,7 @@
 0x1001337c func   ?sub_100b5d10@CBaseFlex@@QAEHPBD@Z CBaseFlex::sub_100b5d10
 0x10013381 func   ?sub_101041f0@@YIXPAXHH@Z sub_101041f0
 0x1001338b func   ?sub_100ee810@CBaseDoor@@QAEXXZ CBaseDoor::sub_100ee810
+0x10013390 func   ?sub_1029ef60@CFwd1029ef60@@QAEXH@Z CFwd1029ef60::sub_1029ef60
 0x10013395 func   ?vfunc82@CEnvSpark@@UAEPAUdatamap_t@@XZ CEnvSpark::vfunc82
 0x1001339a func   ?sub_101fef90@CVStatInfo_t@@QAEXHPAVCVStatInfoList_t@@@Z CVStatInfo_t::sub_101fef90
 0x1001339f func   ?sub_1002f0e0@@YGDH@Z sub_1002f0e0

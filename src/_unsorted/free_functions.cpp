@@ -133795,6 +133795,20 @@ void CAI_BaseNPCTroika::sub_1029ed90(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029ef60 size=0xf
+struct CFwd1029ef60
+{
+	void sub_1029ef60(int a);
+	void sub_1029f5d0(int a);
+};
+
+// TARGET: CFwd1029ef60::sub_1029ef60
+void CFwd1029ef60::sub_1029ef60(int a)
+{
+	sub_1029f5d0((int)((char *)this + 0x658c));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029f2a0 size=0x21
 struct CFoo1029f2a0
 {
