@@ -1,3 +1,5 @@
+	void vfunc322(int a);	// slot 322 (plain member): sub_102bf5d0(a) and then vtable slot 600(a)
+	void sub_102bf5d0(int a);	// CAI_BaseNPCTroikaUnit::sub_102bf5d0 (stub 0x1000e52f), called directly
 	virtual void vfunc380();	// slot 380 override: CAI_BaseNPC::vfunc380, then slot 614
 	virtual void vfunc316(void *pEnt, char bFlagA, char bFlagB);	// slot 316 (ret 0xc, +0x4f0): dev flag object slot 1, task 10; with an entity (a CBaseCombatCharacter): bFlagA and its IsMeleeSwingInRange(slot 217 origin) and sub_10345d00 and slot 325 -> task 12 and, when slot 590 holds, the source stamp +0x1b30 / +0x1b34 (0x28e0) and sub_102ae750(0xd5, 0); bFlagB and sub_10345d00 and slot 324 -> task 13
 	void vfunc56(CBaseEntity *pEnt, int b, int c, int d, int e, int f, int g, int h);	// slot 56 (plain member, eight stack arguments, only the first used): for a live entity (take-damage field +0x200 set) that is the entity of the handle at +0x1a94, resets the target (CAI_BaseNPC::sub_10279b70(0))
