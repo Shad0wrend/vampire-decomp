@@ -40,6 +40,21 @@ CPlayerEvents *CPlayerEvents::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10227140 size=0x23
+#include "CPlayerEvents.h"
+#include "CUnknown10750cb4.h"
+
+extern CUnknown10750cb4 g_10750cb4;
+
+// TARGET: CPlayerEvents::vfunc106
+void CPlayerEvents::vfunc106(const char *pszName)
+{
+	CBaseEntity::vfunc106(pszName);
+	m_bFiring450 = 1;
+	g_10750cb4.sub_102277a0(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10227180 size=0x16
 #include "CPlayerEvents.h"
 #include "CUnknown10227910.h"
