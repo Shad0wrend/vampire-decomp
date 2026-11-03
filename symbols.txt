@@ -308,6 +308,7 @@
 0x1000178f func   _npc_VDog npc_VDog
 0x10001794 func   ?sub_101a7390@CCineNPC@@QAEXH@Z CCineNPC::sub_101a7390
 0x10001799 func   ?sub_100c81b0@CUnknown100c81b0@@QAEXPBUCBitVecWords@@HPBUCBoneRecord@@PBUCStudioBoneCount@@@Z CUnknown100c81b0::sub_100c81b0
+0x1000179e func   ?vfunc5@CTETParticle@@UAEXXZ CTETParticle::vfunc5
 0x100017a3 func   ?sub_102ad2d0@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::sub_102ad2d0
 0x100017ad func   ?sub_102035c0@@YAPBDH@Z sub_102035c0
 0x100017b2 func   ?sub_10179680@@YAXPAXHPAM@Z sub_10179680

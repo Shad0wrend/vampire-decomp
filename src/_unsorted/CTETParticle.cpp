@@ -14,6 +14,18 @@ CTETParticle *CTETParticle::vfunc2(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100694c0 size=0x1d
+#include "CTETParticle.h"
+#include "engineserver.h"
+
+// TARGET: CTETParticle::vfunc5
+void CTETParticle::vfunc5()
+{
+	engine->vfunc0();
+	engine->vfunc17("impact_test", 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100694f0 size=0xbe
 #include "CTETParticle.h"
 #include "CBroadcastRecipientFilter.h"
