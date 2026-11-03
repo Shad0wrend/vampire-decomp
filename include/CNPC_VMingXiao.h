@@ -471,6 +471,7 @@ public:
 	virtual void vfunc431();
 	virtual int vfunc432(int);
 	virtual void vfunc433();
+	void sub_102b27f0();	// CAI_BaseNPCTroika::vfunc433 (base GatherConditions, stub 0x10013f2f), called directly
 	virtual void vfunc434();
 	virtual void vfunc435();
 	virtual void vfunc436();
