@@ -163,6 +163,7 @@ public:
 	virtual void vfunc20();
 	bool sub_102ee6d0(Vector *pResult, float flDistance);
 	void sub_10011c98();	// as in CDataObjectAccessSystem (transplant)
+	void sub_102f28e0();	// 0x102f28e0 (called by CAI_BaseNPC::vfunc123 on the navigator at owner+0x5d34): debug-draws the route's path nodes (m_p30 -> m_pWaypoint linked list through +0x30, 3x3x3 box at each node from its +0x28/+0x2c position) and the two goal-direction markers from sub_102ee1a0 / sub_102f2fc0
 	void sub_102f1fa0(float flDelay, CAI_NavSource *pSource);	// finds the record of the route's waypoint (provider list at +0x2c), sets bit 0 of its flags, its time to curtime + flDelay and its handle from pSource (-1 without)
 	bool sub_102efd50();	// "MoveGround"-like step: with no route status warns about a wrong nav type for types 1 / 3 (telling the motor at +0x20 slot 8 / 5) and stops (sub_102eeba0(0)); a finished status (2) with another nav type than 2 fails; else clears the pending move (sub_102f13d0(0), byte +0x51) and succeeds
 	void sub_102eeb70();	// stub 0x1000e26e, called first by vfunc10
