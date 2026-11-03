@@ -3491,6 +3491,7 @@
 0x10006843 func   ?vfunc442@CNPC_VAsianVampire@@QAEXPBUCVAsianVampireTask_t@@@Z CNPC_VAsianVampire::vfunc442
 0x10006848 func   ?vfunc128@CAI_BaseNPC@@UAEDXZ CAI_BaseNPC::vfunc128
 0x1000684d func   ?sub_103e9d80@@YGXPAUCMeleeOwner@@PAUCMeleeTarget@@H@Z sub_103e9d80
+0x10006852 func   ?vfunc103@CWeaponMelee_ChangClaw@@QAEXXZ CWeaponMelee_ChangClaw::vfunc103
 0x1000685c func   ?sub_1028b160@@YIXPAD@Z sub_1028b160
 0x10006861 func   ?sub_103684f0@@YAEXZ sub_103684f0
 0x1000686b func   ?vfunc373@CWeaponMelee_TzimisceMelee@@UAEHXZ CWeaponMelee_TzimisceMelee::vfunc373
