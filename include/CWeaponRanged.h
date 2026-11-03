@@ -55,6 +55,7 @@ public:
     void sub_10013a57();    // as in CPhysForce (transplant)
 
     // Slot 370 (animation events), declared as a plain member for now: the slots between 32x and 370 are not modelled.
+    void vfunc372();    // slot 372 (0x10238580, plain member): ranged-weapon fire step; roll slot sub_102517e0, owner sub_10252290, shot interval loop
     void vfunc370(int *event, void *other);     // events 0xfa1 / 0xfa2 set a bodygroup from the event's string, 0xbd6..0xbe4 run sub_10238380 (when the global at 0x1088aee4 and the dword at other+0xa8 are set) or sub_10238320, the rest go to CBaseCombatWeapon::vfunc370
     void vfunc374();    // slot 374 "CWeaponRanged::ToggleZoom"-like (declared as a plain member): flips the state at +0x86c (slot 307 with 0xe7 / 0xe6, slot 333 with 8 or 3), mirrors it into +0x84c and the global at 0x1088aee4, then tells the owner (sub_101cebc0 with 0x1a and the new state)
     void sub_10238380();    // worker of events 0xbd6..0xbe4
