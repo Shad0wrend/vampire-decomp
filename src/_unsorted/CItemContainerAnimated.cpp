@@ -24,3 +24,12 @@ void CItemContainerAnimated::vfunc406()
 	sub_10209e30("open");
 }
 // END FUNCTION
+
+// FUNCTION: 0x10209e10 size=0xb
+#include "CItemContainerAnimated.h"
+
+void CItemContainerAnimated::vfunc407()
+{
+	sub_10209e30("close");
+}
+// END FUNCTION
