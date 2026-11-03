@@ -5230,6 +5230,7 @@
 0x10008ec7 func   ?sub_101dd480@CUnknown101dd480@@QAEPAV1@XZ CUnknown101dd480::sub_101dd480
 0x10008ecc func   ??0CGameMovement@@QAE@XZ CGameMovement::CGameMovement
 0x10008ed1 func   ?vfunc80@CHL2_Player@@UAEHXZ CHL2_Player::vfunc80
+0x10008ed6 func   ?vfunc250@CSceneEntity@@UAEXMHH@Z CSceneEntity::vfunc250
 0x10008edb func   ?sub_10223a80@CBaseKeyframedMover@@QAEXXZ CBaseKeyframedMover::sub_10223a80
 0x10008ee0 func   ?sub_10234d20@@YAHXZ sub_10234d20
 0x10008ee5 func   ?sub_10315790@@YAPAUNode@@PBD@Z sub_10315790

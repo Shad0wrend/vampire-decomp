@@ -776,6 +776,56 @@ void CSceneEntity::vfunc249(float a, int b, CSceneEvent *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10083ad0 size=0xdf
+#include "CBaseEntity.h"
+#include "CSceneEntity.h"
+// TARGET: CSceneEntity::vfunc250
+__declspec(dllimport) void Warning(const char *fmt, ...);
+
+#define HV(n) virtual void h##n();
+#define HV10(p) HV(p##0) HV(p##1) HV(p##2) HV(p##3) HV(p##4) HV(p##5) HV(p##6) HV(p##7) HV(p##8) HV(p##9)
+
+struct CSceneVt258View
+{
+	HV10(0) HV10(1) HV10(2) HV10(3) HV10(4) HV10(5) HV10(6) HV10(7) HV10(8) HV10(9)
+	HV10(10) HV10(11) HV10(12) HV10(13) HV10(14) HV10(15) HV10(16) HV10(17) HV10(18) HV10(19)
+	HV10(20) HV10(21) HV10(22) HV10(23) HV10(24)
+	HV(250) HV(251) HV(252) HV(253) HV(254) HV(255) HV(256) HV(257)
+	virtual void vfunc258(int a, int b, int c, float d, int e);
+};
+
+void CSceneEntity::vfunc250(float a, int b, int c)
+{
+	CSceneEvent *pEvent = (CSceneEvent *)c;
+	CSceneEventActorEnt *pActorEnt = 0;
+	CSceneEventActor *pActor = pEvent->sub_10001b5e();
+	if (pActor) {
+		pActorEnt = this->vfunc267(pActor->sub_10008a99());
+		if (!pActorEnt) {
+			Warning("CSceneEntity unable find actor \"%s\"\n", pActor->sub_10008a99());
+			return;
+		}
+	}
+	int type = pEvent->sub_100029c8();
+	if (type != 3) {
+		if (type == 0xb) {
+			CSceneEntityScene *pSub = (CSceneEntityScene *)pEvent->sub_10076710();
+			if (pSub && !pSub->sub_1007d1e0()) {
+				pSub->sub_1007d7f0(this->m_f49c);
+			}
+		}
+	} else {
+		if (pActorEnt) {
+			CBaseEntity *pEnt = this->vfunc268(pEvent->sub_10075c50(), (int)pActorEnt);
+			if (pEnt) {
+				((CSceneVt258View *)this)->vfunc258(b, (int)pActorEnt, (int)pEnt,
+					pEvent->sub_10076280(a), pEvent->sub_10075ca0());
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10083bf0 size=0x7e
 #include "CSceneEntity.h"
 
