@@ -3794,6 +3794,7 @@
 0x10006f3c func   ?sub_1021ff20@@YAXPAUCUnknown101ec4f0Set@@H@Z sub_1021ff20
 0x10006f46 func   _item_w_knife item_w_knife
 0x10006f4b func   _item_w_claws item_w_claws
+0x10006f50 func   ?vfunc275@CBaseAnimatingOverlay@@QAEXXZ CBaseAnimatingOverlay::vfunc275
 0x10006f55 func   ?vfunc80@CResearchBook_MG_BRAWL@@QAEHXZ CResearchBook_MG_BRAWL::vfunc80
 0x10006f5a func   _item_w_torch item_w_torch
 0x10006f5f func   ?vfunc123@CNPC_VMingXiao@@UAEXXZ CNPC_VMingXiao::vfunc123

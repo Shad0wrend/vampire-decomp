@@ -264,3 +264,16 @@ void CBaseAnimatingOverlay::vfunc274(int a)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x10099630 size=0x19
+#include "CBaseAnimatingOverlay.h"
+
+void CBaseAnimatingOverlay::vfunc275()
+{
+	for (int i = 0; i < 4; i++)
+	{
+		m_Layers[i].m_f10 = 0;
+		m_Layers[i].m_nSequence = 0;
+	}
+}
+// END FUNCTION
