@@ -11417,6 +11417,7 @@
 0x10012daa func   ?sub_10121ca0@@YIHPAD@Z sub_10121ca0
 0x10012daf func   ?sub_100d0000@CPySave@@QAEXPAUField@@PAUSaveIf@@@Z CPySave::sub_100d0000
 0x10012db4 func   ?sub_10106f90@CBaseCombatCharacter@@QAE_NH@Z CBaseCombatCharacter::sub_10106f90
+0x10012db9 func   ?vfunc133@CBaseKeyframedMover@@UAEXXZ CBaseKeyframedMover::vfunc133
 0x10012dbe func   ?vfunc4@CRelationshipSaveDataOps@@QAE_NPAX0@Z CRelationshipSaveDataOps::vfunc4
 0x10012dc3 func   ?sub_1018ecf0@@YAXPAVCBaseEntity@@M@Z sub_1018ecf0
 0x10012dc8 func   ?vfunc82@CWeaponIArmor@@UAEPAXXZ CWeaponIArmor::vfunc82

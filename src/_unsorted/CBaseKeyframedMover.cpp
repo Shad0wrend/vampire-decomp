@@ -51,3 +51,12 @@ void CBaseKeyframedMover::vfunc113()
 	CBaseEntity::sub_100b3b00();
 }
 // END FUNCTION
+
+// FUNCTION: 0x10223a10 size=0x10
+// TARGET: CBaseKeyframedMover::vfunc133
+void CBaseKeyframedMover::vfunc133()
+{
+	CBaseToggle::vfunc133();
+	sub_10223a80();
+}
+// END FUNCTION
