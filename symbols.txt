@@ -4238,6 +4238,7 @@
 0x100077f2 func   ?vfunc2@CAI_CsActList@@UAEXD@Z CAI_CsActList::vfunc2
 0x10007806 func   ?vfunc80@CItemGVVPhoto@@QAEHXZ CItemGVVPhoto::vfunc80
 0x1000780b func   ?sub_101e1870@@YGII@Z sub_101e1870
+0x10007810 func   ??0CPhysForce@@QAE@XZ CPhysForce::CPhysForce
 0x1000781f func   ?sub_10314000@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_10314000
 0x10007824 func   _item_p_occult_dexterity item_p_occult_dexterity
 0x10007829 func   ?sub_1027efb0@@YIXPAUCTraceDumpNPC@@@Z sub_1027efb0
