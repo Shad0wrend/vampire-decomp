@@ -2729,6 +2729,7 @@
 0x1000533f func   ?vfunc228@CBaseCombatCharacter@@UAEXHH@Z CBaseCombatCharacter::vfunc228
 0x10005344 func   ?sub_103a51e0@@YAEXZ sub_103a51e0
 0x10005349 func   ?sub_10401cd0@@YAHXZ sub_10401cd0
+0x1000534e func   ?vfunc270@CBaseVampireSkillEntity@@QAEXH@Z CBaseVampireSkillEntity::vfunc270
 0x10005358 func   ??1CUnknown101b4680@@QAE@XZ CUnknown101b4680::~CUnknown101b4680
 0x10005367 func   ?vfunc5@CNPC_VStalker@@QAEPAV1@I@Z CNPC_VStalker::vfunc5
 0x1000536c func   ?vfunc390@CNPC_VSheriffMan@@QAEHPBX@Z CNPC_VSheriffMan::vfunc390
