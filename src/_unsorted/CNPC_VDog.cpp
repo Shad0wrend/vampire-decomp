@@ -360,3 +360,14 @@ char CNPC_VDog::sub_10374aa0(CBaseEntity *pHint)
 	return *(int *)((char *)pHint + 0x5dc) == 0x2ee0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10374ad0 size=0x15
+#include "CNPC_VDog.h"
+
+int CNPC_VDog::sub_10374ad0(int act)
+{
+	if (act == 3)
+		return act;
+	return sub_10360120(act);
+}
+// END FUNCTION
