@@ -11139,6 +11139,7 @@
 0x10011cb1 func   ?sub_10311490@CUnknown10311490@@QAEPAXXZ CUnknown10311490::sub_10311490
 0x10011cb6 func   ?sub_101a6a00@@YAXXZ sub_101a6a00
 0x10011cbb func   ?vfunc25@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc25
+0x10011cc0 func   ?sub_10187280@CPlayerMove@@QAEXPAVCBasePlayer@@@Z CPlayerMove::sub_10187280
 0x10011cc5 func   ?sub_1040be30@@YAHXZ sub_1040be30
 0x10011cca func   ?sub_10114aa0@CUnknown10114aa0@@QAEHXZ CUnknown10114aa0::sub_10114aa0
 0x10011cd4 func   ?sub_10078bd0@@YIXPAH@Z sub_10078bd0

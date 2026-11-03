@@ -74964,6 +74964,74 @@ void __stdcall sub_101871f0(CPlayerTimeStub *pPlayer, double dt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10187280 size=0x1af
+#include "CPlayerMove.h"
+#include "CBasePlayer.h"
+#include "CVProfile.h"
+
+struct CCycleCountS	// a CCycleCount with the rdtsc sample / end written out (units that inline it carry their own)
+{
+	unsigned __int64 m_Int64;
+
+	void Sample()
+	{
+		unsigned __int64 *pInt64 = &m_Int64;
+		__asm
+		{
+			mov ecx, pInt64
+			rdtsc
+			mov dword ptr [ecx], eax
+			mov dword ptr [ecx + 4], edx
+		}
+	}
+
+	void End()
+	{
+		CCycleCountS c = { 0 };
+		c.Sample();
+		m_Int64 = c.m_Int64 - m_Int64;
+	}
+};
+
+// TARGET: CPlayerMove::sub_10187280
+void CPlayerMove::sub_10187280(CBasePlayer *pPlayer)
+{
+	CVProfile *pProfile = g_109f3648;
+	if (pProfile->m_enabled || !pProfile->m_bAtRoot) {
+		if (pProfile->m_pCurNode->m_pszName != "CPlayerMove::RunPostThink")
+			pProfile->m_pCurNode = pProfile->m_pCurNode->GetSubNode("CPlayerMove::RunPostThink", 0, "Unaccounted");
+		CVProfNode *pNode = pProfile->m_pCurNode;
+		pNode->m_nCurFrameCalls++;
+		if (pNode->m_nRecursions++ == 0) {
+			((CCycleCountS *)&pNode->m_CurFrameTime)->Sample();
+			g_109f3648->PushGroupInlined(pNode->m_nBudgetGroupID);
+		}
+		pProfile->m_bAtRoot = false;
+	}
+
+	pPlayer->si28();
+
+	pProfile = g_109f3648;
+	if (!pProfile->m_bAtRoot || pProfile->m_enabled) {
+		CVProfNode *pNode = pProfile->m_pCurNode;
+		if (--pNode->m_nRecursions == 0 && pNode->m_nCurFrameCalls != 0) {
+			((CCycleCountS *)&pNode->m_CurFrameTime)->End();
+			pNode->m_TotalTime += pNode->m_CurFrameTime.m_Int64;
+
+			CVProfile *pProf = g_109f3648;
+			--pProf->m_nGroupStackDepth;
+			int nNew = pProf->m_GroupIDStack[pProf->m_nGroupStackDepth];
+			int nOld = pProf->m_GroupIDStack[pProf->m_nGroupStackDepth + 1];
+			if (nNew != nOld && pProf->m_bVTuneGroupsEnabled && nOld == pProf->m_nVTuneGroupID)
+				vtune(false);
+		}
+		if (pNode->m_nRecursions == 0)
+			pProfile->m_pCurNode = pProfile->m_pCurNode->m_pParent;
+		pProfile->m_bAtRoot = (pProfile->m_pCurNode == pProfile->m_pRoot);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101878d0 size=0x8c
 struct SServerUnknown
 {
