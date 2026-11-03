@@ -2489,6 +2489,17 @@ CAI_Navigator *CAI_BaseNPC::vfunc429()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027cfc0 size=0x2f
+#include "CAI_BaseNPC.h"
+#include "CAI_Pathfinder.h"
+
+// TARGET: CAI_BaseNPC::vfunc430
+CAI_Pathfinder *CAI_BaseNPC::vfunc430()
+{
+	return new CAI_Pathfinder(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027d9d0 size=0x5
 #include "CAI_BaseNPC.h"
 
