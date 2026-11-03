@@ -133,7 +133,9 @@ public:
 	float m_f63b4;	// +0x63b4: set to 4096.0f on the twin
 	char m_pad63b8[0x6420 - 0x63b8];
 	int m_a6420[5];	// +0x6420: five dwords copied to the twin by sub_1039a750
-	char m_pad6434[0x6670 - 0x6434];
+	char m_pad6434[0x6444 - 0x6434];
+	CBaseEntity *m_pTarget6444;	// +0x6444: the target returned by slot 609
+	char m_pad6448[0x6670 - 0x6448];
 	unsigned int m_hOwner6670;	// +0x6670: the handle of the owner entity
 	int m_n6674;	// +0x6674: the slot index of a tentacle
 	char m_b6678;	// +0x6678
