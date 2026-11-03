@@ -80,7 +80,8 @@ public:
 	int m_field564;
 	const char *m_str568;
 	float m_flBlockDamage56c;	// 0x56c: the damage dealt to an entity that blocks the movement (vfunc178)
-	char m_pad0570[0x578 - 0x570];
+	float m_fl570;	// 0x570: a speed factor used to size the travel distance
+	float m_fl574;	// 0x574: the travel distance (sum of the box extents minus m_flLip504)
 	COutputEvent m_Output578;	// 0x578
 	COutputEvent m_Output590;	// 0x590: OnFullyClosed-like
 	COutputEvent m_Output5a8;	// 0x5a8
