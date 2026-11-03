@@ -15,6 +15,7 @@ public:
 	void vfunc269();	// hands the entity of the handle at +0x778, the dword at +0x9c of the entity of the handle at +0x8a8 and the dword at +0x8bc to the global effect manager at 0x10739a4c
 	void vfunc268();	// slot 268: with the discipline's entry in the global effect manager (id at +0x8bc) and a non-zero range, ends the projectile (sub_101ee7d0) once it is farther than the range from the point at +0x888
 	void sub_101ee7d0();	// CVampireProjectile member (stub 0x10003be3): removes the projectile, delayed by 10 seconds while the entity of the handle at +0x8b8 lives and the byte at +0x8b4 is clear
+	void vfunc234(void *pTrace, const Vector *pDelta);	// slot 234 "CDisciplineProjectile::PhysicsPushEntity" (0x101da2f0, ret 8): declared as a plain member so the modelled slot table does not shift
 
 	char m_pad03e0[0x778 - 0x3e0];
 	EHANDLE m_h778;	// 0x778
