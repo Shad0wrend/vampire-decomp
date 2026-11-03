@@ -84,6 +84,8 @@ public:
 	bool vfunc378(int, int);
 	int vfunc383(int, int);
 	bool vfunc388(int, int);
+	void vfunc406();	// slot 406 (plain member): state +0x49c 1 -> sub_101c1bc0(state), 2 -> sub_101c1bc0(3)
+	void sub_101c1bc0(int a);	// CBaseToggle member (stub 0x1000d90e), called directly
 	bool vfunc408();
 	bool vfunc409();
 	int vfunc370(int a);	// as in CNPCMaker (transplant)
