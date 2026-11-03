@@ -15375,6 +15375,7 @@
 0x10684584 data   ??_R0?AVCPlayerPickupController@@@8 ??_R0?AVCPlayerPickupController@@@8
 0x106845d0 data   ??_R0?AVCWeaponPhysCannon@@@8 ??_R0?AVCWeaponPhysCannon@@@8
 0x106b8541 data   ??_B?1??Links@CUtlRBTreeBig@@QBEABULinks_t@1@G@Z@51 ??_B?1??Links@CUtlRBTreeBig@@QBEABULinks_t@1@G@Z@51
+0x109f0771 data   ??_B?1??Links@?$CUtlRBTree@HG@@QBEABULinks_t@1@G@Z@51 ??_B?1??Links@?$CUtlRBTree@HG@@QBEABULinks_t@1@G@Z@51
 0x109f07b1 data   ??_B?5??CUnknown10206400_FindById@@YAPAVCUnknown10206400@@H@Z@51 ??_B?5??CUnknown10206400_FindById@@YAPAVCUnknown10206400@@H@Z@51
 0x109f07b1 data   ??_B?5??CUnknown10206400_FindById@@YAPAVCUnknown10206400@@H@Z@55 ??_B?5??CUnknown10206400_FindById@@YAPAVCUnknown10206400@@H@Z@55
 0x109f0804 data   ??_B?5??CUnknown10206400_FindEntry@@YAPAVCUnknown10206340@@PAVCUnknown10206400@@H@Z@55 ??_B?5??CUnknown10206400_FindEntry@@YAPAVCUnknown10206340@@PAVCUnknown10206400@@H@Z@55
