@@ -157,6 +157,15 @@ int CNPC_VHumanCombatant::vfunc438()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10387500 size=0xd
+void sub_10385a10(float a);
+
+void sub_10387500(float a)
+{
+	sub_10385a10(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10387520 size=0x44
 #include "CNPC_VCop.h"
 struct FlagView { char pad[0x4c]; unsigned int m_flags; char pad2[0x65f4 - 0x50]; char m_b65f4; };

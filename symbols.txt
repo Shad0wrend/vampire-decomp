@@ -12064,6 +12064,7 @@
 0x10013e53 func   ?vfunc124@CTriggerLook@@UAEHXZ CTriggerLook::vfunc124
 0x10013e58 func   ?sub_10366d40@@YIPAXPAX@Z sub_10366d40
 0x10013e5d func   ?sub_10069f00@CTETParticleHUD@@QAEPAV1@H@Z CTETParticleHUD::sub_10069f00
+0x10013e62 func   ?sub_10387500@@YAXM@Z sub_10387500
 0x10013e67 func   ?sub_1030f7b0@CUnknown1030f940@@QAEDPAUCUnknown1030f940Rec@@@Z CUnknown1030f940::sub_1030f7b0
 0x10013e6c func   ?sub_1022eb60@@YAXPAUTStat@@PBD@Z sub_1022eb60
 0x10013e7b func   ?sub_103fd440@@YAHXZ sub_103fd440
