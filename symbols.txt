@@ -2087,6 +2087,7 @@
 0x10004354 func   ?vfunc496@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc496
 0x10004359 func   ?vfunc130@CRagdollProp@@UAEXH@Z CRagdollProp::vfunc130
 0x1000435e func   ?sub_1035ad10@@YIPAXPAD@Z sub_1035ad10
+0x10004363 func   ?vfunc521@CAI_BaseNPC@@QAEXHHH@Z CAI_BaseNPC::vfunc521
 0x10004368 func   ?sub_10109d70@@YIXPAXHH@Z sub_10109d70
 0x1000436d func   ?vfunc74@CMultiplayRules@@UAEDXZ CMultiplayRules::vfunc74
 0x10004372 func   ?vfunc269@CInstancedSceneEntity@@QAEHH@Z CInstancedSceneEntity::vfunc269

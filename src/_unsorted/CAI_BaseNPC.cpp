@@ -2648,6 +2648,16 @@ bool CAI_BaseNPC::vfunc529()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10280880 size=0x26
+#include "CAI_BaseNPC.h"
+
+// TARGET: CAI_BaseNPC::vfunc521
+void CAI_BaseNPC::vfunc521(int a, int b, int c)
+{
+	sub_1001484e(a, b, c, 80.0f, 250.0f, 160.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10280bb0 size=0x7
 #include "CAI_BaseNPC.h"
 namespace lifted {
