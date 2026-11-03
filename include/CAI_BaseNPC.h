@@ -169,7 +169,7 @@ public:
 	CAI_NPC_V(517) CAI_NPC_V(518)
 	virtual void vfunc519(int a, float b, float c, float d);	// when the debug convar is set, forwards to slot 14 of the object at +0x5d44
 	virtual float vfunc520(int a);	// forwards a to slot 15 of the object pointed to at +0x5d44 and returns its float result
-	CAI_NPC_V(521) CAI_NPC_V(522) CAI_NPC_V(523) CAI_NPC_V(524) CAI_NPC_V(525) CAI_NPC_V(526)
+	CAI_NPC_V(521) virtual float vfunc522(); CAI_NPC_V(523) CAI_NPC_V(524) CAI_NPC_V(525) CAI_NPC_V(526)
 	virtual bool vfunc527(CAI_NavProvider *pNode);	// slot 527 (+0x83c): asked about a node of the network (CAI_NavProvider, see CAI_Navigator.h); true when this NPC may not use it. Troika override: sub_102d1540. Called by sub_1027db30 and by the nearest-node search 0x102f3c10
 	CAI_NPC_V(528)
 	virtual bool vfunc529();	// slot 529 (offset 0x844): a boolean answer in al, asked by the navigator after it finishes a move
