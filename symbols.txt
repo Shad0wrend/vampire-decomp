@@ -6953,6 +6953,7 @@
 0x1000bbd6 func   ?sub_1013dc60@Pool@@QAEPAII@Z Pool::sub_1013dc60
 0x1000bbdb func   ?sub_101a7230@CCineNPC@@QAEXH@Z CCineNPC::sub_101a7230
 0x1000bbe0 func   ?sub_1032e890@@YAHXZ sub_1032e890
+0x1000bbe5 func   ?vfunc370@CWeaponIGeneric@@QAEXPAHPAVCBaseCombatWeapon@@@Z CWeaponIGeneric::vfunc370
 0x1000bbea func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@UMAP_ACCESS@@V?$CUtlMemory@UMAP_ACCESS@@@@@@$08@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<MAP_ACCESS,CUtlMemory<MAP_ACCESS> >,9>::vfunc3
 0x1000bbef func   ?vfunc5@CItemGDrugsPillBottle@@QAEPAV1@I@Z CItemGDrugsPillBottle::vfunc5
 0x1000bbf4 func   ?sub_101f8510@CUnknown101f0e50@@QAEXPAVCTraitOwnerX@@H@Z CUnknown101f0e50::sub_101f8510

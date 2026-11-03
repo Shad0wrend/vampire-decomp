@@ -51,6 +51,18 @@ void CWeaponIGeneric::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f4470 size=0x20
+#include "CWeaponIGeneric.h"
+#include "CBaseCombatWeapon.h"
+
+void CWeaponIGeneric::vfunc370(int *pEvent, CBaseCombatWeapon *pWeapon)
+{
+	if (*pEvent == 0xbc6 || *pEvent == 0xc80)
+		return;
+	((CBaseCombatWeapon *)this)->CBaseCombatWeapon::vfunc370(pEvent, pWeapon);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f44a0 size=0x1
 #include "CWeaponIGeneric.h"
 void CWeaponIGeneric::vfunc291()
