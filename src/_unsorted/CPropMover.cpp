@@ -40,3 +40,19 @@ void CPropMover::vfunc103()
 	sub_101c1cb0(this);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10192910 size=0x14
+#include "CPropMover.h"
+
+class CBaseToggleFwd : public CBaseEntity
+{
+public:
+	void sub_101c1dc0(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value);
+};
+
+void CPropMover::vfunc113()
+{
+	CBaseEntity::vfunc113();
+	m_pfnUse = (void (CBaseEntity::*)(CBaseEntity *, CBaseEntity *, int, float))&CBaseToggleFwd::sub_101c1dc0;
+}
+// END FUNCTION

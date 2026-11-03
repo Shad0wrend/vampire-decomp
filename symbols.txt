@@ -8493,6 +8493,7 @@
 0x1000e403 func   ?vfunc451@CNPC_VTzimisce@@UAEHXZ CNPC_VTzimisce::vfunc451
 0x1000e408 func   ?sub_100993c0@@YIDPAXHH@Z sub_100993c0
 0x1000e40d func   ?sub_101dc7d0@CUnknown101dc7d0@@QAEXH@Z CUnknown101dc7d0::sub_101dc7d0
+0x1000e412 func   ?vfunc113@CPropMover@@UAEXXZ CPropMover::vfunc113
 0x1000e421 func   ?sub_1002cc60@CUnknown1002cc60@@QAEPAU1@XZ CUnknown1002cc60::sub_1002cc60
 0x1000e426 func   _path_corner_crash path_corner_crash
 0x1000e42b func   ?sub_100c4600@@YAXPAHPAD@Z sub_100c4600
