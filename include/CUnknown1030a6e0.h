@@ -79,4 +79,5 @@ public:
 	void sub_10309e80(const Vector *pDirA, const Vector *pDirB);	// debug draw: with bit 26 of the NPC's flags (+0x224) set, draws a white line from slot 192 of the NPC along pDirA (length 20) and a yellow one along pDirB, each for 0.1 s
 	void sub_10309f60(const Vector *pPos, float flUnused, Vector *pOut);	// direction from the NPC's origin to pPos, with the vertical part pushed away from a flat result
 	bool sub_10308190(const Vector *pGoal);	// stuck test (stub 0x10008e4f): a new goal restarts the measurement; once the 2D distance to the goal stops shrinking for 0.75 s the NPC counts as stuck
+	bool sub_1030aea0(void *pGoal, float flDist, Vector *pOut);	// stub 0x1030aea0: the local-navigator steer step (this is the object at CAI_LocalNavigator +0x18 = CAI_LocalNavigator::m_pData); fills *pOut with the steered direction; called by CAI_LocalNavigator::vfunc6 (0x102de110). Its own body calls this->slot0 (6 stack args, result 2 = failed) and the members below; the class still needs a virtual slot0 modelled (pad0[4] is the vptr).
 };
