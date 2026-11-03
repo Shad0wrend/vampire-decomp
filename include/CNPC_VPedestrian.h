@@ -8,6 +8,7 @@ public:
 	CNPC_VPedestrian *vfunc5(unsigned int flags);
 	void sub_100123af();
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
+	void vfunc103();	// slot 103 (plain member): CUnk1026dc00::sub_1026dc00(0x200000), then CNPC_VHuman::vfunc103
 	CNPC_VPedestrian *sub_103a1d90();	// as in CKeepUpright (transplant)
 
 	// Slot 301, declared as a plain member.
