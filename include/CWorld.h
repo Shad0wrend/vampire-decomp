@@ -40,7 +40,11 @@ public:
     char m_b479;    // 0x0479: nonzero copied to the global 0x1070ba24
     char m_pad047a[0x47c - 0x47a];
     char m_bColdWorld;    // 0x047c
-    char m_pad047d[0x49c - 0x47d];
+    char m_pad047d[0x48c - 0x47d];
+    unsigned int m_nFogColor1;    // 0x048c: primary fog color (RGBA; CFogController::vfunc124 prints the channels)
+    unsigned int m_nFogColor2;    // 0x0490: secondary fog color
+    float m_flFogStart;    // 0x0494
+    float m_flFogEnd;    // 0x0498
     int m_n49c;    // 0x049c: 0..2
     bool m_bCopWaitArea;	// 0x04a0
     char m_pad04a1[0x4a4 - 0x4a1];
