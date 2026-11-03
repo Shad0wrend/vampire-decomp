@@ -39,6 +39,17 @@ int CWeaponMelee_BaseballBat::vfunc363()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e4450 size=0x11
+#include "CWeaponMelee_BaseballBat.h"
+
+// TARGET: CWeaponMelee_BaseballBat::vfunc103
+void CWeaponMelee_BaseballBat::vfunc103()
+{
+	sub_100047be();
+	m_b871 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecb40 size=0x1e
 #include "CWeaponMelee_BaseballBat.h"
 

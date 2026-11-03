@@ -5648,6 +5648,7 @@
 0x10009dc2 func   ?vfunc434@CBasePlayer@@QAEXXZ CBasePlayer::vfunc434
 0x10009dc7 func   ?vfunc82@CLogicAuto@@UAEPAUdatamap_t@@XZ CLogicAuto::vfunc82
 0x10009dcc func   ?vfunc1@CTEBloodStream@@UAEHXZ CTEBloodStream::vfunc1
+0x10009dd1 func   ?vfunc103@CWeaponMelee_BaseballBat@@QAEXXZ CWeaponMelee_BaseballBat::vfunc103
 0x10009ddb func   ?sub_102f3900@CUnknown102f3900@@QAEXPAUCUnknown102f3900Ent@@VVector@@1H@Z CUnknown102f3900::sub_102f3900
 0x10009de0 func   ?vfunc5@CBaseKeyframedMover@@UAEPAV1@I@Z CBaseKeyframedMover::vfunc5
 0x10009de5 func   ?sub_10041b70@@YAHH@Z sub_10041b70
