@@ -214,7 +214,9 @@ public:
 	char m_pad05ac[0xa80 - 0x5ac];
 	float m_flLastBCCUpdate;	// 0x0a80
 	float m_flNextVampHeal;	// 0xa84: the time of the next vampire heal-over-time tick
-	char m_pad0a88[0xaa1 - 0xa88];
+	char m_pad0a88[0xa9c - 0xa88];
+	float m_flTimeA9c;	// 0xa9c: a reuse timer (set to -1 by vfunc380; this function compares it with 0)
+	char m_pad0aa0[0xaa1 - 0xaa0];
 	bool m_bMeleeSwingIsLive;	// 0x0aa1
 	bool m_bDidSendIncomingSwingNotice;	// 0x0aa2
 	char m_pad0aa3[0xaa4 - 0xaa3];
