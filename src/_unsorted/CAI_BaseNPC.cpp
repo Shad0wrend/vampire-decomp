@@ -596,6 +596,31 @@ void *sub_101a6d00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102658f0 size=0x60
+#include "CAI_BaseNPC.h"
+
+void sub_101cd940(void *p);
+
+// TARGET: CAI_BaseNPC::vfunc402
+char CAI_BaseNPC::vfunc402()
+{
+	char bResult = vfunc394();
+	if (bResult) {
+		if (!vfunc398()) {
+			sub_101cd940(this);
+			return bResult;
+		}
+		sub_100544f0(*(int *)((char *)this + 0xfd0));
+		vfunc77();
+		vfunc395();
+	}
+	else {
+		vfunc395();
+	}
+	return bResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10265e90 size=0x21
 #include "CAI_BaseNPC.h"
 struct CBaseCombatCharacterCall_10265e90
