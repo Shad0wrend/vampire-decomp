@@ -710,6 +710,7 @@
 0x1000219e func   ?sub_1034e4f0@@YAHXZ sub_1034e4f0
 0x100021a8 func   ?sub_1022cfd0@UtlMem@@QAEXXZ UtlMem::sub_1022cfd0
 0x100021ad func   _trigger_fog trigger_fog
+0x100021b2 func   ??_GIGameMovement@@UAEPAXI@Z ??_GIGameMovement@@UAEPAXI@Z
 0x100021bc func   ?vfunc372@CAI_BaseNPC@@UAEHH@Z CAI_BaseNPC::vfunc372
 0x100021c1 func   ?sub_10146700@CUnknown10146700@@QAEHXZ CUnknown10146700::sub_10146700
 0x100021c6 func   ?sub_101fc6a0@CVStatCost_t@@QAEXXZ CVStatCost_t::sub_101fc6a0
