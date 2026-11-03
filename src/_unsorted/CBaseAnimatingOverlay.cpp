@@ -277,3 +277,14 @@ void CBaseAnimatingOverlay::vfunc275()
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x10099660 size=0x1d
+#include "CBaseAnimatingOverlay.h"
+
+// TARGET: CBaseAnimatingOverlay::vfunc269
+void CBaseAnimatingOverlay::vfunc269(int index)
+{
+	m_Layers[index].m_f10 = 0;
+	m_Layers[index].m_nSequence = 0;
+}
+// END FUNCTION
