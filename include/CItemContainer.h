@@ -85,6 +85,7 @@ public:
 	bool vfunc377(int, int);
 	bool vfunc378(int, int);
 	int vfunc383(int, int);
+	int sub_100032b0(int a, int b);	// CBaseCombatCharacter::vfunc383 (stub 0x100032b0), called directly
 	bool vfunc388(int, int);
 	void vfunc406();	// slot 406 (plain member): state +0x49c 1 -> sub_101c1bc0(state), 2 -> sub_101c1bc0(3)
 	void vfunc407();	// slot 407 (plain member): state +0x49c 1 -> sub_101c1bc0(0), 2 -> sub_101c1bc0(state)
