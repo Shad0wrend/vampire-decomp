@@ -28,6 +28,7 @@ public:
 	void sub_1013e420();	// stub 0x10003cb5: when slot 241 reports true calls slot 77
 public:
 	datamap_t * vfunc82();
+	int vfunc124();	// slot 124 (0x1013e090): debug text overlays (angles / origin / absangles / absorigin), then CBaseEntity::vfunc124
 	char vfunc117();
 	bool vfunc128();
 	bool vfunc223();
