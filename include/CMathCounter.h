@@ -7,6 +7,7 @@
 class CMathCounter : public CLogicalEntity
 {
 public:
+	CLogicalEntity *vfunc5(unsigned int flags);	// slot 5: scalar deleting destructor (destroys the three outputs at +0x48c / +0x474 / +0x45c, then the base)
 	virtual bool vfunc110(const char *pszKey, const char *pszValue);	// slot 110 KeyValue: "startvalue" sets the output value (+0x45c) from atoi(value) as a float; any other key goes to the base
 	bool sub_1009e430(const char *pszKey, const char *pszValue);	// CBaseEntity::vfunc110 (stub 0x1000fc86), called directly
 	virtual void vfunc103();	// slot 103 "CMathCounter::Spawn": orders the min / max (+0x450 / +0x454) and, unless both are zero, clamps the output value (+0x45c) into that range and stores it back (variant_t::sub_100d0390(1, &value))
