@@ -13283,6 +13283,7 @@
 0x10015389 func   ?vfunc31@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHH@Z CTempEntsSystem::vfunc31
 0x1001538e func   ?sub_10079910@@YIXPAUObj@@HH@Z sub_10079910
 0x10015393 func   _item_w_sabbatleader_attack item_w_sabbatleader_attack
+0x10015398 func   ?sub_10025f00@CConstantForceController@@QAEXPBVVector@@0@Z CConstantForceController::sub_10025f00
 0x10015398 func   ?sub_10025f00@CPhysForceMotion@@QAEXPBVVector@@0@Z CPhysForceMotion::sub_10025f00
 0x1001539d func   ?vfunc82@CVGuiScreen@@UAEPAUdatamap_t@@XZ CVGuiScreen::vfunc82
 0x100153a7 func   ?sub_1033c6b0@CBaseCombatCharacter@@QAEXI@Z CBaseCombatCharacter::sub_1033c6b0
