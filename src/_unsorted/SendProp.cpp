@@ -41,3 +41,11 @@ SendProp::SendProp()
     m_n44 = 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x102471b0 size=0x7
+#include "SendProp.h"
+
+SendProp::~SendProp()
+{
+}
+// END FUNCTION
