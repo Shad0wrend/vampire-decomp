@@ -6,6 +6,8 @@ struct datamap_t;
 #include "Vector.h"
 #include "CUtlVector56.h"
 
+void sub_10264300(void *pElement, const void *pSrc);	// copies a 0x38-byte waypoint record into the element (cdecl, 2 args)
+
 class CAI_HumanoidMotor;
 class CAI_Navigator;
 
@@ -33,6 +35,8 @@ public:
 	char m_pad6020[4];	// 0x6020 .. 0x6023
 	CUtlVector56 m_Waypoints6024;	// 0x6024: the parsed waypoint records (0x38-byte elements)
 	CUtlVector56 m_Waypoints6038;	// 0x6038: the working / smoothed waypoint records
+	int sub_10262c20(int a, int b);	// 0x10262c20: waypoint smoothing test/writer for the records a and b (returns 0/1/2, how many records were written)
+	int sub_10262ea0(int idx, float flAngle);	// helper of sub_10262c20: stores the angle at the record that idx picks, returns the record index
 
 	void sub_1000245f(void *p);	// CBaseCombatCharacter::vfunc105 (stub), called directly
 	int sub_10009ac5(const char *pszName);	// CBaseAnimating::sub_10092270 (stub): index of a pose parameter
