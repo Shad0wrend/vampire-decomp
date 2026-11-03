@@ -5011,6 +5011,7 @@
 0x10008c01 func   ?sub_102373f0@@YAHXZ sub_102373f0
 0x10008c06 func   ?sub_10280300@@YIHPAX@Z sub_10280300
 0x10008c0b func   ?sub_101aa650@@YIMH@Z sub_101aa650
+0x10008c10 func   ?vfunc103@CNPC_VYukie@@UAEXXZ CNPC_VYukie::vfunc103
 0x10008c15 func   ?sub_1019cf00@CRecipientFilter@@QAEXXZ CRecipientFilter::sub_1019cf00
 0x10008c1a func   ?sub_10114440@@YAXHHPBVVector@@0HH@Z sub_10114440
 0x10008c1f func   _item_g_eldervitaepack item_g_eldervitaepack

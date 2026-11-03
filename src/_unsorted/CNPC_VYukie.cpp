@@ -64,6 +64,26 @@ int CNPC_VYukie::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dd620 size=0x20
+#include "CNPC_VYukie.h"
+#include "CNPC_VHumanCombatant.h"
+
+struct YukieView
+{
+	char pad[0x1574];
+	float m_fl1574;
+};
+
+// TARGET: CNPC_VYukie::vfunc103
+void CNPC_VYukie::vfunc103()
+{
+	CNPC_VHumanCombatant *pThis = (CNPC_VHumanCombatant *)this;
+	pThis->sub_10012855(0x200d00);
+	pThis->CNPC_VHumanCombatant::vfunc103();
+	((YukieView *)this)->m_fl1574 = -1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dd650 size=0x6
 #include "CNPC_VYukie.h"
 int CNPC_VYukie::vfunc138()
