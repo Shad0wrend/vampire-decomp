@@ -30,10 +30,15 @@ public:
 	float m_f0c;
 	char m_pad0010[4];
 	char m_buf14[0x160];	// 0x0014 .. 0x0173
-	char m_pad0174[0x14];	// 0x0174 .. 0x0187
-	void *m_pMemory;	// 0x0188
+	// The two lists the debug dump walks (memory, alloc count, grow size, element count, element pointer).
+	void *m_pLoopTracks;	// 0x0174: the 0x58 byte loop-track records
+	int m_nLoopAlloc;	// 0x0178
+	int m_nLoopGrow;	// 0x017c
+	int m_nLoopCount;	// 0x0180: number of loop tracks
+	void *m_pLoopElements;	// 0x0184
+	void *m_pMemory;	// 0x0188: the 0x20 byte random-sound records (the matched vfunc2/vfunc5 name)
 	int m_nAllocationCount;	// 0x018c
 	int m_nGrowSize;	// 0x0190
-	char m_pad0194[4];
+	int m_nRandomCount;	// 0x0194: number of random sounds
 	void *m_pElements;	// 0x0198
 };
