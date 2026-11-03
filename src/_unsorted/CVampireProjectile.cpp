@@ -108,6 +108,21 @@ CVampireProjectile::~CVampireProjectile()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ee400 size=0x26
+#include "CVampireProjectile.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+
+// TARGET: CVampireProjectile::vfunc104
+void CVampireProjectile::vfunc104()
+{
+	const char *s = "models/items/Pearl_of_Dubai/ground/Pearl_of_Dubai_g.mdl";
+	g_1070b22c->vfunc13(s, 0);
+	vfunc105(s);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ee710 size=0x1
 #include "CVampireProjectile.h"
 void CVampireProjectile::vfunc268()
