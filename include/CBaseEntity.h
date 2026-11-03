@@ -82,6 +82,7 @@ public:
 	virtual void vfunc123(); virtual int vfunc124();	// slot 124 "DrawDebugTextOverlays"-like: returns the next free overlay text line
 	virtual void vfunc125(); virtual int vfunc126(int a); virtual int vfunc127(int a); virtual bool vfunc128(); virtual void vfunc129();
 	virtual void vfunc130(int a); virtual int vfunc131(); virtual void vfunc132(); virtual void vfunc133();
+	int vfunc137();	// slot 137: returns 0 (plain member here so the void filler overrides in the subclasses keep compiling)
 
 	// Slots whose callers call them directly, so far only declared as plain members.
 	bool vfunc140(CBaseEntity *pAttacker);	// "CBaseEntity::PassesDamageFilter": scope trace (entity name), true without a damage filter, else slot 241(pAttacker) of the entity behind the handle at +0x220
