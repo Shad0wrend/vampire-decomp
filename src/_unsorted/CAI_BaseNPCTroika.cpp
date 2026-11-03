@@ -9,6 +9,13 @@ int CAI_BaseNPCTroika::vfunc586(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aa5f0 size=0x7
+float __fastcall sub_101aa5f0(int p)
+{
+	return *(float *)((char *)p + 0x63c0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aa690 size=0x3
 bool CAI_BaseNPCTroika::vfunc591()
 {
