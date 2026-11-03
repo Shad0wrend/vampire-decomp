@@ -122,3 +122,4 @@
 	float vfunc465();	// slot 465: the constant 60.0f
 	void *vfunc198();	// slot 198: the address of the field at +0x211c
 	int vfunc200();	// slot 200 (plain member): the dword at +0x233c
+	char sub_1015dd50();	// slot 117: CBaseEntity::vfunc117 masked with 0xfd
