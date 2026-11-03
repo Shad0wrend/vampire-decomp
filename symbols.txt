@@ -6604,6 +6604,7 @@
 0x1000b366 func   ?sub_101ce920@@YAXHPAUCEdictHolder@@@Z sub_101ce920
 0x1000b370 func   ?sub_103352b0@CBaseCombatCharacter@@QAEXAAUinputdata_t@@@Z CBaseCombatCharacter::sub_103352b0
 0x1000b37a func   ?vfunc8@CSkyList@@QAEPAV1@I@Z CSkyList::vfunc8
+0x1000b37f func   ?vfunc0@IServerGameClients@@UAEPAXE@Z IServerGameClients::vfunc0
 0x1000b384 func   ?sub_10312540@@YGHH@Z sub_10312540
 0x1000b38e func   ?vfunc0@CTEFogRipple@@UAEHXZ CTEFogRipple::vfunc0
 0x1000b393 func   ?sub_103b5ba0@@YIPAXPAX@Z sub_103b5ba0
