@@ -10835,6 +10835,7 @@
 0x10011d6f func   ?sub_103f9160@COccultRegen@@QAEXH@Z COccultRegen::sub_103f9160
 0x10011d74 func   ?sub_1030d390@@YAHPBD@Z sub_1030d390
 0x10011d79 func   ??0CGameRules@@QAE@XZ CGameRules::CGameRules
+0x10011d7e func   ?vfunc532@CAI_BaseNPC@@QAEDH@Z CAI_BaseNPC::vfunc532
 0x10011d83 func   ?sub_101d6750@CUnknown101d6750@@QAEPAUS101d61e0@@XZ CUnknown101d6750::sub_101d6750
 0x10011d8d func   ?vfunc114@CBaseEntity@@UAEXXZ CBaseEntity::vfunc114
 0x10011d92 func   ?sub_101a75a0@@YGXH@Z sub_101a75a0

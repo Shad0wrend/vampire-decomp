@@ -2275,6 +2275,17 @@ bool __stdcall sub_1027dc80(FObj* p, IObj* q, float f, int* out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027e0f0 size=0x16
+#include "CAI_BaseNPC.h"
+
+char CAI_BaseNPC::vfunc532(int unused)
+{
+	*(int *)((char *)this + 0x5d24) = -1;
+	*(char *)((char *)this + 0x5d30) = 0;
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027e120 size=0xd
 struct NpcFlags204 { char pad[0x204]; unsigned int m; };
 unsigned int CAI_BaseNPC::vfunc423()
