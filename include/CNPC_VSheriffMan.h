@@ -67,6 +67,7 @@ public:
 	void sub_10012855(int flags);	// sets the solid flags, called with 0x201000
 	void sub_10014876();	// CNPC_VVampire::vfunc103, called directly
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
+	int vfunc604(int arg);	// slot 604 "CNPC_VSheriffMan::SelectScheduleMeleeCombat" (0x103af960, ret 4): melee schedule pick; stamps m_pszSourceFile / m_nSourceLine
 	CNPC_VSheriffMan *vfunc5(unsigned int flags);	// as in CBaseCineCam (transplant)
 	int vfunc337();	// as in CNPC_VSabbatLeader (transplant)
 	void vfunc444(int *pTask);	// "CNPC_VSheriffMan::RunTask": scope trace, the base implementation for every task but 0x154
