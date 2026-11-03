@@ -80851,6 +80851,36 @@ int CUnknown101a1f70::sub_101a1f70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a1f90 size=0x6b
+#include "vampire_all.h"
+#include "CUnknown101a1f70.h"
+
+extern void (*g_109f362c)(const char *, ...);
+
+void CUnknown101a1f70::sub_101a1f90(void *dst, int size)
+{
+	CUnknown101a1f70_Record *r = m_unk18;
+	if (r) {
+		int end = *(volatile int *)&r->m_unkc;
+		if (end - r->m_unk8 != 0) {
+			int avail = r->m_unkc - r->m_unk8;
+			if (avail != 0) {
+				if (size > avail) {
+					r->m_unk8 = r->m_unkc;
+				} else {
+					if (dst)
+						memcpy(dst, (void *)r->m_unk4, size);
+					r->m_unk4 += size;
+					r->m_unk8 += size;
+					return;
+				}
+			}
+			g_109f362c("Restore underflow!");
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2020 size=0xf
 namespace lifted {
 int __stdcall sub_1000fe9d(int, int);

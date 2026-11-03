@@ -9839,6 +9839,7 @@
 0x1000fe89 func   ?vfunc103@CPlayerResource@@QAEXXZ CPlayerResource::vfunc103
 0x1000fe8e func   ?sub_10069e80@@YAXHHPAUCTEEntView@@HHPBD@Z sub_10069e80
 0x1000fe93 func   ?vfunc546@CNPC_VMingXiaoTentacle@@QAEHH@Z CNPC_VMingXiaoTentacle::vfunc546
+0x1000fe9d func   ?sub_101a1f90@CUnknown101a1f70@@QAEXPAXH@Z CUnknown101a1f70::sub_101a1f90
 0x1000feac func   ?vfunc5@CPlayerResource@@QAEPAV1@I@Z CPlayerResource::vfunc5
 0x1000feb1 func   ?sub_10312e00@@YA_NPAPBD0@Z sub_10312e00
 0x1000feb6 func   ?vfunc82@CSecCamera@@UAEPAUdatamap_t@@XZ CSecCamera::vfunc82
