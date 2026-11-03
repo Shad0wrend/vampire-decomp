@@ -12657,6 +12657,7 @@
 0x10014060 func   ?vfunc103@CNPC_VManBat@@QAEXXZ CNPC_VManBat::vfunc103
 0x1001406a func   ?vfunc2@CPlayerEventsManager@@QAEXXZ CPlayerEventsManager::vfunc2
 0x1001406f func   ?vfunc81@CItemGJumblesFlyer@@QAEHXZ CItemGJumblesFlyer::vfunc81
+0x10014074 func   ?sub_10212200@CPropSign@@QAE_NXZ CPropSign::sub_10212200
 0x10014079 func   ?sub_100be4b0@bf_read@@QAEIH@Z bf_read::sub_100be4b0
 0x1001407e func   _item_g_drugs_pill_bottle item_g_drugs_pill_bottle
 0x10014083 func   ?vfunc82@CDynamicLight@@UAEPAUdatamap_t@@XZ CDynamicLight::vfunc82
