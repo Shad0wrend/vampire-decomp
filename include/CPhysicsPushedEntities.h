@@ -69,7 +69,7 @@ public:
 	void sub_10035df0(CBaseEntity *pEntity);	// "CPhysicsPushedEntities::AddEntity": scope trace, appends a moved-entity record for pEntity with its current absolute origin as the start origin
 	bool sub_10036900(const float *pRotation, const float *pOrigin);	// "CPhysicsPushedEntities::SpeculativelyCheckRotPush": scope trace, clears the blocking index, then computes the rotated move of every moved entity (sub_100360a0) and checks it, last to first; false (and the blocking index set) at the first one that is blocked
 	CBaseEntity *sub_10037e90(CBaseEntity *pRoot, float flRotation);	// "CPhysicsPushedEntities::PerformRotatePush": scope trace, VPROF scope; SetupAllInHierarchy(root), computes the rotated moves, checks them; on a block restores the entities and returns the blocked one, else finishes the push and returns 0
-	void sub_10037c10(CBaseEntity *pRoot, const float *pRotation, float *pOrigin);	// stub 0x10002c70: computes the rotation pivot / origin for the push
+	void sub_10037c10(CBaseEntity *pRoot, float flRotation, float *pOrigin);	// stub 0x10002c70: computes the rotation pivot / origin for the push
 	void sub_10036fb0();	// stub 0x100132b4
 	CBaseEntity *sub_10038400(CBaseEntity *pRoot, const float *pMove);	// "CPhysicsPushedEntities::PerformLinearPush": scope trace, VPROF scope; SetupAllInHierarchy(root), computes the moves, checks them; on a block restores the entities and returns the blocked one, else finishes the push and returns 0
 	void sub_10038180(CBaseEntity *pRoot, const float *pMove, float *pOut);	// stub 0x1000aa8d
