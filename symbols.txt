@@ -7593,6 +7593,7 @@
 0x1000ca4a func   ?vfunc100@CBaseAnimating@@QAE_NHHPAD@Z CBaseAnimating::vfunc100
 0x1000ca59 func   ?vfunc138@CNPC_VWolfMorph@@UAEHXZ CNPC_VWolfMorph::vfunc138
 0x1000ca5e func   ?sub_101467b0@@YAHPAVCBaseCombatCharacter@@@Z sub_101467b0
+0x1000ca63 func   ?vfunc609@CNPC_VSheriffSwarm@@QAEHD@Z CNPC_VSheriffSwarm::vfunc609
 0x1000ca6d func   ?vfunc363@CNPC_VNewscaster@@UAE_NH@Z CNPC_VNewscaster::vfunc363
 0x1000ca77 func   ?sub_1022ce80@@YAXXZ sub_1022ce80
 0x1000ca7c func   ?sub_10200260@CVStatInfoList_t@@QAEPAUCVDmgBlock16_t@@PBD@Z CVStatInfoList_t::sub_10200260

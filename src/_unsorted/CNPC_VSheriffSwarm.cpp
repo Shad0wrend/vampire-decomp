@@ -190,3 +190,17 @@ int CNPC_VSheriffSwarm::vfunc554(float a, float b)
 	return ((CAI_BaseNPC_Fwd *)this)->sub_1026d920(a, b);
 }
 // END FUNCTION
+
+// FUNCTION: 0x103b26f0 size=0x2c
+#include "CAI_BaseNPCTroika.h"
+#include "CNPC_VSheriffSwarm.h"
+
+// TARGET: CNPC_VSheriffSwarm::vfunc609
+int CNPC_VSheriffSwarm::vfunc609(char bForce)
+{
+	if (m_n5cc0 == 4 || m_n5cc0 == 0xc)
+		return ((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc609(bForce);
+	m_p6444 = 0;
+	return 0;
+}
+// END FUNCTION
