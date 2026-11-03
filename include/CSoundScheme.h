@@ -51,8 +51,17 @@ public:
 	int m_nSoundGrowSize;		// 0x588
 	int m_nSoundCount;			// 0x58c: the vector's size (0x1022b300 reads it)
 	CSoundSchemeSound *m_pSoundElements;	// 0x590
-	char m_pad0594[0x5a8 - 0x594];	// +0x594: a second vector (purged by sub_1022a200), not modelled
+	// 0x594: the second vector (0x48-byte CSoundSchemeList elements), purged by sub_1022a200 / rebuilt by vfunc104
+	CSoundSchemeList *m_pListMemory594;	// 0x594
+	int m_n594AllocationCount;	// 0x598
+	int m_n594GrowSize;	// 0x59c
+	int m_n594Count5a0;	// 0x5a0
+	CSoundSchemeList *m_p594Elements;	// 0x5a4
 	int m_n5a8;					// 0x5a8: the round-robin index into m_pSoundMemory
+	bool m_bList460Valid;	// 0x5ac: the +0x460 list parsed (vfunc104; 0 makes it appended to the +0x594 vector and removed)
+	bool m_bList4a8Valid;	// 0x5ad: the +0x4a8 list parsed
+	bool m_bList4f0Valid;	// 0x5ae: the +0x4f0 list parsed
+	bool m_bList538Valid;	// 0x5af: the +0x538 list parsed
 
 	CSoundScheme *vfunc5(unsigned int flags);
 	void vfunc113();	// slot 113: locks the global at 0x10750d78 with this (0x100115f9); then when the byte at +0x454 is set calls sub_1022b590(2.0), else CBaseEntity::sub_100ac4e0(0, 0.0, 0) (0x10007fe5)
