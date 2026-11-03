@@ -181640,6 +181640,38 @@ void CWeaponMelee_Torch::sub_103e7530()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e7580 size=0x3c
+#include "CWeaponMelee_Torch.h"
+#include "CUnknown1070b248.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b248 *g_1070b248;
+extern CUnknown1070b22c *g_1070b22c;
+
+#define P10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CEngineSlotView
+{
+	P10(a) P10(b) P10(c)
+	virtual void s30();
+	virtual void s31();
+	virtual void s32();
+	virtual void s33();
+	virtual void s34();
+	virtual int vfunc35(int edict, int b);
+};
+
+// TARGET: CWeaponMelee_Torch::sub_103e7580
+void CWeaponMelee_Torch::sub_103e7580()
+{
+	sub_103e78b0();
+	int nEdict = *(int *)((char *)this + 0x2e0);
+	g_1070b248->vfunc5(((CEngineSlotView *)g_1070b22c)->vfunc35(nEdict, 0));
+	m_b914 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e7680 size=0xff
 #include "CWeaponMelee_Torch.h"
 #include "CPASAttenuationFilter.h"

@@ -4770,6 +4770,7 @@
 0x100084fe func   ?RotateRight@?$CUtlRBTree@UCRBEntry24@@H@@QAEXH@Z CUtlRBTree<CRBEntry24,int>::RotateRight
 0x100084fe func   ?sub_1007ffc0@CUtlRBTree24@@QAEXH@Z CUtlRBTree24::sub_1007ffc0
 0x10008503 func   ?sub_1027fc10@CUnknown1027fc10@@QAEPAXH@Z CUnknown1027fc10::sub_1027fc10
+0x10008512 func   ?sub_103e7580@CWeaponMelee_Torch@@QAEXXZ CWeaponMelee_Torch::sub_103e7580
 0x10008521 func   ?vfunc617@CNPC_VHengeyokai@@QAEXXZ CNPC_VHengeyokai::vfunc617
 0x10008526 func   ?sub_101a9b30@@YIXPADHH@Z sub_101a9b30
 0x10008530 func   ?vfunc5@CWeaponMelee_Sledgehammer@@QAEPAV1@I@Z CWeaponMelee_Sledgehammer::vfunc5
