@@ -188,7 +188,7 @@ public:
 	EVS(384)
 	virtual void slot385(CEntityVSlots *pWeapon, int a, int b);	// character: drops / removes a weapon ("Weapon_Drop"-like)
 	EVS(386) EVS(387) virtual void slot388(int a, int b);	// character: takes two arguments (a field of the bound entity and 0) EVS(389)
-	EVS(389)
+	virtual Vector slot389(const Vector &vecSrc);
 	EVS10(39)
 	EVS(400) EVS(401) EVS(402) EVS(403)
 	virtual int slot404(void *pEntity);	// NPC: takes an entity, answers an int (1 = acceptable)
