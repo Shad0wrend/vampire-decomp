@@ -15,3 +15,5 @@ public:
 	virtual void vfunc3();
 	virtual void vfunc4(Ray_t *pRay, unsigned int fMask, CTraceFilterNoCharacterCollide *pFilter, CGameTrace *pTrace);	// TraceRay
 };
+
+extern CUnknown1070b254 *g_1070b254;	// the engine trace interface (g_pEngineTrace)
