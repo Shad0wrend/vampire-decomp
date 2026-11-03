@@ -415,6 +415,18 @@ void CBaseCombatWeapon::vfunc119()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102507d0 size=0x13
+#include "CBaseCombatWeapon.h"
+
+void __fastcall sub_100011cc(CBaseCombatWeapon *self);
+
+void CBaseCombatWeapon::vfunc77()
+{
+	sub_100011cc(this);
+	vfunc225();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10250c20 size=0x1e
 #include "CBaseCombatWeapon.h"
 

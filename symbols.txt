@@ -7256,6 +7256,7 @@
 0x1000c595 func   ?vfunc82@CWeaponThrown_Grenade_Frag@@UAEPAUdatamap_t@@XZ CWeaponThrown_Grenade_Frag::vfunc82
 0x1000c59a func   ?sub_1004ae60@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_1004ae60
 0x1000c59f func   ?vfunc319@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc319
+0x1000c5a4 func   ?vfunc77@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc77
 0x1000c5ae func   ?vfunc1@CSceneTokenProcessor@@QAE_NH@Z CSceneTokenProcessor::vfunc1
 0x1000c5b3 func   ?sub_1021e320@@YAXPAUCBlock4k@@PBU1@@Z sub_1021e320
 0x1000c5b8 func   ?sub_10107550@Mem400@@QAEXH@Z Mem400::sub_10107550
