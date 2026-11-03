@@ -55,8 +55,15 @@ public:
 	int m_nCount;	// 0x14
 	char m_pad0018[4];
 	CTableRecord44_t *m_pRecords;	// 0x1c
-	char m_pad0020[0x30 - 0x20];
-	int *m_pRecordIndex;	// 0x30
+	int m_nRecordAlloc;	// 0x20: allocation count of the 0x44-byte record vector at +0x1c
+	int m_nRecordGrow;	// 0x24: its grow size
+	int m_nRecordCount;	// 0x28: its size
+	CTableRecord44_t *m_pRecordElems;	// 0x2c: the vector's element pointer
+	int *m_pRecordIndex;	// 0x30: the 0x104-byte disposition entries (model index at +0, 0x40 stance record indices at +4)
+	int m_nEntryAlloc;	// 0x34: allocation count of the entry vector at +0x30
+	int m_nEntryGrow;	// 0x38: its grow size
+	int m_nEntryCount;	// 0x3c: its size
+	int *m_pEntryElems;	// 0x40: the vector's element pointer
 
 	int sub_100ec640(class CBaseAnimating *pEnt);	// stub 0x1000db02: the table index of the NPC's model (looked up by slot 8 of the entity, \"Precaching disposition sequences for %s\" when new), the stance sequences (\"stance_%s_idle_%d\", \"_fidget_\", \"_trans_\") appended as a 0x44 byte record when it is not known yet
 	void sub_100eb5a0(CTableEntry264_t *pSrc);	// stub 0x10001686: appends the entry (a default entry when null) to the entry vector at +8
