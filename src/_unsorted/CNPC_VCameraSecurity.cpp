@@ -68,3 +68,15 @@ bool CNPC_VCameraSecurity::vfunc201(CBaseEntity *pOther, int a, int b, int c)
 	return false;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1036a030 size=0x12
+#include "CNPC_VCameraSecurity.h"
+
+// TARGET: CNPC_VCameraSecurity::vfunc468
+bool CNPC_VCameraSecurity::vfunc468(CBaseEntity *pEnt)
+{
+	if (pEnt->m_pA8 == 0)
+		return false;
+	return true;
+}
+// END FUNCTION
