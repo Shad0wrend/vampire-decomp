@@ -196,6 +196,20 @@ void CGeneric_NPC::vfunc491()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035a7e0 size=0x14
+#include "CGeneric_NPC.h"
+
+int CGeneric_NPC::vfunc473()
+{
+	switch (m_n5cc0)
+	{
+	case 1:
+		return 0x19;
+	}
+	return 0x17;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035a810 size=0x2a
 #include "CGeneric_NPC.h"
 extern const float g_1044f00c;
