@@ -63802,6 +63802,26 @@ int __cdecl sub_1014a110(int param)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014a140 size=0x1b
+struct CUnk1014a140 {
+    void *sub_10335950(int a);
+};
+struct CUnk1014a140Callee {
+    void *sub_1014a1b0();
+};
+
+int sub_102587f0();
+
+// TARGET: sub_1014a140
+void *sub_1014a140(CUnk1014a140 *p)
+{
+    void *r = p->sub_10335950(sub_102587f0());
+    if (!r)
+        return 0;
+    return ((CUnk1014a140Callee *)r)->sub_1014a1b0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014c0f0 size=0xf
 namespace lifted {
 int sub_10002392();
