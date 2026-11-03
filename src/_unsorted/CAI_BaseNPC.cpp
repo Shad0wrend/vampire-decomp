@@ -582,6 +582,16 @@ void *__fastcall sub_1026af30(CUnknown1026af30View *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026b210 size=0x14
+#include "CAI_BaseNPC.h"
+
+int CAI_BaseNPC::vfunc372(int a)
+{
+	vfunc370(a);
+	return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026b270 size=0x197
 #include "CAI_BaseNPC.h"
 #include "CEntityVSlots.h"
