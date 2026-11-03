@@ -11195,6 +11195,7 @@
 0x10011f04 func   ?sub_100f97b0@CUnknown100f97b0@@QAEPAUCUnknown100f97b0_Elem@@H@Z CUnknown100f97b0::sub_100f97b0
 0x10011f09 func   _worldevents worldevents
 0x10011f0e func   _npc_VVampireBoss npc_VVampireBoss
+0x10011f13 func   ?sub_1032f9f0@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_1032f9f0
 0x10011f18 func   ?vfunc242@CBaseMoveBehavior@@QAEXXZ CBaseMoveBehavior::vfunc242
 0x10011f1d func   ?sub_101f9550@@YAXH@Z sub_101f9550
 0x10011f22 func   ?vfunc4@CTESparks@@UAEXPAVCRecipientFilter@@M@Z CTESparks::vfunc4
