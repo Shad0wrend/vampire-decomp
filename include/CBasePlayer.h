@@ -346,7 +346,9 @@ public:
 	int m_aSlotValue2040[10];	// 0x2040: value of each command slot (a name hash or packed range)
 	int m_n2068;	// 0x2068: set to 1 on death (vfunc144)
 	Vector m_vec206c;	// 0x206C: the view angles / target vector (stored by sub_10167030)
-	char m_pad2078[0x2088 - 0x2078];
+	char m_pad2078[0x207c - 0x2078];
+	int m_n207C;	// 0x207C: non-zero skips the view-angle copy in the command run
+	char m_pad2080[0x2088 - 0x2080];
 	unsigned int m_nFlags2088;	// 0x2088: the flag word (bit 0 tested by CWeaponUnarmed::vfunc319; see also vfunc436, sub_1016b090 'new buttons')
 	void sub_1016b090(unsigned int buttons);	// button-state update: prev buttons -> +0x2094, new buttons -> +0x2088	// 0x2078 .. 0x208B
 	unsigned char m_b208C;	// 0x208C
