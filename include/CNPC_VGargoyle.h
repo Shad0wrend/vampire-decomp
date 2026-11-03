@@ -53,6 +53,8 @@ public:
 	char sub_10379040();	// stub 0x10014777, answers in al
 	void sub_1029adb0(int a);	// CAI_BaseNPCTroika::vfunc448 (stub 0x100054bb), called directly
 
+	CNPC_VGargoyle *sub_10377a60();	// constructor body (0x10377a60)
+
 	char m_pad0004[0xfd0 - 4];
 	int m_nFd0;	// 0x0fd0: the constructor sets it to 3
 	char m_padfd4[0x14b8 - 0xfd4];
