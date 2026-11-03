@@ -16,4 +16,4 @@ struct AttachPos_t
 	Vector m_vecOffsetAngles;	// 0x20: "OffsetAngles" parsed by sub_10071cd0 (default "[0, 0, 0]")
 };
 
-void sub_10071e00(CKeyValuesX *pKV, AttachPos_t *pOut);	// parse one attachment block: GetString("Position","None"), GetString("AttachPos","None"), GetString("AttachType","None"), GetString("OffsetOrigin","[0, 0, 0]"), GetString("OffsetAngles","[0, 0, 0]")
+void __stdcall sub_10071e00(CKeyValuesX *pKV, AttachPos_t *pOut);	// parse one attachment block: GetString("Position","None"), GetString("AttachPos","None"), GetString("AttachType","None"), GetString("OffsetOrigin","[0, 0, 0]"), GetString("OffsetAngles","[0, 0, 0]"); __stdcall (the game's ret 8)
