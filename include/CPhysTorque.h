@@ -12,7 +12,10 @@ class CPhysTorque
 public:
 
 	void sub_10014470();	// destructor body
-	void sub_100282e0(CPhysObjSlots *pObject, float flTime, Vector *pAngular);	// slot 241 "CPhysTorque::vfunc241" (plain member): zeroes the object's first three dwords, rotates the vector at +0x49c by the object's matrix and scales it by the float at +0x458
+	// slot 241 "CPhysTorque::vfunc241": arg1 is the physics object whose slot 38 fills a 3x4 matrix, arg2 the Vector
+	// that is zeroed and gets the scaled answer, arg3 unused. Declared with the real argument order (arg2 is the
+	// Vector, not a float: the game zeroes/writes arg2 and reloads arg1 as the object).
+	void sub_100282e0(CPhysObjSlots *pObject, Vector *pAngular, float flTime);
 
 	void sub_10028260();
 
