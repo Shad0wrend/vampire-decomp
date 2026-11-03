@@ -12,4 +12,5 @@ public:
 	int sub_1008f7b0(const char *pszLabel);	// CBaseAnimating::LookupSequence (stub 0x1000e057), called directly
 	void sub_10090950();	// stub 0x100117b1, called directly
 	void sub_100963d0();	// CBaseAnimating::ResetClientsideFrame (stub 0x100024b9), called directly
+	void vfunc406();	// slot 406: plays the "open" animation
 };
