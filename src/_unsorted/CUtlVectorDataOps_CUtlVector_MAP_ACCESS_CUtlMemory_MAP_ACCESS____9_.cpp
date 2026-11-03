@@ -135,3 +135,17 @@ template<> int CUtlVectorDataOps<CUtlVector<MAP_ACCESS,CUtlMemory<MAP_ACCESS> >,
 	return (int)pVec;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10184c00 size=0x13
+#include "CUtlVectorDataOps.h"
+#include "MAP_ACCESS.h"
+
+// TARGET: CUtlVectorDataOps<CUtlVector<MAP_ACCESS,CUtlMemory<MAP_ACCESS> >,9>::vfunc2
+template <class VEC, int N>
+bool CUtlVectorDataOps<VEC, N>::vfunc2(void *pFieldData)
+{
+	return *(int *)(*(char **)pFieldData + 0xc) == 0;
+}
+
+template class CUtlVectorDataOps<CUtlVector<MAP_ACCESS,CUtlMemory<MAP_ACCESS> >,9>;
+// END FUNCTION
