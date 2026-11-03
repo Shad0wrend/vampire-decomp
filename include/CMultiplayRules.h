@@ -25,6 +25,7 @@ public:
 	virtual void vfunc35(CBaseEntity *pPlayer);	// "EquipPlayer": every game_player_equip entity equips the player (slot 175); without one gives weapon_crowbar, weapon_9mmhandgun and 0x44 SmallRound
 	virtual void vfunc36(void *pOwner);	// clears the dwords +0x208c, +0x2088 and +0x2090 of pOwner when the flag byte at 0x1070ba2c is set, and sets this's byte at +0xc when one of the bits 0x440827 of +0x208c was set
 	virtual float vfunc38(int a);
+	virtual bool vfunc40();	// slot 40: false when the global object at 0x1070ada4 answers slot 1 true, else whether its int at +0x2c is non-zero
 	virtual int vfunc43(int a, int b);
 	virtual void vfunc44(CBaseEntity *pVictim, CMPDamageInfo *pInfo);	// "PlayerKilled": DeathNotice (slot 45), counts the death and fires game_playerdie; credits the scorer (sub_10141b10) with the points of slot 43 and fires game_playerkill, or takes a point off a suicide
 	virtual char vfunc47(CBaseEntity *pPlayer, CBaseEntity *pItem);	// "CanHavePlayerItem": in a running multiplayer game with the item limit set, refuses an item (without the flag bit 3 of its slot 346) the player already owns in one of its 0xe0 weapon slots; everything else goes to CGameRules
