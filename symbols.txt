@@ -513,6 +513,7 @@
 0x10001c99 func   ?vfunc80@CItemGWarrClipboard@@QAEHXZ CItemGWarrClipboard::vfunc80
 0x10001c9e func   ?vfunc5@CParamsExplosion@@QAEPAV1@I@Z CParamsExplosion::vfunc5
 0x10001ca3 func   ?sub_100c4390@@YAMPAXHM@Z sub_100c4390
+0x10001ca8 func   ?vfunc536@CAI_BaseNPC@@UAEXHHHH@Z CAI_BaseNPC::vfunc536
 0x10001cad func   ?sub_100b99b0@CUnknown100b99b0@@QAEXD@Z CUnknown100b99b0::sub_100b99b0
 0x10001cb2 func   ?sub_10042200@UtlVec8@@QAEHHPBUUtlVec8Elem@@@Z UtlVec8::sub_10042200
 0x10001cb7 func   ?vfunc496@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc496

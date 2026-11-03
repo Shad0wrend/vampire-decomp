@@ -481,6 +481,15 @@ bool CAI_BaseNPC::vfunc527(CAI_NavProvider * a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6bc0 size=0x3
+#include "CAI_BaseNPC.h"
+
+// TARGET: CAI_BaseNPC::vfunc536
+void CAI_BaseNPC::vfunc536(int a, int b, int c, int d)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6be0 size=0x3
 // TARGET: sub_101a6be0
 void __stdcall sub_101a6be0(int a, int b, int c, int d) {
