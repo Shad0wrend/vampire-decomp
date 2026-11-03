@@ -92481,6 +92481,24 @@ int sub_101d9df0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d9e20 size=0x12
+#include "CDisciplineProjectile.h"
+
+extern int vt_10483004[];
+
+struct CDisciplineProjectileBaseCtor
+{
+	void sub_101ee2e0();
+};
+
+CDisciplineProjectile *CDisciplineProjectile::sub_101d9e20()
+{
+	((CDisciplineProjectileBaseCtor *)this)->sub_101ee2e0();
+	*(int *)this = (int)vt_10483004;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d9f60 size=0xb
 namespace lifted {
 extern char g_10483004;
