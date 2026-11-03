@@ -7107,6 +7107,7 @@
 0x1000c0ef func   ?vfunc487@CNPC_VTzimisce@@QAEXXZ CNPC_VTzimisce::vfunc487
 0x1000c0f4 func   ?vfunc433@CNPC_VGhoulCroucher@@QAEXXZ CNPC_VGhoulCroucher::vfunc433
 0x1000c0f9 func   ?vfunc82@CPropClockHand@@UAEPAUdatamap_t@@XZ CPropClockHand::vfunc82
+0x1000c0fe func   ?vfunc252@CSceneEntity@@UAEXHPAVCBaseFlex@@PAUCSceneEvent@@@Z CSceneEntity::vfunc252
 0x1000c103 func   ?vfunc5@CNPC_VMingXiaoTentacle@@QAEPAV1@I@Z CNPC_VMingXiaoTentacle::vfunc5
 0x1000c108 func   ?vfunc365@CNPCMaker@@UAE_NH@Z CNPCMaker::vfunc365
 0x1000c117 func   ?vfunc432@CNPC_VYukie@@QAEXM@Z CNPC_VYukie::vfunc432
