@@ -15,6 +15,8 @@ struct CMovePlayerView	// CGameMovement::m_pPlayer: the "mv" (CMoveData-like) re
 	Vector m_vecVelocity;	// 0x40
 	char m_pad004c[0x70 - 0x4c];
 	Vector m_vecOrigin;	// 0x70
+	char m_pad007c[0x80 - 0x7c];
+	Vector m_vec80;		// 0x80: a velocity-like vector sub_10120ba0 subtracts a scaled amount from
 };
 
 struct CMoveFlagsView	// the same object as CMoveDataView, data side
