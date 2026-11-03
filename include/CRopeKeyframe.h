@@ -21,7 +21,7 @@ public:
 	void sub_1019e5d0();	// stub 0x1000cb03
 	unsigned char sub_1019dd70();	// CRopeKeyframe::vfunc117 body (CBaseEntity::vfunc117 & 0xfd)
 	void sub_1019efb0();	// the rope's think (installed by sub_1019e310, stub 0x10012247): removes the rope when its removal time has passed; else sub_1019e8b0(0), the next think 0.1 s on, the slack (+0x474) refreshed from the distance of the two points when the simulate bit is set and both entities have an edict, and the start / end point validity bytes (+0x48c / +0x48d) kept in step with the point handles
-	void sub_1019e8b0(int a);	// stub 0x1000f9ed
+	void sub_1019e8b0(bool a);	// stub 0x1000f9ed
 	bool sub_1019e110(float slack);	// measures the rope between the start and end entities (their origin, or their attachment when the attachment index is set) and stores the two values it gets back at +0x474 and +0x45c (marking the entity changed, byte +0x1b1); false when either entity is missing
 	void sub_1019ddc0(CBaseEntity *pEnt, int iAttachment);	// "SetStartPoint" (stub 0x100144c0)
 	void sub_1019de30(CBaseEntity *pEnt, int iAttachment);	// "SetEndPoint" (stub 0x10011603)
