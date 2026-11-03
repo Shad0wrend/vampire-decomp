@@ -37,7 +37,7 @@ public:
 	virtual bool vfunc0();
 	virtual void vfunc1();
 	virtual void vfunc5();
-	virtual void vfunc8();
+	virtual CAutoGameSystem *vfunc8(unsigned int flags);
 
 	char m_0c[0x18 - 0x0c];
 	int m_18;
