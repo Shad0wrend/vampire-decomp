@@ -22,3 +22,24 @@ public:
 	char m_pad5cc8[0x5d44 - 0x5cc8];
 	CAI_Motor *m_pMotor5d44;	// 0x5d44: the NPC's motor
 };
+
+// Callees of vfunc461 that have no header of their own (all matched).
+class S101b9920
+{
+public:
+	const Vector *sub_101b99d0();	// 0x101b99d0: the position of the entity the handle at +0 is (+0x20 when it is stale / a type 0x10 / 0x400 object)
+};
+
+class CEnemiesView
+{
+public:
+	Vector sub_102dfed0(CBaseEntity *pEnemy);	// 0x102dfed0: the last known position of pEnemy (danger position / zero vector when unknown)
+};
+
+struct CUnknown101e3cfObj;
+class CUnknown101e3d70
+{
+public:
+	void sub_101e3d70(CUnknown101e3cfObj *pObj);	// 0x101e3d70: applies the staged discipline effects to the character object
+};
+extern CUnknown101e3d70 g_10739a4c;	// 0x10739a4c: the discipline-effect manager
