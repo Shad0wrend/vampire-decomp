@@ -132,6 +132,35 @@ void CFuncMonitor::vfunc42(void *pCamera)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10115350 size=0x39
+#include "CFuncMonitor.h"
+
+struct EntInfo {
+	CBaseEntity *m_pEntity;
+	unsigned int m_serial;
+	int m_pad;
+};
+
+struct EntList {
+	int m_hdr;
+	EntInfo m_entries[1];
+};
+
+extern EntList *g_10566458;
+
+// TARGET: CFuncMonitor::vfunc35
+int CFuncMonitor::vfunc35(int unused)
+{
+	unsigned int h = *(unsigned int *)((char *)this + 0x8c);
+	if (h != 0xffffffff) {
+		EntInfo *info = &g_10566458->m_entries[h & 0x1fff];
+		if (info->m_serial == (h >> 13) && info->m_pEntity)
+			return 0;
+	}
+	return 7;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101153f0 size=0x84
 #include "CFuncMonitor.h"
 #include "CEntityVSlots.h"
