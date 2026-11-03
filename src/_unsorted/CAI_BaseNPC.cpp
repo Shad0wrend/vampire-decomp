@@ -2301,6 +2301,16 @@ int sub_1027ee00(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10280300 size=0x11
+// TARGET: sub_10280300
+int __fastcall sub_102ee680(void *pNavigator);
+
+int __fastcall sub_10280300(void *pThis)
+{
+	return sub_102ee680(*(void **)((char *)pThis + 0x5d34)) & 0xff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10280330 size=0x20
 #include "CAI_BaseNPC.h"
 
