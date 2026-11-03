@@ -8,8 +8,9 @@ class CTriggerTeleport : public CBaseTrigger
 public:
 	CTriggerTeleport();	// 0x101c91e0: same shape as CTriggerDisciplineContext's constructor (CBaseTrigger inlined, the vftable, no members of its own)
 	CTriggerTeleport *sub_101c91e0();
-	char m_pad0598[0x59c - 0x598];
+	const char *m_targetName598;	// 0x598: the destination entity's target name (FindEntityByName input)
 	int m_n59c;	// 0x59c: cleared by the constructor
+	virtual void vfunc175(CBaseEntity *pOther);	// slot 175 (0x101c92c0, vtable stub 0x1000c239): the teleport touch
 public:
     virtual datamap_t * vfunc82();
     void *vfunc5(unsigned int flags);	// as in CTriggerElectricBugaloo (transplant)
