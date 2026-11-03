@@ -59,7 +59,8 @@ public:
 	int sub_103952b0(int a);	// called through the stub at 0x10012f85
 	int vfunc376(int act);	// slot 376 "CNPC_VMingXiao::TranslateActivity": 0x3d -> 0x3b, 0x3e -> 0x3c, 0x9f -> 0x9d, 0xa0 -> 0x9e, 0xa3 -> 0xa1, 0xa4 -> 0xa2, else the Troika base
 	int sub_1000fb14(int act);	// CAI_BaseNPCTroika::vfunc376, called directly
-	void sub_10398fd0();	// drops the target: kills the entity of the handle at +0x6738 (sub_101cd970) and clears it, clears the handle at +0x6718, slows the motor (sub_10013110(0.75f)) and resets the state at +0x673c to 0
+	void sub_10398fd0();	// drops the target: kills the entity of the handle at +0x6738 (sub_101cd970) and clears it, clears the handle at +0x6718, slows the motor 
+	void vfunc180();	// slot 180: drops the target when the mode at +0x673c is set, then the Troika base(sub_10013110(0.75f)) and resets the state at +0x673c to 0
 	void sub_10013110(float flSpeed);	// stub 0x10013110 for 0x102c43b0
 	void sub_1039aa20();	// when the time at +0x1560 plus a constant lies in the past: sets stat 0xf of the active stat list to 0 and runs sub_10273e80(0)
 	CNPC_VMingXiaoTentacle *sub_10397c70(CNPC_VMingXiaoTentacle *pTentacle);	// replaces a tentacle: when pTentacle is the entity of its slot's handle (+0x66a8[index]) and the slot's flag byte (+0x6684[index]) is set, spawns a new tentacle at its absolute origin (the NPC maker behind the global 0x1093bc54), stores its handle at +0x668c[index], gives it the old one's angles, its index (+0x6674), this NPC as owner (+0x6670) and the flag byte +0x6678, then slot 614 and sub_10397380; returns the new tentacle (null when there is none)
