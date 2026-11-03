@@ -2982,6 +2982,7 @@
 0x10005b32 func   _dynamic_prop dynamic_prop
 0x10005b37 func   ?vfunc5@CCorpse@@QAEPAV1@I@Z CCorpse::vfunc5
 0x10005b3c func   ?sub_100ca630@CMomentaryRotButton@@QAEMPAM@Z CMomentaryRotButton::sub_100ca630
+0x10005b41 func   ?vfunc2@?$CUtlVectorDataOps@V?$CUtlVector@UEXPERIENCE_ENTRY@@V?$CUtlMemory@UEXPERIENCE_ENTRY@@@@@@$08@@UAE_NPAX@Z CUtlVectorDataOps<CUtlVector<EXPERIENCE_ENTRY,CUtlMemory<EXPERIENCE_ENTRY> >,9>::vfunc2
 0x10005b46 func   ?vfunc371@CNPCMaker@@UAEHH@Z CNPCMaker::vfunc371
 0x10005b4b func   ?sub_100a93d0@@YI_NPAD@Z sub_100a93d0
 0x10005b50 func   ?sub_102beb30@@YAHXZ sub_102beb30

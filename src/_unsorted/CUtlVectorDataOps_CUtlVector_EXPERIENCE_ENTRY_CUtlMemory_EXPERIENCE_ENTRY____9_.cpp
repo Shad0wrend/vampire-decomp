@@ -72,3 +72,18 @@ template<> int CUtlVectorDataOps<CUtlVector<EXPERIENCE_ENTRY,CUtlMemory<EXPERIEN
 	return (int)pVec;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10184990 size=0x13
+#include "CUtlVectorDataOps.h"
+
+struct EXPERIENCE_ENTRY;
+
+// TARGET: CUtlVectorDataOps<CUtlVector<EXPERIENCE_ENTRY,CUtlMemory<EXPERIENCE_ENTRY> >,9>::vfunc2
+template <class VEC, int N>
+bool CUtlVectorDataOps<VEC, N>::vfunc2(void *pFieldData)
+{
+	return *(int *)(*(char **)pFieldData + 0xc) == 0;
+}
+
+template class CUtlVectorDataOps<CUtlVector<EXPERIENCE_ENTRY,CUtlMemory<EXPERIENCE_ENTRY> >,9>;
+// END FUNCTION
