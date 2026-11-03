@@ -4,6 +4,15 @@
 #include "CBaseEntity.h"
 #include "CDoorEventList.h"
 
+struct CNPCOpenData	// 0x1c byte output of CRotDoor::GetNPCOpenData
+{
+	Vector m_vecOrigin;	// +0x00
+	Vector m_vecAngles;	// +0x0c
+	int m_nResult;		// +0x18: -1 when the door cannot open for the NPC
+};
+
+Vector sub_101d2f40(float flYaw);	// 0x101d2f40: degrees -> (cos, sin, 0) direction (Vector returned by value; todo)
+
 class CRotDoor : public CBaseEntity
 {
 public:
