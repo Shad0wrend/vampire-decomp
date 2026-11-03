@@ -394,6 +394,14 @@ float CAI_BaseNPC::vfunc522()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6b60 size=0x7
+// TARGET: sub_101a6b60
+float sub_101a6b60()
+{
+	return 18.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6b80 size=0x7
 float sub_101a6b80()
 {

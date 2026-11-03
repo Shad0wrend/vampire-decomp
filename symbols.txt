@@ -11206,6 +11206,7 @@
 0x1001299f func   ?sub_10338950@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10338950
 0x100129a4 func   ?sub_101f4150@CUnknown101f4150@@QAEHXZ CUnknown101f4150::sub_101f4150
 0x100129a9 func   ?sub_10138460@@YAXPBMQAY03$$CBMPAM@Z sub_10138460
+0x100129b3 func   ?sub_101a6b60@@YAMXZ sub_101a6b60
 0x100129b8 func   ?sub_101153a0@S@@QAEXPAUinputdata_t@@@Z S::sub_101153a0
 0x100129bd func   ?sub_100855f0@@YAXXZ sub_100855f0
 0x100129c2 func   _npc_generic npc_generic
