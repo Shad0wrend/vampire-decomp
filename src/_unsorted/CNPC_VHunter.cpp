@@ -70,6 +70,22 @@ int CNPC_VHunter::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103887a0 size=0x15
+#include "CNPC_VHunter.h"
+
+struct CUnk1026dc00 {
+    char pad[0x5cec];
+    unsigned int m_5cec;
+    unsigned int sub_1026dc00(unsigned int flags);
+};
+
+void CNPC_VHunter::vfunc103()
+{
+    ((CUnk1026dc00 *)this)->sub_1026dc00(0x200d00);
+    CNPC_VHumanCombatant::vfunc103();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10388820 size=0x6
 #include "CNPC_VHunter.h"
 int CNPC_VHunter::vfunc138()
