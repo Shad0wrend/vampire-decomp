@@ -39,6 +39,17 @@ int CWeaponMelee_ZombieFists::vfunc363()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e5bf0 size=0x11
+#include "CWeaponMelee_ZombieFists.h"
+
+// TARGET: CWeaponMelee_ZombieFists::vfunc103
+void CWeaponMelee_ZombieFists::vfunc103()
+{
+	sub_100047be();
+	m_b871 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e5c20 size=0x6
 #include "CWeaponMelee_ZombieFists.h"
 int CWeaponMelee_ZombieFists::vfunc373()
