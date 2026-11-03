@@ -9619,6 +9619,7 @@
 0x1000ffe2 func   ?sub_100f9790@CUtlVectorBase@@QAEXXZ CUtlVectorBase::sub_100f9790
 0x1000ffec func   ?sub_100cd220@@YAHH@Z sub_100cd220
 0x1000fff1 func   ?vfunc103@CSoundScheme@@UAEXXZ CSoundScheme::vfunc103
+0x1000fff6 func   ?vfunc34@CItemGAstrolite@@QAEHPAVCBaseEntity@@@Z CItemGAstrolite::vfunc34
 0x1000fffb func   ?sub_10045a90@CUnknown10045a90@@QAEPAXXZ CUnknown10045a90::sub_10045a90
 0x10010000 func   ?sub_10352d70@@YAXPAXPBD@Z sub_10352d70
 0x10010005 func   ?vfunc24@CBasePlayer@@UAEXPAVCBaseEntity@@@Z CBasePlayer::vfunc24
