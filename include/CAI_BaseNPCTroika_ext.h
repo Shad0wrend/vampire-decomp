@@ -104,6 +104,8 @@
 	bool CalcNextNormalThink(float *pOut);	// "CAI_BaseNPCTroika_CalcNextNormalThink" (0x10290b60, vprof scope string 0x105d89ac): the normal-think sibling: *pOut = +0x6248 - +0x6258, +0x6258 = +0x6248, +0x6248 = max(+0x6248, curtime) + delay
 	int sub_102906c0();	// 0x102906c0: sub_10290660(the float at +0x6248)
 	bool sub_102a11d0(const Vector *pTarget);	// 0x102a11d0: melee reach test on the collision box at +0x270 (half extents doubled, z -6..6), a Ray_t from slot 192 to pTarget with mask 0x2000000; true on a hit against an entity with an AI object (+0x94) whose slot 404 is not 1
+	void sub_102b15c0();	// 0x102b15c0: condition/awareness update run by vfunc433 (GatherConditions): handled in two halves, one when sub_10269aa0(1), one on the fallback; uses the flags at +0x14b8, the timers m_f6084 / m_f60a0, m_n60a4, the bytes +0x14bb / +0x6340 and is gated by sub_102b3270
+	bool sub_102b3270(CBaseEntity *pEnt, char bFlag);	// 0x102b3270: whether pEnt is a valid target for this NPC's investigate state (+0x6338 / +0x633c): false while flags +0x14b8 have 0x4000080 or byte +0x6435, for the follow target (+0x647c) and the slot-168 entity, true for the slot-168 entity itself; then sub_102b8cd0 and the state switch
 	virtual bool vfunc317(int unused);	// slot 317 override: tells the global 0x10924a6c (slot 1), sets the task 10, then, when condition 12 holds, tells it again, sets the task 12 and answers true
 	void sub_102c2ab0(inputdata_t *pInput);	// "SetInvestigateMode" input handler: an integer 0..6 goes to +0x6338, else DevMsg
 	void sub_102c2b20(inputdata_t *pInput);	// "SetInvestigateModeCombat" input handler: an integer 0..6 goes to +0x633c, else DevMsg
