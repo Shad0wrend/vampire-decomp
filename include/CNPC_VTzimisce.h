@@ -183,6 +183,7 @@ public:
 	void sub_103be050(int a);	// stub 0x1000f556, called directly with 0
 	void sub_1029adb0(int a);	// CAI_BaseNPCTroika::vfunc448 (stub 0x100054bb), called directly
 	void vfunc491();	// slot 491 (declared as a plain member): when slot 486 holds logs "SPI_TAKE_DAMAGE" with the three convar values (like slot 488) and runs slot 487; then sub_103b9f90(1, 1.0f)
+	bool vfunc201(CBaseEntity *pEnt, int a, int *pOut, int d);	// slot 201 (plain member): CAI_BaseNPCTroika::vfunc201(pEnt, a, pOut, 0) normalized to a boolean
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	char vfunc69(void *pOther);	// as in CNPC_VHengeyokai (transplant)
 	float vfunc516();	// slot 516 (plain member): with bit 13 of the flags at +0x5d8c set the speed (slot 242) scaled by the convar at 0x1093c9fc (at least 1.0f); else by the activity at +0xfec: 5.0f for 1 / 0xfc / 0xfd, 30.0f for 0x13, 11.0f otherwise
