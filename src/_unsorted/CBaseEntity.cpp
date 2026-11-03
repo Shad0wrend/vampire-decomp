@@ -534,6 +534,19 @@ unsigned char __stdcall sub_10026f60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026f80 size=0x1c
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+
+// TARGET: CBaseEntity::vfunc166
+bool CBaseEntity::vfunc166(CBaseEntity *pEnt)
+{
+	if (pEnt && !((CEntityVSlots *)pEnt)->slot164())
+		return false;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027000 size=0x3
 // TARGET: sub_10027000
 int sub_10027000()
