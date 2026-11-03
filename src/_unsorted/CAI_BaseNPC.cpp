@@ -9,6 +9,18 @@ int CAI_BaseNPC::vfunc410(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6440 size=0x8
+struct CBaseEntityView
+{
+	void sub_100ac720(const char *context);
+};
+
+void CAI_BaseNPC::vfunc412()
+{
+	((CBaseEntityView *)this)->sub_100ac720(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a64c0 size=0x3
 void CAI_BaseNPC::vfunc416(char a0)
 {
