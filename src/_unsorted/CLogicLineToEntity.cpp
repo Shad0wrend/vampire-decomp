@@ -53,6 +53,15 @@ void CLogicLineToEntity::vfunc113()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10131c80 size=0x15
+#include "CLogicLineToEntity.h"
+
+void CLogicLineToEntity::vfunc103()
+{
+	m_flNextThink = gpGlobals->curtime + 0.01;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10131cb0 size=0x153
 #include "CLogicLineToEntity.h"
 #include "CEHandleGet.h"

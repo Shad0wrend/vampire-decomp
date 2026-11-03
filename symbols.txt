@@ -7786,6 +7786,7 @@
 0x1000d21f func   ?vfunc5@CWeaponRanged_Pistol_Anaconda@@QAEPAV1@I@Z CWeaponRanged_Pistol_Anaconda::vfunc5
 0x1000d22e func   ?sub_10046310@S10046310@@QAEPAU1@HHH@Z S10046310::sub_10046310
 0x1000d233 func   ?vfunc176@CTriggerBombSite@@QAEXPAX@Z CTriggerBombSite::vfunc176
+0x1000d238 func   ?vfunc103@CLogicLineToEntity@@UAEXXZ CLogicLineToEntity::vfunc103
 0x1000d23d func   ?sub_1013a6a0@@YAHM@Z sub_1013a6a0
 0x1000d242 func   ?vfunc34@CBaseCombatCharacter@@UAEHH@Z CBaseCombatCharacter::vfunc34
 0x1000d247 func   ?sub_102324a0@CVoiceGameMgr@@QAEDPAXH@Z CVoiceGameMgr::sub_102324a0
