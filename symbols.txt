@@ -458,6 +458,7 @@
 0x10001aff func   ?vfunc36@CMultiplayRules@@UAEXPAX@Z CMultiplayRules::vfunc36
 0x10001b04 func   ?sub_101da880@CUnknown101da880@@QAEPAXXZ CUnknown101da880::sub_101da880
 0x10001b09 func   ?sub_10383f10@@YAPAXXZ sub_10383f10
+0x10001b13 func   ?sub_10137730@@YAXMPAM0@Z sub_10137730
 0x10001b18 func   ?vfunc82@CItemGKeyring@@UAEPAUdatamap_t@@XZ CItemGKeyring::vfunc82
 0x10001b1d func   ?sub_100d1ff0@@YAXHPBDI@Z sub_100d1ff0
 0x10001b22 func   ?vfunc438@CNPC_VBach@@UAEHXZ CNPC_VBach::vfunc438

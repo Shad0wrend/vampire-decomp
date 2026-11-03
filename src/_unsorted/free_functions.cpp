@@ -62171,6 +62171,93 @@ float __cdecl sub_101376c0(float *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10137730 size=0x13b
+extern int g_1046a470;
+extern int g_1046a450;
+extern int g_1046a430;
+extern int g_1046a4d0;
+extern int g_1046a4c0;
+extern int g_1046a4b0;
+extern int g_1046a4a0;
+extern int g_1046a4e8;
+
+void sub_10137730(float x, float *pSin, float *pCos)
+{
+    int t4, t8, t12;
+    __asm {
+        movss xmm0, dword ptr [esp + 0x14]
+        movss dword ptr [t12], xmm0
+        movss xmm1, dword ptr [g_1046a470]
+        mov eax, dword ptr [t12]
+        mulss xmm0, dword ptr [g_1046a450]
+        andps xmm0, xmm1
+        and eax, 0x80000000
+        cvttss2si edx, xmm0
+        mov ecx, edx
+        mov dword ptr [t12], esi
+        mov esi, edx
+        add edx, 1
+        shl ecx, 0x1e
+        shl edx, 0x1e
+        movss xmm4, dword ptr [g_1046a430]
+        cvtsi2ss xmm3, esi
+        mov dword ptr [t8], eax
+        and esi, 1
+        subss xmm0, xmm3
+        movss xmm3, dword ptr [esi*4 + g_1046a4e8]
+        minss xmm0, xmm4
+        subss xmm4, xmm0
+        movss xmm6, xmm4
+        andps xmm4, xmm3
+        and ecx, 0x80000000
+        movss xmm2, xmm3
+        andnps xmm3, xmm0
+        and edx, 0x80000000
+        movss xmm7, dword ptr [t8]
+        andps xmm0, xmm2
+        mov dword ptr [t8], ecx
+        mov dword ptr [t4], edx
+        orps xmm4, xmm3
+        mov eax, dword ptr [esp + 0x18]
+        mov edx, dword ptr [esp + 0x1c]
+        andnps xmm2, xmm6
+        orps xmm0, xmm2
+        movss xmm2, dword ptr [t8]
+        movss xmm1, xmm0
+        movss xmm5, xmm4
+        xorps xmm7, xmm2
+        movss xmm3, dword ptr [g_1046a4d0]
+        mulss xmm0, xmm0
+        mulss xmm4, xmm4
+        movss xmm2, xmm0
+        movss xmm6, xmm4
+        orps xmm1, xmm7
+        movss xmm7, dword ptr [g_1046a4c0]
+        mulss xmm0, xmm3
+        mulss xmm4, xmm3
+        movss xmm3, dword ptr [g_1046a4b0]
+        addss xmm0, xmm7
+        addss xmm4, xmm7
+        movss xmm7, dword ptr [g_1046a4a0]
+        mulss xmm0, xmm2
+        mulss xmm4, xmm6
+        addss xmm0, xmm3
+        addss xmm4, xmm3
+        movss xmm3, dword ptr [t4]
+        mulss xmm0, xmm2
+        mulss xmm4, xmm6
+        orps xmm5, xmm3
+        mov esi, dword ptr [t12]
+        addss xmm0, xmm7
+        addss xmm4, xmm7
+        mulss xmm0, xmm1
+        mulss xmm4, xmm5
+        movss dword ptr [eax], xmm0
+        movss dword ptr [edx], xmm4
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10137c30 size=0x28
 #include <math.h>
 extern float g_1070c8ac[];
