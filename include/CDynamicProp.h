@@ -20,6 +20,8 @@ public:
 	void sub_10190750();	// the animation think: with a sequence set (+0x7d8 not negative) applies it, fires the output at +0x77c, removes flag 0x40000, sets the next think function and the next think time (curtime + 0.1)
 	void sub_10090950();	// CBaseAnimating member (stub 0x100117b1), called directly
 	void sub_100963d0();	// CBaseAnimating member (stub 0x100024b9), called directly
+	int sub_1008dc40(int a, int b);	// CBaseAnimating member (stub 0x100125c1): SelectWeightedSequence
+	void sub_10190850();	// the animation think: with the random-animate flag and the next anim time reached picks a sequence and re-randomises the next anim time; else applies the pending sequence; StudioFrameAdvance(0); then fires the outputs of the finished / looping states and sets the next think
 	int sub_1008f7b0(const char *pszName);	// CBaseAnimating::LookupSequence (stub 0x1000e057), called directly
 	void sub_1018f3e0();	// CBreakableProp::vfunc113 (stub 0x10009395), the base Spawn this slot overrides
 	void sub_100b3640(int flags);	// stub 0x1001457e: removes flags
@@ -27,7 +29,10 @@ public:
 
 	char m_pad0004[0x17c - 4];
 	float m_flNextThink17c;	// 0x17c
-	char m_pad0180[0x6f0 - 0x180];
+	char m_pad0180[0x65c - 0x180];
+	char m_bSequenceFinished;	// 0x65c
+	char m_bSequenceLoops;	// 0x65d
+	char m_pad065e[0x6f0 - 0x65e];
 	int m_nSequence;	// 0x6f0
 	char m_pad06f4[4];
 	float m_flCycle;	// 0x6f8

@@ -113,7 +113,7 @@ public:
 	virtual void slot243(int a, int b);	// door: starts the open / close movement
 	virtual void slot244(int a);	// door: starts the toggle movement
 	EVS(245) EVS(246) EVS(247) EVS(248) EVS(249)
-	EVS(250)
+	virtual float slot250(float flInterval);	// animating: StudioFrameAdvance
 	virtual char slot251();	// NPC: a boolean answer in al
 	EVS(252) EVS(253) EVS(254) EVS(255) virtual void slot256(int bone, float *pMatrix);	// animating: the bone's 3x4 matrix
 	EVS(257) EVS(258)
