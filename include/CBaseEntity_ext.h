@@ -89,6 +89,7 @@
 #ifndef CBASEENTITY_V62_VIRTUAL
 	void vfunc62(const float *pOrigin);	// slot 62 "CBaseEntity::SetLocalOrigin" (plain-member overload; the slot itself is declared above without arguments)
 #endif
+	void vfunc65(Vector vecAngles);	// slot 65 "CBaseEntity::SetLocalAngles" (plain-member overload taking the angles by value, as the game's callers pass them)
 	void sub_1042b6d0(int index);	// unknown owner class (no callers): SetMoveType(11, 0) via slot 93, SetAimEntByIndex(index), then slot 62 with the zero vector g_1070d1b0: scope trace (entity name), when the vector differs from the one at +0x41c marks the entity and its collision property dirty (sub_100b5340(0x10800, 0), sub_100b52a0()), stores it, sets the byte at +0x1b1
 	void vfunc42(void *pArg);	// stub 0x10010e60 (jmp 0x100a5030): slot 42 called directly with one stack argument; the slot itself is declared above without arguments
 	void sub_1009b060(const Vector &vecExtents);	// "CBaseEntity::SetAbsoluteAttackExtents" (stub 0x10001a50): scope trace (entity name), the attack extents (slot 15) set to the given extents minus half the size of the collision bounds (slots 2 / 1 of the property at +0x270)
