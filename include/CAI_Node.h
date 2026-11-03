@@ -28,4 +28,7 @@ public:
 	void sub_102fb0d0(float *pOut, int hull);	// the node position written for one hull (called by sub_102fa170 with (&local, hull)); this in ecx, ret 8; the function at 0x102fb0d0 is still unnamed
 	void sub_102fac00();	// stub 0x10014ac9: second pass over every node of the graph (CAI_NodeGraph::sub_102f4e00)
 	void sub_102fb4e0();	// stub 0x1000e60b: last pass over every node of the graph (CAI_NodeGraph::sub_102f4e00)
+	void sub_102fa630();	// third pass over one node (called by sub_102fac00 and CAI_NodeGraph::sub_102f4e00): traces between the node and its neighbours
 };
+
+extern int g_106c994c;	// 0x106c994c: counter bumped whenever a node index fails its bounds check (read as a null node)
