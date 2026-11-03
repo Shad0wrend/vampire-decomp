@@ -13425,6 +13425,7 @@
 0x1001555a func   ?sub_1042f130@@YGHH@Z sub_1042f130
 0x1001555f func   ?vfunc71@CPropRadio@@UAEXXZ CPropRadio::vfunc71
 0x10015564 func   ?sub_1025dca0@CUnknown1025ddd0@@QAE_NPAVCBaseEntity@@D@Z CUnknown1025ddd0::sub_1025dca0
+0x1001556e func   ?sub_103ee8f0@CWeaponThrown_Grenade_Frag@@QAEDXZ CWeaponThrown_Grenade_Frag::sub_103ee8f0
 0x10015573 func   ?vfunc80@CItemGWatchNormal@@QAEHXZ CItemGWatchNormal::vfunc80
 0x10015578 func   ?sub_1021b030@CPropHacking@@QAEXXZ CPropHacking::sub_1021b030
 0x1001557d func   ?sub_102a9c60@CUnknown102a9c60@@QAEHXZ CUnknown102a9c60::sub_102a9c60

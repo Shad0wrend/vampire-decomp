@@ -183446,6 +183446,38 @@ void CWeaponThrown_Grenade_Frag::sub_103ee870()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ee8f0 size=0x5f
+#include "CWeaponThrown_Grenade_Frag.h"
+#include "CBaseCombatCharacter.h"
+
+struct CGrenadeOwnerView { char pad[0xa8]; CBaseCombatCharacter *m_pChar; };
+struct CGrenadeRollView { char pad[0x10c]; int m_nAmmoIndex; };
+
+// TARGET: CWeaponThrown_Grenade_Frag::sub_103ee8f0
+char CWeaponThrown_Grenade_Frag::sub_103ee8f0()
+{
+	CGrenadeOwnerView *pOwner = (CGrenadeOwnerView *)sub_102521f0();
+	CBaseCombatCharacter *pChar;
+	char bReady;
+	if (!pOwner)
+		goto fail;
+	pChar = pOwner->m_pChar;
+	if (!pChar)
+		goto fail;
+	if (m_nState920)
+		return false;
+	bReady = sub_10252410(0);
+	if (!bReady)
+		return bReady;
+	{
+		CGrenadeRollView *pRoll = (CGrenadeRollView *)sub_102517e0();
+		return pChar->sub_103346c0(m_nAmmoType744[pRoll->m_nAmmoIndex]) > 0;
+	}
+fail:
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103eec60 size=0xd
 #include "CUnknown103eec60.h"
 void CUnknown103eec60::sub_103eec60(char value)
