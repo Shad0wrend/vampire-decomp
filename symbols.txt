@@ -11494,6 +11494,7 @@
 0x100130c5 func   ?vfunc362@CWeaponMelee_SeveredArm@@QAEHXZ CWeaponMelee_SeveredArm::vfunc362
 0x100130ca func   ?sub_102db420@CUnknown102db420@@QAEXH@Z CUnknown102db420::sub_102db420
 0x100130cf func   ?vfunc378@CNPC_VHengeyokai@@UAE_NHH@Z CNPC_VHengeyokai::vfunc378
+0x100130d4 func   ?sub_10226240@CPropDoorknobElectronic@@QAEEXZ CPropDoorknobElectronic::sub_10226240
 0x100130de func   ?sub_101d59f0@CClanDocLoader@@QAEXXZ CClanDocLoader::sub_101d59f0
 0x100130e3 func   ?sub_103e8210@@YAHXZ sub_103e8210
 0x100130e8 func   ?vfunc5@CNPC_VVentrue@@QAEPAV1@I@Z CNPC_VVentrue::vfunc5
