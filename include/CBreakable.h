@@ -14,6 +14,7 @@ public:
 	int vfunc154(int a, int b);	// slot 154: 0x34 for material 7, 0x2c + RandomInt(0, 2) for material 0 (the random stream, slot 2), else CBaseEntity::vfunc154 (sub_1000b9e2) with the same arguments
 	int sub_1000b9e2(int a, int b);	// CBaseEntity::vfunc154 (stub 0x1000b9e2), tail-called by vfunc154
 	bool sub_1010efc0();	// stub 0x10012e1d: the dword at +0x454 is not 7
+	void sub_1010d990(class CBaseEntity *pOther);	// "CBreakable::Touch": the touch function set by Spawn
 	void sub_1010ddc0(void *pEnt);	// scope-less breaker update (called when the dword at +0x454 is not 7): sets the angles of this entity to (pitch, the float at +0x450, roll), computes the forward vector of the angles into the global vector at 0x1070ba40 (AngleVectors), stores the handle of pEnt (-1 for null) at +0x458 and calls slot 241
 	void sub_1010dcf0(inputdata_t *pInput);	// "CBreakable::InputSetHealth": the integer value of the input (0 for other types) becomes the health at +0x210, is set into the OnHealthChanged output at +0x484 which is fired (activator, this); a health of 0 or less breaks it (sub_1010ddc0 with the activator)
 	void sub_1010db90(inputdata_t *pInput);	// "CBreakable::InputAddHealth": like InputSetHealth, but the integer value of the input is added to the health
