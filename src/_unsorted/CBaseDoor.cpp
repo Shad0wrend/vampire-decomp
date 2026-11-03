@@ -84,6 +84,18 @@ int CBaseDoor::vfunc35(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ef030 size=0x17
+#include "CBaseDoor.h"
+
+void *CBaseDoor::vfunc38(int a)
+{
+	CBaseEntity *pFound = sub_10008cba(a);
+	if (!pFound)
+		pFound = this;
+	return pFound;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ef060 size=0x18b
 #include "CBaseDoor.h"
 
