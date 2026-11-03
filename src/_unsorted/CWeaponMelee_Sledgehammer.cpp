@@ -39,6 +39,17 @@ int CWeaponMelee_Sledgehammer::vfunc363()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e7010 size=0x11
+#include "CWeaponMelee_Sledgehammer.h"
+
+// TARGET: CWeaponMelee_Sledgehammer::vfunc103
+void CWeaponMelee_Sledgehammer::vfunc103()
+{
+	sub_100047be();
+	m_b871 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecdb0 size=0x1e
 #include "CWeaponMelee_Sledgehammer.h"
 

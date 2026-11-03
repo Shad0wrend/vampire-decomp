@@ -12163,6 +12163,7 @@
 0x10013fd4 func   ?vfunc241@CFilterFeat@@UAE_NPAVCBaseEntity@@@Z CFilterFeat::vfunc241
 0x10013fd9 func   ?sub_101cfea0@@YAXPAUCGameTrace@@HH@Z sub_101cfea0
 0x10013fe3 func   ?vfunc0@CTEBSPDecal@@UAEPAUServerClass@@XZ CTEBSPDecal::vfunc0
+0x10013fe8 func   ?vfunc103@CWeaponMelee_Sledgehammer@@QAEXXZ CWeaponMelee_Sledgehammer::vfunc103
 0x10013fed func   ?sub_101e0df0@CUnknown101d5bd0@@QAEXXZ CUnknown101d5bd0::sub_101e0df0
 0x10013ff2 func   ?sub_100e1680@CDialog@@QAEPADHPBDD@Z CDialog::sub_100e1680
 0x10013ff7 func   ?vfunc5@CSoundSchemeManager@@UAEXXZ CSoundSchemeManager::vfunc5
