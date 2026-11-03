@@ -441,7 +441,7 @@ public:
 	virtual void vfunc550();
 	virtual void vfunc551();
 	virtual void vfunc552();
-	virtual int vfunc553(int, int);
+	virtual int vfunc553(float, float);
 	virtual int vfunc554(float, float);
 	virtual void vfunc555();
 	virtual void vfunc556();
