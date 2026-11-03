@@ -10874,6 +10874,7 @@
 0x10011ba3 func   ?vfunc82@CSoundEnt@@UAEPAUdatamap_t@@XZ CSoundEnt::vfunc82
 0x10011ba8 func   ?sub_101391c0@@YAIPAM@Z sub_101391c0
 0x10011bad func   ?vfunc80@CWeaponMelee_ZombieFists@@QAEHXZ CWeaponMelee_ZombieFists::vfunc80
+0x10011bb2 func   ?sub_103b8fa0@Helper@@QAEXXZ Helper::sub_103b8fa0
 0x10011bb7 func   ?sub_1006e890@CUnknown1006e890@@QAE_NXZ CUnknown1006e890::sub_1006e890
 0x10011bbc func   ?sub_10032b70@UtlMem@@QAEXXZ UtlMem::sub_10032b70
 0x10011bc1 func   ?sub_10081e50@@YIXPAUCSlots@@HH@Z sub_10081e50

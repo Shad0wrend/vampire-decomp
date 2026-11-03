@@ -129,6 +129,33 @@ int CNPC_VTzimisce::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b8fa0 size=0x54
+#include "engineiface.h"
+
+extern const char *g_106530fc[6];
+extern const char *g_10653114[3];
+
+void sub_101d0ec0(const char *name);
+void __fastcall sub_10298ad0(void *self);
+
+struct Helper
+{
+	void sub_103b8fa0();
+};
+
+// TARGET: Helper::sub_103b8fa0
+void Helper::sub_103b8fa0()
+{
+	unsigned int i;
+	for (i = 0; i < 6; i++)
+		enginesound->vfunc0(g_106530fc[i], 0);
+	for (i = 0; i < 3; i++)
+		enginesound->vfunc0(g_10653114[i], 0);
+	sub_101d0ec0("item_w_tzimisce_melee");
+	sub_10298ad0(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b9020 size=0x3
 #include "CNPC_VTzimisce.h"
 bool CNPC_VTzimisce::vfunc70()
