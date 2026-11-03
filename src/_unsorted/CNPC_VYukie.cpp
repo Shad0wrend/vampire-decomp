@@ -117,6 +117,17 @@ int CNPC_VYukie::vfunc438()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dd780 size=0xf
+#include "CNPC_VYukie.h"
+#include "CNPC_VHumanCombatant.h"
+
+int CNPC_VYukie::vfunc461()
+{
+	*(int *)((char *)this + 0x1b38) = 0x2a;
+	return ((CNPC_VHumanCombatant *)this)->vfunc461();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dd7a0 size=0xd
 #include "CNPC_VYukie.h"
 

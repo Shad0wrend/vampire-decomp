@@ -8701,6 +8701,7 @@
 0x1000ea48 func   ?vfunc580@CNPC_VManBat@@QAEHXZ CNPC_VManBat::vfunc580
 0x1000ea4d func   ??9?$CHandle@VCBaseEntity@@@@QBE_NPAVCBaseEntity@@@Z ??9?$CHandle@VCBaseEntity@@@@QBE_NPAVCBaseEntity@@@Z
 0x1000ea61 func   ?vfunc31@CGameRules@@UAE_NHH@Z CGameRules::vfunc31
+0x1000ea6b func   ?vfunc461@CNPC_VYukie@@QAEHXZ CNPC_VYukie::vfunc461
 0x1000ea70 func   ?sub_10210180@CUnit10210250@@QAE_NPAVCEntityVSlots@@0@Z CUnit10210250::sub_10210180
 0x1000ea75 func   ?sub_102304e0@CUnknown102304e0@@QAEHHPAX@Z CUnknown102304e0::sub_102304e0
 0x1000ea7a func   ?sub_1028cd10@@YAPAXXZ sub_1028cd10
