@@ -2564,6 +2564,7 @@
 0x10004ebc func   ?sub_10123c70@CGameMovementUnit@@QAEXXZ CGameMovementUnit::sub_10123c70
 0x10004ec1 func   ?sub_1008dd30@CBaseAnimating@@QAEHHH@Z CBaseAnimating::sub_1008dd30
 0x10004ec6 func   ?vfunc69@CNPC_VWerewolf@@QAEDPAX@Z CNPC_VWerewolf::vfunc69
+0x10004ecb func   ?vfunc8@CRestore@@UAEXXZ CRestore::vfunc8
 0x10004ed0 func   ?sub_1023a250@CUnknown1023a250@@QAEHXZ CUnknown1023a250::sub_1023a250
 0x10004ed5 func   ?sub_104273f0@S104273f0@@QAEXH@Z S104273f0::sub_104273f0
 0x10004eda func   ?sub_10178170@CBasePlayer@@QAE_NXZ CBasePlayer::sub_10178170

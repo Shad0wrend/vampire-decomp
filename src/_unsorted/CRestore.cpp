@@ -250,6 +250,23 @@ void CRestore::vfunc5()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a1b00 size=0x42
+#include "utlrbtree.h"
+#include "CRestore.h"
+#include "utlvector.h"
+
+struct CRestoreSlot1 { virtual void a(); virtual void vfunc1(int v); };
+
+// TARGET: CRestore::vfunc8
+void CRestore::vfunc8()
+{
+	const CUtlVector<int> *pVec = (const CUtlVector<int> *)&m_vec;
+	int v = pVec->Element(pVec->Count() - 1);
+	((CUtlVector<int> *)&m_vec)->Remove(pVec->Count() - 1);
+	((CRestoreSlot1 *)this)->vfunc1(v);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a1e30 size=0x30
 #include "CRestore.h"
 void CRestore::vfunc9(unsigned short *pValue)
