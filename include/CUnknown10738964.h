@@ -10,3 +10,5 @@ public:
 	char m_pad0004[0x28];
 	int m_n2c;
 };
+
+extern CUnknown10738964 *g_10738964;	// the pointer at 0x10738964
