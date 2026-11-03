@@ -1346,6 +1346,7 @@
 0x10003189 func   ?sub_102f1d90@@YIMPAVCAI_Navigator@@@Z sub_102f1d90
 0x1000318e func   ?vfunc5@CAutoGameSystem@@UAEXXZ CAutoGameSystem::vfunc5
 0x10003193 func   ??0CDebugSaveRestoreOps@@QAE@XZ CDebugSaveRestoreOps::CDebugSaveRestoreOps
+0x1000319d func   ?vfunc0@CTraceFilterNoOwnerTest@@UAE_NPAXH@Z CTraceFilterNoOwnerTest::vfunc0
 0x100031a7 func   ?sub_1009c390@CBaseEntity@@QAEXHPBDPBHH@Z CBaseEntity::sub_1009c390
 0x100031ac func   ?sub_102f05b0@CUnknown102f05b0@@QAEHXZ CUnknown102f05b0::sub_102f05b0
 0x100031b1 func   ?vfunc2@CTEDust@@QAEPAV1@I@Z CTEDust::vfunc2
