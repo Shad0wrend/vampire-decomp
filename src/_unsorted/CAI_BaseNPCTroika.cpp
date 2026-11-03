@@ -1685,6 +1685,22 @@ void CUnknown1029f890::sub_1029f890(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029f8d0 size=0xe
+#include "CAI_BaseNPCTroika.h"
+
+struct CAI_BaseNPCTroikaView6028
+{
+	char m_pad[0x6028];
+	void sub_1028b160();
+};
+
+void CAI_BaseNPCTroika::vfunc24(int unused)
+{
+	CAI_BaseNPCTroikaView6028 *p = (CAI_BaseNPCTroikaView6028 *)((char *)this + 0x6028);
+	p->sub_1028b160();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029f940 size=0xc1
 #include "CAI_BaseNPCTroika.h"
 

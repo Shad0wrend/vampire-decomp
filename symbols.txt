@@ -3211,6 +3211,7 @@
 0x10006127 func   ?sub_1024e230@@YAXPAX0@Z sub_1024e230
 0x1000612c func   ?sub_101d2c70@@YAMPBVVector@@@Z sub_101d2c70
 0x10006131 func   ?vfunc3@CTEKillPlayerAttachments@@UAEXPBM0@Z CTEKillPlayerAttachments::vfunc3
+0x10006136 func   ?vfunc24@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::vfunc24
 0x1000613b func   ?sub_103498b0@CUnknown103498b0@@QAEHXZ CUnknown103498b0::sub_103498b0
 0x1000614a func   ?vfunc431@CNPC_VSheriffMan@@QAEXXZ CNPC_VSheriffMan::vfunc431
 0x10006154 func   ?sub_1014f9f0@@YG_NHH@Z sub_1014f9f0
