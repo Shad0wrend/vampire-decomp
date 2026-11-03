@@ -86,4 +86,5 @@ public:
 	CCineNPCSlot m_slots[8];	// 0x5fcc
 	void vfunc180();	// slot 180: CAI_BaseNPC::vfunc180, then sub_101a7170(this)
 	int vfunc370(int a);	// slot 370: calls slot 368 with a, returns a
+	int vfunc371(int a);	// slot 371: calls slot 369 with a, returns a
 };
