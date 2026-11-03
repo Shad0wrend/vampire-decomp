@@ -125,7 +125,7 @@ public:
 	SCENE_V(258)
 	virtual void vfunc259(int unused, void *pEvent, const char *pszTarget);	// slot 259: for the actor of the scene event (object at +0x94 of pEvent) and the entity named pszTarget: sets the actor's move type (4, 0), copies the target's slot 192 vector to +0x5db8 and its slot 219 vector to +0x5dc4 of the actor, runs the actor's sub_10280de0(0x39) and stamps curtime at +0x5cf0
 	virtual void vfunc260(int unused, void *pEvent, const char *pszSound, int a4, int a5);	// slot 260: for the actor of the scene event (pointer at +0x98 of pEvent): builds "sound/<name>.mp3" and "*<name>" sound names, makes the actor's entity of this scene's player (sub_10081890) its target, and hands "*<name>" to the actor's sub_102c0520(name, a5, byte at this+0x57f)
-	SCENE_V(261)
+	virtual void vfunc261(int unused, CSceneEventActorEnt *pActor, CBaseEntity *pEnt, int d, int e);
 	virtual void vfunc262(int b, CBaseFlex *pActor, void *pEvent);	// slot 262: primes the scene (sub_100843d0 on the scene at +0x4bc), hands (b, pEvent) to the actor's slot 286 and, when the actor move mode (+0x578) is 3, runs the actor's RepositionOnAnimationExit (sub_10090b20)
 	virtual void vfunc263(int b, CSceneEventActorEnt *pActor, CSceneEvent *pEvent);	// slot 263: the finish handler of a type 7 event
 	virtual void vfunc264(CUnknown1007ed10 *pEvent1, int unused, CSceneEvent *pEvent);	// slot 264
