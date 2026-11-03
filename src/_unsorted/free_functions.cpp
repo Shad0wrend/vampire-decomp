@@ -131878,6 +131878,20 @@ void CAI_BaseNPC::sub_10280d30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10280db0 size=0x13
+struct CTaskRecord_10280db0 {
+	char pad[0x24];
+	int m_n24;
+};
+
+// TARGET: sub_10280db0
+char __fastcall sub_10280db0(char *p)
+{
+	CTaskRecord_10280db0 *pSched = *(CTaskRecord_10280db0 **)(p + 0x5c38);
+	return *(int *)(p + 0x5c40) == pSched->m_n24;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10280e50 size=0xba
 #include "CAI_BaseNPC.h"
 #include "CUnknown102ee270.h"
