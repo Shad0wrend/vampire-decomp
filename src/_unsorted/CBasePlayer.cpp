@@ -2044,6 +2044,14 @@ void CBasePlayer::vfunc468()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101824e0 size=0xd
+// TARGET: CBasePlayer::vfunc339
+void CBasePlayer::vfunc339(int a, float b, int c)
+{
+	((CBaseCombatCharacter *)this)->CBaseCombatCharacter::vfunc339(a, b, c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10182530 size=0xd
 void sub_1033cef0(int a, float b);
 
