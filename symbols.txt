@@ -8735,6 +8735,7 @@
 0x1000e2c3 func   ?vfunc103@CCineAISchedule@@QAEXXZ CCineAISchedule::vfunc103
 0x1000e2c8 func   ?sub_1005f640@CUnknown1005f640@@QAEHXZ CUnknown1005f640::sub_1005f640
 0x1000e2cd func   ?sub_103c49b0@@YIPAXPAX@Z sub_103c49b0
+0x1000e2d2 func   ?sub_100ddc00@CCollisionProperty@@QAEXXZ CCollisionProperty::sub_100ddc00
 0x1000e2d2 func   ?sub_100ddc00@CUnk100ddc00@@QAEXXZ CUnk100ddc00::sub_100ddc00
 0x1000e2dc func   ?sub_1007a1e0@CChoreoScene1007a1e0@@QAEPAUCChoreoSceneItem1007a1e0@@PBD@Z CChoreoScene1007a1e0::sub_1007a1e0
 0x1000e2e1 func   ?sub_101d58b0@Loader@@QAEXPBD@Z Loader::sub_101d58b0
