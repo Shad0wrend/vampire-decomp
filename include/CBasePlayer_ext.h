@@ -121,3 +121,4 @@
 	char vfunc321(int unused);	// slot 321 (plain member): re-arms the random view punch timer (+0x1da8) when it is due, then punches the view by a random angle scaled by the player and punch convars (slot 169)
 	float vfunc465();	// slot 465: the constant 60.0f
 	void *vfunc198();	// slot 198: the address of the field at +0x211c
+	int vfunc200();	// slot 200 (plain member): the dword at +0x233c
