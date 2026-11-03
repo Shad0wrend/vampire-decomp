@@ -7477,6 +7477,7 @@
 0x1000ccac func   ?sub_10242390@@YAXPBMPAM@Z sub_10242390
 0x1000ccb1 func   ?sub_101e0940@CUnknown101e0940@@QAEHPBD@Z CUnknown101e0940::sub_101e0940
 0x1000ccb6 func   ?vfunc13@CGameRules@@UAEXXZ CGameRules::vfunc13
+0x1000ccbb func   ?vfunc23@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEDXZ CAI_Behavior<CAI_BaseNPC,100000>::vfunc23
 0x1000ccc0 func   ?vfunc365@CCineNPC@@QAE_NH@Z CCineNPC::vfunc365
 0x1000ccc5 func   ?vfunc438@CNPC_VChangBros@@UAEHXZ CNPC_VChangBros::vfunc438
 0x1000cccf func   ?vfunc117@CPropSwitch@@UAEHXZ CPropSwitch::vfunc117
