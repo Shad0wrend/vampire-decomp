@@ -5237,6 +5237,7 @@
 0x1000922d func   ?sub_103a4870@CNPC_VPlayerControllerFwd@@QAEXH@Z CNPC_VPlayerControllerFwd::sub_103a4870
 0x10009232 func   ?sub_10273720@@YIDPAX@Z sub_10273720
 0x1000923c func   ?sub_10349d10@CUtlMemory16@@QAEPAV1@HH@Z CUtlMemory16::sub_10349d10
+0x10009241 func   ?vfunc16@CCollisionProperty@@UAE_NXZ CCollisionProperty::vfunc16
 0x10009246 func   ?sub_100c3090@@YAXXZ sub_100c3090
 0x10009250 func   ?vfunc294@CPayphone@@UAE_NH@Z CPayphone::vfunc294
 0x1000925f func   ?sub_103d1200@CNPC_VWerewolf@@QAE_NXZ CNPC_VWerewolf::sub_103d1200

@@ -51,6 +51,19 @@ int CCollisionProperty::vfunc0()
 int CCollisionProperty::vfunc14() { return m_pOuter->m_field368; }
 // END FUNCTION
 
+// FUNCTION: 0x100dc3e0 size=0x1a
+#include "CCollisionProperty.h"
+#include "TestBit.h"
+
+// TARGET: CCollisionProperty::vfunc16
+bool CCollisionProperty::vfunc16()
+{
+	if (TestBit(m_usSolidFlags, 3) || vfunc14() == 1)
+		return false;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dc410 size=0x3
 int CCollisionProperty::vfunc13()
 {
