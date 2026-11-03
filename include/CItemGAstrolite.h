@@ -11,6 +11,8 @@ class CItemGAstrolite : public CBaseEntity
 public:
 	CItemGAstrolite *vfunc5(unsigned int flags);
 	void sub_10013a57();
+	void sub_10008c97();	// CWeaponIGeneric::vfunc103 (stub), called directly
+	void vfunc103();
 public:
 	int vfunc80();
 	int vfunc81();
