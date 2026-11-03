@@ -1,3 +1,4 @@
+	void sub_102aa640(struct CTroikaPickHolder *pTask);
 	void vfunc322(int a);	// slot 322 (plain member): sub_102bf5d0(a) and then vtable slot 600(a)
 	void sub_102bf5d0(int a);	// CAI_BaseNPCTroikaUnit::sub_102bf5d0 (stub 0x1000e52f), called directly
 	virtual void vfunc380();	// slot 380 override: CAI_BaseNPC::vfunc380, then slot 614

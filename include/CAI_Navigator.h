@@ -52,7 +52,7 @@ struct CAI_NavProvider	// owner of the records: 0x78 count, 0x7c pointer array
 	int m_nEntries;	// 0x78
 	CAI_NavEntry **m_ppEntries;	// 0x7c
 
-	void sub_102fb0d0(Vector *pOut, int a);	// stub 0x1000d99a: writes the position of the graph node (hull a) to pOut
+	Vector *sub_102fb0d0(Vector *pOut, int a);	// stub 0x1000d99a: writes the position of the graph node (hull a) to pOut
 	CAI_NavEntry *sub_102f9400(int id);	// stub 0x10012639: the record whose id (sub_100122ab of the record, owner at +4) equals id, or null
 };
 
