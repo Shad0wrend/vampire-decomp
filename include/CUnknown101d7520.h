@@ -14,7 +14,11 @@ struct CUnknown101d7520Name	// a string holder; Get() yields "" for null
 
 struct CUnknown101d7520Sub	// the object embedded at +0x18 of an entry and at +0x10 of a rule
 {
-	char m_pad00[0x14];
+	CUnknown101d7520Sub() { m_n00 = 1; m_n04 = 0; m_n10 = 0; m_nCount = 0; m_ppItems = 0; }
+	int m_n00;	// 0x00 (entry +0x18): 1 in the entry constructor
+	int m_n04;	// 0x04 (entry +0x1c)
+	char m_pad08[0x08];
+	int m_n10;	// 0x10 (entry +0x28)
 	int m_nCount;	// 0x14: elements in m_ppItems
 	CUnknown10205e60 **m_ppItems;	// 0x18: the list of dependencies this object checks
 	void sub_10206190();	// dumps the object (stub 0x1000cd1a)
@@ -41,7 +45,7 @@ struct CUnknown101d7520Rule	// one of the rules of an entry (the array at +0xc o
 struct CUnknown101d7520Entry
 {
 	int m_unk0;
-	char m_pad0004[4];
+	int m_n04;	// 0x0004
 	int m_nRules;	// 0x0008
 	CUnknown101d7520Rule **m_ppRules;	// 0x000c
 	CUnknown101d7520Name m_name;	// 0x0010
