@@ -4376,6 +4376,7 @@
 0x10007b71 func   _func_brush func_brush
 0x10007b76 func   ?vfunc82@CLogicBranch@@UAEPAUdatamap_t@@XZ CLogicBranch::vfunc82
 0x10007b7b func   ?sub_1027de00@CAI_BaseNPCTroika@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPCTroika::sub_1027de00
+0x10007b80 func   ?vfunc290@CBaseFlex@@UAEXPAUCFlexRequest@@@Z CBaseFlex::vfunc290
 0x10007b8a func   ?sub_10204ba0@@YIPAVCVStatInfo_t@@PAH@Z sub_10204ba0
 0x10007b8f func   ?sub_10248690@CKeyValuesX@@QAEXPBDPAVIKeyValuesFileView@@0@Z CKeyValuesX::sub_10248690
 0x10007b94 func   ?sub_102e27d0@CAI_Motor@@QAEMPBDM@Z CAI_Motor::sub_102e27d0

@@ -298,3 +298,25 @@ void CBaseFlex::vfunc291(CFlexRequest *pRequest)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x100b70e0 size=0x33
+#include "CBaseFlex.h"
+
+// TARGET: CBaseFlex::vfunc290
+void CBaseFlex::vfunc290(CFlexRequest *pRequest)
+{
+	if (pRequest)
+	{
+		CFlexPlayerTrack *pTrack = pRequest->m_pTrack;
+		if (pTrack)
+		{
+			CFlexPlayerSource *pSource = pRequest->m_pSource;
+			if (pSource)
+			{
+				if (pRequest->m_n0c >= 0)
+					pTrack->sub_10076280(pSource->sub_1007dfa0());
+			}
+		}
+	}
+}
+// END FUNCTION
