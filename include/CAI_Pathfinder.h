@@ -110,4 +110,13 @@ public:
 	int sub_102fcab0(CAI_PathfinderNode **ppNodes, int nNode, int nLink);	// stub 0x100114c3
 	CAI_Waypoint *sub_102fcbd0(int *pNext, int nNode);	// builds a chain of waypoints along pNext starting at nNode (ret 8)
 	CAI_Waypoint *sub_102fcd00(int *pNext, int nNode);	// the same chain with route link marking: a node joined to the previous waypoint's node by two route link nodes gets the waypoint flags 0x20 (ret 8)
+	float sub_102f1860(int moveType, const float *vecA, const float *vecB);	// the connection cost between two node positions for a move type (stub 0x1000d7c9): the distance, doubled for move types 2 and 8; this in ecx is the pathfinder
+	CAI_Waypoint *sub_102fef30(int startNode, int endNode, int *pOut);	// A* over the node providers: returns the waypoint chain from endNode back to startNode (0 without nodes or path)
 };
+
+class CBitString;
+int sub_102f3270(CBitString *pBits, const float *pDist, int n);	// the index with the lowest pDist among the bits set in pBits (-1 when none); the A* node pick
+
+// NOTE: CAI_PathfinderOuter::m_pPathfinder (+0x5d34) is really the owning NPC's CAI_Navigator
+// (CAI_BaseNPC's Owned5d34), NOT a CAI_Pathfinder. Its +0x2c is the CAI_NavProviderList used
+// as the node list by the A* family (m_nCount / m_ppItems, nodes at +0x78 / +0x7c).
