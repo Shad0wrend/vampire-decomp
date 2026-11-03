@@ -5171,6 +5171,7 @@
 0x10008f1c func   ?sub_101ffaa0@CVStatInfoList_t@@QAEHPBD@Z CVStatInfoList_t::sub_101ffaa0
 0x10008f21 func   ?vfunc103@CRopeKeyframe@@UAEXXZ CRopeKeyframe::vfunc103
 0x10008f26 func   ?vfunc2@CTEBeamSpline@@UAEPAV1@I@Z CTEBeamSpline::vfunc2
+0x10008f2b func   ?sub_1019d360@@YIDPAVCRecipientFilter@@@Z sub_1019d360
 0x10008f30 func   ?sub_100c96a0@CUnknown100c96a0@@QAEXXZ CUnknown100c96a0::sub_100c96a0
 0x10008f35 func   ?sub_100bde70@CStrParser@@QAE_NPBD@Z CStrParser::sub_100bde70
 0x10008f3a func   ?vfunc5@CLogicRelay@@QAEPAV1@I@Z CLogicRelay::vfunc5

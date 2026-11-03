@@ -148,6 +148,17 @@ char CRecipientFilter::vfunc4()
 int __fastcall sub_1019d340(CRecipientFilter *p) { return p->m_20; }
 // END FUNCTION
 
+// FUNCTION: 0x1019d360 size=0x15
+#include "CRecipientFilter.h"
+
+// TARGET: sub_1019d360
+char __fastcall sub_1019d360(CRecipientFilter *p)
+{
+	p->sub_1019cf00();
+	return *(int *)((char *)p + 0x24) == *(int *)((char *)p + 0x14);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019d390 size=0x4
 // TARGET: sub_1019d390
 char __fastcall sub_1019d390(CRecipientFilter *p) { return p->m_bInitMessage; }
