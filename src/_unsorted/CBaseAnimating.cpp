@@ -320,6 +320,85 @@ void CBaseAnimating::vfunc246()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008f120 size=0x20f
+#include "CBaseAnimating.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CUnknown101d7520.h"
+#include "globalvars.h"
+#include "Ray_t.h"
+
+float CBaseAnimating::vfunc250(float flInterval)
+{
+	ScopeTrace trace("CBaseAnimating::StudioFrameAdvance ", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+
+	char bOldFinished = *(char *)((char *)this + 0x65c);
+
+	if ( *(float *)((char *)this + 0x170) == g_104454c4 )
+	{
+		float flCurTime = gpGlobals->curtime;
+		*(float *)((char *)this + 0x174) = flCurTime;
+		*(float *)((char *)this + 0x170) = flCurTime;
+	}
+
+	if ( flInterval == 0.0 )
+	{
+		flInterval = 0.1f;
+	}
+
+	flInterval = flInterval + gpGlobals->curtime - *(float *)((char *)this + 0x174);
+
+	if ( flInterval <= 0.001 )
+		return g_104454c4;
+
+	*(float *)((char *)this + 0x170) = *(float *)((char *)this + 0x174);
+
+	float flCycleRate = sub_10091230(*(int *)((char *)this + 0x6f0));
+	*(float *)((char *)this + 0x6f8) = *(float *)((char *)this + 0x6f8) + flCycleRate * *(float *)((char *)this + 0x6f4) * flInterval;
+	*(float *)((char *)this + 0x174) = flInterval + *(float *)((char *)this + 0x174);
+
+	float flCycle = *(float *)((char *)this + 0x6f8);
+
+	if ( flCycle < 0.0 || flCycle >= 1.0 )
+	{
+		if ( *(char *)((char *)this + 0x65d) )
+		{
+			*(float *)((char *)this + 0x6f8) = flCycle - (float)(int)flCycle;
+		}
+		else
+		{
+			if ( flCycle < g_104454c4 )
+				flCycle = g_104454c4;
+			else
+				flCycle = 1.0f;
+			*(float *)((char *)this + 0x6f8) = flCycle;
+		}
+		*(char *)((char *)this + 0x65c) = 1;
+	}
+	else
+	{
+		if ( flCycle >= 0.5 )
+			*(char *)((char *)this + 0x568) = 1;
+		else
+			*(char *)((char *)this + 0x568) = 0;
+	}
+
+	*(float *)((char *)this + 0x560) = sub_10091310(*(int *)((char *)this + 0x6f0), *(int *)&flInterval);
+	*(float *)((char *)this + 0x654) = sub_10091490(*(int *)((char *)this + 0x6f0), flInterval);
+
+	if ( *(char *)((char *)this + 0x65c) && !bOldFinished )
+		sub_10091c80();
+
+	return flInterval;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008f3c0 size=0x81
 #include "CBaseAnimating.h"
 

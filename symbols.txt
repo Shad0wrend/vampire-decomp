@@ -6758,6 +6758,7 @@
 0x1000b316 func   ?vfunc1@CSafeDiscSaveRestoreOps_0@@UAEXPAPAHPAUCSafeDiscReader@@@Z CSafeDiscSaveRestoreOps_0::vfunc1
 0x1000b31b func   ?sub_101c4160@@YAXXZ sub_101c4160
 0x1000b325 func   ?sub_10066fa0@@YAHHHHH@Z sub_10066fa0
+0x1000b32a func   ?vfunc250@CBaseAnimating@@QAEMM@Z CBaseAnimating::vfunc250
 0x1000b32f func   ?vfunc516@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::vfunc516
 0x1000b339 func   ?sub_10103830@CUnk10103830@@QAEXH@Z CUnk10103830::sub_10103830
 0x1000b33e func   ?vfunc432@CNPC_VTzimisceHeadClaw@@QAEXH@Z CNPC_VTzimisceHeadClaw::vfunc432
