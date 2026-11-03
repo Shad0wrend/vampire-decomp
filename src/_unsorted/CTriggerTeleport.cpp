@@ -13,6 +13,16 @@ datamap_t * CTriggerTeleport::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c91e0 size=0x3c
+#include "CTriggerTeleport.h"
+
+// TARGET: CTriggerTeleport::CTriggerTeleport
+CTriggerTeleport::CTriggerTeleport()
+{
+	m_n59c = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c9230 size=0x4c
 #include "CTriggerTeleport.h"
 void __fastcall sub_100cd2d0(void *p);
