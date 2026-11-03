@@ -77701,6 +77701,16 @@ void CRopeKeyframe::sub_1019e5d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019e710 size=0x15
+#include "globalvars.h"
+
+// TARGET: sub_1019e710
+void __fastcall sub_1019e710(void *self)
+{
+	*(float *)((char *)self + 0x480) = gpGlobals->curtime + 1.0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019e740 size=0x6b
 #define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
