@@ -11396,6 +11396,7 @@
 0x10012a80 func   ?sub_101a8460@CCineNPC@@QAEXPAVCBaseAnimating@@@Z CCineNPC::sub_101a8460
 0x10012a85 func   ?vfunc0@CTEDynamicLight@@UAEHXZ CTEDynamicLight::vfunc0
 0x10012a8f func   ?sub_10078fd0@CUtlMemory12@@QAEXH@Z CUtlMemory12::sub_10078fd0
+0x10012a94 func   ?vfunc144@CNPC_VTzimisceHeadClaw@@QAEXH@Z CNPC_VTzimisceHeadClaw::vfunc144
 0x10012a9e func   ?vfunc569@CAI_BaseNPCTroika@@UAEHPAVCBaseEntity@@@Z CAI_BaseNPCTroika::vfunc569
 0x10012aa8 func   ?sub_102b2570@CAI_BaseNPCTroika@@QAEXXZ CAI_BaseNPCTroika::sub_102b2570
 0x10012aad func   ?sub_1039b1d0@@YAEXZ sub_1039b1d0

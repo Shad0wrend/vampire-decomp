@@ -491,6 +491,17 @@ void CNPC_VTzimisceHeadClaw::vfunc432(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c1d50 size=0x1a
+#include "CNPC_VTzimisceHeadClaw.h"
+
+// TARGET: CNPC_VTzimisceHeadClaw::vfunc144
+void CNPC_VTzimisceHeadClaw::vfunc144(int a)
+{
+	sub_103c2230(1);
+	((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc144(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c24d0 size=0x120
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
