@@ -9735,6 +9735,7 @@
 0x1000fbe1 func   ?sub_102563f0@CBaseCombatWeapon@@QAE?AUCWeaponRollValue@@PAVCUnknown101d8a70@@H@Z CBaseCombatWeapon::sub_102563f0
 0x1000fbe6 func   ?sub_10211550@CTriggerBombSite@@QAEXUCBombState@@0@Z CTriggerBombSite::sub_10211550
 0x1000fbeb func   ?vfunc0@CTraceFilterWorldOnly@@UAE_NPAXH@Z CTraceFilterWorldOnly::vfunc0
+0x1000fbfa func   ?sub_102b52a0@CAI_BaseNPCTroika@@QAEXDD@Z CAI_BaseNPCTroika::sub_102b52a0
 0x1000fbff func   ?vfunc267@CBaseViewModel@@QAEPAVCBaseEntity@@XZ CBaseViewModel::vfunc267
 0x1000fc04 func   ?sub_10130740@@YGHH@Z sub_10130740
 0x1000fc09 func   ?sub_100d1210@@YAHH@Z sub_100d1210

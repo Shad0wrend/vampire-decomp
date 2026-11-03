@@ -636,6 +636,30 @@ void CAI_BaseNPCTroika::vfunc598(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b52a0 size=0x87
+#include "CAI_BaseNPCTroika.h"
+#include "CUnknown102dfc10.h"
+
+const char *sub_100067f3(const char *pszFormat, const char *pszFile, int nLine);
+
+void CAI_BaseNPCTroika::sub_102b52a0(char bClearTarget, char bDead)
+{
+	sub_10279a50(0);
+	sub_10279b70(0);
+	m_flags5d8c &= 0xf7fc7fff;
+	if (bClearTarget)
+		sub_1000dc38();
+	const char *pszMessage = sub_100067f3("%s(%d) :", "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp", 0x5626);
+	((CUnknown102dfc10 *)vfunc541())->sub_102dfc10((int)pszMessage);
+	if (bDead)
+	{
+		m_pszFile1b3c = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+		m_nLine1b40 = 0x562a;
+		m_n5cc4 = 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b6fe0 size=0xe1
 #include "CBaseEntity.h"
 #include "CAI_BaseNPCTroika.h"
