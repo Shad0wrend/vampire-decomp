@@ -148,3 +148,32 @@ void CAI_StandoffGoal::vfunc103()
 	*(float *)((char *)this + 0x17c) = gpGlobals->curtime + 0.01;
 }
 // END FUNCTION
+
+// FUNCTION: 0x102cdc50 size=0x3c
+#include "CAI_StandoffGoal.h"
+#include "inputdata_t.h"
+
+#define SV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct CStandoffVtbl
+{
+	SV10(a0) SV10(a1) SV10(a2) SV10(a3) SV10(a4) SV10(a5) SV10(a6) SV10(a7) SV10(a8) SV10(a9)
+	SV10(b0) SV10(b1) SV10(b2) SV10(b3) SV10(b4) SV10(b5) SV10(b6) SV10(b7) SV10(b8) SV10(b9)
+	SV10(c0) SV10(c1) SV10(c2) SV10(c3)
+	virtual void v240(); virtual void v241(); virtual void v242();
+	virtual void vfunc243(void *p);
+};
+
+// TARGET: CAI_StandoffGoal::vfunc180
+void CAI_StandoffGoal::vfunc180()
+{
+	if (m_flags480 & 1)
+	{
+		inputdata_t data;
+		data.value.iValue = 0;
+		data.value.fieldType = 0;
+		data.value.eVal = 0xffffffff;
+		((CStandoffVtbl *)this)->vfunc243(&data);
+	}
+	CBaseEntity::vfunc180();
+}
+// END FUNCTION

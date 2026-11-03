@@ -7712,6 +7712,7 @@
 0x1000cb9e func   ?sub_103f7330@@YAHXZ sub_103f7330
 0x1000cbad func   ?vfunc138@CNPC_VRat@@QAEHXZ CNPC_VRat::vfunc138
 0x1000cbb2 func   ?sub_10325cb0@CBaseCombatCharacter@@QAEXPAXH@Z CBaseCombatCharacter::sub_10325cb0
+0x1000cbb7 func   ?vfunc180@CAI_StandoffGoal@@QAEXXZ CAI_StandoffGoal::vfunc180
 0x1000cbbc func   ?sub_1018ec20@@YAXPAVCBaseEntity@@M@Z sub_1018ec20
 0x1000cbc1 func   ?sub_103090d0@@YAMM@Z sub_103090d0
 0x1000cbc6 func   ?vfunc433@CNPC_VBach@@UAEXXZ CNPC_VBach::vfunc433
