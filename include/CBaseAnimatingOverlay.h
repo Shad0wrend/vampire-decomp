@@ -69,6 +69,7 @@ public:
 	int vfunc81();
 	datamap_t * vfunc82();
 	int vfunc267();
+	void vfunc258(float flInterval, void *pListener);	// slot 258 override (declared as a plain member like vfunc250): CBaseAnimating::vfunc258, then the four animation layers at +0x734 (stride 0x30) advance their anim events
 };
 
 // Callee of vfunc250: advances a layer's cycle and fade weight. The game passes the address of the layer minus 4 as this.
