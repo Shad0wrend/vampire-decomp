@@ -518,6 +518,14 @@ char * CBaseCombatWeapon::vfunc273()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10251e00 size=0xb
+// TARGET: CBaseCombatWeapon::sub_10251e00
+int CBaseCombatWeapon::sub_10251e00()
+{
+	return (int)sub_102517b0() + 0x2388;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10251e20 size=0xb
 namespace lifted {
 int sub_10010ea6();
