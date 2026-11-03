@@ -13,6 +13,10 @@ struct CFlameRecord	// 0x1c byte element of the burn list
 void sub_10144290(CFlameRecord *pRec, const Vector &vecColor, const Vector &vecSize, int a, int b, int c, int d, float flTime);	// stub 0x1000513c
 void sub_10143710(CFlameRecord *pRec, const char *pszText, int a, float flTime);	// stub 0x10011e5a
 
+// used by vfunc134
+int sub_101cca80(CBaseEntity **pList, int nMax, const Vector *pMins, const Vector *pMaxs, int a, int b);	// cdecl 6 args: fills pList (up to nMax) with the entities inside the box and returns the count
+int sub_103e1740();	// free function, returns int (re-arms the next think when positive) — declared by vfunc134
+
 class CFlameCluster : public CBaseEntity
 {
 public:
