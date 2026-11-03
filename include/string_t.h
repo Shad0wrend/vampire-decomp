@@ -7,5 +7,6 @@ struct string_t
 {
 	const char *pszValue;
 	string_t() {}
+	string_t(const char *p) { pszValue = p; }
 	string_t(const string_t &o) { pszValue = o.pszValue; }
 };
