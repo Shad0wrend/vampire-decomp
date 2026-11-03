@@ -207,7 +207,16 @@ public:
 	void sub_100a8990();	// CBaseEntity::vfunc78 (stub 0x1000468d), called directly by vfunc78	// as in CPhysForce (transplant)
 	void sub_100a8710();	// CBaseEntity::vfunc77 (stub 0x100011cc), called directly
 
-	char m_pad0004[0x4f8];
+	char m_pad0004[0x450];
+	float m_f454;	// +0x454: cover angle (degrees; halved for some hint types)
+	float m_f458;	// +0x458: cosine of the cover angle
+	float m_f45c;	// +0x45c: cover distance / radius
+	float m_f460;	// +0x460: another cover distance bound (FLT_MAX when unset)
+	float m_f464;	// +0x464: distance scalar (the hint search multiplies the distance by it; 3.0f when unset)
+	char m_pad468[0x470 - 0x468];
+	int m_n470;	// +0x470: cover slot count (1..32 -> 1 << (n-1), else -1)
+	int m_n474;	// +0x474: cover move-type mask (1 / 4 / 8 / 0x10)
+	char m_pad478[0x4fc - 0x478];
 	CAI_HintItem m_items4fc[8];
 	CAI_HintItem m_item5bc;
 	string_t m_iszUserData;	// 0x05d4
