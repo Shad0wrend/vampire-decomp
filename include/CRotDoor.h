@@ -178,7 +178,7 @@ public:
 	virtual void vfunc243(char bChain, char bOpenAway);	// slot 243 "CRotDoor::DoorGoUp": with bChain and a linked door (handle +0x630) the linked door goes too, taking over this door's activator for the duration; then state 2, the closed think sub_100f0860, a turn to the angles at +0x52c at the door's speed (or, with bOpenAway and a live activator, away from it) and the output at +0x60c with the activator
 	virtual void vfunc244(char bChain);	// slot 244 \"CRotDoor::DoorGoDown\": with bChain and a linked door (handle +0x630) the linked door goes too, taking over this door's activator for the duration; then state 3, the arrival think sub_100f11b0, a turn to the angles at +0x520 at the door's speed, and the output at +0x5f4 with the activator
 	virtual void vfunc245();
-	virtual void vfunc246();
+	virtual void vfunc246(CBaseEntity *pNPC, CNPCOpenData *pOut, char bFlag);	// "CRotDoor::GetNPCOpenData" (scope trace string 0x105654fc)
 	virtual void vfunc247_slot();
 	virtual void vfunc248_slot();
 	virtual int vfunc249();
