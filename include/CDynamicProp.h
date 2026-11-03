@@ -20,6 +20,8 @@ public:
 	void sub_10190750();	// the animation think: with a sequence set (+0x7d8 not negative) applies it, fires the output at +0x77c, removes flag 0x40000, sets the next think function and the next think time (curtime + 0.1)
 	void sub_10090950();	// CBaseAnimating member (stub 0x100117b1), called directly
 	void sub_100963d0();	// CBaseAnimating member (stub 0x100024b9), called directly
+	int sub_1008f7b0(const char *pszName);	// CBaseAnimating::LookupSequence (stub 0x1000e057), called directly
+	void sub_1018f3e0();	// CBreakableProp::vfunc113 (stub 0x10009395), the base Spawn this slot overrides
 	void sub_100b3640(int flags);	// stub 0x1001457e: removes flags
 	int sub_100ac4e0(void *pfnThink, int a, int b);	// CBaseEntity::ThinkSet (stub 0x10007fe5)
 
@@ -41,8 +43,8 @@ public:
 	float m_flNextAnimTime;	// 0x7c8
 	float m_flAnimDelayMin;	// 0x7cc
 	float m_flAnimDelayMax;	// 0x7d0
-	char m_pad07d4[0x7d8 - 0x7d4];
-	int m_n07d8;	// 0x7d8
+	const char *m_pszSequenceName;	// 0x7d4: the sequence to play (the empty string when null)
+	int m_n07d8;	// 0x7d8: the looked-up sequence
 public:
 	virtual void vfunc0();
 	virtual void vfunc1();
@@ -133,5 +135,7 @@ public:
 	virtual void d98(); virtual void d99(); virtual void d100(); virtual void d101(); virtual void d102();
 	virtual void d103(); virtual void d104(); virtual void d105();
 	virtual void vfunc106(const char *pszName);
+	virtual void d107(); virtual void d108(); virtual void d109(); virtual void d110(); virtual void d111(); virtual void d112();
+	virtual void vfunc113();	// slot 113: CBreakableProp::vfunc113, then look the name at +0x7d4 up and arm the animation think
 	bool vfunc223();	// slot 223 (plain member): VPhysicsInitStatic when the solid type is set; always true
 };
