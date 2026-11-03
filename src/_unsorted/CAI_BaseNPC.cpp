@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101a6420 size=0x7
+// TARGET: CAI_BaseNPC::vfunc410
+int CAI_BaseNPC::vfunc410(int a)
+{
+	return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a64c0 size=0x3
 void CAI_BaseNPC::vfunc416(char a0)
 {
