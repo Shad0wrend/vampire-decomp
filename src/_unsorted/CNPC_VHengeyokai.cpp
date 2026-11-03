@@ -127,6 +127,27 @@ void CNPC_VHengeyokai::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037fa70 size=0x4d
+#include "CNPC_VHengeyokai.h"
+#include "globalvars.h"
+
+extern int g_109340d8;
+
+// TARGET: CNPC_VHengeyokai::vfunc420
+void CNPC_VHengeyokai::vfunc420()
+{
+	sub_1029a0b0();
+	*(int volatile *)((char *)this + 0x6680) = 0;
+	*(unsigned int volatile *)((char *)this + 0x6664) = 0xffffffff;
+	*(int volatile *)((char *)this + 0x6678) = 0;
+	*(char volatile *)((char *)this + 0x667c) = 0;
+	float t = gpGlobals->curtime + 3.0f;
+	*(char volatile *)((char *)this + 0x6694) = 0;
+	*(float volatile *)((char *)this + 0x6670) = t;
+	g_109340d8 = 0x12;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037fae0 size=0x6
 #include "CNPC_VHengeyokai.h"
 int CNPC_VHengeyokai::vfunc473()

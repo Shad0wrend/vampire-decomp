@@ -11150,6 +11150,7 @@
 0x10011eb9 func   ?sub_1012e6a0@CUnknown1012e6a0@@QAEXH@Z CUnknown1012e6a0::sub_1012e6a0
 0x10011ebe func   ?sub_1006f010@CBaseCineCam@@QAE?AVVector@@H@Z CBaseCineCam::sub_1006f010
 0x10011ec3 func   ?sub_103b2980@@YIPAXPAX@Z sub_103b2980
+0x10011ec8 func   ?vfunc420@CNPC_VHengeyokai@@QAEXXZ CNPC_VHengeyokai::vfunc420
 0x10011ecd func   ?sub_10367680@CNPC_VBatSwarm@@QAE_NHH@Z CNPC_VBatSwarm::sub_10367680
 0x10011ed2 func   ?vfunc5@CItemGWirelessCamera3@@QAEPAV1@I@Z CItemGWirelessCamera3::vfunc5
 0x10011ed7 func   ?sub_101c4690@CUnknown101c4690@@QAEPAXXZ CUnknown101c4690::sub_101c4690
