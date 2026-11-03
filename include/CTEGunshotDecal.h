@@ -10,8 +10,9 @@ public:
 	virtual ServerClass * vfunc0();
 	virtual int vfunc1();
 	virtual CTEGunshotDecal *vfunc2(unsigned int flags);	// scalar deleting destructor
-	virtual void vfunc3();
-	virtual void vfunc4(int a, int b);	// slot 4 (jump stub 0x100022de): called directly on the global object
+	virtual void vfunc3(const Vector &origin, const QAngle &angles);
+	virtual void vfunc4(CRecipientFilter &filter, float delay);
+	void vfunc4(int a, int b);	// slot 4 (jump stub 0x100022de): called directly on the global object
 
 	CTEGunshotDecal(const char *name);	// 0x10064010
 
