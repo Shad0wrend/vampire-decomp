@@ -89,4 +89,5 @@ public:
 	void sub_102b27f0();	// as in CNPC_VTzimisceRunner (transplant)
 	void sub_10269b50(int a);	// as in CNPC_VTzimisceRunner (transplant)
 	void vfunc433();	// as in CNPC_VTzimisceRunner (transplant)
+	unsigned short sub_103c1cb0();	// slot 337 override: CAI_BaseNPCTroika::vfunc337 with bit 0x800 set
 };
