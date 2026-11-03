@@ -443,6 +443,17 @@ void CRagdollProp::vfunc39(CBaseEntity * a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101580e0 size=0xe
+#include "CRagdollProp.h"
+
+void sub_1040d950(int a);
+
+void CRagdollProp::vfunc41(int a)
+{
+	sub_1040d950(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10158100 size=0xe
 // TARGET: sub_10158100
 void sub_1040d9a0(int x);
