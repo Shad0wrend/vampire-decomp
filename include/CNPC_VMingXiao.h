@@ -143,6 +143,7 @@ public:
 	float m_flTime66c0;	// +0x66c0
 	float m_flSlotTimeA[6];	// +0x66c4
 	float m_flSlotValue[6];	// +0x66dc
+	void sub_10395750(int index, struct CVDmg_t *pInfo, CBaseEntity *pAttacker);	// "CNPC_VMingXiao" tentacle damage: see the release note (index -1/-2 special, otherwise m_flSlotValue[index] -= damage, emitter "Ming_xiao_tentacle_damage_emitter", sub_10397410 when the value crosses 0)
 	float m_flSlotTimeB[6];	// +0x66f4
 	int m_n670c;	// +0x670c: the count the delay is scaled by (6 - count)
 	int m_n6710;	// +0x6710
