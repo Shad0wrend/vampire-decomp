@@ -8539,6 +8539,7 @@
 0x1000df6c func   ?sub_103828a0@@YIXPAD@Z sub_103828a0
 0x1000df71 func   _npc_VMingXiaoTentacle npc_VMingXiaoTentacle
 0x1000df76 func   ?sub_1007e500@CUnknown1007ce20Unit@@QAEXPAVCUnknown10075aa0@@@Z CUnknown1007ce20Unit::sub_1007e500
+0x1000df7b func   ?sub_101ff4b0@CVStatInfo_t@@QAEPAXI@Z CVStatInfo_t::sub_101ff4b0
 0x1000df80 func   ?vfunc522@CAI_TestHull@@QAEMXZ CAI_TestHull::vfunc522
 0x1000df85 func   ?sub_10051810@CDisciplineParticle@@QAEXXZ CDisciplineParticle::sub_10051810
 0x1000df8a func   ?sub_1040d0a0@CPlayerPickupController@@QAEXD@Z CPlayerPickupController::sub_1040d0a0
