@@ -130,6 +130,7 @@ public:
 	int vfunc438();	// "CNPC_VSabbatLeader::SelectSchedule" (slot 438 override): scope trace, +0x1b2c = 0x1f, schedule 0x158 in state 5, a debug convar teleport, then the boss's schedule picks, else CNPC_VHuman::vfunc438
 	int sub_10015ad2();	// CNPC_VHuman::vfunc438 (stub 0x10015ad2), called directly
 	void sub_103ab580();	// stub 0x100065a0, called by SelectSchedule
+	void CheckStuck();	// 0x103ab580 "CNPC_VSabbatLeader::CheckStuck" (the same function, now renamed): scope trace; collision-box separation test between this and the player entity (handle +0x628c) and a shift of this entity
 	char sub_10269aa0(int condition);	// "HasCondition" (stub 0x10014df8)
 public:
 	bool vfunc70();
