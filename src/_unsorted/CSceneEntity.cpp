@@ -221,6 +221,16 @@ void __stdcall sub_10081480(int a1, CVirtObj10081480 *pObj, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100814b0 size=0x1f
+#include "CSceneEntity.h"
+
+// TARGET: CSceneEntity::vfunc254
+void CSceneEntity::vfunc254(int unused, CSceneActorSlots *pActor, void *pEvent)
+{
+	pActor->vfunc286(m_pScene4bc, pEvent);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100814e0 size=0x14
 #include "CSceneEntity.h"
 

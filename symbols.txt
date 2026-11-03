@@ -13162,6 +13162,7 @@
 0x1001550f func   ?sub_102fc910@CBitString@@QAEPAV1@H@Z CBitString::sub_102fc910
 0x10015514 func   ?sub_10056660@@YAHXZ sub_10056660
 0x10015519 func   ?sub_102dc6a0@CUnknown102dca60@@QAEXD@Z CUnknown102dca60::sub_102dc6a0
+0x1001551e func   ?vfunc254@CSceneEntity@@UAEXHPAUCSceneActorSlots@@PAX@Z CSceneEntity::vfunc254
 0x10015523 func   ?sub_1039f1a0@CNPC_VMingXiaoTentacle@@QAEXXZ CNPC_VMingXiaoTentacle::sub_1039f1a0
 0x10015528 func   ?sub_1006cbe0@CUnk1006cbe0@@QAEHM@Z CUnk1006cbe0::sub_1006cbe0
 0x1001552d func   ?sub_1027be60@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_1027be60
