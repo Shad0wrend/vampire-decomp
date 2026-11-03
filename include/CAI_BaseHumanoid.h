@@ -29,6 +29,11 @@ public:
 	int m_nPose5fe0[3];	// 0x5fe0: pose parameter indices reset by sub_1025efc0
 	int m_nPose5fec[13];	// 0x5fec: pose parameter indices (move_rightleft .. head_tilt)
 
+	void sub_102627e0();	// 0x102627e0 (called by 0x10262590, itself from CAI_HumanoidMotor::vfunc19): recomputes the waypoint records' angles/positions (the CUtlVector56 at +0x6024 feeds the working one at +0x6038) and the visibility/rotation smoothing pass
+	char m_pad6020[4];	// 0x6020 .. 0x6023
+	CUtlVector56 m_Waypoints6024;	// 0x6024: the parsed waypoint records (0x38-byte elements)
+	CUtlVector56 m_Waypoints6038;	// 0x6038: the working / smoothed waypoint records
+
 	void sub_1000245f(void *p);	// CBaseCombatCharacter::vfunc105 (stub), called directly
 	int sub_10009ac5(const char *pszName);	// CBaseAnimating::sub_10092270 (stub): index of a pose parameter
 	int sub_1001337c(const char *pszName);	// CBaseFlex::sub_100b5d10 (stub): index of a flex controller
