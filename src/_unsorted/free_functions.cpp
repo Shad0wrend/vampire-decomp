@@ -85477,6 +85477,18 @@ void CUnknown101bc140::sub_101bbc20(float flTarget, float flTime)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bbc70 size=0x25
+#include "UTIL_BloodStream.h"
+#include "CUnknown101bc140.h"
+
+// TARGET: CUnknown101bc140::sub_101bbc70
+void CUnknown101bc140::sub_101bbc70(float flValue)
+{
+	sub_101bbc20(0, flValue);
+	m_fl24 = g_10566258->vfunc9() + flValue;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bbcb0 size=0x3
 struct CUnknown101bbcb0 { float sub_101bbcb0(); };
 float CUnknown101bbcb0::sub_101bbcb0()

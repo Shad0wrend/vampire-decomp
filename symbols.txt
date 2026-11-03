@@ -3112,6 +3112,7 @@
 0x10005ccc func   _item_k_tutorial_chopshop_stairs_key item_k_tutorial_chopshop_stairs_key
 0x10005cd1 func   ?sub_1024f0c0@@YGXH@Z sub_1024f0c0
 0x10005cd6 func   ?vfunc566@CNPC_VSheriffMan@@QAE_NH@Z CNPC_VSheriffMan::vfunc566
+0x10005cdb func   ?sub_101bbc70@CUnknown101bc140@@QAEXM@Z CUnknown101bc140::sub_101bbc70
 0x10005ce0 func   ?UsePredictionRules@CRecipientFilter@@QAEXXZ CRecipientFilter::UsePredictionRules
 0x10005ce5 func   ?vfunc81@COccultRegen@@UAEHXZ COccultRegen::vfunc81
 0x10005cef func   ?sub_10185910@@YIXPAUMem16@@HH@Z sub_10185910
