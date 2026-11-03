@@ -29,6 +29,16 @@ bool CPointAngleSensor::vfunc110(const char *szKeyName, const char *szValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018cdd0 size=0xf
+#include "CPointAngleSensor.h"
+#include "globalvars.h"
+
+void CPointAngleSensor::vfunc103()
+{
+	m_flNextThink = gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018cdf0 size=0xe2
 #include "CPointAngleSensor.h"
 
