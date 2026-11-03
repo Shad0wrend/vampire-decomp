@@ -44,6 +44,8 @@ struct CAI_NamedThing	// one of the three global objects an NPC can be bound to 
 class CAI_BaseNPCTroika : public CAI_BaseNPC
 {
 public:
+	bool CalcNextAIThink(float *pOut);	// "CAI_BaseNPCTroika_CalcNextAIThink" (0x10291230, vprof scope string 0x105d8a08 / "Unaccounted" fallback): profiled; returns false when sub_10290700() is false; else sets *pOut to the delay (0.1f by default, up to 4.0f from the sight time at +0x6264 minus 512.0f times 0.0011160715f, clamped to 0.1..4.0, plus a random 0..0.4 unless the time was 4.0), advances +0x6250 by (curtime - +0x6260 if past, else curtime) + delay, stores +0x6260 = +0x6250, and returns true
+	int sub_10290700();	// 0x10290700: forwards the float at +0x6250 to sub_10290660
 	virtual int vfunc81();
 	char vfunc86(int a, int b, int c, int d, int e);	// slot 86 override (plain member, CBaseCombatCharacter::vfunc86 signature): 1 while sub_102c1170, else the character's ShouldTransmit
 	virtual bool vfunc466();	// slot 466 override: false when the current task's int is 0xb9; true when the byte at +0x65fa; else CAI_BaseNPC::vfunc466	// slot 81: an int getter returning 0 (CAI_BaseNPC declares this slot as int since 0x102c5890 answers in eax)
