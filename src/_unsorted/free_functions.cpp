@@ -172255,6 +172255,72 @@ bool CNPC_VChangBros::sub_1036cbd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036cce0 size=0x223
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+// TARGET: CNPC_VChangBros::sub_1036cce0
+#include "CNPC_VChangBros.h"
+#include "CAI_BaseNPC.h"
+#include "CAI_Hint.h"
+#include "CAIHintSlots.h"
+#include "ehandle.h"
+#include "ScopeTrace.h"
+
+extern float g_104ad9f4;
+
+CBaseEntity *CNPC_VChangBros::sub_1036cce0()
+{
+	ScopeTrace trace("CNPC_VChangBros::SelectTeleportNode", g_106b8540);
+
+	CBaseEntity *pEnemy = m_h628c.Get();
+	if (!pEnemy)
+		return 0;
+
+	CAI_Hint *pHint = g_10925450;
+	CAI_Hint *pBest = 0;
+	CAI_Hint *pSame = 0;
+	float flBest = 3.402823466e+38F;
+	float flSame = 3.402823466e+38F;
+	int nBrother = sub_1036e580((int)((CAI_BaseNPC *)(void *)pEnemy)->vfunc217());
+
+	for (; pHint; pHint = pHint->m_pNext) {
+		if (pHint->m_n5dc == 0x4650 || pHint->m_n5dc == 0x4653 || pHint->m_n5dc == 0x4652) {
+			Vector vDist = *(Vector *)((CAI_BaseNPC *)(void *)pEnemy)->vfunc217()
+				- *(Vector *)((CAI_BaseNPC *)(void *)pHint)->vfunc217();
+			float flDistSqr = vDist.z * vDist.z;
+			flDistSqr = flDistSqr + vDist.y * vDist.y;
+			flDistSqr = flDistSqr + vDist.x * vDist.x;
+			float flDist = FastSqrt(flDistSqr);
+			if (flDist >= g_104ad9f4) {
+				if (sub_1036d350((const Vector *)((CAI_BaseNPC *)(void *)pHint)->vfunc217(), g_104ad9f4)) {
+					if (flDist < flBest) {
+						pBest = pHint;
+						flBest = flDist;
+					}
+					if (nBrother == sub_1036e580((int)((CAI_BaseNPC *)(void *)pHint)->vfunc217()) && flDist < flSame) {
+						pSame = pHint;
+						flSame = flDist;
+					}
+				}
+			}
+		}
+	}
+	if (pSame)
+		pBest = pSame;
+
+	Vector *pOrigin = (Vector *)((CAI_BaseNPC *)(void *)pBest)->vfunc217();
+	*(Vector *)((char *)this + 0x66bc) = *pOrigin;
+	*(float *)((char *)this + 0x66c8) = gpGlobals->curtime;
+	return (CBaseEntity *)pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036cfa0 size=0x105
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
