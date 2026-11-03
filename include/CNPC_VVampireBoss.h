@@ -47,6 +47,7 @@ public:
 	int m_n66b4;	// +0x66b4: 4-byte member built by sub_103c51a0 (stub 0x100044d5); object size 0x66b8
 
 	bool vfunc525(int unused);
+	CNPC_VVampireBoss *vfunc5(unsigned int flags);	// slot 5 (the scalar deleting destructor of the vtable), as in CNPC_VAsianVampire
 	void sub_103c6df0(int index, const char *name);
 	float sub_103c6a20();	// the health percent record minus the current health percent (sub_103c6830)
 	void sub_103c6eb0();	// ClearBodyEmitterNames
