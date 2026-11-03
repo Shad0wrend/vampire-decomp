@@ -563,7 +563,7 @@ public:
 	virtual void vfunc515();
 	virtual float vfunc516();
 	virtual void vfunc517();
-	virtual void vfunc518();
+	virtual void vfunc518(int nOrigin, float a, float b, float c);	// slot 518 (+0x818): CAI_BaseNPC::vfunc518 (ret 16), hands the four dwords to the motor
 	virtual void vfunc519();
 	virtual void vfunc520();
 	virtual void vfunc521();
