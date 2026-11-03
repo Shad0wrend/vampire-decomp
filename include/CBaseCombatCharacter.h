@@ -195,6 +195,7 @@ public:
 	void sub_10139610(const QAngle *pAngles, Vector *pForward, Vector *pRight, Vector *pUp);	// AngleVectors (stub 0x10002310)
 	void vfunc104();	// slot 104 "CBaseCombatCharacter::Precache": scope trace (entity name), the character's stat record is precached through the default item list (global 0x10738d10), then, depending on sub_102f9970, either slot 337's answer goes to sub_102f9920 or the spawn-after-links check (slot 337 masked by sub_102f9950 must equal slot 337) prints the "ERROR" DevMsg block and gives up
 
+	void sub_1033d4b0();	// "CBaseCombatCharacter::BloodExplode": scope trace; when sub_103380d0 fails activates the two Thaumaturgy_Bloodboil_Explode effects
 #include "CBaseCombatCharacter_ext.h"
 #include "CBaseCombatCharacter_ext2.h"
 
