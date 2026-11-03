@@ -1846,6 +1846,7 @@
 0x10003d46 func   ?sub_102524f0@CBaseCombatWeapon@@QAEDPAVCBaseCombatCharacter@@@Z CBaseCombatWeapon::sub_102524f0
 0x10003d4b func   ?sub_10139970@@YAXABVVector@@AAVQAngle@@@Z sub_10139970
 0x10003d50 func   ?sub_1025b3e0@@YAGPBD@Z sub_1025b3e0
+0x10003d55 func   ?vfunc86@CAI_BaseNPCTroika@@QAEDHHHHH@Z CAI_BaseNPCTroika::vfunc86
 0x10003d5a func   ?sub_10337e40@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10337e40
 0x10003d5f func   ?sub_10345d00@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_10345d00
 0x10003d64 func   ?sub_10158550@@YAXXZ sub_10158550
