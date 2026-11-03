@@ -5,6 +5,7 @@
 // give one its type here (edit_context) when your function calls it. The type and the pointer live in a namespace so
 // sources that still declare their own `extern X *g_1070b22c;` keep compiling (the judge resolves both to one address).
 class CRecipientFilter;
+class Vector;
 
 namespace EngineGlobals {
 class IVEngineServer
@@ -30,7 +31,7 @@ public:
 	virtual int vfunc30(const float *pPos);	// the PVS cluster of a position
 	virtual void vfunc31(int cluster, int size, char *pBuffer);	// fills a PVS buffer for a cluster
 	virtual char vfunc32(const float *pPos, void *pData);	// a PVS test of a position
-	virtual void vfunc33();
+	virtual char vfunc33(const Vector &vecMins, const Vector &vecMaxs, const void *pPVS);	// CheckBoxInPVS
 	virtual int vfunc34(int edictIndex);	// the user id of the player behind an engine index
 	virtual int vfunc35(int edict);	// IndexOfEdict
 	virtual char *vfunc36();	// the base of the edict array (stride 0x78)
