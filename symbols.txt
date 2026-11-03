@@ -1213,6 +1213,7 @@
 0x10002e4b func   _item_g_watch_fancy item_g_watch_fancy
 0x10002e55 func   ?sub_101402b0@CBaseMoveBehavior@@QAEHH@Z CBaseMoveBehavior::sub_101402b0
 0x10002e5f func   ?sub_101a6da0@@YG_NH@Z sub_101a6da0
+0x10002e64 func   ?vfunc371@CCineNPC@@QAEHH@Z CCineNPC::vfunc371
 0x10002e69 func   ?sub_102461b0@CUnknown102461b0@@QAEXXZ CUnknown102461b0::sub_102461b0
 0x10002e6e func   ?sub_103dd120@@YIPAXPAX@Z sub_103dd120
 0x10002e73 func   ?vfunc5@CNPC_VSabbatGunman@@QAEPAV1@I@Z CNPC_VSabbatGunman::vfunc5
