@@ -175728,6 +175728,31 @@ CNPC_VSheriffMan *CNPC_VSheriffMan::sub_103ae3e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b0560 size=0x9b
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VSheriffMan.h"
+#include "ScopeTrace.h"
+
+void sub_101cd940(void *pEnt);
+
+void CNPC_VSheriffMan::sub_103b0560()
+{
+	ScopeTrace trace("CNPC_VSheriffMan::KillTeleportBats", g_106b8540);
+	CBaseEntity *pBats = m_hTeleportBats.Get();
+	if (pBats)
+		sub_101cd940(pBats);
+	m_hTeleportBats = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b0930 size=0x12b
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

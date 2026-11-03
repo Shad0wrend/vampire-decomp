@@ -11837,6 +11837,7 @@
 0x10012dff func   ?vfunc113@CTriggerWWZone@@UAEXXZ CTriggerWWZone::vfunc113
 0x10012e04 func   ?sub_101466e0@CUnknown101466e0@@QAEXD@Z CUnknown101466e0::sub_101466e0
 0x10012e09 func   ?vfunc81@CItemGWirelessCamera2@@QAEHXZ CItemGWirelessCamera2::vfunc81
+0x10012e0e func   ?sub_103b0560@CNPC_VSheriffMan@@QAEXXZ CNPC_VSheriffMan::sub_103b0560
 0x10012e18 func   _item_w_mac_10 item_w_mac_10
 0x10012e1d func   ?sub_1010efc0@CUnknown1010efc0@@QAE_NXZ CUnknown1010efc0::sub_1010efc0
 0x10012e22 func   _info_node_air_hint info_node_air_hint
