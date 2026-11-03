@@ -6087,6 +6087,7 @@
 0x1000a619 func   ?vfunc365@CBaseCombatWeapon@@UAEHHMM@Z CBaseCombatWeapon::vfunc365
 0x1000a61e func   ?vfunc5@CWeaponMelee_BushHook@@QAEPAV1@I@Z CWeaponMelee_BushHook::vfunc5
 0x1000a623 func   ?vfunc103@CBaseVampireSkillEntity@@QAEXXZ CBaseVampireSkillEntity::vfunc103
+0x1000a628 func   ?sub_101cbe40@Helper@@QAEPAXI@Z Helper::sub_101cbe40
 0x1000a62d func   ?vfunc144@CAI_BaseNPCTroika@@UAEXH@Z CAI_BaseNPCTroika::vfunc144
 0x1000a632 func   ?sub_1028e830@CUnknown1028e830@@QAEMM@Z CUnknown1028e830::sub_1028e830
 0x1000a637 func   ?vfunc35@CSingleplayRules@@UAEXPAVCBaseEntity@@@Z CSingleplayRules::vfunc35
