@@ -1311,6 +1311,67 @@ void CBaseCombatCharacter::vfunc300(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032ce40 size=0x1ff
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CWeaponOwner.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+#include "ScopeTrace.h"
+
+extern int (*g_109f3868)(int, int);
+
+void CBaseCombatCharacter::vfunc386()
+{
+	ScopeTrace trace("CBaseCombatCharacter::Weapon_Drop", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!(!*(char *)((char *)this + 0x1589))) return; if (CBaseCombatWeapon *pWeapon = (CBaseCombatWeapon *)sub_1032e7b0())
+		{
+			if (pWeapon->sub_102577e0())
+			{
+				if (sub_100b3700() & 0x2000)
+				{
+					int i = 0;
+					while (i < 2)
+					{
+						int *pClip = (int *)((char *)pWeapon + 0x74c) + i;
+						if (pWeapon->vfunc277(i))
+						{
+							CWeaponOwner *pOwner = pWeapon->sub_102517b0();
+							int *pRoll = (int *)((char *)pOwner + 0x2668 + i * 0x1093c);
+							*pClip = g_109f3868(1, pRoll[3]);
+						}
+						else
+						{
+							int nMax = pWeapon->vfunc276(i);
+							if (nMax > 0)
+								*pClip = g_109f3868(1, pWeapon->vfunc276(i));
+							else
+								*pClip = 0;
+						}
+						i++;
+					}
+				}
+				if (pWeapon->sub_100b5190())
+					pWeapon->vfunc78();
+				if (m_hEa4 == pWeapon)
+					m_hEa4 = 0;
+				if (m_hEa8 == pWeapon)
+					m_hEa8 = 0;
+				pWeapon->vfunc300();
+				sub_10335470(pWeapon);
+				if (sub_100b3700() & 0x2000)
+					sub_1032cbe0(pWeapon);
+			}
+		}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032d2e0 size=0x7a
 #include "CBaseCombatCharacter.h"
 #define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();

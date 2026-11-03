@@ -2476,6 +2476,7 @@
 0x10004c19 func   ?sub_1020c2a0@CSecCamera@@QAEXXZ CSecCamera::sub_1020c2a0
 0x10004c1e func   ?vfunc181@CRagdollProp@@UAEXPBM00@Z CRagdollProp::vfunc181
 0x10004c23 func   ?sub_103e17b0@@YAHVVector@@0PAV1@PAPAVCBaseEntity@@1PAH@Z sub_103e17b0
+0x10004c28 func   ?vfunc386@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc386
 0x10004c2d func   ?vfunc3@CVFeatList_t@@UAEMH@Z CVFeatList_t::vfunc3
 0x10004c32 func   ?sub_1027cd50@CUnknown1027cd50@@QAEPAU1@MD@Z CUnknown1027cd50::sub_1027cd50
 0x10004c37 func   ?sub_103c0be0@@YADXZ sub_103c0be0
