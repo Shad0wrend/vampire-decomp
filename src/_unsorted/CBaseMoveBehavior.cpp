@@ -97,6 +97,140 @@ bool CBaseMoveBehavior::vfunc153()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140770 size=0x244
+#include "CBaseEntity.h"
+#include "CBaseMoveBehavior.h"
+#include "CEntityVSlots.h"
+#include "Vector.h"
+// TARGET: CBaseMoveBehavior::vfunc241
+
+struct CMoveBehaviorFields
+{
+	char m_pad0000[0x450];
+	Vector m_vOrigin;	// 0x450
+	Vector m_vAngles;	// 0x45c
+	char m_pad0468[0x478 - 0x468];
+	const char *m_pszNextKey;	// 0x478
+	float m_flNextTime;	// 0x47c
+	CMoveBehaviorFields *m_pNext;	// 0x480
+	CMoveBehaviorFields *m_pPrev;	// 0x484
+};
+
+int CBaseMoveBehavior::sub_101402b0(int nIndex)
+{
+	CMoveBehaviorFields *p = (CMoveBehaviorFields *)this;
+	if (nIndex == 1)
+		p = p->m_pNext;
+	else if (nIndex == -1)
+		p = p->m_pPrev;
+	return (int)p;
+}
+
+int CBaseMoveBehavior::sub_101402f0(int nIndex)
+{
+	CMoveBehaviorFields *p = (CMoveBehaviorFields *)this;
+	if (nIndex == 1)
+		p = p->m_pPrev;
+	else if (nIndex == -1)
+		p = p->m_pNext;
+	return (int)p;
+}
+
+bool CBaseMoveBehavior::vfunc241(int nDir)
+{
+	if (nDir == 0)
+	{
+		((CEntityVSlots *)this)->slot242();
+		return false;
+	}
+
+	if (m_unk4b4 == nDir)
+	{
+		if (*(float *)((char *)this + 0x3f4) >= m_flAnimEndTime)
+		{
+			m_p4a0 = (CBaseMoveBehavior *)m_p4a4;
+			m_flTimeIntoFrame = 0.0f;
+			if (((CBaseMoveBehavior *)m_p4a4)->sub_101402b0(nDir) == 0)
+			{
+				m_flAnimEndTime = 0.0f;
+				m_fl494 = 0.0f;
+				((CEntityVSlots *)this)->slot242();
+				return false;
+			}
+			m_p4a4 = ((CBaseMoveBehavior *)m_p4a4)->sub_101402b0(nDir);
+		}
+	}
+	else
+	{
+		if (m_unk4b4 != 0)
+			((CEntityVSlots *)this)->slot242();
+
+		m_unk4b4 = nDir;
+
+		if (nDir == 1)
+		{
+			m_p4a4 = ((CBaseMoveBehavior *)m_p4a0)->sub_101402b0(nDir);
+		}
+		else if (nDir == -1)
+		{
+			CBaseMoveBehavior *pCur = (CBaseMoveBehavior *)m_p4a0;
+			if (m_flTimeIntoFrame > 0.0f)
+			{
+				m_p4a4 = (int)pCur;
+				m_p4a0 = (CBaseMoveBehavior *)pCur->sub_101402b0(1);
+			}
+			else
+			{
+				m_p4a4 = pCur->sub_101402f0(1);
+			}
+		}
+
+		if (m_p4a4 == 0)
+		{
+			((CEntityVSlots *)this)->slot242();
+			return false;
+		}
+
+		m_pPostKeyFrame = (CBaseEntity *)((CBaseMoveBehavior *)m_p4a4)->sub_101402b0(nDir);
+		if (m_pPostKeyFrame == 0)
+			m_pPostKeyFrame = (CBaseEntity *)(CBaseMoveBehavior *)m_p4a4;
+		m_pPreKeyFrame = (CBaseEntity *)((CBaseMoveBehavior *)m_p4a0)->sub_101402f0(nDir);
+		if (m_pPreKeyFrame == 0)
+			m_pPreKeyFrame = (CBaseEntity *)m_p4a0;
+	}
+
+	if (m_p4a4 == 0)
+		return false;
+
+	float flStart;
+	float flNextTime;
+	if (m_unk4b4 == 1)
+	{
+		flStart = *(float *)((char *)this + 0x3f4) - m_flTimeIntoFrame;
+		m_fl494 = flStart;
+		flNextTime = ((CMoveBehaviorFields *)(void *)m_p4a0)->m_flNextTime;
+	}
+	else
+	{
+		if (m_flTimeIntoFrame != 0.0f)
+			m_flTimeIntoFrame = ((CMoveBehaviorFields *)(void *)m_p4a4)->m_flNextTime - m_flTimeIntoFrame;
+		flStart = *(float *)((char *)this + 0x3f4) - m_flTimeIntoFrame;
+		m_fl494 = flStart;
+		flNextTime = ((CMoveBehaviorFields *)(void *)m_p4a4)->m_flNextTime;
+	}
+
+	float flEndTime = flNextTime + *(float *)((char *)this + 0x3f4) - m_flTimeIntoFrame;
+	m_flAnimEndTime = flEndTime;
+	float flSpan = *(volatile float *)((char *)this + 0x498) - flStart;
+	Vector vecDelta = ((CMoveBehaviorFields *)(void *)m_p4a0)->m_vOrigin -
+					  ((CMoveBehaviorFields *)(void *)m_p4a4)->m_vOrigin;
+	float flDist = FastSqrt(vecDelta.LengthSqr());
+	m_flAverageSpeedAcrossFrame = flSpan / flDist;
+	*(float *)((char *)this + 0x3fc) = m_flAnimEndTime;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140a60 size=0xb7
 #include "CBaseMoveBehavior.h"
 struct MoveView10140a60 {

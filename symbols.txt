@@ -1018,6 +1018,7 @@
 0x100028a6 func   ?sub_102a9e60@@YIMPAUCSlots@@@Z sub_102a9e60
 0x100028ab func   ?vfunc2@CTEBubbles@@UAEPAV1@I@Z CTEBubbles::vfunc2
 0x100028ba func   ?sub_1002f100@@YGXHPAVCBaseEntity@@@Z sub_1002f100
+0x100028c4 func   ?vfunc241@CBaseMoveBehavior@@QAE_NH@Z CBaseMoveBehavior::vfunc241
 0x100028c9 func   ?sub_100c4500@@YAMHHM@Z sub_100c4500
 0x100028ce func   _item_g_garys_cd item_g_garys_cd
 0x100028d3 func   ?sub_103979d0@CNPC_VMingXiao@@QAEXPAVCNPC_VMingXiaoTentacle@@@Z CNPC_VMingXiao::sub_103979d0
