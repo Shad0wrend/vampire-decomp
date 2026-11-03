@@ -7,6 +7,7 @@
 #include "Vector.h"
 
 class CBaseEntity;
+class CBaseCombatCharacter;
 class CAI_Motor;
 struct animevent_t;
 class CAI_Senses;
@@ -71,7 +72,7 @@ public:
 	// slots 290..409
 	CAI_NPC_V(290) CAI_NPC_V(291) CAI_NPC_V(292)
 	virtual int vfunc293();
-	CAI_NPC_V(294) CAI_NPC_V(295) CAI_NPC_V(296) CAI_NPC_V(297) CAI_NPC_V(298) CAI_NPC_V(299)
+	CAI_NPC_V(294) virtual bool vfunc295(CBaseCombatCharacter *pOther); CAI_NPC_V(296) CAI_NPC_V(297) CAI_NPC_V(298) CAI_NPC_V(299)
 	CAI_NPC_V(300) CAI_NPC_V(301) CAI_NPC_V(302) CAI_NPC_V(303) CAI_NPC_V(304) CAI_NPC_V(305) CAI_NPC_V(306) virtual bool vfunc307();
 	virtual bool vfunc308();	// asked by the Troika schedule selection (true when the NPC can take the offered action)
 	CAI_NPC_V(309)
