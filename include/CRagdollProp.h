@@ -96,5 +96,6 @@ public:
     virtual int vfunc81();
     virtual bool vfunc128();
     virtual int vfunc80();
+    void vfunc41(int a);	// slot 41 (plain member): forwards a to sub_1040d950 (an empty function in this build)
     virtual int vfunc42(int);
 };
