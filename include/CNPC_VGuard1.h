@@ -7,6 +7,9 @@ class CEntityVSlots;
 class CNPC_VGuard1 : public CBaseEntity
 {
 public:
+	virtual void vfunc103();	// slot 103 "Spawn": sub_1026dc00(0x200d00), clears the byte at +0x6660, then CNPC_VHuman::vfunc103
+	void sub_1026dc00(int a);	// the member at 0x1026dc00 (stub 0x10012855), called directly
+	void sub_10384690();	// CNPC_VHuman::vfunc103 (stub 0x1000d83c), tail called
 	CNPC_VGuard1 *vfunc5(unsigned int flags);
 	void sub_100123af();
 	int vfunc440(int schedule);	// slot 440 "TranslateSchedule": schedule 0x6b gives 0x132 or 0x15a from the flags at +0x14bc, schedule 0x103 gives 0x159, any other goes to CNPC_VHuman::vfunc440
