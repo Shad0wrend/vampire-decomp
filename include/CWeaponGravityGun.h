@@ -50,5 +50,5 @@ public:
 	char m_bB24;	// 0xb24: set while the beam to the held object exists (vfunc321 needs it)
 	char m_bB25;	// 0xb25
 public:
-	virtual void vfunc298(CBaseEntity *pOwner, int unused);	// slot 298: forwards to CBaseCombatWeapon::vfunc298 (jump stub 0x100131ec) with the first argument as it is
+	void vfunc298(CBaseEntity *pOwner, float unused);	// slot 298: forwards to CBaseCombatWeapon::vfunc298 (jump stub 0x100131ec) with the first argument as it is
 };

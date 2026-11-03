@@ -81,7 +81,8 @@ public:
 	CBCW_V(286) CBCW_V(287) CBCW_V(288) virtual int vfunc289();	/* slot 289: returns -1 (0x10149d00: or eax,-1) */
 	virtual int vfunc290(); CBCW_V(291) CBCW_V(292) virtual int vfunc293(); CBCW_V(294) CBCW_V(295) virtual int vfunc296();
 	virtual void vfunc297(int value);
-	virtual void vfunc298(CBaseEntity *pOwner, int unused);	// slot 298: the weapon is handed over to pOwner: move type 11, solid flag 8 removed and 4 added (scope traced), aim entity and owner handle (+0x88c) set, time stamps at +0x730 = curtime, touch function cleared, model by the owner's sex, owner's inventory told
+	virtual void vfunc298(CBaseEntity *pOwner, int unused);	// slot 298: the weapon is handed over to pOwner:
+	void sub_10252ea0(CBaseEntity *pOwner, float unused);	// body of vfunc298 (0x10252ea0) as a plain member, for float-signature forwarders move type 11, solid flag 8 removed and 4 added (scope traced), aim entity and owner handle (+0x88c) set, time stamps at +0x730 = curtime, touch function cleared, model by the owner's sex, owner's inventory told
 	virtual void vfunc299(const float *pVelocity);	// "CBaseCombatWeapon::Drop"-like: the owner gives the weapon up; the weapon becomes a physics-less dropped item (move type 6) that gets pVelocity
 	CBCW_V(300) virtual int vfunc301(CBaseEntity *pPlayer);	// always true; stores the state at +0x8b0: 0x40 or 2 when pPlayer holds this weapon as its active one (by the byte at pPlayer+0x20a8), else 1
 	virtual char vfunc302();
