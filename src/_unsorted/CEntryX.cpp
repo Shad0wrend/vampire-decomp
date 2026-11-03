@@ -11,3 +11,12 @@ CEntryX::CEntryX(int key)
 	m_n54 = 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101eb690 size=0x8
+#include "CEntryX.h"
+
+CEntryX::~CEntryX()
+{
+	m_dmg.sub_101fa680();
+}
+// END FUNCTION
