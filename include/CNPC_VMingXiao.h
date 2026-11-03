@@ -122,7 +122,8 @@ public:
 	char m_b6078; // +0x6078: set by slot 599
 	char m_pad6079[0x6264 - 0x6079];
 	float m_f6264;	// +0x6264
-	char m_pad6268[0x6290 - 0x6268];
+	float m_f6268;	// +0x6268
+	char m_pad626c[0x6290 - 0x626c];
 	Vector m_vecAxis6290;	// +0x6290
 	Vector m_vecExtent629c;	// +0x629c
 	char m_pad62a8[0x6348 - 0x62a8];
