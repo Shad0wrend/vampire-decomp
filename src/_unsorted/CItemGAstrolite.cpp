@@ -55,6 +55,19 @@ int CItemGAstrolite::vfunc34(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f6b50 size=0x29
+#include "CBaseCombatWeapon.h"
+#include "CItemGAstrolite.h"
+
+// TARGET: CItemGAstrolite::vfunc117
+int CItemGAstrolite::vfunc117()
+{
+	if (((CBaseCombatWeapon *)this)->sub_102521f0() == 0 && m_b914 == 0)
+		return ((CBaseCombatWeapon *)this)->CBaseCombatWeapon::vfunc117() | 8;
+	return ((CBaseCombatWeapon *)this)->CBaseCombatWeapon::vfunc117();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f6b90 size=0x1a
 #include "CItemGAstrolite.h"
 

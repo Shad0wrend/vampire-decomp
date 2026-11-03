@@ -4425,6 +4425,7 @@
 0x10007cbb func   ?sub_103aabc0@CNPC_VSabbatLeader@@QAE_NXZ CNPC_VSabbatLeader::sub_103aabc0
 0x10007cc0 func   ?sub_101c1790@CUnk101c1790@@QAEXXZ CUnk101c1790::sub_101c1790
 0x10007cca func   ?sub_102d3e60@CUnknown102d3e60@@QAEHXZ CUnknown102d3e60::sub_102d3e60
+0x10007ccf func   ?vfunc117@CItemGAstrolite@@UAEHXZ CItemGAstrolite::vfunc117
 0x10007cd9 func   ?sub_10027410@@YGXHH@Z sub_10027410
 0x10007cde func   _player player
 0x10007ce3 func   ?sub_1024a2e0@CUnknown1024a2e0@@QAEHI@Z CUnknown1024a2e0::sub_1024a2e0
