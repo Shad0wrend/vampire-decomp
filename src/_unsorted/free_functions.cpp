@@ -76117,6 +76117,38 @@ void CBreakableProp::sub_10002d1f(float flDelay)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018fa70 size=0xaf
+#include "CBreakableProp.h"
+
+struct CGlobalVarsView
+{
+	char m_pad0000[0xc];
+	float m_curtime;
+};
+extern CGlobalVarsView *g_1070b228;
+
+float sub_102283a0(float flCurrent, float flTarget, float flAmount, float flTime);
+void sub_10014614(CBreakableProp *pEntity);
+
+// TARGET: CBreakableProp::sub_1018fa70
+void CBreakableProp::sub_1018fa70()
+{
+	if (m_nCollisionGroup == 0)
+		sub_100aaa40(1);
+	float flElapsed = g_1070b228->m_curtime - m_flFadeStart178;
+	m_nRenderFX = 2;
+	float flRate = 255.0 / m_flFadeTime770;
+	m_nRenderAlpha = (unsigned char)sub_102283a0(m_nRenderAlpha, 0, flRate, flElapsed);
+	*(volatile char *)&m_bDirty1b1 = 1;
+	if (*(volatile unsigned char *)&m_nRenderAlpha <= 0)
+	{
+		sub_10014614(this);
+		return;
+	}
+	m_flNextThink = g_1070b228->m_curtime + 0.05;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018ff60 size=0x43
 #include "CBaseEntity.h"
 #include "CDynamicProp.h"
