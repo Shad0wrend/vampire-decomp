@@ -3426,6 +3426,7 @@
 0x10006528 func   ?Reset@CRecipientFilter@@QAEXXZ CRecipientFilter::Reset
 0x1000652d func   ?sub_1030f220@CUnknown1030f480@@QAE_NPBDH@Z CUnknown1030f480::sub_1030f220
 0x10006532 func   ?vfunc546@CNPC_VPedestrian@@QAEHH@Z CNPC_VPedestrian::vfunc546
+0x1000653c func   ?vfunc5@CLogicCompareInteger@@QAEPAVCLogicalEntity@@I@Z CLogicCompareInteger::vfunc5
 0x10006541 func   ?sub_1038fa90@CNPC_VManBat@@QAEXPAUinputdata_t@@@Z CNPC_VManBat::sub_1038fa90
 0x10006546 func   _npc_VGangrel npc_VGangrel
 0x1000654b func   ?sub_101a55a0@CUtlVector4@@QAEHHPBH@Z CUtlVector4::sub_101a55a0
