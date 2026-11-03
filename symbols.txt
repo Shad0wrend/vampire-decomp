@@ -2140,6 +2140,7 @@
 0x1000453e func   _item_g_giovanni_invitation_victor item_g_giovanni_invitation_victor
 0x10004543 func   ?vfunc80@CItemGWerewolfBlood@@QAEHXZ CItemGWerewolfBlood::vfunc80
 0x10004548 func   ?vfunc2@CTEBloodStream@@UAEPAV1@I@Z CTEBloodStream::vfunc2
+0x1000454d func   ?vfunc103@CInspectionNode@@QAEXXZ CInspectionNode::vfunc103
 0x10004552 func   ?vfunc516@CAI_BaseHumanoid@@QAEMXZ CAI_BaseHumanoid::vfunc516
 0x10004557 func   ?sub_1020e6b0@CGameTextUnit@@QAEXPAUCGameTextActivator@@@Z CGameTextUnit::sub_1020e6b0
 0x10004561 func   ??0CVDmgBlock16_t@@QAE@HH@Z CVDmgBlock16_t::CVDmgBlock16_t

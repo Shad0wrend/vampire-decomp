@@ -12,6 +12,27 @@ datamap_t *CInspectionNode::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fbff0 size=0x1d
+#include "CInspectionNode.h"
+
+#define CVS(n) virtual void s##n();
+#define CVS10(p) CVS(p##0) CVS(p##1) CVS(p##2) CVS(p##3) CVS(p##4) CVS(p##5) CVS(p##6) CVS(p##7) CVS(p##8) CVS(p##9)
+
+struct CInspectionSlots104
+{
+	CVS10(0) CVS10(1) CVS10(2) CVS10(3) CVS10(4) CVS10(5) CVS10(6) CVS10(7) CVS10(8) CVS10(9)
+	CVS(100) CVS(101) CVS(102) CVS(103)
+	virtual void s104();
+};
+
+void CInspectionNode::vfunc103()
+{
+	((CInspectionSlots104 *)this)->s104();
+	m_iAttachType = 9;
+	CEnvParticle::vfunc103();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fc020 size=0x3e
 #include "vampire.h"
 #include "CInspectionNode.h"
