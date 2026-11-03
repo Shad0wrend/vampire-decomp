@@ -99,6 +99,8 @@
 	bool sub_10005bfa(CBaseEntity *pEnt, int b, int c, int d, int e, int f, int g);	// CAI_BaseNPC::vfunc379 (stub 0x10005bfa), called directly
 	void sub_10280d30();	// stub 0x10006a8c, run at the end of vfunc379
 	char sub_102c2430();	// true when sub_102c1170 holds, the state at +0x5d70 is 4..6, curtime has not passed the time at +0x65dc, else the byte at +0x63f0
+	bool CalcNextUpdateThink(float *pOut);	// "CAI_BaseNPCTroika_CalcNextUpdateThink" (0x10290720, vprof scope string 0x105d897c): profiled; the update-think sibling of CalcNextAIThink: *pOut = +0x6244 - +0x6254, +0x6254 = +0x6244, +0x6244 = (curtime past +0x6244 ? curtime : +0x6244) + delay, where the delay is 0.03f when the sight timer +0x6264 is stale or 0.03..8.0f from it, scaled by the +0x6278 / +0x6279 flags, 0.03f while sub_102c2430
+	int sub_102906a0();	// 0x102906a0: sub_10290660(the float at +0x6244)
 	virtual bool vfunc317(int unused);	// slot 317 override: tells the global 0x10924a6c (slot 1), sets the task 10, then, when condition 12 holds, tells it again, sets the task 12 and answers true
 	void sub_102c2ab0(inputdata_t *pInput);	// "SetInvestigateMode" input handler: an integer 0..6 goes to +0x6338, else DevMsg
 	void sub_102c2b20(inputdata_t *pInput);	// "SetInvestigateModeCombat" input handler: an integer 0..6 goes to +0x633c, else DevMsg
