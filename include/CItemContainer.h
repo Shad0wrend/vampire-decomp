@@ -54,6 +54,7 @@ public:
 	void vfunc104();	// base vfunc104, precaches the model name (slot 9) and the break model
 	CItemContainer *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_10005718();	// as in CPhysForce (transplant)
+	void vfunc349(CBaseEntity **ppEnt);	// slot 349 (plain member): when *ppEnt and its object at +0x9c are set, calls sub_103411c0(that object, 1) on this
 	unsigned int vfunc35(int unused);	// slot 35: 0 while the handle at +0x1a28 names a live entity (the entity list entry's serial matches), else the dword at +0x1a34
 	void vfunc350(int unused);	// when the handle at +0x1a28 resolves, sub_1000e020(that entity, 1)
 	void sub_1000e020(CBaseEntity *pEnt, int flag);
