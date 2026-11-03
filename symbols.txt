@@ -12307,6 +12307,7 @@
 0x1001397b func   ?vfunc79@CBaseEntity@@UAEHXZ CBaseEntity::vfunc79
 0x1001398f func   ?sub_10050e70@CDisciplineParticle@@SAPAV1@PBDHHHHHHHHHHH@Z CDisciplineParticle::sub_10050e70
 0x10013994 func   ?vfunc104@CNPC_VAndreiBlood@@UAEXXZ CNPC_VAndreiBlood::vfunc104
+0x10013999 func   ?vfunc6@CSave@@UAEXXZ CSave::vfunc6
 0x1001399e func   ?vfunc104@CCameraAnimated@@QAEXXZ CCameraAnimated::vfunc104
 0x100139a3 func   ?sub_10288590@@YAMM@Z sub_10288590
 0x100139a8 func   ?sub_100fa3a0@CUtlLinkedList6@@QAEXG@Z CUtlLinkedList6::sub_100fa3a0
