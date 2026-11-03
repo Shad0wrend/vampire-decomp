@@ -9648,6 +9648,7 @@
 0x1000f826 func   ?sub_102dad60@CUnknown102db470Node@@QAE_NPAVCUnknown102db470@@PAM1@Z CUnknown102db470Node::sub_102dad60
 0x1000f82b func   ?vfunc7@CAI_LocalNavigator@@QAE_NPAUCAI_LocalNavigatorStopState@@MPAHH@Z CAI_LocalNavigator::vfunc7
 0x1000f830 func   ?sub_10308150@CUnknown10308150@@QAEHHHHH@Z CUnknown10308150::sub_10308150
+0x1000f835 func   ?LinkToParent@?$CUtlRBTree@UCRBTree12Entry_10194f30@@G@@QAEXGG_N@Z CUtlRBTree<CRBTree12Entry_10194f30,unsigned short>::LinkToParent
 0x1000f83f func   ?vfunc546@CNPC_VWolfMorph@@QAEHH@Z CNPC_VWolfMorph::vfunc546
 0x1000f844 func   ?sub_103cecd0@CTriggerWWZone@@QAEXPAVCBaseEntity@@@Z CTriggerWWZone::sub_103cecd0
 0x1000f84e func   ?sub_10075f60@@YIMPAUCRampView@@HM@Z sub_10075f60
