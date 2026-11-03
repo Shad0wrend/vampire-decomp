@@ -205,6 +205,7 @@ public:
 	virtual bool vfunc566(CBaseEntity *pHint);	// "FValidateHintType": whether the hint (its groups at +0x470 against the NPC's usable groups, its type at +0x5dc) is one this NPC can use
 	virtual int vfunc567(int unused);
 	virtual float vfunc568(int a);
+	int vfunc571(float f);	// slot 571 (plain member so the derived slots keep their numbers): 9 when f < 190.0f, else 0x13
 	bool vfunc575();	// slot 575: bit 6 of the class flags (plain member so the declared base slots do not shift)
 	int vfunc450(int a);	// slot 450 (plain overload of the placeholder slot): translates a schedule id through slot 580 + 0x18
 
