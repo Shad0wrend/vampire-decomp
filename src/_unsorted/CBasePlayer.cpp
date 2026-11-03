@@ -1510,6 +1510,31 @@ void CBasePlayer::vfunc436()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016cee0 size=0x36
+#include "CBasePlayer.h"
+
+struct CGameRulesVirt
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4(void *pPlayer);
+};
+
+extern CGameRulesVirt *g_1070ba0c;
+
+// TARGET: CBasePlayer::vfunc431
+void CBasePlayer::vfunc431()
+{
+	*(int *)((char *)this + 0x1a18) = 0;
+	g_1070ba0c->v4(this);
+	*((char *)this + 0x22dc) = 1;
+	*(int *)((char *)this + 0x14d4) = 0;
+	*(int *)((char *)this + 0x14d8) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016e820 size=0x175
 #include "CBasePlayer.h"
 #include "CEntityVSlots.h"
