@@ -7,3 +7,14 @@
 #include "CRBTree12Entry_102ec4a0.h"
 static void (CUtlRBTree<CRBTree12Entry_102ec4a0, unsigned short>::*s_LinkToParent)(unsigned short, unsigned short, bool) = &CUtlRBTree<CRBTree12Entry_102ec4a0, unsigned short>::LinkToParent;
 // END FUNCTION
+
+// FUNCTION: 0x102eb770 size=0x58
+#include "CRBTree12Entry_102ec4a0.h"
+#include "utlrbtree.h"
+
+typedef CUtlRBTree<CRBTree12Entry_102ec4a0, unsigned short> RBTree12_102ec4a0;
+typedef const RBTree12_102ec4a0::Links_t &(RBTree12_102ec4a0::*LinksPtr_t)(unsigned short) const;
+
+// TARGET: CUtlRBTree<CRBTree12Entry_102ec4a0,unsigned short>::Links
+LinksPtr_t g_linksForce = &RBTree12_102ec4a0::Links;
+// END FUNCTION
