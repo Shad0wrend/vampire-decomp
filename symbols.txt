@@ -5582,6 +5582,7 @@
 0x10009a84 func   ?sub_10028260@CPhysTorque@@QAEXXZ CPhysTorque::sub_10028260
 0x10009a89 func   ?vfunc420@CNPC_VChangBrosBlade@@QAEXXZ CNPC_VChangBrosBlade::vfunc420
 0x10009a8e func   ?vfunc546@CNPC_VFrenzyShadow@@QAEHH@Z CNPC_VFrenzyShadow::vfunc546
+0x10009a93 func   ?vfunc322@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::vfunc322
 0x10009a98 func   ?sub_101d2460@@YAXPBMHHH@Z sub_101d2460
 0x10009a9d func   ?sub_10248c60@CKeyValuesX@@QAEMPBDM@Z CKeyValuesX::sub_10248c60
 0x10009aa2 func   ?sub_103708e0@CNPC_VCop@@QAEPAV1@XZ CNPC_VCop::sub_103708e0

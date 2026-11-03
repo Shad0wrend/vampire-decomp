@@ -1809,6 +1809,30 @@ bool CAI_BaseNPCTroika::vfunc326(CBaseEntity *pEnt, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a0910 size=0x1e
+#include "CAI_BaseNPCTroika.h"
+
+#define CVS(n) virtual void s##n();
+#define CVS10(p) CVS(p##0) CVS(p##1) CVS(p##2) CVS(p##3) CVS(p##4) CVS(p##5) CVS(p##6) CVS(p##7) CVS(p##8) CVS(p##9)
+
+struct CBaseNPCTroikaSlots600
+{
+	CVS10(0) CVS10(1) CVS10(2) CVS10(3) CVS10(4) CVS10(5) CVS10(6) CVS10(7) CVS10(8) CVS10(9)
+	CVS10(10) CVS10(11) CVS10(12) CVS10(13) CVS10(14) CVS10(15) CVS10(16) CVS10(17) CVS10(18) CVS10(19)
+	CVS10(20) CVS10(21) CVS10(22) CVS10(23) CVS10(24) CVS10(25) CVS10(26) CVS10(27) CVS10(28) CVS10(29)
+	CVS10(30) CVS10(31) CVS10(32) CVS10(33) CVS10(34) CVS10(35) CVS10(36) CVS10(37) CVS10(38) CVS10(39)
+	CVS10(40) CVS10(41) CVS10(42) CVS10(43) CVS10(44) CVS10(45) CVS10(46) CVS10(47) CVS10(48) CVS10(49)
+	CVS10(50) CVS10(51) CVS10(52) CVS10(53) CVS10(54) CVS10(55) CVS10(56) CVS10(57) CVS10(58) CVS10(59)
+	virtual void s600(int a);
+};
+
+void CAI_BaseNPCTroika::vfunc322(int a)
+{
+	sub_102bf5d0(a);
+	((CBaseNPCTroikaSlots600 *)this)->s600(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ad110 size=0x20
 #include "CAI_BaseNPCTroika.h"
 void CAI_BaseNPCTroika::vfunc616()
