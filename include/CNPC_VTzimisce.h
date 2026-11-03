@@ -237,4 +237,5 @@ public:
 	virtual float vfunc523();
 	virtual float vfunc550();
 	void vfunc431();	// as in CLight (transplant)
+	unsigned short sub_103b9160();	// slot 337 override: CAI_BaseNPCTroika::vfunc337 with bit 0x400 set
 };
