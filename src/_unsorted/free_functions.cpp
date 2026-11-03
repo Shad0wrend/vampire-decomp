@@ -153944,6 +153944,118 @@ void CAI_Navigator::sub_102f1fa0(float flDelay, CAI_NavSource *pSource)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f2060 size=0x233
+#include "CAI_Navigator.h"
+#include "CBaseEntity.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CEHandleGet.h"
+#include "CAI_Waypoint.h"
+#include "CAI_BaseNPC.h"
+
+// TARGET: CAI_Navigator::sub_102f2060
+
+struct S_WpPtr2
+{
+	void *m_p;
+	void sub_10319ee0();
+};
+
+struct S_Route2
+{
+	char m_b00;
+	char m_b01;
+	char m_pad02[2];
+	int m_i04;
+	float m_fl08;
+	int m_i0c;
+	char m_b10;
+	char m_b11;
+	char m_pad12[2];
+	float m_v14[3];
+	int m_i20;
+	S_WpPtr2 m_wp;
+	int m_i28;
+	int m_i2c;
+	unsigned int m_h30;
+	float m_v34[3];
+	char m_pad40[4];
+	int m_nProvider;
+
+	char *sub_1030ba30();
+	void sub_1030b4d0(CAI_Waypoint *pWaypoint, char bFlag);
+	void sub_1030ba90();
+};
+
+struct S_Pathfinder2
+{
+	CAI_Waypoint *sub_10304130(const float *pOrigin, const float *pLocal, int a, int b, int c, unsigned int flags, int d, int e);
+	CAI_Waypoint *sub_10304e00(const float *pOrigin, const float *pLocal, int a3, char a4, int a5, const float *pVector, float a7, int a8);
+};
+
+void sub_1013cb80(const Vector &a, const Vector &b, const Vector &c, Vector &out, float *p);
+float sub_102d61b0(int a);
+extern float g_104454c4;
+
+bool CAI_Navigator::sub_102f2060(int bArg)
+{
+	S_Route2 *pRoute = (S_Route2 *)m_p30;
+	S_Pathfinder2 *pPF = (S_Pathfinder2 *)sub_102ecc00();
+	Vector *pOrigin = (Vector *)((CAI_BaseNPC *)m_pOuter)->vfunc220();
+	char *pLocal = pRoute->sub_1030ba30();
+	CBaseEntity *pEnt = g_10566458->sub_100290c0((const unsigned int *)&pRoute->m_h30);
+	int n28 = pRoute->m_i28;
+	pRoute->m_wp.sub_10319ee0();
+	pRoute->m_nProvider = -1;
+	int flags = 0;
+	char b01 = ((S_Route2 *)m_p30)->m_b01;
+	CAI_Waypoint *pWaypoint;
+	if (m_i18 != 3) {
+		if ((((CAI_BaseNPC *)m_pOuter)->vfunc513() & 4) || (((CAI_BaseNPC *)m_pOuter)->vfunc513() & 0x10)) {
+			flags = 0x32;
+		} else if (((CAI_BaseNPC *)m_pOuter)->vfunc513() & 1) {
+			flags = 0x31;
+			if (((CAI_BaseNPC *)m_pOuter)->vfunc513() & 2)
+				flags = 0x35;
+			flags |= 0x100;
+		}
+		if (b01 == 0 && pRoute->m_fl08 == g_104454c4) {
+			pWaypoint = pPF->sub_10304130((const float *)pOrigin, (const float *)pLocal, (int)pEnt, 8, -1, (unsigned int)flags, n28, bArg);
+			if (pWaypoint != 0)
+				goto found;
+		}
+	}
+	pWaypoint = pPF->sub_10304e00((const float *)pOrigin, (const float *)pLocal, n28, b01, pRoute->m_i04, (const float *)&pRoute->m_v14, pRoute->m_fl08, bArg);
+	if (pWaypoint == 0)
+		return false;
+found:
+	pRoute->sub_1030b4d0(pWaypoint, 0);
+	CAI_Waypoint *pNext = pWaypoint->m_pNext;
+	if (pNext != 0 && pNext->m_n2c == m_i18) {
+		Vector vec;
+		sub_1013cb80(*pOrigin, *(Vector *)pWaypoint, *(Vector *)pNext, vec, 0);
+		float dx = pWaypoint->m_vecPos[0] - vec.x;
+		float dy = pWaypoint->m_vecPos[1] - vec.y;
+		float dz = pWaypoint->m_vecPos[2] - vec.z;
+		if (FastSqrt(dx * dx + dy * dy + dz * dz) > 0.1f) {
+			Vector dir;
+			dir.x = pOrigin->x - vec.x;
+			dir.y = pOrigin->y - vec.y;
+			dir.z = pOrigin->z - vec.z;
+			int nNavType = m_i08;
+			float f = sub_102d61b0(nNavType);
+			if (FastSqrt(dir.x * dir.x + dir.y * dir.y + dir.z * dir.z) < f * 0.5)
+				pRoute->sub_1030ba90();
+		}
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f28a0 size=0x28
 #include "CUnknown102ee270.h"
 #include "CAI_NavRoute.h"
