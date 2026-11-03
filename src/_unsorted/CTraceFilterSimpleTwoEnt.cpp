@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101ccd70 size=0x20
+#include "CTraceFilterSimpleTwoEnt.h"
+
+CTraceFilterSimpleTwoEnt::CTraceFilterSimpleTwoEnt(const void *pPassEnt, const void *pPassEnt2, int collisionGroup)
+{
+	m_pPassEnt = (void *)pPassEnt;
+	m_pPassEnt2 = (void *)pPassEnt2;
+	m_collisionGroup = collisionGroup;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ccda0 size=0xdf
 #include "CTraceFilterSimpleTwoEnt.h"
 
