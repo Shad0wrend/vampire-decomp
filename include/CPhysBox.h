@@ -12,6 +12,7 @@ public:
 class CPhysBox : public CBaseEntity
 {
 public:
+	virtual void vfunc39(CBaseEntity *pOther);	// slot 39: wakes the physics object at +0x36c (its slot 2), then sub_1040d970(pOther)
 	bool sub_1004e1c0(int a);	// slot 32 override: true when the entity looked up from a (sub_104115b0) is this
 	void sub_1004e910(int a);	// slot 242 override: forwards to the helper at +0x498 with this
 	int vfunc142(CBaseEntity *pEnt);	// slot 142 (plain member): CBaseEntity::vfunc227 on this with pEnt, then when pEnt's word at +0x28 is set the helper at +0x468 is given (pEnt's word at +0x2c, this, 0); always 1
