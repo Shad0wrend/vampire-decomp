@@ -179,3 +179,17 @@ void CRopeKeyframe::vfunc104()
 	*(int *)((char *)this + 0x46c) = engine->vfunc13(name, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1019f690 size=0x1a
+#include "CRopeKeyframe.h"
+
+char CRopeKeyframe::vfunc86(int a, int b, int c, int d, int e)
+{
+	if (!m_b450)
+	{
+		m_b450 = 1;
+		return 1;
+	}
+	return sub_100ab020(a, b, c, d, e);
+}
+// END FUNCTION
