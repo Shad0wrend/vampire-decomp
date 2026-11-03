@@ -770,6 +770,19 @@ void CBasePlayer::vfunc448()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10162210 size=0x39
+#include "CBasePlayer.h"
+#include "CBaseCombatCharacter.h"
+
+// TARGET: CBasePlayer::vfunc143
+int CBasePlayer::vfunc143(float flHealth, int bitsDamageType)
+{
+	if (m_nTakeDamage1FC != 0)
+		m_flags0E98 &= ~(bitsDamageType & 0x3fff);
+	return ((CBaseCombatCharacter *)this)->CBaseCombatCharacter::vfunc143(flHealth, bitsDamageType);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10162260 size=0x4d
 #include "CBasePlayer.h"
 struct CPlayerViewOffsetView {
