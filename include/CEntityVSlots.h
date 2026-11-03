@@ -169,7 +169,7 @@ public:
 	virtual unsigned int slot360();	// weapon: its flag word (bits 0x18000 mark the special kinds)
 	virtual int slot361(int a);	// weapon: takes one int, answers an int (the player's weapon-activity translation)
 	EVS(362) virtual char slot363(void *pNpc);	// player: a boolean answer in al about an NPC (the maker's spawn check passes itself)
-	EVS(364) EVS(365) EVS(366) virtual QAngle slot367();	// character: "BodyAngles", returned by value
+	virtual char slot364(const Vector *pA, const Vector *pB, int a); EVS(365) EVS(366) virtual QAngle slot367();	// character: "BodyAngles", returned by value
 	virtual Vector *slot368(Vector *pOut);	// character: fills pOut with a vector (the player's drop-position half extent, scaled by 0.5 for the astrolite) and returns it
 	virtual Vector *slot369(Vector *pOut);	// character: fills pOut with a direction (the weapon drop direction) and returns it
 	EVS(370)
