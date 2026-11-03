@@ -8248,6 +8248,7 @@
 0x1000d756 func   ?vfunc81@CCorpse@@QAEHXZ CCorpse::vfunc81
 0x1000d75b func   ?sub_10233fb0@@YAXXZ sub_10233fb0
 0x1000d760 func   ?sub_10247d70@CUnk10247d70@@QAEXXZ CUnk10247d70::sub_10247d70
+0x1000d765 func   ?sub_1009f850@CBaseEntity@@QAEXXZ CBaseEntity::sub_1009f850
 0x1000d76a func   ?sub_101b6320@CUnknown101b6320@@QAEAAV1@ABV1@@Z CUnknown101b6320::sub_101b6320
 0x1000d76f func   ?sub_102400e0@@YA_NPBVVector@@00@Z sub_102400e0
 0x1000d779 func   ?sub_10339a90@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_10339a90

@@ -29947,6 +29947,46 @@ void CBaseEntity::sub_1009f3c0(const char *msg, int duration)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f850 size=0x199
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "IPhysicsObject.h"
+#include "ScopeTrace.h"
+#include "Vector.h"
+
+void sub_10142aa0(const Vector &origin, const Vector &mins, const Vector &maxs, int r, int g, int b, int a, int duration);
+
+void CBaseEntity::sub_1009f850()
+{
+	ScopeTrace trace("CBaseEntity::DrawAbsBoxOverlay", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	int red = 0;
+	int green = 200;
+	IPhysicsObject *pPhys = (IPhysicsObject *)m_obj36c;
+	if (pPhys && pPhys->vfunc4())
+	{
+		red = 90;
+		green = 120;
+	}
+	if (m_pEdict2e0)
+	{
+		CCollisionProperty *pCol = (CCollisionProperty *)((char *)this + 0x270);
+		Vector vecMins, vecMaxs;
+		pCol->vfunc15(&vecMins, &vecMaxs);
+		Vector vecCenter = (vecMins + vecMaxs) * 0.5f;
+		Vector vecExtents = vecMaxs - vecCenter;
+		sub_10142aa0(vecCenter, -vecExtents, vecExtents, red, green, 0, 0, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009fa60 size=0x6f
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
