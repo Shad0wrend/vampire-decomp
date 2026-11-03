@@ -9,6 +9,8 @@ public:
     void vfunc4(); // LevelShutdownPreEntity
     void vfunc5(); // LevelShutdownPostEntity: scope trace, when the physics environment (global 0x10723940) exists tears it down and clears +0x10
     void vfunc7(); // FrameUpdatePostEntityThink
+    CPhysicsHook *vfunc8(unsigned int flags); // scalar deleting destructor: the CUtlVector at +4, then CBaseGameSystem's destructor
+    void sub_1000cfbd(); // CBaseGameSystem::~CBaseGameSystem (stub), called directly
 
     void *m_vtbl;    // 0x00
     char m_04[4];    // 0x04: passed by address to sub_1000a8cb
