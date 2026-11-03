@@ -1259,6 +1259,20 @@ bool CBaseEntity::vfunc70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009def0 size=0x1e
+void __fastcall sub_1009df20(void *self);
+void sub_100aa7b0(void *p);
+
+// TARGET: sub_1009def0
+void *__fastcall sub_1009def0(void *pThis, int edx_unused, unsigned int flags)
+{
+	sub_1009df20(pThis);
+	if (flags & 1)
+		sub_100aa7b0(pThis);
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009e100 size=0x6
 namespace lifted {
 extern char g_10552d34;
