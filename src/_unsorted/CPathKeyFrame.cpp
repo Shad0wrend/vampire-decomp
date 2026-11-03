@@ -30,6 +30,18 @@ void CPathKeyFrame::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140040 size=0x17
+#include "CPathKeyFrame.h"
+#include "CBaseEntity.h"
+
+void CPathKeyFrame::vfunc113()
+{
+	((CBaseEntity *)this)->CBaseEntity::vfunc113();
+	sub_10140200();
+	sub_10140070();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140f00 size=0x1e
 #include "CPathKeyFrame.h"
 

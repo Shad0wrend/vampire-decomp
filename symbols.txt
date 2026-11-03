@@ -3546,6 +3546,7 @@
 0x10006910 func   ?sub_100eb030@CUnknown100eb030@@QAEPAXH@Z CUnknown100eb030::sub_100eb030
 0x10006915 func   ?sub_1005fca0@CTEBubbleTrail@@QAEPAV1@PBD@Z CTEBubbleTrail::sub_1005fca0
 0x1000691a func   ?vfunc438@CNPC_VCop@@QAEHXZ CNPC_VCop::vfunc438
+0x10006924 func   ?vfunc113@CPathKeyFrame@@QAEXXZ CPathKeyFrame::vfunc113
 0x10006929 func   ?vfunc485@CHL2_Player@@UAE_NH@Z CHL2_Player::vfunc485
 0x10006933 func   ?vfunc362@CWeaponThrown_Chang_Energy_Ball@@QAEHXZ CWeaponThrown_Chang_Energy_Ball::vfunc362
 0x10006938 func   ?vfunc370@CAI_BaseHumanoid@@QAE?AVVector@@XZ CAI_BaseHumanoid::vfunc370
