@@ -1408,6 +1408,23 @@ translated:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10295710 size=0x25
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CAI_BaseNPCTroika::vfunc376
+int CAI_BaseNPCTroika::vfunc376(int a)
+{
+	switch (a)
+	{
+	case 1:
+		if ((m_flags14bc & 0x80000) == 0x80000)
+			a = 0x105d;
+		break;
+	}
+	return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10295a60 size=0x3
 #include "CAI_BaseNPCTroika.h"
 void CAI_BaseNPCTroika::vfunc465(int a0)

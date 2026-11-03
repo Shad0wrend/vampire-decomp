@@ -9602,6 +9602,7 @@
 0x1000fb00 func   ?sub_10202ec0@CUnknown10202ec0@@QAEHHHH@Z CUnknown10202ec0::sub_10202ec0
 0x1000fb0a func   ?sub_102e2660@CUnknown102e2660@@QAEHH@Z CUnknown102e2660::sub_102e2660
 0x1000fb0f func   ?vfunc81@CItemGWatchNormal@@QAEHXZ CItemGWatchNormal::vfunc81
+0x1000fb14 func   ?vfunc376@CAI_BaseNPCTroika@@UAEHH@Z CAI_BaseNPCTroika::vfunc376
 0x1000fb19 func   ?sub_1016aa00@CPlayerAccum_1016aa00@@QAEXHD@Z CPlayerAccum_1016aa00::sub_1016aa00
 0x1000fb1e func   _trigger_transition trigger_transition
 0x1000fb23 func   ?sub_100fbbb0@CBaseEntity@@QAEXM@Z CBaseEntity::sub_100fbbb0
