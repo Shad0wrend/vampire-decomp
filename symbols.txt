@@ -1164,6 +1164,7 @@
 0x10002cb6 func   ?sub_10032db0@CUtlVector20@@QAEXH@Z CUtlVector20::sub_10032db0
 0x10002cc0 func   ?vfunc5@CNPC_VTzimisceRunner@@QAEPAV1@I@Z CNPC_VTzimisceRunner::vfunc5
 0x10002cc5 func   _phys_convert phys_convert
+0x10002cca func   ?vfunc434@CNPC_VSabbatLeader@@QAEXXZ CNPC_VSabbatLeader::vfunc434
 0x10002ccf func   ?sub_10107480@UtlMem@@QAEXXZ UtlMem::sub_10107480
 0x10002cd4 func   ?sub_100c9430@CBaseButton@@QAEXPAVCBaseEntity@@@Z CBaseButton::sub_100c9430
 0x10002cd9 func   ?sub_103a1570@@YIPAXPAX@Z sub_103a1570

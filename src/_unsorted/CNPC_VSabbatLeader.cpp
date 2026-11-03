@@ -381,6 +381,22 @@ void CNPC_VSabbatLeader::vfunc432(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a7650 size=0x5a
+#include "CNPC_VSabbatLeader.h"
+#include "CNPC_VHuman.h"
+#include "ScopeTrace.h"
+
+void CNPC_VSabbatLeader::vfunc434()
+{
+	g_109f3620[*g_109f3680].name = "CNPC_VSabbatLeader::PrescheduleThink";
+	g_109f3620[*g_109f3680].file = g_106b8540;
+	g_109f3620[*g_109f3680].line = g_106b8540;
+	(*g_109f3680)++;
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc434();
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a76d0 size=0x6f
 #include "CNPC_VSabbatLeader.h"
 
