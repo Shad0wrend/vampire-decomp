@@ -7,6 +7,8 @@
 
 void *operator new(unsigned int);
 
+float sub_10146150(const Vector *pVec);	// VectorLength (0x10146150): the length of a vector (cdecl, result in st0)
+
 class CBaseEntity;
 class CAI_Waypoint;
 class CAI_Pathfinder;
