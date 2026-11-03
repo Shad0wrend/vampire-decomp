@@ -959,6 +959,7 @@
 0x10002752 func   ?vfunc265@CPropModelState@@QAEXPAX0HM@Z CPropModelState::vfunc265
 0x10002757 func   ?sub_103c2990@@YIPAXPAX@Z sub_103c2990
 0x1000275c func   _scripted_sequence scripted_sequence
+0x1000276b func   ?vfunc431@CNPC_VFrenzyShadow@@UAEXXZ CNPC_VFrenzyShadow::vfunc431
 0x10002770 func   ?sub_1018f750@CBreakableProp@@QAEXPAUinputdata_t@@@Z CBreakableProp::sub_1018f750
 0x10002775 func   ?sub_1013c460@@YAXABUmatrix3x4_t@@ABVVector@@1AAV2@2@Z sub_1013c460
 0x1000277f func   ?sub_10045d10@@YGXPAUSPhysObjBuf_t@@@Z sub_10045d10

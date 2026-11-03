@@ -81,6 +81,31 @@ int CNPC_VFrenzyShadow::vfunc138()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10375e50 size=0x53
+#include "CBaseEntity.h"
+#include "CNPC_VFrenzyShadow.h"
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+
+struct CFrenzyShadowTarget
+{
+	S100(a0) S100(a1)
+	S10(b0)
+	virtual void b10(); virtual void b11(); virtual void b12(); virtual void b13(); virtual void b14(); virtual void b15(); virtual void b16();
+	virtual int vfunc217();
+};
+
+void CNPC_VFrenzyShadow::vfunc431()
+{
+	sub_103a4700();
+	CBaseEntity *pTarget = vfunc167();
+	if (m_nState5cc0 == 2 && pTarget && !sub_10014df8(0x46))
+		vfunc544(pTarget, ((CFrenzyShadowTarget *)pTarget)->vfunc217(), (int)((char *)pTarget + 0x3d4));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10375ed0 size=0x32
 #include "CNPC_VFrenzyShadow.h"
 #include "CAI_BaseNPCTroika.h"
