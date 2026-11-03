@@ -63,7 +63,10 @@ public:
 	unsigned int m_h618c;	// 0x618c: entity handle
 	char m_pad6190[0x623c - 0x6190];
 	float m_f623c;	// 0x623c
-	char m_pad6240[0x634c - 0x6240];
+	char m_pad6240[0x62a8 - 0x6240];
+	Vector m_vecInitialPosition;	// 0x62a8 (CAI_BaseNPCTroika::m_vecInitialPosition): spawn position re-applied by vfunc130
+	Vector m_qaInitialAngles;	// 0x62b4 (CAI_BaseNPCTroika::m_qaInitialAngles): spawn angles re-applied by vfunc130
+	char m_pad62c0[0x634c - 0x62c0];
 	int m_n634c;	// 0x634c
 	char m_pad6350[0x641c - 0x6350];
 	int m_n641c;	// 0x641c
