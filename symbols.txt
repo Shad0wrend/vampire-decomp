@@ -3786,6 +3786,7 @@
 0x10006d7a func   ?vfunc546@CNPC_VVampireBoss@@QAEHH@Z CNPC_VVampireBoss::vfunc546
 0x10006d7f func   _item_p_occult_obfuscate item_p_occult_obfuscate
 0x10006d84 func   ?vfunc0@CCollisionEvent@@UAEXPAX@Z CCollisionEvent::vfunc0
+0x10006d89 func   ?vfunc22@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::vfunc22
 0x10006d8e func   ?sub_10309e40@CUnknown1030a6e0@@QAEXXZ CUnknown1030a6e0::sub_10309e40
 0x10006d98 func   ?sub_100b7b40@@YIXH@Z sub_100b7b40
 0x10006da7 func   ?sub_100c01d0@CFuncRotating@@QAEXXZ CFuncRotating::sub_100c01d0
