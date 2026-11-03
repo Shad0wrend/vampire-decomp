@@ -64,4 +64,5 @@ public:
     virtual float vfunc59();
     virtual float vfunc60();
     virtual bool vfunc26(int, int, int, int);
+    virtual int vfunc48(CBaseEntity *pPlayer);	// slot 48: 1, or 2 when the entity's flags at +0x204 carry 0x40000000 (declared last to keep the other slots' indices)
 };
