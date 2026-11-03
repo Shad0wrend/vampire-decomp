@@ -9574,6 +9574,7 @@
 0x1000f8bc func   ?sub_100f6bb0@@YGXPAUSEntityObject@@@Z sub_100f6bb0
 0x1000f8c1 func   ?vfunc117@CAI_TestHull@@QAEDXZ CAI_TestHull::vfunc117
 0x1000f8c6 func   ?sub_103109a0@CUtlVector4@@QAEHHHPBH@Z CUtlVector4::sub_103109a0
+0x1000f8cb func   ?vfunc304@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc304
 0x1000f8d5 func   ?vfunc81@CBlueBloodPack@@QAEHXZ CBlueBloodPack::vfunc81
 0x1000f8da func   ?vfunc176@CStealthModifier@@QAEXPAVCBaseEntity@@@Z CStealthModifier::vfunc176
 0x1000f8df func   ?vfunc412@CBasePlayer@@UAE_NXZ CBasePlayer::vfunc412
