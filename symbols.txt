@@ -1435,6 +1435,7 @@
 0x100033e1 func   ?sub_102e8270@CUnknown102e83e0@@QAEXHH@Z CUnknown102e83e0::sub_102e8270
 0x100033e6 func   ?vfunc5@CCameraKeyFrame@@QAEPAV1@I@Z CCameraKeyFrame::vfunc5
 0x100033f0 func   ?sub_103e05e0@CNPC_VZombie@@QAEXH@Z CNPC_VZombie::sub_103e05e0
+0x100033f5 func   ?vfunc338@CBasePlayer@@QAEXHDH@Z CBasePlayer::vfunc338
 0x10003404 func   ?sub_101ab310@@YAHHHHH@Z sub_101ab310
 0x10003409 func   ?sub_100330d0@@YIXPAUMem@@HH@Z sub_100330d0
 0x1000341d func   ?vfunc580@CAI_BaseNPCTroika@@UAEPAUCAI_CondOwner@@XZ CAI_BaseNPCTroika::vfunc580
