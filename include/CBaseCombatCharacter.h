@@ -295,4 +295,5 @@ public:
     virtual int vfunc80();
 	void sub_103418f0(inputdata_t *data);
 	void sub_101067e0(const char *pszName, float a, float b, float c, float d, float e);	// 0x101067e0 "CBaseCombatCharacter::AddScriptedExpression" (scope string 0x1056bbc4): appends a CExpressionRecord to the vector at +0x10bc
+	void sub_10348d00();	// 0x10348d00: grapple-release helper called by vfunc380 (searches for a free spot around the entity using the OBB at +0x270 and traces, then SetAbsOrigin / slot 216)
 };
