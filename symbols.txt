@@ -2137,6 +2137,7 @@
 0x100043f4 func   ?sub_1020db00@@YIXPAXHPAH@Z sub_1020db00
 0x100043f9 func   ?vfunc12@CGameRules@@UAEXXZ CGameRules::vfunc12
 0x100043fe func   ?sub_10043ba0@@YIXPAX@Z sub_10043ba0
+0x10004408 func   ?vfunc275@CPropDoorknobElectronic@@QAEXXZ CPropDoorknobElectronic::vfunc275
 0x1000440d func   ?vfunc241@CBaseDoor@@UAE_NXZ CBaseDoor::vfunc241
 0x10004417 func   ?vfunc2@CTEUserTracer@@UAEPAV1@I@Z CTEUserTracer::vfunc2
 0x1000441c func   ?vfunc82@CTriggerTeleport@@UAEPAUdatamap_t@@XZ CTriggerTeleport::vfunc82

@@ -63,6 +63,17 @@ void CPropDoorknobElectronic::vfunc274()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10226360 size=0x10
+#include "CPropDoorknobElectronic.h"
+#include "CItemContainerLock.h"
+void CItemContainerLock::vfunc275()
+{
+	m_unk780 = 1;
+}
+// TARGET: CPropDoorknobElectronic::vfunc275
+void CPropDoorknobElectronic::vfunc275() { ((CItemContainerLock *)this)->CItemContainerLock::vfunc275(); m_unk670 = 0; }
+// END FUNCTION
+
 // FUNCTION: 0x10226380 size=0x14
 #include "CPropDoorknobElectronic.h"
 
