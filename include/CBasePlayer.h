@@ -147,7 +147,7 @@ public:
 	CBP_V1(sf39) CBP_V1(sf40) CBP_V1(sf41) CBP_V1(sf42) CBP_V1(sf43) CBP_V1(sf44) CBP_V1(sf45)
 	virtual Vector vfunc368();	// slot 368 (+0x5c0) "CBaseCombatCharacter::BodyDirection2D": the body's forward direction, flattened and normalised; returned by value (hidden result pointer, ret 4)
 	virtual Vector vfunc369();	// slot 369 (+0x5c4) "CBaseCombatCharacter::BodyDirection3D": the body's 3D forward direction, returned by value (hidden result pointer, ret 4)
-	CBP_V1(sf48) CBP_V1(sf49) CBP_V10(sf5)
+	CBP_V1(sf48) CBP_V1(sf49) CBP_V1(sf50) CBP_V1(sf51) CBP_V1(sf52) virtual int vfunc375(int a); virtual int vfunc376(int a); CBP_V1(sf55) CBP_V1(sf56) CBP_V1(sf57) CBP_V1(sf58) virtual int vfunc381(int a);
 	virtual bool vfunc382(CBaseCombatWeapon *pWeapon);	// slot 382 "Weapon_CanUse": true unless the weapon is of the two type flags 0x18000 and the player already owns a weapon of its class, then the player object at +0xa8 is sent message 0x4e with the weapon owner's text and false is returned
 	virtual void vfunc383(CBaseEntity *pWeapon, char bNoSwitch);	// slot 383 "Weapon_Equip": CBaseCombatCharacter::vfunc383, and (unless bNoSwitch) a new holder entity for the weapon's class (handle at +0x1c64) plus the game rules' FShouldSwitchWeapon / slot 388 switch
 	CBP_V1(sf62) CBP_V1(sf63) CBP_V1(sf64) CBP_V1(sf65)
