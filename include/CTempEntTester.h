@@ -19,6 +19,11 @@ public:
 	TET_V10(1) TET_V10(2) TET_V10(3) TET_V10(4) TET_V10(5) TET_V10(6) TET_V10(7) TET_V10(8) TET_V10(9)
 	TET_V(100) TET_V(101) TET_V(102)
 	virtual void vfunc103();	// "Spawn": sets bit 6 of the flags at +0x19c, finds the first object of the list (sub_100507c0) whose name, lowercased, contains the filter text at +0x458 (stored at +0x450); removes the entity when there is none, else stamps the next think time (+0x17c) with the current time
+	TET_V(104) TET_V(105) TET_V(106) TET_V(107) TET_V(108) TET_V(109)
+	TET_V10(11) TET_V10(12) TET_V10(13) TET_V10(14) TET_V10(15) TET_V10(16) TET_V10(17) TET_V10(18) TET_V10(19)
+	TET_V10(20) TET_V10(21)
+	virtual float *vfunc220();	// slot 220 (+0x370) "CBaseEntity::GetOrigin": points at the entity origin (+0x41c)
+	virtual float *vfunc221();	// slot 221 (+0x374) "CBaseEntity::GetAngles": points at the entity angles (+0x428)
 
 	void sub_1000cb8a();	// destructor body
 	void sub_10056e50();	// slot 134 (think): when the object at +0x450 is set calls its slot 3 with this->slot 220(this->slot 221()), schedules the next think at curtime + 1.0f (+0x17c) and returns while curtime is below the end time at +0x454; otherwise removes the entity
