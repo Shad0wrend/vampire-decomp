@@ -16,3 +16,4 @@
 	void vfunc511();	// slot 511 (plain member): sends the edict at +0x2e0 to the engine (IndexOfEdict-style slot 35 of 0x1070b22c with a 1) and gives the index to the sound system's slot 5
 	void vfunc412();	// slot 412 (plain member): GetLastThink of the default context (sub_100ac720(0)), result unused
 	void vfunc413();	// slot 413 (plain member): the same as slot 412
+	void vfunc414();	// slot 414 (plain member): the same as slot 412
