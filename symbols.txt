@@ -7727,6 +7727,7 @@
 0x1000cadb func   ?vfunc5@CItemGCashBox@@QAEPAV1@I@Z CItemGCashBox::vfunc5
 0x1000cae0 func   ?vfunc444@CNPC_VAndreiBlood@@QAEXPBX@Z CNPC_VAndreiBlood::vfunc444
 0x1000caea func   ?sub_102c6e90@@YIXPAV?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@@Z sub_102c6e90
+0x1000caef func   ?sub_10185b10@CPlayerMove@@QAEXPAVCBasePlayer@@PAX@Z CPlayerMove::sub_10185b10
 0x1000caf4 func   ?sub_1002e970@@YAPAXHHHPAD@Z sub_1002e970
 0x1000caf9 func   ?vfunc420@CNPC_VBach@@UAEXXZ CNPC_VBach::vfunc420
 0x1000cafe func   ?sub_101ec900@CUnknown101ec7c0@@QAE_NPAX@Z CUnknown101ec7c0::sub_101ec900

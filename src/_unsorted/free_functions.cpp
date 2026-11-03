@@ -74693,6 +74693,89 @@ void CUnknown10185a30::sub_10185a30(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10185b10 size=0x1d1
+#include "CPlayerMove.h"
+#include "CBasePlayer.h"
+#include "CVProfile.h"
+
+void sub_1042d670();
+void sub_100b4e30(void *pCmd);
+void sub_100b4e80(int nPlayer);
+
+struct CCycleCountS	// a CCycleCount with the rdtsc sample / end written out (units that inline it carry their own)
+{
+	unsigned __int64 m_Int64;
+
+	void Sample()
+	{
+		unsigned __int64 *pInt64 = &m_Int64;
+		__asm
+		{
+			mov ecx, pInt64
+			rdtsc
+			mov dword ptr [ecx], eax
+			mov dword ptr [ecx + 4], edx
+		}
+	}
+
+	void End()
+	{
+		CCycleCountS c = { 0 };
+		c.Sample();
+		m_Int64 = c.m_Int64 - m_Int64;
+	}
+};
+
+class CCommandRunner	// the object whose virtual slot 0 starts the player's command (global 0x105892c8)
+{
+public:
+	virtual void Start(CBasePlayer *pPlayer, void *pCmd);
+};
+
+extern CCommandRunner *g_105892c8;
+
+// TARGET: CPlayerMove::sub_10185b10
+void CPlayerMove::sub_10185b10(CBasePlayer *pPlayer, void *pCmd)
+{
+	CVProfile *pProfile = g_109f3648;
+	if (pProfile->m_enabled || !pProfile->m_bAtRoot) {
+		if (pProfile->m_pCurNode->m_pszName != "CPlayerMove::StartCommand")
+			pProfile->m_pCurNode = pProfile->m_pCurNode->GetSubNode("CPlayerMove::StartCommand", 0, "Unaccounted");
+		CVProfNode *pNode = pProfile->m_pCurNode;
+		pNode->m_nCurFrameCalls++;
+		if (pNode->m_nRecursions++ == 0) {
+			((CCycleCountS *)&pNode->m_CurFrameTime)->Sample();
+			g_109f3648->PushGroupInlined(pNode->m_nBudgetGroupID);
+		}
+		pProfile->m_bAtRoot = false;
+	}
+
+	sub_1042d670();
+	pPlayer->m_pCmd20cc = pCmd;
+	sub_100b4e30(pCmd);
+	sub_100b4e80((int)pPlayer);
+	g_105892c8->Start(pPlayer, pCmd);
+
+	pProfile = g_109f3648;
+	if (!pProfile->m_bAtRoot || pProfile->m_enabled) {
+		CVProfNode *pNode = pProfile->m_pCurNode;
+		if (--pNode->m_nRecursions == 0 && pNode->m_nCurFrameCalls != 0) {
+			((CCycleCountS *)&pNode->m_CurFrameTime)->End();
+			pNode->m_TotalTime += pNode->m_CurFrameTime.m_Int64;
+			CVProfile *pProf = g_109f3648;
+			--pProf->m_nGroupStackDepth;
+			int nNew = pProf->m_GroupIDStack[pProf->m_nGroupStackDepth];
+			int nOld = pProf->m_GroupIDStack[pProf->m_nGroupStackDepth + 1];
+			if (nNew != nOld && pProf->m_bVTuneGroupsEnabled && nOld == pProf->m_nVTuneGroupID)
+				vtune(false);
+		}
+		if (pNode->m_nRecursions == 0)
+			pProfile->m_pCurNode = pProfile->m_pCurNode->m_pParent;
+		pProfile->m_bAtRoot = (pProfile->m_pCurNode == pProfile->m_pRoot);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10185d70 size=0x1af
 #include "CVProfile.h"
 
