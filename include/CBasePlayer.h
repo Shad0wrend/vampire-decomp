@@ -283,7 +283,8 @@ public:
 	char m_bFlag1B74;	// 0x1B74
 	char m_pad1B75[3];
 	int m_nRangeEnd1B78;	// 0x1B78: high half of that value, minus one
-	char m_pad1B7C[0x1c60 - 0x1b7c];	// 0x1B7C .. 0x1C5F
+	char m_pad1B7C[0x1c5c - 0x1b7c];	// 0x1B7C .. 0x1C5B
+	unsigned int m_h1C5C;	// 0x1C5C: entity handle (the target the player took over)
 	EHANDLE m_hEnt1C60;	// 0x1C60: entity handle (the slot 167 object)
 	char m_pad1C64[0x1cd8 - 0x1c64];	// 0x1C64 .. 0x1CD7
 	unsigned int m_nCriminalLevelEnc;	// 0x1CD8, scrambled by the xor/and/add mask chain
