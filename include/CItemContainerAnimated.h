@@ -14,4 +14,5 @@ public:
 	void sub_100963d0();	// CBaseAnimating::ResetClientsideFrame (stub 0x100024b9), called directly
 	void vfunc406();	// slot 406: plays the "open" animation
 	void vfunc407();	// slot 407: plays the "close" animation
+	void vfunc103();	// slot 103: the container's Spawn, then RemoveFlag(0x40000) and sub_100b3b00
 };
