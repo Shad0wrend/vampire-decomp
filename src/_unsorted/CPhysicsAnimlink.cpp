@@ -12,6 +12,15 @@ datamap_t * CPhysicsAnimlink::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014ef60 size=0x9
+#include "CPhysicsAnimlink.h"
+
+int CPhysicsAnimlink::vfunc117()
+{
+	return CBaseEntity::vfunc117() | 0x200;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014ef80 size=0x1e
 #include "CPhysicsAnimlink.h"
 
