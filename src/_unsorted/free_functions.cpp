@@ -166604,6 +166604,40 @@ char sub_10389650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10389c50 size=0x43
+#include "CNPC_VManBat.h"
+
+void *sub_100aa720(int size);
+extern char g_1064167c[];
+
+#define VD10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CNPCVt
+{
+	VD10(a) VD10(b) VD10(c) VD10(d) VD10(e) VD10(f) VD10(g) VD10(h) VD10(i) VD10(j)
+	virtual void s100(); virtual void s101(); virtual void s102(); virtual void s103(); virtual void s104(); virtual void s105();
+	virtual void vfunc106(const char *pszName);
+};
+
+struct CNPCCtor
+{
+	CNPC_VManBat *sub_10389cc0();
+};
+
+// TARGET: npc_VManBat
+extern "C" CNPC_VManBat *npc_VManBat()
+{
+	void *mem = sub_100aa720(0x66bc);
+	CNPC_VManBat *p;
+	if (mem)
+		p = ((CNPCCtor *)mem)->sub_10389cc0();
+	else
+		p = 0;
+	((CNPCVt *)p)->vfunc106(g_1064167c);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10389e80 size=0xc
 void __fastcall sub_10389ea0(void *pThis);
 
