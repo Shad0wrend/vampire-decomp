@@ -10801,6 +10801,7 @@
 0x10011bdf func   ?vfunc365@CNPCMaker_Zombie@@UAE_NH@Z CNPCMaker_Zombie::vfunc365
 0x10011be4 func   ?sub_1007f380@CUtlMemory24@@QAEPAU1@HH@Z CUtlMemory24::sub_1007f380
 0x10011be9 func   ?sub_1006cec0@CStatDefaultList@@QAE_NPAUCVTraitKV@@PBUCVTraitDependency@@@Z CStatDefaultList::sub_1006cec0
+0x10011bee func   ?vfunc103@CItemContainerAnimated@@UAEXXZ CItemContainerAnimated::vfunc103
 0x10011bf3 func   ?vfunc4@CTETParticleAttached@@QAEXHH@Z CTETParticleAttached::vfunc4
 0x10011bf8 func   ?vfunc5@CItemGHorrorTape_1@@QAEPAV1@I@Z CItemGHorrorTape_1::vfunc5
 0x10011bfd func   ?vfunc363@CWeaponMelee_MingXiaoMelee@@UAEHXZ CWeaponMelee_MingXiaoMelee::vfunc363

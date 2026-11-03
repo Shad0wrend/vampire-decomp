@@ -16,6 +16,19 @@ CItemContainerAnimated *CItemContainerAnimated::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10209da0 size=0x1c
+#include "CItemContainerAnimated.h"
+
+void __fastcall sub_10209350(CItemContainerAnimated *self);
+
+void CItemContainerAnimated::vfunc103()
+{
+	sub_10209350(this);
+	sub_100b3640(0x40000);
+	sub_100b3b00();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10209df0 size=0xb
 #include "CItemContainerAnimated.h"
 
