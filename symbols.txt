@@ -4961,6 +4961,7 @@
 0x10008819 func   ?sub_101fb000@CVDmg_t@@QAEXPBD@Z CVDmg_t::sub_101fb000
 0x1000881e func   ??1CMeasureSection@@QAE@XZ CMeasureSection::~CMeasureSection
 0x10008823 func   ?vfunc451@CAI_BaseNPC@@UAEPBDXZ CAI_BaseNPC::vfunc451
+0x1000882d func   ?RotateRight@?$CUtlRBTree@UCRBTree12Entry_10194f30@@G@@QAEXG@Z CUtlRBTree<CRBTree12Entry_10194f30,unsigned short>::RotateRight
 0x1000882d func   ?sub_10195160@CUtlRBTree12Unit@@QAEXG@Z CUtlRBTree12Unit::sub_10195160
 0x10008832 func   ?sub_102eeba0@CUnknown102eeba0@@QAEXH@Z CUnknown102eeba0::sub_102eeba0
 0x10008837 func   ?sub_103c6a90@CNPC_VVampireBoss@@QAEHPAHHHH@Z CNPC_VVampireBoss::sub_103c6a90
