@@ -18,6 +18,18 @@ bool CBaseDoor::vfunc241()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ee3b0 size=0x1d
+#include "CBaseDoor.h"
+
+// TARGET: CBaseDoor::sub_100ee3b0
+char CBaseDoor::sub_100ee3b0()
+{
+	if (m_flags204 & 0x100)
+		return (CBaseEntity::vfunc117() & ~2) | 8;
+	return CBaseEntity::vfunc117() & ~2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ee3e0 size=0x3
 bool CBaseDoor::vfunc128()
 {
