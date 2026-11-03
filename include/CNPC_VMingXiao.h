@@ -643,4 +643,11 @@ public:
 	virtual bool vfunc600(int unused);
 	virtual void vfunc601(int a);
 	virtual bool vfunc602();
+	virtual float vfunc603_slot(float *pCurrent, float *pTarget);	// slot 603 (+0x96c): the same function as the plain vfunc603 above, declared here only to give the appended slots their real indices
+	virtual void vfunc604_slot();
+	virtual int vfunc605(int unused);	// slot 605 (+0x974)
+	virtual int vfunc606(int a);	// slot 606 (+0x978)
+	virtual void vfunc607_slot();
+	virtual bool vfunc608_slot(const char *pszName);
+	virtual int vfunc609(char bForce);	// slot 609 (+0x984): returns the target cached at +0x6444
 };
