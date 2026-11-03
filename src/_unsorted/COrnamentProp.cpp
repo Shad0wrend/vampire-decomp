@@ -48,3 +48,14 @@ void COrnamentProp::vfunc103()
     sub_10190fa0();
 }
 // END FUNCTION
+
+// FUNCTION: 0x10191090 size=0x1b
+#include "COrnamentProp.h"
+
+// TARGET: COrnamentProp::vfunc113
+void COrnamentProp::vfunc113()
+{
+	if (m_name7dc.IsSet())
+		sub_10191130(m_name7dc.String(), this);
+}
+// END FUNCTION
