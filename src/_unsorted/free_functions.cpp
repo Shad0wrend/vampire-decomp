@@ -150845,6 +150845,43 @@ void CUnknown102ecd00::sub_102ecd00(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ed430 size=0xc7
+#include "CAI_Navigator.h"
+
+struct S_PF { void *sub_102ff3e0(int idx, int a, int b); };
+struct S_Route {
+    void sub_1030b4d0(void *p, int a);
+    void sub_1030b8e0();
+    const Vector *sub_1030b990();
+};
+
+// TARGET: CAI_Navigator::sub_102ed430
+bool CAI_Navigator::sub_102ed430(const Vector *pPosition, int a, int b, int c)
+{
+    vfunc7();
+    CAI_NavProviderList *pList = m_pProviders;
+    if (pList->m_nCount <= 0)
+        return false;
+    m_i08 = *(int *)(m_pOuter + 0x156c);
+    m_i0c = gpGlobals->framecount;
+    int idx = pList->sub_102f3c10(m_pOuter, pPosition);
+    if (idx == -1)
+        return false;
+    void *p = ((S_PF *)sub_102ecc00())->sub_102ff3e0(idx, a, b);
+    if (!p)
+        return false;
+    m_p30->sub_1030ba50(4);
+    ((S_Route *)m_p30)->sub_1030b4d0(p, 0);
+    ((S_Route *)m_p30)->sub_1030b8e0();
+    const Vector *v = ((S_Route *)m_p30)->sub_1030b990();
+    float dx = pPosition->x - v->x;
+    float dy = pPosition->y - v->y;
+    float dz = pPosition->z - v->z;
+    *(float *)&m_i14 = dx * dx + dy * dy + dz * dz;
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ed940 size=0x60
 #include "CAI_Navigator.h"
 #include "CAI_BaseNPC.h"

@@ -7574,6 +7574,7 @@
 0x1000c76b func   ?vfunc80@CWeaponMelee_Torch@@QAEHXZ CWeaponMelee_Torch::vfunc80
 0x1000c770 func   ?vfunc488@CNPC_VTest@@QAEXXZ CNPC_VTest::vfunc488
 0x1000c775 func   ?sub_10036ef0@CPhysicsPushedEntities@@QAEXXZ CPhysicsPushedEntities::sub_10036ef0
+0x1000c77a func   ?sub_102ed430@CAI_Navigator@@QAE_NPBVVector@@HHH@Z CAI_Navigator::sub_102ed430
 0x1000c77f func   ?sub_10218820@CBaseTerminal@@QAEXHH@Z CBaseTerminal::sub_10218820
 0x1000c784 func   ?vfunc61@CSingleplayRules@@UAEHH@Z CSingleplayRules::vfunc61
 0x1000c789 func   ?sub_101fe8b0@CVStatInfo_t@@QAEXPAUCVStatKV@@PAX@Z CVStatInfo_t::sub_101fe8b0
