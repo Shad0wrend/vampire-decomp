@@ -60,6 +60,8 @@ struct CAI_NavProviderList	// count, array
 {
 	int m_nCount;	// 0x00
 	CAI_NavProvider **m_ppItems;	// 0x04
+
+	int sub_102f3c10(int pOuter, const Vector *pPos);	// stub 0x1000827e: the index of the node nearest to the position, -1 when there is none
 };
 
 struct CAI_NavWaypoint
