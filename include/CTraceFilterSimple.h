@@ -21,3 +21,10 @@ public:
 	void *m_pIgnore;	// +0xc
 	virtual bool vfunc0(void *pHandleEntity, int contentsMask);	// ShouldHitEntity: the base's answer for the ignored entity, false for any other
 };
+
+class CTraceFilterNoOwnerTest : public CTraceFilterSimple
+{
+public:
+	void *m_pOwner;	// +0xc
+	virtual bool vfunc0(void *pHandleEntity, int contentsMask);	// ShouldHitEntity: false for the owner, else the base's answer
+};
