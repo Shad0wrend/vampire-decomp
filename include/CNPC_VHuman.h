@@ -7,6 +7,8 @@
 class CNPC_VHuman : public CAI_BaseNPCTroika
 {
 public:
+	CNPC_VHuman *vfunc5(int flags);	// slot 5 (plain overload of the base slot; VC6 has no covariant returns): sub_100123af (destructor body), then sub_100aa7b0(this) when flags & 1; returns this
+	void sub_100123af();	// the destructor body (stub 0x100123af -> 0x1028d610), called directly
 	// Slot 440 (TranslateSchedule), called directly; declared as a plain member.
 	int vfunc440(int schedule);
 	// Slot 482 (CanPlaySequence-like, asked by the scripted sequence): 0 when the scripted sequence entity of the handle at +0x5d74 refuses
