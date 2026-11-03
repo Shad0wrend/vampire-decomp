@@ -7373,6 +7373,7 @@
 0x1000c37e func   ?sub_10253b70@CBaseCombatWeapon@@QAE_NHHHH@Z CBaseCombatWeapon::sub_10253b70
 0x1000c383 func   ?sub_100f9c40@CBaseEntityList@@QAEXXZ CBaseEntityList::sub_100f9c40
 0x1000c392 func   ?sub_102c42a0@CAI_BaseNPCTroika@@QAEXHPAVCBaseAnimating@@HH@Z CAI_BaseNPCTroika::sub_102c42a0
+0x1000c39c func   ?sub_10269f30@CNPC_VGuard1@@QAEXH@Z CNPC_VGuard1::sub_10269f30
 0x1000c3a1 func   ?vfunc104@CGenericNPC@@QAEXXZ CGenericNPC::vfunc104
 0x1000c3b0 func   _light light
 0x1000c3b5 func   ?sub_101f9670@CUnknown101f9670@@QAEPAV1@XZ CUnknown101f9670::sub_101f9670
