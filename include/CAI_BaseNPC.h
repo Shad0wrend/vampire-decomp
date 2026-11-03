@@ -56,7 +56,7 @@ public:
 	CAI_NPC_V10(17) CAI_NPC_V10(18)
 	CAI_NPC_V(190) CAI_NPC_V(191)
 	virtual Vector vfunc192();	// returns a vector by value (hidden result pointer)
-	CAI_NPC_V(193) CAI_NPC_V(194) CAI_NPC_V(195) CAI_NPC_V(196) CAI_NPC_V(197) CAI_NPC_V(198) CAI_NPC_V(199)
+	virtual Vector vfunc193(); CAI_NPC_V(194) CAI_NPC_V(195) CAI_NPC_V(196) CAI_NPC_V(197) CAI_NPC_V(198) CAI_NPC_V(199)
 	CAI_NPC_V(200)
 	virtual bool vfunc201(CBaseEntity *pEnt, int a, int *pOut, int d);	// check whether the NPC may act on pEnt (CBaseEntity::vfunc201 = sub_100a6fa0 at the end of the Troika override)
 	CAI_NPC_V(202) CAI_NPC_V(203) CAI_NPC_V(204) CAI_NPC_V(205) CAI_NPC_V(206) CAI_NPC_V(207)
@@ -64,7 +64,7 @@ public:
 	CAI_NPC_V(209)
 	CAI_NPC_V(210) CAI_NPC_V(211) CAI_NPC_V(212) CAI_NPC_V(213) virtual float *vfunc214(); CAI_NPC_V(215) CAI_NPC_V(216)
 	virtual float *vfunc217();	// "CBaseEntity::GetAbsOrigin"
-	CAI_NPC_V(218) CAI_NPC_V(219)
+	CAI_NPC_V(218) virtual float *vfunc219();
 	virtual float *vfunc220();	// "CBaseEntity::GetOrigin": the pointer to the three origin floats at +0x41c
 	virtual float *vfunc221();	// "CBaseEntity::GetAngles": the pointer to the three angle floats at +0x428
 	CAI_NPC_V(222) CAI_NPC_V(223) CAI_NPC_V(224) CAI_NPC_V(225) CAI_NPC_V(226) CAI_NPC_V(227) CAI_NPC_V(228) CAI_NPC_V(229)
@@ -81,7 +81,7 @@ public:
 	CAI_NPC_V(309)
 	CAI_NPC_V(310)
 	virtual void vfunc311(int a, int b, int c);	// when c >= 0: stores the activity-like triple a (+0xfec/+0xff0, slot 465(a) first when it changes), b (+0x5cd0/+0x5cd4/+0xff4) and c (+0x5ccc, sub_10260a50(c)), then clears +0x6f8 and +0x170
-	CAI_NPC_V(312) CAI_NPC_V(313) CAI_NPC_V(314) CAI_NPC_V(315) virtual void vfunc316(void *pEnt, char bFlagA, char bFlagB); virtual bool vfunc317(int unused); CAI_NPC_V(318) virtual bool vfunc319(int a, CBaseEntity *pOther, int c);	// slot 319 (ret 0xc: three arguments, true): the Troika override re-arms the timer at +0x1564
+	CAI_NPC_V(312) CAI_NPC_V(313) virtual void vfunc314(float flDeltaTime); CAI_NPC_V(315) virtual void vfunc316(void *pEnt, char bFlagA, char bFlagB); virtual bool vfunc317(int unused); CAI_NPC_V(318) virtual bool vfunc319(int a, CBaseEntity *pOther, int c);	// slot 319 (ret 0xc: three arguments, true): the Troika override re-arms the timer at +0x1564
 	CAI_NPC_V(320) CAI_NPC_V(321) CAI_NPC_V(322) CAI_NPC_V(323) virtual char vfunc324(); virtual char vfunc325(); CAI_NPC_V(326) CAI_NPC_V(327) CAI_NPC_V(328) CAI_NPC_V(329)	// slots 324 / 325 (+0x510 / +0x514): boolean answers in al, asked by the Troika slot 316
 	CAI_NPC_V(330) CAI_NPC_V(331) CAI_NPC_V(332) CAI_NPC_V(333) CAI_NPC_V(334) CAI_NPC_V(335) CAI_NPC_V(336) virtual char vfunc337(); CAI_NPC_V(338) CAI_NPC_V(339)
 	CAI_NPC_V(340) CAI_NPC_V(341) CAI_NPC_V(342) CAI_NPC_V(343) CAI_NPC_V(344)
