@@ -90993,6 +90993,18 @@ void sub_101cf4a0(CModelEntX *pEntity, const char *pszModelName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cf5c0 size=0x27
+#include "CBaseEntity.h"
+
+// TARGET: sub_101cf5c0
+void sub_101cf5c0(CBaseEntity *p, int v, int flags)
+{
+	p->vfunc62((const float *)v);
+	if ((char)flags)
+		p->sub_100a53d0(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cf600 size=0x9
 namespace lifted {
 struct C1001514a { int sub_1001514a(); };

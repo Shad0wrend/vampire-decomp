@@ -2105,6 +2105,7 @@
 0x100043bd func   ?sub_101cc810@@YIXPAPAX@Z sub_101cc810
 0x100043c2 func   ?sub_101993c0@@YAPAHPAXPAUPyObj@@@Z sub_101993c0
 0x100043c7 func   ?sub_10120f30@CGameMovement@@QAEXXZ CGameMovement::sub_10120f30
+0x100043cc func   ?sub_101cf5c0@@YAXPAVCBaseEntity@@HH@Z sub_101cf5c0
 0x100043d1 func   ?vfunc366@CNPC_VAnimal@@UAE_NHHH@Z CNPC_VAnimal::vfunc366
 0x100043d6 func   ?sub_100654d0@CUnknown100654d0@@QAEHXZ CUnknown100654d0::sub_100654d0
 0x100043db func   ?AddRecipientsByPVS@CRecipientFilter@@QAEXABVVector@@@Z CRecipientFilter::AddRecipientsByPVS
