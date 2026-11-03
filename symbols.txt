@@ -10570,6 +10570,7 @@
 0x1001158b func   ?vfunc404@CNPC_VCop@@QAEHPAUCNPC_VCopTarget@@@Z CNPC_VCop::vfunc404
 0x10011590 func   ?vfunc408@CAI_BaseNPC@@UAEPBDH@Z CAI_BaseNPC::vfunc408
 0x10011595 func   ?vfunc253@CBaseCombatCharacter@@UAEHHHH@Z CBaseCombatCharacter::vfunc253
+0x1001159a func   ??_GIEntityDataInstantiator@@UAEPAXI@Z ??_GIEntityDataInstantiator@@UAEPAXI@Z
 0x1001159f func   ?vfunc5@CPropSwitch@@QAEPAXI@Z CPropSwitch::vfunc5
 0x100115a4 func   ?sub_10085e00@@YAXXZ sub_10085e00
 0x100115a9 func   ?vfunc550@CNPC_VTzimisce@@UAEMXZ CNPC_VTzimisce::vfunc550
