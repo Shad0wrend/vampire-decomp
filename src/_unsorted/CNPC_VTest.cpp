@@ -348,3 +348,12 @@ int CNPC_VTestUnit::sub_103b4f30()
     return sub_10015ad2();
 }
 // END FUNCTION
+
+// FUNCTION: 0x103b51a0 size=0xd
+void sub_10385a10(float a);
+
+void sub_103b51a0(float a)
+{
+	sub_10385a10(a);
+}
+// END FUNCTION
