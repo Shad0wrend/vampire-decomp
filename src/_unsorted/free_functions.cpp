@@ -83748,6 +83748,41 @@ char CSoundEmitterSystemBase::sub_101b31a0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b31d0 size=0x38
+#include "CSoundEmitterSystemBase.h"
+
+extern char g_106b8540[];
+
+struct CSoundNameView
+{
+	CUnknown1024b2d0Id *sub_101b66b0(int index);
+	char m_pad0000[0x20];
+	CUnknown1024b2d0 m_names;	// 0x20
+};
+
+namespace block_101b31d0 {
+	struct CSoundEmitterUnit : CSoundEmitterSystemBase
+	{
+		char sub_101b31a0(int index);
+	};
+
+	char CSoundEmitterUnit::sub_101b31a0(int index)
+	{
+		return index >= 0 && index < m_i64;
+	}
+}
+using namespace block_101b31d0;
+
+// TARGET: CSoundEmitterSystemBase::sub_101b31d0
+const char *CSoundEmitterSystemBase::sub_101b31d0(int index)
+{
+	if (!((CSoundEmitterUnit *)this)->sub_101b31a0(index))
+		return g_106b8540;
+	CSoundNameView *pView = (CSoundNameView *)((char *)this + 0x50);
+	return pView->m_names.sub_1024b830(*pView->sub_101b66b0(index));
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b3220 size=0x4
 struct CUnknown101b3220 { int sub_101b3220(); };
 int CUnknown101b3220::sub_101b3220()
