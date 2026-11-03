@@ -182,7 +182,7 @@ public:
 	CAI_NPC_V(531) CAI_NPC_V(532)
 	virtual Vector vfunc533(int a, int b);	// slot 533 (ret 0xc: hidden result pointer, two arguments): a position vector for an activity (the Troika override moves it to the hint node's position while the NPC works at a hint)
 	virtual CBaseEntity *vfunc534();	// slot 534: the nearest visible entity within 1024 units that has an AI or is flagged as a character, found again at most every 1..5 seconds (time at +0x5d6c) and remembered by handle (+0xe64); returns the remembered entity
-	CAI_NPC_V(535) CAI_NPC_V(536) CAI_NPC_V(537) CAI_NPC_V(538)
+	CAI_NPC_V(535) virtual void vfunc536(int a, int b, int c, int d); CAI_NPC_V(537) CAI_NPC_V(538)
 	virtual void vfunc539(const Vector *pDir);	// sets the aim_pitch / aim_yaw pose parameters from the angles of a direction (sub_10139970)
 	CAI_NPC_V(540) void vfunc540(const char *pszScene);	// slot 540 (plain overload): sub_10084b40(this, pszScene, 0)
 	virtual CUnknown102e0150 *vfunc541();	// the NPC's memory list (the same object type as CUnknown102dfc10: nodes at +0xc linked through +0x38)
