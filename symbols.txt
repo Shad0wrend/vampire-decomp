@@ -9801,6 +9801,7 @@
 0x1001007d func   ?sub_10382f60@CNPC_VHengeyokai@@QAEHXZ CNPC_VHengeyokai::sub_10382f60
 0x1001008c func   ?vfunc103@CWorld@@UAEXXZ CWorld::vfunc103
 0x10010091 func   ?vfunc261@CSceneEntity@@UAEXHPAUCSceneEventActorEnt@@PAVCBaseEntity@@HH@Z CSceneEntity::vfunc261
+0x1001009b func   ?vfunc298@CWeaponGravityGun@@QAEXPAVCBaseEntity@@M@Z CWeaponGravityGun::vfunc298
 0x100100a0 func   ?sub_10390fd0@@YAXXZ sub_10390fd0
 0x100100a5 func   ?vfunc82@CWorld@@UAEPAUdatamap_t@@XZ CWorld::vfunc82
 0x100100aa func   ?vfunc80@CWeaponRanged_Pistol_Thirtyeight@@QAEHXZ CWeaponRanged_Pistol_Thirtyeight::vfunc80

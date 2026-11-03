@@ -30,6 +30,15 @@ char CWeaponGravityGun::vfunc316(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10149f10 size=0xd
+#include "CWeaponGravityGun.h"
+
+void CWeaponGravityGun::vfunc298(CBaseEntity *pOwner, float unused)
+{
+	sub_10252ea0(pOwner, unused);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10149f50 size=0x16
 #include "CWeaponGravityGun.h"
 
