@@ -4729,6 +4729,7 @@
 0x100085ee func   ?sub_101a6380@@YG_NHHH@Z sub_101a6380
 0x100085f3 func   ?sub_1028eb30@Holder@@QAEXHPAUVec3@@PAUHandleObj@@D@Z Holder::sub_1028eb30
 0x100085f8 func   ?sub_102d12e0@@YIMPAX@Z sub_102d12e0
+0x10008602 func   ?vfunc5@CGeneric_NPC@@QAEPAV1@H@Z CGeneric_NPC::vfunc5
 0x10008607 func   ?vfunc103@CNPC_VMingXiaoTentacle@@QAEXXZ CNPC_VMingXiaoTentacle::vfunc103
 0x1000860c func   ?vfunc448@CNPC_VMingXiao@@QAEXH@Z CNPC_VMingXiao::vfunc448
 0x10008611 func   ?sub_10234800@@YADXZ sub_10234800
