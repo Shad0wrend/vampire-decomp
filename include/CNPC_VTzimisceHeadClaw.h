@@ -92,4 +92,5 @@ public:
 	void sub_10269b50(int a);	// as in CNPC_VTzimisceRunner (transplant)
 	void vfunc433();	// as in CNPC_VTzimisceRunner (transplant)
 	unsigned short sub_103c1cb0();	// slot 337 override: CAI_BaseNPCTroika::vfunc337 with bit 0x800 set
+	virtual void vfunc332(CBaseEntity *pEntity);	// slot 332: plays the Tzim2 emitter sounds and attaches the effect to "Bip01 Spine" when the given entity has a character
 };
