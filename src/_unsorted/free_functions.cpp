@@ -52268,6 +52268,124 @@ void CEnvShake::sub_10102c80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10102dd0 size=0x268
+// TARGET: CEnvShake::sub_10102dd0
+#include "CEnvShake.h"
+#include "IPhysicsEnvironment.h"
+#include "IPhysicsObject.h"
+
+struct CEnvShakeFields
+{
+	char m_pad0450[0x450];
+	float m_flAmplitude;	// 0x450
+	float m_flFrequency;	// 0x454
+	float m_flDuration;		// 0x458
+	float m_flRadius;		// 0x45c
+	float m_flStopTime;		// 0x460
+	float m_flNextShake;	// 0x464
+	float m_flCurrentAmp;	// 0x468
+	char m_pad046c[0x478 - 0x46c];
+	void *m_pController;	// 0x478
+	char m_shakeCallback[0x10];	// 0x47c
+};
+
+#define V(n) virtual void f##n();
+#define V10(a) V(a##0) V(a##1) V(a##2) V(a##3) V(a##4) V(a##5) V(a##6) V(a##7) V(a##8) V(a##9)
+struct CBaseEntityVt
+{
+	V10(0) V10(1) V10(2) V10(3) V10(4) V10(5) V10(6) V10(7) V10(8) V10(9)
+	V10(10) V10(11) V10(12) V10(13) V10(14) V10(15) V10(16) V10(17) V10(18) V10(19)
+	V10(20) V(210) V(211) V(212) V(213) V(214) V(215) V(216)
+	virtual float *vfunc217();
+};
+#undef V
+#undef V10
+
+class IMotionController
+{
+public:
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual void vfunc2(IPhysicsObject *pObject);
+	virtual void vfunc3();
+	virtual void vfunc4();
+	virtual void vfunc5();
+	virtual void vfunc6();
+	virtual void vfunc7();
+};
+
+extern IPhysicsEnvironment *g_10723940;
+bool __fastcall sub_100b1380(char *pEntity);
+void sub_101cdba0(const Vector *pOrigin, float amplitude, float frequency, float duration, float radius, int command, bool airshake);
+int sub_101cca80(CBaseEntity **pList, int count, const Vector *mins, const Vector *maxs, unsigned int flags, int a6);
+
+void CEnvShake::sub_10102dd0(int cmd)
+{
+	CEnvShakeFields *v = (CEnvShakeFields *)this;
+
+	bool bAirShake = (m_flags204 >> 2) & 1;
+	float flRadius = v->m_flRadius;
+	float flDuration = v->m_flDuration;
+	sub_101cdba0((const Vector *)((CBaseEntityVt *)this)->vfunc217(), Amplitude(), Frequency(), flDuration, flRadius, cmd, bAirShake);
+
+	if (!(m_flags204 & 8))
+		return;
+
+	if (v->m_pController == 0)
+		v->m_pController = g_10723940->vfunc39(&v->m_shakeCallback);
+
+	switch (cmd)
+	{
+	case 0:
+		{
+			float flStopTime = v->m_flDuration;
+			flStopTime += gpGlobals->curtime;
+			v->m_flStopTime = flStopTime;
+			v->m_flNextShake = 0;
+			((IMotionController *)v->m_pController)->vfunc6();
+			m_flNextThink = gpGlobals->curtime;
+			v->m_flCurrentAmp = Amplitude();
+
+			float flShakeRadius = v->m_flRadius;
+			if (flShakeRadius == 0.0f)
+				flShakeRadius = 16384.0f;
+
+			Vector vecMins = *(const Vector *)((CBaseEntityVt *)this)->vfunc217() - Vector(flShakeRadius, flShakeRadius, flShakeRadius);
+			Vector vecMaxs = *(const Vector *)((CBaseEntityVt *)this)->vfunc217() + Vector(flShakeRadius, flShakeRadius, flShakeRadius);
+
+			CBaseEntity *pList[1024];
+			int count = sub_101cca80(pList, 0x400, &vecMins, &vecMaxs, 0, 0);
+			if (count > 0)
+			{
+				int i = 0;
+				do
+				{
+					if (pList[i]->vfunc94() == 7 && sub_100b1380((char *)pList[i]))
+					{
+						IPhysicsObject *pPhys = (IPhysicsObject *)pList[i]->m_obj36c;
+						if (pPhys)
+						{
+							((IMotionController *)v->m_pController)->vfunc2(pPhys);
+							pPhys->vfunc2();
+						}
+					}
+					i++;
+				} while (i < count);
+			}
+		}
+		break;
+	case 1:
+		((IMotionController *)v->m_pController)->vfunc6();
+		break;
+	case 2:
+		v->m_flCurrentAmp = Amplitude();
+	case 3:
+		((IMotionController *)v->m_pController)->vfunc7();
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101030e0 size=0xd
 #include "CUnknown101030e0.h"
 void CUnknown101030e0::sub_101030e0(int mode)
