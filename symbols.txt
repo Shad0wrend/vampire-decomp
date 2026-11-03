@@ -9950,6 +9950,7 @@
 0x100106ea func   ?vfunc3@CTESpriteSpray@@UAEXPBVVector@@0@Z CTESpriteSpray::vfunc3
 0x100106ef func   ?vfunc1@CChoreoEventCallback@@UAEXMHH@Z CChoreoEventCallback::vfunc1
 0x100106f9 func   ?sub_10083a30@CUnk10083a30@@QAEXH@Z CUnk10083a30::sub_10083a30
+0x100106fe func   ?vfunc259@CGenericNPC@@QAEXPAUanimevent_t@@@Z CGenericNPC::vfunc259
 0x10010703 func   ?vfunc599@CNPC_VMingXiao@@UAE_NH@Z CNPC_VMingXiao::vfunc599
 0x1001070d func   ?sub_10063500@@YAHXZ sub_10063500
 0x10010712 func   ?vfunc495@CNPC_VTest@@QAEXXZ CNPC_VTest::vfunc495

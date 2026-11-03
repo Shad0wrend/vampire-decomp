@@ -20,6 +20,24 @@ float CGenericNPC::vfunc516()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034a680 size=0x1a
+#include "CGenericNPC.h"
+
+// TARGET: CGenericNPC::vfunc259
+void CGenericNPC::vfunc259(animevent_t *pEvent)
+{
+	switch (pEvent->event)
+	{
+	case 1:
+		sub_1034a310();
+		break;
+	default:
+		((CAI_BaseNPC *)this)->CAI_BaseNPC::vfunc259(pEvent);
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034a6b0 size=0x3
 #include "CGenericNPC.h"
 int CGenericNPC::vfunc473()
