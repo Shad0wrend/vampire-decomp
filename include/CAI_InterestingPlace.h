@@ -28,6 +28,7 @@ public:
 	virtual void vfunc130(int a);	// the base implementation (CBaseEntity::vfunc130), then, when a type name is set, looks the place type up (removing the entity with a warning when unknown), then sub_102d9eb0
 	void sub_1000a25e();
 	CAI_InterestingPlace *sub_102d99d0();	// as in CKeepUpright (transplant)
+	void sub_102daf80(int nArg);	// 0x102daf80 "CAI_InterestingPlace::DrawDebugOverlay"-like (called by 0x102db670 over the global chain head 0x10927194, next +0x540): draws the place's box (m_vec54c / m_vec558) and text (type name, priorities, slot boxes) when the debug mode m_b57c / m_b57d is set
 	void sub_102d9eb0();	// stub 0x10008701
 	void sub_102daac0(int a);	// stub 0x10015889
 	void sub_102d9b10();	// the destructor body (stub 0x1000a25e): stores the vtable, frees the slot records (+0x580), unlinks the place from the global chain (head 0x10927194, next pointer at +0x540, count 0x10927198), then destroys the outputs: the eight at +0x480 (last first), then +0x468 and +0x450, and runs the base destructor body (sub_1000cb8a)
