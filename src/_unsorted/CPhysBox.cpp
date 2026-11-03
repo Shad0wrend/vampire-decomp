@@ -74,6 +74,22 @@ bool CPhysBox::sub_1004e1c0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004e1f0 size=0x1d
+#include "CPhysBox.h"
+#include "IPhysicsObject.h"
+
+// TARGET: CPhysBox::vfunc39
+void CPhysBox::vfunc39(CBaseEntity *pOther)
+{
+	if (m_obj36c)
+	{
+		((IPhysicsObject *)m_obj36c)->vfunc2();
+	}
+
+	sub_1040d970((CUnkCombatChar *)pOther);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004e220 size=0xe
 #include "CPhysBox.h"
 
