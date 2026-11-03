@@ -13,9 +13,42 @@ struct CSoundSchemeList	// one of the scheme's sound lists (+0x460, +0x4f0, +0x4
 	int m_n44;
 };
 
+// One entry of the sound array at +0x580 (0x74 bytes). It is what 0x102298e0 gets as its last argument and plays:
+// name at +0 (the sample), volume at +0x40, flags at +0x44, random volume bounds +0x4c / +0x50, vertical jitter
+// +0x54 / +0x58, sound level +0x64, random pitch bounds +0x68 / +0x6c; the caller 0x1022b300 tests +0x70.
+struct CSoundSchemeSound
+{
+	char m_szName[0x40];		// 0x00: sample name
+	float m_flVolume;			// 0x40
+	int m_iFlags;				// 0x44 (the player ORs 0x280 into it)
+	int m_n48;					// 0x48
+	float m_flVolumeMin;		// 0x4c: RandomFloat bound
+	float m_flVolumeMax;		// 0x50: RandomFloat bound
+	float m_flHeightBelow;		// 0x54: origin z -= this at most
+	float m_flHeightAbove;		// 0x58: origin z += this at most
+	int m_n5c;					// 0x5c
+	int m_n60;					// 0x60
+	int m_iSoundLevel;			// 0x64
+	int m_iPitchMin;			// 0x68: RandomInt bound
+	int m_iPitchMax;			// 0x6c: RandomInt bound
+	int m_n70;					// 0x70: the play chance the caller rolls against
+};
+
 class CSoundScheme : public CBaseEntity
 {
 public:
+	// data after CBaseEntity (0x3e0); the raw fields follow the CUtlVector layout of utlvector.h
+	char m_pad03e0[0x458 - 0x3e0];
+	int m_n458;					// 0x458: the think stops when the global queue has this many items
+	char m_pad045c[0x580 - 0x45c];
+	CSoundSchemeSound *m_pSoundMemory;	// 0x580: the sound entry array (vector memory)
+	int m_nSoundAllocationCount;	// 0x584
+	int m_nSoundGrowSize;		// 0x588
+	int m_nSoundCount;			// 0x58c: the vector's size (0x1022b300 reads it)
+	CSoundSchemeSound *m_pSoundElements;	// 0x590
+	char m_pad0594[0x5a8 - 0x594];	// +0x594: a second vector (purged by sub_1022a200), not modelled
+	int m_n5a8;					// 0x5a8: the round-robin index into m_pSoundMemory
+
 	CSoundScheme *vfunc5(unsigned int flags);
 	void vfunc113();	// slot 113: locks the global at 0x10750d78 with this (0x100115f9); then when the byte at +0x454 is set calls sub_1022b590(2.0), else CBaseEntity::sub_100ac4e0(0, 0.0, 0) (0x10007fe5)
 	void sub_1000bccb();
