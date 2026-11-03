@@ -135,7 +135,8 @@ public:
 	struct CTzimisceTask *m_pTask5c38;	// 0x5c38: the current schedule; its dword at +0x1c is the node id looked up by slot 580's range list
 	char m_pad5c3c[0x5cc0 - 0x5c3c];
 	int m_nState5cc0;
-	char m_pad5cc4[0x5d44 - 0x5cc4];
+	char m_pad5cc4[0x5d40 - 0x5cc4];
+	class CAI_MoveProbe *m_pMoveProbe5d40;	// 0x5d40: the movement probe (its +4 is the owner entity, +8 / +0xc ints)
 	CAI_Motor *m_pMotor5d44;	// 0x5d44
 	char m_pad5d48[0x5d8c - 0x5d48];
 	unsigned int m_flags5d8c;
