@@ -14,6 +14,7 @@ public:
 	char m_pad0598[0x5b8 - 0x598];
 	float m_flLookTimeTotal;	// 0x5b8
 	float m_flLookTimeLast;	// 0x5bc
+	void vfunc176(CBaseEntity *pOther);	// slot 176: the trigger's EndTouch, then the lookup time reset to -1
 public:
     virtual datamap_t * vfunc82();
     virtual void vfunc103();
