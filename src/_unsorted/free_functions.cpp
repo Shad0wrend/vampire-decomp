@@ -65140,6 +65140,56 @@ void sub_10142e90(const Vector *a, const Vector *b, int r, int g, int bl, unsign
 }
 // END FUNCTION
 
+// FUNCTION: 0x10143140 size=0x2be
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CEntityVSlots.h"
+#include "CSingleUserRecipientFilter.h"
+#include "engineserver.h"
+
+void *sub_100ab250(void *pent);
+
+void sub_10143140(const Vector *p1, const Vector *p2, const Vector *p3,
+	int a4, int a5, int a6, int a7, unsigned char a8, float a9)
+{
+	void *pEdict = engine->vfunc38(1);
+	CEntityVSlots *pEntity;
+	{
+		ScopeTrace scope("CBaseEntity::Instance", g_106b8540);
+		if (!pEdict)
+			pEdict = engine->vfunc38((int)pEdict);
+		pEntity = (CEntityVSlots *)sub_100ab250(pEdict);
+	}
+	if (!pEntity)
+		return;
+	Vector d1 = *p1 - *pEntity->slot220();
+	Vector d2 = *p2 - *pEntity->slot220();
+	Vector d3 = *p3 - *pEntity->slot220();
+	if (d1.LengthSqr() > 9e7f && d2.x * d2.x + d2.y * d2.y + d2.z * d2.z > 9e7f &&
+		d3.x * d3.x + d3.y * d3.y + d3.z * d3.z > 9e7f)
+		return;
+	CSingleUserRecipientFilter filter(pEntity);
+	engine->vfunc65(&filter, 0x35);
+	engine->vfunc75((int)p1);
+	engine->vfunc75((int)p2);
+	engine->vfunc75((int)p3);
+	engine->vfunc69(a4);
+	engine->vfunc69(a5);
+	engine->vfunc69(a6);
+	engine->vfunc69(a7);
+	engine->vfunc69(a8);
+	engine->vfunc72(a9);
+	engine->vfunc66();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101434b0 size=0x128
 #include "CBroadcastRecipientFilter.h"
 #include "CUnknown1070b22c.h"

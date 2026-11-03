@@ -13084,6 +13084,7 @@
 0x10014b32 func   ?sub_102e09c0@CAI_Motor@@QAEXXZ CAI_Motor::sub_102e09c0
 0x10014b37 func   ?sub_10085180@@YAXXZ sub_10085180
 0x10014b3c func   ?sub_10366db0@@YAEXZ sub_10366db0
+0x10014b41 func   ?sub_10143140@@YAXPBVVector@@00HHHHEM@Z sub_10143140
 0x10014b46 func   ?sub_1008bb70@CBaseAnimating@@QAEXPAVCBaseEntity@@@Z CBaseAnimating::sub_1008bb70
 0x10014b4b func   ?sub_103232b0@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::sub_103232b0
 0x10014b50 func   ?sub_10026af0@@YGDH@Z sub_10026af0
