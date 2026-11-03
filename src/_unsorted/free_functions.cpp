@@ -53116,6 +53116,25 @@ bool CUnknown1010efc0::sub_1010efc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010f030 size=0x43
+#include "CPushable.h"
+
+void *sub_100aa720(int size);
+extern char g_1056eeec[];
+
+extern "C" CBaseEntity *func_pushable()
+{
+	void *mem = sub_100aa720(0x4ac);
+	CPushable *p;
+	if (mem)
+		p = ((CPushable *)mem)->sub_1010f130();
+	else
+		p = 0;
+	((CBaseEntity *)p)->vfunc106(g_1056eeec);
+	return (CBaseEntity *)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f100 size=0x1a
 namespace lifted {
 extern int g_1056e868;
