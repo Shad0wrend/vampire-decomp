@@ -1,3 +1,4 @@
+	CBaseCombatCharacter *sub_10326de0();	// constructor body 0x10326de0 (scope trace "CBaseCombatCharacter::CBaseCombatCharacter"): builds every member of the character; returns this. Called first by the derived NPC constructors, e.g. CAI_BaseNPC::sub_1027c300 at 0x1027c300
 	void sub_1032ec90(int nType, int bFlag, int unused);	// "CBaseCombatCharacter::CreatePotenceHitEffect": scope trace (entity name), for a flag that is set creates the "env_particle" named by table 0x10619e50[nType] on the model's bone, a dynamic light and the hit sound (deathblow for type 4) to the players in earshot; called by vfunc142
 	bool sub_103360a0();	// "CBaseCombatCharacter::Inventory...": scope trace (entity name), true when GetWeapon(i) is null for every i in 0..0xdf
 	virtual int vfunc126(int a);	// "CBaseCombatCharacter::Save": scope trace (entity name), brackets CBaseEntity::vfunc126(a) with the helper pair on the field at +0x13d0, calling slot 111 first
