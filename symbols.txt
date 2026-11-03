@@ -4575,6 +4575,7 @@
 0x10007f4a func   ?sub_10316440@@YIXPAUCListNode@@@Z sub_10316440
 0x10007f4f func   ?sub_10319f30@CUnknown10319f30@@QAE_NH@Z CUnknown10319f30::sub_10319f30
 0x10007f54 func   ?vfunc134@CEnvFireSensor@@QAEXXZ CEnvFireSensor::vfunc134
+0x10007f72 func   ?sub_10310710@CAI_Senses@@QAEXXZ CAI_Senses::sub_10310710
 0x10007f77 func   ?vfunc80@CWeaponMelee_Claws@@QAEHXZ CWeaponMelee_Claws::vfunc80
 0x10007f7c func   ?sub_1007f8c0@CUtlRBTree24@@QAEXHH_N@Z CUtlRBTree24::sub_1007f8c0
 0x10007f81 func   ?sub_1005d2a0@CUnknown1005d2a0@@QAEHXZ CUnknown1005d2a0::sub_1005d2a0

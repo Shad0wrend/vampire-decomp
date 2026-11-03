@@ -158120,6 +158120,86 @@ void *CAI_Senses::sub_103105d0(int type)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10310710 size=0x1cc
+#include "CAI_Senses.h"
+#include "CUnknown1030f940.h"
+#include "CVProfile.h"
+
+struct CUnknown1030fe50Unit
+{
+	void sub_1030ff10(int flLookDist);
+};
+
+struct CycleCount
+{
+	unsigned __int64 m_Int64;
+	CycleCount() : m_Int64(0) {}
+	void Sample()
+	{
+		unsigned int *p = (unsigned int *)&m_Int64;
+		__asm {
+			mov ecx, p
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+	void End()
+	{
+		CycleCount now;
+		now.Sample();
+		m_Int64 = now.m_Int64 - m_Int64;
+	}
+	void Add(const CycleCount &r)
+	{
+		m_Int64 += r.m_Int64;
+	}
+};
+
+// TARGET: CAI_Senses::sub_10310710
+void CAI_Senses::sub_10310710()
+{
+	CVProfile *prof = g_109f3648;
+	if (prof->m_enabled || !prof->m_bAtRoot) {
+		if (prof->m_pCurNode->m_pszName != "CAI_BaseNPC_PerformSensing")
+			prof->m_pCurNode = prof->m_pCurNode->GetSubNode("CAI_BaseNPC_PerformSensing", 0, "Unaccounted");
+		CVProfNode *node = prof->m_pCurNode;
+		node->m_nCurFrameCalls++;
+		if (node->m_nRecursions++ == 0) {
+			((CycleCount *)&node->m_CurFrameTime)->Sample();
+			CVProfile *p = g_109f3648;
+			int id = node->m_nBudgetGroupID;
+			p->m_GroupIDStack[p->m_nGroupStackDepth] = id;
+			p->m_nGroupStackDepth++;
+			if (p->m_GroupIDStack[p->m_nGroupStackDepth - 2] != id && p->m_bVTuneGroupsEnabled && id == p->m_nVTuneGroupID)
+				vtune(true);
+		}
+		prof->m_bAtRoot = false;
+	}
+	if (m_b80) {
+		((CUnknown1030fe50Unit *)this)->sub_1030ff10((int)m_flLookDist);
+		((CUnknown1030f940 *)this)->sub_1030f940();
+	}
+	prof = g_109f3648;
+	if (!prof->m_bAtRoot || prof->m_enabled) {
+		CVProfNode *node = prof->m_pCurNode;
+		if (--node->m_nRecursions == 0 && node->m_nCurFrameCalls != 0) {
+			((CycleCount *)&node->m_CurFrameTime)->End();
+			((CycleCount *)&node->m_TotalTime)->Add(*(CycleCount *)&node->m_CurFrameTime);
+			CVProfile *p = g_109f3648;
+			--p->m_nGroupStackDepth;
+			int nNew = p->m_GroupIDStack[p->m_nGroupStackDepth];
+			int nOld = p->m_GroupIDStack[p->m_nGroupStackDepth + 1];
+			if (nNew != nOld && p->m_bVTuneGroupsEnabled && nOld == p->m_nVTuneGroupID)
+				vtune(false);
+		}
+		if (node->m_nRecursions == 0)
+			prof->m_pCurNode = prof->m_pCurNode->m_pParent;
+		prof->m_bAtRoot = (prof->m_pCurNode == prof->m_pRoot);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103109a0 size=0xb7
 #include "CUtlVector4.h"
 #include "UtlMem.h"
