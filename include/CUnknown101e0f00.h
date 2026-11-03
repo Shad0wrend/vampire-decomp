@@ -67,7 +67,8 @@ struct CUnknown101e0f00Fx	// the object the tail's callback worker hands back
 	void sub_101dfe80(S1033d380 *pChar, int id, char bFlag);	// finishes the callback of a discipline (stub 0x10009372)
 	void sub_101dfe20();	// finishes the callback (stub 0x100156ea)
 	void sub_101dfe50();	// finishes the callback of a character (stub 0x1000328d)
-	void sub_101dfc20();	// finishes the callback of a hit (stub 0x100086d9)
+	void sub_101dfc20();
+	void sub_101dfc20(class CBaseEntity *pSource, class CBaseCombatCharacter *pTarget, int id);	// finishes the callback of a hit (stub 0x100086d9)
 };
 
 struct CUnknown101e0f00Tail	// the object at +0xdc of an entry
