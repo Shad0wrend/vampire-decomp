@@ -11936,6 +11936,7 @@
 0x1001363d func   _infodecal infodecal
 0x10013642 func   ?vfunc81@CItemGGiovanniInvitationVictor@@QAEHXZ CItemGGiovanniInvitationVictor::vfunc81
 0x1001364c func   _keyframe_track keyframe_track
+0x10013656 func   ?sub_10266660@@YG_NMM@Z sub_10266660
 0x1001365b func   ?vfunc81@CItemMWallet@@QAEHXZ CItemMWallet::vfunc81
 0x10013660 func   ?vfunc244@CAI_StandoffGoal@@QAEXPAVCAI_BaseNPC@@@Z CAI_StandoffGoal::vfunc244
 0x10013665 func   ?vfunc251@CSceneEntity@@UAEDMHPAUCSceneEvent@@@Z CSceneEntity::vfunc251

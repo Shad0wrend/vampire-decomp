@@ -527,6 +527,13 @@ int CAI_BaseNPC::vfunc142(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10266660 size=0x20
+bool __stdcall sub_10266660(float a, float b)
+{
+	return a > 20.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026a8a0 size=0x16
 float CAI_BaseNPC::vfunc471()
 {
