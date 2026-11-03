@@ -95,7 +95,7 @@ public:
 	virtual void slot212(int set);
 	virtual void slot213(const float *pSize);	// "SetSize"
 	virtual Vector *slot214();	// "GetSize": the entity's size (+0x38c)
-	EVS(215)
+	virtual Vector *slot215();	// "WorldSpaceCenter" as a pointer into a rotating static Vector buffer (sub_100b4c30; no args), unlike slot192 which returns it by value
 	virtual void slot216(Vector *pOrigin);	// "SetAbsOrigin"
 	virtual Vector *slot217();	// "GetAbsOrigin"
 	virtual void slot218(Vector *pAngles);	// "SetAbsAngles"
