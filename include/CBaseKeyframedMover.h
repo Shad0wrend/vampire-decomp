@@ -28,6 +28,7 @@ public:
 	void sub_10223820(inputdata_t *pInput);	// "SnapToKeyframe" input: finds the CMoverKeyFrame named by the input's string, stores its handle at +0x56c and moves to its origin (slot 216 with slot 217 of the keyframe); warns "SnapToKeyframe  on %s got invalid entity: %s" (this name, the string) when there is none
 	void sub_10223940(int dir);	// "SetDirection": a change of the direction (+0x560) moves to the end keyframe's field (+0x454 for 1, +0x458 for -1) through sub_1000b94c; with no last keyframe warns "NULL last keyframe for %s", and for any other direction stops (sub_100b2e30 with the zero vector, +0x568 = -1)
 	void sub_10223a80();	// the mover reached its keyframe: fires the output at +0x5a0 for the activator (handle +0x10c), tells the keyframe (sub_10223130), copies +0x568 to +0x56c and moves on to the next keyframe of the direction (+0x454 / +0x458) through sub_1000b94c, or else runs CUnknown10223b90::sub_10223b90
+	void vfunc133();	// slot 133: CBaseToggle::vfunc133, then sub_10223a80
 
 	COutputEvent m_Output4a4;	// 0x4a4
 	COutputEvent m_Output4bc;	// 0x4bc
