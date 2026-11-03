@@ -4737,6 +4737,7 @@
 0x100085b7 func   ?vfunc80@CWeaponMelee_AVampBlade@@QAEHXZ CWeaponMelee_AVampBlade::vfunc80
 0x100085bc func   ?sub_102f45f0@CUnknown102f45f0@@QAEXPBUCachedPos_t@@HH@Z CUnknown102f45f0::sub_102f45f0
 0x100085c1 func   ?vfunc362@CWeaponRanged_Rifle_M37@@QAEHXZ CWeaponRanged_Rifle_M37::vfunc362
+0x100085c6 func   ?sub_103ba250@Helper@@QAEPAXPAXHH@Z Helper::sub_103ba250
 0x100085cb func   ?vfunc4@CServerNetworkProperty@@UAEHXZ CServerNetworkProperty::vfunc4
 0x100085d0 func   ?sub_101664d0@@YI_NPAUCVirtSlots94@@@Z sub_101664d0
 0x100085d5 func   ??1CVampireProjectile@@QAE@XZ CVampireProjectile::~CVampireProjectile

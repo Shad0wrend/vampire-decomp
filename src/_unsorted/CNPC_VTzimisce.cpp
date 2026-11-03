@@ -623,6 +623,24 @@ int CNPC_VTzimisce::vfunc138()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ba250 size=0x21
+struct V3 {
+	float x, y, z;
+};
+
+struct Helper
+{
+	void *sub_103ba250(void *out, int a, int b);
+};
+
+// TARGET: Helper::sub_103ba250
+void *Helper::sub_103ba250(void *out, int a, int b)
+{
+	*(V3 *)out = *(V3 *)((char *)this + 0x5d60);
+	return out;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ba290 size=0x1e
 #include "CNPC_VTzimisce.h"
 #include "CAI_BaseNPCTroika.h"
