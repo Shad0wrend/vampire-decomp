@@ -1894,6 +1894,19 @@ void CBasePlayer::vfunc383(CBaseEntity *pWeapon, char bNoSwitch)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10177bf0 size=0x7
+struct CBasePlayerView233c
+{
+	char m_pad[0x233c];
+	int m_n233c;
+};
+
+int CBasePlayer::vfunc200()
+{
+	return ((CBasePlayerView233c *)this)->m_n233c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10178400 size=0x42
 void sub_101cd940(CBaseEntity *);
 void sub_100828d0();

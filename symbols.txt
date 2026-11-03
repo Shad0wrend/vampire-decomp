@@ -2491,6 +2491,7 @@
 0x10004ed5 func   ?sub_104273f0@S104273f0@@QAEXH@Z S104273f0::sub_104273f0
 0x10004eda func   ?sub_10178170@CBasePlayer@@QAE_NXZ CBasePlayer::sub_10178170
 0x10004edf func   ?vfunc444@CNPC_VVampireBoss@@QAEXPAH@Z CNPC_VVampireBoss::vfunc444
+0x10004ee4 func   ?vfunc200@CBasePlayer@@QAEHXZ CBasePlayer::vfunc200
 0x10004ee9 func   ?sub_1028fd80@CAI_BaseNPCTroika@@QAE_NH@Z CAI_BaseNPCTroika::sub_1028fd80
 0x10004eee func   ?sub_10248870@CLinkList@@QAEPAUCLinkNode1c@@H@Z CLinkList::sub_10248870
 0x10004ef8 func   ?sub_1011bc40@@YAXH@Z sub_1011bc40
