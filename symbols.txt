@@ -13383,6 +13383,7 @@
 0x10015951 func   ?sub_103065d0@CUnknown103065d0@@QAEXPBUCUnknown103065d0Vec@@0HHHD@Z CUnknown103065d0::sub_103065d0
 0x10015956 func   ?sub_104276a0@CUnknown104276a0@@QAEHH@Z CUnknown104276a0::sub_104276a0
 0x1001595b func   ?sub_100737d0@CUnknown100737d0@@QAEXD@Z CUnknown100737d0::sub_100737d0
+0x1001596a func   ?sub_102b5260@Helper@@QAEXPAX@Z Helper::sub_102b5260
 0x1001596f func   ?sub_1028e700@CAI_BaseNPC@@QAEXHPAM@Z CAI_BaseNPC::sub_1028e700
 0x10015974 func   ?vfunc438@CNPC_Crow@@QAEHXZ CNPC_Crow::vfunc438
 0x10015979 func   ??0CUnknown106b89bc@@QAE@XZ CUnknown106b89bc::CUnknown106b89bc
