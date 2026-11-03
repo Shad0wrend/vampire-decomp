@@ -8,6 +8,14 @@
 #include "CAI_DefMovementSink.h"
 #include "Vector.h"
 
+struct CAI_NavFloatPair
+{
+	float m_flA;
+	float m_flB;
+	CAI_NavFloatPair() { m_flB = 0.0f; m_flA = -1.0f; }
+	void Set(float v) { m_flB = v; m_flA = -1.0f; }
+};
+
 class CAI_Navigator;
 
 class CAI_NavComponentData
@@ -210,8 +218,6 @@ public:
 	char m_b50;
 	char m_b51;	// 0x51: cleared by sub_102efd50 (the pending move)
 	int m_i54;
-	float m_f58;
-	float m_f5c;
-	float m_f60;
-	float m_f64;
+	CAI_NavFloatPair m_pair58;
+	CAI_NavFloatPair m_pair60;
 };
