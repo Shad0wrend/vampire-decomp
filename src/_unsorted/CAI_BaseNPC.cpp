@@ -112,6 +112,23 @@ void __stdcall sub_101a6580(int a) {
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a65a0 size=0x26
+#include "CAI_BaseNPC.h"
+
+extern void (__cdecl *g_109f3630)(const char *fmt, ...);
+
+// TARGET: CAI_BaseNPC::vfunc441
+int CAI_BaseNPC::vfunc441(int a)
+{
+	g_109f3630("Called wrong StartTask()\n");
+	void (CAI_BaseNPC::*pSlot442)(int);
+	void **vt = *(void ***)this;
+	*(void **)&pSlot442 = vt[0x6e8 / 4];
+	(this->*pSlot442)(a);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a65e0 size=0x26
 struct CUnknown101a65e0View {
     int sub_101a65e0(int a);
