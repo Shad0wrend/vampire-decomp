@@ -1713,6 +1713,111 @@ bool CBasePlayer::vfunc326(int a, CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016ebd0 size=0x243
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+#include "globalvars.h"
+#include "Tier1.h"
+
+void sub_10015311(float *pField, int nMode);
+void sub_101cf390(void *pThis, const float *pMins, const float *pMaxs);
+void sub_1016b750(void *pPlayer);
+int sub_10299ce0(void *pRestore);
+extern int g_1070ba28;
+
+#define PCV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define PCV100(p) PCV10(p##0) PCV10(p##1) PCV10(p##2) PCV10(p##3) PCV10(p##4) PCV10(p##5) PCV10(p##6) PCV10(p##7) PCV10(p##8) PCV10(p##9)
+
+struct CPlayerView8
+{
+	virtual void q0(); virtual void q1(); virtual void q2(); virtual void q3();
+	virtual void q4(); virtual void q5(); virtual void q6(); virtual void q7();
+	virtual int vfunc8();
+};
+
+struct CPlayerView62
+{
+	PCV10(r0) PCV10(r1) PCV10(r2) PCV10(r3) PCV10(r4) PCV10(r5)
+	virtual void r60(); virtual void r61();
+	virtual void vfunc62(const float *pOrigin);
+};
+
+struct CPlayerView453
+{
+	PCV100(s0) PCV100(s1) PCV100(s2) PCV100(s3)
+	PCV10(s4) PCV10(s5) PCV10(s6) PCV10(s7) PCV10(s8)
+	virtual void s450(); virtual void s451(); virtual void s452();
+	virtual CBaseEntity *vfunc453();
+};
+
+struct CEntityView220
+{
+	PCV100(t0) PCV100(t1)
+	PCV10(t2) PCV10(t3)
+	virtual float *vfunc220();
+	virtual float *vfunc221();
+};
+
+struct LandmarkView
+{
+	char m_pad[0x12dc];
+	int m_n12dc;	// 0x12dc
+	char m_sz12e0[1];	// 0x12e0
+};
+
+// TARGET: CBasePlayer::vfunc127
+int CBasePlayer::vfunc127(CRestore *pRestore)
+{
+	m_pad1E00[0] = 1;
+	int r = sub_10348890(pRestore);
+	sub_10015311(&m_f1CE0, 2);
+	sub_10015311(&m_flSupernaturalActTimer, 2);
+	sub_10015311(&m_flSpawnResponseCopsTimer, 4);
+	if (r == 0)
+	{
+		m_pad1E00[0] = 0;
+		return 0;
+	}
+	sub_103239a0("player");
+	LandmarkView *pLandmark = (LandmarkView *)gpGlobals->m_n20;
+	if (pLandmark->m_n12dc == 0)
+	{
+		g_109f3628("No Landmark:%s\n", (char *)pLandmark + 0x12e0);
+		CBaseEntity *pSpawn = ((CPlayerView453 *)this)->vfunc453();
+		CEntityView220 *pEnt = (CEntityView220 *)pSpawn;
+		Vector vecOrigin = *(Vector *)pEnt->vfunc220() + Vector(0.0f, 0.0f, 1.0f);
+		((CPlayerView62 *)this)->vfunc62(vecOrigin.Base());
+		vfunc64(pEnt->vfunc221());
+	}
+	Vector vecAngles = m_vec206c;
+	vecAngles.x = 0.0f;
+	vecAngles.z = 0.0f;
+	vfunc64(vecAngles.Base());
+	m_vec206c.z = 0.0f;
+	m_n207C = 1;
+	*(int *)((char *)this + 0x1570) = 0xf7;
+	g_1070ba28 = ((CPlayerView8 *)this)->vfunc8();
+	if (((CBaseEntity *)this)->CBaseEntity::sub_100b3700() & 2)
+	{
+		sub_1016b750(this);
+		sub_101cf390(this, Vector(-16.0f, -16.0f, 0.0f).Base(), Vector(16.0f, 16.0f, 36.0f).Base());
+		m_pad1EDC[1] = 1;
+	}
+	else
+	{
+		m_pad1EDC[1] = 0;
+		sub_101cf390(this, Vector(-16.0f, -16.0f, 0.0f).Base(), Vector(16.0f, 16.0f, 72.0f).Base());
+	}
+	vfunc468();
+	sub_1017c830();
+	m_bDebugSaved = 0;
+	m_pad1E00[0] = 0;
+	sub_10299ce0(pRestore);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101710b0 size=0x75
 #include "CBasePlayer.h"
 

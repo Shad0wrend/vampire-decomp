@@ -6983,6 +6983,7 @@
 0x1000b82f func   ?vfunc491@CNPC_VNewscaster@@UAEXXZ CNPC_VNewscaster::vfunc491
 0x1000b834 func   ?vfunc451@CNPC_VCamera@@UAEHXZ CNPC_VCamera::vfunc451
 0x1000b839 func   ?sub_101d6d50@S101d6d50@@QAEXXZ S101d6d50::sub_101d6d50
+0x1000b83e func   ?vfunc127@CBasePlayer@@QAEHPAVCRestore@@@Z CBasePlayer::vfunc127
 0x1000b843 func   ?sub_100a8220@CUnknown100a8220@@QAEIXZ CUnknown100a8220::sub_100a8220
 0x1000b84d func   ?sub_101312f0@CUnk101312f0@@QAEXPAH@Z CUnk101312f0::sub_101312f0
 0x1000b852 func   ?sub_100ecee0@CUnknown100ecee0@@QAEPAUCTableRecord44_t@@PAUCTableNpc_t@@PAH11@Z CUnknown100ecee0::sub_100ecee0
