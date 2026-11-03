@@ -166723,6 +166723,64 @@ bool sub_10342740(void *a, HasFilter *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10342c80 size=0x1f9
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseAnimating.h"
+#include "StudioHdr.h"
+#include "ScopeTrace.h"
+#include "matrix3x4_t.h"
+
+void sub_101381b0(const Vector &in, const matrix3x4_t &matrix, Vector &out);
+void sub_10139b90(const QAngle &angles, matrix3x4_t &matrix);
+bool sub_10139f90(const Vector &vecCenter, float flRadius, const Vector &vecMin, const Vector &vecMax);
+
+int CBaseCombatCharacter::sub_10342c80(void (*pCallback)(CBaseCombatCharacter *, int, int), int nArg, bool bInvert, Vector vecCenter, float flRadius)
+{
+	ScopeTrace trace("CBaseCombatCharacter::HitboxesInSphere", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!pCallback || !nArg)
+		return 0;
+	StudioHdr *pStudioHdr = (StudioHdr *)((CBaseAnimating *)this)->sub_100952d0(-1);
+	if (!pStudioHdr)
+		return 0;
+	StudioHitboxSet *pSet = pStudioHdr->HitboxSet(*(int *)((char *)this + 0x680));
+	if (!pSet)
+		return 0;
+	int nHit = 0;
+	for (int i = 0; i < pSet->m_nHitboxes; i++)
+	{
+		StudioHitbox *pBox = pSet->Hitbox(i);
+		Vector vecOrigin;
+		QAngle angBone;
+		((CBaseAnimating *)this)->sub_100926e0(pBox->m_iBone, (int)&vecOrigin, (int)&angBone);
+		matrix3x4_t boneToWorld;
+		sub_10139b90(angBone, boneToWorld);
+		Vector vecMin;
+		Vector vecMax;
+		sub_101381b0(pBox->m_vecMins, boneToWorld, vecMin);
+		VectorAdd(vecMin, vecOrigin, vecMin);
+		sub_101381b0(pBox->m_vecMaxs, boneToWorld, vecMax);
+		VectorAdd(vecMax, vecOrigin, vecMax);
+		bool bHit = sub_10139f90(vecCenter, flRadius, vecMin, vecMax);
+		if (bInvert)
+			bHit = !bHit;
+		if (bHit)
+		{
+			nHit++;
+			pCallback(this, nArg, i);
+		}
+	}
+	return nHit;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10344c80 size=0xe0
 #include "CUnknown10344c80.h"
 
