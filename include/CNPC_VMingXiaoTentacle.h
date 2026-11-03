@@ -69,10 +69,10 @@ public:
 	int m_nModelIndex6668;	// 0x6668: PrecacheModel result of the baby model (again)
 	int m_nModelIndex666c;	// 0x666c: PrecacheModel result of the transformation model
 	int m_n6670;	// 0x6670
-	int m_n6674;	// 0x6674
-	int m_n6678;	// 0x6678
+	float m_n6674;	// 0x6674: timer (assigned 0 and compared as a float)
+	float m_n6678;	// 0x6678: timer
 	int m_n667c;	// 0x667c
-	int m_n6680;	// 0x6680
+	float m_n6680;	// 0x6680: timer
 	float m_flTimer6684;	// 0x6684
 	char m_b6688;	// 0x6688
 	char m_pad6689[0x668c - 0x6689];
