@@ -6215,6 +6215,7 @@
 0x1000a943 func   ?vfunc5@CItemGGarysCD@@QAEPAV1@I@Z CItemGGarysCD::vfunc5
 0x1000a948 func   ?sub_102ea130@CUnknown10359c50@@QAE_NPBDH00@Z CUnknown10359c50::sub_102ea130
 0x1000a94d func   ?vfunc373@CWeaponMelee_Claws@@QAEHXZ CWeaponMelee_Claws::vfunc373
+0x1000a952 func   ?vfunc5@CNPC_VVampireBoss@@QAEPAV1@I@Z CNPC_VVampireBoss::vfunc5
 0x1000a957 func   ?sub_102c6780@UtlVec8@@QAEHPBUUtlVec8Elem@@@Z UtlVec8::sub_102c6780
 0x1000a95c func   ?vfunc226@CSimplePhysicsProp@@UAEHXZ CSimplePhysicsProp::vfunc226
 0x1000a961 func   ?vfunc196@CBaseEntity@@QAEHH@Z CBaseEntity::vfunc196
