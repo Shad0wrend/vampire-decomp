@@ -53,7 +53,8 @@ public:
 
 	char m_pad0004[0x200 - 4];
 	int m_nTakeDamage;	// 0x200
-	char m_pad0204[0x1b30 - 0x204];
+	char m_pad0204[0x1b2c - 0x204];
+	int m_n1b2c;	// 0x1b2c: state index set to 0x1a by vfunc438
 	const char *m_pszFile1b30;	// 0x1b30: source file of the last schedule selection
 	int m_nLine1b34;	// 0x1b34: its line
 	char m_pad1b38[0x6078 - 0x1b38];
