@@ -8,6 +8,7 @@ public:
 	CNPC_VSheriffSwarm *vfunc5(unsigned int flags);
 	void sub_100123af();
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
+	void vfunc103();	// slot 103 (plain member): CUnk1026dc00::sub_1026dc00(0x200000), then sub_103c4ef0
 	CNPC_VSheriffSwarm *sub_103b1be0();	// as in CKeepUpright (transplant)
 	bool sub_103b2630(int a, int b);	// asks sub_1000633e (cdecl, this + both arguments + 5000.0f, 0, 0) for the hint node into +0x5ddc; found: sub_1000ac68(0), true; else records its source line and fails the task with slot 448(4)
 	void sub_1000ac68(int a);	// stub of CAI_BaseNPC::sub_10273e80, called directly
