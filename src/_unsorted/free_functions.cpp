@@ -69199,6 +69199,37 @@ void CUnknown1016b460::sub_1016b460(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016b980 size=0x39
+struct CBasePlayer1016b980
+{
+	char m_pad0000[0x36c];
+	int m_pObj;
+	char sub_1016b980(void *pObj);
+};
+
+struct CPhysObj12
+{
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3();
+	virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7();
+	virtual void s8(); virtual void s9(); virtual void s10(); virtual void s11();
+	virtual float slot12();
+};
+
+// TARGET: CBasePlayer1016b980::sub_1016b980
+char CBasePlayer1016b980::sub_1016b980(void *pObj)
+{
+	if (pObj)
+	{
+		CPhysObj12 *pOther = (CPhysObj12 *)pObj;
+		CPhysObj12 *pSelf = (CPhysObj12 *)m_pObj;
+		float a = pOther->slot12();
+		float b = pSelf->slot12();
+		return a > (b + b);
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016b9d0 size=0x3e
 // TARGET: sub_1016b9d0
 int *__fastcall sub_1016b9d0(int *self)
