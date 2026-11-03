@@ -108,6 +108,26 @@ void CAI_StandoffGoal::vfunc241(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c8830 size=0x69
+#include "CAI_StandoffGoal.h"
+
+__declspec(dllimport) void DevMsg(const char *, ...);
+
+// TARGET: CAI_StandoffGoal::vfunc243
+void CAI_StandoffGoal::vfunc243(int a)
+{
+	if ((m_Aggressiveness < 0 || m_Aggressiveness > 4) && m_Aggressiveness != 5)
+	{
+		DevMsg("Invalid aggressiveness value %d\n", m_Aggressiveness);
+		if (m_Aggressiveness < 0)
+			m_Aggressiveness = 0;
+		else if (m_Aggressiveness > 4)
+			m_Aggressiveness = 4;
+	}
+	CAI_GoalEntity::sub_102cdb70(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c88c0 size=0x86
 #include "CAI_StandoffGoal.h"
 #include "utlvector.h"
