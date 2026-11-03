@@ -224,6 +224,7 @@ public:
 	void sub_100041b0(int task);	// stub 0x100041b0 for 0x10269a20: sets a task (the inverse of sub_10015839)
 
 #include "CAI_BaseNPCTroika_ext.h"
+	void vfunc22(int a);
 
 	union { char m_pad0004[0x19c - 4]; struct { char m_pad0004b[0x98 - 4]; CAI_BaseNPCTroika *m_pObj98; }; };	// 0x98: the controlling NPC object (the one whose flags +0x14b8 / +0x14bc the break test sets)
 	unsigned int m_flags19c;
