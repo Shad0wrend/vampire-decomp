@@ -15366,6 +15366,7 @@
 0x109f07b1 data   ??_B?5??CUnknown10206400_FindById@@YAPAVCUnknown10206400@@H@Z@51 ??_B?5??CUnknown10206400_FindById@@YAPAVCUnknown10206400@@H@Z@51
 0x109f07b1 data   ??_B?5??CUnknown10206400_FindById@@YAPAVCUnknown10206400@@H@Z@55 ??_B?5??CUnknown10206400_FindById@@YAPAVCUnknown10206400@@H@Z@55
 0x109f0804 data   ??_B?5??CUnknown10206400_FindEntry@@YAPAVCUnknown10206340@@PAVCUnknown10206400@@H@Z@55 ??_B?5??CUnknown10206400_FindEntry@@YAPAVCUnknown10206340@@PAVCUnknown10206400@@H@Z@55
+0x109f0b2a data   ??_B?5??Find@CVStatListSet@@QAEPAVCVStatList_t@@H@Z@55 ??_B?5??Find@CVStatListSet@@QAEPAVCVStatList_t@@H@Z@55
 0x109f3624 data   __imp__Plat_Free _imp__Plat_Free
 0x109f3628 data   ?Msg@@YAXPBDZZ Msg
 0x109f3628 data   Msg Msg
