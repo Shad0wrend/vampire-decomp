@@ -101,7 +101,8 @@ public:
 	CBP_V10(sb0) CBP_V10(sb1) CBP_V1(sb20) CBP_V1(sb21) CBP_V1(sb22) CBP_V1(sb23) CBP_V1(sb24) CBP_V1(sb25) CBP_V1(sb26) CBP_V1(sb27) CBP_V1(sb28)
 	virtual int vfunc94();	// slot 94 (+0x178), CBaseEntity::vfunc94: the move type (10 = the value CWeaponUnarmed::vfunc319 sends the view message 0x4c for)
 	CBP_V10(sb3) CBP_V10(sb4) CBP_V10(sb5) CBP_V10(sb6)
-	CBP_V1(sb70) CBP_V1(sb71) CBP_V1(sb72) CBP_V1(sb73) CBP_V1(sb74) CBP_V1(sb75) CBP_V1(sb76) CBP_V1(sb77) CBP_V1(sb78)
+	CBP_V1(sb70) CBP_V1(sb71) CBP_V1(sb72) CBP_V1(sb73) CBP_V1(sb74) CBP_V1(sb75) CBP_V1(sb76) CBP_V1(sb77)
+	virtual int vfunc143(float flHealth, int bitsDamageType);	// slot 143 "TakeHealth": clears the discipline effect bits of +0xe98 (bitsDamageType & 0x3fff), then the character's TakeHealth
 	virtual void vfunc144(const void *pArg);	// slot 144: takes a damage info (CUnknown101c26d0, the force vector at +4); sub_10170d60 hands it a random force
 	virtual int vfunc145();	// slot 145: the int handed to sub_102699e0 as its second argument
 	CBP_V1(sb81) CBP_V1(sb82) CBP_V1(sb83) CBP_V1(sb84) CBP_V1(sb85) CBP_V1(sb86) CBP_V1(sb87) CBP_V1(sb88) CBP_V1(sb89) CBP_V1(sb90) CBP_V1(sb91) CBP_V1(sb92) CBP_V1(sb93) CBP_V1(sb94) CBP_V1(sb95) CBP_V1(sb96) virtual char vfunc162(); CBP_V1(sb98) CBP_V1(sb99)
@@ -186,7 +187,9 @@ public:
 	CBP_V1(sl1) CBP_V1(sl2) CBP_V1(sl3) CBP_V1(sl4) virtual float vfunc464(); CBP_V1(sl6) virtual float vfunc466(); CBP_V1(sl8)
 	virtual void vfunc468();	// registers the "player_stand" / "player_crouch" collision hulls (16x16x36 and -16,-16,0) for the sub-object at +0x270
 
-	char m_pad0004[0x264];	// 0x0004 .. 0x0267
+	char m_pad0004[0x1fc - 0x4];	// 0x0004 .. 0x01FB
+	int m_nTakeDamage1FC;	// 0x01FC: the take-damage mode (CBaseEntity::m_nTakeDamage)
+	char m_pad0200[0x268 - 0x200];	// 0x0200 .. 0x0267
 	unsigned int m_fFlags268;	// 0x0268: the entity flag word (bit 12 = attached to a parent)
 	char m_pad026C[4];	// 0x026C .. 0x026F
 	CBasePlayerSub270 m_sub270;	// 0x0270
@@ -202,7 +205,9 @@ public:
 	char m_b65c;	// 0x065C
 	char m_pad065D[0x6f8 - 0x65d];	// 0x065D .. 0x06F7
 	float m_f6f8;	// 0x06F8
-	char m_pad06FC[0xea4 - 0x6fc];	// 0x06FC .. 0x0EA3
+	char m_pad06FC[0xe98 - 0x6fc];	// 0x06FC .. 0x0E97
+	unsigned int m_flags0E98;	// 0x0E98: the discipline effect mask (bit 0x8000 << i)
+	char m_pad0E9C[0xea4 - 0xe9c];	// 0x0E9C .. 0x0EA3
 	unsigned int m_hEnt0EA4;	// entity handle
 	EHANDLE m_hEnt0EA8;	// 0x0EA8: a second entity handle next to +0xea4 (CWeaponUnarmed::vfunc319 resolves both)
 	char m_pad0EAC[0xfe8 - 0xeac];	// 0x0EA8 .. 0x0FE7
