@@ -40,6 +40,7 @@ public:
 	bool sub_10357e50(const Vector &dir, float flDist, Vector *pOut);	// stub 0x1000b334, called directly
 
 	Vector vfunc192();	// slot 192: the origin (slot 220) raised by 6.0f, returned by value (hidden result pointer)
+	int vfunc197(int a, int b, int c, int d);	// slot 197: calls slot 192 with a (as the result buffer) and returns a
 
 	// Slot 546.
 	int vfunc546(int arg);
