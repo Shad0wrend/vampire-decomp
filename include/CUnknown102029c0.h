@@ -8,7 +8,8 @@ public:
 	int m_id;
 	char m_pad04[8];
 	int m_nEntries;	// 0x0c: the number of texts the record holds
-	char m_pad10[0x18 - 0x10];
+	void *m_pData10;	// 0x10: freed by the destructor
+	char m_pad14[4];
 
 	CUnknown102029c0(int a);
 	~CUnknown102029c0();
