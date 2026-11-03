@@ -349,6 +349,7 @@ public:
 	char m_pad62f0[0x6300 - 0x62f0];
 	int m_n6300;	// 0x6300: cached value (lazily looked up by sub_1029f780)
 	int m_n6304;	// 0x6304: cleared when the held entity m_p62ec is let go (sub_102b53d0)
+	char sub_102aa210(void *pInterest);	// 0x102aa210 "CAI_BaseNPCTroika" interest-activity helper called by vfunc444 (ret 4, returns a char): reads +0x63d4 (float next time), +0x65c / +0x65d bytes, m_n6304, m_flags14b8, +0x14bc flags, m_f5db4, m_nState0fec, +0x5d44 motor; figures the "interest activity" / "outof activity" from the pInterest object (sub_102daea0 / sub_102daef0 names, activity table 0x1094afe8, stride 0x44)
 	char m_pad6308[0x630c - 0x6308];
 	char *m_p630c;	// 0x630c: an object with a flag dword at +0x64
 	int m_n6310;	// 0x6310: node index (-1 none), bounds checked in the navigator's net (+0x5d34 -> +0x2c) by vfunc130
