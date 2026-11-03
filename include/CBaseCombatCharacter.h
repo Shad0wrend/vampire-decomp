@@ -165,6 +165,7 @@ public:
 	int vfunc337();
 	void vfunc338(int a, int b, int c);
 	void vfunc339(int a, int b, int c);
+	void vfunc339(int a, float b, int c);	// the real signature (float second argument), see CBasePlayer::vfunc339
 	void vfunc340(int a, int b, int c);
 	void vfunc358();	// "CBaseCombatCharacter::PrayerEnd": scope trace (entity name), clears the prayer state at +0x14a8/+0x1475/+0x1478/+0x14aa, +0x14ac = -1, +0xff0 = 0x133 and, when the object at +0xa8 is set, slot 93(3, 0)
 	char vfunc362(const float *pos);	// "CBaseCombatCharacter::FInViewCone": scope trace, then sub_103268e0(pos, field at +0x1574)
