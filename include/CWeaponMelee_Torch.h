@@ -9,7 +9,9 @@ struct datamap_t;
 class CWeaponMelee_Torch
 {
 public:
-	char m_pad0000[0x910];
+	char m_pad0000[0x871];
+	char m_b871;	// 0x871
+	char m_pad0872[0x910 - 0x872];
 	EHANDLE m_hEmitter910;	// 0x910: the "TorchWeaponEmitter" particle entity
 	char m_b914;	// 0x914: set by sub_103e7530 once the owner answers slot 158
 	void sub_103e7530();	// 0x103e7530: with an owner (CBaseCombatWeapon::sub_102521f0) that answers slot 158: creates the emitter (sub_103e77f0), starts the fire loop (sub_103e7680), sets +0x914. The class is still modelled flat (its vfunc5 returns CWeaponMelee_Torch *, which a CWeaponMelee base would reject), so reach the base through a (CBaseCombatWeapon *)this cast
@@ -19,6 +21,8 @@ public:
 	void vfunc104();	// slot 104: the base weapon's slot 104, then the \"TorchWeaponEmitter\" and \"Fire_Loop\" sounds
 	void sub_10010230();
 	void sub_10013a57();
+	void sub_100047be();	// CBaseCombatWeapon::vfunc103 (stub), called directly
+	void vfunc103();
 	void sub_103e7580();
 	void sub_103e78b0();	// destroys the emitter whose handle is at +0x910
 	void sub_103e77f0(); // \"CWeaponMelee_Torch::CreateEmitter\"-like: when the emitter handle at +0x910 no longer resolves, creates a \"TorchWeaponEmitter\" particle entity at slot 217(slot 219(-1.0)), attaches it to this weapon and stores its handle at +0x910
