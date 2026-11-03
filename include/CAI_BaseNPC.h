@@ -73,7 +73,7 @@ public:
 	CAI_NPC_V(252) CAI_NPC_V(253) CAI_NPC_V(254) CAI_NPC_V(255) CAI_NPC_V(256) CAI_NPC_V(257) virtual void vfunc258(float flInterval, CAI_BaseNPC *pNPC);	/* slot 258 (+0x408, ret 8): called by PostRun with the advance sub_1026c540 returned and this */ virtual void vfunc259(animevent_t *pEvent);	/* slot 259 "HandleAnimEvent": the animation event record at +0 of the argument is the event id */
 	CAI_NPC_V10(26) CAI_NPC_V10(27) CAI_NPC_V10(28)
 	// slots 290..409
-	CAI_NPC_V(290) CAI_NPC_V(291) CAI_NPC_V(292)
+	CAI_NPC_V(290) CAI_NPC_V(291) virtual void vfunc292(struct CTakeDamageInfo *pInfo, const Vector *pVecDir, struct CGameTrace *pTrace);	// slot 292 "DamageFlinch"
 	virtual int vfunc293();
 	CAI_NPC_V(294) virtual bool vfunc295(CBaseCombatCharacter *pOther); CAI_NPC_V(296) CAI_NPC_V(297) CAI_NPC_V(298) CAI_NPC_V(299)
 	CAI_NPC_V(300) CAI_NPC_V(301) CAI_NPC_V(302) CAI_NPC_V(303) CAI_NPC_V(304) CAI_NPC_V(305) CAI_NPC_V(306) virtual bool vfunc307();
