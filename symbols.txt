@@ -5580,6 +5580,7 @@
 0x1000990d func   ?vfunc287@CBaseFlex@@UAEXPAUCBaseFlexItemObject@@@Z CBaseFlex::vfunc287
 0x10009912 func   ?sub_102781e0@@YIXPAXHH@Z sub_102781e0
 0x10009917 func   ?sub_101ccaf0@@YAHPAPAVCBaseEntity@@HPBM1IH@Z sub_101ccaf0
+0x1000991c func   ?sub_1011e350@CGameMovement@@QAEPAMXZ CGameMovement::sub_1011e350
 0x10009926 func   ?vfunc5@CSceneEntity@@UAEPAV1@I@Z CSceneEntity::vfunc5
 0x1000992b func   ?sub_1042fd40@@YAII@Z sub_1042fd40
 0x10009930 func   ?vfunc0@CTraceFilterEntityIgnoreOther@@UAE_NPAXH@Z CTraceFilterEntityIgnoreOther::vfunc0

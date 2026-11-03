@@ -56611,6 +56611,20 @@ char __stdcall sub_1011e290(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011e350 size=0x26
+#include "CGameMovement.h"
+
+// TARGET: CGameMovement::sub_1011e350
+float *CGameMovement::sub_1011e350()
+{
+	unsigned int nFlags = *(unsigned int *)((char *)m_pMove + 0x20f0);
+	unsigned char bStance = (unsigned char)(nFlags >> 5);
+	if (bStance & 1)
+		return (float *)&m_vecObsHullMax;
+	return *(char *)((char *)m_pMove + 0x1edd) ? (float *)&m_vecDuckHullMax : (float *)&m_vecHullMax;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011e8f0 size=0x39
 #include "CGameTrace.h"
 #include "CTraceFilterNoCharacterCollide.h"
