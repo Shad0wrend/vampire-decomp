@@ -36,7 +36,10 @@ public:
     virtual void vfunc106(const char *pszClassname);    // slot 106: the factories (item_w_*) call it with their classname right after construction
     CWR_V(107) CWR_V(108) CWR_V(109)
     CWR_V10(11) CWR_V10(12) CWR_V10(13) CWR_V10(14) CWR_V10(15) CWR_V10(16) CWR_V10(17) CWR_V10(18) CWR_V10(19)
-    CWR_V10(20) CWR_V10(21) CWR_V10(22) CWR_V10(23) CWR_V10(24) CWR_V10(25) CWR_V10(26) CWR_V10(27) CWR_V10(28) CWR_V10(29)
+    CWR_V10(20) CWR_V10(21) CWR_V10(22) CWR_V10(23) CWR_V10(24) CWR_V10(25) CWR_V10(26)
+    CWR_V(270) CWR_V(271) CWR_V(272) CWR_V(273) CWR_V(274) virtual int vfunc275(int a);    // slot 275: returns the roll slot's activity/sequence id (-1 = none)
+    CWR_V(276) CWR_V(277) CWR_V(278) CWR_V(279)
+    CWR_V10(28) CWR_V10(29)
     CWR_V(300) CWR_V(301) CWR_V(302) CWR_V(303) CWR_V(304) CWR_V(305) CWR_V(306)
     virtual void vfunc307(int value);   // CBaseCombatWeapon slot 307 (called with a sound / activity id)
     CWR_V(308) CWR_V(309)
