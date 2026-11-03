@@ -142,3 +142,14 @@ template<> int CUtlVectorDataOps<CUtlVector<DisciplineSrc,CUtlMemory<DisciplineS
 	return (int)pVec;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10349ce0 size=0x13
+#include "CUtlVectorDataOps.h"
+#include "DisciplineSrc.h"
+
+template <>
+bool CUtlVectorDataOps<CUtlVector<DisciplineSrc,CUtlMemory<DisciplineSrc> >,9>::vfunc2(void *pFieldData)
+{
+	return *(int *)(*(char **)pFieldData + 0xc) == 0;
+}
+// END FUNCTION
