@@ -83,6 +83,7 @@ public:
 	datamap_t * vfunc82();
 	bool vfunc378(int, int);
 	int vfunc451();
+	void sub_103c7230(const Vector *pOrigin, int a, float flRadius);	// "CNPC_VVampireBoss::CausePlayerAOEDamage" (scope trace string 0x1065ef34): 3 stack args, AOE-damages the entity of m_h628c within flRadius of pOrigin
 	bool vfunc452();
 	int vfunc580();
 };
