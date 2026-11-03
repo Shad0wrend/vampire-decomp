@@ -75667,6 +75667,31 @@ void sub_1018eab0(CBaseEntity *pTarget, char flag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018eb50 size=0x9e
+#include "CActivityCopyProp.h"
+#include "CEHandleGet.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList g_106eb5d8;
+extern char g_10538764[];
+extern char g_1058ed4c[];
+
+int sub_1018eb50(CBaseEntity *pTarget, volatile int nActivity)
+{
+    CBaseEntity *pEnt = 0;
+    do {
+        pEnt = g_106eb5d8.sub_100f7380(pEnt, "activity_copy_prop");
+        CActivityCopyProp *pProp = (CActivityCopyProp *)__RTDynamicCast(pEnt, 0, g_10538764, g_1058ed4c, 0);
+        if (pProp && (CBaseEntity *)EHandle_Get(pProp->m_hTarget) == pTarget && *(int *)((char *)pProp + 0x16c) == 0) {
+            *((unsigned char *)pProp + 0x1a3) = 0xff;
+            *(int *)((char *)pProp + 0x740) = nActivity;
+            *(int *)((char *)pProp + 0x16c) = 2;
+        }
+    } while (pEnt);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018ec20 size=0x98
 #include "CActivityCopyProp.h"
 #include "CGlobalEntityList.h"
