@@ -45,6 +45,15 @@ void CBaseTrigger::vfunc241(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c4bd0 size=0x8
+#include "CBaseTrigger.h"
+
+void CBaseTrigger::vfunc242(int unused)
+{
+	sub_101c4dd0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c4d60 size=0x4b
 #include "CBaseTrigger.h"
 #include "CGlobalEntityList.h"
