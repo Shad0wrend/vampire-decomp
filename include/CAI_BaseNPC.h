@@ -109,7 +109,8 @@ public:
 	CAI_NPC_V(400) CAI_NPC_V(401) virtual char vfunc402();	// slot 402: asks slot 394; when it holds either removes the NPC (slot 398 false: sub_101cd940) or, with slot 398 true, hands the field at +0xfd0 to sub_100544f0, runs slot 77 and slot 395; without it only slot 395; returns the answer of slot 394
 	CAI_NPC_V(403)
 	virtual int vfunc404(CBaseEntity *pEnt);	// classification of pEnt (vfunc468 treats 1 and 2 as true)
-	CAI_NPC_V(405) virtual const char *vfunc406(int state);	// slot 406 (+0x658): the name of an NPC state (debug text "State: %s, ", asked with the state at +0x5cc0)
+	virtual int vfunc405(CBaseEntity *pEnt);	// relation priority of pEnt (vfunc469 compares < 0 / > 10; 0x10089fc0 prints it)
+	virtual const char *vfunc406(int state);	// slot 406 (+0x658): the name of an NPC state (debug text "State: %s, ", asked with the state at +0x5cc0)
 	virtual const char *vfunc407(int moveType);	// slot 407 (+0x65c): the name of a move type ("Move: %s, ", asked with the result of sub_1027d990)
 	virtual const char *vfunc408(int state);	// slot 408: like slot 406 (the state name of the argument)
 	CAI_NPC_V(409)
