@@ -16,7 +16,12 @@ public:
 	// CUtlVector layout memory +0xc, alloc +0x10, grow +0x14, size +0x18, elems +0x1c, then the less function pointer +0x20
 	// (called as less(a, b), returns bool in al); each record: +0 key, +4 entity handle, +0xc item count,
 	// +0x14 / +0x20 Vectors, +0x34 item array pointer.
-	char m_pq0c[0x18];
+	void *m_pqMemory;	// 0x0c
+	int m_pqAllocationCount;	// 0x10
+	int m_pqGrowSize;	// 0x14
+	int m_pqSize;	// 0x18
+	void *m_pqElements;	// 0x1c
+	void *m_pqLess;	// 0x20: the less function pointer of the priority queue
 	CUtlRBTree<CRBTree16Entry8, unsigned short> m_Tree24;	// 0x24: the tree whose elements own heap vectors
 	char m_pad003c[0x40 - 0x3c];
 	bool m_bMatch40;	// 0x40: the saved short of the source equals the global at 0x1053c340
@@ -25,6 +30,7 @@ public:
 
 	void vfunc2(CSave *pSave);	// slot 2 (0x10043c70, stub 0x1000b474, ret 4): m_data98 dword 0 = the queue size at +0x18, dword 1 = the global 0x10723938; then pops the queue (heap, smallest first) until empty: for a record whose entity handle (+4) resolves, pSave slot 2(record, 0x1053c410), slot 4, per item (+0xc count, items at +0x34) slot 4, the item handed with the save to the object at 0x10723940 slot 48 (a 0x10 byte block {pSave, item, record key}), slot 6; finally slot 6. PopMin = memmove of the last record to the front, --size, sift-down via less(+0x20) with S47190::sub_10047190 / SPhysRecordX::sub_10046a90 / Vector::sub_1003e4b0 swaps.
 	void vfunc3(CSave *pSave);	// slot 3 "save": calls slot 8 of the save (the global at 0x1053c340 with 1), then slot 2 of it with this + 0x98 and the empty name at 0x1053c344
+	void vfunc4();	// slot 4: the Purge of the priority queue vector at +0x0c
 	void vfunc5();	// slot 5: hands this + 8 (or 0 without a block) to the global at 0x106eb5d8, then calls slot 49 of the object at 0x10723940 with a zeroed dword
 	void vfunc6(void *pSource);	// stores whether the source's slot 13 short equals 0x1053c340 at +0x40, then forwards the block at +0x98 with the string 0x1053c344 to the source's slot 2
 	// vfunc7's arg 3 (pRestore) is really a CRestore (slots 2 / 5 / 8: vfunc2, s5, vfunc8 in CRestore.h); stub 0x100071c6.
