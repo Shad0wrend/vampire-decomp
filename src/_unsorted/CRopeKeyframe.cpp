@@ -86,6 +86,17 @@ void __fastcall sub_1019e590(char *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019f1c0 size=0x13
+#include "CRopeKeyframe.h"
+
+int CRopeKeyframe::vfunc142(int a)
+{
+	if (m_nRopeFlags & 0x10)
+		sub_1019ee40();
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019f2b0 size=0x1c6
 #include "CRopeKeyframe.h"
 
