@@ -3797,6 +3797,7 @@
 0x10006e38 func   ?vfunc117@CSoundEnt@@UAEHXZ CSoundEnt::vfunc117
 0x10006e3d func   ?vfunc82@CPhysicsProp@@UAEPAUdatamap_t@@XZ CPhysicsProp::vfunc82
 0x10006e42 func   ?vfunc17@CSave@@UAEXPBDPAXH@Z CSave::vfunc17
+0x10006e47 func   ?vfunc1@?$CUtlVectorDataOps@V?$CUtlVector@UEXPERIENCE_ENTRY@@V?$CUtlMemory@UEXPERIENCE_ENTRY@@@@@@$08@@UAEXPAX0@Z CUtlVectorDataOps<CUtlVector<EXPERIENCE_ENTRY,CUtlMemory<EXPERIENCE_ENTRY> >,9>::vfunc1
 0x10006e4c func   ?vfunc499@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc499
 0x10006e5b func   _item_g_pisha_book item_g_pisha_book
 0x10006e6a func   ?sub_102c54c0@CUnk102c54c0@@QAEXXZ CUnk102c54c0::sub_102c54c0
