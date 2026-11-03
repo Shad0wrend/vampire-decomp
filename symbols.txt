@@ -3433,6 +3433,7 @@
 0x10006393 func   ?v1@CGlobalEntityList_Ent@@UAEPAIXZ CGlobalEntityList_Ent::v1
 0x10006393 func   ?vfunc1@CEnvPlayerSurfaceTrigger@@UAEPAIXZ CEnvPlayerSurfaceTrigger::vfunc1
 0x1000639d func   ?sub_104302f0@@YAXXZ sub_104302f0
+0x100063a2 func   ?sub_1023c450@@YAXXZ sub_1023c450
 0x100063a7 func   ?vfunc5@CPathKeyFrame@@QAEPAV1@I@Z CPathKeyFrame::vfunc5
 0x100063ac func   ?sub_10085d00@@YAXXZ sub_10085d00
 0x100063b6 func   ?vfunc463@CAI_BaseNPCTroika@@UAEXHH@Z CAI_BaseNPCTroika::vfunc463

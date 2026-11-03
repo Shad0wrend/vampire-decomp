@@ -126448,6 +126448,79 @@ float sub_1023c430()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023c450 size=0x20c
+#include "CMeasureSection.h"
+#include "Tier1.h"
+#include "engineserver.h"
+
+struct CUnknown102477e0 { int sub_102477e0(); };
+struct CUnknown10247820 { char *sub_10247820(); };
+struct CUnknown10247840 { char *sub_10247840(); };
+struct CUnknown102478b0 { int sub_102478b0(); };
+struct CUnknown102477a0 { void sub_102477a0(); };
+struct CUnknown102477c0 { void sub_102477c0(); };
+struct CUnknown10247770 { void sub_10247770(); };
+
+struct CDebugGate
+{
+	virtual void vfunc0();
+	virtual char vfunc1();
+	char m_pad[0x24];
+	float m_f28;
+};
+
+extern CDebugGate *g_107536f4;
+extern double g_10753740;
+extern double *g_109f367c;
+extern float g_104454c4;
+
+int sub_102478d0();
+void sub_102478f0();
+void sub_10143920(float a, float b, const char *text, int c, int d, int e, int f, float g);
+
+void sub_1023c450()
+{
+	int nLine = 1;
+	CMeasureSection *pSection = (CMeasureSection *)sub_102478d0();
+	if (pSection != 0)
+	{
+		int (*pfn)(char *, int, const char *, ...) = g_109f388c;
+		do
+		{
+			char buf[256];
+			pfn(buf, 256, "%s", ((CUnknown102477e0 *)pSection)->sub_102477e0());
+			float y = (float)nLine * 0.025f + 0.51;
+			sub_10143920(0.01f, y, buf, 0xff, 0xff, 0xff, 0xff, 0.0f);
+			pfn(buf, 256, "%5.2f\n", (double)*(__int64 *)((CUnknown10247820 *)pSection)->sub_10247820() * *g_109f367c);
+			sub_10143920(0.28f, y, buf, 0xff, 0xff, 0xff, 0xff, 0.0f);
+			pfn(buf, 256, "%5.2f\n", (double)*(__int64 *)((CUnknown10247840 *)pSection)->sub_10247840() * *g_109f367c);
+			sub_10143920(0.34f, y, buf, 0xff, 0xff, 0xff, 0xff, 0.0f);
+			nLine++;
+			pSection = (CMeasureSection *)((CUnknown102478b0 *)pSection)->sub_102478b0();
+		} while (pSection != 0);
+	}
+
+	bool bResetPeak = false;
+	if ((g_107536f4->vfunc1() ? g_104454c4 : g_107536f4->m_f28) > 0.0 &&
+	    (double)engine->vfunc87() >= g_10753740)
+	{
+		sub_102478f0();
+		float v = g_107536f4->vfunc1() ? 0.0f : g_107536f4->m_f28;
+		g_10753740 = (double)engine->vfunc87() + v;
+		bResetPeak = true;
+	}
+
+	for (CMeasureSection *pReset = (CMeasureSection *)sub_102478d0(); pReset != 0;
+	     pReset = (CMeasureSection *)((CUnknown102478b0 *)pReset)->sub_102478b0())
+	{
+		((CUnknown10247770 *)pReset)->sub_10247770();
+		((CUnknown102477a0 *)pReset)->sub_102477a0();
+		if (bResetPeak)
+			((CUnknown102477c0 *)pReset)->sub_102477c0();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023cde0 size=0xed
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
     virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
