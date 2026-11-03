@@ -20,6 +20,7 @@ class CCineNPC
 {
 public:
 	virtual bool vfunc585();
+	virtual char vfunc117();	// slot 117: the base ObjectCaps with bit 1 cleared
 
 	CCineNPC *vfunc5(unsigned int flags);	// deleting destructor
 	CCineNPC *sub_101a62d0();	// constructor body 0x101a62d0 (returns this; called by the scripted_sequence / aiscripted_sequence / aiscripted_schedule factories 0x101a6260, 0x101a8fe0, 0x101a96b0): CAI_BaseNPC ctor body 0x1027c300 (stub 0x10006659); m_hNPC5f94 = -1; the COutputEvent ctor (0x100cd2a0, stub 0x10002ddd) on m_slotA, m_slotB and m_slots[0..7] in that order (the loop of 8 is a member array); vptr 0x104771e4 at +0, 0x104771b8 (CAI_DefMovementSink part) at +0x19b0; flags |= 0x1000 at +0x4c
