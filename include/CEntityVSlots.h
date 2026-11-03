@@ -60,7 +60,8 @@ public:
 	EVS(140) EVS(141)
 	virtual int slot142(const void *pInfo);	// "OnTakeDamage": takes the damage info record, answers an int
 	virtual int slot143(float flHealth, int bitsDamageType);	// "TakeHealth"
-	EVS(144) EVS(145) EVS(146) EVS(147) EVS(148) EVS(149)
+	EVS(144) virtual int slot145();	// the value CBaseEntity::vfunc146 (TraceAttack) tests for -1 / 0x14 and passes to sub_101cfe10 with 1
+	EVS(146) EVS(147) EVS(148) EVS(149)
 	EVS(150) EVS(151) EVS(152) EVS(153) EVS(154) EVS(155) EVS(156) EVS(157)
 	virtual char slot158();
 	EVS(159) EVS(160)
