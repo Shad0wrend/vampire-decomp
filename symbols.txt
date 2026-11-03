@@ -9849,6 +9849,7 @@
 0x100107df func   ?sub_100bd540@bf_write@@QAEXI@Z bf_write::sub_100bd540
 0x100107e9 func   ?sub_1042ed40@CUnit1042ed40@@QAEXHM@Z CUnit1042ed40::sub_1042ed40
 0x100107f3 func   ?vfunc80@COccultThaumDamage@@QAEHXZ COccultThaumDamage::vfunc80
+0x100107fd func   ?sub_10251f10@CBaseCombatWeapon@@QAEHXZ CBaseCombatWeapon::sub_10251f10
 0x10010807 func   ?sub_1010c4c0@CUnknown1010c4c0@@QAEXH@Z CUnknown1010c4c0::sub_1010c4c0
 0x1001080c func   ?sub_100d1610@@YAXPAX@Z sub_100d1610
 0x10010811 func   ?Grow@?$CUtlMemory@UQuestJournal_Completion@@@@QAEXH@Z CUtlMemory<QuestJournal_Completion>::Grow

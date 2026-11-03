@@ -570,6 +570,15 @@ int CBaseCombatWeapon::vfunc345()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10251f10 size=0xc
+#include "CBaseCombatWeapon.h"
+
+int CBaseCombatWeapon::sub_10251f10()
+{
+	return *(int *)((char *)sub_102517b0() + 0x2428);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10251f30 size=0x9
 namespace lifted {
 int sub_10010ea6();
