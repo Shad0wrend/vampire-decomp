@@ -209,7 +209,10 @@ public:
 	char m_pad0a88[0xe30 - 0xa88];
 	int m_nVendorE30;	// 0x0e30: index of this character's vendor in the vendor table (SyncVendorInventory)
 	int m_nVendorSettingE34;	// 0x0e34
-	char m_pad0e38[0xfe8 - 0xe38];
+	char m_pad0e38[0xea4 - 0xe38];
+	CHandle<CBaseCombatWeapon> m_hEa4;	// 0xea4
+	CHandle<CBaseCombatWeapon> m_hEa8;	// 0xea8
+	char m_pad0eac[0xfe8 - 0xeac];
 	EHANDLE m_hDialogPartnerFE8;	// 0xfe8: the dialog partner (SetDialogPartner)
 	char m_pad0fec[0xff8 - 0xfec];
 	EHANDLE m_hFireEmitters[18];	// 0xff8: the body fire emitters, one per hit box
