@@ -117,6 +117,15 @@ bool CPayphone::vfunc72(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aa950 size=0x17
+#include "CPayphone.h"
+
+int CPayphone::vfunc35(int a)
+{
+	return vfunc295_slot((void *)a) ? 0x2f : 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aa9c0 size=0x165
 #include "CBaseEntity.h"
 #include "CPayphone.h"
