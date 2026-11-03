@@ -17,7 +17,8 @@ public:
 	void sub_1022c860(inputdata_t *pInput);	// "CPropRadio::InputActivate": scope trace (entity name), when the byte at +0x734 is clear calls sub_1022c750(1)
 	void vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, int value);	// "CPropRadio::Use": scope trace (entity name), toggles: sub_1022c750(0) when the byte at +0x734 is set, else sub_1022c750(1)
 	void vfunc71();	// "CPropRadio::PrecacheSoundTable": scope trace (entity name), clears +0xbc, looks up the sound set of the name at +0xc0 in the table at 0x1073dc00 (stored at +0xb4) and caches the table indices of the entries named "on" / "off" in g_10750fec / g_10750ff0 (-1 when absent)
-	virtual void vfunc104();	// slot 104 "CPropRadio::Precache": scope trace (entity name), CBaseProp::vfunc104, slot 71, loads the radio data and picks the first show whose script (python string, 0x100 byte records) returns non-zero; precaches that show's sound (record + 0x80); warns when the data cannot be loaded or no show is found
+	virtual void vfunc104();
+	void vfunc103();	// slot 104 "CPropRadio::Precache": scope trace (entity name), CBaseProp::vfunc104, slot 71, loads the radio data and picks the first show whose script (python string, 0x100 byte records) returns non-zero; precaches that show's sound (record + 0x80); warns when the data cannot be loaded or no show is found
 	virtual int vfunc124();	// slot 124 "CPropRadio::DrawDebugTextOverlays": scope trace (entity name), base lines, then the current show's record text (or "COULD NOT FIND VALID STORY") as overlay lines
 	void sub_1018e0d0();	// CBaseProp::vfunc104 (stub 0x1000d99f), called directly
 	int sub_10096100();	// CBaseAnimating::vfunc124 (stub 0x10007d97), called directly
