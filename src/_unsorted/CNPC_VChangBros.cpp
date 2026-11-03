@@ -30,6 +30,30 @@ const char * CNPC_VChangBros::vfunc451()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036a1f0 size=0x2b
+#include "CNPC_VChangBros.h"
+
+struct CGargoyleMemberUnit {
+	void sub_10015708();
+};
+
+struct CGargoyleBaseUnit {
+	void sub_100123af();
+};
+
+void __cdecl sub_10009fc5(void *p);
+
+// TARGET: CNPC_VChangBros::vfunc5
+CAI_BaseNPC *CNPC_VChangBros::vfunc5(unsigned int flags)
+{
+	((CGargoyleMemberUnit *)((char *)this + 0x6664))->sub_10015708();
+	((CGargoyleBaseUnit *)this)->sub_100123af();
+	if (flags & 1)
+		sub_10009fc5(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036a230 size=0x6
 extern void *g_1062fbc0;
 
