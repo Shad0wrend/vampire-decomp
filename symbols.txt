@@ -11533,6 +11533,7 @@
 0x10013179 func   ?vfunc452@CNPC_VMoleman@@QAEDXZ CNPC_VMoleman::vfunc452
 0x1001317e func   ?sub_1003eb50@CBaseEntity@@QAEXXZ CBaseEntity::sub_1003eb50
 0x10013188 func   ?sub_103f7030@@YAHXZ sub_103f7030
+0x10013197 func   ?vfunc352@CBaseCombatWeapon@@UAEHXZ CBaseCombatWeapon::vfunc352
 0x1001319c func   ?vfunc497@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc497
 0x100131a1 func   ?vfunc461@CNPC_VTest@@QAEHXZ CNPC_VTest::vfunc461
 0x100131a6 func   ?sub_102c5870@@YAPAXXZ sub_102c5870
