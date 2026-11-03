@@ -182,6 +182,17 @@ void CPhysicsProp::vfunc39(CBaseEntity * a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10191810 size=0xe
+#include "CPhysicsProp.h"
+
+void sub_1040d950(int a);
+
+void CPhysicsProp::vfunc41(int a)
+{
+	sub_1040d950(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10191830 size=0xe
 // TARGET: sub_10191830
 void sub_1040d9a0(int x);

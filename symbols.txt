@@ -13292,6 +13292,7 @@
 0x10015ca3 func   ?sub_100770b0@CUnknown10076da0@@QAEXPBDM_N@Z CUnknown10076da0::sub_100770b0
 0x10015ca8 func   ?vfunc5@CItemGBadluckTalisman@@QAEPAV1@I@Z CItemGBadluckTalisman::vfunc5
 0x10015cb2 func   ?sub_103a3b80@@YIPAXPAX@Z sub_103a3b80
+0x10015cb7 func   ?vfunc41@CPhysicsProp@@QAEXH@Z CPhysicsProp::vfunc41
 0x10015cc6 func   ?sub_102b6120@CAI_BaseNPCTroikaUnit6120@@QAE_NPAVVector@@D@Z CAI_BaseNPCTroikaUnit6120::sub_102b6120
 0x10015ccb func   ?vfunc267@CWeaponGravityGun@@UAEDXZ CWeaponGravityGun::vfunc267
 0x10015cd0 func   ?sub_1034be20@@YAHXZ sub_1034be20
