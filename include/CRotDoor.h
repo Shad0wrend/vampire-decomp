@@ -53,7 +53,8 @@ public:
 	CDoorEventList m_items564[8];	// +0x564 .. +0x624
 	char m_pad0624[0x630 - 0x624];
 	CHandle<CRotDoor> m_hLinked630;	// +0x630: the linked door
-	char m_pad0634[0x655 - 0x634];
+	char m_pad0634[0x654 - 0x634];
+	bool m_bBlocked654;	// +0x654: set while CRotDoor::Blocked runs
 	bool m_bReverse655;	// +0x655: opens away from the activator
 	char m_pad0656[0x658 - 0x656];
 	Vector m_vecAxis;	// 0x0658
