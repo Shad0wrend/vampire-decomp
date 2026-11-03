@@ -11067,6 +11067,7 @@
 0x10011aa9 func   ?vfunc14@CServerNetworkProperty@@UAEPAV1@I@Z CServerNetworkProperty::vfunc14
 0x10011aae func   ?vfunc316@CWeaponGravityGun@@UAEDH@Z CWeaponGravityGun::vfunc316
 0x10011ab3 func   ?sub_10149d60@@YA_NXZ sub_10149d60
+0x10011ab8 func   ?vfunc433@CNPC_VDog@@QAEXXZ CNPC_VDog::vfunc433
 0x10011abd func   ?sub_1022b660@CUnk1022b660@@QAEXXZ CUnk1022b660::sub_1022b660
 0x10011ac2 func   ?vfunc5@CWeaponMelee_TireIron@@QAEPAV1@I@Z CWeaponMelee_TireIron::vfunc5
 0x10011ac7 func   ?sub_100fae70@CUnknown100fae70@@QAEHXZ CUnknown100fae70::sub_100fae70

@@ -1,6 +1,82 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10374b00 size=0x1fc
+#include <math.h>
+#include "CNPC_VDog.h"
+#include "CAI_BaseNPC.h"
+#include "CDevFlagObj.h"
+
+extern CDevFlagObj *g_10924a6c;
+int sub_101cda50();
+
+void CNPC_VDog::vfunc433()
+{
+	sub_102b27f0();
+	if (*(char *)((char *)this + 0x6660))
+	{
+		g_10924a6c->vfunc1();
+		sub_100041b0(0x7e);
+	}
+	if (*(int *)((char *)this + 0x6664) == 6)
+		return;
+	if (!sub_10014df8(0x6f) && !sub_10014df8(0x5a))
+	{
+		if (*(int *)((char *)this + 0xfec) != 0x6e)
+			return;
+		g_10924a6c->vfunc1();
+		sub_100041b0(0x7c);
+		return;
+	}
+	int nState = *(int *)((char *)this + 0x665c);
+	if (nState != 2)
+	{
+		if (nState == 0)
+		{
+			int nSubState = *(int *)((char *)this + 0x6664);
+			if (nSubState == 5)
+			{
+				*(int *)((char *)this + 0x665c) = 2;
+				g_10924a6c->vfunc1();
+				sub_100041b0(0x7d);
+			}
+			else if (nSubState == 4)
+				*(int *)((char *)this + 0x665c) = 1;
+		}
+		Vector vecPlayerOrigin = *(Vector *)((CAI_BaseNPC *)sub_101cda50())->vfunc220();
+		Vector vecMyOrigin = *(Vector *)((CAI_BaseNPC *)this)->vfunc220();
+		Vector vecDelta = vecPlayerOrigin - vecMyOrigin;
+		float flDist = fabs(FastSqrt(vecDelta.x * vecDelta.x + (vecDelta.y * vecDelta.y + vecDelta.z * vecDelta.z)));
+		if (*(int *)((char *)this + 0xfec) == 0x6e && flDist < *(float *)((char *)this + 0x666c))
+		{
+			if (*(int *)((char *)this + 0x665c) == 0)
+				*(int *)((char *)this + 0x665c) = 1;
+			if (*(int *)((char *)this + 0x665c) == 1)
+			{
+				g_10924a6c->vfunc1();
+				sub_100041b0(0x78);
+			}
+		}
+		else if (flDist < *(float *)((char *)this + 0x6668))
+		{
+			g_10924a6c->vfunc1();
+			sub_100041b0(0x2b);
+		}
+		else if (flDist >= *(float *)((char *)this + 0x6668))
+		{
+			g_10924a6c->vfunc1();
+			sub_100041b0(0x7c);
+		}
+		*(float *)((char *)this + 0x667c) = flDist;
+	}
+	else
+	{
+		g_10924a6c->vfunc1();
+		sub_100041b0(0x7d);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10374d80 size=0x99
 #include "CNPC_VDog.h"
 
