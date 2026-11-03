@@ -103,7 +103,7 @@ public:
 	void sub_10107050(CBaseEntity *pEnt);	// "CBaseCombatCharacter::SetDialogPartner": scope trace (entity name), stores pEnt's handle at +0xfe8 (-1 for null)
 	int sub_10336a50();	// "CBaseCombatCharacter::HasUsableMeleeWeapon" worker
 	bool sub_10106f90(int expression);	// "CBaseCombatCharacter::IsValidExpression": forwards to the global expression table
-	void sub_101073c0(int expression);	// "CBaseCombatCharacter::GetExpress...": forwards to the global expression table
+	const char *sub_101073c0(int expression);	// "CBaseCombatCharacter::GetExpressionName": forwards to the global expression table
 	void sub_101063a0();	// "CBaseCombatCharacter::FadeoutExpressions": scope trace (entity name), clamps the float at +8 of each 0x20-byte expression record (array at +0x10bc, count at +0x10c8) to gpGlobals->curtime
 	void sub_10106580(const char *pszName, int d, float a, float e, float b, float flStrength);	// "CBaseCombatCharacter::SetExpression": scope trace (entity name), FadeoutExpressions, then the strength: below 0 with a dialog partner it comes from the distance record (+0x1460) of the two edicts, clamped to 100 and scaled by 0.01, else anything outside 0.1..1.0 becomes 0.5; hands everything to sub_101067e0 (stub 0x10005e8e)
 	void sub_10105e20(float *weights, char *pExpression);	// "CBaseCombatCharacter::MakeFlexweightsFromExpression": scope trace (entity name), zeroes the 128 weights, then copies each (value, index) pair of the expression (count at +0x184, pairs from +0x44) into weights[index]; warns "bad expression data" for null
