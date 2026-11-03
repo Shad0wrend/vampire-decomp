@@ -179,6 +179,17 @@ char CBasePlayer::vfunc439() { return 0; }
 char CBasePlayer::vfunc162() { return 1; }
 // END FUNCTION
 
+// FUNCTION: 0x1015dd50 size=0x8
+#include "CBasePlayer.h"
+
+char CBasePlayer::sub_1015dd50()
+{
+	unsigned char result = ((CBaseEntity *)this)->CBaseEntity::vfunc117();
+	result &= 0xfd;
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015dd70 size=0x3
 // TARGET: sub_1015dd70
 int sub_1015dd70() {
