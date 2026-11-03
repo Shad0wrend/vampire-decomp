@@ -81,7 +81,8 @@ public:
 	CBaseEntity *sub_100f8420(CBaseEntity *pCurrent);	// the next entity after pCurrent (the first one when null) that has an edict (+0x98 object) with the byte at +0x1480 set and fails sub_100b5190 (stub 0x1000f9ca)
 	CBaseEntity *sub_100f83b0(CBaseEntity *pCurrent, int index);	// the next entity after pCurrent (the first one when null) whose edict's index (engine slot 35) equals index; 0 when none
 	// (the global list OBJECT is at 0x106eb5d8: its FindEntityByName / NextEnt / ... are called directly on that address,
-	//  not through the g_10566458 pointer; the extern is below the class)
+	//  not through the g_10566458 pointer. No extern is declared here because some matched units declare that address
+	//  with other types; a source that needs it writes `extern CGlobalEntityList g_106eb5d8;` itself.)
 	CBaseEntity *sub_100f8370(CBaseEntity *pCurrent, unsigned int nFlags);
 	CBaseEntity *sub_100f8490(CBaseEntity *pStart, unsigned int nClass, const Vector *pCenter, float flRadius);	// the next entity after pCurrent (the first one when null) with any of the flag bits nFlags in its dword at +0x4c (stub 0x10015b95)
 	void sub_100f6ec0();	// "CGlobalEntityList::Clear": sets the byte at +0x18044, removes every live entity (UTIL_Remove through the list from its head), runs sub_100f6ce0, purges a global vector (0x10703668), resets two globals and the counters at +0x1803c / +0x18040 and the byte
