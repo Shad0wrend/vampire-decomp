@@ -42,4 +42,5 @@ public:
 	virtual int vfunc138();
 	virtual int vfunc451();
 	virtual bool vfunc452();
+	char sub_10374aa0(CBaseEntity *pHint);	// slot 566 (plain member): whether the hint's type at +0x5dc is 12000 (0x2ee0)
 };
