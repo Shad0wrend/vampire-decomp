@@ -8,6 +8,7 @@
 
 class CBaseEntity;
 class CAI_Motor;
+struct animevent_t;
 class CAI_Senses;
 class CRestore;
 class CUnknown102e0150;
@@ -64,7 +65,7 @@ public:
 	CAI_NPC_V(222) CAI_NPC_V(223) CAI_NPC_V(224) CAI_NPC_V(225) CAI_NPC_V(226) CAI_NPC_V(227) CAI_NPC_V(228) CAI_NPC_V(229)
 	CAI_NPC_V10(23) CAI_NPC_V10(24)
 	virtual float vfunc250(int a); virtual bool vfunc251();	// slot 251 (+0x3ec): a boolean answer in al, asked by the animal task handlers (CNPC_VAnimal::vfunc444)
-	CAI_NPC_V(252) CAI_NPC_V(253) CAI_NPC_V(254) CAI_NPC_V(255) CAI_NPC_V(256) CAI_NPC_V(257) virtual void vfunc258(float flInterval, CAI_BaseNPC *pNPC);	/* slot 258 (+0x408, ret 8): called by PostRun with the advance sub_1026c540 returned and this */ CAI_NPC_V(259)
+	CAI_NPC_V(252) CAI_NPC_V(253) CAI_NPC_V(254) CAI_NPC_V(255) CAI_NPC_V(256) CAI_NPC_V(257) virtual void vfunc258(float flInterval, CAI_BaseNPC *pNPC);	/* slot 258 (+0x408, ret 8): called by PostRun with the advance sub_1026c540 returned and this */ virtual void vfunc259(animevent_t *pEvent);	/* slot 259 "HandleAnimEvent": the animation event record at +0 of the argument is the event id */
 	CAI_NPC_V10(26) CAI_NPC_V10(27) CAI_NPC_V10(28)
 	// slots 290..409
 	CAI_NPC_V(290) CAI_NPC_V(291) CAI_NPC_V(292)
