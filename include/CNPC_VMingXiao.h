@@ -249,7 +249,7 @@ public:
 	virtual void vfunc199();
 	virtual void vfunc200();
 	virtual void vfunc201();
-	virtual void vfunc202_slot();
+	virtual void vfunc202_slot(CBaseEntity *pOwner);
 	virtual void vfunc203();
 	virtual void vfunc204();
 	virtual void vfunc205();
