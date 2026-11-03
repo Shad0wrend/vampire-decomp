@@ -16,6 +16,7 @@ public:
 	void vfunc176(CBaseEntity *pOther);	// "CBaseTrigger::EndTouch" (the base's slot 176, called directly by the trigger classes): the entity's EndTouch
 	void sub_101c4dd0();	// disables the trigger: scope traces "CBaseEntity::IsSolidFlagSet" / "CBaseEntity::RemoveSolidFlags" (entity name); when bit 3 of the solid flags (collision property at +0x270, flags at +0x2b4) is set removes it (SetSolidFlags) and calls PhysicsTouchTriggers(0); then sets the disabled byte at +0x55c
 	void sub_101c4bf0();
+	void vfunc241(int unused);	// slot 241 (plain member): forwards to sub_101c4bf0, argument unused
 	unsigned char sub_101c4b50();	// CBaseTrigger::vfunc117 body (CBaseEntity::vfunc117 & 0xfd)	// enables the trigger: like sub_101c4dd0 but adds the solid flag when it is clear ("CBaseEntity::AddSolidFlags") and clears the byte at +0x55c
 	bool sub_101c5460(CBaseEntity *pOther);	// "CBaseTrigger::PassesTriggerFilters": true when one of the spawn flags 1 (clients: bit 7 of the entity flags) / 2 (NPCs: bit 13) / 4 (sub_101c53d0) / 8 (sub_101c5420) admits pOther and the filter entity of the handle at +0x564 (slot 241) accepts it; no filter entity means accepted
 	bool sub_101c53d0(CBaseEntity *pOther);	// the spawn flag 4 test (stub 0x1000763a)
