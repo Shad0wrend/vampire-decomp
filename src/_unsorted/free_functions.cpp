@@ -170362,6 +170362,32 @@ extern "C" CBaseEntity *npc_VGargoyle()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10377a60 size=0x57
+#include "CNPC_VGargoyle.h"
+#include "COutputEvent.h"
+
+extern char vt_104b44dc[];
+extern char vt_104b44ac[];
+
+struct CVGargoyleBaseView { void sub_103c48e0(); };
+struct CVGargoyleMemberView { void sub_10377c00(); };
+
+// TARGET: CNPC_VGargoyle::sub_10377a60
+CNPC_VGargoyle *CNPC_VGargoyle::sub_10377a60()
+{
+	((CVGargoyleBaseView *)this)->sub_103c48e0();
+	((COutputEvent *)((char *)this + 0x6664))->sub_100cd2a0();
+	*(int *)((char *)this + 0x667c) = -1;
+	((CVGargoyleMemberView *)((char *)this + 0x668c))->sub_10377c00();
+	*(void **)this = vt_104b44dc;
+	*(int *)((char *)this + 0x1568) = 0xe;
+	*(int *)((char *)this + 0x156c) = 0xe;
+	*(void **)((char *)this + 0x19b0) = vt_104b44ac;
+	*(int *)((char *)this + 0xfd0) = 3;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10377c00 size=0xc
 void __fastcall sub_10377c20(void *p);
 
