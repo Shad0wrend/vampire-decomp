@@ -5,6 +5,13 @@
 
 #include "CWeaponRanged.h"
 
+struct CWeaponIThrownPair
+{
+	int m_i910;
+	int m_i914;
+	CWeaponIThrownPair() : m_i910(-1), m_i914(-1) {}
+};
+
 class CWeaponIThrown : public CWeaponRangedBase
 {
 public:
@@ -18,8 +25,7 @@ public:
 	char pad_077c[0x86c - 0x77c];
 	void *m_p86c;	// 0x86c
 	char pad_0870[0x910 - 0x870];
-	int m_i910;	// 0x910: -1 when the weapon has no entry
-	int m_i914;	// 0x914: -1 when the weapon has no entry
+	CWeaponIThrownPair m_pair910;	// 0x910 / 0x914
 	char m_b918;	// 0x918
 	void vfunc374();	// slot 374: flips the state at +0x86c
 	virtual unsigned int vfunc360();	// slot 360: the weapon's type flags (0x2000)
