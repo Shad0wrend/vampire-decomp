@@ -5,6 +5,10 @@
 class CWeaponMelee_FireAxe
 {
 public:
+	char m_pad0000[0x871];
+	char m_b871;
+	void sub_100047be();	// CBaseCombatWeapon::vfunc103 (stub), called directly
+	void vfunc103();
 	CWeaponMelee_FireAxe *vfunc5(unsigned int flags);
 	void sub_10013a57();
 	void vfunc298(int a, int b);	// slot 298: the owner's values at +0x4fec0 / +0x4fed0 are handed to a's sub_100091a6 when a is set, then the base's slot 298 (stub 0x100131ec) runs with (a, b)
