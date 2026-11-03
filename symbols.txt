@@ -3357,6 +3357,7 @@
 0x100064ba func   ?sub_102c32d0@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_102c32d0
 0x100064bf func   ?vfunc11@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHHMHMHHHHH@Z CTempEntsSystem::vfunc11
 0x100064ce func   ?sub_100bc5c0@CUnknown100bc5c0@@QAEXH@Z CUnknown100bc5c0::sub_100bc5c0
+0x100064d8 func   ?vfunc103@CWeaponMelee_Torch@@QAEXXZ CWeaponMelee_Torch::vfunc103
 0x100064e2 func   ?vfunc4@CTEBeamLaser@@UAEXHH@Z CTEBeamLaser::vfunc4
 0x100064e7 func   ?vfunc438@CNPC_VHengeyokai@@UAEHXZ CNPC_VHengeyokai::vfunc438
 0x100064ec func   ?sub_101d8290@CUnkDelete101d8290@@QAEPAXE@Z CUnkDelete101d8290::sub_101d8290

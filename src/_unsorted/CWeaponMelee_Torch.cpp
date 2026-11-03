@@ -50,6 +50,17 @@ datamap_t *CWeaponMelee_Torch::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e74a0 size=0x11
+#include "CWeaponMelee_Torch.h"
+
+// TARGET: CWeaponMelee_Torch::vfunc103
+void CWeaponMelee_Torch::vfunc103()
+{
+	sub_100047be();
+	m_b871 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e74d0 size=0x29
 #include "CUnknown1070b248.h"
 #include "CBaseCombatWeapon.h"
