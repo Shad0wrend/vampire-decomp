@@ -4641,6 +4641,7 @@
 0x10008404 func   ?sub_1005cc30@CUnknown1005cc30@@QAEHXZ CUnknown1005cc30::sub_1005cc30
 0x1000840e func   ?sub_103f3d70@@YAHXZ sub_103f3d70
 0x10008413 func   ?vfunc404@CNPC_VPlayerController@@QAEHPAX@Z CNPC_VPlayerController::vfunc404
+0x10008418 func   ?vfunc567@CNPC_Crow@@QAEHF@Z CNPC_Crow::vfunc567
 0x1000841d func   ?sub_10348a60@@YI_NPAVCBaseEntity@@@Z sub_10348a60
 0x10008422 func   ?sub_101e9710@@YAXPAIPBD@Z sub_101e9710
 0x10008427 func   ?sub_101bc500@@YAHPAPAD0@Z sub_101bc500

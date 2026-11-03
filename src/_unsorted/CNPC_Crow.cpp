@@ -259,6 +259,18 @@ bool CNPC_Crow::vfunc566(CBaseEntity *pHint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10358c90 size=0x1b
+#include "CNPC_Crow.h"
+
+// TARGET: CNPC_Crow::vfunc567
+int CNPC_Crow::vfunc567(short nHintType)
+{
+	if (nHintType == 0x2bc)
+		return 0x22;
+	return sub_1026a8f0(nHintType);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10358ce0 size=0x17a
 #include "CNPC_Crow.h"
 #include "CUnknown1070b244.h"
