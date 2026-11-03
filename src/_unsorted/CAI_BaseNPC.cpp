@@ -337,6 +337,15 @@ int CAI_BaseNPC::vfunc512() {
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6b40 size=0x7
+#include "CAI_BaseNPC.h"
+
+float CAI_BaseNPC::vfunc522()
+{
+	return 18.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6b80 size=0x7
 float sub_101a6b80()
 {
