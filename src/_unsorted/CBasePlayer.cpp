@@ -162,6 +162,17 @@ CBaseEntity *CBasePlayer::sub_1015dc60()
 char CBasePlayer::vfunc328() { return 1; }
 // END FUNCTION
 
+// FUNCTION: 0x1015dcc0 size=0x16
+#include "CBasePlayer.h"
+
+// TARGET: CBasePlayer::vfunc131
+int CBasePlayer::vfunc131()
+{
+	int nEdict = m_n02E0;
+	return engine->vfunc35(nEdict);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015dcf0 size=0x1
 // TARGET: sub_1015dcf0
 void __fastcall sub_1015dcf0(void *pThis)

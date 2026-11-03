@@ -3903,6 +3903,7 @@
 0x100071da func   ?vfunc5@CEnvSoundscape@@QAEPAV1@I@Z CEnvSoundscape::vfunc5
 0x100071df func   ?sub_100f3ea0@@YGMMMM@Z sub_100f3ea0
 0x100071e4 func   ?vfunc244@CBaseDoor@@UAEXD@Z CBaseDoor::vfunc244
+0x100071e9 func   ?vfunc131@CBasePlayer@@QAEHXZ CBasePlayer::vfunc131
 0x100071ee func   ?vfunc52@CGameRules@@UAEXPAVCBaseCombatCharacter@@H@Z CGameRules::vfunc52
 0x100071f3 func   ?vfunc584@CCineAI@@QAE_NPAXPBDD@Z CCineAI::vfunc584
 0x100071f8 func   ?sub_10325da0@CBaseCombatCharacter@@QAE_NPBVVector@@@Z CBaseCombatCharacter::sub_10325da0
