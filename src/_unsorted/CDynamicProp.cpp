@@ -101,6 +101,29 @@ void CDynamicProp::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101906c0 size=0x6c
+#include "CDynamicProp.h"
+#include "engineiface.h"
+
+void sub_10009395();
+extern char g_106b8540[];
+
+// TARGET: CDynamicProp::vfunc113
+void CDynamicProp::vfunc113()
+{
+	sub_1018f3e0();
+	const char *pszName = m_pszSequenceName;
+	if (!pszName)
+		pszName = g_106b8540;
+	m_n07d8 = sub_1008f7b0(pszName);
+	if (m_n07d8 > -1) {
+		sub_100b3640(0x40000);
+		sub_100ac4e0((void *)sub_10009395, 0, 0);
+		m_flNextThink17c = EngineGlobals::g_1070b244->vfunc1(0.1f, 0.99f) + EngineGlobals::g_1070b228->curtime;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101907e0 size=0x1a
 #include "CDynamicProp.h"
 #include "CBaseEntity.h"
