@@ -12779,6 +12779,7 @@
 0x10014eb6 func   ?sub_10331da0@CBaseCombatCharacter@@QAEDPAVVector@@0@Z CBaseCombatCharacter::sub_10331da0
 0x10014ec5 func   ?vfunc8@CAI_StandoffBehavior@@UAEXXZ CAI_StandoffBehavior::vfunc8
 0x10014eca func   ?sub_10206320@@YAXXZ sub_10206320
+0x10014ecf func   ?vfunc2@?$CUtlVectorDataOps@UCAI_InterestTarget@@$08@@UAE_NPAX@Z CUtlVectorDataOps<CAI_InterestTarget,9>::vfunc2
 0x10014ed4 func   ?sub_101b40a0@@YGPADPADH@Z sub_101b40a0
 0x10014ed9 func   ?sub_10198640@@YAPAUPyObj@@PAU1@0@Z sub_10198640
 0x10014ede func   ?vfunc302@CBaseCombatWeapon@@UAEDXZ CBaseCombatWeapon::vfunc302

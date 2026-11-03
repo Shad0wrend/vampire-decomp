@@ -79,3 +79,14 @@ template<> int CUtlVectorDataOps<CAI_InterestTarget,9>::vfunc3(void *pFieldData)
 	return (int)pVec;
 }
 // END FUNCTION
+
+// FUNCTION: 0x102e2ae0 size=0x13
+#include "CUtlVectorDataOps.h"
+#include "CAI_InterestTarget.h"
+
+template <>
+bool CUtlVectorDataOps<CAI_InterestTarget,9>::vfunc2(void *pFieldData)
+{
+	return *(int *)(*(char **)pFieldData + 0xc) == 0;
+}
+// END FUNCTION
