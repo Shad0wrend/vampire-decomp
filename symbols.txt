@@ -2859,6 +2859,7 @@
 0x10005669 func   ?sub_10130c90@@YAPAHXZ sub_10130c90
 0x1000566e func   ?sub_10144a30@@YAXPBVVector@@0MMHHHHM@Z sub_10144a30
 0x10005673 func   ?sub_10362540@CNPC_VAsianVampire@@QAEXXZ CNPC_VAsianVampire::sub_10362540
+0x10005678 func   ?vfunc508@CAI_BaseNPC@@UAEXH@Z CAI_BaseNPC::vfunc508
 0x1000567d func   ?sub_102cc5d0@CUnknown102cc5d0@@QAEXPBU1@@Z CUnknown102cc5d0::sub_102cc5d0
 0x10005682 func   ?sub_103e6500@@YAHXZ sub_103e6500
 0x1000568c func   ?sub_102e0090@CUnknown102e0090@@QAEHPAX@Z CUnknown102e0090::sub_102e0090
