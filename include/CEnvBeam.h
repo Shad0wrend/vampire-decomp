@@ -24,7 +24,9 @@ public:
 	void sub_101001e0();	// stub 0x100118ec
 	void sub_10100860(const float *pPos);	// stub 0x100078ab: strikes between this beam and the position
 	void sub_100ffce0();	// "CEnvBeam::BeamUpdateThink" (stub 0x10004bec, installed by sub_100fef50 for a lasting beam; 727 bytes): when the damage rate (+0x458) is positive and 0.1 s have passed since the time at +0x454 -- traces start->end (Ray_t::sub_1004f7a0, CTraceFilterSimple(0, 0), engine trace 0x1070b254 slot 4, mask 0x200400b), draws the trace when 0x10738960 holds, runs CBeam::sub_100bbef0(trace), and on a hit plays the beam file at +0x520 through sub_100ff1b0 at the trace end; else when the name at +0x520 is set -- traces end->start the same way (0x10738964 gate for the debug draw) and plays the file on a hit; then CBeam::sub_100bbbf0 and next think (+0x17c) = curtime (both paths)
-	void sub_100ff1b0(Vector vecPos);	// plays the beam's file / sound name (+0x520, path buffer +0x524) at vecPos when the position is not the zero vector and the name is set: CPASFilter at vecPos, vector sound (0x10540528 slot 2) with a random 0..359 yaw; declare as a free function if the mangled name is needed
+	// sub_100ff1b0 (0x100ff1b0) plays the beam's file / sound name (+0x520, buffer +0x524) at a position:
+	// it is saved as a FREE function (?sub_100ff1b0@@...), so declare `void sub_100ff1b0(Vector vecPos);` in the
+	// source rather than as a member here (a member would need a different mangled name and fail to link).
 	char m_pad04e4[4];
 	float m_vecSavedPos[3];	// 0x4e8
 	int m_nActive;	// 0x4f4
