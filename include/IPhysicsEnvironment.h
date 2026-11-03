@@ -17,7 +17,7 @@ public:
 	PENV1(27) PENV1(28) PENV1(29)
 	PENV1(30) PENV1(31) PENV1(32) PENV1(33) PENV1(34) PENV1(35)
 	virtual void vfunc36(void *pController);	// slot 36 (+0x90) DestroyShadowController (CPhysicsAnimlink's destructor body 0x1014efb0 passes the shadow controller at +0x4c0)
-	PENV1(37) PENV1(38) PENV1(39)
+	PENV1(37) PENV1(38) virtual void *vfunc39(void *pController);	// slot 39 (+0x9c) CreateMotionController(callback) -> controller
 	virtual void vfunc40(void *pController);	// slot 40 DestroyMotionController
 	PENV1(41) PENV1(42) PENV1(43) virtual int vfunc44();	// slot 44: the number of physics objects
 	virtual void vfunc45(void *pArray);	// slot 45: fills the caller's array (count * 4 bytes) with the physics objects
