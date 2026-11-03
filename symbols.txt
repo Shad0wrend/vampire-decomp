@@ -9945,6 +9945,7 @@
 0x100104b5 func   ?vfunc5@CItemGWirelessCamera2@@QAEPAV1@I@Z CItemGWirelessCamera2::vfunc5
 0x100104c4 func   ?vfunc5@CParamsParticle@@QAEPAV1@I@Z CParamsParticle::vfunc5
 0x100104c9 func   _item_k_fu_office_key item_k_fu_office_key
+0x100104ce func   ?sub_101cbff0@Helper@@QAEPAXI@Z Helper::sub_101cbff0
 0x100104d3 func   ?sub_100f4770@@YIXPADHH@Z sub_100f4770
 0x100104d8 func   ?sub_101af070@@YAHH@Z sub_101af070
 0x100104dd func   ?sub_103dc880@@YIPAXPAX@Z sub_103dc880
