@@ -1498,6 +1498,18 @@ int CAI_BaseNPCTroika::vfunc404(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029a050 size=0x8
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_BaseNPC.h"
+
+char CAI_BaseNPCTroika::sub_1029a050()
+{
+	unsigned char result = ((CAI_BaseNPC *)this)->CAI_BaseNPC::vfunc337();
+	result |= 1;
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029a070 size=0x30
 int CAI_BaseNPCTroika::vfunc593()
 {

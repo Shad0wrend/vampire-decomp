@@ -6923,6 +6923,7 @@
 0x1000be7e func   ?sub_100b99d0@CBatSwarm@@QAE_NXZ CBatSwarm::sub_100b99d0
 0x1000be83 func   ?sub_10387180@CNPC_VHumanCombatant@@QAEHXZ CNPC_VHumanCombatant::sub_10387180
 0x1000be8d func   ?sub_10208c90@CUnknown10208c90@@QAEXPAUinputdata_t@@@Z CUnknown10208c90::sub_10208c90
+0x1000be92 func   ?sub_1029a050@CAI_BaseNPCTroika@@QAEDXZ CAI_BaseNPCTroika::sub_1029a050
 0x1000be97 func   ?sub_10050c70@CDisciplineParticle@@SAPAV1@PAUCDisciplineParticleParams@@HHHH@Z CDisciplineParticle::sub_10050c70
 0x1000be9c func   ?vfunc5@CTriggerBombSite@@QAEPAV1@I@Z CTriggerBombSite::vfunc5
 0x1000bea1 func   ?vfunc80@CResearchBook_HG_COMP@@QAEHXZ CResearchBook_HG_COMP::vfunc80
