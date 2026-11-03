@@ -375,6 +375,27 @@ float CMultiplayRules::vfunc38(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141ab0 size=0x2e
+#include "CMultiplayRules.h"
+
+class CUnknown1070ada4
+{
+public:
+	virtual void vfunc0();
+	virtual bool vfunc1();
+	char m_pad0004[0x2c - 4];
+	int m_n2c;	// 0x2c
+};
+
+extern CUnknown1070ada4 *g_1070ada4;
+
+// TARGET: CMultiplayRules::vfunc40
+bool CMultiplayRules::vfunc40()
+{
+	return (g_1070ada4->vfunc1() ? 0 : g_1070ada4->m_n2c) != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141af0 size=0x8
 #include "CMultiplayRules.h"
 
