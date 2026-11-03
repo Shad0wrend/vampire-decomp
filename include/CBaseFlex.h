@@ -264,6 +264,6 @@ public:
 	virtual void vfunc287(CBaseFlexItemObject *pObject);	// removes the item that refers to pObject
 	virtual void vfunc288(void *pObject, float flWeight, CBaseFlexFileData *pFile, CBaseFlexFileData *pFile2, bool bFirst);
 	virtual void vfunc289(CBaseFlexItem *pItem);
-	virtual void vfunc290(CBaseFlexItem *pItem);
+	virtual void vfunc290(CFlexRequest *pRequest);
 	virtual void vfunc291(CFlexRequest *pRequest);	// sets the track's position from the time since the request started and applies the source's weight
 };
