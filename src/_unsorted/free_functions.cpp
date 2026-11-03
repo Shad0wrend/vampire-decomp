@@ -944,6 +944,38 @@ void CPhysConstraint::sub_1002af90(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002b060 size=0x46
+#include "CPhysConstraint.h"
+
+struct CConstraintAnchorCtor
+{
+	void sub_100090fc(int a);
+};
+
+struct COutputEventCtor
+{
+	void sub_10002ddd();
+};
+
+extern char g_104475c4[];
+extern char g_10447134[];
+
+// TARGET: CPhysConstraint::sub_1002b060
+CPhysConstraint *CPhysConstraint::sub_1002b060()
+{
+	((CConstraintAnchorCtor *)this)->sub_100090fc(0);
+	*(void **)this = g_104475c4;
+	((COutputEventCtor *)((char *)this + 0x470))->sub_10002ddd();
+	*(int *)((char *)this + 0x450) = 0;
+	*(int *)((char *)this + 0x454) = 0;
+	*(int *)((char *)this + 0x458) = 0;
+	*(int *)((char *)this + 0x464) = 0;
+	*(int *)((char *)this + 0x468) = 0;
+	*(void **)this = g_10447134;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002b130 size=0x2e
 #include "CPhysConstraint.h"
 #include "IPhysicsEnvironment.h"
