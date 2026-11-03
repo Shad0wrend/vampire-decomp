@@ -429,6 +429,7 @@ public:
 	int sub_102c1400();	// ends the talk state: sub_102c0360 when not talking (-1), else cleans up the talk handle / flags and returns the state (+0xfec, or 0xf1 / 1 from the disposition sequence)
 	void sub_102ae810(void *pObj);	// stores the dword at +0x1c of pObj (when not null) at +0x65c8
 public:
+    void vfunc304();	// slot 304 (plain member override): when neither slot 307 nor slot 308 holds, equips "item_w_fists" and adds misc flag 0x10
     void vfunc312(int a);	// slot 312 "CAI_BaseNPCTroika::UpdateCharacter" (plain member)
     void sub_103246d0(int a);	// CBaseCombatCharacter::vfunc312 (stub 0x1000669f), called directly
     virtual void vfunc465(int);
