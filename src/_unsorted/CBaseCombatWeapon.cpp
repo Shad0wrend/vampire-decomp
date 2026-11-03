@@ -642,6 +642,13 @@ int __fastcall sub_10251fd0(CBaseCombatWeapon *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10252030 size=0xc
+int __fastcall sub_10252030(CBaseCombatWeapon *p)
+{
+	return *(int *)((char *)p->sub_102517b0() + 0x5ebe4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10252090 size=0x67
 #include "CBaseCombatWeapon.h"
 

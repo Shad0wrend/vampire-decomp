@@ -2291,6 +2291,7 @@
 0x100049c6 func   ?vfunc4@CTESmoke@@UAEXPAXH@Z CTESmoke::vfunc4
 0x100049d0 func   ?sub_10245580@CUnknown10245580@@QAEXXZ CUnknown10245580::sub_10245580
 0x100049da func   ?vfunc6@CCollisionEvent@@UAEXPAX0@Z CCollisionEvent::vfunc6
+0x100049df func   ?sub_10252030@@YIHPAVCBaseCombatWeapon@@@Z sub_10252030
 0x100049e4 func   ?vfunc523@CNPC_VMingXiaoTentacle@@UAEMXZ CNPC_VMingXiaoTentacle::vfunc523
 0x100049e9 func   ?sub_10157890@CUnknown101578b0@@QAEXD@Z CUnknown101578b0::sub_10157890
 0x100049ee func   ?vfunc56@CBaseEntity@@UAEXHHHHHHHH@Z CBaseEntity::vfunc56
