@@ -11,3 +11,5 @@ public:
 	int sub_102652d0();
 	int sub_102652f0();	// the element count (stub 0x1000477d)
 };
+
+extern CUnknown102652d0 g_1090fe10;	// 0x1090fe10: the global list (sub_102652d0 = element array, sub_102652f0 = count)
