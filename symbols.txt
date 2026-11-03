@@ -1418,6 +1418,7 @@
 0x1000326a func   ?sub_1022d780@@YAXHH@Z sub_1022d780
 0x1000326f func   ?sub_100ac610@@YIXPAVCBaseEntity@@HMPBD@Z sub_100ac610
 0x10003274 func   ?vfunc375@CAI_BaseNPC@@UAEHH@Z CAI_BaseNPC::vfunc375
+0x10003279 func   ?RotateRight@?$CUtlRBTree@UCRBTree12Entry_1024c1d0@@G@@QAEXG@Z CUtlRBTree<CRBTree12Entry_1024c1d0,unsigned short>::RotateRight
 0x10003279 func   ?sub_1024c400@CUtlRBTree12Unit@@QAEXG@Z CUtlRBTree12Unit::sub_1024c400
 0x1000327e func   ?sub_10140690@CBaseMoveBehavior@@QAE_NXZ CBaseMoveBehavior::sub_10140690
 0x10003283 func   ?vfunc601@CNPC_VMingXiao@@UAEXH@Z CNPC_VMingXiao::vfunc601
