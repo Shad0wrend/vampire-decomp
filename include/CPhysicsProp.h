@@ -8,6 +8,7 @@ class CPhysicsProp : public CBaseEntity
 {
 public:
 	virtual bool vfunc32(int a);	// slot 32 override
+	virtual bool vfunc73(CBaseEntity *pOther);	// slot 73: (m_flags204 & 2) == 2
 	void vfunc103();	// slot 103 (declared as a plain member: the base slot has no argument here): stub 0x10013782, called directly by CPhysicsPropContested::vfunc103
 	void vfunc226(int a);	// slot 226 override: base implementation, then sets the byte at +0x1b1
 	CPhysicsProp *vfunc5(unsigned int flags);	// as in CBaseCineCam (transplant)
