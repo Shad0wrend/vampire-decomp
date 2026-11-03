@@ -65673,6 +65673,98 @@ SPoolItem *sub_10145060()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101450e0 size=0x1aa
+#include "Vector.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "CTraceFilterSimple.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738964.h"
+
+struct SPoolItem
+{
+	Vector m_vStart;
+	Vector m_vEnd;
+	int m_n18;
+	int m_n1c;
+	int m_n20;
+	char m_b24;
+	char m_b25;
+};
+
+struct RayInit
+{
+	float m_Start[3];
+	float m_Delta[3];
+	float m_Extents[3];
+	float m_StartOffset[3];
+	bool m_IsRay;
+	bool m_IsSwept;
+	char m_b32;
+	char m_b33;
+	int m_n34;
+
+	void Init(const Vector &start, const Vector &end)
+	{
+		m_Delta[0] = end.x - start.x;
+		m_Delta[1] = end.y - start.y;
+		m_Delta[2] = end.z - start.z;
+		m_IsSwept = (m_Delta[0] * m_Delta[0] + m_Delta[1] * m_Delta[1] + m_Delta[2] * m_Delta[2]) != 0;
+		m_StartOffset[0] = m_StartOffset[1] = m_StartOffset[2] = 0.0f;
+		m_IsRay = true;
+		m_Extents[0] = m_Extents[1] = m_Extents[2] = 0.0f;
+		m_Start[0] = start.x;
+		m_Start[1] = start.y;
+		m_Start[2] = start.z;
+		m_b32 = 0;
+		*(float *)&m_n34 = 0.0f;
+		m_b33 = 0;
+	}
+};
+
+SPoolItem *sub_10145060();
+void sub_10146570(Vector *pStart, Vector *pEnd, int a, int b, int c, int d, float e);
+
+extern CUnknown10738964 *g_10738964;
+
+void sub_101450e0(const Vector *pStart, const Vector *pEnd, char a3, char a4)
+{
+	SPoolItem *pItem = sub_10145060();
+	pItem->m_vStart = *pStart;
+	pItem->m_vEnd = *pEnd;
+	pItem->m_b24 = a3;
+	pItem->m_b25 = 1;
+
+	if (a4)
+	{
+		RayInit ray;
+		ray.Init(pItem->m_vStart, pItem->m_vEnd);
+
+		CTraceFilterSimple filter(0, 0);
+		CGameTrace trace;
+		g_1070b254->vfunc4((Ray_t *)&ray, 0x200400b, (CTraceFilterNoCharacterCollide *)&filter, &trace);
+
+		if (!g_10738964->vfunc1() && g_10738964->m_n2c != 0)
+		{
+			sub_10146570((Vector *)trace.m_startpos, (Vector *)trace.m_endpos, 0xff, 0, 0, 1, -1.0f);
+		}
+
+		if (trace.m_startsolid || trace.m_fraction < 1.0)
+		{
+			pItem->m_n18 = 0xff;
+			pItem->m_n1c = 0;
+			pItem->m_n20 = 0;
+			return;
+		}
+	}
+
+	pItem->m_n18 = 0xff;
+	pItem->m_n1c = 0xff;
+	pItem->m_n20 = 0xff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146150 size=0x2e
 // TARGET: sub_10146150
 #include "Vector.h"
