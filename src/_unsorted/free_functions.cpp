@@ -152501,6 +152501,71 @@ int CUnk102ee6a0::sub_102ee6a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ee6d0 size=0x1e5
+// TARGET: CAI_Navigator::sub_102ee6d0
+#include "CAI_Navigator.h"
+#include "CAI_Waypoint.h"
+#include "CAI_BaseNPC.h"
+
+class CUnk102ee940 { public: float sub_102ee940(); };
+
+float sub_10146150(const Vector *v);
+
+#define WP_VEC(p) (*(Vector *)(p)->m_vecPos)
+
+bool CAI_Navigator::sub_102ee6d0(Vector *pResult, float flDistance)
+{
+	CAI_NavRoute *pRoute = m_p30;
+	CAI_Waypoint *pWaypoint = (CAI_Waypoint *)pRoute->m_pWaypoint.m_p;
+	if (!pWaypoint)
+		return false;
+
+	float flRemaining = flDistance;
+	Vector vecOrigin = *(Vector *)((CAI_BaseNPC *)m_pOuter)->vfunc220();
+
+	while (pWaypoint->m_pNext)
+	{
+		float flStep;
+		if (m_i18 == 0)
+		{
+			Vector vecDelta = WP_VEC(pWaypoint) - vecOrigin;
+			flStep = ((CUnk102ee940 *)&vecDelta)->sub_102ee940();
+		}
+		else
+		{
+			flStep = sub_10146150(&WP_VEC(pWaypoint).sub_10146190(vecOrigin));
+		}
+		if (flStep > flRemaining)
+			break;
+		vecOrigin = WP_VEC(pWaypoint);
+		pWaypoint = pWaypoint->m_pNext;
+		flRemaining -= flStep;
+	}
+
+	float flStep;
+	if (m_i18 == 0)
+	{
+		Vector vecDelta = WP_VEC(pWaypoint) - vecOrigin;
+		flStep = ((CUnk102ee940 *)&vecDelta)->sub_102ee940();
+	}
+	else
+	{
+		flStep = sub_10146150(&WP_VEC(pWaypoint).sub_10146190(vecOrigin));
+	}
+
+	if (flStep - flRemaining < 0.1)
+	{
+		*pResult = WP_VEC(pWaypoint);
+		return true;
+	}
+
+	*pResult = WP_VEC(pWaypoint) - vecOrigin;
+	VectorNormalize(*pResult);
+	VectorMA(vecOrigin, flRemaining, *pResult, *pResult);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ee940 size=0x1f
 #include "Vector.h"
 
