@@ -94,3 +94,15 @@ void CDynamicProp::vfunc103()
 	((CPropSlots *)this)->vfunc223();
 }
 // END FUNCTION
+
+// FUNCTION: 0x101907e0 size=0x1a
+#include "CDynamicProp.h"
+#include "CBaseEntity.h"
+
+bool CDynamicProp::vfunc223()
+{
+	if (((CBaseEntity *)this)->vfunc92())
+		((CBaseEntity *)this)->sub_100a5bb0();
+	return true;
+}
+// END FUNCTION
