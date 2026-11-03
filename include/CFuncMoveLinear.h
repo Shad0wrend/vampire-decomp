@@ -66,7 +66,10 @@ public:
 	char m_pad02e4[0x4a4 - 0x2e4];
 	COutputEvent m_Output4a4;	// 0x4a4
 	COutputEvent m_Output4bc;	// 0x4bc
-	char m_pad04d4[0x508 - 0x4d4];
+	char m_pad04d4[0x4fc - 0x4d4];
+	float m_flDistance4fc;	// 0x4fc: the CBaseToggle distance (see CBaseToggle::vfunc110)
+	float m_flWait500;	// 0x500: the CBaseToggle wait time (CBaseToggle::vfunc152)
+	float m_flLip504;	// 0x504: the CBaseToggle lip (see CBaseToggle::vfunc110)
 	Vector m_vecPosition1;	// 0x508
 	Vector m_vecPosition2;	// 0x514
 	char m_pad0520[0x540 - 0x520];
