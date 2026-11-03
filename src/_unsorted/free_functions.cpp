@@ -25285,6 +25285,43 @@ void CBaseAnimating::sub_1008d0f0(float scalar)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008d190 size=0x7b
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+
+struct TraceV_1008d190
+{
+	TraceV_1008d190(const char *f, const char *n)
+	{
+		g_109f3620[*g_109f3680].name = f;
+		g_109f3620[*g_109f3680].file = n;
+		g_109f3620[*g_109f3680].line = g_106b8540;
+		(*g_109f3680)++;
+	}
+	~TraceV_1008d190()
+	{
+		volatile int *p = g_109f3680;
+		int n = *p;
+		*p = --n;
+	}
+};
+
+float CBaseAnimating::sub_1008d190()
+{
+	TraceV_1008d190 trace("CBaseAnimating::GetGroundSpeedScalar",
+	                      this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	return *(float *)((char *)this + 0x564);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008d230 size=0xb4
 #include "CBaseAnimating.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };

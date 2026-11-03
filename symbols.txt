@@ -5620,6 +5620,7 @@
 0x100098ae func   ?vfunc35@CWeaponThrown_Grenade_Frag@@UAEHPAVCBaseEntity@@@Z CWeaponThrown_Grenade_Frag::vfunc35
 0x100098b3 func   ?sub_10199100@@YAPAUPyObject@@PAU1@0@Z sub_10199100
 0x100098b8 func   ?vfunc4@CTEFizz@@UAEXAAVCRecipientFilter@@M@Z CTEFizz::vfunc4
+0x100098c2 func   ?sub_1008d190@CBaseAnimating@@QAEMXZ CBaseAnimating::sub_1008d190
 0x100098cc func   ?sub_103b52f0@@YIPAXPAD@Z sub_103b52f0
 0x100098d1 func   ?vfunc173@CFuncMoveLinear@@QAEXPAX0HM@Z CFuncMoveLinear::vfunc173
 0x100098d6 func   ?sub_100a6bb0@@YIHPADHH@Z sub_100a6bb0
