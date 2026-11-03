@@ -178,7 +178,7 @@ public:
 	virtual void vfunc121();
 	virtual void vfunc122();
 	virtual void vfunc123();
-	virtual void vfunc124();
+	virtual int vfunc124();
 	virtual void vfunc125();
 	virtual void vfunc126();
 	virtual void vfunc127();
