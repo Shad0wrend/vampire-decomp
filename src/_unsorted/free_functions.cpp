@@ -93684,6 +93684,71 @@ CUnknown1070b22c_Edict *sub_101d1800(ViewerEntity *pViewer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d1a90 size=0x1d4
+#include "utlmemory.h"
+#include "CEntityVSlots.h"
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "ehandle.h"
+#include "engineserver.h"
+
+extern int g_105a0128;			// the cluster the PVS buffer holds
+extern unsigned char g_1072f8b8[];	// the 0x2000 byte PVS buffer
+
+class CEyePosView	// an entity's vtable up to slot 193, the position getter
+{
+public:
+	EVS10(a00) EVS10(a01) EVS10(a02) EVS10(a03) EVS10(a04)
+	EVS10(a05) EVS10(a06) EVS10(a07) EVS10(a08) EVS10(a09)
+	EVS10(a10) EVS10(a11) EVS10(a12) EVS10(a13) EVS10(a14)
+	EVS10(a15) EVS10(a16) EVS10(a17) EVS10(a18)
+	virtual void a190(); virtual void a191(); virtual void a192();
+	virtual Vector EyePosition();	// slot 193
+};
+
+struct CEyePosCache	// the static cache of the viewer's sampled position (an empty destructor, as the game's guarded static has)
+{
+	float x, y, z;
+	CEyePosCache() { x = 0.0f; y = 0.0f; z = 0.0f; }
+	~CEyePosCache() {}
+};
+
+// TARGET: sub_101d1a90
+bool sub_101d1a90(CEyePosView *pViewer, CBaseEntity *pEntity)
+{
+	static CEyePosCache s_vecLastEye;
+
+	if (!pViewer || !pEntity)
+		return false;
+
+	Vector vecEye;
+	vecEye = pViewer->EyePosition();
+
+	if (s_vecLastEye.x != vecEye.x || s_vecLastEye.y != vecEye.y || s_vecLastEye.z != vecEye.z) {
+		s_vecLastEye.x = vecEye.x;
+		s_vecLastEye.y = vecEye.y;
+		s_vecLastEye.z = vecEye.z;
+		int nCluster = engine->vfunc30(vecEye.Base());
+		if (nCluster != g_105a0128) {
+			g_105a0128 = nCluster;
+			engine->vfunc31(nCluster, 0x2000, (char *)g_1072f8b8);
+		}
+	}
+
+	if (pEntity->sub_100b3700() & 0x40000)
+		return false;
+
+	if (pEntity->vfunc94() == 11 || pEntity->vfunc94() == 12) {
+		if (pEntity->m_hAimEnt37c)
+			pEntity = pEntity->m_hAimEnt37c;
+	}
+
+	Vector vecMins, vecMaxs;
+	((CCollisionProperty *)((char *)pEntity + 0x270))->vfunc15(&vecMins, &vecMaxs);
+	return engine->vfunc33(vecMins, vecMaxs, g_1072f8b8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d20a0 size=0x112
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
