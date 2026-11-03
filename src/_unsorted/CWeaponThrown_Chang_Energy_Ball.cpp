@@ -53,6 +53,16 @@ void CWeaponThrown_Chang_Energy_Ball::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103efa00 size=0x1c
+#include "CWeaponThrown_Chang_Energy_Ball.h"
+
+// TARGET: CWeaponThrown_Chang_Energy_Ball::vfunc230
+void CWeaponThrown_Chang_Energy_Ball::vfunc230(int bFirst, CEnergyBallThrowInfo *pInfo)
+{
+	sub_103f00c0((&pInfo->m_n68)[bFirst == 0]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f0600 size=0xc
 #include "CWeaponThrown_Chang_Energy_Ball.h"
 namespace lifted {
