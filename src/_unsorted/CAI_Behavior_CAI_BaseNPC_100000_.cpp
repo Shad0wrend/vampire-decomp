@@ -236,3 +236,21 @@ int CAI_Behavior<CAI_BaseNPC, 100000>::vfunc27(int id)
 	return id >= 100000 && id < 110000;
 }
 // END FUNCTION
+
+// FUNCTION: 0x102c8a60 size=0x20
+extern int g_1049a0f8;
+
+struct Helper
+{
+	void* sub_102c8a60(unsigned char flags);
+};
+
+// TARGET: Helper::sub_102c8a60
+void* Helper::sub_102c8a60(unsigned char flags)
+{
+	*(void**)this = &g_1049a0f8;
+	if (flags & 1)
+		::operator delete(this);
+	return this;
+}
+// END FUNCTION

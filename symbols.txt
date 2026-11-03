@@ -1812,6 +1812,7 @@
 0x10003ce7 func   ?vfunc363@CWeaponMelee_MingXiaoTentacle@@UAEHXZ CWeaponMelee_MingXiaoTentacle::vfunc363
 0x10003cf1 func   ?sub_10402790@@YAHXZ sub_10402790
 0x10003cfb func   ?vfunc110@CLight@@QAE_NPBD0@Z CLight::vfunc110
+0x10003d0a func   ?sub_102c8a60@Helper@@QAEPAXE@Z Helper::sub_102c8a60
 0x10003d0f func   ?sub_100db3f0@@YAXXZ sub_100db3f0
 0x10003d14 func   ?sub_103e3f60@CUtlMemory8@@QAEXH@Z CUtlMemory8::sub_103e3f60
 0x10003d19 func   ?sub_102ee2c0@CUnknown102ee2c0@@QAEHXZ CUnknown102ee2c0::sub_102ee2c0
