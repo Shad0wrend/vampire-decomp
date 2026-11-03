@@ -13397,6 +13397,7 @@
 0x10015861 func   ?vfunc0@CMeasureSectionInstance@@UAEPAV1@I@Z CMeasureSectionInstance::vfunc0
 0x10015866 func   ?vfunc193@CItemContainerLock@@QAE?AVVector@@XZ CItemContainerLock::vfunc193
 0x1001586b func   ?sub_10349ea0@@YIXPAH@Z sub_10349ea0
+0x10015870 func   ?vfunc18@CRestore@@UAEHPAMHH@Z CRestore::vfunc18
 0x10015875 func   ?vfunc103@CPhysicsPropContested@@UAEXXZ CPhysicsPropContested::vfunc103
 0x1001587a func   ?sub_1042c680@@YAXXZ sub_1042c680
 0x1001587f func   ?vfunc1@CAI_MemoryListSaveRestoreOps@@UAEXPAUSaveRestoreFieldInfo_t@@PAVCRestore@@@Z CAI_MemoryListSaveRestoreOps::vfunc1
