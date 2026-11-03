@@ -3356,6 +3356,7 @@
 0x1000650a func   ?vfunc451@CNPC_VGhoulCroucher@@UAEHXZ CNPC_VGhoulCroucher::vfunc451
 0x1000650f func   ?sub_1013d650@@YAMM@Z sub_1013d650
 0x10006514 func   ?sub_103e6860@@YAHXZ sub_103e6860
+0x1000651e func   ?sub_10252070@@YIHPAVCBaseCombatWeapon@@@Z sub_10252070
 0x10006523 func   ?sub_1004fe20@@YGXH@Z sub_1004fe20
 0x10006528 func   ?Reset@CRecipientFilter@@QAEXXZ CRecipientFilter::Reset
 0x1000652d func   ?sub_1030f220@CUnknown1030f480@@QAE_NPBDH@Z CUnknown1030f480::sub_1030f220
