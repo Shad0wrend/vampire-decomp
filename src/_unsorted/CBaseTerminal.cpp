@@ -223,6 +223,16 @@ void CBaseTerminal::vfunc41(void *pArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10218660 size=0x14
+#include "CBaseTerminal.h"
+
+int CBaseTerminal::vfunc35(int a)
+{
+	char c = sub_10218710(a);
+	return c ? 2 : 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10218690 size=0x55
 #include "CBaseTerminal.h"
 #include "CEHandleGet.h"

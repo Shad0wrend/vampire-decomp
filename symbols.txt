@@ -8697,6 +8697,7 @@
 0x1000e912 func   ?sub_1028b420@CMinSet1028b420@@QAEMXZ CMinSet1028b420::sub_1028b420
 0x1000e917 func   ?sub_103323d0@CUnknown103323d0@@QAEXPAUinputdata_t@@@Z CUnknown103323d0::sub_103323d0
 0x1000e91c func   ??0CPropDoorknob@@QAE@XZ CPropDoorknob::CPropDoorknob
+0x1000e921 func   ?vfunc35@CBaseTerminal@@QAEHH@Z CBaseTerminal::vfunc35
 0x1000e926 func   ?sub_1040c080@CUnknown1040cb60@@QAEMXZ CUnknown1040cb60::sub_1040c080
 0x1000e930 func   ?sub_100b4a40@UtlMem3@@QAEXH@Z UtlMem3::sub_100b4a40
 0x1000e935 func   ?sub_10073020@S10073220@@QAEXH@Z S10073220::sub_10073020
