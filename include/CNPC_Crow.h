@@ -15,9 +15,12 @@ public:
 	unsigned int m_flags204;	// 0x204: bit 4 is handed to SetFlightMode by Spawn
 	char pad208[0x210 - 0x208];
 	int m_n210;	// 0x210: set to the frame time by Spawn
-	char pad214[0x26c - 0x214];
+	char pad214[0x268 - 0x214];
+	unsigned int m_flags268;	// 0x268: bit 12 makes the task 0x14c handler nudge the entity (CBaseEntity::sub_100b1d10)
 	const char *m_name26c;	// 0x26c: the entity name
-	char pad270[0x6f8 - 0x270];
+	char pad270[0x3bc - 0x270];
+	Vector m_vec3bc;	// 0x3bc: an offset added to the slot 217 origin to aim the motor (task 0x14c)
+	char pad3c8[0x6f8 - 0x3c8];
 	float m_fl6f8;	// 0x6f8: a random delay drawn by the event 0x22 handler (vfunc465)
 	char pad6fc[0x1568 - 0x6fc];
 	int m_n1568;	// 0x1568
