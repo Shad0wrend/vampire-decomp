@@ -48,4 +48,5 @@ public:
 	int vfunc142(int);
 	int vfunc362();
 	int vfunc363();
+	void vfunc372(class CBaseEntity *pOther, float flSpeed, EHANDLE hTarget);	// "CWeaponThrown_Chang_Energy_Ball::Throw"
 };

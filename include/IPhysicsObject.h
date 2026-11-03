@@ -20,7 +20,7 @@ public:
 	virtual void vfunc13(); virtual void vfunc14();
 	virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17(const Vector *pVelocity, const Vector *pAngVelocity);	// slot 17: called by CGravControllerPoint::sub_10148a20 as (0, &vector)
 	virtual void vfunc18(); virtual void vfunc19();
-	virtual void vfunc20(); virtual void vfunc21(); virtual void vfunc22(); virtual void vfunc23();
+	virtual void vfunc20(); virtual void vfunc21(int a); virtual void vfunc22(int a); virtual void vfunc23();
 	virtual void vfunc24(int a);	// slot 24: called with 0 by CPhysicsPropContested::vfunc103 and CBaseEntity::vfunc202 / sub_100aaa40 (through the entity's +0x36c)
 	virtual void vfunc25(); virtual void vfunc26(); virtual void vfunc27(); virtual void vfunc28(); virtual void vfunc29();
 	virtual void vfunc30(const Vector *pPosition); virtual void vfunc31(const Vector *pVelocity, const Vector *pAngVelocity);	// slot 30 SetPosition-like (one vec), slot 31 AddVelocity-like (ragdoll code 0x1019c0b0)
