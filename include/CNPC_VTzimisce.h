@@ -175,7 +175,9 @@ public:
 	int m_nSize669c;	// 0x669c
 	int *m_pElems66a0;	// 0x66a0
 	float m_fl66a4;	// 0x66a4
-	char m_pad66a8[0x66b4 - 0x66a8];
+	char m_pad66a8[0x66ac - 0x66a8];
+	float m_fl66ac;	// 0x66ac: next-allowed timer (curtime + 2.5f)
+	float m_fl66b0;	// 0x66b0: next-allowed timer (curtime + 10.0f)
 	char m_b66b4;	// 0x66b4
 	char m_pad66b5[0x66b8 - 0x66b5];
 	int m_n66b8;
