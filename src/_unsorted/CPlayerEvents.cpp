@@ -38,3 +38,16 @@ CPlayerEvents *CPlayerEvents::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10227180 size=0x16
+#include "CPlayerEvents.h"
+#include "CUnknown10227910.h"
+
+extern CUnknown10227910 g_10750cb4;
+
+void CPlayerEvents::vfunc180()
+{
+	g_10750cb4.sub_10227910(this);
+	CBaseEntity::vfunc180();
+}
+// END FUNCTION
