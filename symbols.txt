@@ -2996,6 +2996,7 @@
 0x100059f7 func   ?vfunc5@CItemGWarrClipboard@@QAEPAV1@I@Z CItemGWarrClipboard::vfunc5
 0x100059fc func   ?sub_102a9750@CUnknown102a9750@@QAEXH@Z CUnknown102a9750::sub_102a9750
 0x10005a01 func   ?sub_102c2a30@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_102c2a30
+0x10005a06 func   ?vfunc73@CWorld@@UAE_NPAVCBaseEntity@@@Z CWorld::vfunc73
 0x10005a0b func   ?vfunc433@CNPC_VAndreiBlood@@UAEXXZ CNPC_VAndreiBlood::vfunc433
 0x10005a15 func   ?sub_10204e90@CUnknown10204e90@@QAEHH@Z CUnknown10204e90::sub_10204e90
 0x10005a1a func   ?vfunc103@CPointAngleSensor@@UAEXXZ CPointAngleSensor::vfunc103

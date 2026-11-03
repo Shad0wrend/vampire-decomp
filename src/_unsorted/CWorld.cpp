@@ -43,6 +43,18 @@ void CWorld::vfunc130(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023b640 size=0x12
+#include "CWorld.h"
+
+// TARGET: CWorld::vfunc73
+bool CWorld::vfunc73(CBaseEntity *pOther)
+{
+	if (pOther->m_p9c == 0)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023b840 size=0x10b
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
