@@ -112,7 +112,9 @@ public:
 	int m_n1b2c;	// +0x1b2c
 	const char *m_pszFile1b30;	// +0x1b30: the source file marker
 	int m_nLine1b34;	// +0x1b34: the source line marker
-	char m_pad1b38[0x5cc0 - 0x1b38];
+	char m_pad1b38[0x5b80 - 0x1b38];
+	char m_b5b80;	// +0x5b80
+	char m_pad5b81[0x5cc0 - 0x5b81];
 	int m_nState5cc0;	// +0x5cc0
 	char m_pad5cc4[0x5d44 - 0x5cc4];
 	class CAI_Motor *m_pMotor5d44;	// +0x5d44: the motor (CAI_Motor); sub_102e0b40 resets its look state
