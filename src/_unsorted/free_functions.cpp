@@ -8947,6 +8947,30 @@ int sub_1004eab0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004ebb0 size=0x6b
+#include "CPointEntity.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList g_106eb5d8;
+extern float g_104454c4;
+extern double g_1044a2b0;
+
+struct CUnknown1004ebb0 : CPointEntity {
+	CBaseEntity *sub_1004ebb0(CBaseEntity *pStart, float flArg);
+};
+
+CBaseEntity *CUnknown1004ebb0::sub_1004ebb0(CBaseEntity *pStart, float flArg)
+{
+	const char *pszName = *(const char **)((char *)this + 0x458);
+	if (pszName)
+		return g_106eb5d8.sub_100f7770(pStart, pszName, *(CBaseEntity **)&flArg, 0);
+	flArg = *(float *)((char *)this + 0x454);
+	if (flArg <= g_104454c4)
+		flArg = *(float *)((char *)this + 0x450) * g_1044a2b0;
+	return g_106eb5d8.sub_100f79b0(pStart, this->vfunc217(), flArg);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004ec40 size=0xf
 struct CFwd1004ec40
 {
