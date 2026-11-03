@@ -301,7 +301,8 @@ public:
 	class CAI_Navigator *m_p5d34;	// 0x5d34: the navigator (+0x2c: its node list)
 	char m_pad5d38[0x5d40 - 0x5d38];
 	CAI_MoveProbe *m_pMoveProbe5d40;
-	char m_pad5d44[0x5d70 - 0x5d44];
+	CAI_Motor *m_pMotor5d44;	// 0x5d44: the motor component (slot 427)
+	char m_pad5d48[0x5d70 - 0x5d48];
 	int m_n5d70;	// 0x5d70
 	unsigned int m_h5d74;
 	char m_b5d78;	// 0x5d78: set while the scripted sequence entity (handle at +0x5d74) is recording this NPC's state
