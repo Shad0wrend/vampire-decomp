@@ -51,6 +51,20 @@ unsigned char CFunc_LOD::sub_10114a50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10114a70 size=0x1e
+void __fastcall sub_10114aa0(void *self);
+void sub_100aa7b0(void *p);
+
+// TARGET: sub_10114a70
+void *__fastcall sub_10114a70(void *pThis, int edx_unused, unsigned int flags)
+{
+	sub_10114aa0(pThis);
+	if (flags & 1)
+		sub_100aa7b0(pThis);
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10114ac0 size=0xb4
 #include "CFunc_LOD.h"
 #include "CBaseEntity.h"
