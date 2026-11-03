@@ -87,6 +87,7 @@ public:
 	int vfunc137();	// slot 137: returns 0 (plain member here so the void filler overrides in the subclasses keep compiling)
 
 	// Slots whose callers call them directly, so far only declared as plain members.
+	void vfunc141(class CVDmg_t *pInfo, const Vector *pDir, struct CGameTrace *pTrace);	// slot 141 "CBaseEntity::TraceAttack" (ret 0xc): damage record, shot direction (x4.0f spread), trace; hits the physics object at +0x36c slot 31 and slots 145 / 146
 	bool vfunc140(CBaseEntity *pAttacker);	// "CBaseEntity::PassesDamageFilter": scope trace (entity name), true without a damage filter, else slot 241(pAttacker) of the entity behind the handle at +0x220
 	int vfunc142(CTakeDamageInfo *pInfo);	// slot 142 body 0x100a0e40 "CBaseEntity::OnTakeDamage" (plain member like vfunc143)
 	int vfunc143(float flHealth, int bitsDamageType);	// "CBaseEntity::TakeHealth": scope trace (entity name), when the edict at +0x2e0 is set and the take-damage mode at +0x1fc is above 1 and the health at +0x210 is below the maximum at +0x208, adds flHealth (truncated) clamped to the maximum and returns 1, else 0
