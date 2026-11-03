@@ -75548,6 +75548,24 @@ void CBreakableProp::sub_1018f890(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018f920 size=0x26
+#include "CBaseEntity.h"
+
+namespace block_1018f920 {
+struct CBaseEntityUnit : CBaseEntity {
+	void sub_1018f920(int *p);
+};
+void CBaseEntityUnit::sub_1018f920(int *p)
+{
+	if (p[6] == 4 && p[2] != 0)
+		sub_100aaa40(1);
+	else
+		sub_100aaa40(0);
+}
+}
+using namespace block_1018f920;
+// END FUNCTION
+
 // FUNCTION: 0x1018f960 size=0x6d
 #include "CUnknown1018f960.h"
 #include "COutputEvent.h"
