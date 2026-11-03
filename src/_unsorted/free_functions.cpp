@@ -109371,6 +109371,25 @@ bool __stdcall sub_10207df0(CBaseCombatCharacter *pChar)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10207eb0 size=0x43
+#include "CItemContainer.h"
+void *sub_100aa720(int size);
+extern char g_105a9a2c[];
+
+// TARGET: item_container
+extern "C" CBaseEntity *item_container()
+{
+	void *mem = sub_100aa720(0x1a38);
+	CItemContainer *p;
+	if (mem)
+		p = ((CItemContainer *)mem)->sub_102087e0();
+	else
+		p = 0;
+	((CBaseEntity *)p)->vfunc106(g_105a9a2c);
+	return (CBaseEntity *)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10208b00 size=0x32
 #include "CItemContainer.h"
 extern char g_10483d14;
