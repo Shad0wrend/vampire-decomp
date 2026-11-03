@@ -303,6 +303,113 @@ void __stdcall sub_1011b060(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011b300 size=0x1db
+#include "CServerGameDLL.h"
+#include "CSaveRestoreBlockSet.h"
+#include "CRestore.h"
+#include "CVProfile.h"
+#include "utlvector.h"
+
+struct IBlockSetX
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
+	virtual void Restore(CRestore *pRestore, int a, int b);
+	virtual void PostRestore();
+};
+
+extern IBlockSetX *g_10592db0;
+extern void *g_104626bc;
+
+struct CycleCountX
+{
+	unsigned __int64 m_Int64;
+	void Sample()
+	{
+		unsigned long *pSample = (unsigned long *)&m_Int64;
+		__asm {
+			mov ecx, pSample
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+	void End()
+	{
+		CycleCountX t;
+		t.m_Int64 = 0;
+		t.Sample();
+		m_Int64 = t.m_Int64 - m_Int64;
+	}
+	void Add(const CycleCountX &r) { m_Int64 += r.m_Int64; }
+};
+
+struct CProfScope
+{
+	CProfScope()
+	{
+		CVProfile *prof = g_109f3648;
+		if (prof->m_enabled || !prof->m_bAtRoot) {
+			if (prof->m_pCurNode->m_pszName != "CServerGameDLL::Restore")
+				prof->m_pCurNode = prof->m_pCurNode->GetSubNode("CServerGameDLL::Restore", 0, "Unaccounted");
+			CVProfNode *node = prof->m_pCurNode;
+			node->m_nCurFrameCalls++;
+			if (node->m_nRecursions++ == 0) {
+				((CycleCountX *)&node->m_CurFrameTime)->Sample();
+				g_109f3648->PushGroupInlined(node->m_nBudgetGroupID);
+			}
+			prof->m_bAtRoot = false;
+		}
+	}
+	~CProfScope()
+	{
+		CVProfile *prof = g_109f3648;
+		if (!prof->m_bAtRoot || prof->m_enabled) {
+			CVProfNode *node = prof->m_pCurNode;
+			if (--node->m_nRecursions == 0 && node->m_nCurFrameCalls != 0) {
+				((CycleCountX *)&node->m_CurFrameTime)->End();
+				((CycleCountX *)&node->m_TotalTime)->Add(*(CycleCountX *)&node->m_CurFrameTime);
+				g_109f3648->PopGroup();
+			}
+			if (node->m_nRecursions == 0)
+				prof->m_pCurNode = prof->m_pCurNode->m_pParent;
+			prof->m_bAtRoot = (prof->m_pCurNode == prof->m_pRoot);
+		}
+	}
+};
+
+struct RestoreTail
+{
+	void *m_vptr;
+	~RestoreTail() { m_vptr = &g_104626bc; }
+};
+
+struct RestoreLocal : RestoreTail
+{
+	CUtlVector<int> m_vec;
+	void *m_pData;
+	char *m_pData2;
+	int m_field20;
+	bool m_bField24;
+};
+
+union RestoreStorage
+{
+	char m_raw[0x28];
+	int m_align;
+};
+
+// TARGET: CServerGameDLL::vfunc21
+void CServerGameDLL::vfunc21(void *pSaveData, int a, int b)
+{
+	CProfScope scope;
+	RestoreStorage storage;
+	new (&storage, (CUtlPlacement *)0) CRestore(pSaveData);
+	((IBlockSetX *)g_10592db0)->Restore((CRestore *)&storage, a, b);
+	((IBlockSetX *)g_10592db0)->PostRestore();
+	((RestoreLocal *)&storage)->~RestoreLocal();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011b890 size=0xb
 #include "CServerGameDLL.h"
 struct IUnk10592db0 {
