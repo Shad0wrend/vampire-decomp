@@ -71,4 +71,5 @@ public:
 	virtual const char *vfunc58(int classify);	// "ClassifyText": the "CLASS_..." name of a classification id (0..0x19), "MISSING CLASS in ClassifyText()" otherwise
 
 	CHalfLife2 *sub_10355740();	// constructor body: base ctor (0x101abbf0) then the vftable
+	void vfunc77();	// slot 77: calls slot 0 of the object the global at 0x109eed4c is reached through
 };
