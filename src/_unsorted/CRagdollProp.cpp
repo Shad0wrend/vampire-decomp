@@ -28,6 +28,17 @@ datamap_t * CRagdollProp::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10154f70 size=0x20
+#include "CRagdollProp.h"
+
+void CRagdollProp::vfunc129()
+{
+	CBaseEntity::sub_100a6490(0);
+	CBaseEntity::sub_100a6490(m_Bodies[0].m_pObject);
+	CBaseEntity::vfunc129();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10154fa0 size=0x4a
 void __cdecl sub_1019bf80(void *p);
 

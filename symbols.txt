@@ -9928,6 +9928,7 @@
 0x100104f6 func   ?sub_10245920@CUnknown10245920@@QAEHXZ CUnknown10245920::sub_10245920
 0x10010505 func   ?sub_1017f830@CHunterChar@@QAEXXZ CHunterChar::sub_1017f830
 0x1001050a func   ?sub_1018be60@@YAXXZ sub_1018be60
+0x1001050f func   ?vfunc129@CRagdollProp@@UAEXXZ CRagdollProp::vfunc129
 0x10010514 func   ?sub_10410370@@YAXPBM0MPAM@Z sub_10410370
 0x10010519 func   ?sub_1013fd20@CUtlMemory96@@QAEXH@Z CUtlMemory96::sub_1013fd20
 0x1001051e func   ?vfunc259@CSceneEntity@@UAEXHPAXPBD@Z CSceneEntity::vfunc259
