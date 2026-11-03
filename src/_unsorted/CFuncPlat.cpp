@@ -26,6 +26,17 @@ datamap_t *CFuncPlat::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10158ec0 size=0x8
+#include "CFuncPlat.h"
+
+char CFuncPlat::vfunc117()
+{
+	char caps = ((CBaseEntity *)this)->CBaseEntity::vfunc117();
+	caps &= 0xfd;
+	return caps;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10158ee0 size=0x9
 unsigned char CFuncPlat::vfunc241() { unsigned char r = m_spawnflags; r &= 1; return r; }
 // END FUNCTION
