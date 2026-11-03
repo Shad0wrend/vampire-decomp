@@ -9274,6 +9274,7 @@
 0x1000f795 func   ?vfunc463@CNPC_VCamera@@UAEXHH@Z CNPC_VCamera::vfunc463
 0x1000f79f func   ?sub_103f5ff0@@YAHXZ sub_103f5ff0
 0x1000f7a4 func   ?sub_10210bc0@@YAXXZ sub_10210bc0
+0x1000f7a9 func   ?vfunc540@CAI_BaseNPC@@QAEXPBD@Z CAI_BaseNPC::vfunc540
 0x1000f7ae func   ?sub_1008d8b0@CBaseAnimating@@QAEXPAUinputdata_t@@@Z CBaseAnimating::sub_1008d8b0
 0x1000f7b3 func   ?vfunc34@CPropSign@@UAE_NH@Z CPropSign::vfunc34
 0x1000f7b8 func   ?sub_1042f110@@YGHH@Z sub_1042f110

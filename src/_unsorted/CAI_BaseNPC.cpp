@@ -1813,6 +1813,17 @@ float CAI_BaseNPC::vfunc520(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10279060 size=0x13
+namespace lifted {
+void sub_10084b40(void *pEntity, const char *pszScene, unsigned int *pOut);
+}
+
+void CAI_BaseNPC::vfunc540(const char *pszScene)
+{
+	lifted::sub_10084b40(this, pszScene, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10279090 size=0x16e
 #include "CAI_BaseNPC.h"
 #include "CBasePlayer.h"
