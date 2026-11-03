@@ -64,7 +64,7 @@ public:
 	virtual void vfunc84(int flags); virtual char *vfunc85(); virtual void vfunc86(); virtual void vfunc87(void *pCheckTransmitInfo); virtual int vfunc88();	// slot 87 "CBaseEntity::SetTransmit"-like: takes the transmit info (bit vector pointer at +0x10)
 	virtual void vfunc89(); virtual void vfunc90(); virtual char vfunc91(void *pPassEnt, int contentsMask);	/* slot 91: collision test against the pass entity: false for collision group 1 unless the mask has bit 26 */ virtual int vfunc92();
 	virtual void vfunc93(int moveType, int moveCollide);	// "CBaseEntity::SetMoveType": scope trace (entity name), on change stores both at +0x35c/+0x360 and calls slot 25 of the object at +0x36c
-	virtual int vfunc94(); virtual void vfunc95();
+	virtual int vfunc94(); virtual int vfunc95();	// slot 95 (+0x17c): "CBaseEntity::GetMoveCollide", returns the dword at +0x360 (m_nMoveCollide360)
 	virtual int vfunc96();	// "CBaseEntity::GetAimEntEdict": scope trace (entity name), resolves the handle at +0x37c and returns that entity's edict at +0x2e0 (0 when it does not resolve)
 	virtual CBaseEntity *vfunc97(); virtual void vfunc98();	// slot 97 "CBaseEntity::GetOwnerEntity" (sub_100a9c90)
 	virtual bool vfunc99(int a, int b, int c); virtual void vfunc100(); virtual void vfunc101(); virtual void vfunc102(); virtual void vfunc103();
