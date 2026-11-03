@@ -216,6 +216,15 @@ void CPhysBox::vfunc226(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004e8a0 size=0x15
+#include "CPhysBox.h"
+
+bool CPhysBox::vfunc73(CBaseEntity *pOther)
+{
+	return (m_flags204 & 8) == 8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004e8d0 size=0x26
 #include "CPhysBox.h"
 
