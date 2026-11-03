@@ -11,3 +11,6 @@ extern void (*g_109f3628)(const char *pMsg, ...);	// 0x109f3628: Msg (variadic, 
 extern int (*g_109f388c)(char *pDest, int nSize, const char *pFmt, ...);	// 0x109f388c: Q_snprintf
 extern int (*g_109f3884)(char *pDest, const char *pSrc, int nSize, int nMaxLen);	// 0x109f3884: Q_strncat (the game passes (dest, src, 0x200, -1))
 extern char *(*g_109f3890)(char *pDest, const char *pSrc, int nSize);	// 0x109f3890: Q_strncpy (the game calls call dword ptr [_imp_?Q_strncpy])
+extern int (*g_109f3868)(int nMin, int nMax);	// 0x109f3868: RandomInt (the game calls `push max / push min / call dword ptr [0x109f3868]`)
+extern void (*g_109f3860)(char *pDest, int nSize);	// 0x109f3860: Q_strnlwr (lowercases pDest in place, called as (dest, length))
+extern void (*g_109f3888)(char *pStr, char *pOut, int nMaxLen);	// 0x109f3888: Q_trimspace (the game calls `push 0x40 / push out / push str / call dword ptr [_imp_?Q_trimspace]`)
