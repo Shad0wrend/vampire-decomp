@@ -1712,6 +1712,7 @@
 0x10003a44 func   ?sub_10314b30@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_10314b30
 0x10003a4e func   ?sub_100c2ce0@@YAXPAUSStudioHdr@@PAVVector@@PAVQuaternion@@PBMPAUSBoneMask@@@Z sub_100c2ce0
 0x10003a53 func   ?vfunc138@CNPC_VDog@@UAEHXZ CNPC_VDog::vfunc138
+0x10003a5d func   ?sub_102b5b70@Helper@@QAEXXZ Helper::sub_102b5b70
 0x10003a62 func   ?vfunc45@CPayphone@@QAE_NPAVCBaseEntity@@HHHHHHH@Z CPayphone::vfunc45
 0x10003a6c func   ?sub_1023e270@@YGHH@Z sub_1023e270
 0x10003a76 func   ?vfunc241@CFuncAreaPortalWindow@@QAE_NPBM@Z CFuncAreaPortalWindow::vfunc241

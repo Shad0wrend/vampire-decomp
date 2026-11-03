@@ -2619,6 +2619,29 @@ float CAI_BaseNPCTroika::vfunc603(float *pCur, float *pTarget)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b5b70 size=0x25
+#include "CBaseCombatCharacter.h"
+#include "CNPC_VWerewolf.h"
+
+void sub_1021fee0(void *self, const char *name);
+
+struct Helper
+{
+	void sub_102b5b70();
+};
+
+// TARGET: Helper::sub_102b5b70
+void Helper::sub_102b5b70()
+{
+	CBaseCombatCharacter *pThis = (CBaseCombatCharacter *)this;
+	if (((CNPC_VWerewolf *)this)->sub_1033c9c0() & 0x10)
+	{
+		sub_1021fee0(this, "item_w_fists");
+		pThis->sub_1033c770(0x10);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b5c00 size=0x131
 #include "CAI_BaseNPCTroika.h"
 #include "CBaseEntity.h"
