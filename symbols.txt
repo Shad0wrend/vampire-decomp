@@ -12626,6 +12626,7 @@
 0x10013e8a func   ?vfunc6@CPython_SaveRestoreBlockHandler@@UAEXPAVIRestorePy@@@Z CPython_SaveRestoreBlockHandler::vfunc6
 0x10013e8f func   ?sub_1017d0b0@SBlendView@@QAEXM@Z SBlendView::sub_1017d0b0
 0x10013e99 func   ?vfunc308@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::vfunc308
+0x10013e9e func   ?FreeNode@?$CUtlRBTree@HG@@QAEXG@Z CUtlRBTree<int,unsigned short>::FreeNode
 0x10013e9e func   ?sub_102eb2d0@CUnknown102eb2d0@@QAEXG@Z CUnknown102eb2d0::sub_102eb2d0
 0x10013ea3 func   ?vfunc580@CNPC_VAsianVampire@@QAEHXZ CNPC_VAsianVampire::vfunc580
 0x10013ea8 func   ?sub_100b4010@@YIPAVCBaseEntity@@PAV1@@Z sub_100b4010
