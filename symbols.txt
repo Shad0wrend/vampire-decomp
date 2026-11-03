@@ -2611,6 +2611,7 @@
 0x10004f57 func   ?vfunc539@CAI_BaseNPC@@UAEXPBVVector@@@Z CAI_BaseNPC::vfunc539
 0x10004f5c func   ?sub_10406d70@@YAHXZ sub_10406d70
 0x10004f61 func   ?sub_101f99c0@@YGXHH@Z sub_101f99c0
+0x10004f66 func   ?LookForGrappleVictim@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::LookForGrappleVictim
 0x10004f6b func   ?vfunc104@CSkyCamera@@UAEXXZ CSkyCamera::vfunc104
 0x10004f70 func   ?sub_101a1f00@CRestore@@QAEHHHPAUCRestoreDesc@@@Z CRestore::sub_101a1f00
 0x10004f89 func   ?vfunc0@CTETracer@@UAEHXZ CTETracer::vfunc0
