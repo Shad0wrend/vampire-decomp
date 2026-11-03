@@ -5,9 +5,12 @@
 #include "CAI_Component.h"
 #include "CAI_MoveProbe.h"
 
+void *operator new(unsigned int);
+
 class CBaseEntity;
 class CAI_Waypoint;
 class CAI_Pathfinder;
+class CAI_BaseNPC;
 
 // The owning NPC as the pathfinder sees it (class not modelled here).
 struct CAI_PathfinderOuter
@@ -21,8 +24,10 @@ struct CAI_PathfinderOuter
 };
 
 // The overlay helper embedded at +0x10.
-struct CAI_PathfinderOverlay
+struct CAI_PathfinderOverlay	// 0x10 .. 0x17: two dwords cleared by the CAI_Pathfinder constructor
 {
+	int m_n00;	// 0x10
+	int m_n04;	// 0x14
 	void sub_10306280(const float *vecStart, const float *vecApex, const float *vecEnd, AIMoveTrace_t *pStartTrace, AIMoveTrace_t *pEndTrace, char bResult);	// stub 0x1000d3ff: draws the two legs of a triangulation route
 };
 
@@ -50,13 +55,27 @@ struct CAI_PathfinderNetwork
 	int sub_102f3c10(void *pNPC, const float *pPosition);	// stub 0x1000827e: the node nearest to the position for the NPC (-1 when none)
 };
 
-class CAI_Pathfinder : public CAI_Component
+class CAI_PathfinderCore : public CAI_Component
 {
 public:
-	int m_unk08;
-	int m_unk0c;
-	CAI_PathfinderOverlay m_Overlay;	// 0x10
-	char m_pad0011[0x24 - 0x11];
+	CAI_PathfinderCore(CAI_BaseNPC *pOuter)	// the object's first 0x18 bytes; written before the derived vtable store
+	{
+		m_pOuter = pOuter;
+		m_unk0c = -1;
+		m_Overlay.m_n00 = 0;
+		m_Overlay.m_n04 = 0;
+	}
+	int m_unk08;	// 0x08
+	int m_unk0c;	// 0x0c
+	CAI_PathfinderOverlay m_Overlay;	// 0x10 (0x10 .. 0x17)
+};
+
+class CAI_Pathfinder : public CAI_PathfinderCore
+{
+public:
+	CAI_Pathfinder(CAI_BaseNPC *pOuter) : CAI_PathfinderCore(pOuter) {}
+	static void *operator new(unsigned int) { return ::operator new(0x18); }	// the game allocates the 0x18 byte pathfinder
+	char m_pad0018[0x24 - 0x18];
 	CAI_MoveProbe *m_pMoveProbe;	// 0x24
 	char m_pad0028[4];
 	CAI_PathfinderNetwork *m_pNetwork;	// 0x2c
