@@ -8,7 +8,7 @@ class CUnknown1073a104
 public:
 	virtual void vfunc0();
 	virtual bool vfunc1();	// +0x4: the flag the feat value is gated on
-	char m_pad0008[0x2c - 0x8];
+	char m_pad0004[0x2c - 0x4];
 	int m_nValue2c;	// 0x2c: the value for this kind (used when positive)
 };
 
