@@ -248,6 +248,8 @@ public:
 	void sub_10269b50(int condition);	// "CAI_BaseNPC::SetCondition"-like (called through the stub at 0x10015839)
 	bool sub_10269aa0(int condition);	// "CAI_BaseNPC::HasCondition" (stub 0x10014df8): translates ids below 1000000000 first, then tests the condition bit in the array at +0x5c5c
 	bool sub_10269d30(int condition);	// "CAI_BaseNPC::HasConditionAndNotIgnored" (0x10269d30): false without a schedule (+0x5c38), else the condition (ids below 1000000000 translated through slot 580) must have its bit set in both +0x5c5c and +0x5c74
+	void sub_1026e5e0();	// "CAI_BaseNPC::CheckOnGround" (0x1026e5e0): ground trace / condition 0x73 update run by GatherConditions
+	bool sub_10279dd0();	// "CAI_BaseNPC::ChooseEnemy" (0x10279dd0): the enemy selection worker (memory list / conditions 0x54 / 0x47 / 0x58)
 	void vfunc458(int condition);	// slot 458 (plain member): ids below 1000000000 (and -1) are translated through slot 580 first, then the (translated) id goes to the global 0x109203dc's sub_102ea020 (a name / id lookup)
 	void sub_10269bd0(int *pConditions, int nConditions);	// "CAI_BaseNPC::ClearConditions": clears the condition bits (array at +0x5c5c) of each id, translating ids below 1000000000 first through slot 580
 	void sub_1026e340(int newState);	// "CAI_BaseNPC::SetState": stores the state at +0x5cc0/+0x5cc4 (curtime at +0x5cc8 on a change), strips the weapon of an NPC in state 1 that slot 167 flags, then calls slot 463(old, new)
