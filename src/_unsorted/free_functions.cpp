@@ -100582,6 +100582,59 @@ void CUnknown101e0f00::sub_101e34c0(void *pSource, void *pTarget, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e3560 size=0x16d
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+#include "CSingleUserRecipientFilter.h"
+#include "CSoundEnt.h"
+#include "CUnknown101e0f00.h"
+#include "Vector.h"
+// TARGET: CUnknown101e0f00::sub_101e3560
+
+extern CUnknown101e0f00Entry *g_10739a74;
+extern int g_10726054;
+extern int g_1072bc40;
+extern char g_1072bcb0;
+
+void CUnknown101e0f00::sub_101e3560(int pCharArg, CBaseCombatCharacter *idArg)
+{
+	CBaseCombatCharacter *pChar = (CBaseCombatCharacter *)pCharArg;
+	int id = (int)idArg;
+
+	int idx = sub_101e12a0(id);
+	if (idx == -1)
+		return;
+
+	CUnknown101e0f00Entry *pEntry = (CUnknown101e0f00Entry *)m_ppEntries[idx];
+	g_10739a74 = pEntry;
+
+	if (!pChar->sub_1033d2f0(id))
+	{
+		pChar->sub_1033cfb0(id, 0.1f, pChar, -1);
+		((CUnknown101e0f00Src *)((char *)pEntry + 0xa4))->sub_101dd090((int)pChar, id);
+		*(int *)((char *)this + 0x20) = 0;
+		pChar->sub_1033c6b0(0x200000);
+
+		if (pEntry->m_b35)
+		{
+			int nVolume = g_1072bc40;
+			char bFlag = g_1072bcb0;
+			CSoundEnt::sub_101bac90(1, (const Vector *)pChar->a86(), nVolume, 0.2f, bFlag, pChar);
+		}
+
+		CBaseEntity *pPlayer = (CBaseEntity *)pChar->m_pA8;
+		if (pPlayer && g_10726054)
+		{
+			CSingleUserRecipientFilter filter(pPlayer);
+			filter.MakeReliable();
+			EngineGlobals::g_1070b22c->vfunc65(&filter, g_10726054);
+			EngineGlobals::g_1070b22c->vfunc67(idx);
+			EngineGlobals::g_1070b22c->vfunc66();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e3730 size=0xd4
 #include "CUnknown101e0f00.h"
 
