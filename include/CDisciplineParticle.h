@@ -35,7 +35,9 @@ public:
 	char m_pad004[0x44c];
 	const char *m_pszModelName;	// 0x450
 	int m_nModelIndex;	// 0x454
-	char m_pad458[0x464 - 0x458];
+	int m_iAttachType;	// 0x458: attachment type (same as CEnvParticle::m_iAttachType)
+	const char *m_pszAttachName;	// 0x45c: attachment name ("", never null, when none; same as CEnvParticle)
+	int m_iAttachIndex;	// 0x460: attachment index (same as CEnvParticle)
 	float m_flColor464;	// 0x464: the four floats Update sets to 0.0f / 1.0f or lerps toward m_n4ac (only when m_b4c4 is set)
 	float m_flColor468;	// 0x468
 	float m_flColor46c;	// 0x46c
