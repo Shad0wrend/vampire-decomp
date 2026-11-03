@@ -57193,6 +57193,56 @@ char CUnknown1011eee0::sub_1011eee0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011ef20 size=0x1a1
+#include "CGameMovement.h"
+#include "CGameMovementViews.h"
+#include <math.h>
+
+void sub_10139500( Vector &start, float flScale, const Vector &dir, Vector &dest );
+
+#define MV ((CMovePlayerView *)m_pPlayer)
+
+float CGameMovement::sub_1011ef20()
+{
+	if ( m_pPlayer )
+	{
+		if ( MV->m_flRadius != 0.0f )
+		{
+			Vector vDelta;
+			VectorSubtract( MV->m_vecOrigin, MV->m_vecCenter, vDelta );
+			float flDistSqr = vDelta.LengthSqr();
+
+			if ( !( flDistSqr <= ( MV->m_flRadius - MV->m_flWidth ) * ( MV->m_flRadius - MV->m_flWidth ) )
+			  && !( flDistSqr >= MV->m_flRadius * MV->m_flRadius ) )
+			{
+				float flMove = MV->m_flForwardMove;
+				Vector vecWish;
+				vecWish.x = flMove * m_vecForward.x;
+				vecWish.y = flMove * m_vecForward.y;
+				vecWish.z = flMove * m_vecForward.z;
+				sub_10139500( vecWish, MV->m_flSideMove, m_vecRight, vecWish );
+				sub_10139500( vecWish, MV->m_flUpMove, m_vecUp, vecWish );
+
+				Vector vecCenter;
+				vecCenter.x = MV->m_vecOrigin.x - MV->m_vecCenter.x;
+				vecCenter.y = MV->m_vecOrigin.y - MV->m_vecCenter.y;
+				vecCenter.z = MV->m_vecOrigin.z - MV->m_vecCenter.z;
+				VectorNormalize( vecCenter );
+				VectorNormalize( vecWish );
+
+				if ( !( DotProduct( vecWish, vecCenter ) < 0.0f ) )
+				{
+					float flDist = (float)sqrt( flDistSqr );
+					return ( ( flDist - ( MV->m_flRadius - MV->m_flWidth ) ) / MV->m_flWidth )
+					     * ( MV->m_flSpeedFactor - 1.0f ) + 1.0f;
+				}
+			}
+		}
+	}
+	return 1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011f6e0 size=0x2e
 // TARGET: sub_1011f6e0
 

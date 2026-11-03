@@ -3798,6 +3798,7 @@
 0x10006cd0 func   ?vfunc319@CWeaponRanged_Rifle_Remington@@QAEXXZ CWeaponRanged_Rifle_Remington::vfunc319
 0x10006cd5 func   ?vfunc223@CPushable@@QAE_NXZ CPushable::vfunc223
 0x10006cda func   ?sub_1030a650@CAI_Navigator@@QAEMM@Z CAI_Navigator::sub_1030a650
+0x10006cdf func   ?sub_1011ef20@CGameMovement@@QAEMXZ CGameMovement::sub_1011ef20
 0x10006ce4 func   ?sub_10095be0@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_10095be0
 0x10006ce9 func   ?vfunc488@CGenericSabbat_NPC@@UAEXXZ CGenericSabbat_NPC::vfunc488
 0x10006cf3 func   ?sub_103771b0@@YADXZ sub_103771b0
