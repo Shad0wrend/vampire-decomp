@@ -3196,6 +3196,7 @@
 0x10005ef7 func   ?sub_1035f540@@YAHXZ sub_1035f540
 0x10005efc func   ?sub_100d9b80@@YAXXZ sub_100d9b80
 0x10005f01 func   ?vfunc5@CItemGRing03@@QAEPAV1@I@Z CItemGRing03::vfunc5
+0x10005f06 func   ?vfunc609@CNPC_VBach@@QAEHD@Z CNPC_VBach::vfunc609
 0x10005f0b func   ?vfunc432@CNPC_VBach@@QAEXH@Z CNPC_VBach::vfunc432
 0x10005f10 func   ?sub_100cd260@@YIMPAD@Z sub_100cd260
 0x10005f15 func   ?vfunc73@CPhysicsProp@@UAE_NPAVCBaseEntity@@@Z CPhysicsProp::vfunc73

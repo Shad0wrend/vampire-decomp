@@ -285,3 +285,17 @@ void CNPC_VBach::vfunc433()
 	sub_10365a90(this);
 }
 // END FUNCTION
+
+// FUNCTION: 0x103661f0 size=0x2c
+#include "CAI_BaseNPCTroika.h"
+#include "CNPC_VBach.h"
+
+// TARGET: CNPC_VBach::vfunc609
+int CNPC_VBach::vfunc609(char bForce)
+{
+	if (m_n5cc0 == 4 || m_n5cc0 == 0xc)
+		return ((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc609(bForce);
+	*(int *)((char *)this + 0x6444) = 0;
+	return 0;
+}
+// END FUNCTION
