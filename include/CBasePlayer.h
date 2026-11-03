@@ -418,6 +418,7 @@ public:
 	CBaseEntity *sub_10081890();	// provisional, like sub_1015dc60 (transplant)
 	CBaseEntity *sub_100dead0();	// provisional, like sub_1015dc60 (transplant)
 	CBaseEntity *sub_101618a0();	// provisional, like sub_1015dc60 (transplant)
+	CBaseEntity *sub_10167470(char bFlag);	// "CBasePlayer::..." (0x10167470, this in ecx, ret 4, returns a CBaseEntity*): the "entity in front of the player" tracer. Returns 0 when the dialog-partner handle +0xfe8 resolves, when +0x153c != -1 and the handle +0x1538 resolves, when sub_101618a0() is set, when the local player object (sub_1023bd00()) has +0x4ac set, or when sub_10341c30 (trace-based finder, 80.0f and a cos half-angle from the convar 0x10725cec slot 1 / +0x28) returns non-zero; otherwise it does two traces (masks 0x600408b then 0x2004089, Ray_t from EyePosition slot 193 and BodyDirection3D slot 369, CTraceFilterSimple(this, 0), g_1070b254->vfunc4) and returns the hit entity when it answers !sub_100a52a0() and either its +0x98 object's slot 295 (this) is true or its +0xa0 object is passed to slot 382
 	CBaseEntity *sub_10161ed0();	// provisional, like sub_1015dc60 (transplant)
 	CBaseEntity *sub_10270ae0();	// provisional, like sub_1015dc60 (transplant)
 	CBaseEntity *sub_102a9960();	// provisional, like sub_1015dc60 (transplant)
