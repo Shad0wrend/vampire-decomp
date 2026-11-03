@@ -11,6 +11,7 @@ public:
 	CBaseTrigger() : m_i564(-1) {}	// inlined into the constructors of every trigger class (the game's allocation size is 0x598)
 	void vfunc243(unsigned int flag);
 	void vfunc244(int unused);	// slot 244: toggles bit 0 of the flag word at +0x204
+	void vfunc245(int unused);	// slot 245: toggles bit 1 of the flag word at +0x204
 	void vfunc246(int a);	// slot 246: sets bit 0 of the flag word at +0x204 when it is clear
 	void vfunc247(int a);	// slot 247: sets bit 1 of the flag word at +0x204 when it is clear
 	void vfunc248(int a);	// slot 248: clears bit 0 of the flag word at +0x204 when it is set
