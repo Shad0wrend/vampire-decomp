@@ -94,4 +94,14 @@ public:
 	virtual void vfunc80();
 	virtual void vfunc81();
 	virtual datamap_t * vfunc82();
+
+	char m_pad0004[0x204 - 4];
+	unsigned int m_n204;	// +0x204: bit 1 (value 2) enables the slide-limit computation
+	char m_pad0208[0x464 - 0x208];
+	float m_fl464;	// +0x464 (scaled by 0.45454544f in the limit computation)
+	float m_fl468;	// +0x468 (scaled by 0.45454544f)
+	char m_pad046c[0x488 - 0x46c];
+	Vector m_vec488;	// +0x488: the slide axis / limit point (subtracted from the entity's absolute origin)
+	int m_n494;	// +0x494: copied into the constraint params block
+	void sub_1002bdc0(int pArg1, void **pObjects);	// slot 241 body: builds the slide-limit params and hands them, with the two physics objects, to the physics environment (slot 15)
 };
