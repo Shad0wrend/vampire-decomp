@@ -46,3 +46,12 @@ int CWeaponIThrown::vfunc328()
     return (m_p86c != 0) + 0xb9;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103ed8c0 size=0x14
+#include "CWeaponIThrown.h"
+
+void CWeaponIThrown::vfunc374()
+{
+	m_p86c = (void *)(m_p86c == 0);
+}
+// END FUNCTION
