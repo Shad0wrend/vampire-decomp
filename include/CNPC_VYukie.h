@@ -10,6 +10,7 @@ public:
 	CNPC_VYukie *vfunc5(unsigned int flags);
 	void sub_100123af();
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
+	int vfunc404(CBaseEntity *pEnt);	// slot 404: 0 for null, else CAI_BaseNPCTroika::vfunc404
 	int vfunc461();	// slot 461: sets the field at +0x1b38 to 0x2a, then CNPC_VHumanCombatant::vfunc461
 	void vfunc420();	// slot 420: calls the base slot 420 (CNPC_VHumanCombatant::vfunc420, stub 0x1000dcba), then, when the active weapon (sub_1032e7b0) is set, calls slot 66 of it
 	CNPC_VYukie *sub_103dd000();	// as in CKeepUpright (transplant)
