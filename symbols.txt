@@ -9060,6 +9060,7 @@
 0x1000f10a func   ?sub_101f3650@@YIXPAH@Z sub_101f3650
 0x1000f10f func   ?sub_10051a40@CDisciplineParticleUnit@@QAEXXZ CDisciplineParticleUnit::sub_10051a40
 0x1000f114 func   ?vfunc204@CBaseEntity@@QAEMXZ CBaseEntity::vfunc204
+0x1000f119 func   ?vfunc432@CNPC_VManBat@@QAEXH@Z CNPC_VManBat::vfunc432
 0x1000f11e func   ?sub_101ce2e0@@YAXPAUPlayerSlots162@@HH@Z sub_101ce2e0
 0x1000f128 func   ?vfunc0@CTEKillPlayerAttachments@@UAEHXZ CTEKillPlayerAttachments::vfunc0
 0x1000f12d func   _item_w_sledgehammer item_w_sledgehammer

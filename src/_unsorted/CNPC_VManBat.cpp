@@ -191,6 +191,17 @@ void CNPC_VManBat::vfunc144(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1038e990 size=0x1a
+#include "CNPC_VManBat.h"
+
+// TARGET: CNPC_VManBat::vfunc432
+void CNPC_VManBat::vfunc432(int a)
+{
+	sub_1038f020(0);
+	sub_10385a10(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1038fb00 size=0x6
 #include "CNPC_VManBat.h"
 int CNPC_VManBat::vfunc464()
