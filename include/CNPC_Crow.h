@@ -104,4 +104,6 @@ public:
 	int vfunc511();
 	float vfunc516();
 	int vfunc580();
+	void vfunc259(int *pTask);	// slot 259 (0x10357820): the crow's anim-event / input task handler (switch on pTask[0]: 2 -> sub_103581b0(m_pTarget5ddc), 3 -> slot 310(0x22), 4 -> the hop, default -> CAI_BaseNPC::vfunc259)
+	void sub_10274e30(int *pTask);	// CAI_BaseNPC::vfunc259 body at 0x10274e30, called directly by the default branch (this in ecx)
 };
