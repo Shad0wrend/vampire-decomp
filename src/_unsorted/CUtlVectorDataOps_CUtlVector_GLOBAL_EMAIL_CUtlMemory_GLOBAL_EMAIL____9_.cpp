@@ -72,3 +72,18 @@ template<> int CUtlVectorDataOps<CUtlVector<GLOBAL_EMAIL,CUtlMemory<GLOBAL_EMAIL
 	return (int)pVec;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10184e70 size=0x13
+#include "CUtlVectorDataOps.h"
+
+struct GLOBAL_EMAIL;
+
+// TARGET: CUtlVectorDataOps<CUtlVector<GLOBAL_EMAIL,CUtlMemory<GLOBAL_EMAIL> >,9>::vfunc2
+template <class VEC, int N>
+bool CUtlVectorDataOps<VEC, N>::vfunc2(void *pFieldData)
+{
+	return *(int *)(*(char **)pFieldData + 0xc) == 0;
+}
+
+template class CUtlVectorDataOps<CUtlVector<GLOBAL_EMAIL,CUtlMemory<GLOBAL_EMAIL> >,9>;
+// END FUNCTION

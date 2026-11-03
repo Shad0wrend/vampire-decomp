@@ -109,6 +109,7 @@
 0x100012b2 func   ?ShiftElementsRight@?$CUtlVector@V?$CHandle@VCBaseEntity@@@@V?$CUtlMemory@V?$CHandle@VCBaseEntity@@@@@@@@QAEXHH@Z CUtlVector<CHandle<CBaseEntity>,CUtlMemory<CHandle<CBaseEntity> > >::ShiftElementsRight
 0x100012b2 func   ?sub_10055000@UtlVec8@@QAEXHH@Z UtlVec8::sub_10055000
 0x100012b7 func   ?sub_101f2500@CUnknown101f2500@@QAEDXZ CUnknown101f2500::sub_101f2500
+0x100012c1 func   ?vfunc2@?$CUtlVectorDataOps@V?$CUtlVector@UGLOBAL_EMAIL@@V?$CUtlMemory@UGLOBAL_EMAIL@@@@@@$08@@UAE_NPAX@Z CUtlVectorDataOps<CUtlVector<GLOBAL_EMAIL,CUtlMemory<GLOBAL_EMAIL> >,9>::vfunc2
 0x100012c6 func   ?vfunc451@CNPC_VPedestrian@@UAEHXZ CNPC_VPedestrian::vfunc451
 0x100012cb func   ?sub_10130690@CLight@@QAEXXZ CLight::sub_10130690
 0x100012d5 func   ?sub_101b90a0@CUnknown101b90a0@@QAEXH@Z CUnknown101b90a0::sub_101b90a0
