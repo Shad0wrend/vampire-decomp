@@ -1,6 +1,9 @@
 // CUnknown10229550: an object that owns a CUtlVector of 0x58-byte items at +0x174 (memory, allocation count, grow size,
-// size, element pointer); real name not yet known.
+// size, element pointer); real name not yet known. The same global object (0x10750d78) also owns the 0x20-byte active
+// sound queue at +0x188, which is modelled in CListZ.h (the functions using it were matched under CListZ).
 #pragma once
+
+#include "CListZ.h"
 
 struct CUnknown10229550Item
 {
@@ -23,6 +26,13 @@ public:
 	int m_nGrowSize;	// 0x17c
 	int m_nSize;	// 0x180
 	CUnknown10229550Item *m_pElements;	// 0x184
+
+	// the active-sound queue at +0x188 (same object; see CListZ.h for the item and the functions)
+	CListZItem *m_pSoundMemory;	// 0x188
+	int m_nSoundAllocationCount;	// 0x18c
+	int m_nSoundGrowSize;	// 0x190
+	int m_nSoundCount;	// 0x194 (sub_102296c0 returns it)
+	CListZItem *m_pSoundElements;	// 0x198
 
 	void sub_10229550(CUnknown10229550Item *pItem, float flScale);	// when the item is active: stores m_f48 / flScale in m_f4c, appends a copy of the item to the vector and clears the original
 	void sub_102293f0(float flScale);	// the four items at +0x14 (0x58 bytes each) are each given to sub_10229550 with the scale
