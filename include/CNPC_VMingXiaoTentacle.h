@@ -692,4 +692,6 @@ public:
 	virtual char vfunc600(int unused);
 	virtual void vfunc601(int a);
 	virtual bool vfunc602();
+	virtual void vfunc603();
+	virtual int vfunc604(int a);	// slot 604 (+0x970): asked with the active weapon's vfunc360 flags
 };
