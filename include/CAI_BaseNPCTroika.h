@@ -304,7 +304,8 @@ public:
 	char m_b5d30;
 	char m_pad5d31[3];
 	class CAI_Navigator *m_p5d34;	// 0x5d34: the navigator (+0x2c: its node list)
-	char m_pad5d38[0x5d40 - 0x5d38];
+	char m_pad5d38[0x5d3c - 0x5d38];
+	class CAI_Pathfinder *m_p5d3c;	// 0x5d3c: the pathfinder (created by slot 430)
 	CAI_MoveProbe *m_pMoveProbe5d40;
 	CAI_Motor *m_pMotor5d44;	// 0x5d44: the motor component (slot 427)
 	char m_pad5d48[0x5d70 - 0x5d48];
