@@ -141458,6 +141458,17 @@ const char* CAI_BaseNPCTroika::sub_102c36b0(int schedule)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c41b0 size=0xd
+#include "CAI_BaseNPCTroika.h"
+#include "Vector.h"
+
+// TARGET: CAI_BaseNPCTroika::sub_102c41b0
+void CAI_BaseNPCTroika::sub_102c41b0(int a, const Vector *pFrom, const Vector *pTo, float c)
+{
+	sub_102c41d0(a, pFrom, pTo, *(int *)&c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c41d0 size=0xa0
 #include "CAI_BaseNPCTroika.h"
 #include "Vector.h"

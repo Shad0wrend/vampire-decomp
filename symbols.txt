@@ -13771,6 +13771,7 @@
 0x10015c67 func   ?vfunc80@CFuncParticle@@QAEHXZ CFuncParticle::vfunc80
 0x10015c6c func   _env_firesensor env_firesensor
 0x10015c71 func   ?sub_10050ae0@@YAHXZ sub_10050ae0
+0x10015c76 func   ?sub_102c41b0@CAI_BaseNPCTroika@@QAEXHPBVVector@@0M@Z CAI_BaseNPCTroika::sub_102c41b0
 0x10015c7b func   ?sub_10316ec0@@YAXXZ sub_10316ec0
 0x10015c80 func   ?sub_10073b60@CUnknown10073b60@@QAEXH@Z CUnknown10073b60::sub_10073b60
 0x10015c85 func   ?vfunc0@CTraceFilterSimpleTwoEnt@@UAE_NPAXH@Z CTraceFilterSimpleTwoEnt::vfunc0
