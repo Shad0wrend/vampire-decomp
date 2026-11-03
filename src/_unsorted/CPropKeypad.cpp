@@ -167,6 +167,18 @@ void CPropKeypad::vfunc39(CBasePlayer *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021de40 size=0x18
+#include "CPropKeypad.h"
+#include "CBaseTerminal.h"
+#include "CBasePlayer.h"
+
+void CPropKeypad::vfunc42(CBasePlayer *pPlayer)
+{
+	((CBaseTerminal *)this)->CBaseTerminal::vfunc42(pPlayer);
+	pPlayer->sub_1017cef0(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021de70 size=0x24
 #include "CBaseTerminal.h"
 #include "CPropKeypad.h"
