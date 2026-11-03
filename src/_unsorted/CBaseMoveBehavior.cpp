@@ -23,6 +23,37 @@ datamap_t * CBaseMoveBehavior::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140580 size=0x76
+#include "CBaseMoveBehavior.h"
+#include "CPathKeyFrame.h"
+#include "Vector.h"
+
+#define SV(n) virtual void v##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+
+struct SlotMover {
+	SV10(0) SV10(1) SV10(2) SV10(3) SV10(4) SV10(5) SV10(6) SV10(7) SV10(8) SV10(9)
+	SV10(10) SV10(11) SV10(12) SV10(13) SV10(14) SV10(15) SV10(16) SV10(17) SV10(18) SV10(19)
+	SV10(20) SV10(21)
+	virtual Vector *v220();
+	virtual Vector *v221();
+};
+
+// TARGET: CBaseMoveBehavior::vfunc103
+void CBaseMoveBehavior::vfunc103()
+{
+	*(CBaseMoveBehavior **)((char *)this + 0x4a0) = this;
+	*(int *)((char *)this + 0x4b0) = 0;
+	vfunc93(1, 0);
+	Vector *pOrigin = ((SlotMover *)this)->v220();
+	*(Vector *)((char *)this + 0x450) = *pOrigin;
+	Vector *pAngles = ((SlotMover *)this)->v221();
+	*(Vector *)((char *)this + 0x45c) = *pAngles;
+	sub_100b3b00();
+	((CPathKeyFrame *)this)->vfunc103();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140620 size=0x49
 #include "CBaseMoveBehavior.h"
 #include <string.h>

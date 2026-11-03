@@ -4410,6 +4410,7 @@
 0x10007b94 func   ?sub_102e27d0@CAI_Motor@@QAEMPBDM@Z CAI_Motor::sub_102e27d0
 0x10007ba3 func   ?vfunc82@CBaseVampireSkillEntity@@QAEPAUdatamap_t@@XZ CBaseVampireSkillEntity::vfunc82
 0x10007bad func   ?vfunc82@CStealthModifier@@UAEPAUdatamap_t@@XZ CStealthModifier::vfunc82
+0x10007bb2 func   ?vfunc103@CBaseMoveBehavior@@UAEXXZ CBaseMoveBehavior::vfunc103
 0x10007bb7 func   ?vfunc80@CItemGBrotherhoodFlyer@@QAEHXZ CItemGBrotherhoodFlyer::vfunc80
 0x10007bc1 func   ?vfunc5@CLogicAuto@@QAEPAV1@I@Z CLogicAuto::vfunc5
 0x10007bcb func   ?vfunc3@CAI_ProxyMovementSink@@QAE_NHHH@Z CAI_ProxyMovementSink::vfunc3
