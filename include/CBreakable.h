@@ -31,7 +31,7 @@ public:
 	int m_iHealth;	// 0x210
 	char m_pad0214[0x454 - 0x214];
 	int m_nMaterial;	// 0x454
-	char m_pad0458[0x45c - 0x458];
+	unsigned int m_h458;	// 0x458: entity handle of the inflictor stored by the damage handler
 	int m_nGibModelIndex;	// 0x45c: the precached gib model
 	int m_iszGibModel;	// 0x460
 	char m_pad0464[0x484 - 0x464];
