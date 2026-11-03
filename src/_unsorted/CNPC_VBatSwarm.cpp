@@ -161,6 +161,21 @@ void __fastcall sub_10367580(void *pThis, int dummy, int a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103675e0 size=0x15
+#include "CNPC_VBatSwarm.h"
+
+struct CAI_BaseNPC_Fwd
+{
+	int sub_1026d890(float a, float b);
+};
+
+// TARGET: CNPC_VBatSwarm::vfunc553
+int CNPC_VBatSwarm::vfunc553(float a, float b)
+{
+	return ((CAI_BaseNPC_Fwd *)this)->sub_1026d890(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10367610 size=0x15
 #include "CNPC_VBatSwarm.h"
 

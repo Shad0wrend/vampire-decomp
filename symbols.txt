@@ -10168,6 +10168,7 @@
 0x1001092e func   ?sub_101b20b0@UtlMem@@QAEXXZ UtlMem::sub_101b20b0
 0x10010933 func   ?sub_10256280@@YIEPAX@Z sub_10256280
 0x10010938 func   ?vfunc72@CNPC_VNewscaster@@UAE_NH@Z CNPC_VNewscaster::vfunc72
+0x1001093d func   ?vfunc553@CNPC_VBatSwarm@@UAEHMM@Z CNPC_VBatSwarm::vfunc553
 0x10010942 func   ?sub_1035eb70@@YAHXZ sub_1035eb70
 0x1001094c func   ?vfunc0@CGameMovement@@UAEPAV1@I@Z CGameMovement::vfunc0
 0x10010951 func   ?sub_102e30d0@CTraceFilterNav@@QAEPAV1@HH@Z CTraceFilterNav::sub_102e30d0
