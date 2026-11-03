@@ -4,6 +4,9 @@
 #include "CBaseAnimating.h"
 #include "Vector.h"
 
+struct Ray_t;
+struct CGameTrace;
+
 class CBatSwarm : public CBaseAnimating
 {
 public:
@@ -23,6 +26,7 @@ public:
 	// Slot 141, called directly so far; declared as a plain member.
 	void vfunc141(int *pRef, int unused, void *pInfo);
 	void vfunc103();	// 0x100b87a0 (slot 103): spawn/init (model 0x1055a770, precaches Impact_Flesh_Emitter, randomises the 32 bat positions / velocities)
+	bool vfunc99(const Ray_t *pRay, unsigned int mask, CGameTrace *pTrace);	// 0x100b9c20 (slot 99): traces the ray against the 32 bat AABBs (+-16 units) using sub_1023f3d0 / sub_10240fd0
 
 	bool sub_100ba0c0(void *pEntity);	// slot 68: true when the entity is set and its field at +0xa8 is non-null
 	CBatSwarm *vfunc5(unsigned int flags);	// as in CSimplePhysicsProp (transplant)
