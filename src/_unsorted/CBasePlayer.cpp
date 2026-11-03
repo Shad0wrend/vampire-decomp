@@ -2078,6 +2078,20 @@ void CBasePlayer::vfunc339(int a, float b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10182500 size=0x15
+#include "CBasePlayer.h"
+
+struct CBaseCombatCharacter_Fwd
+{
+	int sub_1033ccd0(int a, float b, float c);
+};
+
+int CBasePlayer::vfunc340(int a, float b, float c)
+{
+	return ((CBaseCombatCharacter_Fwd *)this)->sub_1033ccd0(a, b, c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10182530 size=0xd
 void sub_1033cef0(int a, float b);
 
