@@ -12,7 +12,9 @@ struct CMovePlayerView	// CGameMovement::m_pPlayer: the "mv" (CMoveData-like) re
 {
 	char m_pad0000[4];
 	unsigned int m_hRef;	// 0x04 (the pass entity handle for LookupEntity, address passed as &m_hRef)
-	char m_pad0008[0x24 - 8];
+	char m_pad0008[0xc - 8];
+	QAngle m_vecViewAngles0c;	// 0x0c: the player's view angles (AngleVectors input)
+	char m_pad0018[0x24 - 0x18];
 	unsigned int m_fFlags24;	// 0x24: checked for 0x20000 and bit 2 by the view-punch code
 	char m_pad0028[0x2c - 0x28];
 	float m_flForwardMove;	// 0x2c
