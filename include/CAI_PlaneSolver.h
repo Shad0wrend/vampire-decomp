@@ -79,7 +79,7 @@ class CAI_PlaneSolver : public CAI_PlaneSolverBase
 {
 public:
 	CAI_PlaneSolver(int owner);
-	virtual void vfunc0();
+	virtual bool vfunc0(float *pVec, int *pEnt, float a, float b, float c, int d);	// ret 0x18 (6 stack args), answers in eax
 
 	int sub_10309650(CAI_PlaneSolverObj *pObj, float flYaw, float flScale, float flStep, int nIndex);	// probes one steering direction (yaw offset by nIndex steps of flStep): the probe point lies flScale along it from the owner's origin; when the trace (sub_10307ef0) is clear the result is handed to sub_10308540 and 1 is returned, else 0
 	char sub_10307ef0(void *pObjData, Vector *pEnd, int a, int mask, CAI_PlaneSolverTrace *pResult);	// stub 0x10003ddc, called directly. "CAI_PlaneSolver::MoveLimit" (VPROF scope of that name, GetSubNode + inlined rdtsc sample + PushGroup call [0x109f3668] around the call, ExitScopeInlined after): by the asm the five stack arguments are arg1 (int, tested ==0 and passed on), arg2, arg3 (a char: 100.0f when set else 0 as a float passed to CAI_BaseNPC::sub_102729d0), arg4, arg5 (int); m_owner (+4) is the CAI_BaseNPCTroika whose move probe (+0x5d40) gets sub_102e6d70(arg1, owner->vfunc220() origin, arg2, arg4, sub_102729d0(...), arg5...), the result byte is returned
