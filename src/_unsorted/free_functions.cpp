@@ -71682,6 +71682,22 @@ void CBasePlayer::sub_1017e5f0(inputdata_t *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017e680 size=0x4a
+#include "inputdata_t.h"
+
+struct CInputOwner
+{
+	void sub_1017e680(inputdata_t *pInput);
+	void sub_1017e6f0(int n);
+};
+
+// TARGET: CInputOwner::sub_1017e680
+void CInputOwner::sub_1017e680(inputdata_t *pInput)
+{
+	sub_1017e6f0(pInput->value.IntOrZero() > 5 ? 5 : (pInput->value.IntOrZero() < 0 ? 0 : pInput->value.IntOrZero()));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017e6f0 size=0x1d
 #include "ConVar.h"
 
