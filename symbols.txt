@@ -11732,6 +11732,7 @@
 0x10012747 func   ?sub_102f7940@CUnknown102f7940@@QAEXXZ CUnknown102f7940::sub_102f7940
 0x10012751 func   ?sub_100d51b0@@YAXXZ sub_100d51b0
 0x10012756 func   ?sub_10137ed0@@YAXABUmatrix3x4_t@@AAVQAngle@@@Z sub_10137ed0
+0x1001275b func   ?vfunc312@CBaseCombatWeapon@@UAEDXZ CBaseCombatWeapon::vfunc312
 0x10012760 func   ?vfunc265@CBatSwarm@@QAEXH@Z CBatSwarm::vfunc265
 0x10012765 func   ?sub_1007bef0@CUnknown1007bef0@@QAEMXZ CUnknown1007bef0::sub_1007bef0
 0x1001276a func   ?vfunc5@CBaseFilter@@QAEPAV1@I@Z CBaseFilter::vfunc5

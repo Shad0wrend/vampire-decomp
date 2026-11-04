@@ -1039,6 +1039,17 @@ void CBaseCombatWeapon::vfunc308(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10253a70 size=0x23
+#include "CBaseCombatWeapon.h"
+char CBaseCombatWeapon::vfunc312()
+{
+	for (int i = 0; i < 2; i++)
+		if (vfunc280(i))
+			return 1;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10253ab0 size=0x6d
 #include "CBaseCombatCharacter.h"
 
