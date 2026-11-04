@@ -155341,6 +155341,58 @@ bool CAI_Navigator::sub_102efd50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f02a0 size=0x107
+#include "CAI_BaseNPC.h"
+#include "CAI_DefMovementSink.h"
+#include "CAI_Navigator.h"
+#include "CUnknown1030bc20.h"
+#include "Vector.h"
+extern float g_104454c4;
+extern double g_1044fab0;
+extern float g_10450564;
+extern double g_1044e658;
+extern double g_10449280;
+
+float __fastcall sub_102ecce0(void *p);
+bool __fastcall sub_102ee680(char *p);
+
+#define OWNER (*(void **)((char *)this - 0xc))
+#define ROUTE (*(CAI_NavRoute **)((char *)this + 0x20))
+#define GETSPEED248(p) (*(float (__fastcall **)(void *))((char *)*(void ***)(p) + 0x3e0))((void *)(p))
+
+float CAI_Navigator::sub_102f02a0()
+{
+	float base = ((CAI_DefMovementSink *)((char *)OWNER + 0x19b0))->sink0();
+	if (!(base >= g_104454c4))
+	{
+		CAI_Navigator *pNav = (CAI_Navigator *)((char *)this - 0x10);
+		float f = sub_102ecce0(pNav);
+		if (sub_102ee680((char *)pNav))
+		{
+			if (GETSPEED248(OWNER) != g_1044fab0)
+			{
+				if (ROUTE->m_pWaypoint.m_p != 0 && GETSPEED248(OWNER) > g_104454c4)
+				{
+					CAI_BaseNPC *pNPC = (CAI_BaseNPC *)OWNER;
+					CAI_NavRoute *pRoute = ROUTE;
+					const float *pOrigin = (const float *)pNPC->vfunc220();
+					const float *pGoal = (const float *)((CUnknown1030bc20 *)pRoute)->sub_1030b7c0();
+					float dx = pGoal[0] - pOrigin[0];
+					float dy = pGoal[1] - pOrigin[1];
+					float dz = pGoal[2] - pOrigin[2];
+					float sq = dx * dx + dz * dz;
+					float d = FastSqrt(sq + dy * dy);
+					if (d < g_10450564)
+						return ((g_10450564 - d) * g_1044e658 + g_10449280) * f;
+				}
+			}
+		}
+		return f;
+	}
+	return base;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f05b0 size=0x4
 struct CUnknown102f05b0 { int sub_102f05b0(); };
 int CUnknown102f05b0::sub_102f05b0()
