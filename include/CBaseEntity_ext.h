@@ -1,4 +1,8 @@
 	bool IsInWorld();
+	void sub_1003b190(float flTimeStepSize);	// "CBaseEntity::PhysicsStepRunTimestep" (called by 0x1003a610 / 0x1003aca0): scope trace (entity name), then the step physics for one time step; reads +0x3e0 (water level int) and +0x3f0 (friction float), which CBaseEntity does not declare: use a local view struct
+	void sub_10035490(float flTimeStep);	// stub 0x1000455c, one float stack argument (gravity half step, reads the gravity convar 0x109ef2d4)
+	void sub_10034590(float flTimeStep, int a);	// stub 0x1000c4a5, ret 8
+	bool PhysicsCheckWater();	// 0x1003e880 (stub 0x1000e04d): returns a byte in al
 	void sub_10103800(int unused);	// sets the byte at +0x45c to 1, then sub_10103860(sub_10103790()) (stub 0x1000b663 for sub_10103860)
 	int sub_10103790();	// stub 0x100102d0, returns a value (in eax)
 	void sub_10103860(int a);	// stub 0x1000b663, one stack argument
