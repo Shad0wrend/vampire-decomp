@@ -73,9 +73,10 @@ struct CFireEntityFields
 	float m_flHeatLevel470;		// 0x470: the heat level drawn / played
 	float m_flHeatRate474;		// 0x474
 	float m_flFade478;		// 0x478: the heat level the smoke fades from
-	int m_n47c;			// 0x47c
+	float m_flLastFade47c;		// 0x47c: the last fade level vfunc241 sent to the smoke (compared against m_flHeat46c, float)
 	float m_flScale480;		// 0x480
-	char m_pad0484[8];		// 0x484..0x48b
+	char m_pad0484[4];		// 0x484..0x487
+	int m_nDamage488;		// 0x488: the damage type argument handed to sub_101fa8d0(2, 8, ...) by the burn damage in vfunc241
 	float m_flBurnTime48c;		// 0x48c: the burn-out time of the think
 	unsigned char m_b490;		// 0x490: burning (the burn update runs while set)
 	char m_pad0491[3];
