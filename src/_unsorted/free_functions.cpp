@@ -67647,6 +67647,28 @@ void *sub_1014a140(CUnk1014a140 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014a4a0 size=0x3a
+extern int g_1057b7b0;
+extern int g_1057b7b4;
+extern float g_1071a41c;
+
+struct CEntView1014a4a0
+{
+	char m_pad0000[0x4c];
+	unsigned char m_flags4c;
+	char m_pad004d[0xa0 - 0x4d];
+	int m_n0a0;
+};
+
+// TARGET: sub_1014a4a0
+char sub_1014a4a0(CEntView1014a4a0 *p)
+{
+	if (p && (p->m_flags4c & 0x1e) && !((float)g_1057b7b4 * g_1071a41c < (float)g_1057b7b0))
+		return p->m_n0a0 == 0;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014c0f0 size=0xf
 namespace lifted {
 int sub_10002392();
