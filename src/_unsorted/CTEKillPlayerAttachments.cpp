@@ -60,9 +60,9 @@ void CTEKillPlayerAttachments::vfunc4(void *pFilter, int delay)
 namespace lifted {
 extern char g_106c49a8;
 }
-int CTEKillPlayerAttachments::vfunc0()
+ServerClass *CTEKillPlayerAttachments::vfunc0()
 {
-    return (int)&lifted::g_106c49a8;
+    return (ServerClass *)&lifted::g_106c49a8;
 }
 // END FUNCTION
 

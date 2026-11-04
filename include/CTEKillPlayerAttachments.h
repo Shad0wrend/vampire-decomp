@@ -1,11 +1,14 @@
-// CTEKillPlayerAttachments: kill-player-attachments temp entity. Declared flat (bases not recovered); only the vtable head is modelled.
+// CTEKillPlayerAttachments: kill-player-attachments temp entity (derived from the CBaseTempEntity head at +0x0: its
+// constructor calls the head's, then stores its own vptr); only the vtable head is modelled.
 #pragma once
 
-class CTEKillPlayerAttachments
+#include "CBaseTempEntity.h"
+
+class CTEKillPlayerAttachments : public CBaseTempEntityHead
 {
 public:
 	CTEKillPlayerAttachments(const char *name);  // 0x10065980
-	virtual int vfunc0();
+	virtual ServerClass *vfunc0();	// GetServerClass
 	virtual int vfunc1();
 	virtual CTEKillPlayerAttachments *vfunc2(unsigned int flags);  // scalar deleting destructor
 	virtual void vfunc3(const float *pos, const float *ang);  // "Test": broadcasts the effect to every client (sets the flag at +0xc, then slot 4)
