@@ -140,6 +140,17 @@ bool CVampireProjectile::vfunc265()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ee7b0 size=0xd
+#include "CBaseAnimating.h"
+#include "CVampireProjectile.h"
+void CVampireProjectile::vfunc130(int a)
+{
+	volatile int *p = &a;
+	*p = *p;
+	((CBaseAnimating *)this)->CBaseAnimating::vfunc130(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101eec10 size=0x1
 #include "CVampireProjectile.h"
 void CVampireProjectile::vfunc269()
