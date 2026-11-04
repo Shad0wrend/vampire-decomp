@@ -200762,6 +200762,23 @@ float sub_10411510(CBaseCombatWeapon *pWeapon, void *pArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10411560 size=0x40
+#include "CPlayerPickupController.h"
+#include "CUnknown1040cce0.h"
+
+// TARGET: sub_10411560
+float sub_10411560(CBaseEntity *pEnt, void *pWeapon)
+{
+	float flRet;
+	*(int *)&flRet = 0;
+	CPlayerPickupController *pCtl = dynamic_cast<CPlayerPickupController *>(pEnt);
+	if (pCtl) {
+		return ((CUnknown1040cce0 *)((char *)pCtl + 0x450))->sub_1040cce0(pWeapon);
+	}
+	return flRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104115b0 size=0x21
 int sub_104115f0(int a, float b);
 

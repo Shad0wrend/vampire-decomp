@@ -8860,6 +8860,7 @@
 0x1000e1f6 func   ?vfunc316@CNPC_VRat@@QAEXHHH@Z CNPC_VRat::vfunc316
 0x1000e1fb func   ?sub_100966a0@CBaseAnimating@@QAEHXZ CBaseAnimating::sub_100966a0
 0x1000e200 func   ?vfunc57@CBaseEntity@@UAEXHHHHHHH@Z CBaseEntity::vfunc57
+0x1000e205 func   ?sub_10411560@@YAMPAVCBaseEntity@@PAX@Z sub_10411560
 0x1000e20a func   ?sub_1037b890@CUnknown1037b890@@QAEHXZ CUnknown1037b890::sub_1037b890
 0x1000e20f func   ?vfunc473@CNPC_VNewscaster@@UAEHXZ CNPC_VNewscaster::vfunc473
 0x1000e214 func   _func_platrot func_platrot
