@@ -63,6 +63,7 @@ public:
 	int sub_101faa70();	// "CVDmg_t::GetDmg"
 	int sub_101fb200(int a, int b);	// "CVDmg_t::Apply": forwards to the global apply callback
 	bool sub_101fb340(int target);	// "CVDmg_t::EvadeCheck": forwards to the global evade callback
+	void sub_101fb3e0(unsigned int flags);	// "CVDmg_t::AddFlags": ORs the flags into the dword at +0x40
 	void sub_101fa700(CVDmg_t *pOther);	// "CVDmg_t::Copy": scope trace, copies the fields 0x00..0x34 and 0x40 of pOther (blocks of 20, 16 and 16 bytes, then two dwords)
 	void sub_101fa810();	// "CVDmg_t::Null": scope trace, resets the fields (the two 16 byte blocks at +0x14 / +0x24 through sub_10204270)
 	void sub_101fa960(CVDmgSource_t *pSource);	// "CVDmg_t::SetSrc": scope trace; removes the first block's value for the old source from the field at +0x4, stores the new source's edict index (IndexOfEdict) at +0x34 (0 for no source) and adds the block's value for the new source
