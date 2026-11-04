@@ -95270,6 +95270,20 @@ void sub_101d10e0(const char *pszFormat, ...)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d11f0 size=0x38
+// TARGET: sub_101d11f0
+void sub_101d11f0(const char *pSrc, char *pDst)
+{
+	int n = 0;
+	while (pSrc[n] && pSrc[n] != '#')
+	{
+		pDst[n] = pSrc[n];
+		n++;
+	}
+	pDst[n] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d1240 size=0x2e
 // TARGET: sub_101d1240
 #include <stdarg.h>
