@@ -147778,6 +147778,37 @@ int sub_102cc640()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cc670 size=0x1e
+#include "CUnknown102cc520.h"
+
+namespace block_102cc670 {
+struct CUnit102cc520 : CUnknown102cc520 { CUnknown102cc520 *sub_102cc520(); };
+CUnknown102cc520 *CUnit102cc520::sub_102cc520()
+{
+	m_unk0 = 0;
+	return this;
+}
+}
+using namespace block_102cc670;
+
+struct E102cc670 { CUnknown102cc520 a; int pad; };
+
+struct CUnk102cc670 {
+	E102cc670 m_e[8];
+	int m_40;
+	CUnk102cc670 *sub_102cc670();
+};
+
+// TARGET: CUnk102cc670::sub_102cc670
+CUnk102cc670 *CUnk102cc670::sub_102cc670()
+{
+	for (int i = 0; i < 8; i++)
+		((CUnit102cc520 *)&m_e[i].a)->sub_102cc520();
+	m_40 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cc6a0 size=0x1
 void sub_102cc6a0()
 {
