@@ -67555,6 +67555,22 @@ void sub_1014e3f0(CEntityMatrixView *pFrom, CEntityMatrixView *pTo, matrix3x4_t 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014eb00 size=0x28
+struct SRect1057b7b0
+{
+	int m_a, m_b, m_c, m_d;
+};
+extern SRect1057b7b0 g_1057b7b0;
+
+void sub_1014eb00(int a, int b, int c, int d)
+{
+	g_1057b7b0.m_a = a;
+	g_1057b7b0.m_b = b;
+	g_1057b7b0.m_c = b + c;
+	g_1057b7b0.m_d = d;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014eb40 size=0x19
 namespace lifted {
 extern char g_1046d080;

@@ -5624,6 +5624,7 @@
 0x1000968d func   ?vfunc315@CBlueBloodPack@@QAEDXZ CBlueBloodPack::vfunc315
 0x10009692 func   ?vfunc80@CCorpse@@UAEHXZ CCorpse::vfunc80
 0x10009697 func   _test_traceline test_traceline
+0x100096a1 func   ?sub_1014eb00@@YAXHHHH@Z sub_1014eb00
 0x100096a6 func   ?sub_100d4e50@@YAXXZ sub_100d4e50
 0x100096ab func   _te_tester te_tester
 0x100096b0 func   ?sub_10227370@@YGXPAX@Z sub_10227370
