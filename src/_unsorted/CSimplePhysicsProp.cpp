@@ -55,6 +55,18 @@ bool CSimplePhysicsProp::vfunc32(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004fe00 size=0xe
+#include "CBaseEntity.h"
+#include "CSimplePhysicsProp.h"
+namespace lifted {
+int sub_10010ec9(int);
+}
+void CSimplePhysicsProp::vfunc39(CBaseEntity * a0)
+{
+    lifted::sub_10010ec9(*(int *)&a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004fe20 size=0xe
 // TARGET: sub_1004fe20
 void sub_1040d950(int x);
