@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103e1e20 size=0x56
+#include "CFlameCluster.h"
+#include <string.h>
+
+// TARGET: CFlameCluster::CFlameCluster
+CFlameCluster::CFlameCluster() : CBaseEntity(0)
+{
+	m_b488 = 0;
+	memset(m_aBurn464, 0, sizeof(m_aBurn464));
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e1ea0 size=0x86
 #include "CFlameCluster.h"
 #include "utlvector.h"
