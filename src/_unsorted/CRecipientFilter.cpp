@@ -89,6 +89,17 @@ int __fastcall sub_1019cf90(void *pFilter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019cfb0 size=0x28
+#include "CRecipientFilter.h"
+
+int CRecipientFilter::vfunc3(int slot)
+{
+	if (slot < 0 || slot >= vfunc2())
+		return -1;
+	return m_Recipients[slot];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019cff0 size=0x3e
 #include "CBasePlayer.h"
 #include "utlrbtree.h"

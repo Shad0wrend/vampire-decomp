@@ -883,6 +883,7 @@
 0x100024eb func   _npc_VCameraSecurity npc_VCameraSecurity
 0x100024f0 func   ?sub_100f0210@CBaseDoor@@QAEXPAUinputdata_t@@@Z CBaseDoor::sub_100f0210
 0x100024f5 func   ?sub_100cbf70@@YIMPAX@Z sub_100cbf70
+0x100024fa func   ?vfunc3@CRecipientFilter@@UAEHH@Z CRecipientFilter::vfunc3
 0x100024ff func   ?sub_103d6770@CNPC_VWerewolf@@QAEPAUCNPC_VWerewolfVec3@@PAU2@PAX@Z CNPC_VWerewolf::sub_103d6770
 0x10002504 func   ?vfunc1@CAI_Component@@UAEXXZ CAI_Component::vfunc1
 0x10002509 func   ?vfunc618@CNPC_VWerewolf@@UAE_NHHHH@Z CNPC_VWerewolf::vfunc618
