@@ -89856,6 +89856,17 @@ void CUnk101c2630::sub_101c2630(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2660 size=0x17
+struct CUnknown101c2660 { int sub_101c2660(int *p); };
+int CUnknown101c2660::sub_101c2660(int *p)
+{
+    int v = *(int *)((char *)p + 8);
+    *(volatile int *)((char *)this + 0x1a0) = v;
+    *(volatile unsigned char *)((char *)this + 0x1b1) = 1;
+    return v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2690 size=0x22
 // TARGET: CUnknown101c2770::sub_101c2690
 #include "CUnknown101c2770.h"
