@@ -18464,6 +18464,20 @@ float CUnknown10075f10::sub_10075f10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10075f30 size=0x12
+struct CUnknown10075f30 {
+    char pad[0x188];
+    float field;
+    unsigned char sub_10075f30();
+};
+unsigned char CUnknown10075f30::sub_10075f30()
+{
+    if (field != -1.0f)
+        return 1;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10075f60 size=0x4a
 struct CRampView
 {
