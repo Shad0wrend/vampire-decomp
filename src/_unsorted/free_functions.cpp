@@ -100122,7 +100122,7 @@ struct CUnit : CUnknown101dbe30 {
 #pragma auto_inline(off)
 bool CUnit::sub_101dbe10()
 {
-	return m_field0000 != 0;
+	return m_field0000 ? true : false;
 }
 }
 using namespace block_101dc120;
