@@ -48,6 +48,25 @@ void CMessage::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10101ff0 size=0x21
+#include "CMessage.h"
+#include "CUnknown1070b248.h"
+
+extern CUnknown1070b248 *g_1070b248;
+
+struct string_t_v { const char *pszValue; };
+inline const char *STRING_V(const string_t_v *s) { return s->pszValue ? s->pszValue : ""; }
+struct CMsgView { char pad[0x460]; string_t_v m_snd; };
+
+// TARGET: CMessage::vfunc104
+void CMessage::vfunc104()
+{
+	CMsgView *v = (CMsgView *)this;
+	if (v->m_snd.pszValue)
+		g_1070b248->vfunc0(STRING_V(&v->m_snd), 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101022e0 size=0x2b
 #include "CMessage.h"
 
