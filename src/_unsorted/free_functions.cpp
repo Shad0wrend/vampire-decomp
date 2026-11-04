@@ -91849,6 +91849,26 @@ bool CBaseTrigger::sub_101c5460(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c5900 size=0x3a
+#include "CUnknown1070b244.h"
+
+extern CUnknown1070b244 *g_1070b244;
+
+struct CUnk101c5900
+{
+    void sub_1000596b(float a, float b, float c);
+};
+
+// TARGET: sub_101c5900
+void sub_101c5900(CUnk101c5900 *p, int a, float c)
+{
+    if (p) {
+        float f = g_1070b244->vfunc1(3.0f, 4.5f);
+        p->sub_1000596b(c, f, 1.0f);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c59b0 size=0x1f5
 #include "CHandleVectorOps.h"
 

@@ -1147,6 +1147,7 @@
 0x10002b71 func   ?vfunc438@CNPC_VAnimal@@QAEHXZ CNPC_VAnimal::vfunc438
 0x10002b76 func   ?sub_102dc420@CUnknown102dc2c0@@QAEXXZ CUnknown102dc2c0::sub_102dc420
 0x10002b7b func   ?vfunc5@CRotButton@@QAEPAV1@I@Z CRotButton::vfunc5
+0x10002b80 func   ?sub_101c5900@@YAXPAUCUnk101c5900@@HM@Z sub_101c5900
 0x10002b85 func   ?sub_101ad3e0@CUnknown101ad3e0@@QAEHH@Z CUnknown101ad3e0::sub_101ad3e0
 0x10002b8a func   ?sub_10172710@@YAXPAVCBasePlayer@@@Z sub_10172710
 0x10002b8f func   ?sub_10043b60@@YGXPAX@Z sub_10043b60
