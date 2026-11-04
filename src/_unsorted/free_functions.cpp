@@ -122057,6 +122057,19 @@ CBaseCombatWeapon *sub_1021fe50(CBaseCombatCharacter *pChar, const char *pszName
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021fee0 size=0x2c
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+void sub_1021fee0(CBaseCombatCharacter *pChar, const char *pszName)
+{
+    CBaseCombatWeapon *pWeapon = (CBaseCombatWeapon *)pChar->sub_10335950(pszName);
+    if (pWeapon) {
+        pChar->sub_10335470(pWeapon);
+        pWeapon->sub_1024f7b0();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021ff20 size=0x20a
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
