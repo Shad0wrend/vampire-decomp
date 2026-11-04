@@ -2,6 +2,7 @@
 #pragma once
 #include "ServerClass.h"
 #include "Vector.h"
+#include "QAngle.h"
 
 class CTEBSPDecal
 {
@@ -9,7 +10,7 @@ public:
 	virtual ServerClass * vfunc0();
 	virtual int vfunc1();
 	virtual CTEBSPDecal *vfunc2(unsigned int flags);	// scalar deleting destructor
-	virtual void vfunc3();	// slot 3 (0x0c)
+	virtual void vfunc3(const Vector &vecOrigin, const QAngle &vecAngles);	// slot 3 (0x0c)
 	virtual void vfunc4v(void *pFilter, int a);	// slot 4 (+0x10): the temp entity's Send; vfunc3 calls it virtually at 0x1005f0bc
 
 	void sub_100035df();	// destructor body
