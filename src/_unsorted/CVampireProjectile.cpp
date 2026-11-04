@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1004fbb0 size=0x26
+#include "CVampireProjectile.h"
+
+struct CKeyValueVec1004fbb0 { bool sub_1001216b(const char *key, Vector vec); };	// CBaseEntity::vfunc108 (stub 0x1001216b): the vector given by value
+
+bool CVampireProjectile::vfunc108(const char *key, float x, float y, float z)
+{
+	return ((CKeyValueVec1004fbb0 *)this)->sub_1001216b(key, *(Vector *)&x);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d9e50 size=0x3
 #include "CVampireProjectile.h"
 bool CVampireProjectile::vfunc270()
