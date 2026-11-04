@@ -65329,6 +65329,17 @@ int __stdcall sub_1013e400(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013e420 size=0x1c
+#include "CFuncBrush.h"
+
+// TARGET: CFuncBrushVt::sub_1013e420
+void CFuncBrushVt::sub_1013e420()
+{
+	if (slot241())
+		slot77();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013e450 size=0x1c
 #include "CEntityVSlots.h"
 
