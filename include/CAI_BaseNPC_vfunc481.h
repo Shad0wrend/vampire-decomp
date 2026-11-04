@@ -30,7 +30,6 @@ public:
 	COutputEvent m_OnE5e9c;		// 0x5e9c: variant of the above fired with the focus' own object
 	COutputEvent m_OnE5eb4;		// 0x5eb4: output fired when the focus object has a name
 
-	void sub_10269a20(int condition);	// CAI_BaseNPC::sub_10269a20 (set condition), already in CAI_BaseNPC.h
 	float sub_10270890(CBaseEntity *pEnemy);	// 0x10270890 (stub 0x10009106): the distance-like value to the enemy, returns st0
 	void sub_10271900();		// 0x10271900 (stub 0x10004403): run after the weapon-range conditions
 };
