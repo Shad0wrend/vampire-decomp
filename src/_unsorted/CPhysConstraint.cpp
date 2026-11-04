@@ -28,6 +28,25 @@ CPhysConstraint *CPhysConstraint::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002b170 size=0x21
+#include "CPhysConstraint.h"
+#include "CUnknown1070b248.h"
+
+extern CUnknown1070b248 *g_1070b248;
+
+struct string_t_v { const char *pszValue; };
+inline const char *STRING_V(const string_t_v *s) { return s->pszValue ? s->pszValue : ""; }
+struct CPhysView { char pad[0x45c]; string_t_v m_snd; };
+
+// TARGET: CPhysConstraint::vfunc104
+void CPhysConstraint::vfunc104()
+{
+	CPhysView *v = (CPhysView *)this;
+	if (v->m_snd.pszValue)
+		g_1070b248->vfunc0(STRING_V(&v->m_snd), 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002b1b0 size=0x13
 #include "CPhysConstraint.h"
 void __fastcall sub_10012c06(CPhysConstraint *self);
