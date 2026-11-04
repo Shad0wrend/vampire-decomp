@@ -85,7 +85,10 @@ public:
 	virtual bool vfunc406();	// slot 406: answers whether the base spawn continues (see vfunc103)
 	virtual void vfunc407(); virtual void vfunc408();	// slots 407 / 408
 	virtual void pe09();	// slot 409
-	CHL2_V10(pe1) CHL2_V10(pe2) CHL2_V10(pe3)	// slots 410..439
+	CHL2_V10(pe1) CHL2_V10(pe2) virtual void pe30(); virtual void pe31(); virtual void pe32(); virtual void pe33(); virtual void pe34(); virtual void pe35();
+	virtual void vfunc436();	// slot 436 "CHL2_Player::Think"-like per-frame update: the vehicle branch, the sv_walkscale / sv_runscale / sv_sneakscale max speed (sub_10350620 per speed table), then the base think steps (slots 416, 472, 444, 470 / 471 / 484), the duck / stuck trace and use-entity check
+	virtual void pe37(); virtual void pe38(); virtual void pe39();	// slots 410..439
+	void sub_10350620(int nActivity, float *pForward, float *pSide, float *pMaxSpeed, float flScale);	// stub 0x1000c8ab (ret 20): fills one speed table from the model's movement data of the activity, raising *pMaxSpeed
 	virtual void vfunc440(); virtual void vfunc441(); virtual void vfunc442(); virtual void vfunc443(); virtual void vfunc444();
 	virtual int vfunc445(); virtual void vfunc446(); virtual void vfunc447(); virtual void vfunc448(); virtual void vfunc449();
 	virtual void vfunc450(); virtual void vfunc451(); virtual void vfunc452();
