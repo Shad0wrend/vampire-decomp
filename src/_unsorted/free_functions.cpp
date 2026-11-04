@@ -57866,6 +57866,20 @@ char __stdcall sub_1011e290(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011e310 size=0x26
+#include "CGameMovement.h"
+
+// TARGET: CGameMovement::sub_1011e310
+float *CGameMovement::sub_1011e310()
+{
+	unsigned int nFlags = *(unsigned int *)((char *)m_pMove + 0x20f0);
+	unsigned char bStance = (unsigned char)(nFlags >> 5);
+	if (bStance & 1)
+		return (float *)((char *)this + 0x44);
+	return *(char *)((char *)m_pMove + 0x1edd) ? (float *)((char *)this + 0x2c) : (float *)((char *)this + 0x14);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011e350 size=0x26
 #include "CGameMovement.h"
 

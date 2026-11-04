@@ -5840,6 +5840,7 @@
 0x10009bb0 func   ?sub_1032e210@CBaseCombatCharacter@@QAEXPAX@Z CBaseCombatCharacter::sub_1032e210
 0x10009bb5 func   ?sub_1030f300@CUnknown10936b68@@QAEHH@Z CUnknown10936b68::sub_1030f300
 0x10009bba func   ?sub_10204300@CUnknown10204300@@QAEHHH@Z CUnknown10204300::sub_10204300
+0x10009bbf func   ?sub_1011e310@CGameMovement@@QAEPAMXZ CGameMovement::sub_1011e310
 0x10009bc9 func   ?vfunc80@CItemGMercurioJournal@@QAEHXZ CItemGMercurioJournal::vfunc80
 0x10009bce func   ?vfunc2@CDisciplineProjectileTraceFilter@@QAEPAXD@Z CDisciplineProjectileTraceFilter::vfunc2
 0x10009bd3 func   ?sub_10101910@@YIIPAUCFlagHolder19C@@@Z sub_10101910
