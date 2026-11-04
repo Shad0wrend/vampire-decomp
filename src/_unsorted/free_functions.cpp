@@ -200675,6 +200675,24 @@ string_t sub_1042bff0(const char *psz)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042c030 size=0x1e
+struct CUnkTree12 {
+	char *sub_101bf6a0(int key);
+};
+extern CUnkTree12 g_109eed2c;
+
+struct R1042c030 {
+	char *p;
+	R1042c030(char *q) { p = *q ? q : 0; }
+};
+
+// TARGET: sub_1042c030
+R1042c030 sub_1042c030(int key)
+{
+	return R1042c030(g_109eed2c.sub_101bf6a0(key));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042c0a0 size=0x6
 namespace lifted {
 extern char g_109eed4c;

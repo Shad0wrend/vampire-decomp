@@ -9463,6 +9463,7 @@
 0x1000f1fa func   _trigger_bomb_site trigger_bomb_site
 0x1000f1ff func   ?vfunc5@CCineNPC@@QAEPAV1@I@Z CCineNPC::vfunc5
 0x1000f204 func   ?sub_100ef5f0@CBaseDoorX@@QAEX_N@Z CBaseDoorX::sub_100ef5f0
+0x1000f209 func   ?sub_1042c030@@YA?AUR1042c030@@H@Z sub_1042c030
 0x1000f20e func   ?sub_100eb150@@YIPAUCUtlMemoryBig@@PAU1@HHH@Z sub_100eb150
 0x1000f213 func   ?vfunc5@CResearchBook_LG_DODGE@@QAEPAV1@I@Z CResearchBook_LG_DODGE::vfunc5
 0x1000f218 func   ?vfunc596@CNPC_VCop@@QAEXH@Z CNPC_VCop::vfunc596
