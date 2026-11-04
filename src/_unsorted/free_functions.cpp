@@ -124903,6 +124903,36 @@ extern "C" CBaseEntity *prop_padlock()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10225c70 size=0x48
+#include "CPropPadlock.h"
+#include "CBaseVampireSkillEntity.h"
+#include "CBaseHandle.h"
+
+extern void *vt_1048c89c[];
+void __fastcall sub_1008b490(char *pThis);
+
+struct CPropPadlockParts	// the member the padlock constructor builds: the attached handle at +0x80c
+{
+	char pad0[0x80c];
+	CBaseHandle m_hAttached;
+	CPropPadlockParts() {}
+};
+
+// TARGET: CPropPadlock::sub_10225c70
+CPropPadlock *CPropPadlock::sub_10225c70()
+{
+	((CBaseVampireSkillEntity *)this)->sub_1020aa70();
+	((CPropPadlockParts *)this)->CPropPadlockParts::CPropPadlockParts();
+	*(void ***)this = vt_1048c89c;
+	sub_1008b490((char *)this);
+	*(int *)((char *)this + 0x81c) = 3;
+	*(int *)((char *)this + 0x818) = 10;
+	*(int *)((char *)this + 0x820) = 4;
+	*((char *)this + 0x815) = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10226190 size=0x43
 #include "CPropDoorknobElectronic.h"
 void *sub_100aa720(int size);

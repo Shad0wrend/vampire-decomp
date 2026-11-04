@@ -11763,6 +11763,7 @@
 0x10012599 func   ?vfunc6@CAI_Navigator@@UAEXXZ CAI_Navigator::vfunc6
 0x1001259e func   ?vfunc395@CBaseCombatCharacter@@UAEXXZ CBaseCombatCharacter::vfunc395
 0x100125a8 func   ?sub_10303f80@CUnknown10303f80@@QAEHHHHHHHHHH@Z CUnknown10303f80::sub_10303f80
+0x100125b2 func   ?sub_10225c70@CPropPadlock@@QAEPAV1@XZ CPropPadlock::sub_10225c70
 0x100125bc func   ?sub_102c1400@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::sub_102c1400
 0x100125c1 func   ?sub_1008dc40@CBaseAnimating@@QAEHHH@Z CBaseAnimating::sub_1008dc40
 0x100125c6 func   ?vfunc600@CNPC_VTzimisceHeadClaw@@QAE_NPAX@Z CNPC_VTzimisceHeadClaw::vfunc600
