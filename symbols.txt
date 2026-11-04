@@ -6559,6 +6559,7 @@
 0x1000ab9b func   ?vfunc597@CNPC_VCop@@QAEXPAVCBaseEntity@@H@Z CNPC_VCop::vfunc597
 0x1000aba0 func   ?sub_1006d0a0@@YIXPAUCDumpTable1006d0a0@@@Z sub_1006d0a0
 0x1000abaa func   ?sub_100dbc60@CUnknown100dbc60@@QAEXPAVCBaseEntity@@@Z CUnknown100dbc60::sub_100dbc60
+0x1000abbe func   ??0CTEBeamRing@@QAE@PBD@Z CTEBeamRing::CTEBeamRing
 0x1000abc8 func   ?vfunc110@CDynamicLight@@QAE_NPBD0@Z CDynamicLight::vfunc110
 0x1000abcd func   ?vfunc359@CBaseCombatCharacter@@UAEHH@Z CBaseCombatCharacter::vfunc359
 0x1000abd2 func   ?sub_103abad0@@YAHXZ sub_103abad0
