@@ -10096,6 +10096,7 @@
 0x1001005f func   ?sub_1026dc30@CUnk1026dc30@@QAEII@Z CUnk1026dc30::sub_1026dc30
 0x10010064 func   ?vfunc625@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc625
 0x10010069 func   ?sub_102c7ef0@@YAEXZ sub_102c7ef0
+0x1001006e func   ?sub_101eb190@CKey101eb190@@QAEHXZ CKey101eb190::sub_101eb190
 0x10010078 func   ?vfunc124@CNPC_VZombie@@UAEHXZ CNPC_VZombie::vfunc124
 0x1001007d func   ?sub_10382f60@CNPC_VHengeyokai@@QAEHXZ CNPC_VHengeyokai::sub_10382f60
 0x10010087 func   ?PhysicsPushMove@CBaseEntity@@QAEHM@Z CBaseEntity::PhysicsPushMove

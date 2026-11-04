@@ -105000,6 +105000,34 @@ bool CUnknown101eb050::sub_101eb050(CVFeatKV *pKV)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101eb190 size=0x2a
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+extern int g_1073a2dc;
+extern int **g_1073a2e0;
+
+struct CKey101eb190 {
+    char pad[0x10];
+    int m_key;
+    int Find() const
+    {
+        for (int i = 0; i < g_1073a2dc; i++) {
+            if (*g_1073a2e0[i] == m_key)
+                return i;
+        }
+        return -1;
+    }
+    int sub_101eb190();
+};
+
+// TARGET: CKey101eb190::sub_101eb190
+int CKey101eb190::sub_101eb190()
+{
+    return Find() - 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101eb1d0 size=0x148
 #include "CUnknown101eb1d0.h"
 #include "CEntryY.h"
