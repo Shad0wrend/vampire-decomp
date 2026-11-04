@@ -432,7 +432,9 @@ public:
 	int m_nUseEdictIndex1EB8;	// engine index of the entity to notify (0 = none)
 	char m_pad1EBC[4];	// 0x1EBC .. 0x1EBF
 	char m_bNotifyUse1EC0;
-	char m_pad1EC1[0x1ed8 - 0x1ec1];
+	char m_pad1EC1[3];
+	int m_nUseEdict1EC4;	// 0x1EC4: engine index of the use entity, cleared when it is gone
+	char m_pad1EC8[0x1ed8 - 0x1ec8];
 	unsigned int m_nFlags1ED8;	// 0x1ed8: the player's status flag dword updated by sub_10181780 (bit 1 = live grapple target, 0x20 / 0x100 = target mode 2 / 8, bit 0 = sub_10146a80, bit 2 = +0x14aa, bit 9 = use entity matches +0x1cb8 / +0x1cbc, bit 4 = sub_1033b7c0, bit 7 = slot 413, bit 3 = slot 412, bit 6 = +0x1d40 / +0x1d44)
 	char m_pad1EDC[0x1ef0 - 0x1edc];	// 0x1EDC .. 0x1EEF
 	Vector m_vec1EF0;	// 0x1EF0: the velocity the command run last saw (copied from +0x3b0 when non-zero)
