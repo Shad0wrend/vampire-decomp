@@ -12486,6 +12486,7 @@
 0x10013778 func   ??0StatDefault2@@QAE@H@Z StatDefault2::StatDefault2
 0x10013782 func   ?vfunc103@CPhysicsProp@@UAEXXZ CPhysicsProp::vfunc103
 0x10013787 func   ?vfunc580@CNPC_VScurrying@@UAEHXZ CNPC_VScurrying::vfunc580
+0x10013791 func   ?sub_100bedf0@bf_read@@QAEHXZ bf_read::sub_100bedf0
 0x10013796 func   ?sub_103d8300@CNPC_VWerewolf@@QAE_NPAVCAI_Hint@@@Z CNPC_VWerewolf::sub_103d8300
 0x1001379b func   _info_teleport_destination info_teleport_destination
 0x100137a5 func   ?sub_100bf350@@YAXPAIH@Z sub_100bf350

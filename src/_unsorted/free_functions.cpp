@@ -36640,6 +36640,18 @@ void bf_read::sub_100becc0(Vector &fa)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bedf0 size=0x3a
+#include "bf_read.h"
+
+// TARGET: bf_read::sub_100bedf0
+int bf_read::sub_100bedf0()
+{
+	int value = ((unsigned char *)m_pData)[m_iCurBit >> 3] & (1 << (m_iCurBit & 7));
+	++m_iCurBit;
+	return value != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bee40 size=0x2b
 #include "bf_read.h"
 
