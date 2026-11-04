@@ -1247,6 +1247,7 @@
 0x10002df6 func   ?vfunc546@CNPC_VChangBros@@QAEHH@Z CNPC_VChangBros::vfunc546
 0x10002dfb func   ?sub_104303a0@@YAXXZ sub_104303a0
 0x10002e00 func   ?sub_101bc590@CSoundControllerImp@@QAEXPAX@Z CSoundControllerImp::sub_101bc590
+0x10002e05 func   ?sub_104115b0@@YAHHM@Z sub_104115b0
 0x10002e14 func   ?vfunc410@CBaseGrenade@@UAEMXZ CBaseGrenade::vfunc410
 0x10002e19 func   ?vfunc277@CBaseCombatWeapon@@UAE_NH@Z CBaseCombatWeapon::vfunc277
 0x10002e1e func   ??0CCollisionProperty@@QAE@XZ CCollisionProperty::CCollisionProperty

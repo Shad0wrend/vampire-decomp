@@ -199158,6 +199158,17 @@ bool sub_104114d0(CBaseEntity *pEntity, void *pOther) {
 }
 // END FUNCTION
 
+// FUNCTION: 0x104115b0 size=0x21
+int sub_104115f0(int a, float b);
+
+int sub_104115b0(int a, float b)
+{
+    if (*(int *)(a + 0x3e0) < 2)
+        return sub_104115f0(a, b);
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10411630 size=0x73
 #include "CBaseEntity.h"
 #include "CUnknown10411630.h"
