@@ -31,6 +31,15 @@ int CBaseParticleEntity::vfunc79()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042b560 size=0x14
+#include "vampire_all.h"
+#include "CBaseParticleEntity.h"
+
+CBaseParticleEntity::CBaseParticleEntity() : CConstraintAnchorBase(0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042b590 size=0x1e
 #include "CBaseParticleEntity.h"
 
