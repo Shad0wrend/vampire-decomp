@@ -63703,6 +63703,25 @@ void sub_10138ff0(double a, double b, int *pQuot, int *pRem)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10139150 size=0x2b
+int sub_10139150(int a, int b)
+{
+    for (;;) {
+        if (a > b) {
+            if (b == 0)
+                return a;
+            int t = a % b;
+            a = b;
+            b = t;
+        } else {
+            if (a == 0)
+                return b;
+            b = b % a;
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10139190 size=0x1d
 // TARGET: sub_10139190
 int __cdecl sub_10139190(const unsigned int *p)
