@@ -9931,6 +9931,7 @@
 0x1000fe4d func   ?sub_103fc7b0@@YAHXZ sub_103fc7b0
 0x1000fe57 func   ?vfunc37@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHH@Z CTempEntsSystem::vfunc37
 0x1000fe5c func   ?vfunc129@CBaseEntity@@UAEXXZ CBaseEntity::vfunc129
+0x1000fe61 func   ?sub_102c7600@@YIHPAUCStandoffSelf@@@Z sub_102c7600
 0x1000fe6b func   ?sub_102b97f0@@YADXZ sub_102b97f0
 0x1000fe70 func   ?sub_102a0ed0@CAI_BaseNPCTroika@@QAEHHHHH@Z CAI_BaseNPCTroika::sub_102a0ed0
 0x1000fe75 func   ?sub_1027baf0@@YAHXZ sub_1027baf0
