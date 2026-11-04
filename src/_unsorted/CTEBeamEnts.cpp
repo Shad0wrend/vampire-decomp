@@ -5,7 +5,7 @@
 #include "CTEBeamEnts.h"
 
 // TARGET: CTEBeamEnts::vfunc2
-CTEBeamEnts *CTEBeamEnts::vfunc2(unsigned int flags)
+CTEBaseBeam *CTEBeamEnts::vfunc2(unsigned int flags)
 {
 	sub_1000dcfb();
 	if (flags & 1)
@@ -57,9 +57,9 @@ void CTEBeamEnts::vfunc4(CRecipientFilter *pFilter, float flDelay)
 namespace lifted {
 extern char g_106bf810;
 }
-int CTEBeamEnts::vfunc0()
+ServerClass *CTEBeamEnts::vfunc0()
 {
-    return (int)&lifted::g_106bf810;
+    return (ServerClass *)&lifted::g_106bf810;
 }
 // END FUNCTION
 

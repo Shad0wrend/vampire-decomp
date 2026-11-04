@@ -5,7 +5,7 @@
 #include "CTEBeamLaser.h"
 
 // TARGET: CTEBeamLaser::vfunc2
-CTEBeamLaser *CTEBeamLaser::vfunc2(unsigned int flags)
+CTEBaseBeam *CTEBeamLaser::vfunc2(unsigned int flags)
 {
 	sub_100051c8();
 	if (flags & 1)

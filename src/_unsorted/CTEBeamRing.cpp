@@ -5,7 +5,7 @@
 #include "CTEBeamRing.h"
 
 // TARGET: CTEBeamRing::vfunc2
-CTEBeamRing *CTEBeamRing::vfunc2(unsigned int flags)
+CTEBaseBeam *CTEBeamRing::vfunc2(unsigned int flags)
 {
 	sub_10002667();
 	if (flags & 1)
