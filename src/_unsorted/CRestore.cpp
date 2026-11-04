@@ -513,6 +513,20 @@ next:
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a2a30 size=0x3d
+#include "CRestore.h"
+
+// TARGET: CRestore::vfunc24
+int CRestore::vfunc24(float *pValues, int count, int nBytesAvailable)
+{
+	float flAdd = *(float *)(m_pData2 + 0x12e8);
+	int n = vfunc18(pValues, count, nBytesAvailable);
+	for (int i = n - 1; i >= 0; i--)
+		pValues[i] = flAdd + pValues[i];
+	return n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2a80 size=0x11
 void __fastcall sub_101a2a80(int *p, int dummy, int a)
 {

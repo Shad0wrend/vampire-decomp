@@ -9520,6 +9520,7 @@
 0x1000f1a5 func   ?sub_100e5f10@CDialog@@QAEDXZ CDialog::sub_100e5f10
 0x1000f1aa func   _item_p_research_lg_computers item_p_research_lg_computers
 0x1000f1b9 func   ?sub_101859a0@S101859a0@@QAEXH@Z S101859a0::sub_101859a0
+0x1000f1c3 func   ?vfunc24@CRestore@@UAEHPAMHH@Z CRestore::vfunc24
 0x1000f1c8 func   ?sub_100d1d50@@YAXXZ sub_100d1d50
 0x1000f1cd func   ?sub_1023eff0@@YAXPADPBD@Z sub_1023eff0
 0x1000f1d2 func   ?sub_10073f40@CUnknown10073f40@@QAEXH@Z CUnknown10073f40::sub_10073f40
