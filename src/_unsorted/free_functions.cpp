@@ -21552,6 +21552,27 @@ void CUnknown1007d190::sub_1007d190()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007d1e0 size=0x34
+struct CUnknown1007d1e0
+{
+	char m_pad0000[0x7c];
+	float m_f7c;
+	char m_pad0080[0x8c - 0x80];
+	float m_f8c;
+	float m_f90;
+	int m_i94;
+
+	char sub_1007d1e0();
+};
+
+char CUnknown1007d1e0::sub_1007d1e0()
+{
+	if (m_f7c > m_f90)
+		return m_i94 == 0;
+	return m_f7c < m_f8c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007d230 size=0x51
 #include "CUnknown1007ce20.h"
 char CUnknown1007ce20::sub_1007d230(float a, float b)

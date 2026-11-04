@@ -5363,6 +5363,7 @@
 0x10008fe4 func   ?sub_10041980@@YIPAUHashHolder@@PAU1@HE@Z sub_10041980
 0x10008fe9 func   ?sub_1013d400@@YAMMMM@Z sub_1013d400
 0x10008fee func   ?vfunc5@CWeaponIWritten@@QAEPAV1@I@Z CWeaponIWritten::vfunc5
+0x10008ff3 func   ?sub_1007d1e0@CUnknown1007d1e0@@QAEDXZ CUnknown1007d1e0::sub_1007d1e0
 0x10009002 func   ?vfunc5@CNPC_VSheriffMan@@QAEPAV1@I@Z CNPC_VSheriffMan::vfunc5
 0x1000900c func   ?sub_100f8700@CGlobalEntityList@@QAEXI@Z CGlobalEntityList::sub_100f8700
 0x10009011 func   ?sub_10149c80@@YA_NXZ sub_10149c80
