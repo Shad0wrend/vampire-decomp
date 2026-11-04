@@ -18581,6 +18581,37 @@ void __stdcall sub_10076600(float v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10076630 size=0x2c
+struct CUnit10076630 {
+    char pad[0x184];
+    float m_f184;
+    float m_f188;
+    void sub_10076630(float f);
+};
+
+namespace block_10076630 {
+struct CUnit : CUnit10076630 {
+    unsigned char sub_10075f30();
+};
+unsigned char CUnit::sub_10075f30()
+{
+    if (*(int *)&m_f188 != 0xbf800000)
+        return 1;
+    return 0;
+}
+}
+using namespace block_10076630;
+
+// TARGET: CUnit10076630::sub_10076630
+void CUnit10076630::sub_10076630(float f)
+{
+    if (((CUnit *)this)->sub_10075f30()) {
+        m_f188 = f + m_f188;
+    }
+    m_f184 = f + m_f184;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10076670 size=0xd
 #include "CUnknown10076670.h"
 void CUnknown10076670::sub_10076670(int value)

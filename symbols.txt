@@ -9335,6 +9335,7 @@
 0x1000ee0d func   ?vfunc0@CSingleplayRules@@UAEPAVCGameRules@@I@Z CSingleplayRules::vfunc0
 0x1000ee17 func   ?sub_101bab50@CSoundEnt@@QAEHXZ CSoundEnt::sub_101bab50
 0x1000ee1c func   ?vfunc426@CBasePlayer@@QAEXXZ CBasePlayer::vfunc426
+0x1000ee21 func   ?sub_10076630@CUnit10076630@@QAEXM@Z CUnit10076630::sub_10076630
 0x1000ee26 func   ?vfunc2@CTEKillPlayerAttachments@@UAEPAV1@I@Z CTEKillPlayerAttachments::vfunc2
 0x1000ee2b func   ?sub_10230cd0@CUnknown10230cd0@@QAEPAXH@Z CUnknown10230cd0::sub_10230cd0
 0x1000ee30 func   ?sub_101d96a0@CUnknown101d96a0@@QAEHH@Z CUnknown101d96a0::sub_101d96a0
