@@ -81,7 +81,7 @@ public:
 	virtual Vector *slot194();	// the entity's local angles
 	EVS(195)
 	virtual Vector *slot196(Vector *pOut);	// "EarPosition": forwards to slot 193, fills pOut and returns it
-	EVS(197)
+	virtual int slot197(int a, int b, int c, int d);	// "BodyTarget" (ret 16): fills a with slot 192(a)
 	virtual Vector *slot198();	// a vector getter (the NPC's velocity / ground vector), the pointer to three floats
 	virtual void slot199(Vector *pA, Vector *pB);	// fills two vectors (a zero first one marks a free entity for the Hengeyokai's fish search)
 	EVS(200) EVS(201)
