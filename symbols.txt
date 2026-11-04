@@ -3376,6 +3376,7 @@
 0x10006136 func   ?vfunc24@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::vfunc24
 0x1000613b func   ?sub_103498b0@CUnknown103498b0@@QAEHXZ CUnknown103498b0::sub_103498b0
 0x1000614a func   ?vfunc431@CNPC_VSheriffMan@@QAEXXZ CNPC_VSheriffMan::vfunc431
+0x1000614f func   ??0CUnknown102f8f10@@QAE@HHH@Z CUnknown102f8f10::CUnknown102f8f10
 0x10006154 func   ?sub_1014f9f0@@YG_NHH@Z sub_1014f9f0
 0x10006159 func   ?sub_100f5600@CUnknown100f5600@@QAEXM@Z CUnknown100f5600::sub_100f5600
 0x1000615e func   ?sub_10139d20@@YAXPAM0@Z sub_10139d20
