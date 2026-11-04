@@ -8907,6 +8907,7 @@
 0x1000e2dc func   ?sub_1007a1e0@CChoreoScene1007a1e0@@QAEPAUCChoreoSceneItem1007a1e0@@PBD@Z CChoreoScene1007a1e0::sub_1007a1e0
 0x1000e2e1 func   ?sub_101d58b0@Loader@@QAEXPBD@Z Loader::sub_101d58b0
 0x1000e2e6 func   ?vfunc5@CItemMWallet@@QAEPAV1@I@Z CItemMWallet::vfunc5
+0x1000e2eb func   ??0CTESparks@@QAE@PBD@Z CTESparks::CTESparks
 0x1000e2f0 func   ?vfunc329@CNPC_VTzimisceRunner@@UAE_NXZ CNPC_VTzimisceRunner::vfunc329
 0x1000e2f5 func   ?sub_1019a8e0@@YGXHH@Z sub_1019a8e0
 0x1000e2fa func   ?sub_10384130@@YIPAXPAX@Z sub_10384130
