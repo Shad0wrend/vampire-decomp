@@ -61956,6 +61956,44 @@ int *sub_10133450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10133750 size=0x3f
+#include "CVariantCopy.h"
+
+struct CInputData10133750
+{
+    int m_pActivator;
+    int m_pCaller;
+    CVariantCopy m_Value;
+};
+
+struct CUnknownTimer10133750
+{
+    void sub_10133750(CInputData10133750 *pInput);
+    void sub_10133950(int pTarget, float flValue);
+    void Apply(CInputData10133750 *pInput, float flBase);
+    char m_pad0000[0x45c];
+    float m_fl45c;
+};
+
+inline float VariantFloat(const CVariantCopy &v)
+{
+    if (v.m_fieldType == 1)
+        return v.flVal;
+    return 0.0f;
+}
+
+inline void CUnknownTimer10133750::Apply(CInputData10133750 *pInput, float flBase)
+{
+    sub_10133950(pInput->m_pActivator, VariantFloat(pInput->m_Value) + flBase);
+}
+
+// TARGET: CUnknownTimer10133750::sub_10133750
+void CUnknownTimer10133750::sub_10133750(CInputData10133750 *pInput)
+{
+    Apply(pInput, m_fl45c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101337a0 size=0x91
 #include "CUnknown101337a0.h"
 
