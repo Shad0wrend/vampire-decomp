@@ -73832,6 +73832,74 @@ void sub_101802e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101803a0 size=0x2d3
+#include "vampire_all.h"
+CBasePlayer *sub_101193b0();
+void sub_101cf5c0(CBaseEntity *pEntity, const void *pOrigin, int unused);
+void sub_1028d820(const void *pPos);
+extern CGlobalEntityList g_106eb5d8;
+extern Vector g_1070d1b0;
+extern void (*g_109f3628)(const char *pMsg, ...);
+extern "C" double atof(const char *pszString);
+
+void sub_101803a0()
+{
+	CBasePlayer *pPlayer = sub_101193b0();
+	if (!pPlayer)
+		return;
+
+	if (engine->vfunc85() == 2)
+	{
+		const char *pszName = engine->vfunc84(1);
+		CEntityVSlots *pEnt = (CEntityVSlots *)g_106eb5d8.sub_100f7770(0, pszName, 0, 0);
+		if (pEnt)
+		{
+			Vector vecAngles = *pEnt->slot219();
+			pPlayer->m_vec206c = vecAngles;
+			pPlayer->vfunc64((float *)&vecAngles);
+			pPlayer->vfunc218((float *)&vecAngles);
+			pPlayer->m_n207C = 1;
+			sub_101cf5c0((CBaseEntity *)pPlayer, pEnt->slot217(), 0);
+			sub_1028d820(pEnt->slot217());
+		}
+		else
+		{
+			g_109f3628("Could not find entity named %s\n", pszName);
+		}
+	}
+	else if (engine->vfunc85() == 7)
+	{
+		Vector vecDest = g_1070d1b0;
+		vecDest.x = atof(engine->vfunc84(1));
+		vecDest.y = atof(engine->vfunc84(2));
+		vecDest.z = atof(engine->vfunc84(3));
+		sub_101cf5c0((CBaseEntity *)pPlayer, &vecDest, 0);
+		sub_1028d820(&vecDest);
+		pPlayer->m_vec206c.x = atof(engine->vfunc84(4));
+		pPlayer->m_vec206c.y = atof(engine->vfunc84(5));
+		atof(engine->vfunc84(6));
+		pPlayer->m_vec206c.z = 0.0f;
+		pPlayer->m_n207C = 1;
+	}
+	else if (engine->vfunc85() >= 4)
+	{
+		Vector vecDest = g_1070d1b0;
+		vecDest.x = atof(engine->vfunc84(1));
+		vecDest.y = atof(engine->vfunc84(2));
+		vecDest.z = atof(engine->vfunc84(3));
+		sub_101cf5c0((CBaseEntity *)pPlayer, &vecDest, 0);
+		sub_1028d820(&vecDest);
+	}
+	else
+	{
+		void (*pfnMsg)(const char *pMsg, ...) = g_109f3628;
+		pfnMsg("teleport_player usage:\n");
+		pfnMsg("\tSupply the name of an entity to be teleported to that entity's position.\n");
+		pfnMsg("\tSupply an X Y Z coordinate to be teleported to that point in space.\n");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101807d0 size=0x123
 #include "CEntityVSlots.h"
 

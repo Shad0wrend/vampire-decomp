@@ -13029,6 +13029,7 @@
 0x10014745 func   ?vfunc1@CTEBeamEnts@@UAEHXZ CTEBeamEnts::vfunc1
 0x1001474a func   ?sub_10158af0@@YAXPAX0@Z sub_10158af0
 0x1001474f func   ?vfunc58@CHalfLife2@@UAEPBDH@Z CHalfLife2::vfunc58
+0x10014759 func   ?sub_101803a0@@YAXXZ sub_101803a0
 0x1001475e func   ?sub_101b3b90@@YGHH@Z sub_101b3b90
 0x10014763 func   ?sub_102f94f0@CUnknown102f94f0@@QAEXPAUSBitRef@@@Z CUnknown102f94f0::sub_102f94f0
 0x10014768 func   ?sub_100dd000@CCollisionProperty@@QAEXABVVector@@AAV2@@Z CCollisionProperty::sub_100dd000
