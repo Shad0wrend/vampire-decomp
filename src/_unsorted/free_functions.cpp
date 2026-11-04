@@ -104261,6 +104261,40 @@ void CUnknown101e8080::sub_101e8080(int *out, void *ent, float dist, int flags)
 int __stdcall sub_101e80a0(int) { return 10; }
 // END FUNCTION
 
+// FUNCTION: 0x101e80c0 size=0x2e
+struct CWorker101e80c0
+{
+	int sub_101e56e0(int a);
+};
+
+struct CInner101e80c0
+{
+	char m_pad0000[0x8];
+	CWorker101e80c0 *m_pWorker;
+};
+
+struct COwner101e80c0
+{
+	char m_pad0000[0x1c];
+	CInner101e80c0 *m_pInner;
+
+	int *sub_101e80c0(int *pResult, int a, int unused, int limit);
+};
+
+// TARGET: COwner101e80c0::sub_101e80c0
+int *COwner101e80c0::sub_101e80c0(int *pResult, int a, int unused, int limit)
+{
+	int v = m_pInner->m_pWorker->sub_101e56e0(a);
+	if (v >= limit)
+	{
+		*pResult = 3;
+		return pResult;
+	}
+	*pResult = 1;
+	return pResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e8210 size=0x2b
 struct CUnk101e8210Inner {
     int sub_1000f03d(int a);

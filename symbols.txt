@@ -9954,6 +9954,7 @@
 0x1000fbaf func   ?vfunc584@CAI_BaseNPCTroika@@UAEXH@Z CAI_BaseNPCTroika::vfunc584
 0x1000fbb4 func   _point_anglesensor point_anglesensor
 0x1000fbbe func   ?vfunc466@CAI_BaseNPC@@UAE_NXZ CAI_BaseNPC::vfunc466
+0x1000fbc8 func   ?sub_101e80c0@COwner101e80c0@@QAEPAHPAHHHH@Z COwner101e80c0::sub_101e80c0
 0x1000fbcd func   _move_rope move_rope
 0x1000fbd2 func   ?sub_100f6ec0@CGlobalEntityList@@QAEXXZ CGlobalEntityList::sub_100f6ec0
 0x1000fbd7 func   ?sub_1006d2f0@@YAHXZ sub_1006d2f0
