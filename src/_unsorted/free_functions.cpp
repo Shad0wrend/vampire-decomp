@@ -96609,6 +96609,27 @@ int CUnknown101d5bd0::sub_101d5d20(const char *name, int start)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d5e00 size=0x29
+struct string_t_v { const char *pszValue; };
+inline const char *STRING_V(const string_t_v *s) { return s->pszValue ? s->pszValue : ""; }
+struct CEntry101d5e00 { char pad[0xc]; string_t_v m_str; };
+
+struct CUnit101d5e00 {
+    int m_4_dummy_unused;
+    int m_nCount;
+    CEntry101d5e00 **m_ppItems;
+    const char *sub_101d5e00(int index);
+};
+
+// TARGET: CUnit101d5e00::sub_101d5e00
+const char *CUnit101d5e00::sub_101d5e00(int index)
+{
+    if (index < 0 || index >= m_nCount)
+        return 0;
+    return STRING_V(&m_ppItems[index]->m_str);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d5e40 size=0x29
 extern char g_106b8540[];
 
