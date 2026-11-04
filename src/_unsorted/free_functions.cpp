@@ -95700,6 +95700,16 @@ bool CUnit101d4e30::sub_101d4e30(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d4ef0 size=0x11
+struct CUnknown101d4ef0 { int *sub_101d4ef0(int *pOut, int nIndex); };
+int *CUnknown101d4ef0::sub_101d4ef0(int *pOut, int nIndex)
+{
+    int v = ((int *)((char *)this + 0x70))[nIndex];
+    *pOut = v;
+    return pOut;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d4f20 size=0xc
 #include "CUnknown101d4f20.h"
 void CUnknown101d4f20::sub_101d4f20(CUnknown101d4f20_Value *out)
