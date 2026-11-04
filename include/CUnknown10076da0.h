@@ -12,6 +12,7 @@ struct CUnknown10076da0Entry
 
 	const char *sub_100738a0();	// returns the entry's name (the entry itself)
 	void sub_10073810(CUnknown10076da0 *pOwner, int a, int b);	// constructor body (stub 0x100095b6)
+	CUnknown10076da0Entry *sub_10073a90(const CUnknown10076da0Entry *pSrc);	// another copy of the copy constructor body (0x10073a90: name, then the dwords at +0x80 / +0x84)
 	CUnknown10076da0Entry *sub_10073850(const CUnknown10076da0Entry *pSrc);	// copy constructor body (stub 0x10009070)
 };
 
