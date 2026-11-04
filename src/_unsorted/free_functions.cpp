@@ -129082,6 +129082,18 @@ void CUnit1023dff0::sub_1023dff0(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023e180 size=0x2a
+char *sub_1000aa0b();
+
+// TARGET: sub_1023e180
+void __stdcall sub_1023e180(char *pSrc)
+{
+    char *pObj = sub_1000aa0b();
+    if (pObj != 0)
+        pObj[0x4a9] = (*(int *)(pSrc + 0x18) == 5) ? pSrc[8] : (char)0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023e1c0 size=0x64
 struct CTarget { void sub_10006690(float f); };
 struct CParam { int pad0[2]; float value; int pad1[3]; int type; };
