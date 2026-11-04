@@ -2501,6 +2501,48 @@ void CBaseCombatCharacter::vfunc356()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033b5f0 size=0x162
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+// TARGET: CBaseCombatCharacter::vfunc357
+#include "CBaseCombatCharacter.h"
+#include "CVStatList_t.h"
+#include "CVStatInfoList_t.h"
+#include "CVStatInfo_t.h"
+#include "CVDmg_t.h"
+#include "globalvars.h"
+
+extern CVStatInfoList_t g_1074e658;
+
+#define FL1490(p) (*(float *)((char *)(p) + 0x1490))
+#define FL1494(p) (*(float *)((char *)(p) + 0x1494))
+
+void CBaseCombatCharacter::vfunc357()
+{
+	if (m_Activity != 0x132)
+		return;
+
+	if (gpGlobals->curtime > FL1490(this))
+	{
+		int nCurrent = CVStatListSet::Of(this)->Find(0)->sub_102012d0(0xe);
+
+		CVStatInfo_t *pInfo = g_1074e658.sub_10200370(0xe);
+		int nMax = pInfo->m_max0060.sub_10205840();
+
+		if (nCurrent < nMax)
+			CVStatListSet::Of(this)->Find(0)->sub_10200d60(0xe);
+		else
+			c358();
+
+		float flNow = gpGlobals->curtime;
+		FL1490(this) = flNow + FL1494(this);
+		if (FL1494(this) > 0.3)
+			FL1494(this) -= 0.15;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033cb90 size=0x74
 #include "CBaseCombatCharacter.h"
 
