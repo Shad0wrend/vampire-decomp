@@ -6463,6 +6463,7 @@
 0x1000aad3 func   ?sub_103c29b0@@YADXZ sub_103c29b0
 0x1000aad8 func   ?vfunc1@ConCommandBase@@QAE_NXZ ConCommandBase::vfunc1
 0x1000aadd func   ?sub_102d01e0@CUnknown102d01e0@@QAE_NPBM@Z CUnknown102d01e0::sub_102d01e0
+0x1000aae2 func   ?sub_10113f80@CUnk10113f80@@QAEXH@Z CUnk10113f80::sub_10113f80
 0x1000aaec func   ?sub_100850a0@@YAHXZ sub_100850a0
 0x1000aaf6 func   ?sub_103eeec0@@YAXXZ sub_103eeec0
 0x1000aafb func   ?sub_101e9f90@CUnknown101e9f10@@QAEDHH@Z CUnknown101e9f10::sub_101e9f90

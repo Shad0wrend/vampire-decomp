@@ -56264,6 +56264,29 @@ int CUnknown10113cf0::sub_10113cf0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10113f80 size=0x1c
+struct CUnk10113f80
+{
+	char m_pad0000[0x1b1];
+	char m_bChanged1b1;	// 0x1b1
+	char m_pad01b2[0x474 - 0x1b2];
+	unsigned int m_n474;	// 0x474
+
+	void sub_10113f80(int unused);
+};
+
+// TARGET: CUnk10113f80::sub_10113f80
+void CUnk10113f80::sub_10113f80(int unused)
+{
+	unsigned int f = m_n474;
+	if ((f & 1) == 0)
+	{
+		*(volatile unsigned int *)&m_n474 = f | 1;
+		*(volatile char *)&m_bChanged1b1 = 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10114080 size=0xb
 namespace lifted {
 extern char g_10460df8;
