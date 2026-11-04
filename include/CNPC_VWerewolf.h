@@ -124,7 +124,9 @@ public:
 	int m_nLine1b34;	// 0x1b34: its line
 	char pad1b38[0x5c38 - 0x1b38];
 	CNPC_VWerewolfSchedule *m_pSchedule5c38;	// 0x5c38
-	char pad5c3c[0x5d34 - 0x5c3c];
+	char pad5c3c[0x5cc0 - 0x5c3c];
+	int m_nState5cc0;	// 0x5cc0: the NPC state SelectSchedule switches on (0..0xe)
+	char pad5cc4[0x5d34 - 0x5cc4];
 	CNPC_VWerewolfHelper5d34 *m_pHelper5d34;	// 0x5d34
 	char pad5d38[0x5f2d - 0x5d38];
 	char m_b5f2d;	// 0x5f2d
