@@ -173346,6 +173346,39 @@ void CNPCMaker::sub_1034d000(CMakerInputData *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034d050 size=0x3b
+#include "CNPCMaker.h"
+#include "CVariantCopy.h"
+
+extern char g_106b8540[];
+int sub_103e0cd0(const char *p);
+
+struct CInputData1034d050
+{
+	int m_pad0000[2];
+	CVariantCopy value;
+};
+
+static inline const char *VariantString1034d050(CVariantCopy &v)
+{
+	if (v.m_fieldType == 2)
+		return v.iszVal ? v.iszVal : g_106b8540;
+	return v.sub_100d0a00();
+}
+
+struct CNPCMakerUnit1034d050 : CNPCMaker
+{
+	void sub_1034d050(CInputData1034d050 &inputdata);
+};
+
+// TARGET: CNPCMakerUnit1034d050::sub_1034d050
+void CNPCMakerUnit1034d050::sub_1034d050(CInputData1034d050 &inputdata)
+{
+	int n = sub_103e0cd0(VariantString1034d050(inputdata.value));
+	sub_1034cf20(n, 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034d2d0 size=0x74
 #include "CNPCMaker_Zombie.h"
 

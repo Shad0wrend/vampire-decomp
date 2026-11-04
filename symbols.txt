@@ -134,6 +134,7 @@
 0x10001320 func   ?vfunc79@CSprite@@UAEHXZ CSprite::vfunc79
 0x1000132a func   ?Links@?$CUtlRBTree@UCRBTree12Entry_10194f30@@G@@QBEABULinks_t@1@G@Z CUtlRBTree<CRBTree12Entry_10194f30,unsigned short>::Links
 0x10001334 func   ?vfunc82@CEnvBeam@@UAEPAUdatamap_t@@XZ CEnvBeam::vfunc82
+0x10001339 func   ?sub_1034d050@CNPCMakerUnit1034d050@@QAEXAAUCInputData1034d050@@@Z CNPCMakerUnit1034d050::sub_1034d050
 0x10001343 func   ?sub_1024e030@@YAXABUmat34_1024e030@@AAUang_1024e030@@@Z sub_1024e030
 0x10001348 func   ?sub_10215b80@CPropButtonUnit10215b80@@QAEHH@Z CPropButtonUnit10215b80::sub_10215b80
 0x10001348 func   ?vfunc35@CPropButton@@QAEHH@Z CPropButton::vfunc35
