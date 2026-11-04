@@ -2097,6 +2097,7 @@
 0x100042ff func   ?sub_1014ebd0@CPhysicsAnimlinkPair@@QAEXHPAVCBaseEntity@@0@Z CPhysicsAnimlinkPair::sub_1014ebd0
 0x10004304 func   ?sub_1013ff70@@YAHXZ sub_1013ff70
 0x10004309 func   ?sub_100749a0@CUnk100749a0@@QAEHH@Z CUnk100749a0::sub_100749a0
+0x1000430e func   ?sub_1016c9d0@CBasePlayer@@QAEXXZ CBasePlayer::sub_1016c9d0
 0x10004313 func   ?sub_10078b70@@YIXPAH@Z sub_10078b70
 0x10004318 func   ?sub_101cc7f0@@YIXPAPAX@Z sub_101cc7f0
 0x1000431d func   ?sub_101cc7a0@CUnknown101cc7a0@@QAEXXZ CUnknown101cc7a0::sub_101cc7a0

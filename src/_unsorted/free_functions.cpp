@@ -70781,6 +70781,91 @@ void CBasePlayer::sub_1016bd50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016c9d0 size=0x29e
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+
+struct CPhysObjSlots
+{
+	virtual void v0();
+	virtual bool vfunc1();
+};
+
+struct CPartOwnerSlots
+{
+	virtual void v0();
+	virtual void vfunc1(Vector *pVec, const Vector *pVec2, int a, char flag, void *pPhys);
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5(void *pPart);
+	virtual void v6();
+	virtual void vfunc7(float flArg);
+};
+
+struct CPlayerViewEffects
+{
+	char pad0[0x7c];
+	float m_fl7c;
+	Vector m_vec80;
+};
+
+extern CPlayerViewEffects *g_10628368;
+
+void CBasePlayer::sub_1016c9d0()
+{
+	if (m_pPartOwner == 0)
+		return;
+
+	Vector vecOrigin = *(Vector *)vfunc220();
+
+	float frametime = gpGlobals->frametime;
+	if (frametime <= 0.0f || frametime > 0.1f)
+		frametime = 0.1f;
+
+	CBaseEntity *pGround = vfunc209();
+	void *pPhys = 0;
+	if (pGround && pGround->vfunc94() == 7)
+	{
+		pPhys = (void *)pGround->m_obj36c;
+		if (pPhys)
+		{
+			if (!((CPhysObjSlots *)pPhys)->vfunc1())
+				goto LAB_1016cb69;
+			pPhys = 0;
+		}
+	}
+
+	if (*(char *)((char *)this + 0x2128) && g_10628368->m_fl7c <= 0.0f)
+	{
+		vecOrigin = m_oldOrigin + g_10628368->m_vec80 * frametime;
+		Vector vecHalf = vecOrigin * 0.5f;
+		vecOrigin = *(Vector *)vfunc220() * 0.5f + vecHalf;
+	}
+
+LAB_1016cb69:
+	int mode = 0;
+	if (vfunc94() == 9)
+		mode = 2;
+	else if (sub_100b3700() & 2)
+		mode = 1;
+	if (mode != m_nPartMode)
+		sub_1017bf10(mode);
+
+	if (!*(char *)((char *)this + 0x2128) && pPhys == 0)
+		g_10628368->m_vec80 = Vector(m_flMaxspeed, m_flMaxspeed, m_flMaxspeed);
+
+	char flag = sub_100b3700() & 1;
+	if (g_10628368->m_fl7c > 0.1)
+		((CPartOwnerSlots *)m_pPartOwner)->vfunc7(g_10628368->m_fl7c);
+	g_10628368->m_fl7c = 0.0f;
+
+	((CPartOwnerSlots *)m_pPartOwner)->vfunc1(&vecOrigin, &g_10628368->m_vec80, 0, flag, pPhys);
+
+	m_oldOrigin = *(Vector *)vfunc220();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016e500 size=0x84
 #include "CCollisionProperty.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
