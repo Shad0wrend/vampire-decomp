@@ -290,6 +290,7 @@
 0x100016e5 func   _vampireprojectile_mingxiaospit vampireprojectile_mingxiaospit
 0x100016ea func   ?vfunc130@CBreakableSurface@@UAEXH@Z CBreakableSurface::vfunc130
 0x100016ef func   ?vfunc320@CNPC_VRat@@QAE_NHH@Z CNPC_VRat::vfunc320
+0x100016f9 func   ?sub_10074090@CUnknown10074070@@QAEPAMHH@Z CUnknown10074070::sub_10074090
 0x100016fe func   ?sub_102587f0@@YAHXZ sub_102587f0
 0x10001703 func   ?vfunc575@CAI_BaseNPCTroika@@UAE_NXZ CAI_BaseNPCTroika::vfunc575
 0x10001708 func   ?sub_1007ba30@CUnknown1007b7b0@@QAEXXZ CUnknown1007b7b0::sub_1007ba30

@@ -17598,6 +17598,29 @@ int CUnknown10074070::sub_10074070(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10074090 size=0x2e
+#include "CUnknown10074070.h"
+
+namespace block_10074090 {
+	struct CUnit10074070 : CUnknown10074070 {
+		int sub_10074070(int index);
+	};
+	int CUnit10074070::sub_10074070(int index)
+	{
+		return *(int *)((char *)this + 0x20 + index * 0x14);
+	}
+}
+using namespace block_10074090;
+
+// TARGET: CUnknown10074070::sub_10074090
+float *CUnknown10074070::sub_10074090(int index, int b)
+{
+	if (index >= 0 && index < ((CUnit10074070 *)this)->sub_10074070(b))
+		return (float *)(*(char **)((char *)this + 0x14 + b * 0x14) + index * 12);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100740d0 size=0x4
 struct CUnknown100740d0 { char sub_100740d0(); };
 char CUnknown100740d0::sub_100740d0()
