@@ -12622,6 +12622,7 @@
 0x10013c69 func   ?sub_1034d490@@YAPAHXZ sub_1034d490
 0x10013c6e func   ?vfunc2@CEntityListSystem@@QAEXXZ CEntityListSystem::vfunc2
 0x10013c78 func   ?vfunc618@CNPC_VHengeyokai@@QAEXXZ CNPC_VHengeyokai::vfunc618
+0x10013c7d func   ?sub_10178140@CUnk10178140@@QAEXXZ CUnk10178140::sub_10178140
 0x10013c82 func   ?sub_10138130@@YAXPBMQAY03$$CBMPAM@Z sub_10138130
 0x10013c87 func   ?sub_10245790@CUnknown10245790@@QAEXI@Z CUnknown10245790::sub_10245790
 0x10013c8c func   ?sub_100bbbf0@CBeam@@QAEXXZ CBeam::sub_100bbbf0

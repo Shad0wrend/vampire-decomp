@@ -72427,6 +72427,29 @@ int CUnknown10178120::sub_10178120()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10178140 size=0x1f
+#include "CBaseEntity.h"
+struct CUnk10178140
+{
+    char pad[0x1d2c];
+    int m_1d2c;
+    char pad2[0x1d40 - 0x1d30];
+    EHANDLE m_1d40;
+    char pad3[0x1dd0 - 0x1d44];
+    int m_1dd0;
+    char pad4[0x1dd8 - 0x1dd4];
+    int m_1dd8;
+    void sub_10178140();
+};
+void CUnk10178140::sub_10178140()
+{
+    m_1d2c = 0;
+    m_1d40 = (CBaseEntity *)0;
+    m_1dd0 = 0;
+    m_1dd8 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10178170 size=0xcc
 #include "CBasePlayer.h"
 #include "CUnknown101800e0.h"
