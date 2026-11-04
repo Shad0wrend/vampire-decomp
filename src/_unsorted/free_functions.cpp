@@ -183823,6 +183823,26 @@ void CNPC_VTzimisce::sub_103b9f90(int a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103bdfc0 size=0x37
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "CNPC_VTzimisce.h"
+extern CGlobalEntityList g_106eb5d8;
+void sub_101cd940(CBaseEntity *p);
+
+// TARGET: CNPC_VTzimisce::sub_103bdfc0
+void CNPC_VTzimisce::sub_103bdfc0()
+{
+	CBaseEntity *pEnt = 0;
+	do
+	{
+		pEnt = g_106eb5d8.sub_100f8490(pEnt, 2, (const Vector *)vfunc217(), 150.0f);
+		if (pEnt)
+			sub_101cd940(pEnt);
+	} while (pEnt);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103be050 size=0x24
 class CUnknown103be050
 {
