@@ -10946,6 +10946,7 @@
 0x100113a1 func   ?sub_103753e0@@YAEXZ sub_103753e0
 0x100113a6 func   ?vfunc113@CBaseTrigger@@UAEXXZ CBaseTrigger::vfunc113
 0x100113ab func   ?vfunc82@CNPC_VSheriffMan@@QAEPAUdatamap_t@@XZ CNPC_VSheriffMan::vfunc82
+0x100113b0 func   ??0CTraceFilterPlayerMovement@@QAE@PAXH@Z CTraceFilterPlayerMovement::CTraceFilterPlayerMovement
 0x100113b5 func   ?vfunc602@CAI_BaseNPCTroika@@UAEDXZ CAI_BaseNPCTroika::vfunc602
 0x100113ba func   ?sub_1023a2a0@CWeaponRanged@@QAEXXZ CWeaponRanged::sub_1023a2a0
 0x100113bf func   ?vfunc81@CItemGWarrLedger2@@QAEHXZ CItemGWarrLedger2::vfunc81
