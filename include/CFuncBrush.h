@@ -14,7 +14,7 @@ struct CFuncBrushSlots : public CBaseEntitySlots
 	virtual void slot204(); virtual void slot205(); virtual void slot206(); virtual void slot207(); virtual void slot208();
 	virtual void slot209(); virtual void slot210(); virtual void slot211(); virtual void slot212(); virtual void slot213();
 	virtual void slot214(); virtual void slot215(); virtual void slot216(); virtual void slot217(); virtual void slot218();
-	virtual void slot219(); virtual void slot220();
+	virtual void slot219(); virtual float *slot220();	// GetOrigin: pointer to the three origin floats (+0x41c)
 	virtual int *slot221();	// GetAngles: pointer to the three angle dwords
 	virtual void slot222(); virtual void slot223();
 };
