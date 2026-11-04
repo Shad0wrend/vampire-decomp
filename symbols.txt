@@ -7955,6 +7955,7 @@
 0x1000cf2c func   ?sub_10078880@@YIXPAD@Z sub_10078880
 0x1000cf31 func   ?sub_100eb310@CUnknown100eb310@@QAEXH@Z CUnknown100eb310::sub_100eb310
 0x1000cf36 func   ?sub_102a98c0@CUnknown102a98c0@@QAEHXZ CUnknown102a98c0::sub_102a98c0
+0x1000cf3b func   ?Grow@?$CUtlMemory@UCListZItem@@@@QAEXH@Z CUtlMemory<CListZItem>::Grow
 0x1000cf3b func   ?sub_1022d2f0@CMem32_t@@QAEXH@Z CMem32_t::sub_1022d2f0
 0x1000cf40 func   ?sub_100561a0@CUtlRBTree24@@QAEXH@Z CUtlRBTree24::sub_100561a0
 0x1000cf4a func   ?sub_101e85a0@S@@QAEXPAUP@@@Z S::sub_101e85a0
