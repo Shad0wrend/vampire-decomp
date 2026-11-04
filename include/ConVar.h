@@ -67,6 +67,7 @@ extern ConVar *g_1093ca8c;	// 0x1093ca8c: the vertical (z) speed convar used by 
 extern ConVar *g_1093ca44;	// 0x1093ca44: the gravity convar used by the VTzimisce throw (vfunc1 = unset, else m_fValue at +0x28)
 extern ConVar *g_109eefbc;	// 0x109eefbc: the friction convar (vfunc1 = unset, else m_fValue +0x28): PhysicsStepRunTimestep multiplies it by the entity's friction at +0x3f0
 extern ConVar *g_109ef16c;	// 0x109ef16c: the stop speed convar (same form)
+extern ConVar *g_109eef74;	// 0x109eef74: the bump scale convar read by TryPlayerMove (vfunc1 = unset, else m_fValue +0x28)
 extern ConVar *g_109ef28c;	// 0x109ef28c: the player movement friction convar read by CGameMovement::sub_10127dd0 / vfunc11 and 0x101200c0
 extern ConVar *g_1094a944;	// 0x1094a944: the PhysCannon reach convar (vfunc1 = unset, else m_fValue +0x28)
 extern ConVar *g_1094aa7c;	// 0x1094aa7c: the PhysCannon max-mass convar (vfunc1 = unset, else m_fValue +0x28)
