@@ -156503,6 +156503,47 @@ CUnknown102ea090 *CUnknown102ea090::sub_102ea090(char bFlag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ea0e0 size=0x3d
+namespace block_102ea0e0 {
+struct CUnknownArg102ea0e0
+{
+    int m_n0;
+    int m_n4;
+    int sub_102ea070();
+};
+int CUnknownArg102ea0e0::sub_102ea070()
+{
+    return m_n4;
+}
+struct CUnknownTimer102ea0e0
+{
+    int m_n0;
+    int m_n4;
+    int m_n8;
+    int m_nC;
+    int m_n10;
+    int m_n14;
+    bool sub_102ea0e0(CUnknownArg102ea0e0 *pOwner, int nValue);
+};
+}
+using namespace block_102ea0e0;
+
+// TARGET: block_102ea0e0::CUnknownTimer102ea0e0::sub_102ea0e0
+bool block_102ea0e0::CUnknownTimer102ea0e0::sub_102ea0e0(CUnknownArg102ea0e0 *pOwner, int nValue)
+{
+    if (m_nC != -1)
+    {
+        m_n4 = nValue ? 9999 : 0;
+        m_n8 = -1;
+        m_nC = -1;
+    }
+    m_n10 = nValue;
+    m_n14 = (int)pOwner;
+    m_n0 = pOwner->sub_102ea070();
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ea130 size=0xc3
 #include "CUnknown10359c50.h"
 
