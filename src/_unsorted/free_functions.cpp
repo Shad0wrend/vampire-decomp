@@ -140929,6 +140929,105 @@ void * CUnknown10296820::sub_10296820(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102968f0 size=0x299
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_Hint.h"
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "CEntityVSlots.h"
+#include "CGameTrace.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "Ray_t.h"
+#include "Vector.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738960.h"
+#include "CEHandleGet.h"
+
+class CUnknown10296820
+{
+public:
+	void *m_pVtbl;
+	void *m_pPassEnt;
+	void *sub_10296820(int a);
+};
+
+class CUnknown10924cdc
+{
+public:
+	virtual char vfunc0();
+	virtual char vfunc1();
+	char m_pad[0x2c - 4];
+	void *m_p2c;
+};
+
+extern CUnknown10924cdc *g_10924cdc;
+extern unsigned int g_10925444;
+
+int sub_1023bd00();
+void sub_10142e90(const Vector *pStart, const Vector *pEnd, int r, int g, int b, unsigned char a, float flDuration);
+void sub_10143d80(const Vector &v, float flScale, int r, int g, int b, int a, float flDuration);
+void sub_10146570(float *pStart, float *pEnd, int a, int b, int c, int d, float e);
+
+bool CAI_BaseNPCTroika::sub_102968f0(CAI_Hint *pHint, CBaseEntity *pTarget)
+{
+	if (!pHint || !pTarget)
+		return false;
+
+	Vector vStart, vEnd;
+	((CAI_VecView *)pHint)->sub_102d1180(this, &vStart);
+	vStart.z += ((CCollisionProperty *)((char *)this + 0x270))->vfunc2()[2];
+
+	((CEntityVSlots *)pTarget)->slot193(&vEnd);
+
+	CUnknown10296820 filter;
+	filter.sub_10296820(0);
+
+	Ray_t ray;
+	ray.sub_1004f7a0((const float *)&vStart, (const float *)&vEnd);
+
+	CGameTrace trace;
+	g_1070b254->vfunc4(&ray, 0x46804099, (CTraceFilterNoCharacterCollide *)&filter, &trace);
+
+	if (g_10738960.sub_1005f190())
+		sub_10146570(trace.m_startpos, trace.m_endpos, 255, 0, 0, 1, -1.0f);
+
+	if (!g_10924cdc->vfunc1() && g_10924cdc->m_p2c)
+	{
+		if ((CBaseEntity *)EHandle_Get(g_10925444) == (CBaseEntity *)this || !EHandle_Get(g_10925444))
+		{
+			int r, g, b;
+			if (trace.m_fraction < 1.0f)
+				goto blocked;
+			if (trace.m_allsolid)
+				goto blocked;
+			if (trace.m_startsolid)
+				goto blocked;
+			r = 0; g = 255; b = 0;
+			goto havecolor;
+blocked:
+			{
+				CBaseEntity *pBlocker = trace.m_pEnt;
+				if (pBlocker && (int)pBlocker != sub_1023bd00())
+				{
+					pBlocker->sub_1009f4e0();
+					r = 255; g = 128; b = 128;
+					goto havecolor;
+				}
+				r = 255; g = 0; b = 0;
+			}
+havecolor:
+			sub_10142e90(&vStart, &vEnd, r, g, b, 0, 5.0f);
+			Vector vPos = vStart + (vEnd - vStart) * trace.m_fraction;
+			sub_10143d80(vPos, 4.0f, r, g, b, 0, 5.0f);
+		}
+	}
+
+	if (trace.m_fraction < 1.0f || trace.m_allsolid || trace.m_startsolid)
+		return false;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10297430 size=0x82
 #include "CAI_BaseNPCTroika.h"
 
