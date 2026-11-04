@@ -140409,6 +140409,27 @@ void __fastcall sub_1027d9b0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027db30 size=0x3a
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_Navigator.h"
+extern int g_106c994c;
+inline CAI_NavProvider *NavListGet(CAI_NavProviderList *pList, int i)
+{
+	if (i >= 0 && i < pList->m_nCount)
+		return pList->m_ppItems[i];
+	g_106c994c++;
+	return 0;
+}
+// TARGET: CAI_BaseNPCTroika::sub_1027db30
+bool CAI_BaseNPCTroika::sub_1027db30(int nNode)
+{
+	CAI_NavProvider *pNode = NavListGet(m_p5d34->m_pProviders, nNode);
+	if (pNode)
+		return vfunc527(pNode);
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027db80 size=0x4b
 #include "CAI_BaseNPC.h"
 

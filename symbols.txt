@@ -115,6 +115,7 @@
 0x100012c1 func   ?vfunc2@?$CUtlVectorDataOps@V?$CUtlVector@UGLOBAL_EMAIL@@V?$CUtlMemory@UGLOBAL_EMAIL@@@@@@$08@@UAE_NPAX@Z CUtlVectorDataOps<CUtlVector<GLOBAL_EMAIL,CUtlMemory<GLOBAL_EMAIL> >,9>::vfunc2
 0x100012c6 func   ?vfunc451@CNPC_VPedestrian@@UAEHXZ CNPC_VPedestrian::vfunc451
 0x100012cb func   ?sub_10130690@CLight@@QAEXXZ CLight::sub_10130690
+0x100012d0 func   ?sub_1027db30@CAI_BaseNPCTroika@@QAE_NH@Z CAI_BaseNPCTroika::sub_1027db30
 0x100012d5 func   ?sub_101b90a0@CUnknown101b90a0@@QAEXH@Z CUnknown101b90a0::sub_101b90a0
 0x100012da func   ?sub_10117470@CUnk10117470@@QAEXH@Z CUnk10117470::sub_10117470
 0x100012df func   ?sub_103d44e0@CNPC_VWerewolf@@QAEXPAUCNPC_VWerewolfHint66b0@@D@Z CNPC_VWerewolf::sub_103d44e0
