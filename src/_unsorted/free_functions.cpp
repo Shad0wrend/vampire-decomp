@@ -61734,6 +61734,15 @@ int *sub_10134f10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10135040 size=0x16
+namespace lifted { struct C10135070 { int sub_10005a2e(int, bool); }; }
+struct CUnknown10135040 { int sub_10135040(int *p); };
+int CUnknown10135040::sub_10135040(int *p)
+{
+    return ((lifted::C10135070 *)this)->sub_10005a2e(*p, *(bool *)((char *)this + 0x450));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10135070 size=0x31
 struct CUnknown10135070Sub
 {
