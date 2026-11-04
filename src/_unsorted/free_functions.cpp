@@ -29109,6 +29109,34 @@ int CBaseAnimatingOverlay::sub_10099250(int activity, float flDivisor, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100992d0 size=0x3f
+#include "CBaseAnimatingOverlay.h"
+
+struct COverlayView100992d0
+{
+	char m_pad0[0x73c];
+	int m_nSequence;
+	int m_n740;
+	float m_flRate;
+	int m_n748;
+	int m_nValue;
+};
+
+// TARGET: CBaseAnimatingOverlay::sub_100992d0
+bool CBaseAnimatingOverlay::sub_100992d0(int index, float flDivisor, int nValue)
+{
+	if (index != -1)
+	{
+		float flRate = sub_10091080(((COverlayView100992d0 *)((char *)this + index * 0x30))->m_nSequence) / flDivisor;
+		COverlayView100992d0 *pRec = (COverlayView100992d0 *)((char *)this + index * 0x30);
+		pRec->m_nValue = nValue;
+		pRec->m_flRate = flRate;
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10099320 size=0x28
 #include "CBaseAnimatingOverlay.h"
 #define VS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
