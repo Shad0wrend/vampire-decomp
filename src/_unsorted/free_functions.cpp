@@ -201842,6 +201842,25 @@ int CUnknown1042b160::sub_1042b160()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042b2b0 size=0x39
+#include "CBaseGrenade.h"
+
+extern void *vt_10515ac4[];
+
+// TARGET: CBaseGrenade::sub_1042b2b0
+CBaseGrenade *CBaseGrenade::sub_1042b2b0()
+{
+	sub_10326de0();
+	*(volatile int *)((char *)this + 0x19b0) = -1;
+	*(void * volatile *)this = vt_10515ac4;
+	*(volatile int *)((char *)this + 0x19b0) = -1;
+	*(volatile char *)((char *)this + 0x19b5) = 0;
+	*(volatile int *)((char *)this + 0x19bc) = 0;
+	*(volatile float *)((char *)this + 0x19b8) = 100.0f;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042b470 size=0x72
 #include "SendProp.h"
 

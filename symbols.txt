@@ -10315,6 +10315,7 @@
 0x100104ab func   ?vfunc86@CRopeKeyframe@@QAEDHHHHH@Z CRopeKeyframe::vfunc86
 0x100104b0 func   ?sub_1019d130@CUnknown1019d130@@QAEXPAVCBaseEntity@@@Z CUnknown1019d130::sub_1019d130
 0x100104b5 func   ?vfunc5@CItemGWirelessCamera2@@QAEPAV1@I@Z CItemGWirelessCamera2::vfunc5
+0x100104bf func   ?sub_1042b2b0@CBaseGrenade@@QAEPAV1@XZ CBaseGrenade::sub_1042b2b0
 0x100104c4 func   ?vfunc5@CParamsParticle@@QAEPAV1@I@Z CParamsParticle::vfunc5
 0x100104c9 func   _item_k_fu_office_key item_k_fu_office_key
 0x100104ce func   ?sub_101cbff0@Helper@@QAEPAXI@Z Helper::sub_101cbff0
