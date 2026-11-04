@@ -756,7 +756,7 @@ public:
 	virtual void vfunc435_slot();
 	virtual void vfunc436();
 	virtual void vfunc437();
-	virtual void vfunc438();
+	virtual void vfunc438_slot();
 	virtual void vfunc439();
 	virtual void vfunc440_slot();
 	virtual void vfunc441();
