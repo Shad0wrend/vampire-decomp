@@ -13,3 +13,26 @@ void CUnknown10204270::sub_10204270()
 // TARGET: CVDmgBlock16_t::CVDmgBlock16_t
 CVDmgBlock16_t::CVDmgBlock16_t() { ((CUnknown10204270 *)this)->sub_10204270(); }
 // END FUNCTION
+
+// FUNCTION: 0x102053a0 size=0x14
+#include "CVDmg_t.h"
+
+namespace block_102053a0 {
+struct CVDmgUnit : CVDmgBlock16_t {
+	void sub_102042a0(int a, int b);
+};
+#pragma auto_inline(off)
+void CVDmgUnit::sub_102042a0(int a, int b)
+{
+	m_a = a;
+	m_b = b;
+	m_d = 1;
+}
+}
+using namespace block_102053a0;
+
+CVDmgBlock16_t::CVDmgBlock16_t(int a, int b)
+{
+	((CVDmgUnit *)this)->sub_102042a0(a, b);
+}
+// END FUNCTION
