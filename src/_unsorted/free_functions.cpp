@@ -117485,6 +117485,25 @@ bool __stdcall sub_10207df0(CBaseCombatCharacter *pChar)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10207e60 size=0x37
+#include "CBaseCombatCharacter.h"
+#include "CUnknown10206c70.h"
+#include "CUnknown101d4f20.h"
+#include "StatDefault3.h"
+class CBaseCombatCharacter;
+extern CUnknown10206c70 g_1074f028;
+extern char g_106b8540;
+struct CUnknown101d4f20Ret : CUnknown101d4f20 { CUnknown101d4f20_Value *sub_101d4f20(CUnknown101d4f20_Value *out); };
+void CUnknown10206c70::sub_10207e60(CBaseCombatCharacter *pChar)
+{
+	CUnknown101d4f20_Value *pv = ((CUnknown101d4f20Ret *)g_1074f028.sub_10207c40(pChar))->sub_101d4f20((CUnknown101d4f20_Value *)&pChar);
+	const char *name = (const char *)pv->m_value;
+	if (!name)
+		name = &g_106b8540;
+	engine->vfunc13(name, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10207eb0 size=0x43
 #include "CBaseEntity.h"
 #include "CItemContainer.h"
