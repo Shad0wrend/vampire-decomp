@@ -31,6 +31,7 @@ public:
     void vfunc104();    // slot 104: the gib model index into +0x45c: "models/germanygibs.mdl" when the global at 0x1070ba34 is 1, else "models/gibs/hgibs.mdl" (engine slot 13, not preloaded)
     void sub_100b3b00();    // CBaseEntity::sub_100b3b00 (stub 0x1001514a), called directly
     CGib *vfunc241();    // slot 241 "CGibShooter::CreateGib": with the violence_hgibs convar set to "no gibs" returns null, else creates a "gib" entity (warns when it is the wrong class), sets the gib model, +0x730 = 0xf7 and the body from the model's body list
+    void sub_100f4b90();    // the think function (stub 0x1000913d): next think = curtime + m_flDelay; shoot direction = AngleVectors(slot219) then dir += right/forward/up * RandomFloat(-1,1) * m_flVariance (engine rand slot 1), VectorNormalize; by m_nShootMode: 0 vfunc241 + sub_100f49e0, 1 slot 242 physics gib (+ sub_100aaa40(1), sub_100b3b00, AddVelocity slot 41 of the object at +0x36c, 200/60 spin), 2 slot 9 + sub_1012b320 effect; then --m_iGibs, at 0 reset or SetThink(sub_101c0b10)
     void sub_100f49e0(CGib *pGib, const Vector &vecShootDir);    // "CGibShooter::InitPointGib": puts the gib at the shooter's origin, gives it the velocity vecShootDir * m_flGibVelocity and a random spin (x 100..200, y 100..300), a life time of 0.95..1.05 times m_flGibLife (the gib thinks at that time when sooner than its next think), then hands it to sub_101cf600
 public:
     datamap_t * vfunc82();
