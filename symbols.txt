@@ -5917,6 +5917,7 @@
 0x10009e49 func   ?vfunc80@CBaseTerminal@@QAEHXZ CBaseTerminal::vfunc80
 0x10009e58 func   ?sub_103908c0@@YGII@Z sub_103908c0
 0x10009e5d func   ?sub_1013d9a0@@YAPADPBDHPAHPADH@Z sub_1013d9a0
+0x10009e62 func   ?vfunc5@CServerGameDLL@@UAEXH@Z CServerGameDLL::vfunc5
 0x10009e67 func   ?sub_10073520@CUnknown10073520@@QAEPADXZ CUnknown10073520::sub_10073520
 0x10009e6c func   ?vfunc130@CBaseAnimating@@UAEXH@Z CBaseAnimating::vfunc130
 0x10009e71 func   ?sub_103dc7f0@@YAHXZ sub_103dc7f0

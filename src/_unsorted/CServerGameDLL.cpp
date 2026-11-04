@@ -181,6 +181,86 @@ void CServerGameDLL::vfunc4(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011abc0 size=0x186
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CServerGameDLL.h"
+#include "CBaseAnimating.h"
+#include "CAI_BaseNPC.h"
+#include "ConVar.h"
+#include "ScopeTrace.h"
+#include "engineserver.h"
+
+extern ConVar *g_1070b184;
+extern char g_106eb5d8[];
+
+void __cdecl sub_1042c6c0();
+void __cdecl sub_10352f00();
+void __cdecl sub_1003bdd0(int a);
+void __cdecl sub_1042c6e0();
+void *__cdecl sub_101bdb50();
+void __cdecl sub_100cfac0();
+void __cdecl sub_10119980();
+void __cdecl sub_1027ee90();
+void __fastcall sub_100f6ce0(void *pThis);
+void __cdecl sub_1018be60();
+
+class CVfuncView
+{
+public:
+	virtual void v0() = 0;
+	virtual void v1() = 0;
+	virtual void v2() = 0;
+	virtual void v3() = 0;
+	virtual CBaseEntity *v4() = 0;
+};
+
+void CServerGameDLL::vfunc5(int a)
+{
+	ScopeTrace trace("CServerGameDLL::GameFrame", g_106b8540);
+
+	sub_1042c6c0();
+	sub_10352f00();
+	sub_1003bdd0(a);
+	sub_1042c6e0();
+	((CVfuncView *)sub_101bdb50())->v1();
+	sub_100cfac0();
+	sub_10119980();
+	sub_1027ee90();
+
+	if (g_1070b184->vfunc1() || g_1070b184->m_nValue != -1)
+	{
+		int index = g_1070b184->vfunc1() ? 0 : g_1070b184->m_nValue;
+		void *pEdict = engine->vfunc38(index);
+		CBaseEntity *pEnt;
+		{
+			ScopeTrace trace2("CBaseEntity::Instance", g_106b8540);
+			if (!pEdict)
+				pEdict = engine->vfunc38(0);
+			if (!pEdict)
+				pEnt = 0;
+			else
+			{
+				CVfuncView *pUnknown = *(CVfuncView **)((char *)pEdict + 0x40);
+				pEnt = pUnknown ? pUnknown->v4() : 0;
+			}
+		}
+		CBaseAnimating *pAnim = dynamic_cast<CBaseAnimating *>(pEnt);
+		if (pAnim)
+			((CAI_BaseNPC *)pAnim)->vfunc264();
+	}
+
+	sub_100f6ce0(g_106eb5d8);
+	sub_1018be60();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011adc0 size=0x32
 // TARGET: sub_1011adc0
 #include "CGlobalEntityList.h"
