@@ -13746,6 +13746,7 @@
 0x1001568b func   ?vfunc82@CAI_StandoffGoal@@UAEPAUdatamap_t@@XZ CAI_StandoffGoal::vfunc82
 0x10015695 func   ?sub_10054400@@YAXXZ sub_10054400
 0x1001569a func   ?sub_102489a0@CKeyValuesX@@QAEPAV1@PBDD@Z CKeyValuesX::sub_102489a0
+0x1001569f func   ?vfunc69@CNPC_VMingXiaoTentacle@@QAE_NPAVCBaseEntity@@@Z CNPC_VMingXiaoTentacle::vfunc69
 0x100156a4 func   ?vfunc5@CItemGRingGold@@QAEPAV1@I@Z CItemGRingGold::vfunc5
 0x100156a9 func   ?sub_10247450@@YAPADH@Z sub_10247450
 0x100156ae func   ?sub_100dd630@CCollisionProperty@@QAEXPAVVector@@0@Z CCollisionProperty::sub_100dd630

@@ -324,6 +324,20 @@ bool CNPC_VMingXiaoTentacle::vfunc68(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039eb90 size=0x2a
+#include "CBaseEntity.h"
+#include "CNPC_VMingXiaoTentacle.h"
+
+// TARGET: CNPC_VMingXiaoTentacle::vfunc69
+bool CNPC_VMingXiaoTentacle::vfunc69(CBaseEntity *pOther)
+{
+    if (pOther != 0 && (*(int *)((char *)pOther + 0x9c) == 0 || m_b6688 == 0)) {
+        return sub_1029b180(pOther);
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039ebd0 size=0x2a
 #include "CBaseEntity.h"
 #include "CNPC_VMingXiaoTentacle.h"
