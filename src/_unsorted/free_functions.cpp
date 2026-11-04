@@ -71060,6 +71060,23 @@ bool CUnk101672d0::sub_101672d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10167320 size=0x34
+#include "CBaseCombatCharacter.h"
+struct Holder;
+bool __fastcall sub_101681a0(Holder *p);
+
+// TARGET: CBaseCombatCharacter::sub_10167320
+bool CBaseCombatCharacter::sub_10167320()
+{
+	if (!sub_101681a0((Holder *)this) && sub_101671a0()) {
+		char *pWeapon = (char *)sub_1032e7b0();
+		if (pWeapon && pWeapon[0x872])
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10167370 size=0x45
 #include "CBaseEntity.h"
 struct CTargetFinder { CBaseEntity *sub_101be1f0(void *pAsker); };
