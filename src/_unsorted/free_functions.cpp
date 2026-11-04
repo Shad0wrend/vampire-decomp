@@ -124858,6 +124858,21 @@ char CUnknown10228020::sub_10228220(CUnknown10248a50 *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10228350 size=0x39
+#include "CSoundEnt.h"
+#include <math.h>
+extern float g_10462950;
+
+// TARGET: sub_10228350
+int sub_10228350(float f)
+{
+	int r = 0;
+	if (f > 0.0f)
+		r = (int)(log10(f * 0.027777777777777776) * 20.0 + g_10462950);
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102283a0 size=0x67
 float sub_102283a0(float cur, float target, float a, float b)
 {

@@ -2581,6 +2581,7 @@
 0x10004da4 func   ?sub_103bcaf0@CNPC_VTzimisce@@QAEHH@Z CNPC_VTzimisce::sub_103bcaf0
 0x10004da9 func   ?sub_1026d7b0@CUnknown1026d7b0@@QAEXHHHH@Z CUnknown1026d7b0::sub_1026d7b0
 0x10004dae func   ?sub_104285d0@@YAXPAUStudioHdr@@HPAM1@Z sub_104285d0
+0x10004db3 func   ?sub_10228350@@YAHM@Z sub_10228350
 0x10004db8 func   ?sub_102308f0@CUnknown102308f0@@QAEHXZ CUnknown102308f0::sub_102308f0
 0x10004dbd func   ?vfunc113@CBreakableProp@@QAEXXZ CBreakableProp::vfunc113
 0x10004dc2 func   ?vfunc113@CDynamicProp@@UAEXXZ CDynamicProp::vfunc113
