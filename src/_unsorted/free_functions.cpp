@@ -115882,6 +115882,29 @@ char *__stdcall sub_10204bf0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10204c20 size=0x29
+struct CUnk10204c20
+{
+    char pad0000[0xc];
+    int m_nScale;
+    int sub_10204c20(int a);
+};
+
+// TARGET: CUnk10204c20::sub_10204c20
+int CUnk10204c20::sub_10204c20(int a)
+{
+    int n = m_nScale;
+    int r;
+    if (n == 1)
+        r = a;
+    else if (n < 0)
+        r = -(a / n);
+    else
+        r = n * a;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10204c60 size=0x9c
 #include "CUnknown10204c60.h"
 #include "CUnknown10205ba0.h"

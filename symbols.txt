@@ -7543,6 +7543,7 @@
 0x1000c450 func   ?sub_1006e4c0@CBaseCineCam@@QAE_NPBDH@Z CBaseCineCam::sub_1006e4c0
 0x1000c455 func   ?vfunc1@CAI_ExpresserSink@@UAE_NXZ CAI_ExpresserSink::vfunc1
 0x1000c45a func   ?vfunc32@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHH@Z CTempEntsSystem::vfunc32
+0x1000c45f func   ?sub_10204c20@CUnk10204c20@@QAEHH@Z CUnk10204c20::sub_10204c20
 0x1000c464 func   ?sub_100aaf30@CBaseEntity@@QAEXXZ CBaseEntity::sub_100aaf30
 0x1000c469 func   ?vfunc1@CPositionInterpolator_CatmullRom@@QAEHHHH@Z CPositionInterpolator_CatmullRom::vfunc1
 0x1000c46e func   ?sub_10325b20@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10325b20
