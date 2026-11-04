@@ -20,6 +20,7 @@ public:
 	bool sub_100c0760(float flStep);	// slows the rotation down: the speed at +0x164 loses (+0x460 * fan friction * a constant), clamped at 0; when that is not above |flStep| the speed becomes flStep (true), else the reduced value (negated for a negative speed) (false); either way handed to sub_100c0420
 	void sub_100c01d0();	// "CFuncRotating::RampPitchVol": the volume (|speed +0x164| / max speed +0x460 times +0x458, clamped to 0..1) and the pitch (30 + 70 * that fraction, clamped to 0..255, 99 for 100) of the running noise (+0x468), sent as a reliable change message to the players that hear it
 	void sub_100c0420(float flSpeed);
+	void sub_100c0010(CBaseEntity *pOther);	// damage and knock back the entity pOther that this rotating brush blocked
 	unsigned char sub_100bf8e0();	// CFuncRotating::vfunc117 body (CBaseEntity::vfunc117 & 0xfd)	// stub 0x10002a59: applies the new speed
 
 	void sub_100c0880();	// think function (stub): when sub_100c0760(0) is true calls sub_100c0970(m_flTargetSpeed), else +0x3fc = +0x3f4 + 0.1
