@@ -211,6 +211,17 @@ void CSave::vfunc13(const char *pszName, void *pData, int count)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019fce0 size=0x22
+#include "CSave.h"
+#include <string.h>
+#pragma intrinsic(strlen)
+
+void CSave::vfunc18(int a, const char *psz)
+{
+	sub_101a05b0(a, strlen(psz) + 1, (int)psz);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019fd20 size=0x59
 #include "CSave.h"
 #include <string.h>

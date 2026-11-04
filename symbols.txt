@@ -12733,6 +12733,7 @@
 0x10013ea8 func   ?sub_100b4010@@YIPAVCBaseEntity@@PAV1@@Z sub_100b4010
 0x10013ead func   ?vfunc80@CItemGOHDiary@@QAEHXZ CItemGOHDiary::vfunc80
 0x10013eb2 func   ?sub_1026ff00@CUnitHelper@@QAEXPBVVector@@PBM@Z CUnitHelper::sub_1026ff00
+0x10013eb7 func   ?vfunc18@CSave@@UAEXHPBD@Z CSave::vfunc18
 0x10013ebc func   _item_k_museum_basement_key item_k_museum_basement_key
 0x10013ec1 func   ?vfunc103@CTempEntTester@@UAEXXZ CTempEntTester::vfunc103
 0x10013ec6 func   ?sub_1006c470@@YAXPAUCUnit1006c470@@HH@Z sub_1006c470
