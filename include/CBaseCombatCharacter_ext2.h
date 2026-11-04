@@ -1,7 +1,8 @@
 	float vfunc346(int iParameter, float flValue, char bClamp);	// slot 346 "CBaseCombatCharacter::SetPoseParameter": scope trace (entity name), remembers the value for the matching pose slot (+0x1064 / +0x106c), clamps it to the pose parameter's range (wrapping loops) when asked, then CBaseAnimating::SetPoseParameter
 	void *sub_100952d0(int a);	// CBaseAnimating::GetModelPtr (stub 0x10013d8b), called directly
 	float sub_10091fe0(int iParameter, float flValue);	// CBaseAnimating::SetPoseParameter (slot 260, stub 0x100059b1), called directly
-	void vfunc356();	// slot 356 "CBaseCombatCharacter::PrayerBegin": scope trace (entity name), float 2.0f at +0x1494, curtime + 2.0f at +0x1490, +0xff0 = 0x131, sub_100b2e30(zero vector), and slot 93(0, 0) when the object at +0xa8 is set
+	void vfunc356();
+	void vfunc357();	// slot 356 "CBaseCombatCharacter::PrayerBegin": scope trace (entity name), float 2.0f at +0x1494, curtime + 2.0f at +0x1490, +0xff0 = 0x131, sub_100b2e30(zero vector), and slot 93(0, 0) when the object at +0xa8 is set
 	void *sub_1032e120(const char *pszName);	// "CBaseCombatCharacter::Weapon_Create": scope trace (entity name), null for "Nothing" (case-insensitive), else sub_100a99d0(pszName, slot 220(slot 221(this)))
 	bool sub_10335a70(CBaseEntity *pOther);	// "CBaseCombatCharacter::Inventory_Can_Wield" (team test): scope trace (entity name), false for null, else the global at 0x1073a300 (sub_101ed0f0) applied to the engine indices of both edicts
 	void sub_10334b10();	// "CBaseCombatCharacter::Inventory_Destroy": scope trace (entity name), for each weapon slot 0..0xdf that holds a weapon: sub_101cd940(weapon), weapon+0x73c = 0xff, SetWeapon(i, null); then the active weapon handle (+0x19a4) and +0x10dc become -1
