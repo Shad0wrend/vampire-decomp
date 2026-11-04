@@ -70082,6 +70082,107 @@ int CBasePlayer::sub_10165790(CBaseEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10166120 size=0x2ea
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+#include "CBaseCombatCharacter.h"
+#include "CEntityVSlots.h"
+#include "CEntitySoundOriginView.h"
+#include "CEdictView.h"
+#include "CPASAttenuationFilter.h"
+#include "CUnknown101c26d0.h"
+
+extern char g_10726004;
+
+// TARGET: CBasePlayer::sub_10166120
+void CBasePlayer::sub_10166120()
+{
+	if (vfunc94() == 9)
+	{
+		m_fl22FC = gpGlobals->curtime + 12.0f;
+		return;
+	}
+	if (((CBaseEntity *)this)->m_iHealth < 0)
+		return;
+
+	if (m_n03E0 != 3)
+	{
+		m_fl22FC = gpGlobals->curtime + 12.0f;
+		m_n2344 = 2;
+		if (m_n2284 > m_n2288)
+		{
+			m_b0EA0 = 0;
+			m_flags0E98 = (m_flags0E98 & ~0x4000) | 0x80000;
+		}
+	}
+	else
+	{
+		if (((CBaseCombatCharacter *)this)->sub_10337f30())
+			goto tail;
+
+		m_b0EA0 = 0;
+		m_flags0E98 &= ~0x80000;
+		if (m_fl22FC < gpGlobals->curtime)
+		{
+			if (m_fl2300 < gpGlobals->curtime)
+			{
+				m_n2344++;
+				if (m_n2344 > 5)
+					m_n2344 = 5;
+
+				CEdictView *pEdict1 = (CEdictView *)EngineGlobals::g_1070b22c->vfunc38(0);
+				CBaseEntity *pInflictor = (pEdict1 && pEdict1->m_pUnk) ? (CBaseEntity *)pEdict1->m_pUnk->vfunc4() : 0;
+				CEdictView *pEdict2 = (CEdictView *)EngineGlobals::g_1070b22c->vfunc38(0);
+				CBaseEntity *pAttacker = (pEdict2 && pEdict2->m_pUnk) ? (CBaseEntity *)pEdict2->m_pUnk->vfunc4() : 0;
+
+				CUnknown101c26d0 dmg;
+				((CEntityVSlots *)this)->slot142(dmg.sub_101c26d0(pAttacker, pInflictor, (float)m_n2344, 0x4000, 0, 0, -1));
+
+				m_fl2300 = gpGlobals->curtime + 1.0f;
+				m_n2284 += m_n2344;
+			}
+		}
+		else
+		{
+			m_flags0E98 &= ~0x4000;
+		}
+	}
+
+tail:
+	if (m_n03E0 < 2)
+	{
+		if (m_n03E0 == 0)
+		{
+			if (((CBaseEntity *)this)->sub_100b3700() & 0x200)
+			{
+				g_10726004 = 0;
+				((CBaseEntity *)this)->sub_100b3640(0x200);
+			}
+		}
+		else
+		{
+			g_10726004 = 0;
+		}
+	}
+	else
+	{
+		if (m_n03E0 > 2)
+		{
+			if (!g_10726004)
+			{
+				CPASAttenuationFilter filter((CEntitySoundOriginView *)this, 0.8f);
+				g_10726004 = 1;
+			}
+		}
+		else
+		{
+			if (!(((CBaseEntity *)this)->sub_100b3700() & 0x200))
+				((CBaseEntity *)this)->sub_100b3580(0x200);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101664d0 size=0x13
 struct CVirtSlots94 {
     virtual void vfunc0();

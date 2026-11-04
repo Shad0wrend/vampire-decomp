@@ -11392,6 +11392,7 @@
 0x1001209e func   ?vfunc0@?$CUtlVectorDataOps@V?$CUtlVector@Uthinkfunc_t@@V?$CUtlMemory@Uthinkfunc_t@@@@@@$08@@UAEXPAX0@Z CUtlVectorDataOps<CUtlVector<thinkfunc_t,CUtlMemory<thinkfunc_t> >,9>::vfunc0
 0x100120a3 func   ?vfunc138@CNPC_VNewscaster@@UAEHXZ CNPC_VNewscaster::vfunc138
 0x100120a8 func   ?sub_101dbc60@CUnknown101dbc60@@QAEXXZ CUnknown101dbc60::sub_101dbc60
+0x100120ad func   ?sub_10166120@CBasePlayer@@QAEXXZ CBasePlayer::sub_10166120
 0x100120b2 func   ?vfunc5@CMultiSource@@QAEPAV1@I@Z CMultiSource::vfunc5
 0x100120b7 func   ?sub_1024eaa0@@YAXPAXPBVVector@@1@Z sub_1024eaa0
 0x100120c1 func   ?vfunc87@CBaseEntity@@UAEXPAX@Z CBaseEntity::vfunc87
