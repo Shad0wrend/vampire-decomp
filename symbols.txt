@@ -6293,6 +6293,7 @@
 0x1000a62d func   ?vfunc144@CAI_BaseNPCTroika@@UAEXH@Z CAI_BaseNPCTroika::vfunc144
 0x1000a632 func   ?sub_1028e830@CUnknown1028e830@@QAEMM@Z CUnknown1028e830::sub_1028e830
 0x1000a637 func   ?vfunc35@CSingleplayRules@@UAEXPAVCBaseEntity@@@Z CSingleplayRules::vfunc35
+0x1000a63c func   ?sub_100990f0@CBaseAnimatingOverlay@@QAEHHH@Z CBaseAnimatingOverlay::sub_100990f0
 0x1000a641 func   _item_k_oh_front_key item_k_oh_front_key
 0x1000a64b func   ?sub_1042d650@CUnknown1042d650@@QAEPAU1@XZ CUnknown1042d650::sub_1042d650
 0x1000a650 func   ?vfunc32@CGameRules@@UAE_NHH@Z CGameRules::vfunc32

@@ -28926,6 +28926,32 @@ void CAnimationLayerAdvance::sub_10098cd0(int unused, void *pListener, void *pEn
 }
 // END FUNCTION
 
+// FUNCTION: 0x100990f0 size=0x31
+#include "CBaseAnimatingOverlay.h"
+#include "CBCCSlotViews.h"
+
+class COverlaySlotView100990f0
+{
+public:
+	VIEW_SLOT100(0) VIEW_SLOT100(1)
+	VIEW_SLOT10(20) VIEW_SLOT10(21) VIEW_SLOT10(22) VIEW_SLOT10(23) VIEW_SLOT10(24) VIEW_SLOT10(25)
+	VIEW_SLOT(260) VIEW_SLOT(261) VIEW_SLOT(262) VIEW_SLOT(263) VIEW_SLOT(264) VIEW_SLOT(265) VIEW_SLOT(266) VIEW_SLOT(267)
+	virtual void vfunc268(int index, int a, int sequence, int b);
+	VIEW_SLOT(269) VIEW_SLOT(270) VIEW_SLOT(271)
+	virtual int vfunc272();
+};
+
+// TARGET: CBaseAnimatingOverlay::sub_100990f0
+int CBaseAnimatingOverlay::sub_100990f0(int sequence, int b)
+{
+	COverlaySlotView100990f0 *pView = (COverlaySlotView100990f0 *)this;
+	int index = pView->vfunc272();
+	if (index != -1)
+		pView->vfunc268(index, -1, sequence, b);
+	return index;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10099140 size=0x4e
 #include "CBaseAnimatingOverlay.h"
 int CBaseAnimatingOverlay::sub_10099140(int sequence, float flDivisor, int b)
