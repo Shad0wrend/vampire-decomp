@@ -74655,6 +74655,57 @@ void CUnknown10183100::sub_10183100(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10183120 size=0x134
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+// TARGET: CBasePlayer::sub_10183120
+#include "CBasePlayer.h"
+#include "CVStatList_t.h"
+#include "CUnk10230f00.h"
+#include "engineserver.h"
+
+struct CEventOwner10183120
+{
+	bool sub_100ce450(CBasePlayer *pOwner, const CUnk10230f00 *pKey);
+	bool sub_100ce600(int *pOut);
+	bool sub_100ce630(float flDelay);
+};
+
+extern CEventOwner10183120 g_106e7050;
+
+void CBasePlayer::sub_10183120(int nOldIndex, int nNewIndex, float flOldScale, float flNewScale)
+{
+	if (nOldIndex == nNewIndex)
+		return;
+
+	int i = 0;
+	float *pDuration = m_flClientVActiveDisciplineDurations;
+	for (; i < 0x11; i++, pDuration++)
+	{
+		CVStatList_t *pList = CVStatListSet::Of(this)->Find(3);
+		if (pList->sub_102012d0(i))
+		{
+			CUnk10230f00 key;
+			key.sub_10230f00(3, i);
+
+			if (g_106e7050.sub_100ce450(this, &key))
+			{
+				float flRecordTime;
+				if (g_106e7050.sub_100ce600((int *)&flRecordTime))
+				{
+					float flDiff = flRecordTime - EngineGlobals::g_1070b22c->vfunc119(0);
+					volatile float flNewDuration = *pDuration - flDiff;
+					float flDelta = flDiff * flOldScale;
+					flDelta = flDelta / flNewScale;
+					if (g_106e7050.sub_100ce630(flDelta))
+						*pDuration = flNewDuration + flDelta;
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101832b0 size=0x60
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"

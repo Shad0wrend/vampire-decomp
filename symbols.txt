@@ -3740,6 +3740,7 @@
 0x10006abe func   ?sub_101d08e0@@YAMABVVector@@MM@Z sub_101d08e0
 0x10006ac3 func   ?sub_101816c0@CBasePlayer@@QAEXPBD@Z CBasePlayer::sub_101816c0
 0x10006ac8 func   ?sub_102b5220@Helper@@QAEXPAX@Z Helper::sub_102b5220
+0x10006acd func   ?sub_10183120@CBasePlayer@@QAEXHHMM@Z CBasePlayer::sub_10183120
 0x10006ad7 func   ?vfunc144@CGeneric_NPC@@UAEXH@Z CGeneric_NPC::vfunc144
 0x10006adc func   ?sub_101e9a80@HOwner@@QAEDPBD@Z HOwner::sub_101e9a80
 0x10006ae1 func   ?vfunc8@PyServerSystem@@UAEPAV1@I@Z PyServerSystem::vfunc8
