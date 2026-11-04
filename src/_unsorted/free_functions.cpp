@@ -62020,6 +62020,39 @@ void CUnknown101337a0::sub_101337a0(inputdata_t &data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10133870 size=0x3f
+extern float g_104454c4;
+
+struct CArg10133870
+{
+	int m_n0000;
+	int m_n0004;
+	float m_f0008;
+	char m_pad000c[0xc];
+	int m_n0018;
+};
+
+struct CUnknownSelf10133870
+{
+	char m_pad0000[0x45c];
+	float m_f045c;
+	void sub_10133950(int a, float f);
+	void sub_10133870(CArg10133870 *p);
+};
+
+// TARGET: CUnknownSelf10133870::sub_10133870
+void CUnknownSelf10133870::sub_10133870(CArg10133870 *p)
+{
+	float flScale = m_f045c;
+	float f;
+	if (p->m_n0018 == 1)
+		f = p->m_f0008;
+	else
+		f = g_104454c4;
+	sub_10133950(p->m_n0000, f * flScale);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10133910 size=0x30
 #include "CMathCounter.h"
 extern float g_104454c4;

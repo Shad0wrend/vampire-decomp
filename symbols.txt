@@ -5285,6 +5285,7 @@
 0x10008d82 func   _env_floating_camera env_floating_camera
 0x10008d8c func   ?sub_101193b0@@YAHXZ sub_101193b0
 0x10008d91 func   ?sub_102c3350@S@@QAEXPAUinputdata_t@@@Z S::sub_102c3350
+0x10008d96 func   ?sub_10133870@CUnknownSelf10133870@@QAEXPAUCArg10133870@@@Z CUnknownSelf10133870::sub_10133870
 0x10008da0 func   ?sub_103639b0@CUnknown103639b0@@QAEXHH@Z CUnknown103639b0::sub_103639b0
 0x10008daa func   ?sub_101a6500@@YIXPAX@Z sub_101a6500
 0x10008daf func   ?vfunc0@CVTSDependencySaveRestoreDataOps@@UAEXPAUCVTSDependencyField@@PAVCSave@@@Z CVTSDependencySaveRestoreDataOps::vfunc0
