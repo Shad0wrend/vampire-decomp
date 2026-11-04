@@ -115617,6 +115617,36 @@ int __cdecl sub_10203920(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10203950 size=0x26
+#include "string_t.h"
+
+struct CObj10203950 {
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual void vfunc2();
+	virtual void vfunc3();
+	virtual void vfunc4();
+	virtual void vfunc5();
+	virtual void vfunc6();
+	virtual void vfunc7();
+	virtual void vfunc8();
+	virtual void vfunc9();
+	virtual void vfunc10();
+	virtual void vfunc11();
+	virtual void vfunc12();
+	virtual const char *vfunc13(int arg, const char *pszDefault);
+};
+
+extern char g_106b8540[];
+string_t sub_10203ed0(const char *psz);
+
+// TARGET: sub_10203950
+string_t sub_10203950(CObj10203950 *pObj, int arg)
+{
+	return sub_10203ed0(pObj->vfunc13(arg, g_106b8540));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10203990 size=0x1a9
 #include "vampire_all.h"
 extern int g_1074edd4;

@@ -12098,6 +12098,7 @@
 0x10012efe func   ?sub_10178550@CUnknown10178550@@QAEHHHH@Z CUnknown10178550::sub_10178550
 0x10012f03 func   ?vfunc82@CBaseLandmark@@UAEPAUdatamap_t@@XZ CBaseLandmark::vfunc82
 0x10012f08 func   _item_g_oh_diary item_g_oh_diary
+0x10012f0d func   ?sub_10203950@@YA?AUstring_t@@PAUCObj10203950@@H@Z sub_10203950
 0x10012f12 func   ?sub_10044db0@CUtlMap16@@QAEXII@Z CUtlMap16::sub_10044db0
 0x10012f17 func   ??0CUnknown103f04f0@@QAE@ABV0@@Z CUnknown103f04f0::CUnknown103f04f0
 0x10012f17 func   ?sub_103f04f0@CUnknown103f04f0@@QAEPAV1@ABV1@@Z CUnknown103f04f0::sub_103f04f0
