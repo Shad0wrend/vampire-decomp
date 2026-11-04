@@ -130421,6 +130421,21 @@ int __cdecl sub_10247520(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10247770 size=0x1f
+struct CUnk10247770
+{
+    char m_pad0000[8];
+    __int64 m_n08;
+    __int64 m_n10;
+    void sub_10247770();
+};
+void CUnk10247770::sub_10247770()
+{
+    if (m_n10 < m_n08)
+        m_n10 = m_n08;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102477a0 size=0x9
 struct CUnknown102477a0 { int a; int b; int c; int d; void sub_102477a0(); };
 // TARGET: CUnknown102477a0::sub_102477a0
