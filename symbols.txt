@@ -3555,6 +3555,7 @@
 0x10006555 func   ?sub_10158ab0@@YAXPAUCPhysObjView1@@0@Z sub_10158ab0
 0x1000655a func   ?sub_10032bb0@CUtlVector88@@QAEXHH@Z CUtlVector88::sub_10032bb0
 0x1000655f func   ?vfunc608@CAI_BaseNPCTroika@@UAE_NPBD@Z CAI_BaseNPCTroika::vfunc608
+0x10006564 func   ?sub_10428d50@@YAPADPAUCStrTable10428d50@@H@Z sub_10428d50
 0x10006569 func   ?sub_103e7b10@@YAHXZ sub_103e7b10
 0x1000656e func   ?sub_101f74e0@@YI_NPAH@Z sub_101f74e0
 0x10006573 func   ?sub_101afd90@@YGDH@Z sub_101afd90

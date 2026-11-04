@@ -201189,6 +201189,28 @@ int sub_10428ce0(SeqHdr *hdr, int value, int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10428d50 size=0x35
+extern char g_106b8540[];
+
+struct CStrTable10428d50 {
+	char m_pad[0x140];
+	int m_nCount;
+	int m_nTableOfs;
+};
+
+// TARGET: sub_10428d50
+char *sub_10428d50(CStrTable10428d50 *pTable, int index)
+{
+	char *base = (char *)pTable;
+	if (!base)
+		return g_106b8540;
+	if (index > pTable->m_nCount)
+		return g_106b8540;
+	char *entry = base + pTable->m_nTableOfs + index * 16;
+	return entry + *(int *)entry;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10428da0 size=0x58
 struct CStudioNamedView { char m_pad[0x140]; int m_nCount; int m_nIndex; };
 extern "C" __declspec(dllimport) int Q_strcasecmp(const char *a, const char *b);
