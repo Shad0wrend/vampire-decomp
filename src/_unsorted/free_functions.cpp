@@ -182558,6 +182558,37 @@ extern "C" CNPC_VNewscaster *npc_VNewscaster()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039ff60 size=0x6c
+#include "utlvector.h"
+
+extern int vt_104bf634;
+extern int vt_104bf604;
+void __fastcall sub_1028d230(void *pThis);
+
+// the members the CNPC_VNewscaster constructor builds (+0x665c .. +0x6690); the two 5-dword blocks are
+// zero-initialised like CUtlVectors (their element types are not known), which keeps the vptr store after them
+struct CNewscasterParts
+{
+	char pad0[0x665c];
+	CUtlVector<int> m_v665c;
+	CUtlVector<int> m_v6670;
+	int m_n6684, m_n6688;
+	char pad668c[4];
+	char m_b6690;
+	CNewscasterParts() : m_n6684(0), m_n6688(0), m_b6690(0) {}
+};
+
+// TARGET: sub_1039ff60
+int *__fastcall sub_1039ff60(int *pThis)
+{
+	sub_1028d230(pThis);
+	((CNewscasterParts *)pThis)->CNewscasterParts::CNewscasterParts();
+	pThis[0] = (int)&vt_104bf634;
+	pThis[0x66c] = (int)&vt_104bf604;
+	return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a0d50 size=0x10e
 #include "CNPC_VNewscaster.h"
 
