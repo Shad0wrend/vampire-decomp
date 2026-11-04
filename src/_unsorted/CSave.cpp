@@ -246,6 +246,17 @@ void CSave::vfunc22(const char *pszName, const Vector &value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019fdd0 size=0x2b
+#include "CSave.h"
+
+// TARGET: CSave::vfunc21
+void CSave::vfunc21(const char *pszName, const void *pData, int count)
+{
+	sub_101a05f0(pszName, count * sizeof(Vector));
+	sub_1000643d(pData, count * sizeof(Vector));
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a0260 size=0x8a
 #include "datamap.h"
 #include "CSave.h"

@@ -6696,6 +6696,7 @@
 0x1000afce func   ?vfunc81@CWeaponMelee_TzimisceMelee@@UAEHXZ CWeaponMelee_TzimisceMelee::vfunc81
 0x1000afd3 func   ?sub_102ecce0@@YIXPAUCOwner@@@Z sub_102ecce0
 0x1000afd8 func   ?sub_102575d0@CBaseEntity@@QAEXPAV1@HH@Z CBaseEntity::sub_102575d0
+0x1000afdd func   ?vfunc21@CSave@@UAEXPBDPBXH@Z CSave::vfunc21
 0x1000afe2 func   ?sub_1013dd10@@YGDH@Z sub_1013dd10
 0x1000afe7 func   ?vfunc230@CBreakable@@QAEXHH@Z CBreakable::vfunc230
 0x1000afec func   ?sub_100ed3b0@@YAHXZ sub_100ed3b0
