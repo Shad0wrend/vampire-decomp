@@ -6006,6 +6006,7 @@
 0x10009f4d func   ?sub_10113780@@YAHXZ sub_10113780
 0x10009f52 func   ?sub_10325c10@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10325c10
 0x10009f57 func   ?sub_10245770@CFlagHolder245770@@QAE_NI@Z CFlagHolder245770::sub_10245770
+0x10009f5c func   ?sub_102e2d70@@YAHPAUCEdictOwnerView@@@Z sub_102e2d70
 0x10009f61 func   ?sub_101be500@CStealthKillRulesUnit@@QAE_NPAVCBaseEntity@@0@Z CStealthKillRulesUnit::sub_101be500
 0x10009f66 func   ?sub_101ea0b0@CUnknown101f0e50@@QAEPAVCVTraitEffectGroup_t@@H@Z CUnknown101f0e50::sub_101ea0b0
 0x10009f6b func   ?sub_1014e500@@YA_NXZ sub_1014e500

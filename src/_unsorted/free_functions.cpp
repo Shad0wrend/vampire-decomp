@@ -154980,6 +154980,23 @@ int sub_102e2d40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e2d70 size=0x33
+struct CEdictOwnerView {
+    char pad0[0x94];
+    int m_n94;
+    char pad1[0x2e0 - 0x98];
+    int m_n2e0;
+};
+
+// TARGET: sub_102e2d70
+int sub_102e2d70(CEdictOwnerView *p)
+{
+    if (p->m_n94 != 0)
+        return -3;
+    return engine->vfunc35(p->m_n2e0) ? -1 : -2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e30d0 size=0x28
 #include "CTraceFilterNav.h"
 
