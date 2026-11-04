@@ -118054,6 +118054,37 @@ extern "C" CBaseEntity *item_container()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102087e0 size=0x64
+#include "CItemContainer.h"
+#include "CBaseHandle.h"
+
+extern void *vt_10483d14[];
+
+struct CItemContainerParts	// the members the container constructor builds (+0x19b0 .. +0x1a30)
+{
+	char pad0[0x19b0];
+	COutputEvent m_Output19b0;
+	COutputEvent m_Output19c8;
+	COutputEvent m_Output19e0;
+	char pad19f8[0x1a28 - 0x19f8];
+	CBaseHandle m_hUser;
+	CBaseHandle m_hLock;
+	CItemContainerParts() {}
+};
+
+CItemContainer *CItemContainer::sub_102087e0()
+{
+	sub_100046c9();
+	((CItemContainerParts *)this)->CItemContainerParts::CItemContainerParts();
+	*(void ***)this = vt_10483d14;
+	*((char *)this + 0x1480) = 1;
+	*((char *)this + 0x1481) = 0;
+	*(int *)((char *)this + 0x1a34) = 6;
+	*(int *)((char *)this + 0x158c) = 3;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10208b00 size=0x32
 #include "CItemContainer.h"
 extern char g_10483d14;
