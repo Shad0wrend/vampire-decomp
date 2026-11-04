@@ -120081,6 +120081,22 @@ void CBaseTerminal::sub_10218820(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102189b0 size=0x20
+#include <string.h>
+struct CUnk102189b0
+{
+    void sub_102189e0(const char *psz);
+    void sub_102189b0();
+};
+void CUnk102189b0::sub_102189b0()
+{
+    char buf[4];
+    memset(buf, ' ', 3);
+    buf[3] = 0;
+    sub_102189e0(buf);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102189e0 size=0x14d
 #include "CBaseEntity.h"
 #include "CPropHacking.h"
