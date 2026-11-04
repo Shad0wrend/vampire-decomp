@@ -175275,6 +175275,72 @@ bool CNPC_VChangBros::sub_1036d270(float *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036d350 size=0x220
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown103160c0.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VChangBros.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+#include "RTTI.h"
+#include "Vector.h"
+
+extern char g_1054abdc[];
+extern char g_10630064[];
+
+static inline float Dist(const Vector &a, const Vector &b)
+{
+	float dx = a.x - b.x;
+	float dy = a.y - b.y;
+	float dz = a.z - b.z;
+	return FastSqrt(dx * dx + dy * dy + dz * dz);
+}
+
+bool CNPC_VChangBros::sub_1036d350(const Vector *pPos, float flRadius)
+{
+	ScopeTrace trace("CNPC_VChangBros::PositionClearForTeleport", g_106b8540);
+
+	Vector *pOrigin = ((CEntityVSlots *)this)->slot217();
+	if (Dist(*pOrigin, *pPos) < flRadius)
+		return false;
+
+	if (Dist(m_vLastTeleportPosition, *pPos) < 100.0f)
+		return false;
+
+	if (m_n5bb0 > 0)
+		return true;
+	if (!m_p5da4)
+		return true;
+
+	CUnknown103160c0 *pSquad = (CUnknown103160c0 *)m_p5da4;
+	if (pSquad->sub_10315a80(pPos, flRadius))
+		return false;
+
+	for (int i = 0; i < pSquad->sub_103160a0(); i++)
+	{
+		CBaseEntity *pEnt = pSquad->sub_103160c0(i);
+		if (!pEnt)
+			continue;
+		CNPC_VChangBros *pOther = (CNPC_VChangBros *)__RTDynamicCast(pEnt, 0, g_1054abdc, g_10630064, 0);
+		if (!pOther || pOther == this)
+			continue;
+		Vector v;
+		if (!pOther->sub_1036d270(&v.x))
+			continue;
+		if (Dist(v, *pPos) < flRadius)
+			return false;
+	}
+
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036dc60 size=0x8a
 #include "CNPC_VChangBros.h"
 
