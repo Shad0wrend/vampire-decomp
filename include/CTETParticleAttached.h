@@ -7,6 +7,7 @@ class CTETParticleAttached
 public:
 
 	void sub_100021e9();	// destructor body
+	CTETParticleAttached *sub_10069a10(int a);	// constructor: base temp entity ctor, vtable, fields
 	void vfunc4(int a, int b);	// as in CTEMetalSparks (transplant)
 	char m_pad0004[0xc - 4];
 	int m_nEntIndex;	// 0x0c: engine index of the entity the particles attach to
