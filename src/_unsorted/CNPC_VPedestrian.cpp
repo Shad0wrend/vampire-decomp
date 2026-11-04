@@ -115,6 +115,75 @@ void CNPC_VPedestrian::vfunc420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a25a0 size=0x29e
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VPedestrian.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+#include "Vector.h"
+
+void CNPC_VPedestrian::vfunc130(int a)
+{
+	CEntityVSlots *pThis = (CEntityVSlots *)this;
+
+	sub_10002b99( a );
+	if ( !(char)a )
+		return;
+	if ( m_eLevelResetType == 2 )
+		return;
+
+	if ( !pThis->slot158() )
+	{
+		if ( m_eLevelResetType != 0 )
+			return;
+	}
+
+	if ( sub_100b5190() )
+		return;
+
+	sub_10334b10();
+	if ( !pThis->slot158() )
+		sub_101cf390( (int)this, (int)m_vecMins6660, (int)m_vecMaxs666c );
+
+	pThis->slot420();
+
+	sub_102c4430( g_106b8540 );
+	sub_101cf5c0( (CBaseEntity *)this, (int)&m_vecInitialPosition, 0 );
+	pThis->slot64( (const float *)&m_qaInitialAngles );
+
+	{
+		ScopeTrace st( "CBaseEntity::SetSolidFlags", m_name26c ? m_name26c : g_106b8540 );
+		( (CCollisionProperty *)( (char *)this + 0x270 ) )->sub_100dc580( 0 );
+	}
+	{
+		ScopeTrace st( "CBaseEntity::AddSolidFlags", m_name26c ? m_name26c : g_106b8540 );
+		( (CCollisionProperty *)( (char *)this + 0x270 ) )->AddSolidFlags( 1 );
+	}
+	{
+		ScopeTrace st( "CBaseEntity::AddSolidFlags", m_name26c ? m_name26c : g_106b8540 );
+		( (CCollisionProperty *)( (char *)this + 0x270 ) )->AddSolidFlags( 0x40 );
+	}
+	{
+		ScopeTrace st( "CBaseEntity::SetSolid", m_name26c ? m_name26c : g_106b8540 );
+		( (CCollisionProperty *)( (char *)this + 0x270 ) )->sub_100dc480( 2 );
+	}
+
+	pThis->slot93( 4, 0 );
+	sub_10273070( 0 );
+	sub_101cf600( (void *)this );
+	pThis->slot223();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a28f0 size=0x6
 #include "CNPC_VPedestrian.h"
 int CNPC_VPedestrian::vfunc473()

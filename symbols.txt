@@ -11048,6 +11048,7 @@
 0x100118f6 func   ?sub_101dae70@S6@@QAEPAU1@H@Z S6::sub_101dae70
 0x100118fb func   ?vfunc1@CTEBaseBeam@@UAEHXZ CTEBaseBeam::vfunc1
 0x10011900 func   ?sub_100339b0@@YIXPAUSEntView@@HPAM11@Z sub_100339b0
+0x10011905 func   ?vfunc130@CNPC_VPedestrian@@UAEXH@Z CNPC_VPedestrian::vfunc130
 0x1001190f func   ?vfunc10@CGameMovement@@UAEXAAVVector@@MM@Z CGameMovement::vfunc10
 0x10011914 func   ?NewNode@?$CUtlRBTree@UCRBEntry8_10047280@@G@@QAEGXZ CUtlRBTree<CRBEntry8_10047280,unsigned short>::NewNode
 0x10011914 func   ?NewNode@?$CUtlRBTree@UCRBTree16Entry8@@G@@QAEGXZ CUtlRBTree<CRBTree16Entry8,unsigned short>::NewNode
