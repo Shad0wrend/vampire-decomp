@@ -142239,6 +142239,75 @@ int CAI_BaseNPCTroika::sub_1029f780(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029ff40 size=0x1eb
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CUnknown101d7520.h"
+#include "vampire.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+#include "AITrace.h"
+#include "CDevFlagObj.h"
+#include "Vector.h"
+#include "CBaseHandle.h"
+
+CBaseEntity *sub_100ab250(void *pEdict);
+
+extern CDevFlagObj *g_10924a6c;
+extern float g_104454c4;
+extern float g_1049a1d0;
+
+void CAI_BaseNPCTroika::sub_1029ff40(CBaseEntity *pOther)
+{
+	if (!(!(!(!m_bJumping)))) { CBaseEntity *pEntity;
+	CBaseEntity *pSelf = (CBaseEntity *)this;
+	{
+		void *pent = engine->vfunc38(0);
+		ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+		if (!pent)
+			pent = engine->vfunc38(0);
+		pEntity = sub_100ab250(pent);
+	}
+
+	if (!pOther->sub_100b5110() && pEntity != pOther)
+	{
+		CAI_BaseNPCTroika *pNPC = pOther->m_pNPC98;
+		if (!pNPC)
+			return;
+		g_10924a6c->vfunc1();
+		sub_100041b0(0x37);
+		m_h6010 = *((IHandleEntity *)pNPC)->vfunc1();
+		return;
+	} else { CGameTrace trace;
+	sub_1003e250(&trace);
+
+	Vector vecNormal; vecNormal = *(Vector *)trace.m_planeNormal;
+	if (0.70710677f > (g_104454c4 * (*(trace.m_planeNormal + 1) + trace.m_planeNormal[0]) + trace.m_planeNormal[2]))
+	{
+		char flags = (char)(pSelf->m_flags268 >> 12);
+		if ((flags & 1) != 0)
+			pSelf->sub_100b1d10();
+
+		Vector vecVelocity = pSelf->m_vecVelocity3bc;
+		if (vecVelocity.LengthSqr() > g_1049a1d0 * g_1049a1d0)
+		{
+			VectorNormalize(vecVelocity);
+			if (DotProduct(vecNormal, vecVelocity) < -0.70710677f)
+			{
+				g_10924a6c->vfunc1();
+				sub_100041b0(0x36);
+			}
+		}
+	} } } else return;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a0b90 size=0x1b
 struct CUnknown102a0b90 { int sub_102a0b90(int); };
 int CUnknown102a0b90::sub_102a0b90(int a0)

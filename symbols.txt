@@ -7806,6 +7806,7 @@
 0x1000cb62 func   ?sub_101d26b0@@YAXVVector@@HHHHH@Z sub_101d26b0
 0x1000cb6c func   ?vfunc5@CDisciplineWeapon@@QAEPAV1@I@Z CDisciplineWeapon::vfunc5
 0x1000cb71 func   ?vfunc5@CMessage@@QAEPAV1@I@Z CMessage::vfunc5
+0x1000cb76 func   ?sub_1029ff40@CAI_BaseNPCTroika@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPCTroika::sub_1029ff40
 0x1000cb80 func   ?sub_1024aa70@CUtlRBTree16Unit@@QAEXG@Z CUtlRBTree16Unit::sub_1024aa70
 0x1000cb85 func   ?sub_101ca8f0@@YAPAXXZ sub_101ca8f0
 0x1000cb8a func   ??1CBaseEntity@@QAE@XZ CBaseEntity::~CBaseEntity
