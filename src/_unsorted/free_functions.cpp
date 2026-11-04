@@ -109019,6 +109019,25 @@ void *sub_101f2f30(int *p, int unused, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f2f70 size=0x3f
+#include <string.h>
+#include <stdlib.h>
+
+// TARGET: sub_101f2f70
+char *sub_101f2f70(const char *pszSrc)
+{
+    char *pszDst = 0;
+    if (pszSrc != 0) {
+        int nLen = strlen(pszSrc);
+        char *p = (char *)malloc(nLen + 1);
+        memcpy(p, pszSrc, nLen);
+        p[nLen] = 0;
+        pszDst = p;
+    }
+    return pszDst;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f3000 size=0x14
 #include <stdlib.h>
 
