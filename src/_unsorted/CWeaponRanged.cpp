@@ -175,6 +175,23 @@ void sub_10238350()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10239210 size=0x2c
+#include "CWeaponRanged.h"
+
+unsigned char __fastcall sub_102391c0(void *pThis);
+
+// TARGET: CWeaponRanged::vfunc328
+int CWeaponRanged::vfunc328()
+{
+	if (*(int *)((char *)this + 0x86c) - 1 != 0) {
+		unsigned char c = sub_102391c0(this);
+		return ((c != 0 ? -1 : 0) & 0x1f) + 0xbc;
+	}
+	unsigned char c = sub_102391c0(this);
+	return (c != 0 ? -4 : 0) + 0xe0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10239250 size=0x8
 #include "CWeaponRanged.h"
 // TARGET: CWeaponRanged::vfunc329

@@ -9080,6 +9080,7 @@
 0x1000e818 func   ?vfunc378@CItemContainer@@QAE_NHH@Z CItemContainer::vfunc378
 0x1000e81d func   _item_w_rem_m_700_bach item_w_rem_m_700_bach
 0x1000e827 func   ?sub_10267350@@YAXXZ sub_10267350
+0x1000e82c func   ?vfunc328@CWeaponRanged@@UAEHXZ CWeaponRanged::vfunc328
 0x1000e831 func   ?vfunc147@CBaseDMStart@@QAEHH@Z CBaseDMStart::vfunc147
 0x1000e836 func   ?vfunc461@CNPC_VZombie@@UAEHXZ CNPC_VZombie::vfunc461
 0x1000e83b func   ?vfunc2@?$CUtlVectorDataOps@V?$CUtlVector@UUnreachableEnt_t@@V?$CUtlMemory@UUnreachableEnt_t@@@@@@$08@@UAE_NPAX@Z CUtlVectorDataOps<CUtlVector<UnreachableEnt_t,CUtlMemory<UnreachableEnt_t> >,9>::vfunc2
