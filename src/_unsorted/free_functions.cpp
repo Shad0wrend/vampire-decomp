@@ -127656,6 +127656,15 @@ char CUnknown1023b570::sub_1023b570()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023b5b0 size=0x14
+struct CUnknown1023b5b0 { void sub_1023b5b0(int); };
+void CUnknown1023b5b0::sub_1023b5b0(int a0)
+{
+    *(volatile int *)((char *)this + 0x518) = a0;
+    *(volatile unsigned char *)((char *)this + 0x1b1) = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023bb60 size=0xa
 namespace lifted {
 int sub_10004836();
