@@ -86,7 +86,7 @@ public:
 	virtual char vfunc587(int unused);	// slot 587: true when the NPC may be interrupted: not busy with sub_10337f30, no value at +0x128, no count at +0x5bb4, bit 4 of +0x5b84 clear, not busy with discipline, and either the count at +0x6354 or the one at +0x6358 is at most 2
 	virtual void vfunc588(); virtual void vfunc589(int a, int b);
 	virtual char vfunc590();	// slot 590: true when the NPC may act and its state (+0xfec) is one of a fixed set (1, 9, 0x13, 0x30, 0x4b, 0x4d, 0x51, 0x73..0x8a, 0xcb5, 0xd25, 0x1121, 0x1157..0x1158)
-	virtual bool vfunc591(); virtual bool vfunc592(); virtual int vfunc593(); virtual void vfunc594(); virtual void vfunc595();
+	virtual bool vfunc591(); virtual bool vfunc592(); virtual int vfunc593(); virtual bool vfunc594(CBaseEntity *pEnt, int a, int *pOut, int d); virtual void vfunc595();
 	virtual void vfunc596(int a); virtual int vfunc597(int, int); virtual void vfunc598(CBaseEntity *pEnt);	// slot 598: forgets pEnt (sub_10332ca0(pEnt, 4, 0), clears the focus / target when it is pEnt, drops its record from the memory list of slot 541)
 	virtual char vfunc599(int unused);	// slot 599: true when the NPC may take a ranged position now (keeps +0x6078 up to date): see the definition
 	virtual char vfunc600(int unused);	// slot 600: see sub_102b57c0
