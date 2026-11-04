@@ -10199,6 +10199,7 @@
 0x1001041a func   ?vfunc451@CNPC_VWerewolf@@UAEHXZ CNPC_VWerewolf::vfunc451
 0x1001041f func   ?sub_10251fd0@@YIHPAVCBaseCombatWeapon@@@Z sub_10251fd0
 0x10010424 func   ?sub_103d7dc0@CNPC_VWerewolf@@QAE_NPAX@Z CNPC_VWerewolf::sub_103d7dc0
+0x10010429 func   ?sub_10231df0@CUnknown10231df0@@QAEXH@Z CUnknown10231df0::sub_10231df0
 0x1001042e func   ?vfunc138@CNPC_VSheriffSwarm@@UAEHXZ CNPC_VSheriffSwarm::vfunc138
 0x10010433 func   ?sub_102e0210@CUnknown102e0150@@QAEDH@Z CUnknown102e0150::sub_102e0210
 0x10010438 func   ?sub_1014d090@SHolder@@QAEHH@Z SHolder::sub_1014d090

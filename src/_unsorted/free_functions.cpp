@@ -125395,6 +125395,15 @@ int sub_10231c70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10231df0 size=0x14
+struct CUnknown10231df0 { void sub_10231df0(int); };
+void CUnknown10231df0::sub_10231df0(int a0)
+{
+    *(volatile int *)((char *)this + 0x45c) = a0;
+    *(volatile unsigned char *)((char *)this + 0x1b1) = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10231e20 size=0x21
 int sub_1011bc70(int a);
 
