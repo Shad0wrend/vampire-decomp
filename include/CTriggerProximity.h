@@ -60,6 +60,7 @@ public:
 	void sub_100ac4e0(int a, int b, int c);	// CBaseEntity worker (stub 0x10007fe5), called directly
 	void vfunc103();	// slot 103: sets the distance to 32 while it is 0, then sub_101c5080() and the free function sub_101cf600(this)
 	void sub_101c5080();	// stub 0x1000dfd0, called directly
+	void sub_101ca0c0();	// the think function (stub 0x1000ffbf): measures the distance from the measure target to every entity touching the trigger, keeps the closest, and fires m_out05a8 with closest/radius when it is within the measured distance; clears the think when there is no measure target
 	void sub_100113a6();	// CBaseTrigger::vfunc113 (Activate), called directly
 public:
     virtual datamap_t * vfunc82();
