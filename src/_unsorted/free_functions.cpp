@@ -176450,6 +176450,27 @@ extern "C" CBaseEntity *npc_VCameraSecurity()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10369df0 size=0x39
+#include "CNPC_VCameraSecurity.h"
+
+void __fastcall sub_10368060(void *self);
+extern char g_104ace5c[];
+extern char g_104ace2c[];
+
+// TARGET: CNPC_VCameraSecurity::sub_10369df0
+CNPC_VCameraSecurity *CNPC_VCameraSecurity::sub_10369df0()
+{
+	sub_10368060(this);
+	*(volatile int *)((char *)this + 0x6664) = -1;
+	*(void * volatile *)this = g_104ace5c;
+	*(void * volatile *)((char *)this + 0x19b0) = g_104ace2c;
+	*(void * volatile *)((char *)this + 0x6660) = 0;
+	*(volatile int *)((char *)this + 0x6664) = -1;
+	*(volatile char *)((char *)this + 0x6668) = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10369e70 size=0xfc
 #include "CNPC_VCameraSecurity.h"
 #include "CSecCamera.h"
