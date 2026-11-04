@@ -36574,6 +36574,37 @@ int sub_100bf980()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c0010 size=0x160
+// TARGET: ?sub_100c0010@CFuncRotating@@QAEXPAVCBaseEntity@@@Z
+#include "CFuncRotating.h"
+#include "CTakeDamageInfo.h"
+#include "CEntityVSlots.h"
+
+void CFuncRotating::sub_100c0010(CBaseEntity *pOther)
+{
+	if (!pOther->m_nTakeDamage)
+		return;
+
+	float flSpeed = VectorLength(*(Vector *)m_angVel3c8) * 0.1f;
+	m_f464 = flSpeed;
+
+	CTakeDamageInfo info;
+	pOther->sub_100a1250(info.sub_101c26d0(this, this, flSpeed, 1, 0, 0, -1));
+
+	{
+		Vector vecDelta = *((CEntityVSlots *)pOther)->slot220() - ((CEntityVSlots *)this)->slot192();
+		pOther->sub_100b2e30((const float *)&vecDelta);
+	}
+
+	Vector vecDir = *(Vector *)pOther->m_vel3d4;
+	VectorNormalize(vecDir);
+	{
+		Vector vecScale = vecDir * m_f464;
+		pOther->sub_100b2e30((const float *)&vecScale);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c01d0 size=0x1c5
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

@@ -12768,6 +12768,7 @@
 0x100140d8 func   ?sub_10401770@@YAHXZ sub_10401770
 0x100140e2 func   ?sub_101af0d0@@YAXPAUSndSrcView@@PBD@Z sub_101af0d0
 0x100140e7 func   ?sub_100cae20@CMomentaryRotButton@@QAEXMPAX@Z CMomentaryRotButton::sub_100cae20
+0x100140ec func   ?sub_100c0010@CFuncRotating@@QAEXPAVCBaseEntity@@@Z CFuncRotating::sub_100c0010
 0x100140f1 func   ?sub_10351510@CUnknown10351510@@QAEHXZ CUnknown10351510::sub_10351510
 0x100140f6 func   ?sub_10069310@@YAXHHPAUTextMessageParams@@PBD@Z sub_10069310
 0x100140fb func   ?sub_100a9d70@CBaseEntity@@QAEXPAM@Z CBaseEntity::sub_100a9d70
