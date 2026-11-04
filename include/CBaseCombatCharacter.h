@@ -167,6 +167,7 @@ public:
 	bool sub_10167320();	// 0x10167320 (called by 0x101be1f0): not on the player's busy list, sub_101671a0 holds and the active weapon has its byte at +0x872 set
 	void sub_10323370();	// "CBaseCombatCharacter::AddToPresenceList": scope trace (entity name), appends this entity's handle (-1 when this is null) to the global vector of handles at 0x109370bc
 	Vector sub_1032b290(void *pInfo);	// 0x1032b290: the ragdoll force vector of the damage info (returned by value, ret 8)
+	void sub_100532b0();	// "CBaseCombatCharacter::UpdateAuspex" (0x100532b0, called by the think at 0x100521e0)
 	void sub_10052030();	// "CBaseCombatCharacter::RemoveDisc...": scope trace (entity name), for every handle of the vector at +0x14c0 (size at +0x14cc): sets the entity's dword at +0x4b8 to -1 and removes it (sub_101cd940) or, with the byte at +0x4c5 set, delays its removal by SetNextThink(10.0f); clears the entry, then empties the vector (frees the memory unless the grow size at +0x14c8 is -1)
 
 	void sub_1033e0a0(int nDiscipline, int unused1, CBaseEntity *pUnused2);	// "CBaseCombatCharacter::AddFakedDisciplineEffect": scope trace (entity name), plays the discipline's sound (the string at +0xe4 of its record in the table at 0x1074e098; precached first) from this entity's edict to the players that can hear it (a PAS attenuation filter built inline), unless the name is empty or starts with a blank; takes three stack arguments, only the first is used
