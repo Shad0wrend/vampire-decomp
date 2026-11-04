@@ -96,6 +96,7 @@
 0x1000124e func   ?vfunc362@CWeaponRanged_FlameThrower@@UAEHXZ CWeaponRanged_FlameThrower::vfunc362
 0x10001253 func   ?vfunc375@CNPC_VCamera@@UAEHH@Z CNPC_VCamera::vfunc375
 0x1000125d func   ?vfunc70@CNPC_VMingXiaoTentacle@@UAE_NXZ CNPC_VMingXiaoTentacle::vfunc70
+0x10001262 func   ?vfunc103@CRotButton@@QAEXXZ CRotButton::vfunc103
 0x10001267 func   ?vfunc134@CPhysMotor@@UAEXXZ CPhysMotor::vfunc134
 0x1000126c func   ?sub_101b2b30@CSoundEmitterSystemBase@@QAEXPBDPAVUtlMem2@@@Z CSoundEmitterSystemBase::sub_101b2b30
 0x10001276 func   ?vfunc6@CGameRules@@UAEXHHH@Z CGameRules::vfunc6
