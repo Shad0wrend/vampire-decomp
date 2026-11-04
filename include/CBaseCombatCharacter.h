@@ -164,6 +164,7 @@ public:
 	int sub_10345de0(CBaseEntity *pEnt);	// "CBaseCombatCharacter::GetNumAttackSuccesses": as GetMeleeDiceRolls, returns the second dword of the record (0 when none)
 	void *sub_1032f550(int nHitBox);	// "CBaseCombatCharacter::GetFireParticleForHBox": scope trace (entity name), needs the burning flag (+0x1480) and the model; creates a "DMGFX_body_fire_emitter" for the hit box's bone in a free slot of the emitter handles (+0xff8) unless one already serves that bone
 	bool sub_10170fe0();	// 0x10170fe0: true when any of the 0xe0 weapon slots holds a weapon
+	bool sub_10167320();	// 0x10167320 (called by 0x101be1f0): not on the player's busy list, sub_101671a0 holds and the active weapon has its byte at +0x872 set
 	void sub_10323370();	// "CBaseCombatCharacter::AddToPresenceList": scope trace (entity name), appends this entity's handle (-1 when this is null) to the global vector of handles at 0x109370bc
 	Vector sub_1032b290(void *pInfo);	// 0x1032b290: the ragdoll force vector of the damage info (returned by value, ret 8)
 	void sub_10052030();	// "CBaseCombatCharacter::RemoveDisc...": scope trace (entity name), for every handle of the vector at +0x14c0 (size at +0x14cc): sets the entity's dword at +0x4b8 to -1 and removes it (sub_101cd940) or, with the byte at +0x4c5 set, delays its removal by SetNextThink(10.0f); clears the entry, then empties the vector (frees the memory unless the grow size at +0x14c8 is -1)
