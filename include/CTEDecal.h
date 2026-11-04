@@ -1,23 +1,24 @@
 // CTEDecal: decal temp entity. Declared flat (bases not recovered); only the vtable head is modelled.
 #pragma once
+#include "CBaseTempEntity.h"
 #include "ServerClass.h"
 #include "Vector.h"
 #include "QAngle.h"
 
 class CRecipientFilter;
 
-class CTEDecal
+class CTEDecal : public CBaseTempEntity
 {
 public:
 	virtual ServerClass * vfunc0();
 	virtual int vfunc1();
-	virtual CTEDecal *vfunc2(unsigned int flags);	// scalar deleting destructor
+	virtual CBaseTempEntity *vfunc2(unsigned int flags);	// scalar deleting destructor
 
 	void sub_100038eb();	// destructor body
 	void sub_100606c0(int a, int b);	// called through the stub at 0x1000b03c
 	CTEDecal *sub_10060380(int a);	// 0x10060380: the base temp entity's constructor (0x10015334), then the vtable and the zeroed fields at +0xc, +0x10, +0x14, +0x24, +0x2c
 
-	char m_pad0004[8];
+	char m_pad0008[0xc - 0x8];
 	union
 	{
 		int m_mins[3];	// 0x000c

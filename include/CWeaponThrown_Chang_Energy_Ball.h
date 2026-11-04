@@ -1,6 +1,7 @@
 // CWeaponThrown_Chang_Energy_Ball: declared by pcdecomp transplant for 0x103f13e0 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CBaseCombatWeapon.h"
 
 struct datamap_t;
 
@@ -13,10 +14,10 @@ struct CEnergyBallThrowInfo	// the record handed to slot 230 of the energy ball
 	int m_n6c;	// 0x6c
 };
 
-class CWeaponThrown_Chang_Energy_Ball
+class CWeaponThrown_Chang_Energy_Ball : public CBaseCombatWeapon
 {
 public:
-	CWeaponThrown_Chang_Energy_Ball *vfunc5(unsigned int flags);
+	CBaseCombatWeapon *vfunc5(unsigned int flags);
 	void sub_10013a57();
 	void sub_103efdd0(CBaseEntity *pEnt);
 	void vfunc103();	// slot 103 "...::Restore-like": CBaseCombatWeapon::vfunc103 (stub 0x100047be), then the energy ball's timers and sound fields at +0x910 / +0x91c / +0x928 / +0x938 / +0x93c from the global at 0x1070b228
@@ -31,7 +32,7 @@ public:
 	void sub_103efa30();	// the fly think (no virtual slot found in the first 300): done flag set -> sub_103ef780 (explosion); else once curtime has passed m_flLastThink938 steers the physics object (+0x36c, slot 40 GetVelocity(&vel, &angvel) / slot 39 SetVelocity(&vel, &angvel)) towards the target entity (handle +0x918, aim point = its origin + 40.0f up, VectorNormalize * 5000 * dt added for 0.65s after m_flStart93c), speed clamped to 1400.0f / m_flMaxSpeed920, next think curtime + 0.1f
 	void sub_103ef780();	// the explosion (grenade_frag_emitter effect), called by sub_103efa30 when m_b91c is set
 
-	char m_pad0000[0x910 - 0x0];
+	char m_pad0898[0x910 - 0x898];
 	float m_flDmgRadius;	// 0x0910
 	EHANDLE m_h914;
 	EHANDLE m_h918;	// 0x918: the target entity of the fly think (LookupEntity(&m_h918))
@@ -45,9 +46,9 @@ public:
 	float m_flStart938;	// 0x938: curtime of the throw (set by vfunc103; steering only for 0.65s after)
 	float m_flLastThink93c;	// 0x93c: curtime at the last steering step (frame time = curtime - this; the think does nothing when it is not positive)
 public:
-	datamap_t * vfunc82();
+	void *vfunc82();
 	int vfunc142(int);
-	int vfunc362();
+	CWeaponActivityRecord *vfunc362();
 	int vfunc363();
 	void vfunc372(class CBaseEntity *pOther, float flSpeed, EHANDLE hTarget);	// "CWeaponThrown_Chang_Energy_Ball::Throw"
 };

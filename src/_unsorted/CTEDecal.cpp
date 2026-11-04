@@ -5,7 +5,7 @@
 #include "CTEDecal.h"
 
 // TARGET: CTEDecal::vfunc2
-CTEDecal *CTEDecal::vfunc2(unsigned int flags)
+CBaseTempEntity *CTEDecal::vfunc2(unsigned int flags)
 {
 	sub_100038eb();
 	if (flags & 1)

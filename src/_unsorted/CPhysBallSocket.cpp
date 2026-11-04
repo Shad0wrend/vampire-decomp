@@ -7,7 +7,7 @@
 void sub_100aa7b0(void *p);
 
 // TARGET: CPhysBallSocket::vfunc5
-CPhysBallSocket *CPhysBallSocket::vfunc5(unsigned int flags)
+CPhysConstraint *CPhysBallSocket::vfunc5(unsigned int flags)
 {
 	sub_100121ac();
 	if (flags & 1)

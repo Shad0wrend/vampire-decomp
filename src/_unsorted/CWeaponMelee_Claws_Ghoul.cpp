@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_109417e8;
 }
-int CWeaponMelee_Claws_Ghoul::vfunc80()
+void *CWeaponMelee_Claws_Ghoul::vfunc80()
 {
-    return (int)&lifted::g_109417e8;
+    return (void *)((int)&lifted::g_109417e8);
 }
 // END FUNCTION
 
@@ -25,9 +25,9 @@ int CWeaponMelee_Claws_Ghoul::vfunc81()
 namespace lifted {
 extern char g_10669298;
 }
-int CWeaponMelee_Claws_Ghoul::vfunc362()
+CWeaponActivityRecord *CWeaponMelee_Claws_Ghoul::vfunc362()
 {
-    return (int)&lifted::g_10669298;
+    return (CWeaponActivityRecord *)((int)&lifted::g_10669298);
 }
 // END FUNCTION
 
@@ -53,7 +53,7 @@ int CWeaponMelee_Claws_Ghoul::vfunc373()
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponMelee_Claws_Ghoul::vfunc5
-CWeaponMelee_Claws_Ghoul *CWeaponMelee_Claws_Ghoul::vfunc5(unsigned int flags)
+CBaseCombatWeapon *CWeaponMelee_Claws_Ghoul::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)

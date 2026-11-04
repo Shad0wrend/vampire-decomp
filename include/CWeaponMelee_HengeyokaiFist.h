@@ -1,17 +1,18 @@
 // CWeaponMelee_HengeyokaiFist: declared by pcdecomp transplant for 0x103ed020 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CWeaponMelee.h"
 
-class CWeaponMelee_HengeyokaiFist
+class CWeaponMelee_HengeyokaiFist : public CWeaponMelee
 {
 public:
-	CWeaponMelee_HengeyokaiFist *vfunc5(unsigned int flags);
+	CBaseCombatWeapon *vfunc5(unsigned int flags);
 	void sub_10013a57();
 public:
-	int vfunc80();
+	void *vfunc80();
 	int vfunc81();
-	int vfunc362();
+	CWeaponActivityRecord *vfunc362();
 	int vfunc363();
 	int vfunc373();
-	char m_pad0000[0x910 - 0x0];
+	char m_pad08b8[0x910 - 0x8b8];
 };

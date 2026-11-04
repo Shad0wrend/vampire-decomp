@@ -30,7 +30,7 @@ void __fastcall sub_1003c950(Sys *self)
 #include "CDataObjectAccessSystem.h"
 
 // TARGET: CDataObjectAccessSystem::vfunc8
-CDataObjectAccessSystem *CDataObjectAccessSystem::vfunc8(unsigned int flags)
+CAutoGameSystem *CDataObjectAccessSystem::vfunc8(unsigned int flags)
 {
 	sub_1000cfbd();
 	if (flags & 1)

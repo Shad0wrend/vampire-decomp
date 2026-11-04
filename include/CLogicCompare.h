@@ -15,13 +15,12 @@ public:
 	char m_pad0488[0x490 - 0x488];
 };
 
-class CLogicCompare
+class CLogicCompare : public CLogicalEntity
 {
 public:
 	void *vfunc5(unsigned int flags);
 public:
-	int vfunc82();
-	char m_pad0000[0x450 - 0x0];
+	datamap_t *vfunc82();
 	float m_flInValue;	// 0x0450
 	float m_flCompareValue;	// 0x0454
 	char m_pad0458[0x4b8 - 0x458];

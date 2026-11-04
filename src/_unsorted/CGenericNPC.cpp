@@ -161,7 +161,7 @@ void CGenericNPC::vfunc104()
 void sub_100aa7b0(void *p);
 
 // TARGET: CGenericNPC::vfunc5
-CGenericNPC *CGenericNPC::vfunc5(unsigned int flags)
+CAI_BaseNPC *CGenericNPC::vfunc5(unsigned int flags)
 {
 	sub_1000c9cd();
 	if (flags & 1)

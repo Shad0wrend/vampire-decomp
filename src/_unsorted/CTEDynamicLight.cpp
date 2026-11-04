@@ -5,7 +5,7 @@
 #include "CTEDynamicLight.h"
 
 // TARGET: CTEDynamicLight::vfunc2
-CTEDynamicLight *CTEDynamicLight::vfunc2(unsigned int flags)
+CBaseTempEntity *CTEDynamicLight::vfunc2(unsigned int flags)
 {
 	sub_10005f51();
 	if (flags & 1)
@@ -58,9 +58,9 @@ void CTEDynamicLight::vfunc4(CRecipientFilter &filter, float delay)
 namespace lifted {
 extern char g_106c23b4;
 }
-int CTEDynamicLight::vfunc0()
+ServerClass *CTEDynamicLight::vfunc0()
 {
-    return (int)&lifted::g_106c23b4;
+    return (ServerClass *)((int)&lifted::g_106c23b4);
 }
 // END FUNCTION
 

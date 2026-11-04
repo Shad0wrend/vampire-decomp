@@ -7,9 +7,9 @@ namespace lifted {
 extern char g_10936b68;
 struct C1000d323 { int sub_1000d323(); };
 }
-int CAI_SystemHook::vfunc2()
+void CAI_SystemHook::vfunc2()
 {
-    return ((lifted::C1000d323 *)((int)&lifted::g_10936b68))->sub_1000d323();
+    ((lifted::C1000d323 *)((int)&lifted::g_10936b68))->sub_1000d323();
 }
 // END FUNCTION
 
@@ -22,12 +22,12 @@ struct C10006b59 { int sub_10006b59(); };
 struct C1000cb2b { int sub_1000cb2b(); };
 int sub_100158cf();
 }
-int CAI_SystemHook::vfunc5()
+void CAI_SystemHook::vfunc5()
 {
     lifted::sub_100158cf();
     ((lifted::C1000cb2b *)((int)&lifted::g_10936b68))->sub_1000cb2b();
     lifted::sub_10003616();
-    return ((lifted::C10006b59 *)((int)&lifted::g_10936b68))->sub_10006b59();
+    ((lifted::C10006b59 *)((int)&lifted::g_10936b68))->sub_10006b59();
 }
 // END FUNCTION
 
@@ -35,7 +35,7 @@ int CAI_SystemHook::vfunc5()
 #include "CAI_SystemHook.h"
 
 // TARGET: CAI_SystemHook::vfunc8
-CAI_SystemHook *CAI_SystemHook::vfunc8(unsigned int flags)
+CAutoGameSystem *CAI_SystemHook::vfunc8(unsigned int flags)
 {
 	sub_1000cfbd();
 	if (flags & 1)

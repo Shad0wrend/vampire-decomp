@@ -5,7 +5,7 @@
 #include "CTEBubbleTrail.h"
 
 // TARGET: CTEBubbleTrail::vfunc2
-CTEBubbleTrail *CTEBubbleTrail::vfunc2(unsigned int flags)
+CBaseTempEntity *CTEBubbleTrail::vfunc2(unsigned int flags)
 {
 	sub_100157ee();
 	if (flags & 1)
@@ -73,9 +73,9 @@ void CTEBubbleTrail::vfunc4(CRecipientFilter &filter, float delay)
 namespace lifted {
 extern char g_106c1ba0;
 }
-int CTEBubbleTrail::vfunc0()
+ServerClass *CTEBubbleTrail::vfunc0()
 {
-    return (int)&lifted::g_106c1ba0;
+    return (ServerClass *)((int)&lifted::g_106c1ba0);
 }
 // END FUNCTION
 

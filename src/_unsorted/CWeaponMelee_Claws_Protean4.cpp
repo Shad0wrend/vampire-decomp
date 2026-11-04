@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10942560;
 }
-int CWeaponMelee_Claws_Protean4::vfunc80()
+void *CWeaponMelee_Claws_Protean4::vfunc80()
 {
-    return (int)&lifted::g_10942560;
+    return (void *)((int)&lifted::g_10942560);
 }
 // END FUNCTION
 
@@ -25,9 +25,9 @@ int CWeaponMelee_Claws_Protean4::vfunc81()
 namespace lifted {
 extern char g_10669d28;
 }
-int CWeaponMelee_Claws_Protean4::vfunc362()
+CWeaponActivityRecord *CWeaponMelee_Claws_Protean4::vfunc362()
 {
-    return (int)&lifted::g_10669d28;
+    return (CWeaponActivityRecord *)((int)&lifted::g_10669d28);
 }
 // END FUNCTION
 
@@ -53,7 +53,7 @@ int CWeaponMelee_Claws_Protean4::vfunc373()
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponMelee_Claws_Protean4::vfunc5
-CWeaponMelee_Claws_Protean4 *CWeaponMelee_Claws_Protean4::vfunc5(unsigned int flags)
+CBaseCombatWeapon *CWeaponMelee_Claws_Protean4::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)

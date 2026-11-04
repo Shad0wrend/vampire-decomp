@@ -1,13 +1,14 @@
 // CGenericNPC: declared by pcdecomp transplant for 0x1034aab0 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CAI_BaseNPC.h"
 
 #include "animevent_t.h"
 
-class CGenericNPC
+class CGenericNPC : public CAI_BaseNPC
 {
 public:
-	CGenericNPC *vfunc5(unsigned int flags);
+	CAI_BaseNPC *vfunc5(unsigned int flags);
 	void sub_1000c9cd();
 	void vfunc103();	// slot 103 "Spawn": Precache, the model from slot 9, the hull (player / holo models use the fixed 16 x 16 x 72 box), SOLID_BBOX / flags, health 8 and the first AI setup
 	void vfunc104();	// slot 104 (Precache): the three weapon fire sounds of the table at 0x106244c0, then the model named by slot 9
@@ -17,5 +18,5 @@ public:
 	int vfunc138();
 	int vfunc473();
 	float vfunc516();
-	char m_pad0000[0x5f44 - 0x0];
+	char m_pad0004[0x5f44 - 0x4];
 };

@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10941b0c;
 }
-int CWeaponMelee_Katana::vfunc80()
+void *CWeaponMelee_Katana::vfunc80()
 {
-    return (int)&lifted::g_10941b0c;
+    return (void *)((int)&lifted::g_10941b0c);
 }
 // END FUNCTION
 
@@ -25,9 +25,9 @@ int CWeaponMelee_Katana::vfunc81()
 namespace lifted {
 extern char g_1066d738;
 }
-int CWeaponMelee_Katana::vfunc362()
+CWeaponActivityRecord *CWeaponMelee_Katana::vfunc362()
 {
-    return (int)&lifted::g_1066d738;
+    return (CWeaponActivityRecord *)((int)&lifted::g_1066d738);
 }
 // END FUNCTION
 
@@ -45,7 +45,7 @@ int CWeaponMelee_Katana::vfunc363()
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponMelee_Katana::vfunc5
-CWeaponMelee_Katana *CWeaponMelee_Katana::vfunc5(unsigned int flags)
+CBaseCombatWeapon *CWeaponMelee_Katana::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)

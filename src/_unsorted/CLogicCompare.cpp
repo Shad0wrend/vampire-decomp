@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10577048;
 }
-int CLogicCompare::vfunc82()
+datamap_t *CLogicCompare::vfunc82()
 {
-    return (int)&lifted::g_10577048;
+    return (datamap_t *)((int)&lifted::g_10577048);
 }
 // END FUNCTION
 

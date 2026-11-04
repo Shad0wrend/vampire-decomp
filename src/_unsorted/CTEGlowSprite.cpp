@@ -5,7 +5,7 @@
 #include "CTEGlowSprite.h"
 
 // TARGET: CTEGlowSprite::vfunc2
-CTEGlowSprite *CTEGlowSprite::vfunc2(unsigned int flags)
+CBaseTempEntity *CTEGlowSprite::vfunc2(unsigned int flags)
 {
 	sub_10004fb1();
 	if (flags & 1)
@@ -58,9 +58,9 @@ void CTEGlowSprite::vfunc4(CRecipientFilter &filter, float delay)
 namespace lifted {
 extern char g_106c3c8c;
 }
-int CTEGlowSprite::vfunc0()
+ServerClass *CTEGlowSprite::vfunc0()
 {
-    return (int)&lifted::g_106c3c8c;
+    return (ServerClass *)((int)&lifted::g_106c3c8c);
 }
 // END FUNCTION
 

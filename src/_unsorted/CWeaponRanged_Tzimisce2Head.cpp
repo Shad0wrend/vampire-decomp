@@ -45,7 +45,7 @@ int CWeaponRanged_Tzimisce2Head::vfunc363()
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponRanged_Tzimisce2Head::vfunc5
-CWeaponRanged_Tzimisce2Head *CWeaponRanged_Tzimisce2Head::vfunc5(unsigned int flags)
+CWeaponRanged *CWeaponRanged_Tzimisce2Head::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)

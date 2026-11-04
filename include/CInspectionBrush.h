@@ -1,6 +1,7 @@
 // CInspectionBrush: declared by pcdecomp transplant for 0x100fd560 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CFuncParticle.h"
 
 struct datamap_t;
 
@@ -12,14 +13,9 @@ struct CInspectionBrushEdict	// the engine edict handed to slot 86: its server u
 	CGlobalEntityList_Ent *m_pUnknown;	// 0x40
 };
 
-class CInspectionBrush
+class CInspectionBrush : public CFuncParticle
 {
 public:
-	char m_pad0000[0x454];
-	int m_iParticleIndex;	// 0x454
-	char m_pad0458[0x484 - 0x458];
-	int m_unk484;	// 0x484
-	char m_pad0488[0x4c0 - 0x488];
 	int m_nMinFeat;	// 0x4c0: the least feat value the character needs
 	CInspectionBrush *vfunc5(unsigned int flags);
 	void sub_10011ac7();

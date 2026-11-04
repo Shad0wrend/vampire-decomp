@@ -15,7 +15,7 @@ void CCheckClient::vfunc2()
 #include "CCheckClient.h"
 
 // TARGET: CCheckClient::vfunc8
-CCheckClient *CCheckClient::vfunc8(unsigned int flags)
+CAutoGameSystem *CCheckClient::vfunc8(unsigned int flags)
 {
 	sub_1000cfbd();
 	if (flags & 1)

@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_106beac4;
 }
-int CTEArmorRicochet::vfunc0()
+ServerClass *CTEArmorRicochet::vfunc0()
 {
-    return (int)&lifted::g_106beac4;
+    return (ServerClass *)((int)&lifted::g_106beac4);
 }
 // END FUNCTION
 
@@ -24,7 +24,7 @@ int CTEArmorRicochet::vfunc1()
 #include "CTEArmorRicochet.h"
 
 // TARGET: CTEArmorRicochet::vfunc2
-CTEArmorRicochet *CTEArmorRicochet::vfunc2(unsigned int flags)
+CTEMetalSparks *CTEArmorRicochet::vfunc2(unsigned int flags)
 {
 	sub_1000e340();
 	if (flags & 1)

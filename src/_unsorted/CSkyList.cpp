@@ -13,7 +13,7 @@ void sub_1018a450(void)
 #include "CSkyList.h"
 
 // TARGET: CSkyList::vfunc8
-CSkyList *CSkyList::vfunc8(unsigned int flags)
+CAutoGameSystem *CSkyList::vfunc8(unsigned int flags)
 {
 	sub_1000cfbd();
 	if (flags & 1)

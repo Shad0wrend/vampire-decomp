@@ -1,17 +1,18 @@
 // CTEBubbles: bubbles temp entity. Declared flat (bases not recovered); only the vtable head is modelled.
 #pragma once
+#include "CBaseTempEntity.h"
 
 #include "Vector.h"
 #include "QAngle.h"
 
 class CRecipientFilter;
 
-class CTEBubbles
+class CTEBubbles : public CBaseTempEntity
 {
 public:
-	virtual int vfunc0();
+	virtual ServerClass *vfunc0();
 	virtual int vfunc1();
-	virtual CTEBubbles *vfunc2(unsigned int flags);	// scalar deleting destructor
+	virtual CBaseTempEntity *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3(const Vector &origin, const QAngle &angles);	// "CTEBubbles::Test": the box at the origin lifted 24 units and moved 100 units along the flat facing, 256 units wide, 50 bubbles, height 256, speed 2.0, sent to every player
 	virtual void vfunc4(CRecipientFilter &filter, float delay);	// "Create"
 
@@ -19,7 +20,7 @@ public:
 	void sub_1000e2c8();	// destructor body
 	void sub_1005f7e0(int a, int b);	// "CTEBubbles::Create" (called through the stub at 0x10011897)
 
-	char m_pad0004[8];
+	char m_pad0008[0xc - 0x8];
 	int m_mins[3];	// 0x000c
 	int m_maxs[3];	// 0x0018
 	int m_f24;

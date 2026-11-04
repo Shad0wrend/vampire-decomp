@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10940f08;
 }
-int CWeaponMelee_Baton::vfunc80()
+void *CWeaponMelee_Baton::vfunc80()
 {
-    return (int)&lifted::g_10940f08;
+    return (void *)((int)&lifted::g_10940f08);
 }
 // END FUNCTION
 
@@ -25,9 +25,9 @@ int CWeaponMelee_Baton::vfunc81()
 namespace lifted {
 extern char g_10673b48;
 }
-int CWeaponMelee_Baton::vfunc362()
+CWeaponActivityRecord *CWeaponMelee_Baton::vfunc362()
 {
-    return (int)&lifted::g_10673b48;
+    return (CWeaponActivityRecord *)((int)&lifted::g_10673b48);
 }
 // END FUNCTION
 
@@ -44,9 +44,9 @@ int CWeaponMelee_Baton::vfunc363()
 namespace lifted {
 int sub_100048fe();
 }
-int CWeaponMelee_Baton::vfunc360()
+unsigned int CWeaponMelee_Baton::vfunc360()
 {
-    return (lifted::sub_100048fe()) & -1073741825;
+    return (unsigned int)((lifted::sub_100048fe()) & -1073741825);
 }
 // END FUNCTION
 
@@ -56,7 +56,7 @@ int CWeaponMelee_Baton::vfunc360()
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponMelee_Baton::vfunc5
-CWeaponMelee_Baton *CWeaponMelee_Baton::vfunc5(unsigned int flags)
+CBaseCombatWeapon *CWeaponMelee_Baton::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)

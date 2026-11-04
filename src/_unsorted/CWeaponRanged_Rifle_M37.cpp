@@ -45,7 +45,7 @@ int CWeaponRanged_Rifle_M37::vfunc363()
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponRanged_Rifle_M37::vfunc5
-CWeaponRanged_Rifle_M37 *CWeaponRanged_Rifle_M37::vfunc5(unsigned int flags)
+CWeaponRanged *CWeaponRanged_Rifle_M37::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)

@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_109434a0;
 }
-int CWeaponIArmor_Lt_Cloth::vfunc80()
+void *CWeaponIArmor_Lt_Cloth::vfunc80()
 {
-    return (int)&lifted::g_109434a0;
+    return (void *)((int)&lifted::g_109434a0);
 }
 // END FUNCTION
 
@@ -25,9 +25,9 @@ int CWeaponIArmor_Lt_Cloth::vfunc81()
 namespace lifted {
 extern char g_1067ea2c;
 }
-int CWeaponIArmor_Lt_Cloth::vfunc362()
+CWeaponActivityRecord *CWeaponIArmor_Lt_Cloth::vfunc362()
 {
-    return (int)&lifted::g_1067ea2c;
+    return (CWeaponActivityRecord *)((int)&lifted::g_1067ea2c);
 }
 // END FUNCTION
 
@@ -45,7 +45,7 @@ int CWeaponIArmor_Lt_Cloth::vfunc363()
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponIArmor_Lt_Cloth::vfunc5
-CWeaponIArmor_Lt_Cloth *CWeaponIArmor_Lt_Cloth::vfunc5(unsigned int flags)
+CBaseCombatWeapon *CWeaponIArmor_Lt_Cloth::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)

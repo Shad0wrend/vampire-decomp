@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10942484;
 }
-int CWeaponMelee_GargoyleFist::vfunc80()
+void *CWeaponMelee_GargoyleFist::vfunc80()
 {
-    return (int)&lifted::g_10942484;
+    return (void *)((int)&lifted::g_10942484);
 }
 // END FUNCTION
 
@@ -25,9 +25,9 @@ int CWeaponMelee_GargoyleFist::vfunc81()
 namespace lifted {
 extern char g_10677fcc;
 }
-int CWeaponMelee_GargoyleFist::vfunc362()
+CWeaponActivityRecord *CWeaponMelee_GargoyleFist::vfunc362()
 {
-    return (int)&lifted::g_10677fcc;
+    return (CWeaponActivityRecord *)((int)&lifted::g_10677fcc);
 }
 // END FUNCTION
 
@@ -53,7 +53,7 @@ int CWeaponMelee_GargoyleFist::vfunc373()
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponMelee_GargoyleFist::vfunc5
-CWeaponMelee_GargoyleFist *CWeaponMelee_GargoyleFist::vfunc5(unsigned int flags)
+CBaseCombatWeapon *CWeaponMelee_GargoyleFist::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)

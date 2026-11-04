@@ -1,5 +1,6 @@
 // CTEFootprintDecal: footprint decal temp entity. Declared flat (bases not recovered); only the vtable head is modelled.
 #pragma once
+#include "CBaseTempEntity.h"
 #include "ServerClass.h"
 
 class CUnknown1019d130;
@@ -9,14 +10,14 @@ struct CTEFootprintVec3
 	float x, y, z;
 };
 
-class CTEFootprintDecal
+class CTEFootprintDecal : public CBaseTempEntity
 {
 public:
 	virtual ServerClass * vfunc0();
 	virtual int vfunc1();
-	virtual CTEFootprintDecal *vfunc2(unsigned int flags);	// scalar deleting destructor
+	virtual CBaseTempEntity *vfunc2(unsigned int flags);	// scalar deleting destructor
 
-	char m_pad0004[8];
+	char m_pad0008[0xc - 0x8];
 	CTEFootprintVec3 m_vecOrigin;	// 0x0c
 	CTEFootprintVec3 m_vecDirection;	// 0x18
 	int m_nEntity;	// 0x24

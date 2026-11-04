@@ -33,7 +33,7 @@ CTEBubbles *CTEBubbles::sub_1005f5c0(const char *name)
 #include "CTEBubbles.h"
 
 // TARGET: CTEBubbles::vfunc2
-CTEBubbles *CTEBubbles::vfunc2(unsigned int flags)
+CBaseTempEntity *CTEBubbles::vfunc2(unsigned int flags)
 {
 	sub_1000e2c8();
 	if (flags & 1)
@@ -101,9 +101,9 @@ void CTEBubbles::vfunc4(CRecipientFilter &filter, float delay)
 namespace lifted {
 extern char g_106c17cc;
 }
-int CTEBubbles::vfunc0()
+ServerClass *CTEBubbles::vfunc0()
 {
-    return (int)&lifted::g_106c17cc;
+    return (ServerClass *)((int)&lifted::g_106c17cc);
 }
 // END FUNCTION
 

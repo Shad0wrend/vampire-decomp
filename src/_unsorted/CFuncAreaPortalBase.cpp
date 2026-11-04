@@ -5,7 +5,7 @@
 #include "CBaseEntity.h"
 #include "CFuncAreaPortalBase.h"
 // TARGET: CFuncAreaPortalBase::vfunc117
-char CFuncAreaPortalBase::vfunc117() { return ((CBaseEntity *)this)->CBaseEntity::vfunc117() & ~2; }
+int CFuncAreaPortalBase::vfunc117() { return (int)(((CBaseEntity *)this)->CBaseEntity::vfunc117() & ~2); }
 // END FUNCTION
 
 // FUNCTION: 0x1010c900 size=0x1e

@@ -33,11 +33,11 @@ struct CBloodPackView : public CBloodPack
 };
 
 // TARGET: CBloodPack::vfunc315
-char CBloodPack::vfunc315()
+bool CBloodPack::vfunc315()
 {
 	CBloodCharView *pChar = (CBloodCharView *)((CAI_BaseNPCTroika *)this)->sub_10252240();
 	if (pChar->sub_10338950() && CVStatListSet::Of(pChar)->Find(0)->sub_10010609(0xf) <= 0)
-		return 0;
+		return (bool)(0);
 	int n = ((CBloodPackView *)this)->sub_102517b0()->m_nCount;
 	char bFlag = pChar->sub_10339cd0();
 	while (n != 0) {
@@ -50,7 +50,7 @@ char CBloodPack::vfunc315()
 			break;
 	}
 	sub_103fc190();
-	return 0;
+	return (bool)(0);
 }
 // END FUNCTION
 

@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_109421e8;
 }
-int CWeaponMelee_Claws::vfunc80()
+void *CWeaponMelee_Claws::vfunc80()
 {
-    return (int)&lifted::g_109421e8;
+    return (void *)((int)&lifted::g_109421e8);
 }
 // END FUNCTION
 
@@ -25,9 +25,9 @@ int CWeaponMelee_Claws::vfunc81()
 namespace lifted {
 extern char g_10668808;
 }
-int CWeaponMelee_Claws::vfunc362()
+CWeaponActivityRecord *CWeaponMelee_Claws::vfunc362()
 {
-    return (int)&lifted::g_10668808;
+    return (CWeaponActivityRecord *)((int)&lifted::g_10668808);
 }
 // END FUNCTION
 
@@ -53,7 +53,7 @@ int CWeaponMelee_Claws::vfunc373()
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponMelee_Claws::vfunc5
-CWeaponMelee_Claws *CWeaponMelee_Claws::vfunc5(unsigned int flags)
+CBaseCombatWeapon *CWeaponMelee_Claws::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)

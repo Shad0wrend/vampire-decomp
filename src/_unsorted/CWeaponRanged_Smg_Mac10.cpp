@@ -45,7 +45,7 @@ int CWeaponRanged_Smg_Mac10::vfunc363()
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponRanged_Smg_Mac10::vfunc5
-CWeaponRanged_Smg_Mac10 *CWeaponRanged_Smg_Mac10::vfunc5(unsigned int flags)
+CWeaponRanged *CWeaponRanged_Smg_Mac10::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)

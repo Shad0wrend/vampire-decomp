@@ -24,7 +24,7 @@ int CTEFootprintDecal::vfunc1()
 #include "CTEFootprintDecal.h"
 
 // TARGET: CTEFootprintDecal::vfunc2
-CTEFootprintDecal *CTEFootprintDecal::vfunc2(unsigned int flags)
+CBaseTempEntity *CTEFootprintDecal::vfunc2(unsigned int flags)
 {
 	sub_100059d4();
 	if (flags & 1)

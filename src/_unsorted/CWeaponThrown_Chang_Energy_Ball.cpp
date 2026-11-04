@@ -7,9 +7,9 @@
 namespace lifted {
 extern char g_1067d234;
 }
-datamap_t *CWeaponThrown_Chang_Energy_Ball::vfunc82()
+void *CWeaponThrown_Chang_Energy_Ball::vfunc82()
 {
-    return (datamap_t *)&lifted::g_1067d234;
+    return (void *)((datamap_t *)&lifted::g_1067d234);
 }
 // END FUNCTION
 
@@ -134,9 +134,9 @@ int CWeaponThrown_Chang_Energy_Ball::vfunc142(int a0)
 namespace lifted {
 extern char g_1067d48c;
 }
-int CWeaponThrown_Chang_Energy_Ball::vfunc362()
+CWeaponActivityRecord *CWeaponThrown_Chang_Energy_Ball::vfunc362()
 {
-    return (int)&lifted::g_1067d48c;
+    return (CWeaponActivityRecord *)((int)&lifted::g_1067d48c);
 }
 // END FUNCTION
 
@@ -154,7 +154,7 @@ int CWeaponThrown_Chang_Energy_Ball::vfunc363()
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponThrown_Chang_Energy_Ball::vfunc5
-CWeaponThrown_Chang_Energy_Ball *CWeaponThrown_Chang_Energy_Ball::vfunc5(unsigned int flags)
+CBaseCombatWeapon *CWeaponThrown_Chang_Energy_Ball::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)

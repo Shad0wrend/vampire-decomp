@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10941804;
 }
-int CWeaponMelee_Knife::vfunc80()
+void *CWeaponMelee_Knife::vfunc80()
 {
-    return (int)&lifted::g_10941804;
+    return (void *)((int)&lifted::g_10941804);
 }
 // END FUNCTION
 
@@ -25,9 +25,9 @@ int CWeaponMelee_Knife::vfunc81()
 namespace lifted {
 extern char g_1066e6e8;
 }
-int CWeaponMelee_Knife::vfunc362()
+CWeaponActivityRecord *CWeaponMelee_Knife::vfunc362()
 {
-    return (int)&lifted::g_1066e6e8;
+    return (CWeaponActivityRecord *)((int)&lifted::g_1066e6e8);
 }
 // END FUNCTION
 
@@ -44,9 +44,9 @@ int CWeaponMelee_Knife::vfunc363()
 namespace lifted {
 int sub_100048fe();
 }
-int CWeaponMelee_Knife::vfunc360()
+unsigned int CWeaponMelee_Knife::vfunc360()
 {
-    return (lifted::sub_100048fe()) & -1073741825;
+    return (unsigned int)((lifted::sub_100048fe()) & -1073741825);
 }
 // END FUNCTION
 
@@ -56,7 +56,7 @@ int CWeaponMelee_Knife::vfunc360()
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponMelee_Knife::vfunc5
-CWeaponMelee_Knife *CWeaponMelee_Knife::vfunc5(unsigned int flags)
+CBaseCombatWeapon *CWeaponMelee_Knife::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)

@@ -58,7 +58,7 @@ void __fastcall sub_102379e0(void *pThis)
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponRanged_MingXiao_Spit::vfunc5
-CWeaponRanged_MingXiao_Spit *CWeaponRanged_MingXiao_Spit::vfunc5(unsigned int flags)
+CWeaponRanged *CWeaponRanged_MingXiao_Spit::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)

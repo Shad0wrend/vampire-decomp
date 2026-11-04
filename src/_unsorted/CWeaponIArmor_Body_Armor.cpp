@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10943238;
 }
-int CWeaponIArmor_Body_Armor::vfunc80()
+void *CWeaponIArmor_Body_Armor::vfunc80()
 {
-    return (int)&lifted::g_10943238;
+    return (void *)((int)&lifted::g_10943238);
 }
 // END FUNCTION
 
@@ -26,7 +26,7 @@ int CWeaponIArmor_Body_Armor::vfunc81()
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponIArmor_Body_Armor::vfunc5
-CWeaponIArmor_Body_Armor *CWeaponIArmor_Body_Armor::vfunc5(unsigned int flags)
+CBaseCombatWeapon *CWeaponIArmor_Body_Armor::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)

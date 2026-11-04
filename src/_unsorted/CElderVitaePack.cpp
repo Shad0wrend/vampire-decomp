@@ -12,7 +12,7 @@
 #include "CVStatList_t.h"
 
 // TARGET: CElderVitaePack::vfunc315
-char CElderVitaePack::vfunc315()
+bool CElderVitaePack::vfunc315()
 {
 	CBaseCombatCharacter *pChar = (CBaseCombatCharacter *)((CAI_BaseNPCTroika *)this)->sub_10252240();
 	if (!pChar->sub_10338950() || CVStatListSet::Of(pChar)->Find(0)->sub_102012d0(0xf) > 0) {
@@ -20,7 +20,7 @@ char CElderVitaePack::vfunc315()
 		sub_103fca20();
 	}
 	((CUnknown1033c340 *)pChar)->sub_1033c340(0xfa);
-	return 0;
+	return (bool)(0);
 }
 // END FUNCTION
 
