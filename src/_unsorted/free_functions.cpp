@@ -151372,6 +151372,24 @@ bool CUnknown102dd450::sub_102dd450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dd530 size=0xe
+// sub_102dd470 takes this in ecx and pops its two stack arguments (ret 8): a member of the same object, so the
+// caller keeps ecx for it and loads the first argument into edx
+struct CUnknown102dd530
+{
+    char pad[0x48];
+    int m_i48;
+    int m_i4c;
+    void sub_102dd530();
+    void sub_102dd470(int a, int *b);
+};
+
+void CUnknown102dd530::sub_102dd530()
+{
+    sub_102dd470(m_i48, &m_i4c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dd610 size=0x7
 struct CUnknown102dd610 { char sub_102dd610(); };
 char CUnknown102dd610::sub_102dd610()

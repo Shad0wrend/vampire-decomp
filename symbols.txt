@@ -3094,6 +3094,7 @@
 0x10005b05 func   ?sub_101d6730@@YAXXZ sub_101d6730
 0x10005b0f func   ?sub_10312f70@CUtlMemory16@@QAEPAV1@HH@Z CUtlMemory16::sub_10312f70
 0x10005b14 func   ?vfunc440@CNPC_VGargoyle@@QAEHH@Z CNPC_VGargoyle::vfunc440
+0x10005b19 func   ?sub_102dd530@CUnknown102dd530@@QAEXXZ CUnknown102dd530::sub_102dd530
 0x10005b1e func   ?sub_10428310@@YAXPAUCEyePosSource@@PAH@Z sub_10428310
 0x10005b23 func   ?sub_101f2ae0@@YGXPAX@Z sub_101f2ae0
 0x10005b28 func   ?sub_101e34c0@CUnknown101e0f00@@QAEXPAX0HH@Z CUnknown101e0f00::sub_101e34c0
