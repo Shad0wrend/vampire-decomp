@@ -1,6 +1,28 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x102ca0c0 size=0x32
+#include "CAI_CsActList.h"
+
+struct CSActLayout { int m_type; int m_h4; char m_pad8[0x14]; int m_h1c; int m_h20; int m_pad24; };
+
+CSAct::CSAct()
+{
+	CSActLayout *p = (CSActLayout *)this;
+	p->m_type = 0;
+	p->m_h4 = -1;
+	p->m_h1c = -1;
+	p->m_h20 = -1;
+}
+
+// TARGET: CAI_CsActList::CAI_CsActList
+CAI_CsActList::CAI_CsActList()
+{
+	m_nActs = 0;
+	m_field_a08 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ca130 size=0x6b
 #include "CAI_CsActList.h"
 
