@@ -155841,6 +155841,27 @@ void __fastcall sub_102e9e50(Mem *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e9ef0 size=0x34
+struct CNewedSmall {
+    CNewedSmall *sub_100155f0();
+};
+
+struct CNewedOwner {
+    CNewedSmall *m_p0;
+    int m_n4;
+    CNewedOwner *sub_102e9ef0();
+};
+
+// TARGET: CNewedOwner::sub_102e9ef0
+CNewedOwner *CNewedOwner::sub_102e9ef0()
+{
+    CNewedSmall *pNew = (CNewedSmall *)operator new(4);
+    m_p0 = pNew ? pNew->sub_100155f0() : 0;
+    m_n4 = 1000000000;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e9f40 size=0x19
 void __fastcall sub_1024a1e0(char *pObj);
 

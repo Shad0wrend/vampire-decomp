@@ -12991,6 +12991,7 @@
 0x1001436c func   ?sub_101d7460@CUnknown101d7460@@QAEXPAX@Z CUnknown101d7460::sub_101d7460
 0x10014371 func   ?sub_1017d630@CUnknown1017d630@@QAEPAVCGlobalEntityList_Ent@@XZ CUnknown1017d630::sub_1017d630
 0x10014376 func   ?vfunc80@CWeaponMelee_Knife@@UAEPAXXZ CWeaponMelee_Knife::vfunc80
+0x1001437b func   ?sub_102e9ef0@CNewedOwner@@QAEPAU1@XZ CNewedOwner::sub_102e9ef0
 0x10014380 func   ?sub_100737f0@CUnknown100737f0@@QAEDXZ CUnknown100737f0::sub_100737f0
 0x10014385 func   ?vfunc5@CWeaponIThrown@@QAEPAV1@I@Z CWeaponIThrown::vfunc5
 0x1001438a func   _item_w_fireaxe item_w_fireaxe
