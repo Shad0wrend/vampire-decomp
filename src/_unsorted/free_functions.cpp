@@ -134331,6 +134331,19 @@ char sub_102585c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102585f0 size=0x1d
+#include "CBaseCombatWeapon.h"
+
+struct CRollRec { char pad[4]; int m_v4; };
+
+unsigned char CBaseCombatWeapon::sub_102585f0()
+{
+    CRollRec *rec = (CRollRec *)((char *)sub_102517e0() + 0x1bc);
+    int v = rec->m_v4;
+    return v == 9 || v == 10;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102587f0 size=0x6
 namespace lifted {
 extern char g_1055ef2c;
