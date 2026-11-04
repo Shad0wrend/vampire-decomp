@@ -152,6 +152,7 @@ class CAI_Navigator : public CAI_NavComponentData, public CAI_DefMovementSink
 {
 public:
 	CAI_Navigator(int pOuter);	// 0x102eca50: allocates the 0x84 byte object at +0x30
+	float sub_102f02a0();	// slot 0 of the CAI_DefMovementSink secondary vtable: the speed scale
 
 	virtual CAI_Navigator *vfunc0(unsigned int flags); virtual void vfunc1(); virtual void vfunc2(int a); virtual void vfunc3(int a); virtual void vfunc4(int);
 	virtual void vfunc5(float flInterval, int a);	// slot 5 "CAI_Navigator::Move": scope trace; does nothing while sub_102ee2e0 holds or the owner's slot 525 accepts the interval; with the owner's flag byte +0x1a40 set stamps the components and steps the route (slots 12 / 13 / 14 by the route's move type, at most 16 times), else stops the motor (+0x20)
