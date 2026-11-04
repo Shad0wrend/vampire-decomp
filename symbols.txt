@@ -8638,6 +8638,7 @@
 0x1000de31 func   ?vfunc0@CTraceFilterFVisible@@UAE_NPAXH@Z CTraceFilterFVisible::vfunc0
 0x1000de36 func   ?sub_10113c90@CFunc_Dust@@QAEPAV1@XZ CFunc_Dust::sub_10113c90
 0x1000de40 func   ?vfunc489@CGeneric_NPC_bathack@@UAEXXZ CGeneric_NPC_bathack::vfunc489
+0x1000de45 func   ??0CDmgRecord1025b1f0@@QAE@XZ CDmgRecord1025b1f0::CDmgRecord1025b1f0
 0x1000de4a func   ?sub_10057440@@YAHXZ sub_10057440
 0x1000de4f func   ?vfunc2@ConCommandBase@@QAEXPBD0H@Z ConCommandBase::vfunc2
 0x1000de59 func   ?sub_10338190@CBaseCombatCharacter@@QAE_NPAVCUnknown10204e90@@@Z CBaseCombatCharacter::sub_10338190
