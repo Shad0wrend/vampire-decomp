@@ -438,7 +438,10 @@ public:
 	int m_nUseEdict1EC4;	// 0x1EC4: engine index of the use entity, cleared when it is gone
 	char m_pad1EC8[0x1ed8 - 0x1ec8];
 	unsigned int m_nFlags1ED8;	// 0x1ed8: the player's status flag dword updated by sub_10181780 (bit 1 = live grapple target, 0x20 / 0x100 = target mode 2 / 8, bit 0 = sub_10146a80, bit 2 = +0x14aa, bit 9 = use entity matches +0x1cb8 / +0x1cbc, bit 4 = sub_1033b7c0, bit 7 = slot 413, bit 3 = slot 412, bit 6 = +0x1d40 / +0x1d44)
-	char m_pad1EDC[0x1ef0 - 0x1edc];	// 0x1EDC .. 0x1EEF
+	union {
+		char m_pad1EDC[0x1ef0 - 0x1edc];	// 0x1EDC .. 0x1EEF
+		char m_b1EDC;	// 0x1EDC
+	};
 	Vector m_vec1EF0;	// 0x1EF0: the velocity the command run last saw (copied from +0x3b0 when non-zero)
 	Vector m_vec1EFC;	// 0x1EFC: a vector pair (reset together by sub_101711e0)
 	Vector m_vec1F08;	// 0x1F08
