@@ -9500,6 +9500,7 @@
 0x1000f35d func   ?sub_1004ef10@@YAHXZ sub_1004ef10
 0x1000f362 func   ?vfunc587@CNPC_VAnimal@@UAE_NH@Z CNPC_VAnimal::vfunc587
 0x1000f367 func   ?vfunc5@CFuncKeyframedMover@@UAEPAVCBaseKeyframedMover@@I@Z CFuncKeyframedMover::vfunc5
+0x1000f36c func   ?sub_102f9920@@YAXH@Z sub_102f9920
 0x1000f376 func   ?vfunc316@CAI_BaseNPCTroika@@UAEXPAXDD@Z CAI_BaseNPCTroika::vfunc316
 0x1000f37b func   ??0CBaseButton@@QAE@XZ CBaseButton::CBaseButton
 0x1000f380 func   ?sub_102dcc20@CUnk102dcc20@@QAEHXZ CUnk102dcc20::sub_102dcc20

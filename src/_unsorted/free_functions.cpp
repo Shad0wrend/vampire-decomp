@@ -157933,6 +157933,14 @@ void sub_102f9900()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f9920 size=0x11
+extern volatile int g_10610be8;
+void sub_102f9920(int flags)
+{
+    g_10610be8 = g_10610be8 | flags;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f9950 size=0x6
 namespace lifted {
 extern int g_10610be8;
