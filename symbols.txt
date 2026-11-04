@@ -7913,6 +7913,7 @@
 0x1000cd24 func   ?sub_100bc460@CUnknown100bc460@@QAEPAXXZ CUnknown100bc460::sub_100bc460
 0x1000cd29 func   ?sub_1034a010@@YIXPAH@Z sub_1034a010
 0x1000cd2e func   ?vfunc9@CAI_Motor@@UAEXXZ CAI_Motor::vfunc9
+0x1000cd38 func   ?vfunc142@CNPC_VFrenzyShadow@@UAEHH@Z CNPC_VFrenzyShadow::vfunc142
 0x1000cd3d func   ?sub_102b7370@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::sub_102b7370
 0x1000cd42 func   ??1CUnknown102029c0@@QAE@XZ CUnknown102029c0::~CUnknown102029c0
 0x1000cd47 func   ?vfunc81@CWeaponMelee_FireAxe@@QAEHXZ CWeaponMelee_FireAxe::vfunc81

@@ -140,6 +140,27 @@ void CNPC_VFrenzyShadow::vfunc440(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10376ae0 size=0x20
+#include "CNPC_VFrenzyShadow.h"
+#define P10(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
+
+struct CFrenzyTargetView {
+	P10(p0) P10(p1) P10(p2) P10(p3) P10(p4) P10(p5) P10(p6) P10(p7) P10(p8) P10(p9)
+	P10(p10) P10(p11) P10(p12) P10(p13)
+	virtual void p140(); virtual void p141();
+	virtual void vfunc142(int a);
+};
+
+// TARGET: CNPC_VFrenzyShadow::vfunc142
+int CNPC_VFrenzyShadow::vfunc142(int a)
+{
+	CFrenzyTargetView *e = (CFrenzyTargetView *)vfunc97();
+	if (e)
+		e->vfunc142(a);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10376b10 size=0x24
 #define P10(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
 
