@@ -10,7 +10,7 @@ public:
 	virtual void vfunc2();
 	virtual void vfunc3();
 	virtual int vfunc4();
-	virtual void vfunc5();
+	virtual const char *vfunc5();
 	virtual void vfunc6();
 	virtual int vfunc7();	// refreshes the edict state when flagged changed (0x10000), returns the edict pointer at +0x80
 	virtual void vfunc8(const int *pBox);	// asks the outer entity (slot 86, +4) and the object at +8 (slot 1) about the four dwords; when the answer holds, tells the outer entity (slot 87)
