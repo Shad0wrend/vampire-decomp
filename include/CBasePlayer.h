@@ -12,6 +12,7 @@
 #include "utlvector.h"
 #include "CGlobalEmailRec.h"
 #include "CUserCmd.h"
+#include "CPlayerLocalPredictedData.h"
 
 class CBaseEntity;
 class CBaseCombatWeapon;
