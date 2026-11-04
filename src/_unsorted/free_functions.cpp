@@ -143105,6 +143105,23 @@ void CAI_BaseNPCTroika::sub_102a9830(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a9860 size=0x15
+#include "CUnknown1024b2d0.h"
+struct CUnknown102a9860
+{
+	char m_pad0000[4];
+	CUnknown1024b2d0Id m_id4;
+};
+
+extern CUnknown1024b2d0 g_10936b74;
+
+// TARGET: sub_102a9860
+const char *__fastcall sub_102a9860(CUnknown102a9860 *self)
+{
+	return g_10936b74.sub_1024b830(self->m_id4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a9890 size=0x12
 unsigned int *__fastcall sub_102a9890(unsigned int *p)
 {

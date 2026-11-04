@@ -10279,6 +10279,7 @@
 0x100105f5 func   ?RemoveRebalance@?$CUtlRBTree@UCRBEntry8@@H@@QAEXH@Z CUtlRBTree<CRBEntry8,int>::RemoveRebalance
 0x100105fa func   ?vfunc254@CBaseAnimating@@QAEHHHH@Z CBaseAnimating::vfunc254
 0x100105ff func   ?sub_103a3bf0@@YAEXZ sub_103a3bf0
+0x10010604 func   ?sub_102a9860@@YIPBDPAUCUnknown102a9860@@@Z sub_102a9860
 0x10010609 func   ?sub_102012d0@CVStatList_t@@QAEHH@Z CVStatList_t::sub_102012d0
 0x1001060e func   ?vfunc222@CBaseEntity@@QAEHH@Z CBaseEntity::vfunc222
 0x10010613 func   ?sub_102dfed0@CEnemiesView@@QAE?AVVector@@PAVCBaseEntity@@@Z CEnemiesView::sub_102dfed0
