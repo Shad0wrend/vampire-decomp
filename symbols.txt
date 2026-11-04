@@ -12063,6 +12063,7 @@
 0x10012f44 func   ?sub_103fec70@@YAHXZ sub_103fec70
 0x10012f49 func   ?sub_101273e0@@YAPBDH@Z sub_101273e0
 0x10012f4e func   ?sub_1030f480@CUnknown1030f480@@QAEXXZ CUnknown1030f480::sub_1030f480
+0x10012f58 func   ?sub_100fe550@@YAXXZ sub_100fe550
 0x10012f5d func   ?vfunc432@CNPC_VAsianVampire@@QAEXH@Z CNPC_VAsianVampire::vfunc432
 0x10012f62 func   ?sub_1015f8b0@CBasePlayerUnit@@QAEXMD@Z CBasePlayerUnit::sub_1015f8b0
 0x10012f67 func   ?sub_1036cfa0@CNPC_VChangBros@@QAEPAXXZ CNPC_VChangBros::sub_1036cfa0

@@ -51397,6 +51397,19 @@ void CUnknown100fde30::sub_100fe1e0(float flSpeed)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fe550 size=0x1f
+extern float g_10709088;
+extern float g_1070908c;
+extern float g_10709090;
+
+void sub_100fe550()
+{
+    g_10709088 = 0.0f;
+    g_1070908c = 0.0f;
+    g_10709090 = 0.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fe580 size=0x1f
 namespace lifted {
 extern float g_10709088;
