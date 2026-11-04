@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10067620 size=0x24
+#include "CTESparks.h"
+
+CTESparks::CTESparks(const char *name) : CTEParticleSystemHead(name)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10067660 size=0x1e
 #include "CTESparks.h"
 
