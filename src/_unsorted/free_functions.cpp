@@ -119237,6 +119237,39 @@ int *sub_1020d1b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020d5f0 size=0x62
+#include "CPropSwitch.h"
+#include "CBaseHandle.h"
+#include "COutputEvent.h"
+
+extern void *vt_1047332c[];	// CBaseProp::vftable
+extern void *vt_104862fc[];	// CPropSwitch::vftable
+
+struct CPropSwitchBaseCall { void sub_1008b230(); };	// CBaseAnimating's constructor body (stub 0x100103fc)
+
+struct CPropSwitchParts	// the members the CPropSwitch constructor builds (+0x740 .. +0x7a4)
+{
+	char pad0[0x740];
+	CBaseHandle m_hLinked;	// 0x740
+	COutputEvent m_Output744;
+	COutputEvent m_Output75c;
+	COutputEvent m_Output774;
+	COutputEvent m_Output78c;
+	CPropSwitchParts() {}
+};
+
+CPropSwitch *CPropSwitch::sub_1020d5f0()
+{
+	((CPropSwitchBaseCall *)this)->sub_1008b230();
+	*(void ***)this = vt_1047332c;
+	((CPropSwitchParts *)this)->CPropSwitchParts::CPropSwitchParts();
+	*(void ***)this = vt_104862fc;
+	*(unsigned int *)((char *)this + 0x740) = 0xffffffff;
+	*(int *)((char *)this + 0x738) = 0xc;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020db00 size=0x1c
 // Local view of a vtable: slot 173 is the virtual call; slots 0..172 are placeholders.
 struct CVTableView173
