@@ -16,6 +16,7 @@ public:
     bool m_bShouldDetach;	// 0x105c
     char m_pad105d[0x1060 - 0x105d];
     void *m_pPhysObj1060;	// 0x1060: the constraint made by the physics environment (g_10723940 slot 12)
+    void sub_10156d30();	// stub 0x100022e8
     void sub_10156d90();	// releases the physics object at +0x1060 (called when the attachment ends)
     // 0x10156e10 (ret 0x30, twelve stack arguments; called with ecx = the new prop_ragdoll_attached by 0x10157260, whose own
     // arguments it forwards; "InitRagdollAttached"): arg1 = the attached physics object (slots 26 / 38 used, handed to sub_10158b40),
