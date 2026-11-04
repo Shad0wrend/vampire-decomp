@@ -8645,6 +8645,7 @@
 0x1000dfb7 func   ?vfunc103@CAreaPortal@@UAEXXZ CAreaPortal::vfunc103
 0x1000dfc6 func   ?vfunc80@CItemGGarysFilm@@QAEHXZ CItemGGarysFilm::vfunc80
 0x1000dfcb func   ?sub_10388d00@@YAHXZ sub_10388d00
+0x1000dfd0 func   ?sub_101c5080@CBaseTrigger@@QAEXXZ CBaseTrigger::sub_101c5080
 0x1000dfda func   ?vfunc104@CBreakable@@QAEXXZ CBreakable::vfunc104
 0x1000dfdf func   ?sub_10076e70@CChoreoEvent10076e70@@QAEPAUCUnknown100738a0@@PBD@Z CChoreoEvent10076e70::sub_10076e70
 0x1000dfe4 func   ?sub_103841a0@@YADXZ sub_103841a0

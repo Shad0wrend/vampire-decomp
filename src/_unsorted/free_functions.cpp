@@ -90502,6 +90502,79 @@ void CBaseTrigger::sub_101c4dd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c5080 size=0x2a0
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseTrigger.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CCollisionProperty.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+#include "Vector.h"
+
+extern float g_1070d9d0[];	// vec3_origin
+
+class CTriggerBrushConVar
+{
+public:
+	virtual void vfunc0();
+	virtual char vfunc1();
+	char m_pad0004[0x2c - 4];
+	int m_n2c;
+};
+
+extern CTriggerBrushConVar *g_1072cfcc;
+
+void CBaseTrigger::sub_101c5080()
+{
+	CCollisionProperty *pCollision;
+
+	if ( *(Vector *)( (CEntityVSlots *)this )->slot221() != *(Vector *)g_1070d9d0 )
+		( (CEntityVSlots *)this )->slot171();
+
+	CBaseEntity *pParent = (CBaseEntity *)EHandle_Get( m_hTouch254 );
+
+	{
+		ScopeTrace st( "CBaseEntity::SetSolid", m_name26c ? m_name26c : g_106b8540 );
+		pCollision = (CCollisionProperty *)( (char *)this + 0x270 );
+		pCollision->sub_100dc480( pParent ? 6 : 1 );
+	}
+	{
+		ScopeTrace st( "CBaseEntity::AddSolidFlags", m_name26c ? m_name26c : g_106b8540 );
+		pCollision->AddSolidFlags( 4 );
+	}
+	if ( m_bDisabled )
+	{
+		ScopeTrace st( "CBaseEntity::RemoveSolidFlags", m_name26c ? m_name26c : g_106b8540 );
+		pCollision->sub_100dc580( pCollision->m_usSolidFlags & ~8 );
+	}
+	else
+	{
+		ScopeTrace st( "CBaseEntity::AddSolidFlags", m_name26c ? m_name26c : g_106b8540 );
+		pCollision->AddSolidFlags( 8 );
+	}
+
+	( (CEntityVSlots *)this )->slot93( 0, 0 );
+
+	int nModel;
+	const char *pszModel = *( (CEntityVSlots *)this )->slot9( &nModel );
+	( (CEntityVSlots *)this )->slot105( pszModel ? pszModel : g_106b8540 );
+
+	if ( !( m_flags204 & 0x10 ) )
+	{
+		if ( g_1072cfcc->vfunc1() || g_1072cfcc->m_n2c == 0 )
+			m_nEffectFlags |= 0x40;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c53d0 size=0x3f
 #include "vampire.h"
 
