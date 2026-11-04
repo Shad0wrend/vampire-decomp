@@ -68576,6 +68576,18 @@ CRagdollProp *sub_10157260(CRagdollProp *pAnimating, const Vector &vecForce, int
 }
 // END FUNCTION
 
+// FUNCTION: 0x10157350 size=0x27
+#include "CRagdollPropAttached.h"
+
+// TARGET: sub_10157350
+void sub_10157350(CBaseEntity *pEnt)
+{
+	CRagdollPropAttached *p = dynamic_cast<CRagdollPropAttached *>(pEnt);
+	if (p)
+		p->sub_10156d30();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10157530 size=0x53
 void *sub_100aa720(unsigned int size);
 
