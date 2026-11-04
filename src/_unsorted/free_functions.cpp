@@ -51705,6 +51705,17 @@ skip:
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fd590 size=0x67
+#include "CEnvPlayerSurfaceTrigger.h"
+
+extern "C" CBaseEntity *env_player_surface_trigger()
+{
+	CEnvPlayerSurfaceTrigger *p = new CEnvPlayerSurfaceTrigger;
+	p->vfunc106("env_player_surface_trigger");
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fd680 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
