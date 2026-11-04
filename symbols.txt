@@ -2382,6 +2382,7 @@
 0x100049bc func   ?vfunc82@CBreakable@@QAEPAUdatamap_t@@XZ CBreakable::vfunc82
 0x100049c1 func   ?sub_100b7c00@@YAHXZ sub_100b7c00
 0x100049c6 func   ?vfunc4@CTESmoke@@UAEXPAXH@Z CTESmoke::vfunc4
+0x100049cb func   ?sub_1038b1a0@CNPC_VManBat@@QAEXM@Z CNPC_VManBat::sub_1038b1a0
 0x100049d0 func   ?sub_10245580@CUnknown10245580@@QAEXXZ CUnknown10245580::sub_10245580
 0x100049da func   ?vfunc6@CCollisionEvent@@UAEXPAX0@Z CCollisionEvent::vfunc6
 0x100049df func   ?sub_10252030@@YIHPAVCBaseCombatWeapon@@@Z sub_10252030
