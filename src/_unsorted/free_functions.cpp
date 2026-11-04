@@ -99530,6 +99530,101 @@ void CUnk101ddf80::sub_101ddf80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101de2f0 size=0x2b6
+#include "CTakeDamageInfo.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CDiscipline.h"
+#include "CBaseCombatCharacter.h"
+#include "CAI_BaseNPC.h"
+#include "CVDmg_t.h"
+#include "CVStatList_t.h"
+#include "ScopeTrace.h"
+#include "Vector.h"
+
+extern int g_10739a6c;
+extern unsigned char g_10739a64;
+extern CVStatList_t g_109f0b40;
+extern void (*g_109f3650)(int level, const char *pMsg, ...);
+
+struct CUnk101c26d0
+{
+    int m_n0000;
+    Vector m_vecForce;  // 0x04
+    Vector m_vec10;     // 0x10
+    char m_pad[0x4c - 0x1c];
+
+    CUnk101c26d0 *sub_101c26d0(int a, int b, int c, int d, int e, int f, int g);
+};
+
+// TARGET: CDiscipline::sub_101de2f0
+void CDiscipline::sub_101de2f0(CBaseEntity *pAttacker, CBaseCombatCharacter *pTarget, int nDamage)
+{
+    if (nDamage <= 0)
+        return;
+
+    if (!pAttacker)
+        pAttacker = pTarget;
+
+    const char *pszName = ((CBaseEntity *)pTarget)->m_name26c;
+    if (!pszName)
+        pszName = g_106b8540;
+
+    g_109f3650(3, "Discipline<> DoDamage (%d) on %s (%s)\n", nDamage, pszName, pTarget->sub_1009f200());
+
+    int flags = 0;
+    if (m_b1d && g_10739a6c++ < 7)
+        flags = 0x2000;
+
+    CVStatList_t *pStat = CVStatListSet::Of(pTarget)->Find(0);
+    int dmg = pStat->sub_102012d0(0x11) * nDamage / 100;
+
+    CVDmg_t dmgObj;
+    dmgObj.sub_101fa960((CVDmgSource_t *)pAttacker);
+    dmgObj.sub_101fa8d0(1, 0x80, dmg);
+    dmgObj.m_field04 = dmg;
+    dmgObj.m_field0c = dmg;
+    dmgObj.sub_101fb3e0(8);
+
+    CAI_BaseNPC *pVictim = (CAI_BaseNPC *)pTarget;
+    CAI_BaseNPC *pSource = (CAI_BaseNPC *)pAttacker;
+
+    CUnk101c26d0 info;
+    info.sub_101c26d0((int)pAttacker, (int)pAttacker, 0x3f800000, flags, 0, (int)&dmgObj, -1);
+
+    info.m_vec10.x = 0.0f;
+    info.m_vec10.y = 0.0f;
+    info.m_vec10.z = 0.0f;
+    info.m_vecForce.x = 0.0f;
+    info.m_vecForce.y = 0.0f;
+    info.m_vecForce.z = 0.0f;
+
+    g_10739a64 = 0;
+
+    Vector vecDir;
+    if (pAttacker)
+    {
+        vecDir = (pVictim->vfunc193() - *(Vector *)pSource->vfunc217())
+               - (pVictim->vfunc193() - pVictim->vfunc192()) * 0.5f;
+    }
+
+    pVictim->vfunc292((CTakeDamageInfo *)&info, &vecDir, 0);
+    pVictim->vfunc142((int)&info);
+
+    g_10739a64 = 1;
+    dmgObj.sub_101fa680();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101df000 size=0x1de
 #include "CUnknown101dff00.h"
 #include "CUnknown101dddb0.h"
