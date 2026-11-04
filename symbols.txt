@@ -6339,6 +6339,7 @@
 0x1000a80d func   _env_fog_controller env_fog_controller
 0x1000a812 func   ?sub_10381b10@CUnknown10381b10@@QAEXXZ CUnknown10381b10::sub_10381b10
 0x1000a817 func   ?vfunc82@CBaseAnimating@@UAEPAUdatamap_t@@XZ CBaseAnimating::vfunc82
+0x1000a81c func   ?vfunc375@CWeaponThrown_Grenade_Frag@@UAEXXZ CWeaponThrown_Grenade_Frag::vfunc375
 0x1000a821 func   ?vfunc408@CBasePlayer@@UAEXXZ CBasePlayer::vfunc408
 0x1000a82b func   ?sub_1024e8f0@@YAXPAMPBM@Z sub_1024e8f0
 0x1000a830 func   ?sub_101f9690@CUnknown101f9670@@QAEXXZ CUnknown101f9670::sub_101f9690

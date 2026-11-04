@@ -442,6 +442,49 @@ int CWeaponThrown_Grenade_Frag::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ef260 size=0x21f
+#include "ConVar.h"
+#include "CWeaponThrown_Grenade_Frag.h"
+#include "CPVSFilter.h"
+#include "UTIL_BloodStream.h"
+#include "CGameRules.h"
+#include "CUnknown101c2770.h"
+#include "CBaseCombatWeapon.h"
+#include "CVDmg_t.h"
+#include "CTakeDamageInfo.h"
+
+void sub_101cdba0(const Vector *pOrigin, float a, float b, float c, float d, int e, bool f);
+
+void CWeaponThrown_Grenade_Frag::vfunc375()
+{
+	m_nTakeDamage1fc = 0;
+	Vector vecOrigin = vfunc192();
+	Vector vecAngles = *(Vector *)g_1070d9d0;
+	float flAngleY = vfunc219()[1];
+	vecAngles.y = flAngleY;
+
+	CPVSFilter filter(vecOrigin);
+	((CTempEntsGrenadeView *)g_10540528)->vfunc2(&filter, 0, &vecOrigin, &vecAngles, "grenade_frag_emitter");
+
+	if (!g_1070ba0c->vfunc21())
+	{
+		float cv1 = g_10942f4c->vfunc1() ? 0.0f : g_10942f4c->m_fValue;
+		float cv2 = g_10942f04->vfunc1() ? 0.0f : g_10942f04->m_fValue;
+		((CTempEntsGrenadeView *)g_10540528)->vfunc20(&filter, 0, &vecOrigin, 0xff, 0xb4, 0x64, 0, m_flDmgRadius, cv2, cv1);
+	}
+
+	vfunc333(0xd, 1, 0, 0, 0, 0);
+
+	CTakeDamageInfo dmgInfo;
+	((CGameRules *)g_1070ba0c)->vfunc33(((CUnknown101c2770 *)&dmgInfo)->sub_101c2770((CVDmg_t *)((char *)sub_102517e0() + 0x198)), vfunc220(), m_flDmgRadius + m_flDmgRadius, 0, 0);
+
+	sub_101cdba0((const Vector *)vfunc217(), 25.0f, 150.0f, 1.0f, m_flDmgRadius + m_flDmgRadius, 0, false);
+
+	sub_100ac4e0(0, 0, 0);
+	vfunc359();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ef510 size=0x6
 #include "CWeaponThrown_Grenade_Frag.h"
 namespace lifted {
