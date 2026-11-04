@@ -440,7 +440,11 @@ public:
 	Vector m_vec1EF0;	// 0x1EF0: the velocity the command run last saw (copied from +0x3b0 when non-zero)
 	Vector m_vec1EFC;	// 0x1EFC: a vector pair (reset together by sub_101711e0)
 	Vector m_vec1F08;	// 0x1F08
-	char m_pad1F14[0x2018 - 0x1f14];	// 0x1F14 .. 0x2017
+	char m_pad1F14[0x1f88 - 0x1f14];	// 0x1F14 .. 0x1F87
+	int m_aSkyCam1F88[5];	// 0x1F88: copy of dwords +0x450..+0x460 of the object at g_1072a498 (255 at +0x1F98 when none)
+	char m_SkyCamCopy1F9C[0x20];	// 0x1F9C: copy of that object's 0x20 bytes at +0x464 (sub_1018be10)
+	char m_WorldInfo1FBC[0x20];	// 0x1FBC: the world info record sub_1023cde0 fills
+	char m_pad1FDC[0x2018 - 0x1fdc];	// 0x1FDC .. 0x2017
 	int m_aSlotType2018[10];	// 0x2018: kind of each of the ten command slots (0 = unused)
 	int m_aSlotValue2040[10];	// 0x2040: value of each command slot (a name hash or packed range)
 	int m_n2068;	// 0x2068: set to 1 on death (vfunc144)
