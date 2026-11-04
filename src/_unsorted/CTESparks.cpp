@@ -52,9 +52,9 @@ void CTESparks::vfunc4(CRecipientFilter *pFilter, float flDelay)
 namespace lifted {
 extern char g_106c55fc;
 }
-int CTESparks::vfunc0()
+ServerClass *CTESparks::vfunc0()
 {
-    return (int)&lifted::g_106c55fc;
+    return (ServerClass *)&lifted::g_106c55fc;
 }
 // END FUNCTION
 

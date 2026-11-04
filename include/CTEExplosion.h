@@ -4,24 +4,7 @@
 
 #include "Vector.h"
 #include "CBaseTempEntity.h"
-
-// CTEParticleSystem: the part between CBaseTempEntity and CTEExplosion (the origin, zeroed by its constructor)
-class CTEParticleSystemHead : public CBaseTempEntityHead
-{
-public:
-	CTEParticleSystemHead(const char *pName) : CBaseTempEntityHead(pName)
-	{
-		m_vecOrigin.x = 0;
-		m_vecOrigin.y = 0;
-		m_vecOrigin.z = 0;
-	}
-
-	virtual ServerClass *vfunc0();
-	virtual int vfunc1();
-
-	char m_pad0004[8];
-	Vector m_vecOrigin;	// 0x0c
-};
+#include "CTEParticleSystem.h"
 
 class CTEExplosion : public CTEParticleSystemHead
 {

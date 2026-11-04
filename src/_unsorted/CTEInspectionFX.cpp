@@ -52,9 +52,9 @@ void CTEInspectionFX::vfunc4(CRecipientFilter *pFilter, float flDelay)
 namespace lifted {
 extern char g_106c4744;
 }
-int CTEInspectionFX::vfunc0()
+ServerClass *CTEInspectionFX::vfunc0()
 {
-    return (int)&lifted::g_106c4744;
+    return (ServerClass *)&lifted::g_106c4744;
 }
 // END FUNCTION
 
