@@ -6025,6 +6025,7 @@
 0x1000a0c4 func   ?vfunc1@CHangRope@@UAEXPAUCRopeNode@@H@Z CHangRope::vfunc1
 0x1000a0d3 func   ?sub_10312320@CUnknown10312320@@QAEXXZ CUnknown10312320::sub_10312320
 0x1000a0d8 func   ?sub_1008ff50@CBaseAnimating@@QAEPBDH@Z CBaseAnimating::sub_1008ff50
+0x1000a0dd func   ?sub_10319eb0@CNode10319eb0@@QAEPAU1@XZ CNode10319eb0::sub_10319eb0
 0x1000a0e2 func   ?sub_100e7230@@YGHPBDH@Z sub_100e7230
 0x1000a0ec func   ?sub_100bdee0@CUnknown100bdee0@@QAEPAXXZ CUnknown100bdee0::sub_100bdee0
 0x1000a0f6 func   ?sub_10428ed0@@YAXPADHPBM@Z sub_10428ed0

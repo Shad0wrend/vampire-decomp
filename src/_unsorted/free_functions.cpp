@@ -163364,6 +163364,21 @@ int *__fastcall sub_10319e70(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10319eb0 size=0x13
+struct CNode10319eb0 {
+    char pad[0x30];
+    CNode10319eb0 *m_pNext30;
+    CNode10319eb0 *sub_10319eb0();
+};
+CNode10319eb0 *CNode10319eb0::sub_10319eb0()
+{
+    CNode10319eb0 *p = this;
+    while (p->m_pNext30)
+        p = p->m_pNext30;
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10319ee0 size=0x16
 void sub_1031a050(int a);
 
