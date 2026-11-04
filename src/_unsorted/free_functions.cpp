@@ -105818,6 +105818,91 @@ CProjSlots *sub_101ef900(const float *pos, const float *ang, CBaseEntity *pOwner
 }
 // END FUNCTION
 
+// FUNCTION: 0x101efcf0 size=0x1fc
+#include "CVampireProjectile.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CPVSFilter.h"
+#include "CGameRules.h"
+#include "UTIL_BloodStream.h"
+#include "CUnknown10924a1c.h"
+#include "CUnknown101c2770.h"
+#include "CTakeDamageInfo.h"
+#include "CVDmg_t.h"
+#include "CWeaponThrown_Grenade_Frag.h"
+
+extern CUnknown10924a1c *g_1073a41c;
+extern CUnknown10924a1c *g_1073a6dc;
+
+struct ProjView
+{
+	char m_pad0000[0x7a8];
+	int m_nRadius7a8;	// 0x7a8
+	char m_sz7ac[0x834 - 0x7ac];
+	char m_dmg834[0x844 - 0x834];
+	unsigned int m_nFlags844;	// 0x844
+};
+
+void __fastcall sub_101eff70(ProjView *pThis);
+void sub_101cdba0(const Vector *pOrigin, float a, float b, float c, float d, int e, bool f);
+
+class CTempEntsVTable
+{
+public:
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual void vfunc2(void *pFilter, int a, const Vector *pVecA, const Vector *pVecB, const char *pszName);
+	virtual void vfunc3();
+	virtual void vfunc4();
+	virtual void vfunc5();
+	virtual void vfunc6();
+	virtual void vfunc7();
+	virtual void vfunc8();
+	virtual void vfunc9();
+	virtual void vfunc10();
+	virtual void vfunc11();
+	virtual void vfunc12();
+	virtual void vfunc13();
+	virtual void vfunc14();
+	virtual void vfunc15();
+	virtual void vfunc16();
+	virtual void vfunc17();
+	virtual void vfunc18();
+	virtual void vfunc19();
+	virtual void vfunc20(void *pFilter, int a, const Vector *pVec, int c, int d, int e, int f, float flAmount, float f9, float f10);
+};
+
+void CVampireProjectile::sub_101efcf0()
+{
+	ProjView *pView = (ProjView *)this;
+	CEntityVSlots *pSlots = (CEntityVSlots *)this;
+
+	Vector vecCenter = vfunc192();
+	Vector vec = *(Vector *)g_1070d9d0;
+	float flYaw = pSlots->slot219()->y;
+	vec.y = flYaw;
+
+	CPVSFilter filter(vecCenter);
+	((CTempEntsVTable *)g_10540528)->vfunc2(&filter, 0, &vecCenter, &vec, (const char *)((char *)this + 0x7ac));
+
+	if (!((CGameRules *)g_1070ba0c)->vfunc21())
+	{
+		float fA = g_1073a41c->vfunc1() ? 0.0f : g_1073a41c->m_fl28;
+		float fB = g_1073a6dc->vfunc1() ? 0.0f : g_1073a6dc->m_fl28;
+		((CTempEntsVTable *)g_10540528)->vfunc20(&filter, 0, &vecCenter, 0xff, 0xb4, 0x64, 0, (float)pView->m_nRadius7a8, fB, fA);
+	}
+
+	sub_101eff70(pView);
+
+	pView->m_nFlags844 = (pView->m_nFlags844 & ~0x1000) | 0x2000;
+
+	CTakeDamageInfo dmg;
+	((CGameRules *)g_1070ba0c)->vfunc33(((CUnknown101c2770 *)&dmg)->sub_101c2770((CVDmg_t *)((char *)this + 0x834)), pSlots->slot220(), (float)pView->m_nRadius7a8, 0, 0);
+
+	sub_101cdba0(pSlots->slot217(), 25.0f, 150.0f, 1.0f, (float)pView->m_nRadius7a8, 0, false);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101eff70 size=0x176
 #include "CEntityVSlots.h"
 #include "CGlobalEntityList.h"
