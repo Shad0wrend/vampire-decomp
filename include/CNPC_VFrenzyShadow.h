@@ -143,7 +143,7 @@ public:
 	virtual void vfunc94();
 	virtual void vfunc95();
 	virtual void vfunc96();
-	virtual void vfunc97();
+	virtual void *vfunc97();
 	virtual void vfunc98();
 	virtual void vfunc99();
 	virtual void vfunc100();
@@ -188,7 +188,7 @@ public:
 	virtual void vfunc139();
 	virtual void vfunc140();
 	virtual void vfunc141();
-	virtual void vfunc142();
+	virtual int vfunc142(int a);
 	virtual void vfunc143();
 	virtual void vfunc144(int);
 	virtual void vfunc145();
