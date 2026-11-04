@@ -125801,6 +125801,83 @@ next:
 }
 // END FUNCTION
 
+// FUNCTION: 0x102297a0 size=0xfd
+#include "IGameSystem.h"
+#include "CSoundscapeSystem.h"
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+extern float g_1048dd2c;
+
+struct SChannel { char pad[0x44]; float m_time; char pad2[8]; int m_id; char pad3[0x58 - 0x54]; };
+#define P7(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6();
+struct SSoundSys {
+    P7(a)
+    virtual void Stop(int a, int id, void *pChannel);
+};
+extern SSoundSys *g_1070b248;
+
+int CSoundscapeSystem::sub_102297a0()
+{
+    char *p = (char *)this;
+    int count = *(int *)(p + 0x180);
+    int id;
+    int *pId;
+    int i;
+    for (id = 1; id < 7; ++id) {
+        bool used = false;
+        i = 0;
+        if (0 < (int)count) {
+            SChannel *pCh = (SChannel *)(*(char **)((int)p + 0x174));
+            pId = &pCh->m_id;
+            do {
+                if (*pId == id) {
+                    used = true;
+                    break;
+                }
+                i++;
+                pId += 0x16;
+            } while (i < count);
+        }
+        if (used)
+            continue;
+        i = 0;
+        pId = (int *)(p + 0x64);
+        do {
+            if (*pId == id) {
+                used = true;
+                break;
+            }
+            i += 1;
+            pId += 0x16;
+        } while (i < 4);
+        if (used)
+            continue;
+        break;
+    }
+    if (!(7 > id)) { float best; best = g_1048dd2c;
+    unsigned int bestIdx = 0;
+    i = 0;
+    if (0 < count) {
+        float *pT = (float *)(*(char **)(p + 0x174) + 0x44);
+        do {
+            if (best > *pT) {
+                best = *pT;
+                bestIdx = i;
+            }
+            i += 1;
+            pT += 0x16;
+        } while (i < count);
+    }
+    int off = 0x58 * bestIdx;
+    int t0 = 0x50 + off; int removedId = *(int *)(((t0) + *(int *)((p + 0x174))));
+    g_1070b248->Stop(0, removedId, (void *)(off + *(int *)(0x174 + p)));
+    int t1 = *(int *)(p + 0x180) - bestIdx; int n = t1 - 1;
+    if (n > 0)
+        memmove((void *)(off + *(int *)(p + 0x174)), (void *)(bestIdx * 0x58 + 0x58 + *(int *)(p + 0x174)), n * 0x58);
+    (*(int *)(p + 0x180))--;
+    return removedId; } else return id;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10229ff0 size=0x43
 #include "CSoundScheme.h"
 void *sub_100aa720(int size);
