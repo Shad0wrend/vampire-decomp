@@ -99069,6 +99069,28 @@ void CUnknown101dbe30::sub_101dc0b0(CBaseEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dc120 size=0x18
+#include "CBaseEntity.h"
+#include "CUnknown101dbe30.h"
+namespace block_101dc120 {
+struct CUnit : CUnknown101dbe30 {
+	bool sub_101dbe10();
+};
+#pragma auto_inline(off)
+bool CUnit::sub_101dbe10()
+{
+	return m_field0000 != 0;
+}
+}
+using namespace block_101dc120;
+
+void CUnknown101dbe30::sub_101dc120(CBaseEntity *pEntity)
+{
+	if (((CUnit *)this)->sub_101dbe10() && m_field0008)
+		sub_101dc0b0(pEntity);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dc150 size=0x4a
 #include "CUnknown101dbe30.h"
 

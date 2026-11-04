@@ -12277,6 +12277,7 @@
 0x1001346c func   ?vfunc176@CBaseTrigger@@QAEXPAVCBaseEntity@@@Z CBaseTrigger::vfunc176
 0x1001347b func   ?sub_1021df90@CPropKeypad@@QAEXXZ CPropKeypad::sub_1021df90
 0x10013480 func   ?sub_101e3a30@CUnknown101e0f00@@QAEXPAUS1033d380@@H@Z CUnknown101e0f00::sub_101e3a30
+0x10013485 func   ?sub_101dc120@CUnknown101dbe30@@QAEXPAVCBaseEntity@@@Z CUnknown101dbe30::sub_101dc120
 0x1001348a func   ?sub_100cdb50@@YIXPAUCListHolder100cdb50@@@Z sub_100cdb50
 0x1001348f func   ?sub_1033d640@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_1033d640
 0x10013494 func   ?sub_101e3be0@CUnknown101e3be0@@QAEXHI@Z CUnknown101e3be0::sub_101e3be0
