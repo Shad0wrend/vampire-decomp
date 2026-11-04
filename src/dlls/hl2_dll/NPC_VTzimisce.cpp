@@ -14,6 +14,94 @@ bool __stdcall sub_103ba780(char *pObj)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103bc4e0 size=0x290
+#include "CBaseEntity.h"
+#include "CNPC_VTzimisce.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "VectorHelpers.h"
+#include "CUnknown102e0150.h"
+#include <math.h>
+
+int CNPC_VTzimisce::sub_103bc4e0()
+{
+	float fDistTargetSq;
+	CEntityVSlots *pThis = (CEntityVSlots *)this;
+	CBaseEntity *pEnemy = (CBaseEntity *)pThis->slot167();
+	char bVisible = pEnemy ? pThis->slot530( (CEntityVSlots *)pEnemy ) : 1;
+	bool bSeeEnemy = sub_10269aa0( 9 );
+
+	if ( !bVisible )
+	{
+		if ( !bSeeEnemy )
+			goto fail;
+		if ( m_n66b8 )
+			goto fail;
+		if ( !m_bJustFoundBody )
+		{
+			if ( enginerandom->vfunc2( 0, 99 ) >= 0x55 )
+				goto fail;
+		}
+		else
+		{
+			if ( enginerandom->vfunc2( 0, 99 ) >= 0x37 )
+				goto fail;
+		}
+	}
+
+	if ( !sub_103be180() )
+		goto fail;
+
+	{
+		CEntityVSlots *pTarget = (CEntityVSlots *)EHandle_Get( m_hTarget );
+		Vector vecTarget = *pTarget->slot220() - *pThis->slot220();
+		fDistTargetSq = vecTarget.LengthSqr();
+
+		if ( !bVisible && pEnemy )
+		{
+			Vector vecLast;
+			pThis->slot541()->sub_102dfed0( &vecLast, pEnemy );
+			Vector vecEnemy = vecLast - *pThis->slot220();
+			float fDistEnemySq = vecEnemy.LengthSqr();
+
+			if ( fDistTargetSq < fDistEnemySq )
+			{
+				float yawEnemy = sub_101d2c70( &vecEnemy );
+				float yawTarget = sub_101d2c70( &vecTarget );
+				if ( fabs( sub_1013d580( yawTarget, yawEnemy ) ) > 120.0 )
+				{
+					if ( fDistEnemySq * 0.2f > fDistTargetSq )
+						goto reject;
+				}
+				goto accept;
+			}
+
+reject:
+			m_hTarget = 0xffffffff;
+			sub_102c43b0( 0 );
+			return 0;
+		}
+	}
+
+accept:
+	sub_103be050( 1 );
+	m_bJustFoundBody = true;
+	*(const char **)( (char *)this + 0x1b30 ) = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VTzimisce.cpp";
+	if ( fDistTargetSq >= 90000.0f )
+	{
+		*(int *)( (char *)this + 0x1b34 ) = 0xb16;
+		return 0x18f;
+	}
+	*(int *)( (char *)this + 0x1b34 ) = 0xb1a;
+	return 0x190;
+
+fail:
+	m_n66b8 = 2;
+	m_bJustFoundBody = false;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103bc820 size=0x18b
 #include "CNPC_VTzimisce.h"
 #include "CUnknown1070b244.h"
