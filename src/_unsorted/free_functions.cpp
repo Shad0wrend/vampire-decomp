@@ -47103,6 +47103,42 @@ void CUnknown100ea1e0::sub_100ea1e0(char flag, char *pOut1, char *pOut2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ea6d0 size=0x36
+struct CUnknown100ea6d0Item
+{
+	void sub_1000a448(int a);
+	void sub_100e0f90(int a);
+};
+
+struct CUnknown100ea6d0Ctl
+{
+	CUnknown100ea6d0Item *sub_10012ab2();
+};
+
+struct CUnknown100ea6d0Owner
+{
+	char m_pad0000[0xa8];
+	CUnknown100ea6d0Ctl *m_pCtl;
+};
+
+CUnknown100ea6d0Owner *sub_10008d8c();
+
+// TARGET: sub_100ea6d0
+void sub_100ea6d0()
+{
+	CUnknown100ea6d0Owner *pOwner = sub_10008d8c();
+	if (pOwner != 0)
+	{
+		CUnknown100ea6d0Ctl *pCtl = pOwner->m_pCtl;
+		if (pCtl != 0)
+		{
+			pCtl->sub_10012ab2()->sub_1000a448(-1);
+			pCtl->sub_10012ab2()->sub_100e0f90(0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eafb0 size=0x3b
 #include "MvsnSec.h"
 // TARGET: MvsnSec::CSecureTypeBase<MvsnSec::CPfnTraits3,int,MvsnSec::CSecureCoderPfn<MvsnSec::CPfnTraits3,int>,MvsnSec::CSecureCoderBasic<MvsnSec::CPfnTraits3,int> >::sub_100eafb0
