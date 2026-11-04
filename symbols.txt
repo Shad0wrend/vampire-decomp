@@ -672,6 +672,7 @@
 0x10002027 func   ?sub_102e26f0@@YIXPAUCOwner@@@Z sub_102e26f0
 0x1000202c func   ?sub_10411f90@@YAXXZ sub_10411f90
 0x10002031 func   ?vfunc5@CBaseCineCam@@UAEPAV1@I@Z CBaseCineCam::vfunc5
+0x10002036 func   ?sub_101dcb20@CUnknown101dcb20@block_101dcb20@@QAEPAU12@XZ block_101dcb20::CUnknown101dcb20::sub_101dcb20
 0x10002040 func   ?vfunc483@CHL2_Player@@UAEHXZ CHL2_Player::vfunc483
 0x10002045 func   ?vfunc64@CSingleplayRules@@UAEHHH@Z CSingleplayRules::vfunc64
 0x1000204f func   ?Grow@?$CUtlMemory@V?$CHandle@VCBasePlayer@@@@@@QAEXH@Z CUtlMemory<CHandle<CBasePlayer> >::Grow

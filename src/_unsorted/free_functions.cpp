@@ -99441,6 +99441,40 @@ void CUnknown101e0f00SrcA::sub_101dc8a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dcb20 size=0x17
+namespace block_101dcb20 {
+struct CSub {
+	int m_a, m_b, m_c, m_d;
+	CSub *sub_101dc1c0();
+};
+#pragma auto_inline(off)
+CSub *CSub::sub_101dc1c0()
+{
+	m_a = 1;
+	m_b = 0;
+	m_c = 0;
+	m_d = 0;
+	return this;
+}
+struct CUnknown101dcb20 {
+	int m_n00;
+	int m_n04;
+	int m_n08;
+	CSub m_sub0c;
+	CUnknown101dcb20 *sub_101dcb20();
+};
+CUnknown101dcb20 *CUnknown101dcb20::sub_101dcb20()
+{
+	m_sub0c.sub_101dc1c0();
+	m_n08 = 0;
+	m_n00 = 0;
+	m_n04 = 0;
+	return this;
+}
+}
+// TARGET: block_101dcb20::CUnknown101dcb20::sub_101dcb20
+// END FUNCTION
+
 // FUNCTION: 0x101dcb50 size=0x11
 #include "vampire.h"
 
