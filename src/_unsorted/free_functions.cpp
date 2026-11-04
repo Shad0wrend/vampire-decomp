@@ -97291,6 +97291,29 @@ bool CUnknown101d6100::sub_101d6100(void *pCharacter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d6190 size=0x3c
+typedef int (*MsgFn)(const char *, ...);
+typedef int (*SnprintfFn)(char *, int, const char *, ...);
+extern MsgFn g_109f3628;
+extern SnprintfFn g_109f388c;
+extern const char g_105a0e54[];
+extern const char g_105490b0[];
+int sub_102043a0(int);
+
+struct CUnk101d6190 {
+	int m_pad0000[4];
+	int m_n0010;
+	void sub_101d6190();
+};
+
+void CUnk101d6190::sub_101d6190()
+{
+	char buf[0x200];
+	g_109f388c(buf, 0x200, g_105a0e54, sub_102043a0(m_n0010));
+	g_109f3628(g_105490b0, buf);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d6220 size=0x64
 #include "CVStatAction_t.h"
 struct CPartHolderX {
