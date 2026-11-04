@@ -47,7 +47,7 @@ public:
 	virtual void vfunc15();
 	virtual void vfunc16(const void *pData, int nBytes);	// slot 16: writes the float at pData (a 4-byte value), called by vfunc25 with the difference of two floats
 	virtual void vfunc17(const char *pszName, void *pData, int count);	// slot used by WriteField for field types 0x10 / 0x11
-	virtual void vfunc18();
+	virtual void vfunc18(int a, const char *psz);
 	virtual void vfunc19(const char **ppStrings, int count);	// writes count strings (a null entry is the empty string at 0x106b8540), each with its length + 1 through sub_1000643d
 	virtual void vfunc20(const char *pString);	// WriteString
 	virtual void vfunc21(const char *pszName, const void *pData, int count);	// 0x1019fdd0: sub_101a05f0(count, count * 12), then sub_1000643d(pData, count * 12); pszName is unused
