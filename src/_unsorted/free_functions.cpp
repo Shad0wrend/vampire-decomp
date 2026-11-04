@@ -28938,6 +28938,23 @@ char __fastcall sub_100993c0(void *pSelf, int unused, int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10099400 size=0x1e
+#include "CBasePlayer.h"
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+struct CSlotView
+{
+	V100(a0) V100(a1) V10(b0) V10(b1) V10(b2) V10(b3) V10(b4) V10(b5) V10(b6) virtual void c0();
+	virtual int vfunc271(int a);
+};
+
+char CBasePlayer::sub_10099400(int a)
+{
+	int r = ((CSlotView *)this)->vfunc271(a);
+	return sub_100993c0(r);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10099b00 size=0xe8
 #include "utlrbtree.h"
 #include "utlsortvector.h"
