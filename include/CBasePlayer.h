@@ -202,7 +202,9 @@ public:
 	CBP_V1(sl4) virtual float vfunc464(); CBP_V1(sl6) virtual float vfunc466(); CBP_V1(sl8)
 	virtual void vfunc468();	// registers the "player_stand" / "player_crouch" collision hulls (16x16x36 and -16,-16,0) for the sub-object at +0x270
 
-	char m_pad0004[0x1fc - 0x4];	// 0x0004 .. 0x01FB
+	char m_pad0004[0x184 - 0x4];	// 0x0004 .. 0x0183
+	Vector m_vecViewOffset184;	// 0x0184: the eye offset (CBaseEntity::m_vecViewOffset)
+	char m_pad0190[0x1fc - 0x190];	// 0x0190 .. 0x01FB
 	int m_nTakeDamage1FC;	// 0x01FC: the take-damage mode (CBaseEntity::m_nTakeDamage)
 	char m_pad0200[0x22c - 0x200];	// 0x0200 .. 0x022B
 	int m_n22C;	// 0x022C: set to -1 when the command run is paused
