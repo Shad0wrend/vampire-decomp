@@ -128840,6 +128840,23 @@ int __stdcall sub_1023e270(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023e290 size=0x23
+void sub_10265680(char value);
+
+struct CUnk1023e290
+{
+	char m_pad0000[8];
+	char m_b08;
+	char m_pad0009[0x18 - 9];
+	int m_n18;
+};
+
+void __stdcall sub_1023e290(CUnk1023e290 *p)
+{
+	sub_10265680(p->m_n18 == 5 ? p->m_b08 : (char)0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023e2d0 size=0x46
 #include "inputdata_t.h"
 #include "engineserver.h"

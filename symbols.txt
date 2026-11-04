@@ -1959,6 +1959,7 @@
 0x10003f17 func   ?sub_10073b00@CUnknown10073b00@@QAEMXZ CUnknown10073b00::sub_10073b00
 0x10003f2b func   ?sub_10085100@@YAHXZ sub_10085100
 0x10003f35 func   ?sub_101cca80@@YAHPAPAVCBaseEntity@@HPBM1IH@Z sub_101cca80
+0x10003f3a func   ?sub_1023e290@@YGXPAUCUnk1023e290@@@Z sub_1023e290
 0x10003f3f func   ?sub_100cd940@@YIHPAUCListNode100cd940@@@Z sub_100cd940
 0x10003f44 func   ?sub_10246430@@YAXHPAH0@Z sub_10246430
 0x10003f49 func   ?vfunc312@CWeaponPhysCannon@@UAEDXZ CWeaponPhysCannon::vfunc312
