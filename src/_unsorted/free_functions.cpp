@@ -123576,6 +123576,23 @@ void CUnknown10227250::sub_10227250(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10227280 size=0x20
+int sub_101cd9e0(int a);
+
+struct CUnk10227280
+{
+	void sub_10161a70(const char *psz);
+};
+
+// TARGET: sub_10227280
+void __stdcall sub_10227280(int a)
+{
+	CUnk10227280 *p = (CUnk10227280 *)sub_101cd9e0(1);
+	if (p)
+		p->sub_10161a70("npc_VPlayerController");
+}
+// END FUNCTION
+
 // FUNCTION: 0x102272b0 size=0x4c
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
