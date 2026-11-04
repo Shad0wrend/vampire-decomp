@@ -11607,6 +11607,7 @@
 0x100121c5 func   ?sub_10130360@CLight@@QAEPAV1@XZ CLight::sub_10130360
 0x100121ca func   ?sub_1015eec0@CUnknown1015ef20@@QAE_NXZ CUnknown1015ef20::sub_1015eec0
 0x100121cf func   ?sub_102652d0@CUnknown102652d0@@QAEHXZ CUnknown102652d0::sub_102652d0
+0x100121d4 func   ?vfunc438@CNPC_VWerewolf@@QAEHXZ CNPC_VWerewolf::vfunc438
 0x100121de func   ?sub_10133910@CMathCounter@@QAEXAAUinputdata_t@@@Z CMathCounter::sub_10133910
 0x100121e3 func   _npc_VMoleman npc_VMoleman
 0x100121e8 func   ?vfunc173@CSprite@@UAEXHHHH@Z CSprite::vfunc173
