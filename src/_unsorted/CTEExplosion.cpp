@@ -1,6 +1,23 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10061820 size=0x43
+#include "CTEExplosion.h"
+
+// TARGET: CTEExplosion::CTEExplosion
+CTEExplosion::CTEExplosion(const char *pName) : CTEParticleSystemHead(pName)
+{
+	m_nField18 = 0;
+	m_nField1c = 0;
+	m_nField20 = 0;
+	m_nField24 = 0;
+	m_vecNormal.Init();
+	m_nField38 = 0;
+	m_nField3c = 0;
+	m_bField34 = 0x43;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10061890 size=0x1e
 #include "CTEExplosion.h"
 
