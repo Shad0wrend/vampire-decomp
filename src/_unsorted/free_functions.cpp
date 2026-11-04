@@ -124858,6 +124858,26 @@ extern "C" CBaseEntity *prop_doorknob_electronic()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102263b0 size=0x43
+#include "CItemContainerLock.h"
+#include "CBaseEntity.h"
+
+void *sub_100aa720(int size);
+
+// TARGET: item_container_lock
+extern "C" CBaseEntity *item_container_lock()
+{
+	void *mem = sub_100aa720(0x824);
+	CItemContainerLock *p;
+	if (mem)
+		p = ((CItemContainerLock *)mem)->sub_10226420();
+	else
+		p = 0;
+	((CBaseEntity *)p)->vfunc106("item_container_lock");
+	return (CBaseEntity *)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102265c0 size=0x43
 #include "CPlayerEvents.h"
 void *sub_100aa720(int size);
