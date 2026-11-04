@@ -478,7 +478,7 @@ public:
 	virtual void vfunc155();
 	virtual void vfunc156();
 	virtual void vfunc157();
-	virtual void vfunc158();
+	virtual bool vfunc158();
 	virtual void vfunc159();
 	virtual void vfunc160();
 	virtual void vfunc161();
