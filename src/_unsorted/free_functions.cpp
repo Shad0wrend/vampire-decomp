@@ -187966,6 +187966,25 @@ int __cdecl sub_103e1740()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e1770 size=0x2e
+class CUnknown10940524
+{
+public:
+	virtual void vfunc0();
+	virtual bool vfunc1();
+	char m_pad0004[0x2c - 4];
+	int m_n2c;
+};
+
+extern CUnknown10940524 *g_10940524;
+
+// TARGET: sub_103e1770
+bool sub_103e1770()
+{
+	return (g_10940524->vfunc1() ? 0 : g_10940524->m_n2c) != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e17b0 size=0x126
 #include "CBaseEntity.h"
 #include "CGameTrace.h"

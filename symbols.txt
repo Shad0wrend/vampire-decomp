@@ -5765,6 +5765,7 @@
 0x100099ad func   ?sub_1042ab80@CBaseGrenade@@QAEXPAVCBaseEntity@@@Z CBaseGrenade::sub_1042ab80
 0x100099b2 func   ?vfunc113@CLogicSquadCondition@@UAEXXZ CLogicSquadCondition::vfunc113
 0x100099b7 func   ?vfunc80@CRagdollProp@@UAEHXZ CRagdollProp::vfunc80
+0x100099bc func   ?sub_103e1770@@YA_NXZ sub_103e1770
 0x100099c1 func   ?sub_102ca110@CUnknown102ca110@@QAEXXZ CUnknown102ca110::sub_102ca110
 0x100099c6 func   ?vfunc133@CFuncElevator@@QAEXXZ CFuncElevator::vfunc133
 0x100099cb func   ?vfunc276@CBaseCombatWeapon@@UAEHI@Z CBaseCombatWeapon::vfunc276
