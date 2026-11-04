@@ -136345,6 +136345,113 @@ void CAI_BaseNPC::sub_1026e4f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026e5e0 size=0x2a6
+#include "CAI_BaseNPC.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CGameTrace.h"
+#include "CAI_MoveProbe.h"
+#include "CVProfile.h"
+#include "globalvars.h"
+#include "Vector.h"
+#include "CCollisionProperty.h"
+#include "CDevFlagObj.h"
+#include "CUnknown1027d990.h"
+
+struct HullTrace : CGameTrace {};
+
+void sub_1026e940(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs,
+                  unsigned int mask, void *pFilter, HullTrace *pTrace, char b);
+
+struct CTraceFilterNavGround102e3290
+{
+    int m_pad[5];
+    CTraceFilterNavGround102e3290 *sub_102e3290(int a, int b);
+};
+
+struct CAI_BaseNPCCheckOnGround : CAI_BaseNPC
+{
+    char m_pad5d5c[0x5d5c - 4];
+    float m_fl5d5c;
+};
+
+extern CDevFlagObj *g_10924a6c;
+
+// TARGET: CAI_BaseNPC::sub_1026e5e0
+void CAI_BaseNPC::sub_1026e5e0()
+{
+    ScopeTrace trace("CAI_BaseNPC::CheckOnGround",
+                     this ? (((CBaseEntity *)this)->m_name26c ? ((CBaseEntity *)this)->m_name26c : g_106b8540) : g_105387dc);
+
+    CAI_BaseNPCCheckOnGround *pSelf = (CAI_BaseNPCCheckOnGround *)this;
+    CBaseEntity *pEnt = (CBaseEntity *)this;
+
+    if (!sub_10269aa0(0x73))
+    {
+        if (((CUnknown1027d990 *)this)->sub_1027d990() != 0)
+            return;
+        if (vfunc94() == 7)
+            return;
+
+        if (gpGlobals->curtime - pSelf->m_fl5d5c > -0.001)
+        {
+            pSelf->m_fl5d5c = gpGlobals->curtime + 0.5f;
+
+            Vector vecStart = *(Vector *)vfunc217();
+            vecStart.z = vecStart.z + 0.1;
+            Vector vecEnd = *(Vector *)vfunc217();
+            vecEnd.z = vecEnd.z - 4.0;
+
+            CCollisionProperty *pCol = (CCollisionProperty *)((char *)this + 0x270);
+            pCol->vfunc1();
+            pCol->vfunc2();
+            const Vector *pMins = (const Vector *)pCol->vfunc1();
+            const Vector *pMaxs = (const Vector *)pCol->vfunc2();
+
+            CAI_MoveProbe *pProbe = (CAI_MoveProbe *)Owned5d40();
+
+            g_109f3648->EnterScope("CAI_MoveProbe_TraceHull", 0, "Unaccounted", false);
+
+            CBaseEntity *pOuter = (CBaseEntity *)pProbe->m_pOuter;
+
+            HullTrace tr;
+
+            CTraceFilterNavGround102e3290 filter;
+            int nGroup = *(int *)((char *)pOuter + 0x368);
+            filter.sub_102e3290((int)pOuter, nGroup);
+
+            sub_1026e940(vecStart, vecEnd, *pMins, *pMaxs, 0x202400b, &filter, &tr, 1);
+
+            g_109f3648->ExitScope();
+
+            if (tr.m_fraction == 1.0)
+            {
+                g_10924a6c->vfunc1();
+                sub_10269a20(0x73);
+                vfunc208(0);
+                return;
+            }
+            if (tr.m_pEnt != 0 && tr.m_pEnt != vfunc209())
+            {
+                vfunc208((int)tr.m_pEnt);
+            }
+        }
+    }
+    else
+    {
+        if ((pEnt->sub_100b3700() & 1) || ((CUnknown1027d990 *)this)->sub_1027d990() != 0)
+            sub_10269b50(0x73);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026e940 size=0x241
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

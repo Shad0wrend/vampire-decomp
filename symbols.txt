@@ -10969,6 +10969,7 @@
 0x1001170c func   ?sub_101976b0@@YAPAUPyObj@@PAU1@0@Z sub_101976b0
 0x1001171b func   ?vfunc17@CBaseEntity@@UAEXHH@Z CBaseEntity::vfunc17
 0x10011720 func   ?sub_10407020@@YAHXZ sub_10407020
+0x10011725 func   ?sub_1026e5e0@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_1026e5e0
 0x1001172f func   ?sub_102d6160@@YAPADH@Z sub_102d6160
 0x10011739 func   ?sub_100a54a0@@YAXPBM0PAM1@Z sub_100a54a0
 0x1001173e func   ?sub_1007fce0@UtlMem6@@QAEXH@Z UtlMem6::sub_1007fce0
