@@ -153882,6 +153882,23 @@ bool CUnknown102dd450::sub_102dd450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dd500 size=0x18
+#include "CUnknown102dd500.h"
+extern char g_106b8540[];
+
+struct CUnknown102dd500Unit : CUnknown102dd500
+{
+    const char *sub_102dd470(int count, CUnknown102dd500Entry *entries);
+};
+
+const char *CUnknown102dd500::sub_102dd500()
+{
+    if (m_nCount)
+        return ((CUnknown102dd500Unit *)this)->sub_102dd470(m_nCount, m_Entries);
+    return g_106b8540;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dd530 size=0xe
 // sub_102dd470 takes this in ecx and pops its two stack arguments (ret 8): a member of the same object, so the
 // caller keeps ecx for it and loads the first argument into edx
