@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1005b360 size=0x21
+#include "CTEBeamEnts.h"
+
+CTEBeamEnts::CTEBeamEnts(const char *name) : CTEBaseBeam(name)
+{
+	m_n44 = 0;
+	m_n48 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005b3a0 size=0x1e
 #include "CTEBeamEnts.h"
 
