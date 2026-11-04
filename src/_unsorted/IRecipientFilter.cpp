@@ -7,8 +7,8 @@
 struct DummyFilter : IRecipientFilter
 {
 	void vfunc1() {}
-	void vfunc2() {}
-	void vfunc3() {}
+	int vfunc2() { return 0; }
+	int vfunc3(int) { return 0; }
 	char vfunc4() { return 0; }
 	void vfunc5() {}
 	void vfunc6() {}

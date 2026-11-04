@@ -21,8 +21,8 @@ public:
 	CRecipientFilter();	// 0x1019ce00 (stub 0x100035d5)
 
 	virtual void vfunc1();	// IsReliable
-	virtual void vfunc2();	// GetRecipientCount
-	virtual void vfunc3();	// GetRecipientIndex(slot)
+	virtual int vfunc2();	// GetRecipientCount
+	virtual int vfunc3(int slot);	// GetRecipientIndex(slot): the entity index, -1 for a slot out of range (0x1019cfb0)
 	virtual char vfunc4();	// 0x1019d320: m_1c == 1
 	virtual void vfunc5();
 	virtual void vfunc6();
