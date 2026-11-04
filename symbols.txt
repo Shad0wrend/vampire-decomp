@@ -9023,6 +9023,7 @@
 0x1000e719 func   ?sub_1027ef20@CUnknown1027ef20@@QAEXPBD@Z CUnknown1027ef20::sub_1027ef20
 0x1000e71e func   ?vfunc390@CNPC_VAndreiBlood@@QAEHPAX@Z CNPC_VAndreiBlood::vfunc390
 0x1000e723 func   ?vfunc362@CWeaponWallet@@QAEHXZ CWeaponWallet::vfunc362
+0x1000e728 func   ?sub_100faf60@CEnvParticle@@QAEXPAX@Z CEnvParticle::sub_100faf60
 0x1000e72d func   ??0CMoveHelperServer@@QAE@XZ CMoveHelperServer::CMoveHelperServer
 0x1000e732 func   ?sub_101b31d0@CSoundEmitterSystemBase@@QAEPBDH@Z CSoundEmitterSystemBase::sub_101b31d0
 0x1000e73c func   ?sub_101b1040@@YAXHPBD@Z sub_101b1040

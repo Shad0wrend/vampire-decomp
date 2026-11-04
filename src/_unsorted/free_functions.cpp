@@ -50474,6 +50474,26 @@ int CUnknown100fae70::sub_100fae70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100faf60 size=0x27
+#include "CEnvParticle.h"
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(q) V10(q##0) V10(q##1) V10(q##2) V10(q##3) V10(q##4) V10(q##5) V10(q##6) V10(q##7) V10(q##8) V10(q##9)
+struct CEnvParticleSlots100faf60
+{
+	V100(a) V100(b)
+	V10(c0) V10(c1) V10(c2) V10(c3)
+	virtual void d0(); virtual void d1(); virtual void d2();
+	virtual void slot243(void *pEntity, int nType, const char *pszName);
+};
+
+void CEnvParticle::sub_100faf60(void *pEntity)
+{
+	const char *pszName = m_pszAttachName ? m_pszAttachName : "";
+	((CEnvParticleSlots100faf60 *)this)->slot243(pEntity, m_iAttachType, pszName);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fafa0 size=0x11d
 #include "CBaseAnimating.h"
 
