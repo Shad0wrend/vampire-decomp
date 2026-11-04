@@ -58,7 +58,7 @@ struct CBaseEntityDtor
 
 void sub_100aa7b0(void *p);
 
-CLogicNPCCondition *CLogicNPCCondition::vfunc5(unsigned int flags)
+CLogicalEntity *CLogicNPCCondition::vfunc5(unsigned int flags)
 {
 	((CUnknownMember10015708 *)((char *)this + 0x470))->sub_10015708();
 	((CUnknownMember10015708 *)((char *)this + 0x458))->sub_10015708();

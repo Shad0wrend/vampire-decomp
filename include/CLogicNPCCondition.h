@@ -4,19 +4,21 @@
 
 struct datamap_t;
 
+#include "CLogicalEntity.h"
+#include "COutputEvent.h"
+
 class CBaseEntity;
 
-class CLogicNPCCondition
+class CLogicNPCCondition : public CLogicalEntity
 {
 public:
-	CLogicNPCCondition *vfunc5(unsigned int flags);
+	CLogicNPCCondition() : m_hEntity488(0xffffffff) {}
+	CLogicalEntity *vfunc5(unsigned int flags);	// scalar deleting destructor (VC6 has no covariant returns)
 
-	char m_pad0000[0x10c];
-	unsigned int m_hActivator10c;	// +0x10c: entity handle passed as the activator of the name search
-	char m_pad0110[0x450 - 0x110];
 	const char *m_name450;	// +0x450: name of the condition
 	const char *m_name454;	// +0x454: name of the entity to look up
-	char m_pad0458[0x488 - 0x458];
+	COutputEvent m_Output458;	// +0x458
+	COutputEvent m_Output470;	// +0x470
 	unsigned int m_hEntity488;	// +0x488: cached handle of the entity found by name
 	int m_nCondition;	// +0x48c: the condition id (not positive when the name was invalid)
 

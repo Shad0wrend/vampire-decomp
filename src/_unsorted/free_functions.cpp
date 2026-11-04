@@ -62764,7 +62764,7 @@ CBaseEntity *CLogicNPCCondition::sub_10135720()
 	unsigned int h = m_hEntity488;
 	EntInfo *e;
 	if (h == 0xffffffff || (e = &g_10566458->m_entries[h & 0x1fff], e->m_serial != (int)(h >> 13)) || e->m_pEntity == 0) {
-		unsigned int ha = m_hActivator10c;
+		unsigned int ha = m_hActivator10c.m_Index;
 		CBaseEntity *pActivator;
 		if (ha != 0xffffffff && (e = &g_10566458->m_entries[ha & 0x1fff], e->m_serial == (int)(ha >> 13)))
 			pActivator = e->m_pEntity;
