@@ -4255,6 +4255,7 @@
 0x10007595 func   ?sub_103ad0a0@CUnknown103ad0a0@@QAEDPAX@Z CUnknown103ad0a0::sub_103ad0a0
 0x1000759a func   ?sub_101d6ef0@CUnknown101d7380@@QAEXXZ CUnknown101d7380::sub_101d6ef0
 0x1000759f func   ?vfunc82@CPhysicsAnimlink@@UAEPAUdatamap_t@@XZ CPhysicsAnimlink::vfunc82
+0x100075a9 func   ?sub_10178470@CBasePlayer@@QAEHPAVCBaseEntity@@@Z CBasePlayer::sub_10178470
 0x100075ae func   ?vfunc609@CAI_BaseNPCTroika@@QAEHD@Z CAI_BaseNPCTroika::vfunc609
 0x100075b3 func   ?sub_1014ca10@CUnknown1014ca10@@QAEXEEE@Z CUnknown1014ca10::sub_1014ca10
 0x100075b8 func   ?vfunc86@CTestTraceline@@UAE_NHHHHH@Z CTestTraceline::vfunc86

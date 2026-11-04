@@ -73124,6 +73124,21 @@ bool CBasePlayer::sub_10178170()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10178470 size=0x3e
+#include "CBasePlayer.h"
+#include "CBaseCombatWeapon.h"
+#include "CItemGKeyring.h"
+
+// TARGET: CBasePlayer::sub_10178470
+int CBasePlayer::sub_10178470(CBaseEntity *pKeyring)
+{
+	CItemGKeyring *pRing = dynamic_cast<CItemGKeyring *>((CBaseCombatWeapon *)sub_10335950("item_g_keyring"));
+	if (pRing && pKeyring)
+		return pRing->sub_10407e10((const char *)pKeyring);
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101784c0 size=0x67
 #include "CBasePlayer.h"
 #include "CItemGKeyring.h"
