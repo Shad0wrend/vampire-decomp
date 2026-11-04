@@ -117717,6 +117717,19 @@ void CUnknown1020e060::sub_1020e080(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020e0a0 size=0x19
+#include "CPropSwitch.h"
+
+void __stdcall sub_1020dce0(int b);
+
+// TARGET: sub_1020e0a0
+void __fastcall sub_1020e0a0(void *self, int unused, int a)
+{
+	if (!((CPropSwitch *)self)->sub_1020e040())
+		sub_1020dce0(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020e0d0 size=0x19
 bool sub_1020e040();
 void __stdcall sub_1020dce0(int a);
