@@ -12,6 +12,19 @@ void sub_10264300(void *pElement, const void *pSrc);	// copies a 0x38-byte waypo
 class CAI_HumanoidMotor;
 class CAI_Navigator;
 
+// One 0x38-byte record of the waypoint vectors at +0x6024 / +0x6038 (CAI_BaseHumanoid::sub_102630b0 smooths them)
+struct CAI_BaseHumanoid_Waypoint
+{
+	float m_flF00;	// 0x00: 1.0f when both end distances are zero, else length / (mean of the end distances)
+	float m_flF04;	// 0x04
+	float m_flLength;	// 0x08: distance to the next record
+	float m_flDist0c;	// 0x0c: distance value at this record (0 for the first)
+	char m_pad10[0x20 - 0x10];
+	void *m_pNode;	// 0x20: the navigator node the record was copied from
+	char m_pad24[0x2c - 0x24];
+	Vector m_vecPos;	// 0x2c .. 0x37
+};
+
 class CAI_BaseHumanoid
 {
 public:
