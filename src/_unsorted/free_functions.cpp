@@ -18707,6 +18707,36 @@ char CUnknown10076b10::sub_10076b10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10076b30 size=0x1d
+namespace block_10076b30 {
+struct CUnit {
+	char pad[0x184];
+	float m_f184;
+	float m_f188;
+	char sub_10075f30();
+	float sub_10075f10();
+	float sub_10075e70();
+	float sub_10076b30();
+};
+#pragma auto_inline(off)
+char CUnit::sub_10075f30()
+{
+	if (m_f188 != -1.0f)
+		return 1;
+	return 0;
+}
+float CUnit::sub_10075f10() { return m_f188; }
+float CUnit::sub_10075e70() { return m_f184; }
+float CUnit::sub_10076b30()
+{
+	if (sub_10075f30())
+		return sub_10075f10() - sub_10075e70();
+	return 0.0f;
+}
+}
+// TARGET: block_10076b30::CUnit::sub_10076b30
+// END FUNCTION
+
 // FUNCTION: 0x10076b60 size=0x5c
 #include "CUnknown10075aa0.h"
 
