@@ -6897,6 +6897,7 @@
 0x1000b3b6 func   ?vfunc363@CWeaponThrown_Chang_Ghost@@QAEHXZ CWeaponThrown_Chang_Ghost::vfunc363
 0x1000b3c5 func   ?vfunc327@CBasePlayer@@UAEDXZ CBasePlayer::vfunc327
 0x1000b3ca func   ?sub_10383170@CMingXiaoView@@QAEXH@Z CMingXiaoView::sub_10383170
+0x1000b3cf func   ??0CStringPool@@QAE@XZ CStringPool::CStringPool
 0x1000b3d4 func   _npc_VVampire npc_VVampire
 0x1000b3d9 func   ?sub_101e8640@S@@QAEXPAUP@@@Z S::sub_101e8640
 0x1000b3de func   _func_door func_door
