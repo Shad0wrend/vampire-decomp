@@ -8812,6 +8812,32 @@ char sub_1004d590(EntSlot37 *pEnt, const Vector &vecA, const Vector &vecB)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004d650 size=0x3f
+#include <string.h>
+#include "CGlobalEntityList.h"
+#include "CBaseEntity.h"
+extern CGlobalEntityList g_106eb5d8;
+
+// TARGET: sub_1004d650
+int sub_1004d650(const char *pszName)
+{
+	if (pszName && strlen(pszName) != 0)
+	{
+		CBaseEntity *pEnt = 0;
+		int v;
+		do
+		{
+			pEnt = g_106eb5d8.sub_100f7770(pEnt, pszName, 0, 0);
+			if (!pEnt)
+				return 0;
+			v = *(int *)((char *)pEnt + 0x36c);
+		} while (!v);
+		return v;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004dcf0 size=0x72
 #include "SendProp.h"
 
