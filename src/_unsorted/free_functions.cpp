@@ -16331,6 +16331,25 @@ void CUnk10071840::sub_10071490(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10071500 size=0x32
+#include "inputdata_t.h"
+
+struct CUnk_10071500 { char pad_0000[0x82c]; float m_f82c; void sub_10071500(inputdata_t &in); };
+
+static inline float VariantFloat(variant_t &v)
+{
+	if (v.fieldType == 1)
+		return v.flValue;
+	return 0.0f;
+}
+
+void CUnk_10071500::sub_10071500(inputdata_t &in)
+{
+	if (in.value.fieldType == 1)
+		m_f82c = VariantFloat(in.value);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10071550 size=0xc1
 #include "CUnk10071840.h"
 #include "CBasePlayer.h"
