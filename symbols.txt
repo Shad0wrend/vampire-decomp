@@ -9458,6 +9458,7 @@
 0x1000efb1 func   ?vfunc2@CTETracer@@UAEPAV1@I@Z CTETracer::vfunc2
 0x1000efb6 func   _item_k_lucky_star_murder_key item_k_lucky_star_murder_key
 0x1000efbb func   ?sub_10334500@CBaseCombatCharacter@@QAEXHH@Z CBaseCombatCharacter::sub_10334500
+0x1000efc0 func   ??0CTEBeamEnts@@QAE@PBD@Z CTEBeamEnts::CTEBeamEnts
 0x1000efca func   ?vfunc82@CPropButton@@UAEPAUdatamap_t@@XZ CPropButton::vfunc82
 0x1000efd4 func   ?vfunc434@CGeneric_NPC@@UAEXXZ CGeneric_NPC::vfunc434
 0x1000efd9 func   ?sub_1034b4d0@CUnknown1034b4d0@@QAEHXZ CUnknown1034b4d0::sub_1034b4d0
