@@ -14222,6 +14222,28 @@ void sub_10069980(int pFilter, int delayBits, const float *pOrigin, const float 
 }
 // END FUNCTION
 
+// FUNCTION: 0x10069a10 size=0x2b
+#include "CTETParticleAttached.h"
+
+extern int vt_1044e118[];
+
+struct CBaseTempEntityHeadPlaceholder {
+    void sub_10015334(int a);
+};
+
+// TARGET: CTETParticleAttached::sub_10069a10
+CTETParticleAttached *CTETParticleAttached::sub_10069a10(int a)
+{
+    ((CBaseTempEntityHeadPlaceholder *)this)->sub_10015334(a);
+    *(int **)this = vt_1044e118;
+    m_nEntIndex = 0;
+    m_nParticle = 0;
+    m_n18 = 0;
+    m_n14 = 1;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10069a80 size=0xb
 namespace lifted {
 extern char g_1044e118;
