@@ -71,4 +71,9 @@ extern ConVar *g_109eef74;	// 0x109eef74: the bump scale convar read by TryPlaye
 extern ConVar *g_109ef28c;	// 0x109ef28c: the player movement friction convar read by CGameMovement::sub_10127dd0 / vfunc11 and 0x101200c0
 extern ConVar *g_1094a944;	// 0x1094a944: the PhysCannon reach convar (vfunc1 = unset, else m_fValue +0x28)
 extern ConVar *g_1094aa7c;	// 0x1094aa7c: the PhysCannon max-mass convar (vfunc1 = unset, else m_fValue +0x28)
+extern ConVar *g_1070934c;	// 0x1070934c: CFire burn-rate scale (GetFloat form: vfunc1() ? 0 : m_fValue +0x28)
+extern ConVar *g_10709304;	// 0x10709304: CFire damage / debug-overlay interval (same form)
+extern ConVar *g_107092bc;	// 0x107092bc: CFire damage base (same form)
+extern ConVar *g_107093e4;	// 0x107093e4: CFire damage per heat (same form)
+extern ConVar *g_1070959c;	// 0x1070959c: CFire spread rate to neighbouring fires (same form)
 extern ConVar *g_1094ab14;	// 0x1094ab14: the PhysCannon mass-scale convar (vfunc1 = unset, else m_fValue +0x28)
