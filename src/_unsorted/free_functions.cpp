@@ -87613,6 +87613,25 @@ bool S101b9920::sub_101b9920()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b99a0 size=0x18
+struct CUnk101b99a0 {
+    char pad[4];
+    int m_4;
+    bool sub_101b99a0();
+};
+
+bool CUnk101b99a0::sub_101b99a0()
+{
+    switch (m_4) {
+    case 0x20:
+    case 0x40:
+    case 0x80:
+        return true;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b99d0 size=0x54
 #include "CBaseEntity.h"
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \

@@ -8596,6 +8596,7 @@
 0x1000ddff func   ?RemoveNode@?$CUtlRBTree@UCRBEntry8@@H@@QAEXH@Z CUtlRBTree<CRBEntry8,int>::RemoveNode
 0x1000de04 func   ?sub_102ce640@CUtlRBTree12@@QAEXPBXAAGAA_N@Z CUtlRBTree12::sub_102ce640
 0x1000de0e func   ?sub_100ce3c0@CList_t@@QAE_NPAXPAH@Z CList_t::sub_100ce3c0
+0x1000de1d func   ?sub_101b99a0@CUnk101b99a0@@QAE_NXZ CUnk101b99a0::sub_101b99a0
 0x1000de22 func   ?sub_101d04d0@@YAXABVVector@@AAV1@H@Z sub_101d04d0
 0x1000de27 func   ?vfunc4@CTEInspectionFX@@UAEXPAVCRecipientFilter@@M@Z CTEInspectionFX::vfunc4
 0x1000de2c func   ?sub_10201100@CVStatList_t@@QAEHHH@Z CVStatList_t::sub_10201100
