@@ -5,6 +5,8 @@
 
 struct datamap_t;
 
+void *sub_100aa720(unsigned int size);	// the entities' operator new (stub 0x1000db89)
+
 class CBaseEntity;
 
 struct CEnergyBallThrowInfo	// the record handed to slot 230 of the energy ball
@@ -17,6 +19,8 @@ struct CEnergyBallThrowInfo	// the record handed to slot 230 of the energy ball
 class CWeaponThrown_Chang_Energy_Ball : public CBaseCombatWeapon
 {
 public:
+	CWeaponThrown_Chang_Energy_Ball() {}
+	void *operator new(unsigned int size) { return sub_100aa720(size); }
 	CBaseCombatWeapon *vfunc5(unsigned int flags);
 	void sub_10013a57();
 	void sub_103efdd0(CBaseEntity *pEnt);
