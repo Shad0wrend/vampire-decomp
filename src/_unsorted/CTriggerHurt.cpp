@@ -13,6 +13,16 @@ datamap_t * CTriggerHurt::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c5ca0 size=0x74
+#include "CTriggerHurt.h"
+
+// TARGET: CTriggerHurt::CTriggerHurt
+CTriggerHurt::CTriggerHurt()
+{
+	m_i5c0 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c5d40 size=0xa0
 #include "utlmemory.h"
 #include "CTriggerHurt.h"
