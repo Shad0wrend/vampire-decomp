@@ -9703,6 +9703,7 @@
 0x1000f718 func   ?vfunc367@CWeaponMelee_MingXiaoMelee@@UAEHHMM@Z CWeaponMelee_MingXiaoMelee::vfunc367
 0x1000f71d func   ?sub_1035bec0@@YAHXZ sub_1035bec0
 0x1000f722 func   ?sub_10315a60@@YGHH@Z sub_10315a60
+0x1000f72c func   ?sub_102d40e0@CUnknown102d40e0@@QAENXZ CUnknown102d40e0::sub_102d40e0
 0x1000f736 func   ?sub_10186f00@CPlayerMove@@QAEXPAVCBasePlayer@@@Z CPlayerMove::sub_10186f00
 0x1000f73b func   ?sub_10214200@CPropHaunted@@QAEXPBD@Z CPropHaunted::sub_10214200
 0x1000f745 func   ?sub_10205ca0@CVTraitDependencyValue_t@@QAEPAV1@H@Z CVTraitDependencyValue_t::sub_10205ca0

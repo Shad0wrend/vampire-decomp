@@ -149879,6 +149879,29 @@ int __fastcall sub_102d40a0(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d40e0 size=0x28
+#include <stdlib.h>
+
+extern char g_106b8540[];
+extern float g_104454c4;
+
+struct CUnknown102d40e0 {
+    char pad_0000[0x5d4];
+    const char *volatile m_psz;
+    double sub_102d40e0();
+};
+
+double CUnknown102d40e0::sub_102d40e0()
+{
+    if (m_psz == 0)
+        return g_104454c4;
+    const char *p = m_psz;
+    if (p == 0)
+        p = g_106b8540;
+    return atof(p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d4120 size=0x10
 extern char g_106b8540[];
 
