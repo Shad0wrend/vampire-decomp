@@ -125,6 +125,7 @@ public:
 	int vfunc609(char bForce);	// slot 609 (declared as a plain member): the target at +0x6444 when slot 566 still accepts it; unless bForce, 0 while curtime is before the time at +0x6440; else re-arms that time (random 2.0 .. 2.5 seconds ahead) and starts the free function sub_102d2980(this, 8, 0x10, range, 0, 0) (stub 0x1000a1e1) with the range 1024.0f or the float at +0x8c0 of the active weapon
 	bool vfunc294(int unused);	// slot 294 (declared as a plain member): false while sub_100b5190 holds, with a value at +0x128 or with the byte at +0x63d8; else true when the state (slot 464) fits the global at 0x10924afc, neither condition 0x6f nor 0x5a is set and slot 158 holds
 	int sub_1029f730(int a);	// the lazily cached record at +0x659c (stub 0x100069e7; 0 while the byte at +0x65a0 is clear)
+	void sub_102c1a80(void *pScene, void *pEvent);	// appends a scene expression record
 	int sub_1029f780(int a);	// the value at +0xb0 of the entity named by the record's string (+0x468), cached at +0x6300 (looked up once)
 	char sub_100b5190();	// the stub at 0x10014da8, called directly by slot 294
 
