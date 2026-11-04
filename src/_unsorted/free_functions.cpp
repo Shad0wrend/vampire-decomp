@@ -71851,6 +71851,21 @@ void CUnknown10170eb0::sub_10170eb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10170fe0 size=0x2d
+#include "CBaseCombatCharacter.h"
+// TARGET: CBaseCombatCharacter::sub_10170fe0
+bool CBaseCombatCharacter::sub_10170fe0()
+{
+    for (int i = 0; i < 0xe0; i++) {
+        if (sub_1032e8b0(i)) {
+            sub_1032e8b0(i);
+            return true;
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101711e0 size=0xbc
 #include "CBasePlayer.h"
 

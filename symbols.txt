@@ -4872,6 +4872,7 @@
 0x100084e0 func   ?sub_101b2100@@YIPBDPAUSRange101b2100@@@Z sub_101b2100
 0x100084e5 func   ?vfunc363@CWeaponThrown_Grenade_Frag@@UAEHXZ CWeaponThrown_Grenade_Frag::vfunc363
 0x100084ea func   ?sub_10236400@@YAHXZ sub_10236400
+0x100084ef func   ?sub_10170fe0@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_10170fe0
 0x100084f4 func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@UUnreachableEnt_t@@V?$CUtlMemory@UUnreachableEnt_t@@@@@@$08@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<UnreachableEnt_t,CUtlMemory<UnreachableEnt_t> >,9>::vfunc3
 0x100084f9 func   ?sub_100f0c00@CBaseDoor@@QAEDD@Z CBaseDoor::sub_100f0c00
 0x100084fe func   ?RotateRight@?$CUtlRBTree@UCRBEntry24@@H@@QAEXH@Z CUtlRBTree<CRBEntry24,int>::RotateRight
