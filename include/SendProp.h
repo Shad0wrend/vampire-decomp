@@ -29,4 +29,6 @@ public:
 	unsigned char m_b50;
 	SendProp *vfunc0(unsigned int flags);	// as in CDataObjectAccessSystem (transplant)
 	void sub_1000648d();	// as in CDataObjectAccessSystem (transplant)
+	int GetN28() const { return m_n28; }	// inline: VC6 loads what it returns into ecx, a plain read into eax (0x102471d0)
+	int sub_102471d0() const;	// log2 of m_n28 (sub_101388c0) + 1
 };
