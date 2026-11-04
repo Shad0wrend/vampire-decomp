@@ -3,6 +3,7 @@
 #pragma once
 
 class CSimplePhysicsBrush;
+class CBaseEntity;
 
 class CSimplePhysicsBrushBase
 {
@@ -20,7 +21,7 @@ public:
 	virtual void s20(); virtual void s21(); virtual void s22(); virtual void s23(); virtual void s24();
 	virtual void s25(); virtual void s26(); virtual void s27(); virtual void s28(); virtual void s29();
 	virtual void s30(); virtual void s31(); virtual void s32(); virtual void s33(); virtual void s34();
-	virtual void s35(); virtual void s36(); virtual void s37(); virtual void s38(); virtual int vfunc39(int);
+	virtual void s35(); virtual void s36(); virtual void s37(); virtual void s38(); virtual void vfunc39(CBaseEntity *);
 	virtual void s40(); virtual int vfunc41(int); virtual int vfunc42(int); virtual void s43(); virtual void s44();
 	virtual void s45(); virtual void s46(); virtual void s47(); virtual void s48(); virtual void s49();
 	virtual void s50(); virtual void s51(); virtual void s52(); virtual void s53(); virtual void s54();
@@ -177,7 +178,7 @@ public:
 	virtual void vfunc225();
 	virtual int vfunc226();
 public:
-	virtual int vfunc39(int);
+	virtual void vfunc39(CBaseEntity *);
 	virtual int vfunc41(int);
 	virtual int vfunc42(int);
 	char m_pad0050[0x450 - 0x50];

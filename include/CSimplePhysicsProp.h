@@ -1,5 +1,6 @@
 // CSimplePhysicsProp: simple physics prop entity. Declared flat (bases not recovered).
 #pragma once
+class CBaseEntity;
 
 #define CSPP_V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
@@ -32,7 +33,7 @@ public:
 public:
 	virtual int vfunc226();
 public:
-	virtual int vfunc39(int);
+	virtual void vfunc39(CBaseEntity *);
 	virtual int vfunc41(int);
 	virtual int vfunc42(int);
 	char m_pad0004[0x730 - 0x4];
