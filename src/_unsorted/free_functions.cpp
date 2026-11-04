@@ -192536,6 +192536,19 @@ void CWeaponThrown_Chang_Energy_Ball::sub_103f0590()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f0660 size=0x5e
+#include "CWeaponThrown_Chang_Energy_Ball.h"
+#include "CBaseEntity.h"
+
+// TARGET: item_w_chang_energy_ball
+extern "C" CBaseEntity *item_w_chang_energy_ball()
+{
+	CWeaponThrown_Chang_Energy_Ball *p = new CWeaponThrown_Chang_Energy_Ball;
+	((CBaseEntity *)p)->vfunc106("item_w_chang_energy_ball");
+	return (CBaseEntity *)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f0740 size=0x1a
 namespace lifted {
 extern int g_1067d498;
