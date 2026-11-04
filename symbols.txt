@@ -13290,6 +13290,7 @@
 0x10014dd5 func   _item_w_remington_m_700 item_w_remington_m_700
 0x10014de4 func   ?sub_1038fa50@CUnknown1038fa50@@QAEXH@Z CUnknown1038fa50::sub_1038fa50
 0x10014dee func   ?sub_10304020@CAI_Pathfinder@@QAEPAVCAI_Waypoint@@HPBMHHHHHHHH@Z CAI_Pathfinder::sub_10304020
+0x10014df3 func   ?vfunc618@CNPC_VVampireBoss@@QAEXXZ CNPC_VVampireBoss::vfunc618
 0x10014e07 func   ?sub_10352df0@@YAPBDXZ sub_10352df0
 0x10014e0c func   ?vfunc5@CPointExplosion@@QAEPAV1@I@Z CPointExplosion::vfunc5
 0x10014e11 func   ?vfunc580@CNPC_VTaxiDriver@@QAEHXZ CNPC_VTaxiDriver::vfunc580
