@@ -5054,6 +5054,7 @@
 0x10008972 func   ?sub_1024cc50@@YA?AVVMatrix@@ABVVector@@ABVQAngle@@@Z sub_1024cc50
 0x10008977 func   ?sub_103245a0@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_103245a0
 0x1000897c func   ?sub_10180d10@@YAXXZ sub_10180d10
+0x10008981 func   ?sub_101b4c90@CUnk101b4c90@@QAEXPAG@Z CUnk101b4c90::sub_101b4c90
 0x10008986 func   ?sub_10184220@@YGII@Z sub_10184220
 0x10008990 func   ?vfunc5@CPropDoorknob@@QAEPAV1@I@Z CPropDoorknob::vfunc5
 0x10008995 func   ??0CSun@@QAE@XZ CSun::CSun

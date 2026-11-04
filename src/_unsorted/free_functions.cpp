@@ -86717,6 +86717,22 @@ char *CIdxTable::sub_101b4c20(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b4c90 size=0x1b
+#include "CUnknown1024b2d0.h"
+
+struct CUnk101b4c90 {
+    char pad[0xb0];
+    void sub_101b4c90(unsigned short *p);
+};
+
+void CUnk101b4c90::sub_101b4c90(unsigned short *p)
+{
+    CUnknown1024b2d0Id id;
+    id.m_id = *p;
+    ((CUnknown1024b2d0 *)((char *)this + 0xb0))->sub_1024b830(id);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b50f0 size=0x70
 #include "CSoundEmitterSystemBase.h"
 
