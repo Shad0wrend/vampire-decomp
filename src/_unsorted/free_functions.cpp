@@ -48896,6 +48896,26 @@ extern "C" CBaseEntity *entityflame()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f5450 size=0x28
+#include "CEntityFlame.h"
+
+extern int vt_104554f4[];
+
+struct CConstraintAnchorBaseStub {
+	void sub_100090fc(int a);
+};
+
+// TARGET: CEntityFlame::sub_100f5450
+CEntityFlame *CEntityFlame::sub_100f5450()
+{
+	((CConstraintAnchorBaseStub *)this)->sub_100090fc(0);
+	*(int **)this = vt_104554f4;
+	*(int *)((char *)this + 0x450) = 0;
+	*(int *)((char *)this + 0x454) = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f54c0 size=0xc4
 #include "CUnknown100f5600.h"
 #include "CEntityVSlots.h"

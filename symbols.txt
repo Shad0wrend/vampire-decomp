@@ -11036,6 +11036,7 @@
 0x100116e4 func   ?vfunc80@CWeaponMelee_Tzimisce2Claw@@QAEHXZ CWeaponMelee_Tzimisce2Claw::vfunc80
 0x100116e9 func   ?sub_10395c70@CNPC_VMingXiao@@QAEXXZ CNPC_VMingXiao::sub_10395c70
 0x100116ee func   ?vfunc1@CPhysicsAnimlinkEntityDeleteProxy@@QAEXPAVCBaseEntity@@@Z CPhysicsAnimlinkEntityDeleteProxy::vfunc1
+0x100116f3 func   ?sub_100f5450@CEntityFlame@@QAEPAV1@XZ CEntityFlame::sub_100f5450
 0x100116f8 func   ?sub_10033aa0@CBaseEntity@@QAEXPAM00@Z CBaseEntity::sub_10033aa0
 0x10011702 func   ?sub_103e4640@@YAHXZ sub_103e4640
 0x10011707 func   ?sub_102f37a0@@YAHPBM0@Z sub_102f37a0
