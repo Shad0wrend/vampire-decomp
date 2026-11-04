@@ -107407,6 +107407,21 @@ void VKeyValues::sub_101f2090(const char *pszName)
 void __fastcall sub_101f2120(int *p) { (*(p - 9))++; }
 // END FUNCTION
 
+// FUNCTION: 0x101f2140 size=0x23
+struct VB101f2140 { virtual void f0(); virtual void f1(); virtual ~VB101f2140(); };
+struct D101f2140 : virtual VB101f2140 { int m_ref; char pad[0x28 - 8]; D101f2140(); };
+struct E101f2140 { char pad[4]; void sub_101f2140(); };
+
+// TARGET: E101f2140::sub_101f2140
+void E101f2140::sub_101f2140()
+{
+	D101f2140 *d = (D101f2140 *)((char *)this - 0x28);
+	int *pRef = (int *)((char *)this - 0x24);
+	if (--*pRef <= 0)
+		delete d;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2360 size=0x106
 #include "CUnknown101f2360.h"
 #include <string.h>
