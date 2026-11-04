@@ -8841,6 +8841,21 @@ int sub_1004dcf0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004ddc0 size=0x31
+struct CUnknown1004ddc0 { };
+typedef void (CUnknown1004ddc0::*PMF_1004ddc0)();
+
+// TARGET: sub_1004ddc0
+void __stdcall sub_1004ddc0(char *ptr, unsigned size, int count, PMF_1004ddc0 pmf)
+{
+	ptr += size * count;
+	while (--count >= 0) {
+		ptr -= size;
+		(((CUnknown1004ddc0 *)ptr)->*pmf)();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004de10 size=0x43
 #include "CPhysBox.h"
 void *sub_100aa720(int size);
