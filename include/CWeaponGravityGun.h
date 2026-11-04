@@ -27,6 +27,7 @@ public:
 	void sub_1014cbf0(float flRadius, float flOther);	// 0x1014cbf0 (ret 8): nearest-pair search over the 16 records at m_slots9d0 (outer index < m_nB14, inner index >= outer and < m_nB10); stores the best pair in m_hB18/m_hB1c and curtime in m_flB20, sets m_bB24 when the best squared distance is below 9.0f
 	void sub_1014abe0();
 	void sub_1014c0f0();
+	void sub_1014c2b0();
 	void sub_1014c2d0();
 	void *sub_1014a1b0();
 	void sub_1014dd50();	// 0x1014dd50: physics object throw handler: with a live held object (m_hHeld918) and a live owner, scales the throw speed by the mass ratio, applies it to the held object's physics velocity and reports the CSActs criminal act (m_nB28 > 0) through sub_1017e150
