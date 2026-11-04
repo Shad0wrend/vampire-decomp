@@ -46,7 +46,7 @@ CBaseParticleEntity::CBaseParticleEntity() : CConstraintAnchorBase(0)
 void sub_100aa7b0(void *p);
 
 // TARGET: CBaseParticleEntity::vfunc5
-CBaseParticleEntity *CBaseParticleEntity::vfunc5(unsigned int flags)
+CConstraintAnchorBase *CBaseParticleEntity::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)

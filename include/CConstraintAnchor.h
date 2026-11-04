@@ -15,7 +15,7 @@ public:
 	virtual void vfunc2();
 	virtual void vfunc3();
 	virtual void vfunc4();
-	virtual void s5();
+	virtual CConstraintAnchorBase *vfunc5(unsigned int flags);	// scalar deleting destructor: VC6 has no covariant returns, so every override (CConstraintAnchor, CFunc_LOD, CBaseParticleEntity) returns this type
 	virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9();
 	virtual void s10(); virtual void s11(); virtual void s12(); virtual void s13(); virtual void s14();
 	virtual void s15(); virtual void s16(); virtual void s17(); virtual void s18(); virtual void s19();
@@ -51,7 +51,7 @@ public:
 	virtual void vfunc2();
 	virtual void vfunc3();
 	virtual void vfunc4();
-	virtual CConstraintAnchor *vfunc5(unsigned int flags);	// scalar deleting destructor
+	virtual CConstraintAnchorBase *vfunc5(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc103();	// slot 103 (Activate): when the parent (handle at +0x254) resolves, records (its origin, its handle or -1, the name at +0x26c) in the global anchor list and removes this entity
 
 	void sub_1000cb8a();	// destructor body

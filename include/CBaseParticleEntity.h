@@ -11,7 +11,7 @@ class CBaseParticleEntity : public CConstraintAnchorBase
 {
 public:
 	CBaseParticleEntity();
-	CBaseParticleEntity *vfunc5(unsigned int flags);
+	CConstraintAnchorBase *vfunc5(unsigned int flags);	// slot 5, the scalar deleting destructor (the anchor base's type)
 	void sub_1000cb8a();
 	bool vfunc241(int a, CParticleTransmitInfo_t *pInfo, int c, int d);	// "CBaseParticleEntity::...": false when bit 6 of the byte at +0x19c is set; asks the global at 0x1070b22c (slot 105) about d and the object slot 7(slot 3()) of the edict's object at +0x40; if it says no, false; else true unless sub_101d1a90(pInfo->field40 (0 when the flag byte at +0x44 is clear), this) holds
 

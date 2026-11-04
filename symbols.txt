@@ -5668,7 +5668,7 @@
 0x100096b5 func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@USaveRestoreBlockHeader_t@@V?$CUtlMemory@USaveRestoreBlockHeader_t@@@@@@$08@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<SaveRestoreBlockHeader_t,CUtlMemory<SaveRestoreBlockHeader_t> >,9>::vfunc3
 0x100096ba func   ?vfunc104@CFlameCluster@@UAEXXZ CFlameCluster::vfunc104
 0x100096bf func   ?vfunc143@CBasePlayer@@UAEHMH@Z CBasePlayer::vfunc143
-0x100096c4 func   ?vfunc5@CConstraintAnchor@@UAEPAV1@I@Z CConstraintAnchor::vfunc5
+0x100096c4 func   ?vfunc5@CConstraintAnchor@@UAEPAVCConstraintAnchorBase@@I@Z CConstraintAnchor::vfunc5
 0x100096d3 func   ?sub_10042780@UtlMem@@QAEXXZ UtlMem::sub_10042780
 0x100096dd func   ?sub_10075c20@S10075c20@@QAEXPBD@Z S10075c20::sub_10075c20
 0x100096e7 func   ?vfunc409@CItemContainer@@QAE_NXZ CItemContainer::vfunc409
@@ -10118,7 +10118,7 @@
 0x1000ff5b func   ?sub_101a58e0@CUtlVector40@@QAEXH@Z CUtlVector40::sub_101a58e0
 0x1000ff60 func   ?sub_1003b8a0@@YAXXZ sub_1003b8a0
 0x1000ff65 func   ?sub_10148560@@YAPAHXZ sub_10148560
-0x1000ff6f func   ?vfunc5@CBaseParticleEntity@@QAEPAV1@I@Z CBaseParticleEntity::vfunc5
+0x1000ff6f func   ?vfunc5@CBaseParticleEntity@@UAEPAVCConstraintAnchorBase@@I@Z CBaseParticleEntity::vfunc5
 0x1000ff74 func   ?vfunc81@CWeaponMelee_Torch@@QAEHXZ CWeaponMelee_Torch::vfunc81
 0x1000ff79 func   ?vfunc82@CBaseTerminal@@QAEPAUdatamap_t@@XZ CBaseTerminal::vfunc82
 0x1000ff7e func   _item_p_research_mg_security item_p_research_mg_security
