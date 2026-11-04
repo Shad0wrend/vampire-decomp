@@ -59256,6 +59256,22 @@ extern "C" GP *gib()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012b320 size=0x39
+#include "CRagGib.h"
+#include "CBaseEntity.h"
+
+CRagGib *sub_10002e32(const char *pszName);
+
+// TARGET: sub_1012b320
+CRagGib *sub_1012b320(int a, int b, int c, int d)
+{
+    CRagGib *pGib = sub_10002e32("raggib");
+    ((CBaseEntity *)pGib)->vfunc64((const float *)c);
+    pGib->sub_10015c17(a, b, d);
+    return pGib;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012b370 size=0x232
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
