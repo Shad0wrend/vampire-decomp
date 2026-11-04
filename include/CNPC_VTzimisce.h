@@ -185,6 +185,7 @@ public:
 	int m_n66b8;
 
 	bool sub_103be180();
+	int sub_103bc4e0();
 	bool sub_103be3d0(CBaseEntity *pEnt);
 	void sub_102c4380(CBaseEntity *pEnt);
 	void sub_103bdfc0();	// removes every entity (global list search from the start, filter 2, around the slot 217 position, radius 150.0f) the search finds; called by vfunc144
