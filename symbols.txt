@@ -3930,6 +3930,7 @@
 0x10006e06 func   ?vfunc501@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc501
 0x10006e10 func   ?sub_1040aff0@CUtlVector192@@QAEXH@Z CUtlVector192::sub_1040aff0
 0x10006e15 func   ?sub_101faa70@CVDmg_t@@QAEHXZ CVDmg_t::sub_101faa70
+0x10006e1a func   ??0CTEInspectionFX@@QAE@PBD@Z CTEInspectionFX::CTEInspectionFX
 0x10006e1f func   ?sub_10402cf0@@YAHXZ sub_10402cf0
 0x10006e24 func   ?sub_103f62f0@@YAHXZ sub_103f62f0
 0x10006e29 func   ?sub_10256c20@@YAHXZ sub_10256c20
