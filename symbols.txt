@@ -2946,6 +2946,7 @@
 0x1000563c func   ?vfunc365@CNPC_VPlayerController@@QAE_NH@Z CNPC_VPlayerController::vfunc365
 0x10005641 func   ?vfunc380@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc380
 0x10005646 func   ?vfunc362@CPayphone@@UAE_NH@Z CPayphone::vfunc362
+0x1000564b func   ?sub_101f26f0@@YIHPAD@Z sub_101f26f0
 0x10005655 func   ?sub_102dce30@UtlVec8@@QAEXHH@Z UtlVec8::sub_102dce30
 0x1000565a func   ?vfunc274@CItemContainerLock@@QAEXXZ CItemContainerLock::vfunc274
 0x1000565f func   ?vfunc117@CSprayCan@@UAEHXZ CSprayCan::vfunc117
