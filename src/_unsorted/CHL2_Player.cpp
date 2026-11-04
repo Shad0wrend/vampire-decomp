@@ -393,7 +393,7 @@ char CHL2_Player::vfunc86(int a, int b, int c, int d, int e)
 
 void CHL2_Player::vfunc472()
 {
-    if (vfunc479()) {
+    if ((char)vfunc479()) {
         vfunc474(gpGlobals->frametime * 4.2);
     } else if (m_n252c != 0) {
         if (!vfunc473(m_f2530 * gpGlobals->frametime)) {

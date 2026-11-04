@@ -104,7 +104,7 @@ public:
 	virtual int vfunc476();
 	virtual void vfunc477(unsigned int *pPower);	// slot 477 "SUIT POWER TRIED TO ADD A DUPLICATE DEVICE": sets the power's flag bits in +0x252c (pPower[0]) and adds its amount (the float at pPower[1]) to +0x2530
 	virtual void vfunc478(unsigned int *pPower);	// slot 478 "SUIT POWER TRIED TO REMOVE AN INACTIVE DEVICE": clears the power's flag bits in +0x252c (pPower[0]) and takes its amount (the float at pPower[1]) off +0x2530
-	virtual bool vfunc479();
+	virtual int vfunc479();	// 0x1034f3f0: 1 while m_n252c is 0 and the float at +0x2464 is under 100, else 0 (an int: mov eax,1); callers test only al (0x103528d0)
 	virtual float vfunc480();
 	virtual float vfunc481();
 	virtual float vfunc482();
