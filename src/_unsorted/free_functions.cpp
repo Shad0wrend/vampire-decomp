@@ -82548,6 +82548,29 @@ void CRopeKeyframe::sub_1019f1f0(int nBit)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019f230 size=0x1a
+struct CUnk1019f230
+{
+	char m_pad0000[0x1b1];
+	char m_bChanged1b1;	// 0x1b1
+	char m_pad01b2[0x454 - 0x1b2];
+	unsigned int m_n454;	// 0x454
+
+	void sub_1019f230();
+};
+
+// TARGET: CUnk1019f230::sub_1019f230
+void CUnk1019f230::sub_1019f230()
+{
+	unsigned int f = m_n454;
+	if ((f & 4) == 0)
+	{
+		*(volatile unsigned int *)&m_n454 = f | 4;
+		*(volatile char *)&m_bChanged1b1 = 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019f500 size=0x23
 #include "CUnknown100bc0f0.h"
 

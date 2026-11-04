@@ -830,6 +830,7 @@
 0x100023e7 func   ?sub_10175290@CBasePlayer@@QAEHXZ CBasePlayer::sub_10175290
 0x100023ec func   ?sub_103e7470@@YAHXZ sub_103e7470
 0x100023f1 func   ?vfunc612@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::vfunc612
+0x100023f6 func   ?sub_1019f230@CUnk1019f230@@QAEXXZ CUnk1019f230::sub_1019f230
 0x100023fb func   ?vfunc0@CTEDust@@UAEPAUServerClass@@XZ CTEDust::vfunc0
 0x10002400 func   ?vfunc81@CResearchBook_MG_MELEE@@QAEHXZ CResearchBook_MG_MELEE::vfunc81
 0x10002405 func   ?vfunc325@CWeaponIGeneric@@UAE_NXZ CWeaponIGeneric::vfunc325
