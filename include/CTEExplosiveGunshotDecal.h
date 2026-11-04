@@ -1,32 +1,19 @@
-// CTEExplosiveGunshotDecal: explosive gunshot decal temp entity. Declared flat (bases not recovered); only the vtable head
-// and the fields that the free "create" function (0x10064df0) fills are modelled.
+// CTEExplosiveGunshotDecal: explosive gunshot decal temp entity, derived from CTEGunshotDecal (RTTI); the free
+// "create" function (0x10064df0) fills the base's fields.
 #pragma once
 
-class CTEExplosiveGunshotDecal
+#include "CTEGunshotDecal.h"
+
+class CTEExplosiveGunshotDecal : public CTEGunshotDecal
 {
 public:
-
-	char m_pad0004[8];
-	float m_vecA[3];	// 0x0c
-	float m_vecB[3];	// 0x18
-	int m_n24;
-	int m_n28;
-	int m_n2c;
-	int m_n30;
-	char m_b34;
-	char m_pad35[7];
-	int m_n3c;
-	int m_n40;
-	int m_n44;
-	int m_n48;
+	CTEExplosiveGunshotDecal(const char *name);	// 0x10064a40: the CTEGunshotDecal constructor, then the vtable
+	virtual ServerClass *vfunc0();	// GetServerClass
+	virtual int vfunc1();
+	virtual CTEGunshotDecal *vfunc2(unsigned int flags);	// scalar deleting destructor: the base's type (VC6 has no covariant returns)
+	virtual void vfunc4(CRecipientFilter &filter, float delay);	// slot 4 "Create" (stub 0x10004197); slot 3 is the base's
+	void vfunc4(void *pFilter, int delay);	// the same slot 4 function, called directly (stub 0x10004197)
+	virtual void vfunc5();
 
 	void sub_10010f0a();	// destructor body
-	void vfunc4(void *pFilter, int delay);	// slot 4 "Create"-like worker (stub 0x10004197), called directly
-public:
-	virtual int vfunc0();
-	virtual int vfunc1();
-	virtual CTEExplosiveGunshotDecal *vfunc2(unsigned int flags);	// scalar deleting destructor
-	virtual void vfunc3();
-	virtual void vfunc4_slot();
-	virtual void vfunc5();
 };

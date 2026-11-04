@@ -13244,21 +13244,21 @@ extern unsigned int g_106c4380;
 void sub_10064df0(void *pFilter, int delay, int *pA, int *pB, int a5, int a6, int a7, int a8, char a9, int a10, int a11, int a12)
 {
 	CTEExplosiveGunshotDecal &te = g_106c41e8;
-	((int *)te.m_vecA)[0] = pA[0];
-	((int *)te.m_vecA)[1] = pA[1];
-	((int *)te.m_vecA)[2] = pA[2];
-	((int *)te.m_vecB)[0] = pB[0];
-	((int *)te.m_vecB)[1] = pB[1];
-	((int *)te.m_vecB)[2] = pB[2];
-	te.m_n24 = a5;
-	te.m_n28 = a6;
-	te.m_n2c = a7;
-	te.m_n30 = a8;
-	te.m_b34 = a9;
-	te.m_n3c = a10;
-	te.m_n44 = a12;
-	te.m_n40 = a11;
-	te.m_n48 = 0;
+	((int *)&te.m_vecOrigin)[0] = pA[0];
+	((int *)&te.m_vecOrigin)[1] = pA[1];
+	((int *)&te.m_vecOrigin)[2] = pA[2];
+	((int *)&te.m_vecStart)[0] = pB[0];
+	((int *)&te.m_vecStart)[1] = pB[1];
+	((int *)&te.m_vecStart)[2] = pB[2];
+	te.m_f24 = a5;
+	te.m_f28 = a6;
+	te.m_f2c = a7;
+	te.m_f30 = a8;
+	te.m_f34 = a9;
+	te.m_f3c = a10;
+	te.m_f44 = a12;
+	te.m_f40 = a11;
+	te.m_f48 = 0;
 	CBaseEntity *pEnt;
 	SEdict *pEdict = g_1070b22c->vfunc38(a5);
 	{

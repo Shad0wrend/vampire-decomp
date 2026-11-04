@@ -5,7 +5,7 @@
 #include "CTEExplosiveGunshotDecal.h"
 
 // TARGET: CTEExplosiveGunshotDecal::vfunc2
-CTEExplosiveGunshotDecal *CTEExplosiveGunshotDecal::vfunc2(unsigned int flags)
+CTEGunshotDecal *CTEExplosiveGunshotDecal::vfunc2(unsigned int flags)
 {
 	sub_10010f0a();
 	if (flags & 1)
@@ -37,9 +37,9 @@ void CTEExplosiveGunshotDecal::vfunc4(void *pFilter, int delay)
 namespace lifted {
 extern char g_106c41c8;
 }
-int CTEExplosiveGunshotDecal::vfunc0()
+ServerClass *CTEExplosiveGunshotDecal::vfunc0()
 {
-    return (int)&lifted::g_106c41c8;
+    return (ServerClass *)&lifted::g_106c41c8;
 }
 // END FUNCTION
 
