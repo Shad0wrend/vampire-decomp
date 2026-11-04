@@ -171760,6 +171760,165 @@ void CBaseCombatCharacter::sub_1033f6d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033f750 size=0x811
+#include <stdio.h>
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CCameraShotTable.h"
+#include "CUnknown10203240.h"
+#include "CUnknown100eb870.h"
+#include "CExpressionTable.h"
+#include "CStealthKillRules.h"
+
+struct SVecHolder;
+void __fastcall sub_100729e0(SVecHolder *);
+extern CUnknown100eb870 g_10924980;
+extern CExpressionTable g_10709200;
+extern CStealthKillRules g_1072c540;
+extern CCameraShotTable g_106c8298;
+extern CUnknown10203240 g_1074e968;
+extern const char *g_10619f20[3];
+extern const char *g_10619f2c[8];
+extern int g_10937160[24];
+void sub_10054400();
+void sub_10340180();
+void sub_101d0f10(const char *, const char *, int, int);
+
+// TARGET: sub_1033f750
+void sub_1033f750()
+{
+	ScopeTrace trace("CBaseCombatCharacter::PrecacheOnce", g_106b8540, g_106b8540);
+	char name[200];
+	int i;
+	int n;
+	g_10924980.sub_100ecbe0();
+	g_10709200.sub_10104ea0();
+	g_1072c540.sub_101be020();
+	sub_100729e0((SVecHolder *)&g_106c8298);
+	g_106c8298.sub_10072810("vdata/CameraShots/*.txt");
+	int *p = g_10937160;
+	for (const char **o = g_10619f20; (int)o < (int)g_10619f2c; o++)
+		for (const char **in = g_10619f2c; (int)in < (int)(g_10619f2c + 8); in++) {
+			sprintf(name, "D_AuspexAura_%s_%sEmitter", *in, *o);
+			*p = engine->vfunc17(name, 1);
+			p++;
+		}
+	enginesound->vfunc0("disciplines/presence/affected_loop.wav", 0);
+	n = g_1074e968.sub_10203240("UI_Discipline_Targeting_Sounds")->m_nEntries;
+	for (i = 0; i < n; i++) {
+		const char *s = g_1074e968.sub_10203240("UI_Discipline_Targeting_Sounds")->sub_10202a10(i);
+		if (*s && *s != ' ')
+			enginesound->vfunc0(s, 0);
+	}
+	n = g_1074e968.sub_10203240("UI_Discipline_Targeting_ProgBar_Sounds")->m_nEntries;
+	for (i = 0; i < n; i++) {
+		const char *s = g_1074e968.sub_10203240("UI_Discipline_Targeting_ProgBar_Sounds")->sub_10202a10(i);
+		if (*s && *s != ' ')
+			enginesound->vfunc0(s, 0);
+	}
+	enginesound->vfunc0("character/vampire burning death.wav", 0);
+	enginesound->vfunc0("Interface/heartbeat_loop.wav", 0);
+	enginesound->vfunc0("disciplines/potence/melee_hit.wav", 0);
+	enginesound->vfunc0("disciplines/potence/melee_hit_deathblow.wav", 0);
+	engine->vfunc17("CigGlow_CIGINHALE_Emitter", 1);
+	engine->vfunc17("CigSmoke_CIGINHALE_Emitter", 1);
+	engine->vfunc17("CigGlow_Spark_Emitter", 1);
+	engine->vfunc17("CigGlow_GlowStart_Emitter", 1);
+	engine->vfunc17("CigGlow_SmokeBlow_Emitter", 1);
+	engine->vfunc13("models/items/Cigarette/Cigarette_Female.mdl", 0);
+	engine->vfunc13("models/items/Cigarette/Cigarette_Male.mdl", 0);
+	engine->vfunc13("models/items/Cell_Phone/CellPhone_Female.mdl", 0);
+	engine->vfunc13("models/items/Cell_Phone/CellPhone_Male.mdl", 0);
+	engine->vfunc13("models/items/Can/Drink_Can_Male.mdl", 0);
+	engine->vfunc13("models/items/Can/Drink_Can_Female.mdl", 0);
+	engine->vfunc13("models/items/Bum_Bottle/Bum_Bottle_Male.mdl", 0);
+	engine->vfunc13("models/items/Bum_Bottle/Bum_Bottle_Female.mdl", 0);
+	engine->vfunc13("models/scenery/misc/wineglass/wineglass.mdl", 0);
+	engine->vfunc13("models/items/cards/cards_left_hold.mdl", 0);
+	engine->vfunc13("models/items/cards/cards_left_play.mdl", 0);
+	engine->vfunc13("models/items/cards/cards_right_hold.mdl", 0);
+	engine->vfunc13("models/items/cards/cards_right_play.mdl", 0);
+	engine->vfunc13("models/items/walkie_talkie/walkie_talkie.mdl", 0);
+	engine->vfunc17("D_Animalisim_BodySmoke_Emitter", 1);
+	engine->vfunc17("D_Animalisim_Ground_Emitter", 1);
+	engine->vfunc17("D_AuspexCast_Emitter", 1);
+	engine->vfunc17("D_AuspexView_Emitter", 1);
+	engine->vfunc17("D_BloodHealing_Emitter", 1);
+	engine->vfunc17("D_FortitudeNew_Emitter", 1);
+	engine->vfunc17("D_FortitudeView_Emitter", 1);
+	engine->vfunc17("D_ObfuscateIn_Emitter", 1);
+	engine->vfunc17("D_ObfuscateOut_Emitter", 1);
+	engine->vfunc17("D_Potence_Emitter", 1);
+	engine->vfunc17("D_Presence_Emitter", 1);
+	engine->vfunc17("D_PresenceView_Emitter", 1);
+	engine->vfunc17("D_ProteanView_Emitter", 1);
+	engine->vfunc17("D_ThaumaturgyCast_Emitter", 1);
+	engine->vfunc17("D_ProteanTransform_Emitter", 1);
+	engine->vfunc17("D_Dominate_Ramp_Target", 1);
+	engine->vfunc17("D_Dominate_Hit_Target", 1);
+	engine->vfunc17("d_animalism_raven_trail_emitter", 1);
+	engine->vfunc17("d_animalism_wolf_into_emitter", 1);
+	engine->vfunc17("d_animalism_wolf_trail_emitter", 1);
+	engine->vfunc17("d_animalism_wolf_bloodspray_emitter", 1);
+	engine->vfunc17("d_animalism_wolf_outof_emitter", 1);
+	engine->vfunc17("d_animalism_wolf_outof_emitter2", 1);
+	engine->vfunc17("d_animalism_wolf_tail_emitter", 1);
+	engine->vfunc17("d_animalism_bat_trail_emitter", 1);
+	engine->vfunc17("d_animalism_bat_trail_emitter2", 1);
+	engine->vfunc17("d_animalism_bat_trail_emitter3", 1);
+	engine->vfunc17("D_Target_Aura_Emitter", 1);
+	engine->vfunc17("BloodyEyes_Emitter", 1);
+	engine->vfunc17("VomitBlood_Emitter", 1);
+	engine->vfunc17("WaterSplash_Emitter", 1);
+	engine->vfunc17("WaterBigSplash_Emitter", 1);
+	engine->vfunc17("Stealth_baseballbat_emitter", 1);
+	engine->vfunc17("Stealth_bushhook_emitter", 1);
+	engine->vfunc17("Stealth_bushhook_emitter2", 1);
+	engine->vfunc17("Stealth_claws_emitter", 1);
+	engine->vfunc17("Stealth_katana_emitter", 1);
+	engine->vfunc17("Stealth_knife_emitter", 1);
+	engine->vfunc17("Stealth_sledgehammer_emitter", 1);
+	engine->vfunc17("Stealth_stake_emitter", 1);
+	sub_10054400();
+	engine->vfunc17("impact_test", 1);
+	engine->vfunc17("blood_emitter", 1);
+	engine->vfunc17("force_feeding_emitter", 1);
+	engine->vfunc17("HUD_targeting_emitter", 1);
+	engine->vfunc17("DMGFX_body_fire_emitter", 1);
+	engine->vfunc17("DMGFX_hud_fire_emitter", 1);
+	enginesound->vfunc0("environmental/fire/fire_hit.wav", 0);
+	engine->vfunc17("DMGFX_body_freeze_emitter", 1);
+	engine->vfunc17("DMGFX_hud_freeze_emitter", 1);
+	enginesound->vfunc0("interface/stealth_discovered.wav", 0);
+	engine->vfunc17("DMGFX_body_shock_emitter", 1);
+	engine->vfunc17("DMGFX_hud_shock_emitter", 1);
+	enginesound->vfunc0("disciplines/potence/melee_hit.wav", 0);
+	engine->vfunc13("models/character/npc/common/skeleton/skeleton_male.mdl", 1);
+	engine->vfunc13("models/character/npc/common/skeleton/skeleton_female.mdl", 1);
+	engine->vfunc13("models/character/monster/Animalism_Beastform/Animalism_Beastform.mdl", 1);
+	engine->vfunc13("models/gibs/hgibs.mdl", 1);
+	engine->vfunc13("models/gibs/hgibsjaw.mdl", 1);
+	engine->vfunc13("models/gibs/hgibslarm.mdl", 1);
+	engine->vfunc13("models/gibs/hgibslleg.mdl", 1);
+	engine->vfunc13("models/gibs/hgibsrarm.mdl", 1);
+	engine->vfunc13("models/gibs/hgibsskull.mdl", 1);
+	sub_101d0f10("sound/Interesting_Places", ".wav", 0, 0);
+	sub_101d0f10("sound/Interesting_Places/Male", ".wav", 0, 0);
+	sub_101d0f10("sound/Interesting_Places/Female", ".wav", 0, 0);
+	sub_101d0f10("sound/Interface", ".wav", 0, 0);
+	sub_101d0f10("sound/Interface/Feeding", ".wav", 0, 0);
+	sub_101d0f10("sound/Interface/Infobar", ".wav", 0, 0);
+	sub_10340180();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10340180 size=0x17e
 struct TraceEntry { const char *a, *b, *c; };
 extern int *g_109f3680;

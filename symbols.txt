@@ -5237,6 +5237,7 @@
 0x10008c47 func   ?vfunc80@CItemGWarrLedger1@@UAEHXZ CItemGWarrLedger1::vfunc80
 0x10008c4c func   ?vfunc5@CFilterMultiple@@QAEPAV1@I@Z CFilterMultiple::vfunc5
 0x10008c51 func   ?vfunc12@CAI_Navigator@@UAEHH@Z CAI_Navigator::vfunc12
+0x10008c56 func   ?sub_1033f750@@YAXXZ sub_1033f750
 0x10008c5b func   ?sub_101cf600@@YAHH@Z sub_101cf600
 0x10008c60 func   ?vfunc113@CFilterMultiple@@UAEXXZ CFilterMultiple::vfunc113
 0x10008c65 func   ?sub_10370560@@YAXPAUCVirtObj_10370560@@@Z sub_10370560
