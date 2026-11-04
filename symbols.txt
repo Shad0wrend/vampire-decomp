@@ -10422,6 +10422,7 @@
 0x1001078a func   ?vfunc80@CItemKSarcophagusKey@@QAEHXZ CItemKSarcophagusKey::vfunc80
 0x1001078f func   ?vfunc365@CItemContainer@@QAE_NH@Z CItemContainer::vfunc365
 0x10010794 func   ?sub_100cd660@COutputEvent@@QAEXPAX0M@Z COutputEvent::sub_100cd660
+0x10010799 func   ?vfunc175@CTriggerEnvAudio@@QAEXPAVCBaseEntity@@@Z CTriggerEnvAudio::vfunc175
 0x1001079e func   ?sub_101f5150@CUnknown101f5150@@QAE_NPBD@Z CUnknown101f5150::sub_101f5150
 0x100107a3 func   ?sub_102f5090@@YIXPAH@Z sub_102f5090
 0x100107a8 func   ?sub_100d5360@@YAXXZ sub_100d5360

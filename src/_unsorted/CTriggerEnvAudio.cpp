@@ -24,6 +24,25 @@ void CTriggerEnvAudio::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cbbc0 size=0x32
+#include "CTriggerEnvAudio.h"
+
+struct CUnit101cbbc0Obj {
+	void sub_1000b6d1(int id);
+};
+
+// TARGET: CTriggerEnvAudio::vfunc175
+void CTriggerEnvAudio::vfunc175(CBaseEntity *pOther)
+{
+	CBaseEntity::vfunc175(pOther);
+	if (pOther) {
+		CUnit101cbbc0Obj *pObj = *(CUnit101cbbc0Obj **)((char *)pOther + 0xa8);
+		if (pObj)
+			pObj->sub_1000b6d1(m_i598);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cbc10 size=0x39
 // TARGET: CTriggerEnvAudio::vfunc176
 #include "CTriggerEnvAudio.h"
