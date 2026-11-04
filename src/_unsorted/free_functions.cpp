@@ -190960,6 +190960,27 @@ extern "C" CBaseEntity *item_w_mingxiao_tentacle()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ec870 size=0x37
+#include "CWeaponMelee_MingXiaoTentacle.h"
+extern int vt_104e0ee4[];
+struct CWeaponMeleePlaceholder {
+	void sub_1000955c();
+};
+
+// TARGET: CWeaponMelee_MingXiaoTentacle::sub_103ec870
+CWeaponMelee_MingXiaoTentacle *CWeaponMelee_MingXiaoTentacle::sub_103ec870()
+{
+	((CWeaponMeleePlaceholder *)this)->sub_1000955c();
+	*(int **)this = vt_104e0ee4;
+	m_n08b8 = 0;
+	m_n08bc = 0;
+	m_f08c0 = 108.0f;
+	m_f08c4 = 108.0f;
+	m_n0910 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ed0e0 size=0x1a
 namespace lifted {
 extern int g_1067c9e8;
