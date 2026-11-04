@@ -89646,6 +89646,20 @@ bool sub_101bf550(const char **a, const char **b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bf640 size=0x2f
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "CGameStringPool.h"
+#include "utlmemory.h"
+
+// TARGET: CStringPool::sub_101bf640
+void CStringPool::sub_101bf640()
+{
+	sub_101bfb00();
+	((CUtlMemory<int> *)((char *)this + 4))->Purge();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bf680 size=0x7
 // TARGET: sub_101bf680
 unsigned int __fastcall sub_101bf680(char *pThis)

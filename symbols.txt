@@ -6228,6 +6228,7 @@
 0x1000a4a7 func   ?sub_101a6880@@YIXPAX@Z sub_101a6880
 0x1000a4ac func   ?sub_10201590@CVStatList_t@@QAEXH@Z CVStatList_t::sub_10201590
 0x1000a4b1 func   ?sub_101f0290@@YAXXZ sub_101f0290
+0x1000a4b6 func   ?sub_101bf640@CStringPool@@QAEXXZ CStringPool::sub_101bf640
 0x1000a4bb func   ?sub_10231ed0@CUnknown10231ed0@@QAEIXZ CUnknown10231ed0::sub_10231ed0
 0x1000a4c0 func   ?sub_103a0eb0@CUnknown103a0eb0@@QAEHHPAUCUnknown103a0eb0Info@@D@Z CUnknown103a0eb0::sub_103a0eb0
 0x1000a4c5 func   ?vfunc461@CNPC_VGargoyle@@UAEHXZ CNPC_VGargoyle::vfunc461
