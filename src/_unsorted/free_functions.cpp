@@ -11809,6 +11809,36 @@ void sub_1005df40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005df60 size=0x3c
+#include "CTEBloodStream.h"
+
+extern int vt_1044dd24[];
+
+struct CBaseTempEntityHeadPlaceholder {
+	void sub_10015334(const char *name);
+};
+
+// TARGET: CTEBloodStream::sub_1005df60
+CTEBloodStream *CTEBloodStream::sub_1005df60(const char *name)
+{
+	((CBaseTempEntityHeadPlaceholder *)this)->sub_10015334(name);
+	volatile int *p = (volatile int *)this;
+	p[3] = 0;
+	p[4] = 0;
+	p[5] = 0;
+	*(int * volatile *)this = vt_1044dd24;
+	p[6] = 0;
+	p[7] = 0;
+	p[8] = 0;
+	p[9] = 0;
+	p[10] = 0;
+	p[11] = 0;
+	p[12] = 0;
+	p[13] = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005dfe0 size=0xb
 namespace lifted {
 extern char g_1044dd24;
