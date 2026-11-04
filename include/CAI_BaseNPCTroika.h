@@ -275,7 +275,9 @@ public:
 	int m_nLine1b40;	// 0x1b40: its line
 	const char *m_pszFile1b44;	// 0x1b44: source file stamp (third pair)
 	int m_nLine1b48;	// 0x1b48: its line
-	char m_pad1b4c[0x5b84 - 0x1b4c];
+	char m_pad1b4c[0x5b80 - 0x1b4c];
+	char m_b5b80;	// 0x5b80
+	char m_pad5b81[0x5b84 - 0x5b81];
 	unsigned int m_flags5b84;	// 0x5b84: bit 1 keeps the NPC from carrying on (slot 602)
 	char m_pad5b88[0x5ba8 - 0x5b88];
 	EHANDLE m_h5ba8;	// 0x5ba8: a handle to an entity (distance target of sub_102c5570)
