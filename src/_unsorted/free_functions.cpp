@@ -138697,6 +138697,30 @@ CBaseEntity *CAI_BaseNPC::sub_1026a930()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026aeb0 size=0x21
+#include "CSound.h"
+#include "CAI_BaseNPC.h"
+#include "CSoundEnt.h"
+
+struct CEarView1026aeb0
+{
+	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4();
+	virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
+	CAI_NPC_V10(1) CAI_NPC_V10(2) CAI_NPC_V10(3) CAI_NPC_V10(4) CAI_NPC_V10(5) CAI_NPC_V10(6) CAI_NPC_V10(7) CAI_NPC_V10(8) CAI_NPC_V10(9)
+	CAI_NPC_V10(10) CAI_NPC_V10(11) CAI_NPC_V10(12) CAI_NPC_V10(13) CAI_NPC_V10(14) CAI_NPC_V10(15) CAI_NPC_V10(16) CAI_NPC_V10(17) CAI_NPC_V10(18)
+	CAI_NPC_V(190) CAI_NPC_V(191) CAI_NPC_V(192) CAI_NPC_V(193) CAI_NPC_V(194) CAI_NPC_V(195)
+	virtual Vector vfunc196();	// slot 196: the ear position, returned by value
+
+	CSound *sub_1026aeb0(int iType);
+};
+
+// the sound of this type nearest the ear position (slot 196)
+CSound *CEarView1026aeb0::sub_1026aeb0(int iType)
+{
+	return CSoundEnt::sub_101bb370(iType, &vfunc196());
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026b7a0 size=0x43
 #include "Vector.h"
 Vector Vector::sub_1026b7a0(const Vector &v) const
