@@ -17655,6 +17655,24 @@ void VecHolder::sub_10073f90(int elem, int list)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10074000 size=0x3d
+#include <string.h>
+
+struct CUnk10074000 {
+	int m_unk0;
+	char *m_pName;
+
+	void sub_10074000(const char *pName);
+};
+
+void CUnk10074000::sub_10074000(const char *pName)
+{
+	delete m_pName;
+	m_pName = new char[strlen(pName) + 1];
+	strcpy(m_pName, pName);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10074050 size=0xd
 #include "CUnknown10074050.h"
 extern char g_106b8540[];

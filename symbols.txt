@@ -8233,6 +8233,7 @@
 0x1000d37d func   ?sub_1002c900@CUnknown1002c900@@QAEPAXXZ CUnknown1002c900::sub_1002c900
 0x1000d387 func   ?sub_101d7380@CUnknown101d7380@@QAEHPBDH@Z CUnknown101d7380::sub_101d7380
 0x1000d38c func   ?vfunc402@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::vfunc402
+0x1000d391 func   ?sub_10074000@CUnk10074000@@QAEXPBD@Z CUnk10074000::sub_10074000
 0x1000d396 func   ??0CHL2_Player@@QAE@XZ CHL2_Player::CHL2_Player
 0x1000d3a0 func   ?vfunc587@CNPC_VPlaceholder@@UAE_NH@Z CNPC_VPlaceholder::vfunc587
 0x1000d3a5 func   ?vfunc492@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc492
