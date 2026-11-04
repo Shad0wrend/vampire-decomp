@@ -14,6 +14,87 @@ CTEWorldDecal *CTEWorldDecal::vfunc2(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006afd0 size=0x214
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CTEWorldDecal.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "CTraceFilterSimple.h"
+#include "CBroadcastRecipientFilter.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738960.h"
+
+void sub_10139610(const QAngle &angles, Vector *pForward, Vector *pRight, Vector *pUp);
+void sub_10139500(const Vector *pStart, float flScale, const Vector *pDir, Vector *pDest);
+struct V3 { float x, y, z; };
+void sub_10146570(V3 *pStart, V3 *pEnd, int a, int b, int c, int d, int e);
+
+struct RayLocal
+{
+	float m_Start[3];
+	float m_Delta[3];
+	float m_Extents[3];
+	float m_StartOffset[3];
+	bool m_IsRay;
+	bool m_IsSwept;
+	char m_b32;
+	char m_b33;
+	float m_n34;
+
+	void Init(const Vector &start, const Vector &end)
+	{
+		m_Delta[0] = end.x - start.x;
+		m_Delta[1] = end.y - start.y;
+		m_Delta[2] = end.z - start.z;
+		m_IsSwept = (m_Delta[0] * m_Delta[0] + m_Delta[1] * m_Delta[1] + m_Delta[2] * m_Delta[2]) != g_104454c4;
+		m_StartOffset[0] = m_StartOffset[1] = m_StartOffset[2] = 0.0f;
+		m_IsRay = true;
+		m_Extents[0] = m_Extents[1] = m_Extents[2] = 0.0f;
+		m_Start[0] = start.x;
+		m_Start[1] = start.y;
+		m_Start[2] = start.z;
+		m_b32 = 0;
+		m_n34 = 0.0f;
+		m_b33 = 0;
+	}
+};
+
+// TARGET: CTEWorldDecal::vfunc3
+void CTEWorldDecal::vfunc3(const Vector &vecOrigin, const QAngle &vecAngles)
+{
+	m_n18 = 0;
+
+	m_vecPos = vecOrigin;
+	m_vecPos.z += 24.0f;
+
+	RayLocal ray;
+	Vector vecForward;
+	Vector vecEnd;
+
+	sub_10139610(vecAngles, &vecForward, 0, 0);
+	vecForward.z = 0.0f;
+	VectorNormalize(vecForward);
+
+	sub_10139500(&m_vecPos, 50.0f, &vecForward, &m_vecPos);
+	sub_10139500(&m_vecPos, 1024.0f, &vecForward, &vecEnd);
+
+	ray.Init(m_vecPos, vecEnd);
+
+	CTraceFilterSimple traceFilter(0, 0);
+	CGameTrace tr;
+
+	g_1070b254->vfunc4((Ray_t *)&ray, 0x400b, (CTraceFilterNoCharacterCollide *)&traceFilter, &tr);
+
+	if (g_10738960.sub_1005f190())
+		sub_10146570((V3 *)&tr.m_startpos, (V3 *)&tr.m_endpos, 0xff, 0, 0, 1, -1082130432);
+
+	m_vecPos = *(Vector *)&tr.m_endpos;
+
+	CBroadcastRecipientFilter filter;
+	vfunc4v(&filter, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006b280 size=0x39
 #include "CTEWorldDecal.h"
 #include "IVEngineServerFull.h"

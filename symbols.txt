@@ -13114,6 +13114,7 @@
 0x1001489e func   ?sub_102ccb50@@YAXXZ sub_102ccb50
 0x100148a3 func   ?sub_103a4fc0@@YAHXZ sub_103a4fc0
 0x100148a8 func   _npc_VPlayerController npc_VPlayerController
+0x100148b7 func   ?vfunc3@CTEWorldDecal@@UAEXABVVector@@ABVQAngle@@@Z CTEWorldDecal::vfunc3
 0x100148c1 func   ?vfunc5@CItemGMercurioJournal@@QAEPAV1@I@Z CItemGMercurioJournal::vfunc5
 0x100148c6 func   ?vfunc600@CNPC_VYukie@@QAEDH@Z CNPC_VYukie::vfunc600
 0x100148cb func   ?sub_103f5480@@YAXXZ sub_103f5480
