@@ -640,6 +640,29 @@ void CUnknown10381b10::sub_10381b10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10381b50 size=0x3d
+#include "CNPC_VHengeyokai.h"
+
+bool __fastcall sub_10381c80(CNPC_VHengeyokai *p);
+
+// TARGET: CNPC_VHengeyokai::vfunc375
+int CNPC_VHengeyokai::vfunc375(int nAct)
+{
+	if (sub_10381c80(this))
+	{
+		switch (nAct)
+		{
+		case 1:
+			return 0x128;
+		case 9:
+		case 0x13:
+			return 0x129;
+		}
+	}
+	return sub_10006b40(nAct);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10383090 size=0x39
 #include "CNPC_VHengeyokai.h"
 

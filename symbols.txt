@@ -11414,6 +11414,7 @@
 0x10011e0a func   ?vfunc5@CItemGAstrolite@@QAEPAV1@I@Z CItemGAstrolite::vfunc5
 0x10011e0f func   ?sub_101f6c50@CUnknown101f6c50@@QAEXPAUCTraitStatBlock@@@Z CUnknown101f6c50::sub_101f6c50
 0x10011e14 func   ?sub_1027d9b0@@YIXPAD@Z sub_1027d9b0
+0x10011e19 func   ?vfunc375@CNPC_VHengeyokai@@QAEHH@Z CNPC_VHengeyokai::vfunc375
 0x10011e1e func   ?sub_100a52a0@CBaseEntity@@QAE_NXZ CBaseEntity::sub_100a52a0
 0x10011e23 func   ?sub_101f4eb0@CDumpThing@@QAEXXZ CDumpThing::sub_101f4eb0
 0x10011e37 func   ?sub_100a9290@CBaseEntity@@QAEXD@Z CBaseEntity::sub_100a9290
