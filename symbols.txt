@@ -5195,6 +5195,7 @@
 0x10008b7a func   ?sub_101e9640@CUnknown101e98c0Item@@QAE_NPAUCDataNode@@@Z CUnknown101e98c0Item::sub_101e9640
 0x10008b7f func   ?sub_10307890@@YIXPAUCUnknown10307890@@@Z sub_10307890
 0x10008b84 func   ?sub_100b3700@CBaseEntity@@QAEHXZ CBaseEntity::sub_100b3700
+0x10008b89 func   ?sub_10390ee0@CNPC_VMingXiao@@QAEPAV1@XZ CNPC_VMingXiao::sub_10390ee0
 0x10008b8e func   ?sub_10074a70@CUnknown10074a70@@QAEXH@Z CUnknown10074a70::sub_10074a70
 0x10008b93 func   ?sub_10099d40@@YAHPAUSEntV137@@H@Z sub_10099d40
 0x10008b98 func   ?sub_1025db70@CUnknown1025ddd0@@QAE_NPAVCBaseEntity@@@Z CUnknown1025ddd0::sub_1025db70

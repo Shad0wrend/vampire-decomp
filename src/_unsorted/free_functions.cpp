@@ -181203,6 +181203,121 @@ extern "C" CBaseEntity *npc_VMingXiao()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10390ee0 size=0xbf
+#include "CNPC_VMingXiao.h"
+#include "UtlMem.h"
+#include "CBaseHandle.h"
+
+extern int vt_104bd2cc[];
+extern int vt_104bd2a0[];
+extern int vt_104bc704[];
+extern int vt_104bc6d4[];
+
+struct CMingXiaoTailObject
+{
+	void sub_103912c0();
+};
+
+struct CMingXiaoVector
+{
+	UtlMem m_Mem;
+	int m_nSize;
+	int *m_pElements;
+
+	void Init()
+	{
+		m_Mem.sub_1039ae10(0, 0);
+		m_nSize = 0;
+		m_pElements = m_Mem.m_pMemory;
+	}
+};
+
+struct CMingXiaoCtorView
+{
+	int *m_pVtable;
+	char m_pad0004[0x4c - 4];
+	unsigned int m_nFlags4c;
+	char m_pad0050[0x730 - 0x50];
+	char m_b730;
+	char m_pad0731[0x1568 - 0x731];
+	int m_n1568;
+	int m_n156c;
+	char m_pad1570[0x19b0 - 0x1570];
+	int *m_pVtableMovement;
+	char m_pad19b4[0x665c - 0x19b4];
+	CMingXiaoVector m_Vec;
+	int m_h6670;
+	char m_pad6674[0x667c - 0x6674];
+	int m_h667c;
+	int m_h6680;
+	char m_pad6684[0x668c - 0x6684];
+	int m_h668c[6];
+	char m_pad66a4[0x66a8 - 0x66a4];
+	int m_h66a8[6];
+	char m_pad66c0[0x6718 - 0x66c0];
+	int m_h6718;
+	char m_pad671c[0x6738 - 0x671c];
+	int m_h6738;
+	char m_pad673c[0x6751 - 0x673c];
+	CMingXiaoTailObject m_Tail;
+
+	void sub_1028d230();
+};
+
+
+struct CMingXiaoHandles6	// six handles set to -1 by their constructor
+{
+	unsigned int m_h[6];
+	CMingXiaoHandles6() { for (int i = 0; i < 6; i++) m_h[i] = 0xffffffff; }
+};
+
+struct CMingXiaoTail	// the member object at +0x6751; its constructor is 0x103912c0
+{
+	CMingXiaoTail() { sub_103912c0(); }
+	void sub_103912c0();
+};
+
+struct CMingXiaoParts	// the members CNPC_VMingXiao's constructor builds after the CNPC_VBaseBoss part (+0x6670 .. +0x6752)
+{
+	char pad0[0x6670];
+	CBaseHandle m_h6670;
+	char pad6674[0x667c - 0x6674];
+	CBaseHandle m_h667c;
+	CBaseHandle m_h6680;
+	char pad6684[0x668c - 0x6684];
+	CMingXiaoHandles6 m_h668c;
+	char pad66a4[0x66a8 - 0x66a4];
+	CMingXiaoHandles6 m_h66a8;
+	char pad66c0[0x6718 - 0x66c0];
+	CBaseHandle m_h6718;
+	char pad671c[0x6738 - 0x671c];
+	CBaseHandle m_h6738;
+	char pad673c[0x6751 - 0x673c];
+	CMingXiaoTail m_Tail;
+	CMingXiaoParts() {}
+};
+
+CNPC_VMingXiao *CNPC_VMingXiao::sub_10390ee0()
+{
+	CMingXiaoCtorView *p = (CMingXiaoCtorView *)this;
+	p->sub_1028d230();
+	p->m_Vec.Init();
+
+	p->m_pVtable = vt_104bd2cc;
+	p->m_pVtableMovement = vt_104bd2a0;
+	((CMingXiaoParts *)this)->CMingXiaoParts::CMingXiaoParts();
+
+	p->m_nFlags4c |= 0x200;
+	p->m_pVtable = vt_104bc704;
+	p->m_pVtableMovement = vt_104bc6d4;
+	p->m_n1568 = 0xf;
+	p->m_n156c = 0x10;
+	p->m_h6738 = -1;
+	p->m_b730 = 1;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103912c0 size=0xc
 void __fastcall sub_103912e0(void *p);
 
