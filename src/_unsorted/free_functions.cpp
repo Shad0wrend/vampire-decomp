@@ -9040,6 +9040,47 @@ void CFwd1004ec40::sub_1004ec40(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004ec60 size=0x151
+#include "CPhysExplosion.h"
+#include "CUnknown101c26d0.h"
+#include "CAI_BaseNPC.h"
+
+extern float g_104454c4;
+
+void CPhysExplosion::sub_1004ec60(float flRadius)
+{
+	CAI_BaseNPC *pSelf = (CAI_BaseNPC *)this;
+	CBaseEntity *pEnt;
+	for (pEnt = sub_1004ebb0(0, flRadius); pEnt != 0; pEnt = sub_1004ebb0(pEnt, flRadius))
+	{
+		if (!pEnt->m_nTakeDamage)
+			continue;
+		if (pEnt->vfunc94() != 7 && (!pEnt->m_obj36c || pEnt->m_pA8))
+			continue;
+
+		CAI_BaseNPC *pTarget = (CAI_BaseNPC *)pEnt;
+		Vector vecTarget;
+		vecTarget = pTarget->vfunc197(*(Vector *)pSelf->vfunc217(), true, false);
+
+		float *pOrigin = pSelf->vfunc217();
+		float dx = pOrigin[0] - vecTarget.x;
+		float dy = pOrigin[1] - vecTarget.y;
+		float dz = pOrigin[2] - vecTarget.z;
+		float sq = dx * dx + dz * dz;
+		float flDist = FastSqrt(sq + dy * dy);
+
+		if (m_radius == g_104454c4 || flDist <= m_radius)
+		{
+			float flDamage = m_damage - flDist * 0.4f;
+			if (flDamage < g_104454c4)
+				flDamage = 0.0f;
+			CUnknown101c26d0 info;
+			pEnt->sub_100a1250(info.sub_101c26d0(this, this, flDamage, 0x40, 0, 0, -1));
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004ee20 size=0x4b
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"

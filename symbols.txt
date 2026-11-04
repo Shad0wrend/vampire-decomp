@@ -6712,6 +6712,7 @@
 0x1000b168 func   ?vfunc328@CBaseCombatWeapon@@UAEHXZ CBaseCombatWeapon::vfunc328
 0x1000b16d func   ?sub_1007f4c0@UtlVec8@@QAEXHH@Z UtlVec8::sub_1007f4c0
 0x1000b172 func   ?vfunc36@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHH@Z CTempEntsSystem::vfunc36
+0x1000b177 func   ?sub_1004ec60@CPhysExplosion@@QAEXM@Z CPhysExplosion::sub_1004ec60
 0x1000b17c func   ?vfunc599@CNPC_VMingXiaoTentacle@@UAEDH@Z CNPC_VMingXiaoTentacle::vfunc599
 0x1000b181 func   ?sub_1011d8e0@@YAXPBD0ZZ sub_1011d8e0
 0x1000b186 func   ?sub_100b3350@CBaseEntity@@QAE_NXZ CBaseEntity::sub_100b3350
