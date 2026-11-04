@@ -29,6 +29,7 @@ public:
 	virtual void slot17();	// called by vfunc18 when bit 1 of the player's +0x24 is set
 	virtual void vfunc18();	// slot 18: sub_101252e0, then slot 17 (bit 1 of the player's +0x24 set) or clears bit 1 of the player's +0x28; adds the move data's vector (+0x3b0) to the player's velocity (+0x40), runs slot 19(0, 0) and subtracts it again
 	virtual void slot19(int a, int b);
+	int vfunc19(Vector *pFirstDest, CGameTrace *pFirstTrace);	// slot 19 "CGameMovement::TryPlayerMove" (0x10122cd0, ret 8, returns the blocked bits 1 floor / 2 step / 4 stuck): up to 4 bumps of the velocity (+0x40 of m_pPlayer) along planes (max 5), each traced from the origin (+0x70) with VectorMA (sub_10139500) and the hull (sub_1011e310 / sub_1011e350, Ray_t::sub_1006dec0, CTraceFilterSimple via sub_1011e8f0, mask 0x201400b), ClipVelocity (sub_10124120) and a crease clip (cross product of two planes); when the global 0x10572420 is set and pFirstDest equals the traced end point the caller's pFirstTrace is reused (copied from the CGameTrace with sub_100353c0)
 	virtual char vfunc20(); virtual char vfunc21(void *pTrace);	// slot 21: true when the trace's flags (+0x30) have 0x20000000, else when the surface property record (global 0x1071a278 slot 9, then slot 5 with the short at +0x40) has its byte at +0x72 set
 	virtual void slot22();
 	virtual float vfunc23();
