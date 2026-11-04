@@ -19,6 +19,18 @@ struct CFuncBrushSlots : public CBaseEntitySlots
 	virtual void slot222(); virtual void slot223();
 };
 
+class CFuncBrushVt : public CFuncBrushSlots
+{
+public:
+	virtual void slot224(); virtual void slot225(); virtual void slot226(); virtual void slot227();
+	virtual void slot228(); virtual void slot229(); virtual void slot230(); virtual void slot231();
+	virtual void slot232(); virtual void slot233(); virtual void slot234(); virtual void slot235();
+	virtual void slot236(); virtual void slot237(); virtual void slot238(); virtual void slot239();
+	virtual void slot240();
+	virtual char slot241();
+	void sub_1013e420();
+};
+
 class CFuncBrush
 {
 public:
