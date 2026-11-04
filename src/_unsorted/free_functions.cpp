@@ -18740,7 +18740,7 @@ struct CUnit : CUnit10076630 {
 };
 unsigned char CUnit::sub_10075f30()
 {
-    if (*(int *)&m_f188 != 0xbf800000)
+    if (m_f188 != -1.0f)
         return 1;
     return 0;
 }
