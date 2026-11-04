@@ -134,6 +134,8 @@ public:
 	struct CHengeyokaiAnimView *sub_100952d0(int n);	// CBaseAnimating::sub_100952d0 (stub 0x10013d8b), called directly
 	void sub_10382400(void *pEnt);	// stub 0x10012319
 	void sub_102c4cc0(const Vector *pA, float *pOrigin, const Vector *pB);	// stub 0x10009a57
+	int vfunc375(int nAct);	// slot 375 (plain member): with the flag bit 5 (sub_10381c80) the activity 1 gives 0x128 and 9 / 0x13 give 0x129, else CNPC_VHuman::vfunc375
+	int sub_10006b40(int nAct);	// CNPC_VHuman::vfunc375 (stub 0x10006b40), called directly
 	void sub_10381c00(char bOn);	// stub 0x10014899: sets / clears bit 5 of +0x14b8; setting also re-arms the timer at +0x666c (curtime + RandomFloat(8, 5))
 	bool sub_10381e90(CBaseEntity *pEnt);	// picks the bone of the ragdoll pEnt (bone name table at 0x1063bd88) closest to this NPC (within 1025 units) into +0x6684 / +0x6668; true when one was found (any ragdoll-less entity: this NPC's own origin and bone 0)
 	int sub_10382d40();	// "target pick" schedule selector: the fish target is kept (0x16b after sub_10381ba0(1)) unless a roll fails or the target is farther than the enemy's last known position; else +0x6678 = 2, +0x667c = 0, returns 0
