@@ -46,6 +46,7 @@ public:
 	int m_nPose5fe0[3];	// 0x5fe0: pose parameter indices reset by sub_1025efc0
 	int m_nPose5fec[13];	// 0x5fec: pose parameter indices (move_rightleft .. head_tilt)
 
+	void sub_102630b0();	// 0x102630b0 (called by 0x10262590): builds the waypoint vector at +0x6024 from the navigator's node list (navigator +0x5d34 -> +0x30 -> +0x24, linked through +0x30; the start is the origin (slot 217) with the motor value sub_10146150(motor +0x5d44 + 0x3c)), then runs the length / removal, forward and backward distance limiting (sub_1013a6f0), the corner splitting (sub_102e1470, SElemVec / CUtlVector56 inserts) and the final length / blend recomputation passes. Scale 50.0f unless slot 248 (+0x3e0) returns non-zero
 	void sub_102627e0();	// 0x102627e0 (called by 0x10262590, itself from CAI_HumanoidMotor::vfunc19): recomputes the waypoint records' angles/positions (the CUtlVector56 at +0x6024 feeds the working one at +0x6038) and the visibility/rotation smoothing pass
 	char m_pad6020[4];	// 0x6020 .. 0x6023
 	CUtlVector56 m_Waypoints6024;	// 0x6024: the parsed waypoint records (0x38-byte elements)
