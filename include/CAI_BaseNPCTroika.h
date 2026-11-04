@@ -257,7 +257,9 @@ public:
 	unsigned int m_hfe8;
 	int m_nState0fec;
 	int m_nActivityff0;	// 0xff0: the ideal activity
-	char m_pad0ff4[0x14b8 - 0xff4];
+	char m_pad0ff4[4];
+	EHANDLE m_hFireEmitters[18];	// 0xff8: the body fire emitters, one per hit box (CBaseCombatCharacter::m_hFireEmitters)
+	char m_pad1040[0x14b8 - 0x1040];
 	unsigned int m_flags14b8;
 	unsigned int m_flags14bc;
 	char m_pad14c0[0x1538 - 0x14c0];
