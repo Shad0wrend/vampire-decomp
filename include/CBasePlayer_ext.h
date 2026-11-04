@@ -44,6 +44,7 @@
 	char vfunc419(int unused);	// slot 419 (plain member): the same activity machine as slot 422 for the activities 0xf5b / 0xf64 -> 0xf91 / 0xf9a, or 0xf76 while +0x14a8 is set; 0xf76 / 0xf7f -> 0xf7f (and the byte +0x1b6c) while +0x14a8 and sub_103395f0 hold, else 0xf88 / 0xf9a by slot 426); true for other activities, false otherwise
 	void vfunc112(int unused, int nArg);	// slot 112 (plain member): when nArg is the value at +0x14b0 and +0x14b4 is set, sub_10099400 accepting it starts the activity (sub_101644f0(-1, x, 1)) of +0x14b0 when sub_10099430(0) holds, else of +0x14b4
 	char sub_10099400(int a);	// stub 0x100082b0 (function 0x10099400)
+	char sub_100993c0(int a);
 	char sub_10099430(int a);	// stub 0x10001f19 (function 0x10099430)
 	char vfunc423(int unused);	// slot 423 (plain member): the same activity machine as slot 419 for the activities 0xfca / 0xfd3 (-> 0x1000 / 0x1009 by slot 427, or 0xfdc while +0x14a8 is set) and 0xfdc / 0xfe5 (-> 0xfe5 and the byte +0x1b6c while +0x14a8 and sub_103395f0 hold, else 0xff7 / 0x1009 by slot 427); true for other activities, false otherwise
 	void sub_1016b270();	// the discipline effect tick (called by slot 436): every 2 seconds, for each of the eight effect bits 0x8000 << i set in the mask at +0xe98: heals 10 per tick (TakeHealth, slot 143) towards the target of the effects 2 (counters +0x228c / +0x2290) and 4 (+0x2284 / +0x2288), and counts the per-bit byte at +0xe9c + i down, clearing the bit when it reaches zero
