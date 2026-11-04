@@ -257,5 +257,12 @@ public:
 	virtual void vfunc371();
 	virtual void vfunc372();
 	virtual int vfunc373();
-	char m_pad03e0[0x914 - 0x3e0];
+	char m_pad03e0[0x8b8 - 0x3e0];
+	int m_n08b8;
+	int m_n08bc;
+	float m_f08c0;
+	float m_f08c4;
+	char m_pad08c8[0x910 - 0x8c8];
+	int m_n0910;
+	char m_pad0914[0x914 - 0x914];
 };
