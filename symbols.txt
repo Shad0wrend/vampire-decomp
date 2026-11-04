@@ -2532,6 +2532,7 @@
 0x10004c96 func   ?sub_1027e760@@YAPBDH@Z sub_1027e760
 0x10004c9b func   ?vfunc36@CTriggerBombSite@@QAEHXZ CTriggerBombSite::vfunc36
 0x10004ca0 func   ?vfunc546@CNPC_VBrujah@@QAEHH@Z CNPC_VBrujah::vfunc546
+0x10004ca5 func   ?sub_101e82f0@COwner101e82f0@@QAEPAHPAHHH@Z COwner101e82f0::sub_101e82f0
 0x10004caa func   ?AddRecipientsByPAS@CRecipientFilter@@QAEXABVVector@@@Z CRecipientFilter::AddRecipientsByPAS
 0x10004caf func   ?vfunc5@CItemGGarysTape@@QAEPAV1@I@Z CItemGGarysTape::vfunc5
 0x10004cb4 func   ?sub_10332570@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10332570
