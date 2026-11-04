@@ -141625,6 +141625,28 @@ void CUnknown10293df0::sub_10293df0(float flDelay)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10293e20 size=0x13
+namespace block_10293e20 {
+struct CTroikaFwd {
+    char pad[0x6398];
+    float m_f6398;
+    float m_f639c;
+    void sub_10293d90(float f);
+    void sub_10293dc0(float f);
+    void sub_10293e20(float f);
+};
+#pragma auto_inline(off)
+void CTroikaFwd::sub_10293d90(float f) { m_f6398 = f + gpGlobals->curtime; }
+void CTroikaFwd::sub_10293dc0(float f) { m_f639c = f + gpGlobals->curtime; }
+void CTroikaFwd::sub_10293e20(float f)
+{
+    sub_10293d90(f);
+    sub_10293dc0(f);
+}
+}
+// TARGET: block_10293e20::CTroikaFwd::sub_10293e20
+// END FUNCTION
+
 // FUNCTION: 0x102950c0 size=0x8a
 #include "CAI_BaseNPCTroika.h"
 

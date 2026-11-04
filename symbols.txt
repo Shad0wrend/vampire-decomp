@@ -1327,6 +1327,7 @@
 0x10002ff4 func   ?sub_101fee50@CVStatInfo_t@@QAEHH@Z CVStatInfo_t::sub_101fee50
 0x10002ff9 func   ?vfunc4@CTEBloodStream@@QAEXHH@Z CTEBloodStream::vfunc4
 0x10002ffe func   ?vfunc103@CItemGAstrolite@@UAEXXZ CItemGAstrolite::vfunc103
+0x10003003 func   ?sub_10293e20@CTroikaFwd@block_10293e20@@QAEXM@Z block_10293e20::CTroikaFwd::sub_10293e20
 0x1000300d func   ?vfunc82@CInspectionNode@@QAEPAUdatamap_t@@XZ CInspectionNode::vfunc82
 0x10003012 func   ?sub_102463c0@@YAXHPBHPAH@Z sub_102463c0
 0x10003017 func   _ai_changehintgroup ai_changehintgroup
