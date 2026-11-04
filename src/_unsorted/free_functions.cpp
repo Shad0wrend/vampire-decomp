@@ -162039,6 +162039,30 @@ bool CUnknown1030c560::sub_1030c560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030c5b0 size=0x36
+void *sub_104312d5(unsigned int size);
+
+struct Helper1030f680
+{
+	void *sub_1030f680(int a, int b, void *pOld);
+};
+
+struct CUnknown1030c5b0
+{
+	char m_pad0000[4];
+	void *m_pHelper04;
+
+	void sub_1030c5b0(int a, int b);
+};
+
+// TARGET: CUnknown1030c5b0::sub_1030c5b0
+void CUnknown1030c5b0::sub_1030c5b0(int a, int b)
+{
+	Helper1030f680 *pNew = (Helper1030f680 *)sub_104312d5(0x48);
+	m_pHelper04 = pNew ? pNew->sub_1030f680(a, b, m_pHelper04) : 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030c600 size=0x190
 extern "C" int __cdecl _strcmpi(const char *, const char *);
 extern "C" __declspec(dllimport) void __cdecl Error(const char *, ...);

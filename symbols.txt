@@ -8237,6 +8237,7 @@
 0x1000d3e1 func   ?vfunc300@CGargoyleTalisman@@QAEXXZ CGargoyleTalisman::vfunc300
 0x1000d3e6 func   ?sub_101dbb20@CUnknown101dbc60@@QAEDPAVIKVNodeView@@@Z CUnknown101dbc60::sub_101dbb20
 0x1000d3eb func   _scripted_sentence scripted_sentence
+0x1000d3f0 func   ?sub_1030c5b0@CUnknown1030c5b0@@QAEXHH@Z CUnknown1030c5b0::sub_1030c5b0
 0x1000d3f5 func   ?vfunc0@?$CUtlVectorDataOps@V?$CUtlVector@UASSIGNED_QUEST@@V?$CUtlMemory@UASSIGNED_QUEST@@@@@@$08@@UAEXPAX0@Z CUtlVectorDataOps<CUtlVector<ASSIGNED_QUEST,CUtlMemory<ASSIGNED_QUEST> >,9>::vfunc0
 0x1000d3fa func   ?sub_100f4460@@YAHH@Z sub_100f4460
 0x1000d404 func   ?sub_1007e970@CChoreoScene1007e970@@QAEHPBDH@Z CChoreoScene1007e970::sub_1007e970
