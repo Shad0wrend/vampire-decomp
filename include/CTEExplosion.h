@@ -19,7 +19,7 @@ public:
 	int m_nField1c;	// 0x1c
 	int m_nField20;	// 0x20
 	int m_nField24;	// 0x24
-	float m_vecNormal[3];	// 0x28 (0, 0, 1 when not given)
+	Vector m_vecNormal;	// 0x28 (0, 0, 1 when not given)
 	char m_bField34;	// 0x34
 	int m_nField38;	// 0x38
 	int m_nField3c;	// 0x3c
