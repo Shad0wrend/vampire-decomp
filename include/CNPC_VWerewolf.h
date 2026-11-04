@@ -229,6 +229,7 @@ public:
 	void sub_103d4690();	// "CNPC_VWerewolf::ClearMoveHint": scope trace (entity name), when the hint object at +0x66bc is set calls its sub_102d1420(0), then clears the pointer and sets condition 0x78
 	void sub_103d44e0(CNPC_VWerewolfHint66b0 *pHint, char flag);	// "CNPC_VWerewolf::SetMoveHint": scope trace (entity name), clears the current move hint (sub_103d4690) when set, stores flag at +0x66c8 and pHint at +0x66bc, calls slot 1 of the object behind the global 0x10924a6c, then sub_10269a20(0x78)
 	int vfunc438();	// slot 438 "CNPC_VWerewolf::SelectSchedule": scope trace (entity name), stores 0x29 at +0x1b2c, SelectIdealState (call slot 461 through vfunc461_slot), then switches on the NPC state (+0x5cc0) picking a schedule id with HasCondition tests (sub_10269aa0) and recording the source line in +0x1b30 / +0x1b34; falls through to CAI_BaseNPCTroika::vfunc438 (sub_102af660)
+	int sub_103ce9b0(CNPC_VWerewolfHint66b0 *pHint);	// stub 0x1000c5bd: the schedule for a move hint
 	int sub_102af660();	// CAI_BaseNPCTroika::vfunc438 (stub 0x10015596), called directly
 	int vfunc461();	// slot 461 "CNPC_VWerewolf::SelectIdealState": scope trace (entity name), picks the schedule (+0x1b40) and the ideal state (+0x5cc4) from the conditions, then SetState
 	int sub_102ad660();	// CAI_BaseNPCTroika::vfunc461 (stub 0x1000e49e), called directly
