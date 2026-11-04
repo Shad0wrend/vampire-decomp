@@ -90062,6 +90062,24 @@ int CUnk101c2980::sub_101c2980()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c29b0 size=0x19
+#include "CBaseEntity.h"
+struct CUnk101c29b0
+{
+	char m_pad0000[0x2c];
+	CBaseEntity *m_pEntity28;
+
+	int sub_101c29b0();
+};
+
+// TARGET: CUnk101c29b0::sub_101c29b0
+int CUnk101c29b0::sub_101c29b0()
+{
+	CBaseEntity *pEntity = m_pEntity28;
+	return engine->vfunc35(pEntity->m_pEdict2e0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c29e0 size=0x1d
 struct CUnknown101c29e0 {
 	char m_pad0000[0x1c];
