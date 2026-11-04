@@ -132528,6 +132528,50 @@ float CUnknown10249400::sub_10249400()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10249420 size=0x17
+extern float g_104454c4;
+
+namespace block_10249420 {
+#pragma auto_inline(off)
+struct CHangRopeUnit
+{
+	int m_n0000;
+	int m_n0004;
+	int m_pad0008[3];
+	float m_f0014;
+	float m_f0018;
+	void sub_102493b0(float flValue);
+	void sub_10249450(int b);
+	void sub_10249420(float a, int b);
+};
+
+void CHangRopeUnit::sub_102493b0(float flValue)
+{
+	float r;
+	if (flValue > g_104454c4)
+		r = flValue;
+	else
+		r = g_104454c4;
+	m_f0014 = r;
+	m_f0018 = r * r;
+}
+
+void CHangRopeUnit::sub_10249450(int b)
+{
+	m_n0004 = b;
+}
+#pragma auto_inline(on)
+}
+using namespace block_10249420;
+
+// TARGET: block_10249420::CHangRopeUnit::sub_10249420
+void CHangRopeUnit::sub_10249420(float a, int b)
+{
+	sub_102493b0(a);
+	sub_10249450(b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10249450 size=0xa
 #include "CUnknown10249450.h"
 void CUnknown10249450::sub_10249450(int value)

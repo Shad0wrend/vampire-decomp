@@ -12983,6 +12983,7 @@
 0x100142c7 func   ?LinkToParent@?$CUtlRBTree@UCRBTree12Entry_101c03c0@@G@@QAEXGG_N@Z CUtlRBTree<CRBTree12Entry_101c03c0,unsigned short>::LinkToParent
 0x100142cc func   ?vfunc1@CMoveHelperServer@@UAEXXZ CMoveHelperServer::vfunc1
 0x100142d1 func   ?sub_102d2e30@CAI_Hint@@QAEPAV1@XZ CAI_Hint::sub_102d2e30
+0x100142d6 func   ?sub_10249420@CHangRopeUnit@block_10249420@@QAEXMH@Z block_10249420::CHangRopeUnit::sub_10249420
 0x100142db func   ?sub_1012fc70@@YAPAVIPositionInterpolator@@XZ sub_1012fc70
 0x100142e0 func   ?vfunc82@CNPC_VBatSwarm@@UAEPAUdatamap_t@@XZ CNPC_VBatSwarm::vfunc82
 0x100142ea func   ?sub_1004ddc0@@YGXPADIHP8CUnknown1004ddc0@@AEXXZ@Z sub_1004ddc0
