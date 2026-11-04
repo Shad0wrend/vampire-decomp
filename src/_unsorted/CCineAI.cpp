@@ -49,6 +49,35 @@ bool CCineAI::vfunc584(void *pNpc, const char *pszSequence, char bFindOnly)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a95d0 size=0x38
+#include "CCineAI.h"
+extern void (*g_109f3650)(int level, const char *pMsg, ...);
+
+struct CCineAINpcView
+{
+	void sub_10006a8c();
+	void sub_1000c27a(int a);
+};
+
+// TARGET: CCineAI::vfunc586
+void CCineAI::vfunc586(void *pNpc)
+{
+	CCineAINpcView *p = (CCineAINpcView *)pNpc;
+	switch (m_iFinishSchedule)
+	{
+	case 0:
+		break;
+	case 1:
+		p->sub_1000c27a(0x2a);
+		return;
+	default:
+		g_109f3650(2, "FixScriptNPCSchedule - no case!\n");
+		break;
+	}
+	p->sub_10006a8c();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab060 size=0x52
 #include "CCineAI.h"
 

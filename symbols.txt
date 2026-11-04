@@ -4249,6 +4249,7 @@
 0x100075ae func   ?vfunc609@CAI_BaseNPCTroika@@QAEHD@Z CAI_BaseNPCTroika::vfunc609
 0x100075b3 func   ?sub_1014ca10@CUnknown1014ca10@@QAEXEEE@Z CUnknown1014ca10::sub_1014ca10
 0x100075b8 func   ?vfunc86@CTestTraceline@@UAE_NHHHHH@Z CTestTraceline::vfunc86
+0x100075bd func   ?vfunc586@CCineAI@@QAEXPAX@Z CCineAI::vfunc586
 0x100075c2 func   ?vfunc82@CNPC_VTzimisceHeadClaw@@UAEPAUdatamap_t@@XZ CNPC_VTzimisceHeadClaw::vfunc82
 0x100075c7 func   ?sub_1021a4f0@CUnit1021a4f0@@QAE_NH@Z CUnit1021a4f0::sub_1021a4f0
 0x100075cc func   ?Links@?$CUtlRBTree@UCRBTree12Entry_1024c1d0@@G@@QBEABULinks_t@1@G@Z CUtlRBTree<CRBTree12Entry_1024c1d0,unsigned short>::Links
