@@ -107442,6 +107442,21 @@ struct CUnknown101f2500 { int a; char sub_101f2500(); };
 char CUnknown101f2500::sub_101f2500() { int v = ((int *)this)[-5]; return v != 0; }
 // END FUNCTION
 
+// FUNCTION: 0x101f2520 size=0x20
+struct CVBaseA { int a; };
+struct CVBaseB { int b; };
+struct CVDerived : virtual CVBaseA, virtual CVBaseB { int d; };
+struct CUnk101f2520
+{
+    CVDerived *sub_101f2d70(void *a);
+    CVBaseB *sub_101f2520(void *a);
+};
+CVBaseB *CUnk101f2520::sub_101f2520(void *a)
+{
+    return ((CUnk101f2520 *)((char *)this - 0x30))->sub_101f2d70(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2550 size=0x35
 #include <string.h>
 struct SNodeVT { int slot0; int slot1; int offset; };

@@ -12616,6 +12616,7 @@
 0x10013c37 func   ?sub_103a1ed0@@YIPAXPAX@Z sub_103a1ed0
 0x10013c41 func   ?vfunc77@CHalfLife2@@QAEXXZ CHalfLife2::vfunc77
 0x10013c46 func   ?vfunc0@CTEWorldDecal@@UAEPAUServerClass@@XZ CTEWorldDecal::vfunc0
+0x10013c4b func   ?sub_101f2520@CUnk101f2520@@QAEPAUCVBaseB@@PAX@Z CUnk101f2520::sub_101f2520
 0x10013c50 func   ?vfunc5@CWeaponMelee_Baton@@UAEPAVCBaseCombatWeapon@@I@Z CWeaponMelee_Baton::vfunc5
 0x10013c55 func   ?vfunc86@CInspectionBrush@@QAEDHPAUCInspectionBrushEdict@@HHH@Z CInspectionBrush::vfunc86
 0x10013c5a func   ?vfunc104@CVampireProjectile_MingXiaoSpit@@UAEXXZ CVampireProjectile_MingXiaoSpit::vfunc104
