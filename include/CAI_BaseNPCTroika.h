@@ -302,7 +302,8 @@ public:
 	struct CAI_SensesView *m_pSenses5cdc;	// 0x5cdc: the senses component (a float at +0x10)
 	char m_pad5ce0[0x5d24 - 0x5ce0];
 	unsigned int m_h5d24;
-	char m_pad5d28[0x5d30 - 0x5d28];
+	EHANDLE m_h5d28;	// 0x5d28: the door that bothers the NPC (cleared by GatherConditions on task 0x46 / 0x54)
+	char m_pad5d2c[0x5d30 - 0x5d2c];
 	char m_b5d30;
 	char m_pad5d31[3];
 	class CAI_Navigator *m_p5d34;	// 0x5d34: the navigator (+0x2c: its node list)
