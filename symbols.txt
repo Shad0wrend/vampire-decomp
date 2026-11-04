@@ -839,6 +839,7 @@
 0x1000240a func   _item_k_carson_apartment_key item_k_carson_apartment_key
 0x10002414 func   ?sub_101aeb60@@YAHPAUSPlayEdict@@PBDMHHH@Z sub_101aeb60
 0x10002419 func   ?sub_101f7500@CVTraitEffectGroup_t@@QAEPAVCVTraitEffect_t@@H@Z CVTraitEffectGroup_t::sub_101f7500
+0x1000241e func   ??0CTEKillPlayerAttachments@@QAE@PBD@Z CTEKillPlayerAttachments::CTEKillPlayerAttachments
 0x10002423 func   _prop_slashable prop_slashable
 0x10002428 func   ?sub_10097bd0@CBaseTransmitProxy@@QAEXXZ CBaseTransmitProxy::sub_10097bd0
 0x1000242d func   ?sub_10057a30@@YAXPAX@Z sub_10057a30
