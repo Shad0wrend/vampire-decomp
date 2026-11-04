@@ -7,9 +7,9 @@
 extern int g_10567a68[];
 
 // TARGET: CEnvPlayerSurfaceTrigger::vfunc82
-void *CEnvPlayerSurfaceTrigger::vfunc82()
+datamap_t *CEnvPlayerSurfaceTrigger::vfunc82()
 {
-	return g_10567a68;
+	return (datamap_t *)g_10567a68;
 }
 // END FUNCTION
 
@@ -48,7 +48,7 @@ CEnvPlayerSurfaceTrigger::~CEnvPlayerSurfaceTrigger()
 void sub_100aa7b0(void *p);
 
 // TARGET: CEnvPlayerSurfaceTrigger::vfunc5
-CEnvPlayerSurfaceTrigger *CEnvPlayerSurfaceTrigger::vfunc5(unsigned int flags)
+CPointEntity *CEnvPlayerSurfaceTrigger::vfunc5(unsigned int flags)
 {
 	sub_100108ed();
 	if (flags & 1)
