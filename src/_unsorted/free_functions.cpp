@@ -52838,7 +52838,7 @@ struct CEntityOriginView
 
 bool CEnvMicrophone::sub_10102730(CSound *pSound, float *pLevel)
 {
-    CEntityOriginView *pTarget = (CEntityOriginView *)EHandle_Get(m_hMeasureTarget);
+    CEntityOriginView *pTarget = (CEntityOriginView *)EHandle_Get((const unsigned int &)m_hMeasureTarget.m_Index);
     const Vector *pOrigin = pTarget->vfunc220();
     float dx = pSound->m_vecOrigin.x - pOrigin->x;
     float dy = pSound->m_vecOrigin.y - pOrigin->y;

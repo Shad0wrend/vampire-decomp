@@ -43,7 +43,7 @@ extern CGlobalEntityList g_106eb5d8;
 extern CGlobalEntityList *g_10566458;
 extern void (__cdecl *g_109f362c)(const char *fmt, ...);
 
-static inline CBaseEntity *LookupHandle(const unsigned int *pHandle)
+static inline CBaseEntity *LookupHandle(const unsigned long *pHandle)
 {
     if (*pHandle == 0xffffffff)
         return 0;
@@ -60,16 +60,16 @@ void CEnvMicrophone::vfunc113()
     if (pszTarget) {
         CBaseEntity *pEnt = g_106eb5d8.sub_100f7770(0, pszTarget, 0, 0);
         if (pEnt)
-            m_hMeasureTarget = *pEnt->vfunc1();
+            m_hMeasureTarget.m_Index = *pEnt->vfunc1();
         else
-            m_hMeasureTarget = 0xffffffff;
-        if (LookupHandle(&m_hMeasureTarget)) {
-            if (*(int *)((char *)LookupHandle(&m_hMeasureTarget) + 0x2e0))
+            m_hMeasureTarget.m_Index = 0xffffffff;
+        if (LookupHandle(&m_hMeasureTarget.m_Index)) {
+            if (*(int *)((char *)LookupHandle(&m_hMeasureTarget.m_Index) + 0x2e0))
                 return;
         }
         g_109f362c("EnvMicrophone - Measure target not found or measure target with no origin!\n");
     }
-    m_hMeasureTarget = *vfunc1();
+    m_hMeasureTarget.m_Index = *vfunc1();
 }
 // END FUNCTION
 
@@ -131,7 +131,7 @@ struct CGargoyleBaseUnit {
 void __cdecl sub_10009fc5(void *p);
 
 // TARGET: CEnvMicrophone::vfunc5
-CEnvMicrophone *CEnvMicrophone::vfunc5(unsigned int flags)
+CPointEntity *CEnvMicrophone::vfunc5(unsigned int flags)
 {
 	((CGargoyleMemberUnit *)((char *)this + 0x464))->sub_10015708();
 	((CGargoyleBaseUnit *)this)->sub_1000cb8a();
