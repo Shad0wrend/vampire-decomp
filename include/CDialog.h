@@ -98,6 +98,7 @@ public:
 	void sub_100e5c70();	// "CDialog::CallPendingNPCEventScript": scope trace, when the pending event script name at +0x30ea is set runs it (sub_100e4f30) and clears it
 	void sub_100e4f30(char *pszScript);
 	int sub_100e61d0(void *pFile, DialogLine *pLine, int *pLineNo);	// "CDialog::read_line_data": scope trace, reads one dialog line (key, text, gender, response, dependency, script, seven clan texts); 1 ok, 0 empty line, -1 missing field
+	int sub_100e0290(CBaseEntity *pNPC, CBaseEntity *pSpeaker, int hFile);	// "CDialog::LogScriptProblems" (0x100e0290, ret 0xc): scope trace "CDialog::LogScriptProblems"; sets m_hSpeaker from pSpeaker slot 1 and m_hNPC from pNPC slot 1, logs the dependency / event-script problem lines of the table to hFile through g_1070b238->vfunc3, unloads; returns how many problems
 	char sub_100e5f10();	// "CDialog::read_dialog_data": scope trace, opens the dialog file, reads every line into the table (growing it by 10 entries), closes the file and sorts the entries; 1 ok, 0 when the file or memory failed
 	int sub_100e7230(const char *pszName, int nMode);	// "CDialog::dopen" (this unused; the caller still loads ecx)
 	void *sub_100e76d0(void *pOld, int nOld, int nNew);	// "CDialog::drealloc" (this unused)
