@@ -14,6 +14,7 @@ public:
 	char sub_1034b430();	// stub 0x10001afa
 	char sub_1034cef0();	// the same test as sub_1034b430, another caller
 	void sub_1034b490();	// when sub_1034b430 fails: clears the flag at +0x66c0, installs the think function sub_1034bbf0 and stores the current time at +0x17c
+	void sub_1034d000(struct CMakerInputData *pData);
 	void sub_1034cf20(int a, char bNotify);	// stores a at +0x76d0 and, with bNotify, walks the entities named like the string at +0x66bc and hands a to the one (sub_103e0980) whose owner handle (+0x254 of the object at +0x98) resolves to this
 	void sub_1034bbf0();	// schedules the next think: the spawn delay (+0x6664) after slot 617(0) or when the live count (+0x66b0) reached the limit (+0x66b4), else 1..2 seconds
 	char vfunc618(char bForce);	// slot 618 "CanSpawn": true when forced; false at the live limit, while the global at 0x106c8a41 is set, when the player (sub_101cda50) is excluded by the flags at +0x66c1 / +0x66c5 or nearer than the distance at +0x66c8; else true when the box around the maker holds no entity (mask 0x2080)
