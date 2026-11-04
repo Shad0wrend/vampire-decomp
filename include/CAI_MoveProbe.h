@@ -45,6 +45,8 @@ public:
 	void sub_102e3450(const Vector &vecStart, const float *vecEnd, unsigned int collisionMask, struct CGameTrace *pTrace, char bGround);	// the same profiled hull trace as sub_102a99e0 (ret 0x14, 5 stack arguments) but with the hull taken from the owner's collision object (m_pOuter+0x270: slot 2 = mins vector copied, slot 1 = maxs pointer; mins z lowered by 1.0f) and two inlined copies of the trace body (bGround picks CTraceFilterNavGround102e3290::sub_102e3290 vs CTraceFilterNav::sub_102e30d0; the ground one also constructs a CUnknown1004f860::sub_1004f860 object); the VPROF scope is entered through the imported CVProfile::EnterScope (call [0x109f3660], 4 args: name, 0, "Unaccounted", false) and left with the inline tail
 	char sub_102e7ba0(const float *vecStart, unsigned int collisionMask, float *pOut);	// \"CAI_MoveProbe::IterativeFloorPoint\": the ground probe (sub_102e7880) 720 units down with the owner's step height as the way up, profiled (inlined VPROF scope with the cycle counter)
 	void sub_102e5d80(const float *vecStart, const float *vecEnd, unsigned int collisionMask, const CBaseEntity *pTarget, int flags, float pctToCheckStandPositions, AIMoveTrace_t *pTrace, int a9, int a10);
+	void sub_102e6090(const float *vecStart, const float *vecEnd, unsigned int collisionMask, const CBaseEntity *pTarget, AIMoveTrace_t *pTrace, int a9);
+	void sub_102e6290(const float *vecStart, const float *vecEnd, unsigned int collisionMask, const CBaseEntity *pTarget, AIMoveTrace_t *pTrace, int a9);
 	char sub_102e7880(const float *vecStart, unsigned int collisionMask, float flUp, float flDown, float *pOut, void *pExtra);	// the ground probe (stub 0x10005d44): true when it found ground below vecStart (the found position in pOut)
 
 	int m_pad08;
