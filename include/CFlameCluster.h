@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members.
 #pragma once
 #include "CBaseEntity.h"
+#include "CBaseHandle.h"
+#include "utlvector.h"
 
 struct CFlameRecord	// 0x1c byte element of the burn list
 {
@@ -21,28 +23,13 @@ class CFlameCluster : public CBaseEntity
 {
 public:
 	char m_pad_cluster[0x450 - sizeof(CBaseEntity)];
-	union {
-		int m_aList450[5];	// 0x450: the burn list (a vector, zeroed)
-		struct {
-			CFlameRecord *m_pRecords450;	// 0x450: the records (0x1c bytes each)
-			int m_nGrow454;
-			int m_nAlloc458;
-			int m_nRecords45c;	// 0x45c: the number of records
-			int m_pad460;
-		};
-	};
+	CUtlVector<CFlameRecord> m_BurnList;	// 0x450: the burn list (0x1c byte records, count at +0x45c)
 	int m_aBurn464[7];	// 0x464
 	int m_n480;	// 0x480
-	unsigned int m_hOwner;	// 0x484
+	CBaseHandle m_hOwner;	// 0x484
 	char m_b488;	// 0x488
 
-	CFlameCluster() : CBaseEntity(0)
-	{
-		for (int i = 0; i < 5; i++) m_aList450[i] = 0;
-		m_hOwner = -1;
-		m_b488 = 0;
-		for (int j = 0; j < 7; j++) m_aBurn464[j] = 0;
-	}
+	CFlameCluster();	// 0x103e1e20 (the flame_cluster factory calls it as sub_103e1e20)
 
 	CFlameCluster *sub_103e1e20();
 	void sub_103e2000(CBaseEntity *pEntity, int index);	// burns pEntity: a CVDmg_t record and a damage info (type 8, 1.0f) from the owner, applied to pEntity

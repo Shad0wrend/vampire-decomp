@@ -189440,7 +189440,7 @@ void CFlameCluster::sub_103e2000(CBaseEntity *pEntity, int index)
 	CVDmg_t dmg;
 	dmg.sub_101fa8d0(2, 8, 1);
 	CBaseEntity *pOwner;
-	unsigned int h = m_hOwner;
+	unsigned int h = m_hOwner.m_Index;
 	if (h != (unsigned int)-1) {
 		CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
 		if (pSlot->m_Serial == (int)(h >> 13))
