@@ -13,6 +13,11 @@ public:
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	void vfunc103();	// slot 103 (plain member): CUnk1026dc00::sub_1026dc00(0x200000), then CNPC_VHuman::vfunc103
 	CNPC_VPedestrian *sub_103a1d90();	// as in CKeepUpright (transplant)
+	void sub_10002b99(int a);	// CAI_BaseNPCTroika::vfunc130, called directly
+	char sub_100b5190();	// the byte at +0xf4
+	void sub_10334b10();	// CBaseCombatCharacter
+	void sub_102c4430(const char *pszName);	// follower type
+	void sub_10273070(int a);
 
 	// Slot 301, declared as a plain member.
 	void vfunc301(int a, int b);	// scope trace aside: stores the collision bounds (mins / maxs of the object at +0x270) at +0x6660 / +0x666c, runs CAI_BaseNPCTroika::vfunc301(a, b), clears the think function and makes the entity non-solid
