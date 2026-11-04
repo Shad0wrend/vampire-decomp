@@ -1651,6 +1651,7 @@
 0x10003783 func   ?sub_104289a0@@YAHPBX0PAUCTimeTableHit@@MMH@Z sub_104289a0
 0x10003788 func   ?vfunc438@CNPC_VScurrying@@QAEHXZ CNPC_VScurrying::vfunc438
 0x1000378d func   ?vfunc80@CWeaponMelee_Claws_Protean4@@UAEPAXXZ CWeaponMelee_Claws_Protean4::vfunc80
+0x10003797 func   ?sub_101e82b0@COwner101e82b0@@QAEPAHPAHHH@Z COwner101e82b0::sub_101e82b0
 0x1000379c func   ?vfunc138@CPayphone@@UAEHXZ CPayphone::vfunc138
 0x100037a1 func   ?vfunc348@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::vfunc348
 0x100037a6 func   ?sub_10105870@CExpressionTable@@QAEHHH@Z CExpressionTable::sub_10105870
