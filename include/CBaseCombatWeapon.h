@@ -133,6 +133,7 @@ public:
 	void sub_10250c50();	// the destructor body (called by vfunc5): vtable, releases the object at +0x8dc through the global at 0x10723940 (slot 23), sub_10250560(this), destroys the two lists at +0x8f8 / +0x8e0 (sub_100cd2d0) and the three 0x44 byte CVDmg_t records at +0x77c (sub_101fa680, last first), then the CBaseAnimating destructor body
 	CWeaponOwner *sub_102517b0();	// the weapon's owner (player) object
 	int *sub_102517e0();	// the weapon's current roll slot index (static fallback record when none matches)
+	unsigned char sub_102585f0();	// true when the current roll slot's record dword at +0x1c0 is 9 or 10
 	CWeaponOwner *sub_10252290();	// resolves the owner handle at +0x88c (0 when stale)
 	void sub_102564b0();	// when the owner handle resolves twice, slot 385(this, 0, 0) of the object at +0xa8 of the resolved owner
 	void *sub_102521f0();	// the dword at +0x9c of the entity the owner handle at +0x88c resolves to (0 when stale)
