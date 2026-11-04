@@ -34757,6 +34757,31 @@ void CUnknown100b7e10::sub_100b7e10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7fa0 size=0x23
+#include "QAngle.h"
+#include "Vector.h"
+#define P10(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
+#define P100(x) P10(x##0) P10(x##1) P10(x##2) P10(x##3) P10(x##4) P10(x##5) P10(x##6) P10(x##7) P10(x##8) P10(x##9)
+
+struct CAngleSlotView {
+	P100(a0)
+	P10(b0) P10(b1) P10(b2) P10(b3) P10(b4) P10(b5) P10(b6) P10(b7) P10(b8)
+	virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3();
+	virtual QAngle *vfunc194();
+};
+
+void sub_10139610(const QAngle &angles, Vector *pForward, Vector *pRight, Vector *pUp);
+
+struct CUnit100b7fa0
+{
+	void sub_100b7fa0(Vector *pForward, Vector *pRight, Vector *pUp);
+};
+void CUnit100b7fa0::sub_100b7fa0(Vector *pForward, Vector *pRight, Vector *pUp)
+{
+	sub_10139610(*((CAngleSlotView *)this)->vfunc194(), pForward, pRight, pUp);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b8270 size=0x1a
 namespace lifted {
 extern int g_1055a118;

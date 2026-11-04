@@ -7841,6 +7841,7 @@
 0x1000cb80 func   ?sub_1024aa70@CUtlRBTree16Unit@@QAEXG@Z CUtlRBTree16Unit::sub_1024aa70
 0x1000cb85 func   ?sub_101ca8f0@@YAPAXXZ sub_101ca8f0
 0x1000cb8a func   ??1CBaseEntity@@QAE@XZ CBaseEntity::~CBaseEntity
+0x1000cb8f func   ?sub_100b7fa0@CUnit100b7fa0@@QAEXPAVVector@@00@Z CUnit100b7fa0::sub_100b7fa0
 0x1000cb94 func   ?vfunc180@CBaseEntity@@QAEXXZ CBaseEntity::vfunc180
 0x1000cb9e func   ?sub_103f7330@@YAHXZ sub_103f7330
 0x1000cbad func   ?vfunc138@CNPC_VRat@@QAEHXZ CNPC_VRat::vfunc138
