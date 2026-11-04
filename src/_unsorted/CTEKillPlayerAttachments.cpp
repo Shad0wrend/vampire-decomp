@@ -1,6 +1,15 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10065980 size=0x20
+#include "CTEKillPlayerAttachments.h"
+
+CTEKillPlayerAttachments::CTEKillPlayerAttachments(const char *name) : CBaseTempEntityHead(name)
+{
+	m_nField0c = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100659b0 size=0x1e
 #include "CTEKillPlayerAttachments.h"
 
