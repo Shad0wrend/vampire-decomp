@@ -2898,6 +2898,7 @@
 0x10005538 func   _intersting_place_conversation intersting_place_conversation
 0x1000553d func   ?vfunc5@CBaseTerminal@@QAEPAV1@I@Z CBaseTerminal::vfunc5
 0x10005542 func   ?sub_1015a140@CFuncPlatRot@@QAEXXZ CFuncPlatRot::sub_1015a140
+0x10005547 func   ?sub_10073a90@CUnknown10076da0Entry@@QAEPAU1@PBU1@@Z CUnknown10076da0Entry::sub_10073a90
 0x1000554c func   ?vfunc2@CAI_SaveRestoreBlockHandler@@UAEXPAVCSave@@@Z CAI_SaveRestoreBlockHandler::vfunc2
 0x10005551 func   ?vfunc5@CMathColorBlend@@QAEPAV1@I@Z CMathColorBlend::vfunc5
 0x10005560 func   _item_g_ring_serial_killer_1 item_g_ring_serial_killer_1
