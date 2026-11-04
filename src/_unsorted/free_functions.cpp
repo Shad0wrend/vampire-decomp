@@ -68184,6 +68184,22 @@ void CPhysicsCannister::sub_10150640()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10150dc0 size=0x32
+#include "Vector.h"
+
+struct CUnit10150dc0 {
+	void sub_10150910(int a, const Vector *pVec);
+	void sub_10150dc0(int *p);
+};
+
+// TARGET: CUnit10150dc0::sub_10150dc0
+void CUnit10150dc0::sub_10150dc0(int *p)
+{
+	Vector v(0.0f, 0.1f, -1.0f);
+	sub_10150910(*p, &v);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10150e10 size=0x8
 namespace lifted {
 int sub_10001fa0();
