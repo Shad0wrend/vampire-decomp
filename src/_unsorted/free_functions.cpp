@@ -44104,6 +44104,20 @@ void CCollisionProperty::sub_100dc770(const float *mins, const float *maxs)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dc8d0 size=0x33
+#include "CCollisionProperty.h"
+
+void CCollisionProperty::sub_100dc8d0(char bEnable, int value)
+{
+	*(int *)((char *)this + 0x20) = value;
+	if (bEnable) {
+		sub_100dc580(m_usSolidFlags | 0x100);
+	} else {
+		sub_100dc580(m_usSolidFlags & ~0x100);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dc9f0 size=0xfa
 #include "CUnknown100dc9f0.h"
 #include "TempVector.h"
