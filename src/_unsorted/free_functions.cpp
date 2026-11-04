@@ -169449,6 +169449,24 @@ bool CBaseCombatCharacter::sub_1033ce10(unsigned int low, unsigned int high)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033d2f0 size=0x2a
+#include "CUnknown1033d2f0.h"
+
+bool CUnknown1033d2f0::sub_1033d2f0(int nFlags)
+{
+    int mask;
+    bool r;
+    if (!(nFlags & 0x80000000)) {
+        mask = m_nMaskPos;
+    } else {
+        nFlags &= 0x7fffffff;
+        mask = m_nMaskNeg;
+    }
+    r = (nFlags & mask) != 0;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033d380 size=0x69
 struct SInner { char *ent; unsigned serial; };
 struct SEnt { int pad; SInner in; };

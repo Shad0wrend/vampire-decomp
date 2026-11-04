@@ -8213,6 +8213,7 @@
 0x1000d3c3 func   ?vfunc2@CTEDynamicLight@@UAEPAVCBaseTempEntity@@I@Z CTEDynamicLight::vfunc2
 0x1000d3cd func   ?sub_10379e80@@YIXPAUE@@HH@Z sub_10379e80
 0x1000d3d2 func   ?sub_102353a0@@YAHXZ sub_102353a0
+0x1000d3d7 func   ?sub_1033d2f0@CUnknown1033d2f0@@QAE_NH@Z CUnknown1033d2f0::sub_1033d2f0
 0x1000d3dc func   ?sub_102a1420@@YIHPAUN@@@Z sub_102a1420
 0x1000d3e1 func   ?vfunc300@CGargoyleTalisman@@QAEXXZ CGargoyleTalisman::vfunc300
 0x1000d3e6 func   ?sub_101dbb20@CUnknown101dbc60@@QAEDPAVIKVNodeView@@@Z CUnknown101dbc60::sub_101dbb20
