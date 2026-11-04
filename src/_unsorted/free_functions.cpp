@@ -92127,6 +92127,21 @@ extern "C" GP *trigger_autosave()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c9870 size=0x1d
+struct CUnknown101c9870 {
+	void sub_101c9870(CUnknown101c9870 *pOther);
+};
+
+void CUnknown101c9870::sub_101c9870(CUnknown101c9870 *pOther)
+{
+	if (*(int *)((char *)pOther + 0xa8) != 0)
+	{
+		float v = *(float *)((char *)this + 0x3ec);
+		*(float *)((char *)pOther + 0x3ec) = v;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c98a0 size=0x4b
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"

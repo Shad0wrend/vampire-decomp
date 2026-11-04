@@ -1024,6 +1024,7 @@
 0x100028a1 func   ?sub_10334600@CBaseCombatCharacter@@QAEXHH@Z CBaseCombatCharacter::sub_10334600
 0x100028a6 func   ?sub_102a9e60@@YIMPAUCSlots@@@Z sub_102a9e60
 0x100028ab func   ?vfunc2@CTEBubbles@@UAEPAVCBaseTempEntity@@I@Z CTEBubbles::vfunc2
+0x100028b5 func   ?sub_101c9870@CUnknown101c9870@@QAEXPAU1@@Z CUnknown101c9870::sub_101c9870
 0x100028ba func   ?sub_1002f100@@YGXHPAVCBaseEntity@@@Z sub_1002f100
 0x100028c4 func   ?vfunc241@CBaseMoveBehavior@@QAE_NH@Z CBaseMoveBehavior::vfunc241
 0x100028c9 func   ?sub_100c4500@@YAMHHM@Z sub_100c4500
