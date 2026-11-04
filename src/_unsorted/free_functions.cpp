@@ -84754,6 +84754,59 @@ int CUnknown101ac670::sub_101ac670(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ac690 size=0xf5
+#include "CBaseEntity.h"
+// TARGET: ?sub_101ac690@CAmbientGenericInput@@QAEXPAUinputdata_t@@@Z
+#include "CAmbientGeneric.h"
+#include "CGlobalEntityList.h"
+#include "CEntityVSlots.h"
+#include "inputdata_t.h"
+
+extern CGlobalEntityList *g_10566458;
+extern float g_104454c4;
+extern double g_1044e658;
+extern char g_106b8540[];
+
+void sub_101cdac0(int edict, int pOrigin, const char *pszName, int a, int b, unsigned int flags, int c);
+typedef void (*PFN_EmitAt)(int edict, int pOrigin, const char *pszName, float flVolume, int a, unsigned int flags, int c);
+
+struct CAmbientGenericInput : CAmbientGeneric
+{
+	void sub_101ac690(inputdata_t *pInput);
+	int sub_101ac670(int flags);
+};
+
+int CAmbientGenericInput::sub_101ac670(int flags)
+{
+	return m_n04e0 | flags;
+}
+
+inline float VariantFloat(const variant_t &v)
+{
+	return v.fieldType == 1 ? v.flValue : g_104454c4;
+}
+
+inline const char *StringPtr(const char *p)
+{
+	return p ? p : g_106b8540;
+}
+
+void CAmbientGenericInput::sub_101ac690(inputdata_t *pInput)
+{
+	int nPitch = (int)(VariantFloat(pInput->value) > 255.0f ? 255.0f
+		: (VariantFloat(pInput->value) < 0.0f ? 0.0f : VariantFloat(pInput->value)));
+	m_dpv.pitch = nPitch;
+
+	CBaseEntity *pSoundEnt = m_hSoundEnt.Get();
+	if (pSoundEnt) {
+		CEntityVSlots *pEnt = (CEntityVSlots *)pSoundEnt;
+		const char *pszName = StringPtr(m_pszSoundFile);
+		int edict = pSoundEnt->m_pEdict2e0;
+		((PFN_EmitAt)sub_101cdac0)(edict, (int)pEnt->slot217(), pszName, (float)(m_dpv.vol * g_1044e658), m_n0454, sub_101ac670(2), nPitch);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ad3e0 size=0x17
 namespace lifted {
 struct C100131e2 { int sub_100131e2(int, int, int, int); };

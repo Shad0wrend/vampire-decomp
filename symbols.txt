@@ -581,6 +581,7 @@
 0x10001ded func   ?vfunc362@CNPC_VPlayerController@@QAE_NH@Z CNPC_VPlayerController::vfunc362
 0x10001df2 func   ?vfunc8@CCheckClient@@UAEPAVCAutoGameSystem@@I@Z CCheckClient::vfunc8
 0x10001dfc func   ?sub_102d2f30@@YAPAVCEntityVSlots@@HHHH@Z sub_102d2f30
+0x10001e01 func   ?sub_101ac690@CAmbientGenericInput@@QAEXPAUinputdata_t@@@Z CAmbientGenericInput::sub_101ac690
 0x10001e0b func   ?sub_10031340@CCollisionEventUnit@@QAEHPAUCPhysObjX@@PAM1D@Z CCollisionEventUnit::sub_10031340
 0x10001e10 func   ?vfunc1@CTEImpact@@UAEHXZ CTEImpact::vfunc1
 0x10001e15 func   ?sub_10056e50@CTempEntTester@@QAEXXZ CTempEntTester::sub_10056e50
