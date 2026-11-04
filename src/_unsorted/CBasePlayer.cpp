@@ -48,6 +48,17 @@ float *CBasePlayer::vfunc195()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7f70 size=0x11
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "Vector.h"
+// TARGET: CBasePlayer::vfunc193
+Vector CBasePlayer::vfunc193()
+{
+	return ((CBaseEntity *)this)->CBaseEntity::vfunc193();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7fe0 size=0x1bf
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"

@@ -12453,6 +12453,7 @@
 0x1001393f func   _info_null info_null
 0x10013944 func   ?vfunc4@CBaseNetworkable@@UAEHXZ CBaseNetworkable::vfunc4
 0x10013949 func   ?sub_101900a0@@YAPAHXZ sub_101900a0
+0x1001394e func   ?vfunc193@CBasePlayer@@UAE?AVVector@@XZ CBasePlayer::vfunc193
 0x10013953 func   ?vfunc81@COccultPresence@@QAEHXZ COccultPresence::vfunc81
 0x10013958 func   ?sub_10247cf0@CUnknown10248a50@@QAEXPBD@Z CUnknown10248a50::sub_10247cf0
 0x1001395d func   ?sub_10146190@Vector@@QBE?AV1@ABV1@@Z Vector::sub_10146190
