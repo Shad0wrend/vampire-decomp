@@ -191461,6 +191461,31 @@ void CWeaponUnit::sub_103ed920()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103eded0 size=0x3b
+#include "CBaseEntity.h"
+#include "ehandle.h"
+
+void sub_10014033();
+
+namespace block_103eded0 {
+	struct CBaseEntityUnit103eded0 : CBaseEntity {
+		char m_padX[0x910 - sizeof(CBaseEntity)];
+		EHANDLE m_h910;
+		void sub_103eded0(float flTime);
+	};
+}
+
+// TARGET: block_103eded0::CBaseEntityUnit103eded0::sub_103eded0
+void block_103eded0::CBaseEntityUnit103eded0::sub_103eded0(float flTime)
+{
+	sub_100ac4e0((int)sub_10014033, 0, 0);
+	float t = flTime + gpGlobals->curtime;
+	m_pfnTouch = 0;
+	m_flNextThink = t;
+	m_h910 = (CBaseEntity *)0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103edf20 size=0x50
 #include "CBaseEntity.h"
 class CBaseEntity;
