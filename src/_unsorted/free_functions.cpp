@@ -36074,6 +36074,17 @@ void bf_write::sub_100bd9b0(const Vector &fa)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bdbc0 size=0x2b
+#include "bf_write.h"
+
+// TARGET: bf_write::sub_100bdbc0
+void bf_write::sub_100bdbc0(const Vector *pVec)
+{
+	Vector local(pVec->x, pVec->y, pVec->z);
+	sub_100bd620(local);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bdc00 size=0xf
 namespace lifted {
 int __stdcall sub_10001ef1(int, int);

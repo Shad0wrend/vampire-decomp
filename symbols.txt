@@ -9657,6 +9657,7 @@
 0x1000f5c4 func   ?sub_10258540@@YAXXZ sub_10258540
 0x1000f5c9 func   ?vfunc337@CNPC_VGargoyle@@UAEHXZ CNPC_VGargoyle::vfunc337
 0x1000f5ce func   ?vfunc35@CPayphone@@UAEHH@Z CPayphone::vfunc35
+0x1000f5d3 func   ?sub_100bdbc0@bf_write@@QAEXPBVVector@@@Z bf_write::sub_100bdbc0
 0x1000f5d8 func   ?sub_101d2780@@YAXVVector@@HHHHH@Z sub_101d2780
 0x1000f5dd func   ?vfunc82@CRagdollProp@@UAEPAUdatamap_t@@XZ CRagdollProp::vfunc82
 0x1000f5e2 func   ?sub_10249960@@YIIPAPAD@Z sub_10249960
