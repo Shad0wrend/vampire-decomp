@@ -138051,6 +138051,123 @@ void __fastcall sub_102781e0(void *pSelf, int unused, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10278220 size=0x1f9
+#include "CAI_BaseNPC.h"
+#include "utlmemory.h"
+#include "CBaseEntity.h"
+#include "CTraceFilterSimpleTwoEnt.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "CAI_MoveProbe.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738960.h"
+#include "CAI_Navigator.h"
+
+struct V3 { float x, y, z; };
+struct CViewOffsetView { char m_pad0000[0x184]; Vector m_vecViewOffset; };
+
+void sub_10146570(V3 *pStart, V3 *pEnd, int a, int b, int c, int d, int e);
+
+static inline Vector AddExtents(const Vector &a, const Vector &b)
+{
+	Vector res;
+	res.x = a.x + b.x;
+	res.y = b.y + a.y;
+	res.z = b.z + a.z;
+	return res;
+}
+
+extern int g_1090fdb4;
+extern float g_104994a0;
+extern Vector g_10934060;
+
+#define GV(n) virtual void s##n();
+#define GV10(p) GV(p##0) GV(p##1) GV(p##2) GV(p##3) GV(p##4) GV(p##5) GV(p##6) GV(p##7) GV(p##8) GV(p##9)
+
+class CSlot548View
+{
+public:
+	GV10(0) GV10(1) GV10(2) GV10(3) GV10(4) GV10(5) GV10(6) GV10(7) GV10(8) GV10(9)
+	GV10(10) GV10(11) GV10(12) GV10(13) GV10(14) GV10(15) GV10(16) GV10(17) GV10(18) GV10(19)
+	GV10(20) GV10(21) GV10(22) GV10(23) GV10(24) GV10(25) GV10(26) GV10(27) GV10(28) GV10(29)
+	GV10(30) GV10(31) GV10(32) GV10(33) GV10(34) GV10(35) GV10(36) GV10(37) GV10(38) GV10(39)
+	GV10(40) GV10(41) GV10(42) GV10(43) GV10(44) GV10(45) GV10(46) GV10(47) GV10(48) GV10(49)
+	GV10(50) GV10(51) GV10(52) GV10(53) GV(540) GV(541) GV(542) GV(543) GV(544) GV(545) GV(546) GV(547)
+	virtual char vfunc548(const Vector *pEnd, int a);
+};
+
+class CEngineTraceView
+{
+public:
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4(Ray_t *pRay, unsigned int fMask, CTraceFilterSimpleTwoEnt *pFilter, CGameTrace *pTrace);
+};
+
+struct CNavGoalRecord
+{
+	int m_nType;	// 0x00
+	Vector m_vecPos;	// 0x04
+	int m_n10;	// 0x10
+	int m_n14;	// 0x14
+	int m_n18;	// 0x18
+	int m_n1c;	// 0x1c
+	float m_fl20;	// 0x20
+	int m_n24;	// 0x24
+	int m_n28;	// 0x28
+	Vector m_vec2c;	// 0x2c
+	int m_n38;	// 0x38
+	int m_n3c;	// 0x3c
+};
+
+bool CAI_BaseNPC::sub_10278220(const Vector *pStart, const Vector *pEnd, int mask)
+{
+	CTraceFilterSimpleTwoEnt filter(this, (const void *)mask, 0);
+	CGameTrace trace;
+	{
+		Ray_t ray;
+		ray.sub_1004f7a0((const float *)pStart, AddExtents(*pEnd, ((CViewOffsetView *)this)->m_vecViewOffset).Base());
+		((CEngineTraceView *)g_1070b254)->v4(&ray, 0x2804091, &filter, &trace);
+		if (g_10738960.sub_1005f190())
+			sub_10146570((V3 *)&trace.m_startpos, (V3 *)&trace.m_endpos, 0xff, 0, 0, 1, 0xbf800000);
+	}
+
+	if (trace.m_fraction != 1.0)
+	{
+		if (((CSlot548View *)this)->vfunc548(pEnd, 0))
+		{
+			AIMoveTrace_t moveTrace;
+			CAI_MoveProbe *pMoveProbe = (CAI_MoveProbe *)Owned5d40();
+			float *pOrigin = vfunc220();
+			pMoveProbe->sub_102e6d70(0, pOrigin, (const float *)pEnd, 0x202400b, 0, 100.0f, 0, &moveTrace, 0, 0);
+			if (moveTrace.fStatus == 0)
+			{
+				float flDefaultSpeed = g_104994a0;
+				CNavGoalRecord goal;
+				goal.m_nType = 4;
+				goal.m_vecPos = *pEnd;
+				goal.m_n10 = -1;
+				goal.m_n14 = 0x13;
+				goal.m_n18 = -1;
+				goal.m_n1c = -1;
+				goal.m_fl20 = flDefaultSpeed;
+				goal.m_n24 = 0;
+				goal.m_n28 = g_1090fdb4;
+				goal.m_vec2c = g_10934060;
+				goal.m_n38 = 0;
+				goal.m_n3c = 0;
+				CAI_Navigator *pNavigator = (CAI_Navigator *)Owned5d34();
+				if (pNavigator->sub_102ecd20(&goal, 1))
+					return true;
+			}
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10278c80 size=0x20
 #include <math.h>
 #include "CUnknown10290040.h"
