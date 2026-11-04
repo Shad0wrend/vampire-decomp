@@ -1127,6 +1127,7 @@
 0x10002adb func   ?vfunc19@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHH@Z CTempEntsSystem::vfunc19
 0x10002ae0 func   ?sub_1033ea90@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_1033ea90
 0x10002ae5 func   _prop_ragdoll_attached prop_ragdoll_attached
+0x10002aea func   ?sub_101e19b0@CUnknown101e19b0@@QAEPBDPBD@Z CUnknown101e19b0::sub_101e19b0
 0x10002aef func   ?vfunc40@CGameRules@@UAE_NXZ CGameRules::vfunc40
 0x10002af4 func   _item_g_edane_print_report item_g_edane_print_report
 0x10002af9 func   ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z CBaseEntity::vfunc216

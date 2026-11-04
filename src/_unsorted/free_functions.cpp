@@ -102580,6 +102580,43 @@ int __stdcall sub_101e1990(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e19b0 size=0x3e
+struct CEntry101e19b0
+{
+	int m_n0000;
+	const char *m_pszText;
+};
+
+struct CUnknown101e19b0
+{
+	char m_pad0000[0x8];
+	CEntry101e19b0 **m_ppEntries;
+
+	int sub_10007df1(const char *pszName);
+	const char *sub_101e19b0(const char *pszName);
+};
+
+extern char g_106b8540[];
+extern char g_105a2d30[];
+typedef void (*FnDevMsg)(const char *pszFormat, ...);
+extern FnDevMsg g_109f3630;
+
+// TARGET: CUnknown101e19b0::sub_101e19b0
+const char *CUnknown101e19b0::sub_101e19b0(const char *pszName)
+{
+	int nIndex = sub_10007df1(pszName);
+	if (nIndex != -1)
+	{
+		const char **ppText = &m_ppEntries[nIndex]->m_pszText;
+		if (*ppText)
+			return *ppText;
+		return g_106b8540;
+	}
+	g_109f3630(g_105a2d30);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e1a20 size=0x5
 int __stdcall sub_101e1a20(int a0)
 {
