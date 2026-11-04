@@ -1,6 +1,7 @@
 // CBaseAnimatingOverlay: declared by pcdecomp transplant for 0x10098a60 from CSimplePhysicsProp (0x1004fe80);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CBaseAnimating.h"
 
 struct datamap_t;
 
@@ -27,7 +28,7 @@ struct CAnimationLayer28	// 0x1c byte overlay record (array at +0x7f4, used by v
 	float m_fl18;	// 0x18: the layer's time
 };
 
-class CBaseAnimatingOverlay
+class CBaseAnimatingOverlay : public CBaseAnimating
 {
 public:
 	CBaseAnimatingOverlay *vfunc5(unsigned int flags);
@@ -61,7 +62,7 @@ public:
 	float sub_10091230(int sequence);	// CBaseAnimating::sub_10091230 (stub 0x10001429): the cycles per second of the sequence, called by the layer advance
 	char sub_10090ef0(int sequence);	// CBaseAnimating::sub_10090ef0 (stub 0x10014ffb): whether the sequence loops (bit 0 of the answer), called by the layer advance
 
-	char m_pad0000[0x730 - 0x0];
+	char m_pad03e0[0x730 - 0x3e0];
 	bool m_bNoFlinch;	// 0x0730
 	char m_pad0731[0x738 - 0x731];
 	CAnimationLayer m_Layers[15];	// 0x738

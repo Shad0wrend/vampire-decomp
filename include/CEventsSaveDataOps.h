@@ -1,10 +1,11 @@
 // CEventsSaveDataOps: the save/restore ops of the entity outputs (the events field of an entity).
 #pragma once
+#include "datamap.h"
 
 class CRestore;
 class CSave;
 
-class CEventsSaveDataOps
+class CEventsSaveDataOps : public ISaveRestoreOps
 {
 public:
 	void vfunc0(void *pEvents, CSave *pSave);	// saves each output of the events list: its action count (WriteInt, slot 10), then the output itself

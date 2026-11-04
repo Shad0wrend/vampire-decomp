@@ -1,9 +1,10 @@
 // CTriggerPush: declared by pcdecomp transplant for 0x101c8850 from CKeepUpright (0x10029200);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CBaseTrigger.h"
 #include "CBaseEntity.h"
 
-class CTriggerPush : public CBaseEntity
+class CTriggerPush : public CBaseTrigger
 {
 public:
 	virtual void vfunc103();	// the base, then (angles all zero) sets the angles (0, 180, 0), then sub_101c5080; copies the int at +0x164 to +0x59c
@@ -14,7 +15,7 @@ public:
 public:
     virtual datamap_t * vfunc82();
     void *vfunc5(unsigned int flags);	// as in CTriggerElectricBugaloo (transplant)
-	char m_pad03e0[0x59c - 0x3e0];
+	char m_pad0598[0x59c - 0x598];
 	float m_flTargetSpeed;	// 0x059c
 	char m_pad05a0[0x5a4 - 0x5a0];
 };

@@ -1,8 +1,9 @@
 // CWeaponRanged_Rifle_SteyrAug: declared by pcdecomp transplant for 0x1023a4a0 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CWeaponRanged_Rifle_Remington.h"
 
-class CWeaponRanged_Rifle_SteyrAug
+class CWeaponRanged_Rifle_SteyrAug : public CWeaponRanged_Rifle_Remington
 {
 public:
 	CWeaponRanged_Rifle_SteyrAug *vfunc5(unsigned int flags);
@@ -12,5 +13,4 @@ public:
 	int vfunc81();
 	int vfunc362();
 	int vfunc363();
-	char m_pad0000[0x948 - 0x0];
 };

@@ -1,10 +1,11 @@
 // CBaseDMStart: declared by pcdecomp transplant for 0x101c2060 from CLogicalEntity (0x1002b100);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CPointEntity.h"
 
 struct datamap_t;
 
-class CBaseDMStart
+class CBaseDMStart : public CPointEntity
 {
 public:
 	CBaseDMStart *vfunc5(unsigned int flags);
@@ -12,6 +13,5 @@ public:
 public:
 	datamap_t * vfunc82();
 	int vfunc147(int);
-	char m_pad0000[0x450];
 	int m_field450;	// 0x450
 };

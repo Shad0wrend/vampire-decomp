@@ -1,10 +1,11 @@
 // CWindowPane: declared by pcdecomp transplant for 0x10113590 from CSimplePhysicsProp (0x1004fe80);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CBaseAnimating.h"
 
 #include "CBaseEntity.h"
 
-class CWindowPane : public CBaseEntity
+class CWindowPane : public CBaseAnimating
 {
 public:
 	CWindowPane *vfunc5(unsigned int flags);

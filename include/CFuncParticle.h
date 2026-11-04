@@ -1,10 +1,11 @@
 // CFuncParticle: declared by pcdecomp transplant for 0x100fd500 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CEnvParticle.h"
 
 struct datamap_t;
 
-class CFuncParticle
+class CFuncParticle : public CEnvParticle
 {
 public:
 	CFuncParticle *vfunc5(unsigned int flags);
@@ -17,7 +18,7 @@ public:
 	int vfunc80();
 	int vfunc81();
 	datamap_t * vfunc82();
-	char m_pad0000[0x4a4 - 0x0];
+	char m_pad048c[0x4a4 - 0x48c];
 	float m_flSizeScalar;	// 0x04a4
 	char m_pad04a8[0x4c0 - 0x4a8];
 };

@@ -2,16 +2,16 @@
 // fires the output of the matching one (OnDefault otherwise). Declared flat (the bases are not recovered), only the
 // members the input handler needs.
 #pragma once
+#include "CLogicalEntity.h"
 
 struct datamap_t;
 
 #include "COutputEvent.h"
 #include "inputdata_t.h"
 
-class CLogicCase
+class CLogicCase : public CLogicalEntity
 {
 public:
-	char m_pad0000[0x450];
 	const char *m_nCase[16];	// 0x450: the case values (Case01..Case16), null when unset
 	COutputEvent m_OnCase[16];	// 0x490: one output per case
 	COutputEvent m_OnDefault;	// 0x610: fired with the input's value when no case matches

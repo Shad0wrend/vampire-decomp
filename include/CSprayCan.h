@@ -1,12 +1,13 @@
 // CSprayCan: declared by pcdecomp transplant for 0x10184420 from CLogicalEntity (0x1002b100);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CPointEntity.h"
 
 #include "Vector.h"
 #include "QAngle.h"
 #include "AITrace.h"
 
-class CSprayCan
+class CSprayCan : public CPointEntity
 {
 public:
 	CSprayCan *vfunc5(unsigned int flags);
@@ -16,7 +17,6 @@ public:
 	int vfunc117();
 	void vfunc134();	// slot 134 (think, 0x101716b0): spray update, see the release note of that address
 
-	char m_pad0000[0x450];
 	float m_flSprayCount450;	// 0x450: the spray counter incremented by vfunc134
 };
 

@@ -1,8 +1,9 @@
 // CItemGCarStereo: declared by pcdecomp transplant for 0x1040a180 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CWeaponIGeneric.h"
 
-class CItemGCarStereo
+class CItemGCarStereo : public CWeaponIGeneric
 {
 public:
 	CItemGCarStereo *vfunc5(unsigned int flags);
@@ -10,5 +11,4 @@ public:
 public:
 	int vfunc80();
 	int vfunc81();
-	char m_pad0000[0x914 - 0x0];
 };

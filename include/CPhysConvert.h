@@ -1,11 +1,12 @@
 // CPhysConvert: declared by pcdecomp transplant for 0x100500a0 from CKeepUpright (0x10029200);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CPointEntity.h"
 #include "CBaseEntity.h"
 
 struct inputdata_t;
 
-class CPhysConvert : public CBaseEntity
+class CPhysConvert : public CPointEntity
 {
 public:
 	CPhysConvert *sub_100501f0();
@@ -13,7 +14,6 @@ public:
 public:
     virtual datamap_t * vfunc82();
 
-	char m_pad03e0[0x450 - 0x3e0];
 	char m_OnConvert[0x18];	// 0x450: a COutputEvent
 	const char *m_swapModel468;	// 0x468: the name of the swap entity
 	char m_bFlag46c;	// 0x46c: set the collision group 1 on the new entity

@@ -1,12 +1,13 @@
 // CChangeLevel: level transition trigger (CBaseTrigger -> CBaseToggle -> CBaseEntity).
 // Only what matched code needs.
 #pragma once
+#include "CBaseTrigger.h"
 
 #include "CBaseEntity.h"
 
 struct inputdata_t;
 
-class CChangeLevel : public CBaseEntity
+class CChangeLevel : public CBaseTrigger
 {
 public:
 	virtual bool vfunc110(const char *szKeyName, const char *szValue);	// "CChangeLevel::KeyValue": "map" and "landmark" are copied (32 chars) to +0x598 / +0x5b8, anything else goes to CBaseToggle::KeyValue
@@ -20,7 +21,6 @@ public:
 	void sub_1000da12(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value);	// the use function (UseChangeLevel), only its address is known
 	void sub_1000b7cb(CBaseEntity *pOther);	// the touch function (TouchChangeLevel), only its address is known
 
-	char m_pad03e0[0x598 - 0x3e0];
 	char m_szMapName[32];	// 0x0598
 	char m_szLandmarkName[32];	// 0x05b8
 public:

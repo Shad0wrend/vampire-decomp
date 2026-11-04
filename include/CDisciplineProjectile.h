@@ -1,11 +1,12 @@
 // CDisciplineProjectile: declared by pcdecomp transplant for 0x101d9f30 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CVampireProjectile.h"
 #include "CBaseEntity.h"
 #include "Vector.h"
 #include "datamap.h"
 
-class CDisciplineProjectile : public CBaseEntity
+class CDisciplineProjectile : public CVampireProjectile
 {
 public:
 	CDisciplineProjectile *vfunc5(unsigned int flags);
@@ -17,13 +18,6 @@ public:
 	void sub_101ee7d0();	// CVampireProjectile member (stub 0x10003be3): removes the projectile, delayed by 10 seconds while the entity of the handle at +0x8b8 lives and the byte at +0x8b4 is clear
 	void vfunc234(void *pTrace, const Vector *pDelta);	// slot 234 "CDisciplineProjectile::PhysicsPushEntity" (0x101da2f0, ret 8): declared as a plain member so the modelled slot table does not shift
 
-	char m_pad03e0[0x778 - 0x3e0];
-	EHANDLE m_h778;	// 0x778
-	char m_pad077c[0x888 - 0x77c];
-	Vector m_vecStart888;	// 0x888
-	char m_pad0894[0x8a8 - 0x894];
-	EHANDLE m_h8a8;	// 0x8a8
-	char m_pad08ac[0x8b4 - 0x8ac];
 	char m_b8b4;	// 0x8b4
 	char m_pad08b5[3];
 	EHANDLE m_h8b8;	// 0x8b8

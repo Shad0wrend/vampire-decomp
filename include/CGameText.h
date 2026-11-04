@@ -1,11 +1,12 @@
 // CGameText: declared by pcdecomp transplant for 0x10216e00 from CLogicalEntity (0x1002b100);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CPointEntity.h"
 #include "string_t.h"
 
 struct datamap_t;
 
-class CGameText
+class CGameText : public CPointEntity
 {
 public:
 	CGameText *vfunc5(unsigned int flags);
@@ -15,7 +16,6 @@ public:
 public:
 	datamap_t * vfunc82();
 	int vfunc173(int, int, int, int);
-	char m_pad0000[0x450 - 0x0];
 	string_t m_iszMessage;	// 0x0450
 	char m_textParms[40];	// 0x0454
 };

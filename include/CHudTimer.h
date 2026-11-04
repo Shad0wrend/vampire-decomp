@@ -1,8 +1,9 @@
 // CHudTimer (RTTI .?AVCHudTimer@@): hud timer entity. Only what decompiled code needs.
 #pragma once
+#include "CPointEntity.h"
 #include "CBaseEntity.h"
 
-class CHudTimer : public CBaseEntity
+class CHudTimer : public CPointEntity
 {
 public:
 	void sub_1012d5c0();	// own helper (called before the base class work)
@@ -15,7 +16,7 @@ public:
     virtual int vfunc81();
     virtual int vfunc80();
     CHudTimer *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
-	char m_pad03e0[0x46c - 0x3e0];
+	char m_pad0450[0x46c - 0x450];
 	int m_nCountType;	// 0x046c
 	bool m_bIsPaused;	// 0x0470
 	char m_pad0471[0x478 - 0x471];

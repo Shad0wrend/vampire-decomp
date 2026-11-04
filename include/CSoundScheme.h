@@ -1,6 +1,7 @@
 // CSoundScheme: declared by pcdecomp transplant for 0x1022a1d0 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CPointEntity.h"
 #include "string_t.h"
 #include "CBaseEntity.h"
 #include "datamap.h"
@@ -35,11 +36,10 @@ struct CSoundSchemeSound
 	int m_n70;					// 0x70: the play chance the caller rolls against
 };
 
-class CSoundScheme : public CBaseEntity
+class CSoundScheme : public CPointEntity
 {
 public:
 	// data after CBaseEntity (0x3e0); the raw fields follow the CUtlVector layout of utlvector.h
-	char m_pad03e0[0x450 - 0x3e0];
 	string_t m_sSchemeFile;	// 0x0450
 	bool m_bStartEnabled;	// 0x0454
 	bool m_bStarted;	// 0x0455: set once the scheme's sound lists have been queued (sub_1022b520 / sub_1022b590)

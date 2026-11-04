@@ -1,8 +1,9 @@
 // CResearchBook_MG_BRAWL: declared by pcdecomp transplant for 0x10409d00 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CWeaponIGeneric.h"
 
-class CResearchBook_MG_BRAWL
+class CResearchBook_MG_BRAWL : public CWeaponIGeneric
 {
 public:
 	CResearchBook_MG_BRAWL *vfunc5(unsigned int flags);
@@ -10,5 +11,4 @@ public:
 public:
 	int vfunc80();
 	int vfunc81();
-	char m_pad0000[0x914 - 0x0];
 };

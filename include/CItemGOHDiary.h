@@ -1,8 +1,9 @@
 // CItemGOHDiary: declared by pcdecomp transplant for 0x1040a5a0 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CWeaponIGeneric.h"
 
-class CItemGOHDiary
+class CItemGOHDiary : public CWeaponIGeneric
 {
 public:
 	CItemGOHDiary *vfunc5(unsigned int flags);
@@ -10,5 +11,4 @@ public:
 public:
 	int vfunc80();
 	int vfunc81();
-	char m_pad0000[0x914 - 0x0];
 };

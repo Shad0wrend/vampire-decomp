@@ -1,9 +1,10 @@
 // CNPC_VBrujah: declared by pcdecomp transplant for 0x103678b0 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CNPC_VVampire.h"
 #include "CBaseEntity.h"
 
-class CNPC_VBrujah : public CBaseEntity
+class CNPC_VBrujah : public CNPC_VVampire
 {
 public:
 	CNPC_VBrujah *vfunc5(unsigned int flags);
@@ -16,5 +17,5 @@ public:
 	virtual void vfunc136();
 	virtual void vfunc137();
 	virtual int vfunc138();
-	char m_pad03e0[0x6668 - 0x3e0];
+	char m_pad6664[0x6668 - 0x6664];
 };

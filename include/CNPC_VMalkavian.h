@@ -1,9 +1,10 @@
 // CNPC_VMalkavian: declared by pcdecomp transplant for 0x103895a0 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CNPC_VVampire.h"
 #include "CBaseEntity.h"
 
-class CNPC_VMalkavian : public CBaseEntity
+class CNPC_VMalkavian : public CNPC_VVampire
 {
 public:
 	CNPC_VMalkavian *vfunc5(unsigned int flags);
@@ -19,5 +20,5 @@ public:
 	void *sub_10389560();
 	const char *sub_10389580();
 	char sub_103896a0();
-	char m_pad03e0[0x6668 - 0x3e0];
+	char m_pad6664[0x6668 - 0x6664];
 };
