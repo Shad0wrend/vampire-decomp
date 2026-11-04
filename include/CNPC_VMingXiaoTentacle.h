@@ -27,6 +27,8 @@ public:
 	void vfunc103();	// "CNPC_VMingXiaoTentacle::Spawn": solid flags 0x4000000 / 0x200000, the base spawn, 0x80000 flag, clears the tentacle state, arms the timer at +0x6684 (curtime + const), removes flag2 4
 	void vfunc390(int a);	// slot 390 (OnTakeDamage-like) override: clears the field at +0x6680, records the source file / line (0x549) at +0x1b30 / +0x1b34, the Troika schedule 0x168 (sub_102ae750), then CAI_BaseNPCTroika::vfunc390(a)
 	void vfunc433();	// "CNPC_VMingXiaoTentacle::RunAI"-like: sets the conditions 0x77 and 0x79, the Troika base, then (with a slot 167 target, the time at +0x6678 passed and the float at +0x6268 not above the limit) rings the dev object and fails task 0x77; once the time at +0x6674 has passed it does the same for task 0x79
+	bool vfunc69(CBaseEntity *pOther);
+	bool sub_1029b180(CBaseEntity *pOther);	// CAI_BaseNPCTroika::sub_1029b180 (stub 0x100014b0), tail call of vfunc69
 	bool vfunc68(CBaseEntity *pOther);	// slot 68 override: true when pOther is null or (pOther has no field at +0x9c and this is not flagged at +0x6688); else CAI_BaseNPCTroika::vfunc68(pOther) (tail call)
 	void sub_10269b50(int condition);	// CAI_BaseNPC member (stub 0x10015839), called directly
 	void sub_10332ca0(CBaseEntity *pTarget, int a, int b);	// CBaseCombatCharacter member (stub 0x10005849), called directly with (target, 1, 5)
