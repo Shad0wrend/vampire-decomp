@@ -88526,6 +88526,17 @@ int CUnknown101b9140::sub_101b9140(int elem, int num, const CUnknown101b9140Elem
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b9750 size=0x68
+#include "CSoundEnt.h"
+
+extern "C" CSoundEnt *soundent()
+{
+	CSoundEnt *p = new CSoundEnt;
+	((CBaseEntity *)p)->vfunc106("soundent");
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b9840 size=0xf
 void sub_101cf250(void *p, int n);
 
