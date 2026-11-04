@@ -132911,6 +132911,23 @@ CBlock64_t *CBlock64_t::sub_1024cef0(const CBlock64_t *o)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024d280 size=0x2d
+struct CBlock1024d280 { int m_data[16]; };
+
+struct CUnit1024d280 {
+	void sub_1024cf80(int arg, CBlock1024d280 *pOut);
+	CBlock1024d280 sub_1024d280(int arg);
+};
+
+// TARGET: CUnit1024d280::sub_1024d280
+CBlock1024d280 CUnit1024d280::sub_1024d280(int arg)
+{
+	CBlock1024d280 result;
+	sub_1024cf80(arg, &result);
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024d2c0 size=0x11
 void sub_1000e1b5(void *self, int a);
 

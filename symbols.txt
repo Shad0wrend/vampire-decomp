@@ -9994,6 +9994,7 @@
 0x1000fda3 func   ?vfunc267@CInstancedSceneEntity@@QAEHH@Z CInstancedSceneEntity::vfunc267
 0x1000fda8 func   ?vfunc320@CAI_BaseNPCTroika@@QAEDHH@Z CAI_BaseNPCTroika::vfunc320
 0x1000fdb2 func   ?sub_10026ab0@@YGDH@Z sub_10026ab0
+0x1000fdbc func   ?sub_1024d280@CUnit1024d280@@QAE?AUCBlock1024d280@@H@Z CUnit1024d280::sub_1024d280
 0x1000fdc1 func   ?sub_1012ee40@@YAHH@Z sub_1012ee40
 0x1000fdc6 func   ?vfunc223@CRotButton@@QAE_NXZ CRotButton::vfunc223
 0x1000fdcb func   ?vfunc5@CItemGHannahsApptBook@@QAEPAV1@I@Z CItemGHannahsApptBook::vfunc5
