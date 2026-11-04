@@ -129584,6 +129584,15 @@ SendProp sub_10247030(const char *pszDataTableName, const char *pszPropName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102471d0 size=0xe
+#include "SendProp.h"
+int sub_101388c0(int x);
+int SendProp::sub_102471d0() const
+{
+	return sub_101388c0(GetN28()) + 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102471f0 size=0x12
 #include "vampire.h"
 
