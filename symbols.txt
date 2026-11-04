@@ -2302,6 +2302,7 @@
 0x1000470f func   ?vfunc80@CHudTimer@@UAEHXZ CHudTimer::vfunc80
 0x10004714 func   ?vfunc420@CNPC_VTaxiDriver@@QAEXXZ CNPC_VTaxiDriver::vfunc420
 0x10004719 func   ?vfunc130@CPropSwitch@@UAEXH@Z CPropSwitch::vfunc130
+0x1000471e func   ?InitCustomSchedules@CNPC_VSheriffMan@@SAXXZ CNPC_VSheriffMan::InitCustomSchedules
 0x10004728 func   ?sub_1016eec0@CBasePlayer@@QAEXPBDPAHH@Z CBasePlayer::sub_1016eec0
 0x1000472d func   ?sub_1010c150@CEnvFireSensor@@QAEXXZ CEnvFireSensor::sub_1010c150
 0x10004732 func   ?sub_10074ae0@CUnknown10074ae0@@QAEMH@Z CUnknown10074ae0::sub_10074ae0
