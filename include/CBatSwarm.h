@@ -30,7 +30,9 @@ public:
 	char m_bSlow73c;
 	char m_pad073d[0x740 - 0x73d];
 	int m_nLimit740;
-	char m_pad0744[0x8d8 - 0x744];
+	CBatSwarmPathNode m_Path[10];	// 0x744: the flight path the bats follow, m_nLimit740 nodes in use
+	char m_bLoop8d4;	// 0x8d4: set when the bats leave the swarm after the last node instead of wandering
+	char m_pad08d5[3];
 	Vector m_vecPos[32];	// 0x8d8
 	Vector m_vecBatVelocity[32];	// 0x0a58
 	bool m_bBatHittingPlayer[32];	// 0x0bd8
