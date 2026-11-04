@@ -96047,6 +96047,33 @@ int CIndexTables::sub_101d4d10(int type, int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d4d80 size=0x24
+#include "CUnknown10203240.h"
+
+extern char g_106b8540[];
+extern CUnknown10203240 g_1074e968;
+
+struct CClanStrsRec
+{
+	int sub_10202a50(const char *psz);
+};
+
+struct CUnit101d4d80
+{
+	char m_pad0000[0xc];
+	const char *m_psz0c;
+	int sub_101d4d80();
+};
+
+int CUnit101d4d80::sub_101d4d80()
+{
+	const char *p = m_psz0c;
+	if (!p)
+		p = g_106b8540;
+	return ((CClanStrsRec *)g_1074e968.sub_10203240("ClanStrs"))->sub_10202a50(p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d4e30 size=0x2b
 #include "CBaseEntity.h"
 
