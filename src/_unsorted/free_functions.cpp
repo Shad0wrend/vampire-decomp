@@ -115997,6 +115997,21 @@ void __fastcall sub_10203320(CDumpTable10203320 *pTable)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10203390 size=0x40
+extern int g_1074edd0;
+extern char g_1074e9b8[2][12];
+int sub_10431c2f(char *pDest, const char *pFormat, ...);
+
+// TARGET: sub_10203390
+char *sub_10203390(int value)
+{
+	sub_10431c2f(g_1074e9b8[g_1074edd0], "%d", value);
+	char *pBuf = g_1074e9b8[g_1074edd0];
+	g_1074edd0 = 1 - g_1074edd0;
+	return pBuf;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102033e0 size=0x22
 // TARGET: sub_102033e0
 #include "CUnit101d5e00.h"
