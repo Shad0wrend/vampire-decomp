@@ -72036,6 +72036,31 @@ void CUnk10170ad0::sub_10170ad0(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10170b00 size=0x3d
+#include <string.h>
+
+extern int (*g_109f388c)(char *pszDest, int nSize, const char *pszFormat, ...);
+extern char g_106b8540[];
+
+struct CUnknown10170b00
+{
+	void sub_10170b00();
+	char m_pad0000[0x1c54];
+	const char *m_pszName;
+};
+
+// TARGET: CUnknown10170b00::sub_10170b00
+void CUnknown10170b00::sub_10170b00()
+{
+	char buf[39];
+	memset(buf, 0, sizeof(buf));
+	const char *pszName = m_pszName;
+	if (!pszName)
+		pszName = g_106b8540;
+	g_109f388c(buf, 0x20, "name \"%s\"", pszName);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10170c80 size=0x1a
 extern void *g_109f3890;
 
