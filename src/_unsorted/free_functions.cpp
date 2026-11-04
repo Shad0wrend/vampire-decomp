@@ -28969,6 +28969,27 @@ char CBasePlayer::sub_10099400(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10099430 size=0x2a
+char __stdcall sub_10014ffb(int p);
+
+struct CUnit10099430 {
+    char sub_10099430(int index);
+};
+
+char CUnit10099430::sub_10099430(int index)
+{
+    if (index != -1) {
+        int p = *(int *)((char *)this + index * 0x30 + 0x73c);
+        if (p != 0) {
+            char r = sub_10014ffb(p);
+            r &= 1;
+            return r;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10099b00 size=0xe8
 #include "utlrbtree.h"
 #include "utlsortvector.h"

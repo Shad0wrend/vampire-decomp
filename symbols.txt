@@ -626,6 +626,7 @@
 0x10001f05 func   ?sub_102ea050@CUnknown102ea050@@QAEHXZ CUnknown102ea050::sub_102ea050
 0x10001f0f func   ?vfunc80@CPlayerResource@@QAEHXZ CPlayerResource::vfunc80
 0x10001f14 func   ?sub_1033d4b0@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_1033d4b0
+0x10001f19 func   ?sub_10099430@CUnit10099430@@QAEDH@Z CUnit10099430::sub_10099430
 0x10001f1e func   ?sub_101a6920@@YAXXZ sub_101a6920
 0x10001f23 func   ?RotateLeft@?$CUtlRBTree@HG@@QAEXG@Z CUtlRBTree<int,unsigned short>::RotateLeft
 0x10001f23 func   ?RotateLeft@?$CUtlRBTree@UCRBTree12Entry_10194f30@@G@@QAEXG@Z CUtlRBTree<CRBTree12Entry_10194f30,unsigned short>::RotateLeft
