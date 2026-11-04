@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10065460 size=0x24
+#include "CTEInspectionFX.h"
+
+CTEInspectionFX::CTEInspectionFX(const char *name) : CTEParticleSystemHead(name)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100654a0 size=0x1e
 #include "CTEInspectionFX.h"
 
