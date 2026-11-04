@@ -19275,6 +19275,33 @@ char CUnknown10077820::sub_10077820(CUnknownSlot3Obj *pObj, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10077860 size=0x1e
+struct CUnk10077860
+{
+    int m_000;
+    char pad[0x190 - 4];
+    int m_190;
+    int m_194;
+    char pad2[0x328 - 0x198];
+    char m_328;
+    int sub_10075b70();
+    void sub_10077860();
+};
+
+int CUnk10077860::sub_10075b70()
+{
+    return m_000;
+}
+
+void CUnk10077860::sub_10077860()
+{
+    int r = sub_10075b70();
+    m_328 = 0;
+    if (r == 0xc)
+        m_194 = m_190;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10077890 size=0xd
 #include "CUnknown10077890.h"
 void CUnknown10077890::sub_10077890(int value)
