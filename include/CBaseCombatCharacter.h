@@ -368,7 +368,11 @@ public:
 	int m_aNextWpnActivity;	// 0x14b4
 	int m_bfAINPCFlags;	// 0x14b8
 	int m_bfAINPCFlags2;	// 0x14bc
-	char m_pad14c0[0x14d4 - 0x14c0];
+	EHANDLE *m_pDiscParticles14c0;	// 0x14c0: the discipline particle handles, a CUtlVector<EHANDLE> (memory +0x14c0, alloc count +0x14c4, grow size +0x14c8, size +0x14cc, element pointer +0x14d0)
+	int m_nDiscParticleAlloc14c4;
+	int m_nDiscParticleGrow14c8;
+	int m_nDiscParticleCount14cc;
+	EHANDLE *m_pDiscParticleElems14d0;
 	int m_nLastObfuscateLevel;	// 0x14d4
 	unsigned int m_nObfuscateMask14d8;	// 0x14d8: the obfuscate bits (one per level) the character has
 	char m_bObfuscateReady14dc;	// 0x14dc
