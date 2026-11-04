@@ -5432,6 +5432,7 @@
 0x10009129 func   ?sub_10135420@CUnknown10135420@@QAEXPAH@Z CUnknown10135420::sub_10135420
 0x1000912e func   ?vfunc104@CBaseEntity@@UAEXXZ CBaseEntity::vfunc104
 0x10009133 func   ?sub_1040cfd0@CPlayerPickupController@@QAEXPAVCBaseCombatCharacter@@PAVCBaseEntity@@@Z CPlayerPickupController::sub_1040cfd0
+0x10009138 func   ?sub_1034d000@CNPCMaker@@QAEXPAUCMakerInputData@@@Z CNPCMaker::sub_1034d000
 0x10009142 func   ?sub_102ea240@CUnknown10359c50@@QAE_NH@Z CUnknown10359c50::sub_102ea240
 0x1000914c func   ?sub_101f9a40@@YGXPAVCBaseEntity@@H@Z sub_101f9a40
 0x10009151 func   ?sub_100579b0@CUnknown10057680@@QAEXPBD0@Z CUnknown10057680::sub_100579b0

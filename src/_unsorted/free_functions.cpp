@@ -173317,6 +173317,35 @@ void CNPCMaker::sub_1034cf20(int a, char bNotify)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034d000 size=0x3b
+#include "CNPCMaker.h"
+#include "CVariantCopy.h"
+
+int sub_103e0cd0(const char *p);
+extern char g_106b8540;
+
+struct CVariantString : CVariantCopy
+{
+	const char *String()
+	{
+		if (m_fieldType == 2)
+		{
+			const char *p = iszVal;
+			return p ? p : &g_106b8540;
+		}
+		return sub_100d0a00();
+	}
+};
+struct CMakerInputData { int pActivator; int pCaller; CVariantString value; };
+
+// TARGET: CNPCMaker::sub_1034d000
+void CNPCMaker::sub_1034d000(CMakerInputData *pData)
+{
+	int nIndex = sub_103e0cd0(pData->value.String());
+	sub_1034cf20(nIndex, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034d2d0 size=0x74
 #include "CNPCMaker_Zombie.h"
 
