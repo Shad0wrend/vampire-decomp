@@ -12263,6 +12263,7 @@
 0x10013165 func   ?sub_10411440@CPhysCannonUnit10411440@@QAEXXZ CPhysCannonUnit10411440::sub_10411440
 0x1001316a func   ?sub_100fbb40@CThinkView@@QAEXMH@Z CThinkView::sub_100fbb40
 0x1001316f func   ?sub_103ccb50@@YI_NPAVCBaseEntity@@@Z sub_103ccb50
+0x10013174 func   ??0CTEBeamLaser@@QAE@PBD@Z CTEBeamLaser::CTEBeamLaser
 0x10013179 func   ?vfunc452@CNPC_VMoleman@@QAEDXZ CNPC_VMoleman::vfunc452
 0x1001317e func   ?sub_1003eb50@CBaseEntity@@QAEXXZ CBaseEntity::sub_1003eb50
 0x10013188 func   ?sub_103f7030@@YAHXZ sub_103f7030
