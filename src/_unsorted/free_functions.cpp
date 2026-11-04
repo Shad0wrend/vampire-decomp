@@ -132502,6 +132502,24 @@ int CUnknown10249390::sub_10249390()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102493b0 size=0x3b
+#include "CHangRope.h"
+
+extern float g_104454c4;
+
+// TARGET: CHangRope::sub_102493b0
+void CHangRope::sub_102493b0(float flValue)
+{
+	float r;
+	if (flValue > g_104454c4)
+		r = flValue;
+	else
+		r = g_104454c4;
+	*(float *)((char *)this + 0x14) = r;
+	*(float *)((char *)this + 0x18) = r * r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10249400 size=0x4
 struct CUnknown10249400 { float sub_10249400(); };
 float CUnknown10249400::sub_10249400()

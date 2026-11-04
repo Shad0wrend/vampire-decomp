@@ -13064,6 +13064,7 @@
 0x100144c5 func   _item_p_occult_hacking item_p_occult_hacking
 0x100144ca func   ?sub_1042c6e0@@YAXXZ sub_1042c6e0
 0x100144cf func   _item_w_chang_ghost item_w_chang_ghost
+0x100144d4 func   ?sub_102493b0@CHangRope@@QAEXM@Z CHangRope::sub_102493b0
 0x100144d9 func   ?sub_10339c10@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10339c10
 0x100144de func   ?vfunc243@CBaseTrigger@@QAEXI@Z CBaseTrigger::vfunc243
 0x100144e3 func   ?sub_104279a0@@YAHHHPAM0@Z sub_104279a0
