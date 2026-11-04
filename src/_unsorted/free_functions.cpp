@@ -62022,6 +62022,18 @@ void CUnknown10134c40::sub_10134c40(CInputData100bc0f0 *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10134c80 size=0x2f
+#include "CMathCounter.h"
+#include "inputdata_t.h"
+// TARGET: CMathCounter::sub_10134c80
+void CMathCounter::sub_10134c80(inputdata_t &inputdata)
+{
+	float v = (inputdata.value.fieldType == 1) ? inputdata.value.flValue : 0.0f;
+	m_flMin = v;
+	sub_10134d30(inputdata.pActivator, v);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10134cc0 size=0x23
 #include "CUnknown100bc0f0.h"
 
