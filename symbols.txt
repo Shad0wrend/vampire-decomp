@@ -9928,6 +9928,7 @@
 0x1000fc1d func   ?vfunc2@CTEBreakModel@@UAEPAV1@I@Z CTEBreakModel::vfunc2
 0x1000fc22 func   ?vfunc104@CParamsParticle@@UAEXXZ CParamsParticle::vfunc104
 0x1000fc27 func   ?sub_100737b0@CUnknown100737b0@@QAEXH@Z CUnknown100737b0::sub_100737b0
+0x1000fc2c func   ?sub_10203ed0@@YA?AUstring_t@@PBD@Z sub_10203ed0
 0x1000fc31 func   ?vfunc451@CNPC_VHengeyokai@@UAEHXZ CNPC_VHengeyokai::vfunc451
 0x1000fc36 func   ?vfunc3@CTEShowLine@@UAEXPBVVector@@0@Z CTEShowLine::vfunc3
 0x1000fc3b func   ?vfunc5@COccultThaumDamage@@QAEPAV1@I@Z COccultThaumDamage::vfunc5

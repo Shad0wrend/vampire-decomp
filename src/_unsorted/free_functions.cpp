@@ -115804,6 +115804,24 @@ void sub_10203e30(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10203ed0 size=0x2e
+#include "CGameStringPool.h"
+#include "string_t.h"
+
+extern CStringPool g_1074e9a0;
+
+// TARGET: sub_10203ed0
+string_t sub_10203ed0(const char *psz)
+{
+	if (*psz)
+	{
+		char *p = g_1074e9a0.sub_101bf860(psz);
+		return string_t(*p ? p : 0);
+	}
+	return string_t(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10203f10 size=0xa0
 #include "utlrbtree.h"
 #include "utlsortvector.h"
