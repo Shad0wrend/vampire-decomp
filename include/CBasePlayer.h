@@ -419,7 +419,8 @@ public:
 	char m_pad1e10[0x1e24 - 0x1e10];
 	int m_lBirthday;	// 0x1e24	// 0x1E10 .. 0x1E27
 	CUtlVector<GLOBAL_EMAIL> m_GlobalEmail;	// 0x1E28: the global email flag records (0x240 bytes each)
-	char m_pad1E3C[0x38];	// 0x1E3C .. 0x1E73
+	char m_pad1E3C[4];	// 0x1E3C .. 0x1E3F
+	CPlayerLocalPredictedData m_Local1E40;	// 0x1E40 .. 0x1E73: vptr 0x10470490, then +0x04 (the model index), +0x08, +0x0c (default spread models), +0x10 (m_n2068), +0x14 (20 bytes the engine slot 112 fills)
 	unsigned int m_flags1E74;
 	int m_n1E78;	// 0x1E78: 0 on death (vfunc144)
 	char m_pad1E7C[0x3c];	// 0x1E7C .. 0x1EB7
