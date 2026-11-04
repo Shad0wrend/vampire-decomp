@@ -13822,6 +13822,7 @@
 0x100157c6 func   _item_container_animated item_container_animated
 0x100157cb func   ?sub_100b7de0@@YIHPAX@Z sub_100b7de0
 0x100157d5 func   ?sub_102d3f50@@YAHPBD@Z sub_102d3f50
+0x100157da func   ?sub_10307db0@@YAXPAUCSlot10307db0@@@Z sub_10307db0
 0x100157e4 func   ?vfunc79@CBaseFlex@@UAEHXZ CBaseFlex::vfunc79
 0x100157e9 func   ?sub_1021a3d0@CPropHacking@@QAEXPAVCSave@@@Z CPropHacking::sub_1021a3d0
 0x100157ee func   ?sub_1005fd20@CUnknown1005fd20@@QAEHXZ CUnknown1005fd20::sub_1005fd20

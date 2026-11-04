@@ -160860,6 +160860,21 @@ SPatrolPathX *sub_10307d30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10307db0 size=0x32
+struct CSlot10307db0 { char m_data[0x114]; };
+extern CSlot10307db0 g_10934158[];
+extern unsigned char g_109363d8[];
+extern int g_109363f8;
+
+void __cdecl sub_10307db0(CSlot10307db0 *p)
+{
+    int idx = p - g_10934158;
+    g_109363d8[idx] = 0;
+    if (idx < g_109363f8)
+        g_109363f8 = idx;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10307e00 size=0x11
 extern unsigned int g_109363d8[8];
 
