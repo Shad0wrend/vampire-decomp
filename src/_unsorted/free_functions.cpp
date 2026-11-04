@@ -57159,6 +57159,26 @@ void CUnk10117470::sub_10117470(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10118350 size=0x23
+struct ICvarV10118350
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void *FindVar(const char *name);
+};
+extern ICvarV10118350 *g_1070b234;
+extern void *g_1070af4c;
+extern int g_1070aba4;
+void sub_102454a0(void *p);
+
+// TARGET: sub_10118350
+void sub_10118350(void)
+{
+	sub_102454a0(&g_1070aba4);
+	g_1070af4c = g_1070b234->FindVar("developer");
+}
+// END FUNCTION
+
 // FUNCTION: 0x101189e0 size=0xfd
 #include "CBaseEntity.h"
 
