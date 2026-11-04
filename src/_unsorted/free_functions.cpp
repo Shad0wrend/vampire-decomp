@@ -119000,6 +119000,93 @@ void CUnknown102148f0::sub_102148f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10214a20 size=0x20f
+#include "CEnvParticle.h"
+#include "CUnknown102148f0.h"
+#include "CPropHaunted.h"
+#include "CEntityVSlots.h"
+#include "COutputEvent.h"
+#include "CBaseEntityUnit100fbaf0.h"
+#include "DebugOverlay.h"
+#include "globalvars.h"
+#include "Vector.h"
+
+extern float (*g_109f385c)(float, float);
+
+#define PV(n) virtual void p##n();
+#define PV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
+
+class CPhysView
+{
+public:
+	PV10(0) PV10(1) PV(20) PV(21) PV(22) PV(23)
+	virtual void vfunc24(int a);
+	PV(25) PV(26) PV(27) PV(28) PV(29)
+	PV(30) PV(31) PV(32) PV(33) PV(34) PV(35) PV(36) PV(37) PV(38)
+	virtual void vfunc39(Vector *pA, Vector *pB);
+};
+
+void CUnknown102148f0::sub_10214a20()
+{
+	CPropHaunted *p = (CPropHaunted *)this;
+	CEntityVSlots *pSlots = (CEntityVSlots *)this;
+
+	p->sub_100b3640(0x40000);
+	CBaseEntity *pTarget = sub_101cd9e0(1);
+	CPhysView *pPhys = (CPhysView *)p->m_obj36c;
+	if (!pPhys)
+		return; else { CEnvParticle *pGhost = p->sub_10214cc0((int)p->m_sFlingParticle.pszValue);
+	if (pGhost)
+		((CBaseEntityUnit100fbaf0 *)pGhost)->sub_100fbaf0(10.0f);
+
+	p->sub_10260a50(p->sub_1008f7b0("idle"));
+	*(int *)((char *)this + 0x6f8) = 0;
+	p->vfunc93(7, 0);
+	pPhys->vfunc24(1);
+	p->sub_100b3b00();
+
+	Vector vecDir;
+	if (p->m_bTargetPlayer && pTarget)
+	{
+		Vector *pOrigin = pSlots->slot217();
+		Vector vecEye;
+		Vector *pOther = ((CEntityVSlots *)pTarget)->slot193(&vecEye);
+		vecDir = *pOther - *pOrigin;
+	}
+	else
+	{
+		Vector *pOrigin = pSlots->slot217();
+		vecDir = p->m_vecFlingDest - *pOrigin;
+	}
+
+	VectorNormalize(vecDir);
+
+	float flScale = p->m_flFlingVelocity;
+	VectorScale(vecDir, flScale, vecDir);
+
+	float r1 = g_109f385c(-180.0f, 180.0f);
+	float r2 = g_109f385c(-180.0f, 180.0f);
+	float r3 = g_109f385c(-180.0f, 180.0f);
+
+	Vector vecSpin;
+	vecSpin.x = r3 * *(float *)((char *)this + 0x7ac);
+	vecSpin.y = r2 * *(float *)((char *)this + 0x7b0);
+	vecSpin.z = r1 * *(float *)(0x7b4 + (char *)this);
+
+	pPhys->vfunc39(&vecDir, &vecSpin);
+
+	((COutputEvent *)((char *)this + 0x7d4))->sub_100cd660(pTarget, this, 0);
+
+	void (CPropHaunted::*pfnThink)() = &CPropHaunted::sub_10214300;
+	p->sub_100ac4e0(*(int *)&pfnThink, 0, 0);
+
+	p->m_flNextThink = gpGlobals->curtime + 0.05;
+	p->sub_10214200((const char *)p->m_iszSound7cc);
+	p->sub_10214080(p->m_sFlingSound.pszValue);
+	p->m_bArmed7b8 = 1; }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10214d60 size=0x43
 #include "CPropButton.h"
 void *sub_100aa720(int size);
