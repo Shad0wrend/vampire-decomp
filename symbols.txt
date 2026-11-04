@@ -1766,6 +1766,7 @@
 0x10003ab2 func   ?vfunc23@CRestore@@UAEHH@Z CRestore::vfunc23
 0x10003abc func   _env_shooter env_shooter
 0x10003ac1 func   ?vfunc1@CTEBSPDecal@@UAEHXZ CTEBSPDecal::vfunc1
+0x10003ac6 func   ?vfunc3@CTEBSPDecal@@UAEXABVVector@@ABVQAngle@@@Z CTEBSPDecal::vfunc3
 0x10003acb func   ?sub_103058c0@CAI_Pathfinder@@QAE_NHPBM00PBVCBaseEntity@@PAUAIMoveTrace_t@@I@Z CAI_Pathfinder::sub_103058c0
 0x10003ad0 func   ?sub_10227440@@YGXH@Z sub_10227440
 0x10003ad5 func   ?sub_1025c6a0@CUtlRBTreeBig@@QAEGPBX@Z CUtlRBTreeBig::sub_1025c6a0
