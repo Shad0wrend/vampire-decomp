@@ -37764,6 +37764,45 @@ float sub_100c4160(void *hdr, int index, float value, float *ctl)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c4340 size=0x3b
+struct CEntry100c4340
+{
+	char m_pad0000[0x14];
+	int m_key;
+};
+
+struct CHolder100c4340
+{
+	char m_pad0000[0xf8];
+	int m_nCount;
+	int m_nOffset;
+};
+
+// TARGET: sub_100c4340
+CEntry100c4340 *sub_100c4340(CHolder100c4340 *pHolder, int key)
+{
+	int n = pHolder->m_nCount;
+	if (1 <= n)
+	{
+		int i = 0;
+		CEntry100c4340 *p = (CEntry100c4340 *)((char *)pHolder + pHolder->m_nOffset);
+		if (p->m_key == key)
+			return p;
+		long k;
+		do
+		{
+			i++;
+			if (i == n)
+				return 0;
+			p++;
+			k = p->m_key;
+		} while (k != key);
+		return p;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c4390 size=0x36
 struct CLerpRange
 {
