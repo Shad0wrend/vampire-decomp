@@ -54,6 +54,41 @@ void CEventsSaveDataOps::vfunc1(void *pData, CRestore *pRestore)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cdab0 size=0x3d
+#include "CEventsSaveDataOps.h"
+
+namespace block_100cdab0 {
+struct CLinkItem { char pad[0x1c]; CLinkItem *m_pNext; };
+struct CListNode100cd940 { char pad[0x14]; CLinkItem *m_pFirst; int m_n18; };
+int __fastcall sub_100cd940(CListNode100cd940 *p)
+{
+	int n = 0;
+	for (CLinkItem *i = p->m_pFirst; i; i = i->m_pNext)
+		n++;
+	return n;
+}
+struct CEvEntry : CListNode100cd940 { };
+struct CEvList { char pad[0x10]; short m_nCount; };
+struct CEvArg { CListNode100cd940 *m_pEntries; int m_n4; CEvList *m_pList; };
+}
+using namespace block_100cdab0;
+
+// TARGET: CEventsSaveDataOps::vfunc2
+bool CEventsSaveDataOps::vfunc2(void *pEvents)
+{
+	CEvArg *a = (CEvArg *)pEvents;
+	CListNode100cd940 *e = a->m_pEntries;
+	for (int i = 0; i < a->m_pList->m_nCount; i++, e = (CListNode100cd940 *)((char *)e + 0x18))
+	{
+		if (sub_100cd940(e) != 0)
+			return false;
+		if (*(int *)((char *)e + 0x10) != 0)
+			return false;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cdb00 size=0x3
 #include "CEventsSaveDataOps.h"
 void CEventsSaveDataOps::vfunc3(int a0)

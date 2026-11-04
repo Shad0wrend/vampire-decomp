@@ -1583,6 +1583,7 @@
 0x100035c6 func   ?vfunc576@CAI_BaseNPC@@QAEHMH@Z CAI_BaseNPC::vfunc576
 0x100035d0 func   ?sub_102e2610@CAI_Motor@@QAEHXZ CAI_Motor::sub_102e2610
 0x100035d5 func   ??0CRecipientFilter@@QAE@XZ CRecipientFilter::CRecipientFilter
+0x100035da func   ?vfunc2@CEventsSaveDataOps@@QAE_NPAX@Z CEventsSaveDataOps::vfunc2
 0x100035df func   ?sub_1005eec0@CUnknown1005eec0@@QAEHXZ CUnknown1005eec0::sub_1005eec0
 0x100035e4 func   ?vfunc106@CBaseCombatCharacter@@UAEXPBD@Z CBaseCombatCharacter::vfunc106
 0x100035e9 func   ?vfunc104@CEnvSpark@@UAEXXZ CEnvSpark::vfunc104
