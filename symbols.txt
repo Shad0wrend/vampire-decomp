@@ -10888,6 +10888,7 @@
 0x10011284 func   ?sub_102a0bc0@CAI_BaseNPCTroika@@QAE_NPAX@Z CAI_BaseNPCTroika::sub_102a0bc0
 0x10011289 func   ?sub_101f6eb0@CVTraitEffect_t@@QAEXXZ CVTraitEffect_t::sub_101f6eb0
 0x10011293 func   ?vfunc546@CNPC_VVentrue@@QAEHH@Z CNPC_VVentrue::vfunc546
+0x10011298 func   ?sub_1030b900@CUnknown1030b900@@QAEXPAUCUnknown1030b900Node@@@Z CUnknown1030b900::sub_1030b900
 0x1001129d func   ?sub_1012f640@@YA?AUSFloatPair@@PBD@Z sub_1012f640
 0x100112a2 func   ?vfunc70@CNPC_VTzimisceRunner@@UAE_NXZ CNPC_VTzimisceRunner::vfunc70
 0x100112a7 func   ?vfunc81@CFunc_Dust@@QAEHXZ CFunc_Dust::vfunc81

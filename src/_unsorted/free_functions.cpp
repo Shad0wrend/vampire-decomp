@@ -161568,6 +161568,25 @@ int CUnknown1030b8e0::sub_1030b8e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030b900 size=0x34
+#include "CUnknown1030b900.h"
+
+// TARGET: CUnknown1030b900::sub_1030b900
+void CUnknown1030b900::sub_1030b900(CUnknown1030b900Node *pNode)
+{
+	for (; pNode; pNode = pNode->m_pNext30) {
+		if (!pNode->m_pNext30) {
+			m_v4c[0] = pNode->m_v[0];
+			m_v4c[1] = pNode->m_v[1];
+			m_v4c[2] = pNode->m_v[2];
+			m_bSet48 = true;
+			pNode->m_flags28 |= 8;
+			return;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030b950 size=0x25
 struct CUnknown1030b950 {
     char m_pad0000[0x34];
