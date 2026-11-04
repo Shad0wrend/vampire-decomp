@@ -8190,6 +8190,7 @@
 0x1000d341 func   ?vfunc3@CAI_LocalNavigator@@UAEHPBX_NPAH@Z CAI_LocalNavigator::vfunc3
 0x1000d346 func   ?vfunc82@CCameraAnimated@@QAEPAUdatamap_t@@XZ CCameraAnimated::vfunc82
 0x1000d34b func   ?sub_1009b5a0@CBaseEntity@@QAEXPBD@Z CBaseEntity::sub_1009b5a0
+0x1000d350 func   ?sub_10025e50@@YGXPADIHP8CUnkElem@@AEXXZ@Z sub_10025e50
 0x1000d355 func   ?vfunc10@CAI_HumanoidMotor@@QAEXXZ CAI_HumanoidMotor::vfunc10
 0x1000d35a func   ?vfunc580@CNPC_VTzimisceRunner@@UAEHXZ CNPC_VTzimisceRunner::vfunc580
 0x1000d364 func   ?sub_102db630@@YAXD@Z sub_102db630

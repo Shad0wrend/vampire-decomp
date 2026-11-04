@@ -1,6 +1,20 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10025e50 size=0x2a
+struct CUnkElem { };
+typedef void (CUnkElem::*CUnkElemFn)();
+
+// TARGET: sub_10025e50
+void __stdcall sub_10025e50(char *ptr, unsigned size, int count, CUnkElemFn fn)
+{
+    while (--count >= 0) {
+        (((CUnkElem *)ptr)->*fn)();
+        ptr += size;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10025ed0 size=0x1a
 namespace lifted {
 extern int g_10536d08;
