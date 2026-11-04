@@ -151,6 +151,21 @@ void CServerNetworkProperty::vfunc1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ab6f0 size=0x14
+#include "CServerNetworkProperty.h"
+extern char g_106b8540[];
+struct string_t_v { const char *pszValue; };
+struct COuterV { char pad[0x11c]; string_t_v m_iClassname; };
+inline const char *STRING_V(const string_t_v *s) { return s->pszValue ? s->pszValue : g_106b8540; }
+
+// TARGET: CServerNetworkProperty::vfunc5
+const char *CServerNetworkProperty::vfunc5()
+{
+	COuterV *o = (COuterV *)m_pOuter;
+	return STRING_V(&o->m_iClassname);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab760 size=0x5d
 #include "CServerNetworkProperty.h"
 

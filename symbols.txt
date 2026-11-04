@@ -8098,6 +8098,7 @@
 0x1000d19d func   ?sub_10205900@CUnknown10205900@@QAEHXZ CUnknown10205900::sub_10205900
 0x1000d1a2 func   ?sub_10405540@@YAHXZ sub_10405540
 0x1000d1a7 func   ?vfunc620@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::vfunc620
+0x1000d1ac func   ?vfunc5@CServerNetworkProperty@@UAEPBDXZ CServerNetworkProperty::vfunc5
 0x1000d1b1 func   ?sub_100a82c0@CBaseEntity@@QAEPAV1@XZ CBaseEntity::sub_100a82c0
 0x1000d1b6 func   ?vfunc2@CServerGameDLL@@UAE_NXZ CServerGameDLL::vfunc2
 0x1000d1c0 func   ?vfunc545@CAI_BaseNPC@@UAE_NXZ CAI_BaseNPC::vfunc545
