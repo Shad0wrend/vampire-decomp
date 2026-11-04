@@ -135718,6 +135718,25 @@ unsigned char CBaseCombatWeapon::sub_102585f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10258620 size=0x3b
+#include "CBaseCombatWeapon.h"
+
+void CBaseCombatWeapon::sub_10258620(int a)
+{
+	int off = 0;
+	int *pClip = (int *)((char *)this + 0x74c);
+	do
+	{
+		int *p = (int *)((char *)sub_102517b0() + off + 0x2668);
+		int v = *p;
+		if (v != -1)
+			*pClip = v;
+		off += 0x1093c;
+		pClip++;
+	} while (off < 0x21278);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102587f0 size=0x6
 namespace lifted {
 extern char g_1055ef2c;

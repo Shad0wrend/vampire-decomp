@@ -2745,6 +2745,7 @@
 0x10005191 func   ?sub_10225af0@CUnknown10225af0@@QAEXXZ CUnknown10225af0::sub_10225af0
 0x10005191 func   ?vfunc113@CPropDoorknob@@UAEXXZ CPropDoorknob::vfunc113
 0x10005196 func   _npc_VTzimisceHeadClaw npc_VTzimisceHeadClaw
+0x1000519b func   ?sub_10258620@CBaseCombatWeapon@@QAEXH@Z CBaseCombatWeapon::sub_10258620
 0x100051a0 func   ?vfunc4@CTEExplosion@@QAEXPAXH@Z CTEExplosion::vfunc4
 0x100051a5 func   ?sub_10031270@CCollisionEvent@@QAEHH@Z CCollisionEvent::sub_10031270
 0x100051aa func   ?vfunc2@?$CUtlVectorDataOps@V?$CUtlVector@HV?$CUtlMemory@H@@@@$03@@UAE_NPAX@Z CUtlVectorDataOps<CUtlVector<int,CUtlMemory<int> >,4>::vfunc2
