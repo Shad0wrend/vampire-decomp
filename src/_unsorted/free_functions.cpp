@@ -153844,6 +153844,24 @@ PatrolPlace* sub_102dd8b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dd940 size=0x3d
+struct CEntry102dd940 { char m_pad[0x2a4]; };
+extern CEntry102dd940 g_109272c8[];
+extern int g_10931bc8;
+extern int g_10931bcc;
+extern char g_10927280[];
+
+// TARGET: sub_102dd940
+void sub_102dd940(CEntry102dd940 *pEntry)
+{
+    int nIndex = pEntry - g_109272c8;
+    g_10927280[nIndex] = 0;
+    if (nIndex < g_10931bc8)
+        g_10931bc8 = nIndex;
+    g_10931bcc--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dd990 size=0x16
 extern int g_10927280[16];
 extern int g_10931bcc;
