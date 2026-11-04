@@ -103600,6 +103600,27 @@ void CUnknown101e8080::sub_101e8080(int *out, void *ent, float dist, int flags)
 int __stdcall sub_101e80a0(int) { return 10; }
 // END FUNCTION
 
+// FUNCTION: 0x101e8210 size=0x2b
+struct CUnk101e8210Inner {
+    int sub_1000f03d(int a);
+};
+
+struct R101e8210 { int v; R101e8210(int x) { v = x; } };
+
+struct CUnit101e8210 {
+    char pad[0x1c];
+    struct CMid { char pad[0x10]; CUnk101e8210Inner *p; } *m_pMid;
+    R101e8210 sub_101e8210(int a, int b);
+};
+
+R101e8210 CUnit101e8210::sub_101e8210(int a, int b)
+{
+    if (m_pMid->p->sub_1000f03d(a) >= 2)
+        return R101e8210(3);
+    return R101e8210(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e8250 size=0xb
 struct CInner { unsigned int sub_1000f03d(int a); };
 struct CMid { char pad[0x14]; CInner *m_p14; };

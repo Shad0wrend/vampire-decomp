@@ -341,6 +341,7 @@
 0x10001816 func   ?vfunc3@CEffectsServer@@UAEXPBMHHH@Z CEffectsServer::vfunc3
 0x1000181b func   ?sub_101f9af0@@YGXPAVCBaseCombatCharacter@@PBD@Z sub_101f9af0
 0x10001820 func   ?sub_103f7c30@@YAHXZ sub_103f7c30
+0x10001825 func   ?sub_101e8210@CUnit101e8210@@QAE?AUR101e8210@@HH@Z CUnit101e8210::sub_101e8210
 0x1000182a func   ?sub_10251f70@@YIHPAX@Z sub_10251f70
 0x1000182f func   ?vfunc8@ConVar@@UAEXM@Z ConVar::vfunc8
 0x10001834 func   ?sub_10093fb0@CBaseAnimating@@QAEHHPAM0@Z CBaseAnimating::sub_10093fb0
