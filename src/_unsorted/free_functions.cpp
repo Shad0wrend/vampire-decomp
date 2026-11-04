@@ -62697,6 +62697,17 @@ void CUnknown10135420::sub_10135420(int *pArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10135470 size=0x71
+#include "CLogicNPCCondition.h"
+
+extern "C" CBaseEntity *logic_npc_condition()
+{
+	CLogicNPCCondition *p = new CLogicNPCCondition;
+	p->vfunc106("logic_npc_condition");
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10135570 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
