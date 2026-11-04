@@ -423,7 +423,11 @@ public:
 	CPlayerLocalPredictedData m_Local1E40;	// 0x1E40 .. 0x1E73: vptr 0x10470490, then +0x04 (the model index), +0x08, +0x0c (default spread models), +0x10 (m_n2068), +0x14 (20 bytes the engine slot 112 fills)
 	unsigned int m_flags1E74;
 	int m_n1E78;	// 0x1E78: 0 on death (vfunc144)
-	char m_pad1E7C[0x3c];	// 0x1E7C .. 0x1EB7
+	char m_pad1E7C[0x30];	// 0x1E7C .. 0x1EAB
+	int m_nEdict1EAC;	// 0x1EAC: engine index of the entity at +0x1c58 (its +0x2e0), 0 when none
+	int m_nEdict1EB0;	// 0x1EB0: engine index of the grapple target / use entity (its +0x2e0)
+	char m_b1EB4;	// 0x1EB4: copy of the byte at +0x1474
+	char m_pad1EB5[3];
 	int m_nUseEdictIndex1EB8;	// engine index of the entity to notify (0 = none)
 	char m_pad1EBC[4];	// 0x1EBC .. 0x1EBF
 	char m_bNotifyUse1EC0;
