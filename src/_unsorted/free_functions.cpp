@@ -159745,6 +159745,27 @@ void CSlotList::sub_10306200(int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10306520 size=0x20
+struct CSlotEntry
+{
+    char m_pad[0x25];
+    char m_b25;
+};
+struct CUnk10306520
+{
+    CSlotEntry **m_0;
+    void sub_10306520();
+};
+void CUnk10306520::sub_10306520()
+{
+    if (m_0 != 0)
+    {
+        for (int i = 0; i < 50; i++)
+            m_0[i]->m_b25 = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10306550 size=0x5d
 struct CVHalveItem
 {
