@@ -57,6 +57,18 @@ bool CSimplePhysicsBrush::vfunc32(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004fa80 size=0xe
+#include "CBaseEntity.h"
+#include "CSimplePhysicsBrush.h"
+namespace lifted {
+int sub_10010ec9(int);
+}
+void CSimplePhysicsBrush::vfunc39(CBaseEntity * a0)
+{
+    lifted::sub_10010ec9(*(int *)&a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004faa0 size=0xe
 void __cdecl sub_1040d950(int a);
 
