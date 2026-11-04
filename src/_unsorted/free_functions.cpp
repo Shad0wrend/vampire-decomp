@@ -145567,6 +145567,23 @@ void CAI_BaseNPCTroika::sub_102c0360()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c0470 size=0x28
+#include "Tier1.h"
+
+struct CUnknown102c0470 {
+    char pad_0000[0x64ec];
+    char m_szName64ec[0x60];
+    unsigned char m_b654c;
+    void sub_102c0470(const char *pszName, unsigned char bValue);
+};
+
+void CUnknown102c0470::sub_102c0470(const char *pszName, unsigned char bValue)
+{
+    g_109f3890(m_szName64ec, pszName, 0x60);
+    m_b654c = bValue;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c0aa0 size=0x89
 #include "CEHandleGet.h"
 #include "CAI_BaseNPCTroika.h"

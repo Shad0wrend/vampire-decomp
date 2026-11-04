@@ -793,6 +793,7 @@
 0x100022f7 func   ?sub_102e9e50@@YIXPAUMem@@HH@Z sub_102e9e50
 0x100022fc func   ?sub_101832b0@CUnitP4@@QAE_NXZ CUnitP4::sub_101832b0
 0x10002306 func   ?vfunc416@CAI_BaseNPC@@UAEXD@Z CAI_BaseNPC::vfunc416
+0x1000230b func   ?sub_102c0470@CUnknown102c0470@@QAEXPBDE@Z CUnknown102c0470::sub_102c0470
 0x10002310 func   ?sub_10139610@@YAXABVQAngle@@PAVVector@@11@Z sub_10139610
 0x10002315 func   ?sub_100bde20@@YGXH@Z sub_100bde20
 0x1000231a func   ?vfunc38@CBaseEntity@@UAEPAXH@Z CBaseEntity::vfunc38
