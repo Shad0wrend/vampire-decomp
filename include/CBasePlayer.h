@@ -256,7 +256,8 @@ public:
 	char m_pad1477;
 	float m_f1478;	// 0x1478: the time the fade of the feeding started / ends
 	float m_f147C;	// 0x147C
-	char m_pad1480[0x148c - 0x1480];	// 0x1480 .. 0x148B
+	char m_pad1480[0x1488 - 0x1480];	// 0x1480 .. 0x1487
+	float m_flSpeedScale1488;	// 0x1488: multiplies sv_runscale / sv_sneakscale (CHL2_Player::vfunc436)
 	float m_f148C;	// 0x148C
 	char m_pad1490[0x149c - 0x1490];	// 0x1490 .. 0x149B
 	int m_h149C;	// 0x149C: the feeding target handle (-1 on death, vfunc144; CBaseCombatCharacter::m_h149c)
