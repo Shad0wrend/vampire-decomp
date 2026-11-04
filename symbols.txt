@@ -12863,6 +12863,7 @@
 0x10013f48 func   ?sub_10273aa0@@YIXPAH@Z sub_10273aa0
 0x10013f52 func   ?sub_100d2990@@YAXXZ sub_100d2990
 0x10013f57 func   ?sub_10072d20@CUnk10072d20@@QAEXXZ CUnk10072d20::sub_10072d20
+0x10013f5c func   ??0CFlameCluster@@QAE@XZ CFlameCluster::CFlameCluster
 0x10013f61 func   ?sub_103b9f90@CNPC_VTzimisce@@QAEXHM@Z CNPC_VTzimisce::sub_103b9f90
 0x10013f66 func   ?sub_103b5bc0@@YADXZ sub_103b5bc0
 0x10013f6b func   ?vfunc82@CAreaPortal@@UAEPAUdatamap_t@@XZ CAreaPortal::vfunc82
