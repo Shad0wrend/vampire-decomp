@@ -2564,6 +2564,69 @@ bool CAI_BaseNPCTroika::vfunc201(CBaseEntity *pEnt, int a, int *pOut, int d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b4760 size=0x29c
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "CEntityVSlots.h"
+#include "Vector.h"
+extern void sub_10142aa0(int, int, int, int, int, int, int, int);
+
+inline void Box(const Vector &origin, const Vector &mins, const Vector &maxs, int g)
+{
+	sub_10142aa0((int)&origin, (int)&mins, (int)&maxs, 0xff, g, 0, 0, 0x3f000000);
+}
+
+bool CAI_BaseNPCTroika::vfunc594(CBaseEntity *pEnt, int a, int *pOut, int d)
+{
+	Vector vThis, vOther;
+	m_b6081 = 0;
+	((CEntityVSlots *)this)->slot193(&vThis);
+	((CEntityVSlots *)pEnt)->slot193(&vOther);
+	switch (m_n5cc0)
+	{
+	case 2:
+		if (!m_b5bc5)
+			break;
+	default:
+		if (gpGlobals->curtime >= *(float *)((char *)this + 0x6604))
+		{
+			float flDist = (vOther - vThis).Length();
+			float flRange = pEnt->vfunc28() * m_f63b8;
+			if (flDist > flRange)
+			{
+				if (pOut)
+					*pOut = 0;
+				return false;
+			}
+			if (flDist > flRange * 0.7f)
+				m_b6081 = 1;
+		}
+		break;
+	}
+	if (pEnt->m_p9c && !((CBaseCombatCharacter *)pEnt->m_p9c)->sub_10146b20((CBaseCombatCharacter *)this))
+	{
+		if ((m_fDebugOverlays224 & 0x80000000u) && pEnt->m_pA8)
+		{
+			Vector vecOrigin = *(Vector *)vfunc220();
+			vecOrigin.z = vecOrigin.z + (((CCollisionProperty *)((char *)this + 0x270))->vfunc2()[2] + 12.0f);
+			Box(vecOrigin, Vector(-2.0f, -2.0f, -2.0f), Vector(2.0f, 2.0f, 2.0f), 160);
+		}
+		if (pOut)
+			*pOut = 0;
+		return false;
+	}
+	if ((m_fDebugOverlays224 & 0x80000000u) && pEnt->m_pA8)
+	{
+		Vector vecOrigin = *(Vector *)vfunc220();
+		vecOrigin.z = vecOrigin.z + (((CCollisionProperty *)((char *)this + 0x270))->vfunc2()[2] + 13.0f);
+		Box(vecOrigin, Vector(-3.0f, -3.0f, -3.0f), Vector(3.0f, 3.0f, 3.0f), 255);
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b4ab0 size=0x104
 #include "CAI_BaseNPC.h"
 #include "CAI_BaseNPCTroika.h"

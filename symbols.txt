@@ -11004,6 +11004,7 @@
 0x100117ed func   ?sub_1035dd00@CNPC_VAndreiBlood@@QAEXPAUinputdata_t@@@Z CNPC_VAndreiBlood::sub_1035dd00
 0x100117f2 func   ?sub_10102c80@CEnvShake@@QAEXXZ CEnvShake::sub_10102c80
 0x100117f7 func   ?vfunc5@CItemGWarrLedger1@@QAEPAV1@I@Z CItemGWarrLedger1::vfunc5
+0x10011801 func   ?vfunc594@CAI_BaseNPCTroika@@UAE_NPAVCBaseEntity@@HPAHH@Z CAI_BaseNPCTroika::vfunc594
 0x10011806 func   ?vfunc364@CNPC_VNewscaster@@UAE_NH@Z CNPC_VNewscaster::vfunc364
 0x1001180b func   ?sub_102404e0@@YA_NABUVec3@@000M@Z sub_102404e0
 0x10011810 func   ?vfunc0@CTraceFilterAgainstEntityList@@UAE_NPAXH@Z CTraceFilterAgainstEntityList::vfunc0
