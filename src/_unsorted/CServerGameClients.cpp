@@ -57,6 +57,37 @@ int CServerGameClients::vfunc4(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011c4d0 size=0x34
+struct CClientViewA8 {
+    char pad0[0xa8];
+    int m_a8;
+};
+
+struct CVirtSlot4View {
+    virtual int f0();
+    virtual int f1();
+    virtual int f2();
+    virtual int f3();
+    virtual CClientViewA8 *f4();
+};
+
+struct CServerClientsView {
+    char pad0[0x40];
+    CVirtSlot4View *m40;
+};
+
+void sub_100095ac(int a);
+
+// TARGET: sub_1011c4d0
+void __stdcall sub_1011c4d0(CServerClientsView *p)
+{
+    CClientViewA8 *pClient = 0;
+    if (p && p->m40)
+        pClient = p->m40->f4();
+    sub_100095ac(!pClient ? 0 : pClient->m_a8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011d3e0 size=0x42
 #include "CServerGameClients.h"
 #include "CGlobalEntityList.h"

@@ -3396,6 +3396,7 @@
 0x1000618b func   ?vfunc221@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc221
 0x10006190 func   ?sub_101b6250@CUnknown101b6250@@QAEPAV1@XZ CUnknown101b6250::sub_101b6250
 0x10006195 func   ?vfunc5@CItemGHorrorTape_2@@QAEPAV1@I@Z CItemGHorrorTape_2::vfunc5
+0x1000619a func   ?sub_1011c4d0@@YGXPAUCServerClientsView@@@Z sub_1011c4d0
 0x1000619f func   ?sub_10092380@CBaseAnimating@@QAE_NHPBD@Z CBaseAnimating::sub_10092380
 0x100061a4 func   ?vfunc0@CAI_SaveRestoreBlockHandler@@UAEHXZ CAI_SaveRestoreBlockHandler::vfunc0
 0x100061a9 func   ?sub_103163e0@@YGDH@Z sub_103163e0
