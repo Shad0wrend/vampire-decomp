@@ -8493,6 +8493,7 @@
 0x1000d959 func   ?sub_10028a60@CPhysMotor@@QAEXXZ CPhysMotor::sub_10028a60
 0x1000d959 func   ?sub_10028a60@CUnk10028a60@@QAEXXZ CUnk10028a60::sub_10028a60
 0x1000d95e func   ?sub_10307b40@CUnknown10307b40@@QAEXH@Z CUnknown10307b40::sub_10307b40
+0x1000d963 func   ?vfunc479@CHL2_Player@@UAEHXZ CHL2_Player::vfunc479
 0x1000d968 func   _item_g_lilly_purse item_g_lilly_purse
 0x1000d96d func   ?vfunc81@CWeaponRanged_Rifle_SuperShotgun@@UAEHXZ CWeaponRanged_Rifle_SuperShotgun::vfunc81
 0x1000d977 func   ?sub_1009a370@@YAHXZ sub_1009a370

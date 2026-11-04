@@ -55,6 +55,17 @@ void CHL2_Player::vfunc475(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034f3f0 size=0x26
+#include "CHL2_Player.h"
+
+int CHL2_Player::vfunc479()
+{
+	if (m_n252c == 0 && *(float *)((char *)this + 0x2464) < 100.0f)
+		return 1;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034f430 size=0xd
 #include "CHL2_Player.h"
 struct HL2PlayerFloats { char pad[0x2534]; float a; float b; };
