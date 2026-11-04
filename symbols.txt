@@ -12266,6 +12266,7 @@
 0x10013480 func   ?sub_101e3a30@CUnknown101e0f00@@QAEXPAUS1033d380@@H@Z CUnknown101e0f00::sub_101e3a30
 0x1001348a func   ?sub_100cdb50@@YIXPAUCListHolder100cdb50@@@Z sub_100cdb50
 0x1001348f func   ?sub_1033d640@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_1033d640
+0x10013494 func   ?sub_101e3be0@CUnknown101e3be0@@QAEXHI@Z CUnknown101e3be0::sub_101e3be0
 0x10013499 func   ?sub_1042fc60@@YAXXZ sub_1042fc60
 0x1001349e func   ?sub_1042da60@CUnknown1042da60@@QAEHXZ CUnknown1042da60::sub_1042da60
 0x100134a3 func   ?sub_1024b040@@YIPBDPAUCUnknown1024b2d0Id@@@Z sub_1024b040

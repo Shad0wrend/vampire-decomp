@@ -101980,6 +101980,23 @@ void CUnknown101e0f00::sub_101e3a30(S1033d380 *pObj, int id)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e3be0 size=0x1a
+unsigned int __stdcall sub_101e1870(unsigned int a)
+{
+    return a | 0x80000000;
+}
+
+struct CUnknown101e3be0 {
+    void sub_101e3be0(int a, unsigned int b);
+    void sub_101e3af0(int a, unsigned int b, int c);
+};
+
+void CUnknown101e3be0::sub_101e3be0(int a, unsigned int b)
+{
+    sub_101e3af0(a, sub_101e1870(b), 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e3c10 size=0x42
 #include "CNamedListX.h"
 extern void (__cdecl *g_109f3630)(const char *, ...);
