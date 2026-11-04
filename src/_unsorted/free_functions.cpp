@@ -161647,6 +161647,17 @@ void sub_10310b70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10310b90 size=0x15
+#include "CVDmg_t.h"
+#include <string.h>
+
+// TARGET: CVDmgBlock16_t::sub_10310b90
+void CVDmgBlock16_t::sub_10310b90(const char *pszText)
+{
+	strcpy((char *)this, pszText);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10310bc0 size=0x33
 extern char g_106eb5d8[];
 extern char g_106148ec[];
