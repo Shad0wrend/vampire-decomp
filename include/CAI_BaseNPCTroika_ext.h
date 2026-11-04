@@ -137,6 +137,11 @@
 	bool sub_10295ed0(CBaseEntity *pHint);	// stub 0x10006050, hint types 0x283c / 0x283d
 	bool sub_102961a0(CBaseEntity *pHint);	// stub 0x100036cf, hint type 0x28a0
 	void sub_102b1a20();
+	virtual void vfunc433();	// slot 433 "CAI_BaseNPCTroika::GatherConditions" (0x102b27f0)
+	void sub_1026ec30();	// CAI_BaseNPC::vfunc433 (stub 0x1000810c), called directly
+	void sub_1028efc0();	// stub 0x10011b2b, run by GatherConditions
+	void sub_1028fa50();	// stub 0x10005141, run by GatherConditions
+	void sub_102b1cd0();	// stub 0x10006bae, run by GatherConditions
 	void sub_102bf770();
 	void sub_102b7110(int a);	// finds a hint node (+0x5ddc) for the NPC, stub 0x1000bfaa
 	int sub_102b7370();	// schedule pick that looks for a hint node / enemy to approach (called by slots 604 / 605)
