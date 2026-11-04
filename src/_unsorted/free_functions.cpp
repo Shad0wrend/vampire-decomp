@@ -51954,6 +51954,23 @@ int sub_10101450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10101910 size=0x12
+struct CFlagHolder19C
+{
+	char m_pad0000[0x19c];
+	unsigned char m_f19c;
+};
+
+// TARGET: sub_10101910
+unsigned int __fastcall sub_10101910(CFlagHolder19C *self)
+{
+	signed char c = ~self->m_f19c;
+	int v;
+	do { v = c; } while (0);
+	return ((unsigned int)((signed char)v & 0x40)) >> 6;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10101940 size=0x11
 #include "vampire.h"
 
