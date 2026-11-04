@@ -98975,6 +98975,49 @@ void CUnknown101dbc60Tail::sub_101db8e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101db960 size=0x25
+namespace block_101db960 {
+struct CUnitA { int m_0, m_4, m_8, m_c; void *sub_101da880(); };
+void *CUnitA::sub_101da880()
+{
+	m_0 = 0;
+	m_4 = -1;
+	m_8 = -1;
+	m_c = 100;
+	return this;
+}
+struct CUnitB { int m_0, m_4, m_8; CUnitB *sub_101db5f0(); };
+CUnitB *CUnitB::sub_101db5f0()
+{
+	m_8 = 0;
+	m_0 = 0;
+	m_4 = 0;
+	return this;
+}
+}
+using namespace block_101db960;
+
+struct CUnk101db960 {
+	int m_0, m_4, m_8, m_c, m_10;
+	CUnitA m_a;
+	CUnitB m_b;
+	CUnk101db960 *sub_101db960();
+};
+
+// TARGET: CUnk101db960::sub_101db960
+CUnk101db960 *CUnk101db960::sub_101db960()
+{
+	m_a.sub_101da880();
+	m_b.sub_101db5f0();
+	m_0 = 0;
+	m_4 = 0;
+	m_8 = 0;
+	m_c = 0;
+	m_10 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101db9a0 size=0x8
 void __fastcall sub_100107d5(char *p);
 void __fastcall sub_101db9a0(char *p) { sub_100107d5(p + 0x24); }

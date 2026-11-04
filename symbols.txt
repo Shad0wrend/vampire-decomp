@@ -3236,6 +3236,7 @@
 0x10005e02 func   ?sub_10107aa0@CFilterMultiple@@QAE_NPAVCBaseEntity@@@Z CFilterMultiple::sub_10107aa0
 0x10005e11 func   ?IsLeftChild@?$CUtlRBTree@UCRBTree12Entry_1024c1d0@@G@@QBE_NG@Z CUtlRBTree<CRBTree12Entry_1024c1d0,unsigned short>::IsLeftChild
 0x10005e11 func   ?sub_1024c0e0@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_1024c0e0
+0x10005e16 func   ?sub_101db960@CUnk101db960@@QAEPAU1@XZ CUnk101db960::sub_101db960
 0x10005e1b func   ?sub_103419c0@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_103419c0
 0x10005e20 func   ?vfunc440@CNPC_VHuman@@QAEHH@Z CNPC_VHuman::vfunc440
 0x10005e39 func   ?sub_1035bee0@S@@QAEXH@Z S::sub_1035bee0
