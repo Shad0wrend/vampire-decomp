@@ -152512,6 +152512,84 @@ void CAI_MoveProbe::sub_102e5d80(const float *vecStart, const float *vecEnd, uns
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e6d70 size=0x238
+#include "CAI_MoveProbe.h"
+#include "CBaseEntity.h"
+#include "Vector.h"
+// TARGET: CAI_MoveProbe::sub_102e6d70
+
+#include "CVProfile.h"
+
+extern Vector g_1070d1b0;
+
+struct CMoveProbeUnk10933e8c
+{
+	virtual void vf0();
+	virtual char vf1();
+	char m_pad[0x28];
+	int m_2c;
+};
+
+struct AIMoveTraceLocal : AIMoveTrace_t
+{
+	~AIMoveTraceLocal() {}
+};
+
+extern CMoveProbeUnk10933e8c *g_10933e8c;
+
+bool CAI_MoveProbe::sub_102e6d70(int navType, const float *vecStart, const float *vecEnd, unsigned int collisionMask, const CBaseEntity *pTarget, float pctToCheckStandPositions, unsigned char flags, AIMoveTrace_t *pTrace, int a9, int a10)
+{
+	static AIMoveTraceLocal s_Trace;
+
+	m_pad08 = *(int *)((char *)m_pOuter + 0x156c);
+	m_nUnk0c = gpGlobals->framecount;
+
+	AIMoveTrace_t *pTraceLocal = pTrace;
+	if (!pTraceLocal)
+		pTraceLocal = &s_Trace;
+
+	pTraceLocal->m_fields.f24 = 0.0f;
+	pTraceLocal->m_fields.nHit = 0;
+	*(Vector *)&pTraceLocal->m_fields.n0 = g_1070d1b0;
+	pTraceLocal->fStatus = 0;
+	*(Vector *)&pTraceLocal->m_fields.e0 = *(const Vector *)vecStart;
+
+	switch (navType)
+	{
+	case 0:
+		{
+			int nFlags = 0;
+			if (flags & 1)
+				nFlags = 4;
+			if (flags & 2)
+				nFlags |= 8;
+			if (!g_10933e8c->vf1() && g_10933e8c->m_2c != 0 && (*(unsigned int *)((char *)m_pOuter + 0x224) & 0x1000))
+				nFlags |= 8;
+			sub_102e5d80(vecStart, vecEnd, collisionMask, pTarget, nFlags, pctToCheckStandPositions, pTraceLocal, a9, a10);
+		}
+		break;
+	case 2:
+		sub_102e6090(vecStart, vecEnd, collisionMask, pTarget, pTraceLocal, a9);
+		break;
+	case 1:
+		sub_102e6290(vecStart, vecEnd, collisionMask, pTarget, pTraceLocal, a9);
+		break;
+	case 3:
+		sub_102e6be0(vecStart, vecEnd, pTarget, pTraceLocal, a9);
+		break;
+	default:
+		pTraceLocal->fStatus = -4;
+		if (navType == 0)
+			pTraceLocal->m_fields.f24 = (*(const Vector *)vecEnd - *(const Vector *)vecStart).Length2D();
+		else
+			pTraceLocal->m_fields.f24 = (*(const Vector *)vecEnd - *(const Vector *)vecStart).Length();
+		break;
+	}
+
+	return pTraceLocal->fStatus >= 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e7ba0 size=0x1dd
 #include "CAI_MoveProbe.h"
 #include "CVProfile.h"

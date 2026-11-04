@@ -11831,6 +11831,7 @@
 0x10012b34 func   ?sub_101d2fc0@@YADPAUCEntQ@@0@Z sub_101d2fc0
 0x10012b39 func   ??0CTEBubbles@@QAE@PBD@Z CTEBubbles::CTEBubbles
 0x10012b39 func   ?sub_1005f5c0@CTEBubbles@@QAEPAV1@PBD@Z CTEBubbles::sub_1005f5c0
+0x10012b43 func   ?sub_102e6d70@CAI_MoveProbe@@QAE_NHPBM0IPBVCBaseEntity@@MEPAUAIMoveTrace_t@@HH@Z CAI_MoveProbe::sub_102e6d70
 0x10012b48 func   ?sub_1014f750@@YG_NHHH@Z sub_1014f750
 0x10012b4d func   ?vfunc5@CBaseDoor@@QAEPAV1@E@Z CBaseDoor::vfunc5
 0x10012b52 func   ?sub_1003bdd0@@YAX_N@Z sub_1003bdd0
