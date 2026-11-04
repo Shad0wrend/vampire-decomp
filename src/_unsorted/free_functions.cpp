@@ -132544,6 +132544,25 @@ void SList::sub_10249220()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10249340 size=0x3c
+#include "CPositionInterpolator_Rope.h"
+
+void CRopeSimBase::sub_10249340(int nNodes)
+{
+	int i = 0;
+	m_nNodes = nNodes;
+	if (--nNodes > 0)
+	{
+		do
+		{
+			m_pSprings[i * 2] = &m_pNodes[i];
+			m_pSprings[i * 2 + 1] = &m_pNodes[i + 1];
+			i++;
+		} while (i < m_nNodes - 1);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10249390 size=0xe
 namespace lifted {
 struct C10013403 { int sub_10013403(int); };

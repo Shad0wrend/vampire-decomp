@@ -11065,6 +11065,7 @@
 0x1001164e func   ?sub_1032e9f0@CBaseCombatCharacter@@QAEXHPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_1032e9f0
 0x10011653 func   ?sub_10222210@CExperienceTable@@QAEXXZ CExperienceTable::sub_10222210
 0x10011658 func   ?sub_10293e80@CTroikaVFunc527@@QAE_NPAX@Z CTroikaVFunc527::sub_10293e80
+0x1001165d func   ?sub_10249340@CRopeSimBase@@QAEXH@Z CRopeSimBase::sub_10249340
 0x10011662 func   ?sub_1012f890@@YA_NHPAPBD@Z sub_1012f890
 0x10011667 func   ?sub_102695d0@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_102695d0
 0x1001166c func   ?sub_102349e0@@YAHXZ sub_102349e0
