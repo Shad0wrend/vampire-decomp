@@ -200744,6 +200744,24 @@ bool sub_104114d0(CBaseEntity *pEntity, void *pOther) {
 }
 // END FUNCTION
 
+// FUNCTION: 0x10411510 size=0x40
+#include "CBaseCombatWeapon.h"
+#include "CWeaponPhysCannon.h"
+#include "CUnknown1040cce0.h"
+
+// TARGET: sub_10411510
+float sub_10411510(CBaseCombatWeapon *pWeapon, void *pArg)
+{
+	float flRet;
+	*(int *)&flRet = 0;
+	CWeaponPhysCannon *pCannon = dynamic_cast<CWeaponPhysCannon *>(pWeapon);
+	if (pCannon) {
+		return ((CUnknown1040cce0 *)((char *)pCannon + 0x96c))->sub_1040cce0(pArg);
+	}
+	return flRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104115b0 size=0x21
 int sub_104115f0(int a, float b);
 
