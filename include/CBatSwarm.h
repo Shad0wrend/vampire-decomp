@@ -7,6 +7,19 @@
 struct Ray_t;
 struct CGameTrace;
 
+struct CBatSwarmPathNode	// one of the ten path nodes at +0x744 (0x28 bytes each)
+{
+	Vector m_vecPos;	// 0x00
+	float m_flRadius;	// 0x0c: the bat has reached the node when it is closer than this
+	float m_flStrength;	// 0x10: how hard the node pulls the bat
+	char m_bFlag14;	// 0x14: when clear the node's own limits (0x18..0x24) are used instead of the defaults
+	char m_pad15[3];
+	float m_f18;	// 0x18: lower distance limit
+	float m_f1c;	// 0x1c: upper distance limit
+	float m_f20;	// 0x20: lower height limit
+	float m_f24;	// 0x24: upper height limit
+};
+
 class CBatSwarm : public CBaseAnimating
 {
 public:
