@@ -98584,6 +98584,29 @@ char CUnknown101d9840::sub_101d9840(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d9870 size=0x2c
+#include "CUnknown101d9840.h"
+
+namespace block_101d9870 {
+	struct CUnit101d9840 : CUnknown101d9840 {
+		char sub_101d9840(int index);
+	};
+	char CUnit101d9840::sub_101d9840(int index)
+	{
+		return index >= 0 && index < m_count;
+	}
+}
+using namespace block_101d9870;
+
+// TARGET: CUnknown101d9840::sub_101d9870
+char *CUnknown101d9840::sub_101d9870(int index)
+{
+	if (((CUnit101d9840 *)this)->sub_101d9840(index))
+		return (char *)m_pItems + index * 0x19c;
+	return g_107391c0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d9bd0 size=0x93
 #include "SendTable.h"
 
