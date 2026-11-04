@@ -2033,6 +2033,94 @@ void CAI_BaseNPCTroika::vfunc322(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a0940 size=0x1c7
+// TARGET: ?vfunc435@CAI_BaseNPCTroika@@UAEXPAX@Z
+#include "CAI_BaseNPCTroika.h"
+#include "CEntityVSlots.h"
+#include "CGlobalEntityList.h"
+#include "CUnknown1027d990.h"
+#include "CUnknown102ee270.h"
+#include "CUnknown102e0a60.h"
+#include "CUnknown101e3af0.h"
+
+extern CGlobalEntityList *g_10566458;
+extern unsigned char g_10739a64;
+extern CUnknown101e3af0 g_10739a4c;
+void sub_1018e910(void *pThis);
+
+struct CUnk1026d160X
+{
+	void sub_1026d160();
+};
+
+struct CSetAttackExtentsSlot
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(const float *pExtents);
+};
+
+void CAI_BaseNPCTroika::vfunc435(void *pSchedule)
+{
+	CAI_BaseNPC::vfunc435(pSchedule);
+	m_flags14bc |= 0x80000004;
+
+	if ((~m_flags14b8 & 8) != 0) {
+		if (((CUnknown1027d990 *)this)->sub_1027d990() != 3
+			&& ((CUnknown1027d990 *)this)->sub_1027d990() != 1)
+			((CUnknown102ee270 *)m_p5d34)->sub_102ee270();
+
+		sub_102b53d0(1, "Leaving interesting place (OnScheduleChange)");
+		m_n6300 = 0;
+		m_n659c = 0;
+		((CUnknown102e0a60 *)m_pMotor5d44)->sub_102e0a60(0x43340000);
+		m_b1a40 = 0;
+		m_flGoalTolerance = 0;
+		m_flInsideInterruptDistanceSqr = 0;
+		m_flOutsideInterruptDistanceSqr = 0;
+		m_flInterruptTime = 0;
+		((CBaseHandle &)m_hMoveTargetEnt) = (IHandleEntity *)0;
+
+		if (((CGlobalEntityList *)g_10566458)->sub_100290c0(&m_h5d24))
+			((CEntityVSlots *)this)->slot532(8);
+
+		m_flags14b8 &= 0xbbf4b97e;
+		m_flags14bc &= 0x77fff14f;
+		if (m_flags14bc & 0x1000) {
+			m_flags14bc &= 0x7fffefff;
+			((CUnk1026d160X *)this)->sub_1026d160();
+		}
+
+		if ((m_flags14bc & 1) == 1) {
+			float *pExtents = (float *)((char *)this + 0x65d0);
+			((CSetAttackExtentsSlot *)this)->v15(pExtents);
+			pExtents[0] = -1.0f;
+			pExtents[1] = -1.0f;
+			pExtents[2] = -1.0f;
+			m_flags14bc &= 0x7ffffffe;
+		}
+
+		*((char *)m_pMotor5d44 + 0x28) = 0;
+		m_flDesiredMoveYaw = 0;
+		m_bWaitFinishedSet = 0;
+	}
+
+	if (m_flags14bc & 0x40000000) {
+		if (g_10739a64)
+			g_10739a4c.sub_101e3c80((CBaseCombatCharacter *)this, 1);
+		sub_1018e910(this);
+		m_b63d8 = 0;
+	}
+
+	m_flags14bc &= 0x3fffffff;
+	m_flags14b8 &= 0xd7ffffff;
+	if (m_flags5d8c & 0x2000)
+		m_flags5d8c &= 0xffffdfff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ad0c0 size=0x34
 #include "CAI_BaseNPCTroika.h"
 
