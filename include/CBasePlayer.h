@@ -622,5 +622,6 @@ public:
 	int sub_10345480();	// CBaseAnimating member (transplant): handle at +0x6f0 -> sequence descriptor -> its +0x2e8 offset, -1 when none
 	char sub_10160dc0();	// CBaseAnimating member (transplant): the float at +0x6f8 lies in the sequence descriptor's +0x2f0..+0x2f4
 	char sub_101611e0(void *pEnt);	// stub 0x10008cfb: always false (xor al,al; ret 4)
+void sub_1016c9d0();
 #include "CBasePlayer_ext.h"
 };
