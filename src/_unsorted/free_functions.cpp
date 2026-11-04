@@ -90044,6 +90044,24 @@ void CAnimParams::sub_101c2910(void *pAttacker, void *pInflictor, const float *v
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2980 size=0x19
+#include "CBaseEntity.h"
+struct CUnk101c2980
+{
+	char m_pad0000[0x28];
+	CBaseEntity *m_pEntity28;
+
+	int sub_101c2980();
+};
+
+// TARGET: CUnk101c2980::sub_101c2980
+int CUnk101c2980::sub_101c2980()
+{
+	CBaseEntity *pEntity = m_pEntity28;
+	return engine->vfunc35(pEntity->m_pEdict2e0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c29e0 size=0x1d
 struct CUnknown101c29e0 {
 	char m_pad0000[0x1c];
