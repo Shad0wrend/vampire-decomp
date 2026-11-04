@@ -144634,6 +144634,28 @@ int CAI_BaseNPCTroika::sub_102c1400()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c1a80 size=0x135
+#include "vampire_all.h"
+float __fastcall sub_10075f10(void *p);
+float __fastcall sub_10075e70(void *p);
+
+void CAI_BaseNPCTroika::sub_102c1a80(void *pScene, void *pEvent)
+{
+	CSceneEvent *pEv = (CSceneEvent *)pEvent;
+	CBaseCombatCharacter::CExpressionRecord rec;
+	int nExpr = sub_10106a40((const char *)pEv->sub_10075ca0());
+	if (nExpr != -1)
+	{
+		rec.m_iExpression = nExpr;
+		rec.m_flStart = gpGlobals->curtime;
+		rec.m_flFadeTime = (sub_10075f10(pEv) + rec.m_flStart) - sub_10075e70(pEv);
+		rec.m_pScene18 = pScene;
+		rec.m_pEvent1c = pEvent;
+		((CUtlVector<CBaseCombatCharacter::CExpressionRecord> *)((char *)this + 0x10bc))->AddToTail(rec);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c2430 size=0x43
 #include "CAI_BaseNPCTroika.h"
 #include "globalvars.h"

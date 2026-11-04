@@ -2805,6 +2805,7 @@
 0x100053c1 func   ?vfunc278@CWeaponGravityGun@@UAEMXZ CWeaponGravityGun::vfunc278
 0x100053cb func   ?sub_10384150@@YADXZ sub_10384150
 0x100053d5 func   ?sub_10043230@CMem8c_t@@QAEHHHPBUE8@@@Z CMem8c_t::sub_10043230
+0x100053da func   ?sub_102c1a80@CAI_BaseNPCTroika@@QAEXPAX0@Z CAI_BaseNPCTroika::sub_102c1a80
 0x100053df func   ?sub_101f24e0@CUnknown101f24e0@@QAEHXZ CUnknown101f24e0::sub_101f24e0
 0x100053e4 func   ?sub_100ce8a0@@YGXPBD@Z sub_100ce8a0
 0x100053e9 func   ?vfunc0@CAI_Expresser@@QAEPAV1@E@Z CAI_Expresser::vfunc0
