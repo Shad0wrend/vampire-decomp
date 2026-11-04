@@ -152404,6 +152404,114 @@ float sub_102e5d00(float *v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e5d80 size=0x26e
+#include "vampire_all.h"
+// TARGET: CAI_MoveProbe::sub_102e5d80
+
+#include "CVProfile.h"
+
+extern Vector g_1070d1b0;
+extern void (__fastcall *g_109f365c)(CVProfile *);
+
+struct CCycleCountImpl
+{
+	unsigned __int64 m_Int64;
+};
+
+struct EdictView2
+{
+	char m_pad[0x40];
+	IServerUnknown *m_pUnknown;
+};
+
+CBaseEntity *sub_101cd9e0(int);
+
+void CAI_MoveProbe::sub_102e5d80(const float *vecStart, const float *vecEnd, unsigned int collisionMask, const CBaseEntity *pTarget, int flags, float pctToCheckStandPositions, AIMoveTrace_t *pTrace, int a9, int a10)
+{
+	g_109f3648->EnterScope("CAI_Motor_GroundMoveLimit", 0, "Unaccounted", false);
+
+	float v[6];
+
+	if (!sub_102e7ba0(vecStart, collisionMask, v))
+	{
+		pTrace->m_fields.f24 = ((const Vector *)vecEnd)->sub_10146190(*(const Vector *)vecStart).Length2D();
+
+		void *pEdict = engine->vfunc38(0);
+		pTrace->m_fields.nHit = (pEdict != 0 && ((EdictView2 *)pEdict)->m_pUnknown != 0)
+			? ((EdictView2 *)pEdict)->m_pUnknown->vfunc4() : 0;
+
+		pTrace->m_fields.n0 = g_1070d1b0.x;
+		pTrace->m_fields.n1 = g_1070d1b0.y;
+		pTrace->m_fields.n2 = g_1070d1b0.z;
+		pTrace->fStatus = 0xfffffffe;
+		pTrace->m_fields.e0 = vecStart[0];
+		pTrace->m_fields.e1 = vecStart[1];
+		pTrace->m_fields.e2 = vecStart[2];
+
+		g_109f365c(g_109f3648);
+		return;
+	}
+
+	sub_102e7ba0(vecEnd, collisionMask, v + 3);
+	sub_102e4f50(v, v + 3, collisionMask, pctToCheckStandPositions, flags, pTrace, a9, a10);
+
+	bool bHitPlayer;
+	bHitPlayer = false;
+	CBaseEntity *pEntity = sub_101cd9e0(1);
+	if (pEntity != 0)
+	{
+		CBasePlayer *pPlayer = (CBasePlayer *)pEntity->m_pA8;
+		if (pPlayer != 0 && pPlayer->m_b20F4 != 0)
+		{
+			CBaseEntity *pVehicleEnt = pPlayer->m_pVehicle->vfunc1();
+			if ((int)pVehicleEnt == pTrace->m_fields.nHit)
+				bHitPlayer = true;
+		}
+	}
+
+	if ((pTarget != 0 && (int)pTarget == pTrace->m_fields.nHit) || bHitPlayer)
+	{
+		pTrace->m_fields.f24 = 0.0f;
+		pTrace->m_fields.nHit = 0;
+		pTrace->m_fields.n0 = g_1070d1b0.x;
+		pTrace->m_fields.n1 = g_1070d1b0.y;
+		pTrace->m_fields.n2 = g_1070d1b0.z;
+		pTrace->fStatus = 0;
+	}
+
+	CVProfile *pProfile = g_109f3648;
+	if (!pProfile->m_bAtRoot || pProfile->m_enabled)
+	{
+		CVProfNode *pNode = pProfile->m_pCurNode;
+		if (--pNode->m_nRecursions == 0 && pNode->m_nCurFrameCalls != 0)
+		{
+			CCycleCountImpl &cur = *(CCycleCountImpl *)&pNode->m_CurFrameTime;
+			CCycleCountImpl now = { 0 };
+			CCycleCountImpl *pNow = &now;
+			__asm
+			{
+				mov ecx, pNow
+				rdtsc
+				mov dword ptr [ecx], eax
+				mov dword ptr [ecx + 4], edx
+			}
+			cur.m_Int64 = now.m_Int64 - cur.m_Int64;
+			pNode->m_TotalTime += cur.m_Int64;
+
+			CVProfile *pGroup = g_109f3648;
+			pGroup->m_nGroupStackDepth--;
+			int nPrevGroupID = pGroup->m_GroupIDStack[pGroup->m_nGroupStackDepth + 1];
+			int nGroupID = pGroup->m_GroupIDStack[pGroup->m_nGroupStackDepth];
+			if (nGroupID != nPrevGroupID && pGroup->m_bVTuneGroupsEnabled && nPrevGroupID == pGroup->m_nVTuneGroupID)
+				vtune(false);
+		}
+		if (pNode->m_nRecursions == 0)
+			pProfile->m_pCurNode = pProfile->m_pCurNode->m_pParent;
+		pProfile->m_bAtRoot = (pProfile->m_pCurNode == pProfile->m_pRoot);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e7ba0 size=0x1dd
 #include "CAI_MoveProbe.h"
 #include "CVProfile.h"

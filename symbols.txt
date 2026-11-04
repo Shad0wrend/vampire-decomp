@@ -7358,6 +7358,7 @@
 0x1000c12b func   _weapon_physcannon weapon_physcannon
 0x1000c130 func   ?sub_103418f0@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_103418f0
 0x1000c135 func   ?vfunc575@CAI_BaseNPC@@QAE_NXZ CAI_BaseNPC::vfunc575
+0x1000c13f func   ?sub_102e5d80@CAI_MoveProbe@@QAEXPBM0IPBVCBaseEntity@@HMPAUAIMoveTrace_t@@HH@Z CAI_MoveProbe::sub_102e5d80
 0x1000c144 func   ?sub_10185140@UtlMem@@QAEXXZ UtlMem::sub_10185140
 0x1000c153 func   ?sub_1026d050@SNpcView5bb0@@QAEXXZ SNpcView5bb0::sub_1026d050
 0x1000c158 func   ?sub_101321f0@CMathRemap@@QAEXAAUinputdata_t@@@Z CMathRemap::sub_101321f0
