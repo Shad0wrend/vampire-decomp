@@ -7149,6 +7149,7 @@
 0x1000ba64 func   ?sub_102f30f0@CAI_NodeGraph@@QAEPAV1@XZ CAI_NodeGraph::sub_102f30f0
 0x1000ba69 func   ?sub_102272b0@@YGXH@Z sub_102272b0
 0x1000ba6e func   ?sub_101cd250@@YAHPAVCBaseEntity@@H@Z sub_101cd250
+0x1000ba73 func   ?sub_10411480@@YAXPAVCBaseCombatWeapon@@PAVCBaseEntity@@@Z sub_10411480
 0x1000ba78 func   ?vfunc5@CWeaponMelee_TzimisceMelee@@UAEPAVCBaseCombatWeapon@@I@Z CWeaponMelee_TzimisceMelee::vfunc5
 0x1000ba7d func   ?sub_10041de0@UtlHash8@@QAEPAV1@HHHP6A_NPAX0@ZP6AI0@Z@Z UtlHash8::sub_10041de0
 0x1000ba82 func   ?sub_1002ccc0@CUtlMemory20@@QAEXH@Z CUtlMemory20::sub_1002ccc0

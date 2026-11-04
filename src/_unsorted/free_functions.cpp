@@ -199794,6 +199794,22 @@ CUnknown101bc140 *CWeaponPhysCannon::sub_104112d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10411480 size=0x35
+#include "CBaseEntity.h"
+#include "CWeaponPhysCannon.h"
+
+void sub_10411480(CBaseCombatWeapon *pWeapon, CBaseEntity *pEnt)
+{
+	CWeaponPhysCannon *pCannon = dynamic_cast<CWeaponPhysCannon *>(pWeapon);
+	if (pCannon) {
+		if (pEnt)
+			pCannon->sub_1040dbd0(pEnt);
+		else
+			pCannon->sub_1040dbb0();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x104114d0 size=0x2f
 // TARGET: sub_104114d0
 #include "CPlayerPickupController.h"
