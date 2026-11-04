@@ -395,7 +395,8 @@ public:
 	float m_f1DA8;	// 0x1DA8: when the next random view punch is due
 	int m_n1DAC;	// 0x1DAC: sent with the quest journal message
 	EHANDLE m_hControllerNPC1db0;	// 0x1DB0: the NPC the player controls (GetControllerNPC)
-	char m_pad1db4[0x1dbc - 0x1db4];
+	int m_nSpeedScaleState1DB4;	// 0x1DB4: 1..7 = the max speed comes from the convar at 0x109ef1b4 instead of the speed tables (CHL2_Player::vfunc436)
+	char m_pad1db8[0x1dbc - 0x1db8];
 	float m_flMasqueradeTimerNext;	// 0x1dbc
 	bool m_bDebugSaved;	// 0x1dc0
 	char m_pad1dc1[0x1dc8 - 0x1dc1];
