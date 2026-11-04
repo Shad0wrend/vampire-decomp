@@ -3016,6 +3016,7 @@
 0x10005902 func   ?sub_102c33a0@S@@QAEXPAUinputdata_t@@@Z S::sub_102c33a0
 0x1000590c func   ?sub_100bea10@bf_read@@QAEXAAVVector@@@Z bf_read::sub_100bea10
 0x10005916 func   ?sub_101c2a10@CUnknown101c2a10@@QAEXH@Z CUnknown101c2a10::sub_101c2a10
+0x1000591b func   ?sub_1028ebc0@CUnknown1028ebc0@@QAE_NPAX@Z CUnknown1028ebc0::sub_1028ebc0
 0x10005925 func   ?vfunc117@CPropModelState@@UAEHXZ CPropModelState::vfunc117
 0x10005934 func   ?vfunc124@CFuncMoveLinear@@UAEHXZ CFuncMoveLinear::vfunc124
 0x10005939 func   ?sub_100ae320@@YAXXZ sub_100ae320

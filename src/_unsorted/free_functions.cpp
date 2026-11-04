@@ -140023,6 +140023,85 @@ void Holder::sub_1028eb30(int a, Vec3* v, HandleObj* h, char c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028ebc0 size=0x2a2
+#include "CTraceFilterNoCharacterCollide.h"
+#include "Vector.h"
+#include "CEntityVSlots.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "CTraceFilterFVisible.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738964.h"
+#include "DebugOverlay.h"
+
+void __cdecl sub_10143d80(const Vector &pos, float flSize, int r, int g, int b, int a, float flWidth);
+void __cdecl sub_10146570(const Vector *pStart, const Vector *pEnd, int r, int g, int b, int a, float flWidth);
+
+class CUnknown109241ac
+{
+public:
+	virtual void vfunc0();
+	virtual bool vfunc1();
+	char m_pad0004[0x28];
+	int m_n2c;
+};
+
+extern CUnknown109241ac *g_109241ac;
+
+struct CUnknown1028ebc0
+{
+	char sub_103268e0(const Vector *pVec, int a);
+	bool sub_1028ebc0(void *pRecord);
+
+	char m_pad0000[0x1574];
+	int m_n1574;
+	char m_pad1578[0x63b8 - 0x1578];
+	float m_f63b8;
+};
+
+bool CUnknown1028ebc0::sub_1028ebc0(void *pRecord)
+{
+	Vector vecRec = *(Vector *)( (char *)pRecord + 8 );
+	Vector vecEye;
+	( (CEntityVSlots *)this )->slot193( &vecEye );
+
+	if ( sub_103268e0( &vecRec, m_n1574 ) )
+	{
+		float dx = vecEye.x - vecRec.x;
+		float dy = vecEye.y - vecRec.y;
+		float dz = vecEye.z - vecRec.z;
+		float fDistSq = dx * dx + dy * dy + dz * dz;
+		if ( fDistSq <= m_f63b8 * m_f63b8 )
+		{
+			CTraceFilterFVisible filter( this, 0 );
+			Ray_t ray;
+			ray.Init( vecEye, vecRec );
+			CGameTrace trace;
+			g_1070b254->vfunc4( &ray, 0x2804091, (CTraceFilterNoCharacterCollide *)&filter, &trace );
+
+			if ( !g_10738964->vfunc1() && g_10738964->m_n2c )
+				sub_10146570( (const Vector *)&trace, (const Vector *)trace.m_endpos, 0xff, 0, 0, 1, -1.0f );
+
+			if ( !g_109241ac->vfunc1() && g_109241ac->m_n2c )
+			{
+				sub_10142e90( &vecEye, (const Vector *)trace.m_endpos, 0x40, 0xff, 0x40, 1, 0.2f );
+				if ( trace.m_fraction == 1.0 )
+					sub_10143d80( *(const Vector *)trace.m_endpos, 5.0f, 0x40, 0xff, 0x40, 1, 0.2f );
+				else
+				{
+					sub_10143d80( *(const Vector *)trace.m_endpos, 5.0f, 0xff, 0x40, 0x40, 1, 0.2f );
+					sub_10142e90( (const Vector *)trace.m_endpos, &vecRec, 0xff, 0x40, 0x40, 1, 0.2f );
+				}
+			}
+
+			if ( trace.m_fraction == 1.0 )
+				return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028fb70 size=0xd1
 #include "CUnknown1028fb70.h"
 
