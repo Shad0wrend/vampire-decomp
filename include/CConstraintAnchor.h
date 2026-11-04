@@ -15,7 +15,7 @@ public:
 	virtual void vfunc2();
 	virtual void vfunc3();
 	virtual void vfunc4();
-	virtual CConstraintAnchor *vfunc5(unsigned int flags);
+	virtual void s5();
 	virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9();
 	virtual void s10(); virtual void s11(); virtual void s12(); virtual void s13(); virtual void s14();
 	virtual void s15(); virtual void s16(); virtual void s17(); virtual void s18(); virtual void s19();
