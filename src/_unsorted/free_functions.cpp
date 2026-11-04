@@ -52751,6 +52751,17 @@ void CMessage::sub_10102030(inputdata_t *inputdata)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10102320 size=0x66
+#include "CEnvMicrophone.h"
+
+extern "C" CBaseEntity *env_microphone()
+{
+	CEnvMicrophone *p = new CEnvMicrophone;
+	p->vfunc106("env_microphone");
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10102410 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
