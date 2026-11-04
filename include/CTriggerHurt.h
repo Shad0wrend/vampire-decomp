@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members.
 #pragma once
 #include "CBaseTrigger.h"
+#include "utlvector.h"
+#include "ehandle.h"
 
 class CTriggerHurt : public CBaseTrigger
 {
@@ -30,11 +32,7 @@ public:
 	int m_i5c0;
 	COutputEvent m_out5c4;
 	COutputEvent m_out5dc;
-	int m_i5f4;
-	int m_i5f8;
-	int m_i5fc;
-	int m_i600;
-	int m_i604;
+	CUtlVector<EHANDLE> m_hurtEntities;	// 0x5f4: the entities hurt since the last damage time (size at +0x600)
 public:
     virtual datamap_t * vfunc82();
 };

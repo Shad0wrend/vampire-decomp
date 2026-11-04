@@ -92277,7 +92277,7 @@ int CTriggerHurt::sub_101c6550(float flDamage)
 	flDamage *= m_flDamage;
 	m_flLastDmgTime = gpGlobals->curtime;
 	int nHurt = 0;
-	m_i600 = 0;
+	m_hurtEntities.m_Size = 0;
 	CTouchNode *pRoot = (CTouchNode *)sub_1003cd50(1);
 	if (pRoot) {
 		for (CTouchNode *pLink = pRoot->m_pNext; pLink != pRoot; pLink = pLink->m_pNext) {

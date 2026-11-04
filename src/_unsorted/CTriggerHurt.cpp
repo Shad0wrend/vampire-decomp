@@ -44,7 +44,7 @@ struct CTriggerHurtVec	// the CUtlVector<int> of the damaged entities at +0x5f4,
 
 CTriggerHurt *CTriggerHurt::vfunc5(unsigned int flags)
 {
-	((CTriggerHurtVec *)&m_i5f4)->Destruct();
+	((CTriggerHurtVec *)&m_hurtEntities)->Destruct();
 	m_out5dc.sub_100cd2d0();
 	m_out5c4.sub_100cd2d0();
 	m_out580.sub_100cd2d0();
@@ -97,7 +97,7 @@ void CTriggerHurt::vfunc176(CBaseEntity *pOther)
 	if (sub_101c5460(pOther)) {
 		EHANDLE hOther;
 		hOther = pOther;
-		CUtlVector<EHANDLE> *pList = (CUtlVector<EHANDLE> *)&m_i5f4;
+		CUtlVector<EHANDLE> *pList = (CUtlVector<EHANDLE> *)&m_hurtEntities;
 		if (pList->Find(hOther) < 0)
 			sub_101c5f40(pOther, (float)(m_flDamage * g_10449270));
 	}
