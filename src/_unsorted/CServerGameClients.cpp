@@ -88,6 +88,113 @@ void __stdcall sub_1011c4d0(CServerClientsView *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011c8c0 size=0x29a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CServerGameClients.h"
+#include "CUserCmd.h"
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+#include "engineserver.h"
+#include "Tier1.h"
+
+extern float g_104454c4;
+CBaseEntity *sub_100ab250(void *pEdict);
+void sub_1011ccc0(void *pBuf, CUserCmd *pTo, CUserCmd *pFrom);
+
+struct CUnknown1002c920 { void sub_1002c920(int a, int b, int c); };
+
+#define PV(n) virtual void s##n();
+#define PV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
+#define PV100(p) PV10(p##0) PV10(p##1) PV10(p##2) PV10(p##3) PV10(p##4) PV10(p##5) PV10(p##6) PV10(p##7) PV10(p##8) PV10(p##9)
+struct CPlayerSlots461
+{
+	PV100(0) PV100(1) PV100(2) PV100(3)
+	PV10(40) PV10(41) PV10(42) PV10(43) PV10(44) PV10(45)
+	PV(460)
+	virtual void slot461(void *pCmds, int numcmds, int totalcmds, int dropped, int paused);
+};
+
+struct CUnk1013ecd0
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void vfunc15(void *pPlayer);
+};
+CUnk1013ecd0 *sub_1013ecd0();
+
+struct CmdReset
+{
+	int m_vptr;
+	int i10; float f14; int i18; float f1c, f20, f24, f28, f2c, f30, f34;
+	unsigned char b38; unsigned char pad39[3];
+	int i3c; int i40;
+	unsigned char b44; unsigned char pad45[3];
+	int i48; int i4c;
+	unsigned char b50, b51, b52, b53;
+	int i54; int i58;
+};
+
+#define RESET ((CmdReset *)&cmdNull)
+
+inline CBaseEntity *Instance8(void *pent)
+{
+	ScopeTrace trace("CBaseEntity::Instance", g_106b8540, g_106b8540);
+	if (!pent)
+		pent = engine->vfunc38(0);
+	return sub_100ab250(pent);
+}
+
+float CServerGameClients::vfunc8(CServerGameClients_Edict *pEdict, void *pBuf, int numcmds, int totalcmds, int dropped, char bIgnore, int paused)
+{
+	CUserCmd cmds[30];
+	CUserCmd cmdNull;
+	CBaseEntity *pPlayer = 0;
+	CBaseEntity *pEnt = Instance8(pEdict);
+	if (pEnt && *(int *)((char *)pEnt + 0xa8))
+		pPlayer = pEnt;
+	if (totalcmds >= 0 && totalcmds < 29) {
+		RESET->i10 = 0; RESET->f14 = 0; RESET->i18 = 0; RESET->f1c = 0; RESET->f20 = 0; RESET->f24 = 0;
+		RESET->f28 = 0; RESET->f2c = 0; RESET->f30 = 0; RESET->f34 = 0;
+		RESET->b38 = 0;
+		RESET->i3c = 0; RESET->i40 = 0;
+		RESET->b44 = 0;
+		RESET->i48 = 0; RESET->i4c = 0;
+		RESET->b50 = 1; RESET->b51 = 1; RESET->b52 = 0; RESET->b53 = 0;
+		RESET->i54 = 0; RESET->i58 = 0;
+		((CUnknown1002c920 *)&cmdNull.m_vec50)->sub_1002c920(0, 0, 0);
+		cmdNull.m_b5c = 0;
+		CUserCmd *pFrom = &cmdNull;
+		for (int i = totalcmds - 1; i >= 0; i--) {
+			CUserCmd *pTo = &cmds[i];
+			sub_1011ccc0(pBuf, pTo, pFrom);
+			pFrom = pTo;
+		}
+		if (!bIgnore && pPlayer) {
+			sub_1013ecd0()->vfunc15(pPlayer);
+			((CPlayerSlots461 *)pPlayer)->slot461(cmds, numcmds, totalcmds, dropped, paused);
+			return cmds[0].frametime;
+		}
+		return 0.0f;
+	}
+	const char *pName = "unknown";
+	if (pPlayer) {
+		const char *s = *(const char **)((char *)pPlayer + 0x2078);
+		pName = s ? s : g_106b8540;
+	}
+	g_109f3628("CBasePlayer::ProcessUsercmds: too many cmds %i sent for player %s\n", totalcmds, pName);
+	*((char *)pBuf + 0x10) = 1;
+	return 0.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011d3e0 size=0x42
 #include "CServerGameClients.h"
 #include "CGlobalEntityList.h"
