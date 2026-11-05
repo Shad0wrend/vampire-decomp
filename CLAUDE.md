@@ -187,6 +187,33 @@ CPhysicsSpring::Spawn; Sonnet workers with this header then also matched 0x10112
 (experiment 2026-10-21-x87-vector: marked x87 functions 6/18 -> 14/18). Not solved yet: a 2D normalise whose squares the game sums x first (0x102ed820: VC6 gives y
 first for every form tried) and the VMatrix / VPlane layer (0x1024cdb0, 0x101382f0).
 
+## VC6 order walls: a reload after a store means the source read through a pointer or a reference
+
+VC6 moves a load above a store when it can see both use the same base with different offsets. When the game stores and
+only then loads (or loads the same memory twice), the original source read that value through another pointer or a
+reference, so VC6 had to assume the store might change it. Write it that way; reordering statements does not help.
+Verified with the judge on 2026-11-06:
+
+- **`x ? x : ""` through a reference (Source's STRING).** For `m_pszName ? m_pszName : g_106b8540` write a local
+  `inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }` and call `STRINGR(pv->m_pszName)`.
+  It gives the game's store-before-load order (0x1011c060 CServerGameClients::vfunc3: `mov [esi+0x2310], 0` before
+  the name load, score 2 -> 0) and the game's second, unmerged null test (0x100aeda0's classname path; that function
+  is still open for another reason). Eleven matched sources already
+  use it under other names (STRING, S_STRING, SafeString...): define it in your source, there is no shared one.
+- **A 64-bit add whose high half is loaded after the low half is stored** reads the addend through a pointer. The
+  VPROF exit (CVProfile.h's ExitScopeInlined) written out by hand: `CUnknownCycle100335e0 *pc = &n->m_CurFrameTime;
+  sub_100335e0(pc); n->m_TotalTime += pc->m_Int64;` (0x10037e90 PerformRotatePush, score 4 -> 0; the member form
+  `n->m_CurFrameTime.m_Int64` loads both halves first).
+- **Angles are QAngle, not Vector.** include/QAngle.h has the SDK's QAngle operators, which work per component;
+  Vector's go through VectorAdd/VectorMultiply. In x87 code that changes which value stays on the FPU stack:
+  `QAngle angles = *(QAngle *)((CEntityVSlots *)pRoot)->slot221(); angles += *(QAngle *)pRoot->m_angVel3c8 *
+  flRotation;` (the SDK's `angles += GetLocalAngularVelocity() * movetime`) gives `fld angles.x; fadd st(2)`, Vector
+  gives `fxch st(1); fadd` (0x10037c10 RotateRootEntity, score 8 -> 0). The Vector rule above holds here too: use
+  QAngle.h, never a local angle struct with operators of your own.
+- **Not a source question (stop after one try):** an independent `inc reg` that VC6 schedules into an x87
+  `fld ... fstp` gap while the game has it just before the next call. Five positions of `text_offset++` (statement,
+  `+= 1`, int/long, comma in an argument, comma in the callee) all gave the same code (0x1034ea80 CFogController).
+
 ## Source recipient filters (CRecipientFilter and friends): write the Source code, never the teardown
 
 Recognise it by `call 0x100035d5` (the CRecipientFilter constructor, 0x1019ce00) on a 0x2c-byte stack object, then
