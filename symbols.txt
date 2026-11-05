@@ -327,6 +327,7 @@
 0x10001799 func   ?sub_100c81b0@CUnknown100c81b0@@QAEXPBUCBitVecWords@@HPBUCBoneRecord@@PBUCStudioBoneCount@@@Z CUnknown100c81b0::sub_100c81b0
 0x1000179e func   ?vfunc5@CTETParticle@@UAEXXZ CTETParticle::vfunc5
 0x100017a3 func   ?sub_102ad2d0@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::sub_102ad2d0
+0x100017a8 func   ?sub_101ebd30@CUnknown101ebd30@@QAE_NPAX@Z CUnknown101ebd30::sub_101ebd30
 0x100017ad func   ?sub_102035c0@@YAPBDH@Z sub_102035c0
 0x100017b2 func   ?sub_10179680@@YAXPAXHPAM@Z sub_10179680
 0x100017b7 func   ?sub_10112420@CUnknown10112420@@QAEMHH@Z CUnknown10112420::sub_10112420
