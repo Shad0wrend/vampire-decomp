@@ -12,4 +12,5 @@ struct CSound
 	int m_iNext;	// 0x18: the index of the next sound of the list (-1 at the end)
 	char m_pad001c[0x20 - 0x1c];
 	Vector m_vecOrigin;	// 0x20: where the sound was made
+	void sub_101b9a50(int a);
 };
