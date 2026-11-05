@@ -6430,6 +6430,7 @@
 0x1000a605 func   ?sub_10037e90@CPhysicsPushedEntities@@QAEPAVCBaseEntity@@PAV2@M@Z CPhysicsPushedEntities::sub_10037e90
 0x1000a60a func   ?sub_10057680@CUnknown10057680@@QAEXXZ CUnknown10057680::sub_10057680
 0x1000a60f func   ?vfunc362@CWeaponIArmor@@UAEPAUCWeaponActivityRecord@@XZ CWeaponIArmor::vfunc362
+0x1000a614 func   ?vfunc103@CAmbientGeneric@@QAEXXZ CAmbientGeneric::vfunc103
 0x1000a619 func   ?vfunc365@CBaseCombatWeapon@@UAEHHMM@Z CBaseCombatWeapon::vfunc365
 0x1000a61e func   ?vfunc5@CWeaponMelee_BushHook@@QAEPAV1@I@Z CWeaponMelee_BushHook::vfunc5
 0x1000a623 func   ?vfunc103@CBaseVampireSkillEntity@@QAEXXZ CBaseVampireSkillEntity::vfunc103

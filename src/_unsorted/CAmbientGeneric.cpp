@@ -50,6 +50,73 @@ CAmbientGeneric *CAmbientGeneric::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ac310 size=0x1df
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include <string.h>
+#include "CAmbientGeneric.h"
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+extern "C" __declspec(dllimport) void __cdecl Warning(const char *fmt, ...);
+int sub_101ac570(float flVolume, char bFlag);
+void sub_1000969c();
+void sub_100131e2();
+void sub_101cd940(CBaseEntity *pEnt);
+
+inline const char *STRING(const char *pszString)
+{
+	if (pszString)
+		return pszString;
+	return g_106b8540;
+}
+
+// TARGET: CAmbientGeneric::vfunc103
+void CAmbientGeneric::vfunc103()
+{
+	m_n0454 = sub_101ac570(m_flVolume0450, (char)sub_101ac2f0());
+	const char *pszSound = STRING(m_pszSoundFile);
+	if (m_pszSoundFile && strlen(pszSound) >= 1) {
+		{
+			ScopeTrace trace("CBaseEntity::SetSolid", m_name26c ? m_name26c : g_106b8540);
+			((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(0);
+		}
+		((CEntityVSlots *)this)->slot93(0, 0);
+		((CBaseEntity *)this)->sub_100ac4e0((int)sub_1000969c, 0, 0);
+		m_flNextThink = 0;
+		m_pfnUse1f0 = (int)sub_100131e2;
+		m_b04bc = 0;
+		if (!m_b04df && (m_spawnflags & 0x20))
+			m_b04bd = 0;
+		else
+			m_b04bd = 1;
+		if (m_b04dc)
+			m_n04e0 |= 0x800;
+		if (m_b04dd)
+			m_n04e0 |= 0x1000;
+		if (m_b04de)
+			m_n04e0 |= 0x200;
+		if (m_b04df)
+			m_n04e0 |= 0x100;
+		CEntityVSlots *pThis = (CEntityVSlots *)this;
+		unsigned int *pHandle = (unsigned int *)&m_hSoundEnt;
+		*pHandle = 0xffffffff;
+		pThis->slot104();
+		return;
+	}
+	Warning("EMPTY AMBIENT AT: %f, %f, %f\n", ((CEntityVSlots *)this)->slot217()->x, ((CEntityVSlots *)this)->slot217()->y, ((CEntityVSlots *)this)->slot217()->z);
+	sub_101cd940((CBaseEntity *)this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ac5e0 size=0x6a
 #include "CBaseEntity.h"
 #include "CAmbientGeneric.h"
