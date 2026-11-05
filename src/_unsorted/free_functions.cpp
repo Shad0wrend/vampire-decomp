@@ -4467,6 +4467,65 @@ void CPhysicsPushedEntities::sub_100379e0(CBaseEntity *pParent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10037e90 size=0x248
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CPhysicsPushedEntities.h"
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+#include "CVProfile.h"
+
+#define V4(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3();
+#define V16(a) V4(a##a) V4(a##b) V4(a##c) V4(a##d)
+#define V64(a) V16(a##a) V16(a##b) V16(a##c) V16(a##d)
+struct E221 {
+    V64(p) V64(q) V64(r) V16(u) V4(x) V4(y) V4(z)
+    virtual void f0();
+    virtual const float *f(); 
+};
+
+CBaseEntity *CPhysicsPushedEntities::sub_10037e90(CBaseEntity *pRoot, float flRotation)
+{
+    ScopeTrace trace("CPhysicsPushedEntities::PerformRotatePush", g_106b8540, g_106b8540);
+    g_109f3648->EnterScope("CPhysicsPushedEntities::PerformRotatePush", 0, "Unaccounted", false);
+    m_rgPusher.m_Size = 0;
+    sub_1000497b(pRoot);
+    Vector vecStart;
+    vecStart = *(const Vector *)((E221 *)pRoot)->f();
+    float origin[30];
+    sub_10037c10(pRoot, flRotation, origin);
+    sub_10036fb0();
+    if (!sub_10036900(origin, (const float *)pRoot)) {
+        CBaseEntity *pBlocked = sub_10036e50();
+        pRoot->vfunc64(&vecStart.x);
+        sub_10036ef0();
+        g_109f3648->ExitScopeInlined();
+        return pBlocked;
+    }
+    sub_10036d40(1, (int)origin);
+    CVProfile *p = g_109f3648;
+    if (!p->m_bAtRoot || p->m_enabled) {
+        CVProfNode *n = p->m_pCurNode;
+        if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0) {
+            CUnknownCycle100335e0 *pc = &n->m_CurFrameTime;
+            sub_100335e0(pc);
+            n->m_TotalTime += pc->m_Int64;
+            g_109f3648->PopGroup();
+        }
+        if (n->m_nRecursions == 0)
+            p->m_pCurNode = p->m_pCurNode->m_pParent;
+        p->m_bAtRoot = (p->m_pCurNode == p->m_pRoot);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10038180 size=0x1f9
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
