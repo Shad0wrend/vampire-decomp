@@ -1532,6 +1532,7 @@
 0x100033b9 func   ?vfunc4@CPyObjStrSaveRestoreDataOps@@UAE_NHH@Z CPyObjStrSaveRestoreDataOps::vfunc4
 0x100033be func   ?vfunc259@CCameraAnimated@@QAEXPAX@Z CCameraAnimated::vfunc259
 0x100033c3 func   ?vfunc81@CItemGVampyrApocrypha@@QAEHXZ CItemGVampyrApocrypha::vfunc81
+0x100033c8 func   ?sub_101f5210@CUnknown101f5d60@@QAE_NXZ CUnknown101f5d60::sub_101f5210
 0x100033cd func   ?vfunc416@CAI_BaseNPCTroika@@UAEXD@Z CAI_BaseNPCTroika::vfunc416
 0x100033d2 func   ?sub_10325f00@@YI_NPAVCBaseEntity@@@Z sub_10325f00
 0x100033d7 func   ?sub_102f49c0@CAI_NodeGraph@@QAEXXZ CAI_NodeGraph::sub_102f49c0
