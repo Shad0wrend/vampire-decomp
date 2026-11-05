@@ -1206,6 +1206,82 @@ void CBaseCombatWeapon::vfunc340()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10255050 size=0x1ef
+#include "CBaseCombatWeapon.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseAnimating.h"
+
+struct CWeaponOwnerEntity
+{
+	char m_pad0000[0x9c];
+	CBaseCombatCharacter *m_pCharacter;	// 0x9c
+	char m_pad00a0[0xa8 - 0xa0];
+	CBaseCombatCharacter *m_pPlayer;	// 0xa8
+};
+
+struct CWeaponCharacterView
+{
+	char m_pad0000[0x1c64];
+	CHandle<CBaseAnimating> m_hViewModel;	// 0x1c64
+};
+
+#define WEAPON_BYTE(o) (*(char *)((char *)this + o))
+#define WEAPON_INT(o) (*(int *)((char *)this + o))
+#define ANIM_SEQUENCE(p) (*(int *)((char *)(p) + 0x6f0))
+#define VIEW(p) ((CWeaponCharacterView *)(p))
+
+void CBaseCombatWeapon::vfunc322()
+{
+	if (WEAPON_BYTE(0x8c8)) {
+		CWeaponOwnerEntity *pOwnerEnt = (CWeaponOwnerEntity *)sub_102521f0();
+		if (pOwnerEnt) {
+			CBaseCombatCharacter *pPlayer = pOwnerEnt->m_pPlayer;
+			if (pPlayer && WEAPON_BYTE(0x898)) {
+				float flNext = pPlayer->m_flNextAttack1564;
+				if (flNext <= gpGlobals->curtime) {
+					if (WEAPON_BYTE(0x899)) {
+						vfunc323();
+						return;
+					}
+					if (pPlayer->sub_103346c0(m_nAmmoType) <= 0) {
+						vfunc323();
+						return;
+					}
+					if (WEAPON_INT(0x74c) < vfunc275(0)) {
+						bool bChanged = true;
+						if (sub_10256220() && VIEW(pPlayer)->m_hViewModel.Get()) {
+							int nSequence = VIEW(pPlayer)->m_hViewModel.Get()->sub_1008dd30(0xc1, -1);
+							bChanged = ANIM_SEQUENCE(VIEW(pPlayer)->m_hViewModel.Get()) != nSequence;
+						}
+						if (bChanged) {
+							WEAPON_INT(0x74c)++;
+							if (sub_102521f0())
+								pPlayer->sub_10334500(1, m_nAmmoType);
+						}
+						vfunc325();
+					} else {
+						vfunc323();
+					}
+				}
+			}
+		}
+	} else {
+		CWeaponOwnerEntity *pOwnerEnt = (CWeaponOwnerEntity *)sub_102521f0();
+		if (pOwnerEnt) {
+			CBaseCombatCharacter *pCharacter = pOwnerEnt->m_pCharacter;
+			if (pCharacter && WEAPON_BYTE(0x898)) {
+				float flNext = pCharacter->m_flNextAttack1564;
+				if (flNext <= gpGlobals->curtime) {
+					vfunc323();
+					for (int i = 0; i < 2; i++)
+						m_flTimes730[i] = gpGlobals->curtime;
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102552c0 size=0x119
 #include "CBaseCombatWeapon.h"
 #include "CBaseCombatCharacter.h"
