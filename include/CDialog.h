@@ -77,7 +77,12 @@ public:
 	CUtlVector<int> m_vec335c;	// 0x335c
 	CUtlVector<int> m_vec3370;	// 0x3370
 	CUtlVector<int> m_vec3384;	// 0x3384
-	char m_pad3398[0x33ad - 0x3398];
+	int m_nLines3398;	// 0x3398: cleared and then filled by sub_100e2ad0 in dump_script_stats (printed in the \"%d total nodes, with %d NPC lines, and %d ...\" line)
+	int m_n339c;	// 0x339c: same line
+	int m_n33a0;	// 0x33a0: \"There are %d python depedencies, and %d event scripts\" (first value)
+	int m_n33a4;	// 0x33a4: second value of that line
+	int m_n33a8;	// 0x33a8: cleared with the others
+	char m_pad33ac[0x33ad - 0x33ac];
 	char m_szWhisper[1];	// 0x33ad: the pending whisper text (empty when none)
 
 	CDialog();	// "CDialog::CDialog" (0x100df2d0, called by CHL2_PlayerBase::CHL2_PlayerBase): +0 = +4 = -1; the four dependencies (+0x2848); the secure int at +0x32ec; the vectors +0x32f8 (own ctor 0x100eb150) and +0x330c, +0x3320, +0x3334, +0x335c, +0x3370, +0x3384 (own ctor 0x100eb0e0(0,0), size and element pointer then set inline); five dwords +0x3348..+0x3358 zeroed (no ctor); then ScopeTrace("CDialog::CDialog"): +0x30e8 = 0, +8 = 0, the seven clan globals at 0x106ea764 zeroed (rep stosd) and filled with CNamedList(0x10738d10)->sub_101d5bd0("Player_Brujah" ... "Player_Malkavian")
