@@ -50123,6 +50123,52 @@ void CBaseDoor::sub_100ee810()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ee950 size=0x27d
+#include "CEHandleGet.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include <math.h>
+#include "CBaseDoor.h"
+#include "CEntityVSlots.h"
+#include "ehandle.h"
+#include "CUnknown100290c0.h"
+
+#define KNOB_LOOKUP(h) ((CUnknown100290c0 *)EHandleDetail::g_10566458)->sub_100290c0(&(h))
+#define KNOB_GET(h) ((EHANDLE *)&(h))->Get()
+
+// TARGET: CBaseDoor::sub_100ee950
+CBaseEntity *CBaseDoor::sub_100ee950(CBaseEntity *pTarget)
+{
+	if (!pTarget)
+		return 0;
+	if (KNOB_LOOKUP(m_hDoorknob0) && KNOB_LOOKUP(m_hDoorknob1))
+	{
+		Vector vTarget;
+		((CEntityVSlots *)pTarget)->slot193(&vTarget);
+		Vector vTmp;
+		const Vector *p0 = ((CEntityVSlots *)KNOB_LOOKUP(m_hDoorknob0))->slot193(&vTmp);
+		float d0 = fabs(vTarget.y - p0->y) + fabs(vTarget.z - p0->z) + fabs(vTarget.x - p0->x);
+		const Vector *p1 = ((CEntityVSlots *)KNOB_GET(m_hDoorknob1))->slot193(&vTmp);
+		float d1 = fabs(vTarget.y - p1->y) + fabs(vTarget.z - p1->z) + fabs(vTarget.x - p1->x);
+		if (d1 > d0)
+			return KNOB_GET(m_hDoorknob0);
+		return KNOB_GET(m_hDoorknob1);
+	}
+	if (KNOB_GET(m_hDoorknob0) || KNOB_GET(m_hDoorknob1))
+	{
+		if (KNOB_GET(m_hDoorknob0))
+			return KNOB_GET(m_hDoorknob0);
+		if (KNOB_GET(m_hDoorknob1))
+			return KNOB_GET(m_hDoorknob1);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eec70 size=0x56
 #include "CBaseDoor.h"
 #include "CUnknown100eef10.h"
