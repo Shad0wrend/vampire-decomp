@@ -154609,6 +154609,25 @@ void *COwnerView::sub_102dd5b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dd5e0 size=0x1d
+struct COwnerView
+{
+	char pad[0x158];
+	int m_158;
+	int m_15c;
+	void *sub_102dd530();
+	void *sub_102dd470(int a, void *b);
+	void *sub_102dd5e0();
+};
+// TARGET: COwnerView::sub_102dd5e0
+void *COwnerView::sub_102dd5e0()
+{
+	if (m_158)
+		return sub_102dd470(m_158, &m_15c);
+	return sub_102dd530();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dd610 size=0x7
 struct CUnknown102dd610 { char sub_102dd610(); };
 char CUnknown102dd610::sub_102dd610()

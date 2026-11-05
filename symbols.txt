@@ -10384,6 +10384,7 @@
 0x1001048d func   ?sub_101f12e0@CUnknown101f10e0@@QAE_NPBD@Z CUnknown101f10e0::sub_101f12e0
 0x10010492 func   ?sub_101251e0@@YIXPAD@Z sub_101251e0
 0x1001049c func   ?sub_1039ee20@CNPC_VMingXiaoTentacle@@QAEXPAX@Z CNPC_VMingXiaoTentacle::sub_1039ee20
+0x100104a1 func   ?sub_102dd5e0@COwnerView@@QAEPAXXZ COwnerView::sub_102dd5e0
 0x100104a6 func   ?sub_10322180@@YAHXZ sub_10322180
 0x100104ab func   ?vfunc86@CRopeKeyframe@@QAEDHHHHH@Z CRopeKeyframe::vfunc86
 0x100104b0 func   ?sub_1019d130@CUnknown1019d130@@QAEXPAVCBaseEntity@@@Z CUnknown1019d130::sub_1019d130
