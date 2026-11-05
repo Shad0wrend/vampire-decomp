@@ -1830,6 +1830,49 @@ int CBaseEntity::vfunc124()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a0bc0 size=0x102
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CGlobalEntityList.h"
+#include "ScopeTrace.h"
+extern CGlobalEntityList g_106eb5d8;
+
+inline const char *STRINGR(const char *const &s)
+{
+	return s ? s : g_106b8540;
+}
+
+void CBaseEntity::vfunc113()
+{
+    ScopeTrace trace("CBaseEntity::Activate", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    const char *damageFilter = *(const char **)((char *)this + 0x21c);
+    if (damageFilter) {
+        CBaseEntity *pFilter = g_106eb5d8.sub_100f7770(0, damageFilter, 0, 0);
+        if (pFilter)
+            m_hDamageFilter = *pFilter->vfunc1();
+        else
+            m_hDamageFilter = 0xffffffff;
+    }
+    const char *useFilter = *(const char **)((char *)this + 0x214);
+    if (useFilter) {
+        CBaseEntity *pFilter = g_106eb5d8.sub_100f7770(0, useFilter, 0, 0);
+        if (pFilter)
+            m_hUseFilter = *pFilter->vfunc1();
+        else
+            m_hUseFilter = 0xffffffff;
+    }
+    if (*(const char **)((char *)this + 0x1e4))
+        sub_100b4280(STRINGR(*(const char *const *)((char *)this + 0x1e4)));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a0d20 size=0xd7
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
