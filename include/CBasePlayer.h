@@ -290,7 +290,8 @@ public:
 	float m_flFadeStart19B8;	// 0x19B8: when the fade began
 	float m_flFadeDuration19BC;	// 0x19BC: its length (negative fades out)
 	EHANDLE m_hFadeEnt19C0;	// 0x19C0
-	char m_pad19C4[0x19cc - 0x19c4];	// 0x19C4 .. 0x19CB
+	float m_flFadeTime19C4;	// 0x19C4
+	float m_flFadeValue19C8;	// 0x19C8
 	EHANDLE m_hFadeEnt19CC;	// 0x19CC
 	float m_flFadeTime19D0;	// 0x19D0
 	float m_flFadeValue19D4;	// 0x19D4
@@ -622,6 +623,7 @@ public:
 	void sub_10167030(Vector vecOrigin, Vector vecTarget);	// teleports / places the player: flag bit 5 at +0x20f0, the spawn angles global copied to +0x184, vecTarget (after slot 64 adjusted it) stored at +0x206c, +0x207c = 1, solid flag 4 added, take damage 0, move type 0, model index 0, then sub_101cf5c0(this, &vecOrigin, 0)
 	void vfunc103();	// slot 103 (declared as a plain member; the CHL2_Player override calls it): slot 407, sub_1015ef00, SetSolid(0) (inlined scope trace), move type (9, 0), sub_101cf600(this), RemoveFlag(1), then slot 457("item_w_fists", 0)
 	void sub_1017d460(CBaseEntity *pEnt, float flBlend);
+	void sub_1017d280(CBaseEntity *pEnt, float flBlend);
 	void sub_1017d0b0(float flBlend);	// stub 0x100051d2, called by CBaseCombatCharacter::SetAsCameraTarget(this, 0) for every connected player
 	void *sub_1032e120(const char *pszName);	// CBaseCombatCharacter::Weapon_Create (stub 0x1000b0b4), called directly
 	void sub_1032d380(CBaseEntity *pWeapon, char bNoSwitch);	// CBaseCombatCharacter::vfunc383 (stub 0x100032b0), called directly
