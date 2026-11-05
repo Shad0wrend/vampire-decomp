@@ -3595,6 +3595,7 @@
 0x100065d2 func   ?vfunc126@CBaseEntity@@UAEHH@Z CBaseEntity::vfunc126
 0x100065d7 func   ?vfunc5@CItemMMoneyClip@@QAEPAV1@I@Z CItemMMoneyClip::vfunc5
 0x100065dc func   ?sub_10148c00@@YAXPAMM0@Z sub_10148c00
+0x100065e1 func   ?vfunc5@CLogicCase@@QAEPAV1@I@Z CLogicCase::vfunc5
 0x100065e6 func   ?sub_1035a900@@YAXM@Z sub_1035a900
 0x100065eb func   ?sub_101dbc10@CUnknown101dbc60@@QAEHPAVCBaseEntity@@PAVCBaseCombatCharacter@@@Z CUnknown101dbc60::sub_101dbc10
 0x100065f0 func   ?sub_10403500@@YAHXZ sub_10403500
