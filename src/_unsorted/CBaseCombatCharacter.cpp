@@ -1372,6 +1372,52 @@ void CBaseCombatCharacter::vfunc386()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032d0c0 size=0x1af
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+#include "ScopeTrace.h"
+
+// TARGET: CBaseCombatCharacter::vfunc385
+void CBaseCombatCharacter::vfunc385(CBaseCombatWeapon *pWeapon, int nUnused, char bForce)
+{
+	ScopeTrace trace("CBaseCombatCharacter::Weapon_Drop", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (pWeapon) {
+		if ((CBaseCombatWeapon *)sub_1032e7b0() == pWeapon) {
+			(*(void (__fastcall ***)(CBaseCombatCharacter *))this)[386](this);
+			return;
+		}
+		if (pWeapon->sub_102577e0() || bForce) {
+			if (pWeapon->vfunc371() && *(int *)((char *)pWeapon + 0x8d0) > 1) {
+				--*(int *)((char *)pWeapon + 0x8d0);
+				CBaseCombatWeapon *pNew = (CBaseCombatWeapon *)sub_1032e120(pWeapon->vfunc348());
+				if (pNew) {
+					pNew->sub_10258620(0);
+					pNew->vfunc300();
+					return;
+				}
+			} else {
+				if (m_hEa4.Get() == pWeapon)
+					m_hEa4 = 0;
+				if (m_hEa8.Get() == pWeapon)
+					m_hEa8 = 0;
+				pWeapon->vfunc300();
+				sub_10335470(pWeapon);
+				if (sub_100b3700() & 0x2000)
+					sub_1032cbe0(pWeapon);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032d2e0 size=0x7a
 #include "CBaseCombatCharacter.h"
 #define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
