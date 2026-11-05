@@ -199513,6 +199513,49 @@ void CKeyringUnit::sub_104081e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x104083e0 size=0x7f
+#include "KEYRING_ENTRY.h"
+#include "utlmemory.h"
+#include "utlvector.h"
+struct datamap_t;
+struct ISaveRestoreOps;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    float inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+
+struct KEYRING_ENTRY;
+#include "CUtlVectorDataOps.h"
+
+inline ISaveRestoreOps *KeyringVectorOps()
+{
+	static CUtlVectorDataOps<CUtlVector<KEYRING_ENTRY, CUtlMemory<KEYRING_ENTRY> >, 9> ops;
+	return (ISaveRestoreOps *)&ops;
+}
+
+extern int g_1067fa80[2];
+
+int *sub_104083e0()
+{
+	static typedescription_t dataDesc[] = {
+		{ 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+		{ 10, "m_KeyList", {0, 0}, 1, 2, 0, KeyringVectorOps(), 0.0f },
+	};
+	g_1067fa80[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+	g_1067fa80[0] = (int)&dataDesc[1];
+	return g_1067fa80;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10408480 size=0x111
 #include "utlvector.h"
 #include "CUtlMemory192.h"
