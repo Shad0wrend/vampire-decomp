@@ -42,6 +42,8 @@ public:
 	char sub_10331da0(Vector *pOrigin, Vector *pDir);	// "CBaseCombatCharacter::CalcLookData"-like (stub 0x10014eb6, ret 8): the look origin and direction of the character, true when they come from the model's data
 	void sub_103e05e0(int nSound);	// emits the sound nSound from the look origin, in the look direction (as angles), to the players that can hear it (a PAS filter)
 	void sub_103dfbb0(int *pA, int *pB);	// stub 0x10007c7a, called directly
+	int sub_1008dc40(int a, int b);	// CBaseAnimating member (stub 0x100125c1)
+	void sub_10005c90(int *pForce, CTakeDamageInfo *pInfo);	// CAI_BaseNPCTroika::vfunc301 CreateCorpse (stub 0x10005c90)
 	int sub_1035fb50();	// CNPC_VAnimal::vfunc438 (stub 0x10002b71), tail called
 	void sub_1026e340(int a);	// CAI_BaseNPC member (stub 0x10002554), called directly
 	int vfunc440(int nSchedule);	// slot 440: maps the failed schedules 0x156 / 0x157 to 0x15e / 0x15f and 0x5b (DevMsg) to 0x165, else CNPC_VAnimal::vfunc440
