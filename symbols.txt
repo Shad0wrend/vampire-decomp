@@ -3451,6 +3451,7 @@
 0x100061a4 func   ?vfunc0@CAI_SaveRestoreBlockHandler@@UAEHXZ CAI_SaveRestoreBlockHandler::vfunc0
 0x100061a9 func   ?sub_103163e0@@YGDH@Z sub_103163e0
 0x100061ae func   ?sub_102c44e0@CAI_BaseNPCTroika@@QAE_NPBD@Z CAI_BaseNPCTroika::sub_102c44e0
+0x100061b3 func   ?sub_10134d30@CMathCounter@@QAEXPAXM@Z CMathCounter::sub_10134d30
 0x100061b8 func   ?sub_102781a0@CUnknown102781a0@@QAE_NPAU1@@Z CUnknown102781a0::sub_102781a0
 0x100061c2 func   ?vfunc272@CInstancedSceneEntity@@QAEXH@Z CInstancedSceneEntity::vfunc272
 0x100061d1 func   ?vfunc26@CBasePlayer@@QAEXPAVCBaseEntity@@@Z CBasePlayer::vfunc26

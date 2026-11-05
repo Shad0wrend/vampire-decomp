@@ -63158,6 +63158,43 @@ int CUnknown10134d00::sub_10134d00(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10134d30 size=0xc0
+#include "CMathCounter.h"
+#include "COutputEvent.h"
+
+struct MathCounterView10134d30 {
+	char pad0[0x458];
+	COutputEvent m_out458;
+	COutputEvent m_out470;
+	COutputEvent m_out488;
+	COutputEvent m_out4a0;
+};
+
+inline void SetFloatValue(CVariantCopy *pVariant, float flValue)
+{
+	pVariant->sub_1000b320(1, &flValue);
+}
+
+void CMathCounter::sub_10134d30(void *pActivator, float flNewValue)
+{
+	MathCounterView10134d30 *v = (MathCounterView10134d30 *)this;
+	if (flNewValue == m_flMax) {
+		SetFloatValue((CVariantCopy *)&v->m_out470, flNewValue);
+		v->m_out470.sub_100cd300(*(CVariantCopy *)&v->m_out470, pActivator, this, 0.0f);
+	} else {
+		SetFloatValue((CVariantCopy *)&v->m_out488, flNewValue);
+		v->m_out488.sub_100cd300(*(CVariantCopy *)&v->m_out488, pActivator, this, 0.0f);
+		if (flNewValue > m_flMax) {
+			SetFloatValue((CVariantCopy *)&v->m_out4a0, flNewValue);
+			v->m_out4a0.sub_100cd300(*(CVariantCopy *)&v->m_out4a0, pActivator, this, 0.0f);
+		} else {
+			SetFloatValue((CVariantCopy *)&v->m_out458, flNewValue);
+			v->m_out458.sub_100cd300(*(CVariantCopy *)&v->m_out458, pActivator, this, 0.0f);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10134e20 size=0x67
 #include "CLogicBranch.h"
 
