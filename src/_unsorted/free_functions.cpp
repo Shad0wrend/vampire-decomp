@@ -171578,6 +171578,30 @@ bool CUnknown1033d2f0::sub_1033d2f0(int nFlags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033d330 size=0x3d
+struct CUnk1033d330 {
+	char m_pad0000[0xeb0];
+	unsigned int m_n0eb0;
+	unsigned int m_n0eb4;
+	unsigned int m_n0eb8;
+	unsigned int m_n0ebc;
+
+	char sub_1033d330(unsigned int flags);
+};
+
+char CUnk1033d330::sub_1033d330(unsigned int flags)
+{
+	unsigned int mask;
+	if (!(flags & 0x80000000))
+		mask = m_n0eb8 | m_n0eb0;
+	else {
+		mask = m_n0ebc | m_n0eb4;
+		flags &= 0x7fffffff;
+	}
+	return (flags & mask) != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033d380 size=0x69
 struct SInner { char *ent; unsigned serial; };
 struct SEnt { int pad; SInner in; };
