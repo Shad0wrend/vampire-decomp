@@ -128,6 +128,58 @@ void CWeaponRanged_FlameThrower::vfunc326()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e2f30 size=0x183
+#include "CBaseEntity.h"
+#include "CWeaponRanged_FlameThrower.h"
+#include "CEntityVSlots.h"
+#include "ehandle.h"
+
+float sub_103e1680();
+int sub_103e1c80(void *pBuf, void *pRec, int a);
+CBaseEntity *sub_103e1d90(CEntityVSlots *pOwner);
+
+// TARGET: CWeaponRanged_FlameThrower::vfunc372
+void CWeaponRanged_FlameThrower::vfunc372()
+{
+	CWeaponRanged::vfunc372();
+	m_b89a = 0;
+	CEntityVSlots *pOwner = (CEntityVSlots *)sub_102521f0();
+	if (!pOwner)
+		return;
+	if (!m_b1519 && m_b1518 && m_f151c < gpGlobals->curtime)
+	{
+		m_b1518 = 0;
+		return;
+	}
+	if (--m_n74c <= 0)
+	{
+		m_b1518 = 0;
+		return;
+	}
+	m_b1518 = 1;
+	Vector vecDir;
+	pOwner->slot369(&vecDir);
+	sub_103e3d80(m_vOrigin14dc, 0);
+	pOwner->slot199(&m_vVel14e8, 0);
+	m_vVel14e8 += vecDir * sub_103e1680();
+	m_n14d8 = 0;
+	m_n14d4 = 1;
+	if (m_unk1550)
+	{
+		if (m_n1510 == -1)
+		{
+			CBaseEntity *pFlame = sub_103e3130();
+			if (pFlame)
+				*((char *)pFlame + 0x488) = 1;
+			CBaseEntity *pEnt = sub_103e1d90(pOwner);
+			*(EHANDLE *)&m_n1530 = pEnt;
+		}
+		m_n1510 = sub_103e1c80(m_aBuf, &m_n14d4, m_n1510);
+	}
+	m_n1514 = engine->vfunc120();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e31c0 size=0x24
 void __fastcall sub_1000c59f(void *pSelf);
 void __fastcall sub_100138bd(void *pSelf);

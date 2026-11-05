@@ -11334,6 +11334,7 @@
 0x1001190f func   ?vfunc10@CGameMovement@@UAEXAAVVector@@MM@Z CGameMovement::vfunc10
 0x10011914 func   ?NewNode@?$CUtlRBTree@UCRBEntry8_10047280@@G@@QAEGXZ CUtlRBTree<CRBEntry8_10047280,unsigned short>::NewNode
 0x10011914 func   ?NewNode@?$CUtlRBTree@UCRBTree16Entry8@@G@@QAEGXZ CUtlRBTree<CRBTree16Entry8,unsigned short>::NewNode
+0x10011919 func   ?vfunc372@CWeaponRanged_FlameThrower@@UAEXXZ CWeaponRanged_FlameThrower::vfunc372
 0x1001191e func   ?vfunc433@CNPC_VMingXiaoTentacle@@QAEXXZ CNPC_VMingXiaoTentacle::vfunc433
 0x10011923 func   ?sub_102c66b0@CUnknown102c66b0@@QAE_NH@Z CUnknown102c66b0::sub_102c66b0
 0x1001192d func   ?sub_100639b0@CTEGlowSprite@@QAEPAV1@H@Z CTEGlowSprite::sub_100639b0
