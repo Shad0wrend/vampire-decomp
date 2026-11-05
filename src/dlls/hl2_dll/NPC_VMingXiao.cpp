@@ -68,6 +68,71 @@ void CNPC_VMingXiao::sub_10395c70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103967d0 size=0x31a
+#include "CNPC_VMingXiao.h"
+#include "CBaseAnimating.h"
+
+#define FILE_STAMP(line) (m_nLine1b34 = (line), m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiao.cpp")
+
+// TARGET: CNPC_VMingXiao::vfunc605
+int CNPC_VMingXiao::vfunc605(int unused)
+{
+	if (m_b6078) {
+		FILE_STAMP(0xb12);
+		return 0xe3;
+	}
+	if (!m_pTarget6444) {
+		m_pTarget6444 = (CBaseEntity *)vfunc609(0);
+		if (!m_pTarget6444)
+			goto L1;
+	}
+	if (!sub_10014df8(0x2f)) {
+		FILE_STAMP(0xb27);
+		return 0xec;
+	}
+L1:
+	if (sub_10014df8(8) && vfunc307() && vfunc599((int)vfunc167())) {
+		FILE_STAMP(0xb2c);
+		return 0xe3;
+	}
+	int r = sub_102b8620();
+	if (r) return r;
+	r = sub_102b7370();
+	if (r) return r;
+	r = sub_102b7cf0();
+	if (r) return r;
+	if (!sub_10014df8(0x5f) && !sub_10014df8(8)) {
+		r = vfunc606(unused);
+		if (r) return r;
+		if (sub_10014df8(0x2e)) { FILE_STAMP(0xb6e); return 0xbd; }
+		if (sub_10014df8(0x60)) { FILE_STAMP(0xb73); return 0xb1; }
+		return 0;
+	}
+	if (!sub_10014df8(0x2f) && !sub_10014df8(0x63)) {
+		if (((CBaseAnimating *)this)->sub_1008dc40(0x10, -1) && !sub_10014df8(0x2c) && enginerandom->vfunc2(0, 0x63) < 0x4b) {
+			FILE_STAMP(0xb49);
+			return 0xef;
+		}
+		if (vfunc307() && enginerandom->vfunc2(0, 0x63) < 0x19 && vfunc599((int)vfunc167())) {
+			FILE_STAMP(0xb4d);
+			return 0xe8;
+		}
+		FILE_STAMP(0xb51);
+		return 0xf0;
+	}
+	if (((CBaseAnimating *)this)->sub_1008dc40(0x10, -1) && !sub_10014df8(0x2c) && enginerandom->vfunc2(0, 0x63) < 0x4b) {
+		FILE_STAMP(0xb58);
+		return 0xb8;
+	}
+	if (vfunc307() && vfunc599((int)vfunc167())) {
+		FILE_STAMP(0xb5c);
+		return 0xe8;
+	}
+	FILE_STAMP(0xb60);
+	return 0xb9;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10396dc0 size=0x97
 #include "CNPC_VMingXiao.h"
 #include "CGlobalEntityList.h"
