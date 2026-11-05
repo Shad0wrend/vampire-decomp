@@ -188658,6 +188658,87 @@ void CNPC_VVampireBoss::sub_103c7150()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c7230 size=0x2f1
+#include "CEHandleGet.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CNPC_VVampireBoss.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CTraceFilterWorldOnly.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738960.h"
+#include "CUnknown101c26d0.h"
+#include "CVDmg_t.h"
+#include "ScopeTrace.h"
+#include "Vector.h"
+#include "ehandle.h"
+
+struct V3 { float x, y, z; };
+void sub_10146570(V3 *pStart, V3 *pEnd, int a, int b, int c, int d, int e);
+void sub_101c2c30();
+void sub_101c2c60();
+
+// TARGET: CNPC_VVampireBoss::sub_103c7230
+void CNPC_VVampireBoss::sub_103c7230(const Vector *pOrigin, float flRadius, float flDamage)
+{
+	ScopeTrace trace("CNPC_VVampireBoss::CausePlayerAOEDamage", g_106b8540, g_106b8540);
+
+	unsigned int h = m_h628c.m_Index;
+	CBaseEntity *pTarget = 0;
+	if (h != 0xffffffff) {
+		EHandleEntInfo *pInfo = &EHandleDetail::g_10566458->m_EntPtrArray[h & 0x1fff];
+		if (pInfo->m_SerialNumber == (int)(h >> 13))
+			pTarget = (CBaseEntity *)pInfo->m_pEntity;
+	}
+	if (pTarget) {
+		Vector vecDelta = *(Vector *)((CEntityVSlots *)pTarget)->slot217() - *pOrigin;
+		if (vecDelta.Length() <= flRadius) {
+			CTraceFilterWorldOnly filter;
+			Ray_t ray;
+			ray.Init(*pOrigin, *(Vector *)((CEntityVSlots *)pTarget)->slot217());
+			CGameTrace tr;
+			g_1070b254->vfunc4(&ray, 1, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+
+			if (g_10738960.sub_1005f190())
+				sub_10146570((V3 *)&tr.m_startpos, (V3 *)&tr.m_endpos, 0xff, 0, 0, 1, -1082130432);
+
+			CUnknown101c26d0 info;
+			info.sub_101c26d0(this, this, flDamage, 0x40, 0, 0, -1);
+			sub_101c2c30();
+			VectorNormalize(vecDelta);
+			CVDmg_t dmg;
+			dmg.sub_101fa8d0(1, 0x40, (int)flDamage);
+			info.m_n0000 = (int)&dmg;
+			pTarget->sub_100a7d00((int)&info, (int)&vecDelta, (int)&tr);
+			sub_101c2c60();
+			int act = 0x79;
+			switch (((CEntityVSlots *)pTarget)->slot323(&vecDelta)) {
+			case 1: act = 0x7a; break;
+			case 3: act = 0x7b; break;
+			}
+			((CEntityVSlots *)pTarget)->slot320((int)this, act);
+			dmg.sub_101fa680();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c76b0 size=0x8
 #define V5(n) virtual void a##n(); virtual void b##n(); virtual void c##n(); virtual void d##n(); virtual void e##n();
 #define V25(n) V5(n##0) V5(n##1) V5(n##2) V5(n##3) V5(n##4)
