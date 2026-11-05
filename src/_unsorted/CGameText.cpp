@@ -24,6 +24,34 @@ datamap_t *CGameText::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020e290 size=0xcb
+#include "CGameText.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+void sub_101d0570(int *pOut, int count, const char *pszString);
+
+bool CGameText::vfunc110(const char *szKeyName, const char *szValue)
+{
+	if (_strcmpi(szKeyName, "color") == 0) {
+		int color[4];
+		sub_101d0570(color, 4, szValue);
+		m_textParms.r1 = color[0];
+		m_textParms.g1 = color[1];
+		m_textParms.b1 = color[2];
+		m_textParms.a1 = color[3];
+	} else if (_strcmpi(szKeyName, "color2") == 0) {
+		int color[4];
+		sub_101d0570(color, 4, szValue);
+		m_textParms.r2 = color[0];
+		m_textParms.g2 = color[1];
+		m_textParms.b2 = color[2];
+		m_textParms.a2 = color[3];
+	} else
+		return sub_1009e430(szKeyName, szValue);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10216e00 size=0x1e
 #include "CGameText.h"
 

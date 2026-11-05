@@ -7558,6 +7558,7 @@
 0x1000c095 func   ?sub_102dd500@CUnknown102dd500@@QAEPBDXZ CUnknown102dd500::sub_102dd500
 0x1000c09a func   ?vfunc214@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc214
 0x1000c09f func   ?sub_10185ae0@CUnk10185ae0@@QAEPAXE@Z CUnk10185ae0::sub_10185ae0
+0x1000c0a4 func   ?vfunc110@CGameText@@UAE_NPBD0@Z CGameText::vfunc110
 0x1000c0a9 func   ?vfunc432@CNPC_VAndreiBlood@@QAEXH@Z CNPC_VAndreiBlood::vfunc432
 0x1000c0b8 func   ?vfunc0@CChoreoEventCallback@@UAEXMHH@Z CChoreoEventCallback::vfunc0
 0x1000c0bd func   ?sub_103f4780@@YAXPAVCEntityVSlots@@H@Z sub_103f4780
