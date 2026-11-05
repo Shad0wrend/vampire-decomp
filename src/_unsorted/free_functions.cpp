@@ -191006,6 +191006,54 @@ bool CNPC_VWerewolf::sub_103d7dc0(void *pHint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d8060 size=0x208
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+#include "CAI_Hint.h"
+#include "CNPC_VWerewolf.h"
+
+struct CWWHintTypeView { char pad[0x5dc]; int m_type; };
+extern CNPC_VWerewolfVec3 g_1070d1b0;
+
+bool CNPC_VWerewolf::sub_103d8060(void *pHint)
+{
+	ScopeTrace trace("CNPC_VWerewolf::IsValidMoveHint", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!pHint)
+		return false;
+	if (((CAI_Hint *)pHint)->sub_102d14c0())
+		return false;
+	if (!vfunc566_slot(pHint))
+		return false;
+	int nType = ((CWWHintTypeView *)pHint)->m_type;
+	if (nType == 0x3aa3)
+		return false;
+	if (nType == 0x3aa9)
+		return false;
+	if (nType == 0x3aa8) {
+		if (!sub_10269aa0(0x77) || vfunc617_slot(sub_103d6650(pHint), 1, 0, g_1070d1b0))
+			return false;
+	} else if (nType == 0x3aa5) {
+		if (m_nDoorState != 2)
+			return false;
+		return true;
+	} else {
+		if (((CBaseEntity *)sub_103d6390(pHint))->sub_100b5190())
+			return false;
+		if (sub_10366400((int)pHint))
+			return false;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d8300 size=0x1c9
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
