@@ -203956,6 +203956,46 @@ float CUnknown1040cb60::sub_1040c080()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040c230 size=0x126
+#include "CEntityVSlots.h"
+#include "CGrabController.h"
+#include "IPhysicsObject.h"
+#include "Vector.h"
+struct SGrabGlobal1094accc {
+	virtual void vfunc0();
+	virtual char vfunc1();
+	char m_pad0004[0x28 - 4];
+	float m_f28;
+};
+extern SGrabGlobal1094accc *g_1094accc;
+float sub_1040c3b0(CEntityVSlots *pEnt);
+
+// TARGET: CGrabController::sub_1040c230
+void CGrabController::sub_1040c230(CEntityVSlots *pObject, IPhysicsObject *pPhysics)
+{
+	m_f24 = 1000.0f;
+	m_f1c = 21600.0f;
+	float flMass = sub_1040c3b0(pObject);
+	float flMin = g_1094accc->vfunc1() ? 0.0f : g_1094accc->m_f28;
+	if (flMass <= flMin)
+		return;
+	float flClamped = flMass > 500.0f ? 500.0f : flMass;
+	float t = (flClamped - flMin) / (500.0f - flMin);
+	float flA = 3.0f * t * t;
+	float flB = t * t * t;
+	float s = flA - (flB + flB);
+	float flInvMass = pPhysics->vfunc13();
+	Vector vecInertia;
+	Vector *pInertia = pPhysics->vfunc15(&vecInertia);
+	float flLen = FastSqrt(pInertia->x * pInertia->x + pInertia->y * pInertia->y + pInertia->z * pInertia->z);
+	float flScale = 0.025f / flInvMass;
+	float flTarget = flScale * flLen;
+	flTarget = flTarget * 21600.0f;
+	m_f24 = (300.0f - m_f24) * s + m_f24;
+	m_f1c = (flTarget - m_f1c) * s + m_f1c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040c3b0 size=0x51
 #include "CEntityVSlots.h"
 float sub_1040c3b0(CEntityVSlots *pEnt)

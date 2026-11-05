@@ -380,6 +380,7 @@
 0x100018d9 func   ?sub_100ed5a0@@YAHXZ sub_100ed5a0
 0x100018de func   ?vfunc82@CAI_NetworkManager@@UAEPAUdatamap_t@@XZ CAI_NetworkManager::vfunc82
 0x100018e3 func   ?sub_102506a0@@YIDPAVCBaseCombatWeapon@@@Z sub_102506a0
+0x100018e8 func   ?sub_1040c230@CGrabController@@QAEXPAVCEntityVSlots@@PAVIPhysicsObject@@@Z CGrabController::sub_1040c230
 0x100018ed func   ?sub_101835e0@CBasePlayer@@QAEXXZ CBasePlayer::sub_101835e0
 0x100018f2 func   ?sub_103d7210@CNPC_VWerewolf@@QAEMPAVCBaseEntity@@@Z CNPC_VWerewolf::sub_103d7210
 0x100018f7 func   ?sub_101b45b0@CUnknown101b45b0@@QAEPAV1@XZ CUnknown101b45b0::sub_101b45b0
