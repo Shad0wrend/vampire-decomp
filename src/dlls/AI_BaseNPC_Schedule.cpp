@@ -72,3 +72,117 @@ int CAI_BaseNPC::vfunc437()
 	return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1028a380 size=0x6a8
+#include "CAI_BaseNPC.h"
+#include "CAI_Motor.h"
+#include "CBaseEntity.h"
+#include <math.h>
+#include "CAI_Navigator.h"
+
+typedef void (__cdecl *FnDevWarning)(int level, const char *fmt, ...);
+extern FnDevWarning g_109f3658;
+extern int g_1070d1b0;
+
+#define NPC_I(off) (*(int *)((char *)this + (off)))
+#define NPC_SCHED_RET(line, val) \
+	do { NPC_I(0x1b34) = (line); *(const char **)((char *)this + 0x1b30) = "E:\\Vampire\\main\\dlls\\AI_BaseNPC_Schedule.cpp"; return (val); } while (0)
+
+int CAI_BaseNPC::vfunc438()
+{
+	NPC_I(0x1b2c) = 1;
+	switch (NPC_I(0x5cc0)) {
+	case 0:
+		g_109f3658(2, "NPC_STATE IS NONE!\n");
+		break;
+	case 6:
+		NPC_SCHED_RET(0xe51, 1);
+	case 1:
+		if (sub_10269aa0(0x6a) || sub_10269aa0(0x6d) || sub_10269aa0(0x6e) || sub_10269aa0(0x70) || sub_10269aa0(0x6f))
+			NPC_SCHED_RET(0xe5b, 6);
+		if (sub_10269aa0(0x68))
+			NPC_SCHED_RET(0xe60, 0x38);
+		if (!((CAI_Navigator *)NPC_I(0x5d34))->sub_102ee620())
+			NPC_SCHED_RET(0xe65, 1);
+		if (sub_10269aa0(0x4c) && sub_1008dc40(0x49, -1) != -1) {
+			*((char *)this + 0x5b80) = 0;
+			NPC_SCHED_RET(0xe6b, 0x14);
+		}
+		NPC_SCHED_RET(0xe70, 2);
+	case 3:
+		if (sub_10269aa0(0x58) && sub_1008dc40(0x61, -1) != -1)
+			NPC_SCHED_RET(0xe79, 8);
+		if (!sub_10269aa0(0x4c) && !sub_10269aa0(0x4d)) {
+			if (!sub_10269aa0(0x6a) && !sub_10269aa0(0x6f) && !sub_10269aa0(0x6e) && !sub_10269aa0(0x70) && !sub_10269aa0(0x6d))
+				NPC_SCHED_RET(0xe95, 9);
+			NPC_SCHED_RET(0xe91, 6);
+		}
+		*((char *)this + 0x5b80) = 0;
+		if (fabs(((CAI_Motor *)NPC_I(0x5d44))->sub_102e1f90()) < (1.0 - *(float *)((char *)this + 0x1574)) * 60.0)
+			NPC_SCHED_RET(0xe82, 0x19);
+		if (sub_1008dc40(0x49, -1) != -1)
+			NPC_SCHED_RET(0xe86, 7);
+		NPC_SCHED_RET(0xe89, 6);
+	case 2:
+		if (sub_10269aa0(0x54))
+			NPC_SCHED_RET(0xe9d, 5);
+		if (sub_10269aa0(0x58)) {
+			sub_10279a50(0);
+			if (sub_10279dd0())
+				sub_10269b50(0x58);
+			else
+				sub_1026e340(3);
+			return sub_1028a260();
+		}
+		if ((sub_10269aa0(0x4c) || sub_10269aa0(0x4d)) && !(*(unsigned char *)((char *)this + 0x5d8c) & 0x40) && sub_1008dc40(0x49, -1) != -1) {
+			*((char *)this + 0x5b80) = 0;
+			NPC_SCHED_RET(0xeb4, 0x14);
+		}
+		if (vfunc404((CBaseEntity *)vfunc167()) == 2) {
+			if (!sub_10269aa0(0x46) && !sub_10269aa0(0x4c) && !sub_10269aa0(0x4d))
+				NPC_SCHED_RET(0xec5, 0xd);
+			*((char *)this + 0x5b80) = 0;
+			vfunc492();
+			NPC_SCHED_RET(0xec1, 0x1b);
+		}
+		if (!sub_10269aa0(0x46)) {
+			if (!sub_10269aa0(0x48))
+				NPC_SCHED_RET(0xecf, 0xb);
+			NPC_SCHED_RET(0xed4, 0xf);
+		}
+		if (sub_10269aa0(0x5f))
+			NPC_SCHED_RET(0xed9, 0x15);
+		if (sub_10269aa0(0x4f))
+			NPC_SCHED_RET(0xee0, 0x21);
+		if (sub_10269aa0(0x50))
+			NPC_SCHED_RET(0xee4, 0x22);
+		if (sub_10269aa0(0x51))
+			NPC_SCHED_RET(0xee8, 0x1f);
+		if (sub_10269aa0(0x52))
+			NPC_SCHED_RET(0xeec, 0x20);
+		if (sub_10269aa0(0x61))
+			NPC_SCHED_RET(0xef0, 0xb);
+		if (!sub_10269aa0(0x4f) && !sub_10269aa0(0x51))
+			NPC_SCHED_RET(0xef6, 0xf);
+		g_109f3658(2, "No suitable combat schedule!\n");
+		break;
+	case 7:
+		if (sub_10090180(&g_1070d1b0, -1, 0))
+			NPC_SCHED_RET(0xf04, 0x2c);
+		NPC_SCHED_RET(0xf06, 0x2b);
+	case 4:
+		if (!((EHANDLE *)((char *)this + 0x5d74))->Get()) {
+			g_109f3658(2, "Script failed for %s\n", sub_1009f200());
+			sub_1027d170();
+			NPC_SCHED_RET(0xf10, 1);
+		}
+		NPC_SCHED_RET(0xf13, 0x2e);
+	case 12:
+		NPC_SCHED_RET(0xf17, 1);
+	default:
+		g_109f3658(2, "Invalid State for SelectSchedule!\n");
+		break;
+	}
+	NPC_SCHED_RET(0xf21, 0x43);
+}
+// END FUNCTION
