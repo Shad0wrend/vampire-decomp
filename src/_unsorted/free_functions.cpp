@@ -154361,6 +154361,23 @@ const char *CUnknown102dd550::sub_102dd550()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dd580 size=0x1e
+#include "CUnknown102dd580.h"
+extern char g_106b8540[];
+
+struct CUnknown102dd580Unit : CUnknown102dd580
+{
+    const char *sub_102dd470(int count, CUnknown102dd500Entry *entries);
+};
+
+const char *CUnknown102dd580::sub_102dd580()
+{
+    if (m_nCount)
+        return ((CUnknown102dd580Unit *)this)->sub_102dd470(m_nCount, m_Entries);
+    return g_106b8540;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dd610 size=0x7
 struct CUnknown102dd610 { char sub_102dd610(); };
 char CUnknown102dd610::sub_102dd610()
