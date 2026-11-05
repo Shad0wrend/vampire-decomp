@@ -46693,6 +46693,102 @@ void CBaseEntity::sub_100ddf60(const int *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100de2f0 size=0x27a
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "globalvars.h"
+extern "C" __declspec(dllimport) void Msg(const char *, ...);
+extern float g_104454c4;
+extern double g_1044fab0;
+struct CShakeParams
+{
+	float m_vecOrigin[3];
+	float m_vecDir[3];
+	int m_nMode;
+	float m_flStrength;
+	float m_flRadius;
+};
+void sub_101c3320(int cmd, CShakeParams *pParams);
+void sub_101cd940(CBaseEntity *pEnt);
+
+struct CShakeView : CBaseEntity
+{
+	char m_padShake[0x450 - 0x3e0];
+	float m_vecDir[3];	// 0x450
+	char m_pad45c[4];
+	float m_flEnd;	// 0x460
+	float m_flStrength;	// 0x464
+	char m_pad468[4];
+	float m_flRadius;	// 0x46c
+	char m_pad470[4];
+	float m_flDuration;	// 0x474
+	float m_flStart;	// 0x478
+	float m_flBegin;	// 0x47c
+	float m_flFinish;	// 0x480
+	char m_pad484[4];
+	int m_nDone;	// 0x488
+};
+
+// TARGET: sub_100de2f0
+void __fastcall sub_100de2f0(CShakeView *p)
+{
+	p->m_flNextThink = gpGlobals->curtime + 0.05;
+	if (p->m_flags204 & 1) {
+		CShakeParams s;
+		s.m_nMode = 1;
+		s.m_flStrength = p->m_flStrength;
+		s.m_flRadius = p->m_flRadius;
+		const Vector *pOrg = ((CEntityVSlots *)p)->slot217();
+		s.m_vecOrigin[0] = pOrg->x;
+		s.m_vecOrigin[1] = pOrg->y;
+		s.m_vecOrigin[2] = pOrg->z;
+		s.m_vecDir[0] = p->m_vecDir[0];
+		s.m_vecDir[1] = p->m_vecDir[1];
+		s.m_vecDir[2] = p->m_vecDir[2];
+		if (s.m_flStrength > 1000.0f)
+			s.m_flStrength = 1000.0f;
+		else if (s.m_flStrength < 1.0f)
+			s.m_flStrength = 1.0f;
+		sub_101c3320(1, &s);
+		sub_101cd940(p);
+		return;
+	}
+	float t = (gpGlobals->curtime - p->m_flStart) / p->m_flDuration;
+	if (t > 1.0f)
+		t = 1.0f;
+	else if (t < g_104454c4)
+		t = g_104454c4;
+	float frac = 1.0f - t;
+	if (frac >= g_1044fab0) {
+		CShakeParams s;
+		s.m_nMode = 1;
+		int delta = (int)((1.0f - frac) * p->m_flRadius) - p->m_nDone;
+		s.m_flRadius = (float)delta;
+		if (s.m_flRadius > g_104454c4) {
+			const Vector *pOrg = ((CEntityVSlots *)p)->slot217();
+			s.m_vecOrigin[0] = pOrg->x;
+			s.m_vecOrigin[1] = pOrg->y;
+			s.m_vecOrigin[2] = pOrg->z;
+			s.m_vecDir[0] = p->m_vecDir[0];
+			s.m_vecDir[1] = p->m_vecDir[1];
+			s.m_vecDir[2] = p->m_vecDir[2];
+			s.m_flStrength = (1.0f - frac) * p->m_flFinish + frac * p->m_flBegin;
+			if (s.m_flStrength > 1000.0f)
+				s.m_flStrength = 1000.0f;
+			else if (s.m_flStrength < 1.0f)
+				s.m_flStrength = 1.0f;
+			Msg("Strength: %f - Radius: %f\n", (double)s.m_flRadius, (double)s.m_flStrength);
+			sub_101c3320(1, &s);
+			p->m_nDone = (int)((float)p->m_nDone + s.m_flRadius);
+		}
+	}
+	if (gpGlobals->curtime > p->m_flEnd) {
+		p->sub_100ac4e0(0, 0, 0);
+		sub_101cd940(p);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100de610 size=0x8
 void sub_100055b5();
 void __stdcall sub_100de610(int) { sub_100055b5(); }
