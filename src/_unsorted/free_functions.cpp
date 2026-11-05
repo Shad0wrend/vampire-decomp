@@ -62487,6 +62487,22 @@ void CEnvGlobal::sub_10132a00(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10132a70 size=0x48
+#include "CEnvGlobal.h"
+#include "CUnknown10057680.h"
+#include "globalvars.h"
+extern CUnknown10057680 g_106be530;
+// TARGET: CEnvGlobal::sub_10132a70
+void CEnvGlobal::sub_10132a70(int unused)
+{
+	const char *pszName = m_pszGlobalName;
+	if (g_106be530.sub_100576a0(pszName))
+		g_106be530.sub_100577d0(m_pszGlobalName, 0);
+	else
+		g_106be530.sub_10057740(m_pszGlobalName, gpGlobals->mapname, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10132b50 size=0x6d
 struct CGlobals1070b228 { char pad[0x24]; int m_n24; };
 extern CGlobals1070b228 *g_1070b228;
