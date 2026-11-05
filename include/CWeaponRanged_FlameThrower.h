@@ -30,15 +30,23 @@ public:
 	void sub_103e3570(CBaseEntity *pEnt, Vector vecPos);	// stub 0x1001020d: sets pEnt alight (damage record, burning list entry at +0x1554)
 	void sub_103e3930();	// stub 0x1000397c: the burn scan over the particles' bounds (calls sub_103e3570 for the entities it finds)
 
-	char m_pad0004[0x91c - 4];
+	char m_pad0004[0x74c - 4];
+	int m_n74c;	// 0x74c: the clip
+	char m_pad0750[0x89a - 0x750];
+	char m_b89a;
+	char m_pad089b[0x91c - 0x89b];
 	int m_aBuf[0x2ee];	// 0x91c, zeroed by the constructor
-	char m_pad14d4[0x1510 - 0x14d4];
+	int m_n14d4;
+	int m_n14d8;
+	float m_vOrigin14dc[3];
+	Vector m_vVel14e8;
+	char m_pad14f4[0x1510 - 0x14f4];
 	int m_n1510;	// 0x1510
 	int m_n1514;
 	char m_b1518;
 	char m_b1519;
 	char m_pad151a[2];
-	int m_n151c;
+	union { int m_n151c; float m_f151c; };
 	char m_b1520;
 	char m_pad1521[3];
 	float m_f1524;	// curtime stamp
@@ -90,4 +98,13 @@ public:
 	virtual void vfunc361();
 	virtual int vfunc362();
 	virtual int vfunc363();
+	virtual void vfunc364();
+	virtual void vfunc365();
+	virtual void vfunc366();
+	virtual void vfunc367();
+	virtual void vfunc368();
+	virtual void vfunc369();
+	virtual void vfunc370();
+	virtual void vfunc371();
+	virtual void vfunc372();	// slot 372: the per-shot update (0x103e2f30): the base step, then the flame particle spawn
 };
