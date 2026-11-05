@@ -5668,6 +5668,7 @@
 0x10009412 func   ?vfunc103@CTriggerPush@@UAEXXZ CTriggerPush::vfunc103
 0x10009417 func   ?vfunc180@CSceneEntity@@UAEXXZ CSceneEntity::vfunc180
 0x1000941c func   ?sub_100ae580@@YAXXZ sub_100ae580
+0x10009421 func   ?sub_10202b10@CUnknown10202b10@@QAE_NHH@Z CUnknown10202b10::sub_10202b10
 0x10009426 func   ?sub_101a0530@CUnk101a0530@@QAEXHH@Z CUnk101a0530::sub_101a0530
 0x1000942b func   _debug_entity debug_entity
 0x10009435 func   ?sub_1009a0c0@@YAXPAUTEnt@@HPAH@Z sub_1009a0c0

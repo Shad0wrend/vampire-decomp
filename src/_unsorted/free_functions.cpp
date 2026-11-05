@@ -119560,6 +119560,26 @@ bool CUnknown10202ac0::sub_10202ac0(int *pIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10202b10 size=0x66
+#include "CUnknown10202b10.h"
+extern char g_106b8540[];
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+extern void (__cdecl *g_109f3628)(const char *, ...);
+bool sub_102037f0(int a, const char *name, int len, int b, int *p1, int *p2, int *p3);
+
+bool CUnknown10202b10::sub_10202b10(int a, int b)
+{
+    if (m_pszName) {
+        if (!sub_102037f0(a, STRINGR(m_pszName), 0x80, b, &m_n08, &m_n10, &m_n0c)) {
+            g_109f3628("Unable to read VStringTable data for %s: %s\n", STRINGR(m_pszName), b);
+        } else {
+            return true;
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10202ba0 size=0x73
 #include "CUnknown10202ba0.h"
 
