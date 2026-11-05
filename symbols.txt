@@ -1218,6 +1218,7 @@
 0x10002c61 func   ?vfunc35@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHH@Z CTempEntsSystem::vfunc35
 0x10002c66 func   ?vfunc374@CHL2_Player@@UAEHHHH@Z CHL2_Player::vfunc374
 0x10002c6b func   ?vfunc82@CTriggerHurt@@UAEPAUdatamap_t@@XZ CTriggerHurt::vfunc82
+0x10002c70 func   ?sub_10037c10@CPhysicsPushedEntities@@QAEXPAVCBaseEntity@@MPAM@Z CPhysicsPushedEntities::sub_10037c10
 0x10002c75 func   ?sub_103b7090@@YAEXZ sub_103b7090
 0x10002c7a func   _info_player_start info_player_start
 0x10002c7f func   ?sub_101ab360@@YAPAXPAXHHH@Z sub_101ab360

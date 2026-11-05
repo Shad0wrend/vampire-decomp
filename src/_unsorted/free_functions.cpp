@@ -4467,6 +4467,62 @@ void CPhysicsPushedEntities::sub_100379e0(CBaseEntity *pParent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10037c10 size=0x1fc
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CPhysicsPushedEntities.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+#include "CVProfile.h"
+#include "matrix3x4_t.h"
+#include "Vector.h"
+
+void sub_10139b50(const void *a, const void *b, const void *c);
+
+struct CPhysicsRotateInfo
+{
+	Vector m_vecOrigin;
+	matrix3x4_t m_mat0;
+	matrix3x4_t m_mat1;
+	Vector m_vecAngVel;
+};
+
+struct QAngleL
+{
+	float x, y, z;
+	QAngleL &operator+=(const QAngleL &v) { x += v.x; y += v.y; z += v.z; return *this; }
+	QAngleL operator*(float fl) const { QAngleL res; res.x = x * fl; res.y = y * fl; res.z = z * fl; return res; }
+};
+
+void CPhysicsPushedEntities::sub_10037c10(CBaseEntity *pRoot, float flRotation, float *pOrigin)
+{
+	ScopeTrace trace("CPhysicsPushedEntities::RotateRootEntity", g_106b8540);
+	g_109f3648->EnterScope("CPhysicsPushedEntities::RotateRootEntity", 0, "Unaccounted", false);
+
+	CPhysicsRotateInfo *pInfo = (CPhysicsRotateInfo *)pOrigin;
+	pInfo->m_vecAngVel = *(Vector *)pRoot->m_angVel3c8 * flRotation;
+
+	pInfo->m_vecOrigin = *((CEntityVSlots *)pRoot)->slot217();
+
+	sub_10139b50(((CEntityVSlots *)pRoot)->slot219(), &pInfo->m_vecOrigin, &pInfo->m_mat0);
+
+	QAngleL angles = *(QAngleL *)((CEntityVSlots *)pRoot)->slot221();
+	angles += *(QAngleL *)pRoot->m_angVel3c8 * flRotation;
+	((CEntityVSlots *)pRoot)->slot64((const float *)&angles);
+
+	sub_10139b50(((CEntityVSlots *)pRoot)->slot219(), &pInfo->m_vecOrigin, &pInfo->m_mat1);
+
+	g_109f3648->ExitScopeInlined();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10037e90 size=0x248
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
