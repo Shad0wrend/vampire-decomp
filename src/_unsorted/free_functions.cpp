@@ -124143,6 +124143,53 @@ char CPropHacking::sub_1021c6d0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021c890 size=0x188
+#include "CPropHacking.h"
+#include "CUnknown10217f50.h"
+#include "CVSoundActivityTable_t.h"
+
+extern CVActivitySound g_1074b330;
+extern int g_1074f754;
+const char *__cdecl sub_101d3730(const char *pszFormat, ...);
+
+// TARGET: CPropHacking::sub_1021c890
+char CPropHacking::sub_1021c890(int a)
+{
+	if (a > m_n09ac)
+		return 0;
+	m_n09dc = a;
+	m_n09e0 = -1;
+	if (a == -1) {
+		m_n09dc = -1;
+		sub_1021aca0();
+		sub_1021b410();
+	} else if (a == -2) {
+		m_n09dc = a;
+		sub_1021b140(sub_10219400(0x10));
+		((CUnknown10217f50 *)this)->sub_10217ac0(sub_101d3730(sub_10219400(0x27), &m_szText0904[0x40]));
+		sub_10218ff0(0, m_n0814 - 1);
+		((CUnknown10217f50 *)this)->sub_10217ac0(sub_10219400(0x12));
+		sub_10219270();
+		m_b0c2c = 1;
+	} else if (m_abVisited0986[a]) {
+		sub_1021aca0();
+		sub_1021b410();
+	} else {
+		m_abVisited0986[a] = 1;
+		sub_1021b140(sub_10219400(0x10));
+		char *pRecs = (char *)m_pRecords09a0;
+		int off = a * 0xd4;
+		const char *pszText = sub_101d3730(sub_10219400(0x13), off + pRecs + 0x30);
+		((CUnknown10217f50 *)this)->sub_10217ac0("\n%s %c%s%c", pszText, m_b0984, (char *)m_pRecords09a0 + off, m_b0985);
+		sub_10218ff0(0, m_n0814 - 1);
+		((CUnknown10217f50 *)this)->sub_10217ac0(sub_10219400(0x12));
+		sub_10219270();
+	}
+	g_1074b330.sub_101f5950((int)this, g_1074f754, 2, 1.0f, 1.25f);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021d660 size=0x43
 #include "CPropKeypad.h"
 

@@ -1805,6 +1805,7 @@
 0x10003a94 func   ?sub_1012d5a0@CUnknown1012d5a0@@QAEHXZ CUnknown1012d5a0::sub_1012d5a0
 0x10003a99 func   ?sub_10428fd0@@YAIPAD@Z sub_10428fd0
 0x10003aa3 func   ?vfunc80@CWeaponRanged_Tzimisce2Head@@UAEHXZ CWeaponRanged_Tzimisce2Head::vfunc80
+0x10003aa8 func   ?sub_1021c890@CPropHacking@@QAEDH@Z CPropHacking::sub_1021c890
 0x10003aad func   ?sub_102d1350@CAI_BaseNPC@@QAE_NPAVCBaseEntity@@@Z CAI_BaseNPC::sub_102d1350
 0x10003ab2 func   ?vfunc23@CRestore@@UAEHH@Z CRestore::vfunc23
 0x10003abc func   _env_shooter env_shooter
