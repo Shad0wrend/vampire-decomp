@@ -221,6 +221,80 @@ void CBaseDoor::vfunc250()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ef6f0 size=0x20e
+#include "CBaseEntity.h"
+#include "CBaseDoor.h"
+#include "CCollisionProperty.h"
+#include "IPhysicsObject.h"
+#include "IPhysicsEnvironment.h"
+#include "ScopeTrace.h"
+#include "engineserver.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+
+extern IPhysicsEnvironment *g_10723940;
+extern "C" int __cdecl _strcmpi(const char *a, const char *b);
+
+struct CVFluidParams
+{
+	float m_surface[4];
+	float m_current[3];
+	float m_damping;
+	float m_torque;
+	float m_viscosity;
+	void *m_pGameData;
+	char m_bUseAerodynamics;
+	int m_nContents;
+};
+
+struct CVDoorView : CBaseDoor
+{
+	const char *GetClassname() { return STRINGR_F(m_classname11c); }
+	bool IsSolidFlagSet()
+	{
+		ScopeTrace trace("CBaseEntity::IsSolidFlagSet", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+		return (m_b2b4 >> 2) & 1;
+	}
+	void AddSolidFlags(int flags)
+	{
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+		((CCollisionProperty *)((char *)this + 0x270))->AddSolidFlags(flags);
+	}
+};
+
+// TARGET: CBaseDoor::vfunc223
+bool CBaseDoor::vfunc223()
+{
+	CVDoorView *pView = (CVDoorView *)this;
+	if (_strcmpi(pView->GetClassname(), "func_water") != 0) {
+		if (!pView->IsSolidFlagSet())
+			sub_100a6150(0, 0, 0);
+	} else {
+		pView->AddSolidFlags(0x20);
+		m_flags204 |= 0x1000;
+		if (engine->vfunc58(vfunc8())) {
+			int pObject = sub_100a6150(0, 0, 0);
+			CCollisionProperty *pCol = (CCollisionProperty *)((char *)this + 0x270);
+			CVFluidParams params;
+			params.m_damping = 0.01f;
+			params.m_surface[0] = 0;
+			params.m_surface[1] = 0;
+			params.m_surface[2] = 1.0f;
+			params.m_surface[3] = ((float *(__fastcall *)(void *))(*(void ***)pCol)[8])(pCol)[2] + pCol->vfunc2()[2] - 1.0f;
+			params.m_current[0] = 0;
+			params.m_current[1] = 0;
+			params.m_current[2] = 0;
+			params.m_torque = 0.1f;
+			params.m_viscosity = 0.01f;
+			params.m_pGameData = this;
+			g_10723940->vfunc10((void *)pObject, &params);
+		}
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ef990 size=0xa3
 #include "CBaseEntity.h"
 #include "CBaseDoor.h"

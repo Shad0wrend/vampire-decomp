@@ -4542,6 +4542,7 @@
 0x10007a22 func   ?vfunc173@CBaseDoor@@UAEXPAVCBaseEntity@@0HM@Z CBaseDoor::vfunc173
 0x10007a27 func   ?sub_100a9c90@CBaseEntity@@QAEPAV1@XZ CBaseEntity::sub_100a9c90
 0x10007a2c func   ?sub_1024e140@@YAXABUS1024e140Matrix@@AAU1@@Z sub_1024e140
+0x10007a31 func   ?vfunc223@CBaseDoor@@UAE_NXZ CBaseDoor::vfunc223
 0x10007a36 func   ?sub_1005e330@@YAHXZ sub_1005e330
 0x10007a3b func   ?sub_1038fd40@CNPC_VManBat@@QAEXXZ CNPC_VManBat::sub_1038fd40
 0x10007a40 func   ?vfunc1@CTEBeamRing@@UAEHXZ CTEBeamRing::vfunc1
