@@ -2079,6 +2079,7 @@
 0x100040d9 func   ?sub_10337860@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::sub_10337860
 0x100040de func   ?vfunc363@CWeaponMelee_ManBatClaw@@UAEHXZ CWeaponMelee_ManBatClaw::vfunc363
 0x100040e3 func   ?vfunc3@CEntitySaveRestoreBlockHandler@@UAEXPAVCSave@@@Z CEntitySaveRestoreBlockHandler::vfunc3
+0x100040e8 func   ?sub_101c3ee0@@YAXXZ sub_101c3ee0
 0x100040ed func   ?sub_10349970@CUnknown10349970@@QAE_NXZ CUnknown10349970::sub_10349970
 0x100040f7 func   ?sub_1042fc30@@YAII@Z sub_1042fc30
 0x100040fc func   ?vfunc362@CWeaponMelee_Sledgehammer@@QAEHXZ CWeaponMelee_Sledgehammer::vfunc362

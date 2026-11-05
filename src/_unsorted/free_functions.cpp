@@ -93541,6 +93541,46 @@ Vec3 sub_101c3bb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c3ee0 size=0x13c
+#include "CBaseEntity.h"
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
+extern "C" __declspec(dllimport) void __cdecl Error(const char *fmt, ...);
+extern "C" __declspec(dllimport) int __cdecl RandomInt(int nMin, int nMax);
+extern "C" int __cdecl atoi(const char *);
+
+struct CStressRegBase
+{
+	int m_pad0;
+	CBaseEntity *(*m_pfn)();
+	CBaseEntity *(*GetFn())() { return m_pfn; }
+};
+extern CUtlVector<EHANDLE> g_1072cd9c;
+extern CUtlVector<CStressRegBase *> g_1072cd10;
+void sub_101cd970(CBaseEntity *pEntity);
+
+// TARGET: sub_101c3ee0
+void sub_101c3ee0()
+{
+	if (engine->vfunc85() < 3)
+		Error("Test_SpawnRandomEntities <min # entities> <max # entities> missing arguments.");
+	if (g_1072cd9c.Count() == 0)
+		Error("Test_SpawnRandomEntities: not initialized (call Test_InitRandomEntitySpawner frst).");
+	int nMin = atoi(engine->vfunc84(1));
+	int nMax = atoi(engine->vfunc84(2));
+	int count = RandomInt(nMin, nMax);
+	for (int i = 0; i < count; i++)
+	{
+		int iSlot = RandomInt(0, g_1072cd9c.Count() - 1);
+		if (g_1072cd9c[iSlot].Get())
+			sub_101cd970(g_1072cd9c[iSlot].Get());
+		int iType = RandomInt(0, g_1072cd10.Count() - 1);
+		g_1072cd9c[iSlot] = g_1072cd10[iType]->GetFn()();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c4070 size=0xb3
 #define D10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
