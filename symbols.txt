@@ -3590,6 +3590,7 @@
 0x1000642e func   ?vfunc9@CCollisionEvent@@UAEXPAX0@Z CCollisionEvent::vfunc9
 0x10006433 func   ?sub_10170c80@CUnk10170c80@@QAEXPBD@Z CUnk10170c80::sub_10170c80
 0x10006438 func   ?sub_102a9ea0@CUnknown102a9ea0@@QAEHH@Z CUnknown102a9ea0::sub_102a9ea0
+0x1000643d func   ?sub_1000643d@CSave@@QAE_NPBXH@Z CSave::sub_1000643d
 0x10006447 func   ?sub_10078c90@CUtlVector136@@QAEXH@Z CUtlVector136::sub_10078c90
 0x1000644c func   ?vfunc438@CNPC_VSheriffMan@@QAEHXZ CNPC_VSheriffMan::vfunc438
 0x10006451 func   ?sub_101eb030@@YAXXZ sub_101eb030
