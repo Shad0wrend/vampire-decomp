@@ -3661,6 +3661,7 @@
 0x1000658c func   ?vfunc275@CRagdollProp@@UAE?AVVector@@XZ CRagdollProp::vfunc275
 0x10006591 func   ?sub_102584c0@@YAHPBD@Z sub_102584c0
 0x10006596 func   _func_breakable_surf func_breakable_surf
+0x1000659b func   ?sub_10070ae0@@YAPAHXZ sub_10070ae0
 0x100065a0 func   ?CheckStuck@CNPC_VSabbatLeader@@QAEXXZ CNPC_VSabbatLeader::CheckStuck
 0x100065a5 func   ?vfunc481@CNPC_Crow@@QAEXPAVCBaseEntity@@@Z CNPC_Crow::vfunc481
 0x100065aa func   ?sub_101e9880@CUnknown101e9880@@QAEPAV1@XZ CUnknown101e9880::sub_101e9880

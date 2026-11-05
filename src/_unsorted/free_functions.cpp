@@ -17083,6 +17083,55 @@ extern "C" CBaseEntity *camera_animated()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10070ae0 size=0x3b8
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_10546654[2];
+void sub_10008440();
+void sub_1000e3fe();
+void sub_10012aa3();
+void sub_100032dd();
+
+int *sub_10070ae0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 2, "m_sAnimName", {0x7f4, 0}, 1, 6, "animname" },
+        { 0, "InputStartCamera", {0, 0}, 1, 8, "StartCamera", 0, (void *)sub_10008440 },
+        { 0, "InputEndCamera", {0, 0}, 1, 8, "EndCamera", 0, (void *)sub_1000e3fe },
+        { 1, "InputSetFOV", {0, 0}, 1, 8, "SetFOV", 0, (void *)sub_10012aa3 },
+        { 10, "m_OnCameraBegin", {0x7f8, 0}, 1, 0x16, "OnCameraBegin", g_1055dc70 },
+        { 10, "m_OnCameraComplete", {0x810, 0}, 1, 0x16, "OnCameraComplete", g_1055dc70 },
+        { 10, "m_OnScriptEvent[0]", {0x730, 0}, 1, 0x16, "OnScriptEvent01", g_1055dc70 },
+        { 10, "m_OnScriptEvent[1]", {0x748, 0}, 1, 0x16, "OnScriptEvent02", g_1055dc70 },
+        { 10, "m_OnScriptEvent[2]", {0x760, 0}, 1, 0x16, "OnScriptEvent03", g_1055dc70 },
+        { 10, "m_OnScriptEvent[3]", {0x778, 0}, 1, 0x16, "OnScriptEvent04", g_1055dc70 },
+        { 10, "m_OnScriptEvent[4]", {0x790, 0}, 1, 0x16, "OnScriptEvent05", g_1055dc70 },
+        { 10, "m_OnScriptEvent[5]", {0x7a8, 0}, 1, 0x16, "OnScriptEvent06", g_1055dc70 },
+        { 10, "m_OnScriptEvent[6]", {0x7c0, 0}, 1, 0x16, "OnScriptEvent07", g_1055dc70 },
+        { 10, "m_OnScriptEvent[7]", {0x7d8, 0}, 1, 0x16, "OnScriptEvent08", g_1055dc70 },
+        { 0, "CCameraAnimatedAnimThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_100032dd },
+    };
+    g_10546654[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_10546654[0] = (int)&dataDesc[1];
+    return g_10546654;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10071100 size=0xbd
 #include "SendProp.h"
 
