@@ -130896,6 +130896,78 @@ Vector sub_10232d80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102338b0 size=0x10e
+struct SLink { int pad; int m_iSrcID; int m_iDestID; };
+struct SHolder { char pad[0xc]; int *m_pNodeIndexTable; void sub_102f7940(); };
+struct SWorld { char pad[0x454]; SHolder *m_pEditOps; SHolder *GetEditOps() { return m_pEditOps; } };
+struct SNode {
+    int pad0;
+    int m_iID;
+    char pad1[0x68];
+    int m_nType;
+    unsigned int m_eNodeInfo;
+    int m_nNumLinks;
+    SLink **m_pLinks;
+    int GetId() { return m_iID; }
+    int NumLinks() { return m_nNumLinks; }
+    SLink *GetLinkByIndex(int i) { return m_pLinks[i]; }
+};
+extern SWorld *g_10934088;
+extern char g_109340dc;
+extern SNode *g_109340d4;
+extern void (*g_109f3628)(const char *, ...);
+bool sub_10232cb0();
+SNode *sub_101727a0(int, int);
+int sub_100f43c0(int, int);
+int sub_102cce10(int, int);
+int sub_100f4410(int, int, int);
+
+void sub_102338b0(int pPlayer)
+{
+    if (!sub_10232cb0())
+        return;
+    if (!pPlayer)
+        return;
+
+    int nNodeType = 2;
+    if (g_109340dc)
+        nNodeType = 3;
+
+    SNode *pAINode = sub_101727a0(pPlayer, nNodeType);
+    if (pAINode)
+    {
+        int status = sub_100f43c0(g_10934088->GetEditOps()->m_pNodeIndexTable[pAINode->GetId()], 0);
+        if (status == 2)
+        {
+            g_109f3628("Worldcraft failed on deletion...\n");
+        }
+        else if (status == 0)
+        {
+            pAINode->m_nType = 1;
+            pAINode->m_eNodeInfo |= 0x20000000;
+            g_10934088->GetEditOps()->sub_102f7940();
+            g_109340d4 = pAINode;
+
+            for (int link = 0; link < pAINode->NumLinks(); link++)
+            {
+                int nSrcID = pAINode->GetLinkByIndex(link)->m_iSrcID;
+                int nDstID = pAINode->GetLinkByIndex(link)->m_iDestID;
+                if (sub_102cce10(nSrcID, nDstID))
+                {
+                    int nWCSrcID = g_10934088->GetEditOps()->m_pNodeIndexTable[nSrcID];
+                    int nWCDstID = g_10934088->GetEditOps()->m_pNodeIndexTable[nDstID];
+                    int status2 = sub_100f4410(nWCSrcID, nWCDstID, 0);
+                    if (status2 == 2)
+                    {
+                        g_109f3628("Worldcraft failed on node link deletion...\n");
+                    }
+                }
+            }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10233a10 size=0x89
 extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
 char sub_10232cb0();

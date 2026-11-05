@@ -1890,6 +1890,7 @@
 0x10003c42 func   ?sub_103dc220@UtlMem@@QAEXXZ UtlMem::sub_103dc220
 0x10003c47 func   ?vfunc80@CWeaponThrown_Grenade_Frag@@UAEHXZ CWeaponThrown_Grenade_Frag::vfunc80
 0x10003c4c func   ?vfunc378@CNPC_VPlaceholder@@UAE_NHH@Z CNPC_VPlaceholder::vfunc378
+0x10003c56 func   ?sub_102338b0@@YAXH@Z sub_102338b0
 0x10003c5b func   ?sub_101984c0@@YAPAUPyObj@@PAU1@0@Z sub_101984c0
 0x10003c60 func   ?vfunc103@CBreakableSurface@@UAEXXZ CBreakableSurface::vfunc103
 0x10003c65 func   ?sub_1023f060@@YAXPAI@Z sub_1023f060
