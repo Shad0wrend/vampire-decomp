@@ -17,7 +17,7 @@ public:
 	virtual void vfunc11(int a, int *b);
 	virtual int vfunc12();	// a flag (the "is the level loaded" test before sprite / particle code)
 	virtual int vfunc13(const char *pszName, bool bPreload);	// PrecacheModel: returns the model index
-	virtual void vfunc14(); virtual void vfunc15(); virtual void vfunc16();
+	virtual void vfunc14(); virtual void vfunc15(); virtual int vfunc16(const char *pszName, int a);
 	virtual int vfunc17(const char *pszName, int bPreload);	// precaches a particle emitter / generic resource by name
 	virtual void *vfunc18(int modelIndex);	// the studio header of a model index (0 when none)
 	virtual char *vfunc19(int modelIndex);	// the model name of a model index
