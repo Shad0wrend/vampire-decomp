@@ -202073,6 +202073,27 @@ int sub_104115b0(int a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x104115f0 size=0x21
+int sub_102587f0();
+struct CBaseCombatCharacterCall_104115f0
+{
+    int *sub_10335950(int a);
+};
+struct CUnknown10411630Call_104115f0
+{
+    int sub_10411630(int a);
+};
+
+// TARGET: sub_104115f0
+int sub_104115f0(char *a, int b)
+{
+    int *p = ((CBaseCombatCharacterCall_104115f0 *)a)->sub_10335950(sub_102587f0());
+    if (!p)
+        return 0;
+    return ((CUnknown10411630Call_104115f0 *)p)->sub_10411630(b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10411630 size=0x73
 #include "CBaseEntity.h"
 #include "CUnknown10411630.h"
