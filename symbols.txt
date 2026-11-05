@@ -12983,6 +12983,7 @@
 0x10014083 func   ?vfunc82@CDynamicLight@@UAEPAUdatamap_t@@XZ CDynamicLight::vfunc82
 0x10014088 func   ?vfunc492@CNPC_VTest@@QAEXXZ CNPC_VTest::vfunc492
 0x10014092 func   ?sub_100ddd90@CCollisionProperty@@QAEXXZ CCollisionProperty::sub_100ddd90
+0x10014097 func   ?sub_101db0d0@CUnknown101db210@@QAE_NPAVIKVNodeView@@PBUCUnknown101db210Filter@@@Z CUnknown101db210::sub_101db0d0
 0x100140a6 func   ?vfunc3@CSoundControllerImp@@UAEXPAXMHMM@Z CSoundControllerImp::vfunc3
 0x100140ab func   ?vfunc546@CNPC_VWerewolf@@QAEHH@Z CNPC_VWerewolf::vfunc546
 0x100140b0 func   ?vfunc360@CBaseCombatCharacter@@UAEDXZ CBaseCombatCharacter::vfunc360
