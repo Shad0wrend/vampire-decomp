@@ -7045,6 +7045,162 @@ int sub_100439b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100443e0 size=0x33b
+#include "CRestore.h"
+#include "CPhysSaveRestoreBlockHandler.h"
+#include "CEHandleGet.h"
+#include "Tier1.h"
+
+struct CPhysEntView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual int GetModelIndex();
+	char m_pad[0x120 - 4];
+	int m_iGlobalname;
+};
+struct CPhysModelInfo
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual int GetModelIndex(const char *pszName);
+	virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17();
+	virtual void *GetVCollide(int modelIndex);
+};
+struct CPhysVCollide { int m_n0; void **m_pSolids; };
+struct CPhysEnvView
+{
+	virtual void v0();
+	virtual void AssociateCollide(void *pObject, void *pCollide);
+	virtual void AssociateModel(void *pObject, int modelIndex);
+};
+struct CPhysTracerRequest
+{
+	CRestore *m_pRestore;
+	void **m_pItems;
+	int m_nId;
+	CPhysEntView *m_pEntity;
+	const char *m_pszName;
+	void *m_pObject;
+	void *m_pTracer;
+	void *m_pGlobal;
+};
+struct CPhysTracer
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17();
+	virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39(); virtual void v40(); virtual void v41();
+	virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47();
+	virtual void v48(); virtual void v49();
+	virtual void Request(CPhysTracerRequest *pRequest);
+};
+
+extern CPhysTracer *g_10723940;
+extern CPhysModelInfo *g_1070b250;
+extern void *g_10580180;
+extern char g_106b8540[];
+extern Vector g_1070d1b0;
+extern float g_104454c4;
+void *sub_1002dfe0(const Vector *pMins, const Vector *pMaxs);
+
+inline const char *PhysString(const char *const &s)
+{
+	return s ? s : g_106b8540;
+}
+
+void CPhysSaveRestoreBlockHandler::sub_100443e0(CRestore *pRestore, CPhysRestoreRecord *pRec, CPhysObjectDesc *pDesc, int nItems)
+{
+	if (nItems == 1)
+	{
+		pRestore->vfunc5();
+		int modelIndex = -1;
+		bool bCustom = false;
+		void *pPhysCollide = 0;
+		if (pRec->m_pszName)
+		{
+			CPhysEntView *pEnt = (CPhysEntView *)EHandle_Get(pRec->m_hEntity);
+			if (pEnt->m_iGlobalname)
+				modelIndex = pEnt->GetModelIndex();
+			else
+				modelIndex = g_1070b250->GetModelIndex(PhysString(pRec->m_pszName));
+			if (modelIndex != -1)
+			{
+				CPhysVCollide *pVCollide = (CPhysVCollide *)g_1070b250->GetVCollide(modelIndex);
+				if (pVCollide)
+				{
+					if (pRec->m_nIndex)
+						g_109f3628(g_106b8540);
+					pPhysCollide = pVCollide->m_pSolids[pRec->m_nIndex];
+				}
+			}
+		}
+		else if (pRec->m_vecPos != g_1070d1b0 || pRec->m_vecAng != g_1070d1b0)
+		{
+			pPhysCollide = sub_1002dfe0(&pRec->m_vecPos, &pRec->m_vecAng);
+			bCustom = true;
+		}
+		else if (pRec->m_flScale != g_104454c4)
+		{
+			if (!*pDesc->m_pItems && g_10723940)
+			{
+				CPhysTracerRequest req;
+				req.m_pRestore = pRestore;
+				req.m_pItems = pDesc->m_pItems;
+				req.m_nId = pRec->m_nId;
+				req.m_pEntity = (CPhysEntView *)EHandle_Get(pRec->m_hEntity);
+				req.m_pszName = PhysString(pRec->m_pszName);
+				req.m_pObject = 0;
+				req.m_pTracer = g_10723940;
+				req.m_pGlobal = g_10580180;
+				g_10723940->Request(&req);
+			}
+			return;
+		}
+		if (pPhysCollide)
+		{
+			if (!*pDesc->m_pItems)
+			{
+				if (g_10723940)
+				{
+					CPhysTracerRequest req;
+					req.m_pRestore = pRestore;
+					req.m_pItems = pDesc->m_pItems;
+					req.m_nId = pRec->m_nId;
+					req.m_pEntity = (CPhysEntView *)EHandle_Get(pRec->m_hEntity);
+					req.m_pszName = PhysString(pRec->m_pszName);
+					req.m_pObject = pPhysCollide;
+					req.m_pTracer = g_10723940;
+					req.m_pGlobal = g_10580180;
+					g_10723940->Request(&req);
+				}
+				void *pObject = *pDesc->m_pItems;
+				if (pObject)
+				{
+					if (!bCustom)
+						((CPhysEnvView *)((char *)this + 4))->AssociateModel(pObject, modelIndex);
+					else
+						((CPhysEnvView *)((char *)this + 4))->AssociateCollide(pObject, pPhysCollide);
+				}
+				else
+					g_109f3630("Failed to restore physics object\n");
+			}
+			else
+				g_109f3630("Physics object pointer unexpectedly non-null before restore. Should be creating physics object in CreatePhysics()?\n");
+		}
+		else
+			g_109f3630("Failed to reestablish collision model for object\n");
+		pRestore->vfunc8();
+	}
+	else
+		g_109f3630("Don't know how to reconsitite models for physobj array \n");
+}
+// END FUNCTION
+
 // FUNCTION: 0x10044a70 size=0x3
 void __stdcall sub_10044a70(int a0)
 {

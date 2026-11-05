@@ -6993,6 +6993,7 @@
 0x1000b3d4 func   _npc_VVampire npc_VVampire
 0x1000b3d9 func   ?sub_101e8640@S@@QAEXPAUP@@@Z S::sub_101e8640
 0x1000b3de func   _func_door func_door
+0x1000b3e8 func   ?sub_100443e0@CPhysSaveRestoreBlockHandler@@QAEXPAVCRestore@@PAUCPhysRestoreRecord@@PAUCPhysObjectDesc@@H@Z CPhysSaveRestoreBlockHandler::sub_100443e0
 0x1000b3ed func   ?sub_1014d110@CUnk1014d110@@QAEXXZ CUnk1014d110::sub_1014d110
 0x1000b3f2 func   ?sub_10131a40@@YAPAHXZ sub_10131a40
 0x1000b401 func   ?sub_10359ec0@CGeneric_NPC@@QAEPAV1@XZ CGeneric_NPC::sub_10359ec0
