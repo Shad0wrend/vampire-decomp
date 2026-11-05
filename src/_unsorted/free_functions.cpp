@@ -1147,6 +1147,65 @@ CPhysConstraintSystem *sub_1002b450(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002b4c0 size=0x152
+#include "CPhysConstraintSystem.h"
+#include "CPhysConstraint.h"
+
+struct CPhysConstraintPair {
+	PhysObjView *a;
+	PhysObjView *b;
+	char m_pad[0x18];
+};
+struct PhysSysView {
+	virtual void v0();
+	virtual void vfunc1();
+};
+struct ConView {
+	char m_pad[0x26c];
+	const char *m_name26c;
+};
+PhysSysView *sub_1002b450(const char *name);
+void sub_10158b40(PhysObjView *a, PhysObjView *b);
+__declspec(dllimport) void Warning(const char *fmt, ...);
+
+static inline const char *STRING(const char *const &p)
+{
+	if (p)
+		return p;
+	return "";
+}
+
+bool CPhysConstraint::sub_1002b4c0()
+{
+	CPhysConstraintPair pair;
+	if (m_pConstraint450) {
+		pair.a = m_pConstraint450->vfunc5();
+		pair.b = m_pConstraint450->vfunc6();
+		if (m_spawnflags204 & 1)
+			sub_10158b40(pair.a, pair.b);
+		m_pConstraint450->vfunc3(this);
+		return true;
+	}
+	sub_1002b360(&pair);
+	if (!pair.a && !pair.b)
+		return false;
+	if (pair.a->IsStatic() && pair.b->IsStatic()) {
+		Warning("Constraint (%s) attached to two static objects (%s and %s)!!!\n", STRING(((ConView *)this)->m_name26c), STRING(m_pszAttach1454), *(int *)&m_pszAttach2458 == 0 ? "world" : STRING(m_pszAttach2458));
+		return false;
+	}
+	PhysSysView *pSys = sub_1002b450(m_pszSystem460);
+	m_pConstraint450 = vfunc241((CPhysConstraintSystem *)pSys, (CPhysConstraintPair *)&pair);
+	if (!m_pConstraint450)
+		return false;
+	m_pConstraint450->vfunc3(this);
+	if (pSys)
+		pSys->vfunc1();
+	if (m_spawnflags204 & 1)
+		sub_10158b40(pair.a, pair.b);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002b760 size=0x1a
 namespace lifted {
 extern int g_10538ddc;
