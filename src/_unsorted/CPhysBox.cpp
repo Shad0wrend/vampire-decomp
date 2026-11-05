@@ -220,6 +220,60 @@ bool CPhysBox::vfunc223()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004e500 size=0x1f0
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CPhysBox.h"
+#include "CCollisionProperty.h"
+#include "IPhysicsObject.h"
+#include "ScopeTrace.h"
+
+#define SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct SPhysBoxSlots
+{
+	SLOTS10(a0) SLOTS10(a1) SLOTS10(a2) SLOTS10(a3) SLOTS10(a4) SLOTS10(a5) SLOTS10(a6) SLOTS10(a7) SLOTS10(a8) SLOTS10(a9)
+	SLOTS10(b0) SLOTS10(b1) SLOTS10(b2) SLOTS10(b3) SLOTS10(b4) SLOTS10(b5) SLOTS10(b6) SLOTS10(b7) SLOTS10(b8) SLOTS10(b9)
+	SLOTS10(c0)
+	virtual void c100();
+	virtual int vfunc211();
+};
+
+struct IPhysObj;
+unsigned short sub_1002e0a0(IPhysObj *pObj, unsigned short nFlags);
+extern float g_104454c4;
+
+void CPhysBox::vfunc241(int a)
+{
+	CCollisionProperty *pColl;
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY", g_106b8540);
+		pColl = (CCollisionProperty *)((char *)this + 0x270);
+		pColl->sub_100dc480(6);
+	}
+	if (m_flags204 & 4) {
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", m_name26c ? m_name26c : g_106b8540, g_106b8540);
+		pColl->AddSolidFlags(4);
+	}
+	IPhysicsObject *pPhys = (IPhysicsObject *)sub_100a5ea0(vfunc92(), ((SPhysBoxSlots *)this)->vfunc211(), 1, 0);
+	if (m_nMaterial0450 == 1)
+		sub_1002e0a0((IPhysObj *)pPhys, 1);
+	if (m_flMassScale0454 > g_104454c4)
+		pPhys->vfunc11(pPhys->vfunc12() * m_flMassScale0454);
+	if (m_flMass0464 > g_104454c4)
+		pPhys->vfunc11(m_flMass0464);
+	float flMass = pPhys->vfunc12() > 1000000.0 ? 1000000.0 : (pPhys->vfunc12() < 1.0 ? 1.0 : pPhys->vfunc12());
+	pPhys->vfunc11(flMass);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004e7c0 size=0xa5
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

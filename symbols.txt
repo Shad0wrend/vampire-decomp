@@ -5979,6 +5979,7 @@
 0x10009c73 func   ?sub_101cf930@@YA_NPBDPAVCBaseEntity@@@Z sub_101cf930
 0x10009c78 func   ?vfunc82@CMultiSource@@UAEPAUdatamap_t@@XZ CMultiSource::vfunc82
 0x10009c7d func   ?sub_1029f460@CAI_BaseNPCTroika@@QAEXPAXHHHPAHD@Z CAI_BaseNPCTroika::sub_1029f460
+0x10009c87 func   ?vfunc241@CPhysBox@@QAEXH@Z CPhysBox::vfunc241
 0x10009c8c func   ?LookupEntity@EHandleEntityList@@QBEPAVIHandleEntity@@ABVCBaseHandle@@@Z EHandleEntityList::LookupEntity
 0x10009c8c func   ?sub_100290c0@CUnknown100290c0@@QAEIPAI@Z CUnknown100290c0::sub_100290c0
 0x10009c96 func   ?sub_1010bda0@@YGHH@Z sub_1010bda0
