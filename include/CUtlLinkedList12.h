@@ -19,6 +19,7 @@ public:
 	int m_FirstFree;	// 0x14
 	int m_ElementCount;	// 0x18
 	int m_NumAlloced;	// 0x1c
+	CUtlLinkedList12Node *m_pElements;	// 0x20
 
 	void sub_100b46a0();	// "CUtlLinkedList::RemoveAll": puts every node into the free list (stub 0x10005d0d)
 	bool sub_100decb0(int i);	// "CUtlLinkedList::IsInList": i is below the number of allocated nodes, not negative and the node's previous index is not itself (called through the stub at 0x1000ac54)

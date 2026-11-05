@@ -6,7 +6,9 @@
 
 struct CUnknown100de930Owner
 {
-	char m_pad0000[0x230];
+	virtual void vfunc0();
+	virtual unsigned int *vfunc1();
+	char m_pad0004[0x22c];
 	CUtlLinkedList12 m_List;	// 0x230
 };
 
@@ -16,5 +18,6 @@ public:
 	int m_unk0;	// 0x00
 	unsigned int m_hOwner;	// 0x04: handle of the owner entity
 
+	void sub_100de800(CUnknown100de930Owner *pOwner);	// registers this object in the owner's list (tail) and stores the owner's handle
 	void sub_100de930();	// removes this object from the list of the owner entity it points to (when the handle still resolves), then clears the handle
 };
