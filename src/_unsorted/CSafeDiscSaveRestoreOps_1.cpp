@@ -1,6 +1,21 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1042f2f0 size=0x46
+#include "CSafeDiscSaveRestoreOps_1.h"
+
+int sub_1042fd40(unsigned int h);
+
+#define HASH(x) (((((((x) & 0x8a66e35) ^ 0x793f90) + 0x8b10412) & 0x175991ca) ^ (x)) ^ 0x783682a9)
+
+void CSafeDiscSaveRestoreOps_1::vfunc0(int **ppObject, CSafeDiscWriter *pSave)
+{
+	int v = HASH((*ppObject)[2]);
+	ppObject = (int **)sub_1042fd40(v);
+	pSave->vfunc10((int *)&ppObject, 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042f360 size=0x56
 #include "CSafeDiscSaveRestoreOps_1.h"
 unsigned int sub_1042fc90(int);
