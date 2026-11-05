@@ -29,6 +29,7 @@ public:
 
 	CUnknown103164c0(const char *pszName);	// 0x103164c0 (stub 0x10002856): returns this
 	CUnknown103164c0 *sub_10316560();	// the default constructor body (no name), stub-called by CAI_SaveRestoreBlockHandler::vfunc7: returns this
+	void sub_10316440();	// destructor body
 	void sub_103165f0(const char *pszName);	// sets the squad name (stub 0x100132eb)
 	void sub_103165f0(CSquadName name);
 	void sub_10316700(CBaseEntity *pMember);	// stub 0x100145ab: told about a member that joined
