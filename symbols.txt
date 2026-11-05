@@ -3285,6 +3285,7 @@
 0x10005cf9 func   ?vfunc10@CGameRules@@UAEXHH@Z CGameRules::vfunc10
 0x10005cfe func   _func_rot_button func_rot_button
 0x10005d03 func   ?vfunc2@CRestore@@UAEHPAVCBaseEntity@@H@Z CRestore::vfunc2
+0x10005d08 func   ?vfunc3@CServerGameClients@@UAEXPAX@Z CServerGameClients::vfunc3
 0x10005d0d func   ?sub_100b46a0@CUtlLinkedList12@@QAEXXZ CUtlLinkedList12::sub_100b46a0
 0x10005d12 func   ?sub_10092ef0@CBaseAnimating@@QAE_NHPAM0@Z CBaseAnimating::sub_10092ef0
 0x10005d17 func   ?sub_10361a70@CNPC_VAsianVampireUnit@@QAEXPAX@Z CNPC_VAsianVampireUnit::sub_10361a70

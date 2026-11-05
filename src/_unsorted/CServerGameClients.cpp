@@ -45,6 +45,103 @@ void CServerGameClients::vfunc2(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011c060 size=0x2a9
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CServerGameClients.h"
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+#include "engineserver.h"
+#include "CReliableBroadcastFilter.h"
+
+extern int g_10726048;
+extern char g_1070ba2c;
+CBaseEntity *sub_100ab250(void *pEdict);
+void *sub_101bb220(void *pEdict);
+void *sub_101bb150(void *p);
+void sub_1003d8f0(CBaseEntity *p);
+void sub_101cf600(CBaseEntity *p);
+__declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+
+struct CUnk101b98d0 { void sub_101b98d0(); };
+struct CUnitP3View { void sub_1017c580(); };
+struct CFlagsUnit
+{
+	char m_pad[0x44];
+	unsigned short m_nFlags;
+	void sub_100dc580(unsigned int flags);
+};
+struct CGlobalList1070ba0c
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
+	virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13();
+	virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20();
+	virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(void *pEdict);
+};
+extern CGlobalList1070ba0c *g_1070ba0c;
+
+struct CPlayerView102
+{
+	char m_pad0[0x2078];
+	const char *m_pszName;
+	char m_pad1[0x2310 - 0x207c];
+	int m_n2310;
+};
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+inline CBaseEntity *Instance102(void *pent)
+{
+	ScopeTrace trace("CBaseEntity::Instance", g_106b8540, g_106b8540);
+	if (!pent)
+		pent = engine->vfunc38(0);
+	return sub_100ab250(pent);
+}
+
+// TARGET: CServerGameClients::vfunc3
+void CServerGameClients::vfunc3(void *pEdict)
+{
+	ScopeTrace trace("CServerGameClients::ClientDisconnect", g_106b8540, g_106b8540);
+	CBaseEntity *pPlayer = Instance102(pEdict);
+	if (pPlayer) {
+		if (!g_1070ba2c) {
+			char msg[256];
+			CPlayerView102 *pv = (CPlayerView102 *)pPlayer;
+			pv->m_n2310 = 0;
+			Q_snprintf(msg, 256, "- %s has left the game\n", STRINGR(pv->m_pszName));
+			CReliableBroadcastFilter filter;
+			engine->vfunc65(&filter, g_10726048);
+			engine->vfunc67(engine->vfunc35((int)pEdict));
+			engine->vfunc78(msg);
+			engine->vfunc66();
+			CUnk101b98d0 *pObj = (CUnk101b98d0 *)sub_101bb150(sub_101bb220(pEdict));
+			if (pObj)
+				pObj->sub_101b98d0();
+			pPlayer->sub_100b3640(0x10000);
+			pPlayer->sub_100b3580(0x400000);
+			pPlayer->sub_100b3580(0x8000);
+			{
+				ScopeTrace trace3("CBaseEntity::AddSolidFlags", pPlayer->m_name26c ? pPlayer->m_name26c : g_106b8540);
+				CFlagsUnit *pFlags = (CFlagsUnit *)((char *)pPlayer + 0x270);
+				pFlags->sub_100dc580(pFlags->m_nFlags | 4);
+			}
+			sub_101cf600(pPlayer);
+			if (g_1070ba0c)
+				g_1070ba0c->v28(pEdict);
+		}
+		sub_1003d8f0(pPlayer);
+		((CUnitP3View *)pPlayer)->sub_1017c580();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011c4a0 size=0x15
 #include "CServerGameClients.h"
 
