@@ -172404,6 +172404,40 @@ void CBaseCombatCharacter::sub_10327960(int color)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103281b0 size=0xe3
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+static inline float FRet(const float &f) { return f; }
+
+#define SV(n) virtual void s##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+struct CEntityOriginAngleSlotsX {
+	SV10(0) SV10(1) SV10(2) SV10(3) SV10(4) SV10(5)
+	SV(60) SV(61)
+	virtual void s62(float *pOrigin);
+	SV(63) SV(64)
+	virtual void s65(float x, float y, float z);
+};
+
+void CBaseCombatCharacter::sub_103281b0(int boneName, char bSetOrigin, char bSetAngles)
+{
+	ScopeTrace trace("CBaseCombatCharacter::MoveToBoneOriginAngles", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+	sub_100976e0();
+	int bone = sub_10092550(boneName);
+	if (bone >= 0) {
+		float ang[3];
+		float pos[3];
+		sub_100926e0(bone, pos, ang);
+		if (bSetOrigin)
+			((CEntityOriginAngleSlotsX *)this)->s62(pos);
+		if (bSetAngles)
+			((CEntityOriginAngleSlotsX *)this)->s65(*(float *)((char *)this + 0x428), FRet(ang[1]), *(float *)((char *)this + 0x430));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103282e0 size=0x7e
 #include "CBaseCombatCharacter.h"
 
