@@ -5997,6 +5997,7 @@
 0x10009d9a func   ?sub_1005d830@@YAXPAXMHPAVVector@@@Z sub_1005d830
 0x10009d9f func   ?sub_10187ef0@CLagCompensationManager@@QAEXXZ CLagCompensationManager::sub_10187ef0
 0x10009da4 func   ?sub_101e05e0@CUnknown101e05e0@@QAEXXZ CUnknown101e05e0::sub_101e05e0
+0x10009da9 func   ?vfunc1@?$CEntityDataInstantiator@Ugroundlink_t@@@@UAEHI@Z CEntityDataInstantiator<groundlink_t>::vfunc1
 0x10009dae func   ?vfunc80@CWeaponIArmor_Lt_Cloth@@UAEPAXXZ CWeaponIArmor_Lt_Cloth::vfunc80
 0x10009db3 func   ?sub_1038c250@CNPC_VManBat@@QAEXPAVCBaseEntity@@@Z CNPC_VManBat::sub_1038c250
 0x10009db8 func   ?sub_1013c620@@YAXABUmatrix3x4_t@@ABVVector@@1AAV2@2@Z sub_1013c620
