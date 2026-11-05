@@ -256,7 +256,7 @@ public:
 	void sub_1026e5e0();	// "CAI_BaseNPC::CheckOnGround" (0x1026e5e0): ground trace / condition 0x73 update run by GatherConditions
 	void sub_10273390();	// 0x10273390: the body behind vtable slot 420 (a Spawn/Initialize router, line 0x1af1)
 	bool sub_10279dd0();	// "CAI_BaseNPC::ChooseEnemy" (0x10279dd0): the enemy selection worker (memory list / conditions 0x54 / 0x47 / 0x58)
-	void vfunc458(int condition);	// slot 458 (plain member): ids below 1000000000 (and -1) are translated through slot 580 first, then the (translated) id goes to the global 0x109203dc's sub_102ea020 (a name / id lookup)
+	int vfunc458(int condition);	// slot 458 (plain member): ids below 1000000000 (and -1) are translated through slot 580 first, then the (translated) id goes to the global 0x109203dc's sub_102ea020 (a name / id lookup)
 	void sub_10269bd0(int *pConditions, int nConditions);	// "CAI_BaseNPC::ClearConditions": clears the condition bits (array at +0x5c5c) of each id, translating ids below 1000000000 first through slot 580
 	void sub_1026e340(int newState);	// "CAI_BaseNPC::SetState": stores the state at +0x5cc0/+0x5cc4 (curtime at +0x5cc8 on a change), strips the weapon of an NPC in state 1 that slot 167 flags, then calls slot 463(old, new)
 	void sub_1028e090(void *pModel);  // stub 0x1000944e: called by sub_1028e060 with the model pointer of the object (GetModelPtr of the entity at its +0x0)
