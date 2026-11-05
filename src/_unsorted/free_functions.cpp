@@ -87192,6 +87192,81 @@ void sub_101b1040(int entIndex, const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b1120 size=0x2ec
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CSoundEmitterSystemBase.h"
+#include "ScopeTrace.h"
+#include "CRecipientFilter.h"
+
+struct SndEdictView { char pad[0x40]; void *m_pUnk; };
+struct SndStr { const char *p; };
+struct SndEntView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual SndStr *vfunc9(SndStr *out);
+};
+struct SndTraceOut {
+	void sub_10037300(const char *func, const char *name, const char *line);
+	~SndTraceOut() { (*g_109f3680)--; }
+};
+SndEntView *sub_100ab250(SndEdictView *pEdict);
+extern CSoundEmitterSystemBase g_1072be18;
+extern char *(*g_109f384c)(const char *pStr, const char *pSearch);
+extern "C" __declspec(dllimport) int __cdecl Q_strncasecmp(const char *a, const char *b, int n);
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+
+// TARGET: sub_101b1120
+void sub_101b1120(const CRecipientFilter *filter, int iEntIndex, int iChannel, const char *soundname, float flVolume, float flAtten, int iFlags, int iPitch, const float *pOrigin, int soundtime, float *duration)
+{
+	if (soundname) {
+		char *(*pfnStristr)(const char *, const char *) = g_109f384c;
+		if (pfnStristr(soundname, ".wav") || pfnStristr(soundname, ".mp3") || soundname[0] == '!') {
+			enginesound->vfunc3(filter, iEntIndex, iChannel, soundname, flVolume, flAtten, iFlags, iPitch, (int)pOrigin, 0, 1, soundtime);
+			if (duration)
+				*duration = enginesound->vfunc1(soundname);
+			((void (__cdecl *)(void *, const char *, const char *, int))((void **)g_1072be18.m_vtbl)[3])(&g_1072be18, "EmitSound:  Raw wave emitted '%s' (ent %i)\n", soundname, iEntIndex);
+			return;
+		}
+	}
+	CSoundParameters params;
+	SndEntView *pEnt;
+	{
+		ScopeTrace t1("CBaseEntity::Instance", g_106b8540);
+		SndEdictView *pEdict = (SndEdictView *)engine->vfunc38(iEntIndex);
+		{
+			SndTraceOut t2;
+			t2.sub_10037300("CBaseEntity::Instance", g_106b8540, g_106b8540);
+			if (!pEdict)
+				pEdict = (SndEdictView *)engine->vfunc38(0);
+			pEnt = sub_100ab250(pEdict);
+		}
+	}
+	if (pEnt) {
+		SndStr tmp;
+		const char *s = pEnt->vfunc9(&tmp)->p;
+		g_1072be18.sub_101b3b90(s ? s : g_106b8540);
+	}
+	if (g_1072be18.sub_101b33f0(soundname, params) && params.soundname[0]) {
+		if (!Q_strncasecmp(params.soundname, "vo", 2) && params.channel != 5 && params.channel != 2)
+			DevMsg("EmitSound:  Voice .wav file %s doesn't specify CHAN_VOICE or CHAN_STREAM for sound %s\n", params.soundname, soundname);
+		if (iFlags & 2)
+			params.pitch = iPitch;
+		if (iFlags & 1)
+			params.volume = flVolume;
+		enginesound->vfunc2(filter, iEntIndex, params.channel, params.soundname, params.volume, params.soundlevel, iFlags, params.pitch, pOrigin, 0, 1, soundtime);
+		if (duration)
+			*duration = enginesound->vfunc1(params.soundname);
+		((void (__cdecl *)(void *, const char *, const char *, const char *, int))((void **)g_1072be18.m_vtbl)[3])(&g_1072be18, "EmitSound:  '%s' emitted as '%s' (ent %i)\n", soundname, params.soundname, iEntIndex);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b14d0 size=0x2ec
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
