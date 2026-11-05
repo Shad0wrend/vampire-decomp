@@ -177,6 +177,21 @@ void CWeaponMelee::vfunc367(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103eac60 size=0x25
+#include "CWeaponMelee.h"
+
+struct CWeaponMeleeUnit : CWeaponMelee
+{
+	int sub_103ea7e0(int a, int b, int c, int d);
+};
+
+int CWeaponMelee::vfunc368(int a, int b, int c)
+{
+	int x = ((CWeaponMeleeUnit *)this)->sub_103ea7e0(0x4e, a, b, c) - 0x51;
+	return (x != 0 ? 0xffffffae : 0) + 0x52;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103eae00 size=0x78
 #include "CWeaponMelee.h"
 #include "CGlobalEntityList.h"
