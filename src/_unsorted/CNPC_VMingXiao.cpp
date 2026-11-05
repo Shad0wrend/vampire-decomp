@@ -719,3 +719,46 @@ void CNPC_VMingXiao::vfunc123()
 	sub_1029ca50();
 }
 // END FUNCTION
+
+// FUNCTION: 0x10399fe0 size=0x17f
+#include "CBaseAnimating.h"
+#include "CNPC_VMingXiao.h"
+#include "ScopeTrace.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+bool CNPC_VMingXiao::vfunc100(int a, int b, int c)
+{
+	int i;
+	int off;
+	char *pSet;
+	ScopeTrace trace("CNPC_VMingXiao::TestHitboxes", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+	char *pHdr = (char *)((CBaseAnimating *)this)->sub_100952d0(-1);
+	if (!pHdr)
+		return false;
+	if (!*((char *)this + 0x6678))
+		return false;
+	if (*(int *)(pHdr + 0x100) < 7)
+		return false;
+	int cache = ((CBaseAnimating *)this)->sub_10095460();
+	pSet = pHdr + *(int *)(pHdr + 0x104);
+	if (pSet && *(int *)(pSet + 4)) {
+		if (sub_10399ef0(a, b, c, pHdr, pSet, cache))
+			return true;
+	}
+	i = 0;
+	off = 12;
+	do {
+		if (sub_10398000(i)) {
+			pSet = pHdr + off + *(int *)(pHdr + 0x104);
+			if (pSet && *(int *)(pSet + 4)) {
+				if (sub_10399ef0(a, b, c, pHdr, pSet, cache))
+					return true;
+			}
+		}
+		i = i + 1;
+		off += 12;
+	} while (off < 0x54);
+	return true;
+}
+// END FUNCTION
