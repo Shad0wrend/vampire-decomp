@@ -8137,6 +8137,7 @@
 0x1000cfea func   ?sub_10349590@CUnknown10349590@@QAE_NXZ CUnknown10349590::sub_10349590
 0x1000cfef func   ?vfunc5@CItemGBachJournal@@QAEPAV1@I@Z CItemGBachJournal::vfunc5
 0x1000cff4 func   ?sub_10406000@@YAHXZ sub_10406000
+0x1000cff9 func   ?vfunc0@CSafeDiscSaveRestoreOps_6@@QAEXPAPAHPAUCSafeDiscWriter@@@Z CSafeDiscSaveRestoreOps_6::vfunc0
 0x1000cffe func   _item_p_research_mg_finance item_p_research_mg_finance
 0x1000d003 func   _npc_VManBat npc_VManBat
 0x1000d008 func   ?sub_101e9000@CUnknown101e9000@@QAEHXZ CUnknown101e9000::sub_101e9000
