@@ -51816,6 +51816,73 @@ int sub_100fbfc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fc1e0 size=0x220
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CInspectionNode.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "CBaseCombatCharacter.h"
+#include "CVFeat_t.h"
+#include "CUnknown101d5bd0.h"
+
+extern CUnknown101d5bd0 g_10738d10;
+extern int g_10708e3c;
+extern int g_10708e40;
+void sub_101cd940(CInspectionNode *pEnt);
+
+struct CNodeOriginView
+{
+	EVS10(0) EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5) EVS10(6) EVS10(7) EVS10(8) EVS10(9)
+	EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15) EVS10(16) EVS10(17) EVS10(18)
+	EVS(190) EVS(191)
+	virtual Vector *slot192(Vector *pOut);
+};
+
+// TARGET: CInspectionNode::sub_100fc1e0
+void CInspectionNode::sub_100fc1e0(int pObject)
+{
+	CBaseCombatCharacter *pTarget = (CBaseCombatCharacter *)pObject;
+	if (!EHandle_Get(m_h25c)) {
+		sub_101cd940(this);
+		return;
+	}
+	if (sub_100b5190())
+		goto skip;
+	{
+		Vector vA, vB;
+		Vector *pA = ((CNodeOriginView *)EHandle_Get(m_hAttachEntity))->slot192(&vA);
+		Vector *pB = ((CEntityVSlots *)pTarget)->slot193(&vB);
+		float dx = pB->x - pA->x;
+		float dy = pB->y - pA->y;
+		float dz = pB->z - pA->z;
+		float flDist = FastSqrt(dx * dx + dy * dy + dz * dz);
+		if (flDist < 600.0f) {
+			double flScale = 1.0 - flDist * 0.0016666667f;
+			if (flScale > 1.0)
+				flScale = 1.0;
+			else if (flScale < 0.05)
+				flScale = 0.05;
+			sub_100fb980((float)flScale);
+			static int s_iMalkavian = g_10738d10.sub_101d5bd0("Player_Malkavian");
+			if (CVFeatSet::Find(3)->sub_101e56e0(pTarget) >= m_iDetectionRating) {
+				if (pTarget->sub_10337860() == s_iMalkavian)
+					m_iParticleIndex = g_10708e40;
+				else
+					m_iParticleIndex = g_10708e3c;
+				if (m_unk484 == 0)
+					((CEntityVSlots *)this)->slot241();
+				return;
+			}
+		}
+	}
+skip:
+	if (m_unk484 != 0)
+		((CEntityVSlots *)this)->slot242();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fc490 size=0x49
 void *sub_1000db89(int);
 struct GP;
