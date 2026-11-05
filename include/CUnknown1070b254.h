@@ -15,6 +15,9 @@ public:
 	virtual void vfunc2(Ray_t *pRay, unsigned int fMask, CBaseEntity *pEnt, CGameTrace *pTrace);	// ClipRayToEntity
 	virtual void vfunc3();
 	virtual void vfunc4(Ray_t *pRay, unsigned int fMask, CTraceFilterNoCharacterCollide *pFilter, CGameTrace *pTrace);	// TraceRay
+	virtual void vfunc5();
+	virtual void vfunc6();
+	virtual void vfunc7(Ray_t *pRay, int bTriggerOnly, CTriggerTraceEnum *pEnum);	// EnumerateEntities
 };
 
 extern CUnknown1070b254 *g_1070b254;	// the engine trace interface (g_pEngineTrace)
