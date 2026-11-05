@@ -75035,6 +75035,37 @@ void SBlendView::sub_1017d0b0(float flRate)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017d280 size=0x177
+#include "vampire_all.h"
+void CBasePlayer::sub_1017d280(CBaseEntity *pEnt, float flBlend)
+{
+	sub_1017cef0(0);
+	if (0.0f > flBlend)
+		flBlend = 0.0f;
+	if (pEnt == 0) {
+		sub_1017d6d0(flBlend);
+		return;
+	}
+	float flNow = engine->vfunc119(0);
+	if (flNow > m_flFadeTime19C4 && m_hFadeEnt19C0.Get() != 0) {
+		CBasePlayerFadeRec rec;
+		rec.m_bType = 0;
+		rec.m_hEnt = m_hFadeEnt19C0;
+		rec.m_flTime = m_flFadeTime19C4;
+		rec.m_flValue = m_flFadeValue19C8;
+		FadeStack().InsertBefore(0, rec);
+	}
+	float flMin = pEnt->vfunc52();
+	if (flMin > flBlend)
+		flBlend = flMin;
+	sub_1017d0b0(flBlend);
+	m_hFadeEnt19C0 = pEnt;
+	m_flFadeTime19C4 = flNow;
+	m_flFadeValue19C8 = flBlend;
+	pEnt->vfunc47();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017d460 size=0x170
 #include "vampire_all.h"
 void CBasePlayer::sub_1017d460(CBaseEntity *pEnt, float flBlend)
