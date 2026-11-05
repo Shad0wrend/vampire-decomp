@@ -48,6 +48,7 @@ class CUnknown102ef350Iface	// the interface sub-object at outer + 0x10
 public:
 	virtual void ivf0();
 	bool sub_102ef6d0(int a, CUnknown102ef3e0Arg *b, int type, int *pOut);
+	bool sub_102ef350(CUnknown102ef350Item *pItem, int a, int *pOut);
 };
 
 // Not modelled yet (needs the real class, found from the vtable that holds 0x102ef350 / 0x102ef6d0 at the
