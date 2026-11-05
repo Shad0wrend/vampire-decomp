@@ -124171,6 +124171,28 @@ void CPropHacking::sub_1021c040()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021c260 size=0xe5
+#include "CPropHacking.h"
+#include "utlvector.h"
+
+void sub_10217ac0(CPropHacking *pThis, const char *fmt, ...);
+
+struct HackRec { char m_szFirst[0x20]; char m_szSecond[0x20]; char m_szText[0x2c0 - 0x40]; };
+
+// TARGET: CPropHacking::sub_1021c260
+void CPropHacking::sub_1021c260()
+{
+	CUtlVector<HackRec> &v = *(CUtlVector<HackRec> *)((char *)this + 0xa14);
+	sub_10218db0();
+	sub_10217ac0(this, "\n\n(%s) %s\n", sub_10219400(0x17), v[m_nSelected09f4].m_szFirst);
+	sub_10217ac0(this, "(%s) %s\n\n\n", sub_10219400(0x16), v[m_nSelected09f4].m_szSecond);
+	sub_10217ac0(this, v[m_nSelected09f4].m_szText);
+	sub_10218ff0(0, m_n0814 - 2);
+	sub_10217ac0(this, "%s, %s, %s, %s, %s: ", sub_10219400(0x18), sub_10219400(0x19), sub_10219400(0x1a), sub_10219400(0x1b), sub_10219400(0x1c));
+	sub_10219240();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021c390 size=0x17
 struct CUnk1021c390 {
     char pad[0x9e0];
