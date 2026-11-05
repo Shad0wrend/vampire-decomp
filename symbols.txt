@@ -7169,6 +7169,7 @@
 0x1000b9e7 func   ?sub_1040b120@CUtlMemory192@@QAEXH@Z CUtlMemory192::sub_1040b120
 0x1000b9f1 func   _item_k_shrekhub_four_key item_k_shrekhub_four_key
 0x1000b9fb func   ?vfunc81@CRagdollPropAttached@@UAEHXZ CRagdollPropAttached::vfunc81
+0x1000ba00 func   ?sub_100df120@@YA_NPAUCAutoEndSource@@@Z sub_100df120
 0x1000ba05 func   ?sub_10088de0@@YAXXZ sub_10088de0
 0x1000ba0a func   ?sub_101eaaa0@@YAXH@Z sub_101eaaa0
 0x1000ba14 func   ?vfunc438@CNPC_VGuard1@@QAEHXZ CNPC_VGuard1::vfunc438
