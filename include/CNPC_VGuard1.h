@@ -32,9 +32,16 @@ public:
 	unsigned int m_flags14bc;	// +0x14bc
 	char m_pad14c0[0x1b2c - 0x14c0];
 	int m_n1b2c;	// +0x1b2c: schedule selection id
-	char m_pad1b30[0x5cc0 - 0x1b30];
+	char m_pad1b30[0x1b38 - 0x1b30];
+	int m_n1b38;	// +0x1b38: set to 0x12 by vfunc461
+	const char *m_pszFile1b3c;	// +0x1b3c: source file stamp of the state decision
+	int m_nLine1b40;	// +0x1b40: its line
+	char m_pad1b44[0x5cc0 - 0x1b44];
 	int m_nState5cc0;	// +0x5cc0
-	char m_pad5cc4[0x628c - 0x5cc4];
+	int m_nNext5cc4;	// +0x5cc4: the state decided on
+	char m_pad5cc8[0x5d44 - 0x5cc8];
+	class CAI_Motor *m_pMotor5d44;	// +0x5d44: the NPC's motor
+	char m_pad5d48[0x628c - 0x5d48];
 	unsigned int m_h628c;	// +0x628c: entity handle
 	char m_pad6290[0x6348 - 0x6290];
 	int m_n6348;	// +0x6348: thresholds the player's stats (sub_1017de60 / sub_1017ddd0 / sub_1017dd80) are held against
@@ -42,7 +49,10 @@ public:
 	int m_n6350;
 	int m_n6354;
 	int m_n6358;
-	char m_pad635c[0x6660 - 0x635c];
+	char m_pad635c[0x638c - 0x635c];
+	EHANDLE m_h638c;	// +0x638c
+	EHANDLE m_h6390;	// +0x6390
+	char m_pad6394[0x6660 - 0x6394];
 	char m_b6660;	// +0x6660
 	void vfunc453();	// slot 453 (plain member): the base work, then by state (+0x5cc0): 1 sets condition 0x27 and goes on as state 3; 3 sets conditions 0x1e..0x22 when the player behind the handle at +0x628c reaches a threshold, else clears 0x6f; 0xb sets conditions 0x5a / 0x6f when it does (or when the byte at +0x6660 is set), else clears them
 	void sub_10280fb0();	// CAI_BaseNPC::vfunc453 (stub 0x1000611d), called directly
@@ -378,8 +388,9 @@ public:
 	virtual void vfunc458();
 	virtual void vfunc459();
 	virtual void vfunc460();
-	virtual void vfunc461();
-	virtual void vfunc462();
+	virtual int vfunc461();	// slot 461 "SelectIdealState": state machine over +0x5cc0, answers the state stored at +0x5cc4, else CNPC_VHuman::vfunc461
+	int sub_103851e0();	// CNPC_VHuman::vfunc461 (stub 0x10011225), tail called
+	virtual bool vfunc462();
 	virtual void vfunc463_slot();
 	virtual void vfunc464();
 	virtual void vfunc465();
@@ -391,7 +402,7 @@ public:
 	virtual void vfunc471();
 	virtual void vfunc472();
 	virtual void vfunc473();
-	virtual void vfunc474();
+	virtual class S101b9920 *vfunc474();
 	virtual void vfunc475();
 	virtual void vfunc476();
 	virtual void vfunc477();
@@ -498,4 +509,40 @@ public:
 	virtual void vfunc578();
 	virtual void vfunc579();
 	virtual int vfunc580();
+	virtual void vfunc581();
+	virtual void vfunc582();
+	virtual void vfunc583();
+	virtual void vfunc584();
+	virtual void vfunc585();
+	virtual void vfunc586();
+	virtual void vfunc587();
+	virtual void vfunc588();
+	virtual void vfunc589();
+	virtual void vfunc590();
+	virtual void vfunc591();
+	virtual void vfunc592();
+	virtual void vfunc593();
+	virtual void vfunc594();
+	virtual void vfunc595();
+	virtual void vfunc596(CBaseEntity *pEntity);	// slot 596 (+0x950): takes the entity of a handle
+	virtual void vfunc597();
+	virtual void vfunc598();
+	virtual void vfunc599();
+	virtual void vfunc600();
+	virtual void vfunc601();
+	virtual void vfunc602();
+	virtual void vfunc603();
+	virtual void vfunc604();
+	virtual void vfunc605();
+	virtual void vfunc606();
+	virtual void vfunc607();
+	virtual void vfunc608();
+	virtual void vfunc609();
+	virtual void vfunc610();
+	virtual void vfunc611();
+	virtual void vfunc612();
+	virtual void vfunc613();
+	virtual void vfunc614();
+	virtual void vfunc615();
+	virtual void vfunc616();
 };
