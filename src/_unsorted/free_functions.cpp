@@ -107583,6 +107583,39 @@ void CUnknown101eb1d0::sub_101eb1d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101eb6b0 size=0xfb
+#include "CEntryX.h"
+#include <string.h>
+#include <stdlib.h>
+int *sub_102038e0(int *out, CVFeatKV *pKV, const char *name);
+int *sub_10203920(int *out, CVFeatKV *pKV);
+
+char CEntryX::sub_101eb6b0(void *pKV0)
+{
+	CVFeatKV *pKV = (CVFeatKV *)pKV0;
+	if (pKV) {
+		int tmp;
+		m_pad = *sub_102038e0(&tmp, pKV, "InternalName");
+		m_name = (const char *)*sub_10203920(&tmp, pKV);
+		m_dmg.sub_101fb000(pKV->GetString("OwnerDamage", ""));
+		const char *s = pKV->GetString("AmmoLost", "");
+		if (!_strcmpi(s, "Clip"))
+			m_n50 = -1;
+		else
+			m_n50 = atoi(s);
+		if (pKV->GetInt("ForceReload", 0))
+			m_n54 |= 1;
+		if (pKV->GetInt("ItemBreaks", 0))
+			m_n54 |= 2;
+		if (pKV->GetInt("FallToGround", 0))
+			m_n54 |= 4;
+		pKV->GetString("ClientEffect", "");
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101eb7f0 size=0x17
 #include "CUnknown101eb7f0.h"
 extern void (__cdecl *g_1073a38c)(CUnknown101eb7f0 *, int);
