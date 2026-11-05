@@ -184139,6 +184139,63 @@ void CNPC_VManBat::sub_1038fd40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1038fe30 size=0x19e
+#include "CNPC_VManBat.h"
+#include "CPASAttenuationFilter.h"
+#include "CUnknown1070b244.h"
+#include "CUnknown1070b248.h"
+#include "ehandle.h"
+
+#define MB_V(n) virtual void v##n();
+#define MB_V10(p) MB_V(p##0) MB_V(p##1) MB_V(p##2) MB_V(p##3) MB_V(p##4) MB_V(p##5) MB_V(p##6) MB_V(p##7) MB_V(p##8) MB_V(p##9)
+
+struct CManBatView
+{
+	MB_V10(0) MB_V10(1) MB_V10(2) MB_V10(3) MB_V10(4) MB_V10(5) MB_V10(6) MB_V10(7) MB_V10(8) MB_V10(9)
+	MB_V10(10) MB_V10(11) MB_V10(12) MB_V10(13) MB_V10(14) MB_V10(15) MB_V10(16) MB_V10(17) MB_V10(18) MB_V10(19)
+	MB_V10(20)
+	MB_V(210) MB_V(211) MB_V(212) MB_V(213) MB_V(214) MB_V(215) MB_V(216)
+	virtual Vector *vfunc217();
+	MB_V(218) MB_V(219) MB_V(220) MB_V(221)
+	virtual Vector GetSoundEmissionOrigin();	// slot 222
+	char m_pad04[0x2e0 - 0x4];
+	int m_pEdict2e0;
+	char m_pad2e4[0x66ac - 0x2e4];
+	EHANDLE m_h66ac;
+	char m_pad66b0[0x66b8 - 0x66b0];
+	char m_b66b8;
+};
+
+extern CUnknown1070b244 *g_1070b244;
+extern CUnknown1070b248 *g_1070b248;
+extern const char *g_10640d28[];
+
+inline float LengthSqrGrouped(const Vector &v)
+{
+	return v.x * v.x + (v.y * v.y + v.z * v.z);
+}
+
+void CNPC_VManBat::sub_1038fe30()
+{
+	CManBatView *p = (CManBatView *)this;
+	if (!p->m_b66b8)
+	{
+		CManBatView *pTarget = (CManBatView *)p->m_h66ac.Get();
+		const Vector *pTargetOrigin = pTarget->vfunc217();
+		const Vector *pOrigin = p->vfunc217();
+		if (LengthSqrGrouped(*pOrigin - *pTargetOrigin) < 160000.0)
+		{
+			CPASAttenuationFilter filter(p);
+			filter.MakeReliable();
+			int edict = p->m_pEdict2e0;
+			int index = engine->vfunc35(edict);
+			g_1070b248->vfunc3(&filter, index, 4, g_10640d28[g_1070b244->vfunc2(0, 2)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+			p->m_b66b8 = 1;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10390040 size=0x8
 void __fastcall sub_10390040(char *p) { p[0x66b8] = 0; }
 // END FUNCTION

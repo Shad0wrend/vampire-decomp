@@ -12258,6 +12258,7 @@
 0x10012ea9 func   ?sub_101ccb60@CEdtEntitiesEnum@@QAEPAV1@PAPAVCBaseEntity@@HI@Z CEdtEntitiesEnum::sub_101ccb60
 0x10012eae func   ?sub_100777e0@CUnknown100777e0View@@QAEXPAUCUnknown100777e0Vt@@HH@Z CUnknown100777e0View::sub_100777e0
 0x10012eb3 func   _item_k_hannahs_safe_key item_k_hannahs_safe_key
+0x10012eb8 func   ?sub_1038fe30@CNPC_VManBat@@QAEXXZ CNPC_VManBat::sub_1038fe30
 0x10012ecc func   ?sub_103abc70@@YIPAXPAX@Z sub_103abc70
 0x10012ed1 func   ?vfunc129@CSoundScheme@@UAEXXZ CSoundScheme::vfunc129
 0x10012ed6 func   ?sub_1019ee20@@YGHH@Z sub_1019ee20
