@@ -4269,6 +4269,7 @@
 0x10007414 func   _phys_pulleyconstraint phys_pulleyconstraint
 0x10007419 func   ?vfunc105@CBaseCombatWeapon@@UAEXPBD@Z CBaseCombatWeapon::vfunc105
 0x1000741e func   ?vfunc1@CTEFootprintDecal@@UAEHXZ CTEFootprintDecal::vfunc1
+0x10007423 func   ?sub_100af010@@YAXXZ sub_100af010
 0x10007428 func   ?vfunc110@CBaseToggle@@UAE_NPBD0@Z CBaseToggle::vfunc110
 0x10007428 func   ?vfunc110@CPropDoorknob@@UAE_NPBD0@Z CPropDoorknob::vfunc110
 0x10007428 func   ?vfunc110@CVampireProjectile@@UAE_NPBD0@Z CVampireProjectile::vfunc110

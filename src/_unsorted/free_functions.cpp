@@ -33844,6 +33844,69 @@ void sub_100aec70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100af010 size=0x20d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "engineserver.h"
+
+struct CCmdClientView { char m_pad[0xa8]; int m_a8; };
+CCmdClientView *sub_101193b0();
+void sub_101ce620(int, int, const char *, int, int, int, int);
+CBaseEntity *sub_10172710(CCmdClientView *);
+int *sub_1042bff0(int *, const char *);
+extern CGlobalEntityList g_106eb5d8;
+extern void (__cdecl *g_109f3628)(const char *, ...);
+int __cdecl _strcmpi(const char *, const char *);
+
+inline int Q_stricmp(const char *a, const char *b) { return _strcmpi(a, b); }
+inline const char *NonNull(const char *p) { return p ? p : g_106b8540; }
+inline const char *STRING(int s) { return NonNull((const char *)s); }
+inline const char *STRINGR(const char *const &p) { return p ? p : g_106b8540; }
+inline bool ArgIs(const char *p) { return !Q_stricmp(engine->vfunc84(1), p); }
+
+// TARGET: sub_100af010
+void sub_100af010()
+{
+	ScopeTrace trace("CC_Ent_SetName", g_106b8540);
+	CBaseEntity *pEnt;
+	if (engine->vfunc85() < 1) {
+		CCmdClientView *p = sub_101193b0();
+		if (p && p->m_a8)
+			sub_101ce620(p->m_a8, 2, "Usage:\n   ent_setname <new name> <entity name>\n", 0, 0, 0, 0);
+	} else {
+		if (!Q_stricmp(engine->vfunc84(2), g_106b8540)) {
+			pEnt = sub_10172710(sub_101193b0());
+		} else {
+			pEnt = g_106eb5d8.sub_100f7060(0);
+			while (pEnt) {
+				if ((int)pEnt->m_name26c != 0 && ArgIs(STRING((int)pEnt->m_name26c)))
+					break;
+				if (pEnt->m_classname11c && ArgIs(STRINGR(pEnt->m_classname11c)))
+					break;
+				if (pEnt->sub_1009f200() && ArgIs(pEnt->sub_1009f200()))
+					break;
+				pEnt = g_106eb5d8.sub_100f7060(pEnt);
+			}
+		}
+		if (pEnt) {
+			const char *c = STRING((int)pEnt->m_classname11c);
+			g_109f3628("Set the name of %s to %s\n", c, engine->vfunc84(1));
+			int tmp[1];
+			pEnt->sub_100a0420((const char *)*sub_1042bff0(tmp, engine->vfunc84(1)));
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100afa60 size=0x75
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
