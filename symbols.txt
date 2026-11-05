@@ -1812,6 +1812,7 @@
 0x10003a6c func   ?sub_1023e270@@YGHH@Z sub_1023e270
 0x10003a76 func   ?vfunc241@CFuncAreaPortalWindow@@QAE_NPBM@Z CFuncAreaPortalWindow::vfunc241
 0x10003a80 func   _soundent soundent
+0x10003a8a func   ?sub_100d35f0@@YAXXZ sub_100d35f0
 0x10003a8f func   ?vfunc81@CWeaponRanged_Rifle_M37@@UAEHXZ CWeaponRanged_Rifle_M37::vfunc81
 0x10003a94 func   ?sub_1012d5a0@CUnknown1012d5a0@@QAEHXZ CUnknown1012d5a0::sub_1012d5a0
 0x10003a99 func   ?sub_10428fd0@@YAIPAD@Z sub_10428fd0

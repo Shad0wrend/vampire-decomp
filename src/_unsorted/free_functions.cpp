@@ -42195,6 +42195,65 @@ void sub_100d3510()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d35f0 size=0x1e5
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "CEntityVSlots.h"
+#include "Tier1.h"
+
+struct CNoclipCvar { virtual void v0(); virtual bool GetBool(); char m_pad[0x2c - 4]; int m_n2c; };
+struct CNoclipCvarEntry { char m_pad[4]; CNoclipCvar *m_pImpl; };
+struct CNoclipCvarSystem { virtual void v0(); virtual void v1(); virtual CNoclipCvarEntry *FindVar(const char *name); };
+struct CNoclipEdict { char m_pad[0xa8]; CBasePlayer *m_pPlayer; };
+
+extern CNoclipCvarSystem *g_1070b234;
+CNoclipEdict *sub_101193b0();
+void sub_101ce620(CBasePlayer *pPlayer, int type, const char *msg, int a, int b, int c, int d);
+char sub_100d3860(CBasePlayer *pPlayer);
+void sub_10139610(const Vector *pAngles, Vector *pForward, Vector *pRight, Vector *pUp);
+int sub_100d38d0(CBasePlayer *pPlayer, const Vector *pDir, float flSign, Vector *pOrigin);
+
+void sub_100d35f0()
+{
+	CNoclipCvarEntry *cheats = g_1070b234->FindVar("sv_cheats");
+	if (!cheats)
+		return;
+	if (cheats->m_pImpl->GetBool())
+		return;
+	if (!cheats->m_pImpl->m_n2c)
+		return;
+	CNoclipEdict *pEdict = sub_101193b0();
+	if (!pEdict)
+		return;
+	CBaseEntity *pPlayer = (CBaseEntity *)pEdict->m_pPlayer;
+	if (!pPlayer)
+		return;
+	if (pPlayer->vfunc94() != 9)
+	{
+		pPlayer->vfunc93(9, 0);
+		sub_101ce620((CBasePlayer *)pPlayer, 2, "noclip ON\n", 0, 0, 0, 0);
+		pPlayer->m_flags268 |= 4;
+		return;
+	}
+	pPlayer->m_flags268 &= ~4;
+	pPlayer->vfunc93(3, 0);
+	Vector oldorigin = *((CEntityVSlots *)pPlayer)->slot217();
+	sub_101ce620((CBasePlayer *)pPlayer, 2, "noclip OFF\n", 0, 0, 0, 0);
+	if (sub_100d3860((CBasePlayer *)pPlayer))
+		return;
+	Vector forward, right, up;
+	sub_10139610(&((CBasePlayer *)pPlayer)->m_vec206c, &forward, &right, &up);
+	if (!sub_100d38d0((CBasePlayer *)pPlayer, &forward, 1.0f, &oldorigin)
+		&& !sub_100d38d0((CBasePlayer *)pPlayer, &right, 1.0f, &oldorigin)
+		&& !sub_100d38d0((CBasePlayer *)pPlayer, &right, -1.0f, &oldorigin)
+		&& !sub_100d38d0((CBasePlayer *)pPlayer, &up, 1.0f, &oldorigin)
+		&& !sub_100d38d0((CBasePlayer *)pPlayer, &up, -1.0f, &oldorigin)
+		&& !sub_100d38d0((CBasePlayer *)pPlayer, &forward, -1.0f, &oldorigin))
+		g_109f3628("Can't find the world\n");
+	((CEntityVSlots *)pPlayer)->slot216(&oldorigin);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d3860 size=0x41
 struct Vec3;
 #define V4(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3();
