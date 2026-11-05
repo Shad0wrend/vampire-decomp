@@ -162,3 +162,65 @@ int CNPC_VHuman::vfunc438()
 	return sub_102af660();
 }
 // END FUNCTION
+
+// FUNCTION: 0x10386560 size=0x322
+#include "CNPC_VHuman.h"
+#include "CStatusFlagList.h"
+extern CStatusFlagList g_10739a4c;
+
+#define FILE_STAMP(line) (m_nLine1b34 = (line), m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VHuman.cpp")
+
+int CNPC_VHuman::vfunc605(int unused)
+{
+	if (m_b6078) {
+		FILE_STAMP(0x6cf);
+		return 0xe3;
+	}
+	if (!m_p6444) {
+		m_p6444 = (CBaseEntity *)((CEntityVSlots *)this)->slot609(0);
+		if (!m_p6444)
+			goto L1;
+	}
+	if (!sub_10014df8(0x2f)) {
+		FILE_STAMP(0x6e4);
+		return 0xec;
+	}
+L1:
+	if (sub_10014df8(8) && vfunc307() && vfunc599(vfunc167())) {
+		FILE_STAMP(0x6e9);
+		return 0xe3;
+	}
+	if (sub_10014df8(0x3c)) {
+		FILE_STAMP(0x6ee);
+		return 0xb8;
+	}
+	int r = sub_102b8620();
+	if (r) return r;
+	r = sub_102b7370();
+	if (r) return r;
+	r = sub_102b7cf0();
+	if (r) return r;
+	if (!sub_10014df8(0x5f) && !sub_10014df8(8)) {
+		int h = (int)vfunc167();
+		if (h)
+			h = *(int *)(h + 0x9c);
+		if (!g_10739a4c.sub_101e3f50((CStatusTarget *)h)) {
+			r = vfunc606(unused);
+			if (r) return r;
+			if (sub_10014df8(0x2e)) { FILE_STAMP(0x736); return 0xbd; }
+			if (sub_10014df8(0x60)) { FILE_STAMP(0x73b); return 0xb1; }
+			return 0;
+		}
+	}
+	if (sub_10014df8(0x2f) || sub_10014df8(0x63)) {
+		if (sub_102b7f40()) { FILE_STAMP(0x720); return 0xb8; }
+		if (vfunc307() && vfunc599(vfunc167())) { FILE_STAMP(0x724); return 0xe8; }
+		FILE_STAMP(0x728);
+		return 0xb9;
+	}
+	if (sub_102b7f40()) { FILE_STAMP(0x70f); return 0xef; }
+	if (vfunc307() && enginerandom->vfunc2(0, 0x63) < 0x19 && vfunc599(vfunc167())) { FILE_STAMP(0x713); return 0xe8; }
+	FILE_STAMP(0x717);
+	return 0xf0;
+}
+// END FUNCTION
