@@ -12,7 +12,9 @@ class CEnvParticle
 public:
 	char pad0[0x254];
 	unsigned int m_hAttachEntity;	// 0x254
-	char pad258[0x450 - 0x258];
+	char pad258[4];
+	unsigned int m_h25c;	// 0x25c: a handle (the owner entity)
+	char pad260[0x450 - 0x260];
 	int m_iszParticleName;	// 0x450 (string_t)
 	int m_iParticleIndex;	// 0x454
 	int m_iAttachType;	// 0x458: attachment type (0..18)
