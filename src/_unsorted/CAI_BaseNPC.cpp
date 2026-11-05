@@ -2500,6 +2500,60 @@ void CAI_BaseNPC::vfunc106(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027bb50 size=0x76
+#include "CAI_BaseNPC.h"
+#include "CEntityVSlots.h"
+#include <string.h>
+#pragma intrinsic(strcmp)
+
+extern char g_106b8540[];
+void sub_10006c3a(const char *pszName);
+void sub_10014614(CAI_BaseNPC *pNPC);
+__declspec(dllimport) void DevMsg(const char *, ...);
+
+class CAI_BaseNPCSlots
+{
+public:
+	EVS10(0) EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5) EVS10(6) EVS10(7) EVS10(8) EVS10(9)
+	EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15) EVS10(16) EVS10(17) EVS10(18) EVS10(19)
+	EVS10(20) EVS10(21) EVS10(22) EVS10(23) EVS10(24) EVS10(25) EVS10(26) EVS10(27) EVS10(28) EVS10(29)
+	EVS10(30) EVS10(31) EVS10(32) EVS10(33) EVS10(34) EVS10(35) EVS10(36) EVS10(37) EVS10(38) EVS10(39)
+	EVS10(40) EVS10(41) EVS10(42) EVS10(43) EVS10(44) EVS(450) EVS(451)
+	virtual char slot452();
+};
+
+struct CAI_BaseNPCFields {
+	char m_pad[0x5dec];
+	const char *m_iszSpawnEquipment;
+};
+
+struct CAI_BaseNPCUnit : CAI_BaseNPC {
+	const char *sub_1000b5cd();
+	void sub_10011324();
+};
+
+inline const char *STRING(const char *const &isz)
+{
+	if (isz)
+		return isz;
+	return g_106b8540;
+}
+
+void CAI_BaseNPC::vfunc104()
+{
+	CAI_BaseNPCFields *f = (CAI_BaseNPCFields *)this;
+	CAI_BaseNPCUnit *u = (CAI_BaseNPCUnit *)this;
+	if (f->m_iszSpawnEquipment != 0 && strcmp(STRING(f->m_iszSpawnEquipment), "0"))
+		sub_10006c3a(STRING(f->m_iszSpawnEquipment));
+	if (!((CAI_BaseNPCSlots *)this)->slot452()) {
+		DevMsg("ERROR: Rejecting spawn of %s as error in NPC's schedules.\n", u->sub_1000b5cd());
+		sub_10014614(this);
+		return;
+	}
+	u->sub_10011324();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027bc60 size=0x182
 #include "CSave.h"
 #include "CAI_BaseNPC.h"
