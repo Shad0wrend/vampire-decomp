@@ -9,7 +9,7 @@ public:
 	CTEShatterSurface(const char *name);	// 0x10062fd0
 
 	virtual CTEShatterSurface *vfunc2(unsigned int flags);	// scalar deleting destructor
-	virtual void vfunc3();	// slot 3 (0x0c)
+	virtual void vfunc3(const Vector &vecOrigin, const QAngle &vecAngles);	// slot 3 (0x0c)
 	virtual void vfunc4v(void *pFilter, int a);	// slot 4 (+0x10): the temp entity's Send; vfunc3 calls it virtually at 0x10063270 (the plain vfunc4 below is the direct-call form)
 
 	void sub_100021d0();	// destructor body
