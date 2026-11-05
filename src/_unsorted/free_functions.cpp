@@ -148295,6 +148295,17 @@ bool CAI_BaseNPCTroika::sub_102c44e0(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c4640 size=0x21
+#include "CAI_BaseNPCTroika.h"
+
+bool CAI_BaseNPCTroika::sub_102c4640(const char *psz)
+{
+	bool b = sub_102c4680(psz);
+	m_psz6480 = *psz ? psz : 0;
+	return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c4680 size=0x108
 #include "CAI_BaseNPCTroika.h"
 #include "CUnknown101e8080.h"
