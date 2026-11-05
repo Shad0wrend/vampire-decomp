@@ -107700,6 +107700,70 @@ void CVampireProjectile::sub_101ef3d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ef540 size=0x28d
+#include "CBaseEntity.h"
+#include "CVampireProjectile.h"
+#include "CVDmg_t.h"
+#include "CBaseCombatWeapon.h"
+#include "CEntitySoundOriginView.h"
+#include "CPASAttenuationFilter.h"
+CBaseEntity *__fastcall sub_1032e7b0(void *p);
+
+void CVampireProjectile::sub_101ef540(const Vector *pOrigin, const Vector *pVelocity, int nDamage, int nDmgType, CBaseEntity *pAttacker, const Vector *pForce, float flA, int nB, int nC, int nD, CBaseEntity *pInflictor, int nE, CBaseEntity *pWeapon, const char *pszSound, int nF)
+{
+	m_bBulletParamSet = 1;
+	m_vecOrigin75c = *pOrigin;
+	m_vecVelocity768 = *pVelocity;
+	m_nDamage774 = nDamage;
+	((CVDmg_t *)m_dmg834)->sub_101fa700((CVDmg_t *)nDmgType);
+	m_h778 = (CBaseEntity *)0;
+	m_h77c = pWeapon;
+	m_n830 = nF;
+	if (pAttacker)
+	{
+		CBaseEntity *pOwner = (CBaseEntity *)pAttacker->m_p9c;
+		if (pOwner)
+		{
+			m_h778 = pOwner;
+			if (!pWeapon)
+				m_h77c = sub_1032e7b0(pOwner);
+		}
+	}
+	m_vecForce780 = *pForce;
+	m_fl78c = flA;
+	m_n790 = nB;
+	m_n794 = nC;
+	m_n798 = nD;
+	m_h79c = pInflictor;
+	m_n7a0 = nE;
+	m_b7a4 = 0;
+	if (pWeapon)
+	{
+		int *pRec = ((CBaseCombatWeapon *)pWeapon)->sub_102517e0();
+		if (*(int *)((char *)pRec + 0x40c))
+		{
+			m_b7a4 = 1;
+			char c;
+			char *src = (char *)((CBaseCombatWeapon *)pWeapon)->sub_102517e0() + 0x410;
+			char *dst = m_szWeapon7ac;
+			char *d = dst;
+			while ((*d++ = *src++) != 0)
+				;
+			char first = dst[0];
+			m_psz82c = first ? dst : 0;
+			m_n7a8 = 0x200;
+		}
+	}
+	if (*pszSound)
+	{
+		CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+		const CRecipientFilter *pf = &filter;
+		int edict = m_pEdict2e0;
+		enginesound->vfunc3(pf, engine->vfunc35(edict), 0, pszSound, 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ef880 size=0x52
 #include "CBaseEntity.h"
 struct STarget {
