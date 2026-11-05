@@ -55844,6 +55844,47 @@ char CUnk1010a8d0::sub_1010a8d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010a900 size=0x1f8
+#include "CFire.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "engineiface.h"
+#include "engineserver.h"
+
+void CFire::sub_1010a900(float flFade)
+{
+	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+
+	float flVolume = flFade * ((CFireEntityFields *)this)->m_flSize468;
+
+	float flClamped = flVolume * 0.015625f;
+	if (flClamped > 1.0f)
+		flFade = 1.0f;
+	else if (flClamped < 0.0f)
+		flFade = 0.0f;
+	else
+		flFade = flClamped;
+
+	int pitch = enginerandom->vfunc2(0x63, 0x69);
+	int edict = m_pEdict2e0;
+	enginesound->vfunc2(&filter, engine->vfunc35(edict), 2,
+		"environmental/fire/fire_crackeling.wav", flFade, 0x69, 3, pitch, 0, 0, 1, 0);
+
+	flClamped = (flVolume - 48.0f) * 0.008928572f;
+	if (flClamped > 1.0f)
+		flFade = 1.0f;
+	else if (flClamped < 0.0f)
+		flFade = 0.0f;
+	else
+		flFade = flClamped;
+
+	pitch = enginerandom->vfunc2(0x60, 0x65);
+	edict = m_pEdict2e0;
+	enginesound->vfunc2(&filter, engine->vfunc35(edict), 1,
+		"environmental/fire/fire_roaring.wav", flFade, 0x69, 3, pitch, 0, 0, 1, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010b3c0 size=0x45
 #include "CBaseEntity.h"
 #include "CFire.h"
