@@ -46771,6 +46771,52 @@ void * CUnknown100de7d0::sub_100de7d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100de800 size=0xed
+#include "CUnknown100de930.h"
+#include "CUnknown100dec20.h"
+
+extern void (*g_109f366c)(const char *fmt, ...);
+void sub_100deb50(void *pNode, CUnknown100de930 **ppElem);
+
+// TARGET: CUnknown100de930::sub_100de800
+void CUnknown100de930::sub_100de800(CUnknown100de930Owner *pOwner)
+{
+	sub_100de930();
+	CUnknown100de930 *pThis = this;
+	CUtlLinkedList12 *l = &pOwner->m_List;
+	int idx = l->m_FirstFree;
+	if (idx == -1)
+	{
+		if (l->m_NumAlloced == l->m_allocationCount)
+			((CUnknown100dec20 *)l)->sub_100dec20(1);
+		idx = l->m_NumAlloced++;
+		if (idx == -1)
+			g_109f366c("CUtlLinkedList overflow!\n");
+	}
+	else
+		l->m_FirstFree = l->m_pMemory[idx].m_Next;
+	l->m_pMemory[idx].m_Previous = idx;
+	l->m_pMemory[idx].m_Next = idx;
+	l->m_pElements = l->m_pMemory;
+	l->sub_100deb80(idx);
+	CUtlLinkedList12Node *pNode = &l->m_pMemory[idx];
+	pNode->m_Next = -1;
+	pNode->m_Previous = l->m_Tail;
+	l->m_Tail = idx;
+	int prev = pNode->m_Previous;
+	if (prev == -1)
+		l->m_Head = idx;
+	else
+		l->m_pMemory[prev].m_Next = idx;
+	l->m_ElementCount++;
+	sub_100deb50(&l->m_pMemory[idx], &pThis);
+	if (pOwner)
+		m_hOwner = *pOwner->vfunc1();
+	else
+		m_hOwner = 0xffffffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100de930 size=0x10e
 #include "utlrbtree.h"
 #include "utlsortvector.h"
