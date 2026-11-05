@@ -65,7 +65,7 @@
 	void sub_102c5310(CBaseEntity *pEnemy);	// makes pEnemy the NPC's problem: sets the misc flag 0x800 when the NPC's focus (slot 167) or pEnemy answers slot 404 with 1, resets the target (sub_102b52a0(1, 1)), slot 595 and 304, flags 0x80820000 at +0x14bc, "player D_LI 99" when the enemy has an object at +0xa8, source line stamp 0x6e7f at +0x1b30 / +0x1b34, state 0xb (SetState), +0x6338 / +0x633c = 6, remembers pEnemy's handle at +0x60ac and +0x5b84 = 0x9fbd
 	void sub_102c51a0(CBaseEntity *pEnemy);	// the "Combat" variant of sub_102c5310: sets the misc flag 0x800 when the NPC's focus (slot 167) or pEnemy answers slot 404 with 1, resets the target (sub_102b52a0(1, 1)), slot 304, flags 0x80840000 at +0x14bc, "player D_LI 99" when the enemy has an object at +0xa8, sub_102c4470(pEnemy), the state "Combat" (sub_102c4640), source line stamp 0x6e42 at +0x1b3c / +0x1b40, +0x5cc4 = 1, remembers pEnemy's handle at +0x60ac, slot 614, +0x5b84 = 0x3b1c and slot 595
 	bool sub_102c4470(CBaseEntity *pEnemy);	// stub 0x10007d10, called directly
-	void sub_102c4640(const char *pszState);	// stub 0x100039ea, called directly with a state name
+	bool sub_102c4640(const char *pszState);	// stub 0x100039ea, called directly with a state name
 	void sub_1033c6b0(unsigned int flags);	// "CBaseCombatCharacter::AddMiscFlag" (stub 0x100153a7), called directly
 	void sub_1026d050();	// stub 0x1000c153, called directly
 	void sub_10273790(const char *pszCommand, int a);	// stub 0x1000421e, called directly with a console style command
