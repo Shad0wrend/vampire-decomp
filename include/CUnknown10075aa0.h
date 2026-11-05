@@ -62,6 +62,26 @@ public:
 	CUnknown10075aa0 *sub_10075120(int a, int b, int c);	// constructor overload: clears the vectors, then sub_10075aa0(a), sub_10075b90(b), S10075bd0::sub_10075bd0(c); returns this
 	CUnknown10075aa0 *sub_10075230(int a, int b, int c, int d);	// constructor overload: as sub_10075120, then S10075c20::sub_10075c20(d); returns this
 	void sub_10075aa0(int arg);	// base constructor body: clears the fields, then sub_10076f10(0, 0, 0), stores arg at +0x330
+	// callees of CUnknown1007b7b0::sub_1007ab40 (the event parser); each is matched under another class name, same address
+	void sub_10075b90(int type);	// event type (0x10075b90, ret 4)
+	void sub_10075bd0(const char *pszName);	// 0x10075bd0
+	void sub_10075c20(const char *pszParam);	// 0x10075c20 ("param")
+	void sub_10075c70(const char *pszParam);	// 0x10075c70 ("param2")
+	void sub_10075ce0(char value);	// 0x10075ce0 ("targethead")
+	void sub_10075e20(float flStart);	// 0x10075e20 ("time" start)
+	void sub_10075e90(float flEnd);	// 0x10075e90 ("time" end)
+	void sub_10076670(int pScene);	// 0x10076670: stores +0x2b4
+	void sub_100766b0(int pChannel);	// 0x100766b0: stores +0x2b8
+	void sub_10076ad0(char value);	// 0x10076ad0 ("fixedlength")
+	void sub_10076af0(char value);	// 0x10076af0 ("resumecondition", +0x1b0)
+	void sub_10076c30(const char *pszName, int a);	// 0x10076c30 (entry with name; "tags"-style)
+	void sub_100770b0(const char *pszName, float flPercentage, bool bLocked);	// 0x100770b0 (timing tag)
+	void sub_100784b0(float flDuration);	// 0x100784b0 ("sequenceduration")
+	void sub_10078540(int value);	// 0x10078540 ("pitch")
+	void sub_10078580(int value);	// 0x10078580 (the entry after "pitch")
+	void sub_100785a0(int value);	// 0x100785a0 ("loopcount")
+	void sub_10078690(float a, float b, int c);	// 0x10078690, ret 12 (ramp sample add)
+	void sub_10078880();	// 0x10078880 (run at the end when a ramp was read)
 	void sub_10076b60();	// clears the vector at +0x2bc (frees the memory unless the grow size is -1)
 	void sub_10076fe0();	// clears the vector at +0x2d0 (frees the memory unless the grow size is -1)
 	void sub_10076f10(char c, const char *a, const char *b);	// stores c at +0x1b1 and copies the strings (the empty string for null) to +0x1b2 / +0x232 (stub 0x1000e822)
