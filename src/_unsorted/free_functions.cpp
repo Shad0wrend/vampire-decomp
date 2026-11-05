@@ -189160,6 +189160,62 @@ void CNPC_VWerewolf::sub_103d4a60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d4d60 size=0x246
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CSingleUserRecipientFilter.h"
+#include "engineiface.h"
+#include "engineserver.h"
+#include "globalvars.h"
+#include "COutputEvent.h"
+#include "CCollisionProperty.h"
+#include "CNPC_VWerewolf.h"
+
+struct SWWDev { virtual void v0(); virtual char v1(); char m_pad[0x2c - 4]; int m_n2c; };
+struct SWWTarget { char m_pad[0xa8]; void *m_p; };
+extern SWWDev *g_1093f73c;
+void sub_101ce620(void *pEnt, int a, const char *psz, int b, int c, int d, int e);
+
+void CNPC_VWerewolf::sub_103d4d60()
+{
+	ScopeTrace trace("CNPC_VWerewolf::TeleportIn", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	sub_103d6280(m_pHint66b0);
+	vfunc67();
+	m_nEffectFlags &= ~0x20;
+	{
+		ScopeTrace trace2("CBaseEntity::RemoveSolidFlags", m_name26c ? m_name26c : g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->RemoveSolidFlags(4);
+	}
+	sub_100b3b00();
+	m_flTeleport66ec = gpGlobals->curtime;
+	((COutputEvent *)m_OnTeleportIn)->sub_100cd660(vfunc167(), this, 0);
+	if (!g_1093f73c->v1() && g_1093f73c->m_n2c) {
+		SWWTarget *pTarget = (SWWTarget *)vfunc167();
+		void *pPlayer;
+		if (pTarget == 0)
+			pPlayer = 0;
+		else
+			pPlayer = pTarget->m_p;
+		CSingleUserRecipientFilter filter(pPlayer);
+		filter.MakeReliable();
+		int edict = m_pEdict2e0;
+		enginesound->vfunc2(&filter, engine->vfunc35(edict), 0, "dev/ww_tele_in.wav", 1.0f, 0, 0, 100, 0, 0, 1, 0);
+		pTarget = (SWWTarget *)vfunc167();
+		void *pPlayer2 = pTarget;
+		if (pTarget)
+			pPlayer2 = pTarget->m_p;
+		sub_101ce620(pPlayer2, 3, "Werewolf teleported in", 0, 0, 0, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d6280 size=0xce
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
