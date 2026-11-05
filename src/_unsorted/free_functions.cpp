@@ -180862,6 +180862,52 @@ void CNPC_VChangBros::sub_1036e8c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036e990 size=0xd2
+extern int vt_104a7b94;
+extern int vt_104a7b68;
+extern int vt_104adabc;
+extern int vt_104ada90;
+extern int vt_104ae68c;
+extern int vt_104ae660;
+void *sub_100aa720(unsigned int);
+void __fastcall sub_103c48e0(void *pThis);
+void *__fastcall sub_100cd2a0(void *pThis);
+void __fastcall sub_103c51a0(void *pThis);
+void __fastcall sub_1036a320(void *pThis);
+void __fastcall sub_1036ec20(void *pThis);
+
+// TARGET: npc_VChangBrosBlade
+extern "C" int *npc_VChangBrosBlade()
+{
+	int *p;
+	int *raw = (int *)sub_100aa720(0x6700);
+	if (raw) {
+		sub_103c48e0(raw);
+		char *c = (char *)raw;
+		sub_100cd2a0(c + 0x6664);
+		{ long i = 0; while (4 > i) { *(int *)(c + 0x66a0 + i * 4) = -1; i++; } }
+		*(int *)(0x66b0 + c) = -1;
+		sub_103c51a0(c + 0x66b4);
+		*(volatile int *)raw = (int)&vt_104a7b94;
+		*(volatile int *)(0x19b0 + c) = (int)&vt_104a7b68;
+		*(volatile int *)(c + 0x66f4) = -1;
+		sub_1036a320(c + 0x66f8);
+		char *d = c + 0x66fc;
+		*raw = (int)&vt_104adabc;
+		*(volatile int *)(c + 0x19b0) = (int)&vt_104ada90;
+		sub_1036ec20(d);
+		*(volatile int *)raw = (int)&vt_104ae68c;
+		p = raw;
+		*(volatile int *)(c + 0x19b0) = (int)&vt_104ae660;
+	} else {
+		p = 0;
+	}
+	int vt = *(volatile int *)p;
+	((void (__fastcall *)(void *, int, const char *))(*(((int *)vt) + 0x1a8 / 4)))(p, vt, "npc_VChangBrosBlade");
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036eb90 size=0x1a
 namespace lifted {
 extern int g_1062fe20;
