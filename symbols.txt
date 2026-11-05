@@ -2880,6 +2880,7 @@
 0x10005420 func   ?sub_1004c060@CUtlRBTree16Unit@@QAEXG@Z CUtlRBTree16Unit::sub_1004c060
 0x10005425 func   ?sub_103e3900@@YAMXZ sub_103e3900
 0x1000542a func   ?vfunc546@CNPC_VMingXiao@@QAEHH@Z CNPC_VMingXiao::vfunc546
+0x1000542f func   ?IsRightChild@?$CUtlRBTree@UCRBTree12Entry_102ec4a0@@G@@QBE_NG@Z CUtlRBTree<CRBTree12Entry_102ec4a0,unsigned short>::IsRightChild
 0x1000542f func   ?sub_102ec3b0@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_102ec3b0
 0x10005434 func   _item_g_hannahs_appt_book item_g_hannahs_appt_book
 0x10005439 func   ?sub_101bd960@@YIXPAPAX@Z sub_101bd960
