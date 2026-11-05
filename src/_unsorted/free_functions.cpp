@@ -118031,6 +118031,65 @@ void CParsedValue::sub_10205960(CVStatKV *pKV, const char *pszKey)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102059a0 size=0xdd
+#include "CVDmg_t.h"
+
+extern "C" int __cdecl isdigit(int);
+extern "C" int __cdecl atoi(const char *);
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+struct CNameTable
+{
+	int sub_1006cf30(const char *pszName);
+};
+
+struct CParsedValue
+{
+	void sub_10205710();
+	void sub_102058e0(int nValue);
+	void sub_10205900(CVDmgBlock16_t *pBlock);
+	void sub_10205920(int nIndex);
+	void sub_10205940(void *pFunc);
+	void sub_102059a0(const char *pszText);
+};
+
+extern CNameTable g_106c7c34;
+void sub_101467b0();
+
+void CParsedValue::sub_102059a0(const char *pszText)
+{
+	if (!*pszText)
+	{
+		sub_10205710();
+		return;
+	}
+	if (isdigit(*pszText) || *pszText == '-')
+	{
+		sub_102058e0(atoi(pszText));
+		return;
+	}
+	CVDmgBlock16_t block;
+	block.sub_10204570(pszText);
+	if (!block.sub_10204250())
+	{
+		sub_10205900(&block);
+		return;
+	}
+	int nIndex = g_106c7c34.sub_1006cf30(pszText);
+	if (nIndex != -1)
+	{
+		sub_10205920(nIndex);
+		return;
+	}
+	if (!_strcmpi(pszText, "ObfuscateCanInc"))
+	{
+		sub_10205940((void *)sub_101467b0);
+		return;
+	}
+	sub_102058e0(-1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10205ac0 size=0xab
 #include "CVDmg_t.h"
 
