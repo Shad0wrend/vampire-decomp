@@ -43730,6 +43730,103 @@ void sub_100d9820()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d99e0 size=0xca
+struct CRosterFlagsView
+{
+	char m_pad0000[0x104];
+	unsigned int m_nFlags104;
+};
+
+struct CRosterTableView
+{
+	CRosterFlagsView *sub_10200370(int index);
+};
+
+struct CRosterStatsView
+{
+	char m_pad0000[0x1b70];
+	int m_nCurrent;
+	char m_bChanged;
+	char m_pad1b75[3];
+	int m_nSub;
+
+	int sub_10182d70(int a);
+	int sub_10182da0(int index, int a);
+	int sub_10182dd0(int index, int a);
+};
+
+struct CRosterPlayerView
+{
+	char m_pad0000[0xa8];
+	CRosterStatsView *m_pStats;
+};
+
+struct CRosterMgrView
+{
+	int sub_101e1650(CRosterStatsView *pStats, int index);
+};
+
+extern CRosterTableView g_1074e098;
+extern CRosterMgrView g_10739a4c;
+CRosterPlayerView *sub_101193b0();
+
+inline bool IsSecondBit(const CRosterFlagsView *p)
+{
+	unsigned char bit = (unsigned char)(p->m_nFlags104 >> 1);
+	return (bit & 1) != 0;
+}
+
+void sub_100d99e0()
+{
+	CRosterPlayerView *pPlayer = sub_101193b0();
+	if (pPlayer)
+	{
+		CRosterStatsView *pStats = pPlayer->m_pStats;
+		if (pStats)
+		{
+			int nCount = pStats->sub_10182d70(0);
+			int nCurrent = pStats->sub_10182da0(pStats->m_nCurrent, 0);
+			if (nCount > 0)
+			{
+				if (!IsSecondBit(g_1074e098.sub_10200370(pStats->m_nCurrent)))
+				{
+					int nSub = pStats->m_nSub;
+					if (nSub > 0)
+					{
+						pStats->m_nSub = nSub - 1;
+						return;
+					}
+				}
+				int nNext;
+				int i;
+				for (i = nCurrent - 1; i >= 0; i--)
+				{
+					nNext = pStats->sub_10182dd0(i, 0);
+					if (nNext != -1)
+					{
+						pStats->m_nCurrent = nNext;
+						pStats->m_bChanged = 1;
+						pStats->m_nSub = g_10739a4c.sub_101e1650(pStats, nNext) - 1;
+						return;
+					}
+				}
+				for (i = nCount - 1; i > nCurrent; i--)
+				{
+					nNext = pStats->sub_10182dd0(i, 0);
+					if (nNext != -1)
+					{
+						pStats->m_nCurrent = nNext;
+						pStats->m_bChanged = 1;
+						pStats->m_nSub = g_10739a4c.sub_101e1650(pStats, nNext) - 1;
+						return;
+					}
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d9b80 size=0x4f
 #include "engineserver.h"
 #include "CUnknown101e0f00.h"
