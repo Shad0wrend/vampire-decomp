@@ -95,6 +95,55 @@ void CBreakableProp::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018f400 size=0x12e
+#include "CBreakableProp.h"
+#include "CBaseEntity.h"
+#include "CTakeDamageInfo.h"
+#include "COutputEvent.h"
+#include "CVariantCopy.h"
+
+extern int g_1070ba38;
+
+#define S_V(n) virtual void v##n();
+#define S_V10(p) S_V(p##0) S_V(p##1) S_V(p##2) S_V(p##3) S_V(p##4) S_V(p##5) S_V(p##6) S_V(p##7) S_V(p##8) S_V(p##9)
+struct CBreakablePropSlots
+{
+	S_V(0) S_V(1) S_V(2) S_V(3) S_V(4) S_V(5) S_V(6) S_V(7) S_V(8) S_V(9)
+	S_V10(1) S_V10(2) S_V10(3) S_V10(4) S_V10(5) S_V10(6) S_V10(7) S_V10(8) S_V10(9)
+	S_V10(10) S_V10(11) S_V10(12) S_V10(13)
+	virtual char vfunc140(void *pAttacker);
+};
+
+// TARGET: CBreakableProp::vfunc142
+int CBreakableProp::vfunc142(CTakeDamageInfo *pInfo)
+{
+	CTakeDamageInfo info = *pInfo;
+	if (!((CBreakablePropSlots *)this)->vfunc140(info.m_pInflictor))
+		return 1;
+	unsigned int *pVDmg = (unsigned int *)info.m_pVDmg00;
+	unsigned int nBits = info.m_nFlags38;
+	if ((pVDmg ? (pVDmg[4] | nBits) : nBits) & 0x2000000)
+		info.m_flDamage *= 5.0f;
+	if ((pVDmg ? (pVDmg[4] | nBits) : nBits) & 0x80)
+		info.m_flDamage += info.m_flDamage;
+	if ((pVDmg ? (pVDmg[4] | nBits) : nBits) & 0x20000)
+		info.m_flDamage *= 0.1f;
+	if (m_createFrame == g_1070ba38) {
+		int nOld = m_nTakeDamage1fc;
+		m_nTakeDamage1fc = 1;
+		int r = ((CBaseEntity *)this)->CBaseEntity::vfunc142(&info);
+		m_nTakeDamage1fc = nOld;
+		return r;
+	}
+	int r = ((CBaseEntity *)this)->CBaseEntity::vfunc142(&info);
+	void *pAttacker = info.m_pInflictor;
+	int nHealth = m_iHealth;
+	((CVariantCopy *)m_OnHealthChanged748)->sub_1000b320(4, &nHealth);
+	((COutputEvent *)m_OnHealthChanged748)->sub_100cd300(*(CVariantCopy *)m_OnHealthChanged748, pAttacker, this, 0.0f);
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018f580 size=0x7d
 #include "CBaseEntity.h"
 #include "CBreakableProp.h"
