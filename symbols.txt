@@ -3015,6 +3015,7 @@
 0x1000569b func   ?vfunc619@CNPCMaker@@UAEXH@Z CNPCMaker::vfunc619
 0x100056a5 func   ?sub_1021bbf0@CPropHacking@@QAEXH@Z CPropHacking::sub_1021bbf0
 0x100056aa func   ?vfunc117@CItemContainerLock@@QAEHXZ CItemContainerLock::vfunc117
+0x100056af func   ?sub_100391f0@CBaseEntity@@QAEXXZ CBaseEntity::sub_100391f0
 0x100056b9 func   ?vfunc82@CPropSlashable@@UAEPAUdatamap_t@@XZ CPropSlashable::vfunc82
 0x100056be func   ?vfunc72@CPayphone@@UAE_NH@Z CPayphone::vfunc72
 0x100056c3 func   ?sub_100660a0@@YAHXZ sub_100660a0

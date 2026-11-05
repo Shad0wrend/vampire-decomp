@@ -4483,6 +4483,64 @@ CBaseEntity *CPhysicsPushedEntities::sub_10038400(CBaseEntity *pRoot, const floa
 }
 // END FUNCTION
 
+// FUNCTION: 0x100391f0 size=0x1f3
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CVProfile.h"
+#include "ScopeTrace.h"
+
+struct CCycleSample
+{
+	unsigned __int64 m_Int64;
+	void Sample() { unsigned int *p = (unsigned int *)&m_Int64; __asm { mov ecx, p
+		rdtsc
+		mov [ecx], eax
+		mov [ecx + 4], edx } }
+	void Add(const CCycleSample &rhs) { m_Int64 += rhs.m_Int64; }
+};
+
+// TARGET: CBaseEntity::sub_100391f0
+void CBaseEntity::sub_100391f0()
+{
+	ScopeTrace trace("CBaseEntity::PhysicsNone", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CVProfile *p = g_109f3648;
+	if (p->m_enabled || !p->m_bAtRoot) {
+		if (p->m_pCurNode->m_pszName != "CBaseEntity_PhysicsNone")
+			p->m_pCurNode = p->m_pCurNode->GetSubNode("CBaseEntity_PhysicsNone", 0, "Unaccounted");
+		CVProfNode *n = p->m_pCurNode;
+		n->m_nCurFrameCalls++;
+		if (n->m_nRecursions++ == 0) {
+			((CCycleSample *)&n->m_CurFrameTime)->Sample();
+			g_109f3648->PushGroupInlined(n->m_nBudgetGroupID);
+		}
+		p->m_bAtRoot = false;
+	}
+	sub_10033f60(0);
+	p = g_109f3648;
+	if (!p->m_bAtRoot || p->m_enabled) {
+		CVProfNode *n = p->m_pCurNode;
+		if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0) {
+			CCycleSample s;
+			s.m_Int64 = 0;
+			s.Sample();
+			n->m_CurFrameTime.m_Int64 = s.m_Int64 - n->m_CurFrameTime.m_Int64;
+			((CCycleSample *)&n->m_TotalTime)->Add(*(CCycleSample *)&n->m_CurFrameTime);
+			g_109f3648->PopGroup();
+		}
+		if (n->m_nRecursions == 0)
+			p->m_pCurNode = p->m_pCurNode->m_pParent;
+		p->m_bAtRoot = (p->m_pCurNode == p->m_pRoot);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100397c0 size=0x255
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
