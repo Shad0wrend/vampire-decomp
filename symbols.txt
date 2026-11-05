@@ -2991,6 +2991,7 @@
 0x1000560f func   ?sub_10179190@@YAHXZ sub_10179190
 0x10005614 func   ?sub_100db6c0@@YAXXZ sub_100db6c0
 0x10005619 func   ?vfunc5@CNPC_VHumanCombatPatrol@@QAEPAV1@I@Z CNPC_VHumanCombatPatrol::vfunc5
+0x1000561e func   ?vfunc442@CNPC_Crow@@QAEXPAH@Z CNPC_Crow::vfunc442
 0x10005623 func   ?vfunc2@CPhysicsAnimlinkEntityDeleteProxy@@QAEPAV1@I@Z CPhysicsAnimlinkEntityDeleteProxy::vfunc2
 0x10005628 func   ?vfunc33@CBaseEntity@@UAEHXZ CBaseEntity::vfunc33
 0x1000562d func   ?vfunc5@CEnvFireSource@@QAEPAV1@I@Z CEnvFireSource::vfunc5
