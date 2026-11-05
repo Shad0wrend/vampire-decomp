@@ -1982,6 +1982,76 @@ Vector CAI_BaseNPC::vfunc533(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102779a0 size=0x238
+#include "CEntityVSlots.h"
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
+#include "CBaseAnimating.h"
+#include "Tier1.h"
+#include "UTIL_BloodStream.h"
+#include "globalvars.h"
+
+extern char g_10547e40[];
+
+void CAI_BaseNPC::vfunc581()
+{
+	const char *pState = vfunc406(*(int *)((char *)this + 0x5cc0));
+	const char *pClass = sub_1009f200();
+	void (*pDevMsg)(const char *, ...) = (void (*)(const char *, ...))g_109f3630;
+	pDevMsg("%s: ", pClass);
+	pDevMsg("State: %s, ", pState);
+	if (*(int *)((char *)this + 0xfec) != -1 && *(int *)(0xff0 + (char *)this) != -1)
+	{
+		const char *pAct = ((CBaseAnimating *)this)->sub_1008ff50(((CBaseAnimating *)this)->sub_1008dc40(*(int *)((char *)this + 0xfec), -1));
+		const char *pIdeal = ((CBaseAnimating *)this)->sub_1008ff50(((CBaseAnimating *)this)->sub_1008dc40(*(int *)((char *)this + 0xff0), -1));
+		pDevMsg("Activity: %s  -  Ideal Activity: %s\n", pAct, pIdeal);
+	}
+	void *pSchedule = *(void **)((char *)this + 0x5c38);
+	if (pSchedule)
+	{
+		const char *pName = *(const char **)((char *)pSchedule + 0x40);
+		if (!pName)
+			pName = "Unknown";
+		pDevMsg("Schedule %s, ", pName);
+		void *pTask = sub_1028a150();
+		if (pTask)
+			pDevMsg("Task %d (#%d), ", *(int *)pTask, *(int *)((char *)this + 0x5c40));
+	}
+	else
+	{
+		pDevMsg("No Schedule, ");
+	}
+	if (vfunc167())
+	{
+		Vector *pOrg = ((CEntityVSlots *)(CBaseEntity *)vfunc167())->slot217();
+		Vector tmp; tmp = *pOrg;
+		tmp.z += 64.0f;
+		Vector vec = tmp;
+		g_10566258->Sparks(vec, 1, 1, 0);
+		pDevMsg("\nEnemy is %s", ((CBaseEntity *)vfunc167())->sub_1009f200());
+	}
+	else
+	{
+		pDevMsg("No enemy ");
+	}
+	if (vfunc153())
+	{
+		pDevMsg(" Moving ");
+		if (*(float *)((char *)this + 0x5cf0) > gpGlobals->curtime)
+			pDevMsg(": Stopped for %.2f. ", (double)(*(float *)((char *)this + 0x5cf0) - gpGlobals->curtime));
+		else if (*(int *)((char *)this + 0xff0) == sub_1027a6c0())
+			pDevMsg(": In stopped anim. ");
+	}
+	pDevMsg("Leader.");
+	pDevMsg(g_10547e40);
+	pDevMsg("Yaw speed:%3.1f,Health: %3d\n", (double)*(float *)(0x38 + *(int *)((char *)this + 0x5d44)), *(int *)((char *)this + 0x210));
+	if (vfunc209())
+		pDevMsg("Groundent:%s\n\n", ((CBaseEntity *)vfunc209())->sub_1009f200());
+	else
+		pDevMsg("Groundent: NULL\n\n");
+}
+// END FUNCTION
+
 // FUNCTION: 0x10278090 size=0xc7
 #include "CAI_BaseNPC.h"
 #include "CCineNPC.h"
