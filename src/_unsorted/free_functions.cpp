@@ -87407,6 +87407,48 @@ void CCineNPC::sub_101a8460(CBaseAnimating *pNpc)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a8640 size=0x18c
+#include "CCineNPC.h"
+#include "CAI_BaseNPC.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CEntityVSlots.h"
+#include "globalvars.h"
+#include "CEHandleGet.h"
+
+extern char g_106b8540[];
+extern void (__cdecl *g_109f3650)(int level, const char *fmt, ...);
+void sub_101c0b10();
+
+void CCineNPC::sub_101a8640(CBaseAnimating *pNpc)
+{
+	CAI_BaseNPCTroika *pTroika = (CAI_BaseNPCTroika *)pNpc;
+	if (m_pszSequence5f4c && (m_flags204 & 0x100) && !EHandle_Get(m_hNPC5f94)) {
+		CCineNPC *pCine = (CCineNPC *)EHandle_Get(pTroika->m_h5d74);
+		const char *psz = pCine->m_pszSequence5f4c;
+		if (!psz)
+			psz = g_106b8540;
+		g_109f3650(2, "Post Idle %s finished\n", psz);
+		pTroika->sub_1027f270(2);
+		pTroika->m_n5d70 = 2;
+		((CEntityVSlots *)this)->slot584((CEntityVSlots *)pNpc, m_pszSequence5f4c, 0);
+		return;
+	}
+	if (!(m_flags204 & 4)) {
+		sub_100ac4e0((void *)sub_101c0b10, 0, 0);
+		m_flNextThink = gpGlobals->curtime + 0.1;
+	}
+	pTroika->sub_1027d170();
+	((CEntityVSlots *)this)->slot586((CEntityVSlots *)pNpc);
+	if (EHandle_Get(m_hNPC5f94)) {
+		CAI_BaseNPCTroika *pNext = (CAI_BaseNPCTroika *)EHandle_Get(m_hNPC5f94);
+		if (pNext != (CAI_BaseNPCTroika *)this || (m_flags204 & 4)) {
+			pNext->sub_10279cc0((CBaseEntity *)pNpc);
+			((CEntityVSlots *)pNext)->slot583();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a8930 size=0x4b
 #include "CCineNPC.h"
 #include "CEHandleGet.h"
