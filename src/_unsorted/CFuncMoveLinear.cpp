@@ -106,6 +106,26 @@ bool CFuncMoveLinear::vfunc223()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101164c0 size=0x6f
+#include "CFuncMoveLinear.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+struct IStrSink { virtual void f(const char *s, int n); };
+extern IStrSink *g_1070b248;
+
+void CFuncMoveLinear::vfunc104()
+{
+    if (m_str55c)
+        g_1070b248->f(STRINGR_F(m_str55c), 0);
+    if (m_str568)
+        g_1070b248->f(STRINGR_F(m_str568), 0);
+    if (m_str560)
+        g_1070b248->f(STRINGR_F(m_str560), 0);
+    m_field564 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10116550 size=0x8
 #include "CBaseEntity.h"
 #include "CFuncMoveLinear.h"
