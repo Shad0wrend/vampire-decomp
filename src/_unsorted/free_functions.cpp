@@ -110674,6 +110674,48 @@ void __stdcall sub_101f2ae0(void* p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f2b00 size=0x10b
+#include "VKeyValues.h"
+#include <stdio.h>
+extern "C" void *__cdecl __RTDynamicCast(void *, long, void *, void *, int);
+extern int g_105a5f08;
+extern int g_105a5f28;
+extern char g_106b8540[];
+
+// TARGET: VKeyValuesInterface::sub_101f2b00
+char VKeyValuesInterface::sub_101f2b00(const char *pszName, int nMax, const char *pszFormat, int **ppValues, int *pnCount)
+{
+	char buf[32];
+	if (pnCount) {
+		*pnCount = 0;
+		VKeyValues *pKV = (VKeyValues *)__RTDynamicCast(((VKeyValues *)((char *)this - 0x30))->NameOf()->vfunc2(pszName), 0, &g_105a5f08, &g_105a5f28, 0);
+		if (pKV) {
+			int n = 0;
+			int i = 0;
+			if (nMax > 0) {
+				do {
+					sprintf(buf, pszFormat, i);
+					if (!*pKV->NameOf()->vfunc13(buf, g_106b8540))
+						break;
+					n++;
+					i++;
+				} while (i < nMax);
+			}
+			if (n > 0) {
+				*pnCount = n;
+				*ppValues = (int *)operator new(n * 4);
+				for (i = 0; i < n; i++) {
+					sprintf(buf, pszFormat, i);
+					(*ppValues)[i] = pKV->NameOf()->vfunc10(buf, 0);
+				}
+				return 1;
+			}
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2c60 size=0x50
 struct VB { virtual void f0(); virtual void f1(); };
 struct VNode : virtual VB { int a; };
