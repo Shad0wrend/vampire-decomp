@@ -21,6 +21,59 @@ datamap_t *CFuncMoveLinear::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10116030 size=0x2fc
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include <math.h>
+#include "CFuncMoveLinear.h"
+#include "CEntityVSlots.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+// TARGET: CFuncMoveLinear::vfunc103
+void CFuncMoveLinear::vfunc103()
+{
+	CEntityVSlots *pSlots = (CEntityVSlots *)this;
+	pSlots->slot171();
+	pSlots->slot93(8, 0);
+	sub_100b3b00();
+	{
+		int buf;
+		const char *pszName = *pSlots->slot9(&buf);
+		if (!pszName)
+			pszName = g_106b8540;
+		pSlots->slot105(pszName);
+	}
+	if (m_flSpeed <= 0)
+		m_flSpeed = 100.0f;
+	if (m_fl574 <= 0) {
+		Vector *pSize = pSlots->slot214();
+		m_fl574 = fabs((pSize->x - 2.0f) * m_vecMovedir190.x) + fabs((pSlots->slot214()->y - 2.0f) * m_vecMovedir190.y) + fabs((pSlots->slot214()->z - 2.0f) * m_vecMovedir190.z) - m_flLip504;
+	}
+	m_vecPosition1 = *pSlots->slot220() - (m_vecMovedir190 * m_fl574) * m_fl570;
+	m_vecPosition2 = (m_vecMovedir190 * m_fl574) + m_vecPosition1;
+	m_vecFinalDest = *pSlots->slot220();
+	m_pfnTouch1ec = 0;
+	pSlots->slot104();
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", m_name26c ? m_name26c : g_106b8540, g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(1);
+	}
+	if (m_flags204 & 8) {
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", m_name26c ? m_name26c : g_106b8540, g_106b8540);
+		CCollisionProperty *pCol = (CCollisionProperty *)((char *)this + 0x270);
+		pCol->sub_100dc580(pCol->m_usSolidFlags | 4);
+	}
+	pSlots->slot223();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101163f0 size=0x92
 #include "CFuncMoveLinear.h"
 
