@@ -57137,6 +57137,34 @@ void CBreakableSurface::sub_10112a10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10112b90 size=0x15c
+#include "CBreakableSurface.h"
+#include "CEntityMessageFilter.h"
+void sub_10112650();
+
+// TARGET: CBreakableSurface::sub_10112b90
+void CBreakableSurface::sub_10112b90(int nCol, int nRow)
+{
+	if (nCol < 0 || nCol >= m_nCols49c)
+		return;
+	if (nRow < 0 || nRow >= m_nRows4a0)
+		return;
+	m_nPanes4cc++;
+	m_aflPanes[nCol][nRow] = -1.0f;
+	CEntityMessageFilter filter;
+	int edict = m_pEdict2e0;
+	filter.sub_1019d2f0(engine->vfunc35(edict));
+	filter.MakeReliable();
+	engine->vfunc65(&filter, 0);
+	engine->vfunc67(0);
+	engine->vfunc67(nCol);
+	engine->vfunc67(nRow);
+	engine->vfunc66();
+	sub_100ac4e0((int)::sub_10112650, 0, 0);
+	m_flNextThink = gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10113780 size=0x244
 #include "SendTable.h"
 SendProp sub_10246af0(const char *, int, int, int, int, int, void *);
