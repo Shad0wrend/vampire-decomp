@@ -65,7 +65,7 @@ class CUnknown101b2570;
 class CSoundEmitterSystemBase
 {
 public:
-	void sub_101b3bb0(const char *pszSoundName, CUnknown10248a50 *pKeys, CUnknown101b2570 *pParams);	// 0x101b3bb0: applies one sound-script block (channel/volume/pitch/wave/rndwave/attenuation/soundlevel/play_to_owner_only/precache) to the parameter record
+	bool sub_101b3bb0(const char *pszSoundName, CUnknown10248a50 *pKeys, CUnknown101b2570 *pParams);	// 0x101b3bb0: applies one sound-script block (channel/volume/pitch/wave/rndwave/attenuation/soundlevel/play_to_owner_only/precache) to the parameter record
 	void *m_vtbl;	// 0x00
 	void *m_pfn04;
 	int m_i08;
@@ -94,6 +94,7 @@ public:
 
 	CSoundEmitterSystemBase *sub_101b26c0();
 	bool sub_101b2c60();	// slot 1 (0x101b2c60, stub 0x10005597), "BaseInit"-like: when the count at +0xa8 is positive calls slot 2 (the class has no real virtuals yet: call (*(void (__fastcall **)(CSoundEmitterSystemBase *))((char *)m_vtbl + 8))(this)), sub_101b3b70(), loads "scripts/game_sounds_manifest.txt" into a new CUnknown10248a50 (g_1070b238, 0, true), for each sub key: name "precache_file" -> sub_101b4240(key->GetString(0, ""), true), "declare_file" -> sub_101b4240(key->GetString(0, ""), false), else DevWarning("CSoundEmitterSystemBase::BaseInit:  Manifest '%s' with bogus file type '%s', expecting 'declare_file' or 'precache_file'\n"); Error-like message when the file is missing; deletes the tree; DevMsg(1, "Registered %i sounds ( %i missing )") using sub_101b4740(false); returns true
+	float sub_101b4900(const char *pszAttenuation);	// stub 0x10001c85: TranslateAttenuation, the attenuation of an ATTN_ name
 	void sub_101b3b70();	// empty (a plain ret), called by slot 1 before the manifest load
 	void sub_101b4240(const char *pszScriptFile, bool bPrecache);	// stub 0x1000924b, AddSoundsFromFile: grows the script file table (0x82 byte entries, memory +0x9c, count +0xa8), loads the script file into a CUnknown10248a50 and adds each sound record (tree at +0x50); DevMsg "No such file" (and removes the table entry again) / "Entry '%s' already exists" cases
 	CSoundEmitterSystemBase *sub_101b0200(unsigned char flags);	// slot 0, scalar deleting destructor: purges the lists at +0xb0, +0x70, +0x24 and the memory blocks at +0x9c, +0x54, +0x8; deletes this when bit 0 of flags is set
