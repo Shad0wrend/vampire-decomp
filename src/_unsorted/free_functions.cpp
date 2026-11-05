@@ -45435,6 +45435,31 @@ bool sub_100df1b0(CAutoEndSource *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df240 size=0x6b
+#include <string.h>
+
+struct CAutoEndSource
+{
+	int m_n0000;
+	const char *m_pszName;
+};
+
+__declspec(dllimport) char *Q_stristr(const char *pStr, const char *pSearch);
+
+// TARGET: sub_100df240
+bool sub_100df240(CAutoEndSource *p)
+{
+	if (p && p->m_pszName && strlen(p->m_pszName) != 0) {
+		if (Q_stristr(p->m_pszName, "starting condition"))
+			return true;
+		if (Q_stristr(p->m_pszName, "starting-condition"))
+			return true;
+		return Q_stristr(p->m_pszName, "starting_condition") ? true : false;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df7b0 size=0x72
 struct ICommandLine {
     virtual void v0();

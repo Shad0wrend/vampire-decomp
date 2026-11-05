@@ -6615,6 +6615,7 @@
 0x1000acb8 func   ??1CUnknown101f4c80@@QAE@XZ CUnknown101f4c80::~CUnknown101f4c80
 0x1000acbd func   ?sub_10044a90@CUnknown10044a90@@QAEXI@Z CUnknown10044a90::sub_10044a90
 0x1000acc2 func   ?sub_10329560@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_10329560
+0x1000accc func   ?sub_100df240@@YA_NPAUCAutoEndSource@@@Z sub_100df240
 0x1000acd1 func   ?sub_10194750@@YAXPAHPBH@Z sub_10194750
 0x1000acd6 func   ?vfunc8@CGameRules@@UAEXH@Z CGameRules::vfunc8
 0x1000acdb func   ?sub_102e9f70@CUnknown102e9f70@@QAEHXZ CUnknown102e9f70::sub_102e9f70
