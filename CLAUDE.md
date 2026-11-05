@@ -296,6 +296,15 @@ inside a ScopeTrace; Grow stays a call), the RB-tree members 0x10194780 / 0x1005
 RotateLeft (after naming its out-of-line Links), 0x100498c0 LinkToParent and 0x10055f50 RotateLeft (only their
 out-of-line callees' names missing).
 
+## Reference source (the view's "reference" part): Valve's code of the same function, not Troika's
+
+When an open function's strings are also in a function of Valve's code (project.toml [reference]: the 2004 Source
+SDK), its view ends with that function's source: `get_function(addr, part="reference")` pages
+it. Read it for the control flow, the order of the calls and the names of members and locals; then write the game's
+version, which Troika changed (other members, added code, other vtable slots). Keep the project's names: the
+function is still defined under its own name (`CAI_BaseNPC::vfunc442`, not `StartTask`; slot numbers differ from the
+SDK's), and members are the ones in include/ (add a missing one with edit_context, never a copy of the SDK's header).
+
 ## Source entity handles (EHANDLE, CHandle<T>): write the Source expression, never the slot lookup
 
 `include/ehandle.h` (in the prelude) holds Source's entity handles in the 2004 public SDK form: `CBaseHandle`,
