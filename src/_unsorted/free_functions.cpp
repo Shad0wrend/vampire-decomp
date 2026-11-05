@@ -48824,6 +48824,21 @@ char CBaseDoor::sub_100f0c00(char bCheckLinked)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f0e30 size=0x2f
+#include "CBaseDoor.h"
+
+// TARGET: CBaseDoor::sub_100f0e30
+void CBaseDoor::sub_100f0e30(float flTime)
+{
+	if (m_flTimer640 > flTime) {
+		double d = m_flTimer640;
+		m_flTimer640 = (float)d;
+		return;
+	}
+	m_flTimer640 = flTime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0e70 size=0xb
 void __fastcall sub_100f0e70(char *self)
 {
