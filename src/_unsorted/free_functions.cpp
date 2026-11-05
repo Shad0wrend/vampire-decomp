@@ -123572,6 +123572,106 @@ void CPropHacking::sub_1021ac30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021aca0 size=0x2c5
+#include "CBaseEntity.h"
+#include "CPropHacking.h"
+
+extern "C" int __cdecl _toupper_lk(int);
+__declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+void sub_10217ac0(CPropHacking *pThis, const char *pszFormat, ...);
+const char *sub_101d3730(const char *pszFormat, int a, int b);
+
+namespace block_1021aca0
+{
+	struct CPropHackingUnit : CPropHacking
+	{
+		bool sub_1021a4b0(int record);
+	};
+
+	bool CPropHackingUnit::sub_1021a4b0(int record)
+	{
+		if (record >= 0 && record < 0x80)
+			return (((int *)((char *)this + 0xa28))[record] & 1) == 1;
+		return false;
+	}
+}
+using namespace block_1021aca0;
+
+struct CUnknown1021bec0
+{
+	char sub_1021bec0(const void *pRecord);
+};
+
+// TARGET: CPropHacking::sub_1021aca0
+void CPropHacking::sub_1021aca0()
+{
+	int bEmail = m_n0a20;
+	int nLinkRecords = m_n09c0;
+	int nRecords = m_n09ac;
+	int nList = 0;
+	int nUnread = 0;
+	if (bEmail) {
+		sub_1021bd80();
+		nList = m_n0a04;
+		if (nList > 0) {
+			int *p = m_pnList09f8;
+			int n = nList;
+			do {
+				if (!((CPropHackingUnit *)this)->sub_1021a4b0(*p))
+					nUnread++;
+				p++;
+			} while (--n);
+		}
+	}
+	if (m_n09dc == -1)
+		sub_1021b140(0);
+	else
+		sub_1021b140(m_pRecords09a0[m_n09dc].m_szName + 0x10);
+	if (bEmail) {
+		sub_10217ac0(this, sub_101d3730(sub_10219400(0x1f), nList, nUnread));
+		sub_10217ac0(this, "\n\n");
+	}
+	if (m_n09dc == -1) {
+		sub_10217ac0(this, "%s\n\n", sub_10219400(0x2b));
+	} else {
+		char szName[16];
+		Q_strncpy(szName, m_pRecords09a0[m_n09dc].m_szName, 0x10);
+		szName[0] = (char)_toupper_lk(szName[0]);
+		sub_10217ac0(this, "%s %s\n\n", szName, sub_10219400(0x2c));
+	}
+	sub_10217ac0(this, "%s:\n", sub_10219400(2));
+	if (bEmail)
+		sub_10217ac0(this, "   %s\n", sub_10219400(0x1e));
+	if (m_n09dc != -1)
+		sub_10217ac0(this, "   %s\n", sub_10219400(0x11));
+	for (int i = 0; i < nRecords; i++) {
+		if (i != m_n09dc) {
+			char *pRecs = (char *)m_pRecords09a0;
+			if (((CUnknown1021bec0 *)this)->sub_1021bec0(pRecs + i * 0xd4 + 0x44))
+				sub_10217ac0(this, "   %s\n", i * 0xd4 + (char *)m_pRecords09a0);
+		}
+	}
+	sub_10217ac0(this, "\n%s:\n", sub_10219400(3));
+	if (m_n09dc >= 0 && m_n09dc < nRecords) {
+		char *pRecs = (char *)m_pRecords09a0;
+		CPropHackingRecord rec = *(CPropHackingRecord *)(pRecs + m_n09dc * 0xd4);
+		for (int i = 0; i < 20; i++) {
+			int nLink = rec.m_anLinks[i];
+			if (nLink >= 0 && nLink < nLinkRecords) {
+				char *pBase = (char *)m_p09b4;
+				if (((CUnknown1021bec0 *)this)->sub_1021bec0(pBase + nLink * 0x2b4 + 0x230))
+					sub_10217ac0(this, "   %s\n", (char *)m_p09b4 + nLink * 0x2b4);
+			}
+		}
+	}
+	if (m_n09dc == -1) {
+		sub_10217ac0(this, "   %s\n", sub_10219400(0x22));
+		sub_10217ac0(this, "   %s\n", sub_10219400(0x21));
+	}
+	m_b09ec = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021b030 size=0xcd
 #include "CPropHacking.h"
 #include "CUnknown10217f50.h"
