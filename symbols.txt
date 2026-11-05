@@ -7549,6 +7549,7 @@
 0x1000c2fc func   ?vfunc104@CNPC_VGargoyle@@QAEXXZ CNPC_VGargoyle::vfunc104
 0x1000c301 func   ?vfunc2@CTEBeamRing@@UAEPAVCTEBaseBeam@@I@Z CTEBeamRing::vfunc2
 0x1000c306 func   ?vfunc491@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc491
+0x1000c30b func   ?sub_101f1aa0@CUnknown101f0e50@@QAEPAVCVTraitEffectGroup_t@@H@Z CUnknown101f0e50::sub_101f1aa0
 0x1000c310 func   ?vfunc132@CBaseEntity@@UAEXXZ CBaseEntity::vfunc132
 0x1000c31a func   ?vfunc14@CGameMovement@@UAEHH@Z CGameMovement::vfunc14
 0x1000c329 func   ?vfunc246@CNPC_VPlayerController@@QAEXXZ CNPC_VPlayerController::vfunc246
