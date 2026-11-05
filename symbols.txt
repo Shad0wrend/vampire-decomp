@@ -5964,6 +5964,7 @@
 0x10009d7c func   ?sub_10158b40@@YAXPAX0@Z sub_10158b40
 0x10009d81 func   ?sub_1042d670@@YAXXZ sub_1042d670
 0x10009d86 func   ?vfunc241@CFuncPlat@@UAEEXZ CFuncPlat::vfunc241
+0x10009d8b func   ??0CUnk101f0b50@@QAE@H@Z CUnk101f0b50::CUnk101f0b50
 0x10009d8b func   ?sub_101f0b50@CUnknown101f0b50@@QAEPAXH@Z CUnknown101f0b50::sub_101f0b50
 0x10009d95 func   ?sub_10202e50@CUnknown10202d10@@QAEHHPBDHD@Z CUnknown10202d10::sub_10202e50
 0x10009d9a func   ?sub_1005d830@@YAXPAXMHPAVVector@@@Z sub_1005d830
