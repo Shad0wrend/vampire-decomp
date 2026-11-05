@@ -55,6 +55,93 @@ bool CWorld::vfunc73(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023b670 size=0x168
+#include "CWorld.h"
+
+struct CWorldConVar
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void SetFloat(float value);
+	virtual void SetString(const char *value);
+};
+struct CWorldCvarSystem
+{
+	virtual void v0(); virtual void v1();
+	virtual CWorldConVar *FindVar(const char *name);
+};
+struct CWorldGlobals
+{
+	char pad[0x34];
+	int m_nSounds;
+};
+extern CWorldCvarSystem *g_1070b234;
+extern CWorldGlobals *g_1070b228;
+extern "C" int _strcmpi(const char *, const char *);
+extern "C" int atoi(const char *);
+extern "C" double atof(const char *);
+extern "C" int sscanf(const char *, const char *, ...);
+void sub_1011a430();
+
+struct CWorldWave
+{
+	char pad[0x1b1];
+	char m_bDirty;
+	char pad2[0x45c - 0x1b2];
+	float m_flHeight;
+	void Set(float v) { m_flHeight = v; char *p = &m_bDirty; *p = 1; }
+};
+
+// TARGET: CWorld::vfunc110
+bool CWorld::vfunc110(const char *key, const char *value)
+{
+	if (!_strcmpi(key, "skyname"))
+	{
+		CWorldConVar *pVar = g_1070b234->FindVar("sv_skyname");
+		if (pVar)
+		{
+			pVar->SetString(value);
+			return true;
+		}
+		return true;
+	}
+	if (!_strcmpi(key, "sounds"))
+	{
+		g_1070b228->m_nSounds = atoi(value);
+		return true;
+	}
+	if (!_strcmpi(key, "WaveHeight"))
+	{
+		CWorldWave *w = (CWorldWave *)this;
+		w->Set((float)(atof(value) * 0.125));
+		CWorldConVar *pVar = g_1070b234->FindVar("sv_wateramp");
+		if (pVar)
+		{
+			pVar->SetFloat(w->m_flHeight);
+			return true;
+		}
+		return true;
+	}
+	if (!_strcmpi(key, "newunit"))
+	{
+		if (atoi(value))
+		{
+			sub_1011a430();
+			return true;
+		}
+		return true;
+	}
+	float *p;
+	if (!_strcmpi(key, "world_mins"))
+		p = m_vecWorldMins;
+	else if (!_strcmpi(key, "world_maxs"))
+		p = m_vecWorldMaxs;
+	else
+		return CBaseEntity::vfunc110(key, value);
+	sscanf(value, "%f %f %f", p, p + 1, p + 2);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023b840 size=0x10b
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
