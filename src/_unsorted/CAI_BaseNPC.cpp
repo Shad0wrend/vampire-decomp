@@ -2355,6 +2355,63 @@ void CAI_BaseNPC::vfunc106(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027bc60 size=0x182
+#include "CSave.h"
+#include "CAI_BaseNPC.h"
+#include "ehandle.h"
+#include "Tier1.h"
+struct SaveRecView { short m_nVersion; int m_nFlags; char m_szName[0x80]; unsigned m_crc; };
+struct SaveSchedView { char pad20[0x20]; char *m_pData; int m_nCount; char pad28[0x40 - 0x28]; const char *m_pszName; };
+class CSaveView { public: virtual void v0(); virtual void v1(); virtual void v2(SaveRecView *pRec, void *pOps); };
+extern char g_105cabd0;
+void sub_10006ee7(void *p, int n);
+void sub_10015311(void *p, int n);
+void __fastcall sub_102e0b60(void *p);
+void __fastcall sub_102e0b80(void *p);
+void __fastcall sub_102e8aa0(void *p);
+void __fastcall sub_102e8ac0(void *p);
+char __fastcall sub_102ee6a0(void *p);
+void sub_1023f040(unsigned *p);
+void sub_1023f060(unsigned *p);
+void sub_100143b7(unsigned *p, const char *data, int bits);
+int CAI_BaseNPC::vfunc126(CSave *pSave)
+{
+	char *pThis = (char *)this;
+	sub_10006ee7(pThis + 0x5b8c, 4);
+	sub_10006ee7(pThis + 0x5db4, 3);
+	if (Owned5d44())
+		sub_102e0b60(Owned5d44());
+	void *pOverlay = pThis + 0x5cf4;
+	sub_102e8aa0(pOverlay);
+	SaveRecView rec;
+	rec.m_nVersion = 1;
+	rec.m_nFlags = 0;
+	if (vfunc167())
+		rec.m_nFlags |= 1;
+	if (((EHANDLE *)(pThis + 0x5ce4))->Get())
+		rec.m_nFlags |= 2;
+	if (sub_102ee6a0(*(void **)(pThis + 0x5d34)))
+		rec.m_nFlags |= 4;
+	if (*(SaveSchedView **)(pThis + 0x5c38)) {
+		g_109f3890(rec.m_szName, (*(SaveSchedView **)(pThis + 0x5c38))->m_pszName, 0x80);
+		sub_1023f040(&rec.m_crc);
+		sub_100143b7(&rec.m_crc, (*(SaveSchedView **)(pThis + 0x5c38))->m_pData, (*(SaveSchedView **)(pThis + 0x5c38))->m_nCount << 3);
+		sub_1023f060(&rec.m_crc);
+	} else {
+		rec.m_szName[0] = 0;
+		rec.m_crc = 0;
+	}
+	((CSaveView *)pSave)->v2(&rec, &g_105cabd0);
+	int ret = sub_10348980(pSave);
+	sub_10015311(pThis + 0x5b8c, 4);
+	sub_10015311(pThis + 0x5db4, 3);
+	if (Owned5d44())
+		sub_102e0b80(Owned5d44());
+	sub_102e8ac0(pOverlay);
+	return ret;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027c160 size=0x65
 #include "CBaseEntity.h"
 #include "CAI_BaseNPC.h"
