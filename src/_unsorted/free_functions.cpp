@@ -123854,6 +123854,32 @@ void CUnk1021c390::sub_1021c390(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021c3c0 size=0xc2
+#include "CPropHacking.h"
+#include "CUnknown10217f50.h"
+#include "CVSoundActivityTable_t.h"
+
+extern CVActivitySound g_1074b330;
+extern int g_1074f75c;
+extern "C" unsigned int __cdecl strlen(const char *);
+const char *__cdecl sub_101d3730(const char *pszFormat, ...);
+
+// TARGET: CPropHacking::sub_1021c3c0
+void CPropHacking::sub_1021c3c0(int a, char *pszCommand)
+{
+	g_1074b330.sub_101f5950((int)this, g_1074f75c, 2, 1.0f, 1.25f);
+	if (pszCommand && strlen(pszCommand))
+		sub_1021b140(sub_101d3730("%s: %s", sub_10219400(5), pszCommand));
+	else
+		sub_1021b140(sub_10219400(5));
+	((CUnknown10217f50 *)this)->sub_10217ac0("\n%s\n", sub_10219400(6));
+	((CUnknown10217f50 *)this)->sub_10217ac0("%s\n", sub_10219400(7));
+	sub_10218ff0(0, m_n0814 - 1);
+	((CUnknown10217f50 *)this)->sub_10217ac0(sub_10219400(0x12));
+	sub_10219270();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021c6d0 size=0x15e
 #include "CBaseEntity.h"
 #include "CPropHacking.h"
