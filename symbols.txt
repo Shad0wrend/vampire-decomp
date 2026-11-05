@@ -3940,6 +3940,7 @@
 0x10006c8a func   ?sub_10374ad0@CNPC_VDog@@QAEHH@Z CNPC_VDog::sub_10374ad0
 0x10006c8f func   ?vfunc117@CPhysicsAnimlink@@UAEHXZ CPhysicsAnimlink::vfunc117
 0x10006c94 func   ?sub_10081950@@YGXHPAUCVirtObj10081950@@H@Z sub_10081950
+0x10006c99 func   ?sub_1007a390@@YAXPAUISceneTokenProcessor@@PAUCChoreoEventRampView@@@Z sub_1007a390
 0x10006c9e func   ?vfunc81@CWeaponMelee_AVampBlade@@QAEHXZ CWeaponMelee_AVampBlade::vfunc81
 0x10006ca8 func   ?sub_10074a90@CUnknown10074a90@@QAEXH@Z CUnknown10074a90::sub_10074a90
 0x10006cad func   _npc_VChangBros npc_VChangBros

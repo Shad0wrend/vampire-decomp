@@ -21518,6 +21518,54 @@ int __stdcall sub_1007a340(int p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007a390 size=0x1a9
+#include "utlrbtree.h"
+#include "utlvector.h"
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" unsigned int __cdecl strlen(const char *);
+extern "C" double __cdecl atof(const char *);
+struct ISceneTokenProcessor {
+    virtual const char *CurrentToken();
+    virtual bool GetToken(bool crossline);
+    virtual bool TokenAvailable();
+    virtual void Error(const char *fmt, ...);
+};
+struct CExpressionSample { float value; float time; int selected; };
+struct CChoreoEventRampView { void sub_10078860(); void sub_10078880(); void sub_10078690(float t, float v, bool sel); };
+// TARGET: sub_1007a390
+void sub_1007a390(ISceneTokenProcessor *tokenizer, CChoreoEventRampView *e)
+{
+    e->sub_10078860();
+    tokenizer->GetToken(true);
+    if (_strcmpi(tokenizer->CurrentToken(), "{"))
+        tokenizer->Error("expecting {\n");
+    while (1) {
+        tokenizer->GetToken(true);
+        if (strlen(tokenizer->CurrentToken()) <= 0) {
+            tokenizer->Error("expecting ramp data\n");
+            break;
+        }
+        if (!_strcmpi(tokenizer->CurrentToken(), "}"))
+            break;
+        CUtlVector<CExpressionSample> samples;
+        float time = (float)atof(tokenizer->CurrentToken());
+        tokenizer->GetToken(false);
+        float value = (float)atof(tokenizer->CurrentToken());
+        int idx = samples.AddToTail();
+        CExpressionSample *s = &samples[idx];
+        s->time = time;
+        s->value = value;
+        if (samples.Count() >= 1) {
+            for (int i = 0; i < samples.Count(); i++) {
+                CExpressionSample sample = samples[i];
+                e->sub_10078690(sample.time, sample.value, false);
+            }
+        }
+    }
+    e->sub_10078880();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007b7b0 size=0x17a
 #include "CUnknown1007b7b0.h"
 #include "CUnknown1007bb30.h"
