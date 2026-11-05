@@ -78154,6 +78154,129 @@ int sub_1018a5b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018a730 size=0xbdd
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_10247240(SendProp *pProps, int nProps, const char *pName);	// SendTable::Construct (stub 0x1000e8fe)
+};
+
+SendProp sub_10246af0(const char *name, int offset, int size, int bits, int flags, int extra, void *proxy);
+SendProp sub_10246700(const char *name, int offset, int size, int bits, int flags, float low, float high, void *proxy);
+SendProp sub_10246510(const char *name, int offset, int size, int bits, int flags, float low, float high, void *proxy);
+SendProp sub_10246dc0(const char *name, int offset, int pTable, void *proxy);
+SendProp sub_10246ef0(int nElements, int nStride, const char *name, int proxy);
+SendProp sub_101ab310(const char *name, int offset, int size);
+void sub_10009539();
+void sub_10006aeb();
+void sub_10003012();
+extern SendTable g_1072a47c;
+extern const char *g_10589ca0;
+extern int g_1072ad00;
+
+// TARGET: sub_1018a730
+int sub_1018a730()
+{
+	static SendProp g_SendProps[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246dc0("m_Predicted", 0, (int)&g_1072ad00, (void *)sub_10009539),
+		sub_10246af0("m_iHideHUD", 0x34, 4, 9, 0, 0, 0),
+		sub_10246af0("m_iFOV", 0x38, 4, 9, 0, 0, 0),
+		sub_10246af0("m_iViewmodelFOV", 0x3c, 4, 8, 0, 0, 0),
+		sub_10246af0("m_bDrawCrosshair", 0x4c, 1, 1, 1, 0, 0),
+		sub_10246af0("m_targetEntityIndex", 0x50, 4, 0xb, 1, 0, 0),
+		sub_10246af0("m_idxInteractiveUseEntity", 0x5c, 4, 0xb, 1, 0, 0),
+		sub_10246af0("m_tgtDisciplineEntIdx", 0x54, 4, 0xb, 1, 0, 0),
+		sub_10246af0("m_tgtStealthInfo", 0x58, 4, 0xb, 1, 0, 0),
+		sub_10246af0("m_targetEntityHighlight", 0x60, 4, 4, 1, 0, 0),
+		sub_10246af0("m_targetEntityIcon", 0x64, 4, 7, 1, 0, 0),
+		sub_10246af0("m_targetIFF", 0x68, 4, 2, 1, 0, 0),
+		sub_10246af0("m_nMeleeOpponentIndex", 0x6c, 4, 0xb, 1, 0, 0),
+		sub_10246af0("m_nFeedingPartnerEntIndex", 0x70, 4, 0xb, 1, 0, 0),
+		sub_10246af0("m_nFrenzyHunger", 0x74, 1, 1, 1, 0, 0),
+		sub_10246af0("m_iBarterTgtEntIdx", 0x78, 4, 0xb, 1, 0, 0),
+		sub_10246af0("m_iControllerNPCEntIdx", 0x7c, 4, 0xb, 1, 0, 0),
+		sub_10246af0("m_iCameraOverrideIdx", 0x84, 4, 0xb, 1, 0, 0),
+		sub_10246af0("m_idxInsightTarget", 0x88, 4, 0xb, 1, 0, 0),
+		sub_10246af0("m_nInsightIntensity", 0x8c, 4, 8, 1, 0, 0),
+		sub_10246af0("m_idxNosferatuRadarNPC", 0x90, 4, 0xb, 1, 0, 0),
+		sub_10246af0("m_idxDialogNPC", 0x94, 4, 0xb, 1, 0, 0),
+		sub_10246af0("m_bitsCharState", 0x98, 4, -1, 1, 0, 0),
+		sub_10246af0("m_bWolf", 0x9c, 1, 1, 1, 0, 0),
+		sub_10246af0("m_bDucked", 0x9d, 1, 1, 1, 0, 0),
+		sub_10246af0("m_bDucking", 0x9e, 1, 1, 1, 0, 0),
+		sub_10246510("m_flDucktime", 0xa0, 4, 0xc, 8, 0.0f, 2048.0f, (void *)sub_10006aeb),
+		sub_10246af0("m_nStepside", 0xa4, 4, 1, 1, 0, 0),
+		sub_10246510("m_flFallVelocity", 0xa8, 4, 0x11, 0, -4096.0f, 4096.0f, (void *)sub_10006aeb),
+		sub_10246af0("m_nOldButtons", 0xac, 4, 0x20, 1, 0, 0),
+		sub_10246700("m_vecClientBaseVelocity", 0xb0, 0xc, -1, 2, 0.0f, -121121.121212f, (void *)sub_10003012),
+		sub_10246700("m_vecPunchangle", 0xbc, 0xc, -1, 2, 0.0f, -121121.121212f, (void *)sub_10003012),
+		sub_10246700("m_vecPunchangleVel", 0xc8, 0xc, -1, 2, 0.0f, -121121.121212f, (void *)sub_10003012),
+		sub_10246af0("m_bDrawViewmodel", 0xd4, 1, 1, 1, 0, 0),
+		sub_10246af0("m_bWearingSuit", 0xe0, 1, 1, 1, 0, 0),
+		sub_10246510("m_flStepSize", 0xe4, 4, 0x10, 0x10, 0.0f, 128.0f, (void *)sub_10006aeb),
+		sub_10246af0("m_bAllowAutoMovement", 0xe8, 1, 1, 1, 0, 0),
+		sub_10246af0("m_nightvision_level", 0xd8, 4, 3, 1, 0, 0),
+		sub_10246af0("m_daylight_level", 0xdc, 4, 3, 1, 0, 0),
+		sub_10246700("m_vecCameraViewOverride", 0xec, 0xc, -1, 4, 0.0f, -121121.121212f, (void *)sub_10003012),
+		sub_10246700("m_vecCameraTargetOverride", 0xf8, 0xc, -1, 4, 0.0f, -121121.121212f, (void *)sub_10003012),
+		sub_10246510("m_flCameraFOVOverride", 0x104, 4, 10, 0, 0.0f, 180.0f, (void *)sub_10006aeb),
+		sub_10246510("m_flCameraRollOverride", 0x108, 4, 0xc, 0, -180.0f, 180.0f, (void *)sub_10006aeb),
+		sub_101ab310("m_flCameraOverrideTimestamp", 0x10c, 4),
+		sub_101ab310("m_flCameraOverrideFadeStartTime", 0x110, 4),
+		sub_10246510("m_flCameraOverrideFadeDuration", 0x114, 4, 10, 8, -10.0f, 10.0f, (void *)sub_10006aeb),
+		sub_10246700("m_vecCrossfadeFromLandmark", 0x118, 0xc, -1, 2, 0.0f, -121121.121212f, (void *)sub_10003012),
+		sub_10246700("m_vecCrossfadeToLandmark", 0x124, 0xc, -1, 2, 0.0f, -121121.121212f, (void *)sub_10003012),
+		sub_10246510("m_flCrossfadeYawDifference", 0x130, 4, 0xc, 0, -360.0f, 360.0f, (void *)sub_10006aeb),
+		sub_101ab310("m_flCrossfadeStartTime", 0x134, 4),
+		sub_10246510("m_flCrossfadeDuration", 0x138, 4, 7, 8, 0.0f, 10.0f, (void *)sub_10006aeb),
+		sub_101ab310("m_flResetCameraDampeningTime", 0x13c, 4),
+		sub_10246af0("m_sndRoomDSP", 0x140, 4, 8, 0, 0, 0),
+		sub_10246af0("m_sndPlayerDSP", 0x144, 4, 8, 0, 0, 0),
+		sub_10246af0("m_skybox3d.scale", 0x148, 4, 0xc, 0, 0, 0),
+		sub_10246700("m_skybox3d.origin", 0x14c, 0xc, -1, 2, 0.0f, -121121.121212f, (void *)sub_10003012),
+		sub_10246af0("m_skybox3d.area", 0x158, 4, 8, 1, 0, 0),
+		sub_10246af0("m_skybox3d.fog.enable", 0x15c, 1, 1, 1, 0, 0),
+		sub_10246af0("m_skybox3d.fog.blend", 0x15d, 1, 1, 1, 0, 0),
+		sub_10246700("m_skybox3d.fog.dirPrimary", 0x160, 0xc, -1, 2, 0.0f, -121121.121212f, (void *)sub_10003012),
+		sub_10246af0("m_skybox3d.fog.colorPrimary.r", 0x16c, 1, 8, 1, 0, 0),
+		sub_10246af0("m_skybox3d.fog.colorPrimary.g", 0x16d, 1, 8, 1, 0, 0),
+		sub_10246af0("m_skybox3d.fog.colorPrimary.b", 0x16e, 1, 8, 1, 0, 0),
+		sub_10246af0("m_skybox3d.fog.colorSecondary.r", 0x170, 1, 8, 1, 0, 0),
+		sub_10246af0("m_skybox3d.fog.colorSecondary.g", 0x171, 1, 8, 1, 0, 0),
+		sub_10246af0("m_skybox3d.fog.colorSecondary.b", 0x172, 1, 8, 1, 0, 0),
+		sub_10246510("m_skybox3d.fog.start", 0x174, 4, 0, 4, 0.0f, -121121.121212f, (void *)sub_10006aeb),
+		sub_10246510("m_skybox3d.fog.end", 0x178, 4, 0, 4, 0.0f, -121121.121212f, (void *)sub_10006aeb),
+		sub_10246af0("m_fog.enable", 0x17c, 1, 1, 1, 0, 0),
+		sub_10246af0("m_fog.blend", 0x17d, 1, 1, 1, 0, 0),
+		sub_10246700("m_fog.dirPrimary", 0x180, 0xc, -1, 2, 0.0f, -121121.121212f, (void *)sub_10003012),
+		sub_10246af0("m_fog.colorPrimary.r", 0x18c, 1, 8, 1, 0, 0),
+		sub_10246af0("m_fog.colorPrimary.g", 0x18d, 1, 8, 1, 0, 0),
+		sub_10246af0("m_fog.colorPrimary.b", 0x18e, 1, 8, 1, 0, 0),
+		sub_10246af0("m_fog.colorSecondary.r", 0x190, 1, 8, 1, 0, 0),
+		sub_10246af0("m_fog.colorSecondary.g", 0x191, 1, 8, 1, 0, 0),
+		sub_10246af0("m_fog.colorSecondary.b", 0x192, 1, 8, 1, 0, 0),
+		sub_10246510("m_fog.start", 0x194, 4, 0, 4, 0.0f, -121121.121212f, (void *)sub_10006aeb),
+		sub_10246510("m_fog.end", 0x198, 4, 0, 4, 0.0f, -121121.121212f, (void *)sub_10006aeb),
+		sub_10246700("m_audio.localSound[0]", 0x19c, 0xc, -1, 2, 0.0f, -121121.121212f, (void *)sub_10003012),
+		sub_10246700("m_audio.localSound[1]", 0x1a8, 0xc, -1, 2, 0.0f, -121121.121212f, (void *)sub_10003012),
+		sub_10246700("m_audio.localSound[2]", 0x1b4, 0xc, -1, 2, 0.0f, -121121.121212f, (void *)sub_10003012),
+		sub_10246700("m_audio.localSound[3]", 0x1c0, 0xc, -1, 2, 0.0f, -121121.121212f, (void *)sub_10003012),
+		sub_10246af0("m_audio.soundscapeIndex", 0x1cc, 4, 0x10, 1, 0, 0),
+		sub_10246af0("m_audio.localBits", 0x1d0, 4, 4, 1, 0, 0),
+		sub_10246af0("m_audio.entityIndex", 0x1d4, 4, 0x10, 1, 0, 0),
+		sub_10246af0("m_iHotkeyTypes[0]", 0x1d8, 4, 4, 1, 0, 0),
+		sub_10246ef0(10, 4, "m_iHotkeyTypes", 0),
+		sub_10246af0("m_iHotkeyData[0]", 0x200, 4, 0x20, 1, 0, 0),
+		sub_10246ef0(10, 4, "m_iHotkeyData", 0),
+	};
+	g_1072a47c.sub_10247240(g_SendProps + 1, 0x5a, g_10589ca0);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018b680 size=0x1a
 namespace lifted {
 extern int g_10589ca4;
