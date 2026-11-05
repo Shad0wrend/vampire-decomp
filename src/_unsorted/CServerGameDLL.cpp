@@ -143,6 +143,113 @@ bool CServerGameDLL::vfunc2()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011a7a0 size=0x2a0
+#include "CServerGameDLL.h"
+#include "CVProfile.h"
+#include "engineserver.h"
+#include "CGlobalEntityList.h"
+#include <string.h>
+
+struct CCycleSample
+{
+	unsigned __int64 m_Int64;
+	void Sample() { unsigned int *p = (unsigned int *)&m_Int64; __asm { mov ecx, p
+		rdtsc
+		mov [ecx], eax
+		mov [ecx + 4], edx } }
+	void Add(const CCycleSample &rhs) { m_Int64 += rhs.m_Int64; }
+};
+
+struct CLevelInitPlayerView
+{
+	void sub_101707c0(const char *pMapName, const char *pOldLevel, const char *pLandmarkName);
+};
+
+extern CGlobalEntityList g_106eb5d8;
+extern char g_1070b266;
+extern char g_1070b264;
+void sub_100fe550();
+void sub_103505e0();
+void sub_1011a710(bool);
+void sub_10136650(const char *);
+CLevelInitPlayerView *sub_101cd9e0(int);
+void sub_1011a620();
+void sub_10199e20();
+void sub_101c31c0();
+
+// TARGET: CServerGameDLL::vfunc3
+bool CServerGameDLL::vfunc3(const char *pMapName, const char *pMapEntities, const char *pOldLevel, const char *pLandmarkName, char loadGame)
+{
+	CVProfile *p = g_109f3648;
+	if (p->m_enabled || !p->m_bAtRoot) {
+		if (p->m_pCurNode->m_pszName != "CServerGameDLL::LevelInit")
+			p->m_pCurNode = p->m_pCurNode->GetSubNode("CServerGameDLL::LevelInit", 0, "Unaccounted");
+		CVProfNode *n = p->m_pCurNode;
+		n->m_nCurFrameCalls++;
+		if (n->m_nRecursions++ == 0) {
+			((CCycleSample *)&n->m_CurFrameTime)->Sample();
+			g_109f3648->PushGroupInlined(n->m_nBudgetGroupID);
+		}
+		p->m_bAtRoot = false;
+	}
+
+	g_1070b266 = 1;
+	sub_100fe550();
+	sub_103505e0();
+	if (loadGame)
+	{
+		g_1070b264 = 0;
+		bool bTransition = true;
+		if (!pOldLevel)
+			bTransition = false;
+		sub_1011a710(bTransition);
+		if (!engine->vfunc115(pMapName, 1))
+			sub_10136650(pMapEntities);
+		if (pOldLevel)
+			engine->vfunc116(pOldLevel, pLandmarkName);
+		if (g_1070b264)
+			engine->vfunc117();
+		CLevelInitPlayerView *pPlayer = sub_101cd9e0(1);
+		if (pPlayer)
+			pPlayer->sub_101707c0(pMapName, pOldLevel, pLandmarkName);
+		sub_1011a620();
+	}
+	else
+	{
+		if (!strcmp(pMapName, "sp_genesisdevice_1"))
+			sub_10199e20();
+		sub_10136650(pMapEntities);
+	}
+	sub_101c31c0();
+	g_106eb5d8.sub_100f6ce0();
+	g_1070b266 = 0;
+	if (loadGame && pOldLevel)
+		engine->vfunc59("autosave\n");
+
+	p = g_109f3648;
+	if (!p->m_bAtRoot || p->m_enabled) {
+		CVProfNode *n = p->m_pCurNode;
+		if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0) {
+			CCycleSample s;
+			s.m_Int64 = 0;
+			s.Sample();
+			n->m_CurFrameTime.m_Int64 = s.m_Int64 - n->m_CurFrameTime.m_Int64;
+			((CCycleSample *)&n->m_TotalTime)->Add(*(CCycleSample *)&n->m_CurFrameTime);
+			CVProfile *q = g_109f3648;
+			--q->m_nGroupStackDepth;
+			int nNew = q->m_GroupIDStack[q->m_nGroupStackDepth];
+			int nOld = q->m_GroupIDStack[q->m_nGroupStackDepth + 1];
+			if (nNew != nOld && q->m_bVTuneGroupsEnabled && nOld == q->m_nVTuneGroupID)
+				vtune(false);
+		}
+		if (n->m_nRecursions == 0)
+			p->m_pCurNode = p->m_pCurNode->m_pParent;
+		p->m_bAtRoot = (p->m_pCurNode == p->m_pRoot);
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011aaf0 size=0x91
 #include "CServerGameDLL.h"
 #include "CGlobalEntityList.h"
