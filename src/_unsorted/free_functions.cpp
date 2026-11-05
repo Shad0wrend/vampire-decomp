@@ -98198,6 +98198,33 @@ CUnknown101d7520Entry *CUnknown101d76e0::sub_101d71a0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d7230 size=0x4d
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+struct CNamePtr {
+	const char *m_p;
+	const char *Get() { return m_p ? m_p : ""; }
+};
+struct CNamedEntryY {
+	int m_unk[5];
+	CNamePtr m_Name;
+};
+struct CNamedListY {
+	int m_unk0;
+	int m_count;
+	CNamedEntryY **m_pData;
+	int sub_101d7230(const char *name);
+};
+// TARGET: CNamedListY::sub_101d7230
+int CNamedListY::sub_101d7230(const char *name)
+{
+	for (int i = 0; i < m_count; i++) {
+		if (_strcmpi(m_pData[i]->m_Name.Get(), name) == 0)
+			return i;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d72a0 size=0xa8
 extern "C" char *_strlwr(char *);
 extern "C" char *strstr(const char *, const char *);
