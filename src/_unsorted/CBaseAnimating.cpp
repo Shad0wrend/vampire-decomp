@@ -462,6 +462,109 @@ int CBaseAnimating::vfunc253(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10090580 size=0x26b
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseAnimating.h"
+#include "CDynamicProp.h"
+#include "CEnvParticle.h"
+#include "CUnknown100b5190.h"
+#include "ScopeTrace.h"
+#include "engineserver.h"
+#include "globalvars.h"
+#include "ehandle.h"
+#include "CEntityVSlots.h"
+
+extern "C" void *sub_100fbc90(const char *pszName, const float *pA, const float *pB, float fl);
+extern "C" CBaseEntity *sub_10136580(const char *pszClassname);
+extern "C" void sub_101d1280(void *p);
+extern "C" void sub_101cd940(void *p);
+void (*g_109f362c)(const char *pszFormat, ...);
+void sub_101c0b10();
+extern float g_1070d1b0[3];
+extern float g_1070d9d0[3];
+extern char g_10538764[];
+extern char g_1054f3f0[];
+
+class CThinkView
+{
+public:
+	void sub_100fbb40(float a, float b);
+};
+
+struct HitboxSetView
+{
+	int pad0[2];
+	int hitboxindex;
+	int *Hitbox(int i) { return (int *)((char *)this + hitboxindex + i * 0x20); }
+};
+
+void CBaseAnimating::vfunc243(const char *pszModel, bool bDeathFX)
+{
+	ScopeTrace trace("CBaseAnimating::BurnModel",
+	                 this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+
+	*(int *)((char *)this + 0x168) = 0x1b;
+	*(float *)((char *)this + 0x5a4) = gpGlobals->curtime;
+	*(int *)((char *)this + 0x19c) |= 0xa0;
+
+	void *pStudio = sub_100952d0(-1);
+	if (pStudio != 0)
+	{
+		int nHitboxes = *(int *)(*(int *)((char *)pStudio + 0x104) + (char *)pStudio + 4);
+		if (bDeathFX && !((CUnknown100b5190 *)this)->sub_100b5190() && nHitboxes > 0)
+		{
+			for (int i = 0; i < nHitboxes; i++)
+			{
+				HitboxSetView *set = (HitboxSetView *)((char *)pStudio + *(int *)((char *)pStudio + 0x104));
+				int *pBone;
+				if (set == 0)
+					pBone = 0;
+				else
+					pBone = set->Hitbox(i);
+				int bone = *pBone;
+
+				void *pParticle = sub_100fbc90("DMGFX_vampire_death", g_1070d1b0, g_1070d9d0, -1.0f);
+				if (0 != pParticle)
+				{
+					((CEnvParticle *)pParticle)->sub_100fb1f0(this, 4, bone);
+					((CThinkView *)pParticle)->sub_100fbb40(0.1f, 1.5f);
+				}
+			}
+		}
+
+		if (pszModel != 0)
+		{
+			CDynamicProp *pProp = (CDynamicProp *)__RTDynamicCast(
+			    sub_10136580("dynamic_prop"), 0, g_10538764, g_1054f3f0, 0);
+			if (pProp == 0)
+				g_109f362c("classname %s used to create wrong class type\n");
+
+			((CEntityVSlots *)pProp)->slot105(pszModel);
+			sub_101d1280(pProp);
+			pProp->sub_100b3640(0x40000);
+			engine->vfunc35(*(int *)((char *)pProp + 0x2e0));
+			*(int *)((char *)pProp + 0x168) = 0x1b;
+			*(float *)(0x5a4 + (char *)pProp) = gpGlobals->curtime + 0.5f;
+			pProp->sub_100ac4e0((void *)sub_101c0b10, 0, 0);
+			*(float *)((char *)pProp + 0x17c) = *(float *)((char *)pProp + 0x5a4) + 3.0f;
+			((CBaseEntity *)pProp)->sub_1009ee80(this);
+			((CEntityVSlots *)pProp)->slot93(0xb, 0);
+			*(int *)((char *)pProp + 0x19c) |= 0xa0;
+		}
+
+		EHANDLE *pHandle = (EHANDLE *)((char *)this + 0x5a8);
+		sub_101cd940(pHandle->Get());
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10090c80 size=0x142
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

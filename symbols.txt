@@ -14189,6 +14189,7 @@
 0x10015a2d func   ?sub_101802e0@@YAXXZ sub_101802e0
 0x10015a32 func   ?sub_1026f4d0@CAI_BaseNPC@@QAEHXZ CAI_BaseNPC::sub_1026f4d0
 0x10015a37 func   ?vfunc266@CWeaponThrown_Grenade_Frag@@UAEXXZ CWeaponThrown_Grenade_Frag::vfunc266
+0x10015a41 func   ?vfunc243@CBaseAnimating@@QAEXPBD_N@Z CBaseAnimating::vfunc243
 0x10015a46 func   ?vfunc2@CTEBubbleTrail@@UAEPAVCBaseTempEntity@@I@Z CTEBubbleTrail::vfunc2
 0x10015a50 func   ?sub_100f54c0@@YAPAVCUnknown100f5600@@PAVCBaseEntity@@@Z sub_100f54c0
 0x10015a55 func   ?sub_101842a0@CUtlVector4@@QAEHPBI@Z CUtlVector4::sub_101842a0
