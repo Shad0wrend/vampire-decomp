@@ -19851,6 +19851,48 @@ void CUnknown10077730::sub_100784b0(float value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100784d0 size=0x36
+#include "CSceneEntity.h"
+
+namespace block_10076b30 {
+	struct CUnit {
+		char pad[0x184];
+		float m_f184;
+		float m_f188;
+		char sub_10075f30();
+		float sub_10075f10();
+		float sub_10075e70();
+		float sub_10076b30();
+	};
+	char CUnit::sub_10075f30()
+	{
+		if (*(int *)&m_f188 != 0xbf800000)
+			return 1;
+		return 0;
+	}
+	float CUnit::sub_10075f10() { return m_f188; }
+	float CUnit::sub_10075e70() { return m_f184; }
+	float CUnit::sub_10076b30()
+	{
+		if (sub_10075f30())
+			return sub_10075f10() - sub_10075e70();
+		return 0.0f;
+	}
+}
+using namespace block_10076b30;
+
+// TARGET: CSceneEvent::sub_100784d0
+bool CSceneEvent::sub_100784d0(float *pOut)
+{
+	bool b = m_flDuration18c != 0.0f;
+	if (b)
+		*pOut = m_flDuration18c;
+	else
+		*pOut = ((CUnit *)this)->sub_10076b30();
+	return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10078520 size=0x7
 struct CUnknown10078520 { int sub_10078520(); };
 int CUnknown10078520::sub_10078520()

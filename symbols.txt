@@ -3189,6 +3189,7 @@
 0x10005bf5 func   ?vfunc344@CBaseCombatWeapon@@UAEHXZ CBaseCombatWeapon::vfunc344
 0x10005bfa func   ?vfunc379@CAI_BaseNPC@@UAE_NPAVCBaseEntity@@HHHHHH@Z CAI_BaseNPC::vfunc379
 0x10005bff func   ?sub_101f77f0@CVTraitEffectGroup_t@@QAEXPAX@Z CVTraitEffectGroup_t::sub_101f77f0
+0x10005c04 func   ?sub_100784d0@CSceneEvent@@QAE_NPAM@Z CSceneEvent::sub_100784d0
 0x10005c09 func   ?vfunc99@CBaseEntity@@UAE_NHHH@Z CBaseEntity::vfunc99
 0x10005c0e func   ?sub_101e3380@CUnit101e3380@@QAEXHHH@Z CUnit101e3380::sub_101e3380
 0x10005c13 func   ?ShiftElementsRight@?$CUtlVector@UCUnknown10076da0TimingTag@@V?$CUtlMemory@UCUnknown10076da0TimingTag@@@@@@QAEXHH@Z CUtlVector<CUnknown10076da0TimingTag,CUtlMemory<CUnknown10076da0TimingTag> >::ShiftElementsRight
