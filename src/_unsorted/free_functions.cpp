@@ -25638,6 +25638,84 @@ int sub_1008a8b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008aaf0 size=0x594
+#include "SendProp.h"
+
+SendProp sub_10246af0(const char *pName, int a, int b, int c, int d, int e, void *pProxy);
+SendProp sub_10246dc0(const char *pName, int a, int b, void *pProxy);
+SendProp sub_10246ef0(int a, int b, const char *pName, int c);
+SendProp sub_10246700(const char *pName, int a, int b, int c, int d, float lo, float hi, void *pProxy);
+SendProp sub_10246510(const char *pName, int a, int b, int c, int d, float lo, float hi, void *pProxy);
+SendProp sub_10246870(const char *pName, int a, int b, int c, int d, void *pProxy);
+SendProp sub_10246ca0(const char *pName, int a, int b, int c, void *pProxy);
+void sub_10246300();
+void sub_102464d0();
+void sub_102463c0();
+void sub_10099d40();
+void sub_10246290();
+void sub_102464b0();
+
+struct S_SendTable
+{
+	void sub_10247240(SendProp *pProps, int nProps, const char *pName);
+};
+
+extern S_SendTable g_106c9954;
+extern const char *g_1054d528;
+extern int g_1055282c;
+extern int g_106cceec;
+
+int sub_1008aaf0()
+{
+	static SendProp s_props[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246dc0("baseclass", 0, g_1055282c, (void *)sub_102464d0),
+		sub_10246af0("m_nForceBone", 0x660, 4, 9, 0, 0, 0),
+		sub_10246700("m_vecForce", 0x664, 0xc, -1, 4, 0.0f, -121121.121212f, (void *)sub_102463c0),
+		sub_10246af0("m_bForceLatch", 0x56c, 4, 1, 1, 0, 0),
+		sub_10246af0("m_nSkin", 0x670, 4, 0xa, 0, 0, 0),
+		sub_10246af0("m_nSkinCrossfade", 0x674, 4, 0xa, 0, 0, 0),
+		sub_10246510("m_flSkinCrossfadeTime", 0x678, 4, -1, 4, 0.0f, -121121.121212f, (void *)sub_10246300),
+		sub_10246af0("m_nBody", 0x67c, 4, 0x20, 0, 0, 0),
+		sub_10246af0("m_nHitboxSet", 0x680, 4, 2, 1, 0, 0),
+		sub_10246510("m_flModelScale", 0x684, 4, 8, 0x10, 0.0f, 8.0f, (void *)sub_10246300),
+		sub_10246af0("m_nTopColor", 0x688, 4, 9, 1, 0, 0),
+		sub_10246af0("m_nBottomColor", 0x68c, 4, 9, 1, 0, 0),
+		sub_10246510("m_flPoseParameter[0]", 0x690, 4, 9, 0, 0.0f, 1.0f, (void *)sub_10246300),
+		sub_10246ef0(0x18, 4, "m_flPoseParameter", 0),
+		sub_10246af0("m_nSequence", 0x6f0, 4, 0xb, 1, 0, 0),
+		sub_10246510("m_flPlaybackRate", 0x6f4, 4, 8, 0x10, -4.0f, 12.0f, (void *)sub_10246300),
+		sub_10246510("m_flEffectStartTime", 0x5a4, 4, -1, 4, 0.0f, -121121.121212f, (void *)sub_10246300),
+		sub_10246510("m_flEncodedController[0]", 0x6fc, 4, 0xb, 8, 0.0f, 1.0f, (void *)sub_10246300),
+		sub_10246ef0(4, 4, "m_flEncodedController", 0),
+		sub_10246af0("m_bClientSideAnimation", 0x70c, 1, 1, 1, 0, 0),
+		sub_10246af0("m_nClientSideFrameReset", 0x710, 4, 4, 1, 0, 0),
+		sub_10246dc0("serveranimdata", 0, (int)&g_106cceec, (void *)sub_10099d40),
+		sub_10246af0("m_nRagDollRootBone[0]", 0x574, 4, 0xb, 0, 0, 0),
+		sub_10246ef0(4, 4, "m_nRagDollRootBone", 0),
+		sub_10246510("m_flRagDollBeginFadeTime[0]", 0x584, 4, -1, 4, 0.0f, -121121.121212f, (void *)sub_10246300),
+		sub_10246ef0(4, 4, "m_flRagDollBeginFadeTime", 0),
+		sub_10246510("m_flRagDollFadeDuration[0]", 0x594, 4, 8, 8, -1.0f, 3.0f, (void *)sub_10246300),
+		sub_10246ef0(4, 4, "m_flRagDollFadeDuration", 0),
+		sub_10246700("m_vecPrevSeqOrigin", 0x714, 0xc, -1, 2, 0.0f, -121121.121212f, (void *)sub_102463c0),
+		sub_10246870("m_angPrevSeqAngles[0]", 0x720, 4, 0xd, 0, (void *)sub_10246290),
+		sub_10246870("m_angPrevSeqAngles[1]", 0x724, 4, 0xd, 0, (void *)sub_10246290),
+		sub_10246870("m_angPrevSeqAngles[2]", 0x728, 4, 0xd, 0, (void *)sub_10246290),
+		sub_10246af0("m_nPhysicsChainDisableMask", 0x72c, 4, 0xc, 1, 0, 0),
+		sub_10246af0("m_nExtraAnimationModels[0]", 0x5bc, 4, 0xb, 0, 0, 0),
+		sub_10246ef0(2, 4, "m_nExtraAnimationModels", 0),
+		sub_10246ca0("m_szBoneRenameSrcPrefix", 0x5ec, 0x28, 0, (void *)sub_102464b0),
+		sub_10246ca0("m_szBoneRenameDstPrefix", 0x614, 0x28, 0, (void *)sub_102464b0),
+		sub_10246870("m_flWindAngle", 0x640, 4, 8, 0, (void *)sub_10246290),
+		sub_10246510("m_flWindChangesPerSecond", 0x644, 4, 0xa, 8, 0.0f, 5.0f, (void *)sub_10246300),
+		sub_10246510("m_flWindMinSpeed", 0x648, 4, 0xa, 8, 0.0f, 10.0f, (void *)sub_10246300),
+		sub_10246510("m_flWindMaxSpeed", 0x64c, 4, 0xa, 8, 0.0f, 10.0f, (void *)sub_10246300)
+	};
+	g_106c9954.sub_10247240(&s_props[1], 0x29, g_1054d528);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008b230 size=0x106
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
