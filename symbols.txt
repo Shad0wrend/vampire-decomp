@@ -11105,6 +11105,7 @@
 0x1001147d func   ?sub_101f61b0@CActivityTableX@@QAEXXZ CActivityTableX::sub_101f61b0
 0x10011482 func   ?sub_101ab3d0@CServerNetworkProperty@@QAEPAV1@XZ CServerNetworkProperty::sub_101ab3d0
 0x10011487 func   ?sub_10077370@CUnknown10077290@@QAEPAUCUnknown10077290Entry@@PBD@Z CUnknown10077290::sub_10077370
+0x10011491 func   ?sub_10228a80@CSoundSchemeManager@@QAEHXZ CSoundSchemeManager::sub_10228a80
 0x10011496 func   ?sub_101a6820@@YG_NH@Z sub_101a6820
 0x100114a0 func   ?vfunc452@CNPC_VVentrue@@UAEDXZ CNPC_VVentrue::vfunc452
 0x100114a5 func   ?RemoveRebalance@?$CUtlRBTree@UCRBTree12Entry_102ec4a0@@G@@QAEXG@Z CUtlRBTree<CRBTree12Entry_102ec4a0,unsigned short>::RemoveRebalance

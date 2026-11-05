@@ -126992,6 +126992,80 @@ float sub_102283a0(float cur, float target, float a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10228a80 size=0x1f6
+#include "CSoundSchemeManager.h"
+#include "CBasePlayer.h"
+#include "CUnknown101800e0.h"
+#include "globalvars.h"
+#include "DebugOverlay.h"
+#include <float.h>
+
+class CSoundStateView
+{
+public:
+	virtual void vfunc0();
+	virtual bool vfunc1();
+	char m_pad0004[0x24];
+	float m_fl28;
+};
+extern CSoundStateView *g_10750f74;
+
+bool __fastcall sub_1017f8d0(void *p);
+int __fastcall sub_1017f770(void *p);
+int __fastcall sub_1017f8b0(void *p);
+float __fastcall sub_1017f790(void *p);
+bool __fastcall sub_10175180(void *p);
+
+int CSoundSchemeManager::sub_10228a80()
+{
+	CBasePlayer *pPlayer = (CBasePlayer *)sub_101cd9e0(1);
+	if (!pPlayer)
+		return 1;
+
+	if (sub_1017f8d0(pPlayer))
+		return 3;
+
+	float f1 = ((CUnknown101800e0 *)pPlayer)->sub_101800e0(1);
+	float f2 = ((CUnknown101800e0 *)pPlayer)->sub_101800e0(2);
+
+	if (f1 > 0.0f)
+	{
+		float val = g_10750f74->vfunc1() ? 0.0f : g_10750f74->m_fl28;
+		if (f1 >= gpGlobals->curtime - val)
+			return 2;
+	}
+
+	if (f2 > 0.0f)
+	{
+		float val = g_10750f74->vfunc1() ? 0.0f : g_10750f74->m_fl28;
+		if (f2 >= gpGlobals->curtime - val)
+			return 2;
+	}
+
+	if (sub_1017f770(pPlayer) > 0)
+		return 2;
+	if (sub_1017f8b0(pPlayer) > 0)
+		return 2;
+	if (sub_10175180(pPlayer))
+		return 2;
+	if (sub_1017f790(pPlayer) != FLT_MAX)
+		return 2;
+
+	float flElapsed;
+	if (0.0f > gpGlobals->curtime - (g_10750f74->vfunc1() ? 0.0f : g_10750f74->m_fl28))
+		flElapsed = 0.0f;
+	else
+		flElapsed = gpGlobals->curtime - (g_10750f74->vfunc1() ? 0.0f : g_10750f74->m_fl28);
+
+	if ((double)pPlayer->m_f1DD0 > (double)flElapsed)
+		return 2;
+	if ((double)pPlayer->m_f1DD8 > (double)flElapsed)
+		return 2;
+
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10228e80 size=0x19f
 #include "CSoundSchemeManager.h"
 #include "CUnknown1070b22c.h"
