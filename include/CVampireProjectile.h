@@ -84,9 +84,24 @@ public:
 	EHANDLE m_hOwner;	// 0x0754
 	unsigned char m_b758;	// 0x758: set by CVampireProjectile::vfunc91 (touch / damage path)
 	bool m_bBulletParamSet;	// 0x0759
-	char m_pad075a[0x778 - 0x75a];
+	char m_pad075a[0x75c - 0x75a];
+	Vector m_vecOrigin75c;
+	Vector m_vecVelocity768;
+	int m_nDamage774;
 	EHANDLE m_h778;	// 0x778: the entity the effect is attached to (CVampireProjectile::vfunc269)
-	char m_pad077c[0x878 - 0x77c];
+	EHANDLE m_h77c;
+	Vector m_vecForce780;
+	float m_fl78c;
+	int m_n790, m_n794, m_n798;
+	EHANDLE m_h79c;
+	int m_n7a0;
+	char m_b7a4;
+	char m_pad7a5[3];
+	int m_n7a8;
+	char m_szWeapon7ac[0x80];
+	char *m_psz82c;
+	int m_n830;
+	char m_dmg834[0x44];
 	int m_iProjectileFlags;	// 0x0878
 	const char *m_pszModel87c;	// 0x87c: the model name (null when none)
 	const char *m_pszSound880;	// 0x880: the sound name (null when none)
