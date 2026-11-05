@@ -21323,6 +21323,48 @@ void CUnknown1007bb30::sub_1007bb30(CUnknown1007bb30Dest *pDest)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007bbc0 size=0x149
+#include "CUnknown10072f10.h"
+#include "CUnknown100735a0.h"
+#include "CUnknown10076670.h"
+#include "CUnknown1007a060.h"
+#include "CUnknown1007b7b0.h"
+#include <string.h>
+#include <stdlib.h>
+struct CSceneElem9c;
+struct CSceneElemVecOwner;
+CSceneElem9c *__fastcall sub_10079f50(CSceneElemVecOwner *p);
+
+// TARGET: CUnknown1007b7b0::sub_1007bbc0
+CUnknown100735a0 *CUnknown1007b7b0::sub_1007bbc0(CUnknown1007a060Elem *pElem)
+{
+	CUnknown100735a0 *pChannel = (CUnknown100735a0 *)sub_10079f50((CSceneElemVecOwner *)this);
+	m_pReader->vfunc1(0);
+	pChannel->sub_100734f0(m_pReader->vfunc0());
+	m_pReader->vfunc1(1);
+	if (_strcmpi(m_pReader->vfunc0(), "{") != 0)
+		m_pReader->vfunc3("expecting {");
+	while (1) {
+		m_pReader->vfunc1(1);
+		if (!_strcmpi(m_pReader->vfunc0(), "}"))
+			break;
+		if (!_strcmpi(m_pReader->vfunc0(), "event")) {
+			sub_1007ab40((CUnknown10076670 *)pElem, pChannel, 0);
+		} else if (!_strcmpi(m_pReader->vfunc0(), "active")) {
+			m_pReader->vfunc1(1);
+			pChannel->sub_100737d0(atoi(m_pReader->vfunc0()) != 0);
+		} else {
+			m_pReader->vfunc3("expecting event got %s\n", m_pReader->vfunc0());
+		}
+	}
+	if (pElem) {
+		((CUnknown10072f10 *)pElem)->sub_10072f10((int)pChannel);
+		pChannel->sub_100737b0((int)pElem);
+	}
+	return pChannel;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007bd70 size=0x12f
 #include "CUnknown1007b7b0.h"
 extern "C" int __cdecl _strcmpi(const char *, const char *);

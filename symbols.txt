@@ -1123,6 +1123,7 @@
 0x10002a54 func   ?vfunc82@CAI_ChangeHintGroup@@UAEPAUdatamap_t@@XZ CAI_ChangeHintGroup::vfunc82
 0x10002a5e func   ?sub_10045de0@CUtlRBTree36@@QAEGPBH@Z CUtlRBTree36::sub_10045de0
 0x10002a63 func   ?vfunc620@CNPCMaker@@UAEXH@Z CNPCMaker::vfunc620
+0x10002a68 func   ?sub_1007bbc0@CUnknown1007b7b0@@QAEPAVCUnknown100735a0@@PAVCUnknown1007a060Elem@@@Z CUnknown1007b7b0::sub_1007bbc0
 0x10002a6d func   ?sub_1006edb0@CUnknown1006edb0@@QAEHXZ CUnknown1006edb0::sub_1006edb0
 0x10002a72 func   ?sub_102013a0@CVStatList_t@@QAEPBDH@Z CVStatList_t::sub_102013a0
 0x10002a77 func   ?sub_10080730@CUnknown10080730@@QAEPAXXZ CUnknown10080730::sub_10080730
