@@ -148225,6 +148225,17 @@ void CUnk102c43f0::sub_102c43f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c4430 size=0x21
+#include "CAI_BaseNPCTroika.h"
+
+bool CAI_BaseNPCTroika::sub_102c4430(const char *psz)
+{
+	bool b = sub_102c44e0(psz);
+	m_psz6478 = *psz ? psz : 0;
+	return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c4470 size=0x43
 #include "CAI_BaseNPCTroika.h"
 #include "CBaseEntity.h"
