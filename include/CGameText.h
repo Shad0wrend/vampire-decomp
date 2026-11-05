@@ -17,5 +17,13 @@ public:
 	datamap_t * vfunc82();
 	int vfunc173(int, int, int, int);
 	string_t m_iszMessage;	// 0x0450
-	char m_textParms[40];	// 0x0454
+	struct TextParms_t
+	{
+		float x, y;
+		int effect;
+		unsigned char r1, g1, b1, a1;
+		unsigned char r2, g2, b2, a2;
+		float fadeinTime, fadeoutTime, holdTime, fxTime;
+		int channel;
+	} m_textParms;	// 0x0454
 };
