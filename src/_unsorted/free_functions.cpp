@@ -204551,6 +204551,14 @@ int __stdcall sub_1042f130(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042fb00 size=0x17
+#pragma optimize("", off)
+unsigned int sub_1042fb00(unsigned int x)
+{
+    return x ^ ((x & 0x71f99735u) & 0x8e0668cau);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042fb20 size=0x22
 extern int g_106af554;
 extern int g_106af5dc;

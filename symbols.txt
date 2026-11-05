@@ -2368,6 +2368,7 @@
 0x10004890 func   ?vfunc5@CWeaponMelee_Claws@@UAEPAVCBaseCombatWeapon@@I@Z CWeaponMelee_Claws::vfunc5
 0x10004895 func   ?sub_1017cb80@CUnknown1017cb80@@QAEHPBD@Z CUnknown1017cb80::sub_1017cb80
 0x1000489a func   ?sub_100b2770@CBaseEntity@@QAEXABVVector@@@Z CBaseEntity::sub_100b2770
+0x1000489f func   ?sub_1042fb00@@YAII@Z sub_1042fb00
 0x100048a4 func   ?vfunc266@CDisciplineProjectile@@UAEXPAVCBaseEntity@@@Z CDisciplineProjectile::vfunc266
 0x100048a9 func   ?sub_101f27f0@VKeyValuesInterface@@QAEPAXPBDPAX@Z VKeyValuesInterface::sub_101f27f0
 0x100048ae func   ?sub_1040cce0@CUnknown1040cce0@@QAEMPAX@Z CUnknown1040cce0::sub_1040cce0
