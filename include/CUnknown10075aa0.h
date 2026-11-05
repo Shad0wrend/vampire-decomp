@@ -74,7 +74,7 @@ public:
 	void sub_100766b0(int pChannel);	// 0x100766b0: stores +0x2b8
 	void sub_10076ad0(char value);	// 0x10076ad0 ("fixedlength")
 	void sub_10076af0(char value);	// 0x10076af0 ("resumecondition", +0x1b0)
-	void sub_10076c30(const char *pszName, int a);	// 0x10076c30 (entry with name; "tags"-style)
+	void sub_10076c30(const char *pszName, float a);	// 0x10076c30 (entry with name; "tags"-style)
 	void sub_100770b0(const char *pszName, float flPercentage, bool bLocked);	// 0x100770b0 (timing tag)
 	void sub_100784b0(float flDuration);	// 0x100784b0 ("sequenceduration")
 	void sub_10078540(int value);	// 0x10078540 ("pitch")
