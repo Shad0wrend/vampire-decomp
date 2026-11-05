@@ -74171,6 +74171,107 @@ void sub_10179680(void *pEnt, int unused, float *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10179840 size=0x7f2
+#include "SendProp.h"
+
+SendProp sub_10246af0(const char *pName, int a, int b, int c, int d, int e, void *pProxy);
+SendProp sub_10246dc0(const char *pName, int a, int b, void *pProxy);
+SendProp sub_10246ef0(int a, int b, const char *pName, void *pProxy);
+SendProp sub_10246700(const char *pName, int a, int b, int c, int d, float lo, float hi, void *pProxy);
+SendProp sub_101ab220(const char *pName, int a, int b);
+SendProp sub_10246510(const char *pName, int a, int b, int c, int d, float lo, float hi, void *pProxy);
+SendProp sub_10247030(const char *pTable, const char *pProp);
+void sub_10246300();
+void sub_102464d0();
+void sub_10179190();
+void sub_10179680();
+void sub_102463c0();
+void sub_1018beb0();
+
+struct S_SendTable
+{
+	void sub_10247240(SendProp *pProps, int nProps, const char *pName);
+};
+
+extern S_SendTable g_10725a70;
+extern const char *g_1058386c;
+extern int g_10619d54;
+extern int g_10725d78;
+extern int g_10725088;
+
+int sub_10179840()
+{
+	static SendProp s_props[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246dc0("baseclass", 0, g_10619d54, (void *)sub_102464d0),
+		sub_10246dc0("pl", 0x2068, (int)&g_10725d78, (void *)sub_102464d0),
+		sub_10246af0("m_bInVehicle", 0x20f4, 1, 1, 1, 0, 0),
+		sub_101ab220("m_hVehicle", 0x20f8, 4),
+		sub_10246af0("m_iAmmo[0]", 0x15a4, 4, 9, 1, 0, 0),
+		sub_10246ef0(0x20, 4, "m_iAmmo", 0),
+		sub_10246510("m_flWalkForwardSpeeds[0]", 0x1bc4, 4, 0xd, 8, -2048.0f, 2048.0f, (void *)sub_10246300),
+		sub_10246ef0(8, 4, "m_flWalkForwardSpeeds", 0),
+		sub_10246510("m_flWalkSideSpeeds[0]", 0x1be4, 4, 0xd, 8, -2048.0f, 2048.0f, (void *)sub_10246300),
+		sub_10246ef0(8, 4, "m_flWalkSideSpeeds", 0),
+		sub_10246510("m_flRunForwardSpeeds[0]", 0x1b84, 4, 0xd, 8, -2048.0f, 2048.0f, (void *)sub_10246300),
+		sub_10246ef0(8, 4, "m_flRunForwardSpeeds", 0),
+		sub_10246510("m_flRunSideSpeeds[0]", 0x1ba4, 4, 0xd, 8, -2048.0f, 2048.0f, (void *)sub_10246300),
+		sub_10246ef0(8, 4, "m_flRunSideSpeeds", 0),
+		sub_10246510("m_flSneakForwardSpeeds[0]", 0x1c04, 4, 0xd, 8, -2048.0f, 2048.0f, (void *)sub_10246300),
+		sub_10246ef0(8, 4, "m_flSneakForwardSpeeds", 0),
+		sub_10246510("m_flSneakSideSpeeds[0]", 0x1c24, 4, 0xd, 8, -2048.0f, 2048.0f, (void *)sub_10246300),
+		sub_10246ef0(8, 4, "m_flSneakSideSpeeds", 0),
+		sub_10246510("m_flMaxspeed", 0x2310, 4, 0xc, 8, 0.0f, 2048.0f, (void *)sub_10246300),
+		sub_10246af0("m_iHealth", 0x210, 4, 0xa, 0, 0, 0),
+		sub_10246af0("m_iVAttributesBase[0]", 0x10f0, 4, 4, 1, 0, 0),
+		sub_10246ef0(0x23, 4, "m_iVAttributesBase", (void *)sub_10179190),
+		sub_10246af0("m_iVAttributesBase[v_attribute_autolevel_template]", 0x1174, 4, 6, 0, 0, 0),
+		sub_10246af0("m_iVAttributesBase[v_attribute_experience]", 0x1178, 4, 0xa, 1, 0, 0),
+		sub_10246af0("m_iVAbilitiesBase[0]", 0x1210, 4, 4, 1, 0, 0),
+		sub_10246ef0(0xd, 4, "m_iVAbilitiesBase", 0),
+		sub_10246af0("m_iVDisciplinesBase[0]", 0x1280, 4, 4, 1, 0, 0),
+		sub_10246ef0(0x11, 4, "m_iVDisciplinesBase", 0),
+		sub_10246af0("m_iVActiveDisciplinesBase[0]", 0x1310, 4, 4, 1, 0, 0),
+		sub_10246ef0(0x11, 4, "m_iVActiveDisciplinesBase", 0),
+		sub_10246510("m_flClientBeginVActiveDisciplineTimers[0]", 0x1b20, 4, 0xd, 8, -2048.0f, 2048.0f, (void *)sub_10246300),
+		sub_10246ef0(0x11, 4, "m_flClientBeginVActiveDisciplineTimers", 0),
+		sub_10246510("m_flClientVActiveDisciplineDurations[0]", 0x1adc, 4, 0xd, 8, -2048.0f, 2048.0f, (void *)sub_10246300),
+		sub_10246ef0(0x11, 4, "m_flClientVActiveDisciplineDurations", 0),
+		sub_10246af0("m_tEffectList.m_iCount", 0x13dc, 4, 8, 0, 0, 0),
+		sub_10246af0("m_tEffectList.m_teIDList[0]", 0x13e0, 4, 8, 1, 0, 0),
+		sub_10246ef0(0x20, 4, "m_tEffectList.m_teIDList", 0),
+		sub_10246af0("m_bIsFrenzyGrapple", 0x1476, 1, 1, 1, 0, 0),
+		sub_10246af0("m_iVHistoryID", 0x13a0, 4, 9, 0, 0, 0),
+		sub_10246af0("m_mpEquipData._iCurPackage", 0x1a1c, 4, 9, 0, 0, 0),
+		sub_10246af0("m_iMoney", 0x13d8, 4, 0x20, 0, 0, 0),
+		sub_10246af0("m_iClientFeedMaxBloodPool", 0x1a90, 4, 8, 0, 0, 0),
+		sub_10246510("m_flNextFeedDuration", 0x1494, 4, 0xc, 8, 0.0f, 1.0f, (void *)sub_10246300),
+		sub_10246af0("m_bIsDrinkingBlood", 0x1b6c, 1, 2, 0, 0, 0),
+		sub_10246af0("m_bAllowResyncHandsOffset", 0x1b6d, 1, 2, 0, 0, 0),
+		sub_10246af0("m_iLastDiscipline", 0x1b70, 4, 5, 0, 0, 0),
+		sub_10246af0("m_bLastDiscScrolled", 0x1b74, 1, 2, 0, 0, 0),
+		sub_10246af0("m_iLastDiscTgtMode", 0x1b78, 4, 5, 0, 0, 0),
+		sub_10246af0("m_bObfWasMoving", 0x19f4, 1, 1, 1, 0, 0),
+		sub_101ab220("m_hLastWeapon", 0xea4, 4),
+		sub_10247030("DT_BaseEntity", "m_vecAbsOrigin"),
+		sub_10246700("m_vecAbsOrigin", 0x404, 0xc, 0, 4, 0.0f, 0.0f, (void *)sub_10179680),
+		sub_10246700("m_vecVelocity", 0x3d4, 0xc, 0, 4, 0.0f, -121121.121212f, (void *)sub_102463c0),
+		sub_10246af0("m_iDebugFlags", 0x1c90, 4, 0x20, 1, 0, 0),
+		sub_10246af0("m_iDebugStealthFeat", 0x1c94, 4, 0x20, 1, 0, 0),
+		sub_10246af0("m_iDebugStealthLight", 0x1c98, 4, 0x20, 1, 0, 0),
+		sub_10246af0("m_iDebugStealthSound", 0x1c9c, 4, 0x20, 1, 0, 0),
+		sub_10246510("m_flStealthVisionScalar", 0x1c70, 4, 0xc, 8, 0.0f, 64.0f, (void *)sub_10246300),
+		sub_10246510("m_flStealthHearingDist", 0x1c78, 4, 0xc, 8, 0.0f, 2048.0f, (void *)sub_10246300),
+		sub_10246af0("m_bIsSpectator", 0x19f6, 1, 1, 1, 0, 0),
+		sub_10246af0("m_bIsImmobilized", 0x19f7, 1, 1, 1, 0, 0),
+		sub_10246af0("m_bfMPFlags", 0x1a18, 4, 0x20, 1, 0, 0),
+		sub_10246dc0("localdata", 0, (int)&g_10725088, (void *)sub_1018beb0)
+	};
+	g_10725a70.sub_10247240(&s_props[1], 0x3f, g_1058386c);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017a270 size=0xe
 // TARGET: sub_1017a270
 struct StatMaskView
