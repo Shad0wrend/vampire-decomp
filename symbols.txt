@@ -4787,6 +4787,7 @@
 0x1000808a func   ?sub_1042ba00@CUnknown1042ba00@@QAEXH@Z CUnknown1042ba00::sub_1042ba00
 0x10008094 func   ?sub_103d6390@CNPC_VWerewolf@@QAEPAVCBaseEntity@@PAX@Z CNPC_VWerewolf::sub_103d6390
 0x10008099 func   ?vfunc127@CNPC_VChangBros@@QAEHH@Z CNPC_VChangBros::vfunc127
+0x1000809e func   ?vfunc5@CGameMovement@@UAEXXZ CGameMovement::vfunc5
 0x100080a3 func   ?vfunc80@CWeaponMelee_ChangBlade@@QAEHXZ CWeaponMelee_ChangBlade::vfunc80
 0x100080a8 func   ?vfunc35@CBaseButton@@UAEHH@Z CBaseButton::vfunc35
 0x100080ad func   ?vfunc7@CEntityListSystem@@QAEHXZ CEntityListSystem::vfunc7

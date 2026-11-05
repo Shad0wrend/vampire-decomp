@@ -471,3 +471,219 @@ void CGameMovement::vfunc25()
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x101274a0 size=0x510
+// TARGET: CGameMovement::vfunc5
+#include "CGameMovement.h"
+#include "CGameMovementViews.h"
+#include "CVProfile.h"
+#include "CBCCSlotViews.h"
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+
+class CPMView
+{
+public:
+	VIEW_SLOT10(0) VIEW_SLOT10(1) VIEW_SLOT10(2) VIEW_SLOT10(3) VIEW_SLOT10(4) VIEW_SLOT10(5) VIEW_SLOT10(6) VIEW_SLOT10(7) VIEW_SLOT10(8)
+	VIEW_SLOT(90) VIEW_SLOT(91) VIEW_SLOT(92)
+	virtual void vfunc93(int a, int b);
+	virtual int vfunc94();
+	VIEW_SLOT(95) VIEW_SLOT(96) VIEW_SLOT(97) VIEW_SLOT(98) VIEW_SLOT(99)
+	VIEW_SLOT10(10) VIEW_SLOT10(11) VIEW_SLOT10(12) VIEW_SLOT10(13) VIEW_SLOT10(14)
+	VIEW_SLOT(150) VIEW_SLOT(151) VIEW_SLOT(152) VIEW_SLOT(153) VIEW_SLOT(154) VIEW_SLOT(155) VIEW_SLOT(156) VIEW_SLOT(157)
+	virtual char vfunc158();
+	VIEW_SLOT(159)
+	VIEW_SLOT10(16) VIEW_SLOT10(17) VIEW_SLOT10(18) VIEW_SLOT10(19)
+	VIEW_SLOT(200) VIEW_SLOT(201) VIEW_SLOT(202) VIEW_SLOT(203) VIEW_SLOT(204) VIEW_SLOT(205) VIEW_SLOT(206) VIEW_SLOT(207) VIEW_SLOT(208)
+	virtual void *vfunc209();
+};
+
+struct CDevCvarView
+{
+	virtual void v0();
+	virtual char vfunc1();
+	char m_pad04[0x28];
+	int m_n2c;
+};
+
+struct CCycleSample
+{
+	unsigned __int64 m_Int64;
+	void Sample()
+	{
+		unsigned long *pSample = (unsigned long *)&m_Int64;
+		__asm {
+			mov ecx, pSample
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+	void End()
+	{
+		CCycleSample now;
+		now.m_Int64 = 0;
+		now.Sample();
+		m_Int64 = now.m_Int64 - m_Int64;
+	}
+	void Add(const CCycleSample &rhs)
+	{
+		m_Int64 += rhs.m_Int64;
+	}
+};
+
+typedef void (__cdecl *FnDevMsg)(int level, const char *fmt, ...);
+extern FnDevMsg g_109f3650;
+extern CDevCvarView *g_1070b0f4;
+extern const Vector g_1070d1b0;
+extern CTouchNotifier *g_1071a278;
+extern void sub_10119750(const char *fmt, ...);
+extern void sub_10139610(const float *pAngles, float *pForward, float *pRight, float *pUp);
+
+namespace block_101274a0 {
+struct CGameMovementUnit : CGameMovement
+{
+	char sub_1011e290(int nInterval);
+};
+char CGameMovementUnit::sub_1011e290(int nInterval) { return 1; }
+
+const char *__cdecl sub_101273e0(int nState)
+{
+	if (nState == 0)
+		return "Jump_None";
+	if (nState == 2)
+		return "Jump_Hop";
+	if (nState == 3)
+		return "Jump_Hop_Up";
+	if (nState == 4)
+		return "Jump_Hop_Down";
+	if (nState == 1)
+		return "Jump_Leap";
+	if (nState == 5)
+		return "Jump_Maintain";
+	if (nState == 6)
+		return "Jump_Descent";
+	if (nState == 7)
+		return "Jump_Falling";
+	if (nState == 8)
+		return "Jump_Landed";
+	if (nState == 9)
+		return "Jump_LandedInWater";
+	if (nState == 10)
+		return "Jump_LandedHard";
+	return nState == 11 ? "Jump_LandedExtremelyHard" : "Invalid jump state";
+}
+}
+using namespace block_101274a0;
+
+#define MV ((CPMView *)m_pMove)
+#define PL ((CMovePlayerView *)m_pPlayer)
+#define PF(off) (*(float *)((char *)m_pPlayer + (off)))
+#define UNIT ((CGameMovementUnit *)this)
+
+void CGameMovement::vfunc5()
+{
+	CVProfile *pProf = g_109f3648;
+	if (pProf->m_enabled != 0 || !pProf->m_bAtRoot) {
+		if (pProf->m_pCurNode->m_pszName != "CGameMovement::PlayerMove")
+			pProf->m_pCurNode = pProf->m_pCurNode->GetSubNode("CGameMovement::PlayerMove", 0, "Unaccounted");
+		pProf->m_pCurNode->EnterScope();
+		pProf->m_bAtRoot = false;
+	}
+
+	sub_1011f140();
+
+	PL->m_vec80 = g_1070d1b0;
+
+	g_1071a278->vfunc1();
+
+	slot24();
+
+	sub_10139610((const float *)&PL->m_vecViewAngles0c, (float *)&m_vecForward, (float *)&m_vecRight, (float *)&m_vecUp);
+
+	if (UNIT->sub_1011e290(1)) {
+		if (MV->vfunc94() != 9 && MV->vfunc94() != 0 && MV->vfunc94() != 2 && MV->vfunc158()) {
+			if (sub_10124d80()) {
+				g_109f3648->ExitScope();
+				return;
+			}
+		}
+	}
+
+	slot22();
+
+	m_field0c = ((CMoveFlagsView *)m_pMove)->m_n03E0;
+	if (!MV->vfunc209())
+		*(float *)((char *)m_pMove + 0x1ee8) = -PL->m_vecVelocity.z;
+
+	m_field10 = 0;
+	sub_1011e940();
+	if (UNIT->sub_1011e290(0))
+		sub_1011e560();
+	sub_10126fd0();
+
+	if (*(int *)((char *)m_pMove + 0x2068) == 0 && !(((CBaseEntity *)m_pMove)->sub_100b3700() & 8) && UNIT->sub_1011e290(2) && !vfunc20() && MV->vfunc94() == 10) {
+		MV->vfunc93(3, 0);
+		*(int *)((char *)m_pMove + 0x360) = 0;
+		((CBasePlayer *)m_pMove)->sub_10183330();
+	}
+
+	switch (MV->vfunc94()) {
+	case 9:
+		sub_10122190();
+		break;
+	case 5:
+	case 6:
+		sub_10127dd0();
+		break;
+	case 10:
+		vfunc18();
+		break;
+	case 3:
+		vfunc12();
+		break;
+	case 2:
+		vfunc12();
+		break;
+	case 0:
+		break;
+	default:
+		g_109f3650(1, "Bogus pmove player movetype %i on (%i) 0=cl 1=sv\n", MV->vfunc94(), 1);
+		break;
+	}
+
+	if (!g_1070b0f4->vfunc1() && g_1070b0f4->m_n2c != 0) {
+		CBaseEntity *pGround = (CBaseEntity *)MV->vfunc209();
+		const char *pszGround = pGround ? pGround->sub_100ab4f0() : "none";
+		sub_10119750("Player Velocity: Horizontal:%-3.3f  Vertical:%-3.3f", (double)PL->m_vecVelocity.Length2D(), (double)PL->m_vecVelocity.z);
+		sub_10119750("Player Velocity: X(%-3.3f), Y(%-3.3f) Z(%-3.3f)", (double)PL->m_vecVelocity.x, (double)PL->m_vecVelocity.y, (double)PL->m_vecVelocity.z);
+		sub_10119750("Jump skill: Horiz:%-3.3f  Vert:%-3.3f", (double)PF(0xa4), (double)PF(0xa8));
+		sub_10119750("Jump skill: Hold:%-3.3f Undo:%-3.3f", (double)PF(0xb4), (double)PF(0xb0));
+		sub_10119750("m_VAirMovement: (%d), %s", *(int *)((char *)m_pPlayer + 0xc0), sub_101273e0(*(int *)((char *)m_pPlayer + 0xc0)));
+		sub_10119750("Ground Ent: %s, m_fFallVelocity: %-3.3f", pszGround, (double)*(float *)((char *)m_pMove + 0x1ee8));
+		sub_10119750("Player Origin: X(%-3.1f), Y(%-3.1f) Z(%-3.1f)", (double)PL->m_vecOrigin.x, (double)PL->m_vecOrigin.y, (double)PL->m_vecOrigin.z);
+		if (m_pSurface9c)
+			sub_10119750("Surface Friction:%.2f Max Speed Factor: %.2f", (double)m_fieldA0, (double)*(float *)((char *)m_pSurface9c + 0x68));
+		else
+			sub_10119750("Surface Friction:%.2f", (double)m_fieldA0);
+	}
+
+	CVProfile *pProf2 = g_109f3648;
+	if (!pProf2->m_bAtRoot || pProf2->m_enabled != 0) {
+		CVProfNode *pNode = pProf2->m_pCurNode;
+		if (--pNode->m_nRecursions == 0 && pNode->m_nCurFrameCalls != 0) {
+			((CCycleSample *)&pNode->m_CurFrameTime)->End();
+			((CCycleSample *)&pNode->m_TotalTime)->Add(*(CCycleSample *)&pNode->m_CurFrameTime);
+			CVProfile *pPop = g_109f3648;
+			--pPop->m_nGroupStackDepth;
+			int nNew = pPop->m_GroupIDStack[pPop->m_nGroupStackDepth];
+			int nOld = pPop->m_GroupIDStack[pPop->m_nGroupStackDepth + 1];
+			if (nNew != nOld && pPop->m_bVTuneGroupsEnabled && nOld == pPop->m_nVTuneGroupID)
+				vtune(false);
+		}
+		if (pNode->m_nRecursions == 0)
+			pProf2->m_pCurNode = pProf2->m_pCurNode->m_pParent;
+		pProf2->m_bAtRoot = (pProf2->m_pCurNode == pProf2->m_pRoot);
+	}
+}
+// END FUNCTION
