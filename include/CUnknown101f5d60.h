@@ -2,7 +2,8 @@
 // real name not yet known. Its record array (+0x10 allocated, +0x14 count, +0x18 pointers) is a hand-grown pointer array.
 #pragma once
 
-class CUnknown101f4c80;
+#include "CUnknown101f4c80.h"
+#include "CUnknown101f40f0.h"
 
 class CUnknown101f5d60
 {
@@ -14,9 +15,11 @@ public:
 	int m_nAlloc;	// 0x10: allocated slots of the record array
 	int m_nCount;	// 0x14: used slots
 	CUnknown101f4c80 **m_pRecords;	// 0x18
-	char pad1c[0x24 - 0x1c];
+	int m_nChildren;	// 0x1c
+	class CUnknown101f40f0 **m_ppChildren;	// 0x20: the records sub_101f41b0 is run over
 	const char *m_pszUnk24;
 
 	const char *sub_101f5d60();
+	bool sub_101f5210();	// reloads the scheme from vdata\system\<name>.txt: frees the record array, parses the file (warns when it cannot be loaded or opened), then runs sub_101f41b0 over the children
 	bool sub_101f5390(void *pKV);	// parses the "SoundScheme" key: InternalName, then one record per "Sound" key of "SoundList"; false without a key or a scheme
 };
