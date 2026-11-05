@@ -4408,6 +4408,88 @@ void CPhysicsPushedEntities::sub_100379e0(CBaseEntity *pParent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10038180 size=0x1f9
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlmemory.h"
+#include "vampire.h"
+#include "CPhysicsPushedEntities.h"
+#include "CBaseEntity.h"
+#include "CVProfile.h"
+#include "ScopeTrace.h"
+#include "Vector.h"
+#include "CEntityVSlots.h"
+
+struct CCycleCountLocal
+{
+	unsigned __int64 m_Int64;
+	CCycleCountLocal() { m_Int64 = 0; }
+	void Sample()
+	{
+		__asm
+		{
+			mov ecx, this
+			rdtsc
+			mov dword ptr [ecx], eax
+			mov dword ptr [ecx + 4], edx
+		}
+	}
+	void End()
+	{
+		CCycleCountLocal now;
+		now.Sample();
+		m_Int64 = now.m_Int64 - m_Int64;
+	}
+};
+
+void CPhysicsPushedEntities::sub_10038180(CBaseEntity *pRoot, const float *pMove, float *pOut)
+{
+	ScopeTrace trace("CPhysicsPushedEntities::LinearlyMoveRootEntity", g_106b8540);
+	g_109f3648->EnterScope("CPhysicsPushedEntities::LinearlyMoveRootEntity", 0, "Unaccounted", false);
+
+	float flScale = *(float *)&pMove;
+
+	Vector vecMove;
+	vecMove.x = flScale * pRoot->m_vel3d4[0];
+	vecMove.y = flScale * pRoot->m_vel3d4[1];
+	vecMove.z = flScale * pRoot->m_vel3d4[2];
+
+	Vector vecNew = *((CEntityVSlots *)pRoot)->slot220();
+	float fx = vecMove.x;
+	vecNew.x = fx + vecNew.x;
+	vecNew.y += vecMove.y;
+	vecNew.z += vecMove.z;
+	pRoot->vfunc62(vecNew.Base());
+
+	char flags = (char)(pRoot->m_flags268 >> 12);
+	if ((flags & 1) != 0)
+		pRoot->sub_100b1d10();
+
+	*(Vector *)pOut = pRoot->m_vecVelocity3bc * flScale;
+
+	CVProfile *pProfile = g_109f3648;
+	if (!pProfile->m_bAtRoot || pProfile->m_enabled)
+	{
+		CVProfNode *pNode = pProfile->m_pCurNode;
+		if (--pNode->m_nRecursions == 0 && pNode->m_nCurFrameCalls != 0)
+		{
+			((CCycleCountLocal *)&pNode->m_CurFrameTime)->End();
+			pNode->m_TotalTime += pNode->m_CurFrameTime.m_Int64;
+			g_109f3648->PopGroup();
+		}
+		if (pNode->m_nRecursions == 0)
+			pProfile->m_pCurNode = pProfile->m_pCurNode->m_pParent;
+		pProfile->m_bAtRoot = (pProfile->m_pCurNode == pProfile->m_pRoot);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10038400 size=0x26a
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
