@@ -32,6 +32,26 @@ void CTriggerImpact::vfunc171()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cb590 size=0x85
+#include "CTriggerImpact.h"
+
+extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+void sub_101434b0(int edictIndex, int line, const char *text, int a, int r, int g, int b, int alpha);
+
+int CTriggerImpact::vfunc124()
+{
+	char szText[256];
+	int nLines = sub_100104e2();
+	if (m_flags224 & 1) {
+		Q_snprintf(szText, 255, "Magnitude: %3.2f", m_flMagnitude);
+		int edict = m_pEdict2e0;
+		sub_101434b0(engine->vfunc35(edict), nLines, szText, 0, 255, 255, 255, 255);
+		nLines++;
+	}
+	return nLines;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cc2c0 size=0x62
 #include "CTriggerImpact.h"
 
