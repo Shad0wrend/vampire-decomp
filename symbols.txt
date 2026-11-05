@@ -4348,6 +4348,7 @@
 0x1000777a func   ?sub_10203110@CUnknown10203110@@QAEHH@Z CUnknown10203110::sub_10203110
 0x1000777f func   ?vfunc174@CRagdollPropSpecial@@UAEXPAVCBaseEntity@@@Z CRagdollPropSpecial::vfunc174
 0x10007784 func   ?sub_10254b00@CBaseCombatWeapon@@QAE_NH@Z CBaseCombatWeapon::sub_10254b00
+0x10007789 func   ?vfunc449@CAI_BaseNPC@@UAEHH@Z CAI_BaseNPC::vfunc449
 0x1000778e func   ?sub_1017f980@CUnknown1017f980@@QAEXXZ CUnknown1017f980::sub_1017f980
 0x10007793 func   ?sub_100578e0@CUnknown10057680@@QAEHPAVCRestore@@@Z CUnknown10057680::sub_100578e0
 0x10007798 func   ?sub_101dc0b0@CUnknown101dbe30@@QAEXPAVCBaseEntity@@@Z CUnknown101dbe30::sub_101dc0b0
