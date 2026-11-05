@@ -188105,6 +188105,92 @@ bool __stdcall sub_10399ef0(void *a1, int a2, char *a3, char *a4, char *a5, int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039a250 size=0x398
+#include "CNPC_VMingXiao.h"
+#include "CGlobalEntityList.h"
+#include "CTakeDamageInfo.h"
+#include "CEntityLookup.h"
+#include "CUnknown1039a6e0.h"
+#include "CUnknown10398630.h"
+#include "globalvars.h"
+#include "engineserver.h"
+#include "ehandle.h"
+
+extern CGlobalEntityList g_106eb5d8;
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+void sub_101d26b0(Vector, const char *, CBaseEntity *, int, int, int);
+void sub_101d2780(Vector, const char *, CBaseEntity *, int, int, int);
+
+void sub_1039a250()
+{
+	Vector v;
+	const char *name = engine->vfunc84(1);
+	if (!name || !*name)
+		return;
+	CNPC_VMingXiao *pPlayer = (CNPC_VMingXiao *)sub_101193b0();
+	if (!pPlayer)
+		return;
+	CNPC_VMingXiao *pEnt = (CNPC_VMingXiao *)g_106eb5d8.sub_100f8370(0, 0x200);
+	for (; pEnt; pEnt = (CNPC_VMingXiao *)g_106eb5d8.sub_100f8370(pEnt, 0x200)) {
+		if (pEnt->sub_10398870())
+			continue;
+		if (!_strcmpi(name, "spit") || !_strcmpi(name, "0")) {
+			pEnt->m_flTime66c0 = 0;
+			for (int i = 0; i < 6; i++)
+				pEnt->m_flSlotTimeA[i] = gpGlobals->curtime + 5.0f;
+		} else if (!_strcmpi(name, "tentacle") || !_strcmpi(name, "1")) {
+			CTakeDamageInfo info;
+			bool done = false;
+			info.sub_101c26d0(pPlayer->sub_1032e7b0(), pPlayer, 200.0f, 0, 0, 0, -1);
+			info.sub_101c2a10(-1);
+			int i = 0;
+			do {
+				if (done)
+					break;
+				if (pEnt->sub_10398000(i)) {
+					((CUnknown10398630 *)pEnt)->sub_10398630(i, &v);
+					info.m_pos1c = *(CTDIPos *)&v;
+					switch (i) {
+					case 0: ((CUnknown1039a6e0 *)pEnt)->sub_1039a6e0(5); break;
+					case 1: ((CUnknown1039a6e0 *)pEnt)->sub_1039a6e0(4); break;
+					case 2: ((CUnknown1039a6e0 *)pEnt)->sub_1039a6e0(9); break;
+					case 3: ((CUnknown1039a6e0 *)pEnt)->sub_1039a6e0(8); break;
+					case 4: ((CUnknown1039a6e0 *)pEnt)->sub_1039a6e0(7); break;
+					case 5: ((CUnknown1039a6e0 *)pEnt)->sub_1039a6e0(6); break;
+					default: ((CUnknown1039a6e0 *)pEnt)->sub_1039a6e0(5); break;
+					}
+					pEnt->sub_100a1250(&info);
+					done = true;
+				}
+				i++;
+			} while (i < 6);
+		} else if (!_strcmpi(name, "baby") || !_strcmpi(name, "2")) {
+			for (int i = 0; i < 6; i++) {
+				CNPC_VMingXiao *pT = (CNPC_VMingXiao *)((EHANDLE *)&pEnt->m_hSlotOld[i])->Get();
+				if (pT)
+					pT->m_n6674 = (int &)gpGlobals->curtime;
+			}
+		} else if (!_strcmpi(name, "die") || !_strcmpi(name, "3")) {
+			CTakeDamageInfo info;
+			info.sub_101c26d0(pPlayer->sub_1032e7b0(), pPlayer, 5000.0f, 0, 0, 0, -1);
+			info.sub_101c2a10(-1);
+			for (int i = 0; i < 6; i++) {
+				if (pEnt->sub_10398000(i)) {
+					((CUnknown1039a6e0 *)pEnt)->sub_1039a6e0(1);
+					pEnt->sub_100a1250(&info);
+				}
+			}
+		} else if (_strcmpi(name, "damage")) {
+			_strcmpi(name, "4");
+		}
+	}
+	if (!_strcmpi(name, "player") || !_strcmpi(name, "5")) {
+		sub_101d26b0(*(Vector *)pPlayer->vfunc192(&v), "Ming_xiao_vomit_player_emitter", pPlayer, 1, -1, 0);
+		sub_101d2780(*(Vector *)pPlayer->vfunc192(&v), "Ming_xiao_hud_vomit_emitter", pPlayer, 0xe, 0, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039aa20 size=0x98
 #include "CNPC_VMingXiao.h"
 #include "CBaseCombatCharacter.h"
