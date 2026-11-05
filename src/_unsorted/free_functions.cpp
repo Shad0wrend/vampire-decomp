@@ -159785,6 +159785,71 @@ int sub_102e2d70(CEdictOwnerView *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e2dc0 size=0x26d
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CAI_MoveProbe.h"
+#include "CBaseEntity.h"
+#include "CGameTrace.h"
+#include "Ray_t.h"
+#include "CTraceFilterSimple.h"
+#include "CVProfile.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738964.h"
+
+void __cdecl sub_10146570(CGameTrace *pTrace, const float *pEndPos, int r, int g, int b, int nType, float flDuration);
+
+struct CCycleCountSample
+{
+	unsigned int m_lo;
+	unsigned int m_hi;
+	void Sample()
+	{
+		CCycleCountSample *pThis = this;
+		__asm
+		{
+			mov ecx, pThis
+			rdtsc
+			mov dword ptr [ecx], eax
+			mov dword ptr [ecx + 4], edx
+		}
+	}
+};
+
+void CAI_MoveProbe::sub_102e2dc0(const float *pStart, const float *pEnd, unsigned int fMask, bool bUseCollisionGroup, CGameTrace *pTrace)
+{
+	int collisionGroup = bUseCollisionGroup ? ((CBaseEntity *)m_pOuter)->m_field368 : 0;
+
+	CVProfile *pVProf = g_109f3648;
+	CBaseEntity *pOuter = (CBaseEntity *)m_pOuter;
+	if ( pVProf->m_enabled || !pVProf->m_bAtRoot )
+	{
+		CVProfNode *pNode = pVProf->m_pCurNode;
+		if ( pNode->m_pszName != "AI_TraceLine" )
+			pVProf->m_pCurNode = pNode->GetSubNode( "AI_TraceLine", 0, "Unaccounted" );
+		pNode = pVProf->m_pCurNode;
+		pNode->m_nCurFrameCalls++;
+		if ( pNode->m_nRecursions++ == 0 )
+		{
+			((CCycleCountSample *)&pNode->m_CurFrameTime)->Sample();
+			g_109f3648->PushGroupInlined( pNode->m_nBudgetGroupID );
+		}
+		pVProf->m_bAtRoot = false;
+	}
+
+	Ray_t ray;
+	ray.Init( *(const Vector *)pStart, *(const Vector *)pEnd );
+
+	CTraceFilterSimple filter( pOuter, collisionGroup );
+
+	g_1070b254->vfunc4( &ray, fMask, (CTraceFilterNoCharacterCollide *)&filter, pTrace );
+
+	if ( !g_10738964->vfunc1() && g_10738964->m_n2c != 0 )
+		sub_10146570( pTrace, pTrace->m_endpos, 0xff, 0, 0, 1, -1.0f );
+
+	g_109f3648->ExitScopeInlined();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e30d0 size=0x28
 #include "CTraceFilterNav.h"
 
