@@ -175000,6 +175000,75 @@ bool sub_10342740(void *a, HasFilter *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10342910 size=0x2ba
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseAnimating.h"
+#include "StudioHdr.h"
+#include "ScopeTrace.h"
+#include "matrix3x4_t.h"
+
+void sub_101381b0(const Vector &in, const matrix3x4_t &matrix, Vector &out);
+void sub_10139b90(const QAngle &angles, matrix3x4_t &matrix);
+void sub_1013c8c0(const Vector &mins, const Vector &maxs, const Vector &point, Vector &out);
+
+int CBaseCombatCharacter::sub_10342910(void *pfnCallback, CBaseEntity *pEntity, bool bIntersect, bool bInvert, Vector vecMins, Vector vecMaxs)
+{
+	ScopeTrace trace("CBaseCombatCharacter::HitboxesInAABB", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!pfnCallback || !pEntity)
+		return 0;
+	StudioHdr *pStudioHdr = (StudioHdr *)((CBaseAnimating *)this)->sub_100952d0(-1);
+	if (!pStudioHdr)
+		return 0;
+	StudioHitboxSet *pSet = pStudioHdr->HitboxSet(*(int *)((char *)this + 0x680));
+	if (!pSet)
+		return 0;
+	int nHit = 0;
+	for (int i = 0; i < pSet->m_nHitboxes; i++)
+	{
+		StudioHitbox *pBox = pSet->Hitbox(i);
+		Vector vecOrigin;
+		QAngle angBone;
+		((CBaseAnimating *)this)->sub_100926e0(pBox->m_iBone, (int)&vecOrigin, (int)&angBone);
+		matrix3x4_t boneToWorld;
+		sub_10139b90(angBone, boneToWorld);
+		Vector vecMin;
+		Vector vecMax;
+		sub_101381b0(pBox->m_vecMins, boneToWorld, vecMin);
+		vecMin.x = vecMin.x + vecOrigin.x;
+		vecMin.y = vecMin.y + vecOrigin.y;
+		vecMin.z = vecMin.z + vecOrigin.z;
+		sub_101381b0(pBox->m_vecMaxs, boneToWorld, vecMax);
+		VectorAdd(vecMax, vecOrigin, vecMax);
+		Vector c;
+		sub_1013c8c0(vecMins, vecMaxs, vecMin, c);
+		bool bMinIn = (vecMin == c);
+		sub_1013c8c0(vecMins, vecMaxs, vecMax, c);
+		bool bMaxIn = (vecMax == c);
+		bool bHit;
+		if (bIntersect)
+			bHit = bMinIn || bMaxIn;
+		else
+			bHit = bMinIn && bMaxIn;
+		if (bInvert)
+			bHit = !bHit;
+		if (bHit)
+		{
+			nHit++;
+			((void (__cdecl *)(CBaseCombatCharacter *, CBaseEntity *, int))pfnCallback)(this, pEntity, i);
+		}
+	}
+	return nHit;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10342c80 size=0x1f9
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
