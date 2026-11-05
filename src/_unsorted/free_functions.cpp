@@ -166810,6 +166810,39 @@ void *CUnk1031a000::sub_1031a000()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1031a050 size=0x3b
+#include "CUnknown10936c84.h"
+
+struct CChainNodeStub
+{
+	char m_pad0000[0x30];
+	CChainNodeStub *m_pNext;
+	CChainNodeStub *m_pPrev;
+};
+
+extern CUnknown10936c84 g_10936c84;
+
+static inline void Unlink(CChainNodeStub *&rNext, CChainNodeStub *&rPrev)
+{
+	if (rNext)
+		rNext->m_pPrev = rPrev;
+	if (rPrev)
+		rPrev->m_pNext = rNext;
+}
+
+// TARGET: sub_1031a050
+void sub_1031a050(CChainNodeStub *pNode)
+{
+	while (pNode)
+	{
+		CChainNodeStub *pCur = pNode;
+		pNode = pCur->m_pNext;
+		Unlink(pCur->m_pNext, pCur->m_pPrev);
+		g_10936c84.sub_1013dce0(pCur);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1031a0a0 size=0x2b
 struct CUnk10936c84 { char sub_1000afe2(void *p); };
 extern int g_10936c84;

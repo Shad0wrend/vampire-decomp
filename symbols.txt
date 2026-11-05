@@ -7676,6 +7676,7 @@
 0x1000c568 func   ?sub_103eee60@CUnknown103eee60@@QAEXXZ CUnknown103eee60::sub_103eee60
 0x1000c56d func   ?vfunc473@CNPC_VPedestrian@@UAEHXZ CNPC_VPedestrian::vfunc473
 0x1000c572 func   ?vfunc104@CAmbientGeneric@@QAEXXZ CAmbientGeneric::vfunc104
+0x1000c57c func   ?sub_1031a050@@YAXPAUCChainNodeStub@@@Z sub_1031a050
 0x1000c581 func   ?sub_1042c310@@YAXH@Z sub_1042c310
 0x1000c586 func   ?sub_10104650@CPointExplosion@@QAEXXZ CPointExplosion::sub_10104650
 0x1000c58b func   ?vfunc255@CBaseAnimating@@QAEXPAX0H@Z CBaseAnimating::vfunc255
