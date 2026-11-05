@@ -158611,6 +158611,24 @@ char __fastcall sub_102ef0e0(void *self, int unused, Info102ef0e0 *pInfo, float 
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ef350 size=0x67
+#include "CUnknown102ef350.h"
+// TARGET: CUnknown102ef350Iface::sub_102ef350
+bool CUnknown102ef350Iface::sub_102ef350(CUnknown102ef350Item *pItem, int a, int *pOut)
+{
+	CUnknown102ef350Owner *owner = *(CUnknown102ef350Owner **)((char *)this - 0xc);
+	if (owner->m_Sink19b0.vfunc3(pItem, a, pOut))
+		return true;
+	if (((CUnknown102ef3e0 *)((char *)this - 0x10))->sub_102ef3e0(&pItem->m_Arg44)) {
+		*pOut = 0;
+		pItem->m_n28 = a;
+		pItem->m_flags38 |= 2;
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ef6a0 size=0x1a
 // TARGET: sub_102ef6a0
 struct CUnk102ef6a0Obj {
