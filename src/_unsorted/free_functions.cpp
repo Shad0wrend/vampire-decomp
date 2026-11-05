@@ -116543,13 +116543,13 @@ extern TraceEnt *g_109f3620;
 extern char g_106b8540[];
 
 // TARGET: CVStatList_t::sub_10201100
-int CVStatList_t::sub_10201100(int stat, int amount)
+char CVStatList_t::sub_10201100(int stat, int amount)
 {
 	g_109f3620[*g_109f3680].a = "CVStatList_t::SubBase";
 	g_109f3620[*g_109f3680].b = g_106b8540;
 	g_109f3620[*g_109f3680].c = g_106b8540;
 	++*g_109f3680;
-	int r = sub_10200fc0(stat, -amount);
+	char r = sub_10200fc0(stat, -amount);
 	--*g_109f3680;
 	return r;
 }
