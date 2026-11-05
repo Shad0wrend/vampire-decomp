@@ -202,6 +202,7 @@ public:
 	char vfunc388(void *weapon, int a);	// switches to the given weapon (Weapon_Switch); true when it became active
 	int vfunc392(void *pInfo);	// "CBaseCombatCharacter::OnTakeDamage_Dead": scope trace (entity name), unless the life state at +0x1fc is 1 lowers the health at +0x210 by the info's damage (a CVDmg_t at info+0 when set, else the float at info+0x30); returns 1
 	int vfunc393();
+	void sub_1032c960(CBaseEntity *pObject);
 	char vfunc402();	// slot 402 "CBaseCombatCharacter::Event_Gibbed": scope trace (entity name), tests the violence_hgibs / violence_agibs convars, take-damage mode 0, AddSolidFlags(4) (inlined scope trace), +0x200 = 2; gibbing calls slot 395 and returns false, else slots 66 and 394
 	void vfunc403();
 	int vfunc404(CBaseEntity *pTarget);	// "CBaseCombatCharacter::IRelationType": scope trace (entity name), 0 for itself / null, 1 / 3 from the faction flags at +0x14bc, else the disposition of the relationship record (+0x1598, count +0x15a0) of the target or of its class (slot 138), 4 when none
