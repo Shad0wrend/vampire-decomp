@@ -13359,6 +13359,7 @@
 0x100146b4 func   ?vfunc546@CNPC_VTest@@QAEHH@Z CNPC_VTest::vfunc546
 0x100146b9 func   ?sub_101d11f0@@YAXPBDPAD@Z sub_101d11f0
 0x100146be func   ?vfunc71@CBaseButton@@UAEXXZ CBaseButton::vfunc71
+0x100146c3 func   ?sub_101b4740@CSoundEmitterSystemBase@@QAEH_N@Z CSoundEmitterSystemBase::sub_101b4740
 0x100146c8 func   ?sub_10126380@@YGMMM@Z sub_10126380
 0x100146cd func   ?sub_100c5600@@YAHHHH@Z sub_100c5600
 0x100146d7 func   ?sub_102e0730@CUnknown102e0730@@QAEXXZ CUnknown102e0730::sub_102e0730

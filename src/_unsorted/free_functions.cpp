@@ -90075,6 +90075,71 @@ CUnknown101b45b0 *CUnknown101b45b0::sub_101b45b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b4740 size=0x160
+#include "CSoundEmitterSystemBase.h"
+
+struct FileSysView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual bool FileExists(const char *pszFileName, const char *pszPathID);
+};
+extern FileSysView *g_1070b238;
+__declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+
+namespace block_101b4740 {
+struct CSoundEmitterUnit : CSoundEmitterSystemBase
+{
+	int sub_101b3220();
+};
+int CSoundEmitterUnit::sub_101b3220()
+{
+	return m_i64;
+}
+}
+using namespace block_101b4740;
+
+// TARGET: CSoundEmitterSystemBase::sub_101b4740
+int CSoundEmitterSystemBase::sub_101b4740(bool bVerbose)
+{
+	int nMissing;
+	int i;
+	int nSounds;
+	nMissing = 0;
+	nSounds = ((CSoundEmitterUnit *)this)->sub_101b3220();
+	for (i = 0; i < nSounds; i++) {
+		CSoundParametersInternal *pSound = sub_101b3730(i);
+		if (!pSound)
+			continue;
+		int nWaves = pSound->m_nWaves;
+		for (int j = 0; j < nWaves; j++) {
+			CUnknown1024b2d0Id id;
+			id.m_id = pSound->m_pWaves[j].m_symbol;
+			const char *pszWave = m_listb0.sub_1024b830(id);
+			if (pszWave && pszWave[0] && pszWave[0] != '!') {
+				const char *psz = pszWave;
+				for (int k = 0; k < 2; k++) {
+					char c = *psz;
+					if (c != '*' && c != '?' && c != '!' && c != '#' && c != '@' && c != '>' && c != '<' && c != '^' && c != ')')
+						break;
+					psz++;
+				}
+				char szFile[512];
+				Q_snprintf(szFile, sizeof(szFile), "sound/%s", psz);
+				if (!g_1070b238->FileExists(szFile, 0)) {
+					nMissing++;
+					pSound->m_bMissingWave48 = 1;
+					if (bVerbose)
+						DevMsg("Sound %s references missing file %s\n", sub_101b31d0(i), pszWave);
+				}
+			}
+		}
+	}
+	return nMissing;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b4900 size=0xbf
 extern "C" __declspec(dllimport) int Q_strcasecmp(const char *, const char *);
 __declspec(dllimport) void DevMsg(const char *, ...);
