@@ -10829,6 +10829,56 @@ void CUnknown10056a00::sub_10056a60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10056ba0 size=0x107
+#include "CTempEntTester.h"
+#include "CEntityVSlots.h"
+
+extern "C" int atoi(const char *);
+extern "C" char *_strlwr(char *);
+__declspec(dllimport) char *Q_strncpy(char *dest, const char *src, int maxLen);
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+CEntityVSlots *sub_100a9ab0(const char *pszName, const float *pOrigin, const float *pAngles, CEntityVSlots *pOwner);
+
+struct CGlobalVarsTE
+{
+	char pad[0xc];
+	float curtime;
+};
+extern CGlobalVarsTE *g_1070b228;
+
+#define max(a,b) (((a) > (b)) ? (a) : (b))
+#define min(a,b) (((a) < (b)) ? (a) : (b))
+
+CTempEntTester *sub_10056ba0(const float *pOrigin, const float *pAngles, const char *pszLifetime, const char *pszName)
+{
+	float life;
+	char classname[128];
+	if (pszLifetime && pszLifetime[0]) {
+		life = atoi(pszLifetime);
+		life = max(1.0, life);
+		life = min(1000.0, life);
+		life += g_1070b228->curtime;
+	} else {
+		Msg("Usage:  te <lifetime> <entname>\n");
+		return 0;
+	}
+	if (pszName && pszName[0]) {
+		Q_strncpy(classname, pszName, sizeof(classname));
+		_strlwr(classname);
+	} else {
+		Msg("Usage:  te <lifetime> <entname>\n");
+		return 0;
+	}
+	CTempEntTester *pTester = (CTempEntTester *)sub_100a9ab0("te_tester", pOrigin, pAngles, 0);
+	if (!pTester)
+		return 0;
+	Q_strncpy(pTester->m_szFilter, classname, 64);
+	pTester->m_flEndTime = life;
+	pTester->vfunc103();
+	return pTester;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10056d00 size=0x4b
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
