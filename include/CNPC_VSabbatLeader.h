@@ -5,6 +5,7 @@
 struct datamap_t;
 
 class CEntityVSlots;
+class CAI_Motor;
 
 struct CNPC_VSabbatLeaderHint
 {
@@ -23,7 +24,9 @@ public:
 	unsigned int m_nEffectFlags;	// +0x19c: bit 4 is set by TransformationStart
 	char pad1a0[0x2e0 - 0x1a0];
 	int m_nEdict2e0;	// +0x2e0: the engine edict index
-	char pad2e4[0xe80 - 0x2e4];
+	char pad2e4[0x3ec - 0x2e4];
+	float m_fl3ec;	// +0x3ec: set to 0.1f by StartTask (task 0x157 family)
+	char pad3f0[0xe80 - 0x3f0];
 	int m_nPresence0;	// +0xe80: cleared by UpdatePresenceEffect
 	int m_nPresence1;	// +0xe84
 	int m_nPresence2;	// +0xe88
@@ -39,10 +42,19 @@ public:
 	const char *m_pszFile1b30;	// +0x1b30: source file stamp
 	int m_nLine1b34;	// +0x1b34: source line stamp
 	int m_n1b38;	// +0x1b38: set to 0x1f by SelectIdealState
-	char pad1b3c[0x5cc0 - 0x1b3c];
+	char pad1b3c[0x1b44 - 0x1b3c];
+	const char *m_pszFile1b44;	// +0x1b44: source file stamp of StartTask's failures
+	int m_nLine1b48;	// +0x1b48: its line
+	char pad1b4c[0x5cc0 - 0x1b4c];
 	int m_nState5cc0;	// +0x5cc0
 	int m_nState5cc4;	// +0x5cc4
-	char pad5cc8[0x6078 - 0x5cc8];
+	char pad5cc8[0x5d44 - 0x5cc8];
+	CAI_Motor *m_pMotor5d44;	// +0x5d44: the NPC's motor
+	char pad5d48[0x5d9c - 0x5d48];
+	float m_flTime5d9c;	// +0x5d9c: set to gpGlobals->curtime by task 0x14e
+	char pad5da0[0x5ddc - 0x5da0];
+	CNPC_VSabbatLeaderHint *m_pHint5ddc;	// +0x5ddc: the hint chosen by StartTask (jump / teleport / dive-out target)
+	char pad5de0[0x6078 - 0x5de0];
 	char m_b6078;	// 0x6078 (CAI_BaseNPCTroika::m_b6078): set while slot 599 / 600 hold the ranged position
 	char pad6079[0x6268 - 0x6079];
 	float m_f6268;	// 0x6268 (CAI_BaseNPCTroika::m_f6268)
@@ -51,9 +63,15 @@ public:
 	float m_fl6274;	// 0x6274 (CAI_BaseNPCTroika::m_fl6274): a timer (-1.0f when unset)
 	char pad6278[0x628c - 0x6278];
 	unsigned int m_hPlayer;	// +0x628c: entity handle of the tracked player
-	char m_pad6290[0x6498 - 0x6290];
+	char m_pad6290[0x6496 - 0x6290];
+	char m_b6496;	// +0x6496: set to 1 by task 0x14e
+	char m_pad6497;
 	bool m_bJumping;	// 0x6498
-	char m_pad6499[0x6680 - 0x6499];
+	char m_pad6499[0x649c - 0x6499];
+	Vector m_vJumpOrigin;	// +0x649c: this entity's origin when the jump starts
+	Vector m_vJumpTarget;	// +0x64a8: the hint's origin
+	float m_fJumpHeight;	// +0x64b4: 200.0f
+	char m_pad64b8[0x6680 - 0x64b8];
 	const char *m_pMonsterModelName;	// +0x6680
 	char pad6684[0x6694 - 0x6684];
 	const char *m_pDefaultNPCName;	// +0x6694
@@ -136,6 +154,7 @@ public:
 	void sub_103c60a0();	// CNPC_VVampireBoss::vfunc618 (stub 0x10014df3), called directly
 	CNPC_VSabbatLeaderHint *sub_103a9ad0();	// "CNPC_VSabbatLeader::SelectDiveOut...": scope trace, like sub_103a9540 for the hints of type 0x3e85: at least a constant away on the ground plane, the best (lowest) of that distance plus the yaw difference to the player's facing
 	CNPC_VSabbatLeaderHint *sub_103a9540();	// "CNPC_VSabbatLeader::SelectTeleportHint": scope trace, with the player entity (handle at +0x628c) live, the teleport hint (type 0x3e82, global list at 0x10925450 via +0x5d8) at least a constant away on the ground plane whose direction to the player is closest to the player's facing yaw; 0 when none
+	CNPC_VSabbatLeaderHint *sub_103a9760();	// 0x103a9760 (stub 0x1000194c): the sibling of sub_103a9540 for the other hint type; StartTask (vfunc442, case 0x152..) stores its result at +0x5ddc, and a null result fails the task (slot 448 with 1, stamp +0x1b44 / +0x1b48 line 0x25a)
 	void sub_103aad40();	// "CNPC_VSabbatLeader::SetJumpVelocityTowardPlayer": scope trace, with the player entity (handle at +0x628c) live, the jump velocity toward a point 25 units short of the player on the horizontal line between the two
 	void sub_10009a57(Vector *pVelocity, const Vector *pStart, const Vector *pEnd);	// CAI_BaseNPCTroika member (stub 0x10009a57, body 0x102c4cc0): fills the x / y of pVelocity (z in) for a ballistic jump from pStart to pEnd
 	void sub_1000489a(const Vector *pVelocity);	// CBaseEntity::sub_100b2770 (stub 0x1000489a): sets the velocity
@@ -145,6 +164,18 @@ public:
 	void sub_103ab580();	// stub 0x100065a0, called by SelectSchedule
 	void CheckStuck();	// 0x103ab580 "CNPC_VSabbatLeader::CheckStuck" (the same function, now renamed): scope trace; collision-box separation test between this and the player entity (handle +0x628c) and a shift of this entity
 	char sub_10269aa0(int condition);	// "HasCondition" (stub 0x10014df8)
+
+	// Callees of vfunc442 (StartTask, 0x103a78c0, the task switch on *pTask: ret 4, one task pointer)
+	void vfunc442(const int *pTask);	// "CNPC_VSabbatLeader::StartTask" (slot 442 override): scope trace; clears +0x66e4 (sub_103c7150) unless the task is 0x161/0x162; tasks 0x14e..0x15f pick hints / start sounds / leap, others go to CNPC_VVampireBoss::vfunc442
+	void sub_1000de7c(const int *pTask);	// CNPC_VVampireBoss::vfunc442 (stub 0x1000de7c), called directly
+	void sub_103c7150();	// CNPC_VVampireBoss::sub_103c7150 (stub 0x1000f673): clears the particle state
+	void sub_103c59d0(int hintType, int a);	// CNPC_VVampireBoss::sub_103c59d0 (stub 0x100053a3): starts a hint search of the type (0x3e80..0x3e83)
+	void sub_10273e80(int a);	// CAI_BaseNPC member (stub 0x1000ac68), called with 0 after most tasks (TaskComplete)
+	void sub_10289ee0(int state);	// CAI_BaseNPC member (stub 0x10014524), called with 0x113f / 0x1140
+	void sub_102c4e80();	// stub 0x10011a31
+	int sub_1027d990();	// stub 0x100023a1, compared with 1
+	void sub_1027d9b0(int a);	// stub 0x10011e14
+	void sub_102c4ad0(void *pEnt, int a, int b);	// CAI_BaseNPCTroika member (stub 0x10011784), 3 stack arguments
 public:
 	bool vfunc70();
 	datamap_t * vfunc82();
