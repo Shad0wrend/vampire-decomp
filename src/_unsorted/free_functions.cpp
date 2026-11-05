@@ -68955,6 +68955,29 @@ int sub_10152400()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10155010 size=0x26
+#include "CUnknown100dd990.h"
+
+struct CFlagsUnitView {
+    char m_pad0000[0x44];
+    unsigned short m_wFlags44;
+    void sub_100dc580(unsigned int flags);
+};
+
+struct CUnknown10155010View {
+    char m_pad0000[0x270];
+    void sub_10155010();
+};
+
+void CUnknown10155010View::sub_10155010()
+{
+    CUnknown100dd990 *pSub = (CUnknown100dd990 *)((char *)this + 0x270);
+    pSub->sub_100dd990(2, 0, 0);
+    CFlagsUnitView *p = (CFlagsUnitView *)pSub;
+    p->sub_100dc580(p->m_wFlags44 & ~0x80);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101550d0 size=0x37
 #include "CRagdollProp.h"
 
