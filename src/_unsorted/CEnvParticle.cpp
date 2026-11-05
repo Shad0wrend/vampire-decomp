@@ -139,6 +139,45 @@ void CEnvParticle::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fb540 size=0x8d
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CEnvParticle.h"
+extern char g_106b8540[];
+static inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+struct IPM {
+    virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3();
+    virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7();
+    virtual void s8(); virtual void s9(); virtual void s10(); virtual void s11();
+    virtual void s12(); virtual void s13(); virtual void s14(); virtual void s15();
+    virtual void s16();
+    virtual int Find(const char *name, int create);
+};
+extern IPM *g_1070b22c;
+extern void (__cdecl *g_109f362c)(const char *, ...);
+void sub_101cf7c0(const char *, char *, int);
+
+struct CParticleNameView { char pad[0x450]; const char *m_pszName; };
+
+void CEnvParticle::vfunc104()
+{
+    CParticleNameView *v = (CParticleNameView *)this;
+    if (m_iParticleIndex < 0) {
+        if (v->m_pszName) {
+            char buf[260];
+            sub_101cf7c0(STRINGR(v->m_pszName), buf, 260);
+            m_iParticleIndex = g_1070b22c->Find(buf, 1);
+            if (m_iParticleIndex < 0)
+                g_109f362c("Can't find particle %s\n", STRINGR(v->m_pszName));
+        } else {
+            m_iParticleIndex = -1;
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fb7a0 size=0x19
 #include "CEnvParticle.h"
 #include "globalvars.h"

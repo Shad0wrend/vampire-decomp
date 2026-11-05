@@ -13860,6 +13860,7 @@
 0x1001524e func   ?sub_10099360@CUnk10099360@@QAEXHM@Z CUnk10099360::sub_10099360
 0x10015253 func   ?vfunc452@CNPC_VYukie@@UAEDXZ CNPC_VYukie::vfunc452
 0x10015258 func   ?sub_102490e0@CKeyValuesX@@QAEXPBD0@Z CKeyValuesX::sub_102490e0
+0x1001525d func   ?vfunc104@CEnvParticle@@QAEXXZ CEnvParticle::vfunc104
 0x10015262 func   ?vfunc39@CBaseEntity@@UAEXPAV1@@Z CBaseEntity::vfunc39
 0x1001526c func   ?sub_1006a370@@YAXPAVCUnknown1019d130@@HPAUTERecipientX@@HDPBD@Z sub_1006a370
 0x10015271 func   ?vfunc420@CNPC_VGargoyle@@QAEXXZ CNPC_VGargoyle::vfunc420
