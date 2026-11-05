@@ -41,6 +41,48 @@ void CSceneEntity::vfunc180()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10080e70 size=0xb9
+#include "CSceneEntity.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+struct CEngineView
+{
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4();
+	virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9();
+	virtual void a10(); virtual void a11(); virtual void a12();
+	virtual int v13(const char *pszName, int bPreload);
+};
+extern CEngineView *g_1070b22c;
+
+struct SceneView
+{
+	char pad0[0x450];
+	const char *m_pszScene;
+	char pad1[0x480 - 0x454];
+	const char *m_isz480;
+	const char *m_isz484;
+	const char *m_isz488;
+	int m_n48c;
+	int m_n490;
+	int m_n494;
+	char pad2[0x4bc - 0x498];
+	int m_n4bc;
+};
+
+void CSceneEntity::vfunc104()
+{
+	SceneView *v = (SceneView *)this;
+	sub_10083a30(STRINGR_F(v->m_pszScene));
+	if (v->m_n4bc) {
+		v->m_n48c = v->m_isz480 ? g_1070b22c->v13(STRINGR_F(v->m_isz480), 0) : 0;
+		v->m_n490 = v->m_isz484 ? g_1070b22c->v13(STRINGR_F(v->m_isz484), 0) : 0;
+		v->m_n494 = v->m_isz488 ? g_1070b22c->v13(STRINGR_F(v->m_isz488), 0) : 0;
+		sub_10080cb0(v->m_n4bc);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10080f60 size=0x8
 #include "CSceneEntity.h"
 // TARGET: CSceneEntity::vfunc103
