@@ -5,6 +5,7 @@ struct Ray_t;
 struct CGameTrace;
 class CBaseEntity;
 class CTraceFilterNoCharacterCollide;
+class CTriggerTraceEnum;
 
 class CUnknown1070b254
 {
