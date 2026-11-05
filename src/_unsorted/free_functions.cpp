@@ -158631,6 +158631,27 @@ bool CUnk102ef6a0::sub_102ef6a0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ef6d0 size=0x6b
+#include "CUnknown102ef350.h"
+// TARGET: CUnknown102ef350Iface::sub_102ef6d0
+bool CUnknown102ef350Iface::sub_102ef6d0(int a, CUnknown102ef3e0Arg *b, int type, int *pOut)
+{
+	CUnknown102ef350Owner *owner = *(CUnknown102ef350Owner **)((char *)this - 0xc);
+	if (!owner->m_Sink19b0.vfunc7(a, (int)b, type, pOut)) {
+		if (type == 4) {
+			((CUnknown102ef350Outer *)((char *)this - 0x10))->vfunc8();
+			*pOut = 0;
+			return true;
+		}
+		if (type == 2) {
+			if (((CUnknown102ef3e0 *)((char *)this - 0x10))->sub_102ef3e0(b))
+				*pOut = 0;
+		}
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102efd50 size=0x68
 #include "CAI_Navigator.h"
 
