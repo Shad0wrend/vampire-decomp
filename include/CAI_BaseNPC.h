@@ -280,6 +280,8 @@ public:
 	bool sub_1027d0a0();	// SelectIdealState helper: with the take-damage mode (+0x200) at 1 stamps the source file/line (+0x1b3c / +0x1b40) and sets the state (+0x5cc4) to 7 and returns false; else cancels the scripted sequence entity of the handle at +0x5d74 (CCineNPC::sub_101a8c30) and returns true
 	int sub_10265970();	// picks a hurt/idle activity (0x49 default, 0x66 / 0x68..0x6c by the value at +0x1594) that the model has a sequence for (CBaseAnimating::SelectWeightedSequence), else 0x49; first computes AngleVectors of GetAngles() (unused)
 	int sub_1008dc40(int a, int b);	// CBaseAnimating::SelectWeightedSequence, called directly
+	const char *sub_100ab4f0();	// CBaseEntity::GetDebugName (stub 0x1000b5cd)
+	void sub_10280c80();	// the AI report hand-off run at the end of the slow-think report
 	int sub_1008dd30(int a, int b);	// CBaseAnimating member (stub 0x10004ec1), called directly by sub_1026c540 when the byte at +0x65d is clear
 	void sub_1026c120(int a, int b);	// "CAI_BaseNPC::PerformMovement": scope trace (entity name), profiled as CAI_BaseNPC_PerformMovement; times slot 5 of the object at +0x5d34 called with (a, b) in the global cycle counter at 0x1090ff58
 	float sub_1026c540();	// "CAI_BaseNPC::RunAnimation": profiled as CAI_BaseNPC_RunAnimation; slot 250(0) gives the advance (zeroed while the debug flag bit 1 is set and the navigator at +0x5d34 does not answer sub_102ee6a0), slot 538 when the class flags (slot 513) have bit 29, then for an NPC in a state other than 4 / 7 with the activity at +0xfec equal to 1 and slot 251 true selects a sequence for +0xff4 and sets it (sub_10260a50); returns the advance
