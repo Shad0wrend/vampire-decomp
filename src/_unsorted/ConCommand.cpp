@@ -50,6 +50,17 @@ void ConCommand::vfunc7(const char *pszName, void (*pCallback)(), const char *ps
 }
 // END FUNCTION
 
+// FUNCTION: 0x102459f0 size=0x1c
+#include "ConCommand.h"
+
+int ConCommand::vfunc4(int a, int b)
+{
+	if (!m_pfnCompletion)
+		return 0;
+	return ((int (__cdecl *)(int, int))m_pfnCompletion)(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10245a20 size=0x4
 // TARGET: sub_10245a20
 char __fastcall sub_10245a20(void *p) { return ((unsigned char *)p)[0x24]; }
