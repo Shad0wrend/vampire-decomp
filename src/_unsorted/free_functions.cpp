@@ -173057,6 +173057,58 @@ CBaseEntity *__fastcall sub_1032ab60(CBCCHullView *pThis, int unused, float flDi
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032ad30 size=0x19d
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CBaseCombatCharacter.h"
+#include "CEntityVSlots.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738964.h"
+#include "CUnknown101c26d0.h"
+
+void sub_10146570(const float *pStart, const float *pEnd, int r, int g, int b, int a, float flDuration);
+
+// TARGET: CBaseCombatCharacter::sub_1032ad30
+CBaseEntity *CBaseCombatCharacter::sub_1032ad30(const Vector &start, const float *pEnd, const float *pMins, const float *pMaxs, int damage, int bitsDamageType)
+{
+	ScopeTrace trace("CBaseCombatCharacter::CheckTraceHullAttack", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc, g_106b8540);
+	CGameTrace tr;
+	{
+		Ray_t ray;
+		ray.sub_1006dec0(start, pEnd, pMins, pMaxs, 0, 0);
+		CTraceFilterSimple filter(this, 0);
+		g_1070b254->vfunc4(&ray, 0x600400b, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+	}
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10146570(tr.m_startpos, tr.m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+	if (!tr.m_startsolid && tr.m_pEnt)
+	{
+		CBaseEntity *pHit = tr.m_pEnt;
+		if (pHit->m_nTakeDamage)
+		{
+			if (((CEntityVSlots *)this)->slot404(pHit) == 1 && damage > 0)
+			{
+				CUnknown101c26d0 info;
+				pHit->sub_100a1250(info.sub_101c26d0(this, this, (float)damage, bitsDamageType, 0, 0, -1));
+			}
+			return pHit;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032b960 size=0x3c
 #include "TempVector.h"
 
