@@ -35609,6 +35609,63 @@ int sub_100ba470()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ba620 size=0x3ac
+#include "SendProp.h"
+
+SendProp sub_10246af0(const char *pName, int a, int b, int c, int d, int e, void *pProxy);
+SendProp sub_10246dc0(const char *pName, int a, int b, void *pProxy);
+SendProp sub_10246ef0(int a, int b, const char *pName, int c);
+SendProp sub_10246700(const char *pName, int a, int b, int c, int d, float lo, float hi, void *pProxy);
+SendProp sub_101ab220(const char *pName, int a, int b);
+SendProp sub_10246510(const char *pName, int a, int b, int c, int d, float lo, float hi, void *pProxy);
+void sub_10246300();
+void sub_10003012();
+void sub_100baac0();
+
+struct S_SendTable
+{
+	void sub_10247240(SendProp *pProps, int nProps, const char *pName);
+};
+
+extern S_SendTable g_106d15b4;
+extern const char *g_1055a978;
+extern int g_106d16d4;
+
+int sub_100ba620()
+{
+	static SendProp s_props[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246af0("m_nBeamType", 0x464, 4, 8, 1, 0, 0),
+		sub_10246af0("m_nNumBeamEnts", 0x45c, 4, 5, 1, 0, 0),
+		sub_101ab220("m_hAttachEntity[0]", 0x468, 4),
+		sub_10246ef0(10, 4, "m_hAttachEntity", 0),
+		sub_10246af0("m_nAttachIndex[0]", 0x490, 4, 5, 1, 0, 0),
+		sub_10246ef0(10, 4, "m_nAttachIndex", 0),
+		sub_10246af0("m_nHaloIndex", 0x460, 4, 0x10, 1, 0, 0),
+		sub_10246510("m_fHaloScale", 0x4c4, 4, 0, 4, 0.0f, -121121.121212f, (void *)sub_10246300),
+		sub_10246510("m_fWidth", 0x4b8, 4, 8, 0x10, 0.0f, 25.5f, (void *)sub_10246300),
+		sub_10246510("m_fEndWidth", 0x4bc, 4, 8, 0x10, 0.0f, 25.5f, (void *)sub_10246300),
+		sub_10246510("m_fFadeLength", 0x4c0, 4, 0, 4, 0.0f, -121121.121212f, (void *)sub_10246300),
+		sub_10246510("m_fAmplitude", 0x4c8, 4, 8, 8, 0.0f, 64.0f, (void *)sub_10246300),
+		sub_10246510("m_fStartFrame", 0x4cc, 4, 8, 8, 0.0f, 256.0f, (void *)sub_10246300),
+		sub_10246510("m_fSpeed", 0x4d0, 4, 8, 0x10, 0.0f, 100.0f, (void *)sub_10246300),
+		sub_10246af0("m_nRenderFX", 0x168, 4, 8, 1, 0, 0),
+		sub_10246af0("m_nRenderMode", 0x16c, 4, 8, 1, 0, 0),
+		sub_10246510("m_flFrameRate", 0x450, 4, 0xa, 0x10, -25.0f, 25.0f, (void *)sub_10246300),
+		sub_10246510("m_flFrame", 0x4d4, 4, 0x14, 8, 0.0f, 256.0f, (void *)sub_10246300),
+		sub_10246af0("m_clrRender", 0x1a0, 4, 0x20, 1, 0, 0),
+		sub_10246700("m_vecEndPos", 0x4d8, 0xc, -1, 2, 0.0f, -121121.121212f, (void *)sub_10003012),
+		sub_10246af0("m_nModelIndex", 0x1a4, 4, 0xb, 0, 0, 0),
+		sub_10246700("m_vecOrigin", 0x41c, 0xc, 0x13, 0, -16384.0f, 16384.0f, (void *)sub_10003012),
+		sub_101ab220("moveparent", 0x25c, 4),
+		sub_10246dc0("beampredictable_id", 0, (int)&g_106d16d4, (void *)sub_100baac0),
+		sub_10246700("m_vecFacingTarget", 0x4e8, 0xc, 0x13, 0, -16384.0f, 16384.0f, (void *)sub_10003012)
+	};
+	g_106d15b4.sub_10247240(&s_props[1], 0x19, g_1055a978);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bac20 size=0x1a
 namespace lifted {
 extern int g_1055a97c;

@@ -8844,6 +8844,7 @@
 0x1000e034 func   _prop_largehull_ignore prop_largehull_ignore
 0x1000e039 func   ?sub_101eaa80@@YAXH@Z sub_101eaa80
 0x1000e03e func   ?vfunc63@CBaseEntity@@UAEXVVector@@@Z CBaseEntity::vfunc63
+0x1000e043 func   ?sub_100ba620@@YAHXZ sub_100ba620
 0x1000e048 func   ?sub_102f7a10@@YAXXZ sub_102f7a10
 0x1000e04d func   ?PhysicsCheckWater@CBaseEntity@@QAE_NXZ CBaseEntity::PhysicsCheckWater
 0x1000e052 func   ?vfunc2@CAI_ExpresserSink@@UAEXXZ CAI_ExpresserSink::vfunc2
