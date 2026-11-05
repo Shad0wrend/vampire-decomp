@@ -86410,6 +86410,42 @@ char CEnvSoundscape::sub_101ae440(void *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ae940 size=0x1af
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+
+extern int g_1072bc10;
+int sub_101af070(const char *pszName);
+
+struct SPlayEdictUnknown
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual CEntitySoundOriginView *vfunc4();
+};
+
+struct SPlayEdict
+{
+	char m_pad0000[0x40];
+	SPlayEdictUnknown *m_pUnknown;
+};
+
+int sub_101ae940(SPlayEdict *pEdict, int nGroup, float flVolume, int iSoundlevel, int iFlags, int iPitch)
+{
+	if (g_1072bc10) {
+		char szName[64];
+		szName[0] = 0;
+		if (engine->vfunc51(nGroup, szName, sizeof(szName)) > 0) {
+			int iSentence = sub_101af070(szName);
+			CEntitySoundOriginView *pEntity = (pEdict && pEdict->m_pUnknown) ? pEdict->m_pUnknown->vfunc4() : 0;
+			CPASAttenuationFilter filter(pEntity, (soundlevel_t)iSoundlevel);
+			enginesound->vfunc4(&filter, engine->vfunc35((int)pEdict), 2, iSentence, flVolume, iSoundlevel, iFlags, iPitch, 0, 0, 1, 0);
+			return iSentence;
+		}
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aeb60 size=0x1d2
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
