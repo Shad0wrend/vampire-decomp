@@ -4847,6 +4847,112 @@ void sub_1003b8a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003bad0 size=0x25b
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CVProfile.h"
+#include "globalvars.h"
+
+struct CPlrObj { char pad[0x23a0]; char m_b23a0; };
+struct CPlrE { char pad[0xa8]; CPlrObj *m_p; };
+struct CSubObj {
+	char pad[1];
+	char __fastcall sub_1042d6b0();
+	int __fastcall sub_1042d700();
+};
+struct CTimeObj { char pad[0x2358]; float m_t2358; };
+struct CSimEnt {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49();
+	virtual void v50(); virtual void v51(); virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55(); virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59();
+	virtual void v60(); virtual void v61(); virtual void v62(); virtual void v63(); virtual void v64(); virtual void v65(); virtual void v66(); virtual void v67(); virtual void v68(); virtual void v69();
+	virtual void v70(); virtual void v71(); virtual void v72(); virtual void v73(); virtual void v74(); virtual void v75(); virtual void v76(); virtual void v77(); virtual void v78(); virtual void v79();
+	virtual void v80(); virtual void v81(); virtual void v82(); virtual void v83(); virtual void v84(); virtual void v85(); virtual void v86(); virtual void v87(); virtual void v88(); virtual void v89();
+	virtual void v90(); virtual void v91(); virtual void v92(); virtual void v93(); virtual void v94(); virtual void v95(); virtual void v96();
+	virtual CPlrE *vfunc97();
+	char pad[0x1a8 - 4];
+	CSubObj m_sub;
+	char pad2[0x2e0 - 0x1a8 - 1];
+	int m_n2e0;
+	unsigned int sub_100b3700();
+	char sub_100b4b20();
+	CTimeObj *sub_100b4010();
+	void sub_100b3ee0();
+	void sub_10033f60(int);
+	void sub_10040390();
+};
+struct CListNode { int pad; CListNode *next; int pad2; CPlrObj *m_p; };
+extern CListNode *g_10939fdc;
+CPlrE *__cdecl sub_101cd9e0(int);
+struct CCycleSampler { void Sample(CUnknownCycle100335e0 *p) { unsigned long *q = (unsigned long *)p; __asm { mov ecx, q
+ rdtsc
+ mov [ecx], eax
+ mov [ecx+4], edx } } };
+
+// TARGET: sub_1003bad0
+void sub_1003bad0(CSimEnt *pEntity)
+{
+	ScopeTrace trace("Physics_SimulateEntity", g_106b8540, g_106b8540);
+	if (pEntity->sub_100b3700() & 0x40000)
+		return;
+	if (pEntity->m_n2e0) {
+		if (pEntity->sub_100b4b20()) {
+			CTimeObj *p = pEntity->sub_100b4010();
+			if (p) {
+				float t = p->m_t2358;
+				if (t > gpGlobals->curtime - 1.0f)
+					return;
+			}
+			pEntity->sub_100b3ee0();
+		}
+		if (pEntity->m_sub.sub_1042d6b0()) {
+			CPlrE *e = pEntity->vfunc97();
+			if (e) {
+				CPlrObj *pObj = e->m_p;
+				if (pObj) {
+					CPlrE *p2 = sub_101cd9e0(pEntity->m_sub.sub_1042d700() + 1);
+					if (p2)
+						p2 = (CPlrE *)p2->m_p;
+					if ((CPlrObj *)p2 == pObj && ((CPlrObj *)p2)->m_b23a0) {
+						for (CListNode *n = g_10939fdc; n; n = n->next)
+							n->m_p = pObj;
+					}
+				}
+			}
+		}
+		CVProfile *pr = g_109f3648;
+		if (pr->m_enabled || !pr->m_bAtRoot) {
+			if (pr->m_pCurNode->m_pszName != "pEntity->PhysicsSimulate")
+				pr->m_pCurNode = pr->m_pCurNode->GetSubNode("pEntity->PhysicsSimulate", 0, "Unaccounted");
+			CVProfNode *node = pr->m_pCurNode;
+			node->m_nCurFrameCalls++;
+			if (node->m_nRecursions++ == 0) {
+				CCycleSampler s;
+				s.Sample(&node->m_CurFrameTime);
+				g_109f3648->PushGroup(node->m_nBudgetGroupID);
+			}
+			pr->m_bAtRoot = false;
+		}
+		pEntity->sub_10040390();
+		g_109f3648->ExitScopeInlined();
+		for (CListNode *n = g_10939fdc; n; n = n->next)
+			n->m_p = 0;
+	} else {
+		pEntity->sub_10033f60(0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003bdd0 size=0x26a
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
