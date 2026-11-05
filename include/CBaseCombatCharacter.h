@@ -76,6 +76,8 @@ public:
 	virtual void c366(); virtual void c367(); virtual void c368(); virtual void c369();
 	virtual void c370(); virtual void c371(); virtual void c372(); virtual void c373();
 	virtual int vfunc374(int count, int ammoIndex, int unused);	// slot 374 "CBaseCombatCharacter::GiveAmmo" by index
+	void vfunc385(CBaseCombatWeapon *pWeapon, int nUnused, char bForce);	// slot 385 "CBaseCombatCharacter::Weapon_Drop" (plain member)
+	void sub_10335470(CBaseCombatWeapon *pWeapon);
 	void vfunc386();	// slot 386 "CBaseCombatCharacter::Weapon_Drop" (plain: a virtual here would shift the derived classes' slots)
 	void sub_1032cbe0(void *pWeapon);	// unnamed 0x1032cbe0
 
