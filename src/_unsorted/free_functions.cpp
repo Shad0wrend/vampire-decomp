@@ -33493,6 +33493,89 @@ void sub_100afe70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aff90 size=0x1d5
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+
+class CBasePlayer;
+CBasePlayer *sub_101193b0();
+CBaseEntity *sub_10136580(const char *pszClassname);
+void sub_101ce620(void *pPlayer, int nType, const char *pszText, const char *p1, const char *p2, const char *p3, const char *p4);
+const char *sub_101cf720(const char *pszFormat, const char *pszValue);
+
+struct STypeDescView	// one datamap field (0x2c bytes)
+{
+	char m_pad0000[0x12];
+	unsigned char m_nFlags;	// 0x12
+	char m_pad0013;
+	const char *m_pszExternalName;	// 0x14
+	char m_pad0018[0x2c - 0x18];
+};
+
+struct SDatamapView
+{
+	STypeDescView *m_pDataDesc;	// 0x00
+	int m_nFields;	// 0x04
+	const char *m_pszClassName;	// 0x08
+	SDatamapView *m_pBaseMap;	// 0x0c
+};
+
+struct SDeletableView	// slot 5 is the scalar deleting destructor
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void vfunc5(unsigned int flags);
+};
+
+struct SCommandClientView
+{
+	char m_pad0000[0xa8];
+	void *m_pPlayer;	// 0xa8
+};
+
+void sub_100aff90()
+{
+	ScopeTrace trace("CC_Ent_Info", g_106b8540);
+	SCommandClientView *pCommandClient = (SCommandClientView *)sub_101193b0();
+	void *pPlayer = pCommandClient ? pCommandClient->m_pPlayer : 0;
+	if (!pPlayer)
+		return;
+
+	if (engine->vfunc85() < 2) {
+		sub_101ce620(pPlayer, 2, "Usage:\n   ent_info <class name>\n", 0, 0, 0, 0);
+	} else {
+		CBaseEntity *pEntity = sub_10136580(engine->vfunc84(1));
+		if (pEntity) {
+			SDatamapView *pMap;
+			int i;
+			for (pMap = (SDatamapView *)pEntity->vfunc82(); pMap; pMap = pMap->m_pBaseMap) {
+				for (i = 0; i < pMap->m_nFields; i++) {
+					if (pMap->m_pDataDesc[i].m_nFlags & 0x10)
+						sub_101ce620(pPlayer, 2, sub_101cf720("  output: %s\n", pMap->m_pDataDesc[i].m_pszExternalName), 0, 0, 0, 0);
+				}
+			}
+			for (pMap = (SDatamapView *)pEntity->vfunc82(); pMap; pMap = pMap->m_pBaseMap) {
+				for (i = 0; i < pMap->m_nFields; i++) {
+					if (pMap->m_pDataDesc[i].m_nFlags & 8)
+						sub_101ce620(pPlayer, 2, sub_101cf720("  input: %s\n", pMap->m_pDataDesc[i].m_pszExternalName), 0, 0, 0, 0);
+				}
+			}
+			((SDeletableView *)pEntity)->vfunc5(1);
+		} else {
+			sub_101ce620(pPlayer, 2, sub_101cf720("no such entity %s\n", engine->vfunc84(1)), 0, 0, 0, 0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b0280 size=0x77
 #include "IVEngineServer.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };

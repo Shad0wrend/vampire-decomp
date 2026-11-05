@@ -12323,6 +12323,7 @@
 0x10012f80 func   ?vfunc82@CNPC_VScurrying@@UAEPAUdatamap_t@@XZ CNPC_VScurrying::vfunc82
 0x10012f8a func   ?sub_1016cf30@CBasePlayer@@QAEXXZ CBasePlayer::sub_1016cf30
 0x10012f8f func   ?vfunc291@CWeaponIWritten@@UAEXXZ CWeaponIWritten::vfunc291
+0x10012f99 func   ?sub_100aff90@@YAXXZ sub_100aff90
 0x10012f9e func   ?vfunc1@CTEPlayerDecal@@UAEHXZ CTEPlayerDecal::vfunc1
 0x10012fa3 func   _item_p_occult_heal_rate item_p_occult_heal_rate
 0x10012fa8 func   ?sub_1030b8e0@CUnknown1030b8e0@@QAEHXZ CUnknown1030b8e0::sub_1030b8e0
