@@ -952,6 +952,51 @@ void * CBaseEntity::vfunc4()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10035780 size=0x245
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "Ray_t.h"
+#include "CBaseEntity.h" 
+#include "CGameTrace.h" 
+#include "CCollisionProperty.h" 
+#include "ScopeTrace.h" 
+#include "PhysicsTrace.h" 
+#include "CEntityVSlots.h" 
+#include "CEHandleGet.h" 
+#include "CBaseNetworkable.h"
+extern void (*g_109f362c)(const char *,...);
+struct IServerNetworkableX { virtual void n0(); virtual void n1(); virtual void n2(); virtual void n3(); virtual void n4(); virtual const char *n5(); };
+struct IServerUnknownX { virtual void v0(); virtual void v1(); virtual void v2(); virtual struct IServerNetworkableX *v3(); virtual void v4();
+ const char *Name() { IServerNetworkableX *p = v3(); return p->n5(); } };
+struct EdictX { char pad[0x40]; IServerUnknownX *m_p40; };
+CGameTrace *CBaseEntity::vfunc234(CGameTrace *pResult, const Vector *pDelta) {
+ ScopeTrace trace("CBaseEntity::PhysicsPushEntity", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc, g_106b8540);
+ if ( EHandle_Get( m_hMoveParent ) ) {
+   EdictX *e = (EdictX *)m_pEdict2e0;
+   (*g_109f362c)("pushing entity (%s) that has m_pMoveParent!\n", !e->m_p40 ? g_106b8540 : e->m_p40->Name()); }
+ unsigned int mask = ((CEntityVSlots *)this)->slot237();
+ Vector vecOrigin = *((CEntityVSlots *)this)->slot220();
+ Vector vecTarget; VectorAdd( *((CEntityVSlots *)this)->slot220(), *pDelta, vecTarget );
+ bool bSolid; { ScopeTrace traceSolid("CBaseEntity::IsSolid", m_name26c ? m_name26c : g_106b8540, g_106b8540);
+   CCollisionProperty *pCollision = (CCollisionProperty *)((char *)this + 0x270);
+   bSolid = (pCollision->m_nSolidType != 0 && !(pCollision->m_usSolidFlags & 4)); }
+ if ( !bSolid || (((CEntityVSlots *)this)->slot211() & 0x28) ) mask &= 0xfdffffff;
+ CCollisionProperty *pCollision = (CCollisionProperty *)((char *)this + 0x270);
+ const Vector *pMins = (const Vector *)pCollision->vfunc1();
+ CGameTrace trace2;
+ sub_10035030(this, ((CEntityVSlots *)this)->slot220(), &vecTarget, pMins, (const Vector *)pCollision->vfunc2(), mask, &trace2);
+ if ( trace2.m_fraction != g_104454c4 ) vfunc62( trace2.m_endpos );
+ sub_100a53d0( (int)&vecOrigin );
+ if ( trace2.m_pEnt ) sub_1003e6c0( trace2.m_pEnt, &trace2 );
+ *pResult = trace2; return pResult; }
+// END FUNCTION
+
 // FUNCTION: 0x10038710 size=0x232
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
