@@ -10319,6 +10319,7 @@
 0x100101e0 func   ?sub_1037a5b0@@YIXPAX@Z sub_1037a5b0
 0x100101ea func   ?sub_1032a910@CBaseCombatCharacter@@QAEXHH@Z CBaseCombatCharacter::sub_1032a910
 0x100101f4 func   ?vfunc5@CSoundScheme@@QAEPAV1@I@Z CSoundScheme::vfunc5
+0x100101f9 func   ?sub_10132a00@CEnvGlobal@@QAEXH@Z CEnvGlobal::sub_10132a00
 0x100101fe func   ?vfunc372@CWeaponThrown_Grenade_Frag@@QAEPAVCBaseEntity@@VVector@@000@Z CWeaponThrown_Grenade_Frag::vfunc372
 0x10010203 func   ?vfunc128@CFuncBrush@@QAE_NXZ CFuncBrush::vfunc128
 0x10010208 func   ?sub_10146500@@YAXXZ sub_10146500
