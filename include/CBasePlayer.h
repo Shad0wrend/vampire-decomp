@@ -510,7 +510,9 @@ public:
 	bool m_fInitHUD;	// 0x2298
 	char m_pad2299[0x229a - 0x2299];
 	char m_b229A;	// 0x229A
-	char m_pad229B[0x22a8 - 0x229b];	// 0x229B .. 0x22A7
+	char m_pad229B[0x22a0 - 0x229b];
+	char m_bSilent22a0;	// +0x22a0: toggled by the impulse that prints "Player is audible" / "Player is silent" (vfunc451)
+	char m_pad22a1[0x22a8 - 0x22a1];	// 0x229B .. 0x22A7
 	float m_f22A8;
 	float m_f22AC;
 	float m_f22B0;
