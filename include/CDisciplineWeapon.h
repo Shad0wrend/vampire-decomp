@@ -24,7 +24,7 @@ public:
 	CDisciplineWeapon *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_10013a57();	// as in CPhysForce (transplant)
 	void *sub_102521f0();	// the dword at +0x9c of the entity the owner handle at +0x88c resolves to, the owner's player object (stub 0x10014fab)
-	char sub_10253b70(int a);	// CBaseCombatWeapon::sub_10253b70 (stub 0x1000c37e), called with the result of the cost slots
+	char sub_10253b70(int a, int b, int c, int d);	// CBaseCombatWeapon::sub_10253b70 (stub 0x1000c37e), called with the result of the cost slots
 	int sub_10252240();	// the dword at +0x9c of the entity the owner handle at +0x88c resolves to (stub 0x100011f4)
 	int sub_100ac4e0(int a, int b, const char *pszContext);	// CBaseEntity::sub_100ac4e0 (ThinkSet), called directly on the weapon
 
