@@ -3160,6 +3160,7 @@
 0x10005b82 func   ?vfunc4@CTEImpact@@UAEXHH@Z CTEImpact::vfunc4
 0x10005b87 func   ?sub_1005f190@CFoo1005f190@@QAEHXZ CFoo1005f190::sub_1005f190
 0x10005b8c func   ?sub_1003db80@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::sub_1003db80
+0x10005b91 func   ?vfunc461@CNPC_VGuard1@@UAEHXZ CNPC_VGuard1::vfunc461
 0x10005b96 func   ?sub_100792e0@CUnknown100792c0@@QAEXH@Z CUnknown100792c0::sub_100792e0
 0x10005b9b func   ?sub_10042f20@CMem8c_t@@QAEHHHPBUE8@@@Z CMem8c_t::sub_10042f20
 0x10005ba0 func   ??0CVModInfo_t@@QAE@HHH@Z CVModInfo_t::CVModInfo_t
