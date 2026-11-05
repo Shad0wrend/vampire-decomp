@@ -107317,6 +107317,33 @@ void CUnknown101e0f00::sub_101e4380(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e44c0 size=0xbd
+#include "CUnknown101e44c0.h"
+extern char g_106b8540[];
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+extern "C" unsigned int strlen(const char *);
+#pragma intrinsic(strlen)
+__declspec(dllimport) int Q_snprintf(char *buf, int n, const char *fmt, ...);
+
+bool CUnknown101e44c0::sub_101e44c0(char *buf, const char *fmt, unsigned int mask)
+{
+	bool any = false;
+	Q_snprintf(buf, 512, fmt);
+	int len = strlen(buf);
+	unsigned int bit = 1;
+	for (int i = 0; i < 0x78; i += 4) {
+		if (mask & bit) {
+			any = true;
+			NamedEntry101e44c0 *e = *(NamedEntry101e44c0 **)((char *)m_ppEntries + i);
+			Q_snprintf(buf + len, 512, " %s", STRINGR(e->m_pszName));
+			len += strlen(STRINGR(e->m_pszName)) + 1;
+		}
+		bit <<= 1;
+	}
+	return any;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e45b0 size=0x25e
 #include "utlrbtree.h"
 #include "utlsortvector.h"
