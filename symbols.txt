@@ -4658,6 +4658,7 @@
 0x10007d24 func   ?sub_10073260@S10073260@@QAEXPBD@Z S10073260::sub_10073260
 0x10007d29 func   ?sub_10137060@@YAXMPAM0@Z sub_10137060
 0x10007d33 func   ?vfunc5@CNPC_VVampire@@QAEPAV1@I@Z CNPC_VVampire::vfunc5
+0x10007d3d func   ?GrowVector@?$CUtlVector@UCExpressionSample@@V?$CUtlMemory@UCExpressionSample@@@@@@QAEXH@Z CUtlVector<CExpressionSample,CUtlMemory<CExpressionSample> >::GrowVector
 0x10007d3d func   ?sub_1007f690@CUtlVector12@@QAEXH@Z CUtlVector12::sub_1007f690
 0x10007d42 func   ?vfunc4@CRecipientFilter@@UAEDXZ CRecipientFilter::vfunc4
 0x10007d47 func   ?sub_10083a60@CSceneEntity@@QAEXXZ CSceneEntity::sub_10083a60
