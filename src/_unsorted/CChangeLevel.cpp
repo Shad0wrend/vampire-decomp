@@ -13,6 +13,35 @@ datamap_t * CChangeLevel::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c73d0 size=0xba
+#include "CChangeLevel.h"
+#include "CBaseToggle.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" unsigned int __cdecl strlen(const char *);
+#pragma intrinsic(strlen)
+__declspec(dllimport) void Warning(const char *fmt, ...);
+__declspec(dllimport) char *Q_strncpy(char *dest, const char *src, int maxLen);
+
+// TARGET: CChangeLevel::vfunc110
+bool CChangeLevel::vfunc110(const char *szKeyName, const char *szValue)
+{
+	if (!_strcmpi(szKeyName, "map")) {
+		if (strlen(szValue) >= sizeof(m_szMapName))
+			Warning("Map name '%s' too long (32 chars)\n", szValue);
+		Q_strncpy(m_szMapName, szValue, sizeof(m_szMapName));
+	}
+	else if (!_strcmpi(szKeyName, "landmark")) {
+		if (strlen(szValue) >= sizeof(m_szLandmarkName))
+			Warning("Landmark name '%s' too long (32 chars)\n", szValue);
+		Q_strncpy(m_szLandmarkName, szValue, sizeof(m_szLandmarkName));
+	}
+	else
+		return ((CBaseToggle *)this)->CBaseToggle::vfunc110(szKeyName, szValue);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c74c0 size=0xaf
 #include "CChangeLevel.h"
 #include <string.h>
