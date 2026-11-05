@@ -6,6 +6,7 @@
 #include "Vector.h"
 
 class CBaseEntity;
+struct CGameTrace;
 
 extern "C" void *__cdecl memset(void *, int, unsigned int);
 
@@ -37,6 +38,7 @@ public:
 	CAI_MoveProbe(void *pOuter) : m_nUnk0c(-1) { m_pOuter = pOuter; }
 
 	bool sub_102e6d70(int navType, const float *vecStart, const float *vecEnd, unsigned int collisionMask, const CBaseEntity *pTarget, float pctToCheckStandPositions, unsigned char flags, AIMoveTrace_t *pTrace, int a9, int a10);	// "CAI_MoveProbe::MoveLimit" (stub 0x10012b43): true when the trace did not fail (fStatus >= 0)
+	void sub_102e2dc0(const float *pStart, const float *pEnd, unsigned int fMask, bool bUseCollisionGroup, CGameTrace *pTrace);
 	char sub_102e7270(const float *vecPosition, unsigned int collisionMask, int a3, int a4, int a5, int a6);	// the stand position check (stub 0x1000b1e5): true when the hull fits at the position
 	char sub_102e4f50(const float *vecStart, const float *vecEnd, int collisionMask, float flMaxDistance, int flags, AIMoveTrace_t *pTrace, int bStop, int unused);	// "CAI_MoveProbe::TestGroundMove" (scope "CAI_MoveProbe_TestGroundMove"): returns al (true = fully clear). Args by stack: start, end, mask, pct float (+0xf4), flags (+0xf8; tests 1, 2, 4, 8), pTrace (null -> a zeroed local), bStop (byte, +0x100: true = end position = vecEnd and return true), a8 (+0x104, passed as the last argument of sub_102e7270(start, mask, 0, 0, 0, a8)). Trace fields: [0]=0, [4..0xc]=start, [0x10..0x18]=origin vector g_1070d1b0, [0x1c]=0, [0x20]=2D length of end-start (sub_102e5d00), [0x24]=0, [0x34]=0. Debug overlays (sub_10142aa0 / sub_10142e90 / sub_10143b70, cdecl) when (*(m_pOuter+0x224) & 0x800000); [this+8] is an int index into the table at 0x1060a750 (sub_102d61b0 / sub_102d61e0: float hull extents)
 	void sub_102e6be0(const float *vecStart, const float *vecEnd, const CBaseEntity *pTarget, AIMoveTrace_t *pTrace, int unused);	// "CAI_MoveProbe::FlyMoveLimit"-like (stub 0x10009f5c is its helper, not this): hull trace (profiled as CAI_MoveProbe_TraceHull, filtered by CTraceFilterNav) of the owner's collision bounds from start to end; when it hit something that is not pTarget, fills the trace record (hit entity, zero obstruction vector, status of the helper sub_102e2d70, the unused fraction of the way as a distance, at least 0.001)

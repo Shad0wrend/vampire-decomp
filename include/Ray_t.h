@@ -15,7 +15,7 @@ struct Ray_t
 	bool m_IsSwept;	// 0x31
 	char m_b32;
 	char m_b33;
-	int m_n34;
+	float m_n34;
 
 	void Init(const Vector &start, const Vector &end)	// Ray_t::Init(start, end) as the game inlines it
 	{
