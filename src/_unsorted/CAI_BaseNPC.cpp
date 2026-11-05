@@ -1644,6 +1644,43 @@ int __fastcall sub_10272900(void *pSelf)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10273200 size=0x138
+#include "CBaseEntity.h"
+#include "CAI_BaseNPC.h"
+#include "CGameRules.h"
+#include "ScopeTrace.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+
+extern "C" int __cdecl strcmp(const char *, const char *);
+#pragma intrinsic(strcmp)
+
+extern CGameRules *g_1070ba0c;
+void sub_101cd940(CBaseEntity *pEnt);
+
+#define NPC_NAME (*(const char **)((char *)this + 0x26c))
+#define NPC_WEAPON (*(const char **)((char *)this + 0x5dec))
+
+void CAI_BaseNPC::vfunc103()
+{
+	ScopeTrace trace("CAI_BaseNPC::Spawn", this ? (STRINGR_F(NPC_NAME)) : g_105387dc);
+	if (!g_1070ba0c->vfunc74()) {
+		sub_101cd940((CBaseEntity *)this);
+		return;
+	}
+	if (*(int *)((char *)this + 0x98) == 0 && (vfunc513() & 0x200000) && NPC_WEAPON) {
+		if (strcmp(STRINGR_F(NPC_WEAPON), "0") && strcmp(STRINGR_F(NPC_WEAPON), "item_w_unarmed")) {
+			void *pWeapon = sub_1032e120(STRINGR_F(NPC_WEAPON));
+			if (pWeapon)
+				vfunc383(pWeapon, 0);
+		}
+	}
+	vfunc223();
+	sub_10323a90();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10273720 size=0x24
 void __fastcall sub_100081c0(void *pSelf);
 
