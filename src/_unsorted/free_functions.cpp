@@ -125071,6 +125071,41 @@ void QuestJournal::sub_10221270()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102212b0 size=0xd0
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "QuestJournal.h"
+#include "CUnknown10248a50.h"
+#include "CKeyValuesX.h"
+#include "ScopeTrace.h"
+
+extern IFileSys *g_1070b238;
+
+void QuestJournal::sub_102212b0(const char *pszFile, int index)
+{
+	ScopeTrace trace("QuestJournal::LoadQuestFile", g_106b8540);
+	CUnknown10248a50 *pKV = new CUnknown10248a50("QuestTable");
+	if (pKV)
+	{
+		IFileSys *pFileSys = g_1070b238;
+		if (pKV->sub_102480f0(pszFile, pFileSys, 0, true))
+		{
+			CKeyValuesX *pKey = (CKeyValuesX *)pKV->sub_10248a10();
+			for (; pKey; pKey = pKey->sub_1000fa65())
+				sub_102213c0(pKey, index);
+		}
+		pKV->sub_100046f1();
+		::operator delete(pKV);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102213c0 size=0x20b
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
