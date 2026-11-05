@@ -89176,6 +89176,75 @@ int __stdcall sub_101b3b90(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b3bb0 size=0x3e2
+#include "CUnknown10248a50.h"
+#include "CSoundEmitterSystemBase.h"
+#include "CUnknown101b2570.h"
+#include "CUnknown101b3830.h"
+#include "CKeyValuesX.h"
+#include "Tier1.h"
+#include <string.h>
+
+extern int (*g_109f3880)(const char *s1, const char *s2);
+extern float g_104454c4;
+CUnknown1012f700 sub_1012f640(const char *pszInterval);
+
+#define ATTN_TO_SNDLVL(a) (int)(((a) != g_104454c4) ? (50 + 20 / (a)) : g_104454c4)
+
+bool CSoundEmitterSystemBase::sub_101b3bb0(const char *pszSoundName, CUnknown10248a50 *pKeys, CUnknown101b2570 *pParams)
+{
+	CKeyValuesX *pKey = ((CKeyValuesX *)pKeys)->sub_10004c8c();
+	if (pKey) {
+		int (*Q_strcasecmp)(const char *, const char *) = g_109f3880;
+		do {
+			if (!Q_strcasecmp(pKey->sub_102480b0(), "channel")) {
+				pParams->sub_101b2490(pKey->sub_10248cd0(0, ""));
+			} else if (!Q_strcasecmp(pKey->sub_102480b0(), "volume")) {
+				pParams->sub_101b2420(pKey->sub_10248cd0(0, ""));
+			} else if (!Q_strcasecmp(pKey->sub_102480b0(), "pitch")) {
+				pParams->sub_101b2570(pKey->sub_10248cd0(0, ""));
+			} else if (!Q_strcasecmp(pKey->sub_102480b0(), "wave")) {
+				((CUnknown101b3830 *)this)->sub_101b3830((int)pParams, pKey->sub_10248cd0(0, ""));
+			} else if (!Q_strcasecmp(pKey->sub_102480b0(), "rndwave")) {
+				CKeyValuesX *pWaves = pKey->sub_10004c8c();
+				while (pWaves) {
+					((CUnknown101b3830 *)this)->sub_101b3830((int)pParams, pWaves->sub_10248cd0(0, ""));
+					pWaves = pWaves->sub_1000fa65();
+				}
+			} else if (!Q_strcasecmp(pKey->sub_102480b0(), "attenuation")) {
+				if (!g_109f3848(pKey->sub_10248cd0(0, ""), "SNDLVL_", strlen("SNDLVL_"))) {
+					g_109f3630("CSoundEmitterSystemBase::GetParametersForSound:  sound %s has \"attenuation\" with %s value!\n",
+						pszSoundName, pKey->sub_10248cd0(0, ""));
+				}
+				if (!g_109f3848(pKey->sub_10248cd0(0, ""), "ATTN_", strlen("ATTN_"))) {
+					pParams->m_soundlevel.a = ATTN_TO_SNDLVL(sub_101b4900(pKey->sub_10248cd0(0, "")));
+					pParams->m_soundlevel.b = 0.0f;
+				} else {
+					CUnknown1012f700 interval;
+					interval = sub_1012f640(pKey->sub_10248cd0(0, ""));
+					float start = interval.start;
+					float end = interval.start + interval.range;
+					pParams->m_soundlevel.a = ATTN_TO_SNDLVL(start);
+					pParams->m_soundlevel.b = ATTN_TO_SNDLVL(end) - ATTN_TO_SNDLVL(start);
+				}
+			} else if (!Q_strcasecmp(pKey->sub_102480b0(), "soundlevel")) {
+				if (!g_109f3848(pKey->sub_10248cd0(0, ""), "ATTN_", strlen("ATTN_"))) {
+					g_109f3630("CSoundEmitterSystemBase::GetParametersForSound:  sound %s has \"soundlevel\" with %s value!\n",
+						pszSoundName, pKey->sub_10248cd0(0, ""));
+				}
+				pParams->sub_101b2630(pKey->sub_10248cd0(0, ""));
+			} else if (!Q_strcasecmp(pKey->sub_102480b0(), "play_to_owner_only")) {
+				pParams->m_bPlayToOwnerOnly = pKey->sub_10248bb0(0, 0) != 0;
+			} else if (!Q_strcasecmp(pKey->sub_102480b0(), "precache")) {
+				pParams->m_bPrecache = pKey->sub_10248bb0(0, 0) != 0;
+			}
+			pKey = pKey->sub_1000fa65();
+		} while (pKey);
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b40a0 size=0x99
 struct S101b40a0 {
     int a;
