@@ -116534,6 +116534,41 @@ bool CVStatList_t::sub_10200ea0(int stat)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10200fc0 size=0xfa
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CVStatList_t.h"
+#include "CVStatInfoList_t.h"
+#include "CVStatActionList_t.h"
+#include "CUnknown10202060.h"
+#include "ScopeTrace.h"
+
+struct CVStatPreDeps_t { char sub_10206140(int pOwner); };
+
+// TARGET: CVStatList_t::sub_10200fc0
+char CVStatList_t::sub_10200fc0(int stat, int amount)
+{
+    ScopeTrace trace("CVStatList_t::AddBase", g_106b8540);
+    if (sub_102008b0(stat)) {
+        if (((CVStatPreDeps_t *)&((CVStatInfoList_t *)m_field0c)->sub_10200370(stat)->m_field0120)->sub_10206140(((CUnknown10202060 *)m_pad0000)->sub_10202060()) || amount < 0) {
+            int newBase = ((int *)*(int *)m_field08)[stat] + amount;
+            int old = sub_10010609(stat);
+            ((int *)*(int *)m_field08)[stat] = newBase;
+            int nw = sub_10010609(stat);
+            ((CVStatActionList_t *)((char *)((CVStatInfoList_t *)m_field0c)->sub_10200370(stat) + 0x10c))->sub_101fd940((void *)((CUnknown10202060 *)m_pad0000)->sub_10202060(), old, nw);
+            return 1;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10201100 size=0x6c
 #include "CVStatList_t.h"
 
