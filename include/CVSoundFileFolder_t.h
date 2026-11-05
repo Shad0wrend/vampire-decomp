@@ -25,4 +25,5 @@ public:
 	CVSoundFileFolder_t **m_pChildren;	// 0x20
 
 	void sub_101f3ba0(int a, int b, int c);	// AddRange
+	void sub_10011cde(int a, int b, int c);	// jump stub of sub_101f3ba0
 };
