@@ -170930,6 +170930,40 @@ CBaseEntity *CUnknown103160c0::sub_10315a80(const Vector *pPos, float flRadius)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10315bb0 size=0x18b
+#include "CAI_BaseNPCTroika.h"
+#include "CEHandleGet.h"
+#include "Vector.h"
+
+struct CSquadNearest {
+	char pad0[0x1c];
+	unsigned int m_hMembers[1];
+	char pad1[0x5c - 0x20];
+	int m_nMembers;
+	CBaseEntity *sub_10315bb0(CAI_BaseNPCTroika *pNPC);
+};
+
+CBaseEntity *CSquadNearest::sub_10315bb0(CAI_BaseNPCTroika *pNPC)
+{
+	if (!pNPC || pNPC->m_n5bb0 > 0)
+		return 0;
+	float flBest = 16384.0f;
+	CBaseEntity *pBest = 0;
+	Vector vecPos = *(Vector *)pNPC->vfunc220();
+	for (int i = 0; i < m_nMembers; i++) {
+		if (EHandle_Get(m_hMembers[i]) && ((CAI_BaseNPCTroika *)EHandle_Get(m_hMembers[i]))->m_n5bb0 <= 0) {
+			Vector d = vecPos - *(Vector *)((CAI_BaseNPCTroika *)EHandle_Get(m_hMembers[i]))->vfunc220();
+			float flDist = FastSqrt(d.y * d.y + (d.x * d.x + d.z * d.z));
+			if ((CAI_BaseNPCTroika *)EHandle_Get(m_hMembers[i]) != pNPC && flDist < flBest) {
+				flBest = flDist;
+				pBest = (CBaseEntity *)EHandle_Get(m_hMembers[i]);
+			}
+		}
+	}
+	return pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10315db0 size=0xc9
 #include "CUnknown10315db0.h"
 
