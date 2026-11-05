@@ -75055,6 +75055,22 @@ void CUnknown1017fd60::sub_1017ff40(CBaseEntity *pEnt, int nKind)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101800a0 size=0x2b
+float __fastcall sub_101800a0(char *pThis)
+{
+    float flMax = -1.0f;
+    float *pf = (float *)(pThis + 0x1d28);
+    int i = 5;
+    do {
+        if (!((double)*pf < flMax))
+            flMax = *pf;
+        pf++;
+        i--;
+    } while (i != 0);
+    return flMax;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101800e0 size=0xe
 #include "CUnknown101800e0.h"
 // TARGET: CUnknown101800e0::sub_101800e0
