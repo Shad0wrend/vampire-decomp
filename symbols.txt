@@ -12259,6 +12259,7 @@
 0x10012f6c func   ?vfunc448@CNPC_VHengeyokai@@QAEXH@Z CNPC_VHengeyokai::vfunc448
 0x10012f7b func   ?sub_1023e2d0@@YGXPAUinputdata_t@@@Z sub_1023e2d0
 0x10012f80 func   ?vfunc82@CNPC_VScurrying@@UAEPAUdatamap_t@@XZ CNPC_VScurrying::vfunc82
+0x10012f8a func   ?sub_1016cf30@CBasePlayer@@QAEXXZ CBasePlayer::sub_1016cf30
 0x10012f8f func   ?vfunc291@CWeaponIWritten@@UAEXXZ CWeaponIWritten::vfunc291
 0x10012f9e func   ?vfunc1@CTEPlayerDecal@@UAEHXZ CTEPlayerDecal::vfunc1
 0x10012fa3 func   _item_p_occult_heal_rate item_p_occult_heal_rate

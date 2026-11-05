@@ -72435,6 +72435,60 @@ LAB_1016cb69:
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016cf30 size=0x19f
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "CBasePlayer.h"
+#include "CUnknown10182dd0.h"
+#include "CVStatList_t.h"
+#include "CVStatInfoList_t.h"
+#include <string.h>
+
+extern int g_10583630[10];
+extern int g_107260b0[10];
+extern CVStatInfoList_t g_1074e098;
+void __cdecl sub_1023f040(unsigned int *p);
+void __cdecl sub_1023f060(unsigned int *p);
+void __cdecl sub_1023f0c0(unsigned int *pCrc, const void *pData, unsigned int len);
+
+static inline bool HasBit(unsigned int flags, int bit) { return ((flags >> bit) & 1) != 0; }
+
+// TARGET: CBasePlayer::sub_1016cf30
+void CBasePlayer::sub_1016cf30()
+{
+	for (int i = 0; i < 10; i++) {
+		m_aSlotType2018[i] = g_10583630[i];
+		m_aSlotValue2040[i] = g_107260b0[i];
+	}
+	unsigned int crc;
+	sub_1023f040(&crc);
+	sub_1023f0c0(&crc, "item_w_fists", strlen("item_w_fists"));
+	sub_1023f060(&crc);
+	m_aSlotValue2040[0] = crc;
+	sub_1023f040(&crc);
+	sub_1023f0c0(&crc, "item_w_thirtyeight", strlen("item_w_thirtyeight"));
+	sub_1023f060(&crc);
+	m_aSlotValue2040[1] = crc;
+	int n = 0;
+	int *p = &m_aSlotValue2040[2];
+	for (; n < 3; n++) {
+		int idx = ((CUnknown10182dd0 *)this)->sub_10182dd0(n, 0);
+		if (idx != -1) {
+			int a, b;
+			if (HasBit(g_1074e098.sub_10200370(idx)->m_flags, 1)) {
+				a = -1;
+				b = -1;
+			} else {
+				a = 0;
+				b = CVStatListSet::Of(this)->Find(2)->sub_10010609(idx) > 1;
+			}
+			*p++ = ((a + 1) << 16) | idx;
+			*p++ = ((b + 1) << 16) | idx;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016e500 size=0x84
 #include "CCollisionProperty.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
