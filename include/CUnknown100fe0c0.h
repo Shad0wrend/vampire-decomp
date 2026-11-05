@@ -5,6 +5,8 @@
 struct CUnknown100fe0c0_SubA
 {
 	virtual void vfunc0(int a);
+	virtual float vfunc1(int a, int b);
+	virtual int vfunc2(int a, int b);
 	char pad[0x88];
 };
 
@@ -19,15 +21,22 @@ class CUnknown100fe0c0
 public:
 	int m_0;
 	int m_4;
-	char pad8[0x20];
+	int m_8;
+	int m_c;
+	int m_10;
+	int m_14;
+	float m_18;
+	int m_1c;
+	int m_20;
+	int m_24;
 	int m_28;
-	int m_2c;
+	float m_2c;
 	int m_30;
 	int m_34;
 	float m_38;
-	int m_3c;
-	int m_40;
-	int m_44;
+	float m_3c;
+	float m_40;
+	float m_44;
 	char m_48;
 	char pad49[3];
 	float m_4c;
@@ -38,4 +47,5 @@ public:
 
 	void sub_100fe0c0(int a0, int a1, int a2, int a3, int a4);
 	void sub_100fe150(float flTime);
+	float sub_100fe300(float flTime);
 };
