@@ -2052,6 +2052,81 @@ void CAI_BaseNPC::vfunc581()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10277d90 size=0x260
+#include "CFlameCluster.h"
+#include "CUnknown10738960.h"
+#include "CAI_BaseNPC_vfunc76.h"
+#include "CCollisionProperty.h"
+#include "DebugOverlay.h"
+#include "Tier1.h"
+#include "globalvars.h"
+
+extern float g_10920554;
+extern __int64 g_109203e8, g_109204a0, g_1090fe68, g_10920338, g_1090ff00, g_1090ff58;
+extern double *g_109f367c;
+struct CAIDebugSink { virtual char vfunc0(); virtual char vfunc1(); char m_pad[0x2c - 4]; int m_n2c; };
+extern CAIDebugSink *g_10920344;
+extern CFoo1005f190 g_1090fd70;
+char *sub_1027f5d0(char *pBuf, const char *pFmt, ...);
+
+void CAI_BaseNPC::vfunc582(float flThinkTime)
+{
+	CAI_BaseNPCUnit76 *pNPC = (CAI_BaseNPCUnit76 *)this;
+	if (!(gpGlobals->curtime < g_10920554)) {
+		g_10920554 = gpGlobals->curtime + 1.0f;
+		const char *pszTask;
+		if (!sub_1028a150())
+			pszTask = "INVALID TASK";
+		else
+			pszTask = (const char *)vfunc449(*sub_1028a150());
+		const char *pszSchedule = pNPC->m_pSchedule5c38->m_pszName;
+		g_109f364c("%s thinking for %.02fms!!! (%s)[%s]\n\tr%.2f (c%.2f, pst%.2f, ms%.2f), p-r%.2f, m%.2f\n",
+			sub_100ab4f0(), (double)flThinkTime, pszSchedule, pszTask,
+			(double)g_109203e8 * *g_109f367c, (double)g_109204a0 * *g_109f367c,
+			(double)g_1090fe68 * *g_109f367c, (double)g_10920338 * *g_109f367c,
+			(double)g_1090ff00 * *g_109f367c, (double)g_1090ff58 * *g_109f367c);
+
+		Vector tmp = *(Vector *)vfunc220();
+		Vector vecMins, vecMaxs;
+		CCollisionProperty *pCP = (CCollisionProperty *)((char *)this + 0x270);
+		pCP->sub_100dcd90(&pCP->m_vecMins.x, &pCP->m_vecMaxs.x, &vecMins.x, &vecMaxs.x);
+		tmp.z = vecMaxs.z + 16.0f;
+
+		if (g_1090fd70.sub_1005f190()) {
+			float max = -1;
+			const char *pszMax = "unknown";
+
+			if ((double)g_109204a0 * *g_109f367c > max) {
+				max = (double)g_109204a0 * *g_109f367c;
+				pszMax = "Conditions";
+			}
+			if ((double)g_1090fe68 * *g_109f367c > max) {
+				max = (double)g_1090fe68 * *g_109f367c;
+				pszMax = "Pre-think";
+			}
+			if ((double)g_10920338 * *g_109f367c > max) {
+				max = (double)g_10920338 * *g_109f367c;
+				pszMax = "Schedule";
+			}
+			if ((double)g_1090ff00 * *g_109f367c > max) {
+				max = (double)g_1090ff00 * *g_109f367c;
+				pszMax = "Post-run";
+			}
+			if ((double)g_1090ff58 * *g_109f367c > max) {
+				max = (double)g_1090ff58 * *g_109f367c;
+				pszMax = "Move";
+			}
+			char buf[256];
+			const char *pszText = sub_1027f5d0(buf, "Slow %.1f, %s %.1f ", (double)flThinkTime, pszMax, max);
+			sub_10143710(&tmp.x, pszText, 0, 0x3f800000);
+		}
+
+		if (!g_10920344->vfunc1() && g_10920344->m_n2c)
+			sub_10280c80();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10278090 size=0xc7
 #include "CAI_BaseNPC.h"
 #include "CCineNPC.h"
