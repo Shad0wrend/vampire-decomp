@@ -1061,6 +1061,88 @@ int CBaseEntity::PhysicsPushMove(float movetime)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100389e0 size=0x235
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CPhysicsPushedEntities.h"
+#include "CVProfile.h"
+#include "ScopeTrace.h"
+#include "Vector.h"
+
+extern CPhysicsPushedEntities g_106bbae4;
+extern Vector g_1070d9d0;
+
+struct CycleCount
+{
+	unsigned __int64 m_Int64;
+	CycleCount() : m_Int64(0) {}
+	void Sample()
+	{
+		unsigned int *p = (unsigned int *)&m_Int64;
+		__asm {
+			mov ecx, p
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+	void End()
+	{
+		CycleCount now;
+		now.Sample();
+		m_Int64 = now.m_Int64 - m_Int64;
+	}
+	void Add(const CycleCount &r)
+	{
+		m_Int64 += r.m_Int64;
+	}
+};
+
+// TARGET: CBaseEntity::vfunc239
+bool CBaseEntity::vfunc239(float flDelta)
+{
+	ScopeTrace trace("CBaseEntity::PhysicsPushRotate",
+		this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+
+	g_109f3648->EnterScope("CBaseEntity::PhysicsPushRotate", 0, "Unaccounted", false);
+
+	*(float *)((char *)this + 0x3f4) += flDelta;
+
+	if (g_1070d9d0.x == m_angVel3c8[0]
+		&& g_1070d9d0.y == m_angVel3c8[1]
+		&& g_1070d9d0.z == m_angVel3c8[2]) {
+		g_109f3648->ExitScope();
+		return false;
+	}
+
+	CBaseEntity *pBlocker = g_106bbae4.sub_10037e90(this, flDelta);
+	if (pBlocker)
+		*(float *)((char *)this + 0x3f4) -= flDelta;
+	bool b = pBlocker != 0;
+
+	CVProfile *prof = g_109f3648;
+	if (!prof->m_bAtRoot || prof->m_enabled) {
+		CVProfNode *node = prof->m_pCurNode;
+		if (--node->m_nRecursions == 0 && node->m_nCurFrameCalls != 0) {
+			((CycleCount *)&node->m_CurFrameTime)->End();
+			((CycleCount *)&node->m_TotalTime)->Add(*(CycleCount *)&node->m_CurFrameTime);
+			g_109f3648->PopGroup();
+		}
+		if (node->m_nRecursions == 0)
+			prof->m_pCurNode = prof->m_pCurNode->m_pParent;
+		prof->m_bAtRoot = (prof->m_pCurNode == prof->m_pRoot);
+	}
+	return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10039ff0 size=0x71
 #include "CBaseEntity.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
