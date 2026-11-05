@@ -10368,6 +10368,7 @@
 0x10010154 func   ?sub_102d1450@CAI_Hint@@QAE_NPAX@Z CAI_Hint::sub_102d1450
 0x1001015e func   ?vfunc130@CFuncElevator@@QAEXH@Z CFuncElevator::vfunc130
 0x10010163 func   ?sub_1007ee00@@YIXPAH@Z sub_1007ee00
+0x10010168 func   ?sub_100f7380@CGlobalEntityList@@QAEPAVCBaseEntity@@PAV2@PBD@Z CGlobalEntityList::sub_100f7380
 0x1001016d func   ?sub_10428e80@@YAHHH@Z sub_10428e80
 0x10010177 func   ?sub_103048d0@CAI_Pathfinder@@QAE_NHPBM0@Z CAI_Pathfinder::sub_103048d0
 0x1001017c func   ?vfunc2@CServerGameEnts@@UAEXPAUCServerGameEntsEdict@@0@Z CServerGameEnts::vfunc2

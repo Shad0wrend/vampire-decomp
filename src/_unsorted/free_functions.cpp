@@ -51560,6 +51560,45 @@ bool CUnk_100f7330::sub_100f7330(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f7380 size=0xa4
+#include <string.h>
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+struct SClassEnt {
+    char m_pad0[0x11c];
+    const char *m_pszClass;
+    char m_pad1[0x26c - 0x120];
+    const char *m_pszName;
+
+    bool ClassMatches(const char *psz)
+    {
+        if ((STRINGR_F(m_pszClass)) == psz)
+            return true;
+        int len = strlen(psz);
+        if (len == 0)
+            return m_pszName == 0;
+        char last = psz[len - 1];
+        if (last != '*')
+            return _strcmpi(STRINGR_F(m_pszClass), psz) == 0;
+        return _strnicmp(STRINGR_F(m_pszClass), psz, len - 1) == 0;
+    }
+};
+
+CBaseEntity *CGlobalEntityList::sub_100f7380(CBaseEntity *pStart, const char *pszClassname)
+{
+    CBaseEntity *pEnt = sub_100f7060(pStart);
+    while (pEnt) {
+        if (((SClassEnt *)pEnt)->ClassMatches(pszClassname))
+            return pEnt;
+        pEnt = sub_100f7060(pEnt);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f7890 size=0x77
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
