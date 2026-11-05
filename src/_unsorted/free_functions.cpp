@@ -91524,6 +91524,47 @@ void CSoundEnt::sub_101baf80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bb070 size=0x53
+#include "CSoundEnt.h"
+
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+
+int CSoundEnt::sub_101bb070(int iListType)
+{
+	int i;
+	int iThisSound = -1;
+
+	if (iListType == 1)
+	{
+		iThisSound = m_iFreeSound;
+	}
+	else if (iListType == 2)
+	{
+		iThisSound = m_iActiveSound;
+	}
+	else
+	{
+		DevMsg("Unknown Sound List Type!\n");
+	}
+
+	if (iThisSound == -1)
+	{
+		return 0;
+	}
+
+	i = 0;
+
+	while (iThisSound != -1)
+	{
+		i++;
+
+		iThisSound = m_SoundPool[iThisSound].m_iNext;
+	}
+
+	return i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bb0f0 size=0x14
 extern char *g_1072c464;
 

@@ -8353,6 +8353,7 @@
 0x1000d2f6 func   ?vfunc8@CDataObjectAccessSystem@@UAEPAVCAutoGameSystem@@I@Z CDataObjectAccessSystem::vfunc8
 0x1000d2fb func   ??0CHumanoidRec@@QAE@XZ CHumanoidRec::CHumanoidRec
 0x1000d2fb func   ?sub_10260980@CUnknown10260980@@QAEPAU1@XZ CUnknown10260980::sub_10260980
+0x1000d300 func   ?sub_101bb070@CSoundEnt@@QAEHH@Z CSoundEnt::sub_101bb070
 0x1000d305 func   ?sub_10140270@CPathKeyFrame@@QAEXVVector@@@Z CPathKeyFrame::sub_10140270
 0x1000d30a func   ?sub_103d8550@CNPC_VWerewolf@@QAE_NPAX@Z CNPC_VWerewolf::sub_103d8550
 0x1000d30f func   _camera_cinematic camera_cinematic
