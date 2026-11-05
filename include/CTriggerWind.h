@@ -36,6 +36,7 @@ public:
 	void sub_100b3b00();	// CBaseEntity::sub_100b3b00, called directly
 	void sub_101c6860();	// CTriggerMultiple::vfunc103, called directly (stub 0x100048ef)
 	int sub_100ac4e0(int func, int thinkTime, const char *szContext);	// CBaseEntity::ThinkSet (stub 0x10007fe5)
+	void sub_101cab60();	// the wind think function: eases the speed (+0x5b8) and direction (+0x5c8) toward their random targets
 	int sub_101c4f40();	// CBaseTrigger::vfunc124 (stub 0x100104e2), called directly
 	void sub_10012206(int a);	// CBaseTrigger::vfunc241 (stub 0x10012206), called directly
 
