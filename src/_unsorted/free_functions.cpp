@@ -97129,6 +97129,72 @@ int sub_101ca950()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cab60 size=0x284
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include <math.h>
+#include "CTriggerWind.h"
+#include "ScopeTrace.h"
+#include "globalvars.h"
+#include "engineiface.h"
+
+void *sub_101cd9e0(int index);
+float sub_1013d450(float a, float b, float c);
+
+// TARGET: CTriggerWind::sub_101cab60
+void CTriggerWind::sub_101cab60()
+{
+	bool bSolid;
+	{
+		const char *pName = this ? (*(const char **)((char *)this + 0x26c) ? *(const char **)((char *)this + 0x26c) : g_106b8540) : g_105387dc;
+		ScopeTrace trace("CBaseEntity::IsSolidFlagSet", pName);
+		bSolid = (*(unsigned char *)((char *)this + 0x2b4) >> 3) & 1;
+	}
+	float *pNextThink = (float *)((char *)this + 0x17c);
+	if (!bSolid) {
+		((int *)m_vec05e0)[2] = 0;
+		m_b05d8 = 1;
+		return;
+	}
+	if (!sub_101cd9e0(1)) {
+		*pNextThink = gpGlobals->curtime + 0.2;
+		return;
+	}
+	char bPick = m_b05d8;
+	*pNextThink = gpGlobals->curtime + 0.1;
+	if (bPick) {
+		m_b05d8 = 0;
+		m_nSpeedTarget = enginerandom->vfunc2(-m_nSpeedNoise, m_nSpeedNoise) + m_n05b0;
+		int v = enginerandom->vfunc2(-m_nDirNoise, m_nDirNoise) + m_n05c0;
+		m_nDirTarget = (int)((float)(unsigned short)(int)((float)v * 182.04445f) * 0.005493164f);
+	} else {
+		bool bDone = true;
+		if (fabs((double)(m_nSpeedTarget - m_n05b8)) > 5.0) {
+			m_n05b8 = (int)((float)m_n05b8 + (m_nSpeedTarget > m_n05b8 ? 5.0f : -5.0f));
+			bDone = false;
+		}
+		if (fabs((double)(m_nDirTarget - m_n05c8)) > 5.0) {
+			float flCur = (float)m_n05c8;
+			float flTarget = (float)m_nDirTarget;
+			m_n05c8 = (int)sub_1013d450(flTarget, flCur, 5.0f);
+		} else if (bDone) {
+			m_n05b8 = m_nSpeedTarget;
+			float flRand = enginerandom->vfunc1((float)-m_nHoldNoise, (float)m_nHoldNoise) + m_nHoldBase;
+			m_b05d8 = 1;
+			*pNextThink = flRand + *pNextThink;
+		}
+	}
+	((int *)m_vec05e0)[1] = m_n05c8;
+	m_vec05e0[2] = (float)m_n05b8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101caea0 size=0x2c
 struct CVariantArg101caea0
 {
