@@ -1559,6 +1559,68 @@ void CAI_BaseNPCTroika::vfunc105(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102993c0 size=0x290
+#include "CAI_BaseNPCTroika.h"
+#include "CSave.h"
+
+void sub_1009d940(void *p, int n);
+void sub_1009d960(void *p, int n);
+struct CTimer2c { void sub_101b9840(); void sub_101b9860(); };
+
+int CAI_BaseNPCTroika::vfunc126(CSave *pSave)
+{
+	char *p = (char *)this;
+	sub_1009d940(p + 0x607c, 3);
+	sub_1009d940(p + 0x6084, 2);
+	sub_1009d940(p + 0x6274, 2);
+	sub_1009d940(p + 0x62cc, 3);
+	sub_1009d940(p + 0x62d0, 3);
+	sub_1009d940(p + 0x62d4, 3);
+	sub_1009d940(p + 0x632c, 3);
+	sub_1009d940(p + 0x63d4, 2);
+	sub_1009d940(p + 0x63dc, 2);
+	sub_1009d940(p + 0x6458, 4);
+	sub_1009d940(p + 0x657c, 4);
+	((CTimer2c *)(p + 0x60b0))->sub_101b9840();
+	((CTimer2c *)(p + 0x60dc))->sub_101b9840();
+	((CTimer2c *)(p + 0x6108))->sub_101b9840();
+	((CTimer2c *)(p + 0x6134))->sub_101b9840();
+	((CTimer2c *)(p + 0x6160))->sub_101b9840();
+	((CTimer2c *)(p + 0x618c))->sub_101b9840();
+	((CTimer2c *)(p + 0x61b8))->sub_101b9840();
+	((CTimer2c *)(p + 0x61e4))->sub_101b9840();
+	((CTimer2c *)(p + 0x6210))->sub_101b9840();
+	int r = CAI_BaseNPC::vfunc126(pSave);
+	char b = *(int *)(p + 0x630c) != 0;
+	pSave->vfunc12(&b, 1);
+	if (b) {
+		pSave->vfunc10(*(char **)(p + 0x630c) + 4, 1);
+		pSave->vfunc10(*(char **)(p + 0x630c) + 8, 1);
+	}
+	sub_1009d960(p + 0x607c, 3);
+	sub_1009d960(p + 0x6084, 2);
+	sub_1009d960(p + 0x6274, 2);
+	sub_1009d960(p + 0x62cc, 3);
+	sub_1009d960(p + 0x62d0, 3);
+	sub_1009d960(p + 0x62d4, 3);
+	sub_1009d960(p + 0x632c, 3);
+	sub_1009d960(p + 0x63d4, 2);
+	sub_1009d960(p + 0x63dc, 2);
+	sub_1009d960(p + 0x6458, 4);
+	sub_1009d960(p + 0x657c, 4);
+	((CTimer2c *)(p + 0x60b0))->sub_101b9860();
+	((CTimer2c *)(p + 0x60dc))->sub_101b9860();
+	((CTimer2c *)(p + 0x6108))->sub_101b9860();
+	((CTimer2c *)(p + 0x6134))->sub_101b9860();
+	((CTimer2c *)(p + 0x6160))->sub_101b9860();
+	((CTimer2c *)(p + 0x618c))->sub_101b9860();
+	((CTimer2c *)(p + 0x61b8))->sub_101b9860();
+	((CTimer2c *)(p + 0x61e4))->sub_101b9860();
+	((CTimer2c *)(p + 0x6210))->sub_101b9860();
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10299700 size=0x158
 #include "CAI_BaseNPCTroika.h"
 #include "CRestore.h"

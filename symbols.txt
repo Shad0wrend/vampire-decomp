@@ -922,6 +922,7 @@
 0x100025bd func   ?sub_102ee5b0@CUnknown102ee5b0@@QAEHH@Z CUnknown102ee5b0::sub_102ee5b0
 0x100025c2 func   ?sub_10136ee0@CEntityMapData@@QAE_NPAD0@Z CEntityMapData::sub_10136ee0
 0x100025c7 func   ?sub_1039b180@@YADXZ sub_1039b180
+0x100025cc func   ?vfunc126@CAI_BaseNPCTroika@@UAEHPAVCSave@@@Z CAI_BaseNPCTroika::vfunc126
 0x100025d1 func   ?vfunc252@CBaseCombatCharacter@@UAEHHHH@Z CBaseCombatCharacter::vfunc252
 0x100025d6 func   ?vfunc618@CNPC_VTzimisceRunner@@QAEXXZ CNPC_VTzimisceRunner::vfunc618
 0x100025db func   ?sub_101d7660@CUnknown101d76e0@@QAEHPAX@Z CUnknown101d76e0::sub_101d7660
