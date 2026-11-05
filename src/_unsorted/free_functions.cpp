@@ -70099,6 +70099,71 @@ int CUnknown10148780::sub_10148780()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101487a0 size=0x1f4
+#include "CGravControllerPoint.h"
+#include "CGlobalEntityList.h"
+#include "IPhysicsObject.h"
+#include "IPhysicsEnvironment.h"
+#include "CUnknown10739d08.h"
+#include "globalvars.h"
+#include "CEntityVSlots.h"
+
+extern IPhysicsEnvironment *g_10723940;
+extern CGlobalEntityList *g_10566458;
+extern CUnknown10739d08 g_10739d08;
+extern int g_1057b7bc;
+CBaseEntity *__fastcall sub_1032e7b0(CBaseEntity *p);
+void sub_10158c00(int a, int b);
+
+#define WV1(n) virtual void w##n();
+#define WV10(p) WV1(p##0) WV1(p##1) WV1(p##2) WV1(p##3) WV1(p##4) WV1(p##5) WV1(p##6) WV1(p##7) WV1(p##8) WV1(p##9)
+struct CWeaponView278 {
+	WV10(0) WV10(1) WV10(2) WV10(3) WV10(4) WV10(5) WV10(6) WV10(7) WV10(8) WV10(9)
+	WV10(10) WV10(11) WV10(12) WV10(13) WV10(14) WV10(15) WV10(16) WV10(17) WV10(18) WV10(19)
+	WV10(20) WV10(21) WV10(22) WV10(23) WV10(24) WV10(25) WV10(26)
+	WV1(270) WV1(271) WV1(272) WV1(273) WV1(274) WV1(275) WV1(276) WV1(277)
+	virtual float slot278();
+};
+
+struct CMotionCtlView {
+	virtual void v0();
+	virtual void v1();
+	virtual void v2(IPhysicsObject *pObject);
+	virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(int n);
+};
+
+void CGravControllerPoint::sub_101487a0(CBaseEntity *pEntity, IPhysicsObject *pObject, const Vector *pCenter, CBaseEntity *pOwner)
+{
+	m_hAttached78 = pEntity;
+	m_hOther7c = pOwner;
+	pObject->vfunc27(&m_vec04, pCenter);
+	m_vec1c = *pCenter;
+	pObject->vfunc18(0, &m_vec5c);
+	float flVel = (float)g_1057b7bc;
+	pObject->vfunc17(0, (const Vector *)&flVel);
+	m_n74 = 0;
+	m_pController90 = g_10723940->vfunc39(this);
+	((CMotionCtlView *)m_pController90)->v2(pObject);
+	((CMotionCtlView *)m_pController90)->v8(2);
+	m_vec10 = *pCenter;
+	if (!g_10566458->sub_100290c0((const unsigned int *)&m_hAttached78))
+		m_vec1c.sub_1003e4b0(*pCenter);
+	m_fl8c = gpGlobals->frametime;
+	g_10739d08.sub_101e8640(pOwner);
+	m_vec5c.z = ((CWeaponView278 *)sub_1032e7b0(pOwner))->slot278();
+	m_vec80 = *(Vector *)((CEntityVSlots *)pEntity)->slot219();
+	float flMul = g_10739d08.sub_101e86e0(pOwner);
+	{
+		Vector tmp;
+		Vector *pv = pObject->vfunc15(&tmp);
+		m_vec68 = *pv * flMul;
+	}
+	int nObjA = m_hAttached78.Get()->m_obj36c;
+	sub_10158c00(m_hOther7c.Get()->m_obj36c, nObjA);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10148a20 size=0x171
 #include "CGravControllerPoint.h"
 #include "IPhysicsObject.h"

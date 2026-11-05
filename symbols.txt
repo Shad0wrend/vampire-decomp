@@ -4885,6 +4885,7 @@
 0x1000821a func   ?sub_100f97d0@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_100f97d0
 0x1000821f func   ?sub_1005f9a0@@YAHXZ sub_1005f9a0
 0x10008224 func   ?sub_10374e50@CNPC_VDog@@QAEXXZ CNPC_VDog::sub_10374e50
+0x1000822e func   ?sub_101487a0@CGravControllerPoint@@QAEXPAVCBaseEntity@@PAVIPhysicsObject@@PBVVector@@0@Z CGravControllerPoint::sub_101487a0
 0x10008233 func   ?vfunc273@CBaseAnimatingOverlay@@QAEXHDH@Z CBaseAnimatingOverlay::vfunc273
 0x1000823d func   ??0CAI_InterestTarget@@QAE@XZ CAI_InterestTarget::CAI_InterestTarget
 0x1000823d func   ?sub_102d9150@CUnknown102d9150@@QAEPAV1@XZ CUnknown102d9150::sub_102d9150
