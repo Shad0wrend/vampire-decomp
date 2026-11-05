@@ -4797,6 +4797,47 @@ void CBaseEntity::sub_100391f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10039470 size=0x29a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CVProfile.h"
+#include "ScopeTrace.h"
+struct FollowName { virtual void n0(); virtual void n1(); virtual void n2(); virtual void n3(); virtual void n4(); virtual const char *n5(); };
+struct FollowHolder { virtual void h0(); virtual void h1(); virtual void h2(); virtual FollowName *h3(); };
+struct FollowEdict { char pad[0x40]; FollowHolder *m_pHolder; };
+extern void (*g_109f3658)(int level, const char *pszFormat, ...);
+extern void (__fastcall *g_109f365c)(void *pProfile);
+void CBaseEntity::sub_10039470()
+{
+	ScopeTrace trace("CBaseEntity::PhysicsFollow", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	g_109f3648->EnterScope("CBaseEntity_PhysicsFollow", 0, "Unaccounted", false);
+	if (!sub_10033f60(0)) { g_109f365c(g_109f3648); return; }
+	if (m_hAimEnt37c.Get()) {
+		CEntityVSlots *pThis = (CEntityVSlots *)this;
+		pThis->slot216(((CEntityVSlots *)m_hAimEnt37c.Get())->slot217());
+		pThis->slot218(((CEntityVSlots *)m_hAimEnt37c.Get())->slot219());
+		sub_100a53d0(0);
+		g_109f3648->ExitScopeInlined();
+		return;
+	}
+	const char *pszName;
+	FollowEdict *pEdict = (FollowEdict *)m_pEdict2e0;
+	if (!pEdict->m_pHolder) pszName = g_106b8540;
+	else pszName = pEdict->m_pHolder->h3()->n5();
+	g_109f3658(2, "%s movetype FOLLOW with NULL aiment\n", pszName);
+	vfunc93(0, 0);
+	g_109f3648->ExitScope();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100397c0 size=0x255
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

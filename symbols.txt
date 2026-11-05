@@ -1819,6 +1819,7 @@
 0x10003a62 func   ?vfunc45@CPayphone@@QAE_NPAVCBaseEntity@@HHHHHHH@Z CPayphone::vfunc45
 0x10003a6c func   ?sub_1023e270@@YGHH@Z sub_1023e270
 0x10003a76 func   ?vfunc241@CFuncAreaPortalWindow@@QAE_NPBM@Z CFuncAreaPortalWindow::vfunc241
+0x10003a7b func   ?sub_10039470@CBaseEntity@@QAEXXZ CBaseEntity::sub_10039470
 0x10003a80 func   _soundent soundent
 0x10003a8a func   ?sub_100d35f0@@YAXXZ sub_100d35f0
 0x10003a8f func   ?vfunc81@CWeaponRanged_Rifle_M37@@UAEHXZ CWeaponRanged_Rifle_M37::vfunc81
