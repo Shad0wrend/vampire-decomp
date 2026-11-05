@@ -27335,6 +27335,44 @@ int CBaseAnimating::sub_1008d990(int sequence)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008dac0 size=0x125
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseAnimating.h"
+#include "StudioHdr.h"
+#include "ScopeTrace.h"
+
+int sub_10427df0(StudioHdr *hdr, int activity, int *seqs, int *weights, int base, bool bHasA8, bool bHas94, int maxSeqs);
+
+int CBaseAnimating::sub_1008dac0(int a, char *bufB, char *bufA, int b)
+{
+    ScopeTrace trace("CBaseAnimating::GetSequencesForActivity", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    int result = 0;
+    int base = 0;
+    { int model = -1; while (2 > model) { StudioHdr *hdr = (StudioHdr *)sub_100952d0(model);
+        if (hdr) {
+            result += sub_10427df0(hdr, a, (int *)bufB + result, (int *)bufA + result, base,
+                                   *(int *)((char *)this + 0xa8) != 0, *(int *)((char *)this + 0x94) != 0, b);
+            int count;
+            if (hdr->m_nIncludeModels != 0) {
+                int first = *(int *)((char *)hdr + (hdr->m_nIncludeIndex + hdr->m_nIncludeModels * 0x74) - 0x6c);
+                char *end = (hdr->m_nIncludeIndex + hdr->m_nIncludeModels * 0x74) + (char *)hdr;
+                count = first + *(int *)(end - 0x68);
+            } else {
+                count = hdr->m_nLocalSeq;
+            }
+            base += count;
+        } model++; } }
+    return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008dc40 size=0xc0
 #include "CBaseAnimating.h"
 

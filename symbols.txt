@@ -6953,6 +6953,7 @@
 0x1000b21c func   ?sub_10232cb0@@YA_NXZ sub_10232cb0
 0x1000b221 func   ?sub_10174df0@@YIXPAX@Z sub_10174df0
 0x1000b22b func   ?vfunc134@CBloodSplat@@UAEXXZ CBloodSplat::vfunc134
+0x1000b230 func   ?sub_1008dac0@CBaseAnimating@@QAEHHPAD0H@Z CBaseAnimating::sub_1008dac0
 0x1000b23a func   ?sub_10303cd0@CAI_Pathfinder@@QAEPAVCAI_Waypoint@@PBM0PBVCBaseEntity@@HHHHH@Z CAI_Pathfinder::sub_10303cd0
 0x1000b23f func   ?sub_1013b300@@YAXABVVector@@MAAUQuaternion@@@Z sub_1013b300
 0x1000b244 func   ?vfunc68@CGameRules@@UAE_NH@Z CGameRules::vfunc68
