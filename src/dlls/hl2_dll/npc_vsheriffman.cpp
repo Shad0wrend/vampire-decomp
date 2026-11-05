@@ -41,6 +41,82 @@ void CNPC_VSheriffMan::vfunc619(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103afdb0 size=0x3d8
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CNPC_VSheriffMan.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseAnimating.h"
+
+#define FILE_STAMP(line) (m_pszSourceFile = "E:\\Vampire\\main\\dlls\\hl2_dll\\npc_vsheriffman.cpp", m_nSourceLine = (line))
+
+// TARGET: CNPC_VSheriffMan::vfunc605
+int CNPC_VSheriffMan::vfunc605(int unused)
+{
+	ScopeTrace trace("CNPC_VSheriffMan::SelectScheduleRangedCombat", g_106b8540);
+	CAI_BaseNPCTroika *p = (CAI_BaseNPCTroika *)this;
+	if (m_b6078) {
+		FILE_STAMP(0x2b1);
+		return 0xe3;
+	}
+	if (p->sub_10014df8(8) && p->vfunc307() && p->vfunc599((int)p->vfunc167())) {
+		FILE_STAMP(0x2cb);
+		return 0xe3;
+	}
+	if (p->sub_10014df8(0x3c)) {
+		FILE_STAMP(0x2d0);
+		return 0xb8;
+	}
+	int r = p->sub_102b8620();
+	if (r) return r;
+	r = p->sub_102b7370();
+	if (r) return r;
+	r = p->sub_102b7cf0();
+	if (r) return r;
+	if (!p->sub_10014df8(0x5f) && !p->sub_10014df8(8)) {
+		if (!p->sub_10014df8(0x46) || p->sub_10014df8(0x48) || p->sub_10014df8(0x60))
+			;
+		else
+			return 0;
+		if (p->sub_10014df8(0x59)) {
+			FILE_STAMP(0x314);
+			return 0x15a;
+		}
+		FILE_STAMP(0x31a);
+		return 0xe8;
+	}
+	if (!p->sub_10014df8(0x2f) && !p->sub_10014df8(0x63)) {
+		if (((CBaseAnimating *)this)->sub_1008dc40(0x10, -1) && !p->sub_10014df8(0x2c) && enginerandom->vfunc2(0, 0x63) < 0x4b) {
+			FILE_STAMP(0x2ed);
+			return 0xef;
+		}
+		if (p->vfunc307() && enginerandom->vfunc2(0, 0x63) < 0x19 && p->vfunc599((int)p->vfunc167())) {
+			FILE_STAMP(0x2f1);
+			return 0xe8;
+		}
+		FILE_STAMP(0x2f5);
+		return 0xf0;
+	}
+	if (((CBaseAnimating *)this)->sub_1008dc40(0x10, -1) && !p->sub_10014df8(0x2c) && enginerandom->vfunc2(0, 0x63) < 0x4b) {
+		FILE_STAMP(0x2fc);
+		return 0xb8;
+	}
+	if (p->vfunc307() && p->vfunc599((int)p->vfunc167())) {
+		FILE_STAMP(0x300);
+		return 0xe8;
+	}
+	FILE_STAMP(0x304);
+	return 0xb9;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b1510 size=0x9c
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
