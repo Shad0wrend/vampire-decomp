@@ -185,3 +185,13 @@ bool CBaseButton::vfunc223()
     return 1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100c9670 size=0x1a
+#include "CBaseEntity.h"
+#include "CBaseButton.h"
+
+int CBaseButton::vfunc117()
+{
+    return (((CBaseEntity *)this)->CBaseEntity::vfunc117() & ~2) | ((m_flags204 >> 7) & 8);
+}
+// END FUNCTION
