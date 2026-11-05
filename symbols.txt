@@ -107,6 +107,7 @@
 0x10001294 func   ?vfunc495@CGeneric_NPC_bathack@@UAEXXZ CGeneric_NPC_bathack::vfunc495
 0x10001299 func   ?sub_103f8830@@YAHXZ sub_103f8830
 0x1000129e func   ?sub_102f99b0@@YAXXZ sub_102f99b0
+0x100012a3 func   ?vfunc0@CSafeDiscSaveRestoreOps_4@@QAEXPAPAHPAUCSafeDiscWriter@@@Z CSafeDiscSaveRestoreOps_4::vfunc0
 0x100012a8 func   ?sub_102f6d10@CAI_Network@@QAEHH@Z CAI_Network::sub_102f6d10
 0x100012ad func   ?sub_100e7310@CDialog@@QAEPADXZ CDialog::sub_100e7310
 0x100012b2 func   ?ShiftElementsRight@?$CUtlVector@V?$CHandle@VCBaseEntity@@@@V?$CUtlMemory@V?$CHandle@VCBaseEntity@@@@@@@@QAEXHH@Z CUtlVector<CHandle<CBaseEntity>,CUtlMemory<CHandle<CBaseEntity> > >::ShiftElementsRight
