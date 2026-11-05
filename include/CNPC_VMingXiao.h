@@ -239,7 +239,7 @@ public:
 	virtual void vfunc189();
 	virtual void vfunc190();
 	virtual void vfunc191();
-	virtual void vfunc192();
+	virtual float *vfunc192(Vector *pOut);
 	virtual void vfunc193();
 	virtual void vfunc194_slot();
 	virtual void vfunc195_slot();
