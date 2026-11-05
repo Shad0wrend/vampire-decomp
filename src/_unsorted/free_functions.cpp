@@ -17584,6 +17584,36 @@ void CUnknown10073a30::sub_10073a30(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10073a50 size=0x2f
+struct CUnknown10076da0;
+
+struct CUnknown10076da0Entry
+{
+	char m_szName[0x80];
+	int m_n0080;
+	CUnknown10076da0 *m_pOwner;
+
+	CUnknown10076da0Entry *sub_10073a50(CUnknown10076da0 *pOwner, const char *s, int b);
+};
+
+static inline char *MyStrcpy(char *dst, const char *src)
+{
+	char *r = dst;
+	while ((*dst++ = *src++) != 0)
+		;
+	return r;
+}
+
+// TARGET: CUnknown10076da0Entry::sub_10073a50
+CUnknown10076da0Entry *CUnknown10076da0Entry::sub_10073a50(CUnknown10076da0 *pOwner, const char *s, int b)
+{
+	MyStrcpy(m_szName, s);
+	m_n0080 = b;
+	m_pOwner = pOwner;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10073a90 size=0x35
 #include "CUnknown10076da0.h"
 #include <string.h>
