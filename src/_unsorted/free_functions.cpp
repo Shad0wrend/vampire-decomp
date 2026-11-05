@@ -41936,6 +41936,68 @@ void sub_100d3d20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d3e90 size=0x23e
+#include "CBasePlayer.h"
+#include "engineserver.h"
+#include <string.h>
+#include <stdlib.h>
+struct CCmdGameRulesView { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39(); virtual void v40(); virtual char vfunc41(const char *p, CBasePlayer *pl); };
+struct CCmdConsoleInner { virtual void v0(); virtual char vfunc1(); char pad[0x28]; int m_n2c; };
+struct CCmdConsole { int pad; CCmdConsoleInner *m_p4; };
+extern CCmdGameRulesView *g_1070ba0c;
+extern CCmdConsole *g_1070af4c;
+void sub_100d2320(CBasePlayer *p, const char *s);
+void sub_101ce290(CBasePlayer *p, unsigned char *c, float a, float b, int f);
+void sub_101ce620(CBasePlayer *p, int a, const char *s, int b, int c, int d, int e);
+const char *sub_101cf720(const char *fmt, const char *a);
+void sub_101cd940(void *p);
+void sub_10056ba0(const Vector &a, void *b, const char *c, const char *d);
+struct CTeTesterList { void *sub_100f7380(void *prev, const char *name); };
+extern CTeTesterList g_106eb5d8;
+
+void sub_100d3e90(CBasePlayer *pEntity)
+{
+	const char *arg0 = engine->vfunc84(0);
+	if (!pEntity)
+		return;
+	char *p = strstr(arg0, "weapon_");
+	if (p && p == arg0) {
+		if (engine->vfunc85() == 2)
+			pEntity->vfunc457(arg0, atoi(engine->vfunc84(1)));
+		else
+			pEntity->vfunc457(arg0, 0);
+		return;
+	}
+	if (!_strcmpi(arg0, "killtarget")) {
+		CCmdConsole *c = g_1070af4c;
+		if (!c->m_p4->vfunc1() && c->m_p4->m_n2c)
+			sub_100d2320(pEntity, engine->vfunc84(1));
+	} else if (!_strcmpi(arg0, "fade")) {
+		unsigned char color[4] = { 0x20, 0x3f, 0x64, 0xc8 };
+		sub_101ce290(pEntity, color, 3.0f, 3.0f, 2);
+	} else if (!_strcmpi(arg0, "te")) {
+		const char *arg1 = engine->vfunc84(1);
+		if (!_strcmpi(arg1, "stop")) {
+			void *e = g_106eb5d8.sub_100f7380(0, "te_tester");
+			while (e) {
+				void *next = g_106eb5d8.sub_100f7380(e, "te_tester");
+				sub_101cd940(e);
+				e = next;
+			}
+		} else {
+			sub_10056ba0(pEntity->vfunc192(), (char *)pEntity + 0x206c, engine->vfunc84(1), engine->vfunc84(2));
+		}
+	} else {
+		p = strstr(arg0, "item_");
+		if (p && p == arg0) {
+			pEntity->vfunc457(arg0, 0);
+		} else if (!g_1070ba0c->vfunc41(arg0, pEntity)) {
+			sub_101ce620(pEntity, 2, sub_101cf720("Unknown command: %s\n", arg0), 0, 0, 0, 0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d4160 size=0xa4
 #include "CVStatList_t.h"
 extern "C" int sprintf(char *, const char *, ...);

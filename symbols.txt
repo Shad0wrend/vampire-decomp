@@ -5656,6 +5656,7 @@
 0x10009598 func   ?vfunc223@CFuncMoveLinear@@QAE_NXZ CFuncMoveLinear::vfunc223
 0x1000959d func   ?sub_100fe580@@YAHHH@Z sub_100fe580
 0x100095a2 func   ?vfunc363@CWeaponRanged_Pistol_Thirtyeight@@QAEHXZ CWeaponRanged_Pistol_Thirtyeight::vfunc363
+0x100095ac func   ?sub_100d3e90@@YAXPAVCBasePlayer@@@Z sub_100d3e90
 0x100095b1 func   ?vfunc362@CNPC_VNewscaster@@UAE_NH@Z CNPC_VNewscaster::vfunc362
 0x100095b6 func   ?sub_10073810@CUnknown10076da0Entry@@QAEPAU1@PAUCUnknown10076da0@@PBDH@Z CUnknown10076da0Entry::sub_10073810
 0x100095bb func   ?sub_10080b00@CSceneEntity@@QAEXPAUCSceneEvent@@@Z CSceneEntity::sub_10080b00
