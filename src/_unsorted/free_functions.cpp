@@ -172738,6 +172738,59 @@ CBaseEntity *CBaseCombatCharacter::sub_1032be80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032c960 size=0x1f6
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+// TARGET: CBaseCombatCharacter::sub_1032c960
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+void __cdecl sub_101cf5c0(CBaseEntity *pObject, int pVec, int a);
+int sub_101cf600(int pObject);
+
+void CBaseCombatCharacter::sub_1032c960(CBaseEntity *pObject)
+{
+	ScopeTrace scope("CBaseCombatCharacter::ObjectHand_Detach",
+	                 this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+
+	if (pObject)
+	{
+		if (pObject->vfunc96())
+		{
+			Vector vecPos;
+			((CEntityVSlots *)this)->slot368(&vecPos);
+			vecPos = vecPos * 30.0f;
+			{
+				Vector vecOut = vecPos + ((CEntityVSlots *)this)->slot389(*((CEntityVSlots *)this)->slot220());
+				sub_101cf5c0(pObject, (int)&vecOut, 0);
+			}
+		}
+
+		pObject->sub_1009ee80(0);
+		((CEntityVSlots *)pObject)->slot202(0);
+		pObject->vfunc93(6, 0);
+		*(float *)((char *)pObject + 0x3ec) = 1.0f;
+		{
+			ScopeTrace scopeSolid("CBaseEntity::SetSolid",
+			                      pObject->m_name26c ? pObject->m_name26c : g_106b8540);
+			((CCollisionProperty *)((char *)pObject + 0x270))->sub_100dc480(2);
+		}
+		sub_101cf600((int)pObject);
+		pObject->sub_100b3640(1);
+		pObject->vfunc67();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032d890 size=0xd5
 #include "CBaseCombatCharacter.h"
 extern "C" int _strcmpi(const char *, const char *);
