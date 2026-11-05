@@ -434,7 +434,13 @@ struct { char m_pad1a41[0x1b2c - 0x1a41]; int m_n1b2c; };
 	bool m_bFullInvestigate;	// 0x6340
 	char m_pad6341[0x6344 - 0x6341];
 	int m_iBrightRoutePenalty;	// 0x6344
-	char m_pad6348[0x6368 - 0x6348];
+	union {
+		char m_pad6348[0x6368 - 0x6348];
+		struct {
+			char m_pad6348b[0x6364 - 0x6348];
+			unsigned int m_n6364;	// 0x6364: the seed of the scrambled hash (sub_1028ea60's seed); also read by vfunc437 / vfunc438 / vfunc460
+		};
+	};
 	int m_iPLSupernaturalLevelWitnessed;	// 0x6368
 	int m_iPLCriminalActProcessed;	// 0x636c
 	int m_iPLSupernaturalActProcessed;	// 0x6370
