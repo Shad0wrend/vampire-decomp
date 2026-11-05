@@ -2373,6 +2373,7 @@
 0x10004845 func   ?sub_100fbac0@CUnknown100fbac0@@QAEXHH@Z CUnknown100fbac0::sub_100fbac0
 0x1000484a func   ?sub_1024ed00@@YAXAAVVMatrix@@MMM@Z sub_1024ed00
 0x10004854 func   ?vfunc5@CItemContainerAnimated@@QAEPAV1@I@Z CItemContainerAnimated::vfunc5
+0x10004859 func   ?vfunc258@CBaseAnimating@@QAEXMPAX@Z CBaseAnimating::vfunc258
 0x1000485e func   ?vfunc434@CGenericSabbat_NPC@@UAEXXZ CGenericSabbat_NPC::vfunc434
 0x10004868 func   ?vfunc5@CLogicPythonCheck@@QAEPAV1@I@Z CLogicPythonCheck::vfunc5
 0x1000486d func   ?vfunc81@CResearchBook_LG_DODGE@@QAEHXZ CResearchBook_LG_DODGE::vfunc81

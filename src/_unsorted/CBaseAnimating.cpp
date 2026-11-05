@@ -592,6 +592,124 @@ float CBaseAnimating::vfunc249()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10091880 size=0x32f
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseAnimating.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+extern double g_1044fab0;
+
+struct OptBuf_t { char c[64]; };
+
+struct AnimEvent_t {
+	int event;
+	char *options;
+	float cycle;
+	float eventtime;
+	CBaseAnimating *pSource;
+	OptBuf_t optionBuf;
+};
+
+struct SeqEvent_t {
+	float cycle;
+	int event;
+	int type;
+	OptBuf_t options;
+};
+
+struct SeqDesc_t {
+	char pad0[8];
+	int flags;
+	char pad1[8];
+	int numevents;
+	int eventindex;
+};
+
+struct AnimView {
+	char pad0000[0x174];
+	float animTime;
+	char pad0178[0xac];
+	unsigned int field224;
+	char pad0228[0x568 - 0x228];
+	char m_b568;
+	char pad0569[0x658 - 0x569];
+	float m_flOldCycle;
+	char m_bFinished;
+	char m_bLoop;
+	char pad065e[0x6f0 - 0x65e];
+	int m_nSequence;
+	float m_flRate;
+	float m_flCycle;
+};
+
+void CBaseAnimating::vfunc258(float flInterval, void *pListener)
+{
+	ScopeTrace trace("CBaseAnimating::DispatchAnimEvents ", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc, g_106b8540);
+	AnimView *v = (AnimView *)this;
+	char bWasFinished = v->m_bFinished;
+	if (sub_100952d0(-1)) {
+		float flCycleRate = sub_10091230(v->m_nSequence) * v->m_flRate;
+		float flLast = v->m_flOldCycle;
+		v->m_bFinished = 0;
+		float flNew = flCycleRate * 0.1f + v->m_flCycle;
+		SeqDesc_t *pSeq = (SeqDesc_t *)sub_1008d990(v->m_nSequence);
+		if (v->m_bLoop) {
+			if (flNew >= 1.0f || flNew < g_1044fab0)
+				v->m_bFinished = 1;
+			else if (flNew > 0.5f)
+				v->m_b568 = 1;
+			else
+				v->m_b568 = 0;
+			if (flLast >= 1.0)
+				flLast = flLast - 1.0;
+			if (flLast < g_1044fab0)
+				flLast = flLast + 1.0;
+		} else {
+			sub_10091230(v->m_nSequence);
+			if (pSeq) {
+				if (flNew >= 1.0f || flNew < g_1044fab0) {
+					v->m_bFinished = 1;
+					flNew = 1.0f;
+				} else if (flNew > 0.5f)
+					v->m_b568 = 1;
+				else
+					v->m_b568 = 0;
+			}
+		}
+		v->m_flOldCycle = flNew;
+		if (pSeq) {
+			AnimEvent_t ev;
+			for (int i = 0; i < pSeq->numevents; i++) {
+				SeqEvent_t *pe = (SeqEvent_t *)((char *)pSeq + pSeq->eventindex + i * 0x4c);
+				if (pe->event < 5000
+					&& ((pe->cycle >= flLast && pe->cycle < flNew)
+						|| ((pSeq->flags & 1) && flNew >= 1.0f && pe->cycle < flNew - 1.0f))) {
+					ev.pSource = this;
+					ev.cycle = pe->cycle;
+					ev.eventtime = (ev.cycle - v->m_flCycle) / flCycleRate + v->animTime;
+					ev.event = pe->event;
+					ev.optionBuf = pe->options;
+					ev.options = ev.optionBuf.c;
+					if (v->field224 & 0x80000000)
+						sub_1008cfc0(sub_100ab4f0(), &ev);
+					((CEntityVSlots *)pListener)->slot259(&ev);
+				}
+			}
+		}
+		if (v->m_bFinished && !bWasFinished)
+			sub_10091c80();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10091da0 size=0x11d
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
