@@ -43,6 +43,7 @@ public:
 	void vfunc178(CBaseEntity *pOther);	// slot 178 "CFuncMoveLinear::Blocked" (plain member): with a damage value at +0x56c a damage info (this as attacker and inflictor, the value, bits 1, 0, 0, -1) is handed to pOther (CBaseEntity::sub_100a1250)
 	void vfunc173(void *pActivator, void *pCaller, int useType, float flValue);	// slot 173 "CFuncMoveLinear::Use" (plain member): only for USE_SET (2): the value (capped at 1.0) is the fraction of the way from position 1 to position 2; MoveTo it at ten times its distance from the local origin (slot 220)
 	void sub_100a6150(int a, int b, int c);	// reports a message
+	void sub_100b3b00();	// CBaseEntity (stub 0x1001514a)
 	void sub_10116570(Vector vecPosition, float flSpeed);	// "CFuncMoveLinear::MoveTo" (stub 0x1000c7c5): starts the movement towards vecPosition at flSpeed
 	void sub_101171a0(inputdata_t &inputdata);	// "CFuncMoveLinear::InputOpen"-like: moves to the position at +0x514 at the speed at +0x164 unless the local origin (slot 220) is already there
 	void sub_10117230(inputdata_t &inputdata);	// "CFuncMoveLinear::InputClose"-like: the same for the position at +0x508
@@ -61,9 +62,17 @@ public:
 	EHANDLE m_hActivator10c;	// 0x10c: the activator handle (CBaseEntity::m_hActivator10c; read by sub_10116570)
 	char m_pad0110[0x164 - 0x110];
 	float m_flSpeed;	// 0x164
-	char m_pad0168[0x224 - 0x168];
+	char m_pad0168[0x190 - 0x168];
+	Vector m_vecMovedir190;	// 0x190
+	char m_pad019c[0x1ec - 0x19c];
+	int m_pfnTouch1ec;	// 0x1ec
+	char m_pad01f0[0x204 - 0x1f0];
+	int m_flags204;	// 0x204
+	char m_pad0208[0x224 - 0x208];
 	unsigned char m_bDebugOverlays224;	// 0x224: bit 0 = text overlay
-	char m_pad0225[0x2e0 - 0x225];
+	char m_pad0225[0x26c - 0x225];
+	const char *m_name26c;	// 0x26c
+	char m_pad0270[0x2e0 - 0x270];
 	int m_pEdict2e0;	// 0x2e0
 	char m_pad02e4[0x4a4 - 0x2e4];
 	COutputEvent m_Output4a4;	// 0x4a4
