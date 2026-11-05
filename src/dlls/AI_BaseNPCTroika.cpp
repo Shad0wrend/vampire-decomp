@@ -1119,6 +1119,84 @@ int CAI_BaseNPCTroika::sub_102b8c40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b9060 size=0x2a9
+#include "CAI_BaseNPCTroika.h"
+#include "CUnknown102b5dc0.h"
+
+namespace block_102b9060 {
+	struct CUnknown102b5dc0Unit : CUnknown102b5dc0
+	{
+		void sub_102b5dc0(int value);
+	};
+
+	void CUnknown102b5dc0Unit::sub_102b5dc0(int value)
+	{
+		m_unk63f4 = value;
+	}
+}
+using namespace block_102b9060;
+
+#define NPC_DWORD(off) (*(unsigned int *)((char *)this + (off)))
+#define NPC_FLOAT(off) (*(float *)((char *)this + (off)))
+#define NPC_FILE(off) (*(const char **)((char *)this + (off)))
+#define V_DW(off) (*(volatile unsigned int *)((char *)this + (off)))
+#define V_BY(off) (*(volatile unsigned char *)((char *)this + (off)))
+#define V_FILE(off) (*(const char *volatile *)((char *)this + (off)))
+#define SRC_FILE "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp"
+#define SET_SRC(ln) { NPC_FILE(0x1b30) = SRC_FILE; NPC_DWORD(0x1b34) = (ln); }
+#define CPY_DW(d, s) V_DW(d) = V_DW(s);
+#define CPY_TIMER(d, s) \
+	CPY_DW(d + 0x00, s + 0x00) CPY_DW(d + 0x04, s + 0x04) CPY_DW(d + 0x08, s + 0x08) CPY_DW(d + 0x0c, s + 0x0c) \
+	CPY_DW(d + 0x10, s + 0x10) V_BY(d + 0x14) = V_BY(s + 0x14); \
+	CPY_DW(d + 0x18, s + 0x18) CPY_DW(d + 0x1c, s + 0x1c) CPY_DW(d + 0x20, s + 0x20) CPY_DW(d + 0x24, s + 0x24) \
+	CPY_DW(d + 0x28, s + 0x28)
+
+// TARGET: CAI_BaseNPCTroika::sub_102b9060
+int CAI_BaseNPCTroika::sub_102b9060()
+{
+	if (sub_10269d30(0x25)) {
+		if (sub_10014df8(0x6d) || sub_10014df8(0x70)) {
+			NPC_FLOAT(0x623c) = gpGlobals->curtime + 2.0f;
+			sub_102b4090();
+			((CUnknown102b5dc0Unit *)this)->sub_102b5dc0(3);
+			if (NPC_DWORD(0x5d8c) & 0x8000000) {
+				SET_SRC(0x6047);
+				return 0x52;
+			}
+			if (!(NPC_DWORD(0x5b84) & 0x10000) && enginerandom->vfunc2(0, 99) < 100) {
+				SET_SRC(0x604d);
+				return 0x50;
+			}
+			SET_SRC(0x6051);
+			return 0x51;
+		}
+		if (sub_10014df8(0x6e)) {
+			CPY_TIMER(0x60b0, 0x61e4)
+			CPY_TIMER(0x60dc, 0x60b0)
+			V_FILE(0x1b30) = SRC_FILE;
+			V_DW(0x1b34) = 0x605c;
+			return 0x51;
+		}
+		if (sub_10014df8(0x6f) || sub_10014df8(0x6a)) {
+			sub_102b4090();
+			SET_SRC(0x6063);
+			return sub_102b8980();
+		}
+	}
+	if (sub_10014df8(0x2d)) {
+		int r = sub_102b8d20(0x89, 0x73);
+		if (r)
+			return r;
+	}
+	if (!(NPC_DWORD(0x5b84) & 0x10000) && sub_10269d30(0x72)) {
+		sub_102b4090();
+		SET_SRC(0x6074);
+		return 0x50;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c51a0 size=0x119
 #include "CAI_BaseNPCTroika.h"
 

@@ -4621,6 +4621,7 @@
 0x10007d42 func   ?vfunc4@CRecipientFilter@@UAEDXZ CRecipientFilter::vfunc4
 0x10007d47 func   ?sub_10083a60@CSceneEntity@@QAEXXZ CSceneEntity::sub_10083a60
 0x10007d51 func   ?vfunc1@CTEBubbleTrail@@UAEHXZ CTEBubbleTrail::vfunc1
+0x10007d56 func   ?sub_102b9060@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::sub_102b9060
 0x10007d5b func   _item_k_gimble_key item_k_gimble_key
 0x10007d60 func   ?vfunc151@CBasePlayer@@QAEXPAVCBaseCombatWeapon@@@Z CBasePlayer::vfunc151
 0x10007d65 func   ?sub_10405290@@YAHXZ sub_10405290
