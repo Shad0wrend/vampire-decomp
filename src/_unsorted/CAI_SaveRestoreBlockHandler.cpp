@@ -123,3 +123,73 @@ void CAI_SaveRestoreBlockHandler::vfunc6(IRestorePy *pRestore)
 	*(bool *)((char *)this + 4) = (version == g_10612968);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1030c210 size=0x124
+#include "CBaseEntity.h"
+#include "CAI_SaveRestoreBlockHandler.h"
+#include "CRestore.h"
+#include "CUnknown102652d0.h"
+#include "CUnknown103164c0.h"
+#include "CUnknown102e06f0.h"
+#include "CAI_BaseNPC.h"
+
+int sub_10315790(int);
+extern int g_10614c70;
+extern int g_1060dde8;
+
+struct CSquadLocal
+{
+	char m[sizeof(CUnknown103164c0)];
+	CSquadLocal() { ((CUnknown103164c0 *)m)->sub_10316560(); }
+	~CSquadLocal() { ((CUnknown103164c0 *)m)->sub_10316440(); }
+};
+
+struct CVecLocal
+{
+	CUnknown102e06f0 m;
+	CVecLocal() { m.sub_102e06f0(); }
+	~CVecLocal() { m.sub_102e0730(); }
+};
+
+void CAI_SaveRestoreBlockHandler::vfunc7(CRestore *pRestore, int a, int b)
+{
+	CAI_BaseNPC **ppEnts = (CAI_BaseNPC **)g_1090fe10.sub_102652d0();
+	for (int i = 0; i < g_1090fe10.sub_102652f0(); i++)
+		ppEnts[i]->vfunc545();
+
+	if (m_bField4)
+	{
+		CSquadLocal squad;
+		CBaseEntity *pEnt;
+		int strId;
+		short n = pRestore->vfunc13();
+		for (int i = n; i != 0; i--)
+		{
+			int sz = pRestore->vfunc10();
+			pRestore->vfunc20(&strId, 1, sz);
+			const char *p = (const char *)sub_10315790(strId);
+			if (!p)
+				p = (const char *)&squad;
+			pRestore->vfunc2((CBaseEntity *)p, (int)&g_10614c70);
+		}
+		CVecLocal vec;
+		unsigned short m = pRestore->vfunc13();
+		if (m != 0)
+		{
+			unsigned int j = m;
+			do
+			{
+				pRestore->vfunc28(&pEnt, 1, 0);
+				if (pEnt)
+				{
+					CBaseEntity *s = (CBaseEntity *)((CAI_BaseNPC *)pEnt)->vfunc541();
+					pRestore->vfunc2(s, (int)&g_1060dde8);
+				}
+				else
+					pRestore->vfunc2((CBaseEntity *)&vec, (int)&g_1060dde8);
+				j--;
+			} while (j != 0);
+		}
+	}
+}
+// END FUNCTION
