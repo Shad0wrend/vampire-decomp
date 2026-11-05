@@ -27,6 +27,7 @@ public:
 	float sub_101e7d70();	// a tuning delay as a float (stub 0x10007e0f): the time between the random view punches of the player
 	float sub_101e7dd0(float a);	// stub 0x100056dc (0x101e7dd0): a delay derived from a and the block at +0x3e0 / +0x3e4
 	float sub_101e8820(CBaseCombatCharacter *pChar);	// the character's stat 0x1a divided by the (truncated) tuning value of its stat 1 level minus one (stub 0x10004c91)
+	float sub_101e86e0(void *pChar);
 	float sub_101e8640(void *pChar);	// a float derived from the character's stats (stub 0x1000b3d9)
 	float sub_101e9020();	// a tuning value as a float (stub 0x10004615)
 	float *sub_101e8da0();	// the address of the block at +0x2bc (stub 0x10008e7c): floats at +0x64 / +0x68 are the base and the per-step delay
