@@ -122127,6 +122127,68 @@ void CUnknown102126c0::sub_10212790(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10212da0 size=0x1b7
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CGameSign.h"
+#include "CUnknown10248a50.h"
+#include "CKeyValuesX.h"
+#include "ScopeTrace.h"
+#include <string.h>
+
+extern IFileSys *g_1070b238;
+int sub_101d2850(const char *pszName, int flags);
+__declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int nMaxLen);
+
+bool CGameSign::sub_10212da0()
+{
+	ScopeTrace trace("CGameSign::LoadSignData", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+
+	delete m_pszFile450;
+	m_pszFile450 = 0;
+
+	CUnknown10248a50 *pKV = new CUnknown10248a50("SignData");
+	if (pKV) {
+		const char *pszPath = m_psz454 ? m_psz454 : g_106b8540;
+		IFileSys *pFileSys = g_1070b238;
+		if (!pKV->sub_102480f0(pszPath, pFileSys, 0, 1)) {
+			pKV->sub_100046f1();
+			::operator delete(pKV);
+			return false;
+		}
+		CKeyValuesX *pKey = (CKeyValuesX *)pKV->sub_10248a10();
+		if (!pKey) {
+			pKV->sub_100046f1();
+			::operator delete(pKV);
+			return false;
+		}
+		for (; pKey; pKey = pKey->sub_1000fa65()) {
+			const char *pszName = pKey->sub_102480b0();
+			if (!_strcmpi(pszName, "Sign")) {
+				const char *pszDep = pKey->sub_10248cd0("dependency", 0);
+				const char *pszFile = pKey->sub_10248cd0("filename", 0);
+				if (pszDep && pszFile && sub_101d2850(pszDep, 0x102)) {
+					int nLen = strlen(pszFile) + 1;
+					m_pszFile450 = new char[nLen];
+					Q_strncpy(m_pszFile450, pszFile, nLen);
+					break;
+				}
+			}
+		}
+		pKV->sub_100046f1();
+		::operator delete(pKV);
+		return m_pszFile450 == 0;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10212fd0 size=0x43
 #include "CPropHaunted.h"
 void *sub_100aa720(int size);
