@@ -194846,6 +194846,58 @@ extern "C" CBaseEntity *trigger_werewolf_zone()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103da730 size=0x251
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "CTriggerWWZone.h"
+#include "CGlobalEntityList.h"
+#include "CGameTrace.h"
+#include "CUnknown1070b254.h"
+#include "CEntityVSlots.h"
+#include "Ray_t.h"
+#include "ScopeTrace.h"
+#include "utlvector.h"
+#include "UtlMem.h"
+extern CGlobalEntityList g_106eb5d8;
+void sub_10085070(int *pDest, const int *pSrc);
+
+// TARGET: CTriggerWWZone::sub_103da730
+void CTriggerWWZone::sub_103da730()
+{
+	ScopeTrace trace("CTriggerWWZone::InitLocationMarkers", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CUtlVector<CHandle<CBaseEntity> > *pList = (CUtlVector<CHandle<CBaseEntity> > *)((char *)this + 0x598);
+	pList->RemoveAll();
+	((UtlMem *)pList)->sub_10185100();
+	pList->ResetDbgInfo();
+	CBaseEntity *pEnt = g_106eb5d8.sub_100f7380(0, "point_target");
+	CHandle<CBaseEntity> h;
+	for (; pEnt; pEnt = g_106eb5d8.sub_100f7380(pEnt, "point_target")) {
+		CEntityVSlots *pSlots = (CEntityVSlots *)pEnt;
+		const Vector *pA = pSlots->slot217();
+		const Vector *pB = pSlots->slot217();
+		Ray_t ray;
+		ray.Init(*pB, *pA);
+		CGameTrace tr;
+		g_1070b254->vfunc2(&ray, 0xffffffff, (CBaseEntity *)this, &tr);
+		if (tr.m_fraction < 1.0f || tr.m_allsolid || tr.m_startsolid) {
+			pSlots->slot77();
+			h = *(CHandle<CBaseEntity> *)pSlots->slot1();
+			int elem = pList->m_Size;
+			pList->GrowVector();
+			pList->ShiftElementsRight(elem);
+			sub_10085070((int *)&pList->Element(elem), (const int *)&h);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dad80 size=0x9f
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
