@@ -4611,6 +4611,7 @@
 0x10007c61 func   ?sub_102df280@@YAHXZ sub_102df280
 0x10007c66 func   ?sub_1039af00@@YAHXZ sub_1039af00
 0x10007c6b func   ?sub_1042e150@@YAHXZ sub_1042e150
+0x10007c7a func   ?sub_103dfbb0@CNPC_VZombie@@QAEXPAH0@Z CNPC_VZombie::sub_103dfbb0
 0x10007c84 func   ?vfunc5@CSimplePhysicsBrush@@UAEPAV1@I@Z CSimplePhysicsBrush::vfunc5
 0x10007c89 func   ?sub_102df210@@YG_NPAPAH@Z sub_102df210
 0x10007c8e func   ?vfunc600@CNPC_VTzimisceRunner@@QAE_NPAX@Z CNPC_VTzimisceRunner::vfunc600

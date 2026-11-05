@@ -183,6 +183,50 @@ int CNPC_VZombie::vfunc461()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dfbb0 size=0x16b
+#include "CNPC_VZombie.h"
+#include "CEntityVSlots.h"
+
+void sub_1027fc40();
+void sub_101cd940(CNPC_VZombie *pZombie);
+
+struct CDmgCopyView103dfbb0
+{
+	int m_n00;
+	Vector m_v04, m_v10, m_v1c, m_v28, m_v34;
+	int m_n40, m_n44;
+	char m_b48, m_b49, m_b4a;
+};
+
+// TARGET: CNPC_VZombie::sub_103dfbb0
+void CNPC_VZombie::sub_103dfbb0(int *pA, int *pB)
+{
+	Vector vecForce = *(Vector *)pA;
+	*(Vector *)m_a6680 = vecForce;
+	CDmgCopyView103dfbb0 info = *(CDmgCopyView103dfbb0 *)pB;
+	*(CDmgCopyView103dfbb0 *)&m_dmgInfo668c = info;
+	int nSeq = sub_1008dc40(0x21, -1);
+	if (!m_b66e0 && nSeq != -1)
+	{
+		if (m_b6675)
+		{
+			sub_10005c90(m_a6680, &m_dmgInfo668c);
+			return;
+		}
+		m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VZombie.cpp";
+		m_nLine1b34 = 0x2eb;
+		sub_102ae750(0x162, 1);
+		sub_100ac4e0((int)sub_1027fc40, 0, 0);
+		((CEntityVSlots *)this)->slot614();
+	}
+	else
+	{
+		vfunc394();
+		sub_101cd940(this);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e05e0 size=0xb6
 #include "CNPC_VZombie.h"
 #include "CPASFilter.h"
