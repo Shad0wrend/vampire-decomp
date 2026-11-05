@@ -5647,6 +5647,7 @@
 0x1000952f func   ?vfunc363@CWeaponRanged_Pistol_Anaconda@@QAEHXZ CWeaponRanged_Pistol_Anaconda::vfunc363
 0x10009539 func   ?sub_102464d0@@YAHHH@Z sub_102464d0
 0x1000953e func   ?sub_1024b090@CVNameId@@QAE_NPBD@Z CVNameId::sub_1024b090
+0x10009543 func   ?vfunc374@CBaseCombatCharacter@@UAEHHHH@Z CBaseCombatCharacter::vfunc374
 0x10009548 func   ?sub_1013bfd0@@YAMMMMMM@Z sub_1013bfd0
 0x1000954d func   _phys_torque phys_torque
 0x10009552 func   ?sub_101671a0@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_101671a0

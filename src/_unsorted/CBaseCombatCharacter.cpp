@@ -2157,6 +2157,67 @@ Vector CBaseCombatCharacter::vfunc389(const Vector &vecSrc)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10334180 size=0x1ed
+#include "CBaseCombatCharacter.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CGameRules.h"
+#include "CGameRulesSlotTable.h"
+#include "CEntitySoundOriginView.h"
+#include "CPASAttenuationFilter.h"
+#include "ScopeTrace.h"
+#include "engineiface.h"
+#include "engineserver.h"
+
+extern CGameRules *g_1070ba0c;
+
+struct CGameRulesAmmoView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44();
+	virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49();
+	virtual void v50(); virtual void v51(); virtual void v52(); virtual void v53(); virtual void v54();
+	virtual CGameRulesSlotTable *GetAmmoTable();
+};
+
+int CBaseCombatCharacter::vfunc374(int count, int ammoIndex, int unused)
+{
+	ScopeTrace trace("CBaseCombatCharacter::GiveAmmo", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc, g_106b8540);
+	if (count <= 0)
+		return 0;
+	if (!g_1070ba0c->vfunc53(this, ammoIndex))
+		return 0;
+	if (ammoIndex < 0 || ammoIndex >= 32)
+		return 0;
+	int limit = ((CGameRulesAmmoView *)g_1070ba0c)->GetAmmoTable()->sub_10427620(ammoIndex);
+	int have = m_iAmmo[ammoIndex];
+	int avail = limit - have;
+	int add = (count < avail) ? count : avail;
+	if (add < 1)
+		return 0;
+	if (!(char)unused) {
+		CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+		int edict = m_pEdict2e0;
+		enginesound->vfunc3(&filter, engine->vfunc35(edict), 3, "weapons/misc/ammo_pickup.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+	}
+	m_iAmmo[ammoIndex] += add;
+	return add;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10334a50 size=0x86
 #include "CBaseCombatCharacter.h"
 #include "CBaseEntitySlots.h"
