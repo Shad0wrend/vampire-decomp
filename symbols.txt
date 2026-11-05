@@ -4570,6 +4570,7 @@
 0x10007bfd func   ?sub_10246af0@@YA?AVSendProp@@PBDHHHHHPAX@Z sub_10246af0
 0x10007c02 func   ?vfunc72@CNPCMaker@@UAE_NH@Z CNPCMaker::vfunc72
 0x10007c07 func   _item_w_crossbow item_w_crossbow
+0x10007c0c func   ?sub_10336390@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_10336390
 0x10007c11 func   ?sub_1014eba0@CUnknown1014eba0@@QAEHXZ CUnknown1014eba0::sub_1014eba0
 0x10007c16 func   ?sub_1007ce20@CUnknown1007ce20@@QAEMXZ CUnknown1007ce20::sub_1007ce20
 0x10007c1b func   ?vfunc473@CNPC_Crow@@QAEHXZ CNPC_Crow::vfunc473

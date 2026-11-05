@@ -171274,6 +171274,93 @@ void CBaseCombatCharacter::sub_10336170()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10336390 size=0x462
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "CBasePlayer.h"
+#include "CEntityVSlots.h"
+#include "CItemGKeyring.h"
+#include "FileSystemViews.h"
+#include "ScopeTrace.h"
+#include <string.h>
+
+extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+
+#define LOGF1(fmt) { Q_snprintf(szBuf, 0x80, fmt); g_1070b238->vfunc3(szBuf, strlen(szBuf), hFile); }
+#define LOGF2(fmt, a) { Q_snprintf(szBuf, 0x80, fmt, a); g_1070b238->vfunc3(szBuf, strlen(szBuf), hFile); }
+#define LOGF3(fmt, a, b) { Q_snprintf(szBuf, 0x80, fmt, a, b); g_1070b238->vfunc3(szBuf, strlen(szBuf), hFile); }
+#define LOGF4(fmt, a, b, c) { Q_snprintf(szBuf, 0x80, fmt, a, b, c); g_1070b238->vfunc3(szBuf, strlen(szBuf), hFile); }
+
+static inline const char *GetClassname(const char *const *ppszClassname)
+{
+	return *ppszClassname ? *ppszClassname : g_106b8540;
+}
+
+struct CInvPlayerView2
+{
+	char m_pad0000[0xa8];
+	CBasePlayer *m_pPlayer;
+};
+
+struct CKeyringView
+{
+	char m_pad0000[0x914];
+	char *m_pRecords;
+	int m_n918;
+	int m_n91c;
+	int m_nCount;
+};
+
+void CBaseCombatCharacter::sub_10336390(int hFile)
+{
+	ScopeTrace trace("CBaseCombatCharacter::Inventory_Debug_Log", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	char szBuf[128];
+	if (!hFile)
+		return;
+	if (sub_1032e7b0())
+		LOGF2("Active Weapon: %s\n", GetClassname(&((CBaseEntity *)sub_1032e7b0())->m_classname11c))
+	else
+		LOGF1("Active Weapon: NONE\n")
+	if (sub_10341510())
+		LOGF2("Active Armor: %s\n", GetClassname(&((CBaseEntity *)sub_10341510())->m_classname11c))
+	else
+		LOGF1("Active Armor: NONE\n")
+	if (this && ((CInvPlayerView2 *)this)->m_pPlayer) {
+		CBasePlayer *pPlayer = ((CInvPlayerView2 *)this)->m_pPlayer;
+		CEntityVSlots *pVM = (CEntityVSlots *)pPlayer->sub_1015d680(0);
+		if (pVM) {
+			int nTemp;
+			LOGF2("Viewmodel 0: %s\n", *pVM->slot9(&nTemp))
+		}
+		pVM = (CEntityVSlots *)pPlayer->sub_1015d680(1);
+		if (pVM) {
+			int nTemp;
+			LOGF2("Viewmodel 1: %s\n", *pVM->slot9(&nTemp))
+		}
+	}
+	LOGF1("Items: \n")
+	for (int i = 0; i < 0xe0; i++) {
+		if (sub_1032e8b0(i))
+			LOGF3("%d: %s\n", i, GetClassname(&((CBaseEntity *)sub_1032e8b0(i))->m_classname11c))
+	}
+	CItemGKeyring *pKeyring = dynamic_cast<CItemGKeyring *>((CBaseCombatWeapon *)sub_10335950("item_g_keyring"));
+	if (pKeyring) {
+		LOGF1("Keyring: \n")
+		CKeyringView *pView = (CKeyringView *)pKeyring;
+		for (int j = 0; j < pView->m_nCount; j++)
+			LOGF4("%d: (%-32s) %s\n", j, pView->m_pRecords + j * 0xc0, pView->m_pRecords + j * 0xc0 + 0x60)
+	} else
+		LOGF1("ERROR: invalid keyring!!\n")
+}
+// END FUNCTION
+
 // FUNCTION: 0x10336920 size=0xe7
 struct TraceEnt { const char *a; const char *b; const char *c; };
 extern TraceEnt *g_109f3620;
