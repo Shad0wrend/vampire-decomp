@@ -150940,6 +150940,23 @@ void __stdcall sub_102d00e0(S102d4390 *vec, const float *v, float w)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d01b0 size=0x16
+struct CUnknown102d01b0
+{
+	char pad[0x20];
+	int m_obj20[5];
+
+	void sub_102d01b0(int a, int b);
+	void sub_102d00e0(void *p, int a, int b);
+};
+
+// TARGET: CUnknown102d01b0::sub_102d01b0
+void CUnknown102d01b0::sub_102d01b0(int a, int b)
+{
+	sub_102d00e0(m_obj20, a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d01e0 size=0x62
 #include "CUnknown102d01e0.h"
 bool CUnknown102d01e0::sub_102d01e0(const float *pPoint)
