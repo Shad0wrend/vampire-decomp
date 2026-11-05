@@ -12387,6 +12387,7 @@
 0x10013200 func   ?sub_10315f60@@YIDPAUCSquadView@@HPAUCSquadNpcView@@@Z sub_10315f60
 0x10013205 func   ?vfunc250@CBaseDoor@@QAEXXZ CBaseDoor::vfunc250
 0x1001320a func   ?sub_1009d760@CBaseEntity@@QAEHXZ CBaseEntity::sub_1009d760
+0x1001320f func   ?vfunc315@CDisciplineWeapon@@UAEDXZ CDisciplineWeapon::vfunc315
 0x10013214 func   ?sub_1030fb10@S1030fc90@@QAE_NH@Z S1030fc90::sub_1030fb10
 0x10013219 func   ?vfunc5@CCineAI@@QAEPAV1@I@Z CCineAI::vfunc5
 0x10013223 func   ?sub_101cf640@@YAXHHH@Z sub_101cf640

@@ -36,6 +36,61 @@ datamap_t *CDisciplineWeapon::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f1dc0 size=0x1d7
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CDisciplineWeapon.h"
+#include "CEntityVSlots.h"
+#include "CVStatList_t.h"
+#include "Ent.h"
+
+extern char g_106b8540[];
+
+struct CDWPlayerView
+{
+	char m_pad0000[0x1c64];
+	CHandle<CEntityVSlots> m_h1c64;
+};
+
+struct CDWOwnerView
+{
+	char m_pad0000[0xa8];
+	CDWPlayerView *m_pPlayer;
+};
+
+char CDisciplineWeapon::vfunc315()
+{
+	char *pOwner = (char *)sub_10252240();
+	if (!pOwner)
+		return 0;
+	if (CVStatListSet::Of(pOwner)->Find(3)->sub_102012d0(m_nStatType) < 1)
+		return 0;
+	CEntityVSlots *pThis = (CEntityVSlots *)this;
+	CDWOwnerView *pEnt = (CDWOwnerView *)sub_102521f0();
+	CDWPlayerView *pPlayer;
+	if (!pEnt)
+		pPlayer = 0;
+	else
+		pPlayer = pEnt->m_pPlayer;
+	if (pPlayer || !pThis->slot8()) {
+		pThis->slot105(m_pszName754 ? m_pszName754 : g_106b8540);
+		if (pPlayer) {
+			pPlayer->m_h1c64.Get()->slot105(m_pszName754 ? m_pszName754 : g_106b8540);
+			pPlayer->m_h1c64.Get()->slot310(*(int *)&gpGlobals->curtime);
+		}
+	}
+	const char *pszModel;
+	if (!((Ent *)pOwner)->sub_10336920())
+		pszModel = pThis->slot272();
+	else
+		pszModel = pThis->slot273();
+	if (*pszModel)
+		pThis->slot105(pszModel);
+	return sub_10253b70(pThis->slot342(0), pThis->slot343(), 0xb4, pThis->slot344()) != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f2020 size=0x18b
 #include "utlrbtree.h"
 #include "utlsortvector.h"
