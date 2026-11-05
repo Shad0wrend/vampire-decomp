@@ -70849,6 +70849,113 @@ void sub_10158570(int a, IFieldSink *sink, IRestoreSrc *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10158600 size=0x2de
+#include "CPhysicsIfaces.h"
+#include <string.h>
+
+extern CPhysEnvIface *g_10723940;
+extern CPhysSurfacePropsIface *g_10723944;
+extern CPhysCollideIface *g_1072393c;
+extern float g_1070d1b0[];
+extern float g_1070d9d0[];
+extern char g_107238e0[];
+extern int g_107238e4;
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+struct WorldObjParams
+{
+	void *massCenter;
+	float mass, inertia, damping, rotdamping, rotInertiaLimit;
+	const char *pName;
+	void *pGameData;
+	float volume, drag, dragAux;
+	unsigned char enableCollisions;
+	unsigned char pad2d[3];
+};
+
+struct WorldSolid
+{
+	int index;
+	char name[512];
+	char parent[512];
+	char surfaceprop[512];
+	float massCenterOverride[3];
+	WorldObjParams params;
+};
+
+struct WorldFluidParams
+{
+	char pad[0x28];
+	void *pGameData;
+	char pad2[0x08];
+};
+
+struct WorldFluid
+{
+	int index;
+	char surfaceprop[512];
+	WorldFluidParams params;
+};
+
+struct WorldCollide
+{
+	int pad0;
+	void **ppSolids;
+	const char *pKeyText;
+};
+
+CPhysObjectIface *sub_10158600(void *pWorld, WorldCollide *pWorldCollide, const WorldObjParams &defaultParams)
+{
+	WorldSolid solid;
+	WorldFluid fluid;
+	int surfaceData = g_10723944->GetSurfaceIndex("default");
+	WorldObjParams params = defaultParams;
+	params.pGameData = pWorld;
+	params.pName = "world";
+	CPhysObjectIface *pWorldPhysics = g_10723940->CreatePolyObject(pWorldCollide->ppSolids[0], surfaceData, g_1070d1b0, g_1070d9d0, &params);
+	pWorldPhysics->SetGameFlags(pWorldPhysics->GetGameFlags() | 0x200);
+	CPhysKeyParserIface *pParse = g_1072393c->CreateKeyParser(pWorldCollide->pKeyText);
+	while (!pParse->Done()) {
+		const char *pBlock = pParse->GetCurrentBlockName();
+		if (!_strcmpi(pBlock, "solid") || !_strcmpi(pBlock, "staticsolid")) {
+			solid.params = defaultParams;
+			pParse->ParseSolid(&solid, g_107238e0);
+			solid.params.enableCollisions = 1;
+			solid.params.pGameData = pWorld;
+			solid.params.pName = "world";
+			int surf = g_10723944->GetSurfaceIndex("default");
+			CPhysObjectIface *pObject = g_10723940->CreatePolyObject(pWorldCollide->ppSolids[solid.index], surf, g_1070d1b0, g_1070d9d0, &solid.params);
+			pObject->SetGameFlags(pObject->GetGameFlags() | 0x200);
+			pObject->SetContents66(g_107238e4);
+			if (!pWorldPhysics)
+				pWorldPhysics = pObject;
+		} else if (!_strcmpi(pBlock, "fluid")) {
+			pParse->ParseFluid(&fluid, 0);
+			if (fluid.index > 0) {
+				solid.params = defaultParams;
+				solid.params.enableCollisions = 1;
+				solid.params.pName = "fluid";
+				solid.params.pGameData = pWorld;
+				fluid.params.pGameData = pWorld;
+				int surf = g_10723944->GetSurfaceIndex("water");
+				CPhysObjectIface *pWater = g_10723940->CreatePolyObject(pWorldCollide->ppSolids[fluid.index], surf, g_1070d1b0, g_1070d9d0, &solid.params);
+				pWater->SetGameFlags(pWater->GetGameFlags() | 0x200);
+				g_10723940->vfunc10(pWater, &fluid.params);
+			}
+		} else if (!_strcmpi(pBlock, "materialtable")) {
+			int surfaceTable[128];
+			memset(surfaceTable, 0, sizeof(surfaceTable));
+			pParse->ParseMaterialTable(surfaceTable, 0);
+			g_10723944->vfunc8((char *)surfaceTable, 128);
+		} else {
+			pParse->SkipBlock();
+		}
+	}
+	g_1072393c->DestroyKeyParser(pParse);
+	return pWorldPhysics;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10158ab0 size=0x30
 struct CPhysObjView1 { virtual void v0(); virtual bool v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
 	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
