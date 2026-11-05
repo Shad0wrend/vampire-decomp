@@ -38,3 +38,32 @@ void CParamsExplosion::vfunc103()
 	vfunc104();
 }
 // END FUNCTION
+
+// FUNCTION: 0x101043d0 size=0xf1
+#include "CBaseEntity.h"
+#include "CParamsExplosion.h"
+extern char g_106b8540[];
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+__declspec(dllimport) char *Q_strncpy(char *dest, const char *src, int n);
+void sub_10014e93(const char *src, char *dest, int n);
+
+void CParamsExplosion::vfunc104()
+{
+	char buf[260];
+	sub_10014e93(STRINGR(m_pszModel454), buf, 260);
+	Q_strncpy(m_szModel491, buf, 0x80);
+	Q_strncpy(m_szSound511, STRINGR(m_pszSound458), 0x80);
+	m_nFlags47c = 0;
+	if (!m_b450)
+		m_nFlags47c = 0x80;
+	if (!m_b451)
+		m_nFlags47c |= 0x2000;
+	if (!m_b452)
+		m_nFlags47c |= 0x20000000;
+	m_n45c = *(int *)((char *)this + 0x204);
+	if (m_szSound511[0])
+		enginesound->vfunc0(m_szSound511, 1);
+	if (m_szModel491[0])
+		engine->vfunc17(m_szModel491, 1);
+}
+// END FUNCTION

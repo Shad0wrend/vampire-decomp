@@ -743,6 +743,7 @@
 0x10002158 func   ?vfunc40@CMultiplayRules@@UAE_NXZ CMultiplayRules::vfunc40
 0x10002167 func   ?sub_1021c260@CPropHacking@@QAEXXZ CPropHacking::sub_1021c260
 0x1000216c func   ?vfunc529@CAI_BaseNPC@@UAE_NXZ CAI_BaseNPC::vfunc529
+0x10002171 func   ?vfunc104@CParamsExplosion@@UAEXXZ CParamsExplosion::vfunc104
 0x10002176 func   ?sub_10147690@CBaseCombatCharacter@@QAEXPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_10147690
 0x1000217b func   ?vfunc451@CNPC_VNosferatu@@UAEPBDXZ CNPC_VNosferatu::vfunc451
 0x10002180 func   ?sub_103629d0@CNPC_VAsianVampire@@QAE_NPBMM@Z CNPC_VAsianVampire::sub_103629d0
