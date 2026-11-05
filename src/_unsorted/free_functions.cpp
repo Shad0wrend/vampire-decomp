@@ -91306,6 +91306,102 @@ int CSoundEnt::sub_101bab50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bac90 size=0x245
+// TARGET: CSoundEnt::sub_101bac90
+
+#include "CSoundEnt.h"
+#include "CSound.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "globalvars.h"
+#include "Tier1.h"
+#include "Vector.h"
+
+class CSoundDebugVar
+{
+public:
+	virtual void vfunc0();
+	virtual bool vfunc1();
+
+	char m_pad0004[0x28];
+	int m_n2c;
+};
+
+class SList2
+{
+public:
+	void sub_10227a30(int a, int b);
+};
+
+extern CSoundEnt *g_1072c464;
+extern CSoundDebugVar *g_109243ec;
+extern int g_1072bcd8;
+extern SList2 g_10750cb4;
+
+void CSoundEnt::sub_101bac90(int iType, const Vector *pOrigin, int iVolume, float flDuration, char bFlag, CBaseEntity *pOwner)
+{
+	if (g_1072c464 == 0)
+		return;
+
+	int iSound = g_1072c464->sub_101bab50();
+	if (iSound == -1)
+	{
+		g_109f3630("Could not AllocSound() for InsertSound() (DLL)\n");
+		return;
+	}
+
+	CSound *pSound = (CSound *)&g_1072c464->m_SoundPool[iSound];
+
+	pSound->m_vecOrigin = *pOrigin;
+	pSound->m_iType = iType;
+	pSound->m_iVolume = iVolume;
+	*(float *)((char *)pSound + 0x0c) = gpGlobals->curtime;
+	*(float *)((char *)pSound + 0x10) = flDuration + gpGlobals->curtime;
+	*(char *)((char *)pSound + 0x14) = bFlag;
+
+	*(EHANDLE *)pSound = pOwner;
+	if (pOwner)
+	{
+		CBaseEntity *pPlayer = (CBaseEntity *)pOwner->m_pA8;
+		if (pPlayer)
+		{
+			static int s_nLastVolume = g_1072bcd8;
+			if (iVolume == s_nLastVolume)
+				g_10750cb4.sub_10227a30((int)pPlayer, 6);
+		}
+	}
+
+	if (!g_109243ec->vfunc1() && g_109243ec->m_n2c != 0)
+	{
+		const char *pszType;
+		switch (iType)
+		{
+		case 0: pszType = "NONE"; break;
+		case 1: pszType = "COMBAT"; break;
+		case 2: pszType = "WORLD"; break;
+		case 4: pszType = "PLAYER"; break;
+		case 8: pszType = "DANGER"; break;
+		case 0x10: pszType = "BULLET_IMPACT"; break;
+		case 0x20: pszType = "CARCASS"; break;
+		case 0x40: pszType = "MEAT"; break;
+		case 0x80: pszType = "GARBAGE"; break;
+		case 0x100: pszType = "THUMPER"; break;
+		case 0x200: pszType = "BUGBAIT"; break;
+		case 0x400: pszType = "PHYSICS_DANGER"; break;
+		case 0x800: pszType = "FLINCH"; break;
+		default: pszType = "NONE"; break;
+		}
+
+		g_109f3630("InsertSound( %s, [%d,%d,%d], %d, %f ) id %d called at %f\n",
+				   pszType, (int)pOrigin->x, (int)pOrigin->y, (int)pOrigin->z,
+				   iVolume, flDuration, -1, gpGlobals->curtime);
+	}
+
+	if ((*(unsigned char *)((char *)g_1072c464 + 0x460) & 3) != 0)
+		pSound->sub_101b9a50(100);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101baf80 size=0xbd
 #include "CSoundEnt.h"
 

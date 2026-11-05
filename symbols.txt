@@ -7383,6 +7383,7 @@
 0x1000bc8f func   ?sub_103c1cb0@CNPC_VTzimisceHeadClaw@@QAEGXZ CNPC_VTzimisceHeadClaw::sub_103c1cb0
 0x1000bc94 func   ?sub_1037aea0@CNPC_VGhoulCroucher@@QAEPAV1@XZ CNPC_VGhoulCroucher::sub_1037aea0
 0x1000bc9e func   ?sub_1030fd20@S1030fc90@@QAEPAXPAI@Z S1030fc90::sub_1030fd20
+0x1000bca8 func   ?sub_101bac90@CSoundEnt@@SAXHPBVVector@@HMDPAVCBaseEntity@@@Z CSoundEnt::sub_101bac90
 0x1000bcad func   ?vfunc431@CNPC_VGhoulCroucher@@QAEXXZ CNPC_VGhoulCroucher::vfunc431
 0x1000bcb2 func   ?vfunc434@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc434
 0x1000bcbc func   ?vfunc349@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::vfunc349
