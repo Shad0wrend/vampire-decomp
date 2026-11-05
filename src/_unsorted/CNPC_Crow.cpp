@@ -210,6 +210,77 @@ int CNPC_Crow::vfunc511()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10357820 size=0x263
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CNPC_Crow.h"
+#include "Vector.h"
+#include "engineiface.h"
+#include <math.h>
+
+struct CVar109ef2d4 { virtual void v0(); virtual char v1(); char pad[0x24]; float m_f28; };
+extern CVar109ef2d4 *g_109ef2d4;
+void __cdecl sub_101cf5c0(void *pEnt, Vector *pOrigin, int a);
+struct CHopSoundView { void sub_101b0c10(const char *pszSound); };
+
+// TARGET: CNPC_Crow::vfunc259
+void CNPC_Crow::vfunc259(int *pTask)
+{
+	switch ( pTask[0] )
+	{
+	case 2:
+		sub_103581b0(m_pTarget5ddc);
+		break;
+
+	case 4:
+	{
+		((CBaseEntity *)this)->sub_100b3640(1);
+
+		Vector *pOrg = ((CEntityVSlots *)this)->slot220();
+		Vector vecOrigin;
+		vecOrigin.x = pOrg->x;
+		vecOrigin.y = pOrg->y;
+		vecOrigin.z = pOrg->z + 1.0f;
+		Vector vecSet = vecOrigin;
+		sub_101cf5c0(this, &vecSet, 0);
+
+		float flHopDistance = (m_vec5dd0 - *((CEntityVSlots *)this)->slot220()).Length();
+		float gravity;
+		if ( g_109ef2d4->v1() || (gravity = g_109ef2d4->m_f28) <= 1.0f )
+			gravity = 1.0f;
+
+		float height = 0.25 * flHopDistance;
+		float speed = (float)sqrt( 2 * gravity * height );
+		float time = speed / gravity;
+
+		Vector vecJumpDir = m_vec5dd0 - *((CEntityVSlots *)this)->slot220();
+		vecJumpDir = vecJumpDir / time;
+		vecJumpDir.z = speed;
+
+		float distance = vecJumpDir.Length();
+		if ( distance > 650.0f )
+			vecJumpDir = vecJumpDir * ( 650.0 / distance );
+
+		m_n5f50 -= enginerandom->vfunc2( 1, 6 );
+		if ( m_n5f50 <= 0 )
+			m_n5f50 = 0;
+
+		((CHopSoundView *)this)->sub_101b0c10( "NPC_Crow.Hop" );
+		((CBaseEntity *)this)->sub_100b2770( vecJumpDir );
+		break;
+	}
+
+	case 3:
+		((CEntityVSlots *)this)->slot310( 0x22 );
+		break;
+
+	default:
+		sub_10274e30( pTask );
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10357b30 size=0x28
 #include "CNPC_Crow.h"
 #include "CUnknown1070b244.h"
