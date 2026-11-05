@@ -10540,6 +10540,7 @@
 0x1001087f func   ?sub_1009bef0@CBaseEntity@@QAEXHHUCBaseEntityColor32@@@Z CBaseEntity::sub_1009bef0
 0x10010889 func   ?vfunc319@CWeaponGravityGun@@UAEXXZ CWeaponGravityGun::vfunc319
 0x1001088e func   ?vfunc546@CNPC_VSheriffMan@@QAEHH@Z CNPC_VSheriffMan::vfunc546
+0x10010893 func   ?sub_10407790@@YAPAHXZ sub_10407790
 0x10010898 func   ?vfunc81@CWeaponMelee_TireIron@@QAEHXZ CWeaponMelee_TireIron::vfunc81
 0x1001089d func   ?vfunc299@CBaseCombatWeapon@@UAEXPBM@Z CBaseCombatWeapon::vfunc299
 0x100108a2 func   ?vfunc621@CNPC_VSabbatLeader@@QAEXXZ CNPC_VSabbatLeader::vfunc621

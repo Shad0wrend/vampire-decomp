@@ -199270,6 +199270,49 @@ int sub_10407700()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10407790 size=0x7f
+#include "KEYRING_ENTRY.h"
+#include "utlmemory.h"
+#include "utlvector.h"
+struct datamap_t;
+struct ISaveRestoreOps;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    float inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+
+struct KEYRING_ENTRY;
+#include "CUtlVectorDataOps.h"
+
+inline ISaveRestoreOps *KeyringVectorOps()
+{
+	static CUtlVectorDataOps<CUtlVector<KEYRING_ENTRY, CUtlMemory<KEYRING_ENTRY> >, 9> ops;
+	return (ISaveRestoreOps *)&ops;
+}
+
+extern int g_1067f9fc[2];
+
+int *sub_10407790()
+{
+	static typedescription_t dataDesc[] = {
+		{ 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+		{ 10, "m_KeyList", {0x914, 0}, 1, 2, 0, KeyringVectorOps(), 0.0f },
+	};
+	g_1067f9fc[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+	g_1067f9fc[0] = (int)&dataDesc[1];
+	return g_1067f9fc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104079a0 size=0x72
 #include "SendProp.h"
 
