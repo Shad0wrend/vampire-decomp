@@ -180906,6 +180906,52 @@ char sub_1036ec40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036f190 size=0xd2
+extern int vt_104a7b94;
+extern int vt_104a7b68;
+extern int vt_104adabc;
+extern int vt_104ada90;
+extern int vt_104af25c;
+extern int vt_104af230;
+void *sub_100aa720(unsigned int);
+void __fastcall sub_103c48e0(void *pThis);
+void *__fastcall sub_100cd2a0(void *pThis);
+void __fastcall sub_103c51a0(void *pThis);
+void __fastcall sub_1036a320(void *pThis);
+void __fastcall sub_1036f420(void *pThis);
+
+// TARGET: npc_VChangBrosClaw
+extern "C" int *npc_VChangBrosClaw()
+{
+	int *raw = (int *)sub_100aa720(0x6700);
+	int *p;
+	if (raw) {
+		char *c = (char *)raw;
+		sub_103c48e0(raw);
+		sub_100cd2a0(c + 0x6664);
+		for (int i = 0; i < 4; i++)
+			*(int *)(c + 0x66a0 + i * 4) = -1;
+		*(int *)(c + 0x66b0) = -1;
+		sub_103c51a0(c + 0x66b4);
+		*(volatile int *)raw = (int)&vt_104a7b94;
+		*(volatile int *)(c + 0x19b0) = (int)&vt_104a7b68;
+		*(volatile int *)(c + 0x66f4) = -1;
+		sub_1036a320(c + 0x66f8);
+		*(int *)raw = (int)&vt_104adabc;
+		*(int *)(c + 0x19b0) = (int)&vt_104ada90;
+		sub_1036f420(c + 0x66fc);
+		*(volatile int *)raw = (int)&vt_104af25c;
+		*(volatile int *)(c + 0x19b0) = (int)&vt_104af230;
+		p = raw;
+	} else {
+		p = 0;
+	}
+	int vt = *(volatile int *)p;
+	((void (__fastcall *)(void *, int, const char *))(((int *)vt)[0x1a8 / 4]))(p, vt, "npc_VChangBrosClaw");
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036f390 size=0x1a
 namespace lifted {
 extern int g_1062fe44;
