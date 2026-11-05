@@ -70,6 +70,7 @@ public:
 	unsigned int sub_101ac2f0();
 	CAmbientGeneric *vfunc5(unsigned int flags);	// as in CLogicalEntity (transplant)
 	void sub_1000cb8a();	// as in CLogicalEntity (transplant)
+	bool vfunc110(const char *szKeyName, const char *szValue);	// slot 110 KeyValue
 	void vfunc103();	// slot 103 "CAmbientGeneric::Spawn": the sound index from the volume and a flag (sub_101ac570); with a sound file of at least one character: SetSolid(0) (inlined scope trace), move type (0, 0), think function sub_1000969c, no next think, use function 0x100131e2, the 0x4bc / 0x4bd flags, the spawn flag bits into +0x4e0 from the bytes 0x4dc..0x4df, no attached entity, then slot 104; else warns "EMPTY AMBIENT AT" and removes the entity
 	void vfunc104();	// slot 104: precaches the sound file (when it is set, longer than one character and not a '!' sentence), then sub_101ad0f0, then flags bit 0 of the 0x4bc byte when the 0x4bd byte is set and spawnflag 0x10 is clear
 	void sub_101ad0f0();	// ambient sound parameter setup (called through the stub at 0x1000da80)
