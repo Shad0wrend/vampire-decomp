@@ -44,6 +44,7 @@ public:
 	int vfunc35(int a);	// slot 35: 0x3a when sub_100127ec; else the slot 35 answer of the entity behind the handle at +0x638, or of the entity sub_10008cba(a) finds; else (flags +0x204 has bit 8 or 10) the value at +0x650 when the byte at +0x55c is set, else 0x3b when sub_1000cc57 else the value at +0x64c; 0 without those flag bits
 	char sub_100127ec();	// stub 0x100127ec for 0x100eef10, called directly
 	CBaseEntity *sub_10008cba(int a);	// stub 0x10008cba for 0x100ee950, called directly
+	CBaseEntity *sub_100ee950(CBaseEntity *pTarget);	// the doorknob (+0x628 / +0x62c) closer to the target (by Manhattan distance of slot 193), else whichever exists
 	char sub_1000cc57();	// stub 0x1000cc57 for 0x100eedd0, called directly
 	char sub_100eecf0();	// true (and the flag byte at +0x624 set) when one of the two event lists at +0x5dc / +0x60c has an entry named "ChangeNow"
 	void sub_100ee810();	// scope-less: for each of the two entity handles at +0x628 and +0x62c that resolve, calls sub_10224170 on the entity with a zeroed inputdata_t (value -1 handle), and for the second also again when it still resolves
