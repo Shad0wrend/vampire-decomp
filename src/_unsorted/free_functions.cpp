@@ -19916,7 +19916,7 @@ void CUnknown10077730::sub_100784b0(float value)
 // FUNCTION: 0x100784d0 size=0x36
 #include "CSceneEntity.h"
 
-namespace block_10076b30 {
+namespace block_100784d0 {
 	struct CUnit {
 		char pad[0x184];
 		float m_f184;
@@ -19941,7 +19941,7 @@ namespace block_10076b30 {
 		return 0.0f;
 	}
 }
-using namespace block_10076b30;
+using namespace block_100784d0;
 
 // TARGET: CSceneEvent::sub_100784d0
 bool CSceneEvent::sub_100784d0(float *pOut)
