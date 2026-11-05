@@ -156,6 +156,32 @@ CPhysicsCannister *CPhysicsCannister::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101506a0 size=0x45
+#include "CBaseCombatCharacter.h"
+#include "CPhysicsCannister.h"
+#include "engineiface.h"
+
+void sub_10191ac0(const char *);
+extern char g_106b8540[];
+
+inline const char *STRINGR(const char *const &s)
+{
+	return s ? s : g_106b8540;
+}
+
+// TARGET: CPhysicsCannister::vfunc104
+void CPhysicsCannister::vfunc104()
+{
+	CBaseCombatCharacter *p = (CBaseCombatCharacter *)this;
+	int dummy;
+	const char **name = p->vfunc9(&dummy);
+	sub_10191ac0(*name);
+	if (m_pszSound19f8)
+		enginesound->vfunc0(STRINGR(m_pszSound19f8), 0);
+	p->CBaseCombatCharacter::vfunc104();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10150710 size=0x104
 #include "CVDmg_t.h"
 #include "CPhysicsCannister.h"
