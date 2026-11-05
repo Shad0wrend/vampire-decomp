@@ -8335,6 +8335,7 @@
 0x1000d42c func   ?vfunc379@CPayphone@@UAE_NPAVCBaseEntity@@HHHHHH@Z CPayphone::vfunc379
 0x1000d431 func   ?sub_1033b980@CUnknown1033b980@@QAEMXZ CUnknown1033b980::sub_1033b980
 0x1000d43b func   ?vfunc81@CBaseTerminal@@QAEHXZ CBaseTerminal::vfunc81
+0x1000d440 func   ?sub_102573a0@CWeaponRanged@@QAEHPAX0H@Z CWeaponRanged::sub_102573a0
 0x1000d445 func   _item_w_avamp_blade item_w_avamp_blade
 0x1000d44a func   ?sub_101e94d0@@YGXH@Z sub_101e94d0
 0x1000d44f func   ?sub_100eb1e0@CUtlVector4100@@QAEXHH@Z CUtlVector4100::sub_100eb1e0
