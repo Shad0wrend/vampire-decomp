@@ -62770,6 +62770,46 @@ void CMathCounter::sub_10133910(inputdata_t &inputdata)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10133950 size=0x117
+#include "CMathCounter.h"
+#include "COutputFloat.h"
+
+struct CMathCounterView {
+	char m_pad0[0x450];
+	float m_flMin;
+	float m_flMax;
+	bool m_bHitMin;
+	bool m_bHitMax;
+	char m_pad45a[2];
+	COutputFloat m_OutValueF;
+	COutputEvent m_OnHitMin;
+	COutputEvent m_OnHitMax;
+	void sub_10133950(void *pActivator, float flNewValue);
+};
+
+void CMathCounterView::sub_10133950(void *pActivator, float flNewValue)
+{
+	if (m_flMin != 0.0f || m_flMax != 0.0f) {
+		if (flNewValue >= m_flMax) {
+			if (!m_bHitMax) {
+				m_bHitMax = true;
+				m_OnHitMax.sub_100cd660(pActivator, this, 0.0f);
+			}
+		} else if (flNewValue <= m_flMin) {
+			if (!m_bHitMin) {
+				m_bHitMin = true;
+				m_OnHitMin.sub_100cd660(pActivator, this, 0.0f);
+			}
+		} else {
+			m_bHitMin = false;
+			m_bHitMax = false;
+		}
+		flNewValue = ((flNewValue) > (m_flMax)) ? (m_flMax) : (((flNewValue) < (m_flMin)) ? (m_flMin) : (flNewValue));
+	}
+	m_OutValueF.Set(flNewValue, pActivator, this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10133ac0 size=0x78
 void *sub_1000db89(int);
 extern int vt_104475c4;
