@@ -8068,6 +8068,7 @@
 0x1000cec3 func   ?sub_10177ab0@Helper@@QAEPAXPBD@Z Helper::sub_10177ab0
 0x1000cec8 func   _npc_VCamera npc_VCamera
 0x1000cecd func   ?vfunc103@CTestTraceline@@UAEXXZ CTestTraceline::vfunc103
+0x1000ced2 func   ?sub_10310960@CUnknown10310960@@QAEXMMM@Z CUnknown10310960::sub_10310960
 0x1000ced7 func   ?vfunc294@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc294
 0x1000cedc func   ?sub_100dd2e0@CCollisionProperty@@QAEMPBM@Z CCollisionProperty::sub_100dd2e0
 0x1000cee1 func   ?vfunc103@CActivityCopyProp@@UAEXXZ CActivityCopyProp::vfunc103

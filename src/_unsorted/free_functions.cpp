@@ -164562,6 +164562,31 @@ void CAI_Senses::sub_10310710()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10310960 size=0x26
+struct Pair10310960
+{
+	float m_flMin;
+	float m_flMax;
+	void Set(float flMax) { m_flMax = flMax; m_flMin = -1.0f; }
+};
+class CUnknown10310960
+{
+public:
+	char pad0[0x68];
+	Pair10310960 m_p[3];
+
+	void sub_10310960(float a, float b, float c);
+};
+
+// TARGET: CUnknown10310960::sub_10310960
+void CUnknown10310960::sub_10310960(float a, float b, float c)
+{
+	m_p[0].Set(a);
+	m_p[1].Set(b);
+	m_p[2].Set(c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103109a0 size=0xb7
 #include "CUtlVector4.h"
 #include "UtlMem.h"
