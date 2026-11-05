@@ -1753,6 +1753,32 @@ bool CBaseEntity::vfunc108(const char *key, float x, float y, float z)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f120 size=0xa2
+#include "CBaseEntity.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+const char **sub_10002095(const char **out, const char *s);
+
+void CBaseEntity::vfunc122(const char *classname)
+{
+	const char *name = this ? (STRINGR_F(m_name26c)) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseEntity::SetClassname";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	m_classname11c = *sub_10002095(&classname, classname);
+	const char *arg = STRINGR_F(m_classname11c);
+	vfunc13(arg);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f2c0 size=0x86
 #include "CBaseEntity.h"
 #include "CBaseEntitySlots.h"
