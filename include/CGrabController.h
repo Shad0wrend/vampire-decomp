@@ -35,5 +35,6 @@ public:
 	float m_v150[3];
 	char m_b15c;
 
+	void sub_1040c230(CEntityVSlots *pObject, class IPhysicsObject *pPhysics);	// the carry-speed blend: sets +0x24 / +0x1c to 1000.0f / 21600.0f, then blends them toward 300.0f and an inertia-derived limit by a smoothstep of the carried mass (ret 8)
 	Vector *sub_1040c500(Vector *pOut, const Vector *pIn, CEntityVSlots *pEnt);	// transforms pIn by the entity's matrix (at +0x130, or, with the flag at +0x45, the rotation of its local yaw / roll angles) into pOut
 };

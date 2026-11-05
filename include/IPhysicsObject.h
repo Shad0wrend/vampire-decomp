@@ -18,8 +18,8 @@ public:
 	virtual void vfunc5(); virtual void *vfunc6(); virtual void vfunc7(unsigned int flags); virtual unsigned int vfunc8(); virtual void vfunc9();	/* slot 7/8 Set/GetCallbackFlags-like (ragdoll code: vfunc7(vfunc8() | 8)) */	/* slot 6 GetGameData */
 	virtual unsigned short vfunc10();	/* slot 10 GetGameFlags */ virtual void vfunc11(float flMass);	/* slot 11 SetMass */
 	virtual float vfunc12();	// slot 12 GetMass
-	virtual void vfunc13(); virtual void vfunc14();
-	virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17(const Vector *pVelocity, const Vector *pAngVelocity);	// slot 17: called by CGravControllerPoint::sub_10148a20 as (0, &vector)
+	virtual float vfunc13(); virtual void vfunc14();
+	virtual Vector *vfunc15(Vector *pOut); virtual void vfunc16(); virtual void vfunc17(const Vector *pVelocity, const Vector *pAngVelocity);	// slot 17: called by CGravControllerPoint::sub_10148a20 as (0, &vector)
 	virtual void vfunc18(); virtual void vfunc19();
 	virtual void vfunc20(); virtual void vfunc21(int a); virtual void vfunc22(int a); virtual void vfunc23();
 	virtual void vfunc24(int a);	// slot 24: called with 0 by CPhysicsPropContested::vfunc103 and CBaseEntity::vfunc202 / sub_100aaa40 (through the entity's +0x36c)
