@@ -51587,6 +51587,31 @@ CBaseEntity *CGlobalEntityList::sub_100f7890(CBaseEntity *pStart, const char *sz
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f7930 size=0x58
+#include <string.h>
+extern char g_106b8540[];
+static inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+struct CLinkedEnt100f7930 {
+	char m_pad00[0x20c];
+	const char *m_pszLinked;
+};
+struct CLinkedList100f7930 {
+	CLinkedEnt100f7930 *sub_100f7060(CLinkedEnt100f7930 *pPrev);
+	CLinkedEnt100f7930 *sub_100f7930(CLinkedEnt100f7930 *pStart, const char *pszName);
+};
+// TARGET: CLinkedList100f7930::sub_100f7930
+CLinkedEnt100f7930 *CLinkedList100f7930::sub_100f7930(CLinkedEnt100f7930 *pStart, const char *pszName)
+{
+	CLinkedEnt100f7930 *p = sub_100f7060(pStart);
+	while (p) {
+		if (p->m_pszLinked && !_stricmp(STRINGR(p->m_pszLinked), pszName))
+			return p;
+		p = sub_100f7060(p);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f79b0 size=0x111
 #include "CGlobalEntityList.h"
 #include "CBaseEntity.h"

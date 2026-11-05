@@ -9208,6 +9208,7 @@
 0x1000e64c func   ?sub_1029f6c0@CAI_BaseNPCTroika@@QAEHPAX@Z CAI_BaseNPCTroika::sub_1029f6c0
 0x1000e651 func   ?sub_10326d40@@YI_NPADHHHH@Z sub_10326d40
 0x1000e65b func   ?sub_10078520@CUnknown10078520@@QAEHXZ CUnknown10078520::sub_10078520
+0x1000e665 func   ?sub_100f7930@CLinkedList100f7930@@QAEPAUCLinkedEnt100f7930@@PAU2@PBD@Z CLinkedList100f7930::sub_100f7930
 0x1000e66a func   ?sub_10200fc0@CVStatList_t@@QAEDHH@Z CVStatList_t::sub_10200fc0
 0x1000e674 func   ?vfunc81@CWeaponMelee_Knife@@UAEHXZ CWeaponMelee_Knife::vfunc81
 0x1000e679 func   ?sub_10288670@CAI_Motor@@QAEXM@Z CAI_Motor::sub_10288670
