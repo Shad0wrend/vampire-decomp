@@ -756,6 +756,77 @@ void CNPC_VWerewolf::vfunc491()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d88e0 size=0x194
+#include "CBaseAnimating.h"
+#include "CNPC_VWerewolf.h"
+#include "CUnknown102d09b0.h"
+#include "ScopeTrace.h"
+#include <stdlib.h>
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+void sub_101cdba0(const float *pPos, float a, float b, float c, float d, int e, int f);
+
+struct CWerewolfHintView {
+	char m_pad0000[0x66c4];
+	CNPC_VWerewolfHint66b0 *m_pHint66c4;	// 0x66c4
+};
+
+void CNPC_VWerewolf::vfunc259(int *pEvent)
+{
+	ScopeTrace trace("CNPC_VWerewolf::HandleAnimEvent", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+	switch (pEvent[0]) {
+	case 0x3eb: {
+		CNPC_VWerewolfHint66b0 *pHint;
+		pHint = m_pHint66b0;
+		if (pHint) {
+			((CUnknown102d09b0 *)pHint)->sub_102d09b0((CBaseEntity *)this, atoi((const char *)pEvent[1]));
+			return;
+		}
+		pHint = m_pHint66bc;
+		if (pHint) {
+			((CUnknown102d09b0 *)pHint)->sub_102d09b0((CBaseEntity *)this, atoi((const char *)pEvent[1]));
+			return;
+		}
+		pHint = ((CWerewolfHintView *)this)->m_pHint66c4;
+		if (pHint) {
+			((CUnknown102d09b0 *)pHint)->sub_102d09b0((CBaseEntity *)this, atoi((const char *)pEvent[1]));
+			return;
+		}
+		sub_1029b290(pEvent);
+		return;
+	}
+	case 0x802:
+	case 0x803:
+	case 0x804:
+	case 0x805:
+		sub_103d8c10();
+		return;
+	case 0x834: {
+		CNPC_VWerewolfVec3 vecOrigin, vecAngles;
+		((CBaseAnimating *)this)->sub_10092610((int)"Bip01", (int)&vecOrigin, (int)&vecAngles);
+		sub_101cdba0(&vecOrigin.x, 16.0f, 2.0f, 2.0f, 1500.0f, 0, 1);
+		return;
+	}
+	case 0x835:
+		sub_103d8df0();
+		return;
+	case 0x836:
+	case 0x837:
+	case 0x838:
+	case 0x839:
+	case 0x83a:
+	case 0x83b:
+	case 0x83c:
+	case 0x83d:
+		return;
+	default:
+		sub_1029b290(pEvent);
+		return;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d9ab0 size=0xb8
 #include "CNPC_VWerewolf.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };

@@ -2328,6 +2328,7 @@
 0x10004642 func   ?sub_101e4fe0@CVFeat_t@@QAEXPAUCVFeatKV@@@Z CVFeat_t::sub_101e4fe0
 0x10004647 func   ?vfunc142@CAI_BaseNPCTroika@@UAEHH@Z CAI_BaseNPCTroika::vfunc142
 0x1000464c func   ?sub_10086fb0@@YAXXZ sub_10086fb0
+0x10004651 func   ?vfunc259@CNPC_VWerewolf@@QAEXPAH@Z CNPC_VWerewolf::vfunc259
 0x1000465b func   ?sub_10139b00@@YAXPBVVector@@H@Z sub_10139b00
 0x10004660 func   ?vfunc113@CFuncParticle@@QAEXXZ CFuncParticle::vfunc113
 0x1000466a func   ?vfunc5@CNPC_VTzimisceHeadClaw@@QAEPAV1@I@Z CNPC_VTzimisceHeadClaw::vfunc5
