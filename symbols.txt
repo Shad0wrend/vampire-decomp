@@ -10734,6 +10734,7 @@
 0x10010b18 func   ?sub_10093be0@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_10093be0
 0x10010b1d func   ?sub_101af9d0@@YAHXZ sub_101af9d0
 0x10010b22 func   ?vfunc566@CNPC_VWerewolf@@QAE_NPAX@Z CNPC_VWerewolf::vfunc566
+0x10010b27 func   ?sub_1019c810@@YAXPAUCRagdollBones@@PAUCBoneSetBase@@@Z sub_1019c810
 0x10010b2c func   ?vfunc473@CNPC_VBatSwarm@@UAEHXZ CNPC_VBatSwarm::vfunc473
 0x10010b31 func   ?sub_101c2200@@YAHXZ sub_101c2200
 0x10010b36 func   ?vfunc0@CEntitySaveRestoreBlockHandler@@UAEHXZ CEntitySaveRestoreBlockHandler::vfunc0

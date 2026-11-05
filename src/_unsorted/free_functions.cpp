@@ -83963,6 +83963,44 @@ void sub_1019c6f0(CRagdollBones *pRagdoll, CBoneSetBase *pSetA, CBoneSetBase *pS
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019c810 size=0xf3
+#include "Vector.h"
+#include "IPhysicsObject.h"
+
+struct CBoneSetBase { int m_n0; char *m_pMatrices; };
+struct CRagdollBones { int m_nCount; char m_pad[0x10]; struct { IPhysicsObject *m_pObject; char m_pad[0x14]; } m_Elements[1]; };
+struct V3 { float x, y, z; };
+struct V4 { float x, y, z, w; };
+
+void sub_10138630(const void *pIn, void *pOut);
+void sub_10137e40(const void *pMatrix, void *pQuat, void *pAngles);
+void sub_1013b280(const void *pQuat, void *pAxis, float *pAngle);
+
+void sub_1019c810(CRagdollBones *pBones, CBoneSetBase *pSet)
+{
+	for (int i = 0; i < pBones->m_nCount; i++) {
+		char matrix[0x30];
+		V4 quat;
+		V3 velA;
+		V3 velB;
+		V3 ang2copy;
+		V3 ang2;
+		V3 axis;
+		float angle;
+		sub_10138630(pSet->m_pMatrices + i * 0x30, matrix);
+		sub_10137e40(matrix, &quat, &ang2);
+		sub_1013b280(&quat, &axis, &angle);
+		axis.x = axis.x * angle;
+		ang2copy = ang2;
+		axis.y = axis.y * angle;
+		axis.z = axis.z * angle;
+		pBones->m_Elements[i].m_pObject->vfunc28(&velA, &ang2copy);
+		pBones->m_Elements[i].m_pObject->vfunc28(&velB, &axis);
+		pBones->m_Elements[i].m_pObject->vfunc41((const Vector *)&velA, (const Vector *)&velB);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019c950 size=0x7d
 struct IApi {
     virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
