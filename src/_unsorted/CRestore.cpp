@@ -116,6 +116,32 @@ void CRestore::sub_101a14b0(int pos)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a14e0 size=0x2a
+#include "CRestore.h"
+
+extern char g_106b8540[];
+extern char g_10593064[];
+
+struct CTokenTbl {
+	char pad[0x10]; int m_nCount; char **m_ppStr;
+	const char *StringFromSymbol(int token)
+	{
+		if (token >= 0 && token < m_nCount)
+			return m_ppStr[token];
+		return g_10593064;
+	}
+};
+
+const char *CRestore::vfunc11(int token)
+{
+	CTokenTbl *t = *(CTokenTbl **)((char *)this + 0x18);
+	const char *s = t->StringFromSymbol(token);
+	if (s)
+		return s;
+	return g_106b8540;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a18a0 size=0xbb
 #include <string.h>
 #include "CRestore.h"

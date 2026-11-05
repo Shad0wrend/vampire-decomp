@@ -11974,6 +11974,7 @@
 0x100126ed func   ?sub_10259de0@@YAPAXG@Z sub_10259de0
 0x100126f2 func   ?vfunc580@CNPC_VGargoyle@@UAEHXZ CNPC_VGargoyle::vfunc580
 0x100126f7 func   ?sub_102c5730@CUnk102c5730@@QAEXPAX@Z CUnk102c5730::sub_102c5730
+0x100126fc func   ?vfunc11@CRestore@@UAEPBDH@Z CRestore::vfunc11
 0x10012701 func   ?vfunc142@CFire@@UAEHH@Z CFire::vfunc142
 0x10012706 func   ?sub_1014f730@@YG_NH@Z sub_1014f730
 0x10012710 func   ?vfunc81@CBloodPack@@QAEHXZ CBloodPack::vfunc81
