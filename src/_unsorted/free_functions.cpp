@@ -105581,6 +105581,46 @@ char *CUnk101e09c0::sub_101e09c0(void *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e0a00 size=0x176
+#include "CUnknown101e0f00.h"
+
+__declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+extern "C" __declspec(dllimport) void Msg(const char *pMsg, ...);
+extern const char g_105490b0[];
+extern const char g_105725f0[];
+extern const char g_105a2c84[];
+extern char g_106b8540[];
+extern CUnknown101e0f00Entry *g_10739a74;
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+void CUnknown101e0f00Entry::sub_101e0a00()
+{
+	char buf[512];
+	g_10739a74 = this;
+	Q_snprintf(buf, 512, "\n\n(%d): %s\n", m_id, STRINGR(m_pszName));
+	Msg(g_105490b0, buf);
+	Q_snprintf(buf, 512, "ViewModel: %s\n", STRINGR(m_pszViewModel));
+	Msg(g_105490b0, buf);
+	if (m_pszTgtHighlightParticle != 0) {
+		Q_snprintf(buf, 512, "TgtHighlightParticle: %s\n", STRINGR(m_pszTgtHighlightParticle));
+		Msg(g_105490b0, buf);
+	}
+	Q_snprintf(buf, 512, "BloodCost: %d\n", m_nBaseCost);
+	Msg(g_105490b0, buf);
+	Q_snprintf(buf, 512, "Overt: %s\n", m_bOvert ? g_105725f0 : g_105a2c84);
+	Msg(g_105490b0, buf);
+	Q_snprintf(buf, 512, "RecoveryTime: %03f\n", (double)m_flRecoveryTime);
+	Msg(g_105490b0, buf);
+	m_range.sub_101dbc60();
+	m_projectile.sub_101dd910();
+	((CUnknown101e0f00Src *)m_srcInstant)->sub_101dd3c0("SrcInstant");
+	((CUnknown101e0f00Src *)m_srcHit)->sub_101dd3c0("SrcHit");
+	((CUnknown101e0f00Tail *)m_tail)->sub_101e04a0();
+	g_10739a74 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e0be0 size=0x14
 struct CUnknown101e0be0 { void * sub_101e0be0(); };
 void * CUnknown101e0be0::sub_101e0be0()
