@@ -166642,6 +166642,50 @@ int CUnknown1030bc40::sub_1030bc40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030bc60 size=0xb9
+#include "CAI_Path.h"
+
+__declspec(dllimport) void DevMsg(const char *pszFormat, ...);
+
+inline float LengthZXY(const Vector &v)
+{
+	float zx = v.z * v.z + v.x * v.x;
+	return FastSqrt(zx + v.y * v.y);
+}
+
+bool CAI_Path::sub_1030bc60(float flTolerance)
+{
+	m_Waypoints.sub_10319f10();
+	bool bOk = true;
+	CAI_Waypoint *pWaypoint = (CAI_Waypoint *)m_Waypoints.m_unk0;
+	while (pWaypoint)
+	{
+		unsigned int fFlags = pWaypoint->m_fWaypointFlags;
+		CAI_Waypoint *pNext = pWaypoint->m_pNext;
+		if ((fFlags & 8) == 8)
+		{
+			if (pNext)
+			{
+				bOk = false;
+				DevMsg("!!ERROR!! Goal is not last waypoint!\n");
+			}
+			if (LengthZXY(*(Vector *)pWaypoint - m_vecGoal) > flTolerance)
+			{
+				bOk = false;
+				DevMsg("!!ERROR!! Last waypoint isn't in goal position!\n");
+			}
+		}
+		else if (!(fFlags & 2) && !pNext)
+		{
+			bOk = false;
+			DevMsg("!!ERROR!! GetCurWaypoint has no goal!\n");
+		}
+		pWaypoint = pNext;
+	}
+	return bOk;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030bd50 size=0x13
 struct CInnerFlags28 {
     char pad_0000[0x28];
