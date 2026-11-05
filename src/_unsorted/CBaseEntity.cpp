@@ -952,6 +952,70 @@ void * CBaseEntity::vfunc4()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10038710 size=0x232
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CVProfile.h"
+#include "ScopeTrace.h"
+#include "CPhysicsPushedEntities.h"
+#include "Vector.h"
+
+extern Vector g_1070d1b0;
+extern CPhysicsPushedEntities g_106bbae4;
+
+struct CCycleSample
+{
+	unsigned __int64 m_Int64;
+	void Sample() { unsigned int *p = (unsigned int *)&m_Int64; __asm { mov ecx, p
+		rdtsc
+		mov [ecx], eax
+		mov [ecx + 4], edx } }
+	void Add(const CCycleSample &rhs) { m_Int64 += rhs.m_Int64; }
+};
+
+int CBaseEntity::PhysicsPushMove(float movetime)
+{
+	ScopeTrace trace("CBaseEntity::PhysicsPushMove", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	g_109f3648->EnterScope("CBaseEntity::PhysicsPushMove", 0, "Unaccounted", false);
+
+	*(float *)((char *)this + 0x3f4) += movetime;
+
+	if (*(Vector *)m_vel3d4 == g_1070d1b0)
+	{
+		g_109f3648->ExitScope();
+		return 0;
+	}
+
+	int pBlocker = (int)g_106bbae4.sub_10038400(this, *(const float **)&movetime);
+	if (pBlocker)
+		*(float *)((char *)this + 0x3f4) -= movetime;
+
+	CVProfile *p = g_109f3648;
+	if (!p->m_bAtRoot || p->m_enabled) {
+		CVProfNode *n = p->m_pCurNode;
+		if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0) {
+			CCycleSample s;
+			s.m_Int64 = 0;
+			s.Sample();
+			n->m_CurFrameTime.m_Int64 = s.m_Int64 - n->m_CurFrameTime.m_Int64;
+			((CCycleSample *)&n->m_TotalTime)->Add(*(CCycleSample *)&n->m_CurFrameTime);
+			g_109f3648->PopGroup();
+		}
+		if (n->m_nRecursions == 0)
+			p->m_pCurNode = p->m_pCurNode->m_pParent;
+		p->m_bAtRoot = (p->m_pCurNode == p->m_pRoot);
+	}
+	return pBlocker;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10039ff0 size=0x71
 #include "CBaseEntity.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
