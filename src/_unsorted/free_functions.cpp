@@ -188244,6 +188244,38 @@ char sub_103c49d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c4fa0 size=0x8e
+#include "CNPC_VVampireBoss.h"
+
+void *sub_100aa720(int size);
+void __fastcall sub_103c48e0(void *p);
+void __fastcall sub_100cd2a0(void *p);
+void __fastcall sub_103c51a0(void *p);
+extern char vt_104a7b94[];
+extern char vt_104a7b68[];
+
+extern "C" void *npc_VVampireBoss()
+{
+	CNPC_VVampireBoss *p = (CNPC_VVampireBoss *)sub_100aa720(0x66b8);
+	if (p)
+	{
+		sub_103c48e0(p);
+		sub_100cd2a0(&p->m_OnTransformComplete);
+		for (int i = 0; i < 4; i++)
+			p->m_hParticleEmitters[i] = 0xffffffff;
+		*(unsigned int *)&p->m_hTransformPartner = 0xffffffff;
+		sub_103c51a0(&p->m_n66b4);
+		*(void **)p = vt_104a7b94;
+		*(void **)((char *)p + 0x19b0) = vt_104a7b68;
+	}
+	else
+		p = 0;
+	int vt = *(volatile int *)p;
+	((void (__fastcall *)(void *, int, const char *))(((int *)vt)[0x1a8 / 4]))(p, vt, "npc_VVampireBoss");
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c50c0 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
