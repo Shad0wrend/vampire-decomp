@@ -2010,6 +2010,7 @@
 0x10003f0d func   ?sub_10043b20@@YGXPAX@Z sub_10043b20
 0x10003f12 func   ?vfunc81@CWeaponMelee_SeveredArm@@QAEHXZ CWeaponMelee_SeveredArm::vfunc81
 0x10003f17 func   ?sub_10073b00@CUnknown10073b00@@QAEMXZ CUnknown10073b00::sub_10073b00
+0x10003f1c func   ?vfunc103@CNodeEnt@@UAEXXZ CNodeEnt::vfunc103
 0x10003f2b func   ?sub_10085100@@YAHXZ sub_10085100
 0x10003f35 func   ?sub_101cca80@@YAHPAPAVCBaseEntity@@HPBM1IH@Z sub_101cca80
 0x10003f3a func   ?sub_1023e290@@YGXPAUCUnk1023e290@@@Z sub_1023e290
