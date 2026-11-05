@@ -94614,6 +94614,73 @@ extern "C" CBaseEntity *logic_proximity()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ca0c0 size=0x24f
+// TARGET: CTriggerProximity::sub_101ca0c0
+#include "CTriggerProximity.h"
+#include "CEntityVSlots.h"
+
+struct CProxTouchLink
+{
+	CTriggerProximityHandle m_hEntity;	// 0x00
+	int m_iStamp;	// 0x04
+	CProxTouchLink *m_pNext;	// 0x08
+};
+
+struct CProxTouchList
+{
+	int m_pad00[2];
+	CProxTouchLink *m_pFirst;	// 0x08
+};
+
+__inline float OutputValue(const COutputEvent &output)
+{
+	return *(const float *)&output;
+}
+
+__inline Vector &EntityOrigin(CBaseEntity *pEntity)
+{
+	return *(Vector *)((CEntityVSlots *)pEntity)->slot220();
+}
+
+void CTriggerProximity::sub_101ca0c0()
+{
+	if (m_hMeasureTarget.IsValid() && m_hMeasureTarget.Get()->m_pEdict) {
+		float flNearestDist = m_flMeasure05a0 + 100.0f;
+		CBaseEntity *pNearest = 0;
+
+		CProxTouchList *pList = (CProxTouchList *)sub_1003cd50(1);
+		if (pList) {
+			CProxTouchLink *pLink = pList->m_pFirst;
+			while (pLink != (CProxTouchLink *)pList) {
+				CBaseEntity *pEntity = (CBaseEntity *)pLink->m_hEntity.Get();
+				if (pEntity && sub_101c5460(pEntity)) {
+					CBaseEntity *pTarget = ((EHANDLE &)m_hMeasureTarget).Get();
+					float flDist = (EntityOrigin(pEntity) - EntityOrigin(pTarget)).Length();
+					if (flDist < flNearestDist) {
+						flNearestDist = flDist;
+						pNearest = pEntity;
+					}
+				}
+				pLink = pLink->m_pNext;
+			}
+		}
+
+		if (flNearestDist <= m_flMeasure05a0) {
+			if (flNearestDist / m_flMeasure05a0 != OutputValue(m_out05a8)) {
+				float flRatio = flNearestDist / m_flMeasure05a0;
+				((CVariantCopy *)&m_out05a8)->sub_1000b320(1, &flRatio);
+				m_out05a8.sub_100cd300(*(CVariantCopy *)&m_out05a8, pNearest, this, 0);
+			}
+		}
+		m_flNextThink = gpGlobals->curtime;
+		return;
+	}
+
+	sub_100ac4e0(0, 0, 0);
+	m_flNextThink = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ca3b0 size=0x7a
 void *sub_1000db89(int);
 struct GP;

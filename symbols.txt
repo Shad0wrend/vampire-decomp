@@ -10217,6 +10217,7 @@
 0x1000ffab func   ?vfunc5@CPointTeleport@@QAEPAV1@I@Z CPointTeleport::vfunc5
 0x1000ffb0 func   ?sub_10200370@CVStatInfoList_t@@QAEPAVCVStatInfo_t@@H@Z CVStatInfoList_t::sub_10200370
 0x1000ffba func   ?vfunc412@CBaseGrenade@@UAEXH@Z CBaseGrenade::vfunc412
+0x1000ffbf func   ?sub_101ca0c0@CTriggerProximity@@QAEXXZ CTriggerProximity::sub_101ca0c0
 0x1000ffc9 func   ?sub_10428f90@@YAPADPADH@Z sub_10428f90
 0x1000ffce func   ?vfunc5@CItemGIdolCrane@@QAEPAV1@I@Z CItemGIdolCrane::vfunc5
 0x1000ffd3 func   ?sub_100b1750@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100b1750
