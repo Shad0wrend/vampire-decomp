@@ -138785,6 +138785,124 @@ void CBaseCombatWeapon::sub_1024f7b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024f840 size=0x302
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlmemory.h"
+#include "Vector.h"
+#include "matrix3x4_t.h"
+#include "CBaseCombatWeapon.h"
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "CPhysConstraint.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+void sub_10139a90(float *pOut);
+void sub_10138630(const matrix3x4_t &in, matrix3x4_t &out);
+void sub_10138df0(const matrix3x4_t &a, const matrix3x4_t &b, matrix3x4_t &out);
+void sub_1024fc20();
+
+extern int g_10723938;
+extern int g_10723940;
+
+struct FixedParams
+{
+	matrix3x4_t m_Matrix;
+	float m_fl30;
+	float m_fl34;
+	float m_fl38;
+	bool m_b3c;
+	char m_pad3d[3];
+};
+
+struct PhysEnvView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13();
+	virtual CPhysConstraintObj *CreateFixedConstraint(PhysObjView *pRef, PhysObjView *pAtt, int gameData, void *pParams);
+};
+
+// TARGET: CBaseCombatWeapon::sub_1024f840
+void CBaseCombatWeapon::sub_1024f840()
+{
+	vfunc105((const char *)vfunc343());
+	vfunc225();
+
+	CCollisionProperty *pCol = (CCollisionProperty *)((char *)this + 0x270);
+	Vector mins = *(Vector *)pCol->vfunc1();
+	Vector maxs = *(Vector *)pCol->vfunc2();
+
+	for (int i = 0; i < 3; i++)
+	{
+		mins[i] = (-8.0f < mins[i]) ? -8.0f : mins[i];
+		maxs[i] = (8.0f > maxs[i]) ? 8.0f : maxs[i];
+	}
+
+	((CBaseEntity *)this)->sub_100adf10(mins.Base(), maxs.Base());
+	pCol->sub_100dc8d0(1, 0x41000000);
+
+	PhysObjView *pPhys;
+	PhysObjView *pWorld;
+
+	if (!((CBaseEntity *)this)->sub_100a5ea0(2, 8, 0, 0))
+	{
+		((CEntityVSlots *)this)->slot93(6, 0);
+		{
+			ScopeTrace trace("CBaseEntity::AddSolidFlags", m_pszName26c ? m_pszName26c : g_106b8540);
+			pCol->AddSolidFlags(8);
+		}
+		{
+			ScopeTrace trace("CBaseEntity::SetSolid", m_pszName26c ? m_pszName26c : g_106b8540);
+			pCol->sub_100dc480(2);
+		}
+		((CBaseEntity *)this)->sub_100b3b00();
+	}
+	else if (*(unsigned int *)((char *)this + 0x204) & 1)
+	{
+		pWorld = (PhysObjView *)g_10723938;
+		pPhys = (PhysObjView *)*(void **)((char *)this + 0x36c);
+		if (pWorld && pPhys)
+		{
+			FixedParams params;
+			sub_10139a90((float *)&params);
+			params.m_fl34 = 0.0f;
+			params.m_fl38 = 0.0f;
+			params.m_fl30 = 1.0f;
+			params.m_b3c = true;
+
+			matrix3x4_t worldMat;
+			matrix3x4_t invWorld;
+			matrix3x4_t objMat;
+			pWorld->GetPositionMatrix(&worldMat);
+			sub_10138630(worldMat, invWorld);
+			pPhys->GetPositionMatrix(&objMat);
+			sub_10138df0(invWorld, objMat, params.m_Matrix);
+
+			params.m_fl34 = 45.454545f;
+			params.m_fl38 = 9.090909f;
+
+			CPhysConstraintObj *pConstraint = ((PhysEnvView *)g_10723940)->CreateFixedConstraint(pWorld, pPhys, 0, &params);
+			*(CPhysConstraintObj **)((char *)this + 0x8dc) = pConstraint;
+			pConstraint->vfunc3((CPhysConstraint *)this);
+		}
+	}
+
+	pCol->sub_100dc8d0(1, 0x41c00000);
+	vfunc305();
+	sub_100ac4e0((int)sub_1024fc20, 0, 0);
+	m_flNextThink17c = gpGlobals->curtime + 0.1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024fc20 size=0x174
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
