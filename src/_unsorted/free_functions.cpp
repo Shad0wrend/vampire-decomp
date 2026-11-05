@@ -1865,6 +1865,136 @@ void *sub_1002e970(int a, int b, int c, char *obj)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002ea40 size=0x2d0
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "PhysFrame.h"
+#include "IPhysicsEnvironment.h"
+#include "IPhysicsObject.h"
+#include "ConVar.h"
+#include "CCollisionEvent.h"
+#include "ScopeTrace.h"
+#include "engineserver.h"
+#include "Tier1.h"
+#include "CBCCSlotViews.h"
+#include "CBaseEntity.h"
+#include "ehandle.h"
+#include <malloc.h>
+
+extern IPhysicsEnvironment *g_10723940;
+extern ConVar g_106b85c0;
+extern ConVar g_106b8608;
+extern float g_106b85b8;
+extern char g_106b8814;
+extern int g_106b89c0;
+extern void *g_106b89bc;
+extern float g_104454c4;
+extern CCollisionEvent g_106b86d8;
+
+class CPhysObject4View
+{
+public:
+	virtual void s0();
+	virtual void s1();
+	virtual void s2();
+	virtual void s3();
+	virtual char vfunc4();
+};
+
+class CPhysEntityView
+{
+public:
+	VIEW_SLOT100(0) VIEW_SLOT100(1)
+	VIEW_SLOT10(20) VIEW_SLOT10(21)
+	VIEW_SLOT(220) VIEW_SLOT(221) VIEW_SLOT(222) VIEW_SLOT(223) VIEW_SLOT(224) VIEW_SLOT(225)
+	virtual void vfunc226(void *p);
+	VIEW_SLOT(227) VIEW_SLOT(228)
+	virtual void vfunc229(void *p);
+};
+
+void sub_1002ea40(float flFrameTime)
+{
+	ScopeTrace trace("PhysFrame", g_106b8540);
+	int *pItem;
+	if (g_10723940 == 0)
+		return;
+
+	if (flFrameTime > 1.0f || flFrameTime < g_104454c4)
+	{
+		flFrameTime = 0.0f;
+		g_109f3628("Reset physics clock\n");
+	}
+	else if (flFrameTime > 0.1f)
+	{
+		flFrameTime = 0.1f;
+	}
+
+	float simRealTime = 0;
+
+	flFrameTime *= g_106b85c0.GetFloat();
+	if (flFrameTime > 0.1f)
+		flFrameTime = 0.1f;
+
+	bool bProfile = g_106b8608.GetBool();
+	if (bProfile)
+		simRealTime = engine->vfunc87();
+
+	g_106b8814 = 1;
+	g_10723940->vfunc26(flFrameTime);
+	int activeCount = g_10723940->vfunc44();
+	void **pActiveList = 0;
+	if (activeCount)
+	{
+		pActiveList = (void **)_alloca(activeCount * 4);
+		g_10723940->vfunc45(pActiveList);
+		for (int i = 0; i < activeCount; i++)
+		{
+			IPhysicsObject *pObj = (IPhysicsObject *)pActiveList[i];
+			CBaseEntity *pEnt = (CBaseEntity *)pObj->vfunc6();
+			if (pEnt != 0)
+				((CPhysEntityView *)pEnt)->vfunc226(pActiveList[i]);
+		}
+	}
+
+	for (pItem = *(int **)((char *)g_106b89bc + 4); pItem != 0; pItem = (int *)pItem[1])
+	{
+		EHANDLE h;
+		h.m_Index = pItem[0];
+		CBaseEntity *pEnt = h.Get();
+		if (pEnt == 0)
+		{
+			g_109f3628("Dangling pointer to physics entity!!!\n");
+			continue;
+		}
+		IPhysicsObject *pPhys = *(IPhysicsObject **)((char *)pEnt + 0x36c);
+		if (pPhys != 0 && !((CPhysObject4View *)pPhys)->vfunc4())
+			((CPhysEntityView *)pEnt)->vfunc229(pPhys);
+	}
+
+	if (bProfile)
+	{
+		simRealTime = engine->vfunc87() - simRealTime;
+		if (simRealTime < g_104454c4)
+			simRealTime = g_104454c4;
+		g_106b85b8 *= 0.8;
+		g_106b85b8 += (simRealTime * 0.2);
+		if (g_106b89c0 != 0 || activeCount != 0)
+		{
+			g_109f3628("Physics: %3d objects, %4.1fms / AVG: %4.1fms\n", activeCount, simRealTime * 1000.0f, g_106b85b8 * 1000.0f);
+		}
+		g_106b89c0 = activeCount;
+	}
+	g_106b8814 = 0;
+	g_106b86d8.sub_10030910();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002edd0 size=0x66
 struct TraceEnt { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
