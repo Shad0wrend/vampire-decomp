@@ -31,6 +31,7 @@ public:
 	char sub_101f8300(int index);	// stub 0x1000a78b: whether index is a valid entry id (checked by sub_101f9b70)
 	bool sub_101f82d0(int index);	// provisional, like sub_101f18f0 (transplant)
 	bool sub_101f11f0(void *pData);	// parses one reaction category of the data file: its InternalName picks the entry of the pointer array (+0x8, count +0x4) and every ReactionGroup key is handed to that entry (sub_101f0bc0); false (with a Msg) for no data or a missing entry
+	CVTraitEffectGroup_t *sub_101f1aa0(int index);
 	CVTraitEffectGroup_t *sub_101ea0b0(int index);	// the entry of the pointer array (+0x8) for a valid index, else the function-local static default entry (0x101ea0b0)
 	CVTraitEffectGroup_t *sub_101f8480(int index);	// the entry of the pointer array (+0x8) for a valid index, else the function-local static default entry (stub 0x1000c5d1)
 	void sub_101f9af0(CTraitOwnerX *pOwner, const char *pszName);	// stub 0x1000181b: applies a named trait of the entry to the owner
