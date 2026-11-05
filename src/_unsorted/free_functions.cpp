@@ -70300,6 +70300,77 @@ extern "C" GP *func_plat()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10158f20 size=0x1eb
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+// TARGET: sub_10158f20
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+extern float g_1070d9d0[3];
+extern float g_104454c4;
+
+void sub_101cf390(void *pThis, const float *pMins, const float *pMaxs);
+
+#define F(p, off) (*(float *)((char *)(p) + (off)))
+#define VEC(p, off) (*(Vector *)((char *)(p) + (off)))
+
+void __fastcall sub_10158f20(CBaseEntity *pThis)
+{
+	CEntityVSlots *pSlots = (CEntityVSlots *)pThis;
+
+	if (F(pThis, 0x56c) == g_104454c4)
+		F(pThis, 0x56c) = 80.0f;
+	if (F(pThis, 0x568) == g_104454c4)
+		F(pThis, 0x568) = 10.0f;
+
+	pThis->vfunc64(g_1070d9d0);
+
+	{
+		ScopeTrace scope("CBaseEntity::SetSolid", pThis->m_name26c ? pThis->m_name26c : g_106b8540);
+		((CCollisionProperty *)((char *)pThis + 0x270))->sub_100dc480(1);
+	}
+
+	pThis->vfunc93(8, 0);
+	pThis->sub_100b3b00();
+
+	CCollisionProperty *pColl = (CCollisionProperty *)((char *)pThis + 0x270);
+	float *pMins = pColl->vfunc1();
+	float *pMaxs = pColl->vfunc2();
+	sub_101cf390(pThis, pMins, pMaxs);
+
+	int n;
+	const char *psz = *pThis->vfunc9(&n);
+	if (!psz)
+		psz = g_106b8540;
+	pThis->vfunc105(psz);
+
+	VEC(pThis, 0x508) = *pSlots->slot220();
+	VEC(pThis, 0x514) = *pSlots->slot220();
+
+	float zEnd;
+	if (F(pThis, 0x538) != g_104454c4) {
+		zEnd = pSlots->slot220()->z;
+		zEnd -= F(pThis, 0x538);
+	} else
+		zEnd = pSlots->slot220()->z - pSlots->slot214()->z + 8.0f;
+	F(pThis, 0x51c) = zEnd;
+
+	if (pThis->m_flSpeed164 == g_104454c4)
+		pThis->m_flSpeed164 = 150.0f;
+	if (F(pThis, 0x564) == g_104454c4)
+		F(pThis, 0x564) = 0.85f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10159270 size=0x60
 #include "CPlatTrigger.h"
 

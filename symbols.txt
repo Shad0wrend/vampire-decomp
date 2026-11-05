@@ -5670,6 +5670,7 @@
 0x10009570 func   ?vfunc362@CItemContainer@@QAE_NH@Z CItemContainer::vfunc362
 0x10009575 func   ?sub_103bf440@CNPC_VTzimisce@@QAEXXZ CNPC_VTzimisce::sub_103bf440
 0x1000957a func   ?sub_101af420@CSpeakerUnit@@QAEXXZ CSpeakerUnit::sub_101af420
+0x1000957f func   ?sub_10158f20@@YIXPAVCBaseEntity@@@Z sub_10158f20
 0x10009589 func   ?sub_103c1220@CNPC_VTzimisceHeadClaw@@QAEPAV1@XZ CNPC_VTzimisceHeadClaw::sub_103c1220
 0x1000958e func   ?vfunc408@CItemContainer@@QAE_NXZ CItemContainer::vfunc408
 0x10009593 func   ?sub_103881a0@@YAEXZ sub_103881a0
