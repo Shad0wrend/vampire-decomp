@@ -11497,6 +11497,7 @@
 0x10011cca func   ?sub_10114aa0@CUnknown10114aa0@@QAEHXZ CUnknown10114aa0::sub_10114aa0
 0x10011cd4 func   ?sub_10078bd0@@YIXPAH@Z sub_10078bd0
 0x10011cd9 func   ?vfunc67@CWeaponMelee_Torch@@QAEXXZ CWeaponMelee_Torch::vfunc67
+0x10011cde func   ?sub_101f3ba0@CVSoundFileFolder_t@@QAEXHHH@Z CVSoundFileFolder_t::sub_101f3ba0
 0x10011ce3 func   _item_w_mingxiao_tentacle item_w_mingxiao_tentacle
 0x10011ce8 func   ?sub_1013e7e0@CUnknown1013e7e0@@QAEXH@Z CUnknown1013e7e0::sub_1013e7e0
 0x10011cf2 func   ?vfunc81@CWeaponMelee_Baton@@UAEHXZ CWeaponMelee_Baton::vfunc81

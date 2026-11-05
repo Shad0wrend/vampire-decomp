@@ -111187,6 +111187,37 @@ bool CUnknown101f3d80::sub_101f3810()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f3ba0 size=0x102
+#include "CVSoundFileFolder_t.h"
+#include <string.h>
+typedef void (__cdecl *FnDevWarning)(int level, const char *fmt, ...);
+extern FnDevWarning g_109f3658;
+
+// TARGET: CVSoundFileFolder_t::sub_101f3ba0
+void CVSoundFileFolder_t::sub_101f3ba0(int a, int b, int c)
+{
+	int newSize = m_pOwner->sub_101f4300();
+	int src = ((CUnit101f4530 *)m_pOwner)->sub_101f4530(a, c);
+	int dst = ((CUnit101f4530 *)m_pOwner)->sub_101f4530(a, b);
+	unsigned char *pNew = new unsigned char[newSize];
+	if (dst > newSize)
+		g_109f3658(1, "CVSoundFileFolder_t::AddRange IDX SHOULD NOT BE GREATER THAN SIZE?  HUH??? %d %d\n", dst, newSize);
+	m_nSize = newSize;
+	int i;
+	for (i = 0; i <= src; i++)
+		pNew[i] = m_pFlags[i];
+	for (i = src + 1; i <= dst; i++)
+		pNew[i] = 0;
+	int delta = dst - src;
+	for (i = dst + 1; i < newSize; i++)
+		pNew[i] = m_pFlags[i - delta];
+	delete m_pFlags;
+	m_pFlags = pNew;
+	for (i = 0; i < m_nChildren; i++)
+		m_pChildren[i]->sub_10011cde(a, b, c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f3d00 size=0x54
 #include "CUnknown101f3d80.h"
 #include "CUnknown101f4370.h"
