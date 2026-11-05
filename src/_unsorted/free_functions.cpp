@@ -163975,6 +163975,71 @@ CAI_Waypoint *CAI_Pathfinder::sub_10303cd0(const float *vecStart, const float *v
 }
 // END FUNCTION
 
+// FUNCTION: 0x10303d10 size=0x1e5
+#include "CAI_Pathfinder.h"
+#include "CAI_Waypoint.h"
+#include "CVProfile.h"
+extern char g_106114ec[];
+extern char g_1053a868[];
+
+static inline void AddCycles(unsigned __int64 &rTotal, const unsigned __int64 &rCur)
+{
+	rTotal += rCur;
+}
+
+// TARGET: CAI_Pathfinder::sub_10303d10
+CAI_Waypoint *CAI_Pathfinder::sub_10303d10(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+{
+	CVProfile *pProf = g_109f3648;
+	if (pProf->m_enabled || !pProf->m_bAtRoot) {
+		if (pProf->m_pCurNode->m_pszName != g_106114ec)
+			pProf->m_pCurNode = pProf->m_pCurNode->GetSubNode(g_106114ec, 0, g_1053a868);
+		CVProfNode *pNode = pProf->m_pCurNode;
+		pNode->m_nCurFrameCalls++;
+		if (pNode->m_nRecursions++ == 0) {
+			unsigned long *pSample = (unsigned long *)&pNode->m_CurFrameTime;
+			__asm {
+				mov ecx, pSample
+				rdtsc
+				mov [ecx], eax
+				mov [ecx + 4], edx
+			}
+			g_109f3648->PushGroupInlined(pNode->m_nBudgetGroupID);
+		}
+		pProf->m_bAtRoot = false;
+	}
+
+	CAI_Waypoint *pResult = sub_10303850(0, a1, a2, a3, a4, a5, a6, a7, a8, a9);
+
+	pProf = g_109f3648;
+	if (!pProf->m_bAtRoot || pProf->m_enabled) {
+		CVProfNode *pNode = pProf->m_pCurNode;
+		if (--pNode->m_nRecursions == 0 && pNode->m_nCurFrameCalls != 0) {
+			unsigned long aNow[2] = { 0, 0 };
+			unsigned long *pSample = aNow;
+			__asm {
+				mov ecx, pSample
+				rdtsc
+				mov [ecx], eax
+				mov [ecx + 4], edx
+			}
+			pNode->m_CurFrameTime.m_Int64 = *(unsigned __int64 *)aNow - pNode->m_CurFrameTime.m_Int64;
+			AddCycles(pNode->m_TotalTime, pNode->m_CurFrameTime.m_Int64);
+			CVProfile *pg = g_109f3648;
+			pg->m_nGroupStackDepth--;
+			int nNew = pg->m_GroupIDStack[pg->m_nGroupStackDepth];
+			int nOld = pg->m_GroupIDStack[pg->m_nGroupStackDepth + 1];
+			if (nNew != nOld && pg->m_bVTuneGroupsEnabled && nOld == pg->m_nVTuneGroupID)
+				vtune(false);
+		}
+		if (pNode->m_nRecursions == 0)
+			pProf->m_pCurNode = pProf->m_pCurNode->m_pParent;
+		pProf->m_bAtRoot = (pProf->m_pCurNode == pProf->m_pRoot);
+	}
+	return pResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10303f80 size=0x37
 namespace lifted {
 struct C100104ba { int sub_100104ba(int, int, int, int, int, int, int, int, int, int); };
