@@ -354,6 +354,162 @@ void CWorld::vfunc113()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023c020 size=0x33f
+#include "CWeaponThrown_Grenade_Frag.h"
+#include "CWorld.h"
+#include "engineserver.h"
+#include "engineiface.h"
+#include "globalvars.h"
+#include "Tier1.h"
+
+struct CWorldConVar
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void SetInt(int value);
+};
+struct CWorldCvarSystem
+{
+	virtual void v0(); virtual void v1();
+	virtual CWorldConVar *FindVar(const char *name);
+};
+struct CWorldRules
+{
+	virtual void Delete(int bFree);
+	virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10();
+	virtual void v11();
+	virtual void v12();
+	virtual void v13();
+	virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18();
+	virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28();
+	virtual void v29(); virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33();
+	virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38();
+	virtual void v39(); virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43();
+	virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48();
+	virtual void v49(); virtual void v50(); virtual void v51(); virtual void v52(); virtual void v53();
+	virtual void v54(); virtual void v55(); virtual void v56();
+	virtual void v57();
+};
+struct CWorldSound
+{
+	virtual void Precache(const char *name, int preload);
+};
+struct CWorldNameOut { const char *p; };
+struct CWorldDecal { const char *name; int index; };
+struct CWorldSlotsView { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual CWorldNameOut *GetName(CWorldNameOut *out); };
+
+extern CWorldCvarSystem *g_1070b234;
+extern CWorldRules *g_1070ba0c;
+extern CWorldSound *g_1070b248;
+extern CWorld *g_107532e8;
+extern char g_1070ba2c;
+extern int g_107260ac;
+extern void *g_1072c464;
+extern int g_1070ba24;
+extern char g_1070d1b0[];
+extern char g_106b8540[];
+extern CWorldDecal g_105c2308[];
+extern void (*g_109f362c)(const char *, ...);
+extern void (*g_109f3650)(int, const char *, ...);
+CWorldRules *sub_10352f70();
+void *sub_100a99d0(const char *, void *, void *, void *);
+void sub_1042c5d0(const char *);
+void sub_104121f0(); void sub_1023bb60(); void sub_10355e00(); void sub_101af030();
+void sub_1024eda0(); void sub_10230320(); void sub_1023ef40(); void sub_1028d7e0();
+void sub_1034fee0(); void sub_100d1d50(); void sub_1033f750();
+void sub_10050a40(); void sub_102f6690(); void sub_10321ec0(); void sub_1042d5a0();
+struct CUnknown1030c560 { void sub_1030c560(); };
+extern CUnknown1030c560 g_10936b68;
+extern char g_105758c4[], g_10540a3c[];
+
+inline const char *WorldString(const char *const &s)
+{
+	return s ? s : g_106b8540;
+}
+
+void CWorld::vfunc104()
+{
+	g_107532e8 = this;
+	g_1070ba2c = 0;
+	g_107260ac = 0;
+	CWorldConVar *stepsize = g_1070b234->FindVar("sv_stepsize");
+	if (stepsize)
+		stepsize->SetInt(18);
+	if (g_1070ba0c)
+		g_1070ba0c->Delete(1);
+	g_1070ba0c = sub_10352f70();
+	g_1070ba0c->v13();
+	void *pSoundEnt = sub_100a99d0("soundent", g_1070d1b0, g_1070d9d0, this);
+	void (*pWarn)(const char *, ...) = g_109f362c;
+	g_1072c464 = pSoundEnt;
+	if (!pSoundEnt)
+		pWarn("**COULD NOT CREATE SOUNDENT**\n");
+	CWorldNameOut out;
+	const char *pName = ((CWorldSlotsView *)this)->GetName(&out)->p;
+	if (!pName)
+		pName = g_106b8540;
+	sub_1042c5d0(pName);
+	sub_104121f0();
+	sub_1023bb60();
+	sub_10355e00();
+	sub_101af030();
+	sub_1024eda0();
+	sub_10230320();
+	sub_1023ef40();
+	sub_1028d7e0();
+	sub_1034fee0();
+	sub_100d1d50();
+	for (unsigned int i = 0; i < 0x4f; i++)
+	{
+		g_105c2308[i].index = engine->vfunc16(g_105c2308[i].name, 0);
+		if (g_105c2308[i].index < 0)
+			pWarn("Decal Network error!\n");
+		if (g_105c2308[i].index != i)
+			pWarn("Decal %d does not match it's precached index.  Could cause network errors.\n");
+	}
+	sub_1033f750();
+	sub_1023bd20();
+	g_1070ba0c->v11();
+	sub_10050a40();
+	if (m_psz454 != 0)
+		g_1070b248->Precache(WorldString(m_psz454), 0);
+	engine->vfunc62(0, g_105758c4);
+	engine->vfunc62(1, "mmnmmommommnonmmonqnmmo");
+	engine->vfunc62(2, "abcdefghijklmnopqrstuvwxyzyxwvutsrqponmlkjihgfedcba");
+	engine->vfunc62(3, "mmmmmaaaaammmmmaaaaaabcdefgabcdefg");
+	engine->vfunc62(4, "mamamamamama");
+	engine->vfunc62(5, "jklmnopqrstuvwxyzyxwvutsrqponmlkj");
+	engine->vfunc62(6, "nmonqnmomnmomomno");
+	engine->vfunc62(7, "mmmaaaabcdefgmmmmaaaammmaamm");
+	engine->vfunc62(8, "mmmaaammmaaammmabcdefaaaammmmabcdefmmmaaaa");
+	engine->vfunc62(9, "aaaaaaaazzzzzzzz");
+	engine->vfunc62(10, "mmamammmmammamamaaamammma");
+	engine->vfunc62(11, "abcdefghijklmnopqrrqponmlkjihgfedcba");
+	engine->vfunc62(12, "mmnnmmnnnmmnn");
+	engine->vfunc62(0x3f, g_10540a3c);
+	sub_102f6690();
+	g_10936b68.sub_1030c560();
+	g_1070ba0c->v57();
+	sub_10321ec0();
+	sub_1042d5a0();
+	if (m_psz450 != 0)
+	{
+		g_109f3650(2, "Chapter title: %s\n", WorldString(m_psz450));
+		CWorld *pMsg = (CWorld *)sub_100a99d0("env_message", g_1070d1b0, g_1070d9d0, 0);
+		if (pMsg)
+		{
+			pMsg->m_psz450 = m_psz450;
+			m_psz450 = 0;
+		}
+	}
+	CWorldConVar *dark = g_1070b234->FindVar("v_dark");
+	if (dark)
+		dark->SetInt(m_b478 != 0);
+	g_1070ba24 = m_b479 != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023c6f0 size=0x47
 #include "CWorld.h"
 #include "globalvars.h"
