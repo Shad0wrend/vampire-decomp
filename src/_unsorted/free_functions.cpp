@@ -166235,6 +166235,24 @@ void CUnknown10316890::sub_10316ab0(int arg, Vector a, Vector b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10316bc0 size=0x66
+#include "CBaseEntity.h"
+struct CHandleList_t {
+	char pad0[0x1c];
+	EHANDLE m_Handles[16];
+	int m_nCount;
+	void sub_10316bc0(int arg);
+};
+
+void CHandleList_t::sub_10316bc0(int arg)
+{
+	for (int i = 0; i < m_nCount; i++) {
+		if (m_Handles[i].Get())
+			m_Handles[i]->vfunc58(arg);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10316e60 size=0x10
 namespace lifted {
 extern char g_10936c74;
