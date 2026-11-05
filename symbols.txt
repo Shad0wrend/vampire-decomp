@@ -4599,6 +4599,7 @@
 0x10007d06 func   ?sub_101d15f0@CUnknown101d1460@@QAEXPAVCBaseEntity@@@Z CUnknown101d1460::sub_101d15f0
 0x10007d10 func   ?sub_102c4470@CAI_BaseNPCTroika@@QAE_NPAVCBaseEntity@@@Z CAI_BaseNPCTroika::sub_102c4470
 0x10007d15 func   ?sub_101c5460@CBaseTrigger@@QAE_NPAVCBaseEntity@@@Z CBaseTrigger::sub_101c5460
+0x10007d1a func   ?sub_101c5420@@YG_NPAX@Z sub_101c5420
 0x10007d1f func   ?vfunc435@CNPC_VGargoyle@@QAEXH@Z CNPC_VGargoyle::vfunc435
 0x10007d24 func   ?sub_10073260@S10073260@@QAEXPBD@Z S10073260::sub_10073260
 0x10007d29 func   ?sub_10137060@@YAXMPAM0@Z sub_10137060

@@ -92337,6 +92337,18 @@ bool __stdcall sub_101c53d0(void *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c5420 size=0x26
+// TARGET: sub_101c5420
+bool __stdcall sub_101c5420(void *pEnt)
+{
+    void **vt = *(void ***)pEnt;
+    if (((int (__fastcall *)(void *))vt[94])(pEnt) == 7)
+        return true;
+    unsigned int f = *(unsigned int *)((char *)pEnt + 0x4c);
+    bool b = (f >> 13) & 1; return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c5460 size=0xe2
 #include "CBaseTrigger.h"
 #include "CGlobalEntityList.h"
