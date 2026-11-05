@@ -1554,6 +1554,7 @@
 0x100034ef func   ?sub_1006e850@@YIXPAD@Z sub_1006e850
 0x100034f4 func   ?sub_10306550@CVHalveList@@QAEXXZ CVHalveList::sub_10306550
 0x100034f9 func   ?sub_103392c0@CBaseCombatCharacter@@QAEXPAVCBaseEntity@@HH@Z CBaseCombatCharacter::sub_103392c0
+0x100034fe func   ?vfunc5@CLogicCaseToggle@@QAEPAV1@I@Z CLogicCaseToggle::vfunc5
 0x10003503 func   _scripted_target scripted_target
 0x1000350d func   ?vfunc103@CBaseEntity@@UAEXXZ CBaseEntity::vfunc103
 0x10003512 func   ?sub_10218080@@YIXPADHH@Z sub_10218080

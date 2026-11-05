@@ -31,3 +31,29 @@ void CLogicCaseToggle::vfunc103()
 	sub_101346e0(-1);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10136040 size=0x47
+#include "CLogicCaseToggle.h"
+#include "COutputEvent.h"
+#include "CLogicalEntity.h"
+
+struct CaseToggleView
+{
+	char pad[0x490];
+	COutputEvent m_OnCase[16];
+	COutputEvent m_OnDefault;
+	~CaseToggleView() {}
+};
+
+void sub_100aa7b0(void *p);
+
+// TARGET: CLogicCaseToggle::vfunc5
+CLogicCaseToggle *CLogicCaseToggle::vfunc5(unsigned int flags)
+{
+	((CaseToggleView *)this)->~CaseToggleView();
+	((CLogicalEntity *)this)->sub_1000cb8a();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
