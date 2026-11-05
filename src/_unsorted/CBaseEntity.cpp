@@ -2389,6 +2389,76 @@ int CBaseEntity::vfunc233(int *pList, int maxObjects)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a6fa0 size=0x283
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CBaseEntitySlots.h"
+#include "ScopeTrace.h"
+#include "CTraceFilterFVisible.h"
+#include "CTraceFilterSimple.h"
+#include "CGameTrace.h"
+#include "Ray_t.h"
+#include "CUnknown1070b254.h"
+#include "AITrace.h"
+#include "Tier1.h"
+
+class CFoo1005f190 { public: int sub_1005f190(); };
+extern CFoo1005f190 g_10738960;
+
+struct CWaterLevelView { char pad[0x3e0]; int m_nWaterLevel; };
+
+bool CBaseEntity::vfunc201(CBaseEntity *pEntity, int traceMask, CBaseEntity **ppBlocker, int nOrigin)
+{
+	ScopeTrace trace( "CBaseEntity::FVisible", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc );
+
+	if ( pEntity->sub_100b3700() & 0x8000 )
+		return false;
+
+	if ( (((CWaterLevelView *)this)->m_nWaterLevel != 3 && ((CWaterLevelView *)pEntity)->m_nWaterLevel == 3)
+		|| (((CWaterLevelView *)this)->m_nWaterLevel == 3 && ((CWaterLevelView *)pEntity)->m_nWaterLevel == 0) )
+		return false;
+
+	Vector eye;
+	((CBaseEntitySlots *)this)->slot193( (int)&eye );
+
+	Vector target;
+	sub_100a72e0( pEntity, nOrigin, &target );
+
+	CTraceFilterFVisible filter( this, 0 );
+
+	Ray_t ray;
+	ray.Init( eye, target );
+
+	CGameTrace traceResult;
+	g_1070b254->vfunc4( &ray, traceMask, (CTraceFilterNoCharacterCollide *)&filter, &traceResult );
+
+	if ( g_10738960.sub_1005f190() )
+		sub_10146570( (const Vector *)&traceResult, (const Vector *)traceResult.m_endpos, 0xff, 0, 0, 1, -1.0f );
+
+	if ( traceResult.m_fraction != 1.0 )
+	{
+		CBaseEntity *pHit = traceResult.m_pEnt;
+		if ( pHit != pEntity )
+		{
+			if ( pHit && *(void **)((char *)pHit + 0x94) )
+				g_109f3630( "DOH!" );
+			if ( ppBlocker )
+				*ppBlocker = pHit;
+			return false;
+		}
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a7a80 size=0x3
 // TARGET: sub_100a7a80
 int __cdecl sub_100a7a80() { return 0; }
