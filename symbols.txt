@@ -3145,6 +3145,7 @@
 0x10005afb func   ?sub_10061f70@CTEFizz@@QAEPAV1@H@Z CTEFizz::sub_10061f70
 0x10005b00 func   ?vfunc80@CEntityFlame@@UAEHXZ CEntityFlame::vfunc80
 0x10005b05 func   ?sub_101d6730@@YAXXZ sub_101d6730
+0x10005b0a func   ?vfunc458@CAI_BaseNPC@@QAEHH@Z CAI_BaseNPC::vfunc458
 0x10005b0f func   ?sub_10312f70@CUtlMemory16@@QAEPAV1@HH@Z CUtlMemory16::sub_10312f70
 0x10005b14 func   ?vfunc440@CNPC_VGargoyle@@QAEHH@Z CNPC_VGargoyle::vfunc440
 0x10005b19 func   ?sub_102dd530@CUnknown102dd530@@QAEXXZ CUnknown102dd530::sub_102dd530

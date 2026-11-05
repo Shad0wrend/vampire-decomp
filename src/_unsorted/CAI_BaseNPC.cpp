@@ -3012,6 +3012,22 @@ int CAI_BaseNPC::vfunc440(int schedule)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cc300 size=0x34
+#include "CAI_BaseNPCTroika.h"
+#include "CEntityVSlots.h"
+#include "CUnknown10359c50.h"
+#include "CUnknown1024a230.h"
+extern CUnknown1024a230 g_109203dc;
+int CAI_BaseNPC::vfunc458(int condition)
+{
+	if (condition < 1000000000 || condition == -1) {
+		char *p = (char *)((CEntityVSlots *)this)->slot580();
+		condition = ((CUnknown10359c50 *)(p + 0x30))->sub_102ea2d0(condition);
+	}
+	return (int)g_109203dc.sub_102ea020(condition);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cc350 size=0x34
 #include "CAI_BaseNPCTroika.h"
 #include "CEntityVSlots.h"
