@@ -35,6 +35,21 @@ public:
 	CUnknown102ef350Sink m_Sink19b0;	// 0x19b0
 };
 
+class CUnknown102ef350Outer	// the primary part (this - 0x10 of the interface)
+{
+public:
+	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3();
+	virtual void vfunc4(); virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7();
+	virtual void vfunc8();
+};
+
+class CUnknown102ef350Iface	// the interface sub-object at outer + 0x10
+{
+public:
+	virtual void ivf0();
+	bool sub_102ef6d0(int a, CUnknown102ef3e0Arg *b, int type, int *pOut);
+};
+
 // Not modelled yet (needs the real class, found from the vtable that holds 0x102ef350 / 0x102ef6d0 at the
 // interface offset 0x10): the outer object has a vtable at +0, the owner pointer (CUnknown102ef350Owner *) at +4,
 // the tracker members of CUnknown102ef3e0 from +0x51 to +0x68 (so CUnknown102ef3e0's m_pad0000 hides a vptr and
