@@ -86668,6 +86668,45 @@ int sub_101aeb60(SPlayEdict *pEdict, const char *pszGroup, float flVolume, int i
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aedc0 size=0x1e3
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "engineserver.h"
+#include "engineiface.h"
+
+extern int g_1072bc10;
+int sub_101af070(const char *pszName);
+
+struct SPlayEdictUnknown
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual CEntitySoundOriginView *vfunc4();
+};
+
+struct SPlayEdict
+{
+	char m_pad0000[0x40];
+	SPlayEdictUnknown *m_pUnknown;
+};
+
+int sub_101aedc0(SPlayEdict *pEdict, const char *pszGroup, float flVolume, int iSoundlevel, int iFlags, int iPitch, int a, int b)
+{
+	if (g_1072bc10) {
+		char szName[64];
+		szName[0] = 0;
+		int nGroup = engine->vfunc55(pszGroup);
+		if (nGroup >= 0 && engine->vfunc52(nGroup, szName, sizeof(szName), a, b) >= 0 && szName[0]) {
+			int iSentence = sub_101af070(szName);
+			CEntitySoundOriginView *pEntity = (pEdict && pEdict->m_pUnknown) ? pEdict->m_pUnknown->vfunc4() : 0;
+			CPASAttenuationFilter filter(pEntity, (soundlevel_t)iSoundlevel);
+			enginesound->vfunc4(&filter, engine->vfunc35((int)pEdict), 2, iSentence, flVolume, iSoundlevel, iFlags, iPitch, 0, 0, 1, 0);
+			return iSentence;
+		}
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101af030 size=0x26
 #include "CUnknown1070b22c.h"
 
