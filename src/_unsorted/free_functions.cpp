@@ -38151,6 +38151,35 @@ void sub_100c32e0(char *pStudioHdr, void *pos, void *q, int a4, int a5)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c3440 size=0x12f
+#define MAX(a, b) (((a) > (b)) ? (a) : (b))
+#define MIN(a, b) (((a) < (b)) ? (a) : (b))
+
+struct CStudioView100c3440 { char m_pad[0x110]; int m_nCount; };
+struct CBuf106ded28 { char m_b[0x20d0]; ~CBuf106ded28() {} };
+struct CBuf106e0df8 { char m_b[0x800]; ~CBuf106e0df8() {} };
+
+void sub_100c25c0(CStudioView100c3440 *p, void *a, void *b, int idx, float f, int a4, int a10);
+void sub_100c32e0(CStudioView100c3440 *p, void *a, void *b, int a4, int a10);
+void sub_100c2ce0(CStudioView100c3440 *p, void *a, void *b, int a7, int a10);
+void sub_100c3600(CStudioView100c3440 *p, int a5, int a6, void *a, void *b, int a8, int a9, int a10);
+
+// TARGET: sub_100c3440
+void sub_100c3440(CStudioView100c3440 *p, int idx, float f, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
+{
+	static CBuf106ded28 s_a;
+	static CBuf106e0df8 s_b;
+	if (idx < 0 || idx >= p->m_nCount)
+		idx = 0;
+	f = MIN(MAX(f, 0.0f), 0.999);
+	sub_100c25c0(p, &s_a, &s_b, idx, f, a4, a10);
+	sub_100c32e0(p, &s_a, &s_b, a4, a10);
+	if (a7)
+		sub_100c2ce0(p, &s_a, &s_b, a7, a10);
+	sub_100c3600(p, a5, a6, &s_a, &s_b, a8, a9, a10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c40e0 size=0x54
 struct Elem_100c40e0 { char pad[0x88]; unsigned char flags; char pad2[3]; int type; char pad3[0xa0-0x90]; };
 struct Base_100c40e0 { char pad[0xf4]; int offset; };
