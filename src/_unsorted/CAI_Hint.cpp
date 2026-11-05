@@ -44,6 +44,113 @@ void CAI_Hint::vfunc119()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d0b60 size=0x4d9
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CAI_Hint.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+#include <math.h>
+
+struct CInspectStatLevels { float sub_1006caa0(int level); };	// stub 0x1000c874
+struct CInspectStatOwner
+{
+	int sub_1006cf30(const char *pszName);	// stub 0x1000fb46
+	CInspectStatLevels *sub_1006cff0(int id);
+};
+extern CInspectStatOwner g_106c7c34;
+extern float g_104454c4;
+void __fastcall sub_100b3b00(CAI_Hint *p);
+
+struct CAI_HintNameView
+{
+	char m_pad0000[0x26c];
+	const char *m_name26c;
+};
+
+void CAI_Hint::vfunc103()
+{
+	static int s_nStat = g_106c7c34.sub_1006cf30("NPC_Cover_Distance_Scalar");
+	CInspectStatLevels *pStat = g_106c7c34.sub_1006cff0(s_nStat);
+	{
+		CAI_HintNameView *pView = (CAI_HintNameView *)this;
+		ScopeTrace trace("CBaseEntity::SetSolid", this ? (pView->m_name26c ? pView->m_name26c : g_106b8540) : g_105387dc);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(0);
+	}
+	sub_100b3b00(this);
+	float flNew;
+	switch (m_n5dc) {
+	case 0x27d8:
+		if (m_f454 == g_104454c4) m_f454 = 17.0f;
+		if (m_f45c == g_104454c4) m_f45c = 256.0f;
+		if (m_f460 == g_104454c4) m_f460 = 3.4028235e+38f;
+		if (m_f464 == g_104454c4) m_f464 = 3.0f;
+		m_f454 = m_f454 + 43.0f;
+		m_f458 = cos(m_f454 * 0.017453292f);
+		flNew = pStat->sub_1006caa0((int)m_f464);
+		m_n474 = 1;
+		m_f464 = flNew;
+		break;
+	case 100:
+	case 101:
+		if (m_f454 == g_104454c4) m_f454 = 60.0f;
+		if (m_f45c == g_104454c4) m_f45c = 256.0f;
+		if (m_f460 == g_104454c4) m_f460 = 3.4028235e+38f;
+		if (m_f464 == g_104454c4) m_f464 = 3.0f;
+		if (m_f45c == g_104454c4) m_f464 = 3.0f;
+		m_f454 = m_f454 * 0.5f;
+		m_f458 = cos(m_f454 * 0.017453292f);
+		flNew = pStat->sub_1006caa0((int)m_f464);
+		m_n474 = 1;
+		m_f464 = flNew;
+		break;
+	case 0x283c:
+		if (m_f454 == g_104454c4) m_f454 = 60.0f;
+		if (m_f45c == g_104454c4) m_f45c = 256.0f;
+		if (m_f460 == g_104454c4) m_f460 = 3.4028235e+38f;
+		if (m_f464 == g_104454c4) m_f464 = 3.0f;
+		m_f454 = m_f454 * 0.5f;
+		m_f458 = cos(m_f454 * 0.017453292f);
+		flNew = pStat->sub_1006caa0((int)m_f464);
+		m_n474 = 4;
+		m_f464 = flNew;
+		break;
+	case 0x283d:
+		if (m_f454 == g_104454c4) m_f454 = 10.0f;
+		if (m_f45c == g_104454c4) m_f45c = 64.0f;
+		if (m_f460 == g_104454c4) m_f460 = 256.0f;
+		if (m_f464 == g_104454c4) m_f464 = 3.0f;
+		m_f454 = m_f454 * 0.5f;
+		m_f458 = cos(m_f454 * 0.017453292f);
+		flNew = pStat->sub_1006caa0((int)m_f464);
+		m_n474 = 8;
+		m_f464 = flNew;
+		break;
+	case 0x28a0:
+		if (m_f454 == g_104454c4) m_f454 = 10.0f;
+		if (m_f45c == g_104454c4) m_f45c = 64.0f;
+		if (m_f460 == g_104454c4) m_f460 = 3.4028235e+38f;
+		if (m_f464 == g_104454c4) m_f464 = 3.0f;
+		m_f454 = m_f454 * 0.5f;
+		m_f458 = cos(m_f454 * 0.017453292f);
+		flNew = pStat->sub_1006caa0((int)m_f464);
+		m_n474 = 0x10;
+		m_f464 = flNew;
+		break;
+	}
+	if (m_n470 < 1 || m_n470 > 32)
+		m_n470 = -1;
+	else
+		m_n470 = 1 << (m_n470 - 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d1320 size=0x18
 // TARGET: CAI_Hint::vfunc163
 #include "CAI_Hint.h"
