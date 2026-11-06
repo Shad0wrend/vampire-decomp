@@ -509,6 +509,106 @@ void CNPC_VTzimisceHeadClaw::vfunc144(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c1d80 size=0x3bc
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CNPC_VTzimisceHeadClaw.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CGlobalEntityList.h"
+#include "CBaseCombatCharacter.h"
+#include "CBasePlayer.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "CEntityVSlots.h"
+#include "engineiface.h"
+#include "engineserver.h"
+#include "globalvars.h"
+
+extern int g_1070d9d0;
+extern int g_1070d1b0;
+CBaseEntity *__cdecl sub_100fbc90(const char *pszName, const void *pOrigin, const void *pAngles, float flLife);
+extern int *g_10924a6c;
+extern double g_1044fab0;
+
+inline float TzimLength2D(const Vector &v)
+{
+	float flSqr = v.y * v.y;
+	flSqr += v.x * v.x;
+	return FastSqrt(flSqr);
+}
+
+#define TV10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
+#define TV100(a) TV10(a##0) TV10(a##1) TV10(a##2) TV10(a##3) TV10(a##4) TV10(a##5) TV10(a##6) TV10(a##7) TV10(a##8) TV10(a##9)
+
+class CTzimEmitterView
+{
+public:
+	TV100(x0)
+	TV100(x1)
+	TV10(x20) TV10(x21) TV10(x22) TV10(x23)
+	virtual void x240();
+	virtual void slot241();
+	virtual void x242();
+	virtual void slot243(CBaseEntity *pEntity, int a, const char *pszBone);
+};
+
+void CNPC_VTzimisceHeadClaw::vfunc332(CBaseEntity *pEntity)
+{
+	CBaseCombatCharacter *pChar;
+	if (!(pEntity && *(int *)((char *)pEntity + 0xa8) && (pChar = *(CBaseCombatCharacter **)((char *)pEntity + 0x9c))))
+		return;
+	if (m_f6678 == g_1044fab0)
+		pChar->sub_103326b0(500.0f);
+	m_f6678 = enginerandom->vfunc1(5.0f, 8.0f) + gpGlobals->curtime;
+	*(unsigned int *)&m_h6674 = *((CEntityVSlots *)pChar)->slot1();
+	if (!((CGlobalEntityList *)EHandleDetail::g_10566458)->sub_100290c0((const unsigned int *)&m_h667c)) {
+		CBaseEntity *pEmitter = sub_100fbc90("Tzim2_player_emitter", ((CEntityVSlots *)pEntity)->slot217(), &g_1070d9d0, -1.0f);
+		m_h667c = pEmitter;
+		if (((CGlobalEntityList *)EHandleDetail::g_10566458)->sub_100290c0((const unsigned int *)&m_h667c)) {
+			((CTzimEmitterView *)((CGlobalEntityList *)EHandleDetail::g_10566458)->sub_100290c0((const unsigned int *)&m_h667c))->slot243(pEntity, 1, "Bip01 Spine");
+			((CTzimEmitterView *)((CGlobalEntityList *)EHandleDetail::g_10566458)->sub_100290c0((const unsigned int *)&m_h667c))->slot241();
+		}
+	}
+	CPASAttenuationFilter filter((CEntitySoundOriginView *)pEntity);
+	int edict0 = pEntity->m_pEdict2e0;
+	enginesound->vfunc3(&filter, engine->vfunc35(edict0), 4, "Character/Monster/TC_FatGuy/Sluge_Hit.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+	int edict1 = pEntity->m_pEdict2e0;
+	enginesound->vfunc3(&filter, engine->vfunc35(edict1), 3, "Character/Monster/TC_FatGuy/Sluge_Affected.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+	CBasePlayer *pOwner = *(CBasePlayer **)((char *)pEntity + 0xa8);
+	if (pOwner) {
+		CBaseEntity *pPlayer = (CBaseEntity *)pOwner->sub_1015d680(0);
+		if (pPlayer && !m_h6680.Get()) {
+			CBaseEntity *pHud = sub_100fbc90("HUD_Tzim2_emitter", &g_1070d1b0, &g_1070d9d0, -1.0f);
+			m_h6680 = pHud;
+			if (EHandleDetail::g_10566458->LookupEntity(m_h6680)) {
+				((CTzimEmitterView *)m_h6680.Get())->slot243(pPlayer, 0xe, g_106b8540);
+				((CTzimEmitterView *)m_h6680.Get())->slot241();
+			}
+		}
+	}
+	Vector *pMine = (Vector *)((CEntityVSlots *)this)->slot217();
+	Vector *pTheirs = (Vector *)((CEntityVSlots *)pEntity)->slot217();
+	if (TzimLength2D(*pTheirs - *pMine) >= 240.0) {
+		((CEntityVSlots *)g_10924a6c)->slot1();
+		((CAI_BaseNPCTroika *)this)->sub_10269a20(0x35);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c24d0 size=0x120
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
