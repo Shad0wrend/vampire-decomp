@@ -1462,6 +1462,175 @@ void CBaseEntity::sub_1009b5a0(const char *msg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009c980 size=0x6ad
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "Vector.h"
+#include "ScopeTrace.h"
+extern char g_106cff50;
+extern char g_106cff51;
+extern int g_10552810;
+extern int g_10552814;
+
+struct CEntityDumpView
+{
+	char m_pad0000[0x4c];
+	unsigned int m_edt;	// 0x4c
+	char m_pad0050[0xc0 - 0x50];
+	const char *m_iszVSoundGroup;	// 0xc0
+	char m_pad00c4[0x11c - 0xc4];
+	const char *m_iClassname;	// 0x11c
+	const char *m_iGlobalname;	// 0x120
+	const char *m_iParent;	// 0x124
+	const char *m_iDialog;	// 0x128
+	char m_bBlocked;	// 0x12c
+	char m_pad012d[3];
+	int m_rgflCoordinateFrame[12];	// 0x130
+	int m_flStartFrameLocalTime;	// 0x160
+	int m_flSpeed;	// 0x164
+	int m_nRenderFX;	// 0x168
+	int m_nRenderMode;	// 0x16c
+	char m_pad0170[4];
+	int m_flAnimTime;	// 0x174
+	int m_flLastThink;	// 0x178
+	int m_flNextThink;	// 0x17c
+	int m_flNextThinkSR;	// 0x180
+	Vector m_vecViewOffset;	// 0x184
+	Vector m_vecMoveDir;	// 0x190
+	int m_fEffects;	// 0x19c
+	CBaseEntityColor32 m_clrRender;	// 0x1a0
+	char m_pad01a4[0x1f8 - 0x1a4];
+	CBaseEntity *m_pLink;	// 0x1f8
+	int m_takedamage;	// 0x1fc
+	int m_lifeState;	// 0x200
+	int m_spawnflags;	// 0x204
+	int m_iMaxHealth;	// 0x208
+	const char *m_target;	// 0x20c
+	int m_iHealth;	// 0x210
+	char m_pad0214[0x224 - 0x214];
+	unsigned int m_debugOverlays;	// 0x224
+	char m_pad0228[0x254 - 0x228];
+	EHANDLE m_pParent;	// 0x254
+	char m_pad0258[0x25c - 0x258];
+	EHANDLE m_pMoveParent;	// 0x25c
+	EHANDLE m_pMoveChild;	// 0x260
+	EHANDLE m_pMovePeer;	// 0x264
+	int m_iEFlags;	// 0x268
+	const char *m_iName;	// 0x26c
+	char m_pad0270[0x35c - 0x270];
+	int m_MoveType;	// 0x35c
+	int m_MoveCollide;	// 0x360
+	char m_pad0364[4];
+	int m_CollisionGroup;	// 0x368
+	int m_pPhysicsObject;	// 0x36c
+	char m_pad0370[4];
+	const char *m_iszUseScript;	// 0x374
+	int m_pPythonObject;	// 0x378
+	EHANDLE m_hAimEnt;	// 0x37c
+	char m_pad0380[0x3b0 - 0x380];
+	Vector m_vecBaseVelocity;	// 0x3b0
+	char m_pad03bc[0x3c8 - 0x3bc];
+	Vector m_vecAngVelocity;	// 0x3c8
+	Vector m_vecVelocity;	// 0x3d4
+	int m_nWaterLevel;	// 0x3e0
+	int m_nWaterType;	// 0x3e4
+	char m_pad03e8[4];
+	int m_flGravity;	// 0x3ec
+	int m_flFriction;	// 0x3f0
+	int m_flLocalTime;	// 0x3f4
+	char m_pad03f8[4];
+	int m_flMoveDoneTime;	// 0x3fc
+
+	bool IsEdt(int n) { return ((m_edt >> n) & 1) != 0; }
+};
+
+void CBaseEntity::vfunc31(int pDump)
+{
+	ScopeTrace st("CBaseEntity::Dump", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CEntityDumpView *v = (CEntityDumpView *)this;
+	if (v->IsEdt(0))
+		sub_1009b640(pDump, (int)"m_edtDerivedType", (int)"ENV_PARTICLE");
+	if (v->IsEdt(1))
+		sub_1009b640(pDump, (int)"m_edtDerivedType", (int)"PROP_RAGDOLL");
+	if (v->IsEdt(2))
+		sub_1009b640(pDump, (int)"m_edtDerivedType", (int)"PHYSICS_PROP");
+	if (v->IsEdt(3))
+		sub_1009b640(pDump, (int)"m_edtDerivedType", (int)"PHYSICS_BRUSH");
+	if (v->IsEdt(4))
+		sub_1009b640(pDump, (int)"m_edtDerivedType", (int)"SIMPLE_PHYSICS_PROP");
+	if (v->IsEdt(5))
+		sub_1009b640(pDump, (int)"m_edtDerivedType", (int)"NPC");
+	if (v->IsEdt(6))
+		sub_1009b640(pDump, (int)"m_edtDerivedType", (int)"NPC_TROIKA");
+	if (v->IsEdt(11))
+		sub_1009b640(pDump, (int)"m_edtDerivedType", (int)"PLAYER");
+	if (v->IsEdt(12))
+		sub_1009b640(pDump, (int)"m_edtDerivedType", (int)"CINE_NPC");
+	sub_1009b8a0(pDump, (int)"m_bInDebugSelect", g_106cff50);
+	sub_1009b980(pDump, "m_nDebugPlayer", g_10552810);
+	sub_1009b8a0(pDump, (int)"m_bDebugPause", g_106cff51);
+	sub_1009b980(pDump, "m_nDebugSteps", g_10552814);
+	sub_1009b700(pDump, (int)"m_iClassname", v->m_iClassname);
+	sub_1009b700(pDump, (int)"m_iGlobalname", v->m_iGlobalname);
+	sub_1009b700(pDump, (int)"m_iParent", v->m_iParent);
+	sub_1009b980(pDump, "m_iEFlags", v->m_iEFlags);
+	sub_1009c000(pDump, "m_pParent", v->m_pParent);
+	sub_1009b700(pDump, (int)"m_iDialog", v->m_iDialog);
+	sub_1009b980(pDump, "m_nWaterLevel", v->m_nWaterLevel);
+	sub_1009b980(pDump, "m_nWaterType", v->m_nWaterType);
+	sub_1009b8a0(pDump, (int)"m_bBlocked", v->m_bBlocked);
+	sub_1009c5f0(pDump, "m_rgflCoordinateFrame[0]", &v->m_rgflCoordinateFrame[0], 4);
+	sub_1009c5f0(pDump, "m_rgflCoordinateFrame[1]", &v->m_rgflCoordinateFrame[4], 4);
+	sub_1009c5f0(pDump, "m_rgflCoordinateFrame[2]", &v->m_rgflCoordinateFrame[8], 4);
+	sub_1009c110(pDump, (int)"m_pMoveParent", v->m_pMoveParent.Get());
+	sub_1009c110(pDump, (int)"m_pMoveChild", v->m_pMoveChild.Get());
+	sub_1009c110(pDump, (int)"m_pMovePeer", v->m_pMovePeer.Get());
+	sub_1009ba60(pDump, "m_flLocalTime", v->m_flLocalTime);
+	sub_1009ba60(pDump, "m_flStartFrameLocalTime", v->m_flStartFrameLocalTime);
+	sub_1009ba60(pDump, "m_flMoveDoneTime", v->m_flMoveDoneTime);
+	sub_1009ba60(pDump, "m_flGravity", v->m_flGravity);
+	sub_1009ba60(pDump, "m_flFriction", v->m_flFriction);
+	sub_1009ba60(pDump, "m_flSpeed", v->m_flSpeed);
+	sub_1009b980(pDump, "m_nRenderFX", v->m_nRenderFX);
+	sub_1009b980(pDump, "m_nRenderMode", v->m_nRenderMode);
+	sub_1009bd10(pDump, "m_vecAngVelocity", v->m_vecAngVelocity);
+	sub_1009ba60(pDump, "m_flAnimTime", v->m_flAnimTime);
+	sub_1009ba60(pDump, "m_flLastThink", v->m_flLastThink);
+	sub_1009ba60(pDump, "m_flNextThink", v->m_flNextThink);
+	sub_1009ba60(pDump, "m_flNextThinkSR", v->m_flNextThinkSR);
+	sub_1009be00(pDump, "m_vecViewOffset", v->m_vecViewOffset);
+	sub_1009be00(pDump, "m_vecBaseVelocity", v->m_vecBaseVelocity);
+	sub_1009be00(pDump, "m_vecMoveDir", v->m_vecMoveDir);
+	sub_1009be00(pDump, "m_vecVelocity", v->m_vecVelocity);
+	sub_1009b980(pDump, "m_fEffects", v->m_fEffects);
+	sub_1009bef0(pDump, (int)"m_clrRender", v->m_clrRender);
+	sub_1009c110(pDump, (int)"m_pLink", v->m_pLink);
+	sub_1009b980(pDump, "m_takedamage", v->m_takedamage);
+	sub_1009b980(pDump, "m_lifeState", v->m_lifeState);
+	sub_1009b980(pDump, "m_spawnflags", v->m_spawnflags);
+	sub_1009b980(pDump, "m_iMaxHealth", v->m_iMaxHealth);
+	sub_1009b700(pDump, (int)"m_target", v->m_target);
+	sub_1009b980(pDump, "m_iHealth", v->m_iHealth);
+	sub_1009bb40(pDump, (int)"m_debugOverlays", v->m_debugOverlays);
+	sub_1009b700(pDump, (int)"m_iName", v->m_iName);
+	sub_1009b980(pDump, "m_MoveType", v->m_MoveType);
+	sub_1009b980(pDump, "m_MoveCollide", v->m_MoveCollide);
+	sub_1009b980(pDump, "m_CollisionGroup", v->m_CollisionGroup);
+	sub_1009bc30(pDump, "m_pPhysicsObject", v->m_pPhysicsObject);
+	sub_1009b700(pDump, (int)"m_iszUseScript", v->m_iszUseScript);
+	sub_1009b700(pDump, (int)"m_iszVSoundGroup", v->m_iszVSoundGroup);
+	sub_1009bc30(pDump, "m_pPythonObject", v->m_pPythonObject);
+	sub_1009c000(pDump, "m_hAimEnt", v->m_hAimEnt);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009d2a0 size=0xaa
 #include "CBaseEntity.h"
 
