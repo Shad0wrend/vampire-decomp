@@ -5,7 +5,9 @@
 class CAI_Network
 {
 public:
-	char m_pad0000[0xc];
+	int m_nNodes;	// 0x00
+	void **m_ppNodes;	// 0x04
+	char m_pad0008[4];
 	int m_nNumNodes;	// 0x0c
 	char m_pad0010[4];
 	int *m_pCount14;	// 0x14: the number of entries of the worldcraft id table at +0xc
