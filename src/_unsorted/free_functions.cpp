@@ -127039,6 +127039,70 @@ extern "C" CBaseEntity *prop_model_state()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10215ca0 size=0x55f
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_105ac430[2];
+void sub_10010267();
+void sub_10007e32();
+void sub_10004fa2();
+void sub_100132c3();
+void sub_1001058c();
+void sub_1000f506();
+
+int *sub_10215ca0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 5, "m_bLocked", {0x734, 0}, 1, 6, "locked" },
+        { 4, "m_nState", {0x738, 0}, 1, 6, "current_state" },
+        { 4, "m_UseIcon", {0x730, 0}, 1, 6, "use_icon" },
+        { 16, "m_StateModels[0]", {0x740, 0}, 1, 6, "state_model_0" },
+        { 16, "m_StateModels[1]", {0x744, 0}, 1, 6, "state_model_1" },
+        { 16, "m_StateModels[2]", {0x748, 0}, 1, 6, "state_model_2" },
+        { 16, "m_StateModels[3]", {0x74c, 0}, 1, 6, "state_model_3" },
+        { 16, "m_StateModels[4]", {0x750, 0}, 1, 6, "state_model_4" },
+        { 16, "m_StateModels[5]", {0x754, 0}, 1, 6, "state_model_5" },
+        { 16, "m_StateModels[6]", {0x758, 0}, 1, 6, "state_model_6" },
+        { 16, "m_StateModels[7]", {0x75c, 0}, 1, 6, "state_model_7" },
+        { 4, "m_nMaxStates", {0x73c, 0}, 1, 2 },
+        { 10, "m_OnPressed", {0x760, 0}, 1, 0x16, "OnPressed", g_1055dc70 },
+        { 10, "m_OnPressedLocked", {0x778, 0}, 1, 0x16, "OnPressedLocked", g_1055dc70 },
+        { 10, "m_OnSetState[0]", {0x790, 0}, 1, 0x16, "OnSetState1", g_1055dc70 },
+        { 10, "m_OnSetState[1]", {0x7a8, 0}, 1, 0x16, "OnSetState2", g_1055dc70 },
+        { 10, "m_OnSetState[2]", {0x7c0, 0}, 1, 0x16, "OnSetState3", g_1055dc70 },
+        { 10, "m_OnSetState[3]", {0x7d8, 0}, 1, 0x16, "OnSetState4", g_1055dc70 },
+        { 10, "m_OnSetState[4]", {0x7f0, 0}, 1, 0x16, "OnSetState5", g_1055dc70 },
+        { 10, "m_OnSetState[5]", {0x808, 0}, 1, 0x16, "OnSetState6", g_1055dc70 },
+        { 10, "m_OnSetState[6]", {0x820, 0}, 1, 0x16, "OnSetState7", g_1055dc70 },
+        { 10, "m_OnSetState[7]", {0x838, 0}, 1, 0x16, "OnSetState8", g_1055dc70 },
+        { 0, "InputLock", {0, 0}, 1, 8, "Lock", 0, (void *)sub_10010267 },
+        { 0, "InputUnlock", {0, 0}, 1, 8, "Unlock", 0, (void *)sub_10007e32 },
+        { 0, "InputToggleLock", {0, 0}, 1, 8, "ToggleLock", 0, (void *)sub_10004fa2 },
+        { 0, "InputUse", {0, 0}, 1, 8, "Use", 0, (void *)sub_100132c3 },
+        { 4, "InputSetState", {0, 0}, 1, 8, "SetState", 0, (void *)sub_1001058c },
+        { 0, "CPropModelStateModelStateUse", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000f506 },
+    };
+    g_105ac430[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_105ac430[0] = (int)&dataDesc[1];
+    return g_105ac430;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10216360 size=0x51
 #include "CPropModelState.h"
 extern int vt_1047332c[];
