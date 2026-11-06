@@ -3,6 +3,13 @@
 #pragma once
 
 class CUnknown10248a50;
+class CKeyValuesX;
+
+struct CCameraShotAttach	// one 0x2c byte attach position of a shot (constructed by the empty ctor 0x100727a0)
+{
+	char m_data[0x2c];
+	CCameraShotAttach();
+};
 
 struct CCameraShot_t	// one shot record (0x104 bytes; the dword at +0x20 is the one the camera entities read)
 {
