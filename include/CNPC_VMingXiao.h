@@ -298,7 +298,7 @@ public:
 	virtual void vfunc248();
 	virtual void vfunc249();
 	virtual void vfunc250();
-	virtual void vfunc251();
+	virtual bool vfunc251();
 	virtual void vfunc252();
 	virtual void vfunc253();
 	virtual void vfunc254();
@@ -411,7 +411,7 @@ public:
 	virtual void vfunc361();
 	virtual void vfunc362();
 	virtual void vfunc363();
-	virtual void vfunc364();
+	virtual char vfunc364(Vector *pPos);
 	virtual void vfunc365();
 	virtual bool vfunc366(int, int, int);
 	virtual void vfunc367();
@@ -493,7 +493,10 @@ public:
 	virtual void vfunc441();
 	virtual void vfunc442();
 	virtual void vfunc443();
-	virtual void vfunc444();
+	virtual void vfunc444(void *pTask);
+	void sub_102aacf0(void *pTask);
+	void sub_10280a50();
+	void sub_10273e80(int a);
 	virtual void vfunc445();
 	virtual void vfunc446();
 	virtual void vfunc447();
@@ -590,7 +593,7 @@ public:
 	virtual void vfunc538();
 	virtual void vfunc539();
 	virtual void vfunc540();
-	virtual void vfunc541();
+	virtual void *vfunc541();
 	virtual void vfunc542();
 	virtual void vfunc543();
 	virtual void vfunc544();
