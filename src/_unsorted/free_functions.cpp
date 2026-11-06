@@ -33413,6 +33413,101 @@ void sub_100a54a0(const float *angles1, const float *angles2, float *pOut1, floa
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a55b0 size=0x40a
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CEntityVSlots.h"
+#include "IPhysicsObject.h"
+void sub_100a54a0(const float *a, const float *b, float *c, float *d);
+extern float g_104454c4;
+extern float g_104454d0;
+extern "C" double __cdecl fabs(double);
+#pragma intrinsic(fabs)
+
+struct CPusherView : CBaseEntity
+{
+	char m_pad03e0[0x3f4 - 0x3e0];
+	float m_fl3f4;
+	char m_pad03f8[4];
+	float m_fl3fc;
+};
+
+void CBaseEntity::sub_100a55b0(void *pArg)
+{
+	IPhysicsObject *pPhysics = (IPhysicsObject *)pArg;
+	CPusherView *p = (CPusherView *)this;
+	CEntityVSlots *v = (CEntityVSlots *)this;
+	ScopeTrace trace("CBaseEntity::VPhysicsUpdatePusher", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	float movetime = p->m_fl3f4 - m_flStartFrameLocalTime;
+	if (!(movetime <= g_104454c4)) {
+		Vector pos, ang;
+		if (pPhysics->vfunc47(&pos, &ang)) {
+			bool bRot = false;
+			bool bLin = false;
+			if (m_angVel3c8[0] != g_104454c4 || m_angVel3c8[1] != g_104454c4 || m_angVel3c8[2] != g_104454c4)
+				bRot = true;
+			if (m_vel3d4[0] != g_104454c4 || m_vel3d4[1] != g_104454c4 || m_vel3d4[2] != g_104454c4)
+				bLin = true;
+			float newtime = p->m_fl3f4;
+			if (bLin) {
+				Vector *pOrigin = v->slot217();
+				float dist2 = (pos - *pOrigin).LengthSqr();
+				if (dist2 > 1.0f) {
+					float dist = FastSqrt(dist2);
+					float speed = ((Vector *)m_vel3d4)->Length();
+					float t = dist / (speed * movetime);
+					if (t > movetime)
+						t = movetime;
+					else if (t < g_104454c4)
+						t = g_104454c4;
+					newtime = p->m_fl3f4 - t;
+				}
+			}
+			if (bRot) {
+				float angle;
+				Vector axis;
+				sub_100a54a0(&ang.x, &v->slot219()->x, &axis.x, &angle);
+				if ((float)fabs(angle) > g_104454d0)
+					newtime = m_flStartFrameLocalTime;
+			}
+			movetime = p->m_fl3f4 - newtime;
+			if (movetime > g_104454c4) {
+				Vector vecOrigin = *v->slot220();
+				QAngle vecAngles = *(QAngle *)v->slot221();
+				if (bLin)
+					vecOrigin -= *(Vector *)m_vel3d4 * movetime;
+				if (bRot)
+					vecAngles -= *(QAngle *)m_angVel3c8 * movetime;
+				v->slot62(&vecOrigin.x);
+				v->slot64(&vecAngles.x);
+				sub_100b3b00();
+				if (newtime <= m_flStartFrameLocalTime) {
+					IPhysicsObject *pOther;
+					if (pPhysics->vfunc44(0, &pOther)) {
+						CEntityVSlots *pHit = (CEntityVSlots *)pOther->vfunc6();
+						v->slot178(pHit);
+					}
+				}
+				p->m_fl3f4 = newtime;
+			}
+		}
+		m_flStartFrameLocalTime = p->m_fl3f4;
+		if (p->m_fl3fc <= p->m_fl3f4 && p->m_fl3fc != g_104454c4) {
+			p->m_fl3fc = 0.0f;
+			v->slot133();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a5ad0 size=0xa1
 #include "CBaseEntity.h"
 
