@@ -282,6 +282,168 @@ void CNPC_VMingXiao::vfunc563(CBaseEntity *pEnt, Vector *pPos, int *pOut1, int *
 }
 // END FUNCTION
 
+// FUNCTION: 0x10393930 size=0x5d8
+#include "CNPC_VMingXiao.h"
+#include "CAI_Motor.h"
+#include "CBaseAnimating.h"
+#include "CUnknown102e0150.h"
+#include "CUnknown102e0a60.h"
+void CNPC_VMingXiao::vfunc444(void *pTask)
+{
+    switch (*(int *)pTask) {
+    case 0x89:
+    case 0x8a:
+        {
+            sub_10280a50();
+            CBaseEntity *pEnemy = vfunc167();
+            Vector vec;
+            ((CUnknown102e0150 *)vfunc541())->sub_102dfed0(&vec, pEnemy);
+            m_pMotor5d44->sub_102e20b0(&vec.x, -2.0f);
+            if (vfunc251() || ((float *)pTask)[1] < gpGlobals->curtime - *(float *)((char *)this + 0x5d9c)) {
+                sub_10273e80(0);
+                return;
+            }
+        }
+        break;
+    case 0x8b:
+        {
+            sub_10280a50();
+            CBaseEntity *pEnemy = vfunc167();
+            if (pEnemy && *(int *)((char *)pEnemy + 0x9c)) {
+                Vector vec;
+                ((CUnknown102e0150 *)vfunc541())->sub_102dfed0(&vec, vfunc167());
+                m_pMotor5d44->sub_102e20b0(&vec.x, -2.0f);
+            }
+            if (vfunc251()) {
+                sub_10273e80(0);
+                return;
+            }
+        }
+        break;
+    case 0x8e:
+        {
+            sub_10280a50();
+            CBaseEntity *pEnemy = vfunc167();
+            CBaseAnimating *pChar = 0;
+            if (pEnemy)
+                pChar = *(CBaseAnimating **)((char *)pEnemy + 0x9c);
+            if (!pChar) {
+                sub_10273e80(0);
+                return;
+            }
+            pChar->sub_100952d0(-1);
+            int nSeq = *(int *)((char *)pChar + 0x6f0);
+            char *pDesc = (char *)pChar->sub_1008d990(nSeq);
+            if (pDesc) {
+                float flCycle = pChar->sub_10091230(nSeq) * (gpGlobals->curtime - (*(float *)((char *)pChar + 0x174) - 0.1f)) * *(float *)((char *)pChar + 0x6f4) + *(float *)((char *)pChar + 0x6f8);
+                for (int i = 0; i < *(int *)(pDesc + 0x2c4); i++) {
+                    if (flCycle < *(float *)(pDesc + *(int *)(pDesc + 0x2c8) + 4 + i * 0xbc))
+                        return;
+                }
+                sub_10273e80(0);
+                return;
+            }
+            break;
+        }
+    case 0x14b:
+        sub_1039aa20();
+        return;
+    case 0x14f:
+    case 0x150:
+    case 0x151:
+    case 0x152:
+        {
+            CBaseEntity *pEnemy = vfunc167();
+            Vector vec;
+            ((CUnknown102e0150 *)vfunc541())->sub_102dfed0(&vec, pEnemy);
+            m_pMotor5d44->sub_102e20b0(&vec.x, -1.0f);
+            sub_10280a50();
+            if (vfunc251()) {
+                CBaseEntity *pOwner = m_h6680.Get();
+                vfunc388(!pOwner ? 0 : *(int *)((char *)pOwner + 0xa0), 0);
+                sub_10273e80(0);
+                return;
+            }
+        }
+        break;
+    case 0x153:
+    case 0x154:
+        {
+            sub_10280a50();
+            CBaseEntity *pEnemy = vfunc167();
+            if (pEnemy) {
+                Vector vec;
+                ((CUnknown102e0150 *)vfunc541())->sub_102dfed0(&vec, pEnemy);
+                if (!vfunc364(&vec))
+                    m_pMotor5d44->sub_102e20b0(&vec.x, -2.0f);
+            }
+            if (vfunc251()) {
+                if (m_nMode673c)
+                    sub_103990c0();
+                ((CUnknown102e0a60 *)m_pMotor5d44)->sub_102e0a60(0x43340000);
+                m_flSlotTimeA[4] = m_flSlotTimeA[5] = sub_103983d0(m_nSide671c) + gpGlobals->curtime;
+                sub_10273e80(0);
+                return;
+            }
+        }
+        break;
+    case 0x155:
+        {
+            CBaseEntity *pEnemy = vfunc167();
+            Vector vec;
+            ((CUnknown102e0150 *)vfunc541())->sub_102dfed0(&vec, pEnemy);
+            m_pMotor5d44->sub_102e20b0(&vec.x, -1.0f);
+            sub_10280a50();
+            if (vfunc251()) {
+                sub_10273e80(0);
+                return;
+            }
+        }
+        break;
+    case 0x158:
+        sub_10280a50();
+        if (vfunc251()) {
+            if (m_nMode673c != 3)
+                sub_10398db0();
+            sub_10273e80(0);
+            return;
+        }
+        break;
+    case 0x15a:
+        {
+            sub_10280a50();
+            CBaseEntity *pEnemy = vfunc167();
+            if (pEnemy) {
+                Vector vec;
+                ((CUnknown102e0150 *)vfunc541())->sub_102dfed0(&vec, pEnemy);
+                if (!vfunc364(&vec))
+                    m_pMotor5d44->sub_102e20b0(&vec.x, -2.0f);
+            }
+            if (vfunc251()) {
+                if (m_nMode673c)
+                    sub_103990c0();
+                ((CUnknown102e0a60 *)m_pMotor5d44)->sub_102e0a60(0x43340000);
+                sub_10273e80(0);
+                return;
+            }
+        }
+        break;
+    case 0x15b:
+    case 0x15c:
+        sub_10280a50();
+        if (vfunc251()) {
+            sub_10289ee0(1);
+            sub_10273e80(0);
+            return;
+        }
+        break;
+    default:
+        sub_102aacf0(pTask);
+        break;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10394090 size=0x6c
 #include "CUnknown10398d90.h"
 #include "CNPC_VMingXiao.h"

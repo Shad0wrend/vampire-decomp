@@ -3944,6 +3944,7 @@
 0x10006b4f func   ?sub_100a9330@@YI_NPAD@Z sub_100a9330
 0x10006b54 func   ?sub_1009c4c0@CBaseEntity@@QAEXHPBD0H@Z CBaseEntity::sub_1009c4c0
 0x10006b59 func   ?sub_1030c3f0@@YAXXZ sub_1030c3f0
+0x10006b5e func   ?vfunc444@CNPC_VMingXiao@@UAEXPAX@Z CNPC_VMingXiao::vfunc444
 0x10006b63 func   ?sub_103e5a70@@YAHXZ sub_103e5a70
 0x10006b68 func   ?vfunc2@CTEGunshotDecal@@UAEPAV1@I@Z CTEGunshotDecal::vfunc2
 0x10006b6d func   ?vfunc80@CItemGLillyPhoto@@QAEHXZ CItemGLillyPhoto::vfunc80
