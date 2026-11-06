@@ -4615,6 +4615,7 @@
 0x10007ae5 func   ?vfunc601@CNPC_VTzimisceRunner@@QAEXH@Z CNPC_VTzimisceRunner::vfunc601
 0x10007aef func   ?sub_101e7fb0@CUnknown101e7fb0@@QAEHPAVCBaseCombatCharacter@@0@Z CUnknown101e7fb0::sub_101e7fb0
 0x10007af4 func   ?sub_1019c9f0@@YAHPAHH0@Z sub_1019c9f0
+0x10007af9 func   ?sub_103dc980@@YAXXZ sub_103dc980
 0x10007afe func   ?sub_102ed940@CAI_Navigator@@QAE_NMPBVVector@@H@Z CAI_Navigator::sub_102ed940
 0x10007b03 func   ?sub_1028e360@CAI_BaseNPCTroika@@QAE_NXZ CAI_BaseNPCTroika::sub_1028e360
 0x10007b08 func   ?vfunc10@ConVar@@UAE_NPAM@Z ConVar::vfunc10
