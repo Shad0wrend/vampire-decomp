@@ -119,6 +119,83 @@ void CBatSwarm::vfunc101(Vector *pMins, Vector *pMaxs)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b9c20 size=0x222
+#include "CBatSwarm.h"
+#include "CGameTrace.h"
+#include "Ray_t.h"
+
+struct CPlaneView
+{
+	Vector normal;
+	float dist;
+	unsigned char type;
+	unsigned char signbits;
+	unsigned char pad[2];
+};
+
+struct SPhysTrace
+{
+	Vector startpos;
+	Vector endpos;
+	CPlaneView plane;
+	float fraction;
+	int contents;
+	short dispFlags;
+	bool allsolid;
+	bool startsolid;
+};
+
+void sub_1023f3d0(const float *pStart, const float *pDelta, CGameTrace *pTrace);
+bool sub_10240fd0(const Ray_t *pRay, const Vector *pMins, const Vector *pMaxs, int nFlags, SPhysTrace *pTrace);
+
+// TARGET: CBatSwarm::vfunc99
+bool CBatSwarm::vfunc99(const Ray_t *pRay, unsigned int mask, CGameTrace *pTrace)
+{
+	sub_1023f3d0(pRay->m_Start, pRay->m_Delta, pTrace);
+	pTrace->m_hitbox = -1;
+
+	if (mask & 0x2000001)
+	{
+		int hit = -1;
+		Ray_t ray = *pRay;
+		for (int i = 0; i < 32; i++)
+		{
+			unsigned int bit = 1 << i;
+			if ((m_mask734 & bit & m_mask730) == 0)
+				continue;
+
+			Vector mins = m_vecPos[i] - Vector(16.0f, 16.0f, 16.0f);
+			Vector maxs = m_vecPos[i] + Vector(16.0f, 16.0f, 16.0f);
+			SPhysTrace tr;
+			if (!sub_10240fd0(&ray, &mins, &maxs, 0, &tr))
+				continue;
+
+			*(Vector *)pTrace->m_startpos = tr.startpos;
+			*(Vector *)pTrace->m_endpos = tr.endpos;
+			*(CPlaneView *)pTrace->m_planeNormal = tr.plane;
+			pTrace->m_fraction *= tr.fraction;
+			pTrace->m_startsolid = tr.startsolid;
+			pTrace->m_allsolid = tr.allsolid;
+			ray.m_Delta[0] *= tr.fraction;
+			ray.m_Delta[1] *= tr.fraction;
+			ray.m_Delta[2] *= tr.fraction;
+			hit = i;
+			if (pTrace->m_startsolid)
+				break;
+		}
+		if (hit >= 0)
+		{
+			pTrace->m_hitgroup = 0;
+			pTrace->m_hitbox = hit;
+			pTrace->m_contents = 0x42000001;
+			pTrace->m_physicsbone = 0xffff;
+			return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b9ee0 size=0x75
 #include "CBatSwarm.h"
 #define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();

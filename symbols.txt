@@ -98,6 +98,7 @@
 0x10001249 func   ?vfunc9@CServerGameClients@@UAEXPAUCServerGameClients_Edict@@H@Z CServerGameClients::vfunc9
 0x1000124e func   ?vfunc362@CWeaponRanged_FlameThrower@@UAEHXZ CWeaponRanged_FlameThrower::vfunc362
 0x10001253 func   ?vfunc375@CNPC_VCamera@@UAEHH@Z CNPC_VCamera::vfunc375
+0x10001258 func   ?vfunc99@CBatSwarm@@QAE_NPBURay_t@@IPAUCGameTrace@@@Z CBatSwarm::vfunc99
 0x1000125d func   ?vfunc70@CNPC_VMingXiaoTentacle@@UAE_NXZ CNPC_VMingXiaoTentacle::vfunc70
 0x10001262 func   ?vfunc103@CRotButton@@QAEXXZ CRotButton::vfunc103
 0x10001267 func   ?vfunc134@CPhysMotor@@UAEXXZ CPhysMotor::vfunc134
