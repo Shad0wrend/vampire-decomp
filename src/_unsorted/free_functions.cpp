@@ -6277,6 +6277,107 @@ void CBaseEntity::sub_1003db80(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003dc70 size=0x478
+#include "CBaseEntity.h"
+#include "CUnknown100290c0.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "Pool.h"
+#include "ScopeTrace.h"
+struct CTouchLink { unsigned int m_h; int m_n4; CTouchLink *m_pNext; CTouchLink *m_pPrev; unsigned int m_flags; };
+extern CUnknown100290c0 *g_10566458;
+extern Pool g_106bd904;
+extern int g_106bd9b8;
+extern void (*g_109f366c)(const char *);
+
+struct ST3 {
+	void sub_10037300(const char *, const char *, const char *);
+	~ST3() { (*g_109f3680)--; }
+};
+
+struct CBaseEntityTouch : CBaseEntity {
+	CTouchLink *sub_1003cd50(int);
+	CTouchLink *sub_1003cf50(int);
+	CTouchLink *sub_1003dc70(CBaseEntity *pOther);
+	bool IsSolidX()
+	{
+		ST3 t; t.sub_10037300("CBaseEntity::IsSolid", m_name26c ? m_name26c : g_106b8540, g_106b8540);
+		return m_n2b0 && !(m_b2b4 & 4);
+	}
+};
+
+inline bool IsSolidFlagSetX(CBaseEntity *p, int bit)
+{
+	ST3 t; t.sub_10037300("CBaseEntity::IsSolidFlagSet", p ? (p->m_name26c ? p->m_name26c : g_106b8540) : g_105387dc, g_106b8540);
+	return (p->m_b2b4 >> bit) & 1;
+}
+
+CTouchLink *CBaseEntityTouch::sub_1003dc70(CBaseEntity *pOther)
+{
+	ScopeTrace t("CBaseEntity::PhysicsMarkEntityAsTouched", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (this != pOther
+		&& g_10566458->sub_100290c0(&m_hMoveParent) != (unsigned int)pOther
+		&& (unsigned int)this != g_10566458->sub_100290c0((unsigned int *)((char *)pOther + 0x25c))
+		&& !((pOther->sub_100b3700() | sub_100b3700()) & 0x400000)
+		&& !(IsSolidFlagSetX(this, 3) && IsSolidFlagSetX(pOther, 3) && !IsSolidX() && !((CBaseEntityTouch *)pOther)->IsSolidX()))
+	{
+		CTouchLink *root = sub_1003cd50(1);
+		if (root) {
+			for (CTouchLink *link = root->m_pNext; link != root; link = link->m_pNext) {
+				if (g_10566458->sub_100290c0(&link->m_h) == (unsigned int)pOther) {
+					link->m_n4 = *(int *)((char *)this + 0x1ac);
+					sub_1003daa0(pOther);
+					return link;
+				}
+			}
+		} else {
+			root = sub_1003cf50(1);
+			root->m_pPrev = root;
+			root->m_pNext = root;
+		}
+		CTouchLink *link;
+		{
+			ScopeTrace t2("AllocTouchLink", g_106b8540);
+			link = (CTouchLink *)g_106bd904.sub_1013dc60(0x14);
+			if (link) {
+				++g_106bd9b8;
+			} else {
+				if (g_106bd9b8 == 0x200)
+					g_109f366c("AllocTouchLink:  MAX_TOUCHLINKS limit reached!! Too many touching/colliding entities!!!!\n");
+				else
+					g_109f366c("AllocTouchLink:  Progamming error, failed to allocate touchlink_t.  Touchlinks not being freed correctly!!!\n");
+			}
+		}
+		if (link) {
+			link->m_n4 = *(int *)((char *)this + 0x1ac);
+			if (pOther)
+				link->m_h = *pOther->vfunc1();
+			else
+				link->m_h = (unsigned int)-1;
+			link->m_flags = 0;
+			link->m_pNext = root->m_pNext;
+			link->m_pPrev = root;
+			root->m_pNext = link;
+			link->m_pNext->m_pPrev = link;
+			if ((IsSolidX() && !IsSolidFlagSetX(this, 5)) || IsSolidFlagSetX(this, 3)) {
+				if (!IsSolidFlagSetX(pOther, 3)) {
+					link->m_flags |= 1;
+					sub_1003db80(pOther);
+				}
+			}
+			return link;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003e250 size=0x6d
 struct TraceEnt { const char *a; void *b; void *c; };
 struct trace21 { int d[21]; };
