@@ -14,6 +14,8 @@ public:
 	int m_nHandleGrow;	// 0x5a0
 	int m_nHandles;	// 0x5a4
 
+	CTriggerWWZone *sub_103dad80();
+	void vfunc175(CBaseEntity *pOther);
 	void sub_103daf10();	// calls slot 77 on every valid entity of the handle list
 	virtual void vfunc119();	// "CTriggerWWZone::Kill": scope trace (entity name), disables the trigger (CBaseTrigger::sub_101c4dd0), sets the think function to the stub at 0x10015b68 and the next think to curtime + 1.0f
 	virtual void vfunc113();	// "CTriggerWWZone::Activate": scope trace (entity name), the base activation, then sub_1000dfd0
@@ -32,6 +34,8 @@ public:
 	unsigned int m_h5b4;	// 0x5b4: its handle, -1 when not found
 	char m_pad05b8[0x66c4 - 0x5b8];
 	CBaseEntity *m_pEnt66c4;	// 0x66c4
+	char m_pad66c8[0x66e8 - 0x66c8];
+	unsigned int m_flags66e8;
 public:
     virtual datamap_t * vfunc82();
 };
