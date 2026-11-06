@@ -11767,6 +11767,7 @@
 0x10011ddd func   ?vfunc104@CActivityCopyProp@@UAEXXZ CActivityCopyProp::vfunc104
 0x10011de2 func   ?sub_100fcd30@@YAHXZ sub_100fcd30
 0x10011de7 func   ?sub_100f6e40@SBlockSetView@@QAEXH@Z SBlockSetView::sub_100f6e40
+0x10011dec func   ?vfunc45@CBaseEntity@@UAE_NPAXVVector@@1I@Z CBaseEntity::vfunc45
 0x10011df1 func   ?sub_1008a7c0@@YAHXZ sub_1008a7c0
 0x10011df6 func   ?sub_10429f80@@YIXPAVCBaseEntity@@@Z sub_10429f80
 0x10011dfb func   ?vfunc329@CWeaponIWritten@@UAEHXZ CWeaponIWritten::vfunc329

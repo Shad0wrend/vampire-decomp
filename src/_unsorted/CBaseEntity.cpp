@@ -2661,6 +2661,40 @@ void CBaseEntity::vfunc42(void *arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a5070 size=0x1be
+#include "CBaseEntity.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+
+extern CUnknown1070b254 *g_1070b254;
+
+bool CBaseEntity::vfunc45(void *pPassEnt, Vector vecStart, Vector vecEnd, unsigned int fMask)
+{
+	bool bPassed = false;
+	ScopeTrace trace("CBaseEntity::PassesFindEntityFOVTrace", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	Ray_t ray;
+	ray.Init(vecStart, vecEnd);
+	CTraceFilterSimple filter(pPassEnt, 0);
+	CGameTrace tr;
+	g_1070b254->vfunc4(&ray, fMask, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+	if (tr.m_pEnt == this || (tr.m_pEnt == 0 && tr.m_fraction == 1.0))
+		bPassed = true;
+	return bPassed;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a65a0 size=0x71
 #include "CBaseEntity.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
