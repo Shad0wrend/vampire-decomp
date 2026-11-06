@@ -171019,6 +171019,80 @@ int __stdcall sub_1030cb00(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030cbd0 size=0x627
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern void (__cdecl *g_109f366c)(const char *, ...);
+
+// TARGET: sub_1030cbd0
+int sub_1030cbd0(const char *p)
+{
+	if (!_strcmpi(p, "D_IS_BUSY")) return 1;
+	if (!_strcmpi(p, "DO_STARTLED")) return 2;
+	if (!_strcmpi(p, "AT_CROSSWALK")) return 4;
+	if (!_strcmpi(p, "PRESERVE_PATH")) return 8;
+	if (!_strcmpi(p, "FINDING_BODY")) return 0x10;
+	if (!_strcmpi(p, "CARRYING_BODY")) return 0x20;
+	if (!_strcmpi(p, "NAV_IGNORE_NPC")) return 0x40;
+	if (!_strcmpi(p, "IN_FLEE_SCHED")) return 0x80;
+	if (!_strcmpi(p, "INITIAL_FLEE")) return 0x100;
+	if (!_strcmpi(p, "COWER_PATH")) return 0x200;
+	if (!_strcmpi(p, "COWERING")) return 0x400;
+	if (!_strcmpi(p, "DODGING")) return 0x800;
+	if (!_strcmpi(p, "MADE_HUNT_PATH")) return 0x1000;
+	if (!_strcmpi(p, "AT_COVER_HINT")) return 0x2000;
+	if (!_strcmpi(p, "ANIM_MOVEMENT")) return 0x4000;
+	if (!_strcmpi(p, "DONE_EXTRAPOLATING")) return 0x8000;
+	if (!_strcmpi(p, "FORCE_RELAXED_ANIMS")) return 0x10000;
+	if (!_strcmpi(p, "SLEEPING")) return 0x20000;
+	if (!_strcmpi(p, "BOTCHED_ATTACK")) return 0x40000;
+	if (!_strcmpi(p, "NO_DIALOG")) return 0x80000;
+	if (!_strcmpi(p, "SKIPPED_SOUND")) return 0x100000;
+	if (!_strcmpi(p, "LOOKED_AT_UNKNOWN")) return 0x200000;
+	if (!_strcmpi(p, "IGNORE_UNKNOWN")) return 0x400000;
+	if (!_strcmpi(p, "ATTACK_UNKNOWN")) return 0x800000;
+	if (!_strcmpi(p, "MADE_INITIAL_RESPONSE")) return 0x1000000;
+	if (!_strcmpi(p, "FINISHED_IGNORE_UNKNOWN")) return 0x2000000;
+	if (!_strcmpi(p, "DONT_INVESTIGATE")) return 0x4000000;
+	if (!_strcmpi(p, "PLAYING_FACE_ANIM")) return 0x8000000;
+	if (!_strcmpi(p, "FORCED_OCCLUDE")) return 0x10000000;
+	if (!_strcmpi(p, "INTERESTING_INTO")) return 0x20000000;
+	if (!_strcmpi(p, "ONE_HIT_KILL")) return 0x40000000;
+	if (!_strcmpi(p, "SLEEP_BOUNDING_BOX")) return 0x80000001;
+	if (!_strcmpi(p, "FINISH_SPECIAL_NAV")) return 0x80000002;
+	if (!_strcmpi(p, "SCHEDULE_CHANGED")) return 0x80000004;
+	if (!_strcmpi(p, "INTERESTING_LOST")) return 0x80000008;
+	if (!_strcmpi(p, "TASKS_FACE_ENEMY")) return 0x80000010;
+	if (!_strcmpi(p, "TASKS_FACE_TARGET")) return 0x80000020;
+	if (!_strcmpi(p, "IGNORE_SQUAD_SEE_ENEMY")) return 0x80000040;
+	if (!_strcmpi(p, "NO_UNKNOWN_ATTACK")) return 0x80000080;
+	if (!_strcmpi(p, "COVER_VS_MELEE_MODE")) return 0x80000100;
+	if (!_strcmpi(p, "IGNORE_DOOR_FAILURE")) return 0x80000200;
+	if (!_strcmpi(p, "MOVE_FACE_ENEMY")) return 0x80000400;
+	if (!_strcmpi(p, "DISALLOW_TGT_DISCIPLINE")) return 0x80000800;
+	if (!_strcmpi(p, "MADE_OBLIVIOUS")) return 0x80001000;
+	if (!_strcmpi(p, "SQUAD_NEW_ENEMY")) return 0x80002000;
+	if (!_strcmpi(p, "DONT_FALL_TO_GROUND")) return 0x80004000;
+	if (!_strcmpi(p, "DISABLE_BURST_FIRE")) return 0x80008000;
+	if (!_strcmpi(p, "D_CALM")) return 0x80010000;
+	if (!_strcmpi(p, "D_INSANE")) return 0x80020000;
+	if (!_strcmpi(p, "D_POSSESSED")) return 0x80040000;
+	if (!_strcmpi(p, "D_MILDLY_CRAZY")) return 0x80080000;
+	if (!_strcmpi(p, "D_FOLLOW")) return 0x80100000;
+	if (!_strcmpi(p, "D_NIGHTMARE")) return 0x80200000;
+	if (!_strcmpi(p, "D_AUTO_FEEDABLE")) return 0x80400000;
+	if (!_strcmpi(p, "D_DISCONNECT_SQUAD")) return 0x80800000;
+	if (!_strcmpi(p, "D_WPN_HIDDEN")) return 0x81000000;
+	if (!_strcmpi(p, "CHOOSE_NEW_SCHEDULE")) return 0x82000000;
+	if (!_strcmpi(p, "NO_UNKNOWN_VISION")) return 0x84000000;
+	if (!_strcmpi(p, "NOT_FEEDABLE")) return 0x88000000;
+	if (!_strcmpi(p, "NO_DIALOG_PERSISTENT")) return 0x90000000;
+	if (!_strcmpi(p, "DISAPPEAR")) return 0xa0000000;
+	if (!_strcmpi(p, "ACTIVITY_COPY_PROP_CLEAN")) return 0xc0000000;
+	g_109f366c("Schedule has invalid NPC flag '%s'\n", p);
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030d390 size=0x2d
 #include <string.h>
 
