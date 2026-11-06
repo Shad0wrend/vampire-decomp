@@ -4289,6 +4289,7 @@
 0x10007365 func   ?vfunc104@CSpeaker@@QAEXXZ CSpeaker::vfunc104
 0x1000736f func   ?sub_101beed0@@YAMMMM@Z sub_101beed0
 0x10007374 func   ?vfunc494@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc494
+0x10007379 func   ?sub_100721e0@CCameraShotTable@@QAEXPAVCUnknown10248a50@@@Z CCameraShotTable::sub_100721e0
 0x1000737e func   ?sub_1034abb0@@YAPAHXZ sub_1034abb0
 0x10007383 func   ?vfunc5@CKeepUpright@@QAEPAV1@I@Z CKeepUpright::vfunc5
 0x10007388 func   ?sub_100a7a80@@YAHXZ sub_100a7a80
