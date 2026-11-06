@@ -2165,6 +2165,7 @@
 0x1000426e func   ?vfunc339@CWeaponMelee@@UAEXXZ CWeaponMelee::vfunc339
 0x10004278 func   ?sub_102c7e90@@YIPAXPAX@Z sub_102c7e90
 0x1000427d func   ?sub_100b4280@@YIXPAVCBaseEntity@@HH@Z sub_100b4280
+0x10004282 func   ?vfunc103@CTriggerTeleport@@UAEXXZ CTriggerTeleport::vfunc103
 0x10004287 func   ?vfunc39@ISave@@QAEPAXE@Z ISave::vfunc39
 0x1000428c func   ?sub_100dc480@CCollisionProperty@@QAEXH@Z CCollisionProperty::sub_100dc480
 0x10004296 func   ?vfunc130@CNPCMaker_Fleshpile@@UAEXH@Z CNPCMaker_Fleshpile::vfunc130
