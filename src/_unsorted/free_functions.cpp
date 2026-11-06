@@ -10160,7 +10160,7 @@ extern const char g_1053dc40[];
 extern "C" CPhysExplosion *env_physexplosion()
 {
 	void *mem = sub_100aa720(0x45c);
-	CPhysExplosion *p = mem ? new(mem) CPhysExplosion : 0;
+	CPhysExplosion *p = mem ? ::new(mem) CPhysExplosion : 0;
 	p->vfunc106(g_1053dc40);
 	return p;
 }
@@ -63491,7 +63491,7 @@ extern const char g_10575184[];
 extern "C" CInfoIntermission *info_intermission()
 {
 	void *mem = sub_100aa720(0x450);
-	CInfoIntermission *p = mem ? new(mem) CInfoIntermission : 0;
+	CInfoIntermission *p = mem ? ::new(mem) CInfoIntermission : 0;
 	p->vfunc106(g_10575184);
 	return p;
 }
@@ -64612,7 +64612,7 @@ extern const char g_105787a0[];
 extern "C" CEnvGlobal *env_global()
 {
 	void *mem = sub_100aa720(0x45c);
-	CEnvGlobal *p = mem ? new(mem) CEnvGlobal : 0;
+	CEnvGlobal *p = mem ? ::new(mem) CEnvGlobal : 0;
 	p->vfunc106(g_105787a0);
 	return p;
 }

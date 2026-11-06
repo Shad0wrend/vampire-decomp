@@ -12,6 +12,7 @@ class CVampireProjectile : public CBaseEntity
 public:
 	virtual char vfunc91(void *pPassEnt, int contentsMask);
 	virtual void vfunc103();	// slot 103 "CVampireProjectile::Spawn": slot 104, SetSolid(2), SetSize(zero vector, zero vector), SetMoveType(13, 0), effects |= 0xa0, the touch function, the spawn time at +0x884, the model name (+0x87c) through slot 105, and the think function
+	void vfunc113();	// slot 113: 0x101ee730 in the game's CVampireProjectile vtable (link audit, CVampireProjectile)
 	virtual int vfunc117(); virtual void vfunc119();
 	virtual void vfunc123();
 	virtual void vfunc125(); virtual int vfunc126(int a); virtual int vfunc127(int a); virtual bool vfunc128(); virtual void vfunc129();

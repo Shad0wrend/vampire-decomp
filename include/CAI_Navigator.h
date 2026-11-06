@@ -157,11 +157,12 @@ public:
 	virtual CAI_Navigator *vfunc0(unsigned int flags); virtual void vfunc1(); virtual void vfunc2(int a); virtual void vfunc3(int a); virtual void vfunc4(int);
 	virtual void vfunc5(float flInterval, int a);	// slot 5 "CAI_Navigator::Move": scope trace; does nothing while sub_102ee2e0 holds or the owner's slot 525 accepts the interval; with the owner's flag byte +0x1a40 set stamps the components and steps the route (slots 12 / 13 / 14 by the route's move type, at most 16 times), else stops the motor (+0x20)
 	virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8();
+	bool vfunc1(int a, int b, int c);	// slot 1 of the CAI_DefMovementSink table: 0x102eefb0 (matched as CAI_DefMovementSink::sub_102eefb0; `this` is that base, as VC6 passes it to an override of a second base's slot)
 	virtual void vfunc9(int a, float b);
 	virtual void vfunc10(int a, float b);
 	virtual void vfunc11(int a); virtual int vfunc12(int a); virtual int vfunc13(int a); virtual int vfunc14(int a);
-	virtual int vfunc15(void *pGoal, int a); virtual bool vfunc16(int *pOut); virtual void vfunc17(CAI_NavGoal *pGoal); virtual void vfunc18(); virtual void vfunc19();
-	virtual void vfunc20();
+	virtual int vfunc15(void *pGoal, int a); virtual bool vfunc16(int *pOut); virtual void vfunc17(CAI_NavGoal *pGoal);
+	void vfunc18(); void vfunc19(); void vfunc20();	// plain: the game's CAI_Navigator table has 18 slots (link audit, decl-audit)
 	bool sub_102ee6d0(Vector *pResult, float flDistance);
 	void sub_10011c98();	// as in CDataObjectAccessSystem (transplant)
 	void sub_102f28e0();	// 0x102f28e0 (called by CAI_BaseNPC::vfunc123 on the navigator at owner+0x5d34): debug-draws the route's path nodes (m_p30 -> m_pWaypoint linked list through +0x30, 3x3x3 box at each node from its +0x28/+0x2c position) and the two goal-direction markers from sub_102ee1a0 / sub_102f2fc0

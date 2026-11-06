@@ -28,5 +28,5 @@ public:
 	CWeaponIThrownPair m_pair910;	// 0x910 / 0x914
 	char m_b918;	// 0x918
 	void vfunc374();	// slot 374: flips the state at +0x86c
-	virtual unsigned int vfunc360();	// slot 360: the weapon's type flags (0x2000)
+	unsigned int vfunc360();	// slot 360 (a plain member: the header's base has 1 virtual slot, so a virtual one became slot 1): the weapon's type flags (0x2000)
 };

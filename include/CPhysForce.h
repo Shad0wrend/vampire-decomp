@@ -32,6 +32,7 @@ public:
 	virtual void vfunc113();	// slot 113: base work, then looks up the attached entity by name (+0x454) when its handle (+0x460) is stale, slot 242, and attaches the force (sub_10027960) when a controller exists
 	void vfunc103();	// slot 103: sets the motion state at +0x468 from the flags at +0x204 (1 with bit 3, else 3), then sub_1000b5d2 when bit 0 is set
 
+	int vfunc117();	// slot 117: 0x100b4340 in the game's CPhysForce vtable, CPointEntity's (link audit, CPhysForce)
 	char m_pad03e0[0x450 - 0x3e0];
 	void *m_pController;	// 0x450
 	const char *m_pszAttachName;	// 0x454: name of the entity to attach to

@@ -7,9 +7,8 @@ class CBaseMoveBehavior : public CBaseEntity
 {
 public:
 	CBaseMoveBehavior() : CBaseEntity(0) {}
-	virtual float vfunc135(float flFrameTime);	// slot 135 override (0x10140c00): the keyframe mover step; returns flFrameTime
-	// Slot 153 of the real vtable; declared as the only virtual here so no slot numbering is implied.
-	virtual bool vfunc153();
+	float vfunc135(float flFrameTime);	// slot 135 (0x10140c00; a plain member: CBaseEntity's slots 134..240 are plain, so a virtual one became slot 134): the keyframe mover step; returns flFrameTime
+	bool vfunc153();	// slot 153 of the real vtable (a plain member: declared virtual it became slot 135, link audit D)
 	virtual int vfunc117();	// slot 117: the logical entity's ObjectCaps with bit 9 cleared
 
 	char m_pad0004b[0x480 - sizeof(CBaseEntity)];

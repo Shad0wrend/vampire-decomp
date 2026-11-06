@@ -2,15 +2,14 @@
 // only what matched code needs.
 #pragma once
 
-#include "CBaseEntity.h"
+#include "CPointEntity.h"
 
-class CInfoIntermission : public CBaseEntity
+class CInfoIntermission : public CPointEntity	// RTTI: CInfoIntermission : CPointEntity (slot 117 is CPointEntity's 0x100b4340)
 {
 public:
-	CInfoIntermission() : CBaseEntity(0) {}
+	CInfoIntermission() : CPointEntity() {}
 	CInfoIntermission *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
 	virtual void vfunc103();	// slot 103 "CBaseEntity::Spawn" override: SetSolid(0) (scope trace), +0x19c |= 0x40, slot 64(&vector), sub_100b3b00(), next think = curtime + 2.0f
-	void vfunc134();	// slot 134 (the think, plain member): looks up the entity named by the string at +0x20c and turns this entity's angles (slot 64) toward its origin (slot 220 difference, normalised, VectorAngles)
-	char m_pad03e0[0x450 - 0x3e0];
+	void vfunc134();	// slot 134 (the think; overrides CPointEntity's slot 134, as in the game's table): looks up the entity named by the string at +0x20c and turns this entity's angles (slot 64) toward its origin (slot 220 difference, normalised, VectorAngles)
 };

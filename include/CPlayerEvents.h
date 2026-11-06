@@ -21,5 +21,5 @@ public:
 	COutputEvent m_Outputs[23];	// 0x454
 public:
 	virtual void vfunc106(const char *);	// slot 106: 0x10227140 in the game's CPlayerEvents vtable (link audit, CPlayerEvents)
-	virtual void vfunc180();	// slot 180: g_10750cb4.sub_10227910(this), then CBaseEntity::vfunc180
+	void vfunc180();	// slot 180 (a plain member: CBaseEntity's slots 134..240 are plain, so a virtual one became slot 134): g_10750cb4.sub_10227910(this), then CBaseEntity::vfunc180
 };

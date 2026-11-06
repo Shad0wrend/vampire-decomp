@@ -10,6 +10,7 @@ public:
 	CTriggerTeleport *sub_101c91e0();
 	const char *m_targetName598;	// 0x598: the destination entity's target name (FindEntityByName input)
 	int m_n59c;	// 0x59c: cleared by the constructor
+	void vfunc103();	// slot 103: 0x101c92a0 in the game's CTriggerTeleport vtable (link audit, CTriggerTeleport)
 	virtual void vfunc175(CBaseEntity *pOther);	// slot 175 (0x101c92c0, vtable stub 0x1000c239): the teleport touch
 public:
     virtual datamap_t * vfunc82();

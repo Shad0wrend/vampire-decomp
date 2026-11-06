@@ -7,10 +7,12 @@
 
 struct datamap_t;
 
-class CPhysExplosion : public CBaseEntity
+class CPhysExplosion : public CPointEntity
 {
 public:
-	CPhysExplosion() : CBaseEntity(0) {}
+	CPhysExplosion() : CPointEntity() {}
+	void vfunc103();	// slot 103 (Spawn): the game's 0x1004eae0 (the sub_1004eae0 below)
+	int vfunc117();	// slot 117 (ObjectCaps): the game's 0x1004ea30, CPointEntity's caps & ~2
 
 	void sub_1000cb8a();	// destructor body
 	void sub_1004eae0();	// slot 103 (Spawn): slot 93(0, 0), SetSolid(SOLID_NONE) on the collision property at +0x270 (scope trace "CBaseEntity::SetSolid"), then slot 212(0)
@@ -18,7 +20,6 @@ public:
 	CBaseEntity *sub_1004ebb0(CBaseEntity *pStart, float flRadius);	// the next entity in the sphere / by name
 	void sub_1004ec60(float flRadius);	// damages the entities around this one
 	CPhysExplosion *vfunc5(unsigned int flags);	// scalar deleting destructor (hides the base slot: VC6 has no covariant returns); the game's 0x10050550
-	char m_pad03e0[0x450 - 0x3e0];
 	float m_damage;	// 0x0450
 	float m_radius;	// 0x0454
 	string_t m_targetEntityName;	// 0x0458

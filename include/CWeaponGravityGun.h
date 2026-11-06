@@ -61,5 +61,8 @@ public:
 	char m_padB26[0xb28 - 0xb26];
 	int m_nB28;	// 0xb28: the criminal-act priority of a physics throw (the CSActs notice runs only when > 0)
 public:
-	void vfunc298(CBaseEntity *pOwner, float unused);	// slot 298: forwards to CBaseCombatWeapon::vfunc298 (jump stub 0x100131ec) with the first argument as it is
+	void vfunc298(CBaseEntity *pOwner, float unused);	// slot 298's body (0x10149f10): forwards to CBaseCombatWeapon::vfunc298 (jump stub 0x100131ec) with the first argument as it is; the game copies the second one as a float (mov eax / mov back), so it stays float here
+	virtual void vfunc298(CBaseEntity *pOwner, int unused);	// slot 298 with the base slot's signature: the game's 0x10149f10, the float member above (link audit, CWeaponGravityGun)
+	virtual char vfunc268();	// slot 268: 0x10149f80 in the game's CWeaponGravityGun vtable, returns true (link audit, CWeaponGravityGun)
+	virtual bool vfunc325();	// slot 325: 0x1014e500 in the game's CWeaponGravityGun vtable, returns false (link audit, CWeaponGravityGun)
 };
