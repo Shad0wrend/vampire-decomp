@@ -9811,6 +9811,52 @@ extern "C" CBaseEntity *phys_spring()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004cae0 size=0x45c
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern "C" ISaveRestoreOps *sub_10045d90(int);
+extern int g_1053cca0[2];
+void sub_1001139c();
+void sub_10010f55();
+void sub_10015d4d();
+
+int *sub_1004cae0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 10, "m_pSpring", {0x450, 0}, 1, 2, 0, sub_10045d90(3), 0 },
+        { 1, "m_tempConstant", {0x458, 0}, 1, 6, "constant", 0, 0 },
+        { 1, "m_tempLength", {0x45c, 0}, 1, 6, "length", 0, 0 },
+        { 1, "m_tempDamping", {0x460, 0}, 1, 6, "damping", 0, 0 },
+        { 1, "m_tempRelativeDamping", {0x464, 0}, 1, 6, "relativedamping", 0, 0 },
+        { 2, "m_nameAttachStart", {0x468, 0}, 1, 6, "attach1", 0, 0 },
+        { 2, "m_nameAttachEnd", {0x46c, 0}, 1, 6, "attach2", 0, 0 },
+        { 14, "m_start", {0x470, 0}, 1, 2, 0, 0, 0 },
+        { 14, "m_end", {0x47c, 0}, 1, 6, "springaxis", 0, 0 },
+        { 5, "m_isLocal", {0x454, 0}, 1, 2, 0, 0, 0 },
+        { 1, "InputSetSpringConstant", {0, 0}, 1, 8, "SetSpringConstant", 0, (void *)sub_1001139c },
+        { 1, "InputSetSpringLength", {0, 0}, 1, 8, "SetSpringLength", 0, (void *)sub_10010f55 },
+        { 1, "InputSetSpringDamping", {0, 0}, 1, 8, "SetSpringDamping", 0, (void *)sub_10015d4d },
+    };
+    g_1053cca0[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1053cca0[0] = (int)&dataDesc[1];
+    return g_1053cca0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004d060 size=0x4d
 #include "CPhysicsSpring.h"
 struct CPointEntityBaseView { void sub_100090fc(int a); };
