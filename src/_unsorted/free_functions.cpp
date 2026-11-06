@@ -176602,6 +176602,65 @@ char CBaseCombatCharacter::sub_10338cb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10338df0 size=0x3c9
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CBaseCombatCharacter.h"
+#include "CVStatList_t.h"
+#include "CStatDefault3List.h"
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+
+extern CStatDefault3List g_10738d10;
+
+bool CBaseCombatCharacter::sub_10338df0(char bAll)
+{
+	ScopeTrace trace("CBaseCombatCharacter::DecBloodPool", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (CVStatListSet::Of(this)->Find(0)->sub_10200ea0(0xc)) {
+		vfunc111();
+		int cur = CVStatListSet::Of(this)->Find(0)->sub_102012d0(0xf);
+		int mx = CVStatListSet::Of(this)->Find(0)->sub_102012d0(0x11);
+		int blood = CVStatListSet::Of(this)->Find(0)->sub_102012d0(0xc);
+		StatDefault3 *pDef = g_10738d10.sub_101d5f10(this);
+		int div = pDef->m_d0[0][12];
+		int thr = (int)((float)(mx / div) * (div - blood));
+		if (cur < thr) {
+			CVStatListSet::Of(this)->Find(0)->sub_102008e0(0xf, thr);
+			m_iHealth = c348();
+		}
+		if (bAll) {
+			if (!CVStatListSet::Of(this)->Find(0)->sub_102012d0(0xc)) {
+				if (sub_10337e40()) {
+					CBaseEntity *pTarget = 0;
+					if (m_pNPC98)
+						pTarget = (CBaseEntity *)g_10566458->sub_100290c0((const unsigned int *)((char *)m_pNPC98 + 0x628c));
+					sub_103392c0(pTarget, 0, 0);
+					return true;
+				}
+				sub_103394a0(0, 0, 0);
+			}
+		}
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103392c0 size=0x17f
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
