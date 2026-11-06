@@ -1209,6 +1209,7 @@
 0x10002c02 func   ?sub_1018e2a0@CUnknown1018e2a0@@QAEXPAVCBaseEntity@@@Z CUnknown1018e2a0::sub_1018e2a0
 0x10002c07 func   ?sub_103ae3e0@CNPC_VSheriffMan@@QAEPAV1@XZ CNPC_VSheriffMan::sub_103ae3e0
 0x10002c0c func   ?sub_10092550@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_10092550
+0x10002c11 func   ?vfunc300@CBasePlayer@@UAEXPAVCBaseEntity@@DH@Z CBasePlayer::vfunc300
 0x10002c16 func   ?sub_10101a20@CEnvLaser@@QAEXXZ CEnvLaser::sub_10101a20
 0x10002c1b func   ?sub_102dfa20@SListOwner@@QAE_NPAVCBaseEntity@@@Z SListOwner::sub_102dfa20
 0x10002c20 func   ?vfunc272@CVampireProjectile@@UAEXPBVVector@@0PAVCBaseEntity@@HMPBD2@Z CVampireProjectile::vfunc272

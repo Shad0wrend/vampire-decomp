@@ -2397,6 +2397,53 @@ void CBasePlayer::vfunc468()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017fb30 size=0x1b3
+#include "CBaseCombatWeapon.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+#include "CVStatList_t.h"
+#include "CDisciplineParticle.h"
+#include "CUnknown10739d08.h"
+
+struct CDiscValues_101e9080 { void sub_101e9080(int *a, int *b, int *c, int *d); };
+extern CDiscValues_101e9080 g_10739d08;
+void __cdecl sub_1022d9d0(CBasePlayer *pPlayer, int n);
+void __cdecl sub_101cdba0(const Vector *v, float a, float b, float c, float d, int e, bool f);
+const char *__cdecl sub_101d3730(const char *fmt, const char *arg);
+
+// TARGET: CBasePlayer::vfunc300
+void CBasePlayer::vfunc300(CBaseEntity *pVictim, char bQuiet, int n)
+{
+	sub_1032c580(pVictim, bQuiet, n);
+	if (((CBasePlayer *)pVictim)->sub_1033d580(this))
+		sub_1022d9d0(this, 3);
+	CBaseCombatWeapon *pWeapon = (CBaseCombatWeapon *)sub_1032e7b0();
+	if (pWeapon && (pWeapon->vfunc360() & 0x18000)) {
+		if (CVStatListSet::Of(this)->Find(3)->sub_102012d0(9) > 0) {
+			float a, c, d;
+			g_10739d08.sub_101e9080((int *)&a, (int *)&c, (int *)&d, &n);
+			sub_101cdba0(&vfunc192(), a, c, d, (float)n, 0, false);
+			CDisciplineParticle::sub_10050d90((int)pVictim, 9, 0x3f800000, 0x3f800000, 0x3f800000, (int)"D_Potence_DeathBlow_Emitter", 2, (int)"Bip01 Spine2", 0, 0);
+			CDisciplineParticle::sub_10050d90((int)pVictim, 9, 0x3f800000, 0x3f800000, 0x3f800000, (int)"D_Potence_DeathBlow2_Emitter", 1, (int)g_106b8540, 0, 0);
+		}
+	}
+	if (!bQuiet) {
+		sub_1017e150(4, -1.0f, sub_101d3730("Event_TookLife %s", pVictim ? pVictim->sub_1000b5cd() : "UNKNOWN"));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101821e0 size=0x1b
 #include "CBasePlayer.h"
 
