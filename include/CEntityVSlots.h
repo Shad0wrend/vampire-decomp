@@ -54,7 +54,7 @@ public:
 	EVS(120) EVS(121)
 	virtual void slot122(const char *pszClassname);	// "SetClassname"
 	EVS(123) EVS(124) EVS(125) EVS(126) EVS(127) EVS(128) EVS(129)
-	EVS(130) EVS(131) EVS(132) EVS(133) EVS(134) EVS(135) EVS(136) EVS(137)
+	EVS(130) EVS(131) EVS(132) EVS(133) EVS(134) virtual float slot135(float f); EVS(136) EVS(137)
 	virtual int slot138();	// answers an int in eax that the caller tests (CAI_BaseNPCTroika::vfunc113: attach the navigation hint when non-zero)
 	EVS(139)
 	EVS(140) virtual void slot141(const class CTakeDamageInfo *pInfo, const Vector &dir, struct CGameTrace *pTrace);
@@ -110,7 +110,7 @@ public:
 	virtual void slot232(int a);	// "UpdatePhysicsShadow"
 	virtual int slot233(CEntityVSlots **pOut, int nMax);	// fills the array with the entities it touches / carries, answers their count
 	EVS(234) EVS(235) EVS(236) virtual int slot237();	// PhysicsSolidMaskForEntity (the mask a trace uses)
-	EVS(238) EVS(239)
+	EVS(238) virtual char slot239(float f);
 	EVS(240) virtual char slot241(); EVS(242)
 	virtual void slot243(int a, int b);	// door: starts the open / close movement
 	virtual void slot244(int a);	// door: starts the toggle movement
