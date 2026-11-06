@@ -110,6 +110,7 @@
 	void sub_10280d30();	// stub 0x10006a8c, run at the end of vfunc379
 	char sub_102c2430();	// true when sub_102c1170 holds, the state at +0x5d70 is 4..6, curtime has not passed the time at +0x65dc, else the byte at +0x63f0
 	bool CalcNextUpdateThink(float *pOut);	// "CAI_BaseNPCTroika_CalcNextUpdateThink" (0x10290720, vprof scope string 0x105d897c): profiled; the update-think sibling of CalcNextAIThink: *pOut = +0x6244 - +0x6254, +0x6254 = +0x6244, +0x6244 = (curtime past +0x6244 ? curtime : +0x6244) + delay, where the delay is 0.03f when the sight timer +0x6264 is stale or 0.03..8.0f from it, scaled by the +0x6278 / +0x6279 flags, 0.03f while sub_102c2430
+	void sub_10291610();
 	int sub_102906a0();	// 0x102906a0: sub_10290660(the float at +0x6244)
 	bool CalcNextNormalThink(float *pOut);	// "CAI_BaseNPCTroika_CalcNextNormalThink" (0x10290b60, vprof scope string 0x105d89ac): the normal-think sibling: *pOut = +0x6248 - +0x6258, +0x6258 = +0x6248, +0x6248 = max(+0x6248, curtime) + delay
 	int sub_102906c0();	// 0x102906c0: sub_10290660(the float at +0x6248)
