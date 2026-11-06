@@ -10073,6 +10073,7 @@
 0x1000f993 func   _phys_animlink phys_animlink
 0x1000f9a7 func   ?sub_104303d0@@YAII@Z sub_104303d0
 0x1000f9ac func   ?vfunc103@CAI_StandoffGoal@@UAEXXZ CAI_StandoffGoal::vfunc103
+0x1000f9b1 func   ??1CUnknown101d7520Entry@@QAE@XZ CUnknown101d7520Entry::~CUnknown101d7520Entry
 0x1000f9b1 func   ?sub_101d66a0@CPartListUnit@@QAEXXZ CPartListUnit::sub_101d66a0
 0x1000f9b6 func   ?vfunc304@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc304
 0x1000f9bb func   ?vfunc138@CNPC_VZombie@@UAEHXZ CNPC_VZombie::vfunc138
