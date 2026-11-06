@@ -50084,6 +50084,124 @@ CUnknown100ec410Elem *CUnknown100ec410::sub_100ec410(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ec640 size=0x3cd
+#include "vampire_all.h"
+#include "utlvector.h"
+#include "CBaseAnimating.h"
+#include "CUnknown100ecee0.h"
+#include "CUtlVector68.h"
+#include "Tier1.h"
+
+struct CDispRecord_t
+{
+	int m_nModel;
+	int m_nDisp;
+	int m_idle[3];
+	int m_fidget[3];
+	int m_trans[3][3];
+};
+
+struct CDispEntry_t
+{
+	int m_nModel;
+	int m_idx[0x40];
+};
+
+struct CDispEntryVec
+{
+	char m_pad[0x30];
+	CUtlVector<CDispEntry_t> m_Entries;
+};
+
+void sub_101d1240(const char *, ...);
+const char *sub_101d3730(const char *, ...);
+void sub_100ed4d0(void *dst, const void *src);
+
+struct CDispNpcView
+{
+	virtual int v0(); virtual int v1(); virtual int v2(); virtual int v3();
+	virtual int v4(); virtual int v5(); virtual int v6(); virtual int v7();
+	virtual int vfunc8();
+	virtual const char **vfunc9(const char **p);
+	int sub_1008f7b0(const char *p);
+	int sub_100952d0(int a);
+};
+
+int CUnknown100ecee0::sub_100ec640(CBaseAnimating *pEnt)
+{
+	CDispEntryVec *t = (CDispEntryVec *)this;
+	CDispNpcView *npc = (CDispNpcView *)pEnt;
+	int i, e;
+	if (m_nCount > 0x40)
+		sub_101d1240("CDispositionTable, loaded dispositiontable size %d overflows MAX_DISPOSITIONS of %d!\n", m_nCount, 0x40);
+	int modelIndex = npc->vfunc8();
+	for (e = 0; e < t->m_Entries.Count(); e++) {
+		if (t->m_Entries[e].m_nModel == modelIndex)
+			return e;
+	}
+	{
+		const char *pName;
+		const char *s = *npc->vfunc9(&pName);
+		if (!s)
+			s = "";
+		sub_100ed2c0(npc->sub_100952d0(-1) != 0, sub_101d3730("Precaching disposition sequences for %s\n", s));
+	}
+	CDispEntry_t entry;
+	entry.m_nModel = modelIndex;
+	for (i = 0; i < m_nCount; i++) {
+		CDispRecord_t rec;
+		memset(&rec, 0, sizeof(rec));
+		rec.m_nModel = modelIndex;
+		rec.m_nDisp = i;
+		const char *name = sub_100ecc10(i);
+		for (int n = 0; n < 3; n++) {
+			char buf[0x40];
+			g_109f388c(buf, 0x40, "stance_%s_idle_%d", name, n + 1);
+			rec.m_idle[n] = npc->sub_1008f7b0(buf);
+			if (rec.m_idle[n] == -1) {
+				const char *pName2;
+				const char **pp = npc->vfunc9(&pName2);
+				sub_100ed2c0(1, sub_101d3730("\n%s does not have a stance %d idle animation for %s!!\n", *pp, n + 1, sub_100ec410(i)));
+				sub_100ed2c0(1, sub_101d3730("-- %s --\n\n", buf));
+				if (n == 0)
+					rec.m_idle[0] = sub_100ecb10(pEnt);
+				else
+					rec.m_idle[n] = rec.m_idle[0];
+			}
+			g_109f388c(buf, 0x40, "stance_%s_fidget_%d", name, n + 1);
+			rec.m_fidget[n] = npc->sub_1008f7b0(buf);
+			for (int m = 0; m < 3; m++) {
+				g_109f388c(buf, 0x40, "stance_%s_trans_%d_%d", name, n + 1, m + 1);
+				rec.m_trans[n][m] = npc->sub_1008f7b0(buf);
+			}
+		}
+		CUtlVector68 *v = (CUtlVector68 *)&m_pRecords;
+		int idx = v->m_size;
+		if (idx + 1 > v->m_allocationCount)
+			v->sub_100ed500(idx - v->m_allocationCount + 1);
+		v->m_size++;
+		v->m_pElements = v->m_pMemory;
+		v->sub_100ed460(idx, 1);
+		sub_100ed4d0((char *)v->m_pMemory + idx * 0x44, &rec);
+		entry.m_idx[i] = idx;
+	}
+	CDispRecord_t *&recs = *(CDispRecord_t **)&m_pRecords;
+	for (i = 0; i < m_nCount; i++) {
+		int idx = entry.m_idx[i];
+		int j, k;
+		for (j = 0; j < 3; j++) {
+			if (recs[idx].m_fidget[j] == -1)
+				recs[idx].m_fidget[j] = recs[idx].m_idle[j];
+			for (k = 0; k < 3; k++) {
+				if (recs[idx].m_trans[j][k] == -1)
+					recs[idx].m_trans[j][k] = recs[idx].m_idle[k];
+			}
+		}
+	}
+	return t->m_Entries.AddToTail(entry);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ecb10 size=0x17
 #include "CBaseAnimating.h"
 

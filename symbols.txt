@@ -8775,6 +8775,7 @@
 0x1000daf3 func   ?vfunc13@CAI_Motor@@UAEXPAVCBaseEntity@@MMM@Z CAI_Motor::vfunc13
 0x1000daf8 func   ?vfunc277@CPropHacking@@QAEXXZ CPropHacking::vfunc277
 0x1000dafd func   ?sub_10108e00@CUnknown10108e00@@QAE_NH@Z CUnknown10108e00::sub_10108e00
+0x1000db02 func   ?sub_100ec640@CUnknown100ecee0@@QAEHPAVCBaseAnimating@@@Z CUnknown100ecee0::sub_100ec640
 0x1000db07 func   ?vfunc500@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc500
 0x1000db0c func   ?vfunc1@CDirtySpatialPartitionEntityList@@UAEXXZ CDirtySpatialPartitionEntityList::vfunc1
 0x1000db16 func   _item_p_occult_experience item_p_occult_experience
