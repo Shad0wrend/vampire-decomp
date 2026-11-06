@@ -25,7 +25,7 @@ struct CVStatActionRecord4	// what CVStatAction_t::m_pData (+0x3c) points to for
 	char m_szName[0x80];	// +0x00: the particle (emitter) name, _strcmpi'd with CDisciplineParticle's name (+0x450)
 	int m_nAttachment80;	// +0x80: compared with the particle's int at +0x458
 	char m_szAttach84[0x80];	// +0x84: _strcmpi'd with the particle's string at +0x45c
-	char m_bViewModel104;	// +0x104: whether the particle is attached to a CBaseViewModel (handle at +0x37c)
+	unsigned char m_bViewModel104;	// +0x104: whether the particle is attached to a CBaseViewModel (handle at +0x37c)
 };
 
 // The free function 0x1022f140 (cdecl, `static void sub_1022f140(CVStatAction_t *pAction, int nEntIndex)`) acts on an action
