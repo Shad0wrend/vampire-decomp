@@ -675,6 +675,7 @@
 0x10001faa func   ?vfunc5@CWindowPane@@QAEPAV1@I@Z CWindowPane::vfunc5
 0x10001faf func   ?sub_10212500@@YAHXZ sub_10212500
 0x10001fbe func   ?sub_1013abc0@@YAXABVQuaternion@@0MAAV1@@Z sub_1013abc0
+0x10001fc3 func   ?sub_1037c830@@YAXXZ sub_1037c830
 0x10001fc8 func   ?vfunc80@CItemGGiovanniInvitationVictor@@QAEHXZ CItemGGiovanniInvitationVictor::vfunc80
 0x10001fd2 func   ?vfunc394@CNPC_Crow@@QAE_NXZ CNPC_Crow::vfunc394
 0x10001fd7 func   ?vfunc62@CSingleplayRules@@UAEHH@Z CSingleplayRules::vfunc62
