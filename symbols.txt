@@ -2515,6 +2515,7 @@
 0x10004a75 func   ?Purge@?$CUtlMemory@UCUnknown102cff90Elem@@@@QAEXXZ CUtlMemory<CUnknown102cff90Elem>::Purge
 0x10004a75 func   ?sub_102d4160@UtlMem@@QAEXXZ UtlMem::sub_102d4160
 0x10004a7a func   ?vfunc81@CWeaponMelee_ChangBlade@@QAEHXZ CWeaponMelee_ChangBlade::vfunc81
+0x10004a7f func   ?sub_103b1df0@@YAXXZ sub_103b1df0
 0x10004a84 func   ?vfunc82@CFunc_Dust@@QAEPAUdatamap_t@@XZ CFunc_Dust::vfunc82
 0x10004a89 func   ?sub_10085130@CUnknown10085130@@QAEXH@Z CUnknown10085130::sub_10085130
 0x10004a8e func   ?vfunc174@CTriggerWind@@UAEXPAVCBaseEntity@@@Z CTriggerWind::vfunc174
