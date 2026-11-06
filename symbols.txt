@@ -5826,6 +5826,7 @@
 0x10009624 func   ?sub_101f7a90@CUnknown101f7bb0@@QAEXXZ CUnknown101f7bb0::sub_101f7a90
 0x10009629 func   ?sub_10257200@CBaseCombatWeapon@@QAEDXZ CBaseCombatWeapon::sub_10257200
 0x1000962e func   ?sub_101aa210@CUnknown101aa210@@QAEPAXXZ CUnknown101aa210::sub_101aa210
+0x10009633 func   ?sub_10119980@@YAXXZ sub_10119980
 0x10009638 func   ?sub_1029f5d0@@YGXPAUSNPCTroikaRef_t@@@Z sub_1029f5d0
 0x1000963d func   ?vfunc559@CAI_BaseNPC@@UAEPAVCBaseEntity@@PBD@Z CAI_BaseNPC::vfunc559
 0x10009642 func   ?sub_1020d080@CUnit1020d080@@QAEXH@Z CUnit1020d080::sub_1020d080

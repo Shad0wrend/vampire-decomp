@@ -61406,6 +61406,141 @@ IHandleEntity *sub_10119940()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10119980 size=0x4bf
+#include "CBaseEntity.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "Vector.h"
+struct LogEntry60 { char pad[0x60]; };
+struct ConVarV { virtual bool vfunc0(); virtual bool vfunc1(); char pad[0x28]; int m_n2c; };
+struct CHolderV { char pad[4]; ConVarV *m_p4; };
+struct CLineV { int pad0; int m4; int m8; char pad1[0x58]; unsigned int m64; };
+struct CVecSrc { Vector *sub_102fb0d0(Vector *out, int a); };
+struct CEntList { CBaseEntity *sub_100f7060(CBaseEntity *p); };
+struct CView454 { char pad[0x454]; void *m454; };
+struct CTbl { int count; CVecSrc **items; };
+extern char g_106cff50;
+extern int g_10552810;
+extern char g_109340dc;
+extern char g_109340dd;
+extern int g_109340d8;
+extern int g_106102fc;
+extern int g_106c994c;
+extern int g_1070b260;
+extern CTbl *g_1093407c;
+extern ConVarV *g_1070b1dc;
+extern ConVarV *g_1070b07c;
+extern ConVarV *g_1070b0f4;
+extern ConVarV *g_1070b13c;
+extern CHolderV *g_1070af4c;
+extern CUtlVector<LogEntry60> g_1070b0bc;
+extern CView454 *g_10934088;
+extern CEntList g_106eb5d8;
+extern void *g_109253f8;
+void *__cdecl sub_101cd9e0(int);
+CBaseEntity *__cdecl sub_10172710(void *);
+CLineV *__cdecl sub_10172830(void *);
+CVecSrc *__cdecl sub_101727a0(void *, int);
+void sub_10146500();
+void __cdecl sub_10142af0(Vector *, Vector *, Vector *, Vector *, int, int, int, int, int);
+void __cdecl sub_10142aa0(Vector *, Vector *, Vector *, int, int, int, int, int);
+void __cdecl sub_10143920(float, float, void *, int, int, int, int, int);
+void __cdecl sub_10145980(int);
+void sub_10146200();
+void sub_102db670();
+CBaseEntity *sub_10119940();
+void __fastcall sub_102f7e60(void *);
+void __fastcall sub_1009f4e0(CBaseEntity *);
+void __fastcall sub_1009fb80(CBaseEntity *);
+void __fastcall sub_102cac90(void *);
+
+inline CVecSrc *LookupSrc(int i)
+{
+	if (i >= 0 && i < g_1093407c->count)
+		return g_1093407c->items[i];
+	g_106c994c++;
+	return 0;
+}
+
+void sub_10119980()
+{
+	if (g_106cff50) {
+		void *p = sub_101cd9e0(g_10552810);
+		if (p) {
+			CBaseEntity *pEnt = sub_10172710(p);
+			if (pEnt) {
+				unsigned int old = pEnt->m_fDebugOverlays224;
+				pEnt->m_fDebugOverlays224 = old | 1;
+				pEnt->vfunc124();
+				sub_1009f4e0(pEnt);
+				sub_1009fb80(pEnt);
+				pEnt->m_fDebugOverlays224 = old;
+			}
+		}
+	}
+	sub_10146500();
+	if (engine->vfunc12()) {
+		void *p = sub_101cd9e0(g_10552810);
+		if (p) {
+			if (g_109340dd) {
+				CLineV *pLine = sub_10172830(p);
+				if (pLine) {
+					Vector v1, v2;
+					LookupSrc(pLine->m4)->sub_102fb0d0(&v1, g_109340d8);
+					LookupSrc(pLine->m8)->sub_102fb0d0(&v2, g_109340d8);
+					Vector dir = v1 - v2;
+					float len = VectorNormalize(dir);
+					if (pLine->m64 & 0x1000) {
+						Vector A(-len, 4.0f, 4.0f);
+						Vector B(-4.0f, -4.0f, -4.0f);
+						sub_10142af0(&v1, &B, &A, &dir, 0, 0xff, 0, 0x28, 0);
+					} else {
+						Vector A(-len, 4.0f, 4.0f);
+						Vector B(-4.0f, -4.0f, -4.0f);
+						sub_10142af0(&v1, &B, &A, &dir, 0xff, 0, 0, 0x28, 0);
+					}
+				}
+			} else {
+				CVecSrc *q;
+				if (g_109340dc) q = sub_101727a0(p, 3);
+				else q = sub_101727a0(p, 2);
+				if (q) {
+					Vector maxs(8.0f, 8.0f, 8.0f), mins(-8.0f, -8.0f, -8.0f);
+					Vector org;
+					sub_10142aa0(q->sub_102fb0d0(&org, g_109340d8), &mins, &maxs, 0xff, 0, 0, 0x28, 0);
+				}
+			}
+			if (g_109340dc) sub_10145980(g_106102fc);
+			else sub_10146200();
+		}
+	}
+	bool b1 = (g_1070b1dc->vfunc1() ? 0 : g_1070b1dc->m_n2c) != 0;
+	sub_102f7e60(g_10934088->m454);
+	CHolderV *h = g_1070af4c;
+	if (!h->m_p4->vfunc1() && h->m_p4->m_n2c) {
+		for (CBaseEntity *e = g_106eb5d8.sub_100f7060(0); e; e = g_106eb5d8.sub_100f7060(e)) {
+			if (e->m_fDebugOverlays224 || *(int *)((char *)e + 0x228))
+				e->vfunc123();
+			if (b1 && e == sub_10119940())
+				e->vfunc76();
+		}
+	}
+	if ((!g_1070b1dc->vfunc1() && g_1070b1dc->m_n2c && sub_10119940())
+		|| (!g_1070b07c->vfunc1() && g_1070b07c->m_n2c)
+		|| (!g_1070b0f4->vfunc1() && g_1070b0f4->m_n2c)
+		|| (!g_1070b13c->vfunc1() && g_1070b13c->m_n2c)) {
+		if (engine->vfunc120() != g_1070b260) {
+			g_1070b260 = engine->vfunc120();
+			for (int i = 0; i < g_1070b0bc.Count(); i++)
+				sub_10143920(0.65f, i * 0.02 + 0.1, &g_1070b0bc[i], 0xff, 0xff, 0xff, 0xff, 0);
+		}
+	}
+	g_1070b0bc.Purge();
+	sub_102db670();
+	if (g_109253f8) sub_102cac90(g_109253f8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011a0a0 size=0x6
 namespace lifted {
 extern char g_1070b17c;
