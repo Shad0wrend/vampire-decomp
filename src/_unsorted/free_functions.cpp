@@ -148097,6 +148097,137 @@ const char *sub_1027e760(int n)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027e7f0 size=0x4c0
+extern int g_105cd454[];
+extern int g_1058b0a0;
+
+int *sub_1027e7f0(int n)
+{
+	switch (n) {
+	case 0: return &g_105cd454[118];
+	case 1: return &g_105cd454[117];
+	case 2: return &g_105cd454[116];
+	case 3: return &g_105cd454[115];
+	case 4: return &g_105cd454[114];
+	case 5: return &g_105cd454[113];
+	case 6: return &g_105cd454[112];
+	case 7: return &g_105cd454[111];
+	case 8: return &g_105cd454[110];
+	case 9: return &g_105cd454[109];
+	case 10: return &g_105cd454[108];
+	case 11: return &g_105cd454[107];
+	case 12: return &g_105cd454[106];
+	case 13: return &g_105cd454[105];
+	case 14: return &g_105cd454[104];
+	case 15: return &g_105cd454[103];
+	case 16: return &g_105cd454[102];
+	case 17: return &g_105cd454[101];
+	case 18: return &g_105cd454[100];
+	case 19: return &g_105cd454[99];
+	case 20: return &g_105cd454[98];
+	case 21: return &g_105cd454[97];
+	case 22: return &g_105cd454[96];
+	case 23: return &g_105cd454[95];
+	case 24: return &g_105cd454[94];
+	case 25: return &g_105cd454[93];
+	case 26: return &g_105cd454[92];
+	case 27: return &g_105cd454[91];
+	case 28: return &g_105cd454[90];
+	case 29: return &g_105cd454[89];
+	case 30: return &g_105cd454[88];
+	case 31: return &g_105cd454[87];
+	case 32: return &g_105cd454[86];
+	case 33: return &g_105cd454[85];
+	case 34: return &g_105cd454[84];
+	case 35: return &g_105cd454[83];
+	case 36: return &g_105cd454[82];
+	case 37: return &g_105cd454[81];
+	case 38: return &g_105cd454[80];
+	case 39: return &g_105cd454[79];
+	case 40: return &g_105cd454[78];
+	case 41: return &g_105cd454[77];
+	case 42: return &g_105cd454[76];
+	case 43: return &g_105cd454[75];
+	case 44: return &g_105cd454[74];
+	case 45: return &g_105cd454[73];
+	case 46: return &g_105cd454[72];
+	case 47: return &g_105cd454[71];
+	case 48: return &g_105cd454[70];
+	case 49: return &g_105cd454[69];
+	case 50: return &g_105cd454[68];
+	case 51: return &g_105cd454[67];
+	case 52: return &g_105cd454[66];
+	case 53: return &g_105cd454[65];
+	case 54: return &g_105cd454[64];
+	case 55: return &g_105cd454[63];
+	case 56: return &g_105cd454[62];
+	case 57: return &g_105cd454[61];
+	case 58: return &g_105cd454[60];
+	case 59: return &g_105cd454[59];
+	case 60: return &g_105cd454[58];
+	case 61: return &g_105cd454[57];
+	case 62: return &g_105cd454[56];
+	case 63: return &g_105cd454[55];
+	case 64: return &g_105cd454[54];
+	case 65: return &g_105cd454[53];
+	case 66: return &g_105cd454[52];
+	case 67: return &g_105cd454[51];
+	case 68: return &g_105cd454[50];
+	case 69: return &g_105cd454[49];
+	case 70: return &g_105cd454[48];
+	case 71: return &g_105cd454[47];
+	case 72: return &g_105cd454[46];
+	case 73: return &g_105cd454[45];
+	case 74: return &g_105cd454[44];
+	case 75: return &g_105cd454[43];
+	case 76: return &g_105cd454[42];
+	case 77: return &g_105cd454[41];
+	case 78: return &g_105cd454[40];
+	case 79: return &g_105cd454[39];
+	case 80: return &g_105cd454[38];
+	case 81: return &g_105cd454[37];
+	case 82: return &g_105cd454[36];
+	case 83: return &g_105cd454[35];
+	case 84: return &g_105cd454[34];
+	case 85: return &g_105cd454[33];
+	case 86: return &g_105cd454[32];
+	case 87: return &g_105cd454[31];
+	case 88: return &g_105cd454[30];
+	case 89: return &g_105cd454[29];
+	case 90: return &g_105cd454[28];
+	case 91: return &g_105cd454[27];
+	case 92: return &g_105cd454[26];
+	case 93: return &g_105cd454[25];
+	case 94: return &g_105cd454[24];
+	case 95: return &g_105cd454[23];
+	case 96: return &g_105cd454[22];
+	case 97: return &g_105cd454[21];
+	case 98: return &g_105cd454[20];
+	case 99: return &g_105cd454[19];
+	case 100: return &g_105cd454[18];
+	case 101: return &g_105cd454[17];
+	case 102: return &g_105cd454[16];
+	case 103: return &g_105cd454[15];
+	case 104: return &g_105cd454[14];
+	case 105: return &g_105cd454[13];
+	case 106: return &g_105cd454[12];
+	case 107: return &g_105cd454[11];
+	case 108: return &g_105cd454[10];
+	case 109: return &g_105cd454[9];
+	case 110: return &g_105cd454[8];
+	case 111: return &g_105cd454[7];
+	case 112: return &g_105cd454[6];
+	case 113: return &g_105cd454[5];
+	case 114: return &g_105cd454[4];
+	case 115: return &g_1058b0a0;
+	case 116: return &g_105cd454[3];
+	case 117: return &g_105cd454[2];
+	case 118: return &g_105cd454[1];
+	default: return &g_105cd454[0];
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027ee20 size=0x4f
 struct SEntry { unsigned int h; char text[512]; };
 extern SEntry g_1090ff60[];
