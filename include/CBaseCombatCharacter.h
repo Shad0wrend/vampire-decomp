@@ -72,7 +72,7 @@ public:
 	virtual void c340(); virtual void c341(); virtual void c342(); virtual void c343(); virtual void c344(); virtual void c345(); virtual void c346(); virtual void c347();
 	virtual int c348();	// slot 348 (see vfunc348, the plain member, for what it does)
 	virtual void c349();
-	virtual void c350(); virtual void c351(void *pTarget); virtual void c352(); virtual void c353(); virtual void c354(); virtual void c355(); virtual void c356(); virtual void c357(); virtual void c358(); virtual int vfunc359(int a);
+	virtual void c350(); virtual void vfunc351(CBaseCombatCharacter *pTarget); virtual void c352(); virtual void c353(); virtual void c354(); virtual void c355(); virtual void c356(); virtual void c357(); virtual void c358(); virtual int vfunc359(int a);
 	virtual char vfunc360();	// slot 360 (+0x5a0): a bool-like byte result, read by InputFrenzyTrigger
 	virtual void c361(); virtual void c362(); virtual void c363(); virtual void c364(); virtual void c365();
 	virtual void c366(); virtual void c367(); virtual void c368(); virtual void c369();
@@ -111,7 +111,8 @@ public:
 	void sub_1033c6b0(unsigned int flags);	// "CBaseCombatCharacter::AddMiscFlag": scope trace (entity name), ORs flags into +0xfe4
 	void sub_1033c770(unsigned int flags);	// "CBaseCombatCharacter::RemoveMiscFlag": scope trace (entity name), clears flags in +0xfe4
 	void sub_1033c830(unsigned int flags);	// "CBaseCombatCharacter::ToggleMiscFlag": scope trace (entity name), clears flags in +0xfe4 when any are set, else sets them
-	bool sub_1033c900(unsigned int flags);	// "CBaseCombatCharacter::HasMiscFlag": scope trace (entity name), (flags & +0xfe4) != 0
+	bool sub_1033c900(unsigned int flags);
+	void sub_1033b100(int n);	// "CBaseCombatCharacter::HasMiscFlag": scope trace (entity name), (flags & +0xfe4) != 0
 	bool sub_1033ce10(unsigned int low, unsigned int high);	// "CBaseCombatCharacter::HasDisciplineEffects": scope trace (entity name), (low & +0xeb0) != 0 or (+0xeb4 & high & 0x7fffffff) != 0
 	void sub_1033cfb0(unsigned int flag, float duration, CBaseEntity *pSource, unsigned int extra);	// "CBaseCombatCharacter::AddDiscFlag": scope trace (entity name), when the flag is not yet in the mask at +0xeb0 / +0xeb4 sets it, stores the expiry time at +0xec0 + index*4 and appends a 16 byte record (flag, source handle, extra, source dword at +0xfb0) to the vector at +0xfb4
 	bool sub_10341aa0();	// "CBaseCombatCharacter::IsUnconscious": scope trace (entity name), then bit 0 of the byte at +0xfe4
@@ -365,7 +366,10 @@ public:
 	int m_nMotionTrail;	// 0x1484
 	float m_flFrenzyRate;	// 0x1488
 	bool sub_103395f0();	// "CBaseCombatCharacter::CanFeed": scope trace (entity name); needs sub_10337f30, then true without a live target (handle +0x149c), else true when the target's stat list 0 gives a non-zero bounded stat 12 and the target's slot 158 holds
-	char m_pad148c[0x149c - 0x148c];
+	char m_pad148c[0x1490 - 0x148c];
+	float m_flNextFeed1490;
+	float m_flFeedInterval1494;
+	float m_flFeedStart1498;
 	EHANDLE m_h149c;	// 0x149c: the feeding target
 	int m_iBloodStolen;	// 0x14a0
 	int m_iCurBloodStolenMod;	// 0x14a4
