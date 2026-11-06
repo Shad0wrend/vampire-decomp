@@ -76656,6 +76656,36 @@ void StatMaskView::sub_1017a2b0(int type)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017b330 size=0x2cd
+#include "CBaseEntity.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CStatLoadout.h"
+
+void sub_1021fee0(CBaseEntity *pCharacter, const char *pszName);
+
+inline const char *STRINGR(const char *const &s) { return s ? s : ""; }
+
+void CStatLoadout::sub_1017b330(CBaseEntity *pCharacter)
+{
+	if (m_nArmor) {
+		StatDefault2 *pDef = FindStatDefault2(m_nType);
+		int cost = pDef->m_pCost24[m_nArmor];
+		CVStatListSet::Of(pCharacter)->Find(0)->sub_10200fc0(0x22, cost);
+		sub_1021fee0(pCharacter, STRINGR((const char *const &)FindStatDefault2(m_nType)->m_pNames20[m_nArmor]));
+	}
+	for (int i = 0; i < 11; i++) {
+		if (m_nEquip[i] != -1) {
+			StatDefault2 *pDef = FindStatDefault2(m_nType);
+			int cost = pDef->m_pCost14[m_nEquip[i]];
+			CVStatListSet::Of(pCharacter)->Find(0)->sub_10200fc0(0x22, cost);
+			sub_1021fee0(pCharacter, STRINGR((const char *const &)FindStatDefault2(m_nType)->m_pNames10[m_nEquip[i]]));
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017b6c0 size=0x14
 struct CStatMaskUnit1017b6c0
 {
