@@ -167543,6 +167543,118 @@ int sub_102f3270(CBitVecView *pMask, const float *pValues, int count)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f32f0 size=0x38e
+#include "CAI_Network.h"
+#include "CUtlPriorityQueue8.h"
+#include "CUtlVector16.h"
+#include "CVProfile.h"
+#include "UtlMem.h"
+#include "UtlVec8.h"
+inline void *operator new(unsigned int, void *p) { return p; }
+struct CUnknown102f9090 { void sub_102f9090(int a, int b); };
+struct SNodePos { char pad[8]; float x, y, z; };
+struct SNodeFilter { virtual bool vf0(void *n); virtual float vf1(void *n); };
+struct SHeapElem { float key; int idx; };
+bool __cdecl sub_102f3770(const UtlVec8Elem &, const UtlVec8Elem &);
+bool __cdecl sub_102f37a0(const UtlVec8Elem &, const UtlVec8Elem &);
+
+__forceinline void SiftDown(CUtlPriorityQueue8 &q)
+{
+	UtlVec8 &v = (UtlVec8 &)q.m_heap;
+	int index = 0;
+	int count = v.m_Size;
+	if (count != 0) {
+		int half = count / 2;
+		int best = 0;
+		if (half > 0) {
+			do {
+				int child = index * 2 + 1;
+				if (child < count && q.m_LessFunc(((UtlVec8Elem *)v.m_pMemory)[index], ((UtlVec8Elem *)v.m_pMemory)[child]))
+					best = child;
+				child++;
+				if (child < count && q.m_LessFunc(((UtlVec8Elem *)v.m_pMemory)[best], ((UtlVec8Elem *)v.m_pMemory)[child]))
+					best = child;
+				if (best == index)
+					break;
+				((CUnknown102f9090 *)&q)->sub_102f9090(index, best);
+				index = best;
+			} while (index < half);
+		}
+	}
+}
+
+// TARGET: CAI_Network::sub_102f32f0
+int CAI_Network::sub_102f32f0(void *pOutVec, int nMax, const float *pMins, const float *pMaxs, void *pFilter)
+{
+	g_109f3648->EnterScope("CAI_Network_ListNodesInBox", 0, "Unaccounted", false);
+	char qbuf[sizeof(CUtlPriorityQueue8)];
+	new (qbuf) CUtlPriorityQueue8(0, 0, sub_102f3770);
+	CUtlPriorityQueue8 &q = *(CUtlPriorityQueue8 *)qbuf;
+	q.m_LessFunc = sub_102f37a0;
+	UtlVec8 &qv = (UtlVec8 &)q.m_heap;
+	CUtlPriorityQueue8 *pOut = (CUtlPriorityQueue8 *)pOutVec;
+	SNodeFilter *pF = (SNodeFilter *)pFilter;
+	bool bFull = false;
+	float minKey = 1e12f;
+	for (int i = 0; i < m_nNodes; i++) {
+		if (pF->vf0(m_ppNodes[i])) {
+			SNodePos *n = (SNodePos *)m_ppNodes[i];
+			if (!(n->x < pMins[0]) && !(n->x > pMaxs[0])
+				&& !(n->y < pMins[1]) && !(n->y > pMaxs[1])
+				&& !(n->z < pMins[2]) && !(n->z > pMaxs[2])) {
+				float key = pF->vf1(n);
+				if (key < minKey)
+					minKey = key;
+				if (!bFull || key < ((SHeapElem *)qv.m_pMemory)[0].key) {
+					if (bFull) {
+						qv.sub_102f9000(0);
+						SiftDown(q);
+					}
+					SHeapElem e;
+					e.key = key;
+					e.idx = i;
+					int idx = qv.sub_102f90e0(qv.m_Size);
+					((SHeapElem *)qv.m_pMemory)[idx] = e;
+					while (idx != 0) {
+						int parent = (idx + 1) / 2 - 1;
+						if (q.m_LessFunc(((UtlVec8Elem *)qv.m_pMemory)[idx], ((UtlVec8Elem *)qv.m_pMemory)[parent]))
+							break;
+						((CUnknown102f9090 *)&q)->sub_102f9090(parent, idx);
+						idx = parent;
+					}
+					bFull = (qv.m_Size == nMax);
+				}
+			}
+		}
+	}
+	UtlVec8 &ov = (UtlVec8 &)pOut->m_heap;
+	ov.m_Size = 0;
+	while (qv.m_Size != 0) {
+		UtlVec8Elem *src = (UtlVec8Elem *)qv.m_pMemory;
+		int idx = ov.sub_102f90e0(ov.m_Size);
+		((UtlVec8Elem *)ov.m_pMemory)[idx] = *src;
+		while (idx != 0) {
+			int parent = (idx + 1) / 2 - 1;
+			if (pOut->m_LessFunc(((UtlVec8Elem *)ov.m_pMemory)[idx], ((UtlVec8Elem *)ov.m_pMemory)[parent]))
+				break;
+			UtlVec8Elem *b = (UtlVec8Elem *)ov.m_pMemory;
+			UtlVec8Elem t = b[parent];
+			b[parent] = b[idx];
+			b = (UtlVec8Elem *)ov.m_pMemory;
+			b[idx] = t;
+			idx = parent;
+		}
+		qv.sub_102f9000(0);
+		SiftDown(q);
+	}
+	int n = ov.m_Size;
+	((CUtlVector16 *)&q)->sub_102f9040();
+	((UtlMem *)&q)->sub_102f91b0();
+	g_109f3648->ExitScopeCall();
+	return n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f3770 size=0x1e
 int sub_102f3770(const float *a, const float *b)
 {

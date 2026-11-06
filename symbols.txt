@@ -5312,6 +5312,7 @@
 0x10008aad func   ?sub_10087ee0@@YAXXZ sub_10087ee0
 0x10008ab2 func   ?vfunc602@CNPC_VHengeyokai@@UAE_NXZ CNPC_VHengeyokai::vfunc602
 0x10008ab7 func   ?sub_102c36b0@CAI_BaseNPCTroika@@QAEPBDH@Z CAI_BaseNPCTroika::sub_102c36b0
+0x10008ac1 func   ?sub_102f32f0@CAI_Network@@QAEHPAXHPBM10@Z CAI_Network::sub_102f32f0
 0x10008ac6 func   ?sub_102a9890@@YIPAIPAI@Z sub_102a9890
 0x10008ad0 func   ?sub_101fb830@CVStatSubCost_t@@QAEXXZ CVStatSubCost_t::sub_101fb830
 0x10008ad5 func   ?sub_10145060@@YAPAUSPoolItem@@XZ sub_10145060
