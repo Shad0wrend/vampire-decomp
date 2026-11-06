@@ -63695,6 +63695,65 @@ extern "C" GP *raggib()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012b750 size=0x2c3
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "CGameTrace.h"
+#include "Ray_t.h"
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738964.h"
+#include "PhysicsTrace.h"
+#include "engineiface.h"
+
+struct V3 { float x, y, z; };
+void __cdecl sub_10146570(const V3 *pStart, const V3 *pEnd, int r, int g, int b, int a, int flags);
+
+// TARGET: sub_1012b750
+bool sub_1012b750(CBasePlayer *pPlayer, CBasePlayer *pOther, Vector *pResult, float flRadius)
+{
+	if ((pPlayer->m_n03E0 != 3 && pOther->m_n03E0 == 3) ||
+	    (pPlayer->m_n03E0 == 3 && pOther->m_n03E0 == 0))
+		return false;
+
+	Vector vecEye = pPlayer->vfunc193();
+
+	for (int i = 0; i < 5; i++)
+	{
+		CCollisionProperty *pCollision = (CCollisionProperty *)((char *)pOther + 0x270);
+		Vector vecPos = *(Vector *)pOther->vfunc220();
+
+		float *pMins;
+
+		pMins = pCollision->vfunc1();
+		vecPos.x += enginerandom->vfunc1(pMins[0] + flRadius, pCollision->vfunc2()[0] - flRadius);
+		pMins = pCollision->vfunc1();
+		vecPos.y += enginerandom->vfunc1(pMins[1] + flRadius, pCollision->vfunc2()[1] - flRadius);
+		pMins = pCollision->vfunc1();
+		vecPos.z += enginerandom->vfunc1(pMins[2] + flRadius, pCollision->vfunc2()[2] - flRadius);
+
+		Ray_t ray;
+		ray.Init(vecEye, vecPos);
+
+		CGameTrace trace;
+		CTraceFilterSimple filter(pPlayer, 0);
+		g_1070b254->vfunc4(&ray, 0x2804091, (CTraceFilterNoCharacterCollide *)&filter, &trace);
+
+		if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+			sub_10146570((V3 *)&trace.m_startpos, (V3 *)&trace.m_endpos, 0xff, 0, 0, 1, -1082130432);
+
+		if (trace.m_fraction == 1.0)
+		{
+			*pResult = vecPos;
+			return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012c5b0 size=0x36
 extern int g_1070ba58;
 void sub_1013d0e0(float a, float b, int c, int d, int e, int f, int g, int h);
