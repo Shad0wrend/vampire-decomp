@@ -5800,6 +5800,7 @@
 0x100096c4 func   ?vfunc5@CConstraintAnchor@@UAEPAVCConstraintAnchorBase@@I@Z CConstraintAnchor::vfunc5
 0x100096d3 func   ?sub_10042780@UtlMem@@QAEXXZ UtlMem::sub_10042780
 0x100096dd func   ?sub_10075c20@S10075c20@@QAEXPBD@Z S10075c20::sub_10075c20
+0x100096e2 func   ?vfunc478@CNPC_VFrenzyShadow@@UAEPAVCBaseEntity@@XZ CNPC_VFrenzyShadow::vfunc478
 0x100096e7 func   ?vfunc409@CItemContainer@@QAE_NXZ CItemContainer::vfunc409
 0x100096ec func   ?vfunc103@CEnvFireSource@@QAEXXZ CEnvFireSource::vfunc103
 0x100096f1 func   ?vfunc249@CBaseDoor@@UAEXXZ CBaseDoor::vfunc249

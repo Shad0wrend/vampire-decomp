@@ -140,6 +140,91 @@ void CNPC_VFrenzyShadow::vfunc440(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103766d0 size=0x319
+#include "CNPC_VFrenzyShadow.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "CUnknown102e0150.h"
+#include "S1030fc90.h"
+
+struct FsNode { char pad24[0x24]; EHANDLE m_hEnt; char pad28[0x38 - 0x28]; FsNode *m_pNext; };
+
+// TARGET: CNPC_VFrenzyShadow::vfunc478
+CBaseEntity *CNPC_VFrenzyShadow::vfunc478()
+{
+	CBaseEntity *pOwner = (*(EHANDLE *)((char *)this + 0x60ac)).Get();
+	int target;
+	if (!pOwner)
+		target = 0;
+	else
+		target = *(int *)((char *)pOwner + 0xa8);
+	if (m_n6664 > 1) {
+		CBaseEntity *pCur = vfunc167();
+		if (pCur) {
+			CBaseEntity *pChar = (CBaseEntity *)pCur->m_p9c;
+			if (pChar && !(pChar->sub_100b3700() & 0x8000) && *((char *)pChar + 0x1480)
+				&& ((CEntityVSlots *)pChar)->slot158()
+				&& ((CEntityVSlots *)pChar)->slot404((void *)target) == 1
+				&& !((CEntityVSlots *)this)->slot541()->sub_102e0210((int)pChar)
+				&& !((CEntityVSlots *)this)->slot530((CEntityVSlots *)pChar))
+				return pCur;
+		}
+	}
+	CBaseEntity *pBest = 0;
+	int bestDist = 0x10000000;
+	int bestScore = 0;
+	m_n6664 = 0;
+	for (FsNode *pNode = *(FsNode **)((char *)((CEntityVSlots *)this)->slot541() + 0xc); pNode; pNode = pNode->m_pNext) {
+		CBaseEntity *pEnt = pNode->m_hEnt.Get();
+		if (!pEnt)
+			continue;
+		CBaseEntity *pChar = (CBaseEntity *)pEnt->m_p9c;
+		if (!pChar || (pChar->sub_100b3700() & 0x8000) || !*((char *)pChar + 0x1480) || !((CEntityVSlots *)pChar)->slot158())
+			continue;
+		if (((CEntityVSlots *)this)->slot541()->sub_102e0210((int)pChar))
+			continue;
+		int score = 0;
+		if (!((CEntityVSlots *)this)->slot530((CEntityVSlots *)pChar))
+			score = 0x40000000;
+		if (((CEntityVSlots *)pChar)->slot404((void *)target) == 1) {
+			score += 0x20000000;
+			m_n6664++;
+		}
+		if (((S1030fc90 *)m_pSenses)->sub_1030fb10((int)pChar) || vfunc201(pChar, 0x2804091, 0, 0))
+			score += 0x10000000;
+		score += ((CEntityVSlots *)this)->slot405(pChar) << 24;
+		if (score > bestScore) {
+			if (vfunc479(pChar)) {
+				Vector *pMine = ((CEntityVSlots *)this)->slot217();
+				Vector *pOther = ((CEntityVSlots *)pChar)->slot217();
+				float dx = pOther->x - pMine->x;
+				float dy = pOther->y - pMine->y;
+				float dz = pOther->z - pMine->z;
+				bestDist = (int)(dx * dx + dy * dy + dz * dz);
+				pBest = pChar;
+				bestScore = score;
+			}
+		} else if (score == bestScore) {
+			Vector *pMine = ((CEntityVSlots *)this)->slot217();
+			Vector *pOther = ((CEntityVSlots *)pChar)->slot217();
+			float dx = pOther->x - pMine->x;
+			float dy = pOther->y - pMine->y;
+			float dz = pOther->z - pMine->z;
+			int dist = (int)(dx * dx + dy * dy + dz * dz);
+			if (dist < bestDist && vfunc479(pChar)) {
+				bestDist = dist;
+				pBest = pChar;
+				bestScore = score;
+			}
+		}
+	}
+	if (pBest != vfunc167())
+		m_b6668 = 0;
+	return pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10376ae0 size=0x20
 #include "CNPC_VFrenzyShadow.h"
 #define P10(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
