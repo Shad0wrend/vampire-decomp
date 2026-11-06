@@ -34,6 +34,26 @@ struct Ray_t
 		m_b33 = 0;
 	}
 
+	void Init(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs)	// Ray_t::Init(start, end, mins, maxs) as CGameRules::vfunc76 inlines it
+	{
+		m_Delta[0] = end.x - start.x;
+		m_Delta[1] = end.y - start.y;
+		m_Delta[2] = end.z - start.z;
+		m_IsSwept = (m_Delta[0] * m_Delta[0] + m_Delta[1] * m_Delta[1] + m_Delta[2] * m_Delta[2]) != g_104454c4;
+		Vector &extents = *(Vector *)m_StartOffset;
+		Vector &offset = *(Vector *)m_Extents;
+		VectorSubtract(maxs, mins, extents);
+		VectorScale(extents, 0.5f, extents);
+		m_IsRay = (extents.LengthSqr() < 1e-6);
+		VectorAdd(mins, maxs, offset);
+		VectorScale(offset, 0.5f, offset);
+		VectorAdd(start, offset, *(Vector *)m_Start);
+		VectorScale(offset, -1.0f, offset);
+		m_b32 = 0;
+		m_b33 = 0;
+		m_n34 = 0;
+	}
+
 	void sub_1004f7a0(const float *pStart, const float *pEnd);	// Ray_t::Init(start, end): delta = end - start, swept when the delta is not zero, the extents zeroed, IsRay set
 	void sub_1006dec0(const Vector &start, const float *pEnd, const float *pMins, const float *pMaxs, char a, char b);	// Ray_t::Init(start, end, mins, maxs) (stub 0x1000c725), thiscall with six stack arguments (the last two are bytes)
 };
