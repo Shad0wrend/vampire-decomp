@@ -5685,6 +5685,7 @@
 0x1000934f func   ?vfunc29@CRestore@@UAEHPAHHH@Z CRestore::vfunc29
 0x10009354 func   ?vfunc7@CMoveHelperServer@@UAE_NXZ CMoveHelperServer::vfunc7
 0x10009359 func   ?vfunc363@CWeaponHolyLight@@QAEHXZ CWeaponHolyLight::vfunc363
+0x1000935e func   ?sub_10388230@@YAXXZ sub_10388230
 0x10009363 func   ?sub_100f0e30@CBaseDoor@@QAEXM@Z CBaseDoor::sub_100f0e30
 0x10009368 func   ?vfunc362@CWeaponRanged_Smg_Uzi@@QAEHXZ CWeaponRanged_Smg_Uzi::vfunc362
 0x1000936d func   ?vfunc249@CSceneEntity@@UAEXMHPAUCSceneEvent@@@Z CSceneEntity::vfunc249
