@@ -2358,6 +2358,90 @@ int CBasePlayer::vfunc200()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10178280 size=0x127
+#include "CBasePlayer.h"
+#include "CAI_BaseNPCTroika.h"
+extern "C++" __declspec(dllimport) void DevWarning(const char *fmt, ...);
+extern "C" void *__RTDynamicCast(void *pObj, long vfDelta, void *pSrcType, void *pTargetType, int isReference);
+extern char g_10587908[];
+extern char g_10587930[];
+void sub_101cebc0(CBasePlayer *pPlayer, int a, int b);
+CBaseEntity *sub_10070470(const char *psz, int a, int b, int c, int d);
+void sub_100826b0(int a);
+
+struct ZDialog10178280
+{
+	char sub_100e05f0(CBasePlayer *pPlayer, void *pOther);
+};
+
+namespace block_10178280 {
+struct ZPlayerUnit : CBasePlayer
+{
+	void sub_1015ef40();
+};
+void ZPlayerUnit::sub_1015ef40()
+{
+	*((char *)this + 0x19f7) = 1;
+}
+}
+using namespace block_10178280;
+
+struct ZView10178280 : CBasePlayer
+{
+	void sub_10107050(int a);
+	void sub_10167fd0();
+	char sub_10328df0(void *pOther, int a);
+	void sub_10147a60();
+};
+
+// TARGET: CBasePlayer::vfunc414
+void CBasePlayer::vfunc414(CBaseEntity *pEnt)
+{
+	ZView10178280 *z = (ZView10178280 *)this;
+	if (pEnt)
+	{
+		char *pObj = *(char **)((char *)pEnt + 0x98);
+		if (pObj)
+		{
+			if (!pObj[0x6495] && sub_10178170())
+			{
+				sub_101cebc0(this, 0x41, 0);
+				z->sub_10107050(0);
+				return;
+			}
+			if (((ZDialog10178280 *)sub_10178120())->sub_100e05f0(this, pObj))
+			{
+				z->sub_10167fd0();
+				z->sub_10107050((int)pObj);
+				((ZPlayerUnit *)this)->sub_1015ef40();
+				*((char *)this + 0x1e01) = 0;
+				if (sub_1032e7b0() && *((char *)sub_1032e7b0() + 0x870))
+					*((char *)this + 0x1e01) = 1;
+				else
+					*((char *)this + 0x1e01) = 0;
+				vfunc457("item_w_unarmed", 0);
+				if (__RTDynamicCast(pObj, 0, g_10587908, g_10587930, 0))
+				{
+					if (!z->sub_10328df0(pObj, 5))
+						DevWarning("Couldn't grapple payphone!\n");
+				}
+				else
+				{
+					const char *pszName = *(const char **)(pObj + 0x64c4);
+					if (!pszName)
+						pszName = "";
+					sub_1017cef0(sub_10070470(pszName, 0, 0, 0, 0));
+				}
+				z->sub_10147a60();
+				sub_100826b0(0);
+				return;
+			}
+			z->sub_10107050(0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10178400 size=0x42
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
