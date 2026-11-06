@@ -1322,6 +1322,99 @@ done:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10168910 size=0x3f2
+#include "CBasePlayer.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CDevFlagObj.h"
+#include "Tier1.h"
+#include "CVStatList_t.h"
+#include "CVFeat_t.h"
+#include "CUnknown101d8a70.h"
+#include "CVDmg_t.h"
+#include "CBaseCombatCharacter.h"
+#include <stdio.h>
+extern CDevFlagObj *g_10937034;
+extern CDevFlagObj *g_1074f04c;
+void sub_101cebc0(CBasePlayer *, int, int);
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+
+struct CFeedVictimView
+{
+	CBP_V1(a0) virtual unsigned int *vfunc1();
+	CBP_V100(b0) CBP_V100(b1) CBP_V10(b2) CBP_V10(b3) CBP_V10(b4) CBP_V10(b5) CBP_V10(b6) CBP_V10(b7) CBP_V10(b8) CBP_V10(b9) CBP_V10(bb) CBP_V1(c0) CBP_V1(c1)
+	virtual char vfunc294(CBasePlayer *p);
+	CBP_V10(d0) CBP_V10(d1) CBP_V10(d2) CBP_V10(d3) CBP_V1(e0) CBP_V1(e1) CBP_V1(e2) CBP_V1(e3) CBP_V1(e4) CBP_V1(e5) CBP_V1(e6)
+	virtual char vfunc342(CBasePlayer *p);
+	int m_pad[0x3fc];
+};
+
+inline int FeedSuccesses(CUnknown101d8a70 &r)
+{
+	int n = r.m_n04 - r.m_n0c;
+	if (n <= 0)
+		return 0;
+	return n;
+}
+
+inline int FeedBrawl(void *pOwner)
+{
+	return CVFeatSet::Find(9)->sub_101e56e0(pOwner);
+}
+
+char CBasePlayer::AttemptFeed(CBaseEntity *pTarget)
+{
+	char szMsg[256];
+	if (!g_10937034->vfunc1() && g_10937034->m_n2c) {
+		sprintf(szMsg, "%s AttemptFeed on %s", ((CBaseEntity *)this)->sub_1000b5cd(), pTarget->sub_1000b5cd());
+		((CBaseCombatCharacter *)this)->sub_103221b0(szMsg);
+	}
+	m_hMeleeOpponent = pTarget;
+	m_hEnt1C60 = pTarget;
+	if (!pTarget)
+		return 0;
+	CFeedVictimView *pVictim = (CFeedVictimView *)pTarget;
+	if (!pVictim->vfunc342(this))
+		return 0;
+	CVStatListSet::Of(this)->Find(0)->sub_102012d0(0xc);
+	CVStatListSet::Of(this)->Find(0)->sub_10200b10(0xc);
+	int act = pVictim->m_pad[0xff0 / 4 - 1];
+	if (act != 0x104e && act != 0x1068 && act != 0x1069 && act != 0x1098) {
+		if (((CBaseCombatCharacter *)pTarget)->sub_10339930()) {
+			int nBrawl = FeedBrawl(*(void **)((char *)this + 0x9c));
+			if (!g_1074f04c->vfunc1() && g_1074f04c->m_n2c)
+				DevMsg("Feed attempt!  Attacker's brawl is %d.  Rolling defender's hacking (hacking is used for NPC feed resistance)\n", nBrawl);
+			CVDmgBlock16_t block(4, 2);
+			CUnknown101d8a70 roll;
+			roll.sub_101d8820((int)pVictim, 0, &block, 6);
+			int tmp;
+			roll.sub_101d8a70(&tmp);
+			if (nBrawl <= FeedSuccesses(roll)) {
+				if (!pVictim->vfunc294(this)) {
+					sub_101cebc0(this, 0x49, 0);
+					if (!g_1074f04c->vfunc1() && g_1074f04c->m_n2c)
+						DevMsg("Feed failed!  With brawl = %d and hacking-successes = %d\n", nBrawl, FeedSuccesses(roll));
+					return 0;
+				}
+				if (!g_1074f04c->vfunc1() && g_1074f04c->m_n2c)
+					DevMsg("Target is Stealth Killable, even though we failed our brawl vs. hacking roll we succeed.");
+				return 1;
+			}
+			if (!g_1074f04c->vfunc1() && g_1074f04c->m_n2c)
+				DevMsg("Feed succeeded!  With brawl = %d and hacking-successes = %d\n", nBrawl, FeedSuccesses(roll));
+			return 1;
+		}
+		if (!g_1074f04c->vfunc1() && g_1074f04c->m_n2c)
+			DevMsg("Feed succeeded without a roll, since target is not in a state to resist feeding\n");
+		return 1;
+	}
+	if (!g_1074f04c->vfunc1() && g_1074f04c->m_n2c)
+		DevMsg("Feed attempt!  Success is automatic because defender is mesmerized, disoriented, lost or cowering\n");
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10168e10 size=0x32
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
