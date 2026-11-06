@@ -71911,6 +71911,59 @@ extern "C" GP *physics_cannister()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014fc10 size=0x5e8
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1057c8b8[2];
+void sub_1000ed4f();
+void sub_10014051();
+void sub_1000c617();
+void sub_10002edc();
+void sub_1000f79a();
+
+int *sub_1014fc10()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 10, "m_onActivate", {0x19fc, 0}, 1, 0x16, "OnActivate", g_1055dc70 },
+        { 3, "m_thrustOrigin", {0x19b0, 0}, 1, 2, 0, 0, 0 },
+        { 11, "m_pJet", {0x19e0, 0}, 1, 2, 0, 0, 0 },
+        { 5, "m_active", {0x19e4, 0}, 1, 2, 0, 0, 0 },
+        { 1, "m_thrustTime", {0x19e8, 0}, 1, 6, "fuel", 0, 0 },
+        { 1, "m_damage", {0x19ec, 0}, 1, 6, "expdamage", 0, 0 },
+        { 1, "m_damageRadius", {0x19f0, 0}, 1, 6, "expradius", 0, 0 },
+        { 15, "m_activateTime", {0x19f4, 0}, 1, 2, 0, 0, 0 },
+        { 2, "m_gasSound", {0x19f8, 0}, 1, 6, "gassound", 0, 0 },
+        { 2, "m_iszExplosionParamEnt", {0x1a14, 0}, 1, 6, "explosion_params", 0, 0 },
+        { 3, "m_thruster.m_thrustVector", {0x19c0, 0}, 1, 2, 0, 0, 0 },
+        { 3, "m_thruster.m_torqueVector", {0x19cc, 0}, 1, 2, 0, 0, 0 },
+        { 1, "m_thruster.m_thrust", {0x19d8, 0}, 1, 6, "thrust", 0, 0 },
+        { 0, "InputActivate", {0, 0}, 1, 8, "Activate", 0, (void *)sub_1000ed4f },
+        { 0, "InputDeactivate", {0, 0}, 1, 8, "Deactivate", 0, (void *)sub_10014051 },
+        { 0, "InputExplode", {0, 0}, 1, 8, "Explode", 0, (void *)sub_1000c617 },
+        { 0, "InputWake", {0, 0}, 1, 8, "Wake", 0, (void *)sub_10002edc },
+        { 0, "CPhysicsCannisterBeginShutdownThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000f79a },
+    };
+    g_1057c8b8[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1057c8b8[0] = (int)&dataDesc[1];
+    return g_1057c8b8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10150530 size=0xc6
 #include "CPhysicsCannister.h"
 #include "CBaseAnimating.h"

@@ -7564,6 +7564,7 @@
 0x1000beab func   ?sub_101e8af0@CUnknown101e8af0@@QAEMXZ CUnknown101e8af0::sub_101e8af0
 0x1000beb0 func   ?sub_10156d50@CUnit10156d50@@QAEXH@Z CUnit10156d50::sub_10156d50
 0x1000beb5 func   ?sub_102def00@UtlMem@@QAEXXZ UtlMem::sub_102def00
+0x1000beba func   ?sub_1014fc10@@YAPAHXZ sub_1014fc10
 0x1000bebf func   ?vfunc82@CNPC_VCamera@@UAEPAUdatamap_t@@XZ CNPC_VCamera::vfunc82
 0x1000bec4 func   ?sub_10231e60@@YIIPAD@Z sub_10231e60
 0x1000bec9 func   ?sub_10228220@CUnknown10228020@@QAEDPAVCUnknown10248a50@@@Z CUnknown10228020::sub_10228220
