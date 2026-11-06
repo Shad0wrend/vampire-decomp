@@ -12765,6 +12765,7 @@
 0x10013598 func   ?sub_102ce9a0@UtlVec8@@QAEXHH@Z UtlVec8::sub_102ce9a0
 0x1001359d func   ?vfunc5@IServerEntity@@QAEPAXD@Z IServerEntity::vfunc5
 0x100135a2 func   ?vfunc429@CBasePlayer@@UAEXXZ CBasePlayer::vfunc429
+0x100135a7 func   ?sub_101d4fd0@CClanView@@QAEXXZ CClanView::sub_101d4fd0
 0x100135ac func   ?vfunc0@CMultiplayRules@@UAEPAVCGameRules@@I@Z CMultiplayRules::vfunc0
 0x100135b1 func   ?sub_1007ed50@CUnknown1007ecf0@@QAEXH@Z CUnknown1007ecf0::sub_1007ed50
 0x100135b6 func   ?sub_10185d70@@YGXPAUCFinishArg@@@Z sub_10185d70

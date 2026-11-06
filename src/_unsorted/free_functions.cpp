@@ -102376,6 +102376,111 @@ int StatDefault3::sub_101d4f60(int n)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d4fd0 size=0x409
+#include "CVStatInfoList_t.h"
+#include "CUnknown101f0e50.h"
+#include "CUnknown10203240.h"
+#include "CUnknown10202ba0.h"
+#include "StatDefault2.h"
+__declspec(dllimport) int Q_snprintf(char *pDest, int nSize, const char *pFmt, ...);
+__declspec(dllimport) void Msg(const char *pMsg, ...);
+extern CVStatInfoList_t g_1074e658;
+extern CVStatInfoList_t g_1074e4f0;
+extern CVStatInfoList_t g_1074e098;
+extern CUnknown101f0e50 g_1074df78;
+extern CUnknown10203240 g_1074e968;
+extern char g_105490b0[];
+extern char g_10547e40[];
+extern char g_106b8540[];
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+struct CRec { char pad[0x14]; const char *m_psz14; };
+struct CEff { char pad[8]; const char *m_psz8; };
+
+struct CClanView {
+	int m_n0;
+	int m_p4;
+	const char *m_psz8;
+	int m_pad0c;
+	const char *m_psz10;
+	const char *m_psz14;
+	const char *m_psz18;
+	const char *m_psz1c;
+	char m_pad20[0x20];
+	const char *m_psz40;
+	char m_pad44[0x14];
+	const char *m_psz58;
+	char m_pad5c[0x24];
+	int m_n80;
+	int m_n84;
+	int m_n88;
+	unsigned char m_b8c;
+	char m_pad8d[0x23];
+	int m_nb0;
+	char m_padb4[0x1c];
+	int *m_pd0;
+	int *m_pd4;
+	int *m_pd8;
+	char *sub_101d4dc0();
+	void sub_101d4fd0();
+};
+
+void CClanView::sub_101d4fd0()
+{
+	char buf[0x200];
+	int i, j, k;
+	Q_snprintf(buf, 0x200, "\n\n(%d): %s\n", m_n0, m_psz8 ? m_psz8 : g_106b8540);
+	Msg(g_105490b0, buf);
+	Q_snprintf(buf, 0x200, "%s\n", m_psz10 ? m_psz10 : g_106b8540);
+	Msg(g_105490b0, buf);
+	Q_snprintf(buf, 0x200, "%s\n", m_psz14 ? m_psz14 : g_106b8540);
+	Msg(g_105490b0, buf);
+	Q_snprintf(buf, 0x200, "%s\n", m_psz18 ? m_psz18 : g_106b8540);
+	Msg(g_105490b0, buf);
+	Q_snprintf(buf, 0x200, "Clan Icon: %s\n", sub_101d4dc0());
+	Msg(g_105490b0, buf);
+	Q_snprintf(buf, 0x200, "Male Model0: %s\n", m_psz40 ? m_psz40 : g_106b8540);
+	Msg(g_105490b0, buf);
+	Q_snprintf(buf, 0x200, "Female Model0: %s\n", m_psz58 ? m_psz58 : g_106b8540);
+	Msg(g_105490b0, buf);
+	unsigned char aff = m_b8c;
+	Q_snprintf(buf, 0x200, "Affiliation: %s\n", ((CUnknown10202ba0 *)g_1074e968.sub_10203240("KineKindred"))->sub_10202a10(aff));
+	Msg(g_105490b0, buf);
+	for (i = 0; i < g_1074e658.m_nStats; i++) {
+		CRec *r = (CRec *)g_1074e658.sub_10200370(i);
+		Q_snprintf(buf, 0x200, "%s: %d\n", STRINGR(r->m_psz14), m_pd0[i]);
+		Msg(g_105490b0, buf);
+	}
+	Msg(g_105490b0, g_10547e40);
+	for (j = 0; j < g_1074e4f0.m_nStats; j++) {
+		CRec *r = (CRec *)g_1074e4f0.sub_10200370(j);
+		Q_snprintf(buf, 0x200, "%s: %d\n", STRINGR(r->m_psz14), m_pd4[j]);
+		Msg(g_105490b0, buf);
+	}
+	Msg(g_105490b0, g_10547e40);
+	for (k = 0; k < g_1074e098.m_nStats; k++) {
+		CRec *r = (CRec *)g_1074e098.sub_10200370(k);
+		Q_snprintf(buf, 0x200, "%s: %d\n", STRINGR(r->m_psz14), m_pd8[k]);
+		Msg(g_105490b0, buf);
+	}
+	Msg(g_105490b0, g_10547e40);
+	{
+		CEff *e = (CEff *)g_1074df78.sub_101f8480(m_n84);
+		Q_snprintf(buf, 0x200, "Clan Effect: %s ( %d )\n", STRINGR(e->m_psz8), m_n84);
+		Msg(g_105490b0, buf);
+	}
+	if (m_n88 != -1) {
+		CEff *e = (CEff *)g_1074df78.sub_101f8480(m_n88);
+		Q_snprintf(buf, 0x200, "Frenzy Effect: %s ( %d )\n", STRINGR(e->m_psz8), m_n88);
+		Msg(g_105490b0, buf);
+	}
+	CEff *p = (CEff *)FindStatDefault2(m_nb0);
+	Q_snprintf(buf, 0x200, "Clan MP Equip Pkg: %s ( %d )\n", STRINGR(p->m_psz8), m_nb0);
+	Msg(g_105490b0, buf);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d54f0 size=0xd
 #include "CUnknown101d54f0.h"
 // TARGET: CUnknown101d54f0::sub_101d54f0
