@@ -321,6 +321,300 @@ CBasePlayer *CBasePlayer::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015e140 size=0xa7f
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+#include "Vector.h"
+
+extern int g_107260a0;
+
+struct CPlayerDumpView
+{
+	char m_pad0000[0x1a80];
+	char m_bDrawViewmodel1a80;
+	char m_pad1a81[3];
+	int m_iClientBloodpool;	// 0x1a84
+	int m_iClientFaithpoints;	// 0x1a88
+	int m_iClientFeedBloodPool;	// 0x1a8c
+	char m_pad1a90[4];
+	int m_iClientAgrDmg;	// 0x1a94
+	int m_iClientVActiveDisciplines[17];	// 0x1a98
+	int m_flClientVActiveDisciplineDurations[17];	// 0x1adc
+	int m_flClientBeginVActiveDisciplineTimers[17];	// 0x1b20
+	int m_flActiveObfuscateUpdateTimer;	// 0x1b64
+	int m_iClientFrenzyCount;	// 0x1b68
+	char m_pad1b6c[0x1c44 - 0x1b6c];
+	int m_nDefaultTargetModel;	// 0x1c44
+	char m_pad1c48[0x1c50 - 0x1c48];
+	const char *m_sTargetmodel;	// 0x1c50
+	char m_pad1c54[0x1c64 - 0x1c54];
+	EHANDLE m_pViewWeapon;	// 0x1c64
+	char m_pad1c68[4];
+	int m_flNextStealthUpdate;	// 0x1c6c
+	int m_flStealthVisionScalar;	// 0x1c70
+	int m_flStealthVisionCone;	// 0x1c74
+	int m_flStealthHearingDist;	// 0x1c78
+	char m_pad1c7c[0x1c90 - 0x1c7c];
+	int m_iDebugFlags;	// 0x1c90
+	int m_iDebugStealthFeat;	// 0x1c94
+	int m_iDebugStealthLight;	// 0x1c98
+	int m_iDebugStealthSound;	// 0x1c9c
+	char m_pad1ca0[0x1e74 - 0x1ca0];
+	int m_iHideHUD;	// 0x1e74
+	int m_iFOV;	// 0x1e78
+	int m_iViewmodelFOV;	// 0x1e7c
+	Vector m_vecOverViewpoint;	// 0x1e80
+	char m_pad1e8c[4];
+	int m_targetEntityIndex;	// 0x1e90
+	char m_pad1e94[0x1edc - 0x1e94];
+	char m_bWolf;	// 0x1edc
+	char m_bDucked;	// 0x1edd
+	char m_bDucking;	// 0x1ede
+	char m_pad1edf;
+	int m_flDucktime;	// 0x1ee0
+	int m_nStepside;	// 0x1ee4
+	int m_flFallVelocity;	// 0x1ee8
+	int m_nOldButtons;	// 0x1eec
+	Vector m_vecClientBaseVelocity;	// 0x1ef0
+	Vector m_vecPunchangle;	// 0x1efc
+	Vector m_vecPunchangleVel;	// 0x1f08
+	char m_bDrawViewmodel1f14;
+	char m_pad1f15[3];
+	int m_nightvision_level;	// 0x1f18
+	char m_pad1f1c[0x2068 - 0x1f1c];
+	int m_n2068;	// 0x2068
+	char m_pad206c[0x2088 - 0x206c];
+	int m_nButtons;	// 0x2088
+	int m_afButtonPressed;	// 0x208c
+	int m_afButtonReleased;	// 0x2090
+	int m_afButtonLast;	// 0x2094
+	char m_pad2098[0x20a8 - 0x2098];
+	char m_fOnTarget;	// 0x20a8
+	char m_szAnimExtension[32];	// 0x20a9
+	char m_pad20c9[0x20d0 - 0x20c9];
+	Vector m_vecAdditionalPVSOrigin;	// 0x20d0
+	Vector m_vecCameraPVSOrigin;	// 0x20dc
+	int m_iClientHealth;	// 0x20e8
+	int m_iRespawnFrames;	// 0x20ec
+	unsigned int m_afPhysicsFlags;	// 0x20f0
+	char m_pad20f4[0x212c - 0x20f4];
+	int m_iPlayerSound;	// 0x212c
+	int m_iTargetVolume;	// 0x2130
+	int m_rgItems[5];	// 0x2134
+	int m_fNextSuicideTime;	// 0x2148
+	int m_flTimeStepSound;	// 0x214c
+	int m_flSwimTime;	// 0x2150
+	int m_flDuckTime;	// 0x2154
+	int m_flWallJumpTime;	// 0x2158
+	int m_flSuitUpdate;	// 0x215c
+	int m_rgSuitPlayList[4];	// 0x2160
+	int m_iSuitPlayNext;	// 0x2170
+	int m_rgiSuitNoRepeat[32];	// 0x2174
+	int m_rgflSuitNoRepeatTime[32];	// 0x21f4
+	int m_lastDamageAmount;	// 0x2274
+	int m_tbdPrev;	// 0x2278
+	int m_iStepLeft;	// 0x227c
+	char m_chTextureType;	// 0x2280
+	char m_pad2281[3];
+	int m_idrowndmg;	// 0x2284
+	int m_idrownrestored;	// 0x2288
+	char m_pad228c[0x2294 - 0x228c];
+	int m_bitsHUDDamage;	// 0x2294
+	char m_fInitHUD;	// 0x2298
+	char m_fGameHUDInitialized;	// 0x2299
+	char m_fWeapon;	// 0x229a
+	char m_pad229b;
+	int m_fDeadTime;	// 0x229c
+	char m_fNoPlayerSound;	// 0x22a0
+	char m_pad22a1[3];
+	int m_iUpdateTime;	// 0x22a4
+	Vector m_vecAutoAim;	// 0x22a8
+	int m_lastx;	// 0x22b4
+	int m_lasty;	// 0x22b8
+	int m_iFrags;	// 0x22bc
+	int m_iDeaths;	// 0x22c0
+	int m_nCustomSprayFrames;	// 0x22c4
+	int m_flNextDecalTime;	// 0x22c8
+	char m_szTeamName[16];	// 0x22cc
+	char m_bConnected;	// 0x22dc
+	char m_pad22dd[3];
+	EHANDLE m_hTargetEnt;	// 0x22e0
+	int m_ArmorValue;	// 0x22e4
+	Vector m_DmgOrigin;	// 0x22e8
+	int m_DmgTake;	// 0x22f4
+	int m_DmgSave;	// 0x22f8
+	int m_AirFinished;	// 0x22fc
+	int m_PainFinished;	// 0x2300
+	int m_iPlayerLocked;	// 0x2304
+	unsigned int m_hViewModel[2];	// 0x2308
+	int m_flMaxspeed;	// 0x2310
+	int m_flWaterJumpTime;	// 0x2314
+	char m_pad2318[0x2324 - 0x2318];
+	int m_nImpulse;	// 0x2324
+	int m_flStepSoundTime;	// 0x2328
+	int m_flSwimSoundTime;	// 0x232c
+	Vector m_vecLadderNormal;	// 0x2330
+	int m_nLightLevel;	// 0x233c
+	int m_flFlashTime;	// 0x2340
+	int m_nDrownDmgRate;	// 0x2344
+	Vector m_vForcedOrigin;	// 0x2348
+	char m_bForceOrigin;	// 0x2354
+	char m_pad2355[3];
+	int m_flTimeBase;	// 0x2358
+	char m_pad235c[0x2364 - 0x235c];
+	int m_lerp_msec;	// 0x2364
+	char m_pad2368[4];
+	int m_frametime;	// 0x236c
+	Vector m_viewangles;	// 0x2370
+	int m_forwardmove;	// 0x237c
+	int m_sidemove;	// 0x2380
+	int m_upmove;	// 0x2384
+	unsigned char m_lightlevel;	// 0x2388
+	char m_pad2389[3];
+	int m_buttons;	// 0x238c
+	char m_pad2390[4];
+	unsigned char m_impulse;	// 0x2394
+	char m_pad2395[3];
+	int m_weaponselect;	// 0x2398
+};
+
+// TARGET: CBasePlayer::vfunc31
+void CBasePlayer::vfunc31(int pDump)
+{
+	CBaseEntity *pBase = (CBaseEntity *)this;
+	CPlayerDumpView *p = (CPlayerDumpView *)this;
+	pBase->sub_1009bc30(pDump, "s_PlayerEdict", g_107260a0);
+	pBase->sub_1009b640(pDump, (int)"m_szAnimExtension", (int)p->m_szAnimExtension);
+	pBase->sub_1009b980(pDump, "m_iPlayerSound", p->m_iPlayerSound);
+	pBase->sub_1009b980(pDump, "m_iTargetVolume", p->m_iTargetVolume);
+	pBase->sub_1009b980(pDump, "m_afButtonLast", p->m_afButtonLast);
+	pBase->sub_1009b980(pDump, "m_afButtonPressed", p->m_afButtonPressed);
+	pBase->sub_1009b980(pDump, "m_afButtonReleased", p->m_afButtonReleased);
+	pBase->sub_1009c390(pDump, "m_rgItems", p->m_rgItems, 5);
+	pBase->sub_1009bb40(pDump, (int)"m_afPhysicsFlags", p->m_afPhysicsFlags);
+	pBase->sub_1009ba60(pDump, "m_fNextSuicideTime", p->m_fNextSuicideTime);
+	pBase->sub_1009b8a0(pDump, (int)"m_bDrawViewmodel", p->m_bDrawViewmodel1a80);
+	pBase->sub_1009ba60(pDump, "m_flTimeStepSound", p->m_flTimeStepSound);
+	pBase->sub_1009ba60(pDump, "m_flSwimTime", p->m_flSwimTime);
+	pBase->sub_1009ba60(pDump, "m_flDuckTime", p->m_flDuckTime);
+	pBase->sub_1009ba60(pDump, "m_flWallJumpTime", p->m_flWallJumpTime);
+	pBase->sub_1009ba60(pDump, "m_flSuitUpdate", p->m_flSuitUpdate);
+	pBase->sub_1009c390(pDump, "m_rgSuitPlayList", p->m_rgSuitPlayList, 4);
+	pBase->sub_1009b980(pDump, "m_iSuitPlayNext", p->m_iSuitPlayNext);
+	pBase->sub_1009c390(pDump, "m_rgiSuitNoRepeat", p->m_rgiSuitNoRepeat, 0x20);
+	pBase->sub_1009c5f0(pDump, "m_rgflSuitNoRepeatTime", p->m_rgflSuitNoRepeatTime, 0x20);
+	pBase->sub_1009b980(pDump, "m_lastDamageAmount", p->m_lastDamageAmount);
+	pBase->sub_1009ba60(pDump, "m_tbdPrev", p->m_tbdPrev);
+	pBase->sub_1009b980(pDump, "m_iStepLeft", p->m_iStepLeft);
+	pBase->sub_1009b7d0(pDump, "m_chTextureType", p->m_chTextureType);
+	pBase->sub_1009b980(pDump, "m_idrowndmg", p->m_idrowndmg);
+	pBase->sub_1009b980(pDump, "m_idrownrestored", p->m_idrownrestored);
+	pBase->sub_1009b980(pDump, "m_bitsHUDDamage", p->m_bitsHUDDamage);
+	pBase->sub_1009b8a0(pDump, (int)"m_fInitHUD", p->m_fInitHUD);
+	pBase->sub_1009b8a0(pDump, (int)"m_fGameHUDInitialized", p->m_fGameHUDInitialized);
+	pBase->sub_1009b8a0(pDump, (int)"m_fWeapon", p->m_fWeapon);
+	pBase->sub_1009ba60(pDump, "m_fDeadTime", p->m_fDeadTime);
+	pBase->sub_1009b8a0(pDump, (int)"m_fNoPlayerSound", p->m_fNoPlayerSound);
+	pBase->sub_1009b980(pDump, "m_iUpdateTime", p->m_iUpdateTime);
+	pBase->sub_1009b980(pDump, "m_iClientHealth", p->m_iClientHealth);
+	pBase->sub_1009b980(pDump, "m_iClientBloodpool", p->m_iClientBloodpool);
+	pBase->sub_1009b980(pDump, "m_iClientFaithpoints", p->m_iClientFaithpoints);
+	pBase->sub_1009b980(pDump, "m_iClientFeedBloodPool", p->m_iClientFeedBloodPool);
+	pBase->sub_1009b980(pDump, "m_iClientAgrDmg", p->m_iClientAgrDmg);
+	pBase->sub_1009c390(pDump, "m_iClientVActiveDisciplines", p->m_iClientVActiveDisciplines, 0x11);
+	pBase->sub_1009c5f0(pDump, "m_flClientBeginVActiveDisciplineTimers", p->m_flClientBeginVActiveDisciplineTimers, 0x11);
+	pBase->sub_1009c5f0(pDump, "m_flClientVActiveDisciplineDurations", p->m_flClientVActiveDisciplineDurations, 0x11);
+	pBase->sub_1009ba60(pDump, "m_flActiveObfuscateUpdateTimer", p->m_flActiveObfuscateUpdateTimer);
+	pBase->sub_1009b980(pDump, "m_iClientFrenzyCount", p->m_iClientFrenzyCount);
+	pBase->sub_1009bd10(pDump, "m_vecAutoAim", p->m_vecAutoAim);
+	pBase->sub_1009b8a0(pDump, (int)"m_fOnTarget", p->m_fOnTarget);
+	pBase->sub_1009b980(pDump, "m_lastx", p->m_lastx);
+	pBase->sub_1009b980(pDump, "m_lasty", p->m_lasty);
+	pBase->sub_1009b980(pDump, "m_iFrags", p->m_iFrags);
+	pBase->sub_1009b980(pDump, "m_iDeaths", p->m_iDeaths);
+	pBase->sub_1009ba60(pDump, "m_iRespawnFrames", p->m_iRespawnFrames);
+	pBase->sub_1009b980(pDump, "m_nCustomSprayFrames", p->m_nCustomSprayFrames);
+	pBase->sub_1009ba60(pDump, "m_flNextDecalTime", p->m_flNextDecalTime);
+	pBase->sub_1009b640(pDump, (int)"m_szTeamName", (int)p->m_szTeamName);
+	pBase->sub_1009b8a0(pDump, (int)"m_bConnected", p->m_bConnected);
+	pBase->sub_1009c000(pDump, "m_hTargetEnt", p->m_hTargetEnt);
+	pBase->sub_1009be00(pDump, "m_vecAdditionalPVSOrigin", p->m_vecAdditionalPVSOrigin);
+	pBase->sub_1009be00(pDump, "m_vecCameraPVSOrigin", p->m_vecCameraPVSOrigin);
+	pBase->sub_1009b980(pDump, "m_ArmorValue", p->m_ArmorValue);
+	pBase->sub_1009be00(pDump, "m_DmgOrigin", p->m_DmgOrigin);
+	pBase->sub_1009ba60(pDump, "m_DmgTake", p->m_DmgTake);
+	pBase->sub_1009ba60(pDump, "m_DmgSave", p->m_DmgSave);
+	pBase->sub_1009ba60(pDump, "m_AirFinished", p->m_AirFinished);
+	pBase->sub_1009ba60(pDump, "m_PainFinished", p->m_PainFinished);
+	pBase->sub_1009b640(pDump, (int)"m_Local", (int)"-v-");
+	pBase->sub_1009b980(pDump, "  m_iHideHUD", p->m_iHideHUD);
+	pBase->sub_1009b980(pDump, "  m_iFOV", p->m_iFOV);
+	pBase->sub_1009b980(pDump, "  m_iViewmodelFOV", p->m_iViewmodelFOV);
+	pBase->sub_1009be00(pDump, "  m_vecOverViewpoint", p->m_vecOverViewpoint);
+	pBase->sub_1009b980(pDump, "  m_targetEntityIndex", p->m_targetEntityIndex);
+	pBase->sub_1009b8a0(pDump, (int)"  m_bWolf", p->m_bWolf);
+	pBase->sub_1009b8a0(pDump, (int)"  m_bDucked", p->m_bDucked);
+	pBase->sub_1009b8a0(pDump, (int)"  m_bDucking", p->m_bDucking);
+	pBase->sub_1009ba60(pDump, "  m_flDucktime", p->m_flDucktime);
+	pBase->sub_1009b980(pDump, "  m_nStepside", p->m_nStepside);
+	pBase->sub_1009ba60(pDump, "  m_flFallVelocity", p->m_flFallVelocity);
+	pBase->sub_1009b980(pDump, "  m_nOldButtons", p->m_nOldButtons);
+	pBase->sub_1009be00(pDump, "  m_vecClientBaseVelocity", p->m_vecClientBaseVelocity);
+	pBase->sub_1009bd10(pDump, "  m_vecPunchangle", p->m_vecPunchangle);
+	pBase->sub_1009bd10(pDump, "  m_vecPunchangleVel", p->m_vecPunchangleVel);
+	pBase->sub_1009b8a0(pDump, (int)"  m_bDrawViewmodel", p->m_bDrawViewmodel1f14);
+	pBase->sub_1009b980(pDump, "  m_nightvision_level", p->m_nightvision_level);
+	pBase->sub_1009b980(pDump, "m_iPlayerLocked", p->m_iPlayerLocked);
+	pBase->sub_1009c850(pDump, "m_hViewModel", p->m_hViewModel, 2);
+	pBase->sub_1009bc30(pDump, "pl", (int)&p->m_n2068);
+	pBase->sub_1009ba60(pDump, "m_flMaxspeed", p->m_flMaxspeed);
+	pBase->sub_1009b980(pDump, "m_nDefaultTargetModel", p->m_nDefaultTargetModel);
+	pBase->sub_1009b980(pDump, "m_nButtons", p->m_nButtons);
+	pBase->sub_1009ba60(pDump, "m_flWaterJumpTime", p->m_flWaterJumpTime);
+	pBase->sub_1009b980(pDump, "m_nImpulse", p->m_nImpulse);
+	pBase->sub_1009b640(pDump, (int)"m_sTargetmodel", (int)(p->m_sTargetmodel ? p->m_sTargetmodel : g_106b8540));
+	pBase->sub_1009ba60(pDump, "m_flStepSoundTime", p->m_flStepSoundTime);
+	pBase->sub_1009ba60(pDump, "m_flSwimSoundTime", p->m_flSwimSoundTime);
+	pBase->sub_1009be00(pDump, "m_vecLadderNormal", p->m_vecLadderNormal);
+	pBase->sub_1009b980(pDump, "m_nLightLevel", p->m_nLightLevel);
+	pBase->sub_1009ba60(pDump, "m_flFlashTime", p->m_flFlashTime);
+	pBase->sub_1009b980(pDump, "m_nDrownDmgRate", p->m_nDrownDmgRate);
+	pBase->sub_1009bc30(pDump, "m_pViewWeapon", (int)p->m_pViewWeapon.Get());
+	pBase->sub_1009ba60(pDump, "m_flNextStealthUpdate", p->m_flNextStealthUpdate);
+	pBase->sub_1009ba60(pDump, "m_flStealthVisionScalar", p->m_flStealthVisionScalar);
+	pBase->sub_1009ba60(pDump, "m_flStealthVisionCone", p->m_flStealthVisionCone);
+	pBase->sub_1009ba60(pDump, "m_flStealthHearingDist", p->m_flStealthHearingDist);
+	pBase->sub_1009b980(pDump, "m_iDebugFlags", p->m_iDebugFlags);
+	pBase->sub_1009b980(pDump, "m_iDebugStealthFeat", p->m_iDebugStealthFeat);
+	pBase->sub_1009b980(pDump, "m_iDebugStealthLight", p->m_iDebugStealthLight);
+	pBase->sub_1009b980(pDump, "m_iDebugStealthSound", p->m_iDebugStealthSound);
+	pBase->sub_1009be00(pDump, "m_vForcedOrigin", p->m_vForcedOrigin);
+	pBase->sub_1009b8a0(pDump, (int)"m_bForceOrigin", p->m_bForceOrigin);
+	pBase->sub_1009ba60(pDump, "m_flTimeBase", p->m_flTimeBase);
+	pBase->sub_1009b640(pDump, (int)"m_LastCmd", (int)"-v-");
+	pBase->sub_1009ba60(pDump, "  lerp_msec", p->m_lerp_msec);
+	pBase->sub_1009ba60(pDump, "  frametime", p->m_frametime);
+	pBase->sub_1009bd10(pDump, "  viewangles", p->m_viewangles);
+	pBase->sub_1009ba60(pDump, "  forwardmove", p->m_forwardmove);
+	pBase->sub_1009ba60(pDump, "  sidemove", p->m_sidemove);
+	pBase->sub_1009ba60(pDump, "  upmove", p->m_upmove);
+	pBase->sub_1009b980(pDump, "  lightlevel", p->m_lightlevel);
+	pBase->sub_1009b980(pDump, "  buttons", p->m_buttons);
+	pBase->sub_1009b980(pDump, "  impulse", p->m_impulse);
+	pBase->sub_1009b980(pDump, "  weaponselect", p->m_weaponselect);
+	sub_103222c0(pDump);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015ee60 size=0x7
 #include "CBasePlayer.h"
 char CBasePlayer::vfunc406()
