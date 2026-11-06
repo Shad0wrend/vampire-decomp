@@ -1,4 +1,6 @@
 // CSoundEmitterSystemBase: sound emitter system (3 virtual slots; only the layout the constructor sets up is declared).
+// sub_101b31a0 is its own block; 0x101b4200 compiles a copy before itself in namespace block_101b4200 (one name,
+// one definition: link audit B).
 #pragma once
 #include "CUnknown1024b2d0.h"
 #include "utlrbtree.h"

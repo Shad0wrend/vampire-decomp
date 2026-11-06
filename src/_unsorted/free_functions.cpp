@@ -5731,7 +5731,6 @@ void CBaseEntity::sub_1003d490()
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
-#include "CBaseEntity_ext.h"
 
 extern CGlobalEntityList *g_10566458;
 struct EHandleP {
@@ -36282,7 +36281,6 @@ char CUnknown100b5190::sub_100b5190()
 
 // FUNCTION: 0x100b51b0 size=0xc0
 #include "CCollisionProperty.h"
-#include "CBaseEntity_ext.h"
 
 struct CStub10004ade
 {
@@ -91714,7 +91712,15 @@ int CSoundEmitterSystemBase::sub_101b4170(const char *pszName)
 // FUNCTION: 0x101b4200 size=0x27
 #include "CSoundEmitterSystemBase.h"
 
-char CSoundEmitterSystemBase::sub_101b31a0(int index)
+// the callee compiled before its caller in the same unit: a copy in the block's own namespace (one name, one
+// definition: the real sub_101b31a0 is its own block)
+namespace block_101b4200 {
+struct CSoundEmitterSystemBaseUnit : CSoundEmitterSystemBase
+{
+	char sub_101b31a0(int index);
+};
+
+char CSoundEmitterSystemBaseUnit::sub_101b31a0(int index)
 {
 	if (index < 0)
 		return 0;
@@ -91722,11 +91728,13 @@ char CSoundEmitterSystemBase::sub_101b31a0(int index)
 		return 0;
 	return 1;
 }
+}
+using namespace block_101b4200;
 
 // TARGET: CSoundEmitterSystemBase::sub_101b4200
 char CSoundEmitterSystemBase::sub_101b4200(int index)
 {
-	char bValid = sub_101b31a0(index);
+	char bValid = ((CSoundEmitterSystemBaseUnit *)this)->sub_101b31a0(index);
 	if (!bValid)
 		return bValid;
 	return *(char *)(*(char **)((char *)this + 0x54) + index * 0xe8 + 0x15);
@@ -97757,7 +97765,6 @@ int sub_101c9b30()
 #include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
-#include "CBaseEntity_ext.h"
 #include "CEntityVSlots.h"
 #include "CGlobalEntityList.h"
 
@@ -110413,7 +110420,7 @@ struct CUnknown101e9f10U : CUnknown101e9f10
 
 bool CUnknown101e9f10U::sub_101e9f10(int index)
 {
-	if (index != -1 && index < m_f04)
+	if (index > -1 && index < m_f04)
 		return true;
 	return false;
 }
@@ -110494,7 +110501,7 @@ struct CUnknown101f0e50U : CUnknown101f0e50
 
 bool CUnknown101f0e50U::sub_101e9f10(int index)
 {
-	if (index != -1 && index < m_f04)
+	if (index > -1 && index < m_f04)
 		return true;
 	return false;
 }

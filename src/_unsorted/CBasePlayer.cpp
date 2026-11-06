@@ -2496,7 +2496,6 @@ void CBasePlayer::vfunc21(int a)
 
 // FUNCTION: 0x10182f60 size=0x11
 #include "CBasePlayer.h"
-#include "CBasePlayer_ext.h"
 
 // TARGET: CBasePlayer::vfunc22
 void CBasePlayer::vfunc22(int a)
