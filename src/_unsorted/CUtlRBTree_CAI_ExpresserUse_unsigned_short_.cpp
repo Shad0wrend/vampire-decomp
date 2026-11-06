@@ -8,3 +8,11 @@
 #include "CAI_Expresser.h"
 static void (CUtlRBTree<CAI_ExpresserUse, unsigned short>::*s_LinkToParent)(unsigned short, unsigned short, bool) = &CUtlRBTree<CAI_ExpresserUse, unsigned short>::LinkToParent;
 // END FUNCTION
+
+// FUNCTION: 0x10313b20 size=0x366
+#include "vampire_all.h"
+// TARGET: ?RemoveNode@?$CUtlRBTree@UCAI_ExpresserUse@@G@@QAEXG@Z
+#include "utlrbtree.h"
+#include "CAI_Expresser.h"
+static void (CUtlRBTree<CAI_ExpresserUse, unsigned short>::*s_RemoveNode)(unsigned short) = &CUtlRBTree<CAI_ExpresserUse, unsigned short>::RemoveNode;
+// END FUNCTION
