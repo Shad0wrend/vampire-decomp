@@ -56403,6 +56403,31 @@ void CEnvLaser::sub_10101a90(void *pTrace)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10101b30 size=0x1a6
+#include "CEnvLaser.h"
+#include "CEntityVSlots.h"
+#include "UTIL_Trace.h"
+#include "globalvars.h"
+
+extern char g_106b8540[];
+
+void CEnvLaser::sub_10101b30()
+{
+	CGameTrace tr;
+	const char *pszName = m_pszEndEntity4f4;
+	if (!pszName)
+		pszName = g_106b8540;
+	CEntityVSlots *pEnd = sub_100bbdf0(pszName);
+	Vector vecEnd = *(Vector *)sub_100bb440();
+	if (pEnd)
+		vecEnd = *pEnd->slot217();
+	Vector *pOrigin = ((CEntityVSlots *)this)->slot217();
+	UTIL_TraceLine(*pOrigin, vecEnd, 0x200400b, 0, 0, &tr);
+	sub_10101a90(&tr);
+	m_flNextThink = gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10101d50 size=0x5c
 #include "CMessage.h"
 
