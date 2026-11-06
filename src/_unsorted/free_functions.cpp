@@ -194283,6 +194283,130 @@ char sub_1039f6f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039f7d0 size=0x3a6
+#include "g_1093bdd8.h"
+#include "UtlMem.h"
+#include "UtlVec8.h"
+#include "CUtlVector4.h"
+#include "CUtlVector16.h"
+#include "CUnknown10359c50.h"
+#include "g_1093ab68.h"
+
+extern "C" void __cdecl qsort(void *, unsigned int, unsigned int, int (__cdecl *)(const void *, const void *));
+extern "C" int __cdecl sub_102bec60(const void *, const void *);
+extern char g_109203cc[], g_109203d4[], g_109203dc[], g_10936c74[];
+extern char g_1093b3e0[], g_1093b3f8[], g_1093b410[], g_1093b3c4[];
+extern char g_1064a824[], g_1064a738[], g_1064a718[], g_1064a630[];
+extern char g_1064a5d0[];
+extern bool g_1064a580;
+extern const char *g_1064a588;
+extern const char g_10594488[], g_10600e78[], g_10577ca0[], g_10628c94[];
+
+struct VecU {
+	UtlMem mem;
+	int size;
+	int *elems;
+};
+
+struct Frame {
+	VecU a;
+	VecU b;
+	UtlVec8 sched;
+	UtlVec8Elem e;
+	UtlVec8 cond;
+	UtlVec8 task;
+	UtlVec8 squad;
+	const char *t1;
+	const char *t2;
+};
+
+class CUnknown10936b68 { public: bool sub_1030d850(const char *cls, int name, CUnknown10359c50 *reg); };
+extern CUnknown10936b68 g_10936b68;
+
+struct Elem { const char *name; int id; };
+
+void sub_1039f7d0()
+{
+	Frame f;
+	int i;
+
+	f.a.mem.sub_102c6a00(0, 0);
+	f.a.size = 0;
+	f.a.elems = f.a.mem.m_pMemory;
+	f.b.mem.sub_102c6b80(0, 0);
+	f.b.size = 0;
+	f.b.elems = f.b.mem.m_pMemory;
+	f.sched.sub_102c66f0(0, 0);
+	f.task.sub_102c66f0(0, 0);
+	f.cond.sub_102c66f0(0, 0);
+	f.squad.sub_102c66f0(0, 0);
+
+	f.e.a = (int)g_1064a824;
+	f.e.b = 0x157;
+	f.sched.sub_102c6a50(f.sched.m_Size, &f.e);
+	f.t1 = g_1064a738;
+	((CUtlVector4 *)&f.a)->sub_102c6920(f.a.size, (const int *)&f.t1);
+	f.e.a = (int)g_1064a718;
+	f.e.b = 0x158;
+	f.sched.sub_102c6a50(f.sched.m_Size, &f.e);
+	f.t2 = g_1064a630;
+	((CUtlVector4 *)&f.a)->sub_102c6920(f.a.size, (const int *)&f.t2);
+
+	if (g_1093bdd8.sub_1001153b(g_109203cc, g_1093b3e0) && g_1093bdf0.sub_1001153b(g_109203d4, g_1093b3f8))
+		g_1093be08.sub_1001153b(g_109203dc, g_1093b410);
+	g_1093bdb8.sub_1001153b(g_10936c74, g_1093b3c4);
+
+	if (f.sched.m_Size) qsort(f.sched.m_pMemory, f.sched.m_Size, 8, sub_102bec60);
+	if (f.task.m_Size) qsort(f.task.m_pMemory, f.task.m_Size, 8, sub_102bec60);
+	if (f.cond.m_Size) qsort(f.cond.m_pMemory, f.cond.m_Size, 8, sub_102bec60);
+	if (f.squad.m_Size) qsort(f.squad.m_pMemory, f.squad.m_Size, 8, sub_102bec60);
+
+	for (i = 0; i < f.sched.m_Size; i++) {
+		const char *c = g_1064a588;
+		int id = ((Elem *)f.sched.m_pMemory)[i].id;
+		const char *nm = ((Elem *)f.sched.m_pMemory)[i].name;
+		if (!g_1093bdd8.sub_102ea130(nm, id, g_10594488, c)) goto fail;
+	}
+	for (i = 0; i < f.task.m_Size; i++) {
+		const char *c = g_1064a588;
+		int id = ((Elem *)f.task.m_pMemory)[i].id;
+		const char *nm = ((Elem *)f.task.m_pMemory)[i].name;
+		if (!g_1093bdf0.sub_102ea130(nm, id, g_10600e78, c)) goto fail;
+	}
+	for (i = 0; i < f.cond.m_Size; i++) {
+		const char *c = g_1064a588;
+		int id = ((Elem *)f.cond.m_pMemory)[i].id;
+		const char *nm = ((Elem *)f.cond.m_pMemory)[i].name;
+		if (!g_1093be08.sub_102ea130(nm, id, g_10577ca0, c)) goto fail;
+	}
+	for (i = 0; i < f.squad.m_Size; i++)
+		if (!g_1093bdb8.sub_102ea130(((Elem *)f.squad.m_pMemory)[i].name, ((Elem *)f.squad.m_pMemory)[i].id, g_10628c94, g_1064a588)) goto fail;
+	for (i = 0; i < f.b.size; i++)
+		((void (*)())f.b.mem.m_pMemory[i])();
+	for (i = 0; i < f.a.size && g_1064a580; i++)
+		g_1064a580 = g_10936b68.sub_1030d850(g_1064a5d0, f.a.mem.m_pMemory[i], &g_1093bdd8);
+
+	f.squad.sub_102c8a90();
+	((CUtlVector16 *)&f.cond)->sub_102c8b60();
+	((UtlMem *)&f.cond)->sub_102c8c00();
+	((CUtlVector16 *)&f.task)->sub_102c8b60();
+	((UtlMem *)&f.task)->sub_102c8c00();
+	((CUtlVector16 *)&f.sched)->sub_102c8b60();
+	((UtlMem *)&f.sched)->sub_102c8c00();
+	goto tail;
+fail:
+	f.squad.sub_102c8a90();
+	f.cond.sub_102c8a90();
+	f.task.sub_102c8a90();
+	f.sched.sub_102c8a90();
+tail:
+	((CUtlVector16 *)&f.b)->sub_102c8bb0();
+	((UtlMem *)&f.b)->sub_102c8c40();
+	((CUtlVector16 *)&f.a)->sub_102c8b10();
+	((UtlMem *)&f.a)->sub_1021e540();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039fef0 size=0x43
 #include "CNPC_VNewscaster.h"
 
