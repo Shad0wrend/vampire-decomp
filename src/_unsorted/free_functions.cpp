@@ -23041,6 +23041,130 @@ void sub_1007a390(ISceneTokenProcessor *tokenizer, CChoreoEventRampView *e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007a5b0 size=0x470
+#include "CLogicAuto.h"
+#include "utlrbtree.h"
+#include <string.h>
+#include <stdlib.h>
+#include "utlvector.h"
+#include "CFlexAnimationTrack.h"
+
+struct ISceneTokenProcessor
+{
+	virtual const char *CurrentToken();
+	virtual bool GetToken(bool crossline);
+	virtual void vfunc2();
+	virtual void Error(const char *fmt, ...);
+};
+
+struct FlexTrackSetters
+{
+	void sub_100740f0(bool b);
+	void sub_10074a30(bool b);
+	void sub_10074a70(float f);
+	void sub_10074a90(float f);
+};
+
+struct CChoreoEventX
+{
+	void sub_10077650();
+	void sub_10077730(bool b);
+	float sub_10075f10();
+	float sub_10075e70();
+	FlexTrackSetters *sub_10077490(const char *name);
+};
+
+// TARGET: sub_1007a5b0
+void sub_1007a5b0(ISceneTokenProcessor *tokenizer, CChoreoEventX *e, bool removeold)
+{
+	if (removeold) {
+		e->sub_10077650();
+		e->sub_10077730(false);
+	}
+	bool samples_use_realtime = false;
+	tokenizer->GetToken(true);
+	float endtime = e->sub_10075f10();
+	float starttime = e->sub_10075e70();
+	float event_time = endtime - starttime;
+	if (!_stricmp(tokenizer->CurrentToken(), "samples_use_time")) {
+		samples_use_realtime = true;
+		tokenizer->GetToken(true);
+	}
+	if (_stricmp(tokenizer->CurrentToken(), "{"))
+		tokenizer->Error("expecting {\n");
+	while (1) {
+		tokenizer->GetToken(true);
+		if (strlen(tokenizer->CurrentToken()) <= 0) {
+			tokenizer->Error("expecting flex animation data\n");
+			break;
+		}
+		if (!_stricmp(tokenizer->CurrentToken(), "}"))
+			break;
+		char flexcontroller[0x80];
+		strcpy(flexcontroller, tokenizer->CurrentToken());
+		bool active = true;
+		bool combo = false;
+		float range_min = 0.0f;
+		float range_max = 1.0f;
+		tokenizer->GetToken(true);
+		if (!_stricmp(tokenizer->CurrentToken(), "disabled")) {
+			active = false;
+			tokenizer->GetToken(true);
+		}
+		if (!_stricmp(tokenizer->CurrentToken(), "combo")) {
+			combo = true;
+			tokenizer->GetToken(true);
+		}
+		if (!_stricmp(tokenizer->CurrentToken(), "range")) {
+			tokenizer->GetToken(false);
+			range_min = atof(tokenizer->CurrentToken());
+			tokenizer->GetToken(false);
+			range_max = atof(tokenizer->CurrentToken());
+			tokenizer->GetToken(true);
+		}
+		CUtlVector<CExpressionSampleStub> samples[2];
+		for (int samplecount = 0; samplecount < (combo ? 2 : 1); samplecount++) {
+			if (_stricmp(tokenizer->CurrentToken(), "{"))
+				tokenizer->Error("expecting {\n");
+			while (1) {
+				tokenizer->GetToken(true);
+				if (strlen(tokenizer->CurrentToken()) <= 0) {
+					tokenizer->Error("expecting flex animation data\n");
+					break;
+				}
+				if (!_stricmp(tokenizer->CurrentToken(), "}"))
+					break;
+				float time = (float)atof(tokenizer->CurrentToken());
+				tokenizer->GetToken(false);
+				float value = (float)atof(tokenizer->CurrentToken());
+				int idx = samples[samplecount].AddToTail();
+				CExpressionSampleStub *s = &samples[samplecount][idx];
+				if (samples_use_realtime)
+					s->m_flTime = time;
+				else
+					s->m_flTime = time * event_time;
+				s->m_flValue = value;
+			}
+			if (combo && samplecount == 0)
+				tokenizer->GetToken(true);
+		}
+		if (active || samples[0].Count() >= 1) {
+			FlexTrackSetters *track = e->sub_10077490(flexcontroller);
+			track->sub_100740f0(active);
+			track->sub_10074a30(combo);
+			track->sub_10074a70(range_min);
+			track->sub_10074a90(range_max);
+			for (int t = 0; t < (combo ? 2 : 1); t++) {
+				for (int i = 0; i < samples[t].Count(); i++) {
+					CExpressionSampleStub *sample = &samples[t][i];
+					((CFlexAnimationTrack *)track)->sub_100746e0(sample->m_flTime, sample->m_flValue, t);
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007b7b0 size=0x17a
 #include "CUnknown1007b7b0.h"
 #include "CUnknown1007bb30.h"
