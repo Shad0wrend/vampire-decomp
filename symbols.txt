@@ -3759,6 +3759,7 @@
 0x100066f4 func   ?vfunc0@CTEEnergySplash@@UAEHXZ CTEEnergySplash::vfunc0
 0x100066f9 func   ?sub_100b4610@CUtlMemory16@@QAEPAV1@HH@Z CUtlMemory16::sub_100b4610
 0x10006703 func   ?vfunc117@CBaseEntity@@UAEHXZ CBaseEntity::vfunc117
+0x10006708 func   ?sub_1003a090@CBaseEntity@@QAEXXZ CBaseEntity::sub_1003a090
 0x10006712 func   ?sub_10198310@@YAPAUPyObj@@PAX0@Z sub_10198310
 0x10006717 func   ?sub_10073a50@CUnknown10076da0Entry@@QAEPAU1@PAUCUnknown10076da0@@PBDH@Z CUnknown10076da0Entry::sub_10073a50
 0x1000671c func   ?sub_1033d7d0@CUnknown1033d7d0@@QAEXPAUinputdata_t@@@Z CUnknown1033d7d0::sub_1033d7d0

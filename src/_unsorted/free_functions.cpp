@@ -5362,6 +5362,117 @@ done:
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003a090 size=0x3e5
+#include "CWeaponThrown_Grenade_Frag.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CVProfile.h"
+#include "ScopeTrace.h"
+#include "CGameTrace.h"
+#include "CUnknown100353c0.h"
+
+extern Vector g_1070d1b0;
+extern float g_104454c4;
+
+struct PhysCustomView
+{
+	EVS(0) EVS(1) EVS(2) EVS(3) EVS(4) EVS(5) EVS(6) EVS(7) EVS(8) EVS(9)
+	EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5)
+	EVS(60) EVS(61) EVS(62) EVS(63)
+	virtual void slot64(const float *pAngles);
+	EVS(65) EVS(66) EVS(67) EVS(68) EVS(69)
+	EVS10(7) EVS10(8) EVS10(9) EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15) EVS10(16) EVS10(17) EVS10(18) EVS10(19)
+	EVS(200) EVS(201) EVS(202) EVS(203) EVS(204) EVS(205) EVS(206) EVS(207) EVS(208)
+	virtual CEntityVSlots *slot209();
+	EVS(210) EVS(211) EVS(212) EVS(213) EVS(214) EVS(215) EVS(216) EVS(217) EVS(218) EVS(219)
+	virtual Vector *slot220();
+	virtual Vector *slot221();
+	EVS(222) EVS(223) EVS(224) EVS(225) EVS(226) EVS(227) EVS(228) EVS(229)
+	EVS(230) EVS(231) EVS(232) EVS(233)
+	virtual void *slot234(void *pResult, const Vector *pDelta);
+	EVS(235) EVS(236) EVS(237)
+	virtual void slot238(Vector *pPos, Vector *pVel, Vector *pAng, Vector *pAngVel);
+};
+
+struct CTraceCopy : CUnknown100353c0
+{
+	float m_f38;
+	const char *m_p3c;
+	int m_d40;
+	int m_d44;
+	short m_w48;
+	int m_p4c;
+	int m_d50;
+
+	CTraceCopy(const CTraceCopy &o)
+	{
+		sub_100353c0(&o);
+		m_f38 = o.m_f38;
+		m_p3c = o.m_p3c;
+		m_d40 = o.m_d40;
+		m_d44 = o.m_d44;
+		m_w48 = o.m_w48;
+		m_p4c = o.m_p4c;
+		m_d50 = o.m_d50;
+	}
+};
+
+// TARGET: CBaseEntity::sub_1003a090
+void CBaseEntity::sub_1003a090()
+{
+	ScopeTrace trace("CBaseEntity::PhysicsCustom", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	g_109f3648->EnterScope("CBaseEntity_PhysicsCustom", 0, "Unaccounted", false);
+	sub_1003e880();
+	if (!sub_10033f60(0))
+	{
+		g_109f3648->ExitScopeCall();
+		return;
+	}
+	if ((unsigned char)(m_flags268 >> 12) & 1)
+		sub_100b1d10();
+	PhysCustomView *v = (PhysCustomView *)this;
+	if (m_vecVelocity3bc.z > g_104454c4 || !v->slot209() || (((CBaseEntity *)v->slot209())->sub_100b3700() & 0x8002080))
+		sub_100b3640(1);
+	Vector vecNewPosition = *v->slot220();
+	if ((unsigned char)(m_flags268 >> 12) & 1)
+		sub_100b1d10();
+	Vector vecNewVelocity = m_vecVelocity3bc;
+	Vector angNewAngles = *v->slot221();
+	Vector angNewAngVelocity = *(Vector *)m_angVel3c8;
+	v->slot238(&vecNewPosition, &vecNewVelocity, &angNewAngles, &angNewAngVelocity);
+	sub_100b2770(vecNewVelocity);
+	v->slot64((const float *)&angNewAngles);
+	*(Vector *)m_angVel3c8 = angNewAngVelocity;
+	Vector move;
+	VectorSubtract(vecNewPosition, *v->slot220(), move);
+	char tmp[0x54];
+	CTraceCopy tr = *(CTraceCopy *)v->slot234(tmp, &move);
+	sub_1003eb50();
+	if (((char *)&tr)[0x36])
+	{
+		sub_100b2770(g_1070d1b0);
+		*(Vector *)m_angVel3c8 = *(Vector *)g_1070d9d0;
+		g_109f3648->ExitScopeCall();
+		return;
+	}
+	if (*(char *)(m_pEdict2e0 + 0x4c))
+	{
+		g_109f3648->ExitScope();
+		return;
+	}
+	sub_1003f4d0();
+	g_109f3648->ExitScopeInlined();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003b850 size=0x36
 #include "Vector.h"
 
