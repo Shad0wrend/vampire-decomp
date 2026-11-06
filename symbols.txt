@@ -8160,6 +8160,7 @@
 0x1000ccfc func   ?vfunc117@CMomentaryRotButton@@UAEEXZ CMomentaryRotButton::vfunc117
 0x1000cd01 func   ?sub_102c34b0@CFlagOwnerView@@QAEXPAUCFlagArgView@@@Z CFlagOwnerView::sub_102c34b0
 0x1000cd06 func   ?sub_10196de0@@YAPAXPAX0@Z sub_10196de0
+0x1000cd0b func   ?RemoveRebalance@?$CUtlRBTree@UCRBTree16Entry8B@@G@@QAEXG@Z CUtlRBTree<CRBTree16Entry8B,unsigned short>::RemoveRebalance
 0x1000cd10 func   ?vfunc5@CBaseNetworkable@@UAEHXZ CBaseNetworkable::vfunc5
 0x1000cd15 func   ?vfunc124@CScriptedTarget@@UAEHXZ CScriptedTarget::vfunc124
 0x1000cd1a func   ?sub_10206190@CUnknown10206190@@QAEXXZ CUnknown10206190::sub_10206190
