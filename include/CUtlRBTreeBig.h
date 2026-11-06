@@ -41,5 +41,51 @@ public:
 	unsigned short sub_1025c800(unsigned short parent, bool leftchild);	// "CUtlRBTree::InsertAt": NewNode (free list head, else the memory grows by one node and the next unused index is taken), constructs the element, links it below parent (the root when parent is InvalidIndex()), InsertRebalance, ++m_NumElements; returns the node index
 	Links_t &sub_1025cb70(unsigned short i);	// "CUtlRBTree::Links" (out of line, with the sentinel static; stub 0x10007fdb)
 	void sub_1025d4b0(unsigned short elem);	// "CUtlRBTree::RotateLeft"
+	unsigned short Parent(unsigned short i) { return sub_1025cb70(i).m_Parent; }
+	unsigned short LeftChild(unsigned short i) { return sub_1025cb70(i).m_Left; }
+	unsigned short RightChild(unsigned short i) { return sub_1025cb70(i).m_Right; }
+	unsigned short Color(unsigned short i) { return sub_1025cb70(i).m_Tag; }
+	void SetParent(unsigned short i, unsigned short v) { m_pElements[i].m_Links.m_Parent = v; }
+	void SetLeftChild(unsigned short i, unsigned short v) { m_pElements[i].m_Links.m_Left = v; }
+	void SetRightChild(unsigned short i, unsigned short v) { m_pElements[i].m_Links.m_Right = v; }
+	void SetColor(unsigned short i, unsigned short v) { m_pElements[i].m_Links.m_Tag = v; }
+	void RotLeft(unsigned short elem)
+	{
+		unsigned short rightchild = RightChild(elem);
+		SetRightChild(elem, LeftChild(rightchild));
+		if (LeftChild(rightchild) != InvalidIndex())
+			SetParent(LeftChild(rightchild), elem);
+		if (rightchild != InvalidIndex())
+			SetParent(rightchild, Parent(elem));
+		if (elem != m_Root) {
+			if (sub_1025d2b0(elem))
+				SetLeftChild(Parent(elem), rightchild);
+			else
+				SetRightChild(Parent(elem), rightchild);
+		} else
+			m_Root = rightchild;
+		SetLeftChild(rightchild, elem);
+		if (elem != InvalidIndex())
+			SetParent(elem, rightchild);
+	}
+	void RotRight(unsigned short elem)
+	{
+		unsigned short leftchild = LeftChild(elem);
+		SetLeftChild(elem, RightChild(leftchild));
+		if (RightChild(leftchild) != InvalidIndex())
+			SetParent(RightChild(leftchild), elem);
+		if (leftchild != InvalidIndex())
+			SetParent(leftchild, Parent(elem));
+		if (elem != m_Root) {
+			if (sub_1025d3a0(elem))
+				SetRightChild(Parent(elem), leftchild);
+			else
+				SetLeftChild(Parent(elem), leftchild);
+		} else
+			m_Root = leftchild;
+		SetRightChild(leftchild, elem);
+		if (elem != InvalidIndex())
+			SetParent(elem, leftchild);
+	}
 	void sub_1025cbf0(unsigned short i);	// "CUtlRBTree::InsertRebalance" (stub 0x1000cc9d)
 };
