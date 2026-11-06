@@ -155425,6 +155425,106 @@ char sub_102c7eb0() {
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c7f10 size=0x2b8
+#include "UtlMem.h"
+#include "UtlVec8.h"
+#include "CUtlVector16.h"
+#include "CUnknown10359c50.h"
+#include "CUnknown10936b68.h"
+
+extern "C" void __cdecl qsort(void *, unsigned int, unsigned int, int (__cdecl *)(const void *, const void *));
+extern "C" int __cdecl sub_102bec60(const void *, const void *);
+int sub_104124b0(const char *pszName);
+void sub_1025d700(const char *pszName, int id);
+extern int g_10925390;
+extern int g_10925388;
+extern CUnknown10359c50 g_10925398;
+extern CUnknown10359c50 g_109253b0;
+extern CUnknown10359c50 g_109253c8;
+extern char g_109203cc[], g_1090ff08[], g_109203d4[], g_1090ff20[], g_109203dc[], g_1090ff38[];
+extern const char *g_1060187c;
+extern char g_10601874;
+extern CUnknown10936b68 g_10936b68;
+
+struct SElem { const char *name; int id; };
+struct SVec4 { UtlMem m; int size; int *elem; };
+struct SLocals { SVec4 funcs; SVec4 ids; UtlVec8 task; UtlVec8 sched; UtlVec8 cond; };
+
+// TARGET: sub_102c7f10
+void sub_102c7f10()
+{
+	SLocals L;
+	int i;
+
+	L.ids.m.sub_102c6a00(0, 0);
+	L.ids.size = 0;
+	L.ids.elem = L.ids.m.m_pMemory;
+	L.funcs.m.sub_102c6b80(0, 0);
+	L.funcs.size = 0;
+	L.funcs.elem = L.funcs.m.m_pMemory;
+	L.sched.sub_102c66f0(0, 0);
+	L.task.sub_102c66f0(0, 0);
+	L.cond.sub_102c66f0(0, 0);
+
+	g_10925390 = sub_104124b0("ACT_RANGE_AIM_SMG1_LOW");
+	sub_1025d700("ACT_RANGE_AIM_SMG1_LOW", g_10925390);
+	g_10925388 = sub_104124b0("ACT_RANGE_AIM_PISTOL_LOW");
+	sub_1025d700("ACT_RANGE_AIM_PISTOL_LOW", g_10925388);
+
+	if (g_10925398.sub_1001153b(g_109203cc, g_1090ff08))
+	{
+		if (g_109253b0.sub_1001153b(g_109203d4, g_1090ff20))
+			g_109253c8.sub_1001153b(g_109203dc, g_1090ff38);
+	}
+
+	if (L.sched.m_Size) qsort(L.sched.m_pMemory, L.sched.m_Size, 8, sub_102bec60);
+	if (L.task.m_Size) qsort(L.task.m_pMemory, L.task.m_Size, 8, sub_102bec60);
+	if (L.cond.m_Size) qsort(L.cond.m_pMemory, L.cond.m_Size, 8, sub_102bec60);
+
+	for (i = 0; i < L.sched.m_Size; i++)
+	{
+		const char *c = g_1060187c;
+		int id = ((SElem *)L.sched.m_pMemory)[i].id;
+		const char *nm = ((SElem *)L.sched.m_pMemory)[i].name;
+		if (!g_10925398.sub_102ea130(nm, id, "schedule", c)) goto fail;
+	}
+	for (i = 0; i < L.task.m_Size; i++)
+	{
+		const char *c = g_1060187c;
+		int id = ((SElem *)L.task.m_pMemory)[i].id;
+		const char *nm = ((SElem *)L.task.m_pMemory)[i].name;
+		if (!g_109253b0.sub_102ea130(nm, id, "task", c)) goto fail;
+	}
+	for (i = 0; i < L.cond.m_Size; i++)
+	{
+		const char *c = g_1060187c;
+		int id = ((SElem *)L.cond.m_pMemory)[i].id;
+		const char *nm = ((SElem *)L.cond.m_pMemory)[i].name;
+		if (!g_109253c8.sub_102ea130(nm, id, "condition", c)) goto fail;
+	}
+	for (i = 0; i < L.funcs.size; i++)
+		((void (*)())L.funcs.m.m_pMemory[i])();
+	for (i = 0; i < L.ids.size && g_10601874; i++)
+		g_10601874 = g_10936b68.sub_1030d850("CAI_StandoffBehavior", (void *)L.ids.m.m_pMemory[i], &g_10925398);
+	L.cond.sub_102c8a90();
+	((CUtlVector16 *)&L.task)->sub_102c8b60();
+	((UtlMem *)&L.task)->sub_102c8c00();
+	((CUtlVector16 *)&L.sched)->sub_102c8b60();
+	((UtlMem *)&L.sched)->sub_102c8c00();
+done:
+	((CUtlVector16 *)&L.funcs)->sub_102c8bb0();
+	L.funcs.m.sub_102c8c40();
+	((CUtlVector16 *)&L.ids)->sub_102c8b10();
+	L.ids.m.sub_1021e540();
+	return;
+fail:
+	L.cond.sub_102c8a90();
+	L.task.sub_102c8a90();
+	L.sched.sub_102c8a90();
+	goto done;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c89e0 size=0x1a
 namespace lifted {
 extern int g_1060190c;
