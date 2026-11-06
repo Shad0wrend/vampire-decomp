@@ -4621,3 +4621,81 @@ void CEntView184::sub_10267260(const float *pOrigin, const void *pOther, int mod
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x10268ef0 size=0x30b
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CBaseEntity.h"
+#include "vampire.h"
+#include "CEntityVSlots.h"
+#include "CGameTrace.h"
+#include "Ray_t.h"
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738964.h"
+#include "engineiface.h"
+
+void sub_101cfe10(void *pTrace, int hitgroup, int a);
+void sub_10146570(const float *a, const float *b, int c, int d, int e, int f, float g);
+
+struct DmgInfoView { int m_n0; int m_nDamage; int m_n8; int m_nc; unsigned char m_bType; };
+
+// TARGET: CBaseEntity::vfunc146
+void CBaseEntity::vfunc146(void *pInfo, const Vector &vecDir, void *pTrace)
+{
+	CEntityVSlots *pSlots = (CEntityVSlots *)this;
+	DmgInfoView *info = (DmgInfoView *)pInfo;
+	CGameTrace *tr = (CGameTrace *)pTrace;
+	if (pSlots->slot145() == -1 || pSlots->slot145() == 0x14)
+		return;
+	float flDamage = (float)info->m_nDamage;
+	if (flDamage == 0.0f)
+		return;
+	if ((info->m_bType & 0xc7) == 0)
+		return;
+	if (!pSlots->slot158())
+	{
+		if (*(int *)((char *)this + 0x208) <= 0)
+			return;
+		*(int *)((char *)this + 0x208) -= 1;
+	}
+	int nShots = 0;
+	if (flDamage < 10.0f)
+	{
+		flDamage = 0.1f;
+		nShots = 1;
+	}
+	else if (flDamage < 25.0f)
+	{
+		flDamage = 0.2f;
+		nShots = 2;
+	}
+	else
+	{
+		flDamage = 0.3f;
+		nShots = 4;
+	}
+	for (int i = nShots; i > 0; i--)
+	{
+		Vector vecNeg;
+		vecNeg.x = vecDir.x * -1.0f;
+		vecNeg.y = vecDir.y * -1.0f;
+		vecNeg.z = vecDir.z * -1.0f;
+		Vector vecNew;
+		vecNew.x = enginerandom->vfunc1(-flDamage, flDamage) + vecNeg.x;
+		vecNew.y = enginerandom->vfunc1(-flDamage, flDamage) + vecNeg.y;
+		vecNew.z = enginerandom->vfunc1(-flDamage, flDamage) + vecNeg.z;
+		Vector vecEnd;
+		vecEnd = vecNew * -172.0f;
+		vecEnd = vecEnd + *(Vector *)tr->m_endpos;
+		Ray_t ray;
+		ray.Init(*(Vector *)tr->m_endpos, vecEnd);
+		CTraceFilterSimple filter(this, 0);
+		CGameTrace result;
+		g_1070b254->vfunc4(&ray, 0x400b, (CTraceFilterNoCharacterCollide *)&filter, &result);
+		if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+			sub_10146570(result.m_startpos, result.m_endpos, 0xff, 0, 0, 1, -1.0f);
+		if (result.m_fraction != 1.0)
+			sub_101cfe10(&result, pSlots->slot145(), 1);
+	}
+}
+// END FUNCTION
