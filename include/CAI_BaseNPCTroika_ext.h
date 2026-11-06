@@ -1,4 +1,5 @@
 	bool sub_102968f0(CAI_Hint *pHint, CBaseEntity *pTarget);
+	int vfunc461();	// slot 461 (plain member): state transition pick
 	virtual int vfunc437();	// slot 437 (0x102ae920, SelectSchedule-like): returns the schedule id; stamps the source file / line at +0x1b30 / +0x1b34
 	void vfunc435(void *pSchedule);	// slot 435 "OnScheduleChange" (0x102a0940, ret 4): CAI_BaseNPC::vfunc435(pSchedule), then the interesting-place / move-hint / grapple reset; clears the flags at +0x14b8/+0x14bc and +0x5d8c as described in the scout note
 	void sub_1029c010();	// slot 76 "CAI_BaseNPCTroika::DrawDebugTextOverlays" (0x1029c010, this in ecx, no args, void): prints the expression / gesture / sequence / disposition / scene / eye-target / dialog debug text; with +0x128 == 0 tail-calls CAI_BaseNPC::vfunc76 (0x102775e0)
