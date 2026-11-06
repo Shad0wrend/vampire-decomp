@@ -7034,6 +7034,7 @@
 0x1000b2c6 func   ?vfunc0@CPython_SaveRestoreBlockHandler@@UAEHXZ CPython_SaveRestoreBlockHandler::vfunc0
 0x1000b2cb func   ?sub_10407c40@CKeyringUnit@@QAEXPBD0@Z CKeyringUnit::sub_10407c40
 0x1000b2d0 func   ?sub_10341850@@YI_NPADHH@Z sub_10341850
+0x1000b2d5 func   ?Links@?$CUtlRBTree@UCUtlMap16Pair@@G@@QBEABULinks_t@1@G@Z CUtlRBTree<CUtlMap16Pair,unsigned short>::Links
 0x1000b2d5 func   ?sub_10048960@CUtlRBTree16Unit@@QBEPBULinks_t@CUtlRBTree16@@G@Z CUtlRBTree16Unit::sub_10048960
 0x1000b2da func   ??0CCollisionEvent@@QAE@XZ CCollisionEvent::CCollisionEvent
 0x1000b2df func   ?vfunc5@CItemGLillyDiary@@QAEPAV1@I@Z CItemGLillyDiary::vfunc5
