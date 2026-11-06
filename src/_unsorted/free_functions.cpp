@@ -30637,6 +30637,42 @@ int sub_10097e50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10098120 size=0x559
+#include "SendTable.h"
+SendProp sub_10246af0(const char *name, int offset, int size, int bits, int flags, int a, int b);
+SendProp sub_10246510(const char *name, int offset, int size, int bits, int flags, float lo, float hi, void *proxy);
+SendProp sub_10246dc0(const char *name, int a, void *pTable, void *proxy);
+extern void *g_1054d524;
+extern const char *g_1055166c;
+extern SendTable g_106ce7fc;
+void sub_102464d0();
+void sub_10246300();
+#define P_SEQ(n, o) sub_10246af0(n, o, 4, 0xb, 1, 0, 0)
+#define P_CYC(n, o) sub_10246510(n, o, 4, 0xa, 8, 0.0f, 1.0f, (void *)sub_10246300)
+#define P_RATE(n, o) sub_10246510(n, o, 4, 8, 0x10, -4.0f, 12.0f, (void *)sub_10246300)
+#define P_WGT(n, o) sub_10246510(n, o, 4, 8, 0, 0.0f, 1.0f, (void *)sub_10246300)
+#define P_LATCH(n, o) sub_10246af0(n, o, 4, 2, 1, 0, 0)
+#define P_FADE(n, o) sub_10246510(n, o, 4, 8, 8, 0.0f, 4.0f, (void *)sub_10246300)
+#define P_PIDX(n, o) sub_10246af0(n, o, 4, 4, 1, 0, 0)
+#define P_PVAL(n, o) sub_10246510(n, o, 4, 8, 8, 0.0f, 1.0f, (void *)sub_10246300)
+int sub_10098120()
+{
+	static SendProp props[36] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246dc0("baseclass", 0, g_1054d524, (void *)sub_102464d0),
+		P_SEQ("sequence0", 0x73c), P_CYC("cycle0", 0x740), P_RATE("playbackrate0", 0x744), P_WGT("weight0", 0x748),
+		P_SEQ("sequence1", 0x76c), P_CYC("cycle1", 0x770), P_RATE("playbackrate1", 0x774), P_WGT("weight1", 0x778),
+		P_SEQ("sequence2", 0x79c), P_CYC("cycle2", 0x7a0), P_RATE("playbackrate2", 0x7a4), P_WGT("weight2", 0x7a8),
+		P_SEQ("sequence3", 0x7cc), P_CYC("cycle3", 0x7d0), P_RATE("playbackrate3", 0x7d4), P_WGT("weight3", 0x7d8),
+		P_SEQ("flinchSequence0", 0x7f4), P_LATCH("flinchLatch0", 0x7f8), P_FADE("flinchFadeIn0", 0x7fc), P_FADE("flinchFadeOut0", 0x800), P_PIDX("flinchPoseParamIndex0", 0x804), P_PVAL("flinchPoseParamValue0", 0x808),
+		P_SEQ("flinchSequence1", 0x810), P_LATCH("flinchLatch1", 0x814), P_FADE("flinchFadeIn1", 0x818), P_FADE("flinchFadeOut1", 0x81c), P_PIDX("flinchPoseParamIndex1", 0x820), P_PVAL("flinchPoseParamValue1", 0x824),
+		P_SEQ("flinchSequence2", 0x82c), P_LATCH("flinchLatch2", 0x830), P_FADE("flinchFadeIn2", 0x834), P_FADE("flinchFadeOut2", 0x838), P_PIDX("flinchPoseParamIndex2", 0x83c), P_PVAL("flinchPoseParamValue2", 0x840),
+	};
+	g_106ce7fc.sub_10247240(&props[1], 0x23, g_1055166c);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10098810 size=0xb
 #include "CUnknown10098810.h"
 CUnknown10098810 *CUnknown10098810::sub_10098810()
