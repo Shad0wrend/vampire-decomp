@@ -4034,6 +4034,7 @@
 0x10006da7 func   ?sub_100c01d0@CFuncRotating@@QAEXXZ CFuncRotating::sub_100c01d0
 0x10006dac func   ?vfunc110@CMultiSource@@UAE_NPBD0@Z CMultiSource::vfunc110
 0x10006db1 func   ?sub_100f0e70@@YIXPAD@Z sub_100f0e70
+0x10006db6 func   ?sub_1003f920@CBaseEntity@@QAEXXZ CBaseEntity::sub_1003f920
 0x10006dbb func   ?sub_100b8b50@CBatSwarm@@QAEXXZ CBatSwarm::sub_100b8b50
 0x10006dc0 func   ?vfunc81@CItemMMoneyEnvelope@@QAEHXZ CItemMMoneyEnvelope::vfunc81
 0x10006dc5 func   ?sub_1021a5b0@CPropHacking@@QAEXPAVCBaseEntity@@@Z CPropHacking::sub_1021a5b0

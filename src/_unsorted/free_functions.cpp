@@ -6651,6 +6651,127 @@ void CBaseEntity::sub_1003f810(float flFrameTime)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003f920 size=0x50a
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CWeaponThrown_Grenade_Frag.h"
+#include "ScopeTrace.h"
+#include "CVProfile.h"
+#include "CUnknown1003ff80.h"
+#include "CUnknown100353c0.h"
+#include "CGameTrace.h"
+#include "CEntityVSlots.h"
+
+extern Vector g_1070d1b0;
+extern float g_104454c4;
+
+struct PhysObjView
+{
+	EVS(0) EVS(1) EVS(2) EVS(3) EVS(4) EVS(5) EVS(6) EVS(7) EVS(8) EVS(9)
+	EVS10(1) EVS10(2) EVS10(3)
+	EVS(40) EVS(41) EVS(42) EVS(43) EVS(44) EVS(45)
+	virtual void slot46(Vector *pOrigin, Vector *pAngles, int a, int b);
+};
+
+struct TossTrace : CUnknown100353c0
+{
+	float m_f38;
+	const char *m_p3c;
+	int m_d40;
+	int m_d44;
+	short m_w48;
+	int m_p4c;
+	int m_d50;
+
+	TossTrace() { ((CUnknown1003ff80 *)this)->sub_1003ff80(); }
+	TossTrace &operator=(const TossTrace &o)
+	{
+		sub_100353c0(&o);
+		m_f38 = o.m_f38;
+		m_p3c = o.m_p3c;
+		m_d40 = o.m_d40;
+		m_d44 = o.m_d44;
+		m_w48 = o.m_w48;
+		m_p4c = o.m_p4c;
+		m_d50 = o.m_d50;
+		return *this;
+	}
+};
+
+inline void TossAddYZ(const Vector &a, const Vector &b, Vector &c)
+{
+	c.y = a.y + b.y;
+	c.z = a.z + b.z;
+}
+
+// TARGET: CBaseEntity::sub_1003f920
+void CBaseEntity::sub_1003f920()
+{
+	ScopeTrace trace0("CBaseEntity::PhysicsToss", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	g_109f3648->EnterScope("CBaseEntity_PhysicsToss", 0, "Unaccounted", false);
+	TossTrace trace;
+	Vector move;
+	PhysicsCheckWater();
+	if (!sub_10033f60(0)) {
+		g_109f3648->ExitScopeCall();
+		return;
+	}
+	if (m_vel3d4[2] > g_104454c4 || !((CEntityVSlots *)this)->slot209() || (((CBaseEntity *)((CEntityVSlots *)this)->slot209())->sub_100b3700() & 0x8002080))
+		sub_100b3640(1);
+	if ((sub_100b3700() & 1) && ((Vector *)m_vel3d4)->sub_1003b850(g_1070d1b0)) {
+		((int *)m_angVel3c8)[0] = ((int *)g_1070d9d0)[0];
+		((int *)m_angVel3c8)[1] = ((int *)g_1070d9d0)[1];
+		((int *)m_angVel3c8)[2] = ((int *)g_1070d9d0)[2];
+		if (m_vecBaseVelocity.sub_1003b850(g_1070d1b0)) {
+			g_109f3648->ExitScopeCall();
+			return;
+		}
+	}
+	sub_1003eb50();
+	if (((CEntityVSlots *)this)->slot94() == 6 && !(sub_100b3700() & 0x400)) {
+		sub_1003ed80(move);
+	} else {
+		m_vel3d4[0] += m_vecBaseVelocity.x;
+		TossAddYZ(m_vecBaseVelocity, *(Vector *)m_vel3d4, *(Vector *)m_vel3d4);
+		VectorScale(*(Vector *)m_vel3d4, gpGlobals->frametime, move);
+		VectorSubtract(*(Vector *)m_vel3d4, m_vecBaseVelocity, *(Vector *)m_vel3d4);
+		sub_1003eb50();
+	}
+	sub_1003f810(gpGlobals->frametime);
+	char tmp[0x54];
+	trace = *(TossTrace *)((CEntityVSlots *)this)->slot234(tmp, &move);
+	PhysObjView *pPhys = (PhysObjView *)m_obj36c;
+	if (pPhys)
+		pPhys->slot46(((CEntityVSlots *)this)->slot217(), (Vector *)g_1070d9d0, 1, 0);
+	sub_1003eb50();
+	if (((CGameTrace *)&trace)->m_allsolid) {
+		((int *)m_vel3d4)[0] = ((int *)&g_1070d1b0)[0];
+		((int *)m_vel3d4)[1] = ((int *)&g_1070d1b0)[1];
+		((int *)m_vel3d4)[2] = ((int *)&g_1070d1b0)[2];
+		((int *)m_angVel3c8)[0] = ((int *)g_1070d9d0)[0];
+		((int *)m_angVel3c8)[1] = ((int *)g_1070d9d0)[1];
+		((int *)m_angVel3c8)[2] = ((int *)g_1070d9d0)[2];
+		g_109f3648->ExitScope();
+		return;
+	}
+	if (*(char *)(m_pEdict2e0 + 0x4c)) {
+		g_109f3648->ExitScopeInlined();
+		return;
+	}
+	if (((CGameTrace *)&trace)->m_fraction != 1.0f)
+		sub_1003f070((CGameTrace *)&trace, &move);
+	sub_1003f4d0();
+	g_109f3648->ExitScopeInlined();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003ff80 size=0x3
 struct CUnknown1003ff80 { void * sub_1003ff80(); };
 void * CUnknown1003ff80::sub_1003ff80()
