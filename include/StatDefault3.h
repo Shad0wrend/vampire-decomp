@@ -8,15 +8,25 @@ struct StatDefault3
 	int m_0;	// 0x00
 	int m_4;	// 0x04
 	const char *m_pszName;	// 0x08
-	int pad_0c;
+	const char *m_pszName0c;	// 0x0c
 	const char *m_pszDisplayName;	// 0x10
 	int m_14;	// 0x14
 	int m_18;	// 0x18
 	int m_1c;	// 0x1c
 	int m_20;	// 0x20
-	int pad_24[21];
-	int m_78;	// 0x78
-	int m_7c;	// 0x7c
+	float m_24;	// 0x24: NormalFootfallVol
+	float m_28;	// 0x28: NormalFootfallDist
+	float m_2c;	// 0x2c: HeavyFootfallVol
+	float m_30;	// 0x30: HeavyFootfallDist
+	int m_34;	// 0x34: NpcFakeReloadCountMin
+	int m_38;	// 0x38: NpcFakeReloadCountMax
+	int m_3c;	// 0x3c: Clan
+	const char *m_pszMBody[6];	// 0x40: M_Body, M_Body0..
+	const char *m_pszFBody[6];	// 0x58: F_Body, F_Body0..
+	const char *m_pszFHands;	// 0x70
+	const char *m_pszMHands;	// 0x74
+	union { int m_78; const char *m_pszGib; };	// 0x78: DeathGib model
+	union { int m_7c; const char *m_pszGibParticle; };	// 0x7c: DeathGibParticle
 	int m_80;	// 0x80
 	int m_84;
 	int m_88;
@@ -45,6 +55,7 @@ struct StatDefault3
 	int sub_101d4d80();	// stub 0x100054ca
 	void sub_101d3a10();	// stub 0x10012a12: resets the item before it is loaded from a data node
 	void sub_101d3c10(StatDefault3 *pParent);	// stub 0x1000a245: fills every unset field (the zero ints, the lists, the flag bytes and floats) from the parent item
+	bool sub_101d3f10(struct VKeyValuesInterface *pNode, CStatDefault3List *pList);	// stub 0x10005ba5: loads the item from a "ClanData" node (called by Loader::sub_101d56f0)
 	char sub_101d4520(void *pNode, CStatDefault3List *pList);
 	void sub_101d4b90(void *pNode, char *pTable, int *pOut);	// stub 0x1000a32b: loads the item from a "ClanData" node
 	void sub_101d4fd0();	// stub 0x100135a7: applies the clan item to its owner (run by the clan console command)
