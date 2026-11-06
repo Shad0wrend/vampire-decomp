@@ -131623,6 +131623,84 @@ extern "C" CBaseEntity *events_player()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10226700 size=0x7b9
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_105b28c0[2];
+void sub_100052ef();
+void sub_100013ca();
+void sub_100045bb();
+void sub_1000ba69();
+void sub_1000ddf0();
+void sub_1000cd6f();
+void sub_100112fc();
+void sub_1000e110();
+void sub_1000cc7f();
+void sub_10003ad0();
+void sub_1000acfe();
+void sub_10012cec();
+
+int *sub_10226700()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 5, "m_bEnabled", {0x450, 0}, 1, 6, "enabled" },
+        { 0, "InputEnableOutputs", {0, 0}, 1, 8, "EnableOutputs", 0, (void *)sub_100052ef },
+        { 0, "InputDisableOutputs", {0, 0}, 1, 8, "DisableOutputs", 0, (void *)sub_100013ca },
+        { 0, "InputCreateControllerNPC", {0, 0}, 1, 8, "CreateControllerNPC", 0, (void *)sub_100045bb },
+        { 0, "InputRemoveContollerNPC", {0, 0}, 1, 8, "RemoveControllerNPC", 0, (void *)sub_1000ba69 },
+        { 2, "InputAwardExp", {0, 0}, 1, 8, "AwardExp", 0, (void *)sub_1000ddf0 },
+        { 0, "InputClearDialogCombatTimers", {0, 0}, 1, 8, "ClearDialogCombatTimers", 0, (void *)sub_1000cd6f },
+        { 0, "InputImmobilizePlayer", {0, 0}, 1, 8, "ImmobilizePlayer", 0, (void *)sub_100112fc },
+        { 0, "InputMobilizePlayer", {0, 0}, 1, 8, "MobilizePlayer", 0, (void *)sub_1000e110 },
+        { 0, "InputRemoveDisciplines", {0, 0}, 1, 8, "RemoveDisciplines", 0, (void *)sub_1000cc7f },
+        { 0, "InputRemoveDisciplinesNow", {0, 0}, 1, 8, "RemoveDisciplinesNow", 0, (void *)sub_10003ad0 },
+        { 0, "InputMakePlayerUnkillable", {0, 0}, 1, 8, "MakePlayerUnkillable", 0, (void *)sub_1000acfe },
+        { 0, "InputMakePlayerKillable", {0, 0}, 1, 8, "MakePlayerKillable", 0, (void *)sub_10012cec },
+        { 10, "m_OutputTable[playerevent_begin_frenzy]", {0x454, 0}, 1, 0x16, "OnFrenzyBegin", g_1055dc70 },
+        { 10, "m_OutputTable[playerevent_end_frenzy]", {0x46c, 0}, 1, 0x16, "OnFrenzyEnd", g_1055dc70 },
+        { 10, "m_OutputTable[playerevent_begin_wolf_morph]", {0x484, 0}, 1, 0x16, "OnWolfMorphBegin", g_1055dc70 },
+        { 10, "m_OutputTable[playerevent_end_wolf_morph]", {0x49c, 0}, 1, 0x16, "OnWolfMorphEnd", g_1055dc70 },
+        { 10, "m_OutputTable[playerevent_took_damage]", {0x4b4, 0}, 1, 0x16, "OnPlayerTookDamage", g_1055dc70 },
+        { 10, "m_OutputTable[playerevent_killed]", {0x4cc, 0}, 1, 0x16, "OnPlayerKilled", g_1055dc70 },
+        { 10, "m_OutputTable[playerevent_sound_loud]", {0x4e4, 0}, 1, 0x16, "OnPlayerSoundLoud", g_1055dc70 },
+        { 10, "m_OutputTable[playerevent_activate_discipline_auspex]", {0x4fc, 0}, 1, 0x16, "OnActivateAuspex", g_1055dc70 },
+        { 10, "m_OutputTable[playerevent_activate_discipline_celerity]", {0x514, 0}, 1, 0x16, "OnActivateCelerity", g_1055dc70 },
+        { 10, "m_OutputTable[playerevent_activate_discipline_corpus_vampirus]", {0x52c, 0}, 1, 0x16, "OnActivateCorpusVampirus", g_1055dc70 },
+        { 10, "m_OutputTable[playerevent_activate_discipline_fortitude]", {0x544, 0}, 1, 0x16, "OnActivateFortitude", g_1055dc70 },
+        { 10, "m_OutputTable[playerevent_activate_discipline_obfuscate]", {0x55c, 0}, 1, 0x16, "OnActivateObfuscate", g_1055dc70 },
+        { 10, "m_OutputTable[playerevent_activate_discipline_potence]", {0x574, 0}, 1, 0x16, "OnActivatePotence", g_1055dc70 },
+        { 10, "m_OutputTable[playerevent_activate_discipline_presense]", {0x58c, 0}, 1, 0x16, "OnActivatePresense", g_1055dc70 },
+        { 10, "m_OutputTable[playerevent_activate_discipline_protean]", {0x5a4, 0}, 1, 0x16, "OnActivateProtean", g_1055dc70 },
+        { 10, "m_OutputTable[playerevent_activate_discipline_animalism_lvl_1]", {0x5bc, 0}, 1, 0x16, "OnActivateAnimalismLvl1", g_1055dc70 },
+        { 10, "m_OutputTable[playerevent_activate_discipline_animalism_lvl_2]", {0x5d4, 0}, 1, 0x16, "OnActivateAnimalismLvl2", g_1055dc70 },
+        { 10, "m_OutputTable[playerevent_activate_discipline_dementation_lvl_1]", {0x5ec, 0}, 1, 0x16, "OnActivateDementationLvl1", g_1055dc70 },
+        { 10, "m_OutputTable[playerevent_activate_discipline_dementation_lvl_2]", {0x604, 0}, 1, 0x16, "OnActivateDementationLvl2", g_1055dc70 },
+        { 10, "m_OutputTable[playerevent_activate_discipline_dominate_lvl_1]", {0x61c, 0}, 1, 0x16, "OnActivateDominateLvl1", g_1055dc70 },
+        { 10, "m_OutputTable[playerevent_activate_discipline_dominate_lvl_2]", {0x634, 0}, 1, 0x16, "OnActivateDominateLvl2", g_1055dc70 },
+        { 10, "m_OutputTable[playerevent_activate_discipline_thaumaturgy_lvl_1]", {0x64c, 0}, 1, 0x16, "OnActivateThaumaturgyLvl1", g_1055dc70 },
+        { 10, "m_OutputTable[playerevent_activate_discipline_thaumaturgy_lvl_2]", {0x664, 0}, 1, 0x16, "OnActivateThaumaturgyLvl2", g_1055dc70 },
+    };
+    g_105b28c0[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_105b28c0[0] = (int)&dataDesc[1];
+    return g_105b28c0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102271b0 size=0x7
 struct CUnknown102271b0 { char sub_102271b0(); };
 char CUnknown102271b0::sub_102271b0()
