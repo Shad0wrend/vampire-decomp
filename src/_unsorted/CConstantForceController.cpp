@@ -6,8 +6,8 @@
 
 int CConstantForceController::vfunc0(void *pController, int pObject, float deltaTime, Vector &linear, Vector &angular)
 {
-	VectorCopy(m_vecForce, linear);
-	VectorCopy(m_vecTorque, angular);
+	VectorCopy(m_vStart, linear);
+	VectorCopy(m_vEnd, angular);
 	return m_n4;
 }
 // END FUNCTION

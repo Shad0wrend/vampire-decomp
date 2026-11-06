@@ -3,13 +3,7 @@
 // slot 1 of the base is the release the loaders call when they are done.
 #pragma once
 
-class IKeyCacheable
-{
-public:
-	virtual void vfunc0();
-	virtual void vfunc1();	// release
-	virtual void vfunc2();
-};
+#include "IKeyCacheable.h"	// the virtual base (slot 1 is the release the loaders call)
 
 class IKeyValues : public virtual IKeyCacheable
 {

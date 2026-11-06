@@ -20,6 +20,7 @@ class CDisciplineProjectileTraceFilter : public CTraceFilterSimple
 public:
 	void *m_pIgnore;	// +0xc
 	virtual bool vfunc0(void *pHandleEntity, int contentsMask);	// ShouldHitEntity: the base's answer for the ignored entity, false for any other
+	void *vfunc2(char flags);	// slot 2: the scalar deleting destructor (vftable store, operator delete when bit 0, returns this)
 };
 
 class CTraceFilterNoOwnerTest : public CTraceFilterSimple

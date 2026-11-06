@@ -3,27 +3,7 @@
 
 #include "CBaseEntity.h"
 
-typedef Vector CPhysForceVec3;
-
-// The motion record embedded at +0x464 (class not known): two points, each stored twice.
-struct CPhysForceMotion
-{
-	void sub_10025f00(const CPhysForceVec3 *pStart, const CPhysForceVec3 *pEnd);	// stub 0x10015398: copies pStart / pEnd into the two start / end pairs (+8..+0x34)
-
-	void sub_10025f80(float flScale);	// start = start2 * flScale, end = end2 * flScale
-
-	virtual void vfunc0();	// the CConstantForceController vftable (0x104454b8) is stored by the CPhysForce constructor
-	char m_pad0004[4];
-	CPhysForceVec3 m_vStart;	// 0x08
-	CPhysForceVec3 m_vEnd;	// 0x14
-	CPhysForceVec3 m_vStart2;	// 0x20
-	CPhysForceVec3 m_vEnd2;	// 0x2c
-};
-
-// The real class of the record at +0x464 (RTTI .?AVCConstantForceController@@, vftable 0x104454b8).
-struct CConstantForceController : public CPhysForceMotion
-{
-};
+#include "CConstantForceController.h"	// CPhysForceVec3, CPhysForceMotion and the record's real class
 
 // The controller object whose pointer sits at +0x450 of CPhysForce (class not known): its slot 1 takes the motion record.
 class CPhysForceController
