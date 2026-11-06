@@ -6105,6 +6105,7 @@
 0x10009d95 func   ?sub_10202e50@CUnknown10202d10@@QAEHHPBDHD@Z CUnknown10202d10::sub_10202e50
 0x10009d9a func   ?sub_1005d830@@YAXPAXMHPAVVector@@@Z sub_1005d830
 0x10009d9f func   ?sub_10187ef0@CLagCompensationManager@@QAEXXZ CLagCompensationManager::sub_10187ef0
+0x10009da4 func   ??1CUnknown101e0f00Entry@@QAE@XZ CUnknown101e0f00Entry::~CUnknown101e0f00Entry
 0x10009da4 func   ?sub_101e05e0@CUnknown101e05e0@@QAEXXZ CUnknown101e05e0::sub_101e05e0
 0x10009da9 func   ?vfunc1@?$CEntityDataInstantiator@Ugroundlink_t@@@@UAEHI@Z CEntityDataInstantiator<groundlink_t>::vfunc1
 0x10009dae func   ?vfunc80@CWeaponIArmor_Lt_Cloth@@UAEPAXXZ CWeaponIArmor_Lt_Cloth::vfunc80
