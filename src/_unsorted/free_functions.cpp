@@ -156953,6 +156953,84 @@ int sub_102cadb0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cadd0 size=0x6f6
+#include "CUnknown10359c50.h"
+extern CUnknown10359c50 g_1090ff08;
+struct CUnknown102bea80 { void sub_102bea80(const char *pszName, int nId, const char *pszClass); };
+
+void sub_102cadd0()
+{
+	g_1090ff08.sub_1000a948("NONE", 0, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("IDLE_STAND", 1, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("IDLE_WALK", 2, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("IDLE_PATHCORNER", 3, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("IDLE_WANDER", 4, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("WAKE_ANGRY", 5, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("ALERT_FACE", 6, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("ALERT_SMALL_FLINCH", 7, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("ALERT_SCAN", 8, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("ALERT_STAND", 9, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("INVESTIGATE_SOUND", 10, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("COMBAT_FACE", 11, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("COMBAT_SWEEP", 12, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("FEAR_FACE", 13, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("COMBAT_STAND", 14, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("CHASE_ENEMY", 15, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("CHASE_ENEMY_FAILED", 16, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("VICTORY_DANCE", 17, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("TARGET_FACE", 18, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("TARGET_CHASE", 19, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("SMALL_FLINCH", 20, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("BACK_AWAY_FROM_ENEMY", 21, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("BACK_AWAY_FROM_SAVE_POSITION", 22, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("TAKE_COVER_FROM_ENEMY", 23, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("TAKE_COVER_FROM_BEST_SOUND", 24, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("TAKE_COVER_FROM_ORIGIN", 25, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("FAIL_TAKE_COVER", 26, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("RUN_FROM_ENEMY", 27, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("ESTABLISH_LINE_OF_FIRE", 28, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("FAIL_ESTABLISH_LINE_OF_FIRE", 29, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("COWER", 30, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("MELEE_ATTACK1", 31, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("MELEE_ATTACK2", 32, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("RANGE_ATTACK1", 33, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("RANGE_ATTACK2", 34, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("SPECIAL_ATTACK1", 35, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("SPECIAL_ATTACK2", 36, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("STANDOFF", 37, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("ARM_WEAPON", 38, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("DISARM_WEAPON", 39, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("HIDE_AND_RELOAD", 40, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("RELOAD", 41, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("AMBUSH", 42, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("DIE", 43, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("SCHED_DIE_RAGDOLL", 44, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("WAIT_FOR_SCRIPT", 45, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("AISCRIPT", 46, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("SCRIPTED_WALK", 47, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("SCRIPTED_RUN", 48, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("SCRIPTED_CUSTOM_MOVE", 49, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("SCRIPTED_WAIT", 50, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("SCRIPTED_FACE", 51, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("SCENE_SEQUENCE", 52, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("SCENE_WALK", 53, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("SCENE_FACE_TARGET", 54, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("NEW_WEAPON", 55, "schedule", "CAI_BaseNPC");
+	g_1090ff08.sub_1000a948("GIVE_WAY", 56, "schedule", "CAI_BaseNPC");
+	((CUnknown102bea80 *)&g_1090ff08)->sub_102bea80("FORCED_GO", 57, "CAI_BaseNPC");
+	((CUnknown102bea80 *)&g_1090ff08)->sub_102bea80("PATROL_WALK", 59, "CAI_BaseNPC");
+	((CUnknown102bea80 *)&g_1090ff08)->sub_102bea80("PATROL_RUN", 60, "CAI_BaseNPC");
+	((CUnknown102bea80 *)&g_1090ff08)->sub_102bea80("RUN_RANDOM", 61, "CAI_BaseNPC");
+	((CUnknown102bea80 *)&g_1090ff08)->sub_102bea80("FAIL", 67, "CAI_BaseNPC");
+	((CUnknown102bea80 *)&g_1090ff08)->sub_102bea80("FALL_TO_GROUND", 62, "CAI_BaseNPC");
+	((CUnknown102bea80 *)&g_1090ff08)->sub_102bea80("DROPSHIP_DEPLOY_FIRST", 63, "CAI_BaseNPC");
+	((CUnknown102bea80 *)&g_1090ff08)->sub_102bea80("DROPSHIP_DEPLOY_SECOND", 64, "CAI_BaseNPC");
+	((CUnknown102bea80 *)&g_1090ff08)->sub_102bea80("DROPSHIP_DEPLOY_THIRD", 65, "CAI_BaseNPC");
+	((CUnknown102bea80 *)&g_1090ff08)->sub_102bea80("NPC_FREEZE", 58, "CAI_BaseNPC");
+	((CUnknown102bea80 *)&g_1090ff08)->sub_102bea80("SCHED_FLINCH_PHYSICS", 66, "CAI_BaseNPC");
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cc1f0 size=0x44
 #include "CAI_BaseNPC.h"
 #define HV1(p) virtual void p();
