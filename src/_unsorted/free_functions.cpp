@@ -144982,6 +144982,59 @@ CUtlRBTreeBig::Links_t &CUtlRBTreeBig::sub_1025cb70(unsigned short i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025cbf0 size=0x559
+#include "utlrbtree.h"
+#include "CUtlRBTreeBig.h"
+
+// TARGET: CUtlRBTreeBig::sub_1025cbf0
+void CUtlRBTreeBig::sub_1025cbf0(unsigned short elem)
+{
+	while (elem != m_Root && Color(Parent(elem)) == 0) {
+		unsigned short parent = Parent(elem);
+		unsigned short grandparent = Parent(parent);
+
+		if (LeftChild(Parent(parent)) == parent) {
+			unsigned short uncle = RightChild(grandparent);
+			if (Color(uncle) == 0) {
+				SetColor(parent, 1);
+				SetColor(uncle, 1);
+				SetColor(grandparent, 0);
+				elem = grandparent;
+			} else {
+				if (RightChild(Parent(elem)) == elem) {
+					elem = parent;
+					RotLeft(elem);
+					parent = Parent(elem);
+					grandparent = Parent(parent);
+				}
+				SetColor(parent, 1);
+				SetColor(grandparent, 0);
+				RotRight(grandparent);
+			}
+		} else {
+			unsigned short uncle = LeftChild(grandparent);
+			if (Color(uncle) == 0) {
+				SetColor(parent, 1);
+				SetColor(uncle, 1);
+				SetColor(grandparent, 0);
+				elem = grandparent;
+			} else {
+				if (LeftChild(Parent(elem)) == elem) {
+					elem = parent;
+					RotRight(parent);
+					parent = Parent(elem);
+					grandparent = Parent(parent);
+				}
+				SetColor(parent, 1);
+				SetColor(grandparent, 0);
+				sub_1025d4b0(grandparent);
+			}
+		}
+	}
+	SetColor(m_Root, 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025d2b0 size=0xbf
 #include "utlrbtree.h"
 #include "CUtlRBTreeBig.h"
