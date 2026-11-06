@@ -10910,6 +10910,7 @@
 0x10010d8e func   ?sub_103454c0@@YIHPAVCBaseAnimating@@@Z sub_103454c0
 0x10010d93 func   ?sub_101fd110@CVStatAction_t@@QAEXHHHH@Z CVStatAction_t::sub_101fd110
 0x10010d98 func   ?sub_101ad410@CUnknown101ad410@@QAEHH@Z CUnknown101ad410::sub_101ad410
+0x10010d9d func   ?AddMultipleToTail@?$CUtlVector@USaveRestoreBlockHeader_t@@V?$CUtlMemory@USaveRestoreBlockHeader_t@@@@@@QAEHHPBUSaveRestoreBlockHeader_t@@@Z CUtlVector<SaveRestoreBlockHeader_t,CUtlMemory<SaveRestoreBlockHeader_t> >::AddMultipleToTail
 0x10010d9d func   ?sub_101a56d0@CUtlVector40@@QAEHHPBX@Z CUtlVector40::sub_101a56d0
 0x10010da2 func   ?sub_100cc020@CUnit100cc020@@QAEPAXXZ CUnit100cc020::sub_100cc020
 0x10010da7 func   ?vfunc454@CAI_BaseNPC@@UAEHXZ CAI_BaseNPC::vfunc454
