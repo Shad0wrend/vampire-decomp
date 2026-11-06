@@ -13557,6 +13557,7 @@
 0x10014916 func   ?vfunc174@CTriggerDisciplineContext@@QAEXPAVCBaseEntity@@@Z CTriggerDisciplineContext::vfunc174
 0x1001491b func   _info_node_bach_run_2 info_node_bach_run_2
 0x10014925 func   ?sub_10130c10@CLogicAuto@@QAEEXZ CLogicAuto::sub_10130c10
+0x1001492a func   ?sub_103a5270@@YAXXZ sub_103a5270
 0x1001492f func   ?sub_101d90c0@CUnknown101d90c0@@QAE_NPAVCUnknown101d90c0_Section@@@Z CUnknown101d90c0::sub_101d90c0
 0x10014934 func   ?sub_1016ebb0@@YAXXZ sub_1016ebb0
 0x10014939 func   ?sub_10055f50@CUtlRBTree24@@QAEXH@Z CUtlRBTree24::sub_10055f50
