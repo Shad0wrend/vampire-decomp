@@ -10676,6 +10676,7 @@
 0x100104ec func   ?vfunc5@CWeaponMelee_Sheriff_Sword@@UAEPAVCBaseCombatWeapon@@I@Z CWeaponMelee_Sheriff_Sword::vfunc5
 0x100104f1 func   ?vfunc103@CEnvParticle@@QAEXXZ CEnvParticle::vfunc103
 0x100104f6 func   ?sub_10245920@CUnknown10245920@@QAEHXZ CUnknown10245920::sub_10245920
+0x10010500 func   ?sub_1042a2a0@@YIXPAVCBaseEntity@@HPAVCEntityVSlots@@@Z sub_1042a2a0
 0x10010505 func   ?sub_1017f830@CHunterChar@@QAEXXZ CHunterChar::sub_1017f830
 0x1001050a func   ?sub_1018be60@@YAXXZ sub_1018be60
 0x1001050f func   ?vfunc129@CRagdollProp@@UAEXXZ CRagdollProp::vfunc129

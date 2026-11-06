@@ -219389,6 +219389,29 @@ void __fastcall sub_10429f80(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042a2a0 size=0x20d
+#include "UTIL_Trace.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+
+// TARGET: sub_1042a2a0
+void __fastcall sub_1042a2a0(CBaseEntity *self, int, CEntityVSlots *pOther)
+{
+	CEntityVSlots *pSelf = (CEntityVSlots *)self;
+	if (pOther->slot211() & 8)
+		return;
+	if ((unsigned char)(self->m_flags268 >> 12) & 1)
+		self->sub_100b1d10();
+	CGameTrace trace;
+	Vector vel = self->m_vecVelocity3bc;
+	VectorNormalize(vel);
+	Vector start;
+	start = *pSelf->slot220() - vel * 32.0f;
+	UTIL_TraceLine(start, start + vel * 64.0f, 0x400b, self, 0, &trace);
+	pSelf->slot406(&trace, 0x40);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042a540 size=0x194
 #include "CBaseGrenade.h"
 #include "TestBit.h"
