@@ -880,6 +880,53 @@ void sub_1002a210(EntView *pSelf, PhysObjView *pObj1, PhysObjView *pObj2, const 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002a430 size=0x414
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_10538b88[2];
+ISaveRestoreOps *sub_10045d90(int type);
+void sub_1000a2f4();
+void sub_10009eee();
+void sub_1002af70();
+void sub_1002af90();
+
+int *sub_1002a430()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 10, "m_pConstraint", {0x450, 0}, 1, 2, 0, sub_10045d90(5), 0 },
+        { 2, "m_nameSystem", {0x460, 0}, 1, 6, "constraintsystem", 0, 0 },
+        { 2, "m_nameAttach1", {0x454, 0}, 1, 6, "attach1", 0, 0 },
+        { 2, "m_nameAttach2", {0x458, 0}, 1, 6, "attach2", 0, 0 },
+        { 17, "m_breakSound", {0x45c, 0}, 1, 6, "breaksound", 0, 0 },
+        { 1, "m_forceLimit", {0x464, 0}, 1, 6, "forcelimit", 0, 0 },
+        { 1, "m_torqueLimit", {0x468, 0}, 1, 6, "torquelimit", 0, 0 },
+        { 10, "m_OnBreak", {0x470, 0}, 1, 0x16, "OnBreak", g_1055dc70 },
+        { 0, "InputBreak", {0, 0}, 1, 8, "Break", 0, (void *)sub_1000a2f4 },
+        { 0, "InputOnBreak", {0, 0}, 1, 8, "ConstraintBroken", 0, (void *)sub_10009eee },
+        { 0, "InputTurnOn", {0, 0}, 1, 8, "TurnOn", 0, (void *)sub_1002af70 },
+        { 0, "InputTurnOff", {0, 0}, 1, 8, "TurnOff", 0, (void *)sub_1002af90 },
+    };
+    g_10538b88[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_10538b88[0] = (int)&dataDesc[1];
+    return g_10538b88;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002ad20 size=0x21
 struct CUnkVT1002ad20
 {

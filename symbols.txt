@@ -3062,6 +3062,7 @@
 0x10005722 func   ?vfunc176@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::vfunc176
 0x10005727 func   ?vfunc0@CTEBeamEntPoint@@UAEPAUServerClass@@XZ CTEBeamEntPoint::vfunc0
 0x1000572c func   ?sub_101c0b60@@YAXXZ sub_101c0b60
+0x10005736 func   ?sub_1002a430@@YAPAHXZ sub_1002a430
 0x1000573b func   ?vfunc327@CBaseCombatCharacter@@UAE_NXZ CBaseCombatCharacter::vfunc327
 0x1000574a func   ?sub_101f9590@@YAXH@Z sub_101f9590
 0x1000574f func   ?vfunc463@CNPC_VTzimisce@@UAEXHH@Z CNPC_VTzimisce::vfunc463
