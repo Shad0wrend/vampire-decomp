@@ -4008,6 +4008,7 @@
 0x10006d07 func   ?vfunc4@CBaseEntity@@UAEPAXXZ CBaseEntity::vfunc4
 0x10006d0c func   ?vfunc440@CNPC_VDog@@QAEHH@Z CNPC_VDog::vfunc440
 0x10006d11 func   ?vfunc77@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc77
+0x10006d16 func   ?Grow@?$CUtlMemory@UCNPC_VWerewolfVec3@@@@QAEXH@Z CUtlMemory<CNPC_VWerewolfVec3>::Grow
 0x10006d16 func   ?sub_103dc520@CUtlMemory12@@QAEXH@Z CUtlMemory12::sub_103dc520
 0x10006d1b func   ?sub_100be770@bf_read@@QAEMXZ bf_read::sub_100be770
 0x10006d25 func   ?sub_101c2fe0@@YAHXZ sub_101c2fe0
