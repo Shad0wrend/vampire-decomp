@@ -151147,6 +151147,71 @@ struct CUnknown1027fc40 {
 void CUnknown1027fc40::sub_1027fc40() { slot431(); }
 // END FUNCTION
 
+// FUNCTION: 0x1027fc90 size=0x299
+#include "CBaseEntity.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CAI_NPCTargetView.h"
+#include "CGlobalEntityList.h"
+#include "AITrace.h"
+#include "CGameTrace.h"
+#include "Ray_t.h"
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738964.h"
+#include "CUnknown102ee120.h"
+#include "globalvars.h"
+extern CGlobalEntityList g_106eb5d8;
+extern char g_10538764[];
+extern char g_1054abdc[];
+float *sub_102d6120(int);
+float *sub_102d6100(int);
+void sub_10142b80(const float *, const float *, const float *, const float *, int, int, int, int, float);
+
+inline CAI_NPCTargetView *NextNPC(CBaseEntity *pPrev)
+{
+	for (CBaseEntity *pEnt = g_106eb5d8.sub_100f7060(pPrev); pEnt; pEnt = g_106eb5d8.sub_100f7060(pEnt)) {
+		void *p = __RTDynamicCast(pEnt, 0, g_10538764, g_1054abdc, 0);
+		if (p)
+			return (CAI_NPCTargetView *)p;
+	}
+	return 0;
+}
+
+inline void RayInitHull(Ray_t &ray, const Vector &start, const float *pEnd, const float *pMins, const float *pMaxs)
+{
+	ray.sub_1006dec0(start, pEnd, pMins, pMaxs, 1, 0);
+}
+
+void sub_1027fc90(CBaseEntity *pTarget, const Vector *pPos)
+{
+	for (CAI_NPCTargetView *pNPC = NextNPC(0); pNPC; pNPC = NextNPC((CBaseEntity *)pNPC)) {
+		if (pNPC->m_nDebugFlags224 & 0x1000) {
+			Vector start = *pPos;
+			float a = 0, b = 0;
+			pNPC->vfunc563(pTarget, &start, &a, &b);
+			Vector end = start;
+			end.z += 1.0f;
+			CGameTrace tr;
+			Ray_t ray;
+			RayInitHull(ray, start, &end.x, sub_102d6100(pNPC->m_nHull1568), sub_102d6120(pNPC->m_nHull1568));
+			CTraceFilterSimple filter(pNPC, 0);
+			g_1070b254->vfunc4(&ray, 0x202400b, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+			if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+				sub_10146570((const Vector *)&tr.m_startpos, (const Vector *)&tr.m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+			if (!tr.m_startsolid && tr.m_fraction == 1.0) {
+				pNPC->m_vecGoal5db8 = start;
+				pNPC->m_vecGoalAngles5dc4 = *(Vector *)((CAI_BaseNPC *)pTarget)->vfunc219();
+				pNPC->sub_10280de0(0x39);
+				pNPC->m_flMoveTime5cf0 = gpGlobals->curtime;
+				((CUnknown102ee120 *)pNPC->m_pNavigator5d34)->sub_102ee250(0x13);
+			} else {
+				sub_10142b80(&start.x, sub_102d6100(pNPC->m_nHull1568), sub_102d6120(pNPC->m_nHull1568), pNPC->vfunc219(), 0xff, 0, 0, 0x14, 0.5f);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027ffe0 size=0xa7
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
