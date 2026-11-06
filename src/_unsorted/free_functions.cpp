@@ -136915,6 +136915,77 @@ extern "C" CBaseEntity *events_world()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023d050 size=0x70f
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_105c2a50[2];
+void sub_100154ce();
+void sub_1000403e();
+void sub_1000557e();
+void sub_1001453d();
+void sub_1000ab00();
+void sub_10003f3a();
+void sub_100136ab();
+void sub_1001076c();
+void sub_10003a6c();
+void sub_10012f7b();
+
+int *sub_1023d050()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 4, "InputSetSafeArea", {0, 0}, 1, 8, "SetSafeArea", 0, (void *)sub_100154ce },
+        { 5, "InputSetCopWaitArea", {0, 0}, 1, 8, "SetCopWaitArea", 0, (void *)sub_1000403e },
+        { 1, "InputSetCopGrace", {0, 0}, 1, 8, "SetCopGrace", 0, (void *)sub_1000557e },
+        { 5, "InputSetNosferatuTolerant", {0, 0}, 1, 8, "SetNosferatuTolerant", 0, (void *)sub_1001453d },
+        { 5, "InputSetNoFrenzyArea", {0, 0}, 1, 8, "SetNoFrenzyArea", 0, (void *)sub_1000ab00 },
+        { 5, "InputAIEnable", {0, 0}, 1, 8, "AIEnable", 0, (void *)sub_10003f3a },
+        { 1, "InputFadeGlobalWetness", {0, 0}, 1, 8, "FadeGlobalWetness", 0, (void *)sub_100136ab },
+        { 0, "InputHideCutsceneInterferingEntities", {0, 0}, 1, 8, "HideCutsceneInterferingEntities", 0, (void *)sub_1001076c },
+        { 0, "InputUnhideCutsceneInterferingEntities", {0, 0}, 1, 8, "UnhideCutsceneInterferingEntities", 0, (void *)sub_10003a6c },
+        { 2, "InputPlayEndCredits", {0, 0}, 1, 8, "PlayEndCredits", 0, (void *)sub_10012f7b },
+        { 10, "m_OnCopsOutside", {0x450, 0}, 1, 0x16, "OnCopsOutside", g_1055dc70 },
+        { 10, "m_OnCopsComing", {0x468, 0}, 1, 0x16, "OnCopsComing", g_1055dc70 },
+        { 10, "m_OnStartCopPursuitMode", {0x480, 0}, 1, 0x16, "OnStartCopPursuitMode", g_1055dc70 },
+        { 10, "m_OnEndCopPursuitMode", {0x498, 0}, 1, 0x16, "OnEndCopPursuitMode", g_1055dc70 },
+        { 10, "m_OnStartCopAlertMode", {0x4b0, 0}, 1, 0x16, "OnStartCopAlertMode", g_1055dc70 },
+        { 10, "m_OnEndCopAlertMode", {0x4c8, 0}, 1, 0x16, "OnEndCopAlertMode", g_1055dc70 },
+        { 10, "m_OnStartHunterPursuitMode", {0x4e0, 0}, 1, 0x16, "OnStartHunterPursuitMode", g_1055dc70 },
+        { 10, "m_OnEndHunterPursuitMode", {0x4f8, 0}, 1, 0x16, "OnEndHunterPursuitMode", g_1055dc70 },
+        { 10, "m_OnMasqueradeLevel1", {0x510, 0}, 1, 0x16, "OnMasqueradeLevel1", g_1055dc70 },
+        { 10, "m_OnMasqueradeLevel2", {0x528, 0}, 1, 0x16, "OnMasqueradeLevel2", g_1055dc70 },
+        { 10, "m_OnMasqueradeLevel3", {0x540, 0}, 1, 0x16, "OnMasqueradeLevel3", g_1055dc70 },
+        { 10, "m_OnMasqueradeLevel4", {0x558, 0}, 1, 0x16, "OnMasqueradeLevel4", g_1055dc70 },
+        { 10, "m_OnMasqueradeLevel5", {0x570, 0}, 1, 0x16, "OnMasqueradeLevel5", g_1055dc70 },
+        { 10, "m_OnMasqueradeLevelChanged", {0x588, 0}, 1, 0x16, "OnMasqueradeLevelChanged", g_1055dc70 },
+        { 10, "m_OnPlayerHasNoBlood", {0x5a0, 0}, 1, 0x16, "OnPlayerHasNoBlood", g_1055dc70 },
+        { 10, "m_OnCombatMusicStart", {0x5b8, 0}, 1, 0x16, "OnCombatMusicStart", g_1055dc70 },
+        { 10, "m_OnCombatMusicEnd", {0x5d0, 0}, 1, 0x16, "OnCombatMusicEnd", g_1055dc70 },
+        { 10, "m_OnAlertMusicStart", {0x5e8, 0}, 1, 0x16, "OnAlertMusicStart", g_1055dc70 },
+        { 10, "m_OnAlertMusicEnd", {0x600, 0}, 1, 0x16, "OnAlertMusicEnd", g_1055dc70 },
+        { 10, "m_OnNormalMusicStart", {0x618, 0}, 1, 0x16, "OnNormalMusicStart", g_1055dc70 },
+        { 10, "m_OnNormalMusicEnd", {0x630, 0}, 1, 0x16, "OnNormalMusicEnd", g_1055dc70 },
+    };
+    g_105c2a50[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_105c2a50[0] = (int)&dataDesc[1];
+    return g_105c2a50;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023db70 size=0x102
 #include "CBaseEntity.h"
 #include "COutputEvent.h"
