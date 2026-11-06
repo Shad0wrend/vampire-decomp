@@ -163891,6 +163891,93 @@ int CUnknown102f05b0::sub_102f05b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f06e0 size=0x222
+#include "utlmemory.h"
+#include "CBaseEntity.h"
+#include "CAI_Navigator.h"
+#include "CAI_MoveProbe.h"
+#include "CEntityVSlots.h"
+#include "CGameTrace.h"
+#include "Ray_t.h"
+#include "CTraceFilterSimple.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738960.h"
+#include "CUnknown1003ff80.h"
+#include "CGlobalEntityList.h"
+#include "CBaseDoor.h"
+#include "CAI_BaseNPCTroika.h"
+
+class CUnknown1004f860 { public: void *sub_1004f860(); };
+extern CGlobalEntityList *g_10566458;
+void sub_10146570(const float *pStart, const float *pEnd, int r, int g, int b, int a, float flDuration);
+
+struct AILocalMoveGoal_t
+{
+	float m_f[10];
+	float m_flMaxDist;	// 0x28
+	float m_g[6];
+	AIMoveTrace_t m_moveTrace;	// 0x44
+	AILocalMoveGoal_t() { memset(this, 0, sizeof(*this)); }
+};
+
+inline float LenGrp(const Vector &v)
+{
+	return FastSqrt(v.x * v.x + (v.y * v.y + v.z * v.z));
+}
+
+#define OUTER ((CEntityVSlots *)m_pOuter)
+
+// TARGET: CAI_Navigator::sub_102f06e0
+bool CAI_Navigator::sub_102f06e0(void *pWaypoint, char *pbDone)
+{
+	unsigned int mask = 0x2400b;
+	if (m_p30->m_b01)
+		mask = 0x2600b;
+	CGameTrace trace;
+	((CUnknown1003ff80 *)&trace)->sub_1003ff80();
+	CEntityVSlots *pOuter = OUTER;
+	Vector vecEye;
+	Vector *pEye = pOuter->slot193(&vecEye);
+	{
+		Ray_t ray;
+		((CUnknown1004f860 *)&ray)->sub_1004f860();
+		ray.sub_1004f7a0(pEye->Base(), (const float *)pWaypoint);
+		CTraceFilterSimple filter(pOuter, 0);
+		g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&filter, &trace);
+	}
+	if (g_10738960.sub_1005f190())
+		sub_10146570(trace.m_startpos, trace.m_endpos, 0xff, 0, 0, 1, -1.0f);
+	if (trace.m_fraction == 1.0) {
+		AIMoveTrace_t mt;
+		CAI_NavRoute *pRoute = m_p30;
+		((CAI_MoveProbe *)m_i24)->sub_102e6d70(m_i18, OUTER->slot220()->Base(), (const float *)pWaypoint, mask, (const CBaseEntity *)g_10566458->sub_100290c0((unsigned int *)((char *)pRoute + 0x30)), 100.0f, 0, &mt, 0, 0);
+		return mt.fStatus >= 0;
+	}
+	CBaseEntity *pHit = trace.m_pEnt;
+	if (pHit) {
+		CBaseDoor *pDoor = *(CBaseDoor **)((char *)pHit + 0xa4);
+		if (pDoor) {
+			CBaseEntity *pNpc = (CBaseEntity *)OUTER;
+			if (!pDoor->sub_100eec70(pNpc)) {
+				AILocalMoveGoal_t goal;
+				float flLen = LenGrp(*(Vector *)trace.m_startpos - *(Vector *)trace.m_endpos);
+				int result;
+				goal.m_flMaxDist = flLen + 10.0f;
+				if (OUTER->slot531(&goal, (CEntityVSlots *)pDoor, flLen, &result)) {
+					*pbDone = 1;
+					if (result) {
+						vfunc10(0xe, 1.4012985e-45f);
+						((CAI_BaseNPCTroika *)OUTER)->sub_1027de00((CBaseEntity *)pDoor);
+					}
+				}
+			}
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f09a0 size=0xc2
 #include "CUnknown102f09a0.h"
 #include "CAI_Waypoint.h"
