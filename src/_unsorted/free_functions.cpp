@@ -154455,6 +154455,58 @@ bool CAI_BaseNPCTroikaUnit6120::sub_102b6120(Vector *pPos, char bFlag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b6890 size=0x230
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseEntity.h"
+#include "CRotDoor.h"
+#include "IPhysicsObject.h"
+#include "VectorHelpers.h"
+#include "CEntityVSlots.h"
+void CAI_BaseNPCTroika::sub_102b6890(CBaseEntity *pEnt)
+{
+	CEntityVSlots *pTarget = (CEntityVSlots *)vfunc167();
+	Vector vecTarget;
+	vecTarget = *((CEntityVSlots *)pEnt)->slot220();
+	Vector vecDir;
+	if (pTarget)
+	{
+		Vector vecOrigin = *pTarget->slot217();
+		vecDir = Vector(vecOrigin.x, vecOrigin.y, vecOrigin.z + 16.0f) - vecTarget;
+	}
+	else
+	{
+		vecDir = *((CEntityVSlots *)this)->slot217() - vecTarget;
+	}
+	float flYaw = sub_101d2c70(&vecDir);
+	float flCur = ((float *)((CEntityVSlots *)this)->slot221())[1];
+	float flDiff = sub_1013d580(flYaw, flCur);
+	if (flDiff <= -20.0f)
+	{
+		float z = vecDir.z;
+		vecDir = sub_101d2f40(flCur - 20.0f);
+		vecDir.z = z;
+	}
+	else if (flDiff >= 20.0f)
+	{
+		float z = vecDir.z;
+		vecDir = sub_101d2f40(flCur + 20.0f);
+		vecDir.z = z;
+	}
+	VectorNormalize(vecDir);
+	IPhysicsObject *pPhys = (IPhysicsObject *)pEnt->m_obj36c;
+	if (pPhys)
+	{
+		float flMass = pPhys->vfunc12() * 100.0f;
+		vecDir = vecDir * ((flMass < 1000.0f) ? flMass : 1000.0f);
+		Vector vecZero(0, 0, 0);
+		vecDir.z += 150.0f;
+		Vector a, b;
+		pPhys->vfunc40((float *)&a, (float *)&b);
+		pPhys->vfunc39((float *)&vecDir, (float *)&vecZero);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b7f40 size=0x5d
 #include "CAI_BaseNPCTroika.h"
 #include "CStatusFlagList.h"

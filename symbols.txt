@@ -3583,6 +3583,7 @@
 0x1000631b func   ?vfunc82@CNPC_VWolfMorph@@UAEPAUdatamap_t@@XZ CNPC_VWolfMorph::vfunc82
 0x10006320 func   ?sub_102ca2a0@CAI_CsActList@@QAEXHPAVCBaseEntity@@MMMHM00D@Z CAI_CsActList::sub_102ca2a0
 0x10006325 func   ?sub_101f11f0@CUnknown101f0e50@@QAE_NPAX@Z CUnknown101f0e50::sub_101f11f0
+0x1000632a func   ?sub_102b6890@CAI_BaseNPCTroika@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPCTroika::sub_102b6890
 0x1000632f func   ?sub_1007a340@@YGHH@Z sub_1007a340
 0x10006334 func   ?sub_10307c50@CUnknown10307c50@@QAEPAU1@XZ CUnknown10307c50::sub_10307c50
 0x10006339 func   ?vfunc367@CBaseCombatCharacter@@QAE?AVQAngle@@XZ CBaseCombatCharacter::vfunc367
