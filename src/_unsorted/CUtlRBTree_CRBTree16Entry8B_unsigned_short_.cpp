@@ -8,3 +8,11 @@
 // one member, not `template class`: that emits every member (and the sentinel) in this object
 static void (CUtlRBTree<CRBTree16Entry8B, unsigned short>::*s_RemoveNode)(unsigned short) = &CUtlRBTree<CRBTree16Entry8B, unsigned short>::RemoveNode;
 // END FUNCTION
+
+// FUNCTION: 0x1004af50 size=0x824
+// TARGET: ?RemoveRebalance@?$CUtlRBTree@UCRBTree16Entry8B@@G@@QAEXG@Z
+#include "utlrbtree.h"
+struct CRBTree16Entry8B { char m_Data[8]; };
+// one member, not `template class`: that emits every member (and the sentinel) in this object
+static void (CUtlRBTree<CRBTree16Entry8B, unsigned short>::*s_RemoveRebalance)(unsigned short) = &CUtlRBTree<CRBTree16Entry8B, unsigned short>::RemoveRebalance;
+// END FUNCTION
