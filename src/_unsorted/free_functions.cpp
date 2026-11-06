@@ -5083,6 +5083,146 @@ void CBaseEntity::sub_100397c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10039ac0 size=0x415
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+#include "CVProfile.h"
+#include "globalvars.h"
+#include "CEntityVSlots.h"
+
+extern float g_104454c4;
+
+struct CPhysObj46
+{
+	virtual void v0() {} virtual void v1() {} virtual void v2() {} virtual void v3() {} virtual void v4() {}
+	virtual void v5() {} virtual void v6() {} virtual void v7() {} virtual void v8() {} virtual void v9() {}
+	virtual void v10() {} virtual void v11() {} virtual void v12() {} virtual void v13() {} virtual void v14() {}
+	virtual void v15() {} virtual void v16() {} virtual void v17() {} virtual void v18() {} virtual void v19() {}
+	virtual void v20() {} virtual void v21() {} virtual void v22() {} virtual void v23() {} virtual void v24() {}
+	virtual void v25() {} virtual void v26() {} virtual void v27() {} virtual void v28() {} virtual void v29() {}
+	virtual void v30() {} virtual void v31() {} virtual void v32() {} virtual void v33() {} virtual void v34() {}
+	virtual void v35() {} virtual void v36() {} virtual void v37() {} virtual void v38() {} virtual void v39() {}
+	virtual void v40() {} virtual void v41() {} virtual void v42() {} virtual void v43() {} virtual void v44() {}
+	virtual void v45() {}
+	virtual void vfunc46(Vector *a, Vector *b, int c, float d) {}
+};
+
+struct CCycleNow
+{
+	unsigned __int64 m_Int64;
+	CCycleNow() { m_Int64 = 0; }
+	void Sample()
+	{
+		unsigned __int64 *pc = &m_Int64;
+		__asm {
+			mov ecx, pc
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+};
+
+struct CBaseEntityView239
+{
+	char pad[0x3f4];
+	float m_f3f4;
+	char pad2[4];
+	float m_f3fc;
+};
+
+inline void ExitScopeSampled(CVProfile *p)
+{
+	if (!p->m_bAtRoot || p->m_enabled) {
+		CVProfNode *n = p->m_pCurNode;
+		if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0) {
+			CCycleNow now;
+			now.Sample();
+			CUnknownCycle100335e0 *pc = &n->m_CurFrameTime;
+			pc->m_Int64 = now.m_Int64 - pc->m_Int64;
+			n->m_TotalTime += pc->m_Int64;
+			g_109f3648->PopGroup();
+		}
+		if (n->m_nRecursions == 0)
+			p->m_pCurNode = p->m_pCurNode->m_pParent;
+		p->m_bAtRoot = (p->m_pCurNode == p->m_pRoot);
+	}
+}
+
+void CBaseEntity::sub_10039ac0()
+{
+	ScopeTrace trace("CBaseEntity::PhysicsParent", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	g_109f3648->EnterScope("CBaseEntity_PhysicsParent", 0, "Unaccounted", false);
+	if (!sub_10033f60(0)) {
+		g_109f3648->ExitScopeCall();
+		return;
+	}
+	CBaseEntityView239 *v = (CBaseEntityView239 *)this;
+	CEntityVSlots *s = (CEntityVSlots *)this;
+	*(int *)&m_flStartFrameLocalTime = *(int *)&v->m_f3f4;
+	float movetime;
+	if (gpGlobals->frametime + v->m_f3f4 > v->m_f3fc) {
+		movetime = v->m_f3fc - v->m_f3f4;
+		if (movetime < g_104454c4)
+			goto done;
+	} else {
+		movetime = gpGlobals->frametime;
+	}
+	if (movetime != g_104454c4) {
+		movetime = s->slot135(movetime);
+		if (m_angVel3c8[0] == g_104454c4 && m_angVel3c8[1] == g_104454c4 && m_angVel3c8[2] == g_104454c4) {
+			PhysicsPushMove(movetime);
+		} else {
+			char flags = (char)(m_flags268 >> 12);
+			if ((flags & 1) != 0)
+				sub_100b1d10();
+			if (m_vecVelocity3bc.x == g_104454c4) {
+				flags = (char)(m_flags268 >> 12);
+				if ((flags & 1) != 0)
+					sub_100b1d10();
+				if (m_vecVelocity3bc.y == g_104454c4) {
+					flags = (char)(m_flags268 >> 12);
+					if ((flags & 1) != 0)
+						sub_100b1d10();
+					if (m_vecVelocity3bc.z == g_104454c4) {
+						s->slot239(movetime);
+						goto check;
+					}
+				}
+			}
+			if (s->slot239(movetime)) {
+				float old = v->m_f3f4;
+				v->m_f3f4 = m_flStartFrameLocalTime;
+				PhysicsPushMove(movetime);
+				if (v->m_f3f4 < old)
+					v->m_f3f4 = old;
+			}
+		}
+check:
+		CPhysObj46 *pPhys = (CPhysObj46 *)m_obj36c;
+		if (pPhys) {
+			pPhys->vfunc46(s->slot217(), s->slot219(), 0, movetime);
+			g_109f3648->ExitScopeInlined();
+			return;
+		}
+	}
+done:
+	if (v->m_f3fc <= v->m_f3f4) {
+		*(int *)&v->m_f3fc = 0;
+		vfunc133();
+	}
+	ExitScopeSampled(g_109f3648);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003b850 size=0x36
 #include "Vector.h"
 
