@@ -101,7 +101,7 @@ public:
 	CBP_V10(sa0) CBP_V10(sa1) CBP_V1(sa20) CBP_V1(sa21) CBP_V1(sa22) CBP_V1(sa23) virtual void vfunc24(CBaseEntity *pOther); CBP_V1(sa25) CBP_V1(sa26) CBP_V1(sa27) CBP_V1(sa28) CBP_V1(sa29) CBP_V10(sa3) CBP_V10(sa4) CBP_V10(sa5) CBP_V1(sa6) CBP_V1(sa7) CBP_V1(sa8) CBP_V1(sa9)
 	virtual void vfunc64(float *pVec);
 	// slots 65..220
-	CBP_V10(sb0) CBP_V10(sb1) CBP_V1(sb20) CBP_V1(sb21) CBP_V1(sb22) CBP_V1(sb23) CBP_V1(sb24) CBP_V1(sb25) CBP_V1(sb26) CBP_V1(sb27) CBP_V1(sb28)
+	CBP_V10(sb0) CBP_V10(sb1) CBP_V1(sb20) CBP_V1(sb21) CBP_V1(sb22) CBP_V1(sb23) CBP_V1(sb24) CBP_V1(sb25) CBP_V1(sb26) CBP_V1(sb27) virtual void vfunc93(int a, int b);
 	virtual int vfunc94();	// slot 94 (+0x178), CBaseEntity::vfunc94: the move type (10 = the value CWeaponUnarmed::vfunc319 sends the view message 0x4c for)
 	CBP_V10(sb3) virtual void vfunc105(const char *pszModel); CBP_V1(sb41) CBP_V1(sb42) CBP_V1(sb43) CBP_V1(sb44) CBP_V1(sb45) CBP_V1(sb46) CBP_V1(sb47) CBP_V1(sb48) CBP_V1(sb49) CBP_V1(sb50) CBP_V1(sb51) CBP_V1(sb52) CBP_V1(sb53) CBP_V1(sb54) CBP_V1(sb55) CBP_V1(sb56) CBP_V1(sb57) CBP_V1(sb58) virtual int vfunc124(); CBP_V10(sb6)
 	CBP_V1(sb70) CBP_V1(sb71) CBP_V1(sb72) CBP_V1(sb73) CBP_V1(sb74) CBP_V1(sb75) virtual void vfunc141(class CVDmg_t *pInfo, const Vector *pDir, struct CGameTrace *pTrace); CBP_V1(sb77)
@@ -124,7 +124,7 @@ public:
 	virtual float *vfunc195(); CBP_V1(sc31) CBP_V1(sc32) CBP_V1(sc33) CBP_V1(sc34) CBP_V1(sc35) CBP_V1(sc36) CBP_V1(sc37) CBP_V1(sc38) CBP_V1(sc39) CBP_V1(sc40) CBP_V1(sc41) CBP_V1(sc42) CBP_V1(sc43)
 	virtual CBaseEntity *vfunc209();	// slot 209: an entity (the player's ground / move parent entity); null when none
 	CBP_V1(sc45) CBP_V1(sc46) CBP_V1(sc47) CBP_V1(sc48) CBP_V1(sc49)
-	CBP_V1(sd0) CBP_V1(sd1)
+	CBP_V1(sd0) virtual void vfunc216(float *pOrigin);
 	virtual int vfunc217(const void *pName, int a);
 	virtual void vfunc218(float *pAngles);	// slot 218: SetAbsAngles (the teleport_player command 0x101803a0 passes the vector it wrote to +0x206c)
 	CBP_V1(sd4)
@@ -297,7 +297,8 @@ public:
 	float m_flFadeValue19D4;	// 0x19D4
 	char m_FadeStack19D8[0xc];	// 0x19D8: a CUtlVector<CBasePlayerFadeRec> (view FadeStack()), size at +0x19E4
 	int m_nFade19E4;	// 0x19E4
-	char m_pad19e8[0x19f4 - 0x19e8];
+	char m_pad19e8[0x19f0 - 0x19e8];
+	int m_n19F0;
 	bool m_bObfWasMoving;	// 0x19f4
 	char m_pad19f5[0x19f6 - 0x19f5];	// 0x19E8 .. 0x19F5
 	CUtlVector<CBasePlayerFadeRec> &FadeStack() { return *(CUtlVector<CBasePlayerFadeRec> *)m_FadeStack19D8; }
@@ -647,5 +648,9 @@ public:
 	char sub_10160dc0();	// CBaseAnimating member (transplant): the float at +0x6f8 lies in the sequence descriptor's +0x2f0..+0x2f4
 	char sub_101611e0(void *pEnt);	// stub 0x10008cfb: always false (xor al,al; ret 4)
 void sub_1016c9d0();
+	void sub_101707c0(int unused, int bTouch, const char *pszLandmark);
+	void sub_100b3b00();
+	void sub_10170b00();
+	void sub_1017e6f0(int a);
 #include "CBasePlayer_ext.h"
 };
