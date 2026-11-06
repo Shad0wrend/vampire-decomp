@@ -2649,6 +2649,97 @@ char CBaseCombatCharacter::vfunc342(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10339d90 size=0x512
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CBaseCombatCharacter.h"
+#include "CUnknown10206c70.h"
+#include "StatDefault3.h"
+#include "CUnknown101f9c70.h"
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+#include "CGlobalEntityList.h"
+#include <stdio.h>
+
+struct CFeedDbg { virtual char vfunc0(); virtual char vfunc1(); char m_pad[0x28]; int m_n2c; };
+extern CFeedDbg *g_10937034;
+extern CUnknown10206c70 g_1074f028;
+struct CLocalPlayerView { char m_pad0000[0x49c]; int m_n49c; };
+CLocalPlayerView *sub_1023bd00();
+float __fastcall sub_101800a0(char *p);
+void sub_10265680(int a);
+
+void CBaseCombatCharacter::vfunc351(CBaseCombatCharacter *pTarget)
+{
+	ScopeTrace trace("CBaseCombatCharacter::FeedBegin", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc, g_106b8540);
+	if (sub_103395f0() && pTarget) {
+		CGlobalEntityList *pList = g_10566458;
+		if (!pList->sub_100290c0((unsigned int *)&m_h149c)
+			&& !(pList->sub_100290c0((unsigned int *)&m_hTarget1538) && m_nTarget153c != -1 && m_nTargetMode1540 == 8)) {
+			if (!g_10937034->vfunc1() && g_10937034->m_n2c) {
+				char buf[256];
+				sprintf(buf, "%s FeedBegin with %s", sub_100ab4f0(), pTarget->sub_100ab4f0());
+				sub_103221b0(buf);
+			}
+			if (m_pA8)
+				*(int *)((char *)m_pA8 + 0x1a8c) = 0xf;
+			m_iBloodStolen = 0;
+			m_iCurBloodStolenMod = 0;
+			bool bOK = true;
+			if (sub_1033c900(0x2000)) {
+				int nOwn = CVStatListSet::Of(this)->Find(0)->sub_102012d0(0xb);
+				int nOther = CVStatListSet::Of(pTarget)->Find(0)->sub_102012d0(0xb);
+				if (nOwn == nOther)
+					bOK = false;
+			}
+			if ((!sub_1033c900(0x4000) || g_1074f028.sub_10207c40(pTarget)->m_8c[6]) && bOK) {
+				int nMod = 0;
+				((CUnknown101f9c70 *)((char *)this + 0x13dc))->sub_101f9ff0(9, 0, 12, (int)&nMod);
+				m_iCurBloodStolenMod += nMod;
+				int n = CVStatListSet::Of(pTarget)->Find(0)->sub_102012d0(0xc);
+				if (m_iCurBloodStolenMod + n < 1)
+					m_iCurBloodStolenMod = 1 - n;
+			}
+			m_h149c = *(EHANDLE *)pTarget->vfunc1();
+			pTarget->c354();
+			CBaseCombatCharacter *pVictim = (CBaseCombatCharacter *)m_h149c.Get();
+			int nStat = CVStatListSet::Of(pVictim)->Find(0)->sub_102012d0(0xc) + 1;
+			m_flFeedInterval1494 = nStat * 0.15 + 0.3;
+			m_flNextFeed1490 = m_flFeedInterval1494 + gpGlobals->curtime;
+			m_flFeedStart1498 = gpGlobals->curtime;
+			if (!(m_hTarget1538.Get() && m_nTarget153c != -1 && m_nTargetMode1540 == 8)) {
+				sub_1033b100(6);
+				((CBaseCombatCharacter *)m_h149c.Get())->sub_1033b100(4);
+				((CBaseCombatCharacter *)m_h149c.Get())->sub_1033b100(8);
+				char *pA8 = (char *)m_pA8;
+				if (pA8) {
+					CLocalPlayerView *pLocal = sub_1023bd00();
+					if (pLocal && pLocal->m_n49c) {
+						if (gpGlobals->curtime - sub_101800a0(pA8) > 3.0f)
+							sub_10265680(0);
+					}
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033b500 size=0xbf
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

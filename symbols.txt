@@ -10519,6 +10519,7 @@
 0x1001019f func   ?vfunc5@CGameSign@@QAEPAV1@I@Z CGameSign::vfunc5
 0x100101a9 func   ?sub_102a9ec0@CAI_BaseNPCTroika@@QAEDH@Z CAI_BaseNPCTroika::sub_102a9ec0
 0x100101ae func   ?sub_1017b330@CStatLoadout@@QAEXPAVCBaseEntity@@@Z CStatLoadout::sub_1017b330
+0x100101b8 func   ?vfunc351@CBaseCombatCharacter@@UAEXPAV1@@Z CBaseCombatCharacter::vfunc351
 0x100101bd func   ?vfunc5@CBaseToggle@@QAEPAV1@I@Z CBaseToggle::vfunc5
 0x100101c2 func   ?sub_101e8e40@@YINPAD@Z sub_101e8e40
 0x100101c7 func   ?sub_100f8580@@YGPAVCBaseEntity@@PBVVector@@M@Z sub_100f8580
