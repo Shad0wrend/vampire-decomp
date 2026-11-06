@@ -153,8 +153,8 @@ public:
 	virtual void slot316(CEntityVSlots *pAttacker, unsigned char a, unsigned char b);	// character: told about an incoming melee attack (attacker, dodge flag, block flag)
 	EVS(317) EVS(318) EVS(319)
 	virtual void slot320(int a, int b);	// an entity's slot taken by the bat swarm (0, 0x76)
-	EVS(321) EVS(322) virtual int slot323(const Vector *pVec); EVS(324) EVS(325) EVS(326) EVS(327) EVS(328) EVS(329)
-	EVS(330) EVS(331)
+	EVS(321) EVS(322) virtual int slot323(const Vector *pVec); EVS(324) EVS(325) EVS(326) virtual char slot327(); EVS(328) EVS(329)
+	EVS(330) virtual char slot331(CEntityVSlots *pWeapon, CEntityVSlots *pTarget, int act, int *pOut);
 	virtual float slot332();	// weapon: a time span (the delay of the next shot), returned on the FPU stack
 	EVS(333) EVS(334) EVS(335) EVS(336)
 	virtual int slot337();	// the hull bits the entity uses ("GetUsedHullBits"-like)
