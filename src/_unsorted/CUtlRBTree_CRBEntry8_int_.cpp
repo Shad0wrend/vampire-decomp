@@ -13,3 +13,10 @@ struct CRBEntry8 {
 // one member, not `template class`: that emits every member (and the sentinel) in this object
 static int (CUtlRBTree<CRBEntry8, int>::*s_NewNode)() = &CUtlRBTree<CRBEntry8, int>::NewNode;
 // END FUNCTION
+
+// FUNCTION: 0x10055590 size=0x74b
+// TARGET: ?RemoveRebalance@?$CUtlRBTree@UCRBEntry8@@H@@QAEXH@Z
+#include "utlrbtree.h"
+#include "CRBEntry8.h"
+static void (CUtlRBTree<CRBEntry8, int>::*s_RemoveRebalance)(int) = &CUtlRBTree<CRBEntry8, int>::RemoveRebalance;
+// END FUNCTION
