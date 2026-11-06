@@ -353,6 +353,71 @@ void CBaseCombatWeapon::vfunc364(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024f3d0 size=0x20f
+#include "CBaseCombatWeapon.h"
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
+#include "Ray_t.h"
+#include "CTraceFilterSimple.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CGameTrace.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738960.h"
+#include "CDevFlagObj.h"
+
+extern CDevFlagObj *g_10924a6c;
+extern float g_104454c4;
+void sub_10146570(const Vector *pStart, const Vector *pEnd, int r, int g, int b, int noDepth, int duration);
+
+bool CBaseCombatWeapon::vfunc284(void *pNPCv, void *pIgnore, void *pStartv, int pEndv, int bFlagv)
+{
+	CAI_BaseNPC *pNPC = (CAI_BaseNPC *)pNPCv;
+	const Vector *pStart = (const Vector *)pStartv;
+	const Vector *pEnd = (const Vector *)pEndv;
+	char bFlag = (char)bFlagv;
+
+	Ray_t ray;
+	ray.sub_1004f7a0((const float *)pStart, (const float *)pEnd);
+	CGameTrace tr;
+	{
+		CTraceFilterSimple filter(pIgnore, 0);
+		g_1070b254->vfunc4(&ray, 0x46004003, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+	}
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)tr.m_startpos, (const Vector *)tr.m_endpos, 0xff, 0, 0, 1, 0xbf800000);
+	if (tr.m_fraction == 1.0)
+		return true;
+	CBaseEntity *pEnt = tr.m_pEnt;
+	CBaseEntity *pOwner;
+	if (!pEnt)
+		pOwner = 0;
+	else
+		pOwner = (CBaseEntity *)pEnt->m_p9c;
+	if (pEnt == (CBaseEntity *)pNPC->vfunc167())
+		return true;
+	if (pOwner)
+	{
+		if (pNPC->vfunc404(pOwner) == 1)
+			return true;
+		if (!bFlag)
+			return false;
+		g_10924a6c->vfunc1();
+		pNPC->sub_10269a20(0x63);
+		return false;
+	}
+	if (pEnt->m_field368 == 4 && tr.m_fraction > g_104454c4)
+	{
+		Vector point = (*pEnd - *pStart) * tr.m_fraction + *pStart;
+		return vfunc284(pNPCv, pEnt, &point, pEndv, bFlagv);
+	}
+	if (!bFlag)
+		return false;
+	g_10924a6c->vfunc1();
+	pNPC->sub_10269a20(0x66);
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024f670 size=0x89
 #include "CBaseCombatWeapon.h"
 struct CWeaponRangeView {
