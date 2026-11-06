@@ -12764,6 +12764,7 @@
 0x10013688 func   ?sub_101fa810@CVDmg_t@@QAEXXZ CVDmg_t::sub_101fa810
 0x1001368d func   ?sub_102e0770@@YIPAUCNode102e0770@@PAUCList102e0770@@HPAVCBaseEntity@@@Z sub_102e0770
 0x10013697 func   ?vfunc373@CWeaponMelee_SabbatLeaderAttack@@QAEHXZ CWeaponMelee_SabbatLeaderAttack::vfunc373
+0x100136a1 func   ?sub_10360640@@YAXXZ sub_10360640
 0x100136a6 func   ?sub_1030fe70@CUnknown1030fe50@@QAEXHPAVCUtlVector4@@@Z CUnknown1030fe50::sub_1030fe70
 0x100136ab func   ?sub_1023e1c0@@YGXPAUCParam@@@Z sub_1023e1c0
 0x100136b0 func   ??0CRopeSimBase@@QAE@PAXH0@Z CRopeSimBase::CRopeSimBase
