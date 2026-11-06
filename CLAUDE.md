@@ -389,3 +389,19 @@ random stream at g_1070b244 as `enginerandom`. Slot N sits at +N*4 of the vtable
 Write `enginerandom->vfunc2(0, 3)`, not `extern SomeView *g_1070b244;` with a struct of your own, and do not include
 CUnknown1070b244.h or CUnknown1070b248.h in new code. A slot still declared `void vfuncN()`: give it its type in
 engineiface.h with edit_context (it lives in `namespace EngineGlobals`).
+
+## Traces (UTIL_TraceLine, UTIL_TraceHull): use UTIL_Trace.h, never the Ray_t / filter / TraceRay steps by hand
+
+`include/UTIL_Trace.h` holds the SDK's inline trace helpers (game_shared/util_shared.h) as this game inlines them.
+In the game a trace looks like: a Ray_t built from two vectors (inline, or `call sub_1006dec0` for a box), a
+CTraceFilterSimple ctor (`call 0x101d3190`) or the caller's own filter, `g_1070b254` slot 4 (TraceRay), then the
+r_visualizetraces test (`g_10738964` slot 1 and +0x2c) around `call sub_10146570` (DebugDrawLine). Write the SDK call:
+- `UTIL_TraceLine(vecStart, vecEnd, mask, pIgnore, collisionGroup, &tr);` (CTraceFilterSimple(pIgnore, group));
+- `UTIL_TraceLine(vecStart, vecEnd, mask, &filter, &tr);` (the caller's filter, e.g. CTraceFilterFVisible);
+- `UTIL_TraceHull(vecStart, vecEnd, vecMins, vecMaxs, mask, pIgnore, collisionGroup, &tr);` and the `&filter` form
+  (the debug line is yellow: 0xff, 0xff, 0).
+`CGameTrace tr;` is the trace_t. Evaluate a computed start into a local first when the game computes it before the
+end (`Vector vecStart = EyePosition() + ofs; UTIL_TraceLine(vecStart, pEnemy->EyePosition(), ...)`): arguments are
+evaluated right to left. Judged 2026-11-07 on three matched functions (0x10274820 line + simple filter, 0x1028ebc0
+own filter, 0x1032ad30 hull): each scores 0 written this way. A trace without the visualize test is a direct
+`g_1070b254->vfunc4(&ray, mask, &filter, &tr)` (UTIL_TraceRay / enginetrace->TraceRay in the SDK).
