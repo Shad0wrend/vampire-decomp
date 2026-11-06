@@ -110307,6 +110307,91 @@ void CUnknown101eac50::sub_101eac50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ead30 size=0x23f
+#include "CUnknown101ead30.h"
+
+extern "C" int sprintf(char *, const char *, ...);
+extern void (*g_109f3628)(const char *, ...);
+
+struct DataVBase
+{
+	virtual void v0();
+	virtual void v1();
+};
+
+struct DataNode : virtual DataVBase
+{
+	virtual void n0();
+	virtual void n1();
+	virtual DataNode *FindKey(const char *pszName);
+	virtual DataNode *GetNext();
+};
+
+DataNode *sub_1000a119(const char *pszName, int pFileSystem);
+int *sub_1000c162(int *pOut, DataNode *pNode);
+int *sub_1000282e(int *pOut, DataNode *pNode, const char *pszKey);
+extern int g_1070b238;
+
+bool CUnknown101ead30::sub_101ead30()
+{
+	if (m_pRecords) {
+		for (int i = 0; i < m_nRecords; i++) {
+			if (m_pRecords[i])
+				delete m_pRecords[i];
+			m_pRecords[i] = 0;
+		}
+		delete m_pRecords;
+		m_pRecords = 0;
+	}
+	m_n04 = 0;
+	m_nRecords = 0;
+	m_nAlloc = 0;
+	int tmp;
+	char buf[128];
+	sprintf(buf, "%s%s.txt", "vdata\\system\\", "items");
+	DataNode *pFile = sub_1000a119(buf, g_1070b238);
+	if (pFile) {
+		DataNode *pSection = pFile->FindKey("InventorySections");
+		if (pSection) {
+			m_n0c = *sub_1000c162(&tmp, pSection);
+			m_n08 = *sub_1000282e(&tmp, pSection, "InternalName");
+			for (DataNode *p = pSection->FindKey("InventorySection"); p; p = p->GetNext()) {
+				if (m_nAlloc == m_nRecords) {
+					m_nAlloc += m_nGrow;
+					if (m_pRecords) {
+						CEntryY **pNew = (CEntryY **)operator new(m_nAlloc * 4);
+						int j = 0;
+						for (; j < m_nRecords; j++)
+							pNew[j] = m_pRecords[j];
+						for (; j < m_nAlloc; j++)
+							pNew[j] = 0;
+						delete m_pRecords;
+						m_pRecords = pNew;
+						m_nRecords++;
+					} else {
+						m_pRecords = (CEntryY **)operator new(m_nAlloc * 4);
+						for (int j = 0; j < m_nAlloc; j++)
+							m_pRecords[j] = 0;
+						m_nRecords++;
+					}
+				} else {
+					m_nRecords++;
+				}
+				if (!m_pRecords[m_nRecords - 1])
+					m_pRecords[m_nRecords - 1] = new CEntryY(m_n04++);
+				m_pRecords[m_nRecords - 1]->sub_101eabd0(p);
+			}
+		} else {
+			g_109f3628("Unable to open data file for: %s\n", buf);
+		}
+		((DataVBase *)pFile)->v1();
+		return false;
+	}
+	g_109f3628("Unable to load data for: %s\n", buf);
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101eb030 size=0x1
 void sub_101eb030()
 {
