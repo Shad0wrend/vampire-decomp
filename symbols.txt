@@ -1316,6 +1316,7 @@
 0x10002e91 func   ?vfunc4@CMoveHelperServer@@UAAXHPBDZZ CMoveHelperServer::vfunc4
 0x10002e96 func   ?vfunc104@CFuncMoveLinear@@UAEXXZ CFuncMoveLinear::vfunc104
 0x10002e9b func   ?sub_101e03a0@CNamedList9fd0@@QAEHPBD@Z CNamedList9fd0::sub_101e03a0
+0x10002ea0 func   ?vfunc124@CBaseCombatWeapon@@UAEHXZ CBaseCombatWeapon::vfunc124
 0x10002ea5 func   ?sub_1013fcb0@CUtlVector96@@QAEXHH@Z CUtlVector96::sub_1013fcb0
 0x10002eaa func   ?sub_103b29f0@@YAEXZ sub_103b29f0
 0x10002eaf func   ?sub_1018c4f0@@YGXH@Z sub_1018c4f0

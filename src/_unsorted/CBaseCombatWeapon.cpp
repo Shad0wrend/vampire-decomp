@@ -1364,6 +1364,68 @@ char CBaseCombatWeapon::vfunc371()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10255dd0 size=0x342
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CBaseCombatWeapon.h"
+#include "CWeaponOwner.h"
+#include "CEntryZ.h"
+#include "CKeyHolder.h"
+#include "CVDmg_t.h"
+#include <stdio.h>
+#include <string.h>
+
+extern char g_106b8540[];
+extern CKeyHolderSet g_1073a2e4;
+void sub_101434b0(int idx, int line, const char *psz, int a, int r, int g, int b, int al);
+
+int CBaseCombatWeapon::vfunc124()
+{
+	char szText[0x200];
+	int nLine = sub_100a02b0();
+	if (m_fDebugOverlays224 & 1) {
+		if (sub_102517b0()->m_nSection24d0 != -1) {
+			const char *pName = FindEntryZ(sub_102517b0()->m_nSection24d0)->m_name;
+			sprintf(szText, "Type: %s", pName ? pName : g_106b8540);
+		} else {
+			strcpy(szText, "Type: <ERROR>");
+		}
+		int e = (int)m_pHolder;
+		sub_101434b0(engine->vfunc35(e), nLine, szText, 0, 255, 255, 255, 255);
+		nLine++;
+		sprintf(szText, "Worth: %d", sub_102517b0()->m_nWorth2558);
+		e = (int)m_pHolder;
+		sub_101434b0(engine->vfunc35(e), nLine, szText, 0, 255, 255, 255, 255);
+		nLine++;
+		for (int i = 0; i < 3; i++) {
+			CVDmg_t *pDmg = (CVDmg_t *)m_Dmg77c + i;
+			CWeaponAttackSlot *pAtk = &sub_102517b0()->m_Attacks[i];
+			if (pAtk->m_bActive04) {
+				sprintf(szText, "AttackRate: %.2f", pAtk->m_flAttackRate260);
+				e = (int)m_pHolder;
+				sub_101434b0(engine->vfunc35(e), nLine, szText, 0, 255, 255, 255, 255);
+				nLine++;
+				if (*(int *)pDmg != -1) {
+					sprintf(szText, "Damage: %s", pDmg->sub_101fb470());
+					e = (int)m_pHolder;
+					sub_101434b0(engine->vfunc35(e), nLine, szText, 0, 255, 255, 255, 255);
+					nLine++;
+				}
+				if (pAtk->m_nBotchKey25c != -1) {
+					const char *pName = g_1073a2e4.Find(pAtk->m_nBotchKey25c)->m_pszName;
+					sprintf(szText, "BotchTable: %s", pName ? pName : g_106b8540);
+					e = (int)m_pHolder;
+					sub_101434b0(engine->vfunc35(e), nLine, szText, 0, 255, 255, 255, 255);
+					nLine++;
+				}
+			}
+		}
+	}
+	return nLine;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10256560 size=0xda
 #include "CBaseCombatWeapon.h"
 #include "CCollisionProperty.h"
