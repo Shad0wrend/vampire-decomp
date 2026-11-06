@@ -10576,6 +10576,76 @@ CDisciplineParticle *CDisciplineParticle::sub_10050e70(const char *pszClassname,
 }
 // END FUNCTION
 
+// FUNCTION: 0x100511e0 size=0x364
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "ScopeTrace.h"
+#include "CDisciplineParticle.h"
+#include "CBaseCombatCharacter.h"
+
+typedef void (__fastcall *Slot242Fn)(CDisciplineParticle *);
+unsigned int __fastcall sub_1033c9c0(CBaseCombatCharacter *p);
+extern float g_104454c4;
+
+bool CDisciplineParticle::sub_100511e0()
+{
+    ScopeTrace trace("CDisciplineParticle::Update", g_106b8540);
+    CBaseCombatCharacter *pUser = (CBaseCombatCharacter *)m_hUser.Get();
+    bool bFlag = false;
+    if (pUser) {
+        bFlag = ((CBaseCombatCharacter *)m_hUser.Get())->sub_1033d330(m_n4bc);
+        if (m_n4c0 & sub_1033c9c0((CBaseCombatCharacter *)m_hUser.Get()))
+            bFlag = true;
+        if (m_n4a4 >= 0 && m_n4a4 < 17) {
+            CBaseCombatCharacter *u = (CBaseCombatCharacter *)m_hUser.Get();
+            int n = CVStatListSet::Of(u)->Find(3)->sub_102012d0(m_n4a4);
+            if (n <= 0 && !bFlag) {
+                float a = 0;
+                if (!(m_fl4a8 < 1.0f))
+                    a = 1.0f;
+                sub_100fbac0(a, 0);
+                m_flAlpha474 = m_fl4b0 < 1.0f ? g_104454c4 : 1.0f;
+                if (m_b4c4) {
+                    float f = m_fl4ac < 1.0f ? g_104454c4 : 1.0f;
+                    m_flColor464 = m_flColor468 = m_flColor46c = m_flColor470 = f;
+                }
+                goto done;
+            }
+            if (n > 5)
+                n = 5;
+            float t = (n - 1) * 0.25f;
+            sub_100fbac0((1.0f - m_fl4a8) * t + m_fl4a8, 0);
+            m_flAlpha474 = (1.0f - m_fl4b0) * t + m_fl4b0;
+            if (m_b4c4) {
+                float f = (1.0f - m_fl4ac) * t + m_fl4ac;
+                m_flColor464 = m_flColor468 = m_flColor46c = m_flColor470 = f;
+            }
+            if (n >= 1)
+                goto yes;
+        }
+    }
+    if (!bFlag) {
+done:
+        (*(Slot242Fn *)(*(int *)this + 0x3c8))(this);
+        sub_10051810();
+        sub_100fbbb0(10.0f);
+        m_b4b4 = 0;
+        return false;
+    }
+yes:
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10051810 size=0x1b5
 #include "CBaseEntity.h"
 #include "CUnknown101d7520.h"
