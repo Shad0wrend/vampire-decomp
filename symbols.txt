@@ -10646,6 +10646,7 @@
 0x100106b3 func   ?sub_101300e0@@YAHXZ sub_101300e0
 0x100106b8 func   ?sub_10203780@@YAPBDH@Z sub_10203780
 0x100106bd func   ?sub_101abec0@@YA_NXZ sub_101abec0
+0x100106c2 func   ?sub_100781e0@CTableFields10077ac0@@QAEMM@Z CTableFields10077ac0::sub_100781e0
 0x100106cc func   ?sub_10369df0@CNPC_VCameraSecurity@@QAEPAV1@XZ CNPC_VCameraSecurity::sub_10369df0
 0x100106d1 func   ??0CAI_Navigator@@QAE@H@Z CAI_Navigator::CAI_Navigator
 0x100106d6 func   ?vfunc509@CNPC_VCamera@@UAE_NXZ CNPC_VCamera::vfunc509
