@@ -12964,6 +12964,7 @@
 0x10013b6f func   ?vfunc291@CWeaponIGeneric@@UAEXXZ CWeaponIGeneric::vfunc291
 0x10013b74 func   ?vfunc110@CEnvLight@@QAE_NPBD0@Z CEnvLight::vfunc110
 0x10013b79 func   ?sub_100a9470@CBaseEntity@@QAEXD@Z CBaseEntity::sub_100a9470
+0x10013b7e func   ?RemoveNode@?$CUtlRBTree@UCRBTree16Entry8B@@G@@QAEXG@Z CUtlRBTree<CRBTree16Entry8B,unsigned short>::RemoveNode
 0x10013b83 func   ?vfunc0@CSafeDiscSaveRestoreOps_5@@QAEXPAPAHPAUCSafeDiscWriter@@@Z CSafeDiscSaveRestoreOps_5::vfunc0
 0x10013b88 func   ?sub_101b26c0@CSoundEmitterSystemBase@@QAEPAV1@XZ CSoundEmitterSystemBase::sub_101b26c0
 0x10013b92 func   ?sub_10068110@@YAHXZ sub_10068110
