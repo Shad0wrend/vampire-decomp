@@ -60246,6 +60246,67 @@ int sub_1010fc80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101104c0 size=0x50b
+#include "CBreakableSurface.h"
+#include "CCollisionProperty.h"
+#include "CEntityMessageFilter.h"
+#include "CEntityVSlots.h"
+#include <math.h>
+#define MINF(a, b) ((a) < (b) ? (a) : (b))
+#define MAXF(a, b) ((a) > (b) ? (a) : (b))
+
+// TARGET: CBreakableSurface::sub_101104c0
+void CBreakableSurface::sub_101104c0(CBaseEntity *pOther)
+{
+    CEntityVSlots *pEnt = (CEntityVSlots *)pOther;
+    if (m_nSurfaceType4c8 == 1) {
+        Vector vel;
+        pEnt->slot199(&vel, 0);
+        if (FastSqrt(vel.y * vel.y + vel.x * vel.x + vel.z * vel.z) < 500.0f)
+            return;
+    }
+
+    float y1, y2, x2, x1;
+    Vector hit1;
+    Vector hit2;
+    CCollisionProperty *pCol = (CCollisionProperty *)((char *)pOther + 0x270);
+    pCol->sub_100dcd90(&pCol->m_vecMins.x, &pCol->m_vecMaxs.x, &hit2.x, &hit1.x);
+
+    float t = DotProduct(hit1 - m_vecCorner, m_vecAxis);
+    Vector p = hit1 + m_vecAxis * t;
+    sub_101128d0(p, &x1, &y1);
+    t = DotProduct(hit2 - m_vecCorner, m_vecAxis);
+    p = hit2 + m_vecAxis * t;
+    sub_101128d0(p, &x2, &y2);
+
+    int c0 = (int)floor(MAXF(0.0f, MINF(x1, x2)));
+    int c1 = (int)ceil(MINF((float)m_nCols49c, MAXF(x1, x2)));
+    int r0 = (int)floor(MAXF(0.0f, MINF(y1, y2)));
+    int r1 = (int)ceil(MINF((float)m_nRows4a0, MAXF(y1, y2)));
+
+    Vector force;
+    pEnt->slot199(&force, 0);
+    force *= 5.0f;
+
+    for (int r = r0; r < r1; r++) {
+        if (enginerandom->vfunc2(0, 1))
+            sub_101132a0(c0 - 1, r, &force, pEnt->slot220());
+        for (int c = c0; c < c1; c++)
+            sub_101132a0(c, r, &force, pEnt->slot220());
+        if (enginerandom->vfunc2(0, 1))
+            sub_101132a0(c1 + 1, r, &force, pEnt->slot220());
+    }
+
+    CEntityMessageFilter filter;
+    int edict = m_pEdict2e0;
+    filter.sub_1019d2f0(engine->vfunc35(edict));
+    filter.MakeReliable();
+    engine->vfunc65(&filter, 0);
+    engine->vfunc67(3);
+    engine->vfunc66();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10112390 size=0x3
 void __stdcall sub_10112390(int a0, int a1, int a2, int a3)
 {

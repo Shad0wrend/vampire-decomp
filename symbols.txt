@@ -6629,6 +6629,7 @@
 0x1000a867 func   ?sub_102886f0@CUnknown102886f0@@QAEXH@Z CUnknown102886f0::sub_102886f0
 0x1000a86c func   ?vfunc117@CBaseViewModel@@UAEHXZ CBaseViewModel::vfunc117
 0x1000a871 func   ?sub_102ca6c0@Obj@@QAEXPAUEntX@@0@Z Obj::sub_102ca6c0
+0x1000a876 func   ?sub_101104c0@CBreakableSurface@@QAEXPAVCBaseEntity@@@Z CBreakableSurface::sub_101104c0
 0x1000a87b func   ?sub_103a5be0@CNPC_VSabbatLeaderCtor@@QAEPAVCNPC_VSabbatLeader@@XZ CNPC_VSabbatLeaderCtor::sub_103a5be0
 0x1000a880 func   ?sub_101ef3d0@CVampireProjectile@@QAEXXZ CVampireProjectile::sub_101ef3d0
 0x1000a885 func   ?sub_101f6370@CUnknown101f6370@@QAEPAXXZ CUnknown101f6370::sub_101f6370
