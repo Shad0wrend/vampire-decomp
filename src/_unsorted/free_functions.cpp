@@ -60555,6 +60555,55 @@ void sub_10118350(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101183f0 size=0x4bc
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_105714b0[2];
+void sub_10001668();
+void sub_1000ef11();
+
+int *sub_101183f0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 1, "m_flFieldOfView", {0x450, 0}, 1, 6, "FieldOfView" },
+        { 0, "InputDeactivate", {0, 0}, 1, 8, "Deactivate", 0, (void *)sub_10001668 },
+        { 0, "InputActivate", {0, 0}, 1, 8, "Activate", 0, (void *)sub_1000ef11 },
+        { 10, "m_playerOn", {0x458, 0}, 1, 0x16, "PlayerOn", g_1055dc70 },
+        { 10, "m_playerOff", {0x470, 0}, 1, 0x16, "PlayerOff", g_1055dc70 },
+        { 10, "m_pressedAny", {0x488, 0}, 1, 0x16, "PressedAny", g_1055dc70 },
+        { 10, "m_pressedMoveLeft", {0x4a0, 0}, 1, 0x16, "PressedMoveLeft", g_1055dc70 },
+        { 10, "m_pressedMoveRight", {0x4b8, 0}, 1, 0x16, "PressedMoveRight", g_1055dc70 },
+        { 10, "m_pressedForward", {0x4d0, 0}, 1, 0x16, "PressedForward", g_1055dc70 },
+        { 10, "m_pressedBack", {0x4e8, 0}, 1, 0x16, "PressedBack", g_1055dc70 },
+        { 10, "m_pressedAttack", {0x500, 0}, 1, 0x16, "PressedAttack", g_1055dc70 },
+        { 10, "m_pressedAttack2", {0x518, 0}, 1, 0x16, "PressedAttack2", g_1055dc70 },
+        { 10, "m_pressedFeed", {0x530, 0}, 1, 0x16, "PressedFeed", g_1055dc70 },
+        { 10, "m_xaxis", {0x548, 0}, 1, 0x16, "XAxis", g_1055dc70 },
+        { 10, "m_yaxis", {0x560, 0}, 1, 0x16, "YAxis", g_1055dc70 },
+        { 10, "m_attackaxis", {0x578, 0}, 1, 0x16, "AttackAxis", g_1055dc70 },
+        { 10, "m_attack2axis", {0x590, 0}, 1, 0x16, "Attack2Axis", g_1055dc70 },
+    };
+    g_105714b0[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_105714b0[0] = (int)&dataDesc[1];
+    return g_105714b0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101189e0 size=0xfd
 #include "CBaseEntity.h"
 
