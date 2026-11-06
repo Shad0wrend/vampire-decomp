@@ -198876,6 +198876,115 @@ char sub_103c49d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c4ab0 size=0x35c
+#include "UtlMem.h"
+#include "UtlVec8.h"
+#include "CUtlVector4.h"
+#include "CUtlVector16.h"
+#include "CUnknown10359c50.h"
+#include "CUnknown10936b68.h"
+
+extern "C" void __cdecl qsort(void *, unsigned int, unsigned int, int (__cdecl *)(const void *, const void *));
+extern "C" int __cdecl sub_102bec60(const void *, const void *);
+extern char g_109203cc[], g_109203d4[], g_109203dc[], g_10936c74[];
+extern char g_1093b3e0[], g_1093b3f8[], g_1093b410[], g_1093b3c4[];
+extern char g_1065e2b0[], g_1065e100[];
+extern bool g_1065e088;
+extern const char *g_1065e090;
+extern const char g_10594488[], g_10600e78[], g_10577ca0[], g_10628c94[];
+extern CUnknown10936b68 g_10936b68;
+extern CUnknown10359c50 g_1093d258, g_1093d270, g_1093d288, g_1093d2a4;
+
+struct Elem { const char *name; int id; };
+
+// TARGET: sub_103c4ab0
+void sub_103c4ab0()
+{
+	struct SchedLocals {
+		CUtlVector4 texts;
+		CUtlVector4 funcs;
+		UtlVec8 scheds, tasks, conds, slots;
+		const char *text;
+		UtlVec8Elem entry;
+	} L;
+	int i;
+
+	((UtlMem *)&L.texts)->sub_102c6a00(0, 0);
+	L.texts.m_size = 0;
+	L.texts.m_pElements = L.texts.m_pMemory;
+	((UtlMem *)&L.funcs)->sub_102c6b80(0, 0);
+	L.funcs.m_size = 0;
+	L.funcs.m_pElements = L.funcs.m_pMemory;
+	L.scheds.sub_102c66f0(0, 0);
+	L.tasks.sub_102c66f0(0, 0);
+	L.conds.sub_102c66f0(0, 0);
+	L.slots.sub_102c66f0(0, 0);
+
+	L.entry.a = (int)g_1065e2b0;
+	L.entry.b = 0x157;
+	L.scheds.sub_102c6a50(L.scheds.m_Size, &L.entry);
+	L.text = g_1065e100;
+	L.texts.sub_102c6920(L.texts.m_size, (const int *)&L.text);
+
+	if (g_1093d258.sub_1001153b(g_109203cc, g_1093b3e0) && g_1093d270.sub_1001153b(g_109203d4, g_1093b3f8))
+		g_1093d288.sub_1001153b(g_109203dc, g_1093b410);
+	g_1093d2a4.sub_1001153b(g_10936c74, g_1093b3c4);
+
+	if (L.scheds.m_Size) qsort(L.scheds.m_pMemory, L.scheds.m_Size, 8, sub_102bec60);
+	if (L.tasks.m_Size) qsort(L.tasks.m_pMemory, L.tasks.m_Size, 8, sub_102bec60);
+	if (L.conds.m_Size) qsort(L.conds.m_pMemory, L.conds.m_Size, 8, sub_102bec60);
+	if (L.slots.m_Size) qsort(L.slots.m_pMemory, L.slots.m_Size, 8, sub_102bec60);
+
+	for (i = 0; i < L.scheds.m_Size; i++) {
+		const char *c = g_1065e090;
+		int id = ((Elem *)L.scheds.m_pMemory)[i].id;
+		const char *nm = ((Elem *)L.scheds.m_pMemory)[i].name;
+		if (!g_1093d258.sub_102ea130(nm, id, g_10594488, c))
+			goto fail;
+	}
+	for (i = 0; i < L.tasks.m_Size; i++) {
+		const char *c = g_1065e090;
+		int id = ((Elem *)L.tasks.m_pMemory)[i].id;
+		const char *nm = ((Elem *)L.tasks.m_pMemory)[i].name;
+		if (!g_1093d270.sub_102ea130(nm, id, g_10600e78, c))
+			goto fail;
+	}
+	for (i = 0; i < L.conds.m_Size; i++) {
+		const char *c = g_1065e090;
+		int id = ((Elem *)L.conds.m_pMemory)[i].id;
+		const char *nm = ((Elem *)L.conds.m_pMemory)[i].name;
+		if (!g_1093d288.sub_102ea130(nm, id, g_10577ca0, c))
+			goto fail;
+	}
+	for (i = 0; i < L.slots.m_Size; i++)
+		if (!g_1093d2a4.sub_102ea130(((Elem *)L.slots.m_pMemory)[i].name, ((Elem *)L.slots.m_pMemory)[i].id, g_10628c94, g_1065e090))
+			goto fail;
+	for (i = 0; i < L.funcs.m_size; i++)
+		((void (**)())L.funcs.m_pMemory)[i]();
+	for (i = 0; i < L.texts.m_size && g_1065e088; i++)
+		g_1065e088 = g_10936b68.sub_1030d850("CNPC_VVampire", (void *)L.texts.m_pMemory[i], &g_1093d258);
+
+	L.slots.sub_102c8a90();
+	L.conds.sub_102c8a90();
+	((CUtlVector16 *)&L.tasks)->sub_102c8b60();
+	((UtlMem *)&L.tasks)->sub_102c8c00();
+	((CUtlVector16 *)&L.scheds)->sub_102c8b60();
+	((UtlMem *)&L.scheds)->sub_102c8c00();
+done:
+	((CUtlVector16 *)&L.funcs)->sub_102c8bb0();
+	((UtlMem *)&L.funcs)->sub_102c8c40();
+	((CUtlVector16 *)&L.texts)->sub_102c8b10();
+	((UtlMem *)&L.texts)->sub_1021e540();
+	return;
+fail:
+	L.slots.sub_102c8a90();
+	L.conds.sub_102c8a90();
+	L.tasks.sub_102c8a90();
+	L.scheds.sub_102c8a90();
+	goto done;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c4fa0 size=0x8e
 #include "CNPC_VVampireBoss.h"
 

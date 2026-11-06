@@ -11267,6 +11267,7 @@
 0x100113d3 func   _npc_VChangBrosBlade npc_VChangBrosBlade
 0x100113d8 func   ?sub_1030ba70@CUnknown1030ba70@@QAEHXZ CUnknown1030ba70::sub_1030ba70
 0x100113dd func   ??0CUnknown1007a060Elem@@QAE@XZ CUnknown1007a060Elem::CUnknown1007a060Elem
+0x100113e2 func   ?sub_103c4ab0@@YAXXZ sub_103c4ab0
 0x100113e7 func   ?vfunc362@CWeaponMelee_Claws@@UAEPAUCWeaponActivityRecord@@XZ CWeaponMelee_Claws::vfunc362
 0x100113ec func   ?sub_1012f190@@YAHH@Z sub_1012f190
 0x100113f1 func   ?sub_1017f790@CUnknown1017f790@@QAEMXZ CUnknown1017f790::sub_1017f790
