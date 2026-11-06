@@ -1,0 +1,10 @@
+// Matched functions only. Written by pcdecomp; change it through pcdecomp.
+#include "vampire.h"
+
+// FUNCTION: 0x10313620 size=0x381
+#include "vampire_all.h"
+// TARGET: ?LinkToParent@?$CUtlRBTree@UCAI_ExpresserUse@@G@@QAEXGG_N@Z
+#include "utlrbtree.h"
+#include "CAI_Expresser.h"
+static void (CUtlRBTree<CAI_ExpresserUse, unsigned short>::*s_LinkToParent)(unsigned short, unsigned short, bool) = &CUtlRBTree<CAI_ExpresserUse, unsigned short>::LinkToParent;
+// END FUNCTION
