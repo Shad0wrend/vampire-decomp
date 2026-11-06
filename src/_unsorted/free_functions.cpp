@@ -1480,6 +1480,112 @@ void CUtlMemory20::sub_1002ccc0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002cd50 size=0x27c
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "Vector.h"
+#include "CSoundParameters.h"
+#include "CPASAttenuationFilter.h"
+
+__declspec(dllimport) void Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+
+struct S1002cd50Rec
+{
+	char m_pad00[0x24];
+	float m_f24;
+	char m_pad28[8];
+	unsigned short m_w30;
+	unsigned short m_w32;
+	unsigned short m_w34;
+};
+
+struct S1002cd50Rec2
+{
+	char m_pad00[0x18];
+	float m_f18;
+};
+
+struct S1002cd50Props
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual S1002cd50Rec *vfunc5(int idx);
+	virtual const char *vfunc6(unsigned short idx);
+};
+
+struct S1002cd50Ent
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36();
+	virtual void vfunc37(Vector *pOut, int a);
+};
+
+struct S1002cd50Entry
+{
+	int m_i00;
+	int m_i04;
+	int m_i08;
+	S1002cd50Ent *m_pEnt;
+	float m_fVolume;
+	unsigned short m_wSound;
+	unsigned short m_wSound2;
+};
+
+extern S1002cd50Props *g_10723944;
+bool sub_101b1dd0(const char *pName, CSoundParameters *pParams);
+void sub_101b14d0(CRecipientFilter *pFilter, int a, int b, const char *pName, float flVolume, int soundlevel, int c, int pitch, const Vector *pOrigin, int d, int e);
+
+void sub_1002cd50(CUtlVector<S1002cd50Entry> *pList)
+{
+	const char *pName = 0;
+	for (int i = pList->Count() - 1; i >= 0; i--)
+	{
+		S1002cd50Entry *e = &(*pList)[i];
+		S1002cd50Rec *r = g_10723944->vfunc5(e->m_wSound);
+		if (r->m_w34)
+		{
+			S1002cd50Rec2 *r2 = (S1002cd50Rec2 *)g_10723944->vfunc5(e->m_wSound2);
+			unsigned short idx = r->m_w34;
+			if (r2 && r->m_w32 && r2->m_f18 < r->m_f24)
+				idx = r->m_w32;
+			pName = g_10723944->vfunc6(idx);
+		}
+		if (!pName || !*pName)
+			pName = g_10723944->vfunc6(r->m_w30);
+		if (pName && *pName)
+		{
+			CSoundParameters params;
+			if (!sub_101b1dd0(pName, &params))
+			{
+				params.channel = 0;
+				params.volume = 1.0f;
+				params.pitch = 100;
+				params.pitchlow = 100;
+				params.pitchhigh = 100;
+				params.soundlevel = 75;
+				params.play_to_owner_only = false;
+				params.count = 0;
+				Q_strncpy(params.soundname, pName, 128);
+			}
+			Vector vecOrigin;
+			e->m_pEnt->vfunc37(&vecOrigin, 0);
+			if (e->m_fVolume > 1.0f)
+				e->m_fVolume = 1.0f;
+			params.volume *= 0.45f;
+			int soundlevel = params.soundlevel;
+			CPASAttenuationFilter filter(vecOrigin, (soundlevel_t)soundlevel);
+			sub_101b14d0(&filter, 0, e->m_i08, params.soundname, params.volume * e->m_fVolume, params.soundlevel, 0, params.pitch, &vecOrigin, 0, 0);
+		}
+	}
+	pList->RemoveAll();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002d070 size=0xfb
 #include "utlmemory.h"
 #include "utlrbtree.h"
