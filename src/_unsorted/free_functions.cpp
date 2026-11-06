@@ -76656,6 +76656,58 @@ void StatMaskView::sub_1017a2b0(int type)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017a550 size=0x3e2
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CBaseEntity.h"
+#include "CBaseCombatCharacter.h"
+#include "CStatLoadout.h"
+#include "engineserver.h"
+
+extern void (*g_109f3630)(const char *fmt, ...);
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+struct CMPEquipView { char pad[0x2078]; const char *m_pszName2078; };
+
+void CStatLoadout::sub_1017a550(CBaseEntity *pCharacter)
+{
+	const char *pszName = STRINGR(((CMPEquipView *)pCharacter)->m_pszName2078);
+	int edict = pCharacter->m_pEdict2e0;
+	g_109f3630("\nMP_Equip: %d: %s\n", engine->vfunc35(edict), pszName);
+	CVStatListSet::Of(pCharacter)->Find(0)->sub_102012d0(0x22);
+	StatDefault2 *pDef = FindStatDefault2(m_nType);
+	const char *pszOld;
+	if (m_nArmor != -1)
+		pszOld = STRINGR(((const char **)FindStatDefault2(m_nType)->m_pNames20)[m_nArmor]);
+	else
+		pszOld = g_106b8540;
+	pDef = FindStatDefault2(m_nType);
+	g_109f3630("Armor: %s (old - %s)\n", STRINGR(((const char **)pDef->m_pNames20)[m_nArmorNew]), pszOld);
+	for (int i = 0; i < FindStatDefault2(m_nType)->m_nFlags0c; i++) {
+		if (m_nEquipNew[i] != -1) {
+			pDef = FindStatDefault2(m_nType);
+			const char *pszOldItem;
+			if (m_nEquip[i] != -1)
+				pszOldItem = STRINGR(((const char **)FindStatDefault2(m_nType)->m_pNames10)[m_nEquip[i]]);
+			else
+				pszOldItem = g_106b8540;
+			pDef = FindStatDefault2(m_nType);
+			g_109f3630("Item (%d): %s (old - %s)\n", i, STRINGR(((const char **)pDef->m_pNames10)[m_nEquipNew[i]]), pszOldItem);
+		}
+	}
+	g_109f3630("\n");
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017b330 size=0x2cd
 #include "CBaseEntity.h"
 #include "utlrbtree.h"
