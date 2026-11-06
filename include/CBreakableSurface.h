@@ -21,6 +21,7 @@ public:
     virtual void vfunc130(int a);    // slot 130: CBaseEntity::vfunc130(a), then with the byte at +0x4c4 set: sub_100ac4e0(0x100154ec, 0, 0) and the dword at +0x17c = the global at 0x1070b228's +0xc
     void sub_1010d6a0();    // CBreakable::vfunc103 (stub 0x1000a10f), called directly
     void sub_101128d0(const Vector &vecPos, float *pX, float *pY);
+    void sub_101104c0(CBaseEntity *pOther);
     bool sub_101123b0(int nCol, int nRow);
     void sub_10112d50(int nCol, int nRow);
     void sub_101132a0(int nCol, int nRow, const Vector *pForce, const Vector *pForcePos);    // breaks one pane and shatters it with the force at the force position
