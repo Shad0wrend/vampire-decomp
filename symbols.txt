@@ -2682,6 +2682,7 @@
 0x10004dc2 func   ?vfunc113@CDynamicProp@@UAEXXZ CDynamicProp::vfunc113
 0x10004dc7 func   ?vfunc34@CGameRules@@UAE_NH@Z CGameRules::vfunc34
 0x10004dcc func   ?sub_101e8ad0@CUnknown101e8ad0@@QAEMXZ CUnknown101e8ad0::sub_101e8ad0
+0x10004dd6 func   ?sub_10279dd0@CAI_BaseNPC@@QAE_NXZ CAI_BaseNPC::sub_10279dd0
 0x10004ddb func   ?sub_10041a60@@YIPAUHashHolder@@PAU1@HE@Z sub_10041a60
 0x10004de0 func   ?vfunc82@CPointTeleport@@UAEPAUdatamap_t@@XZ CPointTeleport::vfunc82
 0x10004de5 func   ?sub_100e79f0@CDialog@@QAEHHHH@Z CDialog::sub_100e79f0

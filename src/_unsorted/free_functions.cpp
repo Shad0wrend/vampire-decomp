@@ -149514,6 +149514,137 @@ void CAI_BaseNPC::sub_10279cc0(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10279dd0 size=0x42c
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CAI_BaseNPC.h"
+#include "CVProfile.h"
+#include "ScopeTrace.h"
+#include "COutputEvent.h"
+#include "CUnknown102e0150.h"
+
+struct CCycleSampler
+{
+	unsigned __int64 m_Int64;
+	void Sample() { __asm { mov ecx, this
+		rdtsc
+		mov [ecx], eax
+		mov [ecx+4], edx } }
+};
+
+struct CDevFlagObj { virtual void v0(); virtual void v1(); };
+extern CDevFlagObj *g_10924a6c;
+__declspec(dllimport) void DevMsg(int level, const char *fmt, ...);
+
+struct CAI_BaseNPCChoose : CAI_BaseNPC { CBaseEntity *sub_102707d0(CBaseEntity *pEnt); };
+
+#define NPC_M(T, off) (*(T *)((char *)this + (off)))
+
+// TARGET: CAI_BaseNPC::sub_10279dd0
+bool CAI_BaseNPC::sub_10279dd0()
+{
+	ScopeTrace trace("CAI_BaseNPC::ChooseEnemy", this ? (NPC_M(const char *, 0x26c) ? NPC_M(const char *, 0x26c) : g_106b8540) : g_105387dc);
+	g_109f3648->EnterScope("CAI_Enemies_ChooseEnemy", 0, "Unaccounted", false);
+
+	CBaseEntity *pInitialEnemy = (CBaseEntity *)vfunc167();
+	CBaseEntity *pChosenEnemy = pInitialEnemy;
+	unsigned int uFlags = NPC_M(unsigned int, 0x5d8c);
+	bool fHadEnemy = (uFlags & 0x18000) != 0;
+	unsigned char fEnemyWasPlayer = (uFlags >> 16) & 1;
+	bool fEnemyWentNull = fHadEnemy && !pInitialEnemy;
+	bool fEnemyEluded = fEnemyWentNull || (pInitialEnemy && vfunc541()->sub_102e0210((int)pInitialEnemy));
+	bool fEnemyDead = pInitialEnemy && !((CAI_BaseNPC *)pInitialEnemy)->vfunc158();
+	bool fCondNewEnemy, fCondLostEnemy, fCondEnemyDead;
+
+	if (NPC_M(void *, 0x5c38)) {
+		fCondNewEnemy = sub_10269c70(0x54);
+		fCondLostEnemy = sub_10269c70(0x47);
+		fCondEnemyDead = sub_10269c70(0x58);
+	} else {
+		fCondEnemyDead = fCondLostEnemy = fCondNewEnemy = true;
+	}
+
+	if (!fEnemyDead || !fCondEnemyDead) {
+		if (!fEnemyWentNull) {
+			if (!fCondNewEnemy && !(fCondLostEnemy && fEnemyEluded)) {
+				CVProfile *pProf = g_109f3648;
+				bool bRet = pChosenEnemy != 0;
+				pProf->ExitScope();
+				return bRet;
+			}
+		} else if (!fCondNewEnemy && !fCondLostEnemy && NPC_M(void *, 0x5c38)) {
+			DevMsg(2, "WARNING: AI enemy went NULL but schedule (%s) is not interested\n", *(const char **)((char *)NPC_M(void *, 0x5c38) + 0x40));
+		}
+	}
+
+	if (vfunc480())
+		pChosenEnemy = ((CAI_BaseNPCChoose *)this)->sub_102707d0((CBaseEntity *)vfunc478());
+
+	if (pChosenEnemy != pInitialEnemy || fEnemyWentNull) {
+		NPC_M(unsigned int, 0x5d8c) &= 0xfffe7fff;
+		if (pInitialEnemy && !((CAI_BaseNPC *)pInitialEnemy)->vfunc158()) {
+			g_10924a6c->v1();
+			sub_10269a20(0x58);
+		}
+		if (!pChosenEnemy) {
+			sub_10269b50(0x54);
+		} else {
+			g_10924a6c->v1();
+			sub_10269a20(0x54);
+		}
+		sub_10279a50((int)pChosenEnemy);
+		if (fHadEnemy) {
+			sub_1028ae60();
+			NPC_M(unsigned int, 0x5d8c) &= 0xfffdffff;
+		}
+		if (!pChosenEnemy) {
+			if (fEnemyEluded) {
+				g_10924a6c->v1();
+				sub_10269a20(0x47);
+				vfunc493();
+			}
+			if (fEnemyWasPlayer)
+				(&NPC_M(COutputEvent, 0x5ecc))->sub_100cd660((CBaseEntity *)this, (CBaseEntity *)this, 0);
+			else
+				(&NPC_M(COutputEvent, 0x5e84))->sub_100cd660((CBaseEntity *)this, (CBaseEntity *)this, 0);
+		} else {
+			NPC_M(unsigned int, 0x5d8c) |= (*(int *)((char *)pChosenEnemy + 0xa8) != 0 ? 0x10000 : 0x8000);
+		}
+	}
+
+	CVProfile *p = g_109f3648;
+	bool bRet = pChosenEnemy != 0;
+	if (!p->m_bAtRoot || p->m_enabled) {
+		CVProfNode *n = p->m_pCurNode;
+		if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0) {
+			CCycleSampler end;
+			end.m_Int64 = 0;
+			end.Sample();
+			CUnknownCycle100335e0 *pc = &n->m_CurFrameTime;
+			pc->m_Int64 = end.m_Int64 - pc->m_Int64;
+			n->m_TotalTime += pc->m_Int64;
+			CVProfile *q = g_109f3648;
+			q->m_nGroupStackDepth--;
+			int nOld = q->m_GroupIDStack[q->m_nGroupStackDepth + 1];
+			int nNew = q->m_GroupIDStack[q->m_nGroupStackDepth];
+			if (nNew != nOld && q->m_bVTuneGroupsEnabled && nOld == q->m_nVTuneGroupID)
+				vtune(false);
+		}
+		if (n->m_nRecursions == 0)
+			p->m_pCurNode = p->m_pCurNode->m_pParent;
+		p->m_bAtRoot = (p->m_pCurNode == p->m_pRoot);
+	}
+	return bRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027a310 size=0xb7
 #include "CAI_BaseNPC.h"
 #include "CBaseEntity.h"
