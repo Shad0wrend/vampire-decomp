@@ -198716,6 +198716,78 @@ int CUnknown103bf560::sub_103bf560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103bf660 size=0x2d7
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CNPC_VTzimisce.h"
+#include "CEntityVSlots.h"
+#include "CUnknown102e0150.h"
+#include "CTraceFilterNav.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "CUnknown1070b254.h"
+#include "CVProfile.h"
+#include "ScopeTrace.h"
+#include "CAI_MoveProbe.h"
+#include "CUnknown10738960.h"
+
+void sub_10146570(float *a, float *b, int c, int d, int e, int f, float g);
+
+struct CTzimisceBoundsView
+{
+	virtual void v0();
+	virtual float *Mins();
+	virtual float *Maxs();
+};
+
+// TARGET: CNPC_VTzimisce::sub_103bf660
+bool CNPC_VTzimisce::sub_103bf660(const Vector &vecPos)
+{
+	CEntityVSlots *self = (CEntityVSlots *)this;
+	if (!self->slot167())
+		return false;
+	Vector vecLast;
+	int nOut;
+	((CUnknown102e0150 *)self->slot541())->sub_102dfed0(&vecLast, (CBaseEntity *)self->slot167());
+	sub_102c3b50((void *)self->slot167(), vecLast, &vecLast, &nOut);
+	vecLast.z += 0.1;
+	Vector vecOrigin = *self->slot220();
+	vecOrigin.z += 0.1;
+	float dx = vecOrigin.x - vecLast.x;
+	float dy = vecOrigin.y - vecLast.y;
+	float dz = vecOrigin.z - vecLast.z;
+	float d2 = dx * dx + dy * dy + dz * dz;
+	if (40000.0f > d2 || d2 > 360000.0f)
+		return false;
+	CTzimisceBoundsView *pBounds = (CTzimisceBoundsView *)((char *)this + 0x270);
+	float *pMins = pBounds->Mins();
+	CAI_MoveProbe *pProbe = m_pMoveProbe5d40;
+	float *pMaxs = pBounds->Maxs();
+	g_109f3648->EnterScope("CAI_MoveProbe_TraceHull", 0, "Unaccounted", false);
+	CTraceFilterNav filter;
+	filter.sub_102e30d0((int)pProbe->m_pOuter, *(int *)((char *)pProbe->m_pOuter + 0x368));
+	CGameTrace trace;
+	{
+		ScopeTrace scope("UTIL_TraceHull", g_106b8540);
+		Ray_t ray;
+		ray.sub_1006dec0(vecOrigin, (float *)&vecLast, pMins, pMaxs, 1, 0);
+		g_1070b254->vfunc4(&ray, 0x202400b, (CTraceFilterNoCharacterCollide *)&filter, &trace);
+		if (g_10738960.sub_1005f190())
+			sub_10146570(trace.m_startpos, trace.m_endpos, 255, 255, 0, 1, -1.0f);
+	}
+	g_109f3648->ExitScopeInlined();
+	return (int)trace.m_pEnt == self->slot167() ? true : false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103bfa50 size=0x166
 #include "CBaseEntity.h"
 #include "CNPC_VTzimisce.h"
