@@ -75939,6 +75939,82 @@ void CBasePlayer::sub_10170750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101707c0 size=0x261
+#include "CBasePlayer.h"
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "CBaseLandmark.h"
+#include "CGlobalEntityList.h"
+#include "globalvars.h"
+
+extern CGlobalEntityList g_106eb5d8;
+CBaseEntity *sub_101c7690(const char *pszName, int a);
+void __fastcall sub_1017faa0(CBasePlayer *pPlayer);
+__declspec(dllimport) void Warning(const char *fmt, ...);
+
+// TARGET: CBasePlayer::sub_101707c0
+void CBasePlayer::sub_101707c0(int unused, int bTouch, const char *pszLandmark)
+{
+	bool bGo = bTouch != 0;
+	m_n19F0 = 10;
+	CBaseLandmark *pLandmark = (CBaseLandmark *)sub_101c7690(pszLandmark, 0);
+	if (pLandmark) {
+		if (*(unsigned char *)&pLandmark->m_flags204 & 1) {
+			vfunc216(pLandmark->vfunc217());
+			vfunc218(pLandmark->vfunc219());
+			float *pAngles = pLandmark->vfunc219();
+			m_vec206c.x = pAngles[0];
+			m_vec206c.y = pAngles[1];
+			m_vec206c.z = pAngles[2];
+			sub_100b3b00();
+		} else if ((unsigned char)(pLandmark->m_flags204 >> 1) & 1) {
+			vfunc216(pLandmark->vfunc217());
+			sub_100b3b00();
+		}
+		pLandmark->m_Output4f8.sub_100cd660(this, pLandmark, 0);
+		if (!bGo)
+			goto done;
+		sub_1017f170(pLandmark);
+	} else {
+		if (pszLandmark)
+			Warning("%s: BAD PLAYER LANDMARK!!", pszLandmark);
+		if (!bGo)
+			goto done;
+		CBaseEntity *pBest = 0;
+		float flBest = 3.4028235e+38f;
+		Vector vecOrigin = *(Vector *)vfunc220();
+		CBaseEntity *pEnt = g_106eb5d8.sub_100f7380(0, "info_landmark");
+		while (pEnt) {
+			float flDist = (*(Vector *)((CBasePlayer *)pEnt)->vfunc220() - vecOrigin).LengthSqr();
+			if (flDist < flBest) {
+				pBest = pEnt;
+				flBest = flDist;
+			}
+			pEnt = g_106eb5d8.sub_100f7380(pEnt, "info_landmark");
+		}
+		if (pBest)
+			sub_1017f170(pBest);
+	}
+	sub_10170750();
+	sub_1017e150(0, -1.0f, "Clear - OnRestoreComplete");
+	sub_1017df50(0, -1.0f, "Clear - OnRestoreComplete");
+	sub_1017e6f0(0);
+done:
+	if (vfunc94() == 10)
+		vfunc93(3, 0);
+	Vec1d90().Purge();
+	int *p = (int *)((char *)this + 0x1e90);
+	p[0] = 0;
+	p[1] = 0;
+	p[2] = 0;
+	sub_1016fed0();
+	sub_10170b00();
+	sub_1017faa0(this);
+	sub_1016fa90();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10170ad0 size=0x1a
 struct CUnk10170ad0
 {
