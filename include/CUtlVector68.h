@@ -17,5 +17,6 @@ public:
 	int m_size;
 	CUtlVector68Elem *m_pElements;
 
+	void sub_100ed500(int n);
 	void sub_100ed460(int elem, int num);	// "CUtlVector::ShiftElementsLeft": moves the elements after elem + num down over elem
 };

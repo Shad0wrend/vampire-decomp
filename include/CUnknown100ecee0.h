@@ -72,8 +72,10 @@ public:
 	CTableItem40_t *sub_100ec450(int index, int *pOut1, int *pOut2, int *pOut3, int *pOut4, int *pOut5);
 	void sub_100ec5d0(int index, int *pOut108, int *pOut10c);	// 0x100ec5d0: the two ints at entry+0x108/0x10c of the entry at index (or the default index when out of range)	// random item (0x40 bytes at entry+0x11c) of the entry at index (or the default), and the five ints at entry+0x220..0x230 into the non-null outputs
 	int sub_100ed150(CTableNpc_t *pNpc, int a, int b);	// the sequence of the stance transition a -> b for the NPC ("stance_trans_<a>_<n>_<b>_<n>", then "..._1_..._1", then the table value); logs whether the animation was found
+	const char *sub_100ec410(int index);
+	int sub_100ecb10(class CBaseAnimating *pEnt);
 	const char *sub_100ecc10(int index);	// stub 0x10015b59: the name text of a stance
-	void sub_100ed2c0(int a, const char *pszMessage);	// stub 0x1000e886: reports the message
+	void sub_100ed2c0(bool a, const char *pszMessage);	// stub 0x1000e886: reports the message
 	int sub_100ec530(const char *pszName, int bFlag);	// stub 0x10007fa9: the index of the named entry, -1 when unknown
 	int sub_100eccf0(int index);	// stub 0x10015145: an int of the entry (the default entry when out of range)
 	float sub_100ecdf0(int index, int a);	// stub 0x1000704a: a float of the entry
