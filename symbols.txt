@@ -5410,6 +5410,7 @@
 0x10008cb0 func   ?vfunc134@CLogicAuto@@QAEXXZ CLogicAuto::vfunc134
 0x10008cb5 func   ?vfunc240@CBaseEntity@@QAEHXZ CBaseEntity::vfunc240
 0x10008cba func   ?sub_100ee950@CBaseDoor@@QAEPAVCBaseEntity@@PAV2@@Z CBaseDoor::sub_100ee950
+0x10008cbf func   ?sub_1020b440@@YAPAHXZ sub_1020b440
 0x10008cc9 func   ?sub_1042c420@@YAXPAX@Z sub_1042c420
 0x10008cce func   ?sub_101f1b70@@YGHHH@Z sub_101f1b70
 0x10008cd3 func   ?vfunc369@CBaseCombatCharacter@@QAE?AVVector@@XZ CBaseCombatCharacter::vfunc369

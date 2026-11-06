@@ -125023,6 +125023,70 @@ extern "C" CBaseEntity *security_camera()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020b440 size=0x888
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_105aa3a4[2];
+void sub_1020d080();
+void sub_1020d0b0();
+void sub_1020d050();
+void sub_1020c2a0();
+
+#define F(t, n, o, fl, ext) { t, n, {o, 0}, 1, fl, ext, 0, 0 }
+#define OUT(n, o, ext) { 10, n, {o, 0}, 1, 0x16, ext, g_1055dc70 }
+#define IN(n, ext, fn) { 0, n, {0, 0}, 1, 8, ext, 0, (void *)fn }
+
+int *sub_1020b440()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        OUT("m_OnPanToEnd", 0x7f4, "OnPanToEnd"),
+        OUT("m_OnPanToStart", 0x80c, "OnPanToStart"),
+        OUT("m_OnPlayerDiscovered", 0x7dc, "OnPlayerDiscovered"),
+        IN("InputEnable", "Enable", sub_1020d080),
+        IN("InputDisable", "Disable", sub_1020d0b0),
+        IN("InputToggle", "Toggle", sub_1020d050),
+        F(1, "m_fTurnTime", 0x780, 6, "turntime"),
+        F(1, "m_fPauseTime", 0x784, 6, "pausetime"),
+        F(1, "m_fRotDegrees", 0x788, 6, "rotdegrees"),
+        F(1, "m_fBlindDist", 0x790, 6, "blindspot"),
+        F(1, "m_fVisRange", 0x794, 6, "radius"),
+        F(1, "m_fFieldOfView", 0x798, 6, "fieldofview"),
+        F(1, "m_fZoomTime", 0x7c0, 6, "zoom_time"),
+        F(5, "m_bEnabled", 0x77c, 2, 0),
+        F(1, "m_fRotSpeed", 0x78c, 2, 0),
+        F(4, "m_nState", 0x79c, 2, 0),
+        F(15, "m_flStateTimer", 0x7a0, 2, 0),
+        F(15, "m_nLookTimer", 0x7a4, 2, 0),
+        F(3, "m_angIdle1", 0x7a8, 2, 0),
+        F(3, "m_angIdle2", 0x7b4, 2, 0),
+        F(5, "m_bPlayerSpotted", 0x7d8, 2, 0),
+        F(2, "m_sPanSnd", 0x7c4, 6, "pansnd"),
+        F(2, "m_sZoomInSnd", 0x7c8, 6, "zoominsnd"),
+        F(2, "m_sZoomOutSnd", 0x7cc, 6, "zoomoutsnd"),
+        F(2, "m_sAlarmSnd", 0x7d0, 6, "alarmsnd"),
+        { 0, "CSecCameraSecCameraThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1020c2a0 },
+    };
+    g_105aa3a4[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_105aa3a4[0] = (int)&dataDesc[1];
+    return g_105aa3a4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020bf00 size=0x6a
 #include "CSecCamera.h"
 #include "CBaseVampireSkillEntity.h"
