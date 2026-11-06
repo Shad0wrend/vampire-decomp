@@ -174,6 +174,81 @@ int CBaseButton::vfunc142(void *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c8d60 size=0x33c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "vampire.h"
+#include "CBaseButton.h"
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+#include "globalvars.h"
+#include <math.h>
+
+void CBaseButton::vfunc103()
+{
+	CBaseEntity *e = (CBaseEntity *)this;
+	vfunc104();
+	if (m_flags204 & 0x40) {
+		union { void (CBaseButton::*pm)(); int n; } think;
+		think.pm = &CBaseButton::sub_100c9190;
+		e->sub_100ac4e0(think.n, 0, 0);
+		m_flNextThink17c = gpGlobals->curtime + 0.5;
+	}
+	vfunc171();
+	e->vfunc93(8, 0);
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", e->m_name26c ? e->m_name26c : g_106b8540, g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(1);
+	}
+	{
+		int local;
+		const char *name = *e->vfunc9(&local);
+		e->vfunc105(name ? name : g_106b8540);
+	}
+	if (m_flSpeed164 == 0.0f)
+		m_flSpeed164 = 40.0f;
+	m_nTakeDamage1fc = 2;
+	if (m_flWait500 == 0.0f)
+		m_flWait500 = 1.0f;
+	if (m_flLip504 == 0.0f)
+		m_flLip504 = 4.0f;
+	m_nState4f8 = 1;
+	m_vec508 = *(Vector *)vfunc220();
+	float dist = fabs((vfunc214()[0] - 2.0f) * m_vecMoveDir190.x)
+		+ fabs((vfunc214()[1] - 2.0f) * m_vecMoveDir190.y)
+		+ fabs((vfunc214()[2] - 2.0f) * m_vecMoveDir190.z);
+	m_vec514 = m_vec508 + m_vecMoveDir190 * (dist - m_flLip504);
+	if ((m_vec514 - m_vec508).Length() < 1.0f || (m_flags204 & 1))
+		m_vec514 = m_vec508;
+	int bNoReturn = (m_flWait500 == -1.0f);
+	m_b55c = bNoReturn;
+	m_b55d = 0;
+	if (m_flags204 & 0x800)
+		m_b5c4 = 1;
+	if (m_flags204 & 0x1000)
+		m_b5c5 = 1;
+	if (m_flags204 & 0x400)
+		m_pfnUse1f0 = &CBaseButton::sub_100c9250;
+	else
+		m_pfnUse1f0 = 0;
+	if (m_flags204 & 0x100) {
+		union { void (CBaseButton::*pm)(CBaseEntity *); void *p; } u;
+		u.pm = &CBaseButton::sub_100c9430;
+		m_pfnTouch1ec = u.p;
+	} else {
+		m_pfnTouch1ec = 0;
+	}
+	vfunc223();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c9170 size=0xe
 #include "CBaseButton.h"
 namespace lifted {
