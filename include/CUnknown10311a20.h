@@ -1,8 +1,9 @@
 // CUnknown10311a20: a CUtlRBTree with 16-byte nodes (8 byte data: a key and a pointer to a record) and a context
-// pointer at +0x18; real name not yet known. Its sentinel links live at 0x10936c48.
+// pointer at +0x18; real name not yet known. Its sentinel links live at 0x10936c48 (the CExpresserTreeEntry instance's Links).
 #pragma once
 
 #include "CUtlRBTree16.h"
+#include "CExpresserTreeEntry.h"
 
 struct CUnknown10311a20_Record
 {
@@ -16,9 +17,13 @@ struct CUnknown10311a20_Elem
 	CUnknown10311a20_Record *m_pRecord;
 };
 
-class CUnknown10311a20 : public CUtlRBTree16At<0x10936c48UL>
+class CUnknown10311a20 : public CUtlRBTree16
 {
 public:
+	// the links of the tree whose sentinel is 0x10936c48, the CUtlRBTree<CExpresserTreeEntry, unsigned short>
+	// instance: its own Links, so the game's one sentinel is one static (link audit E)
+	const Links_t &Links(unsigned short i) const { return *(const Links_t *)&((const CUtlRBTree<CExpresserTreeEntry, unsigned short> *)this)->Links(i); }
+	unsigned short Parent(unsigned short i) const { return Links(i).m_Parent; }
 	int m_nContext;	// 0x18: remembered in the global at 0x109f076c when set
 
 	unsigned short *sub_10313430(unsigned short i);	// the left child link of node i (stub 0x10002a86)

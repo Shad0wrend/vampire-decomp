@@ -91722,11 +91722,11 @@ struct CSoundEmitterSystemBaseUnit : CSoundEmitterSystemBase
 
 char CSoundEmitterSystemBaseUnit::sub_101b31a0(int index)
 {
-	if (index < 0)
-		return 0;
-	if (index >= m_i64)
-		return 0;
-	return 1;
+	if (index >= 0 && index < m_i64)
+	{
+		return 1;
+	}
+	return 0;
 }
 }
 using namespace block_101b4200;
@@ -92820,7 +92820,9 @@ int CUnknown101b9140::sub_101b7df0(int num, const CUnknown101b9140Elem *pToCopy)
 #include "CUtlRBTree24.h"
 #include "utlrbtree.h"
 
-struct CRBEntry8 {
+// the element of the RB-tree instance whose sentinel is 0x1072c428 (guard 0x109f09f8): one instance, one T, so not
+// CRBEntry8 (the instance at 0x106bddc4)
+struct CRBEntry8_1072c428 {
     int a;
     int b;
 };
@@ -92828,7 +92830,7 @@ struct CRBEntry8 {
 // TARGET: CUtlRBTree24::sub_101b7f00
 const CUtlRBTree24::Links_t &CUtlRBTree24::sub_101b7f00(int i) const
 {
-	return (const Links_t &)((const CUtlRBTree<CRBEntry8, int> *)this)->Links(i);
+	return (const Links_t &)((const CUtlRBTree<CRBEntry8_1072c428, int> *)this)->Links(i);
 }
 // END FUNCTION
 
@@ -163901,12 +163903,13 @@ void __stdcall sub_102ea5e0(int a0)
 
 // FUNCTION: 0x102eb170 size=0x107
 #include "utlrbtree.h"
+#include "CRBTree12Entry_102ec4a0.h"
 #include "CUtlRBTree12.h"
 extern CUtlRBTree12 g_10934014;
 bool sub_102eb170(int key)
 {
     CUtlRBTree12 &t = g_10934014;
-    const CUtlRBTree12At<0x10934040> *tree = (const CUtlRBTree12At<0x10934040> *)&t;
+    const CUtlRBTree<CRBTree12Entry_102ec4a0, unsigned short> *tree = (const CUtlRBTree<CRBTree12Entry_102ec4a0, unsigned short> *)&t;
     unsigned short current = t.m_Root;
     while (current != CUtlRBTree12::InvalidIndex()) {
         if (t.m_LessFunc(&key, t.m_pElements[current].m_Data))
@@ -163953,11 +163956,12 @@ void CUnknown102eb2d0::sub_102eb2d0(unsigned short elem)
 
 // FUNCTION: 0x102eb7f0 size=0xbd
 #include "utlrbtree.h"
+#include "CRBTree12Entry_102ec4a0.h"
 #include "CUtlRBTree12.h"
 
 bool CUtlRBTree12::sub_102eb7f0(unsigned short i) const
 {
-	const CUtlRBTree12At<0x10934040> *tree = (const CUtlRBTree12At<0x10934040> *)this;
+	const CUtlRBTree<CRBTree12Entry_102ec4a0, unsigned short> *tree = (const CUtlRBTree<CRBTree12Entry_102ec4a0, unsigned short> *)this;
 	unsigned short parent = tree->Links(i).m_Parent;
 	return tree->Links(parent).m_Left == i;
 }
@@ -163996,11 +164000,12 @@ void CUnknown102ec320::sub_102ec320(int num)
 
 // FUNCTION: 0x102ec3b0 size=0xbf
 #include "utlrbtree.h"
+#include "CRBTree12Entry_102ec4a0.h"
 #include "CUtlRBTree12.h"
 
 bool CUtlRBTree12::sub_102ec3b0(unsigned short i) const
 {
-	const CUtlRBTree12At<0x10934040> *tree = (const CUtlRBTree12At<0x10934040> *)this;
+	const CUtlRBTree<CRBTree12Entry_102ec4a0, unsigned short> *tree = (const CUtlRBTree<CRBTree12Entry_102ec4a0, unsigned short> *)this;
 	unsigned short parent = tree->Links(i).m_Parent;
 	return tree->Links(parent).m_Right == i;
 }
@@ -164015,10 +164020,13 @@ bool CUtlRBTree12::sub_102ec3b0(unsigned short i) const
 #include "CUtlRBTreeFind232.h"
 #include "CUtlRBTreeInsert24.h"
 #include "utlrbtree.h"
+#include "CRBTree12Entry_102ec4a0.h"
 #include "CUtlRBTree12.h"
 
-struct CUtlRBTree12Unit : CUtlRBTree12At<0x10934040>
+struct CUtlRBTree12Unit : CUtlRBTree12
 {
+    // the links of the instance whose sentinel is 0x10934040: the template's own Links (one static in the game)
+    const Links_t &Links(unsigned short i) const { return *(const Links_t *)&((const CUtlRBTree<CRBTree12Entry_102ec4a0, unsigned short> *)this)->Links(i); }
     const Links_t *sub_102eb770(unsigned short i) const;
     void sub_102ec6d0(unsigned short i);
 
@@ -172115,10 +172123,14 @@ CUtlMemory16 *CUtlMemory16::sub_10312f70(int growSize, int allocationCount)
 #include "CUtlRBTreeFind232.h"
 #include "CUtlRBTreeInsert24.h"
 #include "utlrbtree.h"
+#include "CExpresserTreeEntry.h"
 #include "CUtlRBTree16.h"
 
-struct CUtlRBTree16Unit : CUtlRBTree16At<0x10936c48>
+struct CUtlRBTree16Unit : CUtlRBTree16
 {
+    // the links of the instance whose sentinel is 0x10936c48: the template's own Links (one static in the game)
+    const Links_t &Links(unsigned short i) const { return *(const Links_t *)&((const CUtlRBTree<CExpresserTreeEntry, unsigned short> *)this)->Links(i); }
+    unsigned short Parent(unsigned short i) const { return Links(i).m_Parent; }
     void sub_10312fb0(unsigned short i, unsigned short parent, bool isLeft);
     void sub_10314e50(unsigned short i);
     void sub_10314c20(unsigned short i);
@@ -172337,11 +172349,12 @@ bool CUtlRBTree16::sub_10314000(unsigned short i) const
 
 // FUNCTION: 0x10314b30 size=0xb9
 #include "utlrbtree.h"
+#include "CExpresserTreeEntry.h"
 #include "CUtlRBTree16.h"
 
 bool CUtlRBTree16::sub_10314b30(unsigned short i) const
 {
-	const CUtlRBTree16At<0x10936c48> *tree = (const CUtlRBTree16At<0x10936c48> *)this;
+	const CUtlRBTree<CExpresserTreeEntry, unsigned short> *tree = (const CUtlRBTree<CExpresserTreeEntry, unsigned short> *)this;
 	return tree->Links(tree->Parent(i)).m_Left == i;
 }
 // END FUNCTION
@@ -172355,10 +172368,14 @@ bool CUtlRBTree16::sub_10314b30(unsigned short i) const
 #include "CUtlRBTreeFind232.h"
 #include "CUtlRBTreeInsert24.h"
 #include "utlrbtree.h"
+#include "CExpresserTreeEntry.h"
 #include "CUtlRBTree16.h"
 
-struct CUtlRBTree16Unit : CUtlRBTree16At<0x10936c48>
+struct CUtlRBTree16Unit : CUtlRBTree16
 {
+    // the links of the instance whose sentinel is 0x10936c48: the template's own Links (one static in the game)
+    const Links_t &Links(unsigned short i) const { return *(const Links_t *)&((const CUtlRBTree<CExpresserTreeEntry, unsigned short> *)this)->Links(i); }
+    unsigned short Parent(unsigned short i) const { return Links(i).m_Parent; }
     const Links_t *sub_10313430(unsigned short i) const;
     void sub_10314c20(unsigned short i);
 
@@ -172402,10 +172419,14 @@ void CUtlRBTree16Unit::sub_10314c20(unsigned short elem)
 #include "CUtlRBTreeFind232.h"
 #include "CUtlRBTreeInsert24.h"
 #include "utlrbtree.h"
+#include "CExpresserTreeEntry.h"
 #include "CUtlRBTree16.h"
 
-struct CUtlRBTree16Unit : CUtlRBTree16At<0x10936c48>
+struct CUtlRBTree16Unit : CUtlRBTree16
 {
+    // the links of the instance whose sentinel is 0x10936c48: the template's own Links (one static in the game)
+    const Links_t &Links(unsigned short i) const { return *(const Links_t *)&((const CUtlRBTree<CExpresserTreeEntry, unsigned short> *)this)->Links(i); }
+    unsigned short Parent(unsigned short i) const { return Links(i).m_Parent; }
     const Links_t *sub_10313430(unsigned short i) const;
     void sub_10314e50(unsigned short i);
 

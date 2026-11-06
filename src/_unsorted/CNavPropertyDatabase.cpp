@@ -26,6 +26,7 @@ bool CNavPropertyDatabase::vfunc0()
 
 // FUNCTION: 0x102ea4d0 size=0x99
 #include "utlrbtree.h"
+#include "CRBTree12Entry_102ec4a0.h"
 #include "CNavPropertyDatabase.h"
 #include "CUtlRBTree12.h"
 
@@ -43,7 +44,7 @@ extern unsigned short g_1093402a;
 
 void CNavPropertyDatabase::vfunc4()
 {
-	const CUtlRBTree12At<0x10934040> *tree = (const CUtlRBTree12At<0x10934040> *)&g_10934014;
+	const CUtlRBTree<CRBTree12Entry_102ec4a0, unsigned short> *tree = (const CUtlRBTree<CRBTree12Entry_102ec4a0, unsigned short> *)&g_10934014;
 	unsigned short prev = 0xffff;
 	for (int i = g_1093402a; --i >= 0; ) {
 		tree->Links((unsigned short)i);	// RemoveAll's IsValidIndex: the links (the instance's sentinel)
