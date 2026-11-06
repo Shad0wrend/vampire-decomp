@@ -2989,6 +2989,78 @@ int CBaseEntity::vfunc126(int pSave)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aa140 size=0x2d3
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "CRestore.h"
+#include "CSaveRestoreData.h"
+#include "CGlobalEntityList.h"
+#include "ScopeTrace.h"
+#include "Vector.h"
+
+extern Vector g_1070d1b0;
+extern CGlobalEntityList *g_10566458;
+extern float g_104454c4;
+void sub_10138720(const float *pMatrix, int n, float *pOut);
+void sub_10138760(const float *pIn, int n, float *pMatrix);
+void sub_101cf390(CBaseEntity *pEnt, const Vector *pMins, const Vector *pMaxs);
+
+// TARGET: CBaseEntity::vfunc127
+int CBaseEntity::vfunc127(int a)
+{
+	ScopeTrace trace("CBaseEntity::Restore", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CCollisionProperty *pCol = (CCollisionProperty *)((char *)this + 0x270);
+	pCol->sub_100ddc00();
+	CRestore *pRestore = (CRestore *)a;
+	int nResult = sub_100aa5c0(pRestore, (int)vfunc82());
+	CSaveRestoreData *pInfo = (CSaveRestoreData *)pRestore->vfunc33();
+	Vector vecOffset = pInfo->m_vec130c;
+	if (!g_10566458->sub_100290c0(&m_hTouch254)) {
+		const Vector *pLandmark = pInfo->m_bLandmarkOffset12c4 ? &pInfo->m_vecLandmarkOffset12dc : &g_1070d1b0;
+		Vector vecLandmark = *pLandmark;
+		vecOffset += vecLandmark;
+	}
+	Vector vecLocal;
+	sub_10138720(m_rgflCoordinateFrame, 3, &vecLocal.x);
+	vecLocal += vecOffset;
+	sub_10138760(&vecLocal.x, 3, m_rgflCoordinateFrame);
+	Vector *pOrigin = (Vector *)((char *)this + 0x41c);
+	VectorAdd(vecOffset, *pOrigin, *pOrigin);
+	m_flags268 &= ~0x8000;
+	pCol->sub_100dda20();
+	if (m_pEdict2e0 && vfunc8()) {
+		int nTmp;
+		if (*vfunc9(&nTmp) && pRestore->vfunc32()) {
+			vecLocal = *(Vector *)pCol->vfunc1();
+			Vector vecMaxs = *(Vector *)pCol->vfunc2();
+			const char *pName = *vfunc9(&nTmp);
+			if (!pName)
+				pName = g_106b8540;
+			vfunc10(sub_100adfd0(pName));
+			pName = *vfunc9(&nTmp);
+			if (!pName)
+				pName = g_106b8540;
+			vfunc105(pName);
+			sub_101cf390(this, &vecLocal, &vecMaxs);
+		}
+	}
+	if (*(float *)((char *)this + 0x180) <= g_104454c4) {
+		*(int *)((char *)this + 0x17c) = *(int *)((char *)this + 0x180);
+	} else if (*(int *)((char *)this + 0x180) == 0x7f7fffff) {
+		*(int *)((char *)this + 0x17c) = 0x7f7fffff;
+	}
+	return nResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aa4e0 size=0x84
 #include "CBaseEntity.h"
 
