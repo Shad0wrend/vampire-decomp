@@ -65251,6 +65251,73 @@ extern "C" GP *logic_case()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10133bc0 size=0x5bb
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_10576934[2];
+void sub_1000bd20();
+void sub_10008c3d();
+
+int *sub_10133bc0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 2, "m_nCase[0]", {0x450, 0}, 1, 6, "Case01" },
+        { 2, "m_nCase[1]", {0x454, 0}, 1, 6, "Case02" },
+        { 2, "m_nCase[2]", {0x458, 0}, 1, 6, "Case03" },
+        { 2, "m_nCase[3]", {0x45c, 0}, 1, 6, "Case04" },
+        { 2, "m_nCase[4]", {0x460, 0}, 1, 6, "Case05" },
+        { 2, "m_nCase[5]", {0x464, 0}, 1, 6, "Case06" },
+        { 2, "m_nCase[6]", {0x468, 0}, 1, 6, "Case07" },
+        { 2, "m_nCase[7]", {0x46c, 0}, 1, 6, "Case08" },
+        { 2, "m_nCase[8]", {0x470, 0}, 1, 6, "Case09" },
+        { 2, "m_nCase[9]", {0x474, 0}, 1, 6, "Case10" },
+        { 2, "m_nCase[10]", {0x478, 0}, 1, 6, "Case11" },
+        { 2, "m_nCase[11]", {0x47c, 0}, 1, 6, "Case12" },
+        { 2, "m_nCase[12]", {0x480, 0}, 1, 6, "Case13" },
+        { 2, "m_nCase[13]", {0x484, 0}, 1, 6, "Case14" },
+        { 2, "m_nCase[14]", {0x488, 0}, 1, 6, "Case15" },
+        { 2, "m_nCase[15]", {0x48c, 0}, 1, 6, "Case16" },
+        { 2, "InputValue", {0, 0}, 1, 8, "InValue", 0, (void *)sub_1000bd20 },
+        { 0, "InputPickRandom", {0, 0}, 1, 8, "PickRandom", 0, (void *)sub_10008c3d },
+        { 10, "m_OnCase[0]", {0x490, 0}, 1, 0x16, "OnCase01", g_1055dc70 },
+        { 10, "m_OnCase[1]", {0x4a8, 0}, 1, 0x16, "OnCase02", g_1055dc70 },
+        { 10, "m_OnCase[2]", {0x4c0, 0}, 1, 0x16, "OnCase03", g_1055dc70 },
+        { 10, "m_OnCase[3]", {0x4d8, 0}, 1, 0x16, "OnCase04", g_1055dc70 },
+        { 10, "m_OnCase[4]", {0x4f0, 0}, 1, 0x16, "OnCase05", g_1055dc70 },
+        { 10, "m_OnCase[5]", {0x508, 0}, 1, 0x16, "OnCase06", g_1055dc70 },
+        { 10, "m_OnCase[6]", {0x520, 0}, 1, 0x16, "OnCase07", g_1055dc70 },
+        { 10, "m_OnCase[7]", {0x538, 0}, 1, 0x16, "OnCase08", g_1055dc70 },
+        { 10, "m_OnCase[8]", {0x550, 0}, 1, 0x16, "OnCase09", g_1055dc70 },
+        { 10, "m_OnCase[9]", {0x568, 0}, 1, 0x16, "OnCase10", g_1055dc70 },
+        { 10, "m_OnCase[10]", {0x580, 0}, 1, 0x16, "OnCase11", g_1055dc70 },
+        { 10, "m_OnCase[11]", {0x598, 0}, 1, 0x16, "OnCase12", g_1055dc70 },
+        { 10, "m_OnCase[12]", {0x5b0, 0}, 1, 0x16, "OnCase13", g_1055dc70 },
+        { 10, "m_OnCase[13]", {0x5c8, 0}, 1, 0x16, "OnCase14", g_1055dc70 },
+        { 10, "m_OnCase[14]", {0x5e0, 0}, 1, 0x16, "OnCase15", g_1055dc70 },
+        { 10, "m_OnCase[15]", {0x5f8, 0}, 1, 0x16, "OnCase16", g_1055dc70 },
+        { 10, "m_OnDefault", {0x610, 0}, 1, 0x16, "OnDefault", g_1055dc70 },
+    };
+    g_10576934[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_10576934[0] = (int)&dataDesc[1];
+    return g_10576934;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10134310 size=0xc2
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

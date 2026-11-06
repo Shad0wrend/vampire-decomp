@@ -12187,6 +12187,7 @@
 0x1001290e func   ?sub_10100f70@@YIXPAX@Z sub_10100f70
 0x10012918 func   ?vfunc546@CGenericSabbat_NPC@@QAEHH@Z CGenericSabbat_NPC::vfunc546
 0x1001291d func   ?sub_1009bc30@CBaseEntity@@QAEXHPADH@Z CBaseEntity::sub_1009bc30
+0x10012922 func   ?sub_10133bc0@@YAPAHXZ sub_10133bc0
 0x10012927 func   ?vfunc330@CBaseCombatWeapon@@UAEHXZ CBaseCombatWeapon::vfunc330
 0x1001292c func   ?vfunc615@CNPC_VWerewolf@@UAE_NXZ CNPC_VWerewolf::vfunc615
 0x10012931 func   ?vfunc580@CNPC_VHumanCombatant@@QAEPAXXZ CNPC_VHumanCombatant::vfunc580
