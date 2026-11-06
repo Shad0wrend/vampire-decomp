@@ -91,6 +91,7 @@
 	void sub_10040220();	// "CBaseEntity::UpdateBaseVelocity": scope trace (entity name), when GetFlags() has bit 0 and the ground entity (slot 209) has bit 12 of its flags: its ground velocity (slot 210) plus, when bit 23 is already set, the base velocity at +0x3b0, stored as the base velocity at +0x3b0 with bit 23 set
 	int PhysicsPushMove(float movetime);
 	void sub_10038cb0();	// "CBaseEntity::PhysicsPusher"
+	void sub_1003f920();	// "CBaseEntity::PhysicsToss"
 	void sub_10039ac0();	// "CBaseEntity::PhysicsParent"
 	void sub_1003ed80(Vector &move);	// "CBaseEntity::PhysicsAddGravityMove": scope trace (entity name), move = (velocity (+0x3d4) + base velocity (+0x3b0)) * frametime for x / y; with gravity (+0x3ec, 1.0f when zero) times the gravity convar (0x109ef2d4) the new z velocity is stored at +0x3dc and move.z uses the average of the old and new z, then CheckVelocity (sub_1003eb50)
 	void vfunc171();	// slot 171 "CBaseEntity::SetMovedir": scope trace (entity name), sets the direction vector at +0x190 from the angles (slot 221): (0, 0, 1) for (0, -1, 0), (0, 0, -1) for (0, -2, 0), else AngleVectors forward; then slot 64(vec3_origin)
