@@ -98,7 +98,7 @@ class CBasePlayer
 {
 public:
 	// slots 0..63
-	CBP_V10(sa0) CBP_V10(sa1) CBP_V1(sa20) CBP_V1(sa21) CBP_V1(sa22) CBP_V1(sa23) virtual void vfunc24(CBaseEntity *pOther); CBP_V1(sa25) CBP_V1(sa26) CBP_V1(sa27) CBP_V1(sa28) CBP_V1(sa29) CBP_V10(sa3) CBP_V10(sa4) CBP_V10(sa5) CBP_V1(sa6) CBP_V1(sa7) CBP_V1(sa8) CBP_V1(sa9)
+	CBP_V10(sa0) CBP_V10(sa1) CBP_V1(sa20) CBP_V1(sa21) CBP_V1(sa22) CBP_V1(sa23) virtual void vfunc24(CBaseEntity *pOther); CBP_V1(sa25) CBP_V1(sa26) CBP_V1(sa27) CBP_V1(sa28) CBP_V1(sa29) CBP_V1(sa30) virtual void vfunc31(int pDump); CBP_V1(sa32) CBP_V1(sa33) CBP_V1(sa34) CBP_V1(sa35) CBP_V1(sa36) CBP_V1(sa37) CBP_V1(sa38) CBP_V1(sa39) CBP_V10(sa4) CBP_V10(sa5) CBP_V1(sa6) CBP_V1(sa7) CBP_V1(sa8) CBP_V1(sa9)
 	virtual void vfunc64(float *pVec);
 	// slots 65..220
 	CBP_V10(sb0) CBP_V10(sb1) CBP_V1(sb20) CBP_V1(sb21) CBP_V1(sb22) CBP_V1(sb23) CBP_V1(sb24) CBP_V1(sb25) CBP_V1(sb26) CBP_V1(sb27) virtual void vfunc93(int a, int b);
