@@ -7616,6 +7616,7 @@
 0x1000bf37 func   ?vfunc618@CNPC_VTzimisceHeadClaw@@QAEXXZ CNPC_VTzimisceHeadClaw::vfunc618
 0x1000bf3c func   ?vfunc70@CNPC_VMingXiao@@UAE_NXZ CNPC_VMingXiao::vfunc70
 0x1000bf41 func   ?sub_101d8640@@YAHXZ sub_101d8640
+0x1000bf46 func   ?IsRightChild@?$CUtlRBTree@UCRBTree16Entry8B@@G@@QBE_NG@Z CUtlRBTree<CRBTree16Entry8B,unsigned short>::IsRightChild
 0x1000bf46 func   ?sub_1004bf70@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_1004bf70
 0x1000bf4b func   ?vfunc141@CBaseEntity@@QAEXHHPAX@Z CBaseEntity::vfunc141
 0x1000bf50 func   ?vfunc2@CTESmoke@@UAEPAV1@I@Z CTESmoke::vfunc2
