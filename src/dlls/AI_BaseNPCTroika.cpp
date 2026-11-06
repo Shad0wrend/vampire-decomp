@@ -713,6 +713,220 @@ int CAI_BaseNPCTroika::sub_102ad2d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ad660 size=0x78a
+#include "CAI_BaseNPC.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseEntity.h"
+#define FILE_ "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp"
+
+struct CView461
+{
+	char m_pad0[0x5b7c];
+	EHANDLE m_h5b7c;
+	char m_pad1[0x65c0 - 0x5b80];
+	EHANDLE m_h65c0;
+	char m_pad2[0x65f6 - 0x65c4];
+	char m_b65f6;
+};
+
+int CAI_BaseNPCTroika::vfunc461()
+{
+	CView461 *v = (CView461 *)this;
+	m_n1b38 = 2;
+	switch (m_n5cc0) {
+	case 1:
+		if (sub_10269d30(0x54) || sub_10269d30(0x46)) {
+			if (enginerandom->vfunc2(0, 99) < 20)
+				vfunc495();
+			m_n5cc4 = 2;
+			m_pszFile1b3c = FILE_;
+			m_nLine1b40 = 0x44f7;
+			return m_n5cc4;
+		}
+		if (!v->m_b65f6) {
+			if (sub_10269d30(0x4c)) {
+				m_b5b80 = 0;
+				m_n5cc4 = 3;
+				m_pszFile1b3c = FILE_;
+				m_nLine1b40 = 0x451b;
+				return m_n5cc4;
+			}
+			if (sub_10269d30(0x4d)) {
+				m_b5b80 = 0;
+				m_n5cc4 = 3;
+				m_pszFile1b3c = FILE_;
+				m_nLine1b40 = 0x4522;
+				return m_n5cc4;
+			}
+		}
+		if (sub_10014df8(0x21)) {
+			m_pszFile1b3c = FILE_;
+			m_flags14b8 |= 0x100;
+			m_nLine1b40 = 0x452b;
+			m_n5cc4 = 8;
+			return m_n5cc4;
+		}
+		if (sub_10014df8(0x1f)) {
+			m_pszFile1b3c = FILE_;
+			m_flags14b8 |= 0x100;
+			m_nLine1b40 = 0x4532;
+			m_n5cc4 = 8;
+			return m_n5cc4;
+		}
+		if (!v->m_b65f6) {
+			if (sub_10269d30(0x25) || sub_10269d30(0x26) || sub_10269d30(3) || sub_10269d30(1) || sub_10269d30(0x6a) || sub_10269d30(0x6f)) {
+				m_n5cc4 = 3;
+				m_pszFile1b3c = FILE_;
+				m_nLine1b40 = 0x453e;
+				return m_n5cc4;
+			}
+			if (sub_10269d30(0x6d) || sub_10269d30(0x70)) {
+				m_n5cc4 = 3;
+				m_pszFile1b3c = FILE_;
+				m_nLine1b40 = 0x4545;
+				return m_n5cc4;
+			}
+			if (sub_10269d30(0x6e)) {
+				m_n5cc4 = 3;
+				m_pszFile1b3c = FILE_;
+				m_nLine1b40 = 0x454b;
+				return m_n5cc4;
+			}
+			if (sub_10269d30(0x72)) {
+				m_n5cc4 = 3;
+				m_pszFile1b3c = FILE_;
+				m_nLine1b40 = 0x4551;
+				return m_n5cc4;
+			}
+			if (sub_10269d30(0xb)) {
+				m_n5cc4 = 3;
+				m_pszFile1b3c = FILE_;
+				m_nLine1b40 = 0x4557;
+				return m_n5cc4;
+			}
+		}
+		break;
+	case 3:
+		if (sub_10269d30(0x54) || sub_10269d30(0x46)) {
+			m_n5cc4 = 2;
+			m_pszFile1b3c = FILE_;
+			m_nLine1b40 = 0x4562;
+			return m_n5cc4;
+		}
+		if (sub_10014df8(0x21)) {
+			m_pszFile1b3c = FILE_;
+			m_flags14b8 |= 0x100;
+			m_nLine1b40 = 0x456b;
+			m_n5cc4 = 8;
+			return m_n5cc4;
+		}
+		if (sub_10014df8(0x1f)) {
+			m_pszFile1b3c = FILE_;
+			m_flags14b8 |= 0x100;
+			m_nLine1b40 = 0x4573;
+			m_n5cc4 = 8;
+			return m_n5cc4;
+		}
+		if (sub_10269d30(0x26) || sub_10269d30(1) || sub_10269d30(3)) {
+			m_n5cc4 = 3;
+			m_pszFile1b3c = FILE_;
+			m_nLine1b40 = 0x457c;
+			return m_n5cc4;
+		}
+		if (sub_10269d30(0x6a) || sub_10269d30(0x6f)) {
+			m_n5cc4 = 3;
+			m_pszFile1b3c = FILE_;
+			m_nLine1b40 = 0x4585;
+			return m_n5cc4;
+		}
+		if (sub_10269d30(0x6d) || sub_10269d30(0x70)) {
+			m_n5cc4 = 3;
+			m_pszFile1b3c = FILE_;
+			m_nLine1b40 = 0x458e;
+			return m_n5cc4;
+		}
+		if (sub_10269d30(0x6e)) {
+			m_n5cc4 = 3;
+			m_pszFile1b3c = FILE_;
+			m_nLine1b40 = 0x4596;
+			return m_n5cc4;
+		}
+		if (sub_10269d30(0x25)) {
+			m_n5cc4 = 3;
+			m_pszFile1b3c = FILE_;
+			m_nLine1b40 = 0x459d;
+			return m_n5cc4;
+		}
+		if (sub_10269d30(0x72)) {
+			m_n5cc4 = 3;
+			m_pszFile1b3c = FILE_;
+			m_nLine1b40 = 0x45a4;
+			return m_n5cc4;
+		}
+		if (sub_10269d30(0xb)) {
+			m_n5cc4 = 3;
+			m_pszFile1b3c = FILE_;
+			m_nLine1b40 = 0x45ab;
+			return m_n5cc4;
+		}
+		if (vfunc462()) {
+			m_pszFile1b3c = FILE_;
+			m_nLine1b40 = 0x45b1;
+			m_n5cc4 = 1;
+			return 1;
+		}
+		break;
+	case 0xb:
+		if (sub_10269d30(0x54) || sub_10269d30(0x46)) {
+			m_n5cc4 = 2;
+			m_pszFile1b3c = FILE_;
+			m_nLine1b40 = 0x45be;
+			return m_n5cc4;
+		}
+		if (sub_10269d30(0xb)) {
+			m_pszFile1b3c = FILE_;
+			m_nLine1b40 = 0x45c4;
+			m_n5cc4 = 0xb;
+			return 0xb;
+		}
+		break;
+	case 4:
+		if (sub_10269d30(0x5c) || sub_10269d30(0x4c) || sub_10269d30(0x4d) || sub_10269d30(0x54) || sub_10269d30(0x46)) {
+			m_b5b80 = 0;
+			sub_1027d0a0();
+		}
+		break;
+	case 8:
+		m_pszFile1b3c = FILE_;
+		m_nLine1b40 = 0x45dd;
+		m_n5cc4 = 8;
+		return 8;
+	case 0xe:
+		if (sub_10014df8(0x4c) || sub_10014df8(0x4d) || sub_10014df8(0x4e)) {
+			m_b5b80 = 0;
+			CBaseEntity *pEnt = (CBaseEntity *)vfunc167();
+			if (v->m_h5b7c.Get() == pEnt) {
+				m_n5cc4 = 2;
+				m_pszFile1b3c = FILE_;
+				m_nLine1b40 = 0x45f0;
+				return m_n5cc4;
+			}
+		}
+		if (sub_10014df8(0xb)) {
+			CBaseEntity *pEnt = (CBaseEntity *)vfunc167();
+			if (v->m_h65c0.Get() == pEnt) {
+				m_n5cc4 = 2;
+				m_pszFile1b3c = FILE_;
+				m_nLine1b40 = 0x45f9;
+				return m_n5cc4;
+			}
+		}
+		break;
+	}
+	return CAI_BaseNPC::vfunc461();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b4fe0 size=0x91
 #include "CAI_BaseNPCTroika.h"
 #include "CUnknown102dfaa0.h"

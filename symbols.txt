@@ -9236,6 +9236,7 @@
 0x1000e48f func   ?sub_1017ec40@CBasePlayer@@QAEXXZ CBasePlayer::sub_1017ec40
 0x1000e494 func   ?vfunc326@CBaseCombatCharacter@@QAE_NHH@Z CBaseCombatCharacter::vfunc326
 0x1000e499 func   ?sub_1026a0b0@CUnk1026a0b0@@QAEXXZ CUnk1026a0b0::sub_1026a0b0
+0x1000e49e func   ?vfunc461@CAI_BaseNPCTroika@@UAEHXZ CAI_BaseNPCTroika::vfunc461
 0x1000e4a3 func   ?vfunc82@CTriggerBombSite@@QAEPAUdatamap_t@@XZ CTriggerBombSite::vfunc82
 0x1000e4a8 func   ?vfunc1@CTESpriteSpray@@UAEHXZ CTESpriteSpray::vfunc1
 0x1000e4ad func   ?vfunc5@CWeaponMelee_Claws_Protean5@@UAEPAVCBaseCombatWeapon@@I@Z CWeaponMelee_Claws_Protean5::vfunc5
