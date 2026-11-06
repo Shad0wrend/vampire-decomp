@@ -203041,6 +203041,103 @@ char sub_103dd140()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dd220 size=0x306
+#include "UtlMem.h"
+#include "UtlVec8.h"
+#include "CUtlVector16.h"
+#include "CUnknown10359c50.h"
+#include "CUnknown10936b68.h"
+
+extern "C" void __cdecl qsort(void *, unsigned int, unsigned int, int (__cdecl *)(const void *, const void *));
+extern "C" int __cdecl sub_102bec60(const void *, const void *);
+extern char g_109203cc[], g_109203d4[], g_109203dc[], g_10936c74[];
+extern char g_1093b498[], g_1093b4b0[], g_1093b4c8[], g_1093b47c[];
+extern const char *g_10663ec0;
+extern char g_10663eb8;
+extern CUnknown10936b68 g_10936b68;
+extern CUnknown10359c50 g_10940330, g_10940348, g_10940360, g_10940314;
+
+struct SElem { const char *name; int id; };
+struct SVec4 { UtlMem m; int size; int *elem; };
+struct SLocals { SVec4 funcs; SVec4 ids; UtlVec8 sched; UtlVec8 squad; UtlVec8 cond; UtlVec8 task; };
+
+// TARGET: sub_103dd220
+void sub_103dd220()
+{
+	SLocals L;
+	int i;
+
+	L.ids.m.sub_102c6a00(0, 0);
+	L.ids.size = 0;
+	L.ids.elem = L.ids.m.m_pMemory;
+	L.funcs.m.sub_102c6b80(0, 0);
+	L.funcs.size = 0;
+	L.funcs.elem = L.funcs.m.m_pMemory;
+	L.sched.sub_102c66f0(0, 0);
+	L.task.sub_102c66f0(0, 0);
+	L.cond.sub_102c66f0(0, 0);
+	L.squad.sub_102c66f0(0, 0);
+
+	if (g_10940330.sub_1001153b(g_109203cc, g_1093b498))
+	{
+		if (g_10940348.sub_1001153b(g_109203d4, g_1093b4b0))
+			g_10940360.sub_1001153b(g_109203dc, g_1093b4c8);
+	}
+	g_10940314.sub_1001153b(g_10936c74, g_1093b47c);
+
+	if (L.sched.m_Size) qsort(L.sched.m_pMemory, L.sched.m_Size, 8, sub_102bec60);
+	if (L.task.m_Size) qsort(L.task.m_pMemory, L.task.m_Size, 8, sub_102bec60);
+	if (L.cond.m_Size) qsort(L.cond.m_pMemory, L.cond.m_Size, 8, sub_102bec60);
+	if (L.squad.m_Size) qsort(L.squad.m_pMemory, L.squad.m_Size, 8, sub_102bec60);
+
+	for (i = 0; i < L.sched.m_Size; i++)
+	{
+		const char *c = g_10663ec0;
+		int id = ((SElem *)L.sched.m_pMemory)[i].id;
+		const char *nm = ((SElem *)L.sched.m_pMemory)[i].name;
+		if (!g_10940330.sub_102ea130(nm, id, "schedule", c)) goto fail;
+	}
+	for (i = 0; i < L.task.m_Size; i++)
+	{
+		const char *c = g_10663ec0;
+		int id = ((SElem *)L.task.m_pMemory)[i].id;
+		const char *nm = ((SElem *)L.task.m_pMemory)[i].name;
+		if (!g_10940348.sub_102ea130(nm, id, "task", c)) goto fail;
+	}
+	for (i = 0; i < L.cond.m_Size; i++)
+	{
+		const char *c = g_10663ec0;
+		int id = ((SElem *)L.cond.m_pMemory)[i].id;
+		const char *nm = ((SElem *)L.cond.m_pMemory)[i].name;
+		if (!g_10940360.sub_102ea130(nm, id, "condition", c)) goto fail;
+	}
+	for (i = 0; i < L.squad.m_Size; i++)
+	{
+		if (!g_10940314.sub_102ea130(((SElem *)L.squad.m_pMemory)[i].name, ((SElem *)L.squad.m_pMemory)[i].id, "squadslot", g_10663ec0)) goto fail;
+	}
+	for (i = 0; i < L.funcs.size; i++)
+		((void (*)())L.funcs.m.m_pMemory[i])();
+	for (i = 0; i < L.ids.size && g_10663eb8; i++)
+		g_10663eb8 = g_10936b68.sub_1030d850("CNPC_VYukie", (void *)L.ids.m.m_pMemory[i], &g_10940330);
+	L.squad.sub_102c8a90();
+	L.cond.sub_102c8a90();
+	L.task.sub_102c8a90();
+	((CUtlVector16 *)&L.sched)->sub_102c8b60();
+	((UtlMem *)&L.sched)->sub_102c8c00();
+	goto done;
+fail:
+	L.squad.sub_102c8a90();
+	L.cond.sub_102c8a90();
+	L.task.sub_102c8a90();
+	L.sched.sub_102c8a90();
+done:
+	((CUtlVector16 *)&L.funcs)->sub_102c8bb0();
+	L.funcs.m.sub_102c8c40();
+	((CUtlVector16 *)&L.ids)->sub_102c8b10();
+	L.ids.m.sub_1021e540();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ddd70 size=0x43
 #include "CNPC_VZombie.h"
 void *sub_100aa720(int size);

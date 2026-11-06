@@ -10170,6 +10170,7 @@
 0x1000fa8d func   ?vfunc103@CEnvParticleHUD@@QAEXXZ CEnvParticleHUD::vfunc103
 0x1000fa92 func   ?sub_10027040@@YGXH@Z sub_10027040
 0x1000fa97 func   ?sub_101bc4d0@@YAHXZ sub_101bc4d0
+0x1000fa9c func   ?sub_103dd220@@YAXXZ sub_103dd220
 0x1000faa1 func   ??0CUtlBuffer@@QAE@HHH@Z CUtlBuffer::CUtlBuffer
 0x1000faa6 func   ?sub_10272130@CAI_BaseNPC@@QAEXHPAH00@Z CAI_BaseNPC::sub_10272130
 0x1000faab func   ?sub_103a6f70@TLeader@@QAEXHH@Z TLeader::sub_103a6f70
