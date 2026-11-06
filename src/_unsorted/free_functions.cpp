@@ -126848,6 +126848,63 @@ extern "C" CBaseEntity *prop_button()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10214e30 size=0x55f
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_105ac050[2];
+void sub_10014d5d();
+void sub_100150af();
+void sub_100158d9();
+void sub_1000a407();
+void sub_10014619();
+void sub_1000f506();
+
+int *sub_10214e30()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 5, "m_bLocked", {0x738, 0}, 1, 6, "locked" },
+        { 4, "m_nState", {0x73c, 0}, 1, 6, "current_state" },
+        { 4, "m_UseIcon", {0x730, 0}, 1, 6, "use_icon" },
+        { 4, "m_LockedIcon", {0x734, 0}, 1, 6, "locked_icon" },
+        { 4, "m_nMaxStates", {0x740, 0}, 1, 6, "max_states" },
+        { 10, "m_OnPressed", {0x744, 0}, 1, 0x16, "OnPressed", g_1055dc70 },
+        { 10, "m_OnPressedLocked", {0x75c, 0}, 1, 0x16, "OnPressedLocked", g_1055dc70 },
+        { 10, "m_OnSetState[0]", {0x774, 0}, 1, 0x16, "OnSetState1", g_1055dc70 },
+        { 10, "m_OnSetState[1]", {0x78c, 0}, 1, 0x16, "OnSetState2", g_1055dc70 },
+        { 10, "m_OnSetState[2]", {0x7a4, 0}, 1, 0x16, "OnSetState3", g_1055dc70 },
+        { 10, "m_OnSetState[3]", {0x7bc, 0}, 1, 0x16, "OnSetState4", g_1055dc70 },
+        { 10, "m_OnSetState[4]", {0x7d4, 0}, 1, 0x16, "OnSetState5", g_1055dc70 },
+        { 10, "m_OnSetState[5]", {0x7ec, 0}, 1, 0x16, "OnSetState6", g_1055dc70 },
+        { 10, "m_OnSetState[6]", {0x804, 0}, 1, 0x16, "OnSetState7", g_1055dc70 },
+        { 10, "m_OnSetState[7]", {0x81c, 0}, 1, 0x16, "OnSetState8", g_1055dc70 },
+        { 0, "InputLock", {0, 0}, 1, 8, "Lock", 0, (void *)sub_10014d5d },
+        { 0, "InputUnlock", {0, 0}, 1, 8, "Unlock", 0, (void *)sub_100150af },
+        { 0, "InputToggleLock", {0, 0}, 1, 8, "ToggleLock", 0, (void *)sub_100158d9 },
+        { 0, "InputUse", {0, 0}, 1, 8, "Use", 0, (void *)sub_1000a407 },
+        { 4, "InputSetState", {0, 0}, 1, 8, "SetState", 0, (void *)sub_10014619 },
+        { 0, "CPropButtonButtonUse", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000f506 },
+    };
+    g_105ac050[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_105ac050[0] = (int)&dataDesc[1];
+    return g_105ac050;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102154f0 size=0x54
 #include "CPropButton.h"
 #include "CBaseAnimating.h"

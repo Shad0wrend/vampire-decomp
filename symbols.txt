@@ -13292,6 +13292,7 @@
 0x10014236 func   ?sub_101ba6c0@@YAHXZ sub_101ba6c0
 0x1001423b func   ?vfunc14@IServerNetworkable@@QAEPAXD@Z IServerNetworkable::vfunc14
 0x10014245 func   ?vfunc80@CItemKeyGeneric@@QAEHXZ CItemKeyGeneric::vfunc80
+0x1001424a func   ?sub_10214e30@@YAPAHXZ sub_10214e30
 0x1001424f func   ?vfunc431@CNPC_VNewscaster@@QAEXXZ CNPC_VNewscaster::vfunc431
 0x10014254 func   ?vfunc257@CRagdollProp@@UAEXPAXH@Z CRagdollProp::vfunc257
 0x10014259 func   ?vfunc130@CWorld@@UAEXH@Z CWorld::vfunc130
