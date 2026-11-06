@@ -2007,6 +2007,112 @@ float CBaseEntity::vfunc204()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a1580 size=0x35a
+#include "vampire_all.h"
+#include "CBaseEntity.h"
+#include "CBaseEntity_ext.h"
+#include "CTakeDamageInfo.h"
+#include "CTraceFilterWorldOnly.h"
+#include "CUnknown1003ff80.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738960.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+class CUnknown1004f860 { public: void *sub_1004f860(); };
+class CVDmg_t { public: int sub_101faa70(); };
+
+struct CTimerView
+{
+	virtual void v0();
+	virtual bool vfunc1();
+	char m_pad[0x28 - 4];
+	float m_f28;
+};
+struct CPhysObjView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void ApplyForceCenter(const Vector *pForce);
+	virtual void ApplyForceOffset(const Vector *pForce, const Vector *pPos);
+};
+extern CTimerView *g_106b8654;
+void sub_10146570(const Vector *, const Vector *, int, int, int, int, float);
+
+inline unsigned int DmgFlags(CTakeDamageInfo *p)
+{
+	return p->m_pVDmg00 ? (*(unsigned int *)((char *)p->m_pVDmg00 + 0x10) | p->m_nFlags38) : p->m_nFlags38;
+}
+
+// TARGET: CBaseEntity::vfunc227
+int CBaseEntity::vfunc227(CTakeDamageInfo *pInfo)
+{
+	ScopeTrace st("CBaseEntity::VPhysicsTakeDamage", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	float flDamage;
+	if (pInfo->m_pVDmg00)
+		flDamage = (float)pInfo->m_pVDmg00->sub_101faa70();
+	else
+		flDamage = pInfo->m_flDamage;
+	flDamage *= 100.0f;
+	if (pInfo->m_pAttacker)
+	{
+		CGameTrace tr;
+		((CUnknown1003ff80 *)&tr)->sub_1003ff80();
+		CTraceFilterWorldOnly filter;
+		CBaseEntity *pAttacker = (CBaseEntity *)pInfo->m_pAttacker;
+		Vector *pThisOrg = ((CEntityVSlots *)this)->slot217();
+		Vector *pAttOrg = ((CEntityVSlots *)pAttacker)->slot217();
+		Ray_t ray;
+		((CUnknown1004f860 *)&ray)->sub_1004f860();
+		ray.sub_1004f7a0(&pAttOrg->x, &pThisOrg->x);
+		g_1070b254->vfunc4(&ray, 1, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+		if (g_10738960.sub_1005f190())
+			sub_10146570((Vector *)tr.m_startpos, (Vector *)tr.m_endpos, 0xff, 0, 0, 1, -1.0f);
+		if (tr.m_fraction != 1.0f)
+		{
+			if (m_obj36c)
+			{
+				if (tr.m_pEnt == this || (DmgFlags(pInfo) & 0x2000000))
+				{
+					if (DmgFlags(pInfo) & 0x2000000)
+						flDamage *= 100.0f;
+					float flScale;
+					if (g_106b8654->vfunc1())
+						flScale = 0;
+					else
+						flScale = g_106b8654->m_f28;
+					Vector vecForce = ((Vector *)tr.m_planeNormal)->sub_100a19c0(-flDamage);
+					Vector vecScaled = vecForce * flScale;
+					((CPhysObjView *)m_obj36c)->ApplyForceOffset(&vecScaled, (Vector *)tr.m_endpos);
+				}
+			}
+		}
+		else if (!(DmgFlags(pInfo) & 0x4000002))
+		{
+			CPhysObjView *pPhys = (CPhysObjView *)m_obj36c;
+			if (pPhys)
+			{
+				Vector *pAtt = ((CEntityVSlots *)pInfo->m_pAttacker)->slot217();
+				Vector *pOrg = ((CEntityVSlots *)this)->slot217();
+				Vector vecDir = *pOrg - *pAtt;
+				VectorNormalize(vecDir);
+				float flScale;
+				if (g_106b8654->vfunc1())
+					flScale = g_104454c4;
+				else
+					flScale = g_106b8654->m_f28;
+				vecDir = vecDir * flDamage * flScale;
+				pPhys->ApplyForceCenter(&vecDir);
+			}
+		}
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a1a70 size=0x94
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
