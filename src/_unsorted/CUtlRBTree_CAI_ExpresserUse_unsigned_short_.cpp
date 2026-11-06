@@ -16,3 +16,10 @@ static void (CUtlRBTree<CAI_ExpresserUse, unsigned short>::*s_LinkToParent)(unsi
 #include "CAI_Expresser.h"
 static void (CUtlRBTree<CAI_ExpresserUse, unsigned short>::*s_RemoveNode)(unsigned short) = &CUtlRBTree<CAI_ExpresserUse, unsigned short>::RemoveNode;
 // END FUNCTION
+
+// FUNCTION: 0x103140f0 size=0x824
+// TARGET: ?RemoveRebalance@?$CUtlRBTree@UCAI_ExpresserUse@@G@@QAEXG@Z
+#include "utlrbtree.h"
+struct CAI_ExpresserUse { char m_Data[8]; };
+static void (CUtlRBTree<CAI_ExpresserUse, unsigned short>::*s_RemoveRebalance)(unsigned short) = &CUtlRBTree<CAI_ExpresserUse, unsigned short>::RemoveRebalance;
+// END FUNCTION
