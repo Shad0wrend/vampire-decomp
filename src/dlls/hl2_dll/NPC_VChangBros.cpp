@@ -22,6 +22,154 @@ bool __stdcall sub_1036b6b0(int sector)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036bfc0 size=0x57f
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CWeaponThrown_Grenade_Frag.h"
+#include "CNPC_VChangBros.h"
+#include "ScopeTrace.h"
+#include "CAI_Motor.h"
+#include "CUnknown102e0150.h"
+#include "CUnknown103498b0.h"
+CBaseEntity *sub_100fbc90(const char *name, Vector *pOrigin, const float *pAngles, float flLife);
+extern float g_104ada5c;
+void CNPC_VChangBros::vfunc444(void *pTask)
+{
+    ScopeTrace t("CNPC_VChangBros::RunTask", g_106b8540);
+    if (!m_bCenterStored)
+        sub_1036e400();
+    CNPC_VChangBros *pOther;
+    bool b;
+    switch (*(int *)pTask) {
+    case 0x156:
+        ((CAI_Motor *)*(int *)((char *)this + 0x5d44))->sub_102e1e20(-1);
+        sub_10280a50();
+        if (gpGlobals->curtime >= m_fEnergyChargeTime) {
+            sub_10273e80(0);
+            return;
+        }
+        break;
+    case 0x150:
+    case 0x151:
+    case 0x153:
+    case 0x15d:
+        ((CAI_Motor *)*(int *)((char *)this + 0x5d44))->sub_102e1e20(-1);
+        sub_10280a50();
+        b = vfunc251();
+        goto check;
+    case 0x15b:
+        ((CAI_Motor *)*(int *)((char *)this + 0x5d44))->sub_102e1e20(-1);
+        sub_10280a50();
+        if (vfunc251()) {
+            sub_103c6eb0();
+            sub_103c6df0(3, "chang_powerup_emitter");
+            sub_103c6df0(2, "chang_spine_emitter");
+            sub_103c6f40();
+            sub_1036e8c0();
+            Vector org = m_vArenaCenter;
+            org.z = g_104ada5c + org.z;
+            CBaseEntity *pEmitter = sub_100fbc90("chang_center_emitter", &org, g_1070d9d0, -1.0f);
+            m_hCenterEmitter = pEmitter;
+            sub_10273e80(0);
+            return;
+        }
+        break;
+    case 0x157:
+        if (!m_bEnergyBallSpawned && *(float *)((char *)this + 0x6f8) >= 0.591f) {
+            m_bEnergyBallSpawned = true;
+            sub_1036dd20();
+            sub_103c7150();
+        }
+        b = vfunc251();
+        goto check;
+    case 0x15a:
+        pOther = sub_1036e2f0();
+        if (pOther) {
+            b = pOther->sub_1036e820();
+check:
+            if (b) {
+                sub_10273e80(0);
+                return;
+            }
+            break;
+        }
+        m_pszFile1b44 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VChangBros.cpp";
+        m_nLine1b48 = 0x255;
+        vfunc448(1);
+        return;
+    case 0x15c:
+        sub_10280a50();
+        pOther = sub_1036e2f0();
+        if (pOther) {
+            if (m_fUnitedTime < pOther->m_fUnitedTime)
+                m_fUnitedTime = pOther->m_fUnitedTime;
+            if (gpGlobals->curtime >= m_fUnitedTime) {
+                sub_103c7150();
+                sub_1036e8c0();
+                sub_10273e80(0);
+                return;
+            }
+            break;
+        }
+        m_pszFile1b44 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VChangBros.cpp";
+        m_nLine1b48 = 0x26b;
+        vfunc448(1);
+        return;
+    case 0x8b:
+        {
+            bool bBlocked = false;
+            sub_10280a50();
+            CEntityVSlots *pEnemy = (CEntityVSlots *)vfunc167();
+            if (pEnemy) {
+                CBaseCombatCharacter *pChar = (CBaseCombatCharacter *)*(int *)((char *)pEnemy + 0x9c);
+                if (pChar) {
+                    Vector vec;
+                    ((CUnknown102e0150 *)vfunc541())->sub_102dfed0(&vec, (CBaseEntity *)vfunc167());
+                    ((CAI_Motor *)*(int *)((char *)this + 0x5d44))->sub_102e20b0(&vec.x, -2.0f);
+                    char *p2 = pChar->sub_10345980((CBaseEntity *)this);
+                    if (p2 && !((CUnknown103498b0 *)p2)->sub_103498b0())
+                        bBlocked = true;
+                    if (*(int *)((char *)this + 0xff0) == 0x1157)
+                        b = pChar->sub_10345330();
+                    else
+                        b = vfunc251();
+                    if (b) {
+                        if (bBlocked) {
+                            sub_10273e80(0);
+                            return;
+                        }
+                        m_pszFile1b44 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VChangBros.cpp";
+                        m_nLine1b48 = 0x295;
+                        vfunc448(0x21);
+                        return;
+                    }
+                }
+            }
+        }
+        break;
+    case 0x13a:
+        sub_10004edf(pTask);
+        if (*(int *)((char *)this + 0xfec) != 0x2d) {
+            Vector v = *(Vector *)((CEntityVSlots *)this)->slot198();
+            if (v.z <= 500.0f) {
+                sub_10289ee0(0x2d);
+                return;
+            }
+        }
+        break;
+    default:
+        sub_10004edf(pTask);
+        break;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036d600 size=0x188
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
