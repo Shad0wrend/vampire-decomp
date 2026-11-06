@@ -7892,6 +7892,7 @@
 0x1000c586 func   ?sub_10104650@CPointExplosion@@QAEXXZ CPointExplosion::sub_10104650
 0x1000c58b func   ?vfunc255@CBaseAnimating@@QAEXPAX0H@Z CBaseAnimating::vfunc255
 0x1000c595 func   ?vfunc82@CWeaponThrown_Grenade_Frag@@UAEPAUdatamap_t@@XZ CWeaponThrown_Grenade_Frag::vfunc82
+0x1000c59a func   ?IsLeftChild@?$CUtlRBTree@UCRBTree16Entry8B@@G@@QBE_NG@Z CUtlRBTree<CRBTree16Entry8B,unsigned short>::IsLeftChild
 0x1000c59a func   ?sub_1004ae60@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_1004ae60
 0x1000c59f func   ?vfunc319@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc319
 0x1000c5a4 func   ?vfunc77@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc77
