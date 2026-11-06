@@ -1245,6 +1245,158 @@ void CAI_BaseNPC::vfunc560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026dd10 size=0x4e7
+#include "CAI_BaseNPC.h"
+#include "CVProfile.h"
+#include "globalvars.h"
+
+struct CycleCount
+{
+	unsigned __int64 m_Int64;
+	CycleCount() { m_Int64 = 0; }
+	void Sample()
+	{
+		unsigned long *pSample = (unsigned long *)&m_Int64;
+		__asm {
+			mov ecx, pSample
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+};
+
+struct CGatherWeaponView
+{
+	CAI_NPC_V10(0) CAI_NPC_V10(1) CAI_NPC_V10(2) CAI_NPC_V10(3) CAI_NPC_V10(4) CAI_NPC_V10(5) CAI_NPC_V10(6) CAI_NPC_V10(7) CAI_NPC_V10(8) CAI_NPC_V10(9)
+	CAI_NPC_V10(10) CAI_NPC_V10(11) CAI_NPC_V10(12) CAI_NPC_V10(13) CAI_NPC_V10(14) CAI_NPC_V10(15) CAI_NPC_V10(16) CAI_NPC_V10(17) CAI_NPC_V10(18) CAI_NPC_V10(19)
+	CAI_NPC_V10(20) CAI_NPC_V10(21) CAI_NPC_V10(22) CAI_NPC_V10(23) CAI_NPC_V10(24) CAI_NPC_V10(25) CAI_NPC_V10(26) CAI_NPC_V10(27) CAI_NPC_V10(28) CAI_NPC_V10(29)
+	CAI_NPC_V10(30) CAI_NPC_V10(31) CAI_NPC_V10(32) CAI_NPC_V10(33) CAI_NPC_V10(34) CAI_NPC_V10(35)
+	CAI_NPC_V(360) CAI_NPC_V(361) CAI_NPC_V(362) CAI_NPC_V(363) CAI_NPC_V(364)
+	virtual int vfunc365(CAI_BaseNPC *pOther, float flDot, float flDist);
+	CAI_NPC_V(366)
+	virtual int vfunc367(CAI_BaseNPC *pOther, float flDot, float flDist);
+	char sub_10252410(int a);
+};
+
+struct CGatherDevFlag
+{
+	virtual void v0();
+	virtual void vfunc1();
+};
+extern CGatherDevFlag *g_10924a6c;
+
+struct CGatherNPCView
+{
+	char m_pad0000[0x1564];
+	float m_f1564;
+	char m_pad1568[0x5b88 - 0x1568];
+	float m_f5b88;
+	float m_f5b8c;
+};
+
+// TARGET: CAI_BaseNPC::vfunc561
+void CAI_BaseNPC::vfunc561(CAI_BaseNPC *pOther, float flDist)
+{
+	CVProfile *prof = g_109f3648;
+	if (prof->m_enabled || !prof->m_bAtRoot) {
+		if (prof->m_pCurNode->m_pszName != "CAI_BaseNPC_GatherAttackConditions")
+			prof->m_pCurNode = prof->m_pCurNode->GetSubNode("CAI_BaseNPC_GatherAttackConditions", 0, "Unaccounted");
+		prof->m_pCurNode->EnterScope();
+		prof->m_bAtRoot = false;
+	}
+	CGatherNPCView *pView = (CGatherNPCView *)this;
+	Vector *pMe = (Vector *)vfunc217();
+	Vector *pTheir = (Vector *)pOther->vfunc217();
+	Vector dir = *pTheir - *pMe;
+	dir.z = 0;
+	VectorNormalize(dir);
+	Vector vecFacing = vfunc368();
+	float t0 = dir.x * vecFacing.x; float flDot = ((dir.z * vecFacing.z) + dir.y * vecFacing.y) + (t0);
+	vfunc560();
+	long flags = vfunc513();
+	int r;
+	Vector vecTarget = pOther->vfunc197(*(Vector *)vfunc217(), true, false);
+	if (!((flags & 0x2000) && sub_10007e19())) { if (flags & 0x20000) {
+		if (!(gpGlobals->curtime >= pView->m_f1564)) {
+			g_10924a6c->vfunc1();
+			sub_10269a20(0x2f);
+		}
+		r = vfunc553(flDot, flDist);
+	} else {
+		goto skip1;
+	} } else {
+		if (!((CGatherWeaponView *)sub_10007e19())->sub_10252410(0)) {
+			g_10924a6c->vfunc1();
+			sub_10269a20(0x2f);
+		}
+		r = ((CGatherWeaponView *)sub_10007e19())->vfunc365(pOther, flDot, flDist);
+	}
+	if (r == 0x4f) {
+		if (vfunc562((int)vfunc217(), (int)&vecTarget, 1) || (vfunc560(), vecTarget = pOther->vfunc193(), vfunc562((int)vfunc217(), (int)&vecTarget, 1))) {
+			g_10924a6c->vfunc1();
+			sub_10269a20(0x4f);
+		}
+	} else {
+		g_10924a6c->vfunc1();
+		sub_10269a20(r);
+	}
+skip1:
+	if (!((0x8000 & flags) && sub_10007e19())) { if (0x80000 & flags) {
+		g_10924a6c->vfunc1();
+		r = vfunc555(flDot, flDist);
+		sub_10269a20(r);
+	} } else {
+		g_10924a6c->vfunc1();
+		r = ((CGatherWeaponView *)sub_10007e19())->vfunc367(pOther, flDot, flDist);
+		sub_10269a20(r);
+	}
+	if (sub_10269aa0(0x63)) {
+		if (3.4028235e+38f == pView->m_f5b8c)
+			pView->m_f5b8c = gpGlobals->curtime + 2.5f;
+		pView->m_f5b88 = gpGlobals->curtime + 1.5f;
+	} else if (gpGlobals->curtime >= pView->m_f5b88) {
+		pView->m_f5b8c = 3.4028235e+38f;
+	}
+	if (gpGlobals->curtime > pView->m_f5b8c) {
+		g_10924a6c->vfunc1();
+		sub_10269a20(0x2e);
+	}
+	if (gpGlobals->curtime < pView->m_f5b88) {
+		g_10924a6c->vfunc1();
+		sub_10269a20(0x63);
+		sub_10269b50(0x50);
+		sub_10269b50(0x4f);
+		sub_10269b50(0x52);
+		sub_10269b50(0x51);
+	} else if (sub_10269aa0(0x50) || sub_10269aa0(0x4f) || sub_10269aa0(0x52) || sub_10269aa0(0x51)) {
+		sub_10269b50(8);
+		sub_10269b50(0x5f);
+		sub_10269b50(0x60);
+		sub_10269b50(9);
+		sub_10269b50(0x63);
+	}
+	prof = g_109f3648;
+	if (!(!prof->m_bAtRoot || prof->m_enabled)) return; else { CVProfNode *node = prof->m_pCurNode;
+		if (--node->m_nRecursions == 0 && node->m_nCurFrameCalls != 0) {
+			CycleCount end;
+			end.Sample();
+			CUnknownCycle100335e0 *pc = &node->m_CurFrameTime;
+			pc->m_Int64 = end.m_Int64 - pc->m_Int64;
+			node->m_TotalTime += pc->m_Int64;
+			CVProfile *p2 = g_109f3648;
+			p2->m_nGroupStackDepth--;
+			int t4 = p2->m_nGroupStackDepth; int nNew = *(p2->m_GroupIDStack + t4);
+			int t3 = 1 + p2->m_nGroupStackDepth; int nOld = p2->m_GroupIDStack[t3];
+			if (nNew != nOld && p2->m_bVTuneGroupsEnabled && nOld == p2->m_nVTuneGroupID)
+				vtune(false);
+		}
+		if (node->m_nRecursions == 0)
+			prof->m_pCurNode = prof->m_pCurNode->m_pParent;
+		prof->m_bAtRoot = (prof->m_pCurNode == prof->m_pRoot); }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026e3e0 size=0xc4
 #include "CAI_BaseNPC.h"
 
