@@ -132173,6 +132173,110 @@ void sub_1022ec20(CVStatActionList_t *pList, int iEntIndex, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022f140 size=0x2f0
+#include "CEntityVSlots.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "RTTI.h"
+#include "CVStatAction_t.h"
+#include "CDisciplineParticle.h"
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+#include "CEdictView.h"
+#include "globalvars.h"
+#include "engineserver.h"
+#include <string.h>
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern void (*g_109f3628)(const char *, ...);
+struct CStatActionSink { void sub_101f9a40(CBaseEntity *pChar, void *pData); };
+extern CStatActionSink g_1074df78;
+struct InstTraceOut {
+	void sub_10037300(const char *func, const char *name, const char *line);
+	~InstTraceOut() { (*g_109f3680)--; }
+};
+void *sub_100ab250(void *pEdict);
+void sub_101c0b10();
+
+// TARGET: sub_1022f140
+void sub_1022f140(CVStatAction_t *pAction, int nEntIndex)
+{
+	if (pAction->m_pad0000 & 0x10)
+		return;
+	switch (pAction->m_pad0004) {
+	case 1: {
+		CEdictView *pEdict = (CEdictView *)engine->vfunc38(nEntIndex);
+		CBaseEntity *pChar;
+		{
+			InstTraceOut trace;
+			trace.sub_10037300("CBaseEntity::Instance", g_106b8540, g_106b8540);
+			if (!pEdict)
+				pEdict = (CEdictView *)engine->vfunc38(0);
+			pChar = (pEdict && pEdict->m_pUnk) ? (CBaseEntity *)pEdict->m_pUnk->vfunc4() : 0;
+		}
+		if (pChar && pChar->m_p9c)
+			g_1074df78.sub_101f9a40((CBaseEntity *)pChar->m_p9c, pAction->m_pData);
+		break;
+	}
+	case 2:
+	case 3:
+		break;
+	case 4: {
+		CEdictView *pEdict = (CEdictView *)engine->vfunc38(nEntIndex);
+		void *pEnt;
+		{
+			ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+			if (!pEdict)
+				pEdict = (CEdictView *)engine->vfunc38(0);
+			pEnt = sub_100ab250(pEdict);
+		}
+		CBaseCombatCharacter *pChar = (CBaseCombatCharacter *)__RTDynamicCast(pEnt, 0, g_10538764, g_10560638, 0);
+		if (pChar) {
+			for (int i = 0; i < *(int *)((char *)pChar + 0x14cc); i++) {
+				unsigned int *pHandles = *(unsigned int **)((char *)pChar + 0x14c0);
+				CDisciplineParticle *pPart = (CDisciplineParticle *)__RTDynamicCast(g_10566458->sub_100290c0(&pHandles[i]), 0, g_10538764, g_1053e8d0, 0);
+				if (pPart && pPart->m_n4a4 == pAction->m_b54) {
+					CVStatActionRecord4 *pRec = (CVStatActionRecord4 *)pAction->m_pData;
+					if (!_strcmpi(pPart->m_pszModelName ? pPart->m_pszModelName : g_106b8540, pRec->m_szName)
+						&& !_strcmpi(pPart->m_pszAttachName ? pPart->m_pszAttachName : g_106b8540, ((CVStatActionRecord4 *)pAction->m_pData)->m_szAttach84)) {
+						CVStatActionRecord4 *pRec2 = (CVStatActionRecord4 *)pAction->m_pData;
+						if (pPart->m_iAttachType == pRec2->m_nAttachment80) {
+							CBaseEntity *pAim = ((EHANDLE *)((char *)pPart + 0x37c))->Get();
+							unsigned char bFlag = pRec2->m_bViewModel104;
+							if ((__RTDynamicCast(pAim, 0, g_10538764, g_1053e91c, 0) != 0) == bFlag) {
+								((CEntityVSlots *)pPart)->slot242();
+								pPart->sub_10051810();
+								((CBaseEntity *)pPart)->sub_100ac610(gpGlobals->curtime + 10.0f, 0);
+								((CBaseEntity *)pPart)->sub_100ac4e0((int)sub_101c0b10, 0, 0);
+								return;
+							}
+						}
+					}
+				}
+			}
+		}
+		break;
+	}
+	default:
+		g_109f3628("Unable to match StatAction type!\n");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022f4f0 size=0x6b
 #include "CBaseCombatCharacter.h"
 #include "CBaseEntity.h"

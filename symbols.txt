@@ -11709,6 +11709,7 @@
 0x10011fa4 func   ?sub_102491a0@CUnknown102491a0@@QAEXHH@Z CUnknown102491a0::sub_102491a0
 0x10011fa9 func   ?Grow@?$CUtlMemory@UCExpressionRecord@CBaseCombatCharacter@@@@QAEXH@Z CUtlMemory<CBaseCombatCharacter::CExpressionRecord>::Grow
 0x10011fa9 func   ?sub_101074c0@@YIXPAUMem32@@HH@Z sub_101074c0
+0x10011fae func   ?sub_1022f140@@YAXPAVCVStatAction_t@@H@Z sub_1022f140
 0x10011fb8 func   ?vfunc1@CTETParticleHUD@@UAEHXZ CTETParticleHUD::vfunc1
 0x10011fbd func   ?vfunc4@CTEBreakModel@@QAEXPAXH@Z CTEBreakModel::vfunc4
 0x10011fc2 func   ?sub_101e8480@CUnknown101e8480@@QAEXPAVCBaseCombatCharacter@@@Z CUnknown101e8480::sub_101e8480
