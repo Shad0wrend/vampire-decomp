@@ -1,6 +1,8 @@
 // CRBTree16Entry8: the 8-byte element of the CUtlRBTree<CRBTree16Entry8, unsigned short> instance whose sentinel is at
 // 0x106bdb38 (guard 0x109f0b78); real name not yet known. The second dword owns a heap vector (freed by the
 // element's destructor, which RemoveAll runs for every node).
+// Its out-of-line Links (0x10047930) is utlrbtree.h's own, instantiated through a member pointer: a Links of a
+// block's own would be a second sentinel static (guard ?$S1@ instead of the inline copies' ??_B@51).
 #pragma once
 
 #include "UtlMem.h"

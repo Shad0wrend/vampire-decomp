@@ -10,22 +10,11 @@ static void (CUtlRBTree<CRBTree16Entry8, unsigned short>::*s_RemoveNode)(unsigne
 // END FUNCTION
 
 // FUNCTION: 0x10047930 size=0x57
-#include "CUtlRBTree12.h"
-#include "CUtlRBTree16.h"
-#include "CUtlRBTree232.h"
-#include "CUtlRBTree24.h"
-#include "CUtlRBTree36.h"
-#include "CUtlRBTreeBig.h"
-#include "CUtlRBTreeFind232.h"
-#include "CUtlRBTreeInsert24.h"
+// TARGET: ?Links@?$CUtlRBTree@UCRBTree16Entry8@@G@@QBEABULinks_t@1@G@Z
 #include "utlrbtree.h"
 #include "CRBTree16Entry8.h"
-
-const CUtlRBTree<CRBTree16Entry8, unsigned short>::Links_t &CUtlRBTree<CRBTree16Entry8, unsigned short>::Links(unsigned short i) const
-{
-	static Links_t s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), CUtlRBTree<CRBTree16Entry8, unsigned short>::BLACK };
-	return (i != InvalidIndex()) ? *(Links_t *)&m_Elements[i] : *(Links_t *)&s_Sentinel;
-}
+// one member, not `template class`: the template's own Links, whose sentinel is the instance's one guarded static
+static const CUtlRBTree<CRBTree16Entry8, unsigned short>::Links_t &(CUtlRBTree<CRBTree16Entry8, unsigned short>::*s_Links)(unsigned short) const = &CUtlRBTree<CRBTree16Entry8, unsigned short>::Links;
 // END FUNCTION
 
 // FUNCTION: 0x100479b0 size=0x824
