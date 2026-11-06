@@ -73867,6 +73867,48 @@ void CBaseCombatCharacter::sub_1015f510(inputdata_t *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015f630 size=0x1f5
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "CBasePlayer.h"
+#include "CExperienceTable.h"
+#include "CVStatList_t.h"
+#include <string.h>
+
+extern "C" __declspec(dllimport) int Q_strnicmp(const char *, const char *, int);
+extern "C" __declspec(dllimport) char *Q_strncpy(char *, const char *, int);
+extern CExperienceTable g_10750930;
+void sub_101cebc0(void *pPlayer, int a, int b);
+
+void CBasePlayer::sub_1015f630(const char *pszAward)
+{
+	if (!pszAward || !strlen(pszAward)) {
+		return;
+	}
+	for (int i = 0; i < m_Awards1d7c.Count(); i++) {
+		if (!Q_strnicmp(m_Awards1d7c[i].m_szName, pszAward, strlen(pszAward))) {
+			return;
+		}
+	}
+	int idx = g_10750930.sub_10222500(pszAward);
+	if (idx == -1) {
+		return;
+	}
+	sub_101cebc0(this, 0x17, idx);
+	int exp = g_10750930.sub_10222670(idx)->m_c;
+	if (exp >= 300) {
+		exp += (int)(CVStatListSet::Of(this)->Find(0)->sub_102012d0(0x1d) * 100.0f);
+		if (exp < 100) {
+			exp = 100;
+		}
+	}
+	sub_1015f8b0((float)exp, 1);
+	CBasePlayerAward award;
+	Q_strncpy(award.m_szName, pszAward, 0x30);
+	m_Awards1d7c.AddToTail(award);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015f8b0 size=0xeb
 #include "utlrbtree.h"
 #include "utlsortvector.h"
