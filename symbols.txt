@@ -5653,6 +5653,7 @@
 0x1000932c func   ?vfunc326@CWeaponPhysCannon@@UAEXXZ CWeaponPhysCannon::vfunc326
 0x1000933b func   ?sub_100acd40@CBaseEntity@@QAEXPAUinputdata_t@@@Z CBaseEntity::sub_100acd40
 0x10009340 func   ?vfunc81@CItemGVVPhoto@@QAEHXZ CItemGVVPhoto::vfunc81
+0x1000934a func   ?vfunc478@CAI_BaseNPC@@UAEPAVCBaseEntity@@XZ CAI_BaseNPC::vfunc478
 0x1000934f func   ?vfunc29@CRestore@@UAEHPAHHH@Z CRestore::vfunc29
 0x10009354 func   ?vfunc7@CMoveHelperServer@@UAE_NXZ CMoveHelperServer::vfunc7
 0x10009359 func   ?vfunc363@CWeaponHolyLight@@QAEHXZ CWeaponHolyLight::vfunc363

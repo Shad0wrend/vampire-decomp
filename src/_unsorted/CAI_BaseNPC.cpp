@@ -1893,6 +1893,101 @@ void CAI_BaseNPC::vfunc448(int code)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102743c0 size=0x374
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "CUnknown102e0150.h"
+#include "S1030fc90.h"
+
+struct FsNode { char pad24[0x24]; EHANDLE m_hEnt; char pad28[0x38 - 0x28]; FsNode *m_pNext; };
+
+// TARGET: CAI_BaseNPC::vfunc478
+CBaseEntity *CAI_BaseNPC::vfunc478()
+{
+	CBaseEntity *pBest = 0;
+	int bestPriority;
+	int bestDist;
+	char bBestFlag;
+	char bHaveVisible;
+	bestDist = 0x10000000;
+	bestPriority = -1000;
+	bBestFlag = 1;
+	bHaveVisible = 0;
+	for (FsNode *pNode = *(FsNode **)((char *)((CEntityVSlots *)this)->slot541() + 0xc); pNode; pNode = pNode->m_pNext) {
+		CBaseEntity *pEnt = pNode->m_hEnt.Get();
+		if (!pEnt)
+			continue;
+		if (pEnt->sub_100b3700() & 0x8000)
+			continue;
+		if (pEnt->m_p9c && !*((char *)pEnt->m_p9c + 0x1480))
+			continue;
+		if (pEnt == (CBaseEntity *)this)
+			continue;
+		if (!((CEntityVSlots *)pEnt)->slot158())
+			continue;
+		if (((CEntityVSlots *)this)->slot404(pEnt) != 1 && ((CEntityVSlots *)this)->slot404(pEnt) != 2)
+			continue;
+		if (((CEntityVSlots *)this)->slot541()->sub_102e0210((int)pEnt))
+			continue;
+		char bFlag = ((CEntityVSlots *)this)->slot530((CEntityVSlots *)pEnt);
+		if (!bBestFlag) {
+			if (bFlag)
+				continue;
+		} else if (!bFlag) {
+			if (!vfunc479(pEnt))
+				continue;
+			bHaveVisible = ((S1030fc90 *)Owned5cdc())->sub_1030fb10((int)pEnt) || vfunc201(pEnt, 0x2804091, 0, 0);
+			bestPriority = ((CEntityVSlots *)this)->slot405(pEnt);
+			Vector *pMine = ((CEntityVSlots *)this)->slot217();
+			Vector *pOther = ((CEntityVSlots *)pEnt)->slot217();
+			float dx = pOther->x - pMine->x;
+			float dy = pOther->y - pMine->y;
+			float dz = pOther->z - pMine->z;
+			bestDist = (int)(dx * dx + dy * dy + dz * dz);
+			bBestFlag = 0;
+			pBest = pEnt;
+			continue;
+		}
+		if (((CEntityVSlots *)this)->slot405(pEnt) > bestPriority) {
+			if (vfunc479(pEnt)) {
+				bestPriority = ((CEntityVSlots *)this)->slot405(pEnt);
+				Vector *pMine = ((CEntityVSlots *)this)->slot217();
+				Vector *pOther = ((CEntityVSlots *)pEnt)->slot217();
+				float dx = pOther->x - pMine->x;
+				float dy = pOther->y - pMine->y;
+				float dz = pOther->z - pMine->z;
+				bestDist = (int)(dx * dx + dy * dy + dz * dz);
+				bBestFlag = bFlag;
+				pBest = pEnt;
+			}
+		} else if (((CEntityVSlots *)this)->slot405(pEnt) == bestPriority) {
+			Vector *pMine = ((CEntityVSlots *)this)->slot217();
+			Vector *pOther = ((CEntityVSlots *)pEnt)->slot217();
+			float dx = pOther->x - pMine->x;
+			float dy = pOther->y - pMine->y;
+			float dz = pOther->z - pMine->z;
+			int dist = (int)(dx * dx + dy * dy + dz * dz);
+			bool bCloser = dist < bestDist;
+			if (bCloser || !bHaveVisible) {
+				char bVis = ((S1030fc90 *)Owned5cdc())->sub_1030fb10((int)pEnt) || vfunc201(pEnt, 0x2804091, 0, 0);
+				if ((bCloser && (bVis || !bHaveVisible)) || (!bCloser && !bHaveVisible && bVis)) {
+					if (vfunc479(pEnt)) {
+						bestDist = dist;
+						bHaveVisible = bVis;
+						bestPriority = ((CEntityVSlots *)this)->slot405(pEnt);
+						bBestFlag = bFlag;
+						pBest = pEnt;
+					}
+				}
+			}
+		}
+	}
+	return pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10274820 size=0x1f2
 #include "AITrace.h"
 #include "CAI_BaseNPC.h"
