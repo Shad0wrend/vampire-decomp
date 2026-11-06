@@ -266,6 +266,73 @@ void CAI_Navigator::vfunc17(CAI_NavGoal *pGoal)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ef870 size=0x1b4
+#include "CAI_Navigator.h"
+#include "CAI_Motor.h"
+#include "CAI_LocalNavigator.h"
+#include "CVProfile.h"
+#include "CUnknown10270290.h"
+#include <string.h>
+
+struct CCycleSample
+{
+	unsigned __int64 m_Int64;
+	void Sample() { unsigned int *p = (unsigned int *)&m_Int64; __asm { mov ecx, p
+		rdtsc
+		mov [ecx], eax
+		mov [ecx + 4], edx } }
+};
+
+struct CNavScope
+{
+	CNavScope() { g_109f3648->EnterScope("CAI_Navigator_MoveEnact", 0, "Unaccounted", false); }
+	~CNavScope()
+	{
+		CVProfile *pProf = g_109f3648;
+		if (!pProf->m_bAtRoot || pProf->m_enabled) {
+			CVProfNode *pNode = pProf->m_pCurNode;
+			if (--pNode->m_nRecursions == 0 && pNode->m_nCurFrameCalls != 0) {
+				CCycleSample s;
+				s.m_Int64 = 0;
+				s.Sample();
+				CUnknownCycle100335e0 *pc = &pNode->m_CurFrameTime;
+				pc->m_Int64 = s.m_Int64 - pc->m_Int64;
+				pNode->m_TotalTime += pc->m_Int64;
+				CVProfile *pPop = g_109f3648;
+				--pPop->m_nGroupStackDepth;
+				int nNew = pPop->m_GroupIDStack[pPop->m_nGroupStackDepth];
+				int nOld = pPop->m_GroupIDStack[pPop->m_nGroupStackDepth + 1];
+				if (nNew != nOld && pPop->m_bVTuneGroupsEnabled && nOld == pPop->m_nVTuneGroupID)
+					vtune(false);
+			}
+			if (pNode->m_nRecursions == 0)
+				pProf->m_pCurNode = pProf->m_pCurNode->m_pParent;
+			pProf->m_bAtRoot = (pProf->m_pCurNode == pProf->m_pRoot);
+		}
+	}
+};
+
+// TARGET: CAI_Navigator::vfunc15
+int CAI_Navigator::vfunc15(void *pGoal, int a)
+{
+	CNavScope scope;
+	int goal[31];
+	memcpy(goal, pGoal, sizeof(goal));
+	int nResult = -4;
+	int pBlocker = 0;
+	nResult = LocalNav()->vfunc3(goal, 0, &pBlocker);
+	if (pBlocker)
+		((CUnknown10270290 *)m_pOuter)->sub_10270290(pBlocker);
+	if (nResult == 0)
+		nResult = Motor()->sub_102e23a0((struct CAI_MoveRequest *)goal, *(float *)&a);
+	else if (nResult != 1)
+		Motor()->vfunc10();
+	if (nResult < 0)
+		sink5(&nResult);
+	return nResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102efaa0 size=0x21a
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
