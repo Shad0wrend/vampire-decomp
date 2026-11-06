@@ -2673,6 +2673,7 @@
 0x10004e0d func   ?vfunc0@CTraceFilterPlayerMovement@@UAE_NPAXH@Z CTraceFilterPlayerMovement::vfunc0
 0x10004e1c func   ?sub_101486e0@CGravityPellet@@QAEXXZ CGravityPellet::sub_101486e0
 0x10004e21 func   ?vfunc362@CWeaponMelee_FireAxe@@QAEHXZ CWeaponMelee_FireAxe::vfunc362
+0x10004e26 func   ?RotateRight@?$CUtlRBTree@UCRBTree36Entry_1004c5b0@@G@@QAEXG@Z CUtlRBTree<CRBTree36Entry_1004c5b0,unsigned short>::RotateRight
 0x10004e2b func   ?sub_101f73f0@CVTraitEffectGroup_t@@QAEXPAUCVStatKV@@@Z CVTraitEffectGroup_t::sub_101f73f0
 0x10004e30 func   ?sub_101e3e70@CUnknown101e0f00@@QAEXPAUS1033d380@@PBD@Z CUnknown101e0f00::sub_101e3e70
 0x10004e3a func   ?vfunc0@CPhysicsHook@@QAE_NXZ CPhysicsHook::vfunc0
