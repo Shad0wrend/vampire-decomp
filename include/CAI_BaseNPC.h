@@ -116,7 +116,8 @@ public:
 	virtual const char *vfunc406(int state);	// slot 406 (+0x658): the name of an NPC state (debug text "State: %s, ", asked with the state at +0x5cc0)
 	virtual const char *vfunc407(int moveType);	// slot 407 (+0x65c): the name of a move type ("Move: %s, ", asked with the result of sub_1027d990)
 	virtual const char *vfunc408(int state);	// slot 408: like slot 406 (the state name of the argument)
-	CAI_NPC_V(409)
+	virtual int vfunc409();	// slot 409 (+0x664): the number of states
+	int sub_1027d990();	// stub 0x100023a1: the move type
 	// slots 410..482
 	virtual int vfunc410(int a);	// slot 410 (ret 4): returns its argument
 	CAI_NPC_V(411) CAI_NPC_V(412) CAI_NPC_V(413) CAI_NPC_V(414) CAI_NPC_V(415)
