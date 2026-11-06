@@ -10660,6 +10660,7 @@
 0x10010735 func   ?vfunc580@CNPC_VDog@@UAEHXZ CNPC_VDog::vfunc580
 0x1001073a func   ?vfunc80@CItemGRingGold@@QAEHXZ CItemGRingGold::vfunc80
 0x1001073f func   ?vfunc363@CWeaponMelee_Claws_Ghoul@@UAEHXZ CWeaponMelee_Claws_Ghoul::vfunc363
+0x10010744 func   ?sub_102d9560@@YAPAHXZ sub_102d9560
 0x10010749 func   ?vfunc138@CBasePlayer@@UAEHXZ CBasePlayer::vfunc138
 0x1001074e func   ?vfunc104@CPhysicsCannister@@QAEXXZ CPhysicsCannister::vfunc104
 0x10010753 func   ?sub_10170d40@@YIXPAH@Z sub_10170d40

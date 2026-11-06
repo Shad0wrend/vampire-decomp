@@ -158962,6 +158962,66 @@ extern "C" CBaseEntity *intersting_place()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d9560 size=0x368
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_10927184;
+extern int g_1060bdd8[2];
+void sub_100130ca();
+void sub_10010c85();
+
+int *sub_102d9560()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 2, "m_sType", {0x544, 0}, 1, 6, "type" },
+        { 3, "m_vecMinBounds", {0x54c, 0}, 1, 6, "min_bounds" },
+        { 3, "m_vecMaxBounds", {0x558, 0}, 1, 6, "max_bounds" },
+        { 4, "m_iMarkersAllocated", {0x584, 0}, 1, 6, "max_npcs" },
+        { 4, "m_iMarkersFailedAttempts", {0x58c, 0}, 1, 2 },
+        { 1, "m_fMinStayTime", {0x568, 0}, 1, 6, "min_time" },
+        { 1, "m_fMaxStayTime", {0x56c, 0}, 1, 6, "max_time" },
+        { 5, "m_bMatchOrientation", {0x570, 0}, 1, 6, "match_orientation" },
+        { 5, "m_bHolsterWeapon", {0x571, 0}, 1, 6, "holster_weapon" },
+        { 4, "m_iGroupID", {0x574, 0}, 1, 6, "group_id" },
+        { 4, "m_iRating", {0x578, 0}, 1, 6, "rating" },
+        { 5, "m_bEnabled", {0x57c, 0}, 1, 6, "enabled" },
+        { 5, "m_fValidityTested", {0x57e, 0}, 1, 2 },
+        { 4, "m_Mode", {0x590, 0}, 1, 2 },
+        { 10, "m_pMarkers", {0x580, 0}, 1, 2, 0, (ISaveRestoreOps *)&g_10927184 },
+        { 0, "InputEnable", {0, 0}, 1, 8, "Enable", 0, (void *)sub_100130ca },
+        { 0, "InputDisable", {0, 0}, 1, 8, "Disable", 0, (void *)sub_10010c85 },
+        { 10, "m_OnNPCArrived", {0x450, 0}, 1, 0x16, "OnNPCArrived", g_1055dc70 },
+        { 10, "m_OnNPCLeft", {0x468, 0}, 1, 0x16, "OnNPCLeft", g_1055dc70 },
+        { 10, "m_OnAnimEvent[0]", {0x480, 0}, 1, 0x16, "OnAnimEvent1", g_1055dc70 },
+        { 10, "m_OnAnimEvent[1]", {0x498, 0}, 1, 0x16, "OnAnimEvent2", g_1055dc70 },
+        { 10, "m_OnAnimEvent[2]", {0x4b0, 0}, 1, 0x16, "OnAnimEvent3", g_1055dc70 },
+        { 10, "m_OnAnimEvent[3]", {0x4c8, 0}, 1, 0x16, "OnAnimEvent4", g_1055dc70 },
+        { 10, "m_OnAnimEvent[4]", {0x4e0, 0}, 1, 0x16, "OnAnimEvent5", g_1055dc70 },
+        { 10, "m_OnAnimEvent[5]", {0x4f8, 0}, 1, 0x16, "OnAnimEvent6", g_1055dc70 },
+        { 10, "m_OnAnimEvent[6]", {0x510, 0}, 1, 0x16, "OnAnimEvent7", g_1055dc70 },
+        { 10, "m_OnAnimEvent[7]", {0x528, 0}, 1, 0x16, "OnAnimEvent8", g_1055dc70 },
+    };
+    g_1060bdd8[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1060bdd8[0] = (int)&dataDesc[1];
+    return g_1060bdd8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d99b0 size=0x3
 void __stdcall sub_102d99b0(int a0, int a1)
 {
