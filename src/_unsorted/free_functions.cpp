@@ -139486,6 +139486,118 @@ unsigned short CUtlRBTree16::sub_1024a310()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024a480 size=0x381
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlrbtree.h"
+#include "CUtlRBTree16.h"
+
+struct CUtlRBTree16Unit : CUtlRBTree16
+{
+    void sub_1024a480(unsigned short i, unsigned short parent, bool isLeft);
+    void sub_1024aca0(unsigned short i);
+    void sub_1024aa70(unsigned short i);
+    const Links_t *sub_1024a900(unsigned short i) const;
+
+    unsigned short P(unsigned short i) { return sub_1024a900(i)->m_Parent; }
+    unsigned short Lc(unsigned short i) { return sub_1024a900(i)->m_Left; }
+    unsigned short Rc(unsigned short i) { return sub_1024a900(i)->m_Right; }
+    bool IsRed(unsigned short i) { return sub_1024a900(i)->m_Tag == 0; }
+    bool IsLc(unsigned short i) { return Lc(P(i)) == i; }
+    bool IsRc(unsigned short i) { return Rc(P(i)) == i; }
+    void SetP(unsigned short i, unsigned short v) { m_pElements[i].m_Links.m_Parent = v; }
+    void SetL(unsigned short i, unsigned short v) { m_pElements[i].m_Links.m_Left = v; }
+    void SetR(unsigned short i, unsigned short v) { m_pElements[i].m_Links.m_Right = v; }
+    void SetC(unsigned short i, unsigned short v) { m_pElements[i].m_Links.m_Tag = v; }
+
+    void RotateLeftInl(unsigned short elem)
+    {
+        unsigned short rightchild = Rc(elem);
+        SetR(elem, Lc(rightchild));
+        if (Lc(rightchild) != 0xffff)
+            SetP(Lc(rightchild), elem);
+        if (rightchild != 0xffff)
+            SetP(rightchild, P(elem));
+        if (elem != m_Root) {
+            if (sub_1024a980(elem))
+                SetL(P(elem), rightchild);
+            else
+                SetR(P(elem), rightchild);
+        } else
+            m_Root = rightchild;
+        SetL(rightchild, elem);
+        if (elem != 0xffff)
+            SetP(elem, rightchild);
+    }
+};
+
+// TARGET: CUtlRBTree16Unit::sub_1024a480
+void CUtlRBTree16Unit::sub_1024a480(unsigned short i, unsigned short parent, bool isLeft)
+{
+    Links_t &elem = m_pElements[i].m_Links;
+    elem.m_Parent = parent;
+    elem.m_Left = elem.m_Right = 0xffff;
+    elem.m_Tag = 0;
+    if ((int)parent != 0xffff) {
+        if (isLeft)
+            m_pElements[parent].m_Links.m_Left = i;
+        else
+            m_pElements[parent].m_Links.m_Right = i;
+    } else {
+        m_Root = i;
+    }
+
+    unsigned short e = i;
+    while ((int)e != m_Root && IsRed(P(e))) {
+        unsigned short p = P(e);
+        short g; g = P(p);
+        if (IsLc(p)) {
+            short uncle = Rc(g);
+            if (IsRed(uncle)) {
+                SetC(p, 1);
+                SetC(uncle, 1);
+                SetC(g, 0);
+                e = g;
+            } else {
+                if (IsRc(e)) {
+                    e = p;
+                    RotateLeftInl(e);
+                    p = P(e);
+                    g = P(p);
+                }
+                SetC(p, 1);
+                SetC(g, 0);
+                sub_1024aca0(g);
+            }
+        } else {
+            short uncle = Lc(g);
+            if (IsRed(uncle)) {
+                SetC(p, 1);
+                SetC(uncle, 1);
+                SetC(g, 0);
+                e = g;
+            } else {
+                if (IsLc(e)) {
+                    e = p;
+                    sub_1024aca0(e);
+                    p = P(e);
+                    g = P(p);
+                }
+                SetC(p, 1);
+                SetC(g, 0);
+                sub_1024aa70(g);
+            }
+        }
+    }
+    SetC(m_Root, 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024a900 size=0x57
 #include "CUtlRBTree12.h"
 #include "CUtlRBTree232.h"
