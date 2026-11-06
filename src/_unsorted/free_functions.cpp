@@ -150598,6 +150598,89 @@ void sub_1028d8d0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028d990 size=0x38a
+#include "CAI_BaseNPCTroika.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CDevFlagObj.h"
+#include "globalvars.h"
+#include "Tier1.h"
+extern CDevFlagObj *g_10924a6c;
+extern char g_10920534;
+extern char g_10920535;
+extern "C" int sprintf(char *, const char *, ...);
+
+// TARGET: CAI_BaseNPCTroika::sub_10004011
+void CAI_BaseNPCTroika::sub_10004011(const char *pszName, int nWidth, char *pOut, int nMax)
+{
+	if (pOut == 0 || nMax <= 0)
+		return;
+	char empty = g_106b8540[0];
+	if (pszName == 0)
+		pszName = &empty;
+	if (nWidth < 0)
+		nWidth = 0;
+	char conds[0x800] = { g_106b8540[0] };
+	if (!g_10924a6c->vfunc1() && g_10924a6c->m_n2c > 0) {
+		char *p = conds + sprintf(conds, "CONDS:");
+		for (int c = 0; c < vfunc409(); c++) {
+			if (sub_10014df8(c))
+				p += sprintf(p, " %s", vfunc408(c));
+		}
+		sprintf(p, "\n");
+	}
+	char tmp[40] = "PIS__PF_T_L__TTEPLM________ICCCC";
+	char out1[40];
+	char out2[40];
+	char nav[40];
+	char aux[40];
+	int i;
+	if (!g_10920534 || g_10920535) {
+		for (i = 0; i < 32; i++) {
+			if (m_flags5d8c & (1 << i))
+				out1[i] = tmp[i];
+			else
+				out1[i] = '.';
+		}
+		out1[i] = 0;
+	}
+	char tmp2[40] = "RSCPFCNFIPCDHVAEFSBDSLIAMFDPOIO_";
+	if (!g_10920534 || g_10920535) {
+		for (i = 0; i < 30; i++) {
+			if ((m_flags14b8 & (1 << i)) == (1 << i))
+				out2[i] = tmp2[i];
+			else
+				out2[i] = '.';
+		}
+		out2[i] = 0;
+	}
+	if (!g_10920534 || g_10920535)
+		aux[0] = 0;
+	if (!g_10920534 || g_10920535) {
+		if (sub_1027d990() == 3 || sub_1027d990() == 1)
+			sprintf(nav, "NAV %s %s", sub_1027d990() == 3 ? "CLIMB" : "     ", sub_1027d990() == 1 ? "JUMP" : "    ");
+		else
+			nav[0] = 0;
+	}
+	if (g_10920534) {
+		if (g_10920535) {
+			g_109f388c(pOut, nMax, "%6.2f : %*s %s\n%s%s %s%s %s\n\n", (double)gpGlobals->curtime, nWidth, g_106b8540, pszName, conds, out1, out2, aux, nav);
+			return;
+		}
+		g_109f388c(pOut, nMax, "%6.2f : %*s %s\n", (double)gpGlobals->curtime, nWidth, g_106b8540, pszName);
+		return;
+	}
+	g_109f388c(pOut, nMax, "%-20s  %6.2f : %*s %s\n%s%s %s%s %s\n\n", sub_1000b5cd(), (double)gpGlobals->curtime, nWidth, g_106b8540, pszName, conds, out1, out2, aux, nav);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028e030 size=0x14
 struct CUnknown1028e030 {
     void *sub_100952d0(int a);
