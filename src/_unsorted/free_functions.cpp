@@ -204529,6 +204529,68 @@ void CTriggerWWZone::sub_103da730()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103daa30 size=0x29f
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include <string.h>
+#include "CTriggerWWZone.h"
+#include "CAI_Hint.h"
+#include "CAIHintSlots.h"
+#include "CUnknown1070b254.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+static __forceinline bool NameMatches(CBaseEntity *pEnt, const char *pszPattern)
+{
+	if (pEnt->m_name26c && pEnt->m_name26c == pszPattern)
+		return true;
+	int len = strlen(pszPattern);
+	if (len == 0)
+		return !*(const char * volatile *)&pEnt->m_name26c;
+	if (pszPattern[len - 1] != '*')
+	{
+		const char *pszName = *(const char * volatile *)&pEnt->m_name26c;
+		return !_strcmpi(STRINGR_F(pszName), pszPattern);
+	}
+	const char *pszName2 = *(const char * volatile *)&pEnt->m_name26c;
+	return !_strnicmp(STRINGR_F(pszName2), pszPattern, len - 1);
+}
+
+void CTriggerWWZone::sub_103daa30()
+{
+	const char *pszDebugName;
+	if (this)
+		pszDebugName = m_name26c ? m_name26c : g_106b8540;
+	else
+		pszDebugName = g_105387dc;
+	ScopeTrace trace("CTriggerWWZone::InitHintFlags", pszDebugName);
+	for (CAI_Hint *pHint = g_10925450; pHint; pHint = pHint->m_pNext)
+	{
+		Ray_t ray;
+		ray.Init(*((CEntityVSlots *)pHint)->slot217(), *((CEntityVSlots *)pHint)->slot217());
+		CGameTrace tr;
+		g_1070b254->vfunc2(&ray, (unsigned int)-1, this, &tr);
+		if (tr.m_fraction < 1.0f || tr.m_allsolid || tr.m_startsolid)
+		{
+			if (NameMatches(this, "player_inside_trigger"))
+				pHint->m_n470 = 1;
+			else if (NameMatches(this, "player_outside_trigger"))
+				pHint->m_n470 = 0;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dad80 size=0x9f
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
