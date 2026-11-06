@@ -125664,6 +125664,79 @@ void CGameTextUnit::sub_1020e6b0(CGameTextActivator *pActivator)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020e8d0 size=0x76e
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_105aadf0[2];
+void sub_10003cce();
+void sub_1000c4e6();
+void sub_1000d931();
+void sub_10014f1a();
+void sub_1000eba1();
+void sub_10008319();
+
+int *sub_1020e8d0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 1, "m_fFloorHeight[elevator_floor_1]", {0x608, 0}, 1, 6, "floor1" },
+        { 1, "m_fFloorHeight[elevator_floor_2]", {0x60c, 0}, 1, 6, "floor2" },
+        { 1, "m_fFloorHeight[elevator_floor_3]", {0x610, 0}, 1, 6, "floor3" },
+        { 1, "m_fFloorHeight[elevator_floor_4]", {0x614, 0}, 1, 6, "floor4" },
+        { 1, "m_fFloorHeight[elevator_floor_5]", {0x618, 0}, 1, 6, "floor5" },
+        { 1, "m_fFloorHeight[elevator_floor_6]", {0x61c, 0}, 1, 6, "floor6" },
+        { 1, "m_fFloorHeight[elevator_floor_7]", {0x620, 0}, 1, 6, "floor7" },
+        { 1, "m_fFloorHeight[elevator_floor_8]", {0x624, 0}, 1, 6, "floor8" },
+        { 4, "m_nNumFloors", {0x62c, 0}, 1, 6, "numfloors" },
+        { 5, "m_bLocked", {0x80c, 0}, 1, 6, "locked" },
+        { 3, "m_vecOrigPos", {0x800, 0}, 1, 2 },
+        { 4, "m_nCurrFloor", {0x630, 0}, 1, 2 },
+        { 4, "m_nTargetFloor", {0x634, 0}, 1, 2 },
+        { 5, "m_bLocked", {0x80c, 0}, 1, 2 },
+        { 0, "CFuncElevatorMoveThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10003cce },
+        { 10, "m_OnMoveStart", {0x638, 0}, 1, 0x16, "OnMoveStart", g_1055dc70 },
+        { 10, "m_OnReachFloorAny", {0x650, 0}, 1, 0x16, "OnReachFloorAny", g_1055dc70 },
+        { 10, "m_OnPassFloorAny", {0x668, 0}, 1, 0x16, "OnPassFloorAny", g_1055dc70 },
+        { 10, "m_OnReachFloor[elevator_floor_1]", {0x680, 0}, 1, 0x16, "OnReachFloor1", g_1055dc70 },
+        { 10, "m_OnReachFloor[elevator_floor_2]", {0x698, 0}, 1, 0x16, "OnReachFloor2", g_1055dc70 },
+        { 10, "m_OnReachFloor[elevator_floor_3]", {0x6b0, 0}, 1, 0x16, "OnReachFloor3", g_1055dc70 },
+        { 10, "m_OnReachFloor[elevator_floor_4]", {0x6c8, 0}, 1, 0x16, "OnReachFloor4", g_1055dc70 },
+        { 10, "m_OnReachFloor[elevator_floor_5]", {0x6e0, 0}, 1, 0x16, "OnReachFloor5", g_1055dc70 },
+        { 10, "m_OnReachFloor[elevator_floor_6]", {0x6f8, 0}, 1, 0x16, "OnReachFloor6", g_1055dc70 },
+        { 10, "m_OnReachFloor[elevator_floor_7]", {0x710, 0}, 1, 0x16, "OnReachFloor7", g_1055dc70 },
+        { 10, "m_OnReachFloor[elevator_floor_8]", {0x728, 0}, 1, 0x16, "OnReachFloor8", g_1055dc70 },
+        { 10, "m_OnPassFloor[elevator_floor_2]", {0x758, 0}, 1, 0x16, "OnPassFloor2", g_1055dc70 },
+        { 10, "m_OnPassFloor[elevator_floor_3]", {0x770, 0}, 1, 0x16, "OnPassFloor3", g_1055dc70 },
+        { 10, "m_OnPassFloor[elevator_floor_4]", {0x788, 0}, 1, 0x16, "OnPassFloor4", g_1055dc70 },
+        { 10, "m_OnPassFloor[elevator_floor_5]", {0x7a0, 0}, 1, 0x16, "OnPassFloor5", g_1055dc70 },
+        { 10, "m_OnPassFloor[elevator_floor_6]", {0x7b8, 0}, 1, 0x16, "OnPassFloor6", g_1055dc70 },
+        { 10, "m_OnPassFloor[elevator_floor_7]", {0x7d0, 0}, 1, 0x16, "OnPassFloor7", g_1055dc70 },
+        { 4, "InputSnapToFloor", {0, 0}, 1, 8, "SnapToFloor", 0, (void *)sub_1000c4e6 },
+        { 4, "InputGotoFloor", {0, 0}, 1, 8, "GotoFloor", 0, (void *)sub_1000d931 },
+        { 0, "InputLock", {0, 0}, 1, 8, "Lock", 0, (void *)sub_10014f1a },
+        { 0, "InputUnlock", {0, 0}, 1, 8, "Unlock", 0, (void *)sub_1000eba1 },
+        { 0, "InputCallCurrentFloorOutputs", {0, 0}, 1, 8, "CallCurrentFloorOutputs", 0, (void *)sub_10008319 },
+    };
+    g_105aadf0[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_105aadf0[0] = (int)&dataDesc[1];
+    return g_105aadf0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020f2c0 size=0xa
 void __fastcall sub_1020f2c0(char *self, int, int)
 {
