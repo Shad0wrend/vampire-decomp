@@ -199283,6 +199283,75 @@ int CNPC_VWerewolf::sub_103d3220(void *pHint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d3360 size=0x575
+#include "CBaseEntity.h"
+#include "CNPC_VWerewolf.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" int __cdecl _strnicmp(const char *, const char *, unsigned int);
+extern "C" unsigned int __cdecl strlen(const char *);
+extern CNPC_VWerewolfVec3 g_1070d1b0;
+
+struct CWWHintView
+{
+	char m_pad0000[0x26c];
+	const char *m_name26c;
+	char m_pad0270[0x5dc - 0x270];
+	int m_nType5dc;
+};
+
+__forceinline bool WWNameIs(CWWHintView *h, const char *s)
+{
+	if (h->m_name26c && h->m_name26c == s) return true;
+	const char *const &rn = h->m_name26c;
+	unsigned int len = strlen(s);
+	int r;
+	if (len == 0) {
+		r = (int)rn;
+	} else if (s[len - 1] != '*') {
+		r = _strcmpi(rn ? rn : g_106b8540, s);
+	} else {
+		r = _strnicmp(rn ? rn : g_106b8540, s, len - 1);
+	}
+	return r == 0;
+}
+
+// TARGET: CNPC_VWerewolf::sub_103d3360
+bool CNPC_VWerewolf::sub_103d3360(void *pHint)
+{
+	ScopeTrace trace("CNPC_VWerewolf::IsImperativeTeleportHint", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CWWHintView *h = (CWWHintView *)pHint;
+	if ((m_nFlags66e8 & 0x200) == 0x200) {
+		if (h->m_nType5dc == 0x3aa9 && WWNameIs(h, "cheater_outside_hint_2")) return true;
+		if (h->m_nType5dc == 0x3a98 && WWNameIs(h, "shard_hint_3")) return true;
+	}
+	if ((m_nFlags66e8 & 0x400) == 0x400 && h->m_nType5dc == 0x3aa9 && WWNameIs(h, "cheater_outside_hint_3")) return true;
+	if ((m_nFlags66e8 & 4) == 4) {
+		if (m_nDoorState == 2 || m_nDoorState == 3) {
+			if (h->m_nType5dc == 0x3aa9 && WWNameIs(h, "cheater_outside_hint_1")) return true;
+			if (h->m_nType5dc == 0x3aa4) {
+				if (WWNameIs(h, "jump_to_platform_hint_1") || WWNameIs(h, "jump_to_platform_hint_2")) {
+					CNPC_VWerewolfVec3 *pPos = ((CNPC_VWerewolf *)pHint)->vfunc217();
+					if (!vfunc617_slot(*pPos, 1, 0, g_1070d1b0)) return true;
+				}
+			}
+		} else {
+			if (h->m_nType5dc == 0x3a98 && WWNameIs(h, "skylight_2_teleports")) return true;
+			if (h->m_nType5dc == 0x3a99 && ((CBaseEntity *)pHint)->sub_103d3a40("fulldoor_a_3_breakthrough_f")) return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d3a40 size=0x87
 #include "CBaseEntity.h"
 
