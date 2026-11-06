@@ -222,7 +222,7 @@ public:
 	EVS(520) virtual char slot521(const float *pStart, const float *pEnd, const float *pApex);	// NPC: "IsJumpLegal" (a boolean answer in al)
 	EVS(522) EVS(523) EVS(524) EVS(525) EVS(526) EVS(527) EVS(528) EVS(529)
 	virtual char slot530(CEntityVSlots *pEnemy);	// NPC: a boolean answer in al about an entity (the Hengeyokai's fish check)
-	EVS(531)
+	virtual char slot531(void *pOut, CEntityVSlots *pEnt, float flDist, int *pResult);
 	virtual void slot532(int a);	// NPC: takes one argument (CAI_BaseNPCTroika::vfunc532, the door nudge passes 2)
 	EVS(533) EVS(534) EVS(535) EVS(536) EVS(537) EVS(538) EVS(539)
 	EVS(540) virtual CUnknown102e0150 *slot541();	// NPC: the object that remembers where its enemies were last seen
