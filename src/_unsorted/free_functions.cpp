@@ -60845,6 +60845,107 @@ float CGameMovement::sub_1011ef20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011f140 size=0x30b
+#include <math.h>
+#include "CGameMovement.h"
+#include "CGameMovementViews.h"
+#include "CUnknown1011eee0.h"
+#include "CBaseEntity.h"
+
+struct CMoveTuneView
+{
+	virtual void vfunc0();
+	virtual bool vfunc1();
+	char m_pad04[0x28 - 4];
+	float m_fl28;
+};
+extern CMoveTuneView *g_109eee54;
+extern CMoveTuneView *g_109ef31c;
+extern char g_10572420;
+
+#define PLAYER ((CMovePlayerView *)m_pPlayer)
+#define MOVER ((CMoveDataView *)m_pMove)
+#define MIN(a, b) (((a) < (b)) ? (a) : (b))
+
+void CGameMovement::sub_1011f140()
+{
+	Vector vecSaved;
+	Vector vecOffset;
+	if (MOVER->g94() != 2 && MOVER->g94() != 9) {
+		float flSpeed = PLAYER->m_flForwardMove * PLAYER->m_flForwardMove + PLAYER->m_flSideMove * PLAYER->m_flSideMove + PLAYER->m_flUpMove * PLAYER->m_flUpMove;
+		float flClient = PLAYER->m_flClientMaxSpeed;
+		if (flClient != 0.0)
+			PLAYER->m_flMaxSpeed = MIN(flClient, PLAYER->m_flMaxSpeed);
+		float flFactor = 1.0f;
+		if (m_pSurface9c)
+			flFactor = *(float *)((char *)m_pSurface9c + 0x68);
+		float flConstraint = sub_1011ef20();
+		if (flConstraint < flFactor)
+			flFactor = flConstraint;
+		PLAYER->m_flMaxSpeed = flFactor * PLAYER->m_flMaxSpeed;
+		float flScale;
+		if (g_10572420) {
+			if (flSpeed == 0.0 || !(flSpeed > PLAYER->m_flMaxSpeed * PLAYER->m_flMaxSpeed))
+				goto done;
+			flScale = PLAYER->m_flMaxSpeed / sqrt(flSpeed);
+		} else {
+			flSpeed = (float)sqrt(flSpeed);
+			if (flSpeed == 0.0 || !(flSpeed > PLAYER->m_flMaxSpeed))
+				goto done;
+			flScale = PLAYER->m_flMaxSpeed / flSpeed;
+		}
+		PLAYER->m_flForwardMove = flScale * PLAYER->m_flForwardMove;
+		PLAYER->m_flSideMove = flScale * PLAYER->m_flSideMove;
+		PLAYER->m_flUpMove = flScale * PLAYER->m_flUpMove;
+	}
+done:
+	if (!m_bDc && (PLAYER->m_fFlags24 & 0x20000) && !(PLAYER->m_fFlags24 & 4)) {
+		float flPunch = vfunc23();
+		PLAYER->m_flForwardMove = flPunch * PLAYER->m_flForwardMove;
+		PLAYER->m_flSideMove = flPunch * PLAYER->m_flSideMove;
+		PLAYER->m_flUpMove = flPunch * PLAYER->m_flUpMove;
+		m_bDc = 1;
+	}
+	if ((((CBaseEntity *)m_pMove)->sub_100b3700() & 0x20) || (((CBaseEntity *)m_pMove)->sub_100b3700() & 8) || ((CUnknown1011eee0 *)this)->sub_1011eee0()) {
+		PLAYER->m_flForwardMove = 0.0f;
+		PLAYER->m_flSideMove = 0.0f;
+		PLAYER->m_flUpMove = 0.0f;
+	}
+	slot7();
+	if (!((CUnknown1011eee0 *)this)->sub_1011eee0()) {
+		vecSaved = PLAYER->m_vec58;
+		if (MOVER->g94() == 2 || MOVER->g94() == 9) {
+			PLAYER->m_vec58.z = 0.0f;
+		} else {
+			float flA;
+			if (g_109eee54->vfunc1())
+				flA = 0.0f;
+			else
+				flA = g_109eee54->m_fl28;
+			float flB;
+			if (g_109ef31c->vfunc1())
+				flB = 0.0f;
+			else
+				flB = g_109ef31c->m_fl28;
+			CMovePlayerView *pPlayer = PLAYER;
+			pPlayer->m_vec58.z = vfunc6(*(QAngle *)&vecSaved, pPlayer->m_vecVelocity, flB, flA);
+		}
+		PLAYER->m_vec58.x = vecSaved.x;
+		PLAYER->m_vec58.y = vecSaved.y;
+	} else {
+		PLAYER->m_vec58 = PLAYER->m_vec64;
+	}
+	if (((CUnknown1011eee0 *)this)->sub_1011eee0()) {
+		vecOffset.x = 0.0f;
+		vecOffset.y = 0.0f;
+		vecOffset.z = 14.0f;
+		((CMoveFlagsView *)m_pMove)->sub_1009f380(&vecOffset);
+	}
+	if (PLAYER->m_vec58.y > 180.0f)
+		PLAYER->m_vec58.y = PLAYER->m_vec58.y - 360.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011f6e0 size=0x2e
 // TARGET: sub_1011f6e0
 
