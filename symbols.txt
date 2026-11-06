@@ -11284,6 +11284,7 @@
 0x10011545 func   ?sub_101f58e0@CVActivitySound@@QAEXPAVCVSoundEnt@@@Z CVActivitySound::sub_101f58e0
 0x1001154f func   ?sub_102daea0@@YIPAXPAUCOwnerView@@@Z sub_102daea0
 0x10011554 func   ?sub_102cac90@CAI_DebugRecordList@@QAEXXZ CAI_DebugRecordList::sub_102cac90
+0x10011559 func   ?sub_10384230@@YAXXZ sub_10384230
 0x1001155e func   ?vfunc0@CFlexAnimationTrack@@UAEPAV1@I@Z CFlexAnimationTrack::vfunc0
 0x10011563 func   ?sub_10074070@CUnknown10074070@@QAEHH@Z CUnknown10074070::sub_10074070
 0x1001156d func   ?sub_10032f50@UtlMem@@QAEXXZ UtlMem::sub_10032f50
