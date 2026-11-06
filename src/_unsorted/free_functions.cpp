@@ -58634,6 +58634,66 @@ bool __cdecl sub_10108fd0(int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101091f0 size=0x2a7
+#include "CBaseEntity.h"
+#include "CGameTrace.h"
+#include "CTraceFilterSimple.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738960.h"
+#include "Ray_t.h"
+
+bool sub_10108fd0(int a, int b);
+void sub_10146570(const Vector *, const Vector *, int, int, int, int, float);
+bool sub_10109010(Vector *pPos, int arg3);
+
+bool sub_101091f0(Vector *pPos, int arg2, int arg3, unsigned char flags)
+{
+	if (!sub_10108fd0((int)pPos, arg2))
+		return false; if (!(0x10 & (int)flags))
+	{
+		Vector vecStart = *pPos;
+		Vector vecEnd = *pPos;
+		vecStart.z += 1.0f;
+		vecEnd.z -= 24.0f;
+		Ray_t ray;
+		ray.sub_1004f7a0((const float *)&vecStart, (const float *)&vecEnd);
+		CTraceFilterSimple filter(0, 0);
+		CGameTrace trace;
+		g_1070b254->vfunc4(&ray, 0x200400b, (CTraceFilterNoCharacterCollide *)&filter, &trace);
+		if (g_10738960.sub_1005f190())
+			sub_10146570((Vector *)&trace, (Vector *)trace.m_endpos, 0xff, 0, 0, 1, -1.0f);
+		if (trace.m_allsolid || trace.m_startsolid || trace.m_fraction == 1.0f)
+			return false;
+		int edict = trace.m_pEnt->m_pEdict2e0;
+		if (engine->vfunc35(edict))
+			return false;
+	}
+	if (!(!(!(!sub_10109010(pPos, arg3))))) { {
+		Vector v = *pPos;
+		v.x += 10.0f;
+		if (!(sub_10108fd0((int)&v, arg2) && !sub_10109010(&v, arg3))) {
+			v.y += 10.0f;
+			if (sub_10108fd0((int)&v, arg2) && !sub_10109010(&v, arg3))
+			{
+				*pPos = v;
+				return true;
+			} else { v.y -= 20.0f;
+			if (sub_10108fd0((int)&v, arg2) && !sub_10109010(&v, arg3))
+			{
+				*pPos = v;
+				return true;
+			} v.x -= 20.0f;
+			if (!sub_10108fd0((int)&v, arg2) || sub_10109010(&v, arg3))
+				return false; }
+		} else {
+		}
+		*pPos = v;
+	}
+	return true; } return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109550 size=0x106
 #include "CFire.h"
 #include "Vector.h"
