@@ -14405,6 +14405,7 @@
 0x10015c26 func   ?sub_10026d30@@YAEXZ sub_10026d30
 0x10015c2b func   ?vfunc444@CAI_BaseNPCTroika@@UAEXPAX@Z CAI_BaseNPCTroika::vfunc444
 0x10015c30 func   ?sub_10338cb0@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10338cb0
+0x10015c35 func   ?sub_103c52a0@@YAXXZ sub_103c52a0
 0x10015c3a func   ?sub_101be0e0@CStealthKillRules@@QAEXXZ CStealthKillRules::sub_101be0e0
 0x10015c3f func   ?vfunc103@CNPC_VDog@@UAEXXZ CNPC_VDog::vfunc103
 0x10015c44 func   ?vfunc3@CServerGameDLL@@UAE_NPBD000D@Z CServerGameDLL::vfunc3
