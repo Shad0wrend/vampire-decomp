@@ -25,6 +25,7 @@ public:
 	void sub_102c8b10();	// 0x102c8b10: the same Purge as sub_1007ee60
 	void sub_102c8b60();	// 0x102c8b60: the same Purge as sub_1007ee60
 	void sub_102c8bb0();	// 0x102c8bb0: the same Purge as sub_1007ee60
+	void sub_10359ba0();	// 0x10359ba0 (stub 0x100027a2): the same Purge, on the vector whose memory is cleared by the destructor
 	void sub_102f9040();	// 0x102f9040: the same Purge as sub_1007ee60
 	void sub_10366b30();	// 0x10366b30: the same Purge as sub_1007ee60
 
