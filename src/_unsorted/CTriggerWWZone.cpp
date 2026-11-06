@@ -79,6 +79,130 @@ void CTriggerWWZone::vfunc119()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dafd0 size=0x48c
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "CTriggerWWZone.h"
+#include "CUnknown103dae50.h"
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+#include <string.h>
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" int __cdecl _strnicmp(const char *, const char *, unsigned int);
+
+static inline bool WWNameIs(CBaseEntity *e, const char *lit)
+{
+	const char *n = *(const char *volatile *)&e->m_name26c;
+	if (n && n == lit)
+		return true;
+	int len = strlen(lit);
+	int r;
+	if (len == 0) {
+		r = (int)e->m_name26c;
+	} else if (lit[len - 1] != '*') {
+		r = _strcmpi(e->m_name26c ? e->m_name26c : g_106b8540, lit);
+	} else {
+		r = _strnicmp(e->m_name26c ? e->m_name26c : g_106b8540, lit, len - 1);
+	}
+	return r == 0;
+}
+
+static inline CBaseEntity *WWLookup(CGlobalEntityList *pList, const unsigned int &rh)
+{
+	if (rh == 0xffffffff)
+		return 0;
+	CGlobalEntityList_Slot *pSlot = &pList->m_Slots[rh & 0x1fff];
+	if (pSlot->m_Serial == (int)(rh >> 13))
+		return (CBaseEntity *)pSlot->m_pEntity;
+	return 0;
+}
+
+// TARGET: CTriggerWWZone::vfunc175
+void CTriggerWWZone::vfunc175(CBaseEntity *pOther)
+{
+	ScopeTrace trace("CTriggerWWZone::Touch", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CBaseEntity::vfunc175(pOther);
+	CTriggerWWZone *pPlayer = sub_103dad80();
+	switch (m_n5ac) {
+	case 0:
+		if (pOther->m_pA8) {
+			((CUnknown103dae50 *)this)->sub_103dae50();
+			if (WWNameIs(this, "player_outside_trigger")) {
+				if (pPlayer)
+					pPlayer->m_flags66e8 |= 0x80;
+			} else if (WWNameIs(this, "player_inside_trigger")) {
+				if (pPlayer)
+					pPlayer->m_flags66e8 |= 0x40;
+			}
+		} else if (pOther == (CBaseEntity *)pPlayer) {
+			if (WWNameIs(this, "player_outside_trigger")) {
+				if (pPlayer)
+					pPlayer->m_flags66e8 |= 0x1000;
+			} else if (WWNameIs(this, "player_inside_trigger")) {
+				if (pPlayer)
+					pPlayer->m_flags66e8 |= 0x800;
+			}
+		}
+		break;
+	case 1:
+		if (pOther == (CBaseEntity *)sub_103dad80() && pPlayer)
+			pPlayer->m_flags66e8 |= 1;
+		break;
+	case 4:
+	case 5:
+		if (pOther == (CBaseEntity *)sub_103dad80() && pPlayer) {
+			if (m_n5ac == 4)
+				pPlayer->m_flags66e8 |= 8;
+			else
+				pPlayer->m_flags66e8 |= 0x10;
+		}
+		break;
+	case 2:
+		if (pOther->m_pA8 && pPlayer) {
+			pPlayer->m_flags66e8 |= 2;
+			CGlobalEntityList *pList = g_10566458;
+			if (pList->sub_100290c0(&m_h5b4)) {
+				pPlayer->sub_103cecd0(WWLookup(pList, m_h5b4));
+				return;
+			}
+		}
+		break;
+	case 3:
+		if (pOther->m_pA8) {
+			if (pPlayer)
+				pPlayer->m_flags66e8 |= 4;
+		} else if (pOther == (CBaseEntity *)sub_103dad80() && pPlayer) {
+			pPlayer->m_flags66e8 |= 0x100;
+		}
+		break;
+	case 6:
+		if (pOther == (CBaseEntity *)sub_103dad80() && pPlayer)
+			pPlayer->m_flags66e8 |= 0x20;
+		break;
+	case 7:
+		if (pOther->m_pA8 && pPlayer)
+			pPlayer->m_flags66e8 |= 0x200;
+		break;
+	case 8:
+		if (pOther->m_pA8 && pPlayer)
+			pPlayer->m_flags66e8 |= 0x400;
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dbf50 size=0xb2
 #include "utlmemory.h"
 #include "utlrbtree.h"

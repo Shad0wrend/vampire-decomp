@@ -1843,6 +1843,7 @@
 0x10003aa8 func   ?sub_1021c890@CPropHacking@@QAEDH@Z CPropHacking::sub_1021c890
 0x10003aad func   ?sub_102d1350@CAI_BaseNPC@@QAE_NPAVCBaseEntity@@@Z CAI_BaseNPC::sub_102d1350
 0x10003ab2 func   ?vfunc23@CRestore@@UAEHH@Z CRestore::vfunc23
+0x10003ab7 func   ?vfunc175@CTriggerWWZone@@QAEXPAVCBaseEntity@@@Z CTriggerWWZone::vfunc175
 0x10003abc func   _env_shooter env_shooter
 0x10003ac1 func   ?vfunc1@CTEBSPDecal@@UAEHXZ CTEBSPDecal::vfunc1
 0x10003ac6 func   ?vfunc3@CTEBSPDecal@@UAEXABVVector@@ABVQAngle@@@Z CTEBSPDecal::vfunc3
