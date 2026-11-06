@@ -35,7 +35,8 @@ public:
 	void sub_100c9250(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value);	// \"CBaseButton::ButtonUse\"-like: unless locked / moving (state 2 or 3) or the byte at +0x5c4 is set and the use filter passes the activator (sub_100a7bd0): remembers the activator handle at +0x53c; in state 0 (flag 0x20 set) fires the output at +0x578 and presses (sub_100c97c0), in any other state fires it and calls sub_100c9560
 	void sub_100c8a20(CBaseEntity *pOther);	// \"CBaseButton::ButtonTouch\"-like: unless moving (state 2 or 3) or the byte at +0x5c4 is set and the use filter passes the stored activator (+0x53c): clears the touch function at +0x1ec, fires the output at +0x578 for the activator; state 0 -> sub_100c97c0, else sub_100c9560
 	void sub_100c9430(CBaseEntity *pOther);	// the touch function variant for a toucher that has the field at +0xa8 (or, with the byte at +0x5c5 set, bit 2 of the flags at +0x4c): remembers its handle as the activator (+0x53c), then like sub_100c8a20 without the use filter, using the state from sub_100c93b0
-	int sub_100c93b0();	// the button's current state (stub 0x10008aa8), called directly
+	int sub_100c93b0();
+	void sub_100c9190();	// think function set by Spawn (stub 0x1000fca9)	// the button's current state (stub 0x10008aa8), called directly
 	int vfunc142(void *pInfo);	// slot 142 \"CBaseButton::OnTakeDamage\": fires the damage output (+0x560) for the activator; for a damageable button (flag 0x200 at +0x204 or health at +0x210) in a usable state takes the attacker (the entity at +0x2c of the damage info) as the new activator and presses it like sub_100c9430; always 0
 
 	bool sub_100a7bd0(CBaseEntity *pActivator);	// CBaseEntity::PassesUseFilter (stub 0x10001032), called directly
@@ -49,15 +50,24 @@ public:
 	void (CBaseButton::*m_pfnThink114)();	// 0x114
 	char m_pad0118[0x164 - 0x118];
 	float m_flSpeed164;	// 0x164
-	char m_pad0168[0x1ec - 0x168];
+	char m_pad0168[0x17c - 0x168];
+	float m_flNextThink17c;	// 0x17c
+	char m_pad0180[0x190 - 0x180];
+	Vector m_vecMoveDir190;	// 0x190
+	char m_pad019c[0x1ec - 0x19c];
 	void *m_pfnTouch1ec;	// 0x1ec
-	char m_pad01f0[0x204 - 0x1f0];
+	void (CBaseButton::*m_pfnUse1f0)(CBaseEntity *, CBaseEntity *, int, float);	// 0x1f0
+	char m_pad01f4[0x1fc - 0x1f4];
+	int m_nTakeDamage1fc;	// 0x1fc
+	char m_pad0200[0x204 - 0x200];
 	unsigned int m_flags204;	// 0x204
 	char m_pad0208[8];
 	int m_nHealth210;	// 0x210
 	char m_pad0214[0x4f8 - 0x214];
 	int m_nState4f8;	// 0x4f8
-	char m_pad04fc[0x508 - 0x4fc];
+	char m_pad04fc[0x500 - 0x4fc];
+	float m_flWait500;	// 0x500
+	float m_flLip504;
 	Vector m_vec508;	// 0x508
 	Vector m_vec514;	// 0x514
 	Vector m_vec520;	// 0x520
@@ -292,13 +302,13 @@ public:
 	virtual void vfunc211();
 	virtual void vfunc212();
 	virtual void vfunc213();
-	virtual void vfunc214();
+	virtual float *vfunc214();
 	virtual void vfunc215();
 	virtual void vfunc216();
 	virtual void vfunc217();
 	virtual void vfunc218();
 	virtual void vfunc219();
-	virtual void vfunc220();
+	virtual float *vfunc220();
 	virtual void vfunc221();
 	virtual void vfunc222();
 	virtual bool vfunc223();
