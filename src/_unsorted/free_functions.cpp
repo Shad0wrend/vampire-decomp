@@ -44012,6 +44012,73 @@ void sub_100d4160(void *pOut, CVStatList_t *pList, int nMin, int nArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d4240 size=0x389
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CBaseCombatCharacter.h"
+#include "CVStatList_t.h"
+#include "CVDmg_t.h"
+#include "CUnknown101fa0e0.h"
+#include "CUnknown10204e90.h"
+#include "engineserver.h"
+#include "Tier1.h"
+#include <string.h>
+#include <stdlib.h>
+
+struct CPlayerView100d4240
+{
+	char m_pad0000[0xa8];
+	CBaseCombatCharacter *m_pA8;
+};
+
+CPlayerView100d4240 *sub_101193b0();
+void sub_100d46c0(CVStatList_t *pList, int a, int b);
+
+// TARGET: sub_100d4240
+void sub_100d4240()
+{
+	CPlayerView100d4240 *pView = sub_101193b0();
+	if (!pView)
+		return;
+	CBaseCombatCharacter *pChar = pView->m_pA8;
+	if (!pChar)
+		return;
+	if (engine->vfunc85() == 1) {
+		sub_100d46c0(CVStatListSet::Of(pChar)->Find(0), 0xfffe7961, 0);
+		sub_100d46c0(CVStatListSet::Of(pChar)->Find(1), 0xfffe7961, 0);
+		sub_100d46c0(CVStatListSet::Of(pChar)->Find(2), 0, 0);
+		sub_100d46c0(CVStatListSet::Of(pChar)->Find(3), 1, 1);
+		((CUnknown101fa0e0 *)((char *)pChar + 0x13dc))->sub_101fa0e0();
+	} else if (engine->vfunc85() == 3 || engine->vfunc85() == 4) {
+		int raw[4];
+		CVDmgBlock16_t *block = (CVDmgBlock16_t *)raw;
+		block->sub_10230ed0();
+		block->sub_10204570(engine->vfunc84(2));
+		int count = 1;
+		if (engine->vfunc85() >= 4)
+			count = atoi(engine->vfunc84(3));
+		if (!block->sub_10204250()) {
+			if (!_strcmpi(engine->vfunc84(1), "Buy")) {
+				for (int i = count; i > 0; i--)
+					pChar->sub_10338190((CUnknown10204e90 *)block);
+			} else if (!_strcmpi(engine->vfunc84(1), "Get")) {
+				for (int i = count; i > 0; i--)
+					pChar->sub_10338440((const int *)block);
+			} else if (!_strcmpi(engine->vfunc84(1), "Sell")) {
+				for (int i = count; i > 0; i--)
+					pChar->sub_10338570((const int *)block);
+			} else {
+				g_109f3628("Unknown Action '%s'\n", engine->vfunc84(1));
+			}
+			pChar->sub_103228c0();
+		} else {
+			g_109f3628("Unknown Dependency '%s'\n", engine->vfunc84(2));
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d46c0 size=0x95
 #include "CVStatList_t.h"
 

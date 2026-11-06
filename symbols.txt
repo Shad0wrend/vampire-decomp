@@ -2314,6 +2314,7 @@
 0x1000458e func   ?sub_10075040@CUnknown10075aa0@@QAEPAV1@H@Z CUnknown10075aa0::sub_10075040
 0x10004593 func   ?sub_101c2600@CUnk101c2600@@QAEXH@Z CUnk101c2600::sub_101c2600
 0x10004598 func   ?sub_100fd270@CInspectionBrush@@QAEXH@Z CInspectionBrush::sub_100fd270
+0x1000459d func   ?sub_100d4240@@YAXXZ sub_100d4240
 0x100045a2 func   _npc_VScurrying npc_VScurrying
 0x100045a7 func   ?sub_10046cd0@UtlMem@@QAEXXZ UtlMem::sub_10046cd0
 0x100045b1 func   _scripted_scene scripted_scene
