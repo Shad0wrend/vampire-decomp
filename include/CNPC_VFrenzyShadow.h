@@ -17,6 +17,13 @@ public:
 	int sub_10015ad2();	// CNPC_VHuman::vfunc438, called directly
 	void sub_103a4700();	// CNPC_VPlayerController::vfunc431 (stub 0x10012c6f), called directly
 	void vfunc431_impl_unused();
+	void sub_10013336(int *pEvt);
+	void sub_10273e80(int a);
+	void *sub_1032e7b0();
+	int sub_10295460(int a, int b);
+	char sub_102a1650(int a, int b, int c);
+	void sub_10289ee0(int a);
+	void sub_1033f6d0();
 	char sub_10014df8(int condition);	// "HasCondition" (stub of 0x10269aa0), called directly
 	void vfunc420();	// slot 420 "CNPC_VFrenzyShadow::NPCInit": gives the NPC its \"item_w_fists\" weapon (flag 0x40 on it), the player controller reset, stamps source line 0xe4, ideal state 0xb, flag 0x5ddf at +0x5b84, the senses' byte +0x80, clears the shadow counter and the flag at +0x6668, +0x1488 = 8.0f, +0x65f7 = 1, then counts the shadows
 	char sub_10334c20(void *pWeapon);	// stub 0x100112d9: whether the NPC can take the weapon
@@ -214,7 +221,7 @@ public:
 	virtual void vfunc165();
 	virtual void vfunc166();
 	virtual CBaseEntity *vfunc167();
-	virtual void vfunc168();
+	virtual CBaseEntity *vfunc168();
 	virtual void vfunc169();
 	virtual void vfunc170();
 	virtual void vfunc171();
@@ -263,10 +270,10 @@ public:
 	virtual void vfunc214();
 	virtual void vfunc215();
 	virtual void vfunc216();
-	virtual void vfunc217();
+	virtual Vector *vfunc217();
 	virtual void vfunc218();
 	virtual void vfunc219();
-	virtual void vfunc220();
+	virtual Vector *vfunc220();
 	virtual void vfunc221();
 	virtual void vfunc222();
 	virtual void vfunc223();
@@ -406,7 +413,7 @@ public:
 	virtual void vfunc357();
 	virtual void vfunc358();
 	virtual void vfunc359();
-	virtual void vfunc360();
+	virtual int vfunc360();
 	virtual void vfunc361();
 	virtual void vfunc362();
 	virtual void vfunc363();
@@ -418,7 +425,7 @@ public:
 	virtual void vfunc369();
 	virtual void vfunc370();
 	virtual void vfunc371();
-	virtual void vfunc372();
+	virtual void vfunc372(int a, int b, int c);
 	virtual void vfunc373();
 	virtual void vfunc374();
 	virtual void vfunc375();
@@ -464,13 +471,13 @@ public:
 	virtual void vfunc415();
 	virtual void vfunc416();
 	virtual void vfunc417();
-	virtual void vfunc418();
+	virtual float vfunc418(int a);
 	virtual void vfunc419();
 	virtual void vfunc420_slot();
 	virtual void vfunc421();
 	virtual void vfunc422();
 	virtual void vfunc423();
-	virtual void vfunc424();
+	virtual char vfunc424(int a);
 	virtual void vfunc425();
 	virtual void vfunc426();
 	virtual void vfunc427();
@@ -488,13 +495,13 @@ public:
 	virtual void vfunc439();
 	virtual void vfunc440(int a);
 	virtual void vfunc441();
-	virtual void vfunc442();
+	virtual void vfunc442(int *pEvt);
 	virtual void vfunc443();
 	virtual void vfunc444();
 	virtual void vfunc445();
 	virtual void vfunc446();
 	virtual void vfunc447();
-	virtual void vfunc448();
+	virtual void vfunc448(int a);
 	virtual void vfunc449();
 	virtual void vfunc450();
 	virtual int vfunc451();
