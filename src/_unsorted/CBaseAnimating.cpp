@@ -165,6 +165,96 @@ void CBaseAnimating::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008c170 size=0xaf4
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+#include <string.h>
+
+// TARGET: CBaseAnimating::vfunc241
+void CBaseAnimating::vfunc241(char *pszOut, int *pEvent)
+{
+	ScopeTrace trace("CBaseAnimating::GetEventName", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	switch (*pEvent)
+	{
+	default: strcpy(pszOut, "**UNKNOWN**"); break;
+	case 0: strcpy(pszOut, "SPECIFIC"); break;
+	case 0x3e8: strcpy(pszOut, "SCRIPTED"); break;
+	case 0x7d0: strcpy(pszOut, "SHARED"); break;
+	case 0x7d1: strcpy(pszOut, "NPC_BODYDROP_LIGHT"); break;
+	case 0x7d2: strcpy(pszOut, "NPC_BODYDROP_HEAVY"); break;
+	case 0x7da: strcpy(pszOut, "NPC_SWISHSOUND"); break;
+	case 0x7e4: strcpy(pszOut, "NPC_180TURN"); break;
+	case 0x7e5: strcpy(pszOut, "NPC_FINISHTURN"); break;
+	case 0x7e6: strcpy(pszOut, "NPC_FORCE_ADD_YAW"); break;
+	case 0x7f8: strcpy(pszOut, "NPC_PICKUP"); break;
+	case 0x802: strcpy(pszOut, "NPC_LEFTFOOT"); break;
+	case 0x803: strcpy(pszOut, "NPC_RIGHTFOOT"); break;
+	case 0x80c: strcpy(pszOut, "EVENT_EXPRESSION"); break;
+	case 0x816: strcpy(pszOut, "EVENT_PHYSICSCHAIN_OFF"); break;
+	case 0x817: strcpy(pszOut, "EVENT_PHYSICSCHAIN_ON"); break;
+	case 0xbb8: strcpy(pszOut, "WEAPON"); break;
+	case 0xbb9: strcpy(pszOut, "WEAPON_MELEE_HIT"); break;
+	case 0xbba: strcpy(pszOut, "WEAPON_SMG1"); break;
+	case 0xbbb: strcpy(pszOut, "WEAPON_MELEE_SWISH"); break;
+	case 0xbbc: strcpy(pszOut, "WEAPON_SHOTGUN_FIRE"); break;
+	case 0xbbd: strcpy(pszOut, "WEAPON_THROW"); break;
+	case 0xbbe: strcpy(pszOut, "WEAPON_AR1"); break;
+	case 0xbbf: strcpy(pszOut, "WEAPON_AR2"); break;
+	case 0xbc0: strcpy(pszOut, "WEAPON_HMG1"); break;
+	case 0xbc1: strcpy(pszOut, "WEAPON_SMG2"); break;
+	case 0xbc2: strcpy(pszOut, "WEAPON_MISSILE_FIRE"); break;
+	case 0xbc3: strcpy(pszOut, "WEAPON_SNIPER_RIFLE_FIRE"); break;
+	case 0xbc4: strcpy(pszOut, "WEAPON_AR2_GRENADE"); break;
+	case 0xbc5: strcpy(pszOut, "WEAPON_THROW2"); break;
+	case 0xbc6: strcpy(pszOut, "WEAPON_PISTOL_FIRE"); break;
+	case 0xbd6: strcpy(pszOut, "WEAPON_PISTOL_SMITH_FIRE"); break;
+	case 0xbd7: strcpy(pszOut, "WEAPON_PISTOL_ANACONDA_FIRE"); break;
+	case 0xbd8: strcpy(pszOut, "WEAPON_PISTOL_GLOCK_FIRE"); break;
+	case 0xbd9: strcpy(pszOut, "WEAPON_PISTOL_P220S_FIRE"); break;
+	case 0xbda: strcpy(pszOut, "WEAPON_SMG_UZI_FIRE"); break;
+	case 0xbdb: strcpy(pszOut, "WEAPON_SMG_MAC10_FIRE"); break;
+	case 0xbdc: strcpy(pszOut, "WEAPON_RIFLE_REMINGTON_FIRE"); break;
+	case 0xbdd: strcpy(pszOut, "WEAPON_RIFLE_STEY_AUG_FIRE"); break;
+	case 0xbdf: strcpy(pszOut, "WEAPON_RIFLE_ITHACA_FIRE"); break;
+	case 0xbe0: strcpy(pszOut, "WEAPON_RIFLE_STRYKER_FIRE"); break;
+	case 0xbe1: strcpy(pszOut, "WEAPON_RIFLE_DRAGONSB_FIRE"); break;
+	case 0xbe2: strcpy(pszOut, "WEAPON_RIFLE_PANIC_FIRE"); break;
+	case 0xbe3: strcpy(pszOut, "WEAPON_RIFLE_CROSSBOW_FIRE"); break;
+	case 0xbe4: strcpy(pszOut, "WEAPON_PISTOL_DUALPISTOL_FIRE"); break;
+	case 0xc1d: strcpy(pszOut, "WEAPON_SMG1_BURST1"); break;
+	case 0xc1e: strcpy(pszOut, "WEAPON_SMG1_BURSTN"); break;
+	case 0xc80: strcpy(pszOut, "WEAPON_MELEE_BEGIN_SWING"); break;
+	case 0xc81: strcpy(pszOut, "WEAPON_MELEE_END_SWING"); break;
+	case 0xf9f: strcpy(pszOut, "WEAPON_LAST"); break;
+	case 0xfa1: strcpy(pszOut, "WEAPON_HIDE_BODYGROUP"); break;
+	case 0xfa2: strcpy(pszOut, "WEAPON_SHOW_BODYGROUP"); break;
+	case 0xfa5: strcpy(pszOut, "EVENT_SWITCH_TO_ACTIVITY"); break;
+	case 0x1388: strcpy(pszOut, "CLIENT"); break;
+	case 0x1389: strcpy(pszOut, "CL_EVENT_MUZZLEFLASH0"); break;
+	case 0x138a: strcpy(pszOut, "CL_EVENT_SPARK0"); break;
+	case 0x138b: strcpy(pszOut, "CL_EVENT_NPC_MUZZLEFLASH0"); break;
+	case 0x1393: strcpy(pszOut, "CL_EVENT_MUZZLEFLASH1"); break;
+	case 0x139d: strcpy(pszOut, "CL_EVENT_MUZZLEFLASH2"); break;
+	case 0x1395: strcpy(pszOut, "CL_EVENT_NPC_MUZZLEFLASH1"); break;
+	case 0x139f: strcpy(pszOut, "CL_EVENT_NPC_MUZZLEFLASH2"); break;
+	case 0x138c: strcpy(pszOut, "CL_EVENT_SOUND"); break;
+	case 0x13a7: strcpy(pszOut, "CL_EVENT_MUZZLEFLASH3"); break;
+	case 0x13a9: strcpy(pszOut, "CL_EVENT_NPC_MUZZLEFLASH3"); break;
+	case 0x13ed: strcpy(pszOut, "CL_EVENT_HIDE_BODYGROUP"); break;
+	case 0x13ee: strcpy(pszOut, "CL_EVENT_SHOW_BODYGROUP"); break;
+	case 0x1771: strcpy(pszOut, "CL_EVENT_EJECTBRASS1"); break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008df10 size=0x136
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
