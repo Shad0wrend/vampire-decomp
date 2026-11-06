@@ -473,6 +473,74 @@ int CBaseCombatCharacter::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103222c0 size=0x423
+#include "CBaseCombatCharacter.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "Vector.h"
+// TARGET: CBaseCombatCharacter::vfunc31
+#include "ScopeTrace.h"
+extern int g_10937ccc;
+#define I(off) (*(int *)((char *)this + off))
+#define B(off) (*(unsigned char *)((char *)this + off))
+#define S(s) ((int)(s))
+void CBaseCombatCharacter::vfunc31(int pFile)
+{
+	ScopeTrace trace("CBaseCombatCharacter::Dump", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	sub_1009b980(pFile, "m_lastInteraction", g_10937ccc);
+	sub_1009c2d0(pFile, "m_Activity", m_Activity);
+	sub_1009c2d0(pFile, "m_IdealActivity", m_IdealActivity);
+	sub_1009c2d0(pFile, "m_TranslatedActivity", m_TranslatedActivity);
+	sub_1009ba60(pFile, "m_flNextAttack", I(0x1564));
+	sub_1009b980(pFile, "m_LastHitGroup", I(0x1594));
+	sub_1009b980(pFile, "m_bloodColor", I(0x1570));
+	sub_1009b980(pFile, "m_eHull", I(0x1568));
+	sub_1009ba60(pFile, "m_impactEnergyScale", I(0xdc));
+	sub_1009bc30(pFile, "m_Relationship", I(0x1598));
+	sub_1009b980(pFile, "m_nMaxRelationships", I(0x159c));
+	sub_1009b980(pFile, "m_nNumRelationships", I(0x15a0));
+	sub_1009b700(pFile, S("m_RelationshipString"), (const char *)I(0x1584));
+	sub_1009ba60(pFile, "m_flFieldOfView", I(0x1574));
+	sub_1009be00(pFile, "m_HackedGunPos", *(Vector *)&I(0x1578));
+	sub_1009c850(pFile, "m_hMyWeapons", (const unsigned int *)&I(0x1624), 0xe0);
+	sub_1009c000(pFile, "m_hLastWeapon", m_hEa4);
+	sub_1009c000(pFile, "m_hLastMeleeWeapon", m_hEa8);
+	sub_1009c000(pFile, "m_hActiveIArmor", m_hActiveIArmor);
+	sub_1009c000(pFile, "m_hLastIArmor", m_hLastIArmor);
+	sub_1009c390(pFile, "m_iAmmo", &I(0x15a4), 0x20);
+	sub_1009b700(pFile, S("m_statTemplate"), (const char *)I(0x10e4));
+	sub_1009b980(pFile, "m_iVHistoryID", I(0x13a0));
+	sub_1009b980(pFile, "m_iUpdateFlags", I(0x13a4));
+	sub_1009b980(pFile, "m_iGender", I(0x13cc));
+	sub_1009b980(pFile, "m_iCurVReaction", I(0x1468));
+	sub_1009b980(pFile, "m_iCurFrenzyCount", I(0x146c));
+	sub_1009b8a0(pFile, S("m_bFrenzyHunger"), B(0x1474));
+	sub_1009b8a0(pFile, S("m_bCantBreakGrapple"), B(0x1475));
+	sub_1009b8a0(pFile, S("m_bIsFrenzyGrapple"), B(0x1476));
+	sub_1009ba60(pFile, "m_flBreakGrappleTimer", I(0x1478));
+	sub_1009ba60(pFile, "m_flGrappleDamageTimer", I(0x147c));
+	sub_1009b980(pFile, "m_nMotionTrail", I(0x1484));
+	sub_1009ba60(pFile, "m_flSpeedScale", I(0x1488));
+	sub_1009ba60(pFile, "m_flJumpStartTime", I(0x148c));
+	sub_1009ba60(pFile, "m_flNextFeedPulse", I(0x1490));
+	sub_1009ba60(pFile, "m_flNextFeedDuration", I(0x1494));
+	sub_1009ba60(pFile, "m_flFeedStartTime", I(0x1498));
+	sub_1009c4c0(pFile, "m_clientAuraCount", m_clientAuraCount, 0x20);
+	sub_1009c000(pFile, "m_GrapplePartner", m_hTarget1538);
+	sub_1009b980(pFile, "m_GrappleRole", I(0x153c));
+	sub_1009b980(pFile, "m_GrapplePosition", I(0x1544));
+	sub_1009b980(pFile, "m_GrappleType", I(0x1540));
+	sub_1009b980(pFile, "m_GrappleSavedMoveType", I(0x1534));
+	sub_10001483(pFile);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10323a90 size=0x96
 #include "CBaseCombatCharacter.h"
 #include "CBaseAnimating.h"

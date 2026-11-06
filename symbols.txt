@@ -4531,6 +4531,7 @@
 0x100078d8 func   ?sub_100dd1b0@CCollisionProperty@@QAEMABVVector@@@Z CCollisionProperty::sub_100dd1b0
 0x100078dd func   ?vfunc5@CPointTarget@@QAEPAV1@I@Z CPointTarget::vfunc5
 0x100078e2 func   ?sub_10106e20@@YIMPAVCBaseEntity@@HMPAUExprCurve@@@Z sub_10106e20
+0x100078e7 func   ?vfunc31@CBaseCombatCharacter@@UAEXH@Z CBaseCombatCharacter::vfunc31
 0x100078ec func   ?sub_101abb50@@YAHXZ sub_101abb50
 0x100078f1 func   ?sub_100904a0@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_100904a0
 0x100078f6 func   ?sub_10076ef0@CUnknown10076ef0@@QAEDXZ CUnknown10076ef0::sub_10076ef0
