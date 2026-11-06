@@ -14239,6 +14239,7 @@
 0x100159dd func   ?sub_1042b470@@YAHXZ sub_1042b470
 0x100159e2 func   ?vfunc128@CFuncRotating@@UAE_NXZ CFuncRotating::vfunc128
 0x100159e7 func   ?vfunc301@CNPC_VPedestrian@@QAEXHH@Z CNPC_VPedestrian::vfunc301
+0x100159f1 func   ?sub_102d03d0@@YAPAHXZ sub_102d03d0
 0x100159f6 func   ?sub_101fd010@@YAXH@Z sub_101fd010
 0x100159fb func   ?sub_101e39b0@SDiscList@@QAEXHHH@Z SDiscList::sub_101e39b0
 0x10015a00 func   ?sub_101cea60@@YAXHPAUCPlayerSlots162@@@Z sub_101cea60

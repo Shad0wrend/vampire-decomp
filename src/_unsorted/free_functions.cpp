@@ -156856,6 +156856,72 @@ extern "C" CAI_Hint *ai_hint()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d03d0 size=0x368
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_106099f0[2];
+void sub_100073fb();
+void sub_10015320();
+void sub_1000b6c2();
+void sub_1000f3b7();
+void sub_100011bd();
+
+int *sub_102d03d0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 2, "m_strActivity", {0x450, 0}, 1, 2 },
+        { 4, "m_nHintType", {0x5dc, 0}, 1, 6, "HintType" },
+        { 12, "m_hHintOwner", {0x5e0, 0}, 1, 2 },
+        { 4, "m_nNodeID", {0x5e4, 0}, 1, 2 },
+        { 4, "m_iDisabled", {0x5e8, 0}, 1, 6, "StartHintDisabled" },
+        { 15, "m_flNextUseTime", {0x5ec, 0}, 1, 2 },
+        { 2, "m_strGroup", {0x5f0, 0}, 1, 6, "Group" },
+        { 1, "m_flTargetAngleRange", {0x454, 0}, 1, 6, "target_angle_range" },
+        { 1, "m_flTargetAngleRangeDot", {0x458, 0}, 1, 2 },
+        { 1, "m_flTargetDistMin", {0x45c, 0}, 1, 6, "target_dist_min" },
+        { 1, "m_flTargetDistMax", {0x460, 0}, 1, 6, "target_dist_max" },
+        { 1, "m_flHintRating", {0x464, 0}, 1, 6, "hint_rating" },
+        { 2, "m_strTargetName", {0x468, 0}, 1, 6, "target_name" },
+        { 4, "m_iIPPercent", {0x46c, 0}, 1, 6, "ip_percent" },
+        { 4, "m_iGroupID", {0x470, 0}, 1, 6, "group_id" },
+        { 2, "m_iszUserData", {0x5d4, 0}, 1, 6, "UserData" },
+        { 0, "InputEnableHint", {0, 0}, 1, 8, "EnableHint", 0, (void *)sub_100073fb },
+        { 0, "InputDisableHint", {0, 0}, 1, 8, "DisableHint", 0, (void *)sub_10015320 },
+        { 0, "InputWalk", {0, 0}, 1, 8, "Walk", 0, (void *)sub_1000b6c2 },
+        { 0, "InputDontWalk", {0, 0}, 1, 8, "DontWalk", 0, (void *)sub_1000f3b7 },
+        { 2, "InputSetUserData", {0, 0}, 1, 8, "SetUserData", 0, (void *)sub_100011bd },
+        { 10, "m_OnNPCArrival", {0x5f4, 0}, 1, 0x16, "OnNPCArrival", g_1055dc70 },
+        { 10, "m_OnNPCKicked", {0x5bc, 0}, 1, 0x16, "OnNPCKicked", g_1055dc70 },
+        { 10, "m_OnAnimEvent[0]", {0x4fc, 0}, 1, 0x16, "OnAnimEvent1", g_1055dc70 },
+        { 10, "m_OnAnimEvent[1]", {0x514, 0}, 1, 0x16, "OnAnimEvent2", g_1055dc70 },
+        { 10, "m_OnAnimEvent[2]", {0x52c, 0}, 1, 0x16, "OnAnimEvent3", g_1055dc70 },
+        { 10, "m_OnAnimEvent[3]", {0x544, 0}, 1, 0x16, "OnAnimEvent4", g_1055dc70 },
+        { 10, "m_OnAnimEvent[4]", {0x55c, 0}, 1, 0x16, "OnAnimEvent5", g_1055dc70 },
+        { 10, "m_OnAnimEvent[5]", {0x574, 0}, 1, 0x16, "OnAnimEvent6", g_1055dc70 },
+        { 10, "m_OnAnimEvent[6]", {0x58c, 0}, 1, 0x16, "OnAnimEvent7", g_1055dc70 },
+        { 10, "m_OnAnimEvent[7]", {0x5a4, 0}, 1, 0x16, "OnAnimEvent8", g_1055dc70 },
+    };
+    g_106099f0[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_106099f0[0] = (int)&dataDesc[1];
+    return g_106099f0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d08e0 size=0x16
 #include "CPhysBox.h"
 
