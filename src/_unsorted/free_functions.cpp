@@ -152246,6 +152246,108 @@ bool CAI_BaseNPCTroika::sub_10290fc0(float *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10291610 size=0x413
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "AITrace.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CGameTrace.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "utlmemory.h"
+#include "vampire.h"
+#include "CTraceFilterSimple.h"
+#include "Ray_t.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738960.h"
+#include "CVProfile.h"
+#include "ScopeTrace.h"
+#include "globalvars.h"
+#include "CEntityVSlots.h"
+
+struct CBoxView
+{
+	virtual void v0();
+	virtual void v1();
+	virtual Vector *v2();
+};
+
+char sub_101d1a90(CBaseEntity *pPlayer, CAI_BaseNPCTroika *pNPC);
+
+// TARGET: CAI_BaseNPCTroika::sub_10291610
+void CAI_BaseNPCTroika::sub_10291610()
+{
+	ScopeTrace trace("CAI_BaseNPCTroika::SetPlayerLOS", this ? (*(const char **)((char *)this + 0x26c) ? *(const char **)((char *)this + 0x26c) : g_106b8540) : g_105387dc);
+	g_109f3648->EnterScope("CAI_BaseNPCTroika_SetPlayerLOS", 0, "Unaccounted", false);
+
+	if (!((char)(*(unsigned int *)((char *)this + 0x5b64) >> 3) & 1) && (*(unsigned int *)((char *)this + 0x5b84) & 8) != 8) {
+		if (gpGlobals->curtime >= m_flNextPlayerLOS) {
+			m_flNextPlayerLOS = gpGlobals->curtime + 2.0f;
+			if (m_h628c.Get()) {
+				m_b6278 = sub_101d1a90(m_h628c.Get(), this);
+				if (m_b6278) {
+					m_flLastInPlayerPVS = gpGlobals->curtime;
+					if (m_f6264 <= 512.0f) {
+						m_b6279 = 1;
+						m_flLastInPlayerLOS = gpGlobals->curtime;
+					} else {
+						Vector vecStart;
+						vecStart = *(Vector *)vfunc217();
+						vecStart.z += ((CBoxView *)((char *)this + 0x270))->v2()->z;
+						CBaseEntity *pPlayer = m_h628c.Get();
+						Ray_t ray;
+						Vector vecTarget;
+						ray.sub_1004f7a0(((CEntityVSlots *)m_h628c.Get())->slot193(&vecTarget)->Base(), vecStart.Base());
+						CTraceFilterSimple filter(pPlayer, 0);
+						CGameTrace tr;
+						g_1070b254->vfunc4(&ray, 0x4091, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+						if (g_10738960.sub_1005f190())
+							sub_10146570((Vector *)&tr.m_startpos[0], (Vector *)&tr.m_endpos[0], 0xff, 0, 0, 1, -1.0f);
+						int bBlocked = tr.m_fraction < 1.0f || tr.m_allsolid || tr.m_startsolid;
+						m_b6279 = !(char)bBlocked;
+						if (m_b6279)
+							m_flLastInPlayerLOS = gpGlobals->curtime;
+					}
+				} else {
+					m_b6279 = 0;
+				}
+			} else {
+				m_b6278 = 1;
+				m_b6279 = 1;
+				m_flLastInPlayerPVS = gpGlobals->curtime;
+				m_flLastInPlayerLOS = gpGlobals->curtime;
+			}
+		}
+	} else {
+		m_b6278 = 1;
+		m_b6279 = 1;
+		m_flLastInPlayerPVS = gpGlobals->curtime;
+		m_flLastInPlayerLOS = gpGlobals->curtime;
+	}
+	if (!m_b6279 && m_b6278 && gpGlobals->curtime - m_flLastInPlayerLOS < 8.0f)
+		m_b6279 = 1;
+
+	CVProfile *pProf = g_109f3648;
+	if (!pProf->m_bAtRoot || pProf->m_enabled) {
+		CVProfNode *pNode = pProf->m_pCurNode;
+		if (--pNode->m_nRecursions == 0 && pNode->m_nCurFrameCalls != 0) {
+			CUnknownCycle100335e0 *pc = &pNode->m_CurFrameTime;
+			sub_100335e0(pc);
+			pNode->m_TotalTime += pc->m_Int64;
+			g_109f3648->PopGroup();
+		}
+		if (pNode->m_nRecursions == 0)
+			pProf->m_pCurNode = pProf->m_pCurNode->m_pParent;
+		pProf->m_bAtRoot = (pProf->m_pCurNode == pProf->m_pRoot);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10291ea0 size=0x57
 void sub_10143920(float x, float y, const char *s, int a, int b, int c, int d, float f);
 void sub_10291ea0(const float *pos, const char *s, int a, int b, int c, int d, float f)
