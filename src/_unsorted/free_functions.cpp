@@ -66957,6 +66957,93 @@ void sub_1013a0e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013a130 size=0x2c8
+#include <math.h>
+
+extern unsigned char g_1070ccb0[256];
+extern int g_10711de0[1024];
+extern float g_1070d9e0[256];
+extern float g_1070d1c0[256];
+extern float g_1070cdb0[256];
+extern int g_10712de0[1024];
+extern float g_1070dde0[4096];
+extern int g_10713df0[4096];
+void sub_1013a0e0();
+
+// TARGET: sub_1013a130
+void sub_1013a130(float gamma, float texGamma, float brightness, int overbright)
+{
+	int i, inf;
+	float g1, g, g3, f;
+
+	g = gamma;
+	if (g > 3.0)
+		g = 3.0f;
+	g = 1.0 / g;
+	g1 = texGamma * g;
+	if (brightness <= 0.0)
+		g3 = 0.125f;
+	else if (brightness > 1.0)
+		g3 = 0.05f;
+	else
+		g3 = 0.125 - (brightness * brightness) * 0.075;
+
+	for (i = 0; i < 256; i++) {
+		inf = (int)(pow(i * (1.0f / 255.0f), g1) * 255.0);
+		if (inf < 0)
+			inf = 0;
+		else if (inf > 255)
+			inf = 255;
+		g_1070ccb0[i] = inf;
+	}
+
+	for (i = 0; i < 1024; i++) {
+		f = i * (1.0 / 1023.0);
+		if (brightness > 1.0)
+			f = f * brightness;
+		if (f <= g3)
+			f = (f / g3) * 0.125;
+		else
+			f = 0.125 + ((f - g3) / (1.0 - g3)) * 0.875;
+		inf = (int)(pow(f, g) * 255.0);
+		if (inf < 0)
+			inf = 0;
+		else if (inf > 255)
+			inf = 255;
+		g_10711de0[i] = inf;
+	}
+
+	for (i = 0; i < 256; i++) {
+		float t = i * (1.0f / 255.0f);
+		g_1070d9e0[i] = pow(t, texGamma);
+		g_1070d1c0[i] = pow(t, 0.4545454446934474);
+		g_1070cdb0[i] = pow(t, 2.2f);
+	}
+
+	for (i = 0; i < 1024; i++)
+		g_10712de0[i] = (int)(pow(i * (1.0 / 1023.0), 1.0 / texGamma) * 255.0);
+
+	sub_1013a0e0();
+
+	float scale2 = 1.0f;
+	if (overbright == 2)
+		scale2 = 0.5f;
+	else if (overbright == 4)
+		scale2 = 0.25f;
+
+	for (i = 0; i < 4096; i++) {
+		float v = pow(i * (1.0 / 1024.0), 1.0 / gamma) * scale2;
+		g_1070dde0[i] = v;
+		if (v > 1.0f)
+			g_1070dde0[i] = 1.0f;
+		inf = (int)(v * 255.0f);
+		g_10713df0[i] = inf;
+		if (inf > 255)
+			g_10713df0[i] = 255;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013a4c0 size=0x58
 extern float g_1070cdb0[];
 float sub_1013a4c0(float f)
