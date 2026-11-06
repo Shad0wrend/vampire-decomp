@@ -124561,6 +124561,63 @@ bool CUnit10210250::sub_10210250(CEntityVSlots *pB, CEntityVSlots *pA)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102102e0 size=0x305
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CUnit10210250.h"
+#include "CEntityVSlots.h"
+#include "Ray_t.h"
+#include "CTraceFilterSimple.h"
+#include "CGameTrace.h"
+#include "CCollisionProperty.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738964.h"
+#include "CUnknown10738960.h"
+
+void sub_10146570(Vector *pStart, Vector *pEnd, int r, int g, int b, int a, float flDuration);
+
+// TARGET: CUnit10210250::sub_102102e0
+bool CUnit10210250::sub_102102e0(CEntityVSlots *pA, CEntityVSlots *pB)
+{
+	Vector eye;
+	pA->slot193(&eye);
+	Vector center;
+	center = pB->slot192();
+	Ray_t ray;
+	ray.sub_1004f7a0(&eye.x, &center.x);
+	CGameTrace tr;
+	{
+		CTraceFilterSimple filter((CBaseEntity *)pA, 0);
+		g_1070b254->vfunc4(&ray, 0x2804091, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+	}
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10146570((Vector *)&tr, (Vector *)tr.m_endpos, 0xff, 0, 0, 1, -1.0f);
+	if (tr.m_fraction == 1.0 || tr.m_pEnt == (CBaseEntity *)pB)
+		return true;
+	Vector vecA, vecB;
+	CCollisionProperty *pCol = (CCollisionProperty *)((char *)pB + 0x270);
+	pCol->sub_100dcd90(&pCol->m_vecMins.x, &pCol->m_vecMaxs.x, &vecA.x, &vecB.x);
+	ray.Init(eye, vecB);
+	{
+		CTraceFilterSimple filter((CBaseEntity *)pA, 0);
+		g_1070b254->vfunc4(&ray, 0x2804091, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+	}
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10146570((Vector *)&tr, (Vector *)tr.m_endpos, 0xff, 0, 0, 1, -1.0f);
+	if (tr.m_fraction == 1.0 || tr.m_pEnt == (CBaseEntity *)pB)
+		return true;
+	ray.sub_1004f7a0(&eye.x, &vecA.x);
+	{
+		CTraceFilterSimple filter((CBaseEntity *)pA, 0);
+		g_1070b254->vfunc4(&ray, 0x2804091, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+	}
+	if (g_10738960.sub_1005f190())
+		sub_10146570((Vector *)&tr, (Vector *)tr.m_endpos, 0xff, 0, 0, 1, -1.0f);
+	if (tr.m_fraction == 1.0 || tr.m_pEnt == (CBaseEntity *)pB)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102106c0 size=0x43
 #include "CTriggerPlayerActivityLevel.h"
 void *sub_100aa720(int size);
