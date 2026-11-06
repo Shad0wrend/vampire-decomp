@@ -12411,6 +12411,7 @@
 0x10012d7d func   ?vfunc104@CNPC_VMingXiao@@UAEXXZ CNPC_VMingXiao::vfunc104
 0x10012d82 func   ?sub_10087870@@YAXXZ sub_10087870
 0x10012d87 func   ?sub_1010f5c0@@YAHXZ sub_1010f5c0
+0x10012d8c func   ?InsertRebalance@?$CUtlRBTree@UCSoundEmitterRecord@@H@@QAEXH@Z CUtlRBTree<CSoundEmitterRecord,int>::InsertRebalance
 0x10012d96 func   ?sub_10073720@S10073720@@QAEHH@Z S10073720::sub_10073720
 0x10012d9b func   ?sub_10325a30@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10325a30
 0x10012da0 func   ?sub_10043010@CMem8d_t@@QAEXH@Z CMem8d_t::sub_10043010
