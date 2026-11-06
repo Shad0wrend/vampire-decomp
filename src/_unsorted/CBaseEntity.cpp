@@ -2942,6 +2942,52 @@ bool CBaseEntity::vfunc140(CBaseEntity *pAttacker)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a7de0 size=0x200
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CVDmg_t.h"
+#include "CGameTrace.h"
+#include "ScopeTrace.h"
+#include "CEntityVSlots.h"
+#include "CTakeDamageInfo.h"
+
+struct CPhysSlot31 { virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9(); virtual void s10(); virtual void s11(); virtual void s12(); virtual void s13(); virtual void s14(); virtual void s15(); virtual void s16(); virtual void s17(); virtual void s18(); virtual void s19(); virtual void s20(); virtual void s21(); virtual void s22(); virtual void s23(); virtual void s24(); virtual void s25(); virtual void s26(); virtual void s27(); virtual void s28(); virtual void s29(); virtual void s30(); virtual void s31(const Vector *p, const float *q); };
+
+// TARGET: CBaseEntity::vfunc141
+void CBaseEntity::vfunc141(CVDmg_t *pInfo, const Vector *pDir, CGameTrace *pTrace)
+{
+	CTakeDamageInfo *pDmg = (CTakeDamageInfo *)pInfo;
+	ScopeTrace trace("CBaseEntity::TraceAttack", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	const Vector *pEnd = (const Vector *)&pTrace->m_endpos[0];
+	Vector vecDelta = *pEnd - *pDir * 4.0f;
+	float flDmg4 = 0;
+	if (pDmg->m_pVDmg00)
+		flDmg4 = (float)pDmg->m_pVDmg00->m_field04;
+	if (m_obj36c) {
+		float flDmg = pDmg->m_pVDmg00 ? (float)pDmg->m_pVDmg00->sub_101faa70() : pDmg->m_flDamage;
+		Vector vecForce = *pDir * flDmg * 10.0f;
+		((CPhysSlot31 *)m_obj36c)->s31(&vecForce, &pEnd->x);
+	}
+	if (m_nTakeDamage) {
+		pDmg->m_pVDmg00->m_field04 = (int)flDmg4;
+		sub_101c2d20(pDmg, this);
+		int id = ((CEntityVSlots *)this)->slot145();
+		if (id != -1) {
+			float flDmg2 = pDmg->m_pVDmg00 ? (float)pDmg->m_pVDmg00->sub_101faa70() : pDmg->m_flDamage;
+			sub_102699e0(vecDelta, id, flDmg2);
+			((CEntityVSlots *)this)->slot146(pDmg->m_pVDmg00, pDir, pTrace);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a8710 size=0x1fe
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
