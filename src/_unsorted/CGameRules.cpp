@@ -149,6 +149,32 @@ int sub_1042df50();
 char CGameRules::vfunc77(void *pPassEnt, int collisionGroup) { return ((CIface10128f80 *)sub_1042df50())->f0(pPassEnt, collisionGroup); }
 // END FUNCTION
 
+// FUNCTION: 0x10128fa0 size=0x1c8
+#include "CBaseEntity.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CGameRules.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738964.h"
+
+extern CUnknown1070b254 *g_1070b254;
+extern CUnknown10738964 *g_10738964;
+void sub_10146570(const float *pStart, const float *pEnd, int r, int g, int b, int bNoDepthTest, float flDuration);
+
+float CGameRules::vfunc76(const Vector &vecStart, const Vector &vecEnd, const Vector &vecMins, const Vector &vecMaxs, unsigned int fMask, CBaseEntity *pPassEnt, int collisionGroup, int unused, CGameTrace *pTrace)
+{
+	Ray_t ray;
+	ray.Init(vecStart, vecEnd, vecMins, vecMaxs);
+	CTraceFilterSimple filter(pPassEnt, collisionGroup);
+	g_1070b254->vfunc4(&ray, fMask, (CTraceFilterNoCharacterCollide *)&filter, pTrace);
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10146570(pTrace->m_startpos, pTrace->m_endpos, 255, 255, 0, 1, -1.0f);
+	return 1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101291f0 size=0x35
 #include "CGameRules.h"
 #include "CVoiceGameMgr.h"
