@@ -5915,6 +5915,7 @@
 0x10009840 func   ?sub_102c0b60@@YI_NPAX@Z sub_102c0b60
 0x1000984a func   ?sub_101f66c0@@YAXXZ sub_101f66c0
 0x1000984f func   ?sub_10366120@CNPC_VVampireBoss@@QAEXPAUinputdata_t@@@Z CNPC_VVampireBoss::sub_10366120
+0x10009854 func   ?vfunc461@CNPC_VTzimisce@@QAEHXZ CNPC_VTzimisce::vfunc461
 0x10009859 func   ?sub_101a4760@@YAHXZ sub_101a4760
 0x1000985e func   ?vfunc585@CCineAISchedule@@UAE_NXZ CCineAISchedule::vfunc585
 0x1000986d func   ?sub_1002b4c0@CPhysConstraint@@QAE_NXZ CPhysConstraint::sub_1002b4c0

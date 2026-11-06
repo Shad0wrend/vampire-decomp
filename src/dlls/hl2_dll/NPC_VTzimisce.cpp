@@ -382,3 +382,139 @@ int CNPC_VTzimisce::vfunc440(int a)
 	return sub_102b12f0(a);
 }
 // END FUNCTION
+
+// FUNCTION: 0x103bd690 size=0x527
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseEntity.h"
+#include "CNPC_VTzimisce.h"
+#include "CAI_BaseNPC_vfunc461.h"
+#include "CAI_Motor.h"
+#include "CDevFlagObj.h"
+#define FILE_ "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VTzimisce.cpp"
+
+typedef void (*FnDevWarning)(int, const char *, ...);
+extern FnDevWarning g_109f3658;
+extern CDevFlagObj *g_10924a6c;
+
+int CNPC_VTzimisce::vfunc461()
+{
+	CAI_BaseNPCTroika *p = (CAI_BaseNPCTroika *)this;
+	p->m_n1b38 = 0x26;
+	switch (p->m_n5cc0) {
+	case 1:
+		if (p->sub_10269d30(0x54)) {
+			p->m_nLine1b40 = 0xd42;
+			p->m_n5cc4 = 2;
+		} else if (p->sub_10269d30(0x4c)) {
+			p->m_b5b80 = 0;
+			sub_102e0b40((float *)p->m_pMotor5d44);
+			Vector v = ((CEnemiesView *)p->vfunc541())->sub_102dfed0((CBaseEntity *)p->vfunc167());
+			p->m_pMotor5d44->sub_102e2020(&v.x, 0);
+			p->m_nLine1b40 = 0xd4c;
+			p->m_n5cc4 = 3;
+		} else if (p->sub_10269d30(0x4d)) {
+			p->m_b5b80 = 0;
+			sub_102e0b40((float *)p->m_pMotor5d44);
+			Vector v = ((CEnemiesView *)p->vfunc541())->sub_102dfed0((CBaseEntity *)p->vfunc167());
+			p->m_pMotor5d44->sub_102e2020(&v.x, 0);
+			p->m_nLine1b40 = 0xd56;
+			p->m_n5cc4 = 3;
+		} else if (p->sub_10269d30(1)) {
+			unsigned int h;
+			EHANDLE *ph = (EHANDLE *)p->vfunc586((int)&h);
+			CAI_BaseNPC *pEnt = (CAI_BaseNPC *)ph->Get();
+			if (!pEnt)
+				return p->CAI_BaseNPCTroika::vfunc461();
+			sub_102e0b40((float *)p->m_pMotor5d44);
+			CAI_Motor *pMotor = p->m_pMotor5d44;
+			pMotor->sub_102e2020((const float *)pEnt->vfunc220(), 0);
+			p->m_nLine1b40 = 0xd67;
+			p->m_n5cc4 = 3;
+		} else if (p->sub_10269d30(0x6a) || p->sub_10269d30(0x6d) || p->sub_10269d30(0x6e) || p->sub_10269d30(0x6f) || p->sub_10269d30(0x6b) || p->sub_10269d30(0x70)) {
+			S101b9920 *pObj = (S101b9920 *)p->vfunc474();
+			if (!pObj)
+				return p->CAI_BaseNPCTroika::vfunc461();
+			sub_102e0b40((float *)p->m_pMotor5d44);
+			CAI_Motor *pMotor = p->m_pMotor5d44;
+			pMotor->sub_102e2020((const float *)pObj->sub_101b99d0(), 0);
+			int n = *(int *)((char *)pObj + 4);
+			if (n != 1 && n != 4 && n != 8 && n != 0x10)
+				return p->CAI_BaseNPCTroika::vfunc461();
+			p->m_nLine1b40 = 0xd84;
+			p->m_n5cc4 = 3;
+		} else if (p->sub_10269d30(0x5e)) {
+			p->m_nLine1b40 = 0xd8b;
+			p->m_n5cc4 = 3;
+		} else {
+			return p->CAI_BaseNPCTroika::vfunc461();
+		}
+		break;
+	case 3:
+		if (p->sub_10269d30(0x54) || p->sub_10269d30(0x46)) {
+			p->m_nLine1b40 = 0xd9a;
+			p->m_n5cc4 = 2;
+		} else if (p->sub_10269d30(0x6a) || p->sub_10269d30(0x6d) || p->sub_10269d30(0x6f) || p->sub_10269d30(0x70)) {
+			p->m_pszFile1b3c = FILE_;
+			p->m_nLine1b40 = 0xda2;
+			p->m_n5cc4 = 0xb;
+			S101b9920 *pObj = (S101b9920 *)p->vfunc474();
+			if (pObj) {
+				sub_102e0b40((float *)p->m_pMotor5d44);
+				CAI_Motor *pMotor = p->m_pMotor5d44;
+				pMotor->sub_102e2020((const float *)pObj->sub_101b99d0(), 0);
+			}
+			goto done;
+		} else if (p->vfunc462()) {
+			p->m_nLine1b40 = 0xdaf;
+			p->m_n5cc4 = 1;
+		} else {
+			return p->CAI_BaseNPCTroika::vfunc461();
+		}
+		break;
+	case 2:
+		if ((p->m_flags5d8c & 2) && (p->sub_10014df8(0x46) || p->sub_10014df8(0x54))) {
+			p->m_flags5d8c &= ~2;
+			g_10924a6c->vfunc1();
+			p->sub_10269a20(0x5d);
+		}
+		if (p->vfunc167() && !p->sub_10014df8(0x58)) {
+			if (!p->sub_10269d30(0x47))
+				return p->CAI_BaseNPCTroika::vfunc461();
+			p->m_nLine1b40 = 0xddb;
+			p->m_n5cc4 = 0xb;
+		} else {
+			if (p->sub_10014df8(0x46)) {
+				p->m_pszFile1b3c = FILE_;
+				p->m_nLine1b40 = 0xdcd;
+				p->m_n5cc4 = 3;
+			} else {
+				p->m_pszFile1b3c = FILE_;
+				p->m_nLine1b40 = 0xdd2;
+				p->m_n5cc4 = 0xb;
+			}
+			g_109f3658(2, "***Combat state with no enemy!\n");
+			return p->m_n5cc4;
+		}
+		break;
+	case 0xb:
+		if (p->sub_10269d30(0x54)) {
+			p->m_nLine1b40 = 0xdf2;
+			p->m_n5cc4 = 2;
+		} else if (p->sub_10269d30(0x46)) {
+			p->m_nLine1b40 = 0xdf7;
+			p->m_n5cc4 = 2;
+		} else if (p->vfunc462()) {
+			p->m_nLine1b40 = 0xdfc;
+			p->m_n5cc4 = 1;
+		} else {
+			return p->CAI_BaseNPCTroika::vfunc461();
+		}
+		break;
+	default:
+		return p->CAI_BaseNPCTroika::vfunc461();
+	}
+	p->m_pszFile1b3c = FILE_;
+done:
+	return p->m_n5cc4;
+}
+// END FUNCTION
