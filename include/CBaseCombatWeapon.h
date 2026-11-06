@@ -76,7 +76,7 @@ public:
 	virtual bool vfunc280(int a);	// asked by CBaseCombatCharacter::GetBestRangedWeapon with 0
 	CBCW_V(281) virtual bool vfunc282();	/* slot 282: a boolean answer in al (CWeaponMelee override 0x103e4410 returns false) */
 	virtual bool vfunc283(CBaseEntity *pTarget);	// CWeaponMelee: true when pTarget answers slot 158, the weapon has an owner other than pTarget and the owner's centre (slot 192) is close to pTarget's
-	virtual void vfunc284(void *a, void *b, void *c, int d, int e);
+	virtual bool vfunc284(void *a, void *b, void *c, int d, int e);
 	virtual void *vfunc285();	// CWeaponGravityGun: the entity of the held-object handle at +0x918, else sub_1014a1b0
 	CBCW_V(286) CBCW_V(287) CBCW_V(288) virtual int vfunc289();	/* slot 289: returns -1 (0x10149d00: or eax,-1) */
 	virtual int vfunc290(); CBCW_V(291) virtual void vfunc292(CBaseEntity *pEntity); virtual int vfunc293(); CBCW_V(294) CBCW_V(295) virtual int vfunc296();
