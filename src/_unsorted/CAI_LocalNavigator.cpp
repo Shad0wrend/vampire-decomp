@@ -14,6 +14,91 @@ CAI_LocalNavigator *CAI_LocalNavigator::vfunc0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102de110 size=0x2cc
+#include "CAI_LocalNavigator.h"
+#include "CAI_Navigator.h"
+#include "CUnknown1030a6e0.h"
+#include "CVProfile.h"
+#include "Vector.h"
+
+struct CGoalView
+{
+	char pad0[0xc];
+	Vector a;
+	Vector b;
+};
+
+struct CCycleSample
+{
+	unsigned __int64 m_Int64;
+	void Sample()
+	{
+		unsigned __int64 *p = &m_Int64;
+		__asm {
+			mov ecx, p
+			rdtsc
+			mov [ecx], eax
+			mov [ecx+4], edx
+		}
+	}
+};
+
+#define EXIT_INLINED() \
+	{ \
+		CVProfile *p = g_109f3648; \
+		if (!p->m_bAtRoot || p->m_enabled) { \
+			CVProfNode *n = p->m_pCurNode; \
+			if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0) { \
+				CCycleSample s; \
+				s.m_Int64 = 0; \
+				s.Sample(); \
+				CUnknownCycle100335e0 *pc = &n->m_CurFrameTime; \
+				pc->m_Int64 = s.m_Int64 - pc->m_Int64; \
+				n->m_TotalTime += pc->m_Int64; \
+				g_109f3648->PopGroup(); \
+			} \
+			if (n->m_nRecursions == 0) \
+				p->m_pCurNode = p->m_pCurNode->m_pParent; \
+			p->m_bAtRoot = (p->m_pCurNode == p->m_pRoot); \
+		} \
+	}
+
+bool CAI_LocalNavigator::sub_102de110(void *pGoal, float flDist, int *pResult, int unused)
+{
+	CGoalView *g = (CGoalView *)pGoal;
+	if (*(unsigned char *)((char *)pGoal + 0x38) & 8)
+		return false;
+
+	g_109f3648->EnterScope("CAI_Motor_MoveCalcSteer", 0, "Unaccounted", false);
+
+	Vector vecLocal;
+	if (((CUnknown1030a6e0 *)m_pData)->sub_1030aea0(pGoal, flDist, &vecLocal))
+	{
+		if (g->a.x != vecLocal.x || g->a.y != vecLocal.y || g->a.z != vecLocal.z)
+		{
+			if (g->a.x * vecLocal.x + g->a.y * vecLocal.y > 0.966f)
+			{
+				float flA = ((CAI_Navigator *)m_pData)->sub_1030a650(*(float *)((char *)pGoal + 0x24));
+				if (*(float *)((char *)pGoal + 0x28) < flA * 0.33333 && flDist > flA * 0.6666)
+				{
+					*pResult = 0;
+					g_109f3648->ExitScope();
+					return true;
+				}
+			}
+			g->a = vecLocal;
+			g->b = g->a;
+		}
+		*pResult = 0;
+		EXIT_INLINED();
+		return true;
+	}
+
+	EXIT_INLINED();
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102de4a0 size=0x267
 #include "CAI_LocalNavigator.h"
 #include "CVProfile.h"
