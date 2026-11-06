@@ -133679,6 +133679,120 @@ void sub_1022dc30(CBaseCombatCharacter *pChar, int nAmount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022dea0 size=0x880
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "Tier1.h"
+#include "CVStatList_t.h"
+#include "COutputEvent.h"
+#include "CBaseCombatCharacter.h"
+#include "engineserver.h"
+
+extern char g_106b8540[];
+void sub_101cebc0(void *pPlayer, int a, int b);
+int sub_101d2850(const char *, int);
+void sub_101c7b80(const char *, const char *);
+char *sub_1023dcd0();
+
+struct StatOwner
+{
+	CVStatList_t *sub_10183880(int type);
+};
+
+struct CMasqChar
+{
+	char pad[0xa8];
+	CMasqChar *m_pPlayer;
+	char pad2[0x13a8 - 0xac];
+	CVStatListSet m_Stats;
+	int sub_10337860();
+};
+
+struct CMasqMgr
+{
+	COutputEvent *Out(int off) { return (COutputEvent *)((char *)this + off); }
+};
+
+#define LEVEL(p) (CVStatListSet::Of(p)->Find(0)->sub_102012d0(0x1c))
+#define LEVEL_OL(p) (((StatOwner *)CVStatListSet::Of(p))->sub_10183880(0)->sub_102012d0(0x1c))
+
+void sub_1022dea0(CMasqChar *pChar, int delta)
+{
+	if (!pChar)
+		return;
+	if (delta > 0) {
+		CVStatListSet::Of(pChar)->Find(0)->sub_10200d60(0x1c);
+		CMasqChar *pPlayer = pChar->m_pPlayer;
+		if (pPlayer) {
+			sub_101cebc0(pPlayer, 3, 0);
+			g_109f3630("Player Masquerade level = %d\n", LEVEL(pPlayer));
+			if (LEVEL(pPlayer) >= 5) {
+				sub_101d2850("__main__.G.Story_State=666", 0x100);
+				int h = sub_101d2850("__main__.G.Story_State", 0x102);
+				char buf[0x40];
+				g_109f388c(buf, 0x40, "vloadtips \"%s\" %d %d %d", g_106b8540, 0, h, pChar->sub_10337860());
+				engine->vfunc7(buf);
+				sub_101c7b80("sp_masquerade_1", "masq_landmark");
+			}
+		}
+		CMasqMgr *pMgr = (CMasqMgr *)sub_1023dcd0();
+		if (!pMgr)
+			return;
+		switch (LEVEL(pPlayer)) {
+		case 2:
+			pMgr->Out(0x528)->sub_100cd660(pChar, pChar, (float)LEVEL(pPlayer));
+			break;
+		case 3:
+			pMgr->Out(0x540)->sub_100cd660(pChar, pChar, (float)LEVEL(pPlayer));
+			break;
+		case 4:
+			pMgr->Out(0x558)->sub_100cd660(pChar, pChar, (float)LEVEL(pPlayer));
+			break;
+		case 5:
+			pMgr->Out(0x570)->sub_100cd660(pChar, pChar, (float)LEVEL(pPlayer));
+			break;
+		case 1:
+			goto dflt;
+		default:
+dflt:
+			pMgr->Out(0x510)->sub_100cd660(pChar, pChar, (float)LEVEL(pPlayer));
+			break;
+		}
+		pMgr->Out(0x588)->sub_100cd660(pChar, pChar, 0);
+	} else if (delta < 0) {
+		if (LEVEL(pChar) > 0)
+			CVStatListSet::Of(pChar)->Find(0)->sub_10200ea0(0x1c);
+		CMasqChar *pPlayer = pChar->m_pPlayer;
+		if (pPlayer) {
+			sub_101cebc0(pPlayer, 4, 0);
+			g_109f3630("Player Masquerade level = %d\n", LEVEL(pPlayer));
+		}
+		CMasqMgr *pMgr = (CMasqMgr *)sub_1023dcd0();
+		if (!pMgr)
+			return;
+		switch (LEVEL(pPlayer)) {
+		case 1:
+			pMgr->Out(0x510)->sub_100cd660(pChar, pChar, (float)LEVEL(pPlayer));
+			break;
+		case 2:
+			pMgr->Out(0x528)->sub_100cd660(pChar, pChar, (float)LEVEL(pPlayer));
+			break;
+		case 3:
+			pMgr->Out(0x540)->sub_100cd660(pChar, pChar, (float)LEVEL(pPlayer));
+			break;
+		case 4:
+			pMgr->Out(0x558)->sub_100cd660(pChar, pChar, (float)LEVEL_OL(pPlayer));
+			break;
+		case 5:
+			pMgr->Out(0x570)->sub_100cd660(pChar, pChar, (float)LEVEL_OL(pPlayer));
+			break;
+		}
+		pMgr->Out(0x588)->sub_100cd660(pChar, pChar, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022e9d0 size=0x4b
 #include "CBasePlayer.h"
 #include <stdlib.h>
