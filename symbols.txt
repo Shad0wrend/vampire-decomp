@@ -6371,6 +6371,7 @@
 0x1000a3cb func   ?sub_1030bf50@@YIXPAD@Z sub_1030bf50
 0x1000a3d0 func   ?sub_10341030@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_10341030
 0x1000a3d5 func   ?vfunc81@CItemGWirelessCamera4@@QAEHXZ CItemGWirelessCamera4::vfunc81
+0x1000a3da func   ?vfunc103@CPhysExplosion@@UAEXXZ CPhysExplosion::vfunc103
 0x1000a3df func   ?sub_101ec7c0@CUnknown101ec7c0@@QAE_NXZ CUnknown101ec7c0::sub_101ec7c0
 0x1000a3e4 func   ?sub_10403250@@YAHXZ sub_10403250
 0x1000a3e9 func   ?sub_10402fa0@@YAHXZ sub_10402fa0
