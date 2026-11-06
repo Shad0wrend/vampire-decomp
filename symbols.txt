@@ -8407,6 +8407,7 @@
 0x1000d134 func   ?vfunc621@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc621
 0x1000d139 func   ??1QuestJournal@@QAE@XZ QuestJournal::~QuestJournal
 0x1000d13e func   ?sub_101fd7e0@CVStatActionList_t@@QAE_NPAX@Z CVStatActionList_t::sub_101fd7e0
+0x1000d143 func   ?IsRightChild@?$CUtlRBTree@UCUtlMap16Pair@@G@@QBE_NG@Z CUtlRBTree<CUtlMap16Pair,unsigned short>::IsRightChild
 0x1000d143 func   ?sub_1004ba20@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_1004ba20
 0x1000d148 func   ?sub_102f9300@@YAXPAHPBH@Z sub_102f9300
 0x1000d14d func   ?vfunc320@CNPC_VTzimisceRunner@@UAEDHH@Z CNPC_VTzimisceRunner::vfunc320
