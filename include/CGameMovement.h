@@ -12,7 +12,7 @@ public:
 	virtual CGameMovement *vfunc0(unsigned int flags);
 	virtual void vfunc1(void *pMove, void *pPlayer);	// slot 1 "ProcessMovement": stores the arguments at +8 / +4, picks the frame time from the global at 0x109ef04c, runs slot 5 and sub_1011f6e0, and restores the global time step (+0x10 of 0x1070b228)
 	virtual float *vfunc2(char flag, int unused);	// returns the sub-object at +0x2c when flag is set, else the one at +0x14
-	virtual void slot3();
+	virtual float *slot3(char bDucked, char b1edc);	// slot 3 (+0xc): the hull maxs view (0x101200c0 calls it with the two flag bytes at +0x1edd / +0x1edc of the move data)
 	virtual float *slot4(int which, char flag);	// slot 4 (stub 0x10011c52 -> 0x1011e390): the hull view offsets; `which` picks ducked / standing
 	virtual void vfunc5();
 	virtual float vfunc6(const QAngle &angles, const Vector &vec, float scale, float threshold);	// slot 6: sign(vec . right of angles) * scale, ramped by |dot| / threshold below the threshold
