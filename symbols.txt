@@ -4949,6 +4949,7 @@
 0x10008224 func   ?sub_10374e50@CNPC_VDog@@QAEXXZ CNPC_VDog::sub_10374e50
 0x1000822e func   ?sub_101487a0@CGravControllerPoint@@QAEXPAVCBaseEntity@@PAVIPhysicsObject@@PBVVector@@0@Z CGravControllerPoint::sub_101487a0
 0x10008233 func   ?vfunc273@CBaseAnimatingOverlay@@QAEXHDH@Z CBaseAnimatingOverlay::vfunc273
+0x10008238 func   ?sub_103f44c0@@YAPAVCBaseEntity@@PAVCBasePlayer@@PBD@Z sub_103f44c0
 0x1000823d func   ??0CAI_InterestTarget@@QAE@XZ CAI_InterestTarget::CAI_InterestTarget
 0x1000823d func   ?sub_102d9150@CUnknown102d9150@@QAEPAV1@XZ CUnknown102d9150::sub_102d9150
 0x10008242 func   ?sub_102ae840@CAI_BaseNPCTroika@@QAEXHD@Z CAI_BaseNPCTroika::sub_102ae840

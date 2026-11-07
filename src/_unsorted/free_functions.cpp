@@ -209967,6 +209967,54 @@ int __fastcall sub_103f42b0(void *this_)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f44c0 size=0x230
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "UTIL_Trace.h"
+#include "QAngle.h"
+
+void sub_10139610(const QAngle &ang, Vector *pForward, Vector *pRight, Vector *pUp);
+extern "C" int __cdecl _strcmpi(const char *s1, const char *s2);
+
+// TARGET: sub_103f44c0
+CBaseEntity *sub_103f44c0(CBasePlayer *pPlayer, const char *pszClassname)
+{
+	CBaseEntity *pBase = (CBaseEntity *)pPlayer;
+	Vector vecForward;
+	sub_10139610(*(const QAngle *)((char *)pPlayer + 0x206c), &vecForward, 0, 0);
+
+	CGameTrace trace;
+	Vector vecEnd = *((CEntityVSlots *)pPlayer)->slot220() + pBase->m_vecViewOffset + vecForward * 16384.0f;
+	const Vector *po = ((CEntityVSlots *)pPlayer)->slot220();
+	Vector vecStart;
+	vecStart.x = po->x;
+	vecStart.x += pBase->m_vecViewOffset.x;
+	vecStart.y = pBase->m_vecViewOffset.y + po->y;
+	vecStart.z = pBase->m_vecViewOffset.z + po->z;
+	UTIL_TraceLine(vecStart, vecEnd, 0x200400b, pPlayer, 0, &trace);
+
+	if (trace.m_fraction != 1.0 && trace.m_pEnt) {
+		CBaseEntity *pEntity = trace.m_pEnt;
+		const char *pszName = pEntity->m_classname11c;
+		if (!pszName)
+			pszName = g_106b8540;
+		if (_strcmpi(pszName, pszClassname) == 0)
+			return pEntity;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f4780 size=0x6f
 #include "CEntityVSlots.h"
 
