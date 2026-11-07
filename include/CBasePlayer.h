@@ -189,7 +189,7 @@ public:
 	// slots 449..467
 	virtual void vfunc449(int a, int b);	// slot 449: called with (2, 0) by slot 434
 	virtual void vfunc450();
-	CBP_V1(sk0c)
+	virtual void vfunc451(int nImpulse);	// slot 451 "CBasePlayer::CheatImpulseCommands" (0x10172e60, ret 4): jump-table switch on nImpulse - 0x45 (0..0x86), gated by the global 0x10752e9c; grunt / godmode / give-all / audible-silent / dump-entity / trace-and-spawn cheats
 	virtual bool vfunc452(const char *pszKey);	// slot 452 key handler: "vehicleRole" with two console arguments hands the role number to the vehicle at +0x20fc (leaving the vehicle first when it does not know the role yet)
 	CBP_V1(sk0e) CBP_V1(sk0f) CBP_V1(sk0g)
 	virtual void vfunc456();	// slot 456: when the entity of the handle at +0xea4 is live (and the active weapon, if any, answers slot 313), hands the entity's classname and its slot 296 value to slot 457
