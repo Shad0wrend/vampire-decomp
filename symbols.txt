@@ -6145,6 +6145,7 @@
 0x10009cf5 func   ?vfunc5@CFilterInventory@@QAEPAV1@I@Z CFilterInventory::vfunc5
 0x10009cfa func   ?sub_1023fe10@@YA_NABVVector@@00M@Z sub_1023fe10
 0x10009cff func   ?vfunc81@CResearchBook_MG_SEC@@QAEHXZ CResearchBook_MG_SEC::vfunc81
+0x10009d04 func   ?sub_1034d800@CScriptedTarget@@QAEPAV1@XZ CScriptedTarget::sub_1034d800
 0x10009d09 func   ?vfunc330@CNPC_VRat@@QAEXHH@Z CNPC_VRat::vfunc330
 0x10009d0e func   ?sub_100ac9f0@CBaseEntity@@QAEXPAUinputdata_t@@@Z CBaseEntity::sub_100ac9f0
 0x10009d13 func   ?sub_1002af90@CPhysConstraint@@QAEXH@Z CPhysConstraint::sub_1002af90

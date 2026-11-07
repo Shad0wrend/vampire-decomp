@@ -186249,6 +186249,60 @@ void CUnknown1034d620::sub_1034d620()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034d800 size=0x2b7
+#include "CAI_BaseNPC.h"
+#include "CEntityVSlots.h"
+#include "CGameTrace.h"
+#include "CScriptedTarget.h"
+#include "Ray_t.h"
+#include "UTIL_Trace.h"
+#include "Vector.h"
+void __cdecl sub_10146570(const Vector *pStart, const Vector *pEnd, int r, int g, int b, int a, float flWidth);
+extern void (__cdecl *g_109f362c)(const char *pszFormat, ...);
+
+struct CUnk1034d620View
+{
+	void sub_1034d620();
+};
+
+CScriptedTarget *CScriptedTarget::sub_1034d800()
+{
+	if ( m_flPauseDoneTime == g_104454c4 )
+	{
+		m_flPauseDoneTime = m_flPauseDuration + gpGlobals->curtime;
+		m_out5f6c.sub_100cd660( m_hUser5ce4.Get(), this, 0.0f );
+	}
+
+	if ( gpGlobals->curtime >= m_flPauseDoneTime )
+	{
+		m_flPauseDoneTime = 0;
+		m_out5f84.sub_100cd660( m_hUser5ce4.Get(), this, 0.0f );
+
+		CScriptedTarget *pNextTarget = (CScriptedTarget *)( (CEntityVSlots *)this )->slot172();
+		if ( !pNextTarget )
+		{
+			( (CUnk1034d620View *)this )->sub_1034d620();
+			( (CAI_BaseNPC *)this )->sub_10279cc0( 0 );
+		}
+		else
+		{
+			CGameTrace trace;
+			UTIL_TraceLine( *( (CEntityVSlots *)this )->slot217(), *( (CEntityVSlots *)pNextTarget )->slot217(), 0x46004003, this, 0, &trace );
+
+			if ( trace.m_fraction != 1.0 )
+				g_109f362c( "WARNING: Scripted Target from (%s) to (%s) is occluded!\n", sub_1000b5cd(), pNextTarget->sub_1000b5cd() );
+
+			pNextTarget->sub_1034d5b0();
+			( (CAI_BaseNPC *)pNextTarget )->sub_10279cc0( m_hUser5ce4.Get() );
+			( (CAI_BaseNPC *)this )->sub_10279cc0( 0 );
+			( (CUnk1034d620View *)this )->sub_1034d620();
+		}
+		return pNextTarget;
+	}
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034db70 size=0x190
 #include "Vector.h"
 #include "CBaseEntity.h"
