@@ -218,6 +218,7 @@ public:
 	char m_pad02E4[0x368 - 0x2e4];
 	int m_nCollisionGroup368;	// 0x368: the collision group CTraceFilterSimple is given
 	char m_pad036C[0x3b0 - 0x36c];
+	CBaseEntity *sub_1016a030(unsigned int mask, int unused);	// the player-side "find a ledge / wall to climb" probe (ret 8): a flat hull trace along the view direction (slot 466 long) with mask, then, when it hits a wall facing the player (normal . dir <= -0.5), a second trace from the reflected point raised by slot 465; returns the hit entity unless slot 166 refuses it
 	Vector m_vec03B0;	// 0x03B0: the velocity
 	Vector m_vec03BC;	// 0x03BC: the base velocity
 	char m_pad03C8[0x3d4 - 0x3c8];	// 0x03C8 .. 0x03D3
