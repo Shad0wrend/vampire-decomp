@@ -11230,6 +11230,7 @@
 0x1001118a func   ?sub_101a6ca0@@YAXXZ sub_101a6ca0
 0x1001118f func   ?vfunc461@CNPC_VChangBros@@UAEHXZ CNPC_VChangBros::vfunc461
 0x10011194 func   ?vfunc370@CNPCMaker_Zombie@@UAEHH@Z CNPCMaker_Zombie::vfunc370
+0x1001119e func   ?sub_10087170@@YAXXZ sub_10087170
 0x100111a3 func   ?sub_10238380@@YAXXZ sub_10238380
 0x100111a8 func   ?sub_100b5490@@YAHH@Z sub_100b5490
 0x100111ad func   ?sub_102a9620@CUnknown102a9620@@QAEHXZ CUnknown102a9620::sub_102a9620

@@ -27051,6 +27051,34 @@ void sub_10086fb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10087170 size=0x208
+#include "QAngle.h"
+#include "CBasePlayer.h"
+#include "CAI_BaseNPC.h"
+#include "CCollisionProperty.h"
+#include "UTIL_Trace.h"
+
+int sub_101193b0();
+void sub_10139610(const QAngle &angles, Vector *pForward, Vector *pRight, Vector *pUp);
+void sub_1027fc90(void *pEnt, const float *pPos, const float *pAngles);
+
+void sub_10087170()
+{
+	CBasePlayer *pPlayer = (CBasePlayer *)sub_101193b0();
+	Vector vecForward;
+	sub_10139610(*(const QAngle *)((char *)pPlayer + 0x206c), &vecForward, 0, 0);
+	CGameTrace trace;
+	UTIL_TraceLine_DebugCall(pPlayer->vfunc193(), vecForward * 56755.84f + pPlayer->vfunc193(), 0x202400b, pPlayer, 0, &trace);
+	if (trace.m_fraction != 1.0)
+	{
+		Vector vecMins, vecMaxs;
+		((CCollisionProperty *)((char *)pPlayer + 0x270))->vfunc15(&vecMins, &vecMaxs);
+		trace.m_endpos[2] = ((CAI_BaseNPC *)pPlayer)->vfunc217()[2] - vecMins[2] + trace.m_endpos[2];
+		sub_1027fc90(pPlayer, trace.m_endpos, vecForward.Base());
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10087550 size=0xf
 namespace lifted {
 extern char g_10936b68;
