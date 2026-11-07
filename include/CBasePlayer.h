@@ -204,7 +204,8 @@ public:
 
 	char m_pad0004[0x184 - 0x4];	// 0x0004 .. 0x0183
 	Vector m_vecViewOffset184;	// 0x0184: the eye offset (CBaseEntity::m_vecViewOffset)
-	char m_pad0190[0x1fc - 0x190];	// 0x0190 .. 0x01FB
+	Vector m_vecMovedir190;
+	char m_pad019c[0x1fc - 0x19c];	// 0x019c .. 0x01FB
 	int m_nTakeDamage1FC;	// 0x01FC: the take-damage mode (CBaseEntity::m_nTakeDamage)
 	char m_pad0200[0x22c - 0x200];	// 0x0200 .. 0x022B
 	int m_n22C;	// 0x022C: set to -1 when the command run is paused

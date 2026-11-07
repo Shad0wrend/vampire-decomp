@@ -96,6 +96,8 @@
 	Vector sub_10176520(float flScale);	// stub 0x1000518c: returns a vector by value (hidden pointer, ret 8)
 	void sub_1016b440();	// stub 0x1000470a: forwards to slot 21 of the game rules global at 0x1070ba0c, called by slot 436
 	void sub_10166500();	// stub 0x10015640, called by slot 436
+	char sub_101664d0();
+	void sub_100b2e30(const Vector *pVel);
 	int sub_10337860();	// CBaseCombatCharacter member (stub 0x100040d9): the index of the character's template, called directly
 	void *sub_10178120();	// stub 0x10012ab2: the CDialog object at +0x1d24
 	void sub_10171da0(inputdata_t *pInput);	// input handler: only for the "Player_Malkavian" template; the input as text (a string input as is, "" when empty) is handed to the whisper object (global 0x1073dbfc, sub_101f6530) when the dialog partner (handle +0xfe8) is gone, else stored as the pending whisper text of the dialog object (sub_10178120()->sub_100e09a0)
