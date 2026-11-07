@@ -6349,6 +6349,7 @@
 0x1000a1d2 func   ?sub_1017faa0@@YIXPAUCMsgPlayerView@@@Z sub_1017faa0
 0x1000a1d7 func   ?sub_100740f0@CUnknown100740f0@@QAEXD@Z CUnknown100740f0::sub_100740f0
 0x1000a1dc func   ?sub_10066390@CUnknown10066390@@QAEHXZ CUnknown10066390::sub_10066390
+0x1000a1e1 func   ?sub_102d2980@@YAPAVCAI_Hint@@PAVCBaseEntity@@IIMPBVVector@@PAM@Z sub_102d2980
 0x1000a1e6 func   ?sub_102a97a0@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_102a97a0
 0x1000a1f0 func   ?vfunc311@CBaseCombatWeapon@@UAEMXZ CBaseCombatWeapon::vfunc311
 0x1000a1f5 func   ?sub_10105a60@CUnknown10105a60@@QAEXPAMPBM1MH@Z CUnknown10105a60::sub_10105a60

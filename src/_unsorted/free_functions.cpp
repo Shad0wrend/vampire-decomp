@@ -161492,6 +161492,92 @@ void sub_102d2940(int a, int b, int c, int d, int e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d2980 size=0x3bf
+#include "CAI_Hint.h"
+#include "CAIHintSlots.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "UTIL_Trace.h"
+
+inline float DistSqr(const Vector *a, const Vector *b)
+{
+	float dx = a->x - b->x;
+	float dy = a->y - b->y;
+	float dz = a->z - b->z;
+	return dx * dx + dy * dy + dz * dz;
+}
+
+// TARGET: sub_102d2980
+CAI_Hint *sub_102d2980(CBaseEntity *pNpc, unsigned int flags, unsigned int moveMask, float flMaxDist, const Vector *pOrigin, float *pOutDist)
+{
+	if (!g_10925450)
+		return 0;
+	CEntityVSlots *pN = (CEntityVSlots *)pNpc;
+	if (!pOrigin)
+		pOrigin = pN->slot217();
+	CAI_Hint *h = g_10925454 ? g_10925454->m_pNext : 0;
+	if (!h)
+		h = g_10925450;
+	float flMaxDist2 = flMaxDist * flMaxDist;
+	float flBest = 3.4028235e+38f;
+	CAI_Hint *pBest = 0;
+	do {
+		CEntityVSlots *pH = (CEntityVSlots *)h;
+		if (!h->sub_102d14c0() && (moveMask & h->m_n474) && DistSqr(pOrigin, pH->slot217()) < flMaxDist2 && pN->slot566(h)) {
+			float flDist = 3.4028235e+38f;
+			bool bSkip = false;
+			if (flags & 8) {
+				const Vector *pA = pN->slot217();
+				const Vector *pB = pH->slot217();
+				flDist = FastSqrt(DistSqr(pB, pA)) * h->m_f464;
+				if (flDist > flBest)
+					bSkip = true;
+			} else if (flags & 2) {
+				const Vector *pA = pN->slot217();
+				const Vector *pB = pH->slot217();
+				flDist = DistSqr(pB, pA);
+				if (flDist > flBest)
+					bSkip = true;
+			}
+			if (!bSkip && (flags & 1)) {
+				const Vector *pHintPos = pH->slot217();
+				Vector vecEnd;
+				vecEnd.x = pHintPos->x;
+				vecEnd.x += pNpc->m_vecViewOffset.x;
+				vecEnd.y = pNpc->m_vecViewOffset.y + pHintPos->y;
+				vecEnd.z = pNpc->m_vecViewOffset.z + pHintPos->z;
+				Vector vecTemp;
+				const Vector *pEye = pN->slot193(&vecTemp);
+				CGameTrace tr;
+				UTIL_TraceLine(*pEye, vecEnd, 0x2400b, pNpc, 0, &tr);
+				if (tr.m_fraction != 1.0)
+					bSkip = true;
+			}
+			if (!bSkip) {
+				pBest = h;
+				if (!(flags & 1))
+					break;
+				flBest = flDist;
+			}
+		}
+		h = h->m_pNext;
+		if (!h && g_10925454)
+			h = g_10925450;
+		CAI_Hint *volatile *pCur = (CAI_Hint *volatile *)&g_10925454;
+		if (h == *pCur)
+			break;
+	} while (1);
+	if (pBest) {
+		if (pOutDist)
+			*pOutDist = flBest;
+		g_10925454 = pBest;
+		return pBest;
+	}
+	g_10925454 = 0;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d2e30 size=0x6b
 #include "CAI_Hint.h"
 extern CAI_Hint *g_10925450;
