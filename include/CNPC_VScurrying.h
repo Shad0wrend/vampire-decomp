@@ -37,7 +37,9 @@ public:
 	int m_n1b2c;
 	const char *m_pszFile1b30;	// source file stamp of the schedule pick
 	int m_nLine1b34;	// source line stamp
-	char m_pad1b38[0x618c - 0x1b38];
+	char m_pad1b38[0x5d34 - 0x1b38];
+	class CAI_Navigator *m_pNav5d34;	// 0x5d34: the navigator
+	char m_pad5d38[0x618c - 0x5d38];
 	char m_Obj618c[0x6678 - 0x618c];	// the object whose stub 0x100019ab (sub_101b99d0) returns a vector
 	float m_flTime6678;
 	unsigned int m_hEnt667c;
