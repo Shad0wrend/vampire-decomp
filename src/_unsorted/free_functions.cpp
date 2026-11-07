@@ -53663,6 +53663,67 @@ int CUnknown100f7040::sub_100f7040()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f7060 size=0x104
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+
+static __forceinline unsigned int NextH(CGlobalEntityList *l, unsigned int h)
+{
+	unsigned int next = l->m_pNodes[l->m_Slots[h & 0x1fff].m_ListIndex].m_Next;
+	unsigned int r;
+	if (next == 0xffff)
+		r = 0xffffffff;
+	else
+	{
+		unsigned int idx = l->m_pNodes[(unsigned short)next].m_EntIndex;
+		r = (l->m_Slots[idx].m_Serial << 13) | idx;
+	}
+	return r;
+}
+
+static __forceinline CGlobalEntityList_Ent *GetE(CGlobalEntityList *l, unsigned int h)
+{
+	if (h != 0xffffffff)
+	{
+		CGlobalEntityList_Slot &e = l->m_Slots[h & 0x1fff];
+		if (e.m_Serial == (h >> 13))
+			return e.m_pEntity;
+	}
+	return 0;
+}
+
+CBaseEntity *CGlobalEntityList::sub_100f7060(CBaseEntity *pCurrent)
+{
+	if (!pCurrent)
+	{
+		if (m_Head != 0xffff)
+		{
+			int idx = m_pNodes[m_Head].m_EntIndex;
+			unsigned int h = (m_Slots[idx].m_Serial << 13) | idx;
+			CGlobalEntityList_Ent *p = GetE(this, h);
+			if (p)
+				return p->vfunc4();
+		}
+		return 0;
+	}
+	unsigned int h = *pCurrent->vfunc1();
+	do
+	{
+		if (h == 0xffffffff)
+			break;
+		h = NextH(this, h);
+		CGlobalEntityList_Ent *p = GetE(this, h);
+		if (p)
+		{
+			CBaseEntity *r = p->vfunc4();
+			if (r)
+				return r;
+		}
+	} while (1);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f71c0 size=0x115
 #include "Vector.h"
 #include "utlrbtree.h"
