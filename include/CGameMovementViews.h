@@ -59,7 +59,8 @@ struct CMoveFlagsView	// the same object as CMoveDataView, data side
 	char m_pad1ee4[0x1efc - 0x1ee4];
 	Vector m_vecPunchAngle;	// 0x1efc: the view punch angle (CBasePlayer::m_vec1EFC)
 	Vector m_vecPunchAngleVel;	// 0x1f08: its velocity (CBasePlayer::m_vec1F08)
-	char m_pad1f14[0x1f28 - 0x1f14];
+	char m_pad1f14[0x1f24 - 0x1f14];
+	float m_fl1F24;	// 0x1f24: added to the trace start z (+1.0f) when m_b1F28 is set (0x101200c0)
 	char m_b1F28;	// 0x1f28: checked before the duck trace (sub_10126fd0)
 	char m_pad1f29[0x20f0 - 0x1f29];
 	unsigned int m_fFlags;	// 0x20f0: bit 5 = observer hull
