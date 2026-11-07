@@ -444,7 +444,7 @@ public:
 	virtual void vfunc519();
 	virtual void vfunc520();
 	virtual void vfunc521();
-	virtual void vfunc522();
+	virtual float vfunc522();
 	virtual void vfunc523();
 	virtual void vfunc524();
 	virtual void vfunc525();
