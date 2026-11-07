@@ -40,7 +40,9 @@ struct CMovePlayerView	// CGameMovement::m_pPlayer: the "mv" (CMoveData-like) re
 
 struct CMoveFlagsView	// the same object as CMoveDataView, data side
 {
-	char m_pad0000[0x3b0];
+	char m_pad0000[0x360];
+	int m_n0360;	// 0x360: cleared after a ladder mount / jump off (vfunc20)
+	char m_pad0364[0x3b0 - 0x364];
 	Vector m_vec3b0;	// 0x3b0: the movement's per-frame velocity, added to / subtracted from the player's
 	char m_pad03bc[0x3e0 - 0x3bc];
 	int m_n03E0;		// 0x3e0: the move type (the same field as CBasePlayer.h's m_n03E0)
