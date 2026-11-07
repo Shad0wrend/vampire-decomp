@@ -102615,6 +102615,85 @@ void sub_101cfea0(CGameTrace *pTrace, int a, int f)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cfef0 size=0x1ed
+struct SndRandV { virtual void v0(); virtual void v1(); virtual int RandomInt(int lo, int hi); };
+struct SndInfoV { char pad[0x70]; char c; };
+struct SndTblV { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual SndInfoV *Get(int i); };
+struct NpcV { char sub_103300c0(); char sub_10330220(); char sub_1033c900(int); };
+#define V1(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
+#define V10(a) V1(a##0) V1(a##1) V1(a##2) V1(a##3) V1(a##4) V1(a##5) V1(a##6) V1(a##7) V1(a##8) V1(a##9)
+struct EntV {
+    V10(p0)
+    V1(a0) V1(a1) V1(a2) V1(a3) V1(a4)
+    virtual void r0(); virtual void r1(); virtual void r2(); virtual void r3();
+    virtual int Call154(int a, int c);
+    virtual int Call155(void *p, int r, int one, int a3, int a4, int a5, int one2);
+    char pad[0x9c - 4];
+    NpcV *npc;
+};
+struct InfoV {
+    char pad0[0x2c];
+    float f2c;
+    char pad1[0x40 - 0x30];
+    short s40;
+    unsigned char b42;
+    char pad2[0x4c - 0x43];
+    EntV *ent;
+};
+extern SndRandV *g_1070b244;
+extern SndTblV *g_10723944;
+char sub_101d0e90(EntV *);
+unsigned char sub_101af2d0(InfoV *);
+
+void sub_101cfef0(InfoV *p, int a2, int a3, int a4, int mode)
+{
+    if (sub_101d0e90(p->ent) && !(p->b42 & 4) && p->f2c != 1.0) {
+        EntV *ent = p->ent;
+        int r;
+        if (!ent) {
+            r = g_1070b244->RandomInt(0, 4);
+        } else {
+            char c = g_10723944->Get(p->s40)->c;
+            if (mode == 1) {
+                if (c == 'F') {
+                    c = 'K';
+                    if (p->ent) {
+                        NpcV *npc = p->ent->npc;
+                        if (npc) {
+                            if (npc->sub_103300c0()) c = 'R';
+                            else if (npc->sub_10330220()) c = 'Z';
+                            else if (npc->sub_1033c900(0x400)) c = 'Q';
+                        }
+                    }
+                } else if (c == 'A') c = 'B';
+            } else if (c == 'F') {
+                if (p->ent) {
+                    NpcV *npc = p->ent->npc;
+                    if (npc && npc->sub_1033c900(0x400)) c = 'Q';
+                }
+            }
+            r = ent->Call154(a2, c);
+        }
+        unsigned char t = sub_101af2d0(p);
+        if (r >= 0 && r <= 4 && t != 'C') {
+            switch (t) {
+            case 'M': r += 5; break;
+            case 'W': r += 10; break;
+            case 'Y': r += 0xf; break;
+            case 'F':
+                if (mode == 1) r += 0x19;
+                else r += 0x14;
+                break;
+            case 'A':
+                goto done;
+            }
+        }
+done:
+        ent->Call155(p, r, 1, a3, a4, mode, 1);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d02a0 size=0x1
 void sub_101d02a0()
 {
