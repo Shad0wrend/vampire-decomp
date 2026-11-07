@@ -76500,6 +76500,55 @@ bool __fastcall sub_101664d0(CVirtSlots94 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10166500 size=0x2ed
+#include "UTIL_Trace.h"
+#include "CBasePlayer.h"
+#include "globalvars.h"
+
+void sub_10139610(const Vector *pAngles, Vector *pForward, Vector *pRight, Vector *pUp);
+
+static inline bool FlagBit12(unsigned int x) { return (x >> 12) & 1; }
+
+void CBasePlayer::sub_10166500()
+{
+	if (sub_101664d0())
+		return;
+
+	Vector eye = vfunc192();
+	eye.z += 8.0f;
+
+	Vector dir;
+	sub_10139610(&m_vec206c, &dir, 0, 0);
+	dir.z = 0;
+	VectorNormalize(dir);
+
+	Vector end = eye + dir * 24.0f;
+
+	CGameTrace trace;
+	UTIL_TraceLine_Calls(eye, end, 0x1400b, (const void *)this, 0, &trace);
+
+	if (trace.m_fraction < 1.0f)
+	{
+		eye.z += ((const Vector *)m_sub270.vfunc2())->z * 0.2f;
+		end = eye + dir * 24.0f;
+		m_vecMovedir190 = *(Vector *)trace.m_planeNormal * -50.0f;
+
+		UTIL_TraceLine_RayCall(eye, end, 0x1400b, (const void *)this, 0, &trace);
+
+		if (trace.m_fraction == 1.0f)
+		{
+			sub_100b3580(4);
+			if (FlagBit12(m_fFlags268))
+				sub_100b1d10();
+			Vector vel = m_vec03BC;
+			vel.z = 225.0f;
+			sub_100b2e30(&vel);
+			m_fl2314 = gpGlobals->curtime + 2.0f;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10166cc0 size=0x2bb
 #include "UTIL_Trace.h"
 #include "CHL2_Player.h"
