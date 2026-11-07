@@ -27,7 +27,10 @@ public:
 	char pad2b6[0x155c - 0x2b6];
 	unsigned int m_h155c;	// +0x155c: entity handle (the partner boss; written with slot 1 GetRefEHandle's value)
 	float m_flTime1560;	// +0x1560: curtime stamp of the transformation start
-	char pad1564[0x1b44 - 0x1564];
+	char pad1564[0x1568 - 0x1564];
+	int m_n1568;	// +0x1568: cleared by StartTask task 0x14e
+	int m_n156c;	// +0x156c: cleared by StartTask task 0x14e
+	char pad1570[0x1b44 - 0x1570];
 	const char *m_pszSourceFile;	// +0x1b44: source file / line stamp of the last failure
 	int m_nSourceLine;	// +0x1b48
 	char pad1b4c[0x5ddc - 0x1b4c];
