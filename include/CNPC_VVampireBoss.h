@@ -18,7 +18,13 @@ public:
 	int m_n16c;	// +0x16c
 	char pad170[0x17c - 0x170];
 	float m_flNextThink;	// +0x17c
-	char pad180[0x155c - 0x180];
+	char pad180[0x19c - 0x180];
+	int m_nFlags19c;	// +0x19c: the entity flag word (StartTask ORs 0x10 into it)
+	char pad1a0[0x26c - 0x1a0];
+	const char *m_pszName26c;	// +0x26c: entity name (the scope-trace entity-name argument, "" when null)
+	char pad270[0x2b4 - 0x270];
+	unsigned short m_usFlags2b4;	// +0x2b4: collision flag word at +0x44 of the CFlagsUnit object at +0x270 (sub_100dc580)
+	char pad2b6[0x155c - 0x2b6];
 	unsigned int m_h155c;	// +0x155c: entity handle (the partner boss; written with slot 1 GetRefEHandle's value)
 	float m_flTime1560;	// +0x1560: curtime stamp of the transformation start
 	char pad1564[0x1b44 - 0x1564];
