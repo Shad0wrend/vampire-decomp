@@ -220,6 +220,22 @@ Verified with the judge on 2026-11-06:
   `fld ... fstp` gap while the game has it just before the next call. Five positions of `text_offset++` (statement,
   `+= 1`, int/long, comma in an argument, comma in the callee) all gave the same code (0x1034ea80 CFogController).
 
+## VC6 stack slots: what moves them and what does not (measured 2026-11-08, partial)
+
+Measured by compiling small bodies (cache/hand102c3b50/exp2.py prints each tagged local's frame offset):
+
+- **Declaration order and store order never move a slot.** Do not spend attempts reordering declarations.
+- **Locals in sibling blocks share a slot** (`{ Vector x; ... } { Vector y; ... }` gives x and y one offset). A local
+  of the enclosing scope never shares with them, even when it is only used after the blocks.
+- **Dead parameters are reused**: a local (or a float spill) can live in an argument's home slot (`[esp+frame+4+N]`)
+  once that argument is no longer read. An offset above the frame is not always an argument read.
+- **Order in simple cases**: small objects (4-byte ints, a vtable-only filter) below a Vector, Vector below 72-92
+  byte arrays and traces; within a size class the most-referenced local is lowest; ties: the one whose last use comes
+  first is lowest. Loop references did not count more in the tests.
+- **Not explained yet**: big functions break the size-class order (0x102c3b50: sum (Vector) sits between two 4-byte
+  spills; the game's 4-byte trace filter sits above three Vectors). Compiler temporaries (z-spill temps) can land high,
+  right below the trace. When only slots differ, record the decoded layout in a note and move on.
+
 ## Source recipient filters (CRecipientFilter and friends): write the Source code, never the teardown
 
 Recognise it by `call 0x100035d5` (the CRecipientFilter constructor, 0x1019ce00) on a 0x2c-byte stack object, then
