@@ -63,6 +63,8 @@ struct CMoveFlagsView	// the same object as CMoveDataView, data side
 	unsigned int m_fFlags;	// 0x20f0: bit 5 = observer hull
 	char m_pad20f4[0x2314 - 0x20f4];
 	float m_flWaterJump;	// 0x2314: water-jump time, counted down by sub_1011ffe0
+	char m_pad2318[0x2330 - 0x2318];
+	Vector m_vecLadder2330;	// 0x2330: the ladder plane normal vfunc20 stores (negated as the wish direction while on a ladder)
 	void sub_1009f380(Vector *pViewOffset);	// 0x1009f380 (stub 0x10015bfe): stores the view offset at +0x184
 };
 
