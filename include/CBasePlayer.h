@@ -215,7 +215,9 @@ public:
 	CBasePlayerSub270 m_sub270;	// 0x0270
 	char m_pad0274[0x6c];	// 0x0274 .. 0x02DF
 	int m_n02E0;
-	char m_pad02E4[0x3b0 - 0x2e4];	// 0x02E4 .. 0x03AF
+	char m_pad02E4[0x368 - 0x2e4];
+	int m_nCollisionGroup368;	// 0x368: the collision group CTraceFilterSimple is given
+	char m_pad036C[0x3b0 - 0x36c];
 	Vector m_vec03B0;	// 0x03B0: the velocity
 	Vector m_vec03BC;	// 0x03BC: the base velocity
 	char m_pad03C8[0x3d4 - 0x3c8];	// 0x03C8 .. 0x03D3
