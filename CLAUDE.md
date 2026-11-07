@@ -405,3 +405,19 @@ end (`Vector vecStart = EyePosition() + ofs; UTIL_TraceLine(vecStart, pEnemy->Ey
 evaluated right to left. Judged 2026-11-07 on three matched functions (0x10274820 line + simple filter, 0x1028ebc0
 own filter, 0x1032ad30 hull): each scores 0 written this way. A trace without the visualize test is a direct
 `g_1070b254->vfunc4(&ray, mask, &filter, &tr)` (UTIL_TraceRay / enginetrace->TraceRay in the SDK).
+
+The game has two spellings of each inline part, and the helper's name picks them (read the target's asm):
+| asm before / after TraceRay | helper |
+|---|---|
+| Ray_t built inline (fsub/fmul), test reads `g_10738964` | `UTIL_TraceLine` |
+| `call 0x1004f7a0` (Ray_t::Init out of line), test reads `g_10738964` | `UTIL_TraceLine_RayCall` |
+| Ray_t built inline, test is `mov ecx, 0x10738960; call 0x1005f190` | `UTIL_TraceLine_DebugCall` |
+| `call 0x1004f7a0` and `call 0x1005f190` | `UTIL_TraceLine_Calls` |
+| box (`call sub_1006dec0`), test reads `g_10738964` / calls 0x1005f190 | `UTIL_TraceHull` / `UTIL_TraceHull_DebugCall` |
+Each has the (ignore, group) and the (&filter) overload. The hull forms take the Init's last two byte arguments at
+the end (`..., &tr, 1, 0)` when the game pushes 1, 0; default 0, 0). A hull wrapped in a `push "UTIL_TraceHull"`
+ScopeTrace: write `{ ScopeTrace scope("UTIL_TraceHull", g_106b8540); UTIL_TraceHull_DebugCall(...); }`.
+The inline forms use `Ray_t::InitInline` (`__forceinline`): VC6 decides per call site whether to expand plain
+`ray.Init`, and in a big function it may call 0x1004f7a0 where the game expanded it. Judged 2026-11-07: all forms
+score 0 on matched functions (0x103e17b0 RayCall, 0x1006afd0 DebugCall, 0x1024f3d0 Calls, 0x103bf660 hull DebugCall
+inside ScopeTrace with 1, 0).
