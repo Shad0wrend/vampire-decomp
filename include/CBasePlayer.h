@@ -473,7 +473,9 @@ public:
 	int m_afButtonReleased;	// 0x2090
 	int m_afButtonLast;	// 0x2094
 	char m_pad2098[0x20a8 - 0x2098];	// 0x208D .. 0x20A7
-	char m_b20A8;
+	char m_b20A8;	// 0x20a8: the on-target flag AutoaimDeflection sets (CBasePlayer::vfunc31 saves it as m_fOnTarget)
+	Vector sub_10176930(Vector &vecSrc, float flDist, float flDelta);	// "CBasePlayer::AutoaimDeflection" (0x10176930, ret 0x10: hidden Vector result + 3 args; called by 0x10176520): clears m_b20A8 and returns the zero vector (global 0x1070d9d0) when sub_101764d0 is false; else traces from vecSrc along the punch+view angles (+0x1efc + 0x206c + 0x22a8) with mask 0x46004003, then over players 1..maxClients (0x78 byte records, ScopeTrace "CBaseEntity::Instance") picks the best deflection within 0.5 * |dot| + |dot| * (1 + 0.2 * dist / flDist) <= flDelta and returns the angle delta
+	char sub_101764d0();	// stub 0x1000deb8: whether autoaim is active (al)
 	char m_szAnimExtension[32];	// 0x20a9
 	char m_pad20c9[0x20cc - 0x20c9];
 	void *m_pCmd20cc;	// 0x20cc: the user command being run (CPlayerMove::StartCommand stores it)
