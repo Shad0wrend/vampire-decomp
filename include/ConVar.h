@@ -76,4 +76,5 @@ extern ConVar *g_10709304;	// 0x10709304: CFire damage / debug-overlay interval 
 extern ConVar *g_107092bc;	// 0x107092bc: CFire damage base (same form)
 extern ConVar *g_107093e4;	// 0x107093e4: CFire damage per heat (same form)
 extern ConVar *g_1070959c;	// 0x1070959c: CFire spread rate to neighbouring fires (same form)
+extern ConVar *g_109ef2d4;	// 0x109ef2d4: the gravity convar (sv_gravity-like; GetFloat form: vfunc1() ? 0 : m_fValue +0x28): read by 0x1012bae0 (grenade throw velocity) and 9 other functions
 extern ConVar *g_1094ab14;	// 0x1094ab14: the PhysCannon mass-scale convar (vfunc1 = unset, else m_fValue +0x28)
