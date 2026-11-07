@@ -31,7 +31,8 @@ public:
 	virtual void slot19(int a, int b);
 	int vfunc19(Vector *pFirstDest, CGameTrace *pFirstTrace);	// slot 19 "CGameMovement::TryPlayerMove" (0x10122cd0, ret 8, returns the blocked bits 1 floor / 2 step / 4 stuck): up to 4 bumps of the velocity (+0x40 of m_pPlayer) along planes (max 5), each traced from the origin (+0x70) with VectorMA (sub_10139500) and the hull (sub_1011e310 / sub_1011e350, Ray_t::sub_1006dec0, CTraceFilterSimple via sub_1011e8f0, mask 0x201400b), ClipVelocity (sub_10124120) and a crease clip (cross product of two planes); when the global 0x10572420 is set and pFirstDest equals the traced end point the caller's pFirstTrace is reused (copied from the CGameTrace with sub_100353c0)
 	virtual char vfunc20(); virtual char vfunc21(void *pTrace);	// slot 21: true when the trace's flags (+0x30) have 0x20000000, else when the surface property record (global 0x1071a278 slot 9, then slot 5 with the short at +0x40) has its byte at +0x72 set
-	virtual void slot22();
+	virtual void vfunc22();	// slot 22 "CategorizePosition"
+	void slot22() { vfunc22(); }
 	virtual float vfunc23();
 	virtual void slot24();
 	virtual void vfunc25();	// slot 25: once (flag byte +0xdc), when the flags of the move data (+8) have bit 1, scales the three floats at +0x2c of the player (+4) by a third
