@@ -1738,6 +1738,125 @@ bool CBasePlayer::sub_10168e10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101690b0 size=0x42a
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "CSoundControllerImp.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CDevFlagObj.h"
+#include "CUnknown10738960.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+#include "ehandle.h"
+#include "CEHandleGet.h"
+#include "AITrace.h"
+#include "DebugOverlay.h"
+#include "UTIL_Trace.h"
+#include <math.h>
+
+struct CEntListView { int sub_100290c0(unsigned int *pHandle); };
+struct CEntView9c { char pad[0x9c]; CBaseEntity *m_p9c; };
+struct CConVarViewG { virtual void v0(); virtual char vfunc1(); char pad[0x24]; float m_f28; int m_n2c; };
+struct CFinderView { CBaseEntity *sub_10341c30(void *cb, float a, float cs, char c, float d, int mask); };
+
+extern CFoo1005f190 g_10937030;
+extern CDevFlagObj *g_10937034;
+extern CConVarViewG *g_10725044;
+extern CConVarViewG *g_10725ae4;
+extern CConVarViewG *g_10725a04;
+extern float g_1044eb08;
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+void sub_10139b90(float *angles, float *matrix);
+void sub_101381b0(const float *in, const float *matrix, float *out);
+void sub_10143b70(const float *a, const float *b, const float *c, int d, int e, int f, int g, float h);
+void sub_10168e60();
+void sub_10144790(const Vector &a, const Vector &b, float c, float d, int e, int f, int g, int h, float i);
+
+// TARGET: CBasePlayer::LookForGrappleVictim
+CBaseEntity *CBasePlayer::LookForGrappleVictim()
+{
+	if (g_10937030.sub_1005f190())
+		Msg("CBasePlayer::LookForGrappleVictim.....");
+	CBaseEntity *pVictim = 0;
+	CBasePlayer *pSelf = this;
+	CEntListView *pList = (CEntListView *)EHandleDetail::g_10566458;
+	CEntView9c *pCtl = (CEntView9c *)pList->sub_100290c0((unsigned int *)&m_hControllerNPC1db0);
+	if (pCtl && pCtl->m_p9c)
+		pSelf = (CBasePlayer *)pCtl->m_p9c;
+	Vector eye = pSelf->vfunc193();
+	Vector off;
+	Vector end;
+	{
+		off.x = 32.0f;
+		off.y = 0.0f;
+		off.z = -32.0f;
+		float matrix[12];
+		sub_10139b90(pSelf->vfunc219(), matrix);
+		sub_101381b0(&off.x, matrix, &end.x);
+		VectorAdd(end, eye, end);
+		Vector hull[2];
+		hull[1].Init(8.0f, 8.0f, 8.0f);
+		hull[0].Init(-8.0f, -8.0f, -8.0f);
+		CGameTrace tr;
+		UTIL_TraceHull_DebugCall(eye, end, hull[0], hull[1], 0x201400b, this, 0, &tr, 1, 0);
+		if (tr.m_fraction < 1.0f && tr.m_pEnt)
+			pVictim = ((CEntView9c *)tr.m_pEnt)->m_p9c;
+	}
+	if (!g_10937034->vfunc1() && g_10937034->m_n2c) {
+		Vector box[2];
+		box[0].Init(2.0f, 2.0f, 2.0f);
+		box[1].Init(-2.0f, -2.0f, -2.0f);
+		sub_10143b70(&eye.x, &box[1].x, &box[0].x, 0, 0xff, 0xff, 1, 5.0f);
+		box[0].Init(2.0f, 2.0f, 2.0f);
+		box[1].Init(-2.0f, -2.0f, -2.0f);
+		sub_10143b70(&end.x, &box[1].x, &box[0].x, 0xff, 0, 0xff, 1, 5.0f);
+		if (pVictim) {
+			Msg("succeeded! (%s)\n", ((CBasePlayer *)pVictim)->sub_100ab4f0());
+			sub_10142e90(&eye, &end, 0, 0xff, 0, 1, 5.0f);
+		} else {
+			Msg("failed.  =( \n");
+			sub_10142e90(&eye, &end, 0xff, 0, 0, 1, 5.0f);
+		}
+	}
+	if (!pVictim) {
+		float flFov;
+		if (g_10725044->vfunc1())
+			flFov = g_104454c4;
+		else
+			flFov = g_10725044->m_f28;
+		double dHalf = flFov * 0.5;
+		float flCos = cos(dHalf * g_1044eb08);
+		float flDist;
+		if (g_10725ae4->vfunc1())
+			flDist = 0;
+		else
+			flDist = g_10725ae4->m_f28;
+		CBaseEntity *pFound = ((CFinderView *)this)->sub_10341c30((void *)sub_10168e60, flDist, flCos, 0, 0, 0x600400b);
+		if (!g_10725a04->vfunc1() && g_10725a04->m_n2c) {
+			if (g_10725ae4->vfunc1())
+				flDist = 0;
+			else
+				flDist = g_10725ae4->m_f28;
+			float flHalf;
+			if (g_10725044->vfunc1())
+				flHalf = g_104454c4;
+			else
+				flHalf = g_10725044->m_f28;
+			sub_10144790(vfunc193(), vfunc369(), flHalf * 0.5f, flDist, 0, 0x80, 0x80, 0x80, 5.0f);
+		}
+		return pFound;
+	}
+	return pVictim;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101695f0 size=0x46
 #include "CBasePlayer.h"
 char CBasePlayer::vfunc379(int a, int b, int c, int d, int e, int f, int g)
