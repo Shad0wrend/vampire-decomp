@@ -171,6 +171,12 @@ How the source form shows in the code (each verified with the judge on 2026-10-2
   externs, 0 with literals). read_data(addr, "dwords", 1) shows the bits (0x3f800000 = 1.0f, 0x3f000000 = 0.5f).
 - **Real members, not casts.** `*(float *)((char *)this + 0x3fc)` changes the load order and turns a float copy
   (`mov edx, [a]; mov [b], edx`) into `fld; fstp`. Declare the members (or a local view struct with them).
+- **A member read through an inline getter goes through the FPU** (found 2026-11-08 on 0x102c36d0, 222 -> 97):
+  `fld dword ptr [m]; fld st(1); fcompp` (the clamp `f > Max() ? Max() : (f < Min() ? Min() : f)`, as matched
+  CMathRemap::sub_101321f0) and a float argument pushed as `push ecx; fstp dword ptr [esp]` both mean
+  `float Max() const { return m_flMax; }`-style getters; a plain member gives `fcom dword ptr [m]` and `mov; push`.
+  A getter value loaded before a branch test (`fld [m]; ... je`) is VC6 hoisting the first instruction both branches
+  share: make both branches start with the same getter use.
 - **A Source inline wrapper evaluates all its arguments before the call inside it.** `inline void
   VectorTransform(const Vector &in1, const matrix3x4_t &in2, Vector &out) { VectorTransform(&in1.x, in2, &out.x); }`:
   the matrix getter runs before the pushes; calling the out-of-line function directly pushes `out` first.
