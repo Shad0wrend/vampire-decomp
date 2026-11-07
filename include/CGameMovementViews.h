@@ -40,7 +40,9 @@ struct CMovePlayerView	// CGameMovement::m_pPlayer: the "mv" (CMoveData-like) re
 
 struct CMoveFlagsView	// the same object as CMoveDataView, data side
 {
-	char m_pad0000[0x360];
+	char m_pad0000[0x18c];
+	float m_fl018C;	// 0x18c: eye height offset added to the origin z for the probe point (0x101200c0)
+	char m_pad0190[0x360 - 0x190];
 	int m_n0360;	// 0x360: cleared after a ladder mount / jump off (vfunc20)
 	char m_pad0364[0x3b0 - 0x364];
 	Vector m_vec3b0;	// 0x3b0: the movement's per-frame velocity, added to / subtracted from the player's
