@@ -114,6 +114,12 @@ public:
 	bool vfunc566(int);
 	int vfunc580();
 	void vfunc127(int a);	// slot 127 override ("Restore"-like, plain member like the other slots of this class): the CNPC_VVampireBoss base, then the manbat model / npc names, the jump gravity 2.0f and the global 0x109340d8 = 0x15
+	void vfunc442(int *pTask);	// slot 442 "CNPC_VSheriffMan::StartTask" (0x103aec70, ret 4): scope trace, switch on *pTask (0x13b landblast emitter, 0x150 teleport out, 0x151.. nodes, 0x15x ledge / trace-hull teleport, ...), default sub_103c5ac0
+	void sub_103c5ac0(int *pTask);	// CNPC_VVampireBoss::vfunc442 (StartTask), called directly by the default case (stub 0x100117c5 is NOT it: that is sub_103b0630)
+	CEntityVSlots *sub_103b0630();	// 0x103b0630 (stub 0x100117c5) "CNPC_VSheriffMan::SelectTeleportNode": scope trace; the hint node (type 17000 / 0x4653 / 0x4652) best by 0.6 * distance / 1000 + 0.4 * angle / 180 from the entity behind the handle at +0x628c, its origin and the time stored at +0x66d4 / +0x66e0; null without that entity
+	void sub_103b1300(CEntityVSlots *pTarget);	// CNPC_VAsianVampireUnit::sub_103b1300 (stub 0x1000ec46), called with m_pTarget
+	void sub_103c7230(const Vector *pOrigin, float flRadius, float flDamage);	// CNPC_VVampireBoss::CausePlayerAOEDamage (stub 0x10013b24)
+	void sub_10273e80(int a);	// CAI_BaseNPC member (stub 0x1000ac68), one argument
 	float m_fTeleportStartTime;	// 0x66f4
 	char m_pad66f8[0x66fc - 0x66f8];
 };
