@@ -506,5 +506,57 @@ public:
 	virtual void vfunc618();
 	virtual void vfunc619(int);
 	virtual void vfunc620(int);
-	char m_pad03e0[0x76d0 - 0x3e0];
+	char m_pad03e0[0x670 - 0x3e0];
+	int m_n670;	// 0x670: copied to the spawned NPC by vfunc617
+	char m_pad674[0x10e4 - 0x674];
+	int m_n10e4;	// 0x10e4: copied to the spawned NPC
+	char m_pad10e8[0x1584 - 0x10e8];
+	int m_n1584;	// 0x1584: copied to the spawned NPC
+	char m_pad1588[0x1a98 - 0x1588];
+	int m_n1a98;	// 0x1a98: copied to the spawned NPC
+	char m_pad1a9c[0x5da8 - 0x1a9c];
+	int m_n5da8;	// 0x5da8: copied to the spawned NPC
+	char m_pad5dac[0x5db0 - 0x5dac];
+	int m_n5db0;	// 0x5db0: handed to sub_102781e0 on the spawned NPC
+	char m_pad5db4[0x5dec - 0x5db4];
+	int m_n5dec;	// 0x5dec: copied to the spawned NPC
+	char m_pad5df0[0x62d8 - 0x5df0];
+	int m_n62d8;	// 0x62d8: copied
+	char m_pad62dc[0x6338 - 0x62dc];
+	int m_n6338;	// 0x6338: copied
+	int m_n633c;	// 0x633c: copied
+	char m_pad6340[0x6344 - 0x6340];
+	int m_n6344;	// 0x6344 .. 0x6358: six dwords copied
+	int m_n6348;
+	int m_n634c;
+	int m_n6350;
+	int m_n6354;
+	int m_n6358;
+	char m_pad635c[0x63ac - 0x635c];
+	int m_n63ac;	// 0x63ac: copied
+	int m_n63b0;	// 0x63b0: copied
+	int m_n63b4;	// 0x63b4: copied
+	char m_pad63b8[0x63bc - 0x63b8];
+	int m_n63bc;	// 0x63bc: copied
+	char m_pad63c0[0x63d9 - 0x63c0];
+	char m_b63d9;	// 0x63d9: byte copied
+	char m_pad63da[0x64bc - 0x63da];
+	int m_n64bc;	// 0x64bc: copied
+	char m_pad64c0[0x64c4 - 0x64c0];
+	int m_n64c4;	// 0x64c4: copied
+	char m_pad64c8[0x6558 - 0x64c8];
+	int m_n6558;	// 0x6558: copied
+	char m_pad655c[0x665c - 0x655c];
+	const char *m_pszNPCClassname665c;	// 0x665c: the class name of the NPC to spawn (null = "")
+	char m_pad6660[0x6668 - 0x6660];
+	char m_Output6668[0x18];	// 0x6668: a COutputEvent (fired with (this, this, 0) when an NPC was spawned)
+	char m_pad6680[0x66b8 - 0x6680];
+	float m_flGroundZ66b8;	// 0x66b8: the float ground height found by the first trace of vfunc617 (0.0f = not traced yet); on the boss it counts spawned NPCs
+	const char *m_pszTargetName66bc;	// 0x66bc: the name given to the spawned NPC (null = none)
+	char m_b66c0;
+	char m_b66c1;
+	char m_b66c2;	// 0x66c2: flag copied into the NPC's flags (+0x204 bit 9)
+	char m_b66c3;
+	bool m_bNoDrop;	// 0x66c4
+	char m_pad66c5[0x76d0 - 0x66c5];
 };
