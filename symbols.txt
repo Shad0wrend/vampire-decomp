@@ -4872,6 +4872,7 @@
 0x1000803f func   ?sub_103876d0@@YIPAXPAD@Z sub_103876d0
 0x10008044 func   ?vfunc82@CNodeEnt@@UAEPAUdatamap_t@@XZ CNodeEnt::vfunc82
 0x10008049 func   ?sub_102b9780@@YIPAXPAX@Z sub_102b9780
+0x1000804e func   ?sub_1014e520@@YAXXZ sub_1014e520
 0x10008053 func   ?sub_1003ff80@CUnknown1003ff80@@QAEPAXXZ CUnknown1003ff80::sub_1003ff80
 0x10008058 func   ?vfunc362@CWeaponMelee_WerewolfAttacks@@QAEHXZ CWeaponMelee_WerewolfAttacks::vfunc362
 0x1000805d func   ?sub_1027f5d0@@YAPADPADPBDZZ sub_1027f5d0

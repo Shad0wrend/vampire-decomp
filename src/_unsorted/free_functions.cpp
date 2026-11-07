@@ -73377,6 +73377,126 @@ void sub_1014e3f0(CEntityMatrixView *pFrom, CEntityMatrixView *pTo, matrix3x4_t 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014e520 size=0x41b
+#include "CWeaponThrown_Grenade_Frag.h"
+#include <math.h>
+#include <stdlib.h>
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "IPhysicsCollision.h"
+#include "IPhysicsObject.h"
+#include "IPhysicsEnvironment.h"
+#include "CEntityVSlots.h"
+#include "CGameTrace.h"
+#include "Vector.h"
+#include "Tier1.h"
+
+extern IPhysicsEnvironment *g_10723940;
+extern IPhysicsCollision *g_1072393c;
+extern IPhysicsObject *g_10723938;
+extern CGlobalEntityList g_106eb5d8;
+extern Vector g_1070d1b0;
+void sub_101d3510(const Vector *start, const Vector *end, const Vector *mins, const Vector *maxs, void *pEntity, int group, CGameTrace *ptr);
+
+#define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
+struct CPhysObjView { V10(a) V10(b) V10(c) V10(d) virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4(); virtual void e5(); virtual void e6(); virtual void e7(); virtual void e8(); virtual void *GetCollide(); };
+struct CEdictEntView { virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void *GetEntity(); };
+struct CEdictView { char pad[0x40]; CEdictEntView *m_pUnk; };
+
+inline void SinCosL(float radians, float *sine, float *cosine)
+{
+	__asm {
+		fld radians
+		fsincos
+		mov edx, cosine
+		mov eax, sine
+		fstp dword ptr [edx]
+		fstp dword ptr [eax]
+	}
+}
+
+void sub_1014e520()
+{
+	unsigned int dots = 0;
+	if (!g_10723940)
+		return;
+
+	g_109f3628("Testing collision system\n");
+	int i;
+	CBaseEntity *pSpot = g_106eb5d8.sub_100f7380(0, "info_player_start");
+	Vector start = *(Vector *)((CEntityVSlots *)pSpot)->slot217();
+	static Vector targets[2500];
+	static bool first = true;
+	static float test[2] = { 1, 1 };
+	if (first)
+	{
+		float radius = 0;
+		float theta = 0;
+		float phi = 0;
+		for (i = 0; i < 2500; i++)
+		{
+			radius += 2500 * 123.123;
+			radius = fabs(fmod(radius, 128));
+			theta += 2500 * 76.76;
+			theta = fabs(fmod(theta, 6.283185307179586));
+			phi += 2500 * 1997.99;
+			phi = fabs(fmod(phi, 3.141592653589793));
+			float st, ct, sp, cp;
+			SinCosL(theta, &st, &ct);
+			SinCosL(phi, &sp, &cp);
+			targets[i].x = radius * ct * sp;
+			targets[i].y = radius * st * sp;
+			targets[i].z = radius * cp;
+			Vector dir = targets[i] - start;
+			VectorNormalize(dir);
+			targets[i] = start + dir * 1024.0f;
+		}
+		first = false;
+	}
+	int testType = 0;
+	if (engine->vfunc85() >= 2)
+		testType = atoi(engine->vfunc84(1));
+	float duration = 0;
+	Vector size[2];
+	size[0].Init(0, 0, 0);
+	size[1].Init(16, 16, 16);
+	for (int j = 0; j < 2; j++)
+	{
+		float startTime = engine->vfunc87();
+		if (testType == 1)
+		{
+			const CPhysCollide *pCollide = (const CPhysCollide *)((CPhysObjView *)g_10723938)->GetCollide();
+			CGameTrace tr;
+			for (i = 0; i < 2500; i++)
+			{
+				Vector mins = -size[j];
+				g_1072393c->vfunc22(start, targets[i], mins, size[j], pCollide, g_1070d1b0, *(Vector *)g_1070d9d0, &tr);
+				dots += g_1072393c->vfunc34(0);
+			}
+		}
+		else
+		{
+			testType = 0;
+			void *pWorld = 0;
+			CEdictView *pEdict = (CEdictView *)engine->vfunc38(0);
+			if (pEdict && pEdict->m_pUnk)
+				pWorld = pEdict->m_pUnk->GetEntity();
+			CGameTrace tr;
+			for (i = 0; i < 2500; i++)
+			{
+				Vector vecMins(-size[j].x, -size[j].y, -size[j].z);
+				sub_101d3510(&start, &targets[i], &vecMins, &size[j], pWorld, 0, &tr);
+			}
+		}
+		duration += engine->vfunc87() - startTime;
+	}
+	test[testType] = duration;
+	void (*pfnMsg)(const char *, ...) = g_109f3628;
+	pfnMsg("%d collisions in %.2f ms (%u dots)\n", 2500, duration * 1000, dots);
+	pfnMsg("Current speed ratio: %.2fX BSP:JGJK\n", test[1] / test[0]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014eb00 size=0x28
 struct SRect1057b7b0
 {
