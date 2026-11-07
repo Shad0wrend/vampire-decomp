@@ -56052,6 +56052,40 @@ void CEnvBeam::sub_100ff090()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ffce0 size=0x2d7
+#include "UTIL_Trace.h"
+#include "CEnvBeam.h"
+void __fastcall sub_100ff1b0(void *pThis, Vector vecPos);
+
+void CEnvBeam::sub_100ffce0()
+{
+	if (m_flDamageRate > 0.0f && gpGlobals->curtime >= m_flLastUpdate454 + 0.1)
+	{
+		float *pEnd = sub_100bb440();
+		float *pStart = sub_100bb270();
+		CGameTrace trace;
+		UTIL_TraceLine_Calls(*(Vector *)pStart, *(Vector *)pEnd, 0x200400b, (void *)0, 0, &trace);
+		sub_100bbef0(&trace);
+		if (trace.m_fraction < 1.0f || trace.m_allsolid || trace.m_startsolid)
+			sub_100ff1b0(this, *(Vector *)trace.m_endpos);
+	}
+	else
+	{
+		if (m_iszFileName)
+		{
+			float *pEnd = sub_100bb440();
+			float *pStart = sub_100bb270();
+			CGameTrace trace;
+			UTIL_TraceLine(*(Vector *)pStart, *(Vector *)pEnd, 0x200400b, (void *)0, 0, &trace);
+			if (trace.m_fraction < 1.0f || trace.m_allsolid || trace.m_startsolid)
+				sub_100ff1b0(this, *(Vector *)trace.m_endpos);
+		}
+		sub_100bbbf0();
+	}
+	m_flNextThink = gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10100080 size=0x10b
 #include "CBroadcastRecipientFilter.h"
 struct ITempEnts {
