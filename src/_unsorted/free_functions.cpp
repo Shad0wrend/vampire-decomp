@@ -53859,6 +53859,49 @@ CBaseEntity *CGlobalEntityList::sub_100f7380(CBaseEntity *pStart, const char *ps
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f7770 size=0xdf
+#include "CGlobalEntityList.h"
+#include "CBaseEntity.h"
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" int __cdecl _strnicmp(const char *, const char *, unsigned int);
+extern "C" unsigned int __cdecl strlen(const char *);
+#pragma intrinsic(strlen)
+extern char g_106b8540[];
+CBaseEntity *sub_100055ce(const char *szName, CBaseEntity *pActivator, CBaseEntity *pSearching);
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+static inline bool NameMatchesX(CBaseEntity *pEnt, const char *szName)
+{
+	if (STRINGR(pEnt->m_name26c) == szName)
+		return true;
+	unsigned int len = strlen(szName);
+	if (len == 0)
+		return pEnt->m_name26c == 0;
+	if (szName[len - 1] != '*')
+		return _strcmpi(STRINGR(pEnt->m_name26c), szName) == 0;
+	return _strnicmp(STRINGR(pEnt->m_name26c), szName, len - 1) == 0;
+}
+
+CBaseEntity *CGlobalEntityList::sub_100f7770(CBaseEntity *pStart, const char *szName, CBaseEntity *pSearching, CBaseEntity *pActivator)
+{
+	if (!szName || !*szName)
+		return 0;
+	if (*szName == '!') {
+		if (!pStart)
+			return sub_100055ce(szName, pActivator, pSearching);
+		return 0;
+	}
+	for (CBaseEntity *pEnt = sub_100f7060(pStart); pEnt; pEnt = sub_100f7060(pEnt)) {
+		if (!pEnt->m_name26c)
+			continue;
+		if (NameMatchesX(pEnt, szName))
+			return pEnt;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f7890 size=0x77
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
