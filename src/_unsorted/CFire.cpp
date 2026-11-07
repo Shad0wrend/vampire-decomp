@@ -183,6 +183,188 @@ void CFire::vfunc113()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010ab80 size=0x685
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+#include "CFire.h"
+#include "ConVar.h"
+#include "ehandle.h"
+#include "globalvars.h"
+#include "UTIL_Trace.h"
+#include "CUnknown10738964.h"
+#include "CVDmg_t.h"
+#include "CUnknown101c26d0.h"
+#include "CUnknown101f4c80.h"
+
+#define FV(n) virtual void s##n();
+#define FV10(p) FV(p##0) FV(p##1) FV(p##2) FV(p##3) FV(p##4) FV(p##5) FV(p##6) FV(p##7) FV(p##8) FV(p##9)
+#define FV100(p) FV10(p##0) FV10(p##1) FV10(p##2) FV10(p##3) FV10(p##4) FV10(p##5) FV10(p##6) FV10(p##7) FV10(p##8) FV10(p##9)
+
+struct FireColl_t {
+	virtual void c0();
+	virtual float *OBBMins();
+	virtual float *OBBMaxs();
+};
+
+struct FCvar_t {
+	virtual void v0();
+	virtual char vfunc1();
+	char pad[0x28 - 4];
+	float val;
+};
+
+struct FireV_t {
+	FV100(a)
+	FV10(b0) FV10(b1) FV10(b2) FV10(b3) FV10(b4) FV10(b5) FV10(b6) FV10(b7) FV10(b8)
+	FV(b90) FV(b91)
+	virtual float *Center(float *out);	// slot 192
+	FV(c3) FV(c4) FV(c5) FV(c6) FV(c7) FV(c8) FV(c9)
+	FV10(d0) FV(d10) FV(d11) FV(d12) FV(d13) FV(d14) FV(d15) FV(d16)
+	virtual float *GetAbsOrigin();	// 217
+	FV10(f0) FV10(f1) FV(f20) FV(f21) FV(f22) FV(f23)
+	virtual void Fade(float a, float b);	// 242
+	char pad[0x11c - 4];
+	const char *classname;
+	char pad2[0x1fc - 0x120];
+	int takedamage;
+	char pad3[0x270 - 0x200];
+	FireColl_t coll;
+	char pad4[0x450 - 0x274];
+	EHANDLE h450;
+	char pad5[0x45c - 0x454];
+	float f45c;
+	float f460;
+	float f464;
+	float f468;
+	float f46c;
+	float f470;
+	float f474;
+	float f478;
+	float f47c;
+	float f480;
+	char pad6[4];
+	int dmg488;
+};
+
+extern float g_104454c4;
+extern float g_104454d0;
+extern double g_1044fab0;
+#define FG(g) (((FCvar_t *)g)->vfunc1() ? g_104454c4 : ((FCvar_t *)g)->val)
+#define FGS(g) (((FCvar_t *)g)->vfunc1() ? 0.0f : ((FCvar_t *)g)->val)
+void sub_10142aa0(const float *pOrigin, const float *pMins, const float *pMaxs, int r, int g, int b, int a, float duration);
+int sub_101cca80(FireV_t **list, int n, const float *mins, const float *maxs, int a, int b);
+extern "C" int _strcmpi(const char *, const char *);
+
+void CFire::vfunc241(float flDelay)
+{
+	FireV_t *p = (FireV_t *)this;
+	FireV_t *list[256];
+	FireV_t *neighbors[16];
+	if (p->f45c != g_104454c4) {
+		p->f45c -= flDelay;
+		if (p->f45c <= g_104454c4) {
+			sub_1010b530(1.0f);
+			return;
+		}
+	}
+	float size = p->f46c * 0.015625f;
+	int nDamage;
+	int nNeighbors;
+	bool bDamage;
+	if (p->f46c != p->f47c) {
+		p->f47c = p->f46c;
+		((FireV_t *)p->h450.Get())->Fade(size, 0.5f);
+		sub_1010a900(p->f46c / p->f478);
+	}
+	float ratio;
+	if (p->f480 > g_104454c4)
+		ratio = p->f478 / p->f480;
+	else
+		ratio = p->f478;
+	sub_1010b5c0(FG(g_1070934c) * ratio * flDelay, 1);
+	size = size * p->f46c;
+	double frac = p->f46c / p->f478;
+	if (frac > 1.0)
+		frac = 1.0;
+	else if (frac < g_1044fab0)
+		frac = g_1044fab0;
+	float half = g_104454d0 * (frac * p->f468) * 0.5;
+	if (half < 16.0f)
+		half = 16.0f;
+	float maxs[3];
+	float mins[3];
+	mins[0] = -half;
+	mins[1] = -half;
+	maxs[0] = half;
+	maxs[1] = half;
+	maxs[2] = frac * p->f468;
+	mins[2] = 0;
+	((CBaseEntity *)this)->sub_100adf10(mins, maxs);
+	if (!g_10709504->vfunc1() && g_10709504->m_n2c) {
+		float dur = FGS(g_10709304);
+		float *pMins = p->coll.OBBMins();
+		sub_10142aa0(p->GetAbsOrigin(), pMins, p->coll.OBBMaxs(), 0xff, 100, 100, 0, dur);
+	}
+	float *o = p->GetAbsOrigin();
+	mins[0] += o[0];
+	mins[1] += o[1];
+	mins[2] += o[2];
+	o = p->GetAbsOrigin();
+	maxs[0] += o[0];
+	maxs[1] += o[1];
+	maxs[2] += o[2];
+	int count = sub_101cca80(list, 0x100, mins, maxs, 0, 0);
+	nNeighbors = 0;
+	bDamage = false;
+	nDamage = 0;
+	if (p->f460 <= gpGlobals->curtime) {
+		p->f460 = FG(g_10709304) + gpGlobals->curtime;
+		float a = FGS(g_107092bc);
+		float b = FGS(g_107093e4);
+		nDamage = (int)((b * p->f474 * size + a) * FG(g_10709304));
+		if (nDamage != 0)
+			bDamage = true;
+	}
+	for (int i = 0; i < count; i++) {
+		FireV_t *e = list[i];
+		if (e == p || _strcmpi(e->classname ? e->classname : g_106b8540, "env_fire") != 0) {
+			if (e->takedamage == 0) {
+				list[i] = 0;
+			} else if (bDamage) {
+				float t1[3], t2[3];
+				float *a = e->Center(t1);
+				float *b = p->Center(t2);
+				CGameTrace tr;
+				UTIL_TraceLine(*(Vector *)b, *(Vector *)a, 0x4003, e, 0, &tr);
+				if (tr.m_fraction == 1.0 && !tr.m_startsolid) {
+					CVDmg_t info;
+					info.sub_101fa8d0(2, 8, p->dmg488);
+					CUnknown101c26d0 d;
+					d.sub_101c26d0(this, this, (float)nDamage, 8, 0, (int)&info, -1);
+					((CBaseEntity *)e)->sub_100a1250(&d);
+					info.sub_101fa680();
+				}
+			}
+		} else if ((unsigned)nNeighbors < 16) {
+			neighbors[nNeighbors++] = e;
+		}
+	}
+	float x = FG(g_1070959c);
+	if (nNeighbors > 0) {
+		size = x * size * flDelay / nNeighbors;
+		for (int j = 0; j < nNeighbors; j++)
+			((CFire *)neighbors[j])->sub_1010b5c0(size, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010b5a0 size=0x5
 #include "CFire.h"
 int CFire::vfunc142(int a0)
