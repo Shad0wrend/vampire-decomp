@@ -348,6 +348,73 @@ void CRagdollProp::vfunc257(void *pMatrices, int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10155c20 size=0x1a1
+#include "CGameTrace.h"
+#include "CRagdollProp.h"
+#include "Ray_t.h"
+struct CRagdollModelInfo
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17();
+	virtual int **vfunc18(int model);
+};
+struct CRagdollCollision
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17();
+	virtual void v18(); virtual void v19(); virtual void v20();
+	virtual void vfunc21(const Ray_t *pRay, int hBody, const void *pPos, const void *pAng, CGameTrace *pTrace);
+};
+extern CRagdollModelInfo *g_1070b250;
+extern CRagdollCollision *g_1072393c;
+
+struct CTraceCopy
+{
+	int d[10];
+	char c28, c29;
+	short s2a;
+	float f2c;
+	int c30;
+	short s34;
+	char b36, b37;
+	int d38, d3c, d40, d44;
+	short s48;
+	int d4c, d50;
+	void operator=(const CTraceCopy &o)
+	{
+		d[0] = o.d[0]; d[1] = o.d[1]; d[2] = o.d[2]; d[3] = o.d[3]; d[4] = o.d[4];
+		d[5] = o.d[5]; d[6] = o.d[6]; d[7] = o.d[7]; d[8] = o.d[8]; d[9] = o.d[9];
+		c28 = o.c28; c29 = o.c29; s2a = o.s2a; f2c = o.f2c; c30 = o.c30;
+		s34 = o.s34; b36 = o.b36; b37 = o.b37;
+		d38 = o.d38; d3c = o.d3c; d40 = o.d40; d44 = o.d44; s48 = o.s48; d4c = o.d4c; d50 = o.d50;
+	}
+};
+
+// TARGET: CRagdollProp::vfunc99
+bool CRagdollProp::vfunc99(int a, int b, int c)
+{
+	const Ray_t *pRay = (const Ray_t *)a;
+	CTraceCopy *pTrace = (CTraceCopy *)c;
+	if (pRay->m_IsRay)
+		return sub_100956e0(a, b, c);
+	if (!sub_100952d0(-1))
+		return false;
+	int **list = g_1070b250->vfunc18(vfunc8());
+	for (int i = 0; i < m_nBodies730; i++) {
+		CTraceCopy tr;
+		const char *p = (const char *)this + 0xa80 + 0xc * i;
+		g_1072393c->vfunc21(pRay, list[1][i], p, p + 0x168, (CGameTrace *)&tr);
+		if (tr.f2c < pTrace->f2c)
+			*pTrace = tr;
+	}
+	if (pTrace->f2c >= 1.0f)
+		return false;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155e40 size=0x11a
 #include "CRagdollProp.h"
 
