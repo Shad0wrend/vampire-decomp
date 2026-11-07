@@ -63924,6 +63924,58 @@ void sub_1012a6e0(CBaseEntity *pOwner, int nCount, int nType)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012a9b0 size=0x2b8
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "UTIL_Trace.h"
+#include "engineiface.h"
+
+struct S1012a9b0Fields
+{
+	char m_pad[0x730];
+	int m_n730;
+	int m_n734;
+	int m_n738;
+};
+extern int g_1070ba34;
+void sub_101cfe10(CGameTrace *pTrace, int a, int b);
+
+// TARGET: sub_1012a9b0
+void __fastcall sub_1012a9b0(CBaseEntity *self, int, int unused)
+{
+	CEntityVSlots *pSelf = (CEntityVSlots *)self;
+	S1012a9b0Fields *f = (S1012a9b0Fields *)self;
+	if (self->sub_100b3700() & 1)
+	{
+		if ((unsigned char)(self->m_flags268 >> 12) & 1)
+			self->sub_100b1d10();
+		Vector vecVelocity = self->m_vecVelocity3bc * 0.9f;
+		self->sub_100b2e30(&vecVelocity.x);
+		Vector ang = *(Vector *)pSelf->slot221();
+		ang.x = 0;
+		ang.z = 0;
+		pSelf->slot64(&ang.x);
+		Vector angVel = *(Vector *)&self->m_angVel3c8;
+		angVel.x = 0;
+		angVel.z = 0;
+		self->sub_100b2f50(&angVel.x);
+		return;
+	}
+	if (g_1070ba34 != 1 && f->m_n734 > 0 && f->m_n730 != -1)
+	{
+		const Vector *o = (const Vector *)pSelf->slot220();
+		Vector start(o->x, o->y, o->z + 8.0f);
+		Vector end(start.x, start.y, start.z - 24.0f);
+		CGameTrace tr;
+		UTIL_TraceLine_DebugCall(start, end, 0x400b, self, 0, &tr);
+		sub_101cfe10(&tr, f->m_n730, 1);
+		f->m_n734--;
+	}
+	if (f->m_n738 != 9 && enginerandom->vfunc2(0, 2) == 0 && ((unsigned char)(self->m_flags268 >> 12) & 1))
+		self->sub_100b1d10();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012ad20 size=0x2a4
 #include "CBaseEntity.h"
 #include "CUnknown101d7520.h"
