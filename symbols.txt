@@ -9274,6 +9274,7 @@
 0x1000e462 func   ?vfunc80@CItemGEDanePrintReport@@QAEHXZ CItemGEDanePrintReport::vfunc80
 0x1000e467 func   ?sub_102dd990@@YAXXZ sub_102dd990
 0x1000e46c func   ?sub_101809e0@@YAXXZ sub_101809e0
+0x1000e471 func   ?sub_1003b190@CBaseEntity@@QAEXM@Z CBaseEntity::sub_1003b190
 0x1000e476 func   ?sub_101a1490@@YIHPAD@Z sub_101a1490
 0x1000e47b func   ?sub_100b7c40@CUnknown100b7c40@@QAEHXZ CUnknown100b7c40::sub_100b7c40
 0x1000e480 func   ?sub_1002b060@CPhysConstraint@@QAEPAV1@XZ CPhysConstraint::sub_1002b060

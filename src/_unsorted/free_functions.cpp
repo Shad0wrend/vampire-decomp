@@ -5473,6 +5473,165 @@ void CBaseEntity::sub_1003a090()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003b190 size=0x552
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CFuncBrush.h"
+#include "ScopeTrace.h"
+#include "ConVar.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738964.h"
+#include "CCollisionProperty.h"
+#include "Vector.h"
+
+struct CBaseEntityPhysView_1003b190
+{
+	char m_pad0000[0x3b0];
+	Vector m_vecBase3b0;
+	Vector m_vecVel3bc;
+	char m_pad03c8[0x3e0 - 0x3c8];
+	int m_nWaterLevel3e0;
+	char m_pad03e4[0x3f0 - 0x3e4];
+	float m_flFriction3f0;
+	float GetFriction() { return m_flFriction3f0; }
+};
+extern ConVar *g_109ef2d4;
+extern Vector g_1070d1b0;
+extern float g_104454c4;
+void sub_10146570(const Vector *a, const Vector *b, int r, int g, int bl, int c, float d);
+
+static inline bool IsEFlagBit12(unsigned int f)
+{
+	return ((f >> 12) & 1) != 0;
+}
+
+// TARGET: CBaseEntity::sub_1003b190
+void CBaseEntity::sub_1003b190(float flTimeStepSize)
+{
+	ScopeTrace scope("CBaseEntity::PhysicsStepRunTimestep", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CBaseEntityPhysView_1003b190 *v = (CBaseEntityPhysView_1003b190 *)this;
+	CFuncBrushVt *vt = (CFuncBrushVt *)this;
+	int mask = vt->slot237();
+	sub_1003eb50();
+	bool bOnGround = (sub_100b3700() & 1) != 0;
+	bool bWasInWater = PhysicsCheckWater();
+	bool bDidHalfGravity = false;
+	if (!bOnGround && !(sub_100b3700() & 0x400) && (!(sub_100b3700() & 0x800) || v->m_nWaterLevel3e0 <= 0))
+	{
+		if (IsEFlagBit12(m_flags268))
+			sub_100b1d10();
+		g_109ef2d4->vfunc1();
+		if (!bWasInWater)
+		{
+			sub_10035490(flTimeStepSize);
+			bDidHalfGravity = true;
+		}
+	}
+	if (!(sub_100b3700() & 0x200000))
+	{
+		if (IsEFlagBit12(m_flags268))
+			sub_100b1d10();
+		if (!(v->m_vecVel3bc.sub_1003b850(g_1070d1b0) && v->m_vecBase3b0.sub_1003b850(g_1070d1b0)))
+		{
+			if (IsEFlagBit12(m_flags268))
+				sub_100b1d10();
+			Vector vecAbsVelocity = v->m_vecVel3bc;
+			vt->slot208(0);
+			if (bOnGround)
+			{
+				float speed = vecAbsVelocity.Length();
+				if (speed != g_104454c4)
+				{
+					float friction = (g_109eefbc->vfunc1() ? g_104454c4 : g_109eefbc->m_fValue) * v->GetFriction();
+					float stop = g_109ef16c->vfunc1() ? g_104454c4 : g_109ef16c->m_fValue;
+					float control = speed < stop ? (g_109ef16c->vfunc1() ? g_104454c4 : g_109ef16c->m_fValue) : speed;
+					float newspeed = speed - control * friction * flTimeStepSize;
+					if (newspeed < g_104454c4)
+						newspeed = g_104454c4;
+					newspeed /= speed;
+					vecAbsVelocity.x *= newspeed;
+					vecAbsVelocity.y *= newspeed;
+				}
+			}
+			vecAbsVelocity += v->m_vecBase3b0;
+			sub_100b2770(vecAbsVelocity);
+			sub_1003f810(flTimeStepSize);
+			sub_1003eb50();
+			sub_10034590(flTimeStepSize, 0);
+			sub_1003eb50();
+			if (IsEFlagBit12(m_flags268))
+				sub_100b1d10();
+			vecAbsVelocity = v->m_vecVel3bc;
+			vecAbsVelocity -= v->m_vecBase3b0;
+			sub_100b2770(vecAbsVelocity);
+			sub_1003eb50();
+			CCollisionProperty *pColl = (CCollisionProperty *)((char *)this + 0x270);
+			float *pMins = pColl->vfunc1();
+			float *pOrg = vt->slot217();
+			Vector lo, hi;
+			lo.x = pMins[0];
+			lo.x += pOrg[0];
+			lo.y = pOrg[1] + pMins[1];
+			lo.z = pOrg[2] + pMins[2];
+			float *pMaxs = pColl->vfunc2();
+			pOrg = vt->slot217();
+			hi.x = pOrg[0] + pMaxs[0];
+			hi.y = pOrg[1];
+			hi.y += pMaxs[1];
+			Vector vecTop;
+			vecTop.z = lo.z - 1.0f;
+			for (int i = 0; i <= 1; i++)
+			{
+				if (sub_100b3700() & 1)
+					break;
+				for (int j = 0; j <= 1; j++)
+				{
+					Ray_t ray;
+					float fx = i ? hi.x : lo.x;
+					float fy = j ? hi.y : lo.y;
+					ray.m_Delta[0] = 0;
+					ray.m_Delta[1] = 0;
+					ray.m_Delta[2] = 0;
+					ray.m_IsSwept = false;
+					ray.m_StartOffset[0] = ray.m_StartOffset[1] = ray.m_StartOffset[2] = 0;
+					ray.m_IsRay = true;
+					ray.m_Extents[0] = ray.m_Extents[1] = ray.m_Extents[2] = 0;
+					ray.m_Start[0] = fx;
+					ray.m_Start[1] = fy;
+					ray.m_Start[2] = vecTop.z;
+					ray.m_b32 = 0;
+					ray.m_n34 = 0;
+					ray.m_b33 = 0;
+					CTraceFilterSimple filter(this, 0);
+					CGameTrace tr;
+					g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+					if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+						sub_10146570((const Vector *)&tr.m_startpos, (const Vector *)&tr.m_endpos, 0xff, 0, 0, 1, -1.0f);
+					if (tr.m_startsolid)
+					{
+						vt->slot208(tr.m_pEnt);
+						break;
+					}
+				}
+			}
+			sub_100a53d0(0);
+		}
+	}
+	if (!(sub_100b3700() & 1) && bDidHalfGravity)
+		sub_10035490(flTimeStepSize);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003b850 size=0x36
 #include "Vector.h"
 
