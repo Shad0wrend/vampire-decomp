@@ -9011,6 +9011,7 @@
 0x1000dea9 func   ?sub_101fd8c0@@YAXH@Z sub_101fd8c0
 0x1000deae func   ?sub_10061250@CTEEnergySplash@@QAEPAV1@H@Z CTEEnergySplash::sub_10061250
 0x1000deb3 func   ?vfunc451@CNPC_VHuman@@UAEPBDXZ CNPC_VHuman::vfunc451
+0x1000deb8 func   ?sub_101764d0@@YADXZ sub_101764d0
 0x1000debd func   ?sub_1010c780@@YIPAVCFuncAreaPortalBase@@PAV1@@Z sub_1010c780
 0x1000dec2 func   ?sub_1004ea30@@YAEXZ sub_1004ea30
 0x1000dec2 func   ?vfunc117@CPhysExplosion@@UAEHXZ CPhysExplosion::vfunc117

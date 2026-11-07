@@ -78988,6 +78988,36 @@ void CUnk101764a0::sub_101764a0(char b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101764d0 size=0x39
+struct CUnknown10725e74
+{
+	virtual void vfunc0();
+	virtual bool vfunc1();
+	char pad[0x2c - 4];
+	int m_n2c;
+};
+struct SGlobals14 { char pad[0x14]; int m_n14; };
+extern CUnknown10725e74 *g_10725e74;
+extern int g_1070ba3c;
+extern SGlobals14 *g_1070b228;
+
+inline int Helper()
+{
+	if (g_10725e74->vfunc1())
+		return 0;
+	return g_10725e74->m_n2c;
+}
+
+char sub_101764d0()
+{
+	if (!Helper())
+		return 0;
+	if (g_1070ba3c == 3)
+		return 0;
+	return g_1070b228->m_n14 <= 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10177120 size=0x67
 #include "CBasePlayer.h"
 
