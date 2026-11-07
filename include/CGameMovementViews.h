@@ -81,6 +81,12 @@ struct CMoveDataView	// the entity at CGameMovement::m_pMove: vtable only; the d
 	virtual void *vfunc209();	// slot 209 (+0x344): the ground entity (0 when none; 0x10126cb0 tests it)
 	virtual void g210();
 	virtual unsigned int vfunc211();	// slot 211 (+0x34c): the entity's flag word (bit 6 is passed to Ray_t::sub_1006dec0 as its 5th argument); NO arguments (the `push 0` before the call is Ray_t's last argument)
+	GMV(212) GMV(213) GMV(214) GMV(215) GMV(216) GMV(217) GMV(218) GMV(219)
+	GMV10(22) GMV10(23) GMV10(24) GMV10(25) GMV10(26) GMV10(27) GMV10(28) GMV10(29)
+	GMV10(30) GMV10(31) GMV10(32) GMV10(33) GMV10(34) GMV10(35) GMV10(36) GMV10(37) GMV10(38) GMV10(39)
+	GMV10(40) GMV10(41) GMV10(42) GMV10(43) GMV10(44)
+	GMV(450) GMV(451) GMV(452) GMV(453) GMV(454) GMV(455) GMV(456)
+	virtual void vfunc457(const char *pszName, int a);	// slot 457 (+0x724): called with "item_w_unarmed", 0 after a ladder mount
 };
 
 struct CTouchNotifier	// the global at 0x1071a278 (extern CTouchNotifier *g_1071a278)
