@@ -1027,6 +1027,7 @@
 0x10002793 func   ?vfunc241@CBaseAnimating@@QAEXPADPAH@Z CBaseAnimating::vfunc241
 0x1000279d func   ?sub_10104160@@YIXPADHH@Z sub_10104160
 0x100027a2 func   ?sub_10359ba0@@YIXPAH@Z sub_10359ba0
+0x100027a7 func   ?sub_100027a7@CNPC_VGargoyle@@QAEXPAX@Z CNPC_VGargoyle::sub_100027a7
 0x100027ac func   ?sub_1012d480@@YIXPAUS@@@Z sub_1012d480
 0x100027b6 func   ?vfunc71@CPropButton@@UAEXXZ CPropButton::vfunc71
 0x100027bb func   ?sub_100b3840@CBaseEntity@@QAEXI@Z CBaseEntity::sub_100b3840

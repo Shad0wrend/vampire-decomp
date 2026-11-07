@@ -192265,6 +192265,86 @@ bool CUnknown10381be0::sub_10379040()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10379b40 size=0x287
+#include "UTIL_Trace.h"
+#include "CTraceFilterWorldOnly.h"
+#include "CNPC_VGargoyle.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "IPhysicsObject.h"
+#include <string.h>
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+struct SGargEnt
+{
+	char m_pad0000[0x11c];
+	const char *m_pszClassname;
+	char m_pad0120[0x26c - 0x120];
+	const char *m_pszName;
+
+	__forceinline bool ClassMatchesComplex(const char *pszClassOrWildcard)
+	{
+		int len = strlen(pszClassOrWildcard);
+		if (len == 0)
+			return !m_pszName;
+		char cLast = pszClassOrWildcard[len - 1];
+		if (cLast != '*')
+			return !_strcmpi(STRINGR_F(m_pszClassname), pszClassOrWildcard);
+		return !_strnicmp(STRINGR_F(m_pszClassname), pszClassOrWildcard, len - 1);
+	}
+	__forceinline bool ClassMatches(const char *pszClassOrWildcard)
+	{
+		if (m_pszClassname && pszClassOrWildcard && m_pszClassname == pszClassOrWildcard)
+			return true;
+		return ClassMatchesComplex(pszClassOrWildcard);
+	}
+};
+
+struct CGargScale
+{
+	virtual void vfunc0();
+	virtual char vfunc1();
+	char m_pad04[0x28 - 4];
+	float m_fl28;
+};
+
+extern CGargScale *g_1093afac;
+extern CGargScale *g_1093b054;
+
+void CNPC_VGargoyle::sub_100027a7(void *pObj)
+{
+	CBaseEntity *pEnt = (CBaseEntity *)pObj;
+	if (!(!(!pEnt))) return; else { SGargEnt *pMatch = (SGargEnt *)pEnt;
+	if ( pMatch->ClassMatches("prop_dynamic") )
+	{
+		((CEntityVSlots *)pEnt)->slot266((int)this);
+		return;
+	} else { IPhysicsObject *pPhys = (IPhysicsObject *)pEnt->m_obj36c;
+	if (!pPhys)
+		return; else { Vector vecAngular(0, 0, 0);
+	Vector vecVelocity;
+	((CEntityVSlots *)this)->slot199(&vecVelocity, 0);
+
+	float flTemp; float t0 = vecVelocity.x; flTemp = t0;
+	vecVelocity.x = vecVelocity.y;
+	vecVelocity.y = -flTemp;
+
+	CGameTrace trace;
+	Vector vecStart = *((CEntityVSlots *)pEnt)->slot220();
+	CTraceFilterWorldOnly filter;
+	UTIL_TraceLine_Calls(vecStart, (vecVelocity + vecStart), 0x202400b, &filter, &trace);
+
+	if ( trace.m_fraction != 1.0f )
+		vecVelocity = -vecVelocity;
+
+	vecVelocity = (g_1093afac->vfunc1() ? g_104454c4 : g_1093afac->m_fl28) * vecVelocity;
+	vecVelocity.z = (g_1093b054->vfunc1() ? g_104454c4 : g_1093b054->m_fl28) + vecVelocity.z;
+
+	pPhys->vfunc41(&vecVelocity, &vecAngular); } } }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10379e80 size=0x4a
 struct V3 { float x, y, z; };
 #define D(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
