@@ -48307,6 +48307,49 @@ void CBaseEntity::sub_100ddf60(const int *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100de020 size=0x240
+#include "CBaseEntity.h"
+#include "UTIL_Trace.h"
+#include "CEntityVSlots.h"
+#include "globalvars.h"
+
+void __cdecl sub_10139610(void *pAngles, Vector *pForward, Vector *pRight, Vector *pUp);
+void sub_1000a9bb();
+
+struct EHView : CBaseEntity {
+	char pad[0x450 - sizeof(CBaseEntity)];
+	Vector m_vec450;
+	float m_f45c;
+	float m_f460;
+	float m_f464;
+	char pad468[4];
+	float m_f46c;
+	char pad470[4];
+	float m_f474;
+	int m_n478;
+	float m_f47c;
+	char pad480[4];
+	float m_f484;
+	int m_n488;
+};
+
+void __fastcall sub_100de020(EHView *p)
+{
+	CEntityVSlots *s = (CEntityVSlots *)p;
+	p->m_n478 = *(int *)&gpGlobals->curtime;
+	p->m_f460 = p->m_f474 + gpGlobals->curtime;
+	sub_10139610(s->slot221(), &p->m_vec450, 0, 0);
+	p->m_f464 = p->m_f47c;
+	Vector vecDir = p->m_vec450 * -4096.0f;
+	CGameTrace tr;
+	UTIL_TraceLine(*s->slot220(), vecDir + *s->slot220(), 0x200400b, p, 0, &tr);
+	p->m_f46c = (*(Vector *)tr.m_endpos - *(Vector *)tr.m_startpos).Length() * p->m_f484;
+	p->sub_100ac4e0((int)sub_1000a9bb, 0, 0);
+	*(int *)((char *)p + 0x17c) = *(int *)&gpGlobals->curtime;
+	p->m_n488 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100de2f0 size=0x27a
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"

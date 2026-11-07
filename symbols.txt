@@ -3026,6 +3026,7 @@
 0x100055a6 func   ?vfunc457@CAI_BaseNPC@@UAEHXZ CAI_BaseNPC::vfunc457
 0x100055ab func   ?sub_10172670@@YAXPAVCEntityVSlots@@H@Z sub_10172670
 0x100055b0 func   ?sub_100d4b40@@YAXXZ sub_100d4b40
+0x100055b5 func   ?sub_100de020@@YIXPAUEHView@@@Z sub_100de020
 0x100055ba func   ?sub_100c5b00@@YADPAUCBoneOwner@@HHPAVVector@@1@Z sub_100c5b00
 0x100055bf func   _env_physexplosion env_physexplosion
 0x100055c4 func   ?vfunc103@CPhysForce@@UAEXXZ CPhysForce::vfunc103
