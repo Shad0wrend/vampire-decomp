@@ -63829,6 +63829,54 @@ void sub_1012a6e0(CBaseEntity *pOwner, int nCount, int nType)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012ad20 size=0x2a4
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CWeaponThrown_Grenade_Frag.h"
+#include "ScopeTrace.h"
+#include "UTIL_Trace.h"
+#include "CEntityVSlots.h"
+#include <string.h>
+
+void sub_101c0b10();
+void sub_101cfe10(CGameTrace *pTrace, int decalIndex, int bFlag);
+void sub_10139970(const Vector *pNormal, Vector *pAngles);
+extern Vector g_1070d1b0;
+
+static inline bool FlagBit12(unsigned int f) { return (f >> 12) & 1; }
+
+void CBaseEntity::sub_1012ad20(CBaseEntity *pOther)
+{
+	sub_100ac4e0((int)sub_101c0b10, 0, 0);
+	m_flNextThink = gpGlobals->curtime + 10.0f;
+	if (strcmpi(pOther->m_classname11c ? pOther->m_classname11c : g_106b8540, "worldspawn"))
+	{
+		m_flNextThink = gpGlobals->curtime;
+		return;
+	}
+	if (FlagBit12(m_flags268))
+		sub_100b1d10();
+	CGameTrace tr;
+	UTIL_TraceLine_DebugCall(*(Vector *)((CEntityVSlots *)this)->slot220(),
+		m_vecVelocity3bc * 32.0f + *(Vector *)((CEntityVSlots *)this)->slot220(), 0x400b, this, 0, &tr);
+	sub_101cfe10(&tr, *(int *)((char *)this + 0x730), 1);
+	Vector vecNormal = *(Vector *)tr.m_planeNormal * -1.0f;
+	Vector vecAngles;
+	sub_10139970(&vecNormal, &vecAngles);
+	((CEntityVSlots *)this)->slot64(&vecAngles.x);
+	sub_100b2e30(&g_1070d1b0.x);
+	sub_100b2f50(g_1070d9d0);
+	((CEntityVSlots *)this)->slot93(0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012b080 size=0x1a0
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
