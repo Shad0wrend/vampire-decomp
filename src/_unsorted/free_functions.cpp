@@ -199772,6 +199772,95 @@ void CNPC_VSheriffMan::sub_103b0560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b0630 size=0x25e
+#include "CBaseEntity.h"
+#include "CEHandleGet.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include <math.h>
+#include "CNPC_VSheriffMan.h"
+#include "CEntityVSlots.h"
+#include "CAIHintSlots.h"
+#include "ehandle.h"
+#include "CUnknown100290c0.h"
+#include "ScopeTrace.h"
+#include "QAngle.h"
+#include "Vector.h"
+#include "globalvars.h"
+
+float __cdecl sub_1013d580(float, float);
+void __cdecl sub_10139970(const Vector &, QAngle &);
+extern float g_104c6124;
+extern float g_104c6144;
+
+struct CHintNode
+{
+	char m_pad[0x5d8];
+	CHintNode *m_pNext;
+	int m_nType;
+};
+
+CEntityVSlots *CNPC_VSheriffMan::sub_103b0630()
+{
+	ScopeTrace trace("CNPC_VSheriffMan::SelectTeleportNode", g_106b8540);
+
+	CBaseEntity *pStart = (CBaseEntity *)((CUnknown100290c0 *)EHandleDetail::g_10566458)->sub_100290c0((unsigned int *)&m_hHeightTarget);
+	if (!pStart)
+		return 0;
+
+	CBaseEntity *pBest = 0;
+	float flBest = 3.4028235e38f;
+
+	for (CHintNode *pNode = (CHintNode *)g_10925450; pNode; pNode = pNode->m_pNext) {
+		int type = pNode->m_nType;
+		if (type == 17000 || type == 0x4653 || type == 0x4652) {
+			Vector *pNodeOrg = ((CEntityVSlots *)pNode)->slot217();
+			Vector *pStartOrg = ((CEntityVSlots *)pStart)->slot217();
+			Vector vec = *pStartOrg - *pNodeOrg;
+			vec.z *= 100.0f;
+			float dist = vec.Length();
+			if (dist >= g_104c6124) {
+				if (sub_103b0c70(((CEntityVSlots *)pNode)->slot217(), g_104c6124)) {
+					vec.z = 0;
+					QAngle angles;
+					sub_10139970(vec, angles);
+					Vector *pStartAng = ((CEntityVSlots *)pStart)->slot219();
+					float yaw = pStartAng->y;
+					float angleDiff = sub_1013d580(yaw, angles.y);
+					float a = (float)fabs(angleDiff) * 0.0055555557f;
+					if (dist > g_104c6144)
+						dist = g_104c6144;
+					float score = a * 0.4f + dist / g_104c6144 * 0.6f;
+					if (score < flBest) {
+						flBest = score;
+						pBest = (CBaseEntity *)pNode;
+					}
+				}
+			}
+		}
+	}
+
+	Vector *pOrg = ((CEntityVSlots *)pBest)->slot217();
+	m_nSpawnOrigin[0] = *(int *)&pOrg->x;
+	m_nSpawnOrigin[1] = *(int *)&pOrg->y;
+	m_nSpawnOrigin[2] = *(int *)&pOrg->z;
+	m_nSpawnTime = *(int *)&gpGlobals->curtime;
+	return (CEntityVSlots *)pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b0930 size=0x12b
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
