@@ -82,6 +82,8 @@ public:
 	void sub_103c7150();	// "CNPC_VVampireBoss::KillBodyEmitters": scope trace, for each of the four particle emitter handles (+0x66a0) that resolves, calls slot 242 on it, then sub_1000fb23(0.1f)
 	void sub_103c6f40();	// "CNPC_VVampireBoss::SpawnBodyEmitters": scope trace, KillBodyEmitters, then for each of the four emitter names (global table at 0x1065e6d0) spawns one with sub_103c7010 and stores its handle at +0x66a0
 	CBaseEntity *sub_103c7010(int index, const char *attachment);	// spawns the body emitter `index` on the attachment (stub 0x1000f4b6), null on failure
+	void vfunc442(int *pTask);	// slot 442 "CNPC_VVampireBoss::StartTask" (0x103c5ac0, ret 4): switch on *pTask (0x2f, 0x14a-0x14f), default CNPC_VHuman::vfunc442
+	void sub_10273070(int a);	// CAI_BaseNPC member (todo), this in ecx, one argument; called with 1 by StartTask
 	void vfunc444(int *pTask);	// slot 444 "CNPC_VVampireBoss::RunTask": scope trace (no entity name), task 0x14d goes to sub_10011851, every other task to the base implementation
 	void sub_10011928(int *pTask);	// CNPC_VHuman::vfunc444 (RunTask), called directly (stub 0x10011928)
 	void sub_10011851();	// the handler of task 0x14d (stub 0x10011851 for 0x103c63c0)
