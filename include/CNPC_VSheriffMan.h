@@ -20,7 +20,10 @@ public:
 	const char *m_pszSourceFile;	// +0x1b30: source file / line stamp of the last schedule change
 	int m_nSourceLine;	// +0x1b34
 	int m_nIdealState;	// +0x1b38
-	char pad1b3c[0x5cc0 - 0x1b3c];
+	char pad1b3c[0x1b44 - 0x1b3c];
+	const char *m_pszFile1b44;	// +0x1b44: source file stamp of the last task failure (CNPC_VVampireBoss::m_pszSourceFile)
+	int m_nLine1b48;	// +0x1b48: its line (StartTask stamps 0x192 / 0x19c / 0x1ac / 0x1b4 / 0x1bc / 0x1c8, then slot 448(1))
+	char pad1b4c[0x5cc0 - 0x1b4c];
 	int m_n5cc0;	// +0x5cc0: the task state (5 = busy)
 	char pad5cc4[0x5d9c - 0x5cc4];
 	float m_flAttackStartTime;	// +0x5d9c
