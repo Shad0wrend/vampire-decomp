@@ -9,6 +9,7 @@
 class CBaseEntity;
 class CBaseCombatCharacter;
 struct CMPDamageInfo;
+struct CTakeDamageInfo;
 struct CGameTrace;
 
 // The 0x484 byte object that CGameRules creates in its slot 56 (its class is not known yet).
