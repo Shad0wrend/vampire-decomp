@@ -147,6 +147,7 @@
 	void sub_1028fa50();	// stub 0x10005141, run by GatherConditions
 	void sub_102b1cd0();	// stub 0x10006bae, run by GatherConditions
 	void sub_102bf770();
+	void sub_102c3b50(CBaseEntity *pOther, Vector vecPos, Vector *pOut, int *pUnused);	// 0x102c3b50 (ret 0x18, 6 dwords): a wall-avoidance probe: a UTIL_TraceHull of the collision box at +0x270 (CTraceFilterWorldOnly, mask 0x202400b) from vecPos + 16.0f in z, then, when it started in a solid, a fan of six Ray_t traces (the unit vectors of a hexagon scaled by the flat distance * 0.581) whose free directions are summed and normalised, scaled by the flat distance to pOther's origin and handed to pOut->sub_1003e4b0; pUnused is not read. Declared in CNPC_VMingXiao, CNPC_VTzimisce and CNPC_VWerewolf too (they call it)
 	void sub_102bf820(float flFrame);	// "CAI_BaseNPCTroika::ResolveStandingOnHead" (called by vfunc431, ret 4): scope trace; when the entity of the handle at +0x384 (the ground entity) is standing on this NPC, pushes this NPC sideways (random jitter when the two origins coincide, 0.707 diagonals via the random stream's RandomInt(0, 3)) by a speed that grows in the float at +0x65fc (capped at 5.0f; reset to 0 on failure), traced twice with sub_1026e940 (mask 0x202400b) through CTraceFilterNav inside the "CAI_MoveProbe_TraceHull" VPROF scope, and moves the NPC (slot 216) when clear
 	void sub_102b7110(int a);	// finds a hint node (+0x5ddc) for the NPC, stub 0x1000bfaa
 	int sub_102b7370();	// schedule pick that looks for a hint node / enemy to approach (called by slots 604 / 605)
