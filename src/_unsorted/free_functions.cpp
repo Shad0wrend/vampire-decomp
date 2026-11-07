@@ -2313,6 +2313,178 @@ int __stdcall sub_1002f190(int nCount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002f1e0 size=0x500
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CCollisionEvent.h"
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+#include "ehandle.h"
+
+#define F1(n) virtual void n();
+#define F5(p) F1(p##0) F1(p##1) F1(p##2) F1(p##3) F1(p##4)
+#define F10(p) F5(p##a) F5(p##b)
+#define F50(p) F10(p##0) F10(p##1) F10(p##2) F10(p##3) F10(p##4)
+#define F100(p) F50(p##a) F50(p##b)
+
+struct ColEnt
+{
+	F50(e) F10(f) F5(g) F1(h0) F1(h1) F1(h2)
+	virtual bool s68(ColEnt *pOther);
+	F10(i) F10(j) F1(k0) F1(k1) F1(k2)
+	virtual int s92();
+	F1(l0)
+	virtual int s94();
+	F1(m0) F1(m1)
+	virtual ColEnt *s97();
+	F100(n) F10(o) F1(p0) F1(p1) F1(p2)
+	virtual unsigned int s211();
+	F10(q) F1(r0) F1(r1)
+	virtual bool s224(ColEnt *pOther);
+	F10(t) F1(u0) F1(u1)
+	virtual unsigned int s237();
+
+	char m_pad0004[0x25c - 4];
+	EHANDLE m_hMoveParent;
+};
+
+struct ColEntFields : ColEnt
+{
+	char m_pad0260[0x2e0 - 0x260];
+	int m_pEdict;
+	char m_pad02e4[0x368 - 0x2e4];
+	int m_nCollisionGroup;
+	void *m_pPhysics;
+};
+
+struct ColObj
+{
+	F5(a) F1(b0) F1(b1) F1(b2)
+	virtual unsigned short s8();
+	F1(c0)
+	virtual unsigned int s10();
+	F10(d) F10(e) F10(f) F10(g) F1(h0)
+	virtual bool s52();
+	F5(i) F1(j0) F1(j1) F1(j2) F1(j3)
+	virtual bool s62();
+	F1(k0) F1(k1)
+	virtual unsigned int s65();
+};
+
+struct ColHash
+{
+	F1(a0) F1(a1) F1(a2)
+	virtual bool IsPair(void *a, void *b);
+};
+
+struct ColGroups
+{
+	F50(a) F10(b) F10(c) F5(d) F1(e0) F1(e1)
+	virtual bool Should(int a, int b);
+};
+
+struct WheelObj_t;
+struct WheelEnt_t;
+bool sub_1002f820(WheelObj_t *, WheelEnt_t *);
+ColEnt *sub_1012c9c0(ColEnt *);
+extern ColHash *g_10723948;
+extern ColGroups *g_1070ba0c;
+
+int CCollisionEventSolver::sub_1002f1e0(void *pObject0, void *pObject1, CBaseEntity *pEntity0, CBaseEntity *pEntity1)
+{
+	ScopeTrace trace("CCollisionEvent::ShouldCollide", g_106b8540);
+	ColObj *pObj0 = (ColObj *)pObject0;
+	ColObj *pObj1 = (ColObj *)pObject1;
+	ColEntFields *e0 = (ColEntFields *)pEntity0;
+	ColEntFields *e1 = (ColEntFields *)pEntity1;
+
+	if (e0 && e1) {
+		unsigned short gameFlags0 = pObj0->s8();
+		unsigned short gameFlags1 = pObj1->s8();
+		if (e0 == e1) {
+			if ((gameFlags0 | gameFlags1) & 0x8000)
+				goto fail;
+			if (g_10723948->IsPair(pObj0, pObj1))
+				return 0;
+			return 1;
+		}
+		if ((gameFlags0 & gameFlags1 & 2)
+			|| ((pObj0->s10() & 0x40) && !sub_1002f820((WheelObj_t *)pObj1, (WheelEnt_t *)e1))
+			|| ((pObj1->s10() & 0x40) && !sub_1002f820((WheelObj_t *)pObj0, (WheelEnt_t *)e0)))
+			goto fail;
+		if (!e0->s224(e1) && !e1->s224(e0)) {
+			if (e0->m_pEdict && e1->m_pEdict) {
+				if (e0->s97() == e1 || e1->s97() == e0)
+					goto fail;
+			}
+			if (e0->m_hMoveParent.Get() || e1->m_hMoveParent.Get()) {
+				ColEntFields *p0 = (ColEntFields *)sub_1012c9c0(e0);
+				ColEntFields *p1 = (ColEntFields *)sub_1012c9c0(e1);
+				if (p0 == p1 || g_10723948->IsPair(p0, p1))
+					goto fail;
+				void *o0 = p0->m_pPhysics;
+				void *o1 = p1->m_pPhysics;
+				if (o0 && o1 && g_10723948->IsPair(o0, o1))
+					goto fail;
+			}
+			int solid0 = e0->s92();
+			int solid1 = e1->s92();
+			unsigned int solidFlags0 = e0->s211();
+			unsigned int solidFlags1 = e1->s211();
+			int moveType0 = e0->s94();
+			int moveType1 = e1->s94();
+			bool bMove0 = moveType0 == 8 || e0->m_hMoveParent.Get();
+			bool bMove1 = moveType1 == 8 || e1->m_hMoveParent.Get();
+			if ((bMove0 && !pObj1->s52())
+				|| (bMove1 && !pObj0->s52())
+				|| (bMove0 && bMove1)
+				|| !solid0 || !solid1)
+				goto fail;
+			if ((solidFlags1 | solidFlags0) & 4) {
+				if (pObj0->s62() && !(solidFlags1 & 4))
+					goto ok;
+				if (!pObj1->s62())
+					goto fail;
+				if (!(solidFlags0 & 4))
+					goto ok;
+			} else {
+				if ((solidFlags0 & 8) && solid1 != 6 && solid1 != 1 && moveType1 != 7)
+					return 0;
+				if ((solidFlags1 & 8) && solid0 != 6 && solid0 != 1 && moveType0 != 7)
+					return 0;
+				int g1 = e1->m_nCollisionGroup;
+				int g0 = e0->m_nCollisionGroup;
+				if (!g_1070ba0c->Should(g0, g1))
+					return 0;
+				if (!(pObj0->s65() & e1->s237()))
+					goto fail;
+				if (!(pObj1->s65() & e0->s237()))
+					goto fail;
+				if (g_10723948->IsPair(e0, e1))
+					return 0;
+				if (g_10723948->IsPair(pObj0, pObj1))
+					return 0;
+				if (e0->s68(e1))
+					goto fail;
+				if (!e1->s68(e0))
+					goto ok;
+			}
+			goto fail;
+		}
+	}
+ok:
+	return 1;
+fail:
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002f820 size=0xa3
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;

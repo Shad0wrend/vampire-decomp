@@ -44,6 +44,7 @@
 0x100010f5 func   ?sub_101b65e0@CUtlVector16@@QAEXXZ CUtlVector16::sub_101b65e0
 0x100010fa func   ?sub_101728b0@CBasePlayer@@QAEXXZ CBasePlayer::sub_101728b0
 0x100010ff func   ?vfunc3@CTEMuzzleFlash@@UAEXHH@Z CTEMuzzleFlash::vfunc3
+0x10001104 func   ?sub_1002f1e0@CCollisionEventSolver@@QAEHPAX0PAVCBaseEntity@@1@Z CCollisionEventSolver::sub_1002f1e0
 0x10001109 func   ?vfunc117@CGameSign@@UAEHXZ CGameSign::vfunc117
 0x10001109 func   ?vfunc117@CPointEntity@@UAEHXZ CPointEntity::vfunc117
 0x1000110e func   ?vfunc448@CNPC_VAsianVampire@@QAEXH@Z CNPC_VAsianVampire::vfunc448
