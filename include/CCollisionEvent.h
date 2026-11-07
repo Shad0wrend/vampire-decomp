@@ -113,6 +113,7 @@ class CCollisionEvent;
 // The IPhysicsCollisionSolver sub-object at +4 of CCollisionEvent (its methods get this + 4 as ECX).
 struct CCollisionEventSolver
 {
+	int sub_1002f1e0(void *pObject0, void *pObject1, CBaseEntity *pEntity0, CBaseEntity *pEntity1);
 	int sub_1002fb00(void *pObject0, void *pObject1, CBaseEntity *pEntity0, CBaseEntity *pEntity1, float flDeltaTime);	// "CCollisionEvent::ShouldSolvePenetration": scope trace, orders the entity pair, finds its penetration record and, at most every 0.x seconds per pair, flags it and (without the cvar override and with the console variable set) reports both entities (sub_1002fc30 with 10.0f); always 1
 
 	CCollisionEvent *Event() { return (CCollisionEvent *)((char *)this - 4); }
