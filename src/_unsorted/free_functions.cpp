@@ -77873,6 +77873,34 @@ void CUnknown10171f10::sub_10171f10(int unk4)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10172170 size=0x204
+#include "UTIL_Trace.h"
+#include "QAngle.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+
+void __cdecl sub_10139610(const QAngle *pAngles, Vector *pForward, Vector *pRight, Vector *pUp);
+int __cdecl _strcmpi(const char *s1, const char *s2);
+extern char g_106b8540[];
+
+// TARGET: sub_10172170
+CBaseEntity *sub_10172170(CBaseEntity *pEntity, const char *pszClassname)
+{
+	Vector vecForward;
+	sub_10139610((QAngle *)((char *)pEntity + 0x206c), &vecForward, 0, 0);
+	CGameTrace trace;
+	UTIL_TraceLine(*((CEntityVSlots *)pEntity)->slot193((Vector *)&(const Vector &)Vector()), *((CEntityVSlots *)pEntity)->slot193((Vector *)&(const Vector &)Vector()) + vecForward * 16384.0f, 0x200400b, pEntity, 0, &trace);
+	if (trace.m_fraction != 1.0 && trace.m_pEnt)
+	{
+		CBaseEntity *pEnt = trace.m_pEnt;
+		const char *pszName = pEnt->m_classname11c ? pEnt->m_classname11c : g_106b8540;
+		if (_strcmpi(pszName, pszClassname) == 0)
+			return pEnt;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10172410 size=0x1dc
 #include "CBaseEntity.h"
 #include "CTraceFilterNoCharacterCollide.h"

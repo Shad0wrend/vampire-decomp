@@ -7800,6 +7800,7 @@
 0x1000c30b func   ?sub_101f1aa0@CUnknown101f0e50@@QAEPAVCVTraitEffectGroup_t@@H@Z CUnknown101f0e50::sub_101f1aa0
 0x1000c310 func   ?vfunc132@CBaseEntity@@UAEXXZ CBaseEntity::vfunc132
 0x1000c31a func   ?vfunc14@CGameMovement@@UAEHH@Z CGameMovement::vfunc14
+0x1000c324 func   ?sub_10172170@@YAPAVCBaseEntity@@PAV1@PBD@Z sub_10172170
 0x1000c329 func   ?vfunc246@CNPC_VPlayerController@@QAEXXZ CNPC_VPlayerController::vfunc246
 0x1000c32e func   ?vfunc226@CPhysicsProp@@QAEXH@Z CPhysicsProp::vfunc226
 0x1000c333 func   ?sub_10102dd0@CEnvShake@@QAEXH@Z CEnvShake::sub_10102dd0
