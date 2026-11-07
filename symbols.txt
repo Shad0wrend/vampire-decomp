@@ -11561,6 +11561,7 @@
 0x100118b5 func   ?sub_101a14b0@CRestore@@QAEXH@Z CRestore::sub_101a14b0
 0x100118ba func   ?sub_1005f550@@YAHHHHHH@Z sub_1005f550
 0x100118c9 func   ?sub_101171a0@CFuncMoveLinear@@QAEXAAUinputdata_t@@@Z CFuncMoveLinear::sub_101171a0
+0x100118ce func   ?sub_101381b0@@YAXPBMQAY03$$CBMPAM@Z sub_101381b0
 0x100118d3 func   ?sub_101f4280@@YIHPAH@Z sub_101f4280
 0x100118d8 func   ?sub_1021fee0@@YAXPAVCBaseCombatCharacter@@PBD@Z sub_1021fee0
 0x100118dd func   ?sub_100c7900@@YAHPAUStudioHdr@@HH@Z sub_100c7900
