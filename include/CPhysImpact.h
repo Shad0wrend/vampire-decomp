@@ -39,6 +39,7 @@ public:
 	CCollisionProperty m_Collision;	// 0x0270
 
 	void sub_1000cb8a();	// destructor body
+	void sub_1004f030(struct inputdata_t *pData);	// 0x1004f030 CPhysImpact::InputImpact (the DEFINE_INPUTFUNC "Impact" handler, ret 4, the argument is not read): the direction is from this's origin (slot 217 via CEntityVSlots) to m_vecTarget, or to the named entity's WorldSpaceCenter (slot 192, gEntList 0x106eb5d8 sub_100f7770(0, name, 0, 0); Warning "%s could not find: %s !!" otherwise), normalised; length by pfSqrt (infinite-length flag 2: the double 56755.84 instead); a trace (Ray_t::sub_1004f7a0 + CTraceFilterSimple(this, 0), mask -1, debug lines sub_10146570 / sub_10142e90 / sub_10143b70 gated by g_10738964 / g_1070b9cc) then pushes the hit entity's physics object (entity +0x36c, slot 31 ApplyForceOffset) with m_damage * (1 - fraction) (flags 1/2/8: no falloff; 4: times the object's slot 12 mass) * convar g_106b8654 (GetFloat form)
 public:
 	virtual datamap_t * vfunc82();
 public:
