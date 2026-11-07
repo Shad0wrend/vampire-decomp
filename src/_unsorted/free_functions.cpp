@@ -76452,6 +76452,63 @@ bool __fastcall sub_101664d0(CVirtSlots94 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10166cc0 size=0x2bb
+#include "UTIL_Trace.h"
+#include "CHL2_Player.h"
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+#include "CAI_BaseNPC.h"
+#include "CGlobalEntityList.h"
+#include "engineiface.h"
+#include "QAngle.h"
+
+extern Vector g_1070d1b0;
+extern CGlobalEntityList g_106eb5d8;
+
+void sub_10139970(const Vector &vec, QAngle &angles);
+
+void CHL2_Player::sub_10166cc0()
+{
+    CBaseEntity *pSelf = (CBaseEntity *)this;
+    Vector &vecView = pSelf->m_vecViewOffset;
+
+    if (g_1070d1b0.x != vecView.x || g_1070d1b0.y != vecView.y || g_1070d1b0.z != vecView.z)
+    {
+        CBaseEntity *pEnt = g_106eb5d8.sub_100f7380(0, "info_intermission");
+        if (pEnt)
+        {
+            int n = enginerandom->vfunc2(0, 3);
+            while (n > 0)
+            {
+                CBaseEntity *pNext = g_106eb5d8.sub_100f7380(pEnt, "info_intermission");
+                if (pNext)
+                    pEnt = pNext;
+                n--;
+            }
+            ((CBasePlayer *)this)->sub_10167030(*(Vector *)((CAI_BaseNPC *)pEnt)->vfunc220(),
+                                                *(Vector *)((CAI_BaseNPC *)pEnt)->vfunc221());
+            return;
+        }
+
+        CAI_BaseNPC *pView = (CAI_BaseNPC *)this;
+
+        const Vector *pUp = (const Vector *)pView->vfunc220();
+        Vector vecUp;
+        vecUp.x = pUp->x;
+        vecUp.y = pUp->y;
+        vecUp.z = pUp->z + 128.0f;
+
+        CGameTrace tr;
+        UTIL_TraceLine_DebugCall(*(Vector *)pView->vfunc220(), vecUp, 0x1400b, this, 0, &tr);
+
+        QAngle ang;
+        sub_10139970(*(Vector *)tr.m_endpos - *(Vector *)pView->vfunc220(), ang);
+
+        ((CBasePlayer *)this)->sub_10167030(*(Vector *)tr.m_endpos, *(Vector *)&ang);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10167030 size=0x11e
 #include "CBasePlayer.h"
 #include "CUnknown101d7520.h"
