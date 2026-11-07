@@ -24,6 +24,17 @@ void sub_10143710(const float *pPos, const char *pszText, int unused, int nValue
 // arguments on the stack; declared with the game's own 8-argument signature.
 void sub_101434b0(int a, int b, const char *pszText, int d, int e, int f, int g, int h);
 
+// A debug overlay box (0x10143b70, cdecl, 8 stack arguments): centred at pOrigin, extents pMins / pMaxs, colour r,g,b,
+// then an int (always 1) and the duration in seconds (a float: 0, or 5.0f in RadiusDamage / env_physimpact).
+void sub_10143b70(const Vector *pOrigin, const Vector *pMins, const Vector *pMaxs, int r, int g, int b, int nFlag, float flDuration);
+
+// 0x101456e0 (cdecl, one Vector pointer, answers a float in st0): used by the trace drawer 0x10145980 on the view
+// direction (the 1.0f-based scale it multiplies the box vectors with).
+float sub_101456e0(const Vector *pDir);
+
+// 0x10232d80 (cdecl, one pointer): fills a Vector with the followed player's view vector (0x10145980 passes a local).
+void sub_10232d80(Vector *pOut);
+
 // 0x10552810: the entity index the debug trace drawers follow (a plain int; -1 / 0 draws nothing).
 extern int g_10552810;
 
