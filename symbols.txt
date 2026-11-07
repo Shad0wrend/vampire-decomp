@@ -4954,6 +4954,7 @@
 0x1000823d func   ??0CAI_InterestTarget@@QAE@XZ CAI_InterestTarget::CAI_InterestTarget
 0x1000823d func   ?sub_102d9150@CUnknown102d9150@@QAEPAV1@XZ CUnknown102d9150::sub_102d9150
 0x10008242 func   ?sub_102ae840@CAI_BaseNPCTroika@@QAEXHD@Z CAI_BaseNPCTroika::sub_102ae840
+0x10008247 func   ?vfunc142@CBreakableSurface@@QAEHPAUCTakeDamageInfo@@@Z CBreakableSurface::vfunc142
 0x1000824c func   ?vfunc5@CItemGWarrens4Passkey@@QAEPAV1@I@Z CItemGWarrens4Passkey::vfunc5
 0x10008251 func   ?vfunc491@CNPC_VPlayerController@@QAEXXZ CNPC_VPlayerController::vfunc491
 0x10008265 func   ?sub_1030f780@@YAHXZ sub_1030f780

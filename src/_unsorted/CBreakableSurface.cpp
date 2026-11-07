@@ -62,6 +62,32 @@ void CBreakableSurface::vfunc130(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10110b20 size=0x1fd
+#include "CBreakableSurface.h"
+#include "CTakeDamageInfo.h"
+#include "CEntityVSlots.h"
+#include "UTIL_Trace.h"
+
+void __cdecl sub_10146570(Vector*,Vector*,int,int,int,int,int);
+
+int CBreakableSurface::vfunc142(CTakeDamageInfo *pInfo)
+{
+	int nFlags = pInfo->m_pVDmg00 ? (pInfo->m_nFlags38 | *(int *)((char *)pInfo->m_pVDmg00 + 0x10)) : pInfo->m_nFlags38;
+	if (!(nFlags & 0x40))
+		return 0;
+	CBaseEntity *pInflictor = (CBaseEntity *)pInfo->m_pInflictor;
+	if (!pInflictor)
+		return 0;
+	Vector vecDir = *((CEntityVSlots *)pInflictor)->slot217() - ((CEntityVSlots *)this)->slot192();
+	vecDir.NormalizeInPlace();
+	CGameTrace trace;
+	UTIL_TraceLine(*((CEntityVSlots *)pInflictor)->slot217(), ((CEntityVSlots *)this)->slot192(), 0, pInflictor, 0, &trace);
+	CTakeDamageInfo info = *pInfo;
+	((CEntityVSlots *)this)->slot141(&info, vecDir, &trace);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101134f0 size=0x72
 #include "CBreakableSurface.h"
 
