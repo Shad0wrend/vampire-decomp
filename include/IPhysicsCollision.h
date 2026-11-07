@@ -5,7 +5,6 @@
 #include "Vector.h"
 
 #define PCOL1(n) virtual void vfunc##n();
-#define PCOL10(p) PCOL1(p##0) PCOL1(p##1) PCOL1(p##2) PCOL1(p##3) PCOL1(p##4) PCOL1(p##5) PCOL1(p##6) PCOL1(p##7) PCOL1(p##8) PCOL1(p##9)
 
 struct CPhysCollide;
 struct CGameTrace;
@@ -13,7 +12,8 @@ struct CGameTrace;
 class IPhysicsCollision
 {
 public:
-	PCOL10() PCOL10(1)
+	PCOL1(0) PCOL1(1) PCOL1(2) PCOL1(3) PCOL1(4) PCOL1(5) PCOL1(6) PCOL1(7) PCOL1(8) PCOL1(9)
+	PCOL1(10) PCOL1(11) PCOL1(12) PCOL1(13) PCOL1(14) PCOL1(15) PCOL1(16) PCOL1(17) PCOL1(18) PCOL1(19)
 	PCOL1(20) PCOL1(21)
 	// slot 22 (+0x58) TraceBox(start, end, mins, maxs, pCollide, collideOrigin, collideAngles, ptr): thiscall, ret 0x20
 	virtual void vfunc22(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs,
@@ -25,4 +25,3 @@ public:
 };
 
 #undef PCOL1
-#undef PCOL10
