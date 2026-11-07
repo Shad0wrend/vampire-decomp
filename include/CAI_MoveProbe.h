@@ -51,6 +51,7 @@ public:
 	void sub_102e6290(const float *vecStart, const float *vecEnd, unsigned int collisionMask, const CBaseEntity *pTarget, AIMoveTrace_t *pTrace, int a9);
 	char sub_102e7880(const float *vecStart, unsigned int collisionMask, float flUp, float flDown, float *pOut, void *pExtra);	// the ground probe (stub 0x10005d44): true when it found ground below vecStart (the found position in pOut)
 
+	char sub_102e7e40(void *pEnt);	// stub 0x100114aa, thiscall with one stack argument: tail-jumps to the outer entity's slot 166
 	int m_pad08;
 	int m_nUnk0c;	// 0x0c: starts at -1
 	int m_unk10;
