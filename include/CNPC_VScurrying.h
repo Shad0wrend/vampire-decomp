@@ -31,7 +31,9 @@ public:
 	char sub_103ad0a0(CBaseEntity *pEnt);	// stub 0x10007595, called directly
 	void vfunc103();	// slot 103: the animal base implementation (CNPC_VAnimal::vfunc103), then the flag 0x10000 at +0x5b84, and the game's time at +0x668c
 
-	char m_pad03e0[0x1b2c - 0x3e0];
+	char m_pad03e0[0x1568 - 0x3e0];
+	int m_n1568;	// 0x1568: the NPC's hull index
+	char m_pad156c[0x1b2c - 0x156c];
 	int m_n1b2c;
 	const char *m_pszFile1b30;	// source file stamp of the schedule pick
 	int m_nLine1b34;	// source line stamp
