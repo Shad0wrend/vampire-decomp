@@ -502,7 +502,7 @@ public:
 	virtual void vfunc614();
 	virtual void vfunc615();
 	virtual void vfunc616();
-	virtual void vfunc617();
+	virtual CBaseEntity *vfunc617(char bSkipCheck);	// slot 617 "MakeNPC" (ret 4): the spawn body; with bSkipCheck clear it first checks the npc_VAndreiBlood boss (g_10938040) and a clear box (sub_101cca80, mask 0x2080)
 	virtual void vfunc618();
 	virtual void vfunc619(int);
 	virtual void vfunc620(int);
