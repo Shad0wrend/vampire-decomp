@@ -34,4 +34,8 @@ public:
 	void sub_102fa630();	// third pass over one node (called by sub_102fac00 and CAI_NodeGraph::sub_102f4e00): traces between the node and its neighbours
 };
 
+float *__cdecl sub_101d2f40(float *pOut, float flYaw);	// 0x101d2f40 (todo): the forward vector of a yaw (z = 0), written to pOut and returned
+char __cdecl sub_102fc3d0(const float *pPosA, const float *pDirB, const float *pPosC, const float *pDirD);	// 0x102fc3d0 (todo, cdecl, 4 pointers): the climb line-up test CAI_Node::sub_102fb4e0 makes between the two ladder nodes (their positions and yaw directions)
+extern int g_10610bec;	// 0x10610bec: debug node id A of CAI_Node::sub_102fb4e0 (with g_10610bf0: the pair that prints an empty DevMsg)
+extern int g_10610bf0;	// 0x10610bf0: debug node id B
 extern int g_106c994c;	// 0x106c994c: counter bumped whenever a node index fails its bounds check (read as a null node)
