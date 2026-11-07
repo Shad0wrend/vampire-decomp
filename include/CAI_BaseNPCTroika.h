@@ -329,7 +329,8 @@ struct { char m_pad1a41[0x1b2c - 0x1a41]; int m_n1b2c; };
 	char m_b5d78;	// 0x5d78: set while the scripted sequence entity (handle at +0x5d74) is recording this NPC's state
 	char m_pad5d79[0x5d8c - 0x5d79];
 	unsigned int m_flags5d8c;
-	char m_pad5d90[0x5d98 - 0x5d90];
+	EHANDLE m_h5d90;	// 0x5d90: the entity that blocks the NPC (NPCThinkDebugPre prints "Blocked by %s")
+	char m_pad5d94[0x5d98 - 0x5d94];
 	float m_f5d98;	// 0x5d98: the time of the last output fired by vfunc142
 	char m_pad5d9c[0x5da4 - 0x5d9c];
 	void *m_p5da4;	// 0x5da4: the squad object (0 when none)
