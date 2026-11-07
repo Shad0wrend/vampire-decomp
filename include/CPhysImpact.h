@@ -32,7 +32,9 @@ public:
 	PI_V1(pf204) PI_V1(pf205) PI_V1(pf206) PI_V1(pf207) PI_V1(pf208) PI_V1(pf209) PI_V1(pf210) PI_V1(pf211)
 	virtual void vfunc212(const char *pszModel);	// "CBaseEntity::SetModel"-like
 
-	char m_pad0004[0x268];	// 0x0004 .. 0x026B
+	char m_pad0004[0x204 - 4];	// 0x0004 .. 0x0203
+	unsigned int m_spawnflags204;	// 0x0204: 1 no falloff, 2 infinite length, 4 scale by the target's mass (slot 12), 8 push along the impact direction (the sete bl of the Impact input)
+	char m_pad0208[0x268 - 0x208];	// 0x0208 .. 0x026B
 	const char *m_name26c;	// 0x026c: the entity name
 	CCollisionProperty m_Collision;	// 0x0270
 
