@@ -166706,6 +166706,76 @@ CTraceFilterNavGround102e3290 *CTraceFilterNavGround102e3290::sub_102e3290(int a
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e3450 size=0x2aa
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CAI_MoveProbe.h"
+#include "CCollisionProperty.h"
+#include "CGameTrace.h"
+#include "CTraceFilterNav.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738960.h"
+#include "CVProfile.h"
+#include "Ray_t.h"
+#include "ScopeTrace.h"
+#include "UTIL_Trace.h"
+
+struct CTraceFilterNavGround102e3290
+{
+	int m_pad[5];
+	CTraceFilterNavGround102e3290 *sub_102e3290(int a, int b);
+};
+
+struct CRayCtor1004f860
+{
+	void *sub_1004f860();
+};
+
+struct CMoveProbeOuter
+{
+	char pad0000[0x270];
+	CCollisionProperty m_collision;
+	char pad0274[0x368 - 0x270 - sizeof(CCollisionProperty)];
+	int m_n368;
+};
+
+void CAI_MoveProbe::sub_102e3450(const Vector &vecStart, const float *vecEnd, unsigned int collisionMask, CGameTrace *pTrace, char bGround)
+{
+	Vector maxs = *(const Vector *)((CMoveProbeOuter *)m_pOuter)->m_collision.vfunc2();
+	maxs.z -= 1.0f;
+	const float *pMins = ((CMoveProbeOuter *)m_pOuter)->m_collision.vfunc1();
+	g_109f3648->EnterScope("CAI_MoveProbe_TraceHull", 0, "Unaccounted", false);
+	if (bGround) {
+		CTraceFilterNav filter;
+		((CTraceFilterNavGround102e3290 *)&filter)->sub_102e3290((int)m_pOuter, ((CMoveProbeOuter *)m_pOuter)->m_n368);
+		ScopeTrace scope("UTIL_TraceHull", g_106b8540);
+		Ray_t ray;
+		((CRayCtor1004f860 *)&ray)->sub_1004f860();
+		ray.sub_1006dec0(vecStart, vecEnd, pMins, &maxs.x, 1, 0);
+		g_1070b254->vfunc4(&ray, collisionMask, (CTraceFilterNoCharacterCollide *)&filter, pTrace);
+		if (g_10738960.sub_1005f190())
+			sub_10146570((const Vector *)pTrace->m_startpos, (const Vector *)pTrace->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+	} else {
+		CTraceFilterNav filter;
+		filter.sub_102e30d0((int)m_pOuter, ((CMoveProbeOuter *)m_pOuter)->m_n368);
+		ScopeTrace scope("UTIL_TraceHull", g_106b8540);
+		Ray_t ray;
+		ray.sub_1006dec0(vecStart, vecEnd, pMins, &maxs.x, 1, 0);
+		g_1070b254->vfunc4(&ray, collisionMask, (CTraceFilterNoCharacterCollide *)&filter, pTrace);
+		if (g_10738960.sub_1005f190())
+			sub_10146570((const Vector *)pTrace->m_startpos, (const Vector *)pTrace->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+	}
+	g_109f3648->ExitScopeInlined();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e37b0 size=0x136
 #include "CTraceFilterNoCharacterCollide.h"
 #include "CUnknown102e37b0.h"

@@ -12907,6 +12907,7 @@
 0x10013791 func   ?sub_100bedf0@bf_read@@QAEHXZ bf_read::sub_100bedf0
 0x10013796 func   ?sub_103d8300@CNPC_VWerewolf@@QAE_NPAVCAI_Hint@@@Z CNPC_VWerewolf::sub_103d8300
 0x1001379b func   _info_teleport_destination info_teleport_destination
+0x100137a0 func   ?sub_102e3450@CAI_MoveProbe@@QAEXABVVector@@PBMIPAUCGameTrace@@D@Z CAI_MoveProbe::sub_102e3450
 0x100137a5 func   ?sub_100bf350@@YAXPAIH@Z sub_100bf350
 0x100137aa func   ?sub_102b3d90@CAI_Timer2c@@QAEAAU1@ABU1@@Z CAI_Timer2c::sub_102b3d90
 0x100137af func   ?vfunc452@CAI_BaseNPC@@UAE_NXZ CAI_BaseNPC::vfunc452
