@@ -70476,6 +70476,21 @@ float sub_1013c7e0(const Vector &mins, const Vector &maxs, const Vector &point)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013c8c0 size=0x56
+#include "Vector.h"
+void sub_1013c8c0(const Vector &a, const Vector &v, const Vector &c, Vector &out)
+{
+	for (int i = 0; i < 3; i++) {
+		if (c[i] < a[i])
+			out[i] = a[i];
+		else if (c[i] > v[i])
+			out[i] = v[i];
+		else
+			out[i] = c[i];
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013c940 size=0x88
 #include "Vector.h"
 // TARGET: sub_1013c940

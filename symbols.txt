@@ -2293,6 +2293,7 @@
 0x100044d0 func   ?sub_10071770@CUnk10071770View@@QAEXPBD@Z CUnk10071770View::sub_10071770
 0x100044d5 func   ?sub_103c51a0@@YIPAXPAX@Z sub_103c51a0
 0x100044df func   ?sub_10368580@@YAXXZ sub_10368580
+0x100044e4 func   ?sub_1013c8c0@@YAXABVVector@@00AAV1@@Z sub_1013c8c0
 0x100044e9 func   ?sub_103b3bf0@@YIPAXPAX@Z sub_103b3bf0
 0x100044ee func   ?sub_101c72f0@@YAPAHXZ sub_101c72f0
 0x100044f3 func   ?vfunc466@CAI_BaseNPCTroika@@UAE_NXZ CAI_BaseNPCTroika::vfunc466
