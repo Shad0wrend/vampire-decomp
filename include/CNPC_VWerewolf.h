@@ -128,7 +128,9 @@ public:
 	int m_nState5cc0;	// 0x5cc0: the NPC state SelectSchedule switches on (0..0xe)
 	char pad5cc4[0x5d34 - 0x5cc4];
 	CNPC_VWerewolfHelper5d34 *m_pHelper5d34;	// 0x5d34
-	char pad5d38[0x5f2d - 0x5d38];
+	char pad5d38[0x5d40 - 0x5d38];
+	class CAI_MoveProbe *m_pMoveProbe5d40;	// 0x5d40: the move probe (CAI_BaseNPCTroika.h m_pMoveProbe5d40); CheckStuck calls its sub_102a99e0 (CAI_MoveProbe.h) for the alt-unstuck hull trace
+	char pad5d44[0x5f2d - 0x5d44];
 	char m_b5f2d;	// 0x5f2d
 	char pad5f2e[0x6264 - 0x5f2e];
 	float m_f6264;	// 0x6264
