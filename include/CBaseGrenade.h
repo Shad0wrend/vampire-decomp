@@ -24,7 +24,7 @@ public:
 	virtual void vfunc195(); virtual void vfunc196(); virtual void vfunc197(); virtual void vfunc198(); virtual void vfunc199();
 	virtual void vfunc200(); virtual void vfunc201(); virtual void vfunc202(); virtual void vfunc203(); virtual void vfunc204();
 	virtual void vfunc205(); virtual void vfunc206(); virtual void vfunc207(); virtual void vfunc208(); virtual void vfunc209();
-	virtual void vfunc210(); virtual void vfunc211(); virtual void vfunc212(); virtual void vfunc213(); virtual void vfunc214();
+	virtual void vfunc210(); virtual void vfunc211(); virtual void vfunc212(int set); virtual void vfunc213(); virtual void vfunc214();
 	virtual void vfunc215(); virtual void vfunc216(); virtual void vfunc217(); virtual void vfunc218(); virtual void vfunc219();
 	virtual float *vfunc220(); virtual void vfunc221(); virtual void vfunc222(); virtual void vfunc223(); virtual void vfunc224();
 	virtual void vfunc225(); virtual void vfunc226(); virtual void vfunc227(); virtual void vfunc228(); virtual void vfunc229();
