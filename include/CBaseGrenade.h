@@ -63,7 +63,7 @@ public:
 	virtual void vfunc390(); virtual void vfunc391(); virtual void vfunc392(); virtual void vfunc393(); virtual void vfunc394();
 	virtual void vfunc395(); virtual void vfunc396(); virtual void vfunc397(); virtual void vfunc398(); virtual void vfunc399();
 	virtual void vfunc400(); virtual void vfunc401(); virtual void vfunc402(); virtual void vfunc403(); virtual void vfunc404();
-	virtual void vfunc405(); virtual void vfunc406(); virtual void vfunc407(); virtual void vfunc408(); virtual float vfunc409();
+	virtual void vfunc405(); virtual void vfunc406(struct CGameTrace *pTrace, int bitsDamageType); virtual void vfunc407(); virtual void vfunc408(); virtual float vfunc409();
 	virtual float vfunc410(); virtual float vfunc411(); virtual void vfunc412(int value);
 	CBaseGrenade *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_1000a67d();	// as in CPhysForce (transplant)
