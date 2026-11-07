@@ -12,3 +12,4 @@ public:
 };
 
 extern CUnknown10738964 *g_10738964;	// the pointer at 0x10738964
+extern CUnknown10738964 *g_10709504;	// 0x10709504: same shape (slot 1 + m_n2c), the CFire::vfunc241 box debug overlay switch
