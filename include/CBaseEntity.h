@@ -229,6 +229,7 @@ public:
 	void sub_100b40f0(int a);
 	void sub_100bb790(const char *model, int value);	// subclass init (class not known yet; declared here): clears the colour bytes at +0x1a0, sets the model through slot 212, precaches it and sets the model index
 	void sub_100fbbb0(float time);	// "CBaseEntity::SetNextThink": stores time + gpGlobals->curtime at +0x17c (0 clears it)
+	void sub_1012ad20(CBaseEntity *pOther);
 	void sub_100fbc20();	// calls slot 242, then sub_100fbbb0(2.0f)
 	void sub_102575d0(CBaseEntity *pOther, int a, int b);	// hands the engine indices of pOther's and this entity's edicts (+0x2e0) to the game's callback sub_101ede10; the two extra arguments are unused
 	bool sub_103d3a40(const char *pszNameOrWildcard);	// "NameMatches" (inlined copy in NPC_VWerewolf): the entity name equals the argument, case-insensitively; a trailing '*' makes it a prefix match
