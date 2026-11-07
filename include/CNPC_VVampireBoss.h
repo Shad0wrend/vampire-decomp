@@ -33,7 +33,9 @@ public:
 	char pad1570[0x1b44 - 0x1570];
 	const char *m_pszSourceFile;	// +0x1b44: source file / line stamp of the last failure
 	int m_nSourceLine;	// +0x1b48
-	char pad1b4c[0x5ddc - 0x1b4c];
+	char pad1b4c[0x5d44 - 0x1b4c];
+	class CAI_Motor *m_pMotor5d44;	// +0x5d44: the motor (sub_102e0b40 / sub_102e2020 are called on it by StartTask)
+	char pad5d48[0x5ddc - 0x5d48];
 	int m_pTarget5ddc;	// +0x5ddc: the entity found by SelectHintNode
 	char pad5de0[0x628c - 0x5de0];
 	EHANDLE m_h628c;	// +0x628c: the entity the AOE damage is centered on / tested against (handle)
