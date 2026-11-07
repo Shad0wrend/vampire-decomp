@@ -127,7 +127,7 @@ public:
 	CBP_V1(sd0) virtual void vfunc216(float *pOrigin);
 	virtual int vfunc217(const void *pName, int a);
 	virtual void vfunc218(float *pAngles);	// slot 218: SetAbsAngles (the teleport_player command 0x101803a0 passes the vector it wrote to +0x206c)
-	CBP_V1(sd4)
+	virtual float *vfunc219();
 	virtual float *vfunc220();	// "CBaseEntity::GetOrigin"
 	virtual float *vfunc221();
 	void vfunc259(inputdata_t *pInput);	// slot 259 (0x10178a10): the player's scene/expression input handler (plain member so it can be defined; the slot itself is the se37 placeholder)
