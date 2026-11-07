@@ -502,6 +502,59 @@ void CWeaponRanged::vfunc316(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10239f70 size=0x207
+#include "CWeaponRanged.h"
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "UTIL_Trace.h"
+#include "CUnknown10738960.h"
+#include "QAngle.h"
+
+#define CVS(n) virtual void cv##n();
+#define CVS10(p) CVS(p##0) CVS(p##1) CVS(p##2) CVS(p##3) CVS(p##4) CVS(p##5) CVS(p##6) CVS(p##7) CVS(p##8) CVS(p##9)
+struct CPlayerCharView
+{
+	CVS10(a0) CVS10(a1) CVS10(a2) CVS10(a3) CVS10(a4) CVS10(a5) CVS10(a6) CVS10(a7) CVS10(a8) CVS10(a9)
+	CVS10(b0) CVS10(b1) CVS10(b2) CVS10(b3) CVS10(b4) CVS10(b5) CVS10(b6) CVS10(b7) CVS10(b8) CVS10(b9)
+	CVS10(c0) CVS10(c1)
+	virtual Vector *vfunc220();
+	CVS10(d0) CVS10(d1) CVS10(d2) CVS10(d3) CVS10(d4) CVS10(d5) CVS10(d6) CVS10(d7) CVS10(d8) CVS10(d9)
+	CVS10(e0) CVS10(e1) CVS10(e2) CVS10(e3) CVS10(e4) CVS10(e5)
+	CVS(f381) CVS(f382) CVS(f383) CVS(f384) CVS(f385) CVS(f386) CVS(f387) CVS(f388)
+	virtual Vector vfunc389(const Vector &vecSrc);
+};
+
+void sub_10139610(const QAngle *pAngles, Vector *pForward, Vector *pRight, Vector *pUp);
+extern char g_10538764[];
+extern char g_1058edc8[];
+
+void *CWeaponRanged::vfunc293()
+{
+	void *pOwner = sub_102521f0();
+	if (!pOwner)
+		return 0;
+	CBasePlayer *pChar = (CBasePlayer *)((CBaseEntity *)pOwner)->m_pA8;
+	if (!pChar)
+		return 0;
+
+	Vector vecForward;
+	Vector vecRight;
+	sub_10139610((const QAngle *)&pChar->m_vec206c, &vecForward, &vecRight, 0);
+
+	Vector vecStart;
+	vecStart = ((CPlayerCharView *)pChar)->vfunc389(*((CPlayerCharView *)pChar)->vfunc220());
+	CGameTrace tr;
+	UTIL_TraceLine_DebugCall(vecStart, vecStart + vecForward * 4096.0f, 0x46004003, pChar, 0, &tr);
+
+	CBaseEntity *pEntity;
+	if (tr.m_fraction < 1.0f && tr.m_pEnt != 0 &&
+	    ((unsigned char)((pEntity = tr.m_pEnt)->m_flags204 >> 13) & 1) != 0 && pEntity->m_p9c == 0 &&
+	    __RTDynamicCast(pEntity, 0, g_10538764, g_1058edc8, 0) != 0)
+		return pEntity;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a210 size=0x2c
 #include "CWeaponRanged.h"
 
