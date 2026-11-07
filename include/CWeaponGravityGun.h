@@ -25,7 +25,8 @@ public:
 	void sub_1014d110();
 	void sub_1014a0b0();
 	void sub_1014cbf0(float flRadius, float flOther);	// 0x1014cbf0 (ret 8): nearest-pair search over the 16 records at m_slots9d0 (outer index < m_nB14, inner index >= outer and < m_nB10); stores the best pair in m_hB18/m_hB1c and curtime in m_flB20, sets m_bB24 when the best squared distance is below 9.0f
-	void sub_1014abe0();
+	void sub_1014abe0();	// 0x1014abe0 (plain this-call, no arguments, 8-aligned frame): the per-frame update of the held object: traces from the owner's eye along the view (UTIL_TraceLine_Calls form, mask 0x46004003, CTraceFilterSimple(owner, 0)); attaches a new object with sub_1014d7c0 when none is held (slot 285 = the pick entity, owner slot 209 = ground entity check, 0x30 / 0x2f criminal acts through sub_101cebc0), else moves the held object towards the eye point (AngleMatrix sub_10139b90 of the controller's +0x80 angles and of the owner's yaw delta, sub_10138df0 / sub_10137ed0 composing them), grab distance m_fl91c, second trace mask 0x200400b, sub_1014cbf0(stat 0xe-ish radius, held entity), then the controller's origin vectors (+0x94c) and the CBaseEntity::sub_100a1250 / CUnk101c26d0 damage-info push (mask 0x20000000) when button 0x80000 is held; ends with sub_1014d140 (release) when the held object is farther than the squared limit [0x1057b7b8]^2
+	void sub_1014d7c0(CBaseEntity *pPick, const Vector *pForward, const Vector *pHitPos, CBaseEntity *pPick2);	// 0x1014d7c0 (stub 0x10012d91, ret 16, todo): attaches pPick (called with the slot 285 entity twice) at the hit position
 	void sub_1014c0f0();
 	void sub_1014c2b0();
 	void sub_1014c2d0();
