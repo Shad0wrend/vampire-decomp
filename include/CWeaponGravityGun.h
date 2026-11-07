@@ -43,7 +43,7 @@ public:
 	char m_b914;	// 0x914
 	char m_pad915[0x918 - 0x915];
 	EHANDLE m_hHeld918;	// 0x918
-	char m_pad91c[0x920 - 0x91c];
+	float m_fl91c;	// 0x91c: the grab distance (scaled by 0.1 while button 0x80000 / 0x100000 is held, clamped through sub_1013d400 with 1024.0f / 40.0f)
 	float m_fl920;	// 0x920: a distance parameter (remapped through sub_1014c680 with 0 / 200 / 1)
 	char m_pad924[0x928 - 0x924];
 	int m_nSoundState;	// 0x928
