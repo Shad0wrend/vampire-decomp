@@ -17679,6 +17679,84 @@ bool CBaseCineCam::sub_1006d9d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006db10 size=0x2f0
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCineCam.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+#include "UTIL_Trace.h"
+
+struct CUnknown1004f860
+{
+	void *sub_1004f860();
+};
+
+struct ScopeTraceOut
+{
+	void sub_10037300(const char *func, const char *name, const char *line);
+	~ScopeTraceOut() { (*g_109f3680)--; }
+};
+
+inline void TraceHullA(const Vector &vecStart, const float *vecEnd, const float *mins, const float *maxs, CTraceFilterSimple *pFilter, CGameTrace *ptr)
+{
+	ScopeTrace trace("UTIL_TraceHull", g_106b8540);
+	Ray_t ray;
+	((CUnknown1004f860 *)&ray)->sub_1004f860();
+	ray.sub_1006dec0(vecStart, vecEnd, mins, maxs, 0, 0);
+	g_1070b254->vfunc4(&ray, 0x1400b, (CTraceFilterNoCharacterCollide *)pFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+}
+
+inline void TraceHullB(const Vector &vecStart, const float *vecEnd, const float *mins, const float *maxs, CTraceFilterSimple *pFilter, CGameTrace *ptr)
+{
+	ScopeTraceOut trace;
+	trace.sub_10037300("UTIL_TraceHull", g_106b8540, g_106b8540);
+	Ray_t ray;
+	((CUnknown1004f860 *)&ray)->sub_1004f860();
+	ray.sub_1006dec0(vecStart, vecEnd, mins, maxs, 0, 0);
+	g_1070b254->vfunc4(&ray, 0x1400b, (CTraceFilterNoCharacterCollide *)pFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+}
+
+bool CBaseCineCam::sub_1006db10()
+{
+	Vector vecLook = sub_1006f670();
+	sub_100b3700();
+	Vector vecMaxs;
+	Vector vecMins(-1.0f, -1.0f, -1.0f);
+	vecMaxs.Init(1.0f, 1.0f, 1.0f);
+	CTraceFilterSimple filter(EHandle_Get(m_hTarget5d0), 0);
+	if (EHandle_Get(m_hShot610[0]))
+	{
+		Vector vecStart;
+		sub_1006f080(&vecStart, 0);
+		CGameTrace tr;
+		TraceHullA(vecStart, &vecLook.x, &vecMins.x, &vecMaxs.x, &filter, &tr);
+		if (tr.m_fraction < 1.0f || tr.m_allsolid || tr.m_startsolid)
+			return false;
+	}
+	if (EHandle_Get(m_hShot610[1]))
+	{
+		Vector vecStart;
+		sub_1006f080(&vecStart, 1);
+		CGameTrace tr;
+		TraceHullB(vecStart, &vecLook.x, &vecMins.x, &vecMaxs.x, &filter, &tr);
+		if (tr.m_fraction < 1.0f || tr.m_allsolid || tr.m_startsolid)
+			return false;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006dec0 size=0x1a4
 #include "Ray_t.h"
 #include <math.h>
