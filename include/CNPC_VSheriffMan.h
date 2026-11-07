@@ -9,7 +9,13 @@ class CEntityVSlots;
 class CNPC_VSheriffMan
 {
 public:
-	char pad0[0x1b2c];
+	char pad0[0x19c];
+	int m_nFlags19c;	// +0x19c: the entity flag word (StartTask ORs / clears bit 0x10)
+	char pad1a0[0x26c - 0x1a0];
+	const char *m_pszName26c;	// +0x26c: entity name (scope-trace entity-name argument, "" when null)
+	char pad270[0x2b4 - 0x270];
+	unsigned short m_usFlags2b4;	// +0x2b4: collision flag word (+0x44 of the CFlagsUnit object at +0x270; AddSolidFlags / RemoveSolidFlags use bit 4)
+	char pad2b6[0x1b2c - 0x2b6];
 	int m_n1b2c;	// +0x1b2c: set to 0x21 by the schedule selection
 	const char *m_pszSourceFile;	// +0x1b30: source file / line stamp of the last schedule change
 	int m_nSourceLine;	// +0x1b34
