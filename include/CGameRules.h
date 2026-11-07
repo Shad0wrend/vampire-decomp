@@ -57,7 +57,7 @@ public:
 	virtual float vfunc30(int a);
 	virtual bool vfunc31(int, int);
 	virtual bool vfunc32(int, int);
-	virtual void vfunc33(void *pInfo, void *a, float flDamage, int b, int c);
+	virtual void vfunc33(void *pInfo, void *a, float flDamage, int b, int c);	// slot 33 "RadiusDamage" (0x10128850, ret 0x14): really (const CTakeDamageInfo &info, const Vector &vecSrc, float flRadius, int iClassIgnore, bool bIgnoreWorld); the callers 0x101efcf0, 0x10266710, 0x103ef260, 0x103ef780, 0x103f0a00 pass CUnknown101c2770 * / SDmgInfo * so the typed form was rejected: first make them pass a CTakeDamageInfo *
 	virtual bool vfunc34(int);
 	virtual void vfunc35(CBaseEntity *pPlayer);	// "EquipPlayer"-like: gives the player its starting items
 	virtual void vfunc36(void *pPlayer);
