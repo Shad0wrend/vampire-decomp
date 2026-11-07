@@ -63575,6 +63575,101 @@ const char *sub_101273e0(int state)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10127b00 size=0x231
+#include "CGameMovement.h"
+#include "CGameMovementViews.h"
+#include "CGameTrace.h"
+#include "Ray_t.h"
+#include "globalvars.h"
+
+struct SGravVar
+{
+	virtual void vfunc0();
+	virtual char IsZero();
+	char m_pad0004[0x28 - 4];
+	float m_flValue;
+};
+
+extern SGravVar *g_109ef2d4;
+
+struct VecCallN
+{
+	Vector v;
+	VecCallN &operator=(const VecCallN &o) { v.sub_1003e4b0(o.v); return *this; }
+};
+
+struct CPlaneV
+{
+	VecCallN normal;
+	float dist;
+	char type;
+	char signbits;
+	char pad[2];
+};
+
+struct CTraceV
+{
+	Vector m_start;
+	Vector m_end;
+	CPlaneV m_plane;
+	float m_fraction;
+	int m_contents;
+	short m_dispFlags;
+	bool m_allsolid;
+	bool m_startsolid;
+	float m_fractionleftsolid;
+	const char *m_surfaceName;
+	int m_i40;
+	int m_hitgroup;
+	short m_physicsbone;
+	void *m_pEnt;
+	int m_hitbox;
+};
+
+// TARGET: CGameMovement::sub_10127b00
+void CGameMovement::sub_10127b00(Vector *pStart, Vector *pEnd)
+{
+	CGameTrace *pTrace = (CGameTrace *)pStart;
+	Vector *pStep = pEnd;
+
+	int nType = ((CMoveDataView *)m_pMove)->g95();
+	if (nType >= 0 && nType <= 1)
+	{
+		float flOverbounce;
+		if (((CMoveDataView *)m_pMove)->g95() == 1)
+			flOverbounce = 2.0 - m_fieldA0;
+		else
+			flOverbounce = 1.0f;
+		sub_10124120(((CMovePlayerView *)m_pPlayer)->m_vecVelocity, *(Vector *)pTrace->m_planeNormal, ((CMovePlayerView *)m_pPlayer)->m_vecVelocity, flOverbounce);
+	}
+
+	if (pTrace->m_planeNormal[2] > 0.7)
+	{
+		float flGravity = g_109ef2d4->IsZero() ? g_104454c4 : g_109ef2d4->m_flValue;
+		if (((CMovePlayerView *)m_pPlayer)->m_vecVelocity.z < flGravity * gpGlobals->frametime)
+		{
+			sub_101256d0(pTrace->m_pEnt);
+			((CMovePlayerView *)m_pPlayer)->m_vecVelocity.z = 0.0f;
+		}
+
+		if (DotProduct(((CMovePlayerView *)m_pPlayer)->m_vecVelocity, ((CMovePlayerView *)m_pPlayer)->m_vecVelocity) < 900.0f || ((CMoveDataView *)m_pMove)->g95() != 1)
+		{
+			sub_101256d0(pTrace->m_pEnt);
+			Vector &vel = ((CMovePlayerView *)m_pPlayer)->m_vecVelocity;
+			vel.x = 0.0f;
+			vel.y = 0.0f;
+			vel.z = 0.0f;
+		}
+		else
+		{
+			VectorScale(((CMovePlayerView *)m_pPlayer)->m_vecVelocity, (1.0 - pTrace->m_fraction) * gpGlobals->frametime * 0.9, *pStep);
+			*(CTraceV *)pTrace = (const CTraceV &)sub_10123f40(*pStep);
+		}
+		VectorCopy(((CMovePlayerView *)m_pPlayer)->m_vecVelocity, ((CMovePlayerView *)m_pPlayer)->m_vecVelocity);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128270 size=0x2f
 #include "CGameMovement.h"
 

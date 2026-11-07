@@ -3173,6 +3173,7 @@
 0x10005916 func   ?sub_101c2a10@CUnknown101c2a10@@QAEXH@Z CUnknown101c2a10::sub_101c2a10
 0x1000591b func   ?sub_1028ebc0@CUnknown1028ebc0@@QAE_NPAX@Z CUnknown1028ebc0::sub_1028ebc0
 0x10005925 func   ?vfunc117@CPropModelState@@UAEHXZ CPropModelState::vfunc117
+0x1000592a func   ?sub_10127b00@CGameMovement@@QAEXPAVVector@@0@Z CGameMovement::sub_10127b00
 0x10005934 func   ?vfunc124@CFuncMoveLinear@@UAEHXZ CFuncMoveLinear::vfunc124
 0x10005939 func   ?sub_100ae320@@YAXXZ sub_100ae320
 0x1000593e func   ?vfunc138@CNPC_VMingXiao@@UAEHXZ CNPC_VMingXiao::vfunc138
