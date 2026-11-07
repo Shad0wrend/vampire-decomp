@@ -73,7 +73,7 @@ struct CMoveFlagsView	// the same object as CMoveDataView, data side
 struct CMoveDataView	// the entity at CGameMovement::m_pMove: vtable only; the data are in CMoveFlagsView (same address)
 {
 	GMV10(0) GMV10(1) GMV10(2) GMV10(3) GMV10(4) GMV10(5) GMV10(6) GMV10(7) GMV10(8)
-	GMV(90) GMV(91) GMV(92) GMV(93) virtual int g94();	// slot 94 (+0x178): the move type (2 / 9 are tested by CheckVelocity)
+	GMV(90) GMV(91) GMV(92) virtual void vfunc93(int a, int b); virtual int g94();	// slot 94 (+0x178): the move type (2 / 9 are tested by CheckVelocity)
 	virtual int g95();	// slot 95 (+0x17c): the move type
 	GMV(96) GMV(97) GMV(98) GMV(99)
 	GMV10(10) GMV10(11) GMV10(12) GMV10(13) GMV10(14) GMV10(15) GMV10(16) GMV10(17) GMV10(18) GMV10(19)
