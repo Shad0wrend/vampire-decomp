@@ -148389,6 +148389,52 @@ void CAI_BaseNPC::sub_10260a50(int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10263d30 size=0x1f1
+float sub_102e1470(float a, float b, float c);
+
+// TARGET: sub_10263d30
+float sub_10263d30(float p1, float p2, float p3, float p4, float p5, float p6, float *p7, float *p8)
+{
+	float sign = 1.0f;
+	if (p2 < 0.0f) {
+		p2 = -p2;
+		p4 = -p4;
+		sign = -1.0f;
+	}
+	*p8 = p4;
+	*p7 = 0.0f;
+	if (p2 < 0.01)
+		return sign * p3;
+	float f = sub_102e1470(p4, p3, p2);
+	*p8 = p4;
+	if (f < 0.0f && -p6 > f) {
+		*p8 = f * p1 + p4;
+		if (*p8 < 0.0f)
+			*p8 = 0.0f;
+	} else if (f > 0.0f && f >= p6) {
+		*p8 = f * p1 + p4;
+	} else if (p4 < p5) {
+		*p8 = p1 * p6 + p4;
+		if (*p8 > p5)
+			*p8 = p5;
+		if ((p4 + *p8) * p1 * 0.5 > p2)
+			*p8 = ((2.0f / p1) * p2 - p4) * 0.5;
+	} else if (p4 > p5) {
+		*p8 = p4 - p1 * p6;
+		if (*p8 < p5)
+			*p8 = p5;
+	}
+	float v = (p4 + *p8) * p1 * 0.5;
+	if (v > p2) {
+		*p8 = p3;
+		v = p2;
+	}
+	*p8 = sign * *p8;
+	*p7 = (p2 - v) * sign;
+	return 0.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10263fb0 size=0x33
 #include "CUtlMemory36.h"
 extern void *(*g_109f3634)(int);

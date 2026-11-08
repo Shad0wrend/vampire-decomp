@@ -8802,6 +8802,7 @@
 0x1000d96d func   ?vfunc81@CWeaponRanged_Rifle_SuperShotgun@@UAEHXZ CWeaponRanged_Rifle_SuperShotgun::vfunc81
 0x1000d977 func   ?sub_1009a370@@YAHXZ sub_1009a370
 0x1000d97c func   ?sub_100847e0@CSceneEntity@@QAEXPAX@Z CSceneEntity::sub_100847e0
+0x1000d981 func   ?sub_10263d30@@YAMMMMMMMPAM0@Z sub_10263d30
 0x1000d986 func   ?vfunc347@CBaseCombatWeapon@@UAEHH@Z CBaseCombatWeapon::vfunc347
 0x1000d98b func   ?vfunc180@CFire@@QAEXXZ CFire::vfunc180
 0x1000d990 func   ?sub_1026dc60@CUnknown1026dc60@@QAEXXZ CUnknown1026dc60::sub_1026dc60
