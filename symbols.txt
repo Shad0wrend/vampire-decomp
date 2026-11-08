@@ -1925,6 +1925,7 @@
 0x10003b52 func   ?sub_10306200@CSlotList@@QAEXH@Z CSlotList::sub_10306200
 0x10003b57 func   ?sub_10376b70@CNPC_VFrenzyShadow@@QAEDH@Z CNPC_VFrenzyShadow::sub_10376b70
 0x10003b5c func   ?sub_100c9e10@@YAPAHXZ sub_100c9e10
+0x10003b61 func   ?sub_10338b00@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_10338b00
 0x10003b6b func   ?sub_101fd940@CVStatActionList_t@@QAEXPAXHH@Z CVStatActionList_t::sub_101fd940
 0x10003b70 func   ?sub_103aaa80@CNPC_VSabbatLeader@@QAEXXZ CNPC_VSabbatLeader::sub_103aaa80
 0x10003b75 func   ?vfunc82@CFuncPlat@@UAEPAUdatamap_t@@XZ CFuncPlat::vfunc82
