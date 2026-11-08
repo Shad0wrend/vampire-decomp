@@ -11437,6 +11437,7 @@
 0x100114a5 func   ?RemoveRebalance@?$CUtlRBTree@UCRBTree12Entry_102ec4a0@@G@@QAEXG@Z CUtlRBTree<CRBTree12Entry_102ec4a0,unsigned short>::RemoveRebalance
 0x100114aa func   ?sub_102e7e40@@YIXPAUCOwner@@@Z sub_102e7e40
 0x100114af func   ?sub_100d6210@@YAXXZ sub_100d6210
+0x100114b4 func   ?sub_10081ed0@CSceneEntity@@QAEXXZ CSceneEntity::sub_10081ed0
 0x100114b9 func   ?sub_10185450@UtlMem@@QAEXXZ UtlMem::sub_10185450
 0x100114be func   ?sub_1006e0e0@@YIXPAD@Z sub_1006e0e0
 0x100114cd func   ?sub_101d6890@CPartListUnit3@@QAEXXZ CPartListUnit3::sub_101d6890

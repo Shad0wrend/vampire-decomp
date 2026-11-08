@@ -26262,6 +26262,73 @@ void __fastcall sub_10081eb0(CSlots *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10081ed0 size=0x276
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CSceneEntity.h"
+#include "CBaseAnimating.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+#include "CEntityVSlots.h"
+
+struct CUnknown1007a2a0 { int sub_1007a2a0(); };
+struct CUnknown1007a2c0 { CSceneActorRecord *sub_1007a2c0(int i); };
+struct CUnknown1029f2e0 { char sub_1029f2e0(); void sub_1029f300(int a); };
+extern "C" void *__cdecl __RTDynamicCast(void *, long, void *, void *, int);
+extern char g_10538764[];
+extern char g_1053dd10[];
+
+void CSceneEntity::sub_10081ed0()
+{
+	for (int i = 0; i < ((CUnknown1007a2a0 *)m_pScene4bc)->sub_1007a2a0(); i++) {
+		CSceneActorRecord *pRec = ((CUnknown1007a2c0 *)m_pScene4bc)->sub_1007a2c0(i);
+		if (!pRec)
+			continue;
+		CBaseEntity *pEntity = vfunc268(pRec->sub_10072d90(), 0);
+		if (!pEntity)
+			continue;
+		CBaseAnimating *pAnim = (CBaseAnimating *)__RTDynamicCast(pEntity, 0, g_10538764, g_1053dd10, 0);
+		if (!pAnim)
+			continue;
+		CEntityVSlots *pe = (CEntityVSlots *)pEntity;
+		CUnknown1029f2e0 *pNpc = *(CUnknown1029f2e0 **)((char *)pEntity + 0x98);
+		pRec->sub_10072e60(*pe->slot217(), *pe->slot219());
+		if (pNpc)
+			pRec->m_bFlag00 = pNpc->sub_1029f2e0();
+		pRec->m_n04 = pe->slot94();
+		pRec->m_n08 = pe->slot95();
+		pRec->m_n10 = pe->slot211();
+		pRec->m_n0c = pe->slot92();
+		if (m_n574 == 1) {
+			CEntityVSlots *ps = (CEntityVSlots *)this;
+			pe->slot216(ps->slot217());
+			pe->slot218(ps->slot219());
+			if (pNpc)
+				pNpc->sub_1029f300(1);
+			pAnim->sub_10090bc0(0x10);
+			pe->slot93(0, 0);
+			{
+				const char *name = *(const char **)((char *)pEntity + 0x26c);
+				ScopeTrace scope("CBaseEntity::SetSolid", name ? name : g_106b8540);
+				((CCollisionProperty *)((char *)pEntity + 0x270))->sub_100dc480(0);
+			}
+			{
+				const char *name = *(const char **)((char *)pEntity + 0x26c);
+				ScopeTrace scope("CBaseEntity::AddSolidFlags", name ? name : g_106b8540);
+				CCollisionProperty *pCol = (CCollisionProperty *)((char *)pEntity + 0x270);
+				pCol->sub_100dc580(*(unsigned short *)((char *)pCol + 0x44) | 4);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100821f0 size=0x169
 #include "CSceneEntity.h"
 #include "CBaseAnimating.h"
