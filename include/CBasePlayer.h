@@ -217,7 +217,9 @@ public:
 	int m_n22C;	// 0x022C: set to -1 when the command run is paused
 	char m_pad0230[0x268 - 0x230];	// 0x0230 .. 0x0267
 	unsigned int m_fFlags268;	// 0x0268: the entity flag word (bit 12 = attached to a parent)
-	char m_pad026C[4];	// 0x026C .. 0x026F
+	const char *m_name26c;	// 0x026C: the entity name
+	void sub_1015f150(struct inputdata_t *pInput);	// "CBasePlayer::InputPlayHUDParticle"
+	void sub_1015f330(struct inputdata_t *pInput);	// "CBasePlayer::InputStopHUDParticle" (stub 0x10015ae1)
 	CBasePlayerSub270 m_sub270;	// 0x0270
 	char m_pad0274[0x6c];	// 0x0274 .. 0x02DF
 	int m_n02E0;
@@ -436,7 +438,7 @@ public:
 	CUtlVector<CBasePlayerMapVisit> m_MapVisits1e10;	// 0x1E10: the maps visited
 	int m_lBirthday;	// 0x1e24	// 0x1E10 .. 0x1E27
 	CUtlVector<GLOBAL_EMAIL> m_GlobalEmail;	// 0x1E28: the global email flag records (0x240 bytes each)
-	char m_pad1E3C[4];	// 0x1E3C .. 0x1E3F
+	EHANDLE m_hHud1E3C;	// 0x1E3C: the HUD particle entity handle
 	CPlayerLocalPredictedData m_Local1E40;	// 0x1E40 .. 0x1E73: vptr 0x10470490, then +0x04 (the model index), +0x08, +0x0c (default spread models), +0x10 (m_n2068), +0x14 (20 bytes the engine slot 112 fills)
 	unsigned int m_flags1E74;
 	int m_n1E78;	// 0x1E78: 0 on death (vfunc144)
