@@ -48652,6 +48652,102 @@ done:
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d9220 size=0x1f4
+// TARGET: sub_100d9220
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+#include "CVStatInfo_t.h"
+#include "CVStatInfoList_t.h"
+#include "CUnknown101f9c70.h"
+#include "CVariantCopy.h"
+#include "engineserver.h"
+
+struct CUnk10230f00
+{
+	int m_a, m_b, m_c, m_d;
+	CUnk10230f00 *sub_10230f00(int a, int b);
+};
+
+struct CEventOwner
+{
+	void sub_100ce2b0(CBaseEntity *pSource, CVariantCopy blob, float flDelay, const CUnk10230f00 *pQuad, int n14);
+	bool sub_100ce600(int *pOut);
+};
+
+class SList2
+{
+public:
+	void sub_10227a30(int a, int b);
+};
+
+extern CVStatInfoList_t g_1074e5f8;
+extern CEventOwner g_106e7050;
+extern SList2 g_10750cb4;
+extern void (__cdecl *g_109f3650)(int level, const char *pszText);
+
+#define OWNER_SCALE(p) (*(float *)((char *)(p) + 0x1488))
+
+bool sub_100d9220(CBaseCombatCharacter *pChar, int nStat, int nValue, int nValue2)
+{
+	void *pOwner = pChar->m_pA8;
+
+	CUnk10230f00 block;
+	block.sub_10230f00(3, nStat);
+
+	CVariantCopy value;
+	value.m_value = -nValue;
+	value.m_fieldType = 4;
+
+	float flScale = 1.0f;
+
+	int nDuration = g_1074e5f8.sub_10200370(nStat)->sub_101fed90(nValue + nValue2);
+	float flDuration = (float)nDuration;
+
+	int nMod = 100;
+	((CUnknown101f9c70 *)((char *)pChar + 0x13dc))->sub_101f9ff0(10, 2, nStat, (int)&nMod);
+
+	float flNum = (nMod != 100) ? (float)nMod * flDuration * 0.01 : flDuration;
+	if (pOwner != 0 && OWNER_SCALE(pOwner) > 0.0f)
+		flScale = OWNER_SCALE(pOwner);
+	flDuration = flNum / flScale;
+
+	if (pOwner != 0)
+	{
+		switch (nStat)
+		{
+		case 1: g_10750cb4.sub_10227a30((int)pOwner, 7); break;
+		case 3: g_10750cb4.sub_10227a30((int)pOwner, 8); break;
+		case 4: g_10750cb4.sub_10227a30((int)pOwner, 9); break;
+		case 7: g_10750cb4.sub_10227a30((int)pOwner, 0xa); break;
+		case 8: g_10750cb4.sub_10227a30((int)pOwner, 0xb); break;
+		case 9: g_10750cb4.sub_10227a30((int)pOwner, 0xc); break;
+		case 10: g_10750cb4.sub_10227a30((int)pOwner, 0xd); break;
+		case 11: g_10750cb4.sub_10227a30((int)pOwner, 0xe); break;
+		}
+	}
+
+	if (flDuration >= 0.0f)
+	{
+		g_106e7050.sub_100ce2b0(pChar, value, flDuration, &block, 0);
+
+		if (pOwner != 0)
+		{
+			if (g_106e7050.sub_100ce600((int *)&flDuration))
+			{
+				((float *)((char *)pOwner + 0x1b20))[nStat] = (float)EngineGlobals::g_1070b22c->vfunc119(0);
+				((float *)((char *)pOwner + 0x1adc))[nStat] = flDuration - EngineGlobals::g_1070b22c->vfunc119(0);
+			}
+			else
+			{
+				g_109f3650(1, "ERROR: Failed to find inserted discipline stat event!\n");
+			}
+		}
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d94a0 size=0x118
 #include "utlrbtree.h"
 #include "utlsortvector.h"
