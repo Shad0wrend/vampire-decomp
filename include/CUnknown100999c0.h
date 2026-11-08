@@ -2,6 +2,7 @@
 #pragma once
 
 #include "UtlMem.h"
+#include "utlvector.h"
 
 class CBaseEntity;
 
@@ -15,7 +16,7 @@ class CUnknown100999c0
 {
 public:
 	int m_0;
-	CUnknown100999c0_List m_List;	// 0x04
+	CUtlVector<EHANDLE> m_List;	// 0x04
 
 	void sub_100999c0(CBaseEntity *pEnt);	// "AddToTailUnique": appends pEnt's handle (-1 for null) unless an element already resolves to the same entity
 };
