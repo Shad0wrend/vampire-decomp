@@ -6438,6 +6438,7 @@
 0x1000a137 func   ?vfunc438@CNPC_VCamera@@QAEHXZ CNPC_VCamera::vfunc438
 0x1000a13c func   ?vfunc15@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEXH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc15
 0x1000a141 func   ?vfunc365@CNPCMaker_Fleshpile@@UAE_NH@Z CNPCMaker_Fleshpile::vfunc365
+0x1000a146 func   ?sub_10309230@CUnknown1030a6e0@@QAEXPAXM@Z CUnknown1030a6e0::sub_10309230
 0x1000a14b func   ?sub_10170d60@CBasePlayer@@QAEXXZ CBasePlayer::sub_10170d60
 0x1000a150 func   ?vfunc82@CBaseMoneyObject@@QAEPAUdatamap_t@@XZ CBaseMoneyObject::vfunc82
 0x1000a155 func   ?sub_102ae8e0@CUnknown102ae8e0@@QAEHH@Z CUnknown102ae8e0::sub_102ae8e0

@@ -182533,6 +182533,108 @@ void __stdcall sub_10309120(float flAngle, float flStep, int nCount, float *pFir
 }
 // END FUNCTION
 
+// FUNCTION: 0x10309230 size=0x319
+#include "CUnknown1030a6e0.h"
+#include "CUnknown102652d0.h"
+#include "CGlobalEntityList.h"
+#include "CCollisionProperty.h"
+#include "CEntityVSlots.h"
+
+extern CGlobalEntityList *g_10566458;
+
+struct CUnknown102e4f20
+{
+	void *sub_102e4f20(int a);
+};
+
+void sub_10309620(float *a, float *b, float *c);
+CBaseEntity *sub_101cd9e0(int index);
+
+// TARGET: CUnknown1030a6e0::sub_10309230
+void CUnknown1030a6e0::sub_10309230(void *pGoal, float flTolerance)
+{
+	CBaseEntity **base = (CBaseEntity **)g_1090fe10.sub_102652d0();
+
+	Vector maxs, mins;
+	((CCollisionProperty *)((char *)m_pOuter + 0x270))->vfunc15(&maxs, &mins);
+
+	float radiusSelf;
+	{
+		float size[2];
+		sub_10309620((float *)&maxs, (float *)&mins, size);
+		radiusSelf = pfSqrt((size[0] * size[0]) + (size[1] * size[1])) * 0.5;
+	}
+	maxs.z -= 12.0f;
+	mins.z += 12.0f;
+
+	for (int i = 0; i < g_1090fe10.sub_102652f0(); i++)
+	{
+		CBaseEntity *pEntity = base[i];
+		if (pEntity == (CBaseEntity *)m_pOuter)
+			continue;
+
+		void *pBlocker = *(void **)((char *)pGoal + 0x3c);
+		if (pBlocker != 0)
+		{
+			if (pEntity == g_10566458->sub_100290c0((const unsigned int *)((char *)pBlocker + 0x30)))
+				continue;
+		}
+
+		Vector emaxs, emins;
+		((CCollisionProperty *)((char *)pEntity + 0x270))->vfunc15(&emaxs, &emins);
+
+		if (!(emaxs.z < mins.z))
+			continue;
+		if (!(emins.z > maxs.z))
+			continue;
+
+		float dxz[2];
+		dxz[0] = emaxs.x - emins.x;
+		dxz[1] = emaxs.y - emins.y;
+		float dxzCopy[2];
+		((CUnknown102e4f20 *)dxzCopy)->sub_102e4f20((int)dxz);
+		float otherHalf = pfSqrt(dxzCopy[0] * dxzCopy[0] + dxzCopy[1] * dxzCopy[1]) * 0.5;
+
+		Vector *pOwnerOrigin = ((CEntityVSlots *)m_pOuter)->slot217();
+		Vector *pEntityOrigin = ((CEntityVSlots *)pEntity)->slot217();
+		float dd[2];
+		dd[0] = pEntityOrigin->x - pOwnerOrigin->x;
+		dd[1] = pEntityOrigin->y - pOwnerOrigin->y;
+		float ddCopy[2];
+		((CUnknown102e4f20 *)ddCopy)->sub_102e4f20((int)dd);
+
+		if (pfSqrt(ddCopy[0] * ddCopy[0] + ddCopy[1] * ddCopy[1]) - otherHalf < radiusSelf + flTolerance)
+		{
+			sub_1030a6e0(((CEntityVSlots *)pEntity)->slot192(), otherHalf, pEntity, 3);
+		}
+	}
+
+	CBaseEntity *pPlayer = sub_101cd9e0(1);
+	if (pPlayer != 0)
+	{
+		Vector pmaxs, pmins;
+		((CCollisionProperty *)((char *)pPlayer + 0x270))->vfunc15(&pmaxs, &pmins);
+
+		if (pmaxs.z < mins.z && pmins.z > maxs.z)
+		{
+			float pdx = pmaxs.x - pmins.x;
+			float pdy = pmaxs.y - pmins.y;
+			float pOtherHalf = pfSqrt(pdx * pdx + pdy * pdy) * 0.5;
+
+			Vector *pOwnerOrigin = ((CEntityVSlots *)m_pOuter)->slot217();
+			Vector *pPlayerOrigin = ((CEntityVSlots *)pPlayer)->slot217();
+			float ddx; ddx = pPlayerOrigin->x - pOwnerOrigin->x;
+			float ddy; ddy = pPlayerOrigin->y - pOwnerOrigin->y;
+
+			if (pfSqrt((ddy * ddy) + (ddx * ddx)) - pOtherHalf < radiusSelf + flTolerance)
+			{
+				sub_1030a6e0(((CEntityVSlots *)pPlayer)->slot192(), pOtherHalf, pPlayer, 3);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10309620 size=0x1c
 // TARGET: sub_10309620
 void __cdecl sub_10309620(float *a, float *b, float *out)
