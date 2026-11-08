@@ -69,6 +69,7 @@ public:
     int m_createFrame;	// 0x0760
     const char *m_pszExplosion764;    // 0x764: name of the explosion parameters entity (null = none; g_106b8540 stands in for messages)
     EHANDLE m_hAttacker768;    // 0x768: the attacker of the break
+    void sub_100b1d10();
     void sub_1018f620();    // the break think: slot 266 with the attacker (handle +0x768), then SetThink(0, 0, 0)
     int m_nBreakMode;    // 0x76c: 0, 1 or 2 (anything else warns and becomes 2)
     float m_flFadeTime770;    // 0x770
