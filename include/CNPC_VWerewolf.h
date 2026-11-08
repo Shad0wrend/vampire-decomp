@@ -134,7 +134,9 @@ public:
 	char m_b5f2d;	// 0x5f2d
 	char pad5f2e[0x6264 - 0x5f2e];
 	float m_f6264;	// 0x6264
-	char pad6268[0x665c - 0x6268];
+	char pad6268[0x628c - 0x6268];
+	EHANDLE m_h628c;	// 0x628c (CAI_BaseNPCTroika.h)
+	char pad6290[0x665c - 0x6290];
 	CNPC_VWerewolfTimerVec m_Timers;	// 0x665c
 	int m_nCacheTick;	// 0x6670: engine tick of the cached vector
 	CNPC_VWerewolfVec3 m_vCache;	// 0x6674: cached vector
@@ -168,10 +170,11 @@ public:
 	unsigned int m_nFlags66e8;	// 0x66e8: attack state bits (4 and 0x100 make GatherAttackConditions compare heights)
 	float m_flTeleport66ec;	// 0x66ec
 	float m_flTime66f0;	// 0x66f0: the time of the last teleport out
-	char pad66f4[0x66f8 - 0x66f4];
+	float m_fl66f4;	// 0x66f4
 	float m_flNodeTime;	// 0x66f8: time stamp of the cached node
 	void *m_pNode;	// 0x66fc: cached nearest node
-	char pad6700[0x6708 - 0x6700];
+	int m_n6700;	// 0x6700
+	int m_n6704;	// 0x6704
 	int m_n6708;	// 0x6708
 	int m_n670c;	// 0x670c
 	char pad6710[0x6714 - 0x6710];
