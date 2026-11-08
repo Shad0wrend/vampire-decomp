@@ -197054,6 +197054,49 @@ void CNPC_Bullseye::sub_10006c26()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10356c30 size=0x224
+#include "UTIL_Trace.h"
+#include "CBroadcastRecipientFilter.h"
+#include "engineserver.h"
+#include "UTIL_BloodStream.h"
+#include "CBaseEntity.h"
+
+extern int g_105c230c[];
+
+struct CBoxTrace
+{
+	void sub_10356c30(float *pMinsMaxs, int index);
+};
+
+void CBoxTrace::sub_10356c30(float *pMinsMaxs, int index)
+{
+	if (index < 0)
+		return;
+	int tbl = g_105c230c[index * 2];
+	if (tbl < 0)
+		return;
+
+	Vector &mins = *(Vector *)pMinsMaxs;
+	Vector &maxs = *(Vector *)(pMinsMaxs + 3);
+
+	Vector vecDir = maxs - mins;
+	VectorNormalize(vecDir);
+	Vector vecStart = maxs - vecDir;
+	Vector vecScaled;
+	vecScaled = vecDir * 56755.84f;
+	Vector vecEnd = maxs + vecScaled;
+
+	CGameTrace tr;
+	UTIL_TraceLine_RayCall(vecStart, vecEnd, 0x46004003, this, 0, &tr);
+
+	CBroadcastRecipientFilter rf;
+	CBaseEntity *pEnt = tr.m_pEnt;
+	int ed = pEnt->m_pEdict2e0;
+	int entindex = engine->vfunc35(ed);
+	g_10540528->vfunc19(rf, 0, (const Vector *)&tr.m_endpos[0], &tr, entindex, tr.m_hitbox, tbl, 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10356ef0 size=0x29
 #include "CAI_BaseNPC.h"
 
