@@ -12026,6 +12026,47 @@ void CDisciplineParticleUnit::sub_10051a40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10051b00 size=0xcb
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CAuspexAura.h"
+#include "ScopeTrace.h"
+
+void *sub_100aa720(int size);
+extern void *vt_1044bf04[];
+extern char g_1053ea38[];
+
+extern "C" CBaseEntity *auspex_aura()
+{
+	CAuspexAura *pEnt;
+	void *pMem = sub_100aa720(0x4cc);
+	if (pMem) {
+		pEnt = (CAuspexAura *)pMem;
+		pEnt->sub_1000a9d4();
+		volatile unsigned int *h1 = &pEnt->m_hTarget4b8;
+		volatile unsigned int *h2 = &pEnt->m_hTransmitEnt;
+		*h1 = 0xffffffff;
+		*h2 = 0xffffffff;
+		*(void ***)pEnt = vt_1044bf04;
+		{
+			ScopeTrace trace("CAuspexAura::CAuspexAura", g_106b8540);
+			*(unsigned int *)((char *)pEnt + 0x19c) |= 0x400;
+			*h2 = 0xffffffff;
+		}
+	} else {
+		pEnt = 0;
+	}
+	pEnt->vfunc106(g_1053ea38);
+	return pEnt;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10053df0 size=0x13
 bool sub_10053df0(const unsigned int *a, const unsigned int *b)
 {
