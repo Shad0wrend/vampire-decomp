@@ -24,6 +24,18 @@ typedef const RBTree12_102cfaf0::Links_t &(RBTree12_102cfaf0::*LinksPtr_t)(unsig
 LinksPtr_t g_linksForce = &RBTree12_102cfaf0::Links;
 // END FUNCTION
 
+// FUNCTION: 0x102ceae0 size=0x36c
+#include "utlrbtree.h"
+
+struct CRBTree12Entry_102cfaf0
+{
+	int m_n;
+};
+
+// TARGET: CUtlRBTree<CRBTree12Entry_102cfaf0,unsigned short>::RemoveNode
+static void (CUtlRBTree<CRBTree12Entry_102cfaf0, unsigned short>::*s_RemoveNode)(unsigned short) = &CUtlRBTree<CRBTree12Entry_102cfaf0, unsigned short>::RemoveNode;
+// END FUNCTION
+
 // FUNCTION: 0x102cf0b0 size=0x829
 // TARGET: ?RemoveRebalance@?$CUtlRBTree@UCRBTree12Entry_102cfaf0@@G@@QAEXG@Z
 #include "utlrbtree.h"
