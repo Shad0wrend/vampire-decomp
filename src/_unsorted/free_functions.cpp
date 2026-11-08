@@ -148303,6 +148303,37 @@ void CBaseCombatWeapon::sub_10258620(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10258670 size=0x125
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CUnknown10258670.h"
+
+extern "C" int _strcmpi(const char *, const char *);
+
+bool CUnknown10258670::sub_10258670(CUnknown10258670Character *pChar)
+{
+    if (pChar) {
+        int key = pChar->m_nKey;
+        if (key >= 0 && key < g_1074f018) {
+            CUnknown10206400 *pList = CUnknown10206400_FindById(key);
+            for (int n = 0; n < pList->m_nEntries; n++) {
+                CUnknown10206340 *pEntry = CUnknown10206400_FindEntry(pList, n);
+                const char *pszName = pEntry->m_pszName ? pEntry->m_pszName : g_106b8540;
+                if (_strcmpi(pszName, vfunc348()) == 0)
+                    return true;
+            }
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102587f0 size=0x6
 namespace lifted {
 extern char g_1055ef2c;

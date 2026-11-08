@@ -11201,6 +11201,7 @@
 0x10010f69 func   _gibshooter gibshooter
 0x10010f6e func   ?vfunc291@CWeaponIArmor@@UAEXXZ CWeaponIArmor::vfunc291
 0x10010f78 func   ?sub_100b5080@@YA_NXZ sub_100b5080
+0x10010f7d func   ?sub_10258670@CUnknown10258670@@QAE_NPAUCUnknown10258670Character@@@Z CUnknown10258670::sub_10258670
 0x10010f82 func   ?sub_10078630@CUnknown10078630@@QAEHXZ CUnknown10078630::sub_10078630
 0x10010f87 func   ?vfunc80@CWeaponMelee_Katana@@UAEPAXXZ CWeaponMelee_Katana::vfunc80
 0x10010f8c func   ?vfunc103@CGeneric_NPC@@UAEXXZ CGeneric_NPC::vfunc103
