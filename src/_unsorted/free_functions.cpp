@@ -45696,6 +45696,30 @@ int sub_100cffa0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d04b0 size=0xdc
+#include "CBaseEntity.h"
+#include "inputdata_t.h"
+
+void variant_t::sub_100d04b0(void *data)
+{
+	switch (fieldType) {
+	case 5:  *((bool *)data) = iValue != 0; break;
+	case 4:  *((int *)data) = iValue; break;
+	case 2:  *((const char **)data) = iszValue; break;
+	case 1:  *((float *)data) = flValue; break;
+	case 8:  *((int *)data) = iValue; break;
+	case 3:
+	case 14:
+		((int *)data)[0] = ((int *)this)[0];
+		((int *)data)[1] = ((int *)this)[1];
+		((int *)data)[2] = ((int *)this)[2];
+		break;
+	case 12: *((unsigned int *)data) = eVal; break;
+	case 11: *((CBaseEntity **)data) = ((EHANDLE *)&eVal)->Get(); break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d0a00 size=0x1c4
 #include "CBaseEntity.h"
 #include "CVariantCopy.h"

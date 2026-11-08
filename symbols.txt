@@ -6988,6 +6988,7 @@
 0x1000ad85 func   ?sub_100b2150@CBaseEntity@@QAEPAMPAM@Z CBaseEntity::sub_100b2150
 0x1000ad8a func   ?sub_100ad100@@YIXPAVCBaseEntity@@HH@Z sub_100ad100
 0x1000ad8f func   ?sub_101d6500@@YGDHH@Z sub_101d6500
+0x1000ad94 func   ?sub_100d04b0@variant_t@@QAEXPAX@Z variant_t::sub_100d04b0
 0x1000ad99 func   ?sub_102c2b20@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_102c2b20
 0x1000ad9e func   ?vfunc80@CWeaponMelee_SabbatLeaderAttack@@QAEHXZ CWeaponMelee_SabbatLeaderAttack::vfunc80
 0x1000ada3 func   ?sub_102e2630@CUnknown102e2630@@QAEHH@Z CUnknown102e2630::sub_102e2630
