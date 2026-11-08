@@ -82122,6 +82122,61 @@ int sub_10181040()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101812f0 size=0x18d
+#include "CBasePlayer.h"
+#include "CBaseAnimating.h"
+
+class CBasePlayer;
+struct S_FS {
+    virtual void *Open(const char *pName, const char *pMode, const char *pPathId);
+    virtual void Close(void *h);
+    virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
+    virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+    virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16();
+    virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20();
+    virtual int FPrintf(void *h, const char *pFormat, ...);
+};
+struct S_Player { CBaseAnimating *sub_1015d680(int i); };
+
+extern S_FS *g_1070b238;
+extern int g_1090fbe4;
+extern char g_10538764[];
+extern char g_1053dd10[];
+extern "C" __declspec(dllimport) void Msg(const char *pMsg, ...);
+extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+extern "C" void *__cdecl __RTDynamicCast(void *pIn, long vfDelta, void *pSrc, void *pTarget, int isRef);
+CBasePlayer *sub_101193b0();
+CBaseEntity *sub_10172710(CBasePlayer *pPlayer);
+const char *sub_1025d730(int activity);
+void sub_101810f0(void *h, void *pModel, int *pCount);
+
+void sub_101812f0()
+{
+    CBasePlayer *pPlayer = sub_101193b0();
+    if (g_1070b238 && pPlayer) {
+        void *h = g_1070b238->Open("..\\act_list.txt", "wt", 0);
+        int n; n = g_1090fbe4;
+        Msg("Dumping activity list (%d items)...\n", n);
+        g_1070b238->FPrintf(h, "Dumping activity list (%d items)...\n", n);
+        { int i; i = 0; while ((int)i < (int)n) { char buf[256];
+            Q_snprintf(buf, 256, "%-4d: %s\n", i, sub_1025d730(i));
+            g_1070b238->FPrintf(h, buf); i++; } }
+        g_1070b238->FPrintf(h, "\n\n***********************************************************************\n\n");
+        CBaseAnimating *pAnim = (CBaseAnimating *)__RTDynamicCast(sub_10172710(pPlayer), 0, g_10538764, g_1053dd10, 0);
+        if (!pAnim || !pAnim->sub_100952d0(-1))
+            pAnim = (CBaseAnimating *)pPlayer;
+        n = 0;
+        sub_101810f0(h, pAnim->sub_100952d0(-1), &n);
+        g_1070b238->FPrintf(h, "\n\n***********************************************************************\n\n");
+        g_1070b238->FPrintf(h, "Dumping view models", n);
+        Msg("Dumping view models", n);
+        { int j; j = 0; while (2 > j) { n = 0;
+            sub_101810f0(h, ((S_Player *)pPlayer)->sub_1015d680(j)->sub_100952d0(-1), &n); ++j; } }
+        g_1070b238->Close(h);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10181580 size=0x15
 #include "CAI_BaseNPCTroika.h"
 
