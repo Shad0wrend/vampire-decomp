@@ -5689,6 +5689,126 @@ void CBaseEntity::sub_1003a090()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003aca0 size=0x3ee
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CGameTrace.h"
+#include "ScopeTrace.h"
+#include "CVProfile.h"
+#include "globalvars.h"
+#include "Vector.h"
+struct CVarV2 { virtual void v0(); virtual char vfunc1(); int pad4[10]; int m2c; };
+struct CCollV { virtual void v0(); virtual int vfunc1(); virtual int vfunc2(); };
+struct CPOV {
+	EVS10(0) EVS10(1) EVS10(2) EVS10(3) EVS(40) EVS(41) EVS(42) EVS(43) EVS(44) EVS(45)
+	virtual void slot46(Vector *pOrigin, void *pAngles, bool flag, float dt);
+	virtual void slot47(Vector *pOut, int a);
+};
+extern CVarV2 *g_106bbaa4;
+struct ELV { int sub_100290c0(void *h); };
+extern ELV *g_10566458;
+extern char g_1070d9d0[];
+extern float g_104454c4;
+void sub_10035030(void *a, void *b, void *c, int d, int e, int f, void *g);
+struct CCycleSample {
+	unsigned __int64 m_Int64;
+	void Sample() { unsigned int *p = (unsigned int *)&m_Int64; __asm { mov ecx, p
+		rdtsc
+		mov [ecx], eax
+		mov [ecx + 4], edx } }
+};
+struct EV : CBaseEntity {
+	void sub_1003aca0();
+	void sub_1003a610(); void sub_1003f4d0(); void sub_1003b190(float f); float sub_100ac720(int a);
+};
+#define M(T,off) (*(T*)((char*)this+off))
+// TARGET: EV::sub_1003aca0
+void EV::sub_1003aca0()
+{
+	CEntityVSlots *me = (CEntityVSlots *)this;
+	const char *nm;
+	if (this) { nm = M(const char *,0x26c); if (!nm) nm = g_106b8540; } else nm = g_105387dc;
+	ScopeTrace scope("CBaseEntity::PhysicsStep", nm);
+	g_109f3648->EnterScope("CBaseEntity_PhysicsStep", 0, "Unaccounted", false);
+	if (M(int,0x98)) {
+		sub_1003a610();
+		g_109f3648->ExitScopeCall();
+		return;
+	}
+	sub_10033f60(2);
+	float t = M(float,0x17c);
+	float dt = t - gpGlobals->curtime;
+	if (t <= g_104454c4 || dt > 0.5) {
+		sub_1003b190(gpGlobals->frametime);
+		sub_1003f4d0();
+		M(float,0x178) = gpGlobals->curtime;
+		g_109f3648->ExitScopeCall();
+		return;
+	}
+	if (dt > gpGlobals->frametime) {
+		g_109f3648->ExitScopeCall();
+		return;
+	}
+	Vector vOld = *me->slot217();
+	Vector v;
+	CPOV *po;
+	if (!g_106bbaa4->vfunc1() && g_106bbaa4->m2c && (po = M(CPOV *,0x36c)) && !g_10566458->sub_100290c0(&M(char,0x254))) {
+		po->slot47(&v, 0);
+		Vector *o = me->slot217();
+		float dx = o->x - v.x, dy = o->y - v.y, dz = o->z - v.z;
+		if (dx * dx + dy * dy + dz * dz < 1.0f) {
+			CGameTrace tr;
+			CCollV *c = &M(CCollV,0x270);
+			int a2 = c->vfunc2();
+			int a1 = c->vfunc1();
+			sub_10035030(this, me->slot217(), me->slot217(), a1, a2, me->slot237(), &tr);
+			if (tr.m_startsolid) {
+				me->slot216(&v);
+				sub_100a53d0(0);
+			}
+		} else {
+			me->slot216(&v);
+			sub_100a53d0(0);
+		}
+	}
+	if (t < gpGlobals->curtime) t = gpGlobals->curtime;
+	sub_1003b190(t - sub_100ac720(0));
+	sub_10033f60(1);
+	sub_1003f4d0();
+	if (M(void *,0x36c)) {
+		Vector *o = me->slot217();
+		if (o->x != vOld.x || o->y != vOld.y || o->z != vOld.z) {
+			CPOV *po2 = M(CPOV *,0x36c);
+			po2->slot46(me->slot217(), g_1070d9d0, ((unsigned)sub_100b3700() >> 10) & 1, dt);
+		}
+	}
+	CVProfile *prof = g_109f3648;
+	if (!prof->m_bAtRoot || prof->m_enabled) {
+		CVProfNode *n = prof->m_pCurNode;
+		if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0) {
+			CCycleSample s;
+			s.m_Int64 = 0;
+			s.Sample();
+			CUnknownCycle100335e0 *pc = &n->m_CurFrameTime;
+			pc->m_Int64 = s.m_Int64 - pc->m_Int64;
+			n->m_TotalTime += pc->m_Int64;
+			g_109f3648->PopGroup();
+		}
+		if (n->m_nRecursions == 0)
+			prof->m_pCurNode = prof->m_pCurNode->m_pParent;
+		prof->m_bAtRoot = prof->m_pCurNode == prof->m_pRoot;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003b190 size=0x552
 #include "CTraceFilterNoCharacterCollide.h"
 #include "CUnknown101d7520.h"
