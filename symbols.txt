@@ -13402,6 +13402,7 @@
 0x10013f1b func   ?sub_10235bf0@CWeaponKick@@QAEXMPAUCKickWeapon@@@Z CWeaponKick::sub_10235bf0
 0x10013f20 func   ?vfunc276@CBaseTerminal@@QAEXXZ CBaseTerminal::vfunc276
 0x10013f25 func   ?sub_101c1b40@CUnknown101c1b40@@QAEXH@Z CUnknown101c1b40::sub_101c1b40
+0x10013f2f func   ?vfunc433@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc433
 0x10013f34 func   ?sub_1022a380@@YA_NPAD_N@Z sub_1022a380
 0x10013f39 func   ?sub_10377c20@@YADXZ sub_10377c20
 0x10013f3e func   ?sub_101f41b0@CUnknown101f40f0@@QAEXXZ CUnknown101f40f0::sub_101f41b0

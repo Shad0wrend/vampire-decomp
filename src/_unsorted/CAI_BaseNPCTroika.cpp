@@ -2576,6 +2576,204 @@ int CAI_BaseNPCTroika::vfunc440(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b27f0 size=0x855
+#include "ScopeTrace.h"
+#include "CAIPendingCondList.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseEntity.h"
+#include "CGameTrace.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "UTIL_Trace.h"
+#include "Vector.h"
+struct CCondHookView_433 { virtual void v0(); virtual void v1(); };
+extern CCondHookView_433 *g_10924a6c;
+extern char g_105387dc[];
+extern float g_104454c4;
+
+struct CNavView_433 { char pad[0x14]; float m_f14; };
+char __fastcall sub_102ee6a0(CNavView_433 *p);
+
+// TARGET: CAI_BaseNPCTroika::vfunc433
+void CAI_BaseNPCTroika::vfunc433()
+{
+	ScopeTrace trace("CAI_BaseNPCTroika::GatherConditions", this ? (((CBaseEntity *)this)->m_name26c ? ((CBaseEntity *)this)->m_name26c : g_106b8540) : g_105387dc, g_106b8540);
+	sub_10269b50(0x26);
+	sub_10269b50(0x27);
+	sub_10269b50(1);
+	sub_10269b50(2);
+	sub_10269b50(3);
+	sub_10269b50(4);
+	sub_10269b50(5);
+	sub_10269b50(6);
+	sub_10269b50(7);
+	sub_10269b50(0x30);
+	sub_10269b50(0xb);
+	sub_1026ec30();
+	CAI_BaseNPCTroika *pEnemy = (CAI_BaseNPCTroika *)vfunc168();
+	if (pEnemy && !pEnemy->vfunc158())
+	{
+		g_10924a6c->v1();
+		sub_10269a20(0x58);
+		sub_10269b50(0x46);
+		sub_10269b50(0x48);
+	}
+	sub_1028efc0();
+	sub_1028fa50();
+	sub_10269b50(0x15);
+	sub_10269b50(0x14);
+	sub_10269b50(0x17);
+	sub_10269b50(0x16);
+	sub_10269b50(0x19);
+	sub_10269b50(0x18);
+	if (m_flInsideInterruptDistanceSqr > g_104454c4)
+	{
+		if (sub_102ee6a0((CNavView_433 *)m_p5d34) && ((CNavView_433 *)m_p5d34)->m_f14 < m_flInsideInterruptDistanceSqr)
+		{
+			g_10924a6c->v1();
+			sub_10269a20(0x15);
+		}
+		if (pEnemy)
+		{
+			Vector *pE = (Vector *)pEnemy->vfunc220();
+			Vector *pT = (Vector *)vfunc220();
+			float dx = pT->x - pE->x, dy = pT->y - pE->y, dz = pT->z - pE->z;
+			if (dx * dx + dy * dy + dz * dz < m_flInsideInterruptDistanceSqr)
+			{
+				g_10924a6c->v1();
+				sub_10269a20(0x17);
+			}
+		}
+		CAI_BaseNPCTroika *pOther = (CAI_BaseNPCTroika *)vfunc293();
+		if (pOther)
+		{
+			Vector *pE = (Vector *)pOther->vfunc220();
+			Vector *pT = (Vector *)vfunc220();
+			float dx = pT->x - pE->x, dy = pT->y - pE->y, dz = pT->z - pE->z;
+			if (dx * dx + dy * dy + dz * dz < m_flInsideInterruptDistanceSqr)
+			{
+				g_10924a6c->v1();
+				sub_10269a20(0x19);
+			}
+		}
+	}
+	if (m_flOutsideInterruptDistanceSqr > g_104454c4)
+	{
+		if (sub_102ee6a0((CNavView_433 *)m_p5d34) && ((CNavView_433 *)m_p5d34)->m_f14 > m_flOutsideInterruptDistanceSqr)
+		{
+			g_10924a6c->v1();
+			sub_10269a20(0x14);
+		}
+		if (pEnemy)
+		{
+			Vector *pE = (Vector *)pEnemy->vfunc220();
+			Vector *pT = (Vector *)vfunc220();
+			float dx = pT->x - pE->x, dy = pT->y - pE->y, dz = pT->z - pE->z;
+			if (dx * dx + dy * dy + dz * dz > m_flOutsideInterruptDistanceSqr)
+			{
+				g_10924a6c->v1();
+				sub_10269a20(0x16);
+			}
+		}
+		CAI_BaseNPCTroika *pOther = (CAI_BaseNPCTroika *)vfunc293();
+		if (pOther)
+		{
+			Vector *pE = (Vector *)pOther->vfunc220();
+			Vector *pT = (Vector *)vfunc220();
+			float dx = pT->x - pE->x, dy = pT->y - pE->y, dz = pT->z - pE->z;
+			if (dx * dx + dy * dy + dz * dz > m_flOutsideInterruptDistanceSqr)
+			{
+				g_10924a6c->v1();
+				sub_10269a20(0x18);
+			}
+		}
+	}
+	if (m_flInterruptTime > g_104454c4 && gpGlobals->curtime >= m_flInterruptTime)
+	{
+		g_10924a6c->v1();
+		sub_10269a20(0x1a);
+	}
+	sub_102b15c0();
+	sub_102b1a20();
+	sub_102b1cd0();
+	if (sub_10269c70(0x2c))
+	{
+		sub_10269b50(0x2c);
+		if (pEnemy)
+		{
+			Vector d = *(Vector *)pEnemy->vfunc217() - *(Vector *)vfunc217();
+			d.z = 0;
+			VectorNormalize(d);
+			if (d.y * m_vec6290.y + d.x * m_vec6290.x <= 0.707)
+			{
+				g_10924a6c->v1();
+				sub_10269a20(0x2c);
+			}
+		}
+	}
+	else
+		sub_10269b50(0x2c);
+	sub_102b2570();
+	for (int i = 0; i < 18; i++)
+	{
+		if (m_hFireEmitters[i] && *(int *)((char *)m_hFireEmitters[i].Get() + 0x484))
+		{
+			g_10924a6c->v1();
+			sub_10269a20(0x30);
+			break;
+		}
+	}
+	sub_102b2730();
+	if (m_h5d28.Get())
+	{
+		if (sub_10269aa0(0x46) || sub_10269aa0(0x54))
+			*(int *)&m_h5d28 = -1;
+	}
+	if (sub_10269c70(0xb) && gpGlobals->curtime < *(float *)((char *)this + 0x65c4) && ((EHANDLE *)((char *)this + 0x65c0))->Get())
+	{
+		float flRand = enginerandom->vfunc1(0.9f, 1.3f);
+		((CAIPendingCondList *)((char *)this + 0x1a9c))->sub_102cc6c0(0xb, flRand);
+		*(float *)((char *)this + 0x65c4) = gpGlobals->curtime;
+	}
+	if (gpGlobals->curtime >= *(float *)((char *)this + 0x6600))
+	{
+		*(float *)((char *)this + 0x6600) = gpGlobals->curtime + 3.0f;
+		Vector vecStart = vfunc193();
+		CGameTrace tr;
+		UTIL_TraceLine(vecStart, vecStart + m_vec6290 * 32.0f, 0x2000b, this, 0, &tr);
+		bool bHit = false;
+		if (tr.m_fraction < 1.0f)
+			bHit = true;
+		else if (tr.m_allsolid)
+			bHit = true;
+		else if (tr.m_startsolid)
+			bHit = true;
+		if (bHit)
+		{
+			g_10924a6c->v1();
+			sub_10269a20(0x3c);
+		}
+		else
+		{
+			sub_10269b50(0x3c);
+		}
+	}
+	if (sub_10269aa0(0x4c) || sub_10269aa0(0x4d) || sub_10269aa0(0x4e))
+		m_b5b80 = 1;
+	else if (m_b5b80)
+	{
+		g_10924a6c->v1();
+		sub_10269a20(0x4c);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b38b0 size=0xb4
 #include "CAI_BaseNPCTroika.h"
 
