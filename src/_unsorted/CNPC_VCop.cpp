@@ -171,6 +171,60 @@ void CNPC_VCop::vfunc442(int *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10371c20 size=0x208
+#include "CNPC_VCop.h"
+#include "CBasePlayer.h"
+#include "CEHandleGet.h"
+extern int g_1093acb0;
+
+void CNPC_VCop::vfunc463(int a, int type)
+{
+	CNPC_VCopSlots *pSlots = (CNPC_VCopSlots *)this;
+	CNPC_VCopTarget *pTarget;
+	if (vfunc167() && (pTarget = vfunc167()) != 0 && pTarget->m_pPlayer && type == 2)
+		pSlots->slot597(pTarget->m_pPlayer, 10);
+	if (a == 2) {
+		CBaseEntity *pEnt = m_h6664.Get();
+		if (pEnt) {
+			CNPC_VCopPlayer *pPlayer = ((CNPC_VCopTarget *)pEnt)->m_pPlayer;
+			if (pPlayer) {
+				pSlots->slot598((CBaseEntity *)pPlayer);
+				m_h6664 = (CBaseEntity *)0;
+				((CBasePlayer *)pPlayer)->sub_1017f6e0();
+			}
+		}
+		pTarget = vfunc168_slot();
+		if (pTarget && pTarget->m_pPlayer)
+			pSlots->slot598((CBaseEntity *)pTarget->m_pPlayer);
+	}
+	switch (type) {
+	case 3:
+		if (sub_1032e7b0())
+			((CNPC_VHumanCombatantWeapon *)sub_1032e7b0())->vfunc67();
+	case 1:
+	case 8:
+		pTarget = vfunc167();
+		if (pTarget && pTarget->m_pPlayer)
+			pSlots->slot598((CBaseEntity *)pTarget->m_pPlayer);
+		if (m_b6670 && EHandle_Get(m_h628c))
+			pSlots->slot598((CBaseEntity *)EHandle_Get(m_h628c));
+		break;
+	case 2:
+		m_b6670 = 1;
+		break;
+	}
+	if (type == 1) {
+		vfunc416(0);
+	} else {
+		if (m_b6672)
+			g_1093acb0 -= 1;
+		m_b6672 = 0;
+		vfunc416(1);
+	}
+	CNPC_VHumanCombatant::vfunc463(a, type);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10372150 size=0x1d9
 #include "CNPC_VCop.h"
 
