@@ -9476,6 +9476,7 @@
 0x1000e66a func   ?sub_10200fc0@CVStatList_t@@QAEDHH@Z CVStatList_t::sub_10200fc0
 0x1000e674 func   ?vfunc81@CWeaponMelee_Knife@@UAEHXZ CWeaponMelee_Knife::vfunc81
 0x1000e679 func   ?sub_10288670@CAI_Motor@@QAEXM@Z CAI_Motor::sub_10288670
+0x1000e67e func   ?vfunc103@CRagdollProp@@UAEXXZ CRagdollProp::vfunc103
 0x1000e683 func   ?vfunc362@CWeaponMelee_MingXiaoTentacle@@UAEHXZ CWeaponMelee_MingXiaoTentacle::vfunc362
 0x1000e68d func   ?sub_1019e090@CBaseFire@@QAEXD@Z CBaseFire::sub_1019e090
 0x1000e692 func   ?sub_101f4300@CUnk101f4300@@QAEHXZ CUnk101f4300::sub_101f4300

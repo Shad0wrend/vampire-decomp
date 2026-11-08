@@ -32,6 +32,53 @@ datamap_t * CRagdollProp::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10154e40 size=0xe8
+#include "CRagdollProp.h"
+#include "CBaseAnimating.h"
+#include "CCollisionProperty.h"
+
+extern float g_1070d1b0[3];
+extern char g_106b8540[];
+
+struct CRagdollPropSpawnView
+{
+	char m_pad000[0xdc];
+	float m_impactEnergyScale;	// 0xdc
+	char m_pad0e0[0xd54 - 0xe0];
+	int m_lastUpdateTickCount;	// 0xd54
+	char m_pad0d58[0xd60 - 0xd58];
+	float m_flBlendWeight;	// 0xd60
+	int m_nOverlaySequence;	// 0xd64
+};
+
+void CRagdollProp::vfunc103()
+{
+	char bones[0x41a0];
+	int nOut;
+	vfunc104();
+	const char *name = *vfunc9(&nOut);
+	if (!name)
+		name = g_106b8540;
+	vfunc105(name);
+	((CBaseAnimating *)this)->vfunc257((int)bones, 0xfffc);
+	sub_101554a0(g_1070d1b0, 0, g_1070d1b0, bones, bones, 0, (m_flags204 >> 2) & 1, 1);
+	CRagdollPropSpawnView *v = (CRagdollPropSpawnView *)this;
+	v->m_lastUpdateTickCount = 0;
+	v->m_flBlendWeight = 0.0f;
+	v->m_nOverlaySequence = -1;
+	if (v->m_impactEnergyScale == 0.0f)
+		v->m_impactEnergyScale = 0.1f;
+	CCollisionProperty *pColl = (CCollisionProperty *)((char *)this + 0x270);
+	if (pColl) {
+		pColl->sub_100ddd90();
+		if (!(m_flags204 & 0x20))
+			sub_100b3900(2);
+		else
+			sub_100b3840(2);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10154f70 size=0x20
 #include "CRagdollProp.h"
 
