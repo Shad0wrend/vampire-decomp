@@ -58,6 +58,39 @@ CRopeKeyframe *CRopeKeyframe::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019e430 size=0xdc
+#include "CRopeKeyframe.h"
+#include "IVEngineServer.h"
+#include "CGlobalEntityList.h"
+
+extern IVEngineServer *g_1070b22c;
+extern CGlobalEntityList g_106eb5d8;
+extern char g_106b8540[];
+
+// TARGET: CRopeKeyframe::vfunc113
+void CRopeKeyframe::vfunc113()
+{
+	sub_100a0bc0();
+	if (m_bCreatedFromMapFile) {
+		if (m_nMaterialIndex == -1)
+			m_nMaterialIndex = g_1070b22c->vfunc13("cable/cable.vmt", 0);
+		CBaseEntity *pEnt = g_106eb5d8.sub_100f7770(0, m_pszName458 ? m_pszName458 : g_106b8540, 0, 0);
+		if (pEnt && pEnt->m_pEdict2e0) {
+			sub_100b3b00();
+			pEnt->sub_100b3b00();
+			sub_1019de30(pEnt, 0);
+			if (*(unsigned char *)((char *)this + 0x204) & 1)
+				m_nRopeFlags |= 1;
+		} else {
+			if (m_n478 & 2)
+				m_nRopeFlags &= 0xfffffff7;
+		}
+		sub_1019ddc0(this, 0);
+		sub_1019e310();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019e550 size=0x22
 char __fastcall sub_10014da8(void *p);
 void __fastcall sub_100011cc(void *p);
