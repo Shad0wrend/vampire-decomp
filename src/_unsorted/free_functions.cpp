@@ -119558,6 +119558,51 @@ int VKeyValuesInterface::sub_101f28e0(const char *pszName, const char **ppszChoi
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f2960 size=0x121
+#include "VKeyValues.h"
+extern "C" int sprintf(char *, const char *, ...);
+extern "C" void *__cdecl __RTDynamicCast(void *, long, void *, void *, int);
+extern char g_105a5f08[];
+extern char g_105a5f28[];
+extern const char g_106b8540[];
+void *sub_101f3000(int n);
+// TARGET: VKeyValuesInterface::sub_101f2960
+char VKeyValuesInterface::sub_101f2960(const char *pszName, int nMax, const char *pszFormat, const char **ppszFirstName, const char ***pppszValues, int *pnCount)
+{
+	char buf[32];
+	if (pnCount)
+	{
+		*pnCount = 0;
+		VKeyValues *pThis = (VKeyValues *)((char *)this - 0x30);
+		VKeyValues *pKv = (VKeyValues *)__RTDynamicCast(pThis->NameOf()->vfunc2(pszName), 0, g_105a5f08, g_105a5f28, 0);
+		if (pKv)
+		{
+			*ppszFirstName = pKv->NameOf()->vfunc13("Name", g_106b8540);
+			int n = 0;
+			for (int i = 0; i < nMax; i++)
+			{
+				sprintf(buf, pszFormat, i);
+				if (!*pKv->NameOf()->vfunc13(buf, g_106b8540))
+					break;
+				n++;
+			}
+			if (n > 0)
+			{
+				*pnCount = n;
+				*pppszValues = (const char **)sub_101f3000(n);
+				for (int j = 0; j < n; j++)
+				{
+					sprintf(buf, pszFormat, j);
+					(*pppszValues)[j] = pKv->NameOf()->vfunc13(buf, g_106b8540);
+				}
+				return 1;
+			}
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2ae0 size=0xe
 void sub_101f3030(void* p);
 

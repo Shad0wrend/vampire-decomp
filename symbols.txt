@@ -9669,6 +9669,7 @@
 0x1000ebe2 func   ?vfunc301@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z CBaseCombatWeapon::vfunc301
 0x1000ebe7 func   ?sub_100a9080@@YI_NPAD@Z sub_100a9080
 0x1000ebec func   ?sub_10053e20@@YIXPAVCBaseEntity@@HMMH@Z sub_10053e20
+0x1000ebf1 func   ?sub_101f2960@VKeyValuesInterface@@QAEDPBDH0PAPBDPAPAPBDPAH@Z VKeyValuesInterface::sub_101f2960
 0x1000ebf6 func   ?sub_1024d670@VMatrix@@QBE?AVVector@@XZ VMatrix::sub_1024d670
 0x1000ebfb func   ?vfunc1@?$CUtlVectorDataOps@V?$CUtlVector@UASSIGNED_QUEST@@V?$CUtlMemory@UASSIGNED_QUEST@@@@@@$08@@UAEXPAX0@Z CUtlVectorDataOps<CUtlVector<ASSIGNED_QUEST,CUtlMemory<ASSIGNED_QUEST> >,9>::vfunc1
 0x1000ec00 func   ?sub_10208f30@SGiver@@QAEXPAUinputdata_t@@@Z SGiver::sub_10208f30
