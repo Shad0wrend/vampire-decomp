@@ -631,6 +631,105 @@ void CBaseCombatCharacter::sub_10324430(int activity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103246d0 size=0x323
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "ScopeTrace.h"
+#include "CBaseCombatCharacter.h"
+#include "CVStatList_t.h"
+#include "engineserver.h"
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+
+struct CUpdSlots2
+{
+	S100(a) S100(b) S100(c) S100(d) S100(e)
+	S10(f0)
+	virtual void g0(); virtual void g1(); virtual void g2();
+	virtual unsigned int s513();
+};
+
+struct CUpdView
+{
+	S100(a) S100(b)
+	S10(c0) S10(c1) S10(c2) S10(c3) S10(c4) S10(c5) S10(c6)
+	virtual void c70(); virtual void c71(); virtual void c72(); virtual void c73(); virtual void c74(); virtual void c75(); virtual void c76(); virtual void c77();
+	virtual void *s278();
+	virtual void c79();
+	S10(c8) S10(c9)
+	S10(d0)
+	virtual void d10(); virtual void d11(); virtual void d12(); virtual void d13();
+	virtual void s314(int a);
+	virtual void s315();
+	virtual void d16(); virtual void d17(); virtual void d18(); virtual void d19();
+	S10(d2)
+	virtual void d30(); virtual void d31(); virtual void d32();
+	virtual void s333(int a);
+};
+
+struct CGlob10936e54
+{
+	virtual char s0();
+	virtual char s1();
+	char pad[0x28];
+	int m_f2c;
+};
+extern CGlob10936e54 *g_10936e54;
+
+void sub_10143710(void *a, int b, int c, int d);
+void sub_10143d80(void *a, float b, int c, int d, int e, int f, int g);
+void sub_101cee20(float a, Vector v1, Vector v2, int b);
+void sub_10139970(Vector *a, Vector *b);
+
+// TARGET: CBaseCombatCharacter::vfunc312
+void CBaseCombatCharacter::vfunc312(int a)
+{
+	ScopeTrace trace("CBaseCombatCharacter::UpdateCharacter", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CUpdSlots2 *pOwner = *(CUpdSlots2 **)((char *)this + 0x98);
+	int pPlayer = *(int *)((char *)this + 0xa8);
+	sub_100521e0();
+	((CUpdView *)this)->d13();
+	sub_10324ea0();
+	if (pPlayer != 0 || (pOwner->s513() & 0x800000) != 0)
+		sub_10106050(a);
+	if (*(int *)((char *)this + 0xe68) == 0)
+		((CUpdView *)this)->s333(a);
+	else
+		sub_10325620(a);
+	if (!g_10936e54->s1() && g_10936e54->m_f2c) {
+		Vector va, vb, vc;
+		sub_10331da0(&va, &vb);
+		sub_10139970(&vb, &vc);
+		sub_101cee20(10.0f, va, vc, a);
+		sub_10143710(((CUpdView *)this)->s278(), sub_100ab4f0(), 0, a);
+		sub_10143d80(((CUpdView *)this)->s278(), 2.0f, 0xff, 0, 0, 0, a);
+	}
+	((CUpdView *)this)->s314(a);
+	((CUpdView *)this)->s315();
+	if (m_n168 == 0x1a && engine->vfunc119(0) - *(float *)((char *)this + 0x5a4) > 0.2) {
+		if (sub_10337f30()) {
+			if (CVStatListSet::Of(this)->Find(3)->sub_102012d0(7) > 0)
+				m_n168 = 0;
+		} else {
+			if (CVStatListSet::Of(this)->Find(3)->sub_102012d0(13) > 0)
+				m_n168 = 0;
+		}
+	}
+	if (m_n168 == 0x25 && engine->vfunc119(0) - *(float *)((char *)this + 0x5a4) > 0.2 && sub_10330220())
+		m_n168 = 0x24;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103250d0 size=0xb6
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
