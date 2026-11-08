@@ -247,6 +247,95 @@ void CBaseFlex::vfunc285(int nKey)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b5e60 size=0x272
+#include "CBaseFlex.h"
+#include "utlvector.h"
+
+struct SFlexEvent
+{
+	int sub_100029c8();
+	const char *sub_10006fdc();
+	int sub_100088d2();
+	float sub_10014835();
+	float sub_100154e7();
+	float sub_10008a4e(float f);
+};
+
+struct SFlexScene
+{
+	void sub_1000632f(int channel);
+	float sub_1000b9a1();
+};
+
+struct SFlexInfo
+{
+	SFlexEvent *m_pEvent;
+	SFlexScene *m_pScene;
+	char m_bStarted;
+	int m_iLayer;
+	int m_nSequence;
+	float m_flStartAnim;
+	int m_pad18;
+};
+
+struct SFlexAnim
+{
+	int sub_1000e057(const char *name);
+	int sub_10014ffb(int seq);
+	float sub_10009813(int seq);
+	char m_pad[0x174];
+	float m_flAnimTime;
+};
+
+extern void (*g_109f3628)(const char *pMsg, ...);
+extern void (*g_109f3650)(int level, const char *fmt, ...);
+
+void CBaseFlex::vfunc286(int a, void *pEvent)
+{
+	SFlexScene *scene = (SFlexScene *)a;
+	SFlexEvent *event = (SFlexEvent *)pEvent;
+	if (!scene || !event) {
+		g_109f3628("CBaseFlex::AddExpression:  scene or event was NULL!!!\n");
+		return;
+	}
+	SFlexInfo info;
+	int tmp;
+	info.m_pEvent = event;
+	info.m_pScene = scene;
+	info.m_bStarted = 0;
+	SFlexAnim *pThis = (SFlexAnim *)this;
+	switch (event->sub_100029c8()) {
+	case 6:
+		info.m_nSequence = pThis->sub_1000e057(event->sub_10006fdc());
+		info.m_iLayer = -1;
+		if (info.m_nSequence >= 0) {
+			scene->sub_1000632f(event->sub_100088d2());
+			info.m_iLayer = -1;
+			event->sub_10014835();
+			if (pThis->sub_10014ffb(info.m_nSequence) & 1) {
+				g_109f3650(1, "vcd error, gesture %s of model %s is marked as STUDIO_LOOPING!\n", event->sub_10006fdc(), *(const char **)vfunc9(&tmp));
+			}
+			float dt = scene->sub_1000b9a1() - event->sub_100154e7();
+			info.m_flStartAnim = pThis->m_flAnimTime - dt;
+			float duration = event->sub_10014835();
+			pThis->sub_10009813(info.m_nSequence);
+			event->sub_10008a4e((pThis->m_flAnimTime - info.m_flStartAnim + 0.1) / duration);
+		}
+		break;
+	case 7:
+		info.m_nSequence = pThis->sub_1000e057(event->sub_10006fdc());
+		info.m_iLayer = -1;
+		if (info.m_nSequence >= 0) {
+			scene->sub_1000632f(event->sub_100088d2());
+			info.m_iLayer = -1;
+			info.m_flStartAnim = pThis->m_flAnimTime;
+		}
+		break;
+	}
+	((CUtlVector<SFlexInfo> *)&m_pItems)->AddToTail(info);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b6180 size=0x94
 #include "CBaseFlex.h"
 
