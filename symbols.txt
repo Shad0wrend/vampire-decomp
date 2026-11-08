@@ -14196,6 +14196,7 @@
 0x100150eb func   ?sub_103a1c80@@YAHXZ sub_103a1c80
 0x100150f0 func   ?sub_10219270@CUnk10219270@@QAEXXZ CUnk10219270::sub_10219270
 0x100150f5 func   ?sub_100b7e10@CUnknown100b7e10@@QAEXXZ CUnknown100b7e10::sub_100b7e10
+0x100150fa func   ?sub_100cddf0@CEventQueue@@QAEXPBD0UCVariantCopy@@MPAVCBaseEntity@@2HH@Z CEventQueue::sub_100cddf0
 0x100150ff func   ?vfunc545@CNPC_VCamera@@QAEHXZ CNPC_VCamera::vfunc545
 0x10015104 func   ?vfunc43@CPropDoorknob@@UAEXH@Z CPropDoorknob::vfunc43
 0x10015109 func   ?sub_103ec130@@YAHXZ sub_103ec130

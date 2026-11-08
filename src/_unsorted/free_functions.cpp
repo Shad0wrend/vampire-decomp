@@ -44449,6 +44449,33 @@ void CEventQueue::sub_100cdda0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cddf0 size=0xd9
+#include "CEventQueue.h"
+#include "CBaseEntity.h"
+#include "CVDmg_t.h"
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+
+inline const char *MAKE_STRING(const char *s) { return *s ? s : 0; }
+
+void CEventQueue::sub_100cddf0(const char *pszTarget, const char *pszTargetInput, CVariantCopy Value, float fireDelay, CBaseEntity *pActivator, CBaseEntity *pCaller, int nOutputID, int nExtra)
+{
+	CEQEvent *pEvent = new CEQEvent;
+	memset(pEvent, 0, 0x50);
+	pEvent->m_n34 = 0;
+	pEvent->m_flFireTime = fireDelay + gpGlobals->curtime;
+	pEvent->m_pszTarget = MAKE_STRING(pszTarget);
+	((EHANDLE &)pEvent->m_hTarget) = (CBaseEntity *)0;
+	pEvent->m_pszTargetInput = MAKE_STRING(pszTargetInput);
+	((EHANDLE &)pEvent->m_hActivator) = pActivator;
+	((EHANDLE &)pEvent->m_hCaller) = pCaller;
+	*(CVariantCopy *)&pEvent->m_n20 = Value;
+	pEvent->m_nOutputID = nOutputID;
+	pEvent->m_n3c = nExtra;
+	((CVDmgBlock16_t *)pEvent->m_block40)->sub_10204270();
+	sub_100ce210(pEvent);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cdf10 size=0xe1
 #include "CEventQueue.h"
 #include "CBaseEntity.h"
