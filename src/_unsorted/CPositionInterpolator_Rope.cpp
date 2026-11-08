@@ -53,6 +53,37 @@ void CPositionInterpolator_Rope::vfunc2(int index, const Vector *pPos)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012fe20 size=0x162
+#include "CPositionInterpolator_Rope.h"
+
+void CPositionInterpolator_Rope::vfunc3(float t, Vector *pOut)
+{
+	if (m_bChanged)
+	{
+		m_rope.sub_10249340(m_nType);
+		for (int i = 0; i < m_rope.m_nNodes; i++)
+		{
+			m_rope.m_pNodes[i].m_vPos = m_rope.m_pNodes[i].m_vPrevPos = *(const Vector *)&m_vecs[0];
+		}
+		const Vector &vecA = *(const Vector *)&m_vecs[0];
+		const Vector &vecB = *(const Vector *)&m_vecs[1];
+		float dx = vecA.x - vecB.x;
+		float dy = vecA.y - vecB.y;
+		float dz = vecA.z - vecB.z;
+		float flLength = FastSqrt(dz * dz + dy * dy + dx * dx) + m_flSlack;
+		m_rope.sub_10249390();
+		m_rope.sub_10249420(flLength / (m_rope.m_nNodes - 1), &m_delegate);
+		m_rope.sub_10249470(5.0f);
+		m_bChanged = 0;
+	}
+	float flPos = (m_rope.m_nNodes - 1) * t;
+	int iNode = (int)flPos;
+	float flFrac = flPos - iNode;
+	CRopeNode *pNode = &m_rope.m_pNodes[iNode];
+	VectorLerp(pNode[0].m_vPredicted, pNode[1].m_vPredicted, flFrac, *pOut);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012fff0 size=0xb5
 #include "CPositionInterpolator_Rope.h"
 extern "C" {
