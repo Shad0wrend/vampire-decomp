@@ -11620,6 +11620,7 @@
 0x1001193c func   ?sub_1033c830@CBaseCombatCharacter@@QAEXI@Z CBaseCombatCharacter::sub_1033c830
 0x10011941 func   ?vfunc80@CWeaponUnarmed@@UAEHXZ CWeaponUnarmed::vfunc80
 0x10011946 func   ?sub_1040b270@@YIHPAX@Z sub_1040b270
+0x1001194b func   ?sub_1003cd50@CBaseEntity@@QAEPAXH@Z CBaseEntity::sub_1003cd50
 0x10011950 func   ?RotateRight@?$CUtlRBTree@UCUtlMap16Pair@@G@@QAEXG@Z CUtlRBTree<CUtlMap16Pair,unsigned short>::RotateRight
 0x10011950 func   ?sub_1004bd40@CUtlRBTree16Unit@@QAEXG@Z CUtlRBTree16Unit::sub_1004bd40
 0x10011955 func   ?sub_102e06f0@@YIPAHPAH@Z sub_102e06f0

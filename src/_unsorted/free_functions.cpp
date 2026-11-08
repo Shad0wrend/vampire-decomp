@@ -6304,6 +6304,62 @@ void CBaseEntity::sub_1003cc80(int type)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003cd50 size=0x181
+#include "CBaseEntity.h"
+struct TraceEntry { const char *a, *b, *c; };
+extern int *g_109f3680;
+extern TraceEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+struct ScopeTrace {
+    ScopeTrace(const char *a, const char *b, const char *c) {
+        g_109f3620[*g_109f3680].a = a;
+        g_109f3620[*g_109f3680].b = b;
+        g_109f3620[*g_109f3680].c = c;
+        ++*g_109f3680;
+    }
+    ~ScopeTrace() { --*g_109f3680; }
+};
+struct DataObjL {
+    virtual void a0();
+    virtual void *v1(CBaseEntity *pEntity);
+};
+extern DataObjL *g_106bd938[32];
+
+inline bool IsValidType(int type)
+{
+    ScopeTrace valid("CDataObjectAccessSystem::IsValidType", g_106b8540, g_106b8540);
+    if (type < 0 || type >= 32)
+        return false;
+    if (!g_106bd938[type])
+        return false;
+    return true;
+}
+
+inline void *GetDataObject(CBaseEntity *pEntity, int type)
+{
+    ScopeTrace trace("CDataObjectAccessSystem::GetDataObject", g_106b8540, g_106b8540);
+    if (IsValidType(type))
+        return g_106bd938[type]->v1(pEntity);
+    return 0;
+}
+
+void *CBaseEntity::sub_1003cd50(int type)
+{
+    const char *ent;
+    if (this) {
+        ent = m_name26c;
+        if (!ent) ent = g_106b8540;
+    } else {
+        ent = g_105387dc;
+    }
+    ScopeTrace trace("CBaseEntity::GetDataObject", ent, g_106b8540);
+    if (!sub_1003cb00(type))
+        return 0;
+    return GetDataObject(this, type);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003d130 size=0x169
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
