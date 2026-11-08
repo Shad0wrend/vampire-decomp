@@ -97365,6 +97365,46 @@ char CEnvSoundscape::sub_101ae440(void *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ae6c0 size=0xa1
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "CEnvSoundscape.h"
+extern CGlobalEntityList g_106eb5d8;
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct SEntVt {
+	SL10(a0) SL10(a1) SL10(a2) SL10(a3) SL10(a4) SL10(a5) SL10(a6) SL10(a7) SL10(a8) SL10(a9)
+	SL10(b0) SL10(b1) SL10(b2) SL10(b3) SL10(b4) SL10(b5) SL10(b6) SL10(b7) SL10(b8) SL10(b9)
+	SL10(c0)
+	virtual void c10(); virtual void c11(); virtual void c12(); virtual void c13(); virtual void c14();
+	virtual void c15(); virtual void c16();
+	virtual const float *vfunc217();
+};
+
+void CEnvSoundscape::sub_101ae6c0(CEnvSoundscapeParams *pParams)
+{
+	char *p = (char *)this;
+	int edict = *(int *)(p + 0x2e0);
+	pParams->m_nEdictIndex = engine->vfunc35(edict);
+	pParams->m_pad30 = m_nSoundscapeIndex458;
+	pParams->m_nPositionMask = 0;
+	for (unsigned int i = 0; i < 4; i++) {
+		const char *const *ppName = (const char **)(p + 0x45c) + i;
+		if (*ppName) {
+			SEntVt *pEnt = (SEntVt *)g_106eb5d8.sub_100f7770(0, *ppName, (CBaseEntity *)this, 0);
+			if (pEnt) {
+				pParams->m_nPositionMask |= 1 << i;
+				const float *o = pEnt->vfunc217();
+				pParams->m_vecPositions[i][0] = o[0];
+				pParams->m_vecPositions[i][1] = o[1];
+				pParams->m_vecPositions[i][2] = o[2];
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ae940 size=0x1af
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
