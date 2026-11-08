@@ -5,6 +5,25 @@
 #include "CWeaponRanged.h"
 #include "Vector.h"
 
+#include "utlvector.h"
+struct CFlameBurnRec { int m_h; float m_t; };
+class CUtlMemory<CFlameBurnRec>
+{
+public:
+	CUtlMemory(int nGrowSize = 0, int nInitSize = 0) : m_pMemory(0), m_nAllocationCount(nInitSize), m_nGrowSize(nGrowSize) {}
+	~CUtlMemory() { Purge(); }
+	CFlameBurnRec &operator[](int i) { return m_pMemory[i]; }
+	CFlameBurnRec &Element(int i) { return m_pMemory[i]; }
+	CFlameBurnRec *Base() { return m_pMemory; }
+	int NumAllocated() const { return m_nAllocationCount; }
+	void Grow(int num = 1);
+	void EnsureCapacity(int num) {}
+	void Purge() {}
+	void SetGrowSize(int n) { m_nGrowSize = n; }
+	CFlameBurnRec *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+};
 class CWeaponRanged_FlameThrower : public CWeaponRanged
 {
 public:
