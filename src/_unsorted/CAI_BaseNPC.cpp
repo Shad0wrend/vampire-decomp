@@ -639,6 +639,50 @@ int CAI_BaseNPC::vfunc142(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102664c0 size=0x11a
+#include "CAI_BaseNPC.h"
+#include "CTakeDamageInfo.h"
+#include "CVDmg_t.h"
+
+extern Vector g_1070d1b0;
+extern Vector g_1070ba40;
+
+struct CAI_BaseNPC_Dead
+{
+	char m_pad0[0x1fc];
+	int m_takedamage;
+	char m_pad200[0x210 - 0x200];
+	int m_iHealth;
+};
+
+inline Vector OffsetDown(const Vector &v)
+{
+	Vector res;
+	res = v;
+	res.z -= 10.0f;
+	return res;
+}
+
+int CAI_BaseNPC::vfunc392(CTakeDamageInfo *pInfo)
+{
+	Vector vecDir = g_1070d1b0;
+	if (pInfo->m_pAttacker)
+	{
+		Vector vecSrc;
+		vecDir = (vecSrc = ((CAI_BaseNPC *)pInfo->m_pAttacker)->vfunc192(), vecSrc.z -= 10.0f, vecSrc) - vfunc192();
+		VectorNormalize(vecDir);
+		g_1070ba40 = vecDir;
+	}
+	unsigned int bits = pInfo->m_pVDmg00 ? pInfo->m_pVDmg00->m_field10 | pInfo->m_nFlags38 : pInfo->m_nFlags38;
+	if ((bits & 0xe1) && ((CAI_BaseNPC_Dead *)this)->m_takedamage != 1)
+	{
+		CAI_BaseNPC_Dead *p = (CAI_BaseNPC_Dead *)this;
+		p->m_iHealth = (int)(p->m_iHealth - (pInfo->m_pVDmg00 ? (float)pInfo->m_pVDmg00->sub_101faa70() : pInfo->m_flDamage) * 0.1);
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10266630 size=0x20
 #include "CAI_BaseNPC.h"
 
