@@ -9864,6 +9864,7 @@
 0x1000ee3f func   ?sub_101ca950@@YAHXZ sub_101ca950
 0x1000ee44 func   ?sub_1040bf90@CUnit1040bf90@@QAEXXZ CUnit1040bf90::sub_1040bf90
 0x1000ee49 func   ?vfunc265@CPropDestructable@@UAEXXZ CPropDestructable::vfunc265
+0x1000ee4e func   ?sub_100999c0@CUnknown100999c0@@QAEXPAVCBaseEntity@@@Z CUnknown100999c0::sub_100999c0
 0x1000ee53 func   ?sub_10225d00@CPropPadlock@@QAEEXZ CPropPadlock::sub_10225d00
 0x1000ee58 func   ?sub_1030bc40@CUnknown1030bc40@@QAEHXZ CUnknown1030bc40::sub_1030bc40
 0x1000ee5d func   ?vfunc425@CAI_BaseNPC@@UAEPAVCAI_Senses@@XZ CAI_BaseNPC::vfunc425

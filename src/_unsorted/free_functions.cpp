@@ -33366,6 +33366,21 @@ char CUnit10099430::sub_10099430(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100999c0 size=0xfd
+#include "CBaseEntity.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "CUnknown100999c0.h"
+
+void CUnknown100999c0::sub_100999c0(CBaseEntity *pEnt)
+{
+	EHANDLE h;
+	h = pEnt;
+	if (m_List.Find(h) == -1)
+		m_List.AddToTail(h);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10099b00 size=0xe8
 #include "utlrbtree.h"
 #include "utlsortvector.h"
