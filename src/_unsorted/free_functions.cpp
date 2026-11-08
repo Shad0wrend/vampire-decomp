@@ -26907,6 +26907,90 @@ void CUnknown10080750::sub_10080750(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10080830 size=0x132
+#include "CLogicalEntity.h"
+#include "CSceneEntity.h"
+#include "CUnknown10080750.h"
+#include "CBaseVampireSkillEntity.h"
+
+extern char vt_1044f05c[];
+
+class SCvarSystem
+{
+public:
+	virtual void v0();
+	virtual void v1();
+	virtual void *vfunc2(const char *pszName);
+};
+extern SCvarSystem *g_1070b234;
+
+struct SSceneView
+{
+	char pad0[0x450];
+	int n450;
+	int n454;
+	char pad1[0x46c - 0x458];
+	CBaseHandle h[5];
+	int n480, n484, n488;
+	char pad2[0x498 - 0x48c];
+	char b498, b499;
+	char pad3[0x4a0 - 0x49a];
+	int n4a0;
+	float f4a4;
+	char pad4[0x4ac - 0x4a8];
+	char b4ac;
+	char pad5[3];
+	int n4b0, n4b4, n4b8, n4bc;
+	CUnknown10080750 sub4c0;
+	CVampireSkillItem items[7];
+	int n574, n578;
+	char pad8[1];
+	char b57d, b57e, b57f;
+};
+
+CSceneEntity *CSceneEntity::sub_10080830()
+{
+	SSceneView *v = (SSceneView *)this;
+	((CLogicalEntity *)this)->CLogicalEntity::CLogicalEntity();
+	v->h[0].CBaseHandle::CBaseHandle();
+	v->h[1].CBaseHandle::CBaseHandle();
+	v->h[2].CBaseHandle::CBaseHandle();
+	v->h[3].CBaseHandle::CBaseHandle();
+	v->h[4].CBaseHandle::CBaseHandle();
+	v->sub4c0.sub_10080730();
+	v->items[0].sub_100cd2a0();
+	v->items[1].sub_100cd2a0();
+	v->items[2].sub_100cd2a0();
+	v->items[3].sub_100cd2a0();
+	v->items[4].sub_100cd2a0();
+	v->items[5].sub_100cd2a0();
+	v->items[6].sub_100cd2a0();
+	*(void **)this = vt_1044f05c;
+	v->b498 = 0;
+	v->b499 = 0;
+	v->n450 = 0;
+	v->n480 = 0;
+	v->n484 = 0;
+	v->n488 = 0;
+	v->n4a0 = 0;
+	v->f4a4 = gpGlobals->curtime;
+	v->b4ac = 0;
+	v->n4b0 = 0;
+	v->n4b4 = 0;
+	v->n4b8 = 0;
+	v->n4bc = 0;
+	v->sub4c0.sub_10080750((int)this);
+	v->sub4c0.m_unk8 = (int)g_1070b234->vfunc2("snd_mixahead");
+	v->n574 = 0;
+	v->n578 = 0;
+	v->b57e = 0;
+	v->b57d = 0;
+	v->b57f = 0;
+	v->n454 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100809f0 size=0x6d
 #include "CSceneEntity.h"
 #include "COutputEvent.h"
