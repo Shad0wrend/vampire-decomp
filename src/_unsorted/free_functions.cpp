@@ -144118,6 +144118,67 @@ bool CUnknown10248a50::sub_10248430(int unused, const char *pszBuffer, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10248510 size=0x12c
+#include <string.h>
+#include <stdlib.h>
+
+struct CKvListX
+{
+	int m_n00;
+	char *m_pStr;
+	union { int m_nValue; float m_flValue; };
+	int m_nType;
+
+	CKvListX *sub_10248870(const char *key);
+	void sub_1000a321(char **ppBuf, int nArg);
+	void sub_10248510(char **ppBuf, int nArg);
+};
+
+char *sub_102482b0(char **ppBuf, char *pFlag);
+
+// TARGET: CKvListX::sub_10248510
+void CKvListX::sub_10248510(char **ppBuf, int nArg)
+{
+	while (1) {
+		char *key = sub_102482b0(ppBuf, 0);
+		if (!key || !*key)
+			return;
+		if (!strcmp(key, "}"))
+			return;
+		CKvListX *node = sub_10248870(key);
+		char flag;
+		char *val = sub_102482b0(ppBuf, &flag);
+		if (!strcmp(val, "{")) {
+			node->sub_1000a321(ppBuf, nArg);
+			continue;
+		}
+		if (node->m_pStr)
+			delete node->m_pStr;
+		int len = strlen(val);
+		char *copy = new char[len + 1];
+		node->m_pStr = copy;
+		memcpy(copy, val, len + 1);
+		if (flag) {
+			node->m_nType = 0;
+		} else {
+			char *end1;
+			char *end2;
+			long l = strtol(val, &end1, 10);
+			double d = strtod(val, &end2);
+			if (end2 > end1) {
+				node->m_flValue = (float)d;
+				node->m_nType = 2;
+			} else if (end1 > val) {
+				node->m_nValue = l;
+				node->m_nType = 1;
+			} else {
+				node->m_nType = 0;
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10248690 size=0x7c
 #include "CKeyValuesX.h"
 #include "CUtlBuffer.h"
