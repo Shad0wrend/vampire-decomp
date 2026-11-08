@@ -27,6 +27,7 @@ public:
 
 	static unsigned short InvalidIndex() { return (unsigned short)~0; }
 
+	CUtlLinkedList6Node &InternalElement(unsigned short i) { return m_pMemory[i]; }
 	unsigned short Head() const { return m_Head; }
 	unsigned short Count() const { return m_ElementCount; }
 	unsigned short &Element(unsigned short i) { return m_pMemory[i].m_Data; }
