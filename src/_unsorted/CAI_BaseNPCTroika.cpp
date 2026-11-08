@@ -1559,6 +1559,92 @@ void CAI_BaseNPCTroika::vfunc105(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10298d30 size=0x538
+#include "CAI_BaseNPC.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseCombatCharacter.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+// TARGET: CAI_BaseNPCTroika::vfunc103
+#include <string.h>
+#include "ScopeTrace.h"
+#include "Tier1.h"
+#include "CUnknown10206c70.h"
+#include "CCollisionProperty.h"
+#define M(T, off) (*(T *)((char *)this + off))
+extern CUnknown10206c70 g_1074f028;
+extern void (*g_109f3650)(int, const char *, ...);
+void sub_101cf600(void *);
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+struct PctView { int a, b, c, d, e; };
+void CAI_BaseNPCTroika::vfunc103()
+{
+	M(char, 0x62e9) = 1;
+	if (strcmp(STRINGR(M(const char *, 0x10e4)), g_106b8540) != 0)
+		g_1074f028.sub_10206c30(STRINGR(M(const char *, 0x10e4)), (CBaseCombatCharacter *)this);
+	vfunc104();
+	const char *p10ac = STRINGR(M(const char *, 0x10ac));
+	if (*p10ac)
+		sub_103239a0(p10ac);
+	int tmp;
+	((CBaseEntity *)this)->vfunc105(STRINGR(*(const char **)vfunc9(&tmp)));
+	M(int, 0x1570) = 0xf7;
+	M(float, 0x1574) = 0.2f;
+	sub_1026dc00(1);
+	sub_1026dc00(0x800000);
+	sub_1026dc00(8);
+	M(Vector, 0x1578).Init(0.0f, 0.0f, 55.0f);
+	M(int, 0x62ec) = 0;
+	M(char, 0x62e8) = 0;
+	{ ScopeTrace t("CBaseEntity::SetSolidFlags", M(const char *, 0x26c) ? M(const char *, 0x26c) : g_106b8540, g_106b8540); M(CCollisionProperty, 0x270).sub_100dc580(0); }
+	{ ScopeTrace t("CBaseEntity::AddSolidFlags", M(const char *, 0x26c) ? M(const char *, 0x26c) : g_106b8540, g_106b8540); M(CCollisionProperty, 0x270).AddSolidFlags(1); }
+	{ ScopeTrace t("CBaseEntity::AddSolidFlags", M(const char *, 0x26c) ? M(const char *, 0x26c) : g_106b8540, g_106b8540); M(CCollisionProperty, 0x270).AddSolidFlags(0x40); }
+	{ ScopeTrace t("CBaseEntity::SetSolid", M(const char *, 0x26c) ? M(const char *, 0x26c) : g_106b8540, g_106b8540); M(CCollisionProperty, 0x270).sub_100dc480(2); }
+	((CBaseEntity *)this)->vfunc93(4, 0);
+	sub_10273070(0);
+	sub_101cf600(this);
+	CAI_BaseNPC::vfunc103();
+	Vector *v = (Vector *)vfunc217();
+	M(Vector, 0x62a8) = *v;
+	v = (Vector *)vfunc219();
+	M(Vector, 0x62b4) = *v;
+	vfunc420();
+	sub_1033df80();
+	void (*pDev)(int, const char *, ...) = g_109f3650;
+	if (M(int, 0x6348) < 1) { pDev(1, "Warning: Invalid m_iPLInvestigateLevel ('pl_investigate' in world craft)\n"); M(int, 0x6348) = 6; }
+	if (M(int, 0x634c) < 1) { pDev(1, "Warning: Invalid m_iPLCriminalFleeLevel ('pl_criminal_flee' in world craft)\n"); M(int, 0x634c) = 6; }
+	if (M(int, 0x6350) < 1) { pDev(1, "Warning: Invalid m_iPLCriminalAttackLevel ('pl_criminal_attack' in world craft)\n"); M(int, 0x6350) = 6; }
+	if (M(int, 0x6354) < 1) { pDev(1, "Warning: Invalid m_iPLSupernaturalFleeLevel ('pl_supernatural_flee' in world craft)\n"); M(int, 0x6354) = 6; }
+	if (M(int, 0x6358) < 1) { pDev(1, "Warning: Invalid m_iPLSupernaturalAttackLevel ('pl_supernatural_attack' in world craft)\n"); M(int, 0x6358) = 6; }
+	PctView &pc = M(PctView, 0x6420);
+	int sum = pc.a + pc.b + pc.c + pc.d + pc.e;
+	if (sum > 0) {
+		pc.e = 100;
+		pc.a = pc.a * 100 / sum;
+		pc.b = pc.a + pc.b * 100 / sum;
+		pc.c = pc.b + pc.c * 100 / sum;
+		pc.d = pc.c + pc.d * 100 / sum;
+	}
+	if (pc.e != 100) {
+		g_109f3630("Occluded target reaction percentages for %s (%f, %f, %f) do not add up to 100%\n", sub_100ab4f0(), (double)M(float, 0x62a8), (double)M(float, 0x62ac), (double)M(float, 0x62b0));
+		if (pc.e <= 0) {
+			pc.a = 10; pc.b = 40; pc.c = 50; pc.d = 70; pc.e = 100;
+		}
+	}
+	sub_10298910(STRINGR(M(const char *, 0x62d8)));
+	sub_102989e0(STRINGR(M(const char *, 0x62e0)));
+	M(int, 0x65e4) = sub_1029f340(STRINGR(M(const char *, 0x65e0)));
+	g_1074f028.sub_10207e60((CBaseCombatCharacter *)this);
+	((CBaseEntity *)this)->sub_100b3840(4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102993c0 size=0x290
 #include "CAI_BaseNPCTroika.h"
 #include "CSave.h"
