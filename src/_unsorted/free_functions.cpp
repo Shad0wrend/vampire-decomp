@@ -107618,6 +107618,69 @@ CUnknown1070b22c_Edict *sub_101d1800(ViewerEntity *pViewer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d1960 size=0xeb
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CBaseNetworkable.h"
+#include "Vector.h"
+extern int g_10733918;
+extern char g_10731918[];
+
+int sub_101d1960(int checkclient)
+{
+	int i;
+	void *ent;
+	Vector org;
+
+	if (checkclient < 1)
+		checkclient = 1;
+	if (checkclient > gpGlobals->maxClients)
+		checkclient = gpGlobals->maxClients;
+	if (checkclient == gpGlobals->maxClients)
+		i = 1;
+	else
+		i = checkclient + 1;
+
+	for (;; i++)
+	{
+		if (i > gpGlobals->maxClients)
+			i = 1;
+		ent = engine->vfunc38(i);
+		if (!ent)
+			continue;
+		if (i == checkclient)
+			break;
+		CBaseNetworkableEdict_t *pE = (CBaseNetworkableEdict_t *)ent;
+		if (!pE->m_b44 || !pE->m_n40)
+			continue;
+		CBaseEntity *entity = (CBaseEntity *)((IServerUnknown *)pE->m_n40)->vfunc4();
+		if (!entity)
+			continue;
+		if (entity->sub_100b3700() & 0x8000)
+			continue;
+		break;
+	}
+
+	CBaseNetworkableEdict_t *pE = (CBaseNetworkableEdict_t *)ent;
+	if (pE->m_n40)
+	{
+		CBaseEntity *pce = (CBaseEntity *)((IServerUnknown *)pE->m_n40)->vfunc4();
+		if (pce)
+		{
+			Vector tmp;
+			org = *((CEntityVSlots *)pce)->slot193(&tmp);
+			int clusterIndex = engine->vfunc30((const float *)&org);
+			if (clusterIndex != g_10733918)
+			{
+				g_10733918 = clusterIndex;
+				engine->vfunc31(clusterIndex, 0x2000, g_10731918);
+			}
+		}
+	}
+	return i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d1a90 size=0x1d4
 #include "utlmemory.h"
 #include "CEntityVSlots.h"
