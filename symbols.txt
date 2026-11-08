@@ -8092,6 +8092,7 @@
 0x1000c95a func   ??0CCollisionEventRecord12@@QAE@XZ CCollisionEventRecord12::CCollisionEventRecord12
 0x1000c95f func   ?sub_102a0eb0@@YIXPAD@Z sub_102a0eb0
 0x1000c964 func   ?vfunc601@CNPC_VMingXiaoTentacle@@UAEXH@Z CNPC_VMingXiaoTentacle::vfunc601
+0x1000c969 func   ?sub_102e6090@CAI_MoveProbe@@QAEXPBM0IPBVCBaseEntity@@PAUAIMoveTrace_t@@H@Z CAI_MoveProbe::sub_102e6090
 0x1000c96e func   ?sub_100991b0@CBaseAnimatingOverlay@@QAEHHH@Z CBaseAnimatingOverlay::sub_100991b0
 0x1000c973 func   ?sub_1018a5b0@@YAHXZ sub_1018a5b0
 0x1000c978 func   ?sub_101719d0@CBloodSplat@@QAEXPAVCBaseEntity@@@Z CBloodSplat::sub_101719d0
