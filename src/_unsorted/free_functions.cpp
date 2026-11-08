@@ -128252,6 +128252,92 @@ bool TInfo::sub_101fdf40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fdfd0 size=0x570
+#include "CVStatInfo_t.h"
+#include "ScopeTrace.h"
+
+struct SPtr { const char *p; SPtr(const SPtr &o) { p = o.p; } };
+struct SInt { int v; SInt(const SInt &o) { v = o.v; } };
+SPtr __cdecl sub_10203920(CVStatKV *kv);
+SInt __cdecl sub_102038e0(CVStatKV *kv, const char *name);
+SPtr __cdecl sub_10203ed0(const char *s);
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+extern "C" char *__cdecl strcpy(char *, const char *);
+extern "C" __declspec(dllimport) void Msg(const char *, ...);
+extern char g_106b8540[];
+
+void CVStatInfo_t::sub_101fdfd0(CVStatKV *pKV)
+{
+	ScopeTrace trace("CVStatInfo_t::PreLoad", g_106b8540, g_106b8540);
+	if (pKV) {
+		m_pszTitle = sub_10203920(pKV).p;
+		m_pszName = (const char *)sub_102038e0(pKV, "InternalName").v;
+		m_apszHelpText[0] = sub_10203ed0(pKV->vfunc13("HelpText", g_106b8540)).p;
+		m_apszHelpText[1] = sub_10203ed0(pKV->vfunc13("HelpText2", g_106b8540)).p;
+		m_apszHelpText[2] = sub_10203ed0(pKV->vfunc13("HelpTextL1", g_106b8540)).p;
+		m_apszHelpText[3] = sub_10203ed0(pKV->vfunc13("HelpTextL2", g_106b8540)).p;
+		m_apszHelpText[4] = sub_10203ed0(pKV->vfunc13("HelpTextL3", g_106b8540)).p;
+		m_apszHelpText[5] = sub_10203ed0(pKV->vfunc13("HelpTextL4", g_106b8540)).p;
+		m_apszHelpText[6] = sub_10203ed0(pKV->vfunc13("HelpTextL5", g_106b8540)).p;
+		m_apszHelpText[7] = sub_10203ed0(pKV->vfunc13("HelpTextH1", g_106b8540)).p;
+		m_apszHelpText[8] = sub_10203ed0(pKV->vfunc13("HelpTextH2", g_106b8540)).p;
+		m_apszHelpText[9] = sub_10203ed0(pKV->vfunc13("HelpTextH3", g_106b8540)).p;
+		m_apszHelpText[10] = sub_10203ed0(pKV->vfunc13("HelpTextH4", g_106b8540)).p;
+		m_apszHelpText[11] = sub_10203ed0(pKV->vfunc13("HelpTextH5", g_106b8540)).p;
+		char szName[32];
+		for (int i = 0; i < 2; i++) {
+			if (i == 0)
+				strcpy(szName, "Gfx_Hud");
+			else
+				sprintf(szName, "Gfx_Hud%d", i + 1);
+			m_apszGfxHud[i] = sub_10203ed0(pKV->vfunc13(szName, g_106b8540)).p;
+		}
+		m_pszInfoModel = sub_10203ed0(pKV->vfunc13("InfoModel", g_106b8540)).p;
+		if (pKV->vfunc10("Disabled", 0))
+			m_flags |= 1;
+		m_apszSound[0] = sub_10203ed0(pKV->vfunc13("Snd_ActivateUI", g_106b8540)).p;
+		m_apszSound[1] = sub_10203ed0(pKV->vfunc13("Snd_MaintainUI", g_106b8540)).p;
+		m_apszSound[2] = sub_10203ed0(pKV->vfunc13("Snd_DeactivateUI", g_106b8540)).p;
+		m_apszSound[3] = sub_10203ed0(pKV->vfunc13("Snd_Extra1UI", g_106b8540)).p;
+		m_apszSound[4] = sub_10203ed0(pKV->vfunc13("Snd_Extra2UI", g_106b8540)).p;
+		m_apszSound[5] = sub_10203ed0(pKV->vfunc13("Snd_Extra3UI", g_106b8540)).p;
+		if (pKV->vfunc10("Is_Instant", 0))
+			m_flags |= 2;
+		if (pKV->vfunc10("Is_Passive", 0))
+			m_flags |= 4;
+		if (pKV->vfunc10("Is_Renewable", 0))
+			m_flags |= 8;
+		if (pKV->vfunc10("ShownInFeedback", 0))
+			m_flags |= 0x10;
+		m_nForceOrdering = pKV->vfunc10("Force_Ordering", 0);
+		if (m_nForceOrdering < 0)
+			m_nForceOrdering += 0x11;
+		m_bField0108 = pKV->vfunc12("Is_Aggressive", 0);
+		CVStatKV *pDur = pKV->vfunc2("Durations");
+		if (pDur) {
+			char szKey[32];
+			int nLevels = 0;
+			sprintf(szKey, "Initial_%d", nLevels + 1);
+			while (pDur->vfunc6(szKey)) {
+				nLevels++;
+				sprintf(szKey, "Initial_%d", nLevels + 1);
+			}
+			if (nLevels) {
+				m_pLevels = (CVStatLevelEntry_t *)operator new(nLevels * sizeof(CVStatLevelEntry_t));
+				for (int j = 0; j < nLevels; j++) {
+					sprintf(szKey, "Initial_%d", j + 1);
+					m_pLevels[j].m_duration = (int)pDur->vfunc11(szKey, 40.0f);
+					sprintf(szKey, "Add_%d", j + 1);
+					m_pLevels[j].m_durationAdd = (int)pDur->vfunc11(szKey, 40.0f);
+				}
+			}
+		}
+	} else {
+		Msg("Unable to load CVStatInfo_t data\n");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fe6a0 size=0x198
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
