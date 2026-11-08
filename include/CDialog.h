@@ -89,6 +89,7 @@ public:
 	~CDialog();	// "CDialog::~CDialog": scope trace, unload (sub_100e5770), then the eight vectors are purged
 
 	void sub_100e1c40(int hFile);	// "CDialog::dump_script_stats" (ret 4, 0x150 byte frame): scope trace; hFile goes as the last argument of g_1070b238->vfunc3(buf, len, hFile) (file write). Writes: the quoted dialog file name, "FACEPOSER_SOUNDDIR : ", "Put this NPC's dialog speech files in: " (sound/character/%s with ".dlg" cut off), a banner, "Character description for %s.\n", the text of every table line whose sub_100df070 passes, a banner, "Gameplay stats for %s:\n"; then clears the vectors +0x330c..+0x3384 (size = 0, Purge) and the ints +0x3398..+0x33a8, calls sub_100e2ad0 to fill them and prints "There are %d total nodes, with %d NPC lines, and %d ...", "There are %d python depedencies, and %d event scripts" and for Dementation (+0x330c), Dominate (+0x3320), Frenzy (+0x3334), Haggle (+0x3348), Intimidation (+0x335c), Seduction (+0x3370), Persuasion (+0x3384) either "There are %d X lines:" with ">=%d, " (value > 0) / "<%d, " (abs of the value) per element, or "There are no X lines.\n"
+	void sub_100e4240(int hFile);
 	void sub_100e2ad0();	// fills the script statistics in +0x330c..+0x33a8 (stub 0x1000ab05), run by dump_script_stats
 	void sub_100e49b0(int nIndex);	// plays the domination (response type 6) / dementation (type 5) victim emitter on the speaker's head for response nIndex when it is flagged (bit 0 of the flags at +0x2810 + nIndex * 4)
 	int sub_100e5690(CDialogEntry_t *pEntry);
