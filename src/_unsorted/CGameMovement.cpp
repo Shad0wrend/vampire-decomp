@@ -269,6 +269,42 @@ void CGameMovement::vfunc1(void *pMove, void *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011f720 size=0x2ac
+#include "CGameMovement.h"
+#include "CGameMovementViews.h"
+
+#define MV ((CMoveFlagsView *)m_pMove)
+
+void CGameMovement::vfunc7()
+{
+#define CLAMP(v, lo, hi) ((v) > (hi) ? (hi) : ((v) < (lo) ? (lo) : (v)))
+
+	if ( MV->m_vecPunchAngle.LengthSqr() > 0.001 ||
+		 MV->m_vecPunchAngleVel.LengthSqr() > 0.001 )
+	{
+		*(QAngle *)&MV->m_vecPunchAngle += *(QAngle *)&MV->m_vecPunchAngleVel * gpGlobals->frametime * MV->m_fl1488;
+
+		float flDecay = 1.0f - MV->m_fl1488 * gpGlobals->frametime * 9.0f;
+		if ( flDecay < 0.0f )
+			flDecay = 0.0f;
+		MV->m_vecPunchAngleVel *= flDecay;
+
+		float flAngleDecay = MV->m_fl1488 * gpGlobals->frametime * 65.0f;
+		if ( flAngleDecay > 2.0f )
+			flAngleDecay = 2.0f;
+		if ( flAngleDecay < 0.0f )
+			flAngleDecay = 0.0f;
+
+		MV->m_vecPunchAngleVel -= MV->m_vecPunchAngle * flAngleDecay;
+
+		MV->m_vecPunchAngle = Vector(
+			CLAMP( MV->m_vecPunchAngle.x, -89.0f, 89.0f ),
+			CLAMP( MV->m_vecPunchAngle.y, -179.0f, 179.0f ),
+			CLAMP( MV->m_vecPunchAngle.z, -89.0f, 89.0f ) );
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10121120 size=0x12b
 #include "Vector.h"
 #include "ConVar.h"
