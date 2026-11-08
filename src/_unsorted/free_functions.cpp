@@ -215979,6 +215979,60 @@ void CNPC_VWerewolf::sub_103cade0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103cb4b0 size=0xa4
+#include "CNPC_VWerewolf.h"
+
+struct CWerewolfModeSrc
+{
+	virtual void vfunc0();
+	virtual char vfunc1();
+	char m_pad0004[0x2c - 4];
+	int m_nMode;
+};
+extern CWerewolfModeSrc *g_1093f95c;
+extern CNPC_VWerewolfHintLink *g_10925450;
+
+// TARGET: CNPC_VWerewolf::sub_103cb4b0
+void CNPC_VWerewolf::sub_103cb4b0()
+{
+	for (CNPC_VWerewolfHintLink *pHint = g_10925450; pHint; pHint = pHint->m_pNext)
+	{
+		int nMode;
+		if (g_1093f95c->vfunc1())
+			nMode = 0;
+		else
+			nMode = g_1093f95c->m_nMode;
+		switch (nMode)
+		{
+		case 1:
+			if (sub_103d2070(pHint))
+				sub_103d5590(pHint);
+			break;
+		case 2:
+			if (sub_103d2810(pHint))
+				sub_103d5590(pHint);
+			break;
+		case 3:
+			if (sub_103d3360(pHint))
+				sub_103d5590(pHint);
+			break;
+		case 4:
+			if (sub_103d8060(pHint))
+				sub_103d5590(pHint);
+			break;
+		case 5:
+			if (sub_103d7dc0(pHint))
+				sub_103d5590(pHint);
+			break;
+		case 6:
+			if (sub_103d8300(pHint))
+				sub_103d5590(pHint);
+			break;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103cc0d0 size=0x1c1
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
