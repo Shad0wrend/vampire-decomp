@@ -6681,6 +6681,7 @@
 0x1000a7e5 func   _npc_VHengeyokai npc_VHengeyokai
 0x1000a7ea func   ?sub_100b3d10@CBaseEntity@@QAEHXZ CBaseEntity::sub_100b3d10
 0x1000a7ef func   ?sub_1020e0a0@@YIXPAXHH@Z sub_1020e0a0
+0x1000a7f4 func   ?vfunc1@CPhysObjSaveRestoreOps@@UAEXPAUCPhysObjSaveRestoreOps_Arg@@H@Z CPhysObjSaveRestoreOps::vfunc1
 0x1000a7f9 func   ?vfunc362@CWeaponMelee_MingXiaoMelee@@UAEPAUCWeaponActivityRecord@@XZ CWeaponMelee_MingXiaoMelee::vfunc362
 0x1000a7fe func   ?vfunc522@CAI_BaseNPC@@UAEMXZ CAI_BaseNPC::vfunc522
 0x1000a803 func   ?sub_101764a0@CUnk101764a0@@QAEXD@Z CUnk101764a0::sub_101764a0
