@@ -277,6 +277,7 @@
 0x10001645 func   ?sub_1023f040@@YAXPAH@Z sub_1023f040
 0x1000164a func   ?sub_102885f0@@YIXPAUNPCStub@@@Z sub_102885f0
 0x1000164f func   ?vfunc228@CNPC_VTzimisce@@UAEXHH@Z CNPC_VTzimisce::vfunc228
+0x10001654 func   ?sub_10203fe0@@YAHPAXHD@Z sub_10203fe0
 0x10001659 func   ?sub_1030ba90@CHolderInner24@@QAEXXZ CHolderInner24::sub_1030ba90
 0x1000165e func   ?sub_103b10f0@CNPC_VSheriffMan@@QAEXXZ CNPC_VSheriffMan::sub_103b10f0
 0x10001663 func   ?sub_102148f0@CUnknown102148f0@@QAEXXZ CUnknown102148f0::sub_102148f0

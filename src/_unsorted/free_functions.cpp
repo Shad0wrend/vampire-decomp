@@ -127755,6 +127755,33 @@ int sub_10203f10(CBaseCombatCharacter *pChar, char bFlag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10203fe0 size=0xd1
+#include "CVStatList_t.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+extern int g_1074e2a8[];
+extern int g_1074e2ec[];
+
+int sub_10203fe0(void *pChar, int nStat, char bFlag)
+{
+	int count = 0;
+	int minValue = 0;
+	if (!bFlag)
+		minValue = 1;
+	int it = (int)g_1074e2a8;
+	do {
+		int stat = *(int *)it;
+		if (stat == nStat)
+			return count;
+		if (CVStatListSet::Of(pChar)->Find(2)->sub_102012d0(stat) >= minValue)
+			count++;
+		it += 4;
+	} while (it < (int)g_1074e2ec);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10204100 size=0xc6
 #include "utlrbtree.h"
 #include "utlsortvector.h"
