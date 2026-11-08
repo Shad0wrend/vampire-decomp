@@ -173,6 +173,90 @@ void CBaseDoor::vfunc71()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ef260 size=0x2c9
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseDoor.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+#include "Ray_t.h"
+#include "math.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+void __cdecl sub_101cf5c0(CBaseEntity *pEnt, const Vector *pPos, int a);
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+// TARGET: CBaseDoor::sub_100ef260
+void CBaseDoor::sub_100ef260()
+{
+	((CBaseEntity *)this)->vfunc104();
+	((CEntityVSlots *)this)->slot171();
+
+	{
+		int dummy;
+		((CBaseEntity *)this)->vfunc105(STRINGR(*((CEntityVSlots *)this)->slot9(&dummy)));
+	}
+
+	m_vecPosition508 = *((CEntityVSlots *)this)->slot220();
+
+	float flExtent = fabs((((CEntityVSlots *)this)->slot214()->x - 2.0f) * m_vecMovedir[0])
+	               + fabs((((CEntityVSlots *)this)->slot214()->y - 2.0f) * m_vecMovedir[1])
+	               + fabs((((CEntityVSlots *)this)->slot214()->z - 2.0f) * m_vecMovedir[2])
+	               - *(float *)((char *)this + 0x504);
+
+	m_vecPosition514 = m_vecPosition508 + (*(Vector *)m_vecMovedir) * flExtent;
+
+	if (m_flags204 & 1)
+	{
+		sub_101cf5c0(this, &m_vecPosition514, 0);
+		m_nState4f8 = 0;
+	}
+	else
+	{
+		m_nState4f8 = 1;
+	}
+
+	if (m_flags204 & 0x800)
+		m_b55c = 1;
+
+	((CBaseEntity *)this)->vfunc93(8, 0);
+	((CBaseEntity *)this)->sub_100b3b00();
+
+	if (m_flSpeed164 == g_104454c4)
+		m_flSpeed164 = 100.0f;
+
+	*(void (CBaseDoor::**)(CBaseEntity *))((char *)this + 0x1ec) =
+		reinterpret_cast<void (CBaseDoor::*)(CBaseEntity *)>(&CBaseDoor::sub_100efae0);
+
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", m_name26c ? m_name26c : g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(1);
+	}
+
+	if (_strcmpi(STRINGR(m_classname11c), "func_water") != 0 && (m_flags204 & 8))
+	{
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", STRINGR(m_name26c));
+		((CCollisionProperty *)((char *)this + 0x270))->AddSolidFlags(4);
+	}
+
+	vfunc223();
+	((CBaseEntity *)this)->sub_100a9470(1);
+
+	m_flTimer640 = 0;
+	m_bfNpcFailedFlags = 0;
+	((char *)this)[0x655] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ef5f0 size=0x21
 struct CBaseDoorX
 {
