@@ -72782,6 +72782,72 @@ void sub_10143d80(const Vector &position, float size, int r, int g, int b, int n
 }
 // END FUNCTION
 
+// FUNCTION: 0x10144510 size=0x1f3
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "CGlobalEntityList.h"
+#include "CSingleUserRecipientFilter.h"
+#include "ScopeTrace.h"
+#include "engineserver.h"
+
+struct CInstanceEdict
+{
+	char m_pad0000[0x40];
+	CGlobalEntityList_Ent *m_pUnknown;	// 0x40
+};
+
+static inline float DistSqr(const float *pA, const Vector *pB)
+{
+	float dx = pA[0] - pB->x;
+	float dy = pA[1] - pB->y;
+	float dz = pA[2] - pB->z;
+	return dy * dy + (dx * dx + dz * dz);
+}
+
+static inline CBasePlayer *LocalPlayerInstance()
+{
+	CBasePlayer *pPlayer;
+	CInstanceEdict *pEdict = (CInstanceEdict *)engine->vfunc38(1);
+	ScopeTrace trace("CBaseEntity::Instance", g_106b8540, g_106b8540);
+	if (!pEdict)
+		pEdict = (CInstanceEdict *)engine->vfunc38(0);
+	if (pEdict && pEdict->m_pUnknown)
+		pPlayer = (CBasePlayer *)pEdict->m_pUnknown->vfunc4();
+	else
+		pPlayer = 0;
+	return pPlayer;
+}
+
+// TARGET: sub_10144510
+void sub_10144510(const Vector *pOrigin, int a2, int a3, int a4, int a5, int a6, int a7, float a8)
+{
+	CBasePlayer *pPlayer = LocalPlayerInstance();
+	if (!pPlayer)
+		return;
+	if (DistSqr(pPlayer->vfunc220(), pOrigin) > 9e7f)
+		return;
+	CSingleUserRecipientFilter filter(pPlayer);
+	engine->vfunc65(&filter, 0x38);
+	engine->vfunc75((int)pOrigin);
+	engine->vfunc75(a2);
+	engine->vfunc75(a3);
+	engine->vfunc69(a4);
+	engine->vfunc69(a5);
+	engine->vfunc69(a6);
+	engine->vfunc69(a7);
+	engine->vfunc72(a8);
+	engine->vfunc66();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10144790 size=0x206
 #include "CBaseEntity.h"
 #include "CUnknown101d7520.h"
