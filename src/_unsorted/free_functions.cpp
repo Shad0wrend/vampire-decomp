@@ -111001,6 +111001,66 @@ int CUnknown101e0f00Entry::sub_101e0650(void *pChar)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e06a0 size=0x1bf
+#include "CUnknown101daec0.h"
+#include "CUnknown101e0f00.h"
+#include "CUnknown101dce30.h"
+#include "CVFeat_t.h"
+#include "CVStatInfoList_t.h"
+
+struct IObj102038e0;
+int sub_102038e0(int, IObj102038e0 *, int);
+extern CUnknown101e0f00Entry *g_10739a74;
+extern CVFeatKV *g_10739a78;
+extern CVStatInfoList_t g_1074e098;
+const char **sub_10203920(const char **pTmp, CVFeatKV *pKV);
+const char **sub_10203950(const char **pTmp, CVFeatKV *pKV, const char *pszKey);
+
+inline const char *STRINGR(const char *const &s)
+{
+	return s ? s : "";
+}
+
+bool CUnknown101e0f00Entry::sub_101e06a0(CVFeatKV *pKV, CUnknown101e0f00 *pLoader)
+{
+	((CUnknown101e0f00Tail *)m_tail)->sub_101e0310();
+	if (pKV) {
+		g_10739a74 = this;
+		g_10739a78 = pKV;
+		const char *tmp;
+		m_pszName = *sub_10203920(&tmp, pKV);
+		m_pszInternalName = *(const char **)sub_102038e0((int)&tmp, (IObj102038e0 *)pKV, (int)"InternalName");
+		m_n10 = g_1074e098.sub_101ffb90(pKV->GetString("Discipline", ""));
+		m_n14 = pKV->GetInt("Level", 0);
+		m_pszViewModel = *sub_10203950(&tmp, pKV, "ViewModel");
+		m_pszTgtHighlightParticle = *sub_10203950(&tmp, pKV, "TgtHightlightParticle");
+		if (m_pszTgtHighlightParticle) {
+			const char *psz = STRINGR(m_pszTgtHighlightParticle);
+			if (*psz)
+				engine->vfunc17(psz, 1);
+		}
+		m_nBaseCost = pKV->GetInt("BloodCost", 0);
+		m_n28 = pKV->GetInt("SupernaturalLvl", 0);
+		m_b30 = pKV->GetBool("UserActivatable", 0);
+		m_bOvert = pKV->GetBool("Overt", 0);
+		m_b31 = pKV->GetBool("ShouldRemove_OnTakeDamage", 0);
+		m_b32 = pKV->GetBool("ShouldRemove_OnHearCombat", 0);
+		m_b33 = pKV->GetBool("ShouldRemove_OnWasBumped", 0);
+		m_flRecoveryTime = pKV->GetFloat("RecoveryTime", 0.0f);
+		m_b35 = pKV->GetBool("TriggerAISound", 0);
+		m_range.sub_101dbb20((IKVNodeView *)pKV);
+		m_projectile.sub_101dd510((IKVNodeView *)pKV);
+		((CUnknown101dce30 *)m_srcInstant)->sub_101dce30((CUnknown101dc5a0Keys *)pKV, "Effect_Src_Instant");
+		((CUnknown101dce30 *)m_srcHit)->sub_101dce30((CUnknown101dc5a0Keys *)pKV, "Effect_Src_Hit");
+		if (m_nBaseCost > 0)
+			m_b30 = 1;
+		g_10739a78 = 0;
+		g_10739a74 = 0;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e08d0 size=0x4c
 #include "CUnknown101e0f00.h"
 #include "S101df260.h"
