@@ -98342,6 +98342,90 @@ int sub_101bb960()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bb990 size=0x1db
+#include "CUnknown101bc140.h"
+#include "CFloatUnit.h"
+#include "CBaseEntity.h"
+
+struct CFilterView101bb990
+{
+	virtual void v0();
+	virtual bool v1();
+	virtual int v2();
+	virtual int v3(int i);
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual bool v7();
+};
+
+struct CSoundRec101bb990
+{
+	int m_n0;
+	float m_flScale;
+	int m_nA;
+	int m_nB;
+	int m_nC;
+	int m_nD;
+	char m_bE;
+	int m_nF;
+	char m_bG;
+	char m_pad[0x7c];
+	CSoundRec101bb990()
+	{
+		m_n0 = 0;
+		m_flScale = 1.0f;
+		m_nA = 100;
+		m_nB = 100;
+		m_nC = 100;
+		m_nD = 0x4b;
+		m_bG = 0;
+		m_bE = 0;
+		m_nF = 0;
+	}
+};
+
+int *sub_1042bff0(int *pOut, const char *pszName);
+char sub_101b1dd0(const char *pszName, CSoundRec101bb990 *pRec);
+__declspec(dllimport) char *Q_strstr(const char *pszStr, const char *pszSub);
+
+// TARGET: CUnknown101bc140::sub_101bb990
+void CUnknown101bc140::sub_101bb990(void *pFilter, CBaseEntity *pEntity, int nChannel, const char *pszSample, int nSoundLevel)
+{
+	CFilterView101bb990 *pView = (CFilterView101bb990 *)pFilter;
+	if (pEntity)
+		m_hEntity = *pEntity->vfunc1();
+	else
+		m_hEntity = -1;
+	m_nChannel = nChannel;
+	{
+		int tmp;
+		m_pszSample = (const char *)*sub_1042bff0(&tmp, pszSample);
+	}
+	((CFloatUnit *)&m_flPitchScale)->sub_101bb6f0(0);
+	m_nSoundLevel = nSoundLevel;
+	((CFloatUnit *)this)->sub_101bb6f0(0);
+	m_pEmitter = 0;
+	*(int *)&m_fl24 = 0;
+	*(int *)&m_pad28[0] = 0;
+	m_nFlags = 1;
+	if (pView->v1())
+		m_nFlags |= 2;
+	if (pView->v7())
+		m_nFlags |= 4;
+	for (int i = 0; i < pView->v2(); i++) {
+		int v = pView->v3(i);
+		if (v >= 0)
+			m_Recipients.AddToTail(v);
+	}
+	CSoundRec101bb990 rec;
+	if (!Q_strstr(pszSample, ".wav") && !Q_strstr(pszSample, ".mp3") && sub_101b1dd0(pszSample, &rec))
+		m_flScale = rec.m_flScale;
+	else
+		m_flScale = 1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bbbf0 size=0x1d
 #include "CFloatUnit.h"
 
