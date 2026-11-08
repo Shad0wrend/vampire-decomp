@@ -50854,6 +50854,90 @@ char *CUnknown100e3400::sub_100e3400(int line, char col, const char *ext, bool i
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e4240 size=0x423
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CDialog.h"
+#include "FileSystemViews.h"
+#include "CStatDefault3List.h"
+#include "string.h"
+
+extern CStatDefault3List g_10738d10;
+extern int g_106ea764[];
+extern char g_10454660[];
+extern char g_1045466c[];
+__declspec(dllimport) int Q_snprintf(char *, int, const char *, ...);
+__declspec(dllimport) char *Q_stristr(char *, const char *);
+char sub_100df010(CDialogEntry_t *pEntry);
+char sub_100df030(CDialogEntry_t *pEntry);
+void sub_100dfaf0(int level, const char *pszFormat, ...);
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+void CDialog::sub_100e4240(int hFile)
+{
+	ScopeTrace trace("CDialog::dump_dialog", g_106b8540);
+	sub_100e5410(sub_100e7310());
+	if (!m_pTable) {
+		sub_100dfaf0(11, "Could not dump script file for: %s\n", sub_100e7310());
+		return;
+	}
+	char szBuf[0x800];
+	for (int i = 0; i < m_pTable->m_nEntries; i++) {
+		if (!sub_100df010(&m_pTable->m_pEntries[i]))
+			continue;
+		Q_snprintf(szBuf, 0x800, "\n\n\n**********************************************************\n");
+		g_1070b238->vfunc3(szBuf, strlen(szBuf), hFile);
+		Q_snprintf(szBuf, 0x800, "LINE: %d\n", m_pTable->m_pEntries[i].m_data[0]);
+		g_1070b238->vfunc3(szBuf, strlen(szBuf), hFile);
+
+		const char *pszPrev = "Not found. This is probably a starting line.";
+		for (int j = 0; j < m_pTable->m_nEntries; j++) {
+			if (m_pTable->m_pEntries[j].m_data[3] == m_pTable->m_pEntries[i].m_data[0]) {
+				pszPrev = (const char *)m_pTable->m_pEntries[j].m_data[1];
+				break;
+			}
+		}
+		Q_snprintf(szBuf, 0x800, "PRECEEDING TEXT: %s\n", pszPrev);
+		g_1070b238->vfunc3(szBuf, strlen(szBuf), hFile);
+
+		char *pszDep = (char *)m_pTable->m_pEntries[i].m_data[4];
+		if (pszDep && Q_stristr(pszDep, "filename"))
+			Q_snprintf(szBuf, 0x800, "RESPONSE TO MALE: \n\t FILENAME : %s \n\t SPEECH   : \"%s\"\n", m_pTable->m_pEntries[i].m_data[4], m_pTable->m_pEntries[i].m_data[1]);
+		else
+			Q_snprintf(szBuf, 0x800, "RESPONSE TO MALE: \n\t FILENAME : line%d_col_E.wav \n\t SPEECH   :  \"%s\"\n", m_pTable->m_pEntries[i].m_data[0], m_pTable->m_pEntries[i].m_data[1]);
+		g_1070b238->vfunc3(szBuf, strlen(szBuf), hFile);
+
+		if (sub_100df030(&m_pTable->m_pEntries[i])) {
+			Q_snprintf(szBuf, 0x800, "RESPONSE TO FEMALE: \n\t FILENAME : line%d_col_F.wav \n\t SPEECH   : \"%s\"\n", m_pTable->m_pEntries[i].m_data[0], m_pTable->m_pEntries[i].m_data[2]);
+			g_1070b238->vfunc3(szBuf, strlen(szBuf), hFile);
+		}
+
+		for (int c = 0; c < 7; c++) {
+			char *pszText = (char *)m_pTable->m_pEntries[i].m_data[6 + c];
+			if (pszText && strlen(pszText)) {
+				int id = g_106ea764[c];
+				const char *pszClan = STRINGR(g_10738d10.sub_101d5e80(id)->m_pszName0c);
+				char cValid = g_1045466c[c];
+				char cInvalid = g_10454660[c];
+				if (cValid != cInvalid)
+					Q_snprintf(szBuf, 0x800, "RESPONSE TO VAMPIRE CLAN %s: \n\t **INVALID** FILENAME : line%d_col_%c.wav \n\t +++VALID+++ FILENAME : line%d_col_%c.wav \n\t SPEECH   : \"%s\"\n", pszClan, m_pTable->m_pEntries[i].m_data[0], cInvalid, m_pTable->m_pEntries[i].m_data[0], cValid, m_pTable->m_pEntries[i].m_data[6 + c]);
+				else
+					Q_snprintf(szBuf, 0x800, "RESPONSE TO VAMPIRE CLAN %s: \n\t FILENAME : line%d_col_%c.wav\n\t SPEECH   : \"%s\"\n", pszClan, m_pTable->m_pEntries[i].m_data[0], cInvalid, m_pTable->m_pEntries[i].m_data[6 + c]);
+				g_1070b238->vfunc3(szBuf, strlen(szBuf), hFile);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e4780 size=0x8f
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
