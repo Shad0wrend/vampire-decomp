@@ -942,6 +942,7 @@
 0x10002527 func   ?sub_10107760@@YAPAHXZ sub_10107760
 0x10002531 func   ?sub_10203420@@YAHH@Z sub_10203420
 0x10002540 func   ?vfunc48@CCameraTrack@@UAEMXZ CCameraTrack::vfunc48
+0x10002545 func   ?sub_1008e480@CBaseAnimating@@QAEXPAVCBaseEntity@@MMMM@Z CBaseAnimating::sub_1008e480
 0x1000254f func   _info_node_sabbat_hide info_node_sabbat_hide
 0x10002554 func   ?sub_1026e340@CAI_BaseNPC@@QAEXH@Z CAI_BaseNPC::sub_1026e340
 0x10002559 func   ?sub_101e9fd0@CNamedList9fd0@@QAEHPBD@Z CNamedList9fd0::sub_101e9fd0

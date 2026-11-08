@@ -30422,6 +30422,56 @@ int CBaseAnimating::sub_1008de20(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008e480 size=0x147
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+
+struct CWindFields
+{
+	char m_pad0000[0x63c];
+	EHANDLE m_hWind;
+	float m_flWindDir;
+	float m_flWindSpeed;
+	float m_flWindMin;
+	float m_flWindMax;
+};
+
+inline float anglemod(float a)
+{
+	a = (360.f / 65536) * ((int)(a * (65536.f / 360.0f)) & 65535);
+	return a;
+}
+
+void CBaseAnimating::sub_1008e480(CBaseEntity *pWind, float flDirection, float flSpeed, float flMin, float flMax)
+{
+	ScopeTrace trace("CBaseAnimating::SetWind", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CWindFields *f = (CWindFields *)this;
+	if (!pWind) {
+		f->m_flWindMax = f->m_flWindMin = 0;
+		f->m_hWind = pWind;
+		return;
+	}
+	f->m_hWind = pWind;
+	f->m_flWindDir = anglemod(flDirection);
+	f->m_flWindSpeed = (flSpeed > 5.0) ? 5.0 : ((flSpeed < 0.001) ? 0.001 : flSpeed);
+	if (flMin > flMax) {
+		float flTemp = flMin;
+		flMin = flMax;
+		flMax = flTemp;
+	}
+	f->m_flWindMax = flMax;
+	f->m_flWindMin = flMin;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008e630 size=0xf2
 #include "CBaseAnimating.h"
 struct TraceEntry { const char *a, *b, *c; };
