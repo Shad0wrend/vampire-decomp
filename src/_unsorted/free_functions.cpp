@@ -64095,6 +64095,45 @@ float __stdcall sub_10126380(float a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10126cb0 size=0x11c
+#include "CGameMovement.h"
+#include "CGameMovementViews.h"
+#include "CBaseEntity.h"
+#include "CAI_BaseNPC.h"
+
+// TARGET: CGameMovement::sub_10126cb0
+void CGameMovement::sub_10126cb0()
+{
+	Vector vecStand = m_vecHullMax - m_vecHullMin;
+	Vector vecDuck = m_vecDuckHullMax - m_vecDuckHullMin;
+	Vector t0 = vecStand - vecDuck; Vector vecDelta = (t0) * 0.5f;
+
+	((CMoveFlagsView *)m_pMove)->m_bDucked = 1;
+	((CAI_BaseNPC *)m_pMove)->sub_1009f380((const Vector *)slot4(1, ((CMoveFlagsView *)m_pMove)->m_b1edc));
+	((CBaseEntity *)m_pMove)->sub_100b3580(2);
+	((CMoveFlagsView *)m_pMove)->m_b1ede = 0;
+
+	if (((CMoveDataView *)m_pMove)->vfunc209() != 0)
+	{
+		for (int i = 0; 3 > i; i++)
+		{
+			CMovePlayerView *pMv = (CMovePlayerView *)m_pPlayer;
+			pMv->m_vecOrigin[i] -= m_vecDuckHullMin[i] - m_vecHullMin[i];
+		}
+	}
+	else
+	{
+		CMovePlayerView *pMv = (CMovePlayerView *)m_pPlayer;
+		pMv->m_vecOrigin.x += vecDelta.x;
+		pMv->m_vecOrigin.y += vecDelta.y;
+		pMv->m_vecOrigin.z += vecDelta.z;
+	}
+
+	sub_101263c0(1);
+	slot22();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10126e20 size=0xf4
 #include "CGameMovement.h"
 
