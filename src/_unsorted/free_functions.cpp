@@ -48069,6 +48069,90 @@ void sub_100d8120()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d8220 size=0x178
+#include "CBaseCombatWeapon.h"
+#include "CBasePlayer.h"
+extern char g_106b8540[];
+extern const char g_10560060[];
+extern const char g_10560044[];
+extern const char g_10560028[];
+extern "C" int atoi(const char *);
+extern "C" unsigned int strlen(const char *);
+#pragma intrinsic(strlen)
+
+struct S100d8220Holder { char pad[0xa8]; CBasePlayer *m_pPlayer; };
+S100d8220Holder *sub_10008d8c();
+void sub_1023f040(unsigned int *crc);
+void sub_1023f060(unsigned int *crc);
+void sub_1023f0c0(unsigned int *crc, const char *p, int len);
+
+inline void S100d8220Use(CBasePlayer *pPlayer, const char *name)
+{
+	CBaseCombatWeapon *pWeapon = (CBaseCombatWeapon *)pPlayer->sub_10335950(name);
+	if (pWeapon)
+		pWeapon->vfunc315();
+}
+
+inline unsigned int S100d8220Hash(const char *name)
+{
+	unsigned int crc;
+	sub_1023f040(&crc);
+	sub_1023f0c0(&crc, name, strlen(name));
+	sub_1023f060(&crc);
+	return crc;
+}
+
+void sub_100d8220()
+{
+	S100d8220Holder *h = sub_10008d8c();
+	if (!h)
+		return;
+	CBasePlayer *pPlayer = h->m_pPlayer;
+	if (!pPlayer)
+		return;
+	if (engine->vfunc85() < 2)
+		return;
+	int n = atoi(engine->vfunc84(1));
+	int type;
+	int val;
+	if (n >= 0 && n < 10) {
+		type = pPlayer->m_aSlotType2018[n];
+		val = pPlayer->m_aSlotValue2040[n];
+	} else {
+		type = 0;
+	}
+	switch (type) {
+	case 1:
+		pPlayer->m_bFlag1B74 = 0;
+		pPlayer->m_nRangeStart1B70 = val & 0xffff;
+		pPlayer->m_nRangeEnd1B78 = ((val >> 16) & 0xffff) - 1;
+		return;
+	case 2:
+	case 3:
+		{
+		for (int i = 0; i < 0xe0; i++) {
+			if (pPlayer->sub_1032e8b0(i)) {
+				const char **pp = (const char **)((char *)pPlayer->sub_1032e8b0(i) + 0x11c);
+				const char *name = *pp ? *pp : g_106b8540;
+				if (S100d8220Hash(name) == (unsigned int)val)
+					pPlayer->vfunc457(name, 0);
+			}
+		}
+		}
+		return;
+	case 4:
+		S100d8220Use(pPlayer, g_10560060);
+		return;
+	case 5:
+		S100d8220Use(pPlayer, g_10560044);
+		return;
+	case 6:
+		S100d8220Use(pPlayer, g_10560028);
+		return;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d8490 size=0x265
 #include "utlrbtree.h"
 #include "utlsortvector.h"
