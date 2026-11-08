@@ -178156,6 +178156,91 @@ void CAI_Node::sub_102fa510()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102fac00 size=0x3c1
+#include "CAI_NodeGraph.h"
+#include "CAI_Node.h"
+#include "CBitString.h"
+#include "Vector.h"
+
+void CAI_Node::sub_102fac00()
+{
+	CBitString *pOld = m_pBits;
+	if (pOld)
+	{
+		pOld->sub_100bf6a0();
+		delete pOld;
+	}
+	CBitString *pNew = new CBitString;
+	m_pBits = pNew ? (pNew->sub_102fc910(*(int *)m_pGraph98), pNew) : 0;
+	sub_102fa630();
+	for (int i = 0; i < m_pGraph98->m_nNodes; i++)
+	{
+		if (m_nIndex == i)
+		{
+			m_pBits->m_pData[i >> 5] &= ~(1 << (i & 0x1f));
+		}
+		else if (m_pBits->m_pData[i >> 5] & (1 << (i & 0x1f)))
+		{
+			CAI_Node *pNode = m_pGraph98->NodeAt(i);
+			Vector dir = *(Vector *)&pNode->m_x - *(Vector *)&m_x;
+			float len = VectorNormalize(dir);
+			if (pNode->m_nType == 3)
+			{
+				if (len > 2048.0f)
+				{
+					int *p = &m_pBits->m_pData[i >> 5];
+					*p = *p & ~(1 << (i & 0x1f));
+					continue;
+				}
+			}
+			else
+			{
+				if (len > 800.0f)
+				{
+					int *p = &m_pBits->m_pData[i >> 5];
+					int v = *p;
+					*p = v & ~(1 << (i & 0x1f));
+					continue;
+				}
+			}
+			for (int j = 0; j < m_pGraph98->m_nNodes; j++)
+			{
+				if (j == i || j == m_nIndex)
+					continue;
+				if (!(m_pBits->m_pData[j >> 5] & (1 << (j & 0x1f))))
+					continue;
+				if (m_pGraph98->NodeAt(i)->m_nType == 3 && m_pGraph98->NodeAt(j)->m_nType != 3)
+					continue;
+				if (m_pGraph98->NodeAt(i)->m_nType != 3 && m_pGraph98->NodeAt(j)->m_nType == 3)
+					continue;
+				if (m_pGraph98->NodeAt(i)->m_nType == 4)
+					continue;
+				CAI_Node *pOther = m_pGraph98->NodeAt(j);
+				Vector d2 = *(Vector *)&pOther->m_x - *(Vector *)&m_x;
+				float len2 = d2.Length();
+				VectorNormalize(d2);
+				if (DotProduct(dir, d2) >= 0.9)
+				{
+					int *p;
+					int m;
+					if (len2 < len)
+					{
+						p = &m_pBits->m_pData[i >> 5];
+						m = 1 << (i & 0x1f);
+					}
+					else
+					{
+						m = 1 << (j & 0x1f);
+						p = &m_pBits->m_pData[j >> 5];
+					}
+					*p &= ~m;
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102fb470 size=0x4f
 extern int g_10610bec;
 extern int g_10610bf0;
