@@ -57541,6 +57541,42 @@ int sub_100fad20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fad50 size=0xc0
+#include "CEnvParticle.h"
+
+extern int vt_10455f1c[];
+
+// TARGET: CEnvParticle::sub_100fad50
+CEnvParticle *CEnvParticle::sub_100fad50()
+{
+	sub_1009d980(0);
+	*(int **)this = vt_10455f1c;
+	m_iParticleIndex = -1;
+	m_iszParticleName = 0;
+	m_unk484 = 1;
+	m_fl488 = gpGlobals->curtime;
+	m_nAttachPoint = -1;
+	m_fl48c = 1.0f;
+	m_fRedScale = 1.0f;
+	m_fGreenScale = 1.0f;
+	m_fBlueScale = 1.0f;
+	m_fMaskScale = 1.0f;
+	m_fSizeScale = 1.0f;
+	m_fSecondaryRed = 1.0f;
+	m_fSecondaryGreen = 1.0f;
+	m_fSecondaryBlue = 1.0f;
+	m_iAttachType = 0;
+	m_pszAttachName = 0;
+	m_n490 = 0;
+	m_fl49c = 512.0f;
+	m_nFlags268 |= 0x80;
+	m_b4a0 = 0;
+	m_b4a1 = 0;
+	m_nFlags4c |= 1;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fae70 size=0xb
 namespace lifted {
 extern char g_10455f1c;
