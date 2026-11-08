@@ -18,7 +18,7 @@ public:
 	virtual void vfunc5(); virtual void *vfunc6(); virtual void vfunc7(unsigned int flags); virtual unsigned int vfunc8(); virtual void vfunc9();	/* slot 7/8 Set/GetCallbackFlags-like (ragdoll code: vfunc7(vfunc8() | 8)) */	/* slot 6 GetGameData */
 	virtual unsigned short vfunc10();	/* slot 10 GetGameFlags */ virtual void vfunc11(float flMass);	/* slot 11 SetMass */
 	virtual float vfunc12();	// slot 12 GetMass
-	virtual float vfunc13(); virtual void vfunc14();
+	virtual float vfunc13(); virtual float *vfunc14(float *pOut);
 	virtual Vector *vfunc15(Vector *pOut); virtual void vfunc16(); virtual void vfunc17(const Vector *pVelocity, const Vector *pAngVelocity);	// slot 17: called by CGravControllerPoint::sub_10148a20 as (0, &vector)
 	virtual void vfunc18(const Vector *a, Vector *b); virtual void vfunc19();
 	virtual void vfunc20(); virtual void vfunc21(int a); virtual void vfunc22(int a); virtual void vfunc23();
@@ -29,7 +29,7 @@ public:
 	virtual void vfunc33(const Vector *pForce, const Vector *pWorldPosition, Vector *pCenterForce, Vector *pCenterTorque);	// slot 33: the same four arguments (CPhysThruster::vfunc241 asks it for the thruster's linear / angular parts)
 	virtual void vfunc34(); virtual void vfunc35(); virtual void vfunc36(const void *pMatrix, int bTeleport);	// slot 36 (+0x90): SetPositionMatrix(matrix3x4 *, 1) (0x1019c330)
 	virtual void vfunc37(Vector *pVec, int a);	// slot 37 (+0x94): (vec, 0) (0x1019c0b0)
-	virtual void vfunc38(); virtual void vfunc39(float *pPosition, float *pAngles);	// slot 39 GetPosition
+	virtual void vfunc38(float *pMatrix); virtual void vfunc39(float *pPosition, float *pAngles);	// slot 39 GetPosition
 	virtual void vfunc40(float *pVelocity, float *pAngVelocity);	// slot 40 GetVelocity (either pointer may be null)
 	virtual void vfunc41(const Vector *pVelocity, const Vector *pAngVelocity);	// slot 41 AddVelocity
 	virtual void vfunc42();
