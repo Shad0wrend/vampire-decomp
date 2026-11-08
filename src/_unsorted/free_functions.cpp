@@ -147212,6 +147212,36 @@ void sub_10242390(const float *v, float *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10242420 size=0x1a5
+#include "Vector.h"
+struct SegPair { Vector o; Vector d; char pad[0x18]; bool b; int pad2; };
+int sub_102407f0(SegPair *a, SegPair *b, float *t1, float *t2);
+struct SegT2 { float x, y; float &operator[](int i) { return ((float *)this)[i]; } };
+
+int sub_10242420(Vector *p1, Vector *d1, float s1, Vector *p2, float s2, Vector *o2, SegT2 &out)
+{
+    SegPair A;
+    SegPair B;
+    float t1, t2;
+    A.o = *p1;
+    A.d = *d1;
+    B.o = *o2;
+    B.d = *p2 * -(s2 * 10.0f);
+    A.b = true;
+    B.b = true;
+    sub_102407f0(&A, &B, &t1, &t2);
+    out[0] = t1 / s1;
+    A.d = *p2;
+    B.d = *d1 * -(s1 * 10.0f);
+    sub_102407f0(&A, &B, &t1, &t2);
+    t1 /= s2;
+    out[1] = t1;
+    if (!(out[0] < 0.0f) && !(out[0] > 1.0f) && !(t1 < 0.0f) && !(t1 > 1.0f))
+        return 1;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102433a0 size=0x76
 #include "Vector.h"
 

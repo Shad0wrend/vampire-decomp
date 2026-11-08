@@ -2759,6 +2759,7 @@
 0x10004e26 func   ?RotateRight@?$CUtlRBTree@UCRBTree36Entry_1004c5b0@@G@@QAEXG@Z CUtlRBTree<CRBTree36Entry_1004c5b0,unsigned short>::RotateRight
 0x10004e2b func   ?sub_101f73f0@CVTraitEffectGroup_t@@QAEXPAUCVStatKV@@@Z CVTraitEffectGroup_t::sub_101f73f0
 0x10004e30 func   ?sub_101e3e70@CUnknown101e0f00@@QAEXPAUS1033d380@@PBD@Z CUnknown101e0f00::sub_101e3e70
+0x10004e35 func   ?sub_10242420@@YAHPAVVector@@0M0M0AAUSegT2@@@Z sub_10242420
 0x10004e3a func   ?vfunc0@CPhysicsHook@@QAE_NXZ CPhysicsHook::vfunc0
 0x10004e3f func   ?vfunc2@?$CUtlVectorDataOps@V?$CUtlVector@USaveRestoreBlockHeader_t@@V?$CUtlMemory@USaveRestoreBlockHeader_t@@@@@@$08@@UAE_NPAX@Z CUtlVectorDataOps<CUtlVector<SaveRestoreBlockHeader_t,CUtlMemory<SaveRestoreBlockHeader_t> >,9>::vfunc2
 0x10004e44 func   ?vfunc472@CNPC_VHunter@@QAEXH@Z CNPC_VHunter::vfunc472
