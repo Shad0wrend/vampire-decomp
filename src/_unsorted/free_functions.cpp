@@ -69984,6 +69984,47 @@ void __cdecl sub_10139b50(int *pA, int *pSrc, int *pArr)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10139b90 size=0x132
+#include "QAngle.h"
+#include "matrix3x4_t.h"
+
+inline void SinCos(float radians, float *sine, float *cosine)
+{
+	__asm
+	{
+		fld dword ptr [radians]
+		fsincos
+		mov edx, dword ptr [cosine]
+		mov eax, dword ptr [sine]
+		fstp dword ptr [edx]
+		fstp dword ptr [eax]
+	}
+}
+
+void sub_10139b90(const QAngle &angles, matrix3x4_t &matrix)
+{
+	float sr, sp, sy, cr, cp, cy;
+	SinCos(angles.y * 0.017453292f, &sy, &cy);
+	SinCos(angles.x * 0.017453292f, &sp, &cp);
+	SinCos(angles.z * 0.017453292f, &sr, &cr);
+
+	float (*m)[4] = matrix.m_flMatVal;
+	m[0][0] = cp * cy;
+	m[1][0] = cp * sy;
+	m[2][0] = -sp;
+	m[0][1] = sr * sp * cy + cr * -sy;
+	m[1][1] = sr * sp * sy + cr * cy;
+	m[2][1] = sr * cp;
+	m[0][2] = (cr * sp * cy + -sr * -sy);
+	m[1][2] = (cr * sp * sy + -sr * cy);
+	m[2][2] = cr * cp;
+	float *w = &m[0][3];
+	w[0] = 0.0f;
+	w[4] = 0.0f;
+	w[8] = 0.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10139d20 size=0x40
 void sub_10139d70(float *pDegrees, float *pOut);
 
