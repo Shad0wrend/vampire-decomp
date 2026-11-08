@@ -102342,6 +102342,74 @@ extern "C" CBaseEntity *trigger_hurt()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c5f40 size=0x36a
+#include "CTriggerHurt.h"
+#include "CBaseCombatCharacter.h"
+#include "CEntityVSlots.h"
+#include "CTakeDamageInfo.h"
+#include "CCollisionProperty.h"
+
+void sub_10002b80();
+
+bool CTriggerHurt::sub_101c5f40(CBaseEntity *pOther, float flDamage)
+{
+	if (!pOther || !pOther->m_nTakeDamage)
+		return false;
+	if (!sub_101c5460(pOther))
+		return false;
+
+	CTakeDamageInfo info;
+	void (CBaseEntity::*pfn)(CTakeDamageInfo *) = (void (CBaseEntity::*)(CTakeDamageInfo *))&CBaseEntity::sub_100a1250;
+	if (flDamage < 0.0f) {
+		((CEntityVSlots *)pOther)->slot143(-flDamage, m_nDamageType5a0);
+	} else {
+		if (m_flSpeed5a4 > 0.0f) {
+			Vector dir, pos;
+			if (m_i5c0 == 0) {
+				VectorCopy(m_vecPushDir5b4, dir);
+				pos = *((CEntityVSlots *)this)->slot217();
+			} else {
+				if (m_i5c0 == 1) {
+					pos = m_vecTarget5a8;
+					dir = *((CEntityVSlots *)pOther)->slot217() - m_vecTarget5a8;
+				} else {
+					pos = *((CEntityVSlots *)pOther)->slot217();
+					dir = m_vecTarget5a8 - *((CEntityVSlots *)pOther)->slot217();
+				}
+				VectorNormalize(dir);
+				dir *= m_flSpeed5a4;
+			}
+			if (sub_101c53d0(this)) {
+				CBaseCombatCharacter *pC = (CBaseCombatCharacter *)pOther->m_p9c;
+				if (pC) {
+					Vector tmp = dir;
+					VectorNormalize(tmp);
+					pC->sub_10344f80(&tmp, 2, 0);
+				}
+			}
+			(pOther->*pfn)(info.sub_101c2720(this, this, &dir.x, &pos.x, flDamage, m_nDamageType5a0, 0));
+		} else {
+			(pOther->*pfn)(info.sub_101c26d0(this, this, flDamage, m_nDamageType5a0, 0, 0, -1));
+		}
+	}
+	if (m_nDamageType5a0 & 8) {
+		CBaseCombatCharacter *pChar = (CBaseCombatCharacter *)pOther->m_p9c;
+		if (pChar && !pChar->sub_100a52a0() && ((CEntityVSlots *)pChar)->slot163()) {
+			Vector wmins, wmaxs;
+			CCollisionProperty *pCol = (CCollisionProperty *)((char *)this + 0x270);
+			pCol->sub_100dcd90((float *)((char *)pCol + 4), (float *)((char *)pCol + 0x10), &wmins.x, &wmaxs.x);
+			pChar->sub_10342910((void *)sub_10002b80, this, 1, 0, wmins, wmaxs);
+		}
+	}
+	if (pOther->m_pA8)
+		m_out5dc.sub_100cd660(pOther, this, 0);
+	else
+		m_out5c4.sub_100cd660(pOther, this, 0);
+	m_hurtEntities.AddToTail(EHANDLE(pOther));
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c6390 size=0x27
 #include "CTriggerHurt.h"
 
