@@ -282,6 +282,8 @@ public:
 	bool sub_1027d0a0();	// SelectIdealState helper: with the take-damage mode (+0x200) at 1 stamps the source file/line (+0x1b3c / +0x1b40) and sets the state (+0x5cc4) to 7 and returns false; else cancels the scripted sequence entity of the handle at +0x5d74 (CCineNPC::sub_101a8c30) and returns true
 	int sub_10265970();	// picks a hurt/idle activity (0x49 default, 0x66 / 0x68..0x6c by the value at +0x1594) that the model has a sequence for (CBaseAnimating::SelectWeightedSequence), else 0x49; first computes AngleVectors of GetAngles() (unused)
 	int sub_1008dc40(int a, int b);	// CBaseAnimating::SelectWeightedSequence, called directly
+	int *sub_1008d990(int seq);
+	const char *sub_1008ff50(int act);
 	const char *sub_100ab4f0();	// CBaseEntity::GetDebugName (stub 0x1000b5cd)
 	void sub_10280c80();	// the AI report hand-off run at the end of the slow-think report
 	int sub_1008dd30(int a, int b);	// CBaseAnimating member (stub 0x10004ec1), called directly by sub_1026c540 when the byte at +0x65d is clear
