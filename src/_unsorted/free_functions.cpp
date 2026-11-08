@@ -97762,6 +97762,42 @@ void CSoundSysIface::sub_101afff0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b04a0 size=0xf7
+#include "CSoundEmitterSystemBase.h"
+#include "CUnknown1070b248.h"
+
+struct S_Vt { virtual void v0(); virtual void v1(); virtual void v2(); };
+extern CUnknown1070b248 *g_1070b248;
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+
+void sub_101b04a0()
+{
+    ((S_Vt *)&g_1072be18)->v2();
+    ((S_Vt *)&g_1072be18)->v1();
+    int nSounds = g_1072be18.sub_101b3220();
+    if (nSounds == 0) {
+        ((S_Vt *)&g_1072be18)->v1();
+        nSounds = g_1072be18.sub_101b3220();
+    }
+    for (int i = 0; i < nSounds; i++) {
+        if (g_1072be18.sub_101b4200(i)) {
+            CSoundParametersInternal *pSound = g_1072be18.sub_101b3730(i);
+            if (pSound && pSound->m_bPrecache1d) {
+                int nWaves = pSound->m_nWaves;
+                if (nWaves == 0) {
+                    DevMsg("CSoundEmitterSystem:  sounds.txt entry '%s' has no waves listed under 'wave' or 'rndwave' key!!!\n", g_1072be18.sub_101b31d0(i));
+                } else {
+                    for (int j = 0; j < nWaves; j++) {
+                        const CSoundWaveEntry *pWaves = pSound->m_pWaves;
+                        g_1070b248->vfunc0(g_1072be18.sub_101b4c90(pWaves + j), 0);
+                    }
+                }
+            }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b0670 size=0x1c
 struct CUnk101b0670 { int sub_101b4740(int a); };
 extern CUnk101b0670 g_1072be18;
