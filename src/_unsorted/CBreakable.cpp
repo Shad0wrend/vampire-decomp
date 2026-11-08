@@ -20,6 +20,39 @@ datamap_t *CBreakable::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010d590 size=0xd0
+#include "CBreakable.h"
+
+extern "C" {
+int _strcmpi(const char *, const char *);
+int atoi(const char *);
+}
+int *sub_10002095(const char **ppValue, const char *pszValue);
+
+struct CBreakableBase
+{
+    bool sub_1009e430(const char *szKeyName, const char *szValue);
+};
+
+bool CBreakable::vfunc110(const char *szKeyName, const char *szValue)
+{
+    if (!_strcmpi(szKeyName, "material")) {
+        int nMaterial = atoi(szValue);
+        if (nMaterial >= 0 && nMaterial < 10)
+            m_nMaterial = nMaterial;
+        else
+            m_nMaterial = 1;
+    } else if (!_strcmpi(szKeyName, "deadmodel")) {
+    } else if (!_strcmpi(szKeyName, "shards")) {
+    } else if (!_strcmpi(szKeyName, "gibmodel")) {
+        m_iszGibModel = *sub_10002095(&szValue, szValue);
+    } else if (!_strcmpi(szKeyName, "lip")) {
+    } else
+        return ((CBreakableBase *)this)->sub_1009e430(szKeyName, szValue);
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010d880 size=0x8
 #include "CBreakable.h"
 namespace lifted {
