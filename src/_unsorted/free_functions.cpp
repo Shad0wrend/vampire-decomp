@@ -22489,6 +22489,49 @@ CUnknown10073ae0 *CUnknown10077b30::sub_10077b30(int index, const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10077bd0 size=0x173
+#include "CUnknown10075aa0.h"
+#include "CUnknown10073b00.h"
+#include "CUtlVector136.h"
+namespace block_10077bd0 {
+struct CRecUnit : CUnknown10073b00 { float sub_10073b00(); };
+float CRecUnit::sub_10073b00() { return *(float *)(m_data + 0x80); }
+}
+using namespace block_10077bd0;
+void CUnknown10075aa0::sub_10077bd0(int index, const char *a, int b)
+{
+	CUnknown10073b00 tmp;
+	tmp.sub_10073a50(this, (int)a, b);
+	CUtlVector136 *v = (CUtlVector136 *)&m_vec2e4[index];
+	int n = v->m_size;
+	if (n + 1 > v->m_allocationCount)
+		v->sub_10079100(n - v->m_allocationCount + 1);
+	v->m_size++;
+	v->m_pElements = v->m_pMemory;
+	v->sub_10078f20(n, 1);
+	CUnknown10073b00 *p = (CUnknown10073b00 *)(v->m_pMemory + n * 0x88);
+	if (p)
+		p->sub_10073a90(&tmp);
+	{
+		CUnknown10073b00 tmp2;
+		tmp2.sub_10073a50((CUnknown10075aa0 *)1, (int)"", 0);
+	}
+	int *pCount = (int *)((char *)this + 0x2f0 + index * 0x14);
+	CUnknown10073b00 swap;
+	for (int i = 0; i < *pCount; i++) {
+		for (int j = i + 1; j < *pCount; j++) {
+			CUnknown10073b00 *ri = (CUnknown10073b00 *)(v->m_pMemory + i * 0x88);
+			CUnknown10073b00 *rj = (CUnknown10073b00 *)(v->m_pMemory + j * 0x88);
+			if (((CRecUnit *)ri)->sub_10073b00() > ((CRecUnit *)rj)->sub_10073b00()) {
+				swap = *ri;
+				*ri = *rj;
+				*rj = swap;
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10077db0 size=0x9f
 #include "vampire_all.h"
 #include "CUnknown10077db0.h"

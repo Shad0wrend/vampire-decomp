@@ -1141,6 +1141,7 @@
 0x100029f5 func   ?vfunc362@CWeaponRanged_Rifle_SuperShotgun@@QAEHXZ CWeaponRanged_Rifle_SuperShotgun::vfunc362
 0x100029fa func   ?sub_102f13a0@CUnk102f13a0@@QAE_NH@Z CUnk102f13a0::sub_102f13a0
 0x100029ff func   ?vfunc5@CLogicVisible@@QAEPAV1@I@Z CLogicVisible::vfunc5
+0x10002a04 func   ?sub_10077bd0@CUnknown10075aa0@@QAEXHPBDH@Z CUnknown10075aa0::sub_10077bd0
 0x10002a09 func   ?sub_1013e800@CUnknown1013e7e0@@QAEXH@Z CUnknown1013e7e0::sub_1013e800
 0x10002a0e func   ?vfunc13@CSave@@UAEXPBDPAXH@Z CSave::vfunc13
 0x10002a13 func   ?sub_102e2790@CUnknown102e2790@@QAEHXZ CUnknown102e2790::sub_102e2790
