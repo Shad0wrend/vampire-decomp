@@ -8,6 +8,13 @@
 static void (CUtlRBTree<CSoundEmitterRecord, int>::*s_LinkToParent)(int, int, bool) = &CUtlRBTree<CSoundEmitterRecord, int>::LinkToParent;
 // END FUNCTION
 
+// FUNCTION: 0x101b7970 size=0x383
+// TARGET: ?RemoveNode@?$CUtlRBTree@UCSoundEmitterRecord@@H@@QAEXH@Z
+#include "utlrbtree.h"
+#include "CSoundEmitterSystemBase.h"
+static void (CUtlRBTree<CSoundEmitterRecord, int>::*s_RemoveNode)(int) = &CUtlRBTree<CSoundEmitterRecord, int>::RemoveNode;
+// END FUNCTION
+
 // FUNCTION: 0x101b7f70 size=0x4da
 #include "CSoundEmitterSystemBase.h"
 // TARGET: ?InsertRebalance@?$CUtlRBTree@UCSoundEmitterRecord@@H@@QAEXH@Z
