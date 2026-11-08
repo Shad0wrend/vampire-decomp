@@ -1,9 +1,12 @@
 // ConCommand (RTTI .?AVConCommand@@): base ConCommandBase at +0x0 is not modelled; primary vtable 0x10497474 has 8 slots.
 #pragma once
 
-class ConCommand
+#include "ConCommandBase.h"
+struct ConCommandCtorBase { ConCommandCtorBase() { ((ConCommandBase *)((char *)this - 4))->ConCommandBase::ConCommandBase(); } };
+class ConCommand : public ConCommandCtorBase
 {
 public:
+	ConCommand(const char *pszName, void (*pCallback)(), const char *pszHelp, int nFlags, void (*pCompletion)());
 	virtual ConCommand *vfunc0(unsigned int flags);
 	virtual bool vfunc1();
 	virtual void vfunc2();
