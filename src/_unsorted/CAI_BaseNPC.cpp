@@ -2310,6 +2310,82 @@ Vector CAI_BaseNPC::vfunc533(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102775e0 size=0x2f7
+#include "Tier1.h"
+#include "CAI_BaseNPC_vfunc76.h"
+#include "CUnknown1027d990.h"
+
+void sub_10119750(const char *pFmt, ...);
+
+void CAI_BaseNPC::vfunc76()
+{
+	CAI_BaseNPCUnit76 *pNPC = (CAI_BaseNPCUnit76 *)this;
+	char tempstr[512];
+
+	if (!sub_100952d0(-1))
+		return;
+
+	int (*Q_snprintf)(char *, int, const char *, ...) = g_109f388c;
+	Q_snprintf(tempstr, sizeof(tempstr), "Seq: ");
+	int *pSeq = sub_1008d990(pNPC->m_nSequence6f0);
+	if (!pSeq) {
+		g_109f3884(tempstr, "(INVALID)", sizeof(tempstr), -1);
+	} else {
+		int (*Q_strncat)(char *, const char *, int, int) = g_109f3884;
+		Q_strncat(tempstr, (char *)pSeq + pSeq[0], sizeof(tempstr), -1);
+		Q_strncat(tempstr, " / ", sizeof(tempstr), -1);
+		Q_strncat(tempstr, (char *)pSeq + pSeq[1], sizeof(tempstr), -1);
+	}
+	sub_10119750(tempstr);
+	sub_10119750("Cycle: %.2f", pNPC->m_flCycle6f8);
+
+	if (pNPC->m_nActivityfec != -1 && pNPC->m_nIdealActivityff0 != -1 && pNPC->m_nActivityfec != 0) {
+		int iActivity = vfunc375(pNPC->m_nActivityfec);
+		iActivity = vfunc381(iActivity);
+		iActivity = vfunc376(iActivity);
+		int iIdealActivity = vfunc375(pNPC->m_nIdealActivityff0);
+		iIdealActivity = vfunc381(iIdealActivity);
+		iIdealActivity = vfunc376(iIdealActivity);
+		const char *pszActivity = sub_1008ff50(sub_1008dc40(iActivity, -1));
+		const char *pszIdealActivity = sub_1008ff50(sub_1008dc40(iIdealActivity, -1));
+		Q_snprintf(tempstr, sizeof(tempstr), "Actv: %s (%s)\n", pszActivity, pszIdealActivity);
+	} else if (pNPC->m_nActivityfec == 0) {
+		g_109f3890(tempstr, "Actv: RESET", sizeof(tempstr));
+	} else {
+		g_109f3890(tempstr, "Actv: INVALID", sizeof(tempstr));
+	}
+	sub_10119750(tempstr);
+
+	sub_10119750("State: %s, ", vfunc406(pNPC->m_nState5cc0));
+	int nMoveType = ((CUnknown1027d990 *)this)->sub_1027d990();
+	sub_10119750("Move: %s, ", vfunc407(nMoveType));
+
+	if (pNPC->m_pSchedule5c38) {
+		const char *pName = pNPC->m_pSchedule5c38->m_pszName;
+		if (!pName)
+			pName = "Unknown";
+		sub_10119750("Schd: %s, ", pName);
+
+		int *pTask = sub_1028a150();
+		if (pTask) {
+			Q_snprintf(tempstr, sizeof(tempstr), "Task: %s (#%d), ", vfunc449(pTask[0]), pNPC->m_nTask5c40);
+		} else {
+			g_109f3890(tempstr, "Task: None", sizeof(tempstr));
+		}
+		sub_10119750(tempstr);
+
+		for (int i = 0; i < pNPC->m_pSchedule5c38->NumTasks(); i++) {
+			g_109f388c(tempstr, sizeof(tempstr), "%s%s%s%s",
+				(i == 0) ? "Task:" : "       ",
+				(i == pNPC->m_nTask5c40) ? "->" : "   ",
+				vfunc449(pNPC->m_pSchedule5c38->GetTaskList()[i].m_nTask),
+				(i == pNPC->m_nTask5c40) ? "<-" : "");
+			sub_10119750(tempstr);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102779a0 size=0x238
 #include "CEntityVSlots.h"
 #include "CAI_BaseNPC.h"
