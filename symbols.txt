@@ -16170,6 +16170,7 @@
 0x1053dd10 data   ??_R0?AVCBaseAnimating@@@8 ??_R0?AVCBaseAnimating@@@8
 0x1053e8d0 data   ??_R0?AVCDisciplineParticle@@@8 ??_R0?AVCDisciplineParticle@@@8
 0x1053e91c data   ??_R0?AVCBaseViewModel@@@8 ??_R0?AVCBaseViewModel@@@8
+0x10559bf4 data   ??_R0?AVCBaseLandmark@@@8 ??_R0?AVCBaseLandmark@@@8
 0x1055f710 data   ??_R0?AVCBaseCombatWeapon@@@8 ??_R0?AVCBaseCombatWeapon@@@8
 0x10579660 data   ?pfSqrt@@3P6AMM@ZA pfSqrt
 0x1057966c data   ?pfVectorNormalize@@3P6IMAAVVector@@@ZA pfVectorNormalize
