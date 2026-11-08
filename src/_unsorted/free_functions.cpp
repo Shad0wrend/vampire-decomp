@@ -209666,6 +209666,35 @@ void CNPC_VVampireBoss::sub_103c63c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c6570 size=0xd0
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CNPC_VVampireBoss.h"
+#include "CEntityVSlots.h"
+
+void sub_10139550(Vector *pAngles, Vector *pForward);
+
+// TARGET: CNPC_VVampireBoss::sub_103c6570
+float CNPC_VVampireBoss::sub_103c6570(CEntityVSlots *pHint, const Vector *pPoint)
+{
+	ScopeTrace trace("CNPC_VVampireBoss::DistToHintCenterLine2D_2", g_106b8540);
+	Vector vecOrigin = *pHint->slot217();
+	vecOrigin.z = 0;
+	Vector vecForward;
+	sub_10139550(pHint->slot219(), &vecForward);
+	vecForward.z = 0;
+	VectorNormalize(vecForward);
+	return sub_103c6680(&vecOrigin, &vecForward, pPoint);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c67f0 size=0x25
 struct CUnknown103c67f0
 {
