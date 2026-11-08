@@ -212392,6 +212392,44 @@ CHintData_WW *CHintData_WW::sub_103c9ed0(const CHintData_WW *pSrc)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c9fc0 size=0xc9
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "Vector.h"
+#include "CHintData_WW.h"
+
+struct CHintData_WW_View
+{
+	int m_nId;
+	Vector m_a;
+	Vector m_b;
+	int m_c;
+	CUtlVector<int> m_Hints;
+	CUtlVector<int> m_EndHints;
+};
+
+void CHintData_WW::sub_103c9fc0()
+{
+	ScopeTrace trace("CHintData_WW::Init", g_106b8540);
+	CHintData_WW_View *p = (CHintData_WW_View *)this;
+	p->m_a.Init();
+	p->m_b.Init();
+	p->m_c = 0;
+	p->m_Hints.Purge();
+	p->m_EndHints.Purge();
+	p->m_nId = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ca1a0 size=0xd3
 #include "utlvector.h"
 #include "CHintData_WW.h"
