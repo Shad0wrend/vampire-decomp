@@ -132598,6 +132598,77 @@ extern "C" CBaseEntity *prop_haunted()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102130a0 size=0x766
+#include "QAngle.h"
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+struct CPropHauntedView {
+    char pad[0x7ac];
+    QAngle m_angImpulseScale;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_105abb0c[2];
+void sub_1000af5b();
+void sub_1000fd12();
+void sub_100020b3();
+void sub_10007964();
+void sub_10012945();
+void sub_1000c621();
+void sub_10010bd1();
+
+int *sub_102130a0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 1, "m_flDamage", {0x794, 0}, 1, 6, "damage" },
+        { 3, "m_vecFlingDest", {0x7a0, 0}, 1, 6, "fling_dest" },
+        { 5, "m_bTargetPlayer", {0x79c, 0}, 1, 6, "target_player" },
+        { 1, "m_flFlingVelocity", {0x788, 0}, 1, 6, "velocity" },
+        { 1, "m_flMinShakeTime", {0x78c, 0}, 1, 6, "min_shake" },
+        { 1, "m_flMaxShakeTime", {0x790, 0}, 1, 6, "max_shake" },
+        { 1, "m_flStopShakeFadeoutTime", {0x784, 0}, 1, 6, "stop_shake_fadeout" },
+        { 1, "m_angImpulseScale[YAW]", {(int)&((CPropHauntedView *)0)->m_angImpulseScale[1], 0}, 1, 6, "spin_yaw_scale", 0, 0 },
+        { 1, "m_angImpulseScale[PITCH]", {(int)&((CPropHauntedView *)0)->m_angImpulseScale[0], 0}, 1, 6, "spin_pitch_scale", 0, 0 },
+        { 1, "m_angImpulseScale[ROLL]", {(int)&((CPropHauntedView *)0)->m_angImpulseScale[2], 0}, 1, 6, "spin_roll_scale", 0, 0 },
+        { 2, "m_sFlingParticle", {0x7bc, 0}, 1, 6, "fling_particle", 0, 0 },
+        { 2, "m_sShakeParticle", {0x7c0, 0}, 1, 6, "shake_particle", 0, 0 },
+        { 2, "m_sFlingSound", {0x7c4, 0}, 1, 6, "fling_sound", 0, 0 },
+        { 2, "m_sBreakSound", {0x7c8, 0}, 1, 6, "break_sound", 0, 0 },
+        { 2, "m_sShakeSound", {0x7cc, 0}, 1, 6, "shake_sound", 0, 0 },
+        { 15, "m_flFlingTime", {0x77c, 0}, 1, 2, 0, 0, 0 },
+        { 15, "m_flStopShakeTime", {0x780, 0}, 1, 2, 0, 0, 0 },
+        { 12, "m_hShakeParticle", {0x7d0, 0}, 1, 2, 0, 0, 0 },
+        { 5, "m_bCanDamage", {0x7b8, 0}, 1, 2, 0, 0, 0 },
+        { 0, "InputFlingNow", {0, 0}, 1, 8, "FlingNow", 0, (void *)sub_1000af5b },
+        { 0, "InputStopShaking", {0, 0}, 1, 8, "StopShaking", 0, (void *)sub_1000fd12 },
+        { 0, "InputStartShaking", {0, 0}, 1, 8, "StartShaking", 0, (void *)sub_100020b3 },
+        { 0, "InputShakeAndFling", {0, 0}, 1, 8, "ShakeAndFling", 0, (void *)sub_10007964 },
+        { 0, "CPropHauntedFlyingThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10012945 },
+        { 0, "CPropHauntedHauntedThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000c621 },
+        { 0, "CPropHauntedShakeFadeoutThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10010bd1 },
+        { 10, "m_OnFling", {0x7d4, 0}, 1, 0x16, "OnFling", g_1055dc70 },
+        { 10, "m_OnBeginShake", {0x7ec, 0}, 1, 0x16, "OnBeginShake", g_1055dc70 },
+        { 10, "m_OnEndShake", {0x804, 0}, 1, 0x16, "OnEndShake", g_1055dc70 },
+    };
+    g_105abb0c[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_105abb0c[0] = (int)&dataDesc[1];
+    return g_105abb0c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102139f0 size=0x4e
 extern int vt_1048920c;
 void __fastcall sub_1018f1c0(void *pThis);
