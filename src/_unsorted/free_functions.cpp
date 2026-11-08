@@ -158818,6 +158818,141 @@ char sub_1027c2c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027c300 size=0x368
+#include "vampire_all.h"
+#include "CUnknown101c2770.h"
+#include "CUnknown102cc670.h"
+#include "COutputEvent.h"
+#include "CBaseCombatCharacter.h"
+#include "CUtlVector4.h"
+void __fastcall sub_1027f610(void *);
+void *__fastcall sub_102e06f0(void *);
+extern int g_105c9798;
+extern void *(*g_109f3634)(int);
+extern void *vt_1049a0cc[];
+extern void *vt_1049a0b8[];
+extern void *vt_104995c4[];
+extern void *vt_10499594[];
+
+struct HInv { int h; HInv() { h = -1; } };
+struct SinkV { void **vt; SinkV() { vt = vt_1049a0cc; } };
+
+CAI_BaseNPC *CAI_BaseNPC::sub_1027c300()
+{
+	char *p = (char *)this;
+	((CBaseCombatCharacter *)this)->sub_10326de0();
+	((SinkV *)(p + 0x19b0))->SinkV::SinkV();
+	*(short *)(p + 0x19b4) = 1;
+	*(int *)(p + 0x19b8) = 0;
+	((CUnknown101c2770 *)(p + 0x1a48))->sub_101c2690();
+	*(int *)(p + 0x1a94) = -1;
+	((CUnknown102cc670 *)(p + 0x1a9c))->sub_102cc670();
+	((CUnknown102cc670 *)(p + 0x1ae0))->sub_102cc670();
+	((HInv *)(p + 0x5b68))->HInv::HInv();
+	((HInv *)(p + 0x5b6c))->HInv::HInv();
+	((HInv *)(p + 0x5b70))->HInv::HInv();
+	((HInv *)(p + 0x5b74))->HInv::HInv();
+	((HInv *)(p + 0x5b78))->HInv::HInv();
+	((HInv *)(p + 0x5b7c))->HInv::HInv();
+	*(int *)(p + 0x5ba8) = -1;
+	((COutputEvent *)(p + 0x5bd8))->sub_100cd2a0();
+	((COutputEvent *)(p + 0x5bf0))->sub_100cd2a0();
+	((COutputEvent *)(p + 0x5c08))->sub_100cd2a0();
+	((COutputEvent *)(p + 0x5c20))->sub_100cd2a0();
+	sub_1027f610(p + 0x5c5c);
+	sub_1027f610(p + 0x5c74);
+	sub_1027f610(p + 0x5c8c);
+	sub_1027f610(p + 0x5ca8);
+	*(int *)(p + 0x5ce0) = -1;
+	*(int *)(p + 0x5ce4) = -1;
+	*(int *)(p + 0x5cf8) = 0;
+	*(int *)(p + 0x5d00) = -1;
+	*(char *)(p + 0x5d04) = 0;
+	*(int *)(p + 0x5d08) = 0;
+	*(int *)(p + 0x5d0c) = 0;
+	*(int *)(p + 0x5d10) = 0;
+	*(int *)(p + 0x5d14) = 0;
+	*(int *)(p + 0x5d18) = 0;
+	*(int *)(p + 0x5d1c) = 0;
+	*(int *)(p + 0x5d20) = 0;
+	*(void ***)(p + 0x5cf4) = vt_1049a0b8;
+	((HInv *)(p + 0x5d24))->HInv::HInv();
+	((HInv *)(p + 0x5d28))->HInv::HInv();
+	((HInv *)(p + 0x5d2c))->HInv::HInv();
+	*(int *)(p + 0x5d48) = 0;
+	*(int *)(p + 0x5d4c) = 4;
+	*(int *)(p + 0x5d50) = 0;
+	void *mem = g_109f3634(0x50);
+	*(void **)(p + 0x5d48) = mem;
+	*(int *)(p + 0x5d54) = 0;
+	*(void **)(p + 0x5d58) = mem;
+	*(float *)(p + 0x5d5c) = -1.0f;
+	((HInv *)(p + 0x5d74))->HInv::HInv();
+	*(int *)(p + 0x5d90) = -1;
+	((COutputEvent *)(p + 0x5e0c))->sub_100cd2a0();
+	((COutputEvent *)(p + 0x5e24))->sub_100cd2a0();
+	((COutputEvent *)(p + 0x5e3c))->sub_100cd2a0();
+	((COutputEvent *)(p + 0x5e54))->sub_100cd2a0();
+	((COutputEvent *)(p + 0x5e6c))->sub_100cd2a0();
+	((COutputEvent *)(p + 0x5e84))->sub_100cd2a0();
+	((COutputEvent *)(p + 0x5e9c))->sub_100cd2a0();
+	((COutputEvent *)(p + 0x5eb4))->sub_100cd2a0();
+	((COutputEvent *)(p + 0x5ecc))->sub_100cd2a0();
+	((COutputEvent *)(p + 0x5ee4))->sub_100cd2a0();
+	((COutputEvent *)(p + 0x5efc))->sub_100cd2a0();
+	((COutputEvent *)(p + 0x5f14))->sub_100cd2a0();
+	*(int *)(p + 0x4c) |= 0x20;
+	*(void ***)p = vt_104995c4;
+	*(void ***)(p + 0x19b0) = vt_10499594;
+	*(int *)(p + 0x5b50) = 0;
+	*(char *)(p + 0x5b54) = 0;
+	*(char *)(p + 0x5b55) = 0;
+	memset(p + 0x1b4e, 0, 0x4000);
+	*(int *)(p + 0x5d44) = 0;
+	*(int *)(p + 0x5d40) = 0;
+	*(int *)(p + 0x5d34) = 0;
+	*(int *)(p + 0x5cdc) = 0;
+	*(int *)(p + 0x5d3c) = 0;
+	*(int *)(p + 0x5d38) = 0;
+	*(int *)(p + 0x5c38) = 0;
+	*(int *)(p + 0x5c3c) = 0;
+	*(int *)(p + 0x5cec) = 0;
+	*(int *)(p + 0x1568) = 0;
+	*(int *)(p + 0x156c) = 0;
+	*(int *)(p + 0x5dac) = -1;
+	*(int *)(p + 0x5d94) = 0;
+	*(int *)(p + 0x5d98) = 0;
+	*(int *)(p + 0x5d9c) = 0;
+	*(int *)(p + 0x5ce8) = 0;
+	*(int *)(p + 0x5d6c) = 0;
+	*(int *)(p + 0xe5c) = 0;
+	*(int *)(p + 0xe60) = 0;
+	*(int *)(p + 0x5dec) = 0;
+	void *obj = operator new(0x14);
+	*(void **)(p + 0x5d88) = obj ? sub_102e06f0(obj) : 0;
+	*(float *)(p + 0xe3c) = 0.95f;
+	this->sub_10279cc0(0);
+	*(int *)(p + 0x5da4) = 0;
+	*(int *)(p + 0x5cf0) = 0;
+	*(char *)(p + 0x5f2d) = 1;
+	*(char *)(p + 0x5f2c) = 1;
+	*(char *)(p + 0x5df0) = 0;
+	*(float *)(p + 0x5bbc) = 0.3f;
+	*(float *)(p + 0x5bc0) = 0.5f;
+	*(int *)(p + 0x5f34) = 0;
+	*(int *)(p + 0x5f30) = 0;
+	*(int *)(p + 0x5f38) = 0;
+	*(int *)(p + 0x5f3c) = 0;
+	g_105c9798 = 0;
+	((CUtlVector4 *)&g_1090fe10)->sub_10265310((int)this);
+	((CBaseEntity *)this)->sub_100aaa40(7);
+	*(CAI_BaseNPC **)(p + 0x94) = this;
+	*(int *)(p + 0x158c) = 2;
+	*(char *)(p + 0x5bd4) = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027c820 size=0x19b
 #include "vampire_all.h"
 void __fastcall sub_10273e40(void *);
