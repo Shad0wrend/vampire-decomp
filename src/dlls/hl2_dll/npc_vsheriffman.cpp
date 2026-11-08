@@ -41,6 +41,114 @@ void CNPC_VSheriffMan::vfunc619(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103af960 size=0x36a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "vampire.h"
+#include "CNPC_VSheriffMan.h"
+#include "CAI_BaseNPCTroika.h"
+#include "ScopeTrace.h"
+
+#define FILE_ "E:\\Vampire\\main\\dlls\\hl2_dll\\npc_vsheriffman.cpp"
+
+int CNPC_VSheriffMan::vfunc604(int arg)
+{
+	ScopeTrace scope("CNPC_VSheriffMan::SelectScheduleMeleeCombat", g_106b8540);
+	CAI_BaseNPCTroika *p = (CAI_BaseNPCTroika *)this;
+	if (m_b6078)
+	{
+		if (p->vfunc602())
+		{
+			p->vfunc601(p->vfunc167());
+			if (p->vfunc308())
+			{
+				m_pszSourceFile = FILE_;
+				m_nSourceLine = 0x22f;
+				return 0xe9;
+			}
+			m_pszSourceFile = FILE_;
+			m_nSourceLine = 0x235;
+			return 0xe7;
+		}
+	}
+	else
+	{
+		if (!p->vfunc599(p->vfunc167()))
+		{
+			if (p->vfunc308())
+			{
+				m_pszSourceFile = FILE_;
+				m_nSourceLine = 0x244;
+				return 0xe9;
+			}
+			m_pszSourceFile = FILE_;
+			m_nSourceLine = 0x248;
+			return 0x15a;
+		}
+	}
+	if (p->sub_10269aa0(0x59))
+	{
+		p->vfunc601(p->vfunc167());
+		m_pszSourceFile = FILE_;
+		m_nSourceLine = 0x252;
+		return 0x15a;
+	}
+	if (p->sub_10269aa0(0x51))
+	{
+		if (p->vfunc308())
+		{
+			m_pszSourceFile = FILE_;
+			m_nSourceLine = 0x269;
+			return 0xdc;
+		}
+		m_pszSourceFile = FILE_;
+		m_nSourceLine = 0x26d;
+		return 0xdd;
+	}
+	bool bRetry = false;
+	if (m_fl626c > 64.0f)
+	{
+		if (m_fl6274 == -1.0f)
+			m_fl6274 = enginerandom->vfunc1(3.0f, 4.0f) + gpGlobals->curtime;
+		else if (gpGlobals->curtime >= m_fl6274)
+			bRetry = true;
+	}
+	else
+		m_fl6274 = -1.0f;
+	if (p->vfunc308())
+	{
+		if (p->sub_10269aa0(9) || p->sub_10269aa0(0x1a) || bRetry)
+		{
+			p->vfunc601(p->vfunc167());
+			m_pszSourceFile = FILE_;
+			m_nSourceLine = 0x290;
+			return 0xe9;
+		}
+	}
+	if (!p->sub_10269aa0(9) && !p->sub_10269aa0(0x60) && !p->sub_10269aa0(0x48))
+	{
+		m_pszSourceFile = FILE_;
+		m_nSourceLine = 0x2a3;
+		return 0xc7;
+	}
+	if (p->vfunc308())
+	{
+		m_pszSourceFile = FILE_;
+		m_nSourceLine = 0x29b;
+		return 0xca;
+	}
+	m_pszSourceFile = FILE_;
+	m_nSourceLine = 0x29f;
+	return 0xcb;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103afdb0 size=0x3d8
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
