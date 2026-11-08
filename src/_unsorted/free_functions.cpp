@@ -139300,6 +139300,88 @@ void * CUnknown10230cd0::sub_10230cd0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10230d00 size=0x166
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CVDmg_t.h"
+#include "CVStatList_t.h"
+#include "CVFeat_t.h"
+
+int sub_10202780(int a);
+extern CVStatList_t g_109f0b40;
+extern unsigned char g_109f0a8c;
+extern CVFeat_t g_109f0ac0;
+void sub_10012a8a();
+void sub_1001509b();
+int atexit(void (*)());
+
+// TARGET: CVDmgBlock16_t::sub_10230d00
+int CVDmgBlock16_t::sub_10230d00(void *pCharacter)
+{
+	if (!pCharacter)
+		return 0;
+	int id = m_b;
+	if (id == -1)
+		return 0;
+
+	switch (m_a)
+	{
+	case 0:
+	case 1:
+	case 2:
+	case 3:
+		{
+			int type = sub_10202780(m_a);
+			CVStatListSet *pSet = CVStatListSet::Of(pCharacter);
+			CVStatList_t *pList;
+			for (int i = 0; i < pSet->m_nLists; i++) {
+				if (pSet->m_pLists[i]->m_field10 == type) {
+					pList = pSet->m_pLists[i];
+					goto found;
+				}
+			}
+			if (!(g_109f0b2a & 1)) {
+				g_109f0b2a |= 1;
+				g_109f0b40.CVStatList_t::CVStatList_t(-1);
+				atexit(sub_10012a8a);
+			}
+			pList = &g_109f0b40;
+found:
+			return sub_10204c20(pList->sub_102012d0(id));
+		}
+	case 4:
+		{
+			CVFeat_t *pFeat;
+			for (int i = 0; i < g_10739d20; i++) {
+				if (*(int *)g_10739d24[i] == id) {
+					pFeat = g_10739d24[i];
+					goto found2;
+				}
+			}
+			if (!(g_109f0a8c & 1)) {
+				g_109f0a8c |= 1;
+				g_109f0ac0.CVFeat_t::CVFeat_t(-1);
+				atexit(sub_1001509b);
+			}
+			pFeat = &g_109f0ac0;
+found2:
+			return pFeat->sub_101e56e0(pCharacter);
+		}
+	case 5:
+	case 6:
+	case 7:
+	case 8:
+		return 0;
+	case 9:
+		if (id)
+			return ((int (*)(void *))id)(pCharacter);
+		return 0;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10230ed0 size=0x13
 #include "CVDmg_t.h"
 

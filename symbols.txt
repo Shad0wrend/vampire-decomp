@@ -1285,6 +1285,7 @@
 0x10002d38 func   ?sub_1017deb0@@YGMHM@Z sub_1017deb0
 0x10002d3d func   ?sub_102dc350@CUnknown102dc350@@QAEXXZ CUnknown102dc350::sub_102dc350
 0x10002d47 func   ?sub_102daf50@@YIDPAX@Z sub_102daf50
+0x10002d4c func   ?sub_10230d00@CVDmgBlock16_t@@QAEHPAX@Z CVDmgBlock16_t::sub_10230d00
 0x10002d51 func   ?sub_101bf680@@YIIPAD@Z sub_101bf680
 0x10002d5b func   ?sub_101f75f0@CUnk101f75f0@@QAEXPAUCTraitStatBlock@@@Z CUnk101f75f0::sub_101f75f0
 0x10002d60 func   ?vfunc82@CBaseViewModel@@UAEPAUdatamap_t@@XZ CBaseViewModel::vfunc82
