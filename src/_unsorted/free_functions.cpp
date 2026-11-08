@@ -38074,6 +38074,45 @@ void CBaseEntity::sub_100b2770(const Vector &vecAbsVelocity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b2970 size=0xe8
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+
+extern Vector g_1070d1b0;
+
+struct CBaseEntityVelView
+{
+	char m_pad0000[0x1b1];
+	bool m_bChanged;
+	char m_pad01b2[0x3d4 - 0x1b2];
+	Vector m_vecVelocity;
+};
+
+struct CBaseEntityUnit : CBaseEntity
+{
+	void sub_100b2970(const Vector &inVecImpulse);
+};
+
+void CBaseEntityUnit::sub_100b2970(const Vector &inVecImpulse)
+{
+	ScopeTrace trace("CBaseEntity::ApplyLocalVelocityImpulse", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (inVecImpulse != g_1070d1b0) {
+		sub_100b5340(0x1000, 0);
+		CBaseEntityVelView *pv = (CBaseEntityVelView *)this;
+		pv->m_vecVelocity += inVecImpulse;
+		pv->m_bChanged = true;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b2aa0 size=0xf3
 #include "CBaseEntity.h"
 #include "CUnknown101d7520.h"

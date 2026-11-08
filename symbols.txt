@@ -14254,6 +14254,7 @@
 0x1001510e func   ?vfunc12@CServerGameDLL@@UAEHH@Z CServerGameDLL::vfunc12
 0x10015113 func   ?sub_1036e400@CNPC_VChangBros@@QAEXXZ CNPC_VChangBros::sub_1036e400
 0x10015118 func   ?sub_10273e40@CUnknown10273e40@@QAEXXZ CUnknown10273e40::sub_10273e40
+0x1001511d func   ?sub_100b2970@CBaseEntityUnit@@QAEXABVVector@@@Z CBaseEntityUnit::sub_100b2970
 0x10015122 func   ?vfunc11@CCollisionProperty@@UAEHXZ CCollisionProperty::vfunc11
 0x10015127 func   ?sub_1025cb30@@YAXPAG0@Z sub_1025cb30
 0x1001512c func   ?sub_102f0e80@CAI_Navigator@@QAE_NPAD@Z CAI_Navigator::sub_102f0e80
