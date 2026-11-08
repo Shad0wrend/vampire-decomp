@@ -112296,6 +112296,86 @@ void CUnk101ddf80::sub_101ddf80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ddfb0 size=0x283
+#include "CUnknown101d7520.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "S101df260.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101dc5a0.h"
+#include "CUnknown101dce30.h"
+
+struct SRange { char m_pad[8]; void sub_101dda70(const char *psz); };
+struct CStringRet_101ddfb0 { const char *m_psz; CStringRet_101ddfb0() {} };
+CStringRet_101ddfb0 sub_10203950(IKVNodeView *pKV, const char *pszKey);
+unsigned int sub_1033cb00(const char *psz);
+int sub_1030cbd0(const char *psz);
+int sub_10429200(const char *psz);
+int sub_10412520(const char *psz);
+__declspec(dllimport) void __cdecl DevMsg(const char *pszFormat, ...);
+
+// TARGET: S101ddec0::sub_101ddfb0
+bool S101ddec0::sub_101ddfb0(IKVNodeView *pKV, const char *pszKeyName)
+{
+	IKVNodeView *pNode;
+	if (pszKeyName && *pszKeyName)
+		pNode = pKV->vfunc2(pszKeyName);
+	else
+		pNode = pKV;
+	if (pNode) {
+		m_b00 = 1;
+		((SRange *)&m_o14)->sub_101dda70(pNode->vfunc13("Blood_Suck", g_106b8540));
+		m_b1c = pNode->vfunc12("Clear_Copy_Prop", 0);
+		((SRange *)&m_o04)->sub_101dda70(pNode->vfunc13("Dmg_Health", g_106b8540));
+		((SRange *)&m_o0c)->sub_101dda70(pNode->vfunc13("Dmg_Health_Src", g_106b8540));
+		m_b1d = pNode->vfunc12("GibOnDeath", 0);
+		m_b1e = pNode->vfunc12("AddToComfort", 0);
+		((SRange *)&m_o20)->sub_101dda70(pNode->vfunc13("Heal_Blood", g_106b8540));
+		((SRange *)&m_o28)->sub_101dda70(pNode->vfunc13("Health_Buffer", g_106b8540));
+		m_n30 = pNode->vfunc10("Health_Buffer_Block_Percent", m_n30);
+		const char *pszFlag = pNode->vfunc13("MiscFlag", g_106b8540);
+		if (*pszFlag)
+			m_na4 |= sub_1033cb00(pszFlag);
+		pszFlag = pNode->vfunc13("AI_NPCFlag", g_106b8540);
+		if (*pszFlag)
+			m_na8 = sub_1030cbd0(pszFlag);
+		const char *pszSched = sub_10203950(pNode, "AI_Schedule").m_psz;
+		if (pszSched)
+			m_pszSchedule34 = pszSched;
+		const char *pszExpr = sub_10203950(pNode, "Expression").m_psz;
+		if (pszExpr)
+			m_n44 = (int)pszExpr;
+		m_n48 = pNode->vfunc10("Flinch", m_n48);
+		m_n4c = pNode->vfunc10("Knockback", m_n4c);
+		const char *pszAnim = pNode->vfunc13("Player_Anim", g_106b8540);
+		if (*pszAnim) {
+			m_n38 = sub_10429200(pszAnim);
+			if (m_n38 == -1)
+				DevMsg("ERROR: Discipline: HitInfo Player_Anim failed to match: %s!\n", pszAnim);
+		}
+		const char *pszGesture = pNode->vfunc13("Gesture_Anim", g_106b8540);
+		if (*pszGesture) {
+			m_n3c = sub_10412520(pszGesture);
+			float f = pNode->vfunc11("Gesture_Duration", 0);
+			m_n40 = f;
+			if (f <= 0.0)
+				DevMsg("ERROR: Discipline: Gesture duration is bad: %f!\n", f);
+		}
+		m_o50.sub_101ddc30((CUnknown101ddc30Kv *)pNode->vfunc2("Trigger_Casting"));
+		((CUnknown101dce30 *)&m_o5c)->sub_101dce30((CUnknown101dc5a0Keys *)pNode, "Effect_Tgt_Instant");
+		((CUnknown101dce30 *)&m_o78)->sub_101dce30((CUnknown101dc5a0Keys *)pNode, "Effect_Tgt_Hit");
+		((CUnknown101dc5a0 *)&m_o94)->sub_101dc5a0((CUnknown101dc5a0Keys *)pNode);
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101de2f0 size=0x2b6
 #include "CTakeDamageInfo.h"
 #include "CUnknown101d7520.h"

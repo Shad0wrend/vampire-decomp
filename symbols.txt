@@ -5147,6 +5147,7 @@
 0x10008512 func   ?sub_103e7580@CWeaponMelee_Torch@@QAEXXZ CWeaponMelee_Torch::sub_103e7580
 0x10008521 func   ?vfunc617@CNPC_VHengeyokai@@QAEXXZ CNPC_VHengeyokai::vfunc617
 0x10008526 func   ?sub_101a9b30@@YIXPADHH@Z sub_101a9b30
+0x1000852b func   ?sub_101ddfb0@S101ddec0@@QAE_NPAVIKVNodeView@@PBD@Z S101ddec0::sub_101ddfb0
 0x10008530 func   ?vfunc5@CWeaponMelee_Sledgehammer@@QAEPAV1@I@Z CWeaponMelee_Sledgehammer::vfunc5
 0x10008535 func   ?sub_10042c10@CMem8c_t@@QAEHHHPBUE8@@@Z CMem8c_t::sub_10042c10
 0x1000853a func   ?vfunc8@IGameSystem@@QAEPAV1@I@Z IGameSystem::vfunc8
