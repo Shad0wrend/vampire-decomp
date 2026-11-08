@@ -198771,6 +198771,47 @@ float CNPC_VChangBros::sub_1036dc60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036df50 size=0x195
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VChangBros.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+struct CChangBrosEnemyView {
+	char m_pad0000[0x628c];
+	EHANDLE m_hEnemy;	// 0x628c
+};
+
+bool CNPC_VChangBros::sub_1036df50(void *pHint)
+{
+	ScopeTrace trace("CNPC_VChangBros::CheckJumpPathToHintNode", g_106b8540);
+	CEntityVSlots *pEnemy = (CEntityVSlots *)((CChangBrosEnemyView *)this)->m_hEnemy.Get();
+	if (!pEnemy)
+		return false;
+	Vector vecThis = *((CEntityVSlots *)this)->slot217();
+	Vector vecHint = *((CEntityVSlots *)pHint)->slot217();
+	vecThis.z = 0;
+	vecHint.z = 0;
+	if (!(sub_103c6b70(&vecThis, &vecHint, (const float *)pEnemy->slot217()) <= 100.0f)) {
+		CNPC_VChangBros *pOther = sub_1036e2f0();
+		if (!pOther || !(sub_103c6b70(&vecThis, &vecHint, (const float *)((CEntityVSlots *)pOther)->slot217()) <= 100.0f)) {
+			if (sub_1036e580((int)((CEntityVSlots *)this)->slot217()) != 4) {
+				if (sub_1036e580((int)((CEntityVSlots *)pHint)->slot217()) != 4)
+					return true;
+			}
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036e160 size=0x13e
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

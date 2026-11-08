@@ -4092,6 +4092,7 @@
 0x10006d52 func   ?sub_100838d0@CSceneTokenProcessorX@@QAE_NXZ CSceneTokenProcessorX::sub_100838d0
 0x10006d5c func   ?vfunc2@CChoreoEventCallback@@UAEXMHH@Z CChoreoEventCallback::vfunc2
 0x10006d61 func   ?vfunc230@CBaseEntity@@QAEXHPAX@Z CBaseEntity::vfunc230
+0x10006d70 func   ?sub_1036df50@CNPC_VChangBros@@QAE_NPAX@Z CNPC_VChangBros::sub_1036df50
 0x10006d75 func   ?sub_100423c0@UtlVec8@@QAEHHPBUUtlVec8Elem@@@Z UtlVec8::sub_100423c0
 0x10006d7a func   ?vfunc546@CNPC_VVampireBoss@@QAEHH@Z CNPC_VVampireBoss::vfunc546
 0x10006d7f func   _item_p_occult_obfuscate item_p_occult_obfuscate
