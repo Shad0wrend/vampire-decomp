@@ -57,10 +57,10 @@ public:
 	EVS(130) EVS(131) EVS(132) EVS(133) EVS(134) virtual float slot135(float f); EVS(136) EVS(137)
 	virtual int slot138();	// answers an int in eax that the caller tests (CAI_BaseNPCTroika::vfunc113: attach the navigation hint when non-zero)
 	EVS(139)
-	EVS(140) virtual void slot141(const class CTakeDamageInfo *pInfo, const Vector &dir, struct CGameTrace *pTrace);
+	virtual char slot140(void *pInflictor); virtual void slot141(const class CTakeDamageInfo *pInfo, const Vector &dir, struct CGameTrace *pTrace);
 	virtual int slot142(const void *pInfo);	// "OnTakeDamage": takes the damage info record, answers an int
 	virtual int slot143(float flHealth, int bitsDamageType);	// "TakeHealth"
-	EVS(144) virtual int slot145();	// the value CBaseEntity::vfunc146 (TraceAttack) tests for -1 / 0x14 and passes to sub_101cfe10 with 1
+	virtual void slot144(void *pInfo); virtual int slot145();	// the value CBaseEntity::vfunc146 (TraceAttack) tests for -1 / 0x14 and passes to sub_101cfe10 with 1
 	virtual void slot146(void *a, const Vector *b, struct CGameTrace *c); EVS(147) EVS(148) EVS(149)
 	EVS(150) EVS(151) EVS(152) EVS(153) EVS(154) EVS(155) EVS(156) EVS(157)
 	virtual char slot158();
