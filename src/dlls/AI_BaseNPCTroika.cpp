@@ -1411,6 +1411,69 @@ int CAI_BaseNPCTroika::sub_102b9060()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b93c0 size=0x2af
+#include "CAI_BaseNPCTroika.h"
+#include "CEntityVSlots.h"
+#include "CBCCSlotViews.h"
+
+struct CVH375_607
+{
+	virtual void v0();
+	virtual char vfunc1();
+	char pad[0x2c - 4];
+	int m_n2c;
+};
+
+extern CVH375_607 *g_10924f74;
+
+#define TFL607(off) (*(float *)((char *)this + (off)))
+#define TVEC607(off) (*(Vector *)((char *)this + (off)))
+#define STAMP607(line, result) do { *(const char **)((char *)this + 0x1b30) = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp"; m_nLine1b34 = (line); return (result); } while (0)
+
+int CAI_BaseNPCTroika::vfunc607()
+{
+	if (m_h647c.Get())
+	{
+	Vector vecHint = *((CEntityVSlots *)m_h647c.Get())->slot217();
+	float *pSelf = (float *)((CEntityVSlots *)this)->slot217();
+
+	float dx = pSelf[0] - vecHint.x;
+	float dy = pSelf[1] - vecHint.y;
+	float dz = pSelf[2] - vecHint.z;
+	float fDist = dx * dx + dy * dy + dz * dz;
+
+	float flBack = TFL607(0x6484);
+	if (fDist < flBack * flBack)
+	{
+		if (!g_10924f74->vfunc1() && g_10924f74->m_n2c != 0)
+		{
+			((CNpcVFunc517SlotView *)this)->vfunc517((int)m_h647c.Get(), (int)&vecHint, 1.0f, 1.0f, 0.0f);
+		}
+		TVEC607(0x5dd0) = vecHint;
+		STAMP607(0x6090, 0x10c);
+	}
+
+	float flRun = TFL607(0x648c);
+	if (fDist > flRun * flRun)
+	{
+		sub_10279cc0(m_h647c.Get());
+		STAMP607(0x6097, 0x113);
+	}
+
+	float flWalk = TFL607(0x6488);
+	if (fDist > flWalk * flWalk)
+	{
+		sub_10279cc0(m_h647c.Get());
+		STAMP607(0x609d, 0x112);
+	}
+
+	sub_10279cc0(m_h647c.Get());
+	STAMP607(0x60a2, 0x115);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c51a0 size=0x119
 #include "CAI_BaseNPCTroika.h"
 
