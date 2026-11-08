@@ -37,10 +37,10 @@ public:
 	EVS(80) EVS(81) EVS(82) EVS(83) EVS(84) virtual int slot85();	// the entity's edict / entity index the sound calls name it by (asked of the speaking NPC)
 	virtual char slot86(int a, int b, int c, int d, int e);	// takes five arguments, a boolean answer in al (CBaseEntity::vfunc86)
 	EVS(87) EVS(88) EVS(89)
-	EVS(90) virtual char slot91(int a, int b);	/* a boolean answer in al, takes two arguments (the trace's collision group test, passed (group, -1)) */ EVS(92)
+	EVS(90) virtual char slot91(int a, int b);	/* a boolean answer in al, takes two arguments (the trace's collision group test, passed (group, -1)) */ virtual int slot92();
 	virtual void slot93(int moveType, int moveCollide);	// "SetMoveType"
 	virtual int slot94();	// the move type
-	EVS(95) EVS(96) EVS(97) EVS(98) EVS(99)
+	virtual int slot95(); EVS(96) EVS(97) EVS(98) EVS(99)
 	EVS(100) EVS(101) EVS(102) EVS(103) EVS(104)
 	virtual void slot105(const char *pszModel);	// "SetModel"
 	EVS(106)
@@ -91,7 +91,7 @@ public:
 	EVS(205) EVS(206) EVS(207) EVS(208)
 	virtual CEntityVSlots *slot209();	// "GetGroundEntity"
 	virtual void slot210(Vector *pOut);	// "GetGroundVelocityToApply": fills pOut
-	virtual short slot211();	// answers a short in ax (CBaseEntity::vfunc77 saves it)
+	virtual int slot211();	// answers a short in ax (CBaseEntity::vfunc77 saves it)
 	virtual void slot212(int set);
 	virtual void slot213(const float *pSize);	// "SetSize"
 	virtual Vector *slot214();	// "GetSize": the entity's size (+0x38c)

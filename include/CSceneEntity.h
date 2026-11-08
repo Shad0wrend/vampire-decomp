@@ -83,7 +83,7 @@ struct CSceneActorRecord	// an actor record of the scene (0x14+ bytes; the scene
 	// 0x14: the actor name (sub_10008a99 reads it; element + 0x14 = name for sub_100821f0), origin +0x17c, angles +0x188 (saved by sub_10072e60)
 
 	const char *sub_10072d90();	// the actor name (stub 0x10008a99), asked with the argument 0
-	void sub_10072e60(float x0, float y0, float z0, float x1, float y1, float z1);	// stub 0x10006fcd (ret 24): stores origin (x0..z0) and angles (x1..z1) by value
+	void sub_10072e60(Vector origin, Vector angles);	// stub 0x10006fcd (ret 24): stores origin (x0..z0) and angles (x1..z1) by value
 };
 
 struct CSceneEntityScene	// the scene object at +0x4bc
