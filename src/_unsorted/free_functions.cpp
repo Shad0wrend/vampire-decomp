@@ -176734,6 +176734,52 @@ void sub_102f2de0(float *c, int type)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f2ea0 size=0xdc
+#include "CAI_Navigator.h"
+#include "Vector.h"
+#include <math.h>
+
+#define OV(n) virtual void v##n();
+#define OV10(p) OV(p##0) OV(p##1) OV(p##2) OV(p##3) OV(p##4) OV(p##5) OV(p##6) OV(p##7) OV(p##8) OV(p##9)
+struct CNavOuter102f2ea0 {
+	OV10(0) OV10(1) OV10(2) OV10(3) OV10(4) OV10(5) OV10(6) OV10(7) OV10(8) OV10(9)
+	OV10(10) OV10(11) OV10(12) OV10(13) OV10(14) OV10(15) OV10(16) OV10(17) OV10(18) OV10(19)
+	OV10(20) OV10(21)
+	virtual const Vector &v220();
+	OV(221) OV(222) OV(223) OV(224) OV(225) OV(226) OV(227) OV(228) OV(229)
+	OV10(23) OV10(24) OV10(25) OV10(26) OV10(27) OV10(28) OV10(29) OV10(30) OV10(31) OV10(32)
+	OV10(33) OV10(34) OV10(35) OV10(36) OV10(37) OV10(38) OV10(39) OV10(40)
+	virtual const Vector &v410(const Vector *pos);
+	OV(411) OV(412) OV(413) OV(414) OV(415) OV(416) OV(417) OV(418) OV(419)
+	OV10(42) OV10(43) OV10(44) OV10(45) OV10(46) OV10(47) OV10(48) OV10(49) OV10(50) OV10(51)
+	OV(520) OV(521)
+	virtual float v522();
+};
+
+bool CAI_Navigator::sub_102f2ea0()
+{
+	if (m_i18 == 3 || m_i18 == 1)
+		return false;
+
+	Vector vOrigin = ((CNavOuter102f2ea0 *)m_pOuter)->v220();
+	CNavOuter102f2ea0 *pOuter = (CNavOuter102f2ea0 *)m_pOuter;
+	Vector vGoal = pOuter->v410(sub_102ee140());
+	float dx = vOrigin.x - vGoal.x;
+	float dy = vOrigin.y - vGoal.y;
+	*(float *)&m_i14 = dx * dx + dy * dy;
+	float flTol = sub_102f2fc0();
+	if (*(float *)&m_i14 <= flTol * flTol)
+	{
+		if (fabs(vOrigin.z - vGoal.z) <= ((CNavOuter102f2ea0 *)m_pOuter)->v522())
+		{
+			vfunc8();
+			return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f2fc0 size=0x7
 struct CUnknown102f2fc0 { float sub_102f2fc0(); };
 float CUnknown102f2fc0::sub_102f2fc0()
