@@ -2765,6 +2765,55 @@ void CCollisionEvent::sub_10030ae0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10030ba0 size=0xc8
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CCollisionEvent.h"
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+#include "Vector.h"
+
+extern "C" void *memset(void *, int, unsigned int);
+#pragma intrinsic(memset)
+
+struct SStartTouchTrace
+{
+	Vector startpos;
+	Vector endpos;
+	Vector normal;
+	float dist;
+	float rest[11];
+};
+
+struct CUnknown1003e4e0
+{
+	void sub_1003e4e0(CBaseEntity *pOther, SStartTouchTrace &trace);
+};
+
+inline void DispatchStartTouch(void *a, void *b, const Vector &point, const Vector &normal)
+{
+	SStartTouchTrace trace;
+	memset(&trace, 0, sizeof(trace));
+	trace.endpos = point;
+	trace.dist = DotProduct(point, normal);
+	trace.normal = normal;
+	((CUnknown1003e4e0 *)a)->sub_1003e4e0((CBaseEntity *)b, trace);
+}
+
+// TARGET: CCollisionEvent::sub_10030ba0
+void CCollisionEvent::sub_10030ba0(void *a, void *b, void *pData1, void *pData2)
+{
+	ScopeTrace scope("CCollisionEvent::DispatchStartTouch", g_106b8540);
+	DispatchStartTouch(a, b, *(const Vector *)pData1, *(const Vector *)pData2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10030cb0 size=0x75
 extern char g_106b8540[];
 struct ScopeTraceEntry { const char *a; const char *b; const char *c; };
