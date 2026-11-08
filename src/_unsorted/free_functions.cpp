@@ -52458,6 +52458,56 @@ bool __stdcall sub_100e84e0(int flags, char *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e8980 size=0x19c
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CDialog.h"
+#include "CDialogDependency.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+
+struct CDebugLog100e8980
+{
+	virtual void v0();
+	virtual char v1();
+	int m_pad04[10];
+	int m_x2c;
+};
+extern CDebugLog100e8980 *g_106e9514;
+void sub_100dfaf0(int level, const char *fmt, int arg);
+inline int LogEnabled()
+{
+	return g_106e9514->v1() ? 0 : g_106e9514->m_x2c;
+}
+
+// TARGET: CDialog::sub_100e8980
+char CDialog::sub_100e8980(int a, int b)
+{
+	ScopeTrace trace("CDialog::pc_passes_dependency", g_106b8540);
+	CDialogDependency dep;
+	char bPassed = 0;
+	if (EHandle_Get(m_hNPC) != 0)
+	{
+		dep.sub_100e8fc0((int)this, (int)EHandle_Get(m_hNPC), (char *)a, (char *)b, 0, 0);
+		if (dep.sub_100e94e0((CBaseEntity *)EHandle_Get(m_hNPC), (CBaseEntity *)EHandle_Get(m_hSpeaker)))
+			bPassed = 1;
+	}
+	int nLevel = LogEnabled() ? 3 : 1;
+	if (bPassed)
+		sub_100dfaf0(nLevel, "< PASSED dependency: %s  -  >\n", a);
+	else
+		sub_100dfaf0(nLevel, "< FAILED dependency: %s  -  >\n", a);
+	return bPassed;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e8ef0 size=0x9b
 #include "CDialogDependency.h"
 #include "CVDmg_t.h"

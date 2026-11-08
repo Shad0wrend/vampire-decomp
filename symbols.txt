@@ -1444,6 +1444,7 @@
 0x10003099 func   ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z sub_100aa680
 0x1000309e func   ?sub_10289c90@@YIXPAH@Z sub_10289c90
 0x100030a3 func   ?sub_102a9730@CThunkOwnerTroika@@QAEHXZ CThunkOwnerTroika::sub_102a9730
+0x100030ad func   ?sub_100e8980@CDialog@@QAEDHH@Z CDialog::sub_100e8980
 0x100030b2 func   ?vfunc67@CGameRules@@UAEPBDH@Z CGameRules::vfunc67
 0x100030b7 func   ?LinkToParent@?$CUtlRBTree@UCSoundEmitterRecord@@H@@QAEXHH_N@Z CUtlRBTree<CSoundEmitterRecord,int>::LinkToParent
 0x100030bc func   ?sub_102c2a70@@YIXPADH0@Z sub_102c2a70
