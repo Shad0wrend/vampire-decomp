@@ -113,6 +113,81 @@ int CNPC_VHunter::vfunc138()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10388880 size=0x123
+#include "CNPC_VHunter.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+
+#define HGV(n) virtual void g##n();
+#define HGV10(p) HGV(p##0) HGV(p##1) HGV(p##2) HGV(p##3) HGV(p##4) HGV(p##5) HGV(p##6) HGV(p##7) HGV(p##8) HGV(p##9)
+
+struct CHunterChar
+{
+	virtual void vfunc0();
+	virtual unsigned int *vfunc1();
+	void sub_1017f7b0();
+	void sub_1017f830();
+};
+struct CHunterGrip
+{
+	char m_pad0000[0xa8];
+	CHunterChar *m_pChar;
+};
+struct CHunterView
+{
+	HGV10(0) HGV10(1) HGV10(2) HGV10(3) HGV10(4) HGV10(5) HGV10(6) HGV10(7) HGV10(8) HGV10(9)
+	HGV10(10) HGV10(11) HGV10(12) HGV10(13) HGV10(14) HGV10(15)
+	HGV(160) HGV(161) HGV(162) HGV(163) HGV(164) HGV(165) HGV(166)
+	virtual CHunterGrip *vfunc167();
+};
+
+// TARGET: CNPC_VHunter::vfunc463
+void CNPC_VHunter::vfunc463(int nOld, int nNew)
+{
+	CHunterView *pView = (CHunterView *)this;
+	CHunterGrip *pEnemy;
+	CHunterChar *pChar;
+	if (pView->vfunc167() && (pEnemy = pView->vfunc167()) && (pChar = pEnemy->m_pChar) && nNew == 2)
+	{
+		sub_10388c40();
+		pChar->sub_1017f7b0();
+		m_hHold6664 = *pChar->vfunc1();
+	}
+	if (nOld == 2 && m_hHold6664 != 0xffffffff)
+	{
+		CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[m_hHold6664 & 0x1fff];
+		if (pSlot->m_Serial == (int)(m_hHold6664 >> 13))
+		{
+			CHunterGrip *pHeld = (CHunterGrip *)pSlot->m_pEntity;
+			CHunterChar *pHeldChar;
+			if (pHeld && (pHeldChar = pHeld->m_pChar))
+			{
+				m_hHold6664 = 0xffffffff;
+				pHeldChar->sub_1017f830();
+			}
+		}
+	}
+	switch (nNew)
+	{
+	case 1:
+		if (sub_1032e7b0())
+		{
+			sub_1032e7b0()->vfunc66();
+			break;
+		}
+		break;
+	case 2:
+	case 3:
+	case 0xb:
+		if (sub_1032e7b0())
+			sub_1032e7b0()->vfunc67();
+		break;
+	}
+	sub_103871c0(nOld, nNew);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10388a20 size=0xf
 #include "CNPC_VHunter.h"
 

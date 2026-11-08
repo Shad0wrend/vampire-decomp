@@ -12011,6 +12011,7 @@
 0x10012242 func   ?vfunc125@CBaseEntity@@UAEXXZ CBaseEntity::vfunc125
 0x10012247 func   ?sub_1019efb0@CRopeKeyframe@@QAEXXZ CRopeKeyframe::sub_1019efb0
 0x10012256 func   ?sub_1039b160@@YIPAXPAX@Z sub_1039b160
+0x1001225b func   ?vfunc463@CNPC_VHunter@@QAEXHH@Z CNPC_VHunter::vfunc463
 0x10012260 func   ?sub_1033e960@@YAXXZ sub_1033e960
 0x10012265 func   ?vfunc39@CPropKeypad@@QAEXPAVCBasePlayer@@@Z CPropKeypad::vfunc39
 0x1001226a func   ?sub_10041c80@UtlHash8@@QAEPAV1@HHHP6A_NPAX0@ZP6AI0@Z@Z UtlHash8::sub_10041c80
