@@ -529,6 +529,132 @@ void __fastcall sub_10394970(void *pThis, int dummy, float a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10394990 size=0x3b4
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VMingXiao.h"
+#include "ScopeTrace.h"
+#include "CVProfile.h"
+#include "engineiface.h"
+
+void __fastcall sub_10002a7c(void *pThis);
+void __fastcall sub_102c43f0(void *pThis);
+
+// TARGET: CNPC_VMingXiao::vfunc431
+void CNPC_VMingXiao::vfunc431()
+{
+	ScopeTrace trace("CNPC_VMingXiao::NPCThink", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+
+	CVProfile *prof = g_109f3648;
+	if (prof->m_enabled || !prof->m_bAtRoot) {
+		if (prof->m_pCurNode->m_pszName != "CNPC_VMingXiao_NPCThink")
+			prof->m_pCurNode = prof->m_pCurNode->GetSubNode("CNPC_VMingXiao_NPCThink", 0, "Unaccounted");
+		CVProfNode *node = prof->m_pCurNode;
+		node->m_nCurFrameCalls++;
+		if (node->m_nRecursions++ == 0) {
+			unsigned long *p = (unsigned long *)&node->m_CurFrameTime;
+			__asm {
+				mov ecx, p
+				rdtsc
+				mov [ecx], eax
+				mov [ecx + 4], edx
+			}
+			g_109f3648->PushGroup(node->m_nBudgetGroupID);
+		}
+		prof->m_bAtRoot = false;
+	}
+
+	switch ((unsigned int)m_nMode673c)
+	{
+	case 0:
+		m_flags14bc |= 0x80000400;
+		break;
+	case 1:
+	case 2:
+		m_flags14bc &= 0x7ffffbff;
+		{
+			float *pOrigin = vfunc217_slot();
+			Vector vec = *(Vector *)&m_f672c + *(Vector *)pOrigin;
+			vfunc518((int)&vec, 1.0f, 0.5f, 0.0f);
+		}
+		break;
+	case 3:
+		m_flags14bc |= 0x80000400;
+		break;
+	case 4:
+		m_flags14bc |= 0x80000400;
+		break;
+	default:
+		m_flags14bc |= 0x80000400;
+		break;
+	}
+
+	if (enginerandom->vfunc2(0, 99) < 10)
+	{
+		vfunc217_slot();
+		vfunc219_slot();
+		sub_102c42a0("Ming_xiao_slimetrail_emitter", this, "Bip01 TailRoot", 0);
+		sub_102c42a0("Ming_xiao_slimetrail_emitter2", this, "Bip01 Tail1", 0);
+		sub_102c42a0("Ming_xiao_slimetrail_emitter2", this, "Bip01 Tail2", 0);
+		sub_102c42a0("Ming_xiao_slimetrail_emitter2", this, "Bip01 Tail3", 0);
+		sub_102c42a0("Ming_xiao_slimetrail_emitter2", this, "Bip01 Tail4", 0);
+		sub_102c42a0("Ming_xiao_slimetrail_emitter2", this, "Bip01 Tail5", 0);
+		sub_102c42a0("Ming_xiao_slimetrail_emitter2", this, "Bip01 Tail6", 0);
+	}
+
+	if (!sub_10398870())
+	{
+		for (int i = 0; i < 6; i++)
+		{
+			if (m_fl170 > m_flSlotTimeB[i])
+			{
+				m_n6710 &= ~(1 << i);
+				m_flSlotTimeB[i] = 3.402823466e38f;
+				m_n670c++;
+				sub_10398800();
+				m_f6748 = sub_103986b0();
+			}
+		}
+	}
+
+	if (!sub_10398870())
+		sub_10399610();
+
+	sub_10399c70();
+	sub_102c43f0(this);
+	sub_10002a7c(this);
+
+	prof = g_109f3648;
+	if (!prof->m_bAtRoot || prof->m_enabled) {
+		CVProfNode *node = prof->m_pCurNode;
+		if (--node->m_nRecursions == 0 && node->m_nCurFrameCalls != 0) {
+			CUnknownCycle100335e0 now;
+			now.m_Int64 = 0;
+			unsigned long *p = (unsigned long *)&now;
+			__asm {
+				mov ecx, p
+				rdtsc
+				mov [ecx], eax
+				mov [ecx + 4], edx
+			}
+			CUnknownCycle100335e0 *pc = &node->m_CurFrameTime;
+			pc->m_Int64 = now.m_Int64 - pc->m_Int64;
+			node->m_TotalTime += pc->m_Int64;
+			g_109f3648->PopGroup();
+		}
+		if (node->m_nRecursions == 0)
+			prof->m_pCurNode = prof->m_pCurNode->m_pParent;
+		prof->m_bAtRoot = (prof->m_pCurNode == prof->m_pRoot);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103951d0 size=0x7c
 #include "CBaseEntity.h"
 #include "CNPC_VMingXiao.h"
