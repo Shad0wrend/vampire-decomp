@@ -3800,6 +3800,50 @@ void CMem8b_t::sub_10033160(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100332c0 size=0x27f
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CVProfile.h"
+#include "ScopeTrace.h"
+struct CarriedName { virtual void n0(); virtual void n1(); virtual void n2(); virtual void n3(); virtual void n4(); virtual const char *n5(); };
+struct CarriedHolder { virtual void h0(); virtual void h1(); virtual void h2(); virtual CarriedName *h3(); };
+struct CarriedEdict { char pad[0x40]; CarriedHolder *m_pHolder; };
+extern void (*g_109f3658)(int level, const char *pszFormat, ...);
+extern void (__fastcall *g_109f365c)(void *pProfile);
+// TARGET: CBaseEntity::sub_100332c0
+void CBaseEntity::sub_100332c0()
+{
+	ScopeTrace trace("CBaseEntity::PhysicsCarried", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	g_109f3648->EnterScope("CBaseEntity_PhysicsCarried", 0, "Unaccounted", false);
+	if (!sub_10033f60(0)) { g_109f365c(g_109f3648); return; }
+	if (m_hAimEnt37c.Get()) {
+		CEntityVSlots *pThis = (CEntityVSlots *)this;
+		pThis->slot62((const float *)((CEntityVSlots *)m_hAimEnt37c.Get())->slot220());
+		sub_100a53d0(0);
+		g_109f3648->ExitScopeInlined();
+		return;
+	}
+	const char *pszName;
+	CEntityVSlots *pThis = (CEntityVSlots *)this;
+	pThis->slot62((const float *)pThis->slot217());
+	pThis->slot64((const float *)pThis->slot219());
+	CarriedEdict *pEdict = (CarriedEdict *)m_pEdict2e0;
+	if (!pEdict->m_pHolder) pszName = g_106b8540;
+	else pszName = pEdict->m_pHolder->h3()->n5();
+	g_109f3658(2, "%s movetype CARRIED with NULL aiment\n", pszName);
+	vfunc93(0, 0);
+	g_109f3648->ExitScope();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100335e0 size=0x3e
 #include "vampire_all.h"
 struct CUnknownCycle100335e0 {
