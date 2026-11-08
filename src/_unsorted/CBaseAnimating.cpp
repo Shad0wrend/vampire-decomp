@@ -1119,6 +1119,81 @@ Done:
 }
 // END FUNCTION
 
+// FUNCTION: 0x100940d0 size=0x208
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlmemory.h"
+#include "CBaseAnimating.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+#include "Vector.h"
+#include <math.h>
+
+void sub_101cf390(int a, int b, int c);
+
+void CBaseAnimating::SetSequenceBox()
+{
+	ScopeTrace trace("CBaseAnimating::SetSequenceBox",
+	                 this ? (((CBaseEntity *)this)->m_name26c ? ((CBaseEntity *)this)->m_name26c : g_106b8540) : g_105387dc);
+
+	Vector maxs;
+	Vector bounds[2];
+	Vector xvector, yvector;
+	Vector rmin, rmax;
+	float yaw;
+	{
+		Vector mins;
+		if (!sub_10093fb0(*(int *)((char *)this + 0x6f0), mins.Base(), maxs.Base()))
+			return;
+		xvector.x = cos(yaw = ((CEntityVSlots *)this)->slot221()[0].y * 0.017453292519943295);
+		bounds[0] = mins;
+		bounds[1] = maxs;
+		xvector.y = sin(yaw);
+		xvector.z = 0;
+		yvector.x = -sin(yaw);
+		yvector.y = cos(yaw);
+		yvector.z = 0;
+	}
+	{
+		rmin.Init(9999.0f, 9999.0f, 9999.0f);
+		rmax.Init(-9999.0f, -9999.0f, -9999.0f);
+		Vector base, transformed;
+
+		for (int i = 0; i <= 1; i++)
+		{
+			base.x = bounds[i].x;
+			for (int j = 0; j <= 1; j++)
+			{
+				base.y = bounds[j].y;
+				for (int k = 0; k <= 1; k++)
+				{
+					base.z = bounds[k].z;
+					transformed.x = xvector.x * base.x + yvector.x * base.y;
+					transformed.y = xvector.y * base.x + yvector.y * base.y;
+					transformed.z = base.z;
+					for (int l = 0; l < 3; l++)
+					{
+						if (transformed[l] < rmin[l])
+							rmin[l] = transformed[l];
+						if (transformed[l] > rmax[l])
+							rmax[l] = transformed[l];
+					}
+				}
+			}
+		}
+		rmin.z = 0;
+		rmax.z = 1;
+		sub_101cf390((int)this, (int)&rmin, (int)&rmax);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10095a20 size=0x159
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
