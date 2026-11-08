@@ -75743,6 +75743,73 @@ void sub_1014c2b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014c2d0 size=0x2f0
+#include "CWeaponGravityGun.h"
+#include "CBaseCombatWeapon.h"
+#include "CBaseEntity.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "IPhysicsObject.h"
+#include "engineiface.h"
+#include "engineserver.h"
+#include "ehandle.h"
+
+float sub_1014c680(float a, float b, float c, float d);
+extern const char *g_1057b888[];
+
+// TARGET: CWeaponGravityGun::sub_1014c2d0
+void CWeaponGravityGun::sub_1014c2d0()
+{
+	int bOn;
+	if (m_hHeld918.Get() != 0)
+		bOn = 1;
+	else
+		bOn = 0;
+
+	if (bOn != m_nSoundState)
+	{
+		sub_1014c130();
+		m_nSoundState = bOn;
+		sub_1014c2b0();
+	}
+
+	switch (m_nSoundState)
+	{
+	case 1:
+		{
+		CEntitySoundOriginView *pOwner = (CEntitySoundOriginView *)sub_102521f0();
+
+		CPASAttenuationFilter filter(pOwner, 0.8f);
+		filter.MakeReliable();
+
+		CEntitySoundOriginView *pHeld = (CEntitySoundOriginView *)m_hHeld918.Get();
+		float flHeight = pHeld->GetOrigin()[2] - m_fl938;
+		int pitch = (int)::sub_1014c680(flHeight, 0.0f, 500.0f, 60.0f) + 0x5a;
+
+		CBaseEntity *pOwnerEnt = (CBaseEntity *)sub_102521f0();
+		int entindex = EngineGlobals::g_1070b22c->vfunc35(pOwnerEnt->m_pEdict2e0);
+
+		EngineGlobals::g_1070b248->vfunc3(&filter, entindex, 6, g_1057b888[0], 0.5f, 0.8f, 3, pitch, 0, 0, 1, 0);
+
+		float flVolume = ::sub_1014c680(m_fl920, 0.0f, 200.0f, 1.0f);
+
+		float flMassScale = ::sub_1014c680(((IPhysicsObject *)((CBaseEntity *)m_hHeld918.Get())->m_obj36c)->vfunc12(), 50.0f, 500.0f, 1.0f);
+
+		pOwnerEnt = (CBaseEntity *)sub_102521f0();
+		entindex = EngineGlobals::g_1070b22c->vfunc35(pOwnerEnt->m_pEdict2e0);
+
+		EngineGlobals::g_1070b248->vfunc3(&filter, entindex, 6, g_1057b888[2], flMassScale * flVolume, 0.8f, 1, 100, 0, 0, 1, 0);
+
+		pOwnerEnt = (CBaseEntity *)sub_102521f0();
+		entindex = EngineGlobals::g_1070b22c->vfunc35(pOwnerEnt->m_pEdict2e0);
+
+		EngineGlobals::g_1070b248->vfunc3(&filter, entindex, 6, g_1057b888[3], (1.0 - flMassScale) * flVolume, 0.8f, 1, 100, 0, 0, 1, 0);
+		}
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014ca10 size=0x86
 #include "CUnknown1014ca10.h"
 
