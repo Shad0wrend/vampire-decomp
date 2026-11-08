@@ -9545,6 +9545,7 @@
 0x1000e98f func   ?sub_100f9fc0@CGlobalEntityList@@QAE?AVCBaseHandle@@PAVCGlobalEntityList_Ent@@HH@Z CGlobalEntityList::sub_100f9fc0
 0x1000e994 func   ?vfunc81@CWeaponMelee_Claws_Ghoul@@UAEHXZ CWeaponMelee_Claws_Ghoul::vfunc81
 0x1000e999 func   ?sub_100b4650@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_100b4650
+0x1000e99e func   ?sub_1009c850@CBaseEntity@@QAEXHPBDPBIH@Z CBaseEntity::sub_1009c850
 0x1000e9a3 func   ?sub_10077990@CUnknown10077990@@QAEHXZ CUnknown10077990::sub_10077990
 0x1000e9a8 func   ?sub_100dc580@CFlagsUnit@@QAEXG@Z CFlagsUnit::sub_100dc580
 0x1000e9ad func   ?sub_102f96e0@CAINodeView@@QAEPAUCPairFields102dda40@@H@Z CAINodeView::sub_102f96e0

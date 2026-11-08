@@ -33496,6 +33496,32 @@ void CBaseEntity::sub_1009c720(int a, const char *fmt, const CBaseEntityColor32 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009c850 size=0xeb
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+
+void CBaseEntity::sub_1009c850(int a, const char *fmt, const unsigned int *array, int count)
+{
+	char buf[256];
+	ScopeTrace trace("CBaseEntity::DumpEhandleArray", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	char *p = buf + sprintf(buf, fmt);
+	const EHANDLE *handles = (const EHANDLE *)array;
+	for (int i = 0; i < count; i++) {
+		sprintf(p, "%d", i);
+		sub_1009c000(a, buf, handles[i]);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009d1e0 size=0x86
 #include "CBaseEntity.h"
 
