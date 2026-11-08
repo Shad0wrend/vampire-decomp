@@ -73046,6 +73046,55 @@ void sub_1013c0e0(const matrix3x4_t &transform, const Vector &vecMinsIn, const V
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013c2a0 size=0x155
+#include "StudioBones.h"
+#include "matrix3x4_t.h"
+#include <math.h>
+
+namespace block_1013c2a0 {
+void sub_10138130(const float *in1, const matrix3x4_t &in2, float *out)
+{
+	float in1t0 = in1[0] - in2.m_flMatVal[0][3];
+	float in1t1 = in1[1] - in2.m_flMatVal[1][3];
+	float in1t2 = in1[2] - in2.m_flMatVal[2][3];
+	out[0] = in1t0 * in2.m_flMatVal[0][0] + in1t1 * in2.m_flMatVal[1][0] + in1t2 * in2.m_flMatVal[2][0];
+	out[1] = in1t0 * in2.m_flMatVal[0][1] + in1t1 * in2.m_flMatVal[1][1] + in1t2 * in2.m_flMatVal[2][1];
+	out[2] = in1t0 * in2.m_flMatVal[0][2] + in1t1 * in2.m_flMatVal[1][2] + in1t2 * in2.m_flMatVal[2][2];
+}
+}
+using namespace block_1013c2a0;
+
+inline void VectorITransform(const Vector &in1, const matrix3x4_t &in2, Vector &out)
+{
+	sub_10138130(&in1.x, in2, &out.x);
+}
+
+inline float FloatMakePositive(float f)
+{
+	return (float)fabs(f);
+}
+
+// TARGET: sub_1013c2a0
+void sub_1013c2a0(const matrix3x4_t &transform, const Vector &vecMinsIn, const Vector &vecMaxsIn, Vector &vecMinsOut, Vector &vecMaxsOut)
+{
+	Vector worldCenter = (vecMinsIn + vecMaxsIn) * 0.5f;
+
+	Vector worldExtents;
+	VectorSubtract(vecMaxsIn, worldCenter, worldExtents);
+
+	Vector localCenter;
+	VectorITransform(worldCenter, transform, localCenter);
+
+	Vector localExtents;
+	localExtents.x = FloatMakePositive(worldExtents.x * transform.m_flMatVal[0][0]) + FloatMakePositive(worldExtents.y * transform.m_flMatVal[1][0]) + FloatMakePositive(worldExtents.z * transform.m_flMatVal[2][0]);
+	localExtents.y = FloatMakePositive(worldExtents.x * transform.m_flMatVal[0][1]) + FloatMakePositive(worldExtents.y * transform.m_flMatVal[1][1]) + FloatMakePositive(worldExtents.z * transform.m_flMatVal[2][1]);
+	localExtents.z = FloatMakePositive(worldExtents.x * transform.m_flMatVal[0][2]) + FloatMakePositive(worldExtents.y * transform.m_flMatVal[1][2]) + FloatMakePositive(worldExtents.z * transform.m_flMatVal[2][2]);
+
+	vecMinsOut = localCenter - localExtents;
+	vecMaxsOut = localCenter + localExtents;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013c460 size=0x15a
 #include "matrix3x4_t.h"
 #include <math.h>
