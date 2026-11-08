@@ -151989,6 +151989,50 @@ void CAI_BaseNPC::sub_10260a50(int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10262c20 size=0x1fc
+#include "CAI_BaseHumanoid.h"
+#include <math.h>
+
+float sub_101d2c70(const Vector *pDir);
+float sub_1013d580(float a, float b);
+
+inline CAI_BaseHumanoid_Waypoint &W(CUtlVector56 &v, int i) { return ((CAI_BaseHumanoid_Waypoint *)v.m_pMemory)[i]; }
+#define REC(i) (&W(m_Waypoints6038, i))
+
+// TARGET: CAI_BaseHumanoid::sub_10262c20
+int CAI_BaseHumanoid::sub_10262c20(int a, int b)
+{
+	CAI_BaseHumanoid_Waypoint &ra = W(m_Waypoints6038, a);
+	CAI_BaseHumanoid_Waypoint &rb = W(m_Waypoints6038, b);
+	Vector dir = rb.m_vecPos - ra.m_vecPos;
+	float yaw = sub_101d2c70(&dir);
+	float flA = (float)fabs(sub_1013d580(yaw, REC(a)->F10())) * 0.006666667f;
+	float flB = (float)fabs(sub_1013d580(REC(b)->F10(), yaw)) * 0.006666667f;
+	float flLen = REC(b)->m_flF04 - REC(a)->m_flF04;
+	if (flA < 0.01) {
+		if (!(flB > flLen * 0.8)) {
+			REC(sub_10262ea0(a, flLen - flB))->m_flF10 = yaw;
+			return 1;
+		}
+	} else if (flB < 0.01) {
+		if (!(flA > flLen * 0.8)) {
+			REC(sub_10262ea0(a, flA))->m_flF10 = yaw;
+			return 1;
+		}
+	} else {
+		float flSum = flB + flA;
+		if (flSum > flLen)
+			return 0;
+		if (flSum < flLen * 0.8) {
+			REC(sub_10262ea0(a, flA))->m_flF10 = yaw;
+			REC(sub_10262ea0(a, flB))->m_flF10 = yaw;
+			return 2;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10262ea0 size=0x194
 #include "utlrbtree.h"
 #include "CAI_BaseHumanoid.h"
