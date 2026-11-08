@@ -73264,6 +73264,41 @@ void sub_10143d80(const Vector &position, float size, int r, int g, int b, int n
 }
 // END FUNCTION
 
+// FUNCTION: 0x10143f50 size=0x28a
+// TARGET: sub_10143f50
+
+#include "QAngle.h"
+#include "Vector.h"
+
+void sub_10139610(const QAngle &angles, Vector *p1, Vector *p2, Vector *p3);
+void sub_10142e90(const Vector *pStart, const Vector *pEnd, int a, int b, int c, unsigned char d, float e);
+
+void sub_10143f50(const Vector &pos, const QAngle &angles, float flScale, int a4, int a5, int a6, unsigned char a7, float a8)
+{
+	Vector v1, v2, v3;
+	sub_10139610(angles, &v1, &v2, &v3);
+	v1.x *= flScale; v1.y *= flScale; v1.z *= flScale;
+	v2.x *= flScale; v2.y *= flScale; v2.z *= flScale;
+	v3.x *= flScale; v3.y *= flScale; v3.z *= flScale;
+
+	{
+		Vector vecEnd = pos - v2;
+		Vector vecStart = v2 + pos;
+		sub_10142e90(&vecStart, &vecEnd, a4, a5, a6, a7, a8);
+	}
+	{
+		Vector vecEnd = pos - v1;
+		Vector vecStart = v1 + pos;
+		sub_10142e90(&vecStart, &vecEnd, a4, a5, a6, a7, a8);
+	}
+	{
+		Vector vecEnd = pos - v3;
+		Vector vecStart = v3 + pos;
+		sub_10142e90(&vecStart, &vecEnd, a4, a5, a6, a7, a8);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10144290 size=0x1f3
 #include "CFlameCluster.h"
 #include "CUnknown101d7520.h"
