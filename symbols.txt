@@ -12041,6 +12041,7 @@
 0x1001223d func   ?sub_10359170@@YIPAXPAX@Z sub_10359170
 0x10012242 func   ?vfunc125@CBaseEntity@@UAEXXZ CBaseEntity::vfunc125
 0x10012247 func   ?sub_1019efb0@CRopeKeyframe@@QAEXXZ CRopeKeyframe::sub_1019efb0
+0x10012251 func   ?vfunc124@CNPC_VTzimisce@@QAEHXZ CNPC_VTzimisce::vfunc124
 0x10012256 func   ?sub_1039b160@@YIPAXPAX@Z sub_1039b160
 0x1001225b func   ?vfunc463@CNPC_VHunter@@QAEXHH@Z CNPC_VHunter::vfunc463
 0x10012260 func   ?sub_1033e960@@YAXXZ sub_1033e960

@@ -978,3 +978,68 @@ void CNPC_VTzimisce::vfunc228(int a0, int a1)
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x103c08d0 size=0x183
+#include "CNPC_VTzimisce.h"
+#include "CBaseEntity.h"
+#include "CUnknown10381be0.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "Tier1.h"
+#include "engineserver.h"
+#include "ehandle.h"
+
+extern float g_1093d01c;
+extern char g_1093cd70[];
+extern int (*g_109f388c)(char *pDest, int nSize, const char *pFmt, ...);
+
+void sub_101434b0(int, int, const char *, int, int, int, int, int);
+
+namespace block_103c08d0 {
+	struct CUnitU : CUnknown10381be0 { bool sub_103be130(); };
+	bool CUnitU::sub_103be130() { return (m_flags14b8 >> 5) & 1; }
+}
+using namespace block_103c08d0;
+
+// TARGET: CNPC_VTzimisce::vfunc124
+int CNPC_VTzimisce::vfunc124()
+{
+	int nOffset = sub_10006f64();
+	char buf[0x200];
+
+	if (*(unsigned char *)((char *)this + 0x224) & 1)
+	{
+		float flDist = 0.0f;
+
+		if (EHandle_Get(m_hTarget))
+		{
+			Vector *pTarget = ((CEntityVSlots *)EHandle_Get(m_hTarget))->slot217();
+			Vector vecDiff;
+			vecDiff = *((CEntityVSlots *)this)->slot217() - *pTarget;
+			flDist = FastSqrt(vecDiff.x * vecDiff.x + (vecDiff.y * vecDiff.y + vecDiff.z * vecDiff.z));
+
+			if (((CUnitU *)this)->sub_103be130() && flDist > 160.0f)
+			{
+				g_1093d01c = flDist;
+				if (m_pTask5c38)
+				{
+					char *pSrc = *(char **)((char *)m_pTask5c38 + 0x40);
+					char *pDst = g_1093cd70;
+					char c;
+					do
+					{
+						c = *pSrc++;
+						*pDst++ = c;
+					} while (c);
+				}
+			}
+		}
+
+		g_109f388c(buf, 0x200, "Body - %5.1f|%5.1f|%s", (double)flDist, (double)g_1093d01c, g_1093cd70);
+		int edict = m_n02e0;
+		sub_101434b0(EngineGlobals::g_1070b22c->vfunc35(edict), nOffset, buf, 0, 0xff, 0xff, 0xff, 0xff);
+		nOffset++;
+	}
+	return nOffset;
+}
+// END FUNCTION
