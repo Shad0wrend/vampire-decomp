@@ -151,6 +151,146 @@ void CNPC_VMingXiao::sub_10395c70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10396050 size=0x5f2
+#include "CNPC_VMingXiao.h"
+#include "CUnknown10924a1c.h"
+#include "engineiface.h"
+#include "Tier1.h"
+#define STAMP(l) m_nLine1b34 = (l); m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiao.cpp"
+static inline float ScaleVal() { return g_10924a1c->vfunc1() ? 0.0f : g_10924a1c->m_fl28; }
+#define SCALE (ScaleVal())
+int CNPC_VMingXiao::vfunc604(int unused)
+{
+    if (m_b6078) {
+        if (vfunc602()) {
+            vfunc601((int)vfunc167());
+            if (vfunc308()) {
+                STAMP(0xa3f);
+                return 0xe9;
+            }
+            const float &dist = m_f6268;
+            if (SCALE * 2.0f <= dist) {
+                STAMP(0xa45);
+                return 0xe7;
+            }
+            STAMP(0xa49);
+            return 0xe4;
+        }
+    } else {
+        if (!vfunc599((int)vfunc167())) {
+            if (SCALE + 200.0f < m_f6268) {
+                STAMP(0xa54);
+                return 0xe7;
+            }
+            if (enginerandom->vfunc2(0, 99) >= 0x19) {
+                if (!(SCALE > m_f6268)) {
+                    STAMP(0xa60);
+                    return 0xe5;
+                }
+            }
+            STAMP(0xa5c);
+            return 0xe4;
+        }
+    }
+    int r = sub_102b7370();
+    if (r)
+        return r;
+    if (sub_10014df8(0x48)) {
+        if (vfunc308()) {
+            vfunc601((int)vfunc167());
+            STAMP(0xa73);
+            return 0xe9;
+        }
+        STAMP(0xa7d);
+        return 0xcd;
+    }
+    if (sub_1001482b(0xc)) {
+        STAMP(0xa84);
+        return 0xd5;
+    }
+    char bF = sub_10014df8(0xf);
+    char bE = sub_10014df8(0xe);
+    if (!bF) {
+        if (!bE) {
+            if (sub_10014df8(0x51)) {
+                bool b = vfunc308();
+                m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiao.cpp";
+                if (b) {
+                    m_nLine1b34 = 0xa9c;
+                    return 0xdc;
+                }
+                m_nLine1b34 = 0xaa0;
+                return 0xdd;
+            }
+            bool bTime = false;
+            if (m_f626c > 64.0f) {
+                if (m_n6274 == 0xbf800000) {
+                    m_f6274 = enginerandom->vfunc1(3.0f, 4.0f) + gpGlobals->curtime;
+                } else if (gpGlobals->curtime >= m_f6274) {
+                    bTime = true;
+                }
+            } else {
+                m_f6274 = -1.0f;
+            }
+            if (vfunc308() && (sub_10014df8(9) || sub_10014df8(0x1a) || sub_10014df8(0x59) || bTime)) {
+                vfunc601((int)vfunc167());
+                STAMP(0xac2);
+                return 0xe9;
+            }
+            if (sub_10014df8(0x59)) {
+                vfunc601((int)vfunc167());
+                STAMP(0xaca);
+                return 0x17;
+            }
+            if (!sub_10014df8(9) && !sub_10014df8(0x60)) {
+                STAMP(0xb04);
+                return 0xc7;
+            }
+            if (vfunc167()) {
+                Vector v;
+                if (sub_1000c10d(((CNPC_VMingXiao *)vfunc167())->vfunc192(&v))) {
+                    bool b = vfunc308();
+                    m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiao.cpp";
+                    if (b) {
+                        m_nLine1b34 = 0xadb;
+                        return 0xe0;
+                    }
+                    m_nLine1b34 = 0xadf;
+                    return 0xe1;
+                }
+            }
+            r = sub_10005dd0(0, 1, 0, 1);
+            if (r)
+                return r;
+            if (!(SCALE <= m_f6268) && !bTime) {
+                bool b = vfunc308();
+                m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiao.cpp";
+                if (b) {
+                    m_nLine1b34 = 0xafa;
+                    return 0xd1;
+                }
+                m_nLine1b34 = 0xafe;
+                return 0xd2;
+            }
+            bool b = vfunc308();
+            m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiao.cpp";
+            if (b) {
+                m_nLine1b34 = 0xaef;
+                return 0xca;
+            }
+            m_nLine1b34 = 0xaf3;
+            return 0xcb;
+        }
+    }
+    if (bF && (!bE || g_109f3868(0, 1) == 1)) {
+        STAMP(0xa8e);
+        return 0xdb;
+    }
+    STAMP(0xa92);
+    return 0xd3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103967d0 size=0x31a
 #include "CNPC_VMingXiao.h"
 #include "CBaseAnimating.h"
