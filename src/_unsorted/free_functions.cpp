@@ -113398,6 +113398,86 @@ void CVFeat_t::sub_101e4fe0(CVFeatKV *pKV)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e50b0 size=0x340
+#include "CVFeat_t.h"
+#include "CStatDefaultList.h"
+#include "SNamedList.h"
+#include <stdio.h>
+
+extern CStatDefaultList g_106c7c34;
+extern SNamedList g_10739194;
+extern char g_106b8540[];
+char *sub_10203d60(const char *psz);
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+
+#define NEWBLOCKS(dst, cnt) \
+	{ \
+		int n_ = (cnt); \
+		CVDmgBlock16_t *p_ = (CVDmgBlock16_t *)operator new(n_ * 16); \
+		CVDmgBlock16_t *r_; \
+		if (p_) { \
+			CVDmgBlock16_t *q_ = p_; \
+			for (int k_ = n_ - 1; k_ >= 0; k_--) { \
+				q_->sub_10205380(); \
+				q_++; \
+			} \
+			r_ = p_; \
+		} else { \
+			r_ = 0; \
+		} \
+		(dst) = r_; \
+	}
+
+void CVFeat_t::sub_101e50b0(CVFeatKV *pKV, int unused)
+{
+	char szKey[0x80];
+	if (pKV) {
+		m_nMaxValue = pKV->GetInt("MaxValue", 10);
+		sprintf(szKey, "Base%d", m_nBase);
+		while (pKV->HasKey(szKey)) {
+			m_nBase++;
+			sprintf(szKey, "Base%d", m_nBase);
+		}
+		if (m_nBase > 0) {
+			NEWBLOCKS(*(CVDmgBlock16_t **)&m_p20, m_nBase);
+			for (int i = 0; i < m_nBase; i++) {
+				sprintf(szKey, "Base%d", i);
+				((CVDmgBlock16_t *)m_p20)[i].sub_10204570(sub_10203d60(pKV->GetString(szKey, g_106b8540)));
+			}
+		}
+		sprintf(szKey, "Automatic%d", m_nEffects);
+		while (pKV->HasKey(szKey)) {
+			m_nEffects++;
+			sprintf(szKey, "Automatic%d", m_nEffects);
+		}
+		if (m_nEffects > 0) {
+			NEWBLOCKS(m_pEffects, m_nEffects);
+			for (int i = 0; i < m_nEffects; i++) {
+				sprintf(szKey, "Automatic%d", i);
+				m_pEffects[i].sub_10204570(sub_10203d60(pKV->GetString(szKey, g_106b8540)));
+			}
+		}
+		sprintf(szKey, "Display2nd%d", m_nDisplay2nd);
+		while (pKV->HasKey(szKey)) {
+			m_nDisplay2nd++;
+			sprintf(szKey, "Display2nd%d", m_nDisplay2nd);
+		}
+		if (m_nDisplay2nd > 0) {
+			NEWBLOCKS(*(CVDmgBlock16_t **)&m_p30, m_nDisplay2nd);
+			for (int i = 0; i < m_nDisplay2nd; i++) {
+				sprintf(szKey, "Display2nd%d", i);
+				((CVDmgBlock16_t *)m_p30)[i].sub_10204570(sub_10203d60(pKV->GetString(szKey, g_106b8540)));
+			}
+		}
+		m_nPCWeighting = g_10739194.sub_101d9780(pKV->GetString("PCWeighting", g_106b8540));
+		m_nNPCWeighting = g_10739194.sub_101d9780(pKV->GetString("NPCWeighting", g_106b8540));
+		g_106c7c34.sub_1006cec0((CVTraitKV *)pKV, 0);
+		return;
+	}
+	Msg("Unable to load VFeat data\n");
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e54c0 size=0x1a5
 #include "utlrbtree.h"
 #include "utlsortvector.h"
