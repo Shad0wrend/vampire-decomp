@@ -216,6 +216,45 @@ L1:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10396bc0 size=0x181
+#include "CNPC_VMingXiao.h"
+#include "CEHandleGet.h"
+#include "globalvars.h"
+#include "engineiface.h"
+#include "CUnknown10739d08.h"
+#include "CUnknown103662d0.h"
+#include "CUnknown10398d90.h"
+#include "CUnknown102718e0.h"
+
+extern CUnknown10739d08 g_10739d08;
+
+int CNPC_VMingXiao::sub_10396bc0()
+{
+	EHANDLE *ph = &m_h6718;
+	if (ph->Get())
+		return 0;
+	if (gpGlobals->curtime < m_flSlotTimeA[5])
+		return 0;
+	if (gpGlobals->curtime < m_flSlotTimeA[4])
+		return 0;
+	CBaseEntity *pTarget = vfunc167();
+	if (pTarget)
+		vfunc530(pTarget);
+	sub_10014df8(9);
+	int nRoll = enginerandom->vfunc2(0, 99);
+	if (*(int *)((char *)g_10739d08.sub_101e8da0() + 8) > nRoll)
+		m_h6718 = sub_10398b20(&m_nSide671c, (Vector *)&m_n6720, (Vector *)&m_n672c);
+	if (!ph->Get())
+		return 0;
+	((CUnknown103662d0 *)this)->sub_103662d0(*(CUnknown102718e0 *)ph, 20.0f);
+	sub_102c4380(ph->Get());
+	((CUnknown10398d90 *)this)->sub_10398d90(1);
+	m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiao.cpp";
+	m_nLine1b34 = 0xbc3;
+	return 0x167;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10396dc0 size=0x97
 #include "CNPC_VMingXiao.h"
 #include "CGlobalEntityList.h"
