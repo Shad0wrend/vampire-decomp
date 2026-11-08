@@ -158584,6 +158584,64 @@ void CAI_BaseNPCTroika::sub_102a9f40(CAI_InterestingPlace *pPlace, CAI_Hint *pHi
 }
 // END FUNCTION
 
+// FUNCTION: 0x102aaa60 size=0xcc
+#include "CAI_BaseNPCTroika.h"
+
+struct TroikaHintView
+{
+	char m_pad0000[0x5dc];
+	int m_nType;	// 0x5dc
+};
+
+struct GlobalVarsView
+{
+	char m_pad0000[0xc];
+	float curtime;	// 0x0c
+};
+extern GlobalVarsView *g_1070b228;
+
+// TARGET: CAI_BaseNPCTroika::sub_102aaa60
+bool CAI_BaseNPCTroika::sub_102aaa60(int unused)
+{
+	*(float *)((char *)this + 0x5d9c) = g_1070b228->curtime;
+	TroikaHintView *pHint = *(TroikaHintView **)((char *)this + 0x5ddc);
+	if (pHint) {
+		switch (pHint->m_nType) {
+		case 100:
+			if (sub_102b5de0()) {
+				sub_10289ee0(0x1114);
+				return true;
+			}
+			return false;
+		case 101:
+			if (sub_102b5de0()) {
+				sub_10289ee0(0x110f);
+				return true;
+			}
+			return false;
+		case 0x27d8:
+			if (sub_102b5de0()) {
+				if (*(char *)((char *)this + 0x63fd))
+					sub_10289ee0(0x111f);
+				else
+					sub_10289ee0(0x1120);
+				return true;
+			}
+			return false;
+		default:
+			if (!sub_10014df8(99))
+				goto sched;
+			return false;
+		}
+	} else if (!sub_10014df8(99)) {
+sched:
+		sub_10289ee0(0x19);
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102aab70 size=0x126
 #include "CAI_BaseNPCTroika.h"
 #include "CAI_Motor.h"

@@ -7199,6 +7199,7 @@
 0x1000b44c func   ?vfunc324@CNPC_VTzimisce@@UAE_NXZ CNPC_VTzimisce::vfunc324
 0x1000b451 func   ?sub_1014f810@@YA_NXZ sub_1014f810
 0x1000b456 func   ?sub_1034fd90@CHL2_Player@@QAEHH@Z CHL2_Player::sub_1034fd90
+0x1000b45b func   ?sub_102aaa60@CAI_BaseNPCTroika@@QAE_NH@Z CAI_BaseNPCTroika::sub_102aaa60
 0x1000b460 func   _item_k_museum_storage_key item_k_museum_storage_key
 0x1000b465 func   ?sub_10407580@@YAHXZ sub_10407580
 0x1000b46a func   ?vfunc180@CPlayerEvents@@QAEXXZ CPlayerEvents::vfunc180
