@@ -209690,6 +209690,143 @@ char sub_103c29b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c2a90 size=0x3a6
+#include "UtlMem.h"
+#include "UtlVec8.h"
+#include "CUtlVector4.h"
+#include "CUtlVector16.h"
+#include "CUnknown10359c50.h"
+#include "CUnknown10936b68.h"
+
+extern CUnknown10359c50 g_1093d1d8, g_1093d1f0, g_1093d208, g_1093d224;
+
+extern "C" void __cdecl qsort(void *, unsigned int, unsigned int, int (__cdecl *)(const void *, const void *));
+extern "C" int __cdecl sub_102bec60(const void *, const void *);
+extern char g_109203cc[], g_109203d4[], g_109203dc[], g_10936c74[];
+extern char g_10924248[], g_10924260[], g_10924278[], g_10920484[];
+extern char g_1065de60[], g_1065dc58[], g_1065dc18[], g_1065da60[];
+extern bool g_1065d74c;
+extern const char *g_1065d754;
+extern const char g_10594488[], g_10600e78[], g_10577ca0[], g_10628c94[];
+extern CUnknown10936b68 g_10936b68;
+
+struct VecU {
+	UtlMem mem;
+	int size;
+	int *elems;
+};
+
+struct Frame {
+	VecU a;
+	VecU b;
+	UtlVec8 sched;
+	UtlVec8Elem e;
+	UtlVec8 cond;
+	UtlVec8 task;
+	UtlVec8 squad;
+	const char *t1;
+	const char *t2;
+};
+
+struct Elem { const char *name; int id; };
+
+void sub_103c2a90()
+{
+	Frame f;
+	int i;
+
+	f.a.mem.sub_102c6a00(0, 0);
+	f.a.size = 0;
+	f.a.elems = f.a.mem.m_pMemory;
+	f.b.mem.sub_102c6b80(0, 0);
+	f.b.size = 0;
+	f.b.elems = f.b.mem.m_pMemory;
+	f.sched.sub_102c66f0(0, 0);
+	f.task.sub_102c66f0(0, 0);
+	f.cond.sub_102c66f0(0, 0);
+	f.squad.sub_102c66f0(0, 0);
+
+	f.e.a = (int)g_1065de60;
+	f.e.b = 0x156;
+	f.sched.sub_102c6a50(f.sched.m_Size, &f.e);
+	f.t1 = g_1065dc58;
+	((CUtlVector4 *)&f.a)->sub_102c6920(f.a.size, (const int *)&f.t1);
+	f.e.a = (int)g_1065dc18;
+	f.e.b = 0x157;
+	f.sched.sub_102c6a50(f.sched.m_Size, &f.e);
+	f.t2 = g_1065da60;
+	((CUtlVector4 *)&f.a)->sub_102c6920(f.a.size, (const int *)&f.t2);
+
+	if (g_1093d1d8.sub_1001153b(g_109203cc, g_10924248) && g_1093d1f0.sub_1001153b(g_109203d4, g_10924260))
+		g_1093d208.sub_1001153b(g_109203dc, g_10924278);
+	g_1093d224.sub_1001153b(g_10936c74, g_10920484);
+
+	if (f.sched.m_Size) qsort(f.sched.m_pMemory, f.sched.m_Size, 8, sub_102bec60);
+	if (f.task.m_Size) qsort(f.task.m_pMemory, f.task.m_Size, 8, sub_102bec60);
+	if (f.cond.m_Size) qsort(f.cond.m_pMemory, f.cond.m_Size, 8, sub_102bec60);
+	if (f.squad.m_Size) qsort(f.squad.m_pMemory, f.squad.m_Size, 8, sub_102bec60);
+
+	i = 0;
+	while (i < f.sched.m_Size) {
+		const char *c = g_1065d754;
+		int id = ((Elem *)f.sched.m_pMemory)[i].id;
+		const char *nm = ((Elem *)f.sched.m_pMemory)[i].name;
+		if (!g_1093d1d8.sub_102ea130(nm, id, g_10594488, c)) goto fail;
+		i++;
+	}
+	i = 0;
+	while (i < f.task.m_Size) {
+		const char *c = g_1065d754;
+		int id = ((Elem *)f.task.m_pMemory)[i].id;
+		const char *nm = ((Elem *)f.task.m_pMemory)[i].name;
+		if (!g_1093d1f0.sub_102ea130(nm, id, g_10600e78, c)) goto fail;
+		i++;
+	}
+	i = 0;
+	while (i < f.cond.m_Size) {
+		const char *c = g_1065d754;
+		int id = ((Elem *)f.cond.m_pMemory)[i].id;
+		const char *nm = ((Elem *)f.cond.m_pMemory)[i].name;
+		if (!g_1093d208.sub_102ea130(nm, id, g_10577ca0, c)) goto fail;
+		i++;
+	}
+	i = 0;
+	while (i < f.squad.m_Size) {
+		const Elem &e = ((Elem *)f.squad.m_pMemory)[i];
+		if (!g_1093d224.sub_102ea130(e.name, e.id, g_10628c94, g_1065d754)) goto fail;
+		i++;
+	}
+	i = 0;
+	while (i < f.b.size) {
+		((void (*)())*(i + (int *)f.b.mem.m_pMemory))();
+		++i;
+	}
+	i = 0;
+	while (i < f.a.size && g_1065d74c) {
+		g_1065d74c = g_10936b68.sub_1030d850("CNPC_VTzimisceRunner", (void *)*(i + (int *)f.a.mem.m_pMemory), &g_1093d1d8);
+		i += 1;
+	}
+	f.squad.sub_102c8a90();
+	((CUtlVector16 *)&f.cond)->sub_102c8b60();
+	((UtlMem *)&f.cond)->sub_102c8c00();
+	((CUtlVector16 *)&f.task)->sub_102c8b60();
+	((UtlMem *)&f.task)->sub_102c8c00();
+	((CUtlVector16 *)&f.sched)->sub_102c8b60();
+	((UtlMem *)&f.sched)->sub_102c8c00();
+	goto done;
+fail:
+	f.squad.sub_102c8a90();
+	f.cond.sub_102c8a90();
+	f.task.sub_102c8a90();
+	f.sched.sub_102c8a90();
+done:
+	((CUtlVector16 *)&f.b)->sub_102c8bb0();
+	((UtlMem *)&f.b)->sub_102c8c40();
+	((CUtlVector16 *)&f.a)->sub_102c8b10();
+	((UtlMem *)&f.a)->sub_1021e540();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c2f30 size=0x43
 #include "CBaseEntity.h"
 #include "CNPC_VTzimisceRunner.h"

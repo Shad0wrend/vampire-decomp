@@ -9163,6 +9163,7 @@
 0x1000dfb2 func   ??0CVStatInfo_t@@QAE@XZ CVStatInfo_t::CVStatInfo_t
 0x1000dfb2 func   ?sub_101fdaf0@CVStatInfo_t@@QAEPAV1@XZ CVStatInfo_t::sub_101fdaf0
 0x1000dfb7 func   ?vfunc103@CAreaPortal@@UAEXXZ CAreaPortal::vfunc103
+0x1000dfbc func   ?sub_103c2a90@@YAXXZ sub_103c2a90
 0x1000dfc6 func   ?vfunc80@CItemGGarysFilm@@QAEHXZ CItemGGarysFilm::vfunc80
 0x1000dfcb func   ?sub_10388d00@@YAHXZ sub_10388d00
 0x1000dfd0 func   ?sub_101c5080@CBaseTrigger@@QAEXXZ CBaseTrigger::sub_101c5080
