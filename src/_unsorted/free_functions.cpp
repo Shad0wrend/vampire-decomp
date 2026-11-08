@@ -136774,6 +136774,65 @@ void CUnk1021bc60::sub_1021bc60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021bc90 size=0xbd
+#include "utlrbtree.h"
+#include "CUnknown1021bec0.h"
+#include "CEHandleGet.h"
+#include "utlvector.h"
+
+struct CUnknown1021bec0_Entry
+{
+	char m_pad0000[0x240];
+	char m_szCondition[0x40];	// 0x240
+	char m_szAction[0x40];	// 0x280
+};
+
+struct CDepListView
+{
+	char m_pad0000[0x8c];
+	unsigned int m_hEntity;	// 0x8c
+	char m_pad0090[0x9f0 - 0x90];
+	int m_nIndex;	// 0x9f0
+	int m_nEntry;	// 0x9f4
+	CUtlVector<int> m_List;	// 0x9f8
+	char m_pad0a0c[0xa14 - 0xa0c];
+	CUtlVector<CUnknown1021bec0_Entry> m_Entries;	// 0xa14
+	unsigned int m_aFlags[0x80];	// 0xa28
+};
+
+void sub_100ea2d0(const char *pszExpression, CGlobalEntityList_Ent *pEnt, void *pSelf, int nFlags, int a);
+
+namespace block_1021bc90 {
+struct CUnknown1021bec0Unit : CUnknown1021bec0
+{
+	bool sub_1021a4b0(int entry);
+};
+bool CUnknown1021bec0Unit::sub_1021a4b0(int entry)
+{
+	CDepListView *v = (CDepListView *)this;
+	if (entry >= 0 && entry < 0x80)
+		return (v->m_aFlags[entry] & 1) == 1;
+	return false;
+}
+}
+using namespace block_1021bc90;
+
+// TARGET: CUnknown1021bec0::sub_1021bc90
+void CUnknown1021bec0::sub_1021bc90(int index)
+{
+	CDepListView *v = (CDepListView *)this;
+	if (v->m_List.Count()) {
+		int nMax = v->m_List.Count() - 1;
+		v->m_nIndex = index > nMax ? nMax : (index < 0 ? 0 : index);
+		v->m_nEntry = v->m_List[v->m_nIndex];
+		sub_1021c260();
+		if (!((CUnknown1021bec0Unit *)this)->sub_1021a4b0(v->m_nEntry))
+			sub_100ea2d0(v->m_Entries[v->m_nEntry].m_szAction, EHandle_Get(v->m_hEntity), this, 0x100, 0);
+		sub_1021a530(v->m_nEntry);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021bec0 size=0xca
 #include <string.h>
 #include "CUnknown1021bec0.h"
