@@ -10,5 +10,7 @@ public:
 	int m_size;
 	char *m_pElements;
 
+	void sub_10078f20(int elem, int num);
+	void sub_10079100(int num);
 	void sub_10078c90(int num);	// grows the allocation to hold num more elements (initial allocation 1), then adds num to the size
 };
