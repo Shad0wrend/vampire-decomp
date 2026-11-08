@@ -83091,6 +83091,44 @@ CGlobalEntityList_Ent *CUnknown1017d680::sub_1017d680()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017d6d0 size=0x1bd
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+void CBasePlayer::sub_1017d6d0(float flParam)
+{
+	float flProgress = sub_1017d900();
+	if (flProgress > 0.0f) {
+		float v;
+		if (m_hFadeEnt19C0.Get() != 0)
+			v = m_hFadeEnt19C0.Get()->vfunc53();
+		else
+			v = 0.0f;
+		if (v > flParam)
+			flParam = v;
+		if (m_hFadeEnt19CC.Get() != 0)
+			v = m_hFadeEnt19CC.Get()->vfunc53();
+		else
+			v = 0.0f;
+		if (v > flParam)
+			flParam = v;
+		if (flParam > 0.0f) {
+			float flNow = engine->vfunc119(0);
+			if (m_flFadeDuration19BC < 0.0f) {
+				if (flParam + flNow < m_flFadeStart19B8 - m_flFadeDuration19BC) {
+					m_flFadeDuration19BC = -flParam;
+					m_flFadeStart19B8 = flNow - (1.0f - flProgress) * flParam;
+				}
+			} else {
+				m_flFadeDuration19BC = -flParam;
+				m_flFadeStart19B8 = flNow - (1.0f - flProgress) * flParam;
+			}
+		} else {
+			m_flFadeStart19B8 = 0.0f;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017d900 size=0x1a0
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
