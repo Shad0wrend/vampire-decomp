@@ -203,6 +203,38 @@ void CVampireProjectile::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ee440 size=0x109
+#include "CVampireProjectile.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+extern char g_106b8540[];
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+extern float g_1070d1b0[3];
+void sub_1000e903();
+struct CTouchHolderX : CBaseEntity { void sub_101e4a90(CBaseEntity *pOther); };
+
+// TARGET: CVampireProjectile::vfunc103
+void CVampireProjectile::vfunc103()
+{
+    vfunc104();
+    {
+        ScopeTrace trace("CBaseEntity::SetSolid", STRINGR(m_name26c));
+        ((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(2);
+    }
+    sub_100adf10(g_1070d1b0, g_1070d1b0);
+    vfunc93(13, 0);
+    m_nEffectFlags |= 0xa0;
+    m_fl884 = gpGlobals->curtime;
+    m_pfnTouch = (void (CBaseEntity::*)(CBaseEntity *))&CTouchHolderX::sub_101e4a90;
+    const char *pszModel = STRINGR(m_pszModel87c);
+    if (*pszModel)
+        vfunc105(pszModel);
+    sub_100ac4e0((int)sub_1000e903, 0, 0);
+    m_flNextThink = gpGlobals->curtime + 0.03;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ee710 size=0x1
 #include "CVampireProjectile.h"
 void CVampireProjectile::vfunc268()

@@ -4475,6 +4475,7 @@
 0x10007577 func   ?IsLeftChild@?$CUtlRBTree@HG@@QBE_NG@Z CUtlRBTree<int,unsigned short>::IsLeftChild
 0x10007577 func   ?IsLeftChild@?$CUtlRBTree@UCRBTree12Entry_102ec4a0@@G@@QBE_NG@Z CUtlRBTree<CRBTree12Entry_102ec4a0,unsigned short>::IsLeftChild
 0x10007577 func   ?sub_102eb7f0@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_102eb7f0
+0x10007581 func   ?vfunc103@CVampireProjectile@@UAEXXZ CVampireProjectile::vfunc103
 0x10007586 func   ?sub_101e1770@CDiscTable_101e1770@@QAEHH@Z CDiscTable_101e1770::sub_101e1770
 0x1000758b func   ?vfunc82@CRagdollPropAttached@@UAEPAUdatamap_t@@XZ CRagdollPropAttached::vfunc82
 0x10007590 func   ?sub_101fc160@CVStatCost_t@@QAE_NXZ CVStatCost_t::sub_101fc160
