@@ -155000,6 +155000,103 @@ int sub_102673f0(int id, int list)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10267820 size=0x288
+#include "CBaseEntity.h"
+#include "engineiface.h"
+#include "Vector.h"
+#include "CEntityVSlots.h"
+
+// TARGET: sub_10267820
+
+extern float g_1090fe24;
+extern float g_1090fe28;
+extern float g_1090fe2c;
+extern float g_1090fe30;
+extern float g_1090fe34;
+extern float g_1090fe38;
+extern float g_1090fe3c;
+extern float g_1090fe40;
+extern float g_1090fe44;
+extern float g_1090fe48;
+extern Vector g_1070d1b0;
+
+Vector __stdcall sub_10267820(CBaseEntity *pEnt, const Vector *pPos, const Vector *pDirA, const Vector *pDirB)
+{
+	Vector vecResult = g_1070d1b0;
+
+	float flMinX, flMaxX, flMinY, flMaxY;
+	switch ( enginerandom->vfunc2(0, 5) )
+	{
+	case 1:
+		flMinX = -g_1090fe34;
+		flMaxX = -g_1090fe28;
+		flMinY = g_1090fe44;
+		flMaxY = g_1090fe3c;
+		break;
+	case 2:
+		flMinX = -g_1090fe24;
+		flMaxX = -g_1090fe34;
+		flMinY = g_1090fe48;
+		flMaxY = g_1090fe40;
+		break;
+	case 3:
+		flMinX = g_1090fe24;
+		flMaxX = g_1090fe34;
+		flMinY = g_1090fe48;
+		flMaxY = g_1090fe40;
+		break;
+	case 4:
+		flMinX = g_1090fe34;
+		flMaxX = g_1090fe28;
+		flMinY = g_1090fe44;
+		flMaxY = g_1090fe3c;
+		break;
+	case 5:
+		flMinX = g_1090fe38;
+		flMaxX = g_1090fe2c;
+		flMinY = g_1090fe30;
+		flMaxY = g_1090fe44;
+		break;
+	case 0:
+		flMinX = -g_1090fe38;
+		flMaxX = g_1090fe2c;
+		flMinY = g_1090fe30;
+		flMaxY = g_1090fe44;
+		break;
+	default:
+		flMinX = -g_1090fe38;
+		flMaxX = g_1090fe2c;
+		flMinY = g_1090fe30;
+		flMaxY = g_1090fe44;
+		break;
+	}
+
+	float flX, flY;
+	float flLen2;
+	do
+	{
+		do
+		{
+			flX = enginerandom->vfunc1(flMinX, flMaxX);
+			flY = enginerandom->vfunc1(flMinY, flMaxY);
+			flLen2 = flX * flX + flY * flY;
+		} while ( 0.008f > flLen2 );
+	} while ( flLen2 > 0.012f );
+
+	Vector *pOrigin = ((CEntityVSlots *)pEnt)->slot220();
+	float flDx = pOrigin->x - pPos->x;
+	float flDy = pOrigin->y - pPos->y;
+	float flDz = pOrigin->z - pPos->z;
+	float flDist = FastSqrt(flDx * flDx + flDy * flDy + flDz * flDz);
+
+	float flScale = ( flDist < 400.0f ) ? 200.0f / flDist : 220.0f / flDist;
+
+	vecResult = *pDirA * (flX * flScale) + *pDirB * (flY * flScale);
+
+	return vecResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102695d0 size=0xd2
 #include "CAI_BaseNPC.h"
 #include "CBaseEntity.h"

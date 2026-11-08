@@ -12257,6 +12257,7 @@
 0x10012418 func   ?vfunc553@CNPC_VSheriffSwarm@@UAEHMM@Z CNPC_VSheriffSwarm::vfunc553
 0x1001241d func   ?sub_101e8080@CUnknown101e8080@@QAEXPAHPAXMH@Z CUnknown101e8080::sub_101e8080
 0x10012422 func   ?vfunc80@CItemGCashBox@@QAEHXZ CItemGCashBox::vfunc80
+0x10012427 func   ?sub_10267820@@YG?AVVector@@PAVCBaseEntity@@PBV1@11@Z sub_10267820
 0x1001242c func   ?sub_101bea90@CStealthKillRules@@QAEMPAVCBaseEntity@@@Z CStealthKillRules::sub_101bea90
 0x10012431 func   ?sub_103b1510@CNPC_VSheriffMan@@QAEXXZ CNPC_VSheriffMan::sub_103b1510
 0x10012436 func   ?sub_10050b90@CDisciplineParticle@@SAPAV1@PAUCDisciplineParticleParams@@HHHH@Z CDisciplineParticle::sub_10050b90
