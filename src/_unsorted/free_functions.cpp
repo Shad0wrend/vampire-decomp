@@ -140638,6 +140638,33 @@ void CBaseKeyframedMover::sub_10223820(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10223940 size=0x9a
+#include "CBaseKeyframedMover.h"
+#include "Vector.h"
+
+extern Vector g_1070d1b0;
+__declspec(dllimport) void Warning(const char *fmt, ...);
+
+void CBaseKeyframedMover::sub_10223940(int dir)
+{
+	if (m_nDirection != dir) {
+		if (!sub_10223700()) {
+			Warning("NULL last keyframe for: %s\n", sub_100ab4f0());
+			sub_100b2e30(&g_1070d1b0.x);
+			m_n568 = -1;
+		} else if (dir == 1) {
+			sub_1000b94c(sub_10223700()->m_n454);
+		} else if (dir == -1) {
+			sub_1000b94c(sub_10223700()->m_n458);
+		} else {
+			sub_100b2e30(&g_1070d1b0.x);
+			m_n568 = -1;
+		}
+		m_nDirection = dir;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10223a30 size=0x39
 #include "CBaseKeyframedMover.h"
 
