@@ -283,6 +283,153 @@ int CAI_BaseNPC::vfunc461()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10273390 size=0x2c1
+#include "CBaseEntity.h"
+#include "CBaseAnimating.h"
+#include "CAI_BaseNPC.h"
+#include "CAI_Motor.h"
+#include "CUnknown102ee270.h"
+#include "globalvars.h"
+#include "Vector.h"
+#include <string.h>
+
+extern int g_1093407c;
+
+void sub_10272650(int a);
+void sub_10273aa0();
+void sub_1026d7b0();
+
+struct CUnknown1026a2a0
+{
+    void sub_1026a2a0(int a);
+};
+
+struct CObj1a9c
+{
+    void sub_102cc7e0();
+};
+
+struct CObj5d34
+{
+    char m_pad00[0x2c];
+    int m_field2c;
+};
+
+struct CCondBits5c5c
+{
+    unsigned int m_bits[6];
+    void ClearAll() { if (this) memset(this, 0, sizeof(m_bits)); }
+};
+
+// TARGET: CAI_BaseNPC::sub_10273390
+void CAI_BaseNPC::sub_10273390()
+{
+    char *pSelf = (char *)this;
+
+    ((CBaseEntity *)this)->sub_100a9290(1);
+    *(EHANDLE *)(pSelf + 0x5b7c) = (CBaseEntity *)0;
+    *(bool *)(pSelf + 0x5b80) = false;
+    ((CBaseAnimating *)this)->sub_100904a0();
+    ((CBaseEntity *)this)->sub_100b3580(0x12000);
+    *(float *)(pSelf + 0x3ec) = 1.0f;
+    *(int *)(pSelf + 0x1fc) = 2;
+
+    sub_102e0b40((float *)*(void **)(pSelf + 0x5d44));
+    CAI_Motor *pMotor = (CAI_Motor *)*(void **)(pSelf + 0x5d44);
+
+    float yaw = ((Vector *)((CAI_BaseNPC *)this)->vfunc221())->y;
+    if (*(char *)((char *)pMotor + 0x28) != 0)
+    {
+        if (yaw >= 180.0f)
+            yaw -= 180.0f;
+        else
+            yaw += 180.0f;
+    }
+    if (*(int *)((char *)pMotor + 0x1c) == 0x43340000)
+        *(float *)((char *)pMotor + 0x34) = yaw;
+    else
+        *(float *)((char *)pMotor + 0x34) = pMotor->sub_102e0a80(yaw);
+
+    *(int *)(pSelf + 0x208) = 100;
+    *(int *)(pSelf + 0x200) = 0;
+    *(const char **)(pSelf + 0x1b3c) = "E:\\Vampire\\main\\dlls\\AI_BaseNPC.cpp";
+    *(int *)(pSelf + 0x1b40) = 0x1af1;
+    *(int *)(pSelf + 0x5cc4) = 1;
+
+    if (((CBaseAnimating *)this)->sub_1008dd30(1, -1) >= 0)
+    {
+        sub_10272650(1);
+    }
+    else if (((CBaseAnimating *)this)->sub_1008dd30(0xf1, -1) >= 0)
+    {
+        sub_10272650(0xf1);
+    }
+    else
+    {
+        *(int *)(pSelf + 0x6f0) = 0;
+    }
+
+    *(char *)(pSelf + 0x1a40) = 0;
+    *(int *)(pSelf + 0x1a44) = 0x202400b;
+    ((CObj5d34 *)*(void **)(pSelf + 0x5d34))->m_field2c = g_1093407c;
+    ((CAI_BaseNPC *)this)->sub_10280d30();
+    ((CUnknown102ee270 *)*(void **)(pSelf + 0x5d34))->sub_102ee270();
+    ((CBaseAnimating *)this)->sub_10095be0();
+    ((CBaseAnimating *)this)->sub_1008f540();
+
+    *(int *)(pSelf + 0x5ddc) = 0;
+    *(int *)(pSelf + 0x5d8c) = 0;
+    ((CAI_BaseNPC *)this)->sub_10279a50(0);
+    *(float *)(pSelf + 0x5de4) = 1024.0f;
+    ((CUnknown1026a2a0 *)this)->sub_1026a2a0(0x45400000);
+    *(char *)(pSelf + 0x5cd8) = 0;
+
+    unsigned int nFlags = *(unsigned int *)(pSelf + 0x204);
+    unsigned char bFlag = (unsigned char)(nFlags >> 8);
+    if (bFlag & 1)
+    {
+        *(float *)(pSelf + 0x5de4) = 1.0e9f;
+        ((CUnknown1026a2a0 *)this)->sub_1026a2a0(0x45bb8000);
+    }
+
+    ((CCondBits5c5c *)(pSelf + 0x5c5c))->ClearAll();
+    ((CObj1a9c *)(pSelf + 0x1a9c))->sub_102cc7e0();
+    ((CObj1a9c *)(pSelf + 0x1ae0))->sub_102cc7e0();
+    ((CAI_BaseNPC *)this)->sub_10274ca0();
+    *(int *)(pSelf + 0x1f0) = (int)sub_1026d7b0;
+
+    if (gpGlobals->curtime > 1.0)
+    {
+        ((void (__fastcall *)(void *))sub_10273aa0)(this);
+    }
+    else
+    {
+        ((CBaseEntity *)this)->sub_100ac4e0((int)sub_10273aa0, 0, 0);
+        *(float *)(pSelf + 0x17c) = gpGlobals->curtime + 0.1;
+    }
+
+    *(char *)(pSelf + 0x1b28) = 0;
+    *(int *)(pSelf + 0x5b58) = 0;
+    *(float *)(pSelf + 0x5b5c) = gpGlobals->curtime;
+    *(int *)(pSelf + 0x5b84) = 0;
+    *(int *)(pSelf + 0x5b88) = 0;
+    *(int *)(pSelf + 0x5b8c) = 0x7f7fffff;
+    *(int *)(pSelf + 0x5cc8) = 0;
+    *(int *)(pSelf + 0x5b98) = 10;
+    *(EHANDLE *)(pSelf + 0x5ba8) = (CBaseEntity *)0;
+    *(int *)(pSelf + 0x5b90) = 0;
+    *(bool *)(pSelf + 0x5d78) = false;
+    *(bool *)(pSelf + 0x5bc4) = false;
+    ((CAI_BaseNPC *)this)->sub_10270180(0, 0);
+    *(int *)(pSelf + 0x5d98) = 0;
+    *(int *)(pSelf + 0x5d9c) = 0;
+    *(int *)(pSelf + 0x5ce8) = 0;
+    *(int *)(pSelf + 0x5d6c) = 0;
+    *(int *)(pSelf + 0x5da0) = 0;
+    *(int *)(pSelf + 0x5db4) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027be60 size=0xb5
 #include "CAI_BaseNPC.h"
 #include "CUnknown102ee270.h"
