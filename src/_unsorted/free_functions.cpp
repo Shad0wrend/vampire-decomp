@@ -153892,6 +153892,90 @@ float CAI_BaseNPC::sub_1026c540()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026c7c0 size=0x228
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CAI_BaseNPC.h"
+#include "CVProfile.h"
+#include "ScopeTrace.h"
+
+struct CCycleSampler
+{
+	unsigned __int64 m_Int64;
+	void Sample() { __asm { mov ecx, this
+		rdtsc
+		mov [ecx], eax
+		mov [ecx+4], edx } }
+	void End()
+	{
+		CCycleSampler e;
+		e.m_Int64 = 0;
+		e.Sample();
+		m_Int64 = e.m_Int64 - m_Int64;
+	}
+};
+extern CCycleSampler g_1090ff00;
+
+struct CVProfNodeX : CVProfNode
+{
+	bool ExitScopeX()
+	{
+		if (--m_nRecursions == 0 && m_nCurFrameCalls != 0) {
+			CCycleSampler *pc = (CCycleSampler *)&m_CurFrameTime;
+			pc->End();
+			m_TotalTime += pc->m_Int64;
+			g_109f3648->PopGroup();
+		}
+		return m_nRecursions == 0;
+	}
+};
+struct CVProfileX : CVProfile
+{
+	void ExitScopeX()
+	{
+		if (!m_bAtRoot || m_enabled) {
+			if (((CVProfNodeX *)m_pCurNode)->ExitScopeX())
+				m_pCurNode = m_pCurNode->m_pParent;
+			m_bAtRoot = (m_pCurNode == m_pRoot);
+		}
+	}
+};
+
+float CAI_BaseNPC::sub_1026c7c0()
+{
+	float flAdvance;
+	{
+	ScopeTrace trace("CAI_BaseNPC::PostRun", this ? (*(const char **)((char *)this + 0x26c) ? *(const char **)((char *)this + 0x26c) : g_106b8540) : g_105387dc);
+	CVProfile *pProf = g_109f3648;
+	if (pProf->m_enabled || !pProf->m_bAtRoot) {
+		if (pProf->m_pCurNode->m_pszName != "CAI_BaseNPC_PostRun")
+			pProf->m_pCurNode = pProf->m_pCurNode->GetSubNode("CAI_BaseNPC_PostRun", 0, "Unaccounted");
+		CVProfNode *pNode = pProf->m_pCurNode;
+		pNode->m_nCurFrameCalls++;
+		if (pNode->m_nRecursions++ == 0) {
+			((CCycleSampler *)&pNode->m_CurFrameTime)->Sample();
+			g_109f3648->PushGroup(pNode->m_nBudgetGroupID);
+		}
+		pProf->m_bAtRoot = false;
+	}
+	CCycleSampler *pg = &g_1090ff00;
+	pg->Sample();
+	flAdvance = sub_1026c540();
+	vfunc258(flAdvance, this);
+	sub_1032aa40();
+	g_1090ff00.End();
+	((CVProfileX *)g_109f3648)->ExitScopeX();
+	}
+	return flAdvance;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026d0c0 size=0x43
 struct Helper { void sub_1000a8a8(void*); };
 // TARGET: sub_1026d0c0
