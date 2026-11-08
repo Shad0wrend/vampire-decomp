@@ -3023,6 +3023,7 @@
 0x10005452 func   ?sub_101f3e50@CUnknown101f3e50@@QAEXXZ CUnknown101f3e50::sub_101f3e50
 0x10005457 func   ?sub_1035e030@CNPC_VAndreiBlood@@QAE_NPBVVector@@M@Z CNPC_VAndreiBlood::sub_1035e030
 0x1000545c func   ?sub_10045fc0@@YAXXZ sub_10045fc0
+0x10005461 func   ?sub_102692d0@CBaseEntity@@QAEXHMPAUCGameTrace@@VVector@@@Z CBaseEntity::sub_102692d0
 0x10005466 func   ?vfunc591@CAI_BaseNPCTroika@@UAE_NXZ CAI_BaseNPCTroika::vfunc591
 0x10005470 func   ?sub_10068440@CTESpriteSpray@@QAEPAV1@PBD@Z CTESpriteSpray::sub_10068440
 0x10005475 func   ?sub_100f7d50@@YGPAVCBaseEntity@@PBDABVVector@@M@Z sub_100f7d50

@@ -155658,6 +155658,48 @@ Vector __stdcall sub_10267820(CBaseEntity *pEnt, const Vector *pPos, const Vecto
 }
 // END FUNCTION
 
+// FUNCTION: 0x102692d0 size=0x252
+#include "CBaseEntity.h"
+#include "UTIL_Trace.h"
+#include "engineiface.h"
+
+#define V4(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3();
+#define V16(x) V4(x##a) V4(x##b) V4(x##c) V4(x##d)
+#define V64(x) V16(x##a) V16(x##b) V16(x##c) V16(x##d)
+
+struct CBaseEntityBleedView {
+	V64(a) V64(b) V16(c) virtual void d0();
+	virtual int vfunc145();
+	V4(e) V4(f) V4(g)
+	virtual bool vfunc158();
+	char m_pad0004[0x208 - 4];
+	int m_n208;
+};
+
+void sub_101cfe10(void *p, int a, int b);
+
+void CBaseEntity::sub_102692d0(int cCount, float flNoise, CGameTrace *ptr, Vector vecDir)
+{
+	CBaseEntityBleedView *pView = (CBaseEntityBleedView *)this;
+	if (!pView->vfunc158()) {
+		if (pView->m_n208 <= 0)
+			return;
+		pView->m_n208--;
+	}
+	for (int i = 0; i < cCount; i++) {
+		Vector vecTraceDir;
+		vecTraceDir.x = vecDir.x + enginerandom->vfunc1(-flNoise, flNoise);
+		vecTraceDir.y = vecDir.y + enginerandom->vfunc1(-flNoise, flNoise);
+		vecTraceDir.z = vecDir.z + enginerandom->vfunc1(-flNoise, flNoise);
+		const Vector &vecStart = *(Vector *)ptr->m_endpos;
+		CGameTrace Bloodtr;
+		UTIL_TraceLine(vecStart, vecStart + vecTraceDir * 172.0f, 0x400b, this, 0, &Bloodtr);
+		if (Bloodtr.m_fraction != 1.0)
+			sub_101cfe10(&Bloodtr, pView->vfunc145(), 1);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102695d0 size=0xd2
 #include "CAI_BaseNPC.h"
 #include "CBaseEntity.h"
