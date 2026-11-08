@@ -113372,6 +113372,47 @@ void CVFeat_t::sub_101e4fe0(CVFeatKV *pKV)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e54c0 size=0x1a5
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown10204e90.h"
+#include "CVStatList_t.h"
+
+extern void (__cdecl *g_109f3630)(const char *, ...);
+
+int CUnknown101e56e0::sub_101e54c0(CBaseCombatCharacter *pCharacter)
+{
+	int nLimit = m_n18;
+	int nTotal = 0;
+	if (pCharacter) {
+		for (int i = 0; i < m_nCount1c; i++) {
+			int nKind = ((CUnknown10204e90 *)(m_pTable20 + i * 16))->m_nKind;
+			int nIndex = ((CUnknown10204e90 *)(m_pTable20 + i * 16))->m_nIndex;
+			int nValue;
+			switch (nKind) {
+			case 0:
+				nValue = ((CUnknown10204e90 *)(m_pTable20 + i * 16))->sub_10204c20(CVStatListSet::Of(pCharacter)->Find(0)->sub_10200ca0(nIndex));
+				if (nValue <= 0 && nIndex < 10)
+					nValue = 1;
+				nTotal += nValue;
+				break;
+			case 1:
+				nValue = ((CUnknown10204e90 *)(m_pTable20 + i * 16))->sub_10204c20(CVStatListSet::Of(pCharacter)->Find(1)->sub_10200ca0(nIndex));
+				nTotal += nValue;
+				break;
+			}
+		}
+	} else {
+		g_109f3630("Invalid Character pointer for: Feats::FeatValue\n");
+	}
+	if (nTotal > nLimit)
+		return nLimit;
+	return nTotal;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e5e10 size=0x31
 // TARGET: sub_101e5e10
 extern int (__cdecl *g_109f3628)(const char *, ...);

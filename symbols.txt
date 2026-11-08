@@ -13132,6 +13132,7 @@
 0x10013ac0 func   ?sub_10225930@CPropDoorknob@@QAEEXZ CPropDoorknob::sub_10225930
 0x10013ac5 func   ?sub_1014f6f0@@YAHXZ sub_1014f6f0
 0x10013aca func   ?sub_103a9e70@CNPC_VSabbatLeader@@QAE_NXZ CNPC_VSabbatLeader::sub_103a9e70
+0x10013acf func   ?sub_101e54c0@CUnknown101e56e0@@QAEHPAVCBaseCombatCharacter@@@Z CUnknown101e56e0::sub_101e54c0
 0x10013ad4 func   ?sub_100d2320@@YAXHPBD@Z sub_100d2320
 0x10013ade func   ?sub_102edaa0@CUnknown102edaa0@@QAEHHHHHHHH@Z CUnknown102edaa0::sub_102edaa0
 0x10013ae3 func   ?vfunc269@CBaseCombatWeapon@@UAEXPAV1@VVector@@@Z CBaseCombatWeapon::vfunc269
