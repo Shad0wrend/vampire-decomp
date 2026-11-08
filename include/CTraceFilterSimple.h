@@ -27,5 +27,6 @@ class CTraceFilterNoOwnerTest : public CTraceFilterSimple
 {
 public:
 	void *m_pOwner;	// +0xc
+	CTraceFilterNoOwnerTest(void *pOwner) : CTraceFilterSimple(0, 0), m_pOwner(pOwner) {}
 	virtual bool vfunc0(void *pHandleEntity, int contentsMask);	// ShouldHitEntity: false for the owner, else the base's answer
 };
