@@ -1886,6 +1886,87 @@ bool CBaseCombatCharacter::sub_1032d9b0(void *pWeapon)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032dde0 size=0x289
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+#include "CEntityVSlots.h"
+#include "CBCCSlotViews.h"
+
+class CSlot443View
+{
+public:
+	VIEW_SLOT100(0) VIEW_SLOT100(1) VIEW_SLOT100(2) VIEW_SLOT100(3)
+	VIEW_SLOT10(40) VIEW_SLOT10(41) VIEW_SLOT10(42) VIEW_SLOT10(43) VIEW_SLOT(440) VIEW_SLOT(441) VIEW_SLOT(442)
+	virtual void vfunc443(void *pWeapon);
+};
+
+char __fastcall sub_10256280(void *pWeapon);
+int __fastcall sub_102517b0(void *pWeapon);
+
+#define H10E0 (*(EHANDLE *)((char *)this + 0x10e0))
+#define HEA4 (*(EHANDLE *)((char *)this + 0xea4))
+#define HEA8 (*(EHANDLE *)((char *)this + 0xea8))
+#define POBJA8 (*(CSlot443View **)((char *)this + 0xa8))
+#define WEAP(p) ((CEntityVSlots *)(p))
+#define CBE(p) ((CBaseEntity *)(p))
+
+char CBaseCombatCharacter::vfunc388(void *weapon, int a)
+{
+	ScopeTrace scope("CBaseCombatCharacter::Weapon_Switch", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!sub_1032db60(weapon))
+		return 0;
+	if (sub_1032e7b0() == weapon)
+		return 1;
+	if (sub_10341510() == weapon)
+		return 1;
+	if (weapon && sub_10256280(weapon))
+	{
+		H10E0 = m_hActiveIArmor;
+		sub_10335ea0(m_hActiveIArmor.Get());
+		*(unsigned int *)&m_hActiveIArmor = *WEAP(weapon)->slot1();
+		sub_10335de0(m_hActiveIArmor.Get());
+		return 1;
+	}
+	if (sub_1032e7b0())
+	{
+		if ((*(unsigned int *)(sub_102517b0(sub_1032e7b0()) + 0x242c) & 1) != 1)
+		{
+			CSlot443View *pObj;
+			if (this && (pObj = POBJA8) != 0)
+				pObj->vfunc443(sub_1032e7b0());
+			else
+				HEA4 = CBE(sub_1032e7b0());
+			if (*(int *)(sub_102517b0(sub_1032e7b0()) + 0x24d0) == 0)
+				HEA8 = CBE(sub_1032e7b0());
+		}
+	}
+	if (sub_1032e7b0())
+	{
+		sub_10335ea0(CBE(sub_1032e7b0()));
+		if (!((CBaseCombatWeapon *)sub_1032e7b0())->vfunc316((int)weapon))
+			return 0;
+	}
+	m_hActiveWeapon19a4 = CBE(weapon);
+	if (weapon)
+	{
+		((CBaseCombatWeapon *)weapon)->vfunc315();
+		sub_10335de0(CBE(sub_1032e7b0()));
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032ebc0 size=0x9d
 #include "CBaseCombatCharacter.h"
 #include "CBaseEntity.h"
