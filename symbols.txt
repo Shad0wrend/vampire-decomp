@@ -2285,6 +2285,7 @@
 0x100043fe func   ?sub_10043ba0@@YIXPAX@Z sub_10043ba0
 0x10004408 func   ?vfunc275@CPropDoorknobElectronic@@QAEXXZ CPropDoorknobElectronic::vfunc275
 0x1000440d func   ?vfunc241@CBaseDoor@@UAE_NXZ CBaseDoor::vfunc241
+0x10004412 func   ?sub_100d3270@@YAXXZ sub_100d3270
 0x10004417 func   ?vfunc2@CTEUserTracer@@UAEPAV1@I@Z CTEUserTracer::vfunc2
 0x1000441c func   ?vfunc82@CTriggerTeleport@@UAEPAUdatamap_t@@XZ CTriggerTeleport::vfunc82
 0x10004421 func   ?sub_100ba090@CUnknown100ba090@@QAEHH@Z CUnknown100ba090::sub_100ba090

@@ -45855,6 +45855,74 @@ void sub_100d3160()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d3270 size=0x19c
+#include "CBaseLandmark.h"
+#include "CChangeLevel.h"
+#include "CGlobalEntityList.h"
+#include "CEntityVSlots.h"
+#include "engineserver.h"
+
+extern "C" unsigned int __cdecl strlen(const char *);
+#pragma intrinsic(strlen)
+
+extern CGlobalEntityList g_106eb5d8;
+__declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+
+// the player entity: slots up to 219 and the saved position at +0x206c
+struct SLevelEnt
+{
+	EVS10(0) EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5) EVS(60) EVS(61) EVS(62) EVS(63)
+	virtual void slot64(const float *pAngles);
+	EVS(65) EVS(66) EVS(67) EVS(68) EVS(69)
+	EVS10(7) EVS10(8) EVS10(9) EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15) EVS10(16)
+	EVS10(17) EVS10(18) EVS10(19) EVS10(20)
+	EVS(210) EVS(211) EVS(212) EVS(213) EVS(214) EVS(215) EVS(216)
+	virtual Vector *slot217();
+	virtual void slot218(Vector *pAngles);
+	virtual Vector *slot219();
+	char m_pad0004[0x206c - 4];
+	Vector m_vecSaved206c;	// 0x206c
+	int m_pad2078;
+	int m_n207c;	// 0x207c
+};
+
+struct SLevelHolder
+{
+	char m_pad0000[0xa8];
+	SLevelEnt *m_pPlayerA8;	// 0xa8
+};
+SLevelHolder *sub_101193b0();
+void sub_101cf5c0(SLevelEnt *pPlayer, Vector *pOrigin, int nFlag);
+
+// TARGET: sub_100d3270
+void sub_100d3270()
+{
+	const char *pszLandmark = engine->vfunc84(1);
+	const char *pszChangeLevel = engine->vfunc84(2);
+	const char *pszMap = engine->vfunc84(3);
+	if (pszLandmark && pszChangeLevel && pszMap && strlen(pszLandmark) && strlen(pszChangeLevel) && strlen(pszMap)) {
+		SLevelHolder *pHolder = sub_101193b0();
+		SLevelEnt *pPlayer;
+		if (!pHolder)
+			pPlayer = 0;
+		else
+			pPlayer = pHolder->m_pPlayerA8;
+		CBaseLandmark *pLandmark = dynamic_cast<CBaseLandmark *>(g_106eb5d8.sub_100f7770(0, pszLandmark, 0, 0));
+		CChangeLevel *pChangeLevel = dynamic_cast<CChangeLevel *>(g_106eb5d8.sub_100f7770(0, pszChangeLevel, 0, 0));
+		if (pPlayer && pLandmark && pChangeLevel) {
+			Vector vecOrigin = *((SLevelEnt *)pLandmark)->slot219();
+			pPlayer->m_vecSaved206c = vecOrigin;
+			pPlayer->slot64(&vecOrigin.x);
+			pPlayer->slot218(&vecOrigin);
+			pPlayer->m_n207c = 1;
+			sub_101cf5c0(pPlayer, ((SLevelEnt *)pLandmark)->slot217(), 0);
+			Q_strncpy(pChangeLevel->m_szMapName, pszMap, 32);
+			pChangeLevel->sub_101c7890((CBaseEntity *)pPlayer);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d3510 size=0x35
 #include "CBaseEntity.h"
 #include "engineserver.h"
