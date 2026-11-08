@@ -8139,6 +8139,7 @@
 0x1000c879 func   ?vfunc175@CTriggerPlayerActivityLevel@@QAEXPAVCBaseEntity@@@Z CTriggerPlayerActivityLevel::vfunc175
 0x1000c883 func   ?sub_100d7a70@@YAXXZ sub_100d7a70
 0x1000c88d func   ?sub_1042d9c0@CBits1042d9c0@@QAEXH@Z CBits1042d9c0::sub_1042d9c0
+0x1000c892 func   ?vfunc604@CNPC_VTzimisceRunner@@QAEHH@Z CNPC_VTzimisceRunner::vfunc604
 0x1000c897 func   ?sub_10270290@CUnknown10270290@@QAEXH@Z CUnknown10270290::sub_10270290
 0x1000c89c func   ?sub_1026ff80@CUnitHelper@@QAE_NPAVCBaseEntity@@PBM1@Z CUnitHelper::sub_1026ff80
 0x1000c8a1 func   ?sub_103395f0@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_103395f0
