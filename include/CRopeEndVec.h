@@ -1,10 +1,12 @@
-// element of CHangRope's two end-point vectors (start, end): its empty constructor (0x1002c900) is what the
-// array constructor iterator calls
+// CRopeEndVec: a Vector element whose default constructor the game keeps out of line (0x1002c900, an empty
+// constructor handed to the vector constructor iterator when an array of them is built).
 #pragma once
 
 #include "Vector.h"
 
-struct CRopeEndVec : public Vector
+class CRopeEndVec : public Vector
 {
-	CRopeEndVec() {}
+public:
+	CRopeEndVec();	// 0x1002c900: returns this, stores nothing
+	void sub_1002c920(float x, float y, float z);	// 0x1002c920: stores x, y, z (the out-of-line Vector(x, y, z))
 };
