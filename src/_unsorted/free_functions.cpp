@@ -77662,6 +77662,56 @@ void S::sub_1015f100(inputdata_t *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015f150 size=0x173
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CWeaponThrown_Grenade_Frag.h"
+#include "ScopeTrace.h"
+#include "inputdata_t.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+
+struct CHudParticleVSlots
+{
+	EVS10(0) EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5) EVS10(6) EVS10(7) EVS10(8) EVS10(9)
+	EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15) EVS10(16) EVS10(17) EVS10(18) EVS10(19)
+	EVS10(20) EVS10(21) EVS10(22) EVS10(23)
+	EVS(240) EVS(241) EVS(242)
+	virtual void slot243(int a, int b, const char *c);
+};
+
+extern float g_1070d1b0[];
+CBaseEntity *sub_100fbc90(const char *pName, const void *pA, const void *pB, float f);
+
+void CBasePlayer::sub_1015f150(inputdata_t *pInput)
+{
+	ScopeTrace scope("CBasePlayer::InputPlayHUDParticle", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (sub_1015d680(0))
+	{
+		inputdata_t data;
+		data.value.eVal = -1;
+		data.value.iValue = 0;
+		data.value.fieldType = 1;
+		sub_1015f330(&data);
+		CBaseEntity *p = sub_100fbc90(pInput->value.String(), g_1070d1b0, g_1070d9d0, -1.0f);
+		if (p)
+			m_hHud1E3C.m_Index = *p->vfunc1();
+		else
+			m_hHud1E3C.m_Index = 0xffffffff;
+		if (m_hHud1E3C.Get())
+			((CHudParticleVSlots *)m_hHud1E3C.Get())->slot243((int)sub_1015d680(0), 0xe, g_106b8540);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015f510 size=0xd3
 #include "inputdata_t.h"
 #include "CBaseCombatCharacter.h"

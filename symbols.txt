@@ -10531,6 +10531,7 @@
 0x1000ff5b func   ?sub_101a58e0@CUtlVector40@@QAEXH@Z CUtlVector40::sub_101a58e0
 0x1000ff60 func   ?sub_1003b8a0@@YAXXZ sub_1003b8a0
 0x1000ff65 func   ?sub_10148560@@YAPAHXZ sub_10148560
+0x1000ff6a func   ?sub_1015f150@CBasePlayer@@QAEXPAUinputdata_t@@@Z CBasePlayer::sub_1015f150
 0x1000ff6f func   ?vfunc5@CBaseParticleEntity@@UAEPAVCConstraintAnchorBase@@I@Z CBaseParticleEntity::vfunc5
 0x1000ff74 func   ?vfunc81@CWeaponMelee_Torch@@QAEHXZ CWeaponMelee_Torch::vfunc81
 0x1000ff79 func   ?vfunc82@CBaseTerminal@@QAEPAUdatamap_t@@XZ CBaseTerminal::vfunc82
