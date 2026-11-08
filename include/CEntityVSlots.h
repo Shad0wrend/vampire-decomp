@@ -7,6 +7,7 @@
 #include "CVariantCopy.h"
 
 class CUnknown102e0150;
+struct CSlot483Arg { unsigned char b; };
 class CUnknown10359c50;
 
 #define EVS(n) virtual void slot##n();
@@ -214,7 +215,7 @@ public:
 	virtual int slot464();	// NPC: a kind / class id (2 and 11 are the ones that react to the witness clear-out)
 	EVS(465) EVS(466) EVS(467) EVS(468) EVS(469)
 	EVS10(47) EVS(480) EVS(481) EVS(482)
-	virtual char slot483(char a);	// NPC: a boolean answer in al, takes one flag (0x101aa130 passes bit 2 of its spawn flags)
+	virtual char slot483(struct CSlot483Arg a);	// NPC: a boolean answer in al, takes one flag (0x101aa130 passes bit 2 of its spawn flags)
 	EVS(484) EVS(485) EVS(486) EVS(487) EVS(488) EVS(489) EVS10(49)
 	EVS10(50) EVS(510) EVS(511) EVS(512)
 	virtual int slot513();	// NPC: "CapabilitiesGet", the capability bits
