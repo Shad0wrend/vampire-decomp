@@ -53428,6 +53428,83 @@ int sub_100ed5a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ed780 size=0x881
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_10564578[2];
+void sub_100f0170();
+void sub_100f00a0();
+void sub_100f0210();
+void sub_100f0120();
+void sub_100f02b0();
+void sub_100efae0();
+void sub_100f0f30();
+void sub_100f0860();
+void sub_100f11b0();
+void sub_100eef50();
+void sub_100f09d0();
+
+#define F(t, n, o, fl) { t, n, {o, 0}, 1, fl, 0, 0, 0 }
+#define K(t, n, o, fl, e) { t, n, {o, 0}, 1, fl, e, 0, 0 }
+#define O(n, o, e) { 10, n, {o, 0}, 1, 0x16, e, g_1055dc70 }
+#define I(n, e, f) { 0, n, {0, 0}, 1, 8, e, 0, (void *)f }
+#define T(n, f) { 0, n, {0, 0}, 1, 0x20, 0, 0, (void *)f }
+
+int *sub_100ed780()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        F(5, "m_bLocked", 0x55c, 2),
+        K(1, "m_flBlockDamage", 0x560, 6, "dmg"),
+        K(4, "m_UseIcon", 0x64c, 6, "use_icon"),
+        K(4, "m_LockedIcon", 0x650, 6, "locked_icon"),
+        O("m_OnBlockedOpening", 0x57c, "OnBlockedOpening"),
+        O("m_OnBlockedClosing", 0x564, "OnBlockedClosing"),
+        O("m_OnUnblockedOpening", 0x5ac, "OnUnblockedOpening"),
+        O("m_OnUnblockedClosing", 0x594, "OnUnblockedClosing"),
+        O("m_OnFullyClosed", 0x5c4, "OnFullyClosed"),
+        O("m_OnFullyOpen", 0x5dc, "OnFullyOpen"),
+        O("m_OnClose", 0x5f4, "OnClose"),
+        O("m_OnOpen", 0x60c, "OnOpen"),
+        F(12, "m_hLinkedDoor", 0x630, 2),
+        K(2, "m_sLinkedDoor", 0x634, 6, "linked_door"),
+        K(2, "m_sUseOverride", 0x63c, 6, "use_override"),
+        F(12, "m_hUseOverride", 0x638, 2),
+        F(15, "m_flNpcFailedTimer", 0x640, 2),
+        F(4, "m_bfNpcFailedFlags", 0x644, 2),
+        K(5, "m_bNoOpenWanted", 0x648, 6, "noopenwanted"),
+        I("InputOpen", "Open", sub_100f0170),
+        I("InputClose", "Close", sub_100f00a0),
+        I("InputToggle", "Toggle", sub_100f0210),
+        I("InputLock", "Lock", sub_100f0120),
+        I("InputUnlock", "Unlock", sub_100f02b0),
+        T("CBaseDoorDoorTouch", sub_100efae0),
+        T("CBaseDoorDoorGoDownThink", sub_100f0f30),
+        T("CBaseDoorDoorHitTop", sub_100f0860),
+        T("CBaseDoorDoorHitBottom", sub_100f11b0),
+        T("CBaseDoorDoorknobUse", sub_100eef50),
+        T("CBaseDoorCloseWhenUnblocked", sub_100f09d0),
+    };
+    g_10564578[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_10564578[0] = (int)&dataDesc[1];
+    return g_10564578;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ee240 size=0x43
 #include "CBaseDoor.h"
 void *sub_100aa720(int size);

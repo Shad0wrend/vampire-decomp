@@ -11090,6 +11090,7 @@
 0x10010b36 func   ?vfunc0@CEntitySaveRestoreBlockHandler@@UAEHXZ CEntitySaveRestoreBlockHandler::vfunc0
 0x10010b45 func   ?sub_10356550@@YAPAHXZ sub_10356550
 0x10010b4a func   ?vfunc245@CAI_StandoffGoal@@QAEXPAVCAI_BaseNPC@@@Z CAI_StandoffGoal::vfunc245
+0x10010b4f func   ?sub_100ed780@@YAPAHXZ sub_100ed780
 0x10010b54 func   ?sub_102c73b0@CCopyUnit102c73b0@@QAEXPAX@Z CCopyUnit102c73b0::sub_102c73b0
 0x10010b59 func   ?sub_103e1bb0@@YAHPAHH@Z sub_103e1bb0
 0x10010b5e func   ?vfunc0@CGameRules@@UAEPAV1@I@Z CGameRules::vfunc0
