@@ -29,6 +29,51 @@ void CInstancedSceneEntity::vfunc272(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10084c80 size=0x148
+#include "CInstancedSceneEntity.h"
+#include "CSceneEntity.h"
+#include "CEHandleGet.h"
+#include "CUnknown1007e5a0.h"
+#include "CUnknown1007ce20.h"
+
+void sub_101cd940(CSceneEntity *pEnt);
+
+inline void DoThink(CSceneEntity *pThis, float frametime)
+{
+	((CUnknown1007e5a0 *)pThis->m_pScene4bc)->sub_1007e5a0(pThis->sub_10080ac0());
+	((CSceneEntityScene *)pThis->m_pScene4bc)->sub_1007d7f0(pThis->m_f4a0);
+	frametime += pThis->m_f4a0;
+	pThis->m_f4a0 = frametime;
+	if (!((CSceneEntityScene *)pThis->m_pScene4bc)->sub_1007d1e0())
+		return;
+	((CUnknown1007ce20 *)pThis->m_pScene4bc)->sub_1007cfc0(1, 0, 0);
+	pThis->m_bPlaying498 = 0;
+	pThis->m_bPlaying499 = 0;
+	pThis->m_f4a0 = 0;
+	pThis->sub_10084170(pThis->m_pScene4bc);
+	sub_101cd940(pThis);
+}
+
+// TARGET: CInstancedSceneEntity::vfunc134
+void CInstancedSceneEntity::vfunc134()
+{
+	CSceneEntity *pThis = (CSceneEntity *)this;
+	if (pThis->m_pScene4bc && pThis->m_bPlaying498 && EHandle_Get(pThis->m_h580))
+	{
+		pThis->m_flNextThink = gpGlobals->curtime;
+		if (pThis->m_bPlaying499)
+		{
+			pThis->vfunc241();
+			return;
+		}
+		float e = gpGlobals->curtime - pThis->sub_100ac720(0);
+		DoThink(pThis, (0.1 < e) ? 0.1 : e);
+		return;
+	}
+	sub_101cd940(pThis);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10084e30 size=0x70
 #include "CInstancedSceneEntity.h"
 #include "CGlobalEntityList.h"
