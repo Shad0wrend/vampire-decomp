@@ -120,6 +120,55 @@ CCineNPC *CCineNPC::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6f10 size=0x1b3
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CCineNPC.h"
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+// TARGET: CCineNPC::vfunc103
+void CCineNPC::vfunc103()
+{
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", this ? (STRINGR_F(m_pszName26c)) : g_105387dc, g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(0);
+	}
+	{
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", this ? (STRINGR_F(m_pszName26c)) : g_105387dc, g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->AddSolidFlags(4);
+	}
+	((CBaseEntity *)this)->vfunc93(0, 0);
+	m_b1480 = 0;
+	m_b1481 = 0;
+	if (m_pszName26c == 0 || (0x10 & m_flags204)) {
+		void (CCineNPC::*pfnThink)() = &CCineNPC::sub_101a8070;
+		sub_100ac4e0(*(void **)&pfnThink, 0, 0);
+		m_flNextThink = 1.0 + gpGlobals->curtime;
+		if (m_pszName26c)
+			m_flTime5f74 = gpGlobals->curtime + 1000000.0;
+	}
+	if (m_flags204 & 0x20)
+		m_b5f90 = 0;
+	else
+		m_b5f90 = 1;
+	((CBaseEntity *)this)->sub_100b3b00();
+	m_b5f91 = 0;
+	*(EHANDLE *)&m_hNPC5f94 = (CBaseEntity *)0;
+	m_pSearchStart5f98 = 0;
+	((CBaseEntity *)this)->sub_100b3840(0x10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a7140 size=0x13
 #include "CAI_BaseNPC.h"
 #include "CCineNPC.h"

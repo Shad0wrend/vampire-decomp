@@ -8100,6 +8100,7 @@
 0x1000c702 func   _item_g_garys_film item_g_garys_film
 0x1000c707 func   ?vfunc5@CWeaponUnarmed@@QAEPAV1@I@Z CWeaponUnarmed::vfunc5
 0x1000c70c func   ?vfunc275@CBaseTerminal@@QAEXXZ CBaseTerminal::vfunc275
+0x1000c711 func   ?vfunc103@CCineNPC@@QAEXXZ CCineNPC::vfunc103
 0x1000c716 func   ?vfunc412@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc412
 0x1000c71b func   ?sub_10106b30@CBaseCombatCharacter@@QAEXPBDPADH@Z CBaseCombatCharacter::sub_10106b30
 0x1000c720 func   ?vfunc32@CRagdollProp@@UAE_NH@Z CRagdollProp::vfunc32
