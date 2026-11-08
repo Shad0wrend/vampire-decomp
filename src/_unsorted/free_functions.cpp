@@ -45006,6 +45006,34 @@ void __fastcall sub_100d1250(SListOwner_t *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d1290 size=0xf5
+#include "CUnknown100d1290.h"
+#include "CBaseEntity.h"
+#include "ehandle.h"
+
+void CUnknown100d1290::sub_100d1290(CBaseEntity *pEnt)
+{
+	CUnknown100d1290Node *p = m_pHead;
+	while (p) {
+		if (p->m_hEntity.Get() == pEnt)
+			return;
+		if (!p->m_pNext) {
+			CUnknown100d1290Node *pNew = new CUnknown100d1290Node;
+			p->m_pNext = pNew;
+			pNew->m_hEntity = pEnt;
+			p->m_pNext->m_pNext = 0;
+			m_nCount++;
+			return;
+		}
+		p = p->m_pNext;
+	}
+	m_pHead = new CUnknown100d1290Node;
+	m_pHead->m_hEntity = pEnt;
+	m_pHead->m_pNext = 0;
+	m_nCount = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d13d0 size=0xab
 #include "CBaseEntity.h"
 #include "CUnknown106b89bc.h"
