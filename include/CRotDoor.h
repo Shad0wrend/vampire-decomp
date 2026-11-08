@@ -17,6 +17,7 @@ Vector sub_101d2f40(float flYaw);	// 0x101d2f40: degrees -> (cos, sin, 0) direct
 class CRotDoor : public CBaseEntity
 {
 public:
+	void vfunc103();
 	bool vfunc223();	// "CBaseEntity::IsSolidFlagSet" (slot 223): scope trace, reports when bit 2 of the byte at +0x2b4 is clear, returns true
 	void sub_100a6150(int a, int b, int c);	// reports a message
 	void vfunc156(int bFirst);	// slot 156 (plain member): turns the door to the angles at +0x520 (nonzero) or +0x52c (zero) through slot 64, then sub_100b3b00
@@ -44,12 +45,15 @@ public:
 	CDoorEventList m_items4a4[2];	// +0x4a4, +0x4bc
 	char m_pad04d4[0x4f8 - 0x4d4];
 	int m_nState4f8;	// +0x4f8: door state (0 closed at rest, 1 open at rest)
-	char m_pad04fc[0x520 - 0x4fc];
+	float m_fl4fc;
+	char m_pad0500[0x520 - 0x500];
 	Vector m_angRotation520;	// +0x520: one end angle of the door
 	Vector m_angRotation52c;	// +0x52c: the other end angle
 	char m_pad0538[0x53c - 0x538];
 	EHANDLE m_hActivator53c;	// +0x53c: entity handle of the activator
-	char m_pad0540[0x564 - 0x540];
+	char m_pad0540[0x55c - 0x540];
+	char m_b55c;
+	char m_pad055d[0x564 - 0x55d];
 	CDoorEventList m_items564[8];	// +0x564 .. +0x624
 	char m_pad0624[0x630 - 0x624];
 	CHandle<CRotDoor> m_hLinked630;	// +0x630: the linked door
