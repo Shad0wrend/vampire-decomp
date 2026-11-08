@@ -62,7 +62,11 @@ public:
 	virtual int vfunc298(int nSection);	// slot 298: the number of weapon slots of inventory section nSection
 	virtual void c299();
 	CBCC_SLOTS10(c30)
-	virtual void c310(); virtual void c311(); virtual void c312(); virtual void c313(); virtual void c314();
+	virtual void c310(); virtual void c311(); virtual void vfunc312(int a); virtual void c313();
+	void sub_100521e0();
+	void sub_10106050(int a);
+	void sub_10325620(int a);
+	int sub_100ab4f0(); virtual void c314();
 	virtual void vfunc315();	// slot 315 (+0x4ec) "CBaseCombatCharacter::MeleeSwingUpdate"
 	virtual void c316(); virtual void c317(); virtual void c318(); virtual void c319();
 	virtual void c320(); virtual void c321(); virtual void c322();
