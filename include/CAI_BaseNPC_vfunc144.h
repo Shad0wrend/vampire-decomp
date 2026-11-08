@@ -34,11 +34,11 @@ public:
 	int m_n153c;
 	char m_pad1540[0x1a48 - 0x1540];
 	CAI_NPCDamageRecord m_LastDamage;	// 0x1a48 .. 0x1a92: copy of the damage record taken while a state-4 scripted NPC is hit
-	char m_pad1a93[0x1b3c - 0x1a93];
+	char m_pad1a94[0x1b3c - 0x1a94];
 	const char *m_pszFile1b3c;		// 0x1b3c: "E:\Vampire\main\dlls\AI_BaseNPC.cpp" stamp (lines 0x217, 0x241)
 	int m_nLine1b40;
 	char m_pad1b44[0x5b7c - 0x1b44];
-	int m_nAttacker5b7c;			// 0x5b7c: the EHANDLE value of the record's +0x2c entity, -1 without one
+	EHANDLE m_hAttacker5b7c;			// 0x5b7c: the EHANDLE value of the record's +0x2c entity, -1 without one
 	char m_b5b80;				// 0x5b80
 	char m_pad5b81[0x5c38 - 0x5b81];
 	void *m_pSchedule5c38;			// 0x5c38: compared with sub_102cc1f0(0x3a)
@@ -49,4 +49,6 @@ public:
 	EHANDLE m_hScript5d74;			// 0x5d74: the scripted sequence entity (EHandleEntityList::LookupEntity sub_100290c0)
 	char m_pad5d78[0x5da4 - 0x5d78];
 	void *m_pSquad5da4;			// 0x5da4: left with sub_103158f0(this)
+	void sub_1032b9b0(int a);
 };
+void sub_101babc0(int a, float *pOrigin, int b, float c, int d);
