@@ -149812,6 +149812,126 @@ call:
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026c540 size=0x1f2
+#include "CAI_BaseNPC.h"
+#include "CAI_Navigator.h"
+#include "CVProfile.h"
+
+__declspec(dllimport) void vtune(bool bEnable);
+extern unsigned char g_1092053c;
+
+struct CCycleView
+{
+	unsigned __int64 m_Int64;
+
+	CCycleView &operator+=(const CCycleView &rhs)
+	{
+		m_Int64 += rhs.m_Int64;
+		return *this;
+	}
+};
+
+struct CVNodeView
+{
+	const char *m_pszName;	// 0x00
+	char m_pad0004[4];
+	CCycleView m_CurFrameTime;	// 0x08
+	int m_nRecursions;	// 0x10
+	int m_nCurFrameCalls;	// 0x14
+	CCycleView m_TotalTime;	// 0x18
+	char m_pad0020[0x48 - 0x20];
+	CVNodeView *m_pParent;	// 0x48
+	char m_pad004c[0x54 - 0x4c];
+	int m_nBudgetGroupID;	// 0x54
+};
+
+struct CVProfView
+{
+	bool m_bVTuneGroupEnabled;	// 0x00
+	char m_pad0001[3];
+	int m_nVTuneGroupID;	// 0x04
+	int m_GroupIDStack[1024];	// 0x08
+	int m_nGroupIDStackPtr;	// 0x1008
+	int m_enabled;	// 0x100c
+	bool m_bAtRoot;	// 0x1010
+	char m_pad1011[3];
+	CVNodeView *m_pCurNode;	// 0x1014
+	CVNodeView *m_pRoot;	// 0x1018
+};
+
+struct CRunAnimView
+{
+	char m_pad0000[0x65d];
+	char m_bFlag65d;
+	char m_pad65e[0xfec - 0x65e];
+	int m_nActivity;	// 0xfec
+	char m_pad0ff0[4];
+	int m_nSeq;	// 0xff4
+	char m_pad0ff8[0x5cc0 - 0xff8];
+	int m_nState;	// 0x5cc0
+	char m_pad5cc4[0x5d34 - 0x5cc4];
+	CAI_Navigator *m_pNavigator;	// 0x5d34
+};
+
+// TARGET: CAI_BaseNPC::sub_1026c540
+float CAI_BaseNPC::sub_1026c540()
+{
+	CRunAnimView *pNpc = (CRunAnimView *)this;
+	CVProfView *pProf = (CVProfView *)g_109f3648;
+	if (pProf->m_enabled || !pProf->m_bAtRoot) {
+		if (pProf->m_pCurNode->m_pszName != "CAI_BaseNPC_RunAnimation")
+			pProf->m_pCurNode = (CVNodeView *)((CVProfNode *)pProf->m_pCurNode)->GetSubNode("CAI_BaseNPC_RunAnimation", 0, "Unaccounted");
+		((CVProfNode *)pProf->m_pCurNode)->EnterScope();
+		pProf->m_bAtRoot = false;
+	}
+	float flInterval = vfunc250(0);
+	if (g_1092053c & 2) {
+		if (!pNpc->m_pNavigator->sub_102ee6a0())
+			flInterval = 0;
+	}
+	if (vfunc513() & 0x20000000)
+		vfunc538();
+	if (pNpc->m_nState != 4 && pNpc->m_nState != 7 && pNpc->m_nActivity == 1 && vfunc251()) {
+		int nSeq;
+		if (pNpc->m_bFlag65d) {
+			int nAct = pNpc->m_nSeq;
+			nSeq = sub_1008dc40(nAct, -1);
+		} else {
+			int nAct = pNpc->m_nSeq;
+			nSeq = sub_1008dd30(nAct, -1);
+		}
+		if (-1 != nSeq)
+			sub_10260a50(nSeq);
+	}
+	CVProfView *pEnd = (CVProfView *)g_109f3648;
+	if (!pEnd->m_bAtRoot || pEnd->m_enabled) {
+		CVNodeView *pNode = pEnd->m_pCurNode;
+		if (--pNode->m_nRecursions == 0 && 0 != pNode->m_nCurFrameCalls) {
+			CCycleView cnt;
+			cnt.m_Int64 = 0;
+			unsigned long *pSamplev = (unsigned long *)&cnt;
+			__asm {
+				mov ecx, pSamplev
+				rdtsc
+				mov [ecx], eax
+				mov [ecx+4], edx
+			}
+			pNode->m_CurFrameTime.m_Int64 = cnt.m_Int64 - pNode->m_CurFrameTime.m_Int64;
+			pNode->m_TotalTime += pNode->m_CurFrameTime;
+			CVProfView *pCur = (CVProfView *)g_109f3648;
+			pCur->m_nGroupIDStackPtr -= 1;
+			int nPopped = (int)(1 + pCur->m_nGroupIDStackPtr)[pCur->m_GroupIDStack];
+			if (pCur->m_GroupIDStack[pCur->m_nGroupIDStackPtr] != nPopped && pCur->m_bVTuneGroupEnabled && nPopped == pCur->m_nVTuneGroupID)
+				vtune(false);
+		}
+		if (pNode->m_nRecursions == 0)
+			pEnd->m_pCurNode = pEnd->m_pCurNode->m_pParent;
+		pEnd->m_bAtRoot = (pEnd->m_pCurNode == pEnd->m_pRoot);
+	}
+	return flInterval;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026d0c0 size=0x43
 struct Helper { void sub_1000a8a8(void*); };
 // TARGET: sub_1026d0c0
