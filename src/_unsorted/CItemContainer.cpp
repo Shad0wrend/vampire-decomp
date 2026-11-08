@@ -343,6 +343,67 @@ unsigned char __fastcall sub_10209330(void *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10209350 size=0x300
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CItemContainer.h"
+#include "CItemContainer_vfunc103.h"
+#include "ScopeTrace.h"
+#include "CCollisionProperty.h"
+#include "CBaseToggle.h"
+void sub_1021fe50(CItemContainerUnit103 *, const char *, int);
+void sub_101cf600(CItemContainerUnit103 *);
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+void CItemContainer::vfunc103()
+{
+	CItemContainerUnit103 *p = (CItemContainerUnit103 *)this;
+	p->vfunc104();
+	int n;
+	const char *s = *p->vfunc9(&n);
+	p->vfunc105(s ? s : g_106b8540);
+	if (p->m_psz19f8) sub_1021fe50(p, STRINGR(p->m_psz19f8), 0);
+	if (p->m_psz19fc) sub_1021fe50(p, STRINGR(p->m_psz19fc), 0);
+	if (p->m_psz1a00) sub_1021fe50(p, STRINGR(p->m_psz1a00), 0);
+	if (p->m_psz1a04) sub_1021fe50(p, STRINGR(p->m_psz1a04), 0);
+	if (p->m_psz1a08) sub_1021fe50(p, STRINGR(p->m_psz1a08), 0);
+	if (p->m_psz1a0c) sub_1021fe50(p, STRINGR(p->m_psz1a0c), 0);
+	if (p->m_psz1a10) sub_1021fe50(p, STRINGR(p->m_psz1a10), 0);
+	if (p->m_psz1a14) sub_1021fe50(p, STRINGR(p->m_psz1a14), 0);
+	if (p->m_psz1a18) sub_1021fe50(p, STRINGR(p->m_psz1a18), 0);
+	if (p->m_psz1a1c) sub_1021fe50(p, STRINGR(p->m_psz1a1c), 0);
+	if (p->m_psz1a20) sub_1021fe50(p, STRINGR(p->m_psz1a20), 0);
+	if (p->m_psz1a24) sub_1021fe50(p, STRINGR(p->m_psz1a24), 0);
+	p->CBaseCombatCharacter::vfunc103();
+	{
+		ScopeTrace t("CBaseEntity::SetSolid", STRINGR(p->m_name26c));
+		((CCollisionProperty *)((char *)p + 0x270))->sub_100dc480(6);
+	}
+	{
+		ScopeTrace t("CBaseEntity::RemoveSolidFlags", STRINGR(p->m_name26c));
+		((CCollisionProperty *)((char *)p + 0x270))->RemoveSolidFlags(0x40);
+	}
+	(*(void (__fastcall **)(void *))(*(int *)p + 0x384))(p);
+	p->sub_100a5bb0();
+	((CBaseToggle *)p)->sub_101c1cb0();
+	sub_101cf600(p);
+	p->m_bChanged1b1 = 1;
+	int *ph = &p->m_iHealth;
+	if (*(volatile int *)ph > 0) {
+		*(int *)((char *)p + 0x1570) = -1;
+		p->m_field200 = 0;
+		p->m_nTakeDamage = 2;
+		p->sub_100b3580(0x20000000);
+	}
+	p->sub_100b3840(0x10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10209710 size=0x5d
 #include "CItemContainer.h"
 #include "engineserver.h"
