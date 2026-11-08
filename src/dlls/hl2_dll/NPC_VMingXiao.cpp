@@ -166,6 +166,114 @@ int CNPC_VMingXiao::sub_10396dc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10397410 size=0x408
+#include "CNPC_VMingXiao.h"
+#include "CNPC_VMingXiaoTentacle.h"
+#include "CUnknown10310c10.h"
+extern CUnknown10310c10 g_1093bb9c;
+__declspec(dllimport) void DevMsg(const char *, ...);
+float *sub_102d6100(int);
+float *sub_102d6120(int);
+
+// TARGET: CNPC_VMingXiao::sub_10397410
+void *CNPC_VMingXiao::sub_10397410(int nSlot)
+{
+	m_eLastLostTentacle = nSlot;
+	m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiao.cpp";
+	m_nLine1b34 = 0xcac;
+	sub_102ae750(0x16c, 0);
+	switch (m_nMode673c) {
+	case 1:
+	case 2:
+		sub_10398fd0();
+		break;
+	case 3:
+	case 4:
+		if (nSlot == m_nSide671c)
+			sub_103990a0();
+	}
+	const char *pszAtt = sub_10398680(nSlot);
+	sub_102c42a0("Ming_xiao_tentacle_burst_emitter", this, pszAtt, 0);
+	Vector vecSpawn;
+	sub_10398630(nSlot, &vecSpawn);
+	Vector vecOrg = *(Vector *)vfunc219_slot();
+	Vector vecA = *(Vector *)sub_102d6100(0x11);
+	Vector vecB = *(Vector *)sub_102d6120(0x11);
+	Vector pos = vecSpawn;
+	float flRadius = 20.0f;
+	int nTry = 0;
+	int nDir = 0;
+	while (!sub_102a0fb0(&pos, 0x2400b, &vecA, &vecB)) {
+		switch (nDir) {
+		case 0:
+			pos.x = vecSpawn.x + flRadius;
+			pos.y = vecSpawn.y + flRadius;
+			break;
+		case 1:
+			pos.x = vecSpawn.x + flRadius;
+			pos.y = vecSpawn.y;
+			break;
+		case 2:
+			pos.x = vecSpawn.x + flRadius;
+			pos.y = vecSpawn.y - flRadius;
+			break;
+		case 3:
+			pos.x = vecSpawn.x;
+			pos.y = vecSpawn.y - flRadius;
+			break;
+		case 4:
+			pos.x = vecSpawn.x - flRadius;
+			pos.y = vecSpawn.y - flRadius;
+			break;
+		case 5:
+			pos.x = vecSpawn.x - flRadius;
+			pos.y = vecSpawn.y;
+			break;
+		case 6:
+			pos.x = vecSpawn.x - flRadius;
+			pos.y = vecSpawn.y + flRadius;
+			break;
+		case 7:
+			pos.x = vecSpawn.x;
+			pos.y = vecSpawn.y + flRadius;
+			break;
+		}
+		nDir++;
+		if (nDir > 7) {
+			flRadius += 20.0f;
+			nDir = 0;
+		}
+		nTry++;
+		if (nTry >= 0x20)
+			DevMsg("ERROR:  FAILED TO FIND SPAWN LOC FOR TENTACLE.\n");
+	}
+	CNPC_VMingXiao *pEnt = (CNPC_VMingXiao *)g_1093bb9c.sub_10310cf0(pos);
+	if (pEnt) {
+		CNPC_VMingXiaoTentacle *pTent = (CNPC_VMingXiaoTentacle *)pEnt;
+		pEnt->vfunc218_slot(&vecOrg);
+		Vector dir = vecSpawn - *(Vector *)vfunc217_slot();
+		VectorNormalize(dir);
+		dir *= 100.0f;
+		dir.x += enginerandom->vfunc1(-10.0f, 10.0f);
+		dir.y += enginerandom->vfunc1(-10.0f, 10.0f);
+		dir.z += enginerandom->vfunc1(5.0f, 20.0f);
+		dir *= 0.1f;
+		pEnt->sub_100b2770(dir);
+		pEnt->vfunc614();
+		pTent->m_nSlotIndex6660 = nSlot;
+		sub_10397380(pTent);
+		int &rh = *(int *)&pTent->m_hMingXiao;
+		rh = *(int *)vfunc1();
+		m_hSlotOld[nSlot] = *(int *)pEnt->vfunc1();
+		m_n6710 |= 1 << nSlot;
+		m_n670c--;
+		sub_10398800();
+		m_f6748 = sub_103986b0();
+	}
+	return pEnt;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039a6e0 size=0xd
 #include "CUnknown1039a6e0.h"
 void CUnknown1039a6e0::sub_1039a6e0(int value)
