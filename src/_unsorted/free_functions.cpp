@@ -188654,6 +188654,69 @@ int CBaseCombatCharacter::sub_1033d9d0(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033db30 size=0x212
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include <string.h>
+#include "ScopeTrace.h"
+#include "CEntitySoundOriginView.h"
+#include "CPASAttenuationFilter.h"
+#include "engineiface.h"
+#include "engineserver.h"
+
+struct CSpecialDmgRec
+{
+	char m_name[0x20];
+	int m_iActive;
+	char m_sound[0x20];
+};
+struct CSpecialDmgInfo
+{
+	char m_pad[0x5eb20];
+	CSpecialDmgRec m_rec;
+};
+struct CSpecialWeaponView
+{
+	CSpecialDmgInfo *sub_102517b0();
+};
+
+void CBaseCombatCharacter::sub_1033db30(CBaseEntity *pAttacker)
+{
+	ScopeTrace scope("CBaseCombatCharacter::ApplySpecialDamageModifier", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (pAttacker && sub_1033d9b0()) {
+		bool bPlayed = false;
+		for (int i = 0; i < 0xe0; i++) {
+			CSpecialWeaponView *pWeapon = (CSpecialWeaponView *)sub_1032e8b0(i);
+			if (pWeapon) {
+				CSpecialDmgRec *pRec = &pWeapon->sub_102517b0()->m_rec;
+				if (pRec->m_iActive) {
+					const char *p = pAttacker->m_classname11c ? pAttacker->m_classname11c : g_106b8540;
+					if (!_strcmpi(p, pRec->m_name)) {
+						CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+						if (pRec->m_sound[0] && pRec->m_sound[0] != ' ') {
+							enginesound->vfunc0(pRec->m_sound, 0);
+							int edict = m_pEdict2e0;
+							enginesound->vfunc3(&filter, engine->vfunc35(edict), 3, pRec->m_sound, 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+						}
+						bPlayed = true;
+					}
+				}
+			}
+		}
+		if (bPlayed)
+			sub_1033c6b0(0x400);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033df80 size=0xdb
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
