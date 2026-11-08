@@ -5809,6 +5809,7 @@
 0x100092e6 func   ?vfunc1@CSafeDiscSaveRestoreOps_4@@QAEXPAPAHPAUCSafeDiscReader@@@Z CSafeDiscSaveRestoreOps_4::vfunc1
 0x100092eb func   ?vfunc489@CNPC_Crow@@QAEHXZ CNPC_Crow::vfunc489
 0x100092f0 func   ?vfunc0@CAI_MemoryListSaveRestoreOps@@UAEXPAUSaveRestoreFieldInfo_t@@PAVCSave@@@Z CAI_MemoryListSaveRestoreOps::vfunc0
+0x100092f5 func   ?sub_101f7110@CVTraitEffect_t@@QAEPBDPBD@Z CVTraitEffect_t::sub_101f7110
 0x100092fa func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@HV?$CUtlMemory@H@@@@$03@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<int,CUtlMemory<int> >,4>::vfunc3
 0x10009304 func   ?vfunc372@CAI_BaseHumanoid@@QAE?AVVector@@XZ CAI_BaseHumanoid::vfunc372
 0x10009309 func   ?sub_101b0110@CSoundEmitterSystem@@QAEPAV1@E@Z CSoundEmitterSystem::sub_101b0110
