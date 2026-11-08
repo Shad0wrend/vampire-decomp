@@ -35,6 +35,10 @@ public:
 	int vfunc268(int a);	// slot 268: the value (+0x40) of the selected record (+0x9e0) when it is positive; DevMsg "%s has invalid difficulty for subdir: %d" and 0 for an index out of range; else CBaseVampireSkillEntity::vfunc268 (also for -2)
 	int sub_1020b1c0(int a);	// CBaseVampireSkillEntity::vfunc268 (stub 0x10010ac3), tail called
 	const char *sub_100ab4f0();	// the entity's name for messages (stub 0x1000b5cd)
+	void vfunc273(int a, char *pszCommand);
+	bool sub_1021aaa0(int a, const char *pszCommand);
+	void sub_10217f50(int a, const char *pszCommand);
+	void sub_10217b30();
 	void vfunc275();	// slot 275: sub_1021c890(the dword at +0x9e0), then stores the id of the global record named "access" in a global (-1 when there is none)
 	void vfunc278(int a);	// slot 278: sub_10218ff0(0, the selected count - 1), then sub_10217ac0 with the screen text 0xc and the argument a
 	char sub_1021c890(int a);	// switches to the screen a (-1: the main one, -2: the summary, else that record; false when a is beyond the count at +0x9ac), then plays the sound g_1074f754; called through the stub at 0x10003aa8
@@ -85,7 +89,9 @@ public:
 	int m_n0814;	// 0x814
 	char m_pad0818[4];
 	unsigned int m_flags081c;	// 0x81c
-	char m_pad0820[0x83c - 0x820];
+	char m_pad0820[0x82c - 0x820];
+	char m_b082c;
+	char m_pad082d[0x83c - 0x82d];
 	char m_b083c;	// 0x83c
 	char m_pad083d[0x900 - 0x83d];
 	string_t m_sHackFile;	// 0x0900
