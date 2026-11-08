@@ -81,7 +81,8 @@ public:
 	void vfunc390(CTakeDamageInfo *pInfo);	// slot 390 "OnTakeDamage"-like (declared as a plain member): the Troika base, but when sub_10398870() is clear the record is first copied and passed through sub_10395650 / sub_10395750 keyed by the attacker's weapon
 	char sub_10398870();	// stub 0x10012f26
 	void sub_102beda0(CTakeDamageInfo *pInfo);	// CAI_BaseNPCTroika::vfunc390, called directly (stub 0x10012611)
-	void sub_10395750(int a, CTakeDamageInfo *pInfo, void *pWeapon);	// stub 0x10008170
+	void sub_10395750(int index, CTakeDamageInfo *pInfo, void *pWeapon);	// stub 0x10008170
+	void sub_102c41d0(const char *pszEmitter, Vector *pPos, Vector *pOrigin, int a);	// CAI_BaseNPCTroika emitter start at a position (stub 0x10003981, ret 16)
 	float vfunc603(float *pCurrent, float *pTarget);	// slot 603: picks a random turn angle (global random stream 0x1070b244, slot 1 RandomFloat) from how far *pCurrent is from *pTarget (32.0f window): within it +-30; below it *pCurrent follows the target and a coin flip (slot 2) picks 170..179 or -170..-179; above it a coin flip picks 80..120 or -80..-120
 	void sub_10398890(const float *pOrigin, int nMode, Vector *pOutPoint, Vector *pOutAxis);	// the tip trace points: pOutPoint = the origin + the vector at +0x6290 scaled, plus (mode 4) or minus the vector at +0x629c scaled; pOutAxis = the vector at +0x6290
 	void sub_103979d0(CNPC_VMingXiaoTentacle *pTentacle);	// when the tentacle is the entity of its slot's handle (+0x66a8[index], index at its +0x6660): resets the slot (sub_10397930)
@@ -143,7 +144,9 @@ public:
 	int m_a6348[5];	// +0x6348: five dwords copied to the twin by sub_1039a750
 	char m_pad635c[0x63b4 - 0x635c];
 	float m_f63b4;	// +0x63b4: set to 4096.0f on the twin
-	char m_pad63b8[0x6420 - 0x63b8];
+	char m_pad63b8[0x63d8 - 0x63b8];
+	char m_b63d8;	// +0x63d8
+	char m_pad63d9[0x6420 - 0x63d9];
 	int m_a6420[5];	// +0x6420: five dwords copied to the twin by sub_1039a750
 	char m_pad6434[0x6444 - 0x6434];
 	CBaseEntity *m_pTarget6444;	// +0x6444: the target returned by slot 609
@@ -162,7 +165,6 @@ public:
 	float m_flTime66c0;	// +0x66c0
 	float m_flSlotTimeA[6];	// +0x66c4
 	float m_flSlotValue[6];	// +0x66dc
-	void sub_10395750(int index, struct CVDmg_t *pInfo, CBaseEntity *pAttacker);	// "CNPC_VMingXiao" tentacle damage: see the release note (index -1/-2 special, otherwise m_flSlotValue[index] -= damage, emitter "Ming_xiao_tentacle_damage_emitter", sub_10397410 when the value crosses 0)
 	float m_flSlotTimeB[6];	// +0x66f4
 	int m_n670c;	// +0x670c: the count the delay is scaled by (6 - count)
 	int m_n6710;	// +0x6710
