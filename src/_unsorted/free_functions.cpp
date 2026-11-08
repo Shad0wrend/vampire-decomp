@@ -143271,6 +143271,37 @@ int sub_102464f0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10246510 size=0x160
+#include "SendProp.h"
+
+SendProp sub_10246510(const char *pVarName, int offset, int sizeofVar, int nBits, int flags,
+	float fLowValue, float fHighValue, int varProxy)
+{
+	SendProp ret;
+
+	if (fHighValue == -121121.125f)
+		fHighValue = (float)(1 << nBits);
+
+	if (flags & 8)
+		fHighValue = fHighValue - (fHighValue - fLowValue) / (1 << nBits);
+	else if (flags & 0x10)
+		fLowValue = fLowValue + (fHighValue - fLowValue) / (1 << nBits);
+
+	ret.m_n08 = 1;
+	ret.m_pszVarName = pVarName;
+	ret.m_n4c = offset;
+	ret.m_n0c = nBits;
+	ret.m_n14 = fLowValue;
+	ret.m_n18 = fHighValue;
+	ret.m_nFlags = flags;
+	ret.m_n38 = (float)((1 << nBits) - 1) / (fHighValue - fLowValue);
+	ret.m_n40 = varProxy;
+	if (flags & 0x26)
+		ret.m_n0c = 0;
+	return ret;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10246870 size=0xfe
 #include "SendProp.h"
 
