@@ -163,6 +163,130 @@ int CNPC_VHuman::vfunc438()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10385e40 size=0x5a9
+#include "CNPC_VHuman.h"
+#include "CUnknown10924a1c.h"
+#include "Tier1.h"
+
+#define NPC_RET(line, val) do { m_nLine1b34 = (line); m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VHuman.cpp"; return (val); } while (0)
+
+inline float GetDifficultyTime()
+{
+	float f;
+	if (g_10924a1c->vfunc1())
+		f = 0.0f;
+	else
+		f = g_10924a1c->m_fl28;
+	return f;
+}
+
+// TARGET: CNPC_VHuman::vfunc604
+int CNPC_VHuman::vfunc604(int unused)
+{
+	CBaseEntity *pEnemy = (CBaseEntity *)vfunc167();
+	if (m_b6078)
+	{
+		if (vfunc602())
+		{
+			vfunc601((int)pEnemy);
+			if (vfunc308())
+				NPC_RET(0x5ff, 0xe9);
+			float f = GetDifficultyTime();
+			const float &dist = m_f6268;
+			if ((float)(f + f) <= dist)
+				NPC_RET(0x605, 0xe7);
+			NPC_RET(0x609, 0xe4);
+		}
+	}
+	else if (!vfunc599((int)pEnemy))
+	{
+		int r = sub_102b6fe0((int)pEnemy);
+		if (r)
+			return r;
+		float f = GetDifficultyTime();
+		if (f + 200.0f < m_f6268)
+			NPC_RET(0x61b, 0xe7);
+		if (enginerandom->vfunc2(0, 99) >= 25)
+		{
+			if (!(GetDifficultyTime() > m_f6268))
+				NPC_RET(0x627, 0xe5);
+		}
+		NPC_RET(0x623, 0xe4);
+	}
+	int r = sub_102b7370();
+	if (r == 0 && (r = sub_102b6fe0((int)pEnemy)) == 0)
+	{
+		if (sub_10269d30(0xc))
+			NPC_RET(0x63d, 0xd5);
+		if (sub_10269d30(0xd))
+			NPC_RET(0x641, 0xd6);
+		char c1 = sub_10014df8(0xf);
+		char c2 = sub_10014df8(0xe);
+		if (!c1 && !c2)
+		{
+			if (sub_10014df8(0x51))
+			{
+				if (vfunc308())
+					NPC_RET(0x659, 0xdc);
+				NPC_RET(0x65d, 0xdd);
+			}
+			bool bReady = false;
+			if (m_f626c > 64.0f)
+			{
+				if (m_fl6274 == -1.0f)
+					m_fl6274 = enginerandom->vfunc1(3.0f, 4.0f) + gpGlobals->curtime;
+				else if (gpGlobals->curtime >= m_fl6274)
+					bReady = true;
+			}
+			else
+				m_fl6274 = -1.0f;
+			if (vfunc308())
+			{
+				if (sub_10014df8(9) || sub_10014df8(0x1a) || sub_10014df8(0x59) || bReady)
+				{
+					vfunc601((int)pEnemy);
+					NPC_RET(0x67f, 0xe9);
+				}
+			}
+			if (sub_10014df8(0x59))
+			{
+				vfunc601((int)pEnemy);
+				NPC_RET(0x687, 0x17);
+			}
+			if (!sub_10014df8(9) && !sub_10014df8(0x60))
+				NPC_RET(0x6c1, 0xc7);
+			if (pEnemy)
+			{
+				if (sub_102a11d0(((CEntityVSlots *)pEnemy)->slot192()))
+				{
+					if (vfunc308())
+						NPC_RET(0x698, 0xe0);
+					NPC_RET(0x69c, 0xe1);
+				}
+			}
+			r = sub_102b7690(0, 1, 0, 1);
+			if (r)
+				return r;
+			if (!(GetDifficultyTime() <= m_f6268 || bReady))
+			{
+				if (vfunc308())
+					NPC_RET(0x6b7, 0xd1);
+				NPC_RET(0x6bb, 0xd2);
+			}
+			if (vfunc308())
+				NPC_RET(0x6ac, 0xca);
+			NPC_RET(0x6b0, 0xcb);
+		}
+		if (c1 && (!c2 || g_109f3868(0, 1) == 1))
+			NPC_RET(0x64b, 0xdb);
+		m_nLine1b34 = 0x64f;
+		r = 0xd3;
+		m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VHuman.cpp";
+	}
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10386560 size=0x322
 #include "CNPC_VHuman.h"
 #include "CStatusFlagList.h"
