@@ -80057,6 +80057,44 @@ void CBasePlayer::sub_1016fed0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10170090 size=0x219
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "CEHandleGet.h"
+#include "CSingleUserRecipientFilter.h"
+extern int g_10726088;
+extern "C" __declspec(dllimport) void Error(const char *, ...);
+void sub_101cd940(CBaseEntity *);
+
+void CBasePlayer::sub_10170090()
+{
+	if (m_n153C != -1 && EHandle_Get(m_h1538))
+		sub_10329560();
+	if (EHandle_Get(m_hDialogPartnerFE8)) {
+		Error("Can't change levels while in dialog!\n");
+		vfunc415();
+	}
+	if (EHandle_Get(m_hUseEnt1040))
+		sub_10167fd0();
+	if (sub_10175180())
+		sub_1033f6d0();
+	sub_101618e0(0, 0);
+	sub_10161f10();
+	EHANDLE *pEmitters = (EHANDLE *)((char *)this + 0xff8);
+	for (int i = 18; i; i--, pEmitters++)
+		sub_101cd940(pEmitters->Get());
+	sub_101cd940(((EHANDLE *)((char *)this + 0x1d64))->Get());
+	sub_1017cef0(0);
+	CSingleUserRecipientFilter filter(this);
+	filter.MakeReliable();
+	engine->vfunc65(&filter, g_10726088);
+	engine->vfunc67(0);
+	engine->vfunc72(0);
+	engine->vfunc71(0);
+	engine->vfunc66();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10170750 size=0x44
 #include "CBasePlayer.h"
 extern int sub_1023bd00();
