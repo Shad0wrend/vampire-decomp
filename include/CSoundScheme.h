@@ -78,6 +78,7 @@ public:
     virtual datamap_t * vfunc82();
     virtual int vfunc124();	// slot 124 "CSoundScheme::DrawDebugTextOverlays" (0x1022b690): CBaseEntity::vfunc124's next line, then when the debug overlay flag +0x224 bit 0 is set one line per state: "%s: Not Playing" / "INVALID SCHEME FILE: %s" when nothing plays, else Ambient loop / Music track / Combat track / Alert track lines (name at the list +0x460/+0x4f0/+0x4a8/+0x538, volume at +0x40 of the list) and "Invalid file: %s \n" for every 0x48-byte entry of the +0x594 vector
     virtual void vfunc129();
+    void sub_1022b300();
     void vfunc103();	// as in CPhysConstraint (transplant)
     void vfunc104();	// as in CPhysConstraint (transplant)
 };
