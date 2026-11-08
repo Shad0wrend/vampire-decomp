@@ -10,6 +10,7 @@ class CList_t
 {
 public:
 	bool sub_100ce3c0(int a, int b);	// CList_t lookup: true when the list has the entry (the second argument is the key)
+	bool sub_100ce450(void *pEntity, int *pKey);	// the entry whose key matches pKey, remembered at +0x54
 	bool sub_100ce570(int a, int b, int *pOut);	// finds the entry through sub_100ce3c0 and copies its five dwords (at +0x20 of the node at +0x54) to pOut
 	bool sub_100ce6c0(int a, int b, CList_tValue value);	// finds the entry through sub_100ce3c0 and stores the five dwords of value at +0x20 of the node at +0x54
 

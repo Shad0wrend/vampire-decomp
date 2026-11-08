@@ -128,6 +128,7 @@
 	void sub_10161f10();	// ends the placeholder: the entity of the handle at +0x1da4 gets its think function reset (sub_100ac4e0) and the next think in 0.01 s, then the handle is cleared
 	Vector vfunc389(const Vector &vecPos);	// slot 389 (plain member, hidden return, ret 8): the view offset (+0x184) plus vecPos
 	void sub_10146e20(int a, int b);	// stub 0x10012562 (function 0x10146e20): last step of slot 449, called with the dword at +0xff0
+	void sub_10147430(bool bOn);
 	void sub_10329560();
 	void sub_10181680(int a, int b);	// stub 0x1000d91d (function 0x10181680): m_b65c = 1, AddFlag(0x40000000) (sub_100b3580), then slot 449(0, b); called by 0x10206da0 (with 0, 1) and 0x10207c70
 	void sub_100b3580(unsigned int flags);	// "CBaseEntity::AddFlag" (stub 0x10003620), called directly	// CBaseCombatCharacter member (stub 0x1000acc2), called directly
