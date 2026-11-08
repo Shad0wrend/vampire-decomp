@@ -1664,6 +1664,59 @@ int CAI_BaseNPCTroika::vfunc127(CRestore *pRestore)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102998c0 size=0x15a
+#include "CAI_BaseNPC.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseEntity.h"
+#include "engineiface.h"
+#include "globalvars.h"
+#include "CAI_NodeGraph.h"
+struct SNPCTroikaRef_t;
+int __cdecl sub_102db5e0(void *p);
+void __stdcall sub_1029f5d0(SNPCTroikaRef_t *p);
+char __stdcall sub_1029f610(void *p);
+extern char g_106b8540[];
+
+class CAINodeView { public: char *sub_102f96e0(int n); };
+struct SNetOwner { char pad[0x2c]; CAI_NodeGraph *pNet; };
+struct SNameView { char pad[0x65e0]; const char *psz65e0; int n65e4; int sub_1029f340(const char *p); };
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+void CAI_BaseNPCTroika::vfunc130(int a)
+{
+	if (!sub_1029f610(&m_ref658c)) sub_1029f5d0((SNPCTroikaRef_t *)&m_ref658c);
+	if (!sub_1029f610(&m_ref6594)) sub_1029f5d0((SNPCTroikaRef_t *)&m_ref6594);
+	CAI_BaseNPC::vfunc130(a);
+	m_p62ec = (CBaseEntity *)sub_102db5e0(this);
+	if (m_n6310 != -1 && m_n6314 != -1) {
+		CAI_NodeGraph *pNet = ((SNetOwner *)m_p5d34)->pNet;
+		int idx = m_n6310;
+		CAI_Node *pNode;
+		if (idx >= 0 && idx < pNet->m_nNodes) {
+			pNode = pNet->m_ppNodes[idx];
+		} else {
+			g_106c994c++;
+			pNode = 0;
+		}
+		if (pNode)
+			m_p630c = ((CAINodeView *)pNode)->sub_102f96e0(m_n6314);
+	}
+	m_f6440 = enginerandom->vfunc1(2.0f, 2.5f) + gpGlobals->curtime;
+	m_p6444 = 0;
+	sub_102c44e0(STRINGR(m_psz6478));
+	sub_102c4680(STRINGR(m_psz6480));
+	SNameView *v = (SNameView *)this;
+	v->n65e4 = v->sub_1029f340(STRINGR(v->psz65e0));
+	m_b62e9 = 1;
+	sub_10299a80();
+	if (sub_100b5190()) {
+		sub_100ac4e0(0, 0, 0);
+		((CBaseEntity *)this)->m_flNextThink = 3.4028235e38f;
+	}
+	vfunc593();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10299d80 size=0x6
 int sub_10299d80(void)
 {
