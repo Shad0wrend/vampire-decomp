@@ -106,6 +106,7 @@
 0x10001262 func   ?vfunc103@CRotButton@@QAEXXZ CRotButton::vfunc103
 0x10001267 func   ?vfunc134@CPhysMotor@@UAEXXZ CPhysMotor::vfunc134
 0x1000126c func   ?sub_101b2b30@CSoundEmitterSystemBase@@QAEXPBDPAVUtlMem2@@@Z CSoundEmitterSystemBase::sub_101b2b30
+0x10001271 func   ?sub_1024d500@VMatrix@@QBEXAAV1@@Z VMatrix::sub_1024d500
 0x10001276 func   ?vfunc6@CGameRules@@UAEXHHH@Z CGameRules::vfunc6
 0x1000127b func   ?sub_100c8a00@@YIXPADHH@Z sub_100c8a00
 0x10001280 func   ?vfunc573@CAI_BaseNPC@@QAEDPBVVector@@PBMD@Z CAI_BaseNPC::vfunc573

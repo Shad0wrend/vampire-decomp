@@ -150991,6 +150991,35 @@ bool sub_1024d2f0(const float *src, float *dst)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024d500 size=0xbe
+#include "VMatrix.h"
+
+struct VMatrixInv : VMatrix
+{
+	Vector GetTranslation() const { return Vector(m[0][3], m[1][3], m[2][3]); }
+	void SetTranslation(const Vector &vTrans) { m[0][3] = vTrans.x; m[1][3] = vTrans.y; m[2][3] = vTrans.z; }
+	Vector VMul3x3(const Vector &vVec) const
+	{
+		return Vector(
+			m[0][0]*vVec.x + m[0][1]*vVec.y + m[0][2]*vVec.z,
+			m[1][0]*vVec.x + m[1][1]*vVec.y + m[1][2]*vVec.z,
+			m[2][0]*vVec.x + (m[2][1]*vVec.y + m[2][2]*vVec.z));
+	}
+};
+
+void VMatrix::sub_1024d500(VMatrix &ret) const
+{
+	ret.m[0][0] = m[0][0];  ret.m[0][1] = m[1][0]; ret.m[0][2] = m[2][0];
+	ret.m[1][0] = m[0][1];  ret.m[1][1] = m[1][1]; ret.m[1][2] = m[2][1];
+	ret.m[2][0] = m[0][2];  ret.m[2][1] = m[1][2]; ret.m[2][2] = m[2][2];
+
+	((VMatrixInv &)ret).SetTranslation(-((VMatrixInv &)ret).VMul3x3(((const VMatrixInv *)this)->GetTranslation()));
+
+	ret.m[3][0] = ret.m[3][1] = ret.m[3][2] = 0.0f;
+	ret.m[3][3] = 1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024d630 size=0x2b
 #include "VMatrix.h"
 struct CBlock64_t { char b[64]; CBlock64_t *sub_1024cef0(const CBlock64_t *); };
