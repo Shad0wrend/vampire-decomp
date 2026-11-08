@@ -174,7 +174,7 @@ public:
 	virtual int vfunc409(); CBP_V1(si0b) CBP_V1(si0c)
 	virtual bool vfunc412();
 	virtual bool vfunc413();	// slot 413: true in activity 0x32, else slot 412
-	virtual void vfunc414(CBaseEntity *pEnt); CBP_V1(si0g) CBP_V1(si0h) virtual void vfunc417(int a, int b);
+	virtual void vfunc414(CBaseEntity *pEnt); virtual void vfunc415(); CBP_V1(si0h) virtual void vfunc417(int a, int b);
 	virtual char vfunc418(int unused);	// slot 418: runs sub_101644f0(-1, 0, 0), then steps the activity at +0xff0 (0xf49 -> 0xf52 when the entity of the handle at +0xfe8 is gone; with the byte at +0x65c set 0xf40 -> 0xf49), true while it is 0xf52
 	virtual char vslot419(int a); virtual char vslot420(int a);
 	virtual char vfunc421(int unused);	// slot 421: false unless the byte at +0x65c is set; with a live character behind the handle at +0x1538 (and +0x153c set) builds a damage record sourced at this player and hands the character a one point damage info (stat 0xf set to the value of stat 0x11 of its active stat list), slot 144 and slot 403; true
@@ -666,5 +666,7 @@ void sub_1016c9d0();
 	void sub_100b3b00();
 	void sub_10170b00();
 	void sub_1017e6f0(int a);
+	void sub_10170090();
+	void sub_1033f6d0();
 #include "CBasePlayer_ext.h"
 };
