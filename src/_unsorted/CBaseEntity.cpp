@@ -1229,6 +1229,54 @@ int CBaseEntity::vfunc237()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003e880 size=0x231
+#include "ScopeTrace.h"
+#include "CUnknown101d7520.h"
+#include "CCollisionProperty.h"
+#include "CUnknown1070b254.h"
+extern char g_106b8540[];
+
+void sub_10139500(const float *start, float scale, const float *direction, float *dest);
+struct CBaseEntityWater { char pad[0x3e0]; int m_nWaterLevel; int m_nWaterType; };
+inline int UTIL_PointContents(const Vector &v) { return g_1070b254->vfunc0((const float *)&v, 0); }
+
+bool CBaseEntity::PhysicsCheckWater()
+{
+	ScopeTrace scope("CBaseEntity::PhysicsCheckWater", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CBaseEntityWater *pWater = (CBaseEntityWater *)this;
+	Vector vecMins, vecMaxs;
+	((CCollisionProperty *)((char *)this + 0x270))->vfunc15(&vecMins, &vecMaxs);
+	Vector point;
+	point[0] = (vecMaxs.x + vecMins.x) * 0.5;
+	point[1] = (vecMaxs.y + vecMins.y) * 0.5;
+	point[2] = vecMins.z + 1.0f;
+	pWater->m_nWaterLevel = 0; pWater->m_nWaterType = 0;
+	int cont = UTIL_PointContents(point);
+	if (cont & 0x4030) {
+		pWater->m_nWaterType = cont; pWater->m_nWaterLevel = 1;
+		if (vecMins.z == vecMaxs.z) pWater->m_nWaterLevel = 3;
+		else {
+			point[2] = (vecMins.z + vecMaxs.z) * 0.5;
+			if (UTIL_PointContents(point) & 0x4030) {
+				pWater->m_nWaterLevel = 2;
+				point[2] += m_vecViewOffset[2];
+				if (UTIL_PointContents(point) & 0x4030) pWater->m_nWaterLevel = 3;
+			}
+		}
+		if (cont & 0x7c0000) {
+			Vector vecCurrent(0.0f, 0.0f, 0.0f);
+			if (cont & 0x40000) vecCurrent.x = 1.0f;
+			if (cont & 0x80000) vecCurrent.y = 1.0f;
+			if (cont & 0x100000) vecCurrent.x -= 1.0f;
+			if (cont & 0x200000) vecCurrent.y -= 1.0f;
+			if (cont & 0x400000) vecCurrent.z = 1.0f;
+			sub_10139500((const float *)&m_vecBaseVelocity, pWater->m_nWaterLevel * 50.0, (const float *)&vecCurrent, (float *)&m_vecBaseVelocity);
+		}
+	}
+	return pWater->m_nWaterLevel > 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009a660 size=0x6
 #include "CBaseEntity.h"
 namespace lifted {
