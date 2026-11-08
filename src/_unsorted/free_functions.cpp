@@ -73561,6 +73561,65 @@ void sub_10142af0(int a, int b, int c, int d, int e, int f, int g, int h, int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10142b80 size=0x206
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CSingleUserRecipientFilter.h"
+#include "ScopeTrace.h"
+
+struct CEdictUnknown10142b80 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual CBaseEntity *vfunc4(); };
+struct CEdict10142b80 { char m_pad[0x40]; CEdictUnknown10142b80 *m_pUnk40; };
+
+#define V10_(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct CEntView10142b80
+{
+	V10_(a0) V10_(a1) V10_(a2) V10_(a3) V10_(a4) V10_(a5) V10_(a6) V10_(a7) V10_(a8) V10_(a9)
+	V10_(b0) V10_(b1) V10_(b2) V10_(b3) V10_(b4) V10_(b5) V10_(b6) V10_(b7) V10_(b8) V10_(b9)
+	V10_(c0) V10_(c1)
+	virtual Vector *vfunc220();
+};
+
+// TARGET: sub_10142b80
+void sub_10142b80(const Vector *pvA, const Vector *pvB, const Vector *pvC, int i4, int i5, int i6, int i7, int i8, float f9)
+{
+	CEdict10142b80 *pEdict = (CEdict10142b80 *)engine->vfunc38(1);
+	CBaseEntity *pEnt;
+	{
+		ScopeTrace trace("CBaseEntity::Instance", g_106b8540, g_106b8540);
+		if (!pEdict)
+			pEdict = (CEdict10142b80 *)engine->vfunc38(0);
+		if (pEdict && pEdict->m_pUnk40)
+			pEnt = pEdict->m_pUnk40->vfunc4();
+		else
+			pEnt = 0;
+	}
+	if (!pEnt)
+		return;
+	if ((*((CEntView10142b80 *)pEnt)->vfunc220() - *pvA).LengthSqr() > 9e7f)
+		return;
+	CSingleUserRecipientFilter filter(pEnt);
+	engine->vfunc65(&filter, 0x2f);
+	engine->vfunc75((int)pvA);
+	engine->vfunc75((int)pvB);
+	engine->vfunc75((int)pvC);
+	engine->vfunc77(i4);
+	engine->vfunc69(i5);
+	engine->vfunc69(i6);
+	engine->vfunc69(i7);
+	engine->vfunc69(i8);
+	engine->vfunc72(f9);
+	engine->vfunc66();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10142e20 size=0x50
 #include "CBaseEntity.h"
 struct CColView10142e20	// the collision property at +0x270 as its slot users see it
