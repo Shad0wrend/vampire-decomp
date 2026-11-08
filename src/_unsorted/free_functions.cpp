@@ -75619,6 +75619,84 @@ char CBaseCombatCharacter::sub_10146d50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10147430 size=0x1e0
+#include "CBasePlayer.h"
+#include "CEventQueue.h"
+#include "CList_t.h"
+#include "CUnk10230f00.h"
+#include "CUnknown100ce630.h"
+#include "CUnknown101e4150.h"
+#include "CVStatList_t.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+extern CUnknown101e4150 g_10739a4c;
+extern CEventQueue g_106e7050;
+
+struct CMsgPlayerView;
+void sub_101cebc0(CMsgPlayerView *pPlayer, int a, int b);
+
+class CUnk100ce600
+{
+public:
+	bool sub_100ce600(int *pOut);
+};
+
+// TARGET: CBasePlayer::sub_10147430
+void CBasePlayer::sub_10147430(bool bOn)
+{
+	if (bOn == true)
+		g_10739a4c.sub_101e4150((CUnknown101e4150Char *)this);
+
+	if (CVStatListSet::Of(this)->Find(3)->sub_102012d0(8) > 0)
+	{
+		if (engine->vfunc119(0) - m_flActiveObfuscateUpdateTimer > 0.05)
+		{
+			if (!bOn && m_flActiveObfuscateUpdateTimer != 0.0)
+			{
+				float flDelta = engine->vfunc119(0) - m_flActiveObfuscateUpdateTimer;
+				m_flClientBeginVActiveDisciplineTimers[8] += flDelta;
+
+				CUnk10230f00 block;
+				block.sub_10230f00(3, 8);
+
+				if (((CList_t *)&g_106e7050)->sub_100ce450(this, (int *)&block))
+				{
+					float flFireTime;
+					if (((CUnk100ce600 *)&g_106e7050)->sub_100ce600((int *)&flFireTime))
+					{
+						flFireTime += flDelta - gpGlobals->curtime;
+						((CUnknown100ce630 *)&g_106e7050)->sub_100ce630(flFireTime);
+					}
+				}
+			}
+			m_flActiveObfuscateUpdateTimer = engine->vfunc119(0);
+		}
+
+		if (m_bObfWasMoving != bOn)
+		{
+			if (!bOn)
+				sub_101cebc0((CMsgPlayerView *)this, 0x3f, 0);
+			else
+				sub_101cebc0((CMsgPlayerView *)this, 0x40, 0);
+		}
+	}
+	else
+	{
+		m_flActiveObfuscateUpdateTimer = 0.0f;
+	}
+
+	if (m_bObfWasMoving != bOn)
+	{
+		if (!bOn)
+			*(float *)((char *)this + 0xfcc) = 0.0f;
+		else
+			*(float *)((char *)this + 0xfcc) = engine->vfunc119(0);
+	}
+	m_bObfWasMoving = bOn;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10147690 size=0x56
 #include "CBaseCombatCharacter.h"
 #include "CDevFlagObj.h"

@@ -3817,6 +3817,7 @@
 0x1000669f func   ?vfunc312@CBaseCombatCharacter@@UAEXH@Z CBaseCombatCharacter::vfunc312
 0x100066a4 func   ?vfunc103@CEnvBeam@@UAEXXZ CEnvBeam::vfunc103
 0x100066a9 func   ?vfunc117@CPlatTrigger@@UAEHXZ CPlatTrigger::vfunc117
+0x100066ae func   ?sub_10147430@CBasePlayer@@QAEX_N@Z CBasePlayer::sub_10147430
 0x100066b3 func   ?sub_104037b0@@YAHXZ sub_104037b0
 0x100066b8 func   ?vfunc552@CAI_BaseNPC@@UAEIXZ CAI_BaseNPC::vfunc552
 0x100066bd func   ?sub_1018b760@@YAHXZ sub_1018b760
