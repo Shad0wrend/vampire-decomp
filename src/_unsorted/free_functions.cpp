@@ -175435,6 +175435,106 @@ bool CUnknown102f3900::sub_102f39a0(CUnknown102f3900Ent *pEnt, Vector vecA, Vect
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f41b0 size=0x25a
+// TARGET: CAI_Network::sub_102f41b0
+#include "Vector.h"
+#include "UtlVec8.h"
+#include "CAI_Network.h"
+#include "CNodeNPCFilter.h"
+#include "CUnknown102f45f0.h"
+#include "CUnknown102f3900.h"
+#include "utlmemory.h"
+extern "C" void *_alloca(unsigned int);
+bool __cdecl sub_102f3770(const UtlVec8Elem &, const UtlVec8Elem &);
+
+struct NodeQueue41b0
+{
+	UtlVec8 v;
+	bool (__cdecl *less)(const UtlVec8Elem &, const UtlVec8Elem &);
+};
+
+__forceinline Vector AddScalar41b0(const Vector &p, float f)
+{
+	Vector res;
+	res.x = p.x + f;
+	res.y = p.y + f;
+	res.z = p.z + f;
+	return res;
+}
+
+__forceinline Vector SubScalar41b0(const Vector &p, float f)
+{
+	Vector res;
+	res.x = p.x - f;
+	res.y = p.y - f;
+	res.z = p.z - f;
+	return res;
+}
+
+int CAI_Network::sub_102f41b0(const Vector *pos)
+{
+	if (m_nNodes == 0)
+		return -1;
+	int cached = ((CUnknown102f45f0 *)this)->sub_102f4520((const CachedPos_t *)pos);
+	if (cached != -2)
+		return cached;
+
+	NodeQueue41b0 q;
+	q.v.sub_102f8fc0(_alloca(0x50), 10);
+	q.less = sub_102f3770;
+	CNodePosFilter filter(pos);
+	Vector maxs = AddScalar41b0(*pos, 2048.0f);
+	Vector mins = SubScalar41b0(*pos, 2048.0f);
+	sub_102f32f0(&q.v, 10, &mins.x, &maxs.x, &filter);
+
+	while (q.v.m_Size != 0)
+	{
+		int node = ((UtlVec8Elem *)q.v.m_pMemory)[0].b;
+		char flag;
+		if (((CUnknown102f3900 *)this)->sub_102f39a0(0, *pos, *(Vector *)((char *)m_ppNodes[node] + 8), (int)&flag))
+		{
+			((CUnknown102f45f0 *)this)->sub_102f45f0((const CachedPos_t *)pos, node, 0x17);
+			q.v.sub_102f8ef0();
+			q.v.sub_102f91b0();
+			q.v.m_pElements = (UtlVec8Elem *)q.v.m_pMemory;
+			if (q.v.m_growSize != -1 && q.v.m_pMemory)
+				Plat_Free(q.v.m_pMemory);
+			return node;
+		}
+		q.v.sub_102f9000(0);
+		int i = 0;
+		int nCount = q.v.m_Size;
+		if (nCount == 0)
+			break;
+		int nHalf = nCount / 2;
+		int largest = 0;
+		if (nHalf > 0)
+		{
+			do
+			{
+				int cl = i * 2 + 1;
+				if (cl < nCount && q.less(((UtlVec8Elem *)q.v.m_pMemory)[i], ((UtlVec8Elem *)q.v.m_pMemory)[cl]))
+					largest = cl;
+				cl++;
+				if (cl < nCount && q.less(((UtlVec8Elem *)q.v.m_pMemory)[largest], ((UtlVec8Elem *)q.v.m_pMemory)[cl]))
+					largest = cl;
+				if (largest == i)
+					break;
+				q.v.sub_102f9090(i, largest);
+				i = largest;
+			} while (i < nHalf);
+		}
+	}
+	((CUnknown102f45f0 *)this)->sub_102f45f0((const CachedPos_t *)pos, -1, 0x17);
+	q.v.m_Size = 0;
+	q.v.sub_102f91b0();
+	q.v.m_pElements = (UtlVec8Elem *)q.v.m_pMemory;
+	if (q.v.m_growSize != -1 && q.v.m_pMemory)
+		Plat_Free(q.v.m_pMemory);
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f4520 size=0x91
 #include "CLogicAuto.h"
 #include "CUnknown102f45f0.h"
