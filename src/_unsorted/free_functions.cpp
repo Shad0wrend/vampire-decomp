@@ -154184,6 +154184,37 @@ void CAI_BaseNPC::sub_10272f40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10273070 size=0xcf
+#include "CAI_BaseNPC.h"
+#include "Tier1.h"
+int sub_102d6210(int hull);
+int sub_102f9950();
+int sub_102d6230(int hull);
+int sub_102d6120(int hull);
+int sub_102d6100(int hull);
+void sub_101cf390(CAI_BaseNPC *p, int v, int w);
+struct CNPC10273070View : CAI_BaseNPC { const char *sub_100ab4f0(); };
+#define HULL (*(int *)((char *)this + 0x1568))
+void CAI_BaseNPC::sub_10273070(char bForce)
+{
+	if ((sub_102d6210(HULL) & sub_102f9950()) != sub_102d6210(HULL)) {
+		void (*pf)(const char *, ...) = g_109f3630;
+		pf("\n****ERROR***\n");
+		pf("%s is using hull %s which has not been precached.\n", ((CNPC10273070View *)this)->sub_100ab4f0(), (const char *)sub_102d6230(HULL));
+		pf("Be sure that this class's GetUsedHullBits function includes that hull type.\n");
+		pf("If it already is, this entity is probably spawned after the node graph is created.\n");
+		pf("Have the class responsible for spawning it include it.\n");
+		pf("****ERROR***\n\n");
+	}
+	if (*((char *)this + 0x5f2d) || bForce) {
+		sub_101cf390(this, sub_102d6100(HULL), sub_102d6120(HULL));
+		*((char *)this + 0x5f2d) = 0;
+		if (*(int *)((char *)this + 0x36c))
+			sub_10272f40();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10273180 size=0x5c
 #include "CAI_BaseNPC.h"
 
