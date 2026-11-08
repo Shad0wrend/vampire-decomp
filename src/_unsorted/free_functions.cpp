@@ -175954,6 +175954,206 @@ bool __stdcall sub_102f5b30(void *pOut, const char *pszValue, const char *pszFil
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f5bd0 size=0x7d3
+#include "CAI_NetworkManager.h"
+#include "utlvector.h"
+#include "CUtlBuffer.h"
+#include "FileSystemViews.h"
+#include "globalvars.h"
+#include "engineserver.h"
+#include <string.h>
+
+extern "C" __declspec(dllimport) void Q_strncpy(char *, const char *, int);
+extern void (__cdecl *g_109f3658)(int, const char *, ...);
+void sub_1006c470(CUtlBuffer *, const char *, ...);
+void sub_102f9920(int);
+void sub_102f99b0();
+void sub_100bf420(unsigned int *, int, CUtlBuffer *);
+extern int g_106c994c;
+extern char g_1093408c;
+extern unsigned int g_1055b298[];
+
+struct NodeBits {
+	unsigned short m_nBits; unsigned short m_nWords; unsigned int *m_pWords2; unsigned int *m_pWords;
+	void sub_100bf5b0(int);
+	NodeBits(int n)
+	{
+		m_nBits = n;
+		m_pWords = 0;
+		m_nWords = (n + 31) / 32;
+		sub_100bf5b0(m_nWords);
+		if (m_pWords)
+			memset(m_pWords, 0, m_nWords * 4);
+	}
+};
+struct NodeV {
+	char pad0[0x14];
+	float vOff[22];
+	int padx;
+	int type;
+	int info;
+	char pad2[0x90 - 0x78];
+	NodeBits *bits;
+	int zone;
+	void sub_102f95d0(void *link);
+};
+struct LinkV { char pad[4]; int src; int dst; int moves[22]; int pad2; LinkV *sub_102dda70(); };
+struct GraphV {
+	int count;
+	NodeV **nodes;
+	NodeV *sub_102f47f0(float *origin, int yaw);
+	void sub_102f31f0();
+};
+struct EditV { char pad[0xc]; int *table; };
+struct ZoneVec {
+	int *mem; int alloc; int grow; int size; int *ptr;
+	void sub_102f9330(int);
+	void sub_102f92b0(int, int);
+};
+struct NMView {
+	char pad0[0x454];
+	EditV *edit;
+	GraphV graph;
+	char pad1[0x644 - 0x458 - sizeof(GraphV)];
+	ZoneVec zones;
+	bool sub_102f5b30(CUtlBuffer *, char *, char *, const char *);
+};
+
+static inline NodeV *GetNode(GraphV *g, int id)
+{
+	if (id >= 0 && id < g->count)
+		return g->nodes[id];
+	g_106c994c++;
+	return 0;
+}
+
+void CAI_NetworkManager::sub_102f5bd0()
+{
+	NMView *v = (NMView *)this;
+	if (engine->vfunc12() != 0)
+		return;
+	char path[0x104];
+	Q_strncpy(path, "maps", 0x104);
+	g_1070b238->vfunc15(path, "GAME");
+	strcat(path, "/graphs");
+	g_1070b238->vfunc15(path, "GAME");
+	strcat(path, "/");
+	strcat(path, gpGlobals->mapname ? gpGlobals->mapname : "");
+	strcat(path, ".ain");
+	int fh = g_1070b238->vfunc0(path, "r", 0);
+	if (!fh) {
+		g_109f3658(2, "Couldn't create %s!\n", path);
+		return;
+	}
+	bool allocated = false;
+	int size = g_1070b238->vfunc6(fh);
+	CUtlBuffer buf(0, size, 1);
+	g_1070b238->vfunc2(buf.m_pBuffer, size, fh);
+	g_1070b238->vfunc1(fh);
+	char temps[255];
+	int node, numNodes;
+	int usedBits, version;
+	int z;
+	int numHulls, zoneCount, total;
+	int i, l, h;
+	if (!v->sub_102f5b30(&buf, temps, path, "Version")) goto done;
+	sub_1006c470(&buf, "%i\n", &version);
+	if (version != 30) {
+		g_109f3658(2, "Version mismatch in %s!  Map version (%d) != code version (%d)\n", path, version, 30);
+		goto done;
+	}
+	if (!v->sub_102f5b30(&buf, temps, path, "NumHulls:")) goto done;
+	sub_1006c470(&buf, "%d\n", &numHulls);
+	if (numHulls != 22) {
+		g_109f3658(2, "Hull count mismatch in %s!  Map count (%d) != code count (%d)\n", path, numHulls, 22);
+		goto done;
+	}
+	if (!v->sub_102f5b30(&buf, temps, path, "UsedHullBits:")) goto done;
+	sub_1006c470(&buf, "%d\n", &usedBits);
+	sub_102f9920(usedBits);
+	if (!v->sub_102f5b30(&buf, temps, path, "ZoneCount:")) goto done;
+	sub_1006c470(&buf, "%d\n", &zoneCount);
+	for (i = 0; i < zoneCount; i++) {
+		ZoneVec *zv = &v->zones;
+		sub_1006c470(&buf, "%d ", &z);
+		int sz = zv->size;
+		if (sz + 1 > zv->alloc)
+			zv->sub_102f9330(sz - zv->alloc + 1);
+		zv->size++;
+		zv->ptr = zv->mem;
+		zv->sub_102f92b0(sz, 1);
+		int *p = &zv->mem[sz];
+		if (p)
+			*p = z;
+	}
+	sub_1006c470(&buf, "\n");
+	if (!v->sub_102f5b30(&buf, temps, path, "NumNodes:")) goto fail;
+	sub_1006c470(&buf, "%d\n", &numNodes);
+	if (engine->vfunc12() && numNodes <= 0x400)
+		numNodes = 0x400;
+	v->graph.nodes = (NodeV **)operator new(numNodes * 4);
+	allocated = true;
+	for (node = 0; node < numNodes; node++) {
+		if ((node & 0x1f) == 0) {
+			if (!v->sub_102f5b30(&buf, temps, path, "Nodes:")) goto fail;
+		}
+		float origin[3];
+		float yaw;
+		sub_1006c470(&buf, "%f,%f,%f", &origin[0], &origin[1], &origin[2]);
+		sub_1006c470(&buf, "%f", &yaw);
+		NodeV *n = v->graph.sub_102f47f0(origin, *(int *)&yaw);
+		for (h = 0; h < 22; h++)
+			sub_1006c470(&buf, "%f", &n->vOff[h]);
+		sub_1006c470(&buf, "%d", &n->type);
+		sub_1006c470(&buf, "%d", &n->info);
+		NodeBits *bits = new NodeBits(numNodes);
+		n->bits = bits;
+		bits->m_pWords[bits->m_nWords - 1] &= ~g_1055b298[(int)bits->m_nBits % 32];
+		sub_100bf420(bits->m_pWords, bits->m_nWords, &buf);
+		int *pz = &n->zone;
+		sub_1006c470(&buf, "%d", pz);
+		if (!*pz) {
+			g_109f3658(2, "Invalid node zone in %s!  Ignoring saved node graph...\n", path);
+			goto fail;
+		}
+		int numLinks;
+		sub_1006c470(&buf, "%d", &numLinks);
+		if (engine->vfunc12())
+			numLinks = 0x1e;
+	}
+	if (!v->sub_102f5b30(&buf, temps, path, "TotalNumLinks")) goto fail;
+	sub_1006c470(&buf, "%d", &total);
+	for (l = 0; l < total; l++) {
+		LinkV *p = (LinkV *)operator new(0x6c);
+		LinkV *link = p ? p->sub_102dda70() : 0;
+		sub_1006c470(&buf, "%d", &link->src);
+		sub_1006c470(&buf, "%d", &link->dst);
+		sub_1006c470(&buf, "%d", &link->pad2);
+		for (h = 0; h < 22; h++)
+			sub_1006c470(&buf, "%d", &link->moves[h]);
+		GetNode(&v->graph, link->src)->sub_102f95d0(link);
+		GetNode(&v->graph, link->dst)->sub_102f95d0(link);
+	}
+	if (!v->sub_102f5b30(&buf, temps, path, "WCLookup:")) goto fail;
+	operator delete(v->edit->table);
+	{
+		int cnt = v->graph.count;
+		if (cnt <= 1) cnt = 1;
+		v->edit->table = (int *)operator new(cnt * 4);
+		for (i = 0; i < v->graph.count; i++)
+			sub_1006c470(&buf, "%d", &v->edit->table[i]);
+	}
+	g_1093408c = 1;
+	sub_102f99b0();
+	goto done;
+fail:
+	v->zones.size = 0;
+	if (allocated)
+		v->graph.sub_102f31f0();
+done:;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f65b0 size=0xd
 extern char g_1093408c;
 extern int g_1093407c;
