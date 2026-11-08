@@ -201258,6 +201258,45 @@ char sub_103912e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103937d0 size=0x10f
+#include "CBaseEntity.h"
+#include "CNPC_VMingXiao.h"
+#include "globalvars.h"
+void __fastcall sub_102e0b40(CAI_Motor *);
+#define V1(n) virtual void n##a(); 
+#define V10(n) V1(n##0) V1(n##1) V1(n##2) V1(n##3) V1(n##4) V1(n##5) V1(n##6) V1(n##7) V1(n##8) V1(n##9)
+#define V100(n) V10(n##0) V10(n##1) V10(n##2) V10(n##3) V10(n##4) V10(n##5) V10(n##6) V10(n##7) V10(n##8) V10(n##9)
+struct CWeaponSlotView361
+{
+	V100(a) V100(b) V100(c)
+	V10(d) V10(e) V10(f) V10(g) V10(h) V10(i)
+	virtual void pad0();
+	virtual int vfunc361(int act);
+};
+// TARGET: CNPC_VMingXiao::sub_103937d0
+void CNPC_VMingXiao::sub_103937d0(int a, int nSlot, int act)
+{
+	sub_102e0b40(m_pMotor5d44);
+	CBaseEntity *pTarget = m_h667c.Get();
+	vfunc388(!pTarget ? 0 : pTarget->m_n00a0, 0);
+	CWeaponSlotView361 *pWeapon = (CWeaponSlotView361 *)sub_1032e7b0();
+	if (!pWeapon) {
+		vfunc448_slot(0x1f);
+		return;
+	}
+	CBaseEntity *pGoal = vfunc167();
+	int id = !pGoal ? 0 : (int)pGoal->m_p9c;
+	int req = pWeapon->vfunc361(act);
+	int seq = vfunc376_slot(req);
+	int out = -1;
+	if (vfunc331(pWeapon, id, act, &out) && out >= 0)
+		vfunc311(act, seq, out);
+	else
+		sub_10289ee0(act);
+	m_flSlotTimeA[nSlot] = sub_103983d0(nSlot) + gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10395650 size=0xa8
 #include "CBaseEntity.h"
 #include "CNPC_VMingXiao.h"

@@ -11310,6 +11310,7 @@
 0x100110f9 func   ?sub_10075bd0@S10075bd0@@QAEXPBD@Z S10075bd0::sub_10075bd0
 0x100110fe func   ?sub_101ac2f0@CAmbientGeneric@@QAEIXZ CAmbientGeneric::sub_101ac2f0
 0x10011103 func   ?vfunc0@CSave@@UAEHXZ CSave::vfunc0
+0x10011108 func   ?sub_103937d0@CNPC_VMingXiao@@QAEXHHH@Z CNPC_VMingXiao::sub_103937d0
 0x1001110d func   ?vfunc5@CWorldEvents@@QAEPAV1@I@Z CWorldEvents::vfunc5
 0x10011112 func   ?sub_102d9fa0@CUnknown102d9ed0@@QAE?AVVector@@_NPBM1@Z CUnknown102d9ed0::sub_102d9fa0
 0x10011117 func   ?sub_10356430@@YAXHHH@Z sub_10356430
