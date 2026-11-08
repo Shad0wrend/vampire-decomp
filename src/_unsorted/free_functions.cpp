@@ -147664,6 +147664,52 @@ int CKeyValuesX::sub_10248d90(const char *name, const char **names, int count, i
 }
 // END FUNCTION
 
+// FUNCTION: 0x10248fc0 size=0xdc
+extern char g_106b8540[];
+
+struct CKeyValuesX
+{
+	const char *sub_10248cd0(const char *key, const char *def);
+	int sub_10248bb0(const char *key, int def);
+};
+
+extern CKeyValuesX * __stdcall sub_102489a0(void *pSrc, int a);
+extern int sub_10431c2f(char *, const char *, ...);
+
+struct CKVLoader10248fc0
+{
+	bool sub_10248fc0(void *pSrc, int maxCount, const char *pszFormat, int **ppItems, int *pnCount);
+};
+
+bool CKVLoader10248fc0::sub_10248fc0(void *pSrc, int maxCount, const char *pszFormat, int **ppItems, int *pnCount)
+{
+	char key[32];
+	if (pnCount) {
+		*pnCount = 0;
+		CKeyValuesX *kv = sub_102489a0(pSrc, 0);
+		if (kv) {
+			int n = 0;
+			for (int i = 0; i < maxCount; i++) {
+				sub_10431c2f(key, pszFormat, i);
+				if (!*kv->sub_10248cd0(key, g_106b8540))
+					break;
+				n++;
+			}
+			if (n > 0) {
+				*pnCount = n;
+				*ppItems = new int[n];
+				for (i = 0; i < n; i++) {
+					sub_10431c2f(key, pszFormat, i);
+					(*ppItems)[i] = kv->sub_10248bb0(key, 0);
+				}
+				return true;
+			}
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102490e0 size=0x5e
 #include "CKeyValuesX.h"
 #include <string.h>
