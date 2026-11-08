@@ -95981,6 +95981,32 @@ void __fastcall sub_101aa0e0(CThinkOwnerView *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aa130 size=0xa8
+#include "CUnknown101aa210.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+
+struct CNpcHandleView : CEntityVSlots {
+	char m_pad0004[0x5ce4 - 4];
+	unsigned int m_h5ce4;	// 0x5ce4
+};
+
+bool CUnknown101aa210::sub_101aa130(void *pNPC)
+{
+	CNpcHandleView *pView = (CNpcHandleView *)pNPC;
+	if (pView) {
+		unsigned int flags = m_flags204;
+		if (!(flags & 2) || (EHandle_Get(pView->m_h5ce4) && *(int *)((char *)EHandle_Get(pView->m_h5ce4) + 0xa8))) {
+			CSlot483Arg arg;
+			arg.b = ((unsigned char)flags >> 2) & 1;
+			if (pView->slot483(arg))
+				return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aa210 size=0x127
 #include "CBaseEntity.h"
 #include "CUnknown101d7520.h"
