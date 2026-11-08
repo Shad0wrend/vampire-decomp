@@ -69109,6 +69109,67 @@ void sub_10136600(CUnknown10136600 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136650 size=0x197
+#include "CMapEntityLoad.h"
+#include "CEntityVSlots.h"
+
+extern CGlobalEntityList g_106eb5d8;
+extern char *g_10579478;
+extern char g_106b8540[];
+extern "C" void __cdecl qsort(void *base, unsigned num, unsigned width, int (__cdecl *cmp)(const void *, const void *));
+extern "C" __declspec(dllimport) void __cdecl Error(const char *fmt, ...);
+const char *sub_10136c50(CBaseEntity *pCursor);
+
+void sub_10136650(const char *pMapData)
+{
+	char token[256];
+	SEntityRecord recs[0x2000];
+	CBaseEntity *pEnt;
+	int n = 0;
+	bool bFirst = true;
+	while (1) {
+		pMapData = sub_10136ce0(pMapData, token, g_10579478);
+		if (!pMapData)
+			break;
+		if (token[0] != '{')
+			Error("MapEntity_LoadFromFile: found %s when expecting {", token);
+		CBaseEntity *pCursor = sub_10136b40(&pEnt, pMapData);
+		if (pEnt) {
+			if (bFirst) {
+				pEnt->m_pParentName124 = 0;
+				bFirst = false;
+			}
+			if (!pEnt->m_pParentName124) {
+				((CEntityVSlots *)pEnt)->slot216(((CEntityVSlots *)pEnt)->slot220());
+				((CEntityVSlots *)pEnt)->slot218(((CEntityVSlots *)pEnt)->slot221());
+				if (sub_101d1280(pEnt) < 0)
+					g_106eb5d8.sub_100f6ce0();
+			} else {
+				recs[n].m_pEnt = pEnt;
+				recs[n].m_pParent = 0;
+				n++;
+			}
+		}
+		pMapData = sub_10136c50(pCursor);
+	}
+	sub_101368a0(n, recs);
+	qsort(recs, n, 8, sub_10136860);
+	for (int i = n - 1; i >= 0; i--) {
+		CBaseEntity *pChild = recs[i].m_pEnt;
+		const char *pName = pChild->m_pParentName124 ? pChild->m_pParentName124 : g_106b8540;
+		CBaseEntity *pParent = g_106eb5d8.sub_100f7770(0, pName, 0, 0);
+		if (pParent && pParent->m_pEdict2e0)
+			pChild->sub_100a0670(pParent, 0);
+	}
+	for (int j = 0; j < n; j++) {
+		CBaseEntity *pSpawn = recs[j].m_pEnt;
+		if (sub_101d1280(pSpawn) >= 0)
+			continue;
+		g_106eb5d8.sub_100f6ce0();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136860 size=0x23
 #include "CMapEntityLoad.h"
 // TARGET: sub_10136860
