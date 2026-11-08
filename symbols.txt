@@ -6469,6 +6469,7 @@
 0x1000a3a8 func   ?sub_1010dc30@CUnknown1010dc30@@QAEXPAH@Z CUnknown1010dc30::sub_1010dc30
 0x1000a3ad func   ?sub_10252800@@YAXPAVCBaseAnimating@@M@Z sub_10252800
 0x1000a3b2 func   ?sub_1026c120@CAI_BaseNPC@@QAEXHH@Z CAI_BaseNPC::sub_1026c120
+0x1000a3b7 func   ?Grow@?$CUtlMemory@UCEnvPlayerSurfaceTrigger_Entry@@@@QAEXH@Z CUtlMemory<CEnvPlayerSurfaceTrigger_Entry>::Grow
 0x1000a3b7 func   ?sub_100fdd50@UtlMem7@@QAEXH@Z UtlMem7::sub_100fdd50
 0x1000a3bc func   ?sub_1013aeb0@@YAXABVQuaternion@@0AAV1@@Z sub_1013aeb0
 0x1000a3c1 func   ??0CTraceFilterFVisible@@QAE@PAXH@Z CTraceFilterFVisible::CTraceFilterFVisible
