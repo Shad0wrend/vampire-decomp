@@ -102452,6 +102452,58 @@ void CUnk101c1790::sub_101c1790()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c17e0 size=0x18a
+#include "Vector.h"
+#include "QAngle.h"
+#include "CBaseToggle.h"
+#include "CEntityVSlots.h"
+
+struct ToggleAngularView
+{
+	char pad0[0x3c8];
+	Vector m_vecAccel;
+	char pad3d4[0x3f4 - 0x3d4];
+	float m_flLocalTime;
+	char pad3f8[0x3fc - 0x3f8];
+	float m_flMoveDoneTime;
+	char pad400[0x4d4 - 0x400];
+	float m_flEase;
+	float m_flEaseScale;
+	float m_flSavedTime;
+	char pad4e0[0x4ec - 0x4e0];
+	Vector m_vecEaseVel;
+	char pad4f8[0x54c - 0x4f8];
+	Vector m_vecFinalDest;
+	int m_nMovementType;
+};
+
+void CBaseToggle::sub_101c17e0(Vector *pDest, int speed)
+{
+	float flSpeed = *(float *)&speed;
+	ToggleAngularView *pView = (ToggleAngularView *)this;
+	CEntityVSlots *pSelf = (CEntityVSlots *)this;
+	pView->m_vecFinalDest = *pDest;
+	pView->m_nMovementType = 2;
+	if (*pDest == *pSelf->slot221())
+	{
+		pSelf->slot133();
+		return;
+	}
+	QAngle vecDestDelta = *(QAngle *)pDest - *(QAngle *)pSelf->slot221();
+	float flTravelTime = FastSqrt(vecDestDelta.x * vecDestDelta.x + (vecDestDelta.y * vecDestDelta.y + vecDestDelta.z * vecDestDelta.z)) / flSpeed;
+	pView->m_flMoveDoneTime = flTravelTime + pView->m_flLocalTime;
+	QAngle vecVel = vecDestDelta / flTravelTime;
+	sub_100b2f50(&vecVel.x);
+	if (pView->m_flEase > 0)
+	{
+		float flNewTime = pView->m_flEase + pView->m_flMoveDoneTime;
+		pView->m_flSavedTime = pView->m_flMoveDoneTime;
+		pView->m_flMoveDoneTime = flNewTime;
+		pView->m_vecEaseVel = pView->m_vecAccel * (-pView->m_flEaseScale);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c19e0 size=0x3c
 #include "CBaseToggle.h"
 
