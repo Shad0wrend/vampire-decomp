@@ -36831,6 +36831,42 @@ void sub_100ae7e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ae910 size=0xd8
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "ConVar.h"
+#include "CBaseEntity.h"
+
+extern ConVar g_1070b180;
+void *sub_101193b0();
+CBaseEntity *sub_100d2070(void *pPlayer, const char *pszName, CBaseEntity *pStart);
+
+inline int EDICT_X(CBaseEntity *pEnt) { return pEnt->m_pEdict2e0; }
+inline int ENTINDEX_X(CBaseEntity *pEnt) { return engine->vfunc35(EDICT_X(pEnt)); }
+
+// TARGET: sub_100ae910
+void sub_100ae910()
+{
+	ScopeTrace trace("CC_Ent_HitBoxes", g_106b8540);
+	void *pPlayer = sub_101193b0();
+	const char *pszName = engine->vfunc84(1);
+	CBaseEntity *pEntity = sub_100d2070(pPlayer, pszName, 0);
+	if (pEntity) {
+		if (g_1070b180.GetInt() == ENTINDEX_X(pEntity))
+			g_1070b180.sub_10246160(-1);
+		else
+			g_1070b180.sub_10246160(ENTINDEX_X(pEntity));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aeb50 size=0x6e
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
