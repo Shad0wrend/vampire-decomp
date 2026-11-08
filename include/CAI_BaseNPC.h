@@ -249,7 +249,8 @@ public:
 	bool sub_10280360();
 	void sub_1026af70(const float *pTargetPos, float flInterval);	// slot 537 body (0x1026af70, ret 8): smooths the look yaw (+0xe5c) and pitch (+0xe60) bone controllers toward pTargetPos; declared as a plain member because retyping the placeholder virtual vfunc537() breaks matched vtable users
 	void sub_1026d460(int nSide);	// footstep: picks volume / sound level from the surface data or convars by nSide, emits the sound the sound table gives for the record at +0x5b90 to a CPASAttenuationFilter (called by vfunc259)
-	bool sub_10273180(char bForce);	// sets the hull size from the hull (+0x1568) when the byte +0x5f2d is clear or bForce, sets the byte, then runs sub_10272f40 with a navigator at +0x36c; always true
+	bool sub_10273180(char bForce);
+	void sub_10273070(char bForce);	// sets the hull size from the hull (+0x1568) when the byte +0x5f2d is clear or bForce, sets the byte, then runs sub_10272f40 with a navigator at +0x36c; always true
 	void sub_10272f40();	// the navigator hand-over after the hull is set (stub 0x100081c0)
 	void sub_10269b50(int condition);	// "CAI_BaseNPC::SetCondition"-like (called through the stub at 0x10015839)
 	bool sub_10269aa0(int condition);	// "CAI_BaseNPC::HasCondition" (stub 0x10014df8): translates ids below 1000000000 first, then tests the condition bit in the array at +0x5c5c
