@@ -1,6 +1,15 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x102458a0 size=0x34
+#include "ConCommand.h"
+// TARGET: ConCommand::ConCommand
+ConCommand::ConCommand(const char *pszName, void (*pCallback)(), const char *pszHelp, int nFlags, void (*pCompletion)())
+{
+	vfunc7(pszName, pCallback, pszHelp, nFlags, pCompletion);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102458f0 size=0x1e
 #include "ConCommand.h"
 
