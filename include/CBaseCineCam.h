@@ -22,6 +22,9 @@ public:
 	bool sub_1006e4c0(const char *pszPrefix, int unused);	// "CBaseCineCam::FindBestShot": state 1, sets up every shot "<prefix>_<n>" (n = 1, 2, ... while the handle at +0x630 stays set) and collects the usable ones; none -> false, else a random one of them is set up again ("CBaseCineCam::FindBestShot chose %s") -> true; takes a second, unused stack argument
 	Vector sub_1006f670();	// the position the shot looks at: the middle of the two shot positions (flags 4 and 8 of sub_1006edb0), or the one that is set, else the zero vector (returned by value)
 	void sub_1006ed40(Vector *pFirst, Vector *pSecond);	// copies the two shot positions to the non-null outputs
+	void sub_1006f8f0();
+	char sub_1006f7d0();
+	struct CCineFovView *sub_1006ede0();
 	int sub_1006edb0();	// stub 0x10002a6d: the shot flags (bit 2 = first position, bit 3 = second)
 	void sub_1006f080(Vector *pOut, int bSecond);	// 0x1006f080 (stub 0x10012553, this in ecx, ret 8): the trace start position of the shot's target entity handle +0x610 (bSecond 0) / +0x614 (bSecond 1), written to *pOut; used by sub_1006db10's two UTIL_TraceHull checks
 	int sub_100b3700();	// CBaseEntity::GetFlags (stub 0x10008b84), called directly first thing in sub_1006db10 after sub_1006f670 (result unused)
@@ -33,7 +36,10 @@ public:
 	float m_flNextThink17c;	// 0x017c
 	char m_pad0180[0x55c - 0x180];
 	float m_flTime55c;	// 0x055c
-	char m_pad0560[0x5d0 - 0x560];
+	char m_pad0560[0x594 - 0x560];
+	int m_nMode594;
+	char m_pad0598[0x5cc - 0x598];
+	float m_flTime5cc;
 	unsigned int m_hTarget5d0;	// 0x05d0
 	const char *m_psz5d4;	// 0x05d4: the shot's name
 	const char *m_psz5d8;	// 0x05d8: the names of the four shot targets
@@ -48,7 +54,7 @@ public:
 	unsigned int m_hShot610[4];	// 0x0610: entity handles, one per flag bit
 	char m_pad0620[0x630 - 0x620];
 	unsigned int m_hShot630;	// 0x0630
-	char m_pad0634[4];
+	float m_flFov634;
 	int m_nState638;	// 0x0638: the shot state
 	int m_n63c;	// 0x063c: engine slot 120() when the shot was set up
 	char m_b640;	// 0x0640
