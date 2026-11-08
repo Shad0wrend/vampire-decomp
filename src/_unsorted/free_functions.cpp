@@ -175187,6 +175187,54 @@ void CAI_MoveProbe::sub_102e6090(const float *vecStart, const float *vecEnd, uns
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e6be0 size=0x139
+#include "CAI_MoveProbe.h"
+#include "CCollisionProperty.h"
+#include "CTraceFilterNav.h"
+#include "CGameTrace.h"
+#include "CVProfile.h"
+
+struct CMoveProbeOuter
+{
+	char pad0000[0x270];
+	CCollisionProperty m_collision;
+	char pad0274[0x368 - 0x270 - sizeof(CCollisionProperty)];
+	int m_n368;
+};
+
+extern Vector g_1070d1b0;
+extern void (__fastcall *g_109f365c)(CVProfile *pProfile);
+void sub_1026e940(const float *start, const float *end, const float *mins, const float *maxs, unsigned int mask, void *pFilter, CGameTrace *pTrace, char bFlag);
+int sub_102e2d70(CBaseEntity *pEnt);
+
+// TARGET: CAI_MoveProbe::sub_102e6be0
+void CAI_MoveProbe::sub_102e6be0(const float *vecStart, const float *vecEnd, const CBaseEntity *pTarget, AIMoveTrace_t *pTrace, int unused)
+{
+	CMoveProbeOuter *pOuter = (CMoveProbeOuter *)m_pOuter;
+	const float *pMins = pOuter->m_collision.vfunc1();
+	const float *pMaxs = pOuter->m_collision.vfunc2();
+	CGameTrace tr;
+	g_109f3648->EnterScope("CAI_MoveProbe_TraceHull", 0, "Unaccounted", false);
+	{
+		CTraceFilterNav filter;
+		filter.sub_102e30d0((int)m_pOuter, ((CMoveProbeOuter *)m_pOuter)->m_n368);
+		sub_1026e940(vecStart, vecEnd, pMins, pMaxs, 0x202400b, &filter, &tr, 1);
+	}
+	g_109f365c(g_109f3648);
+	if (tr.m_fraction < 1.0 && tr.m_pEnt != pTarget)
+	{
+		pTrace->m_unk[6] = (int)tr.m_pEnt;
+		*(Vector *)&pTrace->m_unk[3] = g_1070d1b0;
+		pTrace->fStatus = sub_102e2d70(tr.m_pEnt);
+		float dx = vecEnd[0] - vecStart[0];
+		float dy = vecEnd[1] - vecStart[1];
+		float dz = vecEnd[2] - vecStart[2];
+		double flRemain = (1.0 - tr.m_fraction) * FastSqrt(dz * dz + dy * dy + dx * dx);
+		*(float *)&pTrace->m_unk[8] = (flRemain <= 0.001) ? 0.001f : (float)flRemain;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e6d70 size=0x238
 #include "CAI_MoveProbe.h"
 #include "CBaseEntity.h"

@@ -10351,6 +10351,7 @@
 0x1000f9b1 func   ?sub_101d66a0@CPartListUnit@@QAEXXZ CPartListUnit::sub_101d66a0
 0x1000f9b6 func   ?vfunc304@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc304
 0x1000f9bb func   ?vfunc138@CNPC_VZombie@@UAEHXZ CNPC_VZombie::vfunc138
+0x1000f9c0 func   ?sub_102e6be0@CAI_MoveProbe@@QAEXPBM0PBVCBaseEntity@@PAUAIMoveTrace_t@@H@Z CAI_MoveProbe::sub_102e6be0
 0x1000f9c5 func   ?sub_101d3510@@YAXABVVector@@000PAVCEntityVSlots@@HPAUCGameTrace@@@Z sub_101d3510
 0x1000f9ca func   ?sub_100f8420@CGlobalEntityList@@QAEPAVCBaseEntity@@PAV2@@Z CGlobalEntityList::sub_100f8420
 0x1000f9cf func   ?sub_1019fb20@CSaveFwd2@@QAEXPBD@Z CSaveFwd2::sub_1019fb20
