@@ -1240,6 +1240,59 @@ bool CBaseCombatWeapon::vfunc325()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10254eb0 size=0xd1
+#include "CBaseCombatWeapon.h"
+#include "CUnknown1070b244.h"
+#include "globalvars.h"
+
+char __fastcall sub_102506a0(CBaseCombatWeapon *pWeapon);
+
+struct COwner_10254eb0
+{
+	char m_pad0000[0x1564];
+	float m_flTimer1564;
+};
+
+struct CWeaponView_10254eb0
+{
+	char m_pad0000[0x730];
+	float m_flTimes730[2];
+	char m_pad738[0x854 - 0x738];
+	int m_nPending854;
+};
+
+extern CUnknown1070b244 *g_1070b244;
+
+// TARGET: CBaseCombatWeapon::vfunc321
+void CBaseCombatWeapon::vfunc321()
+{
+	CWeaponView_10254eb0 *pView = (CWeaponView_10254eb0 *)this;
+	if (vfunc309())
+	{
+		int nNone = -1;
+		if (pView->m_nPending854 == nNone)
+		{
+			if (!sub_102506a0(this) && g_1070b244->vfunc2(0, 100) <= 8)
+				vfunc307(0xb7);
+			else
+				vfunc307(0xb6);
+		}
+		else
+		{
+			sub_10253110();
+			vfunc307(pView->m_nPending854);
+			pView->m_nPending854 = nNone;
+			COwner_10254eb0 *pOwner = (COwner_10254eb0 *)sub_102521f0();
+			if (pOwner)
+				pOwner->m_flTimer1564 = vfunc311();
+			for (int i = 0; i < 2; i++)
+				pView->m_flTimes730[i] = gpGlobals->curtime;
+		}
+		sub_10257640();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10254fd0 size=0x6
 #include "CBaseCombatWeapon.h"
 int CBaseCombatWeapon::vfunc328()
