@@ -2035,6 +2035,7 @@
 0x10003e04 func   ?vfunc494@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc494
 0x10003e09 func   ?vfunc273@CItemContainerLock@@QAEXXZ CItemContainerLock::vfunc273
 0x10003e0e func   ?sub_1004cae0@@YAPAHXZ sub_1004cae0
+0x10003e13 func   ?vfunc433@CNPC_VMingXiao@@UAEXXZ CNPC_VMingXiao::vfunc433
 0x10003e18 func   ?sub_100cd6d0@CUnknown100cd6d0@@QAEXPAX@Z CUnknown100cd6d0::sub_100cd6d0
 0x10003e1d func   ?vfunc0@CTEImpact@@UAEPAUServerClass@@XZ CTEImpact::vfunc0
 0x10003e22 func   ?vfunc8@CAI_RatLocalNavigator@@QAEPAVCAI_PlaneSolver@@XZ CAI_RatLocalNavigator::vfunc8

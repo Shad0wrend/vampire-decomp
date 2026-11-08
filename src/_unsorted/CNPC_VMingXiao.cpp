@@ -655,6 +655,107 @@ void CNPC_VMingXiao::vfunc431()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10394e40 size=0x2cf
+#include "CBaseCombatWeapon.h"
+#include "CNPC_VMingXiao.h"
+#include "CAI_BaseNPC.h"
+#include "CEntityVSlots.h"
+#include "CUnknown10252450.h"
+#include "CUnknown1039ab10.h"
+#include "CDevFlagObj.h"
+#include "CCollisionProperty.h"
+#include "globalvars.h"
+#include "ehandle.h"
+#include "Vector.h"
+
+extern CDevFlagObj *g_10924a6c;
+
+// TARGET: CNPC_VMingXiao::vfunc433
+void CNPC_VMingXiao::vfunc433()
+{
+	((CAI_BaseNPC *)this)->sub_10269b50(0x77);
+	((CAI_BaseNPC *)this)->sub_10269b50(0x78);
+	((CAI_BaseNPC *)this)->sub_10269b50(0x79);
+	((CAI_BaseNPC *)this)->sub_10269b50(0x7a);
+	((CAI_BaseNPC *)this)->sub_10269b50(0x7b);
+	((CAI_BaseNPC *)this)->sub_10269b50(0x7c);
+	((CAI_BaseNPC *)this)->sub_10269b50(0x7d);
+	sub_102b27f0();
+
+	if (((CEntityVSlots *)this)->slot464() == 1)
+		return;
+
+	bool bTent = false;
+	for (int i = 0; i < 6; i++)
+	{
+		if (!sub_10398030(i, 0))
+			continue;
+		bTent = true;
+		if (!sub_10398030(i, 1))
+			continue;
+		g_10924a6c->vfunc1();
+		((CAI_BaseNPC *)this)->sub_10269a20(i + 0x77);
+	}
+	if (!bTent)
+	{
+		g_10924a6c->vfunc1();
+		((CAI_BaseNPC *)this)->sub_10269a20(0x7e);
+	}
+
+	if (m_f6264 > 200.0f)
+	{
+		if (!((CUnknown1039ab10 *)this)->sub_1039ab10())
+		{
+			CBaseEntity *pEntity = m_h6680.Get();
+			if (pEntity)
+			{
+				CBaseCombatWeapon *pWeapon = *(CBaseCombatWeapon **)((char *)pEntity + 0xa0);
+				if (pWeapon)
+				{
+					CEntityVSlots *pTarget = (CEntityVSlots *)((CEntityVSlots *)this)->slot167();
+					if (pTarget)
+					{
+						float flAttackTime = ((CUnknown10252450 *)pWeapon)->sub_10252450(0);
+						if (flAttackTime <= gpGlobals->curtime)
+						{
+							if (gpGlobals->curtime >= m_flTime66c0)
+							{
+								Vector vecOrigin = *((CEntityVSlots *)this)->slot217();
+								Vector vecBodyTarget;
+								pTarget->slot197((int)&vecBodyTarget, (int)pTarget->slot217(), 1, 0);
+
+								Vector vecDelta = vecBodyTarget - vecOrigin;
+								Vector vecDir;
+								vecDir.x = vecDelta.y;
+								vecDir.y = -vecDelta.x;
+								vecDir.z = 0.0f;
+								VectorNormalize(vecDir);
+
+								CCollisionProperty *pColl = (CCollisionProperty *)((char *)pTarget + 0x270);
+								float *pMins = pColl->vfunc1();
+								float *pMaxs = pColl->vfunc2();
+								vecDir *= (pMaxs[0] - pMins[0]) * 0.3f;
+
+								Vector vecTest = vecBodyTarget + vecDir;
+								if (((CEntityVSlots *)pWeapon)->slot364(&vecOrigin, &vecTest, 0))
+								{
+									vecTest = vecBodyTarget - vecDir;
+									if (((CEntityVSlots *)pWeapon)->slot364(&vecOrigin, &vecTest, 0))
+									{
+										g_10924a6c->vfunc1();
+										((CAI_BaseNPC *)this)->sub_10269a20(0x7d);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103951d0 size=0x7c
 #include "CBaseEntity.h"
 #include "CNPC_VMingXiao.h"
