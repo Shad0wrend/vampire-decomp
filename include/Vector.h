@@ -95,7 +95,7 @@ inline void VectorCopy(const Vector &src, Vector &dst)
 	dst.z = src.z;
 }
 
-inline void VectorAdd(const Vector &a, const Vector &b, Vector &c)
+__forceinline void VectorAdd(const Vector &a, const Vector &b, Vector &c)
 {
 	c.x = a.x + b.x;
 	c.y = a.y + b.y;
@@ -109,7 +109,7 @@ inline void VectorSubtract(const Vector &a, const Vector &b, Vector &c)
 	c.z = a.z - b.z;
 }
 
-inline void VectorMultiply(const Vector &a, vec_t b, Vector &c)
+__forceinline void VectorMultiply(const Vector &a, vec_t b, Vector &c)
 {
 	c.x = a.x * b;
 	c.y = a.y * b;
