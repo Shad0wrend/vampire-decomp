@@ -21618,6 +21618,75 @@ float CUnknown10075aa0::sub_10075fd0(float flTime)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10076280 size=0x29b
+#include "CLogicAuto.h"
+#include "CUnknown10075aa0.h"
+#include "Vector.h"
+void sub_1013bb40(const Vector &p1, const Vector &p2, const Vector &p3, const Vector &p4, float t, Vector &out);
+
+float CUnknown10075aa0::sub_10076280(float flTime)
+{
+	float flRel = flTime - m_i184;
+	if (flTime < 0.001)
+		return 0.0f;
+	if (flRel < 0.001)
+		return 0.0f;
+	if (flTime < m_i184)
+		return 0.0f;
+	if (flTime > m_f188)
+		return 0.0f;
+	if (!sub_10075f30())
+		return 0.0f;
+	int count = sub_10078630();
+	if (count < 1)
+		return 1.0f;
+
+	int i;
+	for (i = -1; i < count; i++) {
+		CUnknown10075aa0Sample *pPrev = sub_100789b0(i);
+		CUnknown10075aa0Sample *pNext = sub_100789b0(i + 1);
+		if (pPrev && pNext && flRel >= pPrev->m_flTime && flRel <= pNext->m_flTime)
+			break;
+	}
+
+	int i0 = i - 1;
+	int i2 = i + 1;
+	int i3 = i + 2;
+	if (i0 < -1) i0 = -1;
+	if (i < -1) i = -1;
+	if (i2 >= count) i2 = count;
+	if (i3 >= count) i3 = count;
+
+	CUnknown10075aa0Sample *s0 = sub_100789b0(i0);
+	CUnknown10075aa0Sample *s1 = sub_100789b0(i);
+	CUnknown10075aa0Sample *s2 = sub_100789b0(i2);
+	CUnknown10075aa0Sample *s3 = sub_100789b0(i3);
+
+	float dt = s2->m_flTime - s1->m_flTime;
+	Vector v0(s0->m_flTime, s0->m_flValue, 0.0f);
+	Vector v1(s1->m_flTime, s1->m_flValue, 0.0f);
+	Vector v2(s2->m_flTime, s2->m_flValue, 0.0f);
+	Vector v3(s3->m_flTime, s3->m_flValue, 0.0f);
+
+	float t = 0.0f;
+	if (dt > 0.0f) {
+		t = (flRel - s1->m_flTime) / dt;
+		if (t > 1.0f)
+			t = 1.0f;
+		else if (t < 0.0f)
+			t = 0.0f;
+	}
+
+	Vector out;
+	sub_1013bb40(v0, v1, v2, v3, t, out);
+	if (out.y > 1.0f)
+		return 1.0f;
+	if (out.y < 0.0f)
+		return 0.0f;
+	return out.y;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100765d0 size=0x15
 namespace block_10075e70 {
 struct CUnknown10075e70
