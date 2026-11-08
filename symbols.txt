@@ -12445,6 +12445,7 @@
 0x10012c8d func   ?vfunc241@CFuncAreaPortalBase@@QAE_NPBM@Z CFuncAreaPortalBase::vfunc241
 0x10012c92 func   ?sub_100bf460@@YGXH@Z sub_100bf460
 0x10012c97 func   ?vfunc444@CNPC_VSheriffMan@@QAEXPAH@Z CNPC_VSheriffMan::vfunc444
+0x10012c9c func   ?sub_100dd780@CCollisionProperty@@QAEXPAVVector@@0@Z CCollisionProperty::sub_100dd780
 0x10012ca1 func   ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z CBaseEntity::vfunc234
 0x10012ca6 func   ?vfunc242@CPlayerResource@@QAEXXZ CPlayerResource::vfunc242
 0x10012cb0 func   ?vfunc128@CBaseButton@@UAE_NXZ CBaseButton::vfunc128

@@ -48473,6 +48473,75 @@ void CCollisionProperty::sub_100dd740(bool bWorld, Vector *pMins, Vector *pMaxs)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dd780 size=0x198
+#include "CCollisionProperty.h"
+
+#define CP_SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CColPhysics {
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3();
+	virtual char slot4();
+};
+
+struct CColOuter {
+	CP_SLOTS10(a0) CP_SLOTS10(a1) CP_SLOTS10(a2) CP_SLOTS10(a3) CP_SLOTS10(a4) CP_SLOTS10(a5) CP_SLOTS10(a6) CP_SLOTS10(a7) CP_SLOTS10(a8)
+	virtual void b90(); virtual void b91(); virtual void b92(); virtual void b93();
+	virtual int slot94();
+	virtual void b95(); virtual void b96(); virtual void b97(); virtual void b98(); virtual void b99();
+	virtual void b100();
+	virtual void slot101(Vector *pMins, Vector *pMaxs);
+	char m_pad0004[0x36c - 4];
+	CColPhysics *m_pPhysics36c;
+};
+
+struct CColSlots {
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5(); virtual void a6(); virtual void a7();
+	virtual Vector *slot8();
+	virtual void a9(); virtual void a10();
+	virtual int slot11();
+};
+
+void CCollisionProperty::sub_100dd780(Vector *pMins, Vector *pMaxs)
+{
+	CColSlots *pSlots = (CColSlots *)this;
+	if (!(5 == pSlots->slot11() && m_nSurroundType != 4)) { switch (m_nSurroundType) {
+	case 0: {
+		bool bUseVPhysics = false;
+		if (6 == pSlots->slot11() && 7 == ((CColOuter *)m_pOuter)->slot94()) {
+			CColPhysics *pPhysics = ((CColOuter *)m_pOuter)->m_pPhysics36c;
+			bUseVPhysics = pPhysics && pPhysics->slot4();
+		}
+		sub_100dd740(bUseVPhysics, pMins, pMaxs);
+		break;
+	}
+	case 1:
+		sub_100dd740(pSlots->slot11() == 6, pMins, pMaxs);
+		break;
+	case 6:
+		sub_100dd740(false, pMins, pMaxs);
+		break;
+	case 2:
+		sub_100dd600(pMins, pMaxs);
+		break;
+	case 5:
+		sub_100dd630(pMins, pMaxs);
+		break;
+	case 3:
+		VectorAdd(*pSlots->slot8(), m_vecSpecifiedSurroundingMins, *pMins);
+		VectorAdd(*pSlots->slot8(), m_vecSpecifiedSurroundingMaxs, *pMaxs);
+		break;
+	case 4:
+		((CColOuter *)m_pOuter)->slot101(pMins, pMaxs);
+		break;
+	} } else {
+		*pMins = *pSlots->slot8();
+		*pMaxs = *pMins;
+		return;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dd990 size=0x65
 #include "CUnknown100dd990.h"
 
