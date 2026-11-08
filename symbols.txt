@@ -8328,6 +8328,7 @@
 0x1000cc1b func   ?vfunc82@CNPC_VVampireBoss@@QAEPAUdatamap_t@@XZ CNPC_VVampireBoss::vfunc82
 0x1000cc20 func   ?vfunc82@CLogicSquadCondition@@UAEPAUdatamap_t@@XZ CLogicSquadCondition::vfunc82
 0x1000cc25 func   ?vfunc138@CNPC_VTremere@@UAEHXZ CNPC_VTremere::vfunc138
+0x1000cc2a func   ?sub_10249aa0@CUnknown10249aa0@@QAEHI@Z CUnknown10249aa0::sub_10249aa0
 0x1000cc2f func   ?sub_10073790@CUnknown10073790@@QAEHXZ CUnknown10073790::sub_10073790
 0x1000cc39 func   ?sub_102d14c0@CAI_BaseNPCTroika@@QAE_NXZ CAI_BaseNPCTroika::sub_102d14c0
 0x1000cc3e func   ?sub_101a7580@@YGXH@Z sub_101a7580

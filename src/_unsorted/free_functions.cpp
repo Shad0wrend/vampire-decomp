@@ -149074,6 +149074,63 @@ unsigned short SymMap::sub_10249980(unsigned int key, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10249aa0 size=0x169
+#include "utlrbtree.h"
+#include "CUnknown10249aa0.h"
+
+struct SSym10249aa0
+{
+	unsigned short m_Id;
+	SSym10249aa0() { m_Id = 0xffff; }
+};
+
+struct SMapKeyConv
+{
+	SSym10249aa0 sub_1024b5e0(unsigned int key);	// stub 0x10005c95
+};
+
+struct SNode10249aa0
+{
+	SSym10249aa0 key;
+	int elem;
+};
+
+struct SMapTreeLeft
+{
+	const unsigned short *sub_1024a900(unsigned short i);	// stub 0x10007d7e
+};
+
+inline unsigned short FindNode10249aa0(const CUtlRBTree16At<0x1088ae24> *tree, const SNode10249aa0 &search)
+{
+	unsigned short i = tree->m_Root;
+	while (i != 0xffff) {
+		if (tree->m_LessFunc((void *)&search, tree->m_pElements[i].m_Data)) {
+			i = *((SMapTreeLeft *)tree)->sub_1024a900(i);
+		} else {
+			if (!tree->m_LessFunc(tree->m_pElements[i].m_Data, (void *)&search))
+				break;
+			i = tree->Links(i).m_Right;
+		}
+	}
+	return i;
+}
+
+inline unsigned short Find10249aa0(const CUtlRBTree16At<0x1088ae24> *tree, unsigned int key)
+{
+	SNode10249aa0 dummy;
+	dummy.key = ((SMapKeyConv *)((char *)tree + 0x18))->sub_1024b5e0(key);
+	return FindNode10249aa0(tree, dummy);
+}
+
+int CUnknown10249aa0::sub_10249aa0(unsigned int key)
+{
+	unsigned short i = Find10249aa0((const CUtlRBTree16At<0x1088ae24> *)m_pTree, key);
+	if (((const CUtlRBTree16At<0x1088ae24> *)m_pTree)->Links(i).m_Left != i)
+		return *(int *)(((const CUtlRBTree16At<0x1088ae24> *)m_pTree)->m_pElements[i].m_Data + 4);
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10249fc0 size=0x89
 #include "utlrbtree.h"
 #include "CUnknown10249fc0.h"
