@@ -2,6 +2,7 @@
 // real name not yet known.
 #pragma once
 
+#include "Vector.h"
 class CGlobalEntityList;
 extern CGlobalEntityList *g_10566458;	// the global entity list (CGlobalEntityList.h); its entity slots (12 bytes: entity, serial, list index) start at +4
 
@@ -35,6 +36,11 @@ struct CUnknown102ca630Rec
 		return 0;
 	}
 
+	Vector GetPos() { return *(Vector *)m_vecPos; }
+	CBaseEntity *OwnerEntity()
+	{
+		return ((EHANDLE *)&m_hOwner)->Get();
+	}
 	void sub_102c9da0(CUnknown102ca630Rec *pOther);	// copies the record (stub 0x10008d50)
 };
 
