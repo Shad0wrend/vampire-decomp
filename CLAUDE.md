@@ -220,6 +220,27 @@ Verified with the judge on 2026-11-06:
   `fld ... fstp` gap while the game has it just before the next call. Five positions of `text_offset++` (statement,
   `+= 1`, int/long, comma in an argument, comma in the callee) all gave the same code (0x1034ea80 CFogController).
 
+## VC6 walls Opus closed (2026-11-09): score 1-2 near misses Sonnet had tried 12-25 times
+
+Opus matched 12 of 20 such walls, most of them on its first compile, by writing the code the way a programmer would
+have written it rather than adding temporaries that spell out the assembly:
+
+- **Declare a local in the innermost block that uses it, and do not stage a call's result in a temporary.**
+  0x101c5f40: `Vector dir, pos;` moved from the else branch into the `if` that uses them, the member-function pointer
+  declared once before the `if`, and `(pOther->*pfn)(info.sub_101c2720(...))` called directly in each branch instead
+  of `pInfo = ...; ... (pOther->*pfn)(pInfo);` after them (score 2 -> 0).
+- **A chained assignment, not a pointer temporary:** `node.m_vPos = node.m_vPrevPos = v;` where Sonnet wrote
+  `Vector *p = &node.m_vPrevPos; *p = v; node.m_vPos = *p;` (0x1012fe20, score 1 -> 0).
+- **A plain local and a literal, not a helper:** `float f = pNode->vfunc11(...); m_n40 = f; if (f <= 0.0) DevMsg(...,
+  f);` where Sonnet compared through an inline helper reading `g_1044fab0` (0x101ddfb0, score 2 -> 0). The judge maps
+  the literal to the game's constant.
+- **A `__fastcall sub_X(Self *self, int edx, ...)` is a member function:** write it as the real class's member (here
+  `int CNPC_VTzimisceRunner::vfunc604(int)`), with the body in an `inline` member of the view struct it calls
+  (0x103c4430, score 2 -> 0).
+- **CUtlRBTree members are template members:** `#include "utlrbtree.h"`, an entry struct of the right size and the
+  mangled `TARGET` (`?LinkToParent@?$CUtlRBTree@U...@@G@@QAEXGG_N@Z`), not a hand-written class with the same steps
+  (0x100498c0, 0x10054c00; see the containers section).
+
 ## VC6 stack slots: what moves them and what does not (measured 2026-11-08, partial)
 
 Measured by compiling small bodies (cache/hand102c3b50/exp2.py prints each tagged local's frame offset):
