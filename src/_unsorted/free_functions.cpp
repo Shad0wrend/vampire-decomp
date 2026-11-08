@@ -230155,6 +230155,44 @@ bool CWeaponPhysCannon::sub_1040e880(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040f550 size=0x31e
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CGameTrace.h"
+#include "CTraceFilterSimple.h"
+#include "CWeaponMelee.h"
+#include "UTIL_Trace.h"
+#include "Vector.h"
+float sub_1040e5b0();
+int sub_101cca80(CBaseEntity **pList, int nMax, const Vector *pMins, const Vector *pMaxs, int a, int b);
+
+CBaseEntity *CWeaponMelee::sub_1040f550(const Vector *pOrigin, const Vector *pDir, float flMinDot)
+{
+	float flRadius = sub_1040e5b0() + 1.0;
+	CBaseEntity *pBest = 0;
+	CBaseEntity *pList[256];
+	Vector mins = *pOrigin - Vector(flRadius, flRadius, flRadius);
+	Vector maxs = Vector(flRadius, flRadius, flRadius) + *pOrigin;
+	int nCount = sub_101cca80(pList, 0x100, &mins, &maxs, 0, 1);
+	for (int i = 0; i < nCount; i++) {
+		if (pList[i]->m_obj36c) {
+			Vector vecDelta = *((CEntityVSlots *)pList[i])->slot215() - *pOrigin;
+			float flLen = VectorNormalize(vecDelta);
+			if (!(flLen >= flRadius) && !(DotProduct(vecDelta, *pDir) <= flMinDot)) {
+				CTraceFilterNoOwnerTest filter(sub_102521f0());
+				CGameTrace trace;
+				UTIL_TraceLine(*pOrigin, *((CEntityVSlots *)pList[i])->slot215(), 0x46004003, &filter, &trace);
+				if (trace.m_pEnt == pList[i]) {
+					pBest = pList[i];
+					flRadius = flLen;
+				}
+			}
+		}
+	}
+	return pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10410370 size=0x39
 // TARGET: sub_10410370
 void sub_10410370(const float *a, const float *b, float t, float *out)
