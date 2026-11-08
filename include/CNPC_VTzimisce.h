@@ -185,6 +185,8 @@ public:
 	int m_n66b8;
 
 	bool sub_103be180();
+	int vfunc124();
+	int sub_10006f64();
 	int sub_103bc4e0();
 	bool sub_103be3d0(CBaseEntity *pEnt);
 	void sub_102c4380(CBaseEntity *pEnt);
