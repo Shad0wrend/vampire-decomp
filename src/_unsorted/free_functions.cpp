@@ -159512,6 +159512,86 @@ void CAI_BaseNPC::sub_102801e0(int a, CBaseEntity *pEnt, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10280630 size=0x10f
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include <string.h>
+
+extern CGlobalEntityList g_106eb5d8;
+
+#define EV(n) virtual void s##n();
+#define EV10(p) EV(p##0) EV(p##1) EV(p##2) EV(p##3) EV(p##4) EV(p##5) EV(p##6) EV(p##7) EV(p##8) EV(p##9)
+struct CEntSlotView
+{
+	EV10(0) EV10(1) EV10(2) EV10(3) EV10(4) EV10(5) EV10(6) EV10(7) EV10(8) EV10(9)
+	EV10(10) EV10(11) EV10(12) EV10(13) EV10(14) EV10(15) EV10(16)
+	EV(170) EV(171) EV(172)
+	virtual void s173(CEntSlotView *pActivator, CEntSlotView *pCaller, int useType, int value);
+	EV(174) EV(175) EV(176) EV(177) EV(178) EV(179)
+	EV(180) EV(181) EV(182) EV(183) EV(184) EV(185) EV(186) EV(187)
+	virtual char s188();
+};
+
+struct CEntTimes : CBaseEntity
+{
+	char m_pad03e0[0x3f4 - sizeof(CBaseEntity)];
+	float m_f03f4;
+	char m_pad03f8[4];
+	float m_f03fc;
+	float Get3f4() const { return m_f03f4; }
+};
+
+struct CEntUnit : CBaseEntity
+{
+	float sub_10280630(CBaseEntity *pEnt);
+};
+
+float CEntUnit::sub_10280630(CBaseEntity *pEnt)
+{
+	float flTime = 0.0f;
+	if (pEnt) {
+		CEntTimes *pTimes = (CEntTimes *)pEnt;
+		CEntSlotView *pView = (CEntSlotView *)pEnt;
+		if (!pView->s188()) {
+			pView->s173((CEntSlotView *)this, (CEntSlotView *)this, 1, 0);
+			if (pTimes->m_f03fc >= 0.0f)
+				flTime = pTimes->m_f03fc - pTimes->Get3f4();
+			else
+				flTime = -1.0f;
+			if (pEnt->m_name26c) {
+				CBaseEntity *pOther = 0;
+				for (;;) {
+					do {
+						const char *pszName = pEnt->m_name26c;
+						if (!pszName)
+							pszName = g_106b8540;
+						pOther = g_106eb5d8.sub_100f7770(pOther, pszName, 0, 0);
+					} while (pOther == pEnt);
+					if (!pOther)
+						break;
+					const char *pszClass = pEnt->sub_1009f200();
+					const char *pszOtherClass = pOther->m_classname11c;
+					if (!pszOtherClass)
+						pszOtherClass = g_106b8540;
+					if (!_strcmpi(pszOtherClass, pszClass))
+						((CEntSlotView *)pOther)->s173((CEntSlotView *)this, (CEntSlotView *)this, 1, 0);
+				}
+			}
+		}
+	}
+	return flTime + gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10280a20 size=0x20
 #include "globalvars.h"
 
