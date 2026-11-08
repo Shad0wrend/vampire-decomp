@@ -45,6 +45,7 @@ public:
 	void vfunc619(char bRight);	// slot 619 (plain member): a footstep (the left or right foot table at 0x1065d680 / 0x1065d688, random of two) and a breath (table 0x1065d690, random of four) from the edict at +0x2e0, channel 4, volume 1.0, attenuation 0.8, to the players that can hear it, reliably
 	void vfunc336();	// slot 336 (plain member): when the engine time (slot 119 of the engine) differs from the time at +0x6674: sub_10273070(1), clears the byte at +0x6672, sets the byte at +0x5f2c
 	void sub_10273070(int a);	// CAI_BaseNPC member (stub 0x1000dc29), called directly
+	int vfunc604(int unused);	// slot 604 (plain member): schedule pick
 	void vfunc618();	// slot 618 (plain member): plays one of the 0x1065d6a0 sounds (channel 4, volume 1.0, attenuation 0.8) from the edict at +0x2e0 to the players that can hear it, reliably (PAS attenuation filter inline)
 
 	char pad4[0x2e0 - 4];
