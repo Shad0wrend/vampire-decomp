@@ -83601,6 +83601,20 @@ void CBasePlayer::sub_1017bf10(int mode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017c070 size=0x103
+#include "CBaseEntity.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "CUnknown1017c070.h"
+
+void CUnknown1017c070::sub_1017c070(CBaseEntity *pEnt)
+{
+	EHANDLE h = pEnt;
+	if (m_List.Find(h) == -1)
+		m_List.AddToTail(h);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017c1d0 size=0xf0
 #include "CBasePlayer.h"
 #include "CBaseEntity.h"
