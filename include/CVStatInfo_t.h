@@ -18,8 +18,8 @@ struct CVStatKV	// the key/value node the stat data is loaded from; slot 13 is G
 	virtual CVStatKV *vfunc2(const char *pszName);	// slot 2: the sub key of that name, 0 when there is none
 	virtual CVStatKV *vfunc3();	// slot 3: the next key of the same level, 0 at the end
 	virtual void a4();
-	virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9();
-	virtual void a10(); virtual void a11(); virtual void a12();
+	virtual void a5(); virtual void *vfunc6(const char *pszKey); virtual void a7(); virtual void a8(); virtual void a9();
+	virtual int vfunc10(const char *pszKey, int nDefault); virtual float vfunc11(const char *pszKey, float flDefault); virtual char vfunc12(const char *pszKey, int nDefault);
 	virtual const char *vfunc13(const char *pszKey, const char *pszDefault);
 };
 
@@ -33,9 +33,14 @@ public:
 	int m_field0010;	// 0x0010: set by PreCache to the record's index
 	const char *m_pszTitle;	// 0x0014
 	const char *m_pszName;	// 0x0018
-	char m_pad001c[0x60 - 0x1c];
+	const char *m_apszHelpText[12];	// 0x001c
+	char m_pad004c[0x60 - 0x4c];
 	CVDmgBlock16_t m_max0060;	// 0x0060: the "Max" value record
-	char m_pad0070[0x100 - 0x70];
+	char m_pad0070[0xd8 - 0x70];
+	const char *m_apszGfxHud[2];	// 0x00d8
+	const char *m_pszInfoModel;	// 0x00e0
+	const char *m_apszSound[6];	// 0x00e4
+	int m_nForceOrdering;	// 0x00fc
 	CVStatLevelEntry_t *m_pLevels;	// 0x0100
 	unsigned int m_flags;	// 0x0104
 	char m_bField0108;	// 0x0108
