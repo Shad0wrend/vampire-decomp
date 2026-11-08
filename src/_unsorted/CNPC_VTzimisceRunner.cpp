@@ -241,6 +241,43 @@ void CNPC_VTzimisceRunner::vfunc433()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c35d0 size=0x203
+#include "CNPC_VTzimisceRunner.h"
+#include "CAI_BaseNPC.h"
+#include "CEHandleGet.h"
+
+struct CTroikaBase102a1910 { int sub_102a1910(int *pEvent); };
+
+// TARGET: CNPC_VTzimisceRunner::vfunc442
+void CNPC_VTzimisceRunner::vfunc442(int *pEvent)
+{
+	switch (*pEvent) {
+	case 0x122:
+	case 0x123:
+	case 0x124:
+		sub_10289ee0(1);
+		m_flTime5db4 = m_f6330 + gpGlobals->curtime;
+		return;
+	case 0x130:
+		if (EHandle_Get(*(unsigned int *)&m_h6678)) {
+			float *pPos = ((CAI_BaseNPC *)EHandle_Get(*(unsigned int *)&m_h6678))->vfunc220();
+			m_v5dd0[0] = pPos[0];
+			*(m_v5dd0 + 1) = pPos[1];
+			m_v5dd0[2] = pPos[2];
+			sub_10273e80(0);
+			((CTroikaBase102a1910 *)this)->sub_102a1910(pEvent);
+			return;
+		}
+		break;
+	case 0x36:
+	case 0x37:
+		slot618();
+		break;
+	}
+	(this)->sub_102a1910(pEvent);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c3870 size=0xc0
 #include "CNPC_VTzimisceRunner.h"
 #include "CAI_Motor.h"
