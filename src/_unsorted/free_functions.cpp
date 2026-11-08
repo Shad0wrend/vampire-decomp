@@ -111375,6 +111375,85 @@ bool CUnknown101dce30::sub_101dce30(CUnknown101dc5a0Keys *pKeys, const char *psz
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dcf10 size=0x125
+#include "CUnknown1070b22c.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+extern CUnknown1070b22c *g_1070b22c;
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+struct CKeyValuesSlots
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10();
+	virtual float GetFloat(const char *pszKey, float flDefault);
+	virtual char GetBool(const char *pszKey, int nDefault);
+	virtual const char *GetString(const char *pszKey, const char *pszDefault);
+};
+
+struct CKeyValuesString
+{
+	const char *m_pszString;
+};
+
+struct CParticleEntry
+{
+	int m_nSlot;
+	char m_bDetach;
+	char m_b05;
+	char m_pad06[2];
+	const char *m_pszEntity;
+	float m_flRate;
+	float m_flOpacity;
+	float m_flSize;
+	const char *m_pszParticleName;
+	int m_nAttachType;
+	const char *m_pszAttachName;
+	float m_flStartTime;
+	int m_n28;
+};
+
+struct CParticleGlobals
+{
+	char m_pad[0xc];
+	float m_flCurTime;
+};
+
+extern CParticleGlobals *g_10739a74;
+extern const char g_105675a4[];
+CKeyValuesString *sub_10203950(CKeyValuesString *pOut, CKeyValuesSlots *pKeyValues, const char *pszKey);
+int sub_102027a0(const char *pszName);
+
+// TARGET: sub_101dcf10
+char __stdcall sub_101dcf10(CKeyValuesSlots *pKeyValues, CParticleEntry *pEntry)
+{
+	CKeyValuesString tmp;
+	if (pKeyValues)
+	{
+		const char *&rName = pEntry->m_pszParticleName;
+		rName = sub_10203950(&tmp, pKeyValues, "ParticleName")->m_pszString;
+		if (rName)
+		{
+			pEntry->m_pszEntity = sub_10203950(&tmp, pKeyValues, "Entity")->m_pszString;
+			pEntry->m_flRate = pKeyValues->GetFloat("RateMin", 1.0f);
+			pEntry->m_flOpacity = pKeyValues->GetFloat("OpacityMin", 1.0f);
+			pEntry->m_flSize = pKeyValues->GetFloat("SizeMin", 1.0f);
+			pEntry->m_nAttachType = sub_102027a0(pKeyValues->GetString("AttachType", g_106b8540));
+			pEntry->m_pszAttachName = sub_10203950(&tmp, pKeyValues, "AttachName")->m_pszString;
+			pEntry->m_flStartTime = g_10739a74->m_flCurTime;
+			pEntry->m_n28 = 0;
+			pEntry->m_bDetach = pKeyValues->GetBool("Detach", 0);
+			if (!_strcmpi(STRINGR_F(pEntry->m_pszEntity), g_105675a4))
+				pEntry->m_b05 = 0;
+			g_1070b22c->vfunc17((int)(STRINGR_F(pEntry->m_pszParticleName)), 1);
+			return 1;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dd090 size=0x26e
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
