@@ -50760,6 +50760,93 @@ int CDialog::sub_100dfd30(CBaseEntity *pNPC, CBaseEntity *pSpeaker, int nArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dffa0 size=0x246
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CDialog.h"
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+#include "FileSystemViews.h"
+#include <string.h>
+
+extern IFileSystemView *g_1070b238;
+bool __cdecl sub_100df120(DialogLine *pLine);
+const char *__cdecl sub_101d3730(const char *pszFormat, const char *pszArg);
+
+namespace block_100dffa0 {
+bool __cdecl sub_100df010(DialogLine *pLine)
+{
+	return pLine->m_nResponse == -1;
+}
+} using namespace block_100dffa0;
+
+int CDialog::sub_100dffa0(CBaseEntity *pNPC, CBaseEntity *pSpeaker, int nArg)
+{
+	ScopeTrace trace("CDialog::LogAutoendFloats", g_106b8540, g_106b8540);
+	int nCount;
+	int i;
+
+	if (pSpeaker)
+		m_hSpeaker = *((IHandleEntity *)pSpeaker)->vfunc1();
+	else
+		m_hSpeaker = 0xffffffff;
+	if (pNPC)
+		m_hNPC = *((IHandleEntity *)pNPC)->vfunc1();
+	else
+		m_hNPC = 0xffffffff;
+	if (EHandle_Get(m_hNPC) && EHandle_Get(m_hSpeaker))
+	{
+		nCount = 0;
+		if (sub_100e5410(sub_100e7310()))
+		{
+			CDialogTable_t *pTable = m_pTable;
+			i = 0;
+			if (pTable->m_nEntries > 0)
+			{
+				pNPC = 0;
+				do
+				{
+					CDialogEntry_t *pEntry = (CDialogEntry_t *)((char *)pTable->m_pEntries + (int)pNPC);
+					int nKey = pEntry->m_data[0];
+					if (sub_100df010((DialogLine *)pEntry))
+					{
+						bool bLoop = true;
+						for (pSpeaker = (CBaseEntity *)(nKey + 1); bLoop; pSpeaker = (CBaseEntity *)((int)pSpeaker + 1))
+						{
+							DialogLine *pNext = sub_100e19f0((int)pSpeaker);
+							if (!pNext || sub_100df010(pNext))
+								break;
+							if (sub_100df120(pNext))
+							{
+								const char *pszPath = sub_101d3730("%s\n", sub_100e1680(nKey, "lip", 0));
+								g_1070b238->vfunc3(pszPath, strlen(pszPath), nArg);
+								nCount++;
+								bLoop = false;
+							}
+						}
+					}
+					pTable = m_pTable;
+					i++;
+					pNPC = (CBaseEntity *)((int)pNPC + 0x34);
+				} while (i < pTable->m_nEntries);
+			}
+			((EHANDLE *)&m_hSpeaker)->Set(NULL);
+			((EHANDLE *)&m_hNPC)->Set(NULL);
+			sub_100e5770();
+			return nCount;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e09a0 size=0x77
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
