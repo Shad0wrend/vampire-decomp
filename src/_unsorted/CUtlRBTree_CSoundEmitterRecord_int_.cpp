@@ -28,3 +28,10 @@ static void (CUtlRBTree<CSoundEmitterRecord, int>::*s_InsertRebalance)(int) = &C
 #include "CSoundEmitterSystemBase.h"
 static void (CUtlRBTree<CSoundEmitterRecord, int>::*s_RemoveRebalance)(int) = &CUtlRBTree<CSoundEmitterRecord, int>::RemoveRebalance;
 // END FUNCTION
+
+// FUNCTION: 0x101b9250 size=0x1f3
+// TARGET: ?RotateLeft@?$CUtlRBTree@UCSoundEmitterRecord@@H@@QAEXH@Z
+#include "utlrbtree.h"
+#include "CSoundEmitterSystemBase.h"
+static void (CUtlRBTree<CSoundEmitterRecord, int>::*s_RotateLeft)(int) = &CUtlRBTree<CSoundEmitterRecord, int>::RotateLeft;
+// END FUNCTION
