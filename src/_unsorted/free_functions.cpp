@@ -218943,6 +218943,20 @@ void CUtlMemory12::sub_103dc520(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dc5b0 size=0x9e
+#include "CUnknown103dc5b0.h"
+
+void __cdecl operator delete(void *);
+
+CUnknown103dc5b0 *CUnknown103dc5b0::sub_103dc5b0(unsigned char flags)
+{
+	this->~CUnknown103dc5b0();
+	if (flags & 1)
+		operator delete(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dc6c0 size=0x6e
 #include "CBaseEntity.h"
 
