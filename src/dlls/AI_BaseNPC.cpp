@@ -1,6 +1,113 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10265ad0 size=0x2f7
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CAI_BaseNPC_vfunc144.h"
+#include "CBaseEntity.h"
+#include "CEHandleGet.h"
+#include "CUnknown100290c0.h"
+#include "CDevFlagObj.h"
+#include "CCineNPC.h"
+#include "CUnknown103158f0.h"
+#include "IPhysicsObject.h"
+
+#define FILE_ "E:\\Vampire\\main\\dlls\\AI_BaseNPC.cpp"
+
+struct CScriptView144
+{
+	char m_pad0000[0x204];
+	unsigned int m_flags204;
+	char m_pad0208[0x5f91 - 0x208];
+	char m_b5f91;
+};
+
+extern CDevFlagObj *g_10924a6c;
+extern CDevFlagObj *g_106bbaa4;
+
+void CAI_BaseNPC::vfunc144(int a)
+{
+	CAI_BaseNPCUnit144 *p = (CAI_BaseNPCUnit144 *)this;
+	const CAI_NPCDamageRecord *pInfo = (const CAI_NPCDamageRecord *)a;
+
+	if (p->m_pSchedule5c38 && (int)p->m_pSchedule5c38 == p->sub_102cc1f0(0x3a))
+		return;
+
+	if (p->m_nState5cc0 == 4)
+	{
+		if (((CUnknown100290c0 *)g_10566458)->sub_100290c0((unsigned int *)&p->m_hScript5d74))
+		{
+			CScriptView144 *pScript = (CScriptView144 *)((CUnknown100290c0 *)g_10566458)->sub_100290c0((unsigned int *)&p->m_hScript5d74);
+			if (pScript->m_b5f91 && (((CScriptView144 *)((CUnknown100290c0 *)g_10566458)->sub_100290c0((unsigned int *)&p->m_hScript5d74))->m_flags204 & 0x2080) != 0x80)
+			{
+				p->m_LastDamage.m_n00 = pInfo->m_n00;
+				p->m_LastDamage.m_n04 = pInfo->m_n04;
+				p->m_LastDamage.m_n08 = pInfo->m_n08;
+				p->m_LastDamage.m_n0c = pInfo->m_n0c;
+				p->m_LastDamage.m_vecForce.sub_1003e4b0(pInfo->m_vecForce);
+				p->m_LastDamage.m_vecPosition.sub_1003e4b0(pInfo->m_vecPosition);
+				p->m_LastDamage.m_n28 = pInfo->m_n28;
+				p->m_LastDamage.m_pInflictor = pInfo->m_pInflictor;
+				p->m_LastDamage.m_n30 = pInfo->m_n30;
+				p->m_LastDamage.m_n34 = pInfo->m_n34;
+				p->m_LastDamage.m_n38 = pInfo->m_n38;
+				p->m_LastDamage.m_n3c = pInfo->m_n3c;
+				p->m_LastDamage.m_n40 = pInfo->m_n40;
+				p->m_LastDamage.m_n44 = pInfo->m_n44;
+				p->m_LastDamage.m_b48 = pInfo->m_b48;
+				p->m_LastDamage.m_b49 = pInfo->m_b49;
+				p->m_LastDamage.m_b4a = pInfo->m_b4a;
+				return;
+			}
+			((CCineNPC *)((CUnknown100290c0 *)g_10566458)->sub_100290c0((unsigned int *)&p->m_hScript5d74))->sub_101a8c30();
+			IPhysicsObject *pPhys;
+			if (!g_106bbaa4->vfunc1() && g_106bbaa4->m_n2c && (pPhys = p->m_pPhysObj36c))
+			{
+				Vector vecTmp;
+				Vector vecPos;
+				vecPos = *p->vfunc263(&vecTmp);
+				pPhys->vfunc39((float *)&vecPos, 0);
+			}
+		}
+	}
+
+	p->vfunc511();
+	if (p->m_n153c == -1 || !p->m_h1538.Get())
+		p->vfunc488();
+
+	p->sub_10265a90(pInfo->m_pInflictor);
+	if (((CBaseEntity *)p)->sub_100b3700() & 0x2000)
+	{
+		*(int *)((char *)p + 0x1ec) = 0;
+		p->sub_10265a40();
+	}
+	p->sub_1032b9b0(a);
+	p->m_pszFile1b3c = FILE_;
+	p->m_nLine1b40 = 0x217;
+	p->m_nIdealState5cc4 = 7;
+	g_10924a6c->vfunc1();
+	p->sub_10269a20(0x4c);
+	p->m_hAttacker5b7c = pInfo->m_pInflictor;
+	p->m_b5b80 = 1;
+	p->sub_1028ae60();
+	if (p->m_pSquad5da4)
+		((CUnknown103158f0 *)p->m_pSquad5da4)->sub_103158f0((CBaseEntity *)p);
+	if ((char)p->vfunc552())
+		p->sub_102695d0();
+	else
+		sub_101babc0(0x20, p->vfunc217(), 0x180, 30.0f, 0);
+	p->m_pszFile1b3c = FILE_;
+	p->m_nLine1b40 = 0x241;
+	p->m_nIdealState5cc4 = 7;
+	p->sub_1026e340(7);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026d050 size=0x4f
 struct SSquadView { void sub_10316700(void *pNPC); };
 struct SDbgSink { void sub_102dfc10(const char *); };
