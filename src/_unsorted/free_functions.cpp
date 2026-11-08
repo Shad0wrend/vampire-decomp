@@ -75589,6 +75589,77 @@ int *sub_10156a00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10156a80 size=0x1da
+#include "CBaseEntity.h"
+#include "CBaseAnimating.h"
+#include "CRagdollProp.h"
+#include "Vector.h"
+
+void sub_10156ce0(CBaseAnimating *pAnimating);
+void sub_10138720(float *pMatrix, int nColumn, float *pOut);
+void sub_10138760(float *pIn, int nColumn, float *pMatrix);
+CBaseEntity *sub_100a9ab0(const char *pszClass, const float *pOrigin, const float *pAngles, CBaseEntity *pOwner);
+extern Vector g_1070d9d0;
+
+struct CRagdollBones350
+{
+	float m_Mats[350][12];
+};
+
+struct CRagdollDamageView
+{
+	char m_pad0000[0x10];
+	Vector m_vecForce10;
+	Vector m_vecPosition1c;
+	Vector GetDamageForce() const { return m_vecForce10; }
+	Vector GetDamagePosition() const { return m_vecPosition1c; }
+};
+
+struct CRagdollEFlagsView
+{
+	char m_pad0000[0x268];
+	unsigned int m_nFlags268;
+	bool IsEFlagSet(unsigned int nMask) const { return (m_nFlags268 & nMask) != 0; }
+};
+
+// TARGET: sub_10156a80
+CRagdollProp *sub_10156a80(CBaseAnimating *pAnimating, int forceBone, CRagdollDamageView *pInfo, int collisionGroup)
+{
+	sub_10156ce0(pAnimating);
+	CRagdollProp *pRagdoll = (CRagdollProp *)sub_100a9ab0("prop_ragdoll", (const float *)((CRagdollProp *)pAnimating)->vfunc217(), &g_1070d9d0.x, 0);
+	((CBaseAnimating *)pRagdoll)->sub_10097310(pAnimating);
+	pRagdoll->sub_10155380();
+	CRagdollBones350 bones;
+	CRagdollBones350 next;
+	((CRagdollProp *)pAnimating)->vfunc257(&bones, 0xfffc);
+	next = bones;
+	if (((CRagdollEFlagsView *)pAnimating)->IsEFlagSet(1 << 12))
+		pAnimating->sub_100b1d10();
+	{
+		Vector vel = *(Vector *)((char *)pAnimating + 0x3bc);
+		if (vel.LengthSqr() > 0.0f)
+		{
+			int nBones = *(int *)((char *)pAnimating->sub_100952d0(-1) + 0xf0);
+			if (nBones > 0)
+			{
+				Vector vecDelta = vel * 0.1f;
+				float *pMat = next.m_Mats[0];
+				int i = nBones;
+				do
+				{
+					sub_10138720(pMat, 3, &vel.x);
+					vel += vecDelta;
+					sub_10138760(&vel.x, 3, pMat);
+					pMat += 12;
+				} while (--i);
+			}
+		}
+	}
+	pRagdoll->sub_101554a0(pInfo->GetDamageForce(), forceBone, pInfo->GetDamagePosition(), &bones, &next, 0.1f, collisionGroup, 1);
+	return pRagdoll;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10156ce0 size=0x35
 #define P10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
     virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
