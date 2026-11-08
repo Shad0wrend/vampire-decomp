@@ -4659,6 +4659,7 @@
 0x100079d7 func   ?sub_10223690@CBaseKeyframedMover@@QAEPAUCKeyframeX@@XZ CBaseKeyframedMover::sub_10223690
 0x100079e1 func   ?vfunc32@CTriggerBombSite@@QAE_NPAX@Z CTriggerBombSite::vfunc32
 0x100079e6 func   ?vfunc451@CNPC_VCop@@UAEHXZ CNPC_VCop::vfunc451
+0x100079eb func   ?sub_1006f8f0@CBaseCineCam@@QAEXXZ CBaseCineCam::sub_1006f8f0
 0x100079f0 func   ?sub_103eb0b0@@YAHXZ sub_103eb0b0
 0x100079f5 func   ?sub_101eddf0@@YA_NXZ sub_101eddf0
 0x100079fa func   ?sub_10134c40@CUnknown10134c40@@QAEXPAUCInputData100bc0f0@@@Z CUnknown10134c40::sub_10134c40

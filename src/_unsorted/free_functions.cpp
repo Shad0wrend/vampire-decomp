@@ -18634,6 +18634,72 @@ void CEnt1006f870::sub_1006f870()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006f8f0 size=0x3ed
+#include "CBaseCineCam.h"
+#include "CBasePlayer.h"
+#include "Vector.h"
+#include <math.h>
+struct CCineFovView { char pad[0xd4]; int m_n0xd4; char pad2[0x100 - 0xd8]; float m_fov; };
+typedef Vector *(__fastcall *PFN_VecSlot)(void *);
+#define VSLOT(n) ((PFN_VecSlot)(*(void ***)this)[n])
+extern float g_104454d0;
+extern float g_1044eb08;
+void sub_1013ca00(Vector *, Vector *, Vector *, Vector *, int);
+void sub_10139970(Vector *, Vector *);
+
+void CBaseCineCam::sub_1006f8f0()
+{
+	if (sub_1006f7d0())
+		return;
+	sub_1006edb0();
+	CCineFovView *pFov = sub_1006ede0();
+	Vector A = *VSLOT(217)(this);
+	Vector S = *VSLOT(219)(this);
+	Vector L = sub_1006f670();
+	if (m_nMode594 != 2) {
+		if (m_nMode594 == 1) {
+			A = sub_1006f010(0);
+		} else if (m_nMode594 == 0) {
+			A = sub_1006f010(1);
+		}
+		if (sub_1006edb0() & 0x20) {
+			Vector P2 = sub_1006f010(2);
+			Vector P3 = sub_1006f010(3);
+			if (P3.z > P2.z) {
+				Vector tmp = P2;
+				P2 = P3;
+				P3.sub_1003e4b0(tmp);
+			}
+			Vector out;
+			sub_1013ca00(&P3, &L, &A, &out, 0);
+			float fov = pFov->m_fov;
+			float half = fov * g_1044eb08 * g_104454d0;
+			float dx = out.x - P3.x;
+			float dy = out.y - P3.y;
+			float dz = out.z - P3.z;
+			float dist;
+			float r = (dist = FastSqrt(dx * dx + dy * dy + dz * dz)) / sin(half);
+			float len = (float)sqrt(pow(r, 2.0) + pow(dist, 2.0));
+			Vector dir = L - A;
+			VectorNormalize(dir);
+			dir *= -1.0f;
+			A = L + dir * len;
+		}
+	}
+	if (pFov->m_n0xd4 > 0) {
+		Vector d = L - *VSLOT(220)(this);
+		sub_10139970(&d, &S);
+	}
+	m_vecShot5ec = A;
+	m_vecLook5f8 = L;
+	m_vecShot604 = S;
+	m_flFov634 = pFov->m_fov;
+	m_flTime5cc = gpGlobals->curtime;
+	if (m_bForcePlayerLook && ((EHANDLE *)&m_hTarget5d0)->Get())
+		((CBasePlayer *)((EHANDLE *)&m_hTarget5d0)->Get())->sub_10178590(m_vecLook5f8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006fde0 size=0x1
 void sub_1006fde0()
 {
