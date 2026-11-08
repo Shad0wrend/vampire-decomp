@@ -203,6 +203,8 @@ public:
 	bool sub_102f2330(int b);	// stub 0x10001e51: "DoFindPath", called directly
 	bool sub_102ed430(const Vector *pPosition, int a, int b, int c);	// path to the node nearest pPosition (sub_102f3c10 asks the owner's graph): stamps the owner's value at +0x156c and the frame count into +8 / +0xc, asks the pathfinder (sub_102ff3e0 with a, b), sets up the route (flag value 4, the node, its arrival data) and stores the squared distance from pPosition to the route's goal position in the float at +0x14; false when any step fails (ret 0x10: four stack arguments, the last one unused)
 	Vector *sub_102ee140();	// stub 0x100071fd: the position the route is heading for
+	float sub_102f2fc0();	// stub 0x100049b7: the route's float at +0x20 (goal tolerance)
+	bool sub_102f2ea0();	// with the owner's origin within the goal tolerance (2D, squared distance kept at +0x14) and the height difference within the owner's slot 522, runs vfunc8 and succeeds; never for nav types 1 / 3
 	void sub_102ee220(const Vector *pPosition);	// stub 0x1000481d: hands the navigator a position to head for
 	CBaseEntity *sub_102f05b0(void *pEnt);	// stub 0x100031ac
 	void sub_102f0400();	// stub 0x10006744, run when the motor reports 1
