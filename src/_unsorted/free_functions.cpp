@@ -157517,6 +157517,38 @@ bool CAI_BaseNPC::sub_10278220(const Vector *pStart, const Vector *pEnd, int mas
 }
 // END FUNCTION
 
+// FUNCTION: 0x102784a0 size=0x144
+#include "CAI_BaseNPC.h"
+#include "QAngle.h"
+
+void sub_10139610(const QAngle &angles, Vector *pForward, Vector *pRight, Vector *pUp);
+
+bool CAI_BaseNPC::sub_102784a0(const Vector *pStart, int mask)
+{
+	Vector vecStep;
+	Vector vecMinus;
+	Vector vecPlus;
+	Vector vecRight;
+	if (sub_10278220(pStart, (const Vector *)vfunc220(), mask))
+		return true;
+	sub_10139610(*(QAngle *)vfunc221(), 0, &vecRight, 0);
+	vecStep = vecRight * 48.0f;
+	vecStep.z = 0;
+	vecMinus = vecPlus = *(Vector *)vfunc220();
+	Vector vecStart = *pStart;
+	for (int i = 0; i < 5; i++)
+	{
+		vecMinus = vecMinus - vecStep;
+		vecPlus = vecPlus + vecStep;
+		if (sub_10278220(&vecStart, &vecMinus, mask))
+			return true;
+		if (sub_10278220(&vecStart, &vecPlus, mask))
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10278c80 size=0x20
 #include <math.h>
 #include "CUnknown10290040.h"

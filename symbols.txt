@@ -1608,6 +1608,7 @@
 0x10003422 func   ?sub_10279c20@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_10279c20
 0x10003427 func   _monster_generic monster_generic
 0x1000342c func   ?sub_100c8270@CUtlVector4@@QAEHHPBH@Z CUtlVector4::sub_100c8270
+0x10003431 func   ?sub_102784a0@CAI_BaseNPC@@QAE_NPBVVector@@H@Z CAI_BaseNPC::sub_102784a0
 0x10003436 func   ?vfunc5@CWeaponMelee_GargoyleFist@@UAEPAVCBaseCombatWeapon@@I@Z CWeaponMelee_GargoyleFist::vfunc5
 0x1000343b func   ?sub_102d2ee0@CAI_Hint@@QAEEXZ CAI_Hint::sub_102d2ee0
 0x10003440 func   ?sub_102056d0@CUnknown102056d0@@QAEPAU1@XZ CUnknown102056d0::sub_102056d0
