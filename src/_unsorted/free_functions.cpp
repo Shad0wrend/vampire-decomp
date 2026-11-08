@@ -116607,6 +116607,52 @@ void CUnknown101e0f00::sub_101e3a30(S1033d380 *pObj, int id)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e3af0 size=0xba
+#include "CBaseCombatCharacter.h"
+#include "CUnknown101e3af0.h"
+#include "CUnknown101e0f00.h"
+#include "S1033d380.h"
+
+extern "C" __declspec(dllimport) void __cdecl DevMsg(int level, const char *fmt, ...);
+extern CUnknown101e0f00Entry *g_10739a74;
+
+namespace block_101e3af0 {
+struct CDisciplineMgrUnit : CUnknown101e0f00
+{
+	int sub_101e18c0(int id);
+};
+struct CDisciplineTailUnit
+{
+	CUnknown101e0f00Fx *sub_101e0410(int n);
+};
+}
+using namespace block_101e3af0;
+
+void CUnknown101e3af0::sub_101e3af0(CBaseCombatCharacter *pCharacter, int discipline, int flags)
+{
+	CDisciplineMgrUnit *pMgr = (CDisciplineMgrUnit *)this;
+	S1033d380 *pChar = (S1033d380 *)pCharacter;
+	if (!pChar->sub_1033d2f0(discipline))
+		return;
+	int index = pMgr->sub_101e12a0(discipline);
+	if (index == -1)
+		return;
+	CUnknown101e0f00Entry *pEntry = (CUnknown101e0f00Entry *)pMgr->m_ppEntries[index];
+	g_10739a74 = pEntry;
+	DevMsg(3, "Discipline<%s> RemoveEffect\n", pEntry->m_pszName ? pEntry->m_pszName : "");
+	if (pMgr->sub_101e18c0(discipline)) {
+		int nValue = pChar->sub_1033d410(discipline);
+		((CDisciplineTailUnit *)pEntry->m_tail)->sub_101e0410(nValue)->sub_101dfe80(pChar, discipline, (char)flags);
+		pChar->sub_1033d190(discipline);
+	} else {
+		((CUnknown101e0f00Src *)pEntry->m_srcInstant)->sub_101dd3a0(pCharacter, discipline);
+		((CUnknown101e0f00Src *)pEntry->m_srcHit)->sub_101dd3a0(pCharacter, discipline);
+		pChar->sub_1033d190(discipline);
+	}
+	g_10739a74 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e3be0 size=0x1a
 unsigned int __stdcall sub_101e1870(unsigned int a)
 {
