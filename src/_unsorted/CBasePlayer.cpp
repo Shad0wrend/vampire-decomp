@@ -2984,6 +2984,78 @@ void CBasePlayer::sub_10178660(CBaseEntity *pEnt, char bCenter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10178a10 size=0x25e
+#include "CBaseCombatCharacter.h"
+#include "CBasePlayer.h"
+#include "Vector.h"
+#include "QAngle.h"
+#include "animevent_t.h"
+extern "C" int sscanf(const char *, const char *, ...);
+CBaseEntity *sub_10070550(const char *, CBasePlayer *);
+void sub_10139550(const QAngle &, Vector *);
+// TARGET: CBasePlayer::vfunc259
+void CBasePlayer::vfunc259(animevent_t *pEvent)
+{
+	if ( vfunc406() )
+		return;
+	if ( pEvent->pSource != (CBaseEntity *)this )
+		return;
+	switch ( pEvent->event )
+	{
+	case 0x802: case 0x803: case 0x804: case 0x805:
+		return;
+	case 0x80c:
+	{
+		char name[64];
+		float c = 1.0f, b = 0.2f, a = 0.2f, d;
+		if ( sscanf(pEvent->options, "%s %f %f %f", name, &c, &b, &a) > 1 && c > 0.0f )
+		{
+			if ( a + b > c )
+			{
+				float f = c / (a + b);
+				b = b * f;
+				a = f * a;
+			}
+			float t = c - (a + b);
+			d = t > 0.0f ? t : 0.0f;
+			((CBaseCombatCharacter *)this)->sub_10106580(name, 0, b, d, a, 1.0f);
+		}
+		return;
+	}
+	case 0xfd2:
+	{
+		const char *n = pEvent->options;
+		if ( n && *n )
+		{
+			CBaseEntity *e = sub_10070550(n, this);
+			if ( e )
+			{
+				*(char *)((char *)e + 0x640) = 1;
+				sub_1017cef0(e);
+				*(char *)((char *)e + 0x5e8) = 0;
+			}
+		}
+		return;
+	}
+	case 0xfd3:
+	{
+		sub_1017cef0(0);
+		Vector dir;
+		sub_10139550(*(QAngle *)vfunc221(), &dir);
+		dir.z = 0;
+		VectorNormalize(dir);
+		Vector off = dir * 1000.0f;
+		Vector r = off + vfunc193();
+		sub_10178590(r);
+		return;
+	}
+	default:
+		sub_1032e330(pEvent);
+		return;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10178d10 size=0x63
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
