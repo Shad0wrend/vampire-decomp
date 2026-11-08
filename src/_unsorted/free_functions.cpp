@@ -179774,6 +179774,50 @@ void CUtlRBTree16Unit::sub_103153a0(unsigned short elem)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10315610 size=0x12f
+#include "CBitStringSaveRestoreOps.h"
+
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern int g_1060dde8[];
+extern int g_10614c70[2];
+
+inline ISaveRestoreOps *GetBitStringOps()
+{
+    static CBitStringSaveRestoreOps<CBitString> s_ops;
+    return (ISaveRestoreOps *)&s_ops;
+}
+
+// TARGET: sub_10315610
+int *sub_10315610()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 9, "m_memory", {8, 0}, 1, 2, 0, 0, 0, (datamap_t *)g_1060dde8 },
+        { 15, "m_flSquadSoundWaitTime", {0x60, 0}, 1, 2 },
+        { 10, "m_squadSlotsUsed", {0x64, 0}, 1, 2, 0, GetBitStringOps(), 0 },
+        { 12, "m_hFocusEntity", {0x70, 0}, 1, 2, 0, 0, 0 },
+        { 15, "m_flFocusExpireTimer", {0x74, 0}, 1, 2, 0, 0, 0 },
+    };
+    g_10614c70[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_10614c70[0] = (int)&dataDesc[1];
+    return g_10614c70;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10315790 size=0x45
 struct Node { Node *next; const char *name; };
 extern Node *g_10936c68;
