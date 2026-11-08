@@ -163628,6 +163628,78 @@ void __fastcall sub_102ca760(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ca780 size=0x364
+#include "CUnknown102ca630.h"
+#include "CAI_BaseNPCTroika.h"
+#include "globalvars.h"
+
+void CUnknown102ca630::sub_102ca780(CAI_BaseNPCTroika *pNpc, int *pCrimA, int *pSuperA, int *pCrimB, int *pSuperB,
+	float *pCrimPos, float *pSuperPos, CBaseEntity **ppCrimEnt, CBaseEntity **ppSuperEnt)
+{
+	if (m_nRecs == 0) {
+		*pCrimA = 0; *pSuperA = 0; *pCrimB = 0; *pSuperB = 0;
+		return;
+	}
+	CUnknown102ca630Rec *pRec = m_recs;
+	CUnknown102ca630Rec *pEnd = pRec + m_nRecs;
+	while (pRec < pEnd) {
+		if (*(float *)((char *)pRec + 0x18) < gpGlobals->curtime) {
+			sub_102ca460(pRec);
+			pEnd--;
+		} else {
+			pRec++;
+		}
+	}
+	int l10 = 0, l14 = 0, l18 = 0, l1c = 0;
+	Vector vecCrim(0, 0, 0);
+	Vector vecSuper(0, 0, 0);
+	CBaseEntity *pCrimEnt = 0;
+	CBaseEntity *pSuperEnt = 0;
+	for (pRec = m_recs; pRec < pEnd; pRec++) {
+		int nLevel = pRec->m_nLevel;
+		if (!pNpc->sub_1028ebc0(pRec))
+			continue;
+		switch (pRec->m_nType) {
+		case 1:
+			goto crim;
+		case 2:
+			if (nLevel >= *pCrimB && nLevel > l18) {
+				vecSuper = pRec->GetPos();
+				pSuperEnt = pRec->OwnerEntity();
+				l18 = nLevel;
+			}
+			if (nLevel >= *pSuperB && nLevel > l1c) {
+				vecSuper = pRec->GetPos();
+				pSuperEnt = pRec->OwnerEntity();
+				l1c = nLevel;
+			}
+			break;
+		default:
+		crim:
+			if (nLevel >= *pCrimA && nLevel > l10) {
+				vecCrim = pRec->GetPos();
+				pCrimEnt = pRec->OwnerEntity();
+				l10 = nLevel;
+			}
+			if (nLevel >= *pSuperA && nLevel > l14) {
+				vecCrim = pRec->GetPos();
+				pCrimEnt = pRec->OwnerEntity();
+				l14 = nLevel;
+			}
+			break;
+		}
+	}
+	*pCrimA = l10;
+	*pSuperA = l14;
+	*pCrimB = l18;
+	*pSuperB = l1c;
+	if (pCrimPos) { pCrimPos[0] = vecCrim.x; pCrimPos[1] = vecCrim.y; pCrimPos[2] = vecCrim.z; }
+	if (pSuperPos) { pSuperPos[0] = vecSuper.x; pSuperPos[1] = vecSuper.y; pSuperPos[2] = vecSuper.z; }
+	if (ppCrimEnt) *ppCrimEnt = pCrimEnt;
+	if (ppSuperEnt) *ppSuperEnt = pSuperEnt;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cabd0 size=0x88
 #include "CUnknown102cabd0.h"
 
