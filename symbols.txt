@@ -3232,6 +3232,7 @@
 0x100059b1 func   ?sub_10091fe0@@YIMPAVCBaseAnimating@@HHM@Z sub_10091fe0
 0x100059b6 func   ?sub_102087e0@CItemContainer@@QAEPAV1@XZ CItemContainer::sub_102087e0
 0x100059bb func   ??0CAmbientGeneric@@QAE@XZ CAmbientGeneric::CAmbientGeneric
+0x100059c0 func   ?sub_103de500@@YAXXZ sub_103de500
 0x100059ca func   ?vfunc1@CTETextMessage@@UAEHXZ CTETextMessage::vfunc1
 0x100059cf func   ?sub_10026c70@CBaseEntity@@QAEXXZ CBaseEntity::sub_10026c70
 0x100059d4 func   ?sub_10062ec0@CUnknown10062ec0@@QAEHXZ CUnknown10062ec0::sub_10062ec0
