@@ -13242,6 +13242,7 @@
 0x10013ade func   ?sub_102edaa0@CUnknown102edaa0@@QAEHHHHHHHH@Z CUnknown102edaa0::sub_102edaa0
 0x10013ae3 func   ?vfunc269@CBaseCombatWeapon@@UAEXPAV1@VVector@@@Z CBaseCombatWeapon::vfunc269
 0x10013ae8 func   ?vfunc15@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHH@Z CTempEntsSystem::vfunc15
+0x10013aed func   ?vfunc433@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc433
 0x10013af2 func   ?sub_100d9ec0@@YAXXZ sub_100d9ec0
 0x10013af7 func   ?vfunc1@CTEBeamSpline@@UAEHXZ CTEBeamSpline::vfunc1
 0x10013afc func   ?sub_1035b180@@YGXH@Z sub_1035b180
