@@ -4906,6 +4906,7 @@
 0x10008080 func   ?sub_103b5420@@YADXZ sub_103b5420
 0x10008085 func   ?sub_101f5e40@@YIXPAPAX@Z sub_101f5e40
 0x1000808a func   ?sub_1042ba00@CUnknown1042ba00@@QAEXH@Z CUnknown1042ba00::sub_1042ba00
+0x1000808f func   ?sub_1009a760@@YAHXZ sub_1009a760
 0x10008094 func   ?sub_103d6390@CNPC_VWerewolf@@QAEPAVCBaseEntity@@PAX@Z CNPC_VWerewolf::sub_103d6390
 0x10008099 func   ?vfunc127@CNPC_VChangBros@@QAEHH@Z CNPC_VChangBros::vfunc127
 0x1000809e func   ?vfunc5@CGameMovement@@UAEXXZ CGameMovement::vfunc5

@@ -32795,6 +32795,69 @@ int sub_1009a500()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009a760 size=0x33a
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);
+SendProp sub_1000c14e(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, void *proxy);
+SendProp sub_10011acc(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, void *proxy);
+SendProp sub_101ab220(const char *pVarName, int offset, int sizeofVar);
+void sub_10099d40();
+void sub_10099f20();
+void sub_10099e00();
+void sub_102464d0();
+void sub_1009a030();
+void sub_1009a0c0();
+void sub_102463c0();
+void sub_1009ab70();
+extern SendTable g_106cec14;
+extern SendTable g_106cfe98;
+extern SendTable g_106e816c;
+extern SendTable g_106cf1d4;
+extern const char *g_10552830;
+
+// TARGET: sub_1009a760
+int sub_1009a760()
+{
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("AnimTimeMustBeFirst", 0, &g_106cfe98, (void *)sub_10099d40),
+		sub_1000c14e("m_vecAbsOrigin", 0x404, 0xc, -1, 4, 0.0f, 0.0f, (void *)sub_10099f20),
+		sub_10011acc("m_angAbsRotation[0]", 0x410, 4, 0xd, 0, (void *)sub_10099e00),
+		sub_10011acc("m_angAbsRotation[1]", 0x414, 4, 0xd, 0, (void *)sub_10099e00),
+		sub_10011acc("m_angAbsRotation[2]", 0x418, 4, 0xd, 0, (void *)sub_10099e00),
+		sub_10007bfd("m_nModelIndex", 0x1a4, 4, 0xb, 0, 0, 0),
+		sub_1000bf2d("m_Collision", 0x270, &g_106e816c, (void *)sub_102464d0),
+		sub_10007bfd("m_fEffects", 0x19c, 4, 0xc, 1, 0, 0),
+		sub_10007bfd("m_nRenderMode", 0x16c, 4, 8, 1, 0, 0),
+		sub_10007bfd("m_nRenderFX", 0x168, 4, 8, 1, 0, 0),
+		sub_10007bfd("m_clrRender.r", 0x1a0, 1, 8, 1, 0, 0),
+		sub_10007bfd("m_clrRender.g", 0x1a1, 1, 8, 1, 0, 0),
+		sub_10007bfd("m_clrRender.b", 0x1a2, 1, 8, 1, 0, 0),
+		sub_10007bfd("m_clrRender.a", 0x1a3, 1, 8, 1, 0, 0),
+		sub_10007bfd("m_nWaterLevel", 0x3e0, 4, 2, 1, 0, 0),
+		sub_10007bfd("m_CollisionGroup", 0x368, 4, 5, 1, 0, 0),
+		sub_101ab220("m_hAimEnt", 0x37c, 4),
+		sub_101ab220("m_hOwnerEntity", 0x364, 4),
+		sub_101ab220("m_hSoundOverrideEnt", 0x100, 4),
+		sub_10007bfd("m_bFakeSilence", 0x104, 1, 1, 1, 0, 0),
+		sub_10007bfd("movetype", 0, -1, 4, 1, 0, (void *)sub_1009a030),
+		sub_10007bfd("movecollide", 0, -1, 3, 1, 0, (void *)sub_1009a0c0),
+		sub_1000c14e("m_vecViewOffset", 0x184, 0xc, -1, 4, 0.0f, -121121.125f, (void *)sub_102463c0),
+		sub_1000bf2d("predictable_id", 0, &g_106cf1d4, (void *)sub_1009ab70),
+	};
+	g_106cec14.sub_1000e8fe(props + 1, 0x18, g_10552830);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009ab70 size=0xa1
 #include "CBaseEntity.h"
 
