@@ -99,7 +99,8 @@ public:
 	bool sub_10090e30(int sequence);	// "CBaseAnimating::IsValidSequence": scope trace (entity name), sub_1008d990(sequence) != 0
 	bool sub_10092460(int sequence, int node);	// "CBaseAnimating::HasPoseParameter"-named trace: scope trace (entity name), false without a sequence description (sub_1008d990), else true when the dword at +0x244 or +0x248 of it equals node
 	bool sub_10092380(int sequence, const char *name);	// "CBaseAnimating::HasPoseParameter01": scope trace (entity name), LookupPoseParameter(name), false when -1, else sub_10092460(sequence, index)
-	int sub_1008d990(int sequence);	// worker of IsValidSequence (stub 0x1000b4f6)
+	int sub_1008d990(int sequence);
+	void SetSequenceBox();	// worker of IsValidSequence (stub 0x1000b4f6)
 	int sub_1008f7b0(const char *label);	// "CBaseAnimating::LookupSequence": scope trace (entity name), over the models -1, 0, 1 the first non-negative studio lookup (sub_10428470) of the label plus the sequences of the earlier models, else -1
 	int sub_10092270(const char *name);	// "CBaseAnimating::LookupPoseParameter" (stub 0x10009ac5): scope trace (entity name), index of the first of 0x18 pose parameters of GetModelPtr(-1) whose name matches (case-insensitive), else -1
 	const char *sub_1008fe80(int sequence);	// "CBaseAnimating::GetSequenceName": scope trace (entity name), the name string at the offset in the first dword of the sequence description sub_1008d990 finds, "SEQUENCE_NOT_FOUND" when there is none
