@@ -153,6 +153,83 @@ void CBreakable::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010e100 size=0x34a
+#include "CBreakable.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CTakeDamageInfo.h"
+#include "CVDmg_t.h"
+#include "CVariantCopy.h"
+#include "Vector.h"
+
+struct CBrkColl {
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4();
+	virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9();
+	virtual void s10(); virtual void s11(); virtual void s12(); virtual void s13(); virtual void s14();
+	virtual void slot15(Vector *a, Vector *b);
+};
+struct COutputView {
+	void sub_100cd300(CVariantCopy value, void *pActivator, void *pCaller, float flDelay);
+};
+extern Vector g_1070ba40;
+
+static inline void SetHandle458(unsigned int &h, CEntityVSlots *p)
+{
+	if (p)
+		h = *p->slot1();
+	else
+		h = 0xffffffff;
+}
+
+// TARGET: CBreakable::sub_1010e100
+int CBreakable::sub_1010e100(void *pInfoV)
+{
+	CTakeDamageInfo info = *(CTakeDamageInfo *)pInfoV;
+	CEntityVSlots *self = (CEntityVSlots *)this;
+	if (self->slot140(info.m_pInflictor)) {
+		Vector dir, mins, maxs;
+		((CBrkColl *)((char *)this + 0x270))->slot15(&mins, &maxs);
+		if (info.m_pAttacker) {
+			if (info.m_pInflictor == info.m_pAttacker) {
+				dir = *((CEntityVSlots *)info.m_pAttacker)->slot220() - (mins + *self->slot214() * 0.5f);
+				if ((((CBaseEntity *)info.m_pInflictor)->sub_100b3700() & 0x80) && (m_flags204 & 0x100)) {
+					if ((info.m_pVDmg00 ? info.m_pVDmg00->m_field10 | info.m_nFlags38 : info.m_nFlags38) & 0x80)
+						info.m_flDamage = (float)m_iHealth;
+				}
+			} else {
+				dir = *((CEntityVSlots *)info.m_pAttacker)->slot220() - (mins + *self->slot214() * 0.5f);
+			}
+		} else {
+			Vector v;
+			v.sub_1010e530(-1.0f, 1.0f);
+			dir = v;
+		}
+		if (!sub_1010efc0())
+			return 0;
+		if ((info.m_pVDmg00 ? info.m_pVDmg00->m_field10 | info.m_nFlags38 : info.m_nFlags38) & 0x80)
+			info.m_flDamage += info.m_flDamage;
+		if ((info.m_pVDmg00 ? info.m_pVDmg00->m_field10 | info.m_nFlags38 : info.m_nFlags38) & 0x20000)
+			info.m_flDamage *= 0.1f;
+		g_1070ba40 = -dir;
+		VectorNormalize(g_1070ba40);
+		float flDmg = info.m_pVDmg00 ? (float)info.m_pVDmg00->sub_101faa70() : info.m_flDamage;
+		int nNew = (int)(m_iHealth - flDmg);
+		void *pInflictor = info.m_pInflictor;
+		m_iHealth = nNew;
+		int nHealth = nNew;
+		((CVariantCopy *)m_out0484)->sub_1000b320(4, &nHealth);
+		((COutputView *)m_out0484)->sub_100cd300(*(CVariantCopy *)m_out0484, pInflictor, this, 0);
+		if (m_iHealth <= 0) {
+			self->slot144(&info);
+			SetHandle458(m_h458, (CEntityVSlots *)info.m_pInflictor);
+			self->slot241();
+			return 0;
+		}
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010e5c0 size=0x26
 #include "CBreakable.h"
 
