@@ -303,6 +303,53 @@ void CNPC_VSheriffMan::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ae6c0 size=0xeb
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CNPC_VSheriffMan.h"
+#include "CEntityVSlots.h"
+
+struct CGlobalVarsTime
+{
+	char m_pad0000[0xc];
+	int m_nCurtimeBits;
+};
+
+extern CGlobalVarsTime *g_1070b228;
+extern int g_109340d8;
+extern float g_104c6148;
+
+void CNPC_VSheriffMan::vfunc420()
+{
+	ScopeTrace trace("CNPC_VSheriffMan::NPCInit", g_106b8540);
+	CBaseEntity *pNone = 0;
+	m_hTeleportBats = pNone;
+	m_b66e4 = 0;
+	m_b66e5 = 0;
+	m_bAttacking = 0;
+	const int *pOrigin = (const int *)((CEntityVSlots *)this)->slot220();
+	m_nSpawnOrigin[0] = pOrigin[0];
+	m_nSpawnOrigin[1] = pOrigin[1];
+	m_nSpawnOrigin[2] = pOrigin[2];
+	m_nSpawnTime = g_1070b228->m_nCurtimeBits;
+	m_bTransformed = 0;
+	sub_10013e85();
+	m_pszMonsterModelName = "models/character/monster/manbat/manbat.mdl";
+	m_pszNpcName = "npc_VSheriffMan";
+	sub_10014c22();
+	float f = g_104c6148;
+	m_flJumpGravity = f + 0.0f;
+	g_109340d8 = 0x15;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ae7f0 size=0x3b
 #include "CNPC_VSheriffMan.h"
 
