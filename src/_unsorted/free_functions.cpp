@@ -1836,6 +1836,95 @@ void *sub_1002e140(void *pBuffer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002e210 size=0x136
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+#include <string.h>
+
+struct SVCollide102e210 { int m_nSolidCount; void **m_ppSolids; void *m_pKeyData; };
+struct SPhysParams102e210 { int m_n[12]; };
+extern SPhysParams102e210 g_1046ecb4;
+struct SPhysSolid102e210
+{
+	char m_pad0000[0x628];
+	const char *m_pName628;
+	CBaseEntity *m_pEntity62c;
+	char m_pad0630[0x63c - 0x630];
+	char m_bFlag63c;
+	char m_pad063d[0x640 - 0x63d];
+};
+struct CKeyParserFactory102e210
+{
+	virtual void f0(); virtual void f1(); virtual void f2(); virtual void f3(); virtual void f4(); virtual void f5();
+	virtual void f6(); virtual void f7(); virtual void f8(); virtual void f9(); virtual void f10(); virtual void f11();
+	virtual void f12(); virtual void f13(); virtual void f14(); virtual void f15(); virtual void f16(); virtual void f17();
+	virtual void f18(); virtual void f19(); virtual void f20(); virtual void f21(); virtual void f22(); virtual void f23();
+	virtual void f24(); virtual void f25();
+	virtual void *Create(void *pData);
+	virtual void Destroy(void *pParser);
+};
+struct CKVParser102e210
+{
+	virtual void p0();
+	virtual char *Token();
+	virtual char IsEOF();
+	virtual void Parse(void *pSolid, const void *pKV);
+	virtual void p4(); virtual void p5(); virtual void p6(); virtual void p7(); virtual void p8();
+	virtual void Next();
+};
+struct SString102e210
+{
+	SString102e210() {}
+	SString102e210(const SString102e210 &o) : m_p(o.m_p) {}
+	const char *m_p;
+};
+struct CEntityName102e210
+{
+	virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4();
+	virtual void e5(); virtual void e6(); virtual void e7(); virtual void e8();
+	virtual SString102e210 GetModelName();
+};
+extern CKeyParserFactory102e210 *g_1072393c;
+extern char g_107238e0[];
+
+bool sub_1002e210(SPhysSolid102e210 *pSolid, CBaseEntity *pEntity, int modelIndex)
+{
+	ScopeTrace trace("PhysModelParseSolid", g_106b8540);
+	SVCollide102e210 *pCollide = (SVCollide102e210 *)engine->vfunc58(modelIndex);
+	if ( !pCollide )
+		return false;
+	memset(pSolid, 0, sizeof(*pSolid));
+	memcpy((char *)pSolid + 0x610, &g_1046ecb4, sizeof(g_1046ecb4));
+	CKVParser102e210 *pParser = (CKVParser102e210 *)g_1072393c->Create(pCollide->m_pKeyData);
+	while ( !pParser->IsEOF() )
+	{
+		char *pToken = pParser->Token();
+		if ( !_strcmpi(pToken, "solid") )
+		{
+			pParser->Parse(pSolid, g_107238e0);
+			break;
+		}
+		pParser->Next();
+	}
+	g_1072393c->Destroy(pParser);
+	pSolid->m_bFlag63c = 1;
+	pSolid->m_pEntity62c = pEntity;
+	const char *pName = ((CEntityName102e210 *)pEntity)->GetModelName().m_p;
+	if ( !pName )
+		pName = g_106b8540;
+	pSolid->m_pName628 = pName;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002e580 size=0x1de
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
