@@ -159370,6 +159370,59 @@ CAI_Timer2c &CAI_Timer2c::sub_102b3d90(const CAI_Timer2c &p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b4090 size=0x397
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_Timer2c.h"
+
+struct CTimerView102b4090
+{
+	char pad0[0x5b78];
+	int m_n5b78;
+	char pad1[0x60b0 - 0x5b7c];
+	CAI_Timer2c t[9];
+};
+
+inline void CopyBase(CAI_Timer2c &d, const CAI_Timer2c &s)
+{
+	d.m_n00 = s.m_n00; d.m_n04 = s.m_n04; d.m_n08 = s.m_n08; d.m_n0c = s.m_n0c;
+	d.m_n10 = s.m_n10; d.m_b14 = s.m_b14; d.m_n18 = s.m_n18; d.m_n1c = s.m_n1c;
+}
+
+inline void CopyInts(CAI_Timer2c &d, const CAI_Timer2c &s)
+{
+	CopyBase(d, s);
+	d.m_n20 = s.m_n20; d.m_n24 = s.m_n24; d.m_n28 = s.m_n28;
+}
+
+inline void CopyVec(CAI_Timer2c &d, const CAI_Timer2c &s)
+{
+	CopyBase(d, s);
+	((Vector *)&d.m_n20)->sub_1003e4b0(*(Vector *)&s.m_n20);
+}
+
+void CAI_BaseNPCTroika::sub_102b4090()
+{
+	CTimerView102b4090 *p = (CTimerView102b4090 *)this;
+	if (sub_10269aa0(0x6d)) {
+		CopyInts(p->t[0], p->t[4]);
+	} else if (sub_10269aa0(0x70)) {
+		CopyInts(p->t[0], p->t[5]);
+	} else if (sub_10269aa0(0x72)) {
+		CopyInts(p->t[0], p->t[8]);
+	} else if (sub_10269aa0(0x6f)) {
+		CopyVec(p->t[0], p->t[6]);
+	} else if (sub_10269aa0(0x6a)) {
+		CopyVec(p->t[0], p->t[2]);
+	} else if (sub_10269aa0(0x71)) {
+		CopyVec(p->t[0], p->t[3]);
+	} else if (sub_10269aa0(0x6e)) {
+		p->t[0].sub_102b3d90(p->t[7]);
+	}
+	p->m_n5b78 = p->t[0].m_n00;
+	p->t[1].sub_102b3d90(p->t[0]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b5bb0 size=0x11
 namespace lifted {
 extern char g_1070d1b0;
