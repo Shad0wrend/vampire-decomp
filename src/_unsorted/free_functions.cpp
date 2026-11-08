@@ -229543,6 +229543,66 @@ V3 sub_1040c8f0(int p, float tol)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040cb60 size=0xc8
+#include "CBaseEntity.h"
+#include "CUnknown1040cb60.h"
+
+#define D10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct PhysObj {
+	virtual void v0(); virtual void v1();
+	virtual void Wake();
+	virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10();
+	virtual void SetMass(float a);
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16();
+	virtual void SetDamping(const float *a, const float *p);
+	virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22();
+	virtual void EnableDrag(bool a);
+};
+struct EntV {
+	D10(a0) D10(a1) D10(a2) D10(a3) D10(a4) D10(a5) D10(a6) D10(a7) D10(a8) D10(a9)
+	D10(b0) D10(b1) D10(b2) D10(b3) D10(b4) D10(b5) D10(b6) D10(b7) D10(b8) D10(b9)
+	D10(c0) D10(c1) D10(c2)
+	virtual void x0(); virtual void x1(); virtual void x2();
+	virtual int VPhysicsGetObjectList(PhysObj **pList, int max);
+};
+struct EngineH {
+	D10(a0) D10(a1) D10(a2) D10(a3)
+	virtual void DestroyMotionController(void *h);
+};
+extern EngineH *g_10723940;
+
+struct GrabView {
+	char pad[0x4c];
+	float m_savedRotDamping[32];
+	float m_savedMass[32];
+	char pad2[0x14c - 0x14c];
+};
+
+void CUnknown1040cb60::sub_1040cb60()
+{
+	EntV *pEntity = (EntV *)((EHANDLE *)&m_hEntity)->Get();
+	if (pEntity) {
+		PhysObj *pList[32];
+		int count = pEntity->VPhysicsGetObjectList(pList, 32);
+		for (int i = 0; i < count; i++) {
+			PhysObj *pPhys = pList[i];
+			if (!pPhys)
+				continue;
+			pPhys->EnableDrag(true);
+			pPhys->Wake();
+			pPhys->SetMass(((GrabView *)this)->m_savedMass[i]);
+			pPhys->SetDamping(0, &((GrabView *)this)->m_savedRotDamping[i]);
+		}
+	}
+	*(EHANDLE *)&m_hEntity = (CBaseEntity *)0;
+	g_10723940->DestroyMotionController((void *)m_hEngine);
+	m_hEngine = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040cce0 size=0x91
 #include "CUnknown1040cce0.h"
 
