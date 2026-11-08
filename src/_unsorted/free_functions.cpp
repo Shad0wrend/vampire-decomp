@@ -89355,6 +89355,59 @@ void *sub_1019b7e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019b800 size=0x16d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+
+extern "C" unsigned int strlen(const char *);
+#pragma intrinsic(strlen)
+
+struct PyTypeX { char pad[0x18]; void (__cdecl *tp_dealloc)(void *); };
+struct PyObjX { int ob_refcnt; PyTypeX *ob_type; };
+struct FileSysX {
+	virtual void v0(); virtual void v1(); virtual void v2();
+	virtual void vfunc3(const char *pData, int nLen, void *pFile);
+};
+extern FileSysX *g_1070b238;
+extern PyObjX *g_1072b370;
+extern PyObjX *g_1072b374;
+extern PyObjX *(__cdecl *g_109f3728)(PyObjX *);
+extern "C" __declspec(dllimport) char *__cdecl PyString_AsString(PyObjX *);
+char *__cdecl sub_101d3730(const char *fmt, ...);
+
+#define Py_DECREF(op) if (--(op)->ob_refcnt != 0) ; else (*(op)->ob_type->tp_dealloc)((void *)(op))
+
+void __cdecl sub_1019b800(void *pFile)
+{
+	ScopeTrace trace("PyDataManager_Log", g_106b8540);
+	if (!pFile)
+		return;
+	char *s1 = sub_101d3730("Global Variables:\n");
+	g_1070b238->vfunc3(s1, strlen(s1), pFile);
+	PyObjX *o1 = g_109f3728(g_1072b370);
+	char *t1 = PyString_AsString(o1);
+	if (!t1)
+		t1 = "None\n";
+	g_1070b238->vfunc3(t1, strlen(t1), pFile);
+	Py_DECREF(o1);
+	char *s2 = sub_101d3730("\nMorgue Entries:\n");
+	g_1070b238->vfunc3(s2, strlen(s2), pFile);
+	PyObjX *o2 = g_109f3728(g_1072b374);
+	char *t2 = PyString_AsString(o2);
+	if (!t2)
+		t2 = "None\n";
+	g_1070b238->vfunc3(t2, strlen(t2), pFile);
+	Py_DECREF(o2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019b9d0 size=0x23
 extern void *(*g_109f371c)(void *);
 extern int g_1058fa78;
