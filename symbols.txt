@@ -1018,6 +1018,7 @@
 0x100026e9 func   ?sub_1011d490@@YIXPAXHH@Z sub_1011d490
 0x100026ee func   ?sub_1024b940@CUnknown1024b370@@QAEXXZ CUnknown1024b370::sub_1024b940
 0x100026f3 func   ?vfunc362@CWeaponRanged_Tzimisce2Head@@QAEHXZ CWeaponRanged_Tzimisce2Head::vfunc362
+0x100026f8 func   ?sub_101aa390@CScriptedSentence@@QAEHPAVCBaseEntity@@@Z CScriptedSentence::sub_101aa390
 0x100026fd func   ?sub_1021b2b0@CUnknown10217f50@@QAEXXZ CUnknown10217f50::sub_1021b2b0
 0x10002702 func   ?sub_101b7120@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_101b7120
 0x10002707 func   ?sub_100c0970@CFloatPair3f4@@QAEXM@Z CFloatPair3f4::sub_100c0970

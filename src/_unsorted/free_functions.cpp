@@ -95955,6 +95955,58 @@ void *CUnknown101aa210::sub_101aa210()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aa390 size=0x15e
+#include "CBaseEntity.h"
+#include "CScriptedSentence.h"
+#include "CGlobalEntityList.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+#define V virtual void
+#define S10(p) V p##0(); V p##1(); V p##2(); V p##3(); V p##4(); V p##5(); V p##6(); V p##7(); V p##8(); V p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+struct SSpeaker {
+	S100(a0) S100(a1) S10(b0) S10(b1)
+	virtual const float *vfunc220();
+	S100(d0) S100(d1) S10(e0) S10(e1) S10(e2) S10(e3) S10(e4) S10(e5)
+	V f0(); V f1(); V f2(); V f3();
+	virtual int vfunc485(const char *pszName, int volume, int attenuation, int pitch, bool bConcurrent, int duration);
+};
+struct SEntListObj {
+	int sub_1000b12c(const char *pszName, const float *origin, float radius, void *pCaller, void *pActivator);
+};
+
+extern "C" __declspec(dllimport) void __cdecl DevMsg(int level, const char *fmt, ...);
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern SEntListObj g_106eb5d8;
+
+#define STR(s) STRINGR_F((s).pszValue)
+
+int CScriptedSentence::sub_101aa390(CBaseEntity *pTarget)
+{
+	if (!pTarget) {
+		DevMsg(2, "Not Playing sentence %s\n", STR(m_iszSentence));
+		return -1;
+	}
+	bool bConcurrent = false;
+	if (!(m_flags204 & 8))
+		bConcurrent = true;
+	int pListener = 0;
+	if (m_flags204 & 0x10) {
+		pListener = m_pActivator;
+	} else if (m_iszListener.pszValue) {
+		float radius = m_flRadius;
+		if (_strcmpi(STR(m_iszListener), "!player") == 0)
+			radius = 56755.84f;
+		pListener = g_106eb5d8.sub_1000b12c(STR(m_iszListener), ((SSpeaker *)pTarget)->vfunc220(), radius, this, 0);
+	}
+	int result = ((SSpeaker *)pTarget)->vfunc485(STR(m_iszSentence), *(int *)&m_flDelay, *(int *)&m_flVolume, m_iSoundLevel, bConcurrent, pListener);
+	DevMsg(2, "Playing sentence %s\n", STR(m_iszSentence));
+	m_Output47c.sub_100cd660(m_hActivator10c.Get(), this, 0.0f);
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aa550 size=0x53
 void *sub_1000db89(int);
 struct GP;
