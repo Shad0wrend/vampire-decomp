@@ -50818,6 +50818,35 @@ int __stdcall sub_100e7480(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e7510 size=0xd2
+#include "vampire_all.h"
+#include "ScopeTrace.h"
+struct FileSystemLike
+{
+	virtual void v0();
+	virtual void v1();
+	virtual int Read(void *pOutput, int size, int hFile);
+};
+extern FileSystemLike *g_1070b238;
+extern int g_106e9100;
+extern int g_106e87b0;
+extern unsigned char g_106e88f0[0x800];
+
+int __stdcall sub_100e7510(int hFile)
+{
+	ScopeTrace scope("CDialog::dgetc", g_106b8540);
+	if ((int)g_106e9100 == g_106e87b0) {
+		g_106e9100 = 0;
+		g_106e87b0 = 0;
+		memset(g_106e88f0, 0, 0x800);
+		g_106e87b0 = g_1070b238->Read(g_106e88f0, 0x800, hFile);
+		if (g_106e87b0 == 0)
+			return -1;
+	}
+	return g_106e88f0[g_106e9100++];
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e7630 size=0x71
 #include "CDialog.h"
 struct ScopeEnt { const char *name; const char *file; const char *file2; };
