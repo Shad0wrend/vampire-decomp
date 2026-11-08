@@ -2135,6 +2135,74 @@ void CBasePlayer::vfunc431()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016de10 size=0x21e
+#include "CBasePlayer.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CBaseCombatWeapon.h"
+#include "CItemGKeyring.h"
+#include "CVStatList_t.h"
+struct SDest192;
+struct SSrc192 { void sub_10408480(SDest192 *p); };
+extern Vector g_1070d9d0;
+extern char *g_10628368;
+extern char g_1055f710[];
+extern char g_105869b8[];
+int sub_10299d50(int a);
+void *__cdecl __RTDynamicCast(void *p, long l, void *pFrom, void *pTo, int b);
+// TARGET: CBasePlayer::vfunc130
+void CBasePlayer::vfunc130(char bFlag)
+{
+	sub_1000bfcd(bFlag);
+	m_vec1EFC = g_1070d9d0;
+	m_vec1F08 = g_1070d9d0;
+	if (bFlag) {
+		*(int *)((char *)this + 0x1dd0) = 0;
+		*(int *)((char *)this + 0x1dd4) = 0;
+		*(int *)((char *)this + 0x1dd8) = 0;
+	}
+	for (int i = 0; i < 17; i++) {
+		if (0 >= CVStatListSet::Of(this)->Find(3)->sub_102012d0(i)) {
+			*(int *)((char *)this + 0x1adc + i * 4) = 0;
+			*(int *)((char *)this + 0x1b20 + i * 4) = 0;
+		}
+	}
+	sub_10182e00((CBaseCombatWeapon *)sub_1032e7b0());
+	if (g_10628368)
+		*(int *)(g_10628368 + 0xb8) = 0;
+	sub_10299d50(*(int *)&bFlag);
+	m_flags1E74 &= ~1;
+	int &r1 = *(int *)((char *)this + 0x1cc0);
+	int &r2 = *(int *)((char *)this + 0x1a84);
+	int &r3 = *(int *)((char *)this + 0x1a94);
+	r3 = r2 = r1 = -1;
+	*(int *)((char *)this + 0x1cc4) = 0x47c34ff3;
+	*(int *)((char *)this + 0x1cc8) = 0;
+	if (!bFlag) {
+		sub_101835e0();
+		if (m_pInventory) {
+			CItemGKeyring *pKeyring = (CItemGKeyring *)__RTDynamicCast(sub_10335950("item_g_keyring"), 0, g_1055f710, g_105869b8, 0);
+			if (!pKeyring) {
+				CBaseCombatWeapon *pWeapon = (CBaseCombatWeapon *)sub_1032e120("item_g_keyring");
+				if (!pWeapon)
+					return;
+				pKeyring = (CItemGKeyring *)__RTDynamicCast(pWeapon, 0, g_1055f710, g_105869b8, 0);
+				if (pKeyring) {
+					sub_1032d380((CBaseEntity *)pKeyring, 1);
+					((SSrc192 *)m_pInventory)->sub_10408480((SDest192 *)pKeyring);
+				} else {
+					pWeapon->sub_1024f7b0();
+					return;
+				}
+			}
+			sub_101836d0(pKeyring);
+			pKeyring->sub_10408220(m_pInventory);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016e820 size=0x175
 #include "CBasePlayer.h"
 #include "CEntityVSlots.h"
