@@ -81,7 +81,6 @@ public:
 public:
     virtual datamap_t * vfunc82();
 public:
-	virtual void vfunc134();
 	virtual void vfunc135();
 	virtual void vfunc136();
 	virtual void vfunc137();
@@ -537,7 +536,7 @@ class CNPC_VCopSlots : public CNPC_VCop
 {
 public:
 	CVCS_V(581) CVCS_V(582) CVCS_V(583) CVCS_V(584) CVCS_V(585) CVCS_V(586) CVCS_V(587) CVCS_V(588) CVCS_V(589) CVCS_V(590)
-	CVCS_V(591) CVCS_V(592) CVCS_V(593) CVCS_V(594) CVCS_V(595)
+	CVCS_V(591) CVCS_V(592) CVCS_V(593) CVCS_V(594) CVCS_V(595) CVCS_V(5951)
 	virtual void slot596(void *pEnt);
 	virtual void slot597(CNPC_VCopPlayer *pPlayer, int a);
 	virtual void slot598(CBaseEntity *pTarget);
