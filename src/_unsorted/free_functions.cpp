@@ -71402,6 +71402,51 @@ void sub_1013b5a0(const float *q, float *angles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013b610 size=0x213
+#include "vampire.h"
+#include "Vector.h"
+
+#define VMUL(d, s, k) { (d).x = (s).x * (k); (d).y = (s).y * (k); (d).z = (s).z * (k); }
+
+void sub_1013b610(const Vector *p1, const Vector *p2, const Vector *p3, const Vector *p4, float t, Vector *pOut)
+{
+	Vector &out = *pOut;
+	float t2h = t * t * 0.5f;
+	out.x = 0.0f;
+	out.y = 0.0f;
+	out.z = 0.0f;
+	float t3h = t * t2h;
+	float th = t * 0.5f;
+
+	Vector a1, a2, a3, a4;
+	VMUL(a1, *p1, -t3h);
+	VMUL(a2, *p2, t3h * 3.0f);
+	VMUL(a3, *p3, t3h * -3.0f);
+	VMUL(a4, *p4, t3h);
+	out.x = a4.x + a3.x + a2.x + a1.x;
+	out.y = a4.y + a3.y + a2.y + a1.y;
+	out.z = a4.z + a3.z + a2.z + a1.z;
+
+	VMUL(a1, *p1, t2h + t2h);
+	VMUL(a2, *p2, t2h * -5.0f);
+	VMUL(a3, *p3, t2h * 4.0f);
+	VMUL(a4, *p4, -t2h);
+	out.x = a4.x + out.x + a3.x + a2.x + a1.x;
+	out.y = a4.y + out.y + a3.y + a2.y + a1.y;
+	out.z = a4.z + out.z + a3.z + a2.z + a1.z;
+
+	VMUL(a1, *p1, -th);
+	VMUL(a2, *p3, th);
+	out.x = a2.x + out.x + a1.x;
+	out.y = a2.y + out.y + a1.y;
+	out.z = a2.z + out.z + a1.z;
+
+	out.x = out.x + p2->x;
+	out.y = out.y + p2->y;
+	out.z = out.z + p2->z;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013bb40 size=0x17c
 #include "Vector.h"
 void sub_1000cfb3(const Vector &p1, const Vector &p2, const Vector &p3, const Vector &p4, float t, Vector &output);
