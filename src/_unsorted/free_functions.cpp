@@ -50498,6 +50498,69 @@ void sub_100dfaf0(unsigned char flags, const char *fmt, ...)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dfd30 size=0x1ed
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CDialog.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+#include <string.h>
+
+struct S100df010 { int m_pad[3]; int m_c; };
+namespace block_100dfd30 {
+bool sub_100df010(S100df010 *p) { return p->m_c == -1; }
+}
+using namespace block_100dfd30;
+int sub_100df0b0(const char *psz);
+char *sub_101d3730(const char *fmt, ...);
+struct SLogView { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(const char *psz, int nLen, int nArg); };
+extern SLogView *g_1070b238;
+
+int CDialog::sub_100dfd30(CBaseEntity *pNPC, CBaseEntity *pSpeaker, int nArg)
+{
+	ScopeTrace trace("CDialog::CheckNameCollisions", g_106b8540);
+	if (pSpeaker)
+		m_hSpeaker = *((IHandleEntity *)pSpeaker)->vfunc1();
+	else
+		m_hSpeaker = 0xffffffff;
+	if (pNPC)
+		m_hNPC = *((IHandleEntity *)pNPC)->vfunc1();
+	else
+		m_hNPC = 0xffffffff;
+	if (EHandle_Get(m_hNPC) && EHandle_Get(m_hSpeaker)) {
+		int nCount = 0;
+		if (sub_100e5410(sub_100e7310())) {
+			int i = 0;
+			while (i < m_pTable->m_nEntries) {
+				CDialogEntry_t *pEntry = &m_pTable->m_pEntries[i];
+				int nKey = pEntry->m_data[0];
+				if (sub_100df010((S100df010 *)pEntry)) {
+					const char *pszText = (const char *)pEntry->m_data[1];
+					if (!sub_100df0b0(pszText)) {
+						char *pszMsg = sub_101d3730("%s: %d has auto ellipses for \" %s \" \n", sub_100e7310(), nKey, pszText);
+						g_1070b238->v3(pszMsg, strlen(pszMsg), nArg);
+						nCount++;
+					}
+				}
+				i++;
+			}
+			((EHANDLE *)&m_hSpeaker)->Set(NULL);
+			((EHANDLE *)&m_hNPC)->Set(NULL);
+			sub_100e5770();
+			return nCount;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e09a0 size=0x77
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
