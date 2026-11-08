@@ -74,6 +74,108 @@ int CAI_BaseNPC::sub_1026f4d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026f660 size=0x3d8
+#include "CBaseEntity.h"
+#include "CAI_BaseNPC_vfunc461.h"
+#include "CAI_Motor.h"
+
+#define FILE_ "E:\\Vampire\\main\\dlls\\AI_BaseNPC.cpp"
+
+typedef void (*FnDevWarning)(int, const char *, ...);
+extern FnDevWarning g_109f3658;
+
+int CAI_BaseNPC::vfunc461()
+{
+	CAI_BaseNPCUnit461 *p = (CAI_BaseNPCUnit461 *)this;
+	p->m_n1b38 = 1;
+	switch (p->m_nState5cc0) {
+	case 1:
+		if (p->sub_10269d30(0x54) || p->sub_10269d30(0x46)) {
+			p->m_nLine1b40 = 0x136a;
+			p->m_nIdealState5cc4 = 2;
+		} else if (p->sub_10269d30(0x4c)) {
+			p->m_b5b80 = 0;
+			sub_102e0b40((float *)p->m_pMotor5d44);
+			Vector v = ((CEnemiesView *)p->vfunc541())->sub_102dfed0((CBaseEntity *)p->vfunc167());
+			p->m_pMotor5d44->sub_102e2020(&v.x, 0);
+			p->m_nLine1b40 = 0x1373;
+			p->m_nIdealState5cc4 = 3;
+		} else if (p->sub_10269d30(0x4d)) {
+			p->m_b5b80 = 0;
+			sub_102e0b40((float *)p->m_pMotor5d44);
+			Vector v = ((CEnemiesView *)p->vfunc541())->sub_102dfed0((CBaseEntity *)p->vfunc167());
+			p->m_pMotor5d44->sub_102e2020(&v.x, 0);
+			p->m_nLine1b40 = 0x137c;
+			p->m_nIdealState5cc4 = 3;
+		} else if (p->sub_10269d30(0x6a) || p->sub_10269d30(0x6d) || p->sub_10269d30(0x6e) || p->sub_10269d30(0x6f) || p->sub_10269d30(0x6b) || p->sub_10269d30(0x70)) {
+			S101b9920 *pObj = (S101b9920 *)p->vfunc474();
+			if (!pObj)
+				return p->m_nIdealState5cc4;
+			sub_102e0b40((float *)p->m_pMotor5d44);
+			CAI_Motor *pMotor = p->m_pMotor5d44;
+			pMotor->sub_102e2020((const float *)pObj->sub_101b99d0(), 0);
+			int n = *(int *)((char *)pObj + 4);
+			if (n != 1 && n != 8 && n != 0x10)
+				return p->m_nIdealState5cc4;
+			p->m_nLine1b40 = 0x1397;
+			p->m_nIdealState5cc4 = 3;
+		} else if (p->sub_10269d30(0x5e)) {
+			p->m_nLine1b40 = 0x139e;
+			p->m_nIdealState5cc4 = 3;
+		} else {
+			return p->m_nIdealState5cc4;
+		}
+		p->m_pszFile1b3c = FILE_;
+		break;
+	case 3:
+		if (p->sub_10269d30(0x54) || p->sub_10269d30(0x46)) {
+			p->m_nLine1b40 = 0x13ac;
+			p->m_nIdealState5cc4 = 2;
+			p->m_pszFile1b3c = FILE_;
+		} else if (p->sub_10269d30(0x6a) || p->sub_10269d30(0x6d)) {
+			p->m_pszFile1b3c = FILE_;
+			p->m_nLine1b40 = 0x13b2;
+			p->m_nIdealState5cc4 = 3;
+			S101b9920 *pObj = (S101b9920 *)p->vfunc474();
+			if (pObj) {
+				sub_102e0b40((float *)p->m_pMotor5d44);
+				CAI_Motor *pMotor = p->m_pMotor5d44;
+				pMotor->sub_102e2020((const float *)pObj->sub_101b99d0(), 0);
+			}
+			g_10739a4c.sub_101e3d70((CUnknown101e3cfObj *)p);
+			return p->m_nIdealState5cc4;
+		} else if (p->vfunc462()) {
+			p->m_nLine1b40 = 0x13c0;
+			p->m_nIdealState5cc4 = 1;
+			p->m_pszFile1b3c = FILE_;
+		}
+		break;
+	case 2:
+		if (!p->vfunc167()) {
+			p->m_pszFile1b3c = FILE_;
+			p->m_nLine1b40 = 0x13cc;
+			p->m_nIdealState5cc4 = 3;
+			g_109f3658(2, "***Combat state with no enemy!\n");
+			return p->m_nIdealState5cc4;
+		}
+		break;
+	case 4:
+		if (p->sub_10269d30(0x5c) || p->sub_10269d30(0x4c) || p->sub_10269d30(0x4d)) {
+			p->m_b5b80 = 0;
+			p->sub_1027d0a0();
+			return p->m_nIdealState5cc4;
+		}
+		break;
+	case 7:
+		p->m_nLine1b40 = 0x13dd;
+		p->m_nIdealState5cc4 = 7;
+		p->m_pszFile1b3c = FILE_;
+		break;
+	}
+	return p->m_nIdealState5cc4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027be60 size=0xb5
 #include "CAI_BaseNPC.h"
 #include "CUnknown102ee270.h"
