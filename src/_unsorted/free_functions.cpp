@@ -90486,6 +90486,51 @@ PyObj *sub_10196230(float x, float y, float z)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101966a0 size=0xad
+struct PyType { int a, b, c, d, e, f; void (*dealloc)(struct PyObj *); };
+struct PyObj { int refcnt; PyType *type; int c; PyObj *item; };
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##a) V10(p##b) V10(p##c) V10(p##d) V10(p##e) V10(p##f) V10(p##g) V10(p##h) V10(p##i) V10(p##j)
+struct Ent {
+    V100(x) V100(y)
+    V10(za) V10(zb) V10(zc) V10(zd)
+    virtual PyObj *GetPyClass();
+    char pad[0x378 - 4];
+    PyObj *pyObj;
+};
+extern PyObj *g_109f3748;
+extern PyObj *(*g_109f3784)(Ent *, void *, int);
+extern PyObj *(*g_109f379c)(int);
+extern PyObj *(*g_109f36d4)(PyObj *, PyObj *, PyObj *);
+extern char g_1072b378[];
+
+PyObj *sub_101966a0(Ent *ent)
+{
+    if (!ent) {
+        g_109f3748->refcnt++;
+        return g_109f3748;
+    }
+    if (ent->pyObj) {
+        ent->pyObj->refcnt++;
+        return ent->pyObj;
+    }
+    PyObj *cobj = g_109f3784(ent, g_1072b378, 0);
+    if (!cobj)
+        return 0;
+    PyObj *tuple = g_109f379c(1);
+    if (!tuple) {
+        if (--cobj->refcnt == 0)
+            cobj->type->dealloc(cobj);
+        return 0;
+    }
+    tuple->item = cobj;
+    PyObj *res = g_109f36d4(ent->GetPyClass(), tuple, 0);
+    if (--tuple->refcnt == 0)
+        tuple->type->dealloc(tuple);
+    return res;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10196780 size=0xa0
 struct PyObj { int refcnt; void *type; int pad; void *dict; };
 extern "C" {
