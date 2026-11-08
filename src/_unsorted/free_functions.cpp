@@ -47316,6 +47316,76 @@ void sub_100d6930()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d6a50 size=0x1d4
+#include "CBaseCombatCharacter.h"
+#include "CUnknown101f0e50.h"
+
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+
+struct SHistText
+{
+	char *sub_101d84e0();
+};
+
+struct SHistEntry
+{
+	char m_pad0000[4];
+	const char *m_pszName;
+	char m_pad0008[0x1c - 8];
+	SHistText m_Text;
+};
+
+struct SHistList
+{
+	char m_pad0000[4];
+	int m_nCount;
+	char m_pad0008[0x14 - 8];
+
+	bool sub_101e9f90(CBaseCombatCharacter *pChar, int index);
+	SHistEntry *sub_101ea0b0(int index);
+};
+
+extern SHistList g_1073a28c;
+char *sub_101193b0();
+void sub_101ce620(void *pPlayer, int a, const char *pszText, const char *b, const char *c, const char *d, const char *e);
+
+inline const char *STRINGR(const char *const &s) { return s ? s : ""; }
+
+void sub_100d6a50()
+{
+	char *pPlayer = sub_101193b0();
+	if (pPlayer) {
+		CBaseCombatCharacter *pChar = *(CBaseCombatCharacter **)(pPlayer + 0xa8);
+		if (pChar) {
+			int iCurrent = pChar->sub_10337a60();
+			char szLine[128];
+			if (engine->vfunc85() == 1) {
+				sub_101ce620(pChar, 2, "\n\tAvailable Histories:\n\n", 0, 0, 0, 0);
+				for (int i = 0; i < g_1073a28c.m_nCount; i++) {
+					if (g_1073a28c.sub_101e9f90(pChar, i)) {
+						if (iCurrent != i)
+							sprintf(szLine, "(%d): %s\n", i, STRINGR(g_1073a28c.sub_101ea0b0(i)->m_pszName));
+						else
+							sprintf(szLine, "(%d): [%s]\n", i, STRINGR(g_1073a28c.sub_101ea0b0(i)->m_pszName));
+						sub_101ce620(pChar, 2, szLine, 0, 0, 0, 0);
+					}
+				}
+			} else {
+				sprintf(szLine, "\n\tALL Available Histories (%d):\n\n", g_1073a28c.m_nCount);
+				sub_101ce620(pChar, 2, szLine, 0, 0, 0, 0);
+				for (int i = 0; i < g_1073a28c.m_nCount; i++) {
+					if (iCurrent != i)
+						sprintf(szLine, "(%d): %s\t\t( %s )\n", i, STRINGR(g_1073a28c.sub_101ea0b0(i)->m_pszName), g_1073a28c.sub_101ea0b0(i)->m_Text.sub_101d84e0());
+					else
+						sprintf(szLine, "(%d): [%s]\t\t( %s )\n", i, STRINGR(g_1073a28c.sub_101ea0b0(i)->m_pszName), g_1073a28c.sub_101ea0b0(i)->m_Text.sub_101d84e0());
+					sub_101ce620(pChar, 2, szLine, 0, 0, 0, 0);
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d6d40 size=0x1e6
 #include "CBaseCombatCharacter.h"
 #include "CUnknown10203240.h"
