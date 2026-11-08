@@ -133,6 +133,43 @@ void CNPC_VChangBros::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036b050 size=0xd1
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VChangBros.h"
+#include "ScopeTrace.h"
+extern char g_10630eec[];
+extern char g_10630e54[];
+extern char g_10630e3c[];
+struct S1070b228 { char pad[0xc]; int m_tick; };
+extern S1070b228 *g_1070b228;
+extern const float g_104ada44;
+void CNPC_VChangBros::vfunc420()
+{
+    ScopeTrace t(g_10630eec, g_106b8540);
+    sub_10013e85();
+    *(int *)((char *)this + 0x66bc) = 0;
+    *(int *)((char *)this + 0x66c0) = 0;
+    *(int *)((char *)this + 0x66c4) = 0;
+    *(int *)((char *)this + 0x66c8) = 0;
+    *(int *)((char *)this + 0x66cc) = 0;
+    *(int *)((char *)this + 0x66d0) = 0;
+    *((char *)this + 0x66e8) = 0;
+    *(int *)((char *)this + 0x66ec) = g_1070b228->m_tick;
+    float f = g_104ada44;
+    m_fJumpGravity = f;
+    sub_103c6df0(0, g_10630e54);
+    sub_103c6df0(1, g_10630e54);
+    sub_103c6df0(2, g_10630e3c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036b170 size=0xa7
 #include "CNPC_VChangBros.h"
 #include "CNPC_VVampireBoss.h"
