@@ -19,7 +19,9 @@ struct CAI_BaseHumanoid_Waypoint
 	float m_flF04;	// 0x04
 	float m_flLength;	// 0x08: distance to the next record
 	float m_flDist0c;	// 0x0c: distance value at this record (0 for the first)
-	char m_pad10[0x20 - 0x10];
+	float m_flF10;	// 0x10: the angle
+	float F10() const { return m_flF10; }
+	char m_pad14[0x20 - 0x14];
 	void *m_pNode;	// 0x20: the navigator node the record was copied from
 	char m_pad24[0x2c - 0x24];
 	Vector m_vecPos;	// 0x2c .. 0x37
