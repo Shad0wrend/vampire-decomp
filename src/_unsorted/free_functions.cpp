@@ -34430,6 +34430,74 @@ void CBaseEntity::sub_100a04e0(const char *pszParentName, CBaseEntity *pActivato
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a0670 size=0x27f
+#include "CBaseEntity.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "matrix3x4_t.h"
+#include "CUnknown101d1460.h"
+#include "VMatrix.h"
+#include "QAngle.h"
+#include "CEHandleGet.h"
+#include "CEntityVSlots.h"
+#include "Tier1.h"
+void sub_1012c840(CBaseEntity *p);
+void sub_1012c7a0(CBaseEntity *pParent, CBaseEntity *pChild);
+void sub_10137ed0(const matrix3x4_t *m, QAngle *a);
+void sub_101cf5c0(CBaseEntity *p, Vector *v, int n);
+
+void CBaseEntity::sub_100a0670(CBaseEntity *pParent, int iAttachment)
+{
+	ScopeTrace scope("CBaseEntity::SetParent", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	sub_1012c840(this);
+	m_bChanged1b1 = 1;
+	((CBaseHandle *)&m_hTouch254)->operator=((IHandleEntity *)pParent);
+	if (!g_10566458->sub_100290c0(&m_hTouch254))
+	{
+		g_109f3628("Entity %s(%s) set bad parent\n", m_classname11c ? m_classname11c : g_106b8540, sub_100ab4f0());
+		m_pParentName124 = 0;
+		return;
+	}
+	m_pParentName124 = ((CBaseEntity *)g_10566458->sub_100290c0(&m_hTouch254))->m_name26c;
+	if (m_pEdict2e0)
+	{
+		sub_1012c7a0((CBaseEntity *)g_10566458->sub_100290c0(&m_hTouch254), this);
+		m_iParentAttachment = iAttachment;
+		CUnknown101d1460 mtxA;
+		CUnknown101d1460 mtxB;
+		VMatrix mtxT;
+		Vector vecOut;
+		QAngle angles;
+		matrix3x4_t mat;
+		mtxA.sub_101d1530((CBaseEntity *)EHandle_Get(m_hMoveParent), (unsigned char)iAttachment);
+		mtxB.sub_101d15f0(this);
+		((matrix3x4_t *)&mtxA)->sub_100a0a10(&vecOut, ((CEntityVSlots *)this)->slot220());
+		sub_100b5340(0x800, 0);
+		((VMatrix *)&mtxA)->sub_1024da80(mtxT);
+		mtxT.sub_1024cf80(*(VMatrix *)&mtxB, *(VMatrix *)&mtxA);
+		VMatrix &r = *(VMatrix *)&mtxA;
+		mat.sub_100a0990(r.m[0][0], r.m[0][1], r.m[0][2], r.m[0][3], r.m[1][0], r.m[1][1], r.m[1][2], r.m[1][3], r.m[2][0], r.m[2][1], r.m[2][2], r.m[2][3]);
+		sub_10137ed0(&mat, &angles);
+		((CEntityVSlots *)this)->slot64((const float *)&angles);
+		sub_101cf5c0(this, &vecOut, 0);
+	}
+	((CBaseEntity *)((CHandle<CBaseEntity> *)&m_hTouch254)->Get())->vfunc115((int)this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a0990 size=0x58
 #include "matrix3x4_t.h"
 // TARGET: matrix3x4_t::sub_100a0990
