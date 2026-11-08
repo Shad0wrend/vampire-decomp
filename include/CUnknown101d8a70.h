@@ -16,7 +16,7 @@ public:
 	char m_pad0010[0x3c - 0x10];
 
 	void *sub_101d8a70(void *pValue);	// forwards pValue to sub_101d8b40 together with the "v_printrolls" console variable as flag (false when the variable does not exist); returns pValue
-	void sub_101d8b40(void *pValue, bool bFlag);	// called through the stub at 0x1000e223
+	int *sub_101d8b40(void *pValue, bool bFlag);	// called through the stub at 0x1000e223
 	CUnknown101d8a70 *sub_101d8820(int owner, CBaseCombatWeapon *pWeapon, void *pRecord, int n);	// builds the record (stub 0x1000756d), returns this
 	void sub_101d88b0(int owner, CBaseCombatWeapon *pWeapon, void *pRecord, int nValue, int n, int nFeat);	// the dice roll worker (stub 0x1000cf4f)
 	void sub_101d8770(CBaseCombatCharacter *pChar, CVDmgBlock16_t *pBlock, int nDice, int nDifficulty);	// rolls nDice dice against the difficulty and fills the record (stub 0x1001506e)
