@@ -211766,6 +211766,79 @@ bool CWeaponRanged_FlameThrower::sub_103e3490(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e3570 size=0x25c
+#include "CWeaponRanged_FlameThrower.h"
+#include "CVDmg_t.h"
+#include "CTakeDamageInfo.h"
+#include "CStatDefault3List.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+#include "CAI_BaseNPCTroika.h"
+#include "engineiface.h"
+#include "globalvars.h"
+
+#define FV(n) virtual void v##n();
+#define FV10(p) FV(p##0) FV(p##1) FV(p##2) FV(p##3) FV(p##4) FV(p##5) FV(p##6) FV(p##7) FV(p##8) FV(p##9)
+#define FV100(p) FV10(p##0) FV10(p##1) FV10(p##2) FV10(p##3) FV10(p##4) FV10(p##5) FV10(p##6) FV10(p##7) FV10(p##8) FV10(p##9)
+struct CFlameNpcView
+{
+	FV100(0) FV100(1) FV100(2) FV100(3) FV100(4) FV100(5)
+	FV10(60) FV(610) FV(611) FV(612) FV(613) FV(614)
+	virtual bool v615();
+	void sub_1032f770(int i, float a, float b);
+};
+struct CFlameVictim { char pad[0x9c]; CBaseCombatCharacter *m_p9c; };
+extern CStatDefault3List g_10738d10;
+extern int g_1070d1b0, g_1070d1b4, g_1070d1b8;
+int __fastcall sub_10258270(CWeaponRanged *p);
+
+// TARGET: CWeaponRanged_FlameThrower::sub_103e3570
+void CWeaponRanged_FlameThrower::sub_103e3570(CBaseEntity *pEnt, Vector vecPos)
+{
+	CVDmg_t *aRecs = (CVDmg_t *)((char *)this + 0x77c);
+	CVDmg_t rec1 = aRecs[*sub_102517e0()];
+	CTakeDamageInfo info;
+	info.sub_101c26d0(this, sub_102521f0(), (float)rec1.sub_101faa70(), 8, 0, (int)&rec1, -1);
+	CVDmg_t rec2 = rec1;
+	float flDmg = (float)sub_10258270(this);
+	if (((CFlameVictim *)pEnt)->m_p9c) {
+		int n = ((CFlameVictim *)pEnt)->m_p9c->sub_10337860();
+		if (n >= 0 && (rec2.m_field10 & 8))
+			flDmg *= g_10738d10.sub_101d5e80(n)->m_c8;
+	}
+	int nDmg = (int)flDmg;
+	rec2.m_field0c = nDmg;
+	rec2.m_field04 = nDmg;
+	rec2.sub_101fb3e0(8);
+	info.m_flDamage = flDmg;
+	info.m_pVDmg00 = &rec2;
+	rec2.m_field0c = nDmg;
+	info.sub_101c2a10(2);
+	info.sub_101c2b10(1);
+	info.m_pos1c.a = *(int *)&vecPos.x;
+	info.m_pos1c.b = *(int *)&vecPos.y;
+	info.m_pos1c.c = *(int *)&vecPos.z;
+	*(int *)&info.m_pad0010[0] = g_1070d1b0;
+	*(int *)&info.m_pad0010[4] = g_1070d1b4;
+	*(int *)&info.m_pad0010[8] = g_1070d1b8;
+	pEnt->sub_100a1250(&info);
+	CFlameBurnRec rec;
+	rec.m_h = *pEnt->vfunc1();
+	rec.m_t = gpGlobals->curtime;
+	((CUtlVector<CFlameBurnRec> *)&m_n1554)->AddToTail(rec);
+	CFlameNpcView *pNpc = (CFlameNpcView *)pEnt->m_pNPC98;
+	if (pNpc && pNpc->v615()) {
+		for (int i = 0; i < 18; i++) {
+			float a = enginerandom->vfunc1(4.0f, 5.5f);
+			float b = enginerandom->vfunc1(0.75f, 1.5f);
+			pNpc->sub_1032f770(i, a, b);
+		}
+	}
+	rec2.sub_101fa680();
+	rec1.sub_101fa680();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e3900 size=0x20
 #include "CUnknown103e1680.h"
 extern CUnknown103e1680 *g_10940954;

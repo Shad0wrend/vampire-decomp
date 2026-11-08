@@ -10622,6 +10622,7 @@
 0x100101fe func   ?vfunc372@CWeaponThrown_Grenade_Frag@@QAEPAVCBaseEntity@@VVector@@000@Z CWeaponThrown_Grenade_Frag::vfunc372
 0x10010203 func   ?vfunc128@CFuncBrush@@QAE_NXZ CFuncBrush::vfunc128
 0x10010208 func   ?sub_10146500@@YAXXZ sub_10146500
+0x1001020d func   ?sub_103e3570@CWeaponRanged_FlameThrower@@QAEXPAVCBaseEntity@@VVector@@@Z CWeaponRanged_FlameThrower::sub_103e3570
 0x10010212 func   ?sub_100916a0@@YIMPAD@Z sub_100916a0
 0x10010217 func   ?vfunc233@CBaseEntity@@QAEHPAHH@Z CBaseEntity::vfunc233
 0x1001021c func   ?sub_1030b880@CUnknown1030b880@@QAEMXZ CUnknown1030b880::sub_1030b880
