@@ -538,6 +538,59 @@ bool CNPC_VGargoyle::vfunc70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10379490 size=0x198
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include <string.h>
+#include "CNPC_VGargoyle.h"
+#include "CAI_BaseNPCTroika.h"
+#include "ScopeTrace.h"
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+struct S10379490Ent
+{
+	char m_pad0000[0x4c];
+	unsigned char m_nFlags4c;	// 0x4c
+	char m_pad004d[0x11c - 0x4d];
+	const char *m_pszClassname;	// 0x11c
+	char m_pad0120[0x26c - 0x120];
+	const char *m_pszName;	// 0x26c
+
+	inline bool ClassMatchesComplex(const char *pszClassOrWildcard)
+	{
+		int len = strlen(pszClassOrWildcard);
+		if (len == 0)
+			return !m_pszName;
+		if (pszClassOrWildcard[len - 1] != '*')
+			return !_strcmpi(STRINGR(m_pszClassname), pszClassOrWildcard);
+		return !_strnicmp(STRINGR(m_pszClassname), pszClassOrWildcard, len - 1);
+	}
+	inline bool ClassMatches(const char *pszClassOrWildcard)
+	{
+		if (m_pszClassname && pszClassOrWildcard && m_pszClassname == pszClassOrWildcard)
+			return true;
+		return ClassMatchesComplex(pszClassOrWildcard);
+	}
+};
+
+char CNPC_VGargoyle::vfunc69(CBaseEntity *pOther)
+{
+	S10379490Ent *pEnt = (S10379490Ent *)pOther;
+	if (pEnt->m_nFlags4c & 0x16)
+		return 1;
+	if (pEnt->ClassMatches("prop_dynamic") || pEnt->ClassMatches("func_brush") || pEnt->ClassMatches("func_door_rotating"))
+		return 1;
+	return ((CAI_BaseNPCTroika *)this)->sub_1029b180(pOther);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10379ef0 size=0x1a
 // TARGET: CNPC_VGargoyle::vfunc599
 #include "CNPC_VGargoyle.h"
