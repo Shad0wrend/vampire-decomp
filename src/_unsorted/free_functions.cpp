@@ -24544,6 +24544,238 @@ void sub_1007a5b0(ISceneTokenProcessor *tokenizer, CChoreoEventX *e, bool remove
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007ab40 size=0x9e9
+#include "CUnknown1007b7b0.h"
+#include "CUnknown100735a0.h"
+extern "C" int _strcmpi(const char *, const char *);
+extern "C" double atof(const char *);
+extern "C" int atoi(const char *);
+extern "C" unsigned int strlen(const char *);
+extern "C" char *strcpy(char *, const char *);
+int sub_10076730(const char *);
+int sub_10077a00(const char *);
+void sub_1007a390(CUnknown1007bb30Reader *, CUnknown10075aa0 *);
+void sub_1007a5b0(CUnknown1007bb30Reader *, CUnknown10075aa0 *, int);
+CUnknown10075aa0 *__fastcall sub_10079e60(void *);
+
+// TARGET: CUnknown1007b7b0::sub_1007ab40
+CUnknown10075aa0 *CUnknown1007b7b0::sub_1007ab40(CUnknown10076670 *pScene, void *pChannel, float flTimeOffset)
+{
+	bool hadramp = false;
+	float attack = 1.0f, sustain = 1.0f, decay = 1.0f;
+
+	CUnknown10075aa0 *ev = sub_10079e60(this);
+	m_pReader->vfunc1(0);
+	ev->sub_10075b90(sub_10076730(m_pReader->vfunc0()));
+	m_pReader->vfunc1(0);
+	ev->sub_10075bd0(m_pReader->vfunc0());
+	m_pReader->vfunc1(1);
+	if (_strcmpi(m_pReader->vfunc0(), "{") != 0)
+		m_pReader->vfunc3("expecting {\n");
+	while (1)
+	{
+		m_pReader->vfunc1(1);
+		if (_strcmpi(m_pReader->vfunc0(), "}") == 0)
+			break;
+		if (strlen(m_pReader->vfunc0()) == 0)
+		{
+			m_pReader->vfunc3("expecting more tokens!");
+			break;
+		}
+		if (_strcmpi(m_pReader->vfunc0(), "time") == 0)
+		{
+			float flStart;
+			float flEnd = 1.0f;
+			m_pReader->vfunc1(0);
+			flStart = atof(m_pReader->vfunc0());
+			if (m_pReader->vfunc2())
+			{
+				m_pReader->vfunc1(0);
+				flEnd = atof(m_pReader->vfunc0());
+			}
+			flStart += flTimeOffset;
+			if (flEnd != -1.0f)
+				flEnd += flTimeOffset;
+			ev->sub_10075e20(flStart);
+			ev->sub_10075e90(flEnd);
+		}
+		else if (_strcmpi(m_pReader->vfunc0(), "ramp") == 0)
+		{
+			hadramp = true;
+			m_pReader->vfunc1(0);
+			attack = atof(m_pReader->vfunc0());
+			if (m_pReader->vfunc2())
+			{
+				m_pReader->vfunc1(0);
+				sustain = atof(m_pReader->vfunc0());
+			}
+			if (m_pReader->vfunc2())
+			{
+				m_pReader->vfunc1(0);
+				decay = atof(m_pReader->vfunc0());
+			}
+		}
+		else if (_strcmpi(m_pReader->vfunc0(), "param") == 0)
+		{
+			m_pReader->vfunc1(0);
+			ev->sub_10075c20(m_pReader->vfunc0());
+		}
+		else if (_strcmpi(m_pReader->vfunc0(), "param2") == 0)
+		{
+			m_pReader->vfunc1(0);
+			ev->sub_10075c70(m_pReader->vfunc0());
+		}
+		else if (_strcmpi(m_pReader->vfunc0(), "pitch") == 0)
+		{
+			m_pReader->vfunc1(0);
+			ev->sub_10078540(atoi(m_pReader->vfunc0()));
+		}
+		else if (_strcmpi(m_pReader->vfunc0(), "yaw") == 0)
+		{
+			m_pReader->vfunc1(0);
+			ev->sub_10078580(atoi(m_pReader->vfunc0()));
+		}
+		else if (_strcmpi(m_pReader->vfunc0(), "loopcount") == 0)
+		{
+			m_pReader->vfunc1(0);
+			ev->sub_100785a0(atoi(m_pReader->vfunc0()));
+		}
+		else if (_strcmpi(m_pReader->vfunc0(), "resumecondition") == 0)
+		{
+			ev->sub_10076af0(1);
+		}
+		else if (_strcmpi(m_pReader->vfunc0(), "fixedlength") == 0)
+		{
+			ev->sub_10076ad0(1);
+		}
+		else if (_strcmpi(m_pReader->vfunc0(), "targethead") == 0)
+		{
+			m_pReader->vfunc1(0);
+			ev->sub_10075ce0(atoi(m_pReader->vfunc0()) != 0);
+		}
+		else if (_strcmpi(m_pReader->vfunc0(), "tags") == 0)
+		{
+			m_pReader->vfunc1(1);
+			if (_strcmpi(m_pReader->vfunc0(), "{") != 0)
+				m_pReader->vfunc3("expecting {\n");
+			while (1)
+			{
+				m_pReader->vfunc1(1);
+				if (strlen(m_pReader->vfunc0()) == 0)
+				{
+					m_pReader->vfunc3("expecting relative tag\n");
+					break;
+				}
+				if (_strcmpi(m_pReader->vfunc0(), "}") == 0)
+					break;
+				char szTag[128];
+				float flPct;
+				strcpy(szTag, m_pReader->vfunc0());
+				m_pReader->vfunc1(0);
+				flPct = atof(m_pReader->vfunc0());
+				ev->sub_10076c30(szTag, flPct);
+			}
+		}
+		else if (_strcmpi(m_pReader->vfunc0(), "sequenceduration") == 0)
+		{
+			float flDur = 0.0f;
+			m_pReader->vfunc1(0);
+			flDur = atof(m_pReader->vfunc0());
+			ev->sub_100784b0(flDur);
+		}
+		else if (_strcmpi(m_pReader->vfunc0(), "absolutetags") == 0)
+		{
+			m_pReader->vfunc1(1);
+			int nTag = sub_10077a00(m_pReader->vfunc0());
+			if (nTag == -1)
+				m_pReader->vfunc3("expecting valid tag type!!!");
+			m_pReader->vfunc1(1);
+			if (_strcmpi(m_pReader->vfunc0(), "{") != 0)
+				m_pReader->vfunc3("expecting {\n");
+			while (1)
+			{
+				m_pReader->vfunc1(1);
+				if (strlen(m_pReader->vfunc0()) == 0)
+				{
+					m_pReader->vfunc3("expecting relative tag\n");
+					break;
+				}
+				if (_strcmpi(m_pReader->vfunc0(), "}") == 0)
+					break;
+				char szAbs[128];
+				float t;
+				strcpy(szAbs, m_pReader->vfunc0());
+				m_pReader->vfunc1(0);
+				t = atof(m_pReader->vfunc0());
+				ev->sub_10077bd0(nTag, szAbs, *(int *)&t);
+			}
+		}
+		else if (_strcmpi(m_pReader->vfunc0(), "flextimingtags") == 0)
+		{
+			m_pReader->vfunc1(1);
+			if (_strcmpi(m_pReader->vfunc0(), "{") != 0)
+				m_pReader->vfunc3("expecting {\n");
+			while (1)
+			{
+				m_pReader->vfunc1(1);
+				if (strlen(m_pReader->vfunc0()) == 0)
+				{
+					m_pReader->vfunc3("expecting relative tag\n");
+					break;
+				}
+				if (_strcmpi(m_pReader->vfunc0(), "}") == 0)
+					break;
+				char szFlex[128];
+				float flPct;
+				bool bLocked;
+				strcpy(szFlex, m_pReader->vfunc0());
+				m_pReader->vfunc1(0);
+				flPct = atof(m_pReader->vfunc0());
+				m_pReader->vfunc1(0);
+				bLocked = atoi(m_pReader->vfunc0()) ? true : false;
+				ev->sub_100770b0(szFlex, flPct, bLocked);
+			}
+		}
+		else if (_strcmpi(m_pReader->vfunc0(), "relativetag") == 0)
+		{
+			char szRel1[128];
+			char szRel2[128];
+			m_pReader->vfunc1(0);
+			strcpy(szRel1, m_pReader->vfunc0());
+			m_pReader->vfunc1(0);
+			strcpy(szRel2, m_pReader->vfunc0());
+			ev->sub_10076f10(1, szRel1, szRel2);
+		}
+		else if (_strcmpi(m_pReader->vfunc0(), "flexanimations") == 0)
+		{
+			sub_1007a5b0(m_pReader, ev, 1);
+		}
+		else if (_strcmpi(m_pReader->vfunc0(), "event_ramp") == 0)
+		{
+			sub_1007a390(m_pReader, ev);
+		}
+	}
+	if (pChannel)
+		((CUnknown100735a0 *)pChannel)->sub_100735a0((int)ev);
+	ev->sub_10076670((int)pScene);
+	ev->sub_100766b0((int)pChannel);
+	if (hadramp && !ev->sub_10078630())
+	{
+		if (attack != 1.0f || sustain != 1.0f || decay != 1.0f)
+		{
+			float attacktime = (1.0f - attack) * ev->sub_10076b30();
+			float decaytime = decay * ev->sub_10076b30();
+			float midpoint = (attacktime + decaytime) * 0.5f;
+			ev->sub_10078690(attacktime, sustain, 0);
+			ev->sub_10078690(midpoint, sustain, 0);
+			ev->sub_10078690(decaytime, sustain, 0);
+			ev->sub_10078880();
+		}
+	}
+	return ev;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007b7b0 size=0x17a
 #include "CUnknown1007b7b0.h"
 #include "CUnknown1007bb30.h"
