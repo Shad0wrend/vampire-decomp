@@ -213744,6 +213744,51 @@ void CHintData_WW::sub_103ca390(int hint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103cac20 size=0x15f
+#include "CNPC_VWerewolf.h"
+#include <math.h>
+
+extern Vector g_1070d1b0;
+const Vector &sub_102d6100(int hull);
+const Vector &sub_102d6120(int hull);
+
+struct CNPC_VWerewolfHullView
+{
+	char pad[0x1568];
+	int m_nHull;
+};
+
+void CNPC_VWerewolf::sub_103cac20()
+{
+	sub_10279a50(0);
+	m_h628c = 0;
+	m_n66a4 = 0;
+	m_b66a1 = 0;
+	m_b66a8 = 0;
+	m_b66a9 = 0;
+	m_nTick66d4 = 0;
+	m_fl66d8 = 0;
+	*(Vector *)&m_vSnap66dc = g_1070d1b0;
+	m_flTeleport66ec = gpGlobals->curtime;
+	m_fl66f4 = gpGlobals->curtime;
+	m_n66b8 = 0;
+	m_n66ac = 0;
+	m_n6708 = -1;
+	m_n670c = -1;
+	m_nFlags66e8 = 0;
+	m_flNodeTime = 0;
+	m_pNode = 0;
+	m_n6700 = 0;
+	m_n6704 = 0;
+	Vector vecMins = sub_102d6100(((CNPC_VWerewolfHullView *)this)->m_nHull);
+	Vector vecMaxs = sub_102d6120(((CNPC_VWerewolfHullView *)this)->m_nHull);
+	Vector vecCenter = (vecMins + vecMaxs) * 0.5f;
+	Vector vecExtents = vecMaxs - vecCenter;
+	m_f66cc += (float)sqrt(vecExtents.x * vecExtents.x + vecExtents.y * vecExtents.y);
+	m_f66d0 += (float)sqrt(512.0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103cade0 size=0xcc
 #include "CNPC_VWerewolf.h"
 #include "CBaseEntity.h"
