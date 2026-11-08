@@ -18,7 +18,6 @@ public:
 	int vfunc80();
 	int vfunc81();
 	datamap_t * vfunc82();
-	char m_pad048c[0x4a4 - 0x48c];
 	float m_flSizeScalar;	// 0x04a4
 	char m_pad04a8[0x4c0 - 0x4a8];
 };

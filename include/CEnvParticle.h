@@ -10,11 +10,15 @@ class CBaseEntity;
 class CEnvParticle
 {
 public:
-	char pad0[0x254];
+	char pad0[0x4c];
+	int m_nFlags4c;	// 0x4c
+	char pad50[0x254 - 0x50];
 	unsigned int m_hAttachEntity;	// 0x254
 	char pad258[4];
 	unsigned int m_h25c;	// 0x25c: a handle (the owner entity)
-	char pad260[0x450 - 0x260];
+	char pad260[0x268 - 0x260];
+	int m_nFlags268;	// 0x268
+	char pad26c[0x450 - 0x26c];
 	int m_iszParticleName;	// 0x450 (string_t)
 	int m_iParticleIndex;	// 0x454
 	int m_iAttachType;	// 0x458: attachment type (0..18)
@@ -30,6 +34,12 @@ public:
 	float m_fSecondaryBlue;	// 0x0480
 	int m_unk484;
 	float m_fl488;	// 0x488
+	float m_fl48c;	// 0x48c
+	int m_n490;	// 0x490
+	char pad494[8];
+	float m_fl49c;	// 0x49c
+	char m_b4a0;	// 0x4a0
+	char m_b4a1;	// 0x4a1 (sizeof 0x4a4)
 
 	void vfunc78();	// slot 78: when CBaseEntity::sub_100b5190() holds calls slot 241, then CBaseEntity::vfunc78
 	void vfunc77();	// slot 77: when CBaseEntity::sub_100b5190() does not hold calls slot 242, then CBaseEntity::vfunc77
