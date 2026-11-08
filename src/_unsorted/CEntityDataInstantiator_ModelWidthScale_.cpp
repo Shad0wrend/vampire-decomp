@@ -32,6 +32,54 @@ int CEntityDataInstantiator<ModelWidthScale>::vfunc1(unsigned int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100414f0 size=0x139
+#include "UtlHash8.h"
+#include "UtlVec8.h"
+#include "CEntityDataInstantiator.h"
+
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+
+// TARGET: CEntityDataInstantiator<ModelWidthScale>::vfunc2
+void *CEntityDataInstantiator<ModelWidthScale>::vfunc2(unsigned int key)
+{
+	UtlHash8 *pHash = (UtlHash8 *)&m_pBuckets;
+	EntityDataKey_t k;
+	k.pad = 0;
+	k.key = key;
+	unsigned int hash = pHash->m_pKey(&k);
+	unsigned int bucket = pHash->m_bPowerOfTwo ? (pHash->m_ModMask & hash) : (hash % pHash->m_bucketCount);
+	int count = pHash->m_pBuckets[bucket].m_Size;
+	int i = 0;
+	if (i < count)
+	{
+		do
+		{
+			char *pBase = pHash->m_pBuckets[bucket].m_pElements;
+			if (pHash->m_pCompare(pBase + i * 8, &k))
+				break;
+			i++;
+		} while (i < count);
+	}
+	unsigned int handle;
+	if (i == count || (handle = (bucket << 16) | i) == 0xffffffff)
+	{
+		unsigned int found = pHash->sub_10042140(&k);
+		if (found != 0xffffffff)
+			handle = found;
+		else
+		{
+			hash = pHash->m_pKey(&k);
+			bucket = pHash->m_bPowerOfTwo ? (pHash->m_ModMask & hash) : (hash % pHash->m_bucketCount);
+			handle = ((UtlVec8 *)&pHash->m_pBuckets[bucket])->sub_100424a0(pHash->m_pBuckets[bucket].m_Size, (UtlVec8Elem *)&k) | (bucket << 16);
+		}
+		void *pData = ::operator new(0x10);
+		*(void **)(pHash->m_pBuckets[handle >> 16].m_pElements + (handle & 0xffff) * 8 + 4) = pData;
+		memset(*(void **)(pHash->m_pBuckets[handle >> 16].m_pElements + (handle & 0xffff) * 8 + 4), 0, 0x10);
+	}
+	return *(void **)(pHash->m_pBuckets[handle >> 16].m_pElements + (handle & 0xffff) * 8 + 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10041a60 size=0xa3
 #include "UtlHash8.h"
 #include "UtlMem.h"
