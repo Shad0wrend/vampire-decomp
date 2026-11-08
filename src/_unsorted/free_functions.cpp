@@ -173407,6 +173407,82 @@ int sub_102df2f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102df700 size=0x273
+#include "CLogicAuto.h"
+#include "CAI_MemoryListSaveRestoreOps.h"
+#include "CEHandleGet.h"
+#include "Vector.h"
+#include "globalvars.h"
+#include "CUnknown10316890.h"
+#include "CBaseEntity.h"
+#include "CAI_Network.h"
+struct CSlots0 { virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9(); };
+struct CSlots10 : CSlots0 { virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4(); virtual void b5(); virtual void b6(); virtual void b7(); virtual void b8(); virtual void b9(); };
+struct CSlots20 : CSlots10 { virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4(); virtual void c5(); virtual void c6(); virtual void c7(); virtual void c8(); virtual void c9(); };
+struct CSlots30 : CSlots20 { virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4(); virtual void d5(); virtual void d6(); virtual void d7(); virtual void d8(); virtual void d9(); };
+struct CSlots40 : CSlots30 { virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4(); virtual void e5(); virtual void e6(); virtual void e7(); virtual void e8(); virtual void e9(); };
+struct CSlots50 : CSlots40 { virtual void f0(); virtual void f1(); virtual void f2(); virtual void f3(); virtual void f4();
+	virtual void Slot55(int, Vector, Vector); };
+struct CUnknown100b5190 { void sub_100b5190(); };
+CAI_MemoryNode *sub_102df130();
+
+bool CAI_MemoryList::sub_102df700(CAI_Network *pNav, CBaseEntity *pEnt, const Vector &pos, const Vector &pos2)
+{
+	if (pEnt)
+		((CUnknown100b5190 *)pEnt)->sub_100b5190();
+	CAI_MemoryNode *n = m_pHead;
+	while (n) {
+		if ((void *)((EHANDLE *)&n->m_hEntity)->Get() == (void *)pEnt || (!pEnt && n->m_bFlag34 == 1)) {
+			n->m_flTime = gpGlobals->curtime;
+			n->m_bFlag35 = 0;
+			n->m_vec18 = pos2;
+			if ((n->m_vecC - pos).Length() > 12.0) {
+				n->m_vec0 = pos;
+				n->m_vecC = pos;
+				if (pNav) {
+					n->m_i2c = pNav->sub_102f41b0(&pos);
+					n->m_i30 = pNav->sub_102f41b0(&pos);
+				} else {
+					n->m_i2c = -1;
+					n->m_i30 = -1;
+				}
+			}
+			return false;
+		}
+		n = n->m_pNext;
+	}
+	n = sub_102df130();
+	n->m_vec0 = pos;
+	n->m_vecC = pos;
+	n->m_vec18 = pos2;
+	if (pNav) {
+		n->m_i2c = pNav->sub_102f41b0(&pos);
+		n->m_i30 = pNav->sub_102f41b0(&pos);
+	} else {
+		n->m_i2c = -1;
+		n->m_i30 = -1;
+	}
+	n->m_flTime = gpGlobals->curtime;
+	n->m_bFlag35 = 0;
+	if (!pEnt) {
+		*(EHANDLE *)&n->m_hEntity = pEnt;
+		n->m_bFlag34 = 1;
+	} else {
+		*(EHANDLE *)&n->m_hEntity = pEnt;
+		n->m_bFlag34 = 0;
+	}
+	n->m_pNext = m_pHead;
+	m_pHead = n;
+	if (m_bFlag) {
+		if (m_pOutput)
+			((CUnknown10316890 *)m_pOutput)->sub_10316890((int)pEnt, pos, pos2);
+	} else if (m_pOwnerEnt) {
+		((CSlots50 *)m_pOwnerEnt)->Slot55((int)pEnt, pos, pos2);
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dfa20 size=0x57
 #include "CBaseEntity.h"
 struct SListNode {

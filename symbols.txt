@@ -8931,6 +8931,7 @@
 0x1000d963 func   ?vfunc479@CHL2_Player@@UAEHXZ CHL2_Player::vfunc479
 0x1000d968 func   _item_g_lilly_purse item_g_lilly_purse
 0x1000d96d func   ?vfunc81@CWeaponRanged_Rifle_SuperShotgun@@UAEHXZ CWeaponRanged_Rifle_SuperShotgun::vfunc81
+0x1000d972 func   ?sub_102df700@CAI_MemoryList@@QAE_NPAVCAI_Network@@PAVCBaseEntity@@ABVVector@@2@Z CAI_MemoryList::sub_102df700
 0x1000d977 func   ?sub_1009a370@@YAHXZ sub_1009a370
 0x1000d97c func   ?sub_100847e0@CSceneEntity@@QAEXPAX@Z CSceneEntity::sub_100847e0
 0x1000d981 func   ?sub_10263d30@@YAMMMMMMMPAM0@Z sub_10263d30
