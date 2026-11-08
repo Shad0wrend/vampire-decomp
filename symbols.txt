@@ -6128,6 +6128,7 @@
 0x10009ac5 func   ?sub_10092270@CBaseAnimating@@QAEHPBD@Z CBaseAnimating::sub_10092270
 0x10009aca func   ?vfunc265@CSceneEntity@@UAEXPAX0@Z CSceneEntity::vfunc265
 0x10009acf func   ?sub_10230f30@CUnk10230f30@@QAEPAU1@H@Z CUnk10230f30::sub_10230f30
+0x10009ad9 func   ?sub_102e1d10@@YAMMMMM@Z sub_102e1d10
 0x10009ade func   ?sub_1018c170@CPlayerLocalPredictedData@@QAEPAV1@XZ CPlayerLocalPredictedData::sub_1018c170
 0x10009ae8 func   ?sub_10027570@CBaseEntity@@QAEHXZ CBaseEntity::sub_10027570
 0x10009aed func   _env_swarm_bats env_swarm_bats

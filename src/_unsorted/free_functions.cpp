@@ -173021,6 +173021,38 @@ void CUnknownEmbed102e1cf0::sub_102e1cf0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e1d10 size=0xc9
+inline float UTIL_AngleMod_102e1d10(float a)
+{
+	a = (360.0f / 65536) * ((int)(a * (65536.0f / 360.0f)) & 65535);
+	return a;
+}
+
+float sub_102e1d10(float yawSpeedPerSec, float current, float target, float time)
+{
+	if (current != target) {
+		float speed = yawSpeedPerSec * time;
+		float move = target - current;
+		if (target > current) {
+			if (move > 180.0f)
+				move = move - 360.0f;
+		} else {
+			if (move <= -180.0f)
+				move = move + 360.0f;
+		}
+		if (move > 0) {
+			if (move > speed)
+				move = speed;
+		} else {
+			if (move < -speed)
+				move = -speed;
+		}
+		return UTIL_AngleMod_102e1d10(current + move);
+	}
+	return target;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e1e20 size=0x11b
 #include "CAI_Motor.h"
 #include "CEntityVSlots.h"
