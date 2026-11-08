@@ -207828,6 +207828,136 @@ void CNPC_VWerewolf::sub_103d8c10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d8df0 size=0x485
+#include "CNPC_VWerewolf.h"
+#include "CPASAttenuationFilter.h"
+#include "engineserver.h"
+#include "engineiface.h"
+#include "Tier1.h"
+
+#define RV1(n) virtual void v##n();
+#define RV10(p) RV1(p##0) RV1(p##1) RV1(p##2) RV1(p##3) RV1(p##4) RV1(p##5) RV1(p##6) RV1(p##7) RV1(p##8) RV1(p##9)
+#define RV100(p) RV10(p##0) RV10(p##1) RV10(p##2) RV10(p##3) RV10(p##4) RV10(p##5) RV10(p##6) RV10(p##7) RV10(p##8) RV10(p##9)
+
+struct CWerewolfSoundView
+{
+	RV100(a) RV10(b0) RV10(b1) RV10(b2) RV10(b3) RV10(b4) RV10(b5) RV10(b6) RV10(b7) RV10(b8)
+	RV1(c0) RV1(c1) RV1(c2)
+	virtual Vector vfunc193();
+	RV1(d4) RV1(d5) RV1(d6) RV1(d7) RV1(d8) RV1(d9)
+	RV100(e) RV100(f) RV10(g0) RV10(g1) RV10(g2) RV10(g3) RV10(g4) RV10(g5) RV10(g6) RV10(g7) RV10(g8)
+	RV1(h0)
+	virtual void vfunc491();
+	RV1(i2) RV1(i3) RV1(i4) RV1(i5) RV1(i6) RV1(i7) RV1(i8) RV1(i9)
+	virtual void vfunc500();
+	char m_pad[0xfec - 4];
+	int m_nActivity;
+	const char *sub_100ab4f0();
+};
+
+extern const char *__cdecl sub_1025d730(int act);
+
+// TARGET: CNPC_VWerewolf::sub_103d8df0
+void CNPC_VWerewolf::sub_103d8df0()
+{
+	CWerewolfSoundView *pView = (CWerewolfSoundView *)this;
+	int soundlevel = 100;
+	int pitch = 100;
+	const char *pszSound;
+	int channel;
+
+	switch (pView->m_nActivity) {
+	case 0x10e:
+		pszSound = "Character/Monster/Werewolf/patio_leap.wav";
+		channel = 4;
+		pitch = g_109f3868(0x5a, 0x69);
+		break;
+	case 0x10f:
+		pszSound = g_109f3868(0, 1) ? "Character/Monster/Werewolf/fence_leap_1.wav" : "Character/Monster/Werewolf/fence_leap_2.wav";
+		channel = 4;
+		break;
+	case 0x10c:
+	{
+		int (__cdecl *const pf)(int, int) = g_109f3868;
+		pszSound = pf(0, 1) ? "Character/Monster/Werewolf/Skylight_Smash_1.wav" : "Character/Monster/Werewolf/Skylight_Smash_2.wav";
+		channel = 4;
+		pitch = pf(0x5a, 0x69);
+		soundlevel = 0x8c;
+		break;
+	}
+	case 0x100:
+		pszSound = "Character/Monster/Werewolf/Roar_Long_1.wav";
+		channel = 2;
+		break;
+	case 0x2c:
+	case 0x10b:
+		pView->vfunc500();
+		pszSound = 0;
+		break;
+	case 0x30:
+	case 0x122:
+	case 0x123:
+		pszSound = "Character/Monster/Werewolf/Jump_Landing_1.wav";
+		channel = 4;
+		pitch = g_109f3868(0x5a, 0x69);
+		break;
+	case 0x112:
+	case 0x114:
+	case 0x116:
+		pszSound = g_109f3868(0, 1) ? "Character/Monster/Werewolf/squeezethough_front_quick_1.wav" : "Character/Monster/Werewolf/squeezethough_front_quick_2.wav";
+		channel = 4;
+		break;
+	case 0x113:
+	case 0x115:
+	case 0x117:
+	case 0x118:
+		pszSound = g_109f3868(0, 1) ? "Character/Monster/Werewolf/squeezethough_front_slow_1.wav" : "Character/Monster/Werewolf/squeezethough_front_slow_2.wav";
+		channel = 4;
+		break;
+	case 0x119:
+	case 0x11a:
+	case 0x11b:
+	case 0x11c:
+	case 0x11f:
+		pszSound = g_109f3868(0, 1) ? "Character/Monster/Werewolf/smash_door_1.wav" : "Character/Monster/Werewolf/smash_door_2.wav";
+		channel = 4;
+		break;
+	case 0x11e:
+		pszSound = "Character/Monster/Werewolf/death_finale.wav";
+		channel = 2;
+		soundlevel = 0x8c;
+		break;
+	case 0x124:
+		pszSound = "Character/Monster/Werewolf/Air_Sniff_1.wav";
+		channel = 2;
+		soundlevel = 0x8c;
+		break;
+	case 0x4b:
+	case 0x51:
+	case 0x111:
+	case 0x11d:
+	case 0xd8f:
+		if (g_109f3868(0, 1))
+			pView->vfunc500();
+		else
+			pView->vfunc491();
+		pszSound = 0;
+		break;
+	default:
+		g_109f3630("%s could not look up sound for activity: %s\n", pView->sub_100ab4f0(), sub_1025d730(pView->m_nActivity));
+		pszSound = 0;
+		break;
+	}
+
+	if (pszSound) {
+		CPASAttenuationFilter filter(pView->vfunc193(), (soundlevel_t)soundlevel);
+		filter.MakeReliable();
+		int edict = m_pEdict2e0;
+		enginesound->vfunc2(&filter, engine->vfunc35(edict), channel, pszSound, 1.0f, soundlevel, 0x80, pitch, 0, 0, 1, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d99a0 size=0xcd
 #include "CNPC_VWerewolf.h"
 #include "inputdata_t.h"
