@@ -6021,6 +6021,7 @@
 0x10009836 func   ?sub_10326360@CBaseCombatCharacter@@QAE_NVVector@@MM@Z CBaseCombatCharacter::sub_10326360
 0x1000983b func   ?sub_10146b20@CBaseCombatCharacter@@QAE_NPAV1@@Z CBaseCombatCharacter::sub_10146b20
 0x10009840 func   ?sub_102c0b60@@YI_NPAX@Z sub_102c0b60
+0x10009845 func   ?sub_1032c6a0@CBaseCombatCharacter@@QAEXPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_1032c6a0
 0x1000984a func   ?sub_101f66c0@@YAXXZ sub_101f66c0
 0x1000984f func   ?sub_10366120@CNPC_VVampireBoss@@QAEXPAUinputdata_t@@@Z CNPC_VVampireBoss::sub_10366120
 0x10009854 func   ?vfunc461@CNPC_VTzimisce@@QAEHXZ CNPC_VTzimisce::vfunc461

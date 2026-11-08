@@ -187470,6 +187470,56 @@ CBaseEntity *CBaseCombatCharacter::sub_1032be80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032c6a0 size=0x22c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+extern Vector g_1070d1b0;
+void sub_101cf5c0(CBaseEntity *pObject, int value, int flag);
+int sub_101cf600(int pObject);
+// TARGET: CBaseCombatCharacter::sub_1032c6a0
+void CBaseCombatCharacter::sub_1032c6a0(CBaseEntity *pObject)
+{
+  ScopeTrace trace("CBaseCombatCharacter::ObjectHand_Attach",
+     this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+  if (pObject)
+  {
+  CEntityVSlots *pObj = (CEntityVSlots *)pObject;
+  pObj->slot93(0xb, 0);
+  { ScopeTrace trace2("CBaseEntity::AddSolidFlags",
+        pObject->m_name26c ? pObject->m_name26c : g_106b8540);
+    ((CCollisionProperty *)((char *)pObject + 0x270))->AddSolidFlags(4); }
+  pObj->slot62((const float *)&g_1070d1b0);
+  pObject->sub_1009ee80(this);
+  pObj->slot202((CEntityVSlots *)this);
+  if (pObject->m_hAimEnt37c.Get()) {
+     Vector vecDir;
+     ((CEntityVSlots *)this)->slot368(&vecDir);
+     vecDir = vecDir * 60.0f;
+     {
+     Vector vecResult = vecDir + ((CEntityVSlots *)this)->slot389(
+         *((Vector *)((CEntityVSlots *)this)->slot220()));
+     sub_101cf5c0(pObject, (int)&vecResult, 0);
+     }
+  }
+  pObject->m_pfnTouch = 0;
+  pObject->sub_100ac4e0(0, 0, 0);
+  sub_101cf600((int)pObject);
+  }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032c960 size=0x1f6
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
