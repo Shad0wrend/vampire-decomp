@@ -57,6 +57,39 @@ CPointEntity *CEnvPlayerSurfaceTrigger::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fd950 size=0x111
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CEnvPlayerSurfaceTrigger.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+#include "utlvector.h"
+#include "ehandle.h"
+struct CEnvPlayerSurfaceTrigger_Entry { EHANDLE m_h; };
+extern CUtlVector<CEnvPlayerSurfaceTrigger_Entry> g_1070906c;
+
+void CEnvPlayerSurfaceTrigger::vfunc103()
+{
+    CBaseEntity *e = (CBaseEntity *)this;
+    {
+        ScopeTrace trace("CBaseEntity::SetSolid", e ? (e->m_name26c ? e->m_name26c : g_106b8540) : g_105387dc);
+        ((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(0);
+    }
+    e->vfunc93(0, 0);
+    m_nMaterial = 0;
+    m_bDisabled = 0;
+    CEnvPlayerSurfaceTrigger_Entry h;
+    h.m_h = e;
+    g_1070906c.AddToTail(h);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fdac0 size=0x89
 #include "CBaseEntity.h"
 #include "utlvector.h"
