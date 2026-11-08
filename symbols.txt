@@ -13617,6 +13617,7 @@
 0x1001465a func   ?vfunc130@CNPC_VMingXiaoTentacle@@UAEXH@Z CNPC_VMingXiaoTentacle::vfunc130
 0x1001465f func   ?vfunc79@CBaseAnimatingOverlay@@UAEHXZ CBaseAnimatingOverlay::vfunc79
 0x10014664 func   ?sub_1032f930@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_1032f930
+0x10014669 func   ?sub_10375470@@YAXXZ sub_10375470
 0x1001466e func   ?vfunc82@CBreakableProp@@QAEPAUdatamap_t@@XZ CBreakableProp::vfunc82
 0x10014673 func   ?vfunc223@CPhysicsCannister@@QAEDXZ CPhysicsCannister::vfunc223
 0x10014678 func   ?vfunc5@COccultRegen@@QAEPAV1@I@Z COccultRegen::vfunc5

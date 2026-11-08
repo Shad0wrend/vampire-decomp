@@ -1,6 +1,198 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10375470 size=0x62e
+#include "UtlMem.h"
+#include "UtlVec8.h"
+#include "CUtlVector4.h"
+#include "CUtlVector16.h"
+#include "CUnknown10359c50.h"
+
+extern "C" void __cdecl qsort(void *, unsigned int, unsigned int, int (__cdecl *)(const void *, const void *));
+extern "C" int __cdecl sub_102bec60(const void *, const void *);
+extern char g_109203cc[], g_109203d4[], g_109203dc[], g_10936c74[];
+extern char g_1093d258[], g_1093d270[], g_1093d288[], g_1093d2a4[];
+extern char g_10638edc[], g_10638d18[], g_10638cf4[], g_10638b50[], g_10638b24[], g_106388f8[];
+extern char g_106388c0[], g_106386a0[], g_10638670[], g_106383b0[], g_10638388[], g_106381a0[];
+extern char g_10638170[], g_10638018[], g_10637fe8[], g_10637e90[], g_10637e6c[], g_10637c78[];
+extern char g_10637c4c[], g_10637c24[], g_10637be4[];
+extern bool g_10637b44;
+extern const char *g_10637b4c;
+extern const char g_10594488[], g_10600e78[], g_10577ca0[], g_10628c94[];
+extern CUnknown10359c50 g_1093ae48, g_1093ae60, g_1093ae78, g_1093ae28;
+
+struct VecU {
+	UtlMem mem;
+	int size;
+	int *elems;
+};
+
+struct Frame {
+	UtlVec8Elem e;
+	VecU a;
+	UtlVec8 sched;
+	VecU b;
+	UtlVec8 cond;
+	UtlVec8 task;
+	UtlVec8 squad;
+	const char *tTurnRight;
+	const char *tUnknown;
+	const char *tLookAround;
+	const char *tHunt;
+	const char *tFinish;
+	const char *tFeed;
+	const char *tTurnLeft;
+	const char *tInvestigate;
+	const char *tSetup;
+};
+
+class CUnknown10936b68 { public: bool sub_1030d850(const char *cls, int name, CUnknown10359c50 *reg); };
+extern CUnknown10936b68 g_10936b68;
+struct SchedPurge { void sub_10373420(); };
+struct VecPurgeA { void sub_1021e410(); };
+
+struct Elem { const char *name; int id; };
+
+#define VERIFY(vec, reg, kind) \
+	for (i = 0; i < f.vec.m_Size; i++) { \
+		Elem *p = (Elem *)f.vec.m_pMemory; \
+		const char *cn = g_10637b4c; \
+		int id = p[i].id; \
+		const char *nm = p[i].name; \
+		if (!reg.sub_102ea130(nm, id, kind, cn)) \
+			goto fail; \
+	}
+
+// TARGET: sub_10375470
+void sub_10375470()
+{
+	int i;
+	Frame f;
+
+	f.a.mem.sub_102c6a00(0, 0);
+	f.a.size = 0;
+	f.a.elems = f.a.mem.m_pMemory;
+	f.b.mem.sub_102c6b80(0, 0);
+	f.b.size = 0;
+	f.b.elems = f.b.mem.m_pMemory;
+	f.sched.sub_102c66f0(0, 0);
+	f.task.sub_102c66f0(0, 0);
+	f.cond.sub_102c66f0(0, 0);
+	f.squad.sub_102c66f0(0, 0);
+
+	f.e.a = (int)g_10638edc;
+	f.e.b = 0x158;
+	f.sched.sub_102c6a50(f.sched.m_Size, &f.e);
+	f.tSetup = g_10638d18;
+	((CUtlVector4 *)&f.a)->sub_102c6920(f.a.size, (int *)&f.tSetup);
+	f.e.a = (int)g_10638cf4;
+	f.e.b = 0x15a;
+	f.sched.sub_102c6a50(f.sched.m_Size, &f.e);
+	f.tHunt = g_10638b50;
+	((CUtlVector4 *)&f.a)->sub_102c6920(f.a.size, (int *)&f.tHunt);
+	f.e.a = (int)g_10638b24;
+	f.e.b = 0x15b;
+	f.sched.sub_102c6a50(f.sched.m_Size, &f.e);
+	f.tInvestigate = g_106388f8;
+	((CUtlVector4 *)&f.a)->sub_102c6920(f.a.size, (int *)&f.tInvestigate);
+	f.e.a = (int)g_106388c0;
+	f.e.b = 0x15c;
+	f.sched.sub_102c6a50(f.sched.m_Size, &f.e);
+	f.tUnknown = g_106386a0;
+	((CUtlVector4 *)&f.a)->sub_102c6920(f.a.size, (int *)&f.tUnknown);
+	f.e.a = (int)g_10638670;
+	f.e.b = 0x15d;
+	f.sched.sub_102c6a50(f.sched.m_Size, &f.e);
+	f.tLookAround = g_106383b0;
+	((CUtlVector4 *)&f.a)->sub_102c6920(f.a.size, (int *)&f.tLookAround);
+	f.e.a = (int)g_10638388;
+	f.e.b = 0x15e;
+	f.sched.sub_102c6a50(f.sched.m_Size, &f.e);
+	f.tFinish = g_106381a0;
+	((CUtlVector4 *)&f.a)->sub_102c6920(f.a.size, (int *)&f.tFinish);
+	f.e.a = (int)g_10638170;
+	f.e.b = 0x15f;
+	f.sched.sub_102c6a50(f.sched.m_Size, &f.e);
+	f.tTurnLeft = g_10638018;
+	((CUtlVector4 *)&f.a)->sub_102c6920(f.a.size, (int *)&f.tTurnLeft);
+	f.e.a = (int)g_10637fe8;
+	f.e.b = 0x160;
+	f.sched.sub_102c6a50(f.sched.m_Size, &f.e);
+	f.tTurnRight = g_10637e90;
+	((CUtlVector4 *)&f.a)->sub_102c6920(f.a.size, (int *)&f.tTurnRight);
+	f.e.a = (int)g_10637e6c;
+	f.e.b = 0x161;
+	f.sched.sub_102c6a50(f.sched.m_Size, &f.e);
+	f.tFeed = g_10637c78;
+	((CUtlVector4 *)&f.a)->sub_102c6920(f.a.size, (int *)&f.tFeed);
+	f.e.a = (int)g_10637c4c;
+	f.e.b = 0x79;
+	f.cond.sub_102c6a50(f.cond.m_Size, &f.e);
+	f.e.a = (int)g_10637c24;
+	f.e.b = 0x14a;
+	f.task.sub_102c6a50(f.task.m_Size, &f.e);
+
+	if (g_1093ae48.sub_1001153b(g_109203cc, g_1093d258)) {
+		if (g_1093ae60.sub_1001153b(g_109203d4, g_1093d270))
+			g_1093ae78.sub_1001153b(g_109203dc, g_1093d288);
+	}
+	g_1093ae28.sub_1001153b(g_10936c74, g_1093d2a4);
+
+	if (f.sched.m_Size)
+		qsort(f.sched.m_pMemory, f.sched.m_Size, 8, sub_102bec60);
+	if (f.task.m_Size)
+		qsort(f.task.m_pMemory, f.task.m_Size, 8, sub_102bec60);
+	if (f.cond.m_Size)
+		qsort(f.cond.m_pMemory, f.cond.m_Size, 8, sub_102bec60);
+	if (f.squad.m_Size)
+		qsort(f.squad.m_pMemory, f.squad.m_Size, 8, sub_102bec60);
+
+	VERIFY(sched, g_1093ae48, g_10594488)
+	VERIFY(task, g_1093ae60, g_10600e78)
+	VERIFY(cond, g_1093ae78, g_10577ca0)
+	for (i = 0; i < f.squad.m_Size; i++) {
+		if (!g_1093ae28.sub_102ea130(((Elem *)f.squad.m_pMemory)[i].name, ((Elem *)f.squad.m_pMemory)[i].id, g_10628c94, g_10637b4c))
+			goto fail;
+	}
+	for (i = 0; i < f.b.size; i++)
+		((void (__cdecl *)())f.b.mem.m_pMemory[i])();
+	for (i = 0; i < f.a.size; i++) {
+		if (!g_10637b44)
+			break;
+		g_10637b44 = g_10936b68.sub_1030d850(g_10637be4, f.a.mem.m_pMemory[i], &g_1093ae48);
+	}
+
+	((CUtlVector16 *)&f.squad)->sub_102c8b60();
+	((UtlMem *)&f.squad)->sub_102c8c00();
+	((CUtlVector16 *)&f.cond)->sub_102c8b60();
+	((UtlMem *)&f.cond)->sub_102c8c00();
+	((CUtlVector16 *)&f.task)->sub_102c8b60();
+	((UtlMem *)&f.task)->sub_102c8c00();
+	((SchedPurge *)&f.sched)->sub_10373420();
+	((UtlMem *)&f.sched)->sub_102c8c00();
+	f.sched.m_pElements = (UtlVec8Elem *)f.sched.m_pMemory;
+	((UtlMem *)&f.sched)->sub_102c8c00();
+	((CUtlVector16 *)&f.b)->sub_10359ba0();
+	((UtlMem *)&f.b)->sub_102c8c40();
+	f.b.elems = f.b.mem.m_pMemory;
+	((UtlMem *)&f.b)->sub_102c8c40();
+	((VecPurgeA *)&f.a)->sub_1021e410();
+	((UtlMem *)&f.a)->sub_1021e540();
+	f.a.elems = f.a.mem.m_pMemory;
+	((UtlMem *)&f.a)->sub_1021e540();
+	return;
+fail:
+	f.squad.sub_102c8a90();
+	f.cond.sub_102c8a90();
+	f.task.sub_102c8a90();
+	f.sched.sub_102c8a90();
+	((CUtlVector16 *)&f.b)->sub_102c8bb0();
+	((UtlMem *)&f.b)->sub_102c8c40();
+	((CUtlVector16 *)&f.a)->sub_102c8b10();
+	((UtlMem *)&f.a)->sub_1021e540();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10375c80 size=0xb5
 #include "CAI_BaseNPC.h"
 #include "CBaseEntity.h"
