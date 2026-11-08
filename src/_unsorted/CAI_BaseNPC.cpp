@@ -3800,6 +3800,45 @@ int __fastcall sub_1028abe0(void *self, int dummy, int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028af20 size=0x13e
+#include "CCollisionProperty.h"
+#include "CGameTrace.h"
+#include "UTIL_Trace.h"
+float *sub_102d6100(int hull);
+struct CNpcOtherView
+{
+	char m_pad0000[0x5f0];
+	int m_p5f0;
+};
+struct CNpcFlagsView
+{
+	char m_pad0000[0x270];
+	CCollisionProperty m_Collision;
+	char m_padx[0x1568 - 0x270 - sizeof(CCollisionProperty)];
+	int m_nHull;
+	char m_pad156c[0x5db0 - 0x156c];
+	int m_p5db0;
+	bool sub_1028af20(const Vector *pPos, CNpcOtherView *pOther);
+};
+// TARGET: ?sub_1028af20@CNpcFlagsView@@QAE_NPBVVector@@PAUCNpcOtherView@@@Z
+bool CNpcFlagsView::sub_1028af20(const Vector *pPos, CNpcOtherView *pOther)
+{
+	Vector vecTmp = *pPos;
+	vecTmp.z = vecTmp.z - sub_102d6100(m_nHull)[2];
+	Vector vecEnd = vecTmp;
+	vecEnd.z = vecEnd.z + 0.01;
+	const Vector &mins = *(const Vector *)m_Collision.vfunc1();
+	const Vector &maxs = *(const Vector *)m_Collision.vfunc2();
+	CGameTrace trace;
+	UTIL_TraceHull_DebugCall(*pPos, vecEnd, mins, maxs, 0x202400b, this, 0, &trace, 1, 0);
+	if (trace.m_startsolid)
+		return false;
+	if (m_p5db0 && (!pOther || pOther->m_p5f0 != m_p5db0))
+		return false;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028b0b0 size=0x24
 // TARGET: sub_1028b0b0
 char __fastcall sub_1028b0b0(void *pSelf, int edxUnused, int unused, int *pOther)

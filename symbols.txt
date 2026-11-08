@@ -4600,6 +4600,7 @@
 0x100077d9 func   ?sub_103be150@@YIHPAD@Z sub_103be150
 0x100077de func   ?sub_10196bb0@@YAPAXXZ sub_10196bb0
 0x100077e3 func   ?vfunc362@CWeaponMelee_BushHook@@QAEHXZ CWeaponMelee_BushHook::vfunc362
+0x100077e8 func   ?sub_1028af20@CNpcFlagsView@@QAE_NPBVVector@@PAUCNpcOtherView@@@Z CNpcFlagsView::sub_1028af20
 0x100077ed func   ?Grow@?$CUtlMemory@UCUnknown10076da0TimingTag@@@@QAEXH@Z CUtlMemory<CUnknown10076da0TimingTag>::Grow
 0x100077ed func   ?Grow@CUnknown10076da0TagMemory@@QAEXH@Z CUnknown10076da0TagMemory::Grow
 0x100077ed func   ?sub_10079060@CUnknown10079060@@QAEXH@Z CUnknown10079060::sub_10079060
