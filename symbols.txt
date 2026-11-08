@@ -2847,6 +2847,7 @@
 0x10005123 func   ?vfunc619@CNPC_VChangBros@@QAEXH@Z CNPC_VChangBros::vfunc619
 0x1000512d func   ?vfunc509@CNPC_VTzimisce@@UAE_NXZ CNPC_VTzimisce::vfunc509
 0x10005137 func   ?vfunc31@CHL2_Player@@UAEXH@Z CHL2_Player::vfunc31
+0x1000513c func   ?sub_10144290@@YAXPBVVector@@HHHHHHM@Z sub_10144290
 0x10005146 func   ?vfunc144@CNPC_VGargoyle@@UAEXH@Z CNPC_VGargoyle::vfunc144
 0x1000514b func   ?vfunc580@CNPC_VChangBros@@UAEPAUCAI_CondOwner@@XZ CNPC_VChangBros::vfunc580
 0x1000515a func   ?sub_100933b0@CBaseAnimating@@QAEDHPAM@Z CBaseAnimating::sub_100933b0
