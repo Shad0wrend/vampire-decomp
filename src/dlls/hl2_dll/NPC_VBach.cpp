@@ -116,6 +116,68 @@ int CNPC_VBach::vfunc605(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103652b0 size=0x315
+#include "vampire.h"
+#include "CNPC_VBach.h"
+#include "CUnknown102e0150.h"
+#include "CAI_Motor.h"
+#include "CPASAttenuationFilter.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+// TARGET: CNPC_VBach::vfunc444
+void CNPC_VBach::vfunc444(void *pTask)
+{
+	int type = *(int *)pTask;
+	if (type < 0xb0 || (type > 0xb1 && type != 0x14a)) {
+		sub_10384ab0(pTask);
+		return;
+	}
+	if (type > 0xb1)
+		return;
+	CBaseEntity *pWeapon = sub_10007e19();
+	if (!pWeapon)
+		return;
+	if (_strcmpi(pWeapon->sub_1009f200(), "item_w_rem_m_700_bach") != 0) {
+		m_b66a4 = 1;
+		sub_10384ab0(pTask);
+		return;
+	}
+	Vector vec;
+	Vector tmp;
+	if (m_h5ba8.Get() && (m_n5cc0 == 4 || m_n5cc0 == 0xc)) {
+		vec = *((CNPC_VBach *)m_h5ba8.Get())->vfunc217_slot();
+	} else if (vfunc167()) {
+		vec = *vfunc541()->sub_102dfed0(&tmp, vfunc167());
+	} else {
+		m_pszFile1b44 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VBach.cpp";
+		m_nLine1b48 = 0x428;
+		vfunc448(6);
+	}
+	m_pMotor5d44->sub_102e20b0(&vec.x, -2.0f);
+	if (m_b66a0) {
+		if (m_n6674) {
+			m_fl6694 = (m_fl5db4 = gpGlobals->curtime + 1e9f);
+		} else {
+			m_fl6694 = (m_fl5db4 = gpGlobals->curtime + 0.15f) + 1e9f;
+			m_b66a0 = 0;
+			m_n6678 = 0;
+		}
+	}
+	if (gpGlobals->curtime >= m_fl6694) {
+		CPASAttenuationFilter filter(this);
+		int edict = m_pEdict2e0;
+		enginesound->vfunc3(&filter, engine->vfunc35(edict), 2, "Character/Boss/Bach/snipe_warn6.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+		m_fl6694 = m_fl6694 + 999999.0f;
+		sub_10365840();
+	}
+	if (gpGlobals->curtime >= m_fl5db4) {
+		m_b66a4 = 1;
+		sub_10273e80(0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10365780 size=0x5c
 #include "CNPC_VBatSwarm.h"
 
