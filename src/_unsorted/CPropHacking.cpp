@@ -134,6 +134,61 @@ void CPropHacking::vfunc42(void *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021a830 size=0x1ee
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include <string.h>
+#include "CPropHacking.h"
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+struct CDepConVarView
+{
+	virtual void vfunc0();
+	virtual char vfunc1();
+	char m_pad[0x2c - 4];
+	int m_nValue;
+};
+extern CDepConVarView *g_1074f714;
+__declspec(dllimport) void DevMsg(const char *, ...);
+__declspec(dllimport) int Q_strnicmp(const char *, const char *, int);
+
+void CPropHacking::vfunc273(int a, char *pszCommand)
+{
+	ScopeTrace scope("CPropHacking::AcceptCmd", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!g_1074f714->vfunc1() && g_1074f714->m_nValue)
+		DevMsg("\n%s processing command [%s]\n", sub_100ab4f0(), pszCommand);
+	m_b09ec = 0;
+	if (m_b082c)
+		return;
+	if (pszCommand && strlen(pszCommand) > 0x10)
+		pszCommand[0x10] = 0;
+	if (m_n09dc == -2) {
+		sub_10218820(2, 0);
+		if (!sub_1021b9c0(a, pszCommand))
+			sub_1021c040();
+	} else if (m_n09e0 != -1) {
+		if (pszCommand && !Q_strnicmp("break", pszCommand, 0x10))
+			sub_10217b30();
+		else
+			sub_10217f50(0, pszCommand);
+	} else {
+		sub_10218820(2, 0);
+		if (!sub_1021aaa0(a, pszCommand) && !sub_1021b750(a, pszCommand))
+			sub_1021c3c0(a, pszCommand);
+	}
+	if (m_b09ec && EHandle_Get(*(unsigned int *)((char *)this + 0x8c)) && m_n09e0 == -1)
+		sub_1021b410();
+	if (!g_1074f714->vfunc1() && g_1074f714->m_nValue)
+		DevMsg("\n%s finished command [%s]\n", sub_100ab4f0(), pszCommand);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021c560 size=0xf2
 #include "CPropHacking.h"
 #include "CEHandleGet.h"
