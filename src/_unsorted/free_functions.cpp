@@ -182702,6 +182702,60 @@ CAI_Waypoint *CAI_Pathfinder::sub_10303740(int navType, const float *vecStart, c
 }
 // END FUNCTION
 
+// FUNCTION: 0x10303850 size=0x354
+#include "CBaseEntity.h"
+#include <math.h>
+#include "CAI_Waypoint.h"
+#include "CAI_Pathfinder.h"
+#include "CUnk102ee940.h"
+#include "CEntitySoundOriginView.h"
+
+inline float LenRef(const Vector &v) { return sub_10146150(&v); }
+inline float Len2DRef(const Vector &v) { return ((CUnk102ee940 *)&v)->sub_102ee940(); }
+
+struct CAI_PathfinderRouteView
+{
+	CAI_Waypoint *sub_10304020(int a1, const float *pEndPosition, int a3, int a4, int a5, int a6, float a7, int a8, int a9, int a10);
+};
+
+// TARGET: CAI_Pathfinder::sub_10303850
+CAI_Waypoint *CAI_Pathfinder::sub_10303850(int navType, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+{
+	const float *pStart = (const float *)a1;
+	const float *pEnd = (const float *)a2;
+	const CBaseEntity *pTarget = (const CBaseEntity *)a3;
+	const Vector *pOrigin = (const Vector *)((CEntitySoundOriginView *)m_pOuter)->GetOrigin();
+	float flDist = (navType == 0) ? Len2DRef(*(const Vector *)pEnd - *pOrigin) : LenRef(((Vector *)pEnd)->sub_10146190(*pOrigin));
+	if (flDist < 0.0625)
+		return new CAI_Waypoint(pEnd, a7, navType, a4, a5);
+
+	unsigned int mask = ((~a6 & 0x40) << 19) | 0x2400b;
+	AIMoveTrace_t trace;
+	((CAI_PathfinderOuter *)m_pOuter)->m_pMoveProbe->sub_102e6d70(navType, pStart, pEnd, mask, pTarget, 100.0f, 0, &trace, a9, 0);
+	if (trace.fStatus >= 0)
+		return new CAI_Waypoint(pEnd, a7, navType, a4, a5);
+
+	if ((a6 & 0x100) && (a4 & 8) && trace.m_fields.f24 <= *(float *)&a8 && fabs(((const Vector *)pEnd)->z - trace.m_fields.e2) < 2.0)
+		return new CAI_Waypoint(&trace.m_fields.e0, a7, navType, a4, a5);
+
+	if (a6 & 0x20)
+	{
+		float flDist2 = (navType == 0) ? (*(const Vector *)pEnd - *(const Vector *)pStart).Length2D() : LenRef(((Vector *)pEnd)->sub_10146190(*(const Vector *)pStart));
+		CAI_Waypoint *pRoute = ((CAI_PathfinderRouteView *)this)->sub_10304020((int)pStart, pEnd, a3, a4, a5, a7, flDist2 - trace.m_fields.f24, navType, mask, a9);
+		if (pRoute)
+			return pRoute;
+	}
+	if (trace.fStatus == -3 && (a6 & 0x10))
+	{
+		AIMoveTrace_t trace2;
+		((CAI_PathfinderOuter *)m_pOuter)->m_pMoveProbe->sub_102e6d70(navType, pStart, pEnd, 0x2400b, pTarget, 100.0f, 0, &trace2, a9, 0);
+		if (trace2.fStatus >= 0 && sub_10303fd0(pStart, pEnd, (CBaseEntity *)trace.m_fields.nHit))
+			return new CAI_Waypoint(pEnd, a7, navType, a4, a5);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10303c90 size=0x2f
 #include "CAI_Waypoint.h"
 #include "CBaseEntity.h"
