@@ -182384,6 +182384,103 @@ char CBaseCombatCharacter::sub_103268e0(const float *pos, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103274d0 size=0x221
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+#include "utlmemory.h"
+
+extern int vt_1049e0dc[];
+
+struct CBCCOutput { void sub_100cd2d0(); };
+struct CBCCVecA { CUtlMemory<int> m_Mem; int m_nSize; void *m_pElem; void sub_10184360(); void sub_10185100(); };
+struct CBCCObjB { void sub_101f1bb0(); };
+struct CBCCObjC { void sub_101f9690(); };
+struct CBCCVecD { CUtlMemory<int> m_Mem; int m_nSize; void *m_pElem; void sub_1034a010(); void sub_10107480(); };
+struct CBCCVecE { CUtlMemory<int> m_Mem; int m_nSize; void *m_pElem; void sub_10349ea0(); void sub_10349fd0(); };
+struct CBCCVecF { CUtlMemory<int> m_Mem; int m_nSize; void *m_pElem; void sub_10349a00(); void sub_10349e60(); };
+struct CBCCStatListDtor { void sub_103499d0(int a); };
+
+// TARGET: CBaseCombatCharacter::sub_103274d0
+void CBaseCombatCharacter::sub_103274d0()
+{
+	char *p = (char *)this;
+	*(int **)this = vt_1049e0dc;
+	{
+		ScopeTrace scope("CBaseCombatCharacter::~CBaseCombatCharacter", *(char **)(p + 0x26c) ? *(char **)(p + 0x26c) : g_106b8540);
+		*(int *)(p + 0x1208) = 0;
+		*(int *)(p + 0x120c) = 0;
+		*(int *)(p + 0x1278) = 0;
+		*(int *)(p + 0x127c) = 0;
+		*(int *)(p + 0x1308) = 0;
+		*(int *)(p + 0x130c) = 0;
+		*(int *)(p + 0x1398) = 0;
+		*(int *)(p + 0x139c) = 0;
+	}
+	((CBCCOutput *)(p + 0x151c))->sub_100cd2d0();
+	((CBCCOutput *)(p + 0x1504))->sub_100cd2d0();
+	CBCCVecA *pA = (CBCCVecA *)(p + 0x14c0);
+	pA->sub_10184360();
+	pA->sub_10185100();
+	pA->m_pElem = pA->m_Mem.m_pMemory;
+	pA->m_Mem.Purge();
+	((CBCCObjB *)(p + 0x1460))->sub_101f1bb0();
+	((CBCCObjC *)(p + 0x13dc))->sub_101f9690();
+	CVStatListSet *pSet = CVStatListSet::Of(this);
+	if (pSet->m_pLists)
+	{
+		for (int i = 0; i < pSet->m_nLists; i++)
+		{
+			CBCCStatListDtor *pList = ((CBCCStatListDtor **)pSet->m_pLists)[i];
+			if (pList)
+				pList->sub_103499d0(1);
+			pSet->m_pLists[i] = 0;
+		}
+		operator delete(pSet->m_pLists);
+		pSet->m_pLists = 0;
+	}
+	*(int *)(p + 0x13ac) = 0;
+	*(int *)(p + 0x13bc) = 0;
+	*(int *)(p + 0x13b8) = 0;
+	CBCCVecD *pD = (CBCCVecD *)(p + 0x10bc);
+	pD->sub_1034a010();
+	pD->sub_10107480();
+	pD->m_pElem = pD->m_Mem.m_pMemory;
+	pD->m_Mem.Purge();
+	CBCCVecE *pE = (CBCCVecE *)(p + 0xfb4);
+	pE->sub_10349ea0();
+	pE->sub_10349fd0();
+	pE->m_pElem = pE->m_Mem.m_pMemory;
+	pE->m_Mem.Purge();
+	CBCCVecA *pV = (CBCCVecA *)(p + 0xe30);
+	int n = 20;
+	do
+	{
+		pV--;
+		pV->sub_10184360();
+		pV->sub_10185100();
+		pV->m_pElem = pV->m_Mem.m_pMemory;
+		pV->sub_10185100();
+		n--;
+	} while (n != 0);
+	CBCCVecF *pF = (CBCCVecF *)(p + 0xa88);
+	pF->sub_10349a00();
+	pF->sub_10349e60();
+	pF->m_pElem = pF->m_Mem.m_pMemory;
+	pF->sub_10349e60();
+	sub_100b5970();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10327960 size=0x7e
 #include "CBaseCombatCharacter.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
