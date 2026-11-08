@@ -52176,6 +52176,98 @@ void CUnknown100ea1e0::sub_100ea1e0(char flag, char *pOut1, char *pOut2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ea2d0 size=0x266
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "Tier1.h"
+#include <string.h>
+#include <ctype.h>
+#include <wchar.h>
+struct PyObject;
+struct PyTypeObject { int pad[6]; void (*tp_dealloc)(PyObject *); };
+struct PyObject { int ob_refcnt; PyTypeObject *ob_type; };
+struct PyScriptView { virtual void s0(); virtual bool s1(); char pad[0x2c - 4]; int m_n2c; };
+struct PyGlobalsView { float realtime; int framecount; float absoluteframetime; float curtime; };
+extern PyScriptView *g_107318bc;
+extern PyGlobalsView *g_1070b228;
+extern PyObject *(*g_109f3750)(const char *name);
+extern PyObject *(*g_109f3754)(PyObject *mod);
+extern "C" __declspec(dllimport) PyObject *PyString_FromString(const char *s);
+extern "C" __declspec(dllimport) int PyDict_SetItem(PyObject *dict, PyObject *key, PyObject *val);
+extern PyObject *(*g_109f3758)(const char *str, int start, PyObject *globals, PyObject *locals);
+extern void (*g_109f375c)();
+extern void (*g_109f3760)();
+extern int (*g_109f3764)();
+extern void (*g_109f3768)();
+extern PyTypeObject *g_109f37c0;
+extern long (*g_109f37c4)(PyObject *o);
+PyObject *sub_101966a0(void *p);
+
+long sub_100ea2d0(const char *psz, void *a2, void *a3, int start, char *pbError)
+{
+	ScopeTrace scope("CDialogDependency::CallPyDialogFunc", g_106b8540);
+	long result;
+	if (pbError)
+		*pbError = 1;
+	if (!psz)
+		return 0;
+	while (iswspace((short)*psz))
+		psz++;
+	if (!strlen(psz))
+		return 0;
+	result = 0;
+	PyObject *mod = g_109f3750("__main__");
+	if (!mod)
+		return 0;
+	PyObject *dict = g_109f3754(mod);
+	PyObject *obj1 = sub_101966a0(a2);
+	a2 = sub_101966a0(a3);
+	PyObject *key1 = PyString_FromString("pc");
+	a3 = PyString_FromString("npc");
+	PyObject *res = 0;
+	if (key1 && a3 && obj1 && a2)
+	{
+		PyDict_SetItem(dict, key1, obj1);
+		PyDict_SetItem(dict, (PyObject *)a3, (PyObject *)a2);
+		if (!g_107318bc->s1() && g_107318bc->m_n2c)
+			g_109f3628("RUNNING PYTHON AT TIME %f:\n%s\n\n", (double)g_1070b228->curtime, psz);
+		res = g_109f3758(psz, start, dict, dict);
+	}
+	if (!res)
+	{
+		g_109f375c();
+	}
+	else
+	{
+		if (pbError)
+			*pbError = 0;
+		if (res->ob_type == g_109f37c0)
+			result = g_109f37c4(res);
+		if (--res->ob_refcnt == 0)
+			res->ob_type->tp_dealloc(res);
+		if (--obj1->ob_refcnt == 0)
+			obj1->ob_type->tp_dealloc(obj1);
+		if (--((PyObject *)a2)->ob_refcnt == 0)
+			((PyObject *)a2)->ob_type->tp_dealloc((PyObject *)a2);
+		if (--key1->ob_refcnt == 0)
+			key1->ob_type->tp_dealloc(key1);
+		if (--((PyObject *)a3)->ob_refcnt == 0)
+			((PyObject *)a3)->ob_type->tp_dealloc((PyObject *)a3);
+		if (g_109f3764())
+			g_109f3768();
+	}
+	g_109f3760();
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ea6d0 size=0x36
 struct CUnknown100ea6d0Item
 {
