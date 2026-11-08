@@ -307,6 +307,38 @@ void CAI_BaseHumanoidUnit::sub_1025f760(CBaseEntity *pTarget, float flWeight, fl
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025f8e0 size=0x113
+#include "utlrbtree.h"
+#include "CAI_BaseHumanoid.h"
+#include "CHumanoidRec.h"
+#include "utlvector.h"
+
+struct CAI_BaseHumanoidUnit : CAI_BaseHumanoid
+{
+	void sub_1025f8e0(const Vector *pPos, float flValue, float flDuration, float flAmount);
+};
+
+#define HLIST ((CUtlVector<CHumanoidRec> *)((char *)this + 0x5f88))
+
+// TARGET: CAI_BaseHumanoidUnit::sub_1025f8e0
+void CAI_BaseHumanoidUnit::sub_1025f8e0(const Vector *pPos, float flValue, float flDuration, float flAmount)
+{
+	for (int i = 0; i < HLIST->Count(); i++) {
+		if (HLIST->Element(i).m_vecPos == *pPos) {
+			HLIST->Remove(i);
+			break;
+		}
+	}
+	int idx = HLIST->AddToTail();
+	HLIST->Element(idx).m_n0 = 1;
+	HLIST->Element(idx).m_vecPos = *pPos;
+	HLIST->Element(idx).m_flValue = flValue;
+	HLIST->Element(idx).m_flStart = gpGlobals->curtime;
+	HLIST->Element(idx).m_flEnd = gpGlobals->curtime + flDuration;
+	HLIST->Element(idx).m_flRate = flAmount / flDuration;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10260630 size=0x2b
 #include "CAI_BaseHumanoid.h"
 #include "CAI_BaseNPC.h"

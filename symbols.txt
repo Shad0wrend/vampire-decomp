@@ -12167,6 +12167,7 @@
 0x10012152 func   ?sub_101f4370@CUnknown101f4370@@QAEXPBDPAH1@Z CUnknown101f4370::sub_101f4370
 0x10012157 func   ?sub_101dd090@CUnknown101e0f00Src@@QAEXHH@Z CUnknown101e0f00Src::sub_101dd090
 0x10012161 func   ?vfunc31@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc31
+0x10012166 func   ?sub_1025f8e0@CAI_BaseHumanoidUnit@@QAEXPBVVector@@MMM@Z CAI_BaseHumanoidUnit::sub_1025f8e0
 0x1001216b func   ?vfunc108@CBaseEntity@@UAE_NPBDMMM@Z CBaseEntity::vfunc108
 0x10012170 func   ?vfunc5@CPhysicsCannister@@QAEPAV1@I@Z CPhysicsCannister::vfunc5
 0x10012175 func   ?vfunc138@CNPC_VVampire@@UAEHXZ CNPC_VVampire::vfunc138
