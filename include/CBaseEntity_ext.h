@@ -27,7 +27,8 @@
 	void *sub_1003cd50(int type);	// "CBaseEntity::GetDataObject": scope trace (entity name), null unless HasDataObjectType(type), then the inlined CDataObjectAccessSystem::GetDataObject / IsValidType (scope traces): slot 1(this) of the table entry at 0x106bd938[type] for a type in 0..31 that has one, else null
 	bool sub_1009e430(const char *szKeyName, const char *szValue);	// CBaseEntity::KeyValue (slot 110) as a direct call from the CDecal override
 	void sub_100ab450(int a, int b, int c, int d, int e);	// slot 102 "Physics_TraceEntity" wrapper: scope trace, then forwards its five arguments to sub_101cd110
-	void sub_100a4930();	// "CBaseEntity::InitPredictable": scope trace (entity name), then the global predictable-id manager at 0x106cfee0 (stub 0x1000ee4e) is given this
+	void sub_100a4930();
+	void sub_100b3840(int a);	// "CBaseEntity::InitPredictable": scope trace (entity name), then the global predictable-id manager at 0x106cfee0 (stub 0x1000ee4e) is given this
 	void sub_10012d14(CBaseEntity *pOther, void *pTrace);	// "CBaseEntity::PhysicsImpact" (the stub at 0x10012d14 for 0x1003e6c0): scope trace (entity name), unless either entity has the flag bit 26 hands (pOther, pTrace) to the impact worker
 	void sub_1003e6c0(CBaseEntity *pOther, void *pTrace);	// "CBaseEntity::PhysicsImpact": scope trace (entity name), when pOther is set and neither entity's GetFlags() has bit 26 hands (pOther, pTrace) to sub_1003e2e0
 	void sub_1003e2e0(CBaseEntity *pOther, void *pTrace);	// the impact worker (called through the stub at 0x10014a29)
