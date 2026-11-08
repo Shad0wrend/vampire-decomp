@@ -194187,6 +194187,38 @@ void CBaseCombatCharacter::sub_103455a0(CBaseEntity *pTarget, void *pInfo, Vecto
 }
 // END FUNCTION
 
+// FUNCTION: 0x10345760 size=0xe9
+#include "CBaseCombatCharacter.h"
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+extern char g_106b8540[];
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+extern const float g_1049e048;
+
+#define SV1(p) virtual void p();
+#define SV10(p) SV1(p##0) SV1(p##1) SV1(p##2) SV1(p##3) SV1(p##4) SV1(p##5) SV1(p##6) SV1(p##7) SV1(p##8) SV1(p##9)
+#define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
+struct CCharOriginView
+{
+    SV100(a) SV100(b)
+    SV10(c0)
+    SV1(c10) SV1(c11) SV1(c12) SV1(c13) SV1(c14) SV1(c15) SV1(c16)
+    virtual const Vector &GetAbsOrigin();
+};
+struct SeqDescX { char pad[0x2d0]; float flRange; };
+
+bool CBaseCombatCharacter::sub_10345760(const Vector *pTarget)
+{
+    ScopeTrace trace("CBaseCombatCharacter::IsMeleeSwingInRange", this ? STRINGR(m_name26c) : g_105387dc);
+    float flDist = (*pTarget - ((CCharOriginView *)this)->GetAbsOrigin()).Length2D();
+    ((CBaseAnimating *)this)->sub_100952d0(-1);
+    SeqDescX *pSeq = (SeqDescX *)((CBaseAnimating *)this)->sub_1008d990(*(int *)((char *)this + 0x6f0));
+    if (flDist <= (pSeq->flRange + g_1049e048))
+        return true;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10345890 size=0xb6
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

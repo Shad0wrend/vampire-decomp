@@ -7423,6 +7423,7 @@
 0x1000b771 func   ?SendPropEHandle@@YA?AVSendProp@@PBDHH@Z SendPropEHandle
 0x1000b771 func   ?sub_101ab220@@YAPAXPAXHHH@Z sub_101ab220
 0x1000b776 func   ?sub_1009b980@CBaseEntity@@QAEXHPADH@Z CBaseEntity::sub_1009b980
+0x1000b77b func   ?sub_10345760@CBaseCombatCharacter@@QAE_NPBVVector@@@Z CBaseCombatCharacter::sub_10345760
 0x1000b780 func   ?sub_10136ec0@CUnknown10136ec0@@QAEHXZ CUnknown10136ec0::sub_10136ec0
 0x1000b785 func   ?sub_101019d0@CUnk101019d0@@QAEXXZ CUnk101019d0::sub_101019d0
 0x1000b78a func   ?vfunc324@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc324
