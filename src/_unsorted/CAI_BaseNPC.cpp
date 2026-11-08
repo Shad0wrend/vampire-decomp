@@ -2895,6 +2895,63 @@ int CAI_BaseNPC::vfunc126(CSave *pSave)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027bf50 size=0x19b
+#include "CAI_BaseNPCSavedSched.h"
+#include "CUnknown102ee270.h"
+extern CUnknown10936b68 g_10936b68;
+void __cdecl sub_1023f040(unsigned int *p);
+void __cdecl sub_1023f060(unsigned int *p);
+void __cdecl sub_1023f0c0(unsigned int *pCrc, const void *pData, unsigned int len);
+
+struct CNav102ee1e0 : CUnknown102ee270
+{
+	char sub_102ee1e0(int a);
+};
+
+// TARGET: CAI_BaseNPC::vfunc130
+void CAI_BaseNPC::vfunc130(int a)
+{
+	CAI_BaseNPCSavedSched *p = (CAI_BaseNPCSavedSched *)this;
+	bool bBad;
+	if ((p->m_nState5cc0 != 4 || p->m_hScriptedSeq5d74.Get())
+		&& p->m_Saved.m_szSchedule[0]
+		&& p->m_Saved.m_nVersion == 1
+		&& (!(p->m_Saved.m_nFlags & 1) || p->vfunc167())
+		&& (!(p->m_Saved.m_nFlags & 2) || p->m_hTarget5ce4.Get())) {
+		bBad = false;
+	} else {
+		bBad = true;
+	}
+	if (p->m_nTaskFail5c50 >= 0x2a)
+		p->m_nTaskFail5c50 = 1;
+	if (!bBad) {
+		p->m_pSchedule = g_10936b68.sub_1030f350(p->m_Saved.m_szSchedule);
+		if (p->m_pSchedule) {
+			unsigned int crc;
+			sub_1023f040(&crc);
+			sub_1023f0c0(&crc, p->m_pSchedule->m_pTasks, p->m_pSchedule->m_nTasks << 3);
+			sub_1023f060(&crc);
+			if (crc != p->m_Saved.m_nCRC)
+				p->m_pSchedule = 0;
+		}
+	}
+	if (p->m_pSchedule && !bBad) {
+		p->m_b5c58 = (p->m_Saved.m_nFlags >> 2) & 1;
+	} else {
+		p->m_b5c58 = 0;
+		sub_1027be60();
+	}
+	sub_10323b60(a);
+	p->m_n5b90 = 0;
+	if (p->m_b5c58) {
+		if (!((CNav102ee1e0 *)p->m_pNavigator5d34)->sub_102ee1e0(0))
+			sub_1027be60();
+	} else {
+		((CUnknown102ee270 *)p->m_pNavigator5d34)->sub_102ee270();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027c160 size=0x65
 #include "CBaseEntity.h"
 #include "CAI_BaseNPC.h"
