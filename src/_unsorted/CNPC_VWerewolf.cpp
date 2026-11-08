@@ -635,6 +635,111 @@ void CNPC_VWerewolf::vfunc620()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d5130 size=0x378
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VWerewolf.h"
+#include "ScopeTrace.h"
+#include "globalvars.h"
+
+void sub_10119750(const char *fmt, ...);
+int sub_101cd9e0(int);
+CBaseEntity *sub_10172710(int);
+extern "C" void *__cdecl __RTDynamicCast(void *, long, void *, void *, int);
+extern char g_10538764[];
+extern char g_1060a514[];
+extern float g_104454c4;
+
+struct CWerewolfCfgView
+{
+	virtual void v0();
+	virtual char vfunc1();
+	char m_pad[0x28];
+	int m_n2c;
+};
+extern CWerewolfCfgView *g_1093f814;
+extern CWerewolfCfgView *g_1093fa84;
+extern CWerewolfCfgView *g_1093d4e4;
+
+inline bool FlagSetB(unsigned int flags, unsigned char bit) { return (flags & bit) == bit; }
+inline bool FlagSetI(unsigned int flags, unsigned int bit) { return (flags & bit) == bit; }
+
+void CNPC_VWerewolf::vfunc76()
+{
+	ScopeTrace scope("CNPC_VWerewolf::DrawDebugStatOverlays", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	float flNotSeen = gpGlobals->curtime - m_flTeleport66ec;
+	flNotSeen = g_104454c4 > flNotSeen ? g_104454c4 : flNotSeen;
+	sub_10119750("Not Seen Time  : %3.1f", (double)flNotSeen);
+	sub_10119750("Player Distance: %3.1f", (double)m_f6264);
+	sub_10366290();
+	if (FlagSetB(m_nFlags66e8, 1))
+		sub_10119750("ZONE_NO_TALL_ANIMS");
+	if (FlagSetB(m_nFlags66e8, 2))
+		sub_10119750("ZONE_PLAYER_ON_BREAKABLE");
+	if (FlagSetB(m_nFlags66e8, 0x40))
+		sub_10119750("ZONE_PLAYER_INSIDE");
+	if (FlagSetB(m_nFlags66e8, 0x80))
+		sub_10119750("ZONE_PLAYER_OUTSIDE");
+	if (FlagSetB(m_nFlags66e8, 4))
+		sub_10119750("ZONE_PLAYER_ON_PLATFORM");
+	if (FlagSetI(m_nFlags66e8, 0x800))
+		sub_10119750("ZONE_WOLF_INSIDE");
+	if (FlagSetI(m_nFlags66e8, 0x1000))
+		sub_10119750("ZONE_WOLF_OUTSIDE");
+	if (FlagSetI(m_nFlags66e8, 0x100))
+		sub_10119750("ZONE_WOLF_ON_PLATFORM");
+	if (sub_10269aa0(0x77))
+		sub_10119750("COND_VWEREWOLF_CAN_TELEPORT");
+	if (sub_10269aa0(0x78))
+		sub_10119750("COND_VWEREWOLF_CAN_SPECIAL_MOVE");
+	if (sub_10269aa0(0x79))
+		sub_10119750("COND_VWEREWOLF_ENEMY_REACHABLE");
+	if (sub_10269aa0(0x7b))
+		sub_10119750("COND_VWEREWOLF_SHOULD_BREAKHINT");
+	if (sub_10269aa0(0x7a))
+		sub_10119750("COND_VWEREWOLF_DEATH_TRIGGERED");
+	if (m_nDoorState == 0)
+		sub_10119750("door state: (%d)closed", m_nDoorState);
+	else if (m_nDoorState == 1)
+		sub_10119750("door state: (%d)closing", m_nDoorState);
+	else if (m_nDoorState == 2)
+		sub_10119750("door state: (%d)open", m_nDoorState);
+	else if (m_nDoorState == 3)
+		sub_10119750("door state: (%d)opening", m_nDoorState);
+	if (!g_1093f814->vfunc1() && g_1093f814->m_n2c) {
+		CBaseEntity *pEnt = sub_10172710(sub_101cd9e0(1));
+		CAI_Hint *pHint = (CAI_Hint *)__RTDynamicCast(pEnt, 0, g_10538764, g_1060a514, 0);
+		if (pHint)
+			sub_103d5590(pHint);
+	}
+	if (m_pHint66bc)
+		sub_103d5590(m_pHint66bc);
+	else if (m_pHint66b0)
+		sub_103d5590(m_pHint66b0);
+	else if (!g_1093fa84->vfunc1() && g_1093fa84->m_n2c)
+		sub_103d5590(m_pLastUsedTeleportHint);
+	else if (!g_1093d4e4->vfunc1() && g_1093d4e4->m_n2c)
+		sub_103d5590(m_pLastUsedMoveHint);
+	int nStart = m_History.m_size - 5;
+	nStart = nStart < 0 ? 0 : nStart;
+	int nEnd = nStart + 5 < m_History.m_size ? nStart + 5 : m_History.m_size;
+	for (int i = nStart; i < nEnd; i++) {
+		CNPC_VWerewolfSchedule *pSched = ((CNPC_VWerewolfSchedule **)m_History.m_pMemory)[i];
+		if (pSched && pSched->m_id40)
+			sub_10119750((const char *)pSched->m_id40);
+		else
+			sub_10119750("INVALID SCHEDULE");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d5f60 size=0x7e
 #include "CNPC_VWerewolf.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
