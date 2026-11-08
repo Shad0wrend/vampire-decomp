@@ -63,6 +63,57 @@ struct CSoundEmitterDict
 
 class CUnknown10248a50;
 class CUnknown101b2570;
+#include "UtlVec8.h"
+#include "CUnknown101b61a0.h"
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+struct CSoundWord8 { unsigned short w; char pad[6]; };
+struct CSoundParamsFull
+{
+	int m_channel;
+	float m_f04, m_f08, m_f0c, m_f10, m_f14, m_f18;
+	char m_b1c, m_b1d;
+	char m_pad1e[2];
+	UtlVec8 m_waves;
+	CUnknown101b61a0 m_sub;
+	char m_b48;
+	char m_s49[0x20];
+	char m_s69[0x20];
+	char m_s89[0x20];
+	char m_sa9[0x20];
+
+	bool operator==(const CSoundParamsFull &other) const
+	{
+		if (this == &other)
+			return true;
+		if (m_channel != other.m_channel) return false;
+		if (m_f04 != other.m_f04) return false;
+		if (m_f08 != other.m_f08) return false;
+		if (m_f0c != other.m_f0c) return false;
+		if (m_f10 != other.m_f10) return false;
+		if (m_f14 != other.m_f14) return false;
+		if (m_f18 != other.m_f18) return false;
+		if (_strcmpi(m_s69, other.m_s69)) return false;
+		if (_strcmpi(m_s49, other.m_s49)) return false;
+		if (_strcmpi(m_sa9, other.m_sa9)) return false;
+		if (_strcmpi(m_s89, other.m_s89)) return false;
+		if (m_b1c != other.m_b1c) return false;
+		if (m_b1d != other.m_b1d) return false;
+		int c = m_waves.m_Size;
+		if (c != other.m_waves.m_Size) return false;
+		for (int i = 0; i < c; i++)
+		{
+			if (((CSoundWord8 *)m_waves.m_pMemory)[i].w != ((CSoundWord8 *)other.m_waves.m_pMemory)[i].w)
+				return false;
+		}
+		return true;
+	}
+};
+struct CSoundRecordFull
+{
+	char m_pad00[4];
+	int m_nScript;
+	CSoundParamsFull m_params;
+};
 
 class CSoundEmitterSystemBase
 {
@@ -120,6 +171,7 @@ public:
 	const char *sub_101b4c90(const CSoundWaveEntry *pWave);	// the wave name of an entry: looks its symbol up in the string table at +0xb0 (stub 0x10008981)
 	void sub_101b5870(const char *pszOld, const char *pszNew);	// "CSoundEmitterSystemBase::RenameSound" (ret 8): _strcmpi equal -> nothing; sub_101b2f60(old) / sub_101b31a0 check -> DevMsg "Can't rename %s, no such sound\n"; new name known -> DevMsg "Can't rename %s to %s, new name already in list\n"; else copies the 0xe8 byte record (m_i54 table +0x14 + index * 0xe8: 8 bytes into a local, +8 into CUnknown101b6320Params::sub_101b5b70 (stub 0x10006e6f)), removes the old name from the RB tree at +0x50 (string table m_list70 = tree +0x20: sub_1024b5e0 -> CUtlRBTreeFind232::sub_101b68f0, 0x101b7970 / 0x101b7370 remove, --count at +0x64), inserts the new name (0x101b6d60, 0x101b6bd0, 0x101b6ea0, 0x101b6320), destroys two 0x14 byte CUtlVector temps (0x101b6120), sets the changed byte m_i9c[recordScript * 0x82] = 1, then two local CUtlVector purges (0x100076f8 + 0x101b6b90 + Plat_Free)
 	void sub_101b5310(int scriptindex);
+	void sub_101b5dd0(const char *pszName, const CSoundParamsFull &params);
 	int sub_101b4740(bool bVerbose);	// "CheckForMissingWavFiles": counts the sound records whose waves are not on disk ("sound/<name>" without the leading wave characters), flags them (+0x48) and DevMsg's each missing file when bVerbose
 };
 
