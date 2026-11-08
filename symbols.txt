@@ -9826,6 +9826,7 @@
 0x1000efca func   ?vfunc82@CPropButton@@UAEPAUdatamap_t@@XZ CPropButton::vfunc82
 0x1000efd4 func   ?vfunc434@CGeneric_NPC@@UAEXXZ CGeneric_NPC::vfunc434
 0x1000efd9 func   ?sub_1034b4d0@CUnknown1034b4d0@@QAEHXZ CUnknown1034b4d0::sub_1034b4d0
+0x1000efde func   ?sub_1018dc00@CPointTeleport@@QAEXH@Z CPointTeleport::sub_1018dc00
 0x1000efe8 func   ?vfunc2@?$CUtlVectorDataOps@V?$CUtlVector@Uthinkfunc_t@@V?$CUtlMemory@Uthinkfunc_t@@@@@@$08@@UAE_NPAX@Z CUtlVectorDataOps<CUtlVector<thinkfunc_t,CUtlMemory<thinkfunc_t> >,9>::vfunc2
 0x1000efed func   ?vfunc257@CBaseAnimating@@QAEXHH@Z CBaseAnimating::vfunc257
 0x1000eff2 func   ?vfunc2@CTEBeamEnts@@UAEPAVCTEBaseBeam@@I@Z CTEBeamEnts::vfunc2

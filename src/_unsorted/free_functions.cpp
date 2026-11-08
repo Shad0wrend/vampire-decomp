@@ -85752,6 +85752,87 @@ int sub_1018da10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018dc00 size=0x23c
+// TARGET: CPointTeleport::sub_1018dc00
+#include "CPointTeleport.h"
+#include "CEntityVSlots.h"
+
+__declspec(dllimport) void Warning(const char *fmt, ...);
+void sub_10139550(const Vector *pAngles, Vector *pOut);
+void sub_1028d820(const Vector *p);
+void sub_101cf600(CEntityVSlots *p);
+extern "C" void *__cdecl __RTDynamicCast(void *p, long vfDelta, void *pSrc, void *pTarget, int isRef);
+extern char g_10538764[];
+extern char g_1058ce30[];
+
+struct CTeleTargetView : CEntityVSlots
+{
+	char pad[0xa8 - 4];
+	CEntityVSlots *m_pA8;
+	char pad2[0x25c - 0xac];
+	EHANDLE m_hMoveParent;
+};
+
+struct CTelePlayerView : CEntityVSlots
+{
+	char pad[0x1538 - 4];
+	EHANDLE m_h1538;
+	int m_i153c;
+	char pad2[0x1f7c - 0x1540];
+	float m_fNext;
+	void sub_10178590(Vector v);
+	void sub_1017c6d0();
+	void sub_10167fd0();
+	void sub_10329560();
+};
+
+struct CTeleControllerView : CEntityVSlots
+{
+	char pad[0x60ac - 4];
+	EHANDLE m_hPlayer;
+};
+
+void CPointTeleport::sub_1018dc00(int)
+{
+	CTeleTargetView *pTarget = (CTeleTargetView *)((CEntityVSlots *)this)->slot172();
+	if (!pTarget)
+		return;
+	if (pTarget->m_hMoveParent.Get())
+	{
+		Warning("ERROR: (%s) can't teleport object (%s) as it has a parent (%s)!\n", this->sub_1000b5cd(), ((CBaseEntity *)pTarget)->sub_1000b5cd(), pTarget->m_hMoveParent.Get()->sub_1000b5cd());
+		return;
+	}
+	pTarget->slot62(&m_vSaveOrigin.x);
+	pTarget->slot64(&m_vSaveAngles.x);
+	CTelePlayerView *pPlayer = (CTelePlayerView *)pTarget->m_pA8;
+	if (!pPlayer)
+	{
+		CTeleControllerView *pCtrl = (CTeleControllerView *)__RTDynamicCast(pTarget, 0, g_10538764, g_1058ce30, 0);
+		if (!pCtrl) goto done;
+		CEntityVSlots *pE = (CEntityVSlots *)pCtrl->m_hPlayer.Get();
+		if (!pE) goto done;
+		pPlayer = (CTelePlayerView *)((CTeleTargetView *)pE)->m_pA8;
+		if (!pPlayer) goto done;
+	}
+	{
+		Vector fwd;
+		sub_10139550(&m_vSaveAngles, &fwd);
+		Vector ofs = fwd * 10000.0f;
+		Vector tmp;
+		pPlayer->sub_10178590(ofs + *pPlayer->slot193(&tmp));
+		sub_1028d820(&m_vSaveOrigin);
+		float *pf = &pPlayer->m_fNext;
+		*pf = (float)(engine->vfunc119(0) + 0.5);
+		if (pPlayer->m_i153c != -1 && pPlayer->m_h1538.Get())
+			pPlayer->sub_10329560();
+		pPlayer->sub_1017c6d0();
+		pPlayer->sub_10167fd0();
+	}
+done:
+	sub_101cf600(pTarget);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018df00 size=0x49
 void *sub_1000db89(int);
 struct GP;
