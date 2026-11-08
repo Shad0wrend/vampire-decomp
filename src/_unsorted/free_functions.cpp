@@ -176641,6 +176641,64 @@ bool CAI_Navigator::sub_102ed430(const Vector *pPosition, int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ed610 size=0x191
+#include "utlmemory.h"
+#include "CAI_MoveProbe.h"
+#include "CEntityVSlots.h"
+#include "CAI_Navigator.h"
+
+extern int g_10934058;
+extern Vector g_10934060;
+extern const float g_1049d97c;	// AIN_DEF_TOLERANCE (-1.0f)
+
+struct CAI_NavGoalRecord
+{
+	CAI_NavGoalRecord(int iType, const Vector &dest, int act = -1, float flTolerance = g_1049d97c, int iFlags = 0)
+		: m_iType(iType),
+		  m_vecDest(dest),
+		  m_iNode(-1),
+		  m_hTarget(-1),
+		  m_iSeq(-1),
+		  m_iAct(act),
+		  m_flSpeed(flTolerance),
+		  m_flTolerance(iFlags),
+		  m_hParam(g_10934058),
+		  m_vecOrg(g_10934060),
+		  m_i38(0),
+		  m_i3c(0)
+	{
+	}
+	int m_iType;
+	Vector m_vecDest;
+	int m_iNode;
+	int m_hTarget;
+	int m_iSeq;
+	int m_iAct;
+	float m_flSpeed;
+	int m_flTolerance;
+	int m_hParam;
+	Vector m_vecOrg;
+	int m_i38;
+	int m_i3c;
+};
+
+bool CAI_Navigator::sub_102ed610(const Vector *pDir, float flDist, float flMax, int c)
+{
+	AIMoveTrace_t trace;
+	Vector vecScaled = *pDir * flDist;
+	Vector vecEnd(vecScaled + *((CEntityVSlots *)m_pOuter)->slot220());
+	int navType = m_i18;
+	CAI_MoveProbe *pProbe = (CAI_MoveProbe *)m_i24;
+
+	pProbe->sub_102e6d70(navType, ((CEntityVSlots *)m_pOuter)->slot220()->Base(), vecEnd.Base(), 0x2400b, 0, 100.0f, 0, &trace, c, 0);
+
+	if (trace.fStatus != 0 && !((flDist - trace.m_fields.f24) > flMax))
+		return false;
+
+	return sub_102ecd20(&CAI_NavGoalRecord(4, *(Vector *)&trace.m_fields.e0), 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ed940 size=0x60
 #include "CAI_Navigator.h"
 #include "CAI_BaseNPC.h"
