@@ -384,7 +384,11 @@ public:
 	EHANDLE m_h149c;	// 0x149c: the feeding target
 	int m_iBloodStolen;	// 0x14a0
 	int m_iCurBloodStolenMod;	// 0x14a4
-	char m_pad14a8[0x14b0 - 0x14a8];
+	char m_b14a8;	// 0x14a8
+	char m_b14a9;	// 0x14a9
+	char m_b14aa;	// 0x14aa
+	char m_pad14ab;
+	EHANDLE m_h14ac;	// 0x14ac
 	int m_aCurWpnActivity;	// 0x14b0
 	int m_aNextWpnActivity;	// 0x14b4
 	int m_bfAINPCFlags;	// 0x14b8
