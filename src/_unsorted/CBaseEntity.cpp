@@ -3848,6 +3848,55 @@ void CBaseEntity::vfunc119()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ad1a0 size=0x124
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBCCSlotViews.h"
+#include "ScopeTrace.h"
+
+class CPhysicsObjectView
+{
+public:
+	VIEW_SLOT10(0) VIEW_SLOT10(1) VIEW_SLOT10(2) VIEW_SLOT10(3)
+	virtual void vfunc40(float *velocity, float *angular);
+};
+
+void CBaseEntity::vfunc199(float *vVelocity, float *vAngVelocity)
+{
+    ScopeTrace scope("CBaseEntity::GetVelocity", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    if (m_obj36c) {
+        CPhysicsObjectView *pPhys = (CPhysicsObjectView *)m_obj36c;
+        if (vAngVelocity) {
+            float tmp[3];
+            pPhys->vfunc40(vVelocity, tmp);
+            vAngVelocity[0] = tmp[1];
+            vAngVelocity[1] = tmp[2];
+            vAngVelocity[2] = tmp[0];
+        } else {
+            pPhys->vfunc40(vVelocity, 0);
+        }
+    } else {
+        if (vVelocity) {
+            vVelocity[0] = *(float *)((char *)this + 0x3d4);
+            vVelocity[1] = *(float *)((char *)this + 0x3d8);
+            vVelocity[2] = *(float *)((char *)this + 0x3dc);
+        }
+        if (vAngVelocity) {
+            vAngVelocity[0] = *(float *)((char *)this + 0x3c8);
+            vAngVelocity[1] = *(float *)((char *)this + 0x3cc);
+            vAngVelocity[2] = *(float *)((char *)this + 0x3d0);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ad460 size=0xbb
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
