@@ -1,13 +1,16 @@
 // CUnknown100d1290: the physics shadow entity list (global pointer at 0x106b89bc): a count at +0 and the head of a singly
 // linked list of 8 byte nodes (entity handle, next) at +4; real name not yet known.
 #pragma once
+#include "ehandle.h"
 
 class CBaseEntity;
 
 struct CUnknown100d1290Node
 {
-	unsigned int m_hEntity;	// 0x00
+	EHANDLE m_hEntity;	// 0x00
 	CUnknown100d1290Node *m_pNext;	// 0x04
+
+	static void *operator new(unsigned int size);
 };
 
 class CUnknown100d1290
