@@ -9,6 +9,7 @@ struct CVDmgBlock20_t
 struct CVDmgBlock16_t
 {
 	int m_a, m_b, m_c, m_d;
+	int sub_10230d00(void *pCharacter);
 
 	~CVDmgBlock16_t() {}
 	CVDmgBlock16_t();	// calls sub_10204270 (stub 0x10004b7e, body at 0x10205380)
