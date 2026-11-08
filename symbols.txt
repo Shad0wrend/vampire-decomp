@@ -1739,6 +1739,7 @@
 0x1000374c func   ?vfunc407@CItemContainerAnimated@@QAEXXZ CItemContainerAnimated::vfunc407
 0x10003751 func   ?vfunc0@CTEArmorRicochet@@UAEPAUServerClass@@XZ CTEArmorRicochet::vfunc0
 0x10003756 func   ?sub_1007e410@List1007e410@@QAEXPAUElem1007e410@@@Z List1007e410::sub_1007e410
+0x1000375b func   ?sub_10143b70@@YAXABVVector@@00HHH_NM@Z sub_10143b70
 0x10003760 func   ?sub_10027000@@YAHXZ sub_10027000
 0x10003765 func   ?sub_103de470@@YAEXZ sub_103de470
 0x1000376f func   ?sub_101cbae0@@YAHXZ sub_101cbae0

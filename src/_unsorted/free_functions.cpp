@@ -74823,6 +74823,29 @@ void sub_10143920(float f1, float f2, const char *psz, int n1, int n2, int n3, i
 }
 // END FUNCTION
 
+// FUNCTION: 0x10143b70 size=0x191
+#include "Vector.h"
+void sub_10142e90(const Vector &a, const Vector &b, int r, int g, int bl, bool noDepthTest, float duration);
+
+void sub_10143b70(const Vector &origin, const Vector &mins, const Vector &maxs, int r, int g, int b, bool noDepthTest, float duration)
+{
+    Vector o = origin;
+    double t0 = maxs.z; o.z = o.z - t0 * 0.5;
+    Vector p1 = o + mins;
+    Vector p2 = o + maxs;
+    sub_10142e90(p1, p2, r, g, b, noDepthTest, duration);
+    p1.x += maxs.x - mins.x;
+    p2.x -= maxs.x - mins.x;
+    sub_10142e90(p1, p2, r, g, b, noDepthTest, duration);
+    p1.y += maxs.y - mins.y;
+    p2.y -= maxs.y - mins.y;
+    sub_10142e90(p1, p2, r, g, b, noDepthTest, duration);
+    p1.x -= maxs.x - mins.x;
+    p2.x += maxs.x - mins.x;
+    sub_10142e90(p1, p2, r, g, b, noDepthTest, duration);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10143d80 size=0x16b
 #include "Vector.h"
 
