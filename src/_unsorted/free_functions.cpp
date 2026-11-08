@@ -91377,6 +91377,72 @@ int sub_101a3b00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a3b20 size=0xdc
+#include "CGlobalEntityList.h"
+#include "CUnknown1070b22c.h"
+
+struct S_1070b228 { char pad[0xc]; float curtime; char pad2[0x20 - 0x10]; void *m_pSaveData; };
+extern S_1070b228 *g_1070b228;
+extern CUnknown1070b22c *g_1070b22c;
+extern CGlobalEntityList g_106eb5d8;
+extern int g_1070d1b0, g_1070d1b4, g_1070d1b8;
+extern "C" void *memset(void *, int, unsigned int);
+#pragma intrinsic(memset)
+
+struct SaveHead
+{
+	char *m_pBase;	// 0x00
+	char *m_pCurrent;	// 0x04
+	int m_nUsed;	// 0x08
+	int m_nSize;	// 0x0c
+	int m_nTokens;	// 0x10
+	void *m_pTokens;	// 0x14
+	SaveHead() { memset(this, 0, 0x18); }
+};
+
+struct SaveBody
+{
+	int m_data[0x4c8];
+	SaveBody() { for (int i = 0; i < 0x4c8; i++) m_data[i] = 0; }
+};
+
+struct SaveData : SaveHead
+{
+	SaveBody m_body;	// 0x18
+	char pad1338[1];
+};
+
+inline void *operator new(unsigned int, void *p) { return p; }
+
+SaveData *sub_101a3b20(int size)
+{
+	if (size <= 0)
+		size = 0x400000;
+	int numEnts = g_106eb5d8.sub_100f7040();
+	SaveData *pSave = (SaveData *)g_1070b22c->vfunc47(numEnts * 0x30 + 0x1338 + size, 1);
+	if (pSave) {
+		pSave = new (pSave) SaveData;
+	} else {
+		pSave = 0;
+	}
+	pSave->m_nUsed = 0;
+	pSave->m_pBase = (char *)pSave + 0x1338;
+	pSave->m_pCurrent = (char *)pSave + 0x1338;
+	pSave->m_nSize = size;
+	void *pTokens = g_1070b22c->vfunc47(0x3fff, 4);
+	pSave->m_nTokens = 0x3fff;
+	pSave->m_pTokens = pTokens;
+	*(float *)((char *)pSave + 0x1300) = g_1070b228->curtime;
+	*(int *)((char *)pSave + 0x12f4) = g_1070d1b0;
+	*(int *)((char *)pSave + 0x12f8) = g_1070d1b4;
+	*(int *)((char *)pSave + 0x12fc) = g_1070d1b8;
+	*(int *)((char *)pSave + 0x12dc) = 0;
+	pSave->m_body.m_data[0] = 0;
+	g_1070b228->m_pSaveData = pSave;
+	return pSave;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a4760 size=0x1a
 namespace lifted {
 extern int g_10592ce8;
