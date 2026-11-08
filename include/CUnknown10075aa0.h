@@ -99,6 +99,8 @@ public:
 	int sub_10078630();	// the number of ramp samples (the vector at +0x19c, size at +0x1a8; stub 0x10010f82)
 	CUnknown10075aa0Sample *sub_100789b0(int index);	// stub 0x1000f47a: the ramp sample `index`; a static zero sample for index < 0, a static sample (0, sub_10076b30()) at or past the count
 	char sub_10075f30();	// whether the event has an end time (stub 0x1000695b)
+	const char *sub_10075c50();
+	const char *sub_10075ca0();
 	int sub_10075b70();	// returns the type at +0x00 (stub 0x100029c8)
 	void sub_10077860();	// stub 0x10001596, run on every event by CUnknown1007ce20::sub_1007cfc0 first
 	char sub_10076b10();	// stub 0x1000cc52: whether the event is one of the timed (non type 1) events the scene keeps (the list at +0x3c)
