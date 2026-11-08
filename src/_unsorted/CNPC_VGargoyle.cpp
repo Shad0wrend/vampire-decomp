@@ -405,6 +405,102 @@ void CNPC_VGargoyle::vfunc448(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103790d0 size=0x267
+#include "CAI_Motor.h"
+#include "COutputEvent.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CNPC_VGargoyle.h"
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "CEHandleGet.h"
+#include "ehandle.h"
+#include "Vector.h"
+typedef void *(__fastcall *GarFnP)(void *);
+typedef float *(__fastcall *GarFnF)(void *);
+#define GAR_SLOT(p, n) ((*(GarFnP **)(p))[n](p))
+#define GAR_SLOTF(p, n) ((*(GarFnF **)(p))[n](p))
+#define TEN(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define HUN(p) TEN(p##0) TEN(p##1) TEN(p##2) TEN(p##3) TEN(p##4) TEN(p##5) TEN(p##6) TEN(p##7) TEN(p##8) TEN(p##9)
+#define NINE(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8();
+struct GarSlots199 {
+	HUN(a) TEN(b0) TEN(b1) TEN(b2) TEN(b3) TEN(b4) TEN(b5) TEN(b6) TEN(b7) TEN(b8) NINE(c)
+	virtual void s199(float *pVel, int b);
+};
+struct GarPhys {
+	TEN(a0) TEN(a1) TEN(a2) TEN(a3) virtual void p40();
+	virtual void s41(const float *pImpulse, const float *pAngImpulse);
+};
+struct GarMotor {
+	void sub_102e0b40();
+	void sub_102e2020(const float *pPos, int b);
+};
+struct GarView : CNPC_VGargoyle {
+	void sub_10013336(int *pEvent);
+	void sub_10289ee0(int a);
+};
+void sub_10139610(void *, void *, int, int);
+#define GAR_PILLAR (*(EHANDLE *)&m_hPillar)
+void CNPC_VGargoyle::vfunc442(int *pEvent)
+{
+	GarView *self = (GarView *)this;
+	switch (*pEvent) {
+	case 0xe9:
+	case 0xea: {
+		void *pObj = (void *)*(int *)((char *)this + 0x36c);
+		m_p6684 = (void *)1;
+		if (pObj) {
+			Vector vecAngImpulse(0, 0, 0);
+			Vector vecFwd;
+			sub_10139610(GAR_SLOT(this, 221), &vecFwd, 0, 0);
+			Vector vecVel;
+			((GarSlots199 *)this)->s199(&vecVel.x, 0);
+			vecFwd *= 400.0f;
+			vecFwd.z += 100.0f;
+			vecVel += vecFwd;
+			((GarPhys *)pObj)->s41(&vecVel.x, &vecAngImpulse.x);
+			((COutputEvent *)((char *)this + 0x6664))->sub_100cd660(this, this, 0);
+		}
+		self->sub_10013336(pEvent);
+		return;
+	}
+	case 0x31:
+		if (GAR_PILLAR.Get()) {
+			((GarMotor *)m_pObj5d44)->sub_102e0b40();
+			CBaseEntity *pPillar = GAR_PILLAR.Get();
+			GarMotor *pMotor = (GarMotor *)m_pObj5d44;
+			pMotor->sub_102e2020(GAR_SLOTF(pPillar, 220), 0);
+			GAR_SLOT(this, 572);
+		}
+		if (sub_10010352())
+			sub_1000ac68(0);
+		return;
+	case 0x36:
+	case 0x37:
+		GAR_SLOT(this, 618);
+		self->sub_10013336(pEvent);
+		return;
+	case 0x12f:
+		self->sub_10289ee0(0x5e);
+		return;
+	case 0x130:
+		if (g_10566458->sub_100290c0((unsigned int *)&m_hPillar)) {
+			CBaseEntity *pPillar2 = g_10566458->sub_100290c0((unsigned int *)&m_hPillar);
+			*(Vector *)((char *)this + 0x5dd0) = *(Vector *)GAR_SLOTF(pPillar2, 220);
+			sub_1000ac68(0);
+		}
+		return;
+	default:
+		self->sub_10013336(pEvent);
+		return;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103793e0 size=0x67
 #include "CEntityVSlots.h"
 #include "CAI_BaseNPC.h"
