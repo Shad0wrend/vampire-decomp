@@ -228,6 +228,7 @@ public:
 	bool vfunc326(int unused1, int unused2);	// slot 326: false when the character's default stat item has the byte at +0x9e set or the first stat list with a zero field at +0x10 (default list when none) is IsEqual(0xf, 0x11); else slot 158 as a bool
 	Vector vfunc369();	// "CBaseCombatCharacter::BodyDirection3D": scope trace (entity name), AngleVectors of slot 367 (BodyAngles) into a local forward vector, returned by value
 	void sub_10139610(const QAngle *pAngles, Vector *pForward, Vector *pRight, Vector *pUp);	// AngleVectors (stub 0x10002310)
+	void sub_100b7fa0(float *pOut, int a, int b);
 	void vfunc104();	// slot 104 "CBaseCombatCharacter::Precache": scope trace (entity name), the character's stat record is precached through the default item list (global 0x10738d10), then, depending on sub_102f9970, either slot 337's answer goes to sub_102f9920 or the spawn-after-links check (slot 337 masked by sub_102f9950 must equal slot 337) prints the "ERROR" DevMsg block and gives up
 
 	void sub_1033d4b0();	// "CBaseCombatCharacter::BloodExplode": scope trace; when sub_103380d0 fails activates the two Thaumaturgy_Bloodboil_Explode effects

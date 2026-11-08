@@ -65,7 +65,7 @@ public:
 	virtual void vfunc170();
 	virtual void vfunc171();
 	virtual void vfunc172();
-	virtual void vfunc173();
+	virtual void vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float flUseValue);
 	virtual void vfunc174_slot();
 	virtual void vfunc175_slot();
 	virtual void vfunc176_slot();
