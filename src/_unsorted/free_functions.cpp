@@ -103987,6 +103987,97 @@ bool sub_101d1a90(CEyePosView *pViewer, CBaseEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d1d10 size=0x2b9
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "engineserver.h"
+#include "ScopeTrace.h"
+#include "CCollisionProperty.h"
+#include "ehandle.h"
+#include "CBCCSlotViews.h"
+
+// TARGET: sub_101d1d10
+extern int g_105a012c;
+extern char g_1072d8b8[];
+extern CBaseEntity *sub_100ab250(void *pEdict);
+
+class CEyePosition193View
+{
+public:
+	VIEW_SLOT100(0)
+	VIEW_SLOT10(10) VIEW_SLOT10(11) VIEW_SLOT10(12) VIEW_SLOT10(13) VIEW_SLOT10(14) VIEW_SLOT10(15) VIEW_SLOT10(16) VIEW_SLOT10(17) VIEW_SLOT10(18)
+	VIEW_SLOT(190) VIEW_SLOT(191) VIEW_SLOT(192)
+	virtual Vector vfunc193();
+};
+
+CBaseEntity *sub_101d1d10(CBaseEntity *pEntity, CBaseEntity *pStartAfter)
+{
+	static Vector s_lastEye(0.0f, 0.0f, 0.0f);
+
+	if (pEntity != 0)
+	{
+		Vector vecEye;
+		vecEye = ((CEyePosition193View *)pEntity)->vfunc193();
+
+		if (s_lastEye.x != vecEye.x || s_lastEye.y != vecEye.y || s_lastEye.z != vecEye.z)
+		{
+			s_lastEye = vecEye;
+
+			int cluster = engine->vfunc30((const float *)&vecEye);
+			if (cluster != g_105a012c)
+			{
+				g_105a012c = cluster;
+				engine->vfunc31(cluster, 0x2000, g_1072d8b8);
+			}
+		}
+
+		int i;
+		if (pStartAfter != 0 && pStartAfter->m_pEdict2e0 != 0)
+			i = engine->vfunc35(pStartAfter->m_pEdict2e0) + 1;
+		else
+			i = 0;
+
+		for (; i < engine->vfunc39(); i++)
+		{
+			void *pEdict = engine->vfunc38(i);
+			if (pEdict == 0)
+				continue;
+			if (((char *)pEdict)[0x4c] != 0)
+				continue;
+
+			CBaseEntity *pEnt;
+			{
+				ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+				pEnt = sub_100ab250(pEdict);
+			}
+			if (pEnt == 0)
+				continue;
+			if (pEnt->sub_100b3700() & 0x40000)
+				continue;
+
+			CCollisionProperty *pCollision =
+				(CCollisionProperty *)((char *)(((pEnt->vfunc94() == 0xb || pEnt->vfunc94() == 0xc) && pEnt->m_hAimEnt37c.Get()) ? pEnt->m_hAimEnt37c.Get() : pEnt) + 0x270);
+			Vector vecA, vecB;
+			pCollision->sub_100dcd90((const float *)&pCollision->m_vecMins,
+			                         (const float *)&pCollision->m_vecMaxs,
+			                         (float *)&vecA, (float *)&vecB);
+
+			if (engine->vfunc33(vecA, vecB, g_1072d8b8))
+				return pEnt;
+		}
+	}
+
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d20a0 size=0x112
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
