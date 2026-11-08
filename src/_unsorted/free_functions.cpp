@@ -93880,6 +93880,54 @@ void CUnknown1019e0d0::sub_1019e0d0(char on)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019e110 size=0x186
+#include "CRopeKeyframe.h"
+#include "CBaseAnimating.h"
+#include "Vector.h"
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct SEnt {
+	S10(a0) S10(a1) S10(a2) S10(a3) S10(a4) S10(a5) S10(a6) S10(a7) S10(a8) S10(a9)
+	S10(b0) S10(b1) S10(b2)
+	virtual void n0(); virtual void n1(); virtual void n2(); virtual void n3(); virtual void n4(); virtual void n5(); virtual void n6();
+	virtual CBaseAnimating *vfunc137();
+	S10(c0) S10(c1) S10(c2) S10(c3) S10(c4) S10(c5) S10(c6)
+	virtual void q0(); virtual void q1(); virtual void q2(); virtual void q3(); virtual void q4(); virtual void q5(); virtual void q6(); virtual void q7(); virtual void q8();
+	virtual const Vector &vfunc217();
+};
+
+void sub_1042db40(const Vector &a, const Vector &b, int n, float slack, float *pOut1, float *pOut2);
+
+bool CRopeKeyframe::sub_1019e110(float slack)
+{
+	SEnt *ents[2] = { (SEnt *)((EHANDLE *)&m_hStartPoint)->Get(), (SEnt *)((EHANDLE *)&m_hEndPoint)->Get() };
+	if (!ents[0] || !ents[1])
+		return false;
+
+	float m[3];
+	Vector v1 = ents[0]->vfunc217();
+	if (ents[0]->vfunc137())
+		ents[0]->vfunc137()->sub_10092ef0(m_iStartAttachment, &v1.x, m);
+	Vector v2 = ents[1]->vfunc217();
+	if (ents[1]->vfunc137())
+		ents[1]->vfunc137()->sub_10092ef0(m_iEndAttachment, &v2.x, m);
+
+	float flLen, flSlack;
+	sub_1042db40(v1, v2, 10, slack, &flLen, &flSlack);
+	int a = (int)flLen;
+	if (a != m_n474) {
+		*((unsigned char *)this + 0x1b1) = 1;
+		m_n474 = a;
+	}
+	int b = (int)flSlack;
+	if (b != m_n45c) {
+		*((unsigned char *)this + 0x1b1) = 1;
+		m_n45c = b;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019e310 size=0xdc
 #include "CRopeKeyframe.h"
 #include "CUnknown101466e0.h"

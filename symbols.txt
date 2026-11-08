@@ -2499,6 +2499,7 @@
 0x10004872 func   ?sub_1042d570@CUnknown1042d570@@QAEPAXHH@Z CUnknown1042d570::sub_1042d570
 0x1000487c func   ?vfunc627@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc627
 0x10004881 func   ?vfunc0@CVariantSaveDataOps@@UAEXPAUSaveRestoreFieldInfo_t@@PAVCSave@@@Z CVariantSaveDataOps::vfunc0
+0x10004886 func   ?sub_1019e110@CRopeKeyframe@@QAE_NM@Z CRopeKeyframe::sub_1019e110
 0x1000488b func   ?vfunc5@CBaseMoneyObject@@QAEPAV1@I@Z CBaseMoneyObject::vfunc5
 0x10004890 func   ?vfunc5@CWeaponMelee_Claws@@UAEPAVCBaseCombatWeapon@@I@Z CWeaponMelee_Claws::vfunc5
 0x10004895 func   ?sub_1017cb80@CUnknown1017cb80@@QAEHPBD@Z CUnknown1017cb80::sub_1017cb80
