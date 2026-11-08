@@ -5,6 +5,7 @@ class CUnknown102718e0
 {
 public:
 	int m_unk0;
+	CUnknown102718e0(const CUnknown102718e0 &other);
 
 	CUnknown102718e0 *sub_102718e0(const CUnknown102718e0 *other);
 };

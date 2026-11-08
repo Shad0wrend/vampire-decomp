@@ -12,5 +12,6 @@ public:
 	int m_nTimedSize;	// 0x6668
 	char *m_pTimedElements;	// 0x666c
 
+	void sub_103662d0(class CUnknown102718e0 id, float delay);
 	void sub_103662d0(int id, float delay);	// appends (id, gpGlobals->curtime + delay) to the vector at +0x665c
 };
