@@ -182899,6 +182899,43 @@ void CBaseCombatCharacter::sub_10324ba0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10324c80 size=0x1ad
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CBaseCombatCharacter.h"
+#include "CVStatList_t.h"
+#include "ScopeTrace.h"
+
+struct CVampHealFormula
+{
+	float sub_101e90f0(CBaseCombatCharacter *pChar);
+	int sub_101e9470(CBaseCombatCharacter *pChar);
+};
+extern CVampHealFormula g_10739d08;
+
+float CBaseCombatCharacter::sub_10324c80(int nType)
+{
+	ScopeTrace trace("CBaseCombatCharacter::VampHeal_HOT_Delay", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (nType == -1)
+		nType = CVStatListSet::Of(this)->Find(0)->sub_102012d0(0xf);
+	if (nType == 0)
+		return 15.0f;
+	float flBase = g_10739d08.sub_101e90f0(this);
+	if (CVStatListSet::Of(this)->Find(0)->sub_102012d0(0x10) > 0)
+		return g_10739d08.sub_101e9470(this) * flBase * 0.01;
+	return flBase;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10324ea0 size=0x1be
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
