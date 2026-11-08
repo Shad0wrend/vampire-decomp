@@ -7223,6 +7223,7 @@
 0x1000b4a1 func   ?sub_103c50c0@@YAPAHXZ sub_103c50c0
 0x1000b4a6 func   ?sub_10340c90@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10340c90
 0x1000b4ab func   ?sub_1042ff80@@YAII@Z sub_1042ff80
+0x1000b4b0 func   ?vfunc583@CCineAI@@QAEXXZ CCineAI::vfunc583
 0x1000b4b5 func   ?sub_100f7770@CGlobalEntityList@@QAEPAVCBaseEntity@@PAV2@PBD00@Z CGlobalEntityList::sub_100f7770
 0x1000b4ba func   ?vfunc50@CSingleplayRules@@UAEMPAVCBaseEntity@@@Z CSingleplayRules::vfunc50
 0x1000b4bf func   ?vfunc2@CPhysicsGameTrace@@UAE_NPAX@Z CPhysicsGameTrace::vfunc2
