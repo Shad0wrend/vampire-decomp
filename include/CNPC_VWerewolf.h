@@ -195,6 +195,7 @@ public:
 	bool sub_103d1200();	// "CNPC_VWerewolf::FindEgressHint": scope trace (entity name); keeps the move hint (+0x66bc) while HasPath holds from this entity to its ground point and from its end point to the target (slot 167), else clears it and takes a hint of type 0x3aa8 of the global list that HasPath and slot 617 accept
 	bool sub_103d1e50();	// both doors are valid and close together (door state 2 is always true)
 	int sub_10366490(int key);
+	void sub_10366290();
 	bool sub_10366400(int key);
 
 	// Slot 421, called directly so far; declared as a plain member.
