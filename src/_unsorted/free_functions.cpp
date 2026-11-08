@@ -78275,6 +78275,98 @@ void CBasePlayer::sub_1016eec0(const char *pszName, int *pOut, int nDwords)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016f2a0 size=0x64b
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+#include "CVStatList_t.h"
+#include "CUnknown101fa0e0.h"
+#include "QuestJournal.h"
+#include "FileSystemViews.h"
+#include "globalvars.h"
+#include "engineserver.h"
+#include <string.h>
+#include <time.h>
+
+extern int (__cdecl *g_109f388c)(char *, int, const char *, ...);
+extern char *(__cdecl *g_109f3850)(char *, const char *, int);
+extern void (__cdecl *g_109f364c)(const char *, ...);
+extern QuestJournal g_1074f8f8;
+int sub_101d1070(char *pszBuf, int nSize);
+char *sub_101d3730(const char *fmt, ...);
+void sub_100d4160(int hFile, CVStatList_t *pList, int a, int b);
+void sub_1019b800(int hFile);
+
+inline const char *STRINGR(const char *const &s) { return s ? s : (const char *)g_106b8540; }
+
+#define LOGLINE(s) \
+	{ \
+		char *p = (s); \
+		g_1070b238->vfunc3(p, strlen(p), hFile); \
+	}
+
+// TARGET: CBasePlayer::sub_1016f2a0
+void CBasePlayer::sub_1016f2a0(const char *pszFile)
+{
+	int nId;
+	int nTime;
+	char szTime[0x80];
+	char szPath[0x104];
+	const char *pszName = STRINGR(m_pszName2078);
+	nId = sub_101d1070(szTime, 0x80);
+	nTime = (int)engine->vfunc119(0);
+	if (pszFile && (int)strlen(pszFile) > 0)
+		g_109f388c(szPath, 0x104, "logs/%s", pszFile);
+	else
+		g_109f388c(szPath, 0x104, "logs/%s_%d", pszName, nId);
+	g_109f3850(szPath, ".txt", 0x104);
+	int hFile = g_1070b238->vfunc0(szPath, "w+", 0);
+	if (!hFile) {
+		g_109f364c("Could not log character to: %s\n", szPath);
+		return;
+	}
+	const char *pszMap = gpGlobals->mapname;
+	if (!pszMap)
+		pszMap = g_106b8540;
+	LOGLINE(sub_101d3730("%s %d %d %d\n\n", pszMap, m_lBirthday, nTime, nId));
+	LOGLINE(sub_101d3730("Log Generated on: %s", szTime));
+	LOGLINE(sub_101d3730("Player Name: %s\n", pszName));
+	LOGLINE(sub_101d3730("Map: %s (version: %d)\n", STRINGR(gpGlobals->mapname), gpGlobals->mapversion));
+	LOGLINE(sub_101d3730("Player Created: %d\n", ctime((time_t *)&m_lBirthday)));
+	LOGLINE(sub_101d3730("Current Build: %d \n", engine->vfunc6()));
+	LOGLINE(sub_101d3730("\n\n\n\nDumping all stats...................\n\n"));
+	sub_100d4160(hFile, CVStatListSet::Of(this)->Find(0), 0xfffe7961, 0);
+	sub_100d4160(hFile, CVStatListSet::Of(this)->Find(1), 0xfffe7961, 0);
+	sub_100d4160(hFile, CVStatListSet::Of(this)->Find(2), 0, 0);
+	sub_100d4160(hFile, CVStatListSet::Of(this)->Find(3), 1, 0);
+	((CUnknown101fa0e0 *)((char *)this + 0x13dc))->sub_101fa180((void *)hFile);
+	LOGLINE(sub_101d3730("\n\n\n\nDumping inventory...................\n\n"));
+	sub_10336390(hFile);
+	LOGLINE(sub_101d3730("\n\n\n\nDumping global flags...................\n\n"));
+	sub_1019b800(hFile);
+	LOGLINE(sub_101d3730("\n\n\n\nDumping quest log...................\n\n"));
+	g_1074f8f8.sub_10221f20((void *)hFile);
+	LOGLINE(sub_101d3730("\n\n\n\nDumping experience entries...................\n\n"));
+	nTime = 0;
+	for (; nTime < m_Awards1d7c.Count(); nTime++)
+		LOGLINE(sub_101d3730("%-36s: %d\n", m_Awards1d7c[nTime].m_szName, m_Awards1d7c[nTime].m_n30));
+	LOGLINE(sub_101d3730("\n\n\n\nMap visit order...................\n\n"));
+	for (nTime = 0; nTime < m_MapVisits1e10.Count(); nTime++)
+		LOGLINE(sub_101d3730("%s - %s\n", m_MapVisits1e10[nTime].m_szMap, ctime((time_t *)&m_MapVisits1e10[nTime].m_nTime44)));
+	g_1070b238->vfunc1(hFile);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016fed0 size=0x15b
 #include "CBasePlayer.h"
 #include "ConVar.h"
