@@ -17911,6 +17911,75 @@ int sub_1006d560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006d620 size=0x233
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCineCam.h"
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+#include "Vector.h"
+
+extern Vector g_1070d1b0;
+extern Vector g_1070d9d0;
+extern void *vt_1044e67c[];
+
+// TARGET: CBaseCineCam::sub_1006d620
+CBaseCineCam *CBaseCineCam::sub_1006d620()
+{
+	sub_101c0e20();
+
+	m_hTarget5d0 = 0xffffffff;
+	for (int i = 0; i < 4; i++)
+		m_hShot610[i] = 0xffffffff;
+	*(void ***)this = (void **)vt_1044e67c;
+
+	m_vecShot5ec = g_1070d1b0;
+	m_vecLook5f8 = g_1070d1b0;
+	m_vecShot604 = g_1070d9d0;
+	m_hShot630 = 0xffffffff;
+	*(float *)((char *)this + 0x634) = 75.0f;
+	m_nState638 = 0;
+	*(int *)((char *)this + 0x594) = 2;
+	m_flTime55c = -1.0f;
+
+	((CBaseEntity *)(void *)this)->CBaseEntity::vfunc93(8, 0);
+
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", ((CBaseEntity *)(void *)this)->m_name26c ? ((CBaseEntity *)(void *)this)->m_name26c : g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(0);
+	}
+
+	*(Vector *)((char *)this + 0x564) = g_1070d1b0;
+	*(Vector *)((char *)this + 0x570) = g_1070d1b0;
+	*(Vector *)((char *)this + 0x57c) = g_1070d9d0;
+	*(Vector *)((char *)this + 0x588) = g_1070d9d0;
+
+	((CBaseEntity *)(void *)this)->sub_100b2e30((const float *)&g_1070d1b0);
+	((CBaseEntity *)(void *)this)->sub_100b2f50((const float *)&g_1070d9d0);
+
+	*(int *)((char *)this + 0x540) = 0;
+	*(int *)((char *)this + 0x544) = 0;
+	*(int *)((char *)this + 0x548) = 0;
+	*(int *)((char *)this + 0x54c) = 0;
+	*(int *)((char *)this + 0x550) = 0;
+	*(int *)((char *)this + 0x554) = 0;
+
+	m_n63c = 0;
+	m_b640 = 0;
+	m_bForcePlayerLook = 1;
+	m_hTarget5d0 = 0xffffffff;
+
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006d9d0 size=0xfb
 #include "CBaseCineCam.h"
 #include "CBaseEntity.h"
