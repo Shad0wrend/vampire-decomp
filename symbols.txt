@@ -942,6 +942,7 @@
 0x10002586 func   ?sub_1009b700@CBaseEntity@@QAEXHHPBD@Z CBaseEntity::sub_1009b700
 0x1000258b func   ?vfunc546@CNPC_VManBat@@QAEHH@Z CNPC_VManBat::vfunc546
 0x10002590 func   ?vfunc51@CCameraTrack@@UAEHHH@Z CCameraTrack::vfunc51
+0x10002595 func   ?sub_101fd630@CVStatActionList_t@@QAEPAVCVStatAction_t@@XZ CVStatActionList_t::sub_101fd630
 0x1000259a func   ?sub_103343f0@CBaseCombatCharacter@@QAEHHPBD@Z CBaseCombatCharacter::sub_103343f0
 0x100025a4 func   ?sub_10239170@CBaseCombatWeapon@@QAE_NXZ CBaseCombatWeapon::sub_10239170
 0x100025ae func   ?sub_10069a10@CTETParticleAttached@@QAEPAV1@H@Z CTETParticleAttached::sub_10069a10

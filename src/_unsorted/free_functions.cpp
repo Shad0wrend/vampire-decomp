@@ -123025,6 +123025,75 @@ void CVStatActionList_t::sub_101fd540()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fd630 size=0x144
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CVStatActionList_t.h"
+#include "CVStatAction_t.h"
+#include "ScopeTrace.h"
+
+// TARGET: CVStatActionList_t::sub_101fd630
+CVStatAction_t *CVStatActionList_t::sub_101fd630()
+{
+	ScopeTrace trace("CVStatActionList_t::Alloc", g_106b8540);
+	if (m_pad0000 == m_nActions)
+	{
+		m_pad0000++;
+		if (m_pActions != 0)
+		{
+			CVStatAction_t **pNew = (CVStatAction_t **)::operator new(m_pad0000 * 4);
+			int i = 0;
+			if (0 < m_nActions)
+			{
+				do
+				{
+					i++;
+					pNew[i - 1] = m_pActions[i - 1];
+				} while (i < m_nActions);
+			}
+			if (i < m_pad0000)
+			{
+				do
+				{
+					pNew[i] = 0;
+					i++;
+				} while (i < m_pad0000);
+			}
+			::operator delete(m_pActions);
+			m_pActions = pNew;
+			m_nActions++;
+		}
+		else
+		{
+			m_pActions = (CVStatAction_t **)::operator new(m_pad0000 * 4);
+			int i = 0;
+			if (0 < m_pad0000)
+			{
+				do
+				{
+					i++;
+					m_pActions[i - 1] = 0;
+				} while (i < m_pad0000);
+			}
+			m_nActions++;
+		}
+	}
+	else
+	{
+		m_nActions++;
+	}
+	if (m_pActions[m_nActions - 1] == 0)
+		m_pActions[m_nActions - 1] = new CVStatAction_t(m_nArg0c, m_nArg10);
+	return m_pActions[m_nActions - 1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fd7e0 size=0xa7
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
