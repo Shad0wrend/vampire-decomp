@@ -180116,6 +180116,118 @@ bool CAI_Pathfinder::sub_10304a40(const float *vecStart, const float *vecEnd, in
 }
 // END FUNCTION
 
+// FUNCTION: 0x10304e00 size=0x620
+#include "CAI_Pathfinder.h"
+#include "CVProfile.h"
+class CAI_Waypoint;
+void sub_1031a050(CAI_Waypoint *p);
+void sub_1031a0e0(CAI_Waypoint *a, CAI_Waypoint *b);
+inline CAI_PathfinderOuter *GetOuterP(CAI_Pathfinder *p) { return (CAI_PathfinderOuter *)p->m_pOuter; }
+inline CAI_PathfinderNetwork *GetNetworkP(CAI_Pathfinder *p) { return GetOuterP(p)->m_pPathfinder->m_pNetwork; }
+struct CCycleHelper {
+	unsigned __int64 m_Int64;
+	CCycleHelper() { m_Int64 = 0; }
+	void Sample() {
+		unsigned __int64 *pc = &m_Int64;
+		__asm {
+			mov ecx, pc
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+};
+#define EXIT_RDTSC() \
+	{ \
+	CVProfile *pr = g_109f3648; \
+	if (!pr->m_bAtRoot || pr->m_enabled) { \
+		CVProfNode *n = pr->m_pCurNode; \
+		if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0) { \
+			CCycleHelper cc; \
+			cc.Sample(); \
+			CUnknownCycle100335e0 *pc = &n->m_CurFrameTime; \
+			pc->m_Int64 = cc.m_Int64 - pc->m_Int64; \
+			n->m_TotalTime += pc->m_Int64; \
+			g_109f3648->PopGroup(); \
+		} \
+		if (n->m_nRecursions == 0) \
+			pr->m_pCurNode = pr->m_pCurNode->m_pParent; \
+		pr->m_bAtRoot = (pr->m_pCurNode == pr->m_pRoot); \
+	} \
+	}
+#define EXIT_INL() \
+	{ \
+	CVProfile *pr = g_109f3648; \
+	if (!pr->m_bAtRoot || pr->m_enabled) { \
+		CVProfNode *n = pr->m_pCurNode; \
+		if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0) { \
+			CUnknownCycle100335e0 *pc = &n->m_CurFrameTime; \
+			sub_100335e0(pc); \
+			n->m_TotalTime += pc->m_Int64; \
+			g_109f3648->PopGroup(); \
+		} \
+		if (n->m_nRecursions == 0) \
+			pr->m_pCurNode = pr->m_pCurNode->m_pParent; \
+		pr->m_bAtRoot = (pr->m_pCurNode == pr->m_pRoot); \
+	} \
+	}
+// TARGET: CAI_Pathfinder::sub_10304e00
+CAI_Waypoint *CAI_Pathfinder::sub_10304e00(int a1, void *pRoute, int a3, int a4, int a5, const float *pOrigin, int a7, int a8)
+{
+	g_109f3648->EnterScope("CAI_Pathfinder_BuildNodeRoute", 0, "Unaccounted", false);
+	if (*(float *)&a7 > 0.0f) {
+		CAI_Waypoint *r = sub_103055b0(a1, (int)pRoute, a3, (int)pOrigin, a7, a8);
+		g_109f3648->ExitScopeCall();
+		return r;
+	}
+	if (GetNetworkP(this)->m_nNodes == 0) {
+		g_109f3648->ExitScopeCall();
+		return 0;
+	}
+	int i1 = GetNetworkP(this)->sub_102f3c10(GetOuterP(this), (const float *)a1);
+	if (i1 == -1) {
+		g_109f3648->ExitScopeCall();
+		return 0;
+	}
+	int i2 = GetNetworkP(this)->sub_102f3c10(GetOuterP(this), (const float *)pRoute);
+	if (i2 == -1) {
+		g_109f3648->ExitScope();
+		return 0;
+	}
+	if (!GetNetworkP(this)->sub_102f48b0(i1, i2)) {
+		EXIT_INL();
+		return 0;
+	}
+	CAI_Waypoint *w1 = sub_103005f0((const float *)a1, 0x60, i1, a3, a8);
+	if (!w1) {
+		EXIT_INL();
+		return 0;
+	}
+	CAI_Waypoint *w2 = sub_103007e0((const float *)pRoute, 0x160, i2, a3, a8);
+	if (!w2) {
+		sub_1031a050(w1);
+		EXIT_INL();
+		return 0;
+	}
+	if (i2 == i1) {
+		sub_1031a0e0(w1, w2);
+		EXIT_RDTSC();
+		return w1;
+	}
+	CAI_Waypoint *r = (char)a4 ? sub_102fe9f0(i1, i2, a4, a5) : sub_102fd240(i1, i2);
+	if (!r) {
+		sub_1031a050(w1);
+		sub_1031a050(w2);
+		EXIT_RDTSC();
+		return 0;
+	}
+	sub_1031a0e0(w1, r);
+	sub_1031a0e0(w1, w2);
+	EXIT_RDTSC();
+	return w1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103055b0 size=0x26b
 #include "CAI_Waypoint.h"
 #include "CAI_Pathfinder.h"
