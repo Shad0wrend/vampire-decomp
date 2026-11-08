@@ -140335,6 +140335,120 @@ void sub_1023c450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023ca30 size=0x2e8
+#include "CWorld.h"
+#include "CBaseLandmark.h"
+#include "CChangeLevel.h"
+#include "CGlobalEntityList.h"
+#include "CUnknown1070b22c.h"
+#include "CEntityVSlots.h"
+#include <string.h>
+
+extern CGlobalEntityList g_106eb5d8;
+extern CUnknown1070b22c *g_1070b22c;
+extern int (*g_109f3870)(const char *s1, const char *s2, int n);
+extern char *(*g_109f3890)(char *pDest, const char *pSrc, int nSize);
+extern char g_10538764[];
+extern char g_10559bf4[];
+extern char g_1055ef50[];
+extern char g_106b8540[];
+
+class CPlayerHelper
+{
+public:
+	void sub_1015ef60();
+};
+
+CBaseEntity *sub_101cd9e0(int index);
+void sub_10265680(int a);
+void sub_101cf5c0(CBaseEntity *pObject, int value, int flag);
+void sub_101ce290(int a, int b, int c, int d, int e);
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+void CWorld::sub_1023ca30()
+{
+	switch (*(int *)((char *)this + 0x4ac))
+	{
+	case 1:
+		if (*(float *)((char *)this + 0x4b4) + *(float *)((char *)this + 0x4b0) <= gpGlobals->curtime)
+		{
+			CBaseEntity *pPlayer = sub_101cd9e0(1);
+			CBaseLandmark *pLandmark = (CBaseLandmark *)__RTDynamicCast(
+				g_106eb5d8.sub_100f7770(0, (char *)this + 0x4d8, 0, 0), 0, g_10538764, g_10559bf4, 0);
+			CChangeLevel *pChangeLevel = (CChangeLevel *)__RTDynamicCast(
+				g_106eb5d8.sub_100f7770(0, (char *)this + 0x4b8, 0, 0), 0, g_10538764, g_1055ef50, 0);
+			if (pPlayer && pLandmark && pChangeLevel)
+			{
+				((CPlayerHelper *)pPlayer)->sub_1015ef60();
+				sub_10265680(1);
+
+				Vector vAngles = *((CEntityVSlots *)pLandmark)->slot219();
+				*(Vector *)((char *)pPlayer + 0x206c) = vAngles;
+				((CEntityVSlots *)pPlayer)->slot64((const float *)&vAngles);
+				((CEntityVSlots *)pPlayer)->slot218((Vector *)&vAngles);
+				*(int *)((char *)pPlayer + 0x207c) = 1;
+
+				sub_101cf5c0(pPlayer, (int)((CEntityVSlots *)pLandmark)->slot217(), 0);
+
+				g_109f3890((char *)this + 0x4f8, pChangeLevel->m_szMapName, 0x20);
+				pChangeLevel->sub_101c7890(pPlayer);
+				*(int *)((char *)this + 0x4ac) = 2;
+			}
+		}
+		break;
+
+	case 2:
+		{
+			const char *pszWorld = STRINGR(gpGlobals->mapname);
+			char *pszMap = (char *)this + 0x4f8;
+			if (g_109f3870(pszMap, pszWorld, strlen(pszMap)) != 0)
+			{
+				CBaseEntity *pPlayer = sub_101cd9e0(1);
+				if (pPlayer)
+				{
+					unsigned char color[4];
+					color[2] = 0;
+					color[1] = 0;
+					color[0] = 0;
+					color[3] = 0xff;
+					sub_101ce290((int)pPlayer, (int)color, *(int *)((char *)this + 0x4b0), 0, 9);
+					*(int *)((char *)this + 0x4ac) = 3;
+					*(float *)((char *)this + 0x4b4) = gpGlobals->curtime;
+				}
+			}
+		}
+		break;
+
+	case 3:
+		if (*(float *)((char *)this + 0x4b4) + *(float *)((char *)this + 0x4b0) <= gpGlobals->curtime)
+		{
+			*(int *)((char *)this + 0x4ac) = 0;
+			*(char *)((char *)this + 0x4f8) = 0;
+			*(char *)((char *)this + 0x4d8) = 0;
+		}
+		break;
+
+	case 4:
+		if (*(float *)((char *)this + 0x4b0) + *(float *)((char *)this + 0x4b4) <= gpGlobals->curtime)
+		{
+			*(int *)((char *)this + 0x4ac) = 5;
+			*(float *)((char *)this + 0x4b0) = 3.0f;
+			*(float *)((char *)this + 0x4b4) = gpGlobals->curtime;
+		}
+		break;
+
+	case 5:
+		if (*(float *)((char *)this + 0x4b4) + *(float *)((char *)this + 0x4b0) <= gpGlobals->curtime)
+		{
+			*(int *)((char *)this + 0x4ac) = 0;
+			g_1070b22c->vfunc59("disconnect\n");
+		}
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023cde0 size=0xed
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
     virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
