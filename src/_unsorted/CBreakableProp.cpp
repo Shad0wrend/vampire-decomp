@@ -168,6 +168,109 @@ void CBreakableProp::vfunc144(void *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018fb90 size=0x224
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBreakableProp.h"
+#include "COutputEvent.h"
+#include "CParamsExplosion.h"
+#include "CGlobalEntityList.h"
+#include "CEntityVSlots.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+
+__declspec(dllimport) void Warning(const char *pszFormat, ...);
+extern "C" void *__cdecl __RTDynamicCast(void *pObj, long nVfDelta, void *pSrcType, void *pTargetType, int bReference);
+extern char g_10538764[];
+extern char g_1056b4b8[];
+extern CGlobalEntityList g_106eb5d8;
+void sub_101cd940(CBreakableProp *pEnt);
+void sub_101cf600(CBreakableProp *pEnt);
+void sub_10192130(int modelIndex, void *pPhysics, const float *pOrigin, const float *pAngles, const float *pVelocity, const float *pAngVelocity, int a, int b, int c, char d);
+void sub_10104730(const Vector &vecCenter, const float *pAngles, int *pParams, CBreakableProp *pOwner);
+
+struct CBreakPhysView
+{
+	EVS(0) EVS(1) EVS(2) EVS(3) EVS(4) EVS(5) EVS(6) EVS(7) EVS(8) EVS(9)
+	EVS10(1) EVS10(2) EVS10(3)
+	virtual void slot40(float *pVelocity, float *pAngVelocity);
+};
+
+struct CBreakVirt
+{
+	EVS(0) EVS(1) EVS(2) EVS(3) EVS(4) EVS(5) EVS(6) EVS(7)
+	virtual int slot8();
+	EVS(9)
+	EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5) EVS10(6) EVS10(7) EVS10(8) EVS10(9)
+	EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15) EVS10(16) EVS10(17) EVS10(18)
+	EVS(190) EVS(191)
+	virtual Vector slot192();
+	EVS(193) EVS(194) EVS(195) EVS(196) EVS(197) EVS(198) EVS(199)
+	EVS10(20)
+	EVS(210) EVS(211) EVS(212) EVS(213) EVS(214) EVS(215) EVS(216)
+	virtual float *slot217();
+	EVS(218)
+	virtual float *slot219();
+};
+
+struct CBreakNamed : CBreakableProp
+{
+	const char *sub_100ab4f0();
+};
+
+struct CBreakFlags
+{
+	unsigned int m_flags;
+	bool Test() { return ((m_flags >> 12) & 1) != 0; }
+};
+
+// TARGET: CBreakableProp::vfunc266
+void CBreakableProp::vfunc266(CBaseEntity *pAttacker)
+{
+	m_hAttacker768 = pAttacker;
+	m_field200 = 2;
+	m_nTakeDamage1fc = 0;
+	((COutputEvent *)m_OnBreak730)->sub_100cd660(pAttacker, this, 0);
+	CBreakPhysView *pPhysics = (CBreakPhysView *)m_pPhysObj36c;
+	Vector vecVelocity;
+	Vector vecAngVelocity;
+	if (pPhysics) {
+		pPhysics->slot40(&vecVelocity.x, &vecAngVelocity.x);
+	} else {
+		if (((CBreakFlags *)&m_flags268)->Test())
+			sub_100b1d10();
+		vecVelocity.x = m_vecVelocity3bc[0];
+		vecVelocity.y = m_vecVelocity3bc[1];
+		vecVelocity.z = m_vecVelocity3bc[2];
+		vecAngVelocity.x = m_angVel3c8[2];
+		vecAngVelocity.y = m_angVel3c8[0];
+		vecAngVelocity.z = m_angVel3c8[1];
+	}
+	{
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", m_name26c ? m_name26c : g_106b8540, g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->AddSolidFlags(4);
+	}
+	sub_101cf600(this);
+	CBreakVirt *pVirt = (CBreakVirt *)this;
+	if (m_pszExplosion764) {
+		CParamsExplosion *pExplosion = (CParamsExplosion *)__RTDynamicCast(g_106eb5d8.sub_100f7770(0, m_pszExplosion764, pAttacker, 0), 0, g_10538764, g_1056b4b8, 0);
+		if (pExplosion)
+			sub_10104730(pVirt->slot192(), pVirt->slot219(), pExplosion->sub_10104510(), this);
+		else
+			Warning("%s could not find explosion parameters: %s\n", ((CBreakNamed *)this)->sub_100ab4f0(), m_pszExplosion764 ? m_pszExplosion764 : g_106b8540);
+	}
+	sub_10192130(pVirt->slot8(), pPhysics, pVirt->slot217(), pVirt->slot219(), &vecVelocity.x, &vecAngVelocity.x, m_nDC, m_nBreakMode, m_n774, m_b778);
+	sub_101cd940(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018fe50 size=0x11
 struct CBreakablePropFields1018fe50 {
     char pad0[0x1fc];
