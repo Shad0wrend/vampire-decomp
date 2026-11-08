@@ -109732,6 +109732,58 @@ bool __fastcall sub_101dd4f0(int *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dd510 size=0xcd
+#include "CUnknown101d7520.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CUnknown101dd910.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101dc5a0.h"
+#include "CUnknown101dce30.h"
+
+struct CStringRet_101dd510
+{
+	const char *m_psz;
+	CStringRet_101dd510() {}
+};
+CStringRet_101dd510 sub_10203950(IKVNodeView *pKV, const char *pszKey);
+int sub_1023ed10(const char *pszName, int bPreload);
+
+inline const char *STRINGR(const char *const &s)
+{
+	return s ? s : g_106b8540;
+}
+
+#define F(T, off) (*(T *)((char *)this + off))
+
+// TARGET: CUnknown101dd910::sub_101dd510
+char CUnknown101dd910::sub_101dd510(IKVNodeView *pKV)
+{
+	if (pKV) {
+		IKVNodeView *pProjectile = pKV->vfunc2("Projectile");
+		if (pProjectile) {
+			m_nSpeed = pProjectile->vfunc10("Speed", 0);
+			m_pszModel = sub_10203950(pProjectile, "Model").m_psz;
+			m_pszParticle = sub_10203950(pProjectile, "Particle").m_psz;
+			m_bParticleDiesOnHit = pProjectile->vfunc12("ParticleDiesOnHit", 0);
+			if (*pProjectile->vfunc13("Syncs", g_106b8540))
+				F(char, 0xd) = 1;
+			((CUnknown101dc5a0 *)((char *)this + 0x10))->sub_101dc5a0((CUnknown101dc5a0Keys *)pProjectile);
+			((CUnknown101dce30 *)((char *)this + 0x20))->sub_101dce30((CUnknown101dc5a0Keys *)pProjectile, "Effect_Src_Proj_Interrupt");
+			if (m_pszModel)
+				sub_1023ed10(STRINGR(m_pszModel), 1);
+		}
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dd620 size=0x24f
 #include "CUnknown101dd910.h"
 #include "CUnknown101e0f00.h"
