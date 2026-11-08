@@ -49902,6 +49902,79 @@ void CDialog::sub_100e0a40(const char *pszSound)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e0b10 size=0x386
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include <string.h>
+#include "CEHandleGet.h"
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "ScopeTrace.h"
+#include "CDialog.h"
+
+struct CDialogGate
+{
+	virtual void vfunc0();
+	virtual char vfunc1();
+	char m_pad[0x2c - 4];
+	int m_nValue2c;
+};
+extern CDialogGate *g_106e8684;
+extern CGlobalEntityList *g_10566458;
+void sub_100dfaf0(int level, const char *fmt, ...);
+char sub_100df240(CDialogEntry_t *pEntry);
+int sub_100ea2d0(char *pszScript, CBaseEntity *pNPC, CBaseEntity *pSpeaker, int a, int b);
+__declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+#define GETENT(h) ((CBaseEntity *)EHandle_Get(h))
+#define ENTRY ((CDialogEntry_t *)((char *)m_pTable->m_pEntries + off))
+
+// TARGET: CDialog::sub_100e0b10
+int CDialog::sub_100e0b10()
+{
+	ScopeTrace trace("CDialog::GetStartingLine", g_106b8540);
+	if (!m_pTable || !m_pTable->m_pEntries)
+		return 0;
+	int nResult = 1;
+	sub_100dfaf0(1, "Checking starting conditions...\n");
+	if (!g_106e8684->vfunc1() && g_106e8684->m_nValue2c > 0)
+		return g_106e8684->vfunc1() ? 0 : g_106e8684->m_nValue2c;
+	CDialogDependency dep;
+	int i = 0;
+	int off = 0;
+	do {
+		if (sub_100df240(ENTRY)) {
+			sub_100dfaf0(1, "\n\n***Checking starting conditions for line: %d\n", ENTRY->m_data[0]);
+			dep.sub_100e8fc0((int)this, (int)g_10566458->sub_100290c0(&m_hNPC), (char *)ENTRY->m_data[4], 0, 0, 0);
+			CBaseEntity *pSpeaker = GETENT(m_hSpeaker);
+			CBaseEntity *pNPC = GETENT(m_hNPC);
+			if (dep.sub_100e94e0(pNPC, pSpeaker)) {
+				if (sub_100e19f0(ENTRY->m_data[3]))
+					return m_pTable->m_pEntries[i].m_data[3];
+				sub_100dfaf0(3, "%s has invalid starting conditions on line %d!!!\n", GETENT(m_hSpeaker)->sub_100ab4f0(), ENTRY->m_data[0]);
+			}
+		}
+		i++;
+		off += 0x34;
+	} while (i < m_pTable->m_nEntries);
+	const char *pszScript = STRINGR(*(const char *const *)&GETENT(m_hSpeaker)->m_iszUseScript);
+	if (pszScript && strlen(pszScript)) {
+		char szScript[0x80];
+		Q_strncpy(szScript, pszScript, 0x80);
+		sub_100dfaf0(1, "***Checking use script %s\n", szScript);
+		nResult = sub_100ea2d0(szScript, GETENT(m_hNPC), GETENT(m_hSpeaker), 0x102, 0);
+	}
+	return nResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e0f90 size=0x150
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
