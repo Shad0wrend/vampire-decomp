@@ -5403,6 +5403,7 @@
 0x10008adf func   ?sub_1029c970@CAI_BaseNPCTroika@@QAEMXZ CAI_BaseNPCTroika::sub_1029c970
 0x10008ae4 func   ?vfunc0@CSafeDiscSaveRestoreOps_3@@QAEXPAPAHPAUCSafeDiscWriter@@@Z CSafeDiscSaveRestoreOps_3::vfunc0
 0x10008ae9 func   ?vfunc3@ConCommandBase@@QAEXXZ ConCommandBase::vfunc3
+0x10008aee func   ?sub_10156e10@CRagdollPropAttached@@QAEXPAXHHHHHHPAVCBaseEntity@@HPBVVector@@HH@Z CRagdollPropAttached::sub_10156e10
 0x10008af3 func   ?vfunc33@CPropDoorknob@@UAEHXZ CPropDoorknob::vfunc33
 0x10008afd func   ?sub_101f7960@CUnknown101f7960@@QAEPAUS101f7310@@XZ CUnknown101f7960::sub_101f7960
 0x10008b02 func   ?sub_101e9470@@YIHPAXH0@Z sub_101e9470

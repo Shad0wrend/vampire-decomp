@@ -76569,6 +76569,136 @@ void CRagdollPropAttached::sub_10156d90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10156e10 size=0x36a
+#include "CRagdollPropAttached.h"
+#include "CEntityVSlots.h"
+
+class CUnknown10029130
+{
+public:
+	void sub_10029130(int a, int b, int c);
+	int m_n0000;
+	int m_n0004;
+	int m_n0008;
+	int m_n000c;
+};
+
+struct CAttachBodyView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25();
+	virtual void v26(Vector *pOut, const Vector *pIn);
+	virtual void v27(Vector *pOut, int a);
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31(); virtual void v32();
+	virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37();
+	virtual void v38(float *pMatrix);
+};
+
+struct CAttachEnvView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11();
+	virtual void *v12(void *pRef, void *pAttached, void *pGroup, void *pParams);
+};
+extern CAttachEnvView *g_10723940;
+extern Vector g_1070d1b0;
+
+struct CAttachRagdollParams
+{
+	float m_toRef[12];
+	float m_toAttached[12];
+	int m_parent;
+	int m_child;
+	float m_ax0[4];
+	float m_ax1[4];
+	float m_ax2[4];
+	bool m_bOnlyAngular;
+	bool m_bActive;
+	bool m_bClockwise;
+	Vector m_pos;
+	Vector m_local;
+};
+
+void sub_10139a90(float *m);
+void sub_10139b50(Vector *a, Vector *b, float *c);
+void sub_10138630(float *a, float *b);
+void sub_10138df0(float *a, float *b, float *c);
+void sub_10138760(Vector *a, int n, float *m);
+void sub_10138720(float *m, int n, Vector *out);
+void sub_10158b40(void *a, void *b);
+void sub_1019bfd0(void *p);
+
+// TARGET: CRagdollPropAttached::sub_10156e10
+void CRagdollPropAttached::sub_10156e10(void *pAttached, int a2, int a3, int a4, int a5, int a6, int a7, CBaseEntity *pOther,
+	int nBone, const Vector *pAttachPoint, int a11, int a12)
+{
+	int idx = 0;
+	if (a11 > 0)
+	{
+		char *pModel = (char *)((CRagdollProp *)this)->sub_100952d0(-1);
+		idx = *(int *)(pModel + *(int *)(pModel + 0xf4) + a11 * 0xa0 + 0x94);
+	}
+	sub_101554a0((const float *)a2, a3, (const float *)&g_1070d1b0, (void *)a4, (void *)a5, *(float *)&a6, a7, 0);
+	CAttachBodyView *pBody = (CAttachBodyView *)m_Bodies[idx].m_pObject;
+	CAttachRagdollParams p;
+	pBody->v27(&p.m_pos, a12);
+	p.m_bActive = true;
+	sub_10139a90(p.m_toRef);
+	sub_10139a90(p.m_toAttached);
+	p.m_parent = -1;
+	p.m_child = -1;
+	((CUnknown10029130 *)p.m_ax0)->sub_10029130(0, 0, 0);
+	((CUnknown10029130 *)p.m_ax1)->sub_10029130(0, 0, 0);
+	p.m_ax2[0] = 0;
+	p.m_ax2[1] = 0;
+	p.m_ax2[2] = 0;
+	p.m_ax2[3] = 0;
+	p.m_bOnlyAngular = false;
+	p.m_bClockwise = false;
+	((CAttachBodyView *)pAttached)->v26(&p.m_local, pAttachPoint);
+	float *pf = (float *)((CEntityVSlots *)pOther)->slot219();
+	Vector vecAng(0, pf[1], 0);
+	float mE0[12];
+	float m110[12];
+	float m2[2][12];
+	sub_10139b50(&vecAng, &p.m_local, m110);
+	p.m_ax0[0] = -2.0f;
+	p.m_ax0[1] = 2.0f;
+	p.m_ax0[2] = 0;
+	p.m_ax0[3] = 20.0f;
+	p.m_ax1[0] = 0;
+	p.m_ax1[1] = 0;
+	p.m_ax1[2] = 0;
+	p.m_ax1[3] = 0;
+	p.m_ax2[0] = -15.0f;
+	p.m_ax2[1] = 15.0f;
+	p.m_ax2[2] = 0;
+	p.m_ax2[3] = 20.0f;
+	((CAttachBodyView *)pAttached)->v38(mE0);
+	sub_10138630(mE0, m2[1]);
+	pBody->v38(mE0);
+	sub_10138630(mE0, m2[0]);
+	sub_10138df0(m2[0], m110, p.m_toRef);
+	sub_10138df0(m2[1], m110, p.m_toAttached);
+	sub_10138760(&p.m_pos, 3, p.m_toRef);
+	sub_10158b40(pAttached, (void *)m_Bodies[0].m_pObject);
+	m_pPhysObj1060 = g_10723940->v12(pBody, pAttached, *(void **)((char *)this + 0x734), &p);
+	vfunc202(pOther);
+	sub_1019bfd0(&m_nBodies730);
+	m_boneIndexAttached = nBone;
+	m_ragdollAttachedObjectIndex = idx;
+	m_attachmentPointBoneSpace = *pAttachPoint;
+	Vector vecOut;
+	sub_10138720(p.m_toRef, 3, &vecOut);
+	m_attachmentPointRagdollSpace = vecOut;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10157260 size=0xc0
 #include "CRagdollProp.h"
 #include "CEntityVSlots.h"
