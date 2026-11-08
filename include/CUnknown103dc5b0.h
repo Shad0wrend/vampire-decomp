@@ -2,6 +2,7 @@
 // destroy-and-maybe-delete function (bit 0 of the argument deletes). Used with 0x48 byte elements in a
 // CNPC_VWerewolf vector.
 #pragma once
+#include "utlvector.h"
 
 extern void (__cdecl *g_109f3624)(void *);	// Plat_Free
 
@@ -39,8 +40,8 @@ class CUnknown103dc5b0
 {
 public:
 	char m_pad0000[0x20];
-	CUtlVec103dc5b0 m_First;	// 0x20
-	CUtlVec103dc5b0 m_Second;	// 0x34
+	CUtlVector<int> m_First;	// 0x20
+	CUtlVector<int> m_Second;	// 0x34
 
 	CUnknown103dc5b0 *sub_103dc5b0(unsigned char flags);	// destroys the vectors, deletes the object when bit 0 of flags is set
 };
