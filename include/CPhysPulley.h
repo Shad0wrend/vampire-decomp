@@ -23,7 +23,7 @@ public:
 	void vfunc123();	// slot 123 (plain member) "DrawDebugGeometryOverlays": with one of the debug overlay bits 0x2c (+0x224) set, takes the origin (slot 217), transforms the two attached physics objects' matrices (slot 5 / 6 of the constraint object at +0x450, slot 38 fills the matrix) with the origin into +0x494 / +0x4a0, draws three green lines origin -> +0x488 (m_vecMid) -> ..., then CBaseEntity::vfunc123
 	void sub_100a0130();	// CBaseEntity::vfunc123 (stub 0x10005880), called directly
 
-	void vfunc241(struct CPhysPulleyDebugInfo *pInfo, int nFlags);	// slot 241 (ret 8) \"DebugDraw\"-like: builds a 0x1c byte request record and hands it to slot 17 of the tracer at 0x10723940 (pInfo->m_pObj[0], pInfo->m_pObj[1], nFlags, &record); see CPhysPulleyDebugInfo
+	void vfunc241(int nFlags, struct CPhysPulleyDebugInfo *pInfo);	// slot 241 (ret 8) \"DebugDraw\"-like: builds a 0x1c byte request record and hands it to slot 17 of the tracer at 0x10723940 (pInfo->m_pObj[0], pInfo->m_pObj[1], nFlags, &record); see CPhysPulleyDebugInfo
 
 	char m_pad0004[0x204 - 4];
 	unsigned int m_flags204;	// 0x204: bit 1 sets the record's byte +0x42 (overlay flag), bit 2 inverted gives the record's flag byte +0x34
