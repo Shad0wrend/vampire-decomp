@@ -1464,6 +1464,169 @@ void CBaseCombatWeapon::vfunc327()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10255700 size=0x3ee
+#include "CBaseCombatWeapon.h"
+#include "CVDmg_t.h"
+#include "CUnknown1003ff80.h"
+#include "CUnknown1016b460.h"
+#include "CWeaponOwner.h"
+#include "CBasePlayer.h"
+#include "CSoundEnt.h"
+#include "globalvars.h"
+
+#define OV(n) virtual void v##n();
+#define OV10(p) OV(p##0) OV(p##1) OV(p##2) OV(p##3) OV(p##4) OV(p##5) OV(p##6) OV(p##7) OV(p##8) OV(p##9)
+struct OwnerV
+{
+	OV10(0) OV10(1) OV10(2) OV10(3) OV10(4) OV10(5) OV10(6) OV10(7) OV10(8) OV10(9)
+	OV10(10) OV10(11) OV10(12) OV10(13) OV10(14) OV10(15) OV10(16) OV10(17) OV(180) OV(181) OV(182) OV(183) OV(184)
+	virtual void v185(void *info);
+};
+
+struct WeaponV
+{
+	OV10(0) OV10(1) OV10(2) OV10(3) OV10(4) OV10(5) OV10(6) OV10(7) OV10(8) OV10(9)
+	OV10(10) OV10(11) OV10(12) OV10(13) OV10(14) OV10(15) OV10(16) OV10(17) OV10(18) OV10(19) OV10(20) OV10(21)
+	virtual int v220();
+	OV(221) OV(222) OV(223) OV(224) OV(225) OV(226) OV(227) OV(228) OV(229)
+	OV10(23) OV10(24) OV10(25) OV10(26)
+	OV(270) OV(271) OV(272) OV(273) OV(274) OV(275) OV(276)
+	virtual bool v277(int a);
+	OV(278) OV(279) OV10(28) OV10(29)
+	OV(300) OV(301) OV(302) OV(303) OV(304) OV(305) OV(306)
+	virtual void v307(int a);
+	OV(308) OV(309) OV10(31) OV(320) OV(321) OV(322) OV(323) OV(324)
+	virtual void v325();
+	OV(326) OV(327)
+	virtual int v328();
+	OV(329) OV(330)
+	virtual const Vector &v331();
+	virtual float v332();
+	virtual void v333(int a, int b, int c, int d, int e, int f);
+	OV(334) OV(335) OV(336) OV(337) OV(338)
+	virtual void v339();
+};
+
+struct V3 { float x, y, z; };
+
+struct DmgHolder326
+{
+	CVDmg_t m_d;
+	~DmgHolder326() { m_d.sub_101fa680(); }
+};
+
+struct FireInfo326
+{
+	int m_nShots;	// 0x30
+	int m_n34;
+	V3 m_vSrc;	// 0x38
+	V3 m_vDir;	// 0x44
+	V3 m_v50;	// 0x50
+	V3 m_v5c;	// 0x5c
+	V3 m_v68;	// 0x68
+	float m_flDist;	// 0x74
+	DmgHolder326 m_Dmg;	// 0x78
+	int m_nAmmo;	// 0xbc
+	int m_nC0;
+	int m_nC4;
+	void *m_pWeapon;	// 0xc8
+	int m_nCC;
+	int m_nFlags;	// 0xd0
+	union { int m_nD4; float m_flD4; };
+	int *m_pD8[6];	// 0xd8..0xec
+	int m_nF0;
+	CUnknown1003ff80 m_F4;
+	char m_pad[0x50];
+};
+
+extern char g_1072bcaf;
+extern int g_1072bc3c;
+extern Vector g_1070d1b0;
+
+// TARGET: CBaseCombatWeapon::vfunc326
+void CBaseCombatWeapon::vfunc326()
+{
+	WeaponV *pW = (WeaponV *)this;
+	int *pRoll = sub_102517e0();
+	if (pW->v277(0) && *(int *)((char *)this + 0x74c) == 0)
+	{
+		pW->v325();
+		return;
+	}
+	CBasePlayer *pOwner = (CBasePlayer *)sub_10252290();
+	if (!pOwner)
+		return;
+	pOwner->vfunc429();
+	pW->v333(1, 1, 0, 0, 0, 0);
+	*(unsigned int *)((char *)pOwner + 0x19c) |= 2;
+	pW->v307(pW->v328());
+	pOwner->vfunc449(5, 0);
+	Vector v1;
+	pOwner->vfunc389(&v1, (const Vector *)pOwner->vfunc220());
+	Vector v2;
+	pOwner->sub_10176520(&v2, 0.087155745f);
+	int n = 0;
+	float interval = pW->v332();
+	if (m_flTimes730[0] <= gpGlobals->curtime)
+	{
+		do
+		{
+			m_flTimes730[0] += interval;
+			n++;
+		} while (interval != 0 && m_flTimes730[0] <= gpGlobals->curtime);
+	}
+	int clip = *(int *)((char *)this + 0x74c);
+	if (n > clip)
+		n = clip;
+	*(int *)((char *)this + 0x74c) = clip - n;
+	unsigned int flags = 0;
+	if (*(int *)((char *)sub_102517b0() + 0x4fed8))
+		flags = 1;
+	if (*(int *)((char *)sub_102517b0() + 0x4fedc))
+		flags |= 2;
+	FireInfo326 info;
+	info.m_F4.sub_1003ff80();
+	info.m_nShots = 1;
+	info.m_n34 = 1;
+	info.m_nC0 = 4;
+	info.m_nAmmo = -1;
+	info.m_vSrc = *(V3 *)&g_1070d1b0;
+	info.m_v5c = *(V3 *)&g_1070d1b0;
+	((Vector *)&info.m_vDir)->sub_1003e4b0(g_1070d1b0);
+	((Vector *)&info.m_v68)->sub_1003e4b0(g_1070d1b0);
+	info.m_vSrc = *(V3 *)&v1;
+	info.m_flDist = 56755.84f;
+	info.m_nC4 = 0;
+	info.m_pWeapon = 0;
+	info.m_nCC = 0;
+	info.m_nFlags = 0;
+	info.m_flD4 = 0.0f;
+	info.m_pD8[0] = 0; info.m_pD8[1] = 0; info.m_pD8[2] = 0; info.m_pD8[3] = 0; info.m_pD8[4] = 0; info.m_pD8[5] = 0;
+	info.m_nF0 = 0;
+	info.m_nShots = n;
+	info.m_vDir = *(V3 *)&v2;
+	info.m_v68 = *(V3 *)&pW->v331();
+	info.m_Dmg.m_d = *(CVDmg_t *)(m_Dmg77c[pRoll[0]]);
+	info.m_nAmmo = (&m_nAmmoType)[pRoll[0x10c / 4]];
+	info.m_nC0 = 2;
+	info.m_pWeapon = this;
+	info.m_nFlags = flags;
+	info.m_nD4 = *(int *)((char *)sub_102517b0() + 0x4feec);
+	info.m_pD8[0] = (int *)((char *)sub_102517b0() + 0x4fef0);
+	info.m_pD8[1] = (int *)((char *)sub_102517b0() + 0x4ff70);
+	info.m_pD8[2] = (int *)((char *)sub_102517b0() + 0x4fff0);
+	info.m_pD8[3] = (int *)((char *)sub_102517b0() + 0x50070);
+	info.m_pD8[4] = (int *)((char *)sub_102517b0() + 0x500f0);
+	((OwnerV *)pOwner)->v185(&info);
+	char bFlag = g_1072bcaf;
+	int snd = g_1072bc3c;
+	CSoundEnt::sub_101bac90(1, (const Vector *)pW->v220(), snd, 0.2f, bFlag, (CBaseEntity *)pOwner);
+	if (*(int *)((char *)this + 0x74c) == 0 && pOwner->sub_103346c0(m_nAmmoType) <= 0)
+		((CUnknown1016b460 *)pOwner)->sub_1016b460((int)"!HEV_AMO0", 0, 0);
+	pW->v339();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10255bf0 size=0x29
 #include "CBaseCombatWeapon.h"
 
