@@ -258,7 +258,7 @@ inline typename CUtlRBTree<T, I>::Links_t const &CUtlRBTree<T, I>::Links(I i) co
 template <class T, class I>
 inline typename CUtlRBTree<T, I>::Links_t &CUtlRBTree<T, I>::Links(I i)
 {
-	return *(Links_t *)&m_Elements.m_pMemory[i];
+	return *(Links_t *)(i * sizeof(Node_t) + (char *)m_Elements.m_pMemory);
 }
 
 template <class T, class I>
