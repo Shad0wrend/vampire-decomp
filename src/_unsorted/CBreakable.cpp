@@ -53,6 +53,50 @@ bool CBreakable::vfunc110(const char *szKeyName, const char *szValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010d6a0 size=0x17b
+#include "CBreakable.h"
+#include "CFuncBrush.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+#include "Vector.h"
+extern char g_106b8540[];
+void sub_10011081();
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+void CBreakable::sub_1010d6a0()
+{
+	CBaseEntity *pEnt = (CBaseEntity *)this;
+	pEnt->vfunc104();
+	if (1 & pEnt->m_flags204)
+		pEnt->m_nTakeDamage = 0;
+	else
+		pEnt->m_nTakeDamage = 2;
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", STRINGR_F(pEnt->m_name26c));
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(1);
+	}
+	pEnt->vfunc93(8, 0);
+	Vector angles = *(Vector *)((CFuncBrushSlots *)this)->slot221();
+	*(float *)((char *)this + 0x450) = angles.y;
+	angles.y = 0;
+	pEnt->vfunc64((float *)&angles);
+	pEnt->sub_100aaa40(4);
+	int tmp;
+	const char *pszModel = *pEnt->vfunc9(&tmp);
+	if (!pszModel)
+		pszModel = g_106b8540;
+	pEnt->vfunc105(pszModel);
+	*(void **)(0x1ec + (char *)this) = (void *)sub_10011081;
+	if (1 & pEnt->m_flags204)
+		*(int *)(0x1ec + (char *)this) = 0;
+	if (!sub_1010efc0() && *(int *)((char *)this + 0x16c))
+		pEnt->sub_100b3580(0x1000000);
+	if (sub_1010efc0())
+		pEnt->sub_100b3580(0x20000000);
+	((CFuncBrushSlots *)this)->slot223();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010d880 size=0x8
 #include "CBreakable.h"
 namespace lifted {
