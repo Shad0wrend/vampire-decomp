@@ -8,26 +8,37 @@ public:
 	char m_data[0x8c];
 };
 
-struct CUnknown100fde30Rec
+struct CUnknown100fde30RecHead	// the two leading floats of a record
 {
 	float m_a;	// -FLT_MAX
 	float m_b;	// 10.0
+	CUnknown100fde30RecHead() { m_b = 10.0f; }
+};
+
+struct CUnknown100fde30RecList	// the CUtlLinkedList<T, unsigned short> part of a record (memory, head / tail / free = invalid, counts 0)
+{
 	int m_c, m_d, m_e;
 	unsigned short m_f, m_g, m_h;	// 0xffff
 	short m_i, m_j;
-	int m_k;
-
-	CUnknown100fde30Rec()
+	CUnknown100fde30RecList()
 	{
-		m_b = 10.0f;
 		m_c = 0;
 		m_d = 0;
 		m_e = 0;
 		m_f = 0xffff;
 		m_g = 0xffff;
 		m_h = 0xffff;
-		m_j = 0;
-		m_i = 0;
+		m_i = m_j = 0;
+	}
+};
+
+// The base classes give the game's store order: m_b first, the list, then m_k and m_a (0x100fde30).
+struct CUnknown100fde30Rec : CUnknown100fde30RecHead, CUnknown100fde30RecList
+{
+	int m_k;
+
+	CUnknown100fde30Rec()
+	{
 		m_k = 0;
 		m_a = -3.402823466e+38f;
 	}
