@@ -9,6 +9,159 @@ int CNPC_VMingXiaoTentacle::vfunc337()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039de20 size=0x3bc
+// TARGET: CNPC_VMingXiaoTentacle::vfunc438
+#include "CNPC_VMingXiaoTentacle.h"
+#include "CBaseCombatWeapon.h"
+#include "engineiface.h"
+#include "globalvars.h"
+
+struct CTentCalls
+{
+	char sub_1039ee20(void *pArg);
+	char sub_10269aa0(int a);
+	CBaseCombatWeapon *sub_1032e7b0();
+};
+
+#define TENT_FILE "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiaoTentacle.cpp"
+#define V ((CTentCalls *)this)
+
+int CNPC_VMingXiaoTentacle::vfunc438()
+{
+	m_n1b2c = 0x1a;
+	if (m_n6674 == 0.0f)
+	{
+		switch (m_n6670)
+		{
+		case 1: m_n6674 = gpGlobals->curtime + 0.5; break;
+		case 2: m_n6674 = gpGlobals->curtime + 10.0f; break;
+		case 3: m_n6674 = gpGlobals->curtime + 9999.0f; break;
+		case 0: goto def1;
+		default:
+def1:
+			m_n6674 = gpGlobals->curtime + 4.0f; break;
+		}
+	}
+
+	switch (m_n6670)
+	{
+	case 1:
+		if (gpGlobals->curtime < m_n6674)
+		{
+			m_pszFile1b30 = TENT_FILE;
+			m_nLine1b34 = 0x3eb;
+			return 0x158;
+		}
+		m_pszFile1b30 = TENT_FILE;
+		m_nLine1b34 = 0x3f0;
+		return 0x159;
+
+	case 2:
+		switch (m_nState5cc0)
+		{
+		case 1:
+			if (gpGlobals->curtime >= m_n6674 && sub_1039eee0())
+			{
+				float *pArg = vfunc217();
+				char r = V->sub_1039ee20(pArg);
+				m_pszFile1b30 = TENT_FILE;
+				if (r)
+				{
+					m_nLine1b34 = 0x400;
+					return 0x160;
+				}
+				m_nLine1b34 = 0x404;
+				return 0x161;
+			}
+			m_nLine1b34 = 0x409;
+			m_pszFile1b30 = TENT_FILE;
+			return 0x15a;
+
+		case 2:
+			m_b5b80 = 0;
+			if (V->sub_10269aa0(0x78))
+			{
+				sub_10269b50(0x78);
+				m_nLine1b34 = 0x41c;
+				m_pszFile1b30 = TENT_FILE;
+				return 0x165;
+			}
+			if (gpGlobals->curtime >= m_n6674 && sub_1039eee0())
+			{
+				float *pArg = vfunc217();
+				char r = V->sub_1039ee20(pArg);
+				m_pszFile1b30 = TENT_FILE;
+				if (r)
+				{
+					m_nLine1b34 = 0x423;
+					return 0x160;
+				}
+				m_nLine1b34 = 0x427;
+				return 0x161;
+			}
+			if (gpGlobals->curtime >= m_n6678)
+			{
+				if (m_f6268 <= 256.0f)
+				{
+					m_nLine1b34 = 0x42e;
+					m_pszFile1b30 = TENT_FILE;
+					return 0x15b;
+				}
+				if (gpGlobals->curtime >= m_n6680 && enginerandom->vfunc2(0, 99) < 0x32)
+				{
+					m_nLine1b34 = 0x436;
+					m_pszFile1b30 = TENT_FILE;
+					return 0x163;
+				}
+				m_nLine1b34 = 0x43a;
+				m_pszFile1b30 = TENT_FILE;
+				return 0x15f;
+			}
+			{
+				int result = vfunc604(V->sub_1032e7b0() ? V->sub_1032e7b0()->vfunc360() : 0);
+				if (result)
+					return result;
+				m_nLine1b34 = 0x44f;
+				m_pszFile1b30 = TENT_FILE;
+				return 0x164;
+			}
+
+		default:
+			m_nLine1b34 = 0x468;
+			m_pszFile1b30 = TENT_FILE;
+			return 0x164;
+		}
+
+	case 3:
+		{
+			float *pArg = vfunc217();
+			char result = V->sub_1039ee20(pArg);
+			m_pszFile1b30 = TENT_FILE;
+			if (result)
+			{
+				m_nLine1b34 = 0x45e;
+				return 0x160;
+			}
+			m_nLine1b34 = 0x462;
+			return 0x161;
+		}
+
+	case 0: goto def2;
+	default:
+def2:
+		if (gpGlobals->curtime < m_n6674)
+		{
+			m_nLine1b34 = 0x3dd;
+			m_pszFile1b30 = TENT_FILE;
+			return 0x156;
+		}
+		m_nLine1b34 = 0x3e2;
+		m_pszFile1b30 = TENT_FILE;
+		return 0x157;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039e310 size=0x90
 #include "CNPC_VMingXiaoTentacle.h"
 
