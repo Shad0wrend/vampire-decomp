@@ -146259,6 +146259,44 @@ SOut1023f3d0 *sub_1023f3d0(const SVec3 *pA, const SVec3 *pB, SOut1023f3d0 *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023f870 size=0x1a9
+#include <math.h>
+#include "Vector.h"
+#include "UTIL_Trace.h"
+float sub_1023f7b0(const Ray_t &ray);
+
+bool sub_1023f870(const Ray_t &ray, const Vector &v1, const Vector &v2, const Vector &v3, float &u, float &v, float *t)
+{
+	Vector edge1, edge2, org;
+	VectorSubtract(v2, v1, edge1);
+	VectorSubtract(v3, v1, edge2);
+
+	Vector dirCrossEdge2;
+	CrossProduct(*(const Vector *)ray.m_Delta, edge2, dirCrossEdge2);
+
+	float denom = DotProduct(dirCrossEdge2, edge1);
+	if (fabs(denom) < 1e-6)
+		return false;
+	denom = 1.0f / denom;
+
+	VectorSubtract(*(const Vector *)ray.m_Start, v1, org);
+	u = DotProduct(dirCrossEdge2, org) * denom;
+
+	Vector orgCrossEdge1;
+	CrossProduct(org, edge1, orgCrossEdge1);
+	v = DotProduct(orgCrossEdge1, *(const Vector *)ray.m_Delta) * denom;
+
+	if (t)
+	{
+		float boxt = sub_1023f7b0(ray);
+		*t = DotProduct(orgCrossEdge1, edge2) * denom;
+		if ((*t < -boxt) || (*t > 1.0f + boxt))
+			return false;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023fd00 size=0xc4
 #include "Vector.h"
 
