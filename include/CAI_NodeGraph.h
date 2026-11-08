@@ -12,6 +12,15 @@ public:
 	CAI_Node **m_ppNodes;	// 0x04
 	char m_pad0008[0x1e8 - 8];
 	int m_n1e8;	// 0x1e8
+	__forceinline CAI_Node *NodeAt(int i)
+	{
+		if (i < 0 || i >= m_nNodes)
+		{
+			g_106c994c++;
+			return 0;
+		}
+		return m_ppNodes[i];
+	}
 	CAI_NodeGraph *sub_102f30f0();	// the constructor body: every field cleared, the float at the start of each of 20 six dword records from +0x14 set to -10.0f
 	CUtlVector4 m_Counts;	// 0x1ec
 
