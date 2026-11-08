@@ -1929,6 +1929,103 @@ bool CAI_BaseNPCTroika::sub_1029b180(void *pOtherArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029c010 size=0x39d
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_BaseNPC.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseAnimating.h"
+#include "ehandle.h"
+#include "engineserver.h"
+#include "globalvars.h"
+
+void sub_10119750(const char *fmt, ...);
+void *__cdecl sub_100c7480(void *hdr, int idx);
+
+struct CSceneObj76 { float sub_1007dfa0(); };
+struct CExprEvent76 { float sub_10076280(float f); };
+struct CExprRec76
+{
+	int m_nIndex;
+	char pad[0x14];
+	CSceneObj76 *m_pScene;
+	CExprEvent76 *m_pEvent;
+};
+struct CExprEntry76 { char pad[0x18c]; unsigned char m_flags; };
+struct CExprTable76 { CExprEntry76 *sub_101051b0(int index); };
+struct CDispTable76 { const char *sub_100ec410(int idx); int sub_100eccf0(int idx); };
+extern CDispTable76 g_10924980;
+extern CExprTable76 g_10709200;
+struct CSceneEnt76 { char pad[0x4bc]; CSceneObj76 *m_pScene; };
+struct CLookEnt76 { char pad[0x2e0]; int m_pEdict; const char *sub_100ab4f0(); };
+struct CNpcView76 { float sub_10106e20(float t, CExprRec76 *pRec); void sub_102775e0(); };
+
+#define AT76(T, off) (*(T *)((char *)this + (off)))
+
+// TARGET: CAI_BaseNPCTroika::sub_1029c010
+void CAI_BaseNPCTroika::sub_1029c010()
+{
+	if (AT76(int, 0x128)) {
+		const char *pExprName;
+		if (((CBaseCombatCharacter *)this)->sub_10106f90(AT76(int, 0x10b4)))
+			pExprName = (const char *)((CBaseCombatCharacter *)this)->sub_101073c0(AT76(int, 0x10b4));
+		else
+			pExprName = "None";
+		void *pHdr = sub_100952d0(-1);
+		sub_10119750("Expression / Gesture information for %s:", sub_100ab4f0());
+		int *pSeqA = (int *)((CBaseAnimating *)this)->sub_1008d990(AT76(int, 0x6f0));
+		int *pSeqB = (int *)((CBaseAnimating *)this)->sub_1008d990(AT76(int, 0x6f0));
+		sub_10119750("Seq (%.2f): %s / %s ", (double)AT76(float, 0x6f8), (char *)pSeqB + *pSeqB, (char *)pSeqA + pSeqA[1]);
+		sub_10119750("Disposition:  %s,  Expression: %s (%.2f)", g_10924980.sub_100ec410(m_nCurrDisposition), pExprName, (double)((CBaseCombatCharacter *)this)->m_flDefExpressionIntensity);
+		if (AT76(EHANDLE, 0x6554).Get()) {
+			CSceneEnt76 *pScene = (CSceneEnt76 *)AT76(EHANDLE, 0x6554).Get();
+			if (pScene->m_pScene)
+				sub_10119750("Scene time: %.2f", (double)pScene->m_pScene->sub_1007dfa0());
+			else
+				sub_10119750("No Scene");
+		} else
+			sub_10119750("No Scene Entity");
+		for (int i = 0; i < AT76(int, 0x10c8); i++) {
+			CExprRec76 *pRec = (CExprRec76 *)(AT76(char *, 0x10bc) + i * 0x20);
+			float flLevel;
+			if (pRec->m_pEvent && pRec->m_pScene)
+				flLevel = pRec->m_pEvent->sub_10076280(pRec->m_pScene->sub_1007dfa0());
+			else
+				flLevel = ((CNpcView76 *)this)->sub_10106e20(gpGlobals->curtime, pRec);
+			CExprEntry76 *pEntry = g_10709200.sub_101051b0(pRec->m_nIndex);
+			if (pEntry) {
+				if (pEntry->m_flags & 1)
+					sub_10119750("Expression:(O) %s level: %0.2f", pEntry, (double)flLevel);
+				else
+					sub_10119750("Expression:(N) %s level: %0.2f", pEntry, (double)flLevel);
+			}
+		}
+		for (int j = 0; j < 4; j++) {
+			float flWeight = AT76(float, 0x748 + j * 0x30);
+			if (flWeight > 0.0f) {
+				int *pName = (int *)sub_100c7480(pHdr, AT76(int, 0x73c + j * 0x30));
+				sub_10119750("Anim Layer %d: %s (weight: %f)", j, (char *)pName + *pName, (double)AT76(float, 0x748 + j * 0x30));
+			}
+		}
+		int nDefault = g_10924980.sub_100eccf0(m_nCurrDisposition);
+		sub_10119750("Eye targets -  current: %d  default: %d  step: %d", AT76(int, 0x5b94), nDefault, AT76(int, 0x6578));
+		if (AT76(EHANDLE, 0xe64).Get()) {
+			CLookEnt76 *pLook = (CLookEnt76 *)AT76(EHANDLE, 0xe64).Get();
+			CLookEnt76 *pLook2 = (CLookEnt76 *)AT76(EHANDLE, 0xe64).Get();
+			int nEdict = pLook2->m_pEdict;
+			int nIndex = engine->vfunc35(nEdict);
+			sub_10119750("Looking at entity %d (%s)", nIndex, pLook->sub_100ab4f0());
+		}
+		if (AT76(char, 0x64ec))
+			sub_10119750("Qued Dialog: %s", &AT76(char, 0x64ec));
+		float flTalk = m_f64cc - gpGlobals->curtime;
+		if (0.0f > flTalk)
+			flTalk = 0.0f;
+		sub_10119750("Talk Time Remaining: %.2f", (double)flTalk);
+	} else
+		((CNpcView76 *)this)->sub_102775e0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029f800 size=0x32
 #include "CAI_BaseNPCTroika.h"
 #include "CDevFlagObj.h"
