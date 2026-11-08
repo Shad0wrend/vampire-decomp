@@ -141328,6 +141328,61 @@ bool sub_1022a380(char *name, bool bPrefix)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022b300 size=0x130
+#include "CSoundScheme.h"
+
+namespace block_1022b300 {
+struct CUnknown102296c0
+{
+	char m_pad0000[0x194];
+	int m_nSize;		// 0x194
+	int sub_102296c0();
+	char sub_102296e0(int iIndex, int iEdict);
+	void sub_102298e0(Vector vecOrigin, int nIndex, int iEdict, CSoundSchemeSound *pEntry);
+};
+int CUnknown102296c0::sub_102296c0() { return m_nSize; }
+}
+using namespace block_1022b300;
+extern block_1022b300::CUnknown102296c0 g_10750d78;
+
+struct CUnknown10750f2c
+{
+	virtual void vfunc0();
+	virtual char vfunc1();
+	char m_pad[0x28];
+	int m_n2c;
+};
+extern CUnknown10750f2c *g_10750f2c;
+
+// TARGET: ?sub_1022b300@CSoundScheme@@QAEXXZ
+void CSoundScheme::sub_1022b300()
+{
+	if (m_nSoundCount != 0 && g_10750d78.sub_102296c0() < m_n458) {
+		if (m_n5a8 >= m_nSoundCount)
+			m_n5a8 = 0;
+		int nEdictArg = m_pEdict2e0;
+		if (!g_10750d78.sub_102296e0(m_n5a8, engine->vfunc35(nEdictArg))) {
+			CSoundSchemeSound *pSounds = m_pSoundMemory;
+			int nMax;
+			if (g_10750f2c->vfunc1())
+				nMax = 0;
+			else
+				nMax = g_10750f2c->m_n2c;
+			int nRoll = enginerandom->vfunc2(1, nMax);
+			if (pSounds[m_n5a8].m_n70 > nRoll) {
+				CSoundSchemeSound *pEntry = m_pSoundMemory;
+				int t0 = m_pEdict2e0; int nEdict = engine->vfunc35(t0);
+				int nIndex = m_n5a8;
+				Vector vec = *(Vector *)vfunc220();
+				g_10750d78.sub_102298e0(vec, nIndex, nEdict, &pEntry[nIndex]);
+			}
+		}
+		m_n5a8++;
+	}
+	m_flNextThink = gpGlobals->curtime + 0.1f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022b480 size=0x31
 struct inputdata_t { char pad[8]; float m_fl; char pad2[0xc]; int m_fieldType; };
 
