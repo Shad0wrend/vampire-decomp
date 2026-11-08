@@ -10952,6 +10952,7 @@
 0x100109f1 func   ?sub_101b50f0@CSoundEmitterSystemBase@@QAEXPBD@Z CSoundEmitterSystemBase::sub_101b50f0
 0x100109f6 func   ?vfunc82@CLogicNPCCondition@@UAEPAUdatamap_t@@XZ CLogicNPCCondition::vfunc82
 0x10010a00 func   ?sub_102d2940@@YAXHHHHH@Z sub_102d2940
+0x10010a05 func   ?sub_10262ea0@CAI_BaseHumanoid@@QAEHHM@Z CAI_BaseHumanoid::sub_10262ea0
 0x10010a0a func   _phys_constraint phys_constraint
 0x10010a0f func   ?vfunc431@CNPC_VZombie@@QAEXXZ CNPC_VZombie::vfunc431
 0x10010a14 func   _prop_keypad prop_keypad

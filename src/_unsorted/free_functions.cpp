@@ -149559,6 +149559,43 @@ void CAI_BaseNPC::sub_10260a50(int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10262ea0 size=0x194
+#include "utlrbtree.h"
+#include "CAI_BaseHumanoid.h"
+#include "utlvector.h"
+#include <string.h>
+
+struct WP38 {
+	float m_fl0;
+	float m_fl4;
+	char m_pad8[0x2c - 8];
+	Vector m_vec;
+	WP38() { memset(this, 0, sizeof(*this)); memset(this, 0, sizeof(*this)); }
+};
+
+#define WPV (*(CUtlVector<WP38> *)&m_Waypoints6038)
+
+int CAI_BaseHumanoid::sub_10262ea0(int idx, float flAngle)
+{
+	WP38 e;
+	int n = WPV.Count();
+	for (; idx < n; idx++) {
+		if (!(flAngle > WPV[idx].m_fl0)) {
+			float frac = flAngle / WPV[idx].m_fl0;
+			WPV[idx].m_fl0 -= flAngle;
+			e.m_fl0 = flAngle;
+			float inv = 1.0f - frac;
+			float a = frac * WPV[idx + 1].m_fl4;
+			e.m_fl4 = a + inv * WPV[idx].m_fl4;
+			e.m_vec = WPV[idx].m_vec * inv + WPV[idx + 1].m_vec * frac;
+			return WPV.InsertBefore(idx + 1, e);
+		}
+		flAngle -= WPV[idx].m_fl0;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10263d30 size=0x1f1
 float sub_102e1470(float a, float b, float c);
 
