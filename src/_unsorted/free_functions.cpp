@@ -158330,6 +158330,65 @@ bool CAI_BaseNPC::sub_102784a0(const Vector *pStart, int mask)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10278650 size=0x213
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CAI_BaseNPC.h"
+#include "Vector.h"
+#include "ehandle.h"
+#include "CVStatList_t.h"
+#include "CUnknown102e0150.h"
+#include "CBaseCombatCharacter.h"
+#include "QAngle.h"
+
+void sub_10139610(const QAngle *pAngles, Vector *pForward, Vector *pRight, Vector *pUp);
+extern float g_104994e0;
+
+struct CAI_BaseNPC_78650 : public CAI_BaseNPC
+{
+	char m_pad0004[0x5ba8 - 4];
+	CHandle<CAI_BaseNPC> m_h5ba8;
+};
+
+Vector CAI_BaseNPC::sub_10278650(const Vector &vecPos, int a, int b)
+{
+	CAI_BaseNPC_78650 *pThis = (CAI_BaseNPC_78650 *)this;
+
+	if ( pThis->m_h5ba8 )
+	{
+		Vector vecOut = *(Vector *)pThis->m_h5ba8->vfunc217();
+		return vecOut;
+	}
+
+	CAI_BaseNPC *pEnemy = (CAI_BaseNPC *)vfunc167();
+
+	if ( pEnemy )
+	{
+		Vector vecLKP;
+		vfunc541()->sub_102dfed0(&vecLKP, (CBaseEntity *)vfunc167());
+
+		Vector vecTarget = pEnemy->vfunc197(vecPos, a, b);
+
+		CBaseCombatCharacter *pChar = (CBaseCombatCharacter *)((CBaseEntity *)pEnemy)->m_p9c;
+		if ( pChar != 0 && pChar->m_pA8 != 0 )
+		{
+			if ( CVStatListSet::Of(pChar)->Find(3)->sub_102012d0(0xb) == 5 )
+				vecTarget.z += g_104994e0;
+		}
+
+		Vector vecOffset = vecTarget - *(Vector *)pEnemy->vfunc217();
+		return vecLKP + vecOffset;
+	}
+	else
+	{
+		Vector forward;
+		sub_10139610((const QAngle *)vfunc221(), &forward, 0, 0);
+		return forward + vecPos;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10278c80 size=0x20
 #include <math.h>
 #include "CUnknown10290040.h"
