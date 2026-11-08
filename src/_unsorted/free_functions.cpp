@@ -200330,6 +200330,45 @@ bool CNPC_VSabbatLeader::sub_103aabc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103aad40 size=0x1a0
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VSabbatLeader.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+extern float g_104c3cb8;
+
+void CNPC_VSabbatLeader::sub_103aad40()
+{
+	ScopeTrace trace("CNPC_VSabbatLeader::SetJumpVelocityTowardPlayer", g_106b8540);
+	CEntityVSlots *pPlayer = (CEntityVSlots *)EHandle_Get(m_hPlayer);
+	if (pPlayer)
+	{
+		CEntityVSlots *pThis = (CEntityVSlots *)this;
+		Vector vecVelocity = *pThis->slot198();
+		const Vector *pOrigin = pThis->slot217();
+		Vector vecDir = *pPlayer->slot217() - *pOrigin;
+		vecDir.z = 0;
+		VectorNormalize(vecDir);
+		Vector vecOffset;
+		vecOffset.x = g_104c3cb8 * vecDir.x;
+		vecOffset.y = vecDir.y * 25.0f;
+		vecOffset.z = g_104c3cb8 * vecDir.z;
+		Vector vecTarget;
+		vecTarget = *pPlayer->slot217() - vecOffset;
+		sub_10009a57(&vecVelocity, pThis->slot217(), &vecTarget);
+		sub_1000489a(&vecVelocity);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103aaf50 size=0x15d
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
