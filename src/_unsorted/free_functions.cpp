@@ -113243,6 +113243,53 @@ int *COwner101e80c0::sub_101e80c0(int *pResult, int a, int unused, int limit)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e8100 size=0xcb
+#include "CUnknown10739d08.h"
+#include "CUnknown101d8a70.h"
+#include "CBaseVampireSkillEntity.h"
+#include "CBaseEntity.h"
+#include "CBaseCombatCharacter.h"
+#include "CVDmg_t.h"
+#include "CVFeat_t.h"
+
+struct IVSkillView268 {
+#define SLA(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SLB(p) SLA(p##0) SLA(p##1) SLA(p##2) SLA(p##3) SLA(p##4) SLA(p##5) SLA(p##6) SLA(p##7) SLA(p##8) SLA(p##9)
+	SLB(a) SLB(b)
+	SLA(c0) SLA(c1) SLA(c2) SLA(c3) SLA(c4) SLA(c5)
+	virtual void s260(); virtual void s261(); virtual void s262(); virtual void s263(); virtual void s264();
+	virtual void s265(); virtual void s266(); virtual void s267();
+	virtual int v268(void *pPlayer);
+};
+struct IObj1074f04c { virtual void v0(); virtual char vfunc1(); char m_pad[0x2c - 4]; int m_n2c; };
+extern IObj1074f04c *g_1074f04c;
+extern char g_10538764[];
+extern char g_105a43c0[];
+extern "C" void *__cdecl __RTDynamicCast(void *, long, void *, void *, int);
+void sub_1022ea40(void *pPlayer, int n);
+
+CSkillOutcome CUnknown10739d08::sub_101e8100(void *pPlayer, void *pSkill, char bFlag)
+{
+	CSkillOutcome r;
+	IVSkillView268 *pEnt = (IVSkillView268 *)__RTDynamicCast(pSkill, 0, g_10538764, g_105a43c0, 0);
+	int nHave = (*(CVFeat_t ***)((char *)this + 0x1c))[2]->sub_101e56e0(pPlayer);
+	int nNeed = pEnt->v268(pPlayer);
+	CVDmgBlock16_t block(4, 2);
+	CUnknown101d8a70 rec;
+	rec.sub_101d8820((int)pPlayer, (CBaseCombatWeapon *)((CBaseCombatCharacter *)pPlayer)->sub_1032e7b0(), &block, nNeed);
+	int res;
+	if (!bFlag) {
+		res = (nHave >= nNeed) ? 3 : 1;
+	} else {
+		int n = g_1074f04c->vfunc1() ? 0 : g_1074f04c->m_n2c;
+		res = *rec.sub_101d8b40(&bFlag, n != 0);
+	}
+	sub_1022ea40(pPlayer, 1);
+	r.m_nOutcome = res;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e8210 size=0x2b
 struct CUnk101e8210Inner {
     int sub_1000f03d(int a);
