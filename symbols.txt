@@ -7784,6 +7784,7 @@
 0x1000c077 func   ?sub_10389ef0@@YADXZ sub_10389ef0
 0x1000c07c func   ?sub_1017d900@CBasePlayer@@QAEMXZ CBasePlayer::sub_1017d900
 0x1000c086 func   ?sub_101f2de0@@YIXPAXH0@Z sub_101f2de0
+0x1000c08b func   ?sub_10150910@CPhysicsCannister@@QAEXHPAX@Z CPhysicsCannister::sub_10150910
 0x1000c090 func   ?vfunc241@CFilterInventory@@UAE_NPAVCBaseEntity@@@Z CFilterInventory::vfunc241
 0x1000c095 func   ?sub_102dd500@CUnknown102dd500@@QAEPBDXZ CUnknown102dd500::sub_102dd500
 0x1000c09a func   ?vfunc214@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc214

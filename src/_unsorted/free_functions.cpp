@@ -76253,6 +76253,143 @@ void CPhysicsCannister::sub_10150640()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10150910 size=0x3b4
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+#include "CPhysicsCannister.h"
+#include "CSteamJet.h"
+#include "COutputEvent.h"
+#include "CEntitySoundOriginView.h"
+#include "CPASAttenuationFilter.h"
+
+#define SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CCannisterPhysView
+{
+	virtual void s0(); virtual void s1();
+	virtual void Release2();
+	virtual void s3(); virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9();
+	virtual void s10(); virtual void s11();
+	virtual float GetMass();
+	virtual void s13(); virtual void s14(); virtual void s15(); virtual void s16(); virtual void s17(); virtual void s18(); virtual void s19();
+	virtual void s20(); virtual void s21(); virtual void s22(); virtual void s23(); virtual void s24(); virtual void s25(); virtual void s26(); virtual void s27(); virtual void s28();
+	virtual void Set29(Vector *a, Vector *b);
+	virtual void s30(); virtual void s31(); virtual void s32();
+	virtual void Set33(const Vector &a, const Vector &b, Vector *c, Vector *d);
+};
+
+struct CThrustView
+{
+	void *m_vt;
+	Vector m_linear;
+	Vector m_angular;
+	float m_thrust;
+	void CalcThrust(const Vector &position, const Vector &direction, CCannisterPhysView *pPhys)
+	{
+		Vector force = (direction * m_thrust).sub_100a19c0(pPhys->GetMass());
+		pPhys->Set33(force, position, &m_linear, &m_angular);
+		pPhys->Set29(&m_linear, &m_linear);
+	}
+};
+
+struct CCannisterSoundObjView
+{
+	virtual void s0(); virtual void s1();
+	virtual void Attach2(CCannisterPhysView *p);
+};
+
+struct CCannisterPhysEnvView
+{
+	SLOTS10(a0) SLOTS10(a1) SLOTS10(a2)
+	virtual void a30(); virtual void a31(); virtual void a32(); virtual void a33(); virtual void a34(); virtual void a35(); virtual void a36(); virtual void a37(); virtual void a38();
+	virtual CCannisterSoundObjView *Create39(void *p);
+};
+extern CCannisterPhysEnvView *g_10723940;
+
+struct CSteamJetUseView
+{
+	SLOTS10(a0) SLOTS10(a1) SLOTS10(a2) SLOTS10(a3) SLOTS10(a4) SLOTS10(a5) SLOTS10(a6) SLOTS10(a7) SLOTS10(a8) SLOTS10(a9)
+	SLOTS10(b0) SLOTS10(b1) 
+	virtual void b20(); virtual void b21(); virtual void b22(); virtual void b23(); virtual void b24(); virtual void b25(); virtual void b26(); virtual void b27(); virtual void b28(); virtual void b29();
+	virtual void b30(); virtual void b31(); virtual void b32(); virtual void b33(); virtual void b34(); virtual void b35(); virtual void b36(); virtual void b37(); virtual void b38(); virtual void b39();
+	virtual void b40(); virtual void b41(); virtual void b42(); virtual void b43(); virtual void b44(); virtual void b45(); virtual void b46(); virtual void b47(); virtual void b48(); virtual void b49();
+	virtual void b50(); virtual void b51(); virtual void b52(); virtual void b53(); virtual void b54(); virtual void b55(); virtual void b56(); virtual void b57(); virtual void b58(); virtual void b59();
+	virtual void b60(); virtual void b61(); virtual void b62(); virtual void b63(); virtual void b64(); virtual void b65(); virtual void b66(); virtual void b67(); virtual void b68(); virtual void b69();
+	virtual void b70(); virtual void b71(); virtual void b72();
+	virtual void Use173(void *pActivator, void *pCaller, int useType, float value);
+};
+
+struct CCannisterEntView
+{
+	char pad[0x17c];
+	float m_flNextThink;
+	char pad2[0x2e0 - 0x180];
+	int m_pEdict2e0;
+};
+
+struct CCannisterThinkView { void sub_100ac4e0(void *pfn, int a, int b); };
+struct CCannisterParentView { void sub_100a0670(void *pParent, int a); };
+void sub_1000f79a();
+void sub_10139970(const Vector *pForward, Vector *pAngles);
+void *sub_100a99d0(const char *pszName, const Vector *pPos, const Vector *pAng, void *pOwner);
+extern "C" void *__cdecl sub_10430b64(void *p, int a, void *src, void *dst, int b);
+extern int g_10538764;
+extern int g_105403a8;
+extern float g_104454c4;
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+// TARGET: CPhysicsCannister::sub_10150910
+void CPhysicsCannister::sub_10150910(int a, void *b)
+{
+	if (m_bLeaking || m_thrustTime == g_104454c4)
+		return;
+	Vector vecDir = sub_10150530((const Vector *)b);
+	((COutputEvent *)((char *)this + 0x19fc))->sub_100cd660((void *)a, this, 0.0f);
+	((CThrustView *)this->m_pad19bc)->CalcThrust(m_vec19b0, vecDir, (CCannisterPhysView *)m_pPhysObj36c);
+	m_pJetSound = g_10723940->Create39(m_pad19bc);
+	CCannisterPhysView *pPhys = (CCannisterPhysView *)m_pPhysObj36c;
+	((CCannisterSoundObjView *)m_pJetSound)->Attach2(pPhys);
+	pPhys->Release2();
+	m_bLeaking = 1;
+	m_flLeakStart = gpGlobals->curtime;
+	((CCannisterEntView *)this)->m_flNextThink = gpGlobals->curtime + m_thrustTime;
+	((CCannisterThinkView *)this)->sub_100ac4e0((void *)sub_1000f79a, 0, 0);
+	Vector vecAng;
+	sub_10139970(&-vecDir, &vecAng);
+	m_pJet = (CBaseEntity *)sub_10430b64(sub_100a99d0("env_steam", &m_vec19b0, &vecAng, this), 0, &g_10538764, &g_105403a8, 0);
+	((CCannisterParentView *)m_pJet)->sub_100a0670(this, 0);
+	float f = m_thrust * 0.0002f;
+	if (f > 1.0f)
+		f = 1.0f;
+	else if (f < g_104454c4)
+		f = g_104454c4;
+	((CSteamJet *)m_pJet)->m_flJet450 = m_thrust * 15.0f * 0.001;
+	((CSteamJet *)m_pJet)->m_flJet454 = 100.0f * f + 128.0f;
+	((CSteamJet *)m_pJet)->m_StartSize = 10.0f;
+	((CSteamJet *)m_pJet)->m_EndSize = 25.0f;
+	int n = (int)f * 20 + 0x34;
+	((CSteamJet *)m_pJet)->m_flJet460 = (float)n;
+	((CSteamJet *)m_pJet)->m_flJet464 = 64.0f;
+	((CSteamJet *)m_pJet)->m_nColor1a0 = *(int *)((char *)this + 0x1a0);
+	((CSteamJetUseView *)m_pJet)->Use173(this, this, 1, 1.0f);
+	if (m_pszSound19f8) {
+		CPASAttenuationFilter filter((CEntitySoundOriginView *)this, 0.8f);
+		const char *pszSound = STRINGR(m_pszSound19f8);
+		int edict = ((CCannisterEntView *)this)->m_pEdict2e0;
+		enginesound->vfunc3(&filter, engine->vfunc35(edict), 3, pszSound, 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10150dc0 size=0x32
 #include "Vector.h"
 
