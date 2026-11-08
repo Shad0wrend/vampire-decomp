@@ -26,6 +26,8 @@ struct CAI_DebugSchedule	// the object at CAI_BaseNPC +0x5c38
 	int m_nTasks;			// 0x24
 	char m_pad0028[0x40 - 0x28];
 	const char *m_pszName;		// 0x40 ("Unknown" 0x1053c828 when null)
+	const CAI_DebugTask *GetTaskList() const { return m_pTasks; }
+	int NumTasks() const { return m_nTasks; }
 };
 
 class CAI_BaseNPCUnit76 : public CAI_BaseNPC
