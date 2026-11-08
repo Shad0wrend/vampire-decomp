@@ -12383,6 +12383,7 @@
 0x10012760 func   ?vfunc265@CBatSwarm@@QAEXH@Z CBatSwarm::vfunc265
 0x10012765 func   ?sub_1007bef0@CUnknown1007bef0@@QAEMXZ CUnknown1007bef0::sub_1007bef0
 0x1001276a func   ?vfunc5@CBaseFilter@@QAEPAV1@I@Z CBaseFilter::vfunc5
+0x1001276f func   ?vfunc103@CMomentaryRotButton@@UAEXXZ CMomentaryRotButton::vfunc103
 0x10012779 func   ?vfunc5@CItemKeyGeneric@@QAEPAV1@I@Z CItemKeyGeneric::vfunc5
 0x1001277e func   ?vfunc9@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHMMHMHHHHH@Z CTempEntsSystem::vfunc9
 0x10012783 func   ?sub_101fb340@CVDmg_t@@QAE_NH@Z CVDmg_t::sub_101fb340
