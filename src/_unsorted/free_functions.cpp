@@ -23937,6 +23937,30 @@ void CUnknown10079b70::sub_10079b70(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10079b90 size=0xc9
+#include "CUnknown10075aa0.h"
+extern "C" unsigned int __cdecl strlen(const char *);
+const char *sub_10076990(int type);
+
+struct SDumpOutput
+{
+	void sub_10079b90(int tabs, CUnknown10075aa0 *pEvent);
+};
+void sub_10079320(SDumpOutput *pThis, int tabs, const char *pszFormat, ...);
+
+// TARGET: SDumpOutput::sub_10079b90
+void SDumpOutput::sub_10079b90(int tabs, CUnknown10075aa0 *pEvent)
+{
+	sub_10079320(this, tabs, "event %s \"%s\"\n", sub_10076990(pEvent->sub_10075b70()), pEvent->sub_10075c00());
+	sub_10079320(this, tabs, "{\n");
+	sub_10079320(this, tabs + 1, "time %f %f\n", pEvent->sub_10075e70(), pEvent->sub_10075f10());
+	sub_10079320(this, tabs + 1, "param \"%s\"\n", pEvent->sub_10075c50());
+	if (strlen(pEvent->sub_10075ca0()) > 0)
+		sub_10079320(this, tabs + 1, "param2 \"%s\"\n", pEvent->sub_10075ca0());
+	sub_10079320(this, tabs, "}\n");
+}
+// END FUNCTION
+
 // FUNCTION: 0x10079ca0 size=0x78
 struct SDumpOutput;
 void sub_10079320(SDumpOutput *pOut, int nIndent, const char *pszFormat, ...);
