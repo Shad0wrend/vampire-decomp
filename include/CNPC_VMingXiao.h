@@ -98,6 +98,12 @@ public:
 	void sub_1026dc00(int nFlags);	// stub 0x10012855: called twice first by vfunc103 (0x4000000, 0x200000)
 	void sub_10298d30();	// CAI_BaseNPCTroika::vfunc103 (stub 0x1000303a), called directly
 	void sub_1033c6b0(int nFlags);	// CBaseCombatCharacter::sub_1033c6b0 (stub 0x100153a7), called directly
+	void *sub_10397410(int nSlot);
+	const char *sub_10398680(int a);
+	void sub_10398630(int a, Vector *pOut);
+	char sub_102a0fb0(Vector *pPos, int mask, Vector *pA, Vector *pB);
+	void sub_103990a0();
+	void sub_102ae750(int a, int b);
 	void sub_10398800();	// stub 0x10004160
 	void sub_10399c70();	// stub 0x10002a1d: CNPC_VMingXiao::PushPhysicsObjects, called directly (this in ecx)
 	void sub_103937d0(int nSlot, int act, int c);	// ret 0xc (called by vfunc442; first argument = the tentacle slot index [esp+0x1c], second = the activity [esp+0x20] kept in ebx, third read once as the 311 argument [esp+0x24]): resets the motor look state, slot 388(+0xa0 of the entity of handle +0x667c, 0), then with an active weapon (sub_1032e7b0; none: fails the task, slot 448(0x1f)) takes the target id from slot 167 (+0x9c), the weapon's slot 361(act) -> slot 376 as the sequence request, asks slot 331(weapon, id, act, &seq = -1) and plays it with slot 311(act, c, seq) when it accepts and seq >= 0, else sub_10289ee0(act); finally stamps m_flSlotTimeA[nSlot] (+0x66c4) = curtime + sub_103983d0(nSlot)
@@ -265,8 +271,8 @@ public:
 	virtual void vfunc215();
 	virtual void vfunc216();
 	virtual float *vfunc217_slot();
-	virtual void vfunc218_slot();
-	virtual void vfunc219_slot();
+	virtual void vfunc218_slot(Vector *p);
+	virtual float *vfunc219_slot();
 	virtual void vfunc220_slot();
 	virtual float *vfunc221_slot();
 	virtual void vfunc222_slot();
