@@ -30118,6 +30118,25 @@ void CBaseAnimating::sub_1008d520(inputdata_t *inputdata)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008d5f0 size=0xa4
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+struct CBaseAnimatingSkinFade
+{
+	char m_pad0000[0x678];
+	float m_flSkinFadeTime;
+};
+
+void CBaseAnimating::sub_1008d5f0(float time)
+{
+	ScopeTrace trace("CBaseAnimating::SetSkinFadeTime", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+	((CBaseAnimatingSkinFade *)this)->m_flSkinFadeTime = (time > 0.0) ? time : 0.0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008d6d0 size=0xb2
 #include "CBaseAnimating.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
