@@ -13203,6 +13203,7 @@
 0x10013ceb func   ?sub_1002b450@@YAPAVCPhysConstraintSystem@@PBD@Z sub_1002b450
 0x10013cf0 func   ?sub_103b3cf0@@YAXXZ sub_103b3cf0
 0x10013cff func   ?sub_1019f980@SSave@@QAEPAU1@E@Z SSave::sub_1019f980
+0x10013d04 func   ?sub_102025f0@@YAHPAUCVDmgBlock16_t@@PBD@Z sub_102025f0
 0x10013d09 func   ?sub_1015d680@CBasePlayer@@QAEPAVCBaseEntity@@H@Z CBasePlayer::sub_1015d680
 0x10013d0e func   ??0CVariantCopy@@QAE@ABU0@@Z CVariantCopy::CVariantCopy
 0x10013d13 func   ?sub_10245700@CUnknown10245700@@QAEHXZ CUnknown10245700::sub_10245700

@@ -125504,6 +125504,46 @@ const char *sub_10202460(CVDmgBlock16_t *pBlock, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102025f0 size=0x120
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CVStatInfoList_t.h"
+
+extern CVStatInfoList_t g_1074e658;
+extern CVStatInfoList_t g_1074e4f0;
+extern CVStatInfoList_t g_1074e098;
+extern CVStatInfoList_t g_1074e5f8;
+
+int sub_102025f0(CVDmgBlock16_t *pBlock, const char *pszValue)
+{
+	ScopeTrace trace("vampStats_SubIdxFromDepStr", g_106b8540);
+	if (!pBlock->sub_10204250()) {
+		switch (pBlock->m_a) {
+		case 0:
+			pBlock = (CVDmgBlock16_t *)pBlock->m_b;
+			return g_1074e658.sub_10200370((int)pBlock)->sub_101fde60(pszValue);
+		case 1:
+			pBlock = (CVDmgBlock16_t *)pBlock->m_b;
+			return g_1074e4f0.sub_10200370((int)pBlock)->sub_101fde60(pszValue);
+		case 2:
+			pBlock = (CVDmgBlock16_t *)pBlock->m_b;
+			return g_1074e098.sub_10200370((int)pBlock)->sub_101fde60(pszValue);
+		case 3:
+			pBlock = (CVDmgBlock16_t *)pBlock->m_b;
+			return g_1074e5f8.sub_10200370((int)pBlock)->sub_101fde60(pszValue);
+		}
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10202760 size=0xc
 extern int g_105a6fc8[];
 int sub_10202760(int index)
