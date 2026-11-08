@@ -393,6 +393,35 @@ void CNPC_VTzimisceRunner::vfunc601(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c3b30 size=0xc1
+#include "CBaseEntity.h"
+#include "CNPC_VTzimisceRunner.h"
+#include "Vector.h"
+
+// TARGET: CNPC_VTzimisceRunner::vfunc103
+void CNPC_VTzimisceRunner::vfunc103()
+{
+	const char *pszName = "TzimisceCreation3";
+	m_pszName10e4 = *pszName ? pszName : 0;
+	const char *pszName2 = "D_HT 10";
+	m_pszName63ac = *pszName2 ? pszName2 : 0;
+	m_n6420 = 0;
+	m_n6424 = 0;
+	m_n6428 = 0;
+	m_n642c = 0;
+	m_n6430 = 100;
+	sub_10298d30();
+	sub_10012855(0x4000000);
+	m_b6672 = 0;
+	m_b0fe0 = 1;
+	m_nFlags5b84 |= 0x80;
+	((EHANDLE &)m_h6678) = (CBaseEntity *)0;
+	Vector vecSize(50.0f, 50.0f, 82.0f);
+	sub_1009b060(&vecSize.x);
+	sub_100b3900(4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c3c40 size=0x44
 #include "CNPC_VTzimisceRunner.h"
 // TARGET: CNPC_VTzimisceRunner::vfunc130
