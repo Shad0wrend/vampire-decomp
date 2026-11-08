@@ -86,6 +86,12 @@ struct CBasePlayerAward	// an experience award the player was given (0x34 bytes:
 	int m_n30;
 };
 
+struct CBasePlayerMapVisit	// a map visit record (0x48 bytes)
+{
+	char m_szMap[0x44];
+	int m_nTime44;
+};
+
 struct CBasePlayerFadeRec	// a saved fade (0x10 bytes)
 {
 	char m_bType;
@@ -427,7 +433,7 @@ public:
 	unsigned int m_hEnt1E04;	// entity handle
 	int m_n1E08;
 	int m_n1E0C;
-	char m_pad1e10[0x1e24 - 0x1e10];
+	CUtlVector<CBasePlayerMapVisit> m_MapVisits1e10;	// 0x1E10: the maps visited
 	int m_lBirthday;	// 0x1e24	// 0x1E10 .. 0x1E27
 	CUtlVector<GLOBAL_EMAIL> m_GlobalEmail;	// 0x1E28: the global email flag records (0x240 bytes each)
 	char m_pad1E3C[4];	// 0x1E3C .. 0x1E3F
@@ -462,7 +468,7 @@ public:
 	int m_aSlotValue2040[10];	// 0x2040: value of each command slot (a name hash or packed range)
 	int m_n2068;	// 0x2068: set to 1 on death (vfunc144)
 	Vector m_vec206c;	// 0x206C: the view angles / target vector (stored by sub_10167030)
-	char m_pad2078[0x207c - 0x2078];
+	const char *m_pszName2078;	// 0x2078: the player's log name
 	int m_n207C;	// 0x207C: non-zero skips the view-angle copy in the command run
 	char m_pad2080[0x2084 - 0x2080];	// 0x2080 .. 0x2083
 	int m_n2084;	// 0x2084: the command clock error in milliseconds, clamped to -1000..1000
