@@ -199733,6 +199733,59 @@ char CNPC_VMingXiao::sub_10398000(int code)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103983d0 size=0x1e0
+#include "CNPC_VMingXiao.h"
+#include "CUnknown10739d08.h"
+
+extern CUnknown10739d08 g_10739d08;
+
+inline float *TV() { return g_10739d08.sub_101e8da0(); }
+inline float TG(int off) { float f = *(float *)((char *)TV() + off); return f; }
+
+// TARGET: sub_103983d0
+float __fastcall sub_103983d0(CNPC_VMingXiao *pThis, int unused, int nSide)
+{
+	float flBase;
+	float flRate;
+	switch (nSide) {
+	case 0:
+	case 1:
+		if (pThis->m_f6264 > 200.0f)
+			TV();
+		flBase = pThis->m_f6264 > 150.0f ? TG(0x34) : TG(0x38);
+		{
+			float flMin = TG(0x74);
+			flRate = flMin + TG(0x78) * (6 - pThis->m_n670c);
+		}
+		if (!(flRate > 0.0f))
+			flRate = 0.0f;
+		return flRate * flBase;
+	case 2:
+	case 3:
+		flBase = pThis->m_f6264 > 150.0f ? TG(0x3c) : TG(0x40);
+		flRate = TG(0x74);
+		flRate += TG(0x78) * (6 - pThis->m_n670c);
+		if (!(flRate > 0.0f))
+			flRate = 0.0f;
+		return flRate * flBase;
+	case 4:
+	case 5:
+		if (pThis->m_f6264 > 200.0f) {
+			flBase = TG(0x7c);
+			flRate = TG(0x80);
+		} else {
+			flBase = TG(0x84);
+			flRate = TG(0x88);
+		}
+		flRate = flRate * (6 - pThis->m_n670c) + flBase;
+		if (!(flRate > 0.0f))
+			flRate = 0.0f;
+		return flRate;
+	}
+	return 20.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10398630 size=0x37
 #include "CBaseAnimating.h"
 
