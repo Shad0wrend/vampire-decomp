@@ -11,7 +11,10 @@ struct CNodeNPCFilterNode	// the node a filter looks at; real name not yet known
 class CNodePosFilter
 {
 public:
+    CNodePosFilter(const Vector *p) : m_pPos4(p) {}
     virtual bool vfunc0(void *pEnt);	// slot 0: always true
+    virtual float vfunc1(CNodeNPCFilterNode *pNode);
+    const Vector *m_pPos4;
 };
 
 class CNodeNPCFilter
