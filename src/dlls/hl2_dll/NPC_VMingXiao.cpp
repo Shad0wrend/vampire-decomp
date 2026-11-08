@@ -19,6 +19,124 @@ int CNPC_VMingXiao::vfunc437()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103941e0 size=0x2c1
+#include "CNPC_VMingXiao.h"
+#include "CUnknown10739d08.h"
+#include "CUnknown1093bb5c.h"
+extern CUnknown10739d08 g_10739d08;
+
+struct CMingXiaoTuningView
+{
+	char pad[0xc];
+	float m_fc;
+	float m_f10;
+	float GetC() const { return m_fc; }
+	float Get10() const { return m_f10; }
+};
+
+int CNPC_VMingXiao::vfunc438()
+{
+	m_n1b2c = 0x19;
+	switch (m_nState5cc0)
+	{
+	case 1:
+	case 3:
+		m_nLine1b34 = 0x51c;
+		m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiao.cpp";
+		return 0x44;
+	case 2:
+		break;
+	default:
+		return sub_102af660();
+	}
+
+	m_b5b80 = 0;
+	int r = sub_10396dc0();
+	if (r)
+		return r;
+
+	int i;
+	for (i = 0; i < 6; i++)
+	{
+		if (sub_10014df8(i + 0x77))
+		{
+			m_nLine1b34 = 0x530;
+			m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiao.cpp";
+			return i + 0x158;
+		}
+	}
+
+	if (sub_10014df8(0x7d))
+	{
+		m_nLine1b34 = 0x53d;
+		m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiao.cpp";
+		return 0x15e;
+	}
+	if (sub_10014df8(0x48))
+	{
+		m_nLine1b34 = 0x543;
+		m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiao.cpp";
+		return 0x160;
+	}
+	r = sub_10396bc0();
+	if (r)
+		return r;
+	if (sub_10398870())
+	{
+		m_nLine1b34 = 0x55a;
+		m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiao.cpp";
+		return 0x162;
+	}
+	if (!g_1093bb5c->vfunc1() && g_1093bb5c->m_p2c)
+	{
+		if (m_f6268 < 120.0f)
+		{
+			if (gpGlobals->curtime >= m_f674c)
+			{
+				if (m_n670c < 3 && !g_1093bb5c->vfunc1() && g_1093bb5c->m_p2c)
+					m_f674c = ((CMingXiaoTuningView *)g_10739d08.sub_101e8da0())->Get10() + gpGlobals->curtime;
+				else
+					m_f674c = ((CMingXiaoTuningView *)g_10739d08.sub_101e8da0())->GetC() + gpGlobals->curtime;
+				m_nLine1b34 = 0x56c;
+				m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiao.cpp";
+				return 0x15f;
+			}
+			if (sub_10014df8(0x7e))
+			{
+				m_f674c = gpGlobals->curtime;
+				if (sub_10398030(2, 0))
+				{
+					m_nLine1b34 = 0x578;
+					m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiao.cpp";
+					return 0x15a;
+				}
+				if (sub_10398030(3, 0))
+				{
+					m_nLine1b34 = 0x57c;
+					m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiao.cpp";
+					return 0x15b;
+				}
+				if (sub_10398030(0, 0))
+				{
+					m_nLine1b34 = 0x580;
+					m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiao.cpp";
+					return 0x158;
+				}
+				if (sub_10398030(1, 0))
+				{
+					m_nLine1b34 = 0x584;
+					m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiao.cpp";
+					return 0x159;
+				}
+			}
+		}
+	}
+	m_nLine1b34 = 0x58a;
+	m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiao.cpp";
+	return 0x165;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103945a0 size=0x96
 #include "CNPC_VMingXiao.h"
 
