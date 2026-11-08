@@ -1606,6 +1606,7 @@
 0x1000343b func   ?sub_102d2ee0@CAI_Hint@@QAEEXZ CAI_Hint::sub_102d2ee0
 0x10003440 func   ?sub_102056d0@CUnknown102056d0@@QAEPAU1@XZ CUnknown102056d0::sub_102056d0
 0x10003445 func   ?sub_10137220@Vector@@QAEMXZ Vector::sub_10137220
+0x1000344a func   ?sub_1021aaa0@CPropHacking@@QAE_NHPBD@Z CPropHacking::sub_1021aaa0
 0x1000344f func   ?vfunc34@CBaseTerminal@@QAEHH@Z CBaseTerminal::vfunc34
 0x10003454 func   ?vfunc82@CNPC_VWerewolf@@UAEPAUdatamap_t@@XZ CNPC_VWerewolf::vfunc82
 0x10003459 func   ?vfunc104@CHudEntity@@QAEXXZ CHudEntity::vfunc104

@@ -135531,6 +135531,44 @@ void CPropHacking::sub_1021a740()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021aaa0 size=0x139
+#include "CPropHacking.h"
+#include <string.h>
+__declspec(dllimport) int Q_strnicmp(const char *a, const char *b, int n);
+void __fastcall sub_10167fd0(int a);
+
+bool CPropHacking::sub_1021aaa0(int a, const char *pszCommand)
+{
+	if (pszCommand && strlen(pszCommand)) {
+		if (!Q_strnicmp(sub_10219400(0x21), pszCommand, 16)) {
+			sub_10167fd0(a);
+		}
+		else if (!Q_strnicmp(sub_10219400(0x22), pszCommand, 16)) {
+			sub_1021b030();
+		}
+		else if (!Q_strnicmp(sub_10219400(0x23), pszCommand, 16)) {
+			sub_1021aca0();
+		}
+		else if (!Q_strnicmp(sub_10219400(0x24), pszCommand, 16) && m_n0a20) {
+			if (strlen(&m_szText0904[0x40]) && !m_b0c2c)
+				sub_1021c390(-2);
+			else
+				sub_1021c890(-2);
+		}
+		else if (!Q_strnicmp(sub_10219400(0x11), pszCommand, 16)) {
+			sub_1021c890(-1);
+		}
+		else
+			return false;
+	}
+	else {
+		sub_1021aca0();
+		m_b09ec = 1;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021ac30 size=0x50
 #include "CPropHacking.h"
 #include <string.h>
