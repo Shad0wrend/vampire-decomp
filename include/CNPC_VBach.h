@@ -42,6 +42,7 @@ public:
 	void sub_10365860(const char *pszTarget, float flSpeed);	// throws "item_w_grenade_frag" at the named target
 	void sub_10272650(int code);	// stub 0x100097d2, called directly with 5 to end the task
 	void sub_10384ab0(void *pTask);	// CNPC_VHuman::vfunc444 (stub 0x10011928), called directly
+	void sub_10273e80(char a);
 	void sub_10365840();	// empty body (stub 0x100105b9), called directly
 
 	char m_pad03e0[0x1b30 - 0x3e0];
@@ -171,7 +172,7 @@ public:
 	virtual void vfunc214_slot();
 	virtual void vfunc215();
 	virtual void vfunc216();
-	virtual void vfunc217_slot();
+	virtual Vector *vfunc217_slot();
 	virtual void vfunc218_slot();
 	virtual void vfunc219_slot();
 	virtual void vfunc220_slot();
