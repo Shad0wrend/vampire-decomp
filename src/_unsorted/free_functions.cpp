@@ -97411,6 +97411,85 @@ int CUnknown101b3220::sub_101b3220()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b33f0 size=0x25f
+#include "CSoundEmitterSystemBase.h"
+#include "CUnknown1024b370.h"
+
+struct FileSysView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual bool FileExists(const char *pszFileName, const char *pszPathID);
+};
+extern FileSysView *g_1070b238;
+__declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+__declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+float sub_1012f700(CUnknown1012f700 *p);
+
+struct CMissingSoundSet : CUnknown1024b2d0
+{
+	CMissingSoundSet(int arg, int count, char flag) { sub_1024b2d0(arg, count, flag); }
+	~CMissingSoundSet() { ((CUnknown1024b370 *)this)->sub_1024b370(); }
+};
+
+// TARGET: CSoundEmitterSystemBase::sub_101b33f0
+char CSoundEmitterSystemBase::sub_101b33f0(const char *pszName, CSoundParameters &params)
+{
+	int index = sub_101b2f60(pszName);
+	if (index == -1) {
+		DevMsg("CSoundEmitterSystemBase::GetParametersForSound:  No such sound %s\n", pszName);
+		return 0;
+	}
+	CSoundParametersInternal *pSound = sub_101b3730(index);
+	if (!pSound) {
+		DevMsg("CSoundEmitterSystemBase::GetParametersForSound:  No such sound %s\n", pszName);
+		return 0;
+	}
+	params.channel = pSound->m_channel;
+	params.volume = sub_1012f700(&pSound->m_volume);
+	params.pitch = (int)sub_1012f700(&pSound->m_pitch);
+	params.pitchlow = (int)pSound->m_pitch.start;
+	params.pitchhigh = (int)((float)params.pitchlow + pSound->m_pitch.range);
+	params.count = pSound->m_nWaves;
+	params.soundname[0] = 0;
+	int w = sub_101b3240(&pSound->m_pWaves, 0);
+	if (w >= 0) {
+		CUnknown1024b2d0Id id;
+		id.m_id = pSound->m_pWaves[w].m_symbol;
+		Q_strncpy(params.soundname, m_listb0.sub_1024b830(id), 128);
+	}
+	params.soundlevel = (int)sub_1012f700(&pSound->m_soundlevel);
+	params.play_to_owner_only = pSound->m_bPlayToOwnerOnly;
+	if (!params.soundname[0]) {
+		DevMsg("CSoundEmitterSystemBase::GetParametersForSound:  sound %s has no wave or rndwave key!\n", pszName);
+		return 0;
+	}
+	if (pSound->m_bMissingWave48 && params.soundname[0] != '!') {
+		const char *psz = params.soundname;
+		for (int k = 0; k < 2; k++) {
+			char c = *psz;
+			if (c != '*' && c != '?' && c != '!' && c != '#' && c != '@' && c != '>' && c != '<' && c != '^' && c != ')')
+				break;
+			psz++;
+		}
+		char szFile[256];
+		Q_snprintf(szFile, 256, "sound/%s", psz);
+		if (!g_1070b238->FileExists(szFile, 0)) {
+			static CMissingSoundSet s_Missing(0, 0x20, 0);
+			char szKey[256];
+			Q_snprintf(szKey, 256, "%s:%s", pszName, params.soundname);
+			if (s_Missing.sub_1024b400(szKey).m_id == 0xffff) {
+				((CUnknown1024b370 *)&s_Missing)->sub_1024b5e0(szKey);
+				DevMsg("CSoundEmitterSystemBase::GetParametersForSound:  sound '%s' references wave '%s' which doesn't exist on disk!\n", pszName, params.soundname);
+			}
+			return 0;
+		}
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b36f0 size=0xf
 struct CUnknown101b36f0 { void * sub_101b36f0(int); };
 void * CUnknown101b36f0::sub_101b36f0(int a0)
