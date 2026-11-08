@@ -97843,6 +97843,142 @@ unsigned char CUnknown101b52d0::sub_101b52d0(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b5310 size=0x420
+#include "utlvector.h"
+#include "CSoundEmitterSystemBase.h"
+#include "CUtlBuffer.h"
+#include "Tier1.h"
+#include <string.h>
+
+struct CUnit101b5290 { char *sub_101b5290(int index); };
+struct CIdxTable { char *sub_101b4c20(int index); };
+
+struct CScriptWave { int m_a; int m_b; };
+struct CSoundScriptView
+{
+	char m_pad0000[0x1c];
+	char m_bPlayToOwnerOnly;
+	char m_bPrecache;
+	char m_pad001e[2];
+	CUtlVector<CScriptWave> m_SoundNames;
+	CUtlVector<CScriptWave> m_ConvertedNames;
+	char m_pad0048[1];
+	char m_szVolume[0x20];
+	char m_szChannel[0x20];
+	char m_szSoundLevel[0x20];
+	char m_szPitch[0x20];
+};
+
+struct CSaveFileSys
+{
+	virtual int Open(const char *pszFile, const char *pszMode, int arg);
+	virtual void Close(int hFile);
+	virtual void Read(void *pBuffer, int nBytes, int hFile);
+	virtual void Write(const void *pBuffer, int nBytes, int hFile);
+	virtual void v4(); virtual void v5();
+	virtual int Size(int hFile);
+	virtual void v7(); virtual void v8();
+	virtual char IsFileWritable(const char *pszFile, int arg);
+};
+extern CSaveFileSys *g_1070b238;
+void sub_1006c5a0(CUtlBuffer *pBuf, const char *pszFormat, ...);
+
+void CSoundEmitterSystemBase::sub_101b5310(int scriptindex)
+{
+	const char *outfile = ((CUnit101b5290 *)this)->sub_101b5290(scriptindex);
+	if (!outfile)
+	{
+		g_109f3630("CSoundEmitterSystemBase::SaveChangesToSoundScript:  No script file for index %i\n", scriptindex);
+		return;
+	}
+	if (g_1070b238->IsFileWritable(outfile, 0))
+	{
+		g_109f364c("%s is not writable, can't save data to file\n", outfile);
+		return;
+	}
+	CUtlBuffer buf(0, 0, 1);
+	if (g_1070b238->IsFileWritable("scripts/game_sounds_header.txt", 0))
+	{
+		int header = g_1070b238->Open("scripts/game_sounds_header.txt", "rt", 0);
+		if (header)
+		{
+			int len = g_1070b238->Size(header);
+			char *data = new char[len + 1];
+			memset(data, 0, len + 1);
+			g_1070b238->Read(data, len, header);
+			g_1070b238->Close(header);
+			data[len] = 0;
+			buf.sub_1006c4a0(data, strlen(data));
+			delete[] data;
+		}
+		sub_1006c5a0(&buf, "\n");
+	}
+	int c = sub_101b3220();
+	for (int i = 0; i < c; i++)
+	{
+		if (_strcmpi(outfile, ((CIdxTable *)this)->sub_101b4c20(i)))
+			continue;
+		if (*(char *)(m_i54 + 0x14 + i * 0xe8))
+			continue;
+		CSoundScriptView *p = (CSoundScriptView *)sub_101b3730(i);
+		if (!p)
+			continue;
+		sub_1006c5a0(&buf, "\"%s\"\n{\n", sub_101b31d0(i));
+		sub_1006c5a0(&buf, "\t\"channel\"\t\t\"%s\"\n", p->m_szChannel);
+		sub_1006c5a0(&buf, "\t\"volume\"\t\t\"%s\"\n", p->m_szVolume);
+		sub_1006c5a0(&buf, "\t\"pitch\"\t\t\t\"%s\"\n", p->m_szPitch);
+		sub_1006c5a0(&buf, "\n");
+		sub_1006c5a0(&buf, "\t\"soundlevel\"\t\"%s\"\n", p->m_szSoundLevel);
+		if (p->m_bPlayToOwnerOnly)
+			sub_1006c5a0(&buf, "\t\"play_to_owner_only\"\t\"1\"\n");
+		if (!p->m_bPrecache)
+			sub_1006c5a0(&buf, "\t\"precache\"\t\"0\"\n");
+		int waveCount = p->m_SoundNames.Count();
+		int convertedCount = p->m_ConvertedNames.Count();
+		if (waveCount - convertedCount > 0)
+		{
+			sub_1006c5a0(&buf, "\n");
+			if (waveCount == 1)
+			{
+				sub_1006c5a0(&buf, "\t\"wave\"\t\t\t\"%s\"\n", sub_101b4c90((CSoundWaveEntry *)&p->m_SoundNames[0]));
+			}
+			else if (convertedCount == 1)
+			{
+				sub_1006c5a0(&buf, "\t\"wave\"\t\t\t\"%s\"\n", sub_101b4c90((CSoundWaveEntry *)&p->m_ConvertedNames[0]));
+			}
+			else
+			{
+				sub_1006c5a0(&buf, "\t\"rndwave\"\n");
+				sub_1006c5a0(&buf, "\t{\n");
+				int wave;
+				for (wave = 0; wave < waveCount; wave++)
+				{
+					if (!p->m_SoundNames[wave].m_b)
+						sub_1006c5a0(&buf, "\t\t\"wave\"\t\"%s\"\n", sub_101b4c90((CSoundWaveEntry *)&p->m_SoundNames[wave]));
+				}
+				for (wave = 0; wave < convertedCount; wave++)
+				{
+					sub_1006c5a0(&buf, "\t\t\"wave\"\t\"%s\"\n", sub_101b4c90((CSoundWaveEntry *)&p->m_ConvertedNames[wave]));
+				}
+				sub_1006c5a0(&buf, "\t}\n");
+			}
+		}
+		sub_1006c5a0(&buf, "}\n");
+		if (i != c - 1)
+			sub_1006c5a0(&buf, "\n");
+	}
+	int fh = g_1070b238->Open(outfile, "wt", 0);
+	if (fh)
+	{
+		g_1070b238->Write(buf.m_pBuffer, buf.m_nPut, fh);
+		g_1070b238->Close(fh);
+		*(char *)(m_i9c + scriptindex * 0x82) = 0;
+	}
+	else
+		g_109f364c("SceneManager_SaveSoundsToScriptFile:  Unable to write file %s!!!\n", outfile);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b5840 size=0x1c
 struct CUnk101b5840Sub { void sub_1024b5e0(int a, int b); };
 struct CUnk101b5840 {
