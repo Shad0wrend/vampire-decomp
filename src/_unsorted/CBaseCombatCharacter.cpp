@@ -3039,6 +3039,26 @@ void CBaseCombatCharacter::vfunc357()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033b890 size=0xb6
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+extern char g_106b8540[];
+
+void CBaseCombatCharacter::vfunc358()
+{
+	ScopeTrace trace("CBaseCombatCharacter::PrayerEnd",
+		this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc, g_106b8540);
+	m_b14a8 = 0;
+	m_bCantBreakGrapple = 0;
+	m_flBreakGrappleTimer = 0;
+	m_b14aa = 0;
+	m_h14ac = 0;
+	m_IdealActivity = 0x133;
+	if (m_pA8)
+		vfunc93(3, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033cb90 size=0x74
 #include "CBaseCombatCharacter.h"
 
