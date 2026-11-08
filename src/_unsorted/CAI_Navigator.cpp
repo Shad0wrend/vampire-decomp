@@ -266,6 +266,75 @@ void CAI_Navigator::vfunc17(CAI_NavGoal *pGoal)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ef510 size=0x134
+#include "CAI_Navigator.h"
+#include "CAI_BaseNPC.h"
+
+struct CNavWpView
+{
+	Vector m_vecPos;
+	char m_pad0c[0x2c - 0xc];
+	int m_i2c;
+	CNavWpView *m_pLinked;	// 0x30
+};
+
+struct CNavGlobalView
+{
+	virtual void vfunc0();
+	virtual bool vfunc1();
+	char m_pad08[0x2c - 4];
+	int m_i2c;
+};
+
+extern CNavGlobalView *g_106bbaa4;
+extern char g_10934070;
+float sub_10146150(const Vector *pVec);
+
+struct CAI_NavigatorUnit : public CAI_Navigator
+{
+	char sub_102ee660();
+};
+
+bool CAI_Navigator::vfunc16(int *pOut)
+{
+	CAI_BaseNPC *pOwner = (CAI_BaseNPC *)m_pOuter;
+	CAI_NavRoute *pRoute = m_p30;
+	int bFlat = m_i18;
+	CNavWpView *pWp = (CNavWpView *)pRoute->m_pWaypoint.m_p;
+	const Vector *pOrigin = (const Vector *)pOwner->vfunc220();
+	float flDist;
+	if (bFlat == 0)
+	{
+		float dx = pWp->m_vecPos.x - pOrigin->x;
+		float dy = pWp->m_vecPos.y - pOrigin->y;
+		flDist = FastSqrt(dx * dx + dy * dy);
+	}
+	else
+	{
+		Vector vecDelta = pWp->m_vecPos - *pOrigin;
+		flDist = sub_10146150(&vecDelta);
+	}
+	char bArrived;
+	bArrived = ((CAI_NavigatorUnit *)this)->sub_102ee660();
+	if ((float)((!g_106bbaa4->vfunc1() && g_106bbaa4->m_i2c) ? 0.25 : 0.0625) >= flDist)
+	{
+		if (!g_10934070 || !pWp->m_pLinked || pWp->m_pLinked->m_i2c == pWp->m_i2c || flDist < 0.001)
+		{
+			if (bArrived)
+			{
+				vfunc8();
+				*pOut = 0;
+				return true;
+			}
+			sub_102f0400();
+			*pOut = 1;
+			return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ef870 size=0x1b4
 #include "CAI_Navigator.h"
 #include "CAI_Motor.h"
