@@ -30937,6 +30937,54 @@ bool CBaseAnimating::sub_10090e30(int sequence)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10091080 size=0x149
+#include "CBaseAnimating.h"
+#include "StudioHdr.h"
+#include "ScopeTrace.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+struct DebugNameView { const char *sub_100ab4f0(); };
+extern void (__cdecl *g_109f3658)(int, const char *, ...);
+extern float sub_100c5720(StudioHdr *, int, float *);
+struct string_t9 { const char *pszValue; };
+struct ModelNameView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual string_t9 GetModelName();
+};
+
+inline StudioHdr *FindSeqHdr(CBaseAnimating *pAnim, int &seq)
+{
+	for (int model = -1; model < 2; model++) {
+		StudioHdr *hdr = (StudioHdr *)pAnim->sub_100952d0(model);
+		if (hdr) {
+			int count;
+			if (hdr->m_nIncludeModels != 0)
+				count = hdr->IncludeModel(hdr->m_nIncludeModels - 1)->m_nBase + hdr->IncludeModel(hdr->m_nIncludeModels - 1)->m_nCount;
+			else
+				count = hdr->m_nLocalSeq;
+			if (seq >= 0 && seq < count)
+				return hdr;
+			seq -= count;
+		}
+	}
+	return 0;
+}
+
+float CBaseAnimating::sub_10091080(int sequence)
+{
+	ScopeTrace trace("CBaseAnimating::SequenceDuration", this ? STRINGR_F(m_name26c) : g_105387dc);
+	int orig = sequence;
+	StudioHdr *hdr = FindSeqHdr(this, sequence);
+	if (hdr)
+		return sub_100c5720(hdr, sequence, (float *)((char *)this + 0x690));
+	if (*STRINGR_F(((ModelNameView *)this)->GetModelName().pszValue)) {
+		g_109f3658(2, "CBaseAnimating::SequenceDuration sequence out of range for %s (model - %s : sequence - %d)\n", ((DebugNameView *)this)->sub_100ab4f0(), STRINGR_F(((ModelNameView *)this)->GetModelName().pszValue), orig);
+	}
+	return 0.1f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10091230 size=0xa4
 #include "CBaseAnimating.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };

@@ -6020,6 +6020,7 @@
 0x10009804 func   ?sub_104001f0@@YAHXZ sub_104001f0
 0x10009809 func   ?vfunc81@CItemGCarStereo@@QAEHXZ CItemGCarStereo::vfunc81
 0x1000980e func   ?sub_1018b6f0@@YAHXZ sub_1018b6f0
+0x10009813 func   ?sub_10091080@CBaseAnimating@@QAEMH@Z CBaseAnimating::sub_10091080
 0x10009818 func   ?sub_1007bfc0@@YGHH@Z sub_1007bfc0
 0x1000981d func   ?vfunc77@CLight@@QAEXXZ CLight::vfunc77
 0x10009822 func   ?sub_1028e870@CUnknown1028e870@@QAEHXZ CUnknown1028e870::sub_1028e870
