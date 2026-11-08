@@ -161116,6 +161116,43 @@ void CUnknown1028b190::sub_1028b190(void *pCharacter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028b300 size=0xab
+#include "CBaseAnimating.h"
+#include "CUnknown1028b190.h"
+#include "ConVar.h"
+
+struct CharView_t {
+	char pad[0xa8];
+	int pObject;
+	char pad2[0x6f0 - 0xac];
+	int nSequence;
+};
+
+extern CUnknown1028b190Clock *g_1070b228;
+extern ConVar *g_10924434;
+
+int CUnknown1028b190::sub_1028b300(void *pCharacter)
+{
+	CharView_t *pChar = (CharView_t *)pCharacter;
+	if (pChar && pChar->pObject) {
+		int nDesc = ((CBaseAnimating *)pChar)->sub_1008d990(pChar->nSequence);
+		CUnknown1028b190Entry *pEntry = sub_1028b460(nDesc);
+		if (pEntry) {
+			float flMin = sub_1028b420();
+			float flExtra = (float)pEntry->m_count;
+			flExtra -= flMin;
+			float flElapsed = g_1070b228->m_time - pEntry->m_time;
+			if (flExtra > 0.0f) {
+				float flSpan = g_10924434->vfunc1() ? 0.0f : g_10924434->m_fValue;
+				if (flElapsed < flSpan)
+					return (int)flExtra;
+			}
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028b3e0 size=0x27
 // TARGET: sub_1028b3e0
 float __fastcall sub_1028b3e0(int *pThis)

@@ -3198,6 +3198,7 @@
 0x10005830 func   ?sub_101b33f0@CSoundEmitterSystemBase@@QAEDPBDAAUCSoundParameters@@@Z CSoundEmitterSystemBase::sub_101b33f0
 0x10005835 func   ?sub_100eafb0@?$CSecureTypeBase@UCPfnTraits3@MvsnSec@@HU?$CSecureCoderPfn@UCPfnTraits3@MvsnSec@@H@2@U?$CSecureCoderBasic@UCPfnTraits3@MvsnSec@@H@2@@MvsnSec@@QAEPAU12@I@Z MvsnSec::CSecureTypeBase<MvsnSec::CPfnTraits3,int,MvsnSec::CSecureCoderPfn<MvsnSec::CPfnTraits3,int>,MvsnSec::CSecureCoderBasic<MvsnSec::CPfnTraits3,int> >::sub_100eafb0
 0x1000583a func   ?vfunc4@CVTSDependencySaveRestoreDataOps@@UAE_NHH@Z CVTSDependencySaveRestoreDataOps::vfunc4
+0x1000583f func   ?sub_1028b300@CUnknown1028b190@@QAEHPAX@Z CUnknown1028b190::sub_1028b300
 0x10005844 func   ?vfunc255@CBaseAnimatingOverlay@@QAEXPAX0H@Z CBaseAnimatingOverlay::vfunc255
 0x10005849 func   ?sub_10332ca0@CBaseCombatCharacter@@QAEXPAVCBaseEntity@@HH@Z CBaseCombatCharacter::sub_10332ca0
 0x1000584e func   ?vfunc81@CItemGPishaBook@@QAEHXZ CItemGPishaBook::vfunc81
