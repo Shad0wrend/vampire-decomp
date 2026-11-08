@@ -31,6 +31,90 @@ int CRotDoor::vfunc249()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f1c60 size=0x443
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include <math.h>
+#include "CRotDoor.h"
+#include "CEntityVSlots.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+extern float g_104454c4;
+
+inline QAngle AxisAngles(const Vector &v) { return QAngle(v.y, v.z, v.x); }
+
+// TARGET: CRotDoor::vfunc103
+void CRotDoor::vfunc103()
+{
+	ScopeTrace spawnTrace("CRotDoor::Spawn", g_106b8540, g_106b8540);
+	CEntityVSlots *pSlots = (CEntityVSlots *)this;
+	*(Vector *)&m_angRotationClosed = *pSlots->slot221();
+	m_vecAxis.x = 0;
+	m_vecAxis.y = 0;
+	m_vecAxis.z = 1.0f;
+	QAngle angAxis = AxisAngles(m_vecAxis);
+	m_flDistance = fabs(90.0);
+	m_angTarget674.x = m_angRotationClosed.x - m_flDistance * angAxis.x;
+	m_angTarget674.y = m_angRotationClosed.y - m_flDistance * angAxis.y;
+	m_angTarget674.z = m_angRotationClosed.z - m_flDistance * angAxis.z;
+	m_angRotationOpenBack.x = m_flDistance * angAxis.x + m_angRotationClosed.x;
+	m_angRotationOpenBack.y = m_flDistance * angAxis.y + m_angRotationClosed.y;
+	m_angRotationOpenBack.z = m_flDistance * angAxis.z + m_angRotationClosed.z;
+	sub_101c1a70();
+	if (m_flags204 & 2)
+		*(Vector *)m_vecMovedir = *(Vector *)m_vecMovedir * -1.0f;
+	m_angRotation520 = *pSlots->slot221();
+	m_angRotation52c = *(Vector *)m_vecMovedir * m_fl4fc + *pSlots->slot221();
+	pSlots->slot93(8, 0);
+	{
+		int buf;
+		const char *pszName = *pSlots->slot9(&buf);
+		if (!pszName)
+			pszName = g_106b8540;
+		pSlots->slot105(pszName);
+	}
+	pSlots->slot104();
+	if (m_flags204 & 1) {
+		pSlots->slot64(&m_angRotation52c.x);
+		m_angRotation52c = m_angRotation520;
+		m_angRotation520 = *pSlots->slot221();
+		*(Vector *)m_vecMovedir = *(Vector *)m_vecMovedir * -1.0f;
+	}
+	if (m_flags204 & 0x800)
+		m_b55c = 1;
+	if (m_flSpeed164 == g_104454c4) {
+		m_nState4f8 = 1;
+		m_flSpeed164 = 100.0f;
+	} else {
+		m_nState4f8 = 1;
+	}
+	if (m_flags204 & 0x800)
+		m_b55c = 1;
+	*(void (CRotDoor::**)(CBaseEntity *))((char *)this + 0x1ec) = &CRotDoor::sub_100efae0;
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", m_name26c ? m_name26c : g_106b8540, g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(1);
+	}
+	if (m_flags204 & 8) {
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", m_name26c ? m_name26c : g_106b8540, g_106b8540);
+		CCollisionProperty *pCol = (CCollisionProperty *)((char *)this + 0x270);
+		pCol->sub_100dc580(pCol->m_usSolidFlags | 4);
+	}
+	pSlots->slot223();
+	sub_100b3b00();
+	sub_100a9470(1);
+	m_flAngle704 = 0;
+	pSlots->slot249();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f21d0 size=0x81
 #include "CBaseEntity.h"
 #include "CRotDoor.h"
