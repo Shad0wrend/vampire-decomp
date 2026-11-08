@@ -93721,6 +93721,65 @@ void CThunkOwner::sub_101aff40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101afff0 size=0xd3
+#include "CSoundEmitterSystemBase.h"
+#include "CUnknown1070b248.h"
+extern CUnknown1070b248 *g_1070b248;
+extern "C++" __declspec(dllimport) void DevMsg(const char *fmt, ...);
+
+struct CSoundSysView
+{
+	virtual void vfunc0();
+	virtual void vfunc1();
+	int sub_101b3220();
+	char sub_101b4200(int index);
+	CSoundParametersInternal *sub_101b3730(int index);
+	const char *sub_101b31d0(int index);
+	const char *sub_101b4c90(const CSoundWaveEntry *pWave);
+};
+
+struct CSoundSysIface
+{
+	char m_pad[0xdc];
+	void sub_101afff0();
+};
+
+// TARGET: CSoundSysIface::sub_101afff0
+void CSoundSysIface::sub_101afff0()
+{
+	CSoundSysView *pSys = (CSoundSysView *)((char *)this - 0xdc);
+	int nSounds = pSys->sub_101b3220();
+	if (nSounds == 0)
+	{
+		pSys->vfunc1();
+		nSounds = pSys->sub_101b3220();
+	}
+	for (int i = 0; i < nSounds; i++)
+	{
+		if (pSys->sub_101b4200(i))
+		{
+			CSoundParametersInternal *pSound = pSys->sub_101b3730(i);
+			if (pSound && pSound->m_bPrecache1d)
+			{
+				int nWaves = pSound->m_nWaves;
+				if (nWaves == 0)
+				{
+					DevMsg("CSoundEmitterSystem:  sounds.txt entry '%s' has no waves listed under 'wave' or 'rndwave' key!!!\n", pSys->sub_101b31d0(i));
+				}
+				else
+				{
+					for (int j = 0; j < nWaves; j++)
+					{
+						const CSoundWaveEntry *pWaves = pSound->m_pWaves;
+						g_1070b248->vfunc0(pSys->sub_101b4c90(pWaves + j), 0);
+					}
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b0670 size=0x1c
 struct CUnk101b0670 { int sub_101b4740(int a); };
 extern CUnk101b0670 g_1072be18;

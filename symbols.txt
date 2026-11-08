@@ -4797,6 +4797,7 @@
 0x10007e32 func   ?sub_10216850@@YIXPADHH@Z sub_10216850
 0x10007e37 func   ?vfunc113@CItemContainerLock@@QAEXXZ CItemContainerLock::vfunc113
 0x10007e41 func   ?sub_101d0680@@YA?AVVector@@ABV1@0@Z sub_101d0680
+0x10007e46 func   ?sub_101afff0@CSoundSysIface@@QAEXXZ CSoundSysIface::sub_101afff0
 0x10007e4b func   ?sub_1006cb10@CUnk_1006cb10@@QAEXH@Z CUnk_1006cb10::sub_1006cb10
 0x10007e50 func   ?sub_102bf770@CAI_BaseNPCTroika@@QAEXXZ CAI_BaseNPCTroika::sub_102bf770
 0x10007e55 func   ?sub_100eb440@@YIPAUCZeroedView@@PAU1@@Z sub_100eb440
