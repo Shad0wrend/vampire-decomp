@@ -1257,6 +1257,56 @@ int CBaseCombatCharacter::vfunc393()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10327ec0 size=0x120
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+
+struct ScopeEntry_t { const char *m_pszName; const char *m_pszEnt; const char *m_pszExtra; };
+extern ScopeEntry_t *g_109f3620;
+extern int *g_109f3680;
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CWeaponSlotView
+{
+	SL10(a00) SL10(a01) SL10(a02) SL10(a03) SL10(a04) SL10(a05) SL10(a06) SL10(a07) SL10(a08) SL10(a09)
+	SL10(a10) SL10(a11) SL10(a12) SL10(a13) SL10(a14) SL10(a15) SL10(a16) SL10(a17) SL10(a18) SL10(a19)
+	SL10(a20) SL10(a21) SL10(a22) SL10(a23) SL10(a24) SL10(a25) SL10(a26) SL10(a27) SL10(a28) SL10(a29)
+	SL10(a30) SL10(a31) SL10(a32) SL10(a33) SL10(a34) SL10(a35)
+	virtual int b360();
+	virtual int b361(int a);
+};
+
+int CBaseCombatCharacter::vfunc381(int a)
+{
+	const char *pszName;
+	if (this) {
+		pszName = m_name26c;
+		if (!pszName)
+			pszName = g_106b8540;
+	} else {
+		pszName = "NULL ENTITY";
+	}
+	g_109f3620[*g_109f3680].m_pszName = "CBaseCombatCharacter::Weapon_TranslateActivity";
+	g_109f3620[*g_109f3680].m_pszEnt = pszName;
+	g_109f3620[*g_109f3680].m_pszExtra = g_106b8540;
+	(*g_109f3680)++;
+	int result = a;
+	if (m_hActiveWeapon19a4.Get() && !(m_hActiveWeapon19a4.Get()->m_nEffectFlags & 0x40))
+		result = ((CWeaponSlotView *)m_hActiveWeapon19a4.Get())->b361(a);
+	(*g_109f3680)--;
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10328030 size=0xa5
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
