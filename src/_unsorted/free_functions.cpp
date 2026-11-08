@@ -157897,6 +157897,50 @@ void sub_1027ffe0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102800c0 size=0xd5
+#include "CBaseEntity.h"
+#include "CAI_BaseNPC.h"
+
+extern int g_10923a2c;
+extern Vector g_10934060;
+
+struct AI_NavGoal102800c0
+{
+    AI_NavGoal102800c0(int t, const Vector &d, int act, float tol, int fl, int g)
+        : type(t), dest(d), m_n10(-1), activity(act), m_n18(-1), m_n1c(-1),
+          tolerance(tol), flags(fl), m_n28(g), m_vec(g_10934060), m_f38(0), m_f3c(0)
+    {
+    }
+    int type;
+    Vector dest;
+    int m_n10;
+    int activity;
+    int m_n18;
+    int m_n1c;
+    float tolerance;
+    int flags;
+    int m_n28;
+    Vector m_vec;
+    float m_f38;
+    float m_f3c;
+};
+
+struct CNavUnit
+{
+    char sub_102ecd20(const void *pGoal, int a);
+};
+
+char CAI_BaseNPC::sub_102800c0(int a, CBaseEntity *pEnt, int c)
+{
+    sub_10280de0(a);
+    *(CBaseEntity **)((char *)this + 0x5de8) = pEnt;
+    AI_NavGoal102800c0 goal(4, *(Vector *)((CAI_BaseNPC *)pEnt)->vfunc217(), c, 128.0f, 1, g_10923a2c);
+    vfunc563(pEnt, (float *)&goal.dest, (void *)&goal.tolerance, &a);
+    CNavUnit *pNav = *(CNavUnit **)((char *)this + 0x5d34);
+    return pNav->sub_102ecd20(&goal, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102801e0 size=0xd5
 #include "CAI_BaseNPC.h"
 #include "CBaseEntity.h"
