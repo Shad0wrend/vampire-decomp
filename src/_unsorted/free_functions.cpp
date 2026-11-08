@@ -129859,6 +129859,45 @@ void CGameTextUnit::sub_1020e6b0(CGameTextActivator *pActivator)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020e740 size=0xea
+#include "CBaseEntity.h"
+extern int vt_10461bcc[];
+extern int vt_10486c8c[];
+void *sub_100aa720(unsigned int cb);
+void *__fastcall sub_101c0e20(void *pThis);
+void *__fastcall sub_100cd2a0(void *pThis);
+void *__fastcall sub_100cc020(void *pThis);
+
+// TARGET: func_elevator
+extern "C" CBaseEntity *func_elevator()
+{
+	char *p = (char *)sub_100aa720(0x818);
+	if (p) {
+		sub_101c0e20(p);
+		sub_100cd2a0(p + 0x578);
+		sub_100cc020(p + 0x590);
+		sub_100cc020(p + 0x5a8);
+		sub_100cc020(p + 0x5c0);
+		sub_100cc020(p + 0x5d8);
+		sub_100cc020(p + 0x5f0);
+		*(int **)p = vt_10461bcc;
+		sub_100cd2a0(p + 0x638);
+		sub_100cd2a0(p + 0x650);
+		sub_100cd2a0(p + 0x668);
+		for (int i = 0; i < 8; i++)
+			sub_100cd2a0(p + 0x680 + i * 0x18);
+		for (int j = 0; j < 8; j++)
+			sub_100cd2a0(p + 0x740 + j * 0x18);
+		*(int **)p = vt_10486c8c;
+	} else {
+		p = 0;
+	}
+	CBaseEntity *pEnt = (CBaseEntity *)p;
+	pEnt->vfunc106("func_elevator");
+	return pEnt;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020e8d0 size=0x76e
 struct ISaveRestoreOps;
 struct datamap_t;
