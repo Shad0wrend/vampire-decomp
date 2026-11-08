@@ -147825,6 +147825,27 @@ bool sub_102402f0(const Vector &boxCenter1, const Vector &boxHalfDiagonal1, cons
 }
 // END FUNCTION
 
+// FUNCTION: 0x102403b0 size=0xed
+#include "Vector.h"
+bool sub_10240250(const Vector &a, const Vector &b, const Vector &c, const Vector &d);
+char sub_1000a0bf(const Vector &p1, const Vector &p2, const Vector &p3, const Vector &p4, const Vector &p5, const Vector &p6, const Vector &p7, const Vector &p8, int p9, void *pOut);
+
+// TARGET: sub_102403b0
+bool sub_102403b0(const Vector &p1, const Vector &p2, const Vector &p3, const Vector &p4, const Vector &p5, const Vector &p6, const Vector &p7, const Vector &p8, int p9)
+{
+	if (p2 == p6)
+	{
+		Vector delta = p5 - p1;
+		Vector lo, hi;
+		VectorAdd(delta, p7, lo);
+		VectorAdd(delta, p8, hi);
+		return sub_10240250(p3, p4, lo, hi);
+	}
+	char tmp[20];
+	return sub_1000a0bf(p1, p2, p3, p4, p5, p6, p7, p8, p9, tmp) == 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102404e0 size=0x140
 #include <math.h>
 extern float g_104454c0;
