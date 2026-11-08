@@ -164773,6 +164773,39 @@ void CUnknown102d9ed0::sub_102d9ed0(const Vector *start, const Vector *end)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d9fa0 size=0xe2
+#include "CUnknown102d9ed0.h"
+#include "CUnknown1070b244.h"
+
+extern CUnknown1070b244 *g_1070b244;
+
+#define PO_SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+class CEntityOriginSlot220View
+{
+public:
+	PO_SLOTS10(a00) PO_SLOTS10(a01) PO_SLOTS10(a02) PO_SLOTS10(a03) PO_SLOTS10(a04)
+	PO_SLOTS10(a05) PO_SLOTS10(a06) PO_SLOTS10(a07) PO_SLOTS10(a08) PO_SLOTS10(a09)
+	PO_SLOTS10(a10) PO_SLOTS10(a11) PO_SLOTS10(a12) PO_SLOTS10(a13) PO_SLOTS10(a14)
+	PO_SLOTS10(a15) PO_SLOTS10(a16) PO_SLOTS10(a17) PO_SLOTS10(a18) PO_SLOTS10(a19)
+	PO_SLOTS10(a20) PO_SLOTS10(a21)
+	virtual Vector *GetOriginPtr();	// slot 220
+};
+
+Vector CUnknown102d9ed0::sub_102d9fa0(bool bFlat, const float *pMinOffset, const float *pMaxOffset)
+{
+	Vector v = *((CEntityOriginSlot220View *)this)->GetOriginPtr();
+	v.x += g_1070b244->vfunc1(m_vecMin.x - pMinOffset[0], m_vecMax.x - pMaxOffset[0]);
+	float fy = g_1070b244->vfunc1(m_vecMin.y - pMinOffset[1], m_vecMax.y - pMaxOffset[1]);
+	bool b2D = bFlat;
+	v.y += fy;
+	if (!b2D)
+		v.z += g_1070b244->vfunc1(m_vecMin.z - pMinOffset[2], m_vecMax.z - pMaxOffset[2]);
+	return v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102da600 size=0x151
 struct CTriple
 {
