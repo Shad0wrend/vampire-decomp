@@ -18,6 +18,17 @@ public:
 	int sub_102f32f0(void *pOutVec, int nMax, const float *pMins, const float *pMaxs, void *pFilter);	// "CAI_Network_ListNodesInBox" (scope string 0x106103e0): this in ecx, 5 stack args (ret 20); walks the node array (count at +0, node pointers at +4), keeps the nMax nearest nodes whose pFilter->vfunc0(node) is true and whose position at node+8/+0xc/+0x10 lies inside pMins..pMaxs (distance from pFilter->vfunc1(node)), using a CUtlPriorityQueue8, then drains it into pOutVec; returns the count
 };
 
+class CBaseEntity;
+struct CAI_MemoryNode;
+struct CAI_MemoryList
+{
+	void *m_pOwnerEnt;	// 0
+	void *m_pOutput;	// 4
+	char m_bFlag;	// 8
+	CAI_MemoryNode *m_pHead;	// 0xc
+	bool sub_102df700(CAI_Network *pNav, CBaseEntity *pEnt, const Vector &pos, const Vector &pos2);
+};
+
 // The object at the global 0x10934088 (the network manager entity); it points at the network at +0x454.
 struct CAI_NetworkOwner
 {

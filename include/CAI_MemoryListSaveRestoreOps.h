@@ -9,9 +9,16 @@ class CSave;
 // A node of the AI memory list: the entity handle at +0x24, the next node at +0x38.
 struct CAI_MemoryNode
 {
-	char m_pad0000[0x24];
+	Vector m_vec0;
+	Vector m_vecC;
+	Vector m_vec18;
 	unsigned int m_hEntity;	// 0x24
-	char m_pad0028[0x38 - 0x28];
+	float m_flTime;
+	int m_i2c;
+	int m_i30;
+	char m_bFlag34;
+	char m_bFlag35;
+	char m_pad0036[2];
 	CAI_MemoryNode *m_pNext;	// 0x38
 };
 
