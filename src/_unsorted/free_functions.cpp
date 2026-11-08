@@ -82072,6 +82072,72 @@ char sub_101764d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10176520 size=0x334
+#include "vampire.h"
+#include "CBasePlayer.h"
+#include "Vector.h"
+#include "QAngle.h"
+
+#define RV1(p) virtual void p();
+#define RV10(p) RV1(p##0) RV1(p##1) RV1(p##2) RV1(p##3) RV1(p##4) RV1(p##5) RV1(p##6) RV1(p##7) RV1(p##8) RV1(p##9)
+struct CRulesView10176520
+{
+	RV10(a) RV10(b) RV10(c) RV10(d)
+	virtual char vfunc40();
+};
+
+void sub_10139610(const QAngle &angles, Vector *forward, Vector *right, Vector *up);
+char sub_101764d0();
+extern CRulesView10176520 *g_1070ba0c;
+extern int g_1070ba3c;
+
+inline const QAngle &EyeAnglesOf(CBasePlayer *p) { return *(QAngle *)&p->m_vec206c; }
+inline const QAngle &PunchOf(CBasePlayer *p) { return *(QAngle *)&p->m_vec1EFC; }
+inline void AngleVectors1(const QAngle &angles, Vector *forward) { sub_10139610(angles, forward, 0, 0); }
+
+Vector CBasePlayer::sub_10176520(float flDelta)
+{
+	if (!sub_101764d0())
+	{
+		Vector forward;
+		AngleVectors1(EyeAnglesOf(this) + PunchOf(this), &forward);
+		return forward;
+	}
+	Vector eye;
+	vfunc389(&eye, (Vector *)vfunc220());
+	Vector *pRecoil = (Vector *)&m_f22A8;
+	m_f22A8 = 0;
+	m_f22AC = 0;
+	m_f22B0 = 0;
+	Vector punch = sub_10176930(eye, 16384.0f, flDelta);
+	if (!g_1070ba0c->vfunc40())
+		m_b20A8 = 0;
+	if (punch.x > 180.0f)
+		punch.x -= 360.0f;
+	if (punch.x < -180.0f)
+		punch.x += 360.0f;
+	if (punch.y > 180.0f)
+		punch.y -= 360.0f;
+	if (punch.y < -180.0f)
+		punch.y += 360.0f;
+	if (punch.x > 25.0f)
+		punch.x = 25.0f;
+	else if (punch.x < -25.0f)
+		punch.x = -25.0f;
+	if (punch.y > 12.0f)
+		punch.y = 12.0f;
+	else if (punch.y < -12.0f)
+		punch.y = -12.0f;
+	if (1 == g_1070ba3c)
+		*pRecoil = 0.9f * punch;
+	else
+		*pRecoil = *pRecoil * 0.3f + 0.7f * punch;
+	Vector forward;
+	AngleVectors1(*(QAngle *)pRecoil + (EyeAnglesOf(this) + PunchOf(this)), &forward);
+	return forward;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10177120 size=0x67
 #include "CBasePlayer.h"
 
