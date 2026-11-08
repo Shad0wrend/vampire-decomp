@@ -209537,6 +209537,49 @@ CNPC_VSheriffMan *CNPC_VSheriffMan::sub_103ae3e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b03b0 size=0x14d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CGlobalEntityList.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CNPC_VSheriffMan.h"
+extern const float g_104c6128;
+extern const float g_104c612c;
+extern const float g_104c6130;
+extern const float g_104c6134;
+extern const float g_104c6138;
+extern const float g_104c613c;
+extern const char g_10651504[];
+CBaseEntity *sub_10136580(const char *classname);
+
+// TARGET: CNPC_VSheriffMan::sub_103b03b0
+void CNPC_VSheriffMan::sub_103b03b0()
+{
+	ScopeTrace trace("CNPC_VSheriffMan::SpawnTeleportBats", g_106b8540);
+	CBaseEntity *pBats = m_hTeleportBats.Get();
+	if (!pBats) {
+		pBats = sub_10136580(g_10651504);
+		if (!pBats)
+			return;
+	}
+	m_hTeleportBats = pBats;
+	((CEntityVSlots *)pBats)->slot216(((CEntityVSlots *)this)->slot217());
+	pBats->vfunc103();
+	if (m_pTarget) {
+		pBats->sub_100b97b0();
+		pBats->sub_100b9880((const float *)m_pTarget->slot220(), g_104c6128, g_104c612c, g_104c6130 + m_pTarget->slot220()->z, g_104c6134 + m_pTarget->slot220()->z, g_104c6138, g_104c613c);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b0560 size=0x9b
 #include "CBaseEntity.h"
 #include "CUnknown101d7520.h"
