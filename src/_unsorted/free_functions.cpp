@@ -52903,6 +52903,24 @@ void __stdcall sub_100e7c20(DialogLine *line)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e7d10 size=0x6c
+#include <string.h>
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void __stdcall sub_100e7d10(char *dst, char *src)
+{
+	g_109f3620[*g_109f3680].a = "CDialog::line_copy";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	strcpy(dst, src);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e7f70 size=0xb4
 extern "C" {
 void *memset(void *, int, unsigned int);

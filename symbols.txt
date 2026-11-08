@@ -5713,6 +5713,7 @@
 0x100090cf func   _logic_relay logic_relay
 0x100090d4 func   ?vfunc5@CWeaponMelee_FireAxe@@QAEPAV1@I@Z CWeaponMelee_FireAxe::vfunc5
 0x100090d9 func   ?sub_10256250@CBaseCombatWeapon@@QAEDXZ CBaseCombatWeapon::sub_10256250
+0x100090de func   ?sub_100e7d10@@YGXPAD0@Z sub_100e7d10
 0x100090e3 func   ?ShiftElementsRight@?$CUtlVector@UCHumanoidRec@@V?$CUtlMemory@UCHumanoidRec@@@@@@QAEXHH@Z CUtlVector<CHumanoidRec,CUtlMemory<CHumanoidRec> >::ShiftElementsRight
 0x100090e8 func   ?sub_103da730@CTriggerWWZone@@QAEXXZ CTriggerWWZone::sub_103da730
 0x100090ed func   ?vfunc37@CSave@@UAEXPBDPAXH@Z CSave::vfunc37
