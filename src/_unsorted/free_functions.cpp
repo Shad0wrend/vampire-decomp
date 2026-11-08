@@ -191983,6 +191983,58 @@ bool CBaseCombatCharacter::sub_10335a70(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10335b80 size=0x1d5
+#include "CBaseCombatCharacter.h"
+#include "CEntityVSlots.h"
+#include "CGameRules.h"
+#include "ScopeTrace.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+extern CGameRules *g_1070ba0c;
+
+void CBaseCombatCharacter::sub_10335b80()
+{
+	ScopeTrace trace("CBaseCombatCharacter::Inventory_Wield_Update", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+	EHANDLE &hPreferred = *(EHANDLE *)((char *)this + 0xea4);
+	CBaseEntity *pBest;
+	CBaseEntity *pPreferred;
+	if (sub_1032e7b0()) {
+		if (sub_10335a70((CBaseEntity *)sub_1032e7b0()))
+			goto done;
+		pPreferred = hPreferred.Get();
+		if (pPreferred && sub_10335a70(pPreferred)) {
+			((CEntityVSlots *)this)->slot388((int)pPreferred, 0);
+			goto done;
+		}
+		((CEntityVSlots *)this)->slot388(0, 0);
+		pBest = g_1070ba0c->vfunc20((CBaseEntity *)this, 0);
+		((CEntityVSlots *)this)->slot388((int)pBest, 0);
+	} else {
+		pPreferred = hPreferred.Get();
+		if (pPreferred && sub_10335a70(pPreferred)) {
+			((CEntityVSlots *)this)->slot388((int)pPreferred, 0);
+			if (sub_1032e7b0() == pPreferred)
+				goto done;
+		}
+		pBest = g_1070ba0c->vfunc20((CBaseEntity *)this, 0);
+		if (pBest) {
+			((CEntityVSlots *)this)->slot388((int)pBest, 0);
+		} else {
+			pBest = (CBaseEntity *)sub_10335950("item_w_unarmed");
+			if (pBest)
+				((CEntityVSlots *)this)->slot388((int)pBest, 0);
+		}
+	}
+done:
+	if (!sub_10341510()) {
+		CBaseEntity *pArmed = (*(EHANDLE *)((char *)this + 0x10e0)).Get();
+		if (pArmed && sub_10335a70(pArmed))
+			((CEntityVSlots *)this)->slot388((int)pArmed, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10335de0 size=0x8f
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
