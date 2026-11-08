@@ -137,7 +137,10 @@ public:
 	char m_pad6079[0x6264 - 0x6079];
 	float m_f6264;	// +0x6264
 	float m_f6268;	// +0x6268
-	char m_pad626c[0x6290 - 0x626c];
+	float m_f626c;	// +0x626c
+	char m_pad6270[4];
+	union { float m_f6274; int m_n6274; };	// +0x6274
+	char m_pad6278[0x6290 - 0x6278];
 	Vector m_vecAxis6290;	// +0x6290
 	Vector m_vecExtent629c;	// +0x629c
 	char m_pad62a8[0x6348 - 0x62a8];
@@ -363,7 +366,7 @@ public:
 	virtual void vfunc305();
 	virtual void vfunc306();
 	virtual bool vfunc307();
-	virtual void vfunc308();
+	virtual bool vfunc308();
 	virtual void vfunc309();
 	virtual void vfunc310();
 	virtual void vfunc311(int a, int b, int c);	// slot 311 (+0x4dc, ret 0xc): sets the activity a with the sequence b / data c (CAI_BaseNPC::vfunc311)
@@ -664,7 +667,10 @@ public:
 	virtual void vfunc601(int a);
 	virtual bool vfunc602();
 	virtual float vfunc603_slot(float *pCurrent, float *pTarget);	// slot 603 (+0x96c): the same function as the plain vfunc603 above, declared here only to give the appended slots their real indices
-	virtual void vfunc604_slot();
+	virtual int vfunc604(int unused);
+	char sub_1001482b(int nCondition);
+	int sub_10005dd0(int a, int b, int c, int d);
+	bool sub_1000c10d(float *pPos);
 	virtual int vfunc605(int unused);	// slot 605 (+0x974)
 	virtual int vfunc606(int a);	// slot 606 (+0x978)
 	virtual void vfunc607_slot();
