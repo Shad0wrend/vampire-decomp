@@ -194350,6 +194350,71 @@ void CNPC_VAndreiBlood::sub_1035cd00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035ddd0 size=0x1d6
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VAndreiBlood.h"
+#include "ScopeTrace.h"
+
+#define SV1(p) virtual void p();
+#define SV10(p) SV1(p##0) SV1(p##1) SV1(p##2) SV1(p##3) SV1(p##4) SV1(p##5) SV1(p##6) SV1(p##7) SV1(p##8) SV1(p##9)
+#define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
+
+class STeleportNodeView
+{
+public:
+	SV100(sa) SV100(sb) SV10(sc0) SV1(sc10) SV1(sc11) SV1(sc12) SV1(sc13) SV1(sc14) SV1(sc15) SV1(sc16)
+	virtual float *vfunc217();
+	char m_pad0004[0x5d8 - 4];
+	STeleportNodeView *m_pNext;
+	int m_nType;
+};
+
+extern STeleportNodeView *g_10925450;
+extern float g_104a6f7c;
+
+CBaseEntity *CNPC_VAndreiBlood::sub_1035ddd0()
+{
+	ScopeTrace trace("CNPC_VAndreiBlood::SelectTeleportNode", g_106b8540);
+	STeleportNodeView *pEnemy = (STeleportNodeView *)m_h628c.Get();
+	if (!pEnemy)
+		return 0;
+	int nFarthest = enginerandom->vfunc2(0, 1);
+	STeleportNodeView *pNode = g_10925450;
+	STeleportNodeView *pBest = 0;
+	float flDist;
+	float flBest = 3.4028235e+38f;
+	if (nFarthest)
+		flBest = 0.0f;
+	for (; pNode; pNode = pNode->m_pNext) {
+		if (pNode->m_nType == 17000 || pNode->m_nType == 0x4269) {
+			flDist = (*(Vector *)pEnemy->vfunc217() - *(Vector *)pNode->vfunc217()).Length();
+			if (flDist >= g_104a6f7c) {
+				if (sub_1035e030((Vector *)pNode->vfunc217(), g_104a6f7c)) {
+					if (nFarthest) {
+						if (!(flDist > flBest))
+							continue;
+					} else {
+						if (!(flDist < flBest))
+							continue;
+					}
+					flBest = flDist;
+					pBest = pNode;
+				}
+			}
+		}
+	}
+	m_vec66c0 = *(Vector *)pBest->vfunc217();
+	return (CBaseEntity *)pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035e030 size=0x114
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
