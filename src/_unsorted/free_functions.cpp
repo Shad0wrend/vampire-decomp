@@ -133929,6 +133929,76 @@ extern "C" CBaseEntity *prop_hacking()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10219fa0 size=0x188
+#include "vampire_all.h"
+#include "CPropHacking.h"
+struct CEvt10219fa0 { void sub_100cd2d0(); };
+struct CVecView10219fa0 {
+	void **m_pMem; int m_nAlloc; int m_nGrow; int m_nSize; int m_pElements;
+	void sub_1021e410(); void sub_1021e540(); void sub_1021e1c0(); void sub_1021e230();
+	void sub_10032b00(); void sub_1002cbd0(); void sub_1021e160(); void sub_1021e180(); void sub_1021e100(); void sub_1021e120();
+};
+extern void __cdecl sub_10430964(void *);
+extern int vt_1048a5f4[];
+extern void __cdecl Plat_FreeX(void *);
+// TARGET: CPropHacking::sub_10219fa0
+void CPropHacking::sub_10219fa0()
+{
+	*(int **)this = vt_1048a5f4;
+	CVecView10219fa0 *v9c8 = (CVecView10219fa0 *)((char *)this + 0x9c8);
+	for (int i = 0; i < v9c8->m_nSize; i++)
+		sub_10430964(v9c8->m_pMem[i]);
+	v9c8->sub_1021e410();
+	v9c8->sub_1021e540();
+	*(int *)((char *)v9c8 + 0x10) = *(int *)v9c8;
+	CVecView10219fa0 *va14 = (CVecView10219fa0 *)((char *)this + 0xa14);
+	va14->sub_1021e1c0();
+	va14->sub_1021e230();
+	*(int *)((char *)va14 + 0x10) = *(int *)va14;
+	va14->sub_1021e230();
+	CVecView10219fa0 *v9f8 = (CVecView10219fa0 *)((char *)this + 0x9f8);
+	v9f8->sub_10032b00();
+	v9f8->sub_1002cbd0();
+	*(int *)((char *)v9f8 + 0x10) = *(int *)v9f8;
+	v9f8->sub_1002cbd0();
+	v9c8->sub_1021e410();
+	v9c8->sub_1021e540();
+	*(int *)((char *)v9c8 + 0x10) = *(int *)v9c8;
+	v9c8->sub_1021e540();
+	CVecView10219fa0 *v9b4 = (CVecView10219fa0 *)((char *)this + 0x9b4);
+	v9b4->sub_1021e160();
+	v9b4->sub_1021e180();
+	*(int *)((char *)v9b4 + 0x10) = *(int *)v9b4;
+	v9b4->sub_1021e180();
+	CVecView10219fa0 *v9a0 = (CVecView10219fa0 *)((char *)this + 0x9a0);
+	v9a0->sub_1021e100();
+	v9a0->sub_1021e120();
+	v9a0->m_pElements = (int)v9a0->m_pMem;
+	if (v9a0->m_nGrow != -1) {
+		if (v9a0->m_pMem) {
+			Plat_Free(v9a0->m_pMem);
+			v9a0->m_pMem = 0;
+		}
+		v9a0->m_nAlloc = 0;
+	}
+	CVecView10219fa0 *v98c = (CVecView10219fa0 *)((char *)this + 0x98c);
+	v98c->sub_10032b00();
+	v98c->sub_1002cbd0();
+	*(int *)((char *)v98c + 0x10) = *(int *)v98c;
+	v98c->sub_1002cbd0();
+	CEvt10219fa0 *e = (CEvt10219fa0 *)((char *)this + 0x900);
+	for (int n = 8; n != 0; n--) { e = (CEvt10219fa0 *)((char *)e - 0x18); e->sub_100cd2d0(); }
+	((CEvt10219fa0 *)((char *)this + 0x7f4))->sub_100cd2d0();
+	((CEvt10219fa0 *)((char *)this + 0x7dc))->sub_100cd2d0();
+	((CEvt10219fa0 *)((char *)this + 0x7c4))->sub_100cd2d0();
+	((CEvt10219fa0 *)((char *)this + 0x7ac))->sub_100cd2d0();
+	((CEvt10219fa0 *)((char *)this + 0x794))->sub_100cd2d0();
+	((CEvt10219fa0 *)((char *)this + 0x748))->sub_100cd2d0();
+	((CEvt10219fa0 *)((char *)this + 0x730))->sub_100cd2d0();
+	((CBaseAnimating *)this)->sub_1008b3c0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021a2f0 size=0xa3
 #include "CRestore.h"
 #include "CPropHacking.h"
